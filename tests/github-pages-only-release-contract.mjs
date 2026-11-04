@@ -18,6 +18,10 @@ assert.match(workflow,/^\s+branches: \[main\]$/m);
 assert.match(workflow,/actions\/configure-pages@v5/);
 assert.match(workflow,/actions\/upload-pages-artifact@v3/);
 assert.match(workflow,/actions\/deploy-pages@v4/);
+assert.ok(workflow.includes("group: ad-orientem-github-pages-${{ github.event_name == 'pull_request' && github.event.pull_request.number || 'main' }}"),
+  "Pages production concurrency group must be separate from PR preflight");
+assert.ok(workflow.includes("cancel-in-progress: ${{ github.event_name == 'pull_request' }}"),
+  "A new PR or main push must not cancel a running Pages production release");
 assert.match(workflow,/run: node tools\/check-github-pages-live\.mjs/);
 assert.match(workflow,/GITHUB_PAGES_URL:\s*\$\{\{ steps\.pages\.outputs\.page_url \}\}/);
 assert.match(workflow,/node --check tools\/check-github-pages-live\.mjs/);

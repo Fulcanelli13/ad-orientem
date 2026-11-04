@@ -40,9 +40,11 @@ permissions:
   pages: write
   id-token: write
 
+# PR preflight cannot cancel an ongoing main production release.
+# Allow the active production upload+deploy+smoke to finish even if main advances.
 concurrency:
-  group: ad-orientem-github-pages
-  cancel-in-progress: true
+  group: ad-orientem-github-pages-${{ github.event_name == 'pull_request' && github.event.pull_request.number || 'main' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   build:
