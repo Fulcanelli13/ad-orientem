@@ -1,0 +1,37 @@
+name: Schola 2026 eight-date actual Mass Reader reconciliation
+
+on:
+  pull_request:
+    paths:
+      - 'tests/schola-2026-eight-date-real-reader-reconciliation.mjs'
+      - '.github/workflows/schola-2026-eight-date-real-reader.yml'
+      - 'src/mass/proper-reader-slots.js'
+      - 'src/mass/reader-proper-runtime-recovery.js'
+      - 'src/mass/host-adapter.js'
+      - 'src/mass/1962-plural-martyr-french-source.js'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  actual-reader-reconciliation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Resolve eight selected 1962 dates and compare Schola raw versus actual Reader recovery
+        run: node tests/schola-2026-eight-date-real-reader-reconciliation.mjs
+      - name: Preserve source-owned disposition (no public music approvals)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: schola-2026-eight-date-actual-reader
+          path: artifacts/mass/schola-2026-eight-date-real-reader-reconciliation.json
+          if-no-files-found: warn
+          retention-days: 14
