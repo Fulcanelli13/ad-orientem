@@ -7,7 +7,10 @@ const root=process.cwd();
 const output=join(root,"dist","web-preview");
 const excluded=[
  "assets/staged",
+ // Exact San Polo originals are a Git-only QA archive until final image sign-off.
+ "assets/stations/san-polo",
  "data/geography/research",
+ "data/prayer/stations/san-polo-tiepolo-oils-1747",
 ];
 const historicalSpritePath="assets/generated-sprites";
 const offlineOnlyCatenaPaths=["matthew","mark","luke","john"].map(name=>"data/scripture/catena/"+name+".json");
