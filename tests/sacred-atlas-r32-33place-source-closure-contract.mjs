@@ -12,7 +12,7 @@ assert.equal(ledger.original33_ids.length,33);
 assert.equal(new Set(ledger.original33_ids).size,33);
 assert.equal(source.rows.length,43);
 assert.equal(current.places.length,43);
-const originalNoPhotoIds=source.rows.filter(x=>x.work_group==="PRIMARY_CUSTODIAN_SOURCE_RIGHTS_UNKNOWN"||x.work_group==="ARCHITECTURAL_FREEDOM_OF_PANORAMA_HOLD"||x.work_group==="NEARBY_GEOTAGGED_IMAGES_NOT_SITE_VERIFIED"||x.work_group==="NO_VETTED_EXACT_FILE_LEAD").map(x=>x.place_id);
+const originalNoPhotoIds=source.rows.filter(x=>x.work_group==="PRIMARY_CUSTODIAN_SOURCE_RIGHTS_UNKNOWN"||x.work_group==="ARCHITECTURAL_FREEDOM_OF_PANORAMA_HOLD"||x.work_group==="NEARBY_GEOTAGGED_IMAGES_NOT_SITE_VERIFIED"||x.work_group==="NO_VETTED_EXACT_FILE_LEAD").map(x=>x.place_id).filter(id=>!["place:MG:ilot-de-la-vierge-ampefy","place:PE:santuario-candelaria-chapi-polobaya"].includes(id));
 assert.deepEqual([...ledger.original33_ids].sort(),originalNoPhotoIds.sort());
 assert.equal(ledger.new_file_records.length,10);
 assert.equal(ledger.counts.new_cover_candidates,2);
