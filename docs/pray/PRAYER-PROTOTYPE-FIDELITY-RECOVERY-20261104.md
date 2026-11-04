@@ -24,7 +24,7 @@
 | Area | Verified 4 Nov baseline | Change/status | Visual sign-off |
 | --- | --- | --- | --- |
 | Landing/discovery | Existing nine-door pilot uses small icon-led grid; older study uses full-bleed responsive painting gallery and first-tap reveal | R1 in draft PR #2426: dark masonry, source-gated photos, nine doors, second-activation routing | **PENDING** real 320/390/desktop screenshots |
-| Category interiors | Current full-card two-column shelf, faceted filters and optional approved cover | **OPEN** compare with prototype image-header and quiet text-entry list; preserve filter access and nine-door ownership | PENDING |
+| Category interiors | Previous two-column conventional cards, faceted filters and source-gated cover | **R2 IMPLEMENTED ON DRAFT**: study-style artwork header, overlaid title, numbered linear prayer rows and existing functional filters; preserves exact images and canonical route identities | **PENDING** live 320/390/desktop comparison |
 | Essential Prayers F01 | 32-card case, Latin-first flow and tap-to-translate exist; legacy Holy Card remains rollback | **OPEN** compare visual case/reading text and controls against Claude source | PENDING |
 | Choir / litanies | Specialised invocations and role/response rails exist; Loreto display pilot is opt-in | **OPEN** assess each approved family prototype before changing defaults | PENDING |
 | Chaplets F07 | Five Wounds / Precious Blood / Little Crown source-owner readers active; Mercy F07 pilot opt-in | **OPEN** finish m1/m2/m3 phone visual comparisons and approved spacing/footer | PENDING |
@@ -39,9 +39,11 @@
 - [x] Preserve the later approved **nine** doors; don't copy the eight-category study inventory.
 - [x] Source-code introduction of two-step reveal + visual gallery, without new image publication or prayer data changes.
 - [x] Source contract and 320/390 primary mobile test updated for intentional interaction difference.
+- [x] R2 source-level category interiors restored without redirecting canonical prayers, changing artwork licenses or removing filters.
+- [x] Route/offline/artwork phone tests updated to exercise the intentional two-step landing navigation; released painting uses contain to prevent unauthorized crops.
 - [ ] Source checks and full PR CI green; repair **real** regressions rather than loosening independent tests.
 - [ ] Real 320, 390 and desktop comparison at matching viewport, text language and artwork states.
 - [ ] User visual sign-off against study, acknowledging licensed/approved artwork gaps.
 - [ ] Merge and exact production SHA validation.
 
-**No merge of R1 while open gates remain.** This ledger is a review aid, not a rewrite of the 178-sheet master. Subsequent rounds append evidence and actual screenshots, not just completion labels.
+**No merge of R1/R2 while open gates remain.** This ledger is a review aid, not a rewrite of the 178-sheet master. Subsequent rounds append evidence and actual screenshots, not just completion labels.
