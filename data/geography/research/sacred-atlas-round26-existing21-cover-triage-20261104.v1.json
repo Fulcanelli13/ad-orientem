@@ -36,8 +36,8 @@
     "no_new_photographs_downloaded": 0,
     "approved_by_this_triage": 0,
     "published_by_this_triage": 0,
-    "independent_single_candidate_source_pages_rechecked": 9,
-    "single_candidate_source_pages_not_rechecked": 4
+    "independent_single_candidate_source_pages_rechecked": 12,
+    "single_candidate_source_pages_not_rechecked": 1
   },
   "policy": [
     "Previously verified original SHA1/source bytes support provenance but do not establish editorial choice, full quality, underlying third-party architectural/sculpture rights or crop suitability.",
@@ -47,7 +47,7 @@
     "Pukekaraka tree/presbytery and La Tirana statue remain gallery/context/rights holds. Do not promote either to a canonical site cover.",
     "Do not substitute for user's prior selected exact Photo Finder rank-one files; these 23 Places were previously unreviewed, not among the 34 user-selected holds.",
     "No direct external image download, no scheduled Commons retries, no deployment, no approval registry or production asset modifications.",
-    "Nine of the thirteen singleton source pages were independently reviewed without original-file downloading; source captions are evidence of subject and licence claims, not final image aesthetics, underlying rights or publication authorization."
+    "Twelve of thirteen singleton source pages independently reviewed without fetching source bytes; Pau exact source remains inaccessible in this check, and separate same-author interior PNG must not be substituted. Page captions are not full rights/subject/visual approval."
   ],
   "existing_review_tool": "data/geography/research/sacred-atlas-round25-23place-64-original-editorial-review-20261104.html",
   "next_review_batch": "BULK_21_COVER_DECISIONS_AND_TWO_CONTEXT_HOLDS_NO_SOURCE_DISCOVERY",
@@ -341,7 +341,8 @@
           "rights_cleared_for_publication": false,
           "selection_made_by_owner": false
         }
-      ]
+      ],
+      "page_lookup_hold": "EXACT_SOURCE_PAGE_NOT_ACCESSIBLE_IN_CURRENT_PUBLIC_REVIEW; DO_NOT SUBSTITUTE THE SEPARATE INTERIOR PNG BY SAME AUTHOR"
     },
     {
       "place_id": "place:IT:duomo-sant-eusebio-vercelli",
@@ -382,7 +383,16 @@
           "rights_cleared_for_publication": false,
           "selection_made_by_owner": false
         }
-      ]
+      ],
+      "independent_source_page_qa": {
+        "checked_on": "2026-11-04",
+        "status": "EXACT_VERCELLI_CATHEDRAL_AUTHOR_CONFIRMED",
+        "note": "Italian caption identifies the Duomo/Cattedrale di Sant'Eusebio, Vercelli; photographer Patafisik; CC BY-SA 4.0",
+        "scene_implication": "Exact church explicit in source text",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Cattedrale_di_Sant'Eusebio_P1160098.JPG",
+        "original_bytes_redownloaded": false,
+        "approval_from_page_review": false
+      }
     },
     {
       "place_id": "place:LB:monastery-saint-maron-annaya",
@@ -473,7 +483,16 @@
           "rights_cleared_for_publication": false,
           "selection_made_by_owner": false
         }
-      ]
+      ],
+      "independent_source_page_qa": {
+        "checked_on": "2026-11-04",
+        "status": "LICHEN_SANCTUARY_SOURCE_PHOTOGRAPHER_CONFIRMED",
+        "note": "Commons caption says Sanctuary of Our Lady of Licheń in Poland, Bialo-zielony, CC BY-SA 3.0",
+        "scene_implication": "Source caption identifies whole sanctuary rather than exact basilica facade; verify framing",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Bazylika_w_Licheniu.jpg",
+        "original_bytes_redownloaded": false,
+        "approval_from_page_review": false
+      }
     },
     {
       "place_id": "place:US:la-salette-attleboro",
@@ -614,7 +633,16 @@
           "rights_cleared_for_publication": false,
           "selection_made_by_owner": false
         }
-      ]
+      ],
+      "independent_source_page_qa": {
+        "checked_on": "2026-11-04",
+        "status": "EXACT_MISSION_CHURCH_EXTERIOR_CONFIRMED",
+        "note": "Exact file page explicitly describes exterior of San Francisco de Asis Mission Church, Ranchos de Taos, New Mexico; Liveon001 © Travis K. Witt, CC BY-SA 3.0",
+        "scene_implication": "Exact church/site explicit; check photographic condition and framing",
+        "source_page": "https://commons.wikimedia.org/wiki/File:San_Francisco_de_Asis_Mission_Church.JPG",
+        "original_bytes_redownloaded": false,
+        "approval_from_page_review": false
+      }
     },
     {
       "place_id": "place:US:seton-emmitsburg",
