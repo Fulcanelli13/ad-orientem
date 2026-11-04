@@ -1,0 +1,116 @@
+{
+  "schema": "AO_FLANDERS_FOUR_STAGED_SOURCE_QUALITY_V1",
+  "asOf": "2026-11-04",
+  "qaRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/41813871303",
+  "runArtifact": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/41813871303/artifacts/13313323632",
+  "scope": "4 previously approved artworks, 6 exact source images, 12 research-only WebP derivatives",
+  "sourceCount": 6,
+  "artworkCount": 4,
+  "downloadFailures": 0,
+  "publication": false,
+  "finalRightsCleared": false,
+  "automaticCropping": false,
+  "records": [
+    {
+      "approvedRecordIndex": 248,
+      "artist": "Peter Paul Rubens",
+      "title": "Saint Francis Receiving the Stigmata",
+      "museumAccession": "MSK S-9",
+      "sources": [
+        {
+          "kind": "official_MS K_IIIF",
+          "pixels": [
+            3194,
+            4400
+          ],
+          "sha256": "e5100892058b6fd09cbb69ba895815ffd58a3906b5600cf0e149a6d39950e545"
+        },
+        {
+          "kind": "Commons_approved",
+          "pixels": [
+            5101,
+            7028
+          ],
+          "sha256": "8c3df5ca5200f990b1c1f860f16b8e23a0378dd8f1eb82fcfb01a18c541f20cc"
+        }
+      ],
+      "technicalPreferredSource": 2,
+      "finalPreferredSource": null,
+      "notes": "Higher resolution Commons render nearly identical in colour to museum IIIF. Final source rights and sharpness acceptance pending"
+    },
+    {
+      "approvedRecordIndex": 264,
+      "artist": "Titian",
+      "title": "Jacopo Pesaro Presented to Saint Peter",
+      "museumAccession": "KMSKA pending exact inventory reconciliation",
+      "sources": [
+        {
+          "kind": "Commons_alternative",
+          "pixels": [
+            6645,
+            5186
+          ],
+          "sha256": "5b929a2f9bc78cdf4a2e5c9e78a8514451fa0723ba396a67cecf420692ec55dd"
+        }
+      ],
+      "technicalPreferredSource": 1,
+      "finalPreferredSource": null,
+      "notes": "Good high resolution, individual licence and exact source identity remain pending"
+    },
+    {
+      "approvedRecordIndex": 266,
+      "artist": "Michaelina Wautier",
+      "title": "Two Girls as Saint Agnes and Saint Dorothy",
+      "museumAccession": "KMSKA 599",
+      "sources": [
+        {
+          "kind": "Commons_alternative_to_oversized_TIFF",
+          "pixels": [
+            4500,
+            3419
+          ],
+          "sha256": "b22f321d0e7616a39b0d2b1d98cf5f00bbde5ed0ab5f19798bb924c90066915f"
+        }
+      ],
+      "technicalPreferredSource": 1,
+      "finalPreferredSource": null,
+      "notes": "JPEG adequate for gallery, inspect source colour. Original oversized TIFF remains untouched"
+    },
+    {
+      "approvedRecordIndex": 268,
+      "artist": "Hugo van der Goes",
+      "title": "Death of the Virgin",
+      "museumAccession": "Groeningemuseum 0000.GRO0204.I",
+      "sources": [
+        {
+          "kind": "Commons_approved",
+          "pixels": [
+            7819,
+            9438
+          ],
+          "sha256": "c001f8f826f396fb28f80244881503f2a662d1a51c5f48d8669b1e67c66baf43"
+        },
+        {
+          "kind": "Commons_alternative",
+          "pixels": [
+            5050,
+            6203
+          ],
+          "sha256": "d9217dc1e0d11054b71e1bfe6ab12f6b4e9010bd8733627cc772cd2630de81"
+        }
+      ],
+      "technicalPreferredSource": 1,
+      "finalPreferredSource": null,
+      "notes": "Significant colour/contrast differences; do not certify winner until museum reference is compared"
+    }
+  ],
+  "policy": [
+    "All original user approvals preserved",
+    "No source files published",
+    "No assets deployed",
+    "No assignment overrides",
+    "Photo preference is technical and provisional",
+    "No automated crop",
+    "Exact individual file rights to be reviewed"
+  ]
+}
