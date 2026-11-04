@@ -1570,6 +1570,8 @@ function paint(){
   const expandedCustomArticleIds=isSameDay?[...body.querySelectorAll(".aoCalCustomArticle[open][data-cal-custom-id]")].map(el=>el.dataset.calCustomId):[];
   const expandedR18ReviewKeys=isSameDay?[...body.querySelectorAll("[data-cal-r18-eleven-key][open]")].map(el=>el.getAttribute("data-cal-r18-eleven-key")):[];
   const previousMonthToolsOpen=calendarView==="picker"&&body.querySelector(".aoCalV2MonthTools")?.open===true;
+  const previousMonthFiltersOpen=calendarView==="picker"&&body.querySelector(".aoCalCompactFilters")?.open===true;
+  const previousDayFolds=isSameDay?[...body.querySelectorAll(".aoCalV2DayFold")].map(el=>el.open):[];
   const expandedOrdoDates=calendarView==="picker"?[...body.querySelectorAll(".aoCalOrdoEntry[open]")].map(el=>el.dataset.calOrdoDate):[];
   const previousPrintOptions=isSameDay?body.querySelector(".aoCalV2PrintOptions"):null;
   const previousPrintOpen=previousPrintOptions?.open===true;
@@ -1577,6 +1579,12 @@ function paint(){
   const hadDisciplineFocus=Boolean(oldDiscipline?.querySelector("summary")?.contains(globalThis.document?.activeElement));
   const active=globalThis.document?.activeElement,existing=body.querySelector("[data-cal-input]"),editing=active===existing,value=editing?existing.value:null,start=editing?existing.selectionStart:null,end=editing?existing.selectionEnd:null;
   body.innerHTML=bodyMarkup();
+  if(previousMonthFiltersOpen){
+    const filters=body.querySelector(".aoCalCompactFilters");if(filters)filters.open=true;
+  }
+  if(previousDayFolds.length){
+    body.querySelectorAll(".aoCalV2DayFold").forEach((el,i)=>{el.open=previousDayFolds[i]===true});
+  }
   // Remote Commons previews are not bundled offline: fail closed to the cited
   // artwork identity and source rather than leaving a broken-image icon.
   body.querySelectorAll(".aoClassIApprovedHero img").forEach(img=>{
