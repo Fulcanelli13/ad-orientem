@@ -271,19 +271,13 @@ function monthIndexEntries(monthId,view){
 /* Month hybrid: observed major feasts and independent traditional practices
    share the Calendar overview without being represented as the same authority. */
 function monthHybridOverview(monthId,selected){
-  const principal=monthIndexEntries(monthId,"major"),practices=monthIndexEntries(monthId,"practices");
+  const principal=monthIndexEntries(monthId,"major");
   const majorStatus=monthIndexResolutionState(monthId,"major");
-  const seasonalCustoms=calendarCustomSeasonalMonthEntries(monthId,{fr:fr()});
   const majorCards=principal.map((item,i)=>
     `<button type="button" class="aoCalHybridMajor${i<2?" featured":""}" data-cal-month-index-date="${esc(item.date)}" style="--month-accent:${esc(item.accent)}">
       <span class="aoCalHybridDate">${esc(displayDate(item.date))}</span>
       <span class="aoCalHybridTitle">${esc(item.title)}</span>
       <small>${esc([item.rank,item.colour].filter(Boolean).join(" · "))}</small>
-    </button>`).join("");
-  const practiceCards=practices.map(item=>
-    `<button type="button" class="aoCalHybridPractice" data-cal-month-index-date="${esc(item.date)}">
-      <time>${esc(displayDate(item.date))}</time><span><strong>${esc(item.title)}</strong>${item.summary?`<small>${esc(item.summary)}</small>`:""}</span>
-      <span aria-hidden="true">›</span>
     </button>`).join("");
   return `<div class="aoCalHybridOverview" aria-label="${esc(L("Month overview","Aperçu du mois"))}">
     <section class="aoCalHybridSection aoCalHybridMajorSection">
@@ -292,10 +286,8 @@ function monthHybridOverview(monthId,selected){
       <div class="aoCalHybridMajors">${majorCards||`<p class="aoCalHybridEmpty">${esc(majorStatus==="loading"?L("Resolving this month’s celebrations…","Résolution des célébrations du mois…"):L("No resolved principal celebrations.","Aucune célébration principale résolue."))}</p>`}</div>
     </section>
     <section class="aoCalHybridSection aoCalHybridPracticesSection">
-      <div class="aoCalHybridHeading"><h3>${esc(L("Practices & customs","Pratiques et coutumes"))}</h3><button type="button" class="aoCalV2TextLink" data-cal-customs-open>${esc(L("All traditions","Toutes les coutumes"))} →</button></div>
-      ${seasonalCustoms.length?`<div class="aoCalCustomMonthContext"><small>${esc(L("CUSTOMS OF THE SEASON","COUTUMES DE LA SAISON"))}</small>${seasonalCustoms.map(item=>calendarCustomArticle(item.id)).filter(Boolean).map(calendarCustomArticleMarkup).join("")}</div>`:""}
-      <div class="aoCalHybridPractices">${practiceCards||(seasonalCustoms.length?"":`<p class="aoCalHybridEmpty">${esc(L("No featured practices for this month.","Aucune pratique signalée pour ce mois."))}</p>`)}</div>
-      <button type="button" class="aoCalMyCustomsButton" data-cal-my-customs-open>${esc(L("My Customs & Prayers","Mes coutumes et prières"))} →</button>
+      <div class="aoCalHybridHeading"><h3>${esc(L("Customs of the season","Coutumes de la saison"))}</h3>
+        <button type="button" class="aoCalV2TextLink" data-cal-customs-open>${esc(L("Browse customs","Voir les coutumes"))} →</button></div>
     </section>
   </div>`;
 }
@@ -661,6 +653,8 @@ const periodName=p=>fr()?p?.fr:p?.en;
 const celebrationName=x=>fr()?x?.fr:x?.en;
 const longDate=id=>displayDate(id);
 const shortDate=id=>displayDate(id);
+const humanDay=id=>dateOf(id).toLocaleDateString(fr()?"fr-FR":"en-GB",
+  {weekday:"long",day:"numeric",month:"long",year:"numeric"});
 const dayCount=(from,to)=>Math.max(0,Math.round((dateOf(to)-dateOf(from))/86400000));
 const pct=x=>Math.round(Math.max(0,Math.min(1,Number(x||0)))*1000)/10;
 
@@ -676,7 +670,7 @@ function dayNavigator(selected){
   const d=dateOf(selected),loc=fr()?"fr-FR":"en-GB";
   return `<div class="aoCalV2DayNav">
     <button type="button" data-cal-day-shift="-1" aria-label="${esc(L("Previous day","Jour précédent"))}">${assetIcon("ao-ui-previous")}</button>
-    <div><small>${esc(d.toLocaleDateString(loc,{weekday:"long"}))}</small><strong>${esc(displayDate(selected))}</strong></div>
+    <div><strong>${esc(humanDay(selected))}</strong></div>
     <button type="button" data-cal-day-shift="1" aria-label="${esc(L("Next day","Jour suivant"))}">${assetIcon("ao-ui-next")}</button>
   </div>`;
 }
@@ -936,35 +930,38 @@ function daySurface(selected,r){
   return `
     ${dayNavigator(selected)}
     <section class="aoCalV2Hero" style="--ao-cal-liturgical:${esc(liturgicalAccent(r))}">
-      <small class="aoCalV2Eyebrow">${esc(L("CALENDARIUM ROMANUM · 1962","CALENDARIUM ROMANUM · 1962"))}</small>
       <h2>${esc(titleOf(r))}</h2>
-      ${approvedClassIHeroMarkup(selected, r?.day?.main?.id, fr())}
-      <div class="aoCalIdentityMeta">${rankOf(r)?`<span>${esc(rankOf(r))}</span>`:""}${colourOf(r)?`<span>${esc(colourOf(r))}</span>`:""}${profileOf(r)?`<span>${esc(profileOf(r))}</span>`:""}</div>
-      ${dayMassOrdoMarkup(r)}
-      ${cm.length?`<section class="aoCalV2Commemorations" aria-label="${esc(L("Observed 1962 Mass commemorations","Commémorations à la messe de 1962"))}"><small>${esc(L("1962 MASS · ALSO COMMEMORATED","MESSE DE 1962 · COMMÉMORATIONS"))}</small><h3>${esc(L("Commemorations","Commémorations"))}</h3>${cm.map(x=>`<p><i aria-hidden="true"></i><span>${esc(x)}</span></p>`).join("")}</section>`:""}
+      ${approvedClassIHeroMarkup(selected,r?.day?.main?.id,fr())}
+      <div class="aoCalIdentityMeta">${rankOf(r)?`<span>${esc(rankOf(r))}</span>`:""}${colourOf(r)?`<span>${esc(colourOf(r))}</span>`:""}</div>
+      ${cm.length?`<p class="aoCalCommemorationLine"><strong>${esc(L("Commemoration","Commémoraison"))}:</strong> ${esc(cm.join("; "))}</p>`:""}
+      ${properReady?`<button class="aoCalV2Primary aoCalDayMassAction" type="button" data-cal-mass>${esc(isGoodFridayLiturgy(r)?L("Open the Good Friday liturgy","Ouvrir la liturgie du Vendredi saint"):L("Open this Mass","Ouvrir cette messe"))} <span aria-hidden="true">→</span></button>`:""}
       ${calendarScriptureControls(selected,r)}
-      ${properReady?`<button class="aoCalV2Primary" type="button" data-cal-mass>${esc(isGoodFridayLiturgy(r)?L("Open the Good Friday liturgy","Ouvrir la liturgie du Vendredi saint"):L("Open this Mass","Ouvrir cette messe"))} <span aria-hidden="true">→</span></button>`:""}
-      <div class="aoCalV2Documentation">
-        ${sourceStatus(r)}
-        ${daySourceDetails(r)}
-        ${printReady?`<details class="aoCalV2PrintOptions"><summary>${esc(L("Print the Mass Propers","Imprimer les propres de la messe"))}</summary><button type="button" class="aoCalV2TextLink" data-cal-print-proper>${esc(L("Print bilingual Mass Propers","Imprimer les propres bilingues"))}</button><p data-cal-print-feedback role="status" aria-live="polite"></p></details>`:""}
-      </div>
     </section>
-    ${saint?`<section class="aoCalV2Saint" style="--saint-accent:${esc(liturgicalAccent(r))}"><div><small>${esc(saint.label.toUpperCase())}</small></div><button type="button" data-cal-saint-date="${selected}">${esc(L("Life & sources","Vie & sources"))} <span aria-hidden="true">→</span></button></section>`:""}
-    ${supplementaryDayMarkup(selected,r)}
-    <section class="aoCalV2Context">
-      <div class="aoCalV2SectionTitle"><div><small>${esc(L("LITURGICAL TIME","TEMPS LITURGIQUE"))}</small><h3>${esc(season)}</h3></div></div>
-      ${next?`<button class="aoCalV2NextMajor" type="button" data-cal-date="${next.date}"><small>${esc(L("NEXT MAJOR CELEBRATION","PROCHAINE GRANDE CÉLÉBRATION"))}</small><strong>${esc(celebrationName(next))}</strong><span>${esc(longDate(next.date))} · ${dayCount(selected,next.date)} ${esc(L("days","jours"))}</span></button>`:nextMajorStatusMarkup(selected,"day")}
-      <button class="aoCalV2TextLink" type="button" data-cal-view="year">${esc(L("View the liturgical year","Voir l’année liturgique"))} →</button>
-    </section>
-    ${practiceContext(selected,r)}
-    ${calendarPersonalContext(selected)}
-    ${calendarCustomCatalogueMarkup()}
-    <section class="aoCalV2WeekSection">
-      <div class="aoCalV2SectionTitle"><div><small>${esc(L("IN CONTEXT","EN CONTEXTE"))}</small><h3>${esc(L("This week","Cette semaine"))}</h3></div></div>
-      ${compactWeek(selected)}
-      <div class="aoCalV2WeekShift"><button data-cal-shift="-7">${assetIcon("ao-ui-previous")} ${esc(L("Previous week","Semaine précédente"))}</button><button data-cal-shift="7">${esc(L("Next week","Semaine suivante"))} ${assetIcon("ao-ui-next")}</button></div>
-    </section>
+    <details class="aoCalV2DayFold"><summary>${esc(L("Saint, Mass details & sources","Saint, détails de la messe et sources"))}</summary>
+      ${saint?`<section class="aoCalV2Saint" style="--saint-accent:${esc(liturgicalAccent(r))}"><div><small>${esc(saint.label.toUpperCase())}</small></div><button type="button" data-cal-saint-date="${selected}">${esc(L("Life & sources","Vie & sources"))} <span aria-hidden="true">→</span></button></section>`:""}
+      ${sourceStatus(r)}
+      ${dayMassOrdoMarkup(r)}
+      ${daySourceDetails(r)}
+      ${printReady?`<details class="aoCalV2PrintOptions"><summary>${esc(L("Print the Mass Propers","Imprimer les propres de la messe"))}</summary><button type="button" class="aoCalV2TextLink" data-cal-print-proper>${esc(L("Print bilingual Mass Propers","Imprimer les propres bilingues"))}</button><p data-cal-print-feedback role="status" aria-live="polite"></p></details>`:""}
+    </details>
+    <details class="aoCalV2DayFold"><summary>${esc(L("Liturgical time","Temps liturgique"))} · ${esc(season)}</summary>
+      <section class="aoCalV2Context">
+        ${next?`<button class="aoCalV2NextMajor" type="button" data-cal-date="${next.date}"><small>${esc(L("NEXT MAJOR CELEBRATION","PROCHAINE GRANDE CÉLÉBRATION"))}</small><strong>${esc(celebrationName(next))}</strong><span>${esc(longDate(next.date))} · ${dayCount(selected,next.date)} ${esc(L("days","jours"))}</span></button>`:nextMajorStatusMarkup(selected,"day")}
+        <button class="aoCalV2TextLink" type="button" data-cal-view="year">${esc(L("View the liturgical year","Voir l’année liturgique"))} →</button>
+      </section>
+    </details>
+    <details class="aoCalV2DayFold"><summary>${esc(L("Customs of this day & season","Coutumes du jour et de la saison"))}</summary>
+      ${supplementaryDayMarkup(selected,r)}
+      ${practiceContext(selected,r)}
+      ${calendarPersonalContext(selected)}
+      ${calendarCustomCatalogueMarkup()}
+    </details>
+    <details class="aoCalV2DayFold"><summary>${esc(L("This week","Cette semaine"))}</summary>
+      <section class="aoCalV2WeekSection">
+        ${compactWeek(selected)}
+        <div class="aoCalV2WeekShift"><button data-cal-shift="-7">${assetIcon("ao-ui-previous")} ${esc(L("Previous week","Semaine précédente"))}</button><button data-cal-shift="7">${esc(L("Next week","Semaine suivante"))} ${assetIcon("ao-ui-next")}</button></div>
+      </section>
+    </details>
   `;
 }
 function requestYearDailyColours(year){
@@ -1143,8 +1140,7 @@ function monthLayoutTabs(){
     `<button type="button" data-cal-month-layout="${id}" aria-pressed="${calendarMonthLayout===id?"true":"false"}" class="${calendarMonthLayout===id?"active":""}">${esc(label)}</button>`).join("")}</nav>`;
 }
 function monthPresentationMarkup(calendarGrid,monthId,selected){
-  return `${monthLayoutTabs()}
-    <div data-cal-month-presentation="grid" ${calendarMonthLayout==="grid"?"":"hidden"}>${calendarGrid}</div>
+  return `<div data-cal-month-presentation="grid" ${calendarMonthLayout==="grid"?"":"hidden"}>${calendarGrid}</div>
     <div data-cal-month-presentation="ordo" ${calendarMonthLayout==="ordo"?"":"hidden"}>${monthOrdoList(monthId)}</div>
     ${monthHybridOverview(monthId,selected)}`;
 }
@@ -1154,16 +1150,20 @@ function pickerSurface(selected){
   const status=monthStatus.get(pickerMonthId),ready=monthVerified(pickerMonthId),attempted=monthReady(pickerMonthId),done=status?.done??days.filter(x=>weekCache.has(x)).length,errors=days.filter(x=>weekCache.has(x)&&(!weekCache.get(x)?.day||weekCache.get(x)?.status==="failed")).length,exportReady=Boolean(exportableMonthRows(pickerMonthId));
   const retryable=days.filter(id=>weekCache.has(id)&&(!weekCache.get(id)?.day||weekCache.get(id)?.status==="failed")).length;
   const practiceDates=new Set(calendarPracticeMonthEntries(pickerMonthId,{fr:fr()}).map(x=>x.date));
+  // The 42-day resolver/cache remains intact; only trailing surplus cells are
+  // visually hidden, never mistaken for omitted or unresolved liturgical days.
+  const visibleCount=Math.ceil((first.getDay()+new Date(yy,mm,0,12).getDate())/7)*7;
   const calendarGrid=`<div class="aoCalV2Weekdays">${Array.from({length:7},(_,i)=>{const d=new Date(2026,7,2+i,12);return `<span>${esc(d.toLocaleDateString(loc,{weekday:"short"}))}</span>`}).join("")}</div>
-    <div class="aoCalV2MonthGrid" data-cal-month-filter="${calendarMonthView}" data-month-ready="${ready?"true":"false"}">${days.map(id=>{
+    <div class="aoCalV2MonthGrid" data-cal-month-filter="${calendarMonthView}" data-month-ready="${ready?"true":"false"}">${days.map((id,index)=>{
       const d=dateOf(id),outside=d.getMonth()!==mm-1,data=monthCellData(id),hasPractice=practiceDates.has(id);
-      return `<button type="button" data-cal-pick-date="${id}" data-ready="${data.ready?"1":"0"}" data-rank-tier="${data.tier}" data-cycle="${esc(data.cycle)}" data-preview="${data.preview?"1":"0"}" class="${outside?"outside":""} ${id===selected?"selected":""} ${id===today?"today":""} ${data.sunday?"sunday":""} ${data.projected?"projected":""} ${data.tier>0&&data.tier<=2?"major":""} ${hasPractice?"hasPractice":""}" style="--month-accent:${esc(data.accent)}" aria-label="${esc(data.aria+(hasPractice?" · "+L("Traditional practice","Pratique traditionnelle"):""))}"><span class="aoCalMonthTop"><b>${d.getDate()}</b><span class="aoCalMonthIndicators"><i data-cal-liturgical-marker aria-hidden="true"></i>${hasPractice?'<span class="aoCalMonthPracticeMark" aria-hidden="true"></span>':""}</span></span><span class="aoCalMonthName">${esc(data.name)}</span>${data.commemorationCount?`<span class="aoCalMonthCommemorations" aria-hidden="true">+${data.commemorationCount}</span>`:""}</button>`;
+      return `<button type="button" data-cal-pick-date="${id}" ${index>=visibleCount?"hidden data-cal-outside-row=\"true\"":""} data-ready="${data.ready?"1":"0"}" data-rank-tier="${data.tier}" data-cycle="${esc(data.cycle)}" data-preview="${data.preview?"1":"0"}" class="${outside?"outside":""} ${id===selected?"selected":""} ${id===today?"today":""} ${data.sunday?"sunday":""} ${data.projected?"projected":""} ${data.tier>0&&data.tier<=2?"major":""} ${hasPractice?"hasPractice":""}" style="--month-accent:${esc(data.accent)}" aria-label="${esc(data.aria+(hasPractice?" · "+L("Traditional practice","Pratique traditionnelle"):""))}"><span class="aoCalMonthTop"><b>${d.getDate()}</b><span class="aoCalMonthIndicators"><i data-cal-liturgical-marker aria-hidden="true"></i>${hasPractice?'<span class="aoCalMonthPracticeMark" aria-hidden="true"></span>':""}</span></span><span class="aoCalMonthName">${esc(data.name)}</span>${data.commemorationCount?`<span class="aoCalMonthCommemorations" aria-hidden="true">+${data.commemorationCount}</span>`:""}</button>`;
     }).join("")}</div>`;
   const projection=monthPresentationMarkup(calendarGrid,pickerMonthId,selected);
   return `<section class="aoCalV2Picker">
     <div class="aoCalV2YearHeading"><h2>${esc(first.toLocaleDateString(loc,{month:"long",year:"numeric"}))}</h2></div>
     <div class="aoCalV2MonthNav"><button type="button" data-cal-month-shift="-1" aria-label="${esc(L("Previous month","Mois précédent"))}">${assetIcon("ao-ui-previous")}<span class="aoCalMonthNavLong">${esc(L("Previous month","Mois précédent"))}</span><span class="aoCalMonthNavShort">${esc(L("Previous","Précédent"))}</span></button><button type="button" data-cal-month-shift="1" aria-label="${esc(L("Next month","Mois suivant"))}"><span class="aoCalMonthNavLong">${esc(L("Next month","Mois suivant"))}</span><span class="aoCalMonthNavShort">${esc(L("Next","Suivant"))}</span>${assetIcon("ao-ui-next")}</button></div>
-    ${monthIndexTabs()}
+    <details class="aoCalCompactFilters"><summary>${esc(L("Filter · view","Filtres · vue"))}</summary>
+      ${monthIndexTabs()}${monthLayoutTabs()}</details>
     <div class="aoCalV2MonthMeta"><span data-cal-month-status aria-live="polite">${esc(ready?"":attempted?L("Some dates unavailable","Certaines dates indisponibles"):L("Loading dates…","Chargement des dates…"))}</span></div>
     ${retryable?`<button type="button" class="aoCalV2Retry" data-cal-month-retry>${esc(L(`Retry ${retryable} unavailable day(s)`,`Réessayer pour ${retryable} jour(s) indisponible(s)`))}</button>`:""}
     ${projection}
@@ -1185,7 +1185,22 @@ function bodyMarkup(){
   return `${tabsMarkup()}${daySurface(selected,r)}`;
 }
 function calendarAuditCss(){
- return `.aoCalDaySources{margin:12px 0 6px;color:#b4b2ae;font:400 14px/1.55 var(--ao-font-ui,system-ui,sans-serif)}.aoCalDaySources summary{display:flex;align-items:center;min-height:44px;cursor:pointer;color:#dfd5c6;text-decoration:underline;text-decoration-color:rgba(225,210,180,.35);text-underline-offset:3px}.aoCalDaySources[open]{padding:4px 0 12px}.aoCalDaySources p{margin:9px 0}.aoCalDaySources a{display:block;color:#d9d0bb;text-decoration:underline;min-height:44px;padding:8px 0;overflow-wrap:anywhere}.aoCalSourceWitness code{white-space:normal;overflow-wrap:anywhere}.aoCalExactRubrics{margin:12px 0 8px;padding:12px 14px;border:1px solid var(--ao-rule,rgba(226,214,190,.18));border-radius:10px;background:var(--ao-surface-1,rgba(16,24,33,.75))}.aoCalExactRubrics h3{margin:0 0 8px;font:600 14px/1.35 var(--ao-font-ui,system-ui,sans-serif)}.aoCalExactRubrics ul{margin:0;padding-left:18px}.aoCalExactRubrics li{margin-bottom:8px}.aoCalExactRubrics li p{margin:0 0 5px}.aoCalExactRubrics>p{font-size:12px;line-height:1.5}.aoCalV2Retry{margin:8px 0 14px}.aoCalDaySources summary:focus-visible,.aoCalDaySources a:focus-visible,[data-cal-month-retry]:focus-visible,[data-cal-day-retry]:focus-visible,[data-cal-next-major-retry]:focus-visible{outline:2px solid #decaa0;outline-offset:3px}`;
+ return `/* Blueprint 4 Nov: keep the canonical 42-day cache while compressing the phone month. */
+#ao-calendar-modular-root .aoCalV2MonthGrid [data-cal-outside-row][hidden]{display:none!important}
+#ao-calendar-modular-root .aoCalV2Picker .aoCalMonthName{display:none!important}
+#ao-calendar-modular-root .aoCalV2Picker [data-cal-pick-date]{min-height:48px!important;padding:6px 4px!important}
+#ao-calendar-modular-root .aoCalCompactFilters{margin:5px 0 9px;border-top:1px solid rgba(220,204,180,.2);border-bottom:1px solid rgba(220,204,180,.2)}
+#ao-calendar-modular-root .aoCalCompactFilters>summary{cursor:pointer;min-height:44px;display:flex;align-items:center;padding:9px 5px;color:inherit;font-size:14px}
+#ao-calendar-modular-root .aoCalCompactFilters>.aoCalMonthTabs{margin:8px 0!important}
+#ao-calendar-modular-root .aoCalV2Picker [data-cal-month-status]{position:absolute!important;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+#ao-calendar-modular-root .aoCalV2DayFold{margin:10px 0;border-top:1px solid rgba(220,204,180,.2)}
+#ao-calendar-modular-root .aoCalV2DayFold>summary{cursor:pointer;min-height:52px;display:flex;align-items:center;padding:11px 8px;font-size:16px;color:inherit}
+#ao-calendar-modular-root .aoCalV2DayFold>summary:focus-visible,
+#ao-calendar-modular-root .aoCalCompactFilters>summary:focus-visible{outline:2px solid #decaa0;outline-offset:3px}
+#ao-calendar-modular-root .aoCalV2DayFold[open]{padding-bottom:15px}
+#ao-calendar-modular-root .aoCalCommemorationLine{font-size:14px;line-height:1.45}
+#ao-calendar-modular-root .aoCalDayMassAction{position:sticky;bottom:calc(8px + env(safe-area-inset-bottom));z-index:4;min-height:50px}
+.aoCalDaySources{margin:12px 0 6px;color:#b4b2ae;font:400 14px/1.55 var(--ao-font-ui,system-ui,sans-serif)}.aoCalDaySources summary{display:flex;align-items:center;min-height:44px;cursor:pointer;color:#dfd5c6;text-decoration:underline;text-decoration-color:rgba(225,210,180,.35);text-underline-offset:3px}.aoCalDaySources[open]{padding:4px 0 12px}.aoCalDaySources p{margin:9px 0}.aoCalDaySources a{display:block;color:#d9d0bb;text-decoration:underline;min-height:44px;padding:8px 0;overflow-wrap:anywhere}.aoCalSourceWitness code{white-space:normal;overflow-wrap:anywhere}.aoCalExactRubrics{margin:12px 0 8px;padding:12px 14px;border:1px solid var(--ao-rule,rgba(226,214,190,.18));border-radius:10px;background:var(--ao-surface-1,rgba(16,24,33,.75))}.aoCalExactRubrics h3{margin:0 0 8px;font:600 14px/1.35 var(--ao-font-ui,system-ui,sans-serif)}.aoCalExactRubrics ul{margin:0;padding-left:18px}.aoCalExactRubrics li{margin-bottom:8px}.aoCalExactRubrics li p{margin:0 0 5px}.aoCalExactRubrics>p{font-size:12px;line-height:1.5}.aoCalV2Retry{margin:8px 0 14px}.aoCalDaySources summary:focus-visible,.aoCalDaySources a:focus-visible,[data-cal-month-retry]:focus-visible,[data-cal-day-retry]:focus-visible,[data-cal-next-major-retry]:focus-visible{outline:2px solid #decaa0;outline-offset:3px}`;
 }
 function hybridMonthCss(){return `
 /* Approved hybrid month composition: no changes to Year wheel. */
