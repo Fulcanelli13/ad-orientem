@@ -1,0 +1,23 @@
+{
+  "schema": "AO_SACRED_ATLAS_MARIA_LUGGAU_SOURCE_HOLD_V1",
+  "date": "2026-11-04",
+  "status": "ORIGINAL_BINARY_HTTP_429_HOLD",
+  "place_id": "place:AT:wallfahrtsbasilika-maria-schnee-luggau",
+  "original_selected_title": "File:Lesachtal Maria Luggau Servitenkloster NW-Ansicht 16072014 804.jpg",
+  "expected_original_sha1": "ca025cb7c0d5815ccb25b5f5570e8a57331103d7",
+  "last_metadata_status": "COMMONS_EXACT_FILE_METADATA_PASSED_AND_ORIGINAL_REQUEST_ATTEMPTED",
+  "verified_source_description_rev_id": 1190961558,
+  "original_http_request_status": 429,
+  "source_bytes_verified": false,
+  "source_binary_acquired": false,
+  "cover_publication_authorized": false,
+  "selected_photo_decision_retained": true,
+  "no_alternate_selected": true,
+  "copyright": "CC BY-SA 3.0 Austria; photographer Johann Jaritz; source license and portrait site identity require current complete verification before publication",
+  "failed_workflow_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/41881856162",
+  "failure_step": "Verify exact Commons original source and stage selected cover on PR branch only",
+  "failed_stage": "Wikimedia original image returned HTTP 429; not a failing hash or invalid licence. Subsequent release steps did not run.",
+  "security_gate": "Repository production-tree-hygiene requires ordinary PR workflows to have read-only contents permission and forbids git push; previous release workflow violated both.",
+  "next_valid_action": "Do not automatically retry through alternate endpoints or requests while throttled. Obtain exact original via authorised, source-respectful access after rate limit clears; verify bytes SHA1, licence, original revision and place identity; produce derivative and source evidence in a separately reviewed release change.",
+  "publication_status": "UNPUBLISHED_379_530_BASELINE"
+}
