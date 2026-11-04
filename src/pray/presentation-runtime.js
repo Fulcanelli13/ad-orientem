@@ -3979,8 +3979,16 @@ function onClick(e){
  }
  const b=e.target.closest?.('button,[data-p435930-flip],[data-p435930-essential-card-turn],[data-p435930-essential-flow-toggle]');if(!b)return;
  if(PRAYER_PILOT_ENABLED&&view==='home'&&b.hasAttribute('data-ao-pray-pilot-tile')){
-  // Second activation falls through to the existing family/direct-route owner.
+  // The first activation previews a category. The second must navigate
+  // deterministically before other generic prayer-button handlers can claim it.
   if(revealPrayerMosaicTile(b)){e.preventDefault();return;}
+  if(b.dataset.p435930Family){
+   const id=b.dataset.p435930Family;
+   const entry=resolvedPrayerPilotFamilies(L,prayFamilies())[id];
+   if(!entry||entry.direct)return;
+   familyId=id;view='family';navStack=[];render();return;
+  }
+  // Direct-owned doors (Essential Prayers) retain the canonical owner below.
  }
  if(PRAYER_PILOT_ENABLED&&view==='family'&&b.hasAttribute('data-p435930-door-filter')){
   const root=b.closest('[data-ao-prayer-shelf]'),selected=b.dataset.p435930DoorFilter;
