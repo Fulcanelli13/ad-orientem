@@ -77,6 +77,16 @@ try{
  assert.equal(visual.printCollapsed,true);
  await page.locator("#ao-calendar-modular-root [data-cal-close]").tap();
  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1.getActive()==="home",null,{timeout:15000});
+ // Cancellation while the first-use ESM import is pending must not resurrect
+ // a closed Bible overlay or steal Home focus on a later microtask.
+ const cancelled=await page.evaluate(()=>{
+   const opened=globalThis.AO_SCRIPTURE_CONTEXT_V1.open("Luke 18:9",{language:"en"});
+   const closed=globalThis.AO_SCRIPTURE_APP_V1.close();
+   return {opened,closed,open:globalThis.AO_SCRIPTURE_APP_V1.status().open,
+     hidden:document.querySelector("#ao-scripture-overlay")?.hidden};
+ });
+ assert.deepEqual(cancelled,{opened:true,closed:true,open:false,hidden:true},
+   "Pending Bible reader import was not cancellable");
  assert.equal(await page.evaluate(()=>
    globalThis.AO_SCRIPTURE_CONTEXT_V1.open("Luke 18:9",{language:"en"})),true);
  const scripture=page.locator("#ao-scripture-overlay");
