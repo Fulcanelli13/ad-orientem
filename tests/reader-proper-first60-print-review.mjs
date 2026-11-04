@@ -24,6 +24,21 @@ assert.deepEqual(Object.fromEntries(["in","of","co"].map(p=>[p,
  output.candidates.filter(x=>x.part===p).length])),{in:20,of:20,co:20});
 assert.equal(output.publication.publicScores,0);
 assert.equal(output.publication.autoPromotion,false);
+// Editorially locked initial 60 may not silently churn after the 6 March
+// Perpetua/Felicity Reader repair makes that day's additional GABC leads
+// available. They remain in the full annual worklist, never automatically
+// displace an existing first60 candidate or receive an approval.
+const postLock=output.postLockNewlyReadySourceLeads??[];
+assert.ok(postLock.length>=1&&postLock.every(x=>
+ x.date==="2026-03-06"&&x.sourcePath==="Tempora/Quad2-5"&&
+ x.principalId==="tempora:Quad2-5:3:v"&&
+ x.publication==="LATER_EDITORIAL_WORKLIST_NOT_PUBLIC"));
+assert.ok(postLock.some(x=>x.scoreId==="GREGOBASE-993"&&x.part==="of"),
+ "The newly authenticated March 6 Offertory lead must remain discoverable");
+assert.ok(output.candidates.some(x=>x.scoreId==="GREGOBASE-812"&&x.part==="of"),
+ "Original first60 locked Offertory review item disappeared");
+assert.ok(!output.candidates.some(x=>x.scoreId==="GREGOBASE-993"&&x.part==="of"),
+ "New date silently replaced the locked musical shortlist");
 assert.ok(output.candidates.every(c=>
  c.publication==="EDITORIAL_HOLD_NOT_PUBLIC"&&
  !c.approvedForMassReader&&!c.approvedForLocalScholaPerformance&&
