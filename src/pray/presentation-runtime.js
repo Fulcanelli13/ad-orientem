@@ -1,6 +1,7 @@
 import "./confession-path-styles.js";
 import {renderConfessionContinuousExamination} from "./confession-continuous-examination.js";
 import "./prayer-door-mosaic-execution-styles.js";
+import "./prayer-category-prototype-styles.js";
 import "./stations-direct-access-styles.js";
 import "./five-wounds-chaplet-styles.js";
 import "./little-crown-styles-b30.js";
@@ -983,7 +984,7 @@ function prayerDoorFacet(route){
   :/angelus/.test(id)?'angelus':/novena|friday|saturday/.test(id)?'novena'
   :/confession|penitential/.test(id)?'penance':'prayer';
 }
-function prayDoorShelfEntry(item,featured=false,familyAssetId=''){
+function prayDoorShelfEntry(item,featured=false,familyAssetId='',index=0){
  const [owner,route,title,description]=item;
  const source=owner==='prayer'?DATA.prayers?.[route]:null;
  if(owner==='prayer'&&!source)return '';
@@ -1001,10 +1002,12 @@ function prayDoorShelfEntry(item,featured=false,familyAssetId=''){
  const artBody=image||'<span class="aoPrayMosaicCardFallback" aria-hidden="true">'+fallbackIcon+'</span>';
  return '<button type="button" class="aoPrayDoorMosaicCard'+(featured?' aoPrayMosaicCardFeatured':'')+
   '" data-ao-pray-door-entry data-ao-pray-door-facet="'+esc(facet)+'" '+attr+'>'+
+  '<span class="aoPrayDoorRowNumber" aria-hidden="true">'+String(index+1).padStart(2,'0')+'</span>'+ 
   '<span class="aoPrayMosaicCardArt" data-ao-art-binding="'+(image?'released':'editorial-pending')+
   '" data-ao-editorial-state="'+esc(editorial.state)+'">'+artBody+'</span>'+
   '<span class="aoPrayMosaicCardCopy"><b>'+esc(title)+'</b><small>'+esc(description||'')+'</small>'+
-  (languageTags?'<span class="aoPrayDoorLanguages">'+languageTags+'</span>':'')+'</span></button>';
+  (languageTags?'<span class="aoPrayDoorLanguages">'+languageTags+'</span>':'')+'</span>'+
+  '<span class="aoPrayDoorRowArrow" aria-hidden="true">›</span></button>';
 }
 function renderPrayFamily(){
  const family=PRAYER_PILOT_ENABLED?resolvedPrayerPilotFamilies(L,prayFamilies())[familyId]:prayFamilies()[familyId];
@@ -1028,7 +1031,7 @@ function renderPrayFamily(){
   <section class="aoPrayDoorArtwork aoPrayDoorArtwork-${esc(familyId)} aoPrayDoorCover" data-ao-art-binding="${releasedDoorPhoto?"released":"editorial-pending"}" data-ao-art-slot-id="${esc(artSlot?.slotId||"")}">${releasedDoorPhoto||'<span class="aoPrayDoorCoverFallback" aria-hidden="true">'+assetIcon(family.assetId,'aoPrayDoorCoverIcon',{preferEmbedded:true})+'</span>'}</section>
   <header class="aoPrayDoorHeading"><h2>${esc(family.title)}</h2><p>${esc(family.description)}</p></header>
   ${filters}
-  <nav class="aoPrayDoorShelfList aoPrayDoorMosaic" aria-label="${esc(family.title)}">${visible.map((item,i)=>prayDoorShelfEntry(item,i===0,family.assetId)).join('')}</nav>
+  <nav class="aoPrayDoorShelfList aoPrayDoorMosaic" aria-label="${esc(family.title)}">${visible.map((item,i)=>prayDoorShelfEntry(item,i===0,family.assetId,i)).join('')}</nav>
   ${({eucharistic:'G301',intentions:'G036',ourlord:'G419'})[familyId]?'<aside class="aoPrayDoorContext">'+glossaryContextCapsule(({eucharistic:'G301',intentions:'G036',ourlord:'G419'})[familyId],{french:isFr()})+'</aside>':''}
  </main>`;
 }
