@@ -82,7 +82,19 @@ try{
      path:x.path,prayerSourcePath:x.prayerSourcePath,rank:x.rank})),
     sectionWitnesses:sectionsByOwner,
     readerEN:flat(properToReaderSlots(rp,{language:"en"})),
-    readerFR:flat(properToReaderSlots(rp,{language:"fr"}))});
+    readerFR:flat(properToReaderSlots(rp,{language:"fr"})),
+    recoveredNativityProof:rp?.verifiedNativityOctaveCommemoration??null,
+    sourceCorrections:(rp?.sourceEditorialCorrections??[]).filter(x=>
+     x.id==="1962_CHRISTMAS_OCTAVE_PRIVILEGED_ORATION")
+     .map(x=>({id:x.id,sourceSection:x.sourceSection,originalAlternativeStephenOratio1Excluded:x.originalAlternativeStephenOratio1Excluded})),
+    recoveredOrations:Object.fromEntries(["collects","secrets","postcommunions"].map(k=>[
+     k,(rp?.[k]??[]).map(v=>({
+       latin:String(v.lat??v.la??"").slice(0,105),
+       english:String(v.en??"").slice(0,105),
+       french:String(v.fr??"").slice(0,105),
+       sourcePath:v.sourcePath??null
+     }))
+    ]))});
   }
   return {schema:"ao-1962-three-commemoration-original-section-audit-v1",
     authority:"PINNED_ORIGINAL_HOST_RESOLVER_SECTION_WITNESSES",
@@ -102,8 +114,34 @@ for(const [date,path,placeholder] of cases){
  assert.equal(d.inheritedOwners[0].prayerSourcePath,placeholder);
  assert.ok(["Sancti/12-26","Sancti/12-28"].includes(path)?
   d.principalRank===2:d.principalRank===3);
- assert.equal(d.readerEN.ready,false);
- assert.equal(d.readerFR.ready,false);
+ if(date==="2026-03-27"){
+  // The source Gregorian calendar only declares Seven Sorrows, while the
+  // 1962 universal Ordo independently admits John Damascene as a second
+  // ordinary commemoration in the Low Mass. Not ready until both are
+  // formally source-owned and joined under one conclusion.
+  assert.equal(d.readerEN.ready,false);
+  assert.equal(d.readerFR.ready,false);
+  assert.equal(d.recoveredNativityProof,null);
+ }else{
+  for(const lang of ["readerEN","readerFR"]){
+   assert.equal(d[lang].ready,true,date+":"+lang+" Christmas octave unresolved");
+   assert.deepEqual(d[lang].orationCounts,
+    {collects:2,secrets:2,postcommunions:2});
+  }
+  assert.equal(d.recoveredNativityProof?.status,"SOURCE_VERIFIED");
+  assert.equal(d.recoveredNativityProof?.privilege,"RG_108_AND_109_C");
+  assert.deepEqual(d.sourceCorrections.map(x=>x.sourceSection).sort(),
+   ["Commemoratio Oratio","Commemoratio Postcommunio","Commemoratio Secreta"].sort());
+  for(const k of ["collects","secrets","postcommunions"]){
+   assert.equal(d.recoveredOrations[k][1]?.sourcePath,"Sancti/12-25m3");
+  }
+  if(date==="2026-12-26"){
+   assert.equal(d.recoveredNativityProof?.originalAlternativeStephenOratio1Excluded,true,
+    "St Stephen alternate Oratio1 incorrectly counted as Christmas Octave");
+   assert.match(d.recoveredOrations.collects[1].latin,/^Concéde/u);
+   assert.doesNotMatch(d.recoveredOrations.collects[1].latin,/primítias Mártyrum/u);
+  }
+ }
  // The Holy Innocents' original Latin Mass has a same-section
  // commemoration inheritance through St Stephen; the English/French direct
  // 12-28 files omit those keys. Do not invent them. Require three-language
@@ -119,4 +157,4 @@ for(const [date,path,placeholder] of cases){
  }
 }
 assert.equal(report.publication.scoreApprovals,0);
-console.log("PASS pinned three-date original embedded commemorations located; 3-language witnesses; all 3 reader holds retained, no publication");
+console.log("PASS 1962 source-owned Christmas octave ready on 26/28 Dec in both languages, Passion Friday double commemoration still held; zero new score approval");
