@@ -35,7 +35,9 @@
     "multi_candidate_first_looks": 6,
     "no_new_photographs_downloaded": 0,
     "approved_by_this_triage": 0,
-    "published_by_this_triage": 0
+    "published_by_this_triage": 0,
+    "independent_single_candidate_source_pages_rechecked": 9,
+    "single_candidate_source_pages_not_rechecked": 4
   },
   "policy": [
     "Previously verified original SHA1/source bytes support provenance but do not establish editorial choice, full quality, underlying third-party architectural/sculpture rights or crop suitability.",
@@ -44,7 +46,8 @@
     "No recommendation is made for the Haemi main church or Montevideo grotto because files may show a broader sanctuary rather than the specific named feature.",
     "Pukekaraka tree/presbytery and La Tirana statue remain gallery/context/rights holds. Do not promote either to a canonical site cover.",
     "Do not substitute for user's prior selected exact Photo Finder rank-one files; these 23 Places were previously unreviewed, not among the 34 user-selected holds.",
-    "No direct external image download, no scheduled Commons retries, no deployment, no approval registry or production asset modifications."
+    "No direct external image download, no scheduled Commons retries, no deployment, no approval registry or production asset modifications.",
+    "Nine of the thirteen singleton source pages were independently reviewed without original-file downloading; source captions are evidence of subject and licence claims, not final image aesthetics, underlying rights or publication authorization."
   ],
   "existing_review_tool": "data/geography/research/sacred-atlas-round25-23place-64-original-editorial-review-20261104.html",
   "next_review_batch": "BULK_21_COVER_DECISIONS_AND_TWO_CONTEXT_HOLDS_NO_SOURCE_DISCOVERY",
@@ -88,7 +91,16 @@
           "rights_cleared_for_publication": false,
           "selection_made_by_owner": false
         }
-      ]
+      ],
+      "independent_source_page_qa": {
+        "checked_on": "2026-11-04",
+        "status": "EXACT_CHURCH_AND_PHOTO_AUTHOR_LICENSE_ON_COMMONS",
+        "note": "Photo description explicitly says Shrine of Our Lady of Mercy Church at Penrose Park; Codefisher, CC BY-SA 4.0",
+        "scene_implication": "Church exterior and identity are explicit in source caption",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Shrine_of_Our_Lady_of_Mercy_Church.jpg",
+        "original_bytes_redownloaded": false,
+        "approval_from_page_review": false
+      }
     },
     {
       "place_id": "place:BE:banneux",
@@ -129,7 +141,16 @@
           "rights_cleared_for_publication": false,
           "selection_made_by_owner": false
         }
-      ]
+      ],
+      "independent_source_page_qa": {
+        "checked_on": "2026-11-04",
+        "status": "EXACT_SANCTUARY_PHOTO_AUTHOR_LICENSE_ON_COMMONS",
+        "note": "French caption vue du sanctuaire Notre-Dame de Banneux; Jean Housen, CC BY-SA 3.0",
+        "scene_implication": "Site view; confirm the intended sacred building in the photo",
+        "source_page": "https://commons.wikimedia.org/wiki/File:20140202_banneux07.JPG",
+        "original_bytes_redownloaded": false,
+        "approval_from_page_review": false
+      }
     },
     {
       "place_id": "place:BR:fortaleza-fatima-sanctuary",
@@ -170,7 +191,16 @@
           "rights_cleared_for_publication": false,
           "selection_made_by_owner": false
         }
-      ]
+      ],
+      "independent_source_page_qa": {
+        "checked_on": "2026-11-04",
+        "status": "EXACT_CATHOLIC_CHURCH_ON_COMMONS",
+        "note": "Commons Portuguese caption identifies Nossa Senhora de Fátima church in Fortaleza, Brazil; existing author/licence manifest retained",
+        "scene_implication": "Existing site/photo match appears directly supported by caption",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Igreja_de_F%C3%A1tima_em_Fortaleza.JPG",
+        "original_bytes_redownloaded": false,
+        "approval_from_page_review": false
+      }
     },
     {
       "place_id": "place:DE:aachener-dom-four-textiles",
@@ -211,7 +241,16 @@
           "rights_cleared_for_publication": false,
           "selection_made_by_owner": false
         }
-      ]
+      ],
+      "independent_source_page_qa": {
+        "checked_on": "2026-11-04",
+        "status": "CATHEDRAL_EXTERIOR_CONFIRMED_BUT_TEXTILES_NOT_DEPICTED",
+        "note": "European Union image CC BY 4.0 Commons caption explicitly says Exterior view of Aachen Cathedral; canonical Place emphasizes Four Sacred Textiles",
+        "scene_implication": "Do not claim source depicts four textiles; need explicit editorial decision on building cover",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Aachen_Cathedral_(02).jpg",
+        "original_bytes_redownloaded": false,
+        "approval_from_page_review": false
+      }
     },
     {
       "place_id": "place:DE:bettbrunn-st-salvator",
@@ -252,7 +291,16 @@
           "rights_cleared_for_publication": false,
           "selection_made_by_owner": false
         }
-      ]
+      ],
+      "independent_source_page_qa": {
+        "checked_on": "2026-11-04",
+        "status": "EXACT_PILGRIMAGE_CHURCH_AND_CREATOR_ON_COMMONS",
+        "note": "Bettbrunn St. Salvator east elevation, Heinrich Stürzl, CC BY-SA 4.0; author requests credit in close proximity to image",
+        "scene_implication": "Must preserve close-to-image credit requirement",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Bettbrunn_St_Salvator_von_O.jpg",
+        "original_bytes_redownloaded": false,
+        "approval_from_page_review": false
+      }
     },
     {
       "place_id": "place:FR:saint-louis-de-gonzague-pau",
@@ -375,7 +423,16 @@
           "rights_cleared_for_publication": false,
           "selection_made_by_owner": false
         }
-      ]
+      ],
+      "independent_source_page_qa": {
+        "checked_on": "2026-11-04",
+        "status": "EXACT_MONASTERY_CHURCH_AND_PHOTOGRAPHER_ON_COMMONS",
+        "note": "Panorama describes church and monastery at Annaya; paul saad, CC BY-SA 4.0; source displays 4000x2250",
+        "scene_implication": "Wide panoramic source may crop awkwardly on mobile; no crop approved",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Pan_Annaya_Church_And_Monastry.jpg",
+        "original_bytes_redownloaded": false,
+        "approval_from_page_review": false
+      }
     },
     {
       "place_id": "place:PL:lichen-marian-basilica",
@@ -457,7 +514,16 @@
           "rights_cleared_for_publication": false,
           "selection_made_by_owner": false
         }
-      ]
+      ],
+      "independent_source_page_qa": {
+        "checked_on": "2026-11-04",
+        "status": "EXACT_SHRINE_SEASONAL_NIGHT_SCENE_ON_COMMONS",
+        "note": "Original Commons image category includes Christmas lights in 2013, photographer Kenneth C. Zirkel; source is not a neutral daylight hero",
+        "scene_implication": "Seasonal nighttime illustration may not represent full-year shrine cover",
+        "source_page": "https://commons.wikimedia.org/wiki/File:La_Salette_Shrine%2C_Attleboro%2C_Massachusetts.jpg",
+        "original_bytes_redownloaded": false,
+        "approval_from_page_review": false
+      }
     },
     {
       "place_id": "place:US:lourdes-grotto-emmitsburg",
@@ -498,7 +564,16 @@
           "rights_cleared_for_publication": false,
           "selection_made_by_owner": false
         }
-      ]
+      ],
+      "independent_source_page_qa": {
+        "checked_on": "2026-11-04",
+        "status": "EXACT_NATIONAL_GROTTO_AND_AUTHOR_ON_COMMONS",
+        "note": "Caption explicitly names National Shrine Grotto of Our Lady of Lourdes at Mount St. Mary's; Bohemian Baltimore, CC BY-SA 4.0",
+        "scene_implication": "Grotto subject still requires visual and mobile QA",
+        "source_page": "https://commons.wikimedia.org/wiki/File:National_Shrine_Grotto_of_Our_Lady_of_Lourdes_99.JPG",
+        "original_bytes_redownloaded": false,
+        "approval_from_page_review": false
+      }
     },
     {
       "place_id": "place:US:san-francisco-de-asis-ranchos-taos",
@@ -580,7 +655,16 @@
           "rights_cleared_for_publication": false,
           "selection_made_by_owner": false
         }
-      ]
+      ],
+      "independent_source_page_qa": {
+        "checked_on": "2026-11-04",
+        "status": "EXACT_BASILICA_AND_PHOTOGRAPHER_ON_COMMONS",
+        "note": "Photo caption identifies Emmitsburg shrine basilica; Acroterion, CC BY-SA 4.0",
+        "scene_implication": "A newer, substantially larger photograph exists; not a replacement without editorial review",
+        "source_page": "https://commons.wikimedia.org/wiki/File:Seton_shrine_basilica_Emmitsburg_MD1.jpg",
+        "original_bytes_redownloaded": false,
+        "approval_from_page_review": false
+      }
     },
     {
       "place_id": "place:DE:basilika-st-clemens-hannover",
