@@ -43,6 +43,31 @@ const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
 // unlocated CL2 research listing to a provisional physical-site marker.
 // Names, country, source ID and street must all match the frozen source row.
 const REVIEWED_NEW_SITE_PINS=Object.freeze({
+ // Batch 13: eight UK Catholic church-building and statutory named-site positions.
+ "RG-FB8F0348E454":Object.freeze({sourceId:"AO-B34-L-GB-5A9DB2259039",name:"Holy Trinity",country:"GB",addressNeedle:"Hethe, United Kingdom (exact street not established)",placeId:null,
+  lat:51.96179,lng:-1.14526,precision:"site",sourceRef:"osm:way:197835149",sourceUrl:"https://www.openstreetmap.org/way/197835149",
+  correctedAddress:"Holy Trinity Roman Catholic Church, Hethe, Oxfordshire OX27, UK",reviewScope:"HETHE_HOLY_TRINITY_ROMAN_CATHOLIC_GRADE_II_CHURCH_NOT_ANGLICAN_ST_EDMUND",evidence:Object.freeze(["https://mapcarta.com/W197835149","https://gb.britishlistedbuildings.co.uk/101192879-church-of-holy-trinity-roman-catholic-hethe/maps"])}),
+ "RG-DA6E082DB84D":Object.freeze({sourceId:"AO-B35-L-GB-E0517E640A23",name:"St Winefride's",country:"GB",addressNeedle:"Holywell, United Kingdom (exact worship address NOT confirmed)",placeId:null,
+  lat:53.2754,lng:-3.2232,precision:"site",sourceRef:"independent:cadw-holywell-st-winefride-parish-490",sourceUrl:"https://gb.britishlistedbuildings.co.uk/300000490-st-winefrides-roman-catholic-church-holywell/maps",
+  correctedAddress:"St Winefride's Roman Catholic Parish Church, 15 Well Street, Holywell CH8 7PL, Wales",reviewScope:"HOLYWELL_ST_WINEFRIDE_PARISH_CHURCH_GRADE_II_NOT_MEDIEVAL_WELL_CHAPEL_OR_PRESBYTERY",evidence:Object.freeze(["https://www.stwinefridesholywell.co.uk/","https://www.outdooractive.com/en/poi/north-wales/st-winefride-s-rc-church/807813449/"])}),
+ "RG-2895260BCC20":Object.freeze({sourceId:"AO-B35-L-GB-FF3861358B0F",name:"St Joseph's",country:"GB",addressNeedle:"Derby, United Kingdom (exact worship address NOT confirmed)",placeId:null,
+  lat:52.91389,lng:-1.48213,precision:"site",sourceRef:"osm:way:54615659",sourceUrl:"https://www.openstreetmap.org/way/54615659",
+  correctedAddress:"St Joseph's Roman Catholic Church, Burton Road, Derby DE1 1TJ, UK",reviewScope:"DERBY_ST_JOSEPH_BURTON_ROAD_CATHOLIC_CHURCH_NOT_PRIMARY_SCHOOL_OR_MICKLEOVER",evidence:Object.freeze(["https://mapcarta.com/W54615659","https://www.stjosephderby.co.uk/"])}),
+ "RG-51072408D9CF":Object.freeze({sourceId:"AO-B35-L-GB-21417F9223AE",name:"St Augustine's",country:"GB",addressNeedle:"Tunbridge Wells, United Kingdom (exact worship address NOT confirmed)",placeId:null,
+  lat:51.13163,lng:0.26685,precision:"site",sourceRef:"osm:way:252586680",sourceUrl:"https://www.openstreetmap.org/way/252586680",
+  correctedAddress:"St Augustine's Roman Catholic Church, Tunbridge Wells, Kent, UK",reviewScope:"TUNBRIDGE_WELLS_ST_AUGUSTINE_CATHOLIC_CHURCH_NOT_ST_AUGUSTINE_HAWKHURST",evidence:Object.freeze(["https://mapcarta.com/W252586680"])}),
+ "RG-70B31984AB26":Object.freeze({sourceId:"AO-B34-L-GB-CBFEABD75555",name:"Our Lady of the Annunciation",country:"GB",addressNeedle:"Kings Lynn, United Kingdom (exact street not established)",placeId:null,
+  lat:52.7482,lng:0.4021,precision:"site",sourceRef:"independent:historicengland-kings-lynn-our-lady-annunciation-1481880",sourceUrl:"https://gb.britishlistedbuildings.co.uk/101481880-our-lady-of-the-annunciation-and-attached-presbytery-kings-lynn-kings-lynn-and-west-norfolk-st-margarets-with-st-nicholas-ward/maps",
+  correctedAddress:"Our Lady of the Annunciation Roman Catholic Church, St James' End, King's Lynn PE30, UK",reviewScope:"KINGS_LYNN_OUR_LADY_ANNUNCIATION_GRADE_II_CHURCH_AND_PRESBYTERY_SITE_NOT_NEARBY_SCHOOL",evidence:Object.freeze(["https://mapcarta.com/W493913844"])}),
+ "RG-65E3B77E0F84":Object.freeze({sourceId:"AO-B34-L-GB-1B3A4665CA8E",name:"Our Lady of Lourdes",country:"GB",addressNeedle:"Weston-Super-Mare, United Kingdom (exact street not established)",placeId:null,
+  lat:51.35458,lng:-2.94141,precision:"site",sourceRef:"osm:way:95994804",sourceUrl:"https://www.openstreetmap.org/way/95994804",
+  correctedAddress:"Our Lady of Lourdes Catholic Church, Baytree Road, Weston-super-Mare BS22 8HQ, UK",reviewScope:"WESTON_SUPER_MARE_OUR_LADY_LOURDES_CHURCH_BAYTREE_ROAD_NOT_NEARBY_PARISH_HALL",evidence:Object.freeze(["https://mapcarta.com/W95994804","https://www.ctwd.org.uk/our-lady-of-lourdes/"])}),
+ "RG-3923AED1F35D":Object.freeze({sourceId:"AO-B35-L-GB-85E5727F6F41",name:"St Thomas More",country:"GB",addressNeedle:"Bournemouth, United Kingdom (exact worship address NOT confirmed)",placeId:null,
+  lat:50.73758,lng:-1.80583,precision:"site",sourceRef:"osm:way:236082777",sourceUrl:"https://www.openstreetmap.org/way/236082777",
+  correctedAddress:"St Thomas More Catholic Church, Iford, Bournemouth, Dorset, UK",reviewScope:"BOURNEMOUTH_IFORD_ST_THOMAS_MORE_CATHOLIC_CHURCH_NOT_ST_THOMAS_MORE_SCHOOL",evidence:Object.freeze(["https://mapcarta.com/W236082777","https://www.avonstour.co.uk/parishes/bournemouth-ordinariate-mission/"])}),
+ "RG-6EA342262B1C":Object.freeze({sourceId:"AO-B35-L-GB-666C6C4AD329",name:"St Joseph's",country:"GB",addressNeedle:"Sheringham, United Kingdom (exact worship address NOT confirmed)",placeId:null,
+  lat:52.9401,lng:1.2123,precision:"site",sourceRef:"independent:historicengland-sheringham-st-joseph-1152329",sourceUrl:"https://gb.britishlistedbuildings.co.uk/101152329-church-of-st-joseph-boundary-wall-and-gate-piers-sheringham",
+  correctedAddress:"St Joseph's Roman Catholic Church, Sheringham NR26, Norfolk, UK",reviewScope:"SHERINGHAM_ST_JOSEPH_CATHOLIC_CHURCH_GRADE_II_BUILDING_SITE_NOT_BOUNDARY_GATE_ENTRANCE",evidence:Object.freeze(["https://gb.britishlistedbuildings.co.uk/101152329-church-of-st-joseph-boundary-wall-and-gate-piers-sheringham"])}),
  // Batch 12: 12 GB and 2 US source-matched provisional physical sites.
  "RG-85474DBA750C":Object.freeze({sourceId:"AO-B35-L-GB-2E9A85D254C2",name:"St John's Cathedral",country:"GB",addressNeedle:"Portsmouth, United Kingdom (exact worship address NOT confirmed)",placeId:null,
   lat:50.80035,lng:-1.09431,precision:"site",sourceRef:"osm:way:32136389",sourceUrl:"https://www.openstreetmap.org/way/32136389",
