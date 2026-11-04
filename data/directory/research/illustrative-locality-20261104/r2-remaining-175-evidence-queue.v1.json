@@ -1,0 +1,3221 @@
+{
+  "schema": "AO_CL2_ATLAS_R2_REMAINING_UNMAPPED_AUDIT_V1",
+  "date": "2026-11-04",
+  "scope": "Non-publishable location records after prior 158 R1 town markers, 9 exact/POI site admissions, and 93 eligible R2 town markers",
+  "release_head": "PR #2453 (pending CI)",
+  "total_canonical_sites": 2582,
+  "projected_mapped_if_r2_passes": 2407,
+  "source_baseline_pins": 1806,
+  "reviewed_pins_if_r2_passes": 601,
+  "counts": {
+    "records": 175,
+    "missing_locality_evidence": 154,
+    "explicit_holds": 21
+  },
+  "contract": {
+    "unmapped_profiles_remain_fully_visible": true,
+    "illustrative_pins_require_a_real_named_source_supported_locality": true,
+    "geo_approval_cannot_override_physical_identity_hold": true,
+    "external_navigation_uses_name_and_address_search": true,
+    "no_mass_or_affiliation_claims": true
+  },
+  "records": [
+    {
+      "cl2_anchor": "RG-0D6D46726CDC",
+      "name": "Sede del Distrito de Sudamérica Casa María Reina",
+      "country": "AR",
+      "original_address": "Pedro Goyena 2034, Martínez",
+      "source_ids": [
+        "AO-B44-SSPX-AR-9599DABEB527"
+      ],
+      "original_sources": [
+        "https://fsspx-sudamerica.org/es/capillas"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 130,
+      "excel_unpinned_queue_row": 271,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-0DCEDA190517",
+      "name": "St Mary's",
+      "country": "GB",
+      "original_address": "Reading, United Kingdom (exact worship address NOT confirmed)",
+      "source_ids": [
+        "AO-B35-L-GB-32590A5610C5"
+      ],
+      "original_sources": [
+        "https://lms.org.uk/list-of-churches"
+      ],
+      "decision": "HOLD_IDENTITY_OR_SOURCE",
+      "specific_reason": "HOLD_KNOWN_ALIAS_OR_IDENTITY_OR_CLOSED_SITE",
+      "excel_all_venues_row": 135,
+      "excel_unpinned_queue_row": 133,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-0ECBB0E72D34",
+      "name": "Carmel of Jesus, Mary and Joseph — Valparaiso",
+      "country": "US",
+      "original_address": "9300 W Agnew Road, Valparaiso, NE 68065, USA",
+      "source_ids": [
+        "AO-B53-US-61892F9D9F7C"
+      ],
+      "original_sources": [
+        "https://www.liturgicalartsjournal.com/2022/01/carmelite-monastery-of-jesus-mary-and.html",
+        "https://container.parishesonline.com/bulletins/02/1148/20260215B.pdf"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 141,
+      "excel_unpinned_queue_row": 170,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-0FF5C3333BCC",
+      "name": "St. Antonius",
+      "country": "IT",
+      "original_address": "Str. Picolin 20, 39030 Piccolino",
+      "source_ids": [
+        "AO-B37-L-IT-15BF55C23133"
+      ],
+      "original_sources": [
+        "https://petrusbruderschaft.de/pages/wo-wir-sind/suedtirol/messorte.php"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 151,
+      "excel_unpinned_queue_row": 457,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-1319CD21788A",
+      "name": "Kaple sv. Bernarda z Clairvaux, Zámek Stránecká Zhoř",
+      "country": "CZ",
+      "original_address": "Zámek Stránecká Zhoř, Stránecká Zhoř-Měřín",
+      "source_ids": [
+        "AO-B33-L-CZ-EB74F5E5F778"
+      ],
+      "original_sources": [
+        "https://www.unavoce.cz/mse"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 181,
+      "excel_unpinned_queue_row": 348,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-1580E7395EAB",
+      "name": "Sanctuary of Our Lady of La Salette",
+      "country": "US",
+      "original_address": "46-44 204th St, Auburndale NY 11361",
+      "source_ids": [
+        "AO-B50-CMRI-US-DE87C926B44"
+      ],
+      "original_sources": [
+        "https://cmri.org/cmri-directory-of-traditional-latin-masses/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 203,
+      "excel_unpinned_queue_row": 234,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-1590B939A075",
+      "name": "Our Mother of Perpetual Help Chapel — San Fernando",
+      "country": "PH",
+      "original_address": "Perpetual Heights Subdivision, San Fernando, Pampanga, Philippines",
+      "source_ids": [
+        "AO-B55-PH-FA06ABF967EF"
+      ],
+      "original_sources": [
+        "https://www.latinmassdir.org/venue/our-mother-of-perpetual-help-chapel-san-fernando-philippines/"
+      ],
+      "decision": "HOLD_IDENTITY_OR_SOURCE",
+      "specific_reason": "HOLD_AMBIGUOUS_GAZETTEER_MATCH",
+      "excel_all_venues_row": 206,
+      "excel_unpinned_queue_row": 490,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-163599BE4EDF",
+      "name": "Our Lady Immaculate and St Edmund",
+      "country": "GB",
+      "original_address": "Withermarsh Green, United Kingdom (exact street not established)",
+      "source_ids": [
+        "AO-B34-L-GB-32E3B6DB5EFA"
+      ],
+      "original_sources": [
+        "https://lms.org.uk/list-of-churches"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 212,
+      "excel_unpinned_queue_row": 40,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-18E53EDD9E9C",
+      "name": "Saint Thomas More Chapel",
+      "country": "US",
+      "original_address": "1565 S White Road, San Jose CA 95127",
+      "source_ids": [
+        "AO-B45-SSPX-US-98A6ADD77DBE"
+      ],
+      "original_sources": [
+        "https://sspx.org/en/list-sspx-chapels"
+      ],
+      "decision": "HOLD_IDENTITY_OR_SOURCE",
+      "specific_reason": "HOLD_EXISTING_CL2_IDENTITY_CONFLICT",
+      "excel_all_venues_row": 237,
+      "excel_unpinned_queue_row": 232,
+      "excel_reviewer_decision": "Needs more evidence",
+      "research_coordinate_not_authorized": {
+        "lat": 37.33939,
+        "lng": -121.89496,
+        "note": "Research-only, not an approved map pin"
+      }
+    },
+    {
+      "cl2_anchor": "RG-1C8C48D7BFA5",
+      "name": "Herz Jesu Kapelle",
+      "country": "DE",
+      "original_address": "Hauptstraße 7, Lierfeld Germany",
+      "source_ids": [
+        "AO-B50-IMBC-DE-0685E54197D"
+      ],
+      "original_sources": [
+        "https://www.sodalitium.eu/saintes-messes/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 269,
+      "excel_unpinned_queue_row": 366,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-24B468C40EBC",
+      "name": "St Augustine's Church",
+      "country": "GB",
+      "original_address": "Ashford, United Kingdom (exact worship address NOT confirmed)",
+      "source_ids": [
+        "AO-B35-L-GB-994496E035FD"
+      ],
+      "original_sources": [
+        "https://lms.org.uk/list-of-churches"
+      ],
+      "decision": "HOLD_IDENTITY_OR_SOURCE",
+      "specific_reason": "HOLD_AMBIGUOUS_GAZETTEER_MATCH",
+      "excel_all_venues_row": 349,
+      "excel_unpinned_queue_row": 80,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-2543E504792C",
+      "name": "Kapel van het Bitter Lijden",
+      "country": "NL",
+      "original_address": "Stein, Netherlands (secondary directory locality only; no street verified)",
+      "source_ids": [
+        "AO-B38-LOC-NL-50AE8B27837"
+      ],
+      "original_sources": [
+        "https://www.latinmassdir.org/country/nl/?view=list"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 356,
+      "excel_unpinned_queue_row": 477,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-2565E7B509ED",
+      "name": "Iglesia del Antiguo Colegio de las Adoratrices",
+      "country": "ES",
+      "original_address": null,
+      "source_ids": [
+        "AO-B38-LOC-ES-E64A2345456"
+      ],
+      "original_sources": [
+        "https://www.latinmassdir.org/country/es/?area=&communities=all&days=any&lat=&lng=&radius=all&venue_status=active&view=list"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 357,
+      "excel_unpinned_queue_row": 386,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-278C58AD5CAD",
+      "name": "Železná Ruda - Kostel Panny Marie Pomocné z Hvězdy",
+      "country": "CZ",
+      "original_address": "Klostermannovo náměstí 43 - CZ-34004 Železná Ruda - Česká republika",
+      "source_ids": [
+        "AO-B42-FSSP-CZ-039"
+      ],
+      "original_sources": [
+        "https://www.fssp.org/en/find-us/where-are-we/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 382,
+      "excel_unpinned_queue_row": 363,
+      "excel_reviewer_decision": "Needs more evidence",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-29986C76F897",
+      "name": "Queen of All Saints Chapel — Brooksville",
+      "country": "US",
+      "original_address": "1000 Spring Lake Hwy, Brooksville, FL 34602, USA",
+      "source_ids": [
+        "AO-B56-US-05D0BBBB24BE"
+      ],
+      "original_sources": [
+        "https://romancatholicinstitute.org/mass-centers/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 406,
+      "excel_unpinned_queue_row": 218,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-2C84B50B3667",
+      "name": "Holy Spirit",
+      "country": "GB",
+      "original_address": "Bootle, United Kingdom (exact street not established)",
+      "source_ids": [
+        "AO-B34-L-GB-A8C580DF8A5E"
+      ],
+      "original_sources": [
+        "https://lms.org.uk/list-of-churches"
+      ],
+      "decision": "HOLD_IDENTITY_OR_SOURCE",
+      "specific_reason": "HOLD_KNOWN_ALIAS_OR_IDENTITY_OR_CLOSED_SITE",
+      "excel_all_venues_row": 432,
+      "excel_unpinned_queue_row": 25,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-2EA9DCC5A442",
+      "name": "Our Lady Queen of Africa House",
+      "country": "ZA",
+      "original_address": "458 Shamrock Road, Bredell",
+      "source_ids": [
+        "AO-B44-SSPX-ZA-B86148B9C7FA"
+      ],
+      "original_sources": [
+        "https://fsspx.africa/en/list-sspx-chapels-2"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 452,
+      "excel_unpinned_queue_row": 526,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-33D8DB99BEFC",
+      "name": "St Benedict Traditional Roman Catholic Church",
+      "country": "US",
+      "original_address": "1139 US 231, Laceys Spring AL 35754",
+      "source_ids": [
+        "AO-B50-CMRI-US-0A9974C93FE"
+      ],
+      "original_sources": [
+        "https://cmri.org/cmri-directory-of-traditional-latin-masses/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 504,
+      "excel_unpinned_queue_row": 238,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-3521860638CE",
+      "name": "Carmel of Jesus, Mary and Joseph — Kensington",
+      "country": "US",
+      "original_address": "68 Rincon Road, Kensington, CA 94707, USA",
+      "source_ids": [
+        "AO-B53-US-338AF54E2095"
+      ],
+      "original_sources": [
+        "https://discalcedcarmelitefriars.com/nuns/",
+        "https://gcatholic.org/churches/usa-11/56251.htm"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 518,
+      "excel_unpinned_queue_row": 169,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-39083EFFF84B",
+      "name": "Kaplica św. Andrzeja Boboli",
+      "country": "PL",
+      "original_address": "ul. Torowa 1, Rzeszów, Poland",
+      "source_ids": [
+        "AO-B33-L-PL-832566560F71"
+      ],
+      "original_sources": [
+        "https://www.piusx.org.pl/kaplice/zestawienie"
+      ],
+      "decision": "HOLD_IDENTITY_OR_SOURCE",
+      "specific_reason": "HOLD_KNOWN_ALIAS_OR_IDENTITY_OR_CLOSED_SITE",
+      "excel_all_venues_row": 550,
+      "excel_unpinned_queue_row": 508,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-3AE3236A0B5E",
+      "name": "Chapelle des Saints Cœurs de Jésus et Marie — Saint-Sulpice-en-Pareds",
+      "country": "FR",
+      "original_address": "Rue Henri de Châteaubriant, 85410 Saint-Sulpice-en-Pareds, France",
+      "source_ids": [
+        "AO-B56-FR-F2EDC25999E3"
+      ],
+      "original_sources": [
+        "https://romancatholicinstitute.org/mass-centers/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 568,
+      "excel_unpinned_queue_row": 395,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-3B26E419E5CC",
+      "name": "Dolny kościół parafii Matki Bożej Częstochowskiej",
+      "country": "PL",
+      "original_address": "ul. Piotra Skargi 24, 05-420 Józefów",
+      "source_ids": [
+        "AO-B41-LOC-PL-7B6DB56BF92B"
+      ],
+      "original_sources": [
+        "https://instytutdobregopasterza.pl/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 573,
+      "excel_unpinned_queue_row": 499,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-3C52322632E0",
+      "name": "Our Lady of Fatima Chapel",
+      "country": "US",
+      "original_address": "5037 County Highway 633, Grawn MI 49637",
+      "source_ids": [
+        "AO-B50-SSPV-US-64092B2FB39"
+      ],
+      "original_sources": [
+        "https://congregationofstpiusv.com/locations/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 585,
+      "excel_unpinned_queue_row": 200,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-3D31819B8E6B",
+      "name": "Kostel Panny Marie Pomocné",
+      "country": "CZ",
+      "original_address": "Klatovská, Železná Ruda",
+      "source_ids": [
+        "AO-B33-L-CZ-FC78D4CAB27E"
+      ],
+      "original_sources": [
+        "https://www.unavoce.cz/mse"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 593,
+      "excel_unpinned_queue_row": 350,
+      "excel_reviewer_decision": "Needs more evidence",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-3FB2F55DB78A",
+      "name": "Parroquia San Bartolomé",
+      "country": "ES",
+      "original_address": null,
+      "source_ids": [
+        "AO-B38-LOC-ES-B0DF236DDC7"
+      ],
+      "original_sources": [
+        "https://www.latinmassdir.org/country/es/?area=&communities=all&days=any&lat=&lng=&radius=all&venue_status=active&view=list"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 625,
+      "excel_unpinned_queue_row": 389,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-40C164A0B0B7",
+      "name": "Kościół Świętego Jana Pawła II",
+      "country": "PL",
+      "original_address": "ul. ks. Antosza",
+      "source_ids": [
+        "AO-B39-LOC-PL-608672B6E8BF"
+      ],
+      "original_sources": [
+        "https://tradycja.org/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 634,
+      "excel_unpinned_queue_row": 516,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-411313EEC8D4",
+      "name": "Église Notre-Dame-du-Rosaire — Fraternité de la Transfiguration",
+      "country": "FR",
+      "original_address": "Le Bois, 36220 Mérigny, France",
+      "source_ids": [
+        "AO-B52-FR-8F0D854E93D0"
+      ],
+      "original_sources": [
+        "https://laportelatine.org/lieux/merigny",
+        "https://www.unavoce.fr/annuaire-des-communautes-religieuses/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 636,
+      "excel_unpinned_queue_row": 409,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-41466276ECC2",
+      "name": "Our Lady of Good Success Oratory — Bacolod",
+      "country": "PH",
+      "original_address": "Punta Taytay Road, Bacolod, Negros Occidental, Philippines",
+      "source_ids": [
+        "AO-B55-PH-8805BFF4F5BA"
+      ],
+      "original_sources": [
+        "https://www.latinmassdir.org/venue/our-lady-of-good-success-oratory-bacolod-philippines/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 637,
+      "excel_unpinned_queue_row": 487,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-4285190BD8AE",
+      "name": "Iglesia de San Nicolás de Bari",
+      "country": "ES",
+      "original_address": null,
+      "source_ids": [
+        "AO-B38-LOC-ES-962BF0E17F8"
+      ],
+      "original_sources": [
+        "https://www.latinmassdir.org/country/es/?area=&communities=all&days=any&lat=&lng=&radius=all&venue_status=active&view=list"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 652,
+      "excel_unpinned_queue_row": 385,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-457A922941D0",
+      "name": "St. Aloysius Parish",
+      "country": "CA",
+      "original_address": "317 Morton St. - Thorold ON L2V 1C4 - Canada",
+      "source_ids": [
+        "AO-B42-FSSP-CA-030"
+      ],
+      "original_sources": [
+        "https://www.fssp.org/en/find-us/where-are-we/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 686,
+      "excel_unpinned_queue_row": 329,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-4D32CE07E424",
+      "name": "Herz-Jesu-Kirche",
+      "country": "DE",
+      "original_address": "Am Hummelberg 2, 69469 Oberflockenbach",
+      "source_ids": [
+        "AO-B40-LOC-DE-3B5739627335"
+      ],
+      "original_sources": [
+        "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 749,
+      "excel_unpinned_queue_row": 367,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-4D729B16E2AD",
+      "name": "Suore Consolatrici del Sacro Cuore di Gesù",
+      "country": "IT",
+      "original_address": "Via Flaminia Vecchia 20, 05030 Vigne di Narni",
+      "source_ids": [
+        "AO-B37-L-IT-4625DDF56A4B"
+      ],
+      "original_sources": [
+        "https://fsspx.it/it/cappelle-e-oratori"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 754,
+      "excel_unpinned_queue_row": 458,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-4FD8D2BAC9B9",
+      "name": "Capela do Apostolado da Oração — Iapu",
+      "country": "BR",
+      "original_address": "Rua Jair Fernandes de Melo 475, Centro, Iapu MG 35190-000, Brazil",
+      "source_ids": [
+        "AO-B54-BR-EFBD0F9BD294"
+      ],
+      "original_sources": [
+        "https://www.mosteirodasantacruz.org/onde-estamos"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 792,
+      "excel_unpinned_queue_row": 300,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-50082C65DA56",
+      "name": "St Joseph's",
+      "country": "GB",
+      "original_address": "Sheffield, United Kingdom (exact worship address NOT confirmed)",
+      "source_ids": [
+        "AO-B35-L-GB-C41EF40E1279"
+      ],
+      "original_sources": [
+        "https://lms.org.uk/list-of-churches"
+      ],
+      "decision": "HOLD_IDENTITY_OR_SOURCE",
+      "specific_reason": "HOLD_EXCEL_IDENTITY_AMBIGUITY",
+      "excel_all_venues_row": 795,
+      "excel_unpinned_queue_row": 115,
+      "excel_reviewer_decision": "Needs more evidence",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-51F3D5B6D522",
+      "name": "Cappella del Pontificio Ateneo Regina Apostolorum",
+      "country": "IT",
+      "original_address": "Via degli Aldobrandeschi 190",
+      "source_ids": [
+        "AO-B39-LOC-IT-068873503573"
+      ],
+      "original_sources": [
+        "https://www.unavoceitalia.org/wordpress/messe/alma-urbe/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 812,
+      "excel_unpinned_queue_row": 440,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-5276B75A8193",
+      "name": "St Bernard Novitiate - Church of the Immaculate Heart of Mary",
+      "country": "PH",
+      "original_address": "Purok 7, Barangay Daga, Santa Barbara, Iloilo",
+      "source_ids": [
+        "AO-B34-L-PH-2A7DC586B1D0"
+      ],
+      "original_sources": [
+        "https://fsspx.asia/en/list-sspx-chapels-1"
+      ],
+      "decision": "HOLD_IDENTITY_OR_SOURCE",
+      "specific_reason": "HOLD_AMBIGUOUS_GAZETTEER_MATCH",
+      "excel_all_venues_row": 821,
+      "excel_unpinned_queue_row": 498,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-54B61A039DD9",
+      "name": "Kostel svatého Ducha",
+      "country": "CZ",
+      "original_address": "Kostelní, Římov",
+      "source_ids": [
+        "AO-B33-L-CZ-D8A852C64412"
+      ],
+      "original_sources": [
+        "https://www.unavoce.cz/mse"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 844,
+      "excel_unpinned_queue_row": 358,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-562C27FA24C2",
+      "name": "Real Monasterio de la Encarnación",
+      "country": "ES",
+      "original_address": null,
+      "source_ids": [
+        "AO-B38-LOC-ES-53922FB5E30"
+      ],
+      "original_sources": [
+        "https://www.latinmassdir.org/country/es/?area=&communities=all&days=any&lat=&lng=&radius=all&venue_status=active&view=list"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 858,
+      "excel_unpinned_queue_row": 390,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-580D41E28EB8",
+      "name": "Templo de la Divina Providencia — Acapulco",
+      "country": "MX",
+      "original_address": "Calle José Valdez Arévalo 29, Centro, Acapulco Guerrero 39300, Mexico",
+      "source_ids": [
+        "AO-B54-MX-6D094B889F66"
+      ],
+      "original_sources": [
+        "https://obispoenmisiones.com/sociedad-sacerdotal-trento/directorio-oficial-de-las-iglesias-de-s-s-t/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 874,
+      "excel_unpinned_queue_row": 472,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-5926C75531A7",
+      "name": "St John Bosco Church — Modesto",
+      "country": "US",
+      "original_address": "1606 Imperial Ave, Modesto, CA 95358, USA",
+      "source_ids": [
+        "AO-B56-US-D552EF04B9CC"
+      ],
+      "original_sources": [
+        "https://romancatholicinstitute.org/mass-centers/"
+      ],
+      "decision": "HOLD_IDENTITY_OR_SOURCE",
+      "specific_reason": "HOLD_AMBIGUOUS_GAZETTEER_MATCH",
+      "excel_all_venues_row": 883,
+      "excel_unpinned_queue_row": 242,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-596D96A755DA",
+      "name": "Chapelle du Carmel de La Ratrie",
+      "country": "FR",
+      "original_address": "31 rue de la Pérelle - F-61250 Cuissai - France",
+      "source_ids": [
+        "AO-B42-FSSP-FR-147",
+        "AO-B42-FSSP-FR-E1F0840FF085"
+      ],
+      "original_sources": [
+        "https://www.fssp.org/en/find-us/where-are-we/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 887,
+      "excel_unpinned_queue_row": 396,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-5C053FB98B93",
+      "name": "Sankt Josefs Kloster — monastery chapel",
+      "country": "SE",
+      "original_address": "Imbramåla 1, 572 95 Figeholm, Sweden",
+      "source_ids": [
+        "AO-B53-SE-FA5C459719D8"
+      ],
+      "original_sources": [
+        "https://www.latinmassdir.org/venue/sankt-josefs-kloster-saint-josephs-monastery-figeholm-sweden/",
+        "https://www.katolskakyrkan.se/kyrkan-i-sverige/ordnar-och-kongregationer/kvinnliga-kommuniteter/marias-lamm"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 909,
+      "excel_unpinned_queue_row": 521,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-5E751D3AAEFA",
+      "name": "Ford Park Cemetery Chapel",
+      "country": "GB",
+      "original_address": "Ford Park Road, Plymouth PL4 6NT",
+      "source_ids": [
+        "AO-B36-L-GB-1BF2C870A5FF"
+      ],
+      "original_sources": [
+        "https://www.ukmasses.com/plymouth-mass"
+      ],
+      "decision": "HOLD_IDENTITY_OR_SOURCE",
+      "specific_reason": "HOLD_HISTORIC_CL2_IDENTITY_CONFLICT",
+      "excel_all_venues_row": 928,
+      "excel_unpinned_queue_row": 12,
+      "excel_reviewer_decision": "Needs more evidence",
+      "research_coordinate_not_authorized": {
+        "lat": 50.37153,
+        "lng": -4.14305,
+        "note": "Research-only, not an approved map pin"
+      }
+    },
+    {
+      "cl2_anchor": "RG-5EE981E628B6",
+      "name": "Capela da Santa Casa de Santo Amaro",
+      "country": "BR",
+      "original_address": "Avenida Adolfo Pinheiro 235, Santo Amaro, São Paulo, SP",
+      "source_ids": [
+        "AO-B33-L-BR-6A30E534C9C3"
+      ],
+      "original_sources": [
+        "https://diocesedesantoamaro.org.br/paroquias-da-diocese-de-santo-amaro/paroquia-rainha-santa-isabel-de-portugal/"
+      ],
+      "decision": "HOLD_IDENTITY_OR_SOURCE",
+      "specific_reason": "HOLD_AMBIGUOUS_GAZETTEER_MATCH",
+      "excel_all_venues_row": 932,
+      "excel_unpinned_queue_row": 298,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-614BDF2D5803",
+      "name": "Saint Peter's Church",
+      "country": "CA",
+      "original_address": "144 Huron Street, New Hamburg",
+      "source_ids": [
+        "AO-B44-SSPX-CA-FE7482C2ABEC"
+      ],
+      "original_sources": [
+        "https://sspx.ca/en/list-sspx-chapels-4"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 962,
+      "excel_unpinned_queue_row": 328,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-615FF6835AAE",
+      "name": "Kaplnka Svätej Terézie z Lisieux",
+      "country": "SK",
+      "original_address": "Komenského, Poprad",
+      "source_ids": [
+        "AO-B39-LOC-SK-FDC2361FC9C5"
+      ],
+      "original_sources": [
+        "https://www.latinmassdir.org/country/sk/?view=list"
+      ],
+      "decision": "HOLD_IDENTITY_OR_SOURCE",
+      "specific_reason": "HOLD_SOURCE_CITY_CONFLICT",
+      "excel_all_venues_row": 964,
+      "excel_unpinned_queue_row": 523,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-618B61CE57C4",
+      "name": "Kostel Obětování Panny Marie",
+      "country": "CZ",
+      "original_address": "Piaristické náměstí, České Budějovice 1",
+      "source_ids": [
+        "AO-B33-L-CZ-FB94A9016B0B",
+        "AO-B42-FSSP-CZ-040"
+      ],
+      "original_sources": [
+        "https://fssp.cz/budejovice/",
+        "https://www.unavoce.cz/mse"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 966,
+      "excel_unpinned_queue_row": 349,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-61CD2A736B43",
+      "name": "St Thomas More Chapel — Chelsea Academy",
+      "country": "US",
+      "original_address": "1190 Progress Drive; - Front Royal VA 22630 - USA",
+      "source_ids": [
+        "AO-B42-FSSP-US-321",
+        "AO-B42-FSSP-US-F22BB4FF9FCA"
+      ],
+      "original_sources": [
+        "https://www.fssp.org/en/find-us/where-are-we/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 971,
+      "excel_unpinned_queue_row": 259,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-650EDC1EC27B",
+      "name": "Adoration Chapel — San Jose Esposo de Maria Parish",
+      "country": "PH",
+      "original_address": "Norberto Street, San Jose, San Miguel, Bulacan, Philippines",
+      "source_ids": [
+        "AO-B55-PH-E9A471398734"
+      ],
+      "original_sources": [
+        "https://www.latinmassdir.org/venue/adoration-chapel-of-san-jose-esposo-de-maria-church-san-miguel-philippines/"
+      ],
+      "decision": "HOLD_IDENTITY_OR_SOURCE",
+      "specific_reason": "HOLD_AMBIGUOUS_GAZETTEER_MATCH",
+      "excel_all_venues_row": 1002,
+      "excel_unpinned_queue_row": 482,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-660F31BEE50E",
+      "name": "Kostel Svatého Ducha a Loretánská kaple",
+      "country": "CZ",
+      "original_address": "Náměstí J. Gurreho 67 - CZ-37324 Římov - Česká republika",
+      "source_ids": [
+        "AO-B42-FSSP-CZ-042"
+      ],
+      "original_sources": [
+        "https://fssp.cz/budejovice/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1011,
+      "excel_unpinned_queue_row": 359,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-665D538E3AD2",
+      "name": "Cappella Casa San Clemente",
+      "country": "IT",
+      "original_address": "Via delle Fornaci 203",
+      "source_ids": [
+        "AO-B39-LOC-IT-26B2AA48360F"
+      ],
+      "original_sources": [
+        "https://www.unavoceitalia.org/wordpress/messe/alma-urbe/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1012,
+      "excel_unpinned_queue_row": 439,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-6AEBC1FBA5E2",
+      "name": "Prieuré des Chanoines de la Mère de Dieu, Pau",
+      "country": "FR",
+      "original_address": "35 rue Montpensier, 64000 Pau",
+      "source_ids": [
+        "AO-B51-FR-983DF64513A1"
+      ],
+      "original_sources": [
+        "https://www.lagrasse.org/laventure-paloise-commence/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1050,
+      "excel_unpinned_queue_row": 420,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-6C322C1860C9",
+      "name": "Mary Help of Christians Chapel — Chiltern",
+      "country": "AU",
+      "original_address": "49 High Street, Chiltern, VIC 3683, Australia",
+      "source_ids": [
+        "AO-B56-AU-1F95FEB540D0"
+      ],
+      "original_sources": [
+        "https://romancatholicinstitute.org/mass-centers/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1060,
+      "excel_unpinned_queue_row": 284,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-72909EA31C02",
+      "name": "Christ the King Church",
+      "country": "US",
+      "original_address": "209 Tackora Trail, Ridgefield CT 06877",
+      "source_ids": [
+        "AO-B45-SSPX-US-2F5DDCE6B87C"
+      ],
+      "original_sources": [
+        "https://sspx.org/en/list-sspx-chapels"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1126,
+      "excel_unpinned_queue_row": 173,
+      "excel_reviewer_decision": "Needs more evidence",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-73ADF2CAE5F9",
+      "name": "St Martin de Tours Church",
+      "country": "US",
+      "original_address": "2814 S Pompeys Rd, Pompeys Pillar MT 59064",
+      "source_ids": [
+        "AO-B50-SSPV-US-975990B2CC5"
+      ],
+      "original_sources": [
+        "https://stpiusvchapel.org/mass-locations/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1138,
+      "excel_unpinned_queue_row": 251,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-773770316682",
+      "name": "Kostel svatého Jakuba",
+      "country": "CZ",
+      "original_address": "Přesanické náměstí, Nepomuk",
+      "source_ids": [
+        "AO-B41-LOC-CZ-3340118FC986"
+      ],
+      "original_sources": [
+        "https://petrusbruderschaft.de/pages/wo-wir-sind/tschechien.php"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1173,
+      "excel_unpinned_queue_row": 360,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-7A7B048E1F59",
+      "name": "Kaple sv. Bernarda z Clairvaux",
+      "country": "CZ",
+      "original_address": "Militaris Templariorum Ordo Equitanc Jesu Christi - CZ-59442 Stránecká Zhoř - Česká republika",
+      "source_ids": [
+        "AO-B42-FSSP-CZ-045"
+      ],
+      "original_sources": [
+        "https://www.fssp.org/en/find-us/where-are-we/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1212,
+      "excel_unpinned_queue_row": 347,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-7C8BB6333C7F",
+      "name": "Iglesia de San Ildefonso",
+      "country": "ES",
+      "original_address": null,
+      "source_ids": [
+        "AO-B38-LOC-ES-EA625648F9D"
+      ],
+      "original_sources": [
+        "https://www.latinmassdir.org/country/es/?area=&communities=all&days=any&lat=&lng=&radius=all&venue_status=active&view=list"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1229,
+      "excel_unpinned_queue_row": 384,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-7CDEAC5CBBC9",
+      "name": "Oasis de Jesús Sacerdote",
+      "country": "ES",
+      "original_address": null,
+      "source_ids": [
+        "AO-B38-LOC-ES-4B4AE23F638"
+      ],
+      "original_sources": [
+        "https://www.latinmassdir.org/country/es/?area=&communities=all&days=any&lat=&lng=&radius=all&venue_status=active&view=list"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1232,
+      "excel_unpinned_queue_row": 388,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-7F9BB8497D93",
+      "name": "Capilla de Nuestra Señora del Carmen",
+      "country": "ES",
+      "original_address": "Posada, Municipality of Siero, Spain (secondary directory locality only; no street verified)",
+      "source_ids": [
+        "AO-B38-LOC-ES-46EA91C9C95"
+      ],
+      "original_sources": [
+        "https://www.latinmassdir.org/country/es/?area=&communities=all&days=any&lat=&lng=&radius=all&venue_status=active&view=list",
+        "https://www.latinmassdir.org/country/es/?view=list"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1264,
+      "excel_unpinned_queue_row": 374,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-812C5014CA08",
+      "name": "Capela Nossa Senhora das Graças — Contagem",
+      "country": "BR",
+      "original_address": "Rua Teodoro Fernandes dos Santos 391, Jardim Califórnia, Contagem MG 32265-400, Brazil",
+      "source_ids": [
+        "AO-B54-BR-7DD71E8DDE12"
+      ],
+      "original_sources": [
+        "https://www.mosteirodasantacruz.org/onde-estamos"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1274,
+      "excel_unpinned_queue_row": 309,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-8142CB95EBB2",
+      "name": "St Michael Chapel",
+      "country": "US",
+      "original_address": "507 Route 9W, Glenmont NY 12077",
+      "source_ids": [
+        "AO-B50-CMRI-US-ED316197D22"
+      ],
+      "original_sources": [
+        "https://cmri.org/cmri-directory-of-traditional-latin-masses/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1275,
+      "excel_unpinned_queue_row": 253,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-832AB0C2265E",
+      "name": "St Philip's Priory",
+      "country": "GB",
+      "original_address": "Chelmsford, United Kingdom (exact worship address NOT confirmed)",
+      "source_ids": [
+        "AO-B35-L-GB-A66AE1315369"
+      ],
+      "original_sources": [
+        "https://lms.org.uk/list-of-churches"
+      ],
+      "decision": "HOLD_IDENTITY_OR_SOURCE",
+      "specific_reason": "HOLD_KNOWN_ALIAS_OR_IDENTITY_OR_CLOSED_SITE",
+      "excel_all_venues_row": 1287,
+      "excel_unpinned_queue_row": 149,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-856AF5566AD2",
+      "name": "St Saviour’s House Chapel",
+      "country": "GB",
+      "original_address": "St Agnes Avenue, Knowle, Bristol BS4 2DU",
+      "source_ids": [
+        "AO-B36-L-GB-655853236019"
+      ],
+      "original_sources": [
+        "https://fsspx.uk/en/chapels-directory"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1315,
+      "excel_unpinned_queue_row": 150,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-90B084522A6B",
+      "name": "St Dominic Chapel — West Highland",
+      "country": "US",
+      "original_address": "765 N Hickory Ridge Rd, Highland, MI 48357, USA",
+      "source_ids": [
+        "AO-B56-US-64B0F5B755A9"
+      ],
+      "original_sources": [
+        "https://romancatholicinstitute.org/mass-centers/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1415,
+      "excel_unpinned_queue_row": 240,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-965DA280BA11",
+      "name": "Capilla de Nuestra Señora de los Remedios",
+      "country": "ES",
+      "original_address": "Jerez de la Frontera, Spain (secondary directory locality only; no street verified)",
+      "source_ids": [
+        "AO-B38-LOC-ES-F3CB0D8377D"
+      ],
+      "original_sources": [
+        "https://www.latinmassdir.org/country/es/?area=&communities=all&days=any&lat=&lng=&radius=all&venue_status=active&view=list",
+        "https://www.latinmassdir.org/country/es/?view=list"
+      ],
+      "decision": "HOLD_IDENTITY_OR_SOURCE",
+      "specific_reason": "HOLD_KNOWN_ALIAS_OR_IDENTITY_OR_CLOSED_SITE",
+      "excel_all_venues_row": 1468,
+      "excel_unpinned_queue_row": 373,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-980814B93FC6",
+      "name": "Mosteiro da Santa Cruz — conventual abbey church",
+      "country": "BR",
+      "original_address": "Av. Alcino Cunha Ferraz Km 3, Janela das Andorinhas, Riograndina, Nova Friburgo RJ 28634-438, Brazil",
+      "source_ids": [
+        "AO-B54-BR-D867AD656DFF"
+      ],
+      "original_sources": [
+        "https://www.mosteirodasantacruz.org/agenda",
+        "https://www.mosteirodasantacruz.org/onde-estamos"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1486,
+      "excel_unpinned_queue_row": 322,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-9C24DFA88F76",
+      "name": "St David's",
+      "country": "GB",
+      "original_address": "Pantasaph, United Kingdom (exact worship address NOT confirmed)",
+      "source_ids": [
+        "AO-B35-L-GB-F533ED1563B5"
+      ],
+      "original_sources": [
+        "https://lms.org.uk/list-of-churches"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1521,
+      "excel_unpinned_queue_row": 91,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-9C61617FD3F1",
+      "name": "Chapelle Saint-Antoine",
+      "country": "FR",
+      "original_address": "Chapelle Saint-Antoine - F-20220 Sant' Antonino - France",
+      "source_ids": [
+        "AO-B42-FSSP-FR-121",
+        "AO-B42-FSSP-FR-83CB8DECF58C"
+      ],
+      "original_sources": [
+        "https://www.fssp.org/en/find-us/where-are-we/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1525,
+      "excel_unpinned_queue_row": 403,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-9DCA84FE0067",
+      "name": "Lauterbach - Exerzitienhaus Porta Caeli",
+      "country": "DE",
+      "original_address": "Tannenäckerle 1, 78730 Lauterbach",
+      "source_ids": [
+        "AO-B45-SSPX-DE-AC1C60108A85"
+      ],
+      "original_sources": [
+        "https://fsspx.de/de/priorate-und-messzentren"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1537,
+      "excel_unpinned_queue_row": 369,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-A080BDE87FC4",
+      "name": "Kaplica Chrystusa Króla",
+      "country": "PL",
+      "original_address": "Bajerze 36 (pałac), Kijewo Królewskie, Bajerze, Poland",
+      "source_ids": [
+        "AO-B33-L-PL-4D17D140DFBE",
+        "AO-B40-SSPX-PL-BAJERZE"
+      ],
+      "original_sources": [
+        "https://www.piusx.org.pl/kaplice/bajerze",
+        "https://www.piusx.org.pl/kaplice/zestawienie"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1557,
+      "excel_unpinned_queue_row": 501,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-A0D253A610F6",
+      "name": "Immaculate Conception Church",
+      "country": "US",
+      "original_address": "228 11th St, Burlington CO 80807",
+      "source_ids": [
+        "AO-B50-CMRI-US-86BE680C1E3"
+      ],
+      "original_sources": [
+        "https://cmri.org/cmri-directory-of-traditional-latin-masses/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1559,
+      "excel_unpinned_queue_row": 187,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-A241FA73E6F2",
+      "name": "St George’s House Chapel, Wimbledon",
+      "country": "GB",
+      "original_address": "125 Arthur Road, London SW19 7DR",
+      "source_ids": [
+        "AO-B36-L-GB-532533B79CCC"
+      ],
+      "original_sources": [
+        "https://fsspx.uk/en/chapels-directory"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1573,
+      "excel_unpinned_queue_row": 101,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-A3601E6DECF8",
+      "name": "Immaculate Heart of Mary Chapel — Saint Benedict Center",
+      "country": "US",
+      "original_address": "282 Still River Road, Harvard, MA 01451, USA",
+      "source_ids": [
+        "AO-B53-US-1C805E1872C4"
+      ],
+      "original_sources": [
+        "https://www.saintbenedict.com/pray/mass-devotions-schedule/",
+        "https://www.saintbenedict.com/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1582,
+      "excel_unpinned_queue_row": 189,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-A3965F75A944",
+      "name": "St Joseph of the Woods Chapel",
+      "country": "US",
+      "original_address": "25352 NE 134th Place, Salt Springs FL 32134",
+      "source_ids": [
+        "AO-B50-CMRI-US-E427350A09B"
+      ],
+      "original_sources": [
+        "https://cmri.org/cmri-directory-of-traditional-latin-masses/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1584,
+      "excel_unpinned_queue_row": 247,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-A3E268932215",
+      "name": "Carmelite Monastery of the Infant of Prague — chapel",
+      "country": "US",
+      "original_address": "3501 Silver Lake Road, Traverse City, MI 49684, USA",
+      "source_ids": [
+        "AO-B53-US-8BFA6929BECF"
+      ],
+      "original_sources": [
+        "https://carmeloftraversecity.org/liturgy-parent/mass-schedule-and-other-events/",
+        "https://www.latinmassdir.org/venue/carmelite-monastery-of-the-infant-of-prague-traverse-city-united-states/"
+      ],
+      "decision": "HOLD_IDENTITY_OR_SOURCE",
+      "specific_reason": "HOLD_KNOWN_ALIAS_OR_IDENTITY_OR_CLOSED_SITE",
+      "excel_all_venues_row": 1588,
+      "excel_unpinned_queue_row": 171,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-A3F94D9DDAE3",
+      "name": "Chapelle du Saint-Suaire",
+      "country": "FR",
+      "original_address": null,
+      "source_ids": [
+        "AO-B33-L-FR-7FB800B4589E"
+      ],
+      "original_sources": [
+        "https://icrspfrance.fr/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1592,
+      "excel_unpinned_queue_row": 399,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-A59E16CD01C5",
+      "name": "Abbazia di San Benedetto in Monte",
+      "country": "IT",
+      "original_address": "Località Case Sparse 164",
+      "source_ids": [
+        "AO-B39-LOC-IT-B645F38560B9"
+      ],
+      "original_sources": [
+        "https://www.unavoceitalia.org/wordpress/messe/norcia/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1609,
+      "excel_unpinned_queue_row": 437,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-A74DC06D4545",
+      "name": "Santuario Guadalupano — Ciudad Juárez",
+      "country": "MX",
+      "original_address": "Calle Peral 533 Bis, Colonia Insurgentes, Ciudad Juárez, Chihuahua, Mexico",
+      "source_ids": [
+        "AO-B54-MX-998CEA7FB3AF"
+      ],
+      "original_sources": [
+        "https://obispoenmisiones.com/sociedad-sacerdotal-trento/directorio-oficial-de-las-iglesias-de-s-s-t/"
+      ],
+      "decision": "HOLD_IDENTITY_OR_SOURCE",
+      "specific_reason": "HOLD_AMBIGUOUS_GAZETTEER_MATCH",
+      "excel_all_venues_row": 1628,
+      "excel_unpinned_queue_row": 471,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-AADE0DB1F592",
+      "name": "Sant Joan Baptista",
+      "country": "ES",
+      "original_address": null,
+      "source_ids": [
+        "AO-B38-LOC-ES-C07DA1CA0CE"
+      ],
+      "original_sources": [
+        "https://www.latinmassdir.org/country/es/?area=&communities=all&days=any&lat=&lng=&radius=all&venue_status=active&view=list"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1670,
+      "excel_unpinned_queue_row": 391,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-ABCB0A10279D",
+      "name": "IMBC Raveau Chapel",
+      "country": "FR",
+      "original_address": "350 Route de Mouchy, 58400 Raveau France",
+      "source_ids": [
+        "AO-B50-IMBC-FR-662336018D7"
+      ],
+      "original_sources": [
+        "https://www.sodalitium.eu/saintes-messes/raveau/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1685,
+      "excel_unpinned_queue_row": 413,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-AEF4C7362F26",
+      "name": "Capela São Miguel Arcanjo — Araçuaí",
+      "country": "BR",
+      "original_address": "Rua Engenheiro Schnoor 92, Juparaná, Araçuaí MG 39602-132, Brazil",
+      "source_ids": [
+        "AO-B54-BR-6AD3D9EC2792"
+      ],
+      "original_sources": [
+        "https://www.mosteirodasantacruz.org/onde-estamos"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1722,
+      "excel_unpinned_queue_row": 317,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-AFAA6529F2CD",
+      "name": "Annunciation Monastery — Poor Clares of Joliet",
+      "country": "US",
+      "original_address": "6200 E Minooka Road, Minooka, IL 60447, USA",
+      "source_ids": [
+        "AO-B53-US-519772E38E10"
+      ],
+      "original_sources": [
+        "https://www.poorclaresofjoliet.org/liturgical-schedule",
+        "https://www.poorclaresofjoliet.org/poor-clares"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1731,
+      "excel_unpinned_queue_row": 167,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-B3EEC6187FEA",
+      "name": "Saint Peregrine Church",
+      "country": "US",
+      "original_address": "3086 W Streetsboro Rd, Richfield OH 44286",
+      "source_ids": [
+        "AO-B45-SSPX-US-3A4F197FF506"
+      ],
+      "original_sources": [
+        "https://sspx.org/en/list-sspx-chapels"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1760,
+      "excel_unpinned_queue_row": 231,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-B610D55233B1",
+      "name": "Church of St. John Mary Vianney — Kōenji",
+      "country": "JP",
+      "original_address": "2-33-32 Koenji-Minami, Suginami-ku, Tokyo 166-0003, Japan",
+      "source_ids": [
+        "AO-B55-JP-DF24EB9EEC28"
+      ],
+      "original_sources": [
+        "https://uvj.jp/en/mass-schedule/",
+        "https://tokyo.catholic.jp/en/parishes/tokyo/koenji/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1772,
+      "excel_unpinned_queue_row": 461,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-B65-1792675F4E43",
+      "name": "St Antonius",
+      "country": "CH",
+      "original_address": "Flurstrasse 10",
+      "source_ids": [
+        "AO-RSCH-B65-1792675F4E43"
+      ],
+      "original_sources": [
+        "https://www.pro-missa-tridentina.org/heilige-messen/regelmaessige-gottesdienste_3.htm"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1778,
+      "excel_unpinned_queue_row": 340,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-B65-2A5ED1E07442",
+      "name": "Klosterkapelle ehemalige Zisterzienserinnen",
+      "country": "CH",
+      "original_address": "Choliweg",
+      "source_ids": [
+        "AO-RSCH-B65-2A5ED1E07442"
+      ],
+      "original_sources": [
+        "https://www.pro-missa-tridentina.org/heilige-messen/regelmaessige-gottesdienste_3.htm"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1781,
+      "excel_unpinned_queue_row": 336,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-B65-493342D9372E",
+      "name": "Kaplica domu rekolekcyjnego Dobre Miejsce",
+      "country": "PL",
+      "original_address": "Dobre Miejsce retreat centre chapel, Dewajtis 3, Warszawa",
+      "source_ids": [
+        "AO-RSCH-B65-493342D9372E"
+      ],
+      "original_sources": [
+        "https://radiowarszawa.com.pl/wiadomosci/rodzina/gdzie-w-warszawie-sprawowana-jest-msza-trydencka"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1784,
+      "excel_unpinned_queue_row": 502,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-B65-7556A0E25BC6",
+      "name": "Ellbogenkapelle Sankt Ursula auf der Stetten",
+      "country": "CH",
+      "original_address": "St Ursula Ellbogenkapelle, Buchholz 2; independent 2025 local report describes monthly Mass.",
+      "source_ids": [
+        "AO-RSCH-B65-7556A0E25BC6"
+      ],
+      "original_sources": [
+        "https://www.pro-missa-tridentina.org/heilige-messen/introibo.htm?kategorie_id=3"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1791,
+      "excel_unpinned_queue_row": 333,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-B65-77C86C7B3EC4",
+      "name": "Basilica Magistrale di Santa Croce",
+      "country": "IT",
+      "original_address": "Basilica Magistrale di Santa Croce, Via Corte d'Appello 44, Cagliari",
+      "source_ids": [
+        "AO-RSCH-B65-77C86C7B3EC4"
+      ],
+      "original_sources": [
+        "https://www.parrocchiasantacroce.com/liturgia-vetus-ordo/"
+      ],
+      "decision": "HOLD_IDENTITY_OR_SOURCE",
+      "specific_reason": "HOLD_KNOWN_ALIAS_OR_IDENTITY_OR_CLOSED_SITE",
+      "excel_all_venues_row": 1792,
+      "excel_unpinned_queue_row": 438,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-B65-84A7E1C30EF2",
+      "name": "St Jakob Sentikirche",
+      "country": "CH",
+      "original_address": "Baselstrasse 21",
+      "source_ids": [
+        "AO-RSCH-B65-84A7E1C30EF2"
+      ],
+      "original_sources": [
+        "https://www.pro-missa-tridentina.org/heilige-messen/regelmaessige-gottesdienste_3.htm"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1793,
+      "excel_unpinned_queue_row": 341,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-B65-91DEE2BDFFF4",
+      "name": "St Anna",
+      "country": "AT",
+      "original_address": "Hauptstrasse",
+      "source_ids": [
+        "AO-RSCH-B65-91DEE2BDFFF4"
+      ],
+      "original_sources": [
+        "https://www.pro-missa-tridentina.org/heilige-messen/regelmaessige-gottesdienste_2.htm"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1794,
+      "excel_unpinned_queue_row": 281,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-B65-93BA13FBD183",
+      "name": "St Michael",
+      "country": "AT",
+      "original_address": "Hohenzell",
+      "source_ids": [
+        "AO-RSCH-B65-93BA13FBD183"
+      ],
+      "original_sources": [
+        "https://www.pro-missa-tridentina.org/heilige-messen/regelmaessige-gottesdienste_2.htm"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1795,
+      "excel_unpinned_queue_row": 283,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-B65-AC330F6E2481",
+      "name": "St Leonhard",
+      "country": "AT",
+      "original_address": "Kirchenplatz 1",
+      "source_ids": [
+        "AO-RSCH-B65-AC330F6E2481"
+      ],
+      "original_sources": [
+        "https://www.pro-missa-tridentina.org/heilige-messen/regelmaessige-gottesdienste_2.htm"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1798,
+      "excel_unpinned_queue_row": 282,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-B65-C2B40FDE3FB1",
+      "name": "Oratorio della Madonna di Fatima",
+      "country": "CH",
+      "original_address": "Oratorio Madonna di Fatima, Via Passaroro 3, Gordola; not in 2482 site names.",
+      "source_ids": [
+        "AO-RSCH-B65-C2B40FDE3FB1"
+      ],
+      "original_sources": [
+        "https://www.pro-missa-tridentina.org/heilige-messen/introibo.htm?kategorie_id=3"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1801,
+      "excel_unpinned_queue_row": 338,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-B65-CEBB15AB51B4",
+      "name": "Kirche Rekawinkel",
+      "country": "AT",
+      "original_address": "Buchbergstrasse",
+      "source_ids": [
+        "AO-RSCH-B65-CEBB15AB51B4"
+      ],
+      "original_sources": [
+        "https://www.pro-missa-tridentina.org/heilige-messen/regelmaessige-gottesdienste_2.htm"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1803,
+      "excel_unpinned_queue_row": 275,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-B65-CFAD7E37F3B2",
+      "name": "Kaplica Sióstr Służebniczek przy Szpitalu Powiatowym",
+      "country": "PL",
+      "original_address": "Hospital-area religious chapel, precise entrance unresolved",
+      "source_ids": [
+        "AO-RSCH-B65-CFAD7E37F3B2"
+      ],
+      "original_sources": [
+        "https://fssp.pl/miejsca-celebracji/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1804,
+      "excel_unpinned_queue_row": 507,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-B65-F542148DE182",
+      "name": "Capela do Colégio Santo Tomás de Aquino",
+      "country": "BR",
+      "original_address": "Rua Rafael Rinaldi, 1485, Martins, Uberlândia - MG 38400-384",
+      "source_ids": [
+        "AO-RSCH-B65-F542148DE182"
+      ],
+      "original_sources": [
+        "https://irmandadedocarmo.org/pagina-inicial/locais-de-missa/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1806,
+      "excel_unpinned_queue_row": 302,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-B65-FE28B1E6CB47",
+      "name": "St Pierre",
+      "country": "CH",
+      "original_address": "Rue de l Eglise 13",
+      "source_ids": [
+        "AO-RSCH-B65-FE28B1E6CB47"
+      ],
+      "original_sources": [
+        "https://www.pro-missa-tridentina.org/heilige-messen/regelmaessige-gottesdienste_3.htm"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1810,
+      "excel_unpinned_queue_row": 342,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-B66-ACD5E3A16E10",
+      "name": "Kaplica pw. św. Marii Magdaleny",
+      "country": "PL",
+      "original_address": "ul. Łukasińskiego 32, Kłodzko, Poland",
+      "source_ids": [
+        "AO-RSCH-B66-ACD5E3A16E10"
+      ],
+      "original_sources": [
+        "https://tradycja-swidnica.org.pl/index.php/porzadek-celebracji"
+      ],
+      "decision": "HOLD_IDENTITY_OR_SOURCE",
+      "specific_reason": "HOLD_EXISTING_CL2_IDENTITY_CONFLICT",
+      "excel_all_venues_row": 1813,
+      "excel_unpinned_queue_row": 506,
+      "excel_reviewer_decision": "Needs more evidence",
+      "research_coordinate_not_authorized": {
+        "lat": 50.43488,
+        "lng": 16.66145,
+        "note": "Research-only, not an approved map pin"
+      }
+    },
+    {
+      "cl2_anchor": "RG-B68-BA20FDA13BAB",
+      "name": "Pfarrkirche St. Leonhard",
+      "country": "AT",
+      "original_address": "Kirchenplatz 1, 4542 Nußbach, Austria",
+      "source_ids": [
+        "AO-RSCH-B68-BA20FDA13BAB"
+      ],
+      "original_sources": [
+        "https://www.pro-missa-tridentina.org/heilige-messen/regelmaessige-gottesdienste_2.htm"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1819,
+      "excel_unpinned_queue_row": 279,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-B70-18ADA3B6C576",
+      "name": "Our Lady of Grace Church",
+      "country": "US",
+      "original_address": "167 Main St, Seneca, WI 54654",
+      "source_ids": [
+        "AO-RSCH-B70-18ADA3B6C576"
+      ],
+      "original_sources": [
+        "https://cmri.org/cmri-directory-of-traditional-latin-masses/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1833,
+      "excel_unpinned_queue_row": 203,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-B70-6CCD0C36B97D",
+      "name": "Humility of Mary Chapel",
+      "country": "US",
+      "original_address": "10352 Beech Ave, Pleasantville, IA 50225",
+      "source_ids": [
+        "AO-RSCH-B70-6CCD0C36B97D"
+      ],
+      "original_sources": [
+        "https://congregationofstpiusv.com/locations/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1838,
+      "excel_unpinned_queue_row": 185,
+      "excel_reviewer_decision": "Needs more evidence",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-B70-7A7A659A0616",
+      "name": "Our Mother of Perpetual Help Church",
+      "country": "US",
+      "original_address": "4953 South St, Sulphur Springs, OH 44881",
+      "source_ids": [
+        "AO-RSCH-B70-7A7A659A0616"
+      ],
+      "original_sources": [
+        "https://cmri.org/cmri-directory-of-traditional-latin-masses/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1839,
+      "excel_unpinned_queue_row": 216,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-B70-82AAE45BCC0C",
+      "name": "Most Holy Trinity Church",
+      "country": "US",
+      "original_address": "477 Dewey St, Wheelersburg, OH 45694",
+      "source_ids": [
+        "AO-RSCH-B70-82AAE45BCC0C"
+      ],
+      "original_sources": [
+        "https://cmri.org/cmri-directory-of-traditional-latin-masses/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1840,
+      "excel_unpinned_queue_row": 198,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-B70-8D6744DC7DC9",
+      "name": "St. Joseph Catholic Church",
+      "country": "US",
+      "original_address": "29968 County 22, Harmony, MN 55939",
+      "source_ids": [
+        "AO-RSCH-B70-8D6744DC7DC9"
+      ],
+      "original_sources": [
+        "https://cmri.org/cmri-directory-of-traditional-latin-masses/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1841,
+      "excel_unpinned_queue_row": 262,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-B70-BE6F542707F1",
+      "name": "Chapel of St. Josef",
+      "country": "DE",
+      "original_address": "Im Schlossgarten 5, 89155 Dellmensingen",
+      "source_ids": [
+        "AO-RSCH-B70-BE6F542707F1"
+      ],
+      "original_sources": [
+        "https://cmri.org/cmri-directory-of-traditional-latin-masses/cmri-traditional-latin-mass-directory-outside-the-usa/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1844,
+      "excel_unpinned_queue_row": 364,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-B72-7441A9AFEE69",
+      "name": "Chapelle du Cœur-Immaculé-de-Marie",
+      "country": "GA",
+      "original_address": "Bissobilam, Gabon — precise street not stated",
+      "source_ids": [
+        "AO-RSCH-B72-7441A9AFEE69"
+      ],
+      "original_sources": [
+        "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf",
+        "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf#page=40"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1849,
+      "excel_unpinned_queue_row": 425,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-B72-BD22249C1E0A",
+      "name": "Chapelle Notre-Dame-du-Sacré-Cœur (Meteck-Mavi)",
+      "country": "GA",
+      "original_address": "Meteck-Mavi, Gabon — precise street not stated",
+      "source_ids": [
+        "AO-RSCH-B72-BD22249C1E0A"
+      ],
+      "original_sources": [
+        "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf",
+        "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf#page=40"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1853,
+      "excel_unpinned_queue_row": 427,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-B72-C3DDC3BDBE27",
+      "name": "Chapelle Notre-Dame-de-Rocamadour",
+      "country": "GA",
+      "original_address": "Nyonié, Gabon — precise street not stated",
+      "source_ids": [
+        "AO-RSCH-B72-C3DDC3BDBE27"
+      ],
+      "original_sources": [
+        "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf",
+        "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf#page=40"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1855,
+      "excel_unpinned_queue_row": 426,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-B72-FB8664166420",
+      "name": "Chapelle de Brussels International Catholic School",
+      "country": "BE",
+      "original_address": "Brussels International Catholic School, Chaussée de Wavre 457, B-1040 Bruxelles, Belgium",
+      "source_ids": [
+        "AO-RSCH-B72-FB8664166420"
+      ],
+      "original_sources": [
+        "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf",
+        "https://www.icrsp.org/Calendriers/Calendrier-2026/Calendrier_FR_2026_web.pdf#page=43"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1859,
+      "excel_unpinned_queue_row": 288,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-B77-8874F2F6370F",
+      "name": "Prieuré Notre-Dame du Sacré-Cœur",
+      "country": "FR",
+      "original_address": "Moulin du Pin 53290 Beaumont-Pied-de-Boeuf",
+      "source_ids": [
+        "SSPX-B77:SSPX-LPL2-MOULIN-DU-PIN"
+      ],
+      "original_sources": [
+        "https://laportelatine.org/lieux/moulin-du-pin"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1863,
+      "excel_unpinned_queue_row": 422,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-B77-99C034E239A2",
+      "name": "Prieuré Étoile-du-Matin",
+      "country": "FR",
+      "original_address": "112, route forestière du Hanau 57230 Eguelshardt",
+      "source_ids": [
+        "SSPX-B77:SSPX-LPL2-EGUELSHARDT"
+      ],
+      "original_sources": [
+        "https://laportelatine.org/lieux/eguelshardt"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1864,
+      "excel_unpinned_queue_row": 421,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-B77-AFF55325F37B",
+      "name": "Schloss Jaidhof — Priorat St. Petrus Canisius",
+      "country": "AT",
+      "original_address": "Jaidhof 1, 3542 Gföhl, Österreich",
+      "source_ids": [
+        "SSPX-B77:SSPX-OCT26-AT-AT-GFOHL-SCHLOSS-JAIDHOF-PRIORAT-ST-PETRUS-CANI"
+      ],
+      "original_sources": [
+        "https://fsspx.at/de/priorate-und-messzentren-0"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1865,
+      "excel_unpinned_queue_row": 280,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-B77-D197359100A5",
+      "name": "Domus Dei — public chapel",
+      "country": "CH",
+      "original_address": "Route de la Vudalla 30, 1667 Enney",
+      "source_ids": [
+        "SSPX-B77:SSPX-CH-CH-ENNEY-DOMUS-DEI-PUBLIC-CHAPEL"
+      ],
+      "original_sources": [
+        "https://map.fsspx.org/en/places/domus-dei",
+        "https://fsspx.ch/fr/eglises-et-chapelles-suisse"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1868,
+      "excel_unpinned_queue_row": 332,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-B77-E2A7387A85DB",
+      "name": "Église du Sacré-Cœur",
+      "country": "BE",
+      "original_address": "Steffeshausen 5, 4790 Burg-Reuland, Belgique",
+      "source_ids": [
+        "SSPX-B77:SSPX-OCT26-BEN-BE-BURG-REULAND-EGLISE-DU-SACRE-C-UR"
+      ],
+      "original_sources": [
+        "https://fsspx.be/fr/eglises-et-chapelles-dans-le-benelux",
+        "https://fsspx.nl/nl/kerken-kapellen-benelux"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1870,
+      "excel_unpinned_queue_row": 289,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-B77-F58644AD6231",
+      "name": "Priorado do Imaculado Coração de Maria — chapel",
+      "country": "BR",
+      "original_address": "Rua Tuiuti 590, Centro, 97015-660 Santa Maria, RS, Brasil",
+      "source_ids": [
+        "SSPX-B77:SSPX-OCT26-BR-BR-SANTA-MARIA-PRIORADO-DO-IMACULADO-CORACAO-DE-MAR"
+      ],
+      "original_sources": [
+        "https://domantonio.fsspx.com.br/priorados-missoes-e-comunidades-amigas/",
+        "https://fsspx.com.br/pt/capelas"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1873,
+      "excel_unpinned_queue_row": 323,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-B781E9B03B5D",
+      "name": "Kostel sv. Víta",
+      "country": "CZ",
+      "original_address": "Útvina, 364 01 Toužim",
+      "source_ids": [
+        "AO-B33-L-CZ-870587128ED0"
+      ],
+      "original_sources": [
+        "https://www.unavoce.cz/mse"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1874,
+      "excel_unpinned_queue_row": 357,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-B7AB371DDFF3",
+      "name": "Kostel sv. Mikuláše",
+      "country": "CZ",
+      "original_address": "Rožmberk nad Vltavou 83, 382 18",
+      "source_ids": [
+        "AO-B33-L-CZ-098389C3827A"
+      ],
+      "original_sources": [
+        "https://www.unavoce.cz/mse"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1877,
+      "excel_unpinned_queue_row": 354,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-BAC7B010D8CC",
+      "name": "Oratory of the Sorrowful Heart of Mary",
+      "country": "US",
+      "original_address": "66 Goves Lane, Wentworth NH 03282",
+      "source_ids": [
+        "AO-B50-SSPX-MC-US-41A303AAC72"
+      ],
+      "original_sources": [
+        "https://sspxmc.com/mission-chapels/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1916,
+      "excel_unpinned_queue_row": 199,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-BBB36F61AA78",
+      "name": "Our Lady of Mount Carmel Catholic Church",
+      "country": "US",
+      "original_address": "11728 NE 36th St, Spencer OK 73084",
+      "source_ids": [
+        "AO-B50-CMRI-US-E0642DD7EFA"
+      ],
+      "original_sources": [
+        "https://cmri.org/cmri-directory-of-traditional-latin-masses/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1919,
+      "excel_unpinned_queue_row": 206,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-BBD7BD44E860",
+      "name": "Sacred Heart Chapel",
+      "country": "GB",
+      "original_address": "Skipton, United Kingdom (exact street not established)",
+      "source_ids": [
+        "AO-B34-L-GB-2FCFC18FF841"
+      ],
+      "original_sources": [
+        "https://lms.org.uk/list-of-churches"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1922,
+      "excel_unpinned_queue_row": 63,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-BD976A4B7411",
+      "name": "Onze Lieve Vrouwe van de Besloten Tuin",
+      "country": "NL",
+      "original_address": "Warfhuizen, Netherlands (secondary directory locality only; no street verified)",
+      "source_ids": [
+        "AO-B38-LOC-NL-7837B29C20A"
+      ],
+      "original_sources": [
+        "https://www.latinmassdir.org/country/nl/?view=list"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1942,
+      "excel_unpinned_queue_row": 478,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-C19C55301A0B",
+      "name": "Santa María de la Asunción",
+      "country": "ES",
+      "original_address": null,
+      "source_ids": [
+        "AO-B38-LOC-ES-3E48F0580A4"
+      ],
+      "original_sources": [
+        "https://www.latinmassdir.org/country/es/?area=&communities=all&days=any&lat=&lng=&radius=all&venue_status=active&view=list"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1977,
+      "excel_unpinned_queue_row": 392,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-C2F1E09958E7",
+      "name": "Reale Basilica di San Giacomo degli Spagnoli",
+      "country": "IT",
+      "original_address": null,
+      "source_ids": [
+        "AO-B38-LOC-IT-9ACCE7FA7C6"
+      ],
+      "original_sources": [
+        "https://www.unavoceitalia.org/wordpress/messe/napoli/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1986,
+      "excel_unpinned_queue_row": 455,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-C35C81301418",
+      "name": "Prinknash Abbey",
+      "country": "GB",
+      "original_address": "Cranham, United Kingdom (exact street not established)",
+      "source_ids": [
+        "AO-B34-L-GB-80587AB12AAF"
+      ],
+      "original_sources": [
+        "https://lms.org.uk/list-of-churches"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 1992,
+      "excel_unpinned_queue_row": 55,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-C4138959E1D3",
+      "name": "Sacred Heart Chapel — Taytay",
+      "country": "PH",
+      "original_address": "Taytay, Rizal, Philippines",
+      "source_ids": [
+        "AO-B55-PH-B1F74C86E330"
+      ],
+      "original_sources": [
+        "https://traditionalmass.ph/",
+        "https://maps.app.goo.gl/"
+      ],
+      "decision": "HOLD_IDENTITY_OR_SOURCE",
+      "specific_reason": "HOLD_AMBIGUOUS_GAZETTEER_MATCH",
+      "excel_all_venues_row": 1998,
+      "excel_unpinned_queue_row": 491,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-C51DCE8B1899",
+      "name": "Carmel of Jesus, Mary and Joseph — Fairfield",
+      "country": "US",
+      "original_address": "327 Water Street, Fairfield, PA 17320",
+      "source_ids": [
+        "AO-B51-US-95B0C4CD050D"
+      ],
+      "original_sources": [
+        "https://fairfieldcarmelites.squarespace.com/contact"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2004,
+      "excel_unpinned_queue_row": 168,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-C6757639FE84",
+      "name": "Kostel sv. Františka z Assisi (Studánka)",
+      "country": "CZ",
+      "original_address": "Varnsdorf 3",
+      "source_ids": [
+        "AO-B33-L-CZ-165F6F3B5969"
+      ],
+      "original_sources": [
+        "https://www.unavoce.cz/mse"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2021,
+      "excel_unpinned_queue_row": 352,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-C880EFE88048",
+      "name": "Marienkapelle",
+      "country": "AT",
+      "original_address": "Köppach 2093, 4904 Köppach",
+      "source_ids": [
+        "AO-B37-L-AT-A9DA4FFE2DA9"
+      ],
+      "original_sources": [
+        "https://petrusbruderschaft.de/pages/wo-wir-sind/oesterreich/messorte.php"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2039,
+      "excel_unpinned_queue_row": 277,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-CA7EB07D0EB5",
+      "name": "St Jude Mission at Rose Hill Community Center",
+      "country": "US",
+      "original_address": "37012 Straughn School Rd, Dozier AL 36028",
+      "source_ids": [
+        "AO-B50-CMRI-US-CD678861E13"
+      ],
+      "original_sources": [
+        "https://cmri.org/cmri-directory-of-traditional-latin-masses/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2057,
+      "excel_unpinned_queue_row": 249,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-CAE1B1B5608A",
+      "name": "Capilla de Ntra. Sra. de los Remedios",
+      "country": "ES",
+      "original_address": "Calle Remedios 2 - E-11403 Jerez de la Frontera - España",
+      "source_ids": [
+        "AO-B42-FSSP-ES-112"
+      ],
+      "original_sources": [
+        "https://www.fssp.org/en/find-us/where-are-we/"
+      ],
+      "decision": "HOLD_IDENTITY_OR_SOURCE",
+      "specific_reason": "HOLD_KNOWN_ALIAS_OR_IDENTITY_OR_CLOSED_SITE",
+      "excel_all_venues_row": 2063,
+      "excel_unpinned_queue_row": 372,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-CC4EE5699ABD",
+      "name": "Sacred Heart Our Lady of Mount Carmel Shrine",
+      "country": "US",
+      "original_address": "442 Fairview Ave, Hudson NY",
+      "source_ids": [
+        "AO-B50-CMRI-US-3BC0B9CBDF1"
+      ],
+      "original_sources": [
+        "https://cmri.org/cmri-directory-of-traditional-latin-masses/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2083,
+      "excel_unpinned_queue_row": 229,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-CC53C4123771",
+      "name": "Monasterio Nuestra Señora de Aysén — monks",
+      "country": "CL",
+      "original_address": "Península de Levicán, comuna de Río Ibáñez, Lago General Carrera, Aysén, Chile",
+      "source_ids": [
+        "AO-B54-CL-29EAD14F2ADC"
+      ],
+      "original_sources": [
+        "https://www.infocatolica.com/blog/schola.php/",
+        "https://www.infocatolica.com/blog/schola.php/2201150626-visita-de-la-virgen-de-fatima"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2084,
+      "excel_unpinned_queue_row": 344,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-CDC1570817BE",
+      "name": "CMRI Mass at Wallace Community Center",
+      "country": "US",
+      "original_address": "500 Main St, Wallace SD 57272",
+      "source_ids": [
+        "AO-B50-CMRI-US-9AE7D823379"
+      ],
+      "original_sources": [
+        "https://cmri.org/cmri-directory-of-traditional-latin-masses/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2101,
+      "excel_unpinned_queue_row": 174,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-CE1A535B59CD",
+      "name": "Hull University Catholic Chaplaincy",
+      "country": "GB",
+      "original_address": "Hull, United Kingdom (exact street not established)",
+      "source_ids": [
+        "AO-B34-L-GB-5125E1F07683"
+      ],
+      "original_sources": [
+        "https://lms.org.uk/list-of-churches"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2104,
+      "excel_unpinned_queue_row": 28,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-CE23FB8C5592",
+      "name": "IMBC Aix Luynes Chapel",
+      "country": "FR",
+      "original_address": "3 Impasse des Arbousiers, 13080 Luynes France",
+      "source_ids": [
+        "AO-B50-IMBC-FR-659F25B3967"
+      ],
+      "original_sources": [
+        "https://www.sodalitium.eu/saintes-messes/aix-en-provence/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2105,
+      "excel_unpinned_queue_row": 411,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-CF40DBEAD235",
+      "name": "Kaplica Świętej Barbary przy parafii Świętego Krzyża",
+      "country": "PL",
+      "original_address": "ul. Jaskółcza 35",
+      "source_ids": [
+        "AO-B39-LOC-PL-8CC811C5D8CD"
+      ],
+      "original_sources": [
+        "https://tradycja.org/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2114,
+      "excel_unpinned_queue_row": 512,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-D1CB87236E32",
+      "name": "Kaplica św. Rafała Archanioła",
+      "country": "PL",
+      "original_address": "Rafały 4, Rafały, Poland",
+      "source_ids": [
+        "AO-B33-L-PL-AD6BD91339E4",
+        "AO-B40-SSPX-PL-RAFALY"
+      ],
+      "original_sources": [
+        "https://www.piusx.org.pl/kaplice/rafaly",
+        "https://www.piusx.org.pl/kaplice/zestawienie"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2141,
+      "excel_unpinned_queue_row": 511,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-D444BB1B8A14",
+      "name": "Chapelle de la Maison Padre Pio",
+      "country": "FR",
+      "original_address": "1 chemin de Petite Champagne, 69340 Francheville, France",
+      "source_ids": [
+        "AO-B42-FSSP-FR-165",
+        "AO-B48-LOC-FR-FRANCHEVILLE-PADRE-PIO-CHAPEL"
+      ],
+      "original_sources": [
+        "https://www.fssp.org/en/find-us/where-are-we/",
+        "https://www.fssp.fr/oeuvres-et-activites/ecole/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2173,
+      "excel_unpinned_queue_row": 394,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-D44F46EE8EFF",
+      "name": "Monastery of St Joseph — Benedictines of Mary",
+      "country": "US",
+      "original_address": "State Highway P, Ava, Missouri",
+      "source_ids": [
+        "AO-B51-US-56A5B546F412"
+      ],
+      "original_sources": [
+        "https://benedictinesofmary.org/ava/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2174,
+      "excel_unpinned_queue_row": 196,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-D67ACE6157EF",
+      "name": "Chapelle du Cours Saint-Dominique-du-Cammazou",
+      "country": "FR",
+      "original_address": "1 chemin du Cammazou, 11270 Fanjeaux, France",
+      "source_ids": [
+        "AO-B52-FR-02D8D6F443CE"
+      ],
+      "original_sources": [
+        "https://laportelatine.org/lieux/fanjeaux",
+        "https://www.unavoce.fr/annuaire-des-communautes-religieuses/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2192,
+      "excel_unpinned_queue_row": 398,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-D6F294379CEF",
+      "name": "Église de Duingt",
+      "country": "FR",
+      "original_address": "Duingt, Haute-Savoie (street/address to confirm)",
+      "source_ids": [
+        "AO-B33-L-FR-3F7500F0BAEC"
+      ],
+      "original_sources": [
+        "https://fsspannecy.fr/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2197,
+      "excel_unpinned_queue_row": 408,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-D7141A7B007B",
+      "name": "St Mary Catholic Church",
+      "country": "US",
+      "original_address": "458 N Fair St, Rockville NE 68871",
+      "source_ids": [
+        "AO-B50-CMRI-US-1CDC3DA4FCD"
+      ],
+      "original_sources": [
+        "https://cmri.org/cmri-directory-of-traditional-latin-masses/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2200,
+      "excel_unpinned_queue_row": 252,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-D8598963F6F1",
+      "name": "Kostol Najsvätejšej Trojice",
+      "country": "SK",
+      "original_address": "Hlavná 67",
+      "source_ids": [
+        "AO-B39-LOC-SK-C7B6252DDC8F"
+      ],
+      "original_sources": [
+        "https://www.latinmassdir.org/country/sk/?view=list"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2215,
+      "excel_unpinned_queue_row": 524,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-DAB6D34F5157",
+      "name": "Sons of Holy Mary Immaculate Seminary Chapel — Parañaque",
+      "country": "PH",
+      "original_address": "Madre Isabella Rosis, Parañaque, Metro Manila, Philippines",
+      "source_ids": [
+        "AO-B55-PH-830C403F3325"
+      ],
+      "original_sources": [
+        "https://www.latinmassdir.org/venue/sons-of-holy-mary-immaculate-seminary-chapel-paranaque-philippines/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2241,
+      "excel_unpinned_queue_row": 497,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-DE8F28D8A0EC",
+      "name": "Iglesia de las Siervas de María",
+      "country": "ES",
+      "original_address": null,
+      "source_ids": [
+        "AO-B38-LOC-ES-0094B26D8C7"
+      ],
+      "original_sources": [
+        "https://www.latinmassdir.org/country/es/?area=&communities=all&days=any&lat=&lng=&radius=all&venue_status=active&view=list"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2276,
+      "excel_unpinned_queue_row": 383,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-E305C7F59794",
+      "name": "Retraitecentrum Klein Sion",
+      "country": "NL",
+      "original_address": "Leuvenheim, Netherlands (secondary directory locality only; no street verified)",
+      "source_ids": [
+        "AO-B38-LOC-NL-A4AA0C41FB1"
+      ],
+      "original_sources": [
+        "https://www.latinmassdir.org/country/nl/?view=list"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2305,
+      "excel_unpinned_queue_row": 479,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-E49388144618",
+      "name": "Our Lady of Mount Carmel Church",
+      "country": "US",
+      "original_address": "110 W Poplar St, Harrodsburg KY 40330",
+      "source_ids": [
+        "AO-B50-CMRI-US-5A1CCD21988"
+      ],
+      "original_sources": [
+        "https://cmri.org/cmri-directory-of-traditional-latin-masses/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2318,
+      "excel_unpinned_queue_row": 208,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-E5915DE991A8",
+      "name": "Holy Nativity Chapel",
+      "country": "US",
+      "original_address": "137 Chambers St, Phillipsburg NJ 08865",
+      "source_ids": [
+        "AO-B50-SSPV-US-155A40A29A9"
+      ],
+      "original_sources": [
+        "https://congregationofstpiusv.com/locations/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2325,
+      "excel_unpinned_queue_row": 183,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-E5BA3AA17C1B",
+      "name": "St Joseph's",
+      "country": "GB",
+      "original_address": "Todmorden, United Kingdom (exact worship address NOT confirmed)",
+      "source_ids": [
+        "AO-B35-L-GB-CE72BF7AA14E"
+      ],
+      "original_sources": [
+        "https://lms.org.uk/list-of-churches"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2328,
+      "excel_unpinned_queue_row": 122,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-E689CCA09552",
+      "name": "Saint Anthony Church",
+      "country": "NL",
+      "original_address": "Hogeweg 50, 7894 AS Zwartemeer Netherlands",
+      "source_ids": [
+        "AO-B50-IMBC-NL-99AD4DDDF07"
+      ],
+      "original_sources": [
+        "https://www.sodalitium.eu/saintes-messes/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2338,
+      "excel_unpinned_queue_row": 480,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-E8AB816F595F",
+      "name": "St Augustine's",
+      "country": "GB",
+      "original_address": "Snave, United Kingdom (exact worship address NOT confirmed)",
+      "source_ids": [
+        "AO-B35-L-GB-C6EF4FDC22A7"
+      ],
+      "original_sources": [
+        "https://lms.org.uk/list-of-churches"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2357,
+      "excel_unpinned_queue_row": 79,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-E941C843ABE7",
+      "name": "Sint-Michaëlskapel",
+      "country": "BE",
+      "original_address": "As, Belgium (secondary directory locality only; no street verified)",
+      "source_ids": [
+        "AO-B38-LOC-BE-751D9C48485"
+      ],
+      "original_sources": [
+        "https://www.latinmassdir.org/country/be/?view=list"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2368,
+      "excel_unpinned_queue_row": 297,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-EAB957DF2577",
+      "name": "Kościół Filialny Podwyższenia Krzyża Świętego",
+      "country": "PL",
+      "original_address": "ul. Kasztanowa 3 - PL 66-416 Wojcieszyce - Polska",
+      "source_ids": [
+        "AO-B42-FSSP-PL-278",
+        "AO-B42-FSSP-PL-289017C1BD7B"
+      ],
+      "original_sources": [
+        "https://fssp.pl/miejsca-celebracji/",
+        "https://www.fssp.org/en/find-us/where-are-we/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2378,
+      "excel_unpinned_queue_row": 515,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-EE16A827B1C2",
+      "name": "IMBC Bucsuta Mass Center",
+      "country": "HU",
+      "original_address": "Petofi ut 7, 8893 Bucsuta Hungary",
+      "source_ids": [
+        "AO-B50-IMBC-HU-34C08CF992A"
+      ],
+      "original_sources": [
+        "https://www.sodalitium.eu/saintes-messes/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2412,
+      "excel_unpinned_queue_row": 431,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-EED177E54521",
+      "name": "Queen of All Saints Chapel — Youngtown",
+      "country": "US",
+      "original_address": "12252 N 111th Ave, Youngtown, AZ 85363, USA",
+      "source_ids": [
+        "AO-B56-US-6FC10B0DB902"
+      ],
+      "original_sources": [
+        "https://romancatholicinstitute.org/mass-centers/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2421,
+      "excel_unpinned_queue_row": 220,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-F0D86E846BFF",
+      "name": "Chapelle Notre-Dame-de-la-Consolation",
+      "country": "FR",
+      "original_address": "La Capelette S, 12260 Foissac",
+      "source_ids": [
+        "AO-B40-LOC-FR-7156EAA15ED1"
+      ],
+      "original_sources": [
+        "https://icrspfrance.fr/?org=14"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2441,
+      "excel_unpinned_queue_row": 402,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-F1539B94943E",
+      "name": "Kapelle St. Marien",
+      "country": "DE",
+      "original_address": "Steinklingener Straße 24, 69469 Oberflockenbach, Germany",
+      "source_ids": [
+        "AO-B33-L-DE-AD85F9E065AA"
+      ],
+      "original_sources": [
+        "https://petrusbruderschaft.de/pages/wo-wir-sind/deutschland/messorte.php"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2446,
+      "excel_unpinned_queue_row": 368,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-F1733AA1138E",
+      "name": "Priory of the Annunciation — Canons Regular of the New Jerusalem",
+      "country": "US",
+      "original_address": "219 South George Street, Charles Town, WV 25414",
+      "source_ids": [
+        "AO-B51-US-B111F24F87CA"
+      ],
+      "original_sources": [
+        "https://www.canonsregular.com/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2447,
+      "excel_unpinned_queue_row": 217,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-F17F4D252496",
+      "name": "St Philomena Chapel",
+      "country": "US",
+      "original_address": "23814 AR 300, Roland AR 72135",
+      "source_ids": [
+        "AO-B50-CMRI-US-42918E9A15D"
+      ],
+      "original_sources": [
+        "https://cmri.org/cmri-directory-of-traditional-latin-masses/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2449,
+      "excel_unpinned_queue_row": 255,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-F1D5D7FD6172",
+      "name": "St Thomas More Church",
+      "country": "US",
+      "original_address": "9389 Elm St, Chadwicks NY 13319",
+      "source_ids": [
+        "AO-B50-SSPV-US-BCA0DBD2C62"
+      ],
+      "original_sources": [
+        "https://stpiusvchapel.org/mass-locations/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2452,
+      "excel_unpinned_queue_row": 260,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-F21B355729C8",
+      "name": "Chapelle Sainte-Anne",
+      "country": "CH",
+      "original_address": "Hattenberg (Bourguillon) - Hattenberg 2 - CH-1717 Hattenberg-St. Ursen - Suisse",
+      "source_ids": [
+        "AO-B42-FSSP-CH-288",
+        "AO-B42-FSSP-CH-BF96E7795AEB"
+      ],
+      "original_sources": [
+        "https://www.fssp.org/en/find-us/where-are-we/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2457,
+      "excel_unpinned_queue_row": 331,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-F23AD681AE4E",
+      "name": "Mary Immaculate Queen Church",
+      "country": "US",
+      "original_address": "15384 N Church Rd, Rathdrum ID 83858",
+      "source_ids": [
+        "AO-B50-CMRI-US-38831D2BBC1"
+      ],
+      "original_sources": [
+        "https://cmri.org/cmri-directory-of-traditional-latin-masses/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2458,
+      "excel_unpinned_queue_row": 194,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-F279F4790667",
+      "name": "Our Lady of Fatima Mission",
+      "country": "US",
+      "original_address": "15 Bennett St, Piedmont SC 29673",
+      "source_ids": [
+        "AO-B50-CMRI-US-2FDE7FC7B33"
+      ],
+      "original_sources": [
+        "https://cmri.org/cmri-directory-of-traditional-latin-masses/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2459,
+      "excel_unpinned_queue_row": 201,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-F36A816F8669",
+      "name": "St Joseph Novitiate Mass Chapel",
+      "country": "US",
+      "original_address": "1275 Hearts Content Rd, Round Top NY 12473",
+      "source_ids": [
+        "AO-B50-SSPV-US-54371F828C9"
+      ],
+      "original_sources": [
+        "https://congregationofstpiusv.com/locations/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2466,
+      "excel_unpinned_queue_row": 246,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-F51B9FB0F349",
+      "name": "Igreja Nossa Senhora de Portugal",
+      "country": "PT",
+      "original_address": "Rua Afonso Annes Penedo 58, 1950-014 Marvila, Lisboa",
+      "source_ids": [
+        "AO-B39-LOC-PT-D582EC4F8678"
+      ],
+      "original_sources": [
+        "https://fsspx.es/pt/capelas-em-portugal-43239"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2486,
+      "excel_unpinned_queue_row": 520,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-F8B7A9C964DD",
+      "name": "Sizergh Castle Chapel",
+      "country": "GB",
+      "original_address": "Sizergh, United Kingdom (exact street not established)",
+      "source_ids": [
+        "AO-B34-L-GB-F1077F246080"
+      ],
+      "original_sources": [
+        "https://lms.org.uk/list-of-churches"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2510,
+      "excel_unpinned_queue_row": 66,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-FC8495E0E039",
+      "name": "Chiesa di San Daniele Profeta",
+      "country": "IT",
+      "original_address": "Paluzza UD",
+      "source_ids": [
+        "AO-B39-LOC-IT-403B6F8E6B22"
+      ],
+      "original_sources": [
+        "https://www.unavoceitalia.org/wordpress/messe/4925-2/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2549,
+      "excel_unpinned_queue_row": 448,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-FC9C1D79B1FC",
+      "name": "Chiesa di Santa Maria della Vittoria",
+      "country": "IT",
+      "original_address": null,
+      "source_ids": [
+        "AO-B38-LOC-IT-2EE1FC60973"
+      ],
+      "original_sources": [
+        "https://www.unavoceitalia.org/wordpress/messe/napoli/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2551,
+      "excel_unpinned_queue_row": 450,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-FCF30927E2BA",
+      "name": "Chiesa Santa Maria della Sanità a Barra",
+      "country": "IT",
+      "original_address": "Corso Sirena 68, 80147 Napoli",
+      "source_ids": [
+        "AO-B37-L-IT-3CD93C1D2463"
+      ],
+      "original_sources": [
+        "https://www.icrss.it/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2555,
+      "excel_unpinned_queue_row": 451,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-FE768E228F9C",
+      "name": "St Patrick and St David",
+      "country": "GB",
+      "original_address": "Haverfordwest, United Kingdom (exact worship address NOT confirmed)",
+      "source_ids": [
+        "AO-B35-L-GB-D2D6515DDC07"
+      ],
+      "original_sources": [
+        "https://lms.org.uk/list-of-churches"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2562,
+      "excel_unpinned_queue_row": 145,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-FEB07D1FAD61",
+      "name": "Hauskapelle Kurhaus Marienburg",
+      "country": "CH",
+      "original_address": "St. Pelagibergstrasse, 9225 St. Pelagiberg",
+      "source_ids": [
+        "AO-B37-L-CH-712E0F89EED0"
+      ],
+      "original_sources": [
+        "https://petrusbruderschaft.de/pages/wo-wir-sind/schweiz/messorte.php"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2565,
+      "excel_unpinned_queue_row": 334,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-FECDA1DB9A9E",
+      "name": "Capela Nossa Senhora das Dores",
+      "country": "BR",
+      "original_address": "Av. das Paineiras, Entrequadra 9/10, Jardim Botânico III, Brasília DF 71681-505",
+      "source_ids": [
+        "AO-B41-LOC-BR-14A3651CF821"
+      ],
+      "original_sources": [
+        "https://www.institutdubonpasteur.org/nos-apostolats/lieux-dapostolat-dans-le-monde/brasilia/"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2567,
+      "excel_unpinned_queue_row": 307,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    },
+    {
+      "cl2_anchor": "RG-FFAAC62B0A2D",
+      "name": "Maison Notre-Dame-de-Rocamadour",
+      "country": "FR",
+      "original_address": "Lagarrigue Haute, 46600 Baladou",
+      "source_ids": [
+        "AO-B40-LOC-FR-6BE51BF7D76A"
+      ],
+      "original_sources": [
+        "https://icrspfrance.fr/?org=4"
+      ],
+      "decision": "NO_PUBLISHABLE_LOCALITY_EVIDENCE",
+      "specific_reason": "NO_SAFE_LOCALITY_CANDIDATE",
+      "excel_all_venues_row": 2578,
+      "excel_unpinned_queue_row": 415,
+      "excel_reviewer_decision": "Pending",
+      "research_coordinate_not_authorized": null
+    }
+  ]
+}

@@ -3,6 +3,7 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS} from "../src/find/cl2-illustrative-locality-pins.js";
+import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R2} from "../src/find/cl2-illustrative-locality-pins-r2.js";
 import {validateCL2PhysicalIndex,projectCL2PhysicalDirectory} from "../src/find/cl2-physical-directory.js";
 import {projectPreliminaryR49,projectPublishedProvisionalMassSites} from "../src/find/preliminary-directory-r49.js";
 import {renderTlmChurchProfile} from "../src/find/tlm-church-profile.js";
@@ -74,6 +75,9 @@ for(const [id,loc] of pins){
 }
 const withheld=audit.records.filter(r=>r.status!=="APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE");
 assert.equal(withheld.length,277); // frozen R1 audit: 435 original unpinned minus 158 accepted localities
+const r2=Object.entries(CL2_ILLUSTRATIVE_LOCALITY_PINS_R2);
+assert.equal(r2.length,93,"R2 has exactly 94 independent Excel-approved localities");
+assert.ok(r2.every(([id])=>!CL2_ILLUSTRATIVE_LOCALITY_PINS[id]), "R2 may not downgrade R1 pins");
 // Nine additional Excel-approved exact/named-POI sites are imported by the
 // separate precise-site gate, not as inferred locality pins. Historical
 // identity holds and every other R1 withheld record remain unpinned.
@@ -83,10 +87,19 @@ const laterPreciseSiteIds=new Set([
  "RG-A504818C84DC","RG-50BE1A7B5F18","RG-8EC1B37099D3",
 ]);
 assert.equal(laterPreciseSiteIds.size,9);
+assert.ok(r2.every(([id])=>!laterPreciseSiteIds.has(id)), "R2 may not downgrade a precise site");
 for(const r of withheld){
  assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS[r.cl2_anchor],"Exact-site and held profiles cannot be assigned a locality fallback");
  const item=items.get(r.cl2_anchor);
- if(laterPreciseSiteIds.has(r.cl2_anchor)){
+ if(CL2_ILLUSTRATIVE_LOCALITY_PINS_R2[r.cl2_anchor]){
+  const pin=CL2_ILLUSTRATIVE_LOCALITY_PINS_R2[r.cl2_anchor];
+  assert.equal(r.status,"NO_SAFE_LOCALITY_CANDIDATE","Only R1 previously unresearched locality candidates may be promoted to R2");
+  assert.ok(item?.map_publishable&&item.geo?.precision==="locality");
+  assert.equal(item.geo.lat,pin.lat);assert.equal(item.geo.lng,pin.lng);
+  assert.ok(item.geo.attribution.includes("GeoNames"));
+  assert.equal(item.actions.length,1);
+  assert.ok(!item.actions[0].url.includes("/maps/dir/"));
+ }else if(laterPreciseSiteIds.has(r.cl2_anchor)){
   assert.ok(item?.map_publishable&&item.geo?.precision==="site","Excel precise site must use independently sourced site point: "+r.cl2_anchor);
   assert.ok(item.geo.source_ref&&!item.geo.source_ref.startsWith("geonames"),"Precise point may not use city-centre evidence: "+r.cl2_anchor);
  }else{
@@ -107,11 +120,11 @@ assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS["RG-2C84B50B3667"],"Bootle closed-site
 assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS["RG-0DCEDA190517"],"Reading church identity hold");
 assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS["RG-B65-77C86C7B3EC4"],"Cagliari Santa Croce potential alias already mapped");
 assert.equal(world.length,2582);
-assert.equal(world.filter(x=>x.map_publishable).length,2314);
-assert.equal(world.filter(x=>!x.map_publishable).length,268);
+assert.equal(world.filter(x=>x.map_publishable).length,2407);
+assert.equal(world.filter(x=>!x.map_publishable).length,175);
 const first=items.get(pins[0][0]);
 assert.match(renderTlmChurchProfile(first,"en"),/Illustrative town marker ONLY/);
 assert.match(renderTlmChurchProfile(first,"en"),/Find church by name\/address on Google Maps/);
 assert.match(renderTlmChurchProfile(first,"fr"),/Repère indicatif de la commune UNIQUEMENT/);
 assert.match(renderTlmChurchProfile(first,"fr"),/Rechercher l’église par nom\/adresse sur Google Maps/);
-console.log("PASS CL2 illustrative localities: 158 Excel-approved provisional, 268 held/address-only; precise GPS routing blocked; frozen 2,582 identity and CL27 scope preserved");
+console.log("PASS CL2 illustrative localities: 158 R1 plus 93 R2 Excel-approved, 175 held/address-only; precise GPS routing blocked; frozen 2,582 identity and CL27 scope preserved");

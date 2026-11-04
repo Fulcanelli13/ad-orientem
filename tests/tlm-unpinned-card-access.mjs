@@ -1,6 +1,6 @@
 // Every source-owned TLM church must remain browseable before geocoding.
 // This protects published cards, preview/detail routes and bilingual fallbacks
-// for the 268 currently list-only CL2 physical identities (158 additional locality markers are illustrative only).
+// for the 175 currently list-only CL2 physical identities (158 additional locality markers are illustrative only).
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {projectPreliminaryR49,projectPublishedProvisionalMassSites,filterPreliminaryR49}
@@ -20,8 +20,8 @@ const published=projectPublishedProvisionalMassSites(r49,
 const world=projectCL2PhysicalDirectory(published,index);
 assert.equal(world.length,2582);
 const unpinned=world.filter(item=>item.kind==="TLM_VENUE"&&!item.map_publishable);
-assert.equal(unpinned.length,268,"The list-only count must be reviewed when site positions change");
-assert.equal(filterPreliminaryR49(world,{siteEvidence:"ADDRESS_ONLY"}).length,268,
+assert.equal(unpinned.length,175,"The list-only count must be reviewed when site positions change");
+assert.equal(filterPreliminaryR49(world,{siteEvidence:"ADDRESS_ONLY"}).length,175,
   "The public filter must reach every unpinned church without new map geometry");
 const ids=new Set();
 for(const church of unpinned){
@@ -57,10 +57,10 @@ const initialMap=renderExploreToString(buildExploreViewModel({
   language:"en",lens:"tlm",view:"map",items:world,filters:{directoryGroup:"ALL",affiliations:[],query:""}
 }));
 assert.ok(initialMap.includes("data-tlm-map-open-unmapped"));
-assert.ok(initialMap.includes("Browse 268 unpinned church profiles"));
-const frenchRail=renderTlmMapResultRail({language:"fr",items:[],addressOnlyCount:268});
+assert.ok(initialMap.includes("Browse 175 unpinned church profiles"));
+const frenchRail=renderTlmMapResultRail({language:"fr",items:[],addressOnlyCount:175});
 assert.ok(frenchRail.includes("data-tlm-map-open-unmapped"));
-assert.ok(frenchRail.includes("268 fiches d’églises sans repère"));
+assert.ok(frenchRail.includes("175 fiches d’églises sans repère"));
 assert.doesNotMatch(renderTlmMapResultRail({items:[],addressOnlyCount:0}),/data-tlm-map-open-unmapped/);
 const list=renderExploreToString(buildExploreViewModel({
   language:"en",lens:"tlm",view:"list",items:unpinned,
@@ -69,11 +69,11 @@ const list=renderExploreToString(buildExploreViewModel({
 }));
 assert.ok(list.includes('data-explore-item="'+unpinned[0].item_id+'"'));
 assert.ok(list.includes('data-tlm-church-profile="'+unpinned[0].source_id+'"'));
-assert.ok(list.includes("268"));
+assert.ok(list.includes("175"));
 const frenchPreview=renderExploreToString(buildExploreViewModel({
   language:"fr",lens:"tlm",view:"list",items:unpinned,
   filters:{siteEvidence:"ADDRESS_ONLY"},selectedId:unpinned[0].item_id,
 }));
 assert.ok(frenchPreview.includes("Lieu physique répertorié"),
   "The French church preview must use its translated source-safety description");
-console.log("PASS TLM unpinned cards: 268/268 bilingual church cards and profiles remain accessible independently of map pins");
+console.log("PASS TLM unpinned cards: 175/175 bilingual church cards and profiles remain accessible independently of map pins");
