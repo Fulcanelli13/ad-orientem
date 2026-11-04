@@ -56,8 +56,8 @@ try{
    assert.equal(await page.evaluate(()=>globalThis.AO_NOVENAS_V3.open()),true);
    const nv=page.locator("#aoPray435930.open");
    await nv.locator('[data-n1-select="st_michael"]').click();
-   const begin=nv.locator("[data-n1-begin]").first();
-   await begin.click();
+   // Selected novena now opens its day reader, with no redundant Begin screen.
+   assert.equal(await nv.locator("[data-ao-novena-deck]").count(),1);
    await nv.locator('[data-n1-mode="guided"]').evaluate(x=>x.click());
    await nv.locator("[data-n1-stage-next]").click();
    const initial=await page.evaluate(()=>globalThis.AO_NOVENAS_V3.state());
