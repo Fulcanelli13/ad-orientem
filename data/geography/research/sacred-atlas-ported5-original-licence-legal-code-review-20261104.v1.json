@@ -21,7 +21,8 @@
     "Commons photo release still requires exact current licence and SHA1, adequate attribution, original bytes, exact Place subject and any underlying architecture/relic rights.",
     "Do not add broad code paths accepting arbitrary country-specific URLs or disable source safety limits.",
     "No new editorial selection, asset publishing, Vercel usage, paid licences or contact.",
-    "Source visual review flags Heiloo as the pilgrimage church within the sanctuary complex and Wieskirche as a scaffolding-era view; preserve owner first choice but do not silently approve unsuitable composition."
+    "Source visual review flags Heiloo as the pilgrimage church within the sanctuary complex and Wieskirche as a scaffolding-era view; preserve owner first choice but do not silently approve unsuitable composition.",
+    "Maria Luggau selected original Commons metadata was reachable, but the 2026-11-04 original download in PR #2451 returned HTTP 429. Keep it unpublished; do not rerun or substitute to bypass rate limiting."
   ],
   "rows": [
     {
@@ -110,6 +111,18 @@
         ],
         "state": "SOURCE_DESCRIPTION_EXACT_COMPLEX_NEEDS_FULL_RES_QA",
         "approved_as_cover_this_round": false
+      },
+      "newer_release_preflight": {
+        "git_hub_actions_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/41881856162",
+        "attempt_date": "2026-11-04",
+        "exact_common_metadata_source_checked": true,
+        "original_download_status": "HTTP_429_TOO_MANY_REQUESTS",
+        "original_binary_verified_in_this_release_attempt": false,
+        "planned_cover_not_published": true,
+        "automatic_retry_permitted": false,
+        "no_approved_media_change": true,
+        "release_pr": "https://github.com/Fulcanelli13/ad-orientem/pull/2451",
+        "next_action": "RETAIN_ORIGINAL_SELECTED_FILE_ON_HOLD_UNTIL_RATE_LIMIT_CLEARS_AND_INDEPENDENT_BYTE_VERIFICATION_IS_POSSIBLE"
       }
     },
     {
