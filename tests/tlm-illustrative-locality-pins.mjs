@@ -123,6 +123,13 @@ assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS["RG-615FF6835AAE"],"Poprad city identi
 assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS["RG-2C84B50B3667"],"Bootle closed-site hold");
 assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS["RG-0DCEDA190517"],"Reading church identity hold");
 assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS["RG-B65-77C86C7B3EC4"],"Cagliari Santa Croce potential alias already mapped");
+for(const hold of round2.duplicate_hold_candidates){
+ assert.equal(hold.ids.length,2);
+ for(const id of hold.ids){
+  assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS[id],"Železná Ruda potential same-church aliases stay held: "+id);
+  assert.ok(!items.get(id)?.map_publishable,"Physical-site identity conflict cannot be solved with coincident town pins: "+id);
+ }
+}
 assert.equal(world.length,2582);
 assert.equal(world.filter(x=>x.map_publishable).length,2408);
 assert.equal(world.filter(x=>!x.map_publishable).length,174);
