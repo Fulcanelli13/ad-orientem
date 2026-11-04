@@ -132,7 +132,15 @@ try{
     extra=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getScholaState().schola);
     assert.equal(extra.total,6);assert.match(extra.latin,/In paradisum/);
     await select.selectOption("");
-    await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getScholaState().schola?.owner==="R17_NATIVE_SCHOLA");
+    // As with initial composer selection, controller state settles before
+    // the queued dock paint. Assert that actual DOM returns to Gregorian,
+    // rather than assuming the first repaint has already completed.
+    await page.waitForFunction(()=>{
+      const source=window.__AO_PHONE_PREVIEW.getScholaState()?.schola;
+      const dock=document.querySelector(".ao-schola-dock");
+      return source?.owner==="R17_NATIVE_SCHOLA" &&
+        dock?.dataset.composed==="false";
+    },null,{timeout:15000});
     assert.equal(await page.locator(".ao-schola-dock").getAttribute("data-composed"),"false");
     await plan.locator("summary").first().click();
     assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().title),preGospelTitle,
