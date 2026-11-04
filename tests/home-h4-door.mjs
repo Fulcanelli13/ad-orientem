@@ -134,13 +134,15 @@ assert.equal((html.match(/data-home-calendar-date="2026-11-02"/g)||[]).length,1)
 assert.equal((html.match(/data-home-daily-catechism/g)||[]).length,0,"No Catechism on Home");
 assert.equal((html.match(/data-home-dyk-open/g)||[]).length,1,"One Did You Know Home box");
 assert.match(html,/<\/section><section class="aoH4DiscoveryStandalone"[^>]*><button[^>]*data-home-dyk-open/,
-  "Did You Know is a standalone section immediately below This week");
+  "Did You Know remains the closing discovery section after Coming up");
 assert.ok(html.indexOf('class="aoTodayV2CalendarGlance"')<html.indexOf('class="aoH4DiscoveryStandalone"'),
-  "This week must precede Discovery");
-assert.ok(html.indexOf('class="aoH4DiscoveryStandalone"')<html.indexOf('class="aoTodayV2Below"'),
-  "Discovery must precede Read");
+  "Coming up must precede Discovery");
+assert.ok(html.indexOf('class="aoTodayV2Below"')<html.indexOf('class="aoTodayV2PrayerThroughDay"'),
+  "Gospel reading must immediately follow the week strip, ahead of Pray");
+assert.ok(html.indexOf('class="aoTodayV2Below"')<html.indexOf('class="aoH4DiscoveryStandalone"'),
+  "Read must precede the final Did You Know section");
 const readFragment=html.slice(html.indexOf('class="aoH4Read"'));
-assert.doesNotMatch(readFragment,/data-home-dyk-open/,"Did You Know must not be inside Read");
+assert.match(readFragment,/data-home-dyk-open/,"Read precedes the closing discovery outside Read");
 assert.equal((readFragment.match(/data-action="gospel"/g)||[]).length,1,"Read keeps its Gospel entry");
 // H7 Sanctuary Prototype 1 is the visual authority for Home AND the distinct Mass door.
 const h7Facts=h4HomeView(vm,model,{ordoFacts:{
@@ -208,5 +210,5 @@ const fr=h4HomeView({...vm,language:"fr",dateTitle:"vendredi 30 octobre"},model)
 assert.match(fr,/Commencer la messe/);
 assert.match(fr,/<h2>Lire<\/h2>/,"Approved H7 Read section uses the original French label");
 assert.match(fr,/Rosaire/);
-assert.match(fr,/Cette semaine/);
+assert.match(fr,/À venir/);
 console.log("PASS H4 Today door: original Mass, canonical events, Rosary once, 18:00 next, fail closed, Resume, bilingual");
