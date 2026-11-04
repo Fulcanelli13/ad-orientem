@@ -1,0 +1,29 @@
+name: Module hero eight — exact-source bulk visual review
+on:
+  pull_request:
+    paths:
+      - "scripts/art/bulk-module-review-eight-20261102.py"
+      - ".github/workflows/module-hero-bulk-review-eight.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python -m pip install "Pillow==11.3.0"
+      - run: python scripts/art/bulk-module-review-eight-20261102.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: eight-approved-module-originals-visual-review
+          path: artifacts/module-hero-bulk-review-eight/
+          retention-days: 14
+          if-no-files-found: error
