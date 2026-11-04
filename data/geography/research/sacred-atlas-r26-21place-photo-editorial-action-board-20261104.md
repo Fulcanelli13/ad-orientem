@@ -10,7 +10,7 @@ The source-and-evidence crosswalk is in [R26 JSON](./sacred-atlas-round26-existi
 
 ## 13 single-original site cover candidates
 
-One original cover candidate per site. Existing byte integrity has evidence, but final visual, source, legal and mobile acceptance is still required. Nine exact source pages have been independently rechecked.
+One original cover candidate per site. Existing byte integrity has evidence, but final visual, source, legal and mobile acceptance is still required. Twelve exact source pages have been independently rechecked.
 
 | Place | Exact first-look candidate | Verified cover options | Review issue |
 |---|---|---:|---|
