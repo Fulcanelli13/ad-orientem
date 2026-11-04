@@ -85,7 +85,8 @@ try{
     readerFR:flat(properToReaderSlots(rp,{language:"fr"})),
     recoveredNativityProof:rp?.verifiedNativityOctaveCommemoration??null,
     sourceCorrections:(rp?.sourceEditorialCorrections??[]).filter(x=>
-     x.id==="1962_CHRISTMAS_OCTAVE_PRIVILEGED_ORATION")
+     ["1962_CHRISTMAS_OCTAVE_PRIVILEGED_ORATION",
+      "1962_PASSION_FRIDAY_DUAL_SOURCE_WITNESSES"].includes(x.id))
      .map(x=>({id:x.id,sourceSection:x.sourceSection,originalAlternativeStephenOratio1Excluded:x.originalAlternativeStephenOratio1Excluded})),
     recoveredOrations:Object.fromEntries(["collects","secrets","postcommunions"].map(k=>[
      k,(rp?.[k]??[]).map(v=>({
