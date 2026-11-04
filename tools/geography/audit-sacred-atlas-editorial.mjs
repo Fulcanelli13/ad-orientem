@@ -61,7 +61,7 @@ const compute=function compute(data){
   const saints=uniq(a(shrine?.associated_saints));
   const sourceIds=uniq([...a(place.source_ids),...a(shrine?.source_ids),...pilgrimages.flatMap(x=>a(x.source_ids)),...customs.flatMap(x=>a(x.source_ids))]);
   const bibliography=sourceIds.map(id=>srcById.get(id)).filter(Boolean).map(s=>({
-   id:s.id,title:s.title,issuer:s.issuer,directness:s.directness,url:s.url,contribution:s.contribution
+   id:s.id,title:s.title,issuer:s.issuer,directness:s.directness,url:s.url
   }));
   const missingSourceIds=sourceIds.filter(id=>!srcById.has(id));
   const official=bibliography.filter(s=>/^OFFICIAL|^PRIMARY_INSTITUTIONAL/.test(s.directness||""));
@@ -93,8 +93,7 @@ const compute=function compute(data){
    media,
    next_action:guide?"NO_REWRITE_VERIFY_IMAGES_AND_SAINT_LINKS":shrine?"EXTEND_HISTORY_FROM_EXISTING_SOURCED_SYNOPSIS":
     bibliography.length?"RESEARCH_SITE_HISTORY_FROM_KNOWN_SOURCE":"FIND_EXACT_SITE_HISTORICAL_SOURCE",
-   editorial_controls:{history_prose_approved:!!guide,saint_biography_published_here:false,
-    research_photo_may_publish:false,needs_second_source_review:!guide}
+
   };
  }).sort((x,y)=>x.place_id.localeCompare(y.place_id,"en"));
  const sortQueue=list=>list.sort((a,b)=>b.priority_score-a.priority_score||a.place_id.localeCompare(b.place_id,"en"));
@@ -175,7 +174,7 @@ const data={};for(const [key,path] of Object.entries(paths))data[key]=JSON.parse
 const ledger=compute(data);
 const location=resolve(root,"data/geography/research/sacred-atlas-editorial-master-530-20261104.v1.json");
 if(process.argv.includes("--write")){
- writeFileSync(location,JSON.stringify(ledger,null,2)+"\n");
+ writeFileSync(location,JSON.stringify(ledger)+"\n");
  console.log("Written "+location);
 }else if(process.argv.includes("--check")){
  const committed=JSON.parse(readFileSync(location,"utf8"));
