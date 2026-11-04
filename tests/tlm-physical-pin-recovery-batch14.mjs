@@ -1,0 +1,63 @@
+// TLM batch 14 — 12 UK, 2 US provisional sites; identity and evidence-scope locks.
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {projectPreliminaryR49,projectPublishedProvisionalMassSites,filterPreliminaryR49,tlmSiteEvidenceCounts} from "../src/find/preliminary-directory-r49.js";
+import {validateCL2PhysicalIndex,projectCL2PhysicalDirectory} from "../src/find/cl2-physical-directory.js";
+import {renderDirectoryVenueCard} from "../src/find/directory-card.js";
+import {renderTlmChurchProfile} from "../src/find/tlm-church-profile.js";
+const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
+const index=validateCL2PhysicalIndex(read("data/directory/generated/cl2-physical-site-index.v1.json"));
+const baseline=projectPublishedProvisionalMassSites(projectPreliminaryR49(read("data/directory/preliminary-map-r49.v1.json")),read("data/directory/published-provisional-mass-sites-20261026.v1.json"));
+const all=projectCL2PhysicalDirectory(baseline,index);
+const text=readFileSync(new URL("../src/find/cl2-physical-directory.js",import.meta.url),"utf8");
+const section=text.split("const REVIEWED_NEW_SITE_PINS=Object.freeze({")[1]?.split("\n});")[0]??"";
+const allKeys=[...section.matchAll(/"(RG-[A-Z0-9-]+)"\s*:\s*Object\.freeze\(\{/g)].map(m=>m[1]);
+assert.equal(new Set(allKeys).size,allKeys.length,"Duplicate physical group pin");
+const sites=[["RG-3C136854C9CA","AO-B34-L-GB-C73386C30A44",51.52029,0.57515,"osm:way:543726099","https://www.openstreetmap.org/way/543726099","CANVEY_OUR_LADY_ENGLISH_MARTYRS_CATHOLIC_CHURCH_NOT_NEARBY_ST_NICHOLAS"],["RG-837D929ACBF3","AO-B35-L-GB-3CCED06FF02A",53.74417,-2.70997,"osm:way:81215551","https://www.openstreetmap.org/way/81215551","PENWORTHAM_ST_MARY_MAGDALEN_ROMAN_CATHOLIC_CHURCH_NOT_ANGLICAN_ST_MARY"],["RG-84B982821C6E","AO-B35-L-GB-79E11D6CBBDD",50.84675,-1.06195,"osm:way:757798621","https://www.openstreetmap.org/way/757798621","COSHAM_ST_COLMAN_ROMAN_CATHOLIC_CHURCH_NOT_ST_PAUL_PAULSGROVE"],["RG-DDB9022B5C28","AO-B34-L-GB-82562583F671",51.36918,-0.16497,"osm:way:148619016","https://www.openstreetmap.org/way/148619016","CARSHALTON_HOLY_CROSS_ROMAN_CATHOLIC_NORTH_STREET_CHURCH_NOT_CARSHALTON_ST_MARY"],["RG-6EB9BE5CCA6F","AO-B35-L-GB-6B7D91F54BCB",54.20228,-2.59578,"osm:node:1965496329","https://www.openstreetmap.org/node/1965496329","KIRKBY_LONSDALE_ST_JOSEPH_NAMED_OSM_POI_NOT_BUILDING_FOOTPRINT_OR_ENTRANCE"]];
+assert.equal(sites.length,5);
+for(const [anchor,id,lat,lng,ref,url,scope] of sites){
+ const frozen=index.records.find(r=>r[0]===anchor);
+ assert.ok(frozen?.[1].includes(id),"Frozen original source identity required: "+anchor);
+ assert.ok(!baseline.some(r=>frozen[1].includes(r.source_id)),"Source already pinned: "+anchor);
+ const item=all.find(r=>r.physical_group_id===anchor);
+ assert.ok(item&&item.source_id===id&&item.source_ids.includes(id));
+ assert.equal(item.title,frozen[2]);
+ assert.equal(item.country_code,frozen[3]);
+ assert.equal(item.map_publishable,true);
+ assert.equal(item.map_state,"PROVISIONAL");
+ assert.equal(item.geo.lat,lat);
+ assert.equal(item.geo.lng,lng);
+ assert.equal(item.geo.source_ref,ref);
+ assert.equal(item.geo.source_url,url);
+ assert.equal(item.geo.review_scope,scope);
+ assert.equal(item.geo.precision,"site");
+ assert.equal(item.geo.approximate,true);
+ assert.ok(item.source_links.some(x=>x.url===url));
+ assert.ok(item.source_links.some(x=>frozen[6].includes(x.url)));
+ assert.equal(item.status,"RESEARCH-LISTED · MASS UNVERIFIED");
+ assert.equal(item.celebration_evidence,undefined);
+ assert.equal(item.sections.length,0);
+ assert.equal(item.actions.length,0);
+ assert.ok(!item.cover_media);
+ for(const lang of ["en","fr"]){
+  const card=renderDirectoryVenueCard(item,lang);
+  const detail=renderTlmChurchProfile(item,lang);
+  assert.ok(card.includes('data-explore-item="'+item.item_id+'"'));
+  assert.ok(detail.includes('data-tlm-church-profile="'+id+'"'));
+  assert.ok(detail.includes("aoTlmProfileSources"));
+  assert.doesNotMatch(detail,/data-tlm-celebration-evidence=/);
+ }
+}
+const held=all.find(x=>x.physical_group_id==="RG-18E53EDD9E9C");
+assert.ok(held&&!held.map_publishable,"San Jose naming conflict remains held");
+const poi=all.find(x=>x.physical_group_id==="RG-8D3022768BBE");
+assert.ok(poi.facts.some(x=>x.label==="Map position"&&x.value.includes("building outline")));
+const campus=all.find(x=>x.physical_group_id==="RG-B70-2945A96ECEDE");
+assert.ok(campus.facts.some(x=>x.label==="Map position"&&x.value.includes("campus")));
+assert.equal(all.length,2582);
+assert.equal(all.filter(x=>x.map_publishable).length,2083);
+const counts=tlmSiteEvidenceCounts(all);
+assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:277,SOURCE_PIN:1806,ADDRESS_ONLY:499});
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,499);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,277);
+console.log("PASS TLM batch 12: five reviewed source-identities, 2083 mapped, 499 unpinned; no invented Mass or image rights");
