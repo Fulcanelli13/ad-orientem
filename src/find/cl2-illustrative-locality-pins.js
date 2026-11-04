@@ -1053,26 +1053,6 @@ export const CL2_ILLUSTRATIVE_LOCALITY_PINS=Object.freeze({
     "localityName": "London",
     "adminRegion": "England"
   },
-  "RG-615FF6835AAE": {
-    "sourceId": "AO-B39-LOC-SK-FDC2361FC9C5",
-    "name": "Kaplnka Svätej Terézie z Lisieux",
-    "country": "SK",
-    "addressNeedle": "Komenského, Poprad",
-    "placeId": null,
-    "lat": 49.06144,
-    "lng": 20.29798,
-    "precision": "locality",
-    "sourceRef": "geonames-locality:SK:poprad:none",
-    "sourceUrl": "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-    "attribution": "GeoNames contributors · CC BY 4.0 · locality only, not the church",
-    "reviewScope": "ILLUSTRATIVE_LOCALITY_POINT_NOT_WORSHIP_BUILDING_NOT_ENTRANCE",
-    "evidence": [
-      "https://github.com/joelacus/world-cities/blob/e9afd6a75709df79ce9c3d1332eac2c4b5937477/world_cities_15000_%28including_all_states_and_counties%29.csv",
-      "https://www.latinmassdir.org/country/sk/?view=list"
-    ],
-    "localityName": "Poprad",
-    "adminRegion": null
-  },
   "RG-61965FB003D0": {
     "sourceId": "AO-B52-FR-FC8E5CE17249",
     "name": "Chapelle et école Saint-Martin",
