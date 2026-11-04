@@ -52,10 +52,14 @@ try{
    const counts={requests:requests.length,
     js:requests.filter(x=>x.kind==="script"||/\.m?js(?:\?|$)/.test(x.url)).length,
     durationMs:Math.round(await page.evaluate(()=>performance.now()))};
+   console.log("PAGES_ESM_STARTUP "+JSON.stringify({width,mode,...counts,errors}));
    if(mode==="bundled"){
     assert.equal(errors.length,0,"Bundled ESM console errors: "+errors.join("; "));
     await page.screenshot({path:resolve(output,"home-"+width+".png"),animations:"disabled"});
-    await page.locator(".aoH7HomeView [data-home-calendar-civil-today]").click();
+    // Main has the approved H7 header Calendar opener to Month. The
+    // Day-direct shortcut is an independent change in presentation PR #2428.
+    await page.locator('.aoH7HomeView [data-home-calendar][data-home-calendar-view="picker"]').first().click();
+    await page.locator('.aoH4CalendarViews [data-home-calendar-view="day"]').click();
     await page.locator(".aoTodayV2CalendarInline #ao-calendar-modular-root .aoCalV2Hero")
       .waitFor({state:"visible",timeout:45000});
     await page.screenshot({path:resolve(output,"calendar-"+width+".png"),animations:"disabled"});
