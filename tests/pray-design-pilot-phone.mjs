@@ -58,6 +58,24 @@ try{
    assert.ok(mosaicGeometry.width>=width*.96&&mosaicGeometry.tiles.every(x=>x.width>=width*.4&&x.height>=149),
     "Approved study mosaic must occupy the width as a two-column, edge-to-edge gallery: "+JSON.stringify(mosaicGeometry));
    assert.ok(mosaicGeometry.tiles.some(x=>x.height>220),"Masonry gallery must retain taller portrait panels");
+   // The approved painting mosaic starts at the top of the Prayer sheet,
+   // with Back, settings and functional search floating above the artwork.
+   const immersive=await page.evaluate(()=>{
+    const root=document.querySelector("#aoPray435930.open");
+    const gallery=root.querySelector("[data-ao-pray-pilot-mosaic]").getBoundingClientRect();
+    const header=root.querySelector(".aoP435930Head").getBoundingClientRect();
+    const search=root.querySelector(".aoPrayPilotSearch").getBoundingClientRect();
+    return {galleryTop:gallery.top,headerTop:header.top,headerHeight:header.height,
+     headerPosition:getComputedStyle(root.querySelector(".aoP435930Head")).position,
+     searchWidth:search.width,searchTop:search.top,
+     backVisible:!!root.querySelector(".aoP435930Head button")?.getClientRects().length};
+   });
+   assert.equal(immersive.headerPosition,"absolute",
+    "Prayer tools must overlay the art mosaic: "+JSON.stringify(immersive));
+   assert.ok(immersive.galleryTop<=immersive.headerTop+12,
+    "The gallery must begin behind the floating Prayer tools: "+JSON.stringify(immersive));
+   assert.ok(immersive.searchWidth<=50&&immersive.backVisible,
+    "Search and Back must remain compact accessible controls: "+JSON.stringify(immersive));
    await page.screenshot({path:resolve(output,"discovery-"+width+".png"),animations:"disabled"});
    const overflow=await page.evaluate(()=>{
     const mount=document.querySelector("#aoPray435930.open .aoP435930Mount");
@@ -66,6 +84,9 @@ try{
    });
    assert.ok(overflow.document<=1&&overflow.content<=1,"Discovery must not overflow: "+JSON.stringify(overflow));
    const search=page.locator(base+" [data-p435930-pilot-search]");
+   await page.locator(base+" .aoPrayPilotSearch").click();
+   assert.ok((await page.locator(base+" .aoPrayPilotSearch").boundingBox()).width>110,
+    "Tapping the floating search must reveal a usable source-index input");
    await search.fill("Memorare");
    assert.equal(await mosaic.isVisible(),false,"search should replace mosaic temporarily");
    const memo=page.locator(base+" [data-p435930-pilot-prayer]").filter({hasText:"Memorare"}).first();
