@@ -1,8 +1,8 @@
 {
   "schema": "AO_PRAYER_R5D_COMMONS_RESEARCH_ARCHIVE_V1",
   "examined": 20,
-  "acquired": 3,
-  "holds": 17,
+  "acquired": 2,
+  "holds": 18,
   "publication_authorized": false,
   "records": [
     {
@@ -54,17 +54,8 @@
       "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Saint_Thomas_Aquinas_%28Crivelli%2C_15th-century%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
       "original_width": 2813,
       "original_height": 4226,
-      "status": "ACQUIRED_FOR_QA",
-      "research_image_file": "commons-5cbf0a0d01ffdd3.jpg",
-      "research_image_url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Saint_Thomas_Aquinas_%28Crivelli%2C_15th-century%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-      "resolution": [
-        2813,
-        4226
-      ],
-      "sha256": "67509963a0515b44b6403c7ea33451d96b6e564d9c05e07f7a1e645970afdc0f",
-      "bytes": 4970724,
-      "image_format": "JPEG",
-      "source_rendition": true
+      "status": "HOLD",
+      "hold_reason": "HTTP Error 429: Too Many Requests (015d12c)"
     },
     {
       "source_page": "https://commons.wikimedia.org/wiki/File:David_Teniers_the_Elder_-_The_Agony_in_the_Garden.jpg",
@@ -115,8 +106,17 @@
       "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Philippe_de_Champaigne-Pr%C3%A9sentation_au_temple.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
       "original_width": 2994,
       "original_height": 3906,
-      "status": "HOLD",
-      "hold_reason": "HTTP Error 429: Too Many Requests (015d12c)"
+      "status": "ACQUIRED_FOR_QA",
+      "research_image_file": "commons-edb1eee5613d724.jpg",
+      "research_image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Philippe_de_Champaigne-Pr%C3%A9sentation_au_temple.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "resolution": [
+        2994,
+        3906
+      ],
+      "sha256": "c4250c3888a03434b5128c8b6bccaca0a37168e323b8fb31a1edd7d13ad12869",
+      "bytes": 2519688,
+      "image_format": "JPEG",
+      "source_rendition": true
     },
     {
       "source_page": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_Christ_on_the_cross_between_the_two_criminals.jpg",
@@ -187,17 +187,8 @@
       "original_file_url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Gerard_Seghers_-_The_Nativity_or_the_Adoration_of_the_Angels.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
       "original_width": 1774,
       "original_height": 2311,
-      "status": "ACQUIRED_FOR_QA",
-      "research_image_file": "commons-a535435237abb59.jpg",
-      "research_image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Gerard_Seghers_-_The_Nativity_or_the_Adoration_of_the_Angels.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
-      "resolution": [
-        1774,
-        2311
-      ],
-      "sha256": "025dbb3803660a497060f157199d4936cc4d375dde79349c54f0802dae6e883a",
-      "bytes": 2006711,
-      "image_format": "JPEG",
-      "source_rendition": true
+      "status": "HOLD",
+      "hold_reason": "HTTP Error 429: Too Many Requests (015d12c)"
     },
     {
       "source_page": "https://commons.wikimedia.org/wiki/File:Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg",
@@ -325,7 +316,7 @@
       "original_width": 2585,
       "original_height": 3813,
       "status": "HOLD",
-      "hold_reason": "HTTP Error 429: Too many requests - please contact noc@wikimedia.org to discuss a less disruptive approach or instead use thumbnail images in sizes listed on https://w.wiki/GHai. (0c640b1)"
+      "hold_reason": "HTTP Error 429: Too Many Requests (015d12c)"
     },
     {
       "source_page": "https://commons.wikimedia.org/wiki/File:David_Teniers_-_The_Ascension_(copy_after_Leandro_Bassano)_WLC_P635.jpg",
