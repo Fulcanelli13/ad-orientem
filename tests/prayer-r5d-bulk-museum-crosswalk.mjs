@@ -18,9 +18,9 @@ for(const [i,g] of groups.entries()){
   slotSet.add(s);count++;
  }
 }
-assert.equal(count,21,'Expected 21 eligible slots across 14 exact museum records');
+assert.equal(count,22,'Expected 22 eligible slots across 14 exact museum records');
 const scripts=readFileSync('scripts/prayer-r5d-bulk-museum-acquire.py','utf8');
 assert.ok(scripts.includes('publication_authorized":False'));
 assert.ok(scripts.includes('human_visual_review_passed":False'));
 assert.ok(scripts.includes('responsive_browser_qa_passed":False'));
-console.log('R5D museum bulk plan: 14 exact-object sources; 21 eligible slots; all non-publishing');
+console.log('R5D museum bulk plan: 14 exact-object sources; 22 eligible slots; all non-publishing');
