@@ -129,7 +129,10 @@ export function reconcileSchola2026Completion({annual,full,pre,work,first60}={})
   date:r.date,sourcePath:r.sourcePath,holds:r.holds,
   action:"INSPECT_EXACT_PASCHAL_VERSE_AND_SEQUENCE_OWNERSHIP",
   publicScore:false}));
- const variantIds=uniq(first60.counts.heldScoreIds??[]);
+ const variantIds=uniq((first60.textDifferenceHolds??[]).map(x=>x.scoreId));
+ if(variantIds.some(id=>!first60.scoreEvidence?.some(x=>x.scoreId===id&&
+     x.fullAntiphonLexicalEquality===false&&x.publicScore===false)))
+  fail("FIRST60_VARIANT_EVIDENCE_NOT_UNPUBLISHED");
  if(variantIds.length!==first60.counts.literalDifferenceHolds||
     variantIds.some(x=>!/^GREGOBASE-\d+$/.test(x)))
    fail("FIRST60_VARIANT_LEDGER_CHANGED");
