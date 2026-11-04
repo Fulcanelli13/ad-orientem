@@ -547,6 +547,11 @@ try{
     begin:document.querySelectorAll(".homeScreen.aoTodayH4 [data-home-h4-begin]").length,
     resume:document.querySelectorAll(".homeScreen.aoTodayH4 [data-resume-mass]").length,
     change:document.querySelectorAll(".homeScreen.aoTodayH4 [data-home-h4-change]").length,
+    doorChange:document.querySelectorAll(".homeScreen.aoTodayH4 .aoH7DoorSelections [data-home-h4-change]").length,
+    footerShortcuts:[...document.querySelectorAll(".homeScreen.aoTodayH4 .aoH7DoorView .foot .mini button")]
+      .map(node=>node.hasAttribute("data-home-h4-readings")?"readings":
+        node.hasAttribute("data-home-h7-details")?"details":
+        node.dataset.action||"unknown"),
     donorHomeEnricherVisible:[...document.querySelectorAll(".aoComingUpV4323,.aoDailyCateHome")].some(node=>{
       const style=getComputedStyle(node);
       return node.isConnected&&!node.hidden&&style.display!=="none"&&style.visibility!=="hidden";

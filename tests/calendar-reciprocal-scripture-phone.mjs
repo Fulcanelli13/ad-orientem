@@ -65,8 +65,8 @@ try{
    return {label:reading?.getAttribute("aria-label"),
      scriptureButtons:reading?.querySelectorAll("[data-cal-scripture-slot]").length,
      slots:[...reading?.querySelectorAll("[data-cal-scripture-slot]")||[]].map(n=>n.dataset.calScriptureSlot),
-     readingBeforeMass:before(reading,mass),
-     massBeforeSources:before(mass,source),
+     massBeforeReadings:before(mass,reading),
+     readingsBeforeSources:before(reading,source),
      sourcePresent:Boolean(source),
      sourceCollapsed:source?.open===false,
      printCollapsed:day?.querySelector(".aoCalV2PrintOptions")?.open!==true};
@@ -75,8 +75,8 @@ try{
  assert.deepEqual(visual.slots,["EPISTLE_OR_LESSON","GOSPEL"]);
  assert.equal(visual.scriptureButtons,2);
  assert.equal(visual.sourcePresent,true,"Technical Calendar sources must be present");
- assert.ok(visual.readingBeforeMass&&visual.massBeforeSources,
-   "The Scripture links must follow principal observance and precede technical sources");
+ assert.ok(visual.massBeforeReadings&&visual.readingsBeforeSources,
+   "Mass-first day hierarchy: Scripture readings must follow Mass action and precede source details");
  assert.equal(visual.sourceCollapsed,true);
  assert.equal(visual.printCollapsed,true);
  await page.locator("#ao-calendar-modular-root [data-cal-close]").tap();
