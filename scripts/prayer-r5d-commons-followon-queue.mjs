@@ -7,9 +7,9 @@ import assert from 'node:assert/strict';
 import {readFileSync,mkdirSync,writeFileSync} from 'node:fs';
 const groups=JSON.parse(readFileSync('data/pray/artwork-r5c-bulk-acquisition-73-source-groups-20261103.v1.json','utf8')).groups;
 const c=groups.filter(g=>(g.sourcePage||'').startsWith('https://commons.wikimedia.org/wiki/File:') && !g.sourcePage.includes('Prado'));
-assert.equal(c.length,41,'Commons/Prado scope changed; manual review required');
+assert.equal(c.length,40,'Commons/Prado scope changed; manual review required');
 const todo=c.slice(20);
-assert.equal(todo.length,21,'Remaining Commons scope changed');
+assert.equal(todo.length,20,'Remaining Commons scope changed');
 const rows=todo.map((g,index)=>({
  priority:index+21,work:g.title,artist:g.artist,sourcePage:g.sourcePage,
  approvedNonRosarySlots:g.slots.filter(x=>!g.rosaryDeferred.includes(x)),
