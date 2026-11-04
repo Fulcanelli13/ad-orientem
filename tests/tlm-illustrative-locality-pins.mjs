@@ -73,7 +73,7 @@ for(const [id,loc] of pins){
  assert.ok(!action.url.includes("/maps/dir/"));
 }
 const withheld=audit.records.filter(r=>r.status!=="APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE");
-assert.equal(withheld.length,268);
+assert.equal(withheld.length,277); // frozen R1 audit: 435 original unpinned minus 158 accepted localities
 // Nine additional Excel-approved exact/named-POI sites are imported by the
 // separate precise-site gate, not as inferred locality pins. Historical
 // identity holds and every other R1 withheld record remain unpinned.
