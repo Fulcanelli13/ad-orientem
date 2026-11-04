@@ -145,10 +145,18 @@ try{
       const heading=root.querySelector('.aoPrayDoorHeading h2');
       const cover=root.querySelector('.aoPrayDoorCover');
       const titleWithinArt=!!cover?.contains(heading);
+      const chrome=document.querySelector("#aoPray435930.open .aoP435930Head");
+      const description=first?.querySelector(".aoPrayMosaicCardCopy>small");
+      const language=first?.querySelector(".aoPrayDoorLanguages");
       return {listDisplay:list&&getComputedStyle(list).display,titleWithinArt,
         rowDirection:first&&getComputedStyle(first).flexDirection,
         number:n,arrow,coverHeight:cover?.getBoundingClientRect().height,
-        titleTop:heading?.getBoundingClientRect().top,coverBottom:cover?.getBoundingClientRect().bottom};
+        titleTop:heading?.getBoundingClientRect().top,coverBottom:cover?.getBoundingClientRect().bottom,
+        coverTop:cover?.getBoundingClientRect().top,headerTop:chrome?.getBoundingClientRect().top,
+        headerPosition:chrome&&getComputedStyle(chrome).position,
+        headingBackground:heading?.parentElement?getComputedStyle(heading.parentElement).backgroundColor:null,
+        descriptionDisplay:description&&getComputedStyle(description).display,
+        languageDisplay:language&&getComputedStyle(language).display};
     });
     assert.equal(studyList.listDisplay,'block',"Prototype category must be a linear list, not another card grid: "+door);
     assert.equal(studyList.rowDirection,'row',"Category entries should be horizontally aligned text rows: "+door);
@@ -157,6 +165,14 @@ try{
     assert.ok(studyList.coverHeight>=210&&studyList.coverHeight<=226,"Category artwork header must be source-study height: "+JSON.stringify(studyList));
     assert.equal(studyList.titleWithinArt,true,"Approved study title belongs inside the artwork header: "+door);
     assert.ok(studyList.titleTop<studyList.coverBottom,"Category heading should overlay artwork, not become an external heading: "+door);
+    assert.equal(studyList.headerPosition,"absolute","Category header must float over the cover: "+door);
+    assert.ok(studyList.coverTop<=studyList.headerTop+12,"Cover begins beneath floating controls: "+door);
+    assert.equal(studyList.headingBackground,"rgba(0, 0, 0, 0)",
+      "Title must not sit in an opaque rectangle: "+door);
+    assert.equal(studyList.descriptionDisplay,"none",
+      "Study-style ordinal list must keep prayer titles legible: "+door);
+    if(studyList.languageDisplay!==null)assert.equal(studyList.languageDisplay,"none",
+      "Language options remain in each canonical reader, not cramped shelf rows: "+door);
     if(facetCount){
       const activeFacet=page.locator(base+' [data-ao-prayer-shelf] [data-p435930-door-filter]:not([data-p435930-door-filter=all])').first();
       await activeFacet.click();
