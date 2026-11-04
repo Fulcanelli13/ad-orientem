@@ -209,8 +209,41 @@ for(const name of missing501Paths){
 const legacyOtherEnglish="https://raw.githubusercontent.com/mmolenda/missalemeum/"+
  "f43359b7a79a5a299158651eedf75cdaf0e43c94/"+
  "backend/resources/divinum-officium-local/web/www/missa/English/Sancti/06-24.txt";
-assert.equal(rewriteResolvedSourceUrl(legacyOtherEnglish),legacyOtherEnglish,
- "English source rewrite must not expand beyond verified temporal formularies");
+assert.equal(rewriteResolvedSourceUrl(legacyOtherEnglish),
+  "https://raw.githubusercontent.com/DivinumOfficium/divinum-officium/"+
+  DIVINUM_OFFICIUM_PIN+"/web/www/missa/English/Sancti/06-24.txt",
+ "English Sanctorale must use the same pinned source authority");
+const canonicalCommon="https://raw.githubusercontent.com/mmolenda/missalemeum/"+
+ "f43359b7a79a5a299158651eedf75cdaf0e43c94/"+
+ "backend/resources/divinum-officium-local/web/www/missa/English/Commune/C10b.txt";
+assert.equal(rewriteResolvedSourceUrl(canonicalCommon),
+ "https://raw.githubusercontent.com/DivinumOfficium/divinum-officium/"+
+ DIVINUM_OFFICIUM_PIN+"/web/www/horas/English/Commune/C10b.txt");
+assert.equal(rewriteResolvedSourceUrl(canonicalCommon.replace("C10b.txt","Coronatio.txt")),
+ "https://raw.githubusercontent.com/DivinumOfficium/divinum-officium/"+
+ DIVINUM_OFFICIUM_PIN+"/web/www/missa/English/Commune/Coronatio.txt");
+const unrelatedEnglish=legacyOtherEnglish.replace("Sancti/06-24.txt","Votive/Cross.txt");
+assert.equal(rewriteResolvedSourceUrl(unrelatedEnglish),unrelatedEnglish,
+ "Mirror source remapping must not invent an unverified Votive path");
+// All 42 unavailable daily Proper requests on the original baseline came
+// from the legacy English mirror (20 Tempora, 21 Sancti, 1 Commune).
+// Route authenticated families to immutable same-language source paths;
+ // each genuinely absent file still fails 404 at its canonical destination.
+const original501Sanctorale=[
+ "05-12","06-05","06-06","06-25","07-02","07-03r","07-10",
+ "07-20","07-22","07-23","07-25","07-31","08-14","08-21",
+ "08-24","08-29","08-31","09-02","09-08","10-03","10-14"
+];
+for(const id of original501Sanctorale){
+ const mirror="https://raw.githubusercontent.com/mmolenda/missalemeum/"+
+ "f43359b7a79a5a299158651eedf75cdaf0e43c94/"+
+ "backend/resources/divinum-officium-local/web/www/missa/English/Sancti/"+
+ id+".txt";
+ const canonical="https://raw.githubusercontent.com/DivinumOfficium/divinum-officium/"+
+ DIVINUM_OFFICIUM_PIN+"/web/www/missa/English/Sancti/"+id+".txt";
+ assert.equal(rewriteResolvedSourceUrl(mirror),canonical,id+" must not use the HTTP 501 mirror");
+}
+
 let verifiedPinnedHit="";
 const pinnedWin={fetch:async url=>{
  verifiedPinnedHit=String(url);
