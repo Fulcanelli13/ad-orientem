@@ -281,6 +281,21 @@ export const CLAUDE_HOLY_CARD_CSS=String.raw`
  }
 }
 
+
+/* One F01 Back owner: the native header returns to its canonical parent.
+ * Keep the inline Library return in the DOM for compatibility but do not
+ * duplicate it visually on the reversible Holy Card screen. */
+#aoPray435930 .aoP435930LibraryReader:has(.aoClaudeHolyCard)>[data-p435930-lib-back]{display:none!important}
+#aoPray435930 .aoP435930Sheet:has(.aoClaudeHolyCard) .aoP435930Head{
+ display:flex!important;flex-wrap:nowrap!important;align-items:center!important;gap:6px!important;
+}
+#aoPray435930 .aoP435930Sheet:has(.aoClaudeHolyCard) .aoP435930Head>div{
+ position:absolute!important;width:1px!important;height:1px!important;
+ overflow:hidden!important;clip-path:inset(50%);white-space:nowrap;
+}
+#aoPray435930 .aoP435930Sheet:has(.aoClaudeHolyCard) .aoP435930Head button{
+ flex:0 0 auto;min-width:40px;min-height:40px;
+}
 `;
 export function installClaudeHolyCardStyles(doc=globalThis.document){
  if(!doc?.head)return false;
