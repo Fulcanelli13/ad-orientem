@@ -1,0 +1,51 @@
+name: H7 Calendar novena metadata first-use research
+on:
+  push:
+    branches:
+      - research/h7-calendar-novena-metadata-20261104
+    paths:
+      - .github/workflows/h7-calendar-novena-metadata-probe.yml
+      - src/calendar/novena-calendar-metadata.js
+      - src/calendar/intelligence.js
+      - src/calendar/devotional-registry.js
+      - tests/calendar-novena-metadata-parity.mjs
+      - tools/perf/generate-novena-calendar-metadata.mjs
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: h7-novena-metadata-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  source-parity-and-phone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Exact generated metadata and canonical 16-novena parity
+        run: |
+          node tools/perf/generate-novena-calendar-metadata.mjs --check
+          node tests/calendar-novena-metadata-parity.mjs
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: H7 cold Home/Calendar/Mass door performance
+        run: node tests/h7-blueprint-release-audit.mjs
+      - name: Reciprocal Scripture, source ordering, native Bible
+        run: |
+          node tests/scripture-reader-mobile.mjs
+          node tests/calendar-reciprocal-scripture-phone.mjs
+      - name: Navigation return and R17 HOME guard
+        run: node tests/app-shell-journey-e2e.mjs
+      - name: Transactional offline boot snapshot acceptance
+        run: node tests/offline-snapshot-e2e.mjs
+      - name: Retain H7 performance counters and screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: h7-calendar-novena-research-benchmarks
+          path: artifacts/h7-blueprint-release/
+          if-no-files-found: warn
+          retention-days: 14
