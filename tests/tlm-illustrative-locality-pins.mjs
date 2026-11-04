@@ -72,7 +72,7 @@ for(const [id,loc] of pins){
  assert.ok(!q.includes(loc.lat+"%2C"+loc.lng));
  assert.ok(!action.url.includes("/maps/dir/"));
 }
-const withheld=audit.records.filter(r=>r.status!=="ELIGIBLE_ILLUSTRATIVE_PIN_PENDING_RELEASE_GATE");
+const withheld=audit.records.filter(r=>r.status!=="APPROVED_ILLUSTRATIVE_PIN_EXCEL_STAGED_PENDING_RELEASE_GATE");
 assert.equal(withheld.length,275);
 for(const r of withheld){
  assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS[r.cl2_anchor]);
