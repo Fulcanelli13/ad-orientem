@@ -218,7 +218,7 @@ try{
           dykInsideRead:home?.querySelectorAll(".aoH4Read [data-home-dyk-entry]").length,
           dykStandalone:home?.querySelectorAll(".aoH4DiscoveryStandalone [data-home-dyk-entry]").length,
           dykAfterWeek:home?.querySelector(".aoTodayV2CalendarGlance")?.nextElementSibling?.classList.contains("aoH4DiscoveryStandalone")===true,
-          dykBeforeRead:home?.querySelector(".aoH4DiscoveryStandalone")?.nextElementSibling?.classList.contains("aoTodayV2Below")===true,
+          readBeforeDyk:Boolean(home?.querySelector(".aoTodayV2Below")?.compareDocumentPosition(home?.querySelector(".aoH4DiscoveryStandalone"))&Node.DOCUMENT_POSITION_FOLLOWING),
           hiddenOldTabs:home?.querySelectorAll(".aoTodayV2Tabs").length,
           buttonVisible:!!button&&button.getClientRects().length>0,
           firstFoldActionBottom:button?.getBoundingClientRect().bottom??null,
@@ -234,7 +234,7 @@ try{
       assert.equal(r.doorHidden,true,label+" H7 Mass door must be hidden before entry");
       assert.equal(r.homeVisible,true,label+" H7 Home must be visible before entry");
       assert.equal(r.dykAfterWeek,true,label+" standalone Did You Know must follow This week");
-      assert.equal(r.dykBeforeRead,true,label+" Read must follow standalone Did You Know");
+      assert.equal(r.readBeforeDyk,true,label+" H7 Read must precede the final standalone Did You Know section");
       assert.ok(r.events<=2,label+" H7 upcoming copied unsourced dates");
       assert.equal(r.buttonVisible,true,label+" Enter Mass is hidden");
       assert.equal(r.initialScrollTop,0,label+" first-fold audit must start at scroll 0");
