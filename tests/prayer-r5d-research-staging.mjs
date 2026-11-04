@@ -22,7 +22,8 @@ for(const [id,file,count] of entries){
   assert.equal(createHash('sha256').update(data).digest('hex'),row.imageSourceRetrieval.sha256,'File hash mismatch '+file);
   assert.equal(data.length,row.imageSourceRetrieval.bytes,'Byte length mismatch '+file);
   assert.equal(row.slots.length,count,'Assignment count mismatch');
-  const source=queue.groups.find(g=>g.sourcePage===row.sourcePage);
+  const canonicalUrl = value => { const u=new URL(value); return (u.hostname.replace(/^www\\./,'') + u.pathname.replace(/\\/$/,'')); };
+  const source=queue.groups.find(g=>g.sourcePage && canonicalUrl(g.sourcePage)===canonicalUrl(row.sourcePage));
   assert.ok(source,'Not in editorial acquisition queue: '+file);
   assert.deepEqual([...row.slots].sort(),[...source.slots.filter(s=>!source.rosaryDeferred.includes(s))].sort(),'Slot drift '+file);
   assert.equal(row.publicationAuthorized,false);
