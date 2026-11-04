@@ -77,6 +77,11 @@ try{
     begin:document.querySelectorAll(".homeScreen.aoTodayH4 [data-home-h4-begin]").length,
     resume:document.querySelectorAll(".homeScreen.aoTodayH4 [data-resume-mass]").length,
     change:document.querySelectorAll(".homeScreen.aoTodayH4 [data-home-h4-change]").length,
+    doorChange:document.querySelectorAll(".homeScreen.aoTodayH4 .aoH7DoorSelections [data-home-h4-change]").length,
+    footerShortcuts:[...document.querySelectorAll(".homeScreen.aoTodayH4 .aoH7DoorView .foot .mini button")]
+      .map(node=>node.hasAttribute("data-home-h4-readings")?"readings":
+        node.hasAttribute("data-home-h7-details")?"details":
+        node.dataset.action||"unknown"),
     homeFallbackIcons:document.querySelectorAll(".aoHomeCuIconFallback").length,
     release:document.documentElement.dataset.aoRelease??null,
     releaseAuthority:document.documentElement.dataset.aoReleaseAuthority??null,
@@ -100,7 +105,10 @@ try{
   assert.equal(cold.discovery,1,"H4 must show one standalone Did You Know below This week");
   assert.equal(cold.begin,1,"H4 must expose exactly one source-gated Begin Mass");
   assert.equal(cold.resume,0,"A cold Home without a saved Mass must not claim Resume");
-  assert.equal(cold.change,2,"H7 must retain its one Mass-options Change and one footer shortcut");
+  assert.equal(cold.change,1,"H7 Mass door must have exactly one Adjust control");
+  assert.equal(cold.doorChange,1,"H7 Adjust belongs in the Mass selection summary");
+  assert.deepEqual(cold.footerShortcuts,["readings","details","prepare","thanks"],
+    "H7 must retain all four approved footer actions");
   assert.equal(cold.homeFallbackIcons,0,"cold Home fell back to Unicode placeholder artwork");
   assert.equal(cold.release,"43.59.30","production DOM exposes a stale pre-convergence release label");
   assert.equal(cold.releaseAuthority,"AO_APP_SHELL_V1");
@@ -562,7 +570,10 @@ try{
   // explicit Resume action. Do not create two competing Mass entry controls.
   assert.equal(homeOwnership.begin,0,"Suspended Mass must not expose a competing fresh Begin");
   assert.equal(homeOwnership.resume,1,"Home return lost the checkpoint's Resume Mass door");
-  assert.equal(homeOwnership.change,2,"Home return lost the H7 Mass-options or footer Change shortcut");
+  assert.equal(homeOwnership.change,1,"Home return lost the H7 Mass selection Adjust control");
+  assert.equal(homeOwnership.doorChange,1,"Home return misplaced the Mass selection Adjust control");
+  assert.deepEqual(homeOwnership.footerShortcuts,["readings","details","prepare","thanks"],
+    "Home return changed H7 footer actions");
   assert.equal(homeOwnership.donorHomeEnricherVisible,false,"donor Home enrichers resurfaced after PRAY -> Home");
   assert.equal(homeOwnership.prayStillOpen,false,"Home transition left modular PRAY presentation open");
   assert.equal(homeOwnership.homeSuppressed,"false","Home suppression survived return to Home");
