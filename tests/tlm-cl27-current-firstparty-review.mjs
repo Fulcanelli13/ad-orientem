@@ -118,3 +118,90 @@ for(const r of roleReview.records){
 assert.equal(observedAnchors.size,12);
 assert.equal(roleReview.records.filter(r=>r.case_id==="US-DALLAS-CARMEL").length,2);
 console.log("PASS CL27 source roles: 13 scoped relationship observations / 12 sites; 0 published canonical or Una Cum claims");
+
+// Wave 2 must be a pure extension of Wave 1, not a new timetable corpus.
+const wave2=JSON.parse(readFileSync(new URL(
+  "../data/directory/research/cl27-current-firstparty-20261104/source-review-wave2.v1.json",
+  import.meta.url),"utf8"));
+assert.equal(wave2.schema,"AO_CL27_SOURCE_PAGE_WAVE2_REVIEW_V1");
+assert.equal(wave2.publication,
+  "RESEARCH_ONLY_NO_APP_TIMETABLES_NO_CL27_PUBLIC_CLASSIFICATIONS");
+assert.equal(wave2.historical_snapshot_blob_sha,d.canonical_source.blob_sha);
+assert.equal(wave2.cases.length,18);
+assert.equal(wave2.row_references.length,36);
+assert.equal(wave2.summary.aggregate_reviewed_rows_after_wave2,70);
+assert.equal(wave2.summary.remaining_historical_rows,226);
+assert.equal(wave2.summary.approved_recurring_Masses,0);
+assert.equal(wave2.summary.approved_canonical_UnaCum_claims,0);
+assert.equal(wave2.summary.new_source_page_urls,2);
+assert.equal(wave2.summary.source_pages_reviewed_this_wave,3);
+const reviewedWave2=new Set();
+const wave2Cases=new Map(wave2.cases.map(c=>[c.anchor,c]));
+const allReviewed=new Set(checked);
+for(const r of wave2.row_references){
+  assert.ok(!allReviewed.has(r.historical_row),"Wave 2 cannot duplicate Wave 1 reviewed row");
+  assert.ok(!reviewedWave2.has(r.historical_row));
+  assert.equal(r.publication_status,"HOLD_NO_PUBLIC_TIMETABLE_APPROVAL");
+  const g=byHistorical.get(r.historical_row);
+  assert.ok(g,"Wave 2 must retain original historical row census");
+  assert.equal(g.historical_url,r.source_url);
+  assert.ok(g.anchors.includes(r.effective_anchor));
+  assert.equal(wave2Cases.get(r.effective_anchor)?.decision,r.site_decision);
+  reviewedWave2.add(r.historical_row);allReviewed.add(r.historical_row);
+}
+assert.equal(reviewedWave2.size,36);
+assert.equal(allReviewed.size,70);
+for(const c of wave2.cases){
+  assert.ok(c.historical_rows.length>0);
+  assert.equal(c.publication_status,"HOLD_RESEARCH_ONLY_NO_WEEKLY_MASS_APPROVAL");
+  assert.ok(c.remaining_gate&&c.source_observation);
+  for(const id of c.historical_rows)assert.ok(reviewedWave2.has(id));
+}
+const roleWave2=JSON.parse(readFileSync(new URL(
+  "../data/directory/research/cl27-current-firstparty-20261104/classification-role-review-wave2.v1.json",
+  import.meta.url),"utf8"));
+assert.equal(roleWave2.schema,"AO_CL27_SOURCE_ROLE_REVIEW_WAVE2_V1");
+assert.equal(roleWave2.publication,"RESEARCH_ONLY_NO_CLASSIFICATION_PROMOTION");
+assert.equal(roleWave2.records.length,18);
+for(const r of roleWave2.records){
+  assert.ok(wave2Cases.has(r.cl2_anchor));
+  assert.equal(r.classification_decision,"SOURCE_ASSOCIATION_RESEARCH_ONLY");
+  assert.ok(["FSSP","SSPX"].includes(r.source_reported_community));
+  assert.ok(r.unknown_fields.includes("una_cum"));
+  assert.ok(r.unknown_fields.includes("canonical_status"));
+  assert.ok(r.unknown_fields.includes("missal_edition"));
+  assert.ok(r.unknown_fields.includes("exact_celebrant"));
+  for(const field of r.unknown_fields)assert.ok(!Object.hasOwn(r,field));
+}
+// All 106 legacy same-anchor/day/time groups are preserved for editorial
+// adjudication. A collision is not a duplicate until dates and ministry match.
+const collisions=JSON.parse(readFileSync(new URL(
+  "../data/directory/research/cl27-current-firstparty-20261104/collision-screen-106.v1.json",
+  import.meta.url),"utf8"));
+assert.equal(collisions.schema,"AO_CL27_HISTORICAL_COLLISION_SCREEN_V1");
+assert.equal(collisions.publication,"SCREENED_FOR_RISK_ONLY_NO_MERGE_NO_PUBLIC_OCCURRENCE");
+assert.equal(collisions.source_blob_sha,d.canonical_source.blob_sha);
+assert.equal(collisions.groups.length,106);
+assert.equal(new Set(collisions.groups.map(g=>g.site_day_time_key)).size,106);
+assert.equal(collisions.groups.reduce((sum,g)=>sum+g.row_count,0),234);
+assert.deepEqual(collisions.summary.category_counts,{
+  SAME_SLOT_MULTIPLE_SOURCE_IDS:75,
+  MASS_TYPE_DISAGREEMENT:10,
+  MULTIPLE_PROVENANCE_URLS:6,
+  DIFFERENT_FREQUENCY_OR_QUALIFIER:14,
+  SAME_SLOT_REPEAT_ROWS:1
+});
+assert.equal(collisions.summary.adjudicated_and_approved_merges,0);
+assert.equal(collisions.summary.approved_mass_events,0);
+for(const g of collisions.groups){
+  assert.match(g.physical_anchor,/^RG-[A-F0-9]{12}$/);
+  assert.equal(g.source_rows.length,g.row_count);
+  assert.equal(g.original_historical_rows.length,g.row_count);
+  assert.equal(g.editorial_disposition,
+    "UNRESOLVED_REQUIRES_SOURCE_AND_CALENDAR_ADJUDICATION");
+  assert.ok(g.next_action);
+  assert.ok(g.source_rows.every(r=>Number.isInteger(r.historical_row)));
+  if(g.candidate_collision_reason==="DIFFERENT_FREQUENCY_OR_QUALIFIER")
+    assert.ok(g.recurrence_variants.length>1);
+}
+console.log("PASS Wave 2: 70/296 unique historical source rows checked, 31 scoped role observations; all 106 collision cases risk-triaged without any automatic event merge or promotion");
