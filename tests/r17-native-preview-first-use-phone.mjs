@@ -58,6 +58,7 @@ try{
    assert.equal(requests.filter(r=>r.path===nativePath).length,0,
      "H7 Mass door must not eagerly load native LIVE");
    await page.screenshot({path:resolve(out,"before-start-"+width+".png"),animations:"disabled"});
+   const startAt=await page.evaluate(()=>performance.now());
    await door.locator("[data-home-h4-begin]").click();
    await page.waitForFunction(()=>
      Boolean(globalThis.AO_R17_NATIVE_READER_PREVIEW?.root?.isConnected)||
@@ -73,9 +74,10 @@ try{
    assert.ok(requests.filter(r=>r.path===nativePath).length>=1,
      "First Start must dynamically retrieve the original source-owned R17 renderer");
    assert.deepEqual(errors,[],"Phone errors after R17 load: "+JSON.stringify(errors.slice(0,4)));
+   const firstUseReadyMs=Math.round((await page.evaluate(()=>performance.now()))-startAt);
    const after=requests.length;
    await page.screenshot({path:resolve(out,"after-start-"+width+".png"),animations:"disabled"});
-   results.push({width,initial,initialScripts,after,firstUseRequests:after-initial,cardCount:result.cards,
+   results.push({width,initial,initialScripts,after,firstUseReadyMs,firstUseRequests:after-initial,cardCount:result.cards,
      loadedOnFirstUse:requests.some(r=>r.path===nativePath)});
    console.log("PASS R17 first-use native preview "+JSON.stringify(results.at(-1)));
   }finally{await context.close()}
