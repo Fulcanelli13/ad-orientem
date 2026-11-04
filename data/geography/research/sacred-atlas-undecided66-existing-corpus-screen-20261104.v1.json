@@ -1,0 +1,136 @@
+{
+  "schema": "AO_SACRED_ATLAS_UNDECIDED66_EXISTING_CORPUS_SCREEN_V1",
+  "review_date": "2026-11-04",
+  "publication": "RESEARCH_ONLY",
+  "source_blobs": [
+    {
+      "path": "data/geography/research/p75-existing-commons-150-image-review.v1.json",
+      "sha": "78fded468f9b15ee9f070dddcd63b2b9e689a4f4"
+    },
+    {
+      "path": "data/geography/research/p79-all-502-commons-review.v1.json",
+      "sha": "d7d45a514ab83ce4046f1f86ad846e31a9e8fd44"
+    },
+    {
+      "path": "data/geography/research/p73-curated-place-gallery-bundle.v1.json",
+      "sha": "12205de4073912de755a5118264db2f5080b7d88"
+    }
+  ],
+  "queue_blob_sha": "601dd62bc07b3de02952b3b1c78f063cf34fdf05",
+  "places_screened": 66,
+  "results": {
+    "places_with_a_prior_candidate": 1,
+    "places_with_usable_existing_corpus_candidate": 0,
+    "places_requiring_fresh_discovery": 66,
+    "p75_matches": 0,
+    "p79_matches": 1,
+    "p73_matches": 0
+  },
+  "rejects": [
+    {
+      "place_id": "place:CL:sanctuary-of-our-lady-of-la-tirana-chile",
+      "place_name": "Sanctuary of Our Lady of La Tirana, Chile",
+      "source_file": "File:Virgen de la Candelaria Oruro Bolivia 01.JPG",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Virgen_de_la_Candelaria_Oruro_Bolivia_01.JPG",
+      "reason": "Oruro, Bolivia fresco, not the La Tirana shrine in Chile",
+      "publication_authorized": false
+    }
+  ],
+  "batches": [
+    {
+      "batch": 1,
+      "place_ids": [
+        "place:MU:pere-laval-sainte-croix",
+        "place:AU:penrose-park",
+        "place:AU:marian-valley",
+        "place:NZ:st-peter-chanel-russell",
+        "place:NZ:pukekaraka-otaki",
+        "place:NG:ugwogo-nike-national-marian-shrine",
+        "place:NG:nne-enyemaka-umuaka",
+        "place:BE:banneux",
+        "place:US:seton-emmitsburg",
+        "place:US:lourdes-grotto-emmitsburg",
+        "place:DE:bettbrunn-st-salvator",
+        "place:US:st-mary-assumption-oswego",
+        "place:US:la-salette-attleboro",
+        "place:US:lourdes-litchfield",
+        "place:US:st-anne-fiskdale",
+        "place:EG:zeitoun-coptic-saint-mary",
+        "place:BE:sanctuaire-sainte-julienne-cornillon",
+        "place:JP:our-lady-akita-convent",
+        "place:IT:duomo-sant-eusebio-vercelli",
+        "place:LB:monastery-saint-maron-annaya",
+        "place:DE:aachener-dom-four-textiles",
+        "place:PH:national-shrine-of-our-lady-of-guadalupe-makati"
+      ],
+      "next": "FRESH_EXACT_SITE_CANDIDATE_DISCOVERY",
+      "candidate_count_verified": 0
+    },
+    {
+      "batch": 2,
+      "place_ids": [
+        "place:PH:national-shrine-of-saint-joseph-mandaue",
+        "place:CL:sanctuary-of-our-lady-of-la-tirana-chile",
+        "place:LK:national-basilica-of-our-lady-of-lanka-tewatta",
+        "place:LK:saint-anne-s-national-shrine-talawila",
+        "place:IE:solas-bhride-kildare",
+        "place:ZM:archdiocese-lusaka-marian-shrine",
+        "place:MY:st-anne-bukit-mertajam",
+        "place:BR:fortaleza-fatima-sanctuary",
+        "place:UY:montevideo-gruta-lourdes-national-shrine",
+        "place:MZ:namaacha-fatima-sanctuary",
+        "place:TT:laventille-our-lady-fatima-shrine",
+        "place:MX:guadalupe-zacatecas-historic-sanctuary",
+        "place:BZ:belmopan-our-lady-guadalupe-co-cathedral",
+        "place:CR:montes-oca-our-lady-lourdes-parish",
+        "place:PK:karachi-our-lady-fatima-parish",
+        "place:GL:christ-the-king-catholic-church-nuuk",
+        "place:OM:saints-peter-paul-catholic-church-ruwi",
+        "place:BB:st-patrick-catholic-cathedral-bridgetown",
+        "place:TO:st-anthony-padua-basilica-nukualofa",
+        "place:JM:holy-trinity-cathedral-kingston",
+        "place:SL:sacred-heart-cathedral-freetown",
+        "place:MW:maula-cathedral-lilongwe"
+      ],
+      "next": "FRESH_EXACT_SITE_CANDIDATE_DISCOVERY",
+      "candidate_count_verified": 0
+    },
+    {
+      "batch": 3,
+      "place_ids": [
+        "place:AS:holy-family-cathedral-tafuna",
+        "place:PG:holy-cross-procathedral-vanimo",
+        "place:IT:santuario-san-paolo-della-croce-ovada",
+        "place:MY:st-jude-church-rawang",
+        "place:PE:santuario-san-martin-de-porres-jicamarca",
+        "place:US:sacred-heart-shrine-hales-corners",
+        "place:NI:ermita-guadalupe-matagalpa",
+        "place:MG:ilot-de-la-vierge-ampefy",
+        "place:SK:kaplnka-zjavenia-litmanova-zvir",
+        "place:PE:santuario-candelaria-chapi-polobaya",
+        "place:AR:santuario-san-cayetano-liniers",
+        "place:SV:capilla-divina-providencia-san-salvador",
+        "place:LK:national-shrine-our-lady-matara",
+        "place:PA:basilica-menor-jesus-nazareno-atalaya",
+        "place:KR:haemi-martyrs-shrine-main-church",
+        "place:PL:lichen-marian-basilica",
+        "place:MX:ocotlan-basilica-tlaxcala",
+        "place:US:san-francisco-de-asis-ranchos-taos",
+        "place:FR:saint-louis-de-gonzague-pau",
+        "place:DE:friedhofskirche-st-michael-altoetting",
+        "place:FR:basilique-saint-bernard-fontaine-les-dijon",
+        "place:DE:basilika-st-clemens-hannover"
+      ],
+      "next": "FRESH_EXACT_SITE_CANDIDATE_DISCOVERY",
+      "candidate_count_verified": 0
+    }
+  ],
+  "rules": [
+    "Existing research absence is not evidence no open-licensed photograph exists.",
+    "Do not revive a previously rejected wrong-location candidate.",
+    "Only exact building/shrine location matches may enter review.",
+    "Research links and source claims are not image acquisition or publication permissions.",
+    "Do not retry Commons API requests against 429 or distribute requests to circumvent rate limits.",
+    "Do not publish assets or change live cover counts based on this research."
+  ]
+}
