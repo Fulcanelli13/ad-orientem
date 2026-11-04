@@ -55,6 +55,18 @@ try{
    assert.ok(pendingTiles.every(t=>t.symbol==="none"&&t.caption==="visible"&&!!t.title&&t.height>=170),
      "Pending doors need legible typographic fallback, not eight repetitive native-icons or blank tiles: "+JSON.stringify(pendingTiles));
 
+   const releasedDoor=await mosaic.locator('[data-ao-art-binding="released"]').evaluate(el=>{
+     const caption=el.querySelector('.aoPrayPilotTileCaption');
+     const styles=getComputedStyle(caption);
+     return {title:caption?.querySelector('strong')?.textContent?.trim(),
+       visible:styles.visibility,opacity:Number(styles.opacity),
+       fetchMode:el.querySelector('img')?.getAttribute('loading')};
+   });
+   assert.ok(releasedDoor.title&&releasedDoor.visible==="visible"&&releasedDoor.opacity>=.99,
+     "The sole licensed photo door needs a visible title, even before decoding its image: "+JSON.stringify(releasedDoor));
+   assert.equal(releasedDoor.fetchMode,"eager","The one released discovery image should not wait for lazy loading");
+
+
    assert.equal(await page.locator(base+" [data-p435930-my-customs]").count(),1,"personal Prayer destination remains on default homepage");
    const mosaicGeometry=await mosaic.evaluate(node=>{
     const box=node.getBoundingClientRect();
