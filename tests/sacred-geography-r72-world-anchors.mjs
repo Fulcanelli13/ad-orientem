@@ -22,9 +22,9 @@ assert.equal(release.schema,"AO_SACRED_GEOGRAPHY_R72_WORLD_ANCHORS_V1");
 assert.equal(release.sites.length,7);
 assert.deepEqual(new Set(release.sites.map(x=>x.country)),new Set(["IT","PT","HU","CN","PH","GT","PY"]));
 assert.equal(new Set(release.sites.map(x=>x.place_id)).size,7);
-assert.deepEqual([g.places.length,s.shrines.length,s.pilgrimages.length,sources.sources.length],[LIVE.places,257,240,LIVE.sources]);
+assert.deepEqual([g.places.length,s.shrines.length,s.pilgrimages.length,sources.sources.length],[LIVE.places,260,243,LIVE.sources]);
 assert.equal(new Set(g.places.map(x=>x.place_id)).size,g.places.length);
-assert.equal(new Set(s.shrines.map(x=>x.place_id)).size,257);
+assert.equal(new Set(s.shrines.map(x=>x.place_id)).size,260);
 assert.equal(assertExploreGeographyRegistry(g).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({...s,sources:sources.sources,places:g.places}).pass,true);
 assert.deepEqual([r70.summary.candidate_status.CONFIRMED_EXISTING_PROMOTION,
