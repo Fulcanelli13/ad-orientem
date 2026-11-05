@@ -38,7 +38,7 @@ function fresh(g){return{place_id:g.place_id,guide_fingerprint:fingerprint(g),de
  special_issues_verified:g.risk_items.length===0,notes:"",reviewed_at:null}}
 function entry(g){let e=state.entries[g.place_id];if(!e||e.guide_fingerprint!==fingerprint(g)){e=fresh(g);state.entries[g.place_id]=e}return e}
 B.guides.forEach(entry);
-function save(){try{localStorage.setItem(K,JSON.stringify(state))}catch(e){$("notice").textContent="Local storage unavailable. Use Export now."}}
+function save(){try{localStorage.setItem(K,JSON.stringify(state))}catch(e){const n=$("notice");if(n)n.textContent="Local storage unavailable. Export your decisions before closing this file."}}
 const labels={PENDING:"Pending",HOLD:"Hold",REJECTED:"Rejected",APPROVED_FOR_IMPORT:"Accepted"};
 function counts(){const o={PENDING:0,HOLD:0,REJECTED:0,APPROVED_FOR_IMPORT:0};for(const g of B.guides)o[entry(g).decision]++;return o}
 function renderNav(){const ct=counts();$("stats").innerHTML='<div class="stat"><b>56 / 56</b><small>Guides drafted</small></div>'
