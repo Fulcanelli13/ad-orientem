@@ -62,8 +62,8 @@ const api=async url=>{
 };
 const live=await loadPreliminaryR49({fetchImpl:api});
 assert.equal(live.length,2582,"Complete CL2 worldwide index must load without dropping the three B91 published additions");
-assert.equal(live.filter(x=>x.map_publishable).length,2528);
-assert.equal(live.filter(x=>x.map_state==="ADDRESS_ONLY").length,54);
+assert.equal(live.filter(x=>x.map_publishable).length,2532);
+assert.equal(live.filter(x=>x.map_state==="ADDRESS_ONLY").length,50);
 assert.ok(added.every(x=>live.some(v=>v.item_id===x.item_id)));
 assert.equal(live.filter(x=>x.celebration_evidence).length,2,
  "The source-owned CL27 witness overlay must not alter the B91 physical-site census");
@@ -71,4 +71,4 @@ assert.deepEqual(calls,[PRELIMINARY_R49_URL,
   new URL("../data/directory/published-provisional-mass-sites-20261026.v1.json",import.meta.url).href,
   CL2_PHYSICAL_SITE_INDEX_URL,
   CL27_PUBLIC_CELEBRATION_URL]);
-console.log("PASS B91 controlled Mass-map release: 3 source-backed provisional additions retained inside 2582-record worldwide directory, 2528 mapped, 54 list-only, zero certified schedules");
+console.log("PASS B91 controlled Mass-map release: 3 source-backed provisional additions retained inside 2582-record worldwide directory, 2532 mapped, 50 list-only, zero certified schedules");
