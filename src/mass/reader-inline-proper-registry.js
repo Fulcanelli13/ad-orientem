@@ -30,7 +30,20 @@ export const PROPER_REFERENCE_BINDINGS=Object.freeze([
  {sourcePath:"Sancti/11-01",monthDay:"11-01",role:"OFFERTORY",paragraphId:"OFFERTORY.1",
   scoreId:"GREGOBASE-835",openings:["iustorum animae in manu dei sunt"]},
  {sourcePath:"Sancti/11-01",monthDay:"11-01",role:"COMMUNION",paragraphId:"COMMUNION.1",
-  scoreId:"GREGOBASE-345",openings:["beati mundo corde quoniam ipsi deum videbunt"]}
+  scoreId:"GREGOBASE-345",openings:["beati mundo corde quoniam ipsi deum videbunt"]},
+ // November 30: the source ledger identifies five unique existing 1961
+ // GABC candidates. Introit and Offertory have the same opening but are
+ // different scores. The Communion retains the 1961 sung textual variant.
+ {sourcePath:"Sancti/11-30",monthDay:"11-30",role:"INTROIT",paragraphId:"INTROIT.1",
+  scoreId:"GREGOBASE-475",openings:["mihi autem nimis honorati sunt amici tui deus"]},
+ {sourcePath:"Sancti/11-30",monthDay:"11-30",role:"GRADUAL",paragraphId:"GRADUAL.1",
+  scoreId:"GREGOBASE-307",openings:["constitues eos principes super omnem terram"]},
+ {sourcePath:"Sancti/11-30",monthDay:"11-30",role:"ALLELUIA",paragraphId:"ALLELUIA_TRACT_SEQUENCE.1",
+  scoreId:"GREGOBASE-984",openings:["dilexit andream dominus in odorem suavitatis"]},
+ {sourcePath:"Sancti/11-30",monthDay:"11-30",role:"OFFERTORY",paragraphId:"OFFERTORY.1",
+  scoreId:"GREGOBASE-499",openings:["mihi autem nimis honorati sunt amici tui deus"]},
+ {sourcePath:"Sancti/11-30",monthDay:"11-30",role:"COMMUNION",paragraphId:"COMMUNION.1",
+  scoreId:"GREGOBASE-552",openings:["venite post me faciam vos fieri piscatores hominum"]}
 ].map(row=>Object.freeze({...row,openings:Object.freeze([...row.openings])})));
 const SUNG=new Set(["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
 const norm=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
