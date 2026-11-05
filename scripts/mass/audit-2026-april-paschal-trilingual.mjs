@@ -27,8 +27,6 @@ let browser,records=[];
 try{
  browser=await chromium.launch({headless:true});
  const page=await browser.newPage({serviceWorkers:"block"});
- page.on("console",msg=>{if(msg.text().startsWith("MR62_APRIL_"))
-  console.log("PASCHAL_REPAIR_BROWSER_DIAGNOSTIC "+msg.text())});
  page.setDefaultTimeout(90000);
  await page.goto("http://127.0.0.1:"+server.address().port+"/index.html",
   {waitUntil:"domcontentloaded",timeout:90000});
@@ -59,15 +57,6 @@ try{
     postcommunions:proper?.postcommunions??null,
     preface:proper?.preface??null,
     sourceCalendarCommemorations:proper?.calendarCommemorations??null};
-   selected.recoveryDiagnostic={
-    hostResolverAvailable:typeof r.properResolver?.resolveSource==="function",
-    actualDataSourcePath:proper?.sourcePath,
-    principal:resolved?.day?.main?.id,
-    gradualLanguageShapes:Object.fromEntries(["lat","en","fr"].map(k=>
-      [k,{type:typeof proper?.gradual?.[k],length:String(proper?.gradual?.[k]??"").length}])),
-    originalEpistlePrefix:proper?.epistle?.lat?.slice(0,90),
-    originalOffertoryPrefix:proper?.offertory?.lat?.slice(0,90)
-   };
    try{
     const recovered=await recoverReaderProperOmissions(resolved?.proper,{
       hostResolver:r.properResolver,
@@ -131,6 +120,5 @@ for(const x of records)console.log("APRIL_1962_ACTUAL_SELECTED "+JSON.stringify(
  repairApplied:Boolean(x.recovered?.correction),
  repairFirstLA:x.recovered?.readerSlotsEN?.first?.[0]?.latin?.slice(0,150)??null,
  repairSecondLA:x.recovered?.readerSlotsEN?.second?.[0]?.latin?.slice(0,150)??null,
- repairError:x.recoveryError??null,
- recoveryDiagnostic:x.recoveryDiagnostic
+ repairError:x.recoveryError??null
 }));
