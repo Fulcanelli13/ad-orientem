@@ -177,6 +177,33 @@ for(const item of approved.items){
       &&line.includes('"'+item.source_sha1+'"')),
       "Original SHA1 must appear in the source-credit export under the same chosen Place");
     assert.ok(item.review_method.includes("Photo Finder editorial selection"));
+  }else if(item.source_place_ref==="DIRECT_OPEN_PHOTO_FIVE_20261105"){
+    // New legally reusable photos acquired directly from WordPress Photo
+    // Directory/Flickr are a separate, source-audited intake cohort.
+    // The historic R58/R59 and Photo Finder choices remain unchanged.
+    const manifest=read("data/geography/research/sacred-atlas-direct-open-photo-five-20261105.v1.json");
+    const proof=read("data/geography/research/sacred-atlas-direct-open-photo-five-release-report-20261105.v1.json");
+    assert.equal(manifest.schema,"AO_SACRED_ATLAS_DIRECT_OPEN_PHOTO_BATCH_V1");
+    assert.equal(proof.schema,"AO_SACRED_ATLAS_DIRECT_OPEN_PHOTO_FIVE_REPORT_V1");
+    assert.equal(proof.attempted,5);
+    assert.equal(proof.admitted_on_branch+proof.held,5);
+    assert.equal(proof.main_published_by_this_job,0);
+    const source=manifest.items.find(x=>x.place_id===item.place_id);
+    const accepted=proof.accepted.find(x=>x.place_id===item.place_id);
+    assert.ok(source&&accepted,"Direct-source photo requires exact Site and original byte evidence");
+    assert.equal(item.source_url,source.source_page);
+    assert.equal(item.credit,source.credit);
+    assert.equal(item.license,source.license==="CC0"?"CC0-1.0":source.license);
+    assert.equal(item.license_url,source.license_url);
+    assert.equal(item.asset_path,accepted.asset);
+    assert.equal(item.source_sha1,accepted.original_sha1);
+    assert.equal(item.derivative_sha256,accepted.derivative_sha256);
+    assert.equal(item.alt_en,source.subject_en);
+    assert.equal(item.alt_fr,source.subject_fr);
+    assert.match(accepted.rights_proof_sha256,/^[a-f0-9]{64}$/);
+    assert.ok(source.independent_site&&source.depiction);
+    assert.ok(item.review_method.includes("PR visual review required before merge"),
+      "Do not falsely substitute source metadata for final visual acceptance");
   }else{
     const c=shrineCandidates.get(item.place_id)||b2Candidates.get(item.place_id);
     assert.ok(c&&c.image_review_state==="EDITORIALLY_ACCEPTED_EXACT_SITE_AND_FULL_FRAME_20261021",

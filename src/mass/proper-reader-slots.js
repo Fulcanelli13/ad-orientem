@@ -1,4 +1,5 @@
 import {validatedPreGospelChantParts} from "./reader-pre-gospel-chant-source.js";
+import {validated1962AprilPaschalDualAlleluias} from "./1962-april-paschal-proper-correction.js";
 import {correct1962ProperEditorialReferences} from "./1962-proper-editorial-corrections.js";
 import {project1962Pent21AlleluiaDisplayRows,PS113_PENT21_ENGLISH_EDITORIAL} from "./1962-ps113-alleluia-editorial.js";
 import {project1962AllSoulsDiesIraeEnglishDisplayRows,ALL_SOULS_DIES_IRAE_SOURCE_NOTE} from "./1962-all-souls-sequence-english.js";
@@ -361,6 +362,32 @@ export function properToReaderSlots(proper,{notApplicableSlots=[],language="en"}
         }))),
       })})
     :chantSlot;
+  // Eastertide uses TWO Alleluias, without an ordinary Gradual. The
+  // canonical 65-card reader retains its two pre-Gospel *positions*, but
+  // both are identified as ALLELUIA; never mislabel either as a Gradual or
+  // pretend that the historical Common alias is the current Mass source.
+  const paschal=validated1962AprilPaschalDualAlleluias(proper);
+  if(paschal){
+    for(let i=0;i<2;i++){
+      const part=paschal[i];
+      const slotId=i===0?"GRADUAL":"ALLELUIA_TRACT_SEQUENCE";
+      const projected=readyEnvelope(slotId,part.text,opts);
+      if(projected.status!=="READY")
+        throw new Error("MR62_APRIL_PASCHAL_BILINGUAL_VERSE_MISSING:"+slotId);
+      slots[slotId]=Object.freeze({...projected,
+        chantKind:"ALLELUIA",liturgicalLabel:"Allelúja",
+        liturgicalPosition:i+1,
+        data:Object.freeze({...projected.data,
+          paragraphs:Object.freeze(projected.data.paragraphs.map(row=>
+            Object.freeze({...row,chantKind:"ALLELUIA",
+              liturgicalLabel:"Allelúja",liturgicalPosition:i+1,
+              liturgicalGroup:"AO.CHANT.ALLELUIA",
+              sourcePath:part.sourceRef,
+              editorialMusicApproval:false})))
+        })
+      });
+    }
+  }
 
   // Source proof and frozen trilingual Proper texts remain untouched.
   // Apply only narrowly sourced display repairs AFTER validation.

@@ -4,6 +4,12 @@ on:
   pull_request:
     paths:
       - 'scripts/schola/build-2026-selected-repertoire.mjs'
+      - 'scripts/mass/audit-2026-april-paschal-trilingual.mjs'
+      - 'src/mass/1962-april-paschal-archival-witnesses.js'
+      - 'src/mass/1962-april-paschal-proper-correction.js'
+      - 'src/mass/reader-proper-runtime-recovery.js'
+      - 'src/mass/proper-reader-slots.js'
+      - 'tests/mass-1962-april-paschal-three-source-regression.mjs'
       - 'src/mass/reader-schola-selected-queue-crosswalk.js'
       - 'src/mass/reader-schola-selected-full-source-crosswalk.js'
       - 'src/mass/reader-schola-selected-pregospel-review.js'
@@ -86,6 +92,10 @@ jobs:
           key: schola-1962-ad8783641455bae38a8eb5782b34241a7b3ff2ef-v1
       - name: Rebuild and verify 1049 pinned Latin source-to-GABC matches
         run: node scripts/schola/build-1962-full-coverage.mjs
+      - name: Audit exact 13-14-29 April Paschal LIVE source texts and adjacent dates (LAT EN FR)
+        run: |
+          node scripts/mass/audit-2026-april-paschal-trilingual.mjs
+          node tests/mass-1962-april-paschal-three-source-regression.mjs
       - name: Capture real 2026 selected Mass of day and join all 1049 source witnesses
         run: node scripts/schola/build-2026-selected-repertoire.mjs
       - name: Review actual selected pre-Gospel scores against cached immutable Latin sources
@@ -142,3 +152,26 @@ jobs:
           path: .tmp/schola-1962-selected-annual/
           if-no-files-found: warn
           retention-days: 30
+
+  paschal-april-fast-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Capture exact 2026 Paschal saint-day source texts and adjoining controls
+        run: |
+          node scripts/mass/audit-2026-april-paschal-trilingual.mjs
+          node tests/mass-1962-april-paschal-three-source-regression.mjs
+      - name: Upload seven-day LAT EN FR native DayResolver original witness
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-2026-april-original-paschal-selected-source
+          path: .tmp/mass-april-1962/trilingual-dayresolver-snapshots.json
+          if-no-files-found: warn
+          retention-days: 14
