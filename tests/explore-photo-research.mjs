@@ -65,9 +65,11 @@ for(const item of approved.items){
   }else{
     assert.match(item.asset_path,/^assets\/approved\/place-media\/[a-zA-Z0-9_.-]+\.webp$/);
   }
-  assert.ok(["PUBLIC_DOMAIN","CC0-1.0","CC-BY-2.0","CC-BY-2.5","CC-BY-3.0","CC-BY-4.0","CC-BY-SA-2.0","CC-BY-SA-2.5","CC-BY-SA-3.0","CC-BY-SA-4.0"].includes(item.license),
+  assert.ok(["PUBLIC_DOMAIN","CC0-1.0","CC-BY-2.0","CC-BY-2.5","CC-BY-3.0","CC-BY-4.0","CC-BY-SA-2.0","CC-BY-SA-2.5","CC-BY-SA-3.0","CC-BY-SA-4.0","PEXELS_LICENSE"].includes(item.license),
     "Only independently confirmed freely reusable site photos may be published");
-  assert.equal(item.license_url,item.license==="PUBLIC_DOMAIN"
+  assert.equal(item.license_url,item.license==="PEXELS_LICENSE"
+    ? "https://www.pexels.com/license/"
+    : item.license==="PUBLIC_DOMAIN"
     ? "https://creativecommons.org/publicdomain/mark/1.0/"
     : item.license==="CC0-1.0"
       ? "https://creativecommons.org/publicdomain/zero/1.0/"
@@ -177,6 +179,46 @@ for(const item of approved.items){
       &&line.includes('"'+item.source_sha1+'"')),
       "Original SHA1 must appear in the source-credit export under the same chosen Place");
     assert.ok(item.review_method.includes("Photo Finder editorial selection"));
+  }else if(item.source_place_ref==="DIRECT_PEXELS_FLICKR_BATCH_TWO_20261105"){
+    const manifest=read("data/geography/research/sacred-atlas-direct-source-batch-two-20261105.v1.json");
+    const proof=read("data/geography/research/sacred-atlas-direct-source-batch-two-report-20261105.v1.json");
+    const browser=read("data/geography/research/sacred-atlas-pexels-primary-source-manual-audit-20261105.v1.json");
+    assert.equal(manifest.schema,"AO_SACRED_ATLAS_DIRECT_SOURCE_BATCH_TWO_V1");
+    assert.equal(proof.schema,"AO_SACRED_ATLAS_DIRECT_SOURCE_BATCH_TWO_REPORT_V1");
+    assert.equal(proof.attempted,4);
+    assert.equal(proof.admitted_on_pr_branch+proof.held,4);
+    assert.equal(proof.main_published_by_this_workflow,0);
+    const source=manifest.items.find(x=>x.place_id===item.place_id);
+    const reviewed=proof.approved.find(x=>x.place_id===item.place_id);
+    assert.ok(source&&reviewed,"New image must be in exact manifest and original/derivative evidence");
+    assert.equal(item.source_url,source.source_page);
+    assert.equal(item.credit,source.credit);
+    assert.equal(item.license,source.license);
+    assert.equal(item.license_url,source.license_url);
+    assert.equal(item.alt_en,source.subject_en);
+    assert.equal(item.alt_fr,source.subject_fr);
+    assert.equal(item.source_sha1,reviewed.source_original_sha1);
+    assert.equal(item.derivative_sha256,reviewed.derivative_sha256);
+    assert.equal(item.asset_path,reviewed.asset_path);
+    assert.match(reviewed.source_original_sha1,/^[a-f0-9]{40}$/);
+    assert.match(reviewed.derivative_sha256,/^[a-f0-9]{64}$/);
+    assert.equal(reviewed.source_image_url,source.source_image_url);
+    if(source.source_type==="pexels"){
+      assert.equal(item.license,"PEXELS_LICENSE");
+      assert.match(source.source_page,/^https:\/\/www\.pexels\.com\/photo\/[a-z0-9-]+-\d+\/$/);
+      assert.match(source.source_image_url,/^https:\/\/images\.pexels\.com\/photos\/\d+\//);
+      const audited=browser.rows.find(x=>x.place_id===item.place_id);
+      assert.ok(audited&&audited.source_page===source.source_page&&audited.photo_id===source.source_id&&
+        audited.original_image_url===source.source_image_url&&audited.photographer===source.credit&&
+        audited.site_subject===source.title_probe&&audited.license_url===source.license_url&&
+        audited.free_download_displayed&&audited.photographer_name_and_site_subject_both_checked&&
+        audited.licence_permits_websites_and_apps&&!audited.publication_authorized_by_this_ledger,
+        "Pexels subject and per-photo rights must be independently verified on primary pages");
+    }else{
+      assert.equal(source.source_type,"flickr");
+      assert.equal(item.license,"CC-BY-SA-2.0");
+      assert.match(reviewed.source_page_sha256,/^[a-f0-9]{64}$/);
+    }
   }else if(item.source_place_ref==="DIRECT_OPEN_PHOTO_FIVE_20261105"){
     // New legally reusable photos acquired directly from WordPress Photo
     // Directory/Flickr are a separate, source-audited intake cohort.

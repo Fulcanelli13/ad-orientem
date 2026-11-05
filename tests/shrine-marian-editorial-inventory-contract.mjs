@@ -131,8 +131,27 @@ for(const entry of ledger.shrines){
     approvedPhoto.rights_verified&&approvedPhoto.subject_verified&&approvedPhoto.crop_reviewed&&
     approvedPhoto.review_method.includes("PR visual review required before merge")
   );
+  const batchTwo=json("data/geography/research/sacred-atlas-direct-source-batch-two-20261105.v1.json");
+  const batchTwoReport=json("data/geography/research/sacred-atlas-direct-source-batch-two-report-20261105.v1.json");
+  const source2=batchTwo.items.find(x=>x.place_id===entry.place_id);
+  const proof2=batchTwoReport.approved.find(x=>x.place_id===entry.place_id);
+  const directBatchTwo=Boolean(
+    approvedPhoto?.source_place_ref==="DIRECT_PEXELS_FLICKR_BATCH_TWO_20261105"&&
+    source2&&proof2&&batchTwoReport.admitted_on_pr_branch+batchTwoReport.held===4&&
+    source2.source_page===approvedPhoto.source_url&&
+    source2.credit===approvedPhoto.credit&&
+    source2.license===approvedPhoto.license&&
+    source2.license_url===approvedPhoto.license_url&&
+    source2.subject_en===approvedPhoto.alt_en&&
+    source2.subject_fr===approvedPhoto.alt_fr&&
+    proof2.source_original_sha1===approvedPhoto.source_sha1&&
+    proof2.derivative_sha256===approvedPhoto.derivative_sha256&&
+    proof2.asset_path===approvedPhoto.asset_path&&
+    proof2.source_image_url===source2.source_image_url&&
+    approvedPhoto.rights_verified&&approvedPhoto.subject_verified&&approvedPhoto.crop_reviewed
+  );
   assert.ok(approvedPhoto?.review_method?.includes("Photo Finder editorial selection")||
-    originalGalleryPhoto||independentlyPinnedNotreDame||independentlyVerifiedPDSelf||directlySourcedOpenPhoto,
+    originalGalleryPhoto||independentlyPinnedNotreDame||independentlyVerifiedPDSelf||directlySourcedOpenPhoto||directBatchTwo,
     entry.shrine_id+" newly approved hero requires source-matched editorial or approved-gallery evidence");
  }
 }
