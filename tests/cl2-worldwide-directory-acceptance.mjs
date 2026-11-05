@@ -11,6 +11,7 @@ import {validateCL2PhysicalIndex,projectCL2PhysicalDirectory}
  from "../src/find/cl2-physical-directory.js";
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R3} from "../src/find/cl2-illustrative-locality-pins-r3.js";
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R5} from "../src/find/cl2-illustrative-locality-pins-r5.js";
+import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R6} from "../src/find/cl2-illustrative-locality-pins-r6.js";
 import {renderDirectoryVenueCard} from "../src/find/directory-card.js";
 import {buildExploreViewModel,renderExploreToString} from "../src/find/explore-presentation.js";
 const read=path=>JSON.parse(readFileSync(new URL("../"+path,import.meta.url),"utf8"));
@@ -29,7 +30,7 @@ const world=projectCL2PhysicalDirectory(published,index,{mapAffiliation:reported
 assert.equal(world.length,2582,"2,579 distinct CL2 physical sites + 3 published external additions");
 assert.equal(new Set(world.map(item=>item.item_id)).size,2582);
 assert.equal(new Set(world.filter(x=>x.physical_group_id).map(x=>x.physical_group_id)).size,2579);
-assert.equal(world.filter(x=>x.map_publishable).length,2510);
+assert.equal(world.filter(x=>x.map_publishable).length,2516);
 const diocesanQuality=read("data/directory/research/diocesan-coordinate-quality-audit-20261031.v1.json");
 assert.equal(diocesanQuality.schema,"AO_DIOCESAN_COORDINATE_QUALITY_AUDIT_V1");
 assert.equal(diocesanQuality.records.length,587);
@@ -63,9 +64,9 @@ for(const row of diocesanQuality.records){
   assert.equal(item.geo.source_ref,row.coordinate_ref);
  }
  if(row.lat===null){
-  const newlyApproved=CL2_ILLUSTRATIVE_LOCALITY_PINS_R3[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R5[row.physical_group_id];
+  const newlyApproved=CL2_ILLUSTRATIVE_LOCALITY_PINS_R3[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R5[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R6[row.physical_group_id];
   if(newlyApproved){
-   assert.equal(item.map_publishable,true,"Only explicitly approved R3 may turn an older missing-coordinate audit record into a discovery pin");
+   assert.equal(item.map_publishable,true,"Only explicitly Excel-approved geography may turn an older audit blocker into a discovery pin");
    assert.equal(item.geo.approximate,true);
    assert.equal(item.geo.lat,newlyApproved.lat);assert.equal(item.geo.lng,newlyApproved.lng);
    assert.ok(item.geo.source_url.startsWith("https://"));
@@ -249,7 +250,7 @@ const additional=world.filter(x=>x.physical_site_source==="CL2_MASTER"&&
  !published.some(b=>b.source_id===x.source_id));
 assert.equal(additional.length,735);
 const newSites=additional.filter(x=>!x.map_publishable);
-assert.equal(newSites.length,72);
+assert.equal(newSites.length,66);
 assert.ok(newSites.every(x=>x.map_state==="ADDRESS_ONLY"&&x.geo===null&&
  x.sections.length===0&&x.actions.length===0&&x.source_ids.length>=1));
 assert.ok(newSites.every(x=>/MASS UNVERIFIED/.test(x.status)));
@@ -265,7 +266,7 @@ const diocesanGroupIds=new Set(index.records.filter(x=>x[5]==="Diocesan").map(x=
 assert.equal(diocesanGroupIds.size,584);
 const diocesan=world.filter(x=>diocesanGroupIds.has(x.physical_group_id));
 assert.equal(diocesan.length,584);
-const newlyApprovedDiocesan=[...Object.keys(CL2_ILLUSTRATIVE_LOCALITY_PINS_R3),...Object.keys(CL2_ILLUSTRATIVE_LOCALITY_PINS_R5)]
+const newlyApprovedDiocesan=[...Object.keys(CL2_ILLUSTRATIVE_LOCALITY_PINS_R3),...Object.keys(CL2_ILLUSTRATIVE_LOCALITY_PINS_R5),...Object.keys(CL2_ILLUSTRATIVE_LOCALITY_PINS_R6)]
  .filter(id=>diocesanGroupIds.has(id));
 assert.equal(newlyApprovedDiocesan.length,2,
  "Only Excel-approved R3 St Vit and R5 St Barbara may gain approximate diocesan coordinates");
@@ -490,12 +491,12 @@ assert.equal(filterPreliminaryR49(world,{}).length,2582,
  "Unfiltered directory must include the worldwide corpus, not just R49");
 const vm=buildExploreViewModel({language:"en",lens:"tlm",items:world,view:"list",
  filters:{directoryGroup:"ALL",affiliations:[],query:""}});
-assert.equal(vm.mapped,2510);
-assert.equal(vm.addressOnly,72);
+assert.equal(vm.mapped,2516);
+assert.equal(vm.addressOnly,66);
 const html=renderExploreToString(vm);
 assert.match(html,/2,582|2582/);
-assert.match(html,/72/);
+assert.match(html,/66/);
 assert.match(html,/list only · no map pin/);
 assert.doesNotMatch(html,/735 address only/);
 assert.doesNotMatch(html,/2,579 mapped/);
-console.log("PASS CL2 worldwide directory: 2,579 physical sites, 35 R49 aliases absorbed, 72 list-only, 158 R1 + 93 R2 + 91 approved R3 illustrative markers plus reviewed sites, 3 published additions");
+console.log("PASS CL2 worldwide directory: 2,579 physical sites, 35 R49 aliases absorbed, 66 list-only, 158 R1 + 93 R2 + 91 approved R3 illustrative markers plus 6 R6 localities and reviewed sites, 3 published additions");
