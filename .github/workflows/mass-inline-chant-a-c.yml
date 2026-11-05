@@ -7,6 +7,8 @@ on:
       - 'src/mass/reader-inline-chant.js'
       - 'src/mass/reader-inline-proper-reference.js'
       - 'src/mass/reader-inline-all-saints-reference.js'
+      - 'src/mass/reader-inline-proper-registry.js'
+      - 'tests/reader-inline-proper-registry.mjs'
       - 'tests/reader-inline-all-saints-phone.mjs'
       - 'tests/reader-inline-proper-july07-phone.mjs'
       - 'src/mass/reader-inline-chant-selector.js'
@@ -38,6 +40,8 @@ jobs:
           node --check src/mass/reader-inline-chant.js
           node --check src/mass/reader-inline-proper-reference.js
           node --check src/mass/reader-inline-all-saints-reference.js
+          node --check src/mass/reader-inline-proper-registry.js
+          node --check tests/reader-inline-proper-registry.mjs
           node --check tests/reader-inline-all-saints-phone.mjs
           node --check tests/reader-inline-proper-july07-phone.mjs
           node --check src/mass/reader-inline-chant-selector.js
@@ -45,6 +49,7 @@ jobs:
           node --check src/mass/reader-dom.js
           node tests/reader-inline-chant-a-c.mjs
           node tests/reader-inline-chant-generic-source.mjs
+          node tests/reader-inline-proper-registry.mjs
           node tests/reader-proper-gabc-bulk-join.mjs
           node tests/reader-inline-chant-bulk-review.mjs
           node tests/reader-inline-chant-bulk-91-source-queue.mjs
