@@ -10,6 +10,22 @@ export function compareIckspScheduleSnapshots(baseline,live,{checkedAt=new Date(
   const liveIds=new Set(current.map(s=>s.schedule_id).filter(Boolean));
   const missing=[...historicIds].filter(id=>!liveIds.has(id)).sort();
   const added=[...liveIds].filter(id=>!historicIds.has(id)).sort();
+  const sourceSlot=id=>String(id).match(/-(\d+)-1$/)?.[1]??null;
+  const uniqueSlotMap=(ids)=>{
+    const counts=new Map();
+    for(const id of ids){
+      const slot=sourceSlot(id);
+      if(slot!==null)counts.set(slot,(counts.get(slot)??0)+1);
+    }
+    return new Map(ids.map(id=>[sourceSlot(id),id])
+      .filter(([slot])=>slot!==null&&counts.get(slot)===1));
+  };
+  const beforeSlots=uniqueSlotMap(missing),afterSlots=uniqueSlotMap(added);
+  const remapped=[...beforeSlots.entries()].filter(([slot])=>afterSlots.has(slot))
+    .map(([source_slot,old_id])=>({source_slot,old_id,new_id:afterSlots.get(source_slot)}))
+    .sort((a,b)=>Number(a.source_slot)-Number(b.source_slot));
+  const remappedOldIds=new Set(remapped.map(x=>x.old_id));
+  const remappedNewIds=new Set(remapped.map(x=>x.new_id));
   const drift=missing.length>0||added.length>0||older.length!==current.length;
   return {
     schema:"AO_ICKSP_LIVE_SCHEDULE_DRIFT_REVIEW_V1",
@@ -17,6 +33,9 @@ export function compareIckspScheduleSnapshots(baseline,live,{checkedAt=new Date(
     baseline_count:older.length,live_count:current.length,
     missing_baseline_schedule_ids:missing,
     new_live_schedule_ids:added,
+    same_source_slot_identity_changes:remapped,
+    unmatched_baseline_ids:missing.filter(id=>!remappedOldIds.has(id)),
+    unmatched_live_ids:added.filter(id=>!remappedNewIds.has(id)),
     drift_detected:drift,
     source_identity_diff_requires_review:true,
     publication_authorized:false,
@@ -37,8 +56,10 @@ export function writeIckspDriftReport({
     ", new IDs "+report.new_live_schedule_ids.length+
     ". No source schedule rows automatically merged.");
   if(report.drift_detected){
-    console.warn("ICKSP source delta review IDs (possible identity changes): "+
-      JSON.stringify(report.missing_baseline_schedule_ids.slice(0,30)));
+    console.warn("ICKSP same-slot renamed source identities: "+
+      JSON.stringify(report.same_source_slot_identity_changes.slice(0,30)));
+    console.warn("ICKSP unresolved source slots (require exact official witness review): "+
+      JSON.stringify(report.unmatched_baseline_ids.slice(0,30)));
   }
   return report;
 }
