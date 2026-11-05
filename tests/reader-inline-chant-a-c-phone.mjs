@@ -74,11 +74,16 @@ try{
    const score=rows[0].querySelector(".ao-inline-chant-score");
    const widths={device:window.innerWidth,body:body.getBoundingClientRect().width,
     row:rows[0].getBoundingClientRect().width,notation:score.getBoundingClientRect().width};
-   const textInitiallyHidden=displayed(first)==="none";
+   const textInitiallyVisible=displayed(first)!=="none";
+   const notationInitiallyVisible=rows[0].dataset.inlineChantView==="compact"&&
+    displayed(score)!=="none";
+   const bilingualUnchanged=rows.every((row,i)=>
+    row.querySelector(".ao-line-primary").textContent===latin[i]&&
+    row.querySelector(".ao-line-secondary").textContent===["Go, the Mass is ended.","Thanks be to God."][i]);
    const trigger=rows[0].querySelector("[data-inline-chant-toggle]");
    controller.handleClick({target:trigger});
    const textAfterToggle=displayed(first)!=="none" && rows[0].dataset.inlineChantView==="text";
-   const secondUnchanged=rows[1].dataset.inlineChantView==="notation";
+   const secondUnchanged=rows[1].dataset.inlineChantView==="compact";
    controller.render({mode:"LIVE",form:"LOW",settingId:"ITE_VIII",paragraphs});
    const lowPreservesOriginal=body.querySelectorAll(".ao-inline-chant-main").length===0&&
     rows[0].querySelector(".ao-line-primary").textContent===latin[0];
@@ -100,12 +105,15 @@ try{
    const actualStaffWidth=body.querySelector(".ao-inline-chant-score svg")?.getBoundingClientRect().width??0;
    sourceController.destroy();
    return {before,state,widths,gridCols:style.gridTemplateColumns,
-    textInitiallyHidden,textAfterToggle,secondUnchanged,lowPreservesOriginal,
+    textInitiallyVisible,notationInitiallyVisible,bilingualUnchanged,
+    textAfterToggle,secondUnchanged,lowPreservesOriginal,
     realRendered,realSvgCount,actualStaffWidth};
   });
   assert.equal(result.before,2);
   assert.equal(result.state.rendered,2);
-  assert.equal(result.textInitiallyHidden,true);
+  assert.equal(result.textInitiallyVisible,true,"Compact notation must NOT hide Latin");
+  assert.equal(result.notationInitiallyVisible,true);
+  assert.equal(result.bilingualUnchanged,true,"No Latin or translation substitution");
   assert.equal(result.textAfterToggle,true);
   assert.equal(result.secondUnchanged,true);
   assert.equal(result.lowPreservesOriginal,true);

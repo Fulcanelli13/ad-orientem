@@ -5,6 +5,8 @@ on:
   pull_request:
     paths:
       - 'src/mass/reader-inline-chant.js'
+      - 'src/mass/reader-participation-neume-policy.js'
+      - 'tests/reader-participation-neume-policy.mjs'
       - 'src/mass/reader-inline-proper-reference.js'
       - 'src/mass/reader-inline-all-saints-reference.js'
       - 'src/mass/reader-inline-proper-registry.js'
@@ -38,6 +40,8 @@ jobs:
       - name: Parse source, preserve source-first reader imports
         run: |
           node --check src/mass/reader-inline-chant.js
+          node --check src/mass/reader-participation-neume-policy.js
+          node --check tests/reader-participation-neume-policy.mjs
           node --check src/mass/reader-inline-proper-reference.js
           node --check src/mass/reader-inline-all-saints-reference.js
           node --check src/mass/reader-inline-proper-registry.js
@@ -48,6 +52,7 @@ jobs:
           node --check src/mass/reader-inline-chant-bulk-review.js
           node --check src/mass/reader-dom.js
           node tests/reader-inline-chant-a-c.mjs
+          node tests/reader-participation-neume-policy.mjs
           node tests/reader-inline-chant-generic-source.mjs
           node tests/reader-inline-proper-registry.mjs
           node tests/reader-proper-gabc-bulk-join.mjs
@@ -56,7 +61,7 @@ jobs:
       - name: Prepare source-backed browser validation
         run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
-      - name: Verify 390 and 320 px visible score, independent text toggle and Low Mass fallback
+      - name: Verify 390 and 320 px compact score alongside intact Latin, independent toggle, Low fallback
         run: |
           node tests/reader-inline-chant-a-c-phone.mjs
           node tests/reader-inline-proper-july07-phone.mjs
