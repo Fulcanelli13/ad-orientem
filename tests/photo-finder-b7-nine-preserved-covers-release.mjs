@@ -17,7 +17,8 @@ assert.equal(manifest.newly_released.length,9);
 assert.equal(manifest.newly_released.length+1,report.verified);
 assert.ok(registry.items.length>=152,"B7 historical approvals must survive later approved releases");
 assert.equal(new Set(registry.items.map(x=>x.place_id)).size,registry.items.length,"No duplicate Place covers");
-assert.equal(gal.items.length,manifest.proposed.approved_gallery_entries);
+assert.ok(gal.items.length>=manifest.proposed.approved_gallery_entries,
+  "Later additive gallery approvals cannot invalidate frozen B7 production counts");
 const byId=new Map(registry.items.map(x=>[x.place_id,x]));
 const fromReport=new Map(report.media_records.map(x=>[x.item.place_id,x.item]));
 for(const expected of manifest.newly_released){
