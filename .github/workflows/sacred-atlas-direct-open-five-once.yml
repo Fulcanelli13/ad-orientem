@@ -1,0 +1,73 @@
+name: Sacred Atlas — direct open-photo batch of five
+# Temporary release-branch-only acquisition; delete before PR merge.
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches: [main]
+    paths:
+      - '.github/workflows/sacred-atlas-direct-open-five-once.yml'
+      - 'tools/atlas/acquire-sacred-atlas-direct-open-five.py'
+      - 'data/geography/research/sacred-atlas-direct-open-photo-five-20261105.v1.json'
+permissions:
+  contents: write
+jobs:
+  direct-five:
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'release/sacred-atlas-open-photo-first-five-20261105' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image decoder
+        run: python -m pip install 'Pillow>=10,<12'
+      - name: Check five canonical IDs and safety bounds
+        run: |
+          python -m py_compile tools/atlas/acquire-sacred-atlas-direct-open-five.py
+          python tools/atlas/acquire-sacred-atlas-direct-open-five.py --validate-only
+      - name: Download direct-source originals and verify live licence
+        run: python tools/atlas/acquire-sacred-atlas-direct-open-five.py
+      - name: Audit new images and registry
+        run: |
+          python - <<'PY'
+          import json,pathlib,hashlib
+          root=pathlib.Path('.')
+          m=json.loads((root/'data/geography/research/sacred-atlas-direct-open-photo-five-20261105.v1.json').read_text())
+          c=json.loads((root/'data/geography/approved-place-media.v1.json').read_text())
+          r=json.loads((root/'data/geography/research/sacred-atlas-direct-open-photo-five-release-report-20261105.v1.json').read_text())
+          assert r['main_published_by_this_job']==0
+          assert r['admitted_on_branch']+r['held']==5 and r['admitted_on_branch']>0
+          assert len(c['items'])==m['baseline_covers']+r['admitted_on_branch']
+          assert len({x['place_id'] for x in c['items']})==len(c['items'])
+          for x in r['accepted']:
+              b=(root/x['asset']).read_bytes()
+              assert b[:4]==b'RIFF' and b[8:12]==b'WEBP'
+              assert hashlib.sha256(b).hexdigest()==x['derivative_sha256']
+          print('ADMITTED',r['admitted_on_branch'],'HELD',r['held'])
+          PY
+          git diff --check
+      - name: Commit admitted images onto release PR branch only
+        run: |
+          set -euo pipefail
+          git add data/geography/approved-place-media.v1.json \
+            data/geography/research/sacred-atlas-direct-open-photo-five-release-report-20261105.v1.json \
+            assets/approved/place-media/
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          if ! git diff --cached --quiet; then
+            git commit -m 'feat(atlas): admit direct-source photo batch with rights proof'
+            git push origin HEAD:refs/heads/release/sacred-atlas-open-photo-first-five-20261105
+          fi
+      - name: Preserve release report as short-lived artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-atlas-direct-open-five-audit
+          path: |
+            data/geography/research/sacred-atlas-direct-open-photo-five-release-report-20261105.v1.json
+          if-no-files-found: warn
+          retention-days: 7
