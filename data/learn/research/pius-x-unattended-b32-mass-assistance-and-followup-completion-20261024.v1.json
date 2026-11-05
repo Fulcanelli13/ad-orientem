@@ -1,0 +1,492 @@
+{
+  "schema": "AO_SPX_UNATTENDED_B32_MASS_ASSISTANCE_AND_FOLLOWUPS_V1",
+  "asOf": "2026-10-24",
+  "status": "RESEARCH_ONLY_NOT_HUMAN_CERTIFIED",
+  "continuity": {
+    "previous": "B30A E657–659 and B30B E660–662 openings; B28B E653–656 complete",
+    "newDistinctFamilyRange": "E663–671",
+    "supplementalFollowups": "E657–662",
+    "note": "Q663 is context in earlier E662 research, not a previously completed standalone family"
+  },
+  "sourceRegistry": {
+    "Catechismo Maggiore 1905": {
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "locus": "Q657–671",
+      "type": "Italian web transcription, not print facsimile; catechetical document not spontaneous papal speech"
+    }
+  },
+  "newRecords": [
+    {
+      "familyId": "SPX-1905-E-663",
+      "sourceQuestionId": "PX1905-Q663",
+      "proposedOpening": {
+        "en": "Even when Mass is celebrated in honour of Our Lady or a saint, the sacrifice is offered to God alone. The Church thanks God for the gifts bestowed on His saints and seeks graces through their intercession.",
+        "fr": "Même lorsqu'une Messe est célébrée en l'honneur de Notre-Dame ou d'un saint, le sacrifice est offert à Dieu seul. L'Église remercie Dieu des dons accordés à ses saints et demande des grâces par leur intercession."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Are saints the recipients of the sacrifice?",
+          "fr": "Les saints reçoivent-ils le sacrifice ?"
+        },
+        "answer": {
+          "en": "No. Q663 carefully distinguishes the recipient of sacrifice, God, from the honour and intercession of the saints.",
+          "fr": "Non. La question 663 distingue soigneusement le destinataire du sacrifice, Dieu, de l'honneur rendu aux saints et de leur intercession."
+        }
+      },
+      "sourceRefs": [
+        "Catechismo Maggiore Q663"
+      ],
+      "sourcePrecisionDelta": "Q663 explains Q662, but is a distinct question; do not count as an independent new sacrificial doctrine.",
+      "claimClass": "EDITORIAL_BILINGUAL_PARAPHRASE_OF_ITALIAN_CATECHISM_NOT_PERSONAL_POPE_SPEECH",
+      "release": {
+        "italianWebTextMatched": true,
+        "originalPrintCollated": false,
+        "englishFrenchApproved": false,
+        "historicalVoiceApproved": false,
+        "claimCertified": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "SPX-1905-E-664",
+      "sourceQuestionId": "PX1905-Q664",
+      "proposedOpening": {
+        "en": "The whole Church shares in the fruits of Mass; the Catechism particularly names the priest, those present and those for whom Mass is applied, whether living or dead.",
+        "fr": "Toute l'Église participe aux fruits de la Messe ; le Catéchisme mentionne spécialement le prêtre, les assistants et ceux pour qui la Messe est appliquée, vivants ou défunts."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Can Mass be offered for the dead?",
+          "fr": "Peut-on faire célébrer la Messe pour les défunts ?"
+        },
+        "answer": {
+          "en": "Yes. Q664 explicitly includes both the living and the dead among those for whom Mass is applied.",
+          "fr": "Oui. La question 664 mentionne expressément les vivants et les défunts parmi ceux pour qui la Messe est appliquée."
+        }
+      },
+      "sourceRefs": [
+        "Catechismo Maggiore Q664"
+      ],
+      "sourcePrecisionDelta": "Do not imply that only named recipients benefit, or collapse general and special fruits.",
+      "claimClass": "EDITORIAL_BILINGUAL_PARAPHRASE_OF_ITALIAN_CATECHISM_NOT_PERSONAL_POPE_SPEECH",
+      "release": {
+        "italianWebTextMatched": true,
+        "originalPrintCollated": false,
+        "englishFrenchApproved": false,
+        "historicalVoiceApproved": false,
+        "claimCertified": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "SPX-1905-E-665",
+      "sourceQuestionId": "PX1905-Q665",
+      "proposedOpening": {
+        "en": "To assist well and fruitfully at Mass, the Catechism joins outward reverence to inward devotion. Neither external appearance nor private feeling alone is its whole counsel.",
+        "fr": "Pour assister à la Messe avec fruit, le Catéchisme unit la tenue respectueuse à la dévotion intérieure. Ni l'apparence extérieure ni le seul sentiment privé n'épuisent son enseignement."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "What are its two headings?",
+          "fr": "Quels sont ses deux éléments ?"
+        },
+        "answer": {
+          "en": "Q665 names modesty of person and devotion of heart; the following questions explain both.",
+          "fr": "La question 665 nomme la modestie de la personne et la dévotion du cœur ; les questions suivantes développent ces deux points."
+        }
+      },
+      "sourceRefs": [
+        "Catechismo Maggiore Q665"
+      ],
+      "sourcePrecisionDelta": "Do not turn historical etiquette into an invented current universal rubrical requirement.",
+      "claimClass": "EDITORIAL_BILINGUAL_PARAPHRASE_OF_ITALIAN_CATECHISM_NOT_PERSONAL_POPE_SPEECH",
+      "release": {
+        "italianWebTextMatched": true,
+        "originalPrintCollated": false,
+        "englishFrenchApproved": false,
+        "historicalVoiceApproved": false,
+        "claimCertified": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "SPX-1905-E-666",
+      "sourceQuestionId": "PX1905-Q666",
+      "proposedOpening": {
+        "en": "The historical Catechism recommends modest dress, silence and recollection at Mass. It also describes a kneeling custom with standing for the Gospels; this last detail must be presented as its historical guidance, not a universal modern posture rule.",
+        "fr": "Le Catéchisme historique recommande une tenue modeste, le silence et le recueillement à la Messe. Il décrit aussi l'usage de s'agenouiller et de se lever pour les Évangiles ; ce dernier détail relève de son enseignement historique, non d'une règle universelle actuelle."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Must every congregation use exactly those postures today?",
+          "fr": "Toute assemblée doit-elle aujourd'hui adopter exactement ces postures ?"
+        },
+        "answer": {
+          "en": "No such current universal claim follows from Q666. Its original wording includes 'as far as possible'; particular rubrics and legitimate local usages require separate verification.",
+          "fr": "On ne peut tirer de la question 666 une telle obligation universelle actuelle. Son texte dit « autant que possible » ; les rubriques particulières et les usages légitimes doivent être vérifiés séparément."
+        }
+      },
+      "sourceRefs": [
+        "Catechismo Maggiore Q666"
+      ],
+      "sourcePrecisionDelta": "Original 'two Gospels' refers to the historical form described in 1905; avoid importing into all 1962 forms or all modern rites.",
+      "claimClass": "EDITORIAL_BILINGUAL_PARAPHRASE_OF_ITALIAN_CATECHISM_NOT_PERSONAL_POPE_SPEECH",
+      "release": {
+        "italianWebTextMatched": true,
+        "originalPrintCollated": false,
+        "englishFrenchApproved": false,
+        "historicalVoiceApproved": false,
+        "claimCertified": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "SPX-1905-E-667",
+      "sourceQuestionId": "PX1905-Q667",
+      "proposedOpening": {
+        "en": "The Catechism gives four practical ways to unite the heart to Mass: join one's intention to the priest's offering, follow the prayers and actions, meditate on Christ's Passion with repentance, and receive Communion sacramentally or at least spiritually when the priest communicates.",
+        "fr": "Le Catéchisme indique quatre moyens d'unir son cœur à la Messe : joindre son intention à l'offrande du prêtre, suivre les prières et les actions, méditer la Passion du Christ avec repentir, et communier sacramentellement ou au moins spirituellement au moment de la communion du prêtre."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Must a person understand every Latin word?",
+          "fr": "Faut-il comprendre chaque mot latin ?"
+        },
+        "answer": {
+          "en": "Q667 proposes several forms of participation, including intention and meditation. It does not establish complete verbal comprehension as a condition for fruitful assistance.",
+          "fr": "La question 667 propose plusieurs formes de participation, notamment l'intention et la méditation. Elle ne fait pas de la compréhension verbale intégrale une condition pour assister avec fruit."
+        }
+      },
+      "sourceRefs": [
+        "Catechismo Maggiore Q667"
+      ],
+      "sourcePrecisionDelta": "Preserve four numbered practices and avoid projecting modern debates about participation into a 1905 catechism answer.",
+      "claimClass": "EDITORIAL_BILINGUAL_PARAPHRASE_OF_ITALIAN_CATECHISM_NOT_PERSONAL_POPE_SPEECH",
+      "release": {
+        "italianWebTextMatched": true,
+        "originalPrintCollated": false,
+        "englishFrenchApproved": false,
+        "historicalVoiceApproved": false,
+        "claimCertified": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "SPX-1905-E-668",
+      "sourceQuestionId": "PX1905-Q668",
+      "proposedOpening": {
+        "en": "Spiritual Communion is an earnest desire to be united to Jesus Christ sacramentally, accompanied by acts of love and devotion. The Catechism offers a brief prayer as an example, not an exclusive required formula.",
+        "fr": "La communion spirituelle est un vif désir de s'unir sacramentellement à Jésus-Christ, accompagné d'actes d'amour et de dévotion. Le Catéchisme propose une brève prière à titre d'exemple, non comme formule exclusive obligatoire."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Is spiritual Communion identical to receiving the Host?",
+          "fr": "La communion spirituelle équivaut-elle à recevoir l'Hostie ?"
+        },
+        "answer": {
+          "en": "No. Q668 speaks of desire for sacramental union; it does not claim that a spiritual Communion is the sacramental reception itself.",
+          "fr": "Non. La question 668 parle du désir de l'union sacramentelle ; elle n'affirme pas que la communion spirituelle soit la réception du sacrement lui-même."
+        }
+      },
+      "sourceRefs": [
+        "Catechismo Maggiore Q668"
+      ],
+      "sourcePrecisionDelta": "Do not make spiritual Communion a replacement for the Eucharist or promise identical sacramental effects.",
+      "claimClass": "EDITORIAL_BILINGUAL_PARAPHRASE_OF_ITALIAN_CATECHISM_NOT_PERSONAL_POPE_SPEECH",
+      "release": {
+        "italianWebTextMatched": true,
+        "originalPrintCollated": false,
+        "englishFrenchApproved": false,
+        "historicalVoiceApproved": false,
+        "claimCertified": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "SPX-1905-E-669",
+      "sourceQuestionId": "PX1905-Q669",
+      "proposedOpening": {
+        "en": "Praying the Rosary or other prayers during Mass need not prevent fruitful assistance, provided one strives, as far as possible, to follow the action of the holy sacrifice.",
+        "fr": "La récitation du Rosaire ou d'autres prières pendant la Messe n'empêche pas nécessairement d'y assister avec fruit, pourvu que l'on s'efforce, autant que possible, de suivre l'action du saint sacrifice."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Does the Catechism endorse ignoring what happens at the altar?",
+          "fr": "Le Catéchisme encourage-t-il à ignorer ce qui se passe à l'autel ?"
+        },
+        "answer": {
+          "en": "No. Q669 expressly adds the condition of following the sacrificial action as far as possible.",
+          "fr": "Non. La question 669 ajoute expressément la condition de suivre, autant que possible, l'action du sacrifice."
+        }
+      },
+      "sourceRefs": [
+        "Catechismo Maggiore Q669"
+      ],
+      "sourcePrecisionDelta": "Preserve conditional 'purché ... per quanto si può'; do not treat as universal preference for Rosary over Mass attention.",
+      "claimClass": "EDITORIAL_BILINGUAL_PARAPHRASE_OF_ITALIAN_CATECHISM_NOT_PERSONAL_POPE_SPEECH",
+      "release": {
+        "italianWebTextMatched": true,
+        "originalPrintCollated": false,
+        "englishFrenchApproved": false,
+        "historicalVoiceApproved": false,
+        "claimCertified": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "SPX-1905-E-670",
+      "sourceQuestionId": "PX1905-Q670",
+      "proposedOpening": {
+        "en": "Mass is a fitting time to pray for others, both living and dead. The Catechism particularly recommends bringing their needs before God during the sacrifice.",
+        "fr": "La Messe est un moment privilégié pour prier pour autrui, vivants et défunts. Le Catéchisme recommande spécialement de présenter leurs besoins à Dieu pendant le sacrifice."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "May I pray for a departed family member?",
+          "fr": "Puis-je prier pour un proche défunt ?"
+        },
+        "answer": {
+          "en": "Yes. Q670 explicitly includes prayer for the dead as well as the living.",
+          "fr": "Oui. La question 670 mentionne expressément la prière pour les défunts comme pour les vivants."
+        }
+      },
+      "sourceRefs": [
+        "Catechismo Maggiore Q670"
+      ],
+      "sourcePrecisionDelta": "This is distinct from Q664 on fruits/application of Mass; do not count identical source claim twice.",
+      "claimClass": "EDITORIAL_BILINGUAL_PARAPHRASE_OF_ITALIAN_CATECHISM_NOT_PERSONAL_POPE_SPEECH",
+      "release": {
+        "italianWebTextMatched": true,
+        "originalPrintCollated": false,
+        "englishFrenchApproved": false,
+        "historicalVoiceApproved": false,
+        "claimCertified": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "SPX-1905-E-671",
+      "sourceQuestionId": "PX1905-Q671",
+      "proposedOpening": {
+        "en": "After Mass, the Catechism recommends thanking God for the grace of having assisted at the sacrifice and asking pardon for one's shortcomings during it.",
+        "fr": "Après la Messe, le Catéchisme recommande de remercier Dieu de la grâce d'avoir assisté au sacrifice et de lui demander pardon des manquements commis pendant celui-ci."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Does the prayer end the moment Mass ends?",
+          "fr": "La prière cesse-t-elle dès que la Messe est terminée ?"
+        },
+        "answer": {
+          "en": "No. Q671 specifically invites thanksgiving and a humble examination of how one attended.",
+          "fr": "Non. La question 671 invite expressément à l'action de grâces et à un humble examen de la manière dont on a assisté à la Messe."
+        }
+      },
+      "sourceRefs": [
+        "Catechismo Maggiore Q671"
+      ],
+      "sourcePrecisionDelta": "Do not confuse post-Mass thanksgiving with obligatory liturgical text.",
+      "claimClass": "EDITORIAL_BILINGUAL_PARAPHRASE_OF_ITALIAN_CATECHISM_NOT_PERSONAL_POPE_SPEECH",
+      "release": {
+        "italianWebTextMatched": true,
+        "originalPrintCollated": false,
+        "englishFrenchApproved": false,
+        "historicalVoiceApproved": false,
+        "claimCertified": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    }
+  ],
+  "supplementalFollowups": [
+    {
+      "familyId": "SPX-1905-E-657",
+      "supplementType": "FOLLOWUP_TO_ALREADY_COMMITTED_B30_OPENING",
+      "proposedFollowup": {
+        "question": {
+          "en": "If the words of consecration mention Body and Blood separately, is Christ divided?",
+          "fr": "Si les paroles de consécration nomment séparément le Corps et le Sang, le Christ est-il divisé ?"
+        },
+        "answer": {
+          "en": "No. Q657 says the separate signs represent the shedding of His Blood, while natural concomitance and the hypostatic union mean the whole living Christ is present under either species.",
+          "fr": "Non. La question 657 enseigne que les signes séparés représentent l'effusion de son Sang, tandis que la concomitance naturelle et l'union hypostatique signifient que le Christ vivant tout entier est présent sous chaque espèce."
+        }
+      },
+      "sourceRefs": [
+        "Catechismo Maggiore Q657"
+      ],
+      "sourcePrecisionDelta": "Preserve both natural concomitance and hypostatic union, omitted from earlier short opening.",
+      "claimClass": "EDITORIAL_PARAPHRASE_NOT_VERBATIM",
+      "release": {
+        "italianWebTextMatched": true,
+        "originalPrintCollated": false,
+        "englishFrenchApproved": false,
+        "historicalVoiceApproved": false,
+        "claimCertified": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "SPX-1905-E-658",
+      "supplementType": "FOLLOWUP_TO_ALREADY_COMMITTED_B30_OPENING",
+      "proposedFollowup": {
+        "question": {
+          "en": "Does Mass complete a redemption left unfinished on Calvary?",
+          "fr": "La Messe achève-t-elle une rédemption restée incomplète au Calvaire ?"
+        },
+        "answer": {
+          "en": "No. Q658 says Christ completed redemption through the Cross and applies its merits through means instituted in the Church, including Mass.",
+          "fr": "Non. La question 658 enseigne que le Christ a accompli la rédemption par la Croix et en applique les mérites par les moyens institués dans l'Église, dont la Messe."
+        }
+      },
+      "sourceRefs": [
+        "Catechismo Maggiore Q658"
+      ],
+      "sourcePrecisionDelta": "Previously cited in E656 follow-up; do not count as new doctrinal evidence.",
+      "claimClass": "EDITORIAL_PARAPHRASE_NOT_VERBATIM",
+      "release": {
+        "italianWebTextMatched": true,
+        "originalPrintCollated": false,
+        "englishFrenchApproved": false,
+        "historicalVoiceApproved": false,
+        "claimCertified": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "SPX-1905-E-659",
+      "supplementType": "FOLLOWUP_TO_ALREADY_COMMITTED_B30_OPENING",
+      "proposedFollowup": {
+        "question": {
+          "en": "Is prayer for the departed a fifth end of Mass?",
+          "fr": "La prière pour les défunts constitue-t-elle une cinquième fin de la Messe ?"
+        },
+        "answer": {
+          "en": "No. Q659 places suffrage for the souls in purgatory within the propitiatory end, alongside adoration, thanksgiving and petition.",
+          "fr": "Non. La question 659 situe le suffrage des âmes du purgatoire dans la fin propitiatoire, avec l'adoration, l'action de grâces et la demande."
+        }
+      },
+      "sourceRefs": [
+        "Catechismo Maggiore Q659"
+      ],
+      "sourcePrecisionDelta": "Preserve exactly four ends; suffrage not fifth.",
+      "claimClass": "EDITORIAL_PARAPHRASE_NOT_VERBATIM",
+      "release": {
+        "italianWebTextMatched": true,
+        "originalPrintCollated": false,
+        "englishFrenchApproved": false,
+        "historicalVoiceApproved": false,
+        "claimCertified": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "SPX-1905-E-660",
+      "supplementType": "FOLLOWUP_TO_ALREADY_COMMITTED_B30_OPENING",
+      "proposedFollowup": {
+        "question": {
+          "en": "Does the priest offer Mass independently of Christ?",
+          "fr": "Le prêtre offre-t-il la Messe indépendamment du Christ ?"
+        },
+        "answer": {
+          "en": "No. Q660 names Christ as first and principal offerer; the priest offers as His minister in Christ's name.",
+          "fr": "Non. La question 660 nomme le Christ comme premier et principal offrant ; le prêtre offre comme son ministre au nom du Christ."
+        }
+      },
+      "sourceRefs": [
+        "Catechismo Maggiore Q660"
+      ],
+      "sourcePrecisionDelta": "Source-owned principal offerer distinction.",
+      "claimClass": "EDITORIAL_PARAPHRASE_NOT_VERBATIM",
+      "release": {
+        "italianWebTextMatched": true,
+        "originalPrintCollated": false,
+        "englishFrenchApproved": false,
+        "historicalVoiceApproved": false,
+        "claimCertified": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "SPX-1905-E-661",
+      "supplementType": "FOLLOWUP_TO_ALREADY_COMMITTED_B30_OPENING",
+      "proposedFollowup": {
+        "question": {
+          "en": "When did Christ institute the sacrifice of Mass?",
+          "fr": "Quand le Christ a-t-il institué le sacrifice de la Messe ?"
+        },
+        "answer": {
+          "en": "Q661 links its institution to the institution of the Eucharist and the command to celebrate in memory of His Passion.",
+          "fr": "La question 661 rattache son institution à celle de l'Eucharistie et à l'ordre de célébrer en mémoire de sa Passion."
+        }
+      },
+      "sourceRefs": [
+        "Catechismo Maggiore Q661"
+      ],
+      "sourcePrecisionDelta": "Do not turn later theological explanatory vocabulary into a direct quotation from 1905.",
+      "claimClass": "EDITORIAL_PARAPHRASE_NOT_VERBATIM",
+      "release": {
+        "italianWebTextMatched": true,
+        "originalPrintCollated": false,
+        "englishFrenchApproved": false,
+        "historicalVoiceApproved": false,
+        "claimCertified": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "SPX-1905-E-662",
+      "supplementType": "FOLLOWUP_TO_ALREADY_COMMITTED_B30_OPENING",
+      "proposedFollowup": {
+        "question": {
+          "en": "Why may Mass be celebrated in honour of a saint?",
+          "fr": "Pourquoi peut-on célébrer la Messe en l'honneur d'un saint ?"
+        },
+        "answer": {
+          "en": "Q663 explains that the sacrifice remains offered to God alone, while honouring the saint thanks God for His gifts and seeks the saint's intercession.",
+          "fr": "La question 663 explique que le sacrifice demeure offert à Dieu seul ; honorer le saint revient à remercier Dieu de ses dons et à demander son intercession."
+        }
+      },
+      "sourceRefs": [
+        "Catechismo Maggiore Q662–663"
+      ],
+      "sourcePrecisionDelta": "Context from Q663 is not a second independent E662 family; Q663 separately reviewed above.",
+      "claimClass": "EDITORIAL_PARAPHRASE_NOT_VERBATIM",
+      "release": {
+        "italianWebTextMatched": true,
+        "originalPrintCollated": false,
+        "englishFrenchApproved": false,
+        "historicalVoiceApproved": false,
+        "claimCertified": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    }
+  ],
+  "counts": {
+    "newDistinctFamilies": 9,
+    "newCompleteBilingualPackets": 9,
+    "previouslyOpenedFamiliesReceivingFollowups": 6,
+    "newBilingualAnswerUnits": 24,
+    "originalPrintCollated": 0,
+    "humanCertified": 0
+  },
+  "nextQueue": [
+    "E672–681 penitential sacrament questions after overlap check with prior Confession batches",
+    "Original 1905 printed Catechism collation Q657–671",
+    "Human EN/FR historical-voice review for B30 and B32"
+  ],
+  "approvalsChanged": false
+}

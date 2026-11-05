@@ -1,0 +1,206 @@
+{
+  "schema": "AO_SPX_UNATTENDED_B49_BATCH50_SOURCE_FIDELITY_AND_LANGUAGE_LOCATOR_V1",
+  "asOf": "2026-11-03",
+  "status": "ADDITIVE_RESEARCH_ONLY_NOT_HUMAN_CERTIFIED",
+  "continuity": {
+    "baseline": "21 Oct: 68 family contexts, 65 improved, 130 bilingual answer units, 64 complete packets awaiting human certification, one partly blocked Chanoine original English witness",
+    "latestSPX": "B48 (2 Nov), Q12–111 1905 long catechism, verified on branch",
+    "latestChanoine": "B39 (28 Oct), CSE141–147, verified on research/chanoine-cse-source-dialogue-20261019",
+    "sourceBranch": "prototype/pius-x-standalone-study-20261021",
+    "originalDrafts": [
+      "data/learn/research/pius-x-batch50-part-a-20261019.v1.json",
+      "data/learn/research/pius-x-batch50-part-b-20261019.v1.json",
+      "data/learn/research/pius-x-batch50-part-c-20261019.v1.json"
+    ],
+    "manifest": "data/learn/research/pius-x-batch50-production-manifest-20261019.v1.json",
+    "scope": "Eight existing batch50 families not subjected to a repeated B01–B48 full audit; checked original draft, source passages, language-specific loci and manifest's known aliases; no invented IDs",
+    "editionBoundary": "Papal documents authored in Pius X's pontificate; 1905 catechism is papally approved text, not direct spoken utterance. All proposed EN/FR sentences are new editorial paraphrases, never verbatim historical quotations."
+  },
+  "coverage": {
+    "distinctExistingFamiliesChecked": 8,
+    "substantiveBilingualProposals": 3,
+    "locatorOrAttributionRepairs": 2,
+    "retainedWithoutRewrite": 2,
+    "knownAliasDoNotDoubleCount": 1,
+    "newCanonicalIds": 0,
+    "humanCertifications": 0
+  },
+  "primarySources": [
+    {
+      "id": "PASCENDI_EN",
+      "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "loci": "English §§14–16; EN §14 experience/equal truth, §15 tradition, §16 miracles and prophecies"
+    },
+    {
+      "id": "PASCENDI_FR",
+      "url": "https://www.vatican.va/content/pius-x/fr/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+      "loci": "French §§16–18 correspond to English §§14–16: French section numbering is offset; do not reuse EN numbers blindly"
+    },
+    {
+      "id": "TRA_LE_SOLLECITUDINI",
+      "url": "https://www.vatican.va/content/pius-x/it/motu_proprio/documents/hf_p-x_motu-proprio_19031122_sollecitudini.html",
+      "loci": "Italian instruction §§1–6; §5 explicitly allows suitable modern music, §6 warns against theatrical style"
+    },
+    {
+      "id": "HAERENT_ANIMO",
+      "url": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+      "loci": "Italian §3 on priestly example preceding preaching"
+    },
+    {
+      "id": "1905_CATECHISM",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "loci": "Italian Q150–162 and Q192–199, original-language online transcription not printed facsimile"
+    },
+    {
+      "id": "E_SUPREMI_EN",
+      "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "loci": "English §13 on charity in correction"
+    },
+    {
+      "id": "E_SUPREMI_FR",
+      "url": "https://www.vatican.va/content/pius-x/fr/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "loci": "French paragraph beginning 'Mais pour que ce zèle à enseigner...' (the French page does not print corresponding numbered §13 headings)"
+    }
+  ],
+  "substantiveProposals": [
+    {
+      "id": "SPX-EXP-031",
+      "kind": "MODERNIST_PREMISE_VS_PAPAL_CONCLUSION_SCOPE",
+      "existingIssue": "The current answer says sincerity is not truth, but leaves the exact argument implicit. Pascendi EN §14 (FR §16) criticises a particular theory making subjective experience a truth criterion; it does not pronounce a verdict on every adherent's sincerity.",
+      "proposedOpening": {
+        "en": "In Pascendi, Pius X rejects the inference that all religions are equally true merely because believers report sincere religious experience. His argument addresses a particular theory that makes personal experience the test of revelation; the sincerity of a person and the truth of a doctrine are different questions.",
+        "fr": "Dans Pascendi, Pie X rejette la conclusion selon laquelle toutes les religions seraient également vraies du seul fait que leurs fidèles rapportent une expérience religieuse sincère. Il critique une théorie particulière qui fait de l'expérience personnelle le critère de la Révélation : la sincérité d'une personne et la vérité d'une doctrine sont deux questions distinctes."
+      },
+      "sourceLoci": {
+        "en": "Pascendi §14; §15 on tradition",
+        "fr": "Pascendi §16; §17 on tradition"
+      },
+      "sourceUrls": [
+        "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "https://www.vatican.va/content/pius-x/fr/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html"
+      ],
+      "classification": "BILINGUAL_EDITORIAL_PARAPHRASE_OF_PAPAL_PRIMARY_SOURCE_NOT_VERBATIM",
+      "gate": "READY_FOR_HUMAN_SOURCE_TRANSLATION_DOCTRINAL_PERSONA_REVIEW_NOT_CERTIFIED"
+    },
+    {
+      "id": "SPX-EXP-032",
+      "kind": "MIRACLE_PROPHECY_EXACT_LOCUS_AND_HISTORICAL_FAITH_SPLIT",
+      "existingIssue": "Existing source range §§6–10 omits the clearest explicit miracles-and-prophecies passage, English §16/French §18; the original speaks of a Modernist division between agnostic history and faith, not simply of calling all miracles metaphors.",
+      "proposedOpening": {
+        "en": "Pascendi objects to a method that excludes Christ's miracles and prophecies from historical knowledge in advance, while allowing them to be affirmed in a separate sphere of faith. Pius X criticises this division rather than treating the miracles and prophecies of Christ as merely subjective symbols. The specific discussion is in English §16, with its premises in §§6–10.",
+        "fr": "Pascendi critique une méthode qui exclut d'avance les miracles et les prophéties du Christ du champ de la connaissance historique, tout en permettant de les affirmer dans une sphère de foi séparée. Pie X conteste cette division, au lieu de réduire ces faits à de simples symboles subjectifs. Le passage explicite se trouve au §18 de la version française, avec ses prémisses aux §§6–11."
+      },
+      "sourceLoci": {
+        "en": "Pascendi §16 (explicit miracles and prophecies), with §§6–10",
+        "fr": "Pascendi §18 (explicit miracles and prophecies), with §§6–11"
+      },
+      "sourceUrls": [
+        "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "https://www.vatican.va/content/pius-x/fr/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html"
+      ],
+      "classification": "BILINGUAL_EDITORIAL_PARAPHRASE_SOURCE_LOCATOR_CORRECTION_NOT_VERBATIM",
+      "gate": "READY_FOR_HUMAN_SOURCE_TRANSLATION_DOCTRINAL_PERSONA_REVIEW_NOT_CERTIFIED"
+    },
+    {
+      "id": "SPX-EXP-037",
+      "kind": "MODERN_MUSIC_PERMITTED_UNDER_CONDITIONS",
+      "existingIssue": "The current sacred-versus-theatrical distinction is sound but omits Italian instruction §5, which admits serious modern music meeting liturgical conditions. Avoid implying Pius X condemned all contemporary composition.",
+      "proposedOpening": {
+        "en": "Tra le sollecitudini requires sacred music to possess holiness, genuine artistic quality and a universal character. It gives Gregorian chant pride of place and recognises classical polyphony, while also permitting suitable modern compositions. Its criticism is directed particularly at profane and theatrical features incompatible with the liturgy, not at every new composition.",
+        "fr": "Tra le sollecitudini demande à la musique sacrée la sainteté, la qualité artistique véritable et un caractère universel. Le texte donne la première place au chant grégorien et reconnaît la polyphonie classique, tout en admettant des compositions modernes convenables. Il vise surtout les caractères profanes et théâtraux incompatibles avec la liturgie, non toute composition nouvelle."
+      },
+      "sourceLoci": {
+        "it": "Tra le sollecitudini, I §§1–2 and II §§3–6, especially §5"
+      },
+      "sourceUrls": [
+        "https://www.vatican.va/content/pius-x/it/motu_proprio/documents/hf_p-x_motu-proprio_19031122_sollecitudini.html"
+      ],
+      "classification": "BILINGUAL_EDITORIAL_PARAPHRASE_FROM_ITALIAN_PAPAL_SOURCE_NOT_VERBATIM",
+      "gate": "READY_FOR_HUMAN_SOURCE_TRANSLATION_DOCTRINAL_PERSONA_REVIEW_NOT_CERTIFIED"
+    }
+  ],
+  "locatorAndAttributionRepairs": [
+    {
+      "id": "SPX-EXP-038",
+      "kind": "SOURCE_LOCUS_AND_DISTINCT_INTENT",
+      "proposed": {
+        "en": "Retain the existing answer on the liturgical purpose of music; cite Tra le sollecitudini, introductory paragraphs and instruction §1 (music serves the liturgical text, divine glory and sanctification). Keep separate from EXP-037's stylistic criteria and theatrical-music question.",
+        "fr": "Conserver la réponse sur la finalité liturgique de la musique ; citer l'introduction et le §1 de l'Instruction Tra le sollecitudini (service du texte liturgique, gloire de Dieu, sanctification). La distinguer de la question EXP-037 sur les critères de style et la musique théâtrale."
+      },
+      "sourceUrls": [
+        "https://www.vatican.va/content/pius-x/it/motu_proprio/documents/hf_p-x_motu-proprio_19031122_sollecitudini.html"
+      ],
+      "classification": "PROVENANCE_PRECISION_NO_NEW_HISTORICAL_QUOTE",
+      "gate": "READY_FOR_HUMAN_SOURCE_TRANSLATION_DOCTRINAL_PERSONA_REVIEW_NOT_CERTIFIED"
+    },
+    {
+      "id": "SPX-EXP-046",
+      "kind": "PRIESTLY_ADDRESSEE_AND_EXACT_SECTION",
+      "proposed": {
+        "en": "Retain the source-consistent opening, but cite Haerent animo §3 specifically. The exhortation addresses priests: the priest's example must support the teaching of his words. Do not convert this into a purported direct papal answer to a particular visitor.",
+        "fr": "Conserver la réponse conforme à la source, en citant précisément Haerent animo, §3. L'exhortation s'adresse aux prêtres : leur exemple doit soutenir leur enseignement. Ne pas présenter ce passage comme une réponse personnelle du pape à un visiteur."
+      },
+      "sourceUrls": [
+        "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html"
+      ],
+      "classification": "ITALIAN_PAPAL_PRIMARY_SOURCE_LOCATOR_AND_PERSONA_SCOPE",
+      "gate": "READY_FOR_HUMAN_SOURCE_TRANSLATION_DOCTRINAL_PERSONA_REVIEW_NOT_CERTIFIED"
+    }
+  ],
+  "retainedWithoutRewrite": [
+    {
+      "id": "SPX-EXP-035",
+      "reason": "Four marks one/holy/catholic/apostolic supported by 1905 Italian Q155–162; existing summary accurate. Catechism is approved source, not verbatim personal words of Pius X.",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "sourceLoci": "Q155–162"
+    },
+    {
+      "id": "SPX-EXP-036",
+      "reason": "Communion with legitimate pastors and successor of Peter supported by 1905 Italian Q150–156, Q192–199; existing source-anchored summary adequate, do not turn into individual membership adjudication.",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-prima-il-credo-o-simbolo-apostolico/",
+      "sourceLoci": "Q150–156; Q192–199"
+    }
+  ],
+  "knownAlias": [
+    {
+      "id": "SPX-EXP-048",
+      "aliasOf": "SPX-032",
+      "relation": "Charity and correction from E supremi English §13; manifest already flags same intent, so do not count as new certified family or merge without human review.",
+      "sourceUrls": [
+        "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+        "https://www.vatican.va/content/pius-x/fr/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html"
+      ],
+      "sourceLoci": {
+        "en": "E supremi §13",
+        "fr": "paragraph 'Mais pour que ce zèle à enseigner...' (unnumbered)"
+      },
+      "action": "PRESERVE_BOTH_IDS_AS_RESEARCH_ALIAS_CANDIDATES_NO_MERGE"
+    }
+  ],
+  "chanoine": {
+    "latestRead": "research/chanoine/chanoine-unattended-b39-concluding-cse-moral-responsibility-and-natural-law-20261028.v1.json",
+    "branch": "research/chanoine-cse-source-dialogue-20261019",
+    "newProposals": 0,
+    "reason": "CSE144,146,147 already proposed; CSE141/145 retained; CSE142/143 on specialist hold; no distinct unreviewed source-grounded families established in this pass",
+    "originalEnglishHistoricalWitness": "STILL_BLOCKED_DO_NOT_RECONSTRUCT",
+    "persona": "Fictional Chanoine remains distinct from Pius X; no historical utterances fabricated"
+  },
+  "nextQueue": [
+    "Human source, translation, persona and doctrinal review of B49 EXP-031/032/037; two provenance repairs EXP-038/046",
+    "Preserve EXP-048/SPX-032 as alias candidate until explicit editorial merge decision; no duplicate unique-intent count",
+    "Resolve B48 Q18 full Apostles' Creed approved EN/FR recitation and Q100 Nostra aetate provenance; preserve previous proposals",
+    "Resume 1905 Q112–252 only from verified source and existing editorial owners; no batch17 files found in current branch; do not invent IDs",
+    "Consolidate B43–B49 human certification queue, excluding six redundant B41 proposals",
+    "Chanoine CSE142–143 clinical and safeguarding holds and inaccessible original English witness remain blocked",
+    "Collate online catechism transcription with 1905 printed witness before certifying any purported verbatim wording"
+  ],
+  "release": {
+    "sourceSentenceHumanCertified": false,
+    "translationApproved": false,
+    "doctrinalApproved": false,
+    "personaVoiceApproved": false,
+    "safeguardingApproved": false,
+    "publicationApproved": false,
+    "routingEnabled": false
+  }
+}
