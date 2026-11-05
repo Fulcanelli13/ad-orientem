@@ -120,4 +120,14 @@ for(const m of [
  "method==='montfort_short'","method==='scriptural'"
 ])assert.ok(runtime.includes(m),"Missing existing-reader integration "+m);
 assert.ok(!runtime.includes("BENEDICTION_OPTION_DEFAULTS_LEGACY"),"Do not introduce second Benediction owner");
+assert.ok(runtime.includes("ICKSP 2009 chant-booklet announcement · not the actual score"),
+ "Do not label the ICKSP two-page advertisement as the chant booklet or actual score");
+assert.ok(runtime.includes("Annonce ICRSP de 2009 pour un livret de chants · non la partition"),
+ "Preserve the historically accurate bilingual provenance label");
+assert.ok(!runtime.includes("ICKSP chant book · Pope, bishop and faithful verses"),
+ "Old overconfident chant-source attribution must not return");
+assert.ok(runtime.includes("CHRIST_KING_WITNESSES.royalPraises)+"),
+ "Keep the independent Vatican four-part Royal Praises source");
+assert.ok(runtime.includes("CHRIST_KING_WITNESSES.royalPraisesICKSPIndex"),
+ "Keep the correctly identified 2009 announcement available as context");
 console.log("PASS Batch 2 prayer integrity, seasonal Benediction, local options, 3-day Forty Hours, Mercy counts, Latin Eucharistic editions and runtime syntax");
