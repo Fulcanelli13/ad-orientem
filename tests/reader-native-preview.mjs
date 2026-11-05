@@ -114,6 +114,31 @@ assert.equal(curatedReady.curatedEligible,true);
 assert.equal(curatedReady.model.totalCards,39);
 assert.equal(curatedReady.presentationModel.totalCards,65,
   "the real native preview must show one combined Sanctus–Benedictus");
+const nuptialPrepared={...livePrepared,session:{...livePrepared.session,
+  resolvedMass:{...livePrepared.session.resolvedMass,
+    actualCelebration:{id:"nuptial",type:"NUPTIAL",title:"Nuptial Mass"},
+    overlays:["NUPTIAL"]},
+  plan:{...livePrepared.session.plan,overlayGraphs:["NUPTIAL"]}}};
+const nuptialPayload=load("../data/presentation/reader-nuptial.v1.json");
+const nuptialReady=await prepareNativeReaderPreview({
+  prepared:nuptialPrepared,reviewCuratedCards:true,
+  presentationData:{...data,nuptialData:nuptialPayload},
+  eventData,cueRegistries,guideData,
+});
+assert.equal(nuptialReady.curatedEligible,true);
+assert.equal(nuptialReady.model.totalCards,42);
+assert.equal(nuptialReady.presentationModel.totalCards,68);
+assert.deepEqual(nuptialReady.presentationModel.cards.flatMap(c=>c.paragraphs.map(p=>p.id)),
+  nuptialReady.model.cards.flatMap(c=>c.paragraphs.map(p=>p.id)));
+assert.deepEqual(nuptialReady.presentationModel.cards.filter(c=>c.nuptialInsertion)
+  .map(c=>c.sectionId),["AO.NUPTIAL.01","AO.NUPTIAL.02","AO.NUPTIAL.03"]);
+await assert.rejects(()=>prepareNativeReaderPreview({
+  prepared:{...nuptialPrepared,session:{...nuptialPrepared.session,
+    plan:{...nuptialPrepared.session.plan,overlayGraphs:["VOTIVE_PROPER"]}}},
+  reviewCuratedCards:true,presentationData:{...data,nuptialData:nuptialPayload},
+  eventData,cueRegistries,guideData,
+}),/LIVE_65_CARD_PRESENTATION_REQUIRED/,
+  "An unowned Nuptial insertion must not use the old 42-card fallback");
 assert.equal(curatedReady.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
 // Ordinary Low Mass is a first-class 65-card LIVE presentation, with its
 // independent Low corpus (not borrowed Sung speech, sound, or gestures).
