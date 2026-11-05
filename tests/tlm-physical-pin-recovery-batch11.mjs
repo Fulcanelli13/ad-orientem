@@ -193,6 +193,6 @@ assert.equal(all.length,2582);
 assert.equal(all.filter(x=>x.map_publishable).length,2556);
 const counts=tlmSiteEvidenceCounts(all);
 assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:750,SOURCE_PIN:1806,ADDRESS_ONLY:26});
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,27);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,26);
 assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,750);
 console.log("PASS TLM batch 11: 17 exact church identities, 2556 mapped, 26 bilingual holds; no inferred liturgy or image rights");

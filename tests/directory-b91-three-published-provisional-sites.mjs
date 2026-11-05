@@ -63,7 +63,7 @@ const api=async url=>{
 const live=await loadPreliminaryR49({fetchImpl:api});
 assert.equal(live.length,2582,"Complete CL2 worldwide index must load without dropping the three B91 published additions");
 assert.equal(live.filter(x=>x.map_publishable).length,2556);
-assert.equal(live.filter(x=>x.map_state==="ADDRESS_ONLY").length,27);
+assert.equal(live.filter(x=>x.map_state==="ADDRESS_ONLY").length,26);
 assert.ok(added.every(x=>live.some(v=>v.item_id===x.item_id)));
 assert.equal(live.filter(x=>x.celebration_evidence).length,2,
  "The source-owned CL27 witness overlay must not alter the B91 physical-site census");

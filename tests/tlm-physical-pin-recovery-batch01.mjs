@@ -56,7 +56,7 @@ for(const [group,id,lat,lng,ref,scope] of [...newlyMapped,...refinements]){
 }
 const counts=tlmSiteEvidenceCounts(all);
 assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:750,SOURCE_PIN:1806,ADDRESS_ONLY:26});
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,27);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,26);
 assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,750);
 // These records appear to describe one Cagliari basilica and require a
 // physical-identity reconciliation before either gets a new coordinate.

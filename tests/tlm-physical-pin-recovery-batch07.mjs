@@ -158,7 +158,7 @@ for(const [group,sourceId,lat,lng,sourceRef] of sites){
 assert.equal(all.length,2582);
 const counts=tlmSiteEvidenceCounts(all);
 assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:750,SOURCE_PIN:1806,ADDRESS_ONLY:26});
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,27);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,26);
 assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,750);
 const cagliariResearch=all.find(x=>x.physical_group_id==="RG-B65-77C86C7B3EC4");
 const cagliariOriginal=all.find(x=>x.physical_group_id==="RG-A75D8A0E1C53");

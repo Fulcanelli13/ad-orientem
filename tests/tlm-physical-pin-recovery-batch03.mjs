@@ -68,6 +68,6 @@ assert.ok(readingSite.source_links.some(x=>x.url==="https://mapcarta.com/W873123
 assert.equal(readingSite.status,"RESEARCH-LISTED · MASS UNVERIFIED");
 const counts=tlmSiteEvidenceCounts(all);
 assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:750,SOURCE_PIN:1806,ADDRESS_ONLY:26});
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,27);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,26);
 assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,750);
 console.log("PASS TLM pin recovery batch 3: 10 sites across GB FR IT US, 2556 map markers, 36 still card-only, no invented Mass or photograph");

@@ -78,6 +78,6 @@ assert.ok(tyburn.facts.some(x=>x.label==="Map position"&&x.value.includes("relig
 assert.equal(tyburn.status,"RESEARCH-LISTED · MASS UNVERIFIED");
 const counts=tlmSiteEvidenceCounts(all);
 assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:750,SOURCE_PIN:1806,ADDRESS_ONLY:26});
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,27);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,26);
 assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,750);
 console.log("PASS TLM site recovery batch 2: 6 exact identity-locked GB pins, 2556 mapped, 36 address-only, no inferred liturgy or media");
