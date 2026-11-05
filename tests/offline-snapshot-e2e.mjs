@@ -46,6 +46,28 @@ try{
  const context=await browser.newContext({viewport:{width:390,height:844},deviceScaleFactor:2,isMobile:true,hasTouch:true,serviceWorkers:"allow"});
  const page=await context.newPage();
  const errs=[];page.on("pageerror",e=>errs.push(String(e.message||e)));
+ const awaitReloadHome=async label=>{
+  try{
+   await awaitReloadHome("first-offline-home");
+  }catch(error){
+   let state;
+   try{
+    state=await page.evaluate(async()=>({
+     url:location.href,readyState:document.readyState,title:document.title,
+     shell:globalThis.AO_APP_SHELL_V1?.status?.()??null,
+     offline:globalThis.AO_OFFLINE_APP_V1?.status??null,
+     prayer:globalThis.AO_PRAY_APP_V1?.status?.()??null,
+     controlled:Boolean(navigator.serviceWorker?.controller),
+     workerState:navigator.serviceWorker?.controller?.state??null,
+     workerRegistrations:(await navigator.serviceWorker.getRegistrations()).map(r=>({scope:r.scope,active:r.active?.state,waiting:r.waiting?.state})),
+     hasHome:Boolean(document.querySelector(".homeScreen")),
+     screenText:document.body?.innerText?.slice(0,240)
+    }));
+   }catch(diagError){state={diagnosticError:String(diagError)}}
+   console.error("OFFLINE_RELOAD_DIAGNOSTIC="+JSON.stringify({label,state,pageErrors:errs.slice(-15),served,failedHits,transient408Hits}));
+   throw error;
+  }
+ };
  const origin="http://127.0.0.1:4208/ad-orientem/index.html?aoOfflineTest=1";
  await page.goto(origin,{waitUntil:"load",timeout:90000});
  try{
@@ -105,7 +127,7 @@ try{
  console.log("OFFLINE_FIRST_USE_SNAPSHOT="+JSON.stringify(firstSnapshot));
  await context.setOffline(true);
  await page.reload({waitUntil:"domcontentloaded",timeout:90000});
- await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner===true,null,{timeout:35000});
+ await awaitReloadHome("online-after-prayer");
  const offline=await page.evaluate(()=>({screen:!!document.querySelector(".homeScreen"),sw:!!navigator.serviceWorker.controller,version:globalThis.AO_OFFLINE_APP_V1?.status?.version}));
  assert.equal(offline.screen,true,"Cached offline Home failed");
  assert.equal(offline.sw,true,"Offline navigation lost service worker");
@@ -248,7 +270,7 @@ try{
  // it from the Mercy route so a retained overlapping devotional sheet cannot
  // make the second chooser physically hidden.
  await page.reload({waitUntil:"domcontentloaded",timeout:90000});
- await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner===true,null,{timeout:35000});
+ await awaitReloadHome("offline-after-update-consent");
  await page.waitForFunction(expected=>globalThis.AO_OFFLINE_APP_V1?.status?.version===expected,original.version,{timeout:20000});
  // Open the real Rosary through its production Prayer owner before staging the next release.
  // A staged update must never navigate away or move a bead without user consent.
