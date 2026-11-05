@@ -477,7 +477,7 @@ try{
   assert.equal(switched.cue,modeSwitchCue,
     "MISSAL -> curated LIVE did not preserve the selected Host source cue");
   assert.equal(switched.product,65,"Ordinary LIVE must use the actual 65-card presentation");
-  assert.equal(switched.source,39,"Canonical Sung source sections must remain unchanged");
+  assert.equal(switched.source,30,"Direct production LIVE must retain only 30 canonical source macros");
   assert.match(switched.progress,/^\d+ \/ 64$/,"Ordinary LIVE progress must count visible curated cards, omitting the optional second Confiteor");
 
   box=await nextButton.boundingBox();
@@ -495,9 +495,9 @@ try{
     sourceOwner:window.__AO_PHONE_PREVIEW?.sourceModel?.structureOwner??null,
   }));
   assert.equal(modelCounts.product,65,"phone reader lost curated 65-card production presentation");
-  assert.equal(modelCounts.source,39,"curated presentation modified the canonical 39-section source model");
+  assert.equal(modelCounts.source,30,"production LIVE must not allocate a 39-section source intermediary");
   assert.equal(modelCounts.productOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
-  assert.equal(modelCounts.sourceOwner,"SOURCE_FIRST_LIVE");
+  assert.equal(modelCounts.sourceOwner,"BASE_30_MACROS");
 
   await context.close();
 
