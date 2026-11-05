@@ -55,7 +55,7 @@ for(const row of manifest.records){
 for(const id of ["RG-50082C65DA56","RG-B66-ACD5E3A16E10","RG-18E53EDD9E9C","RG-615FF6835AAE","RG-2C84B50B3667"]){
  assert.ok(!registry[id]);assert.ok(!byId.get(id)?.map_publishable,"Identity or closed site hold must stay unpinned: "+id);
 }
-assert.equal(all.length,2582);assert.equal(all.filter(x=>x.map_publishable).length,2498);
-assert.deepEqual(tlmSiteEvidenceCounts(all),{ALL:2582,REVIEWED_PIN:692,SOURCE_PIN:1806,ADDRESS_ONLY:84});
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,84);
-console.log("PASS TLM R2: 93 Excel-approved GeoNames town centroids, frozen IDs, EN/FR cards, 2498 mapped, 84 unpinned, no GPS routing");
+assert.equal(all.length,2582);assert.equal(all.filter(x=>x.map_publishable).length,2506);
+assert.deepEqual(tlmSiteEvidenceCounts(all),{ALL:2582,REVIEWED_PIN:700,SOURCE_PIN:1806,ADDRESS_ONLY:76});
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,76);
+console.log("PASS TLM R2: 93 Excel-approved GeoNames town centroids, frozen IDs, EN/FR cards, 2506 mapped, 76 unpinned, no GPS routing");
