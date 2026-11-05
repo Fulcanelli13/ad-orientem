@@ -30,6 +30,9 @@ for(const score of PARTICIPATION_REFERENCE_SCORES){
  assert.equal(score.sourceUrl,"https://gregobase.selapa.net/chant.php?id="+score.sourceId);
  for(const cueId of score.sourceCueIds)assert.ok(cueText.has(cueId));
  assert.equal(norm(score.sourceCueIds.map(x=>cueText.get(x)).join(" ")),norm(score.sourceLatin));
+ assert.deepEqual(score.sourceCueLatin,score.sourceCueIds.map(x=>cueText.get(x)),
+  "Exact source fragment text (not the translation or combined incipit)");
+
  assert.ok(score.sourceCueIds.every(x=>score.kind==="CELEBRANT_INTONATION"
   ?roles.get(x)==="PRIEST":roles.get(x)==="RESPONDERS"));
 }
@@ -54,6 +57,21 @@ assert.deepEqual(get(138,null),[]);
 assert.deepEqual(get(210,solemn),[]);
 assert.deepEqual(get(138,solemn,{form:"LOW"}),[]);
 assert.deepEqual(get(138,solemn,{paragraph:{...p(138),primary:"Wrong response"}}),[]);
+const originalResponse=p(138);
+const bilingualResponse={...originalResponse,primary:"And with thy spirit.",
+ secondary:originalResponse.primary};
+assert.deepEqual(get(138,solemn,{paragraph:bilingualResponse,
+ paragraphs:[bilingualResponse]}),[4449],
+ "In bilingual Missal mode the Latin source may be in the second column");
+assert.deepEqual(get(138,solemn,{paragraph:{
+ ...originalResponse,primary:originalResponse.primary.replace("tuo","to")}}),[],
+ "Dropping the Latin letter u cannot be normalized away");
+assert.deepEqual(get(138,solemn,{paragraph:bilingualResponse,
+ paragraphs:[{...bilingualResponse,secondary:"Mismatched Latin source"}]}),[],
+ "Correct source cannot attach to an altered displayed row");
+assert.deepEqual(get(138,solemn,{paragraphs:[{...originalResponse,primary:"And with thy spirit."}]}),[],
+ "Vernacular alone must not authenticate Gregorian source notation");
+
 assert.deepEqual(get(138,solemn,{paragraphs:[p(138),p(138)]}),[]);
 for(const [n,adj,sourceId,key,setting] of [
  [53,54,961,"GLORIA","MASS_08"],[89,90,749,"CREDO","CREDO_03"]
