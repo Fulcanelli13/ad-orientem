@@ -8,7 +8,9 @@ on:
       - ".github/workflows/directory-runtime-snapshots.yml"
       - "tools/directory/import-sspx.mjs"
       - "tools/directory/validate-runtime-snapshots.mjs"
+      - "tools/directory/report-icksp-live-schedule-drift.mjs"
       - "tests/directory-sspx-403-partial-snapshots.mjs"
+      - "tests/directory-icksp-live-schedule-drift.mjs"
       - "package.json"
   schedule:
     - cron: "17 3 * * 1"
@@ -68,13 +70,18 @@ jobs:
           # every malformed payload, validation error or other HTTP failure
           # still fails closed.
           npm run directory:import:sspx -- --no-details --allow-403-hold
+      - name: Record live-versus-curated ICKSP schedule differences
+        run: |
+          node tests/directory-icksp-live-schedule-drift.mjs
+          node tools/directory/report-icksp-live-schedule-drift.mjs
       - name: Validate generated corpus
         run: |
           node tests/directory-sspx-403-partial-snapshots.mjs
+          node tools/directory/validate-runtime-snapshots.mjs
           npm run test:directory
           node tests/find-surface.mjs
-          node tools/directory/validate-runtime-snapshots.mjs
       - name: Report explicit unavailable-source status
+        if: always()
         run: |
           if test -f data/directory/generated/sspx/source-unavailable.v1.json; then
             echo "::warning::SSPX upstream HTTP 403 on direct and browser acquisition; snapshot held with zero publishable SSPX records"
@@ -82,6 +89,7 @@ jobs:
             echo "The FSSP, ICKSP and IBP snapshots were validated. SSPX was **not** imported or released; its exact 403 witness is in the review artifact. Retry when the official source permits acquisition." >> "$GITHUB_STEP_SUMMARY"
           fi
       - name: Package reviewable snapshots
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: directory-runtime-snapshots-${{ github.run_id }}
@@ -90,5 +98,5 @@ jobs:
             data/directory/generated/icksp
             data/directory/generated/ibp
             data/directory/generated/sspx
-          if-no-files-found: error
+          if-no-files-found: warn
           retention-days: 14
