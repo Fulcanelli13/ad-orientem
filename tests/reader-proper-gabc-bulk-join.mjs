@@ -169,6 +169,13 @@ const forgedCommunionAsAlleluia={...epiphany,tracks:[{
 const mismatchedCandidate={...epiphany,tracks:[{
  track:"COMMUNION",part:"co",scoreCandidates:[alleluiaCandidate]
 }]};
+const mislabeledTractAsAlleluia={...epiphany,tracks:[{
+ track:"ALLELUIA_TRACT_SEQUENCE",part:"al",sourceGroup:"TRACT",
+ scoreCandidates:[alleluiaCandidate]
+}]};
+assert.equal(sourceMatchedGabcForEditorialReview(
+ mislabeledTractAsAlleluia,archive,"GREGOBASE-524"),null,
+ "A source-labelled Tract cannot retrieve an Alleluia GABC score");
 assert.equal(sourceMatchedGabcForEditorialReview(
  forgedAlleluiaAsCommunion,archive,"GREGOBASE-524"),null,
  "An authentic Alleluia must not be retrievable as a Communion");
