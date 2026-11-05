@@ -70,10 +70,17 @@ function candidate(container,place,photo){
  c.append(el("h3","",photo.title||"Untitled candidate"));
  c.append(el("p","",[(photo.creator||"Author not confirmed"),(photo.license||"Licence not confirmed"),(photo.source||"")].join(" · ")));
  c.append(link("Check original photograph and terms",photo.source_url));
+ const dep=el("select");
+ dep.setAttribute("aria-label","Choose what the photograph depicts");
+ for(const [value,label] of [["UNCLASSIFIED","Subject to identify"],["EXTERIOR","Building / exterior"],["INTERIOR","Church / chapel interior"],["ALTAR","Altar or sanctuary interior"],["GROTTO","Grotto / sacred site"],["RELIC","Relic or reliquary"],["VENERATED_IMAGE","Venerated painting or statue"],["EXACT_SITE_OTHER","Other identifiable feature at this Place"]]){
+   const option=el("option","",label);option.value=value;dep.append(option)
+ }
+ dep.value=selected[place.id]?.source_url===photo.source_url?selected[place.id].depicts_kind||"UNCLASSIFIED":"UNCLASSIFIED";
+ c.append(dep);
  const b=el("button","",selected[place.id]?.source_url===photo.source_url?"Selected for verification":"Select for verification");
  b.addEventListener("click",()=>{
    if(selected[place.id]?.source_url===photo.source_url)delete selected[place.id];
-   else selected[place.id]={place_id:place.id,place_name:place.name,source_url:photo.source_url,title:photo.title,creator:photo.creator||null,license_claim:photo.license||null,license_url:photo.license_url||null,source:photo.source||null,thumbnail:photo.thumbnail||null,decision:"SOURCE_PREFERENCE_ONLY_NOT_PUBLICATION",selected_on:new Date().toISOString()};
+   else selected[place.id]={place_id:place.id,place_name:place.name,source_url:photo.source_url,title:photo.title,creator:photo.creator||null,license_claim:photo.license||null,license_url:photo.license_url||null,source:photo.source||null,thumbnail:photo.thumbnail||null,depicts_kind:dep.value,subject_review_status:dep.value==="UNCLASSIFIED"?"NOT_YET_CLASSIFIED":"OWNER_SUBJECT_CLASSIFICATION_NOT_YET_SITE_VERIFIED",decision:"SOURCE_PREFERENCE_ONLY_NOT_PUBLICATION",selected_on:new Date().toISOString()};
    persist();render()
  });
  c.append(b);container.append(c)
