@@ -87,30 +87,44 @@ try{
    assert.ok(formation.scrollWidth<=formation.innerWidth+1,"Formation overflow at "+width+"px");
    await page.screenshot({path:resolve(out,"formation-"+width+".png"),fullPage:false,animations:"disabled"});
    await page.locator('[data-ao-app-surface="pray"]').click();
-   await page.locator("#aoPray435930.open .aoP435930RootOrganised").waitFor({state:"visible",timeout:18000});
+   // The approved nine-door mosaic replaced the legacy grouped Prayer
+   // homepage. Readability must be checked on the actual production landing.
+   const mosaic=page.locator("#aoPray435930.open [data-ao-pray-pilot-mosaic]");
+   await mosaic.waitFor({state:"visible",timeout:18000});
+   const prayerTiles=mosaic.locator("[data-ao-pray-pilot-tile]");
+   assert.equal(await prayerTiles.count(),9,"Prayer production landing must retain nine doors");
+   const daily=mosaic.locator('[data-ao-pray-pilot-tile="daily"]');
+   await daily.click(); // first of the approved two-tap reveal sequence
+   assert.equal(await daily.getAttribute("aria-expanded"),"true",
+     "Prayer door description must be available on first reveal");
    const prayer=await page.evaluate(()=>{
-    const root=document.querySelector("#aoPray435930.open .aoP435930RootOrganised");
-    const visible=selector=>[...document.querySelectorAll(selector)].filter(el=>{
-      const s=getComputedStyle(el),r=el.getBoundingClientRect();
-      return s.display!=="none"&&s.visibility!=="hidden"&&r.height>0&&r.width>0;
-    });
-    const kind=visible("#aoPray435930 .aoP435930RootOrganised .aoP435930ModuleKind");
-    const descriptions=visible("#aoPray435930 .aoP435930RootOrganised .aoP435930ModuleDescription");
+    const root=document.querySelector("#aoPray435930.open .aoPrayPilotHome");
+    const tiles=[...root.querySelectorAll("[data-ao-pray-pilot-tile]")];
+    const shown=el=>{const style=getComputedStyle(el),rect=el.getBoundingClientRect();
+     return style.display!=="none"&&style.visibility!=="hidden"&&rect.height>0&&rect.width>0;};
+    const names=tiles.map(tile=>tile.querySelector(".aoPrayPilotTileCaption strong")).filter(shown);
+    const selected=root.querySelector('[data-ao-pray-pilot-tile="daily"]');
+    const description=selected?.querySelector(".aoPrayPilotTileCaption small");
     const font=el=>parseFloat(getComputedStyle(el).fontSize);
-    return {root:!!root,kind:kind.map(font),descriptions:descriptions.map(font),
-      scrollWidth:document.documentElement.scrollWidth,innerWidth,
-      rootButtons:[...root.querySelectorAll("button")].length};
+    return {root:!!root,tiles:tiles.length,nameFonts:names.map(font),
+      selectedDescriptionVisible:!!description&&shown(description),
+      selectedDescriptionFont:description?font(description):0,
+      clickTargets:tiles.map(tile=>tile.getBoundingClientRect().height),
+      scrollWidth:document.documentElement.scrollWidth,innerWidth};
    });
-   assert.ok(prayer.kind.length>=4&&prayer.descriptions.length>=4,
-     "Prayer family list unavailable at "+width+"px");
-   assert.ok(prayer.kind.every(px=>px>=11),"Prayer category microtype still <11px: "+JSON.stringify(prayer));
-   assert.ok(prayer.descriptions.every(px=>px>=13),
-     "Prayer descriptions still below 13px: "+JSON.stringify(prayer));
+   assert.equal(prayer.tiles,9,"Nine-door Prayer landing lost its approved category mosaic");
+   assert.ok(prayer.nameFonts.length>=9,"All nine Prayer category titles must remain legible");
+   assert.ok(prayer.nameFonts.every(px=>px>=12),
+     "Prayer category titles are too small: "+JSON.stringify(prayer.nameFonts));
+   assert.ok(prayer.selectedDescriptionVisible&&prayer.selectedDescriptionFont>=12,
+     "Revealed Prayer description is unreadable: "+JSON.stringify(prayer));
+   assert.ok(prayer.clickTargets.every(height=>height>=44),
+     "Prayer mosaic contains an undersized tap target: "+JSON.stringify(prayer));
    assert.ok(prayer.scrollWidth<=prayer.innerWidth+1,"Prayer overflow at "+width+"px");
    await page.screenshot({path:resolve(out,"pray-"+width+".png"),fullPage:false,animations:"disabled"});
    assert.equal(errors.length,0,"Browser errors at "+width+"px: "+errors.slice(0,3).join("; "));
    console.log("PASS "+width+"px: "+formation.cards+" formation subjects, "+
-     prayer.kind.length+" Prayer family kinds, no viewport overflow");
+     prayer.tiles+" Prayer mosaic doors, no viewport overflow");
   }finally{await context.close();}
  }
 }finally{

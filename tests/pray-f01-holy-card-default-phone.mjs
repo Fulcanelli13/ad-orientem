@@ -5,6 +5,7 @@ import {resolve,extname,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
 import {ESSENTIAL_HOLY_CARD_IDS_V1} from "../src/pray/essential-holy-card-parts.js";
+import {libraryVariantFamily} from "../src/pray/library-variant-groups.js";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const output=resolve(root,"artifacts/pray-f01-holy-card-default");
@@ -77,6 +78,8 @@ try{
     assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.library",{returnContext:null})),true);
     const option=page.locator(base+' [data-p435930-lib-open="'+id+'"]');
     assert.equal(await option.count(),1,"Canonical Essential Prayer absent from library: "+id);
+    const family=libraryVariantFamily(id);
+    if(family)await page.locator(base+' [data-ao-prayer-family="'+family+'"] > summary').click();
     await option.click({timeout:12000});
     // The article itself is the original Holy Card, not a substitute inner reader.
     const present=page.locator(base+' .aoClaudeHolyCard[data-ao-essential-card="'+id+'"]');

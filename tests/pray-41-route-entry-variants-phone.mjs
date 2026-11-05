@@ -204,7 +204,26 @@ try{
       assert.equal(await page.locator('#aoPray435930.open [data-ao-pray-essential-landing]').count(),1);
       await page.locator('#aoPray435930.open [data-p435930-lib-all]').click();
       assert.ok(await page.locator('#aoPray435930.open [data-p435930-lib-open]').count()>=48,
-       "The full Prayer Library must remain available via an explicit link");
+       "The full Prayer Library must retain all 48 canonical source identities");
+      // Two visible family shelves; each variant is a distinct, clickable
+      // source card, and native Back must restore the full Library.
+      for(const [family,ids] of [
+       ["litany_loreto",["litany_loreto_1962","litany_loreto_current"]],
+       ["eternal_rest",["foundations_eternal_rest","dead_eternal_rest_singular"]]
+      ]){
+       const group=page.locator('#aoPray435930.open [data-ao-prayer-family="'+family+'"]');
+       assert.equal(await group.count(),1,family+" needs one visible family shelf");
+       assert.equal(await group.locator("[data-p435930-lib-open]").count(),2,
+        family+" must preserve both source-owned forms");
+       for(const sourceId of ids){
+        if(!await group.evaluate(el=>el.open))await group.locator("summary").click();
+        await group.locator('[data-p435930-lib-open="'+sourceId+'"]').click();
+        assert.equal(await page.locator('#aoPray435930.open [data-ao-devo-card]').getAttribute("data-ao-devo-card"),
+         sourceId,"Library opened the wrong canonical historical form");
+        await page.locator("#aoPray435930.open [data-p435930-back]").click();
+        assert.equal(await group.count(),1,sourceId+" native Back lost its Library family");
+       }
+      }
     }
     if(id==="pray.rosary")assert.equal(observed.rosaryOriginal,true,"Rosary donor was replaced");
     if(row.sourceFamily==="canonical-prayer"){

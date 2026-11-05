@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import {libraryVariantFamily} from "../src/pray/library-variant-groups.js";
 import http from "node:http";
 import {readFileSync} from "node:fs";
 import {mkdir,readFile,writeFile} from "node:fs/promises";
@@ -102,7 +103,9 @@ try{
     assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.library",{returnContext:null})),true);
     const button=page.locator('#aoPray435930.open [data-p435930-lib-open="'+id+'"]');
     assert.equal(await button.count(),1,"Source-owned Library index lost "+id);
-    await button.evaluate(x=>x.click());
+    const family=libraryVariantFamily(id);
+    if(family)await page.locator('#aoPray435930.open [data-ao-prayer-family="'+family+'"] > summary').click();
+    await button.click();
     await page.waitForFunction(id=>document.querySelector("#aoPray435930.open .aoP435930LibraryReader")?.querySelector(
      '[data-ao-devo-card="'+id+'"]')||document.querySelector("#aoPray435930.open .aoP435930LibraryReader .aoP435930Prayer"),
      id,{timeout:10000});
