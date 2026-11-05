@@ -121,6 +121,18 @@ export function resolvedPrayerPilotFamilies(L,families){
  result.library={...result.library,searchItems:PRAYER_SEARCH_ONLY_ROUTES_V1.map(id=>candidates.get(id)).filter(Boolean)};
  return result;
 }
+// Search references the existing source-owned Novena API, never another prayer corpus.
+export function collectPrayerNovenaSearchEntries(corpus={},supplemental={}){
+ const rows=new Map();
+ for(const source of [corpus,supplemental]){
+  for(const [id,n] of Object.entries(source||{})){
+   if(n?.id!==id||!Array.isArray(n?.days)||n.days.length!==9||rows.has(id))continue;
+   const en=String(n.title?.en||"").trim(),fr=String(n.title?.fr||"").trim();
+   if(en&&fr)rows.set(id,Object.freeze({id,en,fr}));
+  }
+ }
+ return [...rows.values()];
+}
 const MOSAIC=[
   {id:"chaplets",col:"1/5",row:"1/6",large:true},
   {id:"marian",col:"5/7",row:"1/4"},
@@ -156,7 +168,7 @@ export function filterPilotDiscovery(root,value){
   const empty=root.querySelector("[data-ao-pilot-empty]");
   if(empty)empty.hidden=count!==0;
 }
-export function renderPilotDiscovery({head,L,esc,DATA,families,assetIcon}){
+export function renderPilotDiscovery({head,L,esc,DATA,families,assetIcon,novenaCorpus={},novenaSupplemental={}}){
   const all=resolvedPrayerPilotFamilies(L,families);
   const makeTile=tile=>{
     const family=all[tile.id];
@@ -190,6 +202,10 @@ export function renderPilotDiscovery({head,L,esc,DATA,families,assetIcon}){
     (row.owner==="external"?' data-p435930-external="':' data-p435930-own="')+esc(row.id)+'">'+
     '<b>'+esc(row.title)+'</b><small>'+esc(row.description)+'</small></button>'
   ).join("");
+  const novenaRows=collectPrayerNovenaSearchEntries(novenaCorpus,novenaSupplemental).map(({id,en,fr})=>
+    '<button type="button" class="aoPrayPilotResult" data-pilot-form="novena" data-pilot-latin="false" data-pilot-searchable="'+esc(en+' '+fr)+'" data-p435930-pilot-novena="'+esc(id)+'">'+
+    '<b>'+esc(L(en,fr))+'</b><small>'+esc(L("Nine-day novena","Neuvaine de neuf jours"))+'</small></button>'
+  ).join("");
   const prayerRows=Object.entries(DATA.prayers||{}).map(([id,p])=>
     '<button type="button" class="aoPrayPilotResult" data-pilot-form="'+(id.includes("litany")?"litany":"prayer")+'" data-pilot-latin="'+Boolean(p.la)+'" data-pilot-searchable="'+esc([p.title,p.titleFr,id].join(" "))+'" data-p435930-pilot-prayer="'+esc(id)+'">'+
     '<b>'+esc(p.titleFr&&L("EN","FR")==="FR"?p.titleFr:p.title)+'</b>'+
@@ -205,7 +221,7 @@ export function renderPilotDiscovery({head,L,esc,DATA,families,assetIcon}){
       '<div class="aoPrayPilotFacets" role="group" aria-label="'+esc(L("Filter search results","Filtrer les résultats"))+'">'+
       [["prayer",L("Prayers","Prières")],["litany",L("Litanies","Litanies")],["chaplet",L("Chaplets","Chapelets")],["novena",L("Novenas","Neuvaines")],["la",L("Latin","Latin")]]
         .map(([id,label])=>'<button type="button" data-p435930-pilot-facet="'+id+'" aria-pressed="false">'+esc(label)+'</button>').join("")+
-      '</div><p><b data-ao-pilot-result-count>0</b> '+esc(L("results","résultats"))+'</p>'+routeRows+prayerRows+
+      '</div><p><b data-ao-pilot-result-count>0</b> '+esc(L("results","résultats"))+'</p>'+routeRows+novenaRows+prayerRows+
       '<p data-ao-pilot-empty hidden>'+esc(L("No matching prayers or devotions.","Aucune prière ni dévotion correspondante."))+'</p></div>'+
       '<section data-ao-pray-pilot-mosaic class="aoPrayPilotMosaic" aria-label="'+esc(L("Prayer categories","Catégories de prières"))+'">'+MOSAIC.map(makeTile).join("")+'</section>'+
       '<button type="button" class="aoPrayPilotCustoms" data-p435930-my-customs>'+assetIcon("ao-rich-prayer-library","aoPrayPilotCustomsIcon",{preferEmbedded:true})+'<span><b>'+esc(L("My Customs & Prayers","Mes coutumes et prières"))+'</b><small>'+esc(L("Personal prayers and household customs","Prières personnelles et coutumes familiales"))+'</small></span></button>'+
