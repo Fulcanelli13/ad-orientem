@@ -47,6 +47,13 @@ try{
     gospel:proper?.gospel??null,
     off:proper?.offertory??null,
     communion:proper?.communion??null,
+    collect:proper?.collect??null,
+    collects:proper?.collects??null,
+    secret:proper?.secret??null,
+    secrets:proper?.secrets??null,
+    postcommunion:proper?.postcommunion??null,
+    postcommunions:proper?.postcommunions??null,
+    preface:proper?.preface??null,
     sourceCalendarCommemorations:proper?.calendarCommemorations??null};
    out.push(selected);
   }
@@ -67,5 +74,10 @@ for(const x of records)console.log("APRIL_1962_ACTUAL_SELECTED "+JSON.stringify(
  introitLA:(x.introit?.lat??"").slice(0,180),
  epistleLA:(x.epistle?.lat??"").slice(0,180),
  gospelLA:(x.gospel?.lat??"").slice(0,180),
+ offLA:(x.off?.lat??"").slice(0,230),
+ communionLA:(x.communion?.lat??"").slice(0,230),
+ collectLA:(x.collect?.lat??"").slice(0,150),
+ secretLA:(x.secret?.lat??"").slice(0,150),
+ postcommunionLA:(x.postcommunion?.lat??"").slice(0,150),
  properChantRows:x.preGospelChants?.map(y=>({kind:y.kind,section:y.section,lat:y.text?.lat}))??null
 }));
