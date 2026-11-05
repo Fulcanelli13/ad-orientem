@@ -7,7 +7,8 @@ import {chromium} from "@playwright/test";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const mime={".js":"text/javascript; charset=utf-8",".html":"text/html; charset=utf-8",".json":"application/json",".css":"text/css; charset=utf-8",".svg":"image/svg+xml",".webp":"image/webp",".png":"image/png",".jpg":"image/jpeg",".woff2":"font/woff2",".webmanifest":"application/manifest+json"};
-let variant=1,swRevision=1,failedPath=null,served=0,failedHits=0,assetHits=[];
+let variant=1,swRevision=1,failedPath=null,served=0,failedHits=0,assetHits=[],transient408Hits=0;
+const transient408Path="/src/pray/rosary-guided-bead-meditations.v1.js";
 const server=http.createServer(async(req,res)=>{
  try{
   let pathname=decodeURIComponent(new URL(req.url,"http://127.0.0.1").pathname);
@@ -17,6 +18,12 @@ const server=http.createServer(async(req,res)=>{
    assetHits.push(pathname);
    if(failedPath===pathname){failedHits++;res.writeHead(503);res.end("deliberately broken release");return}
    res.writeHead(200,{"content-type":"text/javascript"});res.end("globalThis.AO_OFFLINE_TEST_ASSET="+JSON.stringify(variant)+";");return;
+  }
+  // The real Pages CDN once returned 408 for this Rosary dependency.
+  // Verify an initially timed-out first-use asset is retried and committed.
+  if(pathname===transient408Path){
+   transient408Hits++;
+   if(transient408Hits===1){res.writeHead(408);res.end("temporary request timeout");return}
   }
   const file=resolve(root,"."+pathname);
   if(file!==root&&!file.startsWith(root+sep)){res.writeHead(403);res.end();return}
@@ -72,6 +79,7 @@ try{
  }
  const initialOfflineState=await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1.status);
  assert.equal(initialOfflineState.error,null,"First offline snapshot could not be staged: "+JSON.stringify(initialOfflineState));
+ assert.ok(transient408Hits>=2,"First-use Rosary resource HTTP 408 was not retried");
  let original=await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1.status);
  assert.ok(original.version,"First coherent cache has no version");
  assert.equal(original.pendingVersion,null,"First install should not offer an update");
