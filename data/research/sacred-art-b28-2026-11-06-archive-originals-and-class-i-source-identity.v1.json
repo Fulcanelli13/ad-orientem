@@ -1,0 +1,136 @@
+{
+  "schema": "AO_SACRED_ART_RESEARCH_BATCH_V1",
+  "batchId": "B28",
+  "asOf": "2026-11-06",
+  "scope": "ADDITIVE_RESEARCH_ONLY",
+  "priorChecked": "B27",
+  "sourceBranchChecked": "platform/885-sacred-art-candidates",
+  "records": [
+    {
+      "researchId": "B28-01",
+      "kind": "ARCHIVE_INTEGRITY_RECHECK",
+      "artifactIds": [
+        11664124885,
+        11666577879,
+        11667353162
+      ],
+      "sha256": [
+        "2d7c12e0d31ba36cea68b5316747b8b3a90d6e8e0d8c513f838a2beaec40ead7",
+        "6585c692cc17d76b647174ff872911ddc950df023ee9d8d2d0e3eb797dc39fa2",
+        "5d7c9adc7496d4e851e34146afe6e2bed8185f5f1109bd60ca7174401b2e627e"
+      ],
+      "zipEntries": [
+        43,
+        31,
+        29
+      ],
+      "zipCrc": "PASS_ALL_THREE",
+      "summaryEn": "All three previously recovered source ZIPs remain accessible in task working storage; independent SHA-256 matches B27 and ZIP CRC tests pass. Durable project backup is NOT established.",
+      "summaryFr": "Les trois ZIP sources restent accessibles dans le stockage de travail ; leurs SHA-256 correspondent à B27 et les contrôles CRC réussissent. Aucun archivage pérenne du projet n'est établi."
+    },
+    {
+      "researchId": "B28-02",
+      "kind": "EXISTING_APPROVED_CLASS_II_ORIGINAL_FOUND_IN_RECOVERED_ARCHIVES",
+      "existingCandidateId": "cma-148758",
+      "title": "The Crucifixion of Saint Andrew",
+      "artist": "Caravaggio",
+      "accession": "Cleveland 1976.2",
+      "archiveMembers": [
+        "11667353162:originals/cma-148758.jpg",
+        "11666577879:originals/cma-148758.jpg"
+      ],
+      "imageSha256": "ee2b7edf0e0d1b731e6f57e8a8434a079bcd51717da1bd1af8c2c018bcda4833",
+      "imagePixels": [
+        2563,
+        3400
+      ],
+      "imageBytes": 2841935,
+      "sourceUrl": "https://www.clevelandart.org/art/1976.2",
+      "rightsUrl": "https://www.clevelandart.org/open-access",
+      "summaryEn": "Correction to B27's image-acquisition status: an actual 2563x3400 JPEG of the already-approved Caravaggio was present in two recovered ZIPs, with byte-identical SHA-256. Archive acquisition and pixel metadata verified; visual quality, crop and standalone durable preservation NOT yet verified. No approval change.",
+      "summaryFr": "Correction du statut d'acquisition B27 : le JPEG original 2563×3400 du Caravage déjà approuvé se trouve dans deux archives, avec SHA-256 identique. Octets et dimensions vérifiés ; qualité visuelle, recadrage et conservation autonome pérenne non validés.",
+      "imageAcquiredInArchive": true,
+      "visualQa": false,
+      "mobileCropQa": false,
+      "certified": false
+    },
+    {
+      "researchId": "B28-03",
+      "kind": "EXISTING_CANDIDATE_ORIGINAL_FOUND",
+      "existingCandidateId": "met-437738",
+      "title": "The Beheading of Saint John the Baptist",
+      "archiveMember": "11667353162:originals/met-437738.jpg",
+      "imageSha256": "6bb2c3a5fa32367eb211a25c222a3c54294fb7055ab4fc0a09060ccc09693f2b",
+      "imagePixels": [
+        3882,
+        3836
+      ],
+      "imageBytes": 2810618,
+      "sourceUrl": "https://www.metmuseum.org/art/collection/search/437738",
+      "summaryEn": "The pre-existing Catalan candidate has original JPEG bytes in the recovered calendar ZIP. This is not the newly proposed Duck painting and not a new candidate. Native dimensions verified; visual/crop QA pending.",
+      "summaryFr": "Le candidat catalan déjà répertorié possède son JPEG dans l'archive calendrier. Ce n'est pas le tableau de Jacob Duck ni un nouveau candidat. Dimensions vérifiées ; examen visuel et recadrage en attente.",
+      "imageAcquiredInArchive": true,
+      "mobileCropQa": false,
+      "certified": false
+    },
+    {
+      "researchId": "B28-04",
+      "kind": "APPROVED_CLASS_I_PHYSICAL_IDENTITY_AND_IMAGE_ROUTE_HOLD",
+      "artist": "Ambrosius Benson",
+      "title": "Salvator Mundi",
+      "placement": "Christ the King",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ambrosius_Benson_-_Salvator_Mundi.jpeg",
+      "reportedImagePixels": [
+        2987,
+        3200
+      ],
+      "rights": "Commons PD-Art/PDM assertion; auction-origin Christie’s 3 December 2019 lot 4; museum institutional equivalent not established",
+      "summaryEn": "The Commons image is traceable to a Christie's auction listing rather than an institutional museum collection. It is an owner-selected artwork, so Commons may be evaluated, but precise auction identity, photography reuse, and visual quality require separate verification before promotion.",
+      "summaryFr": "La photographie Commons provient d'une vente Christie's et non d'un musée. L'œuvre étant choisie par le propriétaire, l'image peut être examinée ; identité du lot, droits photographiques et qualité restent à confirmer.",
+      "imageAcquired": false,
+      "certified": false
+    },
+    {
+      "researchId": "B28-05",
+      "kind": "APPROVED_CLASS_I_MUSEUM_IDENTITY_CONFIRMED_IMAGE_RIGHTS_HELD",
+      "artist": "Giovanni Battista Gaulli",
+      "title": "La Prédication de saint Jean Baptiste",
+      "placement": "Advent IV",
+      "accession": "Louvre INV 20298",
+      "objectUrl": "https://collections.louvre.fr/en/ark:/53355/cl010062348",
+      "imageCandidateUrl": "https://commons.wikimedia.org/wiki/Category:The_Sermon_of_St._John_the_Baptist_-_Giovanni_Battista_Gaulli_-_Louvre_INV_20298",
+      "summaryEn": "Louvre confirms Gaulli, INV 20298, 1.82×1.72m, painting owned by French state and exhibited in Denon 717. Two Commons reproductions are not automatically admitted: user did not handpick these files; institutionally equivalent image and photographic reuse conditions need verification. A later Natoire drawing is a copy, not the same object.",
+      "summaryFr": "Le Louvre confirme Gaulli, INV 20298, 1,82×1,72 m, exposé salle Denon 717. Les fichiers Commons ne sont pas admis automatiquement ; il faut contrôler la reproduction institutionnelle et ses droits. Le dessin de Natoire est une copie distincte.",
+      "imageAcquired": false,
+      "certified": false
+    },
+    {
+      "researchId": "B28-06",
+      "kind": "APPROVED_CLASS_I_SOURCE_QUALITY_HOLD",
+      "artist": "Ludovico Carracci",
+      "title": "An Angel Frees the Souls of Purgatory",
+      "placement": "All Souls",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Carracci-Purgatory.jpg",
+      "secondaryIdentityUrl": "https://www.wga.hu/html_m/c/carracci/lodovico/purgator.html",
+      "reportedImagePixels": [
+        866,
+        1200
+      ],
+      "summaryEn": "The circulating Commons file is only 866×1200 pixels, 167 KB, with a noninstitutional source. Attribution as a possible workshop altarpiece sketch is noted by WGA. Vatican object-catalogue match and museum-grade reproduction remain outstanding; Commons licence alone does not clear quality.",
+      "summaryFr": "Le fichier Commons ne mesure que 866×1200 pixels (167 Ko), de provenance photographique non institutionnelle. WGA évoque une esquisse possible d'atelier. Il faut retrouver la notice vaticane et une meilleure reproduction.",
+      "imageAcquired": false,
+      "certified": false
+    }
+  ],
+  "nextQueue": [
+    "Transfer three recovered source ZIPs into durable project storage and verify their full SHA-256 there",
+    "Extract and visually QA archived cma-148758 and met-437738 originals; test 390px crops",
+    "Resolve museum-grade image/rights for approved Benson, Gaulli, Carracci and Strozzi",
+    "Continue accession-level deduplication of remaining Class II subject gaps"
+  ],
+  "certifiedMasters": 0,
+  "productionChanges": 0,
+  "merge": false,
+  "deploy": false,
+  "paidExtras": 0
+}
