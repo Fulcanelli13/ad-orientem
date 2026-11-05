@@ -7,6 +7,10 @@ export const CHRIST_KING_WITNESSES=Object.freeze({
   "consecrationEnglish": "https://www.catholicculture.org/culture/liturgicalyear/prayers/view.cfm?id=920",
   "royalPraises": "https://www.vatican.va/news_services/liturgy/libretti/2012/20121007.pdf",
   "royalPraisesICKSPIndex": "https://www.icrsp.org/Livres/pub-livret-de-chant-reactualise-24-fevrier-2009.pdf",
+  // This is a TWO-PAGE 2009 PREORDER BROCHURE, not the actual chant-book
+  // pages or an attested local Laudes recension. Only its contents list
+  // mentions Christus vincit with Pope/bishop/faithful verses.
+  "royalPraisesICKSPSourceKind": "ADVERTISEMENT_CONTENTS_LIST_ONLY_NOT_CHANT_EDITION",
   "royalPraisesWitness": "https://www.ordo.pallotyni.pl/index.php/naboestwa-i-modlitwy/modlitwy-do-swietych/1451-laudes-regiae",
   "sacredHeartLitany": "https://www.icrsp.org/Litanies-Sacre-Coeur",
   "christKingOrdo": "https://icrspfrance.fr/ordo.php?d=2026-10-01"
@@ -40,9 +44,11 @@ export const CHRIST_KING_CONSECRATION=Object.freeze({
 /**
  * Source-owned complete Laudes Regiae (Royal Praises / Christus vincit).
  * Witness: Vatican papal chant booklet, 7 Oct 2012, pp. 26–41.
- * ICKSP's 2009 catalogue independently lists 'Christus vincit (avec versets
- * pour le pape, l'évêque et les fidèles)', but its full local 2026 booklet
- * has not been identified. Never assert that the exact names/verses below
+ * The ICKSP-linked two-page 2009 PREORDER ADVERTISEMENT lists 'Christus
+ * vincit (avec versets pour le pape, l'évêque et les fidèles)' in its
+ * proposed contents. It DOES NOT reproduce the score or the full text.
+ * The actual ICKSP chant edition/local 2026 use has not been verified.
+ * Never assert that the exact names/verses below
  * were sung in Mauritius.
  *
  * This presentation follows the four-section 2012 witness, with a neutral
@@ -197,7 +203,7 @@ export const CHRIST_KING_ROYAL_PRAISES=Object.freeze({
  la:renderRoyalPraisesWitnessText("la"),
  en:renderRoyalPraisesWitnessText("en"),
  fr:renderRoyalPraisesWitnessText("fr"),
- sourceEdition:"Vatican official chant booklet (7 October 2012), pages 26–41; ICKSP chant index (2009) confirms Pope/bishop/faithful verses.",
+ sourceEdition:"Vatican papal liturgy booklet (7 October 2012), pages 26–41, containing the four-part Laudes Regiae text and chant. Separate ICKSP 2009 preorder advertisement merely lists Christus vincit with Pope, bishop and faithful verses; it is NOT a chant-text or score witness.",
  sourceStatus:"ATTESTED_2012_WITNESS_NOT_VERIFIED_LOCAL_2026",
  note:"This is the complete four-part 2012 Roman papal witness, not the exact 2026 Mauritius booklet. N. replaces the historical Pope's personal name; saints and petitions may differ by venue. English/French are reading aids, with French translated editorially from the attested Latin; Latin is authoritative."
 });
