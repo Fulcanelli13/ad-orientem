@@ -1,6 +1,7 @@
 import {createOfflineChantEngraver} from "./reader-chant-engraver.js";
 import {APPROVED_MASS_INLINE_GABC} from "./reader-inline-chant-approved.js";
 import {selectApprovedInlineScore} from "./reader-inline-chant-selector.js";
+import {participationNotationDecision} from "./reader-participation-neume-policy.js";
 export {selectApprovedInlineScore, INLINE_CHANT_SCHEMA} from "./reader-inline-chant-selector.js";
 
 // A + C: night-ink, inline-staff LIVE; traditional red margin marker.
@@ -96,6 +97,20 @@ export const INLINE_CHANT_CSS=String.raw`
  .ao-inline-score-zoom{width:100vw;height:100dvh;max-height:none;border-radius:0}
  .ao-inline-score-zoom .ao-inline-score-wide{width:max(760px,100%)}
 }
+/* Participation-first: compact music SUPPLEMENTS, never replaces, Latin. */
+.ao-reader-shell .ao-reader-paragraph[data-inline-chant-status="ready"][data-inline-chant-view="compact"]>.ao-line-primary,
+.ao-reader-shell .ao-reader-paragraph[data-inline-chant-status="ready"][data-inline-chant-view="compact"]>.ao-line-secondary{
+ display:block!important;grid-column:2!important;font-size:inherit!important
+}
+.ao-reader-shell .ao-reader-paragraph[data-inline-chant-status="ready"][data-inline-chant-view="compact"]>.ao-line-primary{grid-row:1!important}
+.ao-reader-shell .ao-reader-paragraph[data-inline-chant-status="ready"][data-inline-chant-view="compact"]>.ao-line-secondary{grid-row:3!important}
+.ao-reader-paragraph[data-inline-chant-status="ready"] .ao-inline-chant-main{grid-column:2;grid-row:2;min-width:0}
+.ao-reader-paragraph[data-inline-chant-view="compact"] .ao-inline-chant-score{display:block;min-height:0}
+.ao-reader-paragraph[data-inline-chant-view="compact"] .ao-inline-chant-score svg{
+ width:100%;height:auto;max-height:100px;object-fit:contain
+}
+.ao-reader-paragraph[data-inline-chant-status="ready"]>.ao-inline-chant-translation{display:none!important}
+.ao-reader-paragraph[data-inline-chant-view="text"] .ao-inline-chant-control{grid-column:2}
 @media(prefers-reduced-motion:reduce){
  .ao-reader-paragraph[data-inline-chant-status="ready"]{transition:none}
 }`;
@@ -158,10 +173,10 @@ export function createInlineChantController({
   if(toggle){
    const row=toggle.closest(".ao-reader-paragraph");
    if(row?.dataset?.inlineChantStatus!=="ready")return true;
-   const text=row.dataset.inlineChantView==="notation";
-   row.dataset.inlineChantView=text?"text":"notation";
-   toggle.textContent=text?"♫ Notation":"Aa Latin";
-   toggle.setAttribute("aria-label",text?"Show Gregorian notation":"Show Latin text");
+   const shown=row.dataset.inlineChantView==="compact";
+   row.dataset.inlineChantView=shown?"text":"compact";
+   toggle.textContent=shown?"Show neumes":"Hide neumes";
+   toggle.setAttribute("aria-label",shown?"Show compact Gregorian notation":"Hide compact Gregorian notation");
    return true;
   }
   const open=event.target?.closest?.("[data-inline-chant-open]");
@@ -199,7 +214,8 @@ export function createInlineChantController({
    const score=selectApprovedInlineScore({
     cueId,paragraph,form,settingId,selectedSettings,resolvedMass,approvedScores
    });
-   if(!score)continue;
+   if(participationNotationDecision({cueId:cueId??paragraph?.sourceCueIds?.[0],
+    paragraph,form,score}).status!=="COMPACT_APPROVED")continue;
    const primary=node.querySelector(".ao-line-primary");
    if(!primary)continue;
    const wrapper=doc.createElement("span");wrapper.className="ao-inline-chant-main";
@@ -212,8 +228,8 @@ export function createInlineChantController({
    open.append(staff);
    const controls=doc.createElement("span");controls.className="ao-inline-chant-control";
    const switcher=doc.createElement("button");switcher.type="button";
-   switcher.dataset.inlineChantToggle="true";switcher.textContent="Aa Latin";
-   switcher.setAttribute("aria-label","Show Latin text");
+   switcher.dataset.inlineChantToggle="true";switcher.textContent="Show neumes";
+   switcher.setAttribute("aria-label","Show compact Gregorian notation");
    controls.append(switcher);wrapper.append(open,controls);
    const marker=doc.createElement("span");marker.className="ao-inline-chant-mark";
    marker.textContent=/^\s*℟/.test(score.sourceLatin)?"℟":
@@ -241,7 +257,9 @@ export function createInlineChantController({
      if(g!==generation||!node.isConnected)return;
      if(ok){
       node.dataset.inlineChantStatus="ready";
-      node.dataset.inlineChantView="notation";
+      node.dataset.inlineChantView="compact";
+      switcher.textContent="Hide neumes";
+      switcher.setAttribute("aria-label","Hide compact Gregorian notation");
       const host=shell();if(host)host.dataset.inlineChant="true";
      }else{
       node.dataset.inlineChantStatus="failed";
