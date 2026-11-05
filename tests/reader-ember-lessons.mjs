@@ -7,6 +7,7 @@ import { readFileSync } from "node:fs";
 import { createMassReaderModel } from "../src/mass/reader-model.js";
 import { buildEmberInsertionCards } from "../src/mass/reader-ember-lessons.js";
 import { projectCuratedOrdinaryLiveCards } from "../src/mass/reader-live-curated-cards.js";
+import { prepareNativeReaderPreview } from "../src/mass/reader-native-preview.js";
 import { buildReaderModeModels, captureReaderModeAnchor, findReaderModeAnchorCard } from "../src/mass/reader-mode-switch.js";
 import { makeResolvedMass, compileMassPlan } from "../src/mass/session-engine.js";
 import { projectSpecialStructure } from "../src/mass/reader-special-structure.js";
@@ -193,5 +194,43 @@ assert.equal(segment.renderable,true);
 assert.equal(segment.planOwned,true);
 assert.equal(segment.readerPayload,"SOURCE_ORDER_PRE_GOSPEL_READER");
 assert.equal(projection.releaseSupport,true);
+
+// Exercise the production eligibility/reader assembly, not only a direct
+// projector or a compressed source fixture. All data is loaded locally.
+const canonicalEvents=[
+  "../data/mass/mc-events-01.v1.json","../data/mass/mc-events-02.v1.json",
+  "../data/mass/mc-events-03.v1.json","../data/mass/mc-events-04.v1.json",
+  "../data/mass/mc-events-05.v1.json","../data/mass/mc-events-06.v1.json",
+].flatMap(path=>load(path).events);
+const cueRegistries=Object.freeze({
+  gestures:load("../data/presentation/reader-gestures.v1.json"),
+  responses:load("../data/presentation/reader-responses.v1.json"),
+  postures:load("../data/presentation/reader-postures.v1.json"),
+  positions:load("../data/presentation/reader-priest-positions.v1.json"),
+  voices:load("../data/presentation/reader-priest-voices.v1.json"),
+  actions:load("../data/presentation/reader-priest-actions.v1.json"),
+});
+const readerData={...emberData,
+  rubricEvents:load("../data/presentation/reader-rubric-events.v1.json"),
+  gestureMatrix:load("../data/mass/gesture-matrix.v1.json")};
+const guideData={registry:load("../data/presentation/guide-registry.v1.json"),url:"test://guide"};
+const productionPrepared={session:{resolvedMass:compiled,plan},
+  readerPreferences:{mode:"LIVE",language:"en",postureProfile:"FOLLOW_CONGREGATION",
+    gestureProfile:"GUIDED_1962"}};
+const productionOptions={prepared:productionPrepared,reviewCuratedCards:true,
+  presentationData:readerData,eventData:canonicalEvents,cueRegistries,guideData};
+const emberNative=await prepareNativeReaderPreview(productionOptions);
+assert.equal(emberNative.curatedEligible,true);
+assert.equal(emberNative.model.totalCards,44);
+assert.equal(emberNative.presentationModel.totalCards,70);
+assert.deepEqual(emberNative.presentationModel.cards.filter(c=>c.emberInsertion)
+  .map(c=>c.sourceSectionKey),order);
+assert.deepEqual(emberNative.presentationModel.cards.flatMap(c=>c.paragraphs.map(p=>p.id)),
+  emberNative.model.cards.flatMap(c=>c.paragraphs.map(p=>p.id)));
+await assert.rejects(()=>prepareNativeReaderPreview({...productionOptions,
+  prepared:{...productionPrepared,session:{...productionPrepared.session,
+    plan:{...plan,overlayGraphs:[]}}}}),
+  /LIVE_65_CARD_PRESENTATION_REQUIRED/,
+  "Unowned Ember insertion must not silently display 44 raw source cards");
 
 console.log("Ember lessons: PASS — source-order Proper nodes render before ordinary Epistle; suffix pairing is impossible and unresolved payloads fail closed.");
