@@ -124,6 +124,25 @@ The familiar English Guardian Angel rhyme likewise differs from the Latin
 *Angele Dei*; the USCCB English Morning Offering differs from the sourced
 Latin/French devotional witnesses.
 
+### English Guardian Angel and Morning Offering witnesses
+
+The official English Vatican Compendium prints the rhyming *Angel of God,
+my guardian dear* prayer. It is not an unsourced invention or a mandatory
+literal translation of the official Latin and French forms.
+https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html
+
+The USCCB Morning Offering source ends the papal intention formula with
+**“this month”**; Ad Orientem's existing English text concludes with
+“the intentions of the Holy Father. Amen.” This is a **traditional
+wording/edition variant**, not a proof that the translation is missing. Keep
+the prayer body intact for this text-first reconciliation and withdraw
+any claim that it is *verbatim* from that USCCB page.
+https://www.usccb.org/prayers/morning-offering
+
+Both distinctions are now documented in the read-only 19-prayer witness
+policy, with regression tests. They do **not** amount to newly certified
+original-print trilingual texts.
+
 ### Acceptance tiers and next action
 
 - **19/19 populated trilingual records**: verified in canonical data.
