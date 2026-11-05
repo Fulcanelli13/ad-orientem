@@ -275,8 +275,35 @@ export function projectCuratedOrdinaryLiveCards(model){
   // Its optional Mandatum adds one independently sourced card after the Homily.
   // Never recreate a missing Credo or pad the experience back to 65.
   const holyThursday=model.holyThursday===true && model.credoOmitted===true;
-  const expectedSource=holyThursday ? (model.mandatumPresent===true?39:38):39;
-  if(model.totalCards!==expectedSource)return model;
+  const nuptialCount=Number(model.nuptialInsertionCount??0);
+  const emberCount=Number(model.emberInsertionCount??0);
+  const insertionCount=nuptialCount+emberCount;
+  // These are three separately source-recovered Nuptial prayers, or
+  // an ordered series of sourced Ember readings. They are not Ordinary
+  // sections to be squeezed into a nominal fixed 65 card count.
+  if((nuptialCount!==0&&nuptialCount!==3) ||
+     !Number.isSafeInteger(emberCount) || emberCount<0 ||
+     (nuptialCount>0 && emberCount>0) ||
+     (holyThursday && insertionCount>0))
+    throw new Error("CURATED_SPECIAL_INSERTION_COMBINATION_UNCERTIFIED");
+  const nuptialCards=model.cards.filter(c=>c.nuptialInsertion===true);
+  const emberCards=model.cards.filter(c=>c.emberInsertion===true);
+  if(nuptialCards.length!==nuptialCount || emberCards.length!==emberCount)
+    throw new Error("CURATED_SPECIAL_INSERTION_SOURCE_COUNT_MISMATCH");
+  if(nuptialCount && JSON.stringify(nuptialCards.map(c=>c.sectionId))!==
+    JSON.stringify(["AO.NUPTIAL.01","AO.NUPTIAL.02","AO.NUPTIAL.03"]))
+    throw new Error("CURATED_NUPTIAL_INSERTION_ORDER_UNVERIFIED");
+  if(emberCount && (
+    !Array.isArray(model.emberSourceOrder) ||
+    JSON.stringify(emberCards.map(c=>c.sourceSectionKey))!==JSON.stringify(model.emberSourceOrder) ||
+    emberCards.some((c,i)=>c.sectionId!=="AO.EMBER."+String(i+1).padStart(2,"0") ||
+      c.sourceOrderIndex!==i || !c.sourceRef || !c.paragraphs?.length)))
+    throw new Error("CURATED_EMBER_SOURCE_ORDER_UNVERIFIED");
+  const expectedSource=(holyThursday ? (model.mandatumPresent===true?39:38):39)+insertionCount;
+  if(model.totalCards!==expectedSource){
+    if(insertionCount>0 || holyThursday)throw new Error("CURATED_SPECIAL_SOURCE_COUNT_UNEXPECTED");
+    return model;
+  }
 
   const result=[];
   const visited=new Set();
@@ -289,9 +316,14 @@ export function projectCuratedOrdinaryLiveCards(model){
       JSON.stringify(sourceCard.paragraphs.map(p=>p.id)))
       throw new Error(id+": card projection omitted or duplicated source paragraphs");
     for(const chunk of chunks){
+      const independentInsertion=sourceCard.nuptialInsertion===true ||
+        sourceCard.emberInsertion===true;
+      // Keep the exact names of independently sourced insertion cards;
+      // the browser and LIVE/MISSAL anchors already use these identities.
       result.push(freezeCard({
         ...sourceCard,
-        sectionId:"AO.LIVECURATED."+id.replace(/[^A-Za-z0-9.-]/g,"-")+"."+chunk.ordinal,
+        sectionId:independentInsertion ? sourceCard.sectionId :
+          "AO.LIVECURATED."+id.replace(/[^A-Za-z0-9.-]/g,"-")+"."+chunk.ordinal,
         title:chunk.title,
         sequence:result.length+1,
         paragraphs:chunk.paragraphs,
@@ -299,8 +331,10 @@ export function projectCuratedOrdinaryLiveCards(model){
         stateOnly:chunk.stateOnly===true || (chunk.paragraphs.length===0 && sourceCard.stateOnly===true),
         omittedByRite:chunk.omittedByRite??null,
         sourceSectionId:canonicalSourceId(sourceCard),
-        sourceSequence:sourceCard.sourceSequence??sourceCard.guideSequence??sourceCard.sequence,
-        guideSequence:sourceCard.guideSequence??sourceCard.sourceSequence??sourceCard.sequence,
+        sourceSequence:independentInsertion ? null :
+          (sourceCard.sourceSequence??sourceCard.guideSequence??sourceCard.sequence),
+        guideSequence:independentInsertion ? null :
+          (sourceCard.guideSequence??sourceCard.sourceSequence??sourceCard.sequence),
         sourceEventIds:[...(sourceCard.eventIds??[])],
         eventIds:[],
         curatedPresentationReview:true,
@@ -323,7 +357,8 @@ export function projectCuratedOrdinaryLiveCards(model){
   const preGospelCount=result.filter(card=>card.sourceSectionId==="AO.CARD.006").length;
   if(preGospelCount<1||preGospelCount>3)throw new Error("PRE_GOSPEL_CARD_COUNT_UNSUPPORTED");
   const expectedCards=65+(preGospelCount-1)-
-    (holyThursday?4:0)+(holyThursday && model.mandatumPresent===true?1:0);
+    (holyThursday?4:0)+(holyThursday && model.mandatumPresent===true?1:0)+
+    insertionCount;
   if(result.length!==expectedCards)throw new Error(
     "Curated LIVE expected "+expectedCards+" source-backed cards; found "+result.length);
   const cards=Object.freeze(result);
