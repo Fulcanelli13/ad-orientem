@@ -29,7 +29,10 @@ assert.equal(p104.schema,"AO_SACRED_PLACES_P104_SEVEN_P97_EXACT_DIRECTORY_CHURCH
 assert.deepEqual(p104.baseline,{places:522,sources:830,crosswalk:522,unlinked:257,geo_areas:146,directory_links:15});
 assert.deepEqual(p104.proposed,{places:529,sources:844,crosswalk:529,unlinked:257,geo_areas:146,directory_links:22});
 assert.ok(RELEASES.some(r=>r.id==="P104"),"Historical P104 must remain frozen");
-assert.deepEqual([LIVE.places,LIVE.sources,LIVE.links],[530,846,24]);
+const v10=RELEASES.find(r=>r.id==="V10-B20");
+assert.ok(v10,"V10 retains P106's 530/846/24 source-verified baseline");
+assert.deepEqual([v10.data.baseline.places,v10.data.baseline.sources,v10.data.baseline.directory_links],[530,846,24]);
+assert.deepEqual([LIVE.places,LIVE.sources,LIVE.links],[v10.data.proposed.places,v10.data.proposed.sources,v10.data.proposed.directory_links]);
 assert.deepEqual([geo.places.length,src.sources.length],[LIVE.places,LIVE.sources]);
 assert.ok(geo.directoryPlaceLinks.length>=LIVE.links,
   "Historical source links must persist; later individually verified venue joins may extend them");
@@ -90,7 +93,7 @@ for(const r of p104.published_new){
  assert.equal(pair[0].disposition,"EXISTING_CONFIRMED_LINK");
  assert.equal(pair[0].distance_m,m);
 }
-assert.equal(cross.counts.canonical_places,LIVE.places);
+assert.equal(cross.counts.canonical_places,v10.data.baseline.places,"Frozen P92 crosswalk retains historical scope");
 assert.equal(cross.counts.confirmed_links,23,"Frozen P92 research snapshot predates P106");
 assert.equal(cross.counts.exact_confirmed_photo_joins,5+laterPhotoRelease.photos.length,"P104 adds identity only; four later P106 approvals are separate");
 assert.equal(p104.research_holds.length,4);
