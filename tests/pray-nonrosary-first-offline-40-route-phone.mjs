@@ -7,6 +7,7 @@ import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
 import {PRAYER_DOOR_ORDER_V1} from "../src/pray/prayer-design-pilot.js";
 import {internalPrayerView} from "../src/pray/internal-route-owner.js";
+import {ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2} from "../src/pray/essential-holy-card-parts.js";
 
 /**
  * Non-Rosary scope only. First-use OFFLINE after a transactional PWA install.
@@ -196,12 +197,13 @@ try{
      id+" clips "+width+"px "+language+" offline: "+JSON.stringify(state));
     assert.equal(state.internalErrors,0,id+" showed internal route failure");
     if(id==="pray.library"){
-     // The home entry opens the 32-card Essential mosaic, whose navigation
+     // The home entry opens the curated Essential mosaic, whose navigation
      // must still expose the complete 48-text Library without network use.
      if(state.libraryCount<48){
       assert.equal(await page.locator('#aoPray435930.open [data-ao-pray-essential-landing="true"]').count(),1,
        "Offline Library is neither its source list nor the approved Essential mosaic");
-      assert.equal(state.libraryCount,32,"All 32 Essential prayers must remain navigable offline");
+      assert.equal(state.libraryCount,ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2.length,
+        "All curated Essential prayer cards must remain navigable offline");
       await page.locator('#aoPray435930.open [data-p435930-lib-all]').click();
      }
      assert.ok(await page.locator('#aoPray435930.open [data-p435930-lib-open]').count()>=48,
