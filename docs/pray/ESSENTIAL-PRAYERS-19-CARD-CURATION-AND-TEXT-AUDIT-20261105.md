@@ -94,7 +94,7 @@ back-translations.
 
 ### French Our Father — traditional witness identified
 
-The 1905 `Catéchisme illustré des vérités nécessaires`, *Prières*, prints the
+The 1906 `Catéchisme illustré des vérités nécessaires`, *Prières*, prints the
 traditional French *vous* formula, including *ne nous laissez pas succomber*.
 See the transcribed historical page:
 https://fr.wikisource.org/wiki/Cat%C3%A9chisme_illustr%C3%A9_des_v%C3%A9rit%C3%A9s_n%C3%A9cessaires/Pri%C3%A8res
