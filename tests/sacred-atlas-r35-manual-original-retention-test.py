@@ -70,6 +70,53 @@ class R35OriginalRetention(unittest.TestCase):
                 self.run_verified(d,retain=True,raw=self.raw[:-1]+b"X")
             self.assertFalse((Path(d)/"originals").exists())
 
+    def test_only_jpeg_based_magic_and_decoder_family_accepted(self):
+        self.assertEqual(mod.validate_jpeg_stream(self.raw,"JPEG"),"JPEG")
+        self.assertEqual(mod.validate_jpeg_stream(self.raw,"MPO"),"MPO")
+        with self.assertRaisesRegex(ValueError,"JPEG_DECODER_FORMAT_MISMATCH:PNG"):
+            mod.validate_jpeg_stream(self.raw,"PNG")
+        with self.assertRaisesRegex(ValueError,"JPEG_CONTAINER_MAGIC_MISMATCH"):
+            mod.validate_jpeg_stream(b"not a JPEG image", "JPEG")
+
+    def test_source_identified_as_mpo_decodes_to_correct_webp(self):
+        from PIL import Image
+        original_open=Image.open
+        def camera_mpo_open(*args,**kwargs):
+            photo=original_open(*args,**kwargs)
+            photo.format="MPO"
+            return photo
+        with tempfile.TemporaryDirectory() as d,patch.object(Image,"open",side_effect=camera_mpo_open):
+            result=self.run_verified(d,retain=True)
+            self.assertEqual(result["source_decoder_format"],"MPO")
+            self.assertEqual(result["source_frame_index"],0)
+            self.assertEqual(result["result"],"ORIGINAL_BYTES_VERIFIED_TEMP_PREVIEW_ONLY")
+            self.assertEqual(len(list((Path(d)/"previews").glob("*.webp"))),1)
+            self.assertEqual(hashlib.sha1((Path(d)/result["retained_original_path"]).read_bytes()).hexdigest(),self.sha1)
+
+    def test_a_failed_source_is_a_failed_job_not_a_green_report(self):
+        with tempfile.TemporaryDirectory() as d,patch.object(mod,"DEST",Path(d)),\
+             patch.object(mod,"verify",side_effect=ValueError("JPEG_DECODER_FORMAT_MISMATCH:PNG")),\
+             patch.object(sys,"argv",[str(SCRIPT),"--verify-originals","--max-files","1"]):
+            rc=mod.main()
+            report=json.loads((Path(d)/"report.json").read_text())
+            self.assertEqual(rc,2)
+            self.assertEqual(report["originals_verified"],0)
+            self.assertEqual(report["results"][0]["result"],"HOLD_VERIFICATION_FAILURE")
+            self.assertEqual(report["results"][0]["reason"],"JPEG_DECODER_FORMAT_MISMATCH:PNG")
+
+    def test_http429_stops_and_fails_without_retries(self):
+        import urllib.error
+        err=urllib.error.HTTPError("https://commons.wikimedia.org/w/api.php",429,"Too Many Requests",None,None)
+        with tempfile.TemporaryDirectory() as d,patch.object(mod,"DEST",Path(d)),\
+             patch.object(mod,"verify",side_effect=err) as mocked,\
+             patch.object(sys,"argv",[str(SCRIPT),"--verify-originals","--max-files","2"]):
+            rc=mod.main()
+            report=json.loads((Path(d)/"report.json").read_text())
+            self.assertEqual(rc,2)
+            self.assertTrue(report["stopped_due_to_wikimedia_429"])
+            self.assertEqual(report["source_attempts"],1)
+            mocked.assert_called_once()
+
     def test_offline_default_and_unsafe_cli_rejected(self):
         p=subprocess.run([sys.executable,str(SCRIPT)],capture_output=True,text=True,check=True)
         self.assertIn("R28 OFFLINE CONTRACT",p.stdout)
