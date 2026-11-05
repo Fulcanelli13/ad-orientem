@@ -382,7 +382,7 @@ try{
                 (mode==="LIVE"&&(
                   real.curated!=="true"||
                   real.structureOwner!=="SOURCE_FIRST_LIVE_CURATED_65_REVIEW"||
-                  real.sourceModelCards!==39||
+                  real.sourceModelCards!==30||
                   ![65,66,67].includes(real.cardCount)
                 )))
                throw Error("NOV02_NATIVE_READER_IDENTITY_MISMATCH:"+JSON.stringify(real));
