@@ -6,6 +6,9 @@ on:
     paths:
       - 'src/mass/reader-inline-chant.js'
       - 'src/mass/reader-participation-neume-policy.js'
+      - 'src/mass/reader-participation-reference-scores.js'
+      - 'tests/reader-participation-reference-scores.mjs'
+      - 'tests/reader-participation-reference-phone.mjs'
       - 'tests/reader-participation-neume-policy.mjs'
       - 'src/mass/reader-inline-proper-reference.js'
       - 'src/mass/reader-inline-all-saints-reference.js'
@@ -41,6 +44,9 @@ jobs:
         run: |
           node --check src/mass/reader-inline-chant.js
           node --check src/mass/reader-participation-neume-policy.js
+          node --check src/mass/reader-participation-reference-scores.js
+          node --check tests/reader-participation-reference-scores.mjs
+          node --check tests/reader-participation-reference-phone.mjs
           node --check tests/reader-participation-neume-policy.mjs
           node --check src/mass/reader-inline-proper-reference.js
           node --check src/mass/reader-inline-all-saints-reference.js
@@ -53,6 +59,7 @@ jobs:
           node --check src/mass/reader-dom.js
           node tests/reader-inline-chant-a-c.mjs
           node tests/reader-participation-neume-policy.mjs
+          node tests/reader-participation-reference-scores.mjs
           node tests/reader-inline-chant-generic-source.mjs
           node tests/reader-inline-proper-registry.mjs
           node tests/reader-proper-gabc-bulk-join.mjs
@@ -64,6 +71,7 @@ jobs:
       - name: Verify 390 and 320 px compact score alongside intact Latin, independent toggle, Low fallback
         run: |
           node tests/reader-inline-chant-a-c-phone.mjs
+          node tests/reader-participation-reference-phone.mjs
           node tests/reader-inline-proper-july07-phone.mjs
           node tests/reader-inline-all-saints-phone.mjs
 
@@ -82,5 +90,14 @@ jobs:
         with:
           name: mass-1961-inline-all-saints-screens
           path: .tmp/mass-inline-all-saints/*.png
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Retain 1961 participation source-review screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-participation-research-reference-neumes
+          path: .tmp/mass-participation-preview/*.png
           if-no-files-found: warn
           retention-days: 14
