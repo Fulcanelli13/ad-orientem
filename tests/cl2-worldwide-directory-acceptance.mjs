@@ -264,8 +264,12 @@ const diocesanGroupIds=new Set(index.records.filter(x=>x[5]==="Diocesan").map(x=
 assert.equal(diocesanGroupIds.size,584);
 const diocesan=world.filter(x=>diocesanGroupIds.has(x.physical_group_id));
 assert.equal(diocesan.length,584);
-assert.equal(diocesan.filter(x=>x.map_publishable).length,580);
-assert.equal(diocesan.filter(x=>!x.map_publishable).length,4);
+const newlyApprovedDiocesan=Object.keys(CL2_ILLUSTRATIVE_LOCALITY_PINS_R3)
+ .filter(id=>diocesanGroupIds.has(id));
+assert.equal(newlyApprovedDiocesan.length,1,
+ "Only the one explicitly owner-approved R3 diocesan record may supersede the older coordinate inventory");
+assert.equal(diocesan.filter(x=>x.map_publishable).length,580+newlyApprovedDiocesan.length);
+assert.equal(diocesan.filter(x=>!x.map_publishable).length,4-newlyApprovedDiocesan.length);
 for(const [group] of [["RG-14C05BCC015B"],["RG-3B5F15EA02ED"],["RG-DF3BA1A9A39C"],["RG-3EE76EFE0DC3"],["RG-270210292F78"],["RG-AA00B3C74515"],["RG-77CC30491D1E"],["RG-769233567FB2"],["RG-A9687EEF16FC"],["RG-5A52F4C1379D"],["RG-B68-086D5372D517"],["RG-2CFE11950F95"],["RG-4E6E8B55676B"],["RG-EE22A08568B9"],["RG-48A5E9F09178"],["RG-1EE1D2C9B3EB"],["RG-DE5F8ED4E2F7"],["RG-322AA8195E65"],["RG-C7F25752659D"],["RG-4D09923C6B74"],["RG-8DC436A75526"],["RG-938EAA84BA0A"],["RG-A0933DE542C7"],["RG-8CB13769F987"],["RG-BBB3789ADB9A"],["RG-0BB62E04774C"],["RG-783CD50DD217"],["RG-04ED0DAE5D46"],["RG-13C11CB31E3F"],["RG-7E91D5FD0AC3"],["RG-D2CECBA0C364"],["RG-F03B6AF4FA24"],["RG-CC73C2CBD613"],["RG-B30F94A20F69"],["RG-C3F8A4083DC9"],["RG-D1C52ADC007B"],["RG-1EDB76F4B57B"],["RG-A768309560A6"],["RG-19BD1D3D4E73"],["RG-2577094CF7E4"],["RG-3E135A9E5C09"],["RG-AE6B9D48B695"],["RG-2181DD7D9F32"],["RG-97D731A26655"],["RG-261733295B4C"]]){
  const item=diocesan.find(x=>x.physical_group_id===group);
  assert.ok(item?.map_publishable,"Diocesan site must be pinned: "+group);
