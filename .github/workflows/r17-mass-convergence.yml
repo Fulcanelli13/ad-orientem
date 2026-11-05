@@ -11,6 +11,7 @@ on:
       - "data/mass/**"
       - "data/presentation/**"
       - "tests/reader-*.mjs"
+      - "tests/r17-native-preview-first-use-phone.mjs"
       - "tests/*mass*.mjs"
       - "tests/proper-*.mjs"
       - "tests/faithful-gesture-cues.mjs"
@@ -96,6 +97,16 @@ jobs:
           node-version: 22
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
+      - name: R17 320/390 first-use lazy render and original 65-card LIVE authority
+        run: node tests/r17-native-preview-first-use-phone.mjs
+      - name: Retain first-use phone and request evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: r17-native-first-use
+          path: artifacts/r17-native-first-use/
+          retention-days: 14
+          if-no-files-found: warn
       - run: node tests/reader-phone-acceptance.mjs
       - name: Certify All Saints Sunday Asperges in EN/FR LIVE/MISSAL with Foot-cluster handoff
         run: node tests/reader-all-saints-asperges-phone.mjs
