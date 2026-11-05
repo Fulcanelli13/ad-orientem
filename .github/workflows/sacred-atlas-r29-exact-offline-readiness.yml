@@ -53,7 +53,10 @@ jobs:
           assert len(src)==19
           for item in review['rows']:
               row=src[item['place_id']]
-              assert not mod.policy_ready(row,item)
+              if row['place_id']=='place:PL:lichen-marian-basilica':
+                  assert mod.policy_ready(row,item), 'Lichen exact source is independently approved'
+              else:
+                  assert not mod.policy_ready(row,item), '18 other frozen selections remain blocked'
               gate=copy.deepcopy(item)
               for key in mod.REQUIRED:gate[key]=True
               gate.update(publication_authorized=True,reviewer='Independent photo editor',
