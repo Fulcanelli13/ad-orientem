@@ -58,7 +58,7 @@ try{
     overflow:document.documentElement.scrollWidth>innerWidth+1};
   });
   assert.equal(result.error,null,option.label+": "+result.error);
-  assert.equal(result.source,39,option.label);
+  assert.equal(result.source,30,option.label+" direct source macros");
   assert.equal(result.model,option.cards,option.label);
   assert.equal(result.curator,option.curated,option.label);
   if(option.curated==="true"||option.rite){
