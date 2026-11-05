@@ -6,6 +6,9 @@
 import { iterateVerifiedSourceFirstLiveCards } from "./reader-live-source.js";
 import { curatedSourceCardCuts, CURATED_LIVE_GROUPS } from "./reader-live-curated-cards.js";
 import { ORDINARY_SUNG_SOURCE_ONLY_CUES } from "./reader-source-only-cues.js";
+import { projectHolyThursdayMass } from "./reader-holy-thursday-mandatum.js";
+import { projectEmberInsertionModel } from "./reader-ember-lessons.js";
+import { projectNuptialInsertionModel } from "./reader-nuptial.js";
 
 const freeze=Object.freeze;
 const canonicalId=c=>String(c.sourceSectionId??c.sectionId);
@@ -110,6 +113,108 @@ export function projectDirectOrdinaryCuratedLiveCards(baseModel,canonSourceMap){
     sourceAuthorityModel:baseModel,
     sourceOnlyCueRegister:String(baseModel.corpusFamily).toUpperCase()==="SUNG"
       ? ORDINARY_SUNG_SOURCE_ONLY_CUES:null,
+    curatedPresentationReview:true,
+  });
+}
+
+
+/**
+ * Special 1962 Mass composition on the direct 65-family LIVE presentation.
+ * The ordinary 30 -> curated stream remains the only source model.
+ *
+ * The existing source-owning insertion projectors are reused, not copied:
+ * their liturgical locations, payload validations, source-order witness,
+ * and Holy Thursday Credo suppression remain the same. Inserted prayer
+ * cards are normalized through the exact same curated-card fields before
+ * publishing the presentation. Nothing constructs an intermediate 39-card
+ * model or authorizes invented text, gesture or posture.
+ *
+ * This is opt-in pending exact legacy parity, phone and mode-switch gates.
+ */
+export function projectDirectSpecialCuratedLiveCards({
+  sourceMacros,canonSourceMap,resolvedMass,nuptialData=null,
+  holyThursdayMandatumSource=null,holyThursdayMandatumPresent=false,
+  language="en",
+}={}){
+  if(!resolvedMass || !Array.isArray(resolvedMass.overlays))
+    throw new TypeError("DIRECT_SPECIAL_REQUIRES_RESOLVED_MASS");
+  if(!sourceMacros || sourceMacros.totalCards!==30 ||
+      sourceMacros.structureOwner!=="BASE_30_MACROS")
+    throw new Error("DIRECT_SPECIAL_REQUIRES_SOURCE_MACROS");
+  const overlays=resolvedMass.overlays;
+  const nuptial=overlays.includes("NUPTIAL");
+  const ember=overlays.includes("EMBER_LESSONS");
+  const holyThursday=(resolvedMass?.proper?.data?.sourcePath ??
+    resolvedMass?.proper?.sourcePath)==="Tempora/Quad6-4r";
+  if(nuptial && ember || holyThursday && (nuptial || ember))
+    throw new Error("DIRECT_SPECIAL_MIXED_INSERTIONS_UNCERTIFIED");
+
+  const direct=projectDirectOrdinaryCuratedLiveCards(sourceMacros,canonSourceMap);
+  const mandatumPresent=holyThursdayMandatumPresent===true ||
+    resolvedMass?.provenance?.holyThursday?.mandatumPresent===true;
+  let composed=projectHolyThursdayMass(direct,resolvedMass,{
+    mandatumPresent,mandatumSource:holyThursdayMandatumSource,language,
+  });
+  composed=projectEmberInsertionModel(composed,resolvedMass);
+  composed=projectNuptialInsertionModel(composed,resolvedMass,nuptialData);
+
+  const cards=freeze(composed.cards.map((source,i)=>{
+    const independent=source.nuptialInsertion===true ||
+      source.emberInsertion===true;
+    const mandatum=source.sectionId==="AO.HT.MANDATUM";
+    if(!independent&&!mandatum)return source;
+    return directCard(source,{
+      ordinal:1,title:source.title,paragraphs:source.paragraphs,blocks:source.blocks,
+    },i+1);
+  }));
+  const sourceCount=39-(holyThursday?1:0)+(mandatumPresent?1:0)+
+    (nuptial?3:0)+Number(composed.emberInsertionCount??0);
+  if(composed.totalCards!==cards.length || composed.totalCards!==
+      direct.totalCards-(holyThursday?4:0)+(mandatumPresent?1:0)+
+      (nuptial?3:0)+Number(composed.emberInsertionCount??0))
+    throw new Error("DIRECT_SPECIAL_CURATED_CARD_COUNT_UNCERTIFIED");
+
+  // The ordinary IDs and paragraphs must be unaffected by inserted rites.
+  const sourceIds=new Set(cards.map(c=>c.sectionId));
+  if(sourceIds.size!==cards.length)
+    throw new Error("DIRECT_SPECIAL_DUPLICATE_CARD_ID");
+  if(nuptial && JSON.stringify(cards.filter(c=>c.nuptialInsertion)
+      .map(c=>c.sectionId))!==JSON.stringify([
+        "AO.NUPTIAL.01","AO.NUPTIAL.02","AO.NUPTIAL.03"]))
+    throw new Error("DIRECT_SPECIAL_NUPTIAL_IDENTITY_DRIFT");
+  if(ember && JSON.stringify(cards.filter(c=>c.emberInsertion)
+      .map(c=>c.sourceSectionKey))!==JSON.stringify(composed.emberSourceOrder))
+    throw new Error("DIRECT_SPECIAL_EMBER_SOURCE_ORDER_DRIFT");
+  if(holyThursday && (cards.some(c=>c.sourceSectionId==="AO.CARD.009") ||
+      Boolean(cards.some(c=>c.sourceSectionId==="AO.HT.MANDATUM"))!==mandatumPresent))
+    throw new Error("DIRECT_SPECIAL_HOLY_THURSDAY_CREED_MANDATUM_DRIFT");
+
+  const byId=new Map(cards.map(c=>[c.sectionId,c]));
+  const bySequence=n=>Number.isInteger(Number(n))?cards[Number(n)-1]??null:null;
+  const neighbor=(id,delta)=>{
+    const c=byId.get(String(id));
+    return c?bySequence(c.sequence+delta):null;
+  };
+  const sourceOwner="SOURCE_FIRST_LIVE"+
+    (holyThursday?"+HOLY_THURSDAY_1962":"")+
+    (ember?"+SOURCE_ORDER_PRE_GOSPEL":"")+
+    (nuptial?"+NUPTIAL_INSERTIONS":"");
+  return freeze({
+    ...composed,
+    schema:"ao-mass-reader-presentation-model-v1",
+    structureOwner:"SOURCE_FIRST_LIVE_CURATED_65_REVIEW",
+    sourceStructureOwner:sourceOwner,
+    sourceModelTotalCards:sourceCount,
+    directSourceMacroCount:30,
+    directCanonicalSourceUnitCount:39,
+    directSourceToCurated:true,
+    sourceAuthorityModel:sourceMacros,
+    productParity48:false,
+    cards,totalCards:cards.length,
+    cardBySequence:bySequence,
+    previousCard:id=>neighbor(id,-1),
+    nextCard:id=>neighbor(id,1),
+    cardForEvent:undefined,
     curatedPresentationReview:true,
   });
 }
