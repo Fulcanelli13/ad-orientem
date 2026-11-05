@@ -213,7 +213,8 @@ export function participationNotationDecision({cueId,form,paragraph=null,score=n
  if(!score||score.publication!=="PUBLIC_APPROVED"||
    score.approval!=="USER_AND_MUSICAL_SOURCE_REVIEWED"||
    score.sourceTextVerified!==true||score.musicalNotationVerified!==true||
-   !opportunity.cueIds.includes(score.sourceCueId??""))
+   !(Array.isArray(score.sourceCueIds)?score.sourceCueIds:[score.sourceCueId])
+     .every(id=>id&&opportunity.cueIds.includes(id)))
    return Object.freeze({status:"SOURCE_SCORE_REVIEW_PENDING",opportunity,score:null});
  return Object.freeze({status:"COMPACT_APPROVED",opportunity,score});
 }
