@@ -36,11 +36,9 @@ assert.equal(new Set(src.sources.map(x=>x.id)).size,src.sources.length);
 const placeMap=new Map(geo.places.map(x=>[x.place_id,x]));
 const sourceMap=new Map(src.sources.map(x=>[x.id,x]));
 const ours=new Set(manifest.published_new.map(x=>x.place_id));
-const p92=new Set(RELEASES.find(r=>r.id==="P92").data.published_new.map(x=>x.place_id));
-const p99=new Set(RELEASES.find(r=>r.id==="P99").data.published_new.map(x=>x.place_id));
-const p104=new Set(RELEASES.find(r=>r.id==="P104").data.published_new.map(x=>x.place_id));
-const p105=new Set(RELEASES.find(r=>r.id==="P105").data.published_new.map(x=>x.place_id));
-const prev=geo.places.filter(x=>!ours.has(x.place_id)&&!p92.has(x.place_id)&&!p99.has(x.place_id)&&!p104.has(x.place_id)&&!p105.has(x.place_id)).map(x=>x.geo?.source_ref);
+const p61Index=RELEASES.findIndex(r=>r.id==="P61");
+const postP61=new Set(RELEASES.slice(p61Index+1).flatMap(r=>r.data.new_places===0?[]:(r.data.published_new||[]).map(x=>x.place_id)));
+const prev=geo.places.filter(x=>!ours.has(x.place_id)&&!postP61.has(x.place_id)).map(x=>x.geo?.source_ref);
 assert.equal(prev.length,512);
 const expected=new Map([["SG-INV-0200",208331549],["SG-INV-0429",95827233],["SG-INV-0410",426943457],["SG-INV-0493",36373669]]);
 for(const x of manifest.published_new) {
