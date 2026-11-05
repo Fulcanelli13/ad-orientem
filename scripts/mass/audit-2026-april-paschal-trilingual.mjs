@@ -34,6 +34,8 @@ try{
   null,{timeout:90000});
  records=await page.evaluate(async dates=>{
   const r=globalThis.AO_RUNTIME_V8.resolver,out=[];
+  const {recoverReaderProperOmissions}=await import("/src/mass/reader-proper-runtime-recovery.js");
+  const {properToReaderSlots}=await import("/src/mass/proper-reader-slots.js");
   for(const date of dates){
    const resolved=await r.resolveDay(date);
    const proper=resolved?.proper?.data;
@@ -55,6 +57,41 @@ try{
     postcommunions:proper?.postcommunions??null,
     preface:proper?.preface??null,
     sourceCalendarCommemorations:proper?.calendarCommemorations??null};
+   try{
+    const recovered=await recoverReaderProperOmissions(resolved?.proper,{
+      hostResolver:r.properResolver,
+      principalCelebrationId:resolved?.day?.main?.id??null,
+      calendarDate:date
+    });
+    const corrected=recovered?.data??recovered;
+    const en=properToReaderSlots(corrected,{language:"en"});
+    const fr=properToReaderSlots(corrected,{language:"fr"});
+    selected.recovered={
+      correction:corrected?.aprilPaschalSourceCorrection??null,
+      proof:corrected?.aprilPaschalDualAlleluiaProof??null,
+      sourcePath:corrected?.sourcePath??null,
+      introit:corrected?.introit??null,
+      epistle:corrected?.epistle??null,
+      gradual:corrected?.gradual??null,
+      gospel:corrected?.gospel??null,
+      off:corrected?.offertory??null,
+      communion:corrected?.communion??null,
+      postcommunion:corrected?.postcommunion??null,
+      preGospelChants:corrected?.preGospelChants??null,
+      readerSlotsEN:{
+        ready:en.ready,missing:en.missing,
+        first:en.slots?.GRADUAL?.data?.paragraphs??null,
+        second:en.slots?.ALLELUIA_TRACT_SEQUENCE?.data?.paragraphs??null
+      },
+      readerSlotsFR:{
+        ready:fr.ready,missing:fr.missing,
+        first:fr.slots?.GRADUAL?.data?.paragraphs??null,
+        second:fr.slots?.ALLELUIA_TRACT_SEQUENCE?.data?.paragraphs??null
+      }
+    };
+   }catch(error){
+    selected.recoveryError=String(error?.stack??error?.message??error);
+   }
    out.push(selected);
   }
   return out;
@@ -79,5 +116,9 @@ for(const x of records)console.log("APRIL_1962_ACTUAL_SELECTED "+JSON.stringify(
  collectLA:(x.collect?.lat??"").slice(0,150),
  secretLA:(x.secret?.lat??"").slice(0,150),
  postcommunionLA:(x.postcommunion?.lat??"").slice(0,150),
- properChantRows:x.preGospelChants?.map(y=>({kind:y.kind,section:y.section,lat:y.text?.lat}))??null
+ properChantRows:x.preGospelChants?.map(y=>({kind:y.kind,section:y.section,lat:y.text?.lat}))??null,
+ repairApplied:Boolean(x.recovered?.correction),
+ repairFirstLA:x.recovered?.readerSlotsEN?.first?.[0]?.latin?.slice(0,150)??null,
+ repairSecondLA:x.recovered?.readerSlotsEN?.second?.[0]?.latin?.slice(0,150)??null,
+ repairError:x.recoveryError??null
 }));
