@@ -1,0 +1,71 @@
+name: Sacred Atlas direct batch two one-time acquisition
+# One-time release-branch worker. Must be removed before merge.
+on:
+  pull_request:
+    types: [opened, synchronize]
+    paths:
+      - '.github/workflows/sacred-atlas-direct-batch-two-once.yml'
+      - 'tools/atlas/acquire-sacred-atlas-direct-batch-two.py'
+      - 'data/geography/research/sacred-atlas-direct-source-batch-two-20261105.v1.json'
+    branches: [main]
+permissions:
+  contents: write
+jobs:
+  acquire:
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'release/sacred-atlas-pexels-flickr-batch2-20261105' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Pillow
+        run: python -m pip install 'Pillow>=10,<12'
+      - name: Validate canonical scope and source limits
+        run: |
+          python -m py_compile tools/atlas/acquire-sacred-atlas-direct-batch-two.py
+          python tools/atlas/acquire-sacred-atlas-direct-batch-two.py --validate-only
+      - name: Acquire four direct-source images and verify live licence
+        run: python tools/atlas/acquire-sacred-atlas-direct-batch-two.py
+      - name: Check exact files and no old-photo replacement
+        run: |
+          python - <<'PY'
+          import json,hashlib,pathlib
+          root=pathlib.Path(".")
+          m=json.loads((root/"data/geography/research/sacred-atlas-direct-source-batch-two-20261105.v1.json").read_text())
+          c=json.loads((root/"data/geography/approved-place-media.v1.json").read_text())
+          r=json.loads((root/"data/geography/research/sacred-atlas-direct-source-batch-two-report-20261105.v1.json").read_text())
+          assert r["admitted_on_pr_branch"] + r["held"] == m["batch_size"] == 4
+          assert r["admitted_on_pr_branch"]>0
+          assert len(c["items"]) == m["main_cover_baseline"]+r["admitted_on_pr_branch"]
+          assert len(set(p["place_id"] for p in c["items"]))==len(c["items"])
+          for p in r["approved"]:
+              b=(root/p["asset_path"]).read_bytes()
+              assert b[:4]==b"RIFF" and b[8:12]==b"WEBP"
+              assert hashlib.sha256(b).hexdigest()==p["derivative_sha256"]
+          print("BATCH TWO",r["admitted_on_pr_branch"],"new images",r["held"],"holds")
+          PY
+          git diff --check
+      - name: Commit image originals' digests and converted WebPs only on PR branch
+        run: |
+          set -euo pipefail
+          git add data/geography/approved-place-media.v1.json \
+            data/geography/research/sacred-atlas-direct-source-batch-two-report-20261105.v1.json \
+            assets/approved/place-media/
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          if ! git diff --cached --quiet; then
+            git commit -m 'feat(atlas): admit exact licensed Pexels/Flickr batch two images'
+            git push origin HEAD:refs/heads/release/sacred-atlas-pexels-flickr-batch2-20261105
+          fi
+      - name: Preserve audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-atlas-direct-batch-two-audit
+          path: data/geography/research/sacred-atlas-direct-source-batch-two-report-20261105.v1.json
+          if-no-files-found: warn
+          retention-days: 7
