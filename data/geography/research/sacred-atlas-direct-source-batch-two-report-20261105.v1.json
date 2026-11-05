@@ -2,12 +2,63 @@
   "schema": "AO_SACRED_ATLAS_DIRECT_SOURCE_BATCH_TWO_REPORT_V1",
   "as_of": "2026-11-05",
   "attempted": 4,
-  "admitted_on_pr_branch": 1,
-  "held": 3,
+  "admitted_on_pr_branch": 4,
+  "held": 0,
   "main_published_by_this_workflow": 0,
-  "preexisting_media_file_sha256": "08df42a4ca1276c1e76451b9ba3b4b1cd8d3ff3aadb9f808c5283fdbd181f8d8",
+  "preexisting_media_file_sha256": "10926ed8805a7a89cb131f10cad2d59034386161b65dae9f5d0f1aa0828d33dc",
   "prior_approved_covers_preserved": 384,
   "approved": [
+    {
+      "place_id": "place:FR:cathedrale-notre-dame-reims",
+      "source_url": "https://www.pexels.com/photo/reims-cathedral-facade-17444784/",
+      "source_original_sha1": "3b91ac236e8d0a374490da1dd29247f56de78f49",
+      "source_page_sha256": null,
+      "licence_terms_sha256": null,
+      "source_image_url": "https://images.pexels.com/photos/17444784/pexels-photo-17444784.jpeg?cs=srgb&dl=pexels-nathan-neve-322731913-17444784.jpg&fm=jpg",
+      "asset_path": "assets/approved/place-media/pf-eb8aef2c4e49e704386405.webp",
+      "derivative_sha256": "929f58515dddd3b737a4e3baf3fd6de46d577a6696c4e16cb1458ccc4e58676c",
+      "size": [
+        1280,
+        882
+      ],
+      "credit": "Nathan Neve",
+      "licence": "PEXELS_LICENSE",
+      "depiction": "exterior"
+    },
+    {
+      "place_id": "place:VA:saint-peter-vatican",
+      "source_url": "https://www.pexels.com/photo/front-view-of-st-peter-s-basilica-in-vatican-city-36811703/",
+      "source_original_sha1": "66c60f40da101cebfdc68833ebacb67a9602e8d6",
+      "source_page_sha256": null,
+      "licence_terms_sha256": null,
+      "source_image_url": "https://images.pexels.com/photos/36811703/pexels-photo-36811703.jpeg?cs=srgb&dl=pexels-gabriel-rojas-acevedo-2160559205-36811703.jpg&fm=jpg",
+      "asset_path": "assets/approved/place-media/pf-d48f3244a48afa7673710d.webp",
+      "derivative_sha256": "b00d44037a403e85e3139c127da9c4e4b55e59335f85163eed0ca200f4d709fe",
+      "size": [
+        1280,
+        853
+      ],
+      "credit": "Gabriel Rojas Acevedo",
+      "licence": "PEXELS_LICENSE",
+      "depiction": "exterior"
+    },
+    {
+      "place_id": "place:DE:aachener-dom-four-textiles",
+      "source_url": "https://www.pexels.com/photo/aerial-view-of-aachen-cathedral-in-germany-35381089/",
+      "source_original_sha1": "976f33a4d7b019a25bc9e3aab166eca35cbaef7b",
+      "source_page_sha256": null,
+      "licence_terms_sha256": null,
+      "source_image_url": "https://images.pexels.com/photos/35381089/pexels-photo-35381089.jpeg?cs=srgb&dl=pexels-part1-35381089.jpg&fm=jpg",
+      "asset_path": "assets/approved/place-media/pf-e50389a02a2f3382138b48.webp",
+      "derivative_sha256": "7da938e485e2238b7efa29a60d35d5a5b0d1b80c3af40f23b37bdb857509c82c",
+      "size": [
+        1280,
+        960
+      ],
+      "credit": "Peter Hölterhoff",
+      "licence": "PEXELS_LICENSE",
+      "depiction": "site_exterior_not_relic"
+    },
     {
       "place_id": "place:CL:sanctuary-of-our-lady-of-la-tirana-chile",
       "source_url": "https://www.flickr.com/photos/9508280@N07/7704078194",
@@ -26,18 +77,5 @@
       "depiction": "exterior"
     }
   ],
-  "holds": [
-    {
-      "place_id": "place:FR:cathedrale-notre-dame-reims",
-      "reason": "HTTPError: HTTP Error 403: Forbidden"
-    },
-    {
-      "place_id": "place:VA:saint-peter-vatican",
-      "reason": "HTTPError: HTTP Error 403: Forbidden"
-    },
-    {
-      "place_id": "place:DE:aachener-dom-four-textiles",
-      "reason": "HTTPError: HTTP Error 403: Forbidden"
-    }
-  ]
+  "holds": []
 }
