@@ -1,0 +1,24 @@
+name: Sacred Atlas W1 — 56-place guide queue, first 10 bilingual source drafts
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/shrines/research/sacred-atlas-wave1-first10-extended-guides-20261105.v1.json'
+      - 'data/shrines/research/sacred-atlas-wave1-batch56-editorial-closure-20261105.v1.json'
+      - 'tests/sacred-atlas-wave1-batch56-first10-guides.mjs'
+      - '.github/workflows/sacred-atlas-wave1-first10-guides.yml'
+permissions:
+  contents: read
+jobs:
+  source-scoped-guide-integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Reconcile all 56 canonical identities, ten bilingual drafts, and preserve publication fences
+        run: node tests/sacred-atlas-wave1-batch56-first10-guides.mjs
