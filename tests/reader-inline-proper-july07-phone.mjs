@@ -132,6 +132,111 @@ try{
   await page.locator("dialog.ao-proper-reference-zoom header button").click();
   assert.equal(await page.locator("dialog.ao-proper-reference-zoom").count(),0);
   await page.screenshot({path:resolve(root,".tmp/mass-inline-proper-july07/notation-"+width+".png"),fullPage:true});
+  // Second actual 1962 selected Mass: All Saints, five *existing* archived
+  // Proper scores, same Exsurge view, same 65-card paragraph IDs.
+  const allSaints=await page.evaluate(async()=>{
+   const {ALL_SAINTS_REFERENCE_GABC}=await import("/src/mass/reader-inline-all-saints-reference.js");
+   const {referenceScoresForParagraph,createDatedProperNotationPreview,
+    JULY07_REFERENCE_CSS}=await import("/src/mass/reader-inline-proper-reference.js");
+   const resolvedMass={date:"2026-11-01",form:"SOLEMN",
+    proper:{data:{sourcePath:"Sancti/11-01"}},overlays:[]};
+   const latin=[
+    "Gaudeámus omnes in Dómino, diem festum celebrántes sub honóre Sanctórum ómnium.",
+    "Timéte Dóminum, omnes Sancti ejus: quóniam nihil deest timéntibus eum. V. Inquiréntes autem Dóminum.",
+    "Veníte ad me, omnes, qui laborátis et oneráti estis: et ego refíciam vos.",
+    "Justórum ánimæ in manu Dei sunt, et non tanget illos torméntum malítiæ: illi autem sunt in pace, allelúja.",
+    "Beáti mundo corde, quóniam ipsi Deum vidébunt; beáti pacífici, quóniam fílii Dei vocabúntur."
+   ];
+   const slotIds=["INTROIT.1","GRADUAL.1","ALLELUIA_TRACT_SEQUENCE.1",
+    "OFFERTORY.1","COMMUNION.1"];
+   const paragraphs=latin.map((text,i)=>({
+    id:slotIds[i],kind:"TEXT",primary:"Vernacular source text "+i,
+    alternate:text
+   }));
+   const selected=paragraphs.map(p=>referenceScoresForParagraph({
+    paragraph:p,resolvedMass,form:resolvedMass.form}).map(x=>x.id));
+   const wrong={
+    date:referenceScoresForParagraph({
+     paragraph:paragraphs[0],resolvedMass:{...resolvedMass,date:"2026-11-02"},
+     form:resolvedMass.form}).length,
+    path:referenceScoresForParagraph({
+     paragraph:paragraphs[0],resolvedMass:{...resolvedMass,
+      proper:{data:{sourcePath:"Sancti/11-02"}}},
+     form:resolvedMass.form}).length,
+    low:referenceScoresForParagraph({
+     paragraph:paragraphs[0],resolvedMass,form:"LOW"}).length,
+    requiem:referenceScoresForParagraph({
+     paragraph:paragraphs[0],resolvedMass:{...resolvedMass,overlays:["REQUIEM"]},
+     form:resolvedMass.form}).length
+   };
+   const together={...paragraphs[1],alternate:latin[1]+"\n"+latin[2]};
+   const gradualWithAlleluia=referenceScoresForParagraph({
+    paragraph:together,resolvedMass,form:resolvedMass.form}).map(x=>x.id);
+   const host=document.createElement("section");
+   host.className="ao-reader-shell";host.dataset.aoReaderShell="";
+   host.dataset.mode="LIVE";
+   host.style.cssText="width:100%;box-sizing:border-box;display:block;--ao-text:#eeeae7;--ao-muted:#a5a5a5";
+   const style=document.createElement("style");style.textContent=JULY07_REFERENCE_CSS;
+   const body=document.createElement("div");body.className="ao-prayer-body";
+   body.style.cssText="width:100%;box-sizing:border-box;padding:0 52px;min-width:0";
+   host.append(style,body);document.body.replaceChildren(host);
+   document.body.style.margin="0";
+   for(const p of paragraphs){
+    const row=document.createElement("p");row.className="ao-reader-paragraph";
+    row.dataset.paragraphId=p.id;row.style.cssText="box-sizing:border-box;min-width:0";
+    const primary=document.createElement("span");primary.className="ao-line-primary";
+    primary.textContent=p.primary;
+    const translated=document.createElement("span");translated.className="ao-line-secondary";
+    translated.textContent=p.alternate;row.append(primary,translated);body.append(row);
+   }
+   const controller=createDatedProperNotationPreview({root:host,enabled:true});
+   const mounted=controller.render({mode:"LIVE",form:resolvedMass.form,
+    resolvedMass,paragraphs});
+   for(let i=0;i<120&&controller.state().rendered<5;i++)
+    await new Promise(r=>setTimeout(r,120));
+   const rendered=controller.state().rendered;
+   const renderedSvg=body.querySelectorAll(".ao-proper-reference-staff svg").length;
+   const labels=[...body.querySelectorAll(".ao-proper-reference-label")].map(x=>x.textContent);
+   const originalsUntouched=paragraphs.every(p=>{
+    const row=body.querySelector('[data-paragraph-id="'+p.id+'"]');
+    return row.querySelector(".ao-line-primary").textContent===p.primary &&
+     row.querySelector(".ao-line-secondary").textContent===p.alternate;
+   });
+   const widths=[...body.querySelectorAll("[data-reference-score]")].map(x=>({
+    score:x.dataset.referenceScore,
+    w:x.getBoundingClientRect().width,
+    staff:x.querySelector(".ao-proper-reference-staff").getBoundingClientRect().width
+   }));
+   const approval=[...body.querySelectorAll("[data-reference-score]")]
+    .every(x=>x.dataset.approved==="false");
+   const sources=ALL_SAINTS_REFERENCE_GABC.map(x=>({
+    id:x.id,part:x.part,sourceUrl:x.sourceUrl,sha:x.sha256,
+    endsProperly:x.gabc.includes("(::)"),hasScoreHeader:x.gabc.includes("%%\n")
+   }));
+   return {mounted,rendered,renderedSvg,selected,wrong,gradualWithAlleluia,
+    labels,originalsUntouched,widths,approval,sources};
+  });
+  assert.deepEqual(allSaints.selected,[
+   ["GREGOBASE-752"],["GREGOBASE-371"],["GREGOBASE-1237"],
+   ["GREGOBASE-835"],["GREGOBASE-345"]]);
+  assert.deepEqual(allSaints.gradualWithAlleluia,["GREGOBASE-371","GREGOBASE-1237"]);
+  assert.deepEqual(allSaints.wrong,{date:0,path:0,low:0,requiem:0});
+  assert.equal(allSaints.mounted,5);
+  assert.equal(allSaints.rendered,5,"All five already-archived Gregorian Propers must engrave");
+  assert.equal(allSaints.renderedSvg,5,"All Saints must display five SVG square-notation scores");
+  assert.equal(allSaints.originalsUntouched,true);
+  assert.equal(allSaints.approval,true);
+  assert.ok(allSaints.labels.every(t=>t.includes("review pending")));
+  assert.ok(allSaints.widths.every(x=>x.w<=width+1&&x.staff>120),
+   "All Saints score overflow at "+width+": "+JSON.stringify(allSaints.widths));
+  assert.ok(allSaints.sources.every(x=>x.endsProperly&&x.hasScoreHeader&&
+   x.sourceUrl==="https://gregobase.selapa.net/chant.php?id="+x.id.slice(10)));
+  await page.screenshot({path:resolve(root,
+   ".tmp/mass-inline-proper-july07/all-saints-"+width+".png"),fullPage:true});
+  console.log("INLINE_1961_ALL_SAINTS_PHONE_PASS "+JSON.stringify({
+   width,rendered:allSaints.rendered,widths:allSaints.widths,
+   sourceTextIntact:allSaints.originalsUntouched
+  }));
   console.log("INLINE_1961_JULY07_PHONE_PASS "+JSON.stringify({
    width,svg:result.actualSvg,mounted:result.mounted,cardDimensions:result.cardDimensions,
    sourceTextIntact:result.sourceTextIntact,blocked:result.blocked}));
