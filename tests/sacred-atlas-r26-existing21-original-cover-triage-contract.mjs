@@ -5,6 +5,7 @@ const m=read("data/geography/research/sacred-atlas-round26-existing21-cover-tria
 const prior=read("data/geography/research/sacred-atlas-round25-23place-64-original-review-20261104.json");
 const geo=read("data/geography/seed-registry.v1.json");
 const covers=read("data/geography/approved-place-media.v1.json");
+const directFive=read("data/geography/research/sacred-atlas-direct-open-photo-five-release-report-20261105.v1.json");
 const gallery=read("data/geography/approved-place-gallery.v1.json");
 const prev151=read("data/geography/research/sacred-atlas-existing-first-151-photo-reconciliation-20261104.v1.json");
 assert.equal(m.schema,"AO_SACRED_ATLAS_21_PLACE_61_EXACT_ORIGINAL_COVER_TRIAGE_V1");
@@ -14,8 +15,33 @@ assert.equal(m.production_baseline.approved_covers,379);
 assert.equal(m.production_baseline.approved_gallery,42);
 assert.equal(m.production_baseline.without_approved_covers,151);
 assert.equal(geo.places.length,530);
-assert.equal(covers.items.length,379);
-assert.equal(gallery.items.length,42);
+// R26 is a frozen November 4 research cohort. The approved-cover registry
+// is *live* and may grow independently; do not mistake legitimate later
+// approvals for an R26 editorial promotion. Validate five admitted photos
+// against the separately sourced November 5 release evidence instead.
+assert.equal(directFive.schema,"AO_SACRED_ATLAS_DIRECT_OPEN_PHOTO_FIVE_REPORT_V1");
+assert.equal(directFive.admitted_on_branch,5);
+assert.equal(directFive.no_existing_covers_replaced,true);
+assert.equal(directFive.accepted.length,5);
+assert.ok(covers.items.length>=m.production_baseline.approved_covers+directFive.accepted.length,
+  "A later release removed existing vetted covers or one of the five new admissions");
+assert.ok(gallery.items.length>=m.production_baseline.approved_gallery,
+  "A later release removed previously approved gallery art");
+const currentCoverById=new Map(covers.items.map(c=>[c.place_id,c]));
+assert.equal(currentCoverById.size,covers.items.length,
+  "Approved cover registry contains duplicate canonical Place IDs");
+for(const proof of directFive.accepted){
+ const cover=currentCoverById.get(proof.place_id);
+ assert.ok(cover,"Independently released cover missing: "+proof.place_id);
+ assert.equal(cover.asset_path,proof.asset);
+ assert.equal(cover.derivative_sha256,proof.derivative_sha256);
+ assert.equal(cover.source_sha1,proof.original_sha1);
+ assert.equal(cover.rights_verified,true);
+ assert.equal(cover.subject_verified,true);
+ assert.equal(cover.crop_reviewed,true);
+ assert.ok(!m.rows.some(r=>r.place_id===proof.place_id),
+   "Independently released cover collides with still-undecided R26 triage");
+}
 assert.equal(m.rows.length,23);
 assert.equal(new Set(m.rows.map(x=>x.place_id)).size,23);
 const priorById=new Map(prior.places.map(x=>[x.place_id,x]));
