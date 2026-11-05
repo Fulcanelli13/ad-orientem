@@ -70,7 +70,7 @@ export function buildFive2026PinnedSourceGapDispositions({evidence,closeout,inve
      selectedRow.dates?.length!==expected.dates||
      selectedRow.principalIds?.length!==expected.dates||
      entry.approvedSourceAlias!=null||entry.aliasOf!=null||
-     !/^([A-Z_]+)$/.test(entry.nextDecision??"")||
+     !/^[A-Z0-9_]+$/.test(entry.nextDecision??"")||
      typeof entry.structure!=="string"||entry.structure.length<40)
     fail("SOURCE_FAMILY_AUTHORITY_OR_OCCURRENCE_DRIFT");
   const isLegacy=expected.legacySha!==null,archive=entry.historicalSource;
