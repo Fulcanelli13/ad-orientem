@@ -178,5 +178,5 @@ export function createDatedProperNotationPreview({
   state:()=>Object.freeze({enabled:active,mounted:entries.length,
    rendered:entries.filter(e=>e.host.dataset.referenceReady==="true").length,
    orationAmenSourceReady:orationAmenHandoffs.length,
-   orationAmenMusicPending:true})});
+   orationAmenMusicPending:orationAmenHandoffs.length>0})});
 }
