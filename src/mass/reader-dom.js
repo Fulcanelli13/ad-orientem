@@ -5122,6 +5122,9 @@ export function createReaderDomAdapter({
       // Opt-in source reference; never changes canonical Mass text or cues.
       properNotationPreview.render({mode,form:prepared?.session?.resolvedMass?.form,
         resolvedMass:prepared?.session?.resolvedMass,
+        selectedSettings:selectedMassInlineSettings({
+          localProgramme:chantProgramme,resolvedMass:prepared?.session?.resolvedMass
+        }),
         paragraphs:current.paragraphs});
       ensureShortCardCueTravel();
       // The fixed-height LIVE stage can settle a frame after renderMoment
