@@ -106,10 +106,12 @@ try{
     const geom=await injected.evaluate(el=>{
       const img=el.querySelector("img"),scroll=el.closest(".aoDevoCardScroll");
       const rect=img.getBoundingClientRect(),owner=scroll.getBoundingClientRect();
+      const cap=el.querySelector("figcaption"),capStyle=getComputedStyle(cap),capRect=cap.getBoundingClientRect();
       return {natural:[img.naturalWidth,img.naturalHeight],rendered:[rect.width,rect.height],
         card:[owner.width,owner.height],viewport:innerWidth,
         bodyWidth:document.documentElement.scrollWidth,
-        caption:el.querySelector("figcaption")?.textContent?.length,
+        caption:cap.textContent?.length,captionFontPx:parseFloat(capStyle.fontSize),
+        captionLineHeightPx:parseFloat(capStyle.lineHeight),captionWidth:capRect.width,
         photoFitsCard:rect.left>=owner.left-3&&rect.right<=owner.right+3,
         anchorCount:el.querySelectorAll("figcaption a[href^='https://']").length};
     });
@@ -119,6 +121,9 @@ try{
     assert.ok(geom.photoFitsCard,"Photo overflows reader card: "+JSON.stringify(geom));
     assert.ok(geom.bodyWidth<=width+3,"Horizontal phone overflow: "+JSON.stringify(geom));
     assert.ok(geom.anchorCount===2&&geom.caption>85,"Source and licensed photograph credits missing");
+    assert.ok(geom.captionFontPx>=13.8,"Artwork credits must remain legible at 320/390px: "+JSON.stringify(geom));
+    assert.ok(geom.captionLineHeightPx>=20,"Artwork credit line height too cramped: "+JSON.stringify(geom));
+    assert.ok(geom.captionWidth<=geom.card[0]+3,"Artwork credits overflow the prayer card: "+JSON.stringify(geom));
     const name=lang+"-"+width+"-station-"+String(n).padStart(2,"0")+".png";
     await page.screenshot({path:join(out,name),animations:"disabled"});
     const detail=lang+"-"+width+"-station-"+String(n).padStart(2,"0")+"-figure.png";
