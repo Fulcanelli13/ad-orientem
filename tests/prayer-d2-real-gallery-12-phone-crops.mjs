@@ -77,7 +77,7 @@ try{
     const symbol=el.querySelector(".aoPrayPilotTileSymbol");
     if(!symbol)throw Error("No native gallery image socket");
     symbol.replaceChildren();
-    symbol.style.display="grid"; // pending cards conceal art socket; QA mimics published layout
+    symbol.style.setProperty("display","grid","important"); // pending-card CSS uses !important; unlock only this test DOM
     const img=document.createElement("img");
     img.className="aoPrayPilotReleasedTilePhoto";
     img.setAttribute("data-ao-private-qa-image","never-published");
@@ -103,18 +103,21 @@ try{
      const photo=el.querySelector("img[data-ao-private-qa-image]");
      const tile=el.getBoundingClientRect(),img=photo.getBoundingClientRect();
      const caption=el.querySelector(".aoPrayPilotTileCaption");
-     const captionStyle=getComputedStyle(caption),photoStyle=getComputedStyle(photo);
+     const captionStyle=getComputedStyle(caption),photoStyle=getComputedStyle(photo),symbolStyle=getComputedStyle(photo.parentElement);
      const iw=photo.naturalWidth,ih=photo.naturalHeight,tw=img.width,th=img.height;
      const scale=photoStyle.objectFit==="cover"?Math.max(tw/iw,th/ih):Math.min(tw/iw,th/ih);
      const visibleFraction=photoStyle.objectFit==="cover"?Math.min(1,(tw/scale)/iw)*Math.min(1,(th/scale)/ih):1;
      return {tile:[tile.width,tile.height],source:[iw,ih],fit:photoStyle.objectFit,position:photoStyle.objectPosition,
-      imageRendered:[img.width,img.height],visibleImageFraction:Math.round(visibleFraction*10000)/10000,
+      imageRendered:[img.width,img.height],symbolDisplay:symbolStyle.display,visibleImageFraction:Math.round(visibleFraction*10000)/10000,
       title:caption?.querySelector("strong")?.textContent?.trim(),
       captionOpacity:Number(captionStyle.opacity),captionVisible:captionStyle.visibility,
       horizontalOverflow:Math.max(0,document.documentElement.scrollWidth-innerWidth),
       routeOwner:el.dataset.p435930Family,publicationBinding:el.dataset.aoArtBinding};
     });
     assert.deepEqual(geometry.source,[2720,3400]);
+    assert.ok(geometry.imageRendered[0]>=100&&geometry.imageRendered[1]>=100,"QA image is hidden; do not count blank cards as photo evidence: "+JSON.stringify(geometry));
+    assert.notEqual(geometry.symbolDisplay,"none","Painting container is hidden by editorial-pending CSS");
+    assert.ok(geometry.visibleImageFraction>0&&geometry.visibleImageFraction<=1,"Visible painting fraction must be finite and positive");
     assert.equal(geometry.title,ui==="fr"?"Prières essentielles":"Essential Prayers");
     assert.equal(geometry.publicationBinding,"editorial-pending");
     assert.equal(geometry.captionVisible,"visible");
