@@ -111,7 +111,7 @@ const safeFetch=async url=>{
    fail("NETWORK_"+path);
   }
   if(response.ok&&response.type!=="opaque")return response;
-  if([429,500,502,503,504].includes(response.status)&&attempt<2){
+  if([408,429,500,502,503,504].includes(response.status)&&attempt<2){
    await new Promise(done=>setTimeout(done,400*(attempt+1)));continue;
   }
   fail("FETCH_"+response.status+"_"+path);
