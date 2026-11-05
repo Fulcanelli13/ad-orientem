@@ -74,6 +74,19 @@ def source_lookup(row):
     if len(infos)!=1:raise ValueError("ORIGINAL_FILE_INFO_MISSING")
     return infos[0]
 
+def validate_jpeg_stream(raw,decoder_format):
+    """Accept a genuine JPEG or JPEG-based MPO without loosening the byte lock.
+
+    Panasonic camera JPEGs can contain an MPF segment and be identified by
+    Pillow as MPO, despite Commons advertising MIME image/jpeg. Treat only
+    that JPEG-based decoder family as valid; reject PNG/WebP/unknown data.
+    """
+    if len(raw)<4 or not raw.startswith(b"\\xff\\xd8\\xff"):
+        raise ValueError("JPEG_CONTAINER_MAGIC_MISMATCH")
+    if decoder_format not in ("JPEG","MPO"):
+        raise ValueError("JPEG_DECODER_FORMAT_MISMATCH:"+str(decoder_format))
+    return decoder_format
+
 def verify(row,retain_verified_original=False):
     info=source_lookup(row)
     if info.get("sha1")!=row["original_sha1"]:
@@ -102,7 +115,11 @@ def verify(row,retain_verified_original=False):
     from PIL import Image, ImageOps
     Image.MAX_IMAGE_PIXELS=MAX_IMAGE_PIXELS
     with Image.open(io.BytesIO(orig)) as image:
-        if image.format!="JPEG":raise ValueError("JPEG_DECODER_FORMAT_MISMATCH")
+        decoder_format=validate_jpeg_stream(orig,image.format)
+        # The user chose the Commons source's displayed first image, not an
+        # arbitrary alternate MPO frame. Decode that first image explicitly.
+        image.seek(0)
+        image.load()
         decoded=ImageOps.exif_transpose(image)
         if sorted(decoded.size)!=sorted((w,h)):raise ValueError("DECODER_PIXEL_DIMENSIONS_MISMATCH")
         preview=decoded.convert("RGB")
@@ -131,6 +148,8 @@ def verify(row,retain_verified_original=False):
        "original_pixel_dimensions":[w,h],
        "original_sha1":row["original_sha1"],
        "original_bytes":len(orig),
+       "source_decoder_format":decoder_format,
+       "source_frame_index":0,
        "preview_webp_sha256":hashlib.sha256(bytes_out).hexdigest(),
        "preview_webp_path":path.name,
        "preview_pixel_dimensions":list(preview.size),
@@ -206,6 +225,12 @@ def main():
     }
     (DEST/"report.json").write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf8")
     print(json.dumps({k:v for k,v in report.items() if k!="results"},ensure_ascii=False),flush=True)
+    # A report containing zero recovered originals is NOT a successful
+    # acquisition. Keep the report artifact, but fail CI and do not retry.
+    verified_count=report["originals_verified"]
+    if verified_count!=len(subset):
+        print("SOURCE_RECOVERY_INCOMPLETE: "+str(verified_count)+"/"+str(len(subset))+" originals verified",file=sys.stderr,flush=True)
+        return 2
     return 0
 
 if __name__=="__main__":sys.exit(main())
