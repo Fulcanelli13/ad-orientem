@@ -44,8 +44,11 @@ for(const score of PARTICIPATION_REFERENCE_SCORES){
    "Exact source fragment text (not the translation or combined incipit)");
  }else{
   assert.ok(["BENEDICAMUS_DOMINO","REQUIESCANT_IN_PACE"].includes(score.formula));
-  assert.notEqual(norm(score.sourceLatin),norm(cueText.get(score.sourceCueIds[0])),
-   "Conditional dismissal must NEVER copy ordinary Ite Mass source text");
+  if(score.kind==="DISMISSAL_MINISTER"||score.formula==="REQUIESCANT_IN_PACE")
+   assert.notEqual(norm(score.sourceLatin),norm(cueText.get(score.sourceCueIds[0])),
+    "A conditional dismissal must not borrow an ordinary Ite cue");
+  else assert.equal(norm(score.sourceLatin),norm(cueText.get(score.sourceCueIds[0])),
+    "Benedicamus has the SAME Deo gratias text but a DIFFERENT response melody");
  }
 
  assert.ok(score.sourceCueIds.every(x=>score.kind==="CELEBRANT_INTONATION"
