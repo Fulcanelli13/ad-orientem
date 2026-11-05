@@ -495,4 +495,76 @@ assert.ok(frenchMissal.sourceModel.cards.some(card=>(card.paragraphs??[]).some(p
   String(p.primary??"").includes(sourceFrench)||String(p.secondary??"").includes(sourceFrench)
 )),"French cue vanished when switching LIVE to MISSAL");
 
+
+// Direct source-first LIVE mode rebuild: an opt-in must produce the same
+// cards and exact cue anchors WITHOUT allocating a 39-card source model.
+function verifyDirectMode(prepared,label,options={}){
+  const inputs={prepared,data:options.data??data,mode:"LIVE"};
+  const reference=buildReaderModeModels(inputs);
+  const rebuilt=buildReaderModeModels({...inputs,directSourceCurated:true});
+  assert.equal(reference.sourceModel.totalCards,
+    label.includes("Holy Thursday Mandatum")?39:
+      label.includes("Holy Thursday")?38:label.includes("Nuptial")?42:39);
+  assert.equal(rebuilt.sourceModel.totalCards,30,label+" source-only macros");
+  assert.equal(rebuilt.sourceModel.structureOwner,"BASE_30_MACROS");
+  assert.equal(rebuilt.presentationModel.sourceAuthorityModel,rebuilt.sourceModel,
+    label+" direct source owner must not be hidden 39-card model");
+  assert.equal(rebuilt.presentationModel.directSourceToCurated,true);
+  assert.equal(rebuilt.presentationModel.totalCards,reference.presentationModel.totalCards,
+    label+" presentation total drift");
+  const projection=c=>({
+    sectionId:c.sectionId,sourceSectionId:c.sourceSectionId,
+    sequence:c.sequence,sourceSequence:c.sourceSequence,guideSequence:c.guideSequence,
+    title:c.title,part:c.part,paragraphs:c.paragraphs,blocks:c.blocks,
+    stateOnly:c.stateOnly,omittedByRite:c.omittedByRite,
+    sourceEventIds:c.sourceEventIds,eventIds:c.eventIds,provenance:c.provenance,
+  });
+  assert.deepEqual(rebuilt.presentationModel.cards.map(projection),
+    reference.presentationModel.cards.map(projection),
+    label+" direct LIVE changed visible source wording or card boundaries");
+  for(const cue of ["AO.SM.C0173","AO.SM.C0249","AO.SM.C0267"]){
+    const from=reference.presentationModel.cards.find(card=>
+      card.paragraphs.some(p=>(p.sourceCueIds??[]).includes(cue)));
+    if(!from)continue;
+    const anchor=captureReaderModeAnchor(from,{activeCueId:cue});
+    const target=findReaderModeAnchorCard(rebuilt.presentationModel,anchor);
+    assert.equal(target?.sectionId,from.sectionId,label+" exact LIVE cue anchor "+cue);
+    const missal=buildReaderModeModels({...inputs,mode:"MISSAL"});
+    const reverse=findReaderModeAnchorCard(missal.presentationModel,anchor);
+    assert.ok(reverse?.paragraphs.some(p=>(p.sourceCueIds??[]).includes(cue)),
+      label+" exact LIVE to MISSAL anchor "+cue);
+  }
+  assert.throws(()=>buildReaderModeModels({
+    ...inputs,directSourceCurated:true,reviewExpandedCards:false,
+  }),/DIRECT_CURATED_LIVE_REQUIRES_APPROVED_PRESENTATION/);
+  return rebuilt;
+}
+for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+  const variant={...prepared,session:{...prepared.session,
+    resolvedMass:{...prepared.session.resolvedMass,form}}};
+  assert.equal(verifyDirectMode(variant,form).presentationModel.totalCards,65);
+}
+assert.equal(verifyDirectMode(holyThursdayPrepared,"Holy Thursday").presentationModel.totalCards,61);
+assert.equal(verifyDirectMode(nuptialPrepared,"Nuptial").presentationModel.totalCards,68);
+const mandatumSrc=load("../data/mass/special-days-core.v1.1.json")
+  .optional_inserts.HOLY_THURSDAY_MANDATUM;
+const mandatumPrepared={...holyThursdayPrepared,session:{
+  ...holyThursdayPrepared.session,
+  resolvedMass:{...holyThursdayPrepared.session.resolvedMass,
+    provenance:{holyThursday:{mandatumPresent:true}}},
+}};
+const mandatumData={...data,mandatumSource:mandatumSrc};
+const directMandatum=verifyDirectMode(mandatumPrepared,"Holy Thursday Mandatum",{data:mandatumData});
+assert.equal(directMandatum.presentationModel.totalCards,62);
+assert.equal(directMandatum.presentationModel.cards.filter(c=>
+  c.sourceSectionId==="AO.HT.MANDATUM").length,1);
+for(const sourceSectionId of ["AO.NUPTIAL.01","AO.NUPTIAL.02","AO.NUPTIAL.03"]){
+  const from=nuptialLive.presentationModel.cards.find(c=>c.sectionId===sourceSectionId);
+  const target=findReaderModeAnchorCard(
+    verifyDirectMode(nuptialPrepared,"Nuptial").presentationModel,
+    captureReaderModeAnchor(from));
+  assert.equal(target?.sectionId,sourceSectionId);
+}
+console.log("Direct LIVE mode switch: PASS — four forms, Holy Thursday/Mandatum, Nuptial, exact cue and MISSAL anchors, source 30 not 39.");
+
 console.log("reader mode switch: PASS — MISSAL/LIVE with legacy preference migration and exact source anchors.");

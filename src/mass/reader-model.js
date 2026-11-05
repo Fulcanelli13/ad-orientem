@@ -49,6 +49,7 @@ export function createMassReaderModel({
   vernacularLanguage="en",
   holyThursdayMandatumPresent=false,
   holyThursdayMandatumSource=null,
+  sourceMacrosOnly=false,
 }={}){
   if(!resolvedMass || resolvedMass.schema!=="ao-resolved-mass-v2") {
     throw new TypeError("ao-resolved-mass-v2 required");
@@ -136,6 +137,15 @@ export function createMassReaderModel({
     previousCard:sectionId=>neighbor(sectionId,"previous"),
     nextCard:sectionId=>neighbor(sectionId,"next"),
   });
+  // Direct LIVE curation takes only these 30 authoritative macro source
+  // records. Exceptional Mass insertions are composed into the direct
+  // display, not allocated in a navigable 39-section intermediary. This
+  // opt-in has no effect on the existing public reader path.
+  if(sourceMacrosOnly===true){
+    if(String(resolvedMass.presentationMode??"").toUpperCase()!=="MISSAL")
+      throw new Error("DIRECT_LIVE_MACRO_SOURCE_REQUIRES_MISSAL_COMPILATION");
+    return baseModel;
+  }
   let projected=baseModel;
   if(String(resolvedMass.presentationMode??"").toUpperCase()==="LIVE"){
     if(!canonSourceMap)throw new Error("SOURCE_FIRST_LIVE_CANON_MAP_REQUIRED");
