@@ -124,8 +124,11 @@ try{
      "All Souls wrongly offers Ite missa est");
    assert.equal(result.plan.normalLastGospel,true,
      "Requiem without a selected Absolution must retain the Last Gospel");
-   assert.match(result.slots.fr.prefaceText||"",/^Defunctorum\b/i,
-     "All Souls did not select the proper Latin Preface of the Dead");
+   assert.match(result.sourcePreface||"",/^Defunctorum\n℣\.\s*Vere dignum\b/iu,
+     "Original Latin source must still identify the Preface of the Dead");
+   for(const language of ["en","fr"])
+     assert.match(result.slots[language].prefaceText||"",/^Vere dignum\b/iu,
+       "Reader must begin the Preface prose without a source heading or false versicle");
   }
  }
  // The existing production Calendar engine already resolves and labels all
@@ -153,6 +156,7 @@ try{
        const plan=compileMassPlan(prepared);
        const selected=prepared?.proper?.data??prepared?.proper;
        const languages={};
+       const sourceHeading=String(selected?.preface?.la??selected?.preface?.lat??"").slice(0,75);
        for(const language of ["en","fr"]){
          const slots=properToReaderSlots(selected,{language}).slots;
          languages[language]={
@@ -164,7 +168,7 @@ try{
            postcommunion:slots.POSTCOMMUNION_SET.status
          };
        }
-       rows.push({index,date:resolved?.date,status:resolved?.status,
+       rows.push({index,date:resolved?.date,status:resolved?.status,sourceHeading,
          principalId:resolved?.day?.main?.id,selectedPath,
          selectedMassOption:resolved?.day?.selectedMassOption?.path,
          availableOptions:resolved?.day?.massOptions?.map(x=>({id:x.id,path:x.path,label:x.label})),
@@ -197,7 +201,10 @@ try{
      for(const slot of ["preface","collect","epistle","gospel","postcommunion"])
        assert.equal(item.languages[language][slot],"READY",
          "All Souls Mass "+(index+1)+" "+language+" "+slot+" not ready");
-     assert.match(item.languages[language].heading||"",/^Defunctorum\b/i);
+     assert.match(item.sourceHeading||"",/^Defunctorum\n℣\.\s*Vere dignum\b/iu,
+       "Each original All Souls donor must retain its proper source title");
+     assert.match(item.languages[language].heading||"",/^Vere dignum\b/iu,
+       "Reader must show prose rather than original Preface source metadata");
    }
  }
  console.log("ALL_SOULS_THREE_REAL_MASS_OPTIONS="+JSON.stringify(variants));

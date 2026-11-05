@@ -57,6 +57,29 @@ function stripPinnedReadingResponse(text,slot,locale){
   return Object.freeze({text:stripped||raw,suppressed:expression.test(raw)});
 }
 
+// Imported 1962 Prefaces include a *source heading* followed by "℣."
+// before the continuous Vere dignum paragraph. The heading identifies the
+// Preface, but neither it nor this versicle sign is a spoken Preface phrase.
+// Strip only this three-language, exact-incipit wrapper in the reader
+// projection. The original Proper, source identity and Missal dialogues
+// remain unchanged; genuine ℣/℟ elsewhere are never touched.
+export function displayPrefaceProseFromImportedSource(latin,vernacular,{language="en"}={}){
+  const lat=String(latin??""),other=String(vernacular??"");
+  const fr=String(language).toLowerCase().startsWith("fr");
+  const latinWrapper=/^[^\r\n]{1,70}\r?\n℣\.\s*(?=Vere dignum\b)/iu;
+  const translatedWrapper=fr
+    ?/^[^\r\n]{1,70}\r?\n℣\.\s*(?=Il est vraiment\b)/iu
+    :/^[^\r\n]{1,70}\r?\n℣\.\s*(?=It is truly meet\b)/iu;
+  const matchesLatin=latinWrapper.test(lat),matchesTranslation=translatedWrapper.test(other);
+  // No partial pair: an uncertain or changed source stays visible verbatim.
+  if(!matchesLatin||!matchesTranslation)return Object.freeze({latin:lat,vernacular:other,stripped:false});
+  return Object.freeze({
+    latin:lat.replace(latinWrapper,""),
+    vernacular:other.replace(translatedWrapper,""),
+    stripped:true,
+  });
+}
+
 function readyEnvelope(slot,value,{language="en"}={}){
   const rows=values(value,language);
   // All orations must be source- and translation-complete; no fallback
@@ -117,10 +140,15 @@ function readyEnvelope(slot,value,{language="en"}={}){
           composed.sourcePath??common.sourcePath,
       }));
     }else{
+      const baseLatin=spokenBody(row.lat??row.la,"lat");
+      const baseVernacular=spokenBody(vernacularValue(row,language),language);
+      const displayed=slot==="PREFACE"
+        ?displayPrefaceProseFromImportedSource(baseLatin,baseVernacular,{language})
+        :{latin:baseLatin,vernacular:baseVernacular};
       paragraphs.push(Object.freeze({
         ...common,id:group,kind:"TEXT",
-        latin:stripPinnedReadingResponse(spokenBody(row.lat??row.la,"lat"),slot,"lat").text,
-        vernacular:stripPinnedReadingResponse(spokenBody(vernacularValue(row,language),language),slot,language).text,
+        latin:stripPinnedReadingResponse(displayed.latin,slot,"lat").text,
+        vernacular:stripPinnedReadingResponse(displayed.vernacular,slot,language).text,
         fixedResponseCueId:slot==="EPISTLE_OR_LESSON"?"AO.SM.C0076":slot==="GOSPEL"?"AO.SM.C0087":null,
         prayerRole:threefoldOration
           ?(index===0?"PRINCIPAL_ORATION":"ADDITIONAL_ORATION"):null,
