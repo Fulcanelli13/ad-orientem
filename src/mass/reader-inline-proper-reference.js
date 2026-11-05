@@ -6,6 +6,7 @@
 import {createOfflineChantEngraver} from "./reader-chant-engraver.js";
 import {ALL_SAINTS_REFERENCE_SCORES} from "./reader-inline-all-saints-reference.js";
 import {createProperReferenceRegistry,PROPER_REFERENCE_LABELS} from "./reader-inline-proper-registry.js";
+import {participationReferenceScoresForParagraph} from "./reader-participation-reference-scores.js";
 
 export const JULY07_REFERENCE_NOTATION_SCHEMA="ao-reader-july07-reference-notation-v1";
 // The original printed Introit GABC includes a distinct conditional "T. P."
@@ -86,13 +87,13 @@ export function createDatedProperNotationPreview({
   const dialog=doc.createElement("dialog");dialog.className="ao-proper-reference-zoom";
   modal=dialog;
   const head=doc.createElement("header"),title=doc.createElement("span");
-  title.textContent=score.incipit+" · original 1961 reference";
+  title.textContent=(score.incipit??score.sourceName)+" · original 1961 reference";
   const close=doc.createElement("button");close.type="button";close.textContent="×";
   close.setAttribute("aria-label","Close enlarged Gregorian notation");
   close.addEventListener("click",closeZoom);head.append(title,close);
   const scroll=doc.createElement("div");scroll.className="ao-proper-reference-scroll";
   const wide=doc.createElement("div");wide.className="ao-proper-reference-wide";
-  wide.setAttribute("role","img");wide.setAttribute("aria-label",score.incipit+" · enlarged Gregorian notation");
+  wide.setAttribute("role","img");wide.setAttribute("aria-label",(score.incipit??score.sourceName)+" · enlarged Gregorian notation");
   scroll.append(wide);dialog.append(head,scroll);doc.body.append(dialog);
   dialog.addEventListener("cancel",e=>{e.preventDefault();closeZoom()});
   dialog.addEventListener("click",e=>{if(e.target===dialog)closeZoom()});
@@ -108,33 +109,43 @@ export function createDatedProperNotationPreview({
   for(const e of entries){e.engraver?.destroy();e.host.remove()}
   entries=[];
  }
- function render({mode="LIVE",form,resolvedMass,paragraphs=[]}={}){
+ function render({mode="LIVE",form,resolvedMass,paragraphs=[],selectedSettings={}}={}){
   clear();
   if(!active||!["LIVE","MISSAL"].includes(mode))return 0;
   const g=generation;
-  const unique=new Map();
+  const unique=new Map(),byCue=new Map();
   for(const p of paragraphs){
+   for(const cueId of p.sourceCueIds??[]){
+    if(byCue.has(cueId))byCue.set(cueId,null);
+    else byCue.set(cueId,p);
+   }
    const id=String(p.id??"");
    if(!id||unique.has(id)){unique.set(id,null);continue}
    unique.set(id,p);
   }
-  for(const node of root.querySelectorAll(".ao-reader-paragraph[data-paragraph-id]")){
-   const p=unique.get(node.dataset.paragraphId);
+  for(const node of root.querySelectorAll(".ao-reader-paragraph[data-paragraph-id],.ao-reader-paragraph[data-cue-id]")){
+   const p=(node.dataset.paragraphId&&unique.get(node.dataset.paragraphId))||
+     (node.dataset.cueId&&byCue.get(node.dataset.cueId));
    if(!p)continue;
    const scores=referenceScoresForParagraph({paragraph:p,resolvedMass,form});
-   for(const score of scores){
+   const participatory=participationReferenceScoresForParagraph({
+    paragraph:p,paragraphs,form,resolvedMass,selectedSettings
+   });
+   for(const score of [...scores,...participatory]){
     const host=doc.createElement("span");host.className="ao-proper-reference-notation";
     host.dataset.referenceScore=score.id;
     host.dataset.approved="false";
     const title=doc.createElement("small");title.className="ao-proper-reference-label";
-    title.textContent=PROPER_REFERENCE_LABELS[score.key]+
+    title.textContent=(score.sourceCueIds?.length?
+      (score.kind==="CELEBRANT_INTONATION"?"Celebrant intonation":"Sung response"):
+      PROPER_REFERENCE_LABELS[score.key])+
      " · 1961 reference transcription · review pending";
     const staff=doc.createElement("span");staff.className="ao-proper-reference-staff";
     staff.setAttribute("role","img");
-    staff.setAttribute("aria-label",score.incipit+" · Gregorian square notation, archival transcription pending editorial comparison");
+    staff.setAttribute("aria-label",(score.incipit??score.sourceName)+" · Gregorian square notation, archival transcription pending editorial comparison");
     const expand=doc.createElement("button");expand.type="button";
     expand.className="ao-proper-reference-expand";expand.textContent="Enlarge notation";
-    expand.setAttribute("aria-label","Enlarge Gregorian notation for "+score.incipit);
+    expand.setAttribute("aria-label","Enlarge Gregorian notation for "+(score.incipit??score.sourceName));
     expand.addEventListener("click",e=>{e.stopPropagation();void zoom(score,expand)});
     host.append(title,expand,staff);node.append(host);
     const entry={host,score,engraver:null};entries.push(entry);
