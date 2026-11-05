@@ -45,6 +45,13 @@ jobs:
           node-version: 22
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
+      # Test the committed, editorially approved registry *before* downloading
+      # live candidate data. The frozen CL2 and indicative-pin contracts do not
+      # apply directly to raw imports without their approved overlays.
+      - name: Validate pinned published Directory corpus
+        run: |
+          npm run test:directory
+          node tests/find-surface.mjs
       - name: Generate official-source snapshots
         run: |
           npm run directory:import:fssp
@@ -76,10 +83,11 @@ jobs:
           node tools/directory/report-icksp-live-schedule-drift.mjs
       - name: Validate generated corpus
         run: |
+          # Live-source integrity is deliberately distinct from approved
+          # editorial/map overlays and exact pinned schedule identifiers.
           node tests/directory-sspx-403-partial-snapshots.mjs
+          node tests/directory-icksp-live-schedule-drift.mjs
           node tools/directory/validate-runtime-snapshots.mjs
-          npm run test:directory
-          node tests/find-surface.mjs
       - name: Report explicit unavailable-source status
         if: always()
         run: |
