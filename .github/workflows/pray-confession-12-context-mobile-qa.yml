@@ -1,0 +1,44 @@
+name: Prayer Confession — 12-context bilingual phone acceptance
+
+# Source-owned actual-reader QA only; no saved answers or sacramental simulation.
+# No art or deployment changes. GitHub Actions only.
+on:
+  pull_request:
+    paths:
+      - 'tests/pray-confession-three-path-bilingual-phone-matrix.mjs'
+      - '.github/workflows/pray-confession-12-context-mobile-qa.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  confession-path-matrix:
+    name: Three paths, English/French, 320px/390px
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate source-backed Confession paths and historical-witness boundaries
+        run: node tests/pray-confession-paths.mjs && node tests/confession-nightly-contrition-b13.mjs
+      - name: Check dedicated full-matrix source syntax
+        run: node --check tests/pray-confession-three-path-bilingual-phone-matrix.mjs
+      - name: Install existing application browser dependencies
+        run: npm install --no-audit --no-fund
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Test 12 path/language/width contexts, 9 pre-entry cards, 3 after cards and no sin-input fields
+        run: node tests/pray-confession-three-path-bilingual-phone-matrix.mjs
+      - name: Preserve short-lived screenshots and machine-readable results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prayer-confession-12-contexts-phone-evidence
+          path: ${{ runner.temp }}/confession-enfr-all-paths-phone/
+          retention-days: 4
+          if-no-files-found: warn
