@@ -1,0 +1,91 @@
+{
+  "schema": "AO_SACRED_ATLAS_POST_FIRST_FIVE_NONCOMMONS_DIRECT_QUEUE_V1",
+  "as_of": "2026-11-05",
+  "first_five_pr": 2517,
+  "merged_commit": "8cd1f3e120f2b1dfbd288e201b78b8aaa385c04a",
+  "main_approved_covers": 384,
+  "remaining_unphotographed": 146,
+  "strict_rule": "Source license proof is not image publication. No NC, permission-required, royalties, incorrect site, generic photos; independent source/image/identity and exact JPEG/WebP bytes must be verified.",
+  "ready_to_attempt_download": 2,
+  "additional_candidate_holds": 4,
+  "rows": [
+    {
+      "place_id": "place:CH:abbaye-saint-maurice-agaune",
+      "name": "Abbaye de Saint-Maurice d'Agaune",
+      "source_page": "https://www.flickr.com/photos/73293249@N00/103468341/",
+      "photographer": "Olivier Bruchez",
+      "license": "CC-BY-SA-2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "subject": "Abbey exterior",
+      "identity": "SOURCE_EXACT_SITE_DOCUMENTED",
+      "rights": "FLICKR_LIVE_CC_LINK_CONFIRMED",
+      "next_action": "DOWNLOAD_ORIGINAL_CHECK_BYTES_AND_PHONE_CROP",
+      "source_evidence": "https://commons.wikimedia.org/wiki/File:Abbaye_St-Maurice.jpg"
+    },
+    {
+      "place_id": "place:CL:sanctuary-of-our-lady-of-la-tirana-chile",
+      "name": "Santuario de La Tirana",
+      "source_page": "https://www.flickr.com/photos/9508280@N07/7704078194",
+      "photographer": "Dan Lundberg",
+      "license": "CC-BY-SA-2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "subject": "Exact La Tirana sanctuary church exterior",
+      "identity": "FLICKR_CAPTION_EXACT_SANCTUARY_AND_GPS",
+      "rights": "FLICKR_LIVE_CC_LINK_CONFIRMED",
+      "next_action": "DOWNLOAD_ORIGINAL_CHECK_BYTES_AND_PHONE_CROP",
+      "source_evidence": "https://www.flickr.com/photos/9508280@N07/7704078194"
+    },
+    {
+      "place_id": "place:IT:scala-santa-rome",
+      "name": "Pontificio Santuario della Scala Santa",
+      "source_page": "https://www.flickr.com/photos/antmoose/42314245/",
+      "photographer": "Anthony Majanlahti (antmoose)",
+      "license": "CC-BY-2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "subject": "Scala Santa sanctuary building exterior",
+      "identity": "COMMONS_RECORD_AND_FLICKR_SOURCE_EXACT",
+      "rights": "HISTORICAL_FLICKR_LICENSE_REVIEW_CONFIRMED_NEEDS_LIVE_RECHECK",
+      "next_action": "FETCH_SOURCE_PAGE_ORIGINAL_AND_CHECK_CC_BY",
+      "source_evidence": "https://commons.wikimedia.org/wiki/File:Scala_Santa.jpg"
+    },
+    {
+      "place_id": "place:IN:st-thomas-mount-shrine-chennai",
+      "name": "St Thomas Mount National Shrine Basilica",
+      "source_page": "https://www.flickr.com/photos/26414509@N00/476899243",
+      "photographer": "labsji",
+      "license": "CC-BY-2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0/",
+      "subject": "St Thomas Mount at evening; specific shrine building not yet established",
+      "identity": "DEPICTION_NEEDS_EXACT_SITE_VISUAL_CHECK",
+      "rights": "OPENVERSE_CC_BY_CLAIM_NEEDS_LIVE_SOURCE_RECHECK",
+      "next_action": "VERIFY_ACTUAL_PHOTO_SHOWS_SHRINE_NOT_ONLY_CITY",
+      "source_evidence": "https://www.flickr.com/photos/26414509@N00/476899243"
+    },
+    {
+      "place_id": "place:CI:basilica-of-our-lady-of-peace-yamoussoukro",
+      "name": "Basilica of Our Lady of Peace, Yamoussoukro",
+      "source_page": "https://www.flickr.com/photos/kro_royal/1478566839/",
+      "photographer": "Felix Krohn",
+      "license": "CC-BY-SA-2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "subject": "Exact basilica exterior",
+      "identity": "EXACT_SITE",
+      "rights": "HOLD_ARCHITECTURAL_RIGHTS_COUNTRY_FOP_UNRESOLVED",
+      "next_action": "ALTERNATIVE_RIGHTS_CLEARED_PHOTO_OR_STUDY_ISSUE",
+      "source_evidence": "https://commons.wikimedia.org/wiki/File:Notre_dame_de_la_paix_yamoussoukro_by_felix_krohn.jpg"
+    },
+    {
+      "place_id": "place:JM:holy-trinity-cathedral-kingston",
+      "name": "Holy Trinity Cathedral, Kingston, Jamaica",
+      "source_page": "https://nljdigital.nlj.gov.jm/items/show/802",
+      "photographer": "National Library of Jamaica Collection",
+      "license": null,
+      "license_url": null,
+      "subject": "Exact cathedral",
+      "identity": "EXACT_SITE",
+      "rights": "HOLD_USAGE_FEE_AND_COPYRIGHT_PERMISSION_UNCLEAR",
+      "next_action": "SEARCH_ANOTHER_OPEN_SOURCE_NOT_THIS_LIBRARY",
+      "source_evidence": "https://nljdigital.nlj.gov.jm/items/show/802"
+    }
+  ]
+}
