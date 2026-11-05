@@ -18,6 +18,7 @@ import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R9} from "../src/find/cl2-illustrative-lo
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R10} from "../src/find/cl2-illustrative-locality-pins-r10.js";
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R11} from "../src/find/cl2-illustrative-locality-pins-r11.js";
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R12} from "../src/find/cl2-illustrative-locality-pins-r12.js";
+import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R13} from "../src/find/cl2-illustrative-locality-pins-r13.js";
 import {renderDirectoryVenueCard} from "../src/find/directory-card.js";
 import {buildExploreViewModel,renderExploreToString} from "../src/find/explore-presentation.js";
 const read=path=>JSON.parse(readFileSync(new URL("../"+path,import.meta.url),"utf8"));
@@ -70,7 +71,7 @@ for(const row of diocesanQuality.records){
   assert.equal(item.geo.source_ref,row.coordinate_ref);
  }
  if(row.lat===null){
-  const newlyApproved=CL2_ILLUSTRATIVE_LOCALITY_PINS_R3[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R5[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R6[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R7[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R8[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R9[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R10[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R11[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R12[row.physical_group_id];
+  const newlyApproved=CL2_ILLUSTRATIVE_LOCALITY_PINS_R3[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R5[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R6[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R7[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R8[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R9[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R10[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R11[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R12[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R13[row.physical_group_id];
   if(newlyApproved){
    assert.equal(item.map_publishable,true,"Only explicitly Excel-approved geography may turn an older audit blocker into a discovery pin");
    assert.equal(item.geo.approximate,true);
