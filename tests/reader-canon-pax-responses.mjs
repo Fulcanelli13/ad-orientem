@@ -10,6 +10,23 @@ const file=async path=>JSON.parse(await readFile(new URL("../"+path,import.meta.
 const corpus=await file("data/presentation/reader-text-sung.v1.json");
 const roles=(await file("data/mass/ordinary-sung-speaker-audit.v1.json")).records;
 const byCue=new Map(corpus.blocks.flatMap(b=>b.units.map(u=>[u.cue_id,u])));
+const amenCoverage=await file("data/mass/participation-amen-1962-coverage.v1.json");
+assert.equal(amenCoverage.schema,"ao-mass-amen-response-coverage-v1");
+assert.equal(amenCoverage.records.length,13);
+assert.equal(amenCoverage.noInferredMelodyFromIdenticalAmenText,true);
+assert.deepEqual(amenCoverage.records.filter(x=>x.classification.startsWith("RESEARCH")).map(x=>x.sourceCueId),
+ ["AO.SM.C0136","AO.SM.C0207","AO.SM.C0218","AO.SM.C0260"]);
+assert.deepEqual(amenCoverage.records.filter(x=>x.classification==="HOLD_DYNAMIC_PROPER").map(x=>x.sourceCueId),
+ ["AO.SM.C0074","AO.SM.C0255"]);
+for(const row of amenCoverage.records){
+ assert.equal(row.publicApproved,false);
+ assert.equal(row.sourceBlockId,roles.find(x=>x.cueId===row.sourceCueId)?.blockId);
+ const original=corpus.blocks.flatMap(b=>b.units).find(x=>x.cue_id===row.sourceCueId);
+ assert.equal(row.sourceLatin,original?.latin);
+ assert.equal(row.sourceClock,original?.clock);
+ assert.equal(row.properSlot,original?.proper_slot??null);
+}
+
 const byRole=new Map(roles.map(x=>[x.cueId,x.role]));
 const norm=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
  .replace(/[æœ]/gi,m=>m.toLowerCase()==="æ"?"ae":"oe")
