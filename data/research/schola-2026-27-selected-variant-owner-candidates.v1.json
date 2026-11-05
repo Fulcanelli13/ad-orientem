@@ -124,10 +124,18 @@
       "proposedSourceSection": "GradualeP",
       "supportingReferenceUrl": "https://www.missalemeum.com/en/calendar/2026-04-13",
       "disposition": "DATED_1962_SECONDARY_PROPERS_CONFLICT_WITH_SELECTED_LATIN",
-      "note": "Selected pre-Gospel Latin begins Inveni David, while dated 1962 Missale Meum lists two Paschal Alleluias Confitebuntur caeli / Posuisti Domine. Do not presume source selection correct.",
+      "note": "Selected pre-Gospel Latin begins Inveni David, while dated 1962 Missale Meum lists two Paschal Alleluias Confitebuntur caeli / Posuisti Domine. Do not presume source selection correct. Original 1962 Missale Romanum printed-text OCR confirms the Paschal pair; printed facsimile screenshot could not render (large 30MB PDF).",
       "appointed1962TextCertified": false,
       "original1961ScoreCertified": false,
-      "automaticReaderChange": false
+      "automaticReaderChange": false,
+      "printed1962Evidence": {
+        "book": "Missale Romanum 1962, Benziger, editio iuxta typicam",
+        "printedPage": 505,
+        "pdfUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf",
+        "textWitness": "TEMPORAL_PASCHAL_TWO_ALLELUIAS_CONFITEBUNTUR_POSUISTI",
+        "pageImageInspected": false,
+        "ocrTextInspected": true
+      }
     },
     {
       "previousRubricCue": "Commune/C2a",
@@ -137,23 +145,40 @@
       "proposedSourceSection": "GradualeP",
       "supportingReferenceUrl": "https://missalemeum.com/en/calendar/2026-04-29",
       "disposition": "DATED_1962_SECONDARY_PROPERS_CONFLICT_WITH_SELECTED_LATIN",
-      "note": "Same discrepancy for St Peter of Verona; reopen actual selected Mass/season source decision before musical matching.",
+      "note": "Same discrepancy for St Peter of Verona; reopen actual selected Mass/season source decision before musical matching. Original 1962 Missale Romanum printed-text OCR confirms the Paschal pair; printed facsimile screenshot could not render (large 30MB PDF).",
       "appointed1962TextCertified": false,
       "original1961ScoreCertified": false,
-      "automaticReaderChange": false
+      "automaticReaderChange": false,
+      "printed1962Evidence": {
+        "book": "Missale Romanum 1962, Benziger, editio iuxta typicam",
+        "printedPage": 516,
+        "pdfUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf",
+        "textWitness": "TEMPORAL_PASCHAL_TWO_ALLELUIAS_CONFITEBUNTUR_POSUISTI",
+        "pageImageInspected": false,
+        "ocrTextInspected": true
+      }
     },
     {
       "previousRubricCue": "Commune/C2a",
       "date": "2026-04-14",
       "selectedOpening": "Sapientia huius mundi",
-      "comparisonExpectedOpening": null,
+      "comparisonExpectedOpening": "Alleluia alleluia Sapientia huius mundi",
       "proposedSourceSection": "Sancti/04-14:Graduale",
-      "supportingReferenceUrl": "https://www.missalemeum.com/en/calendar/2026-04-14",
-      "disposition": "SAINT_PROPER_CUSTOM_PRE_GOSPEL_REQUIRES_DIRECT_1962_PRINT",
-      "note": "St Justin has his own proper text and a historical [Graduale] section. External pages rendered conflicting ordinary/seasonal readings in different snapshots; do not replace with generic C2.",
+      "supportingReferenceUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf",
+      "disposition": "PRINTED_1962_PASCHAL_MIXED_GRADUAL_AND_ALLELUIAS_CONFLICT",
+      "note": "1962 printed Missal expressly says Tempore paschali, two Alleluias Sapientia huius mundi and Verumtamen existimo. The pinned Sancti/04-14 [Graduale] block and actual selected annual Latin concatenate the ordinary Gradual (Sapientia... Perdam) and the Paschal Alleluias. The source is a known St Justin Proper, but seasonal output needs a non-destructive conditional split; do not replace with a generic Common.",
       "appointed1962TextCertified": false,
       "original1961ScoreCertified": false,
-      "automaticReaderChange": false
+      "automaticReaderChange": false,
+      "comparisonSection": "Sancti/04-14:Graduale (seasonal Paschal extraction)",
+      "printed1962Evidence": {
+        "book": "Missale Romanum 1962, Benziger, editio iuxta typicam",
+        "printedPage": 506,
+        "pdfUrl": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf",
+        "textWitness": "PASCHAL_TWO_ALLELUIAS_SAPIENTIA_HUIUS_MUNDI_VERUMTAMEN",
+        "pageImageInspected": false,
+        "ocrTextInspected": true
+      }
     },
     {
       "previousRubricCue": "Commune/C4",
@@ -173,12 +198,14 @@
     "previousMismatchDates": 27,
     "newHistoricalTextCandidates": 23,
     "unresolvedDateSelectionHolds": 4,
-    "dateSpecificExternalSourceConflicts": 2,
+    "dateSpecificExternalSourceConflicts": 3,
     "uniqueCompleteSelectedLatinVariantsExpected": 10,
     "existing128PreGospelHoldsUnchanged": true,
     "sourceAliasesApproved": 0,
     "properScoresApproved": 0,
     "liveReaderChanges": false,
-    "scoreFilesModified": false
+    "scoreFilesModified": false,
+    "original1962PrintedTextOcrSourceAudited": true,
+    "original1962PrintedPageImageReviewed": false
   }
 }
