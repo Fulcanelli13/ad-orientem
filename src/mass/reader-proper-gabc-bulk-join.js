@@ -168,17 +168,20 @@ export function matchSelected1962ProperToGraduale({properSlots,archive}={}){
 // (Epiphany Alleluia #524 vs Communion #918, "Vidimus stellam").
 // Never trust a candidate's declared role without its owning reader track.
 const TRACK_ROLES=freeze({INTROIT:"in",GRADUAL:"gr",OFFERTORY:"of",COMMUNION:"co"});
-function trackOwnsGabcPart(track,part){
- return track==="ALLELUIA_TRACT_SEQUENCE"
-   ? part==="al"||part==="tr"
-   : TRACK_ROLES[track]===part;
+function trackOwnsGabcPart(track,part,sourceGroup){
+ // A labelled Tract may never be reassigned to an Alleluia setting,
+ // even though both live in the same pre-Gospel presentation slot.
+ if(track==="ALLELUIA_TRACT_SEQUENCE")
+   return (part==="al"&&sourceGroup==="ALLELUIA")||
+     (part==="tr"&&sourceGroup==="TRACT");
+ return TRACK_ROLES[track]===part;
 }
 export function sourceMatchedGabcForEditorialReview(match,archive,scoreId){
  if(match?.schema!==MASS_GABC_BULK_MATCH_SCHEMA||match.status!=="SOURCE_FIRST_CANDIDATES_ONLY_NOT_SCORES"||
    archive?.schema!=="ao-mass-1961-full-gabc-source-index-v1"||
    !Array.isArray(match.tracks))return null;
  const owner=match.tracks.find(track=>
-   trackOwnsGabcPart(track?.track,track?.part)&&
+   trackOwnsGabcPart(track?.track,track?.part,track?.sourceGroup)&&
    Array.isArray(track.scoreCandidates)&&track.scoreCandidates.some(c=>
      c.scoreId===scoreId&&c.part===track.part&&
      c.sourcePath===match.sourcePath&&c.status==="SOURCE_LATIN_MATCH_ONLY"&&
