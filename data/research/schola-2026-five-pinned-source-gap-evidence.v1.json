@@ -1,0 +1,74 @@
+{
+  "schema": "ao-schola-2026-five-pinned-source-gap-evidence-v1",
+  "checkedOn": "2026-11-05",
+  "sourceRepository": "DivinumOfficium/divinum-officium",
+  "sourceRef": "ad8783641455bae38a8eb5782b34241a7b3ff2ef",
+  "pinnedTreePrefix": "web/www/missa/Latin/",
+  "historicalTreePrefix": "obsolete/missa/Latin/",
+  "authority": "EXACT_PINNED_GIT_TREE_AND_LEGACY_PATH_PROVENANCE_ONLY",
+  "evidenceBoundary": "Historical files do not become part of the 1049 authenticated source inventory, do not certify selected 1962 chants, and are not approved score or alias material.",
+  "selectedSourceGaps": [
+    {
+      "sourcePath": "Commune/C10Pasc",
+      "expectedDates": 1,
+      "historicalSource": {
+        "path": "obsolete/missa/Latin/Commune/C10Pasc.txt",
+        "blobSha": "cf8efa4b7cdb8d1b7ba7512d133f066c4d7c04b2",
+        "size": 962
+      },
+      "sourceAssessment": "OBSOLETE_LATIN_MASS_SOURCE_ONLY",
+      "structure": "Inherits @Commune/C10; contains a Paschal Graduale/Alleluia and Offertorium, not a self-contained source owner.",
+      "nextDecision": "VERIFY_1962_PASCHAL_SATURDAY_BVM_COMMON_AND_INHERITED_CHANT_SECTIONS"
+    },
+    {
+      "sourcePath": "Commune/C10b",
+      "expectedDates": 2,
+      "historicalSource": {
+        "path": "obsolete/missa/Latin/Commune/C10b.txt",
+        "blobSha": "25a6a7b43c87fb7bb6c46437a10153c33f7f8924",
+        "size": 3199
+      },
+      "sourceAssessment": "OBSOLETE_LATIN_MASS_SOURCE_ONLY",
+      "structure": "Saturday BVM between Nativity and Purification; has its own Introitus, Graduale and Tractus, with inherited Secreta and Communio references.",
+      "nextDecision": "VERIFY_1962_BVM_SATURDAY_SEASON_AND_SECTION_OWNERSHIP"
+    },
+    {
+      "sourcePath": "Commune/C10c",
+      "expectedDates": 1,
+      "historicalSource": {
+        "path": "obsolete/missa/Latin/Commune/C10c.txt",
+        "blobSha": "02c6058c330b31ab4183e2ef2c7d0067b71f29ae",
+        "size": 1045
+      },
+      "sourceAssessment": "OBSOLETE_LATIN_MASS_SOURCE_ONLY",
+      "structure": "Saturday BVM between Purification and Easter; inherits @Commune/C10 with distinct Graduale, Tractus and Offertorium.",
+      "nextDecision": "VERIFY_1962_BVM_SATURDAY_PREPASCHAL_CHANT_BRANCH"
+    },
+    {
+      "sourcePath": "Commune/C10t",
+      "expectedDates": 8,
+      "historicalSource": {
+        "path": "obsolete/missa/Latin/Commune/C10t.txt",
+        "blobSha": "dc7daad4e051c34636070dce89a690f5dddad6ed",
+        "size": 194
+      },
+      "sourceAssessment": "OBSOLETE_LATIN_MASS_SOURCE_ONLY",
+      "structure": "Generic Saturday BVM rule/rank stub with @Commune/C10 inheritance and no independent chant sections.",
+      "nextDecision": "RESOLVE_BASE_COMMON_C10_AND_SPECIFIC_1962_SEASON_BEFORE_ANY_GABC_MATCH"
+    },
+    {
+      "sourcePath": "Tempora/Nat1-1",
+      "expectedDates": 3,
+      "historicalSource": null,
+      "sourceAssessment": "NO_EXACT_SOURCE_PATH_IN_PINNED_OR_OBSOLETE_LATIN_MASS_TREE",
+      "structure": "Nat1-0 and Nat1-0a exist in the pinned Temporale, but represent different named identities; they are not admissible substitutes for Nat1-1.",
+      "nextDecision": "TRACE_1962_DAYRESOLVER_NATIVITY_SOURCE_OWNER_WITHOUT_ALIAS_GUESS"
+    }
+  ],
+  "publication": {
+    "approvedSourceAliases": 0,
+    "approvedScores": 0,
+    "approvedRecordings": 0,
+    "productionReaderChanges": false
+  }
+}
