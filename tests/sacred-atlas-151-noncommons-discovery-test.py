@@ -36,7 +36,7 @@ class CoverageFirstDiscovery(unittest.TestCase):
             self.assertTrue(r["sources"]["flickr"].startswith("https://"))
             self.assertFalse(r["provider_image_approved"])
             self.assertEqual(r["source_discovery_state"],"NOT_YET_SEARCHED")
-        self.assertIn("earlier candidates",self.scope["prior_decision_handling"].lower())
+        self.assertIn("previously shown pictures",self.scope["prior_decision_handling"].lower())
 
     def test_only_usable_licenses_and_non_wikimedia_urls_are_preserved(self):
         row=self.scope["places"][0]
