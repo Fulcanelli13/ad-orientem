@@ -84,7 +84,7 @@ export const ESSENTIAL_PRAYER_WITNESS_POLICY_V1=Object.freeze({
   review:"historical_variant",
   note:"English is the traditional rhymed 'Angel of God, my guardian dear' adaptation; Latin and French follow Angele Dei, not word-for-word English verse.",
   faces:Object.freeze({
-   en:Object.freeze({status:"historical_variant",witness:"Traditional English Guardian Angel rhyme; exact edition collation pending",url:null})
+   en:Object.freeze({status:"corresponding_formula",witness:"English Angel of God rhyme, printed in Vatican Compendium Appendix A",url:VATICAN_EN})
   })
  }),
  foundations_prayer_of_adoration:Object.freeze({alignment:"corresponding_formula",review:"source_review"}),
@@ -98,7 +98,8 @@ export const ESSENTIAL_PRAYER_WITNESS_POLICY_V1=Object.freeze({
  foundations_morning_offering:Object.freeze({
   alignment:"historical_variant",
   review:"historical_variant",
-  note:"English USCCB Morning Offering; the French and Latin devotional versions are separately witnessed and cannot be labelled verbatim translations of the English source."
+  faces:Object.freeze({en:Object.freeze({status:"historical_variant",witness:"USCCB Morning Offering · final words this month omitted in app version",url:"https://www.usccb.org/prayers/morning-offering"})}),
+  note:"USCCB English Morning Offering ends with intentions of the Holy Father this month; the app traditional English form omits this month. The French and Latin devotional versions also differ in wording. Do not label the three faces verbatim renderings of the USCCB webpage."
  })
 });
 
