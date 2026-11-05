@@ -44,6 +44,8 @@ assert.ok(stored.exactFullSelectedLatinGroups.every(x=>
 assert.equal(stored.counts.approvedSourceAliases,0);
 assert.equal(stored.counts.approvedGregorianProperScores,0);
 assert.equal(stored.sourceRows.length,115);
+assert.equal(stored.counts.originalOwnerReviewGroups,52);
+assert.equal(stored.counts.groupsWithMultipleSelectedPaths,13);
 assert.ok(stored.counts.originalOwnerReviewGroups<115,
  "Historical vide C Common cues should consolidate multiple saint-day source paths");
 assert.ok(stored.counts.groupsWithMultipleSelectedPaths>0,
@@ -85,7 +87,7 @@ for(const x of stored.sourceRows){
 const invalid=structuredClone(closeout);
 invalid.preGospelSourceOwnerQueue[0].sourcePath="Commune/ForgedMissing";
 await assert.rejects(group2026PregospelHolds({closeout:invalid,inventory,annual,readPinned}),
- /SCHOLA_OWNER_GROUP_SOURCE_GAP_NOT_IN_CANONICAL_FIVE/);
+ /SCHOLA_OWNER_GROUP_HOLD_NOT_ACTUAL_2026_SELECTED_FORMULARY/);
 // Any publishing mutation must invalidate the worklist.
 const promoted=structuredClone(closeout);
 promoted.counts.newApprovedScores=1;
