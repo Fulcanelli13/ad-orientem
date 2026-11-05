@@ -114,6 +114,26 @@ assert.equal(curatedReady.model.totalCards,39);
 assert.equal(curatedReady.presentationModel.totalCards,65,
   "the real native preview must show one combined Sanctus–Benedictus");
 assert.equal(curatedReady.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
+// Ordinary Low Mass is a first-class 65-card LIVE presentation, with its
+// independent Low corpus (not borrowed Sung speech, sound, or gestures).
+const lowMassPrepared={...livePrepared,
+  session:{...livePrepared.session,resolvedMass:{
+    ...livePrepared.session.resolvedMass,form:"LOW"}}};
+const lowMass=await prepareNativeReaderPreview({
+  prepared:lowMassPrepared,reviewCuratedCards:true,
+  presentationData:data,eventData,cueRegistries,guideData,
+});
+assert.equal(lowMass.curatedEligible,true);
+assert.equal(lowMass.model.totalCards,39,"the source intermediary stays internal");
+assert.equal(lowMass.model.corpusFamily,"LOW");
+assert.equal(lowMass.presentationModel.totalCards,65);
+assert.equal(lowMass.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
+assert.equal(lowMass.presentationModel.sourceOnlyCueRegister,null);
+assert.ok(lowMass.presentationModel.cards.some(c=>c.title==="Gloria · Opening"));
+assert.ok(lowMass.presentationModel.cards.some(c=>c.title==="Credo · Opening"));
+assert.deepEqual(lowMass.presentationModel.cards.flatMap(c=>c.paragraphs.map(p=>p.id)),
+  lowMass.model.cards.flatMap(c=>c.paragraphs.map(p=>p.id)),
+  "curated Low Mass must preserve every original source paragraph exactly once");
 // Requiem uses the same curated 65-family rather than the historical 48-step
 // fallback. This synthetic Proper tests a real Sequence slot and all source-
 // specific omissions; the separate November gate validates authentic m1/m2/m3.
@@ -181,14 +201,13 @@ assert.equal(requiemWithAbsolution.presentationModel.structureOwner,
   "SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
 assert.ok(requiemWithAbsolution.requiemAbsolutionController,
   "Requiem absolution following-action was lost");
-const invalidAbsolution=await prepareNativeReaderPreview({
+await assert.rejects(()=>prepareNativeReaderPreview({
   prepared:{...absolutionPrepared,session:{...absolutionPrepared.session,
     plan:{...absolutionPrepared.session.plan,normalLastGospel:true}}},
   reviewCuratedCards:true,presentationData:data,eventData,cueRegistries,guideData,
   requiemAbsolutionData,
-});
-assert.equal(invalidAbsolution.curatedEligible,false,
-  "unsupported Absolution/Last Gospel combination should remain gated");
+}),/LIVE_65_CARD_PRESENTATION_REQUIRED/,
+  "unsupported Requiem must fail instead of falling back to 39 LIVE cards");
 
 
 assert.equal(curatedReady.presentationModel.sourceAuthorityModel,curatedReady.model);
@@ -740,13 +759,11 @@ for(const {kind,loaded,source,omitsLastGospel} of [
   const noCurator=await prepareNativeReaderPreview({...opts,reviewCuratedCards:false});
   assert.equal(noCurator.curatedEligible,false);
   assert.equal(noCurator.presentationModel.totalCards,39,kind+" source-first fallback missing");
-  const wrongEntry=await prepareNativeReaderPreview({
+  await assert.rejects(()=>prepareNativeReaderPreview({
     ...opts,prepared:{...specialPrepared,session:{...specialPrepared.session,
       plan:{...specialPrepared.session.plan,massEntry:"FOOT_CLUSTER"}}},
-  });
-  assert.equal(wrongEntry.curatedEligible,false,
-    kind+" must never infer Introit-entry merely because a rite name was selected");
-  assert.equal(wrongEntry.presentationModel.totalCards,39);
+  }),/LIVE_65_CARD_PRESENTATION_REQUIRED/,
+    kind+" cannot enter a 39-card fallback for the wrong pre-Mass handoff");
 }
 
 
@@ -775,13 +792,11 @@ assert.equal(rogationCurated.rogationsController.project().card.id,"ROG-R01");
 const rogationLegacy=await prepareNativeReaderPreview({
   ...rogationCuratedOptions,reviewCuratedCards:false});
 assert.equal(rogationLegacy.presentationModel.totalCards,39);
-const rogationWrongHandoff=await prepareNativeReaderPreview({
+await assert.rejects(()=>prepareNativeReaderPreview({
   ...rogationCuratedOptions,
   prepared:{...rogationIntroitPrepared,session:{...rogationIntroitPrepared.session,
     plan:{...rogationIntroitPrepared.session.plan,massEntry:"FOOT_CLUSTER"}}},
-});
-assert.equal(rogationWrongHandoff.curatedEligible,false);
-assert.equal(rogationWrongHandoff.presentationModel.totalCards,39);
+}),/LIVE_65_CARD_PRESENTATION_REQUIRED/);
 
 // Following actions must be explicitly selected and their independent
 // controllers loaded. An ordinary 39-source Sung Mass is allowed to use
@@ -823,21 +838,18 @@ for(const [followingAction,loaded,controllerKey,firstId,policy] of [
   const unsafe={...fPrepared.session.plan,followingGraphs:[followingAction],
     ...(followingAction==="CORPUS_CHRISTI_PROCESSION"
       ? {normalLastGospel:true}:{normalLastGospel:true,blessingAllowed:false})};
-  const guarded=await prepareNativeReaderPreview({
+  await assert.rejects(()=>prepareNativeReaderPreview({
     ...args,prepared:{...fPrepared,session:{...fPrepared.session,plan:unsafe}},
-  });
-  assert.equal(guarded.curatedEligible,false,
-    followingAction+" should require coherent Mass-ending policy");
-  assert.equal(guarded.presentationModel.totalCards,39);
+  }),/LIVE_65_CARD_PRESENTATION_REQUIRED/,
+    followingAction+" must reject a contradictory Mass-ending plan");
   // Composite prelude + following action remains outside certified set.
-  const mixed=await prepareNativeReaderPreview({
+  await assert.rejects(()=>prepareNativeReaderPreview({
     ...args,aspergesData,
     prepared:{...fPrepared,session:{...fPrepared.session,
       resolvedMass:{...fPrepared.session.resolvedMass,precedingRites:["ASPERGES"]},
       plan:{...fPrepared.session.plan,precedingGraphs:["ASPERGES"]}}},
-  });
-  assert.equal(mixed.curatedEligible,false,"untested composite must remain uncertified");
-  assert.equal(mixed.presentationModel.totalCards,39);
+  }),/LIVE_65_CARD_PRESENTATION_REQUIRED/,
+    "untested mixed rites must never silently show 39 LIVE cards");
 }
 
 
