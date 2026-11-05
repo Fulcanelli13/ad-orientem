@@ -211,7 +211,7 @@ try{
        first:api.model.cards[0].title};
    });
    assert.deepEqual(atIntroit,{
-     title:"Introit",total:61,canonical:39,curated:true,first:"Introit",
+     title:"Introit",total:61,canonical:30,curated:true,first:"Introit",
    },"Greater Litanies R17 must enter sourced 61-card Introit presentation");
    assert.equal((await page.locator("#ao-r17-native-reader-preview [data-role='card-title']").textContent())?.trim(),"Introit");
    const bb=await back.boundingBox();assert.ok(bb&&bb.height>=44);

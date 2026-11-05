@@ -140,6 +140,51 @@ await assert.rejects(()=>prepareNativeReaderPreview({
 }),/LIVE_65_CARD_PRESENTATION_REQUIRED/,
   "An unowned Nuptial insertion must not use the old 42-card fallback");
 assert.equal(curatedReady.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
+// This is the public native mount's direct source path. The internal
+// diagnostic preview above intentionally keeps its old fixture, but neither
+// the initial LIVE reader nor a MISSAL-initialized session may allocate the
+// 39-card source intermediary.
+const directNative=await prepareNativeReaderPreview({
+  prepared:livePrepared,reviewCuratedCards:true,directSourceCurated:true,
+  presentationData:data,eventData,cueRegistries,guideData,
+});
+assert.equal(directNative.curatedEligible,true);
+assert.equal(directNative.directSourceCurated,true);
+assert.equal(directNative.model.totalCards,30,"native direct LIVE must own only source macros");
+assert.equal(directNative.model.structureOwner,"BASE_30_MACROS");
+assert.equal(directNative.presentationModel.totalCards,65);
+assert.equal(directNative.presentationModel.directSourceToCurated,true);
+assert.equal(directNative.presentationModel.sourceAuthorityModel,directNative.model);
+assert.deepEqual(directNative.presentationModel.cards.map(c=>({
+  sectionId:c.sectionId,title:c.title,paragraphs:c.paragraphs,blocks:c.blocks,
+  sourceSectionId:c.sourceSectionId,sourceSequence:c.sourceSequence,
+})),curatedReady.presentationModel.cards.map(c=>({
+  sectionId:c.sectionId,title:c.title,paragraphs:c.paragraphs,blocks:c.blocks,
+  sourceSectionId:c.sourceSectionId,sourceSequence:c.sourceSequence,
+})), "Native direct LIVE lost a source cue, word or 65-card boundary");
+
+const missalInitially={...livePrepared,session:{...livePrepared.session,
+  resolvedMass:{...livePrepared.session.resolvedMass,presentationMode:"MISSAL"}}};
+const directMissalInitially=await prepareNativeReaderPreview({
+  prepared:missalInitially,reviewCuratedCards:true,directSourceCurated:true,
+  presentationData:data,eventData,cueRegistries,guideData,
+});
+assert.equal(directMissalInitially.curatedEligible,true,
+  "Initial MISSAL must remain eligible to switch into direct curated LIVE");
+assert.equal(directMissalInitially.model.totalCards,30);
+assert.equal(directMissalInitially.model.presentationMode,"MISSAL");
+assert.equal(directMissalInitially.presentationModel.presentationMode,"MISSAL");
+assert.equal(directMissalInitially.directSourceCurated,true);
+const directNuptialNative=await prepareNativeReaderPreview({
+  prepared:nuptialPrepared,reviewCuratedCards:true,directSourceCurated:true,
+  presentationData:{...data,nuptialData:nuptialPayload},
+  eventData,cueRegistries,guideData,
+});
+assert.equal(directNuptialNative.model.totalCards,30);
+assert.equal(directNuptialNative.presentationModel.totalCards,68);
+assert.deepEqual(directNuptialNative.presentationModel.cards.filter(c=>c.nuptialInsertion)
+  .map(c=>c.sectionId),["AO.NUPTIAL.01","AO.NUPTIAL.02","AO.NUPTIAL.03"]);
+
 // Ordinary Low Mass is a first-class 65-card LIVE presentation, with its
 // independent Low corpus (not borrowed Sung speech, sound, or gestures).
 const lowMassResolved={...livePrepared.session.resolvedMass,form:"LOW"};
