@@ -38,7 +38,28 @@ try{
   // Mass is entered from Today, not a retired bottom-navigation tab.
   await page.waitForSelector('.homeScreen [data-home-mass-entry]',{state:"visible",timeout:25000});
   await page.locator('.homeScreen [data-home-mass-entry]').click();
-  await page.waitForSelector('html[data-ao-m1-mass-root="true"] [data-m1-rows]',{state:"visible",timeout:25000});
+  await page.waitForSelector('html[data-ao-m1-mass-root="true"] [data-m1-rows]',{state:"attached",timeout:25000});
+  const adjust=page.locator("#ao-mass-flow-v1 [data-folio-adjust]");
+  await adjust.waitFor({state:"visible",timeout:15000});
+  assert.equal(await adjust.getAttribute("open"),null,
+    "Default Mass must show Start first, with source-owned choices collapsed");
+  assert.equal(await page.locator("[data-m1-rows] [data-m1-choice='mass']").count(),1,
+    "The complete Mass chooser must remain mounted behind Adjust");
+  // Source-backed Proper resolution is asynchronous. The bridge must
+  // recover the original Start action after readiness; never synthesize
+  // an unverified Start or bypass the rubrical permission gate.
+  await page.waitForFunction(()=>{
+    const button=document.querySelector("[data-ao-start-live]");
+    return Boolean(button&&!button.disabled);
+  },null,{timeout:30000}).catch(async error=>{
+    const details=await page.evaluate(()=>({
+      status:globalThis.AO_SEQUENCE_BRIDGE_V23?.getAssemblyStatus?.()??null,
+      primaries:[...document.querySelectorAll("#ao-mass-flow-v1 .aoFlowActions .primary")]
+        .map(button=>({label:button.textContent,disabled:button.disabled,hasStart:button.hasAttribute("data-ao-start-live")})),
+      calendar:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.resolution?.status??null,
+    }));
+    throw new Error("M1 source-gated Start unavailable: "+JSON.stringify(details)+"; "+error.message);
+  });
   assert.equal(await page.locator("[data-ao-start-live]").count(),1,"Only original Start Mass");
   assert.equal(await page.locator("[data-ao-full-mass-preflight]").count(),1,"One source-owned preflight");
   const sourceBefore=await page.evaluate(()=>globalThis.AO_CELEBRATION_API?.getResolvedMass?.()?.proper?.data?.sourcePath??null);
@@ -79,7 +100,10 @@ try{
   const fresh=await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("mass"));
   assert.equal(fresh.ok,true,"Explicit contextual Mass preparation must be permitted with a checkpoint");
   assert.equal(fresh.resumedMass,undefined,"Ordinary Mass entry may not silently Resume");
-  await page.waitForSelector('html[data-ao-m1-mass-root="true"] [data-m1-rows]',{state:"visible",timeout:20000});
+  await page.waitForSelector('html[data-ao-m1-mass-root="true"] [data-m1-rows]',{state:"attached",timeout:20000});
+  await adjust.waitFor({state:"visible",timeout:15000});
+  assert.equal(await adjust.getAttribute("open"),null,
+    "Fresh Mass entry with checkpoint must still default to a collapsed Adjust sheet");
   assert.equal(await page.evaluate(()=>Boolean(globalThis.AO_R17_NATIVE_READER_PREVIEW?.root?.isConnected)),false,
     "Fresh entry with checkpoint must show the source preflight, never the LIVE reader");
   let unchanged=await page.evaluate(()=>JSON.parse(localStorage.getItem("ao-r17-active-mass-v1")||"null"));

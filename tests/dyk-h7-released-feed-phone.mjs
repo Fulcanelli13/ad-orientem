@@ -41,6 +41,8 @@ try{
   const page=await browser.newPage({viewport:{width,height:844},isMobile:width===390,hasTouch:width===390});
   const errors=[];page.on("pageerror",e=>errors.push(String(e)));
   try{
+   // Synthetic release fixture covers Nov 1; set fixed civil date before loading Home.
+   await page.clock.setFixedTime(new Date("2026-11-01T09:00:00+04:00"));
    // Actual checked-in master: zero publication, existing six-fact H7 fallback.
    await page.goto(origin+"/index.html?aoR17Reader=native",{waitUntil:"domcontentloaded",timeout:60000});
    await page.waitForSelector(".homeScreen.aoH7Screens .aoH7HomeView",{timeout:45000});

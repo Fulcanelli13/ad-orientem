@@ -24,6 +24,18 @@ const server=http.createServer(async(req,res)=>{
 });
 await new Promise((ok,fail)=>{server.once("error",fail);server.listen(0,"127.0.0.1",ok)});
 const base="http://127.0.0.1:"+server.address().port;
+// Exact historical rubric sources remain behind the approved Day details
+// fold. Exercise both native disclosures rather than clicking hidden DOM.
+async function openVisibleDaySources(page){
+ const parent=page.locator(".aoTodayV2CalendarInline #ao-calendar-modular-root .aoCalV2DayFold:has(.aoCalDaySources)");
+ await parent.waitFor({state:"attached",timeout:30000});
+ if(await parent.getAttribute("open")===null)
+   await parent.locator(":scope > summary").click();
+ const sources=page.locator(".aoTodayV2CalendarInline .aoCalDaySources");
+ await sources.waitFor({state:"visible",timeout:15000});
+ if(await sources.getAttribute("open")===null)
+   await sources.locator(":scope > summary").click();
+}
 let browser;
 const reports=[];
 try{
@@ -43,7 +55,7 @@ try{
    await page.waitForFunction(()=>Boolean(window.AO_RUNTIME_V8?.resolver?.resolveDay) &&
      Boolean(window.AO_APP_SHELL_V1?.status?.().visibleOwner),null,{timeout:45000});
    // H7 opens canonical Calendar via its top bar; Day is an embedded lens.
-   const calOpen=page.locator('.aoH7HomeView .ib[data-home-calendar-view="picker"]');
+   const calOpen=page.locator('.aoH7HomeView .date[data-home-calendar-view="picker"]');
    await calOpen.waitFor({state:"visible",timeout:20000});
    await calOpen.click();
    const dayTab=page.locator('.aoH4CalendarViews [data-home-calendar-view="day"]');
@@ -60,6 +72,7 @@ try{
      return state?.selectedDate==="2026-10-09" && state?.resolution?.day?.main &&
        Boolean(holder?.querySelector('.aoCalSecondarySaintCard h4'));
    },null,{timeout:55000});
+   await page.locator(".aoCalV2DayFold").filter({has:page.locator(".aoCalSecondarySaintCard")}).locator(":scope > summary").click();
    const metrics=await page.evaluate(()=>{
      const c=document.querySelector(".aoTodayV2CalendarInline #ao-calendar-modular-root");
      const el=c?.querySelector(".aoCalSecondarySaintCard");
@@ -117,7 +130,7 @@ try{
    assert.ok(homeMetrics.overflow<=1,"H7 Home horizontal overflow");
    assert.equal(requests.filter(x=>x.status===200).length,1,"Calendar source should be loaded once");
    await page.screenshot({path:resolve(output,"h7-home-after-newman-"+width+".png"),fullPage:false,animations:"disabled"});
-   await page.locator('.aoH7HomeView .ib[data-home-calendar-view="picker"]').click();
+   await page.locator('.aoH7HomeView .date[data-home-calendar-view="picker"]').click();
    await page.locator('.aoH4CalendarViews [data-home-calendar-view="day"]').click();
    await host.waitFor({state:"visible",timeout:40000});
    const historic=await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2025-10-09"));
@@ -132,7 +145,7 @@ try{
      assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2026-11-01")),true);
      const exact=page.locator('.aoTodayV2CalendarInline #ao-calendar-modular-root [data-cal-rubric-claim="ALL_SAINTS_OCCURRENT_SUNDAY"]');
      await exact.waitFor({state:"attached",timeout:55000});
-     await page.locator(".aoTodayV2CalendarInline .aoCalDaySources summary").click();
+     await openVisibleDaySources(page);
      await exact.waitFor({state:"visible",timeout:12000});
      assert.match(await exact.innerText(),/RG 108\(a\).*RG 111\(a\)/);
      const witness=exact.locator("a");
@@ -149,7 +162,7 @@ try{
      assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2027-04-05")),true);
      const transfer=page.locator('.aoTodayV2CalendarInline [data-cal-transfer-claim="ANNUNCIATION_2027"]');
      await transfer.waitFor({state:"attached",timeout:55000});
-     await page.locator(".aoTodayV2CalendarInline .aoCalDaySources summary").click();
+     await openVisibleDaySources(page);
      await transfer.waitFor({state:"visible",timeout:12000});
      assert.match(await transfer.innerText(),/RG 96\(a\)/);
      assert.equal(await transfer.locator('time[datetime="2027-03-25"]').count(),1);
@@ -170,7 +183,7 @@ try{
      const claim=page.locator('.aoTodayV2CalendarInline [data-cal-observed-commemoration="ASSUMPTION_SUNDAY_2027"]');
      await page.waitForFunction(()=>window.AO_RUNTIME_V8?.store?.getState?.()?.resolution?.date==="2027-08-15",null,{timeout:55000});
      await claim.waitFor({state:"attached",timeout:55000});
-     await page.locator(".aoTodayV2CalendarInline .aoCalDaySources summary").click();
+     await openVisibleDaySources(page);
      await claim.waitFor({state:"visible",timeout:12000});
      assert.match(await claim.innerText(),/RG 108\(a\).*RG 111\(a\)/);
      assert.match(await claim.locator("a").getAttribute("href"),
@@ -189,7 +202,7 @@ try{
        null,{timeout:55000});
      const peterPaul=page.locator('.aoTodayV2CalendarInline [data-cal-apostles-inseparable="PETER_PAUL_INSEPARABLE_2027"]');
      await peterPaul.waitFor({state:"attached",timeout:30000});
-     await page.locator(".aoTodayV2CalendarInline .aoCalDaySources summary").click();
+     await openVisibleDaySources(page);
      await peterPaul.waitFor({state:"visible",timeout:12000});
      assert.match(await peterPaul.innerText(),/RG 110/);
      assert.match(await peterPaul.innerText(),/one conclusion/i);
@@ -209,7 +222,7 @@ try{
        null,{timeout:55000});
      const omission=page.locator('.aoTodayV2CalendarInline [data-cal-omitted-feast="FRANCIS_ASSISI_2026_SUNDAY_OMISSION"]');
      await omission.waitFor({state:"attached",timeout:30000});
-     await page.locator(".aoTodayV2CalendarInline .aoCalDaySources summary").click();
+     await openVisibleDaySources(page);
      await omission.waitFor({state:"visible",timeout:12000});
      assert.match(await omission.innerText(),/RG 111\(b\)/);
      assert.match(await omission.innerText(),/St Francis of Assisi/);
@@ -308,6 +321,7 @@ try{
    assert.equal(await page.evaluate(async()=>window.AO_CALENDAR_APP_V1.select("2026-09-23")),true);
    const placeAction=page.locator(".aoTodayV2CalendarInline #ao-calendar-modular-root "+
      '[data-cal-secondary-place="place:IT:santuario-san-pio-rotondo"]');
+   await page.locator(".aoTodayV2CalendarInline #ao-calendar-modular-root .aoCalV2DayFold:has([data-cal-secondary-place]) > summary").click();
    await placeAction.waitFor({state:"visible",timeout:55000});
    assert.equal(await placeAction.getAttribute("data-cal-secondary-saint"),"saint.pio-pietrelcina");
    assert.ok((await placeAction.boundingBox())?.height>=44,"Physical Place action below 44px target");

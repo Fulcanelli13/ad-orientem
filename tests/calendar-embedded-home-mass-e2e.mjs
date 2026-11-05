@@ -75,7 +75,7 @@ try{
       token:getComputedStyle(root).getPropertyValue("--ao-tcm-card-radius").trim(),
       selected:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate,
       date:root.dataset.aoCalendarPaintDate,view:root.dataset.aoCalendarView,
-      sources:hero.querySelectorAll(".aoCalV2Documentation .aoCalDaySources").length,
+      sources:root.querySelectorAll(".aoCalV2DayFold .aoCalDaySources").length,
       reader:!!globalThis.AO_R17_NATIVE_READER_PREVIEW?.root?.isConnected};
   });
   assert.equal(dayTheme.token,"18px","Embedded Day did not inherit the shared design kit");
@@ -102,13 +102,24 @@ try{
       [".aoCalModTop h1",".aoCalModTop"],
       [".aoCalV2NextMajor strong",".aoCalV2NextMajor"],
       [".aoCalPracticeCard h4",".aoCalPracticeCard"],
-      [".aoCalDaySources summary",".aoCalV2Hero"],
+      [".aoCalV2DayFold > summary",".aoCalV2DayFold"],
       [".aoCalV2Context .aoCalV2TextLink",".aoCalV2Context"]
     ];
     return samples.map(([textSelector,surfaceSelector])=>{
       const text=root.querySelector(textSelector),surface=root.querySelector(surfaceSelector);
       if(!text||!surface)return {textSelector,missing:true};
-      const ink=lum(getComputedStyle(text).color),paper=lum(getComputedStyle(surface).backgroundColor);
+      // Some approved Day sections are transparent on the page canvas.
+      // WCAG contrast uses the painted backing, not transparent rgba(0,0,0,0)
+      // treated as black by the old test's three-channel luminance helper.
+      let backing=surface;
+      while(backing){
+        const bg=getComputedStyle(backing).backgroundColor;
+        const parts=(bg.match(/[0-9.]+/g)||[]).map(Number);
+        if(parts.length===3||parts.length>=4&&parts[3]>=.999)break;
+        backing=backing.parentElement;
+      }
+      const ink=lum(getComputedStyle(text).color),
+        paper=lum(getComputedStyle(backing||root).backgroundColor);
       return {textSelector,ratio:(Math.max(ink,paper)+.05)/(Math.min(ink,paper)+.05)};
     });
   });

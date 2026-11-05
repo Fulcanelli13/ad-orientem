@@ -235,6 +235,10 @@ try{
       if(test.index!==0){
         // Use the actual visible button; never mutate resolver internals
         // or substitute a fictitious Proper in this entry acceptance.
+        const details=door.locator("details.aoH7DoorDetails");
+        await details.waitFor({state:"attached",timeout:15000});
+        if(await details.getAttribute("open")===null)
+          await details.locator(":scope > summary").click();
         const choice=door.locator('[data-formulary="'+test.index+'"]');
         await choice.waitFor({state:"visible",timeout:18000});
         await choice.click();

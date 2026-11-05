@@ -79,7 +79,8 @@ for(const row of copyDecisions.scope_decisions){
   assert.ok(row.source_ids.length&&row.source_ids.every(id=>sourceIds.has(id)));
   assert.ok(calendarCustomArticle(row.custom_id),"Copy approval without visible article");
 }
-assert.match(runtime,/seasonalCustoms\.map\(item=>calendarCustomArticle\(item.id\)\)/,"Month suggestion should directly expand the article");
+assert.match(runtime,/calendarCustomSeasonalMonthEntries\(monthId/,"Month source-context count remains canonical");
+assert.match(runtime,/data-cal-customs-open/,"Month routes to source-owned Customs without embedding entire articles");
 assert.doesNotMatch(runtime,/seasonalCustoms\.map\(item=>\`<button[^>]+data-cal-month-index-date/,"Month seasonal customs cannot navigate to arbitrary dates");
 
 assert.ok(!CALENDAR_CUSTOM_ARTICLE_IDS.some(id=>id.startsWith("CUST-")),"unpublished research identities leaked");

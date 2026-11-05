@@ -31,6 +31,7 @@ try{
   const errors=[];
   page.on("pageerror",error=>errors.push(String(error.message||error)));
   try{
+   await page.clock.setFixedTime(new Date("2026-10-26T10:00:00+04:00"));
    await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?aoR17Reader=native",
      {waitUntil:"domcontentloaded",timeout:90000});
    await page.waitForFunction(()=>window.AO_APP_SHELL_V1?.status?.().visibleOwner===true,
@@ -49,6 +50,10 @@ try{
    await page.locator('.aoH7HomeView .date[data-home-calendar-view="picker"]').click();
    const cal=page.locator(".aoTodayV2CalendarInline #ao-calendar-modular-root");
    await cal.locator('.aoCalV2MonthGrid').waitFor({state:"visible",timeout:40000});
+   const filter=cal.locator(".aoCalCompactFilters");
+   assert.equal(await filter.count(),1,"Month must have one filter/view disclosure");
+   assert.equal(await filter.getAttribute("open"),null,"Advanced month controls should default collapsed");
+   await filter.locator("summary").click();
    const metrics=await page.evaluate(()=>{
     const el=document.querySelector(".aoTodayV2CalendarInline #ao-calendar-modular-root");
     const tabs=el.querySelector(".aoCalV2Picker .aoCalMonthTabs");
@@ -108,12 +113,15 @@ try{
      "Practices and novena starts must be included within the main calendar");
    const monthPracticeMarks=await cal.locator(".aoCalV2MonthGrid .hasPractice").count();
    assert.ok(Number.isInteger(monthPracticeMarks),"Practice markers must not disturb 42-day grid");
-   assert.ok(metrics.gridTop<width*2,"Calendar grid pushed below the useful phone fold");
+   assert.ok(metrics.gridTop<950,"Expanded filter controls pushed the grid too far below the fold");
    assert.ok(metrics.overflow<=1,"Calendar caused global horizontal overflow: "+metrics.overflow);
    assert.ok(metrics.tabScrollWidth>=metrics.tabWidth,
      "Calendar horizontal month rail has invalid scroll geometry");
+   await filter.locator("summary").click();
+   assert.equal(await filter.getAttribute("open"),null,"Month filters must collapse");
    await page.screenshot({path:resolve(output,"calendar-month-"+lang+"-"+width+".png"),
      fullPage:false,animations:"disabled"});
+   await filter.locator("summary").click();
    // The Ordo uses the same resolved month, without replacing the 42-date grid.
    await cal.locator('[data-cal-month-layout="ordo"]').click();
    const ordoPanel=cal.locator('[data-cal-month-presentation="ordo"]');
@@ -217,13 +225,10 @@ try{
    // Inspect actual published Calendar customs, not only the shell/month grid.
    // The first month shift from October 2026 lands in November.
    if((width===320&&lang==="en")||(width===390&&lang==="fr")){
-     const monthCustom=cal.locator('.aoCalCustomMonthContext [data-cal-custom-id="DEAD-001"]');
-     await monthCustom.waitFor({state:"visible",timeout:15000});
-     await monthCustom.locator(":scope > summary").click();
-     assert.ok(await monthCustom.locator(".aoCalCustomArticleContent a[href^='https://']").count()>0,
-       "November canonical custom must expose its actual source links in Month");
-     await page.screenshot({path:resolve(output,"calendar-custom-month-"+lang+"-"+width+".png"),
-       fullPage:true,animations:"disabled"});
+     assert.equal(await cal.locator(".aoCalCustomMonthContext").count(),0,
+       "No expanded custom articles on the compact month screen");
+     assert.equal(await cal.locator("[data-cal-customs-open]").count(),1,
+       "Retain one canonical link into Customs");
      await cal.locator('[data-cal-pick-date="2026-11-02"]').click();
      await page.waitForFunction(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.resolution?.date==="2026-11-02",
        null,{timeout:15000});
@@ -245,6 +250,8 @@ try{
        "Calendar date-grid selection must retain the exact selected and resolved day");
      assert.equal(afterDatePick.view,"day",
        "Source-resolved 2 November should enter Day without pressing Today");
+     const customsFold=cal.locator(".aoCalV2DayFold").filter({hasText:/Customs of this day|Coutumes du jour/});
+     await customsFold.locator(":scope > summary").click();
      const dayCustom=cal.locator('.aoCalCustomsBlock [data-cal-custom-id="DEAD-001"]');
      await dayCustom.waitFor({state:"visible",timeout:10000}).catch(async err=>{
        console.log("CALENDAR_CUSTOM_DAY_DIAGNOSTIC",JSON.stringify(await page.evaluate(()=>{
@@ -322,8 +329,12 @@ try{
      await cal.locator('[data-cal-pick-date="2026-11-02"]').click();
      assert.equal(await cal.getAttribute("data-ao-calendar-view"),"day",
        "Reopening an already-resolved date should display Day synchronously");
+     await cal.locator('.aoCalV2DayFold:has(.aoCalCustomsBlock [data-cal-custom-id="DEAD-003"]) > summary').click();
      await cal.locator('.aoCalCustomsBlock [data-cal-custom-id="DEAD-003"]')
        .waitFor({state:"visible",timeout:15000});
+     await page.waitForFunction(()=>document.querySelector('.aoH4CalendarViews [data-home-calendar-view="day"]')?.getAttribute("aria-current")==="page",null,{timeout:5000});
+     assert.equal(await page.locator('.aoH4CalendarViews [data-home-calendar-view="picker"]').getAttribute("aria-current"),null,
+       "H7 Month tab must relinquish selection when Calendar enters Day");
      const returned=await page.evaluate(()=>{
        const s=globalThis.AO_RUNTIME_V8?.store?.getState?.();
        return [s?.selectedDate,s?.resolution?.date];

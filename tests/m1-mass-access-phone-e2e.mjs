@@ -35,6 +35,11 @@ try{
   await entry.waitFor({state:"visible",timeout:12000});await entry.click();
   const p=page.locator('[data-ao-full-mass-preflight][data-ao-mass-access-m1="true"]');
   await p.waitFor({state:"visible",timeout:18000});
+  const adjust=p.locator("[data-folio-adjust]");
+  assert.equal(await adjust.count(),1,"Only one existing M1 preference sheet is present");
+  assert.equal(await adjust.getAttribute("open"),null,
+    "Mass door must show its native summary and Start action before optional settings");
+  await adjust.locator(":scope > summary").click();
   await page.waitForSelector("[data-m1-rows] [data-m1-choice='mass']",{state:"visible"});
   const ids=await page.locator("[data-m1-rows] [data-m1-choice]").evaluateAll(
     nodes=>nodes.map(n=>n.dataset.m1Choice));

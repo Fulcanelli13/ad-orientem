@@ -183,7 +183,8 @@ body.w320 .grid button{height:48px}
 .aoH7Screens .hero .aoTodayV2ArtSource{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto!important}
 .aoH7Screens .hero .aoTodayV2ArtSource img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block}
 .aoH7Screens .hero .aoTodayV2ArtSource:after{display:none}
-.aoH7Screens .hero.aoTodayV2ArtMissing .aoTodayV2ArtSource{background:radial-gradient(120% 90% at 55% 35%,#6e5236,#33261a 55%,#100c08)}
+.aoH7Screens .hero.aoTodayV2ArtMissing .aoTodayV2Art{display:none!important}
+.aoH7Screens .hero.aoTodayV2ArtMissing{background:var(--bg,#121a22)!important}
 .aoH7Screens .aoH7DoorArt{position:absolute;inset:0;background:#1b140e;background-size:cover;background-position:center 30%}
 .aoH7Screens .aoH7DoorArt img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block}
 .aoH7Screens [hidden]{display:none!important}
@@ -254,4 +255,27 @@ html[data-ao-appearance-choice-v1="light"] .aoH7Screens{
 .aoH7Screens.lc-rose{--lc:#D99AAE}
 .aoH7Screens.lc-none{--lc:#3A4652}
 .aoH7Screens .dateRail.aoH4Week .aoWeekColour[data-verified-colour]{width:16px!important;height:3px!important;background:var(--ao-h4-day-colour)!important;opacity:1!important}
+/* The approved H7 door keeps Start Mass pinned; the compact selections are one-tap adjustable. */
+.aoH7Screens .aoH7DoorDetails{margin:12px 0;border-top:1px solid var(--ln);border-bottom:1px solid var(--ln)}
+.aoH7Screens .aoH7DoorDetails>summary{display:flex;align-items:center;min-height:52px;cursor:pointer;font:600 15px/1.4 var(--sans);color:var(--ink)}
+.aoH7Screens .aoH7DoorDetails>summary:focus-visible{outline:2px solid var(--sage);outline-offset:2px}
+.aoH7Screens .aoH7DoorDetails .dsec{padding-top:8px}
+.aoH7Screens .aoH7DoorTopMeta{position:absolute;top:10px;left:60px;right:10px;z-index:2;display:flex;flex-direction:column;align-items:flex-end;gap:2px;color:#fff;font:500 13px/1.3 var(--sans);text-align:right}
+.aoH7Screens .aoH7DoorTopMeta small{font:400 12px/1.3 var(--sans);color:#eee}
+.aoH7Screens .aoH7DoorTopMeta button{display:flex;align-items:center;min-height:44px;border:0;padding:4px 8px;background:rgba(0,0,0,.4);color:#fff;border-radius:8px}
+.aoH7Screens .aoH7DoorView .foot .mini{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}
+.aoH7Screens .aoH7DoorView .foot .mini button{min-width:0}
+.aoH7Screens .aoH7DoorSelections{display:flex;gap:8px;align-items:center;justify-content:space-between;min-height:44px;margin:10px 0 0;color:var(--mu);font:500 13px/1.4 var(--sans)}
+.aoH7Screens .aoH7DoorSelections span{min-width:0;flex:1;overflow-wrap:break-word}
+.aoH7Screens .aoH7DoorSelections button{min-height:44px;min-width:64px;border:0;background:transparent;color:var(--sage);font:600 14px/1.2 var(--sans);text-decoration:underline;text-underline-offset:3px}
+.aoH7Screens .aoH7HomeView .aoTodayV2ReadReflect{margin:0 var(--g);padding:0}
+.aoH7Screens .aoH7HomeView .aoTodayV2ReadReflect .aoH4Read{margin:0}
+.aoH7Screens .aoH7HomeView .aoTodayV2ReadReflect .aoH4SectionHead{margin-top:18px}
+.aoH7Screens .aoH7HomeView .aoH7TitlePending{min-height:1.15em}
+.aoH7Screens .aoH7HomeView .aoH7TitlePending:before{content:"";display:block;width:min(68%,270px);height:30px;border-radius:5px;background:color-mix(in srgb,var(--ink) 18%,transparent)}
+
+/* Retire the donor-added kicker on H7: it otherwise overlays the approved
+   wordmark at 320/390 px. The original non-H7 Home retains this label. */
+.homeScreen.aoTodayH4.aoH7Screens .aoH7Hero > .aoLiturgicalDayKicker{display:none!important}
+
 `;

@@ -1,27 +1,34 @@
 name: Mass post-deployment November 1-2 GitHub Pages audit
 on:
-  pull_request:
-    paths:
-      - ".github/workflows/mass-postdeploy-nov2-production-audit.yml"
-      - "tests/mass-h7-sunday-asperges-phone.mjs"
+  # Public-site checks must never run against an undeployed pull request.
+  # The already-existing "Mass H7 Sunday Asperges selection" workflow
+  # independently covers the exact source checkout on pull requests.
+  workflow_run:
+    workflows: ["Ad Orientem — GitHub Pages release"]
+    types: [completed]
+    branches: [main]
   workflow_dispatch:
 permissions:
   contents: read
 jobs:
   real-production-h7-mass:
-    name: Live H7 on public site — All Saints + All Souls three formularies
+    name: Live Pages H7 — All Saints and All Souls formularies
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env:
       AO_MASS_TEST_ORIGIN: "https://fulcanelli13.github.io/ad-orientem/"
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
-      - name: Public-domain EN/FR All Saints Asperges and All Souls exact 1962 LIVE H7
+      - name: Public Pages EN/FR All Saints Asperges and All Souls exact 1962 LIVE H7
         run: node tests/mass-h7-sunday-asperges-phone.mjs
       - uses: actions/upload-artifact@v4
         if: always()

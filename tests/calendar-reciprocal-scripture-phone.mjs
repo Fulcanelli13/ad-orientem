@@ -25,11 +25,17 @@ try{
  const page=await browser.newPage({viewport:{width:390,height:844},
   deviceScaleFactor:2,isMobile:true,hasTouch:true,locale:"en-GB"});
  const errors=[];page.on("pageerror",error=>errors.push(error.message));
+ const scriptureRequests=[];page.on("request",request=>{
+   if(new URL(request.url()).pathname.endsWith("/src/scripture/library.js"))
+     scriptureRequests.push(request.url());
+ });
  await page.goto("http://127.0.0.1:"+server.address().port+"/index.html",
   {waitUntil:"domcontentloaded",timeout:90000});
  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.installed===true&&
    globalThis.AO_CALENDAR_APP_V1?.select&&globalThis.AO_SCRIPTURE_CONTEXT_V1?.open,
    null,{timeout:45000});
+ assert.equal(scriptureRequests.length,0,
+   "Full Scripture reader must not be requested during cold Home");
  const day="2026-08-02";
  const selected=await page.evaluate(async date=>{
    const shell=globalThis.AO_APP_SHELL_V1;
@@ -50,31 +56,48 @@ try{
    "Test must use a source-owned actual 1962 Mass, not a guessed feast");
  assert.ok(selected.linkSlots.includes("GOSPEL"),JSON.stringify(selected));
  const visual=await page.locator("#ao-calendar-modular-root .aoCalV2Hero").evaluate(hero=>{
+   const day=hero.closest("#ao-calendar-modular-root");
    const reading=hero.querySelector(".aoCalDayScripture"),
      mass=hero.querySelector("[data-cal-mass]"),
-     source=hero.querySelector(".aoCalDaySources");
+     // The technical source fold follows the hero; it is not nested inside it.
+     source=day?.querySelector(".aoCalDaySources");
    const before=(a,b)=>Boolean(a&&b&&(a.compareDocumentPosition(b)&Node.DOCUMENT_POSITION_FOLLOWING));
    return {label:reading?.getAttribute("aria-label"),
      scriptureButtons:reading?.querySelectorAll("[data-cal-scripture-slot]").length,
      slots:[...reading?.querySelectorAll("[data-cal-scripture-slot]")||[]].map(n=>n.dataset.calScriptureSlot),
-     readingBeforeMass:before(reading,mass),
-     massBeforeSources:before(mass,source),
+     massBeforeReadings:before(mass,reading),
+     readingsBeforeSources:before(reading,source),
+     sourcePresent:Boolean(source),
      sourceCollapsed:source?.open===false,
-     printCollapsed:hero.querySelector(".aoCalV2PrintOptions")?.open!==true};
+     printCollapsed:day?.querySelector(".aoCalV2PrintOptions")?.open!==true};
  });
  assert.equal(visual.label,"Appointed readings");
  assert.deepEqual(visual.slots,["EPISTLE_OR_LESSON","GOSPEL"]);
  assert.equal(visual.scriptureButtons,2);
- assert.ok(visual.readingBeforeMass&&visual.massBeforeSources,
-   "The Scripture links must follow principal observance and precede technical sources");
+ assert.equal(visual.sourcePresent,true,"Technical Calendar sources must be present");
+ assert.ok(visual.massBeforeReadings&&visual.readingsBeforeSources,
+   "Mass-first day hierarchy: Scripture readings must follow Mass action and precede source details");
  assert.equal(visual.sourceCollapsed,true);
  assert.equal(visual.printCollapsed,true);
  await page.locator("#ao-calendar-modular-root [data-cal-close]").tap();
  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1.getActive()==="home",null,{timeout:15000});
+ // Cancellation while the first-use ESM import is pending must not resurrect
+ // a closed Bible overlay or steal Home focus on a later microtask.
+ const cancelled=await page.evaluate(()=>{
+   const opened=globalThis.AO_SCRIPTURE_CONTEXT_V1.open("Luke 18:9",{language:"en"});
+   const closed=globalThis.AO_SCRIPTURE_APP_V1.close();
+   return {opened,closed,open:globalThis.AO_SCRIPTURE_APP_V1.status().open,
+     hidden:document.querySelector("#ao-scripture-overlay")?.hidden};
+ });
+ assert.deepEqual(cancelled,{opened:true,closed:true,open:false,hidden:true},
+   "Pending Bible reader import was not cancellable");
  assert.equal(await page.evaluate(()=>
    globalThis.AO_SCRIPTURE_CONTEXT_V1.open("Luke 18:9",{language:"en"})),true);
  const scripture=page.locator("#ao-scripture-overlay");
  await scripture.waitFor({state:"visible",timeout:15000});
+ await scripture.locator(".aoScriptureReading h3").waitFor({state:"visible",timeout:15000});
+ assert.equal(scriptureRequests.length,1,
+   "Only the first genuine Scripture open should import the reader graph");
  const initial=await page.evaluate(()=>({
    title:document.querySelector("#ao-scripture-overlay .aoScriptureReading h3")?.textContent,
    edition:globalThis.AO_SCRIPTURE_APP_V1.status().reader?.editionId

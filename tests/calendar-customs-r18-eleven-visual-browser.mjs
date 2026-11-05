@@ -62,11 +62,12 @@ try{
     await page.evaluate(()=>globalThis.AO_SETTINGS_APP_V1?.close?.());
     await page.locator(".homeScreen.aoTodayV2").waitFor({state:"visible",timeout:20000});
    }
-   await page.locator('.aoH7HomeView .ib[data-home-calendar-view="picker"]').click();
+   await page.locator('.aoH7HomeView .date[data-home-calendar-view="picker"]').click();
    await page.locator('.aoH4CalendarViews [data-home-calendar-view="day"]').click();
    const cal=page.locator(".aoTodayV2CalendarInline #ao-calendar-modular-root");
    await cal.locator(".aoCalCustomCatalogue").waitFor({state:"attached",timeout:45000});
-   await cal.locator(".aoCalCustomCatalogue > summary").click();
+   await cal.locator(".aoCalV2DayFold:has(.aoCalCustomCatalogue) > summary").click();
+    await cal.locator(".aoCalCustomCatalogue > summary").click();
    const reviewer=cal.locator('[data-cal-r18-eleven-editorial-preview]');
    await reviewer.waitFor({state:"visible",timeout:10000});
    assert.equal(await reviewer.locator('[data-cal-r18-eleven-key]').count(),remainingReviewCount);
@@ -175,7 +176,7 @@ try{
   {waitUntil:"domcontentloaded",timeout:90000});
  await negative.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.().visibleOwner===true,
   null,{timeout:35000});
- await negative.locator('.aoH7HomeView .ib[data-home-calendar-view="picker"]').click();
+ await negative.locator('.aoH7HomeView .date[data-home-calendar-view="picker"]').click();
  await negative.locator('.aoH4CalendarViews [data-home-calendar-view="day"]').click();
  await negative.locator(".aoCalCustomCatalogue").waitFor({state:"attached",timeout:45000});
  assert.equal(await negative.locator('[data-cal-r18-six-supplement]').count(),0,

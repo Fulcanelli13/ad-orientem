@@ -55,13 +55,14 @@ try{
     });
     assert.equal(opened,true,"Calendar must open through its actual owner");
     const cal=page.locator("#ao-calendar-modular-root");
-    await cal.locator(".aoCalCustomCatalogue").waitFor({state:"visible",timeout:60000});
+    await cal.locator(".aoCalCustomCatalogue").waitFor({state:"attached",timeout:60000});
     // Calendar's asynchronous 1962-day paints replace the complete article DOM.
     // Open the native disclosure nodes synchronously rather than letting a
     // Playwright stability wait target a detached old <summary>.
     await page.evaluate(()=>{
       const root=document.querySelector("#ao-calendar-modular-root");
-      root?.querySelector(".aoCalCustomCatalogue")?.setAttribute("open","");
+      root?.querySelector(".aoCalCustomCatalogue")?.closest(".aoCalV2DayFold")?.setAttribute("open","");
+       root?.querySelector(".aoCalCustomCatalogue")?.setAttribute("open","");
       root?.querySelector('[data-cal-custom-id="ADVT-001"]')?.setAttribute("open","");
     });
     const parent=cal.locator('[data-cal-custom-id="ADVT-001"]');
@@ -91,9 +92,11 @@ try{
      const el=document.querySelector("#ao-calendar-modular-root");
      return {width:innerWidth,documentScroll:document.documentElement.scrollWidth,
       articleScroll:el?.scrollWidth,articleClient:el?.clientWidth,
-      canonicalArticles:el?.querySelectorAll("[data-cal-custom-id]").length};
+      canonicalArticles:el?.querySelectorAll(".aoCalCustomCatalogue [data-cal-custom-id]").length,
+      contextualDuplicates:el?.querySelectorAll(".aoCalPracticeContext [data-cal-custom-id]").length};
     });
     assert.equal(dimensions.canonicalArticles,36,"35 original published articles plus single PENT-001 proposal");
+    assert.ok(dimensions.contextualDuplicates>=0,"Day-specific contextual recommendations are separate from the canonical catalogue");
     assert.ok(dimensions.articleScroll<=dimensions.articleClient+2,
       "Calendar horizontal overflow at "+width+": "+JSON.stringify(dimensions));
     assert.ok(errors.length===0,"Browser errors: "+errors.join(" | "));

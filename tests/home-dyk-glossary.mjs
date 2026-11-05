@@ -67,13 +67,13 @@ const h3=readFileSync(new URL("../src/home/today-v2-sections.js",import.meta.url
 const owner=readFileSync(new URL("../src/home/browser-entry.js",import.meta.url),"utf8");
 assert.ok(h4.includes("homeDidYouKnowMarkup(vm.language)"));
 assert.ok(h3.includes("homeDidYouKnowMarkup(language)"));
-assert.match(h4,/aoTodayV2CalendarGlance[\s\S]*aoH4DiscoveryStandalone[\s\S]*aoTodayV2Below/,
-  "H4 card must live after This week and before Read");
+assert.match(h4,/aoTodayV2Below[\s\S]*aoTodayV2CalendarGlance[\s\S]*aoH4DiscoveryStandalone/,
+  "H7 Read must precede Coming up and the closing Did You Know card");
 assert.match(h3,/aoTodayV2CalendarGlance[\s\S]*aoTodayV2DiscoveryStandalone[\s\S]*aoTodayV2Below/,
   "Today fallback must place a standalone card after Calendar glance");
-assert.ok(h4.indexOf("homeDidYouKnowMarkup(vm.language)") <
+assert.ok(h4.indexOf("homeDidYouKnowMarkup(vm.language)") >
   h4.lastIndexOf('class="aoTodayV2Below"'),
-  "Discovery must not render inside Read");
+  "Closing discovery must follow, rather than be nested within, the earlier Read section");
 assert.ok(h3.indexOf("homeDidYouKnowMarkup(language)") <
   h3.lastIndexOf('class="aoTodayV2Below"'),
   "Fallback Discovery must not render inside Read");

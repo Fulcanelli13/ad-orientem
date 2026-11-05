@@ -84,6 +84,9 @@ try{
     "After Mass must have none, thanksgiving and full choices");
   // M1 shows one source-owned choice panel at a time. Select the visible
   // Before/After rows instead of clicking controls hidden behind other rows.
+  const adjust=prep.locator("[data-folio-adjust]");
+  if(await adjust.count()&&await adjust.getAttribute("open")===null)
+    await adjust.locator(":scope > summary").click();
   await page.locator("[data-m1-choice='before']").click();
   await page.locator("[data-folio-before][value='full']").check();
   await page.locator("[data-folio-overview-button]").click();

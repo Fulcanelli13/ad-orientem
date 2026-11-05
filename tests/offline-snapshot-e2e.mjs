@@ -86,6 +86,10 @@ try{
    const essential=["src/pray/presentation-coherence.js","src/pray/novena-runtime.js",
      "src/pray/traditional-pray-runtime.js","src/pray/focus-installer.js",
      "src/pray/devotional-card-deck.js","src/pray/devotional-cinematic.js",
+     "src/mass/reader-native-preview.js",
+     "src/mass/reader-special-stage.js",
+     "src/mass/reader-special-stage-styles.js",
+     "src/scripture/library.js",
      "assets/pray/angelus/tanner-annunciation-1898.webp"];
    const missing=[];
    for(const path of essential)if(!await cache.match(new URL(path,base)))missing.push(path);
@@ -101,6 +105,55 @@ try{
  const offline=await page.evaluate(()=>({screen:!!document.querySelector(".homeScreen"),sw:!!navigator.serviceWorker.controller,version:globalThis.AO_OFFLINE_APP_V1?.status?.version}));
  assert.equal(offline.screen,true,"Cached offline Home failed");
  assert.equal(offline.sw,true,"Offline navigation lost service worker");
+ // Exercise a genuinely disconnected, unvisited tab: the deferred R17
+ // native module and *its static descendants* must load from the completed
+ // versioned snapshot, not just appear as metadata in CacheStorage.
+ const r17OfflineTab=await context.newPage();
+ try{
+   await r17OfflineTab.goto(origin,{waitUntil:"domcontentloaded",timeout:90000});
+   const r17Offline=await r17OfflineTab.evaluate(async()=>{
+     try{
+       const url=new URL("src/mass/reader-native-preview.js",
+         new URL("./",location.href)).href;
+       const mod=await import(url);
+       // Include the independently deferred ceremony chrome and styles in
+       // the first-use offline import acceptance, not only CacheStorage.
+       const stage=await import(new URL("src/mass/reader-special-stage.js",
+         new URL("./",location.href)).href);
+       await import(new URL("src/mass/reader-special-stage-styles.js",
+         new URL("./",location.href)).href);
+       return {mountType:typeof mod.mountNativeReaderPreview,
+         stageMountType:typeof stage.mountSpecialMassStage,
+         stageStyles:Boolean(document.getElementById("ao-reader-ceremony-stage-styles")),
+         controlled:Boolean(navigator.serviceWorker.controller)};
+     }catch(error){return {error:String(error?.message||error)};}
+   });
+   assert.deepEqual(r17Offline,{mountType:"function",stageMountType:"function",stageStyles:true,controlled:true},
+     "Deferred native R17 renderer cannot load from a new offline tab: "+JSON.stringify(r17Offline));
+   console.log("PASS deferred R17 reader module and static descendants load on first offline tab");
+ }finally{await r17OfflineTab.close();}
+
+ // The full Scripture reader is also a first-use dynamic import. It must
+ // actually open through the unchanged synchronous deep-link API on a
+ // disconnected, previously unvisited tab.
+ const bibleOfflineTab=await context.newPage();
+ try{
+   await bibleOfflineTab.goto(origin,{waitUntil:"domcontentloaded",timeout:90000});
+   await bibleOfflineTab.waitForFunction(()=>
+     typeof globalThis.AO_SCRIPTURE_CONTEXT_V1?.open==="function",
+     null,{timeout:30000});
+   const accepted=await bibleOfflineTab.evaluate(()=>
+     globalThis.AO_SCRIPTURE_CONTEXT_V1.open("John 1:1",{language:"en"}));
+   assert.equal(accepted,true,"Offline Scripture deep-link API did not accept the source reference");
+   const passage=bibleOfflineTab.locator("#ao-scripture-overlay .aoScriptureReading h3");
+   await passage.waitFor({state:"visible",timeout:30000});
+   assert.match(await passage.innerText(),/John 1:1/,
+     "Deferred Scripture reader did not mount the intended passage offline");
+   assert.equal(await bibleOfflineTab.evaluate(()=>
+     globalThis.AO_SCRIPTURE_APP_V1.status().open),true);
+   console.log("PASS deferred Scripture Bible reader opens from a fresh disconnected tab");
+ }finally{await bibleOfflineTab.close();}
+
  // The Rosary is a core devotional pilot journey: it must open on a first
  // offline launch after a completed bootstrap, even before it was opened online.
  // This exercises the actual first-use dynamic Prayer module graph, not just Home.

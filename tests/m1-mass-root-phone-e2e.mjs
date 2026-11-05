@@ -27,6 +27,9 @@ try{
   await page.waitForSelector('.homeScreen [data-home-mass-entry]',{state:"visible",timeout:20000});
   await page.locator('.homeScreen [data-home-mass-entry]').click();
   await page.waitForSelector('html[data-ao-m1-mass-root="true"] #ao-mass-flow-v1 [data-ao-m1-root]',{timeout:18000});
+  const adjust=page.locator("#ao-mass-flow-v1 [data-folio-adjust]");
+  assert.equal(await adjust.count(),1,"Native M1 Adjust sheet must remain available");
+  await adjust.locator(":scope > summary").click();
   await page.waitForSelector("[data-m1-rows] [data-m1-choice='mass']",{state:"visible",timeout:15000});
   const v=await page.evaluate(()=>{
     const back=document.querySelector("#ao-mass-flow-v1 .aoMassFlowBackdrop");
@@ -150,6 +153,11 @@ try{
   assert.equal(after.root,false,"Mass root style must clean up");
   assert.notEqual(after.modal,"main","Mass role must restore after leaving");
   await page.locator('.homeScreen [data-home-mass-entry]').click();
+  // Re-entry resets only the overview; its source-owned Adjust section
+  // must be opened again before testing the underlying Mass choices.
+  await adjust.waitFor({state:"visible",timeout:15000});
+  assert.equal(await adjust.getAttribute("open"),null,"Re-entry must restore a collapsed Adjust section");
+  await adjust.locator(":scope > summary").click();
   await page.waitForSelector('html[data-ao-m1-mass-root="true"] [data-m1-choice="mass"]',{state:"visible",timeout:15000});
   assert.equal(await page.locator('[data-ao-full-mass-preflight]').count(),1,
     "Re-entering Mass must not create a second preflight");

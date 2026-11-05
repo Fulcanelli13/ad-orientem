@@ -136,6 +136,8 @@ html[data-reduced-motion="true"] #ao-cinema-transition,html[data-reduced-motion=
   }
   function finishBoot(reason="ready"){
     if(bootFinished) return false; bootFinished=true; win.clearTimeout?.(bootWatchdog);
+    // Persistent diagnostic survives removal of the cinematic curtain.
+    if(d.documentElement?.dataset)d.documentElement.dataset.aoCinemaBootReason=reason;
     win.AO_LOADING_DIRECTOR_V1?.endBoot?.();
     const el=d.getElementById(BOOT_ID); if(!el) return false;
     const s=state(),status=q("[data-ao-cinema-boot-status]",el),title=s?.resolution?.proper?.data?.name||s?.resolution?.day?.main?.title||"";
@@ -146,7 +148,13 @@ html[data-reduced-motion="true"] #ao-cinema-transition,html[data-reduced-motion=
     },reduced()?0:260);
     return true;
   }
-  function homeReady(){const s=state();return Boolean(s&&d.querySelector?.(".homeScreen")&&!s.resolving&&s.resolution&&(!d.fonts||d.fonts.status==="loaded"));}
+  function homeReady(){
+    const s=state();
+    // A source-resolved, visible Home ends the blocking boot curtain.
+    // Remote webfonts must not delay navigation after that point; the
+    // browser may apply a font swap without holding the screen captive.
+    return Boolean(s&&d.querySelector?.(".homeScreen")&&!s.resolving&&s.resolution);
+  }
   // A suspended requestAnimationFrame must not leave a visible, pointer-blocking
   // launch curtain over an otherwise usable app indefinitely. Keep the usual
   // home-stability path; this independent wall-clock guard is the fallback.

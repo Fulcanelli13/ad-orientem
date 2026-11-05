@@ -17,21 +17,21 @@ const dayUi=runtime.slice(dayStart,dayEnd);
 const dayPositions=[
   'class="aoCalIdentityMeta"',
   'cm.length?',
-  'calendarScriptureControls(selected,r)',
   'data-cal-mass',
-  'class="aoCalV2Documentation"',
+  'calendarScriptureControls(selected,r)',
+  'class="aoCalV2DayFold"',
   'daySourceDetails(r)',
   'data-cal-print-proper',
   'supplementaryDayMarkup(selected,r)'
 ].map(k=>dayUi.indexOf(k));
-assert.ok(dayPositions.every(p=>p>=0),"Calendar Day missing one hierarchy layer: "+JSON.stringify(dayPositions));
+assert.ok(dayPositions.every(p=>p>=0),"Calendar Day missing a required source-owned section: "+JSON.stringify(dayPositions));
 assert.ok(dayPositions.every((p,i)=>i===0||p>dayPositions[i-1]),
-  "Calendar Day must present 1962 identity → observed commemorations → readings → Mass → secondary sources/printing → additional saints");
-assert.equal((dayUi.match(/class="aoCalV2Commemorations"/g)||[]).length,1,
-  "Observed 1962 commemorations must have exactly one surface");
-assert.match(dayUi,/cm\.map\(x=>/,"Principal commemoration must use existing source-verified names");
-assert.match(dayUi,/esc\(x\)/,"Commemoration labels must be escaped");
-assert.match(dayUi,/aoCalV2PrintOptions/,"Printing should be secondary and collapsible");
+  "Calendar Day must present identity → commemorations → Mass action → readings → folded context");
+assert.equal((dayUi.match(/aoCalCommemorationLine/g)||[]).length,1,
+  "Observed 1962 commemorations must have one compact line");
+assert.match(dayUi,/esc\(cm\.join\("; "\)\)/,"Principal commemoration must use escaped verified labels");
+assert.match(dayUi,/aoCalV2PrintOptions/,"Printing stays in the secondary details");
+assert.match(dayUi,/aoCalV2DayFold/,"Secondary content must be folded");
 assert.match(runtime,/Appointed readings/);
 assert.match(runtime,/Lectures de la messe/);
 assert.match(runtime,/calendarScriptureContexts\(r\)/,"Never invent an Epistle or Gospel to fill missing sources");

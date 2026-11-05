@@ -31,6 +31,9 @@ try{
   // The production H4 path is covered separately by H4/R17 visual acceptance.
   await page.waitForSelector('.homeScreen [data-home-mass-entry]',{state:"visible",timeout:25000});
   await page.locator('.homeScreen [data-home-mass-entry]').click();
+  const adjust=page.locator("[data-folio-adjust]");
+  assert.equal(await adjust.count(),1,"M1 Adjust disclosure must remain source owned");
+  await adjust.locator(":scope > summary").click();
   await page.waitForSelector('[data-m1-choice="mass"]',{state:"visible",timeout:25000});
   const open=page.locator("[data-mass-texts-open]");
   assert.equal(await open.count(),1,"One source-owned Mass texts entry, no duplicate");

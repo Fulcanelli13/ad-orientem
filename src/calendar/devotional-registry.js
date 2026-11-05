@@ -1,4 +1,4 @@
-import { NOVENA_CORPUS_V4 } from "../pray/novena-corpus-v4.js";
+import { NOVENA_CALENDAR_METADATA } from "./novena-calendar-metadata.js";
 
 export const CALENDAR_DEVOTIONAL_REGISTRY_VERSION="calendar-devotional-registry-v2-bilingual-novena-freeze";
 
@@ -247,12 +247,12 @@ export const DEVOTIONAL_PRACTICE_REGISTRY=F({
   })
 });
 
-export const PLAYABLE_NOVENA_IDS=A(Object.keys(NOVENA_CORPUS_V4));
+export const PLAYABLE_NOVENA_IDS=A(Object.keys(NOVENA_CALENDAR_METADATA));
 
 export const NOVENA_SOURCE_HOLDS=F({});
 
 export const NOVENA_TARGET_REGISTRY_V1=F(Object.fromEntries(
-  Object.entries(NOVENA_CORPUS_V4).map(([id,n])=>[id,F({
+  Object.entries(NOVENA_CALENDAR_METADATA).map(([id,n])=>[id,F({
     id,
     title:n.title,
     family:n.family,
@@ -260,7 +260,7 @@ export const NOVENA_TARGET_REGISTRY_V1=F(Object.fromEntries(
     playable:true,
     calendar:n.calendar,
     traditionalStart:n.traditionalStart,
-    sourceStatus:n.source?.status??"SOURCE_LOCKED",
+    sourceStatus:n.sourceStatus??"SOURCE_LOCKED",
     frenchTextStatus:n.frenchTextStatus??"MISSING_FRENCH_BODY"
   })])
 ));

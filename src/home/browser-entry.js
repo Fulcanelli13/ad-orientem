@@ -93,6 +93,7 @@ export function createHomeOwner(win=globalThis){
   let enricherClicksBound=false;
   let retiredEnricherObserver=null;
   let inlineCalendarView=null;
+  let inlineCalendarViewObserver=null;
   let h7MassDoorOpen=false;
   let c3PrayerIndex=0,c3PrayerFeature=null;
   let inlineCalendarRestoring=false;
@@ -337,7 +338,36 @@ export function createHomeOwner(win=globalThis){
     }
     return true;
   }
+  // The Calendar owns its Day/Month/Year state. Keep the approved outer
+  // H7 tab in sync when a date or year link changes the embedded view.
+  function stopEmbeddedCalendarViewSync(){
+    inlineCalendarViewObserver?.disconnect?.();
+    inlineCalendarViewObserver=null;
+  }
+  function syncEmbeddedCalendarView(){
+    const screen=win?.document?.querySelector?.(".homeScreen.aoTodayV2");
+    const calendar=screen?.querySelector?.("[data-home-calendar-inline] #ao-calendar-modular-root");
+    const view=calendar?.dataset?.aoCalendarView;
+    if(!screen||!["day","picker","year"].includes(view))return false;
+    inlineCalendarView=view;
+    screen.dataset.aoHomeCalendarView=view;
+    for(const button of screen.querySelectorAll(".aoH4CalendarViews [data-home-calendar-view]")){
+      if(button.dataset.homeCalendarView===view)button.setAttribute("aria-current","page");
+      else button.removeAttribute("aria-current");
+    }
+    return true;
+  }
+  function observeEmbeddedCalendarView(slot){
+    stopEmbeddedCalendarViewSync();
+    const calendar=slot?.querySelector?.("#ao-calendar-modular-root");
+    if(calendar&&typeof win?.MutationObserver==="function"){
+      inlineCalendarViewObserver=new win.MutationObserver(syncEmbeddedCalendarView);
+      inlineCalendarViewObserver.observe(calendar,{attributes:true,attributeFilter:["data-ao-calendar-view"]});
+    }
+    syncEmbeddedCalendarView();
+  }
   function showHomeToday(){
+    stopEmbeddedCalendarViewSync();
     inlineCalendarView=null;
     h7MassDoorOpen=false;
     const screen=win?.document?.querySelector?.(".homeScreen.aoTodayV2");
@@ -374,9 +404,33 @@ export function createHomeOwner(win=globalThis){
     }});
     if(opened!==true){showHomeToday();return false}
     if(date&&/^\d{4}-\d{2}-\d{2}$/.test(date))await api.select?.(date,{closeAfter:false});
+    observeEmbeddedCalendarView(slot);
     return true;
   }
 
+  // Calendar Day's Mass action must land at the same approved H7 door as
+  // Home's Enter the Mass. Keep R17 as the sole owner of choices and LIVE.
+  function openCalendarMassDoor(){
+    const s=state(win);
+    const screen=win?.document?.querySelector?.(".homeScreen.aoTodayH4.aoH7Screens");
+    if(s?.route!=="home"||!inlineCalendarView||!screen||
+       !screen.querySelector("[data-home-calendar-inline] #ao-calendar-modular-root"))return false;
+    // The door is already mounted beside the inline Calendar. Do not
+    // repaint all of Home just to reveal it: that discards the existing
+    // H7 DOM and makes the Calendar -> Mass transition needlessly expensive.
+    // Silently detach only Calendar's own embedded surface and subscriptions.
+    stopEmbeddedCalendarViewSync();
+    inlineCalendarView=null;
+    try{win?.AO_CALENDAR_APP_V1?.close?.({surface:"home",silent:true});}catch{}
+    delete screen.dataset.aoHomeCalendarView;
+    const slot=screen.querySelector("[data-home-calendar-inline]");
+    if(slot)slot.hidden=true;
+    h7MassDoorOpen=true;
+    if(!syncH7MassDoor()){h7MassDoorOpen=false;return false;}
+    win?.document?.querySelector?.(".aoH7DoorView:not([hidden]) [data-home-h7-back]")
+      ?.focus?.({preventScroll:true});
+    return true;
+  }
   function onEnricherClick(event){
     const target=event?.target;
     const retry=target?.closest?.("[data-home-shortcut-retry]");
@@ -428,6 +482,13 @@ export function createHomeOwner(win=globalThis){
       h7MassDoorOpen=false;
       syncH7MassDoor();
       win?.document?.querySelector?.(".aoH7HomeView [data-home-h7-enter]")?.focus?.({preventScroll:true});
+      return;
+    }
+    const h7Details=target?.closest?.("[data-home-h7-details]");
+    if(h7Details){
+      event.preventDefault?.();event.stopImmediatePropagation?.();
+      const detail=win?.document?.querySelector?.(".aoH7DoorView:not([hidden]) .aoH7DoorDetails");
+      if(detail){detail.open=true;detail.scrollIntoView?.({block:"start",behavior:"auto"});}
       return;
     }
     const resumeMass=target?.closest?.("[data-resume-mass]");
@@ -621,7 +682,9 @@ export function createHomeOwner(win=globalThis){
     if(calendar){
       event.preventDefault?.();event.stopImmediatePropagation?.();
       const view=calendar.dataset?.homeCalendarView||"picker";
-      const date=calendar.dataset?.homeCalendarDate||null;
+      const date=calendar.hasAttribute?.("data-home-calendar-civil-today")
+        ?civilToday():(calendar.dataset?.homeCalendarDate||null);
+      if(h7MassDoorOpen){h7MassDoorOpen=false;syncH7MassDoor();}
       void openHomeCalendar(view,date).then(ok=>{
         if(!ok)showRouteError("calendar",calendar);
       });
@@ -806,7 +869,7 @@ export function createHomeOwner(win=globalThis){
     }
     unsubscribe=store.subscribe(next=>{
       if(next?.route==="home")paint(next);
-      else{h7MassDoorOpen=false;win?.document?.documentElement?.removeAttribute?.("data-ao-h7-door-open");closeH4ChoicesSheet(win);}
+      else{stopEmbeddedCalendarViewSync();h7MassDoorOpen=false;win?.document?.documentElement?.removeAttribute?.("data-ao-h7-door-open");closeH4ChoicesSheet(win);}
     });
     paint(store.getState());
     return true;
@@ -827,6 +890,7 @@ export function createHomeOwner(win=globalThis){
         return true;
       }
     }
+    stopEmbeddedCalendarViewSync();
     inlineCalendarView=null;
     h7MassDoorOpen=false;
     closeTransientSurfaces(win);
@@ -856,6 +920,7 @@ export function createHomeOwner(win=globalThis){
   }
 
   function dispose(){
+    stopEmbeddedCalendarViewSync();
     closeH4ChoicesSheet(win);
     try{unsubscribe?.();}catch{}
     unsubscribe=null;
@@ -872,7 +937,7 @@ export function createHomeOwner(win=globalThis){
   bindEnricherClicks();
   ensureRetiredEnricherWatch();
   attachPresentation();
-  return Object.freeze({version:VERSION,open,paint,status,dispose});
+  return Object.freeze({version:VERSION,open,paint,status,openCalendarMassDoor,dispose});
 }
 
 export function installHomeBrowserOwner(win=globalThis){
