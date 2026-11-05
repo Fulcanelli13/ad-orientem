@@ -22,7 +22,7 @@ assert.equal(combined.length,1882);
 assert.deepEqual(combined.slice(0,old.length),old,"Frozen R49 records/order mutated");
 assert.equal(new Set(combined.map(r=>r.source_id)).size,combined.length);
 assert.equal(filterPreliminaryR49(combined,{directoryGroup:"ROME"}).length,1025);
-assert.equal(filterPreliminaryR49(combined,{directoryGroup:"SSPX"}).length,740);
+assert.equal(filterPreliminaryR49(combined,{directoryGroup:"SSPX"}).length,732);
 assert.equal(filterPreliminaryR49(combined,{directoryGroup:"UNKNOWN"}).length,125);
 assert.equal(filterPreliminaryR49(combined,{directoryGroup:"ALL"}).length,1882);
 assert.equal(exploreMapFeatures(combined).length,1882);
