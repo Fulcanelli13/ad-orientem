@@ -22,7 +22,7 @@ const fail=c=>{throw Error("SCHOLA_27_VARIANTS_"+c)};
 const norm=s=>String(s??"").normalize("NFD")
  .replace(/[\u0300-\u036f]/g,"").replace(/æ/gi,"ae")
  .replace(/œ/gi,"oe").replace(/j/gi,"i")
- .toLowerCase().replace(/[^a-z]+/g," ").trim().replace(/\s+/g," ");
+ .toLowerCase().replace(/[^a-z]+/g," ").replace(/\bcoel/g,"cael").trim().replace(/\s+/g," ");
 const fingerprint=s=>createHash("sha256").update(norm(s)).digest("hex");
 const originalGroup=c=>c?.openingDisposition===
  "SELECTED_OPENING_DIFFERS_FROM_HISTORICAL_GRADUAL_MUST_TRACE_1962_VARIANT";
