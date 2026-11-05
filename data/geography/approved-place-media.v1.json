@@ -1,6 +1,6 @@
 {
   "schema": "AO_APPROVED_PLACE_MEDIA_V1",
-  "version": "1.6.16",
+  "version": "1.6.17",
   "items": [
     {
       "place_id": "place:AE:st-joseph-cathedral-abu-dhabi",
@@ -7534,6 +7534,30 @@
       "width": 1280,
       "height": 850,
       "orientation": "landscape"
+    },
+    {
+      "place_id": "place:PL:lichen-marian-basilica",
+      "status": "APPROVED",
+      "asset_path": "assets/approved/place-media/pf-a0600e3a8e52d5d2aa5c6a.webp",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Bazylika_w_Licheniu.jpg",
+      "source_sha1": "8b0763b7f61a150002a67fb922ee73313ff866f4",
+      "derivative_sha256": "e5a217c7753b0a6dd19bb09b152b51862cdd7eaca1a0b1e06c0c3412782b246a",
+      "credit": "Bialo-zielony",
+      "license": "CC-BY-SA-3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "rights_verified": true,
+      "subject_verified": true,
+      "crop_reviewed": true,
+      "width": 1280,
+      "height": 960,
+      "orientation": "landscape",
+      "alt_en": "Photograph of Bazylika Najświętszej Maryi Panny Licheńskiej",
+      "alt_fr": "Photographie de Bazylika Najświętszej Maryi Panny Licheńskiej",
+      "changes_en": "Full-frame scaled WebP, EXIF orientation normalized; no crop or recolouring.",
+      "changes_fr": "Image entière redimensionnée en WebP, orientation EXIF corrigée ; sans recadrage ni retouche.",
+      "reviewed_at": "2026-11-05",
+      "review_method": "R28 owner-selected exact file SHA1; R29 independent source, authorship, underlying rights and mobile full-frame review by Ad Orientem AI-assisted source and image evidence review (ChatGPT; not an independent legal opinion). Source rev 1166539084.",
+      "source_place_ref": "R28_OWNER_EXACT_ORIGINAL_20261104"
     },
     {
       "place_id": "place:PL:p42-sg-inv-0211",
