@@ -9,6 +9,8 @@ on:
       - 'src/mass/reader-participation-reference-scores.js'
       - 'src/mass/reader-gospel-response-reference-scores.js'
       - 'src/mass/reader-dismissal-variant-reference-scores.js'
+      - 'src/mass/reader-canon-pax-response-reference-scores.js'
+      - 'tests/reader-canon-pax-responses.mjs'
       - 'tests/reader-dismissal-variant-reference.mjs'
       - 'tests/reader-dismissal-variant-phone.mjs'
       - 'tests/reader-participation-reference-scores.mjs'
@@ -51,6 +53,8 @@ jobs:
           node --check src/mass/reader-participation-reference-scores.js
           node --check src/mass/reader-gospel-response-reference-scores.js
           node --check src/mass/reader-dismissal-variant-reference-scores.js
+          node --check src/mass/reader-canon-pax-response-reference-scores.js
+          node --check tests/reader-canon-pax-responses.mjs
           node --check tests/reader-dismissal-variant-reference.mjs
           node --check tests/reader-dismissal-variant-phone.mjs
           node --check tests/reader-participation-reference-scores.mjs
@@ -69,6 +73,7 @@ jobs:
           node tests/reader-participation-neume-policy.mjs
           node tests/reader-participation-reference-scores.mjs
           node tests/reader-dismissal-variant-reference.mjs
+          node tests/reader-canon-pax-responses.mjs
           node tests/reader-inline-chant-generic-source.mjs
           node tests/reader-inline-proper-registry.mjs
           node tests/reader-proper-gabc-bulk-join.mjs
