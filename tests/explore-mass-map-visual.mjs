@@ -6,10 +6,10 @@ import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
 import {PUBLISHED_PROVISIONAL_MASS_SITES_EXPECTED} from "../src/find/preliminary-directory-r49.js";
 import {CL2_PHYSICAL_SITE_COUNT,CL2_EXPECTED_R49_GROUPS} from "../src/find/cl2-physical-directory.js";
-// Of 735 original CL2 groups, 681 have reviewed illustrative/site pins; 54 remain list-only.
+// Of 735 original CL2 groups, 685 have reviewed illustrative/site pins; 50 remain list-only.
 // Census after R1 158 localities, 9 exact/POI admissions, R2 93, R3 91, R4 8, R5 4, R6 6 and R7 4 approved localities.
 const WORLDWIDE_DIRECTORY_TOTAL=CL2_PHYSICAL_SITE_COUNT+PUBLISHED_PROVISIONAL_MASS_SITES_EXPECTED;
-const REVIEWED_NEW_SITE_PINS=681;
+const REVIEWED_NEW_SITE_PINS=685;
 const MAPPED_MASS_PINS_TOTAL=CL2_EXPECTED_R49_GROUPS+PUBLISHED_PROVISIONAL_MASS_SITES_EXPECTED+REVIEWED_NEW_SITE_PINS;
 const ADDRESS_ONLY_SITES_TOTAL=WORLDWIDE_DIRECTORY_TOTAL-MAPPED_MASS_PINS_TOTAL;
 
@@ -99,7 +99,7 @@ try{
     await page.waitForFunction(expected=>document.querySelector(
       '#ao-find-modular-root .aoFindResultMeta')?.textContent?.includes(String(expected)),
       ADDRESS_ONLY_SITES_TOTAL,{timeout:10000});
-    assert.equal(MAPPED_MASS_PINS_TOTAL,2528,
+    assert.equal(MAPPED_MASS_PINS_TOTAL,2532,
       "Only source-backed positioned sites and three approved additions receive map pins");
     // Give the external free map engine a bounded opportunity to render.
     await Promise.race([
