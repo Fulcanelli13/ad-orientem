@@ -7,6 +7,27 @@ import {createHash} from "node:crypto";
 export const RELEASE_PROOF_FILENAME="release-proof.json";
 export const RELEASE_PROOF_SCHEMA="ad-orientem/github-pages-proof/v1";
 export const RELEASE_PROOF_REPOSITORY="Fulcanelli13/ad-orientem";
+// Exact-byte public release witnesses: 65-card source-owned Mass reader,
+// bilingual 1962 Proper repairs, and the independent Schola. This asserts
+// DEPLOYED CODE PARITY, not original printed notation or score approval.
+export const MASS_SCHOLA_CRITICAL_PATHS=Object.freeze([
+ "src/mass/reader-native-preview.js",
+ "src/mass/reader-model.js",
+ "src/mass/reader-mode-switch.js",
+ "src/mass/browser-entry.js",
+ "src/mass/reader-proper-runtime-recovery.js",
+ "src/mass/proper-reader-slots.js",
+ "src/mass/1962-april-paschal-proper-correction.js",
+ "src/mass/1962-april-paschal-archival-witnesses.js",
+ "src/mass/1962-passion-friday-commemorations.js",
+ "src/mass/1962-commemoration-form-source.js",
+ "src/mass/reader-schola.js",
+ "src/mass/reader-schola-performance-ledger.js",
+ "src/mass/reader-proper-gabc-bulk-join.js",
+ "src/mass/reader-composed-schola-text.js",
+ "src/mass/reader-rite-music-presentation.js",
+ "src/mass/reader-inline-chant-selector.js",
+]);
 const FIXED_CRITICAL_PATHS=[
  "index.html",
  "sw.js",
@@ -17,6 +38,7 @@ const FIXED_CRITICAL_PATHS=[
  "src/pray/novena-runtime.js",
  "src/pray/prayer-design-pilot.js",
  "src/pray/presentation-runtime.js",
+ ...MASS_SCHOLA_CRITICAL_PATHS,
 ];
 
 export function releaseCommitSha(value){

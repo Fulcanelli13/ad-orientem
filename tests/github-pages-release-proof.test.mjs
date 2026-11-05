@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {readFile} from "node:fs/promises";
 import {
- RELEASE_PROOF_FILENAME,RELEASE_PROOF_SCHEMA,criticalReleasePaths,
+ RELEASE_PROOF_FILENAME,RELEASE_PROOF_SCHEMA,MASS_SCHOLA_CRITICAL_PATHS,criticalReleasePaths,
  createReleaseProof,releaseCommitSha,releaseRunId,releaseSha256,verifyReleaseProof
 } from "../tools/github-pages-release-proof.mjs";
 
@@ -11,12 +11,17 @@ const html='<!doctype html><html><head><link href="./ao-inline-a1.css" rel="styl
 const assets=()=>Object.fromEntries(criticalReleasePaths(html).map(p=>[p,releaseSha256(Buffer.from("critical:"+p))]));
 const proof=()=>createReleaseProof({sha:shaA,runId:"1234567",indexHtml:html,assetSha256:assets()});
 
-test("build provenance identifies exactly the checked-out commit, run and ten critical files",()=>{
+test("build provenance identifies source commit, run and 26 critical deployed files",()=>{
  const p=proof();
  assert.equal(p.schema,RELEASE_PROOF_SCHEMA);
  assert.equal(p.source_sha,shaA);
  assert.equal(p.workflow_run_id,"1234567");
- assert.equal(Object.keys(p.critical_sha256).length,10);
+ assert.equal(MASS_SCHOLA_CRITICAL_PATHS.length,16);
+ assert.equal(Object.keys(p.critical_sha256).length,26);
+ for(const file of MASS_SCHOLA_CRITICAL_PATHS){
+  assert.ok(file.startsWith("src/mass/"));
+  assert.ok(Object.hasOwn(p.critical_sha256,file),"Missing live Mass/Schola reader proof: "+file);
+ }
  for(const file of ["src/pray/novena-runtime.js","src/pray/prayer-design-pilot.js","src/pray/presentation-runtime.js"]){
   assert.ok(Object.hasOwn(p.critical_sha256,file),"Missing live Pray reader proof: "+file);
  }
@@ -37,6 +42,12 @@ test("missing, malformed or substituted critical bytes do not certify the deploy
  const staleNovena={...p,critical_sha256:{...p.critical_sha256}};
  delete staleNovena.critical_sha256["src/pray/novena-runtime.js"];
  assert.throws(()=>verifyReleaseProof(staleNovena,{expectedSha:shaA,expectedRunId:"1234567",indexHtml:html}),/Missing critical release digest/);
+ const staleMass={...p,critical_sha256:{...p.critical_sha256}};
+ delete staleMass.critical_sha256["src/mass/reader-native-preview.js"];
+ assert.throws(()=>verifyReleaseProof(staleMass,{expectedSha:shaA,expectedRunId:"1234567",indexHtml:html}),/Missing critical release digest/);
+ const staleSchola={...p,critical_sha256:{...p.critical_sha256}};
+ delete staleSchola.critical_sha256["src/mass/reader-schola.js"];
+ assert.throws(()=>verifyReleaseProof(staleSchola,{expectedSha:shaA,expectedRunId:"1234567",indexHtml:html}),/Missing critical release digest/);
  const altered={...p,critical_sha256:{...p.critical_sha256,"index.html":"00"}};
  assert.throws(()=>verifyReleaseProof(altered,{expectedSha:shaA}),/Invalid SHA-256 digest/);
  assert.notEqual(releaseSha256(Buffer.from("tampered:index.html")),p.critical_sha256["index.html"]);
@@ -71,5 +82,17 @@ test("release scripts consume the shared proof and audit the actual published by
  assert.ok(live.includes('"src/pray/novena-runtime.js"'),"The public-site checker must audit novena-runtime.js");
  assert.ok(live.includes('"src/pray/prayer-design-pilot.js"'),"The public-site checker must audit prayer-design-pilot.js");
  assert.ok(live.includes('"src/pray/presentation-runtime.js"'),"The public-site checker must audit presentation-runtime.js");
+ assert.match(live,/for\(const path of MASS_SCHOLA_CRITICAL_PATHS\)await released\(path\)/,
+  "Every Mass and Schola critical source module must be fetched and checked for exact published bytes");
+ assert.match(live,/Direct 65-card Mass, appointed 1962 Proper corrections and Schola exact-byte parity/);
  assert.match(live,/if\(i<5\)await new Promise/);
+});
+
+test("all 16 pinned Mass and Schola release witnesses are real, nonempty published-source modules",async()=>{
+ const seen=new Set();
+ for(const path of MASS_SCHOLA_CRITICAL_PATHS){
+  assert.ok(!seen.has(path),"duplicate critical Mass module: "+path);seen.add(path);
+  const content=await readFile(new URL("../"+path,import.meta.url));
+  assert.ok(content.length>200,"missing or empty source module: "+path);
+ }
 });
