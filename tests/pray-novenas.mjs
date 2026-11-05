@@ -144,7 +144,16 @@ assert.match(runtime,/resolveCanonicalAssetUrl\(id\)/,"Novena header lost canoni
 assert.match(runtime,/n1UiIcon\('ao-ui-back'\)/,"Novena header lost canonical Back utility artwork");
 assert.match(runtime,/n1UiIcon\('ao-nav-home'\)/,"Novena header lost canonical Home utility artwork");
 assert.match(runtime,/function goHome\(\)/,"Novena global Home action is missing");
-assert.match(runtime,/if\(N\.screen===\'day\'\).*N\.screen=\'detail\'/,"Novena Back no longer returns Day to Novena detail");
+assert.match(runtime,/if\(N\.screen===\'day\'\)\{N\.screen=detailFromOverview\?'overview':'detail'/,"Overview-selected day must Back directly to the overview, while a direct deep link keeps its detail return");
+assert.match(runtime,/if\(N\.screen===\'detail\'&&dayAboutOpen\)/,"About-this-novena must return to the active prayer day on Back");
+assert.match(runtime,/if\(b\.dataset\.n1Select\).*?N\.screen='day'/,"Selecting a canonical novena must open its real day reader without a separate setup screen");
+assert.match(runtime,/if\(b\.dataset\.n1Supplement\)[\s\S]*?N\.screen='day'/,"Supplemental nine-day prayers must use the same direct reader route");
+assert.match(runtime,/data-n1-about/,"The original historical detail and source context must remain available from the reader");
+assert.match(runtime,/N\.screen=opts\?\.returnSearch/,"Search-origin Novenas must open to the real prayer day");
+assert.match(runtime,/function returnToPraySearch\(\)/,"Novena Back must recover the source-owned search origin");
+assert.match(runtime,/restoreSearch\?\.\(returnSearch\)/,"Novena Back must restore query and facets rather than open another directory");
+assert.match(runtime,/returnSearch:OPEN_OPTS\?\.returnSearch/,"Native app Back must preserve direct Novena search context");
+assert.match(runtime,/detailFromOverview,dayAboutOpen/,"App Back receipt must preserve whether the reader opened the context page");
 assert.match(runtime,/if\(N\.screen===\'detail\'&&detailFromOverview\)/,"Visited Novena overview must remain a valid Back destination");
 assert.match(runtime,/returnToObservedModuleOrigin\(window,OPEN_RECEIPT/,"Direct Novena detail must Back to its real origin, not an invented overview");
 assert.match(runtime,/noCompletionTracking:true/,"Novenas privacy rule for completion tracking changed");
