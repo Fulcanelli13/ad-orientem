@@ -96,4 +96,31 @@ for(const [i,expected] of [
  assert.match(item.gabc,/^\(c[1-4]\)/);
  assert.ok(item.gabc.includes("(::)"));
 }
+
+const annual=load(".tmp/schola-1962-selected-annual/2026-selected-gabc-coverage.json");
+assert.equal(annual.schema,"ao-schola-selected-mass-2026-proper-gabc-candidate-coverage-v1");
+assert.equal(annual.year,2026);
+assert.equal(annual.rows.length,365);
+const july=annual.rows.find(x=>x.date==="2026-07-07");
+assert.equal(july?.sourcePath,"Sancti/07-07");
+assert.equal(july?.status,"SOURCE_MATCHED_FOR_REVIEW");
+const norm=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+ .replace(/æ/gi,"ae").replace(/œ/gi,"oe").replace(/j/gi,"i")
+ .toLowerCase().replace(/[^a-z]+/g," ").trim().replace(/\s+/g," ");
+const latin=norm(july.selectedGradualLatin);
+const appointed=[
+ "sacerdotes eius induam salutari et sancti eius exsultatione exsultabunt",
+ "illuc producam cornu david paravi lucernam christo meo",
+ "iuravit dominus",
+ "tu es sacerdos in aeternum secundum ordinem melchisedech"
+];
+let previous=-1;
+for(const segment of appointed){
+ const pos=latin.indexOf(segment);
+ assert.ok(pos>=0,"7 July appointed source segment omitted: "+segment);
+ assert.ok(pos>previous,"7 July appointed Gregorian segment out of liturgical order: "+segment);
+ previous=pos;
+}
+assert.ok(!latin.includes("ecce sacerdos magnus"),
+ "The historical C4 first Common must NOT replace the 7 July Sacerdotes form");
 console.log("SCHOLA_JULY07_ORIGINAL_SOURCE_PROOF_PASS: 1962 Vatican pp.580-581, 1961 Graduale [35]-[37]/saint p.549, C4-1 != C4; C4d section candidate, 3 exact archived GABC locators, 0 public approvals");
