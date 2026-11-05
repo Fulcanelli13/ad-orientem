@@ -78,6 +78,15 @@ if(!stylesheet||!script)throw Error("Missing content-addressed CSS or JavaScript
 await released(stylesheet);await released(script);
 ok("Published CSS and JS exact-byte digests");
 
+// A correct HTML shell can still be paired with stale, CDN-cached reader
+// modules. Verify the precise source-owned Pray code released with this SHA.
+for(const path of [
+ "src/pray/novena-runtime.js",
+ "src/pray/prayer-design-pilot.js",
+ "src/pray/presentation-runtime.js",
+])await released(path);
+ok("Novena reader, bilingual Pray search and Prayer router exact-byte parity");
+
 const registry=JSON.parse((await released("data/geography/seed-registry.v1.json")).toString("utf8"));
 const photos=JSON.parse((await released("data/geography/approved-place-media.v1.json")).toString("utf8"));
 assert.ok(Array.isArray(registry.places)&&registry.places.length>=530);
