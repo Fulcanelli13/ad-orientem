@@ -2,6 +2,14 @@ name: Directory runtime snapshots
 
 on:
   workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - ".github/workflows/directory-runtime-snapshots.yml"
+      - "tools/directory/import-sspx.mjs"
+      - "tools/directory/validate-runtime-snapshots.mjs"
+      - "tests/directory-sspx-403-partial-snapshots.mjs"
+      - "package.json"
   schedule:
     - cron: "17 3 * * 1"
   push:
@@ -41,12 +49,24 @@ jobs:
           npm run directory:import:fssp
           npm run directory:import:icksp
           npm run directory:import:ibp
-          npm run directory:import:sspx -- --no-details
+          # Both official acquisition paths can return HTTP 403. Only that
+          # exact double-denial produces an explicit nonpublishable hold;
+          # every malformed payload, validation error or other HTTP failure
+          # still fails closed.
+          npm run directory:import:sspx -- --no-details --allow-403-hold
       - name: Validate generated corpus
         run: |
+          node tests/directory-sspx-403-partial-snapshots.mjs
           npm run test:directory
           node tests/find-surface.mjs
           node tools/directory/validate-runtime-snapshots.mjs
+      - name: Report explicit unavailable-source status
+        run: |
+          if test -f data/directory/generated/sspx/source-unavailable.v1.json; then
+            echo "::warning::SSPX upstream HTTP 403 on direct and browser acquisition; snapshot held with zero publishable SSPX records"
+            echo "### SSPX source unavailable (HTTP 403)" >> "$GITHUB_STEP_SUMMARY"
+            echo "The FSSP, ICKSP and IBP snapshots were validated. SSPX was **not** imported or released; its exact 403 witness is in the review artifact. Retry when the official source permits acquisition." >> "$GITHUB_STEP_SUMMARY"
+          fi
       - name: Package reviewable snapshots
         uses: actions/upload-artifact@v4
         with:
