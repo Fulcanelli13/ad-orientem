@@ -25,6 +25,62 @@ try{
  for(const width of [320,390]){
   const page=await browser.newPage({viewport:{width,height:width===320?568:844},serviceWorkers:"block"});
   await page.goto("http://127.0.0.1:"+server.address().port+"/index.html",{waitUntil:"domcontentloaded"});
+  if(width===390){
+   await page.waitForFunction(()=>
+    typeof globalThis.AO_RUNTIME_V8?.resolver?.resolveDay==="function",null,{timeout:90000});
+   const real=await page.evaluate(async()=>{
+    const resolver=globalThis.AO_RUNTIME_V8.resolver;
+    const outcome=await resolver.resolveDay("2026-11-01");
+    const proper=outcome?.proper?.data;
+    const sourcePath=proper?.sourcePath??null;
+    const {recoverReaderProperOmissions}=await import("/src/mass/reader-proper-runtime-recovery.js");
+    const {adaptV346ResolvedMass}=await import("/src/mass/host-adapter.js");
+    const {properToReaderSlots}=await import("/src/mass/proper-reader-slots.js");
+    const {referenceScoresForParagraph}=await import("/src/mass/reader-inline-proper-reference.js");
+    const principalId=outcome?.day?.main?.id;
+    const recovered=await recoverReaderProperOmissions(proper,{
+     hostResolver:resolver.properResolver,principalCelebrationId:principalId,
+     calendarDate:"2026-11-01"
+    });
+    const request={canStart:true,date:"2026-11-01",
+     calendarDay:{id:principalId,title:outcome?.day?.main?.title??null},
+     celebrationId:"mass_of_day",requestedCelebrationId:"mass_of_day",
+     celebrationType:"CALENDAR",properSource:sourcePath};
+    const adapted=adaptV346ResolvedMass(request,{form:"solemn",proper:recovered});
+    const realProper=adapted?.proper?.data??null;
+    const projected=properToReaderSlots(realProper,{language:"en"});
+    const resolvedMass={date:"2026-11-01",form:"SOLEMN",
+     proper:{data:realProper},overlays:[]};
+    const movements=["INTROIT","GRADUAL","ALLELUIA_TRACT_SEQUENCE",
+     "OFFERTORY","COMMUNION"];
+    const parts=movements.map(slot=>{
+     const entry=projected.slots[slot];
+     return {slot,status:entry.status,rows:(entry.data?.paragraphs??[]).map(row=>{
+      const paragraph={id:row.id,kind:row.kind,
+       primary:row.latin,alternate:row.vernacular};
+      return {paragraphId:row.id,latin:String(row.latin??"").slice(0,105),
+       scores:referenceScoresForParagraph({
+        paragraph,resolvedMass,form:"SOLEMN"}).map(s=>s.id)};
+     })};
+    });
+    return {dayStatus:outcome?.status,sourcePath,
+     readerSourcePath:realProper?.sourcePath,readerReady:projected.ready,
+     parts,ids:[...new Set(parts.flatMap(p=>p.rows.flatMap(r=>r.scores)))]};
+   });
+   assert.equal(real.dayStatus,"ready");
+   assert.equal(real.sourcePath,"Sancti/11-01");
+   assert.equal(real.readerSourcePath,"Sancti/11-01");
+   assert.equal(real.readerReady,true,"Actual selected 1962 All Saints reader Proper must resolve");
+   assert.deepEqual(real.ids.sort(),[
+    "GREGOBASE-345","GREGOBASE-371","GREGOBASE-752",
+    "GREGOBASE-835","GREGOBASE-1237"].sort(),
+    "Real source-owned paragraphs must map to five archived neume scores: "+JSON.stringify(real.parts));
+   console.log("INLINE_1961_ALL_SAINTS_REAL_RESOLVER_PASS "+JSON.stringify({
+    sourcePath:real.sourcePath,ids:real.ids,parts:real.parts.map(p=>({
+     slot:p.slot,status:p.status,scores:p.rows.flatMap(r=>r.scores)
+    }))
+   }));
+  }
   const result=await page.evaluate(async()=>{
    const {JULY07_REFERENCE_GABC,referenceScoresForParagraph,createDatedProperNotationPreview,
      JULY07_REFERENCE_CSS}=await import("/src/mass/reader-inline-proper-reference.js");
