@@ -68,6 +68,16 @@ test("Historical formulas are not falsely aligned or completed",()=>{
  assert.doesNotMatch(prayers.foundations_act_of_love.fr,/Amen/);
  assert.match(prayers.foundations_guardian_angel.en,/my guardian dear/);
  assert.match(prayers.foundations_guardian_angel.la,/Ángele Dei/);
+ const angel=essentialPrayerWitnessPolicy("foundations_guardian_angel");
+ assert.match(angel.faces.en.url,/vatican\.va/);
+ assert.match(angel.faces.en.witness,/Compendium/);
+ const morning=essentialPrayerWitnessPolicy("foundations_morning_offering");
+ assert.match(morning.faces.en.witness,/this month/);
+ assert.match(morning.faces.en.url,/usccb\.org/);
+ assert.doesNotMatch(prayers.foundations_morning_offering.en,/Holy Father this month/);
+ assert.match(prayers.foundations_morning_offering.en,/Holy Father\. Amen\.$/,
+  "Traditional Morning Offering source text is retained, not silently rewritten");
+
  for(const id of ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2){
   const {la}=prayers[id];
   assert.doesNotMatch(la,/\b(?:Sicvt|sicvt|tvvm|svnt)\b/);
