@@ -11,7 +11,7 @@ assert.equal(qa.updated_on,"2026-11-05");
 assert.equal(qa.rows.length,19);
 assert.equal(owner.decisions.length,19);
 assert.equal(gates.rows.length,19);
-assert.equal(media.items.length,379);
+assert.equal(media.items.length,380);
 assert.equal(gallery.items.length,42);
 assert.equal(qa.counts.source_pages_checked_initial_2026_11_04,5);
 assert.equal(qa.counts.source_pages_checked_followup_2026_11_05,14);
@@ -58,7 +58,7 @@ for(const x of qa.rows){
   assert.equal(p.source_file_title_agrees_with_frozen_record,true);
   assert.ok(p.source_page_summary?.length>55);
   assert.ok(p.review_gate?.length>7);
-  assert.equal(g.publication_authorized,false);
+  assert.equal(g.publication_authorized,x.place_id==="place:PL:lichen-marian-basilica");
  } else older++;
 }
 assert.equal(older,5);
@@ -78,7 +78,7 @@ const bav=qa.rows.find(x=>x.place_id==="place:DE:friedhofskirche-st-michael-alto
 assert.equal(bav.current_page_observation.description_page_snapshot_revision_id,"1261770612");
 assert.equal(bav.source_sha1,"2950c29a57538bb91cfdf42b1c949a3135d98481");
 assert.ok(qa.rows.find(x=>x.place_id==="place:BE:banneux").current_page_observation.site_description_classification.includes("SANCTUARY_VIEW"));
-console.log("R30 PASS: all 19 exact user-selected source description pages reviewed, 14 page snapshot IDs, two further photo-credit exceptions, no new image rights claims or publication.");
+console.log("R30 PASS: all 19 exact user-selected source description pages reviewed, 14 page snapshot IDs, two further photo-credit exceptions, historic R30 page audit unchanged; one separately cleared R29 Lichen release.");
 
 
 const r34Ids=["place:PL:lichen-marian-basilica","place:LB:monastery-saint-maron-annaya","place:US:la-salette-attleboro","place:BE:banneux","place:KR:haemi-martyrs-shrine-main-church","place:MX:guadalupe-zacatecas-historic-sanctuary"];
@@ -97,9 +97,9 @@ for(const id of r34Ids){
   assert.ok(x.evidence_urls.includes(locked.original_commons_page));
   assert.equal(row.original_bytes_reacquired_for_publication,false);
   assert.equal(row.final_photo_release_authorized,false);
-  assert.equal(gate.publication_authorized,false);
+  assert.equal(gate.publication_authorized,id==="place:PL:lichen-marian-basilica");
 }
 assert.match(qa.rows.find(x=>x.place_id==="place:US:la-salette-attleboro").r34_visual_scene_observation.scene_description,/WELCOME CENTER/);
 assert.match(qa.rows.find(x=>x.place_id==="place:KR:haemi-martyrs-shrine-main-church").r34_visual_scene_observation.scene_description,/circular church/);
 assert.equal(qa.counts.newly_published,0);
-console.log("R34 PASS: six exact original browser previews inspected; La Salette welcome-centre and Haemi circular church documented; rights, native JPEG and publication still held.");
+console.log("R34 PASS: six exact original browser previews inspected; La Salette welcome-centre and Haemi circular church documented; R34 preview observations historical; separate Lichen review and SHA-1 recovery completed.");
