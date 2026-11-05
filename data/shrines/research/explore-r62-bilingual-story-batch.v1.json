@@ -337,8 +337,8 @@
       "original_sources": [
         {
           "source_id": "SHR-FR-VEZELAY-MADELEINE",
-          "url": "https://www.basiliquedevezelay.org/samedi-saint/",
-          "issuer": "Basilique Sainte-Marie-Madeleine de Vézelay — sanctuary and relic history"
+          "url": "https://www.basiliquedevezelay.org/marie-madeleine/",
+          "issuer": "Basilique de Vézelay — Mary Magdalene, disciple and relic traditions"
         }
       ]
     },
@@ -762,5 +762,9 @@
         }
       ]
     }
-  ]
+  ],
+  "corrected_source_registry_alignment_20261105": {
+    "reconciled_rows": 1,
+    "reason": "Two institutional source URLs were later verified as broken or mismatched and replaced in the canonical shrine-source registry; this research snapshot is aligned without altering its Place IDs or published folios."
+  }
 }
