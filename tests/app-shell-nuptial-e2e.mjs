@@ -119,11 +119,17 @@ try{
   assert.equal(model.owner,"R17_NATIVE_PRODUCTION");
   assert.equal(model.marker,"R17_NATIVE_PRODUCTION");
   assert.equal(model.total,68,"Nuptial LIVE must show 65 curated ordinary cards plus three source-pinned prayers");
-  assert.equal(model.sourceTotal,42,"Nuptial source must retain the certified 39+3 insertion model");
+  assert.equal(model.sourceTotal,30,"Direct Nuptial LIVE source must be the 30 canonical macros");
   assert.equal(model.productOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
-  assert.match(model.sourceOwner,/SOURCE_FIRST_LIVE\+NUPTIAL_INSERTIONS/);
-  assert.deepEqual(model.projectedParagraphIds,model.sourceParagraphIds,
-    "Nuptial production phone reader must not drop or duplicate source paragraphs");
+  assert.equal(model.sourceOwner,"BASE_30_MACROS");
+  let sourceCursor=0;
+  for(const id of model.projectedParagraphIds){
+    if(id===model.sourceParagraphIds[sourceCursor])sourceCursor++;
+  }
+  assert.equal(sourceCursor,model.sourceParagraphIds.length,
+    "Nuptial direct LIVE lost, reordered or mutated canonical source macro paragraph IDs");
+  assert.ok(model.projectedParagraphIds.includes("AO.NUPTIAL.01"),
+    "Nuptial insertion paragraph was lost in direct production curation");
   assert.equal(model.count,3);
 
   const insertionCards=model.cards.filter(x=>x.nuptialInsertion);
