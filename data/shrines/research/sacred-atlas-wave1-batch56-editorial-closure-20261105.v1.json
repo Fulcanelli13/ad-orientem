@@ -1,0 +1,1338 @@
+{
+  "schema": "AO_SACRED_ATLAS_W1_BATCH01_56_EDITORIAL_CLOSURE_V1",
+  "as_of": "2026-11-05",
+  "canonical_batch_source": "data/geography/research/sacred-atlas-editorial-master-530-20261104.v1.json",
+  "draft_package": "data/shrines/research/sacred-atlas-wave1-first10-extended-guides-20261105.v1.json",
+  "counts": {
+    "batch_places": 56,
+    "expanded_bilingual_drafts_second_editor_pending": 56,
+    "short_source_synopses_only": 0,
+    "published_guide_changes": 0,
+    "photo_cover_changes": 0
+  },
+  "rows": [
+    {
+      "place_id": "place:BA:medjugorje-st-james-parish",
+      "place_name": "St James Parish Church — Međugorje",
+      "priority_rank": 1,
+      "shrine_id": "shrine:BA:medjugorje-queen-of-peace",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 2,
+      "unresolved_source_ids": [],
+      "existing_relic_ids": [],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:BA:medjugorje-destination"
+      ],
+      "extended_draft_state": "FIRST_DRAFT_3_SOURCE_CHECKED_BILINGUAL_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-first10-extended-guides-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_SOURCE_AND_LANGUAGE_REVIEW"
+    },
+    {
+      "place_id": "place:US:st-john-neumann-philadelphia",
+      "place_name": "National Shrine of St. John Neumann",
+      "priority_rank": 2,
+      "shrine_id": "shrine:US:neumann-philadelphia",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 2,
+      "unresolved_source_ids": [
+        "NEUMANN-PILGRIMAGE-CUSTOM"
+      ],
+      "existing_relic_ids": [
+        "relic:US:neumann-philadelphia"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:US:neumann-philadelphia-destination"
+      ],
+      "extended_draft_state": "FIRST_DRAFT_3_SOURCE_CHECKED_BILINGUAL_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-first10-extended-guides-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_SOURCE_AND_LANGUAGE_REVIEW"
+    },
+    {
+      "place_id": "place:IT:scala-santa-rome",
+      "place_name": "Pontificio Santuario della Scala Santa e Sancta Sanctorum",
+      "priority_rank": 3,
+      "shrine_id": "shrine:20261009:IT:scala-santa-rome",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [
+        "roma-turismo:scala-santa"
+      ],
+      "existing_relic_ids": [
+        "relic:IT:holy-stairs",
+        "relic:IT:sancta-sanctorum-ark"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:IT:scala-santa-rome:destination"
+      ],
+      "extended_draft_state": "FIRST_DRAFT_3_SOURCE_CHECKED_BILINGUAL_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-first10-extended-guides-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_SOURCE_AND_LANGUAGE_REVIEW"
+    },
+    {
+      "place_id": "place:FR:abbaye-fleury-saint-benoit-loire",
+      "place_name": "Abbaye de Fleury — Saint-Benoît-sur-Loire",
+      "priority_rank": 4,
+      "shrine_id": "shrine:20261009:FR:abbaye-fleury-saint-benoit-loire",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 3,
+      "unresolved_source_ids": [
+        "wikidata:Q956741"
+      ],
+      "existing_relic_ids": [
+        "relic:FR:benedict-fleury"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:FR:abbaye-fleury-saint-benoit-loire:destination"
+      ],
+      "extended_draft_state": "FIRST_DRAFT_3_SOURCE_CHECKED_BILINGUAL_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-first10-extended-guides-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_SOURCE_AND_LANGUAGE_REVIEW"
+    },
+    {
+      "place_id": "place:FR:abbaye-mont-saint-michel",
+      "place_name": "Abbaye du Mont-Saint-Michel",
+      "priority_rank": 5,
+      "shrine_id": "shrine:20261009:FR:abbaye-mont-saint-michel",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [
+        "wikidata:Q651388"
+      ],
+      "existing_relic_ids": [],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:FR:abbaye-mont-saint-michel:destination"
+      ],
+      "extended_draft_state": "FIRST_DRAFT_3_SOURCE_CHECKED_BILINGUAL_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-first10-extended-guides-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_SOURCE_AND_LANGUAGE_REVIEW"
+    },
+    {
+      "place_id": "place:IT:san-michele-gargano",
+      "place_name": "Santuario di San Michele Arcangelo, Monte Sant'Angelo",
+      "priority_rank": 6,
+      "shrine_id": "shrine:20261009:IT:san-michele-gargano",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [
+        "wikidata:Q1448870"
+      ],
+      "existing_relic_ids": [],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:IT:san-michele-gargano:destination"
+      ],
+      "extended_draft_state": "FIRST_DRAFT_3_SOURCE_CHECKED_BILINGUAL_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-first10-extended-guides-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_SOURCE_AND_LANGUAGE_REVIEW"
+    },
+    {
+      "place_id": "place:MU:pere-laval-sainte-croix",
+      "place_name": "Centre Père Laval",
+      "priority_rank": 7,
+      "shrine_id": "shrine:MU:pere-laval",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 2,
+      "unresolved_source_ids": [],
+      "existing_relic_ids": [
+        "relic:MU:jacques-desire-laval-sainte-croix"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:MU:pere-laval-annual"
+      ],
+      "extended_draft_state": "FIRST_DRAFT_3_SOURCE_CHECKED_BILINGUAL_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-first10-extended-guides-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_SOURCE_AND_LANGUAGE_REVIEW"
+    },
+    {
+      "place_id": "place:US:seton-emmitsburg",
+      "place_name": "The National Shrine of Saint Elizabeth Ann Seton",
+      "priority_rank": 8,
+      "shrine_id": "shrine:US:seton-emmitsburg",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 2,
+      "unresolved_source_ids": [
+        "SETON-SEA-SERVICES-CUSTOM"
+      ],
+      "existing_relic_ids": [
+        "relic:US:seton-emmitsburg"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:US:seton-emmitsburg-destination",
+        "pilgrimage:US:seton-sea-services"
+      ],
+      "extended_draft_state": "FIRST_DRAFT_3_SOURCE_CHECKED_BILINGUAL_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-first10-extended-guides-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_SOURCE_AND_LANGUAGE_REVIEW"
+    },
+    {
+      "place_id": "place:CH:abbaye-saint-maurice-agaune",
+      "place_name": "Abbaye de Saint-Maurice d'Agaune",
+      "priority_rank": 9,
+      "shrine_id": "shrine:CH:abbaye-saint-maurice-agaune",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [],
+      "existing_relic_ids": [
+        "relic:CH:abbaye-saint-maurice-agaune"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:CH:abbaye-saint-maurice-agaune:destination"
+      ],
+      "extended_draft_state": "FIRST_DRAFT_3_SOURCE_CHECKED_BILINGUAL_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-first10-extended-guides-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_SOURCE_AND_LANGUAGE_REVIEW"
+    },
+    {
+      "place_id": "place:DE:aachener-dom-four-textiles",
+      "place_name": "Aachener Dom — Four Sacred Textiles",
+      "priority_rank": 10,
+      "shrine_id": "shrine:DE:aachener-dom-four-textiles",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [],
+      "existing_relic_ids": [
+        "relic:DE:aachener-dom-four-textiles"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:DE:aachener-dom-four-textiles:destination"
+      ],
+      "extended_draft_state": "FIRST_DRAFT_3_SOURCE_CHECKED_BILINGUAL_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-first10-extended-guides-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_SOURCE_AND_LANGUAGE_REVIEW"
+    },
+    {
+      "place_id": "place:FR:basilique-visitation-annecy",
+      "place_name": "Basilique de la Visitation, Annecy",
+      "priority_rank": 11,
+      "shrine_id": "shrine:FR:basilique-visitation-annecy",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [],
+      "existing_relic_ids": [
+        "relic:FR:basilique-visitation-annecy"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:FR:basilique-visitation-annecy:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides11-20-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_CROSSCHECK_PARAGRAPH_EVIDENCE_TRANSLATION_AND_RITE_SITE_SCOPE"
+    },
+    {
+      "place_id": "place:FR:espace-bernadette-nevers",
+      "place_name": "Sanctuaire Sainte Bernadette Soubirous — Nevers",
+      "priority_rank": 12,
+      "shrine_id": "shrine:20261009:FR:espace-bernadette-nevers",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [
+        "osm:way:126001306"
+      ],
+      "existing_relic_ids": [
+        "relic:FR:bernadette-nevers"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:FR:espace-bernadette-nevers:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides11-20-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_CROSSCHECK_PARAGRAPH_EVIDENCE_TRANSLATION_AND_RITE_SITE_SCOPE"
+    },
+    {
+      "place_id": "place:IT:saint-paul-outside-walls-rome",
+      "place_name": "Basilica Papale di San Paolo fuori le Mura",
+      "priority_rank": 13,
+      "shrine_id": "shrine:20261009:IT:saint-paul-outside-walls-rome",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [
+        "wikidata:Q231699"
+      ],
+      "existing_relic_ids": [
+        "relic:IT:paul-tomb",
+        "relic:IT:paul-chains"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:IT:saint-paul-outside-walls-rome:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides11-20-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_CROSSCHECK_PARAGRAPH_EVIDENCE_TRANSLATION_AND_RITE_SITE_SCOPE"
+    },
+    {
+      "place_id": "place:IT:santa-maria-vallicella-rome",
+      "place_name": "Chiesa Nuova — Santa Maria in Vallicella, Rome",
+      "priority_rank": 14,
+      "shrine_id": "shrine:IT:santa-maria-vallicella-rome",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [],
+      "existing_relic_ids": [
+        "relic:IT:santa-maria-vallicella-rome"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:IT:santa-maria-vallicella-rome:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides11-20-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_CROSSCHECK_PARAGRAPH_EVIDENCE_TRANSLATION_AND_RITE_SITE_SCOPE"
+    },
+    {
+      "place_id": "place:IT:santuario-san-pio-rotondo",
+      "place_name": "Santuario di San Pio da Pietrelcina, San Giovanni Rotondo",
+      "priority_rank": 15,
+      "shrine_id": "shrine:20261009:IT:santuario-san-pio-rotondo",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [
+        "osm:way:405757483"
+      ],
+      "existing_relic_ids": [
+        "relic:IT:padre-pio-rotondo"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:IT:santuario-san-pio-rotondo:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides11-20-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_CROSSCHECK_PARAGRAPH_EVIDENCE_TRANSLATION_AND_RITE_SITE_SCOPE"
+    },
+    {
+      "place_id": "place:LB:monastery-saint-maron-annaya",
+      "place_name": "Monastery of Saint Maron — Annaya",
+      "priority_rank": 16,
+      "shrine_id": "shrine:LB:monastery-saint-maron-annaya",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [],
+      "existing_relic_ids": [
+        "relic:LB:monastery-saint-maron-annaya"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:LB:monastery-saint-maron-annaya:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides11-20-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_CROSSCHECK_PARAGRAPH_EVIDENCE_TRANSLATION_AND_RITE_SITE_SCOPE"
+    },
+    {
+      "place_id": "place:VA:saint-peter-vatican",
+      "place_name": "St Peter's Basilica — Vatican",
+      "priority_rank": 17,
+      "shrine_id": "shrine:20261009:VA:saint-peter-vatican",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [
+        "osm:way:244159210"
+      ],
+      "existing_relic_ids": [
+        "relic:VA:peter-tomb"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:VA:saint-peter-vatican:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides11-20-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_CROSSCHECK_PARAGRAPH_EVIDENCE_TRANSLATION_AND_RITE_SITE_SCOPE"
+    },
+    {
+      "place_id": "place:FR:basilique-montfort-saint-laurent",
+      "place_name": "Basilique Saint-Louis-Marie-Grignion-de-Montfort",
+      "priority_rank": 18,
+      "shrine_id": "shrine:20261009:FR:basilique-montfort-saint-laurent",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 2,
+      "unresolved_source_ids": [
+        "osm:way:76676043"
+      ],
+      "existing_relic_ids": [
+        "relic:FR:montfort-basilica",
+        "relic:FR:marie-louise-trichet"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:FR:basilique-montfort-saint-laurent:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides11-20-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_CROSSCHECK_PARAGRAPH_EVIDENCE_TRANSLATION_AND_RITE_SITE_SCOPE"
+    },
+    {
+      "place_id": "place:FR:basilique-saint-denis",
+      "place_name": "Basilique cathédrale de Saint-Denis",
+      "priority_rank": 19,
+      "shrine_id": "shrine:FR:basilique-saint-denis",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [],
+      "existing_relic_ids": [
+        "relic:FR:basilique-saint-denis"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:FR:basilique-saint-denis:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides11-20-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_CROSSCHECK_PARAGRAPH_EVIDENCE_TRANSLATION_AND_RITE_SITE_SCOPE"
+    },
+    {
+      "place_id": "place:FR:basilique-sainte-marie-madeleine-vezelay",
+      "place_name": "Basilique Sainte-Marie-Madeleine de Vézelay",
+      "priority_rank": 20,
+      "shrine_id": "shrine:FR:basilique-sainte-marie-madeleine-vezelay",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [],
+      "existing_relic_ids": [
+        "relic:FR:basilique-sainte-marie-madeleine-vezelay"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:FR:basilique-sainte-marie-madeleine-vezelay:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides11-20-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_CROSSCHECK_PARAGRAPH_EVIDENCE_TRANSLATION_AND_RITE_SITE_SCOPE"
+    },
+    {
+      "place_id": "place:FR:cathedrale-notre-dame-amiens",
+      "place_name": "Cathédrale Notre-Dame d’Amiens",
+      "priority_rank": 21,
+      "shrine_id": "shrine:FR:cathedrale-notre-dame-amiens",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [],
+      "existing_relic_ids": [
+        "relic:FR:cathedrale-notre-dame-amiens"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:FR:cathedrale-notre-dame-amiens:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides21-30-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_CROSSCHECK_PARAGRAPH_EVIDENCE_TRANSLATION_AND_RITE_SITE_SCOPE"
+    },
+    {
+      "place_id": "place:IT:duomo-sant-eusebio-vercelli",
+      "place_name": "Cattedrale di Sant'Eusebio, Vercelli",
+      "priority_rank": 22,
+      "shrine_id": "shrine:IT:duomo-sant-eusebio-vercelli",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [],
+      "existing_relic_ids": [
+        "relic:IT:duomo-sant-eusebio-vercelli"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:IT:duomo-sant-eusebio-vercelli:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides21-30-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_CROSSCHECK_PARAGRAPH_EVIDENCE_TRANSLATION_AND_RITE_SITE_SCOPE"
+    },
+    {
+      "place_id": "place:IT:san-pietro-ciel-doro",
+      "place_name": "Basilica San Pietro in Ciel d'Oro, Pavia",
+      "priority_rank": 23,
+      "shrine_id": "shrine:IT:san-pietro-ciel-doro",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [],
+      "existing_relic_ids": [
+        "relic:IT:san-pietro-ciel-doro"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:IT:san-pietro-ciel-doro:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides21-30-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_CROSSCHECK_PARAGRAPH_EVIDENCE_TRANSLATION_AND_RITE_SITE_SCOPE"
+    },
+    {
+      "place_id": "place:IT:sant-alfonso-pagani",
+      "place_name": "Basilica Sant'Alfonso de Liguori, Pagani",
+      "priority_rank": 24,
+      "shrine_id": "shrine:IT:sant-alfonso-pagani",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [],
+      "existing_relic_ids": [
+        "relic:IT:sant-alfonso-pagani"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:IT:sant-alfonso-pagani:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides21-30-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_CROSSCHECK_PARAGRAPH_EVIDENCE_TRANSLATION_AND_RITE_SITE_SCOPE"
+    },
+    {
+      "place_id": "place:IT:montecassino-abbey",
+      "place_name": "Abbazia di Montecassino — Tomb of Saints Benedict and Scholastica",
+      "priority_rank": 25,
+      "shrine_id": "shrine:IT:montecassino-abbey",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [],
+      "existing_relic_ids": [
+        "relic:IT:montecassino-abbey"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:IT:montecassino-abbey:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides21-30-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_CROSSCHECK_PARAGRAPH_EVIDENCE_TRANSLATION_AND_RITE_SITE_SCOPE"
+    },
+    {
+      "place_id": "place:US:auriesville-martyrs",
+      "place_name": "National Shrine of Our Lady of Martyrs",
+      "priority_rank": 26,
+      "shrine_id": "shrine:US:auriesville-martyrs",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 2,
+      "unresolved_source_ids": [
+        "AURIESVILLE-RESTORATION-CUSTOM"
+      ],
+      "existing_relic_ids": [],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:US:auriesville-destination",
+        "pilgrimage:US:auriesville-restoration",
+        "pilgrimage:US:auriesville-amsterdam"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides21-30-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_CROSSCHECK_PARAGRAPH_EVIDENCE_TRANSLATION_AND_RITE_SITE_SCOPE"
+    },
+    {
+      "place_id": "place:CA:oratoire-saint-joseph-montreal",
+      "place_name": "Oratoire Saint-Joseph du Mont-Royal",
+      "priority_rank": 27,
+      "shrine_id": "shrine:CA:oratoire-saint-joseph-montreal",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 2,
+      "unresolved_source_ids": [],
+      "existing_relic_ids": [
+        "relic:CA:brother-andre-tomb-montreal",
+        "relic:CA:brother-andre-heart-montreal"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:CA:oratoire-saint-joseph-montreal:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides21-30-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_CROSSCHECK_PARAGRAPH_EVIDENCE_TRANSLATION_AND_RITE_SITE_SCOPE"
+    },
+    {
+      "place_id": "place:FR:saint-joseph-bessillon",
+      "place_name": "Sanctuaire Saint-Joseph du Bessillon",
+      "priority_rank": 28,
+      "shrine_id": "shrine:20261009:FR:saint-joseph-bessillon",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [
+        "OFFICIAL_SHRINE_GPS"
+      ],
+      "existing_relic_ids": [],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:FR:saint-joseph-bessillon:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides21-30-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_CROSSCHECK_PARAGRAPH_EVIDENCE_TRANSLATION_AND_RITE_SITE_SCOPE"
+    },
+    {
+      "place_id": "place:PL:divine-mercy-plock",
+      "place_name": "Sanktuarium Bożego Miłosierdzia, Płock",
+      "priority_rank": 29,
+      "shrine_id": "shrine:20261009:PL:divine-mercy-plock",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [
+        "wikidata:Q9333660"
+      ],
+      "existing_relic_ids": [],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:PL:divine-mercy-plock:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides21-30-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_CROSSCHECK_PARAGRAPH_EVIDENCE_TRANSLATION_AND_RITE_SITE_SCOPE"
+    },
+    {
+      "place_id": "place:BR:pateo-do-collegio-sao-paulo",
+      "place_name": "Pateo do Collegio — Saint José de Anchieta, São Paulo",
+      "priority_rank": 30,
+      "shrine_id": "shrine:BR:pateo-do-collegio-sao-paulo",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [],
+      "existing_relic_ids": [
+        "relic:BR:pateo-do-collegio-sao-paulo"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:BR:pateo-do-collegio-sao-paulo:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides21-30-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_CROSSCHECK_PARAGRAPH_EVIDENCE_TRANSLATION_AND_RITE_SITE_SCOPE"
+    },
+    {
+      "place_id": "place:ES:carmel-alba-tormes",
+      "place_name": "Monasterio de la Anunciación — Carmelitas Descalzas",
+      "priority_rank": 31,
+      "shrine_id": "shrine:20261009:ES:carmel-alba-tormes",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [
+        "wikidata:Q43115071"
+      ],
+      "existing_relic_ids": [
+        "relic:ES:teresa-body-alba",
+        "relic:ES:teresa-heart-alba",
+        "relic:ES:teresa-arm-alba"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:ES:carmel-alba-tormes:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides31-43-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_VALIDATE_CITED_EVIDENCE_AND_TRANSLATION_WITH_SENSITIVE_RELIC_RITE_SITE_HOLDS"
+    },
+    {
+      "place_id": "place:ES:santiago-compostela-cathedral",
+      "place_name": "Catedral de Santiago de Compostela",
+      "priority_rank": 32,
+      "shrine_id": "shrine:20261009:ES:santiago-compostela-cathedral",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [
+        "wikidata:Q205136"
+      ],
+      "existing_relic_ids": [
+        "relic:ES:james-compostela"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:ES:santiago-compostela-cathedral:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides31-43-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_VALIDATE_CITED_EVIDENCE_AND_TRANSLATION_WITH_SENSITIVE_RELIC_RITE_SITE_HOLDS"
+    },
+    {
+      "place_id": "place:ES:santo-toribio-liebana",
+      "place_name": "Monasterio de Santo Toribio de Liébana",
+      "priority_rank": 33,
+      "shrine_id": "shrine:20261009:ES:santo-toribio-liebana",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [
+        "wikidata:Q2256022"
+      ],
+      "existing_relic_ids": [
+        "relic:ES:lignum-crucis-liebana"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:ES:santo-toribio-liebana:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides31-43-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_VALIDATE_CITED_EVIDENCE_AND_TRANSLATION_WITH_SENSITIVE_RELIC_RITE_SITE_HOLDS"
+    },
+    {
+      "place_id": "place:FR:basilique-ars",
+      "place_name": "Basilique d’Ars — Saint Jean-Marie Vianney",
+      "priority_rank": 34,
+      "shrine_id": "shrine:20261009:FR:basilique-ars",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [
+        "osm:way:143836310"
+      ],
+      "existing_relic_ids": [
+        "relic:FR:curé-ars"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:FR:basilique-ars:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides31-43-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_VALIDATE_CITED_EVIDENCE_AND_TRANSLATION_WITH_SENSITIVE_RELIC_RITE_SITE_HOLDS"
+    },
+    {
+      "place_id": "place:FR:basilique-saint-nicolas-de-port",
+      "place_name": "Basilique Saint-Nicolas de Saint-Nicolas-de-Port",
+      "priority_rank": 35,
+      "shrine_id": "shrine:FR:basilique-saint-nicolas-de-port",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [],
+      "existing_relic_ids": [
+        "relic:FR:phalange-saint-nicolas-port"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:FR:basilique-saint-nicolas-de-port:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides31-43-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_VALIDATE_CITED_EVIDENCE_AND_TRANSLATION_WITH_SENSITIVE_RELIC_RITE_SITE_HOLDS"
+    },
+    {
+      "place_id": "place:FR:basilique-saint-quentin-aisne",
+      "place_name": "Basilique Saint-Quentin",
+      "priority_rank": 36,
+      "shrine_id": "shrine:FR:basilique-saint-quentin-aisne",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [],
+      "existing_relic_ids": [
+        "relic:FR:main-saint-quentin"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:FR:basilique-saint-quentin-aisne:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides31-43-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_VALIDATE_CITED_EVIDENCE_AND_TRANSLATION_WITH_SENSITIVE_RELIC_RITE_SITE_HOLDS"
+    },
+    {
+      "place_id": "place:FR:basilique-saint-sernin-toulouse",
+      "place_name": "Basilique Saint-Sernin de Toulouse",
+      "priority_rank": 37,
+      "shrine_id": "shrine:FR:basilique-saint-sernin-toulouse",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [],
+      "existing_relic_ids": [
+        "relic:FR:saint-saturnin-toulouse"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:FR:basilique-saint-sernin-toulouse:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides31-43-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_VALIDATE_CITED_EVIDENCE_AND_TRANSLATION_WITH_SENSITIVE_RELIC_RITE_SITE_HOLDS"
+    },
+    {
+      "place_id": "place:FR:basilique-sainte-marie-madeleine-saint-maximin",
+      "place_name": "Basilique Sainte-Marie-Madeleine, Saint-Maximin-la-Sainte-Baume",
+      "priority_rank": 38,
+      "shrine_id": "shrine:20261009:FR:basilique-sainte-marie-madeleine-saint-maximin",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [
+        "osm:way:92467301"
+      ],
+      "existing_relic_ids": [
+        "relic:FR:magdalene-head-saint-maximin",
+        "relic:FR:maximin-sarcophagus"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:FR:basilique-sainte-marie-madeleine-saint-maximin:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides31-43-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_VALIDATE_CITED_EVIDENCE_AND_TRANSLATION_WITH_SENSITIVE_RELIC_RITE_SITE_HOLDS"
+    },
+    {
+      "place_id": "place:FR:carmel-lisieux",
+      "place_name": "Chapelle du Carmel de Lisieux",
+      "priority_rank": 39,
+      "shrine_id": "shrine:20261009:FR:carmel-lisieux",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [
+        "osm:way:130886614"
+      ],
+      "existing_relic_ids": [
+        "relic:FR:therese-carmel"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:FR:carmel-lisieux:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides31-43-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_VALIDATE_CITED_EVIDENCE_AND_TRANSLATION_WITH_SENSITIVE_RELIC_RITE_SITE_HOLDS"
+    },
+    {
+      "place_id": "place:FR:cathedrale-saint-etienne-sens",
+      "place_name": "Cathédrale Saint-Étienne de Sens",
+      "priority_rank": 40,
+      "shrine_id": "shrine:FR:cathedrale-saint-etienne-sens",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [],
+      "existing_relic_ids": [
+        "relic:FR:suaires-saints-sens"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:FR:cathedrale-saint-etienne-sens:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides31-43-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_VALIDATE_CITED_EVIDENCE_AND_TRANSLATION_WITH_SENSITIVE_RELIC_RITE_SITE_HOLDS"
+    },
+    {
+      "place_id": "place:GB:westminster-abbey-st-edward",
+      "place_name": "Westminster Abbey — Shrine of Saint Edward the Confessor",
+      "priority_rank": 41,
+      "shrine_id": "shrine:GB:westminster-abbey-st-edward",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [],
+      "existing_relic_ids": [
+        "relic:GB:westminster-abbey-st-edward"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:GB:westminster-abbey-st-edward:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides31-43-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_VALIDATE_CITED_EVIDENCE_AND_TRANSLATION_WITH_SENSITIVE_RELIC_RITE_SITE_HOLDS"
+    },
+    {
+      "place_id": "place:HU:st-stephen-basilica-budapest",
+      "place_name": "Saint Stephen's Basilica, Budapest",
+      "priority_rank": 42,
+      "shrine_id": "shrine:HU:st-stephen-basilica-budapest",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [],
+      "existing_relic_ids": [
+        "relic:HU:st-stephen-basilica-budapest"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:HU:st-stephen-basilica-budapest:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides31-43-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_VALIDATE_CITED_EVIDENCE_AND_TRANSLATION_WITH_SENSITIVE_RELIC_RITE_SITE_HOLDS"
+    },
+    {
+      "place_id": "place:IT:abbey-san-colombano-bobbio",
+      "place_name": "Abbazia di San Colombano, Bobbio",
+      "priority_rank": 43,
+      "shrine_id": "shrine:IT:abbey-san-colombano-bobbio",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [],
+      "existing_relic_ids": [
+        "relic:IT:abbey-san-colombano-bobbio"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:IT:abbey-san-colombano-bobbio:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides31-43-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_VALIDATE_CITED_EVIDENCE_AND_TRANSLATION_WITH_SENSITIVE_RELIC_RITE_SITE_HOLDS"
+    },
+    {
+      "place_id": "place:IT:basilica-san-nicola-bari",
+      "place_name": "Basilica di San Nicola, Bari",
+      "priority_rank": 44,
+      "shrine_id": "shrine:20261009:IT:basilica-san-nicola-bari",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [
+        "frwiki:Basilique_Saint-Nicolas_de_Bari"
+      ],
+      "existing_relic_ids": [
+        "relic:IT:nicholas-bari"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:IT:basilica-san-nicola-bari:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides44-56-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_VALIDATE_CITED_EVIDENCE_AND_TRANSLATION_WITH_SENSITIVE_RELIC_RITE_SITE_HOLDS"
+    },
+    {
+      "place_id": "place:IT:basilica-sant-antonio-padova",
+      "place_name": "Basilica di Sant'Antonio, Padova",
+      "priority_rank": 45,
+      "shrine_id": "shrine:20261009:IT:basilica-sant-antonio-padova",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [
+        "osm:way:27198535"
+      ],
+      "existing_relic_ids": [
+        "relic:IT:anthony-padua-tongue",
+        "relic:IT:anthony-padua-jawbone",
+        "relic:IT:anthony-padua-voice",
+        "relic:IT:anthony-padua-bones",
+        "relic:IT:john-paul-ii-padua",
+        "relic:IT:true-cross-padua"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:IT:basilica-sant-antonio-padova:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides44-56-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_VALIDATE_CITED_EVIDENCE_AND_TRANSLATION_WITH_SENSITIVE_RELIC_RITE_SITE_HOLDS"
+    },
+    {
+      "place_id": "place:IT:basilica-santa-rita-cascia",
+      "place_name": "Basilica di Santa Rita da Cascia",
+      "priority_rank": 46,
+      "shrine_id": "shrine:20261009:IT:basilica-santa-rita-cascia",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [
+        "osm:way:739181945"
+      ],
+      "existing_relic_ids": [
+        "relic:IT:rita-cascia"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:IT:basilica-santa-rita-cascia:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides44-56-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_VALIDATE_CITED_EVIDENCE_AND_TRANSLATION_WITH_SENSITIVE_RELIC_RITE_SITE_HOLDS"
+    },
+    {
+      "place_id": "place:IT:san-geremia-santa-lucia-venezia",
+      "place_name": "Santuario di Santa Lucia — Chiesa di San Geremia, Venezia",
+      "priority_rank": 47,
+      "shrine_id": "shrine:IT:san-geremia-santa-lucia-venezia",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [],
+      "existing_relic_ids": [
+        "relic:IT:san-geremia-santa-lucia-venezia"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:IT:san-geremia-santa-lucia-venezia:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides44-56-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_VALIDATE_CITED_EVIDENCE_AND_TRANSLATION_WITH_SENSITIVE_RELIC_RITE_SITE_HOLDS"
+    },
+    {
+      "place_id": "place:IT:sant-ambrogio-milano",
+      "place_name": "Basilica Sant'Ambrogio, Milan",
+      "priority_rank": 48,
+      "shrine_id": "shrine:IT:sant-ambrogio-milano",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [],
+      "existing_relic_ids": [
+        "relic:IT:sant-ambrogio-milano"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:IT:sant-ambrogio-milano:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides44-56-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_VALIDATE_CITED_EVIDENCE_AND_TRANSLATION_WITH_SENSITIVE_RELIC_RITE_SITE_HOLDS"
+    },
+    {
+      "place_id": "place:IT:santa-croce-gerusalemme-rome",
+      "place_name": "Basilica di Santa Croce in Gerusalemme",
+      "priority_rank": 49,
+      "shrine_id": "shrine:IT:santa-croce-rome",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [
+        "osm:way:998191514"
+      ],
+      "existing_relic_ids": [
+        "relic:IT:santa-croce-true-cross",
+        "relic:IT:santa-croce-holy-nail",
+        "relic:IT:santa-croce-titulus-crucis",
+        "relic:IT:santa-croce-crown-thorns",
+        "relic:IT:santa-croce-thomas-finger",
+        "relic:IT:santa-croce-good-thief",
+        "relic:IT:santa-croce-holy-sepulchre",
+        "relic:IT:santa-croce-nativity-grotto"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:IT:santa-croce-rome-visit"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides44-56-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_VALIDATE_CITED_EVIDENCE_AND_TRANSLATION_WITH_SENSITIVE_RELIC_RITE_SITE_HOLDS"
+    },
+    {
+      "place_id": "place:LU:basilica-st-willibrord-echternach",
+      "place_name": "Basilica of Saint Willibrord, Echternach",
+      "priority_rank": 50,
+      "shrine_id": "shrine:LU:basilica-st-willibrord-echternach",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [],
+      "existing_relic_ids": [
+        "relic:LU:basilica-st-willibrord-echternach"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:LU:basilica-st-willibrord-echternach:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides44-56-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_VALIDATE_CITED_EVIDENCE_AND_TRANSLATION_WITH_SENSITIVE_RELIC_RITE_SITE_HOLDS"
+    },
+    {
+      "place_id": "place:PE:convento-santo-domingo-lima",
+      "place_name": "Basílica y Convento de Santo Domingo, Lima",
+      "priority_rank": 51,
+      "shrine_id": "shrine:PE:convento-santo-domingo-lima",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [],
+      "existing_relic_ids": [
+        "relic:PE:convento-santo-domingo-lima"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:PE:convento-santo-domingo-lima:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides44-56-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_VALIDATE_CITED_EVIDENCE_AND_TRANSLATION_WITH_SENSITIVE_RELIC_RITE_SITE_HOLDS"
+    },
+    {
+      "place_id": "place:PL:gniezno-cathedral-adalbert",
+      "place_name": "Gniezno Cathedral — Saint Adalbert",
+      "priority_rank": 52,
+      "shrine_id": "shrine:PL:gniezno-cathedral-adalbert",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [],
+      "existing_relic_ids": [
+        "relic:PL:gniezno-cathedral-adalbert"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:PL:gniezno-cathedral-adalbert:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides44-56-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_VALIDATE_CITED_EVIDENCE_AND_TRANSLATION_WITH_SENSITIVE_RELIC_RITE_SITE_HOLDS"
+    },
+    {
+      "place_id": "place:PL:wawel-cathedral-stanislaus",
+      "place_name": "Wawel Cathedral, Kraków",
+      "priority_rank": 53,
+      "shrine_id": "shrine:PL:wawel-cathedral-stanislaus",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [],
+      "existing_relic_ids": [
+        "relic:PL:wawel-cathedral-stanislaus"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:PL:wawel-cathedral-stanislaus:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides44-56-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_VALIDATE_CITED_EVIDENCE_AND_TRANSLATION_WITH_SENSITIVE_RELIC_RITE_SITE_HOLDS"
+    },
+    {
+      "place_id": "place:US:carmel-mission-basilica-serra",
+      "place_name": "Carmel Mission Basilica — Saint Junípero Serra",
+      "priority_rank": 54,
+      "shrine_id": "shrine:US:carmel-mission-basilica-serra",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [],
+      "existing_relic_ids": [
+        "relic:US:carmel-mission-basilica-serra"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:US:carmel-mission-basilica-serra:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides44-56-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_VALIDATE_CITED_EVIDENCE_AND_TRANSLATION_WITH_SENSITIVE_RELIC_RITE_SITE_HOLDS"
+    },
+    {
+      "place_id": "place:US:cathedral-katharine-drexel-philadelphia",
+      "place_name": "Cathedral Basilica of Saints Peter and Paul, Philadelphia",
+      "priority_rank": 55,
+      "shrine_id": "shrine:US:cathedral-katharine-drexel-philadelphia",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 1,
+      "unresolved_source_ids": [],
+      "existing_relic_ids": [
+        "relic:US:cathedral-katharine-drexel-philadelphia"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:US:cathedral-katharine-drexel-philadelphia:destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides44-56-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_VALIDATE_CITED_EVIDENCE_AND_TRANSLATION_WITH_SENSITIVE_RELIC_RITE_SITE_HOLDS"
+    },
+    {
+      "place_id": "place:CA:bishop-velychkovsky-martyrs-shrine-winnipeg",
+      "place_name": "Bishop Velychkovsky National Martyr's Shrine",
+      "priority_rank": 56,
+      "shrine_id": "shrine:CA:bishop-velychkovsky-martyrs-shrine-winnipeg",
+      "initial_editorial_state": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "bilingual_synopsis_present": true,
+      "official_source_count": 2,
+      "unresolved_source_ids": [],
+      "existing_relic_ids": [],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:CA:bishop-velychkovsky-martyrs-shrine-winnipeg-destination"
+      ],
+      "extended_draft_state": "THREE_DISTINCT_BILINGUAL_SOURCE_LINKED_SECTIONS_AWAIT_SECOND_EDITOR",
+      "draft_file": "data/shrines/research/sacred-atlas-wave1-guides44-56-20261105.v1.json",
+      "publication_authorized": false,
+      "next_action": "SECOND_EDITOR_VALIDATE_CITED_EVIDENCE_AND_TRANSLATION_WITH_SENSITIVE_RELIC_RITE_SITE_HOLDS"
+    }
+  ],
+  "updated_at": "2026-11-05",
+  "added_draft_packages": [
+    "data/shrines/research/sacred-atlas-wave1-guides11-20-20261105.v1.json",
+    "data/shrines/research/sacred-atlas-wave1-guides21-30-20261105.v1.json",
+    "data/shrines/research/sacred-atlas-wave1-guides31-43-20261105.v1.json",
+    "data/shrines/research/sacred-atlas-wave1-guides44-56-20261105.v1.json"
+  ],
+  "source_repair_queue": [
+    {
+      "place_id": "place:IT:saint-paul-outside-walls-rome",
+      "issue": "ORIGINAL_FRENCH_VATICAN_TOMB_URL_404",
+      "do_not_silently_edit_canonical_source": true,
+      "verified_alternative": "https://www.vatican.va/various/basiliche/san_paolo/en/basilica/tomba.htm",
+      "action": "VERIFY_AND_REPLACE_SOURCE_REFERENCE_IN_SEPARATE_CANONICAL_SOURCE_PR"
+    },
+    {
+      "place_id": "place:FR:basilique-sainte-marie-madeleine-vezelay",
+      "issue": "MASTER_CITATION_POINTS_TO_HOLY_SATURDAY_DEVOTION_NOT_SITE_OR_RELIC_HISTORY",
+      "do_not_silently_edit_canonical_source": true,
+      "verified_alternatives": [
+        "https://www.basiliquedevezelay.org/marie-madeleine/",
+        "https://whc.unesco.org/en/list/84/"
+      ],
+      "action": "VERIFY_AND_REPLACE_SOURCE_REFERENCE_IN_SEPARATE_CANONICAL_SOURCE_PR"
+    }
+  ],
+  "sensitive_second_editor_checklist": [
+    {
+      "place_id": "place:US:auriesville-martyrs",
+      "issue": "MARTYRDOM_EXACT_OSSERNENON_SITE_IDENTIFICATION_PUBLICLY_CONTESTED",
+      "requirement": "HISTORICAL_LOCATION_CLAIM_ATTRIBUTED_NOT_CERTAIN"
+    },
+    {
+      "place_id": "place:IT:montecassino-abbey",
+      "issue": "MONTECASSINO_AND_FLEURY_RELIC_TRADITIONS_COMPETE",
+      "requirement": "KEEP_DISTINCT_TRADITIONS_AND_SITES"
+    },
+    {
+      "place_id": "place:CA:oratoire-saint-joseph-montreal",
+      "issue": "BROTHER_ANDRE_TOMB_VS_HEART_RELIQUARY",
+      "requirement": "KEEP_TWO_DIFFERENT_RELIC_OBJECT_IDS"
+    },
+    {
+      "place_id": "place:FR:saint-joseph-bessillon",
+      "issue": "TRADITIONAL_1660_ST_JOSEPH_APPARITION_AND_SEPARATE_COTIGNAC_MARIAN_SITE",
+      "requirement": "CHECK_SITE_SPECIFIC_EVIDENCE_AND_NO_SUPERNATURAL_VERIFICATION_INFERENCE"
+    },
+    {
+      "place_id": "place:PL:divine-mercy-plock",
+      "issue": "FIRST_VISION_REPORT_1931_VS_LATER_PAINTED_IMAGES",
+      "requirement": "ATTRIBUTE_REPORTED_VISION_AND_KEEP_ART_IMAGE_DIFFERENT_FROM_SITE_PHOTO"
+    },
+    {
+      "place_id": "place:IT:santuario-san-pio-rotondo",
+      "issue": "OLD_EXPOSITION_NEWS_NOT_CURRENT_TOMB_ACCESS",
+      "requirement": "DO_NOT_INFER_PRESENT_DISPLAY_FROM_ARCHIVED_NOTICE"
+    }
+  ],
+  "first_wave_status": "ALL_56_FIRST_DRAFTS_COMPLETE_RESEARCH_ONLY_SECOND_EDITOR_PENDING",
+  "canonical_source_corrections_requiring_separate_review": [
+    {
+      "place_id": "place:IT:saint-paul-outside-walls-rome",
+      "issue": "ORIGINAL_FRENCH_VATICAN_TOMB_URL_404",
+      "do_not_silently_edit_canonical_source": true,
+      "verified_alternative": "https://www.vatican.va/various/basiliche/san_paolo/en/basilica/tomba.htm",
+      "action": "VERIFY_AND_REPLACE_SOURCE_REFERENCE_IN_SEPARATE_CANONICAL_SOURCE_PR"
+    },
+    {
+      "place_id": "place:FR:basilique-sainte-marie-madeleine-vezelay",
+      "issue": "MASTER_CITATION_POINTS_TO_HOLY_SATURDAY_DEVOTION_NOT_SITE_OR_RELIC_HISTORY",
+      "do_not_silently_edit_canonical_source": true,
+      "verified_alternatives": [
+        "https://www.basiliquedevezelay.org/marie-madeleine/",
+        "https://whc.unesco.org/en/list/84/"
+      ],
+      "action": "VERIFY_AND_REPLACE_SOURCE_REFERENCE_IN_SEPARATE_CANONICAL_SOURCE_PR"
+    },
+    {
+      "place_id": "place:FR:basilique-saint-quentin-aisne",
+      "issue": "FRENCH_MINISTRY_2008_ANALYSIS_DATES_HAND_TO_LATE_15TH_OR_EARLY_16TH_CENTURY_IMPOSSIBLE_SAINT_QUENTIN_3RD_CENTURY_HAND",
+      "source_url": "https://pop.culture.gouv.fr/notice/palissy/IM02004664",
+      "action": "CORRECT_MATERIAL_ATTRIBUTION_IN_CANONICAL_RELIC_RECORD_AND_SITE_FOLIO_BEFORE_PUBLICATION"
+    },
+    {
+      "place_id": "place:IT:santa-croce-gerusalemme-rome",
+      "issue": "APRIL_2026_RELIC_CHAPEL_CLOSURE_VS_STALE_GENERAL_HOURS",
+      "source_url": "https://www.santacroceroma.it/it/",
+      "action": "RETAIN_CLOSED_UNTIL_VERIFIED_NEW_REOPENING_NOTICE;DO_NOT_SHOW_OPEN_VISITOR_PROMISE"
+    }
+  ],
+  "material_sensitive_editorial_holds": [
+    {
+      "place_id": "place:US:auriesville-martyrs",
+      "issue": "MARTYRDOM_EXACT_OSSERNENON_SITE_IDENTIFICATION_PUBLICLY_CONTESTED",
+      "requirement": "HISTORICAL_LOCATION_CLAIM_ATTRIBUTED_NOT_CERTAIN"
+    },
+    {
+      "place_id": "place:IT:montecassino-abbey",
+      "issue": "MONTECASSINO_AND_FLEURY_RELIC_TRADITIONS_COMPETE",
+      "requirement": "KEEP_DISTINCT_TRADITIONS_AND_SITES"
+    },
+    {
+      "place_id": "place:CA:oratoire-saint-joseph-montreal",
+      "issue": "BROTHER_ANDRE_TOMB_VS_HEART_RELIQUARY",
+      "requirement": "KEEP_TWO_DIFFERENT_RELIC_OBJECT_IDS"
+    },
+    {
+      "place_id": "place:FR:saint-joseph-bessillon",
+      "issue": "TRADITIONAL_1660_ST_JOSEPH_APPARITION_AND_SEPARATE_COTIGNAC_MARIAN_SITE",
+      "requirement": "CHECK_SITE_SPECIFIC_EVIDENCE_AND_NO_SUPERNATURAL_VERIFICATION_INFERENCE"
+    },
+    {
+      "place_id": "place:PL:divine-mercy-plock",
+      "issue": "FIRST_VISION_REPORT_1931_VS_LATER_PAINTED_IMAGES",
+      "requirement": "ATTRIBUTE_REPORTED_VISION_AND_KEEP_ART_IMAGE_DIFFERENT_FROM_SITE_PHOTO"
+    },
+    {
+      "place_id": "place:IT:santuario-san-pio-rotondo",
+      "issue": "OLD_EXPOSITION_NEWS_NOT_CURRENT_TOMB_ACCESS",
+      "requirement": "DO_NOT_INFER_PRESENT_DISPLAY_FROM_ARCHIVED_NOTICE"
+    },
+    {
+      "place_id": "place:FR:basilique-saint-quentin-aisne",
+      "issue": "RELIQUARY_CONTAINS_HAND_POSITIVELY_DATED_CENTURIES_AFTER_3RD_CENTURY_SAINT",
+      "requirement": "PROHIBIT_AUTHENTIC_HAND_CLAIM_AND_CORRECT_CANONICAL_RELIC_BEFORE_PUBLISHING"
+    },
+    {
+      "place_id": "place:GB:westminster-abbey-st-edward",
+      "issue": "HISTORICAL_MEDIEVAL_CATHOLIC_SHRINE_IN_PRESENT_ANGLICAN_ROYAL_PECULIAR",
+      "requirement": "HISTORICAL_CATHOLIC_CULT_VS_PRESENT_ANGLICAN_GOVERNANCE"
+    },
+    {
+      "place_id": "place:IT:santa-croce-gerusalemme-rome",
+      "issue": "RELIC_CHAPEL_TEMPORARY_CLOSURE_AFFECTS_VISITOR_ACCESS",
+      "requirement": "DO_NOT_PUBLISH_OLD_OPENING_HOURS_AS_CURRENT"
+    },
+    {
+      "place_id": "place:CA:bishop-velychkovsky-martyrs-shrine-winnipeg",
+      "issue": "UKRAINIAN_CATHOLIC_NOT_LATIN_1962",
+      "requirement": "EXPLICIT_EASTERN_CATHOLIC_RITE_SCOPE"
+    },
+    {
+      "place_id": "place:ES:santiago-compostela-cathedral",
+      "issue": "PILGRIMAGE_COMPOSTELA_VS_JUBILEE_INDULGENCE",
+      "requirement": "DISTINGUISH_PILGRIMAGE_CREDENTIAL_FROM_SACRAMENTAL_SPIRITUAL_PRIVILEGE"
+    }
+  ]
+}

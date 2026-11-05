@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import {libraryVariantFamily} from "../src/pray/library-variant-groups.js";
 import http from "node:http";
 import {readFileSync} from "node:fs";
 import {mkdir,readFile,writeFile} from "node:fs/promises";
@@ -56,7 +57,7 @@ try{
   const page=await ctx.newPage(),errors=[];
   page.on("pageerror",e=>errors.push(e.message));
   try{
-   await page.goto("http://127.0.0.1:"+server.address().port+"/index.html",
+   await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?aoEssentialFlow=1",
     {waitUntil:"domcontentloaded",timeout:90000});
    await page.waitForFunction(()=>globalThis.AO_SETTINGS_APP_V1?.status?.().installed===true&&
     typeof globalThis.AO_APP_SHELL_V1?.navigate==="function",null,{timeout:45000});
@@ -72,6 +73,8 @@ try{
     const expectedV=plain(original[vernacularLanguage]);
     assert.ok(expectedV.length>0,id+" source cannot be empty");
     assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.library",{returnContext:null})),true);
+    const family=libraryVariantFamily(id);
+    if(family)await page.locator('#aoPray435930.open [data-ao-prayer-family="'+family+'"] > summary').click();
     await page.locator('#aoPray435930.open [data-p435930-lib-open="'+id+'"]').click({timeout:15000});
     const reader=page.locator("#aoPray435930.open .aoP435930LibraryReader");
     await reader.locator(".aoP435930Prayer").waitFor({timeout:15000});
@@ -205,7 +208,9 @@ try{
     if(!languages.fr)assert.equal(vernacularLanguage,"en",
      id+" rendered an unattested French translation");
 
-    await reader.locator("[data-p435930-lib-back]").click();
+    assert.equal(await reader.locator("[data-p435930-lib-back]").count(),0,
+     id+" duplicates the header Back");
+    await page.locator("#aoPray435930.open [data-p435930-back]").click();
     assert.equal(await reader.count(),0,id+" did not leave the original canonical card");
     report.variants.push({id,width,ui,reader:owner,sourceLanguage:vernacularLanguage,
      originalLatin:languages.la,vernacularSegments:vernUnits,latinSegments:latinUnits,

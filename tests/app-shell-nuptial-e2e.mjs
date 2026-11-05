@@ -110,15 +110,20 @@ try{
       nuptialInsertion:Boolean(x.nuptialInsertion),
       faithfulPosture:x.faithfulPosture??null,faithfulGesture:x.faithfulGesture??null,
     }))??[],
+    projectedParagraphIds:globalThis.AO_R17_NATIVE_READER_PREVIEW?.model?.cards
+      ?.flatMap(c=>c.paragraphs.map(p=>p.id))??[],
+    sourceParagraphIds:globalThis.AO_R17_NATIVE_READER_PREVIEW?.sourceModel?.cards
+      ?.flatMap(c=>c.paragraphs.map(p=>p.id))??[],
   }));
   assert.equal(model.starts,0);
   assert.equal(model.owner,"R17_NATIVE_PRODUCTION");
   assert.equal(model.marker,"R17_NATIVE_PRODUCTION");
-  assert.equal(model.total,42,"Nuptial LIVE reader must retain 39 source cards plus three source-pinned insertions");
+  assert.equal(model.total,68,"Nuptial LIVE must show 65 curated ordinary cards plus three source-pinned prayers");
   assert.equal(model.sourceTotal,42,"Nuptial source must retain the certified 39+3 insertion model");
-  assert.equal(model.productOwner,model.sourceOwner,
-    "Nuptial must use the source-owned LIVE model without any historical 48-card projector");
+  assert.equal(model.productOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
   assert.match(model.sourceOwner,/SOURCE_FIRST_LIVE\+NUPTIAL_INSERTIONS/);
+  assert.deepEqual(model.projectedParagraphIds,model.sourceParagraphIds,
+    "Nuptial production phone reader must not drop or duplicate source paragraphs");
   assert.equal(model.count,3);
 
   const insertionCards=model.cards.filter(x=>x.nuptialInsertion);
@@ -147,7 +152,7 @@ try{
 
   assert.deepEqual(pageErrors,[]);
   await context.close();
-  console.log("Nuptial real-shell acceptance: PASS — 42 source-first LIVE cards (39 + 3 nuptial insertions), touch navigation, no faithful-state leakage, no legacy start.");
+  console.log("Nuptial real-shell acceptance: PASS — 68 curated LIVE cards (65 + 3 sourced nuptial insertions), exact paragraph parity, touch navigation, no faithful-state leakage, no legacy start.");
 }finally{
   await browser?.close();
   await new Promise(resolveClose=>server.close(()=>resolveClose()));

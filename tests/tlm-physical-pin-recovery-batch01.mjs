@@ -1,5 +1,6 @@
-// Source-first CL2 pin recovery. Only independent church-building geometry
-// enters MapLibre. LMS/FSSP research labels never imply an individual Mass.
+// Source-first CL2 pin recovery. Independent church-building geometry is preserved; additionally approved
+// illustrative locality markers are separate and never imply a church door.
+// LMS/FSSP research labels never imply an individual Mass.
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {projectPreliminaryR49,projectPublishedProvisionalMassSites,filterPreliminaryR49,tlmSiteEvidenceCounts}
@@ -54,13 +55,13 @@ for(const [group,id,lat,lng,ref,scope] of [...newlyMapped,...refinements]){
    "Physical coordinates cannot create a claim about any Mass or its Missal");
 }
 const counts=tlmSiteEvidenceCounts(all);
-assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:341,SOURCE_PIN:1806,ADDRESS_ONLY:435});
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,435);
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,341);
+assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:710,SOURCE_PIN:1806,ADDRESS_ONLY:66});
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,66);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,710);
 // These records appear to describe one Cagliari basilica and require a
 // physical-identity reconciliation before either gets a new coordinate.
 const cagliariOriginal=all.find(x=>x.physical_group_id==="RG-A75D8A0E1C53");
 const cagliariResearch=all.find(x=>x.physical_group_id==="RG-B65-77C86C7B3EC4");
 assert.ok(cagliariOriginal?.map_publishable&&cagliariResearch&&!cagliariResearch.map_publishable,
   "Do not add a duplicate research pin to the already mapped Cagliari basilica");
-console.log("PASS TLM pin recovery batch 1: six newly mapped churches plus one source-site refinement, 2,147 mapped, 435 list-only, Cagliari duplicate held");
+console.log("PASS TLM pin recovery batch 1: six newly mapped churches plus one source-site refinement, 2,516 mapped (including 158 Excel-approved illustrative locality markers), 66 list-only, Cagliari duplicate held");

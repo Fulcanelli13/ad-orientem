@@ -73,6 +73,32 @@ try{
     assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null})),true);
     await page.locator("#aoPray435930.open [data-ao-pray-pilot-mosaic]").waitFor({timeout:15000});
    };
+   // Production search is an alternate entry, not a second category
+   // inventory. Check exact source ownership before the 41 real tap journeys.
+   await hub();
+   const searchRoot="#aoPray435930.open [data-ao-pray-pilot-results]";
+   const rosarySearch=page.locator(searchRoot+' [data-p435930-own="pray.rosary"]');
+   const rosaryMethodSearch=page.locator(searchRoot+' [data-p435930-own="pray.rosary_methods"]');
+   const saintsSearch=page.locator(searchRoot+' [data-p435930-own="pray.litany_saints"]');
+   const loretoOld=page.locator(searchRoot+' [data-p435930-pilot-prayer="litany_loreto_1962"]');
+   const loretoCurrent=page.locator(searchRoot+' [data-p435930-pilot-prayer="litany_loreto_current"]');
+   for(const [entry,expectedDoor] of [
+    [rosarySearch,"chaplets"],[rosaryMethodSearch,"search"],
+    [saintsSearch,"saints"],[loretoOld,"marian"],[loretoCurrent,"library"]
+   ]){
+    assert.equal(await entry.count(),1,"Prayer search lost or duplicated a source-owned entry");
+    assert.equal(await entry.getAttribute("data-pilot-primary-door"),expectedDoor,
+     "Prayer search owner drifted to the retired category catalog");
+   }
+   assert.equal(await rosaryMethodSearch.getAttribute("data-pilot-search-only"),"true",
+    "Rosary methods must remain searchable without a duplicate shelf");
+   const query=page.locator("#aoPray435930.open [data-p435930-pilot-search]");
+   await query.fill(language==="fr"?"Rosaire":"Rosary");
+   assert.ok(await rosarySearch.isVisible(),
+    "Original Rosary route is not discoverable by its EN/FR search name");
+   assert.ok(await rosaryMethodSearch.isVisible(),
+    "Original Rosary methods are no longer searchable");
+   await hub(); // clear the query before the canonical shelf navigation matrix
    // Place the Rosary last: it correctly closes the Prayer sheet and transfers
    // control to the ORIGINAL Lab Ora player, not another Prayer card engine.
    for(const row of routes.filter(x=>x.id!=="pray.rosary").concat(routes.filter(x=>x.id==="pray.rosary"))){
@@ -84,10 +110,26 @@ try{
      await hub();
      if(id==="pray.library"){
       await page.locator('#aoPray435930.open [data-p435930-own="pray.library"]').first().click();
+      await page.locator('#aoPray435930.open [data-p435930-own="pray.library"]').first().click();
      }else{
       assert.ok(door,id+" has no nine-door parent");
-      await page.locator('#aoPray435930.open [data-p435930-family="'+door+'"]').first().click();
-      await page.locator('#aoPray435930.open [data-ao-prayer-shelf="'+door+'"]').waitFor({timeout:12000});
+      const doorTile=page.locator('#aoPray435930.open [data-ao-pray-pilot-tile][data-p435930-family="'+door+'"]').first();
+      await doorTile.click();
+      const afterReveal=await doorTile.getAttribute("aria-expanded");
+      assert.equal(afterReveal,"true",id+" first real tap must reveal its original category tile");
+      await doorTile.click();
+      const shelfSelector='#aoPray435930.open [data-ao-prayer-shelf="'+door+'"]';
+      try{await page.locator(shelfSelector).waitFor({timeout:12000});}
+      catch(error){
+       const state=await page.evaluate(door=>{
+        const root=document.querySelector("#aoPray435930.open"),m=root?.querySelector(".aoP435930Mount");
+        const tile=root?.querySelector('[data-ao-pray-pilot-tile="'+door+'"]');
+        return {view:m?.dataset.aoPrayView||null,tileExpanded:tile?.getAttribute("aria-expanded")||null,
+         familyShelf:[...root?.querySelectorAll("[data-ao-prayer-shelf]")||[]].map(x=>x.dataset.aoPrayerShelf),
+         activeFocus:document.activeElement?.outerHTML?.slice(0,250)||null};
+       },door);
+       throw new Error(id+" second physical activation did not open "+door+": "+JSON.stringify(state)+" / "+error.message);
+      }
       const attr=row.sourceFamily==="canonical-prayer"?"data-p435930-door-prayer":
        "data-p435930-own";
       const own='#aoPray435930.open [data-ao-prayer-shelf="'+door+'"] ['+attr+'="'+id+'"]';
@@ -188,11 +230,39 @@ try{
       assert.equal(await page.locator('#aoPray435930.open [data-ao-pray-essential-landing]').count(),1);
       await page.locator('#aoPray435930.open [data-p435930-lib-all]').click();
       assert.ok(await page.locator('#aoPray435930.open [data-p435930-lib-open]').count()>=48,
-       "The full Prayer Library must remain available via an explicit link");
+       "The full Prayer Library must retain all 48 canonical source identities");
+      // Two visible family shelves; each variant is a distinct, clickable
+      // source card, and native Back must restore the full Library.
+      for(const [family,ids] of [
+       ["litany_loreto",["litany_loreto_1962","litany_loreto_current"]],
+       ["eternal_rest",["foundations_eternal_rest","dead_eternal_rest_singular"]]
+      ]){
+       const group=page.locator('#aoPray435930.open [data-ao-prayer-family="'+family+'"]');
+       assert.equal(await group.count(),1,family+" needs one visible family shelf");
+       assert.equal(await group.locator("[data-p435930-lib-open]").count(),2,
+        family+" must preserve both source-owned forms");
+       for(const sourceId of ids){
+        if(!await group.evaluate(el=>el.open))await group.locator("summary").click();
+        await group.locator('[data-p435930-lib-open="'+sourceId+'"]').click();
+        assert.equal(await page.locator('#aoPray435930.open [data-ao-devo-card]').getAttribute("data-ao-devo-card"),
+         sourceId,"Library opened the wrong canonical historical form");
+        await page.locator("#aoPray435930.open [data-p435930-back]").click();
+        assert.equal(await group.count(),1,sourceId+" native Back lost its Library family");
+       }
+      }
     }
     if(id==="pray.rosary")assert.equal(observed.rosaryOriginal,true,"Rosary donor was replaced");
     if(row.sourceFamily==="canonical-prayer"){
-     await page.locator("#aoPray435930.open [data-p435930-lib-back]").click();
+     // Every canonical single-prayer reader uses the existing native header
+     // Back. The former inline Back duplicated navigation and consumed phone
+     // space, even though it used the same backToParent() behaviour.
+     const inlineBack=page.locator("#aoPray435930.open [data-p435930-lib-back]");
+     assert.equal(await inlineBack.count(),0,
+      "Canonical single-prayer reader must not render a second inline Back");
+     const nativeBack=page.locator("#aoPray435930.open [data-p435930-back]");
+     assert.ok(await nativeBack.isVisible(),
+      "Canonical single-prayer reader must keep its native header Back");
+     await nativeBack.click();
      assert.equal(await page.locator('#aoPray435930.open [data-ao-prayer-shelf="'+door+'"]').count(),1,
       "Canonical prayer Back did not return to "+door);
     }

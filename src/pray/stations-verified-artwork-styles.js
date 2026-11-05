@@ -6,7 +6,7 @@
 const CSS=String.raw`
 #aoPray435930 .aoP435930StationArtwork{width:100%;margin:0 auto 16px;padding:0;text-align:center;min-width:0}
 #aoPray435930 .aoP435930StationArtwork img{display:block;max-width:100%;width:auto;height:auto;max-height:min(38vh,410px);object-fit:contain;margin:0 auto}
-#aoPray435930 .aoP435930StationArtwork figcaption{margin:8px auto 0;max-width:62ch;color:var(--muted,#aeb2b8);font:400 .66rem/1.55 var(--ao-font-ui,system-ui,sans-serif);overflow-wrap:anywhere}
+#aoPray435930 .aoP435930StationArtwork figcaption{margin:10px auto 0;max-width:62ch;color:var(--muted,#aeb2b8);font:400 .875rem/1.55 var(--ao-font-ui,system-ui,sans-serif);overflow-wrap:anywhere}
 #aoPray435930 .aoP435930StationArtwork figcaption a{color:inherit;text-decoration:underline;text-underline-offset:2px}
 #aoPray435930 .aoP435930StationArtwork figcaption a:focus-visible{outline:2px solid var(--liturgical,#c7ae6d);outline-offset:3px}
 @media(max-width:600px){#aoPray435930 .aoP435930StationArtwork img{max-height:min(32svh,300px)}}

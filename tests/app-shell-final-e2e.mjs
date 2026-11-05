@@ -569,7 +569,7 @@ async function exerciseRealShellFollowingAction(browser,spec){
     assert.equal(ownership.readerUiMode,"NATIVE");
     assert.equal(ownership.uiOwner,"R17_NATIVE_PRODUCTION");
     assert.equal(ownership.marker,"R17_NATIVE_PRODUCTION");
-    if(["GENERIC_PROCESSION","CORPUS_CHRISTI_PROCESSION"].includes(spec.kind)){
+    if(["GENERIC_PROCESSION","CORPUS_CHRISTI_PROCESSION","HOLY_THURSDAY_POST"].includes(spec.kind)){
       const audit=await page.evaluate(()=>{
         const api=globalThis.AO_R17_NATIVE_READER_PREVIEW;
         const root=document.getElementById("ao-r17-native-reader-preview");
@@ -578,8 +578,14 @@ async function exerciseRealShellFollowingAction(browser,spec){
           optional:api.model.cards.some(c=>c.title?.startsWith("Second Confiteor")),
           lastGospelCards:api.model.cards.filter(c=>(c.sourceSectionId??c.sectionId)==="AO.CARD.030").length};
       });
-      assert.equal(audit.total,65,spec.kind+" must preserve the full curated source-card structure before following action");
-      assert.equal(audit.source,39);
+      assert.equal(audit.total,spec.kind==="HOLY_THURSDAY_POST"?61:65,
+        spec.kind+" must preserve the form-appropriate 65-family card boundaries");
+      assert.equal(audit.source,spec.kind==="HOLY_THURSDAY_POST"?38:39);
+      if(spec.kind==="HOLY_THURSDAY_POST")
+        assert.equal(await page.evaluate(()=>
+          window.AO_R17_NATIVE_READER_PREVIEW.model.cards.some(c=>
+            (c.sourceSectionId??c.sectionId)==="AO.CARD.009")),false,
+          "Holy Thursday must never reintroduce the omitted Credo");
       assert.equal(audit.owner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
       assert.equal(audit.curated,"true");
       assert.equal(audit.optional,true,"second Confiteor must remain auditable but opt-in");
@@ -1080,7 +1086,7 @@ try{
     insertedRite:"holy thursday post",
     date:"2027-03-25",
     celebrationId:"holy-thursday",
-    properSource:"Tempora/Quad6-4",
+    properSource:"Tempora/Quad6-4r",
     getter:"getHolyThursdayPostState",
     firstId:"HT-R01",
     lastId:"HT-R06",

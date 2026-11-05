@@ -1,0 +1,86 @@
+/** Source-preserving category interior restyle based on approved 27 October study. */
+export const PRAYER_CATEGORY_PROTOTYPE_CSS="/* Prayer category interior fidelity — approved 27 October category-screen study.\n * Presentation only. Nine doors, source routes, editorial image gates and filters\n * continue to be owned by presentation-runtime.js.\n */\n#aoPray435930 .aoP435930Sheet:has(.aoPrayDoorMosaicInterior){\n  width:min(100%,1120px);height:100dvh;max-height:100dvh;\n  border:0;border-radius:0;background:#0c1016;color:#eae3d8;\n}\n#aoPray435930 .aoP435930Sheet:has(.aoPrayDoorMosaicInterior) .aoP435930Head{\n  background:rgba(12,16,22,.95);border-color:rgba(255,255,255,.12);color:#eae3d8;\n}\n#aoPray435930 .aoP435930Sheet:has(.aoPrayDoorMosaicInterior) .aoP435930Head button{\n  color:#eae3d8;background:rgba(19,25,33,.85);border-color:rgba(255,255,255,.16);\n}\n#aoPray435930 .aoP435930Body.aoPrayDoorInterior.aoPrayDoorMosaicInterior{\n  display:block;box-sizing:border-box;width:100%;max-width:1100px;\n  margin:0 auto;padding:0 0 max(64px,env(safe-area-inset-bottom));\n  background:#0c1016;color:#eae3d8;\n}\n#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorCover{\n  position:relative;isolation:isolate;display:grid;place-items:center;\n  height:225px;min-height:225px;max-height:225px;\n  border:0;border-radius:0;overflow:hidden;\n  background:radial-gradient(ellipse at 50% 42%,#34312a,#161c25 60%,#0c1016);\n}\n#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorCover:after{\n  content:\"\";pointer-events:none;position:absolute;inset:0;z-index:1;\n  background:linear-gradient(to top,#0c1016 0%,rgba(12,16,22,.45) 42%,transparent 100%);\n}\n#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorCover img{\n  display:block;width:100%;height:100%;max-height:225px;object-fit:contain;\n}\n#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorCover .aoEditorialArtworkSlot,\n#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorCover .aoReleasedModulePhoto{\n  width:100%;height:100%;min-height:0;\n}\n#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorCoverFallback{\n  width:100%;height:100%;min-height:0;color:#bba782;opacity:.6;\n}\n#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorCover .aoPrayDoorHeading{\n position:absolute!important;z-index:3;left:clamp(20px,7vw,90px);right:20px;bottom:19px;\n max-width:none;margin:0!important;padding:0!important;\n}\n#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorEyebrow{\n display:block;margin:0 0 6px;\n font:500 11px/1.3 system-ui,sans-serif;letter-spacing:.22em;color:#c8ae7b;\n}\n#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorHeading h2{\n margin:0;font:400 clamp(35px,6.5vw,66px)/1.03 Georgia,serif;\n letter-spacing:-.035em;color:#f3ede3;text-shadow:0 2px 10px rgba(0,0,0,.5);\n}\n#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorDescription{\n max-width:850px;margin:0 auto 8px;padding:20px clamp(20px,7vw,60px) 0;\n box-sizing:border-box;font:400 15px/1.75 system-ui,sans-serif;color:#adb4bc;\n}\n#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorFilters{\n  box-sizing:border-box;max-width:850px;margin:0 auto 12px;\n  padding:0 clamp(20px,7vw,60px);gap:6px;\n}\n#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorFilters button{\n  min-height:40px;padding:8px 12px;border:1px solid rgba(218,198,166,.20);\n  border-radius:999px;color:#d8d2c8;background:transparent;\n  font:500 12px/1.2 system-ui,sans-serif;\n}\n#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorFilters button[aria-pressed=true]{\n  background:#232c35;border-color:#c8ae7b;color:#f3ede3;\n}\n#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorShelfList.aoPrayDoorMosaic{\n  display:block!important;box-sizing:border-box;max-width:850px;\n  margin:0 auto;padding:0 clamp(20px,7vw,60px);\n  list-style:none;\n}\n#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorMosaicCard,\n#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayMosaicCardFeatured{\n  display:flex;flex-direction:row;align-items:center;gap:13px;\n  min-height:76px;width:100%;padding:12px 0;\n  border:0;border-top:1px solid rgba(235,232,224,.17);border-radius:0;\n  background:transparent;box-shadow:none;color:#eae3d8;text-align:left;\n  transform:none;\n}\n#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorMosaicCard:last-child{\n  border-bottom:1px solid rgba(235,232,224,.17);\n}\n#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorMosaicCard:hover{\n  background:rgba(255,255,255,.035);border-color:rgba(235,232,224,.23);\n  transform:none;\n}\n#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorMosaicCard[hidden]{\n  display:none!important;\n}\n#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorRowNumber{\n  flex:0 0 26px;color:#9199a2;\n  font:400 12px/1 system-ui,sans-serif;font-variant-numeric:tabular-nums;\n}\n#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayMosaicCardArt{\n  display:none;height:54px;flex:0 0 54px;order:2;\n  border-radius:0;background:transparent;overflow:hidden;\n}\n#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayMosaicCardArt:has(img){\n  display:grid;place-items:center;\n}\n#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayMosaicCardArt img{\n  width:100%;height:100%;object-fit:contain;\n}\n#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayMosaicCardCopy{\n  display:flex;flex-direction:column;gap:3px;min-width:0;\n  padding:0;flex:1;order:1;\n}\n#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayMosaicCardCopy b{\n  font:400 clamp(19px,2vw,24px)/1.2 Georgia,serif;\n  color:#eae3d8;overflow-wrap:anywhere;\n}\n#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayMosaicCardCopy>small{\n  font:400 12px/1.4 system-ui,sans-serif;color:#9da5ae;\n  max-width:58ch;\n}\n#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayMosaicCardCopy .aoPrayDoorLanguages{\n  margin:0;padding:0;gap:7px;color:#929aa5;\n}\n#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayMosaicCardCopy .aoPrayDoorLanguages small{\n  font:500 9px/1.2 system-ui,sans-serif;letter-spacing:.08em;\n}\n#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorRowArrow{\n  flex:0 0 15px;order:3;margin-left:auto;color:#c8ae7b;\n  font:300 24px/1 system-ui,sans-serif;\n}\n#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorContext{\n  max-width:850px;margin:22px auto;padding:0 clamp(20px,7vw,60px);\n}\n@media(max-width:380px){\n #aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorCover{\n   height:215px;min-height:215px;max-height:215px;\n }\n #aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorHeading{\n   margin-top:-67px;\n }\n #aoPray435930 .aoPrayDoorMosaicInterior .aoPrayMosaicCardCopy b{font-size:19px}\n #aoPray435930 .aoPrayDoorMosaicInterior .aoPrayMosaicCardArt:has(img){\n   width:46px;flex-basis:46px;\n }\n}\n@media(prefers-reduced-motion:reduce){\n #aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorMosaicCard{\n   transition:none!important;\n }\n}\n";
+const PRAYER_CATEGORY_REFINEMENT_CSS="\n/* Category study: artwork and readable ordinal list remain primary.\n * Global Prayer header and pilot styles are !important, so scope overrides to\n * the mosaic interior only. Do not change source, filters or route owners. */\n#aoPray435930 .aoP435930Sheet:has(.aoPrayDoorMosaicInterior){position:relative}\n#aoPray435930 .aoP435930Sheet:has(.aoPrayDoorMosaicInterior) .aoP435930Head{\n position:absolute!important;left:0;right:0;top:0!important;z-index:31!important;\n display:flex!important;align-items:flex-start;justify-content:space-between;\n padding:12px 14px!important;background:transparent!important;\n border:0!important;backdrop-filter:none!important;pointer-events:none\n}\n#aoPray435930 .aoP435930Sheet:has(.aoPrayDoorMosaicInterior) .aoP435930Head>div{\n position:absolute!important;width:1px;height:1px;overflow:hidden;\n clip-path:inset(50%);white-space:nowrap;padding:0!important;margin:0\n}\n#aoPray435930 .aoP435930Sheet:has(.aoPrayDoorMosaicInterior) .aoP435930Head button{\n pointer-events:auto;background:rgba(8,11,16,.72)!important;color:#eae3d8!important;\n box-shadow:0 2px 14px rgba(0,0,0,.32)!important;backdrop-filter:blur(12px)\n}\n#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorCover .aoPrayDoorHeading{\n background:transparent!important;box-shadow:none!important;border:0!important\n}\n#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayMosaicCardCopy>small,\n#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayMosaicCardCopy .aoPrayDoorLanguages{\n display:none!important\n}\n#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorMosaicCard{\n min-height:76px!important\n}\n\n";
+const PRAYER_CATEGORY_LIST_TEXT_ONLY_CSS=String.raw`
+/* The 27 October category study is a numbered text list beneath one cover.
+ * Released individual prayer art remains source-owned in its reader; do not
+ * compress image captions/credits into 54px miniatures beside the arrow. */
+#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorShelfList .aoPrayMosaicCardArt,
+#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorShelfList .aoPrayMosaicCardArt:has(img){
+ display:none!important;
+}
+#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorFilters{
+ background:transparent!important;
+}
+`;
+const PRAYER_CATEGORY_P0_POLISH_CSS=String.raw`
+/* Compact missal-like treatment of short source-owned shelves. The category
+ * artwork and numbered prayer list remain the approved presentation. */
+#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorDescription{
+ box-sizing:border-box;max-width:850px;margin:0 auto 10px;
+ padding:10px clamp(20px,7vw,60px) 0;
+ text-align:left;font:400 15px/1.5 var(--ao-font-liturgical,Georgia,serif)!important;
+ color:#c3bcb2;
+}
+#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorCoverFallback{
+ display:none!important;
+}
+#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorCover[data-ao-art-binding="editorial-pending"]{
+ height:174px;min-height:174px;max-height:174px;
+ background:linear-gradient(138deg,#282c33,#14181f 66%,#0c1016);
+}
+#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorCover[data-ao-art-binding="editorial-pending"] .aoPrayDoorHeading{
+ bottom:14px;
+}
+#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorFilters{
+ margin-bottom:10px;
+}
+#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorContext{
+ position:static!important;max-width:850px;margin:18px auto 32px;
+ padding:0 clamp(20px,7vw,60px);
+}
+#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorContext details{
+ position:static!important;max-width:100%;border-top:1px solid rgba(218,198,166,.27);
+ color:#c6bead;background:transparent;
+}
+#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorContext summary{
+ min-height:44px;padding:12px 0;cursor:pointer;
+ font:400 14px/1.35 var(--ao-font-liturgical,Georgia,serif);
+}
+#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorContext details:not([open])>*:not(summary){display:none!important}
+#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorCover .aoReleasedModulePhoto figcaption{
+ top:96px!important;right:12px!important;left:auto!important;bottom:auto!important;
+ max-width:118px!important;max-height:62px;overflow:auto;
+}
+#aoPray435930 .aoP435930Sheet:has(.aoPrayDoorMosaicInterior) .aoP435930Head .aoP435930Back{
+ box-shadow:0 2px 10px rgba(0,0,0,.28)!important;
+}
+#aoPray435930 .aoP435930Sheet:has(.aoPrayDoorMosaicInterior) .aoP435930Head .aoP435930Back:focus-visible{
+ outline:2px solid #e2c68e!important;outline-offset:2px;
+}
+`;
+const PRAYER_CATEGORY_SOURCE_CREDIT_CSS=String.raw`
+/* A cover retains its real source link. Never leave artist attribution
+ * as near-black text inside the bottom title gradient. */
+#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorCover .aoReleasedModulePhoto{position:relative}
+#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorCover .aoReleasedModulePhoto figcaption{
+ position:absolute;top:66px;right:9px;bottom:auto;left:auto;z-index:4;
+ box-sizing:border-box;max-width:116px;margin:0;padding:5px 7px;
+ color:#eee5d8!important;background:rgba(10,13,18,.84)!important;
+ border:1px solid rgba(238,225,204,.3);border-radius:5px;
+ text-align:right;font:400 9px/1.35 system-ui,sans-serif!important;
+ overflow-wrap:anywhere;white-space:normal;opacity:1!important;
+}
+#aoPray435930 .aoPrayDoorMosaicInterior .aoPrayDoorCover .aoReleasedModulePhoto figcaption a{
+ color:#f5deb5!important;text-decoration:underline
+}
+`;
+export function installPrayerCategoryPrototypeStyles(doc=globalThis.document){
+ if(!doc?.head||doc.getElementById("ao-prayer-category-prototype-css"))return false;
+ const node=doc.createElement("style");
+ node.id="ao-prayer-category-prototype-css";
+ node.textContent=PRAYER_CATEGORY_PROTOTYPE_CSS+PRAYER_CATEGORY_REFINEMENT_CSS+PRAYER_CATEGORY_LIST_TEXT_ONLY_CSS+PRAYER_CATEGORY_SOURCE_CREDIT_CSS+PRAYER_CATEGORY_P0_POLISH_CSS;
+ doc.head.append(node);
+ return true;
+}
+if(typeof document!=="undefined")installPrayerCategoryPrototypeStyles(document);

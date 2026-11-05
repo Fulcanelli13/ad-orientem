@@ -1,3 +1,6 @@
+// Carry the nine Excel-approved site admissions through the existing Directory gate.
+import "./tlm-physical-pin-recovery-reconciled-nine.mjs";
+import "./tlm-illustrative-locality-r2-94.mjs";
 // TLM batch 17 — 30 GB provisional GCatholic-linked church sites; identity and evidence-scope locks.
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
@@ -55,9 +58,9 @@ assert.ok(poi.facts.some(x=>x.label==="Map position"&&x.value.includes("building
 const campus=all.find(x=>x.physical_group_id==="RG-B70-2945A96ECEDE");
 assert.ok(campus.facts.some(x=>x.label==="Map position"&&x.value.includes("campus")));
 assert.equal(all.length,2582);
-assert.equal(all.filter(x=>x.map_publishable).length,2147);
+assert.equal(all.filter(x=>x.map_publishable).length,2516);
 const counts=tlmSiteEvidenceCounts(all);
-assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:341,SOURCE_PIN:1806,ADDRESS_ONLY:435});
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,435);
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,341);
-console.log("PASS TLM batch 17: thirty reviewed source-identities, 2147 mapped, 435 unpinned; no invented Mass or image rights");
+assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:710,SOURCE_PIN:1806,ADDRESS_ONLY:66});
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,66);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,710);
+console.log("PASS TLM batch 17: thirty reviewed source-identities, 2516 mapped, 66 unpinned; no invented Mass or image rights");

@@ -88,6 +88,7 @@ try{
     await overflow();
     await page.screenshot({path:resolve(output,"hub-"+width+"-"+locale+".png"),animations:"disabled"});
     await page.locator(base+' [data-p435930-family="eucharistic"]').click();
+    await page.locator(base+' [data-p435930-family="eucharistic"]').click();
     const shelf=await imageState(".aoPrayerEucharisticCover img");
     imageOK(shelf,"adoration-frameless.webp");
     await overflow();
@@ -121,6 +122,7 @@ try{
     // Discovery route uses the distinct approved full-height pilot entrance.
     await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
     await page.locator(base+' [data-p435930-family="daily"]').click();
+    await page.locator(base+' [data-p435930-family="daily"]').click();
     await page.locator(base+' [data-p435930-own="pray.angelus_regina"]').click();
     const angel=await imageState(".aoPrayerAngelusPhoto img");
     imageOK(angel,"angelus-frameless.webp");
@@ -148,7 +150,7 @@ try{
     const hailMaryButton=page.locator(base+' [data-p435930-lib-open="foundations_hail_mary"]');
     assert.equal(await hailMaryButton.count(),1,"Canonical Hail Mary card must be reachable from the Prayer library");
     await hailMaryButton.click();
-    const hailMary=await imageState(".aoEssentialFlowArt img");
+    const hailMary=await imageState(".aoClaudeHolyCard .aoClaudeHolyPlate img");
     imageOK(hailMary,"angelus-frameless.webp");
     assert.equal(await page.locator(base+' [data-ao-editorial-slot="COV-foundations_hail_mary"]').count(),1,
       "Hail Mary artwork must derive from the approved original slot, not generic Prayer cover");

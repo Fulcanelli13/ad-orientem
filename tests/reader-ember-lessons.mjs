@@ -6,6 +6,9 @@ import "./lent-weekday-scripture-source.mjs";
 import { readFileSync } from "node:fs";
 import { createMassReaderModel } from "../src/mass/reader-model.js";
 import { buildEmberInsertionCards } from "../src/mass/reader-ember-lessons.js";
+import { projectCuratedOrdinaryLiveCards } from "../src/mass/reader-live-curated-cards.js";
+import { prepareNativeReaderPreview } from "../src/mass/reader-native-preview.js";
+import { buildReaderModeModels, captureReaderModeAnchor, findReaderModeAnchorCard } from "../src/mass/reader-mode-switch.js";
 import { makeResolvedMass, compileMassPlan } from "../src/mass/session-engine.js";
 import { projectSpecialStructure } from "../src/mass/reader-special-structure.js";
 
@@ -124,6 +127,76 @@ assert.equal(epistle.progress.label,"10 / 44");
 assert.equal(live.cards.at(-1).sourceSequence,30,
   "Ember insertion destroyed ordinary Last Gospel source sequence");
 
+const curatedEmber=projectCuratedOrdinaryLiveCards(live);
+assert.equal(curatedEmber.totalCards,70,
+  "Five independently sourced Ember readings require 65 ordinary moments plus five");
+assert.equal(curatedEmber.sourceModelTotalCards,44);
+assert.equal(curatedEmber.structureOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
+const emberCuratedCards=curatedEmber.cards.filter(c=>c.emberInsertion===true);
+assert.deepEqual(emberCuratedCards.map(c=>c.sectionId),
+  ["AO.EMBER.01","AO.EMBER.02","AO.EMBER.03","AO.EMBER.04","AO.EMBER.05"]);
+assert.deepEqual(emberCuratedCards.map(c=>c.sourceSectionKey),order,
+  "LIVE 65-family silently reordered the source-prescribed Ember readings");
+assert.deepEqual(emberCuratedCards[0].formulaStates,inserts[0].formulaStates,
+  "Word-specific Flectamus/Levate triggers were lost during curation");
+assert.ok(emberCuratedCards.every(c=>c.posture==="FOLLOW_CONGREGATION_OBSERVATIONAL"),
+  "Curated Ember readings fabricated a universal pew posture");
+assert.equal(emberCuratedCards.at(-1).sequence+1,
+  curatedEmber.cards.find(c=>c.sourceSectionId==="AO.CARD.005")?.sequence,
+  "Ember lessons are no longer immediately before the ordinary Epistle");
+assert.deepEqual(curatedEmber.cards.flatMap(c=>c.paragraphs.map(p=>p.id)),
+  live.cards.flatMap(c=>c.paragraphs.map(p=>p.id)),
+  "Curated Ember LIVE lost or duplicated a source paragraph");
+const emberPrepared={session:{resolvedMass:resolved,
+  plan:{kind:"MASS",overlayGraphs:["EMBER_LESSONS"],
+    precedingGraphs:[],followingGraphs:[]}},
+  readerPreferences:{mode:"LIVE",language:"en"}};
+const emberData={sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap};
+const emberMode=buildReaderModeModels({prepared:emberPrepared,data:emberData,mode:"LIVE"});
+assert.equal(emberMode.sourceModel.totalCards,44);
+assert.equal(emberMode.presentationModel.totalCards,70);
+const directEmberMode=buildReaderModeModels({
+  prepared:emberPrepared,data:emberData,mode:"LIVE",directSourceCurated:true,
+});
+assert.equal(directEmberMode.sourceModel.totalCards,30,
+  "Direct Ember rebuild must not allocate the 44-unit source model");
+assert.equal(directEmberMode.presentationModel.totalCards,70);
+assert.equal(directEmberMode.presentationModel.directSourceToCurated,true);
+assert.equal(directEmberMode.presentationModel.sourceAuthorityModel,directEmberMode.sourceModel);
+assert.deepEqual(directEmberMode.presentationModel.cards.map(c=>({
+  id:c.sectionId,sourceId:c.sourceSectionId,title:c.title,
+  paragraphIds:c.paragraphs.map(p=>p.id),blocks:c.blocks,
+  sourceOrderIndex:c.sourceOrderIndex??null,
+  formulaStates:c.formulaStates??null,
+})),emberMode.presentationModel.cards.map(c=>({
+  id:c.sectionId,sourceId:c.sourceSectionId,title:c.title,
+  paragraphIds:c.paragraphs.map(p=>p.id),blocks:c.blocks,
+  sourceOrderIndex:c.sourceOrderIndex??null,
+  formulaStates:c.formulaStates??null,
+})), "Ember direct mode rebuild changed source order, prayer text or Flectamus/Levate anchors");
+const directEmberAnchor=captureReaderModeAnchor(directEmberMode.presentationModel.cards
+  .find(c=>c.sectionId==="AO.EMBER.02"));
+assert.equal(findReaderModeAnchorCard(emberMode.presentationModel,directEmberAnchor)?.sectionId,
+  "AO.EMBER.02");
+for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+  const variant=buildReaderModeModels({
+    prepared:{...emberPrepared,session:{...emberPrepared.session,
+      resolvedMass:{...emberPrepared.session.resolvedMass,form}}},
+    data:emberData,mode:"LIVE"});
+  assert.equal(variant.sourceModel.totalCards,44,form+" Ember source");
+  assert.equal(variant.presentationModel.totalCards,70,form+" Ember LIVE");
+  assert.deepEqual(variant.presentationModel.cards.filter(c=>c.emberInsertion).map(c=>c.sourceSectionKey),
+    order,form+" Ember lesson source order");
+  assert.deepEqual(variant.presentationModel.cards.flatMap(c=>c.paragraphs.map(p=>p.id)),
+    variant.sourceModel.cards.flatMap(c=>c.paragraphs.map(p=>p.id)),
+    form+" Ember paragraph parity");
+  if(form==="LOW")assert.equal(variant.presentationModel.sourceOnlyCueRegister,null);
+}
+const emberMissal=buildReaderModeModels({prepared:emberPrepared,data:emberData,mode:"MISSAL"});
+const emberAnchor=captureReaderModeAnchor(emberMode.presentationModel.cards.find(c=>c.sectionId==="AO.EMBER.02"));
+assert.equal(findReaderModeAnchorCard(emberMissal.presentationModel,emberAnchor)?.sectionId,
+  "AO.EMBER.02","LIVE → MISSAL lost exact Ember prayer/reading anchor");
+
 const simple=createMassReaderModel({
   resolvedMass:{...resolved,presentationMode:"SIMPLE"},
   sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap
@@ -158,5 +231,43 @@ assert.equal(segment.renderable,true);
 assert.equal(segment.planOwned,true);
 assert.equal(segment.readerPayload,"SOURCE_ORDER_PRE_GOSPEL_READER");
 assert.equal(projection.releaseSupport,true);
+
+// Exercise the production eligibility/reader assembly, not only a direct
+// projector or a compressed source fixture. All data is loaded locally.
+const canonicalEvents=[
+  "../data/mass/mc-events-01.v1.json","../data/mass/mc-events-02.v1.json",
+  "../data/mass/mc-events-03.v1.json","../data/mass/mc-events-04.v1.json",
+  "../data/mass/mc-events-05.v1.json","../data/mass/mc-events-06.v1.json",
+].flatMap(path=>load(path).events);
+const cueRegistries=Object.freeze({
+  gestures:load("../data/presentation/reader-gestures.v1.json"),
+  responses:load("../data/presentation/reader-responses.v1.json"),
+  postures:load("../data/presentation/reader-postures.v1.json"),
+  positions:load("../data/presentation/reader-priest-positions.v1.json"),
+  voices:load("../data/presentation/reader-priest-voices.v1.json"),
+  actions:load("../data/presentation/reader-priest-actions.v1.json"),
+});
+const readerData={...emberData,
+  rubricEvents:load("../data/presentation/reader-rubric-events.v1.json"),
+  gestureMatrix:load("../data/mass/gesture-matrix.v1.json")};
+const guideData={registry:load("../data/presentation/guide-registry.v1.json"),url:"test://guide"};
+const productionPrepared={session:{resolvedMass:compiled,plan},
+  readerPreferences:{mode:"LIVE",language:"en",postureProfile:"FOLLOW_CONGREGATION",
+    gestureProfile:"GUIDED_1962"}};
+const productionOptions={prepared:productionPrepared,reviewCuratedCards:true,
+  presentationData:readerData,eventData:canonicalEvents,cueRegistries,guideData};
+const emberNative=await prepareNativeReaderPreview(productionOptions);
+assert.equal(emberNative.curatedEligible,true);
+assert.equal(emberNative.model.totalCards,44);
+assert.equal(emberNative.presentationModel.totalCards,70);
+assert.deepEqual(emberNative.presentationModel.cards.filter(c=>c.emberInsertion)
+  .map(c=>c.sourceSectionKey),order);
+assert.deepEqual(emberNative.presentationModel.cards.flatMap(c=>c.paragraphs.map(p=>p.id)),
+  emberNative.model.cards.flatMap(c=>c.paragraphs.map(p=>p.id)));
+await assert.rejects(()=>prepareNativeReaderPreview({...productionOptions,
+  prepared:{...productionPrepared,session:{...productionPrepared.session,
+    plan:{...plan,overlayGraphs:[]}}}}),
+  /LIVE_65_CARD_PRESENTATION_REQUIRED/,
+  "Unowned Ember insertion must not silently display 44 raw source cards");
 
 console.log("Ember lessons: PASS — source-order Proper nodes render before ordinary Epistle; suffix pairing is impossible and unresolved payloads fail closed.");

@@ -163,14 +163,23 @@ for(const [group,sourceId,lat,lng,sourceRef,reviewScope,formattedAddressFragment
    "Physical site geometry may not automatically certify an individual Mass");
  }
 }
-// Still River has distinct convent and school/chapel properties.
-// The unnamed chapel at 282 Still River Road must not inherit the nuns' 254 marker.
+// Still River convent and Saint Benedict Center retain distinct CL2 identities.
+// R3 Harvard town marker is illustrative only and NOT an assertion about the unnamed chapel.
 const convent=all.find(x=>x.physical_group_id==="RG-419045B46987");
 const separateCenter=all.find(x=>x.physical_group_id==="RG-A3601E6DECF8");
-assert.ok(convent?.map_publishable&&separateCenter&&!separateCenter.map_publishable,
- "Do not alias distinct Still River worship sites by street name or community");
+assert.ok(convent?.map_publishable&&separateCenter?.map_publishable,
+ "Convent and R3 Harvard Center must retain distinct source identities");
+assert.notEqual(convent.physical_group_id,separateCenter.physical_group_id);
+assert.equal(separateCenter.geo.precision,"locality");
+assert.equal(separateCenter.geo.approximate,true);
+assert.notEqual(separateCenter.geo.source_ref,convent.geo.source_ref,
+ "Harvard town centre must never inherit the convent's site coordinate");
+assert.match(separateCenter.status,/MASS UNVERIFIED/);
+assert.equal(separateCenter.celebration_evidence,undefined);
+assert.ok(!separateCenter.actions.some(x=>/maps\/dir/.test(x.url)),
+ "Town marker must not route to chapel entrance");
 const counts=tlmSiteEvidenceCounts(all);
-assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:341,SOURCE_PIN:1806,ADDRESS_ONLY:435});
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,435);
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,341);
-console.log("PASS TLM pin recovery batch 6: 12 source-confirmed church/monastic site pins, 2147 mapped, 435 address-only, no inferred liturgical claims");
+assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:710,SOURCE_PIN:1806,ADDRESS_ONLY:66});
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,66);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,710);
+console.log("PASS TLM pin recovery batch 6: 12 source-confirmed church/monastic site pins, 2516 mapped, 66 address-only, no inferred liturgical claims");

@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import {libraryVariantFamily} from "../src/pray/library-variant-groups.js";
 import {readFileSync} from "node:fs";
 import http from "node:http";
 import {readFile} from "node:fs/promises";
@@ -388,7 +389,9 @@ try{
  assert.equal(await page.locator("#aoPray435930.open [data-ao-devo-card]").getAttribute("data-ao-devo-card"),"sacred_heart_short_prayer");
  assert.ok((await page.locator("#aoPray435930.open [data-ao-devo-card]").innerText()).length>130,
    "First Friday direct source prayer is missing text");
- await page.locator("#aoPray435930.open [data-p435930-prayer-return]").evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930.open [data-p435930-prayer-return]").count(),0,
+  "Standalone source prayer must not duplicate the native Back");
+ await page.locator("#aoPray435930.open [data-p435930-back]").evaluate(el=>el.click());
  assert.equal(await page.locator("#aoPray435930.open [data-p435930-ff-stage][aria-current='step']").getAttribute("data-p435930-ff-stage"),"0",
    "Direct prayer did not restore exact First Friday stage");
  assert.equal(await page.locator("#aoPray435930.open .aoQuietSeriesDisclosure [data-p435930-ff-tracking]").isChecked(),false,
@@ -522,27 +525,27 @@ try{
    await page.locator("#aoPray435930.open [data-n1-select='"+id+"']").waitFor({state:'visible',timeout:10000});
    // A successful touch navigation replaces the selection card immediately;
    // Playwright may observe the card detached after the action has succeeded.
-   // Require the real canonical Novena detail state or rethrow the tap error.
+   // Require the real canonical Novena day state or rethrow the tap error.
    try{
      await page.locator("#aoPray435930.open [data-n1-select='"+id+"']").tap({timeout:9000});
    }catch(error){
      let selected=await page.evaluate(id=>{
        const state=globalThis.AO_NOVENAS_V3?.state?.();
-       return state?.id===id&&state?.screen==="detail";
+       return state?.id===id&&state?.screen==="day";
      },id);
      // The canonical overview can be re-rendered during asynchronous
      // calendar/module updates; retry the genuine phone tap on its new node.
-     // Never manufacture a click or accept the test without detail navigation.
+     // Never manufacture a click or accept the test without day navigation.
      for(let retry=0;!selected&&retry<2;retry++){
        await page.locator("#aoPray435930.open [data-n1-select='"+id+"']").waitFor({state:"visible",timeout:6000});
        try{
          await page.locator("#aoPray435930.open [data-n1-select='"+id+"']").tap({timeout:6000});
        }catch(retryError){
-         // Only a verified canonical detail transition counts as success.
+         // Only a verified canonical day transition counts as success.
        }
        selected=await page.evaluate(id=>{
          const state=globalThis.AO_NOVENAS_V3?.state?.();
-         return state?.id===id&&state?.screen==="detail";
+         return state?.id===id&&state?.screen==="day";
        },id);
      }
      if(!selected){
@@ -566,9 +569,12 @@ try{
    }
    assert.equal(await page.evaluate(id=>{
      const state=globalThis.AO_NOVENAS_V3?.state?.();
-     return state?.id===id&&state?.screen==="detail";
-   },id),true,"Touch did not open Novena detail: "+id);
+     return state?.id===id&&state?.screen==="day";
+   },id),true,"Touch did not open Novena day: "+id);
    const detail=page.locator("#aoPray435930.open");
+   assert.equal(await detail.locator('[data-ao-novena-deck]').count(),1,"Selection must open the full day reader without a setup screen");
+   await detail.locator('[data-n1-about]').tap({timeout:9000});
+   assert.equal(await page.evaluate(()=>globalThis.AO_NOVENAS_V3?.state?.()?.screen),'detail',"Reader About control must restore the historical detail screen");
    const background=detail.locator("details.aoN1AboutDisclosure");
    assert.equal(await background.count(),1,"Novena context remains available in its drawer");
    assert.equal(await background.evaluate(x=>x.open),false,"Novena context should not displace day selection");
@@ -589,20 +595,21 @@ try{
      assert.match(evidence,/MEDITATION and PRACTICE/,"The source drawer does not disclose omitted historical daily meditations: "+id);
      assert.match(evidence,/short.*guide|short editorial/i,"An editorial summary must not masquerade as original 1909 text: "+id);
    }
+   // About → Back returns to the identical prayer day without losing its stage.
+   await detail.locator('[data-n1-back]').tap({timeout:9000});
+   assert.equal(await page.evaluate(()=>globalThis.AO_NOVENAS_V3?.state?.()?.screen),'day',"Back from About must restore the day reader");
    if(id==="st_anthony_nine_tuesdays"){
      await detail.locator("[data-n1-mode='simple']").tap();
-     await detail.locator("[data-n1-begin]").tap();
      const prayerBody=await detail.innerText();
      assert.match(prayerBody,/Our Father/);
      assert.match(prayerBody,/Hail Mary/);
      assert.match(prayerBody,/Glory Be/);
      assert.match(prayerBody,/Si quæris miracula|If, then, thou seekest miracles/i,"Traditional responsory not reused from Prayer corpus");
-     await detail.locator("[data-n1-back]").tap();
    }
    await detail.locator("[data-n1-back]").tap({timeout:9000});
    await page.waitForFunction(()=>globalThis.AO_NOVENAS_V3?.state?.()?.screen==="overview",null,{timeout:10000});
    assert.equal(await page.locator("#aoPray435930.open [data-n1-select]").count(),16,
-     "A detail Back tap must restore the source-backed Novena overview: "+id);
+     "A reader Back tap must restore the source-backed Novena overview: "+id);
  }
  // B25: separate original-English Holy Face supplement, original sixteen novenas remain frozen.
  const holyFace="#aoPray435930.open";
@@ -613,7 +620,6 @@ try{
  assert.equal(await page.evaluate(()=>globalThis.AO_NOVENAS_V3?.state?.()?.id),"holy_face_1887");
  assert.equal(await page.locator(holyFace+' [data-n1-day]').count(),9,"Nine complete historical days must be navigable");
  await page.locator(holyFace+' [data-n1-mode="simple"]').tap();
- await page.locator(holyFace+' [data-n1-begin]').tap();
  assert.equal(await page.locator(holyFace+' [data-ao-novena-deck="simple"]').count(),1);
  const firstHoly=await page.locator(holyFace+" .aoN1SourceText").innerText();
  for(const fragment of [/Bethlehem/i,/Spiritual Bouquet/i,/Virtue/i,/I\./,/II\./,/III\./,/Amen\./]){
@@ -634,7 +640,6 @@ try{
  await page.screenshot({path:resolve(root,"artifacts/pray-b25-holy-face-day9-320.png"),animations:"disabled"});
  await page.setViewportSize({width:390,height:844});
  await page.locator(holyFace+" [data-n1-back]").tap();
- await page.locator(holyFace+" [data-n1-back]").tap();
  assert.equal(await page.locator(holyFace+" [data-n1-select]").count(),16,"B25 must preserve existing Novena overview on Back");
  await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.library",{returnContext:null}));
  await page.waitForSelector("#aoPray435930 [data-p435930-lib-open]",{timeout:10000});
@@ -642,6 +647,8 @@ try{
  assert.equal(ids.length,48,"Prayer Library list lost one or more of its 48 canonical prayers");
  assert.equal(new Set(ids).size,48,"Duplicate library identity");
  for(const id of ids){
+   const family=libraryVariantFamily(id);
+   if(family)await page.locator('#aoPray435930.open [data-ao-prayer-family="'+family+'"] > summary').tap({timeout:9000});
    await page.locator("#aoPray435930.open [data-p435930-lib-open='"+id+"']").tap({timeout:9000});
    await page.waitForFunction(()=>{
      const card=document.querySelector("#aoPray435930.open .aoP435930Prayer");
@@ -738,7 +745,15 @@ try{
      assert.match(prayer.source,/1962|2020|2021|traditional|traditionnelles|augmentée|expanded/i,
        "Version of prayer not distinguished in source disclosure: "+id);
    }
-   await page.locator("#aoPray435930.open [data-p435930-lib-back]").tap({timeout:9000});
+   // Every canonical source reader and F01 Holy Card uses the one native
+   // header Back, with no second in-content return action.
+   const inlineBack=page.locator("#aoPray435930.open [data-p435930-lib-back]");
+   assert.equal(await inlineBack.count(),0,
+     "Canonical source reader duplicates native header Back: "+id);
+   const nativeBack=page.locator("#aoPray435930.open [data-p435930-back]");
+   assert.ok(await nativeBack.isVisible(),
+     "Canonical source reader lost native header Back: "+id);
+   await nativeBack.tap({timeout:9000});
  }
  // Divine Mercy has two nested cursors: swipe changes one of seven/eight
  // prayer chapters; the visible beads and paragraph focus select individual

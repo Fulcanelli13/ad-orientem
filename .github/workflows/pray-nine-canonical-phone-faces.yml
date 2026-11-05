@@ -4,6 +4,13 @@ on:
     branches: [main]
     paths:
       - "tests/pray-nine-canonical-phone-faces.mjs"
+      - "tests/pray-f01-holy-card-default-phone.mjs"
+      - "tests/pray-design-pilot-phone.mjs"
+      - "src/pray/prayer-design-pilot.js"
+      - "src/pray/prayer-category-prototype-styles.js"
+      - "tests/pray-claude-holy-card-source-contract.mjs"
+      - "src/pray/claude-holy-card.js"
+      - "src/pray/essential-flow-reader.js"
       - "src/pray/canonical-data.js"
       - "src/pray/presentation-runtime.js"
       - "src/pray/prayer-source-faces.v1.js"
@@ -14,6 +21,13 @@ on:
     branches: [main]
     paths:
       - "tests/pray-nine-canonical-phone-faces.mjs"
+      - "tests/pray-f01-holy-card-default-phone.mjs"
+      - "tests/pray-design-pilot-phone.mjs"
+      - "src/pray/prayer-design-pilot.js"
+      - "src/pray/prayer-category-prototype-styles.js"
+      - "tests/pray-claude-holy-card-source-contract.mjs"
+      - "src/pray/claude-holy-card.js"
+      - "src/pray/essential-flow-reader.js"
       - "src/pray/canonical-data.js"
       - "src/pray/presentation-runtime.js"
       - "src/pray/prayer-source-faces.v1.js"
@@ -27,7 +41,7 @@ concurrency:
 jobs:
   canonical-source-face:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -37,11 +51,18 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - name: Browser-check exact nine source faces without invented Latin or French
         run: npm run test:pray-canonical-phone-faces
+      - name: Approved F01 default Holy Card, 32 prayer sources, real 320/390 phone flip and explicit continuous alternative
+        run: node tests/pray-claude-holy-card-source-contract.mjs && node tests/pray-essentials-f01-holy-card.mjs && node tests/pray-f01-holy-card-default-phone.mjs
+      - name: Approved R1/R2 source contract and 320/390 mosaic visual fidelity, functional floating search
+        run: node tests/pray-design-pilot-contract.mjs && node tests/pray-design-pilot-phone.mjs
       - name: Preserve source-face evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: canonical-prayer-source-faces
-          path: artifacts/pray-canonical-phone-faces/source-face-variants.json
+          path: |
+            artifacts/pray-canonical-phone-faces/source-face-variants.json
+            artifacts/pray-f01-holy-card-default/
+            artifacts/prayer-design-pilot/
           if-no-files-found: warn
           retention-days: 7

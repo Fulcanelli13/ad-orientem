@@ -1,0 +1,686 @@
+{
+  "schema": "AO_SACRED_ATLAS_W1_FIRST10_EXTENDED_GUIDES_RESEARCH_V1",
+  "as_of": "2026-11-05",
+  "based_on": "data/geography/research/sacred-atlas-editorial-master-530-20261104.v1.json",
+  "purpose": "Ten source-specific bilingual extended guide drafts (3 original paragraphs per language each). Not production; second-editor acceptance necessary.",
+  "counts": {
+    "batch_total": 56,
+    "expanded_drafts": 10,
+    "remaining_for_source_deepening": 46,
+    "existing_published_extended_guides_unchanged": 33,
+    "new_published_guides": 0,
+    "approved_photo_covers_unchanged": 379
+  },
+  "policy": [
+    "Keep all original canonical Place and shrine IDs.",
+    "The source URL on each paragraph must substantiate its own claims. Distinguish institutional history, tradition and relic authentication.",
+    "Current pilgrimage programme and liturgical dates do not certify future times, GPS routes, Roman 1962 Mass provision or apparition approval.",
+    "No approved media record or existing Place guide is modified.",
+    "Research data are excluded from GitHub Pages; second-editor sign-off required before any production import."
+  ],
+  "guides": [
+    {
+      "place_id": "place:BA:medjugorje-st-james-parish",
+      "place_name": "St James Parish Church — Međugorje",
+      "country_code": "BA",
+      "shrine_id": "shrine:BA:medjugorje-queen-of-peace",
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "draft_order": 1,
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "The parish church, pilgrim prayer and the precise limits of the Holy See's 2024 decision.",
+      "subtitle_fr": "L’église paroissiale, la prière des pèlerins et la portée exacte de la décision du Saint-Siège de 2024.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "sections": [
+        {
+          "id": "parish",
+          "title_en": "Parish Church",
+          "title_fr": "Église paroissiale",
+          "paragraphs": [
+            {
+              "en": "The parish church of Saint James is the centre of liturgical life for pilgrims visiting Međugorje. The present church was completed in 1969 and is dedicated to Saint James the Greater, patron of pilgrims. The surrounding prayer precinct includes confessionals, a Eucharistic adoration chapel and an outdoor altar used for large gatherings; these are features of the parish complex, not separate invented shrines.",
+              "fr": "L’église paroissiale Saint-Jacques est au centre de la vie liturgique des pèlerins de Međugorje. Achevée en 1969, elle est dédiée à saint Jacques le Majeur, patron des pèlerins. Aux alentours se trouvent les confessionnaux, une chapelle d’adoration et un autel extérieur utilisé lors de grands rassemblements : ces espaces appartiennent au même ensemble paroissial.",
+              "source_url": "https://www.medjugorje.hr/en/prayer-sites"
+            }
+          ]
+        },
+        {
+          "id": "discernment",
+          "title_en": "Ecclesiastical discernment",
+          "title_fr": "Discernement ecclésial",
+          "paragraphs": [
+            {
+              "en": "In its note of 19 September 2024, the Dicastery for the Doctrine of the Faith granted a nihil obstat to the spiritual experience associated with Međugorje. It allows and encourages public devotion in view of discerned spiritual fruits. It does not establish the supernatural authenticity of the alleged apparitions or messages, and the faithful are not obliged to believe in them. This distinction must accompany every account of this site.",
+              "fr": "Dans sa note du 19 septembre 2024, le Dicastère pour la Doctrine de la foi a accordé un nihil obstat à l’expérience spirituelle associée à Međugorje. Cette décision permet et encourage la dévotion publique au regard des fruits spirituels discernés. Elle n’authentifie pas le caractère surnaturel des apparitions ni des messages allégués, auxquels les fidèles ne sont pas tenus de croire. Cette distinction doit accompagner toute présentation du lieu.",
+              "source_url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240919_nota-esperienza-medjugorje_en.html"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage",
+          "title_fr": "Pèlerinage",
+          "paragraphs": [
+            {
+              "en": "The parish gives specific instructions for organized pilgrimage groups and for the celebration of Mass. Worship is coordinated with the parish and its Information Office, rather than presumed possible at private lodgings or on the hills. The public evening programme and its translations serve pilgrims of several languages. Current ceremonies must always be checked with the parish, not inferred from a historic itinerary.",
+              "fr": "La paroisse publie des consignes particulières pour les groupes de pèlerins et la célébration de la messe. La liturgie est coordonnée avec la paroisse et son bureau d’information : on ne peut présumer qu’elle est autorisée dans les logements privés ou sur les collines. Le programme de prière du soir et ses traductions accueillent des fidèles de plusieurs langues. Les cérémonies du jour doivent être vérifiées auprès de la paroisse.",
+              "source_url": "https://www.medjugorje.hr/en/instructions-for-pilgrims"
+            }
+          ]
+        }
+      ],
+      "existing_relic_ids": [],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:BA:medjugorje-destination"
+      ],
+      "saint_name_associations": [
+        "Saint James the Greater"
+      ],
+      "bibliography_urls": [
+        "https://www.medjugorje.hr/en/",
+        "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240919_nota-esperienza-medjugorje_en.html",
+        "https://www.medjugorje.hr/en/prayer-sites",
+        "https://www.medjugorje.hr/en/instructions-for-pilgrims"
+      ],
+      "source_evidence_scope": "DIRECT_INSTITUTIONAL_PAGES_VISITED_AND_SYNOPSIS_CROSSCHECKED_2026_11_05",
+      "next_gate": "SECOND_EDITOR_CROSSCHECK_ALL_3_PARAGRAPHS_AND_EN_FR_RENDERING_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:st-john-neumann-philadelphia",
+      "place_name": "National Shrine of St. John Neumann",
+      "country_code": "US",
+      "shrine_id": "shrine:US:neumann-philadelphia",
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "draft_order": 2,
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "Saint John Neumann's resting place, Redemptorist pilgrimage ministry and shrine museum.",
+      "subtitle_fr": "Le lieu de repos de saint Jean Népomucène Neumann, les pèlerinages rédemptoristes et le musée.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "sections": [
+        {
+          "id": "saint-and-shrine",
+          "title_en": "The saint and shrine",
+          "title_fr": "Le saint et le sanctuaire",
+          "paragraphs": [
+            {
+              "en": "The National Shrine of Saint John Neumann is located at Saint Peter the Apostle Church in Philadelphia. It commemorates the saint, a Redemptorist and former bishop of Philadelphia, and preserves the site where his remains are venerated. This is a specific place of pilgrimage, not a generic saint-profile location or a second church elsewhere in the city.",
+              "fr": "Le sanctuaire national Saint-Jean-Népomucène-Neumann se trouve dans l’église Saint-Pierre-Apôtre de Philadelphie. Il fait mémoire du saint, rédemptoriste et ancien évêque de la ville, et conserve le lieu où sa dépouille est vénérée. Il s’agit d’un lieu de pèlerinage précis, et non d’une simple fiche de saint ni d’une autre église de Philadelphie.",
+              "source_url": "https://www.stjohnneumann.org/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrim-day",
+          "title_en": "A pilgrimage day",
+          "title_fr": "Une journée de pèlerinage",
+          "paragraphs": [
+            {
+              "en": "The shrine offers structured parish and group pilgrimages. Its published sample programme includes a guided visit led by a Redemptorist, a museum presentation on the saint's life, the Rosary or Stations of the Cross in Lent, and Mass. These are possible elements of a planned visit, not an unchanging schedule for every pilgrim.",
+              "fr": "Le sanctuaire accueille des pèlerinages paroissiaux et des groupes. Le programme type publié comprend une visite guidée par un rédemptoriste, une présentation de la vie du saint au musée, le Rosaire ou le chemin de croix pendant le Carême, et la messe. Ce sont des éléments possibles d’une visite organisée, non un horaire immuable pour chaque pèlerin.",
+              "source_url": "https://www.stjohnneumann.org/pilgrimagesandretreats"
+            }
+          ]
+        },
+        {
+          "id": "access",
+          "title_en": "Visiting",
+          "title_fr": "Visite",
+          "paragraphs": [
+            {
+              "en": "The sanctuary's visitor information distinguishes the shrine chapel, museum and the arrangements for groups, including accessibility facilities. Pilgrims seeking prayer at the tomb and those arranging a retreat should verify access independently; an organized retreat programme is not the same as a current Mass timetable. Reported healings remain claims of devotion unless separately authenticated.",
+              "fr": "Les informations aux visiteurs distinguent la chapelle du sanctuaire, le musée et l’accueil des groupes, notamment les aménagements d’accessibilité. Ceux qui désirent prier auprès du tombeau ou organiser une retraite doivent vérifier les conditions d’accès ; une retraite organisée ne constitue pas un horaire actuel de messes. Les guérisons rapportées restent des témoignages dévotionnels sans authentification distincte.",
+              "source_url": "https://www.stjohnneumann.org/faq-1"
+            }
+          ]
+        }
+      ],
+      "existing_relic_ids": [
+        "relic:US:neumann-philadelphia"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:US:neumann-philadelphia-destination"
+      ],
+      "saint_name_associations": [
+        "Saint John Neumann"
+      ],
+      "bibliography_urls": [
+        "https://www.stjohnneumann.org/",
+        "https://www.stjohnneumann.org/pilgrimagesandretreats",
+        "https://www.stjohnneumann.org/faq-1"
+      ],
+      "source_evidence_scope": "DIRECT_INSTITUTIONAL_PAGES_VISITED_AND_SYNOPSIS_CROSSCHECKED_2026_11_05",
+      "next_gate": "SECOND_EDITOR_CROSSCHECK_ALL_3_PARAGRAPHS_AND_EN_FR_RENDERING_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:IT:scala-santa-rome",
+      "place_name": "Pontificio Santuario della Scala Santa e Sancta Sanctorum",
+      "country_code": "IT",
+      "shrine_id": "shrine:20261009:IT:scala-santa-rome",
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "draft_order": 3,
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "The Holy Stairs and the ancient papal chapel, with tradition distinguished from history.",
+      "subtitle_fr": "La Scala Santa et l’ancienne chapelle pontificale, en distinguant tradition et histoire.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "sections": [
+        {
+          "id": "stairs-and-tradition",
+          "title_en": "The stairs and tradition",
+          "title_fr": "L’escalier et la tradition",
+          "paragraphs": [
+            {
+              "en": "The Scala Santa beside the Lateran in Rome is traditionally identified with stairs from the praetorium of Pontius Pilate. The connection with Christ's Passion is a longstanding devotional tradition; the shrine's existence does not by itself establish the material origin of each step. Pilgrimage here is ordered toward contemplation of the Passion rather than archaeological certainty.",
+              "fr": "La Scala Santa, près du Latran à Rome, est traditionnellement identifiée aux marches du prétoire de Ponce Pilate. Son lien avec la Passion du Christ relève d’une ancienne tradition de dévotion ; l’existence du sanctuaire ne suffit pas à démontrer l’origine matérielle de chaque marche. Le pèlerinage invite à méditer la Passion, sans faire d’une attribution traditionnelle une certitude archéologique.",
+              "source_url": "https://www.scala-santa.com/info-eng/"
+            }
+          ]
+        },
+        {
+          "id": "chapel",
+          "title_en": "The papal chapel",
+          "title_fr": "La chapelle pontificale",
+          "paragraphs": [
+            {
+              "en": "At the top of the stairs lies the Sancta Sanctorum, formerly a private oratory of the popes in the Lateran palace. Its earliest documentary attestations date to about the eighth century; it was originally dedicated to Saint Lawrence. By the ninth century the designation 'Holy of Holies' reflected the relics kept there. The chapel and the stairs form related but distinct devotional subjects.",
+              "fr": "Au sommet de l’escalier se trouve le Sancta Sanctorum, ancien oratoire privé des papes dans le palais du Latran. Les premières attestations documentaires remontent environ au VIIIe siècle ; la chapelle était initialement dédiée à saint Laurent. Au IXe siècle, le nom de « Saint des Saints » exprimait la présence des reliques qui y étaient conservées. La chapelle et les marches sont deux objets de dévotion liés, mais distincts.",
+              "source_url": "https://www.scala-santa.com/info-eng/"
+            }
+          ]
+        },
+        {
+          "id": "prayer-and-visit",
+          "title_en": "Prayer and access",
+          "title_fr": "Prière et accès",
+          "paragraphs": [
+            {
+              "en": "The Holy Stairs and the chapel preserve different layers of Roman Catholic prayer: Passion devotion, papal liturgical history and the veneration of an ancient sacred image. Access conditions for the chapel and the particular manner of ascending the stairs must be checked on the shrine's official visitor information; historic accounts do not certify unrestricted access today.",
+              "fr": "La Scala Santa et la chapelle conservent plusieurs dimensions de la prière catholique romaine : dévotion à la Passion, histoire de la liturgie pontificale et vénération d’une ancienne image sacrée. Les modalités d’accès à la chapelle et de montée de l’escalier doivent être vérifiées sur les informations officielles ; les usages historiques ne garantissent pas un accès libre aujourd’hui.",
+              "source_url": "https://www.scala-santa.com/info-eng/"
+            }
+          ]
+        }
+      ],
+      "existing_relic_ids": [
+        "relic:IT:holy-stairs",
+        "relic:IT:sancta-sanctorum-ark"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:IT:scala-santa-rome:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Helena"
+      ],
+      "bibliography_urls": [
+        "https://www.scala-santa.com/info-eng/"
+      ],
+      "source_evidence_scope": "DIRECT_INSTITUTIONAL_PAGES_VISITED_AND_SYNOPSIS_CROSSCHECKED_2026_11_05",
+      "next_gate": "SECOND_EDITOR_CROSSCHECK_ALL_3_PARAGRAPHS_AND_EN_FR_RENDERING_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:FR:abbaye-fleury-saint-benoit-loire",
+      "place_name": "Abbaye de Fleury — Saint-Benoît-sur-Loire",
+      "country_code": "FR",
+      "shrine_id": "shrine:20261009:FR:abbaye-fleury-saint-benoit-loire",
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "draft_order": 4,
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "The Benedictine abbey on the Loire, its building campaigns and the disputed relic tradition.",
+      "subtitle_fr": "L’abbaye bénédictine de la Loire, ses grandes étapes de construction et la tradition reliquaire discutée.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "sections": [
+        {
+          "id": "origin",
+          "title_en": "Origins",
+          "title_fr": "Origines",
+          "paragraphs": [
+            {
+              "en": "Fleury developed from monastic communities founded on the Loire between approximately 630 and 650. The abbey's account places the arrival of relics attributed to Saint Benedict around 660, a tradition that contributed to the site's new patronage and prestige. This claim should be presented alongside the separate Montecassino tradition, not as independent proof of exclusive relic custody.",
+              "fr": "Fleury naît de communautés monastiques établies sur la Loire entre 630 et 650 environ. L’abbaye situe vers 660 l’arrivée de reliques attribuées à saint Benoît, tradition qui contribua à son nouveau patronage et à son rayonnement. Cette revendication doit rester distincte de la tradition du Mont-Cassin et ne prouve pas à elle seule une conservation exclusive des reliques.",
+              "source_url": "https://www.abbaye-fleury.com/histoire.html"
+            }
+          ]
+        },
+        {
+          "id": "architecture",
+          "title_en": "The basilica",
+          "title_fr": "La basilique",
+          "paragraphs": [
+            {
+              "en": "The community began building the present basilica in the eleventh century, with a crypt associated with the Benedictine cult, then a sanctuary and a great tower-porch. The choir and apse were consecrated in 1108, while the basilica's dedication came in 1218. Architectural phases across generations help the visitor distinguish the medieval church from later monastic restorations.",
+              "fr": "La construction de la basilique actuelle commence au XIe siècle, avec une crypte liée au culte bénédictin, puis le sanctuaire et la grande tour-porche. Le chœur et l’abside sont consacrés en 1108, tandis que la dédicace de l’ensemble intervient en 1218. Ces étapes permettent au visiteur de distinguer l’église médiévale des restaurations monastiques ultérieures.",
+              "source_url": "https://www.abbaye-fleury.com/la-basilique.html"
+            }
+          ]
+        },
+        {
+          "id": "living-community",
+          "title_en": "Living Benedictine community",
+          "title_fr": "Communauté bénédictine vivante",
+          "paragraphs": [
+            {
+              "en": "Fleury's history includes Viking attacks, reform movements, dispersal during the Revolution and the return of monks in 1944. It is again a living community, not merely an archaeological monument. The abbey publishes its own liturgical hours, including Gregorian chant for the conventual Mass; these are contemporary arrangements and should never be mislabelled as the Roman 1962 rite.",
+              "fr": "L’histoire de Fleury comprend les attaques normandes, les réformes monastiques, la dispersion révolutionnaire et le retour des moines en 1944. Il s’agit de nouveau d’une communauté vivante, non d’un simple monument archéologique. L’abbaye publie ses horaires liturgiques, avec du chant grégorien à la messe conventuelle ; ces usages actuels ne doivent pas être confondus avec le rite romain de 1962.",
+              "source_url": "https://www.abbaye-fleury.com/horaires-des-offices.html"
+            }
+          ]
+        }
+      ],
+      "existing_relic_ids": [
+        "relic:FR:benedict-fleury"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:FR:abbaye-fleury-saint-benoit-loire:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Benedict of Nursia"
+      ],
+      "bibliography_urls": [
+        "https://www.abbaye-fleury.com/contact.html",
+        "https://www.abbaye-fleury.com/histoire.html",
+        "https://www.abbaye-fleury.com/preacutevoir-une-visite.html",
+        "https://www.abbaye-fleury.com/la-basilique.html",
+        "https://www.abbaye-fleury.com/horaires-des-offices.html"
+      ],
+      "source_evidence_scope": "DIRECT_INSTITUTIONAL_PAGES_VISITED_AND_SYNOPSIS_CROSSCHECKED_2026_11_05",
+      "next_gate": "SECOND_EDITOR_CROSSCHECK_ALL_3_PARAGRAPHS_AND_EN_FR_RENDERING_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:FR:abbaye-mont-saint-michel",
+      "place_name": "Abbaye du Mont-Saint-Michel",
+      "country_code": "FR",
+      "shrine_id": "shrine:20261009:FR:abbaye-mont-saint-michel",
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "draft_order": 5,
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "The island abbey of Saint Michael, from an early devotional tradition to medieval pilgrimage.",
+      "subtitle_fr": "L’abbaye insulaire de saint Michel, de la tradition fondatrice au pèlerinage médiéval.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "sections": [
+        {
+          "id": "foundation",
+          "title_en": "Foundation",
+          "title_fr": "Fondation",
+          "paragraphs": [
+            {
+              "en": "According to the Mont-Saint-Michel foundation tradition, the Archangel Michael appeared in a dream to Bishop Aubert of Avranches, who established the first sanctuary on Mont Tombe in the early eighth century. Modern heritage authorities date this foundation to 708. The angelic appearance belongs to the site's religious tradition; the sanctuary and subsequent buildings have a separate architectural history.",
+              "fr": "Selon la tradition fondatrice du Mont-Saint-Michel, l’archange Michel apparut en songe à l’évêque Aubert d’Avranches, qui établit un premier sanctuaire sur le Mont Tombe au début du VIIIe siècle. Les autorités patrimoniales situent cette fondation en 708. L’apparition relève de la tradition religieuse du lieu, tandis que le sanctuaire possède une histoire architecturale documentable.",
+              "source_url": "https://www.abbaye-mont-saint-michel.fr/en/discover/history-of-the-monument"
+            }
+          ]
+        },
+        {
+          "id": "benedictines",
+          "title_en": "Benedictine centuries",
+          "title_fr": "Siècles bénédictins",
+          "paragraphs": [
+            {
+              "en": "In 966, Duke Richard I established Benedictine monks at the Mount. Construction of the Romanesque abbey church followed, while later builders created the Gothic spaces known as La Merveille. The abbey thus combines a devotional destination, a Benedictine intellectual centre and an exceptional series of medieval architectural spaces.",
+              "fr": "En 966, le duc Richard Ier installe des moines bénédictins sur le Mont. La construction de l’église abbatiale romane suit, tandis que les bâtisseurs développent ensuite les espaces gothiques appelés « la Merveille ». L’abbaye réunit ainsi un lieu de pèlerinage, un centre intellectuel bénédictin et un ensemble exceptionnel d’espaces architecturaux médiévaux.",
+              "source_url": "https://www.abbaye-mont-saint-michel.fr/en/discover/history-of-the-monument"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage-and-access",
+          "title_en": "Pilgrimage and visiting",
+          "title_fr": "Pèlerinage et visite",
+          "paragraphs": [
+            {
+              "en": "The church, crypts, cloister and spaces once used to receive pilgrims belong to the same island complex but have different histories and access conditions. The abbey is also a managed historic monument, so a pilgrimage or village visit does not imply unrestricted access to the monument or any particular current liturgical service. Check its official visitor information before planning.",
+              "fr": "L’église, les cryptes, le cloître et les salles autrefois destinées à l’accueil des pèlerins appartiennent au même ensemble insulaire, mais n’ont ni la même histoire ni les mêmes conditions d’accès. L’abbaye est également un monument géré pour les visites : un pèlerinage ou une promenade dans le village ne garantit ni l’entrée libre dans l’abbaye ni un office particulier. Il faut consulter les informations officielles avant la visite.",
+              "source_url": "https://www.abbaye-mont-saint-michel.fr/en/discover/history-of-the-monument"
+            }
+          ]
+        }
+      ],
+      "existing_relic_ids": [],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:FR:abbaye-mont-saint-michel:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Michael the Archangel"
+      ],
+      "bibliography_urls": [
+        "https://don.diocese50.fr/sanctuaire-msm/",
+        "https://www.abbaye-mont-saint-michel.fr/en/discover/history-of-the-monument"
+      ],
+      "source_evidence_scope": "DIRECT_INSTITUTIONAL_PAGES_VISITED_AND_SYNOPSIS_CROSSCHECKED_2026_11_05",
+      "next_gate": "SECOND_EDITOR_CROSSCHECK_ALL_3_PARAGRAPHS_AND_EN_FR_RENDERING_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:IT:san-michele-gargano",
+      "place_name": "Santuario di San Michele Arcangelo, Monte Sant'Angelo",
+      "country_code": "IT",
+      "shrine_id": "shrine:20261009:IT:san-michele-gargano",
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "draft_order": 6,
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "Saint Michael's cave sanctuary and the late-antique apparitional tradition of the Gargano.",
+      "subtitle_fr": "Le sanctuaire rupestre de saint Michel et la tradition d’apparitions de l’Antiquité tardive.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "sections": [
+        {
+          "id": "grotto",
+          "title_en": "The Grotto",
+          "title_fr": "La grotte",
+          "paragraphs": [
+            {
+              "en": "The sanctuary at Monte Sant'Angelo is centred on a grotto traditionally associated with the Archangel Michael. The archdiocese connects its origins with the Liber de apparitione and the late-fifth-century accounts of apparitions; the episodes involving the bull and Bishop Lawrence belong to that ecclesial tradition. Their traditional dates are not a modern independent verification of supernatural events.",
+              "fr": "À Monte Sant’Angelo, le sanctuaire a pour centre une grotte traditionnellement associée à saint Michel Archange. L’archidiocèse rattache son origine au Liber de apparitione et aux récits d’apparitions de la fin du Ve siècle ; l’épisode du taureau et le rôle de l’évêque Laurent appartiennent à cette tradition ecclésiale. Les dates traditionnelles ne constituent pas une authentification historique indépendante du surnaturel.",
+              "source_url": "https://www.diocesimanfredonia.it/la-liturgia-propria-della-festa-di-san-michele-arcangelo-al-monte-gargano/"
+            }
+          ]
+        },
+        {
+          "id": "devotion",
+          "title_en": "Pilgrimage",
+          "title_fr": "Pèlerinage",
+          "paragraphs": [
+            {
+              "en": "The Gargano grotto became an enduring centre of pilgrimage to Saint Michael. The national park describes the approaches traditionally used by pilgrims, including routes later connected with the Via Sacra Langobardorum. A historic path description is not a surveyed walking route; any mapped itinerary needs a separate route-geometry review.",
+              "fr": "La grotte du Gargano est devenue un centre durable de pèlerinage à saint Michel. Le parc national décrit les voies d’approche traditionnellement empruntées par les pèlerins, notamment celles associées ensuite à la Via Sacra Langobardorum. Le récit d’un ancien chemin ne vaut pas relevé de randonnée : tout itinéraire cartographié doit être contrôlé séparément.",
+              "source_url": "https://www.parcogargano.it/itinerario/pellegrinaggio-al-santuario-di-san-michele-arcangelo/"
+            }
+          ]
+        },
+        {
+          "id": "commemoration",
+          "title_en": "Local commemorations",
+          "title_fr": "Commémorations locales",
+          "paragraphs": [
+            {
+              "en": "Local devotion commemorates Saint Michael notably on 8 May and 29 September. The archdiocese documents a proper local liturgical tradition for the Gargano celebration. Such observances are relevant to understanding the shrine but are not evidence of a universal 1962-calendar assignment, nor proof that a particular service will be celebrated on the day of a visit.",
+              "fr": "La dévotion locale commémore saint Michel notamment les 8 mai et 29 septembre. L’archidiocèse documente une tradition liturgique propre au Gargano. Ces observances éclairent la vie du sanctuaire, mais n’établissent pas une fête universelle du calendrier romain de 1962 ni l’horaire d’une célébration à une date donnée.",
+              "source_url": "https://www.diocesimanfredonia.it/la-liturgia-propria-della-festa-di-san-michele-arcangelo-al-monte-gargano/"
+            }
+          ]
+        }
+      ],
+      "existing_relic_ids": [],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:IT:san-michele-gargano:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Michael the Archangel"
+      ],
+      "bibliography_urls": [
+        "https://www.santuariosanmichele.it/",
+        "https://www.diocesimanfredonia.it/la-liturgia-propria-della-festa-di-san-michele-arcangelo-al-monte-gargano/",
+        "https://www.parcogargano.it/itinerario/pellegrinaggio-al-santuario-di-san-michele-arcangelo/"
+      ],
+      "source_evidence_scope": "DIRECT_INSTITUTIONAL_PAGES_VISITED_AND_SYNOPSIS_CROSSCHECKED_2026_11_05",
+      "next_gate": "SECOND_EDITOR_CROSSCHECK_ALL_3_PARAGRAPHS_AND_EN_FR_RENDERING_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:MU:pere-laval-sainte-croix",
+      "place_name": "Centre Père Laval",
+      "country_code": "MU",
+      "shrine_id": "shrine:MU:pere-laval",
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "draft_order": 7,
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "The tomb of Blessed Father Laval and the living Mauritian pilgrimage to Sainte-Croix.",
+      "subtitle_fr": "Le tombeau du bienheureux Père Laval et le pèlerinage mauricien vivant de Sainte-Croix.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "sections": [
+        {
+          "id": "tomb",
+          "title_en": "The tomb",
+          "title_fr": "Le tombeau",
+          "paragraphs": [
+            {
+              "en": "The Centre Père Laval at Sainte-Croix preserves the tomb of Blessed Jacques-Désiré Laval and is a major destination for Catholic prayer in Mauritius. Its significance is inseparable from the saintly memory of Laval and the diocesan community that continues to gather there. This card refers to the actual Sainte-Croix burial and pilgrimage complex, not an unrelated church named for him.",
+              "fr": "Le Centre Père Laval, à Sainte-Croix, conserve le tombeau du bienheureux Jacques-Désiré Laval et constitue un lieu majeur de prière catholique à Maurice. Son importance tient à la mémoire du Père Laval et à la communauté diocésaine qui continue de s’y rassembler. Cette fiche concerne précisément le caveau et l’ensemble de pèlerinage de Sainte-Croix, non une autre église portant son nom.",
+              "source_url": "https://dioceseportlouis.org/diocese/lescongregations/les-congregations-masculines/congregation-du-saint-esprit-et-du-saint-coeur-de-marie-c-s-sp"
+            }
+          ]
+        },
+        {
+          "id": "annual-pilgrimage",
+          "title_en": "Annual pilgrimage",
+          "title_fr": "Pèlerinage annuel",
+          "paragraphs": [
+            {
+              "en": "The diocese's September 2026 programme described the annual pilgrimage to the tomb around the feast of Blessed Père Laval, drawing pilgrims from across the island. It identified organized walking departures from Saint-Louis Cathedral in Port Louis and Saint-Joseph Church at Terre-Rouge. These are documented arrangements for the 2026 edition; they must not become permanent public timetables or unverified GPS routes.",
+              "fr": "Le programme diocésain de septembre 2026 présente le pèlerinage annuel au caveau autour de la fête du bienheureux Père Laval, attirant des fidèles de toute l’île. Il indique des départs organisés depuis la cathédrale Saint-Louis de Port-Louis et l’église Saint-Joseph de Terre-Rouge. Ce sont des dispositions documentées pour l’édition 2026, non des horaires permanents ou des itinéraires GPS vérifiés.",
+              "source_url": "https://dioceseportlouis.org/informations-sur-le-pelerinage-au-caveau-du-pere-laval/"
+            }
+          ]
+        },
+        {
+          "id": "meaning-and-prayer",
+          "title_en": "Prayer and service",
+          "title_fr": "Prière et service",
+          "paragraphs": [
+            {
+              "en": "For the 2026 pilgrimage, the diocesan theme emphasised a more just and fraternal society. The programme also provided opportunities for prayer, confession and pastoral listening around Sainte-Croix. These contemporary practices show why the site is a living pilgrimage rather than only a place of historical interest; the precise arrangements for a future feast require fresh diocesan confirmation.",
+              "fr": "Pour le pèlerinage de 2026, le thème diocésain mettait l’accent sur une société plus juste et fraternelle. Le programme prévoyait aussi des temps de prière, de confession et d’écoute pastorale autour de Sainte-Croix. Ces pratiques contemporaines montrent qu’il s’agit d’un pèlerinage vivant, et non seulement d’un lieu historique ; les modalités d’une prochaine fête devront être confirmées par le diocèse.",
+              "source_url": "https://dioceseportlouis.org/informations-sur-le-pelerinage-au-caveau-du-pere-laval/"
+            }
+          ]
+        }
+      ],
+      "existing_relic_ids": [
+        "relic:MU:jacques-desire-laval-sainte-croix"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:MU:pere-laval-annual"
+      ],
+      "saint_name_associations": [
+        "Blessed Jacques-Désiré Laval"
+      ],
+      "bibliography_urls": [
+        "https://dioceseportlouis.org/diocese/lescongregations/les-congregations-masculines/congregation-du-saint-esprit-et-du-saint-coeur-de-marie-c-s-sp",
+        "https://dioceseportlouis.org/informations-sur-le-pelerinage-au-caveau-du-pere-laval/"
+      ],
+      "source_evidence_scope": "DIRECT_INSTITUTIONAL_PAGES_VISITED_AND_SYNOPSIS_CROSSCHECKED_2026_11_05",
+      "next_gate": "SECOND_EDITOR_CROSSCHECK_ALL_3_PARAGRAPHS_AND_EN_FR_RENDERING_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:seton-emmitsburg",
+      "place_name": "The National Shrine of Saint Elizabeth Ann Seton",
+      "country_code": "US",
+      "shrine_id": "shrine:US:seton-emmitsburg",
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "draft_order": 8,
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "Saint Elizabeth Ann Seton's Emmitsburg basilica, homes, cemetery and educational legacy.",
+      "subtitle_fr": "La basilique, les maisons, le cimetière et l’héritage éducatif de sainte Élisabeth Ann Seton à Emmitsburg.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "sections": [
+        {
+          "id": "saint-and-site",
+          "title_en": "The saint and the site",
+          "title_fr": "La sainte et le lieu",
+          "paragraphs": [
+            {
+              "en": "The National Shrine at Emmitsburg gathers several places associated with Saint Elizabeth Ann Seton. Her remains are entombed in the basilica, while the historic houses document where she lived and worked. This is not merely a church photo or a single isolated tomb: the grounds preserve a larger setting of Catholic education, religious life and pilgrimage.",
+              "fr": "Le sanctuaire national d’Emmitsburg rassemble plusieurs lieux associés à sainte Élisabeth Ann Seton. Sa dépouille repose dans la basilique, tandis que les maisons historiques témoignent des lieux où elle a vécu et travaillé. Il ne s’agit pas seulement d’une photographie d’église ou d’un tombeau isolé : le domaine conserve un ensemble consacré à l’enseignement catholique, à la vie religieuse et au pèlerinage.",
+              "source_url": "https://setonshrine.org/visit-the-seton-shrine-historic-site-and-museum/"
+            }
+          ]
+        },
+        {
+          "id": "historic-houses",
+          "title_en": "Historical houses",
+          "title_fr": "Maisons historiques",
+          "paragraphs": [
+            {
+              "en": "The shrine offers tours of the Stone Farm House, associated with the beginnings of the Sisters of Charity, and historic Saint Joseph's House, associated with Mother Seton's school. The historic cemetery forms another distinct stop. These places should be displayed as stops within the Emmitsburg shrine complex, not invented as separate canonical geographic identities.",
+              "fr": "Le sanctuaire propose la visite de la Stone Farm House, liée aux débuts des Sœurs de la Charité, et de la maison historique Saint-Joseph, associée à l’école de Mère Seton. Le cimetière historique constitue une autre étape distincte. Ces espaces doivent figurer comme étapes du sanctuaire d’Emmitsburg, et non comme nouveaux lieux géographiques canoniques inventés.",
+              "source_url": "https://setonshrine.org/historic-homes-tours/"
+            }
+          ]
+        },
+        {
+          "id": "visiting",
+          "title_en": "Visiting",
+          "title_fr": "Visiter",
+          "paragraphs": [
+            {
+              "en": "The official visitor information describes a museum, basilica, historic grounds and guided tours. Some activities require their own reservation or current timetable; a general invitation to visit does not certify access to every house at every hour. The user-facing card should separate historical context from the shrine's changing services and never infer a traditional Latin Mass offering.",
+              "fr": "Les informations officielles mentionnent un musée, une basilique, des lieux historiques et des visites guidées. Certaines activités ont leurs propres réservations ou horaires ; l’ouverture générale du site ne garantit pas l’accès à chaque maison à toute heure. La fiche doit distinguer le récit historique des services évolutifs et ne pas présumer l’existence d’une messe latine traditionnelle.",
+              "source_url": "https://setonshrine.org/hours-directions/"
+            }
+          ]
+        }
+      ],
+      "existing_relic_ids": [
+        "relic:US:seton-emmitsburg"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:US:seton-emmitsburg-destination",
+        "pilgrimage:US:seton-sea-services"
+      ],
+      "saint_name_associations": [
+        "Saint Elizabeth Ann Seton"
+      ],
+      "bibliography_urls": [
+        "https://setonshrine.org/hours-directions/",
+        "https://setonshrine.org/press-release-the-national-shrine-of-saint-elizabeth-ann-seton-hosts-annual-pilgrimage-and-mass-for-the-sea-services/",
+        "https://setonshrine.org/visit-the-seton-shrine-historic-site-and-museum/",
+        "https://setonshrine.org/historic-homes-tours/"
+      ],
+      "source_evidence_scope": "DIRECT_INSTITUTIONAL_PAGES_VISITED_AND_SYNOPSIS_CROSSCHECKED_2026_11_05",
+      "next_gate": "SECOND_EDITOR_CROSSCHECK_ALL_3_PARAGRAPHS_AND_EN_FR_RENDERING_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:CH:abbaye-saint-maurice-agaune",
+      "place_name": "Abbaye de Saint-Maurice d'Agaune",
+      "country_code": "CH",
+      "shrine_id": "shrine:CH:abbaye-saint-maurice-agaune",
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "draft_order": 9,
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "Saint Maurice and the Theban martyrs, the abbey founded in 515 and its treasury.",
+      "subtitle_fr": "Saint Maurice et les martyrs thébains, l’abbaye fondée en 515 et son trésor.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "sections": [
+        {
+          "id": "martyr-memory",
+          "title_en": "Martyr tradition",
+          "title_fr": "Tradition des martyrs",
+          "paragraphs": [
+            {
+              "en": "The Abbey of Saint-Maurice at Agaune preserves the cult of Saint Maurice and the Theban martyrs. Its own account describes the early shrine developed beneath the cliff in connection with their martyrdom. The traditional Passion and the historically documented existence of the cult must remain distinguishable; relic custody and veneration do not amount to independent authentication of every attribution.",
+              "fr": "L’abbaye de Saint-Maurice d’Agaune entretient le culte de saint Maurice et des martyrs thébains. Selon son récit, un premier sanctuaire se développa sous la falaise en lien avec leur martyre. La Passion traditionnelle doit rester distincte de l’histoire documentée du culte : la conservation et la vénération de reliques ne prouvent pas chaque attribution.",
+              "source_url": "https://www.abbaye-stmaurice.ch/fr/culture-patrimoine/"
+            }
+          ]
+        },
+        {
+          "id": "abbey-history",
+          "title_en": "Abbey history",
+          "title_fr": "Histoire de l’abbaye",
+          "paragraphs": [
+            {
+              "en": "The abbey dates its foundation to 515 under King Sigismund, with the establishment of continuous praise at Agaune. The original monastic arrangement later gave way to canons, who adopted the Rule of Saint Augustine in the twelfth century. This history explains the site as a continuing religious institution through changes of community and architecture, not as an unchanged building from the sixth century.",
+              "fr": "L’abbaye situe sa fondation en 515, sous le roi Sigismond, avec l’établissement de la louange perpétuelle à Agaune. L’organisation monastique d’origine fit ensuite place à des chanoines, qui adoptèrent au XIIe siècle la règle de saint Augustin. Cette histoire fait comprendre la continuité de l’institution religieuse à travers les transformations de la communauté et des bâtiments, sans prétendre que l’édifice actuel serait resté inchangé depuis le VIe siècle.",
+              "source_url": "https://www.abbaye-stmaurice.ch/fr/culture-patrimoine/"
+            }
+          ]
+        },
+        {
+          "id": "treasury",
+          "title_en": "The treasury",
+          "title_fr": "Le trésor",
+          "paragraphs": [
+            {
+              "en": "The abbey's treasury contains reliquaries and precious objects given over centuries in honour of the martyrs. The institution describes the treasury as evidence of long-standing devotion, royal patronage and craftsmanship; it includes a vessel traditionally known as the Saint Martin vase. Individual objects require their own verified captions, rather than a generic claim that every object is an authenticated bodily relic.",
+              "fr": "Le trésor de l’abbaye rassemble des reliquaires et des objets précieux offerts au fil des siècles en l’honneur des martyrs. L’institution y voit un témoignage de la dévotion ancienne, du patronage princier et des arts précieux ; on y trouve notamment le vase dit de saint Martin. Chaque objet doit avoir sa propre légende vérifiée, sans présenter indistinctement tout le trésor comme des reliques corporelles authentifiées.",
+              "source_url": "https://www.abbaye-stmaurice.ch/fr/culture-patrimoine/tresor/"
+            }
+          ]
+        }
+      ],
+      "existing_relic_ids": [
+        "relic:CH:abbaye-saint-maurice-agaune"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:CH:abbaye-saint-maurice-agaune:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Maurice and the Theban martyrs"
+      ],
+      "bibliography_urls": [
+        "https://www.abbaye-stmaurice.ch/fr/culture-patrimoine/",
+        "https://www.abbaye-stmaurice.ch/fr/culture-patrimoine/tresor/"
+      ],
+      "source_evidence_scope": "DIRECT_INSTITUTIONAL_PAGES_VISITED_AND_SYNOPSIS_CROSSCHECKED_2026_11_05",
+      "next_gate": "SECOND_EDITOR_CROSSCHECK_ALL_3_PARAGRAPHS_AND_EN_FR_RENDERING_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:DE:aachener-dom-four-textiles",
+      "place_name": "Aachener Dom — Four Sacred Textiles",
+      "country_code": "DE",
+      "shrine_id": "shrine:DE:aachener-dom-four-textiles",
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "draft_order": 10,
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "Aachen Cathedral's four textile relic traditions and the seven-year pilgrimage cycle.",
+      "subtitle_fr": "Les quatre traditions de reliques textiles d’Aix-la-Chapelle et le cycle septennal du pèlerinage.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "sections": [
+        {
+          "id": "four-textiles",
+          "title_en": "The four textiles",
+          "title_fr": "Les quatre tissus",
+          "paragraphs": [
+            {
+              "en": "Aachen Cathedral's chapter identifies four ancient textiles traditionally associated with Mary's dress at Christ's birth, Jesus' swaddling cloths, his loincloth at the Crucifixion, and the cloth connected with the severed head of John the Baptist. These are historically venerated objects. The descriptions are traditional attributions, not a claim that archaeology has verified their biblical ownership.",
+              "fr": "Le chapitre de la cathédrale d’Aix-la-Chapelle identifie quatre tissus anciens traditionnellement associés à la robe de Marie lors de la Nativité, aux langes de Jésus, à son pagne lors de la Crucifixion et au linge lié à la tête de saint Jean-Baptiste. Ces objets font l’objet d’une vénération historique. Leurs noms expriment des attributions traditionnelles, non la preuve archéologique de leur appartenance aux personnages bibliques.",
+              "source_url": "https://www.aachenerdom.de/en/the-aachen-pilgrimage/"
+            }
+          ]
+        },
+        {
+          "id": "history",
+          "title_en": "History",
+          "title_fr": "Histoire",
+          "paragraphs": [
+            {
+              "en": "According to the cathedral's account, the four textiles have been displayed at intervals of seven years since 1349. The chapter recalls their legendary arrival among relics associated with Charlemagne's chapel and their safekeeping in the Shrine of the Virgin Mary. This religious history should be read as the institution's transmitted tradition, with its chronology distinguished from the material authentication of the cloths.",
+              "fr": "Selon le chapitre cathédral, les quatre tissus sont présentés aux fidèles tous les sept ans depuis 1349. L’institution rappelle leur arrivée légendaire parmi les reliques associées à la chapelle de Charlemagne et leur conservation dans la châsse mariale. Cette histoire religieuse doit être lue comme la tradition transmise par le chapitre, dont la chronologie est distincte de l’authentification matérielle des tissus.",
+              "source_url": "https://www.aachenerdom.de/en/the-aachen-pilgrimage/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage",
+          "title_fr": "Pèlerinage",
+          "paragraphs": [
+            {
+              "en": "The cathedral lists 2028 as the next Aachen pilgrimage after the 2023 event. The public display of the textiles is therefore periodic, not continuous. The Place card must not imply that the reliquaries are opened daily or that the historic seven-year dates are a universal liturgical observance. The cathedral's separate current visitor information remains authoritative for access.",
+              "fr": "La cathédrale annonce le prochain pèlerinage d’Aix-la-Chapelle pour 2028, après celui de 2023. L’ostension des tissus est donc périodique, et non permanente. La fiche ne doit pas laisser penser que les châsses sont ouvertes chaque jour ni transformer ce cycle de sept ans en fête liturgique universelle. Les informations actuelles de la cathédrale font foi pour l’accès.",
+              "source_url": "https://www.aachenerdom.de/en/the-aachen-pilgrimage/"
+            }
+          ]
+        }
+      ],
+      "existing_relic_ids": [
+        "relic:DE:aachener-dom-four-textiles"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:DE:aachener-dom-four-textiles:destination"
+      ],
+      "saint_name_associations": [
+        "Saint John the Baptist"
+      ],
+      "bibliography_urls": [
+        "https://www.aachenerdom.de/en/the-aachen-pilgrimage/"
+      ],
+      "source_evidence_scope": "DIRECT_INSTITUTIONAL_PAGES_VISITED_AND_SYNOPSIS_CROSSCHECKED_2026_11_05",
+      "next_gate": "SECOND_EDITOR_CROSSCHECK_ALL_3_PARAGRAPHS_AND_EN_FR_RENDERING_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    }
+  ]
+}

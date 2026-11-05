@@ -135,8 +135,10 @@ try{
      await hub();
      if(id==="pray.library"){
       await page.locator('#aoPray435930.open [data-p435930-own="pray.library"]').first().click();
+      await page.locator('#aoPray435930.open [data-p435930-own="pray.library"]').first().click();
      }else{
       assert.ok(door,id+" lacks nine-door source ownership");
+      await page.locator('#aoPray435930.open [data-p435930-family="'+door+'"]').first().click();
       await page.locator('#aoPray435930.open [data-p435930-family="'+door+'"]').first().click();
       await page.locator('#aoPray435930.open [data-ao-prayer-shelf="'+door+'"]').waitFor({timeout:10000});
       const key=row.sourceFamily==="canonical-prayer"?"data-p435930-door-prayer":"data-p435930-own";
@@ -224,7 +226,15 @@ try{
     report.cases.push({width,language,door:door||"library-or-search",...state});
     console.log("PASS OFFLINE_FIRST_USE "+width+" "+language+" "+id+" -> "+expected);
     if(row.sourceFamily==="canonical-prayer"){
-     await page.locator("#aoPray435930.open [data-p435930-lib-back]").click();
+     // Every canonical source card now has one native header Back.
+     // The cold-offline route must retain its original shelf on return.
+     const inlineBack=page.locator("#aoPray435930.open [data-p435930-lib-back]");
+     assert.equal(await inlineBack.count(),0,
+      "Cold-offline canonical reader must not duplicate header Back");
+     const nativeBack=page.locator("#aoPray435930.open [data-p435930-back]");
+     assert.ok(await nativeBack.isVisible(),
+      "Cold-offline canonical reader lost its usable native Back");
+     await nativeBack.click();
      assert.equal(await page.locator('#aoPray435930.open [data-ao-prayer-shelf="'+door+'"]').count(),1,
       id+" canonical Back lost offline shelf");
     }

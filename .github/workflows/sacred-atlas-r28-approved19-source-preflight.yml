@@ -1,0 +1,51 @@
+name: Sacred Atlas R28 — 19 owner-approved original photo source preflight (no publication)
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/geography/research/sacred-atlas-r28-owner-approved19-source-lock-20261104.v1.json'
+      - 'data/geography/research/sacred-atlas-r28-owner-approved19-release-qa-20261104.v1.json'
+      - 'tools/atlas/verify-sacred-atlas-r28-approved19-source-originals.py'
+      - 'tests/sacred-atlas-r28-owner-approved19-source-contract.mjs'
+      - '.github/workflows/sacred-atlas-r28-approved19-source-preflight.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  owner-selection-and-source-proof-read-only:
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'research/sacred-atlas-r28-owner-approved19-exact-photo-release-20261104' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Lock all 19 owner-selected originals, holds, exclusions and 379 production covers
+        run: |
+          node tests/sacred-atlas-r28-owner-approved19-source-contract.mjs
+          python -m py_compile tools/atlas/verify-sacred-atlas-r28-approved19-source-originals.py
+          python tools/atlas/verify-sacred-atlas-r28-approved19-source-originals.py
+      - name: Install bounded photo decoder for original-image inspection
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Preserve Wikimedia 429 hold; no further network calls on this review PR
+        run: |
+          test -f data/geography/research/sacred-atlas-r28-approved19-original-download-429-hold-20261104.v1.json
+          python tools/atlas/verify-sacred-atlas-r28-approved19-source-originals.py
+          echo 'Wikimedia HTTP 429 already recorded; source request disabled until a new explicitly reviewed verification pass.'
+      - name: Record source validation and temporary non-public previews
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-atlas-r28-owner-approved19-source-preflight
+          path: |
+            /tmp/ao-sacred-atlas-owner-approved19/report.json
+            /tmp/ao-sacred-atlas-owner-approved19/previews/*.webp
+          if-no-files-found: ignore
+          retention-days: 14

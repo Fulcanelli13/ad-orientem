@@ -1,0 +1,77 @@
+name: Sacred Atlas R29 — offline exact 19-photo batch-release readiness
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/geography/research/sacred-atlas-r29-selected19-final-rights-checklist-20261104.v1.json'
+      - 'tools/atlas/stage-sacred-atlas-r29-owner-selected-originals.py'
+      - 'tests/sacred-atlas-r29-exact-offline-release-contract.mjs'
+      - 'tests/sacred-atlas-r29-mpo-byte-stage-test.py'
+      - 'data/geography/research/sacred-atlas-r28-owner-approved19-release-qa-20261104.v1.json'
+      - 'tests/sacred-atlas-r30-all19-commons-source-page-contract.mjs'
+      - '.github/workflows/sacred-atlas-r29-exact-offline-readiness.yml'
+permissions:
+  contents: read
+jobs:
+  frozen-source-and-no-auto-publication:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Guard original file SHA1s and no prefilled publication approvals
+        run: |
+          node tests/sacred-atlas-r29-exact-offline-release-contract.mjs
+          node tests/sacred-atlas-r30-all19-commons-source-page-contract.mjs
+      - name: Install pinned JPEG decoder for offline synthetic MPO test
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Test exact-byte original conversion and MPO first-frame decoding
+        run: python tests/sacred-atlas-r29-mpo-byte-stage-test.py
+      - name: Check import tool syntax and run purely offline readiness plan
+        run: |
+          python -m py_compile tools/atlas/stage-sacred-atlas-r29-owner-selected-originals.py
+          python tools/atlas/stage-sacred-atlas-r29-owner-selected-originals.py
+      - name: Unit-test gate cannot accept incomplete rights, altered source or uncleared scene exception
+        run: |
+          python - <<'PY'
+          import importlib.util,copy
+          from pathlib import Path
+          path=Path('tools/atlas/stage-sacred-atlas-r29-owner-selected-originals.py')
+          spec=importlib.util.spec_from_file_location('r29_offline',path)
+          mod=importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(mod)
+          lock=mod.read(mod.LOCK)
+          review=mod.read(mod.REVIEW)
+          src={x['place_id']:x for x in lock['decisions']}
+          assert len(src)==19
+          for item in review['rows']:
+              row=src[item['place_id']]
+              assert not mod.policy_ready(row,item)
+              gate=copy.deepcopy(item)
+              for key in mod.REQUIRED:gate[key]=True
+              gate.update(publication_authorized=True,reviewer='Independent photo editor',
+                  reviewed_at='2026-11-04',source_revision_id='123456789',
+                  evidence_url=row['original_commons_page'],
+                  rights_evidence_notes='Independent source page and image inspected; rights, exact site, and full-frame phone crop reviewed.',
+                  license_current_url=row['license_url'])
+              if gate['special_issue']:
+                  assert not mod.policy_ready(row,gate)
+                  gate['special_issue_accepted']=True
+              if row['place_id']=='place:DE:bettbrunn-st-salvator':
+                  assert not mod.policy_ready(row,gate)
+                  gate['near_image_attribution_verified']=True
+              if row['place_id']=='place:DE:basilika-st-clemens-hannover':
+                  assert not mod.policy_ready(row,gate)
+                  gate['original_photographer_and_editor_credit_verified']=True
+              assert mod.policy_ready(row,gate)
+              gate['original_sha1']='0'*40
+              assert not mod.policy_ready(row,gate)
+          print('19 independent fail-closed rights gates tested; no public asset generated')
+          PY

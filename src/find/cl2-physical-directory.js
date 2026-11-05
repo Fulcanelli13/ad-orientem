@@ -1,6 +1,12 @@
 // Derived read-model adapter for the single CL2 physical-site master.
 // Exactly one Explore record per effective physical site; source aliases are
 // preserved for search and provenance, never published as duplicate churches.
+import {CL2_ILLUSTRATIVE_LOCALITY_PINS} from "./cl2-illustrative-locality-pins.js";
+import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R2} from "./cl2-illustrative-locality-pins-r2.js";
+import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R3} from "./cl2-illustrative-locality-pins-r3.js";
+import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R4} from "./cl2-illustrative-locality-pins-r4.js";
+import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R5} from "./cl2-illustrative-locality-pins-r5.js";
+import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R6} from "./cl2-illustrative-locality-pins-r6.js";
 export const CL2_PHYSICAL_SITE_INDEX_URL=new URL("../../data/directory/generated/cl2-physical-site-index.v1.json",import.meta.url).href;
 export const CL2_PHYSICAL_SITE_COUNT=2579;
 export const CL2_EXPECTED_R49_GROUPS=1844;
@@ -43,6 +49,143 @@ const REVIEWED_SITE_GEO_SOURCES=Object.freeze({
 // unlocated CL2 research listing to a provisional physical-site marker.
 // Names, country, source ID and street must all match the frozen source row.
 const REVIEWED_NEW_SITE_PINS=Object.freeze({
+ // 2026-11-04 Excel reconciliation: nine remaining exact/POI site additions from obsolete 32-site PR #2394; 23 of 32 already in main.
+ // Frozen source anchors, geography-only review; no new Mass, entrance or affiliation inference.
+ "RG-A164E7D0C229":Object.freeze({
+  sourceId:"AO-B34-L-GB-949D1186DE89",
+  name:"Holy Child and St Joseph",
+  country:"GB",
+  addressNeedle:"Bedford, United Kingdom",
+  placeId:null,
+  lat:52.13603,
+  lng:-0.47364,
+  precision:"site",
+  sourceRef:"osm:way:46491193",
+  sourceUrl:"https://www.openstreetmap.org/way/46491193",
+  correctedAddress:"Holy Child and St Joseph Catholic Church, Midland Road, Bedford MK40 1DA, UK",
+  reviewScope:"REVIEWED_CATHOLIC_CHURCH_SITE_NOT_VISITOR_ENTRANCE",
+  evidence:Object.freeze(["https://mapcarta.com/W46491193","https://www.stjosephsbedford.org/a-brief-history-of-your-churches/"]),
+ }),
+ "RG-ABBC659D0388":Object.freeze({
+  sourceId:"AO-B34-L-GB-FDC98808D553",
+  name:"Our Lady & St Kenelm",
+  country:"GB",
+  addressNeedle:"Stow-on-the-Wold, United Kingdom",
+  placeId:null,
+  lat:51.92858,
+  lng:-1.72174,
+  precision:"site",
+  sourceRef:"osm:way:637157133",
+  sourceUrl:"https://www.openstreetmap.org/way/637157133",
+  correctedAddress:"Our Lady and St Kenelm Catholic Church, Back Walls, Stow-on-the-Wold GL54 1DR, UK",
+  reviewScope:"REVIEWED_CATHOLIC_CHURCH_SITE_NOT_VISITOR_ENTRANCE",
+  evidence:Object.freeze(["https://mapcarta.com/W637157133","https://www.stow-bourtoncatholic.net/"]),
+ }),
+ "RG-D7C8B7693CEC":Object.freeze({
+  sourceId:"AO-B34-L-GB-DA44176FA42F",
+  name:"Our Lady & St Michael's",
+  country:"GB",
+  addressNeedle:"Workington, United Kingdom",
+  placeId:null,
+  lat:54.6395,
+  lng:-3.543,
+  precision:"site",
+  sourceRef:"historicengland:1257412",
+  sourceUrl:"https://gb.britishlistedbuildings.co.uk/101257412-the-church-of-our-lady-and-st-michael-attached-steps-walls-gates-and-gatepiers-workington/maps",
+  correctedAddress:"Our Lady and St Michael Roman Catholic Church, Banklands, Workington CA14 3EP, UK",
+  reviewScope:"REVIEWED_CATHOLIC_CHURCH_SITE_NOT_VISITOR_ENTRANCE",
+  evidence:Object.freeze(["https://gb.britishlistedbuildings.co.uk/101257412-the-church-of-our-lady-and-st-michael-attached-steps-walls-gates-and-gatepiers-workington/maps","https://casework.jcnas.org.uk/case/64743"]),
+ }),
+ "RG-605CC195A1EF":Object.freeze({
+  sourceId:"AO-B34-L-GB-D03817F48CAA",
+  name:"Our Lady of Grace & St Edward",
+  country:"GB",
+  addressNeedle:"London, United Kingdom",
+  placeId:null,
+  lat:51.49219,
+  lng:-0.26112,
+  precision:"site",
+  sourceRef:"osm:way:840980021",
+  sourceUrl:"https://www.openstreetmap.org/way/840980021",
+  correctedAddress:"Our Lady of Grace and St Edward Catholic Church, Chiswick High Road, London W4, UK",
+  reviewScope:"REVIEWED_CATHOLIC_CHURCH_SITE_NOT_VISITOR_ENTRANCE",
+  evidence:Object.freeze(["https://mapcarta.com/W840980021","https://gb.britishlistedbuildings.co.uk/101096073-our-lady-of-grace-and-st-edward-roman-catholic-church-turnham-green-ward/maps"]),
+ }),
+ "RG-B10417F7A69D":Object.freeze({
+  sourceId:"AO-B34-L-GB-89ABBD85057C",
+  name:"Our Lady of Light",
+  country:"GB",
+  addressNeedle:"Aylesbury, United Kingdom",
+  placeId:null,
+  lat:51.77404,
+  lng:-0.99397,
+  precision:"site",
+  sourceRef:"osm:node:1591394617",
+  sourceUrl:"https://www.openstreetmap.org/node/1591394617",
+  correctedAddress:"Our Lady of Light Catholic Church, Chearsley Road, Long Crendon, Aylesbury HP18 9BS, UK",
+  reviewScope:"REVIEWED_NAMED_OSM_POI_NOT_BUILDING_FOOTPRINT_ENTRANCE_UNVERIFIED",
+  evidence:Object.freeze(["https://mapcarta.com/N1591394617","https://taking-stock.org.uk/building/long-crendon-our-lady-of-light/"]),
+ }),
+ "RG-5B65864A842D":Object.freeze({
+  sourceId:"AO-B34-L-GB-5B089A6D5EE8",
+  name:"Holy Name",
+  country:"GB",
+  addressNeedle:"Chelmsford, United Kingdom",
+  placeId:null,
+  lat:51.71597,
+  lng:0.47555,
+  precision:"site",
+  sourceRef:"osm:way:264465868",
+  sourceUrl:"https://www.openstreetmap.org/way/264465868",
+  correctedAddress:"Holy Name Catholic Church, Lucas Avenue, Chelmsford CM2 9JJ, UK",
+  reviewScope:"REVIEWED_CATHOLIC_CHURCH_SITE_NOT_VISITOR_ENTRANCE",
+  evidence:Object.freeze(["https://mapcarta.com/W264465868","https://www.chelmsfordcatholic.co.uk/our-parish/holy-name-church"]),
+ }),
+ "RG-A504818C84DC":Object.freeze({
+  sourceId:"AO-B34-L-GB-CDF21516456F",
+  name:"Our Lady & St Anne",
+  country:"GB",
+  addressNeedle:"Reading, United Kingdom",
+  placeId:null,
+  lat:51.4679,
+  lng:-0.9669,
+  precision:"site",
+  sourceRef:"independent:pilgrimmap-reading-our-lady-anne",
+  sourceUrl:"https://www.pilgrimmap.com/site/our-lady-and-st-annes-church-6ee1840d",
+  correctedAddress:"Our Lady and St Anne Catholic Church, South View Avenue, Caversham, Reading RG4 5AB, UK",
+  reviewScope:"REVIEWED_NAMED_OSM_POI_NOT_BUILDING_FOOTPRINT_ENTRANCE_UNVERIFIED",
+  evidence:Object.freeze(["https://www.pilgrimmap.com/site/our-lady-and-st-annes-church-6ee1840d","https://www.ourladyandstanne.org.uk/key-contacts/google-maps-link/"]),
+ }),
+ "RG-50BE1A7B5F18":Object.freeze({
+  sourceId:"AO-B50-SSPV-US-869D6AA28FC",
+  name:"Holy Cross Church",
+  country:"US",
+  addressNeedle:"449 Hoback St, Helena MT 59624",
+  placeId:null,
+  lat:46.58577,
+  lng:-112.02583,
+  precision:"site",
+  sourceRef:"usgs:gnis:1789126",
+  sourceUrl:"https://topoquest.com/map/usgs-24k/montana/helena/20019",
+  correctedAddress:"Holy Cross Church, 449 Hoback St, Helena, Montana, USA (postal code unconfirmed)",
+  reviewScope:"HELENA_GNIS_CHURCH_POINT_NOT_BUILDING_FOOTPRINT_ENTRANCE_UNVERIFIED",
+  evidence:Object.freeze(["https://topoquest.com/map/usgs-24k/montana/helena/20019","https://www.ihm-church.org/mass-locations/holy-cross-church.html"]),
+ }),
+ "RG-8EC1B37099D3":Object.freeze({
+  sourceId:"AO-B35-L-GB-F2E7F260D293",
+  name:"St James",
+  country:"GB",
+  addressNeedle:"Reading, United Kingdom",
+  placeId:null,
+  lat:51.45707,
+  lng:-0.96526,
+  precision:"site",
+  sourceRef:"osm:way:96173957",
+  sourceUrl:"https://www.openstreetmap.org/way/96173957",
+  correctedAddress:"St James Catholic Church, Forbury Road, Reading, UK",
+  reviewScope:"REVIEWED_CATHOLIC_CHURCH_SITE_NOT_VISITOR_ENTRANCE",
+  evidence:Object.freeze(["https://mapcarta.com/W96173957","https://www.ordinariate.org.uk/missions/reading"]),
+ }),
  // Batch 17: thirty newly pinned source-matched British Catholic church/chapel sites; GCatholic plus-code cell centres only.
  "RG-FF628C31EACD":Object.freeze({sourceId:"AO-B35-L-GB-A907847FBC15",name:"St Edmund of Canterbury & English Martyrs",country:"GB",addressNeedle:"Ware, United Kingdom (exact worship address NOT confirmed)",placeId:null,
   lat:51.880063,lng:-0.010937,precision:"site",sourceRef:"gcatholic:church:47963:plus:9C3XVXJQ+2J",sourceUrl:"https://gcatholic.org/churches/british-isles/47963",
@@ -1790,7 +1933,7 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
    Number(Boolean(b.geo?.precision==="building"))-Number(Boolean(a.geo?.precision==="building")));
   const selected=linked[0]??null;
   const review=REVIEWED_SITE_GEO_SOURCES[anchor]??null;
-  const newPin=REVIEWED_NEW_SITE_PINS[anchor]??null;
+  const newPin=REVIEWED_NEW_SITE_PINS[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R2[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R3[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R4[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R5[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R6[anchor]??null;
   const siteGeoSource=review?linked.find(x=>x.source_id===review.sourceId):null;
   if(review&&(!selected||!sourceIds.includes(review.sourceId)||
      !siteGeoSource?.geo||!Number.isFinite(siteGeoSource.geo.lat)||
@@ -1804,7 +1947,7 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
      (newPin.placeId&&!newPin.placeId.startsWith("place:"+country+":"))||
      !Number.isFinite(newPin.lat)||Math.abs(newPin.lat)>90||
      !Number.isFinite(newPin.lng)||Math.abs(newPin.lng)>180||
-     !/^(?:gcatholic:church:\d+:plus:[23456789CFGHJMPQRVWX]{8}\+[23456789CFGHJMPQRVWX]{2}|osm:(?:way|node):\d+|usgs:gnis:\d+|geonames:\d+|rijksmonument:\d+|miserend:\d+|kirchbau:\d+|odtur:\d+|turismoroma:\d+|independent:[a-z0-9-]+|heritage:pamiatkynaslovensku:leonarda-dolany|independent:iglesiacercademi:oratorio-carmen-albacete|address:sprawdzadres:wrzesnia-slowackiego-2|unavoce:google-place:[a-z0-9]+|independent:sacristan-san-roque-santiago|commons:object-location:[a-z0-9-]+|churcheslist:[a-z0-9-]+|nrhp:\d+|historicengland:\d+)$/.test(newPin.sourceRef)||
+     !/^(?:gcatholic:church:\d+:plus:[23456789CFGHJMPQRVWX]{8}\+[23456789CFGHJMPQRVWX]{2}|osm:(?:way|node):\d+|usgs:gnis:\d+|geonames:\d+|geonames-locality:[A-Z]{2}:[a-z0-9-]+:[a-z0-9-]+|rijksmonument:\d+|miserend:\d+|kirchbau:\d+|odtur:\d+|turismoroma:\d+|independent:[a-z0-9-]+|heritage:pamiatkynaslovensku:leonarda-dolany|independent:iglesiacercademi:oratorio-carmen-albacete|address:sprawdzadres:wrzesnia-slowackiego-2|unavoce:google-place:[a-z0-9]+|independent:sacristan-san-roque-santiago|commons:object-location:[a-z0-9-]+|churcheslist:[a-z0-9-]+|nrhp:\d+|historicengland:\d+)$/.test(newPin.sourceRef)||
      !https(newPin.sourceUrl)||newPin.evidence.some(url=>!https(url))))
     throw new Error("CL2 reviewed pin no longer matches source identity: "+anchor);
   const source_links=unique([...(review?.evidence??[]),
@@ -1878,7 +2021,9 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
     map_publishable:Boolean(newPin),
     map_state:newPin?"PROVISIONAL":"ADDRESS_ONLY",facts:Object.freeze([
      {label:"Source identity",value:"CL2 physical-site master · "+anchor},
-     ...(newPin?[{label:"Map position",value:/_GNIS_CHURCH_POINT_NOT_BUILDING_FOOTPRINT_/.test(newPin.reviewScope)?
+     ...(newPin?[{label:"Map position",value:newPin.precision==="locality"?
+        "Illustrative locality marker · church position and entrance NOT verified":
+        /_GNIS_CHURCH_POINT_NOT_BUILDING_FOOTPRINT_/.test(newPin.reviewScope)?
        "Reviewed named church point · building outline, postal number and entrance unverified":
        /_NAMED_OSM_POI_NOT_BUILDING_FOOTPRINT_/.test(newPin.reviewScope)?
        "Reviewed named church point · building outline and entrance unverified":
@@ -1895,10 +2040,15 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
        "Reviewed church site · entrance not independently verified"}]:[]),
      {label:"Affiliation",value:affiliationName+" (source label only)"},
      {label:"Mass times",value:"Unverified · no timetable published"},
-    ]),sections:Object.freeze([]),actions:Object.freeze([]),
+    ]),sections:Object.freeze([]),actions:Object.freeze(newPin?.precision==="locality"?[
+      Object.freeze({label:"Search location",url:"https://www.google.com/maps/search/?api=1&query="+
+        encodeURIComponent([T(name),T(description).replace(/\s*\([^)]*\)/g,"").trim(),country].filter(Boolean).join(", ")).replace(/\x27/g,"%27")})
+     ]:[]),
     source_links:Object.freeze(source_links),
     note:"Research-listed site, not a confirmed current Mass venue. Source affiliation does not establish the celebrant, Una Cum, missal, rite, or official ministry. Verify locally before travelling."+
-     (newPin?" Physical site geometry sourced from "+(newPin.placeId||newPin.sourceRef)+"; entrance and Mass use are unverified.":"")+
+     (newPin?.precision==="locality"?
+       " This is an illustrative town/locality position ONLY, not a church GPS point. Search by documented church name and address in your navigation app; do NOT route to this pin. Current Mass use remains unverified.":
+       newPin?" Physical site geometry sourced from "+(newPin.placeId||newPin.sourceRef)+"; entrance and Mass use are unverified.":"")+
      (newPin?.correctedAddress?(anchor==="RG-16C25083C6C7"?" The research-master address is a mailing address; church location follows the independently verified church street address.":" The incomplete research-master address is supplemented by independently corroborated building-location evidence."):""),
     search_text,
    }));

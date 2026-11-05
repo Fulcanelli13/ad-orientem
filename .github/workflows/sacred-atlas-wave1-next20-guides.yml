@@ -1,0 +1,25 @@
+name: Sacred Atlas W1 — next 20 extended bilingual guides
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/shrines/research/sacred-atlas-wave1-guides11-20-20261105.v1.json'
+      - 'data/shrines/research/sacred-atlas-wave1-guides21-30-20261105.v1.json'
+      - 'data/shrines/research/sacred-atlas-wave1-batch56-editorial-closure-20261105.v1.json'
+      - 'tests/sacred-atlas-wave1-next20-bilingual-guides-contract.mjs'
+      - '.github/workflows/sacred-atlas-wave1-next20-guides.yml'
+permissions:
+  contents: read
+jobs:
+  bilingual-editorial-integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify all 56 original IDs, 30 distinct bilingual three-section drafts, rights and publication holds
+        run: node tests/sacred-atlas-wave1-next20-bilingual-guides-contract.mjs

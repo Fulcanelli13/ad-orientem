@@ -51,6 +51,13 @@ if(typeof document!=="undefined"&&!document.getElementById("ao-released-module-p
   "#aoPray435930 .aoAngelusRitualGrid .aoPrayerAngelusStagePhoto figcaption a{color:inherit;text-decoration:underline}",
   "#aoPray435930 .aoClaudeAltarScroll .aoEditorialArtworkSlot .aoPrayerRitualStageArt{height:clamp(94px,18svh,155px)}",
   "#aoPray435930 .aoP435930AdorationReader[data-ao-adoration-mode=night] .aoEditorialArtworkSlot .aoPrayerRitualStageArt{height:clamp(94px,18svh,155px)}",
+  "/* Quiet original-photo treatment: show Adoration as an actual credited art plate, not a thumbnail. */",
+  "#aoPray435930 .aoAdorationChooser .aoPrayerAdorationCover{height:clamp(168px,25svh,230px)!important;min-height:168px!important;margin-bottom:12px}",
+  "#aoPray435930 .aoAdorationChooser .aoPrayerAdorationCover figcaption{bottom:0;background:rgba(8,11,16,.84);padding:5px 9px}",
+  "#aoPray435930 .aoAdorationChooser .aoAdorationPrimaryGrid>button{background:#161b21!important;color:#eee6da!important;border:1px solid rgba(216,191,148,.28)!important;border-radius:3px!important}",
+  "#aoPray435930 .aoAdorationChooser .aoAdorationMethodsDisclosure summary{white-space:normal!important;text-overflow:clip!important;overflow-wrap:break-word}",
+  "/* The Angelus source credit belongs on the art, away from the empty top letterbox. */",
+  "#aoPray435930 .aoPrayPilotAngelusHero .aoPrayerAngelusPhoto figcaption{top:clamp(68px,11svh,98px)!important;right:9px!important;bottom:auto!important;left:auto!important;max-width:165px;white-space:normal}",
   "@media(max-width:359px){#aoPray435930 .aoPrayerAdorationCover{height:110px;min-height:110px}}"
  ].join("\n");
  document.head.append(node);

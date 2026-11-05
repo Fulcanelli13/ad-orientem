@@ -1,0 +1,185 @@
+{
+  "schema": "ao-schola-2026-seven-common-historical-section-evidence-v1",
+  "reviewedOn": "2026-11-05",
+  "evidenceScope": "ORIGINAL_ARCHIVAL_GRADUAL_OPENING_VERSUS_ACTUAL_2026_SELECTED_PROPER_RESEARCH_ONLY",
+  "pinnedSourceRepo": "DivinumOfficium/divinum-officium",
+  "immutableSourceCommit": "ad8783641455bae38a8eb5782b34241a7b3ff2ef",
+  "canonicalPinnedTree": "web/www/missa/Latin/",
+  "historicalOnlyTree": "obsolete/missa/Latin/",
+  "sourceBoundary": "Seven historical Common files are NOT in the original pinned 1049-current-Latin inventory. An explicit historical vide C marker is a candidate Common, not a selected 1962 rubric/melody authentication.",
+  "witnessReference": "https://institute-christ-king.org/resources/sacred-music",
+  "witnesses": [
+    {
+      "originalCommonPath": "Commune/C5",
+      "originalHistoricalBlobPath": "obsolete/missa/Latin/Commune/C5.txt",
+      "originalHistoricalGitBlobSha": "47a2c9cc6ab23e645d4978492417329f461d27bf",
+      "expected2026DatedCases": 19,
+      "historicalDescription": "Confessor non pontifex",
+      "historicalGradualOpening": "Justus ut palma florebit",
+      "historicalSectionsPresent": [
+        "Graduale",
+        "GradualeP",
+        "Tractus"
+      ],
+      "printed1962RoleAndVariantCertified": false,
+      "exactFullLatinAndUnderlayCertified": false,
+      "acceptedReaderSourceAlias": null
+    },
+    {
+      "originalCommonPath": "Commune/C4",
+      "originalHistoricalBlobPath": "obsolete/missa/Latin/Commune/C4.txt",
+      "originalHistoricalGitBlobSha": "6e1e8e850a71aae0d7311319ad2bb4e9e8cc5339",
+      "expected2026DatedCases": 9,
+      "historicalDescription": "Confessor pontifex",
+      "historicalGradualOpening": "Ecce sacerdos magnus",
+      "historicalSectionsPresent": [
+        "Graduale",
+        "GradualeP",
+        "Tractus"
+      ],
+      "printed1962RoleAndVariantCertified": false,
+      "exactFullLatinAndUnderlayCertified": false,
+      "acceptedReaderSourceAlias": null
+    },
+    {
+      "originalCommonPath": "Commune/C6a",
+      "originalHistoricalBlobPath": "obsolete/missa/Latin/Commune/C6a.txt",
+      "originalHistoricalGitBlobSha": "d015c06171ed64d4132b1debf30356439594c3ec",
+      "expected2026DatedCases": 7,
+      "historicalDescription": "Virgo / virgines historical Common",
+      "historicalGradualOpening": "Adjuvabit eam Deus",
+      "historicalSectionsPresent": [
+        "Graduale",
+        "GradualeP",
+        "Tractus"
+      ],
+      "printed1962RoleAndVariantCertified": false,
+      "exactFullLatinAndUnderlayCertified": false,
+      "acceptedReaderSourceAlias": null
+    },
+    {
+      "originalCommonPath": "Commune/C2a",
+      "originalHistoricalBlobPath": "obsolete/missa/Latin/Commune/C2a.txt",
+      "originalHistoricalGitBlobSha": "d846e08381e3df04174ee3e988af4b91be81ed39",
+      "expected2026DatedCases": 6,
+      "historicalDescription": "Unus martyr historical Common",
+      "historicalGradualOpening": "Justus cum ceciderit",
+      "historicalSectionsPresent": [
+        "Graduale",
+        "Tractus"
+      ],
+      "printed1962RoleAndVariantCertified": false,
+      "exactFullLatinAndUnderlayCertified": false,
+      "acceptedReaderSourceAlias": null
+    },
+    {
+      "originalCommonPath": "Commune/C4a",
+      "originalHistoricalBlobPath": "obsolete/missa/Latin/Commune/C4a.txt",
+      "originalHistoricalGitBlobSha": "f9997e3d330bac317f394b6fcb8b0fb97f606bd3",
+      "expected2026DatedCases": 5,
+      "historicalDescription": "Doctor Ecclesiae historical Common",
+      "historicalGradualOpening": "Os justi meditabitur",
+      "historicalSectionsPresent": [
+        "Graduale",
+        "GradualeP",
+        "Tractus"
+      ],
+      "printed1962RoleAndVariantCertified": false,
+      "exactFullLatinAndUnderlayCertified": false,
+      "acceptedReaderSourceAlias": null
+    },
+    {
+      "originalCommonPath": "Commune/C5b",
+      "originalHistoricalBlobPath": "obsolete/missa/Latin/Commune/C5b.txt",
+      "originalHistoricalGitBlobSha": "c7180dcbf0a53f02c1e67f1f484f8ebf92a9dbe3",
+      "expected2026DatedCases": 5,
+      "historicalDescription": "Confessor non pontifex alternate Common",
+      "historicalGradualOpening": "Os justi meditabitur",
+      "historicalSectionsPresent": [
+        "Graduale",
+        "GradualeP",
+        "Tractus"
+      ],
+      "printed1962RoleAndVariantCertified": false,
+      "exactFullLatinAndUnderlayCertified": false,
+      "acceptedReaderSourceAlias": null
+    },
+    {
+      "originalCommonPath": "Commune/C7a",
+      "originalHistoricalBlobPath": "obsolete/missa/Latin/Commune/C7a.txt",
+      "originalHistoricalGitBlobSha": "b9d309afbb26ef824d8a4d135dc047ea7cd47e83",
+      "expected2026DatedCases": 5,
+      "historicalDescription": "Mulier non virgo non martyr historical Common",
+      "historicalGradualOpening": "Diffusa est gratia",
+      "historicalSectionsPresent": [
+        "Graduale",
+        "GradualeP",
+        "Tractus"
+      ],
+      "printed1962RoleAndVariantCertified": false,
+      "exactFullLatinAndUnderlayCertified": false,
+      "acceptedReaderSourceAlias": null
+    }
+  ],
+  "independentPentecostEmber": {
+    "date": "2026-05-27",
+    "selectedSourcePath": "Tempora/Pasc7-3",
+    "sourcePinSha": "0bbee976f86bca03718fabe918cf43618fdf13a8",
+    "sequenceDonorPath": "Tempora/Pasc7-0",
+    "sequenceDonorPinSha": "64876cd8fa68f29bc86926b60bcc50e4fffa76fe",
+    "order": [
+      {
+        "section": "LectioL1",
+        "type": "FIRST_LESSON",
+        "snippet": "Stans Petrus cum undecim"
+      },
+      {
+        "section": "GradualeL1",
+        "type": "FIRST_LESSON_ALLELUIA",
+        "snippet": "Verbo Domini caeli firmati sunt"
+      },
+      {
+        "section": "OratioL1",
+        "type": "FIRST_LESSON_COLLECT",
+        "snippet": "Praesta quaesumus omnipotens"
+      },
+      {
+        "section": "Oratio",
+        "type": "SECOND_COLLECT",
+        "snippet": "Mentes nostras quaesumus"
+      },
+      {
+        "section": "Lectio",
+        "type": "SECOND_LESSON",
+        "snippet": "Per manus autem Apostolorum"
+      },
+      {
+        "section": "Graduale",
+        "type": "FINAL_ALLELUIA_WITH_GENUFLECTION",
+        "snippet": "Veni Sancte Spiritus reple tuorum"
+      },
+      {
+        "section": "Sequentia",
+        "type": "PENTECOST_SEQUENCE_INHERITED",
+        "snippet": "Veni Sancte Spiritus et emitte"
+      },
+      {
+        "section": "Evangelium",
+        "type": "GOSPEL",
+        "snippet": "Nemo potest venire ad me"
+      }
+    ],
+    "prohibitedInference": "The first-lesson Alleluia is NOT one of two verses in the final Graduale; the Sequence is separately inherited and is not contained in the 1195 Proper GABC archive. Preserve the liturgical position and the genuflection cue.",
+    "certifiedPublicScores": 0,
+    "productionReaderMutation": false
+  },
+  "acceptance": {
+    "expectedCommonFamilies": 7,
+    "expectedDatedCases": 56,
+    "expectedHistoricalIncipitConcordances": 29,
+    "expectedLegacyOpeningMismatches": 27,
+    "approvedProperScores": 0,
+    "sourceAliasesApproved": 0,
+    "readerCodeModified": false
+  }
+}

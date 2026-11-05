@@ -222,6 +222,130 @@ export const CLAUDE_HOLY_CARD_CSS=String.raw`
  #aoPray435930 .aoClaudeHolyCard .aoClaudeHolyInner{transition:none}
  #aoPray435930 .aoClaudeHolyCard .aoP435930EssentialBeat{transition:none}
 }
+
+/* 4 Nov visual repair: a source-owned typographic vellum plate when no
+ * exact photograph has publication clearance; never show an empty black box. */
+#aoPray435930 .aoClaudeHolyCasePlate.aoClaudeHolyCasePlateText,
+#aoPray435930 .aoClaudeHolyCard .aoClaudeHolyPlate.aoClaudeHolyPlateText{
+ background:linear-gradient(158deg,#eee4cf,#c8b797);
+ border:1px solid #948264;
+ color:#32291e;
+ padding:9px;
+}
+#aoPray435930 .aoClaudeHolyTypePlate{
+ display:flex;flex-direction:column;align-items:center;justify-content:center;
+ gap:6px;width:100%;height:100%;min-width:0;overflow:hidden;
+ color:#32291e;text-align:center;
+}
+#aoPray435930 .aoClaudeHolyTypePlate b{
+ font:400 clamp(11px,3vw,19px)/1.14 var(--ao-font-liturgical,Georgia,serif);
+ overflow-wrap:anywhere;max-width:100%;
+}
+#aoPray435930 .aoClaudeHolyTypePlate i{
+ font:italic 11px/1.22 var(--ao-font-liturgical,Georgia,serif);
+ max-width:100%;color:#5e4934;overflow-wrap:anywhere;
+}
+#aoPray435930 .aoClaudeHolyCard .aoClaudeHolyPlate .aoClaudeHolyTypePlate b{font-size:clamp(21px,5vw,30px)}
+#aoPray435930 .aoClaudeHolyCard .aoClaudeHolyPlate .aoClaudeHolyTypePlate i{font-size:15px}
+#aoPray435930 .aoClaudeHolyCard .aoClaudeHolyLace{
+ height:min(480px,calc(100dvh - 290px));min-height:220px;
+ padding:5px;
+ background:radial-gradient(circle at 5px 5px,rgba(185,164,132,.38) .9px,transparent 1.35px) 0 0/11px 11px;
+}
+#aoPray435930 .aoClaudeHolyFan button{
+ background:radial-gradient(circle at 3px 3px,rgba(185,164,132,.34) .7px,transparent 1.15px) 0 0/9px 9px;
+}
+#aoPray435930 .aoClaudeHolyCard .aoClaudeHolyInitial{
+ display:inline;float:none;font:inherit;font-size:1.18em;
+ letter-spacing:0;margin:0;padding:0;line-height:inherit;vertical-align:baseline;
+}
+/* The original reversible card also needs a real, obvious action. */
+#aoPray435930 .aoClaudeHolyFlipButton{
+ display:block;min-height:40px;min-width:124px;margin:8px auto 0;
+ padding:6px 15px;border:1px solid var(--liturgical-border,#75664f);
+ border-radius:2px;background:transparent;color:var(--text,#ede4d3);
+ font:400 15px/1.3 var(--ao-font-display,Georgia,serif);
+}
+#aoPray435930 .aoClaudeHolyFlipButton:focus-visible{
+ outline:2px solid var(--liturgical,#bfa576);outline-offset:2px;
+}
+#aoPray435930 .aoClaudeHolyCard .aoClaudeHolyArtCredit{
+ bottom:0;line-height:1.25;max-height:48px;overflow:auto;
+}
+#aoPray435930 .aoClaudeHolyCard .aoClaudeHolyBackScroll{
+ padding-bottom:16px;scroll-padding-bottom:16px;
+}
+@media(max-height:640px){
+ #aoPray435930 .aoClaudeHolyCard .aoClaudeHolyLace{
+  height:max(220px,calc(100dvh - 290px));min-height:220px;
+ }
+}
+
+
+/* One F01 Back owner: the native header returns to its canonical parent.
+ * Keep the inline Library return in the DOM for compatibility but do not
+ * duplicate it visually on the reversible Holy Card screen. */
+#aoPray435930 .aoP435930LibraryReader:has(.aoClaudeHolyCard)>[data-p435930-lib-back]{display:none!important}
+#aoPray435930 .aoP435930Sheet:has(.aoClaudeHolyCard) .aoP435930Head{
+ display:flex!important;flex-wrap:nowrap!important;align-items:center!important;gap:6px!important;
+}
+#aoPray435930 .aoP435930Sheet:has(.aoClaudeHolyCard) .aoP435930Head>div{
+ position:absolute!important;width:1px!important;height:1px!important;
+ overflow:hidden!important;clip-path:inset(50%);white-space:nowrap;
+}
+#aoPray435930 .aoP435930Sheet:has(.aoClaudeHolyCard) .aoP435930Head button{
+ flex:0 0 auto;min-width:40px;min-height:40px;
+}
+
+/* Second screenshot-led refinement: keep the explicit Turn Card action *in*
+ * the visible reader, and credit artwork beneath the actual plate. */
+#aoPray435930 .aoClaudeHolyCard .aoClaudeHolyDeck{
+ position:relative;gap:4px;padding:4px 0 2px;
+}
+#aoPray435930 .aoClaudeHolyCard .aoClaudeHolyLace{
+ height:min(390px,calc(100dvh - 385px));min-height:220px;
+}
+#aoPray435930 .aoClaudeHolyCard .aoClaudeHolyFlipButton{
+ position:relative;z-index:4;min-height:40px;margin:2px auto 0;
+}
+#aoPray435930 .aoClaudeHolyCard .aoClaudeHolyHint{
+ position:absolute;width:1px;height:1px;overflow:hidden;
+ margin:0;padding:0;clip-path:inset(50%);white-space:nowrap;
+}
+#aoPray435930 .aoClaudeHolyCard .aoClaudeHolyPlate:not(.aoClaudeHolyPlateText){
+ flex-direction:column;align-items:stretch;justify-content:center;gap:0;
+ background:#1b2025;
+}
+#aoPray435930 .aoClaudeHolyCard .aoClaudeHolyPlate:not(.aoClaudeHolyPlateText) img{
+ flex:1 1 auto;width:100%;min-height:0;max-height:100%;
+ object-fit:contain;
+}
+#aoPray435930 .aoClaudeHolyCard .aoClaudeHolyArtCredit{
+ position:static!important;flex:0 0 auto;display:block;z-index:auto;
+ max-height:38px;margin:0!important;padding:3px 4px!important;
+ background:#14191e;color:#e9d9c5;
+ font-size:10px;text-align:center;overflow-wrap:anywhere;
+}
+@media(max-height:640px){
+ #aoPray435930 .aoClaudeHolyCard .aoClaudeHolyLace{height:220px;min-height:220px}
+}
+
+/* Even a published art image can be unloaded during the first gallery
+ * frame. Render its approved source-derived typesetting beneath it, not black. */
+#aoPray435930 .aoClaudeHolyCasePlate:has(img){
+ position:relative;overflow:hidden;isolation:isolate;
+ background:linear-gradient(158deg,#eee4cf,#c8b797);
+ color:#32291e;
+}
+#aoPray435930 .aoClaudeHolyCasePlate:has(img)>.aoClaudeHolyTypePlate{
+ position:absolute;inset:0;z-index:0;
+ padding:9px;box-sizing:border-box;
+}
+#aoPray435930 .aoClaudeHolyCasePlate:has(img)>img{
+ position:absolute;inset:0;z-index:1;
+ width:100%;height:100%;max-width:100%;
+ object-fit:contain;object-position:center;background:transparent;
+}
 `;
 export function installClaudeHolyCardStyles(doc=globalThis.document){
  if(!doc?.head)return false;

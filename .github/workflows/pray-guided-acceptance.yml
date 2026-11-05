@@ -8,6 +8,7 @@ on:
       - "tests/contemplative-daily-preview.mjs"
       - "tests/contemplative-daily-phone.mjs"
       - "tests/pray-all-modules-mobile.mjs"
+      - "tests/pray-novena-search-phone.mjs"
       - ".github/workflows/pray-guided-acceptance.yml"
   workflow_dispatch:
 
@@ -31,6 +32,7 @@ jobs:
       - run: node tests/pray-traditional-life.mjs
       - run: npx playwright install --with-deps chromium
       - run: node tests/pray-all-modules-mobile.mjs
+      - run: node tests/pray-novena-search-phone.mjs
       - run: node tests/icksp-batch02-mobile-smoke.mjs
       - run: node tests/icksp-batch03-mobile-smoke.mjs
       - run: node tests/contemplative-daily-phone.mjs

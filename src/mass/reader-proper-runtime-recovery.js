@@ -1,4 +1,5 @@
 import {certifyPreGospelChantParts} from "./reader-pre-gospel-chant-source.js";
+import {repair1962AprilPaschalProper} from "./1962-april-paschal-proper-correction.js";
 import {render1962EasterPrefaceVariant} from "./1962-easter-preface-form.js";
 import {recover1962NativityOctaveCommemoration} from "./1962-nativity-octave-source.js";
 import {recover1962PassionFridaySources} from "./1962-passion-friday-commemorations.js";
@@ -375,8 +376,16 @@ export async function recoverReaderProperOmissions(proper,{
   calendarDate=null,
   diagnostic={requestedFiles:[],cacheHits:[],referencesResolved:[],languageGaps:[],structuralInheritances:[],legacyCommonRecoveries:[],warnings:[],errors:[]},
 }={}){
-  const {envelope,data}=unwrap(proper);
-  if(!data||typeof data!=="object"||typeof hostResolver?.resolveSource!=="function")return proper;
+  const {envelope,data:sourceData}=unwrap(proper);
+  if(!sourceData||typeof sourceData!=="object"||
+     typeof hostResolver?.resolveSource!=="function")return proper;
+  const repairedAprilPaschal=repair1962AprilPaschalProper(sourceData,{
+    calendarDate,
+    principalCelebrationId:principalCelebrationId??
+      sourceData.principalCelebrationId??sourceData.mainId,
+    normalizeRows:cleanLines
+  });
+  const data=repairedAprilPaschal??sourceData;
   const path=String(data.sourcePath??envelope?.sourcePath??"").trim();
   if(!path)return proper;
 
@@ -441,7 +450,8 @@ export async function recoverReaderProperOmissions(proper,{
   const needsApostolicSource=peterPaulOwner&&
     data.inseparableApostolicSources?.status!=="SOURCE_VERIFIED";
   if(!Object.values(needs).some(Boolean)&&!missingOrations&&!recoveredPreface&&
-     !needsApostolicSource&&!recoveredChants&&!needsChristmasOctave&&!needsPassionFriday)return proper;
+     !needsApostolicSource&&!recoveredChants&&!needsChristmasOctave&&
+     !repairedAprilPaschal&&!needsPassionFriday)return proper;
 
   const next={...data};
   // Restore ONLY the exact source-identified 1962 non-Cistercian Collect;

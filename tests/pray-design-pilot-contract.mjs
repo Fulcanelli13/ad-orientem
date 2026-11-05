@@ -1,10 +1,12 @@
 import {PRAY_DOOR_ART_SLOTS_V1,prayerDoorArtSlot,hasReleasedDoorPainting} from "../src/pray/art-slot-map.v1.js";
+import {NOVENA_CORPUS_V4} from "../src/pray/novena-corpus-v4.js";
+import {revealPrayerMosaicTile,clearPrayerMosaicReveal,restorePrayerMosaicReveal} from "../src/pray/prayer-mosaic-reveal.js";
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {
  PRAYER_DESIGN_PILOT_SCHEMA,prayerPilotEnabled,prayerPilotAliases,resolvedPrayerPilotFamilies,
  PRAYER_DOOR_ORDER_V1,PRAYER_PRIMARY_DOOR_V1,PRAYER_SEARCH_ONLY_ROUTES_V1,
- renderPilotDiscovery,renderPilotAngelusEntry
+ renderPilotDiscovery,renderPilotAngelusEntry,collectPrayerNovenaSearchEntries,collectPrayerPilotOwnedSearchRoutes
 } from "../src/pray/prayer-design-pilot.js";
 
 assert.equal(PRAYER_DESIGN_PILOT_SCHEMA,"ao-prayer-discovery-angelus-pilot-v1");
@@ -17,18 +19,18 @@ const L=(en,fr)=>en;
 const esc=s=>String(s??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;");
 const families={
  daily:{title:"Daily Prayer",assetId:"ao-rich-begin-end-day",items:[["own","pray.angelus_regina","Angelus","Hourly prayer"]]},
- chaplets:{title:"Rosary & Chaplets",assetId:"ao-rich-rosary",items:[["own","pray.rosary","Rosary","Bead reader"]]},
+ chaplets:{title:"Rosary & Chaplets",assetId:"ao-rich-rosary",items:[["own","pray.rosary","Rosary","Bead reader"],["own","pray.rosary_methods","Rosary methods","Original Rosary guide"]]},
  eucharistic:{title:"Holy Eucharist",assetId:"ao-rich-adoration",items:[]},
  library:{title:"Prayer Library",assetId:"ao-rich-prayer-library",direct:"pray.library",items:[]}
 };
 const aliases=prayerPilotAliases(L);
 assert.deepEqual(Object.keys(aliases).sort(),["intentions","marian","novenas","ourlord","saints"]);
-const bridged=resolvedPrayerPilotFamilies(L,{
+const searchFamilies={
  ...families,
  penance:{items:[["own","pray.confession","Confession","Prepare"],["own","pray.penitential_psalms","Seven Penitential Psalms","Source prayer"]]},
  passion:{items:[["own","pray.stations","Stations","Fourteen"],["own","pray.tenebrae","Office of Tenebrae","Triduum"]]},
- devotions:{items:[["external","pray.novenas","Novenas","Source"],["external","pray.holy_name_litany","Holy Name","Litany"]]}
-});
+ devotions:{items:[["external","pray.novenas","Novenas","Source"],["external","pray.holy_name_litany","Holy Name","Litany"],["external","pray.sacred_hymns","Sacred Hymns","Original hymn owner"]]}};
+const bridged=resolvedPrayerPilotFamilies(L,searchFamilies);
 const primaryEntries=Object.entries(PRAYER_DOOR_ORDER_V1).flatMap(([door,ids])=>ids.map(id=>({door,id})));
 assert.equal(Object.keys(PRAYER_DOOR_ORDER_V1).length,9,"Keep exactly nine approved doors");
 assert.equal(new Set(primaryEntries.map(x=>x.id)).size,primaryEntries.length,
@@ -47,15 +49,127 @@ for(const [door,route] of [["intentions","pray.penitential_psalms"],["ourlord","
  ["ourlord","pray.holy_name_litany"],["novenas","pray.novenas"],["marian","litany_loreto_1962"],["saints","devotion_prayer_st_michael"]]){
  assert.ok(bridged[door].items.some(item=>item[1]===route),"Canonical reader or source prayer missing from "+door+": "+route);
 }
+// Source owners are the nine approved visible doors, not the retired legacy
+// family catalog whose old entries still exist for the explicit rollback.
+const ownedSearch=collectPrayerPilotOwnedSearchRoutes(bridged);
+assert.equal(new Set(ownedSearch.map(x=>x.id)).size,ownedSearch.length,
+ "Search cannot create a second route entry under a retired family");
+assert.deepEqual(ownedSearch.filter(x=>x.searchOnly).map(x=>x.id),
+ PRAYER_SEARCH_ONLY_ROUTES_V1,"Only two historic search-only routes are authorised");
+for(const row of ownedSearch){
+ if(row.searchOnly){
+  assert.equal(row.primaryDoor,null,row.id+" is intentionally outside the nine shelves");
+  assert.equal(PRAYER_PRIMARY_DOOR_V1[row.id],undefined);
+ }else{
+  assert.equal(row.primaryDoor,PRAYER_PRIMARY_DOOR_V1[row.id],
+   row.id+" search index inherited an obsolete category");
+  assert.ok(bridged[row.primaryDoor].items.some(x=>x[1]===row.id),
+   row.id+" has no corresponding primary shelf");
+ }
+}
+assert.equal(ownedSearch.find(x=>x.id==="pray.rosary")?.primaryDoor,"chaplets");
+assert.equal(ownedSearch.find(x=>x.id==="pray.litany_saints")?.primaryDoor,"saints");
+assert.equal(ownedSearch.find(x=>x.id==="pray.holy_name_litany")?.primaryDoor,"ourlord");
+const legacyContaminated={
+ ...bridged,
+ daily:{...bridged.daily,items:[...bridged.daily.items,
+  ["own","pray.rosary","RETIRED DAILY ROSARY","Outdated route label"]]},
+ penance:{...bridged.penance,items:[...bridged.penance.items,
+  ["own","pray.litany_saints","RETIRED PENANCE LITANY","Outdated route label"]]}
+};
+assert.deepEqual(collectPrayerPilotOwnedSearchRoutes(legacyContaminated),ownedSearch,
+ "Old duplicate family entries must not change home-search owners or labels");
 assert.ok(!bridged.daily.items.some(x=>x[1]==="pray.rosary"),"The Rosary belongs on the Chaplets shelf only");
 assert.ok(!bridged.marian.items.some(x=>x[1]==="pray.angelus_regina"),"Angelus is on Daily Prayer, not a second Marian shelf");
 assert.ok(!bridged.novenas.items.some(x=>x[1]==="pray.holy_name_litany"),"Novenas must not inherit unrelated older devotions");
 assert.equal(bridged.library.direct,"pray.library","Essential Prayers must continue using the canonical Prayer Library");
 const actual=renderPilotDiscovery({
  head:title=>"<header>"+title+"</header>",L,esc,DATA:{prayers:{foundations_hail_mary:{title:"Hail Mary",titleFr:"Je vous salue Marie"}}},
- families,assetIcon:(_name,cls)=>"<span class='"+cls+"'></span>"
+ families:searchFamilies,assetIcon:(_name,cls)=>"<span class='"+cls+"'></span>",novenaCorpus:NOVENA_CORPUS_V4
 });
+const indexedNovenas=collectPrayerNovenaSearchEntries(NOVENA_CORPUS_V4);
+assert.equal(indexedNovenas.length,16,"Search must resolve all sixteen original bilingual novenas");
+assert.equal(new Set(indexedNovenas.map(row=>row.id)).size,16,"Canonical novena IDs must not duplicate");
+assert.deepEqual(indexedNovenas.find(row=>row.id==="christmas"),{
+ id:"christmas",en:NOVENA_CORPUS_V4.christmas.title.en,fr:NOVENA_CORPUS_V4.christmas.title.fr
+});
+const searchMarkup=actual.slice(actual.indexOf('<div data-ao-pray-pilot-results'),actual.indexOf('<p data-ao-pilot-empty'));
+const indexedRouteIds=[...searchMarkup.matchAll(/data-p435930-(?:own|external)="([^"]+)"/g)].map(match=>match[1]);
+assert.deepEqual(indexedRouteIds,ownedSearch.map(row=>row.id),
+ "Home search must list only authoritative non-prayer routes in their approved order");
+assert.match(actual,/data-pilot-primary-door="chaplets"[^>]*data-p435930-own="pray\.rosary"/,
+ "Rosary search result must belong to Chaplets, not retired Daily Prayer");
+assert.match(actual,/data-pilot-primary-door="saints"[^>]*data-p435930-own="pray\.litany_saints"/,
+ "Litany of the Saints must retain Saints & Angels as its primary door");
+assert.match(actual,/data-pilot-primary-door="search" data-pilot-search-only="true"[^>]*data-p435930-own="pray\.rosary_methods"/,
+ "Rosary method guide remains available from search only");
+assert.match(actual,/data-pilot-primary-door="library"[^>]*data-p435930-pilot-prayer="foundations_hail_mary"/,
+ "Canonical unshelved prayer remains indexed through its Library source");
+const searchableNovenaIds=[...actual.matchAll(/data-p435930-pilot-novena="([^"]+)"/g)].map(match=>match[1]);
+assert.deepEqual(searchableNovenaIds,indexedNovenas.map(row=>row.id),
+ "Prayer search rows must be exact source-owned Novena IDs, not duplicate prayer records");
+assert.match(actual,/data-pilot-form="novena"[^>]*data-p435930-pilot-novena="christmas"/,
+ "Search Novenas need the existing Novenas facet and a canonical child action");
+assert.ok(actual.includes(esc(NOVENA_CORPUS_V4.christmas.title.fr)),
+ "French titles must remain searchable even in English UI");
+const frenchDiscovery=renderPilotDiscovery({
+ head:title=>"<header>"+title+"</header>",L:(_en,fr)=>fr,esc,
+ DATA:{prayers:{}},families:searchFamilies,assetIcon:(_name,cls)=>"<span class='"+cls+"'></span>",novenaCorpus:NOVENA_CORPUS_V4
+});
+assert.ok(frenchDiscovery.includes("<b>"+esc(NOVENA_CORPUS_V4.christmas.title.fr)+"</b>"),
+ "French Pray search must display the attested canonical French novena title");
+assert.equal([...frenchDiscovery.matchAll(/data-p435930-pilot-novena="/g)].length,16,
+ "French search must not create additional Novena identities");
 assert.equal((actual.match(/class="aoPrayPilotTile(?: aoPrayPilotLarge)?"/g)||[]).length,9,"nine live mosaic doors");
+assert.equal((actual.match(/data-ao-pray-pilot-tile="/g)||[]).length,9,"Every door must have a disclosure identity");
+assert.equal((actual.match(/aria-expanded="false"/g)||[]).length,9,"Mosaic doors start unrevealed");
+assert.match(actual,/Select to reveal, select again to open/,"Reader navigation needs the approved two-step affordance");
+// Isolated interaction contract: never invoke navigation on the first activation,
+// never disclose two paintings simultaneously, and let the second activation
+// fall through to existing source-owned route handling.
+const tiles=[];
+const mosaic={
+ querySelectorAll(selector){
+  return selector.includes('[aria-expanded="true"]')
+   ?tiles.filter(t=>t.getAttribute('aria-expanded')==='true'):tiles;
+ }
+};
+const fakeTile=id=>{
+ const attrs=new Map([['aria-expanded','false']]);
+ return {
+  dataset:{aoPrayPilotTile:id},
+  matches:s=>s==='[data-ao-pray-pilot-tile]',
+  closest:s=>s==='[data-ao-pray-pilot-mosaic]'?mosaic:null,
+  getAttribute:name=>attrs.get(name),
+  setAttribute:(name,value)=>attrs.set(name,String(value))
+ };
+};
+tiles.push(fakeTile('daily'),fakeTile('eucharistic'));
+assert.equal(revealPrayerMosaicTile(tiles[0]),true,"First activation is reveal only");
+assert.equal(tiles[0].getAttribute('aria-expanded'),'true');
+assert.equal(revealPrayerMosaicTile(tiles[1]),true,"Another painting replaces the current reveal");
+assert.equal(tiles[0].getAttribute('aria-expanded'),'false');
+assert.equal(tiles[1].getAttribute('aria-expanded'),'true');
+assert.equal(revealPrayerMosaicTile(tiles[1]),false,"Second activation delegates to canonical owner");
+assert.equal(tiles[1].getAttribute('aria-expanded'),'false');
+assert.equal(revealPrayerMosaicTile(tiles[0]),true);
+assert.equal(tiles[0].getAttribute('aria-expanded'),'true');
+const oldTile=tiles[0];
+// A source-owned render can replace the entire DOM between genuine taps.
+// Restoration must preserve the disclosure, and the next tap must navigate,
+// not demand a third physical activation.
+tiles.splice(0,tiles.length,fakeTile('daily'),fakeTile('eucharistic'));
+assert.notEqual(tiles[0],oldTile);
+assert.equal(restorePrayerMosaicReveal(mosaic),true);
+assert.equal(tiles[0].getAttribute('aria-expanded'),'true');
+assert.equal(revealPrayerMosaicTile(tiles[0]),false,
+ "Second tap on remounted selected tile must delegate to canonical route");
+assert.equal(tiles[0].getAttribute('aria-expanded'),'false');
+assert.equal(revealPrayerMosaicTile(tiles[1]),true);
+assert.equal(clearPrayerMosaicReveal(mosaic),true);
+assert.equal(clearPrayerMosaicReveal(mosaic),false);
+assert.equal(restorePrayerMosaicReveal(mosaic),false,
+ "Fresh hub or outside dismissal must not auto-select previous artwork");
 assert.match(actual,/>Prayer<\/h2>/,"R1.1 approved quiet Prayer heading must be shown");
 assert.doesNotMatch(actual,/Enter into prayer|Choose a door or search|Find a prayer or devotion/,
  "Rejected instructional heading, helper copy and redundant subtitle must stay absent");
@@ -186,8 +300,8 @@ assert.match(runtime,/data-p435930-lib-all/,
  "The full Prayer Library must remain directly accessible from Essential Prayers");
 assert.match(runtime,/aoPrayDoorShelfList aoPrayDoorMosaic/,
  "Each non-library family interior must use the single mosaic grid");
-assert.match(runtime,/visible\.map\(\(item,i\)=>prayDoorShelfEntry\(item,i===0,family\.assetId\)\)/,
- "The full canonical ordered door inventory must render in the grid");
+assert.match(runtime,/visible\.map\(\(item,i\)=>prayDoorShelfEntry\(item,i===0,family\.assetId,i\)\)/,
+ "The full canonical ordered door inventory must render with stable study-list ordinals");
 assert.match(runtime,/data-ao-pray-door-entry data-ao-pray-door-facet/,
  "Existing filters must retain their canonical card target");
 assert.match(runtime,/assetIcon\(familyAssetId/,"Every unassigned artwork tile must retain a real family icon");
@@ -199,8 +313,12 @@ assert.doesNotMatch(runtime,/aoPrayDoorShelfRow|aoPrayDoorFeatured/,
  "Retired text rows and oversized featured list must not return");
 assert.match(mosaicCss,/\.aoPrayDoorMosaicCard\[hidden\]\{display:none!important\}/,
  "Filtered mosaic tiles must actually disappear from the grid");
-assert.match(mosaicCss,/\.aoEssentialMosaicLanding \.aoClaudeHolyFan/,
- "Essential 32-prayer source case must become a responsive visual mosaic");
+const f01Css=readFileSync(new URL("../src/pray/claude-holy-card-styles.js",import.meta.url),"utf8");
+assert.match(f01Css,/\.aoClaudeHolyFan\{/,"F01 uses the approved case-of-cards owner");
+assert.match(f01Css,/grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/,
+ "The original three-column Claude Holy Card fan must remain canonical");
+assert.doesNotMatch(mosaicCss,/\.aoEssentialMosaicLanding \.aoClaudeHolyFan/,
+ "New generic Prayer mosaics must not overwrite the approved F01 fan geometry");
 assert.match(mosaicCss,/prefers-reduced-motion:reduce/,
  "Prayer mosaics must respect reduced motion preferences");
 assert.match(runtime,/data-p435930-door-prayer/,"Single-text prayer cards hand off to the existing canonical Library");

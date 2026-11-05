@@ -25,13 +25,17 @@ on:
       - 'tools/build-web-preview.mjs'
       - 'tools/prepare-github-pages-release.mjs'
       - 'tools/check-github-pages-live.mjs'
+      - 'tools/github-pages-release-proof.mjs'
       - '.github/workflows/github-pages.yml'
   pull_request:
     paths:
       - '.github/workflows/github-pages.yml'
       - 'tools/prepare-github-pages-release.mjs'
       - 'tools/check-github-pages-live.mjs'
+      - 'tools/github-pages-release-proof.mjs'
+      - 'tests/github-pages-release-proof.test.mjs'
       - 'tools/build-web-preview.mjs'
+      - 'tests/prayer-stations-curated-release-hold.mjs'
       - 'vercel.json'
   workflow_dispatch:
 
@@ -59,11 +63,15 @@ jobs:
         with:
           node-version: '22'
       - name: Validate public postdeploy smoke code
-        run: node --check tools/check-github-pages-live.mjs
+        run: node --check tools/check-github-pages-live.mjs && node --check tools/prepare-github-pages-release.mjs && node --check tools/github-pages-release-proof.mjs
+      - name: Reject stale source SHA, workflow run and changed critical assets
+        run: node --test tests/github-pages-release-proof.test.mjs
       - name: Build allowlisted static release
         run: node tools/build-web-preview.mjs
       - name: Validate base path, noindex, release safety and 1GB Pages cap
         run: node tools/prepare-github-pages-release.mjs
+      - name: Verify fourteen archived Stations photographs cannot leak into Pages
+        run: node tests/prayer-stations-curated-release-hold.mjs
       - name: Configure GitHub Pages
         if: github.ref == 'refs/heads/main'
         uses: actions/configure-pages@v5

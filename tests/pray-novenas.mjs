@@ -127,7 +127,7 @@ const assets=readFileSync("src/assets/asset-registry.js","utf8");
 assert.match(runtime,/44\.0-bilingual-novenas-v1/);
 assert.doesNotMatch(runtime,/CURATED CORE · V4|NOYAU SÉLECTIONNÉ · V4|V4 is deliberately frozen|source-of-truth version|V4 · \$\{items\.length\}/,"Novenas leaked internal versioning/governance language into the UI");
 assert.match(runtime,/TRADITIONAL NOVENAS/,"Novenas overview lost its user-facing collection label");
-assert.match(runtime,/bilingual sourced novenas/,"Novenas overview lost sourced bilingual summary");
+assert.doesNotMatch(runtime,/bilingual sourced novenas|Choose Simple to read the traditional prayers continuously|one historical form · 9 days|9 day-specific prayers/,"Novenas must not display developer or mode-selection instructions in list entries");
 assert.match(runtime,/NOVENA_CORPUS_V4 as CORPUS/,"Novenas runtime is not consuming completed V4 corpus");
 assert.match(runtime,/pray\.novenas/,"Novenas route is not registered");
 assert.doesNotMatch(runtime,/function injectHome|aoN1InsertedSection|MutationObserver/,"Novenas regained DOM-based PRAY hub injection");
@@ -144,7 +144,16 @@ assert.match(runtime,/resolveCanonicalAssetUrl\(id\)/,"Novena header lost canoni
 assert.match(runtime,/n1UiIcon\('ao-ui-back'\)/,"Novena header lost canonical Back utility artwork");
 assert.match(runtime,/n1UiIcon\('ao-nav-home'\)/,"Novena header lost canonical Home utility artwork");
 assert.match(runtime,/function goHome\(\)/,"Novena global Home action is missing");
-assert.match(runtime,/if\(N\.screen===\'day\'\).*N\.screen=\'detail\'/,"Novena Back no longer returns Day to Novena detail");
+assert.match(runtime,/if\(N\.screen===\'day\'\)\{N\.screen=detailFromOverview\?'overview':'detail'/,"Overview-selected day must Back directly to the overview, while a direct deep link keeps its detail return");
+assert.match(runtime,/if\(N\.screen===\'detail\'&&dayAboutOpen\)/,"About-this-novena must return to the active prayer day on Back");
+assert.match(runtime,/if\(b\.dataset\.n1Select\).*?N\.screen='day'/,"Selecting a canonical novena must open its real day reader without a separate setup screen");
+assert.match(runtime,/if\(b\.dataset\.n1Supplement\)[\s\S]*?N\.screen='day'/,"Supplemental nine-day prayers must use the same direct reader route");
+assert.match(runtime,/data-n1-about/,"The original historical detail and source context must remain available from the reader");
+assert.match(runtime,/N\.screen=opts\?\.returnSearch/,"Search-origin Novenas must open to the real prayer day");
+assert.match(runtime,/function returnToPraySearch\(\)/,"Novena Back must recover the source-owned search origin");
+assert.match(runtime,/restoreSearch\?\.\(returnSearch\)/,"Novena Back must restore query and facets rather than open another directory");
+assert.match(runtime,/returnSearch:OPEN_OPTS\?\.returnSearch/,"Native app Back must preserve direct Novena search context");
+assert.match(runtime,/detailFromOverview,dayAboutOpen/,"App Back receipt must preserve whether the reader opened the context page");
 assert.match(runtime,/if\(N\.screen===\'detail\'&&detailFromOverview\)/,"Visited Novena overview must remain a valid Back destination");
 assert.match(runtime,/returnToObservedModuleOrigin\(window,OPEN_RECEIPT/,"Direct Novena detail must Back to its real origin, not an invented overview");
 assert.match(runtime,/noCompletionTracking:true/,"Novenas privacy rule for completion tracking changed");
@@ -170,8 +179,8 @@ console.log("PASS complete 16-target bilingual Novenas corpus with French prayer
 
 // Prayer-stage copy should address the person praying, not describe app telemetry.
 assert.doesNotMatch(runtime,/Ad Orientem|devotional streak|completion score/i,"Novena reader reverted to self-referential interface narration");
-assert.match(runtime,/Choose a novena/);
-assert.match(runtime,/Choisissez une neuvaine/);
+assert.match(runtime,/head\(L\(\x27Novenas\x27,\x27Neuvaines\x27\)/,"Novenas must retain its bilingual source-owned heading");
+assert.doesNotMatch(runtime,/L\(\x27Choose a novena\x27,\x27Choisissez une neuvaine\x27\)/,"A second choice heading must not be repeated above the novena list");
 
 
 // The V3 source prayers are immutable, but inherited English-only day headings
