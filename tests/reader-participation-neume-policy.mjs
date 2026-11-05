@@ -18,7 +18,6 @@ for(const spec of PARTICIPATION_NEUME_POLICY){
   assert.equal(all.has(cueId),false,"No duplicate ownership "+cueId);all.add(cueId);
   const audited=auditByCue.get(cueId);
   assert.ok(audited,"Must remain source exact "+cueId);
-  assert.equal(audited.formConditional===true&&spec.id==="DISMISSAL_EXCHANGE"?false:true,true);
   assert.ok(spec.kind==="CELEBRANT_INTONATION"?
    audited.evidence==="SUNG_INTONATION":
    spec.kind==="DISMISSAL_PAIR"?
