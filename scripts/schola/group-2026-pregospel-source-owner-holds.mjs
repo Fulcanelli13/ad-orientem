@@ -2,6 +2,7 @@
 // pinned inheritance.  This is a source-review worklist, NOT a chant match
 // or an executable reader source alias.
 import {readFile,writeFile,mkdir} from "node:fs/promises";
+import {createHash} from "node:crypto";
 import {join,resolve} from "node:path";
 import {fileURLToPath} from "node:url";
 import {gitBlobSha1} from "./pinned-1962-source-library.mjs";
@@ -65,6 +66,13 @@ async function resolveSection(sourcePath,section,readPinned,chain=[]){
  return {status:"SECTION_ABSENT_NO_EXPLICIT_OWNER",ownerCandidate:null,
   sourceSha:source.sha,chain:next};
 }
+// Exact *complete appointed Latin* equality is a research shortcut, not
+// proof of the printed Gregorian melody or the original Mass/Common owner.
+function latinKey(s){
+ return String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
+  .replace(/æ/gi,"ae").replace(/œ/gi,"oe").toLowerCase()
+  .replace(/[^a-z]+/g," ").trim().replace(/\s+/g," ");
+}
 function classification(evidence,sourcePath){
  const certain=evidence.filter(x=>x.status==="DIRECT_AUTHENTICATED_SECTION"&&x.ownerCandidate);
  const inherited=certain.filter(x=>x.ownerCandidate!==sourcePath);
@@ -88,7 +96,7 @@ function classification(evidence,sourcePath){
   status:"NO_VERIFIED_SECTION_OWNER_NEEDS_LITURGICAL_SOURCE_REVIEW"};
 }
 
-export async function group2026PregospelHolds({closeout,inventory,readPinned}={}){
+export async function group2026PregospelHolds({closeout,inventory,annual,readPinned}={}){
  if(closeout?.schema!==CLOSEOUT||closeout.sourceYear!==2026||
    closeout.counts?.selectedProperDays!==365||
    closeout.counts?.preGospelDatedOwnershipHolds!==128||
@@ -98,7 +106,12 @@ export async function group2026PregospelHolds({closeout,inventory,readPinned}={}
    !Array.isArray(closeout.preGospelSourceOwnerQueue)||
    closeout.preGospelSourceOwnerQueue.length!==115||
    inventory?.schema!==INVENTORY||inventory.sourceRef!==PIN||
-   inventory.sourceFiles?.length!==1049||typeof readPinned!=="function")
+   inventory.sourceFiles?.length!==1049||
+   annual?.schema!=="ao-schola-selected-mass-2026-proper-gabc-candidate-coverage-v1"||
+   annual.year!==2026||annual.counters?.civilDays!==365||
+   annual.sourceAuthority!=="AO_RUNTIME_V8.resolver.resolveDay"||
+   !Array.isArray(annual.rows)||annual.rows.length!==365||
+   typeof readPinned!=="function")
   fail("UNTRUSTED_2026_CENSUS");
  const sources=new Map(inventory.sourceFiles.map(x=>[x.path,x]));
  if(sources.size!==1049)fail("PINNED_MANIFEST_DUPLICATES");
@@ -106,7 +119,9 @@ export async function group2026PregospelHolds({closeout,inventory,readPinned}={}
  if(!Array.isArray(missing)||missing.length!==5||
    missing.reduce((n,x)=>n+x.dates.length,0)!==15)fail("FIVE_GAP_SCOPE_DRIFT");
  const missingMap=new Map(missing.map(x=>[x.sourcePath,new Set(x.dates)]));
- const groups=new Map(),sourceRows=[],seenDates=new Set(),seenPaths=new Set();
+ const annualMap=new Map(annual.rows.map(r=>[r.date,r]));
+ if(annualMap.size!==365)fail("ANNUAL_SELECTED_DATES_DUPLICATED");
+ const groups=new Map(),latinClusters=new Map(),sourceRows=[],seenDates=new Set(),seenPaths=new Set();
  for(const x of closeout.preGospelSourceOwnerQueue){
   if(!pathRe.test(x.sourcePath)||seenPaths.has(x.sourcePath)||
     !Array.isArray(x.dates)||!x.dates.length||
@@ -117,6 +132,24 @@ export async function group2026PregospelHolds({closeout,inventory,readPinned}={}
    if(!/^2026-\d{2}-\d{2}$/.test(date)||seenDates.has(date))
     fail("DUPLICATE_OR_INVALID_HOLD_DATE");
    seenDates.add(date);
+  }
+  for(const date of x.dates){
+   const selected=annualMap.get(date);
+   if(selected?.sourcePath!==x.sourcePath||
+      selected.status!=="SOURCE_MATCHED_FOR_REVIEW")
+    fail("HOLD_NOT_ACTUAL_2026_SELECTED_FORMULARY");
+   const latin=latinKey(selected.selectedGradualLatin);
+   if(latin.length<20)fail("MISSING_COMPLETE_SELECTED_LATIN");
+   const fingerprint=createHash("sha256").update(latin).digest("hex");
+   const g=latinClusters.get(fingerprint)??{
+    fullLatinFingerprint:fingerprint,normalizedWordCount:latin.split(" ").length,
+    latinPreview:latin.split(" ").slice(0,13).join(" "),
+    dateCount:0,dates:[],sourcePaths:new Set(),
+    status:"EXACT_SELECTED_LATIN_REUSE_ONLY_ORIGINAL_OWNER_AND_MELODY_UNVERIFIED",
+    sourceOwnershipCertified:false,musicalIdentityCertified:false,
+    GregorianScoreApproved:false};
+   g.dateCount++;g.dates.push(date);g.sourcePaths.add(x.sourcePath);
+   latinClusters.set(fingerprint,g);
   }
   const absent=!sources.has(x.sourcePath),prior=missingMap.get(x.sourcePath);
   if(absent!==Boolean(prior))fail("SOURCE_GAP_NOT_IN_CANONICAL_FIVE");
@@ -154,6 +187,13 @@ export async function group2026PregospelHolds({closeout,inventory,readPinned}={}
  })).sort((a,b)=>b.datedHolds-a.datedHolds||
    a.groupKey.localeCompare(b.groupKey));
  if(grouped.reduce((n,x)=>n+x.datedHolds,0)!==128)fail("GROUPS_LOST_OCCURRENCES");
+ const exactLatinGroups=[...latinClusters.values()].map(g=>({
+  ...g,dates:g.dates.sort(),sourcePaths:[...g.sourcePaths].sort(),
+  distinctSourcePaths:g.sourcePaths.size
+ })).sort((a,b)=>b.dateCount-a.dateCount||
+   a.fullLatinFingerprint.localeCompare(b.fullLatinFingerprint));
+ if(exactLatinGroups.reduce((n,x)=>n+x.dateCount,0)!==128)
+  fail("EXACT_TEXT_CLUSTER_CENSUS_CHANGED");
  const overlapping=sourceRows.filter(x=>!x.pinnedSourceExists);
  const overlappingDates=overlapping.reduce((n,x)=>n+x.datedHolds,0);
  return {
@@ -168,10 +208,13 @@ export async function group2026PregospelHolds({closeout,inventory,readPinned}={}
    previouslyDispositionedMissingSourcePaths:overlapping.length,
    previouslyDispositionedMissingPathDatedHolds:overlappingDates,
    independentCandidateGroupings:grouped.length-overlapping.length,
+   exactFullSelectedLatinReviewClusters:exactLatinGroups.length,
+   datesInRepeatedFullLatinClusters:exactLatinGroups.filter(x=>x.dateCount>1)
+     .reduce((n,x)=>n+x.dateCount,0),
    approvedSourceAliases:0,approvedGregorianProperScores:0},
-  groups:grouped,sourceRows,
+  groups:grouped,exactFullSelectedLatinGroups:exactLatinGroups,sourceRows,
   otherRoleExceptions:closeout.separateRoleHolds??[],
-  warning:"Same 15 missing-path dates already occur in the five-family source-gap review; they must not be added as separate new missing Gregorian chants. Section and RULE pointers are research classification only.",
+  warning:"Same 15 missing-path dates already occur in the five-family source-gap review. Identical complete normalized Latin groups are for review scheduling ONLY; identical words do not establish chant setting, musical identity, source owner or public approval. Section and RULE pointers are likewise research classification only.",
   publication:{publicScore:false,sourceAliasApproved:false,
    printed1961PitchNeumeUnderlayCertified:false,
    readerRuntimeChanges:false}
@@ -184,6 +227,7 @@ const load=async path=>JSON.parse(await readFile(path,"utf8"));
 if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){
  const closeout=await load(join(dir,"2026-schola-closeout-source-exceptions.json"));
  const inventory=await load(join(root,"data/research/mass-music-1962-pinned-full-source-universe.v1.json"));
+ const annual=await load(join(dir,"2026-selected-gabc-coverage.json"));
  const map=new Map(inventory.sourceFiles.map(x=>[x.path,x]));
  const cache=new Map(),base=join(root,".cache","schola-pinned-1962",PIN);
  async function fetchPinned(path){
@@ -197,7 +241,7 @@ if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){
   })());
   return cache.get(path);
  }
- const out=await group2026PregospelHolds({closeout,inventory,readPinned:fetchPinned});
+ const out=await group2026PregospelHolds({closeout,inventory,annual,readPinned:fetchPinned});
  await mkdir(dir,{recursive:true});
  await writeFile(join(dir,"2026-schola-pregospel-original-owner-clusters.json"),
   JSON.stringify(out,null,2)+"\n");
@@ -205,6 +249,16 @@ if(process.argv[1]&&resolve(process.argv[1])===fileURLToPath(import.meta.url)){
   "Exact 128 dated holds in 115 distinct selected source paths. ",
   "Grouping is by explicitly traceable pinned source-section owners or scoped rule candidates, not by chant title.",
   "No automatic source alias, reader mutation or musical approval.","",
+  "## Exact complete selected-Latin reuse (research scheduling only)","",
+  "Full-text groups: "+out.counts.exactFullSelectedLatinReviewClusters+
+   "; dated holds in repeated-text groups: "+
+   out.counts.datesInRepeatedFullLatinClusters,
+  "| Latin preview | Dates | Distinct selected paths | Status |",
+  "|---|---:|---:|---|",
+  ...out.exactFullSelectedLatinGroups.map(g=>"| "+
+   g.latinPreview+" | "+g.dateCount+" | "+g.distinctSourcePaths+
+   " | TEXT ONLY — original melody and source unverified |"),
+  "","## Pinned section-owner investigation","",
   "| Owner review group | Dates | Selected paths | Status |",
   "|---|---:|---:|---|",
   ...out.groups.map(g=>"| "+g.groupKey+" | "+g.datedHolds+" | "+g.distinctSelectedSourcePaths+" | "+g.triageStatus+" |"),
