@@ -133,7 +133,7 @@ assert.equal(diocesanQualityByGroup.get("RG-2ACA16F334CA").operator_scope,
 const stMonica=world.find(x=>x.physical_group_id==="RG-3235F2E6494F");
 assert.ok(stMonica?.map_publishable);
 assert.equal(stMonica.geo.lat,34.02459);
-assert.equal(stMonica.geo.lng,-76.10151);
+assert.equal(stMonica.geo.lng,-84.10151);
 assert.equal(stMonica.geo.source_ref,"osm:way:392483318");
 assert.equal(stMonica.geo.review_scope,"CATHOLIC_PARISH_CHURCH_BUILDING_NOT_ENTRANCE");
 const raritanGate=diocesanQualityByGroup.get("RG-18659A3C6ECE");
