@@ -193,30 +193,56 @@ export function repair1962AprilPaschalProper(data,{
    {introit,offertory,communion},
    "EXACT_SANCTI_04_14_SAINT_PROPER_PASCHAL_SECTION_SELECTION");
  }
- if(!latinSourceStillDefective(data,rule))return null;
+ if(!latinSourceStillDefective(data,rule)){
+  console.log("MR62_APRIL_SOURCE_GUARD",calendarDate,
+    Object.fromEntries(Object.entries(rule.originalStarts).map(([k,v])=>
+      [k,{expected:v,actual:String(data[k]?.lat??"").slice(0,80),
+      match:String(data[k]?.lat??"").startsWith(v)}])));
+  return null;
+ }
  const newSections={};
  for(const [key,donor] of Object.entries(rule.fields)){
   if(key==="gradual")continue;
   const raw=sourceText(donor);
   const trilingualRaw=key==="postcommunion"?replaceName(raw):raw;
   const val=trilingual(trilingualRaw,normalizeRows);
-  if(!val)return null;
+  if(!val){console.log("MR62_APRIL_SOURCE_DONOR_HOLD",calendarDate,key,{
+   rawPresent:Boolean(raw),nameSubstitution:Boolean(trilingualRaw),
+   laRows:trilingualRaw?.la?.length,enRows:trilingualRaw?.en?.length,
+   frRows:trilingualRaw?.fr?.length});
+   return null;
+  }
   newSections[key]=val;
  }
  const donorGraduale=sourceText(rule.fields.gradual);
  const parts=paschalTwoAlleluias(donorGraduale,normalizeRows,
   "Commune/C2p");
- if(!parts)return null;
+ if(!parts){console.log("MR62_APRIL_SOURCE_CHANT_HOLD",calendarDate,
+  Object.fromEntries(["lat","en","fr"].map(k=>[k,donorGraduale?.[k]?.slice(0,7)])));
+  return null;
+ }
  // Hard stop: independent saint-specific Latin must still be present.
  if(calendarDate==="2026-04-13"){
   if(!String(data.gospel?.lat).includes("Luc 14:26-33")||
      !String(data.collect?.lat).includes("Hermenegíldum")||
-     !String(data.secret?.lat).includes("Munéribus nostris"))return null;
+     !String(data.secret?.lat).includes("Munéribus nostris")){
+      console.log("MR62_APRIL_SAINT_PROPER_HOLD",calendarDate,{
+        gospel:String(data.gospel?.lat).includes("Luc 14:26-33"),
+        collect:String(data.collect?.lat).includes("Hermenegíldum"),
+        secret:String(data.secret?.lat).includes("Munéribus nostris")});
+     return null;
+    }
  }
  if(calendarDate==="2026-04-29"){
   if(!String(data.epistle?.lat).includes("2 Tim 2:8-10")||
      !String(data.collect?.lat).includes("Petri Mártyris")||
-     !String(data.secret?.lat).includes("propugnatóres fídei"))return null;
+     !String(data.secret?.lat).includes("propugnatóres fídei")){
+    console.log("MR62_APRIL_SAINT_PROPER_HOLD",calendarDate,{
+      epistle:String(data.epistle?.lat).includes("2 Tim 2:8-10"),
+      collect:String(data.collect?.lat).includes("Petri Mártyris"),
+      secret:String(data.secret?.lat).includes("propugnatóres fídei")});
+    return null;
+   }
  }
  if(newSections.postcommunion)
   newSections.postcommunions=Object.freeze([newSections.postcommunion]);
