@@ -1,10 +1,11 @@
-// R1/R2/R3 approved CL2 illustrative discovery positions: no GPS-coordinate navigation,
+// R1/R2/R3/R4 approved CL2 illustrative discovery positions: no GPS-coordinate navigation,
 // no venue identity merges and no current Mass or ecclesial status inferred.
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS} from "../src/find/cl2-illustrative-locality-pins.js";
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R2} from "../src/find/cl2-illustrative-locality-pins-r2.js";
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R3} from "../src/find/cl2-illustrative-locality-pins-r3.js";
+import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R4} from "../src/find/cl2-illustrative-locality-pins-r4.js";
 import {validateCL2PhysicalIndex,projectCL2PhysicalDirectory} from "../src/find/cl2-physical-directory.js";
 import {projectPreliminaryR49,projectPublishedProvisionalMassSites} from "../src/find/preliminary-directory-r49.js";
 import {renderTlmChurchProfile} from "../src/find/tlm-church-profile.js";
@@ -124,6 +125,45 @@ for(const [id,pin] of r3){
   assert.ok(!site.actions[0].url.includes(String(pin.lat)+","+String(pin.lng)));
  }else assert.equal(site.actions.length,0,"Site source point must not be promoted to GPS directions");
 }
+const r4=Object.entries(CL2_ILLUSTRATIVE_LOCALITY_PINS_R4);
+assert.equal(r4.length,8,"R4 must contain exactly 8 owner-approved, Excel-reconciled places");
+assert.equal(new Set(r4.map(([id])=>id)).size,8);
+for(const [id,pin] of r4){
+ const frozen=origins.get(id),site=items.get(id);
+ assert.ok(frozen&&site,"R4 must match a frozen CL2 site: "+id);
+ assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS[id]&&!CL2_ILLUSTRATIVE_LOCALITY_PINS_R2[id]&&!CL2_ILLUSTRATIVE_LOCALITY_PINS_R3[id],
+  "No R4 site may overwrite R1/R2/R3 geometry: "+id);
+ assert.ok(frozen[1].includes(pin.sourceId)&&frozen[2]===pin.name&&frozen[3]===pin.country);
+ assert.ok(String(frozen[4]).includes(pin.addressNeedle));
+ assert.ok(Number.isFinite(pin.lat)&&Math.abs(pin.lat)<=90&&Number.isFinite(pin.lng)&&Math.abs(pin.lng)<=180);
+ assert.ok(pin.sourceRef.startsWith("independent:r4-illustrative-"));
+ assert.ok(pin.sourceUrl.startsWith("https://")&&pin.evidence.length>=2&&pin.evidence.every(x=>x.startsWith("https://")));
+ assert.equal(site.map_publishable,true);
+ assert.equal(site.map_state,"PROVISIONAL");
+ assert.equal(site.geo.lat,pin.lat);assert.equal(site.geo.lng,pin.lng);
+ assert.equal(site.geo.precision,pin.precision);
+ assert.equal(site.geo.approximate,true);
+ assert.equal(site.geo.source_ref,pin.sourceRef);
+ assert.match(site.status,/MASS UNVERIFIED/);
+ assert.equal(site.affiliation_scope,"SOURCE_LABEL_ONLY");
+ assert.equal(site.sections.length,0);
+ assert.equal(site.celebration_evidence,undefined);
+ if(pin.precision==="locality"){
+  assert.match(site.geo.review_scope,/ILLUSTRATIVE_LOCALITY_POINT_NOT_WORSHIP_BUILDING_NOT_ENTRANCE/);
+  assert.equal(site.actions.length,1);
+  const action=site.actions[0],url=new URL(action.url);
+  assert.equal(action.label,"Search location");
+  assert.equal(url.hostname,"www.google.com");
+  assert.equal(url.pathname,"/maps/search/");
+  assert.ok(url.searchParams.get("query").includes(site.title));
+  assert.ok(!action.url.includes("/maps/dir/"));
+  assert.ok(!action.url.includes(String(pin.lat)+","+String(pin.lng)));
+ }else{
+  assert.equal(id,"RG-FFAAC62B0A2D","Only Baladou has independent approximate named-house geometry");
+  assert.equal(site.geo.review_scope,"REVIEWED_NAMED_RELIGIOUS_HOUSE_SITE_NOT_VISITOR_ENTRANCE");
+  assert.equal(site.actions.length,0,"Approximate named-house marker is never an entrance route");
+ }
+}
 for(const r of withheld){
  assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS[r.cl2_anchor],"Exact-site and held profiles cannot be assigned a locality fallback");
  const item=items.get(r.cl2_anchor);
@@ -139,6 +179,13 @@ for(const r of withheld){
   assert.equal(r.status,"NO_SAFE_LOCALITY_CANDIDATE",
    "R3 may only publish formerly unresearched R1 locality candidates");
   const pin=CL2_ILLUSTRATIVE_LOCALITY_PINS_R3[r.cl2_anchor];
+  assert.ok(item?.map_publishable&&item.geo?.approximate);
+  assert.equal(item.geo.lat,pin.lat);assert.equal(item.geo.lng,pin.lng);
+  assert.ok(pin.sourceUrl.startsWith("https://"));
+ }else if(CL2_ILLUSTRATIVE_LOCALITY_PINS_R4[r.cl2_anchor]){
+  assert.equal(r.status,"NO_SAFE_LOCALITY_CANDIDATE",
+   "Only a formerly R1 unresearched geography candidate may gain R4 coordinate");
+  const pin=CL2_ILLUSTRATIVE_LOCALITY_PINS_R4[r.cl2_anchor];
   assert.ok(item?.map_publishable&&item.geo?.approximate);
   assert.equal(item.geo.lat,pin.lat);assert.equal(item.geo.lng,pin.lng);
   assert.ok(pin.sourceUrl.startsWith("https://"));
@@ -163,11 +210,11 @@ assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS["RG-2C84B50B3667"],"Bootle closed-site
 assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS["RG-0DCEDA190517"],"Reading church identity hold");
 assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS["RG-B65-77C86C7B3EC4"],"Cagliari Santa Croce potential alias already mapped");
 assert.equal(world.length,2582);
-assert.equal(world.filter(x=>x.map_publishable).length,2498);
-assert.equal(world.filter(x=>!x.map_publishable).length,84);
+assert.equal(world.filter(x=>x.map_publishable).length,2506);
+assert.equal(world.filter(x=>!x.map_publishable).length,76);
 const first=items.get(pins[0][0]);
 assert.match(renderTlmChurchProfile(first,"en"),/Illustrative town marker ONLY/);
 assert.match(renderTlmChurchProfile(first,"en"),/Find church by name\/address on Google Maps/);
 assert.match(renderTlmChurchProfile(first,"fr"),/Repère indicatif de la commune UNIQUEMENT/);
 assert.match(renderTlmChurchProfile(first,"fr"),/Rechercher l’église par nom\/adresse sur Google Maps/);
-console.log("PASS CL2 illustrative localities: 158 R1 plus 93 R2 plus 91 R3 Excel-approved, 84 held/address-only; GPS routing blocked; frozen 2,582 identities and CL27 scope preserved");
+console.log("PASS CL2 illustrative localities: 158 R1 plus 93 R2 plus 91 R3 plus 8 R4 Excel-approved, 76 held/address-only; GPS routing blocked; frozen 2,582 identities and CL27 scope preserved");
