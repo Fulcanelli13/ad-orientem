@@ -1,7 +1,8 @@
-// Four 1961 printed-page-matched All Saints GABC transcriptions from the
+// Five source-identified All Saints GABC transcriptions from the
 // existing CC0 1195-record archive. This is opt-in reference notation, NOT
-// musical editorial approval. The 1961 All Saints Alleluia on pp. 648-649
-// is deliberately held: archive GREGOBASE-1237 cites p. [114] instead.
+// musical editorial approval. Archive GREGOBASE-1237 cites only p.[114], but
+// its GregoBase source page and printed 1961 Graduale index cite both p.648
+// and p.[114] for the SAME Mode VIII Venite ad me Alleluia.
 export const ALL_SAINTS_REFERENCE_SCORES=Object.freeze([
   {
     "key": "INTROIT",
@@ -50,16 +51,35 @@ export const ALL_SAINTS_REFERENCE_SCORES=Object.freeze([
     "sourceUrl": "https://gregobase.selapa.net/chant.php?id=345",
     "gabc": "(c4) BE(h)á(h)ti(hg) mun(hj)do(ji) cor(hi)de,(h.) (;) * quó(h)ni(g)am(hvGE) i(fgh)psi(g.) (,) De(hvGF')um(g) vi(f_e)dé(de!fvED'e)bunt :(e[ll:1]d..) (:) be(df)á(fef)ti(d!ewf) pa(fd)cí(fh)fi(gf)ci,(fg!hvhg.) (;) quó(gh)ni(gf)am(f) fí(gh)li(h)i(h) De(j)i(h) vo(h)ca(h_g)bún(fg!hvG~F~)tur :(gf..) (:) be(f!hj)á(jkl)ti(k_[hl:1]j) (,) qui(j') per(j)se(h')cu(j)ti(g')ó(h)nem(g') pa(h)ti(g')ún(h)tur(j.h!iwji.) (,) pro(g)pter(hggf) ju(gh)stí(f)ti(fg!hvGF'g)am,(gf..) (:) quó(h)ni(g)am(hgh) i(f)psó(gfg)rum(fe) est(dfddc.) (,) re(f.egwhgh)gnum(gh) cae(f_e)ló(de!fvED'e)rum.(e[ll:1]d..) (::)",
     "archivePath": "data/mass/chant-corpus/gr1961-proper-002.json"
+  },
+  {
+    "key": "ALLELUIA",
+    "id": "GREGOBASE-1237",
+    "sourceId": 1237,
+    "part": "al",
+    "incipit": "Venite ad me",
+    "mode": "8",
+    "folio": "648, [114]",
+    "sourceArchivePage": "[114]",
+    "sha256": "ef1b9a62bf4ad8a56665b1c0047897f6b2cbdbaf78d146ae839568a1b11c5696",
+    "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1237",
+    "gabc": "(c3) AL(ee[ll:1]d~)le(ff)lú(efe/hiHF'gffe~){ia}.(e.) *(;) <i>ij.</i>(de!f!gwhe./de!f!gwhe'fvED.) (;) (df!hi//hjijvHF.1) (,) (ehf___!gwh'!ivHF'EDee) (,) (fh//gh'iHF'EDee//fe/hhe.) (::) <sp>V/</sp>. Ve(e)ní(efe/hiHF'gffe)te(e) ad(d/efd/ee) me,(d.) (;) o(df!hv//jhi)mnes(i.) (,) qui(h) la(j)bo(i)rá(jkJI'i//hji/jkii)(,)(hiHF'Ehv.gh'!ivHF'EDee)(,)(fh//gh'iHF'EDee)(,)(hji/jkJI'i//hji/jki)tis,(i.) (;) et(hjh/ii) o(e)ne(f!gwh)rá(h)ti(hhhvGF) e(fhe/fe)stis :(e.) (:) et(e) e(ef)go(e) *() re(e)fí(ef)ci(e[ll:1]d)am(df!hiHF'gffe~) vos.(e.) (;) (de!f!gwhe./de!f!gwhe'fvED.) (;) (df!hi//hjijvHF.1) (,) (ehf___!gwh'!ivHF'EDee) (,) (fh//gh'iHF'EDee//fe/hhe.) (::)",
+    "archivePath": "data/mass/chant-corpus/gr1961-proper-006.json"
   }
 ].map(score=>Object.freeze({
  ...score,sourceStatus:"ARCHIVED_REFERENCE_TRANSCRIPTION_NOT_MUSICALLY_CERTIFIED",
  publicScoreApproved:false,
  gabc:"name: "+score.incipit+";\noffice-part: "+score.part+";\nsource: Graduale Romanum 1961 p. "+score.folio+";\n%%\n"+score.gabc
 })));
-export const ALL_SAINTS_ALLELUIA_HOLD=Object.freeze({
+export const ALL_SAINTS_ALLELUIA_SOURCE_RESOLUTION=Object.freeze({
  date:"2026-11-01",sourcePath:"Sancti/11-01",key:"ALLELUIA",
- incipit:"Venite ad me",expectedPrintedPages:"648-649",
- excludedScoreId:"GREGOBASE-1237",excludedPrintedPage:"[114]",
- reason:"UNMATCHED_PRINTED_CHANT_MELODY_NO_AUTOMATIC_SUBSTITUTION",
+ scoreId:"GREGOBASE-1237",incipit:"Venite ad me",mode:"8",
+ expectedPrintedPages:"648-649",sourceIndexPages:Object.freeze(["648","[114]"]),
+ archivePage:"[114]",archiveSha256:"ef1b9a62bf4ad8a56665b1c0047897f6b2cbdbaf78d146ae839568a1b11c5696",
+ evidence:Object.freeze([
+  "https://gregobase.selapa.net/chant.php?id=1237",
+  "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=1237"
+ ]),
+ status:"IDENTITY_RESOLVED_REFERENCE_NOT_MUSICALLY_CERTIFIED",
  published:false
 });
