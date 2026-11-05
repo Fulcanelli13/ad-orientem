@@ -49,7 +49,7 @@ export function claudeHolyCard({id,p,face="en",vernacular="en",esc,flipped=false
  if(!language)return "";
  const beats=essentialHolyCardParts(id,language,p[language])||[];
  const latinBeats=bilingual?essentialHolyCardParts(id,"la",p.la)||[]:[];
- const latinIncipit=incipit(p),title=essentialHolyCardDisplayTitle(id,p,(language==="fr"||bilingual&&vernacular==="fr")?"fr":"en");
+ const latinIncipit=incipit(p),title=essentialHolyCardDisplayTitle(id,p,vernacular==="fr"?"fr":"en");
  const paragraphs=beats.map((part,i)=>{
   const text=part.text.trim(),initial=i===0&&text?'<span class="aoClaudeHolyInitial">'+esc(text.charAt(0))+'</span>':'';
   const body=i===0?text.slice(1):text;
