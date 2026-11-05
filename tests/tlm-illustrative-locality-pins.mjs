@@ -807,11 +807,11 @@ assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS["RG-2C84B50B3667"],"Bootle closed-site
 assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS["RG-0DCEDA190517"],"Reading church identity hold");
 assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS["RG-B65-77C86C7B3EC4"],"Cagliari Santa Croce potential alias already mapped");
 assert.equal(world.length,2582);
-assert.equal(world.filter(x=>x.map_publishable).length,2552);
-assert.equal(world.filter(x=>!x.map_publishable).length,30);
+assert.equal(world.filter(x=>x.map_publishable).length,2553);
+assert.equal(world.filter(x=>!x.map_publishable).length,29);
 const first=items.get(pins[0][0]);
 assert.match(renderTlmChurchProfile(first,"en"),/Illustrative town marker ONLY/);
 assert.match(renderTlmChurchProfile(first,"en"),/Find church by name\/address on Google Maps/);
 assert.match(renderTlmChurchProfile(first,"fr"),/Repère indicatif de la commune UNIQUEMENT/);
 assert.match(renderTlmChurchProfile(first,"fr"),/Rechercher l’église par nom\/adresse sur Google Maps/);
-console.log("PASS CL2 illustrative localities: 158 R1 plus 93 R2 plus 91 R3 plus 8 R4 plus 4 R5 plus 6 R6 Excel-approved, 4 R7 and 8 R8 and 4 R9 and 6 R10 and 8 R11 and 2 R12 and 2 R13 and 1 R14 and 1 R15 Excel-approved, 30 held/address-only; GPS routing blocked; frozen 2,582 identities and CL27 scope preserved");
+console.log("PASS CL2 illustrative localities: 158 R1 plus 93 R2 plus 91 R3 plus 8 R4 plus 4 R5 plus 6 R6 Excel-approved, 4 R7 and 8 R8 and 4 R9 and 6 R10 and 8 R11 and 2 R12 and 2 R13 and 1 R14 and 1 R15 and 1 R16 Excel-approved, 29 held/address-only; GPS routing blocked; frozen 2,582 identities and CL27 scope preserved");
