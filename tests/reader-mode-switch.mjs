@@ -446,6 +446,23 @@ const dismissIndex=nuptialLive.presentationModel.cards.findLastIndex(c=>
 assert.deepEqual(nuptialIds.slice(paterIndex+1,paterIndex+3),
   ["AO.NUPTIAL.01","AO.NUPTIAL.02"]);
 assert.equal(nuptialIds[dismissIndex+1],"AO.NUPTIAL.03");
+for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+  const variant=buildReaderModeModels({prepared:{...nuptialPrepared,
+    session:{...nuptialPrepared.session,
+      resolvedMass:{...nuptialPrepared.session.resolvedMass,form}}},
+    data,mode:"LIVE"});
+  assert.equal(variant.sourceModel.totalCards,42,form+" Nuptial source");
+  assert.equal(variant.presentationModel.totalCards,68,form+" Nuptial LIVE");
+  assert.deepEqual(variant.presentationModel.cards.flatMap(c=>c.paragraphs.map(p=>p.id)),
+    variant.sourceModel.cards.flatMap(c=>c.paragraphs.map(p=>p.id)),
+    form+" Nuptial source content drift");
+  assert.deepEqual(variant.presentationModel.cards.filter(c=>c.nuptialInsertion).map(c=>c.sectionId),
+    ["AO.NUPTIAL.01","AO.NUPTIAL.02","AO.NUPTIAL.03"]);
+  if(form==="LOW"){
+    assert.ok(variant.presentationModel.cards.some(c=>c.title==="Gloria · Opening"));
+    assert.equal(variant.presentationModel.sourceOnlyCueRegister,null);
+  }
+}
 const insertion=nuptialLive.presentationModel.cards.find(card=>card.sectionId==="AO.NUPTIAL.02");
 assert.ok(insertion);
 const insertionAnchor=captureReaderModeAnchor(insertion);
