@@ -9,6 +9,7 @@ import {projectPreliminaryR49,projectPublishedProvisionalMassSites,filterPrelimi
  from "../src/find/preliminary-directory-r49.js";
 import {validateCL2PhysicalIndex,projectCL2PhysicalDirectory}
  from "../src/find/cl2-physical-directory.js";
+import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R3} from "../src/find/cl2-illustrative-locality-pins-r3.js";
 import {renderDirectoryVenueCard} from "../src/find/directory-card.js";
 import {buildExploreViewModel,renderExploreToString} from "../src/find/explore-presentation.js";
 const read=path=>JSON.parse(readFileSync(new URL("../"+path,import.meta.url),"utf8"));
@@ -27,7 +28,7 @@ const world=projectCL2PhysicalDirectory(published,index,{mapAffiliation:reported
 assert.equal(world.length,2582,"2,579 distinct CL2 physical sites + 3 published external additions");
 assert.equal(new Set(world.map(item=>item.item_id)).size,2582);
 assert.equal(new Set(world.filter(x=>x.physical_group_id).map(x=>x.physical_group_id)).size,2579);
-assert.equal(world.filter(x=>x.map_publishable).length,2407);
+assert.equal(world.filter(x=>x.map_publishable).length,2498);
 const diocesanQuality=read("data/directory/research/diocesan-coordinate-quality-audit-20261031.v1.json");
 assert.equal(diocesanQuality.schema,"AO_DIOCESAN_COORDINATE_QUALITY_AUDIT_V1");
 assert.equal(diocesanQuality.records.length,587);
@@ -60,7 +61,15 @@ for(const row of diocesanQuality.records){
   assert.equal(item.geo.lng,row.lng);
   assert.equal(item.geo.source_ref,row.coordinate_ref);
  }
- if(row.lat===null)assert.equal(item.map_publishable,false);
+ if(row.lat===null){
+  const newlyApproved=CL2_ILLUSTRATIVE_LOCALITY_PINS_R3[row.physical_group_id];
+  if(newlyApproved){
+   assert.equal(item.map_publishable,true,"Only explicitly approved R3 may turn an older missing-coordinate audit record into a discovery pin");
+   assert.equal(item.geo.approximate,true);
+   assert.equal(item.geo.lat,newlyApproved.lat);assert.equal(item.geo.lng,newlyApproved.lng);
+   assert.ok(item.geo.source_url.startsWith("https://"));
+  }else assert.equal(item.map_publishable,false,"Unapproved historic coordinate blockers must stay unmapped");
+ }
 }
 
 // The external Photo Finder must consume exactly the approved runtime site
@@ -239,7 +248,7 @@ const additional=world.filter(x=>x.physical_site_source==="CL2_MASTER"&&
  !published.some(b=>b.source_id===x.source_id));
 assert.equal(additional.length,735);
 const newSites=additional.filter(x=>!x.map_publishable);
-assert.equal(newSites.length,175);
+assert.equal(newSites.length,84);
 assert.ok(newSites.every(x=>x.map_state==="ADDRESS_ONLY"&&x.geo===null&&
  x.sections.length===0&&x.actions.length===0&&x.source_ids.length>=1));
 assert.ok(newSites.every(x=>/MASS UNVERIFIED/.test(x.status)));
@@ -255,8 +264,12 @@ const diocesanGroupIds=new Set(index.records.filter(x=>x[5]==="Diocesan").map(x=
 assert.equal(diocesanGroupIds.size,584);
 const diocesan=world.filter(x=>diocesanGroupIds.has(x.physical_group_id));
 assert.equal(diocesan.length,584);
-assert.equal(diocesan.filter(x=>x.map_publishable).length,580);
-assert.equal(diocesan.filter(x=>!x.map_publishable).length,4);
+const newlyApprovedDiocesan=Object.keys(CL2_ILLUSTRATIVE_LOCALITY_PINS_R3)
+ .filter(id=>diocesanGroupIds.has(id));
+assert.equal(newlyApprovedDiocesan.length,1,
+ "Only the one explicitly owner-approved R3 diocesan record may supersede the older coordinate inventory");
+assert.equal(diocesan.filter(x=>x.map_publishable).length,580+newlyApprovedDiocesan.length);
+assert.equal(diocesan.filter(x=>!x.map_publishable).length,4-newlyApprovedDiocesan.length);
 for(const [group] of [["RG-14C05BCC015B"],["RG-3B5F15EA02ED"],["RG-DF3BA1A9A39C"],["RG-3EE76EFE0DC3"],["RG-270210292F78"],["RG-AA00B3C74515"],["RG-77CC30491D1E"],["RG-769233567FB2"],["RG-A9687EEF16FC"],["RG-5A52F4C1379D"],["RG-B68-086D5372D517"],["RG-2CFE11950F95"],["RG-4E6E8B55676B"],["RG-EE22A08568B9"],["RG-48A5E9F09178"],["RG-1EE1D2C9B3EB"],["RG-DE5F8ED4E2F7"],["RG-322AA8195E65"],["RG-C7F25752659D"],["RG-4D09923C6B74"],["RG-8DC436A75526"],["RG-938EAA84BA0A"],["RG-A0933DE542C7"],["RG-8CB13769F987"],["RG-BBB3789ADB9A"],["RG-0BB62E04774C"],["RG-783CD50DD217"],["RG-04ED0DAE5D46"],["RG-13C11CB31E3F"],["RG-7E91D5FD0AC3"],["RG-D2CECBA0C364"],["RG-F03B6AF4FA24"],["RG-CC73C2CBD613"],["RG-B30F94A20F69"],["RG-C3F8A4083DC9"],["RG-D1C52ADC007B"],["RG-1EDB76F4B57B"],["RG-A768309560A6"],["RG-19BD1D3D4E73"],["RG-2577094CF7E4"],["RG-3E135A9E5C09"],["RG-AE6B9D48B695"],["RG-2181DD7D9F32"],["RG-97D731A26655"],["RG-261733295B4C"]]){
  const item=diocesan.find(x=>x.physical_group_id===group);
  assert.ok(item?.map_publishable,"Diocesan site must be pinned: "+group);
@@ -476,12 +489,12 @@ assert.equal(filterPreliminaryR49(world,{}).length,2582,
  "Unfiltered directory must include the worldwide corpus, not just R49");
 const vm=buildExploreViewModel({language:"en",lens:"tlm",items:world,view:"list",
  filters:{directoryGroup:"ALL",affiliations:[],query:""}});
-assert.equal(vm.mapped,2407);
-assert.equal(vm.addressOnly,175);
+assert.equal(vm.mapped,2498);
+assert.equal(vm.addressOnly,84);
 const html=renderExploreToString(vm);
 assert.match(html,/2,582|2582/);
-assert.match(html,/175/);
+assert.match(html,/84/);
 assert.match(html,/list only · no map pin/);
 assert.doesNotMatch(html,/735 address only/);
 assert.doesNotMatch(html,/2,579 mapped/);
-console.log("PASS CL2 worldwide directory: 2,579 unique physical sites, 35 R49 aliases absorbed, 175 list-only, 158 R1 + 93 R2 illustrative locality markers plus existing reviewed site markers, 3 separate published additions");
+console.log("PASS CL2 worldwide directory: 2,579 physical sites, 35 R49 aliases absorbed, 84 list-only, 158 R1 + 93 R2 + 91 approved R3 illustrative markers plus reviewed sites, 3 published additions");
