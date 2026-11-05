@@ -113,3 +113,27 @@ assert.equal(audit.summary.newPrayersImported,0);
 assert.equal(audit.summary.newPublicReaderRoutesAdded,0);
 assert.equal(audit.summary.uniqueGlobalPublishedPrayers,"NOT_ESTABLISHED_FROM_OVERLAPPING_ACQUISITION_AND_PUBLISHED_LANES");
 console.log("Prayer Ultra Master PASS: 97/97 frozen acquisition IDs, 10 existing file owners, 36 narrative owner references, 51 unmapped; B31 dispositions unchanged; 48/16/39 separate from 72 novena day print proofs; two P0 source holds remain, no new text certification.");
+
+
+// Subsequent owner-code reconciliation is additive; 29 October B31 dispositions remain frozen.
+const followUp=audit.subsequentOwnerCodeReview20261105;
+assert.equal(followUp.reviewedExistingOwnerRows,25);
+assert.equal(followUp.noHistoricB31DispositionChanged,true);
+assert.equal(followUp.newEditionCertificates,0);
+assert.equal(followUp.newPublicationAuthorized,0);
+const reviewed=audit.records.filter(x=>x.ownerCodeReview20261105);
+assert.deepEqual(reviewed.map(x=>x.acquisitionId).sort(),audit.queuePolicy.ORIGINAL_OWNER_NOT_EXACT_EDITION.slice().sort());
+assert.deepEqual(Object.fromEntries([...new Set(reviewed.map(x=>x.ownerCodeReview20261105.coverage))].sort().map(k=>[k,reviewed.filter(x=>x.ownerCodeReview20261105.coverage===k).length])),followUp.coverageCounts);
+for(const row of reviewed){
+ const r=row.ownerCodeReview20261105;
+ assert.equal(row.b31Disposition,"OWNED_NOT_EXACTLY_CERTIFIED");
+ assert.ok(r.sourceAnchors.length>0&&r.finding&&r.evidenceScope.includes("STATIC"));
+ for(const key of ["exactCandidateTextCertified","originalPrintWitnessCertified","threeLanguageWitnessCertified","independentBrowserInteractionCertified","authorizesPublication"])
+  assert.equal(r[key],false,"Static code review must not issue a certificate: "+row.acquisitionId+" "+key);
+ for(const {path,needle} of r.sourceAnchors){
+  assert.ok(path.startsWith("src/pray/")&&!path.includes(".."),"Invalid owner path: "+path);
+  assert.ok(existsSync(resolve(root,path)),"Missing owner code file: "+path);
+  assert.ok(readFileSync(resolve(root,path),"utf8").includes(needle),"Code anchor disappeared: "+row.acquisitionId+" "+path+" "+needle);
+ }
+}
+console.log("Prayer owner-code review PASS: 25/25 static code owner assessments; "+JSON.stringify(followUp.coverageCounts)+"; no original-print, translation, UI or release certification.");
