@@ -54,8 +54,18 @@ assert.deepEqual(get(71,solemn),[4487]);
 assert.deepEqual(get(252,solemn),[4487]);
 assert.deepEqual(get(71,ferial),[]);
 assert.deepEqual(get(138,null),[]);
-assert.deepEqual(get(210,solemn),[]);
+assert.deepEqual(get(210,solemn),[7282],
+ "The final Pater noster response melody does not change for solemn tone");
+assert.deepEqual(get(210,ferial),[7282],
+ "The same response melody is retained in ferial tone");
+assert.deepEqual(get(210,null),[],
+ "Actual celebration tone context is still required for the source preview");
+assert.deepEqual(get(210,solemn,{form:"LOW"}),[]);
 assert.deepEqual(get(138,solemn,{form:"LOW"}),[]);
+const pater=PARTICIPATION_REFERENCE_SCORES.find(x=>x.sourceId===7282);
+assert.equal(pater.toneFamily,"COMMON_CLOSING_MELODY_SOLEMN_OR_FERIAL");
+assert.match(pater.toneAuthority.source,/paragraph 68/);
+assert.equal(pater.toneAuthority.printedScoreNoteParity,"PENDING");
 assert.deepEqual(get(138,solemn,{paragraph:{...p(138),primary:"Wrong response"}}),[]);
 const originalResponse=p(138);
 const bilingualResponse={...originalResponse,primary:"And with thy spirit.",
@@ -87,4 +97,4 @@ for(const [n,adj,sourceId,key,setting] of [
   resolvedMass:{...solemn,provenance:{...solemn.provenance,
    [key.toLowerCase()]:false}}}),[]);
 }
-console.log("PASS 13 original 1961 GABC phrases; verified source text and tone guards; no public publication");
+console.log("PASS 13 original 1961 GABC phrases incl. invariant Pater noster ending; bilingual and tone guards; no public publication");
