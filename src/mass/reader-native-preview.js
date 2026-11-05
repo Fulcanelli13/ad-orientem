@@ -456,10 +456,17 @@ export async function prepareNativeReaderPreview({
       plan?.normalLastGospel!==false) ||
     (preceding.length===0 && singleFollowing==="CORPUS_CHRISTI_PROCESSION" &&
       Boolean(loadedCorpusChristi) && plan?.blessingAllowed===false &&
-      plan?.normalLastGospel===false && plan?.dismissal==="BENEDICAMUS_DOMINO");
+      plan?.normalLastGospel===false && plan?.dismissal==="BENEDICAMUS_DOMINO") ||
+    (preceding.length===0 && singleFollowing==="HOLY_THURSDAY_POST" &&
+      Boolean(loadedHolyThursdayPost) && liveCapabilityModel.holyThursday===true &&
+      plan?.blessingAllowed===false && plan?.normalLastGospel===false &&
+      plan?.dismissal==="BENEDICAMUS_DOMINO");
+  const curatedSourceEligible=liveCapabilityModel.totalCards===39 ||
+    (liveCapabilityModel.holyThursday===true && liveCapabilityModel.credoOmitted===true &&
+      liveCapabilityModel.totalCards===(liveCapabilityModel.mandatumPresent===true?39:38));
   const curatedEligible=reviewCuratedCards===true &&
     plan?.kind==="MASS" &&
-    liveCapabilityModel.totalCards===39 &&
+    curatedSourceEligible &&
     ["LOW","SUNG"].includes(String(liveCapabilityModel.corpusFamily).toUpperCase()) &&
     // Eligibility is a property of the prepared Mass, not the initial mode:
     // a session may open in MISSAL and then switch to LIVE.
@@ -471,7 +478,7 @@ export async function prepareNativeReaderPreview({
   // models (>39 source sections) retain their separately sourced ownership.
   if(reviewCuratedCards===true && plan?.kind==="MASS" &&
      String(model.presentationMode).toUpperCase()==="LIVE" &&
-     liveCapabilityModel.totalCards===39 && !curatedEligible)
+     curatedSourceEligible && !curatedEligible)
     throw new Error("LIVE_65_CARD_PRESENTATION_REQUIRED");
   const curatedOrdinary=curatedEligible && String(model.presentationMode)==="LIVE"
     ? projectCuratedOrdinaryLiveCards(model):null;
