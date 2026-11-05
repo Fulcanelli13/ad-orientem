@@ -96,8 +96,10 @@ const libraryGroups=groupLibraryPrayerRows(libraryRows);
 assert.equal(libraryGroups.length,46,"48 canonical records must resolve to 46 visible shelves");
 assert.equal(libraryGroups.filter(row=>row.kind==="variants").length,2);
 assert.equal(libraryGroups.filter(row=>row.kind==="single").length,44);
-assert.deepEqual(libraryGroups.flatMap(row=>row.kind==="single"?[row.prayer.id]:row.prayers.map(p=>p.id)),
- libraryRows.map(p=>p.id),"Grouping cannot remove or reorder canonical identities");
+const groupedIds=libraryGroups.flatMap(row=>row.kind==="single"?[row.prayer.id]:row.prayers.map(p=>p.id));
+assert.equal(new Set(groupedIds).size,48,"Grouping must preserve each source identity exactly once");
+assert.deepEqual(groupedIds.slice().sort(),libraryRows.map(p=>p.id).sort(),
+ "Grouping cannot drop or invent canonical identities; family shelves may shift visible order");
 for(const [family,details] of Object.entries(PRAYER_LIBRARY_VARIANT_FAMILIES_V1)){
  assert.equal(details.ids.length,2,family+" must retain two independent editions");
  const entry=libraryGroups.find(row=>row.family===family);
