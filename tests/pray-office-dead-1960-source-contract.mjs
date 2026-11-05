@@ -78,4 +78,18 @@ assert.equal(registry.files.psalmLeafCount,psalms.files.length);
 const doors=readFileSync(resolve(root,"src/pray/prayer-design-pilot.js"),"utf8");
 assert.ok(!doors.includes('"pray.office_dead"'));
 assert.ok(!doors.includes('"pray.office_of_dead"'));
+const ultra=read("data/pray/prayer-ultra-master-97-source-owner-reconciliation-20261105.v1.json");
+assert.equal(ultra.records.length,97);
+const p0=ultra.records.find(x=>x.acquisitionId==="AO-AQ-055");
+assert.ok(p0&&p0.b31Disposition==="ROUTED_OTHER_MODULE");
+assert.equal(p0.sourceAcquisition20261105.sourceRegistry,"data/research/office-dead-1960/acquisition-registry.v1.json");
+assert.equal(p0.sourceAcquisition20261105.original1857RaccoltaTextCollated,false);
+assert.equal(p0.sourceAcquisition20261105.original1961BreviaryPhotoCollated,false);
+assert.equal(p0.sourceAcquisition20261105.newRouteReleased,false);
+assert.equal(ultra.subsequentOfficeDeadAcquisition20261105.all97AcquisitionIdsRetained,true);
+assert.equal(ultra.subsequentOfficeDeadAcquisition20261105.newPublicRoutes,0);
+assert.equal(ultra.subsequentOfficeDeadAcquisition20261105.printCertificates,0);
+const ghPages=readFileSync(resolve(root,".github/workflows/github-pages.yml"),"utf8");
+assert.ok(ghPages.includes("'!data/research/**'"),"Research-only source files must be excluded from GitHub Pages publishing triggers");
+
 console.log("Office of Dead P0 source PASS: six language-specific C9 / 11-02 source leaves, 18 Vespers psalm leaves, git blob SHA parity, MIT license; zero complete or public Offices.");
