@@ -2534,7 +2534,7 @@ function renderLibrary(){
   const p=P(LIB.open);if(!p){LIB.open=null;return renderLibrary()}
   if(PRAYER_READER_PILOT_ENABLED&&LORETO_SOURCE_IDS.includes(LIB.open)){
    const selected=LIB.language&&p[LIB.language]?LIB.language:(p[lang()]?lang():(['en','la','fr'].find(k=>p[k])||'en'));
-   return renderPilotLoreto({record:p,id:LIB.open,language:selected,group:PILOT_LORETO_GROUP,head,L,esc,sourceLine,libraryContextMarkup,backIcon:assetIcon('ao-ui-back')});
+   return renderPilotLoreto({record:p,id:LIB.open,language:selected,group:PILOT_LORETO_GROUP,head,L,esc,sourceLine,libraryContextMarkup});
   }
   const editorialCover=ESSENTIAL_HOLY_CARD_IDS_V1.includes(LIB.open)?"":prayerEditorialArtworkMarkup("COV-"+LIB.open,{className:"aoPrayerEditorialCardCover"});
   const holyIndex=ESSENTIAL_HOLY_CARD_IDS_V1.indexOf(LIB.open);
@@ -2545,7 +2545,7 @@ function renderLibrary(){
   const missing=['en','fr','la'].filter(k=>!p[k]),hasUi=!!p[lang()];
   const missingUi=!hasUi?callout(`${esc(L('No vernacular translation is available in the current UI language.','Aucune traduction vernaculaire n’est disponible dans la langue actuelle de l’interface.'))} ${esc(L('The available source text is shown without fabricating a substitute.','Le texte source disponible est affiché sans fabriquer de traduction de substitution.'))}`,'rubric'):'';
   const category=isFr()?(DATA.categories?.[p.category]?.fr||p.category):(DATA.categories?.[p.category]?.en||p.category),langs=['en','fr','la'].filter(k=>p[k]).map(k=>k.toUpperCase()).join(' · ');
-  return `${head(isFr()?(p.titleFr||p.title):p.title,L('Prayer Library','Livre de prières'))}<main class="aoP435930Body aoP435930LibraryReader${PRAYER_READER_PILOT_ENABLED?' aoReaderPilotSingle':''}" data-ao-library-card="single"><button class="aoP435930InlineBack" data-p435930-lib-back>${assetIcon('ao-ui-back')} ${esc(navStack.at(-1)==='family'&&familyId?(PRAYER_PILOT_ENABLED?resolvedPrayerPilotFamilies(L,prayFamilies())[familyId]:prayFamilies()[familyId])?.title:L('Prayer Library','Livre de prières'))}</button>${PRAYER_READER_PILOT_ENABLED?pilotFocusButton({L,esc}):''}${missingUi}${editorialCover}<section class="aoDevoCard" data-ao-devo-card="${esc(LIB.open)}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(isFr()?(p.titleFr||p.title):p.title)}">${prayerBlock(LIB.open,{scriptureContext:true})}</div></section>${holyFooter}${holyIndex>=0?"":libraryContextMarkup(p)}<div class="aoP435930Meta"><span>${esc(L('Category','Catégorie'))}: <b>${esc(category)}</b></span><span>${esc(L('Languages','Langues'))}: <b>${esc(langs||L('Source language only','Langue source seulement'))}</b></span>${missing.length?`<span>${esc(L('Not available','Non disponible'))}: <b>${missing.map(x=>x.toUpperCase()).join(' · ')}</b></span>`:''}</div></main>`
+  return `${head(isFr()?(p.titleFr||p.title):p.title,L('Prayer Library','Livre de prières'))}<main class="aoP435930Body aoP435930LibraryReader${PRAYER_READER_PILOT_ENABLED?' aoReaderPilotSingle':''}" data-ao-library-card="single">${PRAYER_READER_PILOT_ENABLED?pilotFocusButton({L,esc}):''}${missingUi}${editorialCover}<section class="aoDevoCard" data-ao-devo-card="${esc(LIB.open)}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(isFr()?(p.titleFr||p.title):p.title)}">${prayerBlock(LIB.open,{scriptureContext:true})}</div></section>${holyFooter}${holyIndex>=0?"":libraryContextMarkup(p)}<div class="aoP435930Meta"><span>${esc(L('Category','Catégorie'))}: <b>${esc(category)}</b></span><span>${esc(L('Languages','Langues'))}: <b>${esc(langs||L('Source language only','Langue source seulement'))}</b></span>${missing.length?`<span>${esc(L('Not available','Non disponible'))}: <b>${missing.map(x=>x.toUpperCase()).join(' · ')}</b></span>`:''}</div></main>`
  }
  if(LIB.cat==='essentials'&&!LIB.q.trim()){
   // The ninth homepage door opens the 32-prayer mosaic, not all library rows.
@@ -2716,7 +2716,7 @@ function renderPrayerOnly(id){const p=P(id);
  // Use the reconciled 267-slot master instead of reusing one generic Souls
  // photograph for prayers whose approved covers depict a DIFFERENT painting.
  const editorialCover=ESSENTIAL_HOLY_CARD_IDS_V1.includes(id)?"":prayerEditorialArtworkMarkup('COV-'+id,{className:'aoPrayerEditorialCardCover'});
- return `${head(p?(isFr()?(p.titleFr||p.title):p.title):L('Prayer','Prière'),prayerReturnView==='firstFriday'?L('First Friday · Sacred Heart','Premier vendredi · Sacré-Cœur'):L('Prayer Library','Livre de prières'))}<main class="aoP435930Body aoP435930LibraryReader${PRAYER_READER_PILOT_ENABLED?' aoReaderPilotSingle':''}" data-ao-library-card="single"><button class="aoP435930InlineBack" data-p435930-prayer-return>${assetIcon('ao-ui-back')} ${esc(L('Return','Retour'))}</button>${PRAYER_READER_PILOT_ENABLED?pilotFocusButton({L,esc}):''}${editorialCover}<section class="aoDevoCard" data-ao-devo-card="${esc(id)}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(p?(isFr()?(p.titleFr||p.title):p.title):L('Prayer','Prière'))}">${prayerBlock(id,{scriptureContext:true})}</div></section>${p?libraryContextMarkup(p):""}</main>`}
+ return `${head(p?(isFr()?(p.titleFr||p.title):p.title):L('Prayer','Prière'),prayerReturnView==='firstFriday'?L('First Friday · Sacred Heart','Premier vendredi · Sacré-Cœur'):L('Prayer Library','Livre de prières'))}<main class="aoP435930Body aoP435930LibraryReader${PRAYER_READER_PILOT_ENABLED?' aoReaderPilotSingle':''}" data-ao-library-card="single">${PRAYER_READER_PILOT_ENABLED?pilotFocusButton({L,esc}):''}${editorialCover}<section class="aoDevoCard" data-ao-devo-card="${esc(id)}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(p?(isFr()?(p.titleFr||p.title):p.title):L('Prayer','Prière'))}">${prayerBlock(id,{scriptureContext:true})}</div></section>${p?libraryContextMarkup(p):""}</main>`}
 let prayerReturnView=null,prayerId=null;
 function pushView(v=view){if(v)navStack.push(v);return navStack.length}
 function popView(fallback='home'){view=navStack.length?navStack.pop():fallback;return view}
@@ -4697,13 +4697,11 @@ function onClick(e){
 
  if(b.matches('[data-p435930-go-rosary]')){launchRosaryPlayer(captureResume());return}
  if(b.dataset.p435930OpenPrayer)return openPrayerOnly(b.dataset.p435930OpenPrayer);
- if(b.matches('[data-p435930-prayer-return]')){view=prayerReturnView||'library';return render()}
  if(b.dataset.p435930StationStep!=null){STATIONS.step=Math.max(0,Math.min(13,+b.dataset.p435930StationStep));return render()}
  if(b.matches('[data-p435930-station-finish]')&&STATIONS.step===13){STATIONS.step=0;return backToParent()}
  if(b.matches('[data-p435930-lib-all]')){LIB.cat='all';LIB.q='';return render()}
  if(b.dataset.p435930LibCat!=null){LIB.cat=b.dataset.p435930LibCat;return render()}
  if(b.dataset.p435930LibOpen){LIB.open=b.dataset.p435930LibOpen;LIB.language=null;PILOT_LORETO_GROUP=false;return render()}
- if(b.matches('[data-p435930-lib-back]')){if(navStack.at(-1)==='family')return backToParent();LIB.open=null;return render()}
  if(b.dataset.p435930ScriptureRetry){
   // Retry only the exact currently displayed source identity, never switch
   // translation or fetch an alternative unsourced prayer text silently.
