@@ -104,6 +104,9 @@ try{
   assert.equal(result.resolution.expectedPrintedPages,"648-649");
   assert.deepEqual(result.resolution.sourceIndexPages,["648","[114]"]);
   assert.ok(result.labels.every(x=>x.includes("review pending")));
+  assert.deepEqual(result.labels.map(x=>x.split(" · ")[0]),
+   ["Introit","Gradual","Alleluia","Offertory","Communion"],
+   "Each staff label must match its actual Proper chant role");
   assert.deepEqual(result.archival.map(x=>[x.id,x.part,x.folio]),[
    ["GREGOBASE-752","in","647"],["GREGOBASE-371","gr","648"],
    ["GREGOBASE-835","of","[30]"],["GREGOBASE-345","co","650"],
