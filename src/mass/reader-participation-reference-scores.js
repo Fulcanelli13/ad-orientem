@@ -272,7 +272,7 @@ export const PARTICIPATION_REFERENCE_SCORES=Object.freeze([
 ].map(score=>Object.freeze({...score,sourceCueIds:Object.freeze(score.sourceCueIds)})));
 
 const SUNG=new Set(["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
-const norm=s=>String(s??"").normalize("NFD").replace(/[\\u0300-\\u036f]/g,"")
+const norm=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
  .replace(/æ/gi,"ae").replace(/œ/gi,"oe").replace(/j/gi,"i")
  .toLowerCase().replace(/[^a-z0-9]+/g,"");
 const cueList=p=>Array.isArray(p?.sourceCueIds)?p.sourceCueIds.map(String):[];
