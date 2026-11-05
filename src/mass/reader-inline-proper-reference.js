@@ -6,10 +6,25 @@
 import {createOfflineChantEngraver} from "./reader-chant-engraver.js";
 
 export const JULY07_REFERENCE_NOTATION_SCHEMA="ao-reader-july07-reference-notation-v1";
+// The original printed Introit GABC includes a distinct conditional "T. P."
+// Alleluia flourish. Do not chant that Eastertide-only insert in July.
+// Keep the source archive immutable; this extracts a dated *display* reading.
+export function nonPaschalJulyIntroitGabc(row){
+ const raw=String(row?.gabc??"");
+ if(row?.key!=="INTROIT")return raw;
+ const marker="<i>T. P.</i>", psalm="<i>Ps.</i>";
+ const start=raw.indexOf(marker);
+ if(start<0||raw.indexOf(marker,start+1)!==-1)throw Error("JULY07_TP_BOUNDARY_NOT_UNIQUE");
+ const end=raw.indexOf(psalm,start+marker.length);
+ if(end<0||!raw.slice(0,start).includes("(::)")||
+    !raw.slice(end).includes("Gló")||!raw.slice(end).includes("E(j)"))
+  throw Error("JULY07_OPTIONAL_PASCHAL_EXTRACTION_NOT_SAFE");
+ return raw.slice(0,start)+raw.slice(end);
+}
 export const JULY07_REFERENCE_GABC=Object.freeze([{"key":"INTROIT","id":"GREGOBASE-48","sourceId":48,"part":"in","incipit":"Sacerdotes tui","folio":"[35]","sha256":"edf2d86594bba08d30130e47f9bd04890f633a326eec9ec2f67823f85a831777","sourceUrl":"https://gregobase.selapa.net/chant.php?id=48","gabc":"(c4) SA(fff)cer(dfe)dó(ef/ghf)tes(dfe) tu(ef'g)i,(g) *(,) Dó(gjj)mi(hg)ne,(gv.ff/ded.) (;) ín(g.h!iwj)du(hg)ant(gd~) ju(fh)stí(ghfg)ti(gv.df!gvFE'f)am,(fe..) (;) et(f) san(e!fw!gh)cti(g) tu(hggef)i(fe__) ex(e!fw!gh)súl(gh~)tent :(g.) (:) pro(gj)pter(j) Da(j.h!iwjij)vid(ji__) (,) ser(ij/klk)vum(j_i~) tu(j.h!iw!jvI'HG'h)um,(hg..) (;) non(gh) a(g.h!iwj)vér(jjjhhg~)tas(g.) fá(ghgh)ci(fg_[oh:h]F'_[oh:h]ED'e)em(e[ll:1]d..) (;) Chri(de!f!gwh)sti(gv.fhGF'g) tu(egff)i.(fe..) (::) <i>T. P.</i> Al(e)le(f)lú(gh){ia},(g.) (;) al(gh)le(g.h!iwjjvIH'G)lú(ge/fgF~'E~){ia}.(e.) (::) <i>Ps.</i> Me(g)mén(hj~)to(j) Dó(k)mi(j)ne(j) Da(ih)vid :(jjj) *(:) et(ig) o(hj~)mnis(j) man(j)su(j)e(j)tú(jji)di(hg)nis(h') e(i)jus.(gh..) (::) Gló(g)ri(hj)a(j) Pa(j)tri.(j) (::) <eu>E(j) u(jji) o(hg) u(h') a(i) e.</eu>(gh..) (::)"},{"key":"GRADUAL","id":"GREGOBASE-415","sourceId":415,"part":"gr","incipit":"Sacerdotes ejus (Grad.)","folio":"[36]","sha256":"5bc5f9de688c1de1dc1a33f7b1ce40015f321cdff7c38bbed374148aaad8ea08","sourceUrl":"https://gregobase.selapa.net/chant.php?id=415","gabc":"(c4) SA(c)cer(d)dó(ixdh'!iv)tes(h.) *() e(ixhihghGF.hiHG'hw!ivHGhi)jus(h.) (;) ín(hjh___!iwjj)du(kvJH)am(h.) (,) sa(hg/h!jjjhhg)lu(hggf)tá(hf/gh/jhjvGE'fvDC')(,)(d!ff/ghF'Eghffe)ri :(ge/ghgff/ded.) (:) et(d!ff) san(gf~)cti(f) e(f!hgh)jus(hjh___!iwjjvIHih..) (;) ex(h)sul(hg~)ta(h!jjh)ti(f)ó(ghF'Dfff_d)ne(d.) (;) ex(d)sul(dh~)tá(h_g/jj)bunt.(ixhv.gh!ivF'D//ff/g_[oh:h]f/g_[oh:h]f/gff/ded.) (::) <sp>V/</sp>. Il(dh)luc(h) pro(g)dú(gh/jhi)cam(g.) (,) cor(fh/jhhg~)nu(g.) Da(fh!jvHG'h)vid :(h./jjh/jjgjvvh_[oh:h]i_[oh:h]h._[oh:h]) (:) pa(gh)rá(j_0kvJH'jvGF'//hghhghv.)(,)(k_[uh:l]lJ'IH)vi(ixhihih'/!ivHG'gfg.) (;) lu(f)cér(ghghk_[hl:1]jkvJHjjh)(,)(ixgih/ig.fg'h!jjhhgh)nam(ixhf/!hig/!ff/ded.) (:) Chri(dfED'fvED.//de!fg/hjIH'hgh.)(,)(ixfh!ivGF'E//f!gwh'!iv)sto(hg..) (,) * me(ixhiG'Fh!jjvH'G)o.(hghF'Efg..) (,) (d!ewf!gv.fhGF'ED'ewfd.1) (::)"},{"key":"ALLELUIA","id":"GREGOBASE-1187","sourceId":1187,"part":"al","incipit":"Juravit Dominus","folio":"[37]","sha256":"bba316ec64fed01860a893e5ecb810141e14ed501a0759481958f6ef1002db2a","sourceUrl":"https://gregobase.selapa.net/chant.php?id=1187","gabc":"(c4) AL(cd~)le(de/ge/fee[ll:1]d)lú(eg//fhgefdc!ee){ia}.(d.) <clear>*(;) <i>ij.</i>(ixhh/gihghggvF'ED.) (,) (cd/ede//g_[uh:l]hfefg.) (,) (hvGF'EdfED.c!efd.1) (::) <sp>V/</sp>. Ju(dh)rá(ixh_g/hiHG'h)vit(f_e) Dó(ef!gvFE)mi(de)nus,(e.) (;) et(eg!hv_GF) non(e[ll:1]dd) pae(c)ni(ef/gf)té(e[ll:1]d)bit(cd) e(dee[ll:1]d)um :(d.) (:) Tu(cd) es(d) sa(ef!gh)cér(egFE'e[ll:1]d~)dos(d.) (,) in(hhghvGF'gvF'ED.) ae(ef!gh)tér(egFE'e[ll:1]d~)num,(d.) (;) se(dede)cún(c)dum(e) ór(ixgh/igh./egF'ED.)(,)(ixce!gh/igh./egF'ED'dc~)di(c!ef)nem(e[ll:1]d..) (;) * Mel(cd)chí(de/ge/fee[ll:1]d)se(eg//fhgefdc!ee)dech.(d.) (;) (ixhh/gihghggvF'ED.) (,) (cd/ede//g_[uh:l]hfefg.) (,) (hvGF'EdfED.c!efd.1) (::)"}].map(row=>Object.freeze({
  ...row,sourceStatus:"RESEARCH_TRANSCRIPTION_NOT_MUSICALLY_CERTIFIED",
  publicScoreApproved:false,
- gabc:"name: "+row.incipit+";\noffice-part: "+row.part+";\nsource: Graduale Romanum 1961 p. "+row.folio+";\n%%\n"+row.gabc
+ gabc:"name: "+row.incipit+";\noffice-part: "+row.part+";\nsource: Graduale Romanum 1961 p. "+row.folio+";\n%%\n"+nonPaschalJulyIntroitGabc(row)
 })));
 
 const n=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
