@@ -30,7 +30,7 @@ for(const id of LORETO_SOURCE_IDS){
   assert.match(page,/data-p435930-pilot-loreto-language="la"/);
   assert.match(page,/data-p435930-pilot-loreto-form="litany_loreto_current"/);
   assert.match(page,/data-p435930-pilot-loreto-form="litany_loreto_1962"/);
-  assert.match(page,/data-p435930-lib-back/);
+  assert.doesNotMatch(page,/data-p435930-lib-back|aoP435930InlineBack/,"Loreto reader must not duplicate the shared header Back");
   assert.match(page,/data-ao-reader-design-pilot="litany"/);
   assert.match(page,/class="aoReaderPilotRailHead"/,"Litany must name invocation and response rails");
   assert.match(page,/aoReaderPilotCommunal/,"Group mode uses the distinct communal rail treatment");
@@ -39,6 +39,15 @@ for(const id of LORETO_SOURCE_IDS){
 const runtime=readFileSync(new URL("../src/pray/presentation-runtime.js",import.meta.url),"utf8");
 assert.ok(runtime.includes("if(PRAYER_READER_PILOT_ENABLED&&LORETO_SOURCE_IDS.includes(LIB.open))"),"Loreto source routing must remain gated");
 assert.ok(runtime.includes("data-p435930-pilot-focus"),"single-prayer focus must be explicit");
+assert.ok(runtime.includes('data-p435930-back aria-label='),"Every reader must retain the source-owned header Back");
+const libraryMarkup=runtime.slice(runtime.indexOf("function renderLibrary(){"),runtime.indexOf("function monthIndex("));
+const singleMarkup=runtime.slice(runtime.indexOf("function renderPrayerOnly(id)"),runtime.indexOf("let prayerReturnView=",runtime.indexOf("function renderPrayerOnly(id)")));
+for(const [label,markup] of [["canonical Library reader",libraryMarkup],["standalone source-owned reader",singleMarkup]]){
+ assert.ok(markup.includes("data-ao-library-card"),label+" lost its canonical card");
+ assert.doesNotMatch(markup,/data-p435930-lib-back|data-p435930-prayer-return|aoP435930InlineBack/,label+" still duplicates the header Back");
+}
+assert.match(runtime,/if\(view==='library'&&LIB\.open\)\{LIB\.open=null;/,"Library header Back must clear the selected prayer");
+assert.match(runtime,/if\(view==='prayerOnly'\)\{view=prayerReturnView\|\|'library'/,"Standalone header Back must return to the owning reader");
 assert.ok(runtime.includes("PILOT_LORETO_GROUP=selected==='group'"),"communal role labels optional");
 for(const mode of ["individual","group"])assert.match(renderPilotLoreto({
  record:PRAY_CANONICAL_DATA_V435930.prayers.litany_loreto_1962,id:"litany_loreto_1962",
