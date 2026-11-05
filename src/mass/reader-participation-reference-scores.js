@@ -2,6 +2,7 @@ import {resolve1962DialogueToneFamily} from "./reader-mass-1962-tone-family.js";
 import {isExplicitRequiemMass} from "./reader-requiem-conditions.js";
 import {GOSPEL_RESPONSE_REFERENCE_SCORES} from "./reader-gospel-response-reference-scores.js";
 import {DISMISSAL_VARIANT_REFERENCE_SCORES} from "./reader-dismissal-variant-reference-scores.js";
+import {CANON_PAX_REFERENCE_SCORES} from "./reader-canon-pax-response-reference-scores.js";
 // Preview-only exact-phrase Gregorian references for the 65-card Sung Mass.
 // Original 1961 GABC phrase bodies, no melody edits, sourced from already
 // committed M05 research and existing Kyriale Ordinary pilot. Clef is
@@ -291,7 +292,7 @@ export const PARTICIPATION_REFERENCE_SCORES=Object.freeze([
     "gabc": "name: CREDO_III AO.SM.C0089;\noffice-part: Kyriale;\nsource: Graduale Romanum 1961;\n%%\n(c3) CRe(h)do(f) in(d) u(gxg)num(f) De(fvED)um,(d.) (::)"
   }
 ].map(score=>Object.freeze({...score,sourceCueIds:Object.freeze(score.sourceCueIds),
- sourceCueLatin:Object.freeze(score.sourceCueLatin)})).concat(GOSPEL_RESPONSE_REFERENCE_SCORES,DISMISSAL_VARIANT_REFERENCE_SCORES));
+ sourceCueLatin:Object.freeze(score.sourceCueLatin)})).concat(GOSPEL_RESPONSE_REFERENCE_SCORES,DISMISSAL_VARIANT_REFERENCE_SCORES,CANON_PAX_REFERENCE_SCORES));
 
 const SUNG=new Set(["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
 const norm=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
@@ -328,7 +329,13 @@ export function participationReferenceScoresForParagraph({
   const indices=fragments.map(p=>paragraphs.indexOf(p));
   if(!indices.every((n,i)=>n>=0&&(i===0||n===indices[0]+i)))continue;
   if(norm(score.sourceCueLatin.join(" "))!==norm(score.sourceLatin))continue;
-  if(score.eventId==="DISMISSAL"){
+  if(score.eventId==="CANON_END"||score.eventId==="PAX_DOMINI"){
+   // Identical "Amen" words have different liturgical owners: only these
+   // printed 1961 response phrases bind to the selected ordinary 1962 Mass.
+   // Never infer a note for any Collect or Postcommunion Amen placeholder.
+   if(resolvedMass?.schema!=="ao-resolved-mass-v2"||
+      (resolvedMass.distinctRite&&resolvedMass.distinctRite!=="NONE"))continue;
+  }else if(score.eventId==="DISMISSAL"){
    // The two alternative dismissal texts are NOT the ordinary Ite text.
    // Require a matching compiled 1962 selected Mass plan AND exact rendered
    // Latin; the plan determines the formula, not the date or score's title.

@@ -5,6 +5,7 @@ import {PARTICIPATION_REFERENCE_SCORES,participationReferenceScoresForParagraph}
 import {ORDINARY_1961_SCORE_SOURCES} from "../src/mass/reader-ordinary-scores-1961.js";
 import {GOSPEL_1961_REFERENCE_WITNESSES,GOSPEL_RESPONSE_REFERENCE_SCORES} from "../src/mass/reader-gospel-response-reference-scores.js";
 import {DISMISSAL_VARIANT_ORIGINAL_WITNESSES,DISMISSAL_VARIANT_REFERENCE_SCORES} from "../src/mass/reader-dismissal-variant-reference-scores.js";
+import {CANON_PAX_1961_WITNESSES,CANON_PAX_REFERENCE_SCORES} from "../src/mass/reader-canon-pax-response-reference-scores.js";
 import {requiemDismissalVariantsForResolvedMass} from "../src/mass/reader-requiem-conditions.js";
 import {researchGabcPhrases} from "../src/mass/reader-music-gabc-source-screen.js";
 const file=async path=>JSON.parse(await readFile(new URL("../"+path,import.meta.url),"utf8"));
@@ -16,16 +17,18 @@ const roles=new Map(audit.records.map(x=>[x.cueId,x.role]));
 const sourceLookup=new Map([...research.scores.map(x=>[x.sourceId,x.gabc]),
  ...ORDINARY_1961_SCORE_SOURCES.map(x=>[Number(x.id.slice(10)),x.gabc]),
  ...GOSPEL_1961_REFERENCE_WITNESSES.map(x=>[x.sourceId,x.gabc]),
- ...DISMISSAL_VARIANT_ORIGINAL_WITNESSES.map(x=>[x.sourceId,x.fullSourceGabc])]);
+ ...DISMISSAL_VARIANT_ORIGINAL_WITNESSES.map(x=>[x.sourceId,x.fullSourceGabc]),
+ ...CANON_PAX_1961_WITNESSES.map(x=>[x.sourceId,x.fullSourceGabc])]);
 const norm=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
  .replace(/æ/gi,"ae").replace(/œ/gi,"oe").replace(/j/gi,"i")
  .toLowerCase().replace(/[^a-z0-9]+/g,"");
-assert.equal(PARTICIPATION_REFERENCE_SCORES.length,21);
+assert.equal(PARTICIPATION_REFERENCE_SCORES.length,24);
+assert.equal(CANON_PAX_REFERENCE_SCORES.length,3);
 assert.equal(DISMISSAL_VARIANT_REFERENCE_SCORES.length,4);
 assert.equal(GOSPEL_1961_REFERENCE_WITNESSES.length,2);
 assert.equal(GOSPEL_RESPONSE_REFERENCE_SCORES.length,4);
 assert.deepEqual(GOSPEL_1961_REFERENCE_WITNESSES.map(x=>x.sourceId),[4490,4491]);
-assert.equal(new Set(PARTICIPATION_REFERENCE_SCORES.map(x=>x.id)).size,21);
+assert.equal(new Set(PARTICIPATION_REFERENCE_SCORES.map(x=>x.id)).size,24);
 for(const score of PARTICIPATION_REFERENCE_SCORES){
  const original=sourceLookup.get(score.sourceId);
  assert.ok(original,score.id+" source GABC not in pinned corpus");
