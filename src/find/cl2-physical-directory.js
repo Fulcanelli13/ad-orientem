@@ -9,6 +9,7 @@ import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R5} from "./cl2-illustrative-locality-pin
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R6} from "./cl2-illustrative-locality-pins-r6.js";
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R7} from "./cl2-illustrative-locality-pins-r7.js";
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R8} from "./cl2-illustrative-locality-pins-r8.js";
+import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R9} from "./cl2-illustrative-locality-pins-r9.js";
 export const CL2_PHYSICAL_SITE_INDEX_URL=new URL("../../data/directory/generated/cl2-physical-site-index.v1.json",import.meta.url).href;
 export const CL2_PHYSICAL_SITE_COUNT=2579;
 export const CL2_EXPECTED_R49_GROUPS=1844;
@@ -1935,7 +1936,7 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
    Number(Boolean(b.geo?.precision==="building"))-Number(Boolean(a.geo?.precision==="building")));
   const selected=linked[0]??null;
   const review=REVIEWED_SITE_GEO_SOURCES[anchor]??null;
-  const newPin=REVIEWED_NEW_SITE_PINS[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R2[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R3[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R4[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R5[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R6[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R7[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R8[anchor]??null;
+  const newPin=REVIEWED_NEW_SITE_PINS[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R2[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R3[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R4[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R5[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R6[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R7[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R8[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R9[anchor]??null;
   const siteGeoSource=review?linked.find(x=>x.source_id===review.sourceId):null;
   if(review&&(!selected||!sourceIds.includes(review.sourceId)||
      !siteGeoSource?.geo||!Number.isFinite(siteGeoSource.geo.lat)||
