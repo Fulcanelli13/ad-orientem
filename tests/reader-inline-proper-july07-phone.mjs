@@ -114,6 +114,14 @@ try{
   assert.ok(result.cardDimensions.every(x=>x.w<=width+1 && x.scoreW>120),
    "No clipped notes on "+width+" px: "+JSON.stringify(result.cardDimensions));
   await mkdir(resolve(root,".tmp/mass-inline-proper-july07"),{recursive:true});
+  await page.locator(".ao-proper-reference-expand").first().click();
+  await page.waitForSelector("dialog.ao-proper-reference-zoom[open] .ao-proper-reference-wide svg",{timeout:12000});
+  const zoomSize=await page.locator("dialog.ao-proper-reference-zoom .ao-proper-reference-wide")
+   .evaluate(node=>node.getBoundingClientRect().width);
+  assert.ok(zoomSize>=840,"Enlarged neumes must preserve readable staff width: "+zoomSize);
+  await page.screenshot({path:resolve(root,".tmp/mass-inline-proper-july07/enlarged-"+width+".png"),fullPage:false});
+  await page.locator("dialog.ao-proper-reference-zoom header button").click();
+  assert.equal(await page.locator("dialog.ao-proper-reference-zoom").count(),0);
   await page.screenshot({path:resolve(root,".tmp/mass-inline-proper-july07/notation-"+width+".png"),fullPage:true});
   console.log("INLINE_1961_JULY07_PHONE_PASS "+JSON.stringify({
    width,svg:result.actualSvg,mounted:result.mounted,cardDimensions:result.cardDimensions,
