@@ -1,0 +1,596 @@
+{
+  "schema": "ao.prayer.artwork.slot_triage_and_release_gates.v1",
+  "asOf": "2026-11-05",
+  "editorialMaster": "data/prayer/artwork-editorial-20261105/consolidated-approved-prayer-art-b01-b05.v1.json",
+  "referenceSnapshot": "data/prayer/artwork-editorial-20261101/gallery-archive-crosswalk-267-20261103.v1.json",
+  "baselineSnapshotOnly": {
+    "slots": 267,
+    "states": {
+      "PROVISIONAL_NOT_PUBLISHED": 22,
+      "APPROVED_EXACT_PHOTO_PENDING": 138,
+      "SCOPE_HOLD": 1,
+      "PUBLISHED_EXACT_PHOTO": 51,
+      "INHERITED_POOL_NO_FIXED_PAINTING": 5,
+      "PROTECTED_EXISTING_COVER": 5,
+      "SOURCE_IDENTITY_UNVERIFIED": 31,
+      "EDITORIAL_HOLD": 14
+    },
+    "notes": "Snapshot from Nov 3, not a live current release verification"
+  },
+  "coverageAudit": {
+    "heldPositionCount": 14,
+    "heldPositionsWithApprovedWorkCandidates": 14,
+    "heldPositionsPublishedByThisWork": 0,
+    "protectedFixedCovers": [
+      "COV-pray.rosary",
+      "COV-prayer.seven_sorrows_chaplet",
+      "COV-novena.st_therese",
+      "COV-pray.benediction",
+      "COV-pray.confession"
+    ],
+    "crossModuleReusesRequireScopeCheck": true
+  },
+  "categories": [
+    {
+      "category": "Sacred Heart",
+      "approvedOptionIds": [
+        "SH-3",
+        "SH-4",
+        "SH-5"
+      ],
+      "potentialPlacementSlots": [
+        "HERO-17",
+        "COV-novena.sacred_heart",
+        "COV-prayer.sacred_heart",
+        "COV-programme.first_friday",
+        "COV-sacred_heart_short_prayer",
+        "COV-sacred_heart_aspiration_trust",
+        "STG-pray.adoration.night-03"
+      ],
+      "defaultDisposition": "CANDIDATE_ONLY_NO_AUTOMATIC_ASSIGNMENT",
+      "notes": null
+    },
+    {
+      "category": "Good Death",
+      "approvedOptionIds": [
+        "GD-1",
+        "GD-2",
+        "GD-3"
+      ],
+      "potentialPlacementSlots": [
+        "COV-prayer.good_death",
+        "STG-prayer.good_death-01"
+      ],
+      "defaultDisposition": "CANDIDATE_ONLY_NO_AUTOMATIC_ASSIGNMENT",
+      "notes": null
+    },
+    {
+      "category": "Holy Eucharist",
+      "approvedOptionIds": [
+        "EU-1",
+        "EU-2",
+        "EU-5"
+      ],
+      "potentialPlacementSlots": [
+        "COV-prayer.communion",
+        "COV-adoration_lord_i_am_not_worthy",
+        "STG-prayer.communion-01",
+        "STG-prayer.communion-02",
+        "COV-pray.adoration",
+        "COV-novena.corpus_christi",
+        "STG-pray.adoration.four_ends-02"
+      ],
+      "defaultDisposition": "CANDIDATE_ONLY_NO_AUTOMATIC_ASSIGNMENT",
+      "notes": null
+    },
+    {
+      "category": "Holy Spirit",
+      "approvedOptionIds": [
+        "HS-1",
+        "HS-2",
+        "HS-4"
+      ],
+      "potentialPlacementSlots": [
+        "HERO-14",
+        "COV-novena.holy_ghost",
+        "STG-novena.holy_ghost-01",
+        "COV-sacrament_come_holy_spirit",
+        "COV-traditional_veni_sancte_sequence",
+        "STG-pray.rosary-14"
+      ],
+      "defaultDisposition": "CANDIDATE_ONLY_NO_AUTOMATIC_ASSIGNMENT",
+      "notes": "Rosary Pentecost mystery image remains fixed across its decade"
+    },
+    {
+      "category": "Prayer for Priests",
+      "approvedOptionIds": [
+        "PP-1",
+        "PP-2",
+        "PP-3",
+        "PP-5"
+      ],
+      "potentialPlacementSlots": [
+        "COV-pray.for_priests",
+        "COV-church_prayer_for_pope"
+      ],
+      "defaultDisposition": "CANDIDATE_ONLY_NO_AUTOMATIC_ASSIGNMENT",
+      "notes": "PP-5 keys to Saint Peter is more specific to prayer for the Pope than to priestly vocation"
+    },
+    {
+      "category": "Penitential Psalms",
+      "approvedOptionIds": [
+        "PS-1",
+        "PS-2",
+        "PS-3",
+        "PS-4"
+      ],
+      "potentialPlacementSlots": [
+        "COV-pray.penitential_psalms",
+        "STG-pray.penitential_psalms-01",
+        "STG-pray.penitential_psalms-02",
+        "STG-pray.penitential_psalms-03",
+        "STG-pray.penitential_psalms-04",
+        "STG-pray.penitential_psalms-05",
+        "STG-pray.penitential_psalms-06",
+        "STG-pray.penitential_psalms-07"
+      ],
+      "defaultDisposition": "CANDIDATE_ONLY_NO_AUTOMATIC_ASSIGNMENT",
+      "notes": null
+    },
+    {
+      "category": "Guardian Angels and Saint Raphael",
+      "approvedOptionIds": [
+        "GA-1",
+        "GA-2",
+        "GA-3"
+      ],
+      "potentialPlacementSlots": [
+        "COV-foundations_guardian_angel",
+        "STG-pray.adoration.night-06"
+      ],
+      "defaultDisposition": "CANDIDATE_ONLY_NO_AUTOMATIC_ASSIGNMENT",
+      "notes": null
+    },
+    {
+      "category": "Salve Regina and Queenship of Mary",
+      "approvedOptionIds": [
+        "QM-1",
+        "QM-2",
+        "QM-3"
+      ],
+      "potentialPlacementSlots": [
+        "COV-marian_hail_holy_queen",
+        "STG-litany_loreto_1962-05",
+        "STG-pray.rosary-16",
+        "STG-pray.rosary-17"
+      ],
+      "defaultDisposition": "CANDIDATE_ONLY_NO_AUTOMATIC_ASSIGNMENT",
+      "notes": null
+    },
+    {
+      "category": "Montfort Consecration",
+      "approvedOptionIds": [
+        "MC-2",
+        "MC-3"
+      ],
+      "potentialPlacementSlots": [
+        "COV-pray.montfort_consecration",
+        "STG-pray.montfort_consecration-05"
+      ],
+      "defaultDisposition": "CANDIDATE_ONLY_NO_AUTOMATIC_ASSIGNMENT",
+      "notes": "Selected paintings show Marian devotion, not Saint Louis de Montfort himself; thematic fit only"
+    },
+    {
+      "category": "Immaculate Heart and First Saturdays",
+      "approvedOptionIds": [
+        "IM-1"
+      ],
+      "potentialPlacementSlots": [
+        "COV-novena.immaculate_heart",
+        "COV-programme.first_saturday",
+        "COV-marian_consecration_immaculate_heart",
+        "STG-programme.first_saturday-01"
+      ],
+      "defaultDisposition": "CANDIDATE_ONLY_NO_AUTOMATIC_ASSIGNMENT",
+      "notes": null
+    },
+    {
+      "category": "Seven Last Words",
+      "approvedOptionIds": [
+        "SW-2"
+      ],
+      "potentialPlacementSlots": [
+        "COV-pray.seven_words",
+        "STG-pray.seven_words-01",
+        "STG-pray.seven_words-02",
+        "STG-pray.seven_words-03",
+        "STG-pray.seven_words-04",
+        "STG-pray.seven_words-05",
+        "STG-pray.seven_words-06",
+        "STG-pray.seven_words-07",
+        "STG-pray.seven_words-08"
+      ],
+      "defaultDisposition": "CANDIDATE_ONLY_NO_AUTOMATIC_ASSIGNMENT",
+      "notes": "Single Crucifixion painting may suit multiple stage scenes, but do not force chapter-by-chapter rotation"
+    },
+    {
+      "category": "Precious Blood",
+      "approvedOptionIds": [
+        "PB-5"
+      ],
+      "potentialPlacementSlots": [
+        "COV-pray.precious_blood",
+        "STG-pray.precious_blood-01",
+        "STG-pray.precious_blood-02",
+        "STG-pray.precious_blood-03",
+        "STG-pray.precious_blood-04",
+        "STG-pray.precious_blood-05",
+        "STG-pray.precious_blood-06",
+        "STG-pray.precious_blood-07"
+      ],
+      "defaultDisposition": "CANDIDATE_ONLY_NO_AUTOMATIC_ASSIGNMENT",
+      "notes": "Selected dead-Christ image fits Passion conclusion, not all seven historical bloodshed mysteries"
+    },
+    {
+      "category": "Holy Souls in Purgatory",
+      "approvedOptionIds": [
+        "SO-4",
+        "SO-5"
+      ],
+      "potentialPlacementSlots": [
+        "COV-novena.holy_souls",
+        "STG-novena.holy_souls-01",
+        "COV-foundations_eternal_rest",
+        "COV-dead_de_profundis",
+        "COV-dead_fidelium_deus",
+        "COV-dead_eternal_rest_singular"
+      ],
+      "defaultDisposition": "CANDIDATE_ONLY_NO_AUTOMATIC_ASSIGNMENT",
+      "notes": null
+    },
+    {
+      "category": "Saint Anthony of Padua",
+      "approvedOptionIds": [
+        "SA-1"
+      ],
+      "potentialPlacementSlots": [
+        "COV-novena.st_anthony_nine_tuesdays",
+        "COV-devotion_st_anthony_lost_items"
+      ],
+      "defaultDisposition": "CANDIDATE_ONLY_NO_AUTOMATIC_ASSIGNMENT",
+      "notes": null
+    },
+    {
+      "category": "Sick and afflicted",
+      "approvedOptionIds": [
+        "SI-1",
+        "SI-2",
+        "SI-3",
+        "SI-4",
+        "SI-5"
+      ],
+      "potentialPlacementSlots": [
+        "COV-pray.occasional_intercessions",
+        "STG-litany_loreto_1962-04",
+        "STG-pray.adoration.four_ends-04"
+      ],
+      "defaultDisposition": "CANDIDATE_ONLY_NO_AUTOMATIC_ASSIGNMENT",
+      "notes": null
+    },
+    {
+      "category": "Saint Michael",
+      "approvedOptionIds": [
+        "SM-4",
+        "SM-5",
+        "SM-1",
+        "SM-2"
+      ],
+      "potentialPlacementSlots": [
+        "COV-novena.st_michael",
+        "COV-devotion_prayer_st_michael",
+        "COV-mass_devotion_leonine"
+      ],
+      "defaultDisposition": "CANDIDATE_ONLY_NO_AUTOMATIC_ASSIGNMENT",
+      "notes": null
+    },
+    {
+      "category": "Evening Prayer",
+      "approvedOptionIds": [
+        "EV-1",
+        "EV-2",
+        "EV-4"
+      ],
+      "potentialPlacementSlots": [
+        "COV-daily.evening"
+      ],
+      "defaultDisposition": "CANDIDATE_ONLY_NO_AUTOMATIC_ASSIGNMENT",
+      "notes": null
+    },
+    {
+      "category": "Morning Prayer and Morning Offering",
+      "approvedOptionIds": [
+        "MP-4",
+        "MP-5"
+      ],
+      "potentialPlacementSlots": [
+        "COV-daily.morning",
+        "COV-foundations_morning_offering"
+      ],
+      "defaultDisposition": "CANDIDATE_ONLY_NO_AUTOMATIC_ASSIGNMENT",
+      "notes": null
+    },
+    {
+      "category": "Tenebrae and Passion",
+      "approvedOptionIds": [
+        "TN-2",
+        "TN-3"
+      ],
+      "potentialPlacementSlots": [
+        "COV-pray.tenebrae",
+        "STG-pray.tenebrae-01",
+        "STG-pray.tenebrae-02",
+        "STG-pray.tenebrae-03"
+      ],
+      "defaultDisposition": "CANDIDATE_ONLY_NO_AUTOMATIC_ASSIGNMENT",
+      "notes": null
+    },
+    {
+      "category": "Litany of Saints",
+      "approvedOptionIds": [
+        "LS-2"
+      ],
+      "potentialPlacementSlots": [
+        "COV-pray.litany_saints",
+        "STG-pray.litany_saints-01",
+        "STG-pray.litany_saints-02",
+        "STG-pray.litany_saints-03",
+        "STG-pray.litany_saints-04",
+        "STG-pray.litany_saints-05",
+        "STG-pray.litany_saints-06"
+      ],
+      "defaultDisposition": "CANDIDATE_ONLY_NO_AUTOMATIC_ASSIGNMENT",
+      "notes": null
+    },
+    {
+      "category": "Act of Hope and Divine Providence",
+      "approvedOptionIds": [
+        "AH-1",
+        "AH-2",
+        "AH-3",
+        "AH-4",
+        "AH-5"
+      ],
+      "potentialPlacementSlots": [
+        "COV-foundations_act_of_hope"
+      ],
+      "defaultDisposition": "CANDIDATE_ONLY_NO_AUTOMATIC_ASSIGNMENT",
+      "notes": null
+    }
+  ],
+  "editorialHoldCandidatePlan": [
+    {
+      "slot": "STG-pray.rosary-16",
+      "family": "D3 Rosary & Chaplets",
+      "stageLabel": "Coronation of Our Lady",
+      "statusAtBaseline": "EDITORIAL_HOLD",
+      "recommendedCandidateId": "QM-1",
+      "otherEligibleCandidateIds": [
+        "QM-2",
+        "QM-3"
+      ],
+      "reason": "Coronation imagery depicts this Glorious Mystery; Rosary stage image must remain fixed for the decade",
+      "authorization": "RESEARCH_PROPOSAL_NOT_FINAL_PRIMARY_COVER_APPROVAL",
+      "publishable": false,
+      "sourceAndPixelsNeedVerification": true
+    },
+    {
+      "slot": "STG-pray.rosary-17",
+      "family": "D3 Rosary & Chaplets",
+      "stageLabel": "Closing prayers (Salve Regina)",
+      "statusAtBaseline": "EDITORIAL_HOLD",
+      "recommendedCandidateId": "QM-1",
+      "otherEligibleCandidateIds": [
+        "QM-2",
+        "QM-3"
+      ],
+      "reason": "Marian queenship is a thematic rather than literal Salve Regina depiction; distinct closing-prayer review still needed",
+      "authorization": "RESEARCH_PROPOSAL_NOT_FINAL_PRIMARY_COVER_APPROVAL",
+      "publishable": false,
+      "sourceAndPixelsNeedVerification": true
+    },
+    {
+      "slot": "COV-pray.montfort_consecration",
+      "family": "D4 Novenas & Journeys",
+      "stageLabel": "Cover",
+      "statusAtBaseline": "EDITORIAL_HOLD",
+      "recommendedCandidateId": "MC-2",
+      "otherEligibleCandidateIds": [
+        "MC-3"
+      ],
+      "reason": "Marian consecration theme; neither painting depicts Louis-Marie Grignion de Montfort",
+      "authorization": "RESEARCH_PROPOSAL_NOT_FINAL_PRIMARY_COVER_APPROVAL",
+      "publishable": false,
+      "sourceAndPixelsNeedVerification": true
+    },
+    {
+      "slot": "STG-pray.montfort_consecration-05",
+      "family": "D4 Novenas & Journeys",
+      "stageLabel": "Act of consecration",
+      "statusAtBaseline": "EDITORIAL_HOLD",
+      "recommendedCandidateId": "MC-3",
+      "otherEligibleCandidateIds": [
+        "MC-2"
+      ],
+      "reason": "Marian devotion thematic, not an image of the actual Montfort consecration act",
+      "authorization": "RESEARCH_PROPOSAL_NOT_FINAL_PRIMARY_COVER_APPROVAL",
+      "publishable": false,
+      "sourceAndPixelsNeedVerification": true
+    },
+    {
+      "slot": "COV-adoration_lord_i_am_not_worthy",
+      "family": "D5 Holy Eucharist",
+      "stageLabel": "Card vignette",
+      "statusAtBaseline": "EDITORIAL_HOLD",
+      "recommendedCandidateId": "EU-5",
+      "otherEligibleCandidateIds": [],
+      "reason": "Direct reception-of-Communion scene",
+      "authorization": "RESEARCH_PROPOSAL_NOT_FINAL_PRIMARY_COVER_APPROVAL",
+      "publishable": false,
+      "sourceAndPixelsNeedVerification": true
+    },
+    {
+      "slot": "COV-prayer.communion",
+      "family": "D5 Holy Eucharist",
+      "stageLabel": "Cover",
+      "statusAtBaseline": "EDITORIAL_HOLD",
+      "recommendedCandidateId": "EU-5",
+      "otherEligibleCandidateIds": [
+        "EU-2",
+        "EU-1"
+      ],
+      "reason": "Most direct selected Communion scene; the other two are Eucharistic typology and Emmaus",
+      "authorization": "RESEARCH_PROPOSAL_NOT_FINAL_PRIMARY_COVER_APPROVAL",
+      "publishable": false,
+      "sourceAndPixelsNeedVerification": true
+    },
+    {
+      "slot": "COV-marian_hail_holy_queen",
+      "family": "D7 Our Lady",
+      "stageLabel": "Card vignette",
+      "statusAtBaseline": "EDITORIAL_HOLD",
+      "recommendedCandidateId": "QM-1",
+      "otherEligibleCandidateIds": [
+        "QM-2",
+        "QM-3"
+      ],
+      "reason": "Coronation and queenship theme",
+      "authorization": "RESEARCH_PROPOSAL_NOT_FINAL_PRIMARY_COVER_APPROVAL",
+      "publishable": false,
+      "sourceAndPixelsNeedVerification": true
+    },
+    {
+      "slot": "STG-litany_loreto_1962-05",
+      "family": "D7 Our Lady",
+      "stageLabel": "Queen of Angels … Queen of peace",
+      "statusAtBaseline": "EDITORIAL_HOLD",
+      "recommendedCandidateId": "QM-1",
+      "otherEligibleCandidateIds": [
+        "QM-2",
+        "QM-3"
+      ],
+      "reason": "Queen invocations; avoid implying the pictured episode is specifically Queen of peace",
+      "authorization": "RESEARCH_PROPOSAL_NOT_FINAL_PRIMARY_COVER_APPROVAL",
+      "publishable": false,
+      "sourceAndPixelsNeedVerification": true
+    },
+    {
+      "slot": "STG-pray.litany_saints-01",
+      "family": "D8 Saints & Angels",
+      "stageLabel": "Our Lady, angels and archangels",
+      "statusAtBaseline": "EDITORIAL_HOLD",
+      "recommendedCandidateId": "LS-2",
+      "otherEligibleCandidateIds": [],
+      "reason": "Heavenly adoration with saints; existing saints-module photographic source may be held",
+      "authorization": "RESEARCH_PROPOSAL_NOT_FINAL_PRIMARY_COVER_APPROVAL",
+      "publishable": false,
+      "sourceAndPixelsNeedVerification": true
+    },
+    {
+      "slot": "COV-pray.penitential_psalms",
+      "family": "D9 Life & Intentions",
+      "stageLabel": "Cover",
+      "statusAtBaseline": "EDITORIAL_HOLD",
+      "recommendedCandidateId": "PS-1",
+      "otherEligibleCandidateIds": [
+        "PS-2",
+        "PS-3",
+        "PS-4"
+      ],
+      "reason": "King David at prayer suitable for seven penitential psalms",
+      "authorization": "RESEARCH_PROPOSAL_NOT_FINAL_PRIMARY_COVER_APPROVAL",
+      "publishable": false,
+      "sourceAndPixelsNeedVerification": true
+    },
+    {
+      "slot": "STG-pray.penitential_psalms-02",
+      "family": "D9 Life & Intentions",
+      "stageLabel": "Beati quorum",
+      "statusAtBaseline": "EDITORIAL_HOLD",
+      "recommendedCandidateId": "PS-1",
+      "otherEligibleCandidateIds": [
+        "PS-2"
+      ],
+      "reason": "Davidic Psalm 31/32; literal praying David motif",
+      "authorization": "RESEARCH_PROPOSAL_NOT_FINAL_PRIMARY_COVER_APPROVAL",
+      "publishable": false,
+      "sourceAndPixelsNeedVerification": true
+    },
+    {
+      "slot": "COV-pray.for_priests",
+      "family": "D9 Life & Intentions",
+      "stageLabel": "Cover",
+      "statusAtBaseline": "EDITORIAL_HOLD",
+      "recommendedCandidateId": "PP-1",
+      "otherEligibleCandidateIds": [
+        "PP-2",
+        "PP-3"
+      ],
+      "reason": "Mass of Saint Gregory illustrates priest and Holy Sacrifice, while PP-3 represents priestly sanctity",
+      "authorization": "RESEARCH_PROPOSAL_NOT_FINAL_PRIMARY_COVER_APPROVAL",
+      "publishable": false,
+      "sourceAndPixelsNeedVerification": true
+    },
+    {
+      "slot": "COV-prayer.good_death",
+      "family": "D9 Life & Intentions",
+      "stageLabel": "Cover",
+      "statusAtBaseline": "EDITORIAL_HOLD",
+      "recommendedCandidateId": "GD-1",
+      "otherEligibleCandidateIds": [
+        "GD-2",
+        "GD-3"
+      ],
+      "reason": "Death of Saint Joseph, traditional patron of a happy death",
+      "authorization": "RESEARCH_PROPOSAL_NOT_FINAL_PRIMARY_COVER_APPROVAL",
+      "publishable": false,
+      "sourceAndPixelsNeedVerification": true
+    },
+    {
+      "slot": "STG-prayer.good_death-01",
+      "family": "D9 Life & Intentions",
+      "stageLabel": "Commendation of the dying",
+      "statusAtBaseline": "EDITORIAL_HOLD",
+      "recommendedCandidateId": "GD-3",
+      "otherEligibleCandidateIds": [
+        "GD-1",
+        "GD-2"
+      ],
+      "reason": "Christ and Mary attending Saint Joseph as an analogue of commendation for the dying",
+      "authorization": "RESEARCH_PROPOSAL_NOT_FINAL_PRIMARY_COVER_APPROVAL",
+      "publishable": false,
+      "sourceAndPixelsNeedVerification": true
+    }
+  ],
+  "specialHandling": {
+    "HF-6": "Shroud of Turin approved as subject only; choose exact historical negative and verify photo rights, crop and non-commercial provider constraints before use.",
+    "PS-2": "Already exact artist/title assigned provisionally to five Penitential Psalm stages in the 267-position snapshot. Link work identity, do not duplicate artwork asset.",
+    "LS-2": "Landauer Altarpiece was previously held for the Saints module source check in the 3 November module-hero wave; inspect its original before acquiring a duplicate.",
+    "TN-2": "Caravaggio Taking of Christ was already approved for Holy Week Tuesday artwork in earlier Calendar work; cross-module reuse should point to the same painting identity.",
+    "SO-5": "The previous link is a Commons category, not an exact painting; never infer a filename or grant image-release clearance.",
+    "AH-1": "The painting is stolen. Use a historical faithful reproduction only after photograph provenance and size QA.",
+    "SM-2": "Workshop attribution and exact photographic object identity require verification.",
+    "MC-2 / MC-3": "Selected works illustrate Marian piety rather than Saint Louis de Montfort himself; preserve exact scope labels.",
+    "EV-2": "Millet's Angelus can support evening-prayer context; do not override the already approved Champaigne Angelus fixed image."
+  },
+  "photoReleaseChecklist": [
+    "Exact work identity (artist, title, museum accession or authoritative object) and canonical art-gallery duplicate lookup",
+    "Source page points to this exact work, not a category/search or similarly titled work",
+    "Copyright status of painted work, copyright/reuse terms of the exact photograph and jurisdictional constraints separately documented",
+    "Original file bytes archived with stable path, checksum and resolution",
+    "Human visual review: entire composition, no watermarks, no crop of important hands/heads/halos, natural restoration and mobile portrait fit",
+    "Slots restricted to faithful scene or the explicitly approved theme; carry over earlier rejections and specific-only decisions",
+    "Fixed cover locks untouched; no automatic rotation; Rosary image stable across each decade; no unapproved prayer changes",
+    "Only after these gates, a separate runtime PR with phone screenshots and regression tests against the current 65-card Mass reader, Prayer and Rosary"
+  ],
+  "automaticReleaseAllowed": false
+}
