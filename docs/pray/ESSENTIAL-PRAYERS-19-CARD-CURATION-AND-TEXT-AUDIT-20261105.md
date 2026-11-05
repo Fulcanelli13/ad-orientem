@@ -105,7 +105,7 @@ Therefore the existing Ad Orientem prayer is not mistranslated: its global
 traditional French text and attach the older witness at the **French face**
 level. The source policy also flags *quotidianum* versus the Compendium Latin
 *cotidianum* as an orthographic/edition difference rather than silently
-rewriting the source. Do not claim an original 1905 Latin line collation.
+rewriting the source. Do not claim an original 1906 Latin line collation.
 
 ### French Act of Hope — documented editorial correction
 
@@ -115,7 +115,7 @@ and its Latin “In hac spe”. The policy records both: the canonical 2005
 printed French witness remains byte-for-byte unchanged, while
 `essentialPrayerEditorialReading("foundations_act_of_hope","fr",record)`
 constructs the explicitly **editorial devotional reading** with “Dans cette
-espérance”. It is **not yet automatically shown** in the existing reader and
+espérance”. It is now **displayed as the French devotional card reading** through a source-preserving projection; the printed original stays in the canonical record, and
 must never be passed off as the Compendium's verbatim printing.
 
 The three official language editions should not be described as strict
@@ -130,7 +130,7 @@ Latin/French devotional witnesses.
 - **19/19 per-record witness classifications**: staged in branch.
 - **Original-page three-language certification of all 19 prayers**: **NOT**
   achieved; do not use a fabricated percentage or infer it from text presence.
-- **Corrected French Hope candidate**: staged separately from exact source.
+- **Corrected French Hope reading**: displayed on the card with an explicit source-provenance notice; the exact original printed French form remains in canonical-data.
 - **Reader UI text tap, card-flip separation, font u/v rendering, actual
   screenshots**: still require a distinct design/functional review.
 - The CI test `tests/pray-essential-witness-policy-v1.mjs` must pass with the
