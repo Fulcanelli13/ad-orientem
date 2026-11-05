@@ -83,3 +83,59 @@ Primary reference:
 ## Release boundaries
 
 Do not merge without required CI, real 320/390px EN/FR gallery screenshots, and explicit review of category membership. This PR does **not** modify the canonical body of any prayer, claim missing translations, replace historical source witnesses, introduce artwork, or change the flip/tap language mechanics. After content/source review, implement text-tap language replacement with a separate visual acceptance gate and original full-width Latin/vernacular typography. GitHub Actions / GitHub Pages only; no Vercel.
+
+
+## Follow-up source resolution — 5 November (18:52 UTC)
+
+A machine-readable source-scope overlay now exists in
+`src/pray/essential-prayer-witness-policy.v1.js`. It indexes **all 19** selected
+source owners without changing the 48 canonical prayer texts or inventing
+back-translations.
+
+### French Our Father — traditional witness identified
+
+The 1905 `Catéchisme illustré des vérités nécessaires`, *Prières*, prints the
+traditional French *vous* formula, including *ne nous laissez pas succomber*.
+See the transcribed historical page:
+https://fr.wikisource.org/wiki/Cat%C3%A9chisme_illustr%C3%A9_des_v%C3%A9rit%C3%A9s_n%C3%A9cessaires/Pri%C3%A8res
+
+The 2005 Vatican French Compendium prints *tu* and *ne nous soumets pas*.
+Therefore the existing Ad Orientem prayer is not mistranslated: its global
+“French Compendium verbatim” attribution is overly broad. Preserve the
+traditional French text and attach the older witness at the **French face**
+level. The source policy also flags *quotidianum* versus the Compendium Latin
+*cotidianum* as an orthographic/edition difference rather than silently
+rewriting the source. Do not claim an original 1905 Latin line collation.
+
+### French Act of Hope — documented editorial correction
+
+The Vatican French Compendium *actually prints* “Dans cette foi, puis-je
+vivre et mourir” under *Acte d’espérance*. Its English reads “In this hope”
+and its Latin “In hac spe”. The policy records both: the canonical 2005
+printed French witness remains byte-for-byte unchanged, while
+`essentialPrayerEditorialReading("foundations_act_of_hope","fr",record)`
+constructs the explicitly **editorial devotional reading** with “Dans cette
+espérance”. It is **not yet automatically shown** in the existing reader and
+must never be passed off as the Compendium's verbatim printing.
+
+The three official language editions should not be described as strict
+clause-by-clause translations for the Acts of Faith, Charity or Contrition.
+The familiar English Guardian Angel rhyme likewise differs from the Latin
+*Angele Dei*; the USCCB English Morning Offering differs from the sourced
+Latin/French devotional witnesses.
+
+### Acceptance tiers and next action
+
+- **19/19 populated trilingual records**: verified in canonical data.
+- **19/19 per-record witness classifications**: staged in branch.
+- **Original-page three-language certification of all 19 prayers**: **NOT**
+  achieved; do not use a fabricated percentage or infer it from text presence.
+- **Corrected French Hope candidate**: staged separately from exact source.
+- **Reader UI text tap, card-flip separation, font u/v rendering, actual
+  screenshots**: still require a distinct design/functional review.
+- The CI test `tests/pray-essential-witness-policy-v1.mjs` must pass with the
+  prior 19-shelf and 32-source-reader guards.
+
+Source links for independent review:
+- https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html
+- https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html
