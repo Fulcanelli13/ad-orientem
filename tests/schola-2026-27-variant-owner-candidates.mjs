@@ -21,7 +21,7 @@ assert.deepEqual(verified.counts,{
  exactSelectedLatinReviewGroups:10,
  alternateHistoricalSectionTextualCandidates:23,
  remainingDateSpecificSourceHolds:4,
- secondaryDated1962SelectedTextConflicts:2,
+ secondaryDated1962SelectedTextConflicts:3,
  scoreApprovals:0,sourceAliasesApproved:0
 });
 assert.equal(verified.sourceRows.length,27);
@@ -52,7 +52,10 @@ const expected=new Map([
 for(const [path,n] of expected)
  assert.equal(verified.sourceRows.filter(x=>x.sourceOriginalSectionCandidate===path).length,n,path);
 assert.equal(verified.sourceRows.filter(x=>
- x.reviewDisposition==="SAINT_PROPER_CUSTOM_PRE_GOSPEL_REQUIRES_DIRECT_1962_PRINT")[0]?.date,"2026-04-14");
+ x.reviewDisposition==="PRINTED_1962_PASCHAL_MIXED_GRADUAL_AND_ALLELUIAS_CONFLICT")[0]?.date,"2026-04-14");
+assert.equal(verified.sourceRows.filter(x=>
+ ["DATED_1962_SECONDARY_PROPERS_CONFLICT_WITH_SELECTED_LATIN",
+ "PRINTED_1962_PASCHAL_MIXED_GRADUAL_AND_ALLELUIAS_CONFLICT"].includes(x.reviewDisposition)).length,3);
 assert.equal(verified.sourceRows.filter(x=>
  x.reviewDisposition==="NAMED_1962_SAINT_PROPER_SECONDARY_CORROBORATION_NO_HISTORICAL_BLOB_ALIAS")[0]?.date,"2026-07-07");
 assert.deepEqual(verified.publication,{
@@ -71,4 +74,4 @@ assert.throws(tamper(x=>x.annual.rows.find(r=>r.date==="2026-04-13").selectedGra
  /SCHOLA_27_VARIANTS_DATED_PASCHAL_SELECTION_CONFLICT_NOT_REAL/);
 assert.throws(tamper(x=>x.manifest.boundaries.properScoresApproved=1),
  /SCHOLA_27_VARIANTS_MANIFEST_INVALID/);
-console.log("PASS 27 exact historical Common selection holds: 23 alternate old text section leads, 4 date-specific holds incl 2 Paschal conflicts, 10 complete selected-Latin comparison groups and 0 public aliases or scores");
+console.log("PASS 27 historical Common selection holds: 23 old text-section leads, four date-specific holds including THREE independently printed-1962 Paschal source conflicts (Apr 13, 14, 29), 10 complete-Latin groups, zero aliases or scores");
