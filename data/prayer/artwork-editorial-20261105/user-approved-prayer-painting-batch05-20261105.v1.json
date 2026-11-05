@@ -1,0 +1,131 @@
+{
+  "schema": "ao.prayer_art.user_editorial_batch_approval.v1",
+  "date": "2026-11-05",
+  "batch": "05",
+  "source": "Direct user message in ChatGPT approving Batch 5 IDs",
+  "authority": "EXPLICIT_USER_PAINTING_APPROVAL",
+  "count": 10,
+  "accepted_paintings": [
+    {
+      "option_id": "MP-4",
+      "review_category": "Morning Prayer and Morning Offering",
+      "artist": "John William Waterhouse",
+      "title": "The Missal",
+      "original_proposal_source": "https://commons.wikimedia.org/wiki/File:John_William_Waterhouse_-_The_Missal.JPG",
+      "rights_candidate": "PD_ART_PROPOSED_SMALL_FILE",
+      "decision": "EXPLICIT_USER_APPROVAL_ARTWORK",
+      "photograph_identity_and_rights": "PENDING_EXACT_QA",
+      "photo_release_allowed": false
+    },
+    {
+      "option_id": "MP-5",
+      "review_category": "Morning Prayer and Morning Offering",
+      "artist": "Jankieĺ Kruhier",
+      "title": "Morning Prayer (1897)",
+      "original_proposal_source": "https://commons.wikimedia.org/wiki/File:Jankie%C4%BA_Kruhier_1897_Morning_Prayer.jpg",
+      "rights_candidate": "PD_ART_PROPOSED_SOURCE_CHECK",
+      "decision": "EXPLICIT_USER_APPROVAL_ARTWORK",
+      "photograph_identity_and_rights": "PENDING_EXACT_QA",
+      "photo_release_allowed": false
+    },
+    {
+      "option_id": "TN-2",
+      "review_category": "Tenebrae and Passion",
+      "artist": "Caravaggio",
+      "title": "The Taking of Christ (1602)",
+      "original_proposal_source": "https://commons.wikimedia.org/wiki/File:The_Taking_of_Christ-Caravaggio_(c.1602).jpg",
+      "rights_candidate": "PD_ART_PROPOSED",
+      "decision": "EXPLICIT_USER_APPROVAL_ARTWORK",
+      "photograph_identity_and_rights": "PENDING_EXACT_QA",
+      "photo_release_allowed": false
+    },
+    {
+      "option_id": "TN-3",
+      "review_category": "Tenebrae and Passion",
+      "artist": "Gerard van Honthorst",
+      "title": "Christ before the High Priest",
+      "original_proposal_source": "https://commons.wikimedia.org/wiki/File:Gerard_van_Honthorst_-_Christ_before_the_High_Priest_-_WGA11650.jpg",
+      "rights_candidate": "PD_ART_PROPOSED",
+      "decision": "EXPLICIT_USER_APPROVAL_ARTWORK",
+      "photograph_identity_and_rights": "PENDING_EXACT_QA",
+      "photo_release_allowed": false
+    },
+    {
+      "option_id": "LS-2",
+      "review_category": "Litany of Saints",
+      "artist": "Albrecht Dürer",
+      "title": "The Adoration of the Trinity (Landauer Altarpiece)",
+      "original_proposal_source": "https://commons.wikimedia.org/wiki/File:Albrecht_D%C3%BCrer_-_Adoration_of_the_Trinity_(Landauer_Altar)_-_Google_Art_Project.jpg",
+      "rights_candidate": "PD_ART_PROPOSED",
+      "decision": "EXPLICIT_USER_APPROVAL_ARTWORK",
+      "photograph_identity_and_rights": "PENDING_EXACT_QA",
+      "photo_release_allowed": false
+    },
+    {
+      "option_id": "AH-1",
+      "review_category": "Act of Hope and Divine Providence",
+      "artist": "Rembrandt",
+      "title": "Christ in the Storm on the Sea of Galilee",
+      "original_proposal_source": "https://commons.wikimedia.org/wiki/File:Rembrandt_Christ_in_the_Storm_on_the_Lake_of_Galilee.jpg",
+      "rights_candidate": "PD_ART_HISTORICAL_REPRODUCTION_STOLEN_ORIGINAL",
+      "decision": "EXPLICIT_USER_APPROVAL_ARTWORK",
+      "photograph_identity_and_rights": "PENDING_EXACT_QA",
+      "photo_release_allowed": false
+    },
+    {
+      "option_id": "AH-2",
+      "review_category": "Act of Hope and Divine Providence",
+      "artist": "Gustave Brion",
+      "title": "Jesus and Peter on the Water (1863)",
+      "original_proposal_source": "https://commons.wikimedia.org/wiki/File:Jesus_and_Peter_on_the_Water_by_Gustave_Brion.jpg",
+      "rights_candidate": "PD_ART_PROPOSED",
+      "decision": "EXPLICIT_USER_APPROVAL_ARTWORK",
+      "photograph_identity_and_rights": "PENDING_EXACT_QA",
+      "photo_release_allowed": false
+    },
+    {
+      "option_id": "AH-3",
+      "review_category": "Act of Hope and Divine Providence",
+      "artist": "Ivan Aivazovsky",
+      "title": "Walking on Water (1888)",
+      "original_proposal_source": "https://commons.wikimedia.org/wiki/File:Po_vodam_1888.jpg",
+      "rights_candidate": "PD_ART_PROPOSED",
+      "decision": "EXPLICIT_USER_APPROVAL_ARTWORK",
+      "photograph_identity_and_rights": "PENDING_EXACT_QA",
+      "photo_release_allowed": false
+    },
+    {
+      "option_id": "AH-4",
+      "review_category": "Act of Hope and Divine Providence",
+      "artist": "Ludolf Bakhuizen",
+      "title": "Christ in the Storm on the Sea of Galilee",
+      "original_proposal_source": "https://commons.wikimedia.org/wiki/File:Backhuysen,_Ludolf,_I_-_Christ_in_the_Storm_on_the_Sea_of_Galilee_-_Google_Art_Project.jpg",
+      "rights_candidate": "PD_ART_PROPOSED",
+      "decision": "EXPLICIT_USER_APPROVAL_ARTWORK",
+      "photograph_identity_and_rights": "PENDING_EXACT_QA",
+      "photo_release_allowed": false
+    },
+    {
+      "option_id": "AH-5",
+      "review_category": "Act of Hope and Divine Providence",
+      "artist": "Robert Loftin Newman",
+      "title": "Christ Saving Peter",
+      "original_proposal_source": "https://commons.wikimedia.org/wiki/File:Brooklyn_Museum_-_Christ_Saving_Peter_-_Robert_Loftin_Newman_-_overall.jpg",
+      "rights_candidate": "PD_ART_PROPOSED",
+      "decision": "EXPLICIT_USER_APPROVAL_ARTWORK",
+      "photograph_identity_and_rights": "PENDING_EXACT_QA",
+      "photo_release_allowed": false
+    }
+  ],
+  "unselected_candidates": "ELIGIBLE_NOT_REJECTED",
+  "preserve_existing_cover_locks": true,
+  "scope": "RESEARCH_ONLY_NO_AUTO_ASSIGNMENT_OR_ROTATION",
+  "notes": [
+    "Do not infer unselected choices are rejections.",
+    "The user's paintings approval is independent of the exact historical reproduction or museum photo. Verify object identity, image copyright, image dimensions and photographer restrictions before release.",
+    "AH-1 original painting is stolen; only historic reproductions are available; inspect source quality.",
+    "Preserve prior approved source-scoped uses across modules and protect all final cover locks.",
+    "Photo acquisition and any live app changes require distinct release gate."
+  ],
+  "publication_allowed": false
+}
