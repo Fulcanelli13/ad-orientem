@@ -4,6 +4,12 @@ on:
   pull_request:
     paths:
       - 'scripts/schola/build-2026-selected-repertoire.mjs'
+      - 'scripts/mass/audit-2026-april-paschal-trilingual.mjs'
+      - 'src/mass/1962-april-paschal-archival-witnesses.js'
+      - 'src/mass/1962-april-paschal-proper-correction.js'
+      - 'src/mass/reader-proper-runtime-recovery.js'
+      - 'src/mass/proper-reader-slots.js'
+      - 'tests/mass-1962-april-paschal-three-source-regression.mjs'
       - 'src/mass/reader-schola-selected-queue-crosswalk.js'
       - 'src/mass/reader-schola-selected-full-source-crosswalk.js'
       - 'src/mass/reader-schola-selected-pregospel-review.js'
@@ -16,6 +22,21 @@ on:
       - 'tests/1962-perpetua-felicity-english-named-source-regression.mjs'
       - 'scripts/schola/reconcile-2026-completion-exceptions.mjs'
       - 'tests/schola-2026-completion-source-exceptions.mjs'
+      - 'scripts/schola/build-2026-five-pinned-source-gap-dispositions.mjs'
+      - 'tests/schola-2026-five-pinned-source-gap-dispositions.mjs'
+      - 'data/research/schola-2026-five-pinned-source-gap-evidence.v1.json'
+      - 'data/research/schola-2026-five-source-liturgical-family-corroboration.v1.json'
+      - 'tests/schola-2026-five-source-liturgical-family-corroboration.mjs'
+      - 'data/research/schola-2026-five-family-section-inheritance.v1.json'
+      - 'tests/schola-2026-five-family-section-inheritance.mjs'
+      - 'scripts/schola/group-2026-pregospel-source-owner-holds.mjs'
+      - 'tests/schola-2026-pregospel-source-owner-groups.mjs'
+      - 'data/research/schola-2026-seven-common-historical-section-evidence.v1.json'
+      - 'scripts/schola/build-2026-seven-common-ember-review.mjs'
+      - 'tests/schola-2026-seven-common-ember-review.mjs'
+      - 'data/research/schola-2026-27-selected-variant-owner-candidates.v1.json'
+      - 'scripts/schola/reconcile-2026-27-variant-source-candidates.mjs'
+      - 'tests/schola-2026-27-variant-owner-candidates.mjs'
       - 'src/mass/reader-proper-first60-print-review.js'
       - 'scripts/schola/build-2026-proper-first60-print-review.mjs'
       - 'tests/reader-proper-first60-print-review.mjs'
@@ -71,6 +92,10 @@ jobs:
           key: schola-1962-ad8783641455bae38a8eb5782b34241a7b3ff2ef-v1
       - name: Rebuild and verify 1049 pinned Latin source-to-GABC matches
         run: node scripts/schola/build-1962-full-coverage.mjs
+      - name: Audit exact 13-14-29 April Paschal LIVE source texts and adjacent dates (LAT EN FR)
+        run: |
+          node scripts/mass/audit-2026-april-paschal-trilingual.mjs
+          node tests/mass-1962-april-paschal-three-source-regression.mjs
       - name: Capture real 2026 selected Mass of day and join all 1049 source witnesses
         run: node scripts/schola/build-2026-selected-repertoire.mjs
       - name: Review actual selected pre-Gospel scores against cached immutable Latin sources
@@ -101,6 +126,24 @@ jobs:
         run: |
           node scripts/schola/reconcile-2026-completion-exceptions.mjs
           node tests/schola-2026-completion-source-exceptions.mjs
+      - name: Reconcile five absent pinned Latin source families against original archival tree (15 real 2026 dates)
+        run: |
+          node scripts/schola/build-2026-five-pinned-source-gap-dispositions.mjs
+          node tests/schola-2026-five-pinned-source-gap-dispositions.mjs
+          node tests/schola-2026-five-source-liturgical-family-corroboration.mjs
+          node tests/schola-2026-five-family-section-inheritance.mjs
+      - name: Group 128 dated pre-Gospel ownership holds by original authenticated section donor
+        run: |
+          node scripts/schola/group-2026-pregospel-source-owner-holds.mjs
+          node tests/schola-2026-pregospel-source-owner-groups.mjs
+      - name: Adjudicate seven historical Commons and distinct Pentecost Ember source roles (research only)
+        run: |
+          node scripts/schola/build-2026-seven-common-ember-review.mjs
+          node tests/schola-2026-seven-common-ember-review.mjs
+      - name: Cross-examine 27 selected historical-Common differences with dated Latin and external source holds
+        run: |
+          node scripts/schola/reconcile-2026-27-variant-source-candidates.mjs
+          node tests/schola-2026-27-variant-owner-candidates.mjs
       - name: Upload original 60 Proper and additional 24 pre-Gospel review packets
         if: always()
         uses: actions/upload-artifact@v4
@@ -109,3 +152,26 @@ jobs:
           path: .tmp/schola-1962-selected-annual/
           if-no-files-found: warn
           retention-days: 30
+
+  paschal-april-fast-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Capture exact 2026 Paschal saint-day source texts and adjoining controls
+        run: |
+          node scripts/mass/audit-2026-april-paschal-trilingual.mjs
+          node tests/mass-1962-april-paschal-three-source-regression.mjs
+      - name: Upload seven-day LAT EN FR native DayResolver original witness
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-2026-april-original-paschal-selected-source
+          path: .tmp/mass-april-1962/trilingual-dayresolver-snapshots.json
+          if-no-files-found: warn
+          retention-days: 14

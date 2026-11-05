@@ -20,8 +20,9 @@ assert.equal(queue.schema,"AO_SACRED_ATLAS_W1_BATCH01_56_EDITORIAL_CLOSURE_V1");
 assert.equal(draft.schema,"AO_SACRED_ATLAS_W1_FIRST10_EXTENDED_GUIDES_RESEARCH_V1");
 assert.equal(queue.rows.length,56);
 assert.equal(draft.guides.length,10);
-assert.equal(queue.counts.expanded_bilingual_drafts_second_editor_pending,10);
-assert.equal(queue.counts.short_source_synopses_only,46);
+assert.ok(queue.counts.expanded_bilingual_drafts_second_editor_pending>=10);
+assert.ok(queue.counts.expanded_bilingual_drafts_second_editor_pending<=56);
+assert.equal(queue.counts.short_source_synopses_only,56-queue.counts.expanded_bilingual_drafts_second_editor_pending);
 assert.equal(draft.counts.new_published_guides,0);
 assert.equal(draft.counts.approved_photo_covers_unchanged,379);
 assert.equal(queue.counts.published_guide_changes,0);
@@ -42,8 +43,10 @@ for(let i=0;i<56;i++){
  if(i<10){
    assert.ok(row.draft_file);
    assert.match(row.extended_draft_state,/SECOND_EDITOR/);
+ }else if(row.draft_file){
+   assert.match(row.extended_draft_state,/SECOND_EDITOR/);
+   assert.equal(row.publication_authorized,false);
  }else{
-   assert.equal(row.draft_file,null);
    assert.match(row.extended_draft_state,/SOURCE_DEEPENING/);
  }
 }
@@ -80,4 +83,4 @@ assert.match(draft.guides[0].sections[1].paragraphs[0].en,/does not establish th
 assert.match(draft.guides[3].sections[0].paragraphs[0].en,/Montecassino/);
 assert.match(draft.guides[6].sections[1].paragraphs[0].en,/2026 edition/);
 assert.match(draft.guides[9].sections[2].paragraphs[0].en,/2028/);
-console.log("Sacred Atlas W1 PASS: ten 3-section EN/FR institutional-source draft guides + exact 56 ID queue; 46 still held, 33 production guides and 379 covers unchanged.");
+console.log("Sacred Atlas W1 PASS: frozen first ten 3-section EN/FR guides plus evolving 56-place queue; "+queue.counts.short_source_synopses_only+" still held, 33 production guides and 379 covers unchanged.");

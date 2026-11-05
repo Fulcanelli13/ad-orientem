@@ -21,7 +21,12 @@ fact.priority_lexical_screen.manual_semantic_novelty_approved=true;
 fact.pilot_destination_audit.publishable_deep_link=true;
 fact.pilot_destination_audit.exact_in_app_route_verified=true;
 fact.pilot_source_folio.link_browser_verified=true;
-fact.publication_days=["2026-10-31","2026-11-01","2026-11-02"];
+// Synthetic authorization must include the browser's actual present day.
+// The old hard-coded October dates expired in early November and caused a
+// false failing browser check despite the correct fail-closed production feed.
+// Adjacent UTC dates cover browser timezone offsets without relaxing gates.
+fact.publication_days=[-1,0,1].map(days=>
+ new Date(Date.now()+days*86400000).toISOString().slice(0,10));
 const server=http.createServer(async(req,res)=>{
  try{
   const path=decodeURIComponent(new URL(req.url,"http://127.0.0.1").pathname);

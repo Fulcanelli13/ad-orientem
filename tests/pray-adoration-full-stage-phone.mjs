@@ -339,7 +339,9 @@ try{
     await prayer.waitFor({state:"visible",timeout:12000});
     assert.equal(await prayer.locator('[data-ao-devo-card="'+id+'"]').count(),1,
      id+" switched to the wrong canonical prayer");
-    await prayer.locator("[data-p435930-prayer-return]").click();
+    assert.equal(await prayer.locator("[data-p435930-prayer-return]").count(),0,
+     id+" must not duplicate header Back");
+    await page.locator("#aoPray435930.open [data-p435930-back]").click();
     assert.equal(await page.locator(sel+'[data-ao-adoration-mode="treasury"]').count(),1,
      id+" failed to return to Eucharistic Treasury");
     report.counts.treasuryHandoffs++;

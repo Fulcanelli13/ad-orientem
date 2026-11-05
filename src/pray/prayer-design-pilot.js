@@ -121,6 +121,31 @@ export function resolvedPrayerPilotFamilies(L,families){
  result.library={...result.library,searchItems:PRAYER_SEARCH_ONLY_ROUTES_V1.map(id=>candidates.get(id)).filter(Boolean)};
  return result;
 }
+// Home search is another doorway into existing owners, never an extra shelf.
+// Source its route/title from the *approved* category order. The retired
+// six-family catalog remains available only for the explicit legacy rollback:
+// it must not override labels or placement for the nine-door experience.
+export function collectPrayerPilotOwnedSearchRoutes(families={}){
+ const rows=[];
+ for(const [primaryDoor,ids] of Object.entries(PRAYER_DOOR_ORDER_V1)){
+  const items=families[primaryDoor]?.items||[];
+  for(const id of ids){
+   const item=items.find(candidate=>candidate[1]===id);
+   if(!item||item[0]==="prayer")continue; // canonical DATA.prayers is indexed once below
+   const [owner,,title,description]=item;
+   if(owner!=="own"&&owner!=="external")continue;
+   rows.push({id,owner,title,description,primaryDoor,searchOnly:false});
+  }
+ }
+ for(const id of PRAYER_SEARCH_ONLY_ROUTES_V1){
+  const item=families.library?.searchItems?.find(candidate=>candidate[1]===id);
+  if(!item||item[0]==="prayer")continue;
+  const [owner,,title,description]=item;
+  if(owner!=="own"&&owner!=="external")continue;
+  rows.push({id,owner,title,description,primaryDoor:null,searchOnly:true});
+ }
+ return rows;
+}
 // Search references the existing source-owned Novena API, never another prayer corpus.
 export function collectPrayerNovenaSearchEntries(corpus={},supplemental={}){
  const rows=new Map();
@@ -185,20 +210,12 @@ export function renderPilotDiscovery({head,L,esc,DATA,families,assetIcon,novenaC
       '<span class="aoPrayPilotTileCaption"><strong>'+esc(label)+'</strong><small>'+esc(family.description||'')+'</small></span>'+
       '<span class="aoPrayPilotTileArrow" aria-hidden="true">›</span></button>';
   };
-  const routes=new Map();
-  Object.values(all).forEach(f=>{
-    [...(f.items||[]),...(f.searchItems||[])].forEach(item=>{
-      const [owner,id,title,description]=item;
-      // Canonical single-text records are already indexed below as DATA.prayers.
-      if(owner==="prayer")return;
-      if(!routes.has(id))routes.set(id,{owner,id,title,description});
-    });
-  });
+  const routes=collectPrayerPilotOwnedSearchRoutes(all);
   const routeForm=id=>/novena|montfort|first_friday|first_saturday/.test(id)?"novena"
     :/rosary|chaplet|five_wounds|little_crown|precious_blood|mercy/.test(id)?"chaplet"
     :/litany/.test(id)?"litany":"prayer";
-  const routeRows=[...routes.values()].map(row=>
-    '<button type="button" class="aoPrayPilotResult" data-pilot-form="'+routeForm(row.id)+'" data-pilot-latin="false" data-pilot-searchable="'+esc([row.title,row.description].join(" "))+'"'+
+  const routeRows=routes.map(row=>
+    '<button type="button" class="aoPrayPilotResult" data-pilot-form="'+routeForm(row.id)+'" data-pilot-latin="false" data-pilot-primary-door="'+esc(row.primaryDoor||"search")+'"'+(row.searchOnly?' data-pilot-search-only="true"':'')+' data-pilot-searchable="'+esc([row.title,row.description].join(" "))+'"'+
     (row.owner==="external"?' data-p435930-external="':' data-p435930-own="')+esc(row.id)+'">'+
     '<b>'+esc(row.title)+'</b><small>'+esc(row.description)+'</small></button>'
   ).join("");
@@ -207,7 +224,7 @@ export function renderPilotDiscovery({head,L,esc,DATA,families,assetIcon,novenaC
     '<b>'+esc(L(en,fr))+'</b><small>'+esc(L("Nine-day novena","Neuvaine de neuf jours"))+'</small></button>'
   ).join("");
   const prayerRows=Object.entries(DATA.prayers||{}).map(([id,p])=>
-    '<button type="button" class="aoPrayPilotResult" data-pilot-form="'+(id.includes("litany")?"litany":"prayer")+'" data-pilot-latin="'+Boolean(p.la)+'" data-pilot-searchable="'+esc([p.title,p.titleFr,id].join(" "))+'" data-p435930-pilot-prayer="'+esc(id)+'">'+
+    '<button type="button" class="aoPrayPilotResult" data-pilot-form="'+(id.includes("litany")?"litany":"prayer")+'" data-pilot-latin="'+Boolean(p.la)+'" data-pilot-primary-door="'+esc(PRAYER_PRIMARY_DOOR_V1[id]||"library")+'" data-pilot-searchable="'+esc([p.title,p.titleFr,id].join(" "))+'" data-p435930-pilot-prayer="'+esc(id)+'">'+
     '<b>'+esc(p.titleFr&&L("EN","FR")==="FR"?p.titleFr:p.title)+'</b>'+
     '<small>'+esc(L("Canonical prayer text","Texte canonique de prière"))+'</small></button>'
   ).join("");

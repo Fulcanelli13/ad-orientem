@@ -74,6 +74,44 @@ function retainedCard(card,sequence){
   });
 }
 
+/**
+ * The canonical LIVE source-card stream, without constructing a 39-card
+ * presentation model. A direct curator can consume one verified unit at a
+ * time from the 30 source macros and the pinned Canon segment resolver.
+ * These are transient source units, not browser-visible cards or an adapter
+ * that owns independent navigation.
+ */
+export function* iterateVerifiedSourceFirstLiveCards(baseModel,canonSourceMap){
+  if(!baseModel || baseModel.totalCards!==30)
+    throw new TypeError("DIRECT_LIVE_REQUIRES_30_SOURCE_MACROS");
+  const resolver=createCanonSourceResolver(canonSourceMap);
+  const blockOwner=new Map();
+  for(const card of baseModel.cards.filter(x=>x.sequence>=14&&x.sequence<=18)){
+    for(const block of card.blocks??[]){
+      if(blockOwner.has(block.blockId))
+        throw new Error("DIRECT_LIVE_DUPLICATE_CANON_SOURCE_BLOCK:"+block.blockId);
+      blockOwner.set(block.blockId,card);
+    }
+  }
+  let sequence=0;
+  for(const card of baseModel.cards.filter(x=>x.sequence<=13)){
+    yield retainedCard(card,++sequence);
+  }
+  for(const segment of resolver.segments){
+    const owner=blockOwner.get(segment.blockIds[0]);
+    if(!owner)throw new Error(segment.id+": DIRECT_CANON_BLOCK_OWNER_MISSING");
+    for(const id of segment.blockIds){
+      if(blockOwner.get(id)!==owner)
+        throw new Error(segment.id+": DIRECT_CANON_BLOCK_OWNERS_DIFFER:"+id);
+    }
+    yield canonCardFromBlock(owner,segment,++sequence);
+  }
+  for(const card of baseModel.cards.filter(x=>x.sequence>=19)){
+    yield retainedCard(card,++sequence);
+  }
+  if(sequence!==39)throw new Error("DIRECT_LIVE_SOURCE_STREAM_EXPECTED_39_CANONICAL_UNITS");
+}
+
 export function projectSourceFirstLiveModel(baseModel,canonSourceMap){
   if(!baseModel || baseModel.totalCards!==30)throw new TypeError("30-card base reader model required");
   const resolver=createCanonSourceResolver(canonSourceMap);

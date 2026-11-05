@@ -1,0 +1,55 @@
+name: Prayer D2 museum original — actual gallery photo/crop QA
+
+# Zero-cost read-only visual experiment; NEVER publish test images.
+on:
+  pull_request:
+    paths:
+      - 'scripts/prayer_d2_gallery_native_qa.py'
+      - 'tests/prayer-d2-real-gallery-12-phone-crops.mjs'
+      - 'scripts/prayer_d2_gallery_contact_sheet.py'
+      - '.github/workflows/prayer-d2-real-gallery-phone-qa.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verified-museum-photo-gallery:
+    name: D2 genuine source plus 12 bilingual phone gallery previews
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install exact Python image QA dependency
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Check test syntax
+        run: python -m py_compile scripts/prayer_d2_gallery_native_qa.py scripts/prayer_d2_gallery_contact_sheet.py && node --check tests/prayer-d2-real-gallery-12-phone-crops.mjs
+      - name: Independently rehash exact CC0 museum original into PRIVATE temporary runner storage
+        run: python scripts/prayer_d2_gallery_native_qa.py
+      - name: Install existing application browser test dependency
+        run: npm install --no-audit --no-fund
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Capture 12 real gallery screens, 4 phone environments and 3 visual modes
+        run: node tests/prayer-d2-real-gallery-12-phone-crops.mjs
+      - name: Assemble screenshot comparisons without editing any source image
+        run: python scripts/prayer_d2_gallery_contact_sheet.py
+      - name: Delete original JPEG from temporary runner before any artifact upload
+        if: always()
+        run: rm -f "$RUNNER_TEMP/prayer-d2-native-private/d2-museum-original.jpg"
+      - name: Upload review-only source/geometry/crop evidence (NOT original photo)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prayer-d2-cma-12-real-gallery-phone-crops
+          path: ${{ runner.temp }}/prayer-d2-gallery-phone-review/
+          retention-days: 4
+          if-no-files-found: warn

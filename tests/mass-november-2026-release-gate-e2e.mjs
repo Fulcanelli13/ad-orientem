@@ -331,6 +331,8 @@ try{
                actualLanguage:prepared?.readerPreferences?.language??null,
                requestedMode:prepared?.readerPreferences?.mode??null,
                cardCount:api.model?.cards?.length??0,
+               sourceModelCards:api.sourceModel?.totalCards??null,
+               structureOwner:api.model?.structureOwner??null,
                sourceCard:sequenceCard.sourceSectionId??sequenceCard.sectionId,
                displayedCard:api.getCurrentCard()?.sectionId??null,
                curated:api.root.dataset.r17CuratedReview,
@@ -376,7 +378,13 @@ try{
                 real.actualLanguage!==language||real.requestedMode!==mode||
                 real.sourceCard!=="AO.CARD.006"||
                 real.displayedCard==null||!real.overlay||
-                real.cardCount<30)
+                real.cardCount<30||
+                (mode==="LIVE"&&(
+                  real.curated!=="true"||
+                  real.structureOwner!=="SOURCE_FIRST_LIVE_CURATED_65_REVIEW"||
+                  real.sourceModelCards!==39||
+                  ![65,66,67].includes(real.cardCount)
+                )))
                throw Error("NOV02_NATIVE_READER_IDENTITY_MISMATCH:"+JSON.stringify(real));
              for(const width of [320,390]){
                await page.setViewportSize({width,height:844});
