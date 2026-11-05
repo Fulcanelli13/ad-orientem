@@ -82,6 +82,6 @@ assert.equal(a.source_corrections.length,2);
 assert.equal(queue.sensitive_second_editor_checklist.length,6);
 for(const x of [...queue.source_repair_queue,...queue.sensitive_second_editor_checklist])assert.ok(keys.includes(x.place_id));
 assert.match(all[25].sections[1].paragraphs[0].en,/contested|competing|disputed/i);
-assert.match(all[23].sections[2].paragraphs[0].en,/Fleury/);
+assert.match(all[24].sections[1].paragraphs[0].en,/Fleury/);
 assert.match(all[29].sections[2].paragraphs[0].en,/1979/);
 console.log("SACRED ATLAS W1 NEXT20 PASS: 30/56 three-section EN/FR drafts (90 paragraphs each language); six sensitive review holds, 2 source repairs, 26 backlog, 33 published guides and 379 covers unchanged.");
