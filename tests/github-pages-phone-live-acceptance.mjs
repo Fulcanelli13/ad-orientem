@@ -188,6 +188,15 @@ try{
   await page.goto(url.href,{waitUntil:"domcontentloaded",timeout:90000});
   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner===true,
    null,{timeout:60000});
+  // Registration is deferred 1.8 seconds after the page load event;
+  // Home readiness is not proof of an active service worker.
+  await page.waitForFunction(async()=>{
+   if(!globalThis.AO_OFFLINE_APP_V1?.status?.supported)return false;
+   const registration=await navigator.serviceWorker.getRegistration();
+   return globalThis.AO_OFFLINE_APP_V1.status.registered===true&&
+     Boolean(registration?.active)&&
+     registration.scope===new URL("./",location.href).href;
+  },null,{timeout:35000});
   const before=await page.evaluate(async()=>{
    if(!("serviceWorker" in navigator))return {supported:false,registered:false};
    const registration=await navigator.serviceWorker.getRegistration();
@@ -199,6 +208,9 @@ try{
    globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner||
    globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.nativeMounted
   ),null,{timeout:65000});
+  await page.waitForFunction(async()=>Boolean(
+   (await navigator.serviceWorker?.getRegistration())?.active
+  ),null,{timeout:25000});
   const after=await page.evaluate(async()=>{
    const registration=await navigator.serviceWorker?.getRegistration();
    return {registered:Boolean(registration),scope:registration?.scope??null,
@@ -207,12 +219,17 @@ try{
     activeSurface:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
     overflow:document.documentElement.scrollWidth>innerWidth+2};
   });
-  assert.equal(before.supported,true,"Published site lacks browser SW support");
-  assert.equal(after.registered,true,"Returning user has no service-worker registration");
-  assert.equal(after.scope,base.href,"Service worker escaped GitHub Pages project scope");
-  assert.equal(after.overflow,false,"Returning user 390px viewport clips horizontally");
   await page.screenshot({path:resolve(out,"returning-user-390.png"),fullPage:false});
   report.serviceWorker={before,after,automaticSnapshotPromotionNotRequested:true};
+  await writeFile(resolve(out,"evidence.json"),JSON.stringify(report,null,2)+"\n");
+  console.log("PAGES_PHONE_SW_PROVENANCE "+JSON.stringify(report.serviceWorker));
+  assert.equal(before.supported,true,"Published site lacks browser SW support");
+  assert.equal(before.registered,true,"First visit did not complete deferred worker registration");
+  assert.equal(after.registered,true,"Returning user has no service-worker registration");
+  assert.equal(after.scope,base.href,"Service worker escaped GitHub Pages project scope");
+  assert.equal(after.controller,true,"Returning-user reload was not claimed by registered worker");
+  assert.equal(after.overflow,false,"Returning user 390px viewport clips horizontally");
+
   console.log("PAGES_PHONE_RETURNING_USER_PASS "+JSON.stringify(report.serviceWorker));
  }finally{await context.close()}
  await writeFile(resolve(out,"evidence.json"),JSON.stringify(report,null,2)+"\n");
