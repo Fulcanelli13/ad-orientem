@@ -146,13 +146,13 @@ const compute=function compute(data){
   sites_with_any_source_registry_entry:rows.filter(x=>x.bibliography.length).length,
   sites_with_unresolved_source_ids:rows.filter(x=>x.unresolved_source_ids.length).length
  };
- if(sum.canonical_places!==530||sum.shrine_records!==257||sum.extended_guides!==33||sum.shrine_guides_to_write!==224||sum.approved_covers!==379||sum.gallery_images!==42||sum.r25_places_with_verified_unapproved_originals!==23||sum.pilot_biographies_review_only!==6)throw Error("Source baseline changed; reconcile before generating master "+JSON.stringify(sum));
+ if(sum.canonical_places!==533||sum.shrine_records!==260||sum.extended_guides!==33||sum.shrine_guides_to_write!==227||sum.approved_covers!==379||sum.gallery_images!==42||sum.r25_places_with_verified_unapproved_originals!==23||sum.pilot_biographies_review_only!==6)throw Error("Source baseline changed; reconcile before generating master "+JSON.stringify(sum));
  return {
-  schema:"AO_SACRED_ATLAS_EDITORIAL_MASTER_530_V1",as_of:"2026-11-04",
+  schema:"AO_SACRED_ATLAS_EDITORIAL_MASTER_533_V1",as_of:"2026-11-05",
   notice:"EDITORIAL RESEARCH MASTER ONLY. Not an app registry, authorisation to publish an image, approved biography, or an assertion that a linked source proves an unwritten history.",
   source_paths:paths,
   policy:{
-   canonical_place_identity:"Keep existing CL/Place IDs; no map identity additions",
+   canonical_place_identity:"Preserve all 530 historic Place IDs; V10 admits only three specifically sourced new Place identities. No photo-research identity promotion",
    saints:"A name association is not a biography or identity merge; six-pilot facts remain editorial review only",
    sources:"Source links identify review material, not verified full-text history; read and attribute before authoring",
    photographs:"Only approved-place-media/approved-place-gallery publish; R25 original bytes are unapproved",
@@ -176,7 +176,7 @@ const compute=function compute(data){
 };
 const data={};for(const [key,path] of Object.entries(paths))data[key]=JSON.parse(readFileSync(resolve(root,path),"utf8"));
 const ledger=compute(data);
-const location=resolve(root,"data/geography/research/sacred-atlas-editorial-master-530-20261104.v1.json");
+const location=resolve(root,"data/geography/research/sacred-atlas-editorial-master-533-20261105.v1.json");
 if(process.argv.includes("--write")){
  writeFileSync(location,JSON.stringify(ledger)+"\n");
  console.log("Written "+location);
