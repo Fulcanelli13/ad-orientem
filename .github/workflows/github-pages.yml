@@ -26,6 +26,7 @@ on:
       - 'tools/prepare-github-pages-release.mjs'
       - 'tools/check-github-pages-live.mjs'
       - 'tools/github-pages-release-proof.mjs'
+      - 'tests/github-pages-phone-live-acceptance.mjs'
       - '.github/workflows/github-pages.yml'
   pull_request:
     paths:
