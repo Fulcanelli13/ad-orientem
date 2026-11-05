@@ -52,10 +52,24 @@ for(const row of manifest.records){
   assert.ok(profile.includes("Google Maps"));
  }
 }
-for(const id of ["RG-50082C65DA56","RG-B66-ACD5E3A16E10","RG-18E53EDD9E9C","RG-615FF6835AAE","RG-2C84B50B3667"]){
+// R2-only municipality decisions remain unchanged. Later R17 Excel approval allows an
+// independently identified San Jose SCHOOL/CAMPUS vicinity, not a chapel footprint.
+// Keep the original historical name conflict and all other unapproved holds.
+for(const id of ["RG-50082C65DA56","RG-B66-ACD5E3A16E10","RG-615FF6835AAE","RG-2C84B50B3667"]){
  assert.ok(!registry[id]);assert.ok(!byId.get(id)?.map_publishable,"Identity or closed site hold must stay unpinned: "+id);
 }
-assert.equal(all.length,2582);assert.equal(all.filter(x=>x.map_publishable).length,2553);
-assert.deepEqual(tlmSiteEvidenceCounts(all),{ALL:2582,REVIEWED_PIN:747,SOURCE_PIN:1806,ADDRESS_ONLY:29});
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,29);
-console.log("PASS TLM R2: 93 Excel-approved GeoNames town centroids, frozen IDs, EN/FR cards, 2553 mapped, 29 unpinned, no GPS routing");
+const sanJoseId="RG-18E53EDD9E9C",sanJose=byId.get(sanJoseId);
+assert.ok(!registry[sanJoseId],"R2 must not retroactively approve San Jose");
+assert.ok(sanJose?.map_publishable&&sanJose.geo?.approximate&&sanJose.geo.precision==="locality",
+ "R17 only admits Excel-approved school/campus geography, NOT chapel GPS");
+assert.equal(sanJose.geo.source_ref,"independent:r17-illustrative-rg18e53edd9e9c");
+assert.match(sanJose.geo.attribution,/inconsistently titled Saint Athanasius/,
+ "Historical St Thomas More / Saint Athanasius identity conflict must remain explicit");
+assert.equal(sanJose.affiliation_scope,"SOURCE_LABEL_ONLY");
+assert.match(sanJose.status,/MASS UNVERIFIED/);
+assert.ok(sanJose.actions.every(a=>!a.url.includes("/maps/dir/")),
+ "No route to approximate school/campus centroid");
+assert.equal(all.length,2582);assert.equal(all.filter(x=>x.map_publishable).length,2555);
+assert.deepEqual(tlmSiteEvidenceCounts(all),{ALL:2582,REVIEWED_PIN:749,SOURCE_PIN:1806,ADDRESS_ONLY:27});
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,27);
+console.log("PASS TLM R2: 93 Excel-approved GeoNames town centroids, frozen IDs, EN/FR cards, 2555 mapped, 27 unpinned, no GPS routing");
