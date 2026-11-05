@@ -76,7 +76,7 @@ export const CANON_PAX_REFERENCE_SCORES=Object.freeze(CUE_SPECS.map(cue=>{
   printVerification:"PENDING_NOTE_BY_NOTE_FACSIMILE_COLLATION",
   publicScoreApproved:false,
   gabc:"name: "+witness.sourceName+" response "+cue.sourceCueId+
-   ";\\noffice-part:Toni Communes;\\nsource: "+witness.sourceFolio+
-   ";\\n%%\\n"+clef+" "+original+" (::)"
+   ";\noffice-part:Toni Communes;\nsource: "+witness.sourceFolio+
+   ";\n%%\n"+clef+" "+original+" (::)"
  });
 }));
