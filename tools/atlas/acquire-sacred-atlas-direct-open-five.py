@@ -76,11 +76,12 @@ def verify_live_rights(item):
         raw_lower = html.unescape(page.replace("\\/", "/")).casefold()
         if legal not in raw_lower:
             raise ValueError("FLICKR_EXPECTED_CC_LICENSE_NOT_CONFIRMED_ON_PAGE")
-        if "creativecommons.org/licenses/by-nc" in raw_lower:
-            # Some side recommendations may have NC. Do not use this check to
-            # infer permissions, only detect explicit conflict on the page.
-            if re.search(r'(?<![a-z0-9])by-nc(?:-sa|-nd)?/2\.0', raw_lower):
-                raise ValueError("POTENTIAL_NONCOMMERCIAL_LICENSE_CONFLICT")
+        # Flickr includes unrelated licence links in recommendations and
+        # global UI. Their presence says nothing about this photograph.
+        # Require the exact source photo ID and expected CC link instead.
+        photo_id = item["source_page"].rstrip("/").split("/")[-1]
+        if photo_id not in item["image_url"] or photo_id not in raw_lower:
+            raise ValueError("FLICKR_SOURCE_PHOTO_ID_NOT_MATCHED")
     else:
         raise ValueError("UNKNOWN_SOURCE_TYPE")
     return hashlib.sha256(raw).hexdigest()
@@ -106,13 +107,17 @@ def convert_photo(blob):
 
 def verify_scope(m, covers, places):
     assert m["schema"] == "AO_SACRED_ATLAS_DIRECT_OPEN_PHOTO_BATCH_V1"
-    assert m["baseline_covers"] == len(covers["items"]) == 379
+    assert m["baseline_covers"] == 379
+    assert 379 <= len(covers["items"]) <= 384
     assert len(places["places"]) == 530
     assert len(m["items"]) == 5
     existing = {x["place_id"] for x in covers["items"]}
     canonical = {x["place_id"] for x in places["places"]}
     ids = [x["place_id"] for x in m["items"]]
-    assert len(set(ids)) == 5 and all(x in canonical and x not in existing for x in ids)
+    assert len(set(ids)) == 5 and all(x in canonical for x in ids)
+    previous = {x["place_id"]:x for x in covers["items"]}
+    assert all(previous[x]["source_place_ref"] == "DIRECT_OPEN_PHOTO_FIVE_20261105"
+               for x in ids if x in previous)
     assert all(x["source_type"] in {"wordpress_photos","flickr"} for x in m["items"])
     assert all(x["license"] in {"CC0","CC-BY-2.0","CC-BY-SA-2.0"} for x in m["items"])
     assert len({x["image_url"] for x in m["items"]}) == 5
@@ -137,8 +142,22 @@ def main():
         return 0
     before_bytes = COVERS.read_bytes()
     held, released, media_rows = [], [], []
+    prior_report = load(REPORT) if REPORT.exists() else {"accepted":[]}
+    prior_by_id = {x["place_id"]:x for x in prior_report.get("accepted",[])}
+    prior_media = {x["place_id"]:x for x in covers["items"]}
     for x in manifest["items"]:
         pid = x["place_id"]
+        if pid in existing:
+            item = prior_media[pid]
+            assert item["source_url"] == x["source_page"]
+            proof = prior_by_id.get(pid)
+            if proof is None:
+                raise ValueError("PREVIOUS_DIRECT_ADMISSION_WITHOUT_EVIDENCE: "+pid)
+            asset = ROOT / item["asset_path"]
+            assert asset.exists() and hashlib.sha256(asset.read_bytes()).hexdigest() == item["derivative_sha256"]
+            released.append({**proof,"status":"PRESERVED_PREVIOUS_BATCH_ADMISSION"})
+            print("DIRECT_PHOTO_PRESERVED",pid,flush=True)
+            continue
         try:
             rights_proof_digest = verify_live_rights(x)
             original = download(x["image_url"],IMAGE_HOSTS,MAX_BYTES)
@@ -186,12 +205,12 @@ def main():
               "no_existing_covers_replaced":True,
               "accepted":released,"holds":held}
     REPORT.write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-    if not media_rows:
+    if not released:
         raise RuntimeError("NO_DIRECT_SOURCE_PHOTO_ADMITTED; see release report")
     covers["items"].extend(media_rows)
     covers["items"].sort(key=lambda x:x["place_id"])
     covers["version"] = "1.6.17"
-    assert len(covers["items"]) == 379 + len(media_rows)
+    assert len(covers["items"]) == len(load_bytes(before_bytes)["items"]) + len(media_rows)
     assert all(any(row["place_id"] == old["place_id"] and row == old
                    for row in covers["items"]) for old in load_bytes(before_bytes)["items"])
     COVERS.write_text(json.dumps(covers,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
