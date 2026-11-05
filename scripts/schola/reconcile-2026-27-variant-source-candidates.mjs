@@ -164,9 +164,9 @@ export function reconcile27SelectedVariants({manifest,prior,annual,inventory}={}
  }
  if(used.size!==27||proposedTextMatches!==23||externalConflicts!==3)
   fail("EXACT_27_DATED_DISPOSITIONS_CHANGED");
- const textGroups=[...clusters.values()].map(g=>({
-  ...g,dates:g.dates.sort(),sourcePaths:[...g.sourcePaths].sort(),
-  priorRubricCues:[...g.originalRubricCues].sort(),status:"FULL_SELECTED_LATIN_TEXT_MATCH_ONLY_NO_MELODY_ID"
+ const textGroups=[...clusters.values()].map(({sourcePaths,originalRubricCues,...g})=>({
+  ...g,dates:g.dates.sort(),sourcePaths:[...sourcePaths].sort(),
+  priorRubricCues:[...originalRubricCues].sort(),status:"FULL_SELECTED_LATIN_TEXT_MATCH_ONLY_NO_MELODY_ID"
  })).sort((a,b)=>b.dates.length-a.dates.length||
    a.sha256.localeCompare(b.sha256));
  if(textGroups.length!==10||
