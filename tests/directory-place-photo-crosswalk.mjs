@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
+import {LIVE} from "./helpers/sacred-places-live-baseline.mjs";
 import {buildScreen} from "../tools/directory/screen-canonical-place-photos.mjs";
 const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
 const geo=read("data/geography/seed-registry.v1.json");
@@ -15,7 +16,17 @@ assert.equal(guadalupeResolution.resolution?.physical_anchor_id,"RG-ACCD4654B950
 assert.equal(guadalupeResolution.resolution?.matched_exact_address,"5250 Justin Road, La Crosse, WI 54601");
 const isGuadalupePair=p=>p.venue_id==="AO-AMER-R28-US-23-05"&&
  p.place_id==="place:US:guadalupe-shrine-la-crosse";
-const live=buildScreen(geo,r49,cover,gallery);
+const frozenMaster=read("data/geography/research/sacred-atlas-editorial-master-530-20261104.v1.json");
+const frozenIds=new Set(frozenMaster.places.map(p=>p.place_id));
+assert.equal(frozenIds.size,530,"Preserve the original P92 photo-spatial research population");
+const frozenGeo={...geo,places:geo.places.filter(p=>frozenIds.has(p.place_id))};
+const live=buildScreen(frozenGeo,r49,cover,gallery);
+const expanded=buildScreen(geo,r49,cover,gallery);
+assert.equal(expanded.counts.canonical_places,LIVE.places,"Current live screening must include every admitted Place");
+for(const p of expanded.candidate_pairs.filter(p=>!frozenIds.has(p.place_id))){
+ assert.equal(p.auto_publish,false,"V10 proximity must never authorize an automatic site/venue association");
+ assert.equal(p.place_has_approved_photo,false,"V10 sites have no approved cover until rights review");
+}
 // P92 is a dated immutable research snapshot, not a perpetual photo-count oracle.
 // New source-verified media may only turn false photo flags to true; spatial
 // matches, exact-site relations, and original research adjudications stay frozen.
@@ -130,4 +141,4 @@ const hannover=review.candidate_pairs.find(x=>x.place_id==="place:DE:basilika-st
 assert.equal(hannover?.distance_m,1.6);
 assert.equal(hannover?.disposition,"EXISTING_CONFIRMED_LINK");
 assert.equal(hannover?.place_has_approved_photo,false,"Canonical Place must not bypass photo release checks");
-console.log("PASS 1,879 venues x 530 Places: 55 frozen spatial pairs, "+live.counts.exact_confirmed_photo_joins+" current approved-photo joins, P92 research preserved");
+console.log("PASS 1,879 venues x frozen 530 Places: 55 immutable spatial pairs, live "+LIVE.places+"-Place screening kept separate, no V10 proximity/photo promotions");
