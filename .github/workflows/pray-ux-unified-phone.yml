@@ -49,7 +49,7 @@ jobs:
         run: node tests/pray-ux-direct-route-mobile-audit.mjs
       - name: Reader pilot F01/F03 source-owned mobile acceptance
         run: node tests/pray-reader-design-pilot-phone.mjs
-      - name: F01 original Holy Card default: all 32 readers and explicit flow alternative
+      - name: 'F01 original Holy Card default: all 32 readers and explicit flow alternative'
         run: node tests/pray-claude-holy-card-source-contract.mjs && node tests/pray-f01-holy-card-default-phone.mjs
       - name: F07 Divine Mercy crown pilot and canonical step acceptance
         run: node tests/pray-chaplet-f07-phone.mjs
