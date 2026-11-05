@@ -86,7 +86,11 @@ jobs:
           if test -f data/directory/generated/sspx/source-unavailable.v1.json; then
             echo "::warning::SSPX upstream HTTP 403 on direct and browser acquisition; snapshot held with zero publishable SSPX records"
             echo "### SSPX source unavailable (HTTP 403)" >> "$GITHUB_STEP_SUMMARY"
-            echo "The FSSP, ICKSP and IBP snapshots were validated. SSPX was **not** imported or released; its exact 403 witness is in the review artifact. Retry when the official source permits acquisition." >> "$GITHUB_STEP_SUMMARY"
+            echo "FSSP, ICKSP and IBP acquisitions passed their basic source-integrity checks, but any later schedule-contract failure still blocks acceptance. SSPX was **not** imported or released; its exact 403 witness is in the review artifact." >> "$GITHUB_STEP_SUMMARY"
+          fi
+          if test -f data/directory/generated/icksp/schedule-drift-review.v1.json; then
+            echo "### ICKSP schedule-identity drift: editorial review required" >> "$GITHUB_STEP_SUMMARY"
+            echo "Compare the current official ICKSP schedule records against the pinned corpus before publication. The review-only drift JSON is preserved in the artifact; no missing times have been synthesized." >> "$GITHUB_STEP_SUMMARY"
           fi
       - name: Package reviewable snapshots
         if: always()
