@@ -7,6 +7,7 @@ on:
       - 'data/prayer/artwork-editorial-20261105/discovery-eight-door-review-slate.v1.json'
       - 'tests/prayer-eight-door-review-slate.mjs'
       - 'scripts/prayer_d2_cma_museum_source_qa.py'
+      - 'scripts/prayer_d3_d8_commons_exact_once_qa.py'
       - '.github/workflows/prayer-eight-door-source-review.yml'
   workflow_dispatch:
 
@@ -33,6 +34,16 @@ jobs:
         run: python -m pip install --disable-pip-version-check Pillow==11.3.0
       - name: Independently test source photo directly from Cleveland Museum (D2 only)
         run: python scripts/prayer_d2_cma_museum_source_qa.py
+      - name: Attempt exact Commons original once for D3 and D8, no HTTP 429 retries
+        run: python scripts/prayer_d3_d8_commons_exact_once_qa.py
+      - name: Preserve exact-original source reports and review previews
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prayer-d3-d8-original-source-evidence
+          path: ${{ runner.temp }}/prayer-d3-d8-exact-original-qa/
+          retention-days: 4
+          if-no-files-found: warn
       - name: Preserve read-only museum source report and review photo
         if: always()
         uses: actions/upload-artifact@v4
