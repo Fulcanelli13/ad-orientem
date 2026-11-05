@@ -81,9 +81,9 @@ test("Only the visible Holy Card face is exposed to screen readers",()=>{
 
 test("F01 reader routes use the Claude object, not a flat sheet",()=>{
  assert.match(runtime,/claudeHolyCard\(\{id,p,face:chosen/);
- assert.match(runtime,/claudeHolyCardCase\(\{ids:ESSENTIAL_HOLY_CARD_IDS_V1/);
+ assert.match(runtime,/claudeHolyCardCase\(\{ids:ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2/);
  assert.match(runtime,/data-p435930-essential-card-turn/);
  assert.match(runtime,/data-p435930-essential-aa/);
  assert.match(runtime,/installClaudeHolyBackFocus\(card\)/);
- assert.match(runtime,/ESSENTIAL_HOLY_CARD_IDS_V1.indexOf\(id\)/);
+ assert.match(runtime,/ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2.indexOf\(id\)/);
 });
