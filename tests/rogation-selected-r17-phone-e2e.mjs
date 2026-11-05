@@ -199,7 +199,7 @@ try{
     return {source:api.sourceModel.totalCards,total:api.model.totalCards,
       first:api.model.cards[0].title,owner:api.model.preMassHandoff};
    });
-   assert.deepEqual(identity,{source:39,total:61,first:"Introit",owner:"INTROIT"},
+   assert.deepEqual(identity,{source:30,total:61,first:"Introit",owner:"INTROIT"},
      "Rogations must retain 61 curated source cards after omitting the four opening Foot cards");
    const title=(await page.locator("#ao-r17-native-reader-preview [data-role='card-title']").textContent())?.trim();
    assert.equal(title,"Introit","Rogations must hand off directly to Introit, not foot prayers");

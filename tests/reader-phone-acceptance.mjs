@@ -251,10 +251,22 @@ try{
     const absoluteCenter=(tr.top-cr.top+el.scrollTop)+(tr.height/2);
     el.scrollTop=Math.max(0,absoluteCenter-el.clientHeight*.39);
   });
-  // CDP touchend can leave kinetic scrolling active and override an
-  // immediate programmatic scroll. Stabilize first, then require exactly
-  // C0174, its native event and bell. This preserves the original strict
-  // assertion, but eliminates the initial 3-second kinetic-scroll race.
+  await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getActiveCue()==="AO.SM.C0174",null,{timeout:3000});
+  const elevationState=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getNativeEventState());
+  assert.equal(elevationState?.nativeCueId,"AO.SM.C0174");
+  assert.equal(elevationState?.bell?.label,"ELEVATION BELL","Host elevation action cue lost its bell state");
+  // Regression: the section explanation must follow scroll-to-cue updates.
+  // Static card navigation itself has no attested LIVE cue and must not
+  // preempt the precise ceremonial rubric or the existing action rails.
+  await page.waitForFunction(()=>{
+    const shell=document.querySelector("[data-ao-reader-shell]");
+    const explanation=document.querySelector('[data-role="objective-context"]');
+    return shell?.dataset.objectiveContext==="true" &&
+      explanation&&!explanation.hidden&&explanation.dataset.blockId==="AO.SM.B052";
+  },null,{timeout:5000});
+  // CDP touchend can leave kinetic scrolling active after the first C0174
+  // focus event. Wait for physical scroll quiescence, then anchor the exact
+  // elevation cue before checking its native state and painted rail.
   await page.evaluate(async()=>{
     const card=document.querySelector(".ao-prayer-card");
     if(!card)throw Error("PHONE_PRAYER_CARD_MISSING");
@@ -286,59 +298,6 @@ try{
     // the regular focus listener without modifying native source state.
     card.dispatchEvent(new Event("scroll"));
   });
-  // Keep the exact elevation assertion. When it fails, capture a
-  // side-by-side browser/selector witness rather than guessing at a
-  // kinetic-scroll race or weakening the ceremonial event gate.
-  const elevationFocused=await page.waitForFunction(
-    ()=>window.__AO_PHONE_PREVIEW.getActiveCue()==="AO.SM.C0174",
-    null,{timeout:5000}).then(()=>true,()=>false);
-  if(!elevationFocused){
-    const focusEvidence=await page.evaluate(async()=>{
-      const card=document.querySelector(".ao-prayer-card");
-      const {pickActiveCue,cueItemsFromScrollContainer}=await import(
-        "/src/mass/reader-cue-focus.js");
-      const items=cueItemsFromScrollContainer(card);
-      const scrollTop=card.scrollTop,clientHeight=card.clientHeight,
-        scrollHeight=card.scrollHeight;
-      const maxScroll=Math.max(0,scrollHeight-clientHeight);
-      const expected=pickActiveCue({scrollTop,clientHeight,scrollHeight,items});
-      const nearBottom=pickActiveCue({
-        scrollTop:maxScroll,clientHeight,scrollHeight,items});
-      return {
-        actual:window.__AO_PHONE_PREVIEW.getActiveCue(),
-        native:window.__AO_PHONE_PREVIEW.getNativeEventState()?.nativeCueId??null,
-        predicted:expected,nearBottom,scrollTop,maxScroll,
-        clientHeight,scrollHeight,
-        cueIds:items.map(x=>x.cueId),
-        cueIntervals:items.filter(x=>["AO.SM.C0173","AO.SM.C0174"].includes(x.cueId)),
-        section:window.__AO_PHONE_PREVIEW.getCurrentCard()?.sectionId??null,
-        mode:document.querySelector("[data-ao-reader-shell]")?.dataset.mode??null,
-      };
-    });
-    assert.fail("Host elevation cue-focus mismatch after quiescence: "+
-      JSON.stringify(focusEvidence));
-  }
-  // The cue tracker commits focus synchronously, then paints its native
-  // event projection at the next animation frame. A same-tick read can
-  // legitimately see focus C0174 with the previous C0173 event snapshot.
-  // Require the event and bell to CONVERGE to the exact original sources.
-  await page.waitForFunction(()=>{
-    const event=window.__AO_PHONE_PREVIEW.getNativeEventState();
-    return event?.nativeCueId==="AO.SM.C0174"&&
-      event?.bell?.label==="ELEVATION BELL";
-  },null,{timeout:5000});
-  const elevationState=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getNativeEventState());
-  assert.equal(elevationState?.nativeCueId,"AO.SM.C0174");
-  assert.equal(elevationState?.bell?.label,"ELEVATION BELL","Host elevation action cue lost its bell state");
-  // Regression: the section explanation must follow scroll-to-cue updates.
-  // Static card navigation itself has no attested LIVE cue and must not
-  // preempt the precise ceremonial rubric or the existing action rails.
-  await page.waitForFunction(()=>{
-    const shell=document.querySelector("[data-ao-reader-shell]");
-    const explanation=document.querySelector('[data-role="objective-context"]');
-    return shell?.dataset.objectiveContext==="true" &&
-      explanation&&!explanation.hidden&&explanation.dataset.blockId==="AO.SM.B052";
-  },null,{timeout:5000});
   // B052 covers both C0173 (consecration words) and C0174 (elevation).
   // Require the *same exact source cue* and rendered rail state together.
   const elevationPainted=await page.waitForFunction(()=>{
@@ -518,7 +477,7 @@ try{
   assert.equal(switched.cue,modeSwitchCue,
     "MISSAL -> curated LIVE did not preserve the selected Host source cue");
   assert.equal(switched.product,65,"Ordinary LIVE must use the actual 65-card presentation");
-  assert.equal(switched.source,39,"Canonical Sung source sections must remain unchanged");
+  assert.equal(switched.source,30,"Direct production LIVE must retain only 30 canonical source macros");
   assert.match(switched.progress,/^\d+ \/ 64$/,"Ordinary LIVE progress must count visible curated cards, omitting the optional second Confiteor");
 
   box=await nextButton.boundingBox();
@@ -536,9 +495,9 @@ try{
     sourceOwner:window.__AO_PHONE_PREVIEW?.sourceModel?.structureOwner??null,
   }));
   assert.equal(modelCounts.product,65,"phone reader lost curated 65-card production presentation");
-  assert.equal(modelCounts.source,39,"curated presentation modified the canonical 39-section source model");
+  assert.equal(modelCounts.source,30,"production LIVE must not allocate a 39-section source intermediary");
   assert.equal(modelCounts.productOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
-  assert.equal(modelCounts.sourceOwner,"SOURCE_FIRST_LIVE");
+  assert.equal(modelCounts.sourceOwner,"BASE_30_MACROS");
 
   await context.close();
 
@@ -675,8 +634,8 @@ try{
   await asp.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId==="AO.LIVECURATED.AO.CARD.001.1");
   assert.match(await asp.locator('[data-role="progress"]').textContent(),/1 \/ 64/,
     "Asperges did not hand off to the first curated 65-card LIVE prayer");
-  assert.equal(await asp.evaluate(()=>window.__AO_PHONE_PREVIEW.sourceModel?.totalCards??null),39,
-    "Asperges handoff replaced the certified 39-step source model");
+  assert.equal(await asp.evaluate(()=>window.__AO_PHONE_PREVIEW.sourceModel?.totalCards??null),30,
+    "Asperges handoff must retain the direct 30-macro source authority");
 
   const aspBack=asp.locator('[data-reader-nav="previous"]');
   hit=await aspBack.boundingBox();

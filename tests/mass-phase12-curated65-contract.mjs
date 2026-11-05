@@ -28,8 +28,10 @@ assert.doesNotMatch(browser,/aoLiveCards=(?:48|65)/,
   "Production entry must not accept any obsolete LIVE card-count query flag");
 assert.doesNotMatch(browser,/rollback48|reviewCuratedCards:!rollback48/,
   "URL-driven 48-card reader cannot return to production");
-assert.match(native,/prepared,reviewCuratedCards:true,presentationData/,
-  "Only the certified 65-family may be requested by the user-facing native mount");
+assert.match(native,/prepared,reviewCuratedCards:true,directSourceCurated:true,\s*presentationData/,
+  "Public native mount must require direct 30-macro to certified 65-family LIVE curation");
+assert.match(native,/directLive\?\.presentationModel\s*\?\?\s*projectCuratedOrdinaryLiveCards\(model\)/,
+  "Legacy 39-section projector must be diagnostic-only, not the public LIVE default");
 assert.match(native,/projectCuratedOrdinaryLiveCards\(model\)/,
   "65-family projector must remain source-owned");
 assert.doesNotMatch(native,/projectSourceFirst48Presentation\(model\)/,
