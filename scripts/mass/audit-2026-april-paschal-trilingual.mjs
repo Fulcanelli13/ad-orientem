@@ -27,6 +27,8 @@ let browser,records=[];
 try{
  browser=await chromium.launch({headless:true});
  const page=await browser.newPage({serviceWorkers:"block"});
+ page.on("console",msg=>{if(msg.text().startsWith("MR62_APRIL_"))
+  console.log("PASCHAL_REPAIR_BROWSER_DIAGNOSTIC "+msg.text())});
  page.setDefaultTimeout(90000);
  await page.goto("http://127.0.0.1:"+server.address().port+"/index.html",
   {waitUntil:"domcontentloaded",timeout:90000});
