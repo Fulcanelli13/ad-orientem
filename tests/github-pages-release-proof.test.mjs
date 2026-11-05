@@ -11,12 +11,15 @@ const html='<!doctype html><html><head><link href="./ao-inline-a1.css" rel="styl
 const assets=()=>Object.fromEntries(criticalReleasePaths(html).map(p=>[p,releaseSha256(Buffer.from("critical:"+p))]));
 const proof=()=>createReleaseProof({sha:shaA,runId:"1234567",indexHtml:html,assetSha256:assets()});
 
-test("build provenance identifies exactly the checked-out commit, run and seven critical files",()=>{
+test("build provenance identifies exactly the checked-out commit, run and ten critical files",()=>{
  const p=proof();
  assert.equal(p.schema,RELEASE_PROOF_SCHEMA);
  assert.equal(p.source_sha,shaA);
  assert.equal(p.workflow_run_id,"1234567");
- assert.equal(Object.keys(p.critical_sha256).length,7);
+ assert.equal(Object.keys(p.critical_sha256).length,10);
+ for(const file of ["src/pray/novena-runtime.js","src/pray/prayer-design-pilot.js","src/pray/presentation-runtime.js"]){
+  assert.ok(Object.hasOwn(p.critical_sha256,file),"Missing live Pray reader proof: "+file);
+ }
  assert.ok(!Object.hasOwn(p.critical_sha256,RELEASE_PROOF_FILENAME),"The manifest cannot hash itself");
  assert.equal(verifyReleaseProof(p,{expectedSha:shaA,expectedRunId:"1234567",indexHtml:html}),p);
 });
@@ -31,6 +34,9 @@ test("missing, malformed or substituted critical bytes do not certify the deploy
  const missing={...p,critical_sha256:{...p.critical_sha256}};
  delete missing.critical_sha256["sw.js"];
  assert.throws(()=>verifyReleaseProof(missing,{expectedSha:shaA,expectedRunId:"1234567",indexHtml:html}),/Missing critical release digest/);
+ const staleNovena={...p,critical_sha256:{...p.critical_sha256}};
+ delete staleNovena.critical_sha256["src/pray/novena-runtime.js"];
+ assert.throws(()=>verifyReleaseProof(staleNovena,{expectedSha:shaA,expectedRunId:"1234567",indexHtml:html}),/Missing critical release digest: src\\/pray\\/novena-runtime\\.js/);
  const altered={...p,critical_sha256:{...p.critical_sha256,"index.html":"00"}};
  assert.throws(()=>verifyReleaseProof(altered,{expectedSha:shaA}),/Invalid SHA-256 digest/);
  assert.notEqual(releaseSha256(Buffer.from("tampered:index.html")),p.critical_sha256["index.html"]);
@@ -61,5 +67,9 @@ test("release scripts consume the shared proof and audit the actual published by
  assert.match(live,/expectedSha=releaseCommitSha\(process\.env\.GITHUB_SHA\)/);
  assert.match(live,/expectedDigest=proof\.critical_sha256\[relative\]/);
  assert.match(live,/releaseSha256\(bytes\)/);
+ assert.match(live,/await released\(path\)/,"The deployed Pray source modules must be fetched and hashed");
+ assert.match(live,/src\/pray\/novena-runtime\\.js/);
+ assert.match(live,/src\/pray\/prayer-design-pilot\\.js/);
+ assert.match(live,/src\/pray\/presentation-runtime\\.js/);
  assert.match(live,/if\(i<5\)await new Promise/);
 });
