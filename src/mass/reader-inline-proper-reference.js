@@ -7,6 +7,7 @@ import {createOfflineChantEngraver} from "./reader-chant-engraver.js";
 import {ALL_SAINTS_REFERENCE_SCORES} from "./reader-inline-all-saints-reference.js";
 import {createProperReferenceRegistry,PROPER_REFERENCE_LABELS} from "./reader-inline-proper-registry.js";
 import {participationReferenceScoresForParagraph} from "./reader-participation-reference-scores.js";
+import {resolveOrationAmenSourceHandoff} from "./reader-oration-amen-source-handoff.js";
 
 export const JULY07_REFERENCE_NOTATION_SCHEMA="ao-reader-july07-reference-notation-v1";
 // The original printed Introit GABC includes a distinct conditional "T. P."
@@ -74,7 +75,7 @@ export function createDatedProperNotationPreview({
  const doc=root.ownerDocument;
  const query=String(doc?.defaultView?.location?.search??"");
  const active=enabled===null?new URLSearchParams(query).get("chant_preview")==="1":enabled===true;
- let entries=[],generation=0,modal=null,modalEngraver=null,returnFocus=null;
+ let entries=[],orationAmenHandoffs=[],generation=0,modal=null,modalEngraver=null,returnFocus=null;
  function closeZoom(){
   if(modal?.open)modal.close();
   modalEngraver?.destroy();modalEngraver=null;
@@ -107,7 +108,7 @@ export function createDatedProperNotationPreview({
   ++generation;
   closeZoom();
   for(const e of entries){e.engraver?.destroy();e.host.remove()}
-  entries=[];
+  entries=[];orationAmenHandoffs=[];
  }
  function render({mode="LIVE",form,resolvedMass,massPlan=null,paragraphs=[],selectedSettings={}}={}){
   clear();
@@ -127,6 +128,9 @@ export function createDatedProperNotationPreview({
    const p=(node.dataset.paragraphId&&unique.get(node.dataset.paragraphId))||
      (node.dataset.cueId&&byCue.get(node.dataset.cueId));
    if(!p)continue;
+   const oration=resolveOrationAmenSourceHandoff({paragraph:p,paragraphs,form,resolvedMass});
+   if(oration.status==="SOURCE_ORATION_AND_TONE_CERTIFIED_SCORE_PENDING")
+    orationAmenHandoffs.push(oration);
    const scores=referenceScoresForParagraph({paragraph:p,resolvedMass,form});
    const participatory=participationReferenceScoresForParagraph({
     paragraph:p,paragraphs,form,resolvedMass,massPlan,selectedSettings
@@ -172,5 +176,7 @@ export function createDatedProperNotationPreview({
  }
  return Object.freeze({render,clear,destroy:clear,enabled:active,
   state:()=>Object.freeze({enabled:active,mounted:entries.length,
-   rendered:entries.filter(e=>e.host.dataset.referenceReady==="true").length})});
+   rendered:entries.filter(e=>e.host.dataset.referenceReady==="true").length,
+   orationAmenSourceReady:orationAmenHandoffs.length,
+   orationAmenMusicPending:true})});
 }
