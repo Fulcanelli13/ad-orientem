@@ -271,9 +271,12 @@ export function projectCuratedOrdinaryLiveCards(model){
   }
   if(!String(model.structureOwner??"").includes("SOURCE_FIRST"))
     throw new Error("Curated LIVE requires source-first authority");
-  // Special-day ownership is not interchangeable with the plain 39 steps.
-  // Leave all such forms untouched until individually validated.
-  if(model.totalCards!==39)return model;
+  // Holy Thursday suppresses the four Credo presentation cards at source.
+  // Its optional Mandatum adds one independently sourced card after the Homily.
+  // Never recreate a missing Credo or pad the experience back to 65.
+  const holyThursday=model.holyThursday===true && model.credoOmitted===true;
+  const expectedSource=holyThursday ? (model.mandatumPresent===true?39:38):39;
+  if(model.totalCards!==expectedSource)return model;
 
   const result=[];
   const visited=new Set();
@@ -310,13 +313,19 @@ export function projectCuratedOrdinaryLiveCards(model){
     }
   }
   for(const key of Object.keys(GROUPS)){
+    if(holyThursday && key==="AO.CARD.009")continue;
     if(!visited.has(key))throw new Error("Curated section not found: "+key);
   }
+  if(holyThursday && visited.has("AO.CARD.009"))
+    throw new Error("HOLY_THURSDAY_CREDO_NOT_OMITTED");
+  if(holyThursday && (visited.has("AO.HT.MANDATUM")!==Boolean(model.mandatumPresent)))
+    throw new Error("HOLY_THURSDAY_MANDATUM_SOURCE_MISMATCH");
   const preGospelCount=result.filter(card=>card.sourceSectionId==="AO.CARD.006").length;
   if(preGospelCount<1||preGospelCount>3)throw new Error("PRE_GOSPEL_CARD_COUNT_UNSUPPORTED");
-  const expectedCards=65+(preGospelCount-1);
+  const expectedCards=65+(preGospelCount-1)-
+    (holyThursday?4:0)+(holyThursday && model.mandatumPresent===true?1:0);
   if(result.length!==expectedCards)throw new Error(
-    "Ordinary curated LIVE expected "+expectedCards+" source-backed cards; found "+result.length);
+    "Curated LIVE expected "+expectedCards+" source-backed cards; found "+result.length);
   const cards=Object.freeze(result);
   const lookup=new Map(cards.map(c=>[c.sectionId,c]));
   if(lookup.size!==cards.length)throw new Error("Curated cards have duplicate IDs");
