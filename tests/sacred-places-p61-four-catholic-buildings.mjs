@@ -21,9 +21,14 @@ assert.ok(RELEASES.findIndex(r=>r.id==="P106")>RELEASES.findIndex(r=>r.id==="P10
 assert.deepEqual(manifest.baseline,{places:512,sources:810,crosswalk:512,unlinked:253,geo_areas:146,directory_links:9});
 assert.deepEqual(manifest.proposed,{places:516,sources:818,crosswalk:516,unlinked:257,geo_areas:146,directory_links:9});
 assert.equal(manifest.published_new.length,4);
-assert.equal(LIVE.places,530);
-assert.equal(LIVE.sources,846);
-assert.equal(LIVE.heritage_crosswalk,530);
+const v10=RELEASES.find(r=>r.id==="V10-B20");
+assert.ok(v10,"V10 must extend immutable P106 baseline");
+assert.equal(v10.data.baseline.places,530);
+assert.equal(v10.data.baseline.sources,846);
+assert.equal(v10.data.baseline.crosswalk,530);
+assert.equal(LIVE.places,v10.data.proposed.places);
+assert.equal(LIVE.sources,v10.data.proposed.sources);
+assert.equal(LIVE.heritage_crosswalk,v10.data.proposed.crosswalk);
 assert.equal(LIVE.unlinked,257);
 assert.equal(geo.places.length,LIVE.places);
 assert.equal(src.sources.length,LIVE.sources);
@@ -40,7 +45,8 @@ const p92=new Set(RELEASES.find(r=>r.id==="P92").data.published_new.map(x=>x.pla
 const p99=new Set(RELEASES.find(r=>r.id==="P99").data.published_new.map(x=>x.place_id));
 const p104=new Set(RELEASES.find(r=>r.id==="P104").data.published_new.map(x=>x.place_id));
 const p105=new Set(RELEASES.find(r=>r.id==="P105").data.published_new.map(x=>x.place_id));
-const prev=geo.places.filter(x=>!ours.has(x.place_id)&&!p92.has(x.place_id)&&!p99.has(x.place_id)&&!p104.has(x.place_id)&&!p105.has(x.place_id)).map(x=>x.geo?.source_ref);
+const laterV10=new Set(v10.data.published_new.map(x=>x.place_id));
+const prev=geo.places.filter(x=>!ours.has(x.place_id)&&!p92.has(x.place_id)&&!p99.has(x.place_id)&&!p104.has(x.place_id)&&!p105.has(x.place_id)&&!laterV10.has(x.place_id)).map(x=>x.geo?.source_ref);
 assert.equal(prev.length,512);
 const expected=new Map([["SG-INV-0200",208331549],["SG-INV-0429",95827233],["SG-INV-0410",426943457],["SG-INV-0493",36373669]]);
 for(const x of manifest.published_new) {
