@@ -1,0 +1,183 @@
+{
+  "schema": "ao.prayer_art.user_editorial_batch_approval.v1",
+  "date": "2026-11-05",
+  "source": "User's direct selection in ChatGPT after Batch 1 of prayer painting gap reviews",
+  "authority": "EXPLICIT_USER_PAINTING_SELECTION",
+  "review_prompt": "Identify genuine painting gaps across prayer covers and devotional sections; review five alternatives per category; approve multiple works.",
+  "counts": {
+    "approved_historical_paintings": 12,
+    "approved_shroud_subject": 1
+  },
+  "accepted_paintings": [
+    {
+      "option_id": "SH-3",
+      "review_category": "Sacred Heart",
+      "artist": "Miguel Cabrera",
+      "title": "Sacred Heart",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Sagrado_coraz%C3%B3n_por_Miguel_Cabrera.jpg",
+      "rights_evidence": "COMMONS_PD_ART_REPRODUCTION",
+      "decision": "USER_APPROVED_PAINTING",
+      "scope": "ARTISTIC_APPROVAL_ONLY",
+      "photo_qa": "PENDING",
+      "publication": "NOT_AUTHORIZED_BY_THIS_RECORD"
+    },
+    {
+      "option_id": "SH-4",
+      "review_category": "Sacred Heart",
+      "artist": "José de Páez",
+      "title": "Sacred Heart of Jesus with Saint Ignatius of Loyola and Saint Aloysius Gonzaga",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Sacred_Heart_1770.jpg",
+      "rights_evidence": "COMMONS_PD_ART_REPRODUCTION",
+      "decision": "USER_APPROVED_PAINTING",
+      "scope": "ARTISTIC_APPROVAL_ONLY",
+      "photo_qa": "PENDING",
+      "publication": "NOT_AUTHORIZED_BY_THIS_RECORD"
+    },
+    {
+      "option_id": "SH-5",
+      "review_category": "Sacred Heart",
+      "artist": "Corrado Giaquinto",
+      "title": "St Margaret Mary Alacoque Contemplating the Sacred Heart of Jesus",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Corrado_Giaquinto_-_St_Margaret_Mary_Alacoque_Contemplating_the_Sacred_Heart_of_Jesus_-_WGA8959.jpg",
+      "rights_evidence": "COMMONS_PD_ART_REPRODUCTION_LOW_RES",
+      "decision": "USER_APPROVED_PAINTING",
+      "scope": "ARTISTIC_APPROVAL_ONLY",
+      "photo_qa": "PENDING",
+      "publication": "NOT_AUTHORIZED_BY_THIS_RECORD"
+    },
+    {
+      "option_id": "GD-1",
+      "review_category": "Good Death",
+      "artist": "Bartolomeo Altomonte",
+      "title": "The Death of Saint Joseph",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Bartolomeo_Altomonte_-_Der_Tod_des_heiligen_Joseph.jpg",
+      "rights_evidence": "COMMONS_PD_ART_REPRODUCTION",
+      "decision": "USER_APPROVED_PAINTING",
+      "scope": "ARTISTIC_APPROVAL_ONLY",
+      "photo_qa": "PENDING",
+      "publication": "NOT_AUTHORIZED_BY_THIS_RECORD"
+    },
+    {
+      "option_id": "GD-2",
+      "review_category": "Good Death",
+      "artist": "Carlo Maratta",
+      "title": "The Death of Saint Joseph",
+      "source_page": "https://commons.wikimedia.org/wiki/File:The_Death_of_Saint_Joseph_Maratta.jpg",
+      "rights_evidence": "COMMONS_PD_ART_REPRODUCTION",
+      "decision": "USER_APPROVED_PAINTING",
+      "scope": "ARTISTIC_APPROVAL_ONLY",
+      "photo_qa": "PENDING",
+      "publication": "NOT_AUTHORIZED_BY_THIS_RECORD"
+    },
+    {
+      "option_id": "GD-3",
+      "review_category": "Good Death",
+      "artist": "Giuseppe Maria Crespi",
+      "title": "The Death of Saint Joseph",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Death_of_S._Joseph_by_G.M.Crespi_(c._1712,_Hermitage).jpg",
+      "rights_evidence": "COMMONS_PD_ART_SOURCE_VERIFY",
+      "decision": "USER_APPROVED_PAINTING",
+      "scope": "ARTISTIC_APPROVAL_ONLY",
+      "photo_qa": "PENDING",
+      "publication": "NOT_AUTHORIZED_BY_THIS_RECORD"
+    },
+    {
+      "option_id": "EU-1",
+      "review_category": "Holy Eucharist",
+      "artist": "Peter Paul Rubens",
+      "title": "The Meeting of Abraham and Melchizedek",
+      "source_page": "https://www.nga.gov/artworks/45640-meeting-abraham-and-melchizedek",
+      "rights_evidence": "NGA_OPEN_ACCESS",
+      "decision": "USER_APPROVED_PAINTING",
+      "scope": "ARTISTIC_APPROVAL_ONLY",
+      "photo_qa": "PENDING",
+      "publication": "NOT_AUTHORIZED_BY_THIS_RECORD"
+    },
+    {
+      "option_id": "EU-2",
+      "review_category": "Holy Eucharist",
+      "artist": "Diego Velázquez",
+      "title": "The Supper at Emmaus",
+      "source_page": "https://www.metmuseum.org/art/collection/search/437871",
+      "rights_evidence": "MET_OPEN_ACCESS_CC0",
+      "decision": "USER_APPROVED_PAINTING",
+      "scope": "ARTISTIC_APPROVAL_ONLY",
+      "photo_qa": "PENDING",
+      "publication": "NOT_AUTHORIZED_BY_THIS_RECORD"
+    },
+    {
+      "option_id": "EU-5",
+      "review_category": "Holy Eucharist",
+      "artist": "Jan van den Hoecke",
+      "title": "The Holy Communion of Blessed Frederick of Regensburg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Jan_van_den_Hoecke_-_The_Holy_Communion_of_the_Blessed_Frederick_of_Regensburg.jpeg",
+      "rights_evidence": "COMMONS_PD_ART_REPRODUCTION",
+      "decision": "USER_APPROVED_PAINTING",
+      "scope": "ARTISTIC_APPROVAL_ONLY",
+      "photo_qa": "PENDING",
+      "publication": "NOT_AUTHORIZED_BY_THIS_RECORD"
+    },
+    {
+      "option_id": "HS-1",
+      "review_category": "Holy Spirit",
+      "artist": "Titian",
+      "title": "The Descent of the Holy Spirit (Pentecost)",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Tiziano_Pentecost%C3%A9s.jpg",
+      "rights_evidence": "COMMONS_PD_ART_SOURCE_VERIFY",
+      "decision": "USER_APPROVED_PAINTING",
+      "scope": "ARTISTIC_APPROVAL_ONLY",
+      "photo_qa": "PENDING",
+      "publication": "NOT_AUTHORIZED_BY_THIS_RECORD"
+    },
+    {
+      "option_id": "HS-2",
+      "review_category": "Holy Spirit",
+      "artist": "Peter Paul Rubens",
+      "title": "Pentecost",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Rubens_-_RKDimages,_190134.jpg",
+      "rights_evidence": "COMMONS_PD_ART_REPRODUCTION_LOW_RES",
+      "decision": "USER_APPROVED_PAINTING",
+      "scope": "ARTISTIC_APPROVAL_ONLY",
+      "photo_qa": "PENDING",
+      "publication": "NOT_AUTHORIZED_BY_THIS_RECORD"
+    },
+    {
+      "option_id": "HS-4",
+      "review_category": "Holy Spirit",
+      "artist": "Jacob de Backer",
+      "title": "Pentecost",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Jacob_de_Backer_-_Pentecost.jpeg",
+      "rights_evidence": "COMMONS_PD_ART_SOURCE_VERIFY",
+      "decision": "USER_APPROVED_PAINTING",
+      "scope": "ARTISTIC_APPROVAL_ONLY",
+      "photo_qa": "PENDING",
+      "publication": "NOT_AUTHORIZED_BY_THIS_RECORD"
+    }
+  ],
+  "holy_face": {
+    "option_id": "HF-6",
+    "subject": "Face on the Shroud of Turin",
+    "decision": "USER_APPROVED_SUBJECT",
+    "historical_photo_candidate": {
+      "creator": "Secondo Pia",
+      "date": "1898",
+      "title": "The Shroud of Turin (photographic negative)",
+      "museum_source": "https://artmuseum.princeton.edu/art/collections/objects/42977",
+      "high_res_pd_reproduction_candidate": "https://commons.wikimedia.org/wiki/File:Secundo_Pia_Turinske_platno_1898.jpg"
+    },
+    "exact_image_release_approval": false,
+    "photo_rights_and_quality_review": "REQUIRED",
+    "do_not_substitute_modern_copyrighted_shroud_photograph": true
+  },
+  "notes": [
+    "Unselected SH/GD/EU/HF/HS candidates are NOT rejected. Do not infer rejection from absence.",
+    "User's choice of Shroud of Turin overrides the five Holy Face painting proposals as the preferred subject, but does not select a particular derivative photograph.",
+    "Preserve existing final fixed-cover locks, including Rosary, Seven Sorrows, St Therese, Benediction and Confession.",
+    "These selections may inform scene-appropriate subject reuse across prayer covers, litanies, novenas and devotions; no automatic rotation or bulk reassignment is authorized.",
+    "Existing Sacred Heart Juan Patricio Morlete Ruiz painting remains approved and published; new SH paintings increase editorial variety.",
+    "Before merge/release check exact underlying work, image-source attribution, global rights posture, actual pixel quality and crop.",
+    "No app runtime, canonical prayer text, Mass, Rosary, cover-lock or release registry mutation is included.",
+    "Historical approval IDs as presented in the user's first in-chat batch are immutable."
+  ],
+  "publication_allowed": false
+}
