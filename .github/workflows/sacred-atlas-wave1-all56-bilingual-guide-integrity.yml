@@ -1,0 +1,25 @@
+name: Sacred Atlas Wave 1 — all 56 bilingual guide draft acceptance contract
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/shrines/research/sacred-atlas-wave1-guides31-43-20261105.v1.json'
+      - 'data/shrines/research/sacred-atlas-wave1-guides44-56-20261105.v1.json'
+      - 'data/shrines/research/sacred-atlas-wave1-batch56-editorial-closure-20261105.v1.json'
+      - 'tests/sacred-atlas-wave1-all56-bilingual-guide-integrity.mjs'
+      - '.github/workflows/sacred-atlas-wave1-all56-bilingual-guide-integrity.yml'
+permissions:
+  contents: read
+jobs:
+  all56-draft-integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Exact 56 named guides and bilingual source paragraphs; no production publication
+        run: node tests/sacred-atlas-wave1-all56-bilingual-guide-integrity.mjs
