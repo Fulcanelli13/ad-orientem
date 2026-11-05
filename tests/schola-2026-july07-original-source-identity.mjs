@@ -66,5 +66,34 @@ assert.equal(d.publicProperScoresApproved,0);
 assert.equal(d.humanMusicalApproval,false);
 assert.equal(d.localReaderModified,false);
 assert.equal(d.publicationManifestModified,false);
-assert.ok(d.residualHold.includes("1961 [36]-[37]"));
-console.log("SCHOLA_JULY07_ORIGINAL_SOURCE_PROOF_PASS: 1962 Vatican pp.580-581, 1961 Graduale [35]-[37]/saint p.549, C4-1 != C4; C4d section candidate, 0 public approvals");
+assert.ok(d.residualHold.includes("original 1961 printed [35]-[37]"));
+assert.equal(d.threeArchivedGabcSamePrintedPageCandidatesLocated,true);
+assert.equal(d.numberOfNewGabcTranscriptionsNeededForThreeChants,0);
+assert.equal(g.existing1195ArchiveRecordsLocated,3);
+assert.equal(g.existing1195ArchiveGabcNotesCollatedAgainstScannedPrint,false);
+assert.equal(g.specificArchived1195GabcFileIdentityCertified,false);
+const matches=g.existing1195ArchiveCandidates;
+assert.equal(matches.length,3);
+for(const [i,expected] of [
+ [0,["GREGOBASE-48","in","[35]","edf2d86594bba08d30130e47f9bd04890f633a326eec9ec2f67823f85a831777"]],
+ [1,["GREGOBASE-415","gr","[36]","5bc5f9de688c1de1dc1a33f7b1ce40015f321cdff7c38bbed374148aaad8ea08"]],
+ [2,["GREGOBASE-1187","al","[37]","bba316ec64fed01860a893e5ecb810141e14ed501a0759481958f6ef1002db2a"]]
+]){
+ const ref=matches[i];
+ assert.deepEqual([ref.id,ref.officePart,ref.printedPage,ref.gabcSha256],expected);
+ const archive=load(ref.archiveFile);
+ assert.equal(archive.schema,"ao-gregobase-graduale1961-research-batch-v1");
+ assert.equal(archive.sourceEditionId,2);
+ assert.equal(archive.status,"STAGED_UNRELEASED");
+ const rows=archive.items.filter(r=>r.id===ref.id);
+ assert.equal(rows.length,1);
+ const item=rows[0];
+ assert.deepEqual([item.id,item.officePart,item.gradualeRomanum1961Page,item.sha256],expected);
+ assert.equal(item.sourceUrl,ref.sourceUrl);
+ assert.equal(item.gregobaseId,ref.gregobaseId);
+ assert.equal(item.incipit,ref.incipit);
+ assert.equal(item.releaseStatus,"RESEARCH_IMPORT_NOT_EDITORIALLY_APPROVED");
+ assert.match(item.gabc,/^\\(c[1-4]\\)/);
+ assert.ok(item.gabc.includes("(::)"));
+}
+console.log("SCHOLA_JULY07_ORIGINAL_SOURCE_PROOF_PASS: 1962 Vatican pp.580-581, 1961 Graduale [35]-[37]/saint p.549, C4-1 != C4; C4d section candidate, 3 exact archived GABC locators, 0 public approvals");
