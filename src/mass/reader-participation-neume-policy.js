@@ -80,6 +80,14 @@ export const PARTICIPATION_NEUME_POLICY=Object.freeze([
     "source": "data/mass/ordinary-sung-speaker-audit.v1.json"
   },
   {
+    "id": "OFFERTORY_GREETING",
+    "kind": "PEOPLE_RESPONSE",
+    "cueIds": ["AO.SM.C0107"],
+    "eventId": "OFFERTORY",
+    "variant": "GREETING_RESPONSE",
+    "source": "data/mass/ordinary-sung-speaker-audit.v1.json"
+  },
+  {
     "id": "SECRET_CONCLUSION",
     "kind": "PEOPLE_RESPONSE",
     "cueIds": [
@@ -126,6 +134,14 @@ export const PARTICIPATION_NEUME_POLICY=Object.freeze([
       "AO.SM.C0207"
     ],
     "eventId": "CANON",
+    "variant": "APPROPRIATE_SUNG_CONCLUSION",
+    "source": "data/mass/ordinary-sung-speaker-audit.v1.json"
+  },
+  {
+    "id": "LIBERA_NOS_CONCLUSION",
+    "kind": "PEOPLE_RESPONSE",
+    "cueIds": ["AO.SM.C0218"],
+    "eventId": "PAX_DOMINI",
     "variant": "APPROPRIATE_SUNG_CONCLUSION",
     "source": "data/mass/ordinary-sung-speaker-audit.v1.json"
   },
