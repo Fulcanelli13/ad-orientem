@@ -30,7 +30,7 @@ async function walk(browser, query) {
     page.on("pageerror", e => errors.push(String(e.message ?? e)));
     await page.goto(`http://127.0.0.1:4311/tests/fixtures/reader-phone-harness.html?${query}`, { waitUntil: "networkidle", timeout: 90000 });
     await page.waitForFunction(() => document.documentElement.dataset.harnessReady === "true", {}, { timeout: 45000 });
-    const visited = await page.evaluate(async () => {
+    const reading = await page.evaluate(async () => {
       const api = window.__AO_PHONE_PREVIEW; const seen = [];
       api.showSequence(api.model.cards[0].sequence);
       await new Promise(r => setTimeout(r, 150));
@@ -43,10 +43,17 @@ async function walk(browser, query) {
         await new Promise(r => setTimeout(r, 100));
         if (api.getCurrentCard()?.sectionId === before) break;
       }
-      return seen;
+      return {seen,mode:api.getPresentationMode(),
+        presentationCards:api.model?.totalCards??null,
+        structureOwner:api.model?.structureOwner??null};
     });
     assert.deepEqual(errors, [], query + ": page errors");
-    return visited;
+    if(reading.mode==="LIVE"){
+      assert.ok([65,66,67].includes(reading.presentationCards),
+        query+": old 39/48 LIVE presentation returned");
+      assert.equal(reading.structureOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
+    }
+    return reading.seen;
   } finally { await ctx.close(); }
 }
 const has = (cards, section) => cards.some(c => c.source === section);

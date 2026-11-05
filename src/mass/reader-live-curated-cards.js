@@ -8,9 +8,10 @@ export function visibleMassCardTitle(card){
 // Curated LIVE prayer-card presentation: one card per meaningful moment,
 // not per donor block. All source paragraphs, cue IDs and events are preserved.
 // Ordinary LIVE has 65 curated source-backed prayer cards (64 visible by
-// default when the optional second Confiteor is omitted). This is the
-// production Ordinary Sung LIVE family; no URL parameter can substitute
-// historical 48-card research presentations.
+// default when the optional second Confiteor is omitted). Both the LOW and
+// SUNG families use these source-owned presentation boundaries. The form's
+// actual prayers, delivery and ceremonial cues remain independently sourced.
+// Historical 39/48-step models must never be user-visible LIVE fallbacks.
 // Keep the direct native fixture review activation backward compatible.
 // Pre-Gospel chant subnavigation requires a source-backed follow-up.
 //
@@ -216,7 +217,7 @@ function conditionalPreGospelSpec(card){
   });
 }
 
-function curated(card){
+function curated(card,corpusFamily="SUNG"){
   const spec=GROUPS[sourceId(card)]??conditionalPreGospelSpec(card);
   if(!spec)return [Object.freeze({title:card.title,paragraphs:card.paragraphs,
     blocks:card.blocks,ordinal:1})];
@@ -250,8 +251,12 @@ function curated(card){
     const omittedJudica=sourceId(card)==="AO.CARD.001" && i===0 &&
       (card.blocks??[]).some(b=>b.blockId==="AO.SM.B003" &&
         b.omittedByRite==="RITUS_XIII_1_REQUIEM");
+    // Low Mass recites the Gloria and Credo; it does not sing an intonation.
+    const title=String(corpusFamily).toUpperCase()==="LOW"
+      ? spec.titles[i].replace("The Celebrant's Intonation","Opening")
+      : spec.titles[i];
     return Object.freeze({
-      title:omittedJudica?"At the Foot of the Altar · Introibo":spec.titles[i],
+      title:omittedJudica?"At the Foot of the Altar · Introibo":title,
       paragraphs,blocks,ordinal:i+1,
     });
   });
@@ -259,20 +264,26 @@ function curated(card){
 
 export function projectCuratedOrdinaryLiveCards(model){
   if(!model||!Array.isArray(model.cards))throw new TypeError("source-first LIVE model required");
-  if(String(model.presentationMode).toUpperCase()!=="LIVE"||
-     String(model.corpusFamily).toUpperCase()!=="SUNG")return model;
+  if(String(model.presentationMode).toUpperCase()!=="LIVE")return model;
+  if(!["LOW","SUNG"].includes(String(model.corpusFamily).toUpperCase())){
+    if(model.totalCards===39)throw new Error("LIVE_39_SOURCE_FAMILY_UNSUPPORTED");
+    return model;
+  }
   if(!String(model.structureOwner??"").includes("SOURCE_FIRST"))
     throw new Error("Curated LIVE requires source-first authority");
-  // Special-day ownership is not interchangeable with the plain 39 steps.
-  // Leave all such forms untouched until individually validated.
-  if(model.totalCards!==39)return model;
+  // Holy Thursday suppresses the four Credo presentation cards at source.
+  // Its optional Mandatum adds one independently sourced card after the Homily.
+  // Never recreate a missing Credo or pad the experience back to 65.
+  const holyThursday=model.holyThursday===true && model.credoOmitted===true;
+  const expectedSource=holyThursday ? (model.mandatumPresent===true?39:38):39;
+  if(model.totalCards!==expectedSource)return model;
 
   const result=[];
   const visited=new Set();
   for(const sourceCard of model.cards){
     const id=sourceId(sourceCard);
     visited.add(id);
-    const chunks=sourceCard.paragraphs.length?curated(sourceCard):
+    const chunks=sourceCard.paragraphs.length?curated(sourceCard,model.corpusFamily):
       [{title:sourceCard.title,paragraphs:[],blocks:sourceCard.blocks,ordinal:1}];
     if(JSON.stringify(chunks.flatMap(chunk=>chunk.paragraphs.map(p=>p.id)))!==
       JSON.stringify(sourceCard.paragraphs.map(p=>p.id)))
@@ -302,13 +313,19 @@ export function projectCuratedOrdinaryLiveCards(model){
     }
   }
   for(const key of Object.keys(GROUPS)){
+    if(holyThursday && key==="AO.CARD.009")continue;
     if(!visited.has(key))throw new Error("Curated section not found: "+key);
   }
+  if(holyThursday && visited.has("AO.CARD.009"))
+    throw new Error("HOLY_THURSDAY_CREDO_NOT_OMITTED");
+  if(holyThursday && (visited.has("AO.HT.MANDATUM")!==Boolean(model.mandatumPresent)))
+    throw new Error("HOLY_THURSDAY_MANDATUM_SOURCE_MISMATCH");
   const preGospelCount=result.filter(card=>card.sourceSectionId==="AO.CARD.006").length;
   if(preGospelCount<1||preGospelCount>3)throw new Error("PRE_GOSPEL_CARD_COUNT_UNSUPPORTED");
-  const expectedCards=65+(preGospelCount-1);
+  const expectedCards=65+(preGospelCount-1)-
+    (holyThursday?4:0)+(holyThursday && model.mandatumPresent===true?1:0);
   if(result.length!==expectedCards)throw new Error(
-    "Ordinary curated LIVE expected "+expectedCards+" source-backed cards; found "+result.length);
+    "Curated LIVE expected "+expectedCards+" source-backed cards; found "+result.length);
   const cards=Object.freeze(result);
   const lookup=new Map(cards.map(c=>[c.sectionId,c]));
   if(lookup.size!==cards.length)throw new Error("Curated cards have duplicate IDs");
@@ -333,7 +350,8 @@ export function projectCuratedOrdinaryLiveCards(model){
     // Source-only priest/Proper clock cues have NO prayer paragraph.
     // Retain them as audit metadata, never as an inferred spoken line,
     // movement, or automatic gesture/position/sound trigger.
-    sourceOnlyCueRegister:ORDINARY_SUNG_SOURCE_ONLY_CUES,
+    sourceOnlyCueRegister:String(model.corpusFamily).toUpperCase()==="SUNG"
+      ? ORDINARY_SUNG_SOURCE_ONLY_CUES : null,
     curatedPresentationReview:true,
   });
 }

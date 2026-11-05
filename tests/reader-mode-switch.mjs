@@ -59,6 +59,41 @@ assert.equal(expandedReview.presentationModel.totalCards,65,
   "curated LIVE should have 65 cards with one complete Sanctus–Benedictus");
 assert.equal(expandedReview.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
 assert.equal(expandedReview.presentationModel.sourceAuthorityModel,expandedReview.sourceModel);
+// The same 65-card display segmentation must be available in Low Mass.
+// It must never inherit the Sung text, intonation, or source-only cue clock.
+const lowPrepared={...prepared,session:{...prepared.session,
+  resolvedMass:{...resolvedMass,form:"LOW"}}};
+const lowLive=buildReaderModeModels({prepared:lowPrepared,data,mode:"LIVE"});
+assert.equal(lowLive.sourceModel.totalCards,39,"39 remains an internal source intermediary");
+assert.equal(lowLive.sourceModel.corpusFamily,"LOW");
+assert.equal(lowLive.presentationModel.totalCards,65);
+assert.equal(lowLive.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
+assert.equal(lowLive.presentationModel.sourceOnlyCueRegister,null);
+assert.ok(lowLive.presentationModel.cards.some(c=>c.title==="Gloria · Opening"));
+assert.ok(lowLive.presentationModel.cards.some(c=>c.title==="Credo · Opening"));
+assert.deepEqual(lowLive.presentationModel.cards.flatMap(c=>c.paragraphs.map(p=>p.id)),
+  lowLive.sourceModel.cards.flatMap(c=>c.paragraphs.map(p=>p.id)));
+const lowMissal=buildReaderModeModels({prepared:lowPrepared,data,mode:"MISSAL"});
+assert.equal(lowMissal.sourceModel.corpusFamily,"LOW");
+assert.ok(lowMissal.presentationModel.totalCards>=lowMissal.sourceModel.totalCards);
+const returnToLive=buildReaderModeModels({prepared:lowPrepared,data,mode:"LIVE"});
+assert.equal(returnToLive.presentationModel.totalCards,65,
+  "Low Mass MISSAL → LIVE must not restore 39 display cards");
+// Holy Thursday has no Credo. That is a sourced subtraction from the 65
+// presentation family, not a reason to show its old 38-step source model.
+const holyThursdayPrepared={...prepared,session:{...prepared.session,
+  resolvedMass:{...resolvedMass,proper:{...resolvedMass.proper,
+    data:{...resolvedMass.proper.data,sourcePath:"Tempora/Quad6-4r"}}}}};
+const holyThursday=buildReaderModeModels({prepared:holyThursdayPrepared,data,mode:"LIVE"});
+assert.equal(holyThursday.sourceModel.totalCards,38);
+assert.equal(holyThursday.sourceModel.holyThursday,true);
+assert.equal(holyThursday.presentationModel.totalCards,61);
+assert.equal(holyThursday.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
+assert.equal(holyThursday.presentationModel.cards.some(c=>
+  (c.sourceSectionId??c.sectionId)==="AO.CARD.009"),false);
+assert.deepEqual(holyThursday.presentationModel.cards.flatMap(c=>c.paragraphs.map(p=>p.id)),
+  holyThursday.sourceModel.cards.flatMap(c=>c.paragraphs.map(p=>p.id)),
+  "Holy Thursday curation lost or duplicated original source paragraphs");
 
 const cueRegistryNames={
   gestures:"reader-gestures.v1.json",
