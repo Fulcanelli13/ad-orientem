@@ -31,7 +31,7 @@ test("Traditional French Pater is retained and not described as the modern Compe
  assert.match(p.la,/Panem nostrum quotidianum/);
  const policy=essentialPrayerWitnessPolicy(p.id);
  assert.equal(policy.faces.fr.status,"historical_variant");
- assert.match(policy.faces.fr.witness,/1905/);
+ assert.match(policy.faces.fr.witness,/1906/);
  assert.match(policy.faces.fr.url,/wikisource/);
  assert.match(policy.faces.la.note||policy.faces.la.witness,/quotidianum/);
  assert.equal(essentialPrayerEditorialReading(p.id,"fr",p),null);
