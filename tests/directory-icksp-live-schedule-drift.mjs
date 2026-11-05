@@ -13,6 +13,17 @@ assert.equal(delta.drift_detected,true);
 assert.equal(delta.publication_authorized,false);
 assert.equal(delta.source_identity_diff_requires_review,true);
 assert.equal(delta.recheck_required,true);
+const renamed=compareIckspScheduleSnapshots(
+ mk(["ao-schedule-old-address-0-1","ao-schedule-unchanged-1-1"]),
+ mk(["ao-schedule-new-address-0-1","ao-schedule-unchanged-1-1"])
+);
+assert.deepEqual(renamed.same_source_slot_identity_changes,[{
+ source_slot:"0",old_id:"ao-schedule-old-address-0-1",
+ new_id:"ao-schedule-new-address-0-1",
+}]);
+assert.deepEqual(renamed.unmatched_baseline_ids,[]);
+assert.deepEqual(renamed.unmatched_live_ids,[]);
+assert.equal(renamed.drift_detected,true,"Even a same-source renamed ID requires review");
 const exact=compareIckspScheduleSnapshots(baseline,baseline);
 assert.equal(exact.drift_detected,false);
 assert.deepEqual(exact.missing_baseline_schedule_ids,[]);
