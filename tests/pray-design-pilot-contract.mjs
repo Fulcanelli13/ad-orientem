@@ -19,7 +19,7 @@ const L=(en,fr)=>en;
 const esc=s=>String(s??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;");
 const families={
  daily:{title:"Daily Prayer",assetId:"ao-rich-begin-end-day",items:[["own","pray.angelus_regina","Angelus","Hourly prayer"]]},
- chaplets:{title:"Rosary & Chaplets",assetId:"ao-rich-rosary",items:[["own","pray.rosary","Rosary","Bead reader"]]},
+ chaplets:{title:"Rosary & Chaplets",assetId:"ao-rich-rosary",items:[["own","pray.rosary","Rosary","Bead reader"],["own","pray.rosary_methods","Rosary methods","Original Rosary guide"]]},
  eucharistic:{title:"Holy Eucharist",assetId:"ao-rich-adoration",items:[]},
  library:{title:"Prayer Library",assetId:"ao-rich-prayer-library",direct:"pray.library",items:[]}
 };
@@ -29,7 +29,7 @@ const bridged=resolvedPrayerPilotFamilies(L,{
  ...families,
  penance:{items:[["own","pray.confession","Confession","Prepare"],["own","pray.penitential_psalms","Seven Penitential Psalms","Source prayer"]]},
  passion:{items:[["own","pray.stations","Stations","Fourteen"],["own","pray.tenebrae","Office of Tenebrae","Triduum"]]},
- devotions:{items:[["external","pray.novenas","Novenas","Source"],["external","pray.holy_name_litany","Holy Name","Litany"]]}
+ devotions:{items:[["external","pray.novenas","Novenas","Source"],["external","pray.holy_name_litany","Holy Name","Litany"],["external","pray.sacred_hymns","Sacred Hymns","Original hymn owner"]]}
 });
 const primaryEntries=Object.entries(PRAYER_DOOR_ORDER_V1).flatMap(([door,ids])=>ids.map(id=>({door,id})));
 assert.equal(Object.keys(PRAYER_DOOR_ORDER_V1).length,9,"Keep exactly nine approved doors");
@@ -93,7 +93,8 @@ assert.equal(new Set(indexedNovenas.map(row=>row.id)).size,16,"Canonical novena 
 assert.deepEqual(indexedNovenas.find(row=>row.id==="christmas"),{
  id:"christmas",en:NOVENA_CORPUS_V4.christmas.title.en,fr:NOVENA_CORPUS_V4.christmas.title.fr
 });
-const indexedRouteIds=[...actual.matchAll(/data-p435930-(?:own|external)="([^"]+)"/g)].map(match=>match[1]);
+const searchMarkup=actual.slice(actual.indexOf('<div data-ao-pray-pilot-results'),actual.indexOf('<p data-ao-pilot-empty'));
+const indexedRouteIds=[...searchMarkup.matchAll(/data-p435930-(?:own|external)="([^"]+)"/g)].map(match=>match[1]);
 assert.deepEqual(indexedRouteIds,ownedSearch.map(row=>row.id),
  "Home search must list only authoritative non-prayer routes in their approved order");
 assert.match(actual,/data-pilot-primary-door="chaplets"[^>]*data-p435930-own="pray\.rosary"/,
