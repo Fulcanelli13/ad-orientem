@@ -60,7 +60,7 @@ function replaceName(rows){
   const donor=rows?.[lang==="lat"?"la":lang];if(!Array.isArray(donor))return null;
   const name=lang==="lat"?"Hermenegildo":lang==="en"?"Hermenegild":"Herménégilde";
   let hits=0;
-  adjusted[lang]=donor.map(line=>String(line).replace(/\bN\./g,()=>{
+  adjusted[lang==="lat"?"la":lang]=donor.map(line=>String(line).replace(/\bN\./g,()=>{
    hits++;return name;
   }));
   if(hits!==1)return null;
