@@ -26807,6 +26807,126 @@
         "AO-PHOTO-P104-61-SITE",
         "AO-PHOTO-P104-61-GEO"
       ]
+    },
+    {
+      "place_id": "place:IT:santi-xii-apostoli-rome",
+      "name": {
+        "official": "Basilica dei Santi XII Apostoli",
+        "aliases": [
+          "Santi Apostoli, Roma",
+          "Basilica of the Twelve Holy Apostles"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 41.898124,
+        "lng": 12.482831,
+        "precision": "site",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_url": "https://www.turismoroma.it/en/node/713",
+        "source_ref": "turismoroma:node:713",
+        "matched_country_code": "IT",
+        "verified_at": "2026-11-05"
+      },
+      "address": {
+        "line1": "Piazza dei Santi Apostoli 51",
+        "line2": null,
+        "postal_code": "00187",
+        "city": "Roma",
+        "region": "Lazio",
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Piazza dei Santi Apostoli 51, 00187 Roma, Italy"
+      },
+      "source_ids": [
+        "SHR-IT-XII-APOSTOLI-CRYPT",
+        "SHR-IT-XII-APOSTOLI-LOCATION"
+      ]
+    },
+    {
+      "place_id": "place:IT:san-pietro-in-vincoli-rome",
+      "name": {
+        "official": "Basilica di San Pietro in Vincoli",
+        "aliases": [
+          "Saint Peter in Chains",
+          "San Pietro in Vincoli"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 41.893627,
+        "lng": 12.492497,
+        "precision": "site",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_url": "https://www.turismoroma.it/en/node/716",
+        "source_ref": "turismoroma:node:716",
+        "matched_country_code": "IT",
+        "verified_at": "2026-11-05"
+      },
+      "address": {
+        "line1": "Piazza di San Pietro in Vincoli 4",
+        "line2": null,
+        "postal_code": null,
+        "city": "Roma",
+        "region": "Lazio",
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Piazza di San Pietro in Vincoli 4, Roma, Italy"
+      },
+      "source_ids": [
+        "SHR-IT-PIETRO-VINCOLI-CUSTODY",
+        "SHR-IT-PIETRO-VINCOLI-GEO",
+        "SHR-IT-PIETRO-VINCOLI-HERITAGE"
+      ]
+    },
+    {
+      "place_id": "place:IT:genova-cattedrale-san-lorenzo",
+      "name": {
+        "official": "Cattedrale Metropolitana di San Lorenzo",
+        "aliases": [
+          "Genoa Cathedral",
+          "Duomo di Genova"
+        ]
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 44.407878,
+        "lng": 8.930885,
+        "precision": "site",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_url": "https://www.visitgenoa.it/en/node/7790",
+        "source_ref": "visitgenoa:node:7790",
+        "matched_country_code": "IT",
+        "verified_at": "2026-11-05"
+      },
+      "address": {
+        "line1": "Piazza San Lorenzo",
+        "line2": null,
+        "postal_code": "16123",
+        "city": "Genova",
+        "region": "Liguria",
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Piazza San Lorenzo, 16123 Genova, Italy"
+      },
+      "source_ids": [
+        "SHR-IT-GENOVA-CATHEDRAL-HISTORY",
+        "SHR-IT-GENOVA-CATHEDRAL-CUSTODY",
+        "SHR-IT-GENOVA-CATHEDRAL-TREASURY",
+        "SHR-IT-GENOVA-CATHEDRAL-GEO"
+      ]
     }
   ],
   "directoryPlaceLinks": [
