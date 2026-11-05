@@ -1,0 +1,99 @@
+{
+  "schema": "AO_SACRED_PLACES_V10_B20_THREE_RELIC_SHRINE_ADMISSIONS_V1",
+  "date": "2026-11-05",
+  "status": "DRAFT_PR_SOURCE_REVIEWED_NOT_PUBLICATION_SIGNOFF",
+  "baseline": {
+    "places": 530,
+    "sources": 846,
+    "crosswalk": 530,
+    "unlinked": 257,
+    "geo_areas": 146,
+    "directory_links": 24
+  },
+  "proposed": {
+    "places": 533,
+    "sources": 855,
+    "crosswalk": 533,
+    "unlinked": 257,
+    "geo_areas": 146,
+    "directory_links": 24
+  },
+  "new_places": 3,
+  "confirmed_directory_links_added": 0,
+  "published_new": [
+    {
+      "place_id": "place:IT:santi-xii-apostoli-rome",
+      "shrine_id": "shrine:IT:santi-xii-apostoli-rome",
+      "pilgrimage_id": "pilgrimage:IT:santi-xii-apostoli-rome:destination",
+      "source_ids": [
+        "SHR-IT-XII-APOSTOLI-CRYPT",
+        "SHR-IT-XII-APOSTOLI-LOCATION"
+      ],
+      "geo_source_url": "https://www.turismoroma.it/en/node/713",
+      "geo_source_ref": "turismoroma:node:713",
+      "geo_source_kind": "OFFICIAL_SOURCE",
+      "coordinates": [
+        41.898124,
+        12.482831
+      ],
+      "country_code": "IT",
+      "source_claim": "Institutionally attested Catholic heritage and claimed relic veneration; physical relic authentication not established",
+      "photo_publication": "NO_APPROVED_NEW_MEDIA",
+      "guide_publication": "RESEARCH_ONLY_SECOND_EDITOR_PENDING"
+    },
+    {
+      "place_id": "place:IT:san-pietro-in-vincoli-rome",
+      "shrine_id": "shrine:IT:san-pietro-in-vincoli-rome",
+      "pilgrimage_id": "pilgrimage:IT:san-pietro-in-vincoli-rome:destination",
+      "source_ids": [
+        "SHR-IT-PIETRO-VINCOLI-CUSTODY",
+        "SHR-IT-PIETRO-VINCOLI-GEO",
+        "SHR-IT-PIETRO-VINCOLI-HERITAGE"
+      ],
+      "geo_source_url": "https://www.turismoroma.it/en/node/716",
+      "geo_source_ref": "turismoroma:node:716",
+      "geo_source_kind": "OFFICIAL_SOURCE",
+      "coordinates": [
+        41.893627,
+        12.492497
+      ],
+      "country_code": "IT",
+      "source_claim": "Institutionally attested Catholic heritage and claimed relic veneration; physical relic authentication not established",
+      "photo_publication": "NO_APPROVED_NEW_MEDIA",
+      "guide_publication": "RESEARCH_ONLY_SECOND_EDITOR_PENDING"
+    },
+    {
+      "place_id": "place:IT:genova-cattedrale-san-lorenzo",
+      "shrine_id": "shrine:IT:genova-cattedrale-san-lorenzo",
+      "pilgrimage_id": "pilgrimage:IT:genova-cattedrale-san-lorenzo:destination",
+      "source_ids": [
+        "SHR-IT-GENOVA-CATHEDRAL-HISTORY",
+        "SHR-IT-GENOVA-CATHEDRAL-CUSTODY",
+        "SHR-IT-GENOVA-CATHEDRAL-TREASURY",
+        "SHR-IT-GENOVA-CATHEDRAL-GEO"
+      ],
+      "geo_source_url": "https://www.visitgenoa.it/en/node/7790",
+      "geo_source_ref": "visitgenoa:node:7790",
+      "geo_source_kind": "OFFICIAL_SOURCE",
+      "coordinates": [
+        44.407878,
+        8.930885
+      ],
+      "country_code": "IT",
+      "source_claim": "Institutionally attested Catholic heritage and claimed relic veneration; physical relic authentication not established",
+      "photo_publication": "NO_APPROVED_NEW_MEDIA",
+      "guide_publication": "RESEARCH_ONLY_SECOND_EDITOR_PENDING"
+    }
+  ],
+  "policy": {
+    "preserve_all_previous_places": true,
+    "immutable_prior_release_manifests": true,
+    "do_not_infer_relic_authenticity": true,
+    "no_tlm_venue_or_times_inferred": true,
+    "no_calendar_date_inferred": true,
+    "no_photo_promotion": true,
+    "new_approved_media": 0,
+    "zero_cost": true,
+    "github_only": true
+  }
+}
