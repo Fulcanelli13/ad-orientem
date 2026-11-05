@@ -461,21 +461,36 @@ export async function prepareNativeReaderPreview({
       Boolean(loadedHolyThursdayPost) && liveCapabilityModel.holyThursday===true &&
       plan?.blessingAllowed===false && plan?.normalLastGospel===false &&
       plan?.dismissal==="BENEDICAMUS_DOMINO");
+  const overlays=plan?.overlayGraphs??[];
+  const nuptialSourceReady=liveCapabilityModel.nuptialInsertionCount===3 &&
+    liveCapabilityModel.emberInsertionCount==null &&
+    liveCapabilityModel.totalCards===42 &&
+    liveCapabilityModel.cards.filter(c=>c.nuptialInsertion===true).length===3;
+  const emberInsertions=Number(liveCapabilityModel.emberInsertionCount??0);
+  const emberSourceReady=emberInsertions>0 && Number.isSafeInteger(emberInsertions) &&
+    liveCapabilityModel.nuptialInsertionCount==null &&
+    liveCapabilityModel.totalCards===39+emberInsertions &&
+    liveCapabilityModel.cards.filter(c=>c.emberInsertion===true).length===emberInsertions;
   const curatedSourceEligible=liveCapabilityModel.totalCards===39 ||
+    nuptialSourceReady || emberSourceReady ||
     (liveCapabilityModel.holyThursday===true && liveCapabilityModel.credoOmitted===true &&
       liveCapabilityModel.totalCards===(liveCapabilityModel.mandatumPresent===true?39:38));
+  const overlaySourceReady=
+    overlays.includes("NUPTIAL")===nuptialSourceReady &&
+    overlays.includes("EMBER_LESSONS")===emberSourceReady;
   const curatedEligible=reviewCuratedCards===true &&
     plan?.kind==="MASS" &&
-    curatedSourceEligible &&
+    curatedSourceEligible && overlaySourceReady &&
     ["LOW","SUNG"].includes(String(liveCapabilityModel.corpusFamily).toUpperCase()) &&
     // Eligibility is a property of the prepared Mass, not the initial mode:
     // a session may open in MISSAL and then switch to LIVE.
     compatiblePrelude && compatibleFollowing &&
-    (plan?.overlayGraphs??[]).every(id=>["VOTIVE_PROPER","REQUIEM"].includes(id));
+    overlays.every(id=>["VOTIVE_PROPER","REQUIEM","NUPTIAL","EMBER_LESSONS"].includes(id));
   // Never publish the old 39-card intermediary as a LIVE Mass. A source
   // combination that cannot be projected to approved cards must fail visibly;
-  // it must not masquerade as a complete Mass reader. Exceptional insertion
-  // models (>39 source sections) retain their separately sourced ownership.
+  // it must not masquerade as a complete Mass reader. Nuptial and Ember
+  // source insertions use the same 65-family segmentation without flattening
+  // their separately verified event, formula, and text identities.
   if(reviewCuratedCards===true && plan?.kind==="MASS" &&
      String(model.presentationMode).toUpperCase()==="LIVE" &&
      curatedSourceEligible && !curatedEligible)
@@ -1693,7 +1708,9 @@ export async function mountNativeReaderPreview({
     // projection. A card scroll is never an observed priest movement.
     const finalCurated65=String(ready.model?.corpusFamily).toUpperCase()==="SUNG" &&
       readerModel?.structureOwner==="SOURCE_FIRST_LIVE_CURATED_65_REVIEW" &&
-      [65,66,67].includes(readerModel?.totalCards) &&
+      readerModel?.curatedPresentationReview===true &&
+      readerModel?.totalCards>=65 &&
+      current?.nuptialInsertion!==true && current?.emberInsertion!==true &&
       readerModel?.presentationMode==="LIVE";
     const curatedLocation=projectCurated65PriestStation({
       cueId:activeCueId,sourcePosition:sourcePriestPosition,
@@ -1765,7 +1782,9 @@ export async function mountNativeReaderPreview({
     const canonLiveAction=certifiedLiveCanonActionOverride({
       presentationMode:readerModel?.presentationMode,
       curatedPresentation:String(ready.model?.corpusFamily).toUpperCase()==="SUNG" &&
-        current?.curatedPresentationReview===true && readerModel?.sourceModelTotalCards===39,
+        current?.curatedPresentationReview===true &&
+        current?.nuptialInsertion!==true && current?.emberInsertion!==true &&
+        readerModel?.structureOwner==="SOURCE_FIRST_LIVE_CURATED_65_REVIEW",
       cueId:activeCueId,matrixAction:resolvedMatrixAction,
     });
     const originalPriestAction=canonLiveAction??cueProjection?.priestAction??resolvedMatrixAction??rubricAction??null;
