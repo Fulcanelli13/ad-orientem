@@ -11,7 +11,7 @@ const r=read("data/geography/research/sacred-geography-coverage-first-r70.v1.jso
 assert.equal(m.schema,"AO_SACRED_GEOGRAPHY_R76_FINAL_ESSENTIAL_AUDIT_V1");
 assert.equal(m.published_new.length,3);
 assert.equal(m.held.length,10);
-assert.deepEqual([g.geoAreas.length,g.places.length,s.shrines.length,s.pilgrimages.length,sources.sources.length],[LIVE.areas,LIVE.places,257,240,LIVE.sources]);
+assert.deepEqual([g.geoAreas.length,g.places.length,s.shrines.length,s.pilgrimages.length,sources.sources.length],[LIVE.areas,LIVE.places,260,243,LIVE.sources]);
 assert.equal(assertExploreGeographyRegistry(g).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({...s,sources:sources.sources,places:g.places}).pass,true);
 assert.equal(r.candidates.length,750);
@@ -20,7 +20,7 @@ assert.deepEqual([r.summary.candidate_status.CONFIRMED_EXISTING_PROMOTION,r.summ
 assert.deepEqual([q.counts.explicit_promoted,q.counts.text_hint_review,q.counts.unmatched,q.counts.essential_remaining],[164,6,580,6]);
 const places=new Map(g.places.map(x=>[x.place_id,x])),shrines=new Map(s.shrines.map(x=>[x.shrine_id,x])),pilgrimages=new Map(s.pilgrimages.map(x=>[x.pilgrimage_id,x])),ids=new Set(sources.sources.map(x=>x.id));
 assert.equal(places.size,g.places.length);
-assert.equal(new Set(s.shrines.map(x=>x.place_id)).size,257);
+assert.equal(new Set(s.shrines.map(x=>x.place_id)).size,260);
 assert.equal(new Set(s.shrines.map(x=>places.get(x.place_id)?.address.country_code)).size,69);
 const projection=projectExploreDataset({directory:{records:[],communities:[]},geography:g,shrines:{...s,sources:sources.sources},sacredPhenomena:ph,customs:{customs:[],attestations:[],sources:[]},novenas:{records:[],links:[],sources:[]},editorial:{featured:[],placeGuides:[]},media:{approved:[],gallery:[]}});
 assert.deepEqual(new Set(m.published_new.map(x=>x.country)),new Set(["US","TT","GH"]));
@@ -46,8 +46,8 @@ for(const row of m.published_new){
  }
 }
 assert.equal(h.place_crosswalk.length,LIVE.places);
-assert.equal(exploreMapFeatures(projection.byLens.shrines).length,257);
-assert.equal(exploreMapFeatures(projection.byLens.pilgrimages).length,240);
+assert.equal(exploreMapFeatures(projection.byLens.shrines).length,260);
+assert.equal(exploreMapFeatures(projection.byLens.pilgrimages).length,243);
 // The historical ten R76 holds are an immutable audit; later independent site research resolves a subset.
 const remaining=new Set(q.rows.filter(x=>x.priority==="Essential"&&x.status!=="EXPLICIT_PROMOTED").map(x=>x.candidate_id));
 assert.equal(remaining.size,6);

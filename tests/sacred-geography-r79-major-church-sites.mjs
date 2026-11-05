@@ -17,7 +17,7 @@ const release=read("data/geography/research/sacred-geography-r79-major-church-si
 const heritage=read("data/explore/heritage-place-reconciliation.review.v1.json");
 assert.equal(release.schema,"AO_SACRED_GEOGRAPHY_R79_MAJOR_CHURCH_COVERAGE_V1");
 assert.equal(release.new_sites.length,3);
-assert.deepEqual([g.places.length,s.shrines.length,s.pilgrimages.length,sources.sources.length],[LIVE.places,257,240,LIVE.sources]);
+assert.deepEqual([g.places.length,s.shrines.length,s.pilgrimages.length,sources.sources.length],[LIVE.places,260,243,LIVE.sources]);
 assert.equal(assertExploreGeographyRegistry(g).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({...s,sources:sources.sources,places:g.places}).pass,true);
 assert.equal(heritage.place_crosswalk.length,LIVE.places);

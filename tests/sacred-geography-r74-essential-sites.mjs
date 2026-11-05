@@ -10,7 +10,7 @@ const g=read("data/geography/seed-registry.v1.json"),s=read("data/shrines/shrine
 const r=read("data/geography/research/sacred-geography-coverage-first-r70.v1.json"),q=read("data/geography/research/sacred-geography-r70-worldwide-coverage-queue.v1.json"),h=read("data/explore/heritage-place-reconciliation.review.v1.json"),m=read("data/geography/research/sacred-geography-r74-essential-sites.v1.json");
 assert.equal(m.schema,"AO_SACRED_GEOGRAPHY_R74_ESSENTIAL_RECONCILIATION_V1");
 assert.deepEqual([m.published_new.length,m.existing_confirmed.length,m.existing_pilgrimage_enrichment.length,m.held.length],[1,13,1,1]);
-assert.deepEqual([g.places.length,s.shrines.length,s.pilgrimages.length,sources.sources.length],[LIVE.places,257,240,LIVE.sources]);
+assert.deepEqual([g.places.length,s.shrines.length,s.pilgrimages.length,sources.sources.length],[LIVE.places,260,243,LIVE.sources]);
 assert.equal(assertExploreGeographyRegistry(g).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({...s,sources:sources.sources,places:g.places}).pass,true);
 assert.equal(r.candidates.length,750);
@@ -19,7 +19,7 @@ assert.deepEqual([r.summary.candidate_status.CONFIRMED_EXISTING_PROMOTION,r.summ
 assert.deepEqual([q.counts.explicit_promoted,q.counts.text_hint_review,q.counts.unmatched,q.counts.essential_remaining],[164,6,580,6]);
 const places=new Map(g.places.map(x=>[x.place_id,x])),shrines=new Map(s.shrines.map(x=>[x.shrine_id,x])),pilgrimages=new Map(s.pilgrimages.map(x=>[x.pilgrimage_id,x])),ids=new Set(sources.sources.map(x=>x.id));
 assert.equal(places.size,g.places.length,"No duplicate physical-site identity");
-assert.equal(new Set(s.shrines.map(x=>x.place_id)).size,257,"One shrine per physical pin");
+assert.equal(new Set(s.shrines.map(x=>x.place_id)).size,260,"One shrine per physical pin");
 const projected=projectExploreDataset({directory:{records:[],communities:[]},geography:g,shrines:{...s,sources:sources.sources},sacredPhenomena:phenomena,customs:{customs:[],attestations:[],sources:[]},novenas:{records:[],links:[],sources:[]},editorial:{featured:[],placeGuides:[]},media:{approved:[],gallery:[]}});
 for(const row of m.published_new){
  const p=places.get(row.place_id),sh=shrines.get(row.shrine_id),pil=pilgrimages.get(row.pilgrimage_id);
@@ -53,6 +53,6 @@ assert.equal(q.rows.find(x=>x.candidate_id==="SG-INV-0673")?.name,"National Mari
 assert.equal(q.rows.find(x=>x.candidate_id==="SG-INV-0746")?.status,"TEXT_HINT_REVIEW");
 assert.equal(places.get("place:NZ:st-peter-chanel-russell").geo.indicative_only,true);
 assert.equal(h.place_crosswalk.length,LIVE.places);
-assert.equal(exploreMapFeatures(projected.byLens.shrines).length,257);
-assert.equal(exploreMapFeatures(projected.byLens.pilgrimages).length,240);
+assert.equal(exploreMapFeatures(projected.byLens.shrines).length,260);
+assert.equal(exploreMapFeatures(projected.byLens.pilgrimages).length,243);
 console.log("PASS R74: 14 essential dispositions, Rigaud, La Vang and no new revelation/relic claims");
