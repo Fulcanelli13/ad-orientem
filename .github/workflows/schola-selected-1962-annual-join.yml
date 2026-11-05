@@ -21,6 +21,8 @@ on:
       - 'data/research/schola-2026-five-pinned-source-gap-evidence.v1.json'
       - 'data/research/schola-2026-five-source-liturgical-family-corroboration.v1.json'
       - 'tests/schola-2026-five-source-liturgical-family-corroboration.mjs'
+      - 'data/research/schola-2026-five-family-section-inheritance.v1.json'
+      - 'tests/schola-2026-five-family-section-inheritance.mjs'
       - 'src/mass/reader-proper-first60-print-review.js'
       - 'scripts/schola/build-2026-proper-first60-print-review.mjs'
       - 'tests/reader-proper-first60-print-review.mjs'
@@ -111,6 +113,7 @@ jobs:
           node scripts/schola/build-2026-five-pinned-source-gap-dispositions.mjs
           node tests/schola-2026-five-pinned-source-gap-dispositions.mjs
           node tests/schola-2026-five-source-liturgical-family-corroboration.mjs
+          node tests/schola-2026-five-family-section-inheritance.mjs
       - name: Upload original 60 Proper and additional 24 pre-Gospel review packets
         if: always()
         uses: actions/upload-artifact@v4
