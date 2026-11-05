@@ -36,6 +36,8 @@ on:
       - 'scripts/schola/build-2026-seven-common-ember-review.mjs'
       - 'tests/schola-2026-seven-common-ember-review.mjs'
       - 'data/research/schola-2026-27-selected-variant-owner-candidates.v1.json'
+      - 'data/research/schola-2026-july07-original-1962-1961-printed-identity.v1.json'
+      - 'tests/schola-2026-july07-original-source-identity.mjs'
       - 'scripts/schola/reconcile-2026-27-variant-source-candidates.mjs'
       - 'tests/schola-2026-27-variant-owner-candidates.mjs'
       - 'src/mass/reader-proper-first60-print-review.js'
@@ -145,6 +147,8 @@ jobs:
         run: |
           node scripts/schola/reconcile-2026-27-variant-source-candidates.mjs
           node tests/schola-2026-27-variant-owner-candidates.mjs
+      - name: Guard original 7 July 1962 Missal and 1961 Graduale source roles (research only)
+        run: node tests/schola-2026-july07-original-source-identity.mjs
       - name: Upload original 60 Proper and additional 24 pre-Gospel review packets
         if: always()
         uses: actions/upload-artifact@v4
