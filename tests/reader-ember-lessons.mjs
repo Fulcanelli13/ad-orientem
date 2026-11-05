@@ -155,6 +155,29 @@ const emberData={sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap};
 const emberMode=buildReaderModeModels({prepared:emberPrepared,data:emberData,mode:"LIVE"});
 assert.equal(emberMode.sourceModel.totalCards,44);
 assert.equal(emberMode.presentationModel.totalCards,70);
+const directEmberMode=buildReaderModeModels({
+  prepared:emberPrepared,data:emberData,mode:"LIVE",directSourceCurated:true,
+});
+assert.equal(directEmberMode.sourceModel.totalCards,30,
+  "Direct Ember rebuild must not allocate the 44-unit source model");
+assert.equal(directEmberMode.presentationModel.totalCards,70);
+assert.equal(directEmberMode.presentationModel.directSourceToCurated,true);
+assert.equal(directEmberMode.presentationModel.sourceAuthorityModel,directEmberMode.sourceModel);
+assert.deepEqual(directEmberMode.presentationModel.cards.map(c=>({
+  id:c.sectionId,sourceId:c.sourceSectionId,title:c.title,
+  paragraphIds:c.paragraphs.map(p=>p.id),blocks:c.blocks,
+  sourceOrderIndex:c.sourceOrderIndex??null,
+  formulaStates:c.formulaStates??null,
+})),emberMode.presentationModel.cards.map(c=>({
+  id:c.sectionId,sourceId:c.sourceSectionId,title:c.title,
+  paragraphIds:c.paragraphs.map(p=>p.id),blocks:c.blocks,
+  sourceOrderIndex:c.sourceOrderIndex??null,
+  formulaStates:c.formulaStates??null,
+})), "Ember direct mode rebuild changed source order, prayer text or Flectamus/Levate anchors");
+const directEmberAnchor=captureReaderModeAnchor(directEmberMode.presentationModel.cards
+  .find(c=>c.sectionId==="AO.EMBER.02"));
+assert.equal(findReaderModeAnchorCard(emberMode.presentationModel,directEmberAnchor)?.sectionId,
+  "AO.EMBER.02");
 for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
   const variant=buildReaderModeModels({
     prepared:{...emberPrepared,session:{...emberPrepared.session,
