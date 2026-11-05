@@ -51,3 +51,12 @@ jobs:
         run: |
           node tests/reader-inline-chant-a-c-phone.mjs
           node tests/reader-inline-proper-july07-phone.mjs
+
+      - name: Retain 320 and 390 px source-notation screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-1961-inline-july07-screens
+          path: .tmp/mass-inline-proper-july07/*.png
+          if-no-files-found: warn
+          retention-days: 14
