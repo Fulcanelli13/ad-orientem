@@ -75,6 +75,14 @@ test("Correct titles are presentation-only; English and French labels are distin
  assert.match(en,/Act of Charity/);
  assert.match(fr,/Acte de charité/);
  assert.match(fr,/Mon Seigneur et mon Dieu/);
+ const latinFacingFrench=claudeHolyCard({
+  id:"foundations_act_of_love",p:texts.foundations_act_of_love,
+  face:"la",vernacular:"fr",esc:escape
+ });
+ assert.match(latinFacingFrench,/<h3>Acte de charité<\/h3>/,
+  "French user must see French card title while the prayer begins in Latin");
+ assert.match(latinFacingFrench,/lang="la"/,
+  "The prayer text itself must remain Latin on the first face");
 });
 
 test("Moving a prayer never breaks its original reversible Holy Card reader",()=>{
