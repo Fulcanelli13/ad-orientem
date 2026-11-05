@@ -26,13 +26,17 @@ export function buildReaderModeModels({prepared,data,mode,reviewExpandedCards=tr
     holyThursdayMandatumSource:data.mandatumSource??null,
     vernacularLanguage:prepared?.readerPreferences?.language??"en",
   });
-  // No public 48-card fallback. Uncertified variants retain their untouched
-  // source-owned LIVE cards; certified ordinary Sung Mass uses curated 65.
+  // The 39-step model is an internal source boundary, never a public LIVE
+  // presentation. Explicit reviewExpandedCards=false is reserved for source
+  // diagnostics, not a browser-facing fallback.
   const presentationModel=normalized==="MISSAL"
     ? projectGranularMissalCards(sourceModel)
     : reviewExpandedCards
       ? projectCuratedOrdinaryLiveCards(sourceModel)
       : sourceModel;
+  if(normalized==="LIVE" && reviewExpandedCards && sourceModel.totalCards===39 &&
+     presentationModel.totalCards===39)
+    throw new Error("LIVE_39_CARD_PUBLIC_PROJECTION_FORBIDDEN");
   return Object.freeze({mode:normalized,sourceModel,presentationModel});
 }
 
