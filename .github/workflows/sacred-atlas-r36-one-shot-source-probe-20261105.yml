@@ -1,0 +1,46 @@
+name: Sacred Atlas R36 — one-time frozen first-photo source probe (no publication)
+
+# Deliberately only fires when this draft PR is first opened.
+# No push, synchronize, schedule, workflow_dispatch, or retry trigger.
+# Never merge this transient research-only workflow into main.
+on:
+  pull_request:
+    types: [opened]
+    branches: [main]
+    paths:
+      - '.github/workflows/sacred-atlas-r36-one-shot-source-probe-20261105.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  one-time-first-source-only:
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'research/sacred-atlas-r36-one-shot-source-probe-20261105' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - name: Checkout frozen source verifier
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned Pillow for byte/dimension verification
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Verify the selected first original exactly once; no mirrors or retries
+        run: |
+          python tools/atlas/verify-sacred-atlas-r28-approved19-source-originals.py \
+            --verify-originals --retain-verified-originals --start-index 0 --max-files 1
+      - name: Retain result and SHA-1-matched source only if verified
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-atlas-r36-one-shot-first-frozen-original
+          path: |
+            /tmp/ao-sacred-atlas-owner-approved19/report.json
+            /tmp/ao-sacred-atlas-owner-approved19/originals/*.jpg
+            /tmp/ao-sacred-atlas-owner-approved19/previews/*.webp
+          if-no-files-found: warn
+          retention-days: 7
