@@ -388,7 +388,9 @@ try{
  assert.equal(await page.locator("#aoPray435930.open [data-ao-devo-card]").getAttribute("data-ao-devo-card"),"sacred_heart_short_prayer");
  assert.ok((await page.locator("#aoPray435930.open [data-ao-devo-card]").innerText()).length>130,
    "First Friday direct source prayer is missing text");
- await page.locator("#aoPray435930.open [data-p435930-prayer-return]").evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930.open [data-p435930-prayer-return]").count(),0,
+  "Standalone source prayer must not duplicate the native Back");
+ await page.locator("#aoPray435930.open [data-p435930-back]").evaluate(el=>el.click());
  assert.equal(await page.locator("#aoPray435930.open [data-p435930-ff-stage][aria-current='step']").getAttribute("data-p435930-ff-stage"),"0",
    "Direct prayer did not restore exact First Friday stage");
  assert.equal(await page.locator("#aoPray435930.open .aoQuietSeriesDisclosure [data-p435930-ff-tracking]").isChecked(),false,
