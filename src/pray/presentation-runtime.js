@@ -23,6 +23,7 @@ import {renderPrayerSelectedCoverQA} from "./prayer-cover-photo-qa.v1.js";
 import "./stations-verified-artwork-styles.js";
 import {renderVerifiedStationArtwork} from "./stations-verified-artwork-release.v1.js";
 import {ESSENTIAL_HOLY_CARD_IDS_V1,ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2,essentialHolyCardDisplayTitle,essentialHolyCardParts} from "./essential-holy-card-parts.js";
+import {essentialPrayerEditorialReading,essentialPrayerPreferredReadingRecord,essentialPrayerWitnessPolicy} from "./essential-prayer-witness-policy.v1.js";
 import {claudeHolyCard,claudeHolyCardCase,installClaudeHolyBackFocus} from "./claude-holy-card.js";
 import {renderEssentialFlowReader,essentialFlowReaderEnabled} from "./essential-flow-reader.js";
 import "./essential-flow-reader-styles.js";
@@ -654,11 +655,24 @@ function sourceLine(p){
   'VULGATE_PSALM_AND_SHORTENED_OFFICE_RESPONSES'
  ].includes(scopedComparison.category);
  const textualVariant=PRAYER_WITNESSED_VARIANTS[p.id];
+ const essentialWitness=essentialPrayerWitnessPolicy(p.id);
+ const essentialFrenchCorrection=essentialPrayerEditorialReading(p.id,"fr",p);
+ const essentialWitnessNotice=essentialWitness?.alignment==="historical_variant"&&p.id==="foundations_our_father"
+  ?'<p class="aoP435930SourceWitnessNote" data-ao-essential-french-traditional-witness>'+
+     esc(L('Traditional French Our Father (1906 catechism); this text is not verbatim the French Compendium of 2005.',
+       'Notre Père traditionnel (catéchisme de 1906) ; ce texte n’est pas la copie mot à mot du Compendium français de 2005.'))+
+     ' <a target="_blank" rel="noopener noreferrer" href="'+esc(essentialWitness.faces.fr.url)+'">'+
+     esc(L('Historical French text','Texte français historique'))+' ↗</a></p>':'';
+ const essentialCorrectionNotice=essentialFrenchCorrection
+  ?'<p class="aoP435930SourceWitnessNote" data-ao-essential-editorial-reading>'+
+    esc(L('French reading note: the devotional text displayed on the card says « Dans cette espérance ». The 2005 French Compendium prints « Dans cette foi », retained unchanged in the source record.',
+      'Note de lecture : le texte de dévotion affiché sur la carte dit « Dans cette espérance ». Le Compendium français de 2005 imprime « Dans cette foi » ; ce témoin est conservé sans modification.'))+
+    '</p>':'';
  const variantNotice=textualVariant?`<p class="aoP435930SourceWitnessNote">${esc(L(textualVariant.noteEn,textualVariant.noteFr))} <a href="${esc(textualVariant.url)}" target="_blank" rel="noopener noreferrer">${esc(L('Original French witness','Témoin français original'))} ↗</a></p>`:'';
  const langHold=p.id==='marian_consecration_immaculate_heart'
    ?`<p>${esc(L('This consecration is documented in English only; no equivalent French or Latin formula has been certified.','Cette consécration est documentée en anglais seulement ; aucune formule française ou latine équivalente n’a été certifiée.'))}</p>`
    :'';
- return `<details class="aoP435930Source"><summary>${esc(L('Source / provenance','Source / provenance'))}</summary><p><b>${esc(pr.work||p.title||p.id)}</b></p><p>${esc(witness)}</p>${sourceLink}${additionalWitness}${editionNote}${sourceReviewMarkup}${missingCorpusUrlNotice}${transcribed?`<small>${esc(L('This online transcription is a reference to the 1962 text, not a verified facsimile of the printed Missal.','Cette transcription en ligne renvoie au texte de 1962 ; il ne s’agit pas d’un fac-similé du Missel imprimé certifié.'))}</small>`:''}${pr.adaptation&&pr.adaptation!=='VERBATIM'&&!adaptationMisdescribed?`<small>${esc(pr.adaptation)}</small>`:''}${langHold}${variantNotice}${collationDisclosure}${scopeDisclosure}${scopeWitnessLink}</details>`;
+ return `<details class="aoP435930Source"><summary>${esc(L('Source / provenance','Source / provenance'))}</summary><p><b>${esc(pr.work||p.title||p.id)}</b></p><p>${esc(witness)}</p>${sourceLink}${additionalWitness}${editionNote}${sourceReviewMarkup}${missingCorpusUrlNotice}${transcribed?`<small>${esc(L('This online transcription is a reference to the 1962 text, not a verified facsimile of the printed Missal.','Cette transcription en ligne renvoie au texte de 1962 ; il ne s’agit pas d’un fac-similé du Missel imprimé certifié.'))}</small>`:''}${pr.adaptation&&pr.adaptation!=='VERBATIM'&&!adaptationMisdescribed?`<small>${esc(pr.adaptation)}</small>`:''}${langHold}${variantNotice}${essentialWitnessNotice}${essentialCorrectionNotice}${collationDisclosure}${scopeDisclosure}${scopeWitnessLink}</details>`;
 }
 const DEVOTIONAL_GUIDE_LINKS=Object.freeze({
  stations:[
@@ -758,10 +772,11 @@ function prayerBlock(id,opts={}){
   // flat text document. Text still comes exclusively from canonical-data.
   const vern=p[lang()]?lang():p.en?'en':p.fr?'fr':null;
   const pref=CLAUDE_HOLY_PREF.language;
+  const displayRecord=essentialPrayerPreferredReadingRecord(id,p);
   const chosen=pref==='both'&&p.la&&vern?'both':pref&&p[pref]?pref:(p.la?'la':vern);
   // F01 approval authority: Claude's original reversible Holy Card, not the
    // newer R2 continuous flow. Flow is retained by explicit opt-in only.
-   return chosen?(ESSENTIAL_FLOW_ALTERNATIVE_ENABLED?renderEssentialFlowReader({id,p,face:chosen,vernacular:vern||'en',esc,artUrl:releasedPrayerCardArtUrl(id),artCredit:releasedPrayerCardArt(id)}):claudeHolyCard({id,p,face:chosen,vernacular:vern||'en',flipped:CLAUDE_HOLY_PREF.flipped,esc,flipLabel:L('Turn card','Retourner la carte'),artUrl:releasedPrayerCardArtUrl(id),artCredit:releasedPrayerCardArt(id)})):
+   return chosen?(ESSENTIAL_FLOW_ALTERNATIVE_ENABLED?renderEssentialFlowReader({id,p:displayRecord,face:chosen,vernacular:vern||'en',esc,artUrl:releasedPrayerCardArtUrl(id),artCredit:releasedPrayerCardArt(id)}):claudeHolyCard({id,p:displayRecord,face:chosen,vernacular:vern||'en',flipped:CLAUDE_HOLY_PREF.flipped,esc,flipLabel:L('Turn card','Retourner la carte'),artUrl:releasedPrayerCardArtUrl(id),artCredit:releasedPrayerCardArt(id)})):
    callout(esc(L('Prayer source unavailable.','Prière source indisponible.')),'warn');
  }
  if(id==='mass_devotion_leonine'&&!opts.record){
