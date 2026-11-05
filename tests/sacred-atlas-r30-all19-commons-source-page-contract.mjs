@@ -79,3 +79,27 @@ assert.equal(bav.current_page_observation.description_page_snapshot_revision_id,
 assert.equal(bav.source_sha1,"2950c29a57538bb91cfdf42b1c949a3135d98481");
 assert.ok(qa.rows.find(x=>x.place_id==="place:BE:banneux").current_page_observation.site_description_classification.includes("SANCTUARY_VIEW"));
 console.log("R30 PASS: all 19 exact user-selected source description pages reviewed, 14 page snapshot IDs, two further photo-credit exceptions, no new image rights claims or publication.");
+
+
+const r34Ids=["place:PL:lichen-marian-basilica","place:LB:monastery-saint-maron-annaya","place:US:la-salette-attleboro","place:BE:banneux","place:KR:haemi-martyrs-shrine-main-church","place:MX:guadalupe-zacatecas-historic-sanctuary"];
+for(const id of r34Ids){
+  const row=qa.rows.find(x=>x.place_id===id),locked=selected.get(id),gate=gated.get(id);
+  assert.ok(row?.r34_visual_scene_observation,"R34 preview-scene finding missing: "+id);
+  const x=row.r34_visual_scene_observation;
+  assert.equal(x.method,"BROWSER_RENDERED_COMMONS_IMAGE_PREVIEW_NOT_ORIGINAL_BYTES");
+  assert.equal(x.user_original_choice_preserved,true);
+  assert.equal(x.original_jpeg_bytes_acquired,false);
+  assert.equal(x.original_revision_sha1_reverified,false);
+  assert.equal(x.rights_cleared,false);
+  assert.equal(x.mobile_crop_approved,false);
+  assert.equal(x.publication_authorized,false);
+  assert.ok(x.scene_description.length>65&&x.mobile_display_status.length>35);
+  assert.ok(x.evidence_urls.includes(locked.original_commons_page));
+  assert.equal(row.original_bytes_reacquired_for_publication,false);
+  assert.equal(row.final_photo_release_authorized,false);
+  assert.equal(gate.publication_authorized,false);
+}
+assert.match(qa.rows.find(x=>x.place_id==="place:US:la-salette-attleboro").r34_visual_scene_observation.scene_description,/WELCOME CENTER/);
+assert.match(qa.rows.find(x=>x.place_id==="place:KR:haemi-martyrs-shrine-main-church").r34_visual_scene_observation.scene_description,/circular church/);
+assert.equal(qa.counts.newly_published,0);
+console.log("R34 PASS: six exact original browser previews inspected; La Salette welcome-centre and Haemi circular church documented; rights, native JPEG and publication still held.");
