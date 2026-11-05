@@ -44,6 +44,17 @@ assert.ok(stored.exactFullSelectedLatinGroups.every(x=>
 assert.equal(stored.counts.approvedSourceAliases,0);
 assert.equal(stored.counts.approvedGregorianProperScores,0);
 assert.equal(stored.sourceRows.length,115);
+assert.ok(stored.counts.originalOwnerReviewGroups<115,
+ "Historical vide C Common cues should consolidate multiple saint-day source paths");
+assert.ok(stored.counts.groupsWithMultipleSelectedPaths>0,
+ "The original Common candidate grouping must expose at least one reusable review family");
+assert.ok(stored.groups.some(g=>g.groupKey==="RULE_CANDIDATE:Commune/C5"&&
+ g.distinctSelectedSourcePaths>=2),
+ "Shared confessor Common C5 must remain a research-only common cue");
+assert.ok(stored.groups.filter(g=>g.groupKey.startsWith("RULE_CANDIDATE:"))
+ .every(g=>g.triageStatus==="SHARED_RUBRICAL_COMMON_OR_RULE_PARENT_UNCERTIFIED"&&
+ g.exactSelectedLatinAndLiturgicalSeasonReviewRequired&&
+ !g.publicScoreApproved));
 assert.equal(new Set(stored.sourceRows.flatMap(x=>x.dates)).size,128);
 assert.equal(stored.groups.reduce((n,x)=>n+x.datedHolds,0),128);
 assert.equal(stored.groups.reduce((n,x)=>n+x.distinctSelectedSourcePaths,0),115);
