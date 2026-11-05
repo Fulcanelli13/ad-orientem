@@ -6,10 +6,10 @@ import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
 import {PUBLISHED_PROVISIONAL_MASS_SITES_EXPECTED} from "../src/find/preliminary-directory-r49.js";
 import {CL2_PHYSICAL_SITE_COUNT,CL2_EXPECTED_R49_GROUPS} from "../src/find/cl2-physical-directory.js";
-// Of 735 original CL2 groups, 669 have reviewed illustrative/site pins; 62 remain list-only.
-// Census after R1 158 localities, 9 exact/POI admissions, R2 93, R3 91, R4 8 and R5 4 and R6 6 approved localities.
+// Of 735 original CL2 groups, 673 have reviewed illustrative/site pins; 62 remain list-only.
+// Census after R1 158 localities, 9 exact/POI admissions, R2 93, R3 91, R4 8, R5 4, R6 6 and R7 4 approved localities.
 const WORLDWIDE_DIRECTORY_TOTAL=CL2_PHYSICAL_SITE_COUNT+PUBLISHED_PROVISIONAL_MASS_SITES_EXPECTED;
-const REVIEWED_NEW_SITE_PINS=669;
+const REVIEWED_NEW_SITE_PINS=673;
 const MAPPED_MASS_PINS_TOTAL=CL2_EXPECTED_R49_GROUPS+PUBLISHED_PROVISIONAL_MASS_SITES_EXPECTED+REVIEWED_NEW_SITE_PINS;
 const ADDRESS_ONLY_SITES_TOTAL=WORLDWIDE_DIRECTORY_TOTAL-MAPPED_MASS_PINS_TOTAL;
 
