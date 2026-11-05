@@ -46,6 +46,23 @@ for (const row of manifest.rows) {
     // A later release must provide independent original-source evidence.
     const current=covers.items.find(x=>x.place_id===row.place_id);
     if(current) {
+      if(current.source_place_ref==="DIRECT_PEXELS_FLICKR_BATCH_TWO_20261105") {
+        // This is a DIFFERENT explicitly source-verified photograph. The
+        // original rank-1 Commons choice remains a historical held choice.
+        const direct=read("data/geography/research/sacred-atlas-direct-source-batch-two-20261105.v1.json");
+        const report=read("data/geography/research/sacred-atlas-direct-source-batch-two-report-20261105.v1.json");
+        const source=direct.items.find(x=>x.place_id===row.place_id);
+        const proof=report.approved.find(x=>x.place_id===row.place_id);
+        assert.ok(source&&proof&&report.admitted_on_pr_branch+report.held===4,
+          "Independent replacement requires an exact Place source manifest and downloaded original evidence");
+        assert.equal(current.source_url,source.source_page);
+        assert.equal(current.source_sha1,proof.source_original_sha1);
+        assert.equal(current.derivative_sha256,proof.derivative_sha256);
+        assert.equal(current.asset_path,proof.asset_path);
+        assert.equal(current.credit,source.credit);
+        assert.equal(current.license,source.license);
+        assert.ok(current.rights_verified&&current.subject_verified&&current.crop_reviewed);
+      }else{
       const newer=read("data/geography/research/sacred-atlas-round10-http-cc-recovery-evidence-20261104.v1.json");
       const reverified=newer.published.find(x=>x.place_id===row.place_id);
       assert.ok(reverified,"Round 6 held cover lacks matching independent recovery evidence");
@@ -53,6 +70,7 @@ for (const row of manifest.rows) {
       assert.equal(current.source_sha1,reverified.source_sha1);
       assert.equal(current.derivative_sha256,reverified.derivative_sha256);
       assert.ok(current.rights_verified&&current.subject_verified);
+      }
     }
   }
 }
