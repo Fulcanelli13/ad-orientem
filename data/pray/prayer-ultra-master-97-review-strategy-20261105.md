@@ -66,3 +66,9 @@ The source ledgers are aligned by **all 97 original IDs, titles, decisions and p
 ## Explicit boundaries
 
 This audit is **not** original-print certification, a completed source text import, permission clearance, a new prayer gallery or a claim that all 97 units are publicly visible. No new user approvals are inferred. The historical B31 statuses remain labelled with their actual **29 October** date and can be superseded only by a separate, evidence-supported subsequent release update.
+
+## Subsequent P0 source resolution (5 November 2026, after the frozen 97-row snapshot)
+
+The separate `data/pray/prayer-p0-source-witness-decisions-20261105.v1.json` records a bounded **English-only** image comparison for **AO-AQ-078**, against Lasance's scanned *My Prayer-Book* (Benziger, 1908), printed p.225 / Wikisource DJVU page 240. The staged English wording agrees with the printed page after ornamental initial, spacing and line-break normalization. It is admitted **only** in the existing Scripture reader's optional before-reading choices, alongside the independently sourced Aquinas EN/Latin forms; French and Latin translations of the longer Lasance text are **not** admitted. Repository merge and GitHub Pages publication are separate release gates.
+
+**AO-AQ-047 remains on hold.** The later short-Raccolta transcript invokes 33 Our Fathers but enumerates five across all seven mysteries (35). Original 1857 scan pages 103–104 were identified but **not visually inspected** during this decision. The published full Precious Blood form is a distinct recension and must not be used to claim that the short form is certified. The historical 29 October B31 status counts and the 97-row identity audit remain frozen as historical evidence; use this dated addendum for subsequent English source disposition rather than retroactively rewriting them.
