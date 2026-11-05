@@ -11,7 +11,7 @@ export const ESSENTIAL_PRAYER_WITNESS_POLICY_VERSION="ao-essential-witness-polic
 
 const VATICAN_EN="https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html";
 const VATICAN_FR="https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html";
-const FRENCH_1905="https://fr.wikisource.org/wiki/Cat%C3%A9chisme_illustr%C3%A9_des_v%C3%A9rit%C3%A9s_n%C3%A9cessaires/Pri%C3%A8res";
+const FRENCH_1906="https://fr.wikisource.org/wiki/Cat%C3%A9chisme_illustr%C3%A9_des_v%C3%A9rit%C3%A9s_n%C3%A9cessaires/Pri%C3%A8res";
 
 /**
  * Per-face source scope. Never claim that distinct traditional French,
@@ -31,7 +31,7 @@ export const ESSENTIAL_PRAYER_WITNESS_POLICY_V1=Object.freeze({
   review:"historical_variant",
   note:"French uses the older vous / laissez pas succomber form, not the 2005 Compendium's tu / soumets form. Keep the source text.",
   faces:Object.freeze({
-   fr:Object.freeze({status:"historical_variant",witness:"Catéchisme illustré des vérités nécessaires, Prières (1905)",url:FRENCH_1905}),
+   fr:Object.freeze({status:"historical_variant",witness:"Catéchisme illustré des vérités nécessaires, Prières (1906)",url:FRENCH_1906}),
    la:Object.freeze({status:"historical_variant",witness:"Traditional Latin Pater noster; spelling quotidianum (Compendium prints cotidianum)",url:VATICAN_FR}),
    en:Object.freeze({status:"corresponding_formula",witness:"Vatican Compendium, English prayer formula",url:VATICAN_EN})
   })
