@@ -48,7 +48,7 @@ try{
  const errs=[];page.on("pageerror",e=>errs.push(String(e.message||e)));
  const awaitReloadHome=async label=>{
   try{
-   await awaitReloadHome("first-offline-home");
+   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner===true,null,{timeout:35000});
   }catch(error){
    let state;
    try{
@@ -127,7 +127,7 @@ try{
  console.log("OFFLINE_FIRST_USE_SNAPSHOT="+JSON.stringify(firstSnapshot));
  await context.setOffline(true);
  await page.reload({waitUntil:"domcontentloaded",timeout:90000});
- await awaitReloadHome("online-after-prayer");
+ await awaitReloadHome("first-offline-home");
  const offline=await page.evaluate(()=>({screen:!!document.querySelector(".homeScreen"),sw:!!navigator.serviceWorker.controller,version:globalThis.AO_OFFLINE_APP_V1?.status?.version}));
  assert.equal(offline.screen,true,"Cached offline Home failed");
  assert.equal(offline.sw,true,"Offline navigation lost service worker");
@@ -270,7 +270,7 @@ try{
  // it from the Mercy route so a retained overlapping devotional sheet cannot
  // make the second chooser physically hidden.
  await page.reload({waitUntil:"domcontentloaded",timeout:90000});
- await awaitReloadHome("offline-after-update-consent");
+ await awaitReloadHome("online-after-prayer");
  await page.waitForFunction(expected=>globalThis.AO_OFFLINE_APP_V1?.status?.version===expected,original.version,{timeout:20000});
  // Open the real Rosary through its production Prayer owner before staging the next release.
  // A staged update must never navigate away or move a bead without user consent.
@@ -389,7 +389,7 @@ try{
  assert.equal(now.version,update.version,"Activation did not use approved new snapshot");
  await context.setOffline(true);
  await page.reload({waitUntil:"domcontentloaded",timeout:90000});
- await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner===true,null,{timeout:35000});
+ await awaitReloadHome("offline-after-update-consent");
  assert.equal(await page.evaluate(()=>globalThis.AO_OFFLINE_TEST_ASSET),2,"New release not available offline after consent");
  assert.deepEqual(errs.filter(x=>/SyntaxError|ReferenceError|TypeError/.test(x)),[],"Offline/update script error");
  console.log("PASS offline Home fallback, French update prompt, recoverable failed consent, Rosary state preserved, and explicit offline update");
