@@ -2,6 +2,7 @@ import { glossaryContextCapsule } from "../app/contextual-study.js";
 import { decorateLiturgicalSpeaker } from "../app/liturgical-speakers.js";
 import { insertChantPhraseBreaks } from "./reader-chant-line-layout.js";
 import {createInlineChantController, INLINE_CHANT_CSS} from "./reader-inline-chant.js";
+import {createDatedProperNotationPreview, JULY07_REFERENCE_CSS} from "./reader-inline-proper-reference.js";
 import {selectedMassInlineSettings} from "./reader-inline-chant-selector.js";
 import { missalSourceRubricCopy } from "./reader-missal-book-rubrics.js";
 import { conciseMissalSourceRubric, conciseMissalInlineSequence } from "./reader-rubric-presentation.js";
@@ -2286,7 +2287,7 @@ export function buildReaderShellMarkup(prepared = {}) {
   const mode = normalizePresentationMode(prepared?.readerPreferences?.mode ?? prepared?.session?.resolvedMass?.presentationMode ?? "LIVE");
   const section = esc(prepared?.session?.resolvedMass?.actualCelebration?.title ?? "Mass");
   const liturgicalTheme=resolveMassLiturgicalTheme(prepared);
-  return `<style data-ao-reader-shell-style>${SHELL_STYLE}${INLINE_CHANT_CSS}</style>
+  return `<style data-ao-reader-shell-style>${SHELL_STYLE}${INLINE_CHANT_CSS}${JULY07_REFERENCE_CSS}</style>
 <section class="ao-reader-shell" data-ao-reader-shell data-mode="${mode}" data-liturgical-colour="${liturgicalTheme.key}" data-liturgical-source="${liturgicalTheme.source}" style="${massThemeCssVariables(liturgicalTheme)}">
   <header class="ao-reader-top-ribbon" aria-label="Mass navigation">
     <button class="ao-reader-top-action" type="button" data-reader-home aria-label="Back to Ad Orientem home">${topNavSvg("home")}</button>
@@ -2770,6 +2771,7 @@ export function createReaderDomAdapter({
   if(!root || typeof root.querySelector !== "function") throw new TypeError("Reader root element required");
 
   const inlineChant=createInlineChantController({root});
+  const properNotationPreview=createDatedProperNotationPreview({root});
   let prepared=null;
   let current=null;
   let sourceRailTracker=null;
@@ -5117,6 +5119,10 @@ export function createReaderDomAdapter({
         }),
         resolvedMass:prepared?.session?.resolvedMass,
         paragraphs:current.paragraphs});
+      // Opt-in source reference; never changes canonical Mass text or cues.
+      properNotationPreview.render({mode,form:prepared?.session?.resolvedMass?.form,
+        resolvedMass:prepared?.session?.resolvedMass,
+        paragraphs:current.paragraphs});
       ensureShortCardCueTravel();
       // The fixed-height LIVE stage can settle a frame after renderMoment
       // (rail dimensions, Schola reserve and host shell are projected in
@@ -5185,6 +5191,7 @@ export function createReaderDomAdapter({
 
   function destroy(){
     inlineChant.destroy();
+    properNotationPreview.destroy();
     unbind();
     if(bellHoldTimer)clearTimeout(bellHoldTimer);
     cancelScholaTicker({clearIdentity:true});
