@@ -2,11 +2,14 @@ import assert from "node:assert/strict";
 import {test} from "node:test";
 import {PRAY_CANONICAL_DATA_V435930} from "../src/pray/canonical-data.js";
 import {ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2} from "../src/pray/essential-holy-card-parts.js";
+import {claudeHolyCard} from "../src/pray/claude-holy-card.js";
+import {readFileSync} from "node:fs";
 import {
  ESSENTIAL_PRAYER_WITNESS_POLICY_V1,
  ESSENTIAL_PRAYER_WITNESS_POLICY_VERSION,
  essentialPrayerWitnessPolicy,
- essentialPrayerEditorialReading
+ essentialPrayerEditorialReading,
+ essentialPrayerPreferredReadingRecord
 } from "../src/pray/essential-prayer-witness-policy.v1.js";
 
 const prayers=PRAY_CANONICAL_DATA_V435930.prayers;
@@ -69,4 +72,28 @@ test("Historical formulas are not falsely aligned or completed",()=>{
   const {la}=prayers[id];
   assert.doesNotMatch(la,/\b(?:Sicvt|sicvt|tvvm|svnt)\b/);
  }
+});
+
+test("Rendered French Hope is the corrected devotional text; immutable Vatican witness stays exact",()=>{
+ const p=prayers.foundations_act_of_hope;
+ const projected=essentialPrayerPreferredReadingRecord(p.id,p);
+ assert.notEqual(projected,p,"Only the corrected French Hope gets a derived reader projection");
+ assert.equal(projected.la,p.la);
+ assert.equal(projected.en,p.en);
+ assert.match(projected.fr,/Dans cette espérance/);
+ assert.match(p.fr,/Dans cette foi/);
+ const escape=s=>String(s??"").replace(/[&<>]/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[ch]));
+ const reader=claudeHolyCard({id:p.id,p:projected,face:"fr",vernacular:"fr",esc:escape,flipped:true});
+ assert.match(reader,/Dans cette espérance/);
+ assert.doesNotMatch(reader,/Dans cette foi/);
+ assert.match(reader,/lang="fr"/);
+ for(const id of ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2.filter(id=>id!==p.id)){
+  assert.equal(essentialPrayerPreferredReadingRecord(id,prayers[id]),prayers[id],
+   "Other sources may not be altered by the French Hope correction");
+ }
+ const runtime=readFileSync("src/pray/presentation-runtime.js","utf8");
+ assert.match(runtime,/essentialPrayerPreferredReadingRecord\(id,p\)/);
+ assert.match(runtime,/claudeHolyCard\(\{id,p:displayRecord/);
+ assert.match(runtime,/data-ao-essential-editorial-reading/,
+  "Reader source drawer must disclose printed French Hope variant");
 });
