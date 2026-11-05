@@ -1,0 +1,10 @@
+candidate_id,candidate_name,existing_canonical_place_id,evidence_type,site_distance_m,decision,editorial_reason
+SG-INV-0200,Basilica of Our Lady of Licheń,place:PL:lichen-marian-basilica,SAME_NAME_AND_COORDINATES,0,REUSE_CANONICAL,Originally flagged NEW_DISTINCT; identity is already in app.
+SG-INV-0410,"San Francisco de Asis Mission Church, Ranchos de Taos",place:US:san-francisco-de-asis-ranchos-taos,SAME_NAME_AND_28_METRE_LOCATION,28,REUSE_CANONICAL,"Originally flagged NEW_DISTINCT; duplicate-risk only, no new site."
+SG-INV-0429,"Basilica of Our Lady of Ocotlán, Tlaxcala",place:MX:ocotlan-basilica-tlaxcala,SAME_COORDINATES,0,REUSE_CANONICAL_AFTER_NAME_CHECK,"Equivalent Marian basilica reference, flagged NEW_DISTINCT."
+SG-INV-0493,"Basilica of Our Lady of the Valley, Catamarca",place:AR:catamarca-cathedral-valle,SAME_NAME_AND_COORDINATES,0,REUSE_CANONICAL,Originally flagged NEW_DISTINCT; already in app.
+SG-INV-0354,"St Paul's Grotto, Rabat",place:MT:basilica-st-paul-rabat,SAME_COORDINATE_COMPLEX,0,REVIEW_AS_SUBSITE,A grotto may be a distinct devotional feature within the basilica complex.
+SG-INV-0570,"Church of Saint Catherine, Bethlehem",place:PS:nativity-bethlehem,ADJACENT_DIFFERENT_CHURCH,29,REVIEW_SEPARATE_SITE,Connected or adjacent churches are not interchangeable.
+SG-INV-0654,"Church of the Holy Cross, Monasterio de Tarlac",place:PH:monasterio-de-tarlac-risen-christ-chapel,SAME_COMPLEX_68M,68,REVIEW_SITE_BOUNDARY,"Distinguish a separate chapel, relic location and shrine complex."
+CL-KE-20261105-27,Cathedral Basilica of the Holy Family,place:KE:holy-family-cathedral-basilica-nairobi,APP_EXISTING_44M,44,REUSE_CANONICAL,New31 proposal repeats Nairobi cathedral.
+CL-US-20261105-24,Church of St John Cantius,place:US:st-john-cantius-chicago,APP_EXISTING_50M,50,REUSE_CANONICAL,New31 proposal repeats Chicago church.
