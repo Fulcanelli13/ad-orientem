@@ -1,0 +1,214 @@
+{
+  "schema": "AO_SACRED_PLACES_P107_MAP_FIRST_SIX_V1",
+  "date": "2026-11-05",
+  "status": "PROPOSED_CANONICAL_RELEASE_PENDING_CI_MERGE",
+  "baseline": {
+    "places": 530,
+    "sources": 846,
+    "crosswalk": 530,
+    "unlinked": 257,
+    "geo_areas": 146,
+    "directory_links": 24
+  },
+  "proposed": {
+    "places": 536,
+    "sources": 858,
+    "crosswalk": 536,
+    "unlinked": 263,
+    "geo_areas": 146,
+    "directory_links": 24
+  },
+  "new_physical_locations": 6,
+  "new_geo_areas": [],
+  "photo_assets_approved": 0,
+  "tlm_schedule_links_added": 0,
+  "source_registry_records_added": 12,
+  "crosswalk_records_added": 6,
+  "published_new": [
+    {
+      "candidate_id": "SG-INV-0196",
+      "place_id": "place:AT:heiligenkreuz-abbey-church",
+      "name": "Stiftskirche Heiligenkreuz — Cistercian Abbey Church",
+      "place_type": "church",
+      "country": "AT",
+      "city": "Heiligenkreuz",
+      "lat": 48.0552,
+      "lng": 16.13172,
+      "geo_source_ref": "osm:way:1290734392",
+      "geo_source_url": "https://www.openstreetmap.org/way/1290734392",
+      "identity_source_url": "https://www.stift-heiligenkreuz.org/",
+      "identity_source_issuer": "Cistercian Abbey of Heiligenkreuz",
+      "source_directness": "OFFICIAL_CHURCH",
+      "precision": "site",
+      "scope_limit": "Specific abbey church in the Cistercian Heiligenkreuz complex; no independent claim for the adjacent monastery or chapels.",
+      "source_ids": [
+        "AO-P107-SG-INV-0196-SITE",
+        "AO-P107-SG-INV-0196-GEO"
+      ],
+      "publication_fields_deferred": [
+        "photos",
+        "full_bilingual_guide",
+        "hours",
+        "TLM_schedule",
+        "saint_relic_cross_links"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0380",
+      "place_id": "place:US:our-lady-snows-belleville",
+      "name": "National Shrine of Our Lady of the Snows — Belleville",
+      "place_type": "shrine",
+      "country": "US",
+      "city": "Belleville, Illinois",
+      "lat": 38.55838,
+      "lng": -90.08844,
+      "geo_source_ref": "osm:node:354161188",
+      "geo_source_url": "https://www.openstreetmap.org/node/354161188",
+      "identity_source_url": "https://snows.org/contact-us/",
+      "identity_source_issuer": "National Shrine of Our Lady of the Snows / Missionary Oblates",
+      "source_directness": "OFFICIAL_SHRINE",
+      "precision": "complex_anchor",
+      "scope_limit": "Named Catholic shrine pilgrimage campus at 442 South DeMazenod Drive; map point is a campus locator, NOT a certified church door.",
+      "source_ids": [
+        "AO-P107-SG-INV-0380-SITE",
+        "AO-P107-SG-INV-0380-GEO"
+      ],
+      "publication_fields_deferred": [
+        "photos",
+        "full_bilingual_guide",
+        "hours",
+        "TLM_schedule",
+        "saint_relic_cross_links"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0650",
+      "place_id": "place:PH:santo-nino-basilica-cebu",
+      "name": "Basilica Minore del Santo Niño de Cebu",
+      "place_type": "basilica",
+      "country": "PH",
+      "city": "Cebu City",
+      "lat": 10.29439,
+      "lng": 123.90186,
+      "geo_source_ref": "osm:way:413764505",
+      "geo_source_url": "https://www.openstreetmap.org/way/413764505",
+      "identity_source_url": "https://thearchdioceseofcebu.com/parish/basilica-minore-del-santo-nino-de-cebu/",
+      "identity_source_issuer": "Roman Catholic Archdiocese of Cebu",
+      "source_directness": "OFFICIAL_DIOCESAN",
+      "precision": "complex_anchor",
+      "scope_limit": "Named Catholic Santo Niño basilica compound; OSM landuse religious way includes grounds, not a precise door or shrine-object point.",
+      "source_ids": [
+        "AO-P107-SG-INV-0650-SITE",
+        "AO-P107-SG-INV-0650-GEO"
+      ],
+      "publication_fields_deferred": [
+        "photos",
+        "full_bilingual_guide",
+        "hours",
+        "TLM_schedule",
+        "saint_relic_cross_links"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0512",
+      "place_id": "place:EC:el-cisne-basilica",
+      "name": "Santuario Nacional de Nuestra Señora de El Cisne",
+      "place_type": "basilica",
+      "country": "EC",
+      "city": "El Cisne, Loja",
+      "lat": -3.85101,
+      "lng": -79.42649,
+      "geo_source_ref": "osm:way:126638428",
+      "geo_source_url": "https://www.openstreetmap.org/way/126638428",
+      "identity_source_url": "https://santuariodeelcisne.org/",
+      "identity_source_issuer": "Santuario Nacional de Nuestra Señora de El Cisne, rector and custodians",
+      "source_directness": "OFFICIAL_SHRINE",
+      "precision": "site",
+      "scope_limit": "Physical Marian basilica at El Cisne. Do not treat devotional tradition or annual procession route as a separate building.",
+      "source_ids": [
+        "AO-P107-SG-INV-0512-SITE",
+        "AO-P107-SG-INV-0512-GEO"
+      ],
+      "publication_fields_deferred": [
+        "photos",
+        "full_bilingual_guide",
+        "hours",
+        "TLM_schedule",
+        "saint_relic_cross_links"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0216",
+      "place_id": "place:PL:popieluszko-shrine-warsaw",
+      "name": "Kościół św. Stanisława Kostki — Sanktuarium bł. Jerzego Popiełuszki",
+      "place_type": "shrine",
+      "country": "PL",
+      "city": "Warszawa, Żoliborz",
+      "lat": 52.26761,
+      "lng": 20.98396,
+      "geo_source_ref": "osm:way:173062160",
+      "geo_source_url": "https://www.openstreetmap.org/way/173062160",
+      "identity_source_url": "https://archwwa.pl/moja-diecezja/miejsca/sanktuaria/",
+      "identity_source_issuer": "Archdiocese of Warsaw",
+      "source_directness": "OFFICIAL_DIOCESAN",
+      "precision": "site",
+      "scope_limit": "St Stanislaus Kostka church is the diocesan shrine; the grave of Blessed Jerzy is a distinct devotional feature at the church, not an extra canonical Place.",
+      "source_ids": [
+        "AO-P107-SG-INV-0216-SITE",
+        "AO-P107-SG-INV-0216-GEO"
+      ],
+      "publication_fields_deferred": [
+        "photos",
+        "full_bilingual_guide",
+        "hours",
+        "TLM_schedule",
+        "saint_relic_cross_links"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0171",
+      "place_id": "place:DE:fulda-cathedral-st-salvator",
+      "name": "Dom St. Salvator zu Fulda",
+      "place_type": "cathedral",
+      "country": "DE",
+      "city": "Fulda",
+      "lat": 50.55406,
+      "lng": 9.67187,
+      "geo_source_ref": "osm:way:90756726",
+      "geo_source_url": "https://www.openstreetmap.org/way/90756726",
+      "identity_source_url": "https://www.stadtpfarrei-fulda.de/pfarrei/bueros-und-kontakte",
+      "identity_source_issuer": "Catholic City Parish of Fulda / Diocese of Fulda",
+      "source_directness": "OFFICIAL_CHURCH",
+      "precision": "site",
+      "scope_limit": "Current Catholic cathedral church containing the tomb of Saint Boniface; tomb is a feature of the cathedral, not an additional Place.",
+      "source_ids": [
+        "AO-P107-SG-INV-0171-SITE",
+        "AO-P107-SG-INV-0171-GEO"
+      ],
+      "publication_fields_deferred": [
+        "photos",
+        "full_bilingual_guide",
+        "hours",
+        "TLM_schedule",
+        "saint_relic_cross_links"
+      ]
+    }
+  ],
+  "identity_reconciliation": {
+    "new31_additions_included": 0,
+    "existing_530_ids_changed": 0,
+    "prior_261_handoff_claims_changed": 0,
+    "previous_190_alias_reuse_changed": 0,
+    "checked_against": "MAIN_530_IDENTITIES_AND_SAME_COUNTRY_NEAREST_MAP_PINS",
+    "research_handoff_dispositions": "NEW_DISTINCT_PHYSICAL_SITE"
+  },
+  "policy": [
+    "Map-first: publication of a named Catholic physical site does not require finished guide, visitors hours or photography.",
+    "A signed, accountable primary Catholic source supports identity; named OSM feature supports location.",
+    "Precisions site or complex_anchor explicitly delimit map accuracy; no claim to certified entrance or navigation.",
+    "All user-approved existing covers and existing Place IDs remain unchanged.",
+    "Place directory TLM CL2 identities stay separate; all Mass/rite/schedule fields require their own evidence.",
+    "No routes, relic objects, saint stories, app images, or shrine associations created solely from proximity.",
+    "Review/merge must pass CI. GitHub Actions and GitHub Pages only."
+  ]
+}
