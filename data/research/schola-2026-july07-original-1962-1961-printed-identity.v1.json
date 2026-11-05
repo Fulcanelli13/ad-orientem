@@ -1,0 +1,106 @@
+{
+  "schema": "ao-schola-2026-july07-original-1962-missal-1961-graduale-source-identity-v1",
+  "reviewedOn": "2026-11-05",
+  "status": "DATE_SPECIFIC_ORIGINAL_PRINTED_TEXT_AND_GREGORIAN_SCORE_LOCATED_SOURCE_OWNER_ALIAS_NOT_APPROVED",
+  "authority": {
+    "appointedDay": "2026-07-07",
+    "sourcePath": "Sancti/07-07",
+    "selectedMass": "Ss. Cyrilli et Methodii Episcoporum et Confessorum",
+    "pinnedDivinumOfficiumRef": "DivinumOfficium/divinum-officium@ad8783641455bae38a8eb5782b34241a7b3ff2ef",
+    "selectedSourceGitBlobSha": "476c93a0f4869b71a2a5a348110ba8e590e5104b",
+    "selectedSourceActualRankSelector": ";;Duplex;;3;;vide C4-1",
+    "selectedDayHasDirectGradualeSection": false,
+    "previousResearchRubricalTruncation": "vide C4-1 -> C4",
+    "previousHistoricalCommonWasNotCorrectPreGospel": "Commune/C4:Graduale = Ecce sacerdos magnus",
+    "historicalCandidateSection": "Commune/C4d:Graduale",
+    "historicalCandidateGitBlobSha": "fb1d78a3d527f44734b18867c965d19a11e612e6",
+    "historicalCandidateFilePath": "obsolete/missa/Latin/Commune/C4d.txt",
+    "historicalCandidateHeader": "Commune Confessoris Pontificis: Sacerdotes",
+    "noLiteralC4Minus1SourceFileLocated": true,
+    "archiveCandidateNotInPinned1049": true,
+    "sourceRoleResolution": "TEXT_AND_APPOINTED_PRINTED_COMMON_MATCH_SOURCE_FILE_ALIAS_REMAINS_UNVERIFIED",
+    "prohibition": "C4d is a targeted pre-Gospel section-level historical candidate, not a replacement for the entire Saints Cyril and Methodius Mass; preserve saint-owned Oratio, Secreta, Postcommunio, appointed Offertory and Communion"
+  },
+  "original1962MissaleRomanum": {
+    "edition": "Missale Romanum 1962 — Vatican printed edition",
+    "catalog": "https://gregobase.selapa.net/source.php?id=42&images=1&index=23",
+    "directPageImages": [
+      {
+        "printedPage": 580,
+        "url": "https://gregobase.selapa.net/sources/42/662.png",
+        "visible": "Die 7 iulii; Ss. Cyrilli et Methodii Epp. et Cc.; Introitus Sacerdotes tui; Oratio; Hebr 7:23-27"
+      },
+      {
+        "printedPage": 581,
+        "url": "https://gregobase.selapa.net/sources/42/663.png",
+        "visible": "Graduale Ps 131:16-17 Sacerdotes eius and verse Illuc producam; Alleluia Ps 109:4 Iuravit Dominus; Gospel Luke 10:1-9; seasonal alternatives separated"
+      }
+    ],
+    "appointedSeason": "POST_PENTECOST_ORDINARY_JULY_7_NOT_LENT_NOT_PASCHAL",
+    "appointedRoles": [
+      "GRADUALE_PS_131_16_17",
+      "ALLELUIA_PS_109_4"
+    ],
+    "appointedGradualFullLatinOpening": "Sacerdotes eius induam salutari et sancti eius exsultatione exsultabunt",
+    "appointedGradualVerseOpening": "Illuc producam cornu David paravi lucernam Christo meo",
+    "appointedAlleluiaVerseOpening": "Iuravit Dominus et non paenitebit eum Tu es sacerdos in aeternum secundum ordinem Melchisedech",
+    "notAppointed": [
+      "TRACTUS_POST_SEPTUAGESIMAM_OPTION",
+      "DUAL_PASCHAL_ALLELUIA_OPTION"
+    ],
+    "originalPageImageReviewed": true
+  },
+  "original1961GradualeRomanum": {
+    "edition": "Graduale Romanum 1961 — Solesmes/Desclée, Proprium Sanctorum and Commune Sanctorum",
+    "saintDayIndexPdf": "https://media.musicasacra.com/pdf/proprium_sanctorum1961.pdf",
+    "saintDayPrintedPage": 549,
+    "indexEntries": [
+      "Introitus. Sacerdotes tui. [35].",
+      "Graduale. Sacerdotes ejus. [36].",
+      "Alleluia, alleluia. V. Juravit. [37].",
+      "Offertorium. Mirabilis Deus. [24].",
+      "Communio. Quod dico vobis. [31]."
+    ],
+    "commonName": "Commune Confessoris Pontificis. II. / De eodem Communi. Altera Missa",
+    "scans": [
+      {
+        "printedPage": "[35]",
+        "url": "https://gregobase.selapa.net/sources/2/761.png",
+        "role": "INTROITUS",
+        "incipit": "Sacerdotes tui"
+      },
+      {
+        "printedPage": "[36]",
+        "url": "https://gregobase.selapa.net/sources/2/762.png",
+        "role": "GRADUALE",
+        "incipit": "Sacerdotes ejus",
+        "mode": "I"
+      },
+      {
+        "printedPage": "[37]",
+        "url": "https://gregobase.selapa.net/sources/2/763.png",
+        "role": "ALLELUIA",
+        "incipit": "Juravit Dominus",
+        "mode": "I"
+      }
+    ],
+    "originalPrintedNotationVisuallyLocated": true,
+    "fullPrintedNotationComparedNoteByNoteAgainstSpecificGabc": false,
+    "original1961SolesmesPitchNeumeRhythmUnderlayCertified": false,
+    "specificArchived1195GabcFileIdentityCertified": false
+  },
+  "evidenceDisposition": {
+    "dateSpecific1962PrintedTextAndRoleVerified": true,
+    "dateSpecific1961PrintedMassChantReferenceVerified": true,
+    "historicalArchivedC4dPreGospelLatinOpeningAligned": true,
+    "selectedResolverFullPreGospelLatinComparedByteForByte": false,
+    "literalSourceSelectorDigitalMappingAuthenticated": false,
+    "sourceAliasesApproved": 0,
+    "publicProperScoresApproved": 0,
+    "scoreTextCompleteUnderlayVerified": false,
+    "humanMusicalApproval": false,
+    "localReaderModified": false,
+    "publicationManifestModified": false,
+    "residualHold": "Verify complete selected 2026 Latin against original C4d and compare exact archived GABC pitches/neumes/underlay with 1961 [36]-[37]; resolve C4-1 selector according to date/source without wholesale C4d runtime alias"
+  }
+}
