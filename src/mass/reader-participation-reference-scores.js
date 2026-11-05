@@ -1,6 +1,7 @@
 import {resolve1962DialogueToneFamily} from "./reader-mass-1962-tone-family.js";
 import {isExplicitRequiemMass} from "./reader-requiem-conditions.js";
 import {GOSPEL_RESPONSE_REFERENCE_SCORES} from "./reader-gospel-response-reference-scores.js";
+import {DISMISSAL_VARIANT_REFERENCE_SCORES} from "./reader-dismissal-variant-reference-scores.js";
 // Preview-only exact-phrase Gregorian references for the 65-card Sung Mass.
 // Original 1961 GABC phrase bodies, no melody edits, sourced from already
 // committed M05 research and existing Kyriale Ordinary pilot. Clef is
@@ -290,7 +291,7 @@ export const PARTICIPATION_REFERENCE_SCORES=Object.freeze([
     "gabc": "name: CREDO_III AO.SM.C0089;\noffice-part: Kyriale;\nsource: Graduale Romanum 1961;\n%%\n(c3) CRe(h)do(f) in(d) u(gxg)num(f) De(fvED)um,(d.) (::)"
   }
 ].map(score=>Object.freeze({...score,sourceCueIds:Object.freeze(score.sourceCueIds),
- sourceCueLatin:Object.freeze(score.sourceCueLatin)})).concat(GOSPEL_RESPONSE_REFERENCE_SCORES));
+ sourceCueLatin:Object.freeze(score.sourceCueLatin)})).concat(GOSPEL_RESPONSE_REFERENCE_SCORES,DISMISSAL_VARIANT_REFERENCE_SCORES));
 
 const SUNG=new Set(["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
 const norm=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
@@ -305,7 +306,7 @@ const hasSourceLatin=(p,latin)=>[p?.primary,p?.secondary,p?.alternate].some(x=>
  * and the selected liturgical tone must be verified before display.
  */
 export function participationReferenceScoresForParagraph({
- paragraph=null,paragraphs=[],form=null,resolvedMass=null,selectedSettings={}
+ paragraph=null,paragraphs=[],form=null,resolvedMass=null,massPlan=null,selectedSettings={}
 }={}){
  if(!SUNG.has(String(form??"").toUpperCase())||!paragraph||paragraph.kind==="RUBRIC"||
     !Array.isArray(paragraphs))return Object.freeze([]);
@@ -327,7 +328,19 @@ export function participationReferenceScoresForParagraph({
   const indices=fragments.map(p=>paragraphs.indexOf(p));
   if(!indices.every((n,i)=>n>=0&&(i===0||n===indices[0]+i)))continue;
   if(norm(score.sourceCueLatin.join(" "))!==norm(score.sourceLatin))continue;
-  if(score.eventId==="GOSPEL"){
+  if(score.eventId==="DISMISSAL"){
+   // The two alternative dismissal texts are NOT the ordinary Ite text.
+   // Require a matching compiled 1962 selected Mass plan AND exact rendered
+   // Latin; the plan determines the formula, not the date or score's title.
+   if(massPlan?.kind!=="MASS"||massPlan?.dismissal!==score.formula)continue;
+   const requiem=isExplicitRequiemMass({session:{resolvedMass}});
+   if(score.formula==="REQUIESCANT_IN_PACE"){
+    if(!requiem||score.riteScope!=="REQUIEM")continue;
+   }else if(score.formula==="BENEDICAMUS_DOMINO"){
+    if(requiem||score.riteScope!=="ORDINARY"||
+       selectedSettings?.DISMISSAL!==score.settingId)continue;
+   }else continue;
+  }else if(score.eventId==="GOSPEL"){
    // Gospel tones have their OWN printed sources. They must not inherit
    // solemn/ferial Preface tone selection, and ad-libitum is never assumed.
    const selected=String(selectedSettings?.GOSPEL_TONE??"GOSPEL_STANDARD");
