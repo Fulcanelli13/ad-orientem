@@ -102,8 +102,8 @@ function makeLocale(locale,{proper,psalms,supplemental}){
  ];
  if(preces.length!==6)throw new Error("Office of Dead preces must have six responses");
  out.push(freeze({id:"V.PRECES",kind:"PRECES",lines:freeze(preces)}));
- const oratioBody=sourceLines(section(c9,"Oratio_Fid"),"Fidelium")
-  .filter(x=>x!=="$Oremus"&&x!=="$Qui vivis");
+ const oratioBody=section(c9,"Oratio_Fid").split(/\r?\n/)
+  .map(x=>x.trim()).filter(x=>x&&x!=="$Oremus"&&x!=="$Qui vivis");
  // Avoid silently importing the printed macros as prayer text.
  if(oratioBody.length!==1||!/^v\.\s/i.test(oratioBody[0]))
   throw new Error("Office of Dead Fidelium collect body not source-resolved in "+locale);
