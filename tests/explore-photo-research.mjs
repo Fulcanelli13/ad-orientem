@@ -7,6 +7,8 @@ const research=read("data/geography/research/place-media-candidates-r58.v1.json"
 const curated=read("data/geography/major-places-editorial.v1.json");
 const geography=read("data/geography/seed-registry.v1.json");
 const approved=read("data/geography/approved-place-media.v1.json");
+const r28Frozen=read("data/geography/research/sacred-atlas-r28-owner-approved19-source-lock-20261104.v1.json");
+const r29Gates=read("data/geography/research/sacred-atlas-r29-selected19-final-rights-checklist-20261104.v1.json");
 const editorialReview=read("data/geography/research/place-media-publication-review-r58.v1.json");
 assert.equal(editorialReview.schema,"AO_EXPLORE_PLACE_MEDIA_PUBLICATION_REVIEW_V1");
 assert.equal(editorialReview.counts.approved,10);
@@ -177,6 +179,20 @@ for(const item of approved.items){
       &&line.includes('"'+item.source_sha1+'"')),
       "Original SHA1 must appear in the source-credit export under the same chosen Place");
     assert.ok(item.review_method.includes("Photo Finder editorial selection"));
+  }else if(item.source_place_ref==="R28_OWNER_EXACT_ORIGINAL_20261104"){
+    assert.equal(item.place_id,"place:PL:lichen-marian-basilica","Only fully reviewed Lichen source admitted");
+    const frozen=r28Frozen.decisions.find(x=>x.place_id===item.place_id);
+    const gate=r29Gates.rows.find(x=>x.place_id===item.place_id);
+    assert.ok(frozen&&gate?.publication_authorized===true,"Owner chose this original and R29 gate passed");
+    assert.equal(frozen.original_sha1,"8b0763b7f61a150002a67fb922ee73313ff866f4");
+    assert.equal(item.source_sha1,frozen.original_sha1);
+    assert.equal(item.source_url,frozen.original_commons_page);
+    assert.equal(item.credit,frozen.source_author);
+    assert.equal(item.license,"CC-BY-SA-3.0");
+    assert.equal(item.license_url,frozen.license_url+"/");
+    assert.equal(item.width,1280);
+    assert.equal(item.height,960);
+    assert.ok(item.review_method.includes("R29 independent source"));
   }else{
     const c=shrineCandidates.get(item.place_id)||b2Candidates.get(item.place_id);
     assert.ok(c&&c.image_review_state==="EDITORIALLY_ACCEPTED_EXACT_SITE_AND_FULL_FRAME_20261021",

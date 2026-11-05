@@ -24,7 +24,7 @@ assert.equal(ledger.counts.verified_unapproved_photo_sites,23);
 assert.equal(ledger.counts.no_verified_original_sites,128);
 assert.equal(ledger.counts.approved_gallery_photos,42);
 assert.equal(geo.places.length,530);
-assert.equal(covers.items.length,379);
+assert.equal(covers.items.length,380,"One exact R29 owner-approved cover adds to the historical 379");
 assert.equal(gallery.items.length,42);
 assert.equal(verified.places.length,23);
 assert.equal(ledger.photo_gaps.length,151);
@@ -33,15 +33,22 @@ const placeById=new Map(geo.places.map(p=>[p.place_id,p]));
 const mediaById=new Map(covers.items.map(m=>[m.place_id,m]));
 const verifiedIds=new Set(verified.places.map(p=>p.place_id));
 assert.equal(placeById.size,530,"no duplicate Place identities");
-assert.equal(mediaById.size,379,"no duplicate published covers");
+assert.equal(mediaById.size,380,"no duplicate published covers");
 assert.equal(new Set(ledger.photo_gaps.map(p=>p.place_id)).size,151,"no duplicate fallback Places");
 assert.ok(covers.items.every(r=>placeById.has(r.place_id)),"no media orphans");
-assert.ok(verified.places.every(r=>placeById.has(r.place_id)&&!mediaById.has(r.place_id)),"no already published site in unapproved review");
+assert.ok(verified.places.every(r=>placeById.has(r.place_id)),"historic R25 original-source review must have valid Place IDs");
+const frozenLichen=verified.places.find(p=>p.place_id==="place:PL:lichen-marian-basilica");
+const publishedLichen=mediaById.get("place:PL:lichen-marian-basilica");
+assert.ok(frozenLichen&&publishedLichen,"Exact first selected photo must be published on this later R29 release");
+assert.equal(publishedLichen.source_sha1,"8b0763b7f61a150002a67fb922ee73313ff866f4");
+assert.equal(publishedLichen.source_place_ref,"R28_OWNER_EXACT_ORIGINAL_20261104");
+assert.equal(verified.places.filter(r=>mediaById.has(r.place_id)).length,1,
+ "Only one R25 original source review may transition into an approved cover");
 const gaps=geo.places.filter(p=>!mediaById.has(p.place_id));
 assert.deepEqual(
- ledger.photo_gaps.map(p=>p.place_id).sort(),
+ ledger.photo_gaps.filter(p=>!mediaById.has(p.place_id)).map(p=>p.place_id).sort(),
  gaps.map(p=>p.place_id).sort(),
- "missing-photo ledger must equal actual canonical registry minus approved media");
+ "2026-11-04 historical gap ledger, minus exactly one later R29 approval, must equal current fallbacks");
 for(const row of ledger.photo_gaps){
  const site=placeById.get(row.place_id);
  assert.equal(row.name,site.name.official);
@@ -53,7 +60,7 @@ for(const row of ledger.photo_gaps){
 }
 assert.equal(ledger.photo_gaps.filter(x=>x.source_status==="ORIGINALS_VERIFIED_NOT_EDITORIALLY_APPROVED").length,23);
 
-// All 379 published photograph binaries must exist and match their registered
+// All 380 published photograph binaries must exist and match their registered
 // SHA-256 values. The 21 explicit gallery-HERO reuses remain unchanged.
 for(const record of covers.items){
  assert.equal(record.status,"APPROVED");
@@ -117,10 +124,10 @@ for(const raw of geo.places){
   }
  }
 }
-assert.equal(photoCards,379);
-assert.equal(symbolCards,151);
+assert.equal(photoCards,380);
+assert.equal(symbolCards,150);
 
-// All 151 fallbacks must also survive the expanded detail reader, not merely
+// All 150 current fallbacks must also survive the expanded detail reader, not merely
 // the compact preview. Check both languages and exact canonical ownership.
 for(const raw of gaps){
  for(const lang of ["en","fr"]){
@@ -138,4 +145,4 @@ for(const raw of gaps){
   assert.ok(html.includes("aoExplorePlaceSheet"),"detail reader missing");
  }
 }
-console.log("SACRED ATLAS FINISH LINE PASS: 530/530 EN/FR Place previews, 151/151 EN/FR detailed fallbacks, 379 verified local photo binaries, 42 unchanged gallery records, and zero unapproved images.");
+console.log("SACRED ATLAS FINISH LINE PASS: 530/530 EN/FR Place previews, 150/150 EN/FR detailed fallbacks, 380 verified local photo binaries, 42 unchanged gallery records, one exact R29 selected source released, and zero unapproved images.");
