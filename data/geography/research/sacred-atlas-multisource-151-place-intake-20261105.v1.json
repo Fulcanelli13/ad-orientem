@@ -17,7 +17,9 @@
     "RECOVER_SELECTED_EXACT_SOURCE": 34,
     "MULTISOURCE_DISCOVERY": 43,
     "ORIGINALS_READY_FOR_RELEASE_OR_REVIEW": 21,
-    "GALLERY_ONLY_SEEK_EXACT_COVER": 2
+    "GALLERY_ONLY_SEEK_EXACT_COVER": 2,
+    "new_institutional_source_pilot_places": 1,
+    "new_institutional_source_pilot_photo_leads": 4
   },
   "source_policy": {
     "accept": [
@@ -1249,7 +1251,50 @@
         "geograph": null
       },
       "automated_new_photo_approved": false,
-      "notes": "Research-only: verify image depicts this exact site, photographer terms and architecture/artwork rights before proposing a cover."
+      "notes": "Research-only: verify image depicts this exact site, photographer terms and architecture/artwork rights before proposing a cover.",
+      "new_non_wikimedia_source_leads": [
+        {
+          "source_id": "LOC-2012631519",
+          "source_page": "https://www.loc.gov/item/2012631519/",
+          "thumbnail": "https://tile.loc.gov/image-services/iiif/service%3Apnp%3Ahighsm%3A20100%3A20110/full/pct%3A12.5/0/default.jpg",
+          "creator": "Carol M. Highsmith",
+          "photograph_rights": "PUBLIC_DOMAIN_PHOTOGRAPH",
+          "rights_statement_url": "https://wwws.loc.gov/rr/print/res/482_high.html",
+          "role": "EXACT_SITE_GALLERY_OR_COVER_REVIEW",
+          "publication_authorized": false
+        },
+        {
+          "source_id": "LOC-2012631517",
+          "source_page": "https://www.loc.gov/item/2012631517/",
+          "thumbnail": "https://cdn.loc.gov/service/pnp/highsm/20100/20108_150px.jpg",
+          "creator": "Carol M. Highsmith",
+          "photograph_rights": "PUBLIC_DOMAIN_PHOTOGRAPH",
+          "rights_statement_url": "https://wwws.loc.gov/rr/print/res/482_high.html",
+          "role": "EXACT_SITE_COVER_REVIEW",
+          "publication_authorized": false
+        },
+        {
+          "source_id": "LOC-2012630790",
+          "source_page": "https://www.loc.gov/item/2012630790/",
+          "thumbnail": null,
+          "creator": "Carol M. Highsmith",
+          "photograph_rights": "PUBLIC_DOMAIN_PHOTOGRAPH",
+          "rights_statement_url": "https://wwws.loc.gov/rr/print/res/482_high.html",
+          "role": "EXACT_SITE_COVER_REVIEW",
+          "publication_authorized": false
+        },
+        {
+          "source_id": "LOC-2012631525",
+          "source_page": "https://www.loc.gov/item/2012631525/",
+          "thumbnail": null,
+          "creator": "Carol M. Highsmith",
+          "photograph_rights": "PUBLIC_DOMAIN_PHOTOGRAPH",
+          "rights_statement_url": "https://wwws.loc.gov/rr/print/res/482_high.html",
+          "role": "EXACT_SITE_COVER_REVIEW",
+          "publication_authorized": false
+        }
+      ],
+      "next_action_update": "Priority direct JPEG recovery from Library of Congress, no TIFF or Wikimedia rate-limit dependency. Source photograph PD; still require actual preview and pictured artwork review."
     },
     {
       "place_id": "place:ZM:archdiocese-lusaka-marian-shrine",
