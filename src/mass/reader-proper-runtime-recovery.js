@@ -2,6 +2,7 @@ import {certifyPreGospelChantParts} from "./reader-pre-gospel-chant-source.js";
 import {repair1962AprilPaschalProper} from "./1962-april-paschal-proper-correction.js";
 import {render1962EasterPrefaceVariant} from "./1962-easter-preface-form.js";
 import {recover1962NativityOctaveCommemoration} from "./1962-nativity-octave-source.js";
+import {recover1962PassionFridaySources} from "./1962-passion-friday-commemorations.js";
 import {recover1962InAlbisSecretFromPinnedSource} from "./1962-in-albis-secret-source.js";
 import {required1962MarianPrefaceOwner,verifyMarianLatinSourceRule,render1962MarianPrefaceForm,isSelected1962MarianPrefaceForm} from "./1962-marian-preface-source.js";
 import {required1962SeasonalSanctoralPrefaceOwner,originalSanctoralLacksOwnPreface,matches1962SeasonalSanctoralSelection,required1962May11ApostlesPrefaceOwner,authenticMay11ApostolicOriginal,matches1962May11ApostlesSelection} from "./1962-seasonal-sanctoral-preface-source.js";
@@ -438,6 +439,9 @@ export async function recoverReaderProperOmissions(proper,{
     ["postcommunions","postcommunion","Postcommunio"],
   ];
   const missingOrations=orationGroups.some(([plural,single])=>incompleteOrations(data,plural,single));
+  const needsPassionFriday=calendarDate==="2026-03-27"&&
+    path==="Tempora/Quad5-5Feria"&&
+    data.calendarCommemorations?.length===1;
   const needsChristmasOctave=["2026-12-26","2026-12-28"].includes(String(calendarDate))&&
     ["Sancti/12-26","Sancti/12-28"].includes(path)&&
     data.calendarCommemorations?.length===1;
@@ -447,7 +451,7 @@ export async function recoverReaderProperOmissions(proper,{
     data.inseparableApostolicSources?.status!=="SOURCE_VERIFIED";
   if(!Object.values(needs).some(Boolean)&&!missingOrations&&!recoveredPreface&&
      !needsApostolicSource&&!recoveredChants&&!needsChristmasOctave&&
-     !repairedAprilPaschal)return proper;
+     !repairedAprilPaschal&&!needsPassionFriday)return proper;
 
   const next={...data};
   // Restore ONLY the exact source-identified 1962 non-Cistercian Collect;
@@ -484,6 +488,25 @@ export async function recoverReaderProperOmissions(proper,{
     }catch(error){
       diagnostic?.warnings?.push?.("CHRISTMAS_OCTAVE_ORATIONS_SOURCE_UNAVAILABLE:"+
        String(error?.message??error));
+    }
+  }
+  // Original source attestations for the TWO 27 March ordinary Roman
+  // commemorations. This only adds proof and source rows. The form-specific
+  // Mass adapter decides whether both belong in Low or neither in Sung;
+  // the global Calendar's single historical placeholder is left unchanged.
+  if(needsPassionFriday){
+    try{
+      const proof=await recover1962PassionFridaySources({
+       data,principalId:principalCelebrationId??data.principalCelebrationId??data.mainId,
+       calendarDate,hostResolver,diagnostic,
+       readExpanded:(source,section,diagnostic)=>recoverText(
+         hostResolver,source,[section],diagnostic)
+      });
+      if(proof)Object.assign(next,proof);
+      else diagnostic?.warnings?.push?.("PASSION_FRIDAY_DOUBLE_COMMEMORATION_SOURCE_HOLD");
+    }catch(error){
+      diagnostic?.warnings?.push?.("PASSION_FRIDAY_DOUBLE_COMMEMORATION_SOURCE_UNAVAILABLE:"+
+        String(error?.message??error));
     }
   }
   if(recoveredChants)next.readerChantSourceProof=recoveredChants;

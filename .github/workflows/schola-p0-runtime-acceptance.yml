@@ -18,6 +18,10 @@ on:
       - 'src/mass/reader-rite-music-presentation.js'
       - 'src/mass/reader-inline-chant-selector.js'
       - 'src/mass/reader-proper-gabc-bulk-join.js'
+      - 'src/mass/reader-proper-runtime-recovery.js'
+      - 'src/mass/proper-reader-slots.js'
+      - 'src/mass/host-adapter.js'
+      - 'src/mass/1962-commemoration-form-source.js'
   workflow_dispatch:
 
 permissions:
