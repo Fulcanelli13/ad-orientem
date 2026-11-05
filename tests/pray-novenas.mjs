@@ -127,7 +127,7 @@ const assets=readFileSync("src/assets/asset-registry.js","utf8");
 assert.match(runtime,/44\.0-bilingual-novenas-v1/);
 assert.doesNotMatch(runtime,/CURATED CORE · V4|NOYAU SÉLECTIONNÉ · V4|V4 is deliberately frozen|source-of-truth version|V4 · \$\{items\.length\}/,"Novenas leaked internal versioning/governance language into the UI");
 assert.match(runtime,/TRADITIONAL NOVENAS/,"Novenas overview lost its user-facing collection label");
-assert.match(runtime,/bilingual sourced novenas/,"Novenas overview lost sourced bilingual summary");
+assert.doesNotMatch(runtime,/bilingual sourced novenas|Choose Simple to read the traditional prayers continuously|one historical form · 9 days|9 day-specific prayers/,"Novenas must not display developer or mode-selection instructions in list entries");
 assert.match(runtime,/NOVENA_CORPUS_V4 as CORPUS/,"Novenas runtime is not consuming completed V4 corpus");
 assert.match(runtime,/pray\.novenas/,"Novenas route is not registered");
 assert.doesNotMatch(runtime,/function injectHome|aoN1InsertedSection|MutationObserver/,"Novenas regained DOM-based PRAY hub injection");
@@ -170,8 +170,8 @@ console.log("PASS complete 16-target bilingual Novenas corpus with French prayer
 
 // Prayer-stage copy should address the person praying, not describe app telemetry.
 assert.doesNotMatch(runtime,/Ad Orientem|devotional streak|completion score/i,"Novena reader reverted to self-referential interface narration");
-assert.match(runtime,/Choose a novena/);
-assert.match(runtime,/Choisissez une neuvaine/);
+assert.match(runtime,/head\(L\(\x27Novenas\x27,\x27Neuvaines\x27\)/,"Novenas must retain its bilingual source-owned heading");
+assert.doesNotMatch(runtime,/L\(\x27Choose a novena\x27,\x27Choisissez une neuvaine\x27\)/,"A second choice heading must not be repeated above the novena list");
 
 
 // The V3 source prayers are immutable, but inherited English-only day headings
