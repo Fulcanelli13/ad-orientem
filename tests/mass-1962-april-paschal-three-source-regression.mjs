@@ -83,3 +83,42 @@ for(const date of ["2026-04-12","2026-04-15","2026-04-28","2026-04-30"]){
  assert.equal(x.recovered?.gradual?.lat,x.gradual?.lat);
 }
 console.log("PASS 3 April 1962 Paschal saint Masses: exact LAT/EN/FR re-owned source sections, 2 Alleluias each, independent proper orations and adjacent dates preserved; 0 Gregorian score approvals");
+
+const pageEvidence=JSON.parse(readFileSync("data/research/schola-2026-april-1962-vatican-page-image-evidence.v1.json","utf8"));
+assert.equal(pageEvidence.schema,"ao-mr62-april-paschal-1962-vatican-page-images-v1");
+assert.equal(pageEvidence.cases.length,3);
+assert.equal(pageEvidence.originalSource.distinctFromBenziger1962,true);
+assert.equal(pageEvidence.originalSource.editionSpecificPagination,true);
+assert.equal(pageEvidence.originalSource.pages.length,5);
+assert.equal(pageEvidence.boundary.reviewedVaticanPrintedPageImages,true);
+assert.equal(pageEvidence.boundary.reviewedBenzigerPrintedPageImages,false);
+assert.equal(pageEvidence.boundary.reviewed1961GradualePrintedPitchNeumeRhythmUnderlay,false);
+assert.equal(pageEvidence.boundary.publicProperScoreApproved,0);
+assert.equal(pageEvidence.boundary.automaticSourceAliasesApproved,0);
+assert.equal(pageEvidence.boundary.readerChanges,false);
+assert.equal(pageEvidence.boundary.publishedAssetChanges,false);
+const printed=new Map(pageEvidence.originalSource.pages.map(p=>[p.printedPage,p.imageUrl]));
+for(const [printedPage,imageId] of [[504,586],[505,587],[506,588],[514,596],[515,597]]){
+ assert.equal(printed.get(printedPage),"https://gregobase.selapa.net/sources/42/"+imageId+".png");
+}
+const originalCases=new Map(pageEvidence.cases.map(c=>[c.date,c]));
+assert.deepEqual([...originalCases.keys()],keys);
+const visualWants=new Map([
+ ["2026-04-13",{pages:[504,505],ben:505,openings:["Confitebuntur","Posuisti"]}],
+ ["2026-04-14",{pages:[505,506],ben:506,openings:["Sapientia","Verumtamen"]}],
+ ["2026-04-29",{pages:[514,515],ben:516,openings:["Confitebuntur","Posuisti"]}]
+]);
+for(const [date,expected] of visualWants){
+ const c=originalCases.get(date);
+ assert.equal(c.pageImageDirectlyInspected,true);
+ assert.deepEqual(c.vaticanPrintedPages,expected.pages);
+ assert.equal(c.priorBenzigerOCRPrintedPage,expected.ben);
+ assert.equal(c.rubric,"Tempore paschali");
+ assert.equal(c.appointedRole,"TWO_PASCHAL_ALLELUIAS_NO_ORDINARY_GRADUAL");
+ assert.equal(c.selectedAlleluiaLatinOpenings.length,2);
+ for(let k=0;k<2;k++) assert.ok(c.selectedAlleluiaLatinOpenings[k].startsWith(expected.openings[k]));
+ assert.ok(c.vaticanPrintedPages.every(p=>printed.has(p)));
+ assert.equal(c.sourcePath,byDate.get(date).sourcePath);
+ assert.equal(c.selected2026PrincipalAuthority,"AO_RUNTIME_V8.resolver.resolveDay");
+}
+console.log("PASS separately paginated original Vatican 1962 April page-image evidence: 3 Eastertide saint days, 2 Alleluias each, Benziger image proof remains unclaimed; 0 music approvals");
