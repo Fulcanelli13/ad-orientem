@@ -60,7 +60,7 @@ try{
    const settings={GLORIA:"MASS_08",CREDO:"CREDO_03"};
    const solemn=context("SUNDAY"),ferial=context("FERIA");
    const mounted=controller.render({mode:"LIVE",form:"SOLEMN",resolvedMass:solemn,selectedSettings:settings,paragraphs});
-   for(let i=0;i<100&&controller.state().rendered<8;i++)await new Promise(r=>setTimeout(r,120));
+   for(let i=0;i<100&&controller.state().rendered<9;i++)await new Promise(r=>setTimeout(r,120));
    const rendered=controller.state().rendered,svg=body.querySelectorAll(".ao-proper-reference-staff svg").length;
    const originalTextIntact=paragraphs.every(p=>{
     const n=body.querySelector('[data-paragraph-id="'+p.id+'"]');
@@ -69,28 +69,29 @@ try{
    });
    const ids=[...body.querySelectorAll("[data-reference-score]")].map(n=>n.dataset.referenceScore);
    const widths=[...body.querySelectorAll(".ao-proper-reference-staff")].map(n=>n.getBoundingClientRect().width);
-   const held=body.querySelector('[data-cue-id="AO.SM.C0210"] [data-reference-score]')===null;
+   const paterVisible=body.querySelector('[data-cue-id="AO.SM.C0210"] [data-reference-score]')?.dataset.referenceScore.includes('PATERNOSTER_COMMON')===true;
    const allUnapproved=[...body.querySelectorAll("[data-reference-score]")].every(n=>n.dataset.approved==="false");
    const ferialCount=controller.render({mode:"LIVE",form:"SOLEMN",resolvedMass:ferial,selectedSettings:{},paragraphs});
    const ferialIds=[...body.querySelectorAll("[data-reference-score]")].map(n=>n.dataset.referenceScore);
    const lowCount=controller.render({mode:"LIVE",form:"LOW",resolvedMass:solemn,selectedSettings:settings,paragraphs});
    controller.render({mode:"LIVE",form:"SOLEMN",resolvedMass:solemn,selectedSettings:settings,paragraphs});
-   for(let i=0;i<100&&controller.state().rendered<8;i++)await new Promise(r=>setTimeout(r,120));
-   return {mounted,rendered,svg,originalTextIntact,ids,widths,held,allUnapproved,ferialCount,ferialIds,
+   for(let i=0;i<100&&controller.state().rendered<9;i++)await new Promise(r=>setTimeout(r,120));
+   return {mounted,rendered,svg,originalTextIntact,ids,widths,paterVisible,allUnapproved,ferialCount,ferialIds,
     lowCount,restored:controller.state().rendered};
   });
-  assert.equal(result.mounted,8);
-  assert.equal(result.rendered,8,"Actual Exsurge must render eight source phrases");
-  assert.equal(result.svg,8);
+  assert.equal(result.mounted,9);
+  assert.equal(result.rendered,9,"Actual Exsurge must render nine source phrases");
+  assert.equal(result.svg,9);
   assert.equal(result.originalTextIntact,true);
-  assert.equal(result.held,true,"Pater tone unresolved until sourced");
+  assert.equal(result.paterVisible,true,"Identical Pater response melody from authenticated 1962 music guide");
   assert.equal(result.allUnapproved,true);
-  assert.equal(result.ferialCount,4);
+  assert.equal(result.ferialCount,5);
   assert.equal(result.lowCount,0);
-  assert.equal(result.restored,8);
+  assert.equal(result.restored,9);
   assert.ok(result.ids.some(x=>x.includes("GLORIA_VIII"))&&result.ids.some(x=>x.includes("CREDO_III")));
   assert.ok(result.ids.filter(x=>x.includes("PREFACE_SOLEMN")).length===4);
-  assert.ok(result.ferialIds.every(x=>x.includes("PREFACE_FERIAL")));
+  assert.equal(result.ferialIds.filter(x=>x.includes("PREFACE_FERIAL")).length,4);
+  assert.equal(result.ferialIds.filter(x=>x.includes("PATERNOSTER_COMMON")).length,1);
   assert.ok(result.widths.every(x=>x>120&&x<=width),
    "Scores must fit reader safe column at "+width+" px: "+JSON.stringify(result.widths));
   await mkdir(resolve(root,".tmp/mass-participation-preview"),{recursive:true});
