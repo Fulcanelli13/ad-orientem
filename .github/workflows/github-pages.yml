@@ -31,6 +31,8 @@ on:
       - '.github/workflows/github-pages.yml'
   pull_request:
     paths:
+      - 'sw.js'
+      - 'tests/offline-snapshot-e2e.mjs'
       - '.github/workflows/github-pages.yml'
       - 'tools/prepare-github-pages-release.mjs'
       - 'tools/check-github-pages-live.mjs'
