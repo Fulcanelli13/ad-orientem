@@ -79,8 +79,8 @@ export function formationSourceBibleMarkup(source,{french=false}={}){
  const hit=formationSourceScriptureContext(source);
  if(!hit)return "";
  const scope=french
-  ?"Passage original à lire en contexte. Source externe conservée ; commentaire et traduction non certifiés par ce lien."
-  :"Read the source passage in context. Original external source retained; this link does not certify the argument or its translation.";
+  ?"Contexte biblique · interprétation et traduction non certifiées."
+   :"Bible context · argument and translation not certified.";
  return '<span class="rrBibleHandoff" data-formation-bible-source="'+
   String(source.id||"").replace(/[&<>"']/g,x=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[x]))+
   '">'+scriptureContextCapsule(hit.reference,{french})+
