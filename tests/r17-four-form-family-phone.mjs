@@ -82,12 +82,15 @@ try{
     }
     assert.equal(initial.mode,"LIVE","Fixture did not mount LIVE");
     assert.equal(initial.form,form,"R17 form selection failed");
-    assert(initial.cards>25,"Missing source-owned reader cards");
+    assert.ok([65,66,67].includes(initial.cards),
+      form+"/"+family+" reverted to non-curated LIVE cards: "+initial.cards);
+    assert.equal(initial.sourceOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW",
+      form+"/"+family+" must have the approved 65-family presentation");
     assert(initial.width>200&&initial.width<=initial.viewport+1,"Reader clipped horizontally");
     assert(!initial.horizontalOverflow,"Page overflow at "+viewport.width+"px");
     assert.equal(initial.observedEntrance,false,"Fixture fabricated priest entrance observation");
-    // No fixed 39/48-card assumption: the current source projection owns
-    // variants and optional second Confiteor. Preserve measured count only.
+    // 65 is the approved ordinary-family boundary. A source-verified Sequence
+    // may add one or two cards; no 39/48 fallback is accepted.
     const samples=[];
     for(const cue of cues){
      const before=await page.evaluate(id=>{
@@ -195,10 +198,10 @@ try{
  await writeFile(resolve(out,"acceptance-matrix.json"),
    JSON.stringify({schema:"ao-r17-four-form-family-phone-v2",
     scenarios:result.length,forms,families,
-    cardCounts:"RUNTIME_SOURCE_OWNED_NOT_FROZEN_HISTORICAL",
+    cardCounts:"CURATED_65_FAMILY_WITH_VERIFIED_SEQUENCE_EXTENSIONS",
     syntheticProperNotLiturgicalCertification:true,
     realPhysicalPhoneCertified:false,results:result},null,2)+"\n");
- console.log("PASS 8 main-based LIVE source-owner Mass scenarios; no 48-card contract, synthetic Proper clearly qualified.");
+ console.log("PASS 8 four-form LIVE scenarios all using 65-family cards; synthetic Proper clearly qualified.");
 }finally{
  await browser?.close();
  await new Promise(ok=>server.close(ok));
