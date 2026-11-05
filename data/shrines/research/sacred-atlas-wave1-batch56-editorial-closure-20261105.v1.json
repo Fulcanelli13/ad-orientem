@@ -1253,7 +1253,8 @@
       "issue": "ORIGINAL_FRENCH_VATICAN_TOMB_URL_404",
       "do_not_silently_edit_canonical_source": true,
       "verified_alternative": "https://www.vatican.va/various/basiliche/san_paolo/en/basilica/tomba.htm",
-      "action": "VERIFY_AND_REPLACE_SOURCE_REFERENCE_IN_SEPARATE_CANONICAL_SOURCE_PR"
+      "action": "VERIFY_AND_REPLACE_SOURCE_REFERENCE_IN_SEPARATE_CANONICAL_SOURCE_PR",
+      "status": "CANONICAL_SOURCE_REPLACED_WITH_LIVE_OFFICIAL_VATICAN_TOMB_PAGE"
     },
     {
       "place_id": "place:FR:basilique-sainte-marie-madeleine-vezelay",
@@ -1263,19 +1264,23 @@
         "https://www.basiliquedevezelay.org/marie-madeleine/",
         "https://whc.unesco.org/en/list/84/"
       ],
-      "action": "VERIFY_AND_REPLACE_SOURCE_REFERENCE_IN_SEPARATE_CANONICAL_SOURCE_PR"
+      "action": "VERIFY_AND_REPLACE_SOURCE_REFERENCE_IN_SEPARATE_CANONICAL_SOURCE_PR",
+      "status": "CANONICAL_SOURCE_REPLACED_WITH_LIVE_BASILICA_MAGDALENE_PAGE_SCOPE_CAVEAT"
     },
     {
       "place_id": "place:FR:basilique-saint-quentin-aisne",
       "issue": "FRENCH_MINISTRY_2008_ANALYSIS_DATES_HAND_TO_LATE_15TH_OR_EARLY_16TH_CENTURY_IMPOSSIBLE_SAINT_QUENTIN_3RD_CENTURY_HAND",
       "source_url": "https://pop.culture.gouv.fr/notice/palissy/IM02004664",
-      "action": "CORRECT_MATERIAL_ATTRIBUTION_IN_CANONICAL_RELIC_RECORD_AND_SITE_FOLIO_BEFORE_PUBLICATION"
+      "action": "SECOND_EDITOR_CONFIRM_VISIBLE_FRENCH_ENGLISH_CAVEAT",
+      "status": "CANONICAL_RELIC_CORRECTED_ATTRIBUTION_EXCLUDED_BY_2008_ANALYSIS"
     },
     {
       "place_id": "place:IT:santa-croce-gerusalemme-rome",
       "issue": "APRIL_2026_RELIC_CHAPEL_CLOSURE_VS_STALE_GENERAL_HOURS",
       "source_url": "https://www.santacroceroma.it/it/",
-      "action": "RETAIN_CLOSED_UNTIL_VERIFIED_NEW_REOPENING_NOTICE;DO_NOT_SHOW_OPEN_VISITOR_PROMISE"
+      "action": "CHECK_CURRENT_HOURS_AT_TIME_OF_VISIT_NOT_UNRESTRICTED_ACCESS",
+      "status": "RESOLVED_NEWER_DIOCESE_SOURCE_2026_10_19_CONFIRMS_2026_10_23_REOPENING",
+      "superseding_source_url": "https://www.diocesidiroma.it/riapre-la-cappella-delle-reliquie-a-santa-croce-in-gerusalemme/"
     }
   ],
   "material_sensitive_editorial_holds": [
@@ -1312,7 +1317,8 @@
     {
       "place_id": "place:FR:basilique-saint-quentin-aisne",
       "issue": "RELIQUARY_CONTAINS_HAND_POSITIVELY_DATED_CENTURIES_AFTER_3RD_CENTURY_SAINT",
-      "requirement": "PROHIBIT_AUTHENTIC_HAND_CLAIM_AND_CORRECT_CANONICAL_RELIC_BEFORE_PUBLISHING"
+      "requirement": "AUTHENTIC_HAND_ATTRIBUTION_EXPLICITLY_EXCLUDED_IN_CANONICAL_RELIC_AND_GUIDE;SECOND_EDITOR_CHECK",
+      "status": "CANONICAL_CORRECTION_COMPLETED_SECOND_EDITOR_PENDING"
     },
     {
       "place_id": "place:GB:westminster-abbey-st-edward",
@@ -1322,7 +1328,8 @@
     {
       "place_id": "place:IT:santa-croce-gerusalemme-rome",
       "issue": "RELIC_CHAPEL_TEMPORARY_CLOSURE_AFFECTS_VISITOR_ACCESS",
-      "requirement": "DO_NOT_PUBLISH_OLD_OPENING_HOURS_AS_CURRENT"
+      "requirement": "DIOCESE_CONFIRMED_23_OCT_2026_REOPENING;VERIFY_CURRENT_HOURS_ONLY",
+      "status": "SUBSTANTIVE_CLOSURE_CONFLICT_RESOLVED_ACCESS_SCHEDULE_STILL_DYNAMIC"
     },
     {
       "place_id": "place:CA:bishop-velychkovsky-martyrs-shrine-winnipeg",
@@ -1333,6 +1340,32 @@
       "place_id": "place:ES:santiago-compostela-cathedral",
       "issue": "PILGRIMAGE_COMPOSTELA_VS_JUBILEE_INDULGENCE",
       "requirement": "DISTINGUISH_PILGRIMAGE_CREDENTIAL_FROM_SACRAMENTAL_SPIRITUAL_PRIVILEGE"
+    }
+  ],
+  "canonical_release_corrections_20261105": [
+    {
+      "place_id": "place:FR:basilique-saint-quentin-aisne",
+      "material_finding": "2008 analysis excludes Saint Quentin attribution of physical hand",
+      "source_url": "https://pop.culture.gouv.fr/notice/palissy/IM02004664",
+      "needs_editor_review": true
+    },
+    {
+      "place_id": "place:IT:santa-croce-gerusalemme-rome",
+      "material_finding": "Diocese announces reopening of relic chapel on 2026-10-23; April website banner stale",
+      "source_url": "https://www.diocesidiroma.it/riapre-la-cappella-delle-reliquie-a-santa-croce-in-gerusalemme/",
+      "needs_editor_review": true
+    },
+    {
+      "place_id": "place:IT:saint-paul-outside-walls-rome",
+      "material_finding": "Canonical source link repaired",
+      "source_url": "https://www.vatican.va/various/basiliche/san_paolo/en/basilica/tomba.htm",
+      "needs_editor_review": true
+    },
+    {
+      "place_id": "place:FR:basilique-sainte-marie-madeleine-vezelay",
+      "material_finding": "Canonical source narrowed to actual Mary Magdalene subject",
+      "source_url": "https://www.basiliquedevezelay.org/marie-madeleine/",
+      "needs_editor_review": true
     }
   ]
 }

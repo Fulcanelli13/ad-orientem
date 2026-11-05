@@ -1475,15 +1475,22 @@
       "id": "relic:FR:main-saint-quentin",
       "place_id": "place:FR:basilique-saint-quentin-aisne",
       "relic_kind": "REPUTED_BODILY_REMAINS",
-      "title_en": "Reliquary of the hand of Saint Quentin",
-      "title_fr": "Reliquaire de la main de saint Quentin",
+      "title_en": "Historical hand reliquary of Saint Quentin (attribution disproved)",
+      "title_fr": "Reliquaire historique dit « de la main de saint Quentin » (attribution réfutée)",
       "associated_person": "Saint Quentin",
       "source_url": "https://pop.culture.gouv.fr/notice/palissy/IM02004664",
       "source_claim": "LOCATION_AND_VENERATION_ATTESTED",
       "authentication": "NOT_INDEPENDENTLY_CERTIFIED_BY_APP",
-      "summary_en": "French heritage inventory identifies the hand reliquary in the basilica; the ancient crypt tomb is historically empty and is not counted as permanent bodily custody.",
-      "summary_fr": "La source patrimoniale ou du sanctuaire documente la conservation ou la tradition locale, sans authentification indépendante de l'attribution.",
-      "calendar_semantic_key": null
+      "summary_en": "The historical reliquary traditionally called the hand of Saint Quentin is documented in the basilica. The French Ministry of Culture reports that a 2008 analysis dated its hand to the late 15th or early 16th century, ruling out attribution to the 3rd-century martyr. This object documents the cult, not an authenticated bodily relic of the saint.",
+      "summary_fr": "Le reliquaire historique appelé « main de saint Quentin » est documenté dans la basilique. Le ministère de la Culture indique qu’une analyse de 2008 date la main de la fin du XVe ou du début du XVIe siècle, excluant son attribution au martyr du IIIe siècle. L’objet témoigne du culte, mais ne contient pas une relique corporelle authentifiée du saint.",
+      "calendar_semantic_key": null,
+      "authenticity_finding": {
+        "status": "ATTRIBUTION_EXCLUDED_BY_DATING",
+        "analysis_year": 2008,
+        "earliest_possible_period": "LATE_15TH_CENTURY",
+        "latest_possible_period": "EARLY_16TH_CENTURY",
+        "source_url": "https://pop.culture.gouv.fr/notice/palissy/IM02004664"
+      }
     },
     {
       "id": "relic:FR:suaires-saints-sens",

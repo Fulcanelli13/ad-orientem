@@ -489,7 +489,7 @@
       "source_links": [
         {
           "source_id": "SHR-PIL-IT-saint-paul-outside-walls-rome",
-          "url": "https://press.vatican.va/various/basiliche/san_paolo/fr/basilica/tomba.htm",
+          "url": "https://www.vatican.va/various/basiliche/san_paolo/en/basilica/tomba.htm",
           "issuer": "Holy See — Basilica of St Paul Outside the Walls",
           "directness": "OFFICIAL_CHURCH"
         }
@@ -1000,5 +1000,10 @@
         "ATTRIBUTION_UNRESOLVED"
       ]
     }
-  ]
+  ],
+  "canonical_shrine_source_url_correction_20261105": {
+    "reason": "Original institutional pages became broken/mismatched; verified live custodial pages now define source URLs. No site IDs changed.",
+    "new_url_st_paul": "https://www.vatican.va/various/basiliche/san_paolo/en/basilica/tomba.htm",
+    "new_url_vezelay": "https://www.basiliquedevezelay.org/marie-madeleine/"
+  }
 }

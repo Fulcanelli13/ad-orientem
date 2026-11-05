@@ -1,0 +1,30 @@
+name: Sacred Atlas Wave 1 — second-editor review and fail-closed release gate
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/shrines/research/sacred-atlas-wave1-all56-second-editor-review-20261105.html'
+      - 'data/shrines/research/sacred-atlas-wave1-guides44-56-20261105.v1.json'
+      - 'data/shrines/research/sacred-atlas-wave1-batch56-editorial-closure-20261105.v1.json'
+      - 'data/explore/sacred-phenomena-seed.v1.json'
+      - 'data/shrines/source-registry.v1.json'
+      - 'data/shrines/illustrated-place-guides-wave1-reviewed.v1.json'
+      - 'tools/atlas/stage-sacred-atlas-wave1-reviewed-guides.mjs'
+      - 'src/find/explore-data-service.js'
+      - 'tests/sacred-atlas-wave1-second-editor-publication-gate.mjs'
+      - '.github/workflows/sacred-atlas-wave1-second-editor-publication-gate.yml'
+permissions:
+  contents: read
+jobs:
+  editorial-review-and-publication-guard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify official source corrections, offline 56-guide review, reject tampering, and stage synthetic accepted guide
+        run: node tests/sacred-atlas-wave1-second-editor-publication-gate.mjs
