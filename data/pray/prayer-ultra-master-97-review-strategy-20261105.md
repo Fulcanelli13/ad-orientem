@@ -72,3 +72,20 @@ This audit is **not** original-print certification, a completed source text impo
 The separate `data/pray/prayer-p0-source-witness-decisions-20261105.v1.json` records a bounded **English-only** image comparison for **AO-AQ-078**, against Lasance's scanned *My Prayer-Book* (Benziger, 1908), printed p.225 / Wikisource DJVU page 240. The staged English wording agrees with the printed page after ornamental initial, spacing and line-break normalization. It is admitted **only** in the existing Scripture reader's optional before-reading choices, alongside the independently sourced Aquinas EN/Latin forms; French and Latin translations of the longer Lasance text are **not** admitted. Repository merge and GitHub Pages publication are separate release gates.
 
 **AO-AQ-047 remains on hold.** The later short-Raccolta transcript invokes 33 Our Fathers but enumerates five across all seven mysteries (35). Original 1857 scan pages 103–104 were identified but **not visually inspected** during this decision. The published full Precious Blood form is a distinct recension and must not be used to claim that the short form is certified. The historical 29 October B31 status counts and the 97-row identity audit remain frozen as historical evidence; use this dated addendum for subsequent English source disposition rather than retroactively rewriting them.
+
+
+## Subsequent owner-code review — 25 records (5 November 2026)
+
+An additive **static repository-code review** now attaches `ownerCodeReview20261105` to each of the **25** `OWNED_NOT_EXACTLY_CERTIFIED` acquisition rows in the existing 97-row reconciliation. The historical 29 October B31 statuses and original acquisition fields are unchanged. Each cited code anchor is checked in `tests/pray-ultra-master-97-owner-reconciliation-20261105.mjs`; this is not a new registry, original-print comparison, public browser test, or release approval.
+
+| Code evidence | Rows | Interpretation |
+| --- | ---: | --- |
+| Local text with reader-code reference | 16 | Text owner and relevant reader code identified; exact acquisition recension not automatically established |
+| Partial or composite owner | 7 | Bundled or different works require disambiguation; whole-programme coverage not certified |
+| External exact-text link only | 1 | Institute perpetual St Thérèse Tuesday prayer links to official source; a distinct 1925 prayer is shown locally |
+| Source module, reader unverified | 1 | Joseph Seven Sorrows/Joys source material exists but reader presentation is not certified |
+| **Existing-owner records reviewed** | **25** | **Zero new edition, full EN/FR/LA, or independent public browser certificates** |
+
+Key non-conflations: AO-AQ-011 and AO-AQ-013 are selectable optional **Institute** novenas separate from the canonical sixteen. AO-AQ-014's exact Institute Tuesday prayer is *not* the 1925 Garesche prayer offered locally. AO-AQ-050's Seven Sorrows **Novena** is not the Seven Dolours **Chaplet**. AO-AQ-064's seven St Joseph source prayers are not proof of a certified public reader choice. AO-AQ-077 combines five novena programme names in one acquisition row, not five new acquisitions. AO-AQ-088/089 have distinct Baltimore meal-prayer selectors with editorial French; AO-AQ-094's St Pius X contrition selector uses editorial EN/FR renderings.
+
+Next gates: compare candidate wording with the exact historical edition/recension, record language provenance separately, and run real mobile/offline reader interactions where static code demonstrates a selector. Do not auto-publish or invent historical translations. Keep AO-AQ-047 short Precious Blood on hold. AO-AQ-078 English Lasance was admitted subsequently in PR #2498, but that does not rewrite the dated B31 baseline.
