@@ -1,9 +1,10 @@
-// Deliberately bounded inline Gregorian *reference preview* for 7 July 2026.
-// The three GABC bodies are exact copied research transcriptions from our
+// Deliberately bounded inline Gregorian reference previews for selected 1962 Masses.
+// GABC bodies are exact copied research transcriptions from our
 // existing 1,195-record 1961 GregoBase/Solesmes archive. They are CC0 text.
 // No published-score approval, Gregorian recording, source alias or new reader card.
 // The same renderer can support independently selected chants on other dates.
 import {createOfflineChantEngraver} from "./reader-chant-engraver.js";
+import {ALL_SAINTS_REFERENCE_GABC} from "./reader-inline-all-saints-reference.js";
 
 export const JULY07_REFERENCE_NOTATION_SCHEMA="ao-reader-july07-reference-notation-v1";
 // The original printed Introit GABC includes a distinct conditional "T. P."
@@ -31,14 +32,37 @@ const n=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
  .replace(/æ/gi,"ae").replace(/œ/gi,"oe").replace(/j/gi,"i")
  .toLowerCase().replace(/[^a-z]+/g," ").trim().replace(/\s+/g," ");
 const sung=new Set(["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
-const PREFIX={
- INTROIT:["sacerdotes tui domine induant iustitiam"],
- GRADUAL:["sacerdotes eius induam salutari","sacerdotes eius induam salutari et sancti"],
- ALLELUIA:["iuravit dominus","tu es sacerdos in aeternum"]
-};
-const mapping=new Map([["INTROIT.1","INTROIT"],["GRADUAL.1","GRADUAL"],
- ["ALLELUIA_TRACT_SEQUENCE.1","ALLELUIA"]]);
-const byKey=new Map(JULY07_REFERENCE_GABC.map(x=>[x.key,x]));
+// Dated appointment table; the same reusable renderer accepts more Masses
+// without downloading more sources or modifying reader cards. Every record
+// must agree on calendar date, resolved 1962 Proper source, paragraph role,
+// and Latin text. Shared chant scores may later be assigned to multiple days.
+export const REFERENCE_MASS_PLANS=Object.freeze({
+ "2026-07-07":Object.freeze({
+  sourcePath:"Sancti/07-07",
+  scores:JULY07_REFERENCE_GABC,
+  openings:Object.freeze({
+   INTROIT:["sacerdotes tui domine induant iustitiam"],
+   GRADUAL:["sacerdotes eius induam salutari"],
+   ALLELUIA:["iuravit dominus","tu es sacerdos in aeternum"],
+  })
+ }),
+ "2026-11-01":Object.freeze({
+  sourcePath:"Sancti/11-01",
+  scores:ALL_SAINTS_REFERENCE_GABC,
+  openings:Object.freeze({
+   INTROIT:["gaudeamus omnes in domino diem festum"],
+   GRADUAL:["timete dominum omnes sancti eius"],
+   ALLELUIA:["venite ad me omnes qui laboratis"],
+   OFFERTORY:["iustorum animae in manu dei sunt"],
+   COMMUNION:["beati mundo corde quoniam ipsi deum videbunt"],
+  })
+ }),
+});
+const mapping=new Map([
+ ["INTROIT.1","INTROIT"],["GRADUAL.1","GRADUAL"],
+ ["ALLELUIA_TRACT_SEQUENCE.1","ALLELUIA"],
+ ["OFFERTORY.1","OFFERTORY"],["COMMUNION.1","COMMUNION"]
+]);
 export const JULY07_REFERENCE_CSS=String.raw`
 .ao-proper-reference-notation{display:block;width:100%;min-width:0;margin:11px 0 8px;padding:9px 0 5px;border-top:1px solid rgba(218,196,156,.22);font-style:normal;max-width:100%;overflow:hidden}
 .ao-proper-reference-label{display:block;font:600 10px/1.5 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.035em;color:var(--ao-muted,#b1aa9c);margin-bottom:6px}
@@ -66,19 +90,28 @@ export const JULY07_REFERENCE_CSS=String.raw`
 // for that case put the two existing scores together in source order.
 export function referenceScoresForParagraph({paragraph,resolvedMass,form}={}){
  if(!sung.has(String(form??"").toUpperCase())||
-    resolvedMass?.date!=="2026-07-07"||
-    (resolvedMass.proper?.data??resolvedMass.proper)?.sourcePath!=="Sancti/07-07"||
-    resolvedMass.overlays?.includes("REQUIEM")||
+    resolvedMass?.overlays?.includes("REQUIEM")||
     !paragraph||paragraph.kind==="RUBRIC")return Object.freeze([]);
+ const plan=REFERENCE_MASS_PLANS[resolvedMass?.date];
+ if(!plan||(resolvedMass.proper?.data??resolvedMass.proper)?.sourcePath!==plan.sourcePath)
+  return Object.freeze([]);
  const role=mapping.get(String(paragraph.id??""));
  if(!role)return Object.freeze([]);
  const latin=[paragraph.primary,paragraph.secondary,paragraph.alternate]
   .filter(x=>typeof x==="string"&&x.length).map(n);
- const match=(part)=>PREFIX[part].some(fragment=>latin.some(s=>s.includes(fragment)));
+ const match=part=>(plan.openings[part]??[]).some(
+  phrase=>latin.some(s=>s.includes(phrase)));
  if(!match(role))return Object.freeze([]);
- const selections=[byKey.get(role)];
- if(role==="GRADUAL"&&match("ALLELUIA"))selections.push(byKey.get("ALLELUIA"));
- return Object.freeze(selections);
+ const byKey=new Map(plan.scores.map(score=>[score.key,score]));
+ const result=[byKey.get(role)];
+ // Some original Proper sources coalesce the complete Gradual and Alleluia
+ // in one paragraph. Embed both scores in proper sequence without a new card.
+ if(role==="GRADUAL"&&match("ALLELUIA"))
+  result.push(byKey.get("ALLELUIA"));
+ if(result.some(x=>!x||x.publicScoreApproved!==false||
+    x.sourceStatus!=="RESEARCH_TRANSCRIPTION_NOT_MUSICALLY_CERTIFIED"))
+  return Object.freeze([]);
+ return Object.freeze(result);
 }
 
 export function createDatedProperNotationPreview({
