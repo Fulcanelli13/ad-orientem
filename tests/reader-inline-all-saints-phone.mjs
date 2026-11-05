@@ -6,6 +6,12 @@ import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
+const archivedVenite=JSON.parse(await readFile(resolve(root,"data/mass/chant-corpus/gr1961-proper-006.json"),"utf8"))
+ .items.find(row=>row.gregobaseId===1237);
+assert.equal(archivedVenite?.title,"Venite ad me");
+assert.equal(archivedVenite?.mode,"8");
+assert.equal(archivedVenite?.gradualeRomanum1961Page,"[114]");
+
 const server=http.createServer(async(req,res)=>{
  try{
   const file=resolve(root,"."+decodeURIComponent(new URL(req.url,"http://localhost").pathname));
@@ -26,7 +32,7 @@ try{
   const result=await page.evaluate(async()=>{
    const {createDatedProperNotationPreview,referenceScoresForParagraph,JULY07_REFERENCE_CSS}=
     await import("/src/mass/reader-inline-proper-reference.js");
-   const {ALL_SAINTS_REFERENCE_SCORES,ALL_SAINTS_ALLELUIA_HOLD}=
+   const {ALL_SAINTS_REFERENCE_SCORES,ALL_SAINTS_ALLELUIA_SOURCE_RESOLUTION}=
     await import("/src/mass/reader-inline-all-saints-reference.js");
    const mass={date:"2026-11-01",proper:{data:{sourcePath:"Sancti/11-01"}},
     form:"MISSA_CANTATA_SIMPLE",overlays:[]};
@@ -61,7 +67,7 @@ try{
    }
    const ctrl=createDatedProperNotationPreview({root:host,enabled:true});
    const mounted=ctrl.render({mode:"LIVE",form:mass.form,resolvedMass:mass,paragraphs});
-   for(let i=0;i<100&&ctrl.state().rendered<4;i++)
+   for(let i=0;i<100&&ctrl.state().rendered<5;i++)
     await new Promise(r=>setTimeout(r,120));
    const rendered=ctrl.state().rendered;
    const svgCount=host.querySelectorAll(".ao-proper-reference-staff svg").length;
@@ -75,25 +81,26 @@ try{
    const widths=[...host.querySelectorAll(".ao-proper-reference-staff")].map(x=>x.getBoundingClientRect().width);
    const notApproved=[...host.querySelectorAll("[data-reference-score]")].every(x=>x.dataset.approved==="false");
    return {slotIds,wrongConditions,mounted,rendered,svgCount,originalIntact,labels,ids,widths,
-    notApproved,hold:ALL_SAINTS_ALLELUIA_HOLD,archival:ALL_SAINTS_REFERENCE_SCORES.map(x=>({
+    notApproved,resolution:ALL_SAINTS_ALLELUIA_SOURCE_RESOLUTION,archival:ALL_SAINTS_REFERENCE_SCORES.map(x=>({
     id:x.id,part:x.part,folio:x.folio,approved:x.publicScoreApproved,sha:x.sha256
    }))};
   });
-  assert.deepEqual(result.slotIds,[["GREGOBASE-752"],["GREGOBASE-371"],[],["GREGOBASE-835"],["GREGOBASE-345"]]);
-  assert.deepEqual(result.ids,["GREGOBASE-752","GREGOBASE-371","GREGOBASE-835","GREGOBASE-345"]);
-  assert.equal(result.mounted,4);
-  assert.equal(result.rendered,4);
-  assert.equal(result.svgCount,4,"Genuine local Exsurge SVG for all four archive GABC files");
+  assert.deepEqual(result.slotIds,[["GREGOBASE-752"],["GREGOBASE-371"],["GREGOBASE-1237"],["GREGOBASE-835"],["GREGOBASE-345"]]);
+  assert.deepEqual(result.ids,["GREGOBASE-752","GREGOBASE-371","GREGOBASE-1237","GREGOBASE-835","GREGOBASE-345"]);
+  assert.equal(result.mounted,5);
+  assert.equal(result.rendered,5);
+  assert.equal(result.svgCount,5,"Genuine local Exsurge SVG for all five archive GABC files");
   assert.equal(result.originalIntact,true);
   assert.equal(result.wrongConditions,true);
   assert.equal(result.notApproved,true);
-  assert.equal(result.hold.excludedScoreId,"GREGOBASE-1237");
-  assert.equal(result.hold.expectedPrintedPages,"648-649");
-  assert.equal(result.hold.excludedPrintedPage,"[114]");
+  assert.equal(result.resolution.scoreId,"GREGOBASE-1237");
+  assert.equal(result.resolution.expectedPrintedPages,"648-649");
+  assert.deepEqual(result.resolution.sourceIndexPages,["648","[114]"]);
   assert.ok(result.labels.every(x=>x.includes("review pending")));
   assert.deepEqual(result.archival.map(x=>[x.id,x.part,x.folio]),[
    ["GREGOBASE-752","in","647"],["GREGOBASE-371","gr","648"],
-   ["GREGOBASE-835","of","[30]"],["GREGOBASE-345","co","650"]]);
+   ["GREGOBASE-835","of","[30]"],["GREGOBASE-345","co","650"],
+   ["GREGOBASE-1237","al","648, [114]"]]);
   assert.ok(result.archival.every(x=>x.approved===false && /^[a-f0-9]{64}$/.test(x.sha)));
   assert.ok(result.widths.every(x=>x>120&&x<=width),"No overflow at "+width+": "+JSON.stringify(result.widths));
   await mkdir(resolve(root,".tmp/mass-inline-all-saints"),{recursive:true});
@@ -103,8 +110,8 @@ try{
   await page.screenshot({path:resolve(root,".tmp/mass-inline-all-saints/enlarged-"+width+".png")});
   await page.locator("dialog.ao-proper-reference-zoom header button").click();
   assert.equal(await page.locator("dialog.ao-proper-reference-zoom").count(),0);
-  console.log("ALL_SAINTS_FOUR_PROPER_STAVES_PASS "+JSON.stringify({width,
-   ids:result.ids,rendered:result.rendered,held:result.hold.excludedScoreId}));
+  console.log("ALL_SAINTS_FIVE_PROPER_STAVES_PASS "+JSON.stringify({width,
+   ids:result.ids,rendered:result.rendered,alleluia:result.resolution.scoreId}));
   await page.close();
  }
 }finally{
