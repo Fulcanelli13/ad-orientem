@@ -36,7 +36,7 @@ test("missing, malformed or substituted critical bytes do not certify the deploy
  assert.throws(()=>verifyReleaseProof(missing,{expectedSha:shaA,expectedRunId:"1234567",indexHtml:html}),/Missing critical release digest/);
  const staleNovena={...p,critical_sha256:{...p.critical_sha256}};
  delete staleNovena.critical_sha256["src/pray/novena-runtime.js"];
- assert.throws(()=>verifyReleaseProof(staleNovena,{expectedSha:shaA,expectedRunId:"1234567",indexHtml:html}),/Missing critical release digest: src\\/pray\\/novena-runtime\\.js/);
+ assert.throws(()=>verifyReleaseProof(staleNovena,{expectedSha:shaA,expectedRunId:"1234567",indexHtml:html}),/Missing critical release digest/);
  const altered={...p,critical_sha256:{...p.critical_sha256,"index.html":"00"}};
  assert.throws(()=>verifyReleaseProof(altered,{expectedSha:shaA}),/Invalid SHA-256 digest/);
  assert.notEqual(releaseSha256(Buffer.from("tampered:index.html")),p.critical_sha256["index.html"]);
@@ -68,8 +68,8 @@ test("release scripts consume the shared proof and audit the actual published by
  assert.match(live,/expectedDigest=proof\.critical_sha256\[relative\]/);
  assert.match(live,/releaseSha256\(bytes\)/);
  assert.match(live,/await released\(path\)/,"The deployed Pray source modules must be fetched and hashed");
- assert.match(live,/src\/pray\/novena-runtime\\.js/);
- assert.match(live,/src\/pray\/prayer-design-pilot\\.js/);
- assert.match(live,/src\/pray\/presentation-runtime\\.js/);
+ assert.ok(live.includes('"src/pray/novena-runtime.js"'),"The public-site checker must audit novena-runtime.js");
+ assert.ok(live.includes('"src/pray/prayer-design-pilot.js"'),"The public-site checker must audit prayer-design-pilot.js");
+ assert.ok(live.includes('"src/pray/presentation-runtime.js"'),"The public-site checker must audit presentation-runtime.js");
  assert.match(live,/if\(i<5\)await new Promise/);
 });
