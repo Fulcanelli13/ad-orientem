@@ -31,6 +31,15 @@ function inheritedRule(sections){
  const m=/(?:^|[\s;])ex\s+((?:Commune|Sancti|Tempora)\/[A-Za-z0-9_-]+)/i.exec(r);
  return m?.[1]??null;
 }
+function originalCommonCues(sections){
+ // 'vide C4a' is a historical Common pointer on the day source, often
+ // replacing a local Graduale. It is NOT a pinned printed-1962 certification.
+ const rule=(sections.get("Rule")??[]).join("\n");
+ const rank=(sections.get("Rank")??[]).join("\n");
+ const cues=[...((rule+"\n"+rank).matchAll(/\bvide\s+(C[0-9][A-Za-z0-9]*)\b/gi))]
+  .map(m=>"Commune/"+m[1]);
+ return [...new Set(cues)].sort();
+}
 async function resolveSection(sourcePath,section,readPinned,chain=[]){
  const key=sourcePath+":"+section;
  if(chain.includes(key)||chain.length>10)return {
@@ -63,6 +72,13 @@ async function resolveSection(sourcePath,section,readPinned,chain=[]){
  if(rule&&pathRe.test(rule))return {
   status:"RULE_EX_CANDIDATE_UNVERIFIED",ownerCandidate:rule,
   sourceSha:source.sha,chain:next,needsSectionProof:true};
+ const commons=originalCommonCues(parsed.sections);
+ if(commons.length===1)return {status:"RUBRICAL_VIDE_COMMON_CANDIDATE_UNVERIFIED",
+  ownerCandidate:commons[0],sourceSha:source.sha,chain:next,
+  needsPrinted1962CommonAndSectionProof:true};
+ if(commons.length>1)return {status:"MULTIPLE_RUBRICAL_COMMON_CUES_HELD",
+  ownerCandidate:null,candidateCommons:commons,
+  sourceSha:source.sha,chain:next};
  return {status:"SECTION_ABSENT_NO_EXPLICIT_OWNER",ownerCandidate:null,
   sourceSha:source.sha,chain:next};
 }
@@ -83,11 +99,13 @@ function classification(evidence,sourcePath){
   return {key:"MULTIPLE_SECTION_DONORS:"+sourcePath,
    status:"MULTIPLE_SECTION_DONORS_NEED_SEASONAL_REVIEW"};
  }
- const rules=evidence.filter(x=>x.status==="RULE_EX_CANDIDATE_UNVERIFIED");
+ const rules=evidence.filter(x=>[
+  "RULE_EX_CANDIDATE_UNVERIFIED","RUBRICAL_VIDE_COMMON_CANDIDATE_UNVERIFIED"
+ ].includes(x.status));
  if(rules.length){
   const targets=[...new Set(rules.map(x=>x.ownerCandidate))];
   if(targets.length===1)return {key:"RULE_CANDIDATE:"+targets[0],
-   status:"SHARED_RULE_PARENT_ONLY_NO_SECTION_CERTIFICATION"};
+   status:"SHARED_RUBRICAL_COMMON_OR_RULE_PARENT_UNCERTIFIED"};
  }
  if(evidence.some(x=>x.status==="DIRECT_AUTHENTICATED_SECTION"))
   return {key:"LOCAL_PRESENT:"+sourcePath,
@@ -214,7 +232,7 @@ export async function group2026PregospelHolds({closeout,inventory,annual,readPin
    approvedSourceAliases:0,approvedGregorianProperScores:0},
   groups:grouped,exactFullSelectedLatinGroups:exactLatinGroups,sourceRows,
   otherRoleExceptions:closeout.separateRoleHolds??[],
-  warning:"Same 15 missing-path dates already occur in the five-family source-gap review. Identical complete normalized Latin groups are for review scheduling ONLY; identical words do not establish chant setting, musical identity, source owner or public approval. Section and RULE pointers are likewise research classification only.",
+  warning:"Same 15 missing-path dates already occur in the five-family source-gap review. Identical complete normalized Latin groups are for review scheduling ONLY; identical words do not establish chant setting, musical identity, source owner or public approval. @section pointers are authenticated by SHA; 'vide C...' is merely a historical rubrical Common candidate, not an authenticated pinned 1962 text section or score.",
   publication:{publicScore:false,sourceAliasApproved:false,
    printed1961PitchNeumeUnderlayCertified:false,
    readerRuntimeChanges:false}
