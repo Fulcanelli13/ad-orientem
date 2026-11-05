@@ -61,7 +61,7 @@ function phonesFromLines(lines){
   return phoneCandidates(candidates.join("\n"));
 }
 function scheduleLines(lines){
-  return lines.filter(line=>/\b(Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sundays|Weekdays?|Feast Days?)\b/i.test(line)&&/\bMass\b/i.test(line));
+  return lines.filter(line=>/\b(Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sundays|Weekdays?|Feast Days?)\b/i.test(line)&&/\bMass(?:es)?\b/i.test(line));
 }
 function scheduleBlock(lines){
   const start=lines.findIndex(line=>/^(Sundays?|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|During the Week|Weekdays?|Feast Days?|Holy Mass|Mass Times?)/i.test(line));
@@ -70,9 +70,9 @@ function scheduleBlock(lines){
   for(let i=start;i<lines.length;i+=1){
     const line=lines[i];
     if(i>start&&/^(Church|Priory|Address|Phone|Email|Clergy|Rector|Canon|Map|Directions|Contact|Website)\s*:?/i.test(line))break;
-    if(/\b(Mass|Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Weekdays?|Feast Days?|During the Week)\b/i.test(line)||/\b\d{1,2}(?::|\.)\d{2}\b|\b(?:am|pm)\b/i.test(line))out.push(line);
+    if(/\b(Mass(?:es)?|Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Weekdays?|Feast Days?|During the Week)\b/i.test(line)||/\b\d{1,2}(?::|\.)\d{2}\b|\b(?:am|pm)\b/i.test(line))out.push(line);
   }
-  return out.some(line=>/\bMass\b/i.test(line))?out.join("\n"):null;
+  return out.some(line=>/\bMass(?:es)?\b/i.test(line))?out.join("\n"):null;
 }
 function discoverUs(html){
   const seen=new Set(),out=[];
@@ -216,8 +216,22 @@ export async function runIckspImport({out="data/directory/generated/icksp",concu
   const [usHtml,intlHtml]=await Promise.all([fetchText(ICKSP_US_URL,{fetchImpl}),fetchText(ICKSP_INTL_URL,{fetchImpl})]);
   const usCandidates=discoverUs(usHtml);
   const usRecords=await concurrentMap(usCandidates,concurrency,async candidate=>{
-    try{return parseIckspUsDetail(await fetchText(candidate.url,{fetchImpl}),candidate);}
-    catch(error){return {title:candidate.label,address:null,countryCode:"US",diocese:null,detailUrl:candidate.url,emails:[],phones:[],massRaw:null,detailWarning:String(error?.message??error)};}
+    for(let attempt=1;attempt<=3;attempt++){
+      try{
+        const html=await fetchText(candidate.url,{fetchImpl});
+        return parseIckspUsDetail(html,candidate);
+      }catch(error){
+        const code=String(error?.cause?.code??error?.code??"");
+        const message=String(error?.message??error);
+        const retryable=/^(?:UND_ERR_CONNECT_TIMEOUT|UND_ERR_HEADERS_TIMEOUT|ETIMEDOUT|ECONNRESET|EAI_AGAIN)$/.test(code)||
+          /^HTTP (?:502|503|504)\b/.test(message);
+        if(!retryable||attempt===3)
+          throw new Error("ICKSP detail acquisition incomplete for "+candidate.url+
+            " after "+attempt+" attempt(s): "+message,{cause:error});
+        await new Promise(resolve=>setTimeout(resolve,attempt*500));
+      }
+    }
+    throw new Error("ICKSP detail acquisition exhausted: "+candidate.url);
   });
   const intlRecords=parseIckspInternationalHtml(intlHtml);
   const discovery=discoverIckspInternationalCountrySites(intlHtml);
