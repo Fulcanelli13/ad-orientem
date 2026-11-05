@@ -74,7 +74,7 @@ for(const candidate of manifest.photos){
   caption_en:candidate.caption_en,caption_fr:candidate.caption_fr,
   label_en:candidate.label_en,label_fr:candidate.label_fr};
  const withPhoto={...data,media:{...data.media,gallery:[
-   ...originalGallery.items.filter(x=>x.media_id!==candidate.media_id),fake]}};
+   ...originalGallery.items.filter(x=>x.media_id!==candidate.media_id&&!(x.place_id===candidate.place_id&&x.subject_relic_id===candidate.relic_id)),fake]}};
  const selected=buildExplorePlaceProfiles(withPhoto,projectExploreDataset(withPhoto))
    .find(x=>x.place_id===candidate.place_id);
  const owner=selected.sacred_treasures.find(x=>x.id===candidate.relic_id);
