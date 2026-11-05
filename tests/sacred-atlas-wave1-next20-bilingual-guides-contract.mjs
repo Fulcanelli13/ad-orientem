@@ -22,8 +22,9 @@ assert.equal(a.schema,"AO_SACRED_ATLAS_W1_11_TO_20_BILINGUAL_EXTENDED_DRAFTS_V1"
 assert.equal(b.schema,"AO_SACRED_ATLAS_W1_21_TO_30_BILINGUAL_EXTENDED_DRAFTS_V1");
 assert.equal(a.guides.length,10);assert.equal(b.guides.length,10);
 assert.equal(queue.rows.length,56);
-assert.equal(queue.counts.expanded_bilingual_drafts_second_editor_pending,30);
-assert.equal(queue.counts.short_source_synopses_only,26);
+assert.ok(queue.counts.expanded_bilingual_drafts_second_editor_pending>=30);
+assert.ok(queue.counts.expanded_bilingual_drafts_second_editor_pending<=56);
+assert.equal(queue.counts.short_source_synopses_only,56-queue.counts.expanded_bilingual_drafts_second_editor_pending);
 assert.equal(queue.counts.published_guide_changes,0);
 assert.equal(queue.counts.photo_cover_changes,0);
 const all=[...first.guides,...a.guides,...b.guides];
@@ -70,8 +71,10 @@ for(let i=0;i<56;i++){
    }
    if(i<10)assert.equal(row.draft_file,root+"sacred-atlas-wave1-first10-extended-guides-20261105.v1.json");
    else assert.equal(row.draft_file,root+(i<20?"sacred-atlas-wave1-guides11-20-20261105.v1.json":"sacred-atlas-wave1-guides21-30-20261105.v1.json"));
+ }else if(row.draft_file){
+   assert.match(row.extended_draft_state,/SECOND_EDITOR/);
+   assert.equal(row.publication_authorized,false);
  }else{
-   assert.equal(row.draft_file,null);
    assert.match(row.extended_draft_state,/SOURCE_DEEPENING/);
  }
 }
@@ -84,4 +87,4 @@ for(const x of [...queue.source_repair_queue,...queue.sensitive_second_editor_ch
 assert.match(all[25].sections[1].paragraphs[0].en,/contested|competing|disputed/i);
 assert.match(all[24].sections[1].paragraphs[0].en,/Fleury/);
 assert.match(all[29].sections[2].paragraphs[0].en,/1979/);
-console.log("SACRED ATLAS W1 NEXT20 PASS: 30/56 three-section EN/FR drafts (90 paragraphs each language); six sensitive review holds, 2 source repairs, 26 backlog, 33 published guides and 379 covers unchanged.");
+console.log("SACRED ATLAS W1 NEXT20 PASS: first 30 guide draft contracts preserved while batch closure evolves; "+queue.counts.short_source_synopses_only+" undrafted, 33 published guides and 379 covers unchanged.");
