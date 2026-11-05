@@ -87,7 +87,41 @@
     "originalPrintedNotationVisuallyLocated": true,
     "fullPrintedNotationComparedNoteByNoteAgainstSpecificGabc": false,
     "original1961SolesmesPitchNeumeRhythmUnderlayCertified": false,
-    "specificArchived1195GabcFileIdentityCertified": false
+    "specificArchived1195GabcFileIdentityCertified": false,
+    "existing1195ArchiveCandidates": [
+      {
+        "id": "GREGOBASE-48",
+        "gregobaseId": 48,
+        "sourceUrl": "https://gregobase.selapa.net/chant.php?id=48",
+        "officePart": "in",
+        "incipit": "Sacerdotes tui",
+        "printedPage": "[35]",
+        "gabcSha256": "edf2d86594bba08d30130e47f9bd04890f633a326eec9ec2f67823f85a831777",
+        "archiveFile": "data/mass/chant-corpus/gr1961-proper-001.json"
+      },
+      {
+        "id": "GREGOBASE-415",
+        "gregobaseId": 415,
+        "sourceUrl": "https://gregobase.selapa.net/chant.php?id=415",
+        "officePart": "gr",
+        "incipit": "Sacerdotes ejus (Grad.)",
+        "printedPage": "[36]",
+        "gabcSha256": "5bc5f9de688c1de1dc1a33f7b1ce40015f321cdff7c38bbed374148aaad8ea08",
+        "archiveFile": "data/mass/chant-corpus/gr1961-proper-003.json"
+      },
+      {
+        "id": "GREGOBASE-1187",
+        "gregobaseId": 1187,
+        "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1187",
+        "officePart": "al",
+        "incipit": "Juravit Dominus",
+        "printedPage": "[37]",
+        "gabcSha256": "bba316ec64fed01860a893e5ecb810141e14ed501a0759481958f6ef1002db2a",
+        "archiveFile": "data/mass/chant-corpus/gr1961-proper-006.json"
+      }
+    ],
+    "existing1195ArchiveRecordsLocated": 3,
+    "existing1195ArchiveGabcNotesCollatedAgainstScannedPrint": false
   },
   "evidenceDisposition": {
     "dateSpecific1962PrintedTextAndRoleVerified": true,
@@ -101,6 +135,8 @@
     "humanMusicalApproval": false,
     "localReaderModified": false,
     "publicationManifestModified": false,
-    "residualHold": "Verify complete selected 2026 Latin against original C4d and compare exact archived GABC pitches/neumes/underlay with 1961 [36]-[37]; resolve C4-1 selector according to date/source without wholesale C4d runtime alias"
+    "residualHold": "Compare GREGOBASE-48/415/1187 existing GABC with original 1961 printed [35]-[37] neumes, pitches, rhythmic signs, exact underlay; compare complete 2026 selected reader Latin; human score approval; prove C4-1 liturgical selector mapping before any runtime alias",
+    "threeArchivedGabcSamePrintedPageCandidatesLocated": true,
+    "numberOfNewGabcTranscriptionsNeededForThreeChants": 0
   }
 }
