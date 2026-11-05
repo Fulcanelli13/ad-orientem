@@ -1,4 +1,4 @@
-// R1/R2/R3/R4/R5/R6/R7/R8/R9/R10 approved CL2 illustrative discovery positions: no GPS-coordinate navigation,
+// R1/R2/R3/R4/R5/R6/R7/R8/R9/R10/R11 approved CL2 illustrative discovery positions: no GPS-coordinate navigation,
 // no venue identity merges and no current Mass or ecclesial status inferred.
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
@@ -12,6 +12,7 @@ import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R7} from "../src/find/cl2-illustrative-lo
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R8} from "../src/find/cl2-illustrative-locality-pins-r8.js";
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R9} from "../src/find/cl2-illustrative-locality-pins-r9.js";
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R10} from "../src/find/cl2-illustrative-locality-pins-r10.js";
+import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R11} from "../src/find/cl2-illustrative-locality-pins-r11.js";
 import {validateCL2PhysicalIndex,projectCL2PhysicalDirectory} from "../src/find/cl2-physical-directory.js";
 import {projectPreliminaryR49,projectPublishedProvisionalMassSites} from "../src/find/preliminary-directory-r49.js";
 import {renderTlmChurchProfile} from "../src/find/tlm-church-profile.js";
@@ -351,7 +352,7 @@ assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS_R9["RG-4D32CE07E424"].searchAddress.in
 assert.ok(CL2_ILLUSTRATIVE_LOCALITY_PINS_R9["RG-7F9BB8497D93"].searchAddress.includes("Posada 121A"));
 assert.ok(CL2_ILLUSTRATIVE_LOCALITY_PINS_R9["RG-B610D55233B1"].searchAddress.includes("Koenji-Minami"));
 assert.ok(CL2_ILLUSTRATIVE_LOCALITY_PINS_R9["RG-BBD7BD44E860"].searchAddress.includes("Broughton Hall"));
-for(const hold of ["RG-D6F294379CEF","RG-AFAA6529F2CD","RG-FECDA1DB9A9E","RG-278C58AD5CAD","RG-3D31819B8E6B"]){
+for(const hold of ["RG-D6F294379CEF","RG-AFAA6529F2CD","RG-FECDA1DB9A9E","RG-3D31819B8E6B"]){
  assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS_R9[hold],"R9 cannot pin source alias hold "+hold);
  assert.ok(items.get(hold)&&!items.get(hold).map_publishable);
 }
@@ -415,6 +416,61 @@ assert.ok(CL2_ILLUSTRATIVE_LOCALITY_PINS_R10["RG-D8598963F6F1"].searchAddress.in
 for(const hold of ["RG-D6F294379CEF","RG-7A7B048E1F59","RG-1319CD21788A",
  "RG-B65-AC330F6E2481","RG-B68-BA20FDA13BAB","RG-2565E7B509ED"]){
  assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS_R10[hold],"R10 must protect source alias/multi-faith identity "+hold);
+ assert.ok(items.get(hold)&&!items.get(hold).map_publishable);
+}
+
+const r11=Object.entries(CL2_ILLUSTRATIVE_LOCALITY_PINS_R11);
+const expectedR11=new Set(["RG-278C58AD5CAD","RG-3FB2F55DB78A","RG-4285190BD8AE",
+ "RG-562C27FA24C2","RG-7C8BB6333C7F","RG-AADE0DB1F592",
+ "RG-C19C55301A0B","RG-DE8F28D8A0EC"]);
+assert.equal(r11.length,8,"R11 requires exactly eight original Excel GEO-only approvals");
+assert.deepEqual(new Set(r11.map(([anchor])=>anchor)),expectedR11);
+for(const [anchor,pin] of r11){
+ const frozen=origins.get(anchor),site=items.get(anchor);
+ assert.ok(frozen&&site,"R11 original CL2 identity required "+anchor);
+ for(const prev of [CL2_ILLUSTRATIVE_LOCALITY_PINS,CL2_ILLUSTRATIVE_LOCALITY_PINS_R2,
+  CL2_ILLUSTRATIVE_LOCALITY_PINS_R3,CL2_ILLUSTRATIVE_LOCALITY_PINS_R4,
+  CL2_ILLUSTRATIVE_LOCALITY_PINS_R5,CL2_ILLUSTRATIVE_LOCALITY_PINS_R6,
+  CL2_ILLUSTRATIVE_LOCALITY_PINS_R7,CL2_ILLUSTRATIVE_LOCALITY_PINS_R8,
+  CL2_ILLUSTRATIVE_LOCALITY_PINS_R9,CL2_ILLUSTRATIVE_LOCALITY_PINS_R10])
+  assert.ok(!prev[anchor],"R11 must not shadow previous pin "+anchor);
+ assert.ok(frozen[1].includes(pin.sourceId)&&pin.name===frozen[2]&&pin.country===frozen[3]);
+ assert.ok(String(frozen[4]).includes(pin.addressNeedle));
+ assert.ok(Number.isFinite(pin.lat)&&Math.abs(pin.lat)<=90&&Number.isFinite(pin.lng)&&Math.abs(pin.lng)<=180);
+ assert.equal(pin.sourceRef,"independent:r11-illustrative-"+anchor.replaceAll("-","").toLowerCase());
+ assert.equal(pin.precision,"locality");
+ assert.equal(pin.reviewScope,"ILLUSTRATIVE_LOCALITY_POINT_NOT_WORSHIP_BUILDING_NOT_ENTRANCE");
+ assert.ok(pin.sourceUrl.startsWith("https://")&&pin.evidence.length>=3&&pin.evidence.every(u=>u.startsWith("https://")));
+ assert.ok(pin.searchAddress?.length>18&&pin.correctedAddress?.length>18);
+ assert.ok(site.map_publishable&&site.map_state==="PROVISIONAL"&&site.geo?.approximate);
+ assert.equal(site.geo.lat,pin.lat);assert.equal(site.geo.lng,pin.lng);assert.equal(site.geo.precision,"locality");
+ assert.match(site.status,/MASS UNVERIFIED/);assert.equal(site.affiliation_scope,"SOURCE_LABEL_ONLY");
+ assert.equal(site.sections.length,0);assert.equal(site.celebration_evidence,undefined);assert.equal(site.actions.length,1);
+ assert.equal(site.actions[0].label,"Search location");
+ const url=new URL(site.actions[0].url);
+ assert.equal(url.hostname,"www.google.com");assert.equal(url.pathname,"/maps/search/");
+ const q=url.searchParams.get("query");
+ assert.ok(q.includes(pin.name)&&q.includes(pin.searchAddress),"R11 original name and corrected locality in external search");
+ assert.ok(!site.actions[0].url.includes("/maps/dir/"));
+ assert.ok(!site.actions[0].url.includes(String(pin.lat)+","+String(pin.lng)),
+  "R11 approximate coordinates cannot be GPS routing destinations");
+}
+assert.ok(CL2_ILLUSTRATIVE_LOCALITY_PINS_R11["RG-278C58AD5CAD"].searchAddress.includes("Klostermannovo"));
+assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS_R11["RG-3D31819B8E6B"],
+ "Alternate Železná Ruda CL2 source is held as alias; only one physical church");
+assert.ok(!items.get("RG-3D31819B8E6B").map_publishable,"Second Železná Ruda source cannot get duplicate pin");
+assert.ok(CL2_ILLUSTRATIVE_LOCALITY_PINS_R11["RG-4285190BD8AE"].searchAddress.includes("Cuenca"));
+assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS_R11["RG-4285190BD8AE"].searchAddress.includes("Priego"));
+assert.ok(CL2_ILLUSTRATIVE_LOCALITY_PINS_R11["RG-562C27FA24C2"].searchAddress.includes("Almería"));
+assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS_R11["RG-562C27FA24C2"].searchAddress.includes("Madrid"));
+assert.ok(CL2_ILLUSTRATIVE_LOCALITY_PINS_R11["RG-7C8BB6333C7F"].searchAddress.includes("Sevilla"));
+assert.ok(CL2_ILLUSTRATIVE_LOCALITY_PINS_R11["RG-AADE0DB1F592"].searchAddress.includes("Massenet 43"));
+assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS_R11["RG-AADE0DB1F592"].searchAddress.includes("41.44696"));
+assert.ok(CL2_ILLUSTRATIVE_LOCALITY_PINS_R11["RG-C19C55301A0B"].searchAddress.includes("Pamplona"));
+assert.ok(CL2_ILLUSTRATIVE_LOCALITY_PINS_R11["RG-DE8F28D8A0EC"].searchAddress.includes("Tenerife"));
+for(const hold of ["RG-D6F294379CEF","RG-3D31819B8E6B","RG-FECDA1DB9A9E",
+ "RG-B65-AC330F6E2481","RG-B68-BA20FDA13BAB","RG-2565E7B509ED"]){
+ assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS_R11[hold],"R11 protect aliases/conflicting source "+hold);
  assert.ok(items.get(hold)&&!items.get(hold).map_publishable);
 }
 const dy=items.get("RG-CF40DBEAD235"),jp=items.get("RG-40C164A0B0B7");
@@ -483,6 +539,12 @@ for(const r of withheld){
    assert.ok(item?.map_publishable&&item.geo?.approximate);
    assert.equal(item.geo.lat,pin.lat);assert.equal(item.geo.lng,pin.lng);
    assert.ok(pin.sourceUrl.startsWith("https://"));
+ }else if(CL2_ILLUSTRATIVE_LOCALITY_PINS_R11[r.cl2_anchor]){
+   assert.equal(r.status,"NO_SAFE_LOCALITY_CANDIDATE","R11 cannot override R1 identity hold");
+   const pin=CL2_ILLUSTRATIVE_LOCALITY_PINS_R11[r.cl2_anchor];
+   assert.ok(item?.map_publishable&&item.geo?.approximate);
+   assert.equal(item.geo.lat,pin.lat);assert.equal(item.geo.lng,pin.lng);
+   assert.ok(pin.sourceUrl.startsWith("https://"));
  }else if(laterPreciseSiteIds.has(r.cl2_anchor)){
   assert.ok(item?.map_publishable&&item.geo?.precision==="site","Excel precise site must use independently sourced site point: "+r.cl2_anchor);
   assert.ok(item.geo.source_ref&&!item.geo.source_ref.startsWith("geonames"),"Precise point may not use city-centre evidence: "+r.cl2_anchor);
@@ -504,11 +566,11 @@ assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS["RG-2C84B50B3667"],"Bootle closed-site
 assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS["RG-0DCEDA190517"],"Reading church identity hold");
 assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS["RG-B65-77C86C7B3EC4"],"Cagliari Santa Croce potential alias already mapped");
 assert.equal(world.length,2582);
-assert.equal(world.filter(x=>x.map_publishable).length,2538);
-assert.equal(world.filter(x=>!x.map_publishable).length,44);
+assert.equal(world.filter(x=>x.map_publishable).length,2546);
+assert.equal(world.filter(x=>!x.map_publishable).length,36);
 const first=items.get(pins[0][0]);
 assert.match(renderTlmChurchProfile(first,"en"),/Illustrative town marker ONLY/);
 assert.match(renderTlmChurchProfile(first,"en"),/Find church by name\/address on Google Maps/);
 assert.match(renderTlmChurchProfile(first,"fr"),/Repère indicatif de la commune UNIQUEMENT/);
 assert.match(renderTlmChurchProfile(first,"fr"),/Rechercher l’église par nom\/adresse sur Google Maps/);
-console.log("PASS CL2 illustrative localities: 158 R1 plus 93 R2 plus 91 R3 plus 8 R4 plus 4 R5 plus 6 R6 Excel-approved, 4 R7 and 8 R8 and 4 R9 and 6 R10 Excel-approved, 44 held/address-only; GPS routing blocked; frozen 2,582 identities and CL27 scope preserved");
+console.log("PASS CL2 illustrative localities: 158 R1 plus 93 R2 plus 91 R3 plus 8 R4 plus 4 R5 plus 6 R6 Excel-approved, 4 R7 and 8 R8 and 4 R9 and 6 R10 and 8 R11 Excel-approved, 36 held/address-only; GPS routing blocked; frozen 2,582 identities and CL27 scope preserved");
