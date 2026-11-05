@@ -73,6 +73,32 @@ try{
     assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null})),true);
     await page.locator("#aoPray435930.open [data-ao-pray-pilot-mosaic]").waitFor({timeout:15000});
    };
+   // Production search is an alternate entry, not a second category
+   // inventory. Check exact source ownership before the 41 real tap journeys.
+   await hub();
+   const searchRoot="#aoPray435930.open [data-ao-pray-pilot-results]";
+   const rosarySearch=page.locator(searchRoot+' [data-p435930-own="pray.rosary"]');
+   const rosaryMethodSearch=page.locator(searchRoot+' [data-p435930-own="pray.rosary_methods"]');
+   const saintsSearch=page.locator(searchRoot+' [data-p435930-own="pray.litany_saints"]');
+   const loretoOld=page.locator(searchRoot+' [data-p435930-pilot-prayer="litany_loreto_1962"]');
+   const loretoCurrent=page.locator(searchRoot+' [data-p435930-pilot-prayer="litany_loreto_current"]');
+   for(const [entry,expectedDoor] of [
+    [rosarySearch,"chaplets"],[rosaryMethodSearch,"search"],
+    [saintsSearch,"saints"],[loretoOld,"marian"],[loretoCurrent,"library"]
+   ]){
+    assert.equal(await entry.count(),1,"Prayer search lost or duplicated a source-owned entry");
+    assert.equal(await entry.getAttribute("data-pilot-primary-door"),expectedDoor,
+     "Prayer search owner drifted to the retired category catalog");
+   }
+   assert.equal(await rosaryMethodSearch.getAttribute("data-pilot-search-only"),"true",
+    "Rosary methods must remain searchable without a duplicate shelf");
+   const query=page.locator("#aoPray435930.open [data-p435930-pilot-search]");
+   await query.fill(language==="fr"?"Rosaire":"Rosary");
+   assert.ok(await rosarySearch.isVisible(),
+    "Original Rosary route is not discoverable by its EN/FR search name");
+   assert.ok(await rosaryMethodSearch.isVisible(),
+    "Original Rosary methods are no longer searchable");
+   await hub(); // clear the query before the canonical shelf navigation matrix
    // Place the Rosary last: it correctly closes the Prayer sheet and transfers
    // control to the ORIGINAL Lab Ora player, not another Prayer card engine.
    for(const row of routes.filter(x=>x.id!=="pray.rosary").concat(routes.filter(x=>x.id==="pray.rosary"))){
