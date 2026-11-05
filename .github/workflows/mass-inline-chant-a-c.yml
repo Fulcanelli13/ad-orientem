@@ -5,6 +5,8 @@ on:
   pull_request:
     paths:
       - 'src/mass/reader-inline-chant.js'
+      - 'src/mass/reader-inline-proper-reference.js'
+      - 'tests/reader-inline-proper-july07-phone.mjs'
       - 'src/mass/reader-inline-chant-selector.js'
       - 'src/mass/reader-inline-chant-bulk-review.js'
       - 'tests/reader-inline-chant-generic-source.mjs'
@@ -32,6 +34,8 @@ jobs:
       - name: Parse source, preserve source-first reader imports
         run: |
           node --check src/mass/reader-inline-chant.js
+          node --check src/mass/reader-inline-proper-reference.js
+          node --check tests/reader-inline-proper-july07-phone.mjs
           node --check src/mass/reader-inline-chant-selector.js
           node --check src/mass/reader-inline-chant-bulk-review.js
           node --check src/mass/reader-dom.js
@@ -44,4 +48,6 @@ jobs:
         run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
       - name: Verify 390 and 320 px visible score, independent text toggle and Low Mass fallback
-        run: node tests/reader-inline-chant-a-c-phone.mjs
+        run: |
+          node tests/reader-inline-chant-a-c-phone.mjs
+          node tests/reader-inline-proper-july07-phone.mjs
