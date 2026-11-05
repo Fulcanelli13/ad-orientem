@@ -29,7 +29,9 @@ const groupFromId=(id,slot)=>{
 export function resolveOrationAmenSourceHandoff({
  paragraph=null,paragraphs=[],form=null,resolvedMass=null
 }={}){
- if(!SUNG.has(String(form??"").toUpperCase()))return status("NOT_SUNG_MASS");
+ if(!SUNG.has(String(form??"").toUpperCase())||
+    (resolvedMass?.form&&String(resolvedMass.form).toUpperCase()!==String(form).toUpperCase()))
+  return status("NOT_SUNG_MASS");
  if(!paragraph||!Array.isArray(paragraphs))return status("NO_READER_PARAGRAPHS");
  const fixed=SPECS.find(spec=>paragraph.id===spec.cue);
  const intermediate=/^R17\.ORATION\.(COLLECT|POSTCOMMUNION)\.G([1-9]\d*)\.AMEN$/
@@ -40,9 +42,8 @@ export function resolveOrationAmenSourceHandoff({
     !latinColumns(paragraph).some(t=>normalize(t)==="amen")||
     paragraph.speakerRole!=="RESPONDERS")
   return status("NOT_PUBLIC_ORATION_AMEN");
- if(fixed&&(!Array.isArray(paragraph.sourceCueIds)||
-    paragraph.sourceCueIds.length!==1||
-    paragraph.sourceCueIds[0]!==spec.cue))
+ if(fixed&&Array.isArray(paragraph.sourceCueIds)&&
+    (paragraph.sourceCueIds.length!==1||paragraph.sourceCueIds[0]!==spec.cue))
   return status("WRONG_FIXED_AMEN_SOURCE_CUE");
  if(intermediate&&paragraph.sourceAnchorCueId!==spec.anchor)
   return status("WRONG_INTERMEDIATE_AMEN_SOURCE_ANCHOR");
@@ -53,6 +54,8 @@ export function resolveOrationAmenSourceHandoff({
  const prior=index>0?paragraphs[index-1]:null;
  if(prior?.kind!=="TEXT"||prior.speakerRole!=="PRIEST")
   return status("IMMEDIATE_PRECEDING_ORATION_REQUIRED");
+ if(resolvedMass?.distinctRite&&resolvedMass.distinctRite!=="NONE")
+  return status("NO_MASS_ORATION_DURING_DISTINCT_RITE");
  const proper=resolvedMass?.proper;
  const selected=proper?.data;
  const selectedPath=String(selected?.sourcePath??proper?.sourcePath??"");
