@@ -81,7 +81,7 @@ def validate_jpeg_stream(raw,decoder_format):
     Pillow as MPO, despite Commons advertising MIME image/jpeg. Treat only
     that JPEG-based decoder family as valid; reject PNG/WebP/unknown data.
     """
-    if len(raw)<4 or not raw.startswith(b"\\xff\\xd8\\xff"):
+    if len(raw)<4 or not raw.startswith(b"\xff\xd8\xff"):
         raise ValueError("JPEG_CONTAINER_MAGIC_MISMATCH")
     if decoder_format not in ("JPEG","MPO"):
         raise ValueError("JPEG_DECODER_FORMAT_MISMATCH:"+str(decoder_format))
