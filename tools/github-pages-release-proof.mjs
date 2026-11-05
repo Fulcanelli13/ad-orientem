@@ -13,6 +13,10 @@ const FIXED_CRITICAL_PATHS=[
  "Ad-Orientem-v43.19.webmanifest",
  "data/geography/seed-registry.v1.json",
  "data/geography/approved-place-media.v1.json",
+ // Published, source-owned Prayer modules must match the same release as the shell.
+ "src/pray/novena-runtime.js",
+ "src/pray/prayer-design-pilot.js",
+ "src/pray/presentation-runtime.js",
 ];
 
 export function releaseCommitSha(value){
