@@ -13,9 +13,10 @@ assert.equal(gates.input_export_sha256,lock.source_export_sha256);
 assert.equal(gates.rows.length,19);
 assert.equal(new Set(gates.rows.map(x=>x.place_id)).size,19);
 assert.equal(qa.rows.length,19);
-assert.equal(covers.items.length,379);
+assert.equal(covers.items.length,380,"Only the exact Lichen source admitted from the 19 frozen selections");
 assert.equal(gallery.items.length,42);
-assert.equal(gates.publication_state,"NO_PHOTO_CLEARANCE_OR_RELEASE_AUTHORIZED");
+assert.equal(gates.publication_state,"ONE_DOCUMENTED_RELEASE_CANDIDATE_LICHEN_18_PENDING_20261105");
+assert.equal(gates.rows.filter(x=>x.publication_authorized===true).length,1);
 const lockById=new Map(lock.decisions.map(x=>[x.place_id,x]));
 const sourceById=new Map(qa.rows.map(x=>[x.place_id,x]));
 const spec={
@@ -40,11 +41,21 @@ for(const row of gates.rows){
  assert.equal(row.special_issue_accepted,false);
  if(row.place_id==="place:DE:bettbrunn-st-salvator")assert.equal(row.near_image_attribution_verified,false);
  if(row.place_id==="place:DE:basilika-st-clemens-hannover")assert.equal(row.original_photographer_and_editor_credit_verified,false);
- assert.equal(row.publication_authorized,false);
- assert.equal(row.evidence_url,null);
- assert.equal(row.source_revision_id,null);
- assert.equal(row.license_current_url,null);
- for(const k of required)assert.equal(row[k],false,"Release gate cannot preauthorize "+k);
+ if(row.place_id==="place:PL:lichen-marian-basilica"){
+   assert.equal(row.original_sha1,"8b0763b7f61a150002a67fb922ee73313ff866f4");
+   assert.equal(row.publication_authorized,true);
+   assert.equal(row.license_current_url,"https://creativecommons.org/licenses/by-sa/3.0");
+   assert.equal(row.source_revision_id,"1166539084");
+   assert.ok(row.evidence_url.startsWith("https://commons.wikimedia.org/"));
+   assert.ok(row.rights_evidence_notes.includes("Polish Copyright Act art. 33(1)"));
+   for(const k of required)assert.equal(row[k],true,"Lichen-only evidence and release gate: "+k);
+ }else{
+   assert.equal(row.publication_authorized,false);
+   assert.equal(row.evidence_url,null);
+   assert.equal(row.source_revision_id,null);
+   assert.equal(row.license_current_url,null);
+   for(const k of required)assert.equal(row[k],false,"Other 18 source approvals remain frozen: "+k);
+ }
 }
 assert.deepEqual(lock.held_places.map(x=>x.place_id),["place:DE:aachener-dom-four-textiles"]);
 assert.equal(lock.unreviewed_places.length,3);
@@ -62,4 +73,11 @@ assert.ok(source.includes("REVIEW_STAGING_MUST_BE_OUTSIDE_PUBLIC_REPOSITORY"));
 assert.ok(source.includes("PUBLIC_ASSET_PATH_OR_PLACE_COLLISION"));
 assert.ok(source.includes('temp.replace(MEDIA)'),"Canonical media registry is written only after validated binary assets");
 assert.ok(source.includes('if args.apply:'),"No default app media mutation");
-console.log("R29 PASS: 19 exact owner originals, 19 fail-closed rights reviews, four specific risk holds, no original bytes, no network, zero automatic media release.");
+const released=covers.items.filter(x=>x.source_place_ref==="R28_OWNER_EXACT_ORIGINAL_20261104");
+assert.equal(released.length,1);
+assert.equal(released[0].place_id,"place:PL:lichen-marian-basilica");
+assert.equal(released[0].source_sha1,"8b0763b7f61a150002a67fb922ee73313ff866f4");
+assert.equal(released[0].license,"CC-BY-SA-3.0");
+assert.equal(released[0].credit,"Bialo-zielony");
+assert.ok(released[0].asset_path.startsWith("assets/approved/place-media/pf-"));
+console.log("R29 PASS: one exact SHA-1 Lichen approved cover and 18 frozen unapproved selections; no network in importer.");
