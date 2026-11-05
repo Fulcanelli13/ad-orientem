@@ -205,7 +205,9 @@ try{
     if(!languages.fr)assert.equal(vernacularLanguage,"en",
      id+" rendered an unattested French translation");
 
-    await reader.locator("[data-p435930-lib-back]").click();
+    assert.equal(await reader.locator("[data-p435930-lib-back]").count(),0,
+     id+" duplicates the header Back");
+    await page.locator("#aoPray435930.open [data-p435930-back]").click();
     assert.equal(await reader.count(),0,id+" did not leave the original canonical card");
     report.variants.push({id,width,ui,reader:owner,sourceLanguage:vernacularLanguage,
      originalLatin:languages.la,vernacularSegments:vernUnits,latinSegments:latinUnits,
