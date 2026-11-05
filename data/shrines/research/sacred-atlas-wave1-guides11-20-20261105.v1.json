@@ -1,0 +1,700 @@
+{
+  "schema": "AO_SACRED_ATLAS_W1_11_TO_20_BILINGUAL_EXTENDED_DRAFTS_V1",
+  "as_of": "2026-11-05",
+  "based_on": "data/geography/research/sacred-atlas-editorial-master-530-20261104.v1.json",
+  "scope": "Wave 1 entries 11–20. Ten distinctive EN/FR three-section guides; research stage only.",
+  "counts": {
+    "drafts": 10,
+    "english_paragraphs": 30,
+    "french_paragraphs": 30,
+    "publication_additions": 0
+  },
+  "source_corrections": [
+    {
+      "place_id": "place:IT:saint-paul-outside-walls-rome",
+      "old_url": "https://press.vatican.va/various/basiliche/san_paolo/fr/basilica/tomba.htm",
+      "problem": "SOURCE_PAGE_HTTP_404",
+      "replacement_url": "https://www.vatican.va/various/basiliche/san_paolo/en/basilica/tomba.htm"
+    },
+    {
+      "place_id": "place:FR:basilique-sainte-marie-madeleine-vezelay",
+      "old_url": "https://www.basiliquedevezelay.org/samedi-saint/",
+      "problem": "LIVE_PAGE_IS_HOLY_SATURDAY_MEDITATION_NOT_HISTORICAL_RELIC_EVIDENCE",
+      "replacement_url": "https://www.basiliquedevezelay.org/marie-madeleine/"
+    }
+  ],
+  "policy": [
+    "Drafts are not verified biographies or production guides. A separate second editor must review every paragraph and chronology.",
+    "Relic custody is not automatic authentication. Shrine, convent, monastery and associated stops retain exact site identity.",
+    "Do not infer current mass times, Roman 1962 rite, site opening, or certified walking routes from historical sources.",
+    "Keep all existing media and publication counts unchanged."
+  ],
+  "guides": [
+    {
+      "place_id": "place:FR:basilique-visitation-annecy",
+      "place_name": "Basilique de la Visitation, Annecy",
+      "country_code": "FR",
+      "shrine_id": "shrine:FR:basilique-visitation-annecy",
+      "draft_order": 11,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "The Visitation founders, their relics and the basilica consecrated in 1949.",
+      "subtitle_fr": "Les fondateurs de la Visitation, leurs reliques et la basilique consacrée en 1949.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "sections": [
+        {
+          "id": "foundation",
+          "title_en": "The two Visitation founders",
+          "title_fr": "Les deux fondateurs de la Visitation",
+          "paragraphs": [
+            {
+              "en": "Annecy occupies a distinctive place in the history of Saint Francis de Sales and Saint Jane Frances de Chantal. They founded the Order of the Visitation here on 6 June 1610, joining a spirituality of gentleness and charity with a form of community life. The basilica is therefore a memorial of an actual religious foundation, not simply a church dedicated to two saints.",
+              "fr": "Annecy occupe une place particulière dans l’histoire de saint François de Sales et de sainte Jeanne-Françoise de Chantal. Ils y fondèrent l’Ordre de la Visitation le 6 juin 1610, unissant une spiritualité de douceur et de charité à la vie communautaire. La basilique est donc le mémorial d’une véritable fondation religieuse, et non seulement une église dédiée à deux saints.",
+              "source_url": "https://visitationannecy.org/la-basilique-dannecy/"
+            }
+          ]
+        },
+        {
+          "id": "construction",
+          "title_en": "The twentieth-century basilica",
+          "title_fr": "La construction de la basilique",
+          "paragraphs": [
+            {
+              "en": "The first stone of the present Visitation basilica was blessed on 7 May 1922. Cardinal Tedeschini consecrated the church on 2 July 1949, and the basilican title followed on 26 August 1951. Those dates distinguish the modern sacred building from the seventeenth-century origins of the Visitation community. The architecture makes a later act of thanksgiving visible on the Annecy hillside.",
+              "fr": "La première pierre de l’actuelle basilique de la Visitation fut bénite le 7 mai 1922. Le cardinal Tedeschini consacra l’église le 2 juillet 1949 ; le titre de basilique suivit le 26 août 1951. Ces dates distinguent l’édifice moderne des origines de la communauté, au XVIIe siècle. L’architecture donne une forme visible à une action de grâce ultérieure sur les hauteurs d’Annecy.",
+              "source_url": "https://visitationannecy.org/la-basilique-dannecy/"
+            }
+          ]
+        },
+        {
+          "id": "relics",
+          "title_en": "Relics and pilgrimage prayer",
+          "title_fr": "Reliques et prière des pèlerins",
+          "paragraphs": [
+            {
+              "en": "The Visitation sisters identify the relics of both founders as objects of veneration in the basilica, shown in separate reliquaries. Pilgrims come to pray in the tradition of these two saints, while the monastery remains a living religious community. Organized pilgrimage groups are invited to arrange visits with the sisters; published opening times should not be treated as a permanent guarantee of access.",
+              "fr": "Les visitandines présentent les reliques des deux fondateurs, vénérées dans la basilique et conservées dans des châsses distinctes. Les pèlerins viennent prier dans la tradition de ces deux saints, tandis que le monastère demeure une communauté religieuse vivante. Les groupes sont invités à organiser leur venue auprès des sœurs ; les horaires affichés ne constituent pas une garantie permanente d’accès.",
+              "source_url": "https://visitationannecy.org/la-basilique-dannecy/"
+            }
+          ]
+        }
+      ],
+      "existing_relic_ids": [
+        "relic:FR:basilique-visitation-annecy"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:FR:basilique-visitation-annecy:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Francis de Sales",
+        "Saint Jane Frances de Chantal"
+      ],
+      "bibliography_urls": [
+        "https://visitationannecy.org/la-basilique-dannecy/"
+      ],
+      "source_evidence_scope": "PRIMARY_CUSTODIAN_AND_HERITAGE_PAGES_INSPECTED_2026_11_05",
+      "next_gate": "SECOND_EDITOR_SUBSTANTIVE_EVIDENCE_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:FR:espace-bernadette-nevers",
+      "place_name": "Sanctuaire Sainte Bernadette Soubirous — Nevers",
+      "country_code": "FR",
+      "shrine_id": "shrine:20261009:FR:espace-bernadette-nevers",
+      "draft_order": 12,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "The religious life of Bernadette after Lourdes, her body and the Nevers pilgrimage.",
+      "subtitle_fr": "La vie religieuse de Bernadette après Lourdes, sa dépouille et le pèlerinage de Nevers.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "sections": [
+        {
+          "id": "nevers",
+          "title_en": "From Lourdes to religious life",
+          "title_fr": "De Lourdes à la vie religieuse",
+          "paragraphs": [
+            {
+              "en": "The sanctuary at Nevers is not a second Lourdes grotto. It recalls the years Bernadette Soubirous spent as a Sister of Charity at Saint-Gildard after the Lourdes apparitions, including her life of community, service and prayer. Reading her experience here gives the visitor a fuller picture of her vocation beyond the earlier apparition accounts.",
+              "fr": "Le sanctuaire de Nevers n’est pas une seconde grotte de Lourdes. Il rappelle les années vécues par Bernadette Soubirous comme sœur de la Charité à Saint-Gildard après les apparitions, dans la vie communautaire, le service et la prière. La découverte de cette période permet de comprendre sa vocation au-delà des récits des premières apparitions.",
+              "source_url": "https://www.sainte-bernadette-soubirous-nevers.com/fr/pages/lhistoire-de-saint-gildard/"
+            }
+          ]
+        },
+        {
+          "id": "body",
+          "title_en": "The body of Saint Bernadette",
+          "title_fr": "La dépouille de sainte Bernadette",
+          "paragraphs": [
+            {
+              "en": "Pilgrims pray before the body of Saint Bernadette kept in the shrine chapel at Nevers. The sanctuary itself records the history of its examinations and of the reliquary presentation; these ecclesiastical and historical records should be described precisely rather than used as a pretext for independent scientific claims. The physical site remains the specific Saint-Gildard shrine in Nevers.",
+              "fr": "Les pèlerins prient devant la dépouille de sainte Bernadette conservée dans la chapelle du sanctuaire à Nevers. Le sanctuaire retrace les examens pratiqués et la présentation de la châsse ; ces données religieuses et historiques doivent être exposées avec précision, sans en déduire des affirmations scientifiques indépendantes. Le lieu concerné est bien le sanctuaire de Saint-Gildard à Nevers.",
+              "source_url": "https://www.sainte-bernadette-soubirous-nevers.com/fr/pages/sainte-bernadette/son-corps/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "An individual pilgrimage",
+          "title_fr": "Un pèlerinage individuel",
+          "paragraphs": [
+            {
+              "en": "The Nevers sanctuary offers more than a brief stop at a reliquary. Its individual-pilgrim programme proposes a film using the sisters' archives, visits and times of prayer that can be adapted to the length of a stay. Staff, volunteers, priests and the Sisters of Charity welcome visitors. Current Mass, confession and lodging arrangements require consultation with the sanctuary.",
+              "fr": "Le sanctuaire de Nevers offre plus qu’un simple arrêt devant une châsse. Son programme de pèlerinage individuel propose un film fondé sur les archives des sœurs, des visites et des temps de prière modulables selon la durée du séjour. Salariés, bénévoles, prêtres et sœurs de la Charité accueillent les visiteurs. Les modalités de messe, confession et hébergement doivent être vérifiées auprès du sanctuaire.",
+              "source_url": "https://www.sainte-bernadette-soubirous-nevers.com/fr/pages/pelerinage/pelerinage-individuel/"
+            }
+          ]
+        }
+      ],
+      "existing_relic_ids": [
+        "relic:FR:bernadette-nevers"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:FR:espace-bernadette-nevers:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Bernadette Soubirous"
+      ],
+      "bibliography_urls": [
+        "https://www.sainte-bernadette-soubirous-nevers.com/fr/pages/pelerinage/pelerinage-individuel/",
+        "https://www.sainte-bernadette-soubirous-nevers.com/fr/pages/lhistoire-de-saint-gildard/",
+        "https://www.sainte-bernadette-soubirous-nevers.com/fr/pages/sainte-bernadette/son-corps/"
+      ],
+      "source_evidence_scope": "PRIMARY_CUSTODIAN_AND_HERITAGE_PAGES_INSPECTED_2026_11_05",
+      "next_gate": "SECOND_EDITOR_SUBSTANTIVE_EVIDENCE_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:IT:saint-paul-outside-walls-rome",
+      "place_name": "Basilica Papale di San Paolo fuori le Mura",
+      "country_code": "IT",
+      "shrine_id": "shrine:20261009:IT:saint-paul-outside-walls-rome",
+      "draft_order": 13,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "The apostolic tomb, the rebuilt papal basilica and the traditional relic of Paul's chain.",
+      "subtitle_fr": "Le tombeau de l’Apôtre, la basilique papale reconstruite et la chaîne traditionnellement attribuée à Paul.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "sections": [
+        {
+          "id": "tomb",
+          "title_en": "Saint Paul's tomb on the Ostian Way",
+          "title_fr": "Le tombeau de Paul sur la voie d’Ostie",
+          "paragraphs": [
+            {
+              "en": "The papal basilica stands over a burial place venerated from the first Christian centuries as the tomb of Saint Paul. The Vatican's history describes a memorial above a grave beside the ancient Ostian Way, then the construction of Constantine's basilica. Below the present papal altar, the visitor can see the setting of the ancient sarcophagus and the inscribed marble slab honouring Paul the Apostle and martyr.",
+              "fr": "La basilique papale s’élève au-dessus d’une sépulture vénérée dès les premiers siècles chrétiens comme le tombeau de saint Paul. L’histoire publiée par le Vatican présente un mémorial sur la voie d’Ostie, puis l’édification d’une basilique sous Constantin. Sous l’autel papal actuel, on peut voir l’emplacement du sarcophage ancien et la dalle inscrite en l’honneur de Paul, apôtre et martyr.",
+              "source_url": "https://www.vatican.va/various/basiliche/san_paolo/en/basilica/tomba.htm"
+            }
+          ]
+        },
+        {
+          "id": "architecture",
+          "title_en": "A basilica rebuilt after fire",
+          "title_fr": "Une basilique reconstruite après l’incendie",
+          "paragraphs": [
+            {
+              "en": "The first Constantinian church was enlarged in the late fourth century into a great five-aisled basilica. The disaster of 15 July 1823 destroyed much of the ancient building; subsequent reconstruction retained the basilican form and incorporated surviving elements. This sequence helps distinguish the antique burial tradition from the fabric now seen in the immense nave and portico.",
+              "fr": "La première église constantinienne fut agrandie à la fin du IVe siècle pour devenir une vaste basilique à cinq nefs. L’incendie du 15 juillet 1823 détruisit une grande partie de l’édifice ancien ; la reconstruction conserva la forme basilicale et réemploya des éléments sauvés. Cette succession permet de distinguer la tradition funéraire antique de l’architecture visible aujourd’hui dans la grande nef et le portique.",
+              "source_url": "https://www.vatican.va/various/basiliche/san_paolo/en/basilica/storia.htm"
+            }
+          ]
+        },
+        {
+          "id": "chapel",
+          "title_en": "The chain and other sacred objects",
+          "title_fr": "La chaîne et les objets de dévotion",
+          "paragraphs": [
+            {
+              "en": "The basilica's Chapel of Relics displays a chain traditionally associated with Paul's imprisonment under Roman guard. The Vatican specifically presents that attribution as an ancient tradition, not as an independently established forensic identification. The basilica also preserves art and inscriptions related to its long Christian history. These are distinct heritage objects and should not be conflated with the tomb itself.",
+              "fr": "La chapelle des Reliques expose une chaîne traditionnellement associée à la captivité de Paul sous la garde d’un soldat romain. Le Vatican présente cette attribution comme une ancienne tradition, non comme une identification matérielle scientifiquement établie. La basilique conserve aussi des œuvres et des inscriptions liées à son histoire chrétienne : ces objets patrimoniaux sont distincts du tombeau.",
+              "source_url": "https://www.vatican.va/various/basiliche/san_paolo/en/basilica/esposizioni.htm"
+            }
+          ]
+        }
+      ],
+      "existing_relic_ids": [
+        "relic:IT:paul-tomb",
+        "relic:IT:paul-chains"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:IT:saint-paul-outside-walls-rome:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Paul the Apostle"
+      ],
+      "bibliography_urls": [
+        "https://press.vatican.va/various/basiliche/san_paolo/fr/basilica/tomba.htm",
+        "https://www.vatican.va/various/basiliche/san_paolo/en/basilica/tomba.htm",
+        "https://www.vatican.va/various/basiliche/san_paolo/en/basilica/storia.htm",
+        "https://www.vatican.va/various/basiliche/san_paolo/en/basilica/esposizioni.htm"
+      ],
+      "source_evidence_scope": "PRIMARY_CUSTODIAN_AND_HERITAGE_PAGES_INSPECTED_2026_11_05",
+      "next_gate": "SECOND_EDITOR_SUBSTANTIVE_EVIDENCE_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:IT:santa-maria-vallicella-rome",
+      "place_name": "Chiesa Nuova — Santa Maria in Vallicella, Rome",
+      "country_code": "IT",
+      "shrine_id": "shrine:IT:santa-maria-vallicella-rome",
+      "draft_order": 14,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "The Oratorians' Chiesa Nuova and the Roman memorials of Saint Philip Neri.",
+      "subtitle_fr": "La Chiesa Nuova des Oratoriens et les lieux de mémoire romains de saint Philippe Néri.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "sections": [
+        {
+          "id": "oratory",
+          "title_en": "The congregation and its church",
+          "title_fr": "La congrégation et son église",
+          "paragraphs": [
+            {
+              "en": "Santa Maria in Vallicella, widely called the Chiesa Nuova, became the principal church of the Congregation of the Oratory, canonically recognized by Gregory XIII in 1575. Philip Neri wanted a spacious and dignified church for the community. It replaced the older church assigned to the Oratorians, becoming a stable centre for their preaching, prayer and pastoral life in Rome.",
+              "fr": "Santa Maria in Vallicella, dite Chiesa Nuova, devint l’église principale de la Congrégation de l’Oratoire, reconnue canoniquement par Grégoire XIII en 1575. Philippe Néri souhaitait un édifice ample et digne pour sa communauté. Elle remplaça l’ancienne église confiée aux Oratoriens et devint un centre durable de prédication, de prière et de pastorale à Rome.",
+              "source_url": "https://www.oratoriosanfilippo.org/la-roma-filippina/"
+            }
+          ]
+        },
+        {
+          "id": "tomb",
+          "title_en": "Saint Philip's chapel and rooms",
+          "title_fr": "La chapelle et les chambres de saint Philippe",
+          "paragraphs": [
+            {
+              "en": "The Oratorians identify Philip Neri's body in the chapel to the left of the high altar. Nearby rooms connected with his life have been reconstructed after the originals were destroyed in a seventeenth-century fire; they retain devotional objects, paintings and relics connected to him. The rebuilt rooms are meaningful memorial spaces, but must not be presented as untouched sixteenth-century interiors.",
+              "fr": "Les Oratoriens situent le corps de Philippe Néri dans la chapelle à gauche du maître-autel. Des chambres liées à sa vie ont été reconstituées après la destruction des pièces d’origine par un incendie au XVIIe siècle ; elles conservent des objets, tableaux et reliques associés au saint. Ces lieux sont de véritables mémoriaux, mais non des intérieurs du XVIe siècle demeurés intacts.",
+              "source_url": "https://www.oratoriosanfilippo.org/la-roma-filippina/"
+            }
+          ]
+        },
+        {
+          "id": "rome",
+          "title_en": "A wider network of Philip's Rome",
+          "title_fr": "Dans la Rome de Philippe Néri",
+          "paragraphs": [
+            {
+              "en": "The Oratorian itinerary connects the Chiesa Nuova with other places of Philip's ministry, including San Girolamo della Carità, San Giovanni dei Fiorentini and the catacombs of Saint Sebastian. Those sites explain stages of his pastoral work, but each has its own physical identity. They should appear as related stops in the Atlas, never be collapsed into one location or implied to be chapels within the Chiesa Nuova.",
+              "fr": "L’itinéraire oratorien relie la Chiesa Nuova à d’autres lieux du ministère de Philippe, dont San Girolamo della Carità, San Giovanni dei Fiorentini et les catacombes de Saint-Sébastien. Chacun éclaire une étape de son apostolat, mais possède son identité géographique propre. Ces lieux doivent être proposés comme étapes associées, et non fusionnés ni présentés comme des chapelles de la Chiesa Nuova.",
+              "source_url": "https://www.oratoriosanfilippo.org/la-roma-filippina/"
+            }
+          ]
+        }
+      ],
+      "existing_relic_ids": [
+        "relic:IT:santa-maria-vallicella-rome"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:IT:santa-maria-vallicella-rome:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Philip Neri"
+      ],
+      "bibliography_urls": [
+        "https://www.oratoriosanfilippo.org/la-roma-filippina/"
+      ],
+      "source_evidence_scope": "PRIMARY_CUSTODIAN_AND_HERITAGE_PAGES_INSPECTED_2026_11_05",
+      "next_gate": "SECOND_EDITOR_SUBSTANTIVE_EVIDENCE_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:IT:santuario-san-pio-rotondo",
+      "place_name": "Santuario di San Pio da Pietrelcina, San Giovanni Rotondo",
+      "country_code": "IT",
+      "shrine_id": "shrine:20261009:IT:santuario-san-pio-rotondo",
+      "draft_order": 15,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "Padre Pio's friary, the church of Our Lady of Graces and the later pilgrimage church.",
+      "subtitle_fr": "Le couvent de Padre Pio, l’église Notre-Dame-des-Grâces et la nouvelle église de pèlerinage.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "sections": [
+        {
+          "id": "old-sanctuary",
+          "title_en": "Santa Maria delle Grazie",
+          "title_fr": "Santa Maria delle Grazie",
+          "paragraphs": [
+            {
+              "en": "At San Giovanni Rotondo, the older friary church of Santa Maria delle Grazie was closely associated with Padre Pio's celebration of Mass and his long ministry. Growing pilgrim numbers led to the construction of a larger sanctuary begun in 1956 and consecrated on 1 July 1959. The older friary and the new church need distinct labels within the same pilgrimage complex.",
+              "fr": "À San Giovanni Rotondo, l’ancienne église conventuelle Santa Maria delle Grazie fut étroitement liée aux messes de Padre Pio et à son long ministère. L’affluence des pèlerins conduisit à la construction d’un sanctuaire plus vaste, commencé en 1956 et consacré le 1er juillet 1959. L’ancien couvent et la nouvelle église doivent être distingués au sein du même ensemble de pèlerinage.",
+              "source_url": "https://www.conventosantuariopadrepio.it/it/il-santuario/il-santuario-di-santa-maria-delle-grazie.html"
+            }
+          ]
+        },
+        {
+          "id": "new-church",
+          "title_en": "The later Church of Saint Pio",
+          "title_fr": "La nouvelle église Saint-Pio",
+          "paragraphs": [
+            {
+              "en": "The Church of Saint Pio da Pietrelcina belongs to the later development of the Capuchin sanctuary. It provides a larger setting for pilgrim assemblies while the historic Santa Maria delle Grazie preserves the more immediate locations of Padre Pio's ministry. The shrine's official presentation distinguishes both churches; neither should be mistaken for the older convent chapel or treated as a separate unrelated pilgrimage destination.",
+              "fr": "L’église Saint-Pio-de-Pietrelcina appartient au développement plus récent du sanctuaire capucin. Elle offre un espace plus vaste pour les assemblées, tandis que Santa Maria delle Grazie conserve les lieux les plus directement liés au ministère de Padre Pio. Le sanctuaire présente distinctement les deux églises : aucune ne doit être confondue avec la chapelle ancienne ni devenir un lieu fictivement indépendant.",
+              "source_url": "https://www.conventosantuariopadrepio.it/it/il-santuario/la-chiesa-di-san-pio-da-pietrelcina.html"
+            }
+          ]
+        },
+        {
+          "id": "veneration",
+          "title_en": "Veneration and visiting the shrine",
+          "title_fr": "Vénération et visite du sanctuaire",
+          "paragraphs": [
+            {
+              "en": "The sanctuary records pilgrim veneration of Padre Pio's remains, but an archived announcement about the end of a particular public exposition cannot determine present access to the body. Today's church routes, confessions, guided visits and liturgies belong to the shrine's current pilgrim office. The Atlas should link visitors to official arrangements rather than repeat a past event as if it were still in force.",
+              "fr": "Le sanctuaire décrit la vénération de la dépouille de Padre Pio, mais une annonce ancienne concernant la fin d’une ostension ne permet pas de connaître l’accès actuel au corps. Les parcours, confessions, visites et célébrations relèvent du bureau des pèlerinages. L’Atlas doit renvoyer à ces informations officielles plutôt que reprendre un événement passé comme s’il était toujours en vigueur.",
+              "source_url": "https://www.conventosantuariopadrepio.it/it/archivio/visita-a-san-pio.html"
+            }
+          ]
+        }
+      ],
+      "existing_relic_ids": [
+        "relic:IT:padre-pio-rotondo"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:IT:santuario-san-pio-rotondo:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Pio of Pietrelcina"
+      ],
+      "bibliography_urls": [
+        "https://www.conventosantuariopadrepio.it/it/archivio/visita-a-san-pio.html",
+        "https://www.conventosantuariopadrepio.it/it/il-santuario/il-santuario-di-santa-maria-delle-grazie.html",
+        "https://www.conventosantuariopadrepio.it/it/il-santuario/la-chiesa-di-san-pio-da-pietrelcina.html"
+      ],
+      "source_evidence_scope": "PRIMARY_CUSTODIAN_AND_HERITAGE_PAGES_INSPECTED_2026_11_05",
+      "next_gate": "SECOND_EDITOR_SUBSTANTIVE_EVIDENCE_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:LB:monastery-saint-maron-annaya",
+      "place_name": "Monastery of Saint Maron — Annaya",
+      "country_code": "LB",
+      "shrine_id": "shrine:LB:monastery-saint-maron-annaya",
+      "draft_order": 16,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "The Maronite monastery of Saint Maron, Saint Charbel's tomb church and his hermitage.",
+      "subtitle_fr": "Le monastère maronite Saint-Maron, l’église du tombeau de saint Charbel et son ermitage.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "sections": [
+        {
+          "id": "monastery",
+          "title_en": "A Maronite monastic site",
+          "title_fr": "Un lieu monastique maronite",
+          "paragraphs": [
+            {
+              "en": "The first section of the Saint Maron monastery at Annaya was completed in 1828, with its church finished in the years 1838–1841. The Lebanese Maronite Order enlarged the complex as pilgrimage to Saint Charbel grew, constructing a new church dedicated to him in 1974. The institution is an Eastern Catholic Maronite monastery, not a Latin-rite foundation presumed to use the Roman Missal of 1962.",
+              "fr": "Le premier ensemble du monastère Saint-Maron à Annaya fut achevé en 1828 et son église construite de 1838 à 1841. L’Ordre libanais maronite développa ensuite l’accueil des pèlerins de saint Charbel, notamment par une nouvelle église dédiée au saint en 1974. Il s’agit d’un monastère catholique oriental maronite, et non d’une fondation latine supposée suivre le missel romain de 1962.",
+              "source_url": "https://saintcharbel.com/monastery/"
+            }
+          ]
+        },
+        {
+          "id": "tomb",
+          "title_en": "The church of the tomb",
+          "title_fr": "L’église du tombeau",
+          "paragraphs": [
+            {
+              "en": "Within the monastery pilgrimage complex, a vaulted space has become the Church of the Sepulchre, where Saint Charbel's tomb is venerated. The monastery records the transfer of his body and the placing of its present cedar coffin in 1952. Reports surrounding the condition of the body belong to the shrine's devotional and medical history; the application does not certify miracles through its own interpretation.",
+              "fr": "Dans l’ensemble monastique, une salle voûtée est devenue l’église du Sépulcre, où le tombeau de saint Charbel est vénéré. Le monastère rappelle les translations de la dépouille et son installation dans un cercueil de cèdre en 1952. Les récits concernant son état relèvent de l’histoire dévotionnelle et médicale du sanctuaire ; l’application ne certifie aucun miracle par sa propre interprétation.",
+              "source_url": "https://saintcharbel.com/monastery/"
+            }
+          ]
+        },
+        {
+          "id": "hermitage",
+          "title_en": "The separate hermitage of Saints Peter and Paul",
+          "title_fr": "L’ermitage distinct des Saints-Pierre-et-Paul",
+          "paragraphs": [
+            {
+              "en": "The hermitage of Saints Peter and Paul is a distinct site associated with Charbel's life of solitude and prayer. The monastery dates his entry there to February 1875 and his death to December 1898. It belongs to the wider pilgrimage at Annaya, but its position and history should be presented as a separate visit within the same devotional landscape, not confused with the Tomb Church.",
+              "fr": "L’ermitage des Saints-Pierre-et-Paul est un lieu distinct lié à la solitude et à la prière de Charbel. Le monastère situe son entrée à l’ermitage en février 1875 et sa mort en décembre 1898. Il appartient au paysage du pèlerinage d’Annaya, mais possède une situation et une histoire propres : il ne faut pas le confondre avec l’église du Sépulcre.",
+              "source_url": "https://saintcharbel.com/the-hermitage/"
+            }
+          ]
+        }
+      ],
+      "existing_relic_ids": [
+        "relic:LB:monastery-saint-maron-annaya"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:LB:monastery-saint-maron-annaya:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Charbel Makhlouf"
+      ],
+      "bibliography_urls": [
+        "https://saintcharbel.com/",
+        "https://saintcharbel.com/monastery/",
+        "https://saintcharbel.com/the-hermitage/"
+      ],
+      "source_evidence_scope": "PRIMARY_CUSTODIAN_AND_HERITAGE_PAGES_INSPECTED_2026_11_05",
+      "next_gate": "SECOND_EDITOR_SUBSTANTIVE_EVIDENCE_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:VA:saint-peter-vatican",
+      "place_name": "St Peter's Basilica — Vatican",
+      "country_code": "VA",
+      "shrine_id": "shrine:20261009:VA:saint-peter-vatican",
+      "draft_order": 17,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "The tomb of Peter, the early memorial and the great basilica above it.",
+      "subtitle_fr": "Le tombeau de Pierre, le mémorial paléochrétien et la grande basilique qui le surmonte.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "sections": [
+        {
+          "id": "burial",
+          "title_en": "The apostle's traditional burial place",
+          "title_fr": "Le lieu traditionnel de sépulture de l’Apôtre",
+          "paragraphs": [
+            {
+              "en": "Saint Peter's Basilica stands above the burial area traditionally identified with the Apostle Peter. The basilica's own archaeological account places the grave on the Vatican hill near Nero's circus and describes the small memorial built there in the second century. This ancient locus of veneration is more specific than the whole Vatican City and must remain tied to the canonical basilica Place.",
+              "fr": "La basilique Saint-Pierre s’élève au-dessus d’un secteur funéraire traditionnellement identifié à la sépulture de l’apôtre Pierre. Le récit archéologique officiel situe la tombe sur la colline du Vatican, près du cirque de Néron, et décrit le petit mémorial construit au IIe siècle. Ce lieu ancien de vénération est plus précis que la Cité du Vatican dans son ensemble et doit rester lié à la basilique.",
+              "source_url": "https://www.basilicasanpietro.va/en/san-pietro/the-tomb-of-saint-peter"
+            }
+          ]
+        },
+        {
+          "id": "memory",
+          "title_en": "The early memorial and Christian witness",
+          "title_fr": "Le mémorial antique et le témoignage chrétien",
+          "paragraphs": [
+            {
+              "en": "The priest Gaius described the memorials of Peter and Paul near the end of the second century, a testimony transmitted by Eusebius. The Vatican presentation explains the so-called Trophy of Gaius and the pilgrim graffiti surrounding it. Archaeological excavation in the twentieth century clarified the sequence of ancient burial structures; it should not be simplified into a claim that every discovered fragment proves a named apostle's bodily identity.",
+              "fr": "Vers la fin du IIe siècle, le prêtre Gaïus évoqua les mémoriaux de Pierre et de Paul, témoignage transmis par Eusèbe. La présentation vaticane décrit le « trophée de Gaïus » et les graffiti de pèlerins qui l’entourent. Les fouilles du XXe siècle ont éclairé la succession des structures funéraires anciennes ; elles ne prouvent pas pour autant l’identité de chaque vestige osseux attribué à l’Apôtre.",
+              "source_url": "https://www.basilicasanpietro.va/en/san-pietro/the-tomb-of-saint-peter"
+            }
+          ]
+        },
+        {
+          "id": "basilica",
+          "title_en": "From Constantine to the present basilica",
+          "title_fr": "De Constantin à la basilique actuelle",
+          "paragraphs": [
+            {
+              "en": "Constantine's fourth-century basilica was raised over the long-venerated burial site, and the great Renaissance basilica later replaced the earlier church. The spatial continuity of altar and tomb is central to the site's Catholic significance: a visitor encounters a living papal church built around an ancient memorial. Access to excavations and particular liturgical ceremonies depends on current basilica arrangements, not on the historical description.",
+              "fr": "La basilique élevée sous Constantin au IVe siècle surmontait le lieu de sépulture vénéré depuis longtemps ; la grande basilique de la Renaissance remplaça ensuite l’église antique. La continuité du lieu entre autel et tombeau est essentielle à la signification catholique du site : le pèlerin découvre une église papale vivante autour d’un mémorial ancien. L’accès aux fouilles et aux cérémonies dépend des dispositions actuelles.",
+              "source_url": "https://www.basilicasanpietro.va/en/san-pietro/the-tomb-of-saint-peter"
+            }
+          ]
+        }
+      ],
+      "existing_relic_ids": [
+        "relic:VA:peter-tomb"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:VA:saint-peter-vatican:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Peter the Apostle"
+      ],
+      "bibliography_urls": [
+        "https://www.basilicasanpietro.va/en/san-pietro/the-tomb-of-saint-peter"
+      ],
+      "source_evidence_scope": "PRIMARY_CUSTODIAN_AND_HERITAGE_PAGES_INSPECTED_2026_11_05",
+      "next_gate": "SECOND_EDITOR_SUBSTANTIVE_EVIDENCE_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:FR:basilique-montfort-saint-laurent",
+      "place_name": "Basilique Saint-Louis-Marie-Grignion-de-Montfort",
+      "country_code": "FR",
+      "shrine_id": "shrine:20261009:FR:basilique-montfort-saint-laurent",
+      "draft_order": 18,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "The tombs of Montfort and Marie-Louise Trichet within a basilica built in stages.",
+      "subtitle_fr": "Les tombeaux de Montfort et de Marie-Louise Trichet dans une basilique construite par étapes.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "sections": [
+        {
+          "id": "tombs",
+          "title_en": "Two lives at Saint-Laurent-sur-Sèvre",
+          "title_fr": "Deux vies à Saint-Laurent-sur-Sèvre",
+          "paragraphs": [
+            {
+              "en": "The present basilica occupies the site of an older Saint Lawrence church that sheltered the tombs of Saint Louis-Marie Grignion de Montfort and Blessed Marie-Louise Trichet. Their presence makes it a site of Montfortian spiritual memory rather than simply a modern parish church. The two tomb traditions should retain separate saint identities even though they belong to the same basilica.",
+              "fr": "L’actuelle basilique occupe le site d’une ancienne église Saint-Laurent qui abritait les tombeaux de saint Louis-Marie Grignion de Montfort et de la bienheureuse Marie-Louise Trichet. Leur présence en fait un lieu de mémoire montfortaine, et non seulement une église paroissiale moderne. Les deux traditions funéraires doivent garder des identités distinctes tout en appartenant à la même basilique.",
+              "source_url": "https://www.basiliquemontfort.com/basilique-histoire-visite/"
+            }
+          ]
+        },
+        {
+          "id": "building",
+          "title_en": "Construction across generations",
+          "title_fr": "La construction sur plusieurs générations",
+          "paragraphs": [
+            {
+              "en": "Work on the crypt began in 1888 and the first stone was formally laid in 1889. The early phase, including the transept, apse and tower, was complete by 1892; construction resumed decades later and the nave was finished in 1949. The basilica was consecrated in 1963. These stages are important because the modern building was not erected in one campaign during Montfort's lifetime.",
+              "fr": "Les travaux de la crypte commencèrent en 1888 et la première pierre fut officiellement posée en 1889. La première phase, comprenant transept, abside et clocher, était achevée en 1892 ; les travaux reprirent des décennies plus tard et la nef fut terminée en 1949. La consécration eut lieu en 1963. L’édifice moderne ne fut donc pas construit d’un seul tenant du vivant de Montfort.",
+              "source_url": "https://www.basiliquemontfort.com/basilique-histoire-visite/"
+            }
+          ]
+        },
+        {
+          "id": "prayer",
+          "title_en": "Pilgrimage and practical access",
+          "title_fr": "Pèlerinage et accès pratique",
+          "paragraphs": [
+            {
+              "en": "The basilica combines veneration at the crypt with the prayer of a living Catholic community. Its site describes pilgrimage offerings and publishes practical visiting information separately from the historical account. The Atlas should show Montfort's tomb, Marie-Louise Trichet's memory and the basilica architecture without inventing fixed ceremonies or treating a historic devotion as an independently verified relic authentication.",
+              "fr": "La basilique associe la vénération à la crypte à la prière d’une communauté catholique vivante. Son site présente des possibilités de pèlerinage et distingue les renseignements pratiques du récit historique. L’Atlas doit montrer le tombeau de Montfort, la mémoire de Marie-Louise Trichet et l’architecture sans inventer des célébrations fixes ni assimiler une tradition de dévotion à une authentification indépendante des reliques.",
+              "source_url": "https://www.basiliquemontfort.com/infos-pratiques/"
+            }
+          ]
+        }
+      ],
+      "existing_relic_ids": [
+        "relic:FR:montfort-basilica",
+        "relic:FR:marie-louise-trichet"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:FR:basilique-montfort-saint-laurent:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Louis-Marie de Montfort",
+        "Blessed Marie-Louise Trichet"
+      ],
+      "bibliography_urls": [
+        "https://www.basiliquemontfort.com/infos-pratiques/",
+        "https://www.basiliquemontfort.com/basilique-histoire-visite/"
+      ],
+      "source_evidence_scope": "PRIMARY_CUSTODIAN_AND_HERITAGE_PAGES_INSPECTED_2026_11_05",
+      "next_gate": "SECOND_EDITOR_SUBSTANTIVE_EVIDENCE_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:FR:basilique-saint-denis",
+      "place_name": "Basilique cathédrale de Saint-Denis",
+      "country_code": "FR",
+      "shrine_id": "shrine:FR:basilique-saint-denis",
+      "draft_order": 19,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "The traditional tomb of Saint Denis, a Gothic abbey church and France's royal necropolis.",
+      "subtitle_fr": "Le tombeau traditionnel de saint Denis, l’abbatiale gothique et la nécropole royale française.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "sections": [
+        {
+          "id": "martyr",
+          "title_en": "Saint Denis and the early sanctuary",
+          "title_fr": "Saint Denis et le premier sanctuaire",
+          "paragraphs": [
+            {
+              "en": "The basilica stands at the site traditionally identified as the burial place of Saint Denis, martyr and early bishop of Paris. The municipality recalls a church built near his presumed tomb in the late fifth century at the initiative of Saint Genevieve. This is a history of Christian veneration of a traditionally identified grave; the precise martyrdom narrative remains distinct from archaeological proof.",
+              "fr": "La basilique se trouve sur le lieu traditionnellement identifié à la sépulture de saint Denis, martyr et ancien évêque de Paris. La commune rappelle la construction d’une église près de son tombeau présumé à la fin du Ve siècle, à l’initiative de sainte Geneviève. Il s’agit de l’histoire de la vénération d’un tombeau traditionnel, dont le récit du martyre demeure distinct de la preuve archéologique.",
+              "source_url": "https://www.saintdenis.fr/basilique-cathedrale"
+            }
+          ]
+        },
+        {
+          "id": "kings",
+          "title_en": "A royal and monastic necropolis",
+          "title_fr": "Une nécropole royale et monastique",
+          "paragraphs": [
+            {
+              "en": "Dagobert I enlarged the abbey church in the seventh century and chose burial there, helping establish Saint-Denis as a royal necropolis. Many later kings and queens of France were commemorated in its monuments. The site should therefore be read simultaneously as a shrine of a saint, a former abbey and a national historical monument, without treating royal tomb sculpture as relics of Saint Denis.",
+              "fr": "Dagobert Ier agrandit l’église abbatiale au VIIe siècle et choisit d’y être enterré, contribuant à faire de Saint-Denis une nécropole royale. Les monuments gardent la mémoire de nombreux souverains français. Le lieu doit donc être compris à la fois comme sanctuaire d’un saint, ancienne abbaye et monument historique national, sans confondre les gisants royaux avec les reliques de saint Denis.",
+              "source_url": "https://www.saintdenis.fr/basilique-cathedrale"
+            }
+          ]
+        },
+        {
+          "id": "gothic",
+          "title_en": "The emergence of Gothic architecture",
+          "title_fr": "L’essor de l’architecture gothique",
+          "paragraphs": [
+            {
+              "en": "The church is central to the development of Gothic architecture, including its choir, radiating chapels and sculptural programmes. The municipality's visitor presentation distinguishes crypt, ambulatory, nave, transept and stained glass. These are real parts of one historical basilica, not separate chapels that need new canonical map pins. Present access and restoration areas must be checked with the monument's visitor service.",
+              "fr": "L’église joue un rôle central dans le développement de l’architecture gothique, notamment par son chœur, ses chapelles rayonnantes et son programme sculpté. La présentation municipale distingue crypte, déambulatoire, nef, transept et vitraux. Ce sont des parties d’une même basilique historique, et non de nouveaux lieux à épingler séparément. Les accès et zones de travaux doivent être confirmés auprès du monument.",
+              "source_url": "https://www.saintdenis.fr/basilique-cathedrale"
+            }
+          ]
+        }
+      ],
+      "existing_relic_ids": [
+        "relic:FR:basilique-saint-denis"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:FR:basilique-saint-denis:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Denis of Paris"
+      ],
+      "bibliography_urls": [
+        "https://www.saintdenis.fr/basilique-cathedrale"
+      ],
+      "source_evidence_scope": "PRIMARY_CUSTODIAN_AND_HERITAGE_PAGES_INSPECTED_2026_11_05",
+      "next_gate": "SECOND_EDITOR_SUBSTANTIVE_EVIDENCE_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:FR:basilique-sainte-marie-madeleine-vezelay",
+      "place_name": "Basilique Sainte-Marie-Madeleine de Vézelay",
+      "country_code": "FR",
+      "shrine_id": "shrine:FR:basilique-sainte-marie-madeleine-vezelay",
+      "draft_order": 20,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "Mary Magdalene's medieval pilgrimage basilica and the limits of its relic tradition.",
+      "subtitle_fr": "La basilique médiévale de pèlerinage de Marie-Madeleine et les limites de sa tradition reliquaire.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "sections": [
+        {
+          "id": "medieval",
+          "title_en": "The Benedictine abbey and pilgrimage",
+          "title_fr": "L’abbaye bénédictine et le pèlerinage",
+          "paragraphs": [
+            {
+              "en": "Vézelay's Benedictine abbey developed into a major medieval pilgrimage centre through relics traditionally attributed to Saint Mary Magdalene. UNESCO places the monastery's foundation in the ninth century and describes the church and hill together as a heritage site. This is a historically attested cult centred on relic traditions, not independent verification of the physical identity of every alleged relic.",
+              "fr": "L’abbaye bénédictine de Vézelay devint un grand lieu de pèlerinage médiéval autour de reliques traditionnellement attribuées à sainte Marie-Madeleine. L’UNESCO situe la fondation du monastère au IXe siècle et présente l’église avec sa colline comme un ensemble patrimonial. Ce culte historique ne constitue pas une vérification indépendante de l’identité matérielle de chaque relique alléguée.",
+              "source_url": "https://whc.unesco.org/en/list/84/"
+            }
+          ]
+        },
+        {
+          "id": "architecture",
+          "title_en": "A Romanesque masterpiece",
+          "title_fr": "Un chef-d’œuvre roman",
+          "paragraphs": [
+            {
+              "en": "The twelfth-century abbey church is known for its Burgundian Romanesque sculpture, especially the carved capitals and portal. The hill was also associated with major medieval pilgrim assemblies and crusade preaching, including Saint Bernard's sermon in 1146. The architecture and historical gatherings are important in their own right, beyond the continuing devotional questions surrounding Mary Magdalene's relics.",
+              "fr": "L’église abbatiale du XIIe siècle est célèbre pour sa sculpture romane bourguignonne, notamment ses chapiteaux et son portail. La colline fut aussi liée à de grands rassemblements médiévaux et à la prédication de la croisade par saint Bernard en 1146. L’architecture et ces épisodes possèdent une valeur historique propre, distincte des questions dévotionnelles entourant les reliques de Marie-Madeleine.",
+              "source_url": "https://whc.unesco.org/en/list/84/"
+            }
+          ]
+        },
+        {
+          "id": "magdalene",
+          "title_en": "The saint and competing traditions",
+          "title_fr": "La sainte et les traditions distinctes",
+          "paragraphs": [
+            {
+              "en": "The basilica's own teaching presents Mary Magdalene as a disciple and witness of the Resurrection, and acknowledges that later narratives surrounding the dispersion of her relics are difficult to distinguish from devotional legend. The Provençal relic tradition at Saint-Maximin is an additional, distinct tradition. The Atlas must not merge those two sanctuaries or imply that their claims mutually authenticate one another.",
+              "fr": "La basilique présente Marie-Madeleine comme disciple et témoin de la Résurrection, et reconnaît la difficulté de distinguer les récits ultérieurs sur la dispersion de ses reliques des légendes dévotionnelles. La tradition provençale de Saint-Maximin constitue une tradition supplémentaire et distincte. L’Atlas ne doit ni fusionner ces deux sanctuaires ni prétendre que leurs revendications s’authentifient mutuellement.",
+              "source_url": "https://www.basiliquedevezelay.org/marie-madeleine/"
+            }
+          ]
+        }
+      ],
+      "existing_relic_ids": [
+        "relic:FR:basilique-sainte-marie-madeleine-vezelay"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:FR:basilique-sainte-marie-madeleine-vezelay:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Mary Magdalene"
+      ],
+      "bibliography_urls": [
+        "https://www.basiliquedevezelay.org/samedi-saint/",
+        "https://whc.unesco.org/en/list/84/",
+        "https://www.basiliquedevezelay.org/marie-madeleine/"
+      ],
+      "source_evidence_scope": "PRIMARY_CUSTODIAN_AND_HERITAGE_PAGES_INSPECTED_2026_11_05",
+      "next_gate": "SECOND_EDITOR_SUBSTANTIVE_EVIDENCE_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    }
+  ]
+}
