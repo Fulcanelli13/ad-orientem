@@ -176,62 +176,125 @@ try{
   }
  }
 
- // Returning-user verification is intentionally read-only. A successful
- // service-worker claim and stable LIVE return do not authorize automatic
- // update/snapshot activation, which could invalidate a real Mass session.
+ // PWA returning-user acceptance. The app installs the worker ~1.8s after
+ // window.load, and only stages updates until the user explicitly consents.
+ // Keep the test read-only; do not call app.check()/apply()/USE_SNAPSHOT.
  const context=await browser.newContext({viewport:{width:390,height:844},
   deviceScaleFactor:2,isMobile:true,hasTouch:true,locale:"en-GB",serviceWorkers:"allow"});
- try{
-  const page=await context.newPage();
-  const url=new URL(base);
-  url.searchParams.set("ao_page_phone","returning-"+expectedRunId);
-  await page.goto(url.href,{waitUntil:"domcontentloaded",timeout:90000});
-  await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner===true,
-   null,{timeout:60000});
-  // Registration is deferred 1.8 seconds after the page load event;
-  // Home readiness is not proof of an active service worker.
-  await page.waitForFunction(async()=>{
-   if(!globalThis.AO_OFFLINE_APP_V1?.status?.supported)return false;
-   const registration=await navigator.serviceWorker.getRegistration();
-   return globalThis.AO_OFFLINE_APP_V1.status.registered===true&&
-     Boolean(registration?.active)&&
-     registration.scope===new URL("./",location.href).href;
-  },null,{timeout:35000});
-  const before=await page.evaluate(async()=>{
-   if(!("serviceWorker" in navigator))return {supported:false,registered:false};
-   const registration=await navigator.serviceWorker.getRegistration();
-   return {supported:true,registered:Boolean(registration),
-    scope:registration?.scope??null,controller:Boolean(navigator.serviceWorker.controller)};
-  });
-  await page.reload({waitUntil:"domcontentloaded",timeout:90000});
-  await page.waitForFunction(()=>Boolean(
-   globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner||
-   globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.nativeMounted
-  ),null,{timeout:65000});
-  await page.waitForFunction(async()=>Boolean(
-   (await navigator.serviceWorker?.getRegistration())?.active
-  ),null,{timeout:25000});
-  const after=await page.evaluate(async()=>{
-   const registration=await navigator.serviceWorker?.getRegistration();
-   return {registered:Boolean(registration),scope:registration?.scope??null,
-    controller:Boolean(navigator.serviceWorker?.controller),
+ const events=[];
+ const track=(type,detail)=>events.push({type,detail,time:Date.now()});
+ context.on("serviceworker",worker=>{
+  track("serviceworker-open",worker.url());
+  worker.on("close",()=>track("serviceworker-close",worker.url()));
+ });
+ const pwaEvidence={before:null,after:null,samples:[],events,
+  automaticSnapshotPromotionNotRequested:true};
+ let page;
+ const capture=async phase=>{
+  const snapshot=await page.evaluate(async()=>{
+   const nav=globalThis.navigator;
+   const supported=Boolean(nav&&"serviceWorker" in nav);
+   const registration=supported?await nav.serviceWorker.getRegistration():null;
+   const registrations=supported?await nav.serviceWorker.getRegistrations():[];
+   const app=globalThis.AO_OFFLINE_APP_V1?.status??null;
+   return {time:new Date().toISOString(),href:location.href,
+    readyState:document.readyState,
+    shellReady:Boolean(globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner),
+    bootVisible:Boolean(document.getElementById("ao-cinema-boot")?.getClientRects().length),
+    bootPresent:Boolean(document.getElementById("ao-cinema-boot")),
+    supported,
+    offlineStatus:app?{supported:app.supported,registered:app.registered,
+     ready:app.ready,version:app.version,error:app.error,
+     pendingVersion:app.pendingVersion}:null,
+    registered:Boolean(registration),scope:registration?.scope??null,
+    active:registration?.active?.state??null,
+    controller:Boolean(nav.serviceWorker?.controller),
+    controllerScript:nav.serviceWorker?.controller?.scriptURL??null,
+    registrationCount:registrations.length,
+    registrations:registrations.map(r=>({scope:r.scope,
+      active:r.active?.state??null,installing:r.installing?.state??null,
+      waiting:r.waiting?.state??null})),
     activeMass:Boolean(globalThis.AO_R17_NATIVE_READER_PREVIEW?.root?.isConnected),
     activeSurface:globalThis.AO_APP_SHELL_V1?.getActive?.()??null,
     overflow:document.documentElement.scrollWidth>innerWidth+2};
   });
-  await page.screenshot({path:resolve(out,"returning-user-390.png"),fullPage:false});
-  report.serviceWorker={before,after,automaticSnapshotPromotionNotRequested:true};
-  await writeFile(resolve(out,"evidence.json"),JSON.stringify(report,null,2)+"\n");
-  console.log("PAGES_PHONE_SW_PROVENANCE "+JSON.stringify(report.serviceWorker));
-  assert.equal(before.supported,true,"Published site lacks browser SW support");
-  assert.equal(before.registered,true,"First visit did not complete deferred worker registration");
-  assert.equal(after.registered,true,"Returning user has no service-worker registration");
-  assert.equal(after.scope,base.href,"Service worker escaped GitHub Pages project scope");
-  assert.equal(after.controller,true,"Returning-user reload was not claimed by registered worker");
-  assert.equal(after.overflow,false,"Returning user 390px viewport clips horizontally");
-
+  pwaEvidence.samples.push({phase,...snapshot});
+  console.log("PAGES_PHONE_SW_PHASE "+JSON.stringify({phase,...snapshot}));
+  return snapshot;
+ };
+ const stable=record=>record.supported===true&&record.registered===true&&
+  record.active==="activated"&&record.scope===base.href;
+ try{
+  page=await context.newPage();
+  page.on("pageerror",error=>track("pageerror",String(error?.message??error)));
+  page.on("console",message=>{
+   if(["error","warning"].includes(message.type()))track("console-"+message.type(),message.text().slice(0,500));
+  });
+  page.on("framenavigated",frame=>{
+   if(frame===page.mainFrame())track("navigate",frame.url());
+  });
+  const url=new URL(base);
+  url.searchParams.set("ao_page_phone","returning-"+expectedRunId);
+  await page.goto(url.href,{waitUntil:"load",timeout:90000});
+  await page.waitForFunction(()=>
+   globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner===true,
+   null,{timeout:60000});
+  await page.waitForSelector("#ao-cinema-boot",{state:"detached",timeout:45000});
+  await page.waitForFunction(async()=>{
+   if(!globalThis.AO_OFFLINE_APP_V1?.status?.supported)return false;
+   const registration=await navigator.serviceWorker.getRegistration();
+   return globalThis.AO_OFFLINE_APP_V1.status.registered===true&&
+    Boolean(registration?.active)&&registration.scope===new URL("./",location.href).href;
+  },null,{timeout:45000,polling:300});
+  // A single transient registration is not a usable returning-user cache.
+  // Record four stable reads before reload to expose lifecycle races.
+  for(let i=0;i<4;i++){
+   const sample=await capture("before-reload-"+i);
+   assert.ok(stable(sample),"Service worker registration lost before reload: "+
+    JSON.stringify(sample));
+   if(i<3)await page.waitForTimeout(350);
+  }
+  pwaEvidence.before=pwaEvidence.samples.at(-1);
+  await page.reload({waitUntil:"load",timeout:90000});
+  await page.waitForFunction(()=>
+   globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner===true,
+   null,{timeout:65000});
+  await page.waitForSelector("#ao-cinema-boot",{state:"detached",timeout:45000});
+  await page.waitForFunction(async()=>{
+   const r=await navigator.serviceWorker?.getRegistration();
+   return Boolean(r?.active&&navigator.serviceWorker?.controller);
+  },null,{timeout:35000,polling:300});
+  pwaEvidence.after=await capture("after-stable-reload");
+  assert.ok(stable(pwaEvidence.after),"Returning user worker lost on reload: "+
+   JSON.stringify(pwaEvidence.after));
+  assert.equal(pwaEvidence.after.controller,true,
+   "Returning-user page is not controlled by active service worker");
+  assert.equal(pwaEvidence.after.bootPresent,false,
+   "Returning-user page still shows full-screen Mass bootstrap");
+  assert.equal(pwaEvidence.after.activeSurface,"home",
+   "Returning user did not return to usable Home");
+  assert.equal(pwaEvidence.after.overflow,false,
+   "Returning user 390px viewport clips horizontally");
+  report.serviceWorker={before:pwaEvidence.before,after:pwaEvidence.after,
+   automaticSnapshotPromotionNotRequested:true};
   console.log("PAGES_PHONE_RETURNING_USER_PASS "+JSON.stringify(report.serviceWorker));
- }finally{await context.close()}
+ }catch(error){
+  track("failure",String(error?.stack??error));
+  throw error;
+ }finally{
+  // Always keep a real screenshot, final state and navigation/worker events
+  // even when registration disappears. This is diagnostic evidence, not PASS.
+  try{
+   if(page&&!page.isClosed()){
+    await capture("final");
+    await page.screenshot({path:resolve(out,"returning-user-390.png"),fullPage:false});
+   }
+  }catch(error){track("capture-error",String(error?.message??error))}
+  if(!report.serviceWorker)report.serviceWorker={
+   ...pwaEvidence,passed:false};
+  await writeFile(resolve(out,"evidence.json"),JSON.stringify(report,null,2)+"\n");
+  await context.close();
+ }
  await writeFile(resolve(out,"evidence.json"),JSON.stringify(report,null,2)+"\n");
  console.log("GITHUB_PAGES_PHONE_ENFR_PASS "+JSON.stringify({source_sha:expectedSha,
   run_id:expectedRunId,cases:report.cases.map(x=>x.label),serviceWorker:report.serviceWorker.after}));
