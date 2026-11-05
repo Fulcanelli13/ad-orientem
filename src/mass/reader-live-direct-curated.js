@@ -158,14 +158,28 @@ export function projectDirectSpecialCuratedLiveCards({
   composed=projectEmberInsertionModel(composed,resolvedMass);
   composed=projectNuptialInsertionModel(composed,resolvedMass,nuptialData);
 
+  // Optional Mandatum follows source section AO.CARD.008 (Homily), not
+  // expanded card sequence 16. The older source-first model inserts it
+  // as canonical source unit 9, before the omitted Credo. Preserve that
+  // exact source/guide ordinal for LIVE ↔ MISSAL handoffs and audit.
+  const homilySourceOrdinal=composed.cards.find(c=>
+    c.sourceSectionId==="AO.CARD.008")?.sourceSequence;
   const cards=freeze(composed.cards.map((source,i)=>{
     const independent=source.nuptialInsertion===true ||
       source.emberInsertion===true;
     const mandatum=source.sectionId==="AO.HT.MANDATUM";
     if(!independent&&!mandatum)return source;
-    return directCard(source,{
+    const curated=directCard(source,{
       ordinal:1,title:source.title,paragraphs:source.paragraphs,blocks:source.blocks,
     },i+1);
+    if(!mandatum)return curated;
+    if(!Number.isInteger(homilySourceOrdinal) ||
+       homilySourceOrdinal!==8)
+      throw new Error("DIRECT_MANDATUM_SOURCE_HOMILY_ANCHOR_UNVERIFIED");
+    return freeze({...curated,
+      sourceSequence:homilySourceOrdinal+1,
+      guideSequence:homilySourceOrdinal+1,
+    });
   }));
   const sourceCount=39-(holyThursday?1:0)+(mandatumPresent?1:0)+
     (nuptial?3:0)+Number(composed.emberInsertionCount??0);
