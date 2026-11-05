@@ -87,7 +87,7 @@ assert.match(quentin.sections[2].paragraphs[0].en,/cannot be Saint Quentin's han
 const rome=all.find(x=>x.place_id==="place:IT:santa-croce-gerusalemme-rome");
 assert.match(rome.sections[2].paragraphs[0].en,/23 October 2026/);
 assert.match(rome.sections[2].paragraphs[0].en,/supersedes the basilica/);
-assert.match(rome.sections[2].paragraphs[0].source_url,/diocesidiroma\\.it/);
+assert.ok(rome.sections[2].paragraphs[0].source_url.includes("diocesidiroma.it"));
 const westminster=all.find(x=>x.place_id==="place:GB:westminster-abbey-st-edward");
 assert.match(westminster.sections[2].paragraphs[0].en,/Church of England/);
 const ukrainian=all.find(x=>x.place_id==="place:CA:bishop-velychkovsky-martyrs-shrine-winnipeg");
