@@ -218,6 +218,8 @@ export function repair1962AprilPaschalProper(data,{
      !String(data.collect?.lat).includes("Petri Mártyris")||
      !String(data.secret?.lat).includes("propugnatóres fídei"))return null;
  }
+ if(newSections.postcommunion)
+  newSections.postcommunions=Object.freeze([newSections.postcommunion]);
  return copyWithDualAlleluia(data,parts,data.sourcePath,newSections,
   "DATED_1962_PASCHAL_MARTYR_COMMON_PROPER_SECTION_RECOVERY");
 }
