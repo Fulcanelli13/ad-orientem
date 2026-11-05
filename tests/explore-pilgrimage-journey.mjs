@@ -10,6 +10,7 @@ import {
 const seed=JSON.parse(readFileSync(new URL("../data/shrines/shrines-pilgrimages-seed.v1.json",import.meta.url),"utf8"));
 const registry=JSON.parse(readFileSync(new URL("../data/shrines/source-registry.v1.json",import.meta.url),"utf8"));
 const geography=JSON.parse(readFileSync(new URL("../data/geography/seed-registry.v1.json",import.meta.url),"utf8"));
+const admission=JSON.parse(readFileSync(new URL("../data/geography/research/sacred-places-v10-b20-three-relic-shrines-release.v1.json",import.meta.url),"utf8"));
 const evidence=JSON.parse(readFileSync(new URL("../data/shrines/route-stage-evidence-20261020.v1.json",import.meta.url),"utf8"));
 assert.equal(evidence.schema,"AO_PILGRIMAGE_STAGE_EVIDENCE_V1");
 const geometry=JSON.parse(readFileSync(new URL("../data/shrines/route-geometry-review-20261020.v1.json",import.meta.url),"utf8"));
@@ -144,7 +145,13 @@ assert.equal(saintLouis.stageSiteAnchors[1].placeId,"place:MU:pere-laval-sainte-
 assert.ok(journeys.every(j=>j.routeGeometry===null&&j.mappedStages.length===0&&j.stops.length===0));
 assert.ok(journeys.every(j=>j.mappedStages.length===0),
  "Named stages are not navigable geographic stops");
-assert.equal(seed.pilgrimages.length,240,"Do not confuse source destinations with mapped routes");
+assert.equal(seed.pilgrimages.length,240+admission.new_places,"New devotional destinations must not become mapped walking routes");
+for(const row of admission.published_new){
+ const pilgrimage=seed.pilgrimages.find(p=>p.pilgrimage_id===row.pilgrimage_id);
+ assert.ok(pilgrimage&&pilgrimage.destination_shrine_id===row.shrine_id);
+ assert.deepEqual(pilgrimage.route_ids,[],"No route is inferred for a new V10 sacred place");
+ assert.deepEqual(pilgrimage.temporal_link_ids,[],"No feast or fixed observance is inferred");
+}
 assert.equal(seed.routes.length,20);
 assert.equal(journeys.length,20,"Show all 20 source-linked route identities, no inferred extras");
 const nz=journeys.find(r=>r.id==="route:NZ:nga-tapuwae-russell");
@@ -252,4 +259,4 @@ const poisoned=buildPilgrimageJourneyCatalogue([
 assert.equal(poisoned.length,1);
 assert.equal(poisoned[0].destinationGeo,null,"Null coordinate must not become a fabricated map point");
 assert.equal(poisoned[0].sources.length,0,"Do not fabricate source URLs");
-console.log("PASS D journey + site-anchor crosswalk: 240 pilgrimages, 20 routes, 64 named stages on 17 routes, zero fabricated geolocation, EN/FR + organizer sources");
+console.log("PASS D journey + site-anchor crosswalk: 243 source-backed pilgrimage destinations, 20 unchanged routes, 64 named stages on 17 routes, zero fabricated navigation, EN/FR + organizer sources");
