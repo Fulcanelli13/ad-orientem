@@ -124,6 +124,19 @@ export function essentialPrayerEditorialReading(id,language,record){
  });
 }
 
+/**
+ * Content-only French devotional correction applied at the reader projection
+ * boundary. The canonical-data record and its French 2005 printed wording
+ * remain intact for citation, edition comparison and rollback.
+ *
+ * Every other language/ID is returned by reference without modification.
+ */
+export function essentialPrayerPreferredReadingRecord(id,record){
+ const correction=essentialPrayerEditorialReading(id,"fr",record);
+ if(!correction)return record;
+ return Object.freeze({...record,fr:correction.text});
+}
+
 export function essentialPrayerWitnessPolicy(id){
  if(!ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2.includes(id))return null;
  return ESSENTIAL_PRAYER_WITNESS_POLICY_V1[id]||null;
