@@ -88,6 +88,38 @@ for(const language of ["en","fr"]){
    "WRONG_INTERMEDIATE_AMEN_SOURCE_ANCHOR");
  }
 }
+// Two commemorations explicitly joined UNDER ONE musical conclusion
+// must receive one response, not one per paragraph.
+const joined=(type)=>{
+ const segment={};
+ for(const locale of ["lat","en","fr"]){
+  segment[locale]={
+   principal:locale+" Prima pars "+type+".",
+   additional:locale+" Secunda pars "+type+".",
+   conclusion:locale+" Per Dominum. Amen."
+  };
+ }
+ return {
+  lat:segment.lat.principal+"\n\n"+segment.lat.additional+"\n"+segment.lat.conclusion,
+  en:segment.en.principal+"\n\n"+segment.en.additional+"\n"+segment.en.conclusion,
+  fr:segment.fr.principal+"\n\n"+segment.fr.additional+"\n"+segment.fr.conclusion,
+  oneConclusion:{status:"CERTIFIED",kind:"MULTIPLE_COMMEMORATIONS",segments:segment}
+ };
+};
+for(const slot of ["COLLECT_SET","POSTCOMMUNION_SET"]){
+ const d=proper(2);
+ if(slot==="COLLECT_SET")d.collects=[tag("first"),joined("collect")];
+ else d.postcommunions=[tag("first"),joined("post")];
+ const rows=project(d,"fr","SUNG",slot);
+ assert.equal(rows.filter(response).length,2,
+  "Joined additional prayers have one Amen under one conclusion");
+ const r=state(rows.at(-1),rows,resolved(d));
+ assert.equal(r.status,"SOURCE_ORATION_AND_TONE_CERTIFIED_SCORE_PENDING");
+ assert.equal(r.sourceOrationGroupIndex,2);
+ assert.equal(r.score,null);
+ assert.equal(rows.filter(x=>x.orationGroupIndex===2).length,2);
+}
+
 // Requiem/feria or votive without the source-signed actual-Mass context
 // cannot accidentally use a Sunday oration tune.
 const d=proper(1),rows=project(d,"en","SUNG","COLLECT_SET");
