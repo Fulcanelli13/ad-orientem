@@ -1,6 +1,6 @@
 {
   "schema": "AO_APPROVED_PLACE_MEDIA_V1",
-  "version": "1.6.17",
+  "version": "1.6.18",
   "items": [
     {
       "place_id": "place:AE:st-joseph-cathedral-abu-dhabi",
@@ -943,6 +943,30 @@
       "reviewed_at": "2026-10-30",
       "review_method": "Photo Finder editorial selection, 2026-10-30; live Commons exact licence, author, original SHA1, original bytes and WebP digest verified.",
       "source_place_ref": "PHOTO_FINDER_2026-10-30_R1"
+    },
+    {
+      "place_id": "place:CL:sanctuary-of-our-lady-of-la-tirana-chile",
+      "status": "APPROVED",
+      "asset_path": "assets/approved/place-media/pf-a569a43f3c631212c46154.webp",
+      "source_url": "https://www.flickr.com/photos/9508280@N07/7704078194",
+      "source_sha1": "42f17c426cd71cea550c9ab6d5eb1602461c1669",
+      "derivative_sha256": "b7e7a5a00433de88d7dba0efaf3dee976333b417825a308b914c5b48ce0e3371",
+      "credit": "Dan Lundberg",
+      "license": "CC-BY-SA-2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "rights_verified": true,
+      "subject_verified": true,
+      "crop_reviewed": true,
+      "width": 1024,
+      "height": 768,
+      "orientation": "landscape",
+      "alt_en": "Sanctuary of Our Lady of Mount Carmel at La Tirana, Chile.",
+      "alt_fr": "Sanctuaire Notre-Dame-du-Mont-Carmel de La Tirana, au Chili.",
+      "changes_en": "Full-frame WebP from source photograph, EXIF orientation normalized; no crop or recolouring.",
+      "changes_fr": "Photo complète en WebP, orientation EXIF corrigée ; sans recadrage ni modification des couleurs.",
+      "reviewed_at": "2026-11-05",
+      "review_method": "Direct Pexels/Flickr exact-site photo, source page and licence checked live, actual image bytes decoded and hashed; original source photographed subject independently checked before batch; PR review and CI gates required.",
+      "source_place_ref": "DIRECT_PEXELS_FLICKR_BATCH_TWO_20261105"
     },
     {
       "place_id": "place:CL:templo-votivo-maipu-basilica",

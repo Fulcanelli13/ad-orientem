@@ -1,0 +1,43 @@
+{
+  "schema": "AO_SACRED_ATLAS_DIRECT_SOURCE_BATCH_TWO_REPORT_V1",
+  "as_of": "2026-11-05",
+  "attempted": 4,
+  "admitted_on_pr_branch": 1,
+  "held": 3,
+  "main_published_by_this_workflow": 0,
+  "preexisting_media_file_sha256": "08df42a4ca1276c1e76451b9ba3b4b1cd8d3ff3aadb9f808c5283fdbd181f8d8",
+  "prior_approved_covers_preserved": 384,
+  "approved": [
+    {
+      "place_id": "place:CL:sanctuary-of-our-lady-of-la-tirana-chile",
+      "source_url": "https://www.flickr.com/photos/9508280@N07/7704078194",
+      "source_original_sha1": "42f17c426cd71cea550c9ab6d5eb1602461c1669",
+      "source_page_sha256": "659248e619128952c1bef1725a6bafd62725b4a5a402dfcd476711acdc14879e",
+      "licence_terms_sha256": null,
+      "source_image_url": "https://live.staticflickr.com/7132/7704078194_6955268fa6_b.jpg",
+      "asset_path": "assets/approved/place-media/pf-a569a43f3c631212c46154.webp",
+      "derivative_sha256": "b7e7a5a00433de88d7dba0efaf3dee976333b417825a308b914c5b48ce0e3371",
+      "size": [
+        1024,
+        768
+      ],
+      "credit": "Dan Lundberg",
+      "licence": "CC-BY-SA-2.0",
+      "depiction": "exterior"
+    }
+  ],
+  "holds": [
+    {
+      "place_id": "place:FR:cathedrale-notre-dame-reims",
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "place_id": "place:VA:saint-peter-vatican",
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    },
+    {
+      "place_id": "place:DE:aachener-dom-four-textiles",
+      "reason": "HTTPError: HTTP Error 403: Forbidden"
+    }
+  ]
+}
