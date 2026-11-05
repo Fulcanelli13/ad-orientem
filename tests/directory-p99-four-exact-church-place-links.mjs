@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { assertExploreGeographyRegistry } from "../src/find/geography-contracts.js";
 import { attachApprovedDirectoryMedia } from "../src/find/directory-card.js";
-import { LIVE } from "./helpers/sacred-places-live-baseline.mjs";
+import { LIVE, RELEASES } from "./helpers/sacred-places-live-baseline.mjs";
 const read = p => JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
 const g=read("data/geography/seed-registry.v1.json");
 const sources=read("data/shrines/source-registry.v1.json");
@@ -17,7 +17,10 @@ assert.deepEqual([manifest.proposed.places,manifest.proposed.sources,manifest.pr
 assert.deepEqual([g.places.length,sources.sources.length],[LIVE.places,LIVE.sources]);
 assert.ok(g.directoryPlaceLinks.length>=LIVE.links,
   "Historical source links must persist; later individually verified venue joins may extend them");
-assert.deepEqual([LIVE.places,LIVE.sources,LIVE.links],[530,846,24]);
+const v10=RELEASES.find(r=>r.id==="V10-B20");
+assert.ok(v10,"V10 must preserve and extend the P106 530/846/24 snapshot");
+assert.deepEqual([v10.data.baseline.places,v10.data.baseline.sources,v10.data.baseline.directory_links],[530,846,24]);
+assert.deepEqual([LIVE.places,LIVE.sources,LIVE.links],[v10.data.proposed.places,v10.data.proposed.sources,v10.data.proposed.directory_links]);
 assert.equal(manifest.new_places,4);
 assert.equal(manifest.confirmed_directory_links_added,4);
 assert.equal(g.geoAreas.length,146);
@@ -65,7 +68,7 @@ for(const [venueId,[placeId,osm,sourceRow]] of expected){
  }
  assert.ok(manifest.published_new.some(x=>x.place_id===placeId&&x.candidate_id==="P97-ROW-"+sourceRow&&x.photo_publication==="NONE"));
 }
-assert.equal(crosswalk.counts.canonical_places,LIVE.places);
+assert.equal(crosswalk.counts.canonical_places,v10.data.baseline.places,"Frozen P92/P99 photo crosswalk must retain historical scope");
 assert.equal(crosswalk.counts.confirmed_links,23,"Frozen P92 research snapshot predates P106");
 assert.equal(crosswalk.counts.exact_confirmed_photo_joins,9,"two P95, three P102 and four P106 exact photos");
 assert.equal(manifest.policy.no_new_tlm_masses_or_schedules,true);
