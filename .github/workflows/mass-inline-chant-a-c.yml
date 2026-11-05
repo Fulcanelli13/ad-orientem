@@ -10,6 +10,7 @@ on:
       - 'src/mass/reader-gospel-response-reference-scores.js'
       - 'src/mass/reader-dismissal-variant-reference-scores.js'
       - 'tests/reader-dismissal-variant-reference.mjs'
+      - 'tests/reader-dismissal-variant-phone.mjs'
       - 'tests/reader-participation-reference-scores.mjs'
       - 'tests/reader-participation-reference-phone.mjs'
       - 'tests/reader-participation-neume-policy.mjs'
@@ -51,6 +52,7 @@ jobs:
           node --check src/mass/reader-gospel-response-reference-scores.js
           node --check src/mass/reader-dismissal-variant-reference-scores.js
           node --check tests/reader-dismissal-variant-reference.mjs
+          node --check tests/reader-dismissal-variant-phone.mjs
           node --check tests/reader-participation-reference-scores.mjs
           node --check tests/reader-participation-reference-phone.mjs
           node --check tests/reader-participation-neume-policy.mjs
@@ -79,6 +81,7 @@ jobs:
         run: |
           node tests/reader-inline-chant-a-c-phone.mjs
           node tests/reader-participation-reference-phone.mjs
+          node tests/reader-dismissal-variant-phone.mjs
           node tests/reader-inline-proper-july07-phone.mjs
           node tests/reader-inline-all-saints-phone.mjs
 
@@ -106,5 +109,14 @@ jobs:
         with:
           name: mass-participation-research-reference-neumes
           path: .tmp/mass-participation-preview/*.png
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Retain 1961 dismissal alternatives research phone screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-dismissal-variant-source-neumes
+          path: .tmp/mass-dismissal-variant-preview/*.png
           if-no-files-found: warn
           retention-days: 14
