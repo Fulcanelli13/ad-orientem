@@ -1,6 +1,6 @@
 {
   "schema": "AO_APPROVED_PLACE_MEDIA_V1",
-  "version": "1.6.16",
+  "version": "1.6.17",
   "items": [
     {
       "place_id": "place:AE:st-joseph-cathedral-abu-dhabi",
@@ -4676,6 +4676,30 @@
       "reviewed_at": "2026-10-30",
       "review_method": "Photo Finder editorial selection, 2026-10-30; live Commons exact licence, author, original SHA1, original bytes and WebP digest verified.",
       "source_place_ref": "PHOTO_FINDER_2026-10-30_R1"
+    },
+    {
+      "place_id": "place:IN:mount-mary-basilica-bandra",
+      "status": "APPROVED",
+      "asset_path": "assets/approved/place-media/pf-d29d3e5ba0d2c456031ffe.webp",
+      "source_url": "https://wordpress.org/photos/photo/12469e88dc/",
+      "source_sha1": "223763f0e2931d9aff013e2f17fb8705543168ff",
+      "derivative_sha256": "d4ad3c9863cef9fbdc480b1d42e11cba3c7b24a810bc5756e9e6a8c6869e745d",
+      "credit": "Bigul Malayi",
+      "license": "CC0",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "rights_verified": true,
+      "subject_verified": true,
+      "crop_reviewed": true,
+      "width": 960,
+      "height": 1280,
+      "orientation": "portrait",
+      "alt_en": "Façade of the Basilica of Our Lady of the Mount in Bandra, Mumbai.",
+      "alt_fr": "Façade de la basilique Notre-Dame-du-Mont à Bandra, Mumbai.",
+      "changes_en": "Full-frame WebP, EXIF orientation normalized; no crop or recolouring.",
+      "changes_fr": "Image entière en WebP, orientation EXIF corrigée ; ni recadrage ni retouche.",
+      "reviewed_at": "2026-11-05",
+      "review_method": "Owner-authorized direct-source five-site batch. Source page title and current licence verified; photo bytes decoded and hashed; exact-site depiction selected against named place and independent site reference. PR visual review required before merge.",
+      "source_place_ref": "DIRECT_OPEN_PHOTO_FIVE_20261105"
     },
     {
       "place_id": "place:IN:santhome-cathedral-basilica-chennai",

@@ -1,0 +1,49 @@
+{
+  "schema": "AO_SACRED_ATLAS_DIRECT_OPEN_PHOTO_FIVE_REPORT_V1",
+  "date": "2026-11-05",
+  "attempted": 5,
+  "admitted_on_branch": 1,
+  "held": 4,
+  "main_published_by_this_job": 0,
+  "no_existing_covers_replaced": true,
+  "accepted": [
+    {
+      "place_id": "place:IN:mount-mary-basilica-bandra",
+      "asset": "assets/approved/place-media/pf-d29d3e5ba0d2c456031ffe.webp",
+      "source_page": "https://wordpress.org/photos/photo/12469e88dc/",
+      "rights_proof_sha256": "2091903937b05161338dbf92b3f0569ff991cef5e447904b7a8eaeb6c1719446",
+      "original_sha1": "223763f0e2931d9aff013e2f17fb8705543168ff",
+      "derivative_sha256": "d4ad3c9863cef9fbdc480b1d42e11cba3c7b24a810bc5756e9e6a8c6869e745d",
+      "size": [
+        960,
+        1280
+      ],
+      "image_bytes": 188910,
+      "depiction": "exterior",
+      "independent_site_evidence": "https://www.mountmarybasilicabandra.in/",
+      "status": "ADMITTED_ON_RELEASE_BRANCH_REQUIRES_VISUAL_AND_CI"
+    }
+  ],
+  "holds": [
+    {
+      "place_id": "place:FR:abbaye-mont-saint-michel",
+      "status": "HELD_NOT_PUBLISHED",
+      "reason": "ValueError: POTENTIAL_NONCOMMERCIAL_LICENSE_CONFLICT"
+    },
+    {
+      "place_id": "place:CH:kloster-mariastein",
+      "status": "HELD_NOT_PUBLISHED",
+      "reason": "ValueError: POTENTIAL_NONCOMMERCIAL_LICENSE_CONFLICT"
+    },
+    {
+      "place_id": "place:MY:st-anne-bukit-mertajam",
+      "status": "HELD_NOT_PUBLISHED",
+      "reason": "ValueError: POTENTIAL_NONCOMMERCIAL_LICENSE_CONFLICT"
+    },
+    {
+      "place_id": "place:ES:p42-sg-inv-0135",
+      "status": "HELD_NOT_PUBLISHED",
+      "reason": "ValueError: POTENTIAL_NONCOMMERCIAL_LICENSE_CONFLICT"
+    }
+  ]
+}
