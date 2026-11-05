@@ -634,8 +634,8 @@ try{
   await asp.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId==="AO.LIVECURATED.AO.CARD.001.1");
   assert.match(await asp.locator('[data-role="progress"]').textContent(),/1 \/ 64/,
     "Asperges did not hand off to the first curated 65-card LIVE prayer");
-  assert.equal(await asp.evaluate(()=>window.__AO_PHONE_PREVIEW.sourceModel?.totalCards??null),39,
-    "Asperges handoff replaced the certified 39-step source model");
+  assert.equal(await asp.evaluate(()=>window.__AO_PHONE_PREVIEW.sourceModel?.totalCards??null),30,
+    "Asperges handoff must retain the direct 30-macro source authority");
 
   const aspBack=asp.locator('[data-reader-nav="previous"]');
   hit=await aspBack.boundingBox();
