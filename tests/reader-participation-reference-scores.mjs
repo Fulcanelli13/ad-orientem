@@ -4,6 +4,8 @@ import {PARTICIPATION_REFERENCE_SCORES,participationReferenceScoresForParagraph}
  from "../src/mass/reader-participation-reference-scores.js";
 import {ORDINARY_1961_SCORE_SOURCES} from "../src/mass/reader-ordinary-scores-1961.js";
 import {GOSPEL_1961_REFERENCE_WITNESSES,GOSPEL_RESPONSE_REFERENCE_SCORES} from "../src/mass/reader-gospel-response-reference-scores.js";
+import {DISMISSAL_VARIANT_ORIGINAL_WITNESSES,DISMISSAL_VARIANT_REFERENCE_SCORES} from "../src/mass/reader-dismissal-variant-reference-scores.js";
+import {requiemDismissalVariantsForResolvedMass} from "../src/mass/reader-requiem-conditions.js";
 import {researchGabcPhrases} from "../src/mass/reader-music-gabc-source-screen.js";
 const file=async path=>JSON.parse(await readFile(new URL("../"+path,import.meta.url),"utf8"));
 const research=await file("data/research/mass-music-m05-cc0-gabc-seven-20261031.v1.json");
@@ -13,15 +15,17 @@ const cueText=new Map(corpus.blocks.flatMap(x=>x.units.map(y=>[y.cue_id,y.latin]
 const roles=new Map(audit.records.map(x=>[x.cueId,x.role]));
 const sourceLookup=new Map([...research.scores.map(x=>[x.sourceId,x.gabc]),
  ...ORDINARY_1961_SCORE_SOURCES.map(x=>[Number(x.id.slice(10)),x.gabc]),
- ...GOSPEL_1961_REFERENCE_WITNESSES.map(x=>[x.sourceId,x.gabc])]);
+ ...GOSPEL_1961_REFERENCE_WITNESSES.map(x=>[x.sourceId,x.gabc]),
+ ...DISMISSAL_VARIANT_ORIGINAL_WITNESSES.map(x=>[x.sourceId,x.fullSourceGabc])]);
 const norm=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
  .replace(/æ/gi,"ae").replace(/œ/gi,"oe").replace(/j/gi,"i")
  .toLowerCase().replace(/[^a-z0-9]+/g,"");
-assert.equal(PARTICIPATION_REFERENCE_SCORES.length,17);
+assert.equal(PARTICIPATION_REFERENCE_SCORES.length,21);
+assert.equal(DISMISSAL_VARIANT_REFERENCE_SCORES.length,4);
 assert.equal(GOSPEL_1961_REFERENCE_WITNESSES.length,2);
 assert.equal(GOSPEL_RESPONSE_REFERENCE_SCORES.length,4);
 assert.deepEqual(GOSPEL_1961_REFERENCE_WITNESSES.map(x=>x.sourceId),[4490,4491]);
-assert.equal(new Set(PARTICIPATION_REFERENCE_SCORES.map(x=>x.id)).size,17);
+assert.equal(new Set(PARTICIPATION_REFERENCE_SCORES.map(x=>x.id)).size,21);
 for(const score of PARTICIPATION_REFERENCE_SCORES){
  const original=sourceLookup.get(score.sourceId);
  assert.ok(original,score.id+" source GABC not in pinned corpus");
@@ -34,12 +38,22 @@ for(const score of PARTICIPATION_REFERENCE_SCORES){
  assert.equal(score.printVerification,"PENDING_NOTE_BY_NOTE_FACSIMILE_COLLATION");
  assert.equal(score.sourceUrl,"https://gregobase.selapa.net/chant.php?id="+score.sourceId);
  for(const cueId of score.sourceCueIds)assert.ok(cueText.has(cueId));
- assert.equal(norm(score.sourceCueIds.map(x=>cueText.get(x)).join(" ")),norm(score.sourceLatin));
- assert.deepEqual(score.sourceCueLatin,score.sourceCueIds.map(x=>cueText.get(x)),
-  "Exact source fragment text (not the translation or combined incipit)");
+ if(score.eventId!=="DISMISSAL"){
+  assert.equal(norm(score.sourceCueIds.map(x=>cueText.get(x)).join(" ")),norm(score.sourceLatin));
+  assert.deepEqual(score.sourceCueLatin,score.sourceCueIds.map(x=>cueText.get(x)),
+   "Exact source fragment text (not the translation or combined incipit)");
+ }else{
+  assert.ok(["BENEDICAMUS_DOMINO","REQUIESCANT_IN_PACE"].includes(score.formula));
+  if(score.kind==="DISMISSAL_MINISTER"||score.formula==="REQUIESCANT_IN_PACE")
+   assert.notEqual(norm(score.sourceLatin),norm(cueText.get(score.sourceCueIds[0])),
+    "A conditional dismissal must not borrow an ordinary Ite cue");
+  else assert.equal(norm(score.sourceLatin),norm(cueText.get(score.sourceCueIds[0])),
+    "Benedicamus has the SAME Deo gratias text but a DIFFERENT response melody");
+ }
 
  assert.ok(score.sourceCueIds.every(x=>score.kind==="CELEBRANT_INTONATION"
-  ?roles.get(x)==="PRIEST":roles.get(x)==="RESPONDERS"));
+  ?roles.get(x)==="PRIEST":score.kind==="DISMISSAL_MINISTER"
+   ?roles.get(x)==="DISMISSAL_MINISTER":roles.get(x)==="RESPONDERS"));
 }
 const cue=n=>"AO.SM.C"+String(n).padStart(4,"0");
 const p=n=>({id:"p"+n,kind:"TEXT",primary:cueText.get(cue(n)),sourceCueIds:[cue(n)]});

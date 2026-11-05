@@ -109,7 +109,7 @@ export function createDatedProperNotationPreview({
   for(const e of entries){e.engraver?.destroy();e.host.remove()}
   entries=[];
  }
- function render({mode="LIVE",form,resolvedMass,paragraphs=[],selectedSettings={}}={}){
+ function render({mode="LIVE",form,resolvedMass,massPlan=null,paragraphs=[],selectedSettings={}}={}){
   clear();
   if(!active||!["LIVE","MISSAL"].includes(mode))return 0;
   const g=generation;
@@ -129,7 +129,7 @@ export function createDatedProperNotationPreview({
    if(!p)continue;
    const scores=referenceScoresForParagraph({paragraph:p,resolvedMass,form});
    const participatory=participationReferenceScoresForParagraph({
-    paragraph:p,paragraphs,form,resolvedMass,selectedSettings
+    paragraph:p,paragraphs,form,resolvedMass,massPlan,selectedSettings
    });
    for(const score of [...scores,...participatory]){
     const host=doc.createElement("span");host.className="ao-proper-reference-notation";
