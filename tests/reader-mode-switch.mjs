@@ -503,7 +503,8 @@ function verifyDirectMode(prepared,label,options={}){
   const reference=buildReaderModeModels(inputs);
   const rebuilt=buildReaderModeModels({...inputs,directSourceCurated:true});
   assert.equal(reference.sourceModel.totalCards,
-    label.includes("Holy Thursday")?38:label.includes("Nuptial")?42:39);
+    label.includes("Holy Thursday Mandatum")?39:
+      label.includes("Holy Thursday")?38:label.includes("Nuptial")?42:39);
   assert.equal(rebuilt.sourceModel.totalCards,30,label+" source-only macros");
   assert.equal(rebuilt.sourceModel.structureOwner,"BASE_30_MACROS");
   assert.equal(rebuilt.presentationModel.sourceAuthorityModel,rebuilt.sourceModel,
