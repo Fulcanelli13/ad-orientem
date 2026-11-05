@@ -232,7 +232,13 @@ export const PARTICIPATION_REFERENCE_SCORES=Object.freeze([
     "sourceLatin": "℟. Sed líbera nos a malo.",
     "kind": "PEOPLE_RESPONSE",
     "eventId": "PATERNOSTER",
-    "toneFamily": "UNRESOLVED",
+    "toneFamily": "COMMON_CLOSING_MELODY_SOLEMN_OR_FERIAL",
+    "toneAuthority": {
+      "source": "B. Andrew Mills, Psallite Sapienter (CMAA, 2008), paragraph 68, p. 27",
+      "url": "https://media.churchmusicassociation.org/books/7848318-Psallite-Sapienter-A-Musicians-Guide-to-the-Extraordinary-Form.pdf",
+      "claim": "Both Pater noster tone families have the same final versicle and response melody",
+      "printedScoreNoteParity": "PENDING"
+    },
     "settingId": null,
     "printVerification": "PENDING_NOTE_BY_NOTE_FACSIMILE_COLLATION",
     "publicScoreApproved": false,
@@ -320,7 +326,6 @@ export function participationReferenceScoresForParagraph({
   const indices=fragments.map(p=>paragraphs.indexOf(p));
   if(!indices.every((n,i)=>n>=0&&(i===0||n===indices[0]+i)))continue;
   if(norm(score.sourceCueLatin.join(" "))!==norm(score.sourceLatin))continue;
-  if(score.toneFamily==="UNRESOLVED")continue; // Pater reference held
   if(score.toneFamily==="SELECTED_ORDINARY"){
    if(isExplicitRequiemMass({session:{resolvedMass}}))continue;
    const movement=score.eventId==="GLORIA_INTONATION"?"GLORIA":"CREDO";
@@ -329,8 +334,12 @@ export function participationReferenceScoresForParagraph({
       selectedSettings?.[movement]!==score.settingId)continue;
   }else{
    const tone=resolve1962DialogueToneFamily(score.eventId,{resolvedMass});
-   if(tone?.status!=="RUBRICAL_FAMILY_RESOLVED"||
-     tone.family!==score.toneFamily)continue;
+   if(tone?.status!=="RUBRICAL_FAMILY_RESOLVED")continue;
+   if(score.toneFamily==="COMMON_CLOSING_MELODY_SOLEMN_OR_FERIAL"){
+    // Paragraph 68 of the 1962 music guide: same closing response melody
+    // in both families. Still preview-only and NOT note-certified.
+    if(!["SOLEMN","FERIAL"].includes(tone.family))continue;
+   }else if(tone.family!==score.toneFamily)continue;
   }
   out.push(score);
  }
