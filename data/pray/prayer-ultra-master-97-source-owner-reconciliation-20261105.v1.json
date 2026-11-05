@@ -2196,6 +2196,24 @@
         "newRouteReleased": false,
         "requiredOwner": "DIVINE_OFFICE",
         "existingTenebraeAndRequiemNotOwnerOfThisOffice": true
+      },
+      "sourceDerivedVespersReview20261105": {
+        "votive1960Model": "src/pray/office-dead-vespers-1960.js",
+        "status": "SOURCE_DERIVED_VOTIVE_GENERAL_VESPERS_MODEL_ONLY",
+        "stageCount": 11,
+        "sourceLanguages": [
+          "la",
+          "en",
+          "fr"
+        ],
+        "psalm145Omitted": true,
+        "supplementalSources": "data/research/office-dead-1960/vespers-supplemental-source-leaves.v1.json",
+        "allSoulsNov2FullHourIncluded": false,
+        "individualRequiemVariantIncluded": false,
+        "fullOfficeComplete": false,
+        "publicReaderRouteAdded": false,
+        "printEditionCertification": false,
+        "acceptanceTest": "tests/pray-office-dead-vespers-1960-composition.mjs"
       }
     },
     {
@@ -3885,5 +3903,22 @@
     "newPrayerCorpusTexts": 0,
     "newPublicRoutes": 0,
     "printCertificates": 0
+  },
+  "subsequentOfficeDeadVespersAssembly20261105": {
+    "acquisitionId": "AO-AQ-055",
+    "researchOnly": true,
+    "modelReady": "VOTIVE_GENERAL_1960_ONLY",
+    "stages": 11,
+    "locales": [
+      "la",
+      "en",
+      "fr"
+    ],
+    "completeOfficeOfDead": false,
+    "newPrayersPublished": 0,
+    "newPublicRoutes": 0,
+    "allSoulsNov2Completed": false,
+    "firstEditionCertificationsAwarded": 0,
+    "correctedPsalm145Scope": "OMITTED_IN_1960_VOTIVE_VESPERS"
   }
 }
