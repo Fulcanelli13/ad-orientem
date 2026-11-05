@@ -1,10 +1,12 @@
 name: Sacred Atlas — one-time 151-place non-Wikimedia photo discovery
 # This is research-only source metadata from openly-licensed libraries.
-# One PR-open pass. Never triggered by synchronization, push, a timer, or dispatch.
+# One correction rerun after the initial offline-test-only failure.
+# Synchronize trigger exists solely to run this once after the test fix;
+# delete this workflow immediately after collecting the source results.
 # No paid APIs, no image copies, no public asset writes.
 on:
   pull_request:
-    types: [opened]
+    types: [opened, synchronize]
     branches: [main]
     paths:
       - '.github/workflows/sacred-atlas-151-noncommons-once.yml'
