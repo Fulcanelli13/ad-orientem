@@ -2181,6 +2181,21 @@
         "publicReaderInteractionCertified": false,
         "newPublicRouteAuthorized": false,
         "autoPublishAuthorized": false
+      },
+      "sourceAcquisition20261105": {
+        "status": "OFFICE_DEAD_P0_HISTORIC_SOURCE_LEAVES_STAGED_NOT_A_COMPLETED_OFFICE",
+        "sourceRegistry": "data/research/office-dead-1960/acquisition-registry.v1.json",
+        "sourceProperLeaves": 6,
+        "sourceVespersPsalmLeaves": 18,
+        "pinnedDivinumOfficiumRevision": "b9f8c8eb15d52b2b2c02e2ca24807cfaa73758f0",
+        "original1857RaccoltaTextCollated": false,
+        "original1961BreviaryPhotoCollated": false,
+        "sourceDerivedCompleteOfficeAssembled": false,
+        "latinEnglishFrenchFullHourParityCertified": false,
+        "independentlyTestedPublicReader": false,
+        "newRouteReleased": false,
+        "requiredOwner": "DIVINE_OFFICE",
+        "existingTenebraeAndRequiemNotOwnerOfThisOffice": true
       }
     },
     {
@@ -3860,5 +3875,15 @@
     "languageCertificatesAwarded": 0,
     "readerInteractionCertificatesAwarded": 0,
     "newPublicRoutesAuthorized": 0
+  },
+  "subsequentOfficeDeadAcquisition20261105": {
+    "acquisitionId": "AO-AQ-055",
+    "scope": "PINNED_TRILINGUAL_SOURCE_CAPTURE_NOT_ORIGINAL_PRINT_CERTIFICATION_OR_PUBLIC_READER",
+    "sourceRegistry": "data/research/office-dead-1960/acquisition-registry.v1.json",
+    "oldB31DispositionUnchanged": true,
+    "all97AcquisitionIdsRetained": true,
+    "newPrayerCorpusTexts": 0,
+    "newPublicRoutes": 0,
+    "printCertificates": 0
   }
 }

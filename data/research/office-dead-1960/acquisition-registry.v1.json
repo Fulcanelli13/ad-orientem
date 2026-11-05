@@ -1,0 +1,110 @@
+{
+  "schema": "ao.pray.office-dead-p0-source-acquisition.v1",
+  "created": "2026-11-05",
+  "originalAcquisitionId": "AO-AQ-055",
+  "originalPriority": "P0",
+  "originalDisposition": "ROUTED_OTHER_MODULE",
+  "targetOwner": "DIVINE_OFFICE_NOT_PRAYER_TEXT_DUPLICATION",
+  "researchState": "P0_PHASE_1_SOURCE_CAPTURE_ONLY_NO_ASSEMBLED_OFFICE_OR_PUBLIC_ROUTE",
+  "source": {
+    "project": "Divinum Officium",
+    "repository": "https://github.com/DivinumOfficium/divinum-officium",
+    "commit": "b9f8c8eb15d52b2b2c02e2ca24807cfaa73758f0",
+    "license": "MIT",
+    "licenseFile": "data/research/office-dead-1960/LICENSE",
+    "origin": "web/www/horas/{Latin,English,Francais}/{Commune/C9.txt,Sancti/11-02.txt,Psalterium/Psalmorum/PsalmN.txt}",
+    "historicalPrintCertificate": false,
+    "notAnIndependentPhotographedBreviary": true,
+    "translationFacesIndividuallyOwned": true,
+    "onlineRuntimeDependencyPermitted": false
+  },
+  "files": {
+    "properBundle": "data/research/office-dead-1960/proper-source-leaves.v1.json",
+    "vespersPsalmBundle": "data/research/office-dead-1960/vespers-psalm-source-leaves.v1.json",
+    "properLeafCount": 6,
+    "psalmLeafCount": 18,
+    "locales": [
+      "la",
+      "en",
+      "fr"
+    ],
+    "psalms": [
+      114,
+      119,
+      120,
+      129,
+      137,
+      145
+    ],
+    "vespersOrdinaryPsalmIds": [
+      114,
+      119,
+      120,
+      129,
+      137
+    ],
+    "conditionalConclusionPsalm": 145
+  },
+  "scope": {
+    "fixedDate": "11-02",
+    "traditionalRubrics": "1960 / Breviarium Romanum 1961–62",
+    "votiveOfficeMajorHours": [
+      "VESPERA",
+      "MATUTINUM",
+      "LAUDES"
+    ],
+    "allsoulsDayOffice": "Beyond the three principal Dead-Office Hours: proper short Hours and Compline from All Souls' proper must be handled; not a three-hour-only replacement for the whole 2 November office.",
+    "allSoulsMatins": "three nocturns; nine lessons; fixed All Souls lesson overrides from Sancti/11-02",
+    "vespers1960Rule": "Vespers of Dead assigned to 2 November; customary devotional Vespers after All Saints II Vespers on 1 November distinct and optional.",
+    "deadOfficePsalmDoxology": "Requiem aeternam instead of Gloria Patri",
+    "omitPsalm145On": [
+      "ALL_SOULS_2_NOVEMBER",
+      "DAY_OF_DEATH_OR_BURIAL"
+    ],
+    "notEquivalentTo": [
+      "REQUIEM_MASS",
+      "REQUIEM_ABSOLUTION",
+      "TENEBRAE",
+      "GOOD_DEATH_PRIVATE_DEVOTIONS",
+      "DE_PROFUNDIS_ALONE",
+      "RACCOLTA_PARAGRAPH_AS_FULL_OFFICE"
+    ],
+    "sacrosanctaeAcquisitionId": "AO-AQ-058",
+    "sacrosanctaeNotAppendedWithoutSourceReview": true
+  },
+  "gates": [
+    "Resolve DO source references, common orations, Invitatory and canonical endings; do not strip @ / $ / & macros as prayer text.",
+    "Acquire and check remaining Matins and Lauds Psalter verses, canticles, and full hourly 1960 substitutions, including lessons 4–9 on All Souls.",
+    "Independent photographed 1961–62 Roman Breviary collation required for exact-edition certification; pinned DO source alone is not sufficient.",
+    "Verify English and French variants against their own witnesses; do not claim French Crampon wording for DO's existing French Office translations.",
+    "Differentiate votive Office from 2 November proper and 1 November optional devotional customary Vespers; do not infer a universal service time.",
+    "Build source-complete offline reader with distinct hours and no duplicates, then mobile 390px and EN/FR/LA reader test.",
+    "Keep source-only material excluded from the curated GitHub Pages bundle until public release gate passes."
+  ],
+  "progress": {
+    "sourceProperLeavesCaptured": 6,
+    "sourceVespersPsalmLeavesCaptured": 18,
+    "completeMatinsAssembled": 0,
+    "completeLaudsAssembled": 0,
+    "completeVespersAssembled": 0,
+    "fullAllSoulsOfficeAssembled": 0,
+    "independentPrintedBreviaryCertifiedHours": 0,
+    "fullTrilingualHourCertificates": 0,
+    "publicReaderRoutesAdded": 0,
+    "livePublicationAuthorized": false
+  },
+  "references": [
+    {
+      "description": "General rubrics 1960 nos 161, 180, 185–191",
+      "url": "https://isidore.co/divinum/www/horas/Help/Rubrics/Breviary%201960.html"
+    },
+    {
+      "description": "Changes to the Breviary 1960, nn 58 and 61",
+      "url": "https://cdn.restorethe54.com/media/pdf/the-new-rubrics-of-the-roman-missal-and-breviary-1960.pdf"
+    },
+    {
+      "description": "Traditional breviary Office of the Dead rubrics chapter X",
+      "url": "https://isidore.co/divinum/www/horas/Help/Rubrics/newbrev.pdf"
+    }
+  ]
+}
