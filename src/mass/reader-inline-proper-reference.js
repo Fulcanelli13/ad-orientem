@@ -46,6 +46,7 @@ const allSaintsPrefix=Object.freeze({
  INTROIT:["gaudeamus omnes in domino diem festum celebrantes"],
  GRADUAL:["timete dominum omnes sancti eius"],
  OFFERTORY:["iustorum animae in manu dei sunt"],
+ ALLELUIA:["venite ad me omnes qui laboratis et onerati estis"],
  COMMUNION:["beati mundo corde quoniam ipsi deum videbunt"]
 });
 export const JULY07_REFERENCE_CSS=String.raw`
@@ -90,9 +91,9 @@ export function referenceScoresForParagraph({paragraph,resolvedMass,form}={}){
   .some(fragment=>latin.some(s=>s.includes(fragment)));
  if(!matches(role))return Object.freeze([]);
  if(saints){
-  // Four page-identified existing scores; the All Saints Venite ad me
-  // Alleluia has no authenticated pp.648-649 GABC identity in our archive.
-  // Never silently use the unrelated p.[114] variant.
+  // Five archive scores. GregoBase and the printed Graduale index identify
+  // the All Saints Venite ad me at both p.648 and p.[114]. Date, Proper,
+  // paragraph and Latin opening must still match exactly.
   const score=allSaintsByKey.get(role);
   return Object.freeze(score?[score]:[]);
  }
