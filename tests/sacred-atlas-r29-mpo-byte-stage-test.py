@@ -60,11 +60,15 @@ class FrozenSourceMPOStaging(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,"ORIGINAL_JPEG_SIZE_OR_SIGNATURE_UNSAFE"):
             mod.converted(row,bytes(fake),[900,720])
 
-    def test_uncleared_photo_cannot_be_published(self):
+    def test_remaining_eighteen_uncleared_photos_cannot_be_published(self):
         lock=mod.read(mod.LOCK);gates=mod.read(mod.REVIEW)
-        row=next(x for x in lock["decisions"] if x["place_id"]=="place:PL:lichen-marian-basilica")
-        gate=next(x for x in gates["rows"] if x["place_id"]==row["place_id"])
-        self.assertFalse(mod.policy_ready(row,gate))
+        released="place:PL:lichen-marian-basilica"
+        gate_by_id={x["place_id"]:x for x in gates["rows"]}
+        pending=[row for row in lock["decisions"] if row["place_id"]!=released]
+        self.assertEqual(len(pending),18)
+        self.assertTrue(mod.policy_ready(next(x for x in lock["decisions"] if x["place_id"]==released),gate_by_id[released]))
+        for row in pending:
+            self.assertFalse(mod.policy_ready(row,gate_by_id[row["place_id"]]),row["place_id"])
 
 if __name__=="__main__":
     unittest.main()
