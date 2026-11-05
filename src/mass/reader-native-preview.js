@@ -493,7 +493,9 @@ export async function prepareNativeReaderPreview({
   // their separately verified event, formula, and text identities.
   if(reviewCuratedCards===true && plan?.kind==="MASS" &&
      String(model.presentationMode).toUpperCase()==="LIVE" &&
-     curatedSourceEligible && !curatedEligible)
+     (curatedSourceEligible ||
+       overlays.some(id=>["NUPTIAL","EMBER_LESSONS"].includes(id))) &&
+     !curatedEligible)
     throw new Error("LIVE_65_CARD_PRESENTATION_REQUIRED");
   const curatedOrdinary=curatedEligible && String(model.presentationMode)==="LIVE"
     ? projectCuratedOrdinaryLiveCards(model):null;
