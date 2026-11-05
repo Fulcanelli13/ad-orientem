@@ -18,11 +18,11 @@ const hero=read("data/geography/approved-place-media.v1.json");
 const gallery=read("data/geography/approved-place-gallery.v1.json");
 const b7=read("data/geography/research/photo-finder-20261030/releases/b7-nine-preserved-covers-release-20261101.v1.json");
 const b7Verified=new Map(b7.newly_released.map(x=>[x.place_id,x]));
-assert.deepEqual([geo.places.length,seed.shrines.length,seed.pilgrimages.length,source.sources.length],[LIVE.places,257,240,LIVE.sources]);
+assert.deepEqual([geo.places.length,seed.shrines.length,seed.pilgrimages.length,source.sources.length],[LIVE.places,260,243,LIVE.sources]);
 assert.equal(newSites.length,6);
 assert.equal(new Set(newSites.map(x=>x.id)).size,6);
 assert.deepEqual(new Set(newSites.map(x=>x.country)),new Set(["SG","MA","CA","ZM"]));
-assert.equal(new Set(seed.shrines.map(x=>x.place_id)).size,257);
+assert.equal(new Set(seed.shrines.map(x=>x.place_id)).size,260);
 assert.equal(new Set(geo.places.map(x=>x.place_id)).size,geo.places.length);
 assert.ok(hero.items.length>=31+read("data/geography/research/directory-p95-first-two-photo-covers.v1.json").photos.length+read("data/geography/research/directory-p102-three-approved-covers.v1.json").photos.length+read("data/geography/research/directory-p106-four-approved-covers.v1.json").photos.length,"Historical R70 site baseline conserved while separately vetted Directory photos may be added");
 // Preserve the original six R68/R69 photographs without treating later
@@ -82,7 +82,7 @@ const dataset={directory:{records:[],communities:[]},
 const proj=projectExploreDataset(dataset);
 const profiles=buildExplorePlaceProfiles(dataset,proj,{today:"2026-10-11"});
 assert.equal(profiles.length,geo.places.length);
-assert.equal(exploreMapFeatures(proj.byLens.shrines).length,257);
+assert.equal(exploreMapFeatures(proj.byLens.shrines).length,260);
 for(const row of newSites){
  const profile=profiles.find(p=>p.place_id===row.id);
  assert.ok(profile);
