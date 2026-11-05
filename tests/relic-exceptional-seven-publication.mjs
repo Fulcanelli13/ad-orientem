@@ -18,7 +18,7 @@ assert.equal(publication.sites.length,7);
 assert.equal(assertExploreGeographyRegistry(geo).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({shrines:shrine.shrines,pilgrimages:shrine.pilgrimages,routes:shrine.routes,temporalLinks:shrine.temporalLinks,sources:sources.sources,places:geo.places}).pass,true);
 const counts=[geo.places.length,shrine.shrines.length,shrine.pilgrimages.length,sources.sources.length,sacred.relics.length];
-assert.deepEqual(counts,[LIVE.places,257,240,LIVE.sources,127]);
+assert.deepEqual(counts,[LIVE.places,260,243,LIVE.sources,127]);
 const geos=new Map(geo.places.map(p=>[p.place_id,p]));
 const groups=new Map(research.groups.map(g=>[g.object_group_id,g]));
 const pins=new Set(),oldGroups=research.groups.filter(g=>!g.research_candidate_id);
