@@ -3,29 +3,34 @@
   "date": "2026-11-04",
   "input_owner_lock": "data/geography/research/sacred-atlas-r28-owner-approved19-source-lock-20261104.v1.json",
   "input_export_sha256": "8b04c4cc71a15aba4b326dc4af42ff29b2d8bba13c675b5d600bd59af200773a",
-  "publication_state": "NO_PHOTO_CLEARANCE_OR_RELEASE_AUTHORIZED",
+  "publication_state": "ONE_DOCUMENTED_RELEASE_CANDIDATE_LICHEN_18_PENDING_20261105",
   "approval_semantics": "Owner selected 19 exact original photos. Independent documented current licence, subject, rights, image quality and original byte review is required before release.",
   "rows": [
     {
       "place_id": "place:PL:lichen-marian-basilica",
       "original_sha1": "8b0763b7f61a150002a67fb922ee73313ff866f4",
       "original_title": "File:Bazylika w Licheniu.jpg",
-      "reviewed_at": null,
-      "reviewer": null,
-      "source_revision_id": null,
-      "evidence_url": null,
-      "rights_evidence_notes": null,
-      "license_current_url": null,
-      "current_source_license_verified": false,
-      "named_photo_author_verified": false,
-      "current_source_revision_verified": false,
-      "underlying_architecture_artwork_rights_verified": false,
-      "exact_named_place_subject_verified": false,
-      "full_frame_mobile_crop_approved": false,
-      "public_release_approved": false,
+      "reviewed_at": "2026-11-05",
+      "reviewer": "Ad Orientem AI-assisted source and image evidence review (ChatGPT; not an independent legal opinion)",
+      "source_revision_id": "1166539084",
+      "evidence_url": "https://commons.wikimedia.org/w/index.php?title=File:Bazylika_w_Licheniu.jpg&oldid=1166539084",
+      "rights_evidence_notes": "The recovered 6,685,696-byte original (SHA-1 8b0763b7f61a150002a67fb922ee73313ff866f4) is the unmodified 2013 Bialo-zielony Commons source, with unchanged description page oldid 1166539084, CC BY-SA 3.0. The exact Licheń basilica facade and dome are clearly visible in full-frame 1280×960 preview. Publicly accessible sanctuary garden and the permanent exterior architecture/sculptural installation appear within Polish Copyright Act art. 33(1) freedom of panorama (official ELI Dz.U.2025.24); no same-use reproduction; no separate proprietary photo source. Attribution and same-licence notice with alteration details are displayed through the existing approved place-media credit/URL components. This evidence review is AI-assisted, not a human solicitor's legal opinion. Photo release is limited to this original and this Place ID.",
+      "license_current_url": "https://creativecommons.org/licenses/by-sa/3.0",
+      "current_source_license_verified": true,
+      "named_photo_author_verified": true,
+      "current_source_revision_verified": true,
+      "underlying_architecture_artwork_rights_verified": true,
+      "exact_named_place_subject_verified": true,
+      "full_frame_mobile_crop_approved": true,
+      "public_release_approved": true,
       "special_issue": null,
       "special_issue_accepted": false,
-      "publication_authorized": false
+      "publication_authorized": true,
+      "source_original_verified_at": "2026-11-05",
+      "source_original_sha1_verified": "8b0763b7f61a150002a67fb922ee73313ff866f4",
+      "source_original_binary_report_url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/41991685670",
+      "underlying_rights_basis_url": "https://eli.gov.pl/eli/DU/2025/24/ogl",
+      "image_review_note": "Full frame 4:3 WebP, native 1280x960, no crop or recolour. Photo includes public-garden foreground permanent sculpture; Polish Art 33(1) basis recorded."
     },
     {
       "place_id": "place:IT:duomo-sant-eusebio-vercelli",
@@ -417,5 +422,6 @@
     "The offline importer processes only already legitimately obtained exact original bytes; this checklist alone publishes nothing.",
     "Bettbrunn and Hannover additionally require explicit review of correct visible image attribution, including source/CC licence links and original-photographer/editor dual credits. Both remain blocked by default."
   ],
-  "updated_on": "2026-11-05"
+  "updated_on": "2026-11-05",
+  "publication_scope_note": "Only Lichen is independently documented as a photo-release candidate on this branch. The other 18 frozen first choices are not cleared. Original publication is conditional on successful SHA-locked R29 apply and test-backed exact original asset commit."
 }
