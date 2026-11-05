@@ -1,0 +1,92 @@
+name: Schola P0 actual-reader acceptance
+
+# One bounded real-reader acceptance matrix, not a new acquisition or score
+# certification process. Run on changes that affect Schola ownership and UI,
+# or invoke manually after merging adjacent reader release fixes.
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/schola-p0-runtime-acceptance.yml'
+      - 'tests/reader-schola*.mjs'
+      - 'tests/reader-composed-schola*.mjs'
+      - 'tests/sacred-music-programme-phone-e2e.mjs'
+      - 'tests/r17-four-form-family-phone.mjs'
+      - 'src/mass/reader-schola*.js'
+      - 'src/mass/reader-composed-schola-text.js'
+      - 'src/mass/reader-native-preview.js'
+      - 'src/mass/reader-dom.js'
+      - 'src/mass/reader-rite-music-presentation.js'
+      - 'src/mass/reader-inline-chant-selector.js'
+      - 'src/mass/reader-proper-gabc-bulk-join.js'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  actual-reader:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install pinned project and Chromium test dependencies
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+
+      - name: A — Low, Sung, Solemn and Requiem Schola source boundaries
+        run: |
+          node tests/reader-schola.mjs
+          node tests/reader-schola-windows.mjs
+          node tests/reader-schola-source-itinerary.mjs
+
+      - name: B — Independent observation, organ permissions and local programme
+        run: |
+          node tests/reader-schola-performance-ledger.mjs
+          node tests/reader-schola-local-programme.mjs
+          node tests/reader-schola-organ-options.mjs
+
+      - name: C — Special rites, no invented music and approved-score gating
+        run: |
+          node tests/reader-rite-music-presentation.mjs
+          node tests/reader-schola-special-rite-itinerary.mjs
+          node tests/reader-inline-chant-generic-source.mjs
+
+      - name: D — Gregorian default and optional seven-movement Fauré programme
+        run: |
+          node tests/sacred-music-work-programmes.mjs
+          node tests/reader-composed-schola-text.mjs
+
+      - name: E — Native LIVE manual Schola phone, Benedictus and gesture-independent clock
+        run: node tests/reader-schola-manual-phone.mjs
+
+      - name: F — Bilingual Fauré/Requiem native phone and seven-movement programme
+        run: |
+          node tests/reader-composed-schola-phone.mjs
+          node tests/sacred-music-programme-phone-e2e.mjs
+
+      - name: G — Exact 1961 print identity on source-selected native phone
+        run: node tests/reader-schola-original-facsimile-phone.mjs
+
+      - name: H — Four Mass forms and responsive 65-card production reader
+        run: |
+          node tests/r17-four-form-family-phone.mjs
+          node tests/reader-phone-curated65.mjs
+
+      - name: Preserve minimal existing Schola phone screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: schola-p0-runtime-phone-screens
+          path: |
+            artifacts/curated65-phone/live-schola-correction-320.png
+            artifacts/curated65-phone/live-schola-correction-390.png
+          if-no-files-found: warn
+          retention-days: 7
