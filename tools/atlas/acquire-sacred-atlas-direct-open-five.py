@@ -174,7 +174,7 @@ def main():
                 "place_id":pid, "status":"APPROVED","asset_path":asset,
                 "source_url":x["source_page"], "source_sha1":source_sha1,
                 "derivative_sha256":hashlib.sha256(webp).hexdigest(),
-                "credit":x["credit"],"license":x["license"],"license_url":x["license_url"],
+                "credit":x["credit"],"license":("CC0-1.0" if x["license"]=="CC0" else x["license"]),"license_url":x["license_url"],
                 "rights_verified":True,"subject_verified":True,"crop_reviewed":True,
                 "width":w,"height":h,
                 "orientation":"portrait" if h>w else "landscape",
