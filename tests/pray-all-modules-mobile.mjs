@@ -742,20 +742,15 @@ try{
      assert.match(prayer.source,/1962|2020|2021|traditional|traditionnelles|augmentée|expanded/i,
        "Version of prayer not distinguished in source disclosure: "+id);
    }
-   // Original F01 Holy Cards now have one native Back; the inline duplicate
-   // is intentionally hidden. Ordinary canonical prayers retain their row Back.
+   // Every canonical source reader and F01 Holy Card uses the one native
+   // header Back, with no second in-content return action.
    const inlineBack=page.locator("#aoPray435930.open [data-p435930-lib-back]");
-   const holyCard=await page.locator("#aoPray435930.open .aoClaudeHolyCard").count()>0;
-   if(holyCard){
-    assert.equal(await inlineBack.isVisible(),false,
-     "F01 must not expose redundant contextual Back");
-    const nativeBack=page.locator("#aoPray435930.open [data-p435930-back]");
-    assert.ok(await nativeBack.isVisible(),"F01 native Back is unavailable");
-    await nativeBack.tap({timeout:9000});
-   }else{
-    assert.ok(await inlineBack.isVisible(),"Canonical inline Back is unavailable");
-    await inlineBack.tap({timeout:9000});
-   }
+   assert.equal(await inlineBack.count(),0,
+     "Canonical source reader duplicates native header Back: "+id);
+   const nativeBack=page.locator("#aoPray435930.open [data-p435930-back]");
+   assert.ok(await nativeBack.isVisible(),
+     "Canonical source reader lost native header Back: "+id);
+   await nativeBack.tap({timeout:9000});
  }
  // Divine Mercy has two nested cursors: swipe changes one of seven/eight
  // prayer chapters; the visible beads and paragraph focus select individual
