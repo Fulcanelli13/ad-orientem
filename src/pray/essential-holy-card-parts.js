@@ -36,6 +36,53 @@ export const ESSENTIAL_HOLY_CARD_IDS_V1=Object.freeze([
  "dead_fidelium_deus",
  "dead_eternal_rest_singular"
 ]);
+// Editorial shelf selection, not deletion from the 32 source-owned Holy Card
+// readers or the 48 canonical Prayer texts. Daily prayers are kept as a
+// separately identifiable group within the 19-card Essentials collection.
+export const ESSENTIAL_HOLY_CARD_COLLECTION_GROUPS_V2=Object.freeze({
+ core:Object.freeze([
+  "foundations_sign_of_cross",
+  "foundations_our_father",
+  "foundations_hail_mary",
+  "foundations_glory_be",
+  "foundations_apostles_creed",
+  "sacrament_act_of_contrition",
+  "foundations_act_of_faith",
+  "foundations_act_of_hope",
+  "foundations_act_of_love",
+  "foundations_guardian_angel",
+  "foundations_prayer_of_adoration",
+  "marian_memorare",
+  "sacrament_come_holy_spirit",
+  "devotion_prayer_st_michael",
+  "sacred_heart_aspiration_trust",
+  "foundations_eternal_rest"
+ ]),
+ daily:Object.freeze([
+  "foundations_grace_before_meals",
+  "foundations_grace_after_meals",
+  "foundations_morning_offering"
+ ])
+});
+export const ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2=Object.freeze([
+ ...ESSENTIAL_HOLY_CARD_COLLECTION_GROUPS_V2.core,
+ ...ESSENTIAL_HOLY_CARD_COLLECTION_GROUPS_V2.daily
+]);
+// Display-only headings; neither Latin nor translated prayer bodies are
+// rewritten. Source identities and historical witness metadata stay intact.
+export const ESSENTIAL_HOLY_CARD_DISPLAY_TITLES_V2=Object.freeze({
+ foundations_act_of_love:Object.freeze({en:"Act of Charity",fr:"Acte de charité"}),
+ foundations_prayer_of_adoration:Object.freeze({en:"My Lord and My God",fr:"Mon Seigneur et mon Dieu"}),
+ marian_memorare:Object.freeze({en:"Memorare",fr:"Souvenez-vous"}),
+ foundations_grace_after_meals:Object.freeze({en:"Thanksgiving After Meals",fr:"Grâces après le repas"}),
+ foundations_eternal_rest:Object.freeze({en:"Eternal Rest",fr:"Repos éternel"}),
+ sacred_heart_aspiration_trust:Object.freeze({en:"Aspiration to the Sacred Heart",fr:"Aspiration au Sacré-Cœur"})
+});
+export function essentialHolyCardDisplayTitle(id,record,language="en"){
+ const locale=language==="fr"?"fr":"en";
+ return ESSENTIAL_HOLY_CARD_DISPLAY_TITLES_V2[id]?.[locale]||
+  (locale==="fr"?(record?.titleFr||record?.title):record?.title)||id;
+}
 
 const STARTS=Object.freeze({
  foundations_sign_of_cross:Object.freeze({en:[],fr:[],la:[]}),
