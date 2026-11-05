@@ -249,8 +249,8 @@ async function exerciseRealShellSpecialRite(browser,spec){
         source:globalThis.AO_R17_NATIVE_READER_PREVIEW?.sourceModel?.totalCards,
         curated:document.getElementById("ao-r17-native-reader-preview")?.dataset.r17CuratedReview,
       }));
-      assert.deepEqual(readerIdentity,{total:65,source:39,curated:"true"},
-        "real-shell Asperges must retain the 65-card source structure (64 ordinarily visible) and 39 original Mass source steps");
+      assert.deepEqual(readerIdentity,{total:65,source:30,curated:"true"},
+        "real-shell Asperges must retain the 65-family LIVE product (64 visible) from 30 canonical source macros");
     }
     if(["PALM","ASH","CANDLEMAS","ROGATIONS"].includes(spec.kind)){
       assert.equal(setup.massEntry,"INTROIT",
