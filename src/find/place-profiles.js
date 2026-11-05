@@ -24,6 +24,9 @@ export function resolveApprovedPlaceMedia(records,placeId){
     "CC-BY-SA-3.0":/^https:\/\/creativecommons\.org\/licenses\/by-sa\/3\.0\//,
     "CC-BY-SA-4.0":/^https:\/\/creativecommons\.org\/licenses\/by-sa\/4\.0\//,
     "PUBLIC_DOMAIN":/^https:\/\/creativecommons\.org\/publicdomain\/mark\/1\.0\//,
+    // Pexels Free is its own non-CC licence, permitting website and app use.
+    // Per-photo exact-source audit is independently asserted by photo tests.
+    "PEXELS_LICENSE":/^https:\/\/www\.pexels\.com\/license\/$/,
   });
   const record=arr(records).find(row=>row?.place_id===placeId&&row?.status==="APPROVED");
   if(!record)return null;
@@ -40,6 +43,10 @@ export function resolveApprovedPlaceMedia(records,placeId){
     /^[-a-zA-Z0-9_]+$/.test(text(record.gallery_media_id))&&
     /^[a-f0-9]{40}$/.test(text(record.source_sha1))&&
     /^[a-f0-9]{64}$/.test(text(record.derivative_sha256));
+  // Never treat generic image-platform links or CC licence aliases as Pexels proof.
+  if(record.license==="PEXELS_LICENSE" && !(
+      record.source_place_ref==="DIRECT_PEXELS_FLICKR_BATCH_TWO_20261105" &&
+      /^https:\/\/www\.pexels\.com\/photo\/[a-z0-9-]+-\d+\/$/.test(text(record.source_url))))return null;
   if(!(approvedCoverPath||reviewedGalleryCoverPath)||
      !record.rights_verified||!record.subject_verified||!record.crop_reviewed||
      !approvedLicenses[record.license]?.test(text(record.license_url))||
