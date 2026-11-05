@@ -4305,6 +4305,65 @@
         "SG-R79-GEO-SG-INV-0056"
       ],
       "confidence": "HIGH"
+    },
+    {
+      "shrine_id": "shrine:IT:santi-xii-apostoli-rome",
+      "place_id": "place:IT:santi-xii-apostoli-rome",
+      "name": "Basilica dei Santi XII Apostoli — apostolic relic shrine",
+      "shrine_kind": "SAINT",
+      "recognition_class": "UNKNOWN",
+      "dedication": "Saints Philip and James the Less",
+      "origin_summary": "The basilica's crypt houses bones venerated as those of the Apostles Philip and James the Less. According to the basilica's official account, they were uncovered in 1873 and placed in the present crypt on 1 May 1879; nineteenth-century expert recognition is not independent modern authentication of the apostolic attribution.",
+      "associated_saints": [
+        "Saint Philip the Apostle",
+        "Saint James the Less"
+      ],
+      "source_ids": [
+        "SHR-IT-XII-APOSTOLI-CRYPT",
+        "SHR-IT-XII-APOSTOLI-LOCATION"
+      ],
+      "confidence": "MEDIUM_HIGH",
+      "origin_summary_fr": "La crypte de la basilique conserve des ossements vénérés comme ceux des apôtres Philippe et Jacques le Mineur. Selon le récit officiel de la basilique, ils furent retrouvés en 1873 et déposés dans la crypte actuelle le 1er mai 1879 ; la reconnaissance par des experts au XIXe siècle ne constitue pas une authentification scientifique indépendante de leur attribution apostolique."
+    },
+    {
+      "shrine_id": "shrine:IT:san-pietro-in-vincoli-rome",
+      "place_id": "place:IT:san-pietro-in-vincoli-rome",
+      "name": "Basilica di San Pietro in Vincoli — Chains of Saint Peter",
+      "shrine_kind": "SAINT",
+      "recognition_class": "UNKNOWN",
+      "dedication": "Saint Peter the Apostle and the venerated chains",
+      "origin_summary": "The basilica preserves and displays chains long venerated as those of the Apostle Peter's imprisonment. The Lateran Canons Regular maintain the devotional tradition, while state heritage authorities document the reliquary in the confessio. The chains' historical association with Peter is a tradition, not an independently demonstrated archaeological identification.",
+      "associated_saints": [
+        "Saint Peter the Apostle"
+      ],
+      "source_ids": [
+        "SHR-IT-PIETRO-VINCOLI-CUSTODY",
+        "SHR-IT-PIETRO-VINCOLI-GEO",
+        "SHR-IT-PIETRO-VINCOLI-HERITAGE"
+      ],
+      "confidence": "MEDIUM_HIGH",
+      "origin_summary_fr": "La basilique conserve et expose les chaînes vénérées de longue date comme celles de la captivité de l'apôtre Pierre. Les chanoines réguliers du Latran entretiennent cette dévotion et les services patrimoniaux décrivent le reliquaire de la confession. Le lien historique entre ces chaînes et l'apôtre relève de la tradition, sans identification archéologique indépendante."
+    },
+    {
+      "shrine_id": "shrine:IT:genova-cattedrale-san-lorenzo",
+      "place_id": "place:IT:genova-cattedrale-san-lorenzo",
+      "name": "Cattedrale Metropolitana di San Lorenzo — St John the Baptist relic devotion",
+      "shrine_kind": "SAINT",
+      "recognition_class": "UNKNOWN",
+      "dedication": "Saint Lawrence; relic devotion to Saint John the Baptist",
+      "origin_summary": "Genoa's active Roman Catholic cathedral preserves the city-wide devotion to Saint John the Baptist, including relics traditionally described as his ashes and historic processional reliquaries. The cathedral treasury also houses the Sacro Catino: its legendary association with the Last Supper must not be represented as an authenticated Christian relic.",
+      "associated_saints": [
+        "Saint Lawrence",
+        "Saint John the Baptist"
+      ],
+      "source_ids": [
+        "SHR-IT-GENOVA-CATHEDRAL-HISTORY",
+        "SHR-IT-GENOVA-CATHEDRAL-CUSTODY",
+        "SHR-IT-GENOVA-CATHEDRAL-TREASURY",
+        "SHR-IT-GENOVA-CATHEDRAL-GEO"
+      ],
+      "confidence": "MEDIUM_HIGH",
+      "origin_summary_fr": "La cathédrale catholique de Gênes conserve une dévotion civique à saint Jean-Baptiste, notamment des reliques traditionnellement décrites comme ses cendres et des reliquaires processionnels historiques. Le trésor conserve aussi le Sacro Catino : son association légendaire avec la Cène ne doit pas être présentée comme une relique chrétienne authentifiée."
     }
   ],
   "pilgrimages": [
@@ -7927,6 +7986,54 @@
         "SG-R79-SITE-SG-INV-0056"
       ],
       "confidence": "HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:IT:santi-xii-apostoli-rome:destination",
+      "name": "Devotional visit to Basilica dei Santi XII Apostoli",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:IT:santi-xii-apostoli-rome",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "A devotional visit centres on prayer before the reliquary of Saints Philip and James in the crypt; current access and liturgical times must be checked with the basilica.",
+      "source_ids": [
+        "SHR-IT-XII-APOSTOLI-CRYPT",
+        "SHR-IT-XII-APOSTOLI-LOCATION"
+      ],
+      "confidence": "MEDIUM_HIGH",
+      "scope_note_fr": "La visite dévotionnelle est centrée sur la prière devant la châsse des saints Philippe et Jacques dans la crypte ; l'accès et les horaires liturgiques sont à vérifier auprès de la basilique."
+    },
+    {
+      "pilgrimage_id": "pilgrimage:IT:san-pietro-in-vincoli-rome:destination",
+      "name": "Devotional visit to Basilica di San Pietro in Vincoli",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:IT:san-pietro-in-vincoli-rome",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Pilgrims pray before the venerated chains of Saint Peter; the basilica also preserves Michelangelo's Moses. Visitor and Mass schedules are maintained by the custodians and may change.",
+      "source_ids": [
+        "SHR-IT-PIETRO-VINCOLI-CUSTODY",
+        "SHR-IT-PIETRO-VINCOLI-GEO",
+        "SHR-IT-PIETRO-VINCOLI-HERITAGE"
+      ],
+      "confidence": "MEDIUM_HIGH",
+      "scope_note_fr": "Les pèlerins prient devant les chaînes vénérées de saint Pierre ; la basilique conserve également le Moïse de Michel-Ange. Les horaires des visites et des messes relèvent des responsables du lieu et peuvent changer."
+    },
+    {
+      "pilgrimage_id": "pilgrimage:IT:genova-cattedrale-san-lorenzo:destination",
+      "name": "Devotional visit to Cattedrale Metropolitana di San Lorenzo",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:IT:genova-cattedrale-san-lorenzo",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Visitors may pray in the cathedral's chapel of Saint John the Baptist and explore the treasury's religious objects where accessible. Processional traditions are historically documented; current access and celebrations should be verified through the archdiocese.",
+      "source_ids": [
+        "SHR-IT-GENOVA-CATHEDRAL-HISTORY",
+        "SHR-IT-GENOVA-CATHEDRAL-CUSTODY",
+        "SHR-IT-GENOVA-CATHEDRAL-TREASURY",
+        "SHR-IT-GENOVA-CATHEDRAL-GEO"
+      ],
+      "confidence": "MEDIUM_HIGH",
+      "scope_note_fr": "Les visiteurs peuvent prier dans la chapelle Saint-Jean-Baptiste de la cathédrale et découvrir les objets sacrés du trésor lorsque celui-ci est accessible. Les traditions processionnelles sont historiquement attestées ; les célébrations et accès actuels sont à vérifier auprès de l'archidiocèse."
     }
   ],
   "routes": [
