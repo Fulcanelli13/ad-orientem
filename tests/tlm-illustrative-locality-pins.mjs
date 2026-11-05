@@ -1,4 +1,4 @@
-// R1/R2/R3/R4/R5/R6/R7/R8/R9/R10/R11/R12/R13/R14/R15 approved CL2 illustrative discovery positions: no GPS-coordinate navigation,
+// R1/R2/R3/R4/R5/R6/R7/R8/R9/R10/R11/R12/R13/R14/R15/R16 approved CL2 illustrative discovery positions: no GPS-coordinate navigation,
 // no venue identity merges and no current Mass or ecclesial status inferred.
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
@@ -17,6 +17,7 @@ import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R12} from "../src/find/cl2-illustrative-l
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R13} from "../src/find/cl2-illustrative-locality-pins-r13.js";
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R14} from "../src/find/cl2-illustrative-locality-pins-r14.js";
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R15} from "../src/find/cl2-illustrative-locality-pins-r15.js";
+import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R16} from "../src/find/cl2-illustrative-locality-pins-r16.js";
 import {validateCL2PhysicalIndex,projectCL2PhysicalDirectory} from "../src/find/cl2-physical-directory.js";
 import {projectPreliminaryR49,projectPublishedProvisionalMassSites} from "../src/find/preliminary-directory-r49.js";
 import {renderTlmChurchProfile} from "../src/find/tlm-church-profile.js";
@@ -417,7 +418,7 @@ assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS_R10["RG-A3F94D9DDAE3"].searchAddress.i
 assert.ok(CL2_ILLUSTRATIVE_LOCALITY_PINS_R10["RG-B65-CFAD7E37F3B2"].searchAddress.includes("Szamotuły"));
 assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS_R10["RG-B65-CFAD7E37F3B2"].searchAddress.includes("Września"));
 assert.ok(CL2_ILLUSTRATIVE_LOCALITY_PINS_R10["RG-D8598963F6F1"].searchAddress.includes("Hlavná 67"));
-for(const hold of ["RG-D6F294379CEF","RG-7A7B048E1F59","RG-1319CD21788A",
+for(const hold of ["RG-D6F294379CEF","RG-7A7B048E1F59",
  "RG-B65-AC330F6E2481","RG-2565E7B509ED"]){
  assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS_R10[hold],"R10 must protect source alias/multi-faith identity "+hold);
  assert.ok(items.get(hold)&&!items.get(hold).map_publishable);
@@ -637,6 +638,44 @@ for(const [anchor,pin] of r15){
  assert.ok(!site.actions[0].url.includes(String(pin.lat)+","+String(pin.lng)),"Approximate point must not enter navigation URL");
 }
 
+const r16=Object.entries(CL2_ILLUSTRATIVE_LOCALITY_PINS_R16);
+assert.equal(r16.length,1,"R16 exactly one Excel GEO-approved named castle chapel");
+assert.equal(r16[0][0],"RG-1319CD21788A","Use original longer-titled preferred CL2, not short FSSP duplicate");
+for(const [anchor,pin] of r16){
+ const frozen=origins.get(anchor),site=items.get(anchor),alias=items.get("RG-7A7B048E1F59");
+ assert.ok(frozen&&site&&alias,"R16 must retain both original CL2 source identities");
+ for(const old of [CL2_ILLUSTRATIVE_LOCALITY_PINS,CL2_ILLUSTRATIVE_LOCALITY_PINS_R2,
+  CL2_ILLUSTRATIVE_LOCALITY_PINS_R3,CL2_ILLUSTRATIVE_LOCALITY_PINS_R4,CL2_ILLUSTRATIVE_LOCALITY_PINS_R5,
+  CL2_ILLUSTRATIVE_LOCALITY_PINS_R6,CL2_ILLUSTRATIVE_LOCALITY_PINS_R7,CL2_ILLUSTRATIVE_LOCALITY_PINS_R8,
+  CL2_ILLUSTRATIVE_LOCALITY_PINS_R9,CL2_ILLUSTRATIVE_LOCALITY_PINS_R10,CL2_ILLUSTRATIVE_LOCALITY_PINS_R11,
+  CL2_ILLUSTRATIVE_LOCALITY_PINS_R12,CL2_ILLUSTRATIVE_LOCALITY_PINS_R13,CL2_ILLUSTRATIVE_LOCALITY_PINS_R14,
+  CL2_ILLUSTRATIVE_LOCALITY_PINS_R15])
+   assert.ok(!old[anchor],"R16 cannot replace already-mapped pin");
+ assert.ok(frozen[1].includes(pin.sourceId)&&pin.name===frozen[2]&&pin.country===frozen[3]);
+ assert.ok(String(frozen[4]).includes(pin.addressNeedle));
+ assert.equal(pin.sourceRef,"independent:r16-illustrative-rg1319cd21788a");
+ assert.equal(pin.lat,49.3781277778);assert.equal(pin.lng,15.9251472222);
+ assert.equal(pin.precision,"locality");
+ assert.equal(pin.reviewScope,"ILLUSTRATIVE_LOCALITY_POINT_NOT_WORSHIP_BUILDING_NOT_ENTRANCE");
+ assert.equal(pin.sourceUrl,"https://www.nockostelu.cz/kostel/8253/");
+ assert.ok(pin.evidence.length>=4&&pin.evidence.every(u=>u.startsWith("https://")));
+ assert.ok(pin.attribution.includes("RG-7A7B048E1F59")&&pin.attribution.includes("same St Bernard chapel"));
+ assert.ok(pin.localityName.includes("not surveyed chapel entrance"));
+ assert.ok(site.map_publishable&&site.map_state==="PROVISIONAL"&&site.geo?.approximate);
+ assert.equal(site.geo.lat,pin.lat);assert.equal(site.geo.lng,pin.lng);
+ assert.equal(site.geo.precision,"locality");assert.equal(site.geo.source_ref,pin.sourceRef);
+ assert.match(site.geo.review_scope,/ILLUSTRATIVE_LOCALITY_POINT/);
+ assert.match(site.status,/MASS UNVERIFIED/);assert.equal(site.affiliation_scope,"SOURCE_LABEL_ONLY");
+ assert.equal(site.sections.length,0);assert.ok(!site.celebration_evidence);
+ assert.equal(site.actions.length,1);assert.equal(site.actions[0].label,"Search location");
+ const u=new URL(site.actions[0].url),q=u.searchParams.get("query");
+ assert.equal(u.hostname,"www.google.com");assert.equal(u.pathname,"/maps/search/");
+ assert.ok(q.includes(pin.name)&&q.includes(pin.searchAddress),"Name and castle address used for navigation");
+ assert.ok(!site.actions[0].url.includes("/maps/dir/"));
+ assert.ok(!site.actions[0].url.includes(String(pin.lat)+","+String(pin.lng)));
+ assert.ok(!alias.map_publishable&&!alias.geo,"Same-chapel short FSSP alias must not create second pin");
+}
+
 const dy=items.get("RG-CF40DBEAD235"),jp=items.get("RG-40C164A0B0B7");
 assert.ok(dy?.map_publishable&&jp?.map_publishable);
 assert.notEqual(dy.physical_group_id,jp.physical_group_id,"Dyrdy St Barbara chapel and St John Paul II church are distinct physical sites");
@@ -738,6 +777,14 @@ for(const r of withheld){
  const pin=CL2_ILLUSTRATIVE_LOCALITY_PINS_R15[r.cl2_anchor];
  assert.ok(item?.map_publishable&&item.geo?.approximate);
  assert.equal(item.geo.lat,pin.lat);assert.equal(item.geo.lng,pin.lng);
+ assert.ok(pin.sourceUrl.startsWith("https://"));
+ }else if(CL2_ILLUSTRATIVE_LOCALITY_PINS_R16[r.cl2_anchor]){
+ assert.equal(r.cl2_anchor,"RG-1319CD21788A","Only exact Excel R16 castle chapel previously unpinpointed may be resolved");
+ assert.equal(r.status,"NO_SAFE_LOCALITY_CANDIDATE");
+ const pin=CL2_ILLUSTRATIVE_LOCALITY_PINS_R16[r.cl2_anchor];
+ assert.ok(item?.map_publishable&&item.geo?.approximate);
+ assert.equal(item.geo.lat,pin.lat);assert.equal(item.geo.lng,pin.lng);
+ assert.equal(item.geo.source_ref,pin.sourceRef);
  assert.ok(pin.sourceUrl.startsWith("https://"));
  }else if(laterPreciseSiteIds.has(r.cl2_anchor)){
   assert.ok(item?.map_publishable&&item.geo?.precision==="site","Excel precise site must use independently sourced site point: "+r.cl2_anchor);
