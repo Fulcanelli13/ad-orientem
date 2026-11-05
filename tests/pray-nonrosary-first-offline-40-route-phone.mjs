@@ -226,21 +226,15 @@ try{
     report.cases.push({width,language,door:door||"library-or-search",...state});
     console.log("PASS OFFLINE_FIRST_USE "+width+" "+language+" "+id+" -> "+expected);
     if(row.sourceFamily==="canonical-prayer"){
-     // F01 preserves a single visible native Back; ordinary prayers still
-     // own the contextual inline Back. Offline navigation must exercise the
-     // actual visible control and preserve return to the original shelf.
+     // Every canonical source card now has one native header Back.
+     // The cold-offline route must retain its original shelf on return.
      const inlineBack=page.locator("#aoPray435930.open [data-p435930-lib-back]");
-     const isHolyCard=await page.locator("#aoPray435930.open .aoClaudeHolyCard").count()>0;
-     if(isHolyCard){
-      assert.equal(await inlineBack.isVisible(),false,
-        "F01 offline reader must not show duplicate Back controls");
-      const nativeBack=page.locator("#aoPray435930.open [data-p435930-back]");
-      assert.ok(await nativeBack.isVisible(),"Offline F01 native Back must be visible");
-      await nativeBack.click();
-     }else{
-      assert.ok(await inlineBack.isVisible(),"Offline canonical inline Back must be visible");
-      await inlineBack.click();
-     }
+     assert.equal(await inlineBack.count(),0,
+      "Cold-offline canonical reader must not duplicate header Back");
+     const nativeBack=page.locator("#aoPray435930.open [data-p435930-back]");
+     assert.ok(await nativeBack.isVisible(),
+      "Cold-offline canonical reader lost its usable native Back");
+     await nativeBack.click();
      assert.equal(await page.locator('#aoPray435930.open [data-ao-prayer-shelf="'+door+'"]').count(),1,
       id+" canonical Back lost offline shelf");
     }

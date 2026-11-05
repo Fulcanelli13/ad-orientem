@@ -456,15 +456,47 @@ export async function prepareNativeReaderPreview({
       plan?.normalLastGospel!==false) ||
     (preceding.length===0 && singleFollowing==="CORPUS_CHRISTI_PROCESSION" &&
       Boolean(loadedCorpusChristi) && plan?.blessingAllowed===false &&
-      plan?.normalLastGospel===false && plan?.dismissal==="BENEDICAMUS_DOMINO");
+      plan?.normalLastGospel===false && plan?.dismissal==="BENEDICAMUS_DOMINO") ||
+    (preceding.length===0 && singleFollowing==="HOLY_THURSDAY_POST" &&
+      Boolean(loadedHolyThursdayPost) && liveCapabilityModel.holyThursday===true &&
+      plan?.blessingAllowed===false && plan?.normalLastGospel===false &&
+      plan?.dismissal==="BENEDICAMUS_DOMINO");
+  const overlays=plan?.overlayGraphs??[];
+  const nuptialSourceReady=liveCapabilityModel.nuptialInsertionCount===3 &&
+    liveCapabilityModel.emberInsertionCount==null &&
+    liveCapabilityModel.totalCards===42 &&
+    liveCapabilityModel.cards.filter(c=>c.nuptialInsertion===true).length===3;
+  const emberInsertions=Number(liveCapabilityModel.emberInsertionCount??0);
+  const emberSourceReady=emberInsertions>0 && Number.isSafeInteger(emberInsertions) &&
+    liveCapabilityModel.nuptialInsertionCount==null &&
+    liveCapabilityModel.totalCards===39+emberInsertions &&
+    liveCapabilityModel.cards.filter(c=>c.emberInsertion===true).length===emberInsertions;
+  const curatedSourceEligible=liveCapabilityModel.totalCards===39 ||
+    nuptialSourceReady || emberSourceReady ||
+    (liveCapabilityModel.holyThursday===true && liveCapabilityModel.credoOmitted===true &&
+      liveCapabilityModel.totalCards===(liveCapabilityModel.mandatumPresent===true?39:38));
+  const overlaySourceReady=
+    overlays.includes("NUPTIAL")===nuptialSourceReady &&
+    overlays.includes("EMBER_LESSONS")===emberSourceReady;
   const curatedEligible=reviewCuratedCards===true &&
     plan?.kind==="MASS" &&
-    liveCapabilityModel.totalCards===39 &&
-    String(liveCapabilityModel.corpusFamily)==="SUNG" &&
+    curatedSourceEligible && overlaySourceReady &&
+    ["LOW","SUNG"].includes(String(liveCapabilityModel.corpusFamily).toUpperCase()) &&
     // Eligibility is a property of the prepared Mass, not the initial mode:
     // a session may open in MISSAL and then switch to LIVE.
     compatiblePrelude && compatibleFollowing &&
-    (plan?.overlayGraphs??[]).every(id=>["VOTIVE_PROPER","REQUIEM"].includes(id));
+    overlays.every(id=>["VOTIVE_PROPER","REQUIEM","NUPTIAL","EMBER_LESSONS"].includes(id));
+  // Never publish the old 39-card intermediary as a LIVE Mass. A source
+  // combination that cannot be projected to approved cards must fail visibly;
+  // it must not masquerade as a complete Mass reader. Nuptial and Ember
+  // source insertions use the same 65-family segmentation without flattening
+  // their separately verified event, formula, and text identities.
+  if(reviewCuratedCards===true && plan?.kind==="MASS" &&
+     String(model.presentationMode).toUpperCase()==="LIVE" &&
+     (curatedSourceEligible ||
+       overlays.some(id=>["NUPTIAL","EMBER_LESSONS"].includes(id))) &&
+     !curatedEligible)
+    throw new Error("LIVE_65_CARD_PRESENTATION_REQUIRED");
   const curatedOrdinary=curatedEligible && String(model.presentationMode)==="LIVE"
     ? projectCuratedOrdinaryLiveCards(model):null;
   const presentationModel=curatedOrdinary
@@ -475,7 +507,8 @@ export async function prepareNativeReaderPreview({
       ? projectGranularMissalCards(model,{language:prepared?.readerPreferences?.language??"en"})
       : model;
   // Validate the separate 15-cue event crosswalk before mounting the opt-in reader.
-  if(curatedEligible)auditOrdinarySungPriestEventAlignment(events);
+  if(curatedEligible && String(model.corpusFamily).toUpperCase()==="SUNG")
+    auditOrdinarySungPriestEventAlignment(events);
   const eventState=createNativeEventStateController(events);
   const objectiveRuntime=createPlanAwareObjectiveRuntime({events,prepared});
   const cueState=createReaderFormCueStateController({
@@ -1336,7 +1369,8 @@ export async function mountNativeReaderPreview({
   });
   // The live Canon action clock is driven exclusively by an independent
   // observer. This does not modify the decorative cue-focused experience.
-  const canonStageObservation=ready.curatedEligible && ready.data?.rubricEvents
+  const canonStageObservation=ready.curatedEligible &&
+    String(ready.model?.corpusFamily).toUpperCase()==="SUNG" && ready.data?.rubricEvents
     ? createLiveCanonStageObservationController({
         registry:ready.data.rubricEvents,
         form:ready.prepared.session.resolvedMass.form,
@@ -1550,7 +1584,9 @@ export async function mountNativeReaderPreview({
   }
 
   function currentObservedCuratedPriestEvent(){
-    if(!ready.curatedEligible || !readerModel?.curatedPresentationReview ||
+    if(!ready.curatedEligible ||
+       String(ready.model?.corpusFamily).toUpperCase()!=="SUNG" ||
+       !readerModel?.curatedPresentationReview ||
        !observedCuratedPriestEvent || !current)return null;
     return projectObservedOrdinaryPriestEvent({
       observedEventId:observedCuratedPriestEvent.eventId,
@@ -1672,8 +1708,11 @@ export async function mountNativeReaderPreview({
       : owned.priestPosition);
     // Only the source-backed curated LIVE family receives the new state
     // projection. A card scroll is never an observed priest movement.
-    const finalCurated65=readerModel?.structureOwner==="SOURCE_FIRST_LIVE_CURATED_65_REVIEW" &&
-      [65,66,67].includes(readerModel?.totalCards) &&
+    const finalCurated65=String(ready.model?.corpusFamily).toUpperCase()==="SUNG" &&
+      readerModel?.structureOwner==="SOURCE_FIRST_LIVE_CURATED_65_REVIEW" &&
+      readerModel?.curatedPresentationReview===true &&
+      readerModel?.totalCards>=65 &&
+      current?.nuptialInsertion!==true && current?.emberInsertion!==true &&
       readerModel?.presentationMode==="LIVE";
     const curatedLocation=projectCurated65PriestStation({
       cueId:activeCueId,sourcePosition:sourcePriestPosition,
@@ -1744,8 +1783,10 @@ export async function mountNativeReaderPreview({
     // wording; this does not claim the two gestures have been observed.
     const canonLiveAction=certifiedLiveCanonActionOverride({
       presentationMode:readerModel?.presentationMode,
-      curatedPresentation:current?.curatedPresentationReview===true &&
-        readerModel?.sourceModelTotalCards===39,
+      curatedPresentation:String(ready.model?.corpusFamily).toUpperCase()==="SUNG" &&
+        current?.curatedPresentationReview===true &&
+        current?.nuptialInsertion!==true && current?.emberInsertion!==true &&
+        readerModel?.structureOwner==="SOURCE_FIRST_LIVE_CURATED_65_REVIEW",
       cueId:activeCueId,matrixAction:resolvedMatrixAction,
     });
     const originalPriestAction=canonLiveAction??cueProjection?.priestAction??resolvedMatrixAction??rubricAction??null;
@@ -2874,6 +2915,8 @@ export async function mountNativeReaderPreview({
       mode:nextMode,
       reviewExpandedCards:ready.curatedEligible===true && String(nextMode).toUpperCase()==="LIVE",
     });
+    if(rebuilt.mode==="LIVE" && rebuilt.presentationModel.totalCards===39)
+      throw new Error("LIVE_39_CARD_MODE_SWITCH_FORBIDDEN");
     sourceModel=rebuilt.sourceModel;
     // Preserve the liturgically omitted Foot-cluster across LIVE → MISSAL →
     // LIVE mode switches. No hidden 65-card ordinary opening can reappear.
@@ -3470,7 +3513,9 @@ export async function mountNativeReaderPreview({
       conditions=[],observedActor=null,observedDelivery=null,
       observedPosition=null,observedAction=null,
     }={})=>{
-      if(!ready.curatedEligible || !eventId || !Array.isArray(conditions)){
+      if(!ready.curatedEligible ||
+         String(ready.model?.corpusFamily).toUpperCase()!=="SUNG" ||
+         !eventId || !Array.isArray(conditions)){
         observedCuratedPriestEvent=null;queue();return false;
       }
       observedCuratedPriestEvent={eventId:String(eventId),conditions:[...conditions],

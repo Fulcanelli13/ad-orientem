@@ -1,0 +1,700 @@
+{
+  "schema": "AO_SACRED_ATLAS_W1_21_TO_30_BILINGUAL_EXTENDED_DRAFTS_V1",
+  "as_of": "2026-11-05",
+  "based_on": "data/geography/research/sacred-atlas-editorial-master-530-20261104.v1.json",
+  "scope": "Wave 1 entries 21–30. Ten distinctive EN/FR three-section research guides. No publication.",
+  "counts": {
+    "drafts": 10,
+    "english_paragraphs": 30,
+    "french_paragraphs": 30,
+    "publication_additions": 0
+  },
+  "special_qa": [
+    {
+      "place_id": "place:IT:montecassino-abbey",
+      "issue": "MONTECASSINO_AND_FLEURY_RELIC_CUSTODY_CLAIMS_MUST_REMAIN_DISTINCT"
+    },
+    {
+      "place_id": "place:US:auriesville-martyrs",
+      "issue": "OSSERNENON_EXACT_HISTORICAL_LOCATION_CONTESTED_ACCORDING_TO_SHRINE_ITSELF"
+    },
+    {
+      "place_id": "place:CA:oratoire-saint-joseph-montreal",
+      "issue": "ANDRE_TOMB_AND_HEART_RELIC_ARE_DIFFERENT_CANONICAL_OBJECTS"
+    },
+    {
+      "place_id": "place:FR:saint-joseph-bessillon",
+      "issue": "BESSILLON_AND_COTIGNAC_MARIAN_SHRINE_NOT_SAME_PHYSICAL_SITE"
+    },
+    {
+      "place_id": "place:PL:divine-mercy-plock",
+      "issue": "PLOCK_1931_VISIONS_ARE_REPORTED_TESTIMONY_NOT_AN_INDEPENDENT_MATERIAL_PROOF"
+    },
+    {
+      "place_id": "place:BR:pateo-do-collegio-sao-paulo",
+      "issue": "PATEO_CHURCH_REBUILT_1979_NOT_INTACT_1554_BUILDING"
+    }
+  ],
+  "guides": [
+    {
+      "place_id": "place:FR:cathedrale-notre-dame-amiens",
+      "place_name": "Cathédrale Notre-Dame d’Amiens",
+      "country_code": "FR",
+      "shrine_id": "shrine:FR:cathedrale-notre-dame-amiens",
+      "draft_order": 21,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "The cathedral treasury and the relic traditionally called the head of John the Baptist.",
+      "subtitle_fr": "Le trésor de la cathédrale et la relique traditionnellement appelée chef de saint Jean-Baptiste.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "sections": [
+        {
+          "id": "relic",
+          "title_en": "The head of Saint John the Baptist",
+          "title_fr": "Le chef de saint Jean-Baptiste",
+          "paragraphs": [
+            {
+              "en": "Amiens Cathedral is associated with a relic traditionally identified as the head of Saint John the Baptist. The Centre des monuments nationaux traces its presence in Amiens from 1206, after its reported transfer from Constantinople. This is a documented history of a venerated object and its custody; it does not amount to an independent demonstration of the relic's biblical attribution.",
+              "fr": "La cathédrale d’Amiens est associée à une relique traditionnellement identifiée comme le chef de saint Jean-Baptiste. Le Centre des monuments nationaux situe sa présence dans la ville dès 1206, après un transfert rapporté depuis Constantinople. Il s’agit de l’histoire documentée d’un objet vénéré et de sa conservation, non d’une démonstration indépendante de son attribution biblique.",
+              "source_url": "https://www.cathedrale-amiens.fr/decouvrir/la-relique-du-chef-de-saint-jean-baptiste"
+            }
+          ]
+        },
+        {
+          "id": "reliquary",
+          "title_en": "A reliquary of rock crystal",
+          "title_fr": "Un reliquaire en cristal de roche",
+          "paragraphs": [
+            {
+              "en": "The cathedral's treasure presents the relic within a rock-crystal reliquary, supplemented in the nineteenth century by a gilded silver plate with semi-precious stones and a mask of silver and enamel. The artistic object and the tradition of its contents should be described separately. A photograph of the reliquary would need independent image rights and exact-object identity verification.",
+              "fr": "Le trésor présente la relique dans un reliquaire de cristal de roche, enrichi au XIXe siècle d’un plateau d’argent doré serti de pierres semi-précieuses et d’un masque en argent et émail. L’objet d’orfèvrerie doit être décrit séparément de l’attribution traditionnelle de son contenu. Toute photographie exigerait une vérification distincte des droits et de l’identité précise de l’objet.",
+              "source_url": "https://www.cathedrale-amiens.fr/decouvrir/la-relique-du-chef-de-saint-jean-baptiste"
+            }
+          ]
+        },
+        {
+          "id": "treasury",
+          "title_en": "The wider cathedral treasury",
+          "title_fr": "L’ensemble du trésor cathédral",
+          "paragraphs": [
+            {
+              "en": "The cathedral treasury was dispersed or lost during the upheavals of 1793 and has been progressively reconstituted. Its display includes the reliquary of Saint Firmin, liturgical vessels, vestments and objects from several centuries. Access has been organized by the national monument authority since 2016; the visitor should check the current tour arrangements rather than assume every piece can always be seen.",
+              "fr": "Le trésor cathédral fut dispersé ou perdu pendant les bouleversements de 1793 et a été progressivement reconstitué. On y trouve notamment la châsse de saint Firmin, des vases sacrés, des vêtements liturgiques et des œuvres de diverses époques. Les visites sont organisées par l’autorité patrimoniale nationale depuis 2016 ; les modalités actuelles doivent être vérifiées sans présumer que tous les objets sont exposés en permanence.",
+              "source_url": "https://www.cathedrale-amiens.fr/decouvrir/la-relique-du-chef-de-saint-jean-baptiste"
+            }
+          ]
+        }
+      ],
+      "existing_relic_ids": [
+        "relic:FR:cathedrale-notre-dame-amiens"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:FR:cathedrale-notre-dame-amiens:destination"
+      ],
+      "saint_name_associations": [
+        "Saint John the Baptist"
+      ],
+      "bibliography_urls": [
+        "https://www.cathedrale-amiens.fr/decouvrir/la-relique-du-chef-de-saint-jean-baptiste"
+      ],
+      "source_evidence_scope": "DIRECT_INSTITUTIONAL_SHRINE_AND_HERITAGE_SITE_REVIEW_2026_11_05",
+      "next_gate": "SECOND_EDITOR_SUBSTANTIVE_EVIDENCE_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:IT:duomo-sant-eusebio-vercelli",
+      "place_name": "Cattedrale di Sant'Eusebio, Vercelli",
+      "country_code": "IT",
+      "shrine_id": "shrine:IT:duomo-sant-eusebio-vercelli",
+      "draft_order": 22,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "Saint Eusebius's cathedral, the 1581 discovery and the succession of reliquaries.",
+      "subtitle_fr": "La cathédrale Saint-Eusèbe, la découverte de 1581 et les châsses successives.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "sections": [
+        {
+          "id": "saint",
+          "title_en": "Eusebius and the cathedral",
+          "title_fr": "Eusèbe et la cathédrale",
+          "paragraphs": [
+            {
+              "en": "The cathedral at Vercelli bears the name of Saint Eusebius, its early bishop and patron. The cathedral treasury records a long history of devotion to relics attributed to him, centred on discoveries and later transfers within the church. This specific Vercelli tradition should remain distinct from general biographical accounts of Eusebius and from other Italian churches sharing the dedication.",
+              "fr": "La cathédrale de Verceil porte le nom de saint Eusèbe, ancien évêque et patron de la cité. Le musée du trésor documente une longue histoire de vénération de reliques qui lui sont attribuées, marquée par des découvertes et des translations à l’intérieur de l’église. Cette tradition propre à Verceil doit être distinguée d’une simple biographie d’Eusèbe et des autres églises portant son nom.",
+              "source_url": "https://tesorodelduomovc.it/opere/urna-di-eusebio/"
+            }
+          ]
+        },
+        {
+          "id": "discovery",
+          "title_en": "The discovery in 1581",
+          "title_fr": "La découverte de 1581",
+          "paragraphs": [
+            {
+              "en": "On 18 February 1581, remains identified with Saint Eusebius were discovered beneath the presbyterium pavement. The museum describes the inscribed metal covering of the burial and its reuse as the lead urn. A pastoral visitation of 1599 placed the urn on an altar dedicated to Eusebius. This is precise documentary evidence for the history of a reliquary, though the app does not authenticate the bodily remains itself.",
+              "fr": "Le 18 février 1581, des restes identifiés à saint Eusèbe furent découverts sous le pavement du chœur. Le musée décrit la couverture métallique inscrite de la sépulture, réemployée ensuite pour une urne de plomb. Une visite pastorale de 1599 situe l’urne sur un autel consacré à Eusèbe. Cette documentation éclaire l’histoire du reliquaire sans que l’application authentifie elle-même les restes humains.",
+              "source_url": "https://tesorodelduomovc.it/opere/urna-di-eusebio/"
+            }
+          ]
+        },
+        {
+          "id": "transfers",
+          "title_en": "Successive reliquaries",
+          "title_fr": "Les reliquaires successifs",
+          "paragraphs": [
+            {
+              "en": "The treasury records further transfers: in 1628 part of the remains was moved to another urn, and in 1733 an earlier silver vessel was adapted for the cult of Eusebius. The lead urn continued to hold part of the relic tradition through the nineteenth century and was relocated within the cathedral. A card should distinguish the museum object from the presently venerated shrine rather than invent a single unchanged tomb.",
+              "fr": "Le trésor relate d’autres translations : en 1628, une partie des restes passa dans une autre urne ; en 1733, un reliquaire d’argent plus ancien fut adapté au culte d’Eusèbe. L’urne de plomb continua de conserver une partie de cette tradition reliquaire au XIXe siècle et fut déplacée dans la cathédrale. La fiche doit distinguer l’objet muséal de la présentation actuelle, sans inventer un tombeau immuable.",
+              "source_url": "https://tesorodelduomovc.it/opere/urna-di-eusebio/"
+            }
+          ]
+        }
+      ],
+      "existing_relic_ids": [
+        "relic:IT:duomo-sant-eusebio-vercelli"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:IT:duomo-sant-eusebio-vercelli:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Eusebius of Vercelli"
+      ],
+      "bibliography_urls": [
+        "https://tesorodelduomovc.it/opere/urna-di-eusebio/"
+      ],
+      "source_evidence_scope": "DIRECT_INSTITUTIONAL_SHRINE_AND_HERITAGE_SITE_REVIEW_2026_11_05",
+      "next_gate": "SECOND_EDITOR_SUBSTANTIVE_EVIDENCE_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:IT:san-pietro-ciel-doro",
+      "place_name": "Basilica San Pietro in Ciel d'Oro, Pavia",
+      "country_code": "IT",
+      "shrine_id": "shrine:IT:san-pietro-ciel-doro",
+      "draft_order": 23,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "Saint Augustine's monument at Pavia, the Romanesque basilica and the tomb traditions.",
+      "subtitle_fr": "Le monument de saint Augustin à Pavie, la basilique romane et les traditions funéraires.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "sections": [
+        {
+          "id": "augustine",
+          "title_en": "The resting place of Augustine",
+          "title_fr": "Le lieu de repos de saint Augustin",
+          "paragraphs": [
+            {
+              "en": "San Pietro in Ciel d'Oro is renowned for its long association with the remains of Saint Augustine of Hippo. The municipality of Pavia describes a transfer from Sardinia in the eighth century at the initiative of the Lombard king Liutprand. This is the historically transmitted custody of a major Doctor of the Church, not a claim that the app has independently tested the relics.",
+              "fr": "San Pietro in Ciel d’Oro est célèbre pour sa longue association avec les restes de saint Augustin d’Hippone. La ville de Pavie présente une translation depuis la Sardaigne au VIIIe siècle, à l’initiative du roi lombard Liutprand. Cette tradition historique de conservation concerne un grand Docteur de l’Église, sans que l’application prétende avoir elle-même authentifié les reliques.",
+              "source_url": "https://www.comune.pavia.it/vivere-comune/luoghi/basilica-san-pietro-ciel-doro"
+            }
+          ]
+        },
+        {
+          "id": "architecture",
+          "title_en": "Romanesque church and marble shrine",
+          "title_fr": "Une église romane et une châsse de marbre",
+          "paragraphs": [
+            {
+              "en": "The present basilica was remodelled in Romanesque forms during the twelfth century. Above the presbyterium stands the elaborate marble monument dedicated to Augustine, carved between 1362 and 1402 and ornamented with numerous figures and reliefs. Its artistic chronology is later than the early medieval translation tradition, a distinction that helps visitors read the building correctly.",
+              "fr": "L’actuelle basilique fut renouvelée en formes romanes au XIIe siècle. Au-dessus du chœur se dresse le monument de marbre consacré à Augustin, sculpté entre 1362 et 1402 et orné de nombreuses statues et de reliefs. Sa chronologie artistique est bien postérieure à la tradition de translation du haut Moyen Âge : cette distinction aide à lire correctement les différentes périodes de l’édifice.",
+              "source_url": "https://www.comune.pavia.it/vivere-comune/luoghi/basilica-san-pietro-ciel-doro"
+            }
+          ]
+        },
+        {
+          "id": "others",
+          "title_en": "Other memorials and visiting",
+          "title_fr": "Autres mémoriaux et visite",
+          "paragraphs": [
+            {
+              "en": "The church also carries memorial associations with the Lombard king Liutprand and the philosopher Boethius, recalled in the municipality's description and in a Dante inscription. Those burials are related historical subjects, not additional supposed relics of Augustine. The municipality lists visits and guided arrangements, which should be checked for the actual date of travel.",
+              "fr": "L’église conserve également la mémoire du roi lombard Liutprand et du philosophe Boèce, rappelés par la présentation municipale et une inscription liée à Dante. Ces sépultures sont des sujets historiques distincts, non d’autres reliques supposées d’Augustin. La ville donne des renseignements sur les visites et les visites guidées, qu’il convient de vérifier pour la date du voyage.",
+              "source_url": "https://www.comune.pavia.it/vivere-comune/luoghi/basilica-san-pietro-ciel-doro"
+            }
+          ]
+        }
+      ],
+      "existing_relic_ids": [
+        "relic:IT:san-pietro-ciel-doro"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:IT:san-pietro-ciel-doro:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Augustine of Hippo"
+      ],
+      "bibliography_urls": [
+        "https://www.comune.pavia.it/vivere-comune/luoghi/basilica-san-pietro-ciel-doro"
+      ],
+      "source_evidence_scope": "DIRECT_INSTITUTIONAL_SHRINE_AND_HERITAGE_SITE_REVIEW_2026_11_05",
+      "next_gate": "SECOND_EDITOR_SUBSTANTIVE_EVIDENCE_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:IT:sant-alfonso-pagani",
+      "place_name": "Basilica Sant'Alfonso de Liguori, Pagani",
+      "country_code": "IT",
+      "shrine_id": "shrine:IT:sant-alfonso-pagani",
+      "draft_order": 24,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "The Redemptorist foundation at Pagani, Saint Alphonsus's remains and the community museum.",
+      "subtitle_fr": "La fondation rédemptoriste de Pagani, la dépouille de saint Alphonse et le musée communautaire.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "sections": [
+        {
+          "id": "foundation",
+          "title_en": "A house of the Redemptorists",
+          "title_fr": "Une maison des Rédemptoristes",
+          "paragraphs": [
+            {
+              "en": "The Redemptorist community at Pagani traces its establishment to Saint Alphonsus Maria de Liguori, who accepted the foundation after consultation with local ecclesiastical figures. During building works, the fathers worshipped in the small church of Saint Dominic. Alphonsus placed the house under Saint Michael the Archangel, whose name originally designated the church within this community's history.",
+              "fr": "La communauté rédemptoriste de Pagani rattache sa fondation à saint Alphonse-Marie de Liguori, qui l’accepta après consultation de responsables ecclésiastiques locaux. Pendant les travaux, les pères célébraient dans la petite église Saint-Dominique. Alphonse plaça la maison sous le patronage de saint Michel Archange, titre initialement associé à l’église de cette communauté.",
+              "source_url": "https://www.redentoristinapoletani.it/le-comunit%C3%A0-in-italia-meridionale/pagani-basilica-sant-alfonso-de-liguori/"
+            }
+          ]
+        },
+        {
+          "id": "tomb",
+          "title_en": "Saint Alphonsus at Pagani",
+          "title_fr": "Saint Alphonse à Pagani",
+          "paragraphs": [
+            {
+              "en": "Pagani became an important Redemptorist memorial because the founder's mortal remains are kept there. The community recalls a visit by Pope John Paul II on 12 November 1990. The shrine is therefore linked to the actual life of the founder and the continued presence of his religious congregation, rather than simply being a church with a familiar dedication.",
+              "fr": "Pagani est devenu un lieu majeur de mémoire rédemptoriste parce que la dépouille du fondateur y est conservée. La communauté rappelle la visite du pape Jean-Paul II le 12 novembre 1990. Le sanctuaire est ainsi lié à la vie réelle d’Alphonse et à la présence continue de sa congrégation, et non seulement à une église portant un nom connu.",
+              "source_url": "https://www.redentoristinapoletani.it/le-comunit%C3%A0-in-italia-meridionale/pagani-basilica-sant-alfonso-de-liguori/"
+            }
+          ]
+        },
+        {
+          "id": "museum",
+          "title_en": "Museum, rooms and living ministry",
+          "title_fr": "Musée, chambres et ministère vivant",
+          "paragraphs": [
+            {
+              "en": "The house at Pagani preserves an Alphonsian museum, historical rooms and the provincial archive. The Redemptorists offer parish ministry, preaching and confession; the museum and rooms are described as available by prior arrangement. These activities belong to the living community and should be checked with its current visitor office, not treated as an unchanging public schedule.",
+              "fr": "La maison de Pagani conserve un musée alphonsien, des pièces historiques et les archives provinciales. Les Rédemptoristes y assurent notamment la vie paroissiale, la prédication et la confession ; la visite du musée et des chambres est annoncée sur réservation. Ces activités dépendent d’une communauté vivante et doivent être confirmées auprès de son accueil, sans être transformées en horaire permanent.",
+              "source_url": "https://www.redentoristinapoletani.it/le-comunit%C3%A0-in-italia-meridionale/pagani-basilica-sant-alfonso-de-liguori/"
+            }
+          ]
+        }
+      ],
+      "existing_relic_ids": [
+        "relic:IT:sant-alfonso-pagani"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:IT:sant-alfonso-pagani:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Alphonsus Liguori"
+      ],
+      "bibliography_urls": [
+        "https://www.redentoristinapoletani.it/le-comunit%C3%A0-in-italia-meridionale/pagani-basilica-sant-alfonso-de-liguori/"
+      ],
+      "source_evidence_scope": "DIRECT_INSTITUTIONAL_SHRINE_AND_HERITAGE_SITE_REVIEW_2026_11_05",
+      "next_gate": "SECOND_EDITOR_SUBSTANTIVE_EVIDENCE_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:IT:montecassino-abbey",
+      "place_name": "Abbazia di Montecassino — Tomb of Saints Benedict and Scholastica",
+      "country_code": "IT",
+      "shrine_id": "shrine:IT:montecassino-abbey",
+      "draft_order": 25,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "Benedict and Scholastica's traditionally shared tomb in a rebuilt living abbey.",
+      "subtitle_fr": "Le tombeau traditionnellement commun de Benoît et Scholastique dans une abbaye vivante reconstruite.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "sections": [
+        {
+          "id": "founder",
+          "title_en": "Benedict's monastic foundation",
+          "title_fr": "La fondation monastique de Benoît",
+          "paragraphs": [
+            {
+              "en": "Montecassino is a historic Benedictine abbey associated with Saint Benedict of Nursia and the monastic way of life expressed in his Rule. The community identifies the basilica as a place of prayer at the centre of the abbey, rather than only a heritage museum. Its present buildings preserve that vocation even after extensive rebuilding over the centuries.",
+              "fr": "Le Mont-Cassin est une abbaye bénédictine historique liée à saint Benoît de Nursie et à la vie monastique exprimée dans sa Règle. La communauté présente la basilique comme un lieu de prière au cœur de l’abbaye, et non seulement comme un musée patrimonial. Les bâtiments actuels conservent cette vocation malgré les multiples reconstructions intervenues au fil des siècles.",
+              "source_url": "https://abbaziamontecassino.it/arte/la-tomba-di-san-benedetto-e-di-santa-scolastica/la-tomba/"
+            }
+          ]
+        },
+        {
+          "id": "shared-tomb",
+          "title_en": "The shared tomb of two saints",
+          "title_fr": "Le tombeau commun de deux saints",
+          "paragraphs": [
+            {
+              "en": "The abbey places the traditional tomb of Benedict and his sister Saint Scholastica behind the high altar of its reconstructed cathedral. It points visitors to an image painted on copper by Giuseppe Cesari in the seventeenth century which marks that position. This is the abbey's own custodial tradition; the separate claim of relics at Fleury must remain distinguishable rather than be silently harmonized.",
+              "fr": "L’abbaye situe le tombeau traditionnel de Benoît et de sa sœur sainte Scholastique derrière le maître-autel de la cathédrale reconstruite. Elle signale un tableau sur cuivre de Giuseppe Cesari, au XVIIe siècle, qui indique cet emplacement. Il s’agit de la tradition de conservation propre au Mont-Cassin ; la revendication distincte des reliques à Fleury doit demeurer identifiable, sans harmonisation artificielle.",
+              "source_url": "https://abbaziamontecassino.it/arte/la-tomba-di-san-benedetto-e-di-santa-scolastica/la-tomba/"
+            }
+          ]
+        },
+        {
+          "id": "visit",
+          "title_en": "Abbey church and pilgrim visit",
+          "title_fr": "L’abbatiale et la visite des pèlerins",
+          "paragraphs": [
+            {
+              "en": "The abbey provides separate instructions for visiting its church, booking guided tours, seeing the library and attending present liturgies. Pilgrims seeking the tomb should distinguish the basilica altar area from the museum and library itinerary. A schedule posted by the abbey concerns its current monastic community, not a guarantee of celebration according to the Roman Missal of 1962.",
+              "fr": "L’abbaye donne des indications distinctes pour visiter l’église, réserver une visite guidée, découvrir la bibliothèque et assister aux célébrations actuelles. Les pèlerins venus au tombeau doivent distinguer l’espace de l’autel de la basilique du parcours du musée et de la bibliothèque. Les horaires monastiques du jour ne garantissent nullement l’emploi du missel romain de 1962.",
+              "source_url": "https://abbaziamontecassino.it/arte/la-tomba-di-san-benedetto-e-di-santa-scolastica/la-tomba/"
+            }
+          ]
+        }
+      ],
+      "existing_relic_ids": [
+        "relic:IT:montecassino-abbey"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:IT:montecassino-abbey:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Benedict of Nursia",
+        "Saint Scholastica"
+      ],
+      "bibliography_urls": [
+        "https://abbaziamontecassino.it/arte/la-tomba-di-san-benedetto-e-di-santa-scolastica/la-tomba/"
+      ],
+      "source_evidence_scope": "DIRECT_INSTITUTIONAL_SHRINE_AND_HERITAGE_SITE_REVIEW_2026_11_05",
+      "next_gate": "SECOND_EDITOR_SUBSTANTIVE_EVIDENCE_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:auriesville-martyrs",
+      "place_name": "National Shrine of Our Lady of Martyrs",
+      "country_code": "US",
+      "shrine_id": "shrine:US:auriesville-martyrs",
+      "draft_order": 26,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "The Auriesville martyrs, its disputed Ossernenon identification and later pilgrimage shrine.",
+      "subtitle_fr": "Les martyrs d’Auriesville, l’identification discutée d’Ossernenon et le sanctuaire de pèlerinage ultérieur.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "sections": [
+        {
+          "id": "martyrs",
+          "title_en": "The North American martyrs",
+          "title_fr": "Les martyrs d’Amérique du Nord",
+          "paragraphs": [
+            {
+              "en": "The Shrine of Our Lady of Martyrs commemorates the Jesuit missionaries Isaac Jogues, René Goupil and John de Lalande, killed in the Mohawk country during the 1640s. Its history also remembers Kateri Tekakwitha, whom its custodians associate with Ossernenon. These memories are part of a complex Indigenous and missionary history involving captivity, conflict, faith and later reconciliation.",
+              "fr": "Le sanctuaire Notre-Dame-des-Martyrs commémore les missionnaires jésuites Isaac Jogues, René Goupil et Jean de Lalande, tués dans le pays mohawk au cours des années 1640. Il rappelle également Kateri Tekakwitha, que ses responsables associent à Ossernenon. Cette mémoire appartient à une histoire autochtone et missionnaire complexe, mêlant captivité, conflit, foi et réconciliations ultérieures.",
+              "source_url": "https://www.ourladyofmartyrsshrine.org/story-of-the-martyrs"
+            }
+          ]
+        },
+        {
+          "id": "location",
+          "title_en": "Ossernenon and historical disagreement",
+          "title_fr": "Ossernenon et le débat historique",
+          "paragraphs": [
+            {
+              "en": "The shrine occupies land identified by Jesuit historians in the nineteenth century as the Mohawk village of Ossernenon. Its current institution defends that identification, while acknowledging a competing recent interpretation placing the martyrdom sites farther along the Mohawk River. The Atlas should explicitly describe this as a contested historical site attribution; an institutionally defended identification is not an undisputed archaeological conclusion.",
+              "fr": "Le sanctuaire se trouve sur un terrain identifié au XIXe siècle par des historiens jésuites comme le village mohawk d’Ossernenon. L’institution défend encore cette localisation, tout en évoquant une interprétation récente qui situe les martyres plus loin le long de la rivière Mohawk. L’Atlas doit préciser qu’il s’agit d’une attribution de site discutée, et non d’une conclusion archéologique universellement admise.",
+              "source_url": "https://www.ourladyofmartyrsshrine.org/auriesville-is-ossernenon"
+            }
+          ]
+        },
+        {
+          "id": "development",
+          "title_en": "The national shrine and pilgrimage grounds",
+          "title_fr": "Le sanctuaire national et son domaine",
+          "paragraphs": [
+            {
+              "en": "The institution dates the purchase of the first shrine parcel to 1884 and describes a Mass attended by thousands of pilgrims in 1885. A large Coliseum church followed in 1931 to receive the growing crowds. Its current grounds, museum and chapel form a planned pilgrimage complex. The separate walking pilgrimage traditions recorded in the Atlas still require their own verified route geometry and yearly programme.",
+              "fr": "L’institution situe l’achat du premier terrain en 1884 et relate une messe rassemblant des milliers de pèlerins en 1885. Une vaste église de type Coliseum fut construite en 1931 pour accueillir les foules. Le domaine actuel, son musée et ses chapelles forment un ensemble de pèlerinage. Les autres marches de pèlerinage inscrites dans l’Atlas demandent encore leurs propres tracés et programmes annuels vérifiés.",
+              "source_url": "https://www.ourladyofmartyrsshrine.org/shrine-history"
+            }
+          ]
+        }
+      ],
+      "existing_relic_ids": [],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:US:auriesville-destination",
+        "pilgrimage:US:auriesville-restoration",
+        "pilgrimage:US:auriesville-amsterdam"
+      ],
+      "saint_name_associations": [
+        "Saint Isaac Jogues",
+        "Saint René Goupil",
+        "Saint John de Lalande",
+        "Saint Kateri Tekakwitha"
+      ],
+      "bibliography_urls": [
+        "https://www.ourladyofmartyrsshrine.org/about-the-shrine",
+        "https://pilgrimage-for-restoration.org/",
+        "https://www.ourladyofmartyrsshrine.org/featured-events",
+        "https://www.ourladyofmartyrsshrine.org/story-of-the-martyrs",
+        "https://www.ourladyofmartyrsshrine.org/auriesville-is-ossernenon",
+        "https://www.ourladyofmartyrsshrine.org/shrine-history"
+      ],
+      "source_evidence_scope": "DIRECT_INSTITUTIONAL_SHRINE_AND_HERITAGE_SITE_REVIEW_2026_11_05",
+      "next_gate": "SECOND_EDITOR_SUBSTANTIVE_EVIDENCE_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:CA:oratoire-saint-joseph-montreal",
+      "place_name": "Oratoire Saint-Joseph du Mont-Royal",
+      "country_code": "CA",
+      "shrine_id": "shrine:CA:oratoire-saint-joseph-montreal",
+      "draft_order": 27,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "Saint Joseph's Oratory and the two distinct memorials of Brother André.",
+      "subtitle_fr": "L’Oratoire Saint-Joseph et les deux lieux de mémoire distincts du frère André.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "sections": [
+        {
+          "id": "founder",
+          "title_en": "Brother André and Saint Joseph",
+          "title_fr": "Le frère André et saint Joseph",
+          "paragraphs": [
+            {
+              "en": "Saint Joseph's Oratory on Mount Royal is a place of Catholic prayer closely associated with Saint André Bessette, known as Brother André, and his devotion to Saint Joseph. The Oratory presents the life of its founder within a large pilgrimage complex that includes a basilica, crypt church and votive chapel. These are real devotional spaces of one institution, not unrelated site identities.",
+              "fr": "L’Oratoire Saint-Joseph du Mont-Royal est un lieu de prière catholique lié à saint André Bessette, dit frère André, et à sa dévotion à saint Joseph. Le sanctuaire présente la vie de son fondateur dans un grand ensemble comprenant une basilique, une église-crypte et une chapelle votive. Ces espaces réels appartiennent à un même établissement et ne doivent pas devenir des lieux indépendants fictifs.",
+              "source_url": "https://saint-joseph.org/en/"
+            }
+          ]
+        },
+        {
+          "id": "tomb",
+          "title_en": "The tomb of Brother André",
+          "title_fr": "Le tombeau du frère André",
+          "paragraphs": [
+            {
+              "en": "The Oratory identifies Brother André's tomb as a distinct place for pilgrim prayer. Its presentation describes the fresco above it, the bronze bust representing the saint and inscriptions recalling his poverty, obedience and humility. The tomb's exact location and identity must remain tied to this site, while its artwork needs separate attribution if ever reproduced photographically.",
+              "fr": "L’Oratoire désigne le tombeau du frère André comme un lieu distinct de prière pour les pèlerins. Sa présentation décrit la fresque qui le surmonte, un buste de bronze du saint et des inscriptions rappelant sa pauvreté, son obéissance et son humilité. L’identité et la position du tombeau doivent rester attachées à ce sanctuaire, tandis que les œuvres figurées demanderaient des crédits distincts pour toute reproduction photographique.",
+              "source_url": "https://saint-joseph.org/en/incontournable/tomb-of-brother-andre/"
+            }
+          ]
+        },
+        {
+          "id": "heart",
+          "title_en": "The separate heart reliquary",
+          "title_fr": "Le reliquaire distinct du cœur",
+          "paragraphs": [
+            {
+              "en": "The Oratory also presents a relic of Brother André's heart as a symbol of his compassion and dedication to people seeking help. This object and the tomb are not interchangeable: they are distinct devotional subjects whose custodial site is the same sanctuary. The visitor's card may link both, but should not imply that a photograph of one automatically depicts the other or proves independent authenticity.",
+              "fr": "L’Oratoire présente aussi une relique du cœur du frère André, symbole de sa compassion et de son dévouement envers ceux qui venaient lui demander de l’aide. Cet objet et le tombeau ne sont pas interchangeables : il s’agit de deux sujets de dévotion distincts conservés dans le même sanctuaire. La fiche peut les relier, mais une photographie de l’un ne représente pas nécessairement l’autre ni n’en établit l’authenticité indépendamment.",
+              "source_url": "https://saint-joseph.org/en/incontournable/tomb-of-brother-andre/"
+            }
+          ]
+        }
+      ],
+      "existing_relic_ids": [
+        "relic:CA:brother-andre-tomb-montreal",
+        "relic:CA:brother-andre-heart-montreal"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:CA:oratoire-saint-joseph-montreal:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Joseph",
+        "Saint André Bessette"
+      ],
+      "bibliography_urls": [
+        "https://saint-joseph.org/en/",
+        "https://saint-joseph.org/en/incontournable/tomb-of-brother-andre/"
+      ],
+      "source_evidence_scope": "DIRECT_INSTITUTIONAL_SHRINE_AND_HERITAGE_SITE_REVIEW_2026_11_05",
+      "next_gate": "SECOND_EDITOR_SUBSTANTIVE_EVIDENCE_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:FR:saint-joseph-bessillon",
+      "place_name": "Sanctuaire Saint-Joseph du Bessillon",
+      "country_code": "FR",
+      "shrine_id": "shrine:20261009:FR:saint-joseph-bessillon",
+      "draft_order": 28,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "The Cotignac Bessillon tradition of Saint Joseph and its distinct sanctuary.",
+      "subtitle_fr": "La tradition de saint Joseph au Bessillon, à Cotignac, et son sanctuaire distinct.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "sections": [
+        {
+          "id": "apparition",
+          "title_en": "The reported event of 1660",
+          "title_fr": "L’événement rapporté de 1660",
+          "paragraphs": [
+            {
+              "en": "The Saint Joseph sanctuary on the Bessillon hill near Cotignac commemorates a reported appearance of Saint Joseph on 7 June 1660. Its custodians preserve the traditional account, the landscape and the prayer of pilgrims. The event must be described as the sanctuary's devotional history and not confused with a separately verified universal ecclesiastical declaration of a supernatural event.",
+              "fr": "Le sanctuaire Saint-Joseph sur la colline du Bessillon, près de Cotignac, commémore une apparition rapportée de saint Joseph le 7 juin 1660. Ses responsables perpétuent le récit traditionnel, la mémoire du lieu et la prière des pèlerins. L’événement relève de l’histoire dévotionnelle du sanctuaire et ne doit pas être confondu avec une déclaration universelle distinctement vérifiée sur son caractère surnaturel.",
+              "source_url": "https://www.saintjosephcotignac.com/un-peu-de-histoire"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Two sanctuaries in the Cotignac region",
+          "title_fr": "Deux sanctuaires près de Cotignac",
+          "paragraphs": [
+            {
+              "en": "The sanctuary of Saint Joseph at Bessillon belongs to the wider Catholic pilgrimage landscape around Cotignac, but it is not identical to the nearby Marian sanctuary of Our Lady of Graces. Each commemorates its own devotional tradition and occupies a distinct site. The Sacred Atlas must preserve those identities even when pilgrims visit both in the course of a single journey.",
+              "fr": "Le sanctuaire Saint-Joseph du Bessillon s’inscrit dans le paysage de pèlerinage catholique des environs de Cotignac, mais il ne se confond pas avec le sanctuaire marial voisin de Notre-Dame-de-Grâces. Chacun possède son emplacement et sa tradition dévotionnelle propres. L’Atlas doit conserver ces identités même lorsqu’un même pèlerin visite les deux lieux au cours d’un séjour.",
+              "source_url": "https://www.saintjosephcotignac.com/"
+            }
+          ]
+        },
+        {
+          "id": "prayer",
+          "title_en": "A living sanctuary of prayer",
+          "title_fr": "Un sanctuaire vivant de prière",
+          "paragraphs": [
+            {
+              "en": "The sanctuary publishes information about Masses, the Divine Office, hospitality and spiritual retreats. These programmes show that Bessillon is a living religious place rather than merely a monument to a traditional apparition. Conditions for services and access can change; the Atlas should direct visitors to the official programme, and not infer a fixed Roman 1962 Missal timetable or a precise GPS position from the historical narrative.",
+              "fr": "Le sanctuaire publie des renseignements sur les messes, l’office divin, l’accueil et les haltes spirituelles. Ces propositions montrent que le Bessillon est un lieu religieux vivant, non un simple monument commémorant un récit d’apparition. Les horaires et conditions d’accès peuvent changer : l’Atlas doit renvoyer au programme officiel sans déduire du récit historique un horaire de messes de 1962 ni des coordonnées GPS précises.",
+              "source_url": "https://www.saintjosephcotignac.com/"
+            }
+          ]
+        }
+      ],
+      "existing_relic_ids": [],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:FR:saint-joseph-bessillon:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Joseph"
+      ],
+      "bibliography_urls": [
+        "https://www.saintjosephcotignac.com/",
+        "https://www.saintjosephcotignac.com/un-peu-de-histoire"
+      ],
+      "source_evidence_scope": "DIRECT_INSTITUTIONAL_SHRINE_AND_HERITAGE_SITE_REVIEW_2026_11_05",
+      "next_gate": "SECOND_EDITOR_SUBSTANTIVE_EVIDENCE_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:PL:divine-mercy-plock",
+      "place_name": "Sanktuarium Bożego Miłosierdzia, Płock",
+      "country_code": "PL",
+      "shrine_id": "shrine:20261009:PL:divine-mercy-plock",
+      "draft_order": 29,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "Płock and Faustina's 1931 Divine Mercy account, distinguished from the later image and shrine.",
+      "subtitle_fr": "Płock et le récit de la Divine Miséricorde en 1931, distinct de l’image et du sanctuaire ultérieurs.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "sections": [
+        {
+          "id": "faustina",
+          "title_en": "Faustina at Płock in 1931",
+          "title_fr": "Faustine à Płock en 1931",
+          "paragraphs": [
+            {
+              "en": "The Divine Mercy sanctuary at Płock commemorates the religious experiences reported by Sister Faustina Kowalska while she lived with the Sisters of Our Lady of Mercy. The community dates the first vision connected with the Divine Mercy image to 22 February 1931. This is Faustina's documented devotional testimony as transmitted by the shrine, not an independent eyewitness certification by the Atlas.",
+              "fr": "Le sanctuaire de la Divine Miséricorde de Płock commémore les expériences religieuses rapportées par sœur Faustine Kowalska lorsqu’elle vivait chez les Sœurs de Notre-Dame de la Miséricorde. La communauté situe au 22 février 1931 la première vision liée à l’image de Jésus Miséricordieux. Il s’agit du témoignage dévotionnel de Faustine transmis par le sanctuaire, et non d’une certification indépendante par l’Atlas.",
+              "source_url": "https://faustynaplock.pl/historia-sanktuarium/"
+            }
+          ]
+        },
+        {
+          "id": "image",
+          "title_en": "An image arising from a visionary account",
+          "title_fr": "Une image issue d’un récit de vision",
+          "paragraphs": [
+            {
+              "en": "According to Faustina's account, the image of the Merciful Jesus was to be painted with rays issuing from his heart, expressing trust in divine mercy. The Płock location is associated with the originating experience; reproductions, later painted versions and other Divine Mercy pilgrimage sites have different histories. An approved photograph of the Płock shrine must never be substituted with an unrelated later devotional painting.",
+              "fr": "Selon le récit de Faustine, l’image de Jésus Miséricordieux devait représenter le Christ avec des rayons sortant de son cœur, exprimant la confiance dans la miséricorde divine. Płock est lié à l’expérience d’origine ; les reproductions, les versions peintes ultérieurement et les autres sanctuaires de la Divine Miséricorde ont des histoires distinctes. Une photographie approuvée du sanctuaire ne doit jamais être remplacée par un tableau dévotionnel sans rapport.",
+              "source_url": "https://faustynaplock.pl/historia-sanktuarium/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "The present shrine and the sisters",
+          "title_fr": "Le sanctuaire actuel et les religieuses",
+          "paragraphs": [
+            {
+              "en": "The Sisters of Our Lady of Mercy maintain a living sanctuary with pilgrim information, confessions and a published order of devotions. The historical house of Faustina and the sanctuary's construction are presented separately on the institution's own pages. These details belong to the current Płock complex, but they do not certify future programmes or celebrations according to the Roman Missal of 1962.",
+              "fr": "Les Sœurs de Notre-Dame de la Miséricorde entretiennent un sanctuaire vivant avec des informations destinées aux pèlerins, des possibilités de confession et un programme de dévotions. La maison historique de Faustine et les travaux du sanctuaire sont présentés séparément sur le site de l’institution. Ces éléments concernent le complexe de Płock, sans garantir les futurs horaires ni des célébrations selon le missel romain de 1962.",
+              "source_url": "https://faustynaplock.pl/historia-sanktuarium/"
+            }
+          ]
+        }
+      ],
+      "existing_relic_ids": [],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:PL:divine-mercy-plock:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Faustina Kowalska"
+      ],
+      "bibliography_urls": [
+        "https://faustynaplock.pl/historia-sanktuarium/"
+      ],
+      "source_evidence_scope": "DIRECT_INSTITUTIONAL_SHRINE_AND_HERITAGE_SITE_REVIEW_2026_11_05",
+      "next_gate": "SECOND_EDITOR_SUBSTANTIVE_EVIDENCE_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:BR:pateo-do-collegio-sao-paulo",
+      "place_name": "Pateo do Collegio — Saint José de Anchieta, São Paulo",
+      "country_code": "BR",
+      "shrine_id": "shrine:BR:pateo-do-collegio-sao-paulo",
+      "draft_order": 30,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "The Jesuit foundation of São Paulo and the reconstructed church of Saint José de Anchieta.",
+      "subtitle_fr": "La fondation jésuite de São Paulo et l’église reconstruite de saint José de Anchieta.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "sections": [
+        {
+          "id": "foundation",
+          "title_en": "The Jesuit college of 1554",
+          "title_fr": "Le collège jésuite de 1554",
+          "paragraphs": [
+            {
+              "en": "Pateo do Collegio marks the Jesuit college inaugurated on 25 January 1554 in the Piratininga settlement, an event closely associated with the origins of São Paulo. The institution's history credits the participation of Manuel da Nóbrega, José de Anchieta and local Indigenous collaborators, including Chief Tibiriçá. The early structure combined chapel, school and living quarters, rather than resembling the present historic-centre church.",
+              "fr": "Le Pateo do Collegio marque le collège jésuite inauguré le 25 janvier 1554 dans l’établissement de Piratininga, événement associé aux origines de São Paulo. Le récit institutionnel rappelle Manuel da Nóbrega, José de Anchieta et la collaboration d’Autochtones, dont le chef Tibiriçá. Le premier bâtiment réunissait chapelle, école et logement, sans ressembler à l’église actuelle du centre historique.",
+              "source_url": "https://www.pateodocollegio.com.br/sao-jose-de-anchieta"
+            }
+          ]
+        },
+        {
+          "id": "anchieta",
+          "title_en": "José de Anchieta's missionary work",
+          "title_fr": "L’œuvre missionnaire de José de Anchieta",
+          "paragraphs": [
+            {
+              "en": "At the early college, José de Anchieta taught and worked in catechesis, writing and language learning. The institution notes his study of Tupi and his involvement with Indigenous communities, as well as the wider colonial conflicts in which the mission operated. The saint's life should be understood in this historically specific setting, not reduced to a legend detached from the people who lived in Piratininga.",
+              "fr": "Au premier collège, José de Anchieta enseignait et travaillait à la catéchèse, à l’écriture et à l’apprentissage des langues. L’institution rappelle son étude du tupi, ses relations avec les communautés autochtones et les conflits coloniaux au sein desquels la mission se développa. Sa vie doit être présentée dans ce contexte historique précis, et non comme une légende séparée des habitants de Piratininga.",
+              "source_url": "https://www.pateodocollegio.com.br/sao-jose-de-anchieta"
+            }
+          ]
+        },
+        {
+          "id": "rebuilt-church",
+          "title_en": "A reconstructed church, not the original hut",
+          "title_fr": "Une église reconstruite, non la cabane d’origine",
+          "paragraphs": [
+            {
+              "en": "The Pateo church changed repeatedly after the Jesuits' expulsion in 1759. Following damage and demolition in the nineteenth century, the Jesuits reconstructed the church in the twentieth century; it was inaugurated in 1979. Later liturgical artwork by Cláudio Pastro gives the present interior its character. The visitor is encountering a modern reconstruction of a site of early Jesuit activity, not an untouched sixteenth-century building.",
+              "fr": "L’église du Pateo connut de nombreux changements après l’expulsion des jésuites en 1759. Après des dégradations et la démolition au XIXe siècle, les jésuites reconstruisirent l’église au XXe siècle ; elle fut inaugurée en 1979. Le décor liturgique ultérieur de Cláudio Pastro marque l’intérieur actuel. Le visiteur découvre une reconstruction moderne d’un haut lieu des débuts jésuites, non un bâtiment du XVIe siècle resté intact.",
+              "source_url": "https://www.pateodocollegio.com.br/igreja-sao-jose-de-anchieta"
+            }
+          ]
+        }
+      ],
+      "existing_relic_ids": [
+        "relic:BR:pateo-do-collegio-sao-paulo"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:BR:pateo-do-collegio-sao-paulo:destination"
+      ],
+      "saint_name_associations": [
+        "Saint José de Anchieta"
+      ],
+      "bibliography_urls": [
+        "https://www.pateodocollegio.com.br/sao-jose-de-anchieta",
+        "https://www.pateodocollegio.com.br/igreja-sao-jose-de-anchieta"
+      ],
+      "source_evidence_scope": "DIRECT_INSTITUTIONAL_SHRINE_AND_HERITAGE_SITE_REVIEW_2026_11_05",
+      "next_gate": "SECOND_EDITOR_SUBSTANTIVE_EVIDENCE_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    }
+  ]
+}

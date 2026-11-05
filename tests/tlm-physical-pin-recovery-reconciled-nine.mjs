@@ -177,15 +177,26 @@ for(const s of sites){
   assert.doesNotMatch(profile,/data-tlm-celebration-evidence=/);
  }
 }
-for(const anchor of ["RG-72909EA31C02","RG-B70-6CCD0C36B97D","RG-50082C65DA56","RG-B66-ACD5E3A16E10","RG-18E53EDD9E9C"]){
+// R4 source-verified Ridgefield and Pleasantville now qualify for strictly
+// illustrative municipality markers; they were correctly held before R4.
+for(const anchor of ["RG-72909EA31C02","RG-B70-6CCD0C36B97D"]){
+ const site=all.find(x=>x.physical_group_id===anchor);
+ assert.ok(site?.map_publishable&&site.geo?.precision==="locality");
+ assert.equal(site.geo.approximate,true);
+ assert.ok(site.geo.review_scope.includes("NOT_WORSHIP_BUILDING_NOT_ENTRANCE"));
+ assert.match(site.status,/MASS UNVERIFIED/);
+ assert.equal(site.actions.length,1);
+ assert.ok(!site.actions[0].url.includes("/maps/dir/"));
+}
+for(const anchor of ["RG-50082C65DA56","RG-B66-ACD5E3A16E10","RG-18E53EDD9E9C"]){
  const held=all.find(x=>x.physical_group_id===anchor);
  assert.ok(held&&!held.map_publishable,"Historical identity/duplicate hold must remain unpinned: "+anchor);
 }
 const wells=all.find(x=>x.physical_group_id==="RG-8DE39E8E9415");
 assert.ok(wells?.map_publishable && wells.geo.review_scope.includes("GCATHOLIC_MATCHED"),"Wells later reviewed site-cell pin must not be reverted to earlier hold");
 assert.equal(all.length,2582);
-assert.equal(all.filter(x=>x.map_publishable).length,2407);
-assert.deepEqual(tlmSiteEvidenceCounts(all),{ALL:2582,REVIEWED_PIN:601,SOURCE_PIN:1806,ADDRESS_ONLY:175});
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,175);
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,601);
-console.log("PASS TLM nine site-pin reconciliation: 9 newly mapped, 23 already canonical, 2407 mapped, 175 address-only, 5 identity holds preserved; Wells later site-cell review preserved");
+assert.equal(all.filter(x=>x.map_publishable).length,2516);
+assert.deepEqual(tlmSiteEvidenceCounts(all),{ALL:2582,REVIEWED_PIN:710,SOURCE_PIN:1806,ADDRESS_ONLY:66});
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,66);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,710);
+console.log("PASS TLM nine site-pin reconciliation: 9 newly mapped, 23 already canonical, 2516 mapped, 66 address-only, 3 identity holds preserved; Wells later site-cell review preserved");

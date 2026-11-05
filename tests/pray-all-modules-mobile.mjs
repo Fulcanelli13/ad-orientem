@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import {libraryVariantFamily} from "../src/pray/library-variant-groups.js";
 import {readFileSync} from "node:fs";
 import http from "node:http";
 import {readFile} from "node:fs/promises";
@@ -388,7 +389,9 @@ try{
  assert.equal(await page.locator("#aoPray435930.open [data-ao-devo-card]").getAttribute("data-ao-devo-card"),"sacred_heart_short_prayer");
  assert.ok((await page.locator("#aoPray435930.open [data-ao-devo-card]").innerText()).length>130,
    "First Friday direct source prayer is missing text");
- await page.locator("#aoPray435930.open [data-p435930-prayer-return]").evaluate(el=>el.click());
+ assert.equal(await page.locator("#aoPray435930.open [data-p435930-prayer-return]").count(),0,
+  "Standalone source prayer must not duplicate the native Back");
+ await page.locator("#aoPray435930.open [data-p435930-back]").evaluate(el=>el.click());
  assert.equal(await page.locator("#aoPray435930.open [data-p435930-ff-stage][aria-current='step']").getAttribute("data-p435930-ff-stage"),"0",
    "Direct prayer did not restore exact First Friday stage");
  assert.equal(await page.locator("#aoPray435930.open .aoQuietSeriesDisclosure [data-p435930-ff-tracking]").isChecked(),false,
@@ -644,6 +647,8 @@ try{
  assert.equal(ids.length,48,"Prayer Library list lost one or more of its 48 canonical prayers");
  assert.equal(new Set(ids).size,48,"Duplicate library identity");
  for(const id of ids){
+   const family=libraryVariantFamily(id);
+   if(family)await page.locator('#aoPray435930.open [data-ao-prayer-family="'+family+'"] > summary').tap({timeout:9000});
    await page.locator("#aoPray435930.open [data-p435930-lib-open='"+id+"']").tap({timeout:9000});
    await page.waitForFunction(()=>{
      const card=document.querySelector("#aoPray435930.open .aoP435930Prayer");
@@ -740,20 +745,15 @@ try{
      assert.match(prayer.source,/1962|2020|2021|traditional|traditionnelles|augmentée|expanded/i,
        "Version of prayer not distinguished in source disclosure: "+id);
    }
-   // Original F01 Holy Cards now have one native Back; the inline duplicate
-   // is intentionally hidden. Ordinary canonical prayers retain their row Back.
+   // Every canonical source reader and F01 Holy Card uses the one native
+   // header Back, with no second in-content return action.
    const inlineBack=page.locator("#aoPray435930.open [data-p435930-lib-back]");
-   const holyCard=await page.locator("#aoPray435930.open .aoClaudeHolyCard").count()>0;
-   if(holyCard){
-    assert.equal(await inlineBack.isVisible(),false,
-     "F01 must not expose redundant contextual Back");
-    const nativeBack=page.locator("#aoPray435930.open [data-p435930-back]");
-    assert.ok(await nativeBack.isVisible(),"F01 native Back is unavailable");
-    await nativeBack.tap({timeout:9000});
-   }else{
-    assert.ok(await inlineBack.isVisible(),"Canonical inline Back is unavailable");
-    await inlineBack.tap({timeout:9000});
-   }
+   assert.equal(await inlineBack.count(),0,
+     "Canonical source reader duplicates native header Back: "+id);
+   const nativeBack=page.locator("#aoPray435930.open [data-p435930-back]");
+   assert.ok(await nativeBack.isVisible(),
+     "Canonical source reader lost native header Back: "+id);
+   await nativeBack.tap({timeout:9000});
  }
  // Divine Mercy has two nested cursors: swipe changes one of seven/eight
  // prayer chapters; the visible beads and paragraph focus select individual

@@ -1,6 +1,7 @@
 import { normalizePresentationMode } from "./session-engine.js";
 import { createMassReaderModel } from "./reader-model.js";
 import { projectCuratedOrdinaryLiveCards } from "./reader-live-curated-cards.js";
+import { projectDirectSpecialCuratedLiveCards } from "./reader-live-direct-curated.js";
 import { projectGranularMissalCards } from "./reader-missal-granularity.js";
 
 function modeResolvedMass(prepared,mode){
@@ -11,10 +12,44 @@ function modeResolvedMass(prepared,mode){
   });
 }
 
-export function buildReaderModeModels({prepared,data,mode,reviewExpandedCards=true}={}){
+export function buildReaderModeModels({prepared,data,mode,reviewExpandedCards=true,
+  directSourceCurated=false}={}){
   if(!prepared?.session?.resolvedMass)throw new TypeError("Prepared Mass session required");
   if(!data?.sectionMap||!data?.lowCorpus||!data?.sungCorpus)throw new TypeError("Reader presentation data required");
   const normalized=normalizePresentationMode(mode);
+  // Opt-in direct LIVE implementation for real mode-transition acceptance.
+  // It compiles the 30 source macros without allocating or navigating any
+  // 39-section intermediary. Production continues on the established
+  // branch until full phone and special-rite equivalence is independently
+  // certified. Explicit diagnostic rollback stays source-owned.
+  if(directSourceCurated===true && normalized==="LIVE"){
+    if(reviewExpandedCards!==true)
+      throw new Error("DIRECT_CURATED_LIVE_REQUIRES_APPROVED_PRESENTATION");
+    const resolvedMass=modeResolvedMass(prepared,"MISSAL");
+    const sourceModel=createMassReaderModel({
+      resolvedMass,
+      sectionMap:data.sectionMap,
+      lowCorpus:data.lowCorpus,
+      sungCorpus:data.sungCorpus,
+      canonSourceMap:data.canonSourceMap,
+      nuptialData:data.nuptialData,
+      frenchOrdinary:data.frenchOrdinary,
+      vernacularLanguage:prepared?.readerPreferences?.language??"en",
+      sourceMacrosOnly:true,
+    });
+    const presentationModel=projectDirectSpecialCuratedLiveCards({
+      sourceMacros:sourceModel,canonSourceMap:data.canonSourceMap,
+      resolvedMass:modeResolvedMass(prepared,"LIVE"),
+      nuptialData:data.nuptialData,
+      holyThursdayMandatumSource:data.mandatumSource??null,
+      language:prepared?.readerPreferences?.language??"en",
+    });
+    if(presentationModel.totalCards<61 ||
+       presentationModel.directSourceToCurated!==true ||
+       presentationModel.sourceAuthorityModel!==sourceModel)
+      throw new Error("DIRECT_LIVE_SOURCE_TO_PRESENTATION_UNCERTIFIED");
+    return Object.freeze({mode:normalized,sourceModel,presentationModel});
+  }
   const sourceModel=createMassReaderModel({
     resolvedMass:modeResolvedMass(prepared,normalized),
     sectionMap:data.sectionMap,
@@ -26,13 +61,17 @@ export function buildReaderModeModels({prepared,data,mode,reviewExpandedCards=tr
     holyThursdayMandatumSource:data.mandatumSource??null,
     vernacularLanguage:prepared?.readerPreferences?.language??"en",
   });
-  // No public 48-card fallback. Uncertified variants retain their untouched
-  // source-owned LIVE cards; certified ordinary Sung Mass uses curated 65.
+  // The 39-step model is an internal source boundary, never a public LIVE
+  // presentation. Explicit reviewExpandedCards=false is reserved for source
+  // diagnostics, not a browser-facing fallback.
   const presentationModel=normalized==="MISSAL"
     ? projectGranularMissalCards(sourceModel)
     : reviewExpandedCards
       ? projectCuratedOrdinaryLiveCards(sourceModel)
       : sourceModel;
+  if(normalized==="LIVE" && reviewExpandedCards && sourceModel.totalCards===39 &&
+     presentationModel.totalCards===39)
+    throw new Error("LIVE_39_CARD_PUBLIC_PROJECTION_FORBIDDEN");
   return Object.freeze({mode:normalized,sourceModel,presentationModel});
 }
 

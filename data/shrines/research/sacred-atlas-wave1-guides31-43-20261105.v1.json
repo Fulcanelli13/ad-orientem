@@ -1,0 +1,876 @@
+{
+  "schema": "AO_SACRED_ATLAS_W1_GUIDES31_43_BILINGUAL_RESEARCH_V1",
+  "as_of": "2026-11-05",
+  "scope": "Wave 1 canonical entries 31–43; not production",
+  "counts": {
+    "drafts": 13,
+    "english_paragraphs": 39,
+    "french_paragraphs": 39,
+    "publication_changes": 0
+  },
+  "important_new_evidence": [
+    {
+      "place_id": "place:FR:basilique-saint-quentin-aisne",
+      "finding": "FRENCH_MINISTRY_CULTURE_2008_ANALYSIS_HAND_RELIQUARY_NOT_ST_QUENTIN",
+      "source_url": "https://pop.culture.gouv.fr/notice/palissy/IM02004664",
+      "state": "CANONICAL_RELIC_RECORD_CORRECTION_NEEDED",
+      "publication_blocker": true
+    }
+  ],
+  "guides": [
+    {
+      "place_id": "place:ES:carmel-alba-tormes",
+      "place_name": "Monasterio de la Anunciación — Carmelitas Descalzas",
+      "country_code": "ES",
+      "shrine_id": "shrine:20261009:ES:carmel-alba-tormes",
+      "draft_order": 31,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "Teresa's final convent, with her tomb, heart and arm preserved as distinct relic subjects.",
+      "subtitle_fr": "Le dernier carmel de Thérèse, avec son tombeau, son cœur et son bras comme sujets reliquaires distincts.",
+      "sections": [
+        {
+          "id": "foundation",
+          "title_en": "The Carmelite foundation",
+          "title_fr": "La fondation carmélitaine",
+          "paragraphs": [
+            {
+              "en": "Teresa of Jesus founded the Monastery of the Annunciation at Alba de Tormes in 1571. The Discalced Carmelite community identifies it as the place where she spent her final days and died on 4 October 1582. The monastery remains a religious home, as well as a destination for people who come to understand her teaching on interior prayer.",
+              "fr": "Thérèse de Jésus fonda le monastère de l’Annonciation à Alba de Tormes en 1571. La communauté des carmélites déchaussées le présente comme le lieu où elle passa ses derniers jours et mourut le 4 octobre 1582. Le monastère demeure une maison religieuse et un lieu où les pèlerins découvrent son enseignement sur l’oraison.",
+              "source_url": "https://carmelitasalba.org/"
+            }
+          ]
+        },
+        {
+          "id": "relics",
+          "title_en": "Body, heart and arm",
+          "title_fr": "Le corps, le cœur et le bras",
+          "paragraphs": [
+            {
+              "en": "The community identifies three distinct devotional objects at Alba: Teresa's body in the main altar reliquary, her heart and her left arm. They must not be collapsed into a single interchangeable image or described as three different churches. Their identification is the custodian's longstanding attribution, rather than a new medical authentication supplied by the Atlas.",
+              "fr": "La communauté identifie à Alba trois sujets de vénération distincts : le corps de Thérèse dans l’urne du maître-autel, son cœur et son bras gauche. On ne doit ni les confondre dans une même photographie ni en faire trois églises différentes. Leur identification relève de la tradition de conservation de la communauté, et non d’une expertise médicale nouvelle fournie par l’Atlas.",
+              "source_url": "https://carmelitasalba.org/sepulcro-de-santa-teresa/"
+            }
+          ]
+        },
+        {
+          "id": "museum",
+          "title_en": "Church architecture and Carmelite museum",
+          "title_fr": "L’église et le musée carmélitain",
+          "paragraphs": [
+            {
+              "en": "The monastery preserves elements of its sixteenth-century church alongside a later transept and presbytery. Its Carmelite museum, CARMUS, opened in 2014 near the reliquary chambers and provides a historical approach to the saint and her community. Admission conditions belong to the living monastery; a visitor should verify access without presuming entry to enclosed religious spaces.",
+              "fr": "Le monastère conserve des éléments de l’église du XVIe siècle ainsi qu’un transept et un chœur aménagés ultérieurement. Son musée CARMUS, ouvert en 2014 près des chambres des reliques, présente la sainte et sa communauté. Les modalités de visite relèvent du monastère vivant ; elles ne donnent pas automatiquement accès aux espaces de clôture.",
+              "source_url": "https://carmelitasalba.org/sepulcro-de-santa-teresa/"
+            }
+          ]
+        }
+      ],
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "existing_relic_ids": [
+        "relic:ES:teresa-body-alba",
+        "relic:ES:teresa-heart-alba",
+        "relic:ES:teresa-arm-alba"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:ES:carmel-alba-tormes:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Teresa of Ávila"
+      ],
+      "bibliography_urls": [
+        "https://carmelitasalba.org/",
+        "https://carmelitasalba.org/sepulcro-de-santa-teresa/"
+      ],
+      "source_evidence_scope": "CANONICAL_INSTITUTIONAL_SOURCE_AND_PUBLIC_HERITAGE_EVIDENCE_2026_11_05",
+      "publication_authorized": false,
+      "next_gate": "SECOND_EDITOR_SOURCE_LINE_FACT_QUALIFICATION_FRENCH_AND_ENGLISH_REVIEW_BEFORE_PUBLICATION"
+    },
+    {
+      "place_id": "place:ES:santiago-compostela-cathedral",
+      "place_name": "Catedral de Santiago de Compostela",
+      "country_code": "ES",
+      "shrine_id": "shrine:20261009:ES:santiago-compostela-cathedral",
+      "draft_order": 32,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "The Apostle's traditional tomb and the many pilgrim ways leading to one cathedral.",
+      "subtitle_fr": "Le tombeau traditionnel de l’Apôtre et les chemins de pèlerinage menant à une même cathédrale.",
+      "sections": [
+        {
+          "id": "sepulchre",
+          "title_en": "The apostolic burial tradition",
+          "title_fr": "La tradition du tombeau apostolique",
+          "paragraphs": [
+            {
+              "en": "Santiago Cathedral is built around the medieval tradition identifying the remains of James the Greater at Compostela. The cathedral describes the venerated silver reliquary in a crypt below the principal altar, within the remains of an earlier mausoleum. Its religious significance is a documented history of pilgrimage and custody; the app does not perform independent forensic verification of apostolic bones.",
+              "fr": "La cathédrale de Saint-Jacques-de-Compostelle est centrée sur la tradition médiévale qui situe la sépulture de Jacques le Majeur à Compostelle. Elle présente une urne d’argent vénérée dans une crypte sous le maître-autel, à l’emplacement d’un mausolée antérieur. L’histoire du pèlerinage est documentée, mais l’application ne procède pas à l’identification médico-légale des ossements.",
+              "source_url": "https://catedraldesantiago.es/en/pilgrimage/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrims",
+          "title_en": "Many routes, one destination",
+          "title_fr": "Plusieurs chemins, une destination",
+          "paragraphs": [
+            {
+              "en": "The cathedral's Pilgrim Office receives people arriving by foot, bicycle or horseback and administers the Compostela certificate. The French, Northern and Primitive Ways are separate historical approaches, not one continuous track supplied by this Place card. Pilgrim credentials and certificates are practical arrangements distinct from sacramental participation or any jubilee indulgence.",
+              "fr": "Le Bureau d’accueil des pèlerins reçoit ceux qui arrivent à pied, à vélo ou à cheval et délivre la Compostela. Les chemins français, du Nord et primitif sont des approches historiques distinctes, non un unique tracé GPS fourni par cette fiche. Le carnet et le certificat relèvent de l’accueil pratique et ne se confondent ni avec les sacrements ni avec une indulgence jubilaire.",
+              "source_url": "https://catedraldesantiago.es/en/pilgrimage/"
+            }
+          ]
+        },
+        {
+          "id": "rites",
+          "title_en": "Prayer at the cathedral",
+          "title_fr": "La prière à la cathédrale",
+          "paragraphs": [
+            {
+              "en": "The cathedral distinguishes the crypt of the tomb, the traditional embrace of the Apostle's image and the Pilgrim's Mass. It also describes opportunities for confession and prayer upon completing the journey. These religious actions concern the same cathedral but have distinct meanings; present access and the Mass programme must be checked with the cathedral rather than inferred from a pilgrim's itinerary.",
+              "fr": "La cathédrale distingue la crypte du tombeau, l’embrassade traditionnelle de la statue de l’Apôtre et la messe des pèlerins. Elle présente aussi la confession et la prière à l’arrivée. Ces gestes appartiennent à la même cathédrale tout en ayant des significations distinctes ; les conditions d’accès et les horaires doivent être vérifiés auprès de l’institution.",
+              "source_url": "https://catedraldesantiago.es/en/pilgrimage/"
+            }
+          ]
+        }
+      ],
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "existing_relic_ids": [
+        "relic:ES:james-compostela"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:ES:santiago-compostela-cathedral:destination"
+      ],
+      "saint_name_associations": [
+        "Saint James the Greater"
+      ],
+      "bibliography_urls": [
+        "https://catedraldesantiago.es/en/pilgrimage/"
+      ],
+      "source_evidence_scope": "CANONICAL_INSTITUTIONAL_SOURCE_AND_PUBLIC_HERITAGE_EVIDENCE_2026_11_05",
+      "publication_authorized": false,
+      "next_gate": "SECOND_EDITOR_SOURCE_LINE_FACT_QUALIFICATION_FRENCH_AND_ENGLISH_REVIEW_BEFORE_PUBLICATION"
+    },
+    {
+      "place_id": "place:ES:santo-toribio-liebana",
+      "place_name": "Monasterio de Santo Toribio de Liébana",
+      "country_code": "ES",
+      "shrine_id": "shrine:20261009:ES:santo-toribio-liebana",
+      "draft_order": 33,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "The Liébana monastery and the traditionally identified True Cross relic.",
+      "subtitle_fr": "Le monastère de Liébana et la relique traditionnellement identifiée à la Vraie Croix.",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The Franciscan pilgrimage monastery",
+          "title_fr": "Le monastère franciscain de pèlerinage",
+          "paragraphs": [
+            {
+              "en": "The Diocese of Santander describes Santo Toribio as an historic monastery in Liébana, connected with devotion to Saint Turibius and the Holy Cross. After the disappearance of its Benedictine community, Franciscans returned to the site in the twentieth century. The church, cloister and special relic chapel are distinct spaces within one pilgrimage complex.",
+              "fr": "Le diocèse de Santander décrit Santo Toribio comme un ancien monastère de Liébana, lié au culte de saint Turibe et de la Sainte Croix. Après la disparition de la communauté bénédictine, des franciscains sont revenus au XXe siècle. L’église, le cloître et la chapelle de la relique sont des espaces distincts dans un même ensemble de pèlerinage.",
+              "source_url": "https://diocesisdesantander.com/santuarios-cantabria/santo-toribio-de-liebana"
+            }
+          ]
+        },
+        {
+          "id": "cross",
+          "title_en": "The Lignum Crucis",
+          "title_fr": "Le Lignum Crucis",
+          "paragraphs": [
+            {
+              "en": "The monastery venerates a large wooden fragment traditionally identified with Christ's Cross, presented within a gilded silver cruciform reliquary. The diocese records a documentary mention from 1316 and a long history of transfers and repairs. The age or botanical species of wood would not by itself prove its presence at the Crucifixion; the identification is therefore reported as tradition.",
+              "fr": "Le monastère vénère un grand fragment de bois traditionnellement identifié à la Croix du Christ, enchâssé dans un reliquaire cruciforme en argent doré. Le diocèse mentionne un témoignage écrit de 1316 et une histoire de déplacements et de restaurations. L’âge ou l’essence du bois ne démontrent pas à eux seuls sa présence au Calvaire : l’attribution reste traditionnelle.",
+              "source_url": "https://diocesisdesantander.com/santuarios-cantabria/santo-toribio-de-liebana"
+            }
+          ]
+        },
+        {
+          "id": "jubilee",
+          "title_en": "Jubilee and Camino Lebaniego",
+          "title_fr": "Jubilé et Camino Lebaniego",
+          "paragraphs": [
+            {
+              "en": "The sanctuary has a particular jubilee tradition when the feast of Saint Turibius falls on a Sunday, together with a network of pilgrim approaches known as the Camino Lebaniego. The diocese provides information on pilgrim Masses, visitation and accommodation, including limitations on its hostel. A historical walking-route account is not certified route geometry or a guaranteed future programme.",
+              "fr": "Le sanctuaire possède une tradition jubilaire particulière lorsque la fête de saint Turibe tombe un dimanche, ainsi que des chemins d’accès dits Camino Lebaniego. Le diocèse donne des informations sur les messes, les visites et l’hébergement, avec des restrictions pour l’auberge. Le récit des anciennes voies ne constitue ni un tracé géographique certifié ni un programme futur garanti.",
+              "source_url": "https://diocesisdesantander.com/santuarios-cantabria/santo-toribio-de-liebana"
+            }
+          ]
+        }
+      ],
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "existing_relic_ids": [
+        "relic:ES:lignum-crucis-liebana"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:ES:santo-toribio-liebana:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Turibius of Astorga"
+      ],
+      "bibliography_urls": [
+        "https://diocesisdesantander.com/santuarios-cantabria/santo-toribio-de-liebana"
+      ],
+      "source_evidence_scope": "CANONICAL_INSTITUTIONAL_SOURCE_AND_PUBLIC_HERITAGE_EVIDENCE_2026_11_05",
+      "publication_authorized": false,
+      "next_gate": "SECOND_EDITOR_SOURCE_LINE_FACT_QUALIFICATION_FRENCH_AND_ENGLISH_REVIEW_BEFORE_PUBLICATION"
+    },
+    {
+      "place_id": "place:FR:basilique-ars",
+      "place_name": "Basilique d’Ars — Saint Jean-Marie Vianney",
+      "country_code": "FR",
+      "shrine_id": "shrine:20261009:FR:basilique-ars",
+      "draft_order": 34,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "The Curé d'Ars, his confessional ministry and the basilica's distinct devotional spaces.",
+      "subtitle_fr": "Le Curé d’Ars, son ministère de la confession et les espaces de dévotion de la basilique.",
+      "sections": [
+        {
+          "id": "oldchurch",
+          "title_en": "A church associated with Vianney",
+          "title_fr": "Une église liée à Vianney",
+          "paragraphs": [
+            {
+              "en": "The sanctuary preserves the earlier parish church as Saint Jean-Marie Vianney knew and enlarged it during his ministry at Ars. Its map identifies the pulpit from which he preached, the catechism lectern and the celebrated confessional in the old sacristy. These specific settings speak to his pastoral work more directly than a generic biography or distant portrait.",
+              "fr": "Le sanctuaire conserve l’ancienne église paroissiale telle que Jean-Marie Vianney l’a connue et agrandie pendant son ministère à Ars. Son plan situe la chaire de prédication, la petite chaire du catéchisme et le célèbre confessionnal de l’ancienne sacristie. Ces espaces précis témoignent de son apostolat mieux qu’une biographie générale ou un portrait isolé.",
+              "source_url": "https://www.arsnet.org/plan-du-sanctuaire/"
+            }
+          ]
+        },
+        {
+          "id": "basilica",
+          "title_en": "The saint's shrine and house",
+          "title_fr": "La châsse et la maison du saint",
+          "paragraphs": [
+            {
+              "en": "A larger basilica was built after the Curé's death, while the older church's interior was retained. The sanctuary locates the reliquary containing Vianney's body in a right-side chapel. His former residence and the separate Chapel of the Heart are further stops of pilgrimage. The body, heart, old confession place and house must remain distinct objects or spaces.",
+              "fr": "Une basilique plus grande fut bâtie après la mort du Curé, tandis que l’intérieur de l’ancienne église fut préservé. Le sanctuaire situe la châsse de sa dépouille dans une chapelle à droite. Son ancienne maison et la chapelle du Cœur sont d’autres étapes de visite. Le corps, le cœur, le confessionnal et la maison restent des sujets distincts.",
+              "source_url": "https://www.arsnet.org/plan-du-sanctuaire/"
+            }
+          ]
+        },
+        {
+          "id": "worship",
+          "title_en": "Pilgrimage and reconciliation today",
+          "title_fr": "Pèlerinage et réconciliation aujourd’hui",
+          "paragraphs": [
+            {
+              "en": "Ars continues as a place of Catholic pilgrimage, with the sanctuary publishing present services of confession, adoration and Mass. These programmes make sense in light of the priest's attention to reconciliation, yet they are schedules that can change. Do not infer Roman 1962 celebrations, permanent access to every chapel or an automatic parish rite from a historical account of the Curé.",
+              "fr": "Ars demeure un lieu de pèlerinage catholique où le sanctuaire publie les horaires actuels de confession, d’adoration et de messe. Ces pratiques prolongent la mémoire du ministère de réconciliation du saint prêtre, mais les horaires peuvent changer. Il ne faut déduire du récit historique ni la célébration du missel de 1962 ni l’ouverture permanente de chaque chapelle.",
+              "source_url": "https://www.arsnet.org/sanctuaire/"
+            }
+          ]
+        }
+      ],
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "existing_relic_ids": [
+        "relic:FR:curé-ars"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:FR:basilique-ars:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Jean-Marie Vianney"
+      ],
+      "bibliography_urls": [
+        "https://www.arsnet.org/pelerins/",
+        "https://www.arsnet.org/plan-du-sanctuaire/",
+        "https://www.arsnet.org/sanctuaire/"
+      ],
+      "source_evidence_scope": "CANONICAL_INSTITUTIONAL_SOURCE_AND_PUBLIC_HERITAGE_EVIDENCE_2026_11_05",
+      "publication_authorized": false,
+      "next_gate": "SECOND_EDITOR_SOURCE_LINE_FACT_QUALIFICATION_FRENCH_AND_ENGLISH_REVIEW_BEFORE_PUBLICATION"
+    },
+    {
+      "place_id": "place:FR:basilique-saint-nicolas-de-port",
+      "place_name": "Basilique Saint-Nicolas de Saint-Nicolas-de-Port",
+      "country_code": "FR",
+      "shrine_id": "shrine:FR:basilique-saint-nicolas-de-port",
+      "draft_order": 35,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "Saint Nicholas's finger-relic tradition and the detailed state inventory of its arm reliquary.",
+      "subtitle_fr": "La tradition de la phalange de saint Nicolas et l’inventaire patrimonial de son bras-reliquaire.",
+      "sections": [
+        {
+          "id": "devotion",
+          "title_en": "A Lorraine pilgrimage sanctuary",
+          "title_fr": "Un lieu de pèlerinage lorrain",
+          "paragraphs": [
+            {
+              "en": "The basilica of Saint-Nicolas-de-Port became a regional centre of devotion to Nicholas of Myra, patron of the church and figure of protection for travellers. Its treasury holds a reliquary in the form of a bishop's arm. The French heritage inventory identifies the object specifically at this basilica, preventing a mistaken assignment to another Saint Nicholas church.",
+              "fr": "La basilique de Saint-Nicolas-de-Port est devenue un centre lorrain de dévotion à Nicolas de Myre, patron du lieu et protecteur traditionnel des voyageurs. Son trésor conserve un reliquaire en forme de bras épiscopal. L’Inventaire du patrimoine français situe précisément cet objet dans cette basilique, évitant toute confusion avec une autre église Saint-Nicolas.",
+              "source_url": "https://pop.culture.gouv.fr/notice/palissy/IM54007978"
+            }
+          ]
+        },
+        {
+          "id": "relic",
+          "title_en": "The phalanx and its traditional arrival",
+          "title_fr": "La phalange et son arrivée traditionnelle",
+          "paragraphs": [
+            {
+              "en": "The Palissy inventory describes a finger bone traditionally said to have been brought from Bari to Lorraine by Aubert de Varangéville in 1098. That claim belongs to the historical tradition attached to the relic; the modern inventory is evidence for its documented custody and artistic container, not a scientific proof of the saint's identity.",
+              "fr": "La notice Palissy décrit une phalange traditionnellement rapportée de Bari en Lorraine par Aubert de Varangéville en 1098. Cette affirmation relève de la tradition du culte ; l’inventaire moderne atteste surtout la conservation de l’objet et l’histoire de son contenant d’orfèvrerie, non une preuve scientifique de l’identité du saint.",
+              "source_url": "https://pop.culture.gouv.fr/notice/palissy/IM54007978"
+            }
+          ]
+        },
+        {
+          "id": "artwork",
+          "title_en": "A nineteenth-century reliquary",
+          "title_fr": "Un reliquaire du XIXe siècle",
+          "paragraphs": [
+            {
+              "en": "The present arm reliquary was made in the 1890s with repoussé silver, gilding, enamel and earlier elements. Its reliefs depict pilgrims, donors and episodes connected with the basilica; the object belongs to the treasury beside the south transept. Reproduction of a photograph requires separate image and rights checks, even though a public catalogue describes the artwork.",
+              "fr": "Le bras-reliquaire actuel fut réalisé dans les années 1890 en argent repoussé, dorure et émaux, en réemployant des éléments anciens. Ses reliefs représentent pèlerins, donateurs et épisodes de l’histoire du sanctuaire ; il se trouve dans le trésor près du transept sud. La notice publique ne dispense pas d’une vérification des droits avant toute reproduction photographique.",
+              "source_url": "https://pop.culture.gouv.fr/notice/palissy/IM54007978"
+            }
+          ]
+        }
+      ],
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "existing_relic_ids": [
+        "relic:FR:phalange-saint-nicolas-port"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:FR:basilique-saint-nicolas-de-port:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Nicholas of Myra"
+      ],
+      "bibliography_urls": [
+        "https://pop.culture.gouv.fr/notice/palissy/IM54007978"
+      ],
+      "source_evidence_scope": "CANONICAL_INSTITUTIONAL_SOURCE_AND_PUBLIC_HERITAGE_EVIDENCE_2026_11_05",
+      "publication_authorized": false,
+      "next_gate": "SECOND_EDITOR_SOURCE_LINE_FACT_QUALIFICATION_FRENCH_AND_ENGLISH_REVIEW_BEFORE_PUBLICATION"
+    },
+    {
+      "place_id": "place:FR:basilique-saint-quentin-aisne",
+      "place_name": "Basilique Saint-Quentin",
+      "country_code": "FR",
+      "shrine_id": "shrine:FR:basilique-saint-quentin-aisne",
+      "draft_order": 36,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "Saint Quentin's medieval shrine—and the decisive modern analysis of the hand reliquary.",
+      "subtitle_fr": "Le sanctuaire médiéval de saint Quentin et l’analyse moderne décisive du reliquaire de la main.",
+      "sections": [
+        {
+          "id": "martyr",
+          "title_en": "A church built around a martyr cult",
+          "title_fr": "Une église autour du culte d’un martyr",
+          "paragraphs": [
+            {
+              "en": "The Basilica of Saint-Quentin preserves the medieval memory of the martyr Quentin in a great former collegiate church. The French heritage inventory traces the history of objects connected with his cult and the movement of relics through the choir, crypt and chapels. The history of veneration is real even when the identification of a particular bodily fragment is challenged.",
+              "fr": "La basilique Saint-Quentin conserve la mémoire médiévale du martyr Quentin dans une grande ancienne collégiale. L’inventaire national suit l’histoire des objets liés à son culte et les déplacements de reliques entre chœur, crypte et chapelles. L’histoire de la vénération est attestée, même si l’identification d’un fragment corporel particulier se révèle contestable.",
+              "source_url": "https://pop.culture.gouv.fr/notice/palissy/IM02004664"
+            }
+          ]
+        },
+        {
+          "id": "reliquary",
+          "title_en": "A complex history of the hand",
+          "title_fr": "L’histoire complexe de la main",
+          "paragraphs": [
+            {
+              "en": "The hand-relic container records losses, concealments and replacements during wars and the French Revolution. The current neo-Gothic monstrance was donated in the 1920s and is documented in the north choir chapel. Historical inventory records allow the vessel to be identified without assuming that the displayed hand belonged to the third-century martyr.",
+              "fr": "Le reliquaire de la main a connu pertes, dissimulations et remplacements durant les guerres et la Révolution. L’ostensoir-reliquaire néogothique actuel fut offert dans les années 1920 et est inventorié dans la chapelle nord du chœur. Ces archives permettent d’identifier le contenant sans présumer que la main exposée appartenait au martyr du IIIe siècle.",
+              "source_url": "https://pop.culture.gouv.fr/notice/palissy/IM02004664"
+            }
+          ]
+        },
+        {
+          "id": "dating",
+          "title_en": "Analysis rules out the attribution",
+          "title_fr": "Une analyse exclut l’attribution",
+          "paragraphs": [
+            {
+              "en": "Crucially, the French Ministry of Culture states that a 2008 analysis dated the hand inside the reliquary to the late fifteenth or early sixteenth century. It concludes explicitly that this cannot be Saint Quentin's hand. The Atlas must display this counterevidence prominently and must not describe the physical fragment as an authenticated hand of the martyr.",
+              "fr": "Point essentiel : le ministère français de la Culture indique qu’une analyse menée en 2008 a daté la main du reliquaire de la fin du XVe ou du début du XVIe siècle. Il conclut explicitement qu’il ne peut s’agir de la main de saint Quentin. L’Atlas doit afficher ce contre-témoignage et ne jamais présenter le fragment comme une main authentifiée du martyr.",
+              "source_url": "https://pop.culture.gouv.fr/notice/palissy/IM02004664"
+            }
+          ]
+        }
+      ],
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "existing_relic_ids": [
+        "relic:FR:main-saint-quentin"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:FR:basilique-saint-quentin-aisne:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Quentin"
+      ],
+      "bibliography_urls": [
+        "https://pop.culture.gouv.fr/notice/palissy/IM02004664"
+      ],
+      "source_evidence_scope": "CANONICAL_INSTITUTIONAL_SOURCE_AND_PUBLIC_HERITAGE_EVIDENCE_2026_11_05",
+      "publication_authorized": false,
+      "next_gate": "SECOND_EDITOR_SOURCE_LINE_FACT_QUALIFICATION_FRENCH_AND_ENGLISH_REVIEW_BEFORE_PUBLICATION"
+    },
+    {
+      "place_id": "place:FR:basilique-saint-sernin-toulouse",
+      "place_name": "Basilique Saint-Sernin de Toulouse",
+      "country_code": "FR",
+      "shrine_id": "shrine:FR:basilique-saint-sernin-toulouse",
+      "draft_order": 37,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "Saint Saturninus, the early crypt and the later Gothic relic displays at Toulouse.",
+      "subtitle_fr": "Saint Saturnin, la crypte primitive et les présentations gothiques des reliques à Toulouse.",
+      "sections": [
+        {
+          "id": "saint",
+          "title_en": "Saturninus and the early Christian church",
+          "title_fr": "Saturnin et l’Église des origines",
+          "paragraphs": [
+            {
+              "en": "The Basilica of Saint-Sernin is named for Saturninus, remembered as the first bishop and martyr of Toulouse. Its official itinerary describes traces of the fourth- and fifth-century church near the place where his remains were venerated. This helps distinguish the earliest funerary sanctuary from the monumental Romanesque basilica that pilgrims encounter above it.",
+              "fr": "La basilique Saint-Sernin porte le nom de Saturnin, considéré comme le premier évêque et martyr de Toulouse. Son parcours officiel décrit des traces de l’église des IVe–Ve siècles près du lieu où sa dépouille était vénérée. Cela permet de distinguer le sanctuaire funéraire primitif de la vaste basilique romane actuelle.",
+              "source_url": "https://basilique-saint-sernin.fr/cryptes-parcours10fr/"
+            }
+          ]
+        },
+        {
+          "id": "crypts",
+          "title_en": "A changing crypt and reliquary arrangement",
+          "title_fr": "La transformation des cryptes et reliquaires",
+          "paragraphs": [
+            {
+              "en": "The official guide explains that the current Gothic crypt arrangement resulted from thirteenth-century works that moved the tomb's presentation to an elevated position. Visitors now see other relic displays and elements of the treasury in the crypt spaces. The historic cult, physical tomb and later vitrines must not be mistaken for one unchanged arrangement from the earliest Christian centuries.",
+              "fr": "Le parcours officiel explique que les cryptes gothiques actuelles résultent de travaux du XIIIe siècle qui modifièrent la présentation du tombeau. Le visiteur peut également voir d’autres reliques et des éléments du trésor dans les espaces souterrains. Le culte ancien, le tombeau et les vitrines ultérieures ne forment pas un dispositif resté inchangé depuis les premiers siècles.",
+              "source_url": "https://basilique-saint-sernin.fr/cryptes-parcours10fr/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrims",
+          "title_en": "Romanesque pilgrimage and visitor access",
+          "title_fr": "Pèlerinage roman et accès actuel",
+          "paragraphs": [
+            {
+              "en": "Saint-Sernin developed as an important pilgrimage church, with crypts and architectural circulation allowing devotion around sacred objects. The dedicated crypt guide identifies distinct stages and explains their Christian meaning. For the Atlas, a historical route inside the basilica is a visitor sequence, not a separately geocoded pilgrimage path or guaranteed opening of all underground rooms.",
+              "fr": "Saint-Sernin s’est développée comme église de pèlerinage, avec des cryptes et des circulations permettant la vénération des objets sacrés. Le parcours officiel distingue les étapes et leur signification chrétienne. Dans l’Atlas, un circuit intérieur est une succession de visites, non un chemin de pèlerinage géocodé séparément ni une garantie d’ouverture permanente des salles souterraines.",
+              "source_url": "https://basilique-saint-sernin.fr/cryptes-parcours10fr/"
+            }
+          ]
+        }
+      ],
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "existing_relic_ids": [
+        "relic:FR:saint-saturnin-toulouse"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:FR:basilique-saint-sernin-toulouse:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Saturninus"
+      ],
+      "bibliography_urls": [
+        "https://basilique-saint-sernin.fr/cryptes-parcours10fr/"
+      ],
+      "source_evidence_scope": "CANONICAL_INSTITUTIONAL_SOURCE_AND_PUBLIC_HERITAGE_EVIDENCE_2026_11_05",
+      "publication_authorized": false,
+      "next_gate": "SECOND_EDITOR_SOURCE_LINE_FACT_QUALIFICATION_FRENCH_AND_ENGLISH_REVIEW_BEFORE_PUBLICATION"
+    },
+    {
+      "place_id": "place:FR:basilique-sainte-marie-madeleine-saint-maximin",
+      "place_name": "Basilique Sainte-Marie-Madeleine, Saint-Maximin-la-Sainte-Baume",
+      "country_code": "FR",
+      "shrine_id": "shrine:20261009:FR:basilique-sainte-marie-madeleine-saint-maximin",
+      "draft_order": 38,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "The Provençal Magdalene tradition, the basilica crypt and its surviving sacred treasury.",
+      "subtitle_fr": "La tradition provençale de Madeleine, la crypte de la basilique et son trésor conservé.",
+      "sections": [
+        {
+          "id": "tradition",
+          "title_en": "The Provençal relic tradition",
+          "title_fr": "La tradition provençale des reliques",
+          "paragraphs": [
+            {
+              "en": "Saint-Maximin-la-Sainte-Baume preserves a Provençal tradition identifying relics of Mary Magdalene in its crypt. The Diocese of Fréjus–Toulon describes her head reliquary and other sarcophagi there. This tradition must remain distinct from the different claim at Vézelay, and neither account alone can establish the physical identity of the saint's remains.",
+              "fr": "Saint-Maximin-la-Sainte-Baume entretient une tradition provençale attribuant des reliques à Marie-Madeleine dans la crypte. Le diocèse de Fréjus–Toulon présente le reliquaire de son chef et d’autres sarcophages. Cette tradition doit rester distincte de celle de Vézelay ; aucune des deux ne démontre à elle seule l’identité matérielle des restes attribués à la sainte.",
+              "source_url": "https://frejustoulon.fr/diocese/hauts-lieux-spirituels-var/basilique-sainte-marie-madeleine-a-saint-maximin-la-sainte-baume/"
+            }
+          ]
+        },
+        {
+          "id": "church",
+          "title_en": "A Gothic basilica of Provence",
+          "title_fr": "Une basilique gothique en Provence",
+          "paragraphs": [
+            {
+              "en": "The diocesan guide describes a long Gothic nave with nine bays and a building campaign left unfinished in 1532; the intended entrance portal and bell tower were never completed. Later furnishings include seventeenth-century choir stalls and a celebrated eighteenth-century organ. The basilica's architectural history should be read separately from claims about the antiquity of the relics.",
+              "fr": "Le guide diocésain décrit une longue nef gothique de neuf travées et des travaux arrêtés en 1532 ; le portail projeté et le clocher ne furent jamais achevés. Le mobilier comprend des stalles des XVIIe siècle et un célèbre orgue du XVIIIe siècle. Cette histoire architecturale doit être distinguée des revendications relatives à l’ancienneté des reliques.",
+              "source_url": "https://frejustoulon.fr/diocese/hauts-lieux-spirituels-var/basilique-sainte-marie-madeleine-a-saint-maximin-la-sainte-baume/"
+            }
+          ]
+        },
+        {
+          "id": "research",
+          "title_en": "The treasury and archival evidence",
+          "title_fr": "Le trésor et les documents d’archives",
+          "paragraphs": [
+            {
+              "en": "The sacristy preserves religious objects surviving the dispersal of the treasury during the Revolution. Diocesan archives also make available studies of the Magdalene cult and records relating to the crypt, including a 1904 tomb-opening document published in 2026. Such records are valuable evidence for the history of veneration, but an archival record is not equivalent to an independent proof of biblical relic identity.",
+              "fr": "La sacristie conserve des objets sacrés survivant à la dispersion révolutionnaire du trésor. Les Archives diocésaines publient aussi des études du culte magdalénien et des documents sur la crypte, dont le procès-verbal d’ouverture du tombeau en 1904, mis en ligne en 2026. Ces archives éclairent l’histoire de la vénération sans constituer une preuve indépendante de l’identité biblique des reliques.",
+              "source_url": "https://archives.frejustoulon.fr/2026/07/22/ouverture-du-tombeau-de-sainte-marie-madeleine-1904/"
+            }
+          ]
+        }
+      ],
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "existing_relic_ids": [
+        "relic:FR:magdalene-head-saint-maximin",
+        "relic:FR:maximin-sarcophagus"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:FR:basilique-sainte-marie-madeleine-saint-maximin:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Mary Magdalene",
+        "Saint Maximin"
+      ],
+      "bibliography_urls": [
+        "https://frejustoulon.fr/diocese/hauts-lieux-spirituels-var/basilique-sainte-marie-madeleine-a-saint-maximin-la-sainte-baume/",
+        "https://archives.frejustoulon.fr/2026/07/22/ouverture-du-tombeau-de-sainte-marie-madeleine-1904/"
+      ],
+      "source_evidence_scope": "CANONICAL_INSTITUTIONAL_SOURCE_AND_PUBLIC_HERITAGE_EVIDENCE_2026_11_05",
+      "publication_authorized": false,
+      "next_gate": "SECOND_EDITOR_SOURCE_LINE_FACT_QUALIFICATION_FRENCH_AND_ENGLISH_REVIEW_BEFORE_PUBLICATION"
+    },
+    {
+      "place_id": "place:FR:carmel-lisieux",
+      "place_name": "Chapelle du Carmel de Lisieux",
+      "country_code": "FR",
+      "shrine_id": "shrine:20261009:FR:carmel-lisieux",
+      "draft_order": 39,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "Thérèse's enclosed Carmelite home and chapel, distinct from the large Lisieux basilica.",
+      "subtitle_fr": "Le Carmel et sa chapelle où vécut Thérèse, distincts de la grande basilique de Lisieux.",
+      "sections": [
+        {
+          "id": "carmel",
+          "title_en": "The saint's Carmelite community",
+          "title_fr": "La communauté carmélitaine de la sainte",
+          "paragraphs": [
+            {
+              "en": "The Carmel of Lisieux is the enclosed religious community associated with the convent life of Saint Thérèse of the Child Jesus. Its chapel is part of the Carmelite setting in which she prayed and was buried, a specific place that must remain distinct from the large pilgrimage basilica elsewhere in Lisieux. The sanctuary card should tell this local story rather than merge both churches.",
+              "fr": "Le Carmel de Lisieux est la communauté religieuse de clôture liée à la vie conventuelle de sainte Thérèse de l’Enfant-Jésus. Sa chapelle appartient au lieu où elle pria et fut inhumée, emplacement précis qui doit rester distinct de la grande basilique de pèlerinage de Lisieux. La fiche doit raconter cette histoire locale plutôt que fusionner les deux églises.",
+              "source_url": "https://carmeldelisieux.fr/contact/"
+            }
+          ]
+        },
+        {
+          "id": "memory",
+          "title_en": "Prayer, remains and written witness",
+          "title_fr": "Prière, dépouille et témoignage écrit",
+          "paragraphs": [
+            {
+              "en": "The Carmel is associated with Thérèse's spiritual writings and the memory of her religious vows, illness and death. The relic tradition here is therefore not a generic illustration of the saint: it concerns particular convent spaces and their subsequent devotional use. Any presentation of reliquaries should identify the precise object, custody and present site rather than assume that a portrait represents the relic.",
+              "fr": "Le Carmel est lié aux écrits spirituels de Thérèse, à la mémoire de ses vœux, de sa maladie et de sa mort. La tradition reliquaire concerne ainsi des espaces conventuels précis et leur usage dévotionnel ultérieur, non une illustration générique de la sainte. Toute présentation d’une châsse doit identifier l’objet, son lieu de conservation et le site actuel sans confondre portrait et relique.",
+              "source_url": "https://carmeldelisieux.fr/contact/"
+            }
+          ]
+        },
+        {
+          "id": "visit",
+          "title_en": "Respecting a living enclosed Carmel",
+          "title_fr": "Respecter un Carmel vivant et cloîtré",
+          "paragraphs": [
+            {
+              "en": "Because the convent remains a religious community, visitor access to its public chapel is not a licence to enter enclosed rooms or private convent spaces. The official Carmelite contact information is the appropriate authority for enquiries about current visits and prayer. Neither the wider Lisieux pilgrimage programme nor a historic biography establishes access arrangements for this particular chapel.",
+              "fr": "Le couvent demeure une communauté religieuse : l’accès à la chapelle publique n’autorise pas l’entrée dans les pièces de clôture ni les espaces privés. Les coordonnées officielles du Carmel permettent de vérifier les visites et les moments de prière. Ni le programme général des pèlerinages de Lisieux ni une biographie historique ne garantissent les conditions d’accès propres à cette chapelle.",
+              "source_url": "https://carmeldelisieux.fr/contact/"
+            }
+          ]
+        }
+      ],
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "existing_relic_ids": [
+        "relic:FR:therese-carmel"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:FR:carmel-lisieux:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Thérèse of Lisieux"
+      ],
+      "bibliography_urls": [
+        "https://carmeldelisieux.fr/contact/"
+      ],
+      "source_evidence_scope": "CANONICAL_INSTITUTIONAL_SOURCE_AND_PUBLIC_HERITAGE_EVIDENCE_2026_11_05",
+      "publication_authorized": false,
+      "next_gate": "SECOND_EDITOR_SOURCE_LINE_FACT_QUALIFICATION_FRENCH_AND_ENGLISH_REVIEW_BEFORE_PUBLICATION"
+    },
+    {
+      "place_id": "place:FR:cathedrale-saint-etienne-sens",
+      "place_name": "Cathédrale Saint-Étienne de Sens",
+      "country_code": "FR",
+      "shrine_id": "shrine:FR:cathedrale-saint-etienne-sens",
+      "draft_order": 40,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "Sens Cathedral's treasury and the traditions associated with its sacred textiles.",
+      "subtitle_fr": "Le trésor de la cathédrale de Sens et les traditions relatives à ses tissus sacrés.",
+      "sections": [
+        {
+          "id": "cathedral",
+          "title_en": "A cathedral and its preserved treasury",
+          "title_fr": "Une cathédrale et son trésor préservé",
+          "paragraphs": [
+            {
+              "en": "Saint-Étienne Cathedral at Sens has a long history of liturgical art, sacred vessels and reliquaries. The museum of Sens documents the treasury as a distinct collection attached to the cathedral's religious life. A history of the collection should not be reduced to an unverified claim that every object is the personal relic of one of the cathedral's associated saints.",
+              "fr": "La cathédrale Saint-Étienne de Sens possède une longue histoire d’art liturgique, de vases sacrés et de reliquaires. Le musée de Sens présente le trésor comme une collection particulière liée à la vie religieuse de la cathédrale. Le récit de cette collection ne doit pas transformer chaque objet en relique corporelle certaine de l’un des saints associés au lieu.",
+              "source_url": "https://musee-sens.fr/le-musee/decouvrir-les-lieux/le-tresor-de-la-cathedrale/"
+            }
+          ]
+        },
+        {
+          "id": "textiles",
+          "title_en": "Sacred textiles and attribution",
+          "title_fr": "Tissus sacrés et attribution",
+          "paragraphs": [
+            {
+              "en": "Among the cathedral traditions recorded in the wider sacred heritage registry are textiles venerated as holy shrouds. The treasury context helps explain their preservation, artistic setting and role in historic devotion. Names such as 'holy shroud' are traditional titles: provenance, manufacture, historical exhibition and any claim to a biblical person require separate evidence before publication.",
+              "fr": "Parmi les traditions inscrites au registre du patrimoine sacré figurent des tissus vénérés sous le nom de saints suaires. Le contexte du trésor permet d’expliquer leur conservation, leur présentation artistique et leur rôle dans la dévotion ancienne. Le terme « saint suaire » demeure un titre traditionnel : provenance, fabrication, histoire des ostensions et attribution biblique demandent des preuves distinctes.",
+              "source_url": "https://musee-sens.fr/le-musee/decouvrir-les-lieux/le-tresor-de-la-cathedrale/"
+            }
+          ]
+        },
+        {
+          "id": "visitor",
+          "title_en": "Treasury and cathedral visitor experience",
+          "title_fr": "Le trésor et la visite de la cathédrale",
+          "paragraphs": [
+            {
+              "en": "A visit to Sens can connect the cathedral's sacred architecture with objects shown or documented by the museum. The treasury must be distinguished from the liturgical sanctuary and any museum exhibition premises; display of particular pieces can change. The card should retain source-specific object descriptions and direct visitors to the museum for current arrangements instead of inventing fixed relic exposition times.",
+              "fr": "Une visite de Sens peut relier l’architecture sacrée de la cathédrale aux objets présentés ou documentés par le musée. Le trésor se distingue du sanctuaire liturgique et des locaux d’exposition ; la présentation des pièces peut changer. La fiche doit conserver des descriptions propres à chaque objet et renvoyer au musée pour les modalités actuelles, sans inventer d’horaires fixes d’ostension.",
+              "source_url": "https://musee-sens.fr/le-musee/decouvrir-les-lieux/le-tresor-de-la-cathedrale/"
+            }
+          ]
+        }
+      ],
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "existing_relic_ids": [
+        "relic:FR:suaires-saints-sens"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:FR:cathedrale-saint-etienne-sens:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Siviard; Saint Columba of Sens; Saint Lupus of Sens"
+      ],
+      "bibliography_urls": [
+        "https://musee-sens.fr/le-musee/decouvrir-les-lieux/le-tresor-de-la-cathedrale/"
+      ],
+      "source_evidence_scope": "CANONICAL_INSTITUTIONAL_SOURCE_AND_PUBLIC_HERITAGE_EVIDENCE_2026_11_05",
+      "publication_authorized": false,
+      "next_gate": "SECOND_EDITOR_SOURCE_LINE_FACT_QUALIFICATION_FRENCH_AND_ENGLISH_REVIEW_BEFORE_PUBLICATION"
+    },
+    {
+      "place_id": "place:GB:westminster-abbey-st-edward",
+      "place_name": "Westminster Abbey — Shrine of Saint Edward the Confessor",
+      "country_code": "GB",
+      "shrine_id": "shrine:GB:westminster-abbey-st-edward",
+      "draft_order": 41,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "Edward the Confessor's medieval Catholic shrine within today's Anglican Westminster Abbey.",
+      "subtitle_fr": "Le sanctuaire catholique médiéval d’Édouard le Confesseur dans l’abbaye anglicane actuelle.",
+      "sections": [
+        {
+          "id": "king",
+          "title_en": "Edward's royal and monastic foundation",
+          "title_fr": "Édouard, roi et fondateur monastique",
+          "paragraphs": [
+            {
+              "en": "Edward the Confessor enlarged the Benedictine monastery at Westminster and built a new church consecrated in December 1065, shortly before his death in January 1066. The abbey traces his burial before the high altar and the emergence of a cult that led to his canonisation in 1161. The history belongs to medieval Catholic England, not to a modern Roman Catholic parish.",
+              "fr": "Édouard le Confesseur agrandit l’abbaye bénédictine de Westminster et fit bâtir une église consacrée en décembre 1065, peu avant sa mort en janvier 1066. L’abbaye retrace son inhumation près du maître-autel et le développement de son culte, jusqu’à sa canonisation en 1161. Cette histoire appartient à l’Angleterre catholique médiévale et non à une paroisse catholique romaine actuelle.",
+              "source_url": "https://www.westminster-abbey.org/history/explore-our-history/celebrating-st-edward"
+            }
+          ]
+        },
+        {
+          "id": "shrine",
+          "title_en": "The shrine of 1269",
+          "title_fr": "Le sanctuaire de 1269",
+          "paragraphs": [
+            {
+              "en": "Henry III replaced much of Edward's earlier church with the Gothic abbey and created an elaborate shrine behind the high altar. In October 1269 the saint's remains were translated there; the abbey identifies this as their present location. The sacred object is an actual historic shrine, but the text must not imply that the building's current governance or services belong to the Roman Catholic Church.",
+              "fr": "Henri III remplaça une grande partie de l’ancienne église d’Édouard par l’abbatiale gothique et fit réaliser une châsse derrière le maître-autel. En octobre 1269, les restes du saint y furent transférés ; l’abbaye indique qu’ils y demeurent. Le sanctuaire est un objet historique réel, mais ce fait ne signifie pas que la gouvernance et les offices actuels soient ceux de l’Église catholique romaine.",
+              "source_url": "https://www.westminster-abbey.org/history/explore-our-history/celebrating-st-edward"
+            }
+          ]
+        },
+        {
+          "id": "present",
+          "title_en": "Historical Catholic pilgrimage, present Anglican use",
+          "title_fr": "Pèlerinage catholique historique, culte anglican actuel",
+          "paragraphs": [
+            {
+              "en": "Westminster Abbey is now a Church of England royal peculiar and holds Anglican worship, including Evensong. Its October celebrations around Saint Edward reflect continuity of remembrance, not a Roman 1962 Catholic Mass schedule. The Atlas may document the medieval Catholic shrine while explicitly identifying its present confession and distinguishing it from active Roman Catholic pilgrimage churches.",
+              "fr": "Westminster Abbey relève aujourd’hui de l’Église d’Angleterre, comme établissement royal particulier, et célèbre des offices anglicans, dont l’Evensong. Ses commémorations d’octobre honorent Édouard sans constituer un horaire de messes catholiques selon le missel de 1962. L’Atlas peut documenter le sanctuaire catholique médiéval tout en identifiant clairement sa situation confessionnelle actuelle.",
+              "source_url": "https://www.westminster-abbey.org/history/explore-our-history/celebrating-st-edward"
+            }
+          ]
+        }
+      ],
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "existing_relic_ids": [
+        "relic:GB:westminster-abbey-st-edward"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:GB:westminster-abbey-st-edward:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Edward the Confessor"
+      ],
+      "bibliography_urls": [
+        "https://www.westminster-abbey.org/history/explore-our-history/celebrating-st-edward"
+      ],
+      "source_evidence_scope": "CANONICAL_INSTITUTIONAL_SOURCE_AND_PUBLIC_HERITAGE_EVIDENCE_2026_11_05",
+      "publication_authorized": false,
+      "next_gate": "SECOND_EDITOR_SOURCE_LINE_FACT_QUALIFICATION_FRENCH_AND_ENGLISH_REVIEW_BEFORE_PUBLICATION"
+    },
+    {
+      "place_id": "place:HU:st-stephen-basilica-budapest",
+      "place_name": "Saint Stephen's Basilica, Budapest",
+      "country_code": "HU",
+      "shrine_id": "shrine:HU:st-stephen-basilica-budapest",
+      "draft_order": 42,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "The Holy Right of Stephen of Hungary and the history of its reliquaries in Budapest.",
+      "subtitle_fr": "La Sainte Dextre d’Étienne de Hongrie et l’histoire de ses reliquaires à Budapest.",
+      "sections": [
+        {
+          "id": "king",
+          "title_en": "Stephen, the first Hungarian king",
+          "title_fr": "Étienne, premier roi de Hongrie",
+          "paragraphs": [
+            {
+              "en": "Saint Stephen's Basilica is dedicated to Hungary's first Christian king, whose reign and cult are central to the country's Catholic historical memory. The basilica's own account places the veneration of his preserved right hand within a long history of royal burial and later custody. These are the reported traditions of the institution, not an independent anatomical identification made by the Atlas.",
+              "fr": "La basilique Saint-Étienne est dédiée au premier roi chrétien de Hongrie, dont le règne et le culte occupent une place centrale dans la mémoire catholique du pays. Son récit situe la vénération de la main droite conservée dans une longue histoire de sépulture royale et de garde ultérieure. Il s’agit de traditions rapportées par l’institution, sans expertise anatomique indépendante de l’Atlas.",
+              "source_url": "https://bazilikabudapest.hu/en/2024/04/12/szentjobb/"
+            }
+          ]
+        },
+        {
+          "id": "reliquary",
+          "title_en": "The Holy Right in its reliquary",
+          "title_fr": "La Sainte Dextre et sa châsse",
+          "paragraphs": [
+            {
+              "en": "The basilica describes the Holy Right as displayed in a double reliquary: an outer neo-Gothic shrine designed by József Lippert in 1862 and an inner glass cylinder. The relic was returned to Hungary in 1945 and entrusted to the basilica in 1950; the current church display dates from 2018. The object, the architectural setting and historical dates should receive distinct captions.",
+              "fr": "La basilique décrit la Sainte Dextre dans un double reliquaire : une châsse extérieure néogothique conçue par József Lippert en 1862 et un cylindre intérieur en verre. La relique revint en Hongrie en 1945, fut confiée à la basilique en 1950 et est présentée dans l’église depuis 2018. L’objet, son cadre architectural et ces dates demandent des légendes distinctes.",
+              "source_url": "https://bazilikabudapest.hu/en/2024/04/12/szentjobb/"
+            }
+          ]
+        },
+        {
+          "id": "feast",
+          "title_en": "A national day of devotion",
+          "title_fr": "Une journée de dévotion nationale",
+          "paragraphs": [
+            {
+              "en": "The shrine describes an annual procession of the Holy Right on 20 August, the Hungarian celebration of Saint Stephen. That public devotion belongs to the basilica's current institutional tradition. Its actual route and ceremonies must be checked for the year of travel; a recurring feast is not a guarantee that the relic will be displayed in one unchanged location throughout a visitor's stay.",
+              "fr": "Le sanctuaire présente la procession annuelle de la Sainte Dextre le 20 août, jour de la fête hongroise de saint Étienne. Cette dévotion appartient à la tradition actuelle de la basilique. Le parcours et les cérémonies doivent être confirmés pour l’année concernée ; une fête récurrente ne garantit pas une exposition de la relique dans un emplacement immuable.",
+              "source_url": "https://bazilikabudapest.hu/en/2024/04/12/szentjobb/"
+            }
+          ]
+        }
+      ],
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "existing_relic_ids": [
+        "relic:HU:st-stephen-basilica-budapest"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:HU:st-stephen-basilica-budapest:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Stephen of Hungary"
+      ],
+      "bibliography_urls": [
+        "https://bazilikabudapest.hu/2024/04/12/szentjobb/",
+        "https://bazilikabudapest.hu/en/2024/04/12/szentjobb/"
+      ],
+      "source_evidence_scope": "CANONICAL_INSTITUTIONAL_SOURCE_AND_PUBLIC_HERITAGE_EVIDENCE_2026_11_05",
+      "publication_authorized": false,
+      "next_gate": "SECOND_EDITOR_SOURCE_LINE_FACT_QUALIFICATION_FRENCH_AND_ENGLISH_REVIEW_BEFORE_PUBLICATION"
+    },
+    {
+      "place_id": "place:IT:abbey-san-colombano-bobbio",
+      "place_name": "Abbazia di San Colombano, Bobbio",
+      "country_code": "IT",
+      "shrine_id": "shrine:IT:abbey-san-colombano-bobbio",
+      "draft_order": 43,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "owner_master_editorial_state_at_start": "BILINGUAL_SHRINE_SYNOPSIS_ONLY",
+      "subtitle_en": "The Irish missionary Columbanus, his Bobbio abbey and the archaeology of the earliest church.",
+      "subtitle_fr": "Le missionnaire irlandais Colomban, son abbaye de Bobbio et l’archéologie de l’église primitive.",
+      "sections": [
+        {
+          "id": "foundation",
+          "title_en": "Columbanus and the Lombard foundation",
+          "title_fr": "Colomban et la fondation lombarde",
+          "paragraphs": [
+            {
+              "en": "The Diocese of Piacenza-Bobbio identifies Bobbio as a monastery established early in the seventh century through Saint Columbanus and the Lombard royal family. Columbanus, an Irish missionary, died there in 615 and his body became the focus of a cult. Its medieval significance reached well beyond northern Italy, linking communities from the Alps to the wider Christian world.",
+              "fr": "Le diocèse de Plaisance-Bobbio situe la fondation du monastère au début du VIIe siècle grâce à saint Colomban et à la famille royale lombarde. Colomban, missionnaire irlandais, mourut à Bobbio en 615, où son corps devint un objet de vénération. Son rayonnement médiéval dépassa l’Italie du Nord et relia des communautés alpines au monde chrétien.",
+              "source_url": "https://diocesipiacenzabobbio.org/alla-ricerca-delle-origini-del-culto-di-san-colombano/"
+            }
+          ]
+        },
+        {
+          "id": "archaeology",
+          "title_en": "Archaeological study of the basilica",
+          "title_fr": "L’étude archéologique de la basilique",
+          "paragraphs": [
+            {
+              "en": "The diocese reported investigations in 2014–2015 using geophysical surveys and a stratigraphic excavation in the basilica to seek the monastery's earliest structures. Such work is important because little of the original seventh-century building had been securely documented. The present church should not be described as an unchanged structure standing from the saint's lifetime.",
+              "fr": "Le diocèse a présenté des recherches menées en 2014–2015, par prospections géophysiques et sondages stratigraphiques dans la basilique, pour retrouver les premières constructions monastiques. Ces travaux sont nécessaires parce que la phase du VIIe siècle reste mal connue. L’édifice actuel ne doit pas être décrit comme une construction demeurée intacte depuis Colomban.",
+              "source_url": "https://diocesipiacenzabobbio.org/alla-ricerca-delle-origini-del-culto-di-san-colombano/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage, learning and relic memory",
+          "title_fr": "Pèlerinage, savoir et mémoire reliquaire",
+          "paragraphs": [
+            {
+              "en": "The diocesan account presents Bobbio as a medieval centre of spirituality, manuscripts, scholarship and international pilgrimage. Archaeological research is separate from the devotion around Columbanus's traditionally identified remains. Visitors can approach the basilica as a place of historical Christianity without turning scholarly investigations into new claims of supernatural relic authentication.",
+              "fr": "Le récit diocésain présente Bobbio comme un centre médiéval de spiritualité, de manuscrits, d’étude et de pèlerinage international. La recherche archéologique se distingue de la dévotion autour des restes traditionnellement attribués à Colomban. La visite permet d’approcher un haut lieu du christianisme historique sans transformer les fouilles en authentification surnaturelle des reliques.",
+              "source_url": "https://diocesipiacenzabobbio.org/alla-ricerca-delle-origini-del-culto-di-san-colombano/"
+            }
+          ]
+        }
+      ],
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY_DO_NOT_PROMOTE_RESEARCH_OR_HOLD",
+      "existing_relic_ids": [
+        "relic:IT:abbey-san-colombano-bobbio"
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:IT:abbey-san-colombano-bobbio:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Columbanus"
+      ],
+      "bibliography_urls": [
+        "https://diocesipiacenzabobbio.org/alla-ricerca-delle-origini-del-culto-di-san-colombano/"
+      ],
+      "source_evidence_scope": "CANONICAL_INSTITUTIONAL_SOURCE_AND_PUBLIC_HERITAGE_EVIDENCE_2026_11_05",
+      "publication_authorized": false,
+      "next_gate": "SECOND_EDITOR_SOURCE_LINE_FACT_QUALIFICATION_FRENCH_AND_ENGLISH_REVIEW_BEFORE_PUBLICATION"
+    }
+  ]
+}

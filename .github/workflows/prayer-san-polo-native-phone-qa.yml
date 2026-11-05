@@ -6,6 +6,7 @@ on:
   pull_request:
     paths:
       - 'tests/prayer-san-polo-14-source-reader-phone-review.mjs'
+      - 'src/pray/stations-verified-artwork-styles.js'
       - 'scripts/san_polo_native_phone_review.py'
       - '.github/workflows/prayer-san-polo-native-phone-qa.yml'
   workflow_dispatch:

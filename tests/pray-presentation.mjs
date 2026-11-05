@@ -2,6 +2,7 @@ import "./pray-christ-king-benediction.mjs";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { PRAY_CANONICAL_DATA_V435930 } from "../src/pray/canonical-data.js";
+import {PRAYER_LIBRARY_VARIANT_FAMILIES_V1,PRAYER_LIBRARY_VARIANT_OWNER_V1,libraryVariantFamily,groupLibraryPrayerRows} from "../src/pray/library-variant-groups.js";
 import { angelusGuideSections, resolveAngelusPosture, splitAngelusVersicleResponse } from "../src/pray/angelus-guide-data.js";
 import {angelusCardPlan,DEVOTIONAL_CARD_SCHEMA} from "../src/pray/devotional-card-deck.js";
 import {mercyChapters,SEQUENTIAL_DEVOTIONAL_SCHEMA} from "../src/pray/devotional-sequence-adapter.js";
@@ -89,6 +90,36 @@ const prayers=PRAY_CANONICAL_DATA_V435930?.prayers??{};
 assert.equal(Object.keys(prayers).length,48,"locked v43.59.30 corpus must contain exactly 48 prayer records");
 assert.ok(prayers.sacrament_act_of_contrition,"Act of Contrition missing from canonical PRAY corpus");
 assert.ok(prayers.litany_loreto_1962,"1962 Litany of Loreto missing from canonical PRAY corpus");
+// A shared visible Library shelf is never a license to erase a source form.
+const libraryRows=Object.values(prayers);
+const libraryGroups=groupLibraryPrayerRows(libraryRows);
+assert.equal(libraryGroups.length,46,"48 canonical records must resolve to 46 visible shelves");
+assert.equal(libraryGroups.filter(row=>row.kind==="variants").length,2);
+assert.equal(libraryGroups.filter(row=>row.kind==="single").length,44);
+const groupedIds=libraryGroups.flatMap(row=>row.kind==="single"?[row.prayer.id]:row.prayers.map(p=>p.id));
+assert.equal(new Set(groupedIds).size,48,"Grouping must preserve each source identity exactly once");
+assert.deepEqual(groupedIds.slice().sort(),libraryRows.map(p=>p.id).sort(),
+ "Grouping cannot drop or invent canonical identities; family shelves may shift visible order");
+for(const [family,details] of Object.entries(PRAYER_LIBRARY_VARIANT_FAMILIES_V1)){
+ assert.equal(details.ids.length,2,family+" must retain two independent editions");
+ const entry=libraryGroups.find(row=>row.family===family);
+ assert.ok(entry,family+" family missing from Library");
+ assert.deepEqual(entry.prayers.map(p=>p.id),details.ids,family+" source IDs or edition order changed");
+ for(const id of details.ids){
+  assert.equal(libraryVariantFamily(id),family);
+  assert.equal(PRAYER_LIBRARY_VARIANT_OWNER_V1[id],family);
+  assert.ok(prayers[id].en&&prayers[id].fr&&prayers[id].la,id+" lost canonical text");
+ }
+ const [left,right]=entry.prayers;
+ assert.ok(["en","fr","la"].every(locale=>left[locale]!==right[locale]),
+  family+" distinct historical forms must not be represented as identical");
+ const singleMatch=groupLibraryPrayerRows([right]);
+ assert.deepEqual(singleMatch.map(x=>x.family),[family],
+  "Search for just one variant must retain its family and direct source identity");
+ assert.deepEqual(singleMatch[0].prayers.map(x=>x.id),[right.id]);
+}
+assert.equal(libraryVariantFamily("foundations_our_father"),null,
+ "Unrelated prayer must not be collapsed into a variant family");
 assert.equal(DEVOTIONAL_UX_CONTRACT_VERSION,"devotional-ux-v1");
 const devotionalUx=devotionalUxContract();
 assert.match(devotionalUx.rules.back,/immediate parent/i);
@@ -103,6 +134,12 @@ const singleLibrary=runtime.slice(libraryStart,runtime.indexOf("\nfunction ",lib
 const directPrayer=runtime.slice(runtime.indexOf("function renderPrayerOnly("),runtime.indexOf("let prayerReturnView=",runtime.indexOf("function renderPrayerOnly(")));
 const libraryFocus=runtime.slice(runtime.indexOf("function installLibraryParagraphFocus("),runtime.indexOf("function render(){",runtime.indexOf("function installLibraryParagraphFocus(")));
 assert.ok(singleLibrary.includes('data-ao-library-card="single"'),"Prayer Library lost single-card identity");
+assert.ok(runtime.includes("renderLibraryEntryRows(rows,q)"),
+ "Full Library rows must use the source-preserving variant grouping");
+assert.ok(runtime.includes('data-ao-prayer-family='),
+ "Library variant disclosure identity is missing");
+assert.ok(runtime.includes("search?' open':''"),
+ "Searching must reveal a directly matching historical form");
 assert.ok(directPrayer.includes('data-ao-library-card="single"'),"Direct prayer lost single-card identity");
 assert.ok(!singleLibrary.includes('class="aoDevoCardHead"'),"Prayer Library repeats the primary page title");
 assert.ok(!directPrayer.includes('class="aoDevoCardHead"'),"Direct prayer repeats its page title");

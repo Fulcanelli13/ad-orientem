@@ -5,7 +5,9 @@
  * Release is PER WITNESS and PER LANGUAGE, never per source website.
  * Cleared witnesses: Suscipe EN/Latin (Morning Offering); Aquinas
  * Concede mihi EN/Latin and Lasance's after-meditation EN (Scripture reader).
- * The longer before-meditation EN witness remains held for image collation.
+ * Lasance's longer before-meditation EN was visually compared with the
+ * original 1908 scanned printed p.225 (DJVU page 240, 5 Nov 2026).
+ * Only that original English wording is admitted; no FR/LA text is inferred.
  * No French version is asserted. Neither locked canonical prayer identity
  * nor the printed Pius X Morning/Evening order is changed.
  */
@@ -19,7 +21,7 @@ export const PRAYER_ACQUISITION_WITNESSES_V1=Object.freeze([
     "work_kind": "PRAYER",
     "text": "My God, I firmly believe that Thou art here present, and I humbly adore Thee in union with the angels and saints. I am sorry for having sinned, because Thou art infinitely good and sin displeases Thee. I love Thee above all things and with my whole heart. I offer Thee all that I am and all that I have,—my soul with all its faculties, my body with all its senses. Enlighten my understanding and inflame my will, that I may know and do what is pleasing to Thee.\n\nI beseech Thee to direct all the powers of my soul, all my thoughts and affections to Thy service and Thy glory as well as to my own sanctification and salvation.",
     "source_page": "225",
-    "notes": "Original public-domain 1908 English edition wording; whitespace and OCR artefact 'M y' normalized. NOT a modern editor's paraphrase.",
+    "notes": "Printed 1908 English p.225 visually compared with Wikisource DJVU page 240 on 2026-11-05; staged prayer body matches after display-only lineation, punctuation spacing and ornamental initial normalization. No French or Latin recension is attested. No historical indulgence claim.",
     "source": {
       "work": "F.X. Lasance, My Prayer-Book: Happiness in Goodness",
       "edition": "Benziger Brothers, 1908",
@@ -27,18 +29,18 @@ export const PRAYER_ACQUISITION_WITNESSES_V1=Object.freeze([
       "page": "225",
       "scanPageUrl": "https://en.wikisource.org/wiki/Page:MyPrayerBookHappinessInGoodness.djvu/240",
       "material": "HISTORICAL_ENGLISH_EDITION",
-      "witness_status": "HTML_TRANSCRIPTION_VISUALLY_REVIEWED_PRINT_IMAGE_NOT_CERTIFIED"
+      "witness_status": "PRINTED_1908_PAGE_225_IMAGE_COLLATED_EN_ONLY"
     },
     "release": {
-      "status": "STAGED_RESEARCH_NOT_LIVE",
+      "status": "LIVE_CLEARED",
       "translation_status": {
         "en": "HISTORICAL_ENGLISH",
         "fr": "NOT_AVAILABLE",
         "la": "NOT_ADMITTED"
       },
-      "exact_print_verified": false,
+      "exact_print_verified": true,
       "modern_rights_clearance": "ORIGINAL_1908_TEXT_ONLY",
-      "allowed_in_prayer_hub": false
+      "allowed_in_prayer_hub": true
     }
   },
   {

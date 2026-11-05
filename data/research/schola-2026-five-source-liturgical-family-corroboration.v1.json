@@ -1,0 +1,180 @@
+{
+  "schema": "ao-schola-2026-five-source-liturgical-family-corroboration-v1",
+  "researchedOn": "2026-11-05",
+  "scope": "2026_SELECTED_MASS_LITURGICAL_FAMILY_IDENTIFICATION_ONLY",
+  "boundaries": {
+    "liturgicalFamilyCorroborated": 5,
+    "selectedDatesCorroborated": 15,
+    "original1962PrintedRubricAndEverySectionCertified": false,
+    "digitalSourceAliasAuthorized": false,
+    "scoreNotationCertified": false,
+    "approvedSourceAliases": 0,
+    "approvedProperScores": 0,
+    "productionChanges": false,
+    "auxiliary1942NOHIsNot1961GradualeProof": true
+  },
+  "data": [
+    {
+      "sourcePath": "Commune/C10b",
+      "dates": [
+        "2026-01-03",
+        "2026-01-10"
+      ],
+      "season": "NATIVITY_TO_PURIFICATION",
+      "appointedMass": "Missa II B.M.V. — Vultum tuum",
+      "introit": "Vultum tuum",
+      "preGospel": [
+        {
+          "role": "GRADUAL",
+          "incipit": "Speciosus forma"
+        },
+        {
+          "role": "ALLELUIA",
+          "incipit": "Post partum, Virgo"
+        }
+      ],
+      "offertory": "Felix namque es",
+      "digitalSourceCandidate": null,
+      "referenceUrls": [
+        "https://latinmasspropers.com/mass/saturday-mass-of-our-lady-from-christmas-to-the-purification/",
+        "https://cantusorgani.org/piece/missa-de-sancta-maria-in-sabbato-a-nativitate-usque-ad-purificat/"
+      ],
+      "finding": "The obsolete C10b is a substantial seasonal witness for the correct Mass, but is outside the pinned inventory; its Graduale section combines Gradual and Alleluia material; the Tractus section must not become a January chant.",
+      "liturgicalOwnerStatus": "DATED_1962_MASS_FAMILY_CORROBORATED",
+      "digitalSourceOwnerStatus": "HELD_PENDING_EXACT_SECTION_INHERITANCE_PROOF",
+      "allScoreCandidatesEditorialOnly": true
+    },
+    {
+      "sourcePath": "Commune/C10c",
+      "dates": [
+        "2026-02-14"
+      ],
+      "season": "FEB3_THROUGH_WEDNESDAY_OF_HOLY_WEEK",
+      "appointedMass": "Missa III B.M.V. — Salve sancta parens (Septuagesima-season case)",
+      "introit": "Salve sancta parens",
+      "preGospel": [
+        {
+          "role": "GRADUAL",
+          "incipit": "Benedicta et venerabilis"
+        },
+        {
+          "role": "TRACT",
+          "incipit": "Gaude, Maria Virgo"
+        }
+      ],
+      "offertory": "Felix namque es",
+      "digitalSourceCandidate": null,
+      "referenceUrls": [
+        "https://latinmasspropers.com/mass/saturday-mass-of-our-lady-from-the-purification-to-easter/",
+        "https://cantusorgani.org/piece/missa-de-sancta-maria-in-sabbato-a-purificatione-usque-ad-pascha/"
+      ],
+      "finding": "For 14 February 2026 (Sexagesima season), distinguish the Gradual from Tractus Gaude Maria. Historical C10c contains alternative seasonal material in different sections; do not read its Alleluia as appointed in this occurrence. The printed 1962 heading specifies 3 February through Holy Wednesday rather than an undifferentiated pre-Easter interval.",
+      "liturgicalOwnerStatus": "DATED_1962_MASS_FAMILY_CORROBORATED",
+      "digitalSourceOwnerStatus": "HELD_PENDING_EXACT_SECTION_INHERITANCE_PROOF",
+      "allScoreCandidatesEditorialOnly": true
+    },
+    {
+      "sourcePath": "Commune/C10Pasc",
+      "dates": [
+        "2026-04-18"
+      ],
+      "season": "PASCHALTIDE",
+      "appointedMass": "Missa IV B.M.V. — Salve sancta parens",
+      "introit": "Salve sancta parens",
+      "preGospel": [
+        {
+          "role": "ALLELUIA_1",
+          "incipit": "Virga Jesse floruit"
+        },
+        {
+          "role": "ALLELUIA_2",
+          "incipit": "Ave Maria, gratia plena"
+        }
+      ],
+      "offertory": "Beata es, Virgo Maria",
+      "digitalSourceCandidate": null,
+      "referenceUrls": [
+        "https://latinmasspropers.com/mass/saturday-mass-of-our-lady-in-paschaltide/",
+        "https://cantusorgani.org/piece/missa-de-sancta-maria-in-sabbato-a-pascha-usque-ad-pentecosten/"
+      ],
+      "finding": "Paschal source has two Alleluia verses, not a non-Paschal Gradual plus a Tract. Original obsolete C10Pasc stores both under [Graduale]. Do not infer a musical role from that legacy section key. The printed 1962 Mass adds Paschal alleluia suffixes to selected chants that are not complete in inherited historical text; do not promote an exact-text match without expanding these words.",
+      "liturgicalOwnerStatus": "DATED_1962_MASS_FAMILY_CORROBORATED",
+      "digitalSourceOwnerStatus": "HELD_PENDING_EXACT_SECTION_INHERITANCE_PROOF",
+      "allScoreCandidatesEditorialOnly": true
+    },
+    {
+      "sourcePath": "Commune/C10t",
+      "dates": [
+        "2026-06-20",
+        "2026-06-27",
+        "2026-07-04",
+        "2026-07-11",
+        "2026-08-01",
+        "2026-10-31",
+        "2026-11-07",
+        "2026-11-28"
+      ],
+      "season": "TRINITY_SUNDAY_TO_SATURDAY_BEFORE_ADVENT",
+      "appointedMass": "Missa V B.M.V. — Salve sancta parens",
+      "introit": "Salve sancta parens",
+      "preGospel": [
+        {
+          "role": "GRADUAL",
+          "incipit": "Benedicta et venerabilis"
+        },
+        {
+          "role": "ALLELUIA",
+          "incipit": "Post partum, Virgo"
+        }
+      ],
+      "offertory": "Ave Maria, gratia plena",
+      "digitalSourceCandidate": null,
+      "referenceUrls": [
+        "https://latinmasspropers.com/mass/saturday-mass-of-our-lady-from-pentecost-to-advent/",
+        "https://cantusorgani.org/piece/missa-de-sancta-maria-in-sabbato-a-pentecoste-usque-ad-adventum/"
+      ],
+      "finding": "Eight dated Masses independently agree on the Missa V seasonal family. Historical C10t is only a 194-byte rule stub inheriting from absent C10; it is never a full section/text or notation donor. The printed 1962 Missal begins Mass V at Trinity Sunday, rather than using Pentecost itself as the starting boundary.",
+      "liturgicalOwnerStatus": "DATED_1962_MASS_FAMILY_CORROBORATED",
+      "digitalSourceOwnerStatus": "HELD_PENDING_EXACT_SECTION_INHERITANCE_PROOF",
+      "allScoreCandidatesEditorialOnly": true
+    },
+    {
+      "sourcePath": "Tempora/Nat1-1",
+      "dates": [
+        "2026-12-29",
+        "2026-12-30",
+        "2026-12-31"
+      ],
+      "season": "CHRISTMAS_OCTAVE_NON_SUNDAY",
+      "appointedMass": "Diebus infra Octavam Nativitatis Domini — Puer natus est nobis",
+      "introit": "Puer natus est nobis",
+      "preGospel": [
+        {
+          "role": "GRADUAL",
+          "incipit": "Viderunt omnes fines terrae"
+        },
+        {
+          "role": "ALLELUIA",
+          "incipit": "Dies sanctificatus illuxit nobis"
+        }
+      ],
+      "offertory": "Tui sunt caeli et tua est terra",
+      "digitalSourceCandidate": {
+        "path": "Tempora/Nat30",
+        "sourceBlobSha": "87d86207529bf7d4fd0487844ed9a61e6666ba6b",
+        "status": "TEXT_SECTION_WITNESS_CANDIDATE_NO_AUTOMATIC_ALIAS"
+      },
+      "referenceUrls": [
+        "https://1962ordo.today/season/",
+        "https://ordo.fsspx.org/day/2026-12-29?lang=en&mode=liturgical",
+        "https://ordo.fsspx.org/day/2026-12-30?lang=en&mode=liturgical",
+        "https://ordo.fsspx.org/day/2026-12-31?lang=en&mode=liturgical"
+      ],
+      "finding": "1962 Mass on all three days is of the Christmas octave, with explicit commemorations on 29 and 31 December. Pinned Nat30 contains the matching Mass chant openings and inheritance from Christmas Day, but there is no exact Nat1-1 file: validate all inherited sections and date/form rules before mapping any path.",
+      "liturgicalOwnerStatus": "DATED_1962_MASS_FAMILY_CORROBORATED",
+      "digitalSourceOwnerStatus": "HELD_PENDING_EXACT_SECTION_INHERITANCE_PROOF",
+      "allScoreCandidatesEditorialOnly": true
+    }
+  ],
+  "method": "Source checks: historical DivinumOfficium at ad8783641455bae38a8eb5782b34241a7b3ff2ef; independent 1962 calendar/proper pages at latinmasspropers.com (not an official liturgical book), SSPX 1962 Ordo for the Christmas Octave, and the 1942 Nova Organi Harmonia scan index for comparative chant-role witnesses (not the certified 1961 Graduale). Latin incipits are identification aids, not complete transcriptions. Selected 2026 dates are reconciled against existing generated annual actual selected-day disposition."
+}

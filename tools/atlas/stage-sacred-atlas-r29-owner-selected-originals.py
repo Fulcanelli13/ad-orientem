@@ -108,8 +108,13 @@ def converted(row,raw,expected_dimensions):
     from PIL import Image, ImageOps
     Image.MAX_IMAGE_PIXELS=MAX_PIXELS
     with Image.open(io.BytesIO(raw)) as input_image:
-        if input_image.format!="JPEG":
-            raise ValueError("EXPECTED_JPEG_ORIGINAL")
+        # Real owner-frozen camera originals can advertise image/jpeg on
+        # Commons yet decode as MPO (JPEG container with an MPF segment).
+        # Preserve the byte-locked original and use its displayed frame 0.
+        if input_image.format not in ("JPEG","MPO"):
+            raise ValueError("EXPECTED_JPEG_OR_MPO_ORIGINAL")
+        input_image.seek(0)
+        input_image.load()
         width,height=input_image.size
         if width*height>MAX_PIXELS or min(width,height)<650:
             raise ValueError("UNSAFE_ORIGINAL_DIMENSIONS")

@@ -27,7 +27,7 @@ MANIFEST=ROOT/"data/geography/research/sacred-atlas-r28-owner-approved19-source-
 SOURCE=ROOT/"data/geography/research/sacred-atlas-round25-23place-64-original-review-20261104.json"
 DEST=Path("/tmp/ao-sacred-atlas-owner-approved19")
 COMMONS="https://commons.wikimedia.org/w/api.php"
-UA="AdOrientem-SacredAtlas-ExactOwnerSelectionPreflight/1.0 (Github Fulcanelli13/ad-orientem; no retry; image QA)"
+UA="AdOrientemSacredAtlas/1.0 (https://github.com/Fulcanelli13/ad-orientem; manual original verification; no retries)"
 MAX_IMAGE_ORIGINAL_BYTES=20_000_000
 MAX_IMAGE_PIXELS=40_000_000
 MAX_THUMB_SIDE=1280
@@ -74,7 +74,20 @@ def source_lookup(row):
     if len(infos)!=1:raise ValueError("ORIGINAL_FILE_INFO_MISSING")
     return infos[0]
 
-def verify(row):
+def validate_jpeg_stream(raw,decoder_format):
+    """Accept a genuine JPEG or JPEG-based MPO without loosening the byte lock.
+
+    Panasonic camera JPEGs can contain an MPF segment and be identified by
+    Pillow as MPO, despite Commons advertising MIME image/jpeg. Treat only
+    that JPEG-based decoder family as valid; reject PNG/WebP/unknown data.
+    """
+    if len(raw)<4 or not raw.startswith(b"\xff\xd8\xff"):
+        raise ValueError("JPEG_CONTAINER_MAGIC_MISMATCH")
+    if decoder_format not in ("JPEG","MPO"):
+        raise ValueError("JPEG_DECODER_FORMAT_MISMATCH:"+str(decoder_format))
+    return decoder_format
+
+def verify(row,retain_verified_original=False):
     info=source_lookup(row)
     if info.get("sha1")!=row["original_sha1"]:
         raise ValueError("ORIGINAL_SOURCE_SHA1_DRIFT")
@@ -102,7 +115,11 @@ def verify(row):
     from PIL import Image, ImageOps
     Image.MAX_IMAGE_PIXELS=MAX_IMAGE_PIXELS
     with Image.open(io.BytesIO(orig)) as image:
-        if image.format!="JPEG":raise ValueError("JPEG_DECODER_FORMAT_MISMATCH")
+        decoder_format=validate_jpeg_stream(orig,image.format)
+        # The user chose the Commons source's displayed first image, not an
+        # arbitrary alternate MPO frame. Decode that first image explicitly.
+        image.seek(0)
+        image.load()
         decoded=ImageOps.exif_transpose(image)
         if sorted(decoded.size)!=sorted((w,h)):raise ValueError("DECODER_PIXEL_DIMENSIONS_MISMATCH")
         preview=decoded.convert("RGB")
@@ -114,15 +131,29 @@ def verify(row):
     path=DEST/"previews"/("r28-"+name+".webp")
     path.parent.mkdir(parents=True,exist_ok=True)
     path.write_bytes(bytes_out)
+    # Only an explicit operator-run verification may retain the original JPEG.
+    # This remains an ephemeral CI artifact; never an approved public asset.
+    original_path=None
+    if retain_verified_original:
+        target=DEST/"originals"/(row["original_sha1"]+".jpg")
+        target.parent.mkdir(parents=True,exist_ok=True)
+        target.write_bytes(orig)
+        if target.stat().st_size!=row["original_bytes"] or hashlib.sha1(target.read_bytes()).hexdigest()!=row["original_sha1"]:
+            target.unlink(missing_ok=True)
+            raise ValueError("RETAINED_ORIGINAL_BYTES_FAILED_SECOND_SHA1_CHECK")
+        original_path=str(target.relative_to(DEST))
     return {
        "result":"ORIGINAL_BYTES_VERIFIED_TEMP_PREVIEW_ONLY",
        "current_author":artist,"current_license_url":nowlicense,
        "original_pixel_dimensions":[w,h],
        "original_sha1":row["original_sha1"],
        "original_bytes":len(orig),
+       "source_decoder_format":decoder_format,
+       "source_frame_index":0,
        "preview_webp_sha256":hashlib.sha256(bytes_out).hexdigest(),
        "preview_webp_path":path.name,
        "preview_pixel_dimensions":list(preview.size),
+       "retained_original_path":original_path,
        "rights_and_site_publication_cleared":False,
        "production_cover_record_created":False
     }
@@ -130,7 +161,15 @@ def verify(row):
 def main():
     ap=argparse.ArgumentParser()
     ap.add_argument("--verify-originals",action="store_true")
+    ap.add_argument("--retain-verified-originals",action="store_true",
+                    help="Manually opted-in: keep checksum-verified JPEGs under temporary artifacts, never in public site")
+    ap.add_argument("--start-index",type=int,default=0,help="Zero-based first frozen owner selection")
+    ap.add_argument("--max-files",type=int,default=19,help="Number of frozen selections in this single pass")
     args=ap.parse_args()
+    if args.retain_verified_originals and not args.verify_originals:
+        ap.error("--retain-verified-originals requires --verify-originals")
+    if not (0<=args.start_index<19 and 1<=args.max_files<=19 and args.start_index+args.max_files<=19):
+        ap.error("Requested selection range must fit inside the 19 frozen originals")
     m=load(MANIFEST);src=load(SOURCE)
     assert m["schema"]=="AO_SACRED_ATLAS_R28_OWNER_APPROVED_19_EXACT_ORIGINALS_V1"
     assert m["publication"]=="FROZEN_OWNER_EDITORIAL_ONLY_NOT_YET_RIGHTS_OR_RELEASE_CLEARED"
@@ -151,10 +190,11 @@ def main():
     # A single unthrottled source pass; no retries, no continuation after rate limiting.
     DEST.mkdir(parents=True,exist_ok=True)
     results=[]
-    for index,item in enumerate(m["decisions"],1):
+    subset=m["decisions"][args.start_index:args.start_index+args.max_files]
+    for index,item in enumerate(subset,args.start_index+1):
         print(f"Source {index}/19 {item['place_id']}",flush=True)
         try:
-            outcome=verify(item)
+            outcome=verify(item,retain_verified_original=args.retain_verified_originals)
         except urllib.error.HTTPError as exc:
             if exc.code==429:
                 results.append({"place_id":item["place_id"],"result":"STOP_HTTP_429_WIKIMEDIA_RATE_LIMIT"})
@@ -166,12 +206,16 @@ def main():
             results.append({"place_id":item["place_id"],"result":"HOLD_VERIFICATION_FAILURE","reason":str(exc)})
             continue
         results.append({"place_id":item["place_id"],**outcome})
-    all_19=len(results)==19 and all(x["result"]=="ORIGINAL_BYTES_VERIFIED_TEMP_PREVIEW_ONLY" for x in results)
+    all_19=args.start_index==0 and args.max_files==19 and len(results)==19 and all(x["result"]=="ORIGINAL_BYTES_VERIFIED_TEMP_PREVIEW_ONLY" for x in results)
     report={
        "schema":"AO_R28_SELECTED19_SOURCE_BINARY_PREFLIGHT_REPORT_V1",
        "source_export_sha256":m["source_export_sha256"],
        "user_selected":19,
        "source_attempts":len(results),
+       "selection_start_index":args.start_index,
+       "selection_requested":args.max_files,
+       "retained_originals":sum(bool(x.get("retained_original_path")) for x in results),
+       "retained_originals_ephemeral_only":True,
        "originals_verified":sum(x["result"]=="ORIGINAL_BYTES_VERIFIED_TEMP_PREVIEW_ONLY" for x in results),
        "stopped_due_to_wikimedia_429":any(x["result"]=="STOP_HTTP_429_WIKIMEDIA_RATE_LIMIT" for x in results),
        "original_all_19_verified":all_19,
@@ -181,6 +225,12 @@ def main():
     }
     (DEST/"report.json").write_text(json.dumps(report,ensure_ascii=False,indent=2)+"\n",encoding="utf8")
     print(json.dumps({k:v for k,v in report.items() if k!="results"},ensure_ascii=False),flush=True)
+    # A report containing zero recovered originals is NOT a successful
+    # acquisition. Keep the report artifact, but fail CI and do not retry.
+    verified_count=report["originals_verified"]
+    if verified_count!=len(subset):
+        print("SOURCE_RECOVERY_INCOMPLETE: "+str(verified_count)+"/"+str(len(subset))+" originals verified",file=sys.stderr,flush=True)
+        return 2
     return 0
 
 if __name__=="__main__":sys.exit(main())

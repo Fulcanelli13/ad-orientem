@@ -1,0 +1,311 @@
+{
+  "schema": "AO_PRAYER_DISCOVERY_EIGHT_DOOR_BULK_REVIEW_V1",
+  "asOf": "2026-11-05",
+  "mode": "RESEARCH_ONLY_NOT_A_RELEASE",
+  "sourceOfTruth": {
+    "file": "data/prayer/artwork-editorial-20261101/curatorial-master-267-20261101.v1.json",
+    "sha": "96f2d9526a84ec9ab56df7183edd0bb2c017ecde",
+    "positions": 267
+  },
+  "release": {
+    "publishedDoorIds": [
+      "DOOR-D5"
+    ],
+    "selectedOriginalsPending": [
+      "DOOR-D2",
+      "DOOR-D3",
+      "DOOR-D8"
+    ],
+    "editorialDoorAssignmentsPending": [
+      "DOOR-D1",
+      "DOOR-D4",
+      "DOOR-D6",
+      "DOOR-D7",
+      "DOOR-D9"
+    ],
+    "productionAssetsAdded": 0
+  },
+  "policy": [
+    "Child-slot approval does not authorize category-cover transposition",
+    "No automatic gallery rotation or overrides of locked/rejected painting",
+    "Exact original photo/rights/crop and EN/FR 320/390 review are separate release gates",
+    "All eight are held; no production asset activation"
+  ],
+  "fixedDoors": [
+    {
+      "slot": "DOOR-D2",
+      "category": "Essential Prayers",
+      "work": "Hendrik van Balen — The Trinity",
+      "source": "https://www.clevelandart.org/art/1996.26",
+      "sourceSha1": "77bc9079adbc7e66e241737813b2c7b4b2a9f40f",
+      "pixels": [
+        2720,
+        3400
+      ],
+      "bytes": 4352983,
+      "rights": "CMA CC0; exact original still requires image-byte verification",
+      "state": "EXACT_WORK_APPROVED_PHOTO_HOLD"
+    },
+    {
+      "slot": "DOOR-D3",
+      "category": "Rosary & Chaplets",
+      "work": "Caravaggio — Madonna of the Rosary",
+      "source": "https://commons.wikimedia.org/wiki/File:Madonna_of_the_Rosary-Caravaggio_(1607).jpg",
+      "sourceSha1": "289a9980d41f280da89bed2bed12dc3c59887d36",
+      "pixels": [
+        9803,
+        14480
+      ],
+      "bytes": 20767267,
+      "rights": "Commons PD-Art; exact original and reproduction jurisdiction require final verification",
+      "state": "EXACT_WORK_APPROVED_PHOTO_HOLD"
+    },
+    {
+      "slot": "DOOR-D5",
+      "category": "Holy Eucharist",
+      "work": "Jean-Auguste-Dominique Ingres — The Virgin Adoring the Host",
+      "state": "PUBLISHED_PROTECTED_DO_NOT_TOUCH"
+    },
+    {
+      "slot": "DOOR-D8",
+      "category": "Saints & Angels",
+      "work": "Marcantonio Franceschini — The Guardian Angel",
+      "source": "https://commons.wikimedia.org/wiki/File:Franceschini,_Marcantonio_-_The_Guardian_Angel_-_Google_Art_Project.jpg",
+      "sourceSha1": "9e493cd7fbc8a01c368e7d5f1081d58a2573e16a",
+      "pixels": [
+        2501,
+        3304
+      ],
+      "bytes": 3030391,
+      "rights": "Commons PD-Art; original NON-FXD; photo source and jurisdiction review open",
+      "state": "EXACT_WORK_APPROVED_PHOTO_HOLD"
+    }
+  ],
+  "fiveUnassigned": [
+    {
+      "slot": "DOOR-D1",
+      "category": "Daily Prayer",
+      "doorMasterState": "CATEGORY_POOL_NOT_AUTHORIZED",
+      "rotationEnabled": false,
+      "doorApproval": "NOT_GRANTED",
+      "proposals": [
+        {
+          "rank": 1,
+          "sourceSlot": "COV-daily.morning",
+          "artist": "Jules Breton",
+          "title": "The Song of the Lark",
+          "sourcePage": "https://www.artic.edu/artworks/94841/the-song-of-the-lark",
+          "sourceApproval": "EXPLICIT_USER_DECISION_RESTORED",
+          "sourceApprovalContext": "ORIGINAL_CHILD_SLOT_ONLY",
+          "doorUse": "PROPOSAL_PENDING_EXPLICIT_APPROVAL",
+          "photoQA": "UNVERIFIED_FOR_THIS_DOOR",
+          "productionEnabled": false
+        },
+        {
+          "rank": 2,
+          "sourceSlot": "COV-daily.evening",
+          "artist": "Pierre-Édouard Frère",
+          "title": "The Prayer",
+          "sourcePage": "https://artuk.org/discover/artworks/the-prayer-19241",
+          "sourceApproval": "EXPLICIT_USER_DECISION_RESTORED",
+          "sourceApprovalContext": "ORIGINAL_CHILD_SLOT_ONLY",
+          "doorUse": "PROPOSAL_PENDING_EXPLICIT_APPROVAL",
+          "photoQA": "UNVERIFIED_FOR_THIS_DOOR",
+          "productionEnabled": false
+        },
+        {
+          "rank": 3,
+          "sourceSlot": "COV-daily.personal_rule",
+          "artist": "Giovanni Battista Salvi da Sassoferrato",
+          "title": "French: Vierge en oraison | The Virgin in Prayer \" \"",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Vierge_en_oraison_(Il_Sassoferrato).jpg",
+          "sourceApproval": "USER_APPROVED",
+          "sourceApprovalContext": "ORIGINAL_CHILD_SLOT_ONLY",
+          "doorUse": "PROPOSAL_PENDING_EXPLICIT_APPROVAL",
+          "photoQA": "UNVERIFIED_FOR_THIS_DOOR",
+          "productionEnabled": false
+        }
+      ]
+    },
+    {
+      "slot": "DOOR-D4",
+      "category": "Novenas & Journeys",
+      "doorMasterState": "CATEGORY_POOL_NOT_AUTHORIZED",
+      "rotationEnabled": false,
+      "doorApproval": "NOT_GRANTED",
+      "proposals": [
+        {
+          "rank": 1,
+          "sourceSlot": "COV-novena.holy_ghost",
+          "artist": "Mateo Cerezo",
+          "title": "Pentecost",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Mateo_cerezo-la_venida_del_espiritu_santo.JPG",
+          "sourceApproval": "USER_APPROVED_CROSS_PRAYER_REUSE",
+          "sourceApprovalContext": "ORIGINAL_CHILD_SLOT_ONLY",
+          "doorUse": "PROPOSAL_PENDING_EXPLICIT_APPROVAL",
+          "photoQA": "UNVERIFIED_FOR_THIS_DOOR",
+          "productionEnabled": false
+        },
+        {
+          "rank": 2,
+          "sourceSlot": "COV-novena.st_joseph",
+          "artist": "Guercino",
+          "title": "Saint Joseph with the Flowering Rod",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Giovanni_Francesco_Barbieri_-_Saint_Joseph_with_the_Flowering_Rod.jpg",
+          "sourceApproval": "USER_APPROVED",
+          "sourceApprovalContext": "ORIGINAL_CHILD_SLOT_ONLY",
+          "doorUse": "PROPOSAL_PENDING_EXPLICIT_APPROVAL",
+          "photoQA": "UNVERIFIED_FOR_THIS_DOOR",
+          "productionEnabled": false
+        },
+        {
+          "rank": 3,
+          "sourceSlot": "COV-novena.holy_souls",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint Teresa of Avila Interceding for Souls in Purgatory",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437542",
+          "sourceApproval": "USER_APPROVED",
+          "sourceApprovalContext": "ORIGINAL_CHILD_SLOT_ONLY",
+          "doorUse": "PROPOSAL_PENDING_EXPLICIT_APPROVAL",
+          "photoQA": "UNVERIFIED_FOR_THIS_DOOR",
+          "productionEnabled": false
+        }
+      ]
+    },
+    {
+      "slot": "DOOR-D6",
+      "category": "Our Lord",
+      "doorMasterState": "CATEGORY_POOL_NOT_AUTHORIZED",
+      "rotationEnabled": false,
+      "doorApproval": "NOT_GRANTED",
+      "proposals": [
+        {
+          "rank": 1,
+          "sourceSlot": "COV-devotion_consecration_christ_king",
+          "artist": "Joos van Cleve",
+          "title": "Christ as Salvator Mundi \" \"",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Salvator_Mundi_-_Joos_van_Cleve_-_Mus%C3%A9e_du_Louvre_Peintures_RF_187.jpg",
+          "sourceApproval": "USER_APPROVED",
+          "sourceApprovalContext": "ORIGINAL_CHILD_SLOT_ONLY",
+          "doorUse": "PROPOSAL_PENDING_EXPLICIT_APPROVAL",
+          "photoQA": "UNVERIFIED_FOR_THIS_DOOR",
+          "productionEnabled": false
+        },
+        {
+          "rank": 2,
+          "sourceSlot": "COV-pray.stations",
+          "artist": "Sodoma (Italian, 1477–1549)",
+          "title": "The Crucifixion",
+          "sourcePage": "https://clevelandart.org/art/1916.786",
+          "sourceApproval": "USER_APPROVED",
+          "sourceApprovalContext": "ORIGINAL_CHILD_SLOT_ONLY",
+          "doorUse": "PROPOSAL_PENDING_EXPLICIT_APPROVAL",
+          "photoQA": "UNVERIFIED_FOR_THIS_DOOR",
+          "productionEnabled": false
+        },
+        {
+          "rank": 3,
+          "sourceSlot": "COV-prayer.sacred_heart",
+          "artist": "Juan Patricio Morlete Ruiz",
+          "title": "The Heart of Jesus",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+          "sourceApproval": "USER_APPROVED",
+          "sourceApprovalContext": "ORIGINAL_CHILD_SLOT_ONLY",
+          "doorUse": "PROPOSAL_PENDING_EXPLICIT_APPROVAL",
+          "photoQA": "UNVERIFIED_FOR_THIS_DOOR",
+          "productionEnabled": false
+        }
+      ]
+    },
+    {
+      "slot": "DOOR-D7",
+      "category": "Our Lady",
+      "doorMasterState": "CATEGORY_POOL_NOT_AUTHORIZED",
+      "rotationEnabled": false,
+      "doorApproval": "NOT_GRANTED",
+      "proposals": [
+        {
+          "rank": 1,
+          "sourceSlot": "COV-marian_memorare",
+          "artist": "William-Adolphe Bouguereau",
+          "title": "The Virgin of Consolation",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Bouguereau_-_Virgin_of_Consolation.jpg",
+          "sourceApproval": "USER_APPROVED",
+          "sourceApprovalContext": "ORIGINAL_CHILD_SLOT_ONLY",
+          "doorUse": "PROPOSAL_PENDING_EXPLICIT_APPROVAL",
+          "photoQA": "UNVERIFIED_FOR_THIS_DOOR",
+          "productionEnabled": false
+        },
+        {
+          "rank": 2,
+          "sourceSlot": "COV-litany_loreto_1962",
+          "artist": "Bartolomé Esteban Murillo",
+          "title": "The Immaculate Conception",
+          "sourcePage": "https://clevelandart.org/art/1959.189",
+          "sourceApproval": "USER_APPROVED",
+          "sourceApprovalContext": "ORIGINAL_CHILD_SLOT_ONLY",
+          "doorUse": "PROPOSAL_PENDING_EXPLICIT_APPROVAL",
+          "photoQA": "UNVERIFIED_FOR_THIS_DOOR",
+          "productionEnabled": false
+        },
+        {
+          "rank": 3,
+          "sourceSlot": "COV-weekday_magnificat",
+          "artist": "Philippe de Champaigne",
+          "title": "The Visitation (1643–48)",
+          "sourcePage": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_-_The_Visitation_-_y1994-17_-_Princeton_University_Art_Museum.jpg",
+          "sourceApproval": "USER_PREVIOUSLY_APPROVED_VISITATION_SCENE",
+          "sourceApprovalContext": "ORIGINAL_CHILD_SLOT_ONLY",
+          "doorUse": "PROPOSAL_PENDING_EXPLICIT_APPROVAL",
+          "photoQA": "UNVERIFIED_FOR_THIS_DOOR",
+          "productionEnabled": false
+        }
+      ]
+    },
+    {
+      "slot": "DOOR-D9",
+      "category": "Life & Intentions",
+      "doorMasterState": "CATEGORY_POOL_NOT_AUTHORIZED",
+      "rotationEnabled": false,
+      "doorApproval": "NOT_GRANTED",
+      "proposals": [
+        {
+          "rank": 1,
+          "sourceSlot": "COV-pray.occasional_intercessions",
+          "artist": "Christian Wilhelm Ernst Dietrich",
+          "title": "Christ Healing the Sick",
+          "sourcePage": null,
+          "sourceApproval": "PREVIOUS_DONOR_SELECTION",
+          "sourceApprovalContext": "ORIGINAL_CHILD_SLOT_ONLY",
+          "doorUse": "PROPOSAL_PENDING_EXPLICIT_APPROVAL",
+          "photoQA": "UNVERIFIED_FOR_THIS_DOOR",
+          "productionEnabled": false
+        },
+        {
+          "rank": 2,
+          "sourceSlot": "COV-pray.confession",
+          "artist": "Bartolomé Esteban Murillo",
+          "title": "The Return of the Prodigal Son",
+          "sourcePage": null,
+          "sourceApproval": "EXISTING_USER_FINAL_LOCK_UNCHANGED",
+          "sourceApprovalContext": "ORIGINAL_CHILD_SLOT_ONLY",
+          "doorUse": "PROPOSAL_PENDING_EXPLICIT_APPROVAL",
+          "photoQA": "UNVERIFIED_FOR_THIS_DOOR",
+          "productionEnabled": false
+        },
+        {
+          "rank": 3,
+          "sourceSlot": "COV-foundations_eternal_rest",
+          "artist": "Peter Paul Rubens",
+          "title": "Saint Teresa of Avila Interceding for Souls in Purgatory",
+          "sourcePage": "https://www.metmuseum.org/art/collection/search/437542",
+          "sourceApproval": "USER_APPROVED",
+          "sourceApprovalContext": "ORIGINAL_CHILD_SLOT_ONLY",
+          "doorUse": "PROPOSAL_PENDING_EXPLICIT_APPROVAL",
+          "photoQA": "UNVERIFIED_FOR_THIS_DOOR",
+          "productionEnabled": false
+        }
+      ]
+    }
+  ]
+}
