@@ -136,7 +136,11 @@ export function reconcile27SelectedVariants({manifest,prior,annual,inventory}={}
    if(!["2026-04-13","2026-04-29"].includes(entry.date)||
       entry.comparisonExpectedOpening!=="Confitebuntur caeli"||
       entry.proposedSourceSection!=="GradualeP"||
-      norm(dates.get(entry.date).selectedGradualLatin).includes(norm(entry.comparisonExpectedOpening)))
+      norm(dates.get(entry.date).selectedGradualLatin).includes(norm(entry.comparisonExpectedOpening))||
+      entry.printed1962Evidence?.printedPage!==(entry.date.endsWith("13")?505:516)||
+      entry.printed1962Evidence?.textWitness!=="TEMPORAL_PASCHAL_TWO_ALLELUIAS_CONFITEBUNTUR_POSUISTI"||
+      entry.printed1962Evidence?.ocrTextInspected!==true||
+      entry.printed1962Evidence?.pageImageInspected!==false)
     fail("DATED_PASCHAL_SELECTION_CONFLICT_NOT_REAL");
    externalConflicts++;
   }else if(entry.disposition==="PRINTED_1962_PASCHAL_MIXED_GRADUAL_AND_ALLELUIAS_CONFLICT"){
