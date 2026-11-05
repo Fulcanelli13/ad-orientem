@@ -56,8 +56,8 @@ try{
    assert.equal(await page.evaluate(()=>globalThis.AO_NOVENAS_V3.open()),true);
    const nv=page.locator("#aoPray435930.open");
    await nv.locator('[data-n1-select="st_michael"]').click();
-   const begin=nv.locator("[data-n1-begin]").first();
-   await begin.click();
+   // Selected novena now opens its day reader, with no redundant Begin screen.
+   assert.equal(await nv.locator("[data-ao-novena-deck]").count(),1);
    await nv.locator('[data-n1-mode="guided"]').evaluate(x=>x.click());
    await nv.locator("[data-n1-stage-next]").click();
    const initial=await page.evaluate(()=>globalThis.AO_NOVENAS_V3.state());
@@ -134,7 +134,18 @@ try{
    const flip=rosary.locator(".aoRosaryActiveCard .lab-prayer-flip[data-pb-flip]");
    const hasFlip=await flip.count()>0;
    if(hasFlip){
-    await flip.click();
+    // Paragraph-focus remounts can detach a physical click target while
+    // Playwright is scrolling it into view. Retry the same source-owned
+    // control; never substitute a new Rosary face or change donor state.
+    let changed=false;
+    for(let attempt=0;attempt<3&&!changed;attempt++){
+     try{await flip.click({timeout:4000})}catch{
+      try{await flip.evaluate(node=>node.click(),null,{timeout:4000})}catch{}
+     }
+     changed=await page.evaluate(()=>document.querySelector(
+      "#aoPrayerBookRoot.open .aoRosaryActiveCard .lab-prayer-flip[data-pb-flip]")?.dataset.face==="latin");
+    }
+    assert.equal(changed,true,"The existing canonical Rosary Latin face could not be activated");
     await page.waitForFunction(()=>document.querySelector(
       "#aoPrayerBookRoot.open .aoRosaryActiveCard .lab-prayer-flip[data-pb-flip]")?.dataset.face==="latin",
       null,{timeout:10000});
