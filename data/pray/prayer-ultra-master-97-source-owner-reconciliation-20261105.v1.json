@@ -435,7 +435,27 @@
       "originalPrintedEditionCertificateFromThisAudit": "NOT_TESTED",
       "bilingualFullTextCertificateFromThisAudit": "NOT_TESTED",
       "independentPublicReaderInteractionCertificateFromThisAudit": "NOT_TESTED",
-      "autoPublishAuthorized": false
+      "autoPublishAuthorized": false,
+      "ownerCodeReview20261105": {
+        "evidenceScope": "STATIC_REPOSITORY_CODE_ONLY_NOT_LIVE_BROWSER_OR_ORIGINAL_EDITION_COLLATION",
+        "coverage": "LOCAL_TEXT_WITH_READER_CODE_REFERENCE",
+        "sourceAnchors": [
+          {
+            "path": "src/pray/canonical-data.js",
+            "needle": "\"devotion_consecration_christ_king\":"
+          },
+          {
+            "path": "src/pray/traditional-pray-runtime.js",
+            "needle": "data-tp381-prayer=\"devotion_consecration_christ_king\""
+          }
+        ],
+        "finding": "Canonical Christ the King dedication is directly linked from Sacred Heart; distinct from the human-race consecration. Original ICKSP edition wording uncollated.",
+        "exactCandidateTextCertified": false,
+        "originalPrintWitnessCertified": false,
+        "threeLanguageWitnessCertified": false,
+        "independentBrowserInteractionCertified": false,
+        "authorizesPublication": false
+      }
     },
     {
       "acquisitionId": "AO-AQ-009",
@@ -462,7 +482,27 @@
       "originalPrintedEditionCertificateFromThisAudit": "NOT_TESTED",
       "bilingualFullTextCertificateFromThisAudit": "NOT_TESTED",
       "independentPublicReaderInteractionCertificateFromThisAudit": "NOT_TESTED",
-      "autoPublishAuthorized": false
+      "autoPublishAuthorized": false,
+      "ownerCodeReview20261105": {
+        "evidenceScope": "STATIC_REPOSITORY_CODE_ONLY_NOT_LIVE_BROWSER_OR_ORIGINAL_EDITION_COLLATION",
+        "coverage": "LOCAL_TEXT_WITH_READER_CODE_REFERENCE",
+        "sourceAnchors": [
+          {
+            "path": "src/pray/icksp-golden-arrow-reparation.v1.js",
+            "needle": "id:\"holy_face_golden_arrow\""
+          },
+          {
+            "path": "src/pray/traditional-pray-runtime.js",
+            "needle": "GOLDEN_ARROW_REPARATION_V1"
+          }
+        ],
+        "finding": "Golden Arrow is a selectable Holy Face/Holy Name prayer with distinct 1884 English and 1887 French recensions; no certified Latin.",
+        "exactCandidateTextCertified": false,
+        "originalPrintWitnessCertified": false,
+        "threeLanguageWitnessCertified": false,
+        "independentBrowserInteractionCertified": false,
+        "authorizesPublication": false
+      }
     },
     {
       "acquisitionId": "AO-AQ-010",
@@ -516,7 +556,27 @@
       "originalPrintedEditionCertificateFromThisAudit": "NOT_TESTED",
       "bilingualFullTextCertificateFromThisAudit": "NOT_TESTED",
       "independentPublicReaderInteractionCertificateFromThisAudit": "NOT_TESTED",
-      "autoPublishAuthorized": false
+      "autoPublishAuthorized": false,
+      "ownerCodeReview20261105": {
+        "evidenceScope": "STATIC_REPOSITORY_CODE_ONLY_NOT_LIVE_BROWSER_OR_ORIGINAL_EDITION_COLLATION",
+        "coverage": "LOCAL_TEXT_WITH_READER_CODE_REFERENCE",
+        "sourceAnchors": [
+          {
+            "path": "src/pray/icksp-divine-infant-king-novena.v1.js",
+            "needle": "id:\"divine_infant_king\""
+          },
+          {
+            "path": "src/pray/novena-runtime.js",
+            "needle": "data-n1-supplement=\"divine_infant_king\""
+          }
+        ],
+        "finding": "Optional monthly 17–25 source-repeat novena is implemented; historical original print is not inspected; not counted among canonical sixteen.",
+        "exactCandidateTextCertified": false,
+        "originalPrintWitnessCertified": false,
+        "threeLanguageWitnessCertified": false,
+        "independentBrowserInteractionCertified": false,
+        "authorizesPublication": false
+      }
     },
     {
       "acquisitionId": "AO-AQ-012",
@@ -570,7 +630,27 @@
       "originalPrintedEditionCertificateFromThisAudit": "NOT_TESTED",
       "bilingualFullTextCertificateFromThisAudit": "NOT_TESTED",
       "independentPublicReaderInteractionCertificateFromThisAudit": "NOT_TESTED",
-      "autoPublishAuthorized": false
+      "autoPublishAuthorized": false,
+      "ownerCodeReview20261105": {
+        "evidenceScope": "STATIC_REPOSITORY_CODE_ONLY_NOT_LIVE_BROWSER_OR_ORIGINAL_EDITION_COLLATION",
+        "coverage": "LOCAL_TEXT_WITH_READER_CODE_REFERENCE",
+        "sourceAnchors": [
+          {
+            "path": "src/pray/icksp-immaculate-conception-novena.v1.js",
+            "needle": "id:\"icksp_immaculate_conception\""
+          },
+          {
+            "path": "src/pray/novena-runtime.js",
+            "needle": "data-n1-supplement=\"icksp_immaculate_conception\""
+          }
+        ],
+        "finding": "Separate Institute Pius X repeated-prayer novena is selectable; not Moran's distinct nine-day Immaculate conception text; historic EN/FR witnesses differ.",
+        "exactCandidateTextCertified": false,
+        "originalPrintWitnessCertified": false,
+        "threeLanguageWitnessCertified": false,
+        "independentBrowserInteractionCertified": false,
+        "authorizesPublication": false
+      }
     },
     {
       "acquisitionId": "AO-AQ-014",
@@ -597,7 +677,27 @@
       "originalPrintedEditionCertificateFromThisAudit": "NOT_TESTED",
       "bilingualFullTextCertificateFromThisAudit": "NOT_TESTED",
       "independentPublicReaderInteractionCertificateFromThisAudit": "NOT_TESTED",
-      "autoPublishAuthorized": false
+      "autoPublishAuthorized": false,
+      "ownerCodeReview20261105": {
+        "evidenceScope": "STATIC_REPOSITORY_CODE_ONLY_NOT_LIVE_BROWSER_OR_ORIGINAL_EDITION_COLLATION",
+        "coverage": "EXTERNAL_EXACT_TEXT_LINK_ONLY",
+        "sourceAnchors": [
+          {
+            "path": "src/pray/icksp-therese-devotions.v1.js",
+            "needle": "status:\"ORIGINAL_ICKSP_SOURCE_LINK_ONLY\""
+          },
+          {
+            "path": "src/pray/novena-runtime.js",
+            "needle": "data-n1-therese-weekly-reader=\"true\""
+          }
+        ],
+        "finding": "Weekly Institute Tuesday devotion offers the official full-text link, not the exact full Institute wording locally; 1925 Garesche prayer shown is a different work.",
+        "exactCandidateTextCertified": false,
+        "originalPrintWitnessCertified": false,
+        "threeLanguageWitnessCertified": false,
+        "independentBrowserInteractionCertified": false,
+        "authorizesPublication": false
+      }
     },
     {
       "acquisitionId": "AO-AQ-015",
@@ -1056,7 +1156,27 @@
       "originalPrintedEditionCertificateFromThisAudit": "NOT_TESTED",
       "bilingualFullTextCertificateFromThisAudit": "NOT_TESTED",
       "independentPublicReaderInteractionCertificateFromThisAudit": "NOT_TESTED",
-      "autoPublishAuthorized": false
+      "autoPublishAuthorized": false,
+      "ownerCodeReview20261105": {
+        "evidenceScope": "STATIC_REPOSITORY_CODE_ONLY_NOT_LIVE_BROWSER_OR_ORIGINAL_EDITION_COLLATION",
+        "coverage": "PARTIAL_OR_COMPOSITE_COVERAGE",
+        "sourceAnchors": [
+          {
+            "path": "src/pray/canonical-data.js",
+            "needle": "\"alphonsus\":"
+          },
+          {
+            "path": "src/pray/canonical-data.js",
+            "needle": "\"stationTitles\":"
+          }
+        ],
+        "finding": "Canonical Alphonsian Stations and fourteen station labels exist. Exact proposed ICKSP Stations recension and live path/interaction not independently certified.",
+        "exactCandidateTextCertified": false,
+        "originalPrintWitnessCertified": false,
+        "threeLanguageWitnessCertified": false,
+        "independentBrowserInteractionCertified": false,
+        "authorizesPublication": false
+      }
     },
     {
       "acquisitionId": "AO-AQ-032",
@@ -1191,7 +1311,35 @@
       "originalPrintedEditionCertificateFromThisAudit": "NOT_TESTED",
       "bilingualFullTextCertificateFromThisAudit": "NOT_TESTED",
       "independentPublicReaderInteractionCertificateFromThisAudit": "NOT_TESTED",
-      "autoPublishAuthorized": false
+      "autoPublishAuthorized": false,
+      "ownerCodeReview20261105": {
+        "evidenceScope": "STATIC_REPOSITORY_CODE_ONLY_NOT_LIVE_BROWSER_OR_ORIGINAL_EDITION_COLLATION",
+        "coverage": "LOCAL_TEXT_WITH_READER_CODE_REFERENCE",
+        "sourceAnchors": [
+          {
+            "path": "src/pray/canonical-data.js",
+            "needle": "\"foundations_act_of_faith\":"
+          },
+          {
+            "path": "src/pray/canonical-data.js",
+            "needle": "\"foundations_act_of_hope\":"
+          },
+          {
+            "path": "src/pray/canonical-data.js",
+            "needle": "\"foundations_act_of_love\":"
+          },
+          {
+            "path": "src/pray/traditional-pray-runtime.js",
+            "needle": "foundations_act_of_love"
+          }
+        ],
+        "finding": "Three canonical Acts exist with EN/FR/LA faces; the historic Raccolta §8 source wording and translation equivalence are not certified.",
+        "exactCandidateTextCertified": false,
+        "originalPrintWitnessCertified": false,
+        "threeLanguageWitnessCertified": false,
+        "independentBrowserInteractionCertified": false,
+        "authorizesPublication": false
+      }
     },
     {
       "acquisitionId": "AO-AQ-037",
@@ -1299,7 +1447,31 @@
       "originalPrintedEditionCertificateFromThisAudit": "NOT_TESTED",
       "bilingualFullTextCertificateFromThisAudit": "NOT_TESTED",
       "independentPublicReaderInteractionCertificateFromThisAudit": "NOT_TESTED",
-      "autoPublishAuthorized": false
+      "autoPublishAuthorized": false,
+      "ownerCodeReview20261105": {
+        "evidenceScope": "STATIC_REPOSITORY_CODE_ONLY_NOT_LIVE_BROWSER_OR_ORIGINAL_EDITION_COLLATION",
+        "coverage": "LOCAL_TEXT_WITH_READER_CODE_REFERENCE",
+        "sourceAnchors": [
+          {
+            "path": "src/pray/traditional-pray-data.js",
+            "needle": "veni_creator:Object.freeze({"
+          },
+          {
+            "path": "src/pray/canonical-data.js",
+            "needle": "\"traditional_veni_sancte_sequence\":"
+          },
+          {
+            "path": "src/pray/traditional-pray-runtime.js",
+            "needle": "const HYMN_KEYS=Object.freeze([\"te_deum\",\"veni_creator\""
+          }
+        ],
+        "finding": "Veni Creator is a selectable hymn and Veni Sancte Spiritus has a canonical sequence; two distinct works within one acquisition record, §14 comparison outstanding.",
+        "exactCandidateTextCertified": false,
+        "originalPrintWitnessCertified": false,
+        "threeLanguageWitnessCertified": false,
+        "independentBrowserInteractionCertified": false,
+        "authorizesPublication": false
+      }
     },
     {
       "acquisitionId": "AO-AQ-041",
@@ -1353,7 +1525,27 @@
       "originalPrintedEditionCertificateFromThisAudit": "NOT_TESTED",
       "bilingualFullTextCertificateFromThisAudit": "NOT_TESTED",
       "independentPublicReaderInteractionCertificateFromThisAudit": "NOT_TESTED",
-      "autoPublishAuthorized": false
+      "autoPublishAuthorized": false,
+      "ownerCodeReview20261105": {
+        "evidenceScope": "STATIC_REPOSITORY_CODE_ONLY_NOT_LIVE_BROWSER_OR_ORIGINAL_EDITION_COLLATION",
+        "coverage": "LOCAL_TEXT_WITH_READER_CODE_REFERENCE",
+        "sourceAnchors": [
+          {
+            "path": "src/pray/good-death-data.js",
+            "needle": "JESUS_MARY_JOSEPH_V384"
+          },
+          {
+            "path": "src/pray/traditional-pray-runtime.js",
+            "needle": "sourcedPrayerCard(d.aspirations"
+          }
+        ],
+        "finding": "Jesus–Mary–Joseph aspirations exist in Good Death reader; no original Raccolta §19 word-for-word certificate.",
+        "exactCandidateTextCertified": false,
+        "originalPrintWitnessCertified": false,
+        "threeLanguageWitnessCertified": false,
+        "independentBrowserInteractionCertified": false,
+        "authorizesPublication": false
+      }
     },
     {
       "acquisitionId": "AO-AQ-043",
@@ -1380,7 +1572,27 @@
       "originalPrintedEditionCertificateFromThisAudit": "NOT_TESTED",
       "bilingualFullTextCertificateFromThisAudit": "NOT_TESTED",
       "independentPublicReaderInteractionCertificateFromThisAudit": "NOT_TESTED",
-      "autoPublishAuthorized": false
+      "autoPublishAuthorized": false,
+      "ownerCodeReview20261105": {
+        "evidenceScope": "STATIC_REPOSITORY_CODE_ONLY_NOT_LIVE_BROWSER_OR_ORIGINAL_EDITION_COLLATION",
+        "coverage": "LOCAL_TEXT_WITH_READER_CODE_REFERENCE",
+        "sourceAnchors": [
+          {
+            "path": "src/pray/novena-corpus.js",
+            "needle": "\"christmas\":"
+          },
+          {
+            "path": "src/pray/novena-runtime.js",
+            "needle": "Object.values(CORPUS)"
+          }
+        ],
+        "finding": "Christmas Novena has a nine-day corpus and Novena reader pathway; not an automatic certificate of Raccolta §21 exact formulation.",
+        "exactCandidateTextCertified": false,
+        "originalPrintWitnessCertified": false,
+        "threeLanguageWitnessCertified": false,
+        "independentBrowserInteractionCertified": false,
+        "authorizesPublication": false
+      }
     },
     {
       "acquisitionId": "AO-AQ-044",
@@ -1461,7 +1673,27 @@
       "originalPrintedEditionCertificateFromThisAudit": "NOT_TESTED",
       "bilingualFullTextCertificateFromThisAudit": "NOT_TESTED",
       "independentPublicReaderInteractionCertificateFromThisAudit": "NOT_TESTED",
-      "autoPublishAuthorized": false
+      "autoPublishAuthorized": false,
+      "ownerCodeReview20261105": {
+        "evidenceScope": "STATIC_REPOSITORY_CODE_ONLY_NOT_LIVE_BROWSER_OR_ORIGINAL_EDITION_COLLATION",
+        "coverage": "LOCAL_TEXT_WITH_READER_CODE_REFERENCE",
+        "sourceAnchors": [
+          {
+            "path": "src/pray/traditional-pray-data.js",
+            "needle": "\"enEgo\": {"
+          },
+          {
+            "path": "src/pray/traditional-pray-runtime.js",
+            "needle": "[\"enEgo\",\"En ego\",\"En ego\"]"
+          }
+        ],
+        "finding": "En ego has EN/FR/LA code and a Mass thanksgiving path; source and current-indulgence fields require edition-scoped review.",
+        "exactCandidateTextCertified": false,
+        "originalPrintWitnessCertified": false,
+        "threeLanguageWitnessCertified": false,
+        "independentBrowserInteractionCertified": false,
+        "authorizesPublication": false
+      }
     },
     {
       "acquisitionId": "AO-AQ-047",
@@ -1542,7 +1774,27 @@
       "originalPrintedEditionCertificateFromThisAudit": "NOT_TESTED",
       "bilingualFullTextCertificateFromThisAudit": "NOT_TESTED",
       "independentPublicReaderInteractionCertificateFromThisAudit": "NOT_TESTED",
-      "autoPublishAuthorized": false
+      "autoPublishAuthorized": false,
+      "ownerCodeReview20261105": {
+        "evidenceScope": "STATIC_REPOSITORY_CODE_ONLY_NOT_LIVE_BROWSER_OR_ORIGINAL_EDITION_COLLATION",
+        "coverage": "LOCAL_TEXT_WITH_READER_CODE_REFERENCE",
+        "sourceAnchors": [
+          {
+            "path": "src/pray/canonical-data.js",
+            "needle": "\"benediction_tantum_ergo\":"
+          },
+          {
+            "path": "src/pray/benediction-1962.js",
+            "needle": "BENEDICTION_1962_WITNESS"
+          }
+        ],
+        "finding": "Tantum ergo exists canonically and Benediction has a contextual rubric owner; do not merge it with the entire Pange lingua hymn or claim identical Raccolta §56 edition.",
+        "exactCandidateTextCertified": false,
+        "originalPrintWitnessCertified": false,
+        "threeLanguageWitnessCertified": false,
+        "independentBrowserInteractionCertified": false,
+        "authorizesPublication": false
+      }
     },
     {
       "acquisitionId": "AO-AQ-050",
@@ -1569,7 +1821,27 @@
       "originalPrintedEditionCertificateFromThisAudit": "NOT_TESTED",
       "bilingualFullTextCertificateFromThisAudit": "NOT_TESTED",
       "independentPublicReaderInteractionCertificateFromThisAudit": "NOT_TESTED",
-      "autoPublishAuthorized": false
+      "autoPublishAuthorized": false,
+      "ownerCodeReview20261105": {
+        "evidenceScope": "STATIC_REPOSITORY_CODE_ONLY_NOT_LIVE_BROWSER_OR_ORIGINAL_EDITION_COLLATION",
+        "coverage": "PARTIAL_OR_COMPOSITE_COVERAGE",
+        "sourceAnchors": [
+          {
+            "path": "src/pray/canonical-data.js",
+            "needle": "\"stabat\":"
+          },
+          {
+            "path": "src/pray/novena-corpus.js",
+            "needle": "\"seven_sorrows\":"
+          }
+        ],
+        "finding": "Stabat Mater text and Seven Sorrows NOVENA are distinct owners; this does not certify the §96 Seven Dolours CHAPLET or its reader, which must stay unproven.",
+        "exactCandidateTextCertified": false,
+        "originalPrintWitnessCertified": false,
+        "threeLanguageWitnessCertified": false,
+        "independentBrowserInteractionCertified": false,
+        "authorizesPublication": false
+      }
     },
     {
       "acquisitionId": "AO-AQ-051",
@@ -1596,7 +1868,27 @@
       "originalPrintedEditionCertificateFromThisAudit": "NOT_TESTED",
       "bilingualFullTextCertificateFromThisAudit": "NOT_TESTED",
       "independentPublicReaderInteractionCertificateFromThisAudit": "NOT_TESTED",
-      "autoPublishAuthorized": false
+      "autoPublishAuthorized": false,
+      "ownerCodeReview20261105": {
+        "evidenceScope": "STATIC_REPOSITORY_CODE_ONLY_NOT_LIVE_BROWSER_OR_ORIGINAL_EDITION_COLLATION",
+        "coverage": "LOCAL_TEXT_WITH_READER_CODE_REFERENCE",
+        "sourceAnchors": [
+          {
+            "path": "src/pray/novena-corpus.js",
+            "needle": "\"immaculate_conception\":"
+          },
+          {
+            "path": "src/pray/novena-corpus-v4.js",
+            "needle": "NOVENA_CORPUS_V4_IDS"
+          }
+        ],
+        "finding": "Canonical Immaculate Conception Novena is in the sixteen-programme reader; not proof of Raccolta §104 wording or the Institute alternative.",
+        "exactCandidateTextCertified": false,
+        "originalPrintWitnessCertified": false,
+        "threeLanguageWitnessCertified": false,
+        "independentBrowserInteractionCertified": false,
+        "authorizesPublication": false
+      }
     },
     {
       "acquisitionId": "AO-AQ-052",
@@ -1623,7 +1915,27 @@
       "originalPrintedEditionCertificateFromThisAudit": "NOT_TESTED",
       "bilingualFullTextCertificateFromThisAudit": "NOT_TESTED",
       "independentPublicReaderInteractionCertificateFromThisAudit": "NOT_TESTED",
-      "autoPublishAuthorized": false
+      "autoPublishAuthorized": false,
+      "ownerCodeReview20261105": {
+        "evidenceScope": "STATIC_REPOSITORY_CODE_ONLY_NOT_LIVE_BROWSER_OR_ORIGINAL_EDITION_COLLATION",
+        "coverage": "LOCAL_TEXT_WITH_READER_CODE_REFERENCE",
+        "sourceAnchors": [
+          {
+            "path": "src/pray/canonical-data.js",
+            "needle": "\"foundations_guardian_angel\":"
+          },
+          {
+            "path": "src/pray/traditional-pray-data.js",
+            "needle": "\"foundations_guardian_angel\""
+          }
+        ],
+        "finding": "Guardian Angel canonical prayer is in the daily-prayer sequence; Raccolta §112 edition and translation equivalence remain uncollated.",
+        "exactCandidateTextCertified": false,
+        "originalPrintWitnessCertified": false,
+        "threeLanguageWitnessCertified": false,
+        "independentBrowserInteractionCertified": false,
+        "authorizesPublication": false
+      }
     },
     {
       "acquisitionId": "AO-AQ-053",
@@ -1731,7 +2043,27 @@
       "originalPrintedEditionCertificateFromThisAudit": "NOT_TESTED",
       "bilingualFullTextCertificateFromThisAudit": "NOT_TESTED",
       "independentPublicReaderInteractionCertificateFromThisAudit": "NOT_TESTED",
-      "autoPublishAuthorized": false
+      "autoPublishAuthorized": false,
+      "ownerCodeReview20261105": {
+        "evidenceScope": "STATIC_REPOSITORY_CODE_ONLY_NOT_LIVE_BROWSER_OR_ORIGINAL_EDITION_COLLATION",
+        "coverage": "LOCAL_TEXT_WITH_READER_CODE_REFERENCE",
+        "sourceAnchors": [
+          {
+            "path": "src/pray/canonical-data.js",
+            "needle": "\"dead_de_profundis\":"
+          },
+          {
+            "path": "src/pray/traditional-pray-data.js",
+            "needle": "\"dead_de_profundis\""
+          }
+        ],
+        "finding": "De profundis is canonical and in Evening Prayer; this does not certify precise Raccolta §136 accompaniments.",
+        "exactCandidateTextCertified": false,
+        "originalPrintWitnessCertified": false,
+        "threeLanguageWitnessCertified": false,
+        "independentBrowserInteractionCertified": false,
+        "authorizesPublication": false
+      }
     },
     {
       "acquisitionId": "AO-AQ-057",
@@ -1947,7 +2279,27 @@
       "originalPrintedEditionCertificateFromThisAudit": "NOT_TESTED",
       "bilingualFullTextCertificateFromThisAudit": "NOT_TESTED",
       "independentPublicReaderInteractionCertificateFromThisAudit": "NOT_TESTED",
-      "autoPublishAuthorized": false
+      "autoPublishAuthorized": false,
+      "ownerCodeReview20261105": {
+        "evidenceScope": "STATIC_REPOSITORY_CODE_ONLY_NOT_LIVE_BROWSER_OR_ORIGINAL_EDITION_COLLATION",
+        "coverage": "SOURCE_MODULE_READER_UNVERIFIED",
+        "sourceAnchors": [
+          {
+            "path": "src/pray/st-joseph-seven-sorrows-joys-b24.js",
+            "needle": "JOSEPH_SEVEN_PRAYERS_B24"
+          },
+          {
+            "path": "src/pray/st-joseph-seven-sorrows-joys-b24.js",
+            "needle": "1910_DIGITAL_ENGLISH_RECENSION_PRINT_IMAGE_UNCOLLATED"
+          }
+        ],
+        "finding": "Seven Joseph sorrows/joys source prayers exist, but local reader visibility and the Sensus parallel recension are not certified.",
+        "exactCandidateTextCertified": false,
+        "originalPrintWitnessCertified": false,
+        "threeLanguageWitnessCertified": false,
+        "independentBrowserInteractionCertified": false,
+        "authorizesPublication": false
+      }
     },
     {
       "acquisitionId": "AO-AQ-065",
@@ -2298,7 +2650,39 @@
       "originalPrintedEditionCertificateFromThisAudit": "NOT_TESTED",
       "bilingualFullTextCertificateFromThisAudit": "NOT_TESTED",
       "independentPublicReaderInteractionCertificateFromThisAudit": "NOT_TESTED",
-      "autoPublishAuthorized": false
+      "autoPublishAuthorized": false,
+      "ownerCodeReview20261105": {
+        "evidenceScope": "STATIC_REPOSITORY_CODE_ONLY_NOT_LIVE_BROWSER_OR_ORIGINAL_EDITION_COLLATION",
+        "coverage": "PARTIAL_OR_COMPOSITE_COVERAGE",
+        "sourceAnchors": [
+          {
+            "path": "src/pray/novena-corpus.js",
+            "needle": "\"holy_ghost\":"
+          },
+          {
+            "path": "src/pray/novena-corpus.js",
+            "needle": "\"christmas\":"
+          },
+          {
+            "path": "src/pray/novena-corpus.js",
+            "needle": "\"st_joseph\":"
+          },
+          {
+            "path": "src/pray/novena-corpus.js",
+            "needle": "\"holy_souls\":"
+          },
+          {
+            "path": "src/pray/novena-corpus-v4.js",
+            "needle": "const ST_MICHAEL="
+          }
+        ],
+        "finding": "One acquisition candidate bundles five distinct novena programmes, each with an owner; exact Sensus versions cannot be counted as a single certified work.",
+        "exactCandidateTextCertified": false,
+        "originalPrintWitnessCertified": false,
+        "threeLanguageWitnessCertified": false,
+        "independentBrowserInteractionCertified": false,
+        "authorizesPublication": false
+      }
     },
     {
       "acquisitionId": "AO-AQ-078",
@@ -2595,7 +2979,27 @@
       "originalPrintedEditionCertificateFromThisAudit": "NOT_TESTED",
       "bilingualFullTextCertificateFromThisAudit": "NOT_TESTED",
       "independentPublicReaderInteractionCertificateFromThisAudit": "NOT_TESTED",
-      "autoPublishAuthorized": false
+      "autoPublishAuthorized": false,
+      "ownerCodeReview20261105": {
+        "evidenceScope": "STATIC_REPOSITORY_CODE_ONLY_NOT_LIVE_BROWSER_OR_ORIGINAL_EDITION_COLLATION",
+        "coverage": "LOCAL_TEXT_WITH_READER_CODE_REFERENCE",
+        "sourceAnchors": [
+          {
+            "path": "src/pray/icksp-batch01-public.v1.js",
+            "needle": "id:'grace_after_meals_baltimore_1888_full'"
+          },
+          {
+            "path": "src/pray/traditional-pray-runtime.js",
+            "needle": "data-tp381-b01-meal=\"full\""
+          }
+        ],
+        "finding": "Complete 1888 English Baltimore Grace is a selectable alternative; French is editorial and no Latin historical original is asserted.",
+        "exactCandidateTextCertified": false,
+        "originalPrintWitnessCertified": false,
+        "threeLanguageWitnessCertified": false,
+        "independentBrowserInteractionCertified": false,
+        "authorizesPublication": false
+      }
     },
     {
       "acquisitionId": "AO-AQ-089",
@@ -2622,7 +3026,27 @@
       "originalPrintedEditionCertificateFromThisAudit": "NOT_TESTED",
       "bilingualFullTextCertificateFromThisAudit": "NOT_TESTED",
       "independentPublicReaderInteractionCertificateFromThisAudit": "NOT_TESTED",
-      "autoPublishAuthorized": false
+      "autoPublishAuthorized": false,
+      "ownerCodeReview20261105": {
+        "evidenceScope": "STATIC_REPOSITORY_CODE_ONLY_NOT_LIVE_BROWSER_OR_ORIGINAL_EDITION_COLLATION",
+        "coverage": "LOCAL_TEXT_WITH_READER_CODE_REFERENCE",
+        "sourceAnchors": [
+          {
+            "path": "src/pray/icksp-batch01-public.v1.js",
+            "needle": "id:\"grace_after_meals_baltimore_catechism_short\""
+          },
+          {
+            "path": "src/pray/traditional-pray-runtime.js",
+            "needle": "data-tp381-b01-meal=\"catechism\""
+          }
+        ],
+        "finding": "Short Catechism Grace is a separate selectable witness; editorial French not a certified period translation.",
+        "exactCandidateTextCertified": false,
+        "originalPrintWitnessCertified": false,
+        "threeLanguageWitnessCertified": false,
+        "independentBrowserInteractionCertified": false,
+        "authorizesPublication": false
+      }
     },
     {
       "acquisitionId": "AO-AQ-090",
@@ -2703,7 +3127,27 @@
       "originalPrintedEditionCertificateFromThisAudit": "NOT_TESTED",
       "bilingualFullTextCertificateFromThisAudit": "NOT_TESTED",
       "independentPublicReaderInteractionCertificateFromThisAudit": "NOT_TESTED",
-      "autoPublishAuthorized": false
+      "autoPublishAuthorized": false,
+      "ownerCodeReview20261105": {
+        "evidenceScope": "STATIC_REPOSITORY_CODE_ONLY_NOT_LIVE_BROWSER_OR_ORIGINAL_EDITION_COLLATION",
+        "coverage": "PARTIAL_OR_COMPOSITE_COVERAGE",
+        "sourceAnchors": [
+          {
+            "path": "src/pray/traditional-pray-runtime.js",
+            "needle": "const COMMUNION_BEFORE=Object.freeze(["
+          },
+          {
+            "path": "src/pray/traditional-pray-runtime.js",
+            "needle": "const COMMUNION_AFTER=Object.freeze(["
+          }
+        ],
+        "finding": "Mass preparation and thanksgiving selections exist, but candidate bundles multiple Baltimore prayers without exact edition-level identity.",
+        "exactCandidateTextCertified": false,
+        "originalPrintWitnessCertified": false,
+        "threeLanguageWitnessCertified": false,
+        "independentBrowserInteractionCertified": false,
+        "authorizesPublication": false
+      }
     },
     {
       "acquisitionId": "AO-AQ-093",
@@ -2730,7 +3174,27 @@
       "originalPrintedEditionCertificateFromThisAudit": "NOT_TESTED",
       "bilingualFullTextCertificateFromThisAudit": "NOT_TESTED",
       "independentPublicReaderInteractionCertificateFromThisAudit": "NOT_TESTED",
-      "autoPublishAuthorized": false
+      "autoPublishAuthorized": false,
+      "ownerCodeReview20261105": {
+        "evidenceScope": "STATIC_REPOSITORY_CODE_ONLY_NOT_LIVE_BROWSER_OR_ORIGINAL_EDITION_COLLATION",
+        "coverage": "PARTIAL_OR_COMPOSITE_COVERAGE",
+        "sourceAnchors": [
+          {
+            "path": "src/pray/canonical-data.js",
+            "needle": "\"dead_de_profundis\":"
+          },
+          {
+            "path": "src/pray/benediction-1962.js",
+            "needle": "BENEDICTION_1962_WITNESS"
+          }
+        ],
+        "finding": "Psalms and Benediction have code owners; bundled Baltimore Vespers/Litanies collection not individually certified or re-imported.",
+        "exactCandidateTextCertified": false,
+        "originalPrintWitnessCertified": false,
+        "threeLanguageWitnessCertified": false,
+        "independentBrowserInteractionCertified": false,
+        "authorizesPublication": false
+      }
     },
     {
       "acquisitionId": "AO-AQ-094",
@@ -2757,7 +3221,27 @@
       "originalPrintedEditionCertificateFromThisAudit": "NOT_TESTED",
       "bilingualFullTextCertificateFromThisAudit": "NOT_TESTED",
       "independentPublicReaderInteractionCertificateFromThisAudit": "NOT_TESTED",
-      "autoPublishAuthorized": false
+      "autoPublishAuthorized": false,
+      "ownerCodeReview20261105": {
+        "evidenceScope": "STATIC_REPOSITORY_CODE_ONLY_NOT_LIVE_BROWSER_OR_ORIGINAL_EDITION_COLLATION",
+        "coverage": "LOCAL_TEXT_WITH_READER_CODE_REFERENCE",
+        "sourceAnchors": [
+          {
+            "path": "src/pray/icksp-batch01-public.v1.js",
+            "needle": "id:'act_of_contrition_pius_x_1905_optional'"
+          },
+          {
+            "path": "src/pray/traditional-pray-runtime.js",
+            "needle": "data-tp381-b01-contrition=\"piusx\""
+          }
+        ],
+        "finding": "St Pius X alternative is selectable in nightly examen; English/French are editorial renderings of 1905 Italian, not certified printed translations.",
+        "exactCandidateTextCertified": false,
+        "originalPrintWitnessCertified": false,
+        "threeLanguageWitnessCertified": false,
+        "independentBrowserInteractionCertified": false,
+        "authorizesPublication": false
+      }
     },
     {
       "acquisitionId": "AO-AQ-095",
@@ -2784,7 +3268,31 @@
       "originalPrintedEditionCertificateFromThisAudit": "NOT_TESTED",
       "bilingualFullTextCertificateFromThisAudit": "NOT_TESTED",
       "independentPublicReaderInteractionCertificateFromThisAudit": "NOT_TESTED",
-      "autoPublishAuthorized": false
+      "autoPublishAuthorized": false,
+      "ownerCodeReview20261105": {
+        "evidenceScope": "STATIC_REPOSITORY_CODE_ONLY_NOT_LIVE_BROWSER_OR_ORIGINAL_EDITION_COLLATION",
+        "coverage": "PARTIAL_OR_COMPOSITE_COVERAGE",
+        "sourceAnchors": [
+          {
+            "path": "src/pray/traditional-pray-data.js",
+            "needle": "MORNING_PRAYER_SEQUENCE_V381"
+          },
+          {
+            "path": "src/pray/traditional-pray-data.js",
+            "needle": "EVENING_PRAYER_SEQUENCE_V381"
+          },
+          {
+            "path": "src/pray/traditional-pray-runtime.js",
+            "needle": "data-ao-hours-family=\"rule\""
+          }
+        ],
+        "finding": "Daily morning/evening sequences are implemented, but exact 1905 and 1913 St Pius X programme/edition equivalence is unproven.",
+        "exactCandidateTextCertified": false,
+        "originalPrintWitnessCertified": false,
+        "threeLanguageWitnessCertified": false,
+        "independentBrowserInteractionCertified": false,
+        "authorizesPublication": false
+      }
     },
     {
       "acquisitionId": "AO-AQ-096",
@@ -2811,7 +3319,31 @@
       "originalPrintedEditionCertificateFromThisAudit": "NOT_TESTED",
       "bilingualFullTextCertificateFromThisAudit": "NOT_TESTED",
       "independentPublicReaderInteractionCertificateFromThisAudit": "NOT_TESTED",
-      "autoPublishAuthorized": false
+      "autoPublishAuthorized": false,
+      "ownerCodeReview20261105": {
+        "evidenceScope": "STATIC_REPOSITORY_CODE_ONLY_NOT_LIVE_BROWSER_OR_ORIGINAL_EDITION_COLLATION",
+        "coverage": "PARTIAL_OR_COMPOSITE_COVERAGE",
+        "sourceAnchors": [
+          {
+            "path": "src/pray/canonical-data.js",
+            "needle": "\"foundations_apostles_creed\":"
+          },
+          {
+            "path": "src/pray/canonical-data.js",
+            "needle": "\"foundations_act_of_faith\":"
+          },
+          {
+            "path": "src/pray/canonical-data.js",
+            "needle": "\"foundations_guardian_angel\":"
+          }
+        ],
+        "finding": "Canonical foundation entries exist; grouped catechism programme is not a separate transcribed or print-certified corpus.",
+        "exactCandidateTextCertified": false,
+        "originalPrintWitnessCertified": false,
+        "threeLanguageWitnessCertified": false,
+        "independentBrowserInteractionCertified": false,
+        "authorizesPublication": false
+      }
     },
     {
       "acquisitionId": "AO-AQ-097",
@@ -2840,5 +3372,20 @@
       "independentPublicReaderInteractionCertificateFromThisAudit": "NOT_TESTED",
       "autoPublishAuthorized": false
     }
-  ]
+  ],
+  "subsequentOwnerCodeReview20261105": {
+    "auditedDate": "2026-11-05",
+    "scope": "STATIC_REPOSITORY_CODE_ANCHORS_NOT_ORIGINAL_EDITIONS_OR_PUBLIC_BROWSER_TEST",
+    "reviewedExistingOwnerRows": 25,
+    "coverageCounts": {
+      "LOCAL_TEXT_WITH_READER_CODE_REFERENCE": 16,
+      "PARTIAL_OR_COMPOSITE_COVERAGE": 7,
+      "EXTERNAL_EXACT_TEXT_LINK_ONLY": 1,
+      "SOURCE_MODULE_READER_UNVERIFIED": 1
+    },
+    "noHistoricB31DispositionChanged": true,
+    "newEditionCertificates": 0,
+    "newPublicationAuthorized": 0,
+    "other72AcquisitionRowsUntouched": true
+  }
 }
