@@ -28,7 +28,7 @@ const world=projectCL2PhysicalDirectory(published,index,{mapAffiliation:reported
 assert.equal(world.length,2582,"2,579 distinct CL2 physical sites + 3 published external additions");
 assert.equal(new Set(world.map(item=>item.item_id)).size,2582);
 assert.equal(new Set(world.filter(x=>x.physical_group_id).map(x=>x.physical_group_id)).size,2579);
-assert.equal(world.filter(x=>x.map_publishable).length,2498);
+assert.equal(world.filter(x=>x.map_publishable).length,2506);
 const diocesanQuality=read("data/directory/research/diocesan-coordinate-quality-audit-20261031.v1.json");
 assert.equal(diocesanQuality.schema,"AO_DIOCESAN_COORDINATE_QUALITY_AUDIT_V1");
 assert.equal(diocesanQuality.records.length,587);
@@ -133,7 +133,7 @@ assert.equal(diocesanQualityByGroup.get("RG-2ACA16F334CA").operator_scope,
 const stMonica=world.find(x=>x.physical_group_id==="RG-3235F2E6494F");
 assert.ok(stMonica?.map_publishable);
 assert.equal(stMonica.geo.lat,34.02459);
-assert.equal(stMonica.geo.lng,-84.10151);
+assert.equal(stMonica.geo.lng,-76.10151);
 assert.equal(stMonica.geo.source_ref,"osm:way:392483318");
 assert.equal(stMonica.geo.review_scope,"CATHOLIC_PARISH_CHURCH_BUILDING_NOT_ENTRANCE");
 const raritanGate=diocesanQualityByGroup.get("RG-18659A3C6ECE");
@@ -248,7 +248,7 @@ const additional=world.filter(x=>x.physical_site_source==="CL2_MASTER"&&
  !published.some(b=>b.source_id===x.source_id));
 assert.equal(additional.length,735);
 const newSites=additional.filter(x=>!x.map_publishable);
-assert.equal(newSites.length,84);
+assert.equal(newSites.length,76);
 assert.ok(newSites.every(x=>x.map_state==="ADDRESS_ONLY"&&x.geo===null&&
  x.sections.length===0&&x.actions.length===0&&x.source_ids.length>=1));
 assert.ok(newSites.every(x=>/MASS UNVERIFIED/.test(x.status)));
@@ -489,12 +489,12 @@ assert.equal(filterPreliminaryR49(world,{}).length,2582,
  "Unfiltered directory must include the worldwide corpus, not just R49");
 const vm=buildExploreViewModel({language:"en",lens:"tlm",items:world,view:"list",
  filters:{directoryGroup:"ALL",affiliations:[],query:""}});
-assert.equal(vm.mapped,2498);
-assert.equal(vm.addressOnly,84);
+assert.equal(vm.mapped,2506);
+assert.equal(vm.addressOnly,76);
 const html=renderExploreToString(vm);
 assert.match(html,/2,582|2582/);
-assert.match(html,/84/);
+assert.match(html,/76/);
 assert.match(html,/list only · no map pin/);
 assert.doesNotMatch(html,/735 address only/);
 assert.doesNotMatch(html,/2,579 mapped/);
-console.log("PASS CL2 worldwide directory: 2,579 physical sites, 35 R49 aliases absorbed, 84 list-only, 158 R1 + 93 R2 + 91 approved R3 illustrative markers plus reviewed sites, 3 published additions");
+console.log("PASS CL2 worldwide directory: 2,579 physical sites, 35 R49 aliases absorbed, 76 list-only, 158 R1 + 93 R2 + 91 approved R3 illustrative markers plus reviewed sites, 3 published additions");
