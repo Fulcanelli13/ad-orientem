@@ -1,0 +1,53 @@
+{
+  "schema": "ao-mass-oration-amen-notation-source-gate-v1",
+  "policy": "1962_SOURCE_PROPER_AND_1962_TONE_FAMILY_ARE_PREREQUISITES_NOT_APPROVAL_TO_RENDER_1961_GABC",
+  "publication": "NO_AMEN_SCORE_APPROVED",
+  "scope": [
+    {
+      "blockId": "AO.SM.B019",
+      "properSlot": "COLLECT_SET",
+      "finalCueId": "AO.SM.C0074",
+      "intermediate": "R17.ORATION.COLLECT.G{group}.AMEN"
+    },
+    {
+      "blockId": "AO.SM.B088",
+      "properSlot": "POSTCOMMUNION_SET",
+      "finalCueId": "AO.SM.C0255",
+      "intermediate": "R17.ORATION.POSTCOMMUNION.G{group}.AMEN"
+    }
+  ],
+  "existingSources": [
+    {
+      "sourceId": 4487,
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=4487",
+      "witness": "Liber Usualis (1961), p. 98 / Graduale Romanum (1961), p. 113*",
+      "verifiedUse": "FESTIVE_GREETING_ET_CUM_SPIRITU_TUO_ONLY",
+      "hasAmenGabc": false,
+      "reviewStatus": "M05_SOURCE_TEXT_SCREENED"
+    },
+    {
+      "sourceId": 7807,
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=7807",
+      "witness": "Post collectam (Toni orationum B), Graduale Romanum 1979 p. 802",
+      "verifiedUse": "POST_1970_RESEARCH_COMPARATOR_ONLY",
+      "hasAmenGabc": true,
+      "reviewStatus": "NOT_PRE_1962_SOURCE__NOT_ELIGIBLE_FOR_PUBLIC_OR_1962_PREVIEW"
+    },
+    {
+      "sourceId": null,
+      "sourceUrl": "https://gregobase.selapa.net/usage.php?id=or",
+      "witness": "Toni Orationum A/B (Per Dominum / Per Christum / Qui vivit), 1974 Graduale pp. 800-802",
+      "verifiedUse": "RESEARCH_LOCATOR_ONLY",
+      "hasAmenGabc": true,
+      "reviewStatus": "NOT_EQUIVALENT_TO_SOURCE_PROVEN_1961_TONE_BY_TITLE"
+    }
+  ],
+  "blockingQuestions": [
+    "Locate 1961 Liber Usualis Orationum printed endings and Amen response for solemn/ferial families",
+    "Certify exact underlay and note shape against 1961 printed scans before extracting any response GABC",
+    "Resolve alternative concluding formulas Per Dominum / Per Christum / Qui vivit from actual selected prayer",
+    "Preserve one-conclusion commemoration groups and separately source each intermediate Amen",
+    "Do not adopt 1974/1979 notations into the 1962 Mass by matching the title or final word Amen"
+  ],
+  "audited20261106": true
+}
