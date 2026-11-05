@@ -146,7 +146,8 @@ export function reconcile27SelectedVariants({manifest,prior,annual,inventory}={}
   }else if(entry.disposition==="PRINTED_1962_PASCHAL_MIXED_GRADUAL_AND_ALLELUIAS_CONFLICT"){
    const latin=norm(dates.get(entry.date).selectedGradualLatin);
    if(entry.date!=="2026-04-14"||
-      entry.proposedSourceSection!=="Sancti/04-14:Graduale (seasonal Paschal extraction)"||
+      entry.proposedSourceSection!=="Sancti/04-14:Graduale"||
+      entry.comparisonSection!=="Sancti/04-14:Graduale (seasonal Paschal extraction)"||
       entry.printed1962Evidence?.printedPage!==506||
       entry.printed1962Evidence?.ocrTextInspected!==true||
       entry.printed1962Evidence?.pageImageInspected!==false||
