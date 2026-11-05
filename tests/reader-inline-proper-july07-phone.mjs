@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import http from "node:http";
-import {readFile} from "node:fs/promises";
+import {readFile,mkdir} from "node:fs/promises";
 import {resolve,extname,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
@@ -90,8 +90,12 @@ try{
    const combinedIds=referenceScoresForParagraph({paragraph:combined,resolvedMass:mass,form:mass.form}).map(x=>x.id);
    ctrl.render({mode:"LIVE",form:"LOW",resolvedMass:mass,paragraphs});
    const lowNoScores=body.querySelectorAll("[data-reference-score]").length===0;
-   ctrl.destroy();
-   return {synthetic,blocked,mounted,rendered,actualSvg,cardDimensions,
+   // Restore full notation for screenshot evidence, after LOW fallback proof.
+   ctrl.render({mode:"LIVE",form:mass.form,resolvedMass:mass,paragraphs});
+   for(let k=0;k<80&&ctrl.state().rendered<3;k++)
+    await new Promise(resolve=>setTimeout(resolve,100));
+   const screenshotReady=ctrl.state().rendered===3;
+   return {synthetic,blocked,mounted,rendered,actualSvg,cardDimensions,screenshotReady,
     sourceTextIntact,labels,noApproval,combinedIds,lowNoScores,width:window.innerWidth};
   });
   assert.deepEqual(result.synthetic.archiveIDs,["GREGOBASE-48","GREGOBASE-415","GREGOBASE-1187"]);
@@ -101,6 +105,7 @@ try{
   assert.equal(result.mounted,3);
   assert.equal(result.rendered,3,"Bundled Exsurge must engrave all three original 1961 GABC transcriptions");
   assert.equal(result.actualSvg,3);
+  assert.equal(result.screenshotReady,true);
   assert.equal(result.sourceTextIntact,true);
   assert.equal(result.noApproval,true);
   assert.equal(result.lowNoScores,true);
@@ -108,6 +113,8 @@ try{
   assert.ok(result.labels.every(x=>x.includes("review pending")));
   assert.ok(result.cardDimensions.every(x=>x.w<=width+1 && x.scoreW>120),
    "No clipped notes on "+width+" px: "+JSON.stringify(result.cardDimensions));
+  await mkdir(resolve(root,".tmp/mass-inline-proper-july07"),{recursive:true});
+  await page.screenshot({path:resolve(root,".tmp/mass-inline-proper-july07/notation-"+width+".png"),fullPage:true});
   console.log("INLINE_1961_JULY07_PHONE_PASS "+JSON.stringify({
    width,svg:result.actualSvg,mounted:result.mounted,cardDimensions:result.cardDimensions,
    sourceTextIntact:result.sourceTextIntact,blocked:result.blocked}));
