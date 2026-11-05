@@ -16,6 +16,13 @@ on:
       - 'tests/1962-perpetua-felicity-english-named-source-regression.mjs'
       - 'scripts/schola/reconcile-2026-completion-exceptions.mjs'
       - 'tests/schola-2026-completion-source-exceptions.mjs'
+      - 'scripts/schola/build-2026-five-pinned-source-gap-dispositions.mjs'
+      - 'tests/schola-2026-five-pinned-source-gap-dispositions.mjs'
+      - 'data/research/schola-2026-five-pinned-source-gap-evidence.v1.json'
+      - 'data/research/schola-2026-five-source-liturgical-family-corroboration.v1.json'
+      - 'tests/schola-2026-five-source-liturgical-family-corroboration.mjs'
+      - 'data/research/schola-2026-five-family-section-inheritance.v1.json'
+      - 'tests/schola-2026-five-family-section-inheritance.mjs'
       - 'src/mass/reader-proper-first60-print-review.js'
       - 'scripts/schola/build-2026-proper-first60-print-review.mjs'
       - 'tests/reader-proper-first60-print-review.mjs'
@@ -101,6 +108,12 @@ jobs:
         run: |
           node scripts/schola/reconcile-2026-completion-exceptions.mjs
           node tests/schola-2026-completion-source-exceptions.mjs
+      - name: Reconcile five absent pinned Latin source families against original archival tree (15 real 2026 dates)
+        run: |
+          node scripts/schola/build-2026-five-pinned-source-gap-dispositions.mjs
+          node tests/schola-2026-five-pinned-source-gap-dispositions.mjs
+          node tests/schola-2026-five-source-liturgical-family-corroboration.mjs
+          node tests/schola-2026-five-family-section-inheritance.mjs
       - name: Upload original 60 Proper and additional 24 pre-Gospel review packets
         if: always()
         uses: actions/upload-artifact@v4
