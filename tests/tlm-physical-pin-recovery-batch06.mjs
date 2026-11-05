@@ -179,7 +179,7 @@ assert.equal(separateCenter.celebration_evidence,undefined);
 assert.ok(!separateCenter.actions.some(x=>/maps\/dir/.test(x.url)),
  "Town marker must not route to chapel entrance");
 const counts=tlmSiteEvidenceCounts(all);
-assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:692,SOURCE_PIN:1806,ADDRESS_ONLY:84});
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,84);
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,692);
-console.log("PASS TLM pin recovery batch 6: 12 source-confirmed church/monastic site pins, 2498 mapped, 84 address-only, no inferred liturgical claims");
+assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:700,SOURCE_PIN:1806,ADDRESS_ONLY:76});
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,76);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,700);
+console.log("PASS TLM pin recovery batch 6: 12 source-confirmed church/monastic site pins, 2506 mapped, 76 address-only, no inferred liturgical claims");
