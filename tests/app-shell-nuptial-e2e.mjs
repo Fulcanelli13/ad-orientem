@@ -128,7 +128,7 @@ try{
   }
   assert.equal(sourceCursor,model.sourceParagraphIds.length,
     "Nuptial direct LIVE lost, reordered or mutated canonical source macro paragraph IDs");
-  assert.ok(model.projectedParagraphIds.includes("AO.NUPTIAL.01"),
+  assert.ok(model.projectedParagraphIds.includes("AO.NUPTIAL.01.BODY"),
     "Nuptial insertion paragraph was lost in direct production curation");
   assert.equal(model.count,3);
 
