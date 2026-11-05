@@ -1,0 +1,93 @@
+{
+  "schema": "AO_EXPLORE_SACRED_GEOGRAPHY_UNATTENDED_RESEARCH_B16_V1",
+  "research_date": "2026-11-06",
+  "publication": "RESEARCH_ONLY_NOT_PROMOTED",
+  "reconciliation": {
+    "main_registry_path": "data/geography/seed-registry.v1.json",
+    "main_registry_sha": "95a051468ea7da952965f8c25d7265d10b81f6c6",
+    "last_fully_parsed_places": 530,
+    "r70_queue_sha": "8ac474ec724251da87313e51e8581634f2b1a015",
+    "r70_declared_candidates": 750,
+    "philippines_checkpoint": "347 historical; 20 verified research, 4 provisional, 1 held, 1 Quiapo enrichment",
+    "canonical_ids_added": 0
+  },
+  "records": [
+    {
+      "record_id": "SG-B16-KATTIMAHANA-ADMIN-DIOCESE-DISTINCTION",
+      "kind": "EXISTING_DOSSIER_ENRICHMENT",
+      "status": "PROVISIONAL_CANONICAL_DECREE_HELD",
+      "name": "St Anne's Shrine, Kattimahana",
+      "summary_en": "The previous apparent contradiction is not yet evidence of a diocesan conflict: the Sri Lankan government's Kurunegala label is a geographic or administrative grouping, whereas GCatholic's Chilaw label explicitly identifies ecclesiastical jurisdiction. The Catholic dioceses of Kurunegala and Chilaw are distinct, with Kurunegala erected from Chilaw in 1987. This clarifies the category mismatch but does not independently certify which diocese currently governs the exact Kattimahana site. Its St Anne dedication and August pilgrimage remain supported; original national-shrine decree is still unavailable.",
+      "summary_fr": "La divergence signalée précédemment n'établit pas à elle seule un conflit de juridiction : la rubrique Kurunegala du rapport gouvernemental est géographique ou administrative, tandis que l'annuaire GCatholic attribue explicitement le sanctuaire au diocèse de Chilaw. Les deux diocèses sont distincts, celui de Kurunegala ayant été érigé en 1987 à partir de Chilaw. Cette distinction clarifie les catégories sans authentifier la juridiction actuelle du site précis. La dédicace à sainte Anne et le pèlerinage d'août restent documentés ; le décret original du titre national demeure introuvable.",
+      "sources": [
+        {
+          "url": "https://tourismmin.gov.lk/web/images/annual-reports/Progress_Report_2018.pdf",
+          "support": "government administrative listing"
+        },
+        {
+          "url": "https://gcatholic.org/churches/asia/6505",
+          "support": "secondary ecclesiastical jurisdiction assignment"
+        },
+        {
+          "url": "https://catholiceducation.lk/diocese-of-kurunegala/",
+          "support": "Catholic education service: 1987 diocesan split"
+        },
+        {
+          "url": "https://chilawdiocese.org/",
+          "support": "official Diocese of Chilaw identity"
+        }
+      ],
+      "holds": [
+        "Obtain direct Chilaw/Kurunegala diocesan confirmation of the site's jurisdiction",
+        "Obtain original national shrine designation decree",
+        "Do not equate administrative district with diocese"
+      ]
+    },
+    {
+      "record_id": "SG-B16-TRA-KIEU-LOWER-CHURCH-HILL-SHRINE",
+      "kind": "EXISTING_DOSSIER_ENRICHMENT",
+      "status": "VERIFIED_DISTINCT_STRUCTURES_ENTRANCE_HOLD",
+      "name": "Trà Kiệu Marian Center, Đà Nẵng",
+      "summary_en": "Independent site descriptions distinguish the lower parish church from the Marian chapel atop Bửu Châu Hill. The center is associated with the Diocese of Đà Nẵng and a May 31 pilgrimage; the hilltop Marian chapel and parish church should not be collapsed into one building-level entrance. No authoritative current entrance coordinates, access hours, or pedestrian route have been confirmed, so no map navigation geometry is proposed.",
+      "summary_fr": "Les descriptions du lieu distinguent l'église paroissiale située en contrebas de la chapelle mariale au sommet de la colline Bửu Châu. Le centre relève du diocèse de Đà Nẵng et accueille un pèlerinage autour du 31 mai. Il ne faut pas confondre les deux édifices en une entrée unique. Aucune coordonnée d'entrée, aucun horaire d'accès ni itinéraire piéton actuel n'a été confirmé par une source faisant autorité ; aucune géométrie cartographique n'est proposée.",
+      "sources": [
+        {
+          "url": "https://gcatholic.org/churches/asia-east/152058.htm",
+          "support": "secondary directory identity and diocesan classification"
+        },
+        {
+          "url": "https://thayungkhiem.vn/en/van-dao/places/tra-kieu",
+          "support": "detailed independent two-building physical description, not custodial verification"
+        },
+        {
+          "url": "https://www.vietnamcatholictour.com/catholic-churches/1100/our-lady-of-tra-kieu",
+          "support": "independent pilgrimage history, not authoritative current schedule"
+        }
+      ],
+      "holds": [
+        "Find diocesan/parish first-party site plan for both entrances",
+        "Do not use secondary published mass times as current",
+        "Do not invent a walking route or exact entrance pin"
+      ]
+    }
+  ],
+  "counts": {
+    "existing_dossiers_enriched": 2,
+    "new_sites": 0,
+    "canonical_places_added": 0,
+    "coordinates_added": 0,
+    "routes_added": 0
+  },
+  "next_targets": [
+    "Kattimahana competent diocesan confirmation and national-shrine decree",
+    "Trà Kiệu parish/diocesan entrance documentation",
+    "Cupey permanent building completion",
+    "Nishizaka present relic custody",
+    "Aitara current national-title decree",
+    "Dili and Tianjin identity holds"
+  ],
+  "policy": [
+    "No canonical ID changes",
+    "No merge, deployment, publication, contact or expense"
+  ]
+}
