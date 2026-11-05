@@ -32,6 +32,17 @@ export const JULY07_REFERENCE_CSS=String.raw`
 .ao-proper-reference-staff svg :is(path,polygon,polyline,line,text){fill:currentColor}
 .ao-reader-shell[data-mode="MISSAL"] .ao-proper-reference-staff{color:#352920}
 .ao-proper-reference-error{font:italic 12px/1.5 var(--ao-font-liturgical,Georgia,serif);color:var(--ao-muted)}
+.ao-proper-reference-expand{display:inline-block;min-height:38px;margin:1px 0 5px;padding:6px 8px;border:1px solid rgba(210,194,162,.3);border-radius:5px;background:transparent;color:var(--ao-text,#eee);font:600 11px/1.3 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer}
+.ao-proper-reference-expand:focus-visible{outline:2px solid var(--ao-mass-accent,#aabed3);outline-offset:2px}
+.ao-proper-reference-zoom{border:0;padding:0;width:min(97vw,1080px);max-width:none;max-height:95dvh;border-radius:12px;background:#0b1018;color:#ece9e1}
+.ao-proper-reference-zoom::backdrop{background:rgba(0,0,0,.9)}
+.ao-proper-reference-zoom header{display:flex;align-items:center;justify-content:space-between;padding:12px 15px;border-bottom:1px solid #ffffff22;font:500 15px/1.4 Georgia,serif}
+.ao-proper-reference-zoom header button{border:0;background:transparent;color:inherit;min-width:44px;min-height:44px;font-size:24px;cursor:pointer}
+.ao-proper-reference-zoom .ao-proper-reference-scroll{max-height:76dvh;overflow:auto}
+.ao-proper-reference-zoom .ao-proper-reference-wide{box-sizing:border-box;min-width:840px;width:max(840px,100%);padding:14px}
+.ao-proper-reference-zoom .ao-proper-reference-wide svg{display:block;max-width:100%;height:auto}
+.ao-proper-reference-zoom .ao-proper-reference-wide svg :is(path,polygon,polyline,line,text){fill:currentColor}
+@media(max-width:480px){.ao-proper-reference-zoom{width:100vw;height:100dvh;max-height:none;border-radius:0}}
 `;
 
 // No title matching or "same feast" inference: actual selected date,
@@ -62,9 +73,38 @@ export function createDatedProperNotationPreview({
  const doc=root.ownerDocument;
  const query=String(doc?.defaultView?.location?.search??"");
  const active=enabled===null?new URLSearchParams(query).get("chant_preview")==="1":enabled===true;
- let entries=[],generation=0;
+ let entries=[],generation=0,modal=null,modalEngraver=null,returnFocus=null;
+ function closeZoom(){
+  if(modal?.open)modal.close();
+  modalEngraver?.destroy();modalEngraver=null;
+  modal?.remove();modal=null;
+  if(returnFocus?.isConnected)returnFocus.focus?.();
+  returnFocus=null;
+ }
+ async function zoom(score,button){
+  closeZoom();returnFocus=button;
+  const dialog=doc.createElement("dialog");dialog.className="ao-proper-reference-zoom";
+  modal=dialog;
+  const head=doc.createElement("header"),title=doc.createElement("span");
+  title.textContent=score.incipit+" · original 1961 reference";
+  const close=doc.createElement("button");close.type="button";close.textContent="×";
+  close.setAttribute("aria-label","Close enlarged Gregorian notation");
+  close.addEventListener("click",closeZoom);head.append(title,close);
+  const scroll=doc.createElement("div");scroll.className="ao-proper-reference-scroll";
+  const wide=doc.createElement("div");wide.className="ao-proper-reference-wide";
+  wide.setAttribute("role","img");wide.setAttribute("aria-label",score.incipit+" · enlarged Gregorian notation");
+  scroll.append(wide);dialog.append(head,scroll);doc.body.append(dialog);
+  dialog.addEventListener("cancel",e=>{e.preventDefault();closeZoom()});
+  dialog.addEventListener("click",e=>{if(e.target===dialog)closeZoom()});
+  dialog.showModal?.();close.focus();
+  try{
+   modalEngraver=engraverFactory({viewport:wide,document:doc});
+   modalEngraver.observe?.();await modalEngraver.engrave(score.gabc);
+  }catch{if(modal===dialog)closeZoom()}
+ }
  function clear(){
   ++generation;
+  closeZoom();
   for(const e of entries){e.engraver?.destroy();e.host.remove()}
   entries=[];
  }
@@ -92,7 +132,11 @@ export function createDatedProperNotationPreview({
     const staff=doc.createElement("span");staff.className="ao-proper-reference-staff";
     staff.setAttribute("role","img");
     staff.setAttribute("aria-label",score.incipit+" · Gregorian square notation, archival transcription pending editorial comparison");
-    host.append(title,staff);node.append(host);
+    const expand=doc.createElement("button");expand.type="button";
+    expand.className="ao-proper-reference-expand";expand.textContent="Enlarge notation";
+    expand.setAttribute("aria-label","Enlarge Gregorian notation for "+score.incipit);
+    expand.addEventListener("click",e=>{e.stopPropagation();void zoom(score,expand)});
+    host.append(title,expand,staff);node.append(host);
     const entry={host,score,engraver:null};entries.push(entry);
     try{
      const engraver=engraverFactory({viewport:staff,document:doc});
