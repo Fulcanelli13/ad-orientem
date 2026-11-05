@@ -13,7 +13,10 @@ assert.equal(manifest.source_export_sha256,"8b04c4cc71a15aba4b326dc4af42ff29b2d8
 assert.equal(manifest.imported_export_timestamp,"2026-11-04T20:11:36.906Z");
 assert.equal(manifest.publication,"FROZEN_OWNER_EDITORIAL_ONLY_NOT_YET_RIGHTS_OR_RELEASE_CLEARED");
 assert.equal(seed.places.length,530);
-assert.equal(covers.items.length,379);
+assert.equal(covers.items.length,380,"One later R29 release must not rewrite the frozen R28 owner-selection history");
+const lichenCover=covers.items.find(x=>x.place_id==="place:PL:lichen-marian-basilica");
+assert.equal(lichenCover?.source_sha1,"8b0763b7f61a150002a67fb922ee73313ff866f4");
+assert.equal(lichenCover?.source_place_ref,"R28_OWNER_EXACT_ORIGINAL_20261104");
 assert.equal(gallery.items.length,42);
 assert.equal(manifest.counts.approved_exact_source_preferences,19);
 assert.equal(manifest.counts.place_holds,1);
@@ -54,7 +57,12 @@ const expectedFromSubmittedExport=[
 for(const [id,hash] of expectedFromSubmittedExport)assert.equal(selected.get(id)?.original_sha1,hash,"Exact owner-approved SHA-1 changed for "+id);
 for(const x of manifest.decisions){
  const p=old.get(x.place_id),t=tri.get(x.place_id);
- assert.ok(p&&t&&!approvedIds.has(x.place_id),"Must be uncovered canonical Place");
+ assert.ok(p&&t,"Owner source must refer to canonical Place and prior photo");
+ if(approvedIds.has(x.place_id)){
+   // Historical owner-selection record stays FROZEN even after a later R29 release.
+   assert.equal(x.place_id,"place:PL:lichen-marian-basilica","No unreviewed R28 choice promoted");
+   assert.equal(lichenCover?.source_sha1,x.original_sha1,"Released source must match exact frozen SHA1");
+ }
  assert.equal(x.place_name,p.name);
  assert.equal(x.country,p.country);
  assert.equal(x.editorial_approval,true);
@@ -97,4 +105,4 @@ assert.equal(all23.size,23);
 assert.deepEqual([...all23].sort(),[...old.keys()].sort());
 assert.equal(selected.get("place:MX:guadalupe-zacatecas-historic-sanctuary").pixel_dimensions[0],1032,"Keep user-approved undersized original, flag it");
 assert.deepEqual(selected.get("place:LB:monastery-saint-maron-annaya").pixel_dimensions,[null,null],"Do not invent unverified dimensions");
-console.log("R28 OWNER CHOICES LOCKED: 19 approved original SHA1, 1 hold, 3 unreviewed, 3 rejected Haemi alternatives; publication remains 379/530.");
+console.log("R28 OWNER CHOICES LOCKED: 19 approved original SHA1, 1 hold, 3 unreviewed, 3 rejected Haemi alternatives; historical 379-cover starting point retained; 1 exact later R29 release.");
