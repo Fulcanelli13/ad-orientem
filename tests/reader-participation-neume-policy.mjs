@@ -10,7 +10,7 @@ const source=JSON.parse(await readFile(new URL("../data/presentation/reader-text
 const auditByCue=new Map(audit.records.map(row=>[row.cueId,row]));
 const sourceByCue=new Map(source.blocks.flatMap(block=>block.units.map(unit=>[unit.cue_id,unit])));
 assert.equal(PARTICIPATION_NEUME_SCHEMA,"ao-mass-compact-participation-neumes-v1");
-assert.equal(PARTICIPATION_NEUME_POLICY.length,18);
+assert.equal(PARTICIPATION_NEUME_POLICY.length,20);
 const all=new Set();
 for(const spec of PARTICIPATION_NEUME_POLICY){
  assert.ok(spec.cueIds.length,"No empty cue group: "+spec.id);
@@ -32,7 +32,7 @@ for(const spec of PARTICIPATION_NEUME_POLICY){
   assert.equal(participationNeumeOpportunity({cueId,form:"LOW",paragraph:p}),null);
  }
 }
-assert.equal(all.size,21);
+assert.equal(all.size,23);
 for(const cueId of ["AO.SM.C0003","AO.SM.C0013","AO.SM.C0270","AO.SM.C0275"]){
  const unit=sourceByCue.get(cueId);
  assert.equal(participationNeumeOpportunity({cueId,form:"SOLEMN",
@@ -64,4 +64,4 @@ for(const score of [minister,response]){
 assert.equal(participationNotationDecision({cueId:"AO.SM.C0053",form:"SOLEMN",
  paragraph:{kind:"TEXT",sourceCueIds:["AO.SM.C0053"],primary:"Glória in excélsis"},
  score:null}).status,"SOURCE_SCORE_REVIEW_PENDING");
-console.log("PASS 18 source-anchored participation events / 21 cue IDs; 2 approved dismissal cues; 19 research holds, no Low/Last Gospel/foot altar leak");
+console.log("PASS 20 source-anchored participation events / 23 cue IDs; 2 approved dismissal cues; 21 research holds, no Low/Last Gospel/foot altar leak");
