@@ -195,8 +195,8 @@ for(const anchor of ["RG-50082C65DA56","RG-B66-ACD5E3A16E10","RG-18E53EDD9E9C"])
 const wells=all.find(x=>x.physical_group_id==="RG-8DE39E8E9415");
 assert.ok(wells?.map_publishable && wells.geo.review_scope.includes("GCATHOLIC_MATCHED"),"Wells later reviewed site-cell pin must not be reverted to earlier hold");
 assert.equal(all.length,2582);
-assert.equal(all.filter(x=>x.map_publishable).length,2532);
-assert.deepEqual(tlmSiteEvidenceCounts(all),{ALL:2582,REVIEWED_PIN:726,SOURCE_PIN:1806,ADDRESS_ONLY:50});
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,50);
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,726);
-console.log("PASS TLM nine site-pin reconciliation: 9 newly mapped, 23 already canonical, 2532 mapped, 50 address-only, 3 identity holds preserved; Wells later site-cell review preserved");
+assert.equal(all.filter(x=>x.map_publishable).length,2538);
+assert.deepEqual(tlmSiteEvidenceCounts(all),{ALL:2582,REVIEWED_PIN:732,SOURCE_PIN:1806,ADDRESS_ONLY:44});
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,44);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,732);
+console.log("PASS TLM nine site-pin reconciliation: 9 newly mapped, 23 already canonical, 2538 mapped, 44 address-only, 3 identity holds preserved; Wells later site-cell review preserved");
