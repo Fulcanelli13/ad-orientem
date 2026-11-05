@@ -13,6 +13,15 @@ const INVENTORY_SCHEMA="ao-mass-music-1962-pinned-source-universe-v1";
 const PIN="ad8783641455bae38a8eb5782b34241a7b3ff2ef";
 const EXPECTED=new Map([["C5",19],["C4",9],["C6a",7],["C2a",6],
  ["C4a",5],["C5b",5],["C7a",5]]);
+const HISTORICAL_SHAS=new Map([
+ ["C5","47a2c9cc6ab23e645d4978492417329f461d27bf"],
+ ["C4","6e1e8e850a71aae0d7311319ad2bb4e9e8cc5339"],
+ ["C6a","d015c06171ed64d4132b1debf30356439594c3ec"],
+ ["C2a","d846e08381e3df04174ee3e988af4b91be81ed39"],
+ ["C4a","f9997e3d330bac317f394b6fcb8b0fb97f606bd3"],
+ ["C5b","c7180dcbf0a53f02c1e67f1f484f8ebf92a9dbe3"],
+ ["C7a","b9d309afbb26ef824d8a4d135dc047ea7cd47e83"]
+]);
 const fail=code=>{throw Error("SCHOLA_SEVEN_COMMONS_"+code)};
 const norm=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
  .replace(/æ/gi,"ae").replace(/œ/gi,"oe").replace(/j/gi,"i")
@@ -73,6 +82,7 @@ export function buildSevenCommon2026Review({evidence,owner,annual,closeout,inven
      g.sourcePaths?.length!==expected||g.dates?.length!==expected||
      witness.originalHistoricalBlobPath!=="obsolete/missa/Latin/"+path+".txt"||
      !/^[a-f0-9]{40}$/.test(witness.originalHistoricalGitBlobSha)||
+     witness.originalHistoricalGitBlobSha!==HISTORICAL_SHAS.get(id)||
      typeof witness.historicalGradualOpening!=="string"||
      norm(witness.historicalGradualOpening).split(" ").length<3||
      !witness.historicalSectionsPresent?.includes("Graduale")||
