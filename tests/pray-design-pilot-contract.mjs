@@ -6,7 +6,7 @@ import {readFileSync} from "node:fs";
 import {
  PRAYER_DESIGN_PILOT_SCHEMA,prayerPilotEnabled,prayerPilotAliases,resolvedPrayerPilotFamilies,
  PRAYER_DOOR_ORDER_V1,PRAYER_PRIMARY_DOOR_V1,PRAYER_SEARCH_ONLY_ROUTES_V1,
- renderPilotDiscovery,renderPilotAngelusEntry,collectPrayerNovenaSearchEntries
+ renderPilotDiscovery,renderPilotAngelusEntry,collectPrayerNovenaSearchEntries,collectPrayerPilotOwnedSearchRoutes
 } from "../src/pray/prayer-design-pilot.js";
 
 assert.equal(PRAYER_DESIGN_PILOT_SCHEMA,"ao-prayer-discovery-angelus-pilot-v1");
@@ -49,6 +49,36 @@ for(const [door,route] of [["intentions","pray.penitential_psalms"],["ourlord","
  ["ourlord","pray.holy_name_litany"],["novenas","pray.novenas"],["marian","litany_loreto_1962"],["saints","devotion_prayer_st_michael"]]){
  assert.ok(bridged[door].items.some(item=>item[1]===route),"Canonical reader or source prayer missing from "+door+": "+route);
 }
+// Source owners are the nine approved visible doors, not the retired legacy
+// family catalog whose old entries still exist for the explicit rollback.
+const ownedSearch=collectPrayerPilotOwnedSearchRoutes(bridged);
+assert.equal(new Set(ownedSearch.map(x=>x.id)).size,ownedSearch.length,
+ "Search cannot create a second route entry under a retired family");
+assert.deepEqual(ownedSearch.filter(x=>x.searchOnly).map(x=>x.id),
+ PRAYER_SEARCH_ONLY_ROUTES_V1,"Only two historic search-only routes are authorised");
+for(const row of ownedSearch){
+ if(row.searchOnly){
+  assert.equal(row.primaryDoor,null,row.id+" is intentionally outside the nine shelves");
+  assert.equal(PRAYER_PRIMARY_DOOR_V1[row.id],undefined);
+ }else{
+  assert.equal(row.primaryDoor,PRAYER_PRIMARY_DOOR_V1[row.id],
+   row.id+" search index inherited an obsolete category");
+  assert.ok(bridged[row.primaryDoor].items.some(x=>x[1]===row.id),
+   row.id+" has no corresponding primary shelf");
+ }
+}
+assert.equal(ownedSearch.find(x=>x.id==="pray.rosary")?.primaryDoor,"chaplets");
+assert.equal(ownedSearch.find(x=>x.id==="pray.litany_saints")?.primaryDoor,"saints");
+assert.equal(ownedSearch.find(x=>x.id==="pray.holy_name_litany")?.primaryDoor,"ourlord");
+const legacyContaminated={
+ ...bridged,
+ daily:{...bridged.daily,items:[...bridged.daily.items,
+  ["own","pray.rosary","RETIRED DAILY ROSARY","Outdated route label"]]},
+ penance:{...bridged.penance,items:[...bridged.penance.items,
+  ["own","pray.litany_saints","RETIRED PENANCE LITANY","Outdated route label"]]}
+};
+assert.deepEqual(collectPrayerPilotOwnedSearchRoutes(legacyContaminated),ownedSearch,
+ "Old duplicate family entries must not change home-search owners or labels");
 assert.ok(!bridged.daily.items.some(x=>x[1]==="pray.rosary"),"The Rosary belongs on the Chaplets shelf only");
 assert.ok(!bridged.marian.items.some(x=>x[1]==="pray.angelus_regina"),"Angelus is on Daily Prayer, not a second Marian shelf");
 assert.ok(!bridged.novenas.items.some(x=>x[1]==="pray.holy_name_litany"),"Novenas must not inherit unrelated older devotions");
@@ -63,6 +93,17 @@ assert.equal(new Set(indexedNovenas.map(row=>row.id)).size,16,"Canonical novena 
 assert.deepEqual(indexedNovenas.find(row=>row.id==="christmas"),{
  id:"christmas",en:NOVENA_CORPUS_V4.christmas.title.en,fr:NOVENA_CORPUS_V4.christmas.title.fr
 });
+const indexedRouteIds=[...actual.matchAll(/data-p435930-(?:own|external)="([^"]+)"/g)].map(match=>match[1]);
+assert.deepEqual(indexedRouteIds,ownedSearch.map(row=>row.id),
+ "Home search must list only authoritative non-prayer routes in their approved order");
+assert.match(actual,/data-pilot-primary-door="chaplets"[^>]*data-p435930-own="pray\.rosary"/,
+ "Rosary search result must belong to Chaplets, not retired Daily Prayer");
+assert.match(actual,/data-pilot-primary-door="saints"[^>]*data-p435930-own="pray\.litany_saints"/,
+ "Litany of the Saints must retain Saints & Angels as its primary door");
+assert.match(actual,/data-pilot-primary-door="search" data-pilot-search-only="true"[^>]*data-p435930-own="pray\.rosary_methods"/,
+ "Rosary method guide remains available from search only");
+assert.match(actual,/data-pilot-primary-door="library"[^>]*data-p435930-pilot-prayer="foundations_hail_mary"/,
+ "Canonical unshelved prayer remains indexed through its Library source");
 const searchableNovenaIds=[...actual.matchAll(/data-p435930-pilot-novena="([^"]+)"/g)].map(match=>match[1]);
 assert.deepEqual(searchableNovenaIds,indexedNovenas.map(row=>row.id),
  "Prayer search rows must be exact source-owned Novena IDs, not duplicate prayer records");
