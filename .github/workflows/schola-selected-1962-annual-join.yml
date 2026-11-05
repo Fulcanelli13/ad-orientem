@@ -145,3 +145,24 @@ jobs:
           path: .tmp/schola-1962-selected-annual/
           if-no-files-found: warn
           retention-days: 30
+
+  paschal-april-fast-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Capture exact 2026 Paschal saint-day source texts and adjoining controls
+        run: node scripts/mass/audit-2026-april-paschal-trilingual.mjs
+      - name: Upload seven-day LAT EN FR native DayResolver original witness
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-2026-april-original-paschal-selected-source
+          path: .tmp/mass-april-1962/trilingual-dayresolver-snapshots.json
+          if-no-files-found: warn
+          retention-days: 14
