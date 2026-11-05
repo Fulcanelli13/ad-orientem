@@ -803,6 +803,47 @@ await assert.rejects(()=>prepareNativeReaderPreview({
     plan:{...rogationIntroitPrepared.session.plan,massEntry:"FOOT_CLUSTER"}}},
 }),/LIVE_65_CARD_PRESENTATION_REQUIRED/);
 
+
+// The 1962 Holy Thursday source removes Credo before presentation. Its
+// independently sourced post-Mass altar-of-repose rite may follow the 61
+// remaining curated LIVE cards, not the historical 38-step source model.
+const holyThursdayMassPrepared={
+  ...livePrepared,session:{
+    ...livePrepared.session,
+    resolvedMass:{...livePrepared.session.resolvedMass,
+      date:"2027-03-25",
+      actualCelebration:{id:"holy-thursday",type:"CALENDAR",title:"Holy Thursday"},
+      overlays:[],followingActions:["HOLY_THURSDAY_POST"],
+      proper:{status:"READY",data:{...proper,sourcePath:"Tempora/Quad6-4r"}}},
+    plan:{...livePrepared.session.plan,overlayGraphs:[],
+      followingGraphs:["HOLY_THURSDAY_POST"],
+      blessingAllowed:false,normalLastGospel:false,
+      dismissal:"BENEDICAMUS_DOMINO"},
+  },
+};
+const holyThursdayMassOptions={prepared:holyThursdayMassPrepared,
+  reviewCuratedCards:true,presentationData:data,eventData,cueRegistries,
+  guideData,holyThursdayPostData};
+const holyThursdayMass=await prepareNativeReaderPreview(holyThursdayMassOptions);
+assert.equal(holyThursdayMass.curatedEligible,true);
+assert.equal(holyThursdayMass.model.totalCards,38);
+assert.equal(holyThursdayMass.presentationModel.totalCards,61);
+assert.equal(holyThursdayMass.presentationModel.structureOwner,
+  "SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
+assert.equal(holyThursdayMass.presentationModel.cards.some(c=>
+  (c.sourceSectionId??c.sectionId)==="AO.CARD.009"),false);
+assert.ok(holyThursdayMass.holyThursdayPostController);
+assert.deepEqual(holyThursdayMass.presentationModel.cards.flatMap(c=>
+  c.paragraphs.map(p=>p.id)),
+  holyThursdayMass.model.cards.flatMap(c=>c.paragraphs.map(p=>p.id)));
+await assert.rejects(()=>prepareNativeReaderPreview({
+  ...holyThursdayMassOptions,
+  prepared:{...holyThursdayMassPrepared,session:{
+    ...holyThursdayMassPrepared.session,
+    plan:{...holyThursdayMassPrepared.session.plan,normalLastGospel:true}}},
+}),/LIVE_65_CARD_PRESENTATION_REQUIRED/,
+  "Holy Thursday must reject an illegal Last Gospel without reverting to 38");
+
 // Following actions must be explicitly selected and their independent
 // controllers loaded. An ordinary 39-source Sung Mass is allowed to use
 // curated LIVE in front of a generic source-only following procession, or
