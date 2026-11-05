@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { compileMassPlan } from "../src/mass/session-engine.js";
 import { readFileSync } from "node:fs";
 import { legacyReaderStateSnapshot, prepareNativeReaderPreview, resolveGestureProjection, resolveCueOwnedChannels, createCardTransitionTransientGuard, palmGospelFocusedRow } from "../src/mass/reader-native-preview.js";
 import { READER_OBJECTIVE_CONTEXT_ROWS, projectReaderObjectiveContext } from "../src/mass/reader-objective-context.js";
@@ -116,9 +117,12 @@ assert.equal(curatedReady.presentationModel.totalCards,65,
 assert.equal(curatedReady.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
 // Ordinary Low Mass is a first-class 65-card LIVE presentation, with its
 // independent Low corpus (not borrowed Sung speech, sound, or gestures).
+const lowMassResolved={...livePrepared.session.resolvedMass,form:"LOW"};
 const lowMassPrepared={...livePrepared,
-  session:{...livePrepared.session,resolvedMass:{
-    ...livePrepared.session.resolvedMass,form:"LOW"}}};
+  session:{...livePrepared.session,
+    resolvedMass:lowMassResolved,
+    plan:{...livePrepared.session.plan,
+      objectiveContext:compileMassPlan(lowMassResolved).objectiveContext}}};
 const lowMass=await prepareNativeReaderPreview({
   prepared:lowMassPrepared,reviewCuratedCards:true,
   presentationData:data,eventData,cueRegistries,guideData,
