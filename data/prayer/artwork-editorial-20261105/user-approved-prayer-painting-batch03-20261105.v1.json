@@ -1,0 +1,94 @@
+{
+  "schema": "ao.prayer_art.user_editorial_batch_approval.v1",
+  "date": "2026-11-05",
+  "batch": "03",
+  "source": "Explicit user selection following in-chat five-category Batch 3",
+  "authority": "DIRECT_USER_ART_APPROVAL",
+  "counts": {
+    "approved": 5,
+    "artistic_subjects": 5
+  },
+  "accepted_paintings": [
+    {
+      "option_id": "IM-1",
+      "category": "Immaculate Heart and First Saturdays",
+      "artist": "Luís António Bernes",
+      "title": "Immaculate Heart of Mary (1921)",
+      "proposed_source_page": "https://commons.wikimedia.org/wiki/File:Imaculado_Cora%C3%A7%C3%A3o_de_Maria_by_Lu%C3%ADs_Ant%C3%B3nio_Bernes_(1921).jpg",
+      "source_status": "COMMONS_PD_ART_CANDIDATE_LOW_RES",
+      "scope": "direct Immaculate Heart",
+      "decision": "USER_APPROVED_ARTWORK_CANDIDATE",
+      "approval_type": "EDITORIAL_NOT_RELEASE",
+      "work_identity_confirmed": false,
+      "exact_photo_and_rights_qa": "PENDING",
+      "published": false
+    },
+    {
+      "option_id": "SW-2",
+      "category": "Seven Last Words",
+      "artist": "Bartolomé Esteban Murillo",
+      "title": "The Crucifixion (c.1675)",
+      "proposed_source_page": "https://www.metmuseum.org/art/collection/search/437172",
+      "source_status": "MET_OPEN_ACCESS_CC0_CANDIDATE",
+      "scope": "Seven Last Words stage variety",
+      "decision": "USER_APPROVED_ARTWORK_CANDIDATE",
+      "approval_type": "EDITORIAL_NOT_RELEASE",
+      "work_identity_confirmed": false,
+      "exact_photo_and_rights_qa": "PENDING",
+      "published": false
+    },
+    {
+      "option_id": "PB-5",
+      "category": "Precious Blood",
+      "artist": "Francesco Trevisani",
+      "title": "Dead Christ Supported by Angels (c.1710)",
+      "proposed_source_page": "https://www.metmuseum.org/art/collection/search/441965",
+      "source_status": "MET_OPEN_ACCESS_CC0_CANDIDATE",
+      "scope": "Precious Blood and Passion meditation",
+      "decision": "USER_APPROVED_ARTWORK_CANDIDATE",
+      "approval_type": "EDITORIAL_NOT_RELEASE",
+      "work_identity_confirmed": false,
+      "exact_photo_and_rights_qa": "PENDING",
+      "published": false
+    },
+    {
+      "option_id": "SO-4",
+      "category": "Holy Souls in Purgatory",
+      "artist": "Alonso Cano",
+      "title": "Souls in Purgatory (1636)",
+      "proposed_source_page": "https://commons.wikimedia.org/wiki/File:%C3%81nimas_del_Purgatorio,_de_Alonso_Cano_(Museo_de_Bellas_Artes_de_Sevilla).JPG",
+      "source_status": "COMMONS_PD_ART_CANDIDATE_LOW_RES",
+      "scope": "Holy Souls, De Profundis, prayers for dead",
+      "decision": "USER_APPROVED_ARTWORK_CANDIDATE",
+      "approval_type": "EDITORIAL_NOT_RELEASE",
+      "work_identity_confirmed": false,
+      "exact_photo_and_rights_qa": "PENDING",
+      "published": false
+    },
+    {
+      "option_id": "SO-5",
+      "category": "Holy Souls in Purgatory",
+      "artist": "Attributed to António Joaquim Padrão",
+      "title": "Souls in Purgatory (c.1765–70)",
+      "proposed_source_page": "https://commons.wikimedia.org/wiki/Category:Paintings_of_souls_in_Purgatory",
+      "source_status": "SOURCE_EXACT_OBJECT_NOT_YET_DETERMINED",
+      "scope": "Holys Souls novena and intentions",
+      "decision": "USER_APPROVED_ARTWORK_CANDIDATE",
+      "approval_type": "EDITORIAL_NOT_RELEASE",
+      "work_identity_confirmed": false,
+      "exact_photo_and_rights_qa": "PENDING",
+      "published": false
+    }
+  ],
+  "unselected_policy": "NOT_REJECTED; AVAILABLE_FOR_LATER_REVIEW",
+  "fixed_covers_policy": "PRESERVE_ALL_EXISTING_FINAL_LOCKS_AND_USER_SCOPED_ASSIGNMENTS",
+  "release_policy": "RESEARCH_ONLY; NO_AUTOMATIC_ASSIGNMENTS_OR_ROTATION_OR_PRODUCTION_ENABLED",
+  "notes": [
+    "This record captures the exact option IDs selected by the user, not a claim that each proposed source page uniquely identifies the intended work.",
+    "SO-5 in the proposal linked to a broad Commons category rather than an exact file, so work and photograph identity are explicitly unresolved; do not acquire/publish by guess.",
+    "IM-1 and SO-4 proposed images were low-resolution; seek source-verified higher resolution.",
+    "The choices are additions for appropriate prayer scenes and do not override any earlier locked cover.",
+    "Unselected Batch 3 options are not rejected."
+  ],
+  "publication_allowed": false
+}
