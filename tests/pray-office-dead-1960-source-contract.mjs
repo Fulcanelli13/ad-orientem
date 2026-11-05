@@ -92,4 +92,34 @@ assert.equal(ultra.subsequentOfficeDeadAcquisition20261105.printCertificates,0);
 const ghPages=readFileSync(resolve(root,".github/workflows/github-pages.yml"),"utf8");
 assert.ok(ghPages.includes("'!data/research/**'"),"Research-only source files must be excluded from GitHub Pages publishing triggers");
 
+const supplement=read("data/research/office-dead-1960/vespers-supplemental-source-leaves.v1.json");
+assert.equal(supplement.schema,"ao.office-dead.1960-vespers-supplemental-sources.v1");
+assert.equal(supplement.sourceCommit,commit);
+assert.equal(supplement.entryStatus,"RESEARCH_NOT_PUBLIC_READER");
+assert.equal(supplement.files.length,6);
+assert.equal(registry.files.supplementalLeafCount,6);
+assert.equal(registry.files.supplementalBundle,"data/research/office-dead-1960/vespers-supplemental-source-leaves.v1.json");
+assert.equal(registry.progress.votiveVespersSourceModelAssembled,1);
+assert.equal(registry.progress.votiveVespersSourceModelStageCount,11);
+assert.equal(registry.progress.completeVespersAssembled,0,"Model is not a published/independently verified complete hour");
+assert.equal(registry.vespersModel20261105.publicMobileReaderReleased,false);
+assert.equal(registry.vespersModel20261105.allSoulsNovember2ProperCertified,false);
+assert.equal(registry.scope.psalm145In1960.includes("Omitted"),true);
+assert.ok(registry.scope.omitPsalm145On.includes("VOTIVE_1960_GENERAL_DEPARTED"));
+for(const locale of locales){
+ for(const part of ["MAGNIFICAT","ORDINARY"]){
+  const f=supplement.files.find(x=>x.locale===locale&&x.part===part);
+  assert.ok(f,"Missing "+locale+" "+part);
+  assert.equal(gitSha(f.raw),f.blobSha,"Supplement source Git SHA mismatch "+locale+" "+part);
+  if(part==="MAGNIFICAT"){
+   assert.match(f.repositoryPath,/Psalterium\/Psalmorum\/Psalm232\.txt$/);
+   assert.ok(f.raw.includes("1:46")&&f.raw.includes("1:55"));
+  }else{
+   assert.match(f.repositoryPath,/Psalterium\/Common\/Prayers\.txt$/);
+   for(const k of ["[Requiem]","[Aportainferi]","[Pater noster Et]","[Oremus]","[Qui vivis]"])
+    assert.ok(f.raw.includes(k),locale+" "+k);
+  }
+ }
+}
+
 console.log("Office of Dead P0 source PASS: six language-specific C9 / 11-02 source leaves, 18 Vespers psalm leaves, git blob SHA parity, MIT license; zero complete or public Offices.");

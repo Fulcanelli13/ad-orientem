@@ -43,7 +43,9 @@
       129,
       137
     ],
-    "conditionalConclusionPsalm": 145
+    "conditionalConclusionPsalm": 145,
+    "supplementalBundle": "data/research/office-dead-1960/vespers-supplemental-source-leaves.v1.json",
+    "supplementalLeafCount": 6
   },
   "scope": {
     "fixedDate": "11-02",
@@ -59,7 +61,8 @@
     "deadOfficePsalmDoxology": "Requiem aeternam instead of Gloria Patri",
     "omitPsalm145On": [
       "ALL_SOULS_2_NOVEMBER",
-      "DAY_OF_DEATH_OR_BURIAL"
+      "DAY_OF_DEATH_OR_BURIAL",
+      "VOTIVE_1960_GENERAL_DEPARTED"
     ],
     "notEquivalentTo": [
       "REQUIEM_MASS",
@@ -70,7 +73,8 @@
       "RACCOLTA_PARAGRAPH_AS_FULL_OFFICE"
     ],
     "sacrosanctaeAcquisitionId": "AO-AQ-058",
-    "sacrosanctaeNotAppendedWithoutSourceReview": true
+    "sacrosanctaeNotAppendedWithoutSourceReview": true,
+    "psalm145In1960": "Omitted in both 1960 Vespers of Dead and 1960 votive Office; the upstream C9 Oratio_a_porta rubric explicitly says sed rubrica 1960 omittitur. Older rubrical conditional uses do not authorize 1960 inclusion."
   },
   "gates": [
     "Resolve DO source references, common orations, Invitatory and canonical endings; do not strip @ / $ / & macros as prayer text.",
@@ -91,7 +95,10 @@
     "independentPrintedBreviaryCertifiedHours": 0,
     "fullTrilingualHourCertificates": 0,
     "publicReaderRoutesAdded": 0,
-    "livePublicationAuthorized": false
+    "livePublicationAuthorized": false,
+    "supplementalVespersSourceLeavesCaptured": 6,
+    "votiveVespersSourceModelAssembled": 1,
+    "votiveVespersSourceModelStageCount": 11
   },
   "references": [
     {
@@ -106,5 +113,32 @@
       "description": "Traditional breviary Office of the Dead rubrics chapter X",
       "url": "https://isidore.co/divinum/www/horas/Help/Rubrics/newbrev.pdf"
     }
-  ]
+  ],
+  "vespersModel20261105": {
+    "status": "COMPLETE_SOURCE_DERIVED_VOTIVE_GENERAL_VESPERS_MODEL_RESEARCH_ONLY",
+    "module": "src/pray/office-dead-vespers-1960.js",
+    "test": "tests/pray-office-dead-vespers-1960-composition.mjs",
+    "sourceSupplement": "data/research/office-dead-1960/vespers-supplemental-source-leaves.v1.json",
+    "context": "VOTIVE_GENERAL_DEPARTED_1960",
+    "stages": 11,
+    "psalms": [
+      114,
+      119,
+      120,
+      129,
+      137
+    ],
+    "psalm145Included": false,
+    "locales": [
+      "la",
+      "en",
+      "fr"
+    ],
+    "allSoulsNovember2ProperCertified": false,
+    "individualDeceasedPrayerCertified": false,
+    "olderRubricalRecensionsIncluded": false,
+    "sourceDerivedAssemblyOnly": true,
+    "historicalPrintedBreviaryCollationComplete": false,
+    "publicMobileReaderReleased": false
+  }
 }
