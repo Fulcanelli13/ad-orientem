@@ -252,6 +252,12 @@ def frozen_original_schedule(covers,gallery):
     "PHOTO_FINDER_2026-10-30_R1",
     "APPROVED_GALLERY_COVER_REUSE_20261031",
     "COMMONS_NOTRE_DAME_PARIS_2026_EXACT_SITE",
+    # Individually verified later releases; not part of the frozen 40-cover
+    # 2026-10-30 Photo Finder scheduling window. Actual approvals remain in
+    # canonical covers and are independently enforced by already_released().
+    "PHOTO_FINDER_2026-10-30_PD_SELF_R1",
+    "DIRECT_OPEN_PHOTO_FIVE_20261105",
+    "DIRECT_PEXELS_FLICKR_BATCH_TWO_20261105",
  }
  # Jihlava was approved as an independent exact-site P107 photograph in #2208,
  # after the original forty-cover review window had already been frozen.
