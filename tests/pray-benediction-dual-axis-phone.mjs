@@ -284,6 +284,12 @@ try{
  assert.match(royalTextEn,/II · For the Supreme Pontiff/);
  assert.match(royalTextEn,/III · For the bishops and faithful/);
  assert.match(royalTextEn,/IV · For the people/);
+ const brochure=page.locator(rootSel+" .aoDevoCardScroll .aoP435930FeastSource a[href*='pub-livret-de-chant-reactualise-24-fevrier-2009.pdf']");
+ assert.equal(await brochure.count(),1,"Missing separate ICKSP 2009 contents-list source link");
+ assert.match(await brochure.innerText(),/2009 preorder brochure.*not a score/i,
+  "The 2009 advertisement must not be mislabeled an authenticated ICKSP chant book");
+ const primaryLaudes=page.locator(rootSel+" .aoDevoCardScroll .aoP435930FeastSource a[href*='2012\/20121007.pdf']");
+ assert.equal(await primaryLaudes.count(),1,"Missing separately attributed 2012 Vatican chant witness");
  assert.match(royalTextEn,/May the peace of Christ come/);
  assert.ok(royalTextEn.length>2900,
   "Vatican four-part Laudes has collapsed to an excerpt");
@@ -301,6 +307,8 @@ try{
  const royalFrench=await page.locator(rootSel+" .aoP435930FeastPrayer [data-face-v]").innerText();
  assert.match(royalFrench,/I · Pour l'Église/);
  assert.match(royalFrench,/IV · Pour les peuples/);
+ assert.match(await brochure.innerText(),/Publicité ICRSP 2009.*non une partition/,
+  "The French link must distinguish the 2009 catalogue advertisement from chant text");
  assert.match(royalFrench,/Que vienne la paix du Christ/);
  await page.screenshot({path:resolve(captures,"benediction-390-christus-vincit-fr.png"),animations:"disabled"});
  const royalLatin=page.locator(rootSel+" .aoP435930FeastPrayer [data-p435930-flip]");
