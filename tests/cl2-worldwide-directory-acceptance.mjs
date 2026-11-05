@@ -9,6 +9,7 @@ import {projectPreliminaryR49,projectPublishedProvisionalMassSites,filterPrelimi
  from "../src/find/preliminary-directory-r49.js";
 import {validateCL2PhysicalIndex,projectCL2PhysicalDirectory}
  from "../src/find/cl2-physical-directory.js";
+import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R3} from "../src/find/cl2-illustrative-locality-pins-r3.js";
 import {renderDirectoryVenueCard} from "../src/find/directory-card.js";
 import {buildExploreViewModel,renderExploreToString} from "../src/find/explore-presentation.js";
 const read=path=>JSON.parse(readFileSync(new URL("../"+path,import.meta.url),"utf8"));
@@ -60,7 +61,15 @@ for(const row of diocesanQuality.records){
   assert.equal(item.geo.lng,row.lng);
   assert.equal(item.geo.source_ref,row.coordinate_ref);
  }
- if(row.lat===null)assert.equal(item.map_publishable,false);
+ if(row.lat===null){
+  const newlyApproved=CL2_ILLUSTRATIVE_LOCALITY_PINS_R3[row.physical_group_id];
+  if(newlyApproved){
+   assert.equal(item.map_publishable,true,"Only explicitly approved R3 may turn an older missing-coordinate audit record into a discovery pin");
+   assert.equal(item.geo.approximate,true);
+   assert.equal(item.geo.lat,newlyApproved.lat);assert.equal(item.geo.lng,newlyApproved.lng);
+   assert.ok(item.geo.source_url.startsWith("https://"));
+  }else assert.equal(item.map_publishable,false,"Unapproved historic coordinate blockers must stay unmapped");
+ }
 }
 
 // The external Photo Finder must consume exactly the approved runtime site
