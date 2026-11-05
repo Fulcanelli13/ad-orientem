@@ -23,6 +23,8 @@ on:
       - 'tests/schola-2026-five-source-liturgical-family-corroboration.mjs'
       - 'data/research/schola-2026-five-family-section-inheritance.v1.json'
       - 'tests/schola-2026-five-family-section-inheritance.mjs'
+      - 'scripts/schola/group-2026-pregospel-source-owner-holds.mjs'
+      - 'tests/schola-2026-pregospel-source-owner-groups.mjs'
       - 'src/mass/reader-proper-first60-print-review.js'
       - 'scripts/schola/build-2026-proper-first60-print-review.mjs'
       - 'tests/reader-proper-first60-print-review.mjs'
@@ -114,6 +116,10 @@ jobs:
           node tests/schola-2026-five-pinned-source-gap-dispositions.mjs
           node tests/schola-2026-five-source-liturgical-family-corroboration.mjs
           node tests/schola-2026-five-family-section-inheritance.mjs
+      - name: Group 128 dated pre-Gospel ownership holds by original authenticated section donor
+        run: |
+          node scripts/schola/group-2026-pregospel-source-owner-holds.mjs
+          node tests/schola-2026-pregospel-source-owner-groups.mjs
       - name: Upload original 60 Proper and additional 24 pre-Gospel review packets
         if: always()
         uses: actions/upload-artifact@v4
