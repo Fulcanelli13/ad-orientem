@@ -5,6 +5,7 @@
 // The same renderer can support independently selected chants on other dates.
 import {createOfflineChantEngraver} from "./reader-chant-engraver.js";
 import {ALL_SAINTS_REFERENCE_SCORES} from "./reader-inline-all-saints-reference.js";
+import {createProperReferenceRegistry,PROPER_REFERENCE_LABELS} from "./reader-inline-proper-registry.js";
 
 export const JULY07_REFERENCE_NOTATION_SCHEMA="ao-reader-july07-reference-notation-v1";
 // The original printed Introit GABC includes a distinct conditional "T. P."
@@ -28,26 +29,15 @@ export const JULY07_REFERENCE_GABC=Object.freeze([{"key":"INTROIT","id":"GREGOBA
  gabc:"name: "+row.incipit+";\noffice-part: "+row.part+";\nsource: Graduale Romanum 1961 p. "+row.folio+";\n%%\n"+nonPaschalJulyIntroitGabc(row)
 })));
 
-const n=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
- .replace(/æ/gi,"ae").replace(/œ/gi,"oe").replace(/j/gi,"i")
- .toLowerCase().replace(/[^a-z]+/g," ").trim().replace(/\s+/g," ");
-const sung=new Set(["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
-const PREFIX={
- INTROIT:["sacerdotes tui domine induant iustitiam"],
- GRADUAL:["sacerdotes eius induam salutari","sacerdotes eius induam salutari et sancti"],
- ALLELUIA:["iuravit dominus","tu es sacerdos in aeternum"]
-};
-const mapping=new Map([["INTROIT.1","INTROIT"],["GRADUAL.1","GRADUAL"],
- ["ALLELUIA_TRACT_SEQUENCE.1","ALLELUIA"],["OFFERTORY.1","OFFERTORY"],
- ["COMMUNION.1","COMMUNION"]]);
-const byKey=new Map(JULY07_REFERENCE_GABC.map(x=>[x.key,x]));
-const allSaintsByKey=new Map(ALL_SAINTS_REFERENCE_SCORES.map(x=>[x.key,x]));
-const allSaintsPrefix=Object.freeze({
- INTROIT:["gaudeamus omnes in domino diem festum celebrantes"],
- GRADUAL:["timete dominum omnes sancti eius"],
- OFFERTORY:["iustorum animae in manu dei sunt"],
- ALLELUIA:["venite ad me omnes qui laboratis et onerati estis"],
- COMMUNION:["beati mundo corde quoniam ipsi deum videbunt"]
+// Scores are immutable archive transcriptions. The source-owned registry is
+// data-driven and can select any future verified Proper-to-score binding.
+const properReferenceRegistry=createProperReferenceRegistry({
+ scores:[...JULY07_REFERENCE_GABC,...ALL_SAINTS_REFERENCE_SCORES]
+});
+export const PROPER_REFERENCE_REGISTRY_STATUS=Object.freeze({
+ schema:properReferenceRegistry.schema,
+ scoreCount:properReferenceRegistry.scoreCount,
+ bindingCount:properReferenceRegistry.bindingCount
 });
 export const JULY07_REFERENCE_CSS=String.raw`
 .ao-proper-reference-notation{display:block;width:100%;min-width:0;margin:11px 0 8px;padding:9px 0 5px;border-top:1px solid rgba(218,196,156,.22);font-style:normal;max-width:100%;overflow:hidden}
@@ -70,37 +60,10 @@ export const JULY07_REFERENCE_CSS=String.raw`
 @media(max-width:480px){.ao-proper-reference-zoom{width:100vw;height:100dvh;max-height:none;border-radius:0}}
 `;
 
-// No title matching or "same feast" inference: actual selected date,
-// immutable saint Proper source, exact paragraph role, and Latin opening.
-// The ordinary Proper may carry Gradual + Alleluia in one source paragraph;
-// for that case put the two existing scores together in source order.
-export function referenceScoresForParagraph({paragraph,resolvedMass,form}={}){
- if(!sung.has(String(form??"").toUpperCase())||
-    resolvedMass?.overlays?.includes("REQUIEM")||
-    !paragraph||paragraph.kind==="RUBRIC")return Object.freeze([]);
- const date=String(resolvedMass?.date??"");
- const source=(resolvedMass?.proper?.data??resolvedMass?.proper)?.sourcePath;
- const july=date==="2026-07-07"&&source==="Sancti/07-07";
- const saints=date==="2026-11-01"&&source==="Sancti/11-01";
- if(!july&&!saints)return Object.freeze([]);
- const role=mapping.get(String(paragraph.id??""));
- if(!role)return Object.freeze([]);
- const latin=[paragraph.primary,paragraph.secondary,paragraph.alternate]
-  .filter(x=>typeof x==="string"&&x.length).map(n);
- const matches=key=>((july?PREFIX:allSaintsPrefix)[key]??[])
-  .some(fragment=>latin.some(s=>s.includes(fragment)));
- if(!matches(role))return Object.freeze([]);
- if(saints){
-  // Five archive scores. GregoBase and the printed Graduale index identify
-  // the All Saints Venite ad me at both p.648 and p.[114]. Date, Proper,
-  // paragraph and Latin opening must still match exactly.
-  const score=allSaintsByKey.get(role);
-  return Object.freeze(score?[score]:[]);
- }
- const selections=[byKey.get(role)];
- if(role==="GRADUAL"&&matches("ALLELUIA"))
-  selections.push(byKey.get("ALLELUIA"));
- return Object.freeze(selections);
+// The selected 1962 Proper and its exact source-owned paragraph authorize
+// notation, not a date-specific renderer or an incipit/title search.
+export function referenceScoresForParagraph(input={}){
+ return properReferenceRegistry.select(input);
 }
 
 export function createDatedProperNotationPreview({
@@ -164,7 +127,7 @@ export function createDatedProperNotationPreview({
     host.dataset.referenceScore=score.id;
     host.dataset.approved="false";
     const title=doc.createElement("small");title.className="ao-proper-reference-label";
-    title.textContent=(score.key==="INTROIT"?"Introit":score.key==="GRADUAL"?"Gradual":"Alleluia")+
+    title.textContent=PROPER_REFERENCE_LABELS[score.key]+
      " · 1961 reference transcription · review pending";
     const staff=doc.createElement("span");staff.className="ao-proper-reference-staff";
     staff.setAttribute("role","img");
