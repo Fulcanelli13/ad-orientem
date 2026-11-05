@@ -34,6 +34,7 @@ on:
       - 'tools/check-github-pages-live.mjs'
       - 'tools/github-pages-release-proof.mjs'
       - 'tests/github-pages-release-proof.test.mjs'
+      - 'tests/github-pages-phone-live-acceptance.mjs'
       - 'tools/build-web-preview.mjs'
       - 'tests/prayer-stations-curated-release-hold.mjs'
       - 'vercel.json'
@@ -66,6 +67,8 @@ jobs:
         run: node --check tools/check-github-pages-live.mjs && node --check tools/prepare-github-pages-release.mjs && node --check tools/github-pages-release-proof.mjs
       - name: Reject stale source SHA, workflow run and changed critical assets
         run: node --test tests/github-pages-release-proof.test.mjs
+      - name: Validate public 390px LIVE/Missal and returning-user phone smoke code
+        run: node --check tests/github-pages-phone-live-acceptance.mjs
       - name: Build allowlisted static release
         run: node tools/build-web-preview.mjs
       - name: Validate base path, noindex, release safety and 1GB Pages cap
@@ -104,3 +107,31 @@ jobs:
         env:
           GITHUB_PAGES_URL: ${{ steps.pages.outputs.page_url }}
         run: node tools/check-github-pages-live.mjs
+
+  public-phone:
+    name: Verify deployed 390px LIVE Missal Schola EN FR and returning user
+    needs: deploy
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Exercise published phone reader and original GitHub Pages service worker
+        env:
+          AO_PAGES_URL: https://fulcanelli13.github.io/ad-orientem/
+        run: node tests/github-pages-phone-live-acceptance.mjs
+      - name: Preserve public deployment phone screenshots and read-only evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: github-pages-public-phone-enfr-390
+          path: artifacts/github-pages-phone/
+          if-no-files-found: warn
+          retention-days: 14
