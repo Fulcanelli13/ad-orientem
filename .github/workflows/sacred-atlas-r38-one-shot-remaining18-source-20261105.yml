@@ -1,0 +1,45 @@
+name: Sacred Atlas R38 — one authorized original-source pass for remaining 18 (no publication)
+# Triggered once on this PR opening. Never on push/synchronize/schedule.
+# Uses R37 hardened JPEG/MPO SHA-locked verifier. No mirrors or retries.
+on:
+  pull_request:
+    types: [opened]
+    branches: [main]
+    paths:
+      - '.github/workflows/sacred-atlas-r38-one-shot-remaining18-source-20261105.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  remaining-eighteen-exact-source-files:
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'research/sacred-atlas-r38-remaining18-source-pass-20261105' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 32
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Offline source-lock, decode, 429 and truthful-CI tests
+        run: |
+          python -m py_compile tools/atlas/verify-sacred-atlas-r28-approved19-source-originals.py
+          python tests/sacred-atlas-r35-manual-original-retention-test.py
+      - name: One serial, no-retry request for each of the 18 remaining frozen selections
+        run: |
+          python tools/atlas/verify-sacred-atlas-r28-approved19-source-originals.py \
+            --verify-originals --retain-verified-originals --start-index 1 --max-files 18
+      - name: Preserve exact-byte originals and report for download only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-atlas-r38-18-frozen-originals
+          path: |
+            /tmp/ao-sacred-atlas-owner-approved19/report.json
+            /tmp/ao-sacred-atlas-owner-approved19/originals/*.jpg
+            /tmp/ao-sacred-atlas-owner-approved19/previews/*.webp
+          if-no-files-found: warn
+          retention-days: 7
