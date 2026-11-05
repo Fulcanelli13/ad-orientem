@@ -1038,6 +1038,39 @@ const PRAYER_PRACTICE_FOCUS_CSS=String.raw`
 }
 `;
 
+const LIBRARY_VARIANT_GROUP_CSS=String.raw`
+/* Two source-owned prayer families; no new canonical records or reader modes. */
+#aoPray435930 .aoP435930LibraryVariants{
+  min-width:0;overflow:hidden;border:1px solid var(--border,rgba(255,255,255,.11));
+  border-radius:12px;background:var(--surface-1,#151c24);
+}
+#aoPray435930 .aoP435930LibraryVariants>summary{
+  display:block;position:relative;list-style:none;cursor:pointer;
+  min-height:62px;padding:11px 38px 11px 12px;color:var(--text,#fff);
+}
+#aoPray435930 .aoP435930LibraryVariants>summary::-webkit-details-marker{display:none}
+#aoPray435930 .aoP435930LibraryVariants>summary:after{
+  content:'⌄';position:absolute;right:15px;top:50%;transform:translateY(-50%);
+  font-size:18px;color:var(--muted,#aeb2b8);
+}
+#aoPray435930 .aoP435930LibraryVariants[open]>summary:after{content:'⌃'}
+#aoPray435930 .aoP435930LibraryVariants>summary:focus-visible{
+  outline:2px solid var(--liturgical,#d8bd7d);outline-offset:-3px;border-radius:12px;
+}
+#aoPray435930 .aoP435930LibraryVariantItems{
+  display:grid;gap:7px;padding:0 8px 8px;
+}
+#aoPray435930 .aoP435930LibraryVariantItems>button{
+  display:block;min-width:0;min-height:52px;text-align:left;
+  padding:10px 12px;background:var(--surface-2,#242b34);
+  color:var(--text,#fff);border:1px solid var(--border,rgba(255,255,255,.12));
+  border-radius:9px;cursor:pointer;
+}
+#aoPray435930 .aoP435930LibraryVariantItems>button:focus-visible{
+  outline:2px solid var(--liturgical,#d8bd7d);outline-offset:1px;
+}
+`;
+
 export function installPrayPresentationStyles(doc=globalThis.document){
   ensureStyle(doc,"ao-v435930-pray-audit-style",AUDIT_CSS);
   ensureStyle(doc,"ao-v435930-pray-coherence-style",COHERENCE_CSS);
@@ -1057,6 +1090,7 @@ export function installPrayPresentationStyles(doc=globalThis.document){
   ensureStyle(doc,"ao-pray-readable-guidance-style",PRAY_READING_TYPE_CSS);
   ensureStyle(doc,"ao-pray-organised-family-entry-style",PRAY_ORG_ENTRY_CSS);
   ensureStyle(doc,"ao-pray-practice-focus-phone-style",PRAYER_PRACTICE_FOCUS_CSS);
+  ensureStyle(doc,"ao-pray-library-variant-groups-style",LIBRARY_VARIANT_GROUP_CSS);
   return true;
 }
 
