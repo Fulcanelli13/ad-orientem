@@ -122,6 +122,7 @@ const lowMassPrepared={...livePrepared,
 const lowMass=await prepareNativeReaderPreview({
   prepared:lowMassPrepared,reviewCuratedCards:true,
   presentationData:data,eventData,cueRegistries,guideData,
+  formStateData:load("../data/presentation/reader-form-state.v1.json"),
 });
 assert.equal(lowMass.curatedEligible,true);
 assert.equal(lowMass.model.totalCards,39,"the source intermediary stays internal");
