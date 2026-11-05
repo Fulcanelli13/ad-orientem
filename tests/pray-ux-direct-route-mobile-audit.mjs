@@ -124,7 +124,10 @@ try{
    isMobile:true,hasTouch:true,serviceWorkers:"block",reducedMotion:"reduce"});
   const errors=[];page.on("pageerror",e=>errors.push(e.message));
   try{
-   await page.goto("http://127.0.0.1:"+server.address().port+"/index.html",
+   // F01's approved reversible Holy Card is the *public default*. This
+   // separate visual checkpoint explicitly inspects the opt-in continuous
+   // reader; it must not silently turn the flow reader on for everybody.
+   await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?aoEssentialFlow=1",
     {waitUntil:"domcontentloaded",timeout:90000});
    await page.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:50000});
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_APP_V1.open()),true);
