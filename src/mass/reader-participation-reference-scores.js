@@ -18,6 +18,7 @@ export const PARTICIPATION_REFERENCE_SCORES=Object.freeze([
     "sourceCueIds": [
       "AO.SM.C0136"
     ],
+    "sourceCueLatin": ["℟. Amen."],
     "sourceLatin": "℟. Amen.",
     "kind": "PEOPLE_RESPONSE",
     "eventId": "PREFACE_DIALOGUE",
@@ -38,6 +39,7 @@ export const PARTICIPATION_REFERENCE_SCORES=Object.freeze([
     "sourceCueIds": [
       "AO.SM.C0138"
     ],
+    "sourceCueLatin": ["℟. Et cum spíritu tuo."],
     "sourceLatin": "℟. Et cum spíritu tuo.",
     "kind": "PEOPLE_RESPONSE",
     "eventId": "PREFACE_DIALOGUE",
@@ -58,6 +60,7 @@ export const PARTICIPATION_REFERENCE_SCORES=Object.freeze([
     "sourceCueIds": [
       "AO.SM.C0140"
     ],
+    "sourceCueLatin": ["℟. Habémus ad Dóminum."],
     "sourceLatin": "℟. Habémus ad Dóminum.",
     "kind": "PEOPLE_RESPONSE",
     "eventId": "PREFACE_DIALOGUE",
@@ -78,6 +81,7 @@ export const PARTICIPATION_REFERENCE_SCORES=Object.freeze([
     "sourceCueIds": [
       "AO.SM.C0143"
     ],
+    "sourceCueLatin": ["℟. Dignum et iustum est."],
     "sourceLatin": "℟. Dignum et iustum est.",
     "kind": "PEOPLE_RESPONSE",
     "eventId": "PREFACE_DIALOGUE",
@@ -98,6 +102,7 @@ export const PARTICIPATION_REFERENCE_SCORES=Object.freeze([
     "sourceCueIds": [
       "AO.SM.C0136"
     ],
+    "sourceCueLatin": ["℟. Amen."],
     "sourceLatin": "℟. Amen.",
     "kind": "PEOPLE_RESPONSE",
     "eventId": "PREFACE_DIALOGUE",
@@ -118,6 +123,7 @@ export const PARTICIPATION_REFERENCE_SCORES=Object.freeze([
     "sourceCueIds": [
       "AO.SM.C0138"
     ],
+    "sourceCueLatin": ["℟. Et cum spíritu tuo."],
     "sourceLatin": "℟. Et cum spíritu tuo.",
     "kind": "PEOPLE_RESPONSE",
     "eventId": "PREFACE_DIALOGUE",
@@ -138,6 +144,7 @@ export const PARTICIPATION_REFERENCE_SCORES=Object.freeze([
     "sourceCueIds": [
       "AO.SM.C0140"
     ],
+    "sourceCueLatin": ["℟. Habémus ad Dóminum."],
     "sourceLatin": "℟. Habémus ad Dóminum.",
     "kind": "PEOPLE_RESPONSE",
     "eventId": "PREFACE_DIALOGUE",
@@ -158,6 +165,7 @@ export const PARTICIPATION_REFERENCE_SCORES=Object.freeze([
     "sourceCueIds": [
       "AO.SM.C0143"
     ],
+    "sourceCueLatin": ["℟. Dignum et iustum est."],
     "sourceLatin": "℟. Dignum et iustum est.",
     "kind": "PEOPLE_RESPONSE",
     "eventId": "PREFACE_DIALOGUE",
@@ -178,6 +186,7 @@ export const PARTICIPATION_REFERENCE_SCORES=Object.freeze([
     "sourceCueIds": [
       "AO.SM.C0071"
     ],
+    "sourceCueLatin": ["℟. Et cum spíritu tuo."],
     "sourceLatin": "℟. Et cum spíritu tuo.",
     "kind": "PEOPLE_RESPONSE",
     "eventId": "COLLECT",
@@ -198,6 +207,7 @@ export const PARTICIPATION_REFERENCE_SCORES=Object.freeze([
     "sourceCueIds": [
       "AO.SM.C0252"
     ],
+    "sourceCueLatin": ["℟. Et cum spíritu tuo."],
     "sourceLatin": "℟. Et cum spíritu tuo.",
     "kind": "PEOPLE_RESPONSE",
     "eventId": "POSTCOMMUNION",
@@ -218,6 +228,7 @@ export const PARTICIPATION_REFERENCE_SCORES=Object.freeze([
     "sourceCueIds": [
       "AO.SM.C0210"
     ],
+    "sourceCueLatin": ["℟. Sed líbera nos a malo."],
     "sourceLatin": "℟. Sed líbera nos a malo.",
     "kind": "PEOPLE_RESPONSE",
     "eventId": "PATERNOSTER",
@@ -239,6 +250,7 @@ export const PARTICIPATION_REFERENCE_SCORES=Object.freeze([
       "AO.SM.C0053",
       "AO.SM.C0054"
     ],
+    "sourceCueLatin": ["Glória in excélsis","Deo."],
     "sourceLatin": "Glória in excélsis Deo.",
     "kind": "CELEBRANT_INTONATION",
     "eventId": "GLORIA_INTONATION",
@@ -260,6 +272,7 @@ export const PARTICIPATION_REFERENCE_SCORES=Object.freeze([
       "AO.SM.C0089",
       "AO.SM.C0090"
     ],
+    "sourceCueLatin": ["Credo","in unum Deum."],
     "sourceLatin": "Credo in unum Deum.",
     "kind": "CELEBRANT_INTONATION",
     "eventId": "CREDO_INTONATION",
@@ -269,14 +282,16 @@ export const PARTICIPATION_REFERENCE_SCORES=Object.freeze([
     "publicScoreApproved": false,
     "gabc": "name: CREDO_III AO.SM.C0089;\noffice-part: Kyriale;\nsource: Graduale Romanum 1961;\n%%\n(c3) CRe(h)do(f) in(d) u(gxg)num(f) De(fvED)um,(d.) (::)"
   }
-].map(score=>Object.freeze({...score,sourceCueIds:Object.freeze(score.sourceCueIds)})));
+].map(score=>Object.freeze({...score,sourceCueIds:Object.freeze(score.sourceCueIds),
+ sourceCueLatin:Object.freeze(score.sourceCueLatin)})));
 
 const SUNG=new Set(["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
 const norm=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
  .replace(/æ/gi,"ae").replace(/œ/gi,"oe").replace(/j/gi,"i")
  .toLowerCase().replace(/[^a-z0-9]+/g,"");
 const cueList=p=>Array.isArray(p?.sourceCueIds)?p.sourceCueIds.map(String):[];
-const originalText=p=>[p?.primary,p?.secondary,p?.alternate].find(x=>typeof x==="string"&&x.trim())??"";
+const hasSourceLatin=(p,latin)=>[p?.primary,p?.secondary,p?.alternate].some(x=>
+ typeof x==="string"&&x.trim()&&norm(x)===norm(latin));
 /** Explicit opt-in preview ONLY. Do not call from approved public chant selector.
  * The current paragraph must own the first source cue, every other phrase
  * fragment must be present in the same canonical ordered source sequence,
@@ -296,14 +311,15 @@ export function participationReferenceScoresForParagraph({
    return matched.length===1?matched[0]:null;
   });
   if(fragments.some(p=>!p))continue;
-  // The explicitly targeted row and the source-indexed fragment must agree;
-  // an alternate translation or a stale/forged Latin row cannot borrow notes.
-  if(norm(originalText(paragraph))!==norm(originalText(fragments[0])))continue;
+  // The source Latin may live in any of the bilingual reader columns,
+  // but every score fragment must match its OWN pinned canonical cue Latin.
+  // A forged first row or a different language cannot borrow the notes.
+  if(!hasSourceLatin(paragraph,score.sourceCueLatin[0]))continue;
+  if(!fragments.every((p,i)=>hasSourceLatin(p,score.sourceCueLatin[i])))continue;
   // Exact sequence matters for the two-piece Gloria and Credo intonation.
   const indices=fragments.map(p=>paragraphs.indexOf(p));
   if(!indices.every((n,i)=>n>=0&&(i===0||n===indices[0]+i)))continue;
-  const combined=fragments.map(originalText).join(" ");
-  if(norm(combined)!==norm(score.sourceLatin))continue;
+  if(norm(score.sourceCueLatin.join(" "))!==norm(score.sourceLatin))continue;
   if(score.toneFamily==="UNRESOLVED")continue; // Pater reference held
   if(score.toneFamily==="SELECTED_ORDINARY"){
    if(isExplicitRequiemMass({session:{resolvedMass}}))continue;
