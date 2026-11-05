@@ -11,8 +11,12 @@ const server=http.createServer(async(req,res)=>{
   const file=resolve(root,"."+decodeURIComponent(new URL(req.url,"http://localhost").pathname));
   if(file!==root&&!file.startsWith(root+sep)){res.writeHead(403);res.end();return}
   const bytes=await readFile(file);
-  res.writeHead(200,{"content-type":extname(file)===".js"?"text/javascript":
-   extname(file)===".html"?"text/html":"application/octet-stream",
+  const mime={".js":"text/javascript; charset=utf-8",
+   ".mjs":"text/javascript; charset=utf-8",".json":"application/json",
+   ".html":"text/html; charset=utf-8",".css":"text/css; charset=utf-8",
+   ".svg":"image/svg+xml",".woff2":"font/woff2",".png":"image/png",
+   ".webp":"image/webp"};
+  res.writeHead(200,{"content-type":mime[extname(file)]??"application/octet-stream",
    "cache-control":"no-store"});res.end(bytes);
  }catch(e){res.writeHead(e?.code==="ENOENT"?404:500);res.end(String(e?.message??e))}
 });
