@@ -12,6 +12,7 @@ const dir=join(root,".tmp/schola-1962-selected-annual");
 const load=p=>JSON.parse(readFileSync(p,"utf8"));
 const closeout=load(join(dir,"2026-schola-closeout-source-exceptions.json"));
 const inventory=load(join(root,"data/research/mass-music-1962-pinned-full-source-universe.v1.json"));
+const annual=load(join(dir,"2026-selected-gabc-coverage.json"));
 const map=new Map(inventory.sourceFiles.map(x=>[x.path,x]));
 const cache=new Map(),base=join(root,".cache","schola-pinned-1962",inventory.sourceRef);
 async function readPinned(path){
@@ -25,12 +26,21 @@ async function readPinned(path){
  }
  return cache.get(path);
 }
-const output=await group2026PregospelHolds({closeout,inventory,readPinned});
+const output=await group2026PregospelHolds({closeout,inventory,annual,readPinned});
 const stored=load(join(dir,"2026-schola-pregospel-original-owner-clusters.json"));
 assert.deepEqual(stored,output,"Emission must match exact pinned source proof");
 assert.equal(stored.schema,SCHEMA);
 assert.equal(stored.counts.datedPreGospelHolds,128);
 assert.equal(stored.counts.distinctSelectedSourcePaths,115);
+assert.equal(stored.counts.exactFullSelectedLatinReviewClusters,36);
+assert.equal(stored.counts.datesInRepeatedFullLatinClusters,114);
+assert.equal(stored.exactFullSelectedLatinGroups.length,36);
+assert.equal(stored.exactFullSelectedLatinGroups.reduce((n,x)=>n+x.dateCount,0),128);
+assert.equal(stored.exactFullSelectedLatinGroups.filter(x=>x.dateCount>1)
+ .reduce((n,x)=>n+x.dateCount,0),114);
+assert.ok(stored.exactFullSelectedLatinGroups.every(x=>
+ !x.GregorianScoreApproved&&!x.musicalIdentityCertified&&!x.sourceOwnershipCertified&&
+ x.status==="EXACT_SELECTED_LATIN_REUSE_ONLY_ORIGINAL_OWNER_AND_MELODY_UNVERIFIED"));
 assert.equal(stored.counts.approvedSourceAliases,0);
 assert.equal(stored.counts.approvedGregorianProperScores,0);
 assert.equal(stored.sourceRows.length,115);
@@ -63,11 +73,11 @@ for(const x of stored.sourceRows){
 // Reject a forged research queue that invents a sixth source gap.
 const invalid=structuredClone(closeout);
 invalid.preGospelSourceOwnerQueue[0].sourcePath="Commune/ForgedMissing";
-await assert.rejects(group2026PregospelHolds({closeout:invalid,inventory,readPinned}),
+await assert.rejects(group2026PregospelHolds({closeout:invalid,inventory,annual,readPinned}),
  /SCHOLA_OWNER_GROUP_SOURCE_GAP_NOT_IN_CANONICAL_FIVE/);
 // Any publishing mutation must invalidate the worklist.
 const promoted=structuredClone(closeout);
 promoted.counts.newApprovedScores=1;
-await assert.rejects(group2026PregospelHolds({closeout:promoted,inventory,readPinned}),
+await assert.rejects(group2026PregospelHolds({closeout:promoted,inventory,annual,readPinned}),
  /SCHOLA_OWNER_GROUP_UNTRUSTED_2026_CENSUS/);
-console.log("PASS 128 dated pre-Gospel source-owner holds in 115 paths grouped from exact 1049 SHA-authenticated files, 15 overlaps not double-counted, 0 aliases and 0 score approvals");
+console.log("PASS 128 dated pre-Gospel source-owner holds in 115 paths; 36 identical complete selected-Latin research groups (114 dates with repeats) with no inferred original melody, 15 overlaps not double-counted, 0 aliases and 0 score approvals");
