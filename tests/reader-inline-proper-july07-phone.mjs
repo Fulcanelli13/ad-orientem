@@ -41,6 +41,13 @@ try{
     {id:"GRADUAL.1",kind:"TEXT",alternate:texts.GRADUAL,primary:"I shall clothe his priests"},
     {id:"ALLELUIA_TRACT_SEQUENCE.1",kind:"TEXT",alternate:texts.ALLELUIA,primary:"The Lord hath sworn"}
    ];
+   const julyIntroit=JULY07_REFERENCE_GABC.find(x=>x.key==="INTROIT");
+   const correctSeasonalRendering=Boolean(julyIntroit &&
+     !julyIntroit.gabc.includes("<i>T. P.</i>") &&
+     !julyIntroit.gabc.includes("Al(e)le(f)lú") &&
+     julyIntroit.gabc.includes("<i>Ps.</i>") &&
+     julyIntroit.gabc.includes("Gló(g)ri(hj)a") &&
+     JULY07_REFERENCE_GABC.every(x=>x.publicScoreApproved===false));
    const synthetic={
     schema:mass.proper.data.sourcePath,
     archiveIDs:JULY07_REFERENCE_GABC.map(x=>x.id),
@@ -95,7 +102,7 @@ try{
    for(let k=0;k<80&&ctrl.state().rendered<3;k++)
     await new Promise(resolve=>setTimeout(resolve,100));
    const screenshotReady=ctrl.state().rendered===3;
-   return {synthetic,blocked,mounted,rendered,actualSvg,cardDimensions,screenshotReady,
+   return {synthetic,blocked,mounted,rendered,actualSvg,cardDimensions,screenshotReady,correctSeasonalRendering,
     sourceTextIntact,labels,noApproval,combinedIds,lowNoScores,width:window.innerWidth};
   });
   assert.deepEqual(result.synthetic.archiveIDs,["GREGOBASE-48","GREGOBASE-415","GREGOBASE-1187"]);
@@ -106,6 +113,8 @@ try{
   assert.equal(result.rendered,3,"Bundled Exsurge must engrave all three original 1961 GABC transcriptions");
   assert.equal(result.actualSvg,3);
   assert.equal(result.screenshotReady,true);
+  assert.equal(result.correctSeasonalRendering,true,
+   "July Mass must suppress only the unappointed T. P. Alleluia in the printed Introit GABC");
   assert.equal(result.sourceTextIntact,true);
   assert.equal(result.noApproval,true);
   assert.equal(result.lowNoScores,true);
