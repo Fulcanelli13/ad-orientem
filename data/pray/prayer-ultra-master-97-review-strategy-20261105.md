@@ -89,3 +89,19 @@ An additive **static repository-code review** now attaches `ownerCodeReview20261
 Key non-conflations: AO-AQ-011 and AO-AQ-013 are selectable optional **Institute** novenas separate from the canonical sixteen. AO-AQ-014's exact Institute Tuesday prayer is *not* the 1925 Garesche prayer offered locally. AO-AQ-050's Seven Sorrows **Novena** is not the Seven Dolours **Chaplet**. AO-AQ-064's seven St Joseph source prayers are not proof of a certified public reader choice. AO-AQ-077 combines five novena programme names in one acquisition row, not five new acquisitions. AO-AQ-088/089 have distinct Baltimore meal-prayer selectors with editorial French; AO-AQ-094's St Pius X contrition selector uses editorial EN/FR renderings.
 
 Next gates: compare candidate wording with the exact historical edition/recension, record language provenance separately, and run real mobile/offline reader interactions where static code demonstrates a selector. Do not auto-publish or invent historical translations. Keep AO-AQ-047 short Precious Blood on hold. AO-AQ-078 English Lasance was admitted subsequently in PR #2498, but that does not rewrite the dated B31 baseline.
+
+
+## Subsequent 21 intent-only + 5 other-module code disposition (5 November 2026)
+
+All **26** rows now carry `intentAndModuleCodeReview20261105` inside the same 97-row reconciliation. This static code review does not change the historical 29 October B31 classifications, import text, award original-print or full EN/FR/LA certificates, or certify actual browser interactions.
+
+| Evidenced disposition | Records | What it means |
+| --- | ---: | --- |
+| Purpose already served; exact candidate text absent | 17 | Preserve the existing function without claiming its distinct source text is selectable |
+| Distinct Novena/litany programme absent | 4 | AO-AQ-068 Holy Name; 069 Holy Family; 073 St Raphael; 075 Our Lady of Rosary — real candidate gaps, not covered by litanies, one-off prayers or Rosary |
+| Rites exist but candidate devotion differs | 2 | AO-AQ-044 Three Hours Agony is not the 1962 Good Friday Mass; AO-AQ-071 Purification novena is not the Candlemas blessing/procession |
+| Office destination not verified | 2 | AO-AQ-055 full Office of the Dead and AO-AQ-058 Sacrosanctae have no certified modular Office owner; they must not be marked complete or copied into Prayer |
+| Calendar destination but source admission pending | 1 | AO-AQ-076 St Andrew Christmas aspiration needs exact traditional text, schedule and Calendar-context decision |
+| **Total** | **26** | **No new text or routes admitted** |
+
+Priority next: the four genuinely distinct Novena/litany gaps should receive independent source/edition appraisal (not automatic import). Keep P1 Lasance Morning/Evening variants AO-AQ-085/086 as unimported alternatives. The Office of the Dead, especially P0 AO-AQ-055, needs an actual owner decision rather than being counted as completed Office functionality. Original Raccolta short Precious Blood AO-AQ-047 is still held: the 1857 index locates §40 at printed p.103, but the original printed body was not visually verified here to resolve 33-vs-35 repetitions.
