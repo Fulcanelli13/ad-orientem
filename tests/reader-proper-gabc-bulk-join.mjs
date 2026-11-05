@@ -111,6 +111,84 @@ assert.equal(noArchive.status,"SOURCE_NOT_READY");
 const communion=hit.tracks.find(x=>x.track==="COMMUNION");
 assert.ok(communion.scoreCandidates.every(c=>c.part==="co"));
 assert.ok(!communion.scoreCandidates.some(c=>c.scoreId==="GREGOBASE-1163"));
+// Epiphany 1961 source-identity regression: the Alleluia and Communion
+// share "Vidimus stellam" and most of their Latin, but not the score,
+// chant family, mode, printed page or GABC hash. This is a synthetic
+// source-slot fixture, NOT 1962 date/reader-musical certification.
+const epiphanyLatin="Vidimus stellam eius in Oriente et venimus cum muneribus adorare Dominum.";
+const epiphanySlots={schema:"ao-reader-proper-slots-v1",ready:true,
+ sourcePath:"Sancti/01-06",slots:{
+ INTROIT:mk("Ecce advenit dominator Dominus et regnum in manu eius."),
+ GRADUAL:mk("Omnes de Saba venient aurum et thus deferentes.","AO.CHANT.GRADUAL"),
+ ALLELUIA_TRACT_SEQUENCE:mk("Alleluia, alleluia. "+epiphanyLatin,"AO.CHANT.ALLELUIA"),
+ OFFERTORY:mk("Reges Tharsis et insulae munera offerent."),
+ COMMUNION:mk(epiphanyLatin),
+}};
+const epiphany=matchSelected1962ProperToGraduale({properSlots:epiphanySlots,archive});
+assert.equal(epiphany.publicScores,0);
+const epiphanyExpected=[
+ ["INTROIT","in","GREGOBASE-403","57","2"],
+ ["GRADUAL","gr","GREGOBASE-205","57","5"],
+ ["ALLELUIA_TRACT_SEQUENCE","al","GREGOBASE-524","58","2"],
+ ["OFFERTORY","of","GREGOBASE-1147","59","5"],
+ ["COMMUNION","co","GREGOBASE-918","59","4"],
+];
+for(const [track,part,id,folio,mode] of epiphanyExpected){
+ const row=epiphany.tracks.find(r=>r.track===track&&r.part===part);
+ assert.equal(row?.status,"UNIQUE_SOURCE_TEXT_CANDIDATE",
+  "Epiphany source phrase did not identify its exact chant role: "+track);
+ assert.deepEqual(row.scoreCandidates.map(c=>c.scoreId),[id]);
+ const original=archive.byRole[part].find(r=>r.id===id);
+ assert.equal(original?.gradualeRomanum1961Page,folio);
+ assert.equal(original?.mode,mode);
+ assert.equal(original?.sourceEditionId,2);
+ const evidence=sourceMatchedGabcForEditorialReview(epiphany,archive,id);
+ assert.equal(evidence?.part,part);
+ assert.equal(evidence?.sourceTrack,track);
+ assert.equal(evidence?.sourceGabcSha256,original.sha256);
+ assert.equal(evidence?.gabc,original.gabc);
+ assert.equal(evidence?.approvedForPublic,false);
+ assert.equal(evidence?.audio,false);
+}
+const epiphanyAlleluia=epiphany.tracks.find(r=>r.part==="al");
+const epiphanyCommunion=epiphany.tracks.find(r=>r.part==="co");
+const alleluiaCandidate=epiphanyAlleluia.scoreCandidates[0];
+const communionCandidate=epiphanyCommunion.scoreCandidates[0];
+assert.notEqual(alleluiaCandidate.scoreId,communionCandidate.scoreId);
+assert.notEqual(alleluiaCandidate.sourceGabcSha256,communionCandidate.sourceGabcSha256);
+assert.equal(alleluiaCandidate.part,"al");
+assert.equal(communionCandidate.part,"co");
+// Attempt to smuggle each perfectly valid original score into the OTHER
+// reader slot: this used to return non-null when lookup trusted candidate.part.
+const forgedAlleluiaAsCommunion={...epiphany,tracks:[{
+ track:"COMMUNION",part:"al",scoreCandidates:[alleluiaCandidate]
+}]};
+const forgedCommunionAsAlleluia={...epiphany,tracks:[{
+ track:"ALLELUIA_TRACT_SEQUENCE",part:"co",scoreCandidates:[communionCandidate]
+}]};
+const mismatchedCandidate={...epiphany,tracks:[{
+ track:"COMMUNION",part:"co",scoreCandidates:[alleluiaCandidate]
+}]};
+const mislabeledTractAsAlleluia={...epiphany,tracks:[{
+ track:"ALLELUIA_TRACT_SEQUENCE",part:"al",sourceGroup:"TRACT",
+ scoreCandidates:[alleluiaCandidate]
+}]};
+assert.equal(sourceMatchedGabcForEditorialReview(
+ mislabeledTractAsAlleluia,archive,"GREGOBASE-524"),null,
+ "A source-labelled Tract cannot retrieve an Alleluia GABC score");
+assert.equal(sourceMatchedGabcForEditorialReview(
+ forgedAlleluiaAsCommunion,archive,"GREGOBASE-524"),null,
+ "An authentic Alleluia must not be retrievable as a Communion");
+assert.equal(sourceMatchedGabcForEditorialReview(
+ forgedCommunionAsAlleluia,archive,"GREGOBASE-918"),null,
+ "An authentic Communion must not be retrievable as an Alleluia");
+assert.equal(sourceMatchedGabcForEditorialReview(
+ mismatchedCandidate,archive,"GREGOBASE-524"),null,
+ "A candidate's own role must agree with its source-owned reader track");
+// Research candidates remain unapproved regardless of lexical exactness.
+assert.ok(epiphany.tracks.every(row=>row.scoreCandidates.every(c=>
+ c.publicScore===false&&c.editorApproved===false&&
+ c.musicalNotationVerified===false)));
 const invalid=structuredClone(batches);
 invalid[0].items[0].sourceEditionId=3;
 assert.throws(()=>index1961GradualeGabc(invalid),/UNTRUSTED_ARCHIVE_SCORE/);
