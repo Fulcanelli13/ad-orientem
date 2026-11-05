@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import {libraryVariantFamily} from "../src/pray/library-variant-groups.js";
 import {readFileSync} from "node:fs";
 import http from "node:http";
 import {readFile} from "node:fs/promises";
@@ -646,6 +647,8 @@ try{
  assert.equal(ids.length,48,"Prayer Library list lost one or more of its 48 canonical prayers");
  assert.equal(new Set(ids).size,48,"Duplicate library identity");
  for(const id of ids){
+   const family=libraryVariantFamily(id);
+   if(family)await page.locator('#aoPray435930.open [data-ao-prayer-family="'+family+'"] > summary').tap({timeout:9000});
    await page.locator("#aoPray435930.open [data-p435930-lib-open='"+id+"']").tap({timeout:9000});
    await page.waitForFunction(()=>{
      const card=document.querySelector("#aoPray435930.open .aoP435930Prayer");
