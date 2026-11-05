@@ -4,6 +4,7 @@ import {mkdir,readFile} from "node:fs/promises";
 import {resolve,extname,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
+import {ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2} from "../src/pray/essential-holy-card-parts.js";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const output=resolve(root,"artifacts/prayer-design-pilot");
@@ -265,7 +266,7 @@ try{
     assert.ok(geometry.width-geometry.client<=1&&geometry.doc<=1,"Door interior must not overflow at "+width+": "+door);
     await page.screenshot({path:resolve(output,"shelf-"+door+"-"+width+".png"),animations:"disabled"});
    }
-   // The ninth discovery door must reach its own 32-prayer mosaic,
+   // The ninth discovery door must reach its own curated 19-prayer mosaic,
    // with a separate explicit action to open the full canonical Library.
    await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null}));
    const libraryDoor=page.locator(base+' [data-p435930-own="pray.library"]').first();
@@ -273,9 +274,9 @@ try{
    assert.equal(await libraryDoor.getAttribute("aria-expanded"),"true");
    await libraryDoor.click();
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.state().view),"library");
-   assert.equal(await page.locator(base+' [data-ao-pray-essential-landing="true"] [data-p435930-lib-open]').count(),32,
-     "Essential Prayers must open its 32 real canonical prayer cards");
-   assert.equal(await page.locator(base+' [data-ao-pray-essential-landing] .aoClaudeHolyFan button').count(),32,
+   assert.equal(await page.locator(base+' [data-ao-pray-essential-landing="true"] [data-p435930-lib-open]').count(),ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2.length,
+     "Essential Prayers must open the 19 selected canonical prayer cards");
+   assert.equal(await page.locator(base+' [data-ao-pray-essential-landing] .aoClaudeHolyFan button').count(),ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2.length,
      "The Essential Prayers landing must be a mosaic, not general library text rows");
    await page.locator(base+' [data-p435930-lib-all]').click();
    assert.ok(await page.locator(base+' [data-p435930-lib-open]').count()>=48,
