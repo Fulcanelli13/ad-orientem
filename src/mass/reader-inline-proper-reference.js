@@ -27,10 +27,10 @@ const byKey=new Map(JULY07_REFERENCE_GABC.map(x=>[x.key,x]));
 export const JULY07_REFERENCE_CSS=String.raw`
 .ao-proper-reference-notation{display:block;width:100%;min-width:0;margin:11px 0 8px;padding:9px 0 5px;border-top:1px solid rgba(218,196,156,.22);font-style:normal;max-width:100%;overflow:hidden}
 .ao-proper-reference-label{display:block;font:600 10px/1.5 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.035em;color:var(--ao-muted,#b1aa9c);margin-bottom:6px}
-.ao-proper-reference-staff{display:block;min-width:0;width:100%;color:var(--ao-text,#f1ece7)}
+.ao-proper-reference-staff{display:block;min-width:0;width:100%;box-sizing:border-box;padding:7px 3px;border-radius:4px;background:#fff;color:#211d18}
 .ao-proper-reference-staff svg{display:block;max-width:100%;height:auto}
 .ao-proper-reference-staff svg :is(path,polygon,polyline,line,text){fill:currentColor}
-.ao-reader-shell[data-mode="MISSAL"] .ao-proper-reference-staff{color:#352920}
+.ao-reader-shell[data-mode="MISSAL"] .ao-proper-reference-staff{color:#211d18}
 .ao-proper-reference-error{font:italic 12px/1.5 var(--ao-font-liturgical,Georgia,serif);color:var(--ao-muted)}
 .ao-proper-reference-expand{display:inline-block;min-height:38px;margin:1px 0 5px;padding:6px 8px;border:1px solid rgba(210,194,162,.3);border-radius:5px;background:transparent;color:var(--ao-text,#eee);font:600 11px/1.3 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer}
 .ao-proper-reference-expand:focus-visible{outline:2px solid var(--ao-mass-accent,#aabed3);outline-offset:2px}
@@ -39,7 +39,7 @@ export const JULY07_REFERENCE_CSS=String.raw`
 .ao-proper-reference-zoom header{display:flex;align-items:center;justify-content:space-between;padding:12px 15px;border-bottom:1px solid #ffffff22;font:500 15px/1.4 Georgia,serif}
 .ao-proper-reference-zoom header button{border:0;background:transparent;color:inherit;min-width:44px;min-height:44px;font-size:24px;cursor:pointer}
 .ao-proper-reference-zoom .ao-proper-reference-scroll{max-height:76dvh;overflow:auto}
-.ao-proper-reference-zoom .ao-proper-reference-wide{box-sizing:border-box;min-width:840px;width:max(840px,100%);padding:14px}
+.ao-proper-reference-zoom .ao-proper-reference-wide{box-sizing:border-box;min-width:840px;width:max(840px,100%);padding:14px;background:#fff;color:#211d18}
 .ao-proper-reference-zoom .ao-proper-reference-wide svg{display:block;max-width:100%;height:auto}
 .ao-proper-reference-zoom .ao-proper-reference-wide svg :is(path,polygon,polyline,line,text){fill:currentColor}
 @media(max-width:480px){.ao-proper-reference-zoom{width:100vw;height:100dvh;max-height:none;border-radius:0}}
