@@ -1,0 +1,89 @@
+name: Benediction — Laudes source truth and Adoration reader acceptance
+
+# Source-provenance correction only. Existing approved rite/adoration artwork
+# and all Prayer texts remain unchanged; no deploy workflow is invoked.
+on:
+  pull_request:
+    paths:
+      - 'src/pray/christ-king-benediction.js'
+      - 'src/pray/presentation-runtime.js'
+      - 'tests/benediction-royal-praises-witness-classification.mjs'
+      - 'tests/pray-benediction-dual-axis-phone.mjs'
+      - '.github/workflows/benediction-laudes-source-qa.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-provenance:
+    name: Exact primary/secondary witness and Latin/French source contracts
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Correctly classify ICKSP 2009 advertisement and Vatican 2012 chant
+        run: node tests/benediction-royal-praises-witness-classification.mjs
+      - name: Verify all traditional and historical Benediction source forms
+        run: node tests/icksp-batch02-prayer-implementation.mjs && node tests/pray-benediction-stage-language-v1.mjs
+
+  benediction-phone:
+    name: Public Benediction + Christ the King EN/FR actual phone acceptance
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install app browser test dependencies
+        run: npm install --no-audit --no-fund
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Verify current Claude reader, blessing, optional feasts and source labels
+        run: node tests/pray-benediction-dual-axis-phone.mjs
+      - name: Verify every Benediction stage in EN/FR and 320/390 mobile
+        run: node tests/pray-confession-benediction-stage-matrix-phone.mjs
+      - name: Retain temporary reader screenshot evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: benediction-actual-reader-phone-source-evidence
+          path: |
+            artifacts/pray-benediction-dual-axis/
+            artifacts/pray-stage-matrix/
+          retention-days: 3
+          if-no-files-found: warn
+
+  adoration-phone:
+    name: Private Adoration, home boundaries, silent/treasury phone acceptance
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install app browser test dependencies
+        run: npm install --no-audit --no-fund
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Verify all 104 guided variants, optional prayer sources and quiet boundary
+        run: node tests/pray-adoration-full-stage-phone.mjs
+      - name: Retain temporary Adoration screenshot evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: adoration-actual-reader-phone-source-evidence
+          path: artifacts/pray-adoration-full-stage/
+          retention-days: 3
+          if-no-files-found: warn
