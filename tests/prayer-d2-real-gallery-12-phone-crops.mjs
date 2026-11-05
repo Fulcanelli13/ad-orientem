@@ -2,6 +2,7 @@
 // This never changes release registries. All images are injected in test DOM.
 // Covers current no-crop 'contain' and two human-comparison crop variants.
 import assert from "node:assert/strict";
+import {createHash} from "node:crypto";
 import http from "node:http";
 import {readFile,mkdir,writeFile} from "node:fs/promises";
 import {extname,resolve,sep} from "node:path";
@@ -78,11 +79,16 @@ try{
     if(!symbol)throw Error("No native gallery image socket");
     symbol.replaceChildren();
     symbol.style.setProperty("display","grid","important"); // pending-card CSS uses !important; unlock only this test DOM
+    symbol.style.width="100%";symbol.style.height="100%";symbol.style.inset="0";
     const img=document.createElement("img");
     img.className="aoPrayPilotReleasedTilePhoto";
     img.setAttribute("data-ao-private-qa-image","never-published");
     img.alt="";
     img.decoding="sync";img.loading="eager";
+    // Explicit image box is essential: otherwise intrinsic JPEG dimensions make
+    // contain/cover visually identical and deceptively hide cropping behind overflow.
+    img.style.position="absolute";img.style.inset="0";
+    img.style.width="100%";img.style.height="100%";img.style.maxHeight="none";
     img.src="/__qa_cma_d2_original.jpg";
     symbol.append(img);
    });
@@ -116,6 +122,9 @@ try{
     });
     assert.deepEqual(geometry.source,[2720,3400]);
     assert.ok(geometry.imageRendered[0]>=100&&geometry.imageRendered[1]>=100,"QA image is hidden; do not count blank cards as photo evidence: "+JSON.stringify(geometry));
+    assert.ok(Math.abs(geometry.imageRendered[0]-geometry.tile[0])<=2&&
+      Math.abs(geometry.imageRendered[1]-geometry.tile[1])<=2,
+      "QA image must occupy exactly the actual masonry tile before object-fit comparisons: "+JSON.stringify(geometry));
     assert.notEqual(geometry.symbolDisplay,"none","Painting container is hidden by editorial-pending CSS");
     assert.ok(geometry.visibleImageFraction>0&&geometry.visibleImageFraction<=1,"Visible painting fraction must be finite and positive");
     assert.equal(geometry.title,ui==="fr"?"Prières essentielles":"Essential Prayers");
@@ -123,18 +132,31 @@ try{
     assert.equal(geometry.captionVisible,"visible");
     assert.ok(geometry.captionOpacity>.95);
     assert.ok(geometry.horizontalOverflow<=2);
-    if(mode.nativeBehavior)assert.equal(geometry.fit,"contain");
+    if(mode.nativeBehavior){
+     assert.equal(geometry.fit,"contain");
+     assert.equal(geometry.visibleImageFraction,1,"No-crop option must retain complete original");
+    }else{
+     assert.equal(geometry.fit,"cover");
+     assert.ok(geometry.visibleImageFraction<0.999,"Comparison crop must actually discard pixels; otherwise review cannot distinguish options");
+    }
     const key="D2-"+ui+"-"+width+"-"+mode.id;
     const full=key+"-whole-gallery.png",detail=key+"-tile.png";
     await page.screenshot({path:resolve(out,full),animations:"disabled"});
-    await tile.screenshot({path:resolve(out,detail),animations:"disabled"});
-    report.captures.push({key,language:ui,width,mode:mode.id,full,detail,geometry,
+    const tileBytes=await tile.screenshot({path:resolve(out,detail),animations:"disabled"});
+    const tileHash=createHash("sha256").update(tileBytes).digest("hex");
+    report.captures.push({key,language:ui,width,mode:mode.id,full,detail,tileScreenshotSha256:tileHash,geometry,
       artisticApproval:"PENDING",productionEnabled:false});
    }
    assert.deepEqual(pageErrors,[],"Browser error in "+width+"/"+ui);
   }finally{await ctx.close()}
  }
  assert.equal(report.captures.length,12);
+ for(const width of [320,390])for(const language of ["en","fr"]){
+  const candidates=report.captures.filter(x=>x.width===width&&x.language===language);
+  assert.equal(candidates.length,3);
+  assert.equal(new Set(candidates.map(x=>x.tileScreenshotSha256)).size,3,
+   "Contain/cover-center/cover-upper tiles must show three VISUALLY DISTINCT treatments");
+ }
  assert.ok(report.captures.every(x=>x.productionEnabled===false));
  console.log("D2_REAL_GALLERY_PHONE_QA_PASS",report.captures.length,"screens; contain/cover-center/cover-upper; 320/390 EN/FR; ZERO RELEASED");
 }catch(e){report.errors.push(String(e?.stack||e));throw e}
