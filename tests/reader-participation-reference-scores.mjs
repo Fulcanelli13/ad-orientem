@@ -3,6 +3,7 @@ import {readFile} from "node:fs/promises";
 import {PARTICIPATION_REFERENCE_SCORES,participationReferenceScoresForParagraph}
  from "../src/mass/reader-participation-reference-scores.js";
 import {ORDINARY_1961_SCORE_SOURCES} from "../src/mass/reader-ordinary-scores-1961.js";
+import {GOSPEL_1961_REFERENCE_WITNESSES,GOSPEL_RESPONSE_REFERENCE_SCORES} from "../src/mass/reader-gospel-response-reference-scores.js";
 import {researchGabcPhrases} from "../src/mass/reader-music-gabc-source-screen.js";
 const file=async path=>JSON.parse(await readFile(new URL("../"+path,import.meta.url),"utf8"));
 const research=await file("data/research/mass-music-m05-cc0-gabc-seven-20261031.v1.json");
@@ -11,12 +12,16 @@ const audit=await file("data/mass/ordinary-sung-speaker-audit.v1.json");
 const cueText=new Map(corpus.blocks.flatMap(x=>x.units.map(y=>[y.cue_id,y.latin])));
 const roles=new Map(audit.records.map(x=>[x.cueId,x.role]));
 const sourceLookup=new Map([...research.scores.map(x=>[x.sourceId,x.gabc]),
- ...ORDINARY_1961_SCORE_SOURCES.map(x=>[Number(x.id.slice(10)),x.gabc])]);
+ ...ORDINARY_1961_SCORE_SOURCES.map(x=>[Number(x.id.slice(10)),x.gabc]),
+ ...GOSPEL_1961_REFERENCE_WITNESSES.map(x=>[x.sourceId,x.gabc])]);
 const norm=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
  .replace(/æ/gi,"ae").replace(/œ/gi,"oe").replace(/j/gi,"i")
  .toLowerCase().replace(/[^a-z0-9]+/g,"");
-assert.equal(PARTICIPATION_REFERENCE_SCORES.length,13);
-assert.equal(new Set(PARTICIPATION_REFERENCE_SCORES.map(x=>x.id)).size,13);
+assert.equal(PARTICIPATION_REFERENCE_SCORES.length,17);
+assert.equal(GOSPEL_1961_REFERENCE_WITNESSES.length,2);
+assert.equal(GOSPEL_RESPONSE_REFERENCE_SCORES.length,4);
+assert.deepEqual(GOSPEL_1961_REFERENCE_WITNESSES.map(x=>x.sourceId),[4490,4491]);
+assert.equal(new Set(PARTICIPATION_REFERENCE_SCORES.map(x=>x.id)).size,17);
 for(const score of PARTICIPATION_REFERENCE_SCORES){
  const original=sourceLookup.get(score.sourceId);
  assert.ok(original,score.id+" source GABC not in pinned corpus");
@@ -97,4 +102,28 @@ for(const [n,adj,sourceId,key,setting] of [
   resolvedMass:{...solemn,provenance:{...solemn.provenance,
    [key.toLowerCase()]:false}}}),[]);
 }
-console.log("PASS 13 original 1961 GABC phrases incl. invariant Pater noster ending; bilingual and tone guards; no public publication");
+for(const tone of ["GOSPEL_STANDARD","GOSPEL_ALTERNATE_AD_LIBITUM"]){
+ const source=tone==="GOSPEL_STANDARD"?4490:4491;
+ for(const cueId of [83,85]){
+  const byTone=get(cueId,solemn,{selectedSettings:{GOSPEL_TONE:tone}});
+  assert.deepEqual(byTone,[source],"One original Gospel response for explicit selected source");
+  assert.deepEqual(get(cueId,ferial,{selectedSettings:{GOSPEL_TONE:tone}}),[source],
+   "Gospel tones must remain independent of Preface solemn/ferial tones");
+  assert.deepEqual(get(cueId,null,{selectedSettings:{GOSPEL_TONE:tone}}),[source],
+   "Gospel response reference does not borrow another liturgical tone");
+ }
+}
+assert.deepEqual(get(83,solemn),[4490],"Normal Gospel uses standard reference, not ad-lib");
+assert.deepEqual(get(85,solemn),[4490]);
+assert.deepEqual(get(83,solemn,{selectedSettings:{GOSPEL_TONE:"UNKNOWN"}}),[],
+ "Do not guess when a wrong Gospel tone is selected");
+assert.deepEqual(get(85,solemn,{form:"LOW"}),[]);
+assert.deepEqual(get(85,solemn,{paragraph:{...p(85),primary:"Gloria Patri"}}),[]);
+assert.deepEqual(get(85,solemn,{paragraphs:[p(85),p(85)]}),[]);
+assert.deepEqual(get(87,solemn),[],"No Gospel-ending response from incomplete chant");
+for(const witness of GOSPEL_1961_REFERENCE_WITNESSES){
+ assert.equal(witness.publicScoreApproved,false);
+ assert.equal(researchGabcPhrases(witness.gabc).length,4,
+  "Both original 1961 Gospel chants are incomplete: only four opening phrases");
+}
+console.log("PASS 17 exact 1961 Gregorian phrase candidates: Gospel standard/ad-lib, Preface, Pater ending, Gloria/Credo; held from publication");

@@ -1,5 +1,6 @@
 import {resolve1962DialogueToneFamily} from "./reader-mass-1962-tone-family.js";
 import {isExplicitRequiemMass} from "./reader-requiem-conditions.js";
+import {GOSPEL_RESPONSE_REFERENCE_SCORES} from "./reader-gospel-response-reference-scores.js";
 // Preview-only exact-phrase Gregorian references for the 65-card Sung Mass.
 // Original 1961 GABC phrase bodies, no melody edits, sourced from already
 // committed M05 research and existing Kyriale Ordinary pilot. Clef is
@@ -289,7 +290,7 @@ export const PARTICIPATION_REFERENCE_SCORES=Object.freeze([
     "gabc": "name: CREDO_III AO.SM.C0089;\noffice-part: Kyriale;\nsource: Graduale Romanum 1961;\n%%\n(c3) CRe(h)do(f) in(d) u(gxg)num(f) De(fvED)um,(d.) (::)"
   }
 ].map(score=>Object.freeze({...score,sourceCueIds:Object.freeze(score.sourceCueIds),
- sourceCueLatin:Object.freeze(score.sourceCueLatin)})));
+ sourceCueLatin:Object.freeze(score.sourceCueLatin)})).concat(GOSPEL_RESPONSE_REFERENCE_SCORES));
 
 const SUNG=new Set(["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
 const norm=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
@@ -326,7 +327,13 @@ export function participationReferenceScoresForParagraph({
   const indices=fragments.map(p=>paragraphs.indexOf(p));
   if(!indices.every((n,i)=>n>=0&&(i===0||n===indices[0]+i)))continue;
   if(norm(score.sourceCueLatin.join(" "))!==norm(score.sourceLatin))continue;
-  if(score.toneFamily==="SELECTED_ORDINARY"){
+  if(score.eventId==="GOSPEL"){
+   // Gospel tones have their OWN printed sources. They must not inherit
+   // solemn/ferial Preface tone selection, and ad-libitum is never assumed.
+   const selected=String(selectedSettings?.GOSPEL_TONE??"GOSPEL_STANDARD");
+   if(!["GOSPEL_STANDARD","GOSPEL_ALTERNATE_AD_LIBITUM"].includes(selected)||
+      selected!==score.toneFamily)continue;
+  }else if(score.toneFamily==="SELECTED_ORDINARY"){
    if(isExplicitRequiemMass({session:{resolvedMass}}))continue;
    const movement=score.eventId==="GLORIA_INTONATION"?"GLORIA":"CREDO";
    if((movement==="GLORIA"&&resolvedMass?.provenance?.gloria===false)||

@@ -34,7 +34,7 @@ try{
    previewTexts.set("AO.SM.C0054","Deo.");
    previewTexts.set("AO.SM.C0089","Credo");
    previewTexts.set("AO.SM.C0090","in unum Deum.");
-   const cueNums=[71,136,138,140,143,210,252,53,54,89,90];
+   const cueNums=[71,83,85,136,138,140,143,210,252,53,54,89,90];
    const key=n=>"AO.SM.C"+String(n).padStart(4,"0");
    const paragraphs=cueNums.map(n=>({id:"P"+n,kind:"TEXT",primary:previewTexts.get(key(n)),
     secondary:"Original vernacular translation must survive",sourceCueIds:[key(n)]}));
@@ -60,7 +60,7 @@ try{
    const settings={GLORIA:"MASS_08",CREDO:"CREDO_03"};
    const solemn=context("SUNDAY"),ferial=context("FERIA");
    const mounted=controller.render({mode:"LIVE",form:"SOLEMN",resolvedMass:solemn,selectedSettings:settings,paragraphs});
-   for(let i=0;i<100&&controller.state().rendered<9;i++)await new Promise(r=>setTimeout(r,120));
+   for(let i=0;i<100&&controller.state().rendered<11;i++)await new Promise(r=>setTimeout(r,120));
    const rendered=controller.state().rendered,svg=body.querySelectorAll(".ao-proper-reference-staff svg").length;
    const originalTextIntact=paragraphs.every(p=>{
     const n=body.querySelector('[data-paragraph-id="'+p.id+'"]');
@@ -73,25 +73,33 @@ try{
    const allUnapproved=[...body.querySelectorAll("[data-reference-score]")].every(n=>n.dataset.approved==="false");
    const ferialCount=controller.render({mode:"LIVE",form:"SOLEMN",resolvedMass:ferial,selectedSettings:{},paragraphs});
    const ferialIds=[...body.querySelectorAll("[data-reference-score]")].map(n=>n.dataset.referenceScore);
+   const alternateCount=controller.render({mode:"LIVE",form:"SOLEMN",resolvedMass:solemn,
+    selectedSettings:{...settings,GOSPEL_TONE:"GOSPEL_ALTERNATE_AD_LIBITUM"},paragraphs});
+   const alternateIds=[...body.querySelectorAll("[data-reference-score]")].map(n=>n.dataset.referenceScore);
    const lowCount=controller.render({mode:"LIVE",form:"LOW",resolvedMass:solemn,selectedSettings:settings,paragraphs});
    controller.render({mode:"LIVE",form:"SOLEMN",resolvedMass:solemn,selectedSettings:settings,paragraphs});
-   for(let i=0;i<100&&controller.state().rendered<9;i++)await new Promise(r=>setTimeout(r,120));
+   for(let i=0;i<100&&controller.state().rendered<11;i++)await new Promise(r=>setTimeout(r,120));
    return {mounted,rendered,svg,originalTextIntact,ids,widths,paterVisible,allUnapproved,ferialCount,ferialIds,
-    lowCount,restored:controller.state().rendered};
+    lowCount,alternateCount,alternateIds,restored:controller.state().rendered};
   });
-  assert.equal(result.mounted,9);
-  assert.equal(result.rendered,9,"Actual Exsurge must render nine source phrases");
-  assert.equal(result.svg,9);
+  assert.equal(result.mounted,11);
+  assert.equal(result.rendered,11,"Actual Exsurge must render eleven source phrases");
+  assert.equal(result.svg,11);
   assert.equal(result.originalTextIntact,true);
   assert.equal(result.paterVisible,true,"Identical Pater response melody from authenticated 1962 music guide");
   assert.equal(result.allUnapproved,true);
-  assert.equal(result.ferialCount,5);
+  assert.equal(result.ferialCount,7);
   assert.equal(result.lowCount,0);
-  assert.equal(result.restored,9);
+  assert.equal(result.restored,11);
   assert.ok(result.ids.some(x=>x.includes("GLORIA_VIII"))&&result.ids.some(x=>x.includes("CREDO_III")));
   assert.ok(result.ids.filter(x=>x.includes("PREFACE_SOLEMN")).length===4);
   assert.equal(result.ferialIds.filter(x=>x.includes("PREFACE_FERIAL")).length,4);
   assert.equal(result.ferialIds.filter(x=>x.includes("PATERNOSTER_COMMON")).length,1);
+  assert.equal(result.ferialIds.filter(x=>x.includes("GOSPEL_4490")).length,2);
+  assert.equal(result.ids.filter(x=>x.includes("GOSPEL_4490")).length,2);
+  assert.equal(result.alternateCount,11);
+  assert.equal(result.alternateIds.filter(x=>x.includes("GOSPEL_4491")).length,2);
+  assert.equal(result.alternateIds.filter(x=>x.includes("GOSPEL_4490")).length,0);
   assert.ok(result.widths.every(x=>x>120&&x<=width),
    "Scores must fit reader safe column at "+width+" px: "+JSON.stringify(result.widths));
   await mkdir(resolve(root,".tmp/mass-participation-preview"),{recursive:true});
