@@ -230,6 +230,7 @@ export function createCardTransitionTransientGuard(){
 export async function prepareNativeReaderPreview({
   prepared,
   reviewCuratedCards=false,
+  directSourceCurated=false,
   presentationData=null,
   loadPresentationData=loadReaderPresentationData,
   eventData=null,
@@ -395,7 +396,18 @@ export async function prepareNativeReaderPreview({
     : null;
   const mandatumSource=loadedMandatum?.source??loadedMandatum??null;
   const presentationWithMandatum=Object.freeze({...data,mandatumSource});
-  const model=createMassReaderModel({
+  // Public LIVE uses the certified 30-macro -> curated source stream.
+  // Do not instantiate a 39-card source/intermediary on initial mount or
+  // on a session initially opened in MISSAL and subsequently switched.
+  // Explicit source-only test calls keep their diagnostic fixture contract.
+  const directNative=directSourceCurated===true &&
+    reviewCuratedCards===true && plan?.kind==="MASS";
+  const directLive=directNative ? buildReaderModeModels({
+    prepared,data:presentationWithMandatum,mode:"LIVE",
+    directSourceCurated:true,reviewExpandedCards:true,
+  }):null;
+  const preparedIsLive=String(prepared.session.resolvedMass.presentationMode).toUpperCase()==="LIVE";
+  const model=directLive && preparedIsLive ? directLive.sourceModel : createMassReaderModel({
     resolvedMass:prepared.session.resolvedMass,
     sectionMap:data?.sectionMap,
     lowCorpus:data?.lowCorpus,
@@ -409,7 +421,8 @@ export async function prepareNativeReaderPreview({
   // MISSAL has 30 source cards even for a Sung Mass whose LIVE source
   // has 39. Eligibility must be checked against the separate LIVE model,
   // regardless of which of the two reader views is currently selected.
-  const liveCapabilityModel=String(model.presentationMode)==="LIVE" ? model
+  const liveCapabilityModel=directLive?.presentationModel ??
+    (String(model.presentationMode)==="LIVE" ? model
     : reviewCuratedCards===true ? createMassReaderModel({
         resolvedMass:Object.freeze({...prepared.session.resolvedMass,
           presentationMode:"LIVE"}),
@@ -421,7 +434,7 @@ export async function prepareNativeReaderPreview({
         frenchOrdinary:data?.frenchOrdinary,
         holyThursdayMandatumSource:mandatumSource,
         vernacularLanguage:prepared?.readerPreferences?.language??"en",
-      }) : model;
+      }) : model);
   // Only explicit, independently sourced pre-Mass and post-Mass actions
   // can accompany the ordinary Sung projection. Do not infer ceremonies
   // from dates, feast names or a later requested Mass. The four Foot-of-
@@ -464,17 +477,25 @@ export async function prepareNativeReaderPreview({
   const overlays=plan?.overlayGraphs??[];
   const nuptialSourceReady=liveCapabilityModel.nuptialInsertionCount===3 &&
     liveCapabilityModel.emberInsertionCount==null &&
-    liveCapabilityModel.totalCards===42 &&
+    (directLive ? liveCapabilityModel.sourceModelTotalCards===42 &&
+      liveCapabilityModel.totalCards>=68 : liveCapabilityModel.totalCards===42) &&
     liveCapabilityModel.cards.filter(c=>c.nuptialInsertion===true).length===3;
   const emberInsertions=Number(liveCapabilityModel.emberInsertionCount??0);
   const emberSourceReady=emberInsertions>0 && Number.isSafeInteger(emberInsertions) &&
     liveCapabilityModel.nuptialInsertionCount==null &&
-    liveCapabilityModel.totalCards===39+emberInsertions &&
+    (directLive ? liveCapabilityModel.sourceModelTotalCards===39+emberInsertions &&
+      liveCapabilityModel.totalCards>=65+emberInsertions :
+      liveCapabilityModel.totalCards===39+emberInsertions) &&
     liveCapabilityModel.cards.filter(c=>c.emberInsertion===true).length===emberInsertions;
-  const curatedSourceEligible=liveCapabilityModel.totalCards===39 ||
-    nuptialSourceReady || emberSourceReady ||
-    (liveCapabilityModel.holyThursday===true && liveCapabilityModel.credoOmitted===true &&
-      liveCapabilityModel.totalCards===(liveCapabilityModel.mandatumPresent===true?39:38));
+  const curatedSourceEligible=directLive
+    ? liveCapabilityModel.directSourceToCurated===true &&
+      liveCapabilityModel.directSourceMacroCount===30 &&
+      liveCapabilityModel.sourceAuthorityModel===directLive.sourceModel &&
+      liveCapabilityModel.totalCards>=61
+    : liveCapabilityModel.totalCards===39 ||
+      nuptialSourceReady || emberSourceReady ||
+      (liveCapabilityModel.holyThursday===true && liveCapabilityModel.credoOmitted===true &&
+        liveCapabilityModel.totalCards===(liveCapabilityModel.mandatumPresent===true?39:38));
   const overlaySourceReady=
     overlays.includes("NUPTIAL")===nuptialSourceReady &&
     overlays.includes("EMBER_LESSONS")===emberSourceReady;
@@ -498,7 +519,7 @@ export async function prepareNativeReaderPreview({
      !curatedEligible)
     throw new Error("LIVE_65_CARD_PRESENTATION_REQUIRED");
   const curatedOrdinary=curatedEligible && String(model.presentationMode)==="LIVE"
-    ? projectCuratedOrdinaryLiveCards(model):null;
+    ? directLive?.presentationModel ?? projectCuratedOrdinaryLiveCards(model):null;
   const presentationModel=curatedOrdinary
     ? (explicitIntroitEntry
         ? projectCuratedIntroitEntryLiveCards(curatedOrdinary)
@@ -567,6 +588,7 @@ export async function prepareNativeReaderPreview({
   const lifecycleRuntime=createFormLifecycleRuntime({prepared});
   return Object.freeze({
     prepared,curatedEligible,curatedIntroitEntry:explicitIntroitEntry,
+    directSourceCurated:directNative,sourceMacroTotal:directNative?30:null,
     data:presentationWithMandatum,model,presentationModel,events,eventState,objectiveRuntime,registries,cueState,guide,scholaState,transientState,rubricState,gestureMatrixState,formState,
     aspergesController,palmController,ashController,candlemasController,rogationsController,
     requiemAbsolutionController,corpusChristiController,holyThursdayPostController,genericProcessionController,lifecycleRuntime,
@@ -632,7 +654,8 @@ export async function mountNativeReaderPreview({
   // projector is internal to source-only test/exception paths and is
   // never selected from URLs or mount options.
   const ready=await prepareNativeReaderPreview({
-    prepared,reviewCuratedCards:true,presentationData,loadPresentationData,eventData,loadEventData,
+    prepared,reviewCuratedCards:true,directSourceCurated:true,
+    presentationData,loadPresentationData,eventData,loadEventData,
     cueRegistries,loadCueRegistries,formStateData,loadFormStateData,guideData,loadGuideData,
     riteMusicData,loadRiteMusicData,
     aspergesData,loadAspergesData,palmData,loadPalmData,ashData,loadAshData,
@@ -649,6 +672,7 @@ export async function mountNativeReaderPreview({
   root.id=ROOT_ID;
   root.setAttribute("aria-label","Ad Orientem Mass reader");
   root.dataset.r17CuratedReview=String(ready.curatedEligible===true);
+  root.dataset.r17DirectSourceCurated=String(ready.directSourceCurated===true);
   root.dataset.r17TextOwner="R17_VERIFIED_CORPUS";
   root.dataset.r17CardOwner="R17_READER_MODEL";
   root.dataset.r17StateOwner="R17_PARTIAL_EVENT_STATE";
@@ -1377,9 +1401,10 @@ export async function mountNativeReaderPreview({
       }):null;
   let sourceModel=ready.model;
   let readerModel=ready.presentationModel??ready.model;
-  const mandatumController=ready.model?.mandatumSource
+  const mandatumSource=ready.presentationModel?.mandatumSource??ready.model?.mandatumSource;
+  const mandatumController=mandatumSource
     ?createMandatumEventController({
-      source:ready.model.mandatumSource,
+      source:mandatumSource,
       language:prepared?.readerPreferences?.language??"en"
     }):null;
   let current=readerModel.cardBySequence(1);
@@ -2914,8 +2939,14 @@ export async function mountNativeReaderPreview({
       data:ready.data,
       mode:nextMode,
       reviewExpandedCards:ready.curatedEligible===true && String(nextMode).toUpperCase()==="LIVE",
+      directSourceCurated:ready.directSourceCurated===true &&
+        ready.curatedEligible===true && String(nextMode).toUpperCase()==="LIVE",
     });
-    if(rebuilt.mode==="LIVE" && rebuilt.presentationModel.totalCards===39)
+    if(rebuilt.mode==="LIVE" &&
+       (rebuilt.presentationModel.totalCards===39 ||
+         (ready.directSourceCurated===true &&
+           (rebuilt.sourceModel.totalCards!==30 ||
+            rebuilt.presentationModel.directSourceToCurated!==true))))
       throw new Error("LIVE_39_CARD_MODE_SWITCH_FORBIDDEN");
     sourceModel=rebuilt.sourceModel;
     // Preserve the liturgically omitted Foot-cluster across LIVE → MISSAL →
@@ -2945,6 +2976,9 @@ export async function mountNativeReaderPreview({
 
     root.dataset.r17PresentationMode=rebuilt.mode;
     root.dataset.r17SourceModelCards=String(sourceModel.totalCards);
+    root.dataset.r17DirectSourceCurated=String(
+      rebuilt.mode==="LIVE" && rebuilt.presentationModel.directSourceToCurated===true
+    );
     root.dataset.r17PresentationModelCards=String(readerModel.totalCards);
 
     if(!(inAsperges || inPalm || inAsh || inCandlemas || inRogations || inRequiemAbsolution || inCorpusChristi || inHolyThursdayPost || inGenericProcession || inLifecycle)){
