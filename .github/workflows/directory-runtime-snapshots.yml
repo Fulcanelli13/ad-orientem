@@ -46,7 +46,22 @@ jobs:
       - name: Generate official-source snapshots
         run: |
           npm run directory:import:fssp
-          npm run directory:import:icksp
+          # Official ICKSP may intermittently time out in GitHub runners.
+          # Retry transport-level timeouts only; HTTP denials and structural
+          # or quality failures remain fatal.
+          set -o pipefail
+          for attempt in 1 2 3; do
+            if npm run directory:import:icksp 2>&1 | tee "$RUNNER_TEMP/icksp-import.log"; then
+              break
+            fi
+            if test "$attempt" -eq 3 ||
+              ! grep -Eq 'UND_ERR_CONNECT_TIMEOUT|ETIMEDOUT|ECONNRESET|EAI_AGAIN' "$RUNNER_TEMP/icksp-import.log"; then
+              echo "::error::ICKSP import failed outside a permitted transient retry"
+              exit 1
+            fi
+            echo "::warning::ICKSP source transport timeout, retry $attempt/3 without publishing partial source data"
+            sleep 5
+          done
           npm run directory:import:ibp
           # Both official acquisition paths can return HTTP 403. Only that
           # exact double-denial produces an explicit nonpublishable hold;
