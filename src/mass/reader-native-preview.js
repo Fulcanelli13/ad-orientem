@@ -513,18 +513,18 @@ export async function prepareNativeReaderPreview({
   // source insertions use the same 65-family segmentation without flattening
   // their separately verified event, formula, and text identities.
   if(reviewCuratedCards===true && plan?.kind==="MASS" &&
-     String(model.presentationMode).toUpperCase()==="LIVE" &&
+     preparedIsLive &&
      (curatedSourceEligible ||
        overlays.some(id=>["NUPTIAL","EMBER_LESSONS"].includes(id))) &&
      !curatedEligible)
     throw new Error("LIVE_65_CARD_PRESENTATION_REQUIRED");
-  const curatedOrdinary=curatedEligible && String(model.presentationMode)==="LIVE"
+  const curatedOrdinary=curatedEligible && preparedIsLive
     ? directLive?.presentationModel ?? projectCuratedOrdinaryLiveCards(model):null;
   const presentationModel=curatedOrdinary
     ? (explicitIntroitEntry
         ? projectCuratedIntroitEntryLiveCards(curatedOrdinary)
         : curatedOrdinary)
-    : String(model.presentationMode??"").toUpperCase()==="MISSAL"
+    : !preparedIsLive
       ? projectGranularMissalCards(model,{language:prepared?.readerPreferences?.language??"en"})
       : model;
   // Validate the separate 15-cue event crosswalk before mounting the opt-in reader.
