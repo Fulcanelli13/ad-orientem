@@ -217,7 +217,10 @@ function conditionalPreGospelSpec(card){
   });
 }
 
-function curated(card,corpusFamily="SUNG"){
+// Shared exact source-paragraph cut engine. The direct macro-to-LIVE path
+// and the legacy internal adapter must use the very same licensed source
+// boundaries until full byte-and-cue parity is established.
+export function curatedSourceCardCuts(card,corpusFamily="SUNG"){
   const spec=GROUPS[sourceId(card)]??conditionalPreGospelSpec(card);
   if(!spec)return [Object.freeze({title:card.title,paragraphs:card.paragraphs,
     blocks:card.blocks,ordinal:1})];
@@ -310,7 +313,7 @@ export function projectCuratedOrdinaryLiveCards(model){
   for(const sourceCard of model.cards){
     const id=sourceId(sourceCard);
     visited.add(id);
-    const chunks=sourceCard.paragraphs.length?curated(sourceCard,model.corpusFamily):
+    const chunks=sourceCard.paragraphs.length?curatedSourceCardCuts(sourceCard,model.corpusFamily):
       [{title:sourceCard.title,paragraphs:[],blocks:sourceCard.blocks,ordinal:1}];
     if(JSON.stringify(chunks.flatMap(chunk=>chunk.paragraphs.map(p=>p.id)))!==
       JSON.stringify(sourceCard.paragraphs.map(p=>p.id)))
