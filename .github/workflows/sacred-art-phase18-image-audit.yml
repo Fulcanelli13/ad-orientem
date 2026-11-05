@@ -1,0 +1,46 @@
+name: Sacred Art Phase 18 — museum image audit (research-only)
+on:
+  push:
+    branches:
+      - research/sacred-art-phase18-iiif-audit-20261106
+    paths:
+      - 'scripts/sacred-art/audit_images.py'
+      - 'scripts/sacred-art/artworks_177.csv'
+      - '.github/workflows/sacred-art-phase18-image-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sacred-art-phase18-image-audit
+  cancel-in-progress: true
+
+jobs:
+  iiif-audit:
+    name: Acquire 20 mapped IIIF previews; research artifact only
+    runs-on: ubuntu-latest
+    timeout-minutes: 65
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install minimal image-analysis dependencies
+        run: python -m pip install --disable-pip-version-check 'requests>=2.32,<3' 'Pillow>=11,<13'
+      - name: Validate Python syntax and source integrity
+        run: |
+          python -m py_compile scripts/sacred-art/audit_images.py
+          python scripts/sacred-art/audit_images.py --input scripts/sacred-art/artworks_177.csv --out sacred-art-image-audit-dryrun --limit 20 --dry-run
+      - name: Download permitted previews and compare current selected images
+        run: python scripts/sacred-art/audit_images.py --input scripts/sacred-art/artworks_177.csv --out sacred-art-image-audit --limit 20
+      - name: Upload temporary research evidence; never publish to Pages
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase18-iiif-audit-20-research-only
+          path: sacred-art-image-audit/
+          retention-days: 5
+          if-no-files-found: warn
