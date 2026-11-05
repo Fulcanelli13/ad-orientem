@@ -59,6 +59,26 @@ assert.equal(expandedReview.presentationModel.totalCards,65,
   "curated LIVE should have 65 cards with one complete Sanctus–Benedictus");
 assert.equal(expandedReview.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
 assert.equal(expandedReview.presentationModel.sourceAuthorityModel,expandedReview.sourceModel);
+// The same 65-card display segmentation must be available in Low Mass.
+// It must never inherit the Sung text, intonation, or source-only cue clock.
+const lowPrepared={...prepared,session:{...prepared.session,
+  resolvedMass:{...resolvedMass,form:"LOW"}}};
+const lowLive=buildReaderModeModels({prepared:lowPrepared,data,mode:"LIVE"});
+assert.equal(lowLive.sourceModel.totalCards,39,"39 remains an internal source intermediary");
+assert.equal(lowLive.sourceModel.corpusFamily,"LOW");
+assert.equal(lowLive.presentationModel.totalCards,65);
+assert.equal(lowLive.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
+assert.equal(lowLive.presentationModel.sourceOnlyCueRegister,null);
+assert.ok(lowLive.presentationModel.cards.some(c=>c.title==="Gloria · Opening"));
+assert.ok(lowLive.presentationModel.cards.some(c=>c.title==="Credo · Opening"));
+assert.deepEqual(lowLive.presentationModel.cards.flatMap(c=>c.paragraphs.map(p=>p.id)),
+  lowLive.sourceModel.cards.flatMap(c=>c.paragraphs.map(p=>p.id)));
+const lowMissal=buildReaderModeModels({prepared:lowPrepared,data,mode:"MISSAL"});
+assert.equal(lowMissal.sourceModel.corpusFamily,"LOW");
+assert.ok(lowMissal.presentationModel.totalCards>=lowMissal.sourceModel.totalCards);
+const returnToLive=buildReaderModeModels({prepared:lowPrepared,data,mode:"LIVE"});
+assert.equal(returnToLive.presentationModel.totalCards,65,
+  "Low Mass MISSAL → LIVE must not restore 39 display cards");
 
 const cueRegistryNames={
   gestures:"reader-gestures.v1.json",
