@@ -98,6 +98,16 @@ try{
      totalCards:p?.model?.totalCards??null,
      sourceCards:p?.sourceModel?.totalCards??null,
      structureOwner:p?.model?.structureOwner??null,
+     presentationMode:p?.model?.presentationMode??null,
+     preGospelCards:(p?.model?.cards??[]).filter(c=>c.sourceSectionId==="AO.CARD.006")
+       .map(c=>({sectionId:c.sectionId,sourceSectionId:c.sourceSectionId,
+        title:c.title,blockIds:(c.blocks??[]).map(b=>b.blockId),
+        paragraphCount:c.paragraphs?.length??0})),
+     specialInsertions:(p?.model?.cards??[]).filter(c=>
+       c.nuptialInsertion===true||c.emberInsertion===true)
+       .map(c=>({sectionId:c.sectionId,sourceSectionId:c.sourceSectionId})),
+     holyThursday:Boolean(p?.model?.holyThursday&&p?.model?.credoOmitted),
+     mandatumPresent:p?.model?.mandatumPresent===true,
      rootVisible:Boolean(rect&&rect.width>280&&rect.height>300),
      width:document.documentElement.scrollWidth,
      viewport:window.innerWidth,
@@ -109,11 +119,41 @@ try{
      hasHorizontalOverflow:document.documentElement.scrollWidth>window.innerWidth+2,
     };
    });
+   // Preserve source-level evidence and screenshot before cardinality assertions.
+   await page.screenshot({path:resolve(out,label+"-mass-390.png"),fullPage:false});
+   report.cases.push({label,...state,pageErrors});
+   await writeFile(resolve(out,"evidence.json"),JSON.stringify(report,null,2)+"\n");
+   console.log("PAGES_PHONE_SOURCE_MODEL "+JSON.stringify({label,
+    presentationMode:state.presentationMode,modelTotal:state.totalCards,
+    macroTotal:state.sourceCards,structureOwner:state.structureOwner,
+    preGospelCards:state.preGospelCards,specialInsertions:state.specialInsertions,
+    holyThursday:state.holyThursday,mandatumPresent:state.mandatumPresent}));
    assert.equal(state.owner,"R17_NATIVE_PRODUCTION",label+" not native reader");
    assert.equal(state.mode,mode,label+" wrong prepared mode");
    assert.equal(state.language,lang,label+" wrong prepared language");
-   assert.equal(state.totalCards,65,label+" lost 65-card canonical reader");
    assert.equal(state.sourceCards,30,label+" resurrected 39-card intermediary");
+   if(mode==="LIVE"){
+    assert.equal(state.structureOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW",
+     label+" lost the direct 65-family source-owned presentation");
+    assert.equal(state.presentationMode,"LIVE");
+    assert.ok(state.preGospelCards.length>=1&&state.preGospelCards.length<=3,
+     label+" unsupported source-owned pre-Gospel chant count");
+    // 65 ordinary card families, plus only justified, source-backed
+    // pre-Gospel verse positions and distinct-rite/Ember additions.
+    const expected=65+(state.preGospelCards.length-1)-
+      (state.holyThursday?4:0)+(state.holyThursday&&state.mandatumPresent?1:0)+
+      state.specialInsertions.length;
+    assert.equal(state.totalCards,expected,
+     label+" source-owned LIVE families or special insertions were lost");
+    assert.ok(state.preGospelCards.every(c=>c.paragraphCount>0&&
+       c.sectionId&&c.sourceSectionId==="AO.CARD.006"),
+      label+" additional pre-Gospel card lacks verified source identity");
+   }else{
+    assert.equal(state.presentationMode,"MISSAL",
+     label+" silently entered LIVE instead of requested Missal");
+    assert.ok(state.totalCards>=30&&state.totalCards!==39,
+     label+" Missal fell back to a 39-card macro intermediary");
+   }
    assert.equal(state.rootVisible,true,label+" reader root hidden");
    assert.equal(state.hasHorizontalOverflow,false,label+" horizontal page clipping");
    assert.ok(state.rootText.length>130,label+" empty native prayer/chant surface");
@@ -123,13 +163,14 @@ try{
    }
    assert.equal(pageErrors.filter(x=>/Uncaught|SyntaxError|ReferenceError|TypeError/.test(x)).length,0,
     label+" runtime JS errors "+pageErrors.join(" | "));
-   await page.screenshot({path:resolve(out,label+"-mass-390.png"),fullPage:false});
-   report.cases.push({label,...state,pageErrors});
+
    await context.close();context=null;
    console.log("PAGES_PHONE_MASS_PASS "+JSON.stringify({label,mode,lang,
-    totalCards:state.totalCards,sourceCards:state.sourceCards,
+    totalCards:state.totalCards,preGospelCards:state.preGospelCards.length,sourceCards:state.sourceCards,
     schola:state.scholaPresent,overflow:state.hasHorizontalOverflow}));
   }catch(e){
+   await writeFile(resolve(out,"evidence.json"),
+    JSON.stringify({...report,failedCase:label,error:String(e?.stack??e)},null,2)+"\n");
    if(context)await context.close();
    addFailure(label,e);
   }
