@@ -137,3 +137,38 @@ for(const row of reviewed){
  }
 }
 console.log("Prayer owner-code review PASS: 25/25 static code owner assessments; "+JSON.stringify(followUp.coverageCounts)+"; no original-print, translation, UI or release certification.");
+
+
+// Post-B31 21 intent-only + 5 other-module static disposition (fail closed).
+const intentModuleReview=audit.subsequentIntentAndModuleReview20261105;
+assert.equal(intentModuleReview.reviewedIntentOnlyRows,21);
+assert.equal(intentModuleReview.reviewedOtherModuleRows,5);
+assert.equal(intentModuleReview.freezeHistoricalB31,true);
+assert.deepEqual(intentModuleReview.unresolvedOfficeTargetIds,["AO-AQ-055","AO-AQ-058"]);
+assert.deepEqual(intentModuleReview.distinctProgrammeGapIds,["AO-AQ-068","AO-AQ-069","AO-AQ-073","AO-AQ-075"]);
+const imRows=audit.records.filter(x=>x.intentAndModuleCodeReview20261105);
+assert.equal(imRows.length,26);
+assert.deepEqual(imRows.filter(x=>x.b31Disposition==="INTENT_ONLY_NOT_TEXT").map(x=>x.acquisitionId).sort(),audit.queuePolicy.EXACT_TEXT_NOT_IMPORTED.slice().sort());
+assert.deepEqual(imRows.filter(x=>x.b31Disposition==="ROUTED_OTHER_MODULE").map(x=>x.acquisitionId).sort(),audit.queuePolicy.OTHER_MODULE_ROUTES_TO_CONFIRM.slice().sort());
+assert.deepEqual(Object.fromEntries([...new Set(imRows.map(x=>x.intentAndModuleCodeReview20261105.coverage))].sort().map(k=>[k,imRows.filter(x=>x.intentAndModuleCodeReview20261105.coverage===k).length])),intentModuleReview.coverageCounts);
+let imAnchors=0;
+for(const row of imRows){
+ const e=row.intentAndModuleCodeReview20261105;
+ assert.match(e.evidenceScope,/STATIC_REPO/);
+ assert.ok(e.finding);
+ for(const key of ["exactHistoricalWorkImported","originalPrintTextCertified","threeLanguageTextCertified","publicReaderInteractionCertified","newPublicRouteAuthorized","autoPublishAuthorized"])
+  assert.equal(e[key],false,"Uncertified intent/module record cannot be auto-admitted: "+row.acquisitionId);
+ if(e.coverage==="OFFICE_TARGET_NOT_IMPLEMENTATION_CERTIFIED"){
+  assert.deepEqual(e.sourceAnchors,[],"Unknown Office owner must not gain invented code evidence");
+ }else assert.ok(e.sourceAnchors.length,"Non-Office review must reference real code: "+row.acquisitionId);
+ for(const {path,needle} of e.sourceAnchors){
+  assert.ok(path.startsWith("src/")&&!path.includes(".."),"Invalid source path: "+path);
+  assert.ok(existsSync(resolve(root,path)),"Intent/module code owner absent: "+path);
+  assert.ok(readFileSync(resolve(root,path),"utf8").includes(needle),"Intent/module source anchor changed: "+row.acquisitionId+" "+needle);
+  imAnchors++;
+ }
+}
+assert.equal(imAnchors,intentModuleReview.ownerCodeAnchorsChecked);
+for(const k of ["originalPrintCertificatesAwarded","languageCertificatesAwarded","readerInteractionCertificatesAwarded","newPublicRoutesAuthorized"])assert.equal(intentModuleReview[k],0);
+assert.equal(intentModuleReview.novenaOrLitanyAdmissionAuthorized,false);
+console.log("Prayer 21+5 source routing PASS: 26 row review, "+imAnchors+" source anchors, historical holds retained; 4 distinct programmes and 2 Office targets remain unverified.");
