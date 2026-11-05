@@ -169,9 +169,9 @@ for(const anchor of ["RG-B65-77C86C7B3EC4","RG-B66-ACD5E3A16E10","RG-5E751D3AAEF
  assert.ok(venue&&!venue.map_publishable,"Held duplicate/ambiguous venue must remain unpinned: "+anchor);
 }
 assert.equal(all.length,2582);
-assert.equal(all.filter(x=>x.map_publishable).length,2506);
+assert.equal(all.filter(x=>x.map_publishable).length,2510);
 const counts=tlmSiteEvidenceCounts(all);
-assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:700,SOURCE_PIN:1806,ADDRESS_ONLY:76});
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,76);
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,700);
-console.log("PASS TLM batch 10: 14 exact sites, 2506 pins, 76 bilingual unpinned, no inferred rites or media");
+assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:704,SOURCE_PIN:1806,ADDRESS_ONLY:72});
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,72);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,704);
+console.log("PASS TLM batch 10: 14 exact sites, 2510 pins, 72 bilingual unpinned, no inferred rites or media");
