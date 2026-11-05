@@ -8,6 +8,8 @@ on:
       - 'src/mass/reader-inline-proper-reference.js'
       - 'src/mass/reader-inline-all-saints-reference.js'
       - 'src/mass/reader-inline-st-andrew-reference.js'
+      - 'src/mass/reader-inline-major-feasts-reference.js'
+      - 'tests/reader-inline-major-feasts-phone.mjs'
       - 'tests/reader-inline-st-andrew-phone.mjs'
       - 'src/mass/reader-inline-proper-registry.js'
       - 'tests/reader-inline-proper-registry.mjs'
@@ -43,6 +45,8 @@ jobs:
           node --check src/mass/reader-inline-proper-reference.js
           node --check src/mass/reader-inline-all-saints-reference.js
           node --check src/mass/reader-inline-st-andrew-reference.js
+          node --check src/mass/reader-inline-major-feasts-reference.js
+          node --check tests/reader-inline-major-feasts-phone.mjs
           node --check tests/reader-inline-st-andrew-phone.mjs
           node --check src/mass/reader-inline-proper-registry.js
           node --check tests/reader-inline-proper-registry.mjs
@@ -66,6 +70,7 @@ jobs:
           node tests/reader-inline-proper-july07-phone.mjs
           node tests/reader-inline-all-saints-phone.mjs
           node tests/reader-inline-st-andrew-phone.mjs
+          node tests/reader-inline-major-feasts-phone.mjs
 
       - name: Retain 320 and 390 px source-notation screenshots
         if: always()
@@ -91,5 +96,14 @@ jobs:
         with:
           name: mass-1961-inline-st-andrew-screens
           path: .tmp/mass-inline-st-andrew/*.png
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Retain Gaudete and Epiphany notation screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-1961-inline-gaudete-epiphany
+          path: .tmp/mass-inline-major-feasts/*.png
           if-no-files-found: warn
           retention-days: 14
