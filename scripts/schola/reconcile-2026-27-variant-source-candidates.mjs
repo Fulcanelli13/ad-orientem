@@ -33,7 +33,9 @@ export function reconcile27SelectedVariants({manifest,prior,annual,inventory}={}
     manifest.boundaries?.previousMismatchDates!==27||
     manifest.boundaries?.newHistoricalTextCandidates!==23||
     manifest.boundaries?.unresolvedDateSelectionHolds!==4||
-    manifest.boundaries?.dateSpecificExternalSourceConflicts!==2||
+    manifest.boundaries?.dateSpecificExternalSourceConflicts!==3||
+    manifest.boundaries?.original1962PrintedTextOcrSourceAudited!==true||
+    manifest.boundaries?.original1962PrintedPageImageReviewed!==false||
     manifest.boundaries?.uniqueCompleteSelectedLatinVariantsExpected!==10||
     manifest.boundaries?.sourceAliasesApproved!==0||
     manifest.boundaries?.properScoresApproved!==0||
@@ -137,14 +139,25 @@ export function reconcile27SelectedVariants({manifest,prior,annual,inventory}={}
       norm(dates.get(entry.date).selectedGradualLatin).includes(norm(entry.comparisonExpectedOpening)))
     fail("DATED_PASCHAL_SELECTION_CONFLICT_NOT_REAL");
    externalConflicts++;
-  }else if(!["SAINT_PROPER_CUSTOM_PRE_GOSPEL_REQUIRES_DIRECT_1962_PRINT",
-             "NAMED_1962_SAINT_PROPER_SECONDARY_CORROBORATION_NO_HISTORICAL_BLOB_ALIAS"]
+  }else if(entry.disposition==="PRINTED_1962_PASCHAL_MIXED_GRADUAL_AND_ALLELUIAS_CONFLICT"){
+   const latin=norm(dates.get(entry.date).selectedGradualLatin);
+   if(entry.date!=="2026-04-14"||
+      entry.proposedSourceSection!=="Sancti/04-14:Graduale (seasonal Paschal extraction)"||
+      entry.printed1962Evidence?.printedPage!==506||
+      entry.printed1962Evidence?.ocrTextInspected!==true||
+      entry.printed1962Evidence?.pageImageInspected!==false||
+      !latin.includes("perdam sapientiam sapientium")||
+      !latin.includes("alleluia alleluia")||
+      !latin.includes("verumtamen existimo"))
+    fail("PASCHAL_ST_JUSTIN_MIXED_GRADUAL_NOT_REPRODUCED");
+   externalConflicts++;
+  }else if(!["NAMED_1962_SAINT_PROPER_SECONDARY_CORROBORATION_NO_HISTORICAL_BLOB_ALIAS"]
              .includes(entry.disposition))fail("UNRECOGNIZED_SOURCE_DISPOSITION");
   r.secondarySourceComparisonUrl=entry.supportingReferenceUrl;
   r.comparisonExpectedOpening=entry.comparisonExpectedOpening;
   r.comparisonSection=entry.proposedSourceSection;
  }
- if(used.size!==27||proposedTextMatches!==23||externalConflicts!==2)
+ if(used.size!==27||proposedTextMatches!==23||externalConflicts!==3)
   fail("EXACT_27_DATED_DISPOSITIONS_CHANGED");
  const textGroups=[...clusters.values()].map(g=>({
   ...g,dates:g.dates.sort(),sourcePaths:[...g.sourcePaths].sort(),
