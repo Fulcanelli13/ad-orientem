@@ -432,8 +432,20 @@ const nuptialPrepared={
 };
 const nuptialLive=buildReaderModeModels({prepared:nuptialPrepared,data,mode:"LIVE"});
 assert.equal(nuptialLive.sourceModel.totalCards,42);
-assert.equal(nuptialLive.presentationModel.totalCards,42,
-  "Uncertified special overlays must retain source-owned cards, not a historical 48-card split");
+assert.equal(nuptialLive.presentationModel.totalCards,68,
+  "Three independently sourced Nuptial prayers must join the 65 LIVE card family");
+assert.equal(nuptialLive.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
+assert.deepEqual(nuptialLive.presentationModel.cards.flatMap(c=>c.paragraphs.map(p=>p.id)),
+  nuptialLive.sourceModel.cards.flatMap(c=>c.paragraphs.map(p=>p.id)),
+  "65-family Nuptial LIVE duplicated or lost a source prayer paragraph");
+const nuptialIds=nuptialLive.presentationModel.cards.map(c=>c.sectionId);
+const paterIndex=nuptialLive.presentationModel.cards.findLastIndex(c=>
+  (c.sourceSectionId??c.sectionId)==="AO.CARD.019");
+const dismissIndex=nuptialLive.presentationModel.cards.findLastIndex(c=>
+  (c.sourceSectionId??c.sectionId)==="AO.CARD.028");
+assert.deepEqual(nuptialIds.slice(paterIndex+1,paterIndex+3),
+  ["AO.NUPTIAL.01","AO.NUPTIAL.02"]);
+assert.equal(nuptialIds[dismissIndex+1],"AO.NUPTIAL.03");
 const insertion=nuptialLive.presentationModel.cards.find(card=>card.sectionId==="AO.NUPTIAL.02");
 assert.ok(insertion);
 const insertionAnchor=captureReaderModeAnchor(insertion);
