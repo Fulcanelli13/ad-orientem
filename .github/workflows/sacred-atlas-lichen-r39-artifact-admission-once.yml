@@ -1,10 +1,12 @@
 name: Sacred Atlas Licheń R39 — admit one previously verified photo (one shot)
-# One-time, PR-open-only transport from prior GitHub Actions artifact.
+# Restricted workflow-path-bound PR open/change transport from existing GitHub artifact.
+# A first run caught obsolete R29 test; this update is one correction rerun only.
+# Asset/registry-only bot commit does not retrigger because the file path filter is fixed.
 # No network photography download; only owned GitHub artifact.
 # TEMPORARY: MUST remove this workflow from the PR before main merge.
 on:
   pull_request:
-    types: [opened]
+    types: [opened, synchronize]
     branches: [main]
     paths:
       - '.github/workflows/sacred-atlas-lichen-r39-artifact-admission-once.yml'
