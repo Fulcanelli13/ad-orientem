@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
+import {LIVE,RELEASES} from "./helpers/sacred-places-live-baseline.mjs";
 const read=path=>JSON.parse(readFileSync(path,"utf8"));
 const m=read("data/geography/research/sacred-atlas-round26-existing21-cover-triage-20261104.v1.json");
 const prior=read("data/geography/research/sacred-atlas-round25-23place-64-original-review-20261104.json");
@@ -7,13 +8,23 @@ const geo=read("data/geography/seed-registry.v1.json");
 const covers=read("data/geography/approved-place-media.v1.json");
 const gallery=read("data/geography/approved-place-gallery.v1.json");
 const prev151=read("data/geography/research/sacred-atlas-existing-first-151-photo-reconciliation-20261104.v1.json");
+const frozen=read("data/geography/research/sacred-atlas-editorial-master-530-20261104.v1.json");
+const v10=RELEASES.find(r=>r.id==="V10-B20");
+assert.ok(v10&&v10.data.new_places===3);
+const frozenIds=new Set(frozen.places.map(x=>x.place_id));
+assert.equal(frozenIds.size,530);
 assert.equal(m.schema,"AO_SACRED_ATLAS_21_PLACE_61_EXACT_ORIGINAL_COVER_TRIAGE_V1");
 assert.equal(m.publication,"RESEARCH_ONLY_SECOND_EDITOR_PENDING");
 assert.equal(m.production_baseline.places,530);
 assert.equal(m.production_baseline.approved_covers,379);
 assert.equal(m.production_baseline.approved_gallery,42);
 assert.equal(m.production_baseline.without_approved_covers,151);
-assert.equal(geo.places.length,530);
+assert.equal(geo.places.length,LIVE.places);
+assert.ok(frozen.places.every(x=>geo.places.some(p=>p.place_id===x.place_id)),
+ "The original 530-photo-review cohort must not lose an existing physical Place");
+assert.deepEqual(geo.places.filter(x=>!frozenIds.has(x.place_id)).map(x=>x.place_id).sort(),
+ v10.data.published_new.map(x=>x.place_id).sort(),
+ "Only the three separately admitted V10 shrine Places may extend this frozen research cohort");
 assert.equal(covers.items.length,379);
 assert.equal(gallery.items.length,42);
 assert.equal(m.rows.length,23);
