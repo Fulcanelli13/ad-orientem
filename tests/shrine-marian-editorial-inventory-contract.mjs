@@ -111,8 +111,28 @@ for(const entry of ledger.shrines){
     approvedPhoto.license_url==="https://creativecommons.org/publicdomain/mark/1.0/"&&
     approvedPhoto.rights_verified&&approvedPhoto.subject_verified&&approvedPhoto.crop_reviewed
   );
+  const directFiveManifest=json("data/geography/research/sacred-atlas-direct-open-photo-five-20261105.v1.json");
+  const directFiveProof=json("data/geography/research/sacred-atlas-direct-open-photo-five-release-report-20261105.v1.json");
+  const directSource=directFiveManifest.items.find(x=>x.place_id===entry.place_id);
+  const directProof=directFiveProof.accepted.find(x=>x.place_id===entry.place_id);
+  const directlySourcedOpenPhoto=Boolean(
+    approvedPhoto?.source_place_ref==="DIRECT_OPEN_PHOTO_FIVE_20261105"&&
+    directSource&&directProof&&directFiveProof.admitted_on_branch===5&&
+    directSource.source_page===approvedPhoto.source_url&&
+    directSource.credit===approvedPhoto.credit&&
+    (directSource.license==="CC0"?"CC0-1.0":directSource.license)===approvedPhoto.license&&
+    directSource.license_url===approvedPhoto.license_url&&
+    directSource.subject_en===approvedPhoto.alt_en&&
+    directSource.subject_fr===approvedPhoto.alt_fr&&
+    directProof.asset===approvedPhoto.asset_path&&
+    directProof.original_sha1===approvedPhoto.source_sha1&&
+    directProof.derivative_sha256===approvedPhoto.derivative_sha256&&
+    /^[a-f0-9]{64}$/.test(directProof.rights_proof_sha256)&&
+    approvedPhoto.rights_verified&&approvedPhoto.subject_verified&&approvedPhoto.crop_reviewed&&
+    approvedPhoto.review_method.includes("PR visual review required before merge")
+  );
   assert.ok(approvedPhoto?.review_method?.includes("Photo Finder editorial selection")||
-    originalGalleryPhoto||independentlyPinnedNotreDame||independentlyVerifiedPDSelf,
+    originalGalleryPhoto||independentlyPinnedNotreDame||independentlyVerifiedPDSelf||directlySourcedOpenPhoto,
     entry.shrine_id+" newly approved hero requires source-matched editorial or approved-gallery evidence");
  }
 }
