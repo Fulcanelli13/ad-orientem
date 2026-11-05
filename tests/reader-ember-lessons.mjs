@@ -155,6 +155,20 @@ const emberData={sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap};
 const emberMode=buildReaderModeModels({prepared:emberPrepared,data:emberData,mode:"LIVE"});
 assert.equal(emberMode.sourceModel.totalCards,44);
 assert.equal(emberMode.presentationModel.totalCards,70);
+for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+  const variant=buildReaderModeModels({
+    prepared:{...emberPrepared,session:{...emberPrepared.session,
+      resolvedMass:{...emberPrepared.session.resolvedMass,form}}},
+    data:emberData,mode:"LIVE"});
+  assert.equal(variant.sourceModel.totalCards,44,form+" Ember source");
+  assert.equal(variant.presentationModel.totalCards,70,form+" Ember LIVE");
+  assert.deepEqual(variant.presentationModel.cards.filter(c=>c.emberInsertion).map(c=>c.sourceSectionKey),
+    order,form+" Ember lesson source order");
+  assert.deepEqual(variant.presentationModel.cards.flatMap(c=>c.paragraphs.map(p=>p.id)),
+    variant.sourceModel.cards.flatMap(c=>c.paragraphs.map(p=>p.id)),
+    form+" Ember paragraph parity");
+  if(form==="LOW")assert.equal(variant.presentationModel.sourceOnlyCueRegister,null);
+}
 const emberMissal=buildReaderModeModels({prepared:emberPrepared,data:emberData,mode:"MISSAL"});
 const emberAnchor=captureReaderModeAnchor(emberMode.presentationModel.cards.find(c=>c.sectionId==="AO.EMBER.02"));
 assert.equal(findReaderModeAnchorCard(emberMissal.presentationModel,emberAnchor)?.sectionId,
