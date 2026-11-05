@@ -167,7 +167,7 @@ try{
       });
       assert.equal(massCard.title,"Gloria · Praise and Supplication");
       assert.ok(massCard.textCount>0,option.label+" no Mass prayer paragraphs");
-      assert.equal(massCard.source,39);
+      assert.equal(massCard.source,30);
       assert.notEqual(massCard.state.specialRite,"ASPERGES");
     }
   }else{
