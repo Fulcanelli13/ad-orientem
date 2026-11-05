@@ -1,0 +1,51 @@
+name: Sacred artwork original-pixel QA (research only)
+on:
+  push:
+    branches:
+      - research/artwork-original-pixels-20261104
+    paths:
+      - tools/artwork/masterpiece_pixel_preflight.py
+      - tests/test_masterpiece_pixel_preflight.py
+      - data/artwork/research/masterpiece-19-original-pixel-preflight.v1.json
+      - .github/workflows/masterpiece-original-pixel-qa.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  original-pixels:
+    if: github.repository == 'Fulcanelli13/ad-orientem'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned image decoder
+        run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - name: Test safeguards without network
+        run: python -m unittest discover -s tests -p test_masterpiece_pixel_preflight.py -v
+      - name: Fetch exact originals and generate private research proofs only
+        run: |
+          python tools/artwork/masterpiece_pixel_preflight.py \
+            --manifest data/artwork/research/masterpiece-19-original-pixel-preflight.v1.json \
+            --output artifacts/artwork-masterpiece-photo-qa --limit 19 --direct-recovery --held-only
+      - name: Assert no publication
+        run: |
+          python - <<'PY'
+          import json
+          r=json.load(open('artifacts/artwork-masterpiece-photo-qa/report.json'))
+          assert r['publication'] is False and r['rights_cleared_by_qa'] is False
+          assert all(not x['publication'] and not x.get('publication_approved', False) for x in r['items'])
+          print('Originals decoded:', sum(bool(x.get('pixels_examined_by_software')) for x in r['items']))
+          print('Held:', sum(x['status']=='HELD' for x in r['items']))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: sacred-masterpieces-15-direct-exact-originals
+          path: artifacts/artwork-masterpiece-photo-qa/
+          if-no-files-found: warn
+          retention-days: 3

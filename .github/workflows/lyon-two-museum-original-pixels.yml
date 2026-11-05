@@ -1,0 +1,40 @@
+name: Lyon two museum image originals - pixel inspection only
+on:
+  push:
+    branches: [research/artwork-original-pixels-20261104]
+    paths:
+      - tools/artwork/lyon_stage_two_museum_originals.py
+      - tests/test_lyon_stage_two_museum_originals.py
+      - .github/workflows/lyon-two-museum-original-pixels.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  museum-source-pixels:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check Pillow==11.3.0
+      - run: python -m unittest discover -s tests -p test_lyon_stage_two_museum_originals.py -v
+      - run: python tools/artwork/lyon_stage_two_museum_originals.py --output artifacts/lyon-two-museum-original-pixels
+      - name: Verify nonpublication
+        run: |
+          python - <<'PY'
+          import json
+          r=json.load(open('artifacts/lyon-two-museum-original-pixels/report.json'))
+          assert r['publication'] is False and r['app_license_final'] is False
+          assert all(not x['publication'] for x in r['items'])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lyon-two-originals-pixel-preflight
+          path: artifacts/lyon-two-museum-original-pixels/
+          if-no-files-found: warn
+          retention-days: 7

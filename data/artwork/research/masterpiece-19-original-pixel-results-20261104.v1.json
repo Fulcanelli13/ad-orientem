@@ -1,0 +1,150 @@
+{
+  "schema": "AO_MASTERPIECE_19_ACTUAL_PIXEL_RESEARCH_RESULTS_V1",
+  "as_of": "2026-11-04",
+  "run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/41806023848",
+  "artifact": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/41806023848/artifacts/13309337769",
+  "counts": {
+    "attempted": 19,
+    "pixel_decoded": 4,
+    "held": 15,
+    "rate_limited": 13,
+    "source_not_found": 1,
+    "oversized": 1,
+    "published": 0,
+    "cropped": 0
+  },
+  "decoded_records": [
+    {
+      "id": 174,
+      "title": "Madonna with Canon van der Paele",
+      "status": "PIXELS_EXTRACTED",
+      "width": 8089,
+      "height": 6279,
+      "bytes": 19927332,
+      "sha256": "465ecfb7b90b21e87ccd276359d90536954d2198c636ace98a0838db3d4069e6",
+      "commons_license_reported": "Public domain",
+      "visual_observation": "No calibration chart visible; full composition. Prefer as technical candidate over approved 1009x766 photo, pending source/colour comparison.",
+      "photo_decision": "PROVISIONAL_PREFERRED"
+    },
+    {
+      "id": 192,
+      "title": "Ecce Homo",
+      "status": "PIXELS_EXTRACTED",
+      "width": 3420,
+      "height": 5494,
+      "bytes": 2118686,
+      "sha256": "0916cbee8b9cdae72a0e4139d98d678d07ab43462a5ec5cce309af173a93e3d5",
+      "commons_license_reported": "CC0",
+      "visual_observation": "Framed whole painting without visible colour strip; preserve frame by default; check compression at output size.",
+      "photo_decision": "PRIORITY_FOR_MANUAL_PUBLICATION_PREFLIGHT"
+    },
+    {
+      "id": 372,
+      "title": "The Ascension of Christ",
+      "status": "PIXELS_EXTRACTED",
+      "width": 698,
+      "height": 930,
+      "bytes": 184798,
+      "sha256": "6656f452ce00edc8cdc601419a5eadee404582b54ae6342c3b478e2aadd18632",
+      "commons_license_reported": "Public domain",
+      "visual_observation": "Source is too small for a premium gallery master; retain approval, seek larger photograph.",
+      "photo_decision": "BETTER_IMAGE_REQUIRED"
+    },
+    {
+      "id": 373,
+      "title": "The Flight into Egypt",
+      "status": "PIXELS_EXTRACTED",
+      "width": 1492,
+      "height": 1088,
+      "bytes": 284850,
+      "sha256": "7562ee96014e1a5f186524bb48589ef013c083ddca88b57aee55938259188e94",
+      "commons_license_reported": "Public domain",
+      "visual_observation": "Not enough resolution for large hero. Small pale mark at upper-right requires source comparison before any retouch.",
+      "photo_decision": "BETTER_IMAGE_REQUIRED"
+    }
+  ],
+  "held_records": [
+    {
+      "id": 248,
+      "status": "HELD",
+      "reason": "HTTP_429"
+    },
+    {
+      "id": 264,
+      "status": "HELD",
+      "reason": "SOURCE_FILE_NOT_FOUND"
+    },
+    {
+      "id": 266,
+      "status": "HELD",
+      "reason": "ORIGINAL_TIFF_OVERSIZED"
+    },
+    {
+      "id": 268,
+      "status": "HELD",
+      "reason": "HTTP_429"
+    },
+    {
+      "id": 331,
+      "status": "HELD",
+      "reason": "HTTP_429"
+    },
+    {
+      "id": 345,
+      "status": "HELD",
+      "reason": "HTTP_429"
+    },
+    {
+      "id": 376,
+      "status": "HELD",
+      "reason": "HTTP_429"
+    },
+    {
+      "id": 377,
+      "status": "HELD",
+      "reason": "HTTP_429"
+    },
+    {
+      "id": 379,
+      "status": "HELD",
+      "reason": "HTTP_429"
+    },
+    {
+      "id": 384,
+      "status": "HELD",
+      "reason": "HTTP_429"
+    },
+    {
+      "id": 386,
+      "status": "HELD",
+      "reason": "HTTP_429"
+    },
+    {
+      "id": 521,
+      "status": "HELD",
+      "reason": "HTTP_429"
+    },
+    {
+      "id": 525,
+      "status": "HELD",
+      "reason": "HTTP_429"
+    },
+    {
+      "id": 528,
+      "status": "HELD",
+      "reason": "HTTP_429"
+    },
+    {
+      "id": 535,
+      "status": "HELD",
+      "reason": "HTTP_429"
+    }
+  ],
+  "policy": [
+    "ACTUAL_SOURCE_BYTES_RETRIEVED_BUT_NOT_SAVED_TO_APP",
+    "PREVIEW_AND_100_PERCENT_CORNER_TILES_IN_ACTION_ARTIFACT",
+    "NO_FINAL_BEST_QUALITY_CERTIFICATION_WITHOUT_ALTERNATE_COMPARISON",
+    "NO_PUBLICATION_OR_AUTO_CROP",
+    "PRESERVE_ALL_575_ORIGINAL_EDITORIAL_APPROVALS_AND_EXISTING_PRAYER_CALENDAR_LOCKS"
+  ]
+}
