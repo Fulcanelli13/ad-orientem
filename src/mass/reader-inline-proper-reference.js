@@ -4,6 +4,7 @@
 // No published-score approval, Gregorian recording, source alias or new reader card.
 // The same renderer can support independently selected chants on other dates.
 import {createOfflineChantEngraver} from "./reader-chant-engraver.js";
+import {ALL_SAINTS_REFERENCE_SCORES} from "./reader-inline-all-saints-reference.js";
 
 export const JULY07_REFERENCE_NOTATION_SCHEMA="ao-reader-july07-reference-notation-v1";
 // The original printed Introit GABC includes a distinct conditional "T. P."
@@ -37,8 +38,16 @@ const PREFIX={
  ALLELUIA:["iuravit dominus","tu es sacerdos in aeternum"]
 };
 const mapping=new Map([["INTROIT.1","INTROIT"],["GRADUAL.1","GRADUAL"],
- ["ALLELUIA_TRACT_SEQUENCE.1","ALLELUIA"]]);
+ ["ALLELUIA_TRACT_SEQUENCE.1","ALLELUIA"],["OFFERTORY.1","OFFERTORY"],
+ ["COMMUNION.1","COMMUNION"]]);
 const byKey=new Map(JULY07_REFERENCE_GABC.map(x=>[x.key,x]));
+const allSaintsByKey=new Map(ALL_SAINTS_REFERENCE_SCORES.map(x=>[x.key,x]));
+const allSaintsPrefix=Object.freeze({
+ INTROIT:["gaudeamus omnes in domino diem festum celebrantes"],
+ GRADUAL:["timete dominum omnes sancti eius"],
+ OFFERTORY:["iustorum animae in manu dei sunt"],
+ COMMUNION:["beati mundo corde quoniam ipsi deum videbunt"]
+});
 export const JULY07_REFERENCE_CSS=String.raw`
 .ao-proper-reference-notation{display:block;width:100%;min-width:0;margin:11px 0 8px;padding:9px 0 5px;border-top:1px solid rgba(218,196,156,.22);font-style:normal;max-width:100%;overflow:hidden}
 .ao-proper-reference-label{display:block;font:600 10px/1.5 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.035em;color:var(--ao-muted,#b1aa9c);margin-bottom:6px}
@@ -66,18 +75,30 @@ export const JULY07_REFERENCE_CSS=String.raw`
 // for that case put the two existing scores together in source order.
 export function referenceScoresForParagraph({paragraph,resolvedMass,form}={}){
  if(!sung.has(String(form??"").toUpperCase())||
-    resolvedMass?.date!=="2026-07-07"||
-    (resolvedMass.proper?.data??resolvedMass.proper)?.sourcePath!=="Sancti/07-07"||
-    resolvedMass.overlays?.includes("REQUIEM")||
+    resolvedMass?.overlays?.includes("REQUIEM")||
     !paragraph||paragraph.kind==="RUBRIC")return Object.freeze([]);
+ const date=String(resolvedMass?.date??"");
+ const source=(resolvedMass?.proper?.data??resolvedMass?.proper)?.sourcePath;
+ const july=date==="2026-07-07"&&source==="Sancti/07-07";
+ const saints=date==="2026-11-01"&&source==="Sancti/11-01";
+ if(!july&&!saints)return Object.freeze([]);
  const role=mapping.get(String(paragraph.id??""));
  if(!role)return Object.freeze([]);
  const latin=[paragraph.primary,paragraph.secondary,paragraph.alternate]
   .filter(x=>typeof x==="string"&&x.length).map(n);
- const match=(part)=>PREFIX[part].some(fragment=>latin.some(s=>s.includes(fragment)));
- if(!match(role))return Object.freeze([]);
+ const matches=key=>((july?PREFIX:allSaintsPrefix)[key]??[])
+  .some(fragment=>latin.some(s=>s.includes(fragment)));
+ if(!matches(role))return Object.freeze([]);
+ if(saints){
+  // Four page-identified existing scores; the All Saints Venite ad me
+  // Alleluia has no authenticated pp.648-649 GABC identity in our archive.
+  // Never silently use the unrelated p.[114] variant.
+  const score=allSaintsByKey.get(role);
+  return Object.freeze(score?[score]:[]);
+ }
  const selections=[byKey.get(role)];
- if(role==="GRADUAL"&&match("ALLELUIA"))selections.push(byKey.get("ALLELUIA"));
+ if(role==="GRADUAL"&&matches("ALLELUIA"))
+  selections.push(byKey.get("ALLELUIA"));
  return Object.freeze(selections);
 }
 
