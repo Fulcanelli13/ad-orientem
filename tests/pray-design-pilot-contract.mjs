@@ -25,12 +25,12 @@ const families={
 };
 const aliases=prayerPilotAliases(L);
 assert.deepEqual(Object.keys(aliases).sort(),["intentions","marian","novenas","ourlord","saints"]);
-const bridged=resolvedPrayerPilotFamilies(L,{
+const searchFamilies={
  ...families,
  penance:{items:[["own","pray.confession","Confession","Prepare"],["own","pray.penitential_psalms","Seven Penitential Psalms","Source prayer"]]},
  passion:{items:[["own","pray.stations","Stations","Fourteen"],["own","pray.tenebrae","Office of Tenebrae","Triduum"]]},
- devotions:{items:[["external","pray.novenas","Novenas","Source"],["external","pray.holy_name_litany","Holy Name","Litany"],["external","pray.sacred_hymns","Sacred Hymns","Original hymn owner"]]}
-});
+ devotions:{items:[["external","pray.novenas","Novenas","Source"],["external","pray.holy_name_litany","Holy Name","Litany"],["external","pray.sacred_hymns","Sacred Hymns","Original hymn owner"]]}};
+const bridged=resolvedPrayerPilotFamilies(L,searchFamilies);
 const primaryEntries=Object.entries(PRAYER_DOOR_ORDER_V1).flatMap(([door,ids])=>ids.map(id=>({door,id})));
 assert.equal(Object.keys(PRAYER_DOOR_ORDER_V1).length,9,"Keep exactly nine approved doors");
 assert.equal(new Set(primaryEntries.map(x=>x.id)).size,primaryEntries.length,
@@ -85,7 +85,7 @@ assert.ok(!bridged.novenas.items.some(x=>x[1]==="pray.holy_name_litany"),"Novena
 assert.equal(bridged.library.direct,"pray.library","Essential Prayers must continue using the canonical Prayer Library");
 const actual=renderPilotDiscovery({
  head:title=>"<header>"+title+"</header>",L,esc,DATA:{prayers:{foundations_hail_mary:{title:"Hail Mary",titleFr:"Je vous salue Marie"}}},
- families,assetIcon:(_name,cls)=>"<span class='"+cls+"'></span>",novenaCorpus:NOVENA_CORPUS_V4
+ families:searchFamilies,assetIcon:(_name,cls)=>"<span class='"+cls+"'></span>",novenaCorpus:NOVENA_CORPUS_V4
 });
 const indexedNovenas=collectPrayerNovenaSearchEntries(NOVENA_CORPUS_V4);
 assert.equal(indexedNovenas.length,16,"Search must resolve all sixteen original bilingual novenas");
@@ -114,7 +114,7 @@ assert.ok(actual.includes(esc(NOVENA_CORPUS_V4.christmas.title.fr)),
  "French titles must remain searchable even in English UI");
 const frenchDiscovery=renderPilotDiscovery({
  head:title=>"<header>"+title+"</header>",L:(_en,fr)=>fr,esc,
- DATA:{prayers:{}},families,assetIcon:(_name,cls)=>"<span class='"+cls+"'></span>",novenaCorpus:NOVENA_CORPUS_V4
+ DATA:{prayers:{}},families:searchFamilies,assetIcon:(_name,cls)=>"<span class='"+cls+"'></span>",novenaCorpus:NOVENA_CORPUS_V4
 });
 assert.ok(frenchDiscovery.includes("<b>"+esc(NOVENA_CORPUS_V4.christmas.title.fr)+"</b>"),
  "French Pray search must display the attested canonical French novena title");
