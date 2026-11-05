@@ -65,9 +65,9 @@ assert.throws(tamper(x=>x.manifest.pinnedHistoricalTextCandidates[0].sourceGitBl
  /SCHOLA_27_VARIANTS_HISTORICAL_SOURCE_PROPOSAL_UNVERIFIED/);
 assert.throws(tamper(x=>x.manifest.pinnedHistoricalTextCandidates[0].sourceAliasAuthorized=true),
  /SCHOLA_27_VARIANTS_HISTORICAL_SOURCE_PROPOSAL_UNVERIFIED/);
-assert.throws(tamper(x=>x.annual.rows.find(r=>r.date==="2026-04-24").selectedGradualLatin="Different thing entirely"),
+assert.throws(tamper(x=>x.annual.rows.find(r=>r.date==="2026-04-24").selectedGradualLatin="Entirely unrelated different selected Mass chant that has no Gregorian correspondence anywhere"),
  /SCHOLA_27_VARIANTS_PROPOSED_HISTORICAL_OPENING_NOT_IN_SELECTED_2026_LATIN/);
-assert.throws(tamper(x=>x.annual.rows.find(r=>r.date==="2026-04-13").selectedGradualLatin="Confitebuntur caeli mirabilia tua Domine"),
+assert.throws(tamper(x=>x.annual.rows.find(r=>r.date==="2026-04-13").selectedGradualLatin += "\\nConfitebuntur caeli mirabilia tua Domine"),
  /SCHOLA_27_VARIANTS_DATED_PASCHAL_SELECTION_CONFLICT_NOT_REAL/);
 assert.throws(tamper(x=>x.manifest.boundaries.properScoresApproved=1),
  /SCHOLA_27_VARIANTS_MANIFEST_INVALID/);
