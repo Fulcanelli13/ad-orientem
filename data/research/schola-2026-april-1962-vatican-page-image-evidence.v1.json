@@ -1,0 +1,111 @@
+{
+  "schema": "ao-mr62-april-paschal-1962-vatican-page-images-v1",
+  "reviewedOn": "2026-11-05",
+  "status": "ORIGINAL_VATICAN_1962_PRINTED_PAGE_IMAGES_VISUALLY_INSPECTED_RESEARCH_ONLY",
+  "originalSource": {
+    "edition": "Missale Romanum 1962 — Vatican printed edition",
+    "catalog": "https://gregobase.selapa.net/source.php?id=42&images=1&index=23",
+    "scanAttribution": "Church Music Association of America (GregoBase attribution)",
+    "distinctFromBenziger1962": true,
+    "editionSpecificPagination": true,
+    "pages": [
+      {
+        "printedPage": 504,
+        "imageUrl": "https://gregobase.selapa.net/sources/42/586.png"
+      },
+      {
+        "printedPage": 505,
+        "imageUrl": "https://gregobase.selapa.net/sources/42/587.png"
+      },
+      {
+        "printedPage": 506,
+        "imageUrl": "https://gregobase.selapa.net/sources/42/588.png"
+      },
+      {
+        "printedPage": 514,
+        "imageUrl": "https://gregobase.selapa.net/sources/42/596.png"
+      },
+      {
+        "printedPage": 515,
+        "imageUrl": "https://gregobase.selapa.net/sources/42/597.png"
+      }
+    ]
+  },
+  "cases": [
+    {
+      "date": "2026-04-13",
+      "saint": "S. Hermenegildi Martyris",
+      "sourcePath": "Sancti/04-13",
+      "selected2026PrincipalAuthority": "AO_RUNTIME_V8.resolver.resolveDay",
+      "vaticanPrintedPages": [
+        504,
+        505
+      ],
+      "principalLiturgicalTextPage": 504,
+      "priorBenzigerOCRPrintedPage": 505,
+      "rubric": "Tempore paschali",
+      "appointedRole": "TWO_PASCHAL_ALLELUIAS_NO_ORDINARY_GRADUAL",
+      "selectedAlleluiaLatinOpenings": [
+        "Confitebuntur caeli mirabilia tua",
+        "Posuisti Domine super caput eius coronam"
+      ],
+      "pageImageDirectlyInspected": true,
+      "observation": "Page 504 right column: Tempo­re paschali, two Alleluia verses after the Epistle. No appointed Inveni David."
+    },
+    {
+      "date": "2026-04-14",
+      "saint": "S. Iustini Martyris",
+      "sourcePath": "Sancti/04-14",
+      "selected2026PrincipalAuthority": "AO_RUNTIME_V8.resolver.resolveDay",
+      "vaticanPrintedPages": [
+        505,
+        506
+      ],
+      "principalLiturgicalTextPage": 506,
+      "priorBenzigerOCRPrintedPage": 506,
+      "rubric": "Tempore paschali",
+      "appointedRole": "TWO_PASCHAL_ALLELUIAS_NO_ORDINARY_GRADUAL",
+      "selectedAlleluiaLatinOpenings": [
+        "Sapientia huius mundi stultitia est apud Deum",
+        "Verumtamen existimo omnia detrimentum esse"
+      ],
+      "pageImageDirectlyInspected": true,
+      "observation": "Page 506 left column: two Alleluias explicitly under Tempore paschali; the Graduale and Tractus are headed Extra tempus paschale."
+    },
+    {
+      "date": "2026-04-29",
+      "saint": "S. Petri Martyris",
+      "sourcePath": "Sancti/04-29",
+      "selected2026PrincipalAuthority": "AO_RUNTIME_V8.resolver.resolveDay",
+      "vaticanPrintedPages": [
+        514,
+        515
+      ],
+      "principalLiturgicalTextPage": 514,
+      "priorBenzigerOCRPrintedPage": 516,
+      "rubric": "Tempore paschali",
+      "appointedRole": "TWO_PASCHAL_ALLELUIAS_NO_ORDINARY_GRADUAL",
+      "selectedAlleluiaLatinOpenings": [
+        "Confitebuntur caeli mirabilia tua",
+        "Posuisti Domine super caput eius coronam"
+      ],
+      "pageImageDirectlyInspected": true,
+      "observation": "Page 514 right column: two Alleluias after Epistle; Mass continues on page 515. No appointed Inveni David."
+    }
+  ],
+  "boundary": {
+    "reviewedVaticanPrintedPageImages": true,
+    "reviewedBenzigerPrintedPageImages": false,
+    "reviewed1961GradualePrintedPitchNeumeRhythmUnderlay": false,
+    "physicalPrintedMissalInspected": false,
+    "sourceOnlyNotMusicalCertification": true,
+    "originalSourceIdentityIsNotDigitalSourceAlias": true,
+    "datesWithPageProof": 3,
+    "dateSpecificRuntimeSourceCorrectionAlreadyTested": true,
+    "publicProperScoreApproved": 0,
+    "automaticSourceAliasesApproved": 0,
+    "readerChanges": false,
+    "publishedAssetChanges": false
+  },
+  "note": "Do not transpose Vatican page numbers onto Benziger. This provides an independent direct page-image 1962 text/rubric witness, not the previously cited Benziger page scans or a 1961 musical source."
+}
