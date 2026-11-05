@@ -2,15 +2,39 @@ import assert from "node:assert/strict";
 import {JULY07_REFERENCE_GABC,referenceScoresForParagraph,PROPER_REFERENCE_REGISTRY_STATUS} from
  "../src/mass/reader-inline-proper-reference.js";
 import {ALL_SAINTS_REFERENCE_SCORES} from "../src/mass/reader-inline-all-saints-reference.js";
+import {ST_ANDREW_REFERENCE_SCORES} from "../src/mass/reader-inline-st-andrew-reference.js";
 import {PROPER_REFERENCE_BINDINGS,PROPER_REFERENCE_LABELS,PROPER_REFERENCE_REGISTRY_SCHEMA,
  createProperReferenceRegistry} from "../src/mass/reader-inline-proper-registry.js";
 
 assert.equal(PROPER_REFERENCE_REGISTRY_STATUS.schema,PROPER_REFERENCE_REGISTRY_SCHEMA);
-assert.equal(PROPER_REFERENCE_REGISTRY_STATUS.scoreCount,8);
-assert.equal(PROPER_REFERENCE_REGISTRY_STATUS.bindingCount,9);
-assert.equal(PROPER_REFERENCE_BINDINGS.length,9);
+assert.equal(PROPER_REFERENCE_REGISTRY_STATUS.scoreCount,13);
+assert.equal(PROPER_REFERENCE_REGISTRY_STATUS.bindingCount,14);
+assert.equal(PROPER_REFERENCE_BINDINGS.length,14);
 assert.equal(PROPER_REFERENCE_LABELS.OFFERTORY,"Offertory");
 assert.equal(PROPER_REFERENCE_LABELS.COMMUNION,"Communion");
+const andrew={date:"2026-11-30",proper:{data:{sourcePath:"Sancti/11-30"}},overlays:[]};
+const andrewTexts=[
+ {id:"INTROIT.1",primary:"Mihi autem nimis honoráti sunt amíci tui, Deus: nimis confortátus est principátus eórum."},
+ {id:"GRADUAL.1",primary:"Constítues eos príncipes super omnem terram: mémores erunt nóminis tui, Dómine."},
+ {id:"ALLELUIA_TRACT_SEQUENCE.1",primary:"Diléxit Andréam Dóminus in odórem suavitátis."},
+ {id:"OFFERTORY.1",primary:"Mihi autem nimis honoráti sunt amíci tui, Deus: nimis confortátus est principátus eórum."},
+ {id:"COMMUNION.1",primary:"Veníte post me: fáciam vos fíeri piscatóres hóminum; at illi contínuo, relíctis rétibus, secúti sunt Dóminum."}
+];
+const andrewSelected=(row,m=andrew,form="MISSA_CANTATA_SIMPLE")=>
+ referenceScoresForParagraph({paragraph:row,resolvedMass:m,form}).map(s=>s.id);
+assert.deepEqual(andrewTexts.map(row=>andrewSelected(row)),[
+ ["GREGOBASE-475"],["GREGOBASE-307"],["GREGOBASE-984"],
+ ["GREGOBASE-499"],["GREGOBASE-552"]
+]);
+assert.deepEqual(andrewTexts.map(row=>andrewSelected(row,{...andrew,date:"2027-11-30"})),
+ andrewTexts.map(row=>andrewSelected(row)));
+assert.notEqual(andrewSelected(andrewTexts[0])[0],andrewSelected(andrewTexts[3])[0],
+ "Shared Introit/Offertory incipit must not erase different original scores");
+assert.equal(andrewSelected(andrewTexts[0],{...andrew,date:"2026-11-29"}).length,0);
+assert.equal(andrewSelected(andrewTexts[0],{...andrew,proper:{data:{sourcePath:"Tempora/Adv1-0"}}}).length,0);
+assert.equal(andrewSelected(andrewTexts[0],andrew,"LOW").length,0);
+assert.equal(andrewSelected(andrewTexts[0],{...andrew,overlays:["REQUIEM"]}).length,0);
+
 
 const july={date:"2026-07-07",proper:{data:{sourcePath:"Sancti/07-07"}},overlays:[]};
 const saints={date:"2026-11-01",proper:{data:{sourcePath:"Sancti/11-01"}},overlays:[]};
@@ -43,7 +67,7 @@ assert.deepEqual(julyText.map(p=>selected(p,{...july,date:"2027-07-07"})),
  julyText.map(p=>selected(p,july)));
 // A Common or other independently verified Proper can reference the SAME
 // archived GABC from any appointed date, with no additional engraving code.
-const reusable=[...JULY07_REFERENCE_GABC,...ALL_SAINTS_REFERENCE_SCORES];
+const reusable=[...JULY07_REFERENCE_GABC,...ALL_SAINTS_REFERENCE_SCORES,...ST_ANDREW_REFERENCE_SCORES];
 const commonBinding={...PROPER_REFERENCE_BINDINGS.find(x=>x.scoreId==="GREGOBASE-345"),
  sourcePath:"Commune/VerifiedCommon",monthDay:null};
 const common=createProperReferenceRegistry({scores:reusable,
@@ -78,4 +102,4 @@ assert.throws(()=>createProperReferenceRegistry({scores:reusable,
  bindings:[{...commonBinding,scoreId:"GREGOBASE-XYZ"}]}),
  /INVALID_REFERENCE_SOURCE_BINDING/);
 console.log("PROPER_SOURCE_REFERENCE_REGISTRY_PASS "+
- JSON.stringify({catalog:8,bindings:9,allSaints:5,july:3,commonReuse:true}));
+ JSON.stringify({catalog:13,bindings:14,allSaints:5,july:3,commonReuse:true}));
