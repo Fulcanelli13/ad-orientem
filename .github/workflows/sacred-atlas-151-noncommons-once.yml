@@ -1,0 +1,86 @@
+name: Sacred Atlas — one-time 151-place non-Wikimedia photo discovery
+# This is research-only source metadata from openly-licensed libraries.
+# One PR-open pass. Never triggered by synchronization, push, a timer, or dispatch.
+# No paid APIs, no image copies, no public asset writes.
+on:
+  pull_request:
+    types: [opened]
+    branches: [main]
+    paths:
+      - '.github/workflows/sacred-atlas-151-noncommons-once.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  discover-unillustrated-places:
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'research/sacred-atlas-151-noncommons-photo-coverage-20261105' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 28
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test full 151-Place scope, free licences, and strict Wikimedia exclusion
+        run: |
+          python -m py_compile tools/atlas/discover-sacred-atlas-151-noncommons-openverse.py
+          python tests/sacred-atlas-151-noncommons-discovery-test.py
+      - name: Once-only, paced discovery; stop on provider errors rather than retry
+        id: sweep
+        continue-on-error: true
+        run: |
+          python tools/atlas/discover-sacred-atlas-151-noncommons-openverse.py \
+            --scope data/geography/research/sacred-atlas-151-noncommons-coverage-scope-20261105.v1.json \
+            --out /tmp/ao-atlas-151-noncommons-sweep.json \
+            --max-sites 151 --spacing-seconds 3.0
+      - name: Preserve any successful provider findings on the research branch
+        if: always()
+        run: |
+          set -euo pipefail
+          file="/tmp/ao-atlas-151-noncommons-sweep.json"
+          if [ ! -s "$file" ]; then
+            echo "No provider response file; nothing to stage"
+            exit 0
+          fi
+          python - <<'PY'
+          import json,pathlib
+          path=pathlib.Path('/tmp/ao-atlas-151-noncommons-sweep.json')
+          payload=json.loads(path.read_text())
+          assert payload["schema"]=="AO_SACRED_ATLAS_151_NONCOMMONS_OPENVERSE_DISCOVERY_V1"
+          assert payload["research_only"] and payload["automated_publications"]==0
+          assert 0<=payload["sites_queried"]<=151
+          assert len({x["place_id"] for x in payload["places"]})==len(payload["places"])
+          for row in payload["places"]:
+              for img in row["candidates"]:
+                  assert img["publication_authorized"] is False
+                  assert img["exact_site_verified"] is False
+                  assert "commons.wikimedia.org" not in img["source_page"]
+          print("Research-only validated:",payload["sites_queried"],"Places,",payload["image_candidate_records"],"unverified image leads")
+          PY
+          cp "$file" data/geography/research/sacred-atlas-151-noncommons-results-20261105.v1.json
+          git add -- data/geography/research/sacred-atlas-151-noncommons-results-20261105.v1.json
+          if git diff --cached --quiet; then
+            echo "No new source metadata"
+          else
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'research(atlas): preserve one-pass 151-site non-Commons image leads'
+            git push origin HEAD:refs/heads/research/sacred-atlas-151-noncommons-photo-coverage-20261105
+          fi
+      - name: Retain raw one-pass source evidence regardless of outcome
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-atlas-151-noncommons-first-pass
+          path: /tmp/ao-atlas-151-noncommons-sweep.json
+          if-no-files-found: warn
+          retention-days: 7
+      - name: Report partial provider interruption as a failure, without retry
+        if: ${{ steps.sweep.outcome == 'failure' }}
+        run: |
+          echo "Openverse discovery incomplete; partial valid source metadata preserved, NO automatic retry."
+          exit 1
