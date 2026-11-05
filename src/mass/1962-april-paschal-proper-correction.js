@@ -45,7 +45,7 @@ const sourceText=field=>W.donors[field.split(":")[0]]?.[field.split(":")[1]];
 function trilingual(rows,normalizeRows){
  const x={};
  for(const lang of witnesses){
-  const list=rows?.[lang];
+  const list=rows?.[lang==="lat"?"la":lang];
   if(!Array.isArray(list)||!list.length)return null;
   const normalized=normalizeRows(list,lang==="lat"?"la":lang);
   if(typeof normalized!=="string"||normalized.length<28||
@@ -57,7 +57,7 @@ function trilingual(rows,normalizeRows){
 function replaceName(rows){
  const adjusted={};
  for(const lang of witnesses){
-  const donor=rows?.[lang];if(!Array.isArray(donor))return null;
+  const donor=rows?.[lang==="lat"?"la":lang];if(!Array.isArray(donor))return null;
   const name=lang==="lat"?"Hermenegildo":lang==="en"?"Hermenegild":"Herménégilde";
   let hits=0;
   adjusted[lang]=donor.map(line=>String(line).replace(/\bN\./g,()=>{
@@ -71,7 +71,7 @@ const scripture=/^!(?:Ps\.?\s*20:4|Ps\.?\s*20:4\.?)$/iu;
 function paschalTwoAlleluias(rows,normalizeRows,src){
  const parts=[{},{}];
  for(const lang of witnesses){
-  const list=rows?.[lang];if(!Array.isArray(list))return null;
+  const list=rows?.[lang==="lat"?"la":lang];if(!Array.isArray(list))return null;
   const cut=list.findIndex(v=>scripture.test(String(v).trim()));
   if(cut<3||cut===list.length-1)return null;
   const first=normalizeRows(list.slice(0,cut),lang==="lat"?"la":lang);
