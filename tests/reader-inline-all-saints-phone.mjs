@@ -11,6 +11,13 @@ const archivedVenite=JSON.parse(await readFile(resolve(root,"data/mass/chant-cor
 assert.equal(archivedVenite?.title,"Venite ad me");
 assert.equal(archivedVenite?.mode,"8");
 assert.equal(archivedVenite?.gradualeRomanum1961Page,"[114]");
+const {ALL_SAINTS_REFERENCE_SCORES: embeddedScores}=await import("../src/mass/reader-inline-all-saints-reference.js");
+const embeddedVenite=embeddedScores.find(score=>score.id==="GREGOBASE-1237");
+assert.equal(embeddedVenite?.sourceArchivePage,"[114]");
+assert.equal(embeddedVenite?.sha256,archivedVenite.sha256);
+assert.equal(embeddedVenite?.gabc.split("\n%%\n")[1],archivedVenite.gabc,
+ "Use original archived GABC without substituting a different melody");
+
 
 const server=http.createServer(async(req,res)=>{
  try{
