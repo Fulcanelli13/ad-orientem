@@ -7,6 +7,7 @@ replace a selected artwork. A missing Commons reference never passes identity.
 import argparse, csv, hashlib, html, io, json, math, statistics
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
+from shutil import copyfile
 from urllib.parse import urlparse
 import requests
 from PIL import Image, ImageOps, ImageStat
@@ -108,7 +109,7 @@ def row_audit(row):
     result={"registry_id":rid,"title":row["title"],"museum":row["museum"],
             "museum_object_url":row["museum_object_url"],"manifest":row["iiif_manifest"],
             "manifest_status":"FAILED","canvas_total":0,"candidates_examined":0,
-            "reference_status":"FAILED","selection":"HOLD","selected_canvas":"",
+            "reference_status":"FAILED","reference_origin":"","selection":"HOLD","selected_canvas":"",
             "selected_image_url":"","selected_preview":"","source_image_short_px":"",
             "preview_short_px":"","score":"","runner_up_margin":"","rights_status":"",
             "failure_reason":"","candidate_scores":[]}
@@ -127,8 +128,15 @@ def row_audit(row):
         result["failure_reason"]="MANIFEST: "+str(e)[:180]
         return result
     ref=dest/(prefix+"_selected_commons.jpg")
+    cached=Path("reference-artifact")/"images"/(prefix+"_commons.jpg")
     try:
-        commons_preview(s,row["commons_url"],ref)
+        ref.parent.mkdir(parents=True,exist_ok=True)
+        if cached.is_file():
+            copyfile(cached,ref)
+            result["reference_origin"]="PHASE18_CACHED_DOWNLOAD"
+        else:
+            commons_preview(s,row["commons_url"],ref)
+            result["reference_origin"]="LIVE_COMMONS_API"
         ref_sig=fingerprint(ref)
         result["reference_status"]="SUCCESS"
     except Exception as e:
@@ -187,7 +195,7 @@ def write_outputs(rows):
     OUT.mkdir(parents=True,exist_ok=True)
     (OUT/"canvas_audit.json").write_text(json.dumps(rows,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
     cols=["registry_id","title","museum","museum_object_url","manifest","manifest_status",
-       "canvas_total","candidates_examined","reference_status","selection","selected_canvas",
+       "canvas_total","candidates_examined","reference_status","reference_origin","selection","selected_canvas",
        "selected_image_url","selected_preview","source_image_short_px","preview_short_px",
        "score","runner_up_margin","rights_status","failure_reason"]
     with (OUT/"canvas_audit.csv").open("w",encoding="utf-8",newline="") as f:

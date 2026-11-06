@@ -26,7 +26,7 @@ def titles(url):
 def field(wikitext,key):
     patterns=[key,key.replace(" ","_")]
     for name in patterns:
-        found=re.search(r"(?im)^\s*\|\s*"+re.escape(name)+r"\s*=\s*(.*)$",wikitext)
+        found=re.search(r"(?im)^[ \t]*\|[ \t]*"+re.escape(name)+r"[ \t]*=[ \t]*([^\r\n]*)$",wikitext)
         if found:return found.group(1).strip()[:650]
     return ""
 def human(s):
@@ -54,15 +54,37 @@ def main():
        "institution_template":"","source_field":"","accession_field":"",
        "external_source_urls":"","candidate_direct_museum_url":"",
        "museum_match_status":"RESEARCH_ONLY_NEEDS_EXACT_OBJECT_VERIFICATION"} for r in rows}
+    previous=Path("reference-provenance/metadata_recovery_157.json")
+    if previous.is_file():
+        cached=json.loads(previous.read_text(encoding="utf-8"))
+        for saved in cached:
+            rid=saved.get("registry_id","")
+            if rid in results and saved.get("commons_page_status")=="FOUND":
+                for key in results[rid]:
+                    if key in saved:results[rid][key]=saved[key]
+                for key in ("institution_template","source_field","accession_field"):
+                    if results[rid][key].lstrip().startswith("|"):
+                        results[rid][key]=""
+                if results[rid]["candidate_direct_museum_url"]:
+                    results[rid]["museum_match_status"]="CANDIDATE_MUSEUM_URL_REQUIRES_OBJECT_CONFIRMATION"
+                elif results[rid]["accession_field"]:
+                    results[rid]["museum_match_status"]="ACCESSION_HINT_REQUIRES_MUSEUM_LOOKUP"
+                elif results[rid]["institution_template"]:
+                    results[rid]["museum_match_status"]="INSTITUTION_HINT_ONLY"
+                else:
+                    results[rid]["museum_match_status"]="RESEARCH_ONLY_NEEDS_EXACT_OBJECT_VERIFICATION"
     ids={v["commons_title"]:k for k,v in results.items() if v["commons_title"]}
-    names=list(ids)
-    for start in range(0,len(names),10):
-        subset=names[start:start+10]
+    names=[title for title,rid in ids.items() if results[rid]["commons_page_status"]!="FOUND"]
+    for start in range(0,len(names),5):
+        subset=names[start:start+5]
         try:
-            response=s.get(API,params={"action":"query","format":"json","formatversion":"2",
+            for retry in range(3):
+                response=s.get(API,params={"action":"query","format":"json","formatversion":"2",
                  "prop":"imageinfo|revisions","iiprop":"extmetadata|size|url",
                  "rvprop":"content","rvslots":"main","titles":"|".join(subset)},
                  timeout=(10,40))
+                if response.status_code!=429:break
+                time.sleep((retry+1)*6)
             response.raise_for_status()
             pages=response.json().get("query",{}).get("pages",[])
             for page in pages:
@@ -95,7 +117,7 @@ def main():
         except Exception as e:
             for item in subset:
                 results[ids[item]]["commons_page_status"]="REQUEST_FAILED_"+str(e)[:100]
-        time.sleep(1.1)
+        time.sleep(2.5)
     items=sorted(results.values(),key=lambda r:r["registry_id"])
     OUT.mkdir(parents=True,exist_ok=True)
     (OUT/"metadata_recovery_157.json").write_text(json.dumps(items,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
