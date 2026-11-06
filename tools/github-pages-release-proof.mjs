@@ -28,6 +28,21 @@ export const MASS_SCHOLA_CRITICAL_PATHS=Object.freeze([
  "src/mass/reader-rite-music-presentation.js",
  "src/mass/reader-inline-chant-selector.js",
 ]);
+// The November 6 ICRSP Sacred Heart Low Mass is a cross-module route:
+ // Home notice -> owner-backed exact votive choice -> rubrical Gloria ->
+ // 65-card reader -> complete Leonine prayers outside the Mass card count.
+ // Hash every participating source, including the canonical bilingual text.
+ // Without these witnesses a correct index.html can conceal a broken Mass.
+export const NOV6_FIRST_FRIDAY_LEONINE_CRITICAL_PATHS=Object.freeze([
+ "src/home/browser-entry.js",
+ "src/home/today-h4-view.js",
+ "src/calendar/icrsp-france-ordo-evidence.js",
+ "src/mass/icrsp-first-friday-entry.js",
+ "src/mass/reader-post-low-mass.js",
+ "src/mass/reader-dom.js",
+ "src/pray/canonical-data.js",
+ "src/pray/horarium-leonine-source-blocks.js",
+]);
 const FIXED_CRITICAL_PATHS=[
  "index.html",
  "sw.js",
@@ -39,6 +54,7 @@ const FIXED_CRITICAL_PATHS=[
  "src/pray/prayer-design-pilot.js",
  "src/pray/presentation-runtime.js",
  ...MASS_SCHOLA_CRITICAL_PATHS,
+ ...NOV6_FIRST_FRIDAY_LEONINE_CRITICAL_PATHS,
 ];
 
 export function releaseCommitSha(value){
