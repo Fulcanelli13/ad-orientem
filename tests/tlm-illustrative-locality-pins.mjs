@@ -21,6 +21,7 @@ import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R16} from "../src/find/cl2-illustrative-l
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R17_R18} from "../src/find/cl2-illustrative-locality-pins-r17-r18.js";
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R19} from "../src/find/cl2-illustrative-locality-pins-r19.js";
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R23} from "../src/find/cl2-illustrative-locality-pins-r23.js";
+import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R26} from "../src/find/cl2-illustrative-locality-pins-r26.js";
 import {validateCL2PhysicalIndex,projectCL2PhysicalDirectory} from "../src/find/cl2-physical-directory.js";
 import {projectPreliminaryR49,projectPublishedProvisionalMassSites} from "../src/find/preliminary-directory-r49.js";
 import {renderTlmChurchProfile} from "../src/find/tlm-church-profile.js";
@@ -862,14 +863,16 @@ assert.deepEqual(Object.keys(CL2_ILLUSTRATIVE_LOCALITY_PINS_R19),["RG-2565E7B509
 assert.ok(items.get("RG-2565E7B509ED").map_publishable);
 assert.deepEqual(Object.keys(CL2_ILLUSTRATIVE_LOCALITY_PINS_R23),["RG-C4138959E1D3"]);
 assert.ok(items.get("RG-C4138959E1D3").map_publishable,"R23 has Excel GEO approval for named chapel Plus Code cell");
+assert.deepEqual(Object.keys(CL2_ILLUSTRATIVE_LOCALITY_PINS_R26),["RG-5E751D3AAEFA","RG-650EDC1EC27B"]);
+for(const id of Object.keys(CL2_ILLUSTRATIVE_LOCALITY_PINS_R26))assert.ok(items.get(id).map_publishable,"R26 Excel GEO-only marker missing: "+id);
 assert.ok(!items.get("RG-24B468C40EBC").map_publishable,"Ashford/Snave alias must not make second map marker");
 assert.ok(items.get("RG-E8AB816F595F").map_publishable,"Snave R3 physical site remains mapped");
 assert.equal(world.length,2582);
-assert.equal(world.filter(x=>x.map_publishable).length,2557);
-assert.equal(world.filter(x=>!x.map_publishable).length,25);
+assert.equal(world.filter(x=>x.map_publishable).length,2559);
+assert.equal(world.filter(x=>!x.map_publishable).length,23);
 const first=items.get(pins[0][0]);
 assert.match(renderTlmChurchProfile(first,"en"),/Illustrative town marker ONLY/);
 assert.match(renderTlmChurchProfile(first,"en"),/Find church by name\/address on Google Maps/);
 assert.match(renderTlmChurchProfile(first,"fr"),/Repère indicatif de la commune UNIQUEMENT/);
 assert.match(renderTlmChurchProfile(first,"fr"),/Rechercher l’église par nom\/adresse sur Google Maps/);
-console.log("PASS CL2 illustrative localities: 158 R1 plus 93 R2 plus 91 R3 plus 8 R4 plus 4 R5 plus 6 R6 Excel-approved, 4 R7 and 8 R8 and 4 R9 and 6 R10 and 8 R11 and 2 R12 and 2 R13 and 1 R14 and 1 R15 and 1 R16 plus 2 R17/R18 and 1 R19 plus 1 R23 Excel-approved, 25 held/address-only; GPS routing blocked; frozen 2,582 identities and CL27 scope preserved");
+console.log("PASS CL2 illustrative localities: 158 R1 plus 93 R2 plus 91 R3 plus 8 R4 plus 4 R5 plus 6 R6 Excel-approved, 4 R7 and 8 R8 and 4 R9 and 6 R10 and 8 R11 and 2 R12 and 2 R13 and 1 R14 and 1 R15 and 1 R16 plus 2 R17/R18 and 1 R19 plus 1 R23 and 2 R26 Excel-approved, 23 held/address-only; GPS routing blocked; frozen 2,582 identities and CL27 scope preserved");
