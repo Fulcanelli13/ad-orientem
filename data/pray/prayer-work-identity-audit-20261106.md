@@ -133,3 +133,19 @@ The 133-work Stage 1 structural test and Stage 2 source-pointer test **both pass
 ### Next controlled step
 
 Individually check reader exposure for 84 route-unverified records and the relevant historical source language witnesses; mark availability as verified only after a reader-level test, and keep all currently live content visible. The research PR must remain draft and not enter the application until that work and the non-regression gate are done.
+
+## Stage 2 reader-route ownership check — additional corrections
+
+Validation run: https://github.com/Fulcanelli13/ad-orientem/actions/runs/42285836367
+
+**24 of 24 actual module route identities** in the registry were matched to one of two pre-existing route contracts: the PRAY internal route owner (supportedDirectPrayerRoute) or the traditional Prayer route registry (ROUTES). None of the 24 was invented by the research classification. This is route **declaration** verification, not a claim that the live browser successfully opens each one.
+
+An important identity collision was repaired:
+
+- The already published pray.montfort_consecration route owns the **33-day Montfort preparation programme** (source masterplan row 123).
+- The final Montfort Consecration Act (row 73) is a separate **child component** with registry identity montfort_consecration_act_1863. It is not an independent registered route. The actual prayer body stays MONTFORT_B26_CONSECRATION_ACT_EN in its original source file.
+- The St Augustine component and Litany of the Holy Name now point to the correctly identified programme route. The test explicitly prevents restoring the former collision.
+
+This correction does not rename a live app route or change the Montfort reader. It avoids the registry falsely assigning that route to a single source prayer.
+
+**Reader availability still unverified:** 84 additional source-owned records require actual UI-level checking by language, edition and context. The 24 route declarations are a subset of route ownership evidence and must not be subtracted from 84 as though they had passed browser tests.
