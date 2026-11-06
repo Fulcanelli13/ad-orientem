@@ -22,6 +22,10 @@ on:
       - 'scripts/mass/build-participation-coverage.mjs'
       - 'tests/reader-participation-20-event-coverage.mjs'
       - 'src/mass/reader-participation-reference-scores.js'
+      - 'src/mass/reader-participation-printed-plates.js'
+      - 'tests/reader-participation-1961-printed-plates.mjs'
+      - 'scripts/mass/audit-24-participation-source-phrases.mjs'
+      - 'tests/reader-participation-24-source-gabc-equality.mjs'
       - 'src/mass/reader-gospel-response-reference-scores.js'
       - 'src/mass/reader-dismissal-variant-reference-scores.js'
       - 'src/mass/reader-canon-pax-response-reference-scores.js'
@@ -89,6 +93,10 @@ jobs:
           node --check scripts/mass/export-24-participation-review-csv.mjs
           node --check tests/reader-participation-24-score-review-phone.mjs
           node --check src/mass/reader-participation-reference-scores.js
+          node --check src/mass/reader-participation-printed-plates.js
+          node --check tests/reader-participation-1961-printed-plates.mjs
+          node --check scripts/mass/audit-24-participation-source-phrases.mjs
+          node --check tests/reader-participation-24-source-gabc-equality.mjs
           node --check src/mass/reader-gospel-response-reference-scores.js
           node --check src/mass/reader-dismissal-variant-reference-scores.js
           node --check src/mass/reader-canon-pax-response-reference-scores.js
@@ -122,7 +130,10 @@ jobs:
           node tests/reader-two-greeting-transfer-candidates.mjs
           node tests/reader-participation-20-event-coverage.mjs
           node scripts/mass/export-24-participation-review-csv.mjs
+          node scripts/mass/audit-24-participation-source-phrases.mjs
           node tests/reader-participation-reference-scores.mjs
+          node tests/reader-participation-1961-printed-plates.mjs
+          node tests/reader-participation-24-source-gabc-equality.mjs
           node tests/reader-dismissal-variant-reference.mjs
           node tests/reader-canon-pax-responses.mjs
           node tests/reader-oration-amen-source-handoff.mjs

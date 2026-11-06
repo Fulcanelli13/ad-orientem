@@ -97,7 +97,7 @@ ok("Direct 65-card Mass, appointed 1962 Proper corrections and Schola exact-byte
 // post-Mass Leonine prayers can each become stale independently of the
 // initial HTML and 65-card reader shell. Verify their actual network bytes.
 for(const path of NOV6_FIRST_FRIDAY_LEONINE_CRITICAL_PATHS)await released(path);
-ok("ICRSP Sacred Heart III-class Low Mass, Gloria and five Leonine prayers exact-byte parity");
+ok("ICRSP Sacred Heart III-class Low Mass, Gloria, Pro Papa threefold orations and five Leonine prayers exact-byte parity");
 
 
 const registry=JSON.parse((await released("data/geography/seed-registry.v1.json")).toString("utf8"));
