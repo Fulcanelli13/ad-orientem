@@ -84,9 +84,39 @@ try{
  console.log("ICRSP_2026_11_06_SACRED_HEART_PROPER "+JSON.stringify(source));
  assert.ok(source.hasProper,"Exact Sacred Heart Proper failed to resolve: "+JSON.stringify(source));
  assert.equal(source.path,"Votive/Pent02-5","Unexpected actual Mass Proper");
+ // The previous phone gate checked only identity, Gloria and Credo, and
+ // erroneously passed with one Collect, Secret and Postcommunion. Verify
+ // the PREPARED REAL READER payload in both translation languages.
+ const actual=await page.evaluate(async()=>{
+   const prepared=await globalThis.AO_R17_BROWSER_ENTRY.prepare();
+   const proper=prepared?.session?.resolvedMass?.proper?.data ??
+     prepared?.session?.resolvedMass?.proper;
+   const {properToReaderSlots}=await import("/src/mass/proper-reader-slots.js");
+   const en=properToReaderSlots(proper,{language:"en"});
+   const fr=properToReaderSlots(proper,{language:"fr"});
+   return {date:prepared?.session?.resolvedMass?.date,
+     form:prepared?.session?.resolvedMass?.form,sourcePath:proper?.sourcePath,
+     proPapa:proper?.proPapaOrationDecision?.additionalPrayer??null,
+     counts:Object.fromEntries(["collects","secrets","postcommunions"].map(
+       k=>[k,proper?.[k]?.length??0])),
+     sourceEnd:proper?.postcommunions?.[1]?.lat??"",
+     slots:Object.fromEntries([["en",en],["fr",fr]].map(([lang,x])=>[
+       lang,Object.fromEntries(["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"]
+        .map(slot=>[slot,x.slots?.[slot]?.data?.paragraphs?.length??0]))]))
+   };
+ });
+ assert.deepEqual([actual.sourcePath,actual.form,actual.proPapa],
+  ["Votive/Pent02-5","LOW","PRO_PAPA"],"Actual reader lacks dated ICRSP Pro Papa source: "+JSON.stringify(actual));
+ assert.deepEqual(actual.counts,{collects:2,secrets:2,postcommunions:2},
+  "Exactly two of each oration required for 6 Nov ICRSP Low Mass");
+ for(const slots of Object.values(actual.slots))
+  assert.deepEqual(slots,{COLLECT_SET:2,SECRET_SET:2,POSTCOMMUNION_SET:2});
+ assert.match(actual.sourceEnd,/Hæc nos|H[aæ]c nos/i,
+  "The second Postcommunion must be the actual Pro Papa text");
+ console.log("ICRSP_NOV06_PRO_PAPA_PREPARED_PHONE_PASS "+JSON.stringify(actual));
  assert.equal(errors.length,0,"Runtime errors: "+JSON.stringify(errors));
  await page.close();
- console.log("PASS: actual 390px ICRSP 6 Nov Home → Sacred Heart selected → III class Gloria yes Credo no → Low Mass source-owned Proper.");
+ console.log("PASS: actual 390px ICRSP 6 Nov Home → Sacred Heart III-class Low Mass with Gloria, no Credo, and two source-owned Collects, Secrets and Postcommunions.");
 }finally{
  await browser?.close().catch(()=>{});
  await new Promise(ok=>server.close(ok));
