@@ -11,7 +11,7 @@
   "authoritative": false,
   "autopublish": false,
   "requires_owner_approval": true,
-  "note": "NOT an admitted-Place release. Preview points and candidate names only; no code imports this file. No exact building coordinate is certified, and temporary IDs must never be interpreted as place_id. Country-area structure is now complete for all 96 staging candidates on this draft branch; owner/identity/coordinate/source approval remains outstanding. Admission-review lanes and 96 collision-free semantic ID proposals are recorded, but no place_id has been assigned or source/coordinate independently verified. Source evidence pass for all 67 priority records: explicit site-name status, URL scope exceptions and two source-coordinate confirmations; zero owner signoff.",
+  "note": "NOT an admitted-Place release. Preview points and candidate names only; no code imports this file. No exact building coordinate is certified, and temporary IDs must never be interpreted as place_id. Country-area structure is now complete for all 96 staging candidates on this draft branch; owner/identity/coordinate/source approval remains outstanding. Admission-review lanes and 96 collision-free semantic ID proposals are recorded, but no place_id has been assigned or source/coordinate independently verified. Source evidence pass for all 67 priority records: explicit site-name status, URL scope exceptions and two source-coordinate confirmations; zero owner signoff. Two source-backed records have been added to this unmerged draft Place registry; owner admission and publication remain pending.",
   "counts": {
     "staging_candidates": 96,
     "actual_draft_places": 533,
@@ -26,7 +26,7 @@
       "secondary_or_approximate_review": 26,
       "shared_directory_source_exceptions": 3
     },
-    "proposed_unreserved_canonical_ids": 96,
+    "proposed_unreserved_canonical_ids": 94,
     "preview_precision": {
       "site": 45,
       "complex_anchor": 36,
@@ -47,7 +47,9 @@
       "related_pilgrimage_church_coordinate_near_complex": 1,
       "owner_approved": 0,
       "import_ready": 0
-    }
+    },
+    "draft_admission_prepared": 2,
+    "candidates_without_draft_admission": 94
   },
   "blocking_conditions": [
     "Owner approval and physical-site identity reviewed",
@@ -1324,7 +1326,9 @@
             "checked_on": "2026-11-06",
             "acceptance_scope": "NAMED_SITE_POINT_ONLY_NO_ENTRANCE_CLAIM"
           }
-        }
+        },
+        "draft_place_id": "place:CA:sanctuaire-notre-dame-de-fatima-la-pocatiere",
+        "draft_admission_status": "REVIEW_ONLY_IN_UNMERGED_PR_OWNER_SIGNOFF_PENDING"
       }
     },
     {
@@ -4700,7 +4704,9 @@
             "checked_on": "2026-11-06",
             "acceptance_scope": "NAMED_SITE_POINT_ONLY_NO_ENTRANCE_CLAIM"
           }
-        }
+        },
+        "draft_place_id": "place:ZA:ngome-marian-shrine",
+        "draft_admission_status": "REVIEW_ONLY_IN_UNMERGED_PR_OWNER_SIGNOFF_PENDING"
       }
     }
   ],

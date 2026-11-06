@@ -4364,6 +4364,37 @@
       ],
       "confidence": "MEDIUM_HIGH",
       "origin_summary_fr": "La cathédrale catholique de Gênes conserve une dévotion civique à saint Jean-Baptiste, notamment des reliques traditionnellement décrites comme ses cendres et des reliquaires processionnels historiques. Le trésor conserve aussi le Sacro Catino : son association légendaire avec la Cène ne doit pas être présentée comme une relique chrétienne authentifiée."
+    },
+    {
+      "shrine_id": "shrine:CA:sanctuaire-notre-dame-de-fatima-la-pocatiere",
+      "place_id": "place:CA:sanctuaire-notre-dame-de-fatima-la-pocatiere",
+      "name": "Sanctuaire de Notre-Dame-de-Fatima, La Pocatière",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "UNKNOWN",
+      "dedication": "Our Lady of Fatima",
+      "origin_summary": "A Catholic pilgrimage sanctuary at La Pocatière documented by Québec's religious heritage inventory as constructed in 1952. Its grounds include an outdoor Way of the Cross. The provincial toponymy commission records the worship site and its geographical point; current Mass times and visiting conditions have not been confirmed.",
+      "origin_summary_fr": "Sanctuaire catholique de pèlerinage à La Pocatière, recensé par l'Inventaire des lieux de culte du Québec comme ayant été construit en 1952. Le site comprend un chemin de croix extérieur. La Commission de toponymie recense le lieu de culte et son point géographique ; les horaires des messes et les conditions actuelles de visite ne sont pas vérifiés.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-CA-LA-POCATIERE-FATIMA-TOPO",
+        "SHR-CA-LA-POCATIERE-FATIMA-HERITAGE"
+      ],
+      "confidence": "MEDIUM_HIGH"
+    },
+    {
+      "shrine_id": "shrine:ZA:ngome-marian-shrine",
+      "place_id": "place:ZA:ngome-marian-shrine",
+      "name": "Ngome Marian Shrine — Tabernacle of the Most High",
+      "shrine_kind": "MARIAN",
+      "recognition_class": "UNKNOWN",
+      "dedication": "Our Lady at Ngome; Tabernacle of the Most High",
+      "origin_summary": "The Southern African Catholic Bishops' Conference directory records the Tabernacle of the Most High as a Catholic Marian shrine at Ngome in the Diocese of Eshowe and supplies coordinates. The published coordinates are a site reference, not an identified entrance; this record does not assert apparition approval or current Mass times.",
+      "origin_summary_fr": "L'annuaire de la Conférence des évêques catholiques d'Afrique australe recense le Tabernacle du Très-Haut comme sanctuaire marial catholique à Ngome, dans le diocèse d'Eshowe, avec ses coordonnées. Le point publié situe le site, non une entrée déterminée ; cette fiche ne prétend ni à une approbation d'apparitions ni à des horaires de messes actuels.",
+      "associated_saints": [],
+      "source_ids": [
+        "SHR-ZA-NGOME-ESHOWE"
+      ],
+      "confidence": "MEDIUM_HIGH"
     }
   ],
   "pilgrimages": [
@@ -8034,6 +8065,35 @@
       ],
       "confidence": "MEDIUM_HIGH",
       "scope_note_fr": "Les visiteurs peuvent prier dans la chapelle Saint-Jean-Baptiste de la cathédrale et découvrir les objets sacrés du trésor lorsque celui-ci est accessible. Les traditions processionnelles sont historiquement attestées ; les célébrations et accès actuels sont à vérifier auprès de l'archidiocèse."
+    },
+    {
+      "pilgrimage_id": "pilgrimage:CA:sanctuaire-notre-dame-de-fatima-la-pocatiere:destination",
+      "name": "Devotional visit to Notre-Dame-de-Fatima, La Pocatière",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:CA:sanctuaire-notre-dame-de-fatima-la-pocatiere",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Recorded Catholic pilgrimage sanctuary. Coordinates are for site orientation, not an entrance. Confirm visiting and worship arrangements locally.",
+      "scope_note_fr": "Sanctuaire catholique de pèlerinage recensé. Le point sert au repérage du site et non d'une entrée. Vérifier localement les modalités de visite et de culte.",
+      "source_ids": [
+        "SHR-CA-LA-POCATIERE-FATIMA-TOPO",
+        "SHR-CA-LA-POCATIERE-FATIMA-HERITAGE"
+      ],
+      "confidence": "MEDIUM_HIGH"
+    },
+    {
+      "pilgrimage_id": "pilgrimage:ZA:ngome-marian-shrine:destination",
+      "name": "Devotional visit to Ngome Marian Shrine",
+      "kind": "DESTINATION_PILGRIMAGE",
+      "destination_shrine_id": "shrine:ZA:ngome-marian-shrine",
+      "route_ids": [],
+      "temporal_link_ids": [],
+      "scope_note": "Named Catholic Marian shrine in the Eshowe diocesan directory. The pin is a site point, not a visitor entrance; current access and liturgical times are not certified.",
+      "scope_note_fr": "Sanctuaire marial catholique recensé par l'annuaire diocésain d'Eshowe. Le point situe le site sans garantir une entrée ; l'accès et les horaires liturgiques actuels ne sont pas certifiés.",
+      "source_ids": [
+        "SHR-ZA-NGOME-ESHOWE"
+      ],
+      "confidence": "MEDIUM_HIGH"
     }
   ],
   "routes": [

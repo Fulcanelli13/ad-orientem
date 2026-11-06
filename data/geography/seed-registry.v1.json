@@ -27023,6 +27023,84 @@
         "SHR-IT-GENOVA-CATHEDRAL-TREASURY",
         "SHR-IT-GENOVA-CATHEDRAL-GEO"
       ]
+    },
+    {
+      "place_id": "place:CA:sanctuaire-notre-dame-de-fatima-la-pocatiere",
+      "name": {
+        "official": "Sanctuaire de Notre-Dame-de-Fatima",
+        "aliases": [
+          "Sanctuaire Notre-Dame-de-Fatima, La Pocatière",
+          "Our Lady of Fatima Sanctuary, La Pocatière"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:CA"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 47.36891,
+        "lng": -70.05569,
+        "precision": "site",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_url": "https://toponymie.gouv.qc.ca/ct/ToposWeb/Fiche.aspx?no_seq=150108",
+        "source_ref": "quebec-toponymie:150108",
+        "matched_country_code": "CA",
+        "verified_at": "2026-11-06"
+      },
+      "address": {
+        "line1": "193-A, route 132",
+        "line2": null,
+        "postal_code": "G0R 1Z0",
+        "city": "La Pocatière",
+        "region": "Québec",
+        "country_code": "CA",
+        "country": "Canada",
+        "formatted": "193-A, route 132, La Pocatière, Québec G0R 1Z0, Canada"
+      },
+      "source_ids": [
+        "SHR-CA-LA-POCATIERE-FATIMA-TOPO",
+        "SHR-CA-LA-POCATIERE-FATIMA-HERITAGE"
+      ]
+    },
+    {
+      "place_id": "place:ZA:ngome-marian-shrine",
+      "name": {
+        "official": "Ngome Marian Shrine — Tabernacle of the Most High",
+        "aliases": [
+          "Ngome Marian Shrine",
+          "Our Lady of Ngome Shrine",
+          "Tabernacle of the Most High Marian Shrine"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:ZA"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -27.855267,
+        "lng": 31.453717,
+        "precision": "site",
+        "geocoding_source": "OFFICIAL_SOURCE",
+        "source_url": "https://catholicdirectory.org.za/eshowe-2/",
+        "source_ref": "sacbc:eshowe:ngome-gps",
+        "matched_country_code": "ZA",
+        "verified_at": "2026-11-06"
+      },
+      "address": {
+        "line1": "Lot 4 of Sub A, Langgewacht 275",
+        "line2": null,
+        "postal_code": null,
+        "city": "Ngome",
+        "region": "KwaZulu-Natal",
+        "country_code": "ZA",
+        "country": "South Africa",
+        "formatted": "Tabernacle of the Most High Marian Shrine, Ngome, KwaZulu-Natal, South Africa"
+      },
+      "source_ids": [
+        "SHR-ZA-NGOME-ESHOWE"
+      ]
     }
   ],
   "directoryPlaceLinks": [

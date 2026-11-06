@@ -10,7 +10,8 @@ assert.equal(staged.candidates.length,96);
 assert.equal(staged.counts.approved,0);
 assert.equal(staged.counts.owner_approved,0);
 assert.equal(staged.counts.publishable,0);
-assert.equal(staged.counts.proposed_unreserved_canonical_ids,96);
+assert.equal(staged.counts.proposed_unreserved_canonical_ids,94);
+assert.equal(staged.counts.draft_admission_prepared,2);
 assert.deepEqual(staged.counts.review_lanes,{priority_identity_and_pin_review:67,secondary_or_approximate_review:26,shared_directory_source_exceptions:3});
 assert.deepEqual(staged.counts.preview_precision,{site:45,complex_anchor:36,locality:15});
 assert.deepEqual(staged.counts.historical_source_tiers,{A:78,B:18});
@@ -33,7 +34,7 @@ function distanceM(a,b){
 }
 for(const c of staged.candidates){
  assert.match(c.proposed_place_id_not_reserved,new RegExp("^place:"+c.country_code+":[a-z0-9]+(?:-[a-z0-9]+)*$"));
- assert.ok(!canonical.has(c.proposed_place_id_not_reserved),"Already canonical "+c.candidate_id);
+ assert.equal(canonical.has(c.proposed_place_id_not_reserved),["SG-INV-0415","SG-INV-0722"].includes(c.candidate_id),"Only the two proposed draft Place IDs may appear: "+c.candidate_id);
  assert.ok(!proposals.has(c.proposed_place_id_not_reserved),"Duplicate proposal "+c.candidate_id);
  proposals.add(c.proposed_place_id_not_reserved);
  assert.equal(c.canonical_place_id,null,c.candidate_id);

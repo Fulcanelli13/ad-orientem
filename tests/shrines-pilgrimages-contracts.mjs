@@ -36,8 +36,8 @@ const result=assertShrinesPilgrimagesRegistry({
 
 assert.equal(result.pass,true);
 assert.deepEqual(result.counts,{
-  shrines:260,
-  pilgrimages:243,
+  shrines:262,
+  pilgrimages:245,
   routes:20,
   temporalLinks:77,
   sources:LIVE.sources,
