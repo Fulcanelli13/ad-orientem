@@ -44,7 +44,7 @@
   ],
   "blockingQuestions": [
     "Certify any ferial oration Amen independently; 1961 p.114* ferial A says recto tono and does not provide the same festive two-note response to borrow",
-    "Independently collate optional old ad libitum solemn/simple oration responses on pp. 116* and 119*; never silently select",
+    "Obtain independent second-reader pitch/sign verification of 1961 old solemn p.116* (c4) research excerpt before any publication; old simple p.119* is separate and may not be used for Mass",
     "Review any non-standard or shortened conclusion (Per Christum Dominum nostrum etc.) against the selected 1962 Proper and source",
     "Preserve one-conclusion commemoration groups and separately source each intermediate Amen",
     "Do not adopt 1974/1979 notations into the 1962 Mass by matching a title or word Amen",
@@ -102,6 +102,31 @@
         "SILENT_SECRET",
         "LOW_MASS"
       ]
+    },
+    {
+      "id": "AO.REF.ORATION_OLD_SOLEMN_AMEN",
+      "eventIds": [
+        "COLLECT",
+        "POSTCOMMUNION"
+      ],
+      "source": "Graduale Romanum (Solesmes, 1961), p. 116*, old solemn ad libitum",
+      "sourceUrl": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+      "sourceImage": "https://gregobase.selapa.net/sources/2/993.png",
+      "pdfPageZeroIndex": 117,
+      "clefWitness": "1961 old solemn p.115*; GregoBase #4488, original (c4) greeting",
+      "melodicWitness": "p.116* R. Amen, two separate square notes ascending by a third, reference candidate under (c4) staff; independent editorial sign verification pending",
+      "gabcBody": "(c4) <sp>R/</sp>. A(g)men.(i.) (::)",
+      "contextGate": "EXPLICIT_OLD_SOLEMN_1961_PLUS_1962_SOURCE_PROPER_PLUS_UNIQUE_AMEN_CUE_PLUS_FULL_PER_OMNIA_SAECULA_SAECULORUM_ENDING",
+      "scoreStatus": "FACSIMILE_VISUAL_CANDIDATE_RESEARCH_PREVIEW_ONLY_NOT_PUBLICLY_APPROVED",
+      "exclusions": [
+        "DEFAULT_FESTIVE",
+        "DEFAULT_FERIAL",
+        "OLD_SIMPLE_1961",
+        "SPECIAL_RITE_FERIAL_B",
+        "ABBREVIATED_ORATION_CONCLUSION",
+        "LOW_MASS",
+        "UNSOURCED_ORATION"
+      ]
     }
   ],
   "ferialAndOptional1961": {
@@ -136,9 +161,10 @@
         "sourceUrl": "https://gregobase.selapa.net/chant.php?id=4488",
         "scope": "MASS_PRAYERS_EXCEPT_ORATIO_SUPER_POPULUM_INCLUDING_REQUIEM_AND_FLECTAMUS_GENUA_RITES",
         "selection": "EXPLICIT_ONLY",
-        "congregationAmen": "PRINTED_ON_FOLIO_116_NOT_YET_NOTE_COLLATED",
+        "congregationAmen": "1961_FOLIO_116_PRINTED_ASCENDING_TWO_NOTE_AMEN_REFERENCE_TRANSCRIBED_IN_REVIEW_ONLY",
         "allowFixedNeumes": false,
-        "uiPolicy": "OPTIONAL_SOURCE_SELECTED_DISPLAY_HOLD_NOTICE"
+        "uiPolicy": "EXPLICIT_OLD_SOLEMN_SOURCE_SELECTED__NOTATION_FOR_RESEARCH_ONLY",
+        "allowOptInResearchNeumes": true
       },
       {
         "tone": "OLD_SIMPLE_AD_LIBITUM_1961",
