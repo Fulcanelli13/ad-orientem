@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - "tests/mass-reader-production-phone-smoke.mjs"
+      - "tests/mass-reader-production-pages-contract.mjs"
       - ".github/workflows/mass-production-phone-smoke.yml"
   workflow_dispatch:
 permissions:
@@ -22,7 +23,11 @@ jobs:
           node-version: 22
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
-      - name: Verify live Vercel Mass reader on 320/390px
+      - name: Verify GitHub Pages exclusive public Mass test target
+        run: node tests/mass-reader-production-pages-contract.mjs
+      - name: Verify live GitHub Pages Mass reader on 320/390px
+        env:
+          AO_PAGES_URL: https://fulcanelli13.github.io/ad-orientem/
         run: node tests/mass-reader-production-phone-smoke.mjs
       - uses: actions/upload-artifact@v4
         if: always()

@@ -20,6 +20,7 @@ import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R15} from "../src/find/cl2-illustrative-l
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R16} from "../src/find/cl2-illustrative-locality-pins-r16.js";
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R17_R18} from "../src/find/cl2-illustrative-locality-pins-r17-r18.js";
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R19} from "../src/find/cl2-illustrative-locality-pins-r19.js";
+import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R23} from "../src/find/cl2-illustrative-locality-pins-r23.js";
 import {validateCL2PhysicalIndex,projectCL2PhysicalDirectory} from "../src/find/cl2-physical-directory.js";
 import {projectPreliminaryR49,projectPublishedProvisionalMassSites} from "../src/find/preliminary-directory-r49.js";
 import {renderTlmChurchProfile} from "../src/find/tlm-church-profile.js";
@@ -829,6 +830,14 @@ for(const r of withheld){
   assert.equal(item.geo.source_ref,pin.sourceRef);
   assert.equal(item.geo.lat,pin.lat);assert.equal(item.geo.lng,pin.lng);
   assert.ok(!item.actions[0]?.url.includes("/maps/dir/"));
+ }else if(CL2_ILLUSTRATIVE_LOCALITY_PINS_R23[r.cl2_anchor]){
+  assert.equal(r.cl2_anchor,"RG-C4138959E1D3","Only Excel GEO-approved Taytay named-chapel Plus Code may enter R23");
+  assert.equal(r.status,"HOLD_AMBIGUOUS_GAZETTEER_MATCH","R23 resolves source-matched chapel POI, not municipality gazetteer ambiguity");
+  const pin=CL2_ILLUSTRATIVE_LOCALITY_PINS_R23[r.cl2_anchor];
+  assert.ok(item?.map_publishable&&item.geo?.precision==="locality"&&item.geo?.approximate);
+  assert.equal(item.geo.source_ref,pin.sourceRef);
+  assert.equal(item.geo.lat,pin.lat);assert.equal(item.geo.lng,pin.lng);
+  assert.ok(!item.actions[0]?.url.includes("/maps/dir/"));
  }else if(laterPreciseSiteIds.has(r.cl2_anchor)){
   assert.ok(item?.map_publishable&&item.geo?.precision==="site","Excel precise site must use independently sourced site point: "+r.cl2_anchor);
   assert.ok(item.geo.source_ref&&!item.geo.source_ref.startsWith("geonames"),"Precise point may not use city-centre evidence: "+r.cl2_anchor);
@@ -851,14 +860,16 @@ assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS["RG-0DCEDA190517"],"Reading church ide
 assert.ok(!CL2_ILLUSTRATIVE_LOCALITY_PINS["RG-B65-77C86C7B3EC4"],"Cagliari Santa Croce potential alias already mapped");
 assert.deepEqual(Object.keys(CL2_ILLUSTRATIVE_LOCALITY_PINS_R19),["RG-2565E7B509ED"]);
 assert.ok(items.get("RG-2565E7B509ED").map_publishable);
+assert.deepEqual(Object.keys(CL2_ILLUSTRATIVE_LOCALITY_PINS_R23),["RG-C4138959E1D3"]);
+assert.ok(items.get("RG-C4138959E1D3").map_publishable,"R23 has Excel GEO approval for named chapel Plus Code cell");
 assert.ok(!items.get("RG-24B468C40EBC").map_publishable,"Ashford/Snave alias must not make second map marker");
 assert.ok(items.get("RG-E8AB816F595F").map_publishable,"Snave R3 physical site remains mapped");
 assert.equal(world.length,2582);
-assert.equal(world.filter(x=>x.map_publishable).length,2556);
-assert.equal(world.filter(x=>!x.map_publishable).length,26);
+assert.equal(world.filter(x=>x.map_publishable).length,2557);
+assert.equal(world.filter(x=>!x.map_publishable).length,25);
 const first=items.get(pins[0][0]);
 assert.match(renderTlmChurchProfile(first,"en"),/Illustrative town marker ONLY/);
 assert.match(renderTlmChurchProfile(first,"en"),/Find church by name\/address on Google Maps/);
 assert.match(renderTlmChurchProfile(first,"fr"),/Repère indicatif de la commune UNIQUEMENT/);
 assert.match(renderTlmChurchProfile(first,"fr"),/Rechercher l’église par nom\/adresse sur Google Maps/);
-console.log("PASS CL2 illustrative localities: 158 R1 plus 93 R2 plus 91 R3 plus 8 R4 plus 4 R5 plus 6 R6 Excel-approved, 4 R7 and 8 R8 and 4 R9 and 6 R10 and 8 R11 and 2 R12 and 2 R13 and 1 R14 and 1 R15 and 1 R16 plus 2 R17/R18 and 1 R19 Excel-approved, 26 held/address-only; GPS routing blocked; frozen 2,582 identities and CL27 scope preserved");
+console.log("PASS CL2 illustrative localities: 158 R1 plus 93 R2 plus 91 R3 plus 8 R4 plus 4 R5 plus 6 R6 Excel-approved, 4 R7 and 8 R8 and 4 R9 and 6 R10 and 8 R11 and 2 R12 and 2 R13 and 1 R14 and 1 R15 and 1 R16 plus 2 R17/R18 and 1 R19 plus 1 R23 Excel-approved, 25 held/address-only; GPS routing blocked; frozen 2,582 identities and CL27 scope preserved");

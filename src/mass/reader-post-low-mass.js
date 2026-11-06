@@ -31,7 +31,10 @@ export function postLowMassLeonineEligible(prepared,current,mode="LIVE"){
  // historical rules, but that is not a ban on the devotion. Keep the texts
  // accessible as OPTIONAL after any ordinary Low Mass without another
  // immediately-following rite. Do not confuse permission with obligation.
- const title=String(current?.cardTitle??"");
+ // Card transitions carry cardTitle; cue-only state refreshes carry sectionTitle.
+ // Both identify the same source-owned final Gospel. Never remove the
+ // post-Mass devotion solely because the ribbon was refreshed.
+ const title=String(current?.cardTitle||current?.sectionTitle||"");
  return String(mode).toUpperCase()==="MISSAL"
   ? /\bLast Gospel\b/i.test(title)
   : /Last Gospel\s*[·–—-]\s*The Word Made Flesh/i.test(title);

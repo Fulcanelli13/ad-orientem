@@ -4,6 +4,12 @@ const prepared={session:{plan:{kind:"MASS",followingGraphs:[],overlayGraphs:[]},
  resolvedMass:{form:"LOW",followingActions:[],overlays:[]}},readerPreferences:{language:"en"}};
 const final={cardTitle:"Last Gospel · The Word Made Flesh"};
 assert.equal(postLowMassLeonineEligible(prepared,final,"LIVE"),true);
+assert.equal(postLowMassLeonineEligible(prepared,{sectionTitle:final.cardTitle},"LIVE"),true,
+ "Cue-only LIVE refresh must preserve the already available Leonine prayers");
+assert.equal(postLowMassLeonineEligible(prepared,{sectionTitle:"Last Gospel"},"MISSAL"),true,
+ "Cue-only MISSAL refresh must preserve the already available Leonine prayers");
+assert.equal(postLowMassLeonineEligible(prepared,{sectionTitle:"Last Gospel · Prologue of St John"},"LIVE"),false,
+ "The first Last Gospel card must not prematurely expose the devotion");
 assert.equal(postLowMassLeonineEligible(prepared,{cardTitle:"Last Gospel · Prologue of St John"},"LIVE"),false);
 assert.equal(postLowMassLeonineEligible(prepared,{cardTitle:"Last Gospel"},"MISSAL"),true);
 assert.equal(postLowMassLeonineEligible({...prepared,session:{...prepared.session,resolvedMass:{...prepared.session.resolvedMass,form:"SOLEMN"}}},final,"LIVE"),false);
