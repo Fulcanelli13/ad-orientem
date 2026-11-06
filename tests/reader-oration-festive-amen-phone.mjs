@@ -86,7 +86,9 @@ try{
    const oldSolemn=controller.render({mode:"LIVE",form:"SOLEMN",resolvedMass:resolved("SUNDAY"),paragraphs:rows,
     selectedSettings:{ORATION_TONE:"OLD_SOLEMN_1961"}});
    const oldNoteCount=body.querySelectorAll("[data-oration-tone-status='OPTIONAL_OLD_SOLEMN_NOTES_PENDING']").length;
+   for(let i=0;i<80&&controller.state().rendered<1;i++)await new Promise(r=>setTimeout(r,100));
    const oldSvg=body.querySelectorAll(".ao-proper-reference-staff svg").length;
+   const oldScore=body.querySelector("[data-reference-score]")?.dataset.referenceScore;
    controller.render({mode:"LIVE",form:"SOLEMN",resolvedMass:resolved("FERIA"),paragraphs:rows,
     selectedSettings:{LANGUAGE:"fr"}});
    const frenchText=body.querySelector("[data-oration-tone-status='FERIAL_RECTO_TONO_NO_FIXED_AMEN_SCORE']")?.textContent;
@@ -95,7 +97,7 @@ try{
    controller.render({mode:"LIVE",form:"SOLEMN",resolvedMass:resolved("SUNDAY"),paragraphs:rows});
    for(let i=0;i<80&&controller.state().rendered<1;i++)await new Promise(r=>setTimeout(r,100));
    return {festive,ready,svg,width,ids,allUnapproved,sourceTextVisible,intact,
-    ferial,ferialNoteCount,ferialNoteText,ferialSvg,oldSolemn,oldNoteCount,oldSvg,
+    ferial,ferialNoteCount,ferialNoteText,ferialSvg,oldSolemn,oldNoteCount,oldSvg,oldScore,
     frenchText,low,lowNotes,restored:controller.state().rendered};
   });
   assert.equal(result.festive,1);
@@ -108,9 +110,11 @@ try{
   assert.equal(result.ferialNoteCount,1);
   assert.match(result.ferialNoteText,/recto tono/);
   assert.equal(result.ferialSvg,0,"No invented ferial staff");
-  assert.equal(result.oldSolemn,0,"Explicit old solemn selection must suppress default festive score");
+  assert.equal(result.oldSolemn,1,"Explicit old solemn selection must render its own unapproved score");
   assert.equal(result.oldNoteCount,1);
-  assert.equal(result.oldSvg,0);
+  assert.equal(result.oldSvg,1);
+  assert.match(result.oldScore,/ORATION_OLD_SOLEMN_AMEN/);
+  assert.doesNotMatch(result.oldScore,/FESTIVE/);
   assert.match(result.frenchText,/pas de partition fixe/);
   assert.equal(result.low,0);
   assert.equal(result.lowNotes,0);
