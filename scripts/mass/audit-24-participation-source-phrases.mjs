@@ -56,7 +56,7 @@ export function compareExactArchivedPhrase(score,sourceGabc){
   reason:originalClef!==actualClef?"SOURCE_CLEF_MISMATCH":
    original!==excerpt?"SOURCE_GABC_NOTE_OR_TEXT_MISMATCH":"SOURCE_GABC_PHRASE_EXACT",
   originalSha256:digest(original),excerptSha256:digest(excerpt),
-  originalClef,excerptClef
+  originalClef,excerptClef:actualClef
  });
 }
 export async function build24PhraseSourceAudit(){
