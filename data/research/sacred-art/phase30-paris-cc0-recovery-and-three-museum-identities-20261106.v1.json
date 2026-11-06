@@ -1,0 +1,143 @@
+{
+  "schema": "AO_SACRED_ART_PHASE30_CC0_DIRECT_CANVAS_AND_OBJECT_IDENTITY_V1",
+  "as_of": "2026-11-06",
+  "scope": "Owner-handpicked low-resolution images: museum-object identity and photographic recovery; no public app modification",
+  "baseline": {
+    "prior_identity_supported_rows": 147,
+    "new_exact_inventory_matches": 2,
+    "new_official_publication_subject_match_without_accession": 1,
+    "total_identity_supported_rows": 150,
+    "remaining_unidentified_rows": 27,
+    "low_res_handpicked_rows": 177,
+    "physical_paintings_count": "NOT_DEDUPLICATED",
+    "photos_replaced": 0
+  },
+  "newly_supported": [
+    {
+      "registry_id": "RECENT575::358",
+      "museum": "Kunstmuseum Basel",
+      "artist": "Jan Steen",
+      "official_title": "Christ among the Doctors",
+      "inventory": "906",
+      "source": "https://cdn.kunstmuseumbasel.ch/website/rz-mtw-booklet-en_bb1af189.pdf",
+      "evidence_grade": "OFFICIAL_MUSEUM_PUBLISHED_INVENTORY",
+      "evidence": "Kunstmuseum Basel 2021 publication specifically identifies Jan Steen, date c. 1659–60, oil on canvas 84.5 × 101 cm, inv. 906, Hans Vonder Mühll Bequest 1914.",
+      "photo_rights": "EXACT_PHOTOGRAPH_RIGHTS_NOT_CLEARED",
+      "photo_approved": false
+    },
+    {
+      "registry_id": "RECENT575::363",
+      "museum": "Musées de Strasbourg",
+      "artist": "Reynaud Levieux",
+      "official_title": "Le Repos pendant la fuite en Egypte",
+      "inventory": "44.2015.1.1",
+      "source": "https://collections.musees.strasbourg.eu/en/document/le-repos-pendant-la-fuite-en-egypte/5ee33891461cda28a3a5d52e",
+      "evidence_grade": "OFFICIAL_ONLINE_MUSEUM_OBJECT",
+      "evidence": "Matches same official museum painting as handpicked RECENT575::362 (physical-object duplicate); must preserve both selected original photo records until editorial deduplication.",
+      "photo_rights": "MUSEUM_PHOTOTHEQUE_PERMISSION_NOT_CLEARED",
+      "photo_approved": false
+    },
+    {
+      "registry_id": "RECENT575::481",
+      "museum": "Musée Granet Aix-en-Provence",
+      "artist": "Lubin Baugin",
+      "official_title": "Présentation de la Vierge au Temple",
+      "inventory": "NOT_ESTABLISHED",
+      "source": "https://www.museegranet-aixenprovence.fr/fileadmin/mediatheque/musee-a-la-maison/activites/musee-surprise/musee-surprise-baugin.pdf",
+      "secondary_source": "https://www.museegranet-aixenprovence.fr/fileadmin/user_upload/dpgranet180607.pdf",
+      "evidence_grade": "OFFICIAL_MUSEUM_PUBLICATION_NO_ACCESSION",
+      "evidence": "Museum's own educational handout identifies the artist, subject, oil on canvas 148 × 188 cm and Fabregoules donation 1860. Exact accession and image-use terms remain pending.",
+      "photo_rights": "MUSEUM_PHOTOGRAPH_RIGHTS_NOT_CLEARED",
+      "photo_approved": false
+    }
+  ],
+  "paris_museums": {
+    "github_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42259841429",
+    "github_artifact": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42259841429/artifacts/13524826124",
+    "corrected_source_format": "IIIF Presentation 2, canvas.images[].resource.@id (direct full JPEG), no image-service field",
+    "canvases_downloaded": 10,
+    "breakdown": [
+      {
+        "registry_id": "RECENT575::184",
+        "title": "La Mort de la Vierge",
+        "museum_inventory": "PPP3770",
+        "total_canvases": 9,
+        "full_facing_views": [
+          0,
+          1
+        ],
+        "detail_canvases": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "technical_or_dark_canvas": [
+          7
+        ],
+        "reverse_canvas": [
+          8
+        ],
+        "selected_commons_reference_retrieved": true,
+        "canvas_0_dimensions": "2971x2160",
+        "selected_dimensions": "758x558",
+        "exact_object_support": "705 SIFT/RANSAC inliers on canvas 0",
+        "canvas_cc0": "9/9",
+        "colour_grade": "Museum view notably darker than handpicked",
+        "reproduction_approved": false
+      },
+      {
+        "registry_id": "RECENT575::279",
+        "title": "Le Retour de l'Enfant prodigue",
+        "museum_inventory": "PPP4856",
+        "total_canvases": 1,
+        "full_facing_views": [
+          0
+        ],
+        "selected_commons_reference_retrieved": false,
+        "canvas_dimensions": "3840x2120",
+        "canvas_cc0": "1/1",
+        "source_commons": "https://commons.wikimedia.org/wiki/File:The_Return_of_the_Prodigal_Son_James_Tissot.jpeg",
+        "exact_comparison": "PENDING_IDENTICAL_SELECTED_COMMONS_FILE_DOWNLOAD",
+        "reproduction_approved": false
+      }
+    ],
+    "image_metadata_rights": "Each of the 10 actual canvas annotations contains Creative Commons CC0 (https://creativecommons.org/publicdomain/zero/1.0/) and appropriate Paris Musées credit.",
+    "rights_vs_fidelity": "Explicit CC0 is evidence for the exact museum image, but does not by itself approve visual/crop/colour fidelity or publication.",
+    "followup_geometric_run": "https://github.com/Fulcanelli13/ad-orientem/actions/workflows/sacred-art-phase30-paris-qa.yml"
+  },
+  "other_identity_holds": [
+    {
+      "registry_id": "RECENT575::542",
+      "reason": "Wikidata and Commons link de Wet, Tibériade, accession 1938 E 294; source Joconde 50110001768 inaccessible. Pending exact authoritative source.",
+      "source": "https://www.wikidata.org/wiki/Wikidata:WikiProject_sum_of_all_paintings/Collection/Mus%C3%A9e_Magnin"
+    },
+    {
+      "registry_ids": [
+        "RECENT575::005",
+        "RECENT575::031",
+        "RECENT575::032",
+        "RECENT575::033",
+        "RECENT575::034",
+        "RECENT575::035"
+      ],
+      "reason": "Six distinct Jacob Herreyns I Christ life-cycle selected photos in KMSKA. Commons confirms artist, museum and subjects; individual museum catalogue IDs not confirmed. Do not collapse into one object."
+    },
+    {
+      "registry_id": "RECENT575::014",
+      "reason": "Official linked Augustins Toulouse page describes Les Âmes du Purgatoire rather than selected Commons 'Christ ressuscité'; visual/source identity conflict."
+    },
+    {
+      "registry_id": "RECENT575::392",
+      "reason": "Lille P85 Jordaens Joconde link previously found but live official exact object page unavailable; hold."
+    }
+  ],
+  "research_policy": [
+    "Only previously owner-handpicked artworks are in scope; no new Commons admission.",
+    "Preserve distinct panels, cycles and object-level duplicates separately from selected-photo records.",
+    "Identity evidence does not constitute source-photograph rights or quality approval.",
+    "Image quality includes colour calibration, crop, exposure and resolution.",
+    "Research branch only; zero gallery image replacements or prayer/calendar pairing."
+  ]
+}
