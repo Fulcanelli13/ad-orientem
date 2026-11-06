@@ -56,7 +56,9 @@ export function twoGreetingTransferCandidates({
    Array.isArray(paragraph?.sourceCueIds)&&
    paragraph.sourceCueIds.length===1&&paragraph.sourceCueIds[0]===x.cueId);
  if(!target||!paragraph||paragraph.kind==="RUBRIC"||
-   !Array.isArray(paragraphs)||paragraphs.filter(x=>x===paragraph).length!==1||
+   !Array.isArray(paragraphs)||
+   (paragraph.speakerRole&&paragraph.speakerRole!=="RESPONDERS")||
+   paragraphs.filter(x=>x===paragraph).length!==1||
    paragraphs.filter(p=>p?.id===paragraph.id).length!==1||
    paragraphs.filter(p=>Array.isArray(p?.sourceCueIds)&&p.sourceCueIds.includes(target.cueId)).length!==1||
    !sourced(paragraph,canon.sourceLatin))return Object.freeze([]);
