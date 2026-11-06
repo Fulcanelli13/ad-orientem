@@ -25,7 +25,11 @@
       "BASILICA_IDENTITY_ATTESTED_GEO_HOLD": 1
     },
     "owner_approved": 0,
-    "publish_authorized": 0
+    "publish_authorized": 0,
+    "second_pass_source_rechecks": 56,
+    "second_pass_retrieved_pages": 55,
+    "second_pass_indexed_only": 1,
+    "total_candidates_with_some_source_evidence_review": 73
   },
   "rules": [
     "Source URL scope ≠ approved Catholic identity ≠ accepted map point ≠ owner approval",
@@ -162,7 +166,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "INDEXED_SOURCE_CORROBORATION",
+        "site_scope_outcome": "SITE_SCOPED_BUT_SOURCE_UNREACHABLE",
+        "corroborating_url": "https://www.diocesedeviana.ao/um-marco-de-fe-reabertura-do-santuario-da-muxima/",
+        "content_finding": "Diocese source indexed but blocked on live fetch; July 2026 report states Muxima sanctuary church reopened after rebuilding, location Vila da Muxima/Quissama; exact map point not certified.",
+        "source_http_retrieval": false,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0191",
@@ -182,7 +198,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://gurk.at/dom-zu-gurk/",
+        "content_finding": "Gurk municipality confirms historic Dom zu Gurk and St Hemma tomb in crypt; municipal office address on page must not be mistaken for cathedral entrance.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0190",
@@ -202,7 +230,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://www.kath-kirche-kaernten.at/pfarren/kirche/C3061/pfarrkirche-maria-woerth",
+        "content_finding": "Diocesan parish lists Maria Woerth pilgrim church dedicated to Saints Primus and Felician and Pfarrplatz 1; parish contains multiple churches, keep precise church identity.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0739",
@@ -222,7 +262,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://www.marymackillopplace.org.au/visit/memorial-chapel/",
+        "content_finding": "Chapel custodian identifies Mary MacKillop Memorial Chapel at 7-11 Mount Street, North Sydney, with the saint's tomb inside, not a second physical Place.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0448",
@@ -242,7 +294,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://directorio.arzobispadodeguatemala.org/directorio/santuario-arquidiocesano-del-santo-hermano-pedro-templo-de-san-francisco-el-grande-2M9L4J8V7Y6K",
+        "content_finding": "Guatemala archdiocesan directory names San Francisco el Grande/Santo Hermano Pedro shrine in Sacatepequez vicariate; reject a precinct or neighbouring church polygon as exact footprint.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0327",
@@ -262,7 +326,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://bazilika-esztergom.hu/bazilika/kapcsolat.html",
+        "content_finding": "Esztergom basilica operator provides Szent Istvan ter 1 address, site-specific contact; does not independently validate staged map coordinate.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0322",
@@ -282,7 +358,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "ALTERNATE_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://pecsiegyhazmegye.hu/hirarchivum/hortobagyi-cirill-foapattal-unnepeltuk-nagyboldogasszonyt-mariagyudon/",
+        "content_finding": "Direct old diocesan attraction URL timed out; Pecs Diocese explicitly reports pilgrimage feast at Mariagyud shrine church. Confirm church versus other devotional features and precinct point.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0326",
@@ -302,7 +390,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://turizmus.pannonhalmifoapatsag.hu/kapcsolat/elerhetosegek/",
+        "content_finding": "Pannonhalma abbey tourism operator confirms main abbey at Var 1, distinct from guesthouses and winery; confirm chosen monastery precinct point.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0324",
@@ -322,7 +422,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://marianosztrakegyhely.hu/kapcsolat/",
+        "content_finding": "Márianosztra shrine/basilica custodian gives Nagy Lajos kiraly ter 1 and identifies basilica; address is not independently certified exact entrance geometry.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0321",
@@ -342,7 +454,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "DISTINCT_PRECINCT_SCOPE_REVIEW",
+        "corroborating_url": "https://szentkut.hu/en/contact-information",
+        "content_finding": "Official Szentkut National Shrine lists Matraverebely-Szentkut 14 and directions five kilometres beyond village; keep parish church in village separate from pilgrimage basilica site.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0678",
@@ -362,7 +486,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://sisparnas.kemenpar.go.id/p/44096",
+        "content_finding": "Indonesian government tourism register lists Gua Maria Kerep on Jalan Tentara Pelajar, Ambarawa, as a named attraction; outdoor cave precinct rather than assumed single church building.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0677",
@@ -382,7 +518,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://www.indonesia.travel/id/id/travel-ideas/pilgrimage/gua-maria-sendangsono",
+        "content_finding": "Indonesian national tourism describes Gua Maria Sendangsono pilgrimage grotto; do not collapse outdoor pilgrimage complex into an invented church footprint.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0553",
@@ -406,7 +554,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://www.custodia.org/en/sanctuaries/ain-karem-saint-john-the-baptist/",
+        "content_finding": "Franciscan Custody maintains Ain Karem Saint John the Baptist sanctuary; confirm church building rather than surrounding John-related sites.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0561",
@@ -430,7 +590,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://beatitudes.church/plan-your-visit/",
+        "content_finding": "Church/Franciscan Sisters operator gives Mount of Beatitudes visit details and church/guesthouses distinction; map point remains site/complex illustrative.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0563",
@@ -450,7 +622,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://www.carmelholylanddco.org/contacts/",
+        "content_finding": "Discalced Carmelites list Stella Maris Monastery in Haifa and church contact separately from retreat centre; avoid pinning only an office or guesthouse.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0687",
@@ -490,7 +674,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "EASTERN_CATHOLIC_SCOPE_REVIEW",
+        "corroborating_url": "https://abbaziasannilo.org/contact",
+        "content_finding": "Exarchic Monastery of Santa Maria Grottaferrata at Corso del Popolo 128 confirmed by monastery operator; Italo-Greek Byzantine tradition, never infer Latin-rite/TLM schedule.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0092",
@@ -510,7 +706,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://sangerardo.it/contatti/",
+        "content_finding": "Redemptorist San Gerardo shrine site contains sanctuary-specific contact and sections; avoid treating church and adjoining sanctuary buildings as automatically identical.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0629",
@@ -530,7 +738,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://www.anseong.go.kr/en/contents.do?mId=0401040000",
+        "content_finding": "Anseong municipal tourism identifies Mirinae Catholic shrine with tomb of St Andrew Kim at Mirinaeseongji-ro 420; complex site not an exact church doorway.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0627",
@@ -554,7 +774,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://saenamteo.or.kr/",
+        "content_finding": "Saenamteo Catholic shrine and martyr memorial church have operator pages and pilgrimage content; source supports distinct complex identity, not certified GPS.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0581",
@@ -574,7 +806,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "EASTERN_CATHOLIC_SCOPE_REVIEW",
+        "corroborating_url": "https://www.saintanthonykozhaya.com/contact",
+        "content_finding": "Qozhaya monastery operator confirms Saint Anthony monastery in Holy Valley, northern Lebanon; Maronite Catholic rite rather than Latin TLM identification.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0604",
@@ -594,7 +838,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "GOVERNMENT_DIRECTORY_NAMED_ROW",
+        "corroborating_url": "https://christian.gov.lk/churches/kurunegala-district.html",
+        "content_finding": "Sri Lankan government church table lists St Anne's Shrine Kattimahana in Kurunegala district; named row, not a church entrance coordinate.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0606",
@@ -618,7 +874,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "GOVERNMENT_DIRECTORY_NAMED_ROW",
+        "corroborating_url": "https://www.christian.gov.lk/churches/gampaha-district.html",
+        "content_finding": "Sri Lankan government church table lists St Sebastian Shrine Kandana under Gampaha; named row, not a physical footprint assertion.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0607",
@@ -638,7 +906,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "GOVERNMENT_DIRECTORY_NAMED_ROW",
+        "corroborating_url": "https://www.christian.gov.lk/churches/puttalam-district.html",
+        "content_finding": "Sri Lankan government church table lists Holy Cross National Shrine Marawila separately from Our Lady of Presentation and other churches; no exact pin certified.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0333",
@@ -662,7 +942,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://ausrosvartai.lt/en/contacts/",
+        "content_finding": "Official Gate of Dawn shrine website distinguishes chapel in gate from Saint Teresa church; avoid treating adjacent church as the chapel point.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0339",
@@ -682,7 +974,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "OUTDOOR_LANDSCAPE_SCOPE_REVIEW",
+        "corroborating_url": "https://www.visitsiauliai.lt/en/sightseeing-places/the-hill-of-crosses/",
+        "content_finding": "Official Siauliai tourism identifies Hill of Crosses at Jurgaiciai as open-air devotional landscape; separate the nearby chapel opposite it from main landscape pin.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0337",
@@ -702,7 +1006,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://www.pivasiunai.lt/kontaktai/",
+        "content_finding": "Official Pivasiunai pilgrimage parish website has dedicated church and Marian image sections plus contact; ensure map point is church rather than adjacent pilgrim centre.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0365",
@@ -722,7 +1038,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://www.visitluxembourg.com/place/cathedrale-notre-dame",
+        "content_finding": "National tourism page identifies Notre Dame Cathedral in Luxembourg City, distinct physical cathedral, not proof of exact entrance.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0434",
@@ -742,7 +1070,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "MONUMENT_CHURCH_PRECINCT_SCOPE_REVIEW",
+        "corroborating_url": "https://guanajuato.mx/municipios/recomendaciones/cristo-rey-en-el-cerro-del-cubilete-un-monumento-a-la-fe-y-la-historia/",
+        "content_finding": "Guanajuato tourism describes summit Christ the King monument and sanctuary at its foot; pin must identify sanctuary or overall devotional complex, not automatically monument as church.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0430",
@@ -762,7 +1102,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "LOCALITY_ONLY_GEOMETRY_PENDING",
+        "corroborating_url": "https://www.oaxaca.gob.mx/pueblos-magicos/",
+        "content_finding": "Oaxaca state page explicitly mentions Marian shrine in Santa Catarina Juquila, but is town-scale tourism evidence, not a building-specific map coordinate.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0440",
@@ -782,7 +1134,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://www.santuariodelosmartiresmexicanos.com/contacto",
+        "content_finding": "Mexican Martyrs sanctuary operator locates its sanctuary on Cerro del Tesoro in San Pedro Tlaquepaque, not Guadalajara city centre; preserve true municipality.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0667",
@@ -822,7 +1186,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://aranzazushrine.ph/index.php/contact/",
+        "content_finding": "Aranzazu shrine parish operator lists Gen Luna Street Guitnangbayan I, San Mateo Rizal; shrine hall and office share campus, map church or explicitly marked complex point.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0645",
@@ -994,7 +1370,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://www.marianshrinepk.com/visit/",
+        "content_finding": "National Marian Shrine Mariamabad site operator identifies Shrine/Church of St Mary and St Joseph at Chak 3-RB District Sheikhupura; general grounds location only.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0217",
@@ -1014,7 +1402,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://domgosci.benedyktyni.com/kontakt/",
+        "content_finding": "Benedictine Tyniec guesthouse is an abbey-operated source; review distinct abbey complex from guesthouse building before choosing precinct coordinate.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0208",
@@ -1034,7 +1434,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://www.redemptor.pl/parafieisanktuaria/bardo/",
+        "content_finding": "Redemptorist province lists Our Lady of Bardo sanctuary at Plac Wolnosci 5 and Visitation parish; exact church building coordinate remains unchecked.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0204",
@@ -1054,7 +1466,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "ALTERNATE_PAGE_RETRIEVED",
+        "site_scope_outcome": "REPLACED_CEMETERY_DIRECTORY",
+        "corroborating_url": "https://mbludzm.pl/parafia/",
+        "content_finding": "Original Grobonet cemetery contact is a side service; actual shrine parish names Ludźmierz basilica and gives Jana Pawla II 124. Use parish source instead, no cemetery-only location inference.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0207",
@@ -1074,7 +1498,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "ALTERNATE_PAGE_RETRIEVED",
+        "site_scope_outcome": "REPLACED_UNAVAILABLE_OPERATOR_PAGE",
+        "corroborating_url": "https://archidiecezjalubelska.pl/parafia/?id=101741",
+        "content_finding": "Original Wawolnica shrine contact returned server error; Lublin archdiocesan parish lists Wawolnica/St Adalbert and devotion to Our Lady of Keblo at Zamkowa 24; sanctuary basilica and historic chapel require scope review.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0153",
@@ -1098,7 +1534,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "MONUMENT_CHURCH_PRECINCT_SCOPE_REVIEW",
+        "corroborating_url": "https://www.visitportugal.com/pt-pt/content/santuario-de-cristo-rei",
+        "content_finding": "Portuguese official tourism confirms Santuario Cristo Rei in Almada as statue/monument and sanctuary precinct, not simply a church building.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0149",
@@ -1118,7 +1566,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://www.visitportugal.com/pt-pt/node/133125",
+        "content_finding": "Portuguese tourism confirms Sanctuary of Senhora da Lapa in Sernancelhe with grotto and sacred image; legends must be attributed, not authenticated as miracles.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0150",
@@ -1138,7 +1598,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://www.visitportugal.com/pt-pt/node/134774",
+        "content_finding": "Portuguese tourism confirms Our Lady of Remedies hill sanctuary Lamego and monumental 686-step stairway; church vs stairs are separate geometric features.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0529",
@@ -1158,7 +1630,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://encarnacion.gov.py/santuario-itacua/",
+        "content_finding": "Encarnacion municipality identifies Itacua shrine in Punta Itacua, three-hectare precinct beyond town, not a downtown church.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0528",
@@ -1178,7 +1662,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "ALTERNATE_PAGE_RETRIEVED",
+        "site_scope_outcome": "REPLACED_CITY_ONLY_LEAD",
+        "corroborating_url": "https://visitparaguay.travel/places/santuario-virgen-de-paso-itape",
+        "content_finding": "Original VisitParaguay city page was too broad; SENATUR specific shrine entry places Virgen del Paso by Tebicuary-mi river with own location code, distinct from Itape parish church.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0328",
@@ -1198,7 +1694,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://ersekseg.ro/en/templom/1123",
+        "content_finding": "Archdiocese Alba Iulia lists Csiksomlyo Catholic Franciscan church and monastery at Str Szek 148; distinguish church site, monastery and outdoor pilgrimage grounds.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0307",
@@ -1218,7 +1726,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://www.zaplaz.si/",
+        "content_finding": "Zaplaz shrine operator names Assumption pilgrimage church above Catez and diocesan sanctuary status; distinct from Grozde relic chapel features.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0345",
@@ -1238,7 +1758,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "ALTERNATE_PAGE_RETRIEVED",
+        "site_scope_outcome": "CARMELITE_COMPLEX_SCOPE_REVIEW",
+        "corroborating_url": "https://sanctuary.karmel.org.ua/sample-page/kontakty/",
+        "content_finding": "Original Carmelite link returned 403; official Berdychiv shrine/Discalced Carmelite contact shows Soborna 25 and distinguishes upper/lower church inside broader monastery complex.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0405",
@@ -1258,7 +1790,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://cathedralstl.org/plan-your-visit",
+        "content_finding": "Cathedral Basilica St Louis direct operator confirms 4431 Lindell Boulevard, St Louis, Missouri; separate from old downtown Basilica of St Louis King of France.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0406",
@@ -1278,7 +1822,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://www.olacathedral.org/directionsparking/",
+        "content_finding": "Los Angeles Cathedral of Our Lady of Angels parish site covers cathedral campus and parking separately; position should represent cathedral, not mausoleum or plaza only.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0409",
@@ -1298,7 +1854,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://sanxaviermission.org/contact-us/",
+        "content_finding": "San Xavier del Bac Mission church operator lists 1950 W San Xavier Road Tucson and Catholic parish ministry; avoid identifying nearby convent or visitor parking as church.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0393",
@@ -1318,7 +1886,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://mothercabrinishrine.org/directions",
+        "content_finding": "Mother Cabrini shrine operator lists 20189 Cabrini Boulevard Golden Colorado; complex includes worship space and grounds, use illustrative site precision unless exact church anchored.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0412",
@@ -1338,7 +1918,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "EASTERN_CATHOLIC_SCOPE_REVIEW",
+        "corroborating_url": "https://ourladyoflebanonshrine.com/contact",
+        "content_finding": "Basilica and National Shrine Our Lady of Lebanon in North Jackson Ohio lists 2759 N Lipkey Road; Maronite Catholic devotional tradition should not be presented as TLM schedule.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0386",
@@ -1358,7 +1950,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://thegrotto.org/visit/directions/",
+        "content_finding": "The Grotto/National Sanctuary Our Sorrowful Mother has official visit directions, multiple grounds and chapels; pin the shrine grounds unless specific chapel independently anchored.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0392",
@@ -1382,7 +1986,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://cabrininationalshrine.org/visit/",
+        "content_finding": "Chicago National Shrine St Frances Xavier Cabrini operator identifies Lincoln Park shrine, not Colorado Mother Cabrini pilgrimage centre; keep separate locations.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0396",
@@ -1406,7 +2022,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "SHARED_CHURCH_DEDICATION_SCOPE_REVIEW",
+        "corroborating_url": "https://www.ols-chicago.com/contact-visit-us",
+        "content_finding": "National Shrine St Peregrine appears at Our Lady of Sorrows Basilica parish address 3121 West Jackson Blvd; do not create a duplicate second building pin if church is already canonical.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0398",
@@ -1426,7 +2054,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://rscj.org/shrine/visit/",
+        "content_finding": "Society of Sacred Heart identifies St Rose Philippine Duchesne Shrine at 619 North Second Street St Charles Missouri; different from other Sacred Heart ministries.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0383",
@@ -1446,7 +2086,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://www.olop-shrine.org/contact-us/",
+        "content_finding": "Our Lady of Peace Shrine and Church lists 2800 Mission College Blvd Santa Clara; prayer site and adjacent convent are distinct campus facilities.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0395",
@@ -1466,7 +2118,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://shrineofstanthony.org/directions",
+        "content_finding": "Franciscan Friars Conventual shrine gives visitor directions at Ellicott City; review site/precinct coordinate instead of implying exact friary or chapel entrance.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0531",
@@ -1486,7 +2150,19 @@
       "identity_admission_decision": "PENDING_OWNER_AND_FINAL_EDITOR",
       "coordinate_admission_decision": "PENDING_EVIDENCE_OR_ACCEPTED_ILLUSTRATIVE_PRECISION",
       "publishable": false,
-      "evidence_content_reviewed_now": false
+      "evidence_content_reviewed_now": false,
+      "second_pass": {
+        "reviewed_on": "2026-11-06",
+        "evidence_access": "DIRECT_PAGE_RETRIEVED",
+        "site_scope_outcome": "NAMED_SITE_GEOMETRY_PENDING",
+        "corroborating_url": "https://www.iglesiacatolicaflorida.org/parroquias/",
+        "content_finding": "Uruguayan Diocese of Florida names Cathedral Basilica/Sanctuary Virgen de los Treinta y Tres at Alejandro Gallinal 504; sanctuary and cathedral are one physical-site record, not duplicates.",
+        "source_http_retrieval": true,
+        "staged_coordinate_independently_verified": false,
+        "site_admission_approved": false,
+        "source_content_check_performed": true,
+        "photo_rights_assessed": false
+      }
     },
     {
       "candidate_id": "SG-INV-0564",
@@ -1560,5 +2236,18 @@
       "publishable": false,
       "evidence_content_reviewed_now": true
     }
-  ]
+  ],
+  "second_pass": {
+    "reviewed_on": "2026-11-06",
+    "scope": "All 56 previously unchecked pages were assessed. 55 retrieved pages: 50 original URLs plus five site/diocese/custodian replacements. Muxima direct page was not retrievable but diocesan indexed evidence and Radio Maria reporting corroborated the named site. These site-scope confirmations are NOT a release geometry or owner approval.",
+    "screened": 56,
+    "source_page_retrieved": 55,
+    "index_only_corrob": 1,
+    "source_replacements": 5,
+    "coordinates_approved": 0,
+    "owner_approvals": 0,
+    "publication_authorized": 0,
+    "comparison_note": "17 original individually adjudicated records are preserved untouched; original reviewed_this_pass flags remain historical first-pass assertions.",
+    "explicit_url_gate_closed": false
+  }
 }
