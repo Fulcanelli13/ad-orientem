@@ -3,6 +3,7 @@
 // must be authenticated BEFORE this two-note response is offered.
 // No public score promotion or new Mass card is authorized.
 import {resolveOrationAmenSourceHandoff} from "./reader-oration-amen-source-handoff.js";
+import {resolveOrationAmenTonePolicy} from "./reader-oration-amen-tone-policy.js";
 
 export const ORATION_AMEN_REFERENCE_SCHEMA="ao-1961-festive-oration-amen-reference-v1";
 export const FESTIVE_ORATION_AMEN_SOURCE=Object.freeze({
@@ -33,8 +34,10 @@ const finalPrintedCadence=s=>{
  * endings and all ferial or optional old tones remain held for review.
  */
 export function sourceBoundFestiveOrationAmenScores({
- paragraph=null,paragraphs=[],form=null,resolvedMass=null
+ paragraph=null,paragraphs=[],form=null,resolvedMass=null,selectedSettings={}
 }={}){
+ const policy=resolveOrationAmenTonePolicy({paragraph,paragraphs,form,resolvedMass,selectedSettings});
+ if(!policy.allowFestive)return Object.freeze([]);
  const handoff=resolveOrationAmenSourceHandoff({
   paragraph,paragraphs,form,resolvedMass
  });

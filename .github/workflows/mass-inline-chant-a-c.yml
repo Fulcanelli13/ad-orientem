@@ -13,6 +13,8 @@ on:
       - 'tests/reader-canon-pax-responses.mjs'
       - 'src/mass/reader-oration-amen-source-handoff.js'
       - 'src/mass/reader-oration-festive-amen-reference.js'
+      - 'src/mass/reader-oration-amen-tone-policy.js'
+      - 'tests/reader-oration-amen-tone-policy.mjs'
       - 'tests/reader-oration-festive-amen-reference.mjs'
       - 'tests/reader-oration-festive-amen-phone.mjs'
       - 'tests/reader-oration-amen-source-handoff.mjs'
@@ -63,6 +65,8 @@ jobs:
           node --check src/mass/reader-canon-pax-response-reference-scores.js
           node --check src/mass/reader-oration-amen-source-handoff.js
           node --check src/mass/reader-oration-festive-amen-reference.js
+          node --check src/mass/reader-oration-amen-tone-policy.js
+          node --check tests/reader-oration-amen-tone-policy.mjs
           node --check tests/reader-oration-festive-amen-reference.mjs
           node --check tests/reader-oration-festive-amen-phone.mjs
           node --check tests/reader-oration-amen-source-handoff.mjs
@@ -88,6 +92,7 @@ jobs:
           node tests/reader-canon-pax-responses.mjs
           node tests/reader-oration-amen-source-handoff.mjs
           node tests/reader-oration-festive-amen-reference.mjs
+          node tests/reader-oration-amen-tone-policy.mjs
           node tests/reader-inline-chant-generic-source.mjs
           node tests/reader-inline-proper-registry.mjs
           node tests/reader-proper-gabc-bulk-join.mjs

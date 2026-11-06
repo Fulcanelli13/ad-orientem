@@ -103,5 +103,64 @@
         "LOW_MASS"
       ]
     }
-  ]
+  ],
+  "ferialAndOptional1961": {
+    "primaryFacsimile": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+    "rules": [
+      {
+        "tone": "FERIAL_A_1961",
+        "folio": "114*",
+        "scope": "COMMEMORATIONS_FERIAS_VIGILS_II_III_VOTIVE_IV_REQUIEM",
+        "printedRule": "recta voce a principio ad finem",
+        "congregationAmen": "NO_INDEPENDENT_FIXED_MELODY_NOTATED_ON_FOLIO",
+        "allowFixedNeumes": false,
+        "uiPolicy": "RESEARCH_PREVIEW_TEXT_RECTO_TONO_ONLY"
+      },
+      {
+        "tone": "FERIAL_B_1961",
+        "folio": "115*",
+        "scope": "LITANIES_SUNDAY_ASPERSION_BLESSINGS_OF_CANDLES_ASHES_PALMS_NEW_FIRE_PASCHAL_CANDLE_MANDATUM_GOOD_FRIDAY",
+        "printedRule": "Same as ferial A, except minor third cadence at end of prayer and conclusion",
+        "congregationAmen": "NO_AUTOMATIC_MASS_APPLICATION",
+        "allowFixedNeumes": false,
+        "uiPolicy": "RITE_SCOPED_FUTURE_ONLY"
+      },
+      {
+        "tone": "OLD_SOLEMN_AD_LIBITUM_1961",
+        "folios": [
+          "115*",
+          "116*",
+          "117*"
+        ],
+        "sourceId": 4488,
+        "sourceUrl": "https://gregobase.selapa.net/chant.php?id=4488",
+        "scope": "MASS_PRAYERS_EXCEPT_ORATIO_SUPER_POPULUM_INCLUDING_REQUIEM_AND_FLECTAMUS_GENUA_RITES",
+        "selection": "EXPLICIT_ONLY",
+        "congregationAmen": "PRINTED_ON_FOLIO_116_NOT_YET_NOTE_COLLATED",
+        "allowFixedNeumes": false,
+        "uiPolicy": "OPTIONAL_SOURCE_SELECTED_DISPLAY_HOLD_NOTICE"
+      },
+      {
+        "tone": "OLD_SIMPLE_AD_LIBITUM_1961",
+        "folios": [
+          "118*",
+          "119*"
+        ],
+        "sourceId": 4489,
+        "sourceUrl": "https://gregobase.selapa.net/chant.php?id=4489",
+        "scope": "ASPERSION_BLESSINGS_LITANIES_AND_SIMILAR_PRAYERS_NOT_ORDINARY_MASS_COLLECT",
+        "selection": "RITE_SCOPE_ONLY",
+        "congregationAmen": "(c3) <sp>R/</sp>. A(g)men.(h.) (::)",
+        "allowFixedNeumesForMass": false,
+        "uiPolicy": "RETAIN_AS_SPECIAL_RITES_RESEARCH_CANDIDATE_ONLY"
+      }
+    ],
+    "protectedRules": [
+      "No guessed absolute pitch from celebrant performance",
+      "Never use old simple 1961 Amen for Mass Collect or Postcommunion",
+      "Never infer optional old solemn choice from feast or user calendar",
+      "No score publication without editorial and musical approval",
+      "Gregorian preview text must never replace the original Latin or translation"
+    ]
+  }
 }
