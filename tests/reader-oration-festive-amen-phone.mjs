@@ -47,9 +47,9 @@ try{
     node.dataset.paragraphId=p.id;
     node.style.cssText="min-width:0;box-sizing:border-box";
     const lat=document.createElement("span");lat.className="ao-line-primary";
-    lat.textContent=p.primary;
+    lat.textContent=p.latin??p.primary??"";
     const en=document.createElement("span");en.className="ao-line-secondary";
-    en.textContent=p.secondary;
+    en.textContent=typeof p.vernacular==="string"?p.vernacular:(p.vernacular?.en??p.secondary??"");
     node.append(lat,en);body.append(node);
    }
    const originals=[...body.querySelectorAll(".ao-reader-paragraph")].map(node=>({
@@ -70,6 +70,10 @@ try{
    const width=body.querySelector(".ao-proper-reference-staff")?.getBoundingClientRect().width;
    const ids=[...body.querySelectorAll("[data-reference-score]")].map(x=>x.dataset.referenceScore);
    const allUnapproved=[...body.querySelectorAll("[data-reference-score]")].every(x=>x.dataset.approved==="false");
+   const sourceTextVisible=[...body.querySelectorAll(".ao-line-primary")].some(n=>
+    n.textContent.includes("per omnia saecula saeculorum")) &&
+    [...body.querySelectorAll(".ao-line-secondary")].some(n=>
+    n.textContent.includes("Grant us"));
    const intact=originals.every(p=>{
     const node=[...body.querySelectorAll(".ao-reader-paragraph")].find(n=>n.dataset.paragraphId===p.id);
     return node?.querySelector(".ao-line-primary")?.textContent===p.primary&&
@@ -79,12 +83,13 @@ try{
    const low=controller.render({mode:"LIVE",form:"LOW",resolvedMass:resolved("SUNDAY"),paragraphs:rows});
    controller.render({mode:"LIVE",form:"SOLEMN",resolvedMass:resolved("SUNDAY"),paragraphs:rows});
    for(let i=0;i<80&&controller.state().rendered<1;i++)await new Promise(r=>setTimeout(r,100));
-   return {festive,ready,svg,width,ids,allUnapproved,intact,ferial,low,restored:controller.state().rendered};
+   return {festive,ready,svg,width,ids,allUnapproved,sourceTextVisible,intact,ferial,low,restored:controller.state().rendered};
   });
   assert.equal(result.festive,1);
   assert.equal(result.ready,1);
   assert.equal(result.svg,1);
   assert.equal(result.allUnapproved,true);
+  assert.equal(result.sourceTextVisible,true,"Latin oration and vernacular must actually display");
   assert.equal(result.intact,true);
   assert.equal(result.ferial,0);
   assert.equal(result.low,0);
