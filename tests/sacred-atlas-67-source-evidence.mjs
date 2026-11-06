@@ -25,7 +25,7 @@ for(const c of priority){
   assert.equal(ev.official_coordinate_evidence.acceptance_scope,"NAMED_SITE_POINT_ONLY_NO_ENTRANCE_CLAIM");
  }else assert.equal(c.location_preview.coordinate_independently_verified,false);
 }
-assert.deepEqual(data.counts.priority_source_evidence_pass,{...seen,reviewed:67,independently_checked_site_coordinates:2,related_pilgrimage_church_coordinate_near_complex:1,owner_approved:0,import_ready:0});
+assert.deepEqual(data.counts.priority_source_evidence_pass,{...seen,reviewed:67,independently_checked_site_coordinates:2,related_pilgrimage_church_coordinate_near_complex:1,owner_approved:0,import_ready:0,content_unavailable_evidence_records:8,legacy_http_source_holds:1});
 assert.equal(seen.NAMED_SITE_SOURCE_RETRIEVED,52);
 assert.equal(seen.SITE_SCOPE_REVIEW_NEEDED,6);
 assert.equal(seen.SOURCE_FETCH_UNAVAILABLE_THIS_PASS,8);
