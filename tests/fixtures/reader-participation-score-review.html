@@ -28,6 +28,8 @@ button{cursor:pointer}.summary{font-size:13px;color:#3e4b56;margin-left:auto}
 .score .staff svg :is(path,polygon,polyline,line,text){fill:currentColor}
 .score .staff[aria-busy="true"]{opacity:.7}
 .score a{color:#225478;overflow-wrap:anywhere}
+.plates{display:flex;flex-direction:column;gap:5px;margin-top:8px;border-top:1px dashed #bec5ca;padding-top:8px}
+.plates a{font-size:12px;font-weight:650}
 .score .status{margin-top:9px;font-size:11px;color:#825622;background:#faf1df;border-left:3px solid #bd9453;padding:5px 7px}
 .score[data-render="failed"] .status{color:#902e23;background:#fff0ed;border-color:#d05b4b}
 .note{font-size:12px;line-height:1.5;color:#47525c;max-width:900px}
@@ -53,6 +55,7 @@ footer{padding:15px 20px 30px;color:#3f4b54;font-size:12px;line-height:1.5}
 <footer>Source of truth: <code>reader-participation-reference-scores.js</code>, <code>reader-participation-coverage.js</code>. The canonical 65-card Mass reader and public approved-score catalogue are not modified by this test fixture.</footer>
 <script type="module">
 import {PARTICIPATION_REFERENCE_SCORES} from "../../src/mass/reader-participation-reference-scores.js";
+import {printedPlatesForParticipationScore} from "../../src/mass/reader-participation-printed-plates.js";
 import {buildParticipationCoverage} from "../../src/mass/reader-participation-coverage.js";
 import {createOfflineChantEngraver} from "../../src/mass/reader-chant-engraver.js";
 const scores=PARTICIPATION_REFERENCE_SCORES;
@@ -89,8 +92,19 @@ for(const e of mapped){
   staff.setAttribute("aria-label","Research Gregorian neumes, not musically approved for publication");
   staff.setAttribute("aria-busy","true");card.append(staff);
   const link=document.createElement("a");link.href=s.sourceUrl;link.target="_blank";link.rel="noopener noreferrer";
-  link.textContent="Original score source #"+s.sourceId;card.append(link);
-  card.append(text("p","SOURCE TRANSCRIPTION · awaiting independent printed-neume comparison","status"));
+  link.textContent="GregoBase source record #"+s.sourceId;card.append(link);
+  const witness=printedPlatesForParticipationScore(s.sourceId);
+  if(!witness||witness.publicScoreApproved||witness.sourceNoteByNoteParity!=="UNVERIFIED")
+   throw Error("MISSING_OR_PREMATURELY_CERTIFIED_1961_SOURCE_PLATE_"+s.sourceId);
+  const scans=document.createElement("div");scans.className="plates";
+  for(const plate of witness.plates){
+   const scan=document.createElement("a");scan.href=plate.url;
+   scan.dataset.printedPlate="true";scan.target="_blank";scan.rel="noopener noreferrer";
+   scan.textContent="Printed 1961 scan · "+plate.book+" p. "+plate.page;
+   scans.append(scan);
+  }
+  card.append(scans);
+  card.append(text("p","SOURCE TRANSCRIPTION · printed score linked; musical note parity UNVERIFIED","status"));
   cards.append(card);
   engravers.push({score:s,card,staff});
  }
