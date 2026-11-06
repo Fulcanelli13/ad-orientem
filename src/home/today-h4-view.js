@@ -6,6 +6,7 @@ import { HOME_C3_CSS } from "./c3-styles.js";
 import { c3PrayerMarkup,c3UpcomingMarkup } from "./c3-gallery.js";
 import { HOME_ENRICHERS_VERSION } from "./enrichers.js";
 import { homeDidYouKnowMarkup } from "./did-you-know-glossary.js";
+import { renderHomeFirstMonthlyObservances } from "./home-first-monthly-observances.js";
 import { calendarMassColour } from "../calendar/colour-projection.js";
 import { calendarDisciplineForDate } from "../calendar/intelligence.js";
 // Display only verified liturgical colours; never infer them from the season.
@@ -89,8 +90,9 @@ export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null,ordo
   const rosaryRule=model.enricherVisible&&model.enricherRule?.kind==="static"&&model.enricherRule?.id==="rosary";
   const rosaryAttr=rosaryRule?'data-home-cu-static="rosary"':'data-home-cu-route="pray.rosary"';
   const upcoming=c3UpcomingMarkup(model.upcoming||[],fr,dateLabel,dayOf);
-  const spotlight=model.spotlight;
-  const custom=spotlight?.article?'<button type="button" class="aoH4Custom" data-home-calendar data-home-calendar-view="day" data-home-calendar-date="'+esc(spotlight.contextDate)+'"><span class="aoH4Eyebrow">'+esc(say("Tradition","Coutume"))+'</span><strong>'+esc(spotlight.article.title[fr?"fr":"en"])+'</strong><small>'+esc(dateLabel(spotlight.contextDate,fr))+'</small></button>':"";
+  const monthly=renderHomeFirstMonthlyObservances(model.monthlyObservances,vm.language);
+  const customs=Array.isArray(model.spotlights)?model.spotlights:[model.spotlight].filter(Boolean);
+  const custom=customs.map(spotlight=>spotlight?.article?'<button type="button" class="aoH4Custom" data-home-calendar data-home-calendar-view="day" data-home-calendar-date="'+esc(spotlight.contextDate)+'"><span class="aoH4Eyebrow">'+esc(say("Tradition","Coutume"))+'</span><strong>'+esc(spotlight.article.title[fr?"fr":"en"])+'</strong><small>'+esc(dateLabel(spotlight.contextDate,fr))+'</small></button>':"").join("");
   const gospelSub=model.gospelReference||say("Available when the Proper resolves","Disponible après résolution du Propre");
 
   return '<style data-ao-today-v2-style>'+TODAY_H4_CSS+'\n'+H7_SANCTUARY_CSS+'\n'+HOME_C3_CSS+'</style>'+
@@ -121,7 +123,7 @@ export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null,ordo
   '<section class="aoTodayV2PrayerThroughDay sec" id="ao-home-prayer-through-day" tabindex="-1"><div class="aoH4SectionHead"><h2>'+esc(say("Pray","Prier"))+'</h2><button type="button" data-home-cu-route="pray.library">'+esc(say("All prayers","Toutes les prières"))+' ›</button></div>'+
   '<div class="aoTodayV2Zone aoTodayV2PrayNow">'+c3PrayerMarkup({fr,feature,attrs,role:nextRole,title:prayerTitle,description:prayerCaption,due})+
   '<div class="aoH4Chips aoTodayV2PrayerShortcuts chips"><button '+rosaryAttr+' type="button">'+esc(say("Rosary","Rosaire"))+(rosaryRule?'<span class="aoH4Mine">'+esc(say("MY RULE","MA RÈGLE"))+'</span>':'')+'</button><button data-home-cu-route="pray.confession" type="button">'+esc(say("Confession","Confession"))+'</button><button data-home-cu-route="pray.adoration" type="button">'+esc(say("Adoration","Adoration"))+'</button></div></div></section>'+
-  '<section class="aoTodayV2CalendarGlance"><div class="aoH4SectionHead"><h2>'+esc(say("This week","Cette semaine"))+'</h2><button type="button" data-home-calendar data-home-calendar-view="picker">'+esc(say("Calendar","Calendrier"))+' ›</button></div><div class="aoH4Upcoming aoTodayV2GlanceEvents wkc">'+upcoming+custom+'</div></section>'+
+  '<section class="aoTodayV2CalendarGlance"><div class="aoH4SectionHead"><h2>'+esc(say("This week","Cette semaine"))+'</h2><button type="button" data-home-calendar data-home-calendar-view="picker">'+esc(say("Calendar","Calendrier"))+' ›</button></div><div class="aoH4Upcoming aoTodayV2GlanceEvents wkc">'+monthly+custom+upcoming+'</div></section>'+
   '<section class="aoH4DiscoveryStandalone" aria-label="'+esc(say("Did you know?","Le saviez-vous ?"))+'">'+homeDidYouKnowMarkup(vm.language)+'</section>'+
   '<div class="aoTodayV2Below" data-ao-home-enricher-owner="'+HOME_ENRICHERS_VERSION+'"><section class="aoTodayV2ReadReflect"><div class="aoH4SectionHead"><h2>'+esc(say("Read","Lire"))+'</h2></div><div class="aoH4Read">'+
   '<button type="button" class="row" data-action="gospel"><span><strong>'+esc(say("Gospel of the Mass","Évangile de la messe"))+'</strong><small>'+esc(gospelSub)+'</small></span><span class="aoH4Arrow" aria-hidden="true">›</span></button>'+
@@ -135,6 +137,7 @@ export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null,ordo
   (subtitle?'<p class="why">'+esc(subtitle)+'</p>':"")+
   '<div class="dsec"><div class="ordo"><div><small>Gloria</small><b class="'+(ordoFlag("gloria")==="—"?"no":"")+'">'+esc(ordoFlag("gloria"))+'</b></div><div><small>Credo</small><b class="'+(ordoFlag("credo")==="—"?"no":"")+'">'+esc(ordoFlag("credo"))+'</b></div><div><small>'+esc(say("Preface","Préface"))+'</small><b class="'+(prefaceText==="—"?"no":"")+'">'+esc(prefaceText)+'</b></div></div>'+
   (introitExcerpt?'<div class="intr" style="margin-top:18px"><span class="rb">Introitus · '+esc(say("Opening words","Incipit"))+'</span><p lang="la"><span class="drop">'+esc(introitExcerpt.slice(0,1))+'</span>'+esc(introitExcerpt.slice(1))+'…</p><button type="button" class="lrow" data-home-h4-readings data-home-h4-reading-slot="INTROIT"><span>'+esc(say("Read complete Introit","Lire l’introït intégral"))+'</span><span class="ch">›</span></button></div>':"")+
+  '<button type="button" class="lrow aoH7ChooseMass" data-home-mass-choose-celebration><span>'+esc(say("Which Mass are you attending?","Quelle messe allez-vous suivre ?"))+'</span><small>'+esc(say("Mass of the day · Votive · Requiem · Nuptial · Other","Messe du jour · Votive · Requiem · Nuptiale · Autre"))+'</small><span class="ch" aria-hidden="true">›</span></button>'+
   '<span class="rb">'+esc(say("The Proper","Le Propre"))+'</span>'+
   properSections.map(x=>'<button type="button" class="lrow" data-home-h4-readings data-home-h4-reading-slot="'+esc(x.id)+'"><span>'+esc(x.label)+'</span><span class="ch" aria-hidden="true">›</span></button>').join("")+
   (formularies.length?'<span class="rb">'+esc(say("Other Masses permitted","Autres messes permises"))+'</span>'+formularies.map(x=>'<button class="lrow" type="button" data-formulary="'+x.index+'"><span>'+esc(x.label)+'</span><span class="ch">›</span></button>').join(""):"")+

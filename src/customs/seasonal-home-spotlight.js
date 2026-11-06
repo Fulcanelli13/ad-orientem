@@ -228,8 +228,8 @@ function targetDates(rule,year){
  if(rule.rule==="SACRED_HEART")return [addDaysIso(day.corpus,8)];
  return [];
 }
-export function homeSeasonalCustomForDate(date){
- if(!valid(date))return null;
+export function homeSeasonalCustomsForDate(date,{limit=3}={}){
+ if(!valid(date))return Object.freeze([]);
  const yr=Number(date.slice(0,4)),choices=[];
  for(const row of SEASONAL_CUSTOMS_PILOT){
    // Fail closed if source article is not in the accepted published catalogue.
@@ -247,7 +247,10 @@ export function homeSeasonalCustomForDate(date){
    }
  }
  choices.sort((a,b)=>b.score-a.score||Math.abs(a.daysUntil)-Math.abs(b.daysUntil)||a.id.localeCompare(b.id));
- return choices.length?Object.freeze(choices[0]):null;
+ return Object.freeze(choices.slice(0,Math.max(0,Math.min(5,Number(limit)||0))));
+}
+export function homeSeasonalCustomForDate(date){
+ return homeSeasonalCustomsForDate(date,{limit:1})[0]??null;
 }
 export function seasonalCustomsPilotCoverage(){
  return Object.freeze({total:SEASONAL_CUSTOMS_PILOT.length,homeEligible:SEASONAL_CUSTOMS_PILOT.filter(x=>x.home).length,

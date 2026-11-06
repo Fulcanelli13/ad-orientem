@@ -6,7 +6,8 @@ import { buildReviewedSanctoralCards } from "../calendar/reviewed-sanctoral-card
 import { getSharedSanctoralReadModel } from "../calendar/living-sanctoral-read-model.js";
 import { HOME_ENRICHERS_VERSION } from "./enrichers.js";
 import { homeDidYouKnowMarkup } from "./did-you-know-glossary.js";
-import { homeSeasonalCustomForDate } from "../customs/seasonal-home-spotlight.js";
+import { homeSeasonalCustomForDate, homeSeasonalCustomsForDate } from "../customs/seasonal-home-spotlight.js";
+import { homeFirstMonthlyObservancesForDate, renderHomeFirstMonthlyObservances } from "./home-first-monthly-observances.js";
 
 const esc = value => String(value ?? "").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const L = (language,en,fr) => language === "fr" ? fr : en;
@@ -48,9 +49,11 @@ export function buildTodayV2Sections(state,vm,enrichers,readModel=getSharedSanct
   const feature=enrichers?.visible?enrichers.comingUp?.rows?.[0]??null:null;
   const daily=enrichers?.visible?enrichers.dailyCatechism??null:null;
   const spotlight=homeSeasonalCustomForDate(selected);
+  const spotlights=homeSeasonalCustomsForDate(selected);
+  const monthlyObservances=homeFirstMonthlyObservancesForDate(selected);
   const historicalCommemorations=observed?observedCommemorationLabels(observed,{language}):Object.freeze([]);
   const modernHonours=homeReviewedHonours(observed,selected,language,readModel);
-  return Object.freeze({selected,language,period,upcoming:unique,feature,daily,spotlight,
+  return Object.freeze({selected,language,period,upcoming:unique,feature,daily,spotlight,spotlights,monthlyObservances,
     enricherVisible:Boolean(enrichers?.visible),enricherRule:enrichers?.visible?enrichers.comingUp?.rows?.[1]??null:null,
     saintOrFeast,hasObservedDay:!!observed,historicalCommemorations,modernHonours,
     gospelReference:vm.gospelReference||null,
@@ -96,6 +99,14 @@ function renderSeasonalCustomsSpotlight(selection,language){
  +'<p class="aoTodayV2CustomScope">'+esc(optional)+'</p>'
  +'<button type="button" data-home-calendar data-home-calendar-view="day" data-home-calendar-date="'+esc(selection.contextDate)+'" class="aoTodayV2CustomCalendarLink">'
  +esc(txt("View in Calendar","Voir dans le calendrier"))+' <span aria-hidden="true">›</span></button></section>';
+}
+
+function monthlyObservancesMarkup(model){
+ const entries=model?.monthlyObservances??[];
+ if(!entries.length)return "";
+ const title=model.language==="fr"?"Dévotions du mois":"Monthly devotions";
+ return '<section class="aoTodayV2MonthlyDevotions aoTcmCard" data-home-monthly-observances><h2>'+esc(title)+'</h2>'+
+  '<div class="aoTodayV2GlanceEvents">'+renderHomeFirstMonthlyObservances(entries,model.language)+'</div></section>';
 }
 
 export function renderTodayV2Sections(model,vm){
@@ -166,6 +177,7 @@ export function renderTodayV2Sections(model,vm){
   <section class="aoTodayV2DiscoveryStandalone" aria-label="${esc(txt("Did you know?","Le saviez-vous ?"))}">
     ${homeDidYouKnowMarkup(language)}
   </section>
+  ${monthlyObservancesMarkup(model)}
   ${renderSeasonalCustomsSpotlight(spotlight,language)}
   <div class="aoTodayV2Below" data-ao-home-enricher-owner="${HOME_ENRICHERS_VERSION}">
     <section class="aoTodayV2Zone aoTodayV2ReadReflect aoTcmCard"><div class="aoTodayV2SectionHead"><div><h2>${esc(txt("Read & reflect","Lire et méditer"))}</h2></div></div>

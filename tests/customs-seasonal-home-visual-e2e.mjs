@@ -84,8 +84,13 @@ try{
         Boolean(state.resolution?.day?.main)&&
         Boolean(document.querySelector(".homeScreen.aoTodayH4 .aoH4Custom"));
     },item.date,{timeout:45000});
-    const custom=page.locator(".homeScreen .aoH4Custom");
-    assert.equal(await custom.count(),1,"H4 must show exactly one selected Customs teaser");
+    // The restored Home may show several independent, source-backed customs
+    // plus First Friday/Saturday programme cards on the same day. Find the
+    // exact reviewed article without mistaking another published card for it.
+    const custom=page.locator(".homeScreen .aoH4Custom[data-home-calendar-view='day']")
+      .filter({hasText:article.title.en});
+    assert.equal(await custom.count(),1,
+      "H4 must expose this canonical Customs teaser exactly once");
     assert.equal(await custom.getAttribute("data-home-calendar-date"),item.date);
     assert.equal(await custom.getAttribute("data-home-calendar-view"),"day");
     assert.equal(await custom.locator("strong").innerText(),article.title.en,
@@ -106,8 +111,14 @@ try{
        title:el.querySelector("strong")?.textContent?.trim()||"",
        caption:el.querySelector("small")?.textContent?.trim()||""};
     });
-    assert.ok(bounds.left>=-1&&bounds.right<=width+1&&bounds.docWidth<=width+1,
-      "H4 Customs teaser clips at "+width+": "+JSON.stringify(bounds));
+    // A horizontal carousel intentionally peeks the next card; its item may
+    // extend beyond the scrollport without causing page overflow. Assert the
+    // bounded scrollport and full-document width, not item-level clipping.
+    assert.ok(bounds.docWidth<=width+1 &&
+      (bounds.scrollable
+        ? bounds.parentLeft>=-1&&bounds.parentRight<=width+1
+        : bounds.left>=-1&&bounds.right<=width+1),
+      "H4 Customs carousel overflows the page at "+width+": "+JSON.stringify(bounds));
     assert.ok(bounds.title.length>6&&bounds.caption.length>2);
     await custom.screenshot({path:resolve(shots,item.key+"-"+width+"-teaser.png")});
     await page.screenshot({path:resolve(shots,item.key+"-"+width+"-home.png"),fullPage:true});

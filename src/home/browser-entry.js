@@ -269,6 +269,19 @@ export function createHomeOwner(win=globalThis){
       });
   }
 
+  function openHomeMassChooser(trigger){
+    // The H7 door and Change sheet both lead to the one certified Mass
+    // selector. Do not synthesize votive titles, permissions or Propers.
+    return navigateHomeShortcut("mass",{trigger,routeId:"mass.choices"})
+      .then(opened=>{
+        if(!opened)return false;
+        const focused=win?.AO_R17_BROWSER_ENTRY?.focusMassSelection?.()===true;
+        if(focused){clearRouteError();return true;}
+        showRouteError("mass.choices",trigger);
+        return false;
+      });
+  }
+
   function openRoute(route,{trigger=null}={}){
     const id=String(route??"");
     if(!id)return false;
@@ -479,13 +492,19 @@ export function createHomeOwner(win=globalThis){
         }).finally(()=>{if(h4Begin.isConnected)h4Begin.disabled=false});
       return;
     }
+    const chooseMass=target?.closest?.("[data-home-mass-choose-celebration]");
+    if(chooseMass){
+      event.preventDefault?.();event.stopImmediatePropagation?.();
+      void openHomeMassChooser(chooseMass);
+      return;
+    }
     const h4Change=target?.closest?.("[data-home-h4-change]");
     if(h4Change){
       event.preventDefault?.();event.stopImmediatePropagation?.();
       // The Change sheet is a presentation of R17's one existing preflight.
       // Alternative Mass/Proper selection still goes through the host resolver.
       const opened=openH4ChoicesSheet(win,{
-        onOtherMass:()=>{void navigateHomeShortcut("mass",{trigger:h4Change,routeId:"mass.choices"});},
+        onOtherMass:()=>{void openHomeMassChooser(h4Change);},
         onDone:()=>{
           if(state(win)?.route!=="home")return;
           // The modal is now removed and Home re-paints from canonical R17 state.
@@ -733,6 +752,26 @@ export function createHomeOwner(win=globalThis){
           showRouteError(id,stat);
         }
       }
+      return;
+    }
+    const monthly=target?.closest?.("[data-home-monthly-route]");
+    if(monthly){
+      event.preventDefault?.();
+      event.stopImmediatePropagation?.();
+      const id=monthly.dataset?.homeMonthlyRoute;
+      if(!["programme.first_friday","programme.first_saturday"].includes(id)){
+        showRouteError("home.monthly-devotion",monthly);return;
+      }
+      // The canonical Pray owner is lazy-loaded. Open its exact programme,
+      // never a substitute generic prayer hub or a tracking-only view.
+      void import("../pray/browser-entry.js")
+        .then(m=>m.ensurePrayReader({win}))
+        .then(()=>win?.AO_PRAY_V435930?.open?.(id,{trigger:monthly})===true)
+        .then(ok=>{if(ok)clearRouteError();else showRouteError(id,monthly);})
+        .catch(error=>{
+          try{win?.console?.error?.("Home monthly devotion unavailable",id,error)}catch{}
+          showRouteError(id,monthly);
+        });
       return;
     }
     const route=target?.closest?.("[data-home-cu-route]");

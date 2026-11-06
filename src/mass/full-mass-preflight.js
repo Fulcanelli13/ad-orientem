@@ -958,6 +958,15 @@ export function mountFullMassPreflight({
     setTodayChoice,
     composeRitesFor,
     openCategory,
+    // The Home Mass door must be able to expose the existing exact Mass
+    // categories directly, without replacing any host-owned selection.
+    focusMassSelection(){
+      if(disposed)return false;
+      folioStep="celebration";
+      m1Focus=m1Preview?"mass":null;
+      refresh();
+      return true;
+    },
     refresh,
     // Returning to the Mass tab resets presentation only. The source-owned
     // celebration, Proper, ceremony and reader preferences remain untouched.

@@ -11,6 +11,7 @@ import { buildReaderModeModels, captureReaderModeAnchor, findReaderModeAnchorCar
 import { projectGranularMissalCards, missalPrayerHeadingsForCard } from "./reader-missal-granularity.js";
 import { loadReaderPresentationData } from "./reader-data.js";
 import { createReaderDomAdapter, syncReaderRitualHighlights } from "./reader-dom.js";
+import { postLowMassLeonineEligible } from "./reader-post-low-mass.js";
 import { buildScholaMusicItinerary } from "./reader-schola-event-timeline.js";
 import {projectNativeRiteMusicItinerary} from "./reader-schola-special-rite-itinerary.js";
 import {readScholaLocalProgramme, updateScholaLocalProgramme, applyScholaLocalProgramme} from "./reader-schola-local-programme.js";
@@ -1408,6 +1409,7 @@ export async function mountNativeReaderPreview({
       language:prepared?.readerPreferences?.language??"en"
     }):null;
   let current=readerModel.cardBySequence(1);
+  let postLowMassLeonineOpened=false;
   let reader=null;
   let canonManualUI=null;
   let inAsperges=Boolean(ready.aspergesController);
@@ -2441,6 +2443,15 @@ export async function mountNativeReaderPreview({
   }
 
   function previousReaderCard(){
+    if(postLowMassLeonineOpened){
+      // Returning from optional post-Mass prayer must recover the last
+      // canonical Gospel, not create a hidden 66th Mass card.
+      postLowMassLeonineOpened=false;
+      root.dataset.r17PostMass="";
+      const scroll=root.querySelector?.(".ao-prayer-card");
+      if(scroll)scroll.scrollTop=0;
+      return current;
+    }
     if(inGenericProcession && ready.genericProcessionController){
       const state=ready.genericProcessionController.project();
       if(!state.atStart)ready.genericProcessionController.previous();
@@ -2591,7 +2602,31 @@ export async function mountNativeReaderPreview({
       if(!state.atEnd){mandatumController.next();return showMandatumStage();}
     }
     const card=nextVisibleCard(current,"next");
-    if(!card)return enterLifecycleBoundary();
+    if(!card){
+      // The Mass's final Last Gospel remains the 65th curated prayer card.
+      // The Leonine prayers are voluntary after-Mass devotion, not another
+      // numbered Mass step. The next arrow must lead to them before the
+      // existing post-Mass lifecycle/handoff screen.
+      const devotion=root.querySelector?.("[data-ao-post-low-mass-leonine]");
+      const eligible=postLowMassLeonineEligible(prepared,
+        {cardTitle:current?visibleMassCardTitle(current):""},
+        readerModel?.presentationMode??"LIVE");
+      if(eligible&&devotion&&!postLowMassLeonineOpened){
+        postLowMassLeonineOpened=true;
+        root.dataset.r17PostMass="leonine";
+        const scroll=root.querySelector?.(".ao-prayer-card");
+        if(scroll){
+          const top=Math.max(0,devotion.offsetTop-scroll.offsetTop-16);
+          scroll.scrollTop=top;
+        }
+        return current;
+      }
+      postLowMassLeonineOpened=false;
+      root.dataset.r17PostMass="";
+      return enterLifecycleBoundary();
+    }
+    postLowMassLeonineOpened=false;
+    root.dataset.r17PostMass="";
     return showCard(card);
   }
 
@@ -2730,6 +2765,8 @@ export async function mountNativeReaderPreview({
 
   function showCard(card,{directJump=false,preserveSchola=false}={}){
     if(!card) return null;
+    postLowMassLeonineOpened=false;
+    root.dataset.r17PostMass="";
     inAsperges=false;
     inPalm=false;
     inAsh=false;
