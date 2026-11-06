@@ -89,3 +89,47 @@ Run the validator with:
     node tests/pray-work-identity-registry-20261106.mjs
 
 Only a finished Node or GitHub Actions execution counts as validation execution evidence; the initial in-memory construction check is a separate preliminary check.
+
+
+## Stage 2 source-pointer audit — executed in GitHub Actions
+
+Successful workflow run: https://github.com/Fulcanelli13/ad-orientem/actions/runs/42285083538
+
+The Stage 2 executable audit tested all **87 non-canonical-family work records** (84 with unverified reader routes, 2 external links, 1 source-only Office). Results:
+
+| Evidence from the source checker | Records |
+| --- | ---: |
+| Exact ID found in an imported source object | 31 |
+| Exact ID found in an imported source array | 12 |
+| Source export and member resolved | 17 |
+| Exported object with a distinct source ID | 1 |
+| Exported arrays requiring programme-member ID crosswalk | 8 |
+| Symbol/token visible in its owner file (not runtime import-certified) | 18 |
+| **Total audited source-owned records** | **87** |
+
+**69 records** have source-module import evidence; the remaining **18** have lexical source-file evidence only. There were **zero unresolved source keys** in the tested importable sources and zero module import failures.
+
+**29** work IDs appeared as literal tokens in known runtime owner files; **58** did not. Neither observation proves browser reachability, and some programme IDs intentionally do not appear as standalone route strings. **No extra records have been marked published.**
+
+### Four errors caught and fixed by the new audit
+
+The initial Stage 2 run failed on four entries that had used public route IDs as if they were exported data symbols:
+
+| Reader route | Corrected source key |
+| --- | --- |
+| pray.little_crown | LITTLE_CROWN_B30_BEADS |
+| pray.st_joseph_seven_sorrows | JOSEPH_SEVEN_PRAYERS_B24 |
+| pray.penitential_psalms | PENITENTIAL_PSALMS_VULGATE |
+| pray.good_death | GOOD_DEATH_DYING_V384 |
+
+Each still retains its original public route ID as independent registry metadata. No original programme data or runtime code was edited.
+
+Two other corrections were made directly from repository source evidence: the Montfort Act points to the real MONTFORT_B26_CONSECRATION_ACT_EN export, and Vespers of the Dead points to OFFICE_DEAD_VESPERS_1960_CONTEXT. The latter explicitly remains **source-only, not a public reader**.
+
+The three Latin hymn classifications (Audi, benigne Conditor; O sol salutis intimis; Ex more docti mystico) were checked against their full Latin openings and closing doxologies. The source-addressee review flags were closed without altering the hymn texts.
+
+The 133-work Stage 1 structural test and Stage 2 source-pointer test **both passed** in the linked successful run. This establishes data-identity and pointer integrity, not live rendering, complete text collation or a merge/deployment certification.
+
+### Next controlled step
+
+Individually check reader exposure for 84 route-unverified records and the relevant historical source language witnesses; mark availability as verified only after a reader-level test, and keep all currently live content visible. The research PR must remain draft and not enter the application until that work and the non-regression gate are done.
