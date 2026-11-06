@@ -8,6 +8,7 @@ import {ALL_SAINTS_REFERENCE_SCORES} from "./reader-inline-all-saints-reference.
 import {createProperReferenceRegistry,PROPER_REFERENCE_LABELS} from "./reader-inline-proper-registry.js";
 import {participationReferenceScoresForParagraph} from "./reader-participation-reference-scores.js";
 import {resolveOrationAmenSourceHandoff} from "./reader-oration-amen-source-handoff.js";
+import {sourceBoundFestiveOrationAmenScores} from "./reader-oration-festive-amen-reference.js";
 
 export const JULY07_REFERENCE_NOTATION_SCHEMA="ao-reader-july07-reference-notation-v1";
 // The original printed Introit GABC includes a distinct conditional "T. P."
@@ -135,7 +136,10 @@ export function createDatedProperNotationPreview({
    const participatory=participationReferenceScoresForParagraph({
     paragraph:p,paragraphs,form,resolvedMass,massPlan,selectedSettings
    });
-   for(const score of [...scores,...participatory]){
+   const orationScores=sourceBoundFestiveOrationAmenScores({
+    paragraph:p,paragraphs,form,resolvedMass
+   });
+   for(const score of [...scores,...participatory,...orationScores]){
     const host=doc.createElement("span");host.className="ao-proper-reference-notation";
     host.dataset.referenceScore=score.id;
     host.dataset.approved="false";
