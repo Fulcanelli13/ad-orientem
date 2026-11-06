@@ -26,10 +26,10 @@ const resolved=(d,kind="SUNDAY")=>({schema:"ao-resolved-mass-v2",form:"SOLEMN",
   onlyForCommonMassPrayerTones:true,celebrationKind:kind,
   liturgicalClass:kind==="FERIA"?3:1}}});
 const scores=(p,paragraphs,resolvedMass,form="SOLEMN",tone="OLD_SOLEMN_1961")=>
- sourceBoundOldSolemnOrationAmenScores({paragraph,paragraphs,resolvedMass,form,
+ sourceBoundOldSolemnOrationAmenScores({paragraph:p,paragraphs,resolvedMass,form,
  selectedSettings:{ORATION_TONE:tone}});
 const festive=(p,paragraphs,resolvedMass,tone="OLD_SOLEMN_1961")=>
- sourceBoundFestiveOrationAmenScores({paragraph,paragraphs,resolvedMass,
+ sourceBoundFestiveOrationAmenScores({paragraph:p,paragraphs,resolvedMass,
  form:"SOLEMN",selectedSettings:{ORATION_TONE:tone}});
 assert.equal(OLD_SOLEMN_ORATION_AMEN_SOURCE.sourceFolio,"116*");
 assert.match(OLD_SOLEMN_ORATION_AMEN_SOURCE.gabc,/\(c4\).*A\(g\)men\.\(i\.\)/);
