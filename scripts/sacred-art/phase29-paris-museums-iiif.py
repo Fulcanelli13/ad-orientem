@@ -85,6 +85,11 @@ def main():
   try:
    blob,typ,final=bounded(session,target["manifest"],"application/json",5_000_000)
    doc=json.loads(blob)
+   item["manifest_root_type"]=type(doc).__name__
+   item["manifest_root_keys"]=list(doc.keys())[:60] if isinstance(doc,dict) else []
+   item["manifest_media_type"]=typ
+   item["manifest_sample_json"]=json.dumps(doc,ensure_ascii=False)[:5500]
+   (OUT/("manifest_structure_"+key+".json")).write_text(json.dumps({"manifest_url":target["manifest"],"root_type":type(doc).__name__,"content_type":typ,"root_keys":item["manifest_root_keys"],"sample":item["manifest_sample_json"]},ensure_ascii=False,indent=2),encoding="utf-8")
    item["manifest_status"]="SUCCESS"
    item["manifest_final_url"]=final
    item["iiif_declared_rights"]=doc.get("rights") or doc.get("license") or ""
