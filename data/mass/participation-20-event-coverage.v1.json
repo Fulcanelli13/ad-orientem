@@ -9,6 +9,8 @@
     "approvedCatalogue": "src/mass/reader-inline-chant-approved.js",
     "orationSourceGate": "src/mass/reader-oration-amen-source-handoff.js",
     "orationToneGate": "src/mass/reader-oration-amen-tone-policy.js",
+    "gospelConclusionNonSungAuthority": "https://media.musicasacra.com/pdf/highmass.pdf",
+    "gospelConclusionCeremonialCorroboration": "https://acss.sspxusa.org/rubrics/highmass/HighMass-Master-of-Ceremonies.pdf",
     "publication": "ONLY_EXACT_ITE_VIII_2_FRAGMENTS_APPROVED_AS_OF_2026_11_06"
   },
   "counts": {
@@ -19,7 +21,10 @@
     "eventsLimitedPublic": 1,
     "eventsFixedResearchOnly": 14,
     "eventsDynamicSourceBound": 2,
-    "eventsSourceUnmapped": 3,
+    "eventsSourceUnmapped": 2,
+    "eventsExcludedNonSung": 1,
+    "sungEligibleEvents": 19,
+    "sungEligibleCueIds": 22,
     "eventsWithAnyFixedResearch": 15
   },
   "events": [
@@ -32,6 +37,7 @@
         "AO.SM.C0053",
         "AO.SM.C0054"
       ],
+      "sungExclusion": null,
       "state": "FIXED_SOURCE_RESEARCH_ONLY",
       "publicScoreIds": [],
       "fixedResearchIds": [
@@ -54,6 +60,7 @@
       "cueIds": [
         "AO.SM.C0071"
       ],
+      "sungExclusion": null,
       "state": "FIXED_SOURCE_RESEARCH_ONLY",
       "publicScoreIds": [],
       "fixedResearchIds": [
@@ -76,6 +83,7 @@
       "cueIds": [
         "AO.SM.C0074"
       ],
+      "sungExclusion": null,
       "state": "DYNAMIC_SOURCE_BOUND_RESEARCH_ONLY",
       "publicScoreIds": [],
       "fixedResearchIds": [],
@@ -109,6 +117,7 @@
       "cueIds": [
         "AO.SM.C0083"
       ],
+      "sungExclusion": null,
       "state": "FIXED_SOURCE_RESEARCH_ONLY",
       "publicScoreIds": [],
       "fixedResearchIds": [
@@ -134,6 +143,7 @@
       "cueIds": [
         "AO.SM.C0085"
       ],
+      "sungExclusion": null,
       "state": "FIXED_SOURCE_RESEARCH_ONLY",
       "publicScoreIds": [],
       "fixedResearchIds": [
@@ -159,13 +169,14 @@
       "cueIds": [
         "AO.SM.C0087"
       ],
-      "state": "SOURCE_CUE_UNMAPPED",
+      "sungExclusion": "GOSPEL_END_LAUS_TIBI_CHRISTE_RESPONDED_NOT_SUNG",
+      "state": "EXCLUDED_NON_SUNG_RESPONSE",
       "publicScoreIds": [],
       "fixedResearchIds": [],
       "fixedResearchSourceIds": [],
       "fixedResearchWitnesses": [],
       "conditionalSources": null,
-      "reviewAction": "Find the independently printed and text-matched Gospel-ending response; #4490/#4491 cover the opening exchange only, not this cue."
+      "reviewAction": "This 1962 High-Mass response is made after the Gospel but NOT sung by the choir; preserve its Latin/vernacular text, without a score (Haynes 2007, p. 5; SSPX high-Mass MC guide)."
     },
     {
       "id": "CREDO_INTONATION",
@@ -176,6 +187,7 @@
         "AO.SM.C0089",
         "AO.SM.C0090"
       ],
+      "sungExclusion": null,
       "state": "FIXED_SOURCE_RESEARCH_ONLY",
       "publicScoreIds": [],
       "fixedResearchIds": [
@@ -198,6 +210,7 @@
       "cueIds": [
         "AO.SM.C0107"
       ],
+      "sungExclusion": null,
       "state": "SOURCE_CUE_UNMAPPED",
       "publicScoreIds": [],
       "fixedResearchIds": [],
@@ -214,6 +227,7 @@
       "cueIds": [
         "AO.SM.C0136"
       ],
+      "sungExclusion": null,
       "state": "FIXED_SOURCE_RESEARCH_ONLY",
       "publicScoreIds": [],
       "fixedResearchIds": [
@@ -239,6 +253,7 @@
       "cueIds": [
         "AO.SM.C0138"
       ],
+      "sungExclusion": null,
       "state": "FIXED_SOURCE_RESEARCH_ONLY",
       "publicScoreIds": [],
       "fixedResearchIds": [
@@ -264,6 +279,7 @@
       "cueIds": [
         "AO.SM.C0140"
       ],
+      "sungExclusion": null,
       "state": "FIXED_SOURCE_RESEARCH_ONLY",
       "publicScoreIds": [],
       "fixedResearchIds": [
@@ -289,6 +305,7 @@
       "cueIds": [
         "AO.SM.C0143"
       ],
+      "sungExclusion": null,
       "state": "FIXED_SOURCE_RESEARCH_ONLY",
       "publicScoreIds": [],
       "fixedResearchIds": [
@@ -314,6 +331,7 @@
       "cueIds": [
         "AO.SM.C0207"
       ],
+      "sungExclusion": null,
       "state": "FIXED_SOURCE_RESEARCH_ONLY",
       "publicScoreIds": [],
       "fixedResearchIds": [
@@ -336,6 +354,7 @@
       "cueIds": [
         "AO.SM.C0218"
       ],
+      "sungExclusion": null,
       "state": "FIXED_SOURCE_RESEARCH_ONLY",
       "publicScoreIds": [],
       "fixedResearchIds": [
@@ -358,6 +377,7 @@
       "cueIds": [
         "AO.SM.C0210"
       ],
+      "sungExclusion": null,
       "state": "FIXED_SOURCE_RESEARCH_ONLY",
       "publicScoreIds": [],
       "fixedResearchIds": [
@@ -380,6 +400,7 @@
       "cueIds": [
         "AO.SM.C0220"
       ],
+      "sungExclusion": null,
       "state": "FIXED_SOURCE_RESEARCH_ONLY",
       "publicScoreIds": [],
       "fixedResearchIds": [
@@ -402,6 +423,7 @@
       "cueIds": [
         "AO.SM.C0252"
       ],
+      "sungExclusion": null,
       "state": "FIXED_SOURCE_RESEARCH_ONLY",
       "publicScoreIds": [],
       "fixedResearchIds": [
@@ -424,6 +446,7 @@
       "cueIds": [
         "AO.SM.C0255"
       ],
+      "sungExclusion": null,
       "state": "DYNAMIC_SOURCE_BOUND_RESEARCH_ONLY",
       "publicScoreIds": [],
       "fixedResearchIds": [],
@@ -457,6 +480,7 @@
       "cueIds": [
         "AO.SM.C0258"
       ],
+      "sungExclusion": null,
       "state": "SOURCE_CUE_UNMAPPED",
       "publicScoreIds": [],
       "fixedResearchIds": [],
@@ -474,6 +498,7 @@
         "AO.SM.C0259",
         "AO.SM.C0260"
       ],
+      "sungExclusion": null,
       "state": "LIMITED_PUBLIC_EXACT_SETTING",
       "publicScoreIds": [
         "GREGOBASE-832-LEAD",
