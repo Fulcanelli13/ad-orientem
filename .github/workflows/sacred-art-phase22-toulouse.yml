@@ -1,0 +1,44 @@
+name: Sacred Art Phase 22 — Toulouse museum inventory crosswalk
+on:
+  push:
+    branches:
+      - research/sacred-art-phase18-iiif-audit-20261106
+    paths:
+      - 'scripts/sacred-art/phase22-toulouse-inventory.py'
+      - '.github/workflows/sacred-art-phase22-toulouse.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify-toulouse:
+    runs-on: ubuntu-latest
+    timeout-minutes: 17
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install HTTP client
+        run: python -m pip install --disable-pip-version-check 'requests>=2.32,<3'
+      - name: Retrieve existing owner-selected Commons provenance metadata
+        uses: actions/download-artifact@v4
+        with:
+          name: phase20-commons-provenance-157-research-only
+          run-id: 42169137895
+          github-token: ${{ github.token }}
+          path: reference-phase20
+      - name: Check both Toulouse official museum inventory exports and match all 15 paintings
+        run: |
+          python -m py_compile scripts/sacred-art/phase22-toulouse-inventory.py
+          python scripts/sacred-art/phase22-toulouse-inventory.py
+      - name: Save audit evidence only, never publish gallery
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase22-toulouse-15-inventory-results
+          path: artifacts/sacred-art-phase22-toulouse/
+          retention-days: 7
+          if-no-files-found: warn
