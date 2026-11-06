@@ -3,6 +3,15 @@
 // Mass (Cogitationes), III class, white, with Gloria and no Credo.
 // Never change universal 1962 calendar identity or silently overwrite
 // the user's other Mass choices.
+const explicitIcrspSelections=new WeakMap();
+export function isExplicitIcrspFirstFridaySelection({win=globalThis,dateIso}={}){
+ const arch=win?.AO_CELEBRATION_ARCH_V1;
+ return Boolean(explicitIcrspSelections.get(win)===dateIso &&
+  dateIso==="2026-11-06" &&
+  win?.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate===dateIso &&
+  arch?.actualCelebration?.id==="sacred_heart" &&
+  arch?.votiveBasis==="first_friday");
+}
 export const ICRSP_2026_11_06_SACRED_HEART={
  date:"2026-11-06",
  id:"sacred_heart",
@@ -38,6 +47,9 @@ export function selectIcrspFirstFridayLowMass({win=globalThis,dateIso}={}){
    return Object.freeze({ok:false,reason:"FIRST_FRIDAY_RUBRICS_NOT_CONFIRMED",rubricStatus:rubric?.status??null});
  if(bridge.selectTodayOption("form",spec.form)!==true)
    return Object.freeze({ok:false,reason:"LOW_MASS_FORM_NOT_ACCEPTED"});
+ // Only the explicit ICRSP Home action can authorize institute-scoped
+ // oratio pro Papa, never selecting this votive elsewhere or on other days.
+ explicitIcrspSelections.set(win,spec.date);
  return Object.freeze({ok:true,id:spec.id,path:spec.path,form:spec.form,
   gloria:rubric.gloria,credo:rubric.credo,votiveClass:rubric.votiveClass,
   // Selection is not readiness; start is still blocked until the host
