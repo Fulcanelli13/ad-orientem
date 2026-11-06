@@ -21,7 +21,7 @@ assert.deepEqual([q.counts.explicit_promoted,q.counts.text_hint_review,q.counts.
 const places=new Map(g.places.map(x=>[x.place_id,x])),shrines=new Map(s.shrines.map(x=>[x.shrine_id,x])),pilgrimages=new Map(s.pilgrimages.map(x=>[x.pilgrimage_id,x])),ids=new Set(sources.sources.map(x=>x.id));
 assert.equal(places.size,g.places.length);
 assert.equal(new Set(s.shrines.map(x=>x.place_id)).size,262);
-assert.equal(new Set(s.shrines.map(x=>places.get(x.place_id)?.address.country_code)).size,69);
+assert.equal(new Set(s.shrines.map(x=>places.get(x.place_id)?.address.country_code)).size,70,"Ngome adds South Africa to historical 69-country shrine coverage");
 const projection=projectExploreDataset({directory:{records:[],communities:[]},geography:g,shrines:{...s,sources:sources.sources},sacredPhenomena:ph,customs:{customs:[],attestations:[],sources:[]},novenas:{records:[],links:[],sources:[]},editorial:{featured:[],placeGuides:[]},media:{approved:[],gallery:[]}});
 assert.deepEqual(new Set(m.published_new.map(x=>x.country)),new Set(["US","TT","GH"]));
 for(const row of m.published_new){

@@ -27,7 +27,7 @@ const pBy=new Map(g.places.map(x=>[x.place_id,x])),shBy=new Map(s.shrines.map(x=
 const srcBy=new Map(sources.sources.map(x=>[x.id,x]));
 assert.equal(pBy.size,g.places.length,"Duplicate physical sites");
 assert.equal(new Set(s.shrines.map(x=>x.place_id)).size,262);
-assert.equal(new Set(s.shrines.map(x=>g.places.find(p=>p.place_id===x.place_id)?.address.country_code)).size,69);
+assert.equal(new Set(s.shrines.map(x=>g.places.find(p=>p.place_id===x.place_id)?.address.country_code)).size,70,"Ngome adds South Africa to historical 69-country shrine coverage");
 const projected=projectExploreDataset({directory:{records:[],communities:[]},geography:g,shrines:{...s,sources:sources.sources},sacredPhenomena:ph,customs:{customs:[],attestations:[],sources:[]},novenas:{records:[],links:[],sources:[]},editorial:{featured:[],placeGuides:[]},media:{approved:[],gallery:[]}});
 for(const entry of m.published_new){
  const p=pBy.get(entry.place_id),sh=shBy.get(entry.shrine_id),pil=piBy.get(entry.pilgrimage_id);
