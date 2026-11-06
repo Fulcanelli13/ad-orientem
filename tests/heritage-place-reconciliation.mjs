@@ -159,7 +159,8 @@ for(const [count,value] of Object.entries({
  assert.equal(R.counts[count]+(count==="relic_claims"?5:0),value,"Historical claim counts may only grow by the explicitly source-backed later Père Laval record");
 }
 const noRefs=R.place_crosswalk.filter(p=>!Object.keys(p.record_ids).length).map(p=>p.place_id);
-assert.deepEqual(R.exception_queues.places_without_direct_claim,noRefs);
+assert.deepEqual([...R.exception_queues.places_without_direct_claim].sort(),[...noRefs].sort(),
+ "Review queue and current crosswalk must contain the same unlinked physical Places regardless of editorial ordering");
 assert.equal(R.counts.places_without_direct_claim,noRefs.length);
 assert.deepEqual(R.exception_queues.dangling_place_references,[]);
 assert.deepEqual(R.exception_queues.dangling_pilgrimage_shrine_references,[]);
