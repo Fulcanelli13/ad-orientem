@@ -199,6 +199,9 @@ html[data-ao-h7-door-open] .aoH7Screens .aoH7DoorView:not([hidden]){height:100dv
 .aoH7Screens .aoH7DoorView .foot{position:relative;z-index:3}
 .aoH7Screens .aoH7DoorView .dsec>.rb{display:block;text-align:left;margin:18px 0 6px}
 .aoH7Screens .aoH7HomeView .hero{isolation:isolate}
+/* Keep Calendar and Settings tappable above long localized hero/action text.
+   The source hero and H7 artwork remain unchanged; only stacking is fixed. */
+.aoH7Screens .aoH7HomeView .hero>.top{z-index:7}
 .aoH7Screens .aoH7HomeView .hero .sh{pointer-events:none}
 .aoH7Screens .aoH7HomeView .hero .aoTodayV2HeroActions{display:block!important}
 .aoH7Screens .aoH7HomeView .hero .aoTodayV2Mass{display:block!important;margin:0!important;padding:0!important;border:0!important;background:none!important}
