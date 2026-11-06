@@ -10,6 +10,7 @@
 // Scope intentionally requires an explicit ICRSP entry, never any other
 // votive, date, institute, community, or sung Mass.
 import {icrspFranceOrdoForDate} from "../calendar/icrsp-france-ordo-evidence.js";
+import {icrspNovember2026Appointment} from "./icrsp-first-friday-entry.js";
 
 export const ICRSP_NOV06_PRO_PAPA_SOURCE=Object.freeze({
  id:"ICRSP_2026_11_06_PRO_PAPA",date:"2026-11-06",
@@ -38,43 +39,91 @@ export const ICRSP_NOV06_PRO_PAPA_SOURCE=Object.freeze({
 });
 const GROUPS=Object.freeze(["collects","secrets","postcommunions"]);
 const SINGLE=Object.freeze({collects:"collect",secrets:"secret",postcommunions:"postcommunion"});
-const valid=row=>row&&["lat","en","fr"].every(k=>typeof row[k]==="string"&&row[k].trim());
+const complete=row=>row&&["lat","en","fr"].every(k=>
+ typeof row[k]==="string"&&row[k].trim().length>0);
 const hold=(proper,reason)=>Object.freeze({status:"UNVERIFIED",reason,proper});
-export function projectIcrspNov06ProPapaOrations({proper,date,form,actualCelebrationId,
- votiveBasis,explicitInstituteSelection=false}={}){
- const spec=ICRSP_NOV06_PRO_PAPA_SOURCE;
- if(!explicitInstituteSelection||date!==spec.date||
-    String(form??"").toUpperCase()!==spec.form||
-    actualCelebrationId!=="sacred_heart"||votiveBasis!==spec.basis)
-   return Object.freeze({status:"NOT_APPLICABLE",proper});
+
+export function icrspNovemberOrdoMassContract(date){
+ const spec=icrspNovember2026Appointment(date);
  const ordo=icrspFranceOrdoForDate(date);
- if(ordo?.scope!=="ICRSP_FRANCE_PARTICULAR_ORDO"||
-    ordo.mass?.introit!=="Cogitationes"||
-    ordo.mass?.class!==3||ordo.mass?.prayerForPope!==true)
-   return hold(proper,"ICRSP_NOV06_ORDO_CHANGED");
+ if(!spec||!ordo||ordo.scope!=="ICRSP_FRANCE_PARTICULAR_ORDO"||
+    ordo?.mass?.introit!==spec.introit||
+    ordo?.mass?.class!==spec.votiveClass||
+    ordo?.mass?.prayerForPope!==true||
+    ordo?.mass?.gloria!==spec.gloria||
+    ordo?.mass?.credo!==spec.credo)return null;
+ const orations={};
+ for(const group of GROUPS)
+  orations[group]=Object.freeze([
+   Object.freeze({purpose:"PRINCIPAL"}),
+   Object.freeze({
+    sourcePath:ICRSP_NOV06_PRO_PAPA_SOURCE.prayerPath,
+    purpose:"ORATIO_PRO_PAPA",
+    text:ICRSP_NOV06_PRO_PAPA_SOURCE.prayers[group]
+   })
+  ]);
+ return Object.freeze({
+  id:"ICRSP_FRANCE_"+date+"_VOTIVE_PRO_PAPA",
+  date,form:spec.form,celebrationId:spec.id,
+  votiveBasis:spec.basis,sourcePath:spec.path,
+  sourceOrdo:ordo.sourceOrdo,orations:Object.freeze(orations),
+  sourceScope:ordo.scope,
+  // This contract is one institute appointment, NOT the universal Calendar.
+  universalPrescription:false
+ });
+}
+export function projectIcrspNovemberProPapaOrations({
+ proper,date,form,actualCelebrationId,votiveBasis,
+ explicitInstituteSelection=false
+}={}){
+ if(explicitInstituteSelection!==true)
+  return Object.freeze({status:"NOT_APPLICABLE",proper});
+ const spec=icrspNovember2026Appointment(date);
+ if(!spec)return hold(proper,"ICRSP_APPOINTMENT_NOT_SOURCE_ATTESTED");
+ if(form!==spec.form||actualCelebrationId!==spec.id||
+    votiveBasis!==spec.basis)
+  return hold(proper,"ICRSP_SELECTED_MASS_FORM_OR_BASIS_CHANGED");
+ const contract=icrspNovemberOrdoMassContract(date);
+ if(!contract)return hold(proper,"ICRSP_VERIFIED_ORDO_CHANGED");
  const envelope=proper?.data&&typeof proper.data==="object"?proper:null;
  const data=envelope?envelope.data:proper;
- if(String(data?.sourcePath??"")!==spec.principal)
-   return hold(proper,"SACRED_HEART_PROPER_IDENTITY_MISMATCH");
+ if(String(data?.sourcePath??"")!==spec.path)
+  return hold(proper,"ICRSP_MASS_PROPER_IDENTITY_MISMATCH");
  if(GROUPS.some(key=>{
-   const entries=Array.isArray(data[key])?data[key]:(data[SINGLE[key]]?[data[SINGLE[key]]]:[]);
-   return entries.length!==1||!valid(entries[0]);
+  const entries=Array.isArray(data[key])?data[key]:
+   data[SINGLE[key]]?[data[SINGLE[key]]]:[];
+  return entries.length!==1||!complete(entries[0]);
  }))return hold(proper,"ONE_COMPLETE_PRINCIPAL_ORATION_PER_GROUP_REQUIRED");
  const additions={};
  for(const key of GROUPS){
   const first=(Array.isArray(data[key])?data[key]:[data[SINGLE[key]]])[0];
   additions[key]=Object.freeze([first,Object.freeze({
-   ...spec.prayers[key],sourcePath:spec.prayerPath,
-   liturgicalPurpose:"ORATIO_PRO_PAPA",date:spec.date
+   ...ICRSP_NOV06_PRO_PAPA_SOURCE.prayers[key],
+   sourcePath:ICRSP_NOV06_PRO_PAPA_SOURCE.prayerPath,
+   liturgicalPurpose:"ORATIO_PRO_PAPA",date
   })]);
  }
- const decision=Object.freeze({status:"SOURCE_ATTESTED",scope:ordo.scope,
-  date:spec.date,form:spec.form,principal:spec.principal,
-  sourceOrdo:spec.ordo,additionalPrayer:"PRO_PAPA",
+ const decision=Object.freeze({
+  status:"SOURCE_ATTESTED",scope:contract.sourceScope,
+  date,form,principal:spec.path,
+  sourceOrdo:contract.sourceOrdo,additionalPrayer:"PRO_PAPA",
   groupCounts:Object.freeze({collects:2,secrets:2,postcommunions:2}),
   authority:"1960_MISSAL_RUBRICS_433_437",
-  notCalendarCommemoration:true,notUniversalSelection:true});
- const next=Object.freeze({...data,...additions,proPapaOrationDecision:decision});
- return Object.freeze({status:"APPLIED",decision,
+  notCalendarCommemoration:true,notUniversalSelection:true
+ });
+ const next=Object.freeze({...data,...additions,
+  proPapaOrationDecision:decision,
+  sourceOrdoExpectation:contract});
+ return Object.freeze({status:"APPLIED",decision,contract,
   proper:envelope?Object.freeze({...envelope,data:next}):next});
+}
+// Historical 6 Nov method retained for consumers and backwards tests.
+export function projectIcrspNov06ProPapaOrations(input={}){
+ const spec=ICRSP_NOV06_PRO_PAPA_SOURCE;
+ if(input.date!==spec.date||input.form!==spec.form||
+    input.actualCelebrationId!=="sacred_heart"||
+    input.votiveBasis!=="first_friday"||
+    input.explicitInstituteSelection!==true)
+  return Object.freeze({status:"NOT_APPLICABLE",proper:input.proper});
+ return projectIcrspNovemberProPapaOrations(input);
 }
