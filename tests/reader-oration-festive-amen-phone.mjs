@@ -80,10 +80,23 @@ try{
       node?.querySelector(".ao-line-secondary")?.textContent===p.secondary;
    });
    const ferial=controller.render({mode:"LIVE",form:"SOLEMN",resolvedMass:resolved("FERIA"),paragraphs:rows});
+   const ferialNoteCount=body.querySelectorAll("[data-oration-tone-status='FERIAL_RECTO_TONO_NO_FIXED_AMEN_SCORE']").length;
+   const ferialNoteText=body.querySelector("[data-oration-tone-status='FERIAL_RECTO_TONO_NO_FIXED_AMEN_SCORE']")?.textContent;
+   const ferialSvg=body.querySelectorAll(".ao-proper-reference-staff svg").length;
+   const oldSolemn=controller.render({mode:"LIVE",form:"SOLEMN",resolvedMass:resolved("SUNDAY"),paragraphs:rows,
+    selectedSettings:{ORATION_TONE:"OLD_SOLEMN_1961"}});
+   const oldNoteCount=body.querySelectorAll("[data-oration-tone-status='OPTIONAL_OLD_SOLEMN_NOTES_PENDING']").length;
+   const oldSvg=body.querySelectorAll(".ao-proper-reference-staff svg").length;
+   controller.render({mode:"LIVE",form:"SOLEMN",resolvedMass:resolved("FERIA"),paragraphs:rows,
+    selectedSettings:{LANGUAGE:"fr"}});
+   const frenchText=body.querySelector("[data-oration-tone-status='FERIAL_RECTO_TONO_NO_FIXED_AMEN_SCORE']")?.textContent;
    const low=controller.render({mode:"LIVE",form:"LOW",resolvedMass:resolved("SUNDAY"),paragraphs:rows});
+   const lowNotes=body.querySelectorAll("[data-oration-tone-status]").length;
    controller.render({mode:"LIVE",form:"SOLEMN",resolvedMass:resolved("SUNDAY"),paragraphs:rows});
    for(let i=0;i<80&&controller.state().rendered<1;i++)await new Promise(r=>setTimeout(r,100));
-   return {festive,ready,svg,width,ids,allUnapproved,sourceTextVisible,intact,ferial,low,restored:controller.state().rendered};
+   return {festive,ready,svg,width,ids,allUnapproved,sourceTextVisible,intact,
+    ferial,ferialNoteCount,ferialNoteText,ferialSvg,oldSolemn,oldNoteCount,oldSvg,
+    frenchText,low,lowNotes,restored:controller.state().rendered};
   });
   assert.equal(result.festive,1);
   assert.equal(result.ready,1);
@@ -92,7 +105,15 @@ try{
   assert.equal(result.sourceTextVisible,true,"Latin oration and vernacular must actually display");
   assert.equal(result.intact,true);
   assert.equal(result.ferial,0);
+  assert.equal(result.ferialNoteCount,1);
+  assert.match(result.ferialNoteText,/recto tono/);
+  assert.equal(result.ferialSvg,0,"No invented ferial staff");
+  assert.equal(result.oldSolemn,0,"Explicit old solemn selection must suppress default festive score");
+  assert.equal(result.oldNoteCount,1);
+  assert.equal(result.oldSvg,0);
+  assert.match(result.frenchText,/pas de partition fixe/);
   assert.equal(result.low,0);
+  assert.equal(result.lowNotes,0);
   assert.equal(result.restored,1);
   assert.ok(result.ids[0].includes("ORATION_FESTIVE_AMEN"));
   assert.ok(result.width>90&&result.width<=width);
