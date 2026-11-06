@@ -259,4 +259,4 @@ const poisoned=buildPilgrimageJourneyCatalogue([
 assert.equal(poisoned.length,1);
 assert.equal(poisoned[0].destinationGeo,null,"Null coordinate must not become a fabricated map point");
 assert.equal(poisoned[0].sources.length,0,"Do not fabricate source URLs");
-console.log("PASS D journey + site-anchor crosswalk: 243 source-backed pilgrimage destinations, 20 unchanged routes, 64 named stages on 17 routes, zero fabricated navigation, EN/FR + organizer sources");
+console.log("PASS D journey + site-anchor crosswalk: 245 source-backed pilgrimage destinations, 20 unchanged routes, 64 named stages on 17 routes, zero fabricated navigation, EN/FR + organizer sources");
