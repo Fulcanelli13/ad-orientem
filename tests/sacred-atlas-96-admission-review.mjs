@@ -47,7 +47,13 @@ for(const c of staged.candidates){
  assert.equal(c.verified_at,null,c.candidate_id);
  assert.equal(c.location_preview.coordinate_independently_verified,["SG-INV-0415","SG-INV-0722"].includes(c.candidate_id),c.candidate_id);
  assert.ok(c.country_area_present_in_draft,c.candidate_id);
- assert.match(c.identity_source_url,/^https:\/\//,c.candidate_id);
+ assert.match(c.identity_source_url,/^https?:\/\//,c.candidate_id);
+ if(c.identity_source_url.startsWith("http://")){
+  assert.equal(c.admission_review.insecure_http_source_hold,true,c.candidate_id);
+  assert.equal(c.admission_review.canonical_import_ready,false,c.candidate_id);
+  assert.equal(c.admission_review.source_evidence_pass?.status,"SOURCE_FETCH_UNAVAILABLE_THIS_PASS",c.candidate_id);
+  assert.match(c.admission_review.source_evidence_pass.suggested_source_url,/^https:\/\//,c.candidate_id);
+ }
  assert.match(c.location_preview.source_url,/^https:\/\//,c.candidate_id);
  const r=c.admission_review;
  assert.equal(r.owner_decision,"PENDING",c.candidate_id);

@@ -9,7 +9,7 @@ for(const c of priority){
  assert.equal(ev.reviewed_on,"2026-11-06");
  assert.equal(ev.existing_identity_url,c.identity_source_url);
  assert.match(ev.suggested_source_url,/^https:\/\//);
- assert.equal(ev.source_content_checked,true);
+ assert.equal(ev.source_content_checked,ev.status!=="SOURCE_FETCH_UNAVAILABLE_THIS_PASS",c.candidate_id);
  assert.equal(ev.site_identity_approved_for_publication,false);
  assert.equal(c.owner_approved,false);
  assert.equal(c.publishable,false);
@@ -37,5 +37,8 @@ const kraliky=priority.find(x=>x.candidate_id==="SG-INV-0292");
 assert.ok(kraliky.admission_review.source_evidence_pass.nearby_related_site_point.distance_from_preview_m<35);
 assert.equal(kraliky.location_preview.coordinate_independently_verified,false);
 assert.equal(priority.filter(x=>x.location_preview.coordinate_independently_verified).length,2);
+assert.equal(priority.filter(x=>x.admission_review.source_evidence_pass.source_content_checked===false).length,8);
+assert.equal(priority.filter(x=>x.admission_review.insecure_http_source_hold===true).length,1);
+assert.equal(data.counts.priority_source_evidence_pass.legacy_http_source_holds,1);
 assert.equal(data.candidates.filter(x=>x.owner_approved||x.publishable||x.canonical_place_id!==null).length,0);
 console.log("PASS: 67 priority evidence source outcomes; 2 exact independent official coordinate corroborations; zero owner approvals or canonical imports");

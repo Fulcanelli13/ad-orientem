@@ -46,7 +46,9 @@
       "independently_checked_site_coordinates": 2,
       "related_pilgrimage_church_coordinate_near_complex": 1,
       "owner_approved": 0,
-      "import_ready": 0
+      "import_ready": 0,
+      "content_unavailable_evidence_records": 8,
+      "legacy_http_source_holds": 1
     },
     "draft_admission_prepared": 2,
     "candidates_without_draft_admission": 94
@@ -934,7 +936,7 @@
           "existing_identity_url": "https://arquidiocesebh.org.br/arquidiocese/santuarios/santuario-basilica-nossa-senhora-da-piedade/",
           "evidence_scope_note": "Original cited identity page could not be independently retrieved in this session. Do not mark the source URL invalid; alternative source or later retry needed.",
           "suggested_source_url": "https://arquidiocesebh.org.br/arquidiocese/santuarios/santuario-basilica-nossa-senhora-da-piedade/",
-          "source_content_checked": true,
+          "source_content_checked": false,
           "site_identity_approved_for_publication": false,
           "gps_independently_verified_in_this_pass": false
         }
@@ -1611,7 +1613,7 @@
           "existing_identity_url": "https://centroaffd.arquibogota.org.co/directorio-general-AB",
           "evidence_scope_note": "Original cited identity page could not be independently retrieved in this session. Do not mark the source URL invalid; alternative source or later retry needed.",
           "suggested_source_url": "https://centroaffd.arquibogota.org.co/directorio-general-AB",
-          "source_content_checked": true,
+          "source_content_checked": false,
           "site_identity_approved_for_publication": false,
           "gps_independently_verified_in_this_pass": false
         }
@@ -2669,7 +2671,7 @@
           "existing_identity_url": "https://www.sjdgranada.es/la-basilica-granada",
           "evidence_scope_note": "Original cited identity page could not be independently retrieved in this session. Do not mark the source URL invalid; alternative source or later retry needed.",
           "suggested_source_url": "https://www.sjdgranada.es/la-basilica-granada",
-          "source_content_checked": true,
+          "source_content_checked": false,
           "site_identity_approved_for_publication": false,
           "gps_independently_verified_in_this_pass": false
         }
@@ -3465,7 +3467,7 @@
           "existing_identity_url": "https://www.diocese-dijon.com/paroisses/agglomeration-dijonnaise/dijon-centre-et-ouest/dijon-saint-benigne/",
           "evidence_scope_note": "Original cited identity page could not be independently retrieved in this session. Do not mark the source URL invalid; alternative source or later retry needed.",
           "suggested_source_url": "https://www.diocese-dijon.com/paroisses/agglomeration-dijonnaise/dijon-centre-et-ouest/dijon-saint-benigne/",
-          "source_content_checked": true,
+          "source_content_checked": false,
           "site_identity_approved_for_publication": false,
           "gps_independently_verified_in_this_pass": false
         }
@@ -3924,7 +3926,7 @@
           "existing_identity_url": "https://www.italia.it/en/lazio/latina/cistercian-abbey-fossanova",
           "evidence_scope_note": "Original cited identity page could not be independently retrieved in this session. Do not mark the source URL invalid; alternative source or later retry needed.",
           "suggested_source_url": "https://www.italia.it/en/lazio/latina/cistercian-abbey-fossanova",
-          "source_content_checked": true,
+          "source_content_checked": false,
           "site_identity_approved_for_publication": false,
           "gps_independently_verified_in_this_pass": false
         }
@@ -4077,7 +4079,7 @@
           "existing_identity_url": "https://lombardiabeniculturali.it/architetture/schede-complete/LMD80-00005",
           "evidence_scope_note": "Original cited identity page could not be independently retrieved in this session. Do not mark the source URL invalid; alternative source or later retry needed.",
           "suggested_source_url": "https://lombardiabeniculturali.it/architetture/schede-complete/LMD80-00005",
-          "source_content_checked": true,
+          "source_content_checked": false,
           "site_identity_approved_for_publication": false,
           "gps_independently_verified_in_this_pass": false
         }
@@ -4126,12 +4128,13 @@
           "reviewed_on": "2026-11-06",
           "status": "SOURCE_FETCH_UNAVAILABLE_THIS_PASS",
           "existing_identity_url": "http://www.sacradisanmichele.com",
-          "evidence_scope_note": "Original cited identity page could not be independently retrieved in this session. Do not mark the source URL invalid; alternative source or later retry needed.",
-          "suggested_source_url": "http://www.sacradisanmichele.com",
-          "source_content_checked": true,
+          "evidence_scope_note": "Historical candidate URL is HTTP and was inaccessible in this evidence pass. Verify that the separately recorded secure regional tourism URL identifies the same Catholic complex before adopting it as identity evidence; this candidate remains on source-scope hold.",
+          "suggested_source_url": "https://turismotorino.org/it/visita/cosa-fare-e-vedere/spiritualita/i-luoghi-dello-spirito/sacra-di-san-michele",
+          "source_content_checked": false,
           "site_identity_approved_for_publication": false,
           "gps_independently_verified_in_this_pass": false
-        }
+        },
+        "insecure_http_source_hold": true
       }
     },
     {
@@ -4179,7 +4182,7 @@
           "existing_identity_url": "https://www.sacrimonti.org/en/sacro-monte-di-oropa?p=1665",
           "evidence_scope_note": "Original cited identity page could not be independently retrieved in this session. Do not mark the source URL invalid; alternative source or later retry needed.",
           "suggested_source_url": "https://www.sacrimonti.org/en/sacro-monte-di-oropa?p=1665",
-          "source_content_checked": true,
+          "source_content_checked": false,
           "site_identity_approved_for_publication": false,
           "gps_independently_verified_in_this_pass": false
         }
@@ -4786,6 +4789,7 @@
     "no_runtime_import": true,
     "preserve_cl2_canonical_ids": true,
     "no_tlm_venue_or_schedule_inference": true,
-    "verified_geography_boundary": "Independent direct authority point coordinates for two named sites do not waive owner identity/admission approval. Pilgrimage church near a monastery does not certify the whole complex's exact building position."
+    "verified_geography_boundary": "Independent direct authority point coordinates for two named sites do not waive owner identity/admission approval. Pilgrimage church near a monastery does not certify the whole complex's exact building position.",
+    "legacy_http_source_rule": "Unreachable plaintext HTTP identity references are archival leads only; a site-scoped HTTPS identity source is required before production admission."
   }
 }
