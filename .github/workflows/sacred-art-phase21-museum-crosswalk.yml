@@ -1,0 +1,45 @@
+name: Sacred Art Phase 21 — bulk official museum crosswalk
+on:
+  push:
+    branches:
+      - research/sacred-art-phase18-iiif-audit-20261106
+    paths:
+      - 'scripts/sacred-art/phase21-museum-crosswalk.py'
+      - '.github/workflows/sacred-art-phase21-museum-crosswalk.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  official-objects:
+    name: Verify accession clues against Flemish and Joconde institutional records
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install minimal metadata parser dependencies
+        run: python -m pip install --disable-pip-version-check 'requests>=2.32,<3' 'beautifulsoup4>=4.12,<5'
+      - name: Reuse the verified 157 Commons provenance records
+        uses: actions/download-artifact@v4
+        with:
+          name: phase20-commons-provenance-157-research-only
+          run-id: 42169137895
+          github-token: ${{ github.token }}
+          path: reference-phase20
+      - name: Validate and run official-source lookup; no photograph acquisition
+        run: |
+          python -m py_compile scripts/sacred-art/phase21-museum-crosswalk.py
+          python scripts/sacred-art/phase21-museum-crosswalk.py
+      - name: Upload temporary researched object records
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase21-official-museum-crosswalk-157
+          path: artifacts/sacred-art-phase21-museum-crosswalk/
+          retention-days: 7
+          if-no-files-found: warn
