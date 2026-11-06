@@ -45,29 +45,45 @@ def bounded(s,url,accept,max_bytes=16_000_000):
     pieces.append(p)
    return b"".join(pieces),res.headers.get("Content-Type",""),target
  raise ValueError("Excessive redirects")
+def canvas_rights(canvas):
+ metadata=canvas.get("metadata") or []
+ vals={}
+ for m in metadata:
+  if isinstance(m,dict):
+   key=str(m.get("label","")).lower()
+   vals[key]=str(m.get("value",""))
+ return {"canvas_rights_label":vals.get("droits",""),"canvas_copyright_url":vals.get("copyright","")}
+
 def all_canvases(doc):
  records=[]
- def add_canvas(i,label,body):
+ def add_canvas(i,label,body,metadata):
   bs=body if isinstance(body,list) else [body]
   for b in bs:
    if not isinstance(b,dict):continue
    svc=b.get("service") or []
    if isinstance(svc,dict):svc=[svc]
+   options=[]
    for x in svc:
-    if not isinstance(x,dict):continue
-    uri=x.get("id") or x.get("@id")
-    if uri:records.append({"canvas":i,"label":label,"service":uri,"width":b.get("width"),"height":b.get("height")})
+    if isinstance(x,dict):
+     uri=x.get("id") or x.get("@id")
+     if uri:options.append(("iiif_image_service",uri))
+   if not options and (b.get("@id") or b.get("id")):
+    options.append(("direct_image_url",b.get("@id") or b.get("id")))
+   for method,uri in options[:2]:
+    records.append({"canvas":i,"label":label,"service":uri,"image_method":method,
+                    "width":b.get("width"),"height":b.get("height"),**metadata})
  if "sequences" in doc:
   for i,c in enumerate((doc.get("sequences") or [{}])[0].get("canvases",[])[:12]):
    for a in (c.get("images") or [])[:2]:
-    add_canvas(i,str(c.get("label","")),(a.get("resource") or {}))
+    add_canvas(i,str(c.get("label","")),(a.get("resource") or {}),canvas_rights(c))
  elif "items" in doc:
   for i,c in enumerate((doc.get("items") or [])[:12]):
    label=c.get("label")
    for page in (c.get("items") or [])[:2]:
     for a in (page.get("items") or [])[:2]:
-     add_canvas(i,json.dumps(label,ensure_ascii=False)[:150],a.get("body") or {})
+     add_canvas(i,json.dumps(label,ensure_ascii=False)[:150],a.get("body") or {},canvas_rights(c))
  return records[:15]
+
 def main():
  rows=list(csv.DictReader((ROOT/"artworks_177.csv").open(encoding="utf-8-sig",newline="")))
  source={x["registry_id"]:x for x in rows}
@@ -78,7 +94,7 @@ def main():
   row=source[rid]
   item={**target,"selected_title":row["title"],"selected_commons_url":row["commons_url"],
     "selected_original_short_px":row["original_short_px"],"manifest_status":"FAILED",
-    "iiif_declared_rights":"","canvases":0,"image_downloads":0,"reference_download":"FAILED",
+    "iiif_declared_rights":"","canvas_cc0_count":0,"canvases":0,"image_downloads":0,"reference_download":"FAILED",
     "official_object_page_cc0":True,"photograph_rights_approved":False,"photo_quality_approved":False,
     "gallery_replacement_approved":False,"candidates":[],"errors":[]}
   session=requests.Session();session.headers.update(HEADERS)
@@ -95,12 +111,13 @@ def main():
    item["iiif_declared_rights"]=doc.get("rights") or doc.get("license") or ""
    candidates=all_canvases(doc)
    item["canvases"]=len(candidates)
+   item["canvas_cc0_count"]=sum("CC0" in c.get("canvas_rights_label","").upper() or "creativecommons.org/publicdomain/zero/1.0" in c.get("canvas_copyright_url","") for c in candidates)
    for c in candidates:
     result=dict(c,status="FAILED",file="",sha256="",pixels="",error="")
     try:
      if not allowed_url(c["service"]):raise ValueError("Service not on Paris Musées domain")
      dest=OUT/"images"/(key+f"_canvas{c['canvas']}.jpg")
-     url=c["service"].rstrip("/")+"/full/1600,/0/default.jpg"
+     url=c["service"] if c["image_method"]=="direct_image_url" else c["service"].rstrip("/")+"/full/1600,/0/default.jpg"
      raw,ctype,final=bounded(session,url,"image/jpeg,image/*",15_000_000)
      if "image" not in ctype.lower():raise ValueError("Image endpoint returned "+str(ctype))
      with Image.open(io.BytesIO(raw)) as im:
@@ -125,7 +142,7 @@ def main():
   results.append(item)
  (OUT/"paris_two_artworks.json").write_text(json.dumps(results,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
  cols=["registry_id","selected_title","inventory","object_url","manifest","manifest_status","iiif_declared_rights",
-       "canvases","image_downloads","reference_download","official_object_page_cc0","photograph_rights_approved",
+       "canvases","canvas_cc0_count","image_downloads","reference_download","official_object_page_cc0","photograph_rights_approved",
        "photo_quality_approved","gallery_replacement_approved"]
  with (OUT/"paris_two_artworks.csv").open("w",encoding="utf-8",newline="") as fh:
   wr=csv.DictWriter(fh,fieldnames=cols);wr.writeheader();wr.writerows([{k:r.get(k,"") for k in cols} for r in results])
@@ -142,7 +159,7 @@ def main():
  summary={"objects":2,"manifests_success":sum(x["manifest_status"]=="SUCCESS" for x in results),
    "museum_iiif_photographs":sum(x["image_downloads"] for x in results),
    "handpicked_reference_images":sum(x["reference_download"]=="SUCCESS" for x in results),
-   "object_pages_mark_cc0":2,"specific_photos_reuse_cleared":0,"gallery_replacements":0}
+   "object_pages_mark_cc0":2,"canvases_with_cc0_metadata":sum(x["canvas_cc0_count"] for x in results),"specific_photos_reuse_cleared":0,"gallery_replacements":0}
  (OUT/"summary.json").write_text(json.dumps(summary,indent=2)+"\n",encoding="utf-8")
  print(json.dumps(summary,indent=2),flush=True)
 if __name__=="__main__":main()
