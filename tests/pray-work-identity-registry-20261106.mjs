@@ -41,7 +41,7 @@ check(new Set(preservedCanonicalIds).size===48,"Duplicate canonical source owner
 check(originalCanonicalIds.every(x=>preservedCanonicalIds.includes(x)),"Canonical corpus has lost a legacy ID");
 check(items.filter(w=>w.legacyCanonicalIds.length>0).length===46,"48 canonical forms must group into 46 independent works");
 
-const expectedAvailable=["published","route-unverified","external-link"];
+const expectedAvailable=["published","route-unverified","external-link","source-only"];
 check(Object.keys(registry.counts.byAvailability).every(x=>expectedAvailable.includes(x)),"Unexpected availability term");
 check(registry.counts.catalogueWorks===items.length,"Embedded catalogue count is stale");
 check(JSON.stringify(registry.counts.byFamily)===JSON.stringify(Object.fromEntries(fams.map(f=>[f,items.filter(x=>x.family===f).length]))),"Embedded family counts disagree");
