@@ -7,7 +7,7 @@ on:
       - "src/mass/reader-native-preview.js"
       - "src/pray/horarium-leonine-source-blocks.js"
       - "src/pray/canonical-data.js"
-      - "tests/home-customs-post-low-mass-leonine.mjs"
+      - "tests/reader-leonine-source-contract.mjs"
       - "tests/reader-leonine-after-last-gospel-phone.mjs"
       - ".github/workflows/mass-leonine-post-last-gospel.yml"
   workflow_dispatch:
@@ -23,8 +23,8 @@ jobs:
         with:
           node-version: "22"
       - run: npm install --no-audit --no-fund
-      - name: Existing prayers and First Friday source contract
-        run: node tests/home-customs-post-low-mass-leonine.mjs
+      - name: Five Leonine source blocks and eligibility
+        run: node tests/reader-leonine-source-contract.mjs
       - run: npx playwright install --with-deps chromium
       - name: Low Mass Leonine after Last Gospel at 320/390px LIVE/MISSAL EN/FR
         run: node tests/reader-leonine-after-last-gospel-phone.mjs
