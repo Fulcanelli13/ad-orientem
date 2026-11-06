@@ -12,6 +12,9 @@ on:
       - 'src/mass/reader-canon-pax-response-reference-scores.js'
       - 'tests/reader-canon-pax-responses.mjs'
       - 'src/mass/reader-oration-amen-source-handoff.js'
+      - 'src/mass/reader-oration-festive-amen-reference.js'
+      - 'tests/reader-oration-festive-amen-reference.mjs'
+      - 'tests/reader-oration-festive-amen-phone.mjs'
       - 'tests/reader-oration-amen-source-handoff.mjs'
       - 'data/mass/oration-amen-notation-source-gate.v1.json'
       - 'data/mass/participation-amen-1962-coverage.v1.json'
@@ -59,6 +62,9 @@ jobs:
           node --check src/mass/reader-dismissal-variant-reference-scores.js
           node --check src/mass/reader-canon-pax-response-reference-scores.js
           node --check src/mass/reader-oration-amen-source-handoff.js
+          node --check src/mass/reader-oration-festive-amen-reference.js
+          node --check tests/reader-oration-festive-amen-reference.mjs
+          node --check tests/reader-oration-festive-amen-phone.mjs
           node --check tests/reader-oration-amen-source-handoff.mjs
           node --check tests/reader-canon-pax-responses.mjs
           node --check tests/reader-dismissal-variant-reference.mjs
@@ -81,6 +87,7 @@ jobs:
           node tests/reader-dismissal-variant-reference.mjs
           node tests/reader-canon-pax-responses.mjs
           node tests/reader-oration-amen-source-handoff.mjs
+          node tests/reader-oration-festive-amen-reference.mjs
           node tests/reader-inline-chant-generic-source.mjs
           node tests/reader-inline-proper-registry.mjs
           node tests/reader-proper-gabc-bulk-join.mjs
@@ -94,6 +101,7 @@ jobs:
           node tests/reader-inline-chant-a-c-phone.mjs
           node tests/reader-participation-reference-phone.mjs
           node tests/reader-dismissal-variant-phone.mjs
+          node tests/reader-oration-festive-amen-phone.mjs
           node tests/reader-inline-proper-july07-phone.mjs
           node tests/reader-inline-all-saints-phone.mjs
 
@@ -121,6 +129,15 @@ jobs:
         with:
           name: mass-participation-research-reference-neumes
           path: .tmp/mass-participation-preview/*.png
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Retain 1961 festive oration Amen research phone screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-oration-amen-1961-preview-screens
+          path: .tmp/mass-oration-amen-preview/*.png
           if-no-files-found: warn
           retention-days: 14
 
