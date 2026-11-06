@@ -6,6 +6,10 @@ on:
     paths:
       - 'src/mass/reader-inline-chant.js'
       - 'src/mass/reader-participation-neume-policy.js'
+      - 'src/mass/reader-two-greeting-transfer-candidates.js'
+      - 'data/mass/two-greeting-music-source-crosswalk.v1.json'
+      - 'tests/reader-two-greeting-transfer-candidates.mjs'
+      - 'tests/reader-two-greeting-transfer-phone.mjs'
       - 'src/mass/reader-participation-coverage.js'
       - 'data/mass/participation-20-event-coverage.v1.json'
       - 'scripts/mass/build-participation-coverage.mjs'
@@ -65,6 +69,9 @@ jobs:
         run: |
           node --check src/mass/reader-inline-chant.js
           node --check src/mass/reader-participation-neume-policy.js
+          node --check src/mass/reader-two-greeting-transfer-candidates.js
+          node --check tests/reader-two-greeting-transfer-candidates.mjs
+          node --check tests/reader-two-greeting-transfer-phone.mjs
           node --check src/mass/reader-participation-coverage.js
           node --check scripts/mass/build-participation-coverage.mjs
           node --check tests/reader-participation-20-event-coverage.mjs
@@ -98,6 +105,7 @@ jobs:
           node --check src/mass/reader-dom.js
           node tests/reader-inline-chant-a-c.mjs
           node tests/reader-participation-neume-policy.mjs
+          node tests/reader-two-greeting-transfer-candidates.mjs
           node tests/reader-participation-20-event-coverage.mjs
           node tests/reader-participation-reference-scores.mjs
           node tests/reader-dismissal-variant-reference.mjs
@@ -118,6 +126,7 @@ jobs:
         run: |
           node tests/reader-inline-chant-a-c-phone.mjs
           node tests/reader-participation-reference-phone.mjs
+          node tests/reader-two-greeting-transfer-phone.mjs
           node tests/reader-dismissal-variant-phone.mjs
           node tests/reader-oration-festive-amen-phone.mjs
           node tests/reader-inline-proper-july07-phone.mjs
@@ -147,6 +156,15 @@ jobs:
         with:
           name: mass-participation-research-reference-neumes
           path: .tmp/mass-participation-preview/*.png
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Retain 1961 two-greeting context-hypothesis phone screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-1961-two-greeting-transfer-hypotheses
+          path: .tmp/mass-two-greeting-context-hypotheses/*.png
           if-no-files-found: warn
           retention-days: 14
 
