@@ -43,11 +43,12 @@
     }
   ],
   "blockingQuestions": [
-    "Transcribe and independently collate 1961 Graduale Romanum Toni Orationum pp.113*–119* against exact responding Amen musical signs, preserving festal, ferial A/B, and old ad libitum alternatives",
-    "Certify exact underlay and note shape against 1961 printed scans before extracting any response GABC",
-    "Resolve alternative concluding formulas Per Dominum / Per Christum / Qui vivit from actual selected prayer",
+    "Certify any ferial oration Amen independently; 1961 p.114* ferial A says recto tono and does not provide the same festive two-note response to borrow",
+    "Independently collate optional old ad libitum solemn/simple oration responses on pp. 116* and 119*; never silently select",
+    "Review any non-standard or shortened conclusion (Per Christum Dominum nostrum etc.) against the selected 1962 Proper and source",
     "Preserve one-conclusion commemoration groups and separately source each intermediate Amen",
-    "Do not adopt 1974/1979 notations into the 1962 Mass by matching the title or final word Amen"
+    "Do not adopt 1974/1979 notations into the 1962 Mass by matching a title or word Amen",
+    "Keep 1961 festive excerpt review-only until independent musical approval and published-score authorization"
   ],
   "audited20261106": true,
   "printed1961Witness": {
@@ -75,7 +76,32 @@
         "scope": "Old ad libitum solemn/simple oration tone continuation, separate selection and musical proof required"
       }
     ],
-    "editorialReview": "PRINTED_SCORE_VISUALLY_LOCATED_AND_READ__NO_GABC_NOTE_BY_NOTE_RECONCILIATION",
+    "editorialReview": "FESTIVE_AMEN_114_STAR_TWO_NOTES_TRANSCRIBED_IN_RESEARCH_PREVIEW__FERIAL_AND_OLD_AD_LIBITUM_PENDING",
     "priorSourceOnly": "1961 preferred over post-1970 comparators"
-  }
+  },
+  "researchExcerpts": [
+    {
+      "id": "AO.REF.ORATION_FESTIVE_AMEN",
+      "eventIds": [
+        "COLLECT",
+        "POSTCOMMUNION"
+      ],
+      "source": "Graduale Romanum 1961, p. 114*",
+      "sourceUrl": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+      "pdfPageZeroIndex": 115,
+      "melodicWitness": "A-men printed with two equal-height h notes in C3, mapped by common staff position to p.113* GregoBase #4487",
+      "gabcBody": "(c3) <sp>R/</sp>. A(h)men.(h.) (::)",
+      "contextGate": "RESOLVED_1962_SELECTED_PROPER_PLUS_UNIQUE_AMEN_CUE_PLUS_FULL_PER_OMNIA_SAECULA_SAECULORUM_ENDING_PLUS_SOURCE_SIGNED_SOLEMN_FAMILY",
+      "scoreStatus": "1961_FACSIMILE_COLLATED_RESEARCH_PREVIEW_ONLY_NOT_PUBLICLY_APPROVED",
+      "exclusions": [
+        "FERIAL_A",
+        "FERIAL_B",
+        "OLD_AD_LIBITUM_SOLEMN",
+        "OLD_AD_LIBITUM_SIMPLE",
+        "ABBREVIATED_CONCLUSION",
+        "SILENT_SECRET",
+        "LOW_MASS"
+      ]
+    }
+  ]
 }
