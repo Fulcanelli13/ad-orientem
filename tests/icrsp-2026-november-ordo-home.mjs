@@ -66,6 +66,7 @@ assert.match(handler,/data-home-icrsp-votive/);
 assert.match(handler,/state\(win\)\?\.selectedDate/);
 assert.match(handler,/\["2026-11-06","2026-11-07"\]/);
 assert.match(handler,/navigateHomeShortcut\("mass"/);
-assert.match(handler,/data-full-mass-category="VOTIVE"/);
+assert.match(handler,/selectIcrspFirstFridayLowMass/);
+assert.match(handler,/dateIso:officialDate/);
 assert.match(handler,/Votive Mass selection unavailable/);
 console.log("PASS: 2026-11-06 ICRSP feria vs Cogitationes actual votive, 2026-11-07 Adeamus, bilingual Home and exact host handoff.");
