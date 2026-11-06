@@ -7,6 +7,7 @@ import {PARTICIPATION_REFERENCE_SCORES} from "./reader-participation-reference-s
 import {APPROVED_MASS_INLINE_GABC} from "./reader-inline-chant-approved.js";
 import {FESTIVE_ORATION_AMEN_SOURCE} from "./reader-oration-festive-amen-reference.js";
 import {OLD_SOLEMN_ORATION_AMEN_SOURCE} from "./reader-oration-old-solemn-amen-reference.js";
+import {GREETING_TRANSFER_CUES,GREETING_TRANSFER_SOURCE,GREETING_TRANSFER_EXPLICIT_SELECTION} from "./reader-two-greeting-transfer-candidates.js";
 
 export const PARTICIPATION_COVERAGE_SCHEMA="ao-mass-participation-20-event-coverage-v1";
 export const PARTICIPATION_COVERAGE_SOURCES=Object.freeze({
@@ -17,6 +18,7 @@ export const PARTICIPATION_COVERAGE_SOURCES=Object.freeze({
  approvedCatalogue:"src/mass/reader-inline-chant-approved.js",
  orationSourceGate:"src/mass/reader-oration-amen-source-handoff.js",
  orationToneGate:"src/mass/reader-oration-amen-tone-policy.js",
+ twoGreetingContextTransferLedger:"data/mass/two-greeting-music-source-crosswalk.v1.json",
  gospelConclusionNonSungAuthority:"https://media.musicasacra.com/pdf/highmass.pdf",
  gospelConclusionCeremonialCorroboration:"https://acss.sspxusa.org/rubrics/highmass/HighMass-Master-of-Ceremonies.pdf",
  publication:"ONLY_EXACT_ITE_VIII_2_FRAGMENTS_APPROVED_AS_OF_2026_11_06"
@@ -60,6 +62,18 @@ export function buildParticipationCoverage(){
    s.sourceCueIds?.length&&s.sourceCueIds.every(c=>cues.includes(c)));
   const publicExcerpts=APPROVED_MASS_INLINE_GABC.filter(s=>cues.includes(s.sourceCueId));
   const conditional=dynamic[event.id]??null;
+  // Evidence is only for sung response text, NOT a source-certified
+  // equivalence of the 1961 oration melody at this position.
+  const cross=GREETING_TRANSFER_CUES.find(x=>x.eventId===event.eventId&&
+   x.cueId===event.cueIds[0])??null;
+  const contextTransferCandidate=cross?Object.freeze({
+   sourceId:GREETING_TRANSFER_SOURCE.sourceId,
+   sourceUrl:GREETING_TRANSFER_SOURCE.sourceUrl,
+   sourceContextCertified:false,publicScoreApproved:false,
+   candidateSelection:GREETING_TRANSFER_EXPLICIT_SELECTION,
+   printedSourceScope:"1961_ORATION_GREETING_ONLY",
+   requiredAction:"Verify musical source transfer specifically for "+event.id
+  }):null;
   const nonSung=event.sungExclusion??null;
   const state=nonSung?"EXCLUDED_NON_SUNG_RESPONSE":
    publicExcerpts.length?"LIMITED_PUBLIC_EXACT_SETTING":
@@ -74,6 +88,7 @@ export function buildParticipationCoverage(){
    fixedResearchSourceIds:stableUnique(research.map(s=>s.sourceId)),
    fixedResearchWitnesses:stableUnique(research.map(s=>s.sourceUrl)),
    conditionalSources:conditional,
+   contextTransferCandidate,
    reviewAction:action[event.id]??"SOURCE_OWNER_NOT_DEFINED"
   };
  });
