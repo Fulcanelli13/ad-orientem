@@ -11,21 +11,16 @@
   "authoritative": false,
   "autopublish": false,
   "requires_owner_approval": true,
-  "note": "NOT an admitted-Place release. Preview points and candidate names only; no code imports this file. No exact building coordinate is certified, and temporary IDs must never be interpreted as place_id.",
+  "note": "NOT an admitted-Place release. Preview points and candidate names only; no code imports this file. No exact building coordinate is certified, and temporary IDs must never be interpreted as place_id. Country-area structure is now complete for all 96 staging candidates on this draft branch; owner/identity/coordinate/source approval remains outstanding.",
   "counts": {
     "staging_candidates": 96,
     "actual_draft_places": 533,
-    "missing_country_area_candidates": 9,
-    "missing_country_area_codes": [
-      "AL",
-      "BI",
-      "BO",
-      "BY",
-      "ME",
-      "ZA"
-    ],
+    "missing_country_area_candidates": 0,
+    "missing_country_area_codes": [],
     "approved": 0,
-    "publishable": 0
+    "publishable": 0,
+    "country_area_candidates_resolved": 9,
+    "country_area_definitions_added": 6
   },
   "blocking_conditions": [
     "Owner approval and physical-site identity reviewed",
@@ -35,53 +30,7 @@
     "geo.source_ref, geo.source_url, geo.verified_at, geo.matched_country_code supported by evidence",
     "Current-main dedupe and geography contracts pass"
   ],
-  "missing_country_areas": [
-    {
-      "candidate_id": "SG-INV-0348",
-      "country_code": "AL",
-      "name": "Shrine of Our Lady of Good Counsel, Shkodër"
-    },
-    {
-      "candidate_id": "SG-INV-0729",
-      "country_code": "BI",
-      "name": "Basilica of Saint Anthony of Padua, Mugera"
-    },
-    {
-      "candidate_id": "SG-INV-0541",
-      "country_code": "BO",
-      "name": "Sanctuary of Our Lady of Copacabana"
-    },
-    {
-      "candidate_id": "SG-INV-0543",
-      "country_code": "BO",
-      "name": "Shrine of Our Lady of Socavón, Oruro"
-    },
-    {
-      "candidate_id": "SG-INV-0343",
-      "country_code": "BY",
-      "name": "Marian Sanctuary of Baruny"
-    },
-    {
-      "candidate_id": "SG-INV-0344",
-      "country_code": "BY",
-      "name": "Marian shrine of Trokeli"
-    },
-    {
-      "candidate_id": "SG-INV-0342",
-      "country_code": "BY",
-      "name": "National Shrine of Our Lady of Budslau"
-    },
-    {
-      "candidate_id": "SG-INV-0350",
-      "country_code": "ME",
-      "name": "Sanctuary of Our Lady of the Rocks, Perast"
-    },
-    {
-      "candidate_id": "SG-INV-0722",
-      "country_code": "ZA",
-      "name": "Ngome Marian Shrine"
-    }
-  ],
+  "missing_country_areas": [],
   "candidates": [
     {
       "candidate_id": "SG-INV-0348",
@@ -99,7 +48,7 @@
       "identity_source_url": "https://albaniaembassy.orderofmalta.int/en/news/shkoder-sanctuary-our-lady-of-good-counsel-elevated-to-minor-basilica-status-on-feast-day/",
       "archived_source_tier_unreverified": "B_CATHOLIC_INSTITUTIONAL",
       "geo_area_id": "geo:country:AL",
-      "country_area_present_in_draft": false,
+      "country_area_present_in_draft": true,
       "status": "RESEARCH_ONLY_UNAPPROVED",
       "owner_approved": false,
       "publishable": false,
@@ -374,7 +323,7 @@
       "identity_source_url": "https://www.vaticannews.va/fr/vatican/news/2025-08/le-cardinal-parolin-au-burundi-au-service-du-bien-commun.html",
       "archived_source_tier_unreverified": "A_VATICAN_OFFICIAL",
       "geo_area_id": "geo:country:BI",
-      "country_area_present_in_draft": false,
+      "country_area_present_in_draft": true,
       "status": "RESEARCH_ONLY_UNAPPROVED",
       "owner_approved": false,
       "publishable": false,
@@ -399,7 +348,7 @@
       "identity_source_url": "https://lavozdelsantuariodecopacabana.com/datos-historicos/",
       "archived_source_tier_unreverified": "B_SANCTUARY_PUBLICATION",
       "geo_area_id": "geo:country:BO",
-      "country_area_present_in_draft": false,
+      "country_area_present_in_draft": true,
       "status": "RESEARCH_ONLY_UNAPPROVED",
       "owner_approved": false,
       "publishable": false,
@@ -424,7 +373,7 @@
       "identity_source_url": "https://ceb.bo/2025/08/su-santidad-leon-xiv-ha-elevado-el-santuario-del-socavon-a-basilica-menor/",
       "archived_source_tier_unreverified": "A_EPISCOPAL_CONFERENCE",
       "geo_area_id": "geo:country:BO",
-      "country_area_present_in_draft": false,
+      "country_area_present_in_draft": true,
       "status": "RESEARCH_ONLY_UNAPPROVED",
       "owner_approved": false,
       "publishable": false,
@@ -599,7 +548,7 @@
       "identity_source_url": "https://presstoarch.amu.edu.pl/index.php/pss/article/view/46477",
       "archived_source_tier_unreverified": "B_ACADEMIC_HERITAGE",
       "geo_area_id": "geo:country:BY",
-      "country_area_present_in_draft": false,
+      "country_area_present_in_draft": true,
       "status": "RESEARCH_ONLY_UNAPPROVED",
       "owner_approved": false,
       "publishable": false,
@@ -624,7 +573,7 @@
       "identity_source_url": "https://cathmos.ru/nachalos-palomnichestvo-v-belarus/",
       "archived_source_tier_unreverified": "B_CATHOLIC_ARCHDIOCESE",
       "geo_area_id": "geo:country:BY",
-      "country_area_present_in_draft": false,
+      "country_area_present_in_draft": true,
       "status": "RESEARCH_ONLY_UNAPPROVED",
       "owner_approved": false,
       "publishable": false,
@@ -649,7 +598,7 @@
       "identity_source_url": "https://www.budslau.by/",
       "archived_source_tier_unreverified": "A_PARISH_OPERATOR",
       "geo_area_id": "geo:country:BY",
-      "country_area_present_in_draft": false,
+      "country_area_present_in_draft": true,
       "status": "RESEARCH_ONLY_UNAPPROVED",
       "owner_approved": false,
       "publishable": false,
@@ -2349,7 +2298,7 @@
       "identity_source_url": "https://www.enciklopedija.hr/clanak/gospa-od-skrpjela",
       "archived_source_tier_unreverified": "B_CIVIC_HERITAGE_OR_OSM",
       "geo_area_id": "geo:country:ME",
-      "country_area_present_in_draft": false,
+      "country_area_present_in_draft": true,
       "status": "RESEARCH_ONLY_UNAPPROVED",
       "owner_approved": false,
       "publishable": false,
@@ -2474,7 +2423,7 @@
       "identity_source_url": "https://catholicdirectory.org.za/eshowe-2/",
       "archived_source_tier_unreverified": "A_CUSTODIAN_OR_DIOCESE",
       "geo_area_id": "geo:country:ZA",
-      "country_area_present_in_draft": false,
+      "country_area_present_in_draft": true,
       "status": "RESEARCH_ONLY_UNAPPROVED",
       "owner_approved": false,
       "publishable": false,
@@ -2482,6 +2431,72 @@
       "source_ref": null,
       "verified_at": null,
       "notes": null
+    }
+  ],
+  "country_area_preflight_on": "2026-11-06",
+  "resolved_country_areas": [
+    {
+      "candidate_id": "SG-INV-0348",
+      "country_code": "AL",
+      "name": "Shrine of Our Lady of Good Counsel, Shkodër",
+      "geo_area_id": "geo:country:AL",
+      "resolution": "COUNTRY_AREA_DEFINED_NO_PLACE_APPROVAL"
+    },
+    {
+      "candidate_id": "SG-INV-0729",
+      "country_code": "BI",
+      "name": "Basilica of Saint Anthony of Padua, Mugera",
+      "geo_area_id": "geo:country:BI",
+      "resolution": "COUNTRY_AREA_DEFINED_NO_PLACE_APPROVAL"
+    },
+    {
+      "candidate_id": "SG-INV-0541",
+      "country_code": "BO",
+      "name": "Sanctuary of Our Lady of Copacabana",
+      "geo_area_id": "geo:country:BO",
+      "resolution": "COUNTRY_AREA_DEFINED_NO_PLACE_APPROVAL"
+    },
+    {
+      "candidate_id": "SG-INV-0543",
+      "country_code": "BO",
+      "name": "Shrine of Our Lady of Socavón, Oruro",
+      "geo_area_id": "geo:country:BO",
+      "resolution": "COUNTRY_AREA_DEFINED_NO_PLACE_APPROVAL"
+    },
+    {
+      "candidate_id": "SG-INV-0343",
+      "country_code": "BY",
+      "name": "Marian Sanctuary of Baruny",
+      "geo_area_id": "geo:country:BY",
+      "resolution": "COUNTRY_AREA_DEFINED_NO_PLACE_APPROVAL"
+    },
+    {
+      "candidate_id": "SG-INV-0344",
+      "country_code": "BY",
+      "name": "Marian shrine of Trokeli",
+      "geo_area_id": "geo:country:BY",
+      "resolution": "COUNTRY_AREA_DEFINED_NO_PLACE_APPROVAL"
+    },
+    {
+      "candidate_id": "SG-INV-0342",
+      "country_code": "BY",
+      "name": "National Shrine of Our Lady of Budslau",
+      "geo_area_id": "geo:country:BY",
+      "resolution": "COUNTRY_AREA_DEFINED_NO_PLACE_APPROVAL"
+    },
+    {
+      "candidate_id": "SG-INV-0350",
+      "country_code": "ME",
+      "name": "Sanctuary of Our Lady of the Rocks, Perast",
+      "geo_area_id": "geo:country:ME",
+      "resolution": "COUNTRY_AREA_DEFINED_NO_PLACE_APPROVAL"
+    },
+    {
+      "candidate_id": "SG-INV-0722",
+      "country_code": "ZA",
+      "name": "Ngome Marian Shrine",
+      "geo_area_id": "geo:country:ZA",
+      "resolution": "COUNTRY_AREA_DEFINED_NO_PLACE_APPROVAL"
     }
   ]
 }
