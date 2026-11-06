@@ -163,10 +163,25 @@ for(const [date,sourcePath] of targets){
   date+": selected original source was not examined");
  const monica=date==="2026-05-04",bridget=date==="2026-10-08";
  const nativity=["2026-12-26","2026-12-28"].includes(date);
- assert.equal(item.recoveredEN.ready,monica||bridget||nativity,
+ const passion=date==="2026-03-27";
+ assert.equal(item.recoveredEN.ready,monica||bridget||nativity||passion,
   date+": unexpected change in source-owned English orations");
- assert.equal(item.recoveredFR.ready,monica||bridget||nativity,
+ assert.equal(item.recoveredFR.ready,monica||bridget||nativity||passion,
   date+": unexpected change in source-owned French orations");
+ if(passion){
+  assert.equal(item.calendarDayCommemorations.length,1,
+   "The original 1962 display Calendar must stay unchanged");
+  for(const lang of ["recoveredEN","recoveredFR"]){
+   for(const section of ["Oratio","Secreta","Postcommunio"]){
+    assert.equal(item[lang].orations[section].count,2,
+     date+":"+lang+":"+section+" two original groups not assembled");
+    const combined=item[lang].orations[section].rows[1];
+    assert.equal(combined.oneConclusion?.status,"CERTIFIED");
+    assert.equal(combined.oneConclusion?.kind,"MULTIPLE_COMMEMORATIONS");
+    assert.deepEqual(combined.oneConclusion?.sourcePaths?.length,2);
+   }
+  }
+ }
  if(nativity){
   for(const lang of ["recoveredEN","recoveredFR"]){
    for(const key of ["Oratio","Secreta","Postcommunio"]){

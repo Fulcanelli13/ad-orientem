@@ -30,35 +30,35 @@ assert.deepEqual(geo.places.filter(p=>!frozenIds.has(p.place_id)).map(p=>p.place
 
 assert.equal(ledger.schema,"AO_SACRED_ATLAS_530_PLACE_CARD_ACCEPTANCE_V1");
 assert.equal(ledger.counts.canonical_places,530);
-assert.equal(ledger.counts.photo_covers_approved,379);
-assert.equal(ledger.counts.missing_approved_photo,151);
-assert.equal(ledger.counts.verified_unapproved_photo_sites,23);
-assert.equal(ledger.counts.no_verified_original_sites,128);
+assert.equal(ledger.counts.photo_covers_approved,388);
+assert.equal(ledger.counts.missing_approved_photo,142);
+assert.equal(ledger.counts.verified_unapproved_photo_sites,21);
+assert.equal(ledger.counts.no_verified_original_sites,121);
 assert.equal(ledger.counts.approved_gallery_photos,42);
 assert.equal(geo.places.length,LIVE.places);
-assert.equal(covers.items.length,379);
+assert.equal(covers.items.length,388);
 assert.equal(gallery.items.length,42);
 assert.equal(verified.places.length,23);
-assert.equal(ledger.photo_gaps.length,151);
+assert.equal(ledger.photo_gaps.length,142);
 
 const placeById=new Map(geo.places.map(p=>[p.place_id,p]));
 const mediaById=new Map(covers.items.map(m=>[m.place_id,m]));
 const verifiedIds=new Set(verified.places.map(p=>p.place_id));
 assert.equal(placeById.size,LIVE.places,"no duplicate Place identities");
-assert.equal(mediaById.size,379,"no duplicate published covers");
-assert.equal(new Set(ledger.photo_gaps.map(p=>p.place_id)).size,151,"no duplicate fallback Places");
+assert.equal(mediaById.size,388,"no duplicate published covers");
+assert.equal(new Set(ledger.photo_gaps.map(p=>p.place_id)).size,142,"no duplicate fallback Places");
 assert.ok(covers.items.every(r=>placeById.has(r.place_id)),"no media orphans");
-assert.ok(verified.places.every(r=>placeById.has(r.place_id)&&!mediaById.has(r.place_id)),"no already published site in unapproved review");
+assert.ok(verified.places.every(r=>placeById.has(r.place_id)),"Every R25 research original retains a canonical physical site; separate, vetted new photos may exist");
 const gaps=geo.places.filter(p=>!mediaById.has(p.place_id));
 const frozenGaps=gaps.filter(p=>frozenIds.has(p.place_id));
 assert.deepEqual(
  ledger.photo_gaps.map(p=>p.place_id).sort(),
  frozenGaps.map(p=>p.place_id).sort(),
- "Dated 151-photo-gap ledger must equal the unchanged original 530-Place cohort");
+ "Dated 142-photo-gap ledger must equal the original 530 Place IDs after nine independently approved covers");
 assert.equal(gaps.length,LIVE.places-covers.items.length,
  "Every subsequent canonical Place lacking an approved cover must retain a fallback");
 assert.equal(gaps.length,ledger.counts.missing_approved_photo+v10.data.new_places+v10b21.data.new_places,
- "Historical 151 missing-cover cohort plus five unphotographed draft admissions");
+ "Current 142 missing-cover cohort plus five unphotographed draft admissions");
 assert.ok(geo.places.filter(p=>!frozenIds.has(p.place_id)).every(p=>!mediaById.has(p.place_id)),
  "V10 may not silently promote an unreviewed cover photograph");
 for(const row of ledger.photo_gaps){
@@ -70,9 +70,9 @@ for(const row of ledger.photo_gaps){
  assert.equal(row.source_status,verifiedIds.has(row.place_id)?"ORIGINALS_VERIFIED_NOT_EDITORIALLY_APPROVED":"NO_ORIGINAL_BYTE_VERIFIED");
  assert.equal(row.photo_publication_allowed,false);
 }
-assert.equal(ledger.photo_gaps.filter(x=>x.source_status==="ORIGINALS_VERIFIED_NOT_EDITORIALLY_APPROVED").length,23);
+assert.equal(ledger.photo_gaps.filter(x=>x.source_status==="ORIGINALS_VERIFIED_NOT_EDITORIALLY_APPROVED").length,21);
 
-// All 379 published photograph binaries must exist and match their registered
+// All 388 published photograph binaries must exist and match their registered
 // SHA-256 values. The 21 explicit gallery-HERO reuses remain unchanged.
 for(const record of covers.items){
  assert.equal(record.status,"APPROVED");
@@ -136,10 +136,10 @@ for(const raw of geo.places){
   }
  }
 }
-assert.equal(photoCards,379);
-assert.equal(symbolCards,LIVE.places-379);
+assert.equal(photoCards,388);
+assert.equal(symbolCards,LIVE.places-388);
 
-// Every current fallback (151 historic + 3 new) must survive the expanded detail reader, not merely
+// Every current fallback (142 from the original cohort + 5 draft admissions) must survive the expanded detail reader, not merely
 // the compact preview. Check both languages and exact canonical ownership.
 for(const raw of gaps){
  for(const lang of ["en","fr"]){
@@ -157,4 +157,4 @@ for(const raw of gaps){
   assert.ok(html.includes("aoExplorePlaceSheet"),"detail reader missing");
  }
 }
-console.log("SACRED ATLAS CARD CONTRACT PASS: "+LIVE.places+"/"+LIVE.places+" EN/FR Place previews, "+gaps.length+" EN/FR detailed neutral fallbacks, frozen 530-place/151-gap historical evidence, 379 exact approved photo binaries, 42 unchanged gallery records, and zero unapproved images.");
+console.log("SACRED ATLAS CARD CONTRACT PASS: "+LIVE.places+"/"+LIVE.places+" EN/FR Place previews, "+gaps.length+" EN/FR detailed neutral fallbacks, frozen 530-place/142-gap updated evidence, 388 exact approved photo binaries, 42 unchanged gallery records, and zero unapproved images.");

@@ -5,6 +5,49 @@ on:
   pull_request:
     paths:
       - 'src/mass/reader-inline-chant.js'
+      - 'src/mass/reader-participation-neume-policy.js'
+      - 'src/mass/reader-offertory-quiet.js'
+      - 'src/mass/reader-native-preview.js'
+      - 'tests/reader-offertory-oremus-voice-boundary.mjs'
+      - 'tests/reader-offertory-oremus-voice-phone.mjs'
+      - 'src/mass/reader-two-greeting-transfer-candidates.js'
+      - 'data/mass/two-greeting-music-source-crosswalk.v1.json'
+      - 'tests/reader-two-greeting-transfer-candidates.mjs'
+      - 'tests/reader-two-greeting-transfer-phone.mjs'
+      - 'src/mass/reader-participation-coverage.js'
+      - 'tests/fixtures/reader-participation-score-review.html'
+      - 'scripts/mass/export-24-participation-review-csv.mjs'
+      - 'tests/reader-participation-24-score-review-phone.mjs'
+      - 'data/mass/participation-20-event-coverage.v1.json'
+      - 'scripts/mass/build-participation-coverage.mjs'
+      - 'tests/reader-participation-20-event-coverage.mjs'
+      - 'src/mass/reader-participation-reference-scores.js'
+      - 'src/mass/reader-gospel-response-reference-scores.js'
+      - 'src/mass/reader-dismissal-variant-reference-scores.js'
+      - 'src/mass/reader-canon-pax-response-reference-scores.js'
+      - 'tests/reader-canon-pax-responses.mjs'
+      - 'src/mass/reader-oration-amen-source-handoff.js'
+      - 'src/mass/reader-oration-festive-amen-reference.js'
+      - 'src/mass/reader-oration-amen-tone-policy.js'
+      - 'src/mass/reader-oration-old-solemn-amen-reference.js'
+      - 'tests/reader-oration-old-solemn-amen-reference.mjs'
+      - 'tests/reader-oration-amen-tone-policy.mjs'
+      - 'tests/reader-oration-festive-amen-reference.mjs'
+      - 'tests/reader-oration-festive-amen-phone.mjs'
+      - 'tests/reader-oration-amen-source-handoff.mjs'
+      - 'data/mass/oration-amen-notation-source-gate.v1.json'
+      - 'data/mass/participation-amen-1962-coverage.v1.json'
+      - 'tests/reader-dismissal-variant-reference.mjs'
+      - 'tests/reader-dismissal-variant-phone.mjs'
+      - 'tests/reader-participation-reference-scores.mjs'
+      - 'tests/reader-participation-reference-phone.mjs'
+      - 'tests/reader-participation-neume-policy.mjs'
+      - 'src/mass/reader-inline-proper-reference.js'
+      - 'src/mass/reader-inline-all-saints-reference.js'
+      - 'src/mass/reader-inline-proper-registry.js'
+      - 'tests/reader-inline-proper-registry.mjs'
+      - 'tests/reader-inline-all-saints-phone.mjs'
+      - 'tests/reader-inline-proper-july07-phone.mjs'
       - 'src/mass/reader-inline-chant-selector.js'
       - 'src/mass/reader-inline-chant-bulk-review.js'
       - 'tests/reader-inline-chant-generic-source.mjs'
@@ -32,16 +75,148 @@ jobs:
       - name: Parse source, preserve source-first reader imports
         run: |
           node --check src/mass/reader-inline-chant.js
+          node --check src/mass/reader-participation-neume-policy.js
+          node --check src/mass/reader-offertory-quiet.js
+          node --check src/mass/reader-native-preview.js
+          node --check tests/reader-offertory-oremus-voice-boundary.mjs
+          node --check tests/reader-offertory-oremus-voice-phone.mjs
+          node --check src/mass/reader-two-greeting-transfer-candidates.js
+          node --check tests/reader-two-greeting-transfer-candidates.mjs
+          node --check tests/reader-two-greeting-transfer-phone.mjs
+          node --check src/mass/reader-participation-coverage.js
+          node --check scripts/mass/build-participation-coverage.mjs
+          node --check tests/reader-participation-20-event-coverage.mjs
+          node --check scripts/mass/export-24-participation-review-csv.mjs
+          node --check tests/reader-participation-24-score-review-phone.mjs
+          node --check src/mass/reader-participation-reference-scores.js
+          node --check src/mass/reader-gospel-response-reference-scores.js
+          node --check src/mass/reader-dismissal-variant-reference-scores.js
+          node --check src/mass/reader-canon-pax-response-reference-scores.js
+          node --check src/mass/reader-oration-amen-source-handoff.js
+          node --check src/mass/reader-oration-festive-amen-reference.js
+          node --check src/mass/reader-oration-amen-tone-policy.js
+          node --check src/mass/reader-oration-old-solemn-amen-reference.js
+          node --check tests/reader-oration-old-solemn-amen-reference.mjs
+          node --check tests/reader-oration-amen-tone-policy.mjs
+          node --check tests/reader-oration-festive-amen-reference.mjs
+          node --check tests/reader-oration-festive-amen-phone.mjs
+          node --check tests/reader-oration-amen-source-handoff.mjs
+          node --check tests/reader-canon-pax-responses.mjs
+          node --check tests/reader-dismissal-variant-reference.mjs
+          node --check tests/reader-dismissal-variant-phone.mjs
+          node --check tests/reader-participation-reference-scores.mjs
+          node --check tests/reader-participation-reference-phone.mjs
+          node --check tests/reader-participation-neume-policy.mjs
+          node --check src/mass/reader-inline-proper-reference.js
+          node --check src/mass/reader-inline-all-saints-reference.js
+          node --check src/mass/reader-inline-proper-registry.js
+          node --check tests/reader-inline-proper-registry.mjs
+          node --check tests/reader-inline-all-saints-phone.mjs
+          node --check tests/reader-inline-proper-july07-phone.mjs
           node --check src/mass/reader-inline-chant-selector.js
           node --check src/mass/reader-inline-chant-bulk-review.js
           node --check src/mass/reader-dom.js
           node tests/reader-inline-chant-a-c.mjs
+          node tests/reader-participation-neume-policy.mjs
+          node tests/reader-offertory-oremus-voice-boundary.mjs
+          node tests/reader-two-greeting-transfer-candidates.mjs
+          node tests/reader-participation-20-event-coverage.mjs
+          node scripts/mass/export-24-participation-review-csv.mjs
+          node tests/reader-participation-reference-scores.mjs
+          node tests/reader-dismissal-variant-reference.mjs
+          node tests/reader-canon-pax-responses.mjs
+          node tests/reader-oration-amen-source-handoff.mjs
+          node tests/reader-oration-festive-amen-reference.mjs
+          node tests/reader-oration-amen-tone-policy.mjs
+          node tests/reader-oration-old-solemn-amen-reference.mjs
           node tests/reader-inline-chant-generic-source.mjs
+          node tests/reader-inline-proper-registry.mjs
           node tests/reader-proper-gabc-bulk-join.mjs
           node tests/reader-inline-chant-bulk-review.mjs
           node tests/reader-inline-chant-bulk-91-source-queue.mjs
       - name: Prepare source-backed browser validation
         run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
-      - name: Verify 390 and 320 px visible score, independent text toggle and Low Mass fallback
-        run: node tests/reader-inline-chant-a-c-phone.mjs
+      - name: Verify 390 and 320 px compact score alongside intact Latin, independent toggle, Low fallback
+        run: |
+          node tests/reader-inline-chant-a-c-phone.mjs
+          node tests/reader-participation-reference-phone.mjs
+          node tests/reader-participation-24-score-review-phone.mjs
+          node tests/reader-offertory-oremus-voice-phone.mjs
+          node tests/reader-two-greeting-transfer-phone.mjs
+          node tests/reader-dismissal-variant-phone.mjs
+          node tests/reader-oration-festive-amen-phone.mjs
+          node tests/reader-inline-proper-july07-phone.mjs
+          node tests/reader-inline-all-saints-phone.mjs
+
+      - name: Retain 320 and 390 px source-notation screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-1961-inline-july07-screens
+          path: .tmp/mass-inline-proper-july07/*.png
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Retain All Saints 320 and 390 px notation screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-1961-inline-all-saints-screens
+          path: .tmp/mass-inline-all-saints/*.png
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Retain entire 24-score participation source review gallery and CSV
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-1961-24-participation-editorial-review
+          path: .tmp/mass-participation-24-review/*
+          if-no-files-found: warn
+          retention-days: 21
+
+      - name: Retain 1961 participation source-review screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-participation-research-reference-neumes
+          path: .tmp/mass-participation-preview/*.png
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Retain 1962 Offertory Oremus sung/Schola/secret phone screens
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-1962-offertory-voice-boundary
+          path: .tmp/offertory-oremus-voice-boundary/*.png
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Retain 1961 two-greeting context-hypothesis phone screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-1961-two-greeting-transfer-hypotheses
+          path: .tmp/mass-two-greeting-context-hypotheses/*.png
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Retain 1961 festive oration Amen research phone screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-oration-amen-1961-preview-screens
+          path: .tmp/mass-oration-amen-preview/*.png
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Retain 1961 dismissal alternatives research phone screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-dismissal-variant-source-neumes
+          path: .tmp/mass-dismissal-variant-preview/*.png
+          if-no-files-found: warn
+          retention-days: 14

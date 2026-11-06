@@ -60,7 +60,7 @@ try{
       };
     });
     assert.equal(summary.count,65,"Legacy review flag should activate the one-card Sanctus projection");
-    assert.equal(summary.canonical,39);
+    assert.equal(summary.canonical,30,"Public curated LIVE must use 30 source macros, not the 39-section intermediary");
     assert.equal(summary.owner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
     assert.ok(summary.rootVisible && summary.navNext && summary.navPrev);
     assert.ok(summary.shellWidth<=width+1,"Phone viewport horizontal overflow");
@@ -1235,7 +1235,8 @@ try{
       assert.equal(mount.status,"true",form+" fixture failed to mount: "+mount.error);
       const result=await page.evaluate(form=>{
         const api=window.__AO_PHONE_PREVIEW;
-        const base={cards:api.model.totalCards,sourceCards:api.sourceModel.totalCards};
+        const base={cards:api.model.totalCards,sourceCards:api.sourceModel.totalCards,
+          corpusFamily:api.model.corpusFamily,structureOwner:api.model.structureOwner};
         if(form==="LOW"){
           return {...base,scholaAbsent:api.getScholaState()?.structuralAbsence===true,
             observes:api.observePriestCeremonialEvent("MC-OBS-INT-POS",{
@@ -1308,7 +1309,10 @@ try{
         assert.equal(result.scholaUnchanged,true);
         assert.equal(result.reset,null);
       }else{
-        assert.notEqual(result.cards,65,"Low Mass unexpectedly selected the Sung review");
+        assert.equal(result.cards,65,"Low LIVE must use approved 65-card layout");
+        assert.equal(result.sourceCards,30,"Low LIVE must retain the 30 authoritative source macros");
+        assert.equal(result.corpusFamily,"LOW","Low text must not borrow Sung corpus");
+        assert.equal(result.structureOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
         assert.equal(result.scholaAbsent,true);
         assert.equal(result.observes,false,
           "Low Mass accepted source-only Sung celebrant event");

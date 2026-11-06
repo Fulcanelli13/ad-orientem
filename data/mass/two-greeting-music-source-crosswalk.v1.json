@@ -1,0 +1,81 @@
+{
+  "schema": "ao-mass-two-greeting-source-crosswalk-v1",
+  "purpose": "Distinguish verified 1962 obligation to sing response from unverified 1961 melody transfer",
+  "sourceOfTruth": "data/mass/participation-20-event-coverage.v1.json",
+  "preservation": "Canonical 65-card source text and original bilingual translations remain unchanged",
+  "counts": {
+    "sourceCueCandidates": 2,
+    "verifiedSungRituals": 2,
+    "contextCertifiedScores": 0,
+    "newPublicScores": 0
+  },
+  "sources": {
+    "ritual1962": {
+      "title": "1962 General Rubrics of the Roman Missal, nn. 477, 507, 513-516",
+      "url": "https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html",
+      "fact": "In Sung Mass Dominus vobiscum is sung whenever it occurs (except preparatory Confiteor versicles); Offertory and dismissal both contain an Et cum spiritu tuo response.",
+      "certainty": "1962_RUBRIC_CERTIFIED"
+    },
+    "offertoryPerformance": {
+      "title": "B. Andrew Mills, Psallite Sapienter, 2008, paragraph 61, p.25",
+      "url": "https://media.churchmusicassociation.org/books/7848318-Psallite-Sapienter-A-Musicians-Guide-to-the-Extraordinary-Form.pdf",
+      "fact": "Offertory response Et cum spiritu tuo after the celebrant greeting, before Oremus and Offertory chant",
+      "certainty": "SOURCE_CERTIFIED"
+    },
+    "dismissalPerformance": {
+      "title": "B. Andrew Mills, Psallite Sapienter, 2008, paragraph 75, p.29",
+      "url": "https://media.churchmusicassociation.org/books/7848318-Psallite-Sapienter-A-Musicians-Guide-to-the-Extraordinary-Form.pdf",
+      "fact": "A further Dominus vobiscum and response follows Postcommunion and precedes sung dismissal",
+      "certainty": "SOURCE_CERTIFIED"
+    },
+    "musical1961": {
+      "title": "Graduale Romanum Solesmes 1961, Toni Orationum, tonus festivus p.113* / Liber Usualis 1961 p.98",
+      "url": "https://gregobase.selapa.net/chant.php?id=4487",
+      "witness": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+      "exactExcerpt": "(c3) <sp>R/</sp>. Et(h) cum(h) spí(h)ri(h)tu(h) tu(h)o.(h.) (::)",
+      "certainty": "1961_NOTES_PRINTED_FOR_ORATION_CONTEXT_ONLY",
+      "contextTransfer": "DO_NOT_CLAIM_OFFERTORY_OR_DISMISSAL_NOTATION_CERTIFIED"
+    }
+  },
+  "records": [
+    {
+      "eventId": "OFFERTORY_GREETING",
+      "cueId": "AO.SM.C0107",
+      "blockId": "AO.SM.B028",
+      "context": "after Credo or Gospel before Offertory antiphon",
+      "sungBy": "RESPONDERS",
+      "sungRubricCertified": true,
+      "sourceMelodyCertifiedForThisPosition": false,
+      "candidateSourceId": 4487,
+      "candidateFormula": "Et cum spíritu tuo",
+      "hypothesis": "Use the 1961 festive oration greeting response here",
+      "defaultScore": "NONE",
+      "candidateRequires": "chant_preview=1 AND greeting_transfer=1961 AND VERIFIED_SELECTED_PROPER_AND_SOLEMN_CONTEXT",
+      "musicalAction": "Compare 1961 source with explicit pre-1962 Ordo/choir practice for Offertory greeting, then musically approve or reject"
+    },
+    {
+      "eventId": "DISMISSAL_GREETING",
+      "cueId": "AO.SM.C0258",
+      "blockId": "AO.SM.B089",
+      "context": "after Postcommunion, before Ite missa est / Benedicamus / Requiescant",
+      "sungBy": "RESPONDERS",
+      "sungRubricCertified": true,
+      "sourceMelodyCertifiedForThisPosition": false,
+      "candidateSourceId": 4487,
+      "candidateFormula": "Et cum spíritu tuo",
+      "hypothesis": "Use the 1961 festive oration greeting response here",
+      "defaultScore": "NONE",
+      "candidateRequires": "chant_preview=1 AND greeting_transfer=1961 AND VERIFIED_SELECTED_PROPER_AND_SOLEMN_CONTEXT",
+      "musicalAction": "Find explicit traditional choir/source use of the 1961 oration response at dismissal greeting, then musically approve or reject"
+    }
+  ],
+  "bans": [
+    "No inference from identical words to musical context equivalence",
+    "No guessed priest starting pitch",
+    "No ferial or Requiem score borrowed from festive source",
+    "No Low Mass scores",
+    "No public score promotion",
+    "No additional Mass cards",
+    "Offertory Oremus rubric follows 1962 n.513, not assumed silent"
+  ]
+}

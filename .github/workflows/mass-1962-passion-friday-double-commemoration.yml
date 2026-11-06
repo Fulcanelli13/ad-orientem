@@ -1,0 +1,40 @@
+name: Mass 1962 Passion Friday two original commemorations source and reader
+
+on:
+  pull_request:
+    paths:
+      - 'src/mass/1962-passion-friday-commemorations.js'
+      - 'src/mass/reader-proper-runtime-recovery.js'
+      - 'src/mass/host-adapter.js'
+      - 'src/mass/1962-commemoration-form-source.js'
+      - 'src/mass/calendar-preflight-context.js'
+      - 'tests/1962-passion-friday-two-commemorations-reader.mjs'
+      - '.github/workflows/mass-1962-passion-friday-double-commemoration.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  passion-friday-original-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install existing test and browser requirements
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Validate original source, shared conclusion and R17 Reader in four Mass forms
+        run: node tests/1962-passion-friday-two-commemorations-reader.mjs
+      - name: Retain original source and actual reader evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-1962-passion-friday-double-commemoration-proof
+          path: artifacts/mass/1962-passion-friday-two-commemorations-reader.json
+          if-no-files-found: warn
+          retention-days: 21

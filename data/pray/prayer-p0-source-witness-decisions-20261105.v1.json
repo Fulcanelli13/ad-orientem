@@ -1,0 +1,119 @@
+{
+  "schema": "ao.pray.p0-source-witness-decisions-20261105.v1",
+  "decisionDate": "2026-11-05",
+  "scope": "TWO_P0_CANDIDATES_SOURCE_SPECIFIC_RELEASE_GATE_ONLY_NOT_BLANKET_VERBATIM_CERTIFICATION",
+  "historicalBaseline": {
+    "path": "data/pray/prayer-corpus-current-release-overlay-b31.v1.json",
+    "asOf": "2026-10-29",
+    "preserveAsHistory": true
+  },
+  "decisions": [
+    {
+      "acquisitionId": "AO-AQ-047",
+      "work": "Short Chaplet of the Precious Blood",
+      "historicalEdition": "Ambrose St John trans., The Raccolta, 1857, §40",
+      "printedPageReference": 103,
+      "workIdentifier": "raccolta_1857_precious_blood_short",
+      "sources": [
+        {
+          "kind": "1857_SCAN_INDEX",
+          "url": "https://en.wikisource.org/wiki/Index:Raccoltaorcolle00raccgoog.djvu",
+          "sourcePage": "103",
+          "visualPageCompared": false
+        },
+        {
+          "kind": "1857_INDEX_ENTRY",
+          "url": "https://en.wikisource.org/wiki/The_Raccolta_%281857%29/Index",
+          "entry": "40"
+        },
+        {
+          "kind": "LATER_WEB_TRANSCRIPTION",
+          "url": "https://www.liturgialatina.org/raccolta/blood.htm",
+          "entry": "40",
+          "scanPageCompared": false
+        },
+        {
+          "kind": "DIFFERENT_PUBLISHED_FULL_FORM",
+          "owner": "src/pray/precious-blood-chaplet.v1.js",
+          "historicalReferences": [
+            "1857 §35",
+            "1910 §138"
+          ]
+        }
+      ],
+      "witnessedTranscription": {
+        "introClaimedOurFathers": 33,
+        "perMysteryOurFathers": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          5,
+          5
+        ],
+        "printedListArithmeticTotal": 35,
+        "contradictionOpen": true
+      },
+      "decision": "HOLD_REPETITION_COUNT_CONFLICT_NOT_PUBLIC",
+      "requiredNextEvidence": "Direct visual verification of 1857 printed pp.103–104 and independent edition comparison before deciding whether printed seventh-mystery five is a typographic error or a distinct devotional practice",
+      "publishedFullFormDoesNotProveShortForm": true,
+      "publicChoiceAllowed": false,
+      "newIndulgenceClaimAllowed": false,
+      "textOrPatternModified": false
+    },
+    {
+      "acquisitionId": "AO-AQ-078",
+      "work": "Prayer before Meditation, Study, or Spiritual Reading",
+      "witnessId": "lasance_prayer_before_meditation_1908_en",
+      "bibliographicIdentity": "F. X. Lasance, My Prayer-Book: Happiness in Goodness, Benziger Brothers, 1908",
+      "printedPage": 225,
+      "source": {
+        "book": "https://en.wikisource.org/wiki/My_Prayer-Book",
+        "pageScan": "https://en.wikisource.org/wiki/Page:MyPrayerBookHappinessInGoodness.djvu/240",
+        "originalPrintedPageImage": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/MyPrayerBookHappinessInGoodness.djvu/page240-1920px-MyPrayerBookHappinessInGoodness.djvu.jpg",
+        "htmlTranscription": "https://en.wikisource.org/wiki/My_Prayer-Book/Prayers_During_the_Day",
+        "imageReviewed": true,
+        "comparison": "Printed English text p.225 visually compared with staged English body; words and sequence agree. Ignore ornamental/drop-cap letter separation, lineation, paragraph spacing and punctuation spacing; do not normalize actual words or invent additions."
+      },
+      "distinctiveAnchors": [
+        "My God, I firmly believe that Thou art here present",
+        "I offer Thee all that I am and all that I have",
+        "Enlighten my understanding and inflame my will",
+        "all my thoughts and affections to Thy service and Thy glory",
+        "my own sanctification and salvation."
+      ],
+      "publication": {
+        "language": "en",
+        "channel": "existing Scripture reader before-reading optional prayer",
+        "requiresNoNewDoor": true,
+        "readerOwner": "src/pray/scripture-meditation-prayers.v1.js",
+        "textOwner": "src/pray/prayer-acquisition-historical-witnesses.v1.js"
+      },
+      "editionScope": "1908_ENGLISH_P225_BODY_IMAGE_COLLATED_NOT_FULL_BOOK_OR_FRENCH_LATIN_CERTIFICATION",
+      "decision": "ADMIT_ENGLISH_ORIGINAL_WITH_EXISTING_SOURCE_DISCLOSURE",
+      "FrenchTranslationAdmitted": false,
+      "LatinTranslationOfThisWorkAdmitted": false,
+      "preexistingAquinasEnglishLatinChoicesPreserved": true,
+      "historicalIndulgenceClaimAllowed": false,
+      "publishedAfterMergeOnly": true
+    }
+  ],
+  "noChangesTo": [
+    "historical B31 overlay",
+    "97 acquisition master",
+    "48 canonical source texts",
+    "16 original Novenas",
+    "9-door Prayer mosaic",
+    "Rosary Lab Ora player",
+    "Confession",
+    "Benediction",
+    "Mass",
+    "Raccolta §40 short chaplet"
+  ],
+  "notes": [
+    "This is a bounded, single-language editorial admission, not a claim of three-language source collation.",
+    "The 1857 scan index establishes a page reference but its relevant original printed page was not read in this decision.",
+    "This admission does not prove anything about the distinct 1910 full Precious Blood form."
+  ]
+}

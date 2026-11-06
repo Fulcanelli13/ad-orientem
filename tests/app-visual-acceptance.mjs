@@ -1463,9 +1463,14 @@ try{
   assert.equal(await page.locator("#aoPray435930 [data-n1-therese-weekly]").count(),1,"Novenas overview must separately expose the perpetual Tuesday St Therese devotion");
   await shot("03f-pray-novenas");
   await page.locator("#aoPray435930 [data-n1-select='st_michael']").click();
-  // The current quiet novena detail folio presents its start authority in
-  // aoN1ContextLine, not in the old conditional overview/calendar banner.
-  // Verify the source's "suggested" status even after the feast has passed.
+  // The approved novena entry now opens the actual day reader, not the
+  // About folio. Check that useful prayer content is immediately visible
+  // before opening the separate historical/calendar context disclosure.
+  await page.waitForSelector("#aoPray435930 .aoN1Reader[data-ao-novena-deck] .aoDevoCard",
+    {state:"visible",timeout:5000});
+  await page.locator("#aoPray435930 .aoN1Reader [data-n1-about]").click();
+  // The About folio retains the source's suggested (not compulsory) start,
+  // even after the feast. Do not reinstate an obsolete opening screen.
   await page.waitForSelector("#aoPray435930 .aoN1DetailFolio .aoN1ContextLine",
     {state:"visible",timeout:5000});
   const stMichaelCalendarText=await page.locator(

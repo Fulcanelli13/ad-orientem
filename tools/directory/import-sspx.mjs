@@ -527,6 +527,7 @@ function parseArgs(argv) {
     concurrency: 6,
     details: true,
     snapshotOnly: false,
+    allow403Hold: false,
     adjudicationsFile: "data/directory/research/sspx-physical-adjudications.v1.json",
   };
   for (const arg of argv) {
@@ -535,6 +536,7 @@ function parseArgs(argv) {
     else if (arg.startsWith("--concurrency=")) options.concurrency = Number(arg.slice("--concurrency=".length)) || 6;
     else if (arg === "--no-details") options.details = false;
     else if (arg === "--snapshot-only") options.snapshotOnly = true;
+    else if (arg === "--allow-403-hold") options.allow403Hold = true;
     else if (arg.startsWith("--adjudications=")) options.adjudicationsFile = arg.slice("--adjudications=".length);
   }
   return options;
@@ -542,6 +544,36 @@ function parseArgs(argv) {
 
 async function writeJson(file, value) {
   await fs.writeFile(file, JSON.stringify(value, null, 2) + "\n", "utf8");
+}
+
+// Only a verified two-path upstream HTTP 403 may be recorded as a source
+// hold. A malformed response, missing records, schema drift, or any other
+// acquisition failure must still fail the job. A hold is not a snapshot.
+export async function recordSspx403Hold({out="data/directory/generated/sspx",
+  now=new Date().toISOString()}={}){
+  const outDir=path.resolve(out);
+  await fs.mkdir(outDir,{recursive:true});
+  const forbidden=["venues.v1.json","ministries.v1.json","schedules.v1.json",
+    "sources.v1.json","geo.v1.geojson","import-report.v1.json"];
+  const files=new Set(await fs.readdir(outDir));
+  if(forbidden.some(name=>files.has(name)))
+    throw new Error("SSPX_403_HOLD_REFUSES_TO_MASQUERADE_AS_STALE_PUBLISHED_SNAPSHOT");
+  const evidence={
+    schema:"AO_DIRECTORY_SOURCE_AVAILABILITY_HOLD_V1",
+    provider:"SSPX",
+    status:"UNAVAILABLE_UPSTREAM_403",
+    upstream_status:403,
+    source_registry_id:SSPX_SOURCE_REGISTRY_ID,
+    source_origin:SSPX_API_BASE,
+    checked_at:now,
+    attempted_paths:["DIRECT_OFFICIAL_API","OFFICIAL_SITE_BROWSER_SESSION"],
+    acquired_records:0,
+    source_coverage_verified:false,
+    publishable:false,
+    requires_new_successful_acquisition:true,
+  };
+  await writeJson(path.join(outDir,"source-unavailable.v1.json"),evidence);
+  return evidence;
 }
 
 export async function runSspxImport(options = {}) {
@@ -555,7 +587,16 @@ export async function runSspxImport(options = {}) {
       if(!/SSPX API 403/.test(String(error?.message??error)))throw error;
       browserSession=await createSspxBrowserFetch();
       effectiveOptions={...options,fetchImpl:browserSession.fetchImpl};
-      summaries=await fetchAllSspxPlaceSummaries(effectiveOptions);
+      try{
+        summaries=await fetchAllSspxPlaceSummaries(effectiveOptions);
+      }catch(browserError){
+        if(options.allow403Hold!==true ||
+           !/^SSPX API 403\b/.test(String(browserError?.message??browserError)))
+          throw browserError;
+        // Never emit a false zero-venue SSPX corpus; preserve the 403
+        // witness and quarantine this provider's entire snapshot.
+        return await recordSspx403Hold({out:options.out});
+      }
     }
     if (summaries.length < 100) {
       throw new Error(`SSPX import coverage guard: expected a substantial official corpus, received ${summaries.length} place summaries.`);

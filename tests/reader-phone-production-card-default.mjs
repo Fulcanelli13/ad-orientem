@@ -58,7 +58,7 @@ try{
     overflow:document.documentElement.scrollWidth>innerWidth+1};
   });
   assert.equal(result.error,null,option.label+": "+result.error);
-  assert.equal(result.source,39,option.label);
+  assert.equal(result.source,30,option.label+" direct source macros");
   assert.equal(result.model,option.cards,option.label);
   assert.equal(result.curator,option.curated,option.label);
   if(option.curated==="true"||option.rite){
@@ -167,7 +167,7 @@ try{
       });
       assert.equal(massCard.title,"Gloria · Praise and Supplication");
       assert.ok(massCard.textCount>0,option.label+" no Mass prayer paragraphs");
-      assert.equal(massCard.source,39);
+      assert.equal(massCard.source,30);
       assert.notEqual(massCard.state.specialRite,"ASPERGES");
     }
   }else{

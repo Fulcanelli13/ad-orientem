@@ -2,7 +2,7 @@
 // Compare LIVE critical asset bytes and build provenance against this exact run.
 import assert from "node:assert/strict";
 import {
- RELEASE_PROOF_FILENAME,releaseCommitSha,releaseSha256,verifyReleaseProof
+ RELEASE_PROOF_FILENAME,MASS_SCHOLA_CRITICAL_PATHS,releaseCommitSha,releaseSha256,verifyReleaseProof
 } from "./github-pages-release-proof.mjs";
 
 const raw=process.env.GITHUB_PAGES_URL;
@@ -86,6 +86,12 @@ for(const path of [
  "src/pray/presentation-runtime.js",
 ])await released(path);
 ok("Novena reader, bilingual Pray search and Prayer router exact-byte parity");
+
+// The deployed HTML can be current while deep-linked native reader modules
+// are still stale on the Pages CDN. Verify the exact published Mass/Schola
+// source bytes from the same commit+run; never infer musical certification.
+for(const path of MASS_SCHOLA_CRITICAL_PATHS)await released(path);
+ok("Direct 65-card Mass, appointed 1962 Proper corrections and Schola exact-byte parity");
 
 const registry=JSON.parse((await released("data/geography/seed-registry.v1.json")).toString("utf8"));
 const photos=JSON.parse((await released("data/geography/approved-place-media.v1.json")).toString("utf8"));

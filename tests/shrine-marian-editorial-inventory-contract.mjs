@@ -11,6 +11,7 @@ const images=json("data/geography/approved-place-media.v1.json");
 const phenomena=json("data/explore/sacred-phenomena-seed.v1.json");
 const ledger=json("data/shrines/editorial-master-inventory-20261021.v1.json");
 const admission=json("data/shrines/research/sacred-atlas-v10-b20-place-admission-20261105.v1.json");
+const b21=json("data/geography/research/sacred-places-v10-b21-two-marian-site-admissions-20261106.v1.json");
 const newGuides=json("data/shrines/illustrated-place-guides-world-marian-r1.v1.json");
 const newSaintGuides=json("data/shrines/illustrated-place-guides-global-saints-r1.v1.json");
 const globalMarianB2=json("data/shrines/illustrated-place-guides-global-marian-b2.v1.json");
@@ -25,19 +26,22 @@ const placeById=new Map(places.places.map(x=>[x.place_id,x]));
 const imageByPlace=new Map(images.items.map(x=>[x.place_id,x]));
 const approvedGallery=json("data/geography/approved-place-gallery.v1.json");
 const allGuides=[...oldGuideFiles.flatMap(path=>json(path).guides),...newGuides.guides,...newSaintGuides.guides,...globalMarianB2.guides];
-const historicShrines=new Set(ledger.shrines.map(x=>x.shrine_id));
-const historicPilgrimages=new Set(ledger.pilgrimages.map(x=>x.pilgrimage_id));
-assert.equal(ledger.shrines.length,257,"Keep the October inventory immutable");
-assert.equal(ledger.pilgrimages.length,240,"Keep the October pilgrimage inventory immutable");
+const historicalShrines=new Set(ledger.shrines.map(x=>x.shrine_id));
+const historicalPilgrimages=new Set(ledger.pilgrimages.map(x=>x.pilgrimage_id));
+assert.equal(ledger.shrines.length,257,"Frozen October shrine inventory remains intact");
+assert.equal(ledger.pilgrimages.length,240,"Frozen October pilgrimage inventory remains intact");
 assert.equal(admission.records.length,3);
-assert.equal(canonical.shrines.length,ledger.shrines.length+admission.records.length);
-assert.equal(canonical.pilgrimages.length,ledger.pilgrimages.length+admission.records.length);
-assert.deepEqual(canonical.shrines.filter(x=>!historicShrines.has(x.shrine_id)).map(x=>x.shrine_id).sort(),admission.records.map(x=>x.shrine_id).sort(),"Only reviewed V10 shrine identities can extend historical scope");
-assert.deepEqual(canonical.pilgrimages.filter(x=>!historicPilgrimages.has(x.pilgrimage_id)).map(x=>x.pilgrimage_id).sort(),admission.records.map(x=>x.pilgrimage_id).sort(),"Only reviewed V10 pilgrimages can extend historical scope");
+assert.equal(b21.published_new.length,2);
+assert.equal(canonical.shrines.length,ledger.shrines.length+admission.records.length+b21.published_new.length);
+assert.equal(canonical.pilgrimages.length,ledger.pilgrimages.length+admission.records.length+b21.published_new.length);
+assert.deepEqual(canonical.shrines.filter(x=>!historicalShrines.has(x.shrine_id)).map(x=>x.shrine_id).sort(),
+ [...admission.records,...b21.published_new].map(x=>x.shrine_id).sort(),"Only five sourced V10 draft shrine identities added");
+assert.deepEqual(canonical.pilgrimages.filter(x=>!historicalPilgrimages.has(x.pilgrimage_id)).map(x=>x.pilgrimage_id).sort(),
+ [...admission.records,...b21.published_new].map(x=>x.pilgrimage_id).sort(),"Only five sourced V10 draft pilgrimages added");
 assert.equal(canonical.routes.length,20);
 assert.equal(phenomena.apparitions.length,33);
-assert.ok(ledger.shrines.every(x=>shrineIds.has(x.shrine_id)),"No historic shrine may disappear from the live registry");
-assert.ok(ledger.pilgrimages.every(x=>historicPilgrimages.has(x.pilgrimage_id)&&canonical.pilgrimages.some(p=>p.pilgrimage_id===x.pilgrimage_id)),"No historic pilgrimage may disappear");
+assert.ok(ledger.shrines.every(x=>shrineIds.has(x.shrine_id)),"No existing shrine was removed");
+assert.ok(ledger.pilgrimages.every(x=>historicalPilgrimages.has(x.pilgrimage_id)&&canonical.pilgrimages.some(p=>p.pilgrimage_id===x.pilgrimage_id)),"No existing pilgrimage removed");
 assert.deepEqual([...new Set(ledger.routes.map(x=>x.route_id))].sort(),
  canonical.routes.map(x=>x.route_id).sort());
 assert.deepEqual([...new Set(ledger.apparitionSites.map(x=>x.apparition_id))].sort(),
@@ -118,8 +122,47 @@ for(const entry of ledger.shrines){
     approvedPhoto.license_url==="https://creativecommons.org/publicdomain/mark/1.0/"&&
     approvedPhoto.rights_verified&&approvedPhoto.subject_verified&&approvedPhoto.crop_reviewed
   );
+  const directFiveManifest=json("data/geography/research/sacred-atlas-direct-open-photo-five-20261105.v1.json");
+  const directFiveProof=json("data/geography/research/sacred-atlas-direct-open-photo-five-release-report-20261105.v1.json");
+  const directSource=directFiveManifest.items.find(x=>x.place_id===entry.place_id);
+  const directProof=directFiveProof.accepted.find(x=>x.place_id===entry.place_id);
+  const directlySourcedOpenPhoto=Boolean(
+    approvedPhoto?.source_place_ref==="DIRECT_OPEN_PHOTO_FIVE_20261105"&&
+    directSource&&directProof&&directFiveProof.admitted_on_branch===5&&
+    directSource.source_page===approvedPhoto.source_url&&
+    directSource.credit===approvedPhoto.credit&&
+    (directSource.license==="CC0"?"CC0-1.0":directSource.license)===approvedPhoto.license&&
+    directSource.license_url===approvedPhoto.license_url&&
+    directSource.subject_en===approvedPhoto.alt_en&&
+    directSource.subject_fr===approvedPhoto.alt_fr&&
+    directProof.asset===approvedPhoto.asset_path&&
+    directProof.original_sha1===approvedPhoto.source_sha1&&
+    directProof.derivative_sha256===approvedPhoto.derivative_sha256&&
+    /^[a-f0-9]{64}$/.test(directProof.rights_proof_sha256)&&
+    approvedPhoto.rights_verified&&approvedPhoto.subject_verified&&approvedPhoto.crop_reviewed&&
+    approvedPhoto.review_method.includes("PR visual review required before merge")
+  );
+  const batchTwo=json("data/geography/research/sacred-atlas-direct-source-batch-two-20261105.v1.json");
+  const batchTwoReport=json("data/geography/research/sacred-atlas-direct-source-batch-two-report-20261105.v1.json");
+  const source2=batchTwo.items.find(x=>x.place_id===entry.place_id);
+  const proof2=batchTwoReport.approved.find(x=>x.place_id===entry.place_id);
+  const directBatchTwo=Boolean(
+    approvedPhoto?.source_place_ref==="DIRECT_PEXELS_FLICKR_BATCH_TWO_20261105"&&
+    source2&&proof2&&batchTwoReport.admitted_on_pr_branch+batchTwoReport.held===4&&
+    source2.source_page===approvedPhoto.source_url&&
+    source2.credit===approvedPhoto.credit&&
+    source2.license===approvedPhoto.license&&
+    source2.license_url===approvedPhoto.license_url&&
+    source2.subject_en===approvedPhoto.alt_en&&
+    source2.subject_fr===approvedPhoto.alt_fr&&
+    proof2.source_original_sha1===approvedPhoto.source_sha1&&
+    proof2.derivative_sha256===approvedPhoto.derivative_sha256&&
+    proof2.asset_path===approvedPhoto.asset_path&&
+    proof2.source_image_url===source2.source_image_url&&
+    approvedPhoto.rights_verified&&approvedPhoto.subject_verified&&approvedPhoto.crop_reviewed
+  );
   assert.ok(approvedPhoto?.review_method?.includes("Photo Finder editorial selection")||
-    originalGalleryPhoto||independentlyPinnedNotreDame||independentlyVerifiedPDSelf,
+    originalGalleryPhoto||independentlyPinnedNotreDame||independentlyVerifiedPDSelf||directlySourcedOpenPhoto||directBatchTwo,
     entry.shrine_id+" newly approved hero requires source-matched editorial or approved-gallery evidence");
  }
 }
@@ -184,4 +227,4 @@ assert.match(loader,/safeArray\(illustratedGlobalSaintsR1\?\.guides\)/);
 assert.ok(ledger.shrines.every(s=>s.place_verified&&s.geo_available&&s.source_count>0));
 assert.ok(ledger.pilgrimages.every(p=>p.source_count>0&&
  (!p.destination_shrine_id||shrineIds.has(p.destination_shrine_id))));
-console.log("PASS: immutable 257-shrine/240-pilgrimage editorial snapshot; 3 V10 additions independently tracked; 20 routes, 33 apparition records and 33 published guides preserved.");
+console.log("PASS: frozen 257-shrine/240-pilgrimage October cohort, 5 sourced V10 draft additions, 20 unchanged routes, 33 apparition records, 33 published guides; later approved photographs independently verified.");

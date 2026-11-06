@@ -1,0 +1,71 @@
+{
+  "schema": "AO_SACRED_ATLAS_DIRECT_SOURCE_BATCH_TWO_V1",
+  "date": "2026-11-05",
+  "main_cover_baseline": 384,
+  "canonical_places": 530,
+  "batch_size": 4,
+  "source_policy": "Four exact site photographs. Pexels Free licence per photo and Flickr CC BY-SA 2.0. None from Wikimedia, no licence mislabelling, no source/paywall/permission bypass, no replacing existing media.",
+  "owner_approval": "Editorial continuation authorised; PR visual acceptance required",
+  "items": [
+    {
+      "place_id": "place:FR:cathedrale-notre-dame-reims",
+      "name": "Cathédrale Notre-Dame de Reims",
+      "source_type": "pexels",
+      "source_page": "https://www.pexels.com/photo/reims-cathedral-facade-17444784/",
+      "source_image_url": "https://images.pexels.com/photos/17444784/pexels-photo-17444784.jpeg?cs=srgb&dl=pexels-nathan-neve-322731913-17444784.jpg&fm=jpg",
+      "source_id": "17444784",
+      "credit": "Nathan Neve",
+      "license": "PEXELS_LICENSE",
+      "license_url": "https://www.pexels.com/license/",
+      "title_probe": "Reims Cathedral",
+      "subject_en": "Western façade and twin towers of Notre-Dame Cathedral in Reims, France.",
+      "subject_fr": "Façade occidentale et tours de la cathédrale Notre-Dame de Reims, en France.",
+      "depiction": "exterior"
+    },
+    {
+      "place_id": "place:VA:saint-peter-vatican",
+      "name": "St Peter's Basilica — Vatican",
+      "source_type": "pexels",
+      "source_page": "https://www.pexels.com/photo/front-view-of-st-peter-s-basilica-in-vatican-city-36811703/",
+      "source_image_url": "https://images.pexels.com/photos/36811703/pexels-photo-36811703.jpeg?cs=srgb&dl=pexels-gabriel-rojas-acevedo-2160559205-36811703.jpg&fm=jpg",
+      "source_id": "36811703",
+      "credit": "Gabriel Rojas Acevedo",
+      "license": "PEXELS_LICENSE",
+      "license_url": "https://www.pexels.com/license/",
+      "title_probe": "St. Peter's Basilica",
+      "subject_en": "Front façade and dome of St Peter's Basilica in Vatican City.",
+      "subject_fr": "Façade principale et coupole de la basilique Saint-Pierre au Vatican.",
+      "depiction": "exterior"
+    },
+    {
+      "place_id": "place:DE:aachener-dom-four-textiles",
+      "name": "Aachener Dom — Four Sacred Textiles",
+      "source_type": "pexels",
+      "source_page": "https://www.pexels.com/photo/aerial-view-of-aachen-cathedral-in-germany-35381089/",
+      "source_image_url": "https://images.pexels.com/photos/35381089/pexels-photo-35381089.jpeg?cs=srgb&dl=pexels-part1-35381089.jpg&fm=jpg",
+      "source_id": "35381089",
+      "credit": "Peter Hölterhoff",
+      "license": "PEXELS_LICENSE",
+      "license_url": "https://www.pexels.com/license/",
+      "title_probe": "Aachen Cathedral",
+      "subject_en": "Aachen Cathedral, the pilgrimage church associated with the four sacred textiles; the textiles themselves are not depicted.",
+      "subject_fr": "Cathédrale d’Aix-la-Chapelle, lieu de pèlerinage des quatre saintes reliques textiles ; les textiles ne sont pas représentés.",
+      "depiction": "site_exterior_not_relic"
+    },
+    {
+      "place_id": "place:CL:sanctuary-of-our-lady-of-la-tirana-chile",
+      "name": "Sanctuary of Our Lady of La Tirana, Chile",
+      "source_type": "flickr",
+      "source_page": "https://www.flickr.com/photos/9508280@N07/7704078194",
+      "source_image_url": "https://live.staticflickr.com/7132/7704078194_6955268fa6_b.jpg",
+      "source_id": "7704078194",
+      "credit": "Dan Lundberg",
+      "license": "CC-BY-SA-2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+      "title_probe": "Santuario (sanctuary) de La Tirana church",
+      "subject_en": "Sanctuary of Our Lady of Mount Carmel at La Tirana, Chile.",
+      "subject_fr": "Sanctuaire Notre-Dame-du-Mont-Carmel de La Tirana, au Chili.",
+      "depiction": "exterior"
+    }
+  ]
+}

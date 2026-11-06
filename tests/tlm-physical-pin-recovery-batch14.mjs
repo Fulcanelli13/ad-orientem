@@ -49,15 +49,23 @@ for(const [anchor,id,lat,lng,ref,url,scope] of sites){
  }
 }
 const held=all.find(x=>x.physical_group_id==="RG-18E53EDD9E9C");
-assert.ok(held&&!held.map_publishable,"San Jose naming conflict remains held");
+assert.ok(held?.map_publishable&&held.geo?.approximate&&held.geo.precision==="locality",
+ "R17 Excel approval admits San Jose shared campus vicinity only, never surveyed St Thomas More chapel");
+assert.equal(held.geo.source_ref,"independent:r17-illustrative-rg18e53edd9e9c");
+assert.match(held.geo.attribution,/inconsistently titled Saint Athanasius/,
+ "Naming conflict persists despite approximate campus-level geography");
+assert.match(held.status,/MASS UNVERIFIED/);
+assert.equal(held.affiliation_scope,"SOURCE_LABEL_ONLY");
+assert.ok(held.actions.every(action=>!action.url.includes("/maps/dir/")),
+ "No GPS directions to approximate campus point");
 const poi=all.find(x=>x.physical_group_id==="RG-8D3022768BBE");
 assert.ok(poi.facts.some(x=>x.label==="Map position"&&x.value.includes("building outline")));
 const campus=all.find(x=>x.physical_group_id==="RG-B70-2945A96ECEDE");
 assert.ok(campus.facts.some(x=>x.label==="Map position"&&x.value.includes("campus")));
 assert.equal(all.length,2582);
-assert.equal(all.filter(x=>x.map_publishable).length,2498);
+assert.equal(all.filter(x=>x.map_publishable).length,2556);
 const counts=tlmSiteEvidenceCounts(all);
-assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:692,SOURCE_PIN:1806,ADDRESS_ONLY:84});
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,84);
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,692);
-console.log("PASS TLM batch 12: five reviewed source-identities, 2498 mapped, 84 unpinned; no invented Mass or image rights");
+assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:750,SOURCE_PIN:1806,ADDRESS_ONLY:26});
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,26);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,750);
+console.log("PASS TLM batch 12: five reviewed source-identities, 2556 mapped, 26 unpinned; no invented Mass or image rights");

@@ -4,6 +4,7 @@ import {mkdir,readFile} from "node:fs/promises";
 import {resolve,extname,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
+import {libraryVariantFamily} from "../src/pray/library-variant-groups.js";
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const output=resolve(root,"artifacts/prayer-reader-design-pilot");
 await mkdir(output,{recursive:true});
@@ -42,6 +43,14 @@ try{
    await focus.click();
    assert.equal(await page.locator(base+'.aoReaderPilotSingle.aoReaderPilotFocus').count(),0);
    assert.equal(await open("pray.library"),true);
+   // Distinct historical/current litanies are grouped under one disclosed
+   // family in the approved Library. Open the group as a real phone user
+   // before selecting the original 1962 form; never bypass visibility.
+   const loretoFamily=libraryVariantFamily("litany_loreto_1962");
+   assert.equal(loretoFamily,"litany_loreto");
+   await page.locator(base+'details[data-ao-prayer-family="'+loretoFamily+'"] > summary').click();
+   assert.equal(await page.locator(base+'details[data-ao-prayer-family="'+loretoFamily+'"]').getAttribute("open"),"",
+     "Loreto forms must remain accessible through a visible Library disclosure");
    await page.locator(base+'[data-p435930-lib-open="litany_loreto_1962"]').click();
    assert.equal(await page.locator(base+'[data-ao-reader-design-pilot="litany"]').count(),1);
    assert.equal(await page.locator(base+'.aoReaderPilotLitanyPair').count()>40,true);

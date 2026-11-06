@@ -1,6 +1,7 @@
 import {applyMissionSundayCollect} from "./1962-mission-sunday-source.js";
 import {projectJune30InseparableApostles} from "./1962-inseparable-apostles-source.js";
 import {project1962TwoCommemorations} from "./1962-multiple-commemoration-source.js";
+import {select1962PassionFridayCommemorationsForMassForm} from "./1962-passion-friday-commemorations.js";
 // Shared source-first 1962 Mass-form oration projection.
 // Certified scope: source-identified single II-class Sunday feast and privileged Sunday / Advent feria.
 // Never infer universal privileges from feast titles, colours or typography.
@@ -49,6 +50,23 @@ export function select1962CommemorationsForMassForm({
     return untouched(proper,"SOURCE_DAY_UNAVAILABLE");
   if(String(data.sourcePath??envelope?.sourcePath??"").trim()==="")
     return untouched(proper,"PROPER_SOURCE_UNAVAILABLE");
+  // A historical 2026 Calendar source lists only Seven Sorrows here,
+  // while the universal Roman 1962 Mass also commemorates St John
+  // Damascene. The independently verified *Mass source* may supplement
+  // this single display token for a nonconventual form, but may never
+  // alter the underlying Calendar or admit an alternate SSPX festal Mass.
+  if(calendarResolution.date==="2026-03-27"&&
+    main.id==="tempora:Quad5-5Feria:3:v"&&
+    data.verifiedPassionFridayCommemorations?.status==="SOURCE_VERIFIED"){
+    const special=select1962PassionFridayCommemorationsForMassForm({
+      proper, date:calendarResolution.date,principalId:main.id,
+      form:normalizedForm,celebrationId,
+      requestedCelebrationId:"mass_of_day",celebrationType:"CALENDAR",
+      isConventual,observedSource
+    });
+    if(special.status==="CERTIFIED")return special;
+    return untouched(proper,"PASSION_FRIDAY_TWO_SOURCE_FORM_PENDING");
+  }
   const comms=array(day.commemorations);
   if(comms.length===0)return untouched(proper,"NO_COMMEMORATIONS");
   // Do not equate complete-looking source arrays with certified Mass prayers.

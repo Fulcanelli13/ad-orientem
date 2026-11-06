@@ -1,6 +1,7 @@
 import { resolveRogationMassVariant } from "./rogation-mass-selection.js";
 import { compileRogationReaderProper } from "./rogation-reader-proper.js";
 import { inspect1962PrefaceSelection } from "./1962-preface-decision.js";
+import {select1962PassionFridayCommemorationsForMassForm} from "./1962-passion-friday-commemorations.js";
 // Compatibility bridge from the proven v3.4.6 pre-Mass architecture
 // into the R17 modular session engine.
 // This file intentionally does not depend on window/globalThis or DOM.
@@ -155,6 +156,27 @@ export function adaptV346ResolvedMass(legacy, options={}) {
     requestedCelebration=celebrationObject(
       "rogation-mass-1962","VOTIVE","Missa de Rogationibus · Exaudivit");
     if(!overlays.includes("VOTIVE_PROPER"))overlays.push("VOTIVE_PROPER");
+  }
+  // The universal 1962 Roman Mass of Passion Friday has TWO documented
+  // ordinary commemorations at LOW Mass, joined under one conclusion,
+  // omitted in nonconventual Sung/Solemn Mass. The old flattened Calendar
+  // carries only the Seven Sorrows placeholder. The source-verified proof,
+  // exact principal/date and chosen form must all match before the R17
+  // actual reader (not just informational preflight) can show these prayers.
+  const passionFriday=select1962PassionFridayCommemorationsForMassForm({
+    proper:selectedProper,date:legacy.date,principalId:legacy.calendarDay?.id,
+    form:legacyForm(options.form??options.celebrationForm),
+    celebrationId:legacy.celebrationId??"mass_of_day",
+    requestedCelebrationId:legacy.requestedCelebrationId??"mass_of_day",
+    celebrationType:legacy.celebrationType??"CALENDAR",
+    isConventual:options.isConventual??legacy.conventualMass??false,
+    observedSource:legacy.sourceDiagnostics?.actualMassSelection==="OBSERVED_SOURCE_DAY"
+  });
+  if(passionFriday.status==="CERTIFIED"){
+    const resolverDay=options.calendarResolution;
+    if(!resolverDay||resolverDay.status==="ready"&&resolverDay.date===legacy.date&&
+       resolverDay.day?.main?.id===legacy.calendarDay?.id)
+      selectedProper=passionFriday.proper;
   }
   const proper=properEnvelope(bind1962PrincipalPrefaceIdentity(selectedProper,legacy),legacy);
   // The host classifies the *Mass of the day* as CALENDAR even for All

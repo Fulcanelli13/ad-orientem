@@ -163,14 +163,39 @@ export function matchSelected1962ProperToGraduale({properSlots,archive}={}){
   tracks:freeze(tracks),publicScores:0,
   notes:"Uses resolved 1962 source Latin, not feast names or local choir inference. Four opening words and exact chant role are minimum candidate gates; source/editorial/musical approval remains separate."});
 }
+// Editorial retrieval is also role-gated. Two authentic 1961 scores may
+// share every sung Latin word yet belong to different melodic families
+// (Epiphany Alleluia #524 vs Communion #918, "Vidimus stellam").
+// Never trust a candidate's declared role without its owning reader track.
+const TRACK_ROLES=freeze({INTROIT:"in",GRADUAL:"gr",OFFERTORY:"of",COMMUNION:"co"});
+function trackOwnsGabcPart(track,part,sourceGroup){
+ // A labelled Tract may never be reassigned to an Alleluia setting,
+ // even though both live in the same pre-Gospel presentation slot.
+ if(track==="ALLELUIA_TRACT_SEQUENCE")
+   return (part==="al"&&sourceGroup==="ALLELUIA")||
+     (part==="tr"&&sourceGroup==="TRACT");
+ return TRACK_ROLES[track]===part;
+}
 export function sourceMatchedGabcForEditorialReview(match,archive,scoreId){
  if(match?.schema!==MASS_GABC_BULK_MATCH_SCHEMA||match.status!=="SOURCE_FIRST_CANDIDATES_ONLY_NOT_SCORES"||
-   archive?.schema!=="ao-mass-1961-full-gabc-source-index-v1")return null;
- const candidates=match.tracks.flatMap(t=>t.scoreCandidates??[]);
- const eligible=candidates.find(c=>c.scoreId===scoreId);
- if(!eligible)return null;
- const original=(archive.byRole[eligible.part]??[]).find(r=>r.id===eligible.scoreId&&r.sha256===eligible.sourceGabcSha256);
- return original?freeze({id:original.id,sourceUrl:original.sourceUrl,gabc:original.gabc,
+   archive?.schema!=="ao-mass-1961-full-gabc-source-index-v1"||
+   !Array.isArray(match.tracks))return null;
+ const owner=match.tracks.find(track=>
+   trackOwnsGabcPart(track?.track,track?.part,track?.sourceGroup)&&
+   Array.isArray(track.scoreCandidates)&&track.scoreCandidates.some(c=>
+     c.scoreId===scoreId&&c.part===track.part&&
+     c.sourcePath===match.sourcePath&&c.status==="SOURCE_LATIN_MATCH_ONLY"&&
+     c.matchedSelectedMass===true&&c.editorApproved===false&&c.publicScore===false));
+ if(!owner)return null;
+ const eligible=owner.scoreCandidates.find(c=>c.scoreId===scoreId&&
+   c.part===owner.part&&c.sourcePath===match.sourcePath&&
+   c.status==="SOURCE_LATIN_MATCH_ONLY"&&c.matchedSelectedMass===true&&
+   c.editorApproved===false&&c.publicScore===false);
+ const original=(archive.byRole?.[owner.part]??[]).find(r=>
+   r.id===eligible.scoreId&&r.officePart===owner.part&&
+   r.sourceEditionId===2&&r.sha256===eligible.sourceGabcSha256);
+ return original?freeze({id:original.id,part:owner.part,sourceTrack:owner.track,
+  sourceGabcSha256:original.sha256,sourceUrl:original.sourceUrl,gabc:original.gabc,
   printedPage:original.gradualeRomanum1961Page,sourcePath:match.sourcePath,
   editorialOnly:true,approvedForPublic:false,audio:false}):null;
 }

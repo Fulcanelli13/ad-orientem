@@ -477,7 +477,7 @@ try{
   assert.equal(switched.cue,modeSwitchCue,
     "MISSAL -> curated LIVE did not preserve the selected Host source cue");
   assert.equal(switched.product,65,"Ordinary LIVE must use the actual 65-card presentation");
-  assert.equal(switched.source,39,"Canonical Sung source sections must remain unchanged");
+  assert.equal(switched.source,30,"Direct production LIVE must retain only 30 canonical source macros");
   assert.match(switched.progress,/^\d+ \/ 64$/,"Ordinary LIVE progress must count visible curated cards, omitting the optional second Confiteor");
 
   box=await nextButton.boundingBox();
@@ -495,9 +495,9 @@ try{
     sourceOwner:window.__AO_PHONE_PREVIEW?.sourceModel?.structureOwner??null,
   }));
   assert.equal(modelCounts.product,65,"phone reader lost curated 65-card production presentation");
-  assert.equal(modelCounts.source,39,"curated presentation modified the canonical 39-section source model");
+  assert.equal(modelCounts.source,30,"production LIVE must not allocate a 39-section source intermediary");
   assert.equal(modelCounts.productOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
-  assert.equal(modelCounts.sourceOwner,"SOURCE_FIRST_LIVE");
+  assert.equal(modelCounts.sourceOwner,"BASE_30_MACROS");
 
   await context.close();
 
@@ -634,8 +634,8 @@ try{
   await asp.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId==="AO.LIVECURATED.AO.CARD.001.1");
   assert.match(await asp.locator('[data-role="progress"]').textContent(),/1 \/ 64/,
     "Asperges did not hand off to the first curated 65-card LIVE prayer");
-  assert.equal(await asp.evaluate(()=>window.__AO_PHONE_PREVIEW.sourceModel?.totalCards??null),39,
-    "Asperges handoff replaced the certified 39-step source model");
+  assert.equal(await asp.evaluate(()=>window.__AO_PHONE_PREVIEW.sourceModel?.totalCards??null),30,
+    "Asperges handoff must retain the direct 30-macro source authority");
 
   const aspBack=asp.locator('[data-reader-nav="previous"]');
   hit=await aspBack.boundingBox();

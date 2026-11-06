@@ -4,6 +4,21 @@
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS} from "./cl2-illustrative-locality-pins.js";
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R2} from "./cl2-illustrative-locality-pins-r2.js";
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R3} from "./cl2-illustrative-locality-pins-r3.js";
+import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R4} from "./cl2-illustrative-locality-pins-r4.js";
+import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R5} from "./cl2-illustrative-locality-pins-r5.js";
+import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R6} from "./cl2-illustrative-locality-pins-r6.js";
+import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R7} from "./cl2-illustrative-locality-pins-r7.js";
+import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R8} from "./cl2-illustrative-locality-pins-r8.js";
+import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R9} from "./cl2-illustrative-locality-pins-r9.js";
+import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R10} from "./cl2-illustrative-locality-pins-r10.js";
+import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R11} from "./cl2-illustrative-locality-pins-r11.js";
+import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R12} from "./cl2-illustrative-locality-pins-r12.js";
+import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R13} from "./cl2-illustrative-locality-pins-r13.js";
+import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R14} from "./cl2-illustrative-locality-pins-r14.js";
+import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R15} from "./cl2-illustrative-locality-pins-r15.js";
+import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R16} from "./cl2-illustrative-locality-pins-r16.js";
+import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R17_R18} from "./cl2-illustrative-locality-pins-r17-r18.js";
+import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R19} from "./cl2-illustrative-locality-pins-r19.js";
 export const CL2_PHYSICAL_SITE_INDEX_URL=new URL("../../data/directory/generated/cl2-physical-site-index.v1.json",import.meta.url).href;
 export const CL2_PHYSICAL_SITE_COUNT=2579;
 export const CL2_EXPECTED_R49_GROUPS=1844;
@@ -1930,7 +1945,7 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
    Number(Boolean(b.geo?.precision==="building"))-Number(Boolean(a.geo?.precision==="building")));
   const selected=linked[0]??null;
   const review=REVIEWED_SITE_GEO_SOURCES[anchor]??null;
-  const newPin=REVIEWED_NEW_SITE_PINS[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R2[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R3[anchor]??null;
+  const newPin=REVIEWED_NEW_SITE_PINS[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R2[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R3[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R4[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R5[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R6[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R7[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R8[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R9[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R10[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R11[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R12[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R13[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R14[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R15[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R16[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R17_R18[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R19[anchor]??null;
   const siteGeoSource=review?linked.find(x=>x.source_id===review.sourceId):null;
   if(review&&(!selected||!sourceIds.includes(review.sourceId)||
      !siteGeoSource?.geo||!Number.isFinite(siteGeoSource.geo.lat)||
@@ -2039,7 +2054,7 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
      {label:"Mass times",value:"Unverified · no timetable published"},
     ]),sections:Object.freeze([]),actions:Object.freeze(newPin?.precision==="locality"?[
       Object.freeze({label:"Search location",url:"https://www.google.com/maps/search/?api=1&query="+
-        encodeURIComponent([T(name),T(description).replace(/\s*\([^)]*\)/g,"").trim(),country].filter(Boolean).join(", ")).replace(/\x27/g,"%27")})
+        encodeURIComponent([T(name),T(newPin?.searchAddress||description).replace(/\s*\([^)]*\)/g,"").trim(),country].filter(Boolean).join(", ")).replace(/\x27/g,"%27")})
      ]:[]),
     source_links:Object.freeze(source_links),
     note:"Research-listed site, not a confirmed current Mass venue. Source affiliation does not establish the celebrant, Una Cum, missal, rite, or official ministry. Verify locally before travelling."+

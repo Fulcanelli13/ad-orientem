@@ -446,6 +446,64 @@ export function createHomeOwner(win=globalThis){
         });
       return;
     }
+    const h7Kind=target?.closest?.(".aoH7DoorView:not([hidden]) [data-home-h7-mass-kind]");
+    if(h7Kind){
+      event.preventDefault?.();event.stopImmediatePropagation?.();
+      const kind=h7Kind.dataset?.homeH7MassKind;
+      if(!["VOTIVE","REQUIEM","NUPTIAL","OTHER"].includes(kind)){
+        showRouteError("mass.celebration",h7Kind);return;
+      }
+      // Navigate to the established Mass preparation first, then open the
+      // source-owned category. Do not synthesize a votive Proper or identity.
+      void navigateHomeShortcut("mass",{trigger:h7Kind,routeId:"mass.celebration"})
+        .then(visible=>{
+          if(!visible)return;
+          const result=win?.AO_R17_BROWSER_ENTRY?.chooseCelebrationKind?.(kind);
+          if(result?.ok===true)return;
+          // Fail visibly within the destination (Home may now be hidden).
+          const notice=win?.document?.querySelector?.("[data-full-mass-category-error]");
+          if(notice){
+            notice.hidden=false;
+            notice.textContent=String(result?.reason??"Mass category could not open; select it from the Mass chooser.");
+          }
+        });
+      return;
+    }
+    const icrspVotive=target?.closest?.("[data-home-icrsp-votive]");
+    if(icrspVotive){
+      event.preventDefault?.();event.stopImmediatePropagation?.();
+      const officialDate=icrspVotive.closest?.("[data-home-icrsp-ordo]")?.dataset?.homeIcrspOrdo;
+      const selection=state(win)?.selectedDate;
+      if(icrspVotive.dataset?.homeIcrspVotive!=="VOTIVE"||
+         !["2026-11-06","2026-11-07"].includes(officialDate)||
+         selection!==officialDate){
+        showRouteError("mass.icrsp.source-date",icrspVotive);return;
+      }
+      void navigateHomeShortcut("mass",{trigger:icrspVotive,routeId:"mass.icrsp.votive"})
+        .then(async ok=>{
+          if(!ok)return;
+          if(officialDate==="2026-11-06"){
+            // Source-scoped exact first-Friday votive, not an unsupported
+            // global substitution of the canonical Friday ferial Office.
+            const {selectIcrspFirstFridayLowMass}=await import("../mass/icrsp-first-friday-entry.js");
+            const choice=selectIcrspFirstFridayLowMass({win,dateIso:officialDate});
+            if(choice.ok===true){clearRouteError();return;}
+            const notice=win?.document?.querySelector?.("[data-full-mass-category-error]");
+            if(notice){notice.hidden=false;notice.textContent="Sacred Heart Low Mass could not be certified: "+choice.reason;}
+            showRouteError("mass.icrsp.sacred-heart",icrspVotive);
+            return;
+          }
+          // Other dates still route to the exact source-owned votive catalogue.
+          const result=win?.AO_R17_BROWSER_ENTRY?.chooseCelebrationKind?.("VOTIVE");
+          if(result?.ok===true){clearRouteError();return;}
+          const notice=win?.document?.querySelector?.("[data-full-mass-category-error]");
+          if(notice){notice.hidden=false;notice.textContent="Votive Mass selection unavailable; do not begin with an unverified Proper."}
+        }).catch(error=>{
+          try{win?.console?.error?.("ICRSP votive Mass selection failed",error)}catch{}
+          showRouteError("mass.icrsp.votive",icrspVotive);
+        });
+      return;
+    }
     const h4Begin=target?.closest?.("[data-home-h4-begin]");
     if(h4Begin){
       event.preventDefault?.();event.stopImmediatePropagation?.();

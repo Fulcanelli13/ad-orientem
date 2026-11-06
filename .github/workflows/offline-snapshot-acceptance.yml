@@ -9,6 +9,8 @@ on:
       - "tests/pwa-installability-contract.mjs"
       - "Ad-Orientem-v43.19.webmanifest"
       - ".github/workflows/offline-snapshot-acceptance.yml"
+      - ".github/workflows/github-pages.yml"
+      - "tests/installed-pages-live-phone.mjs"
   push:
     branches: [main]
     paths:

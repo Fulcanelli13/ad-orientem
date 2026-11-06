@@ -177,15 +177,33 @@ for(const s of sites){
   assert.doesNotMatch(profile,/data-tlm-celebration-evidence=/);
  }
 }
-for(const anchor of ["RG-72909EA31C02","RG-B70-6CCD0C36B97D","RG-50082C65DA56","RG-B66-ACD5E3A16E10","RG-18E53EDD9E9C"]){
+// R4 source-verified Ridgefield and Pleasantville now qualify for strictly
+// illustrative municipality markers; they were correctly held before R4.
+for(const anchor of ["RG-72909EA31C02","RG-B70-6CCD0C36B97D"]){
+ const site=all.find(x=>x.physical_group_id===anchor);
+ assert.ok(site?.map_publishable&&site.geo?.precision==="locality");
+ assert.equal(site.geo.approximate,true);
+ assert.ok(site.geo.review_scope.includes("NOT_WORSHIP_BUILDING_NOT_ENTRANCE"));
+ assert.match(site.status,/MASS UNVERIFIED/);
+ assert.equal(site.actions.length,1);
+ assert.ok(!site.actions[0].url.includes("/maps/dir/"));
+}
+for(const anchor of ["RG-50082C65DA56","RG-B66-ACD5E3A16E10"]){
  const held=all.find(x=>x.physical_group_id===anchor);
  assert.ok(held&&!held.map_publishable,"Historical identity/duplicate hold must remain unpinned: "+anchor);
 }
+const sanJose=all.find(x=>x.physical_group_id==="RG-18E53EDD9E9C");
+assert.ok(sanJose?.map_publishable&&sanJose.geo?.approximate&&sanJose.geo.precision==="locality",
+ "R17 newly approved San Jose is campus locality only, not independently identified chapel");
+assert.equal(sanJose.geo.source_ref,"independent:r17-illustrative-rg18e53edd9e9c");
+assert.match(sanJose.geo.attribution,/inconsistently titled Saint Athanasius/,
+ "Original St Thomas More vs St Athanasius naming discrepancy retained");
+assert.ok(sanJose.actions.every(a=>!a.url.includes("/maps/dir/")));
 const wells=all.find(x=>x.physical_group_id==="RG-8DE39E8E9415");
 assert.ok(wells?.map_publishable && wells.geo.review_scope.includes("GCATHOLIC_MATCHED"),"Wells later reviewed site-cell pin must not be reverted to earlier hold");
 assert.equal(all.length,2582);
-assert.equal(all.filter(x=>x.map_publishable).length,2498);
-assert.deepEqual(tlmSiteEvidenceCounts(all),{ALL:2582,REVIEWED_PIN:692,SOURCE_PIN:1806,ADDRESS_ONLY:84});
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,84);
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,692);
-console.log("PASS TLM nine site-pin reconciliation: 9 newly mapped, 23 already canonical, 2498 mapped, 84 address-only, 5 identity holds preserved; Wells later site-cell review preserved");
+assert.equal(all.filter(x=>x.map_publishable).length,2556);
+assert.deepEqual(tlmSiteEvidenceCounts(all),{ALL:2582,REVIEWED_PIN:750,SOURCE_PIN:1806,ADDRESS_ONLY:26});
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,26);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,750);
+console.log("PASS TLM nine site-pin reconciliation: 9 newly mapped, 23 already canonical, 2556 mapped, 26 address-only, 2 held identities plus San Jose named-campus exception preserved; Wells later site-cell review preserved");

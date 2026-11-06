@@ -61,7 +61,7 @@ function phonesFromLines(lines){
   return phoneCandidates(candidates.join("\n"));
 }
 function scheduleLines(lines){
-  return lines.filter(line=>/\b(Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sundays|Weekdays?|Feast Days?)\b/i.test(line)&&/\bMass\b/i.test(line));
+  return lines.filter(line=>/\b(Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sundays|Weekdays?|Feast Days?)\b/i.test(line)&&/\bMass(?:es)?\b/i.test(line));
 }
 function scheduleBlock(lines){
   const start=lines.findIndex(line=>/^(Sundays?|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|During the Week|Weekdays?|Feast Days?|Holy Mass|Mass Times?)/i.test(line));
@@ -70,9 +70,9 @@ function scheduleBlock(lines){
   for(let i=start;i<lines.length;i+=1){
     const line=lines[i];
     if(i>start&&/^(Church|Priory|Address|Phone|Email|Clergy|Rector|Canon|Map|Directions|Contact|Website)\s*:?/i.test(line))break;
-    if(/\b(Mass|Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Weekdays?|Feast Days?|During the Week)\b/i.test(line)||/\b\d{1,2}(?::|\.)\d{2}\b|\b(?:am|pm)\b/i.test(line))out.push(line);
+    if(/\b(Mass(?:es)?|Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Weekdays?|Feast Days?|During the Week)\b/i.test(line)||/\b\d{1,2}(?::|\.)\d{2}\b|\b(?:am|pm)\b/i.test(line))out.push(line);
   }
-  return out.some(line=>/\bMass\b/i.test(line))?out.join("\n"):null;
+  return out.some(line=>/\bMass(?:es)?\b/i.test(line))?out.join("\n"):null;
 }
 function discoverUs(html){
   const seen=new Set(),out=[];
@@ -122,7 +122,7 @@ export function parseIckspInternationalHtml(html,{pageUrl=ICKSP_INTL_URL}={}){
       :addressBase;
     const officialGeo=selectOfficialGeoFromHtml(body,{pageUrl,expectedText:[h4,address,heading].filter(Boolean).join(" ")});
     sections.push({
-      index:index++,title:h4,address,countryCode,diocese:null,detailUrl:pageUrl,
+      index:index++,title:h4,address,countryCode,sourceLocality:locality,diocese:null,detailUrl:pageUrl,
       emails:emailAddresses(stripTags(body)),phones:phoneCandidates(stripTags(body)),massRaw:schedule,detailText:stripTags(body),
       officialGeo:officialGeo.geo,officialGeoAmbiguous:officialGeo.ambiguous,officialGeoRejected:(officialGeo.rejectedCandidates??[]).length>0
     });
@@ -142,6 +142,50 @@ async function concurrentMap(items,concurrency,mapper){
   await Promise.all(Array.from({length:Math.max(1,concurrency)},()=>worker()));return out;
 }
 
+// Parse only the location that the official record itself prints.
+// In particular, never mistake a Mailing Address for the church address.
+const US_STATE_CODES=Object.freeze(Object.fromEntries([
+  ["Alabama","AL"],["Alaska","AK"],["Arizona","AZ"],["Arkansas","AR"],
+  ["California","CA"],["Colorado","CO"],["Connecticut","CT"],["Delaware","DE"],
+  ["Florida","FL"],["Georgia","GA"],["Hawaii","HI"],["Idaho","ID"],
+  ["Illinois","IL"],["Indiana","IN"],["Iowa","IA"],["Kansas","KS"],
+  ["Kentucky","KY"],["Louisiana","LA"],["Maine","ME"],["Maryland","MD"],
+  ["Massachusetts","MA"],["Michigan","MI"],["Minnesota","MN"],
+  ["Mississippi","MS"],["Missouri","MO"],["Montana","MT"],["Nebraska","NE"],
+  ["Nevada","NV"],["New Hampshire","NH"],["New Jersey","NJ"],
+  ["New Mexico","NM"],["New York","NY"],["North Carolina","NC"],
+  ["North Dakota","ND"],["Ohio","OH"],["Oklahoma","OK"],["Oregon","OR"],
+  ["Pennsylvania","PA"],["Rhode Island","RI"],["South Carolina","SC"],
+  ["South Dakota","SD"],["Tennessee","TN"],["Texas","TX"],["Utah","UT"],
+  ["Vermont","VT"],["Virginia","VA"],["Washington","WA"],
+  ["West Virginia","WV"],["Wisconsin","WI"],["Wyoming","WY"],
+  ["District of Columbia","DC"],
+].flatMap(([name,code])=>[[name.toLowerCase(),code],[code.toLowerCase(),code]])));
+export function structuredIckspOfficialAddress(record){
+  const formatted=String(record?.address??"").trim();
+  const result={line1:null,line2:null,postal_code:null,city:null,region:null,
+    country_code:record?.countryCode??null,country:null,formatted:formatted||null};
+  if(record?.countryCode==="US"){
+    const chunks=formatted.split(",").map(x=>x.trim()).filter(Boolean);
+    for(let i=chunks.length-2;i>=0;i--){
+      const tail=chunks[i+1]?.match(/^([A-Za-z ]{2,32})\s+(\d{5})(?:-\d{4})?$/);
+      if(!tail)continue;
+      const region=US_STATE_CODES[tail[1].toLowerCase()];
+      const city=chunks[i];
+      if(!region||!city||/\d/.test(city)||city.length>65)continue;
+      result.city=city;
+      result.region=region;
+      result.postal_code=tail[2];
+      break;
+    }
+  }else if(record?.sourceLocality &&
+    /^[\p{L}][\p{L}'’ .-]{1,70}$/u.test(record.sourceLocality)){
+    // The international heading explicitly names the locality (Rome,
+    // Italy); it is not inferred from a parish or church dedication.
+    result.city=record.sourceLocality;
+  }
+  return result;
+}
 export function buildIckspDataset(records,{retrievedAt=new Date().toISOString()}={}){
   const venues=[],ministries=[],schedules=[],sources=[];
   records.forEach((r,index)=>{
@@ -150,7 +194,7 @@ export function buildIckspDataset(records,{retrievedAt=new Date().toISOString()}
     venues.push({
       venue_id:venueId,name:{official:r.title,alternate:[]},venue_type:venueType(r.title),
       upstream:{provider:"ICKSP_OFFICIAL",detail_url:r.detailUrl},
-      address:{line1:null,line2:null,postal_code:null,city:null,region:null,country_code:r.countryCode,country:null,formatted:r.address||null},
+      address:structuredIckspOfficialAddress(r),
       geo:r.officialGeo??{lat:null,lng:null,precision:"unknown",geocoding_source:null},
       diocese:{diocese_id:null,name:r.diocese??null,type:"diocese"},
       contact:{phone:r.phones??[],email:r.emails??[],website:[r.detailUrl].filter(Boolean),schedule_url:[r.detailUrl].filter(Boolean),bulletin_url:[],contact_form:[],official_social:[]},
@@ -172,8 +216,22 @@ export async function runIckspImport({out="data/directory/generated/icksp",concu
   const [usHtml,intlHtml]=await Promise.all([fetchText(ICKSP_US_URL,{fetchImpl}),fetchText(ICKSP_INTL_URL,{fetchImpl})]);
   const usCandidates=discoverUs(usHtml);
   const usRecords=await concurrentMap(usCandidates,concurrency,async candidate=>{
-    try{return parseIckspUsDetail(await fetchText(candidate.url,{fetchImpl}),candidate);}
-    catch(error){return {title:candidate.label,address:null,countryCode:"US",diocese:null,detailUrl:candidate.url,emails:[],phones:[],massRaw:null,detailWarning:String(error?.message??error)};}
+    for(let attempt=1;attempt<=3;attempt++){
+      try{
+        const html=await fetchText(candidate.url,{fetchImpl});
+        return parseIckspUsDetail(html,candidate);
+      }catch(error){
+        const code=String(error?.cause?.code??error?.code??"");
+        const message=String(error?.message??error);
+        const retryable=/^(?:UND_ERR_CONNECT_TIMEOUT|UND_ERR_HEADERS_TIMEOUT|ETIMEDOUT|ECONNRESET|EAI_AGAIN)$/.test(code)||
+          /^HTTP (?:502|503|504)\b/.test(message);
+        if(!retryable||attempt===3)
+          throw new Error("ICKSP detail acquisition incomplete for "+candidate.url+
+            " after "+attempt+" attempt(s): "+message,{cause:error});
+        await new Promise(resolve=>setTimeout(resolve,attempt*500));
+      }
+    }
+    throw new Error("ICKSP detail acquisition exhausted: "+candidate.url);
   });
   const intlRecords=parseIckspInternationalHtml(intlHtml);
   const discovery=discoverIckspInternationalCountrySites(intlHtml);

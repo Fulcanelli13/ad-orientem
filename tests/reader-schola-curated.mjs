@@ -174,10 +174,14 @@ const solemnGloria=solemn.cards.find(c=>c.paragraphs.some(p=>
   p.sourceCueIds?.includes("AO.SM.C0055")));
 assert.equal(solemn.schola.activateForCard(solemnGloria).trackId,"GLORIA");
 
-// Low Mass has no Schola. The curated sung review is not force-projected.
+// Low Mass uses the approved 65 display boundaries, but its own prayers,
+// delivery and canonical cue family. Schola remains structurally absent.
 const low=fixture("LOW");
-assert.ok(low.review.presentationModel.totalCards!==65,
-  "Low Mass must not inherit the curated Sung-only segmentation");
+assert.equal(low.review.sourceModel.corpusFamily,"LOW");
+assert.equal(low.review.presentationModel.totalCards,65);
+assert.equal(low.review.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
+assert.equal(low.review.presentationModel.sourceOnlyCueRegister,null,
+  "Sung-only source clock metadata must not be projected onto Low Mass");
 assert.equal(low.schola.project().structuralAbsence,true);
 assert.equal(low.schola.activateForCard(solemnGloria).schola,null);
 

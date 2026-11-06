@@ -2,6 +2,16 @@ name: Directory runtime snapshots
 
 on:
   workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - ".github/workflows/directory-runtime-snapshots.yml"
+      - "tools/directory/import-sspx.mjs"
+      - "tools/directory/validate-runtime-snapshots.mjs"
+      - "tools/directory/report-icksp-live-schedule-drift.mjs"
+      - "tests/directory-sspx-403-partial-snapshots.mjs"
+      - "tests/directory-icksp-live-schedule-drift.mjs"
+      - "package.json"
   schedule:
     - cron: "17 3 * * 1"
   push:
@@ -29,25 +39,69 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.ref_name }}
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 22
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
-      - name: Generate official-source snapshots
-        run: |
-          npm run directory:import:fssp
-          npm run directory:import:icksp
-          npm run directory:import:ibp
-          npm run directory:import:sspx -- --no-details
-      - name: Validate generated corpus
+      # Test the committed, editorially approved registry *before* downloading
+      # live candidate data. The frozen CL2 and indicative-pin contracts do not
+      # apply directly to raw imports without their approved overlays.
+      - name: Validate pinned published Directory corpus
         run: |
           npm run test:directory
           node tests/find-surface.mjs
+      - name: Generate official-source snapshots
+        run: |
+          npm run directory:import:fssp
+          # Official ICKSP may intermittently time out in GitHub runners.
+          # Retry transport-level timeouts only; HTTP denials and structural
+          # or quality failures remain fatal.
+          set -o pipefail
+          for attempt in 1 2 3; do
+            if npm run directory:import:icksp 2>&1 | tee "$RUNNER_TEMP/icksp-import.log"; then
+              break
+            fi
+            if test "$attempt" -eq 3 ||
+              ! grep -Eq 'UND_ERR_CONNECT_TIMEOUT|ETIMEDOUT|ECONNRESET|EAI_AGAIN' "$RUNNER_TEMP/icksp-import.log"; then
+              echo "::error::ICKSP import failed outside a permitted transient retry"
+              exit 1
+            fi
+            echo "::warning::ICKSP source transport timeout, retry $attempt/3 without publishing partial source data"
+            sleep 5
+          done
+          npm run directory:import:ibp
+          # Both official acquisition paths can return HTTP 403. Only that
+          # exact double-denial produces an explicit nonpublishable hold;
+          # every malformed payload, validation error or other HTTP failure
+          # still fails closed.
+          npm run directory:import:sspx -- --no-details --allow-403-hold
+      - name: Record live-versus-curated ICKSP schedule differences
+        run: |
+          node tests/directory-icksp-live-schedule-drift.mjs
+          node tools/directory/report-icksp-live-schedule-drift.mjs
+      - name: Validate generated corpus
+        run: |
+          # Live-source integrity is deliberately distinct from approved
+          # editorial/map overlays and exact pinned schedule identifiers.
+          node tests/directory-sspx-403-partial-snapshots.mjs
+          node tests/directory-icksp-live-schedule-drift.mjs
           node tools/directory/validate-runtime-snapshots.mjs
+      - name: Report explicit unavailable-source status
+        if: always()
+        run: |
+          if test -f data/directory/generated/sspx/source-unavailable.v1.json; then
+            echo "::warning::SSPX upstream HTTP 403 on direct and browser acquisition; snapshot held with zero publishable SSPX records"
+            echo "### SSPX source unavailable (HTTP 403)" >> "$GITHUB_STEP_SUMMARY"
+            echo "FSSP, ICKSP and IBP acquisitions passed their basic source-integrity checks, but any later schedule-contract failure still blocks acceptance. SSPX was **not** imported or released; its exact 403 witness is in the review artifact." >> "$GITHUB_STEP_SUMMARY"
+          fi
+          if test -f data/directory/generated/icksp/schedule-drift-review.v1.json; then
+            echo "### ICKSP schedule-identity drift: editorial review required" >> "$GITHUB_STEP_SUMMARY"
+            echo "Compare the current official ICKSP schedule records against the pinned corpus before publication. The review-only drift JSON is preserved in the artifact; no missing times have been synthesized." >> "$GITHUB_STEP_SUMMARY"
+          fi
       - name: Package reviewable snapshots
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: directory-runtime-snapshots-${{ github.run_id }}
@@ -56,5 +110,5 @@ jobs:
             data/directory/generated/icksp
             data/directory/generated/ibp
             data/directory/generated/sspx
-          if-no-files-found: error
+          if-no-files-found: warn
           retention-days: 14

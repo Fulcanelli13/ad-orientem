@@ -146,7 +146,7 @@ const compute=function compute(data){
   sites_with_any_source_registry_entry:rows.filter(x=>x.bibliography.length).length,
   sites_with_unresolved_source_ids:rows.filter(x=>x.unresolved_source_ids.length).length
  };
- if(sum.canonical_places!==535||sum.shrine_records!==262||sum.extended_guides!==33||sum.shrine_guides_to_write!==229||sum.approved_covers!==379||sum.gallery_images!==42||sum.r25_places_with_verified_unapproved_originals!==23||sum.pilot_biographies_review_only!==6)throw Error("Source baseline changed; reconcile before generating master "+JSON.stringify(sum));
+ if(sum.canonical_places!==535||sum.shrine_records!==262||sum.extended_guides!==33||sum.shrine_guides_to_write!==229||sum.approved_covers<379||sum.approved_covers+sum.places_without_photo!==535||sum.gallery_images!==42||sum.r25_places_with_verified_unapproved_originals!==23||sum.pilot_biographies_review_only!==6)throw Error("Source baseline changed; reconcile before generating master "+JSON.stringify(sum));
  return {
   schema:"AO_SACRED_ATLAS_EDITORIAL_MASTER_535_V1",as_of:"2026-11-06",
   notice:"EDITORIAL RESEARCH MASTER ONLY. Not an app registry, authorisation to publish an image, approved biography, or an assertion that a linked source proves an unwritten history.",

@@ -249,8 +249,8 @@ async function exerciseRealShellSpecialRite(browser,spec){
         source:globalThis.AO_R17_NATIVE_READER_PREVIEW?.sourceModel?.totalCards,
         curated:document.getElementById("ao-r17-native-reader-preview")?.dataset.r17CuratedReview,
       }));
-      assert.deepEqual(readerIdentity,{total:65,source:39,curated:"true"},
-        "real-shell Asperges must retain the 65-card source structure (64 ordinarily visible) and 39 original Mass source steps");
+      assert.deepEqual(readerIdentity,{total:65,source:30,curated:"true"},
+        "real-shell Asperges must retain the 65-family LIVE product (64 visible) from 30 canonical source macros");
     }
     if(["PALM","ASH","CANDLEMAS","ROGATIONS"].includes(spec.kind)){
       assert.equal(setup.massEntry,"INTROIT",
@@ -267,7 +267,7 @@ async function exerciseRealShellSpecialRite(browser,spec){
           lastGospelVisibility:api?.model?.cards?.filter(c=>(c.sourceSectionId??c.sectionId)==="AO.CARD.030").length};
       });
       assert.equal(snapshot.total,61,spec.kind+" must remove exactly four opening display cards");
-      assert.equal(snapshot.source,39,spec.kind+" must preserve canonical 39 source steps");
+      assert.equal(snapshot.source,30,spec.kind+" must preserve 30 source macros without 39-step LIVE intermediary");
       assert.equal(snapshot.curated,"true");
       assert.equal(snapshot.first,"Introit");
       assert.equal(snapshot.handoff,"INTROIT");
@@ -291,7 +291,7 @@ async function exerciseRealShellSpecialRite(browser,spec){
       });
       assert.equal(switchback.missal,"MISSAL");
       assert.equal(switchback.live,"LIVE");
-      assert.equal(switchback.source,39);
+      assert.equal(switchback.source,30);
       // The pre-mode-switch curated projection has 61 structurally retained
       // cards (65 minus four suppressed Foot cards); Palm further hides the
       // Last Gospel in the *visible* itinerary, not in the audit model.
@@ -569,7 +569,7 @@ async function exerciseRealShellFollowingAction(browser,spec){
     assert.equal(ownership.readerUiMode,"NATIVE");
     assert.equal(ownership.uiOwner,"R17_NATIVE_PRODUCTION");
     assert.equal(ownership.marker,"R17_NATIVE_PRODUCTION");
-    if(["GENERIC_PROCESSION","CORPUS_CHRISTI_PROCESSION"].includes(spec.kind)){
+    if(["GENERIC_PROCESSION","CORPUS_CHRISTI_PROCESSION","HOLY_THURSDAY_POST"].includes(spec.kind)){
       const audit=await page.evaluate(()=>{
         const api=globalThis.AO_R17_NATIVE_READER_PREVIEW;
         const root=document.getElementById("ao-r17-native-reader-preview");
@@ -578,8 +578,14 @@ async function exerciseRealShellFollowingAction(browser,spec){
           optional:api.model.cards.some(c=>c.title?.startsWith("Second Confiteor")),
           lastGospelCards:api.model.cards.filter(c=>(c.sourceSectionId??c.sectionId)==="AO.CARD.030").length};
       });
-      assert.equal(audit.total,65,spec.kind+" must preserve the full curated source-card structure before following action");
-      assert.equal(audit.source,39);
+      assert.equal(audit.total,spec.kind==="HOLY_THURSDAY_POST"?61:65,
+        spec.kind+" must preserve the form-appropriate 65-family card boundaries");
+      assert.equal(audit.source,30,"production direct LIVE may not reconstruct 39/38 source cards");
+      if(spec.kind==="HOLY_THURSDAY_POST")
+        assert.equal(await page.evaluate(()=>
+          window.AO_R17_NATIVE_READER_PREVIEW.model.cards.some(c=>
+            (c.sourceSectionId??c.sectionId)==="AO.CARD.009")),false,
+          "Holy Thursday must never reintroduce the omitted Credo");
       assert.equal(audit.owner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
       assert.equal(audit.curated,"true");
       assert.equal(audit.optional,true,"second Confiteor must remain auditable but opt-in");
@@ -1080,7 +1086,7 @@ try{
     insertedRite:"holy thursday post",
     date:"2027-03-25",
     celebrationId:"holy-thursday",
-    properSource:"Tempora/Quad6-4",
+    properSource:"Tempora/Quad6-4r",
     getter:"getHolyThursdayPostState",
     firstId:"HT-R01",
     lastId:"HT-R06",

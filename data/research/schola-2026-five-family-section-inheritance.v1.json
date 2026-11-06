@@ -1,0 +1,233 @@
+{
+  "schema": "ao-schola-five-family-section-chain-collation-v1",
+  "researchedOn": "2026-11-05",
+  "sourceRepo": "DivinumOfficium/divinum-officium",
+  "immutableRef": "ad8783641455bae38a8eb5782b34241a7b3ff2ef",
+  "original1962Missal": {
+    "url": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf",
+    "edition": "Missale Romanum 1962 (Benziger, editio iuxta typicam)",
+    "saturdayBvmPrintedPages": [
+      48,
+      49,
+      50,
+      51
+    ],
+    "christmasOctavePrintedPages": [
+      29,
+      30,
+      31,
+      32
+    ],
+    "pdfOcrExtractionCaveat": "OCR digitization is imperfect; individual notes/syllables and every printed image still require page-image review. 1962 liturgical role and Mass text are corroborated through external 1962 ordos; 1961 chant notation is not certified."
+  },
+  "sourceTree": "PINNED_1049_VS_OBSOLETE",
+  "sourceBlobs": [
+    {
+      "path": "Commune/C10",
+      "blob": "65b0cfae138a1acc909ff9ee43031e9e9fbae009",
+      "tier": "OBSOLETE_ONLY",
+      "sectionRefs": {
+        "Introitus": "Salve sancta parens",
+        "Graduale": "Benedicta et venerabilis / Post partum Virgo",
+        "Offertorium": "Ave Maria gratia plena",
+        "Communio": "Beata viscera",
+        "Secreta": "Tua Domine propitiatione",
+        "Postcommunio": "Sumptis Domine"
+      }
+    },
+    {
+      "path": "Commune/C10b",
+      "blob": "25a6a7b43c87fb7bb6c46437a10153c33f7f8924",
+      "tier": "OBSOLETE_ONLY",
+      "parent": "Commune/C10"
+    },
+    {
+      "path": "Commune/C10c",
+      "blob": "02c6058c330b31ab4183e2ef2c7d0067b71f29ae",
+      "tier": "OBSOLETE_ONLY",
+      "parent": "Commune/C10"
+    },
+    {
+      "path": "Commune/C10Pasc",
+      "blob": "cf8efa4b7cdb8d1b7ba7512d133f066c4d7c04b2",
+      "tier": "OBSOLETE_ONLY",
+      "parent": "Commune/C10"
+    },
+    {
+      "path": "Commune/C10t",
+      "blob": "dc7daad4e051c34636070dce89a690f5dddad6ed",
+      "tier": "OBSOLETE_ONLY",
+      "parent": "Commune/C10"
+    },
+    {
+      "path": "Tempora/Nat30",
+      "blob": "87d86207529bf7d4fd0487844ed9a61e6666ba6b",
+      "tier": "PINNED_1049",
+      "references": [
+        "Sancti/12-25m2",
+        "Sancti/12-25m3"
+      ]
+    },
+    {
+      "path": "Sancti/12-25m2",
+      "blob": "e9c7579c692cee14c9f3e4d8e5b31b07eea52a43",
+      "tier": "PINNED_1049"
+    },
+    {
+      "path": "Sancti/12-25m3",
+      "blob": "0aa08651eac53b13abeee330d1de44ee09b69918",
+      "tier": "PINNED_1049"
+    }
+  ],
+  "sourceFamilies": [
+    {
+      "sourcePath": "Commune/C10b",
+      "dates": [
+        "2026-01-03",
+        "2026-01-10"
+      ],
+      "ownerEvidence": "HISTORICAL_SEASONAL_VARIANT_WITH_BASE_INHERITANCE",
+      "sections": {
+        "Introitus": "Commune/C10b:Introitus",
+        "Gradual": "Commune/C10b:Graduale",
+        "Alleluia": "Commune/C10b:Graduale",
+        "Offertorium": "Commune/C10b:Offertorium",
+        "Communio": "Commune/C10:Communio",
+        "Secreta": "Commune/C10:Secreta",
+        "Postcommunio": "Commune/C10b:Postcommunio"
+      },
+      "notAppointed": [
+        "Commune/C10b:Tractus"
+      ],
+      "original1962MissalPage": 48,
+      "printedScope": "II A NATIVITATE DOMINI USQUE AD PURIFICATIONEM",
+      "note": "The Graduale field in obsolete C10b contains both the Gradual and Alleluia; the Tractus is explicitly conditional after Septuagesima and is not appointed for these January dates."
+    },
+    {
+      "sourcePath": "Commune/C10c",
+      "dates": [
+        "2026-02-14"
+      ],
+      "ownerEvidence": "HISTORICAL_SEASONAL_VARIANT_WITH_BASE_INHERITANCE",
+      "sections": {
+        "Introitus": "Commune/C10:Introitus",
+        "Gradual": "Commune/C10c:Graduale",
+        "Tract": "Commune/C10c:Tractus",
+        "Offertorium": "Commune/C10c:Offertorium",
+        "Communio": "Commune/C10:Communio",
+        "Secreta": "Commune/C10:Secreta",
+        "Postcommunio": "Commune/C10:Postcommunio"
+      },
+      "notAppointed": [
+        "Commune/C10c:Graduale:Alleluia"
+      ],
+      "original1962MissalPage": 49,
+      "printedScope": "III A DIE 3 FEBRUARII USQUE AD FERIAM IV HEBDOMADAE SANCTAE",
+      "note": "The seasonal pre-Gospel section contains an Alleluia, but this date falls after Septuagesima, so the appointed second chant is Tractus Gaude Maria, not the Alleluia."
+    },
+    {
+      "sourcePath": "Commune/C10Pasc",
+      "dates": [
+        "2026-04-18"
+      ],
+      "ownerEvidence": "HISTORICAL_SEASONAL_VARIANT_WITH_BASE_INHERITANCE",
+      "sections": {
+        "Introitus": "Commune/C10:Introitus",
+        "Alleluia1": "Commune/C10Pasc:Graduale",
+        "Alleluia2": "Commune/C10Pasc:Graduale",
+        "Offertorium": "Commune/C10Pasc:Offertorium",
+        "Communio": "Commune/C10:Communio",
+        "Secreta": "Commune/C10:Secreta",
+        "Postcommunio": "Commune/C10:Postcommunio"
+      },
+      "notAppointed": [
+        "Commune/C10:Graduale:Gradual",
+        "Commune/C10c:Tractus"
+      ],
+      "original1962MissalPage": 50,
+      "printedScope": "IV TEMPORE PASCHALI",
+      "note": "Printed 1962 Paschal Mass adds alleluia suffixes to Introit/Offertory/Communion; plain historical C10/C10Pasc text omits some suffixes. These inherited sections are NOT exact Latin publication matches until expanded and compared. Both Alleluias are in the obsolete Graduale field.",
+      "caution": "HISTORICAL_TEXT_OMITS_PRINTED_PASCHAL_ALLELUIA_SUFFIXES"
+    },
+    {
+      "sourcePath": "Commune/C10t",
+      "dates": [
+        "2026-06-20",
+        "2026-06-27",
+        "2026-07-04",
+        "2026-07-11",
+        "2026-08-01",
+        "2026-10-31",
+        "2026-11-07",
+        "2026-11-28"
+      ],
+      "ownerEvidence": "HISTORICAL_RULE_STUB_REFERENCES_FULL_BASE",
+      "sections": {
+        "Introitus": "Commune/C10:Introitus",
+        "Gradual": "Commune/C10:Graduale",
+        "Alleluia": "Commune/C10:Graduale",
+        "Offertorium": "Commune/C10:Offertorium",
+        "Communio": "Commune/C10:Communio",
+        "Secreta": "Commune/C10:Secreta",
+        "Postcommunio": "Commune/C10:Postcommunio"
+      },
+      "notAppointed": [
+        "Commune/C10b:Tractus",
+        "Commune/C10c:Tractus"
+      ],
+      "original1962MissalPage": 51,
+      "printedScope": "V A FESTO SS. TRINITATIS USQUE AD SABBATUM ANTE DOMINICAM I ADVENTUS",
+      "note": "C10t is a 194-byte rank/rule stub; the chant and prayer sections come from the obsolete C10 parent. No independent musical score or fresh text is contained in C10t."
+    },
+    {
+      "sourcePath": "Tempora/Nat1-1",
+      "dates": [
+        "2026-12-29",
+        "2026-12-30",
+        "2026-12-31"
+      ],
+      "ownerEvidence": "PRINTED_1962_OCTAVE_FORMULARY_AND_PINNED_SECTION_CHAIN",
+      "sections": {
+        "Introitus": "Tempora/Nat30:Introitus",
+        "Gradual": "Sancti/12-25m3:Graduale",
+        "Alleluia": "Sancti/12-25m3:Graduale",
+        "Offertorium": "Tempora/Nat30:Offertorium",
+        "Communio": "Tempora/Nat30:Communio",
+        "Oratio": "Tempora/Nat30:Oratio",
+        "Lectio": "Sancti/12-25m2:Lectio",
+        "Evangelium": "Sancti/12-25m2:Evangelium",
+        "Secreta": "Sancti/12-25m3:Secreta",
+        "Postcommunio": "Sancti/12-25m3:Postcommunio"
+      },
+      "notAppointed": [
+        "Tempora/Nat1-0:Introitus",
+        "Tempora/Nat1-0:Graduale"
+      ],
+      "original1962MissalPage": 29,
+      "printedScope": "DIEBUS INFRA OCTAVAM NATIVITATIS DOMINI II CLASSIS",
+      "dateOrationQualifications": {
+        "2026-12-29": "St Thomas Becket commemoration in Low Mass (subject to form rubrics)",
+        "2026-12-30": "No universal Saint commemoration",
+        "2026-12-31": "St Sylvester I commemoration in Low Mass (subject to form rubrics)"
+      },
+      "note": "No exact Tempora/Nat1-1 source exists in the pinned tree. Nat30 has the precise 1962 appointed Latin Mass skeleton and inherits Christmas Day text by specific section; Nat1-0 is the Sunday within the Octave, a different Mass. Exact section-level evidence does not constitute a broad runtime sourcePath alias."
+    }
+  ],
+  "progress": {
+    "archiveInheritanceChainsDocumented": 5,
+    "affectedDatesDocumented": 15,
+    "pinnedSourceSectionCandidateFamilies": 1,
+    "obsoleteOnlySectionFamilies": 4,
+    "original1962PrintedMelodicScoresApproved": 0,
+    "automaticRuntimeSourceAliasesApproved": 0,
+    "publicProperScores": 0
+  },
+  "approval": {
+    "researchOnly": true,
+    "canCopyObsoleteFilesIntoPinnedInventory": false,
+    "canAssume1970OrOtherMissal": false,
+    "canPromoteGabc": false,
+    "canChangePublicReader": false,
+    "nextRequired": "For each section compare complete original 1962 Latin incipit, verses, Gloria, alleluia suffixes, and calendar/form exceptions, then separately verify 1961 printed music before public score approval."
+  }
+}

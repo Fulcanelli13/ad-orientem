@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { countryCodeFromText } from "../tools/directory/lib/country-codes.mjs";
 import { parseFsspDirectoryHtml, buildFsspDataset } from "../tools/directory/import-fssp.mjs";
-import { ICKSP_US_URL, ICKSP_INTL_URL, parseIckspInternationalHtml, parseIckspUsDetail, buildIckspDataset } from "../tools/directory/import-icksp.mjs";
+import { ICKSP_US_URL, ICKSP_INTL_URL, parseIckspInternationalHtml, parseIckspUsDetail, buildIckspDataset, structuredIckspOfficialAddress, runIckspImport } from "../tools/directory/import-icksp.mjs";
 import { discoverIbpIndex, buildIbpDataset, mergeIbpIndexWitness } from "../tools/directory/import-ibp.mjs";
 import { phoneCandidates } from "../tools/directory/lib/html-source-utils.mjs";
 
@@ -78,6 +78,11 @@ const ickspMerrillville=parseIckspUsDetail(ickspMerrillvilleHtml,{label:"Merrill
 assert.match(ickspMerrillville.address,/5755 Pennsylvania Street/);
 assert.match(ickspMerrillville.address,/Merrillville, Indiana 46410/);
 assert.doesNotMatch(ickspMerrillville.address,/6415 South Woodlawn/);
+const merrillvilleStructured=structuredIckspOfficialAddress(ickspMerrillville);
+assert.equal(merrillvilleStructured.city,"Merrillville");
+assert.equal(merrillvilleStructured.region,"IN");
+assert.equal(merrillvilleStructured.postal_code,"46410");
+assert.doesNotMatch(merrillvilleStructured.formatted,/Chicago/);
 
 const ickspSanJoseHtml=`
 <h6>Immaculate Heart of Mary Oratory</h6>
@@ -96,6 +101,52 @@ const ickspSanJose=parseIckspUsDetail(ickspSanJoseHtml,{label:"San Jose - Immacu
 assert.match(ickspSanJose.address,/1101 S\. Winchester Boulevard/);
 assert.match(ickspSanJose.address,/San José, CA 95128/);
 assert.doesNotMatch(ickspSanJose.address,/4467 Illsley/);
+const sanJoseStructured=structuredIckspOfficialAddress(ickspSanJose);
+assert.equal(sanJoseStructured.city,"San José");
+assert.equal(sanJoseStructured.region,"CA");
+assert.equal(sanJoseStructured.postal_code,"95128");
+const bayArea=structuredIckspOfficialAddress({
+ countryCode:"US",
+ address:"Most Holy Rosary Chapel, St. Vincent's School for Boys, 1 St. Vincent's Drive, San Rafael, CA 94903",
+});
+assert.equal(bayArea.city,"San Rafael");
+assert.equal(bayArea.region,"CA");
+assert.equal(bayArea.postal_code,"94903");
+assert.equal(structuredIckspOfficialAddress({countryCode:"US",address:"Bay Area"}).city,null,
+ "Do not substitute a named apostolate's region for an unverified locality");
+
+const renoHtml=`
+<h6>Oratory of St. Joseph</h6>
+<div>Sunday Masses</div><div>9:00 am</div>
+<div>Weekday Masses</div><div>Monday - Thursday 9:00 am</div>
+<div>Address:</div><div>5450 Equity Ave.</div><div>Reno, NV 89502</div>
+<div>Phone:</div><div>775-800-1410</div>`;
+const reno=parseIckspUsDetail(renoHtml,{
+ label:"Reno - Oratory",url:"https://institute-christ-king.org/reno-home",countryCode:"US"});
+assert.match(reno.massRaw,/Sunday Masses/,"Reno source plural Masses may not be dropped");
+assert.match(reno.massRaw,/9:00 am/);
+assert.equal(structuredIckspOfficialAddress(reno).city,"Reno");
+const cahokiaHtml=`
+<h6>Holy Family Log Church</h6>
+<div>Sunday Mass</div><div>9:00 am</div>
+<div>Address:</div><div>116 Church Street</div><div>Cahokia, Illinois 62206</div>
+<div>Phone:</div><div>314-771-3100</div>`;
+const cahokia=parseIckspUsDetail(cahokiaHtml,{
+ label:"Cahokia - Holy Family Log Church",
+ url:"https://institute-christ-king.org/cahokia-home",countryCode:"US"});
+assert.match(cahokia.massRaw,/Sunday Mass/,"Cahokia source Sunday Mass lost");
+assert.equal(structuredIckspOfficialAddress(cahokia).city,"Cahokia");
+await assert.rejects(runIckspImport({
+ fetchImpl:async url=>{
+  const u=String(url);
+  if(u.endsWith("/reno-home"))return {ok:false,status:403,async text(){return ""}};
+  const text=u.endsWith("/international-home")?
+    "<h2>Rome, Italy</h2><h4>Roman Basilica</h4>":
+    '<a href="/reno-home">Reno - Oratory</a>';
+  return {ok:true,status:200,async text(){return text}};
+ }
+}),/ICKSP detail acquisition incomplete.*reno-home/,
+ "Official detail-fetch HTTP 403 must fail the acquisition, never output a scheduleless location");
 
 const ickspIntl=`
 <h2>Rome, Italy</h2>
@@ -115,6 +166,10 @@ assert.equal(icksp[0].countryCode,"IT");
 assert.match(icksp[0].title,/Celso/);
 assert.match(icksp[0].massRaw,/Holy Mass/);
 assert.match(icksp[0].address,/Rome/,"international ICKSP address lost section locality");
+assert.equal(icksp[0].sourceLocality,"Rome");
+assert.equal(structuredIckspOfficialAddress(icksp[0]).city,"Rome");
+assert.equal(structuredIckspOfficialAddress(icksp[0]).region,null,
+ "Never invent Lazio when the official heading only says Rome, Italy");
 const ickspDataset=buildIckspDataset(icksp,{retrievedAt:"2026-10-07T09:00:00Z"});
 assert.equal(ickspDataset.ministries.every(x=>x.community_id==="ICKSP"),true);
 

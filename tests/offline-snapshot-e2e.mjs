@@ -7,7 +7,8 @@ import {chromium} from "@playwright/test";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const mime={".js":"text/javascript; charset=utf-8",".html":"text/html; charset=utf-8",".json":"application/json",".css":"text/css; charset=utf-8",".svg":"image/svg+xml",".webp":"image/webp",".png":"image/png",".jpg":"image/jpeg",".woff2":"font/woff2",".webmanifest":"application/manifest+json"};
-let variant=1,swRevision=1,failedPath=null,served=0,failedHits=0,assetHits=[];
+let variant=1,swRevision=1,failedPath=null,served=0,failedHits=0,assetHits=[],transient408Hits=0;
+const transient408Path="/src/pray/rosary-guided-bead-meditations.v1.js";
 const server=http.createServer(async(req,res)=>{
  try{
   let pathname=decodeURIComponent(new URL(req.url,"http://127.0.0.1").pathname);
@@ -17,6 +18,12 @@ const server=http.createServer(async(req,res)=>{
    assetHits.push(pathname);
    if(failedPath===pathname){failedHits++;res.writeHead(503);res.end("deliberately broken release");return}
    res.writeHead(200,{"content-type":"text/javascript"});res.end("globalThis.AO_OFFLINE_TEST_ASSET="+JSON.stringify(variant)+";");return;
+  }
+  // The real Pages CDN once returned 408 for this Rosary dependency.
+  // Verify an initially timed-out first-use asset is retried and committed.
+  if(pathname===transient408Path){
+   transient408Hits++;
+   if(transient408Hits===1){res.writeHead(408);res.end("temporary request timeout");return}
   }
   const file=resolve(root,"."+pathname);
   if(file!==root&&!file.startsWith(root+sep)){res.writeHead(403);res.end();return}
@@ -39,6 +46,28 @@ try{
  const context=await browser.newContext({viewport:{width:390,height:844},deviceScaleFactor:2,isMobile:true,hasTouch:true,serviceWorkers:"allow"});
  const page=await context.newPage();
  const errs=[];page.on("pageerror",e=>errs.push(String(e.message||e)));
+ const awaitReloadHome=async label=>{
+  try{
+   await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner===true,null,{timeout:35000});
+  }catch(error){
+   let state;
+   try{
+    state=await page.evaluate(async()=>({
+     url:location.href,readyState:document.readyState,title:document.title,
+     shell:globalThis.AO_APP_SHELL_V1?.status?.()??null,
+     offline:globalThis.AO_OFFLINE_APP_V1?.status??null,
+     prayer:globalThis.AO_PRAY_APP_V1?.status?.()??null,
+     controlled:Boolean(navigator.serviceWorker?.controller),
+     workerState:navigator.serviceWorker?.controller?.state??null,
+     workerRegistrations:(await navigator.serviceWorker.getRegistrations()).map(r=>({scope:r.scope,active:r.active?.state,waiting:r.waiting?.state})),
+     hasHome:Boolean(document.querySelector(".homeScreen")),
+     screenText:document.body?.innerText?.slice(0,240)
+    }));
+   }catch(diagError){state={diagnosticError:String(diagError)}}
+   console.error("OFFLINE_RELOAD_DIAGNOSTIC="+JSON.stringify({label,state,pageErrors:errs.slice(-15),served,failedHits,transient408Hits}));
+   throw error;
+  }
+ };
  const origin="http://127.0.0.1:4208/ad-orientem/index.html?aoOfflineTest=1";
  await page.goto(origin,{waitUntil:"load",timeout:90000});
  try{
@@ -72,6 +101,7 @@ try{
  }
  const initialOfflineState=await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1.status);
  assert.equal(initialOfflineState.error,null,"First offline snapshot could not be staged: "+JSON.stringify(initialOfflineState));
+ assert.ok(transient408Hits>=2,"First-use Rosary resource HTTP 408 was not retried");
  let original=await page.evaluate(()=>globalThis.AO_OFFLINE_APP_V1.status);
  assert.ok(original.version,"First coherent cache has no version");
  assert.equal(original.pendingVersion,null,"First install should not offer an update");
@@ -92,12 +122,12 @@ try{
    return {...meta,missing};
  });
  assert.deepEqual(firstSnapshot.missing,[],"First-use Prayer lazy entry modules not in completed snapshot");
- assert.ok(firstSnapshot.files>0 && firstSnapshot.files<=544 && firstSnapshot.bytes<=35000000,
-  "Measured first-use graph must fit its 544-resource and 35 MB transactional limits: "+JSON.stringify(firstSnapshot));
+ assert.ok(firstSnapshot.files>0 && firstSnapshot.files<=640 && firstSnapshot.bytes<=35000000,
+  "Measured first-use graph must fit its 640-resource and 35 MB transactional limits: "+JSON.stringify(firstSnapshot));
  console.log("OFFLINE_FIRST_USE_SNAPSHOT="+JSON.stringify(firstSnapshot));
  await context.setOffline(true);
  await page.reload({waitUntil:"domcontentloaded",timeout:90000});
- await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner===true,null,{timeout:35000});
+ await awaitReloadHome("first-offline-home");
  const offline=await page.evaluate(()=>({screen:!!document.querySelector(".homeScreen"),sw:!!navigator.serviceWorker.controller,version:globalThis.AO_OFFLINE_APP_V1?.status?.version}));
  assert.equal(offline.screen,true,"Cached offline Home failed");
  assert.equal(offline.sw,true,"Offline navigation lost service worker");
@@ -240,7 +270,7 @@ try{
  // it from the Mercy route so a retained overlapping devotional sheet cannot
  // make the second chooser physically hidden.
  await page.reload({waitUntil:"domcontentloaded",timeout:90000});
- await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner===true,null,{timeout:35000});
+ await awaitReloadHome("online-after-prayer");
  await page.waitForFunction(expected=>globalThis.AO_OFFLINE_APP_V1?.status?.version===expected,original.version,{timeout:20000});
  // Open the real Rosary through its production Prayer owner before staging the next release.
  // A staged update must never navigate away or move a bead without user consent.
@@ -359,7 +389,7 @@ try{
  assert.equal(now.version,update.version,"Activation did not use approved new snapshot");
  await context.setOffline(true);
  await page.reload({waitUntil:"domcontentloaded",timeout:90000});
- await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner===true,null,{timeout:35000});
+ await awaitReloadHome("offline-after-update-consent");
  assert.equal(await page.evaluate(()=>globalThis.AO_OFFLINE_TEST_ASSET),2,"New release not available offline after consent");
  assert.deepEqual(errs.filter(x=>/SyntaxError|ReferenceError|TypeError/.test(x)),[],"Offline/update script error");
  console.log("PASS offline Home fallback, French update prompt, recoverable failed consent, Rosary state preserved, and explicit offline update");

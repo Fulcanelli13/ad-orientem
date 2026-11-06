@@ -1,0 +1,183 @@
+{
+  "schema": "ao-mass-amen-response-coverage-v1",
+  "scope": "Explicit or dynamically owned 1962 Amen response cues, not every embedded Amen word in private prayers, Sanctus/Gloria/Credo, or vocal interjections.",
+  "sourceTruth": [
+    "data/presentation/reader-text-sung.v1.json",
+    "data/mass/ordinary-sung-speaker-audit.v1.json",
+    "src/mass/reader-requiem-conditions.js"
+  ],
+  "publicationPolicy": "RESEARCH_EXCERPTS_NOT_PUBLIC_APPROVED",
+  "sourceStatus": {
+    "researchAttached": 4,
+    "dynamicProperHeld": 2,
+    "conditionalOrNonSungHeld": 7
+  },
+  "noInferredMelodyFromIdenticalAmenText": true,
+  "records": [
+    {
+      "sourceCueId": "AO.SM.C0020",
+      "sourceBlockId": "AO.SM.B006",
+      "sourceClock": "PUBLIC_TEXT",
+      "sourceRole": "PRIEST",
+      "sourceLatin": "Amen.",
+      "properSlot": null,
+      "classification": "EXCLUDE_PRIVATE_OR_PRE_MASS",
+      "decisionReason": "Priest Amen at Confiteor; not a public Sung-Mass response",
+      "researchSourceIds": [],
+      "publicApproved": false
+    },
+    {
+      "sourceCueId": "AO.SM.C0025",
+      "sourceBlockId": "AO.SM.B008",
+      "sourceClock": "PUBLIC_TEXT",
+      "sourceRole": "MINISTERS",
+      "sourceLatin": "Amen.",
+      "properSlot": null,
+      "classification": "EXCLUDE_PRIVATE_OR_PRE_MASS",
+      "decisionReason": "Foot-of-altar/Confiteor answer; not source-certified sung",
+      "researchSourceIds": [],
+      "publicApproved": false
+    },
+    {
+      "sourceCueId": "AO.SM.C0027",
+      "sourceBlockId": "AO.SM.B009",
+      "sourceClock": "PUBLIC_TEXT",
+      "sourceRole": "MINISTERS",
+      "sourceLatin": "Amen.",
+      "properSlot": null,
+      "classification": "EXCLUDE_PRIVATE_OR_PRE_MASS",
+      "decisionReason": "Foot-of-altar absolution answer; not source-certified sung",
+      "researchSourceIds": [],
+      "publicApproved": false
+    },
+    {
+      "sourceCueId": "AO.SM.C0074",
+      "sourceBlockId": "AO.SM.B019",
+      "sourceClock": "USER_RESPONSE",
+      "sourceRole": "RESPONDERS",
+      "sourceLatin": null,
+      "properSlot": "COLLECT_SET",
+      "classification": "HOLD_DYNAMIC_PROPER",
+      "decisionReason": "Collect response Latin must first be instantiated from selected 1962 Proper",
+      "researchSourceIds": [],
+      "publicApproved": false
+    },
+    {
+      "sourceCueId": "AO.SM.C0136",
+      "sourceBlockId": "AO.SM.B041",
+      "sourceClock": "USER_RESPONSE",
+      "sourceRole": "RESPONDERS",
+      "sourceLatin": "℟. Amen.",
+      "properSlot": null,
+      "classification": "RESEARCH_SOURCE_ATTACHED",
+      "decisionReason": "Preface opening Amen from 1961 solemn/ferial source #4449 or #4450",
+      "researchSourceIds": [
+        4449,
+        4450
+      ],
+      "publicApproved": false
+    },
+    {
+      "sourceCueId": "AO.SM.C0207",
+      "sourceBlockId": "AO.SM.B061",
+      "sourceClock": "USER_RESPONSE",
+      "sourceRole": "RESPONDERS",
+      "sourceLatin": "℟. Amen.",
+      "properSlot": null,
+      "classification": "RESEARCH_SOURCE_ATTACHED",
+      "decisionReason": "Canon Per omnia Amen, 1961 source #7282 phrase 2",
+      "researchSourceIds": [
+        7282
+      ],
+      "publicApproved": false
+    },
+    {
+      "sourceCueId": "AO.SM.C0211",
+      "sourceBlockId": "AO.SM.B063",
+      "sourceClock": "PRIEST_PRIVATE",
+      "sourceRole": "PRIEST",
+      "sourceLatin": "Amen.",
+      "properSlot": null,
+      "classification": "EXCLUDE_PRIVATE_PRIEST",
+      "decisionReason": "Priest silent response after the Lord's Prayer, not congregation chant",
+      "researchSourceIds": [],
+      "publicApproved": false
+    },
+    {
+      "sourceCueId": "AO.SM.C0218",
+      "sourceBlockId": "AO.SM.B065",
+      "sourceClock": "USER_RESPONSE",
+      "sourceRole": "RESPONDERS",
+      "sourceLatin": "℟. Amen.",
+      "properSlot": null,
+      "classification": "RESEARCH_SOURCE_ATTACHED",
+      "decisionReason": "Pax prelude Per omnia Amen, 1961 source #4327 phrase 2",
+      "researchSourceIds": [
+        4327
+      ],
+      "publicApproved": false
+    },
+    {
+      "sourceCueId": "AO.SM.C0239",
+      "sourceBlockId": "AO.SM.B078",
+      "sourceClock": "USER_RESPONSE",
+      "sourceRole": "RESPONDERS",
+      "sourceLatin": "℟. Amen.",
+      "properSlot": null,
+      "classification": "HOLD_OPTIONAL_SECOND_CONFITEOR",
+      "decisionReason": "Second Confiteor absolution response: optional and not established sung Gregorian formula",
+      "researchSourceIds": [],
+      "publicApproved": false
+    },
+    {
+      "sourceCueId": "AO.SM.C0241",
+      "sourceBlockId": "AO.SM.B079",
+      "sourceClock": "USER_RESPONSE",
+      "sourceRole": "RESPONDERS",
+      "sourceLatin": "℟. Amen.",
+      "properSlot": null,
+      "classification": "HOLD_OPTIONAL_SECOND_CONFITEOR",
+      "decisionReason": "Second Confiteor Indulgentiam response: optional and not established sung Gregorian formula",
+      "researchSourceIds": [],
+      "publicApproved": false
+    },
+    {
+      "sourceCueId": "AO.SM.C0255",
+      "sourceBlockId": "AO.SM.B088",
+      "sourceClock": "USER_RESPONSE",
+      "sourceRole": "RESPONDERS",
+      "sourceLatin": null,
+      "properSlot": "POSTCOMMUNION_SET",
+      "classification": "HOLD_DYNAMIC_PROPER",
+      "decisionReason": "Postcommunion response Latin must be instantiated from selected 1962 Proper",
+      "researchSourceIds": [],
+      "publicApproved": false
+    },
+    {
+      "sourceCueId": "AO.SM.C0260",
+      "sourceBlockId": "AO.SM.B090",
+      "sourceClock": "USER_RESPONSE",
+      "sourceRole": "RESPONDERS",
+      "sourceLatin": "℟. Deo grátias.",
+      "properSlot": null,
+      "classification": "RESEARCH_SPECIAL_FORM_ONLY",
+      "decisionReason": "Only the explicit Requiem variant has Amen; ordinary Ite/Benedicamus says Deo gratias. Source #823",
+      "researchSourceIds": [
+        823
+      ],
+      "publicApproved": false
+    },
+    {
+      "sourceCueId": "AO.SM.C0266",
+      "sourceBlockId": "AO.SM.B092",
+      "sourceClock": "USER_RESPONSE",
+      "sourceRole": "RESPONDERS",
+      "sourceLatin": "℟. Amen.",
+      "properSlot": null,
+      "classification": "EXCLUDE_SPOKEN_BLESSING",
+      "decisionReason": "Final blessing response requires a separate sung source, not inferred from user-response role",
+      "researchSourceIds": [],
+      "publicApproved": false
+    }
+  ]
+}
