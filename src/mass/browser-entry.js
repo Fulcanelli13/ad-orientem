@@ -1199,6 +1199,20 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
     prepare: () => state.controller?.prepare?.(),
     enter: () => state.controller?.enter?.(),
     startFromToday: startMassFromToday,
+    // Home's visible actual-Mass shortcuts must open the existing host
+    // celebration chooser, which alone owns votive IDs and Proper selection.
+    chooseCelebrationKind: kind => {
+      if(!["VOTIVE","REQUIEM","NUPTIAL","OTHER","SOURCE_DATE","CALENDAR"].includes(kind))
+        return Object.freeze({ok:false,reason:"UNSUPPORTED_MASS_CATEGORY"});
+      if(!state.installed||!state.fullMassPreflight?.status?.()?.visible)
+        return Object.freeze({ok:false,reason:"MASS_PREFLIGHT_NOT_VISIBLE"});
+      try{
+        const opened=state.fullMassPreflight.openCategory(kind)===true;
+        return Object.freeze({ok:opened,reason:opened?null:"MASS_CATEGORY_NOT_OPENED"});
+      }catch(error){
+        return Object.freeze({ok:false,reason:String(error?.message??error)});
+      }
+    },
     selectTodayOption: (key,value) => state.fullMassPreflight?.setTodayChoice?.(key,value) === true,
     // Shell-only presentation reset: does not alter a Mass choice or R17.
     resetPreflightView: () => state.fullMassPreflight?.resetView?.() ?? false,
