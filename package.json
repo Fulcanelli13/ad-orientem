@@ -103,7 +103,7 @@
     "check:app-release": "node tests/app-release-gate.mjs",
     "test:app-live-guards": "node tests/app-live-session-guards.mjs",
     "test:app-accessibility": "node tests/app-liturgical-theme.mjs && node tests/app-document-language.mjs",
-    "test:home-owner": "node tests/home-owner.mjs",
+    "test:home-owner": "node tests/home-owner.mjs && node tests/icrsp-2026-november-ordo-home.mjs",
     "test:pray-methods": "node tests/devotional-methods-v1.mjs",
     "test:icksp-batch02": "node tests/icksp-batch02-prayer-implementation.mjs",
     "test:icksp-batch03": "node tests/icksp-batch03-prayer-implementation.mjs",
