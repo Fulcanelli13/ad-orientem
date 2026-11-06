@@ -18,7 +18,9 @@ assert.deepEqual(staged.counts.historical_source_tiers,{A:78,B:18});
 assert.equal(staged.review_policy.no_runtime_import,true);
 assert.equal(staged.review_policy.may_use_illustrative_locality_if_accepted,true);
 const sourceByUrl=new Map();
-for(const s of sources.sources){if(s.url)sourceByUrl.set(s.url,[...(sourceByUrl.get(s.url)||[]),s.id]);}
+const admissionIds=new Set(staged.candidates.map(x=>x.admission_review.draft_place_id).filter(Boolean));
+const draftSourceIds=new Set(geography.places.filter(p=>admissionIds.has(p.place_id)).flatMap(p=>p.source_ids||[]));
+for(const s of sources.sources){if(s.url&&!draftSourceIds.has(s.id))sourceByUrl.set(s.url,[...(sourceByUrl.get(s.url)||[]),s.id]);}
 const byUrl=new Map();
 for(const c of staged.candidates)byUrl.set(c.identity_source_url,(byUrl.get(c.identity_source_url)||0)+1);
 const canonical=new Set(geography.places.map(p=>p.place_id));
@@ -64,6 +66,7 @@ for(const c of staged.candidates){
  laneCounts[lane]++;sourceTiers[tier]++;precisionCounts[r.map_precision_to_retain_if_accepted]++;
  for(const p of geography.places){
   if(p.address?.country_code!==c.country_code||p.geo?.lat==null||p.geo?.lng==null)continue;
+  if(p.place_id===c.admission_review.draft_place_id)continue;
   assert.ok(distanceM([c.location_preview.latitude,c.location_preview.longitude],[p.geo.lat,p.geo.lng])>=500,"Possible near-existing site: "+c.candidate_id+" / "+p.place_id);
  }
 }

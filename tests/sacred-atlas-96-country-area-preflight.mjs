@@ -9,7 +9,7 @@ const staged=read("data/geography/research/sacred-atlas-96-priority-unapproved-p
 const manifest=read("data/geography/research/sacred-places-v10-c6-country-area-preflight-20261106.v1.json");
 const codes=["AL","BI","BO","BY","ME","ZA"];
 const ids=codes.map(cc=>"geo:country:"+cc);
-assert.equal(RELEASES.at(-1).id,"V10-C6");
+assert.ok(RELEASES.some(x=>x.id==="V10-C6"),"Country-area preflight is preserved in the append-only release chain");
 assert.equal(manifest.status,"DRAFT_PR_GEOGRAPHY_STRUCTURE_ONLY_NOT_PLACE_ADMISSION");
 assert.equal(manifest.new_places,0);
 assert.equal(manifest.published_new.length,0);

@@ -5,6 +5,7 @@ const q=read("data/geography/research/sacred-geography-r70-worldwide-coverage-qu
 const g=read("data/geography/seed-registry.v1.json");
 const s=read("data/shrines/shrines-pilgrimages-seed.v1.json");
 const v10=read("data/geography/research/sacred-places-v10-b20-three-relic-shrines-release.v1.json");
+const v10b21=read("data/geography/research/sacred-places-v10-b21-two-marian-site-admissions-20261106.v1.json");
 assert.equal(q.schema,"AO_SACRED_GEOGRAPHY_WORLDWIDE_COVERAGE_R70_V1");
 assert.equal(q.publication,"RESEARCH_ONLY");
 assert.equal(q.rows.length,750);
@@ -15,9 +16,9 @@ assert.equal(q.counts.published_places,261,"R70 historical coverage snapshot mus
 assert.equal(q.counts.published_shrines,257,"The R70 source-coverage snapshot remains immutable");
 assert.equal(q.counts.published_pilgrimages,240,"The R70 pilgrimage baseline remains immutable");
 assert.equal(v10.new_places,3);
-assert.equal(s.shrines.length,q.counts.published_shrines+v10.new_places);
-assert.equal(s.pilgrimages.length,q.counts.published_pilgrimages+v10.new_places);
-for(const row of v10.published_new){
+assert.equal(s.shrines.length,q.counts.published_shrines+v10.new_places+v10b21.new_places);
+assert.equal(s.pilgrimages.length,q.counts.published_pilgrimages+v10.new_places+v10b21.new_places);
+for(const row of [...v10.published_new,...v10b21.published_new]){
  assert.equal(s.shrines.filter(x=>x.shrine_id===row.shrine_id&&x.place_id===row.place_id).length,1);
  assert.equal(s.pilgrimages.filter(x=>x.pilgrimage_id===row.pilgrimage_id&&x.destination_shrine_id===row.shrine_id).length,1);
 }
