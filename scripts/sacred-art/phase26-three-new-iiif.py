@@ -71,7 +71,6 @@ def main():
     reports.sort(key=lambda x:x["registry_id"])
     OUT.mkdir(parents=True,exist_ok=True)
     (OUT/"three_image_audit.json").write_text(json.dumps(reports,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-    import csv
     keys=["registry_id","painting","artist_selected","museum","accession","official_object_url","iiif_manifest",
           "current_short_px","canvas_count","downloaded_museum_images","reference_status","rights_gate",
           "best_canvas_index","best_original_short_px","best_score","best_comparison","identity_caution","error"]
