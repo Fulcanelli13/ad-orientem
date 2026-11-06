@@ -1,0 +1,41 @@
+name: Sacred Art Phase 25 — six new museum IIIF image comparisons
+on:
+  push:
+    branches:
+      - research/sacred-art-phase18-iiif-audit-20261106
+    paths:
+      - 'scripts/sacred-art/phase25-new-iiif-six.py'
+      - '.github/workflows/sacred-art-phase25-six-images.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+concurrency:
+  group: phase25-six-new-museum-images
+  cancel-in-progress: false
+jobs:
+  compare:
+    name: Retrieve six new IIIF objects, inspect every canvas, research-only
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install bounded image inspection dependencies
+        run: python -m pip install --disable-pip-version-check 'requests>=2.32,<3' 'Pillow>=11,<13'
+      - name: Validate and run photo identity inspection
+        run: |
+          python -m py_compile scripts/sacred-art/phase25-new-iiif-six.py
+          python scripts/sacred-art/phase25-new-iiif-six.py
+      - name: Upload temporary images and identity reviews — no gallery publication
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase25-six-museum-iiif-comparisons-research-only
+          path: artifacts/sacred-art-phase25-new-iiif/
+          retention-days: 7
+          if-no-files-found: warn
