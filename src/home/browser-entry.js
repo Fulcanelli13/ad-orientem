@@ -446,6 +446,33 @@ export function createHomeOwner(win=globalThis){
         });
       return;
     }
+    const icrspVotive=target?.closest?.("[data-home-icrsp-votive]");
+    if(icrspVotive){
+      event.preventDefault?.();event.stopImmediatePropagation?.();
+      const officialDate=icrspVotive.closest?.("[data-home-icrsp-ordo]")?.dataset?.homeIcrspOrdo;
+      const selection=state(win)?.selectedDate;
+      if(icrspVotive.dataset?.homeIcrspVotive!=="VOTIVE"||
+         !["2026-11-06","2026-11-07"].includes(officialDate)||
+         selection!==officialDate){
+        showRouteError("mass.icrsp.source-date",icrspVotive);return;
+      }
+      void navigateHomeShortcut("mass",{trigger:icrspVotive,routeId:"mass.icrsp.votive"})
+        .then(ok=>{
+          if(!ok)return;
+          // The Institute's evidence is a recommendation, NOT a selected
+          // Proper. Delegate exact eligibility and formulary to the host.
+          const r17=win?.AO_R17_BROWSER_ENTRY;
+          const bridge=r17?.chooseCelebrationKind?.("VOTIVE");
+          if(bridge?.ok===true)return;
+          const choice=win?.document?.querySelector?.('[data-ao-full-mass-preflight] [data-full-mass-category="VOTIVE"]');
+          if(choice){choice.click();return;}
+          const notice=win?.document?.querySelector?.("[data-full-mass-category-error]");
+          if(notice){notice.hidden=false;notice.textContent="Votive Mass selection unavailable; do not begin with an unverified Proper."}
+        }).catch(error=>{
+          try{win?.console?.error?.("ICRSP votive Mass selector failed",error)}catch{}
+        });
+      return;
+    }
     const h4Begin=target?.closest?.("[data-home-h4-begin]");
     if(h4Begin){
       event.preventDefault?.();event.stopImmediatePropagation?.();
