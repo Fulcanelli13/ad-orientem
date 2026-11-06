@@ -24,10 +24,13 @@ export function postLowMassLeonineEligible(prepared,current,mode="LIVE"){
  const mass=prepared?.session?.resolvedMass;
  const plan=prepared?.session?.plan;
  if(String(mass?.form??"").toUpperCase()!=="LOW"||plan?.kind!=="MASS")return false;
- // Special post-Mass rites and Requiems remain owned by their own sequences.
+ // A connected post-Mass function (e.g. funeral absolution or
+ // Benediction) takes precedence; no Leonine panel may interrupt it.
  if((plan.followingGraphs??[]).length||(mass.followingActions??[]).length)return false;
- if((plan.overlayGraphs??[]).some(x=>["REQUIEM","NUPTIAL"].includes(x)))return false;
- if((mass.overlays??[]).some(x=>["REQUIEM","NUPTIAL"].includes(x)))return false;
+ // Funeral and Nuptial Low Masses *may omit* these prayers under the
+ // historical rules, but that is not a ban on the devotion. Keep the texts
+ // accessible as OPTIONAL after any ordinary Low Mass without another
+ // immediately-following rite. Do not confuse permission with obligation.
  const title=String(current?.cardTitle??"");
  return String(mode).toUpperCase()==="MISSAL"
   ? /\bLast Gospel\b/i.test(title)
@@ -75,8 +78,8 @@ export function syncPostLowMassLeoninePrayers(root,prepared,current,mode="LIVE")
  section.setAttribute("aria-label",fr?"Prières léonines après la messe basse":"Leonine prayers after Low Mass");
  section.append(make(doc,"h2","",fr?"Après la messe basse · Prières léonines":"After Low Mass · Leonine Prayers"));
  section.append(make(doc,"p","",fr
-  ?"Prière de dévotion après la fin de la messe, distincte de l’Ordinaire. L’usage local peut varier."
-  :"A traditional devotion after Mass has ended, distinct from the Order of Mass. Local practice may vary."));
+  ?"Dévotion après la fin de la messe, distincte de l’Ordinaire. Ces prières peuvent être omises en certaines occasions, notamment à la messe privilégiée du Sacré-Cœur le premier vendredi ; suivre l’usage local du célébrant."
+  :"A traditional devotion after Mass has ended, distinct from the Order of Mass. These prayers may be omitted on certain occasions, including the privileged First Friday Sacred Heart Mass; follow the celebrant’s local practice."));
  const subsections=postLowMassLeonineSections(language);
  for(const block of subsections){
   const item=make(doc,"section","ao-post-low-mass-prayer");
