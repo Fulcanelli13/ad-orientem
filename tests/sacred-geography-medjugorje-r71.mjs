@@ -18,8 +18,10 @@ const shrineId="shrine:BA:medjugorje-queen-of-peace";
 const pilgrimId="pilgrimage:BA:medjugorje-destination";
 const reportId="apparition:BA:medjugorje";
 
-assert.deepEqual([geography.places.length,corpus.shrines.length,corpus.pilgrimages.length,
-  phenomena.apparitions.length,sources.sources.length],[LIVE.places,260,243,33,LIVE.sources]);
+assert.deepEqual([geography.places.length,phenomena.apparitions.length,sources.sources.length],
+  [LIVE.places,33,LIVE.sources]);
+assert.ok(corpus.shrines.length>=260 && corpus.pilgrimages.length>=243,
+  "R71 historical shrine/pilgrimage counts are minima; later source-backed B21 additions must remain intact");
 assert.equal(assertExploreGeographyRegistry(geography).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({
   shrines:corpus.shrines,pilgrimages:corpus.pilgrimages,routes:corpus.routes,
