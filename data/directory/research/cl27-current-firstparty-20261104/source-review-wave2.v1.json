@@ -1,0 +1,938 @@
+{
+  "schema": "AO_CL27_SOURCE_PAGE_WAVE2_REVIEW_V1",
+  "review_date": "2026-11-04",
+  "parent_manifest": "data/directory/research/cl27-current-firstparty-20261104/source-review.v1.json",
+  "historical_snapshot_blob_sha": "842b30caad7b6ad08ffed098cc136080fe89eb6d",
+  "publication": "RESEARCH_ONLY_NO_APP_TIMETABLES_NO_CL27_PUBLIC_CLASSIFICATIONS",
+  "source_urls_checked": [
+    "https://fsspx.mx/es/capillas-2",
+    "https://sspx.au/en/list-sspx-chapels-0",
+    "https://reginacaeliparish.org/"
+  ],
+  "context_sources": [
+    {
+      "url": "https://archgh.org/parishfinder",
+      "reason": "Official Houston archdiocesan parish times plus Regina Caeli's own cancellation warning"
+    },
+    {
+      "url": "https://reginacaeliparish.org/mass-and-confession-times",
+      "reason": "Parish first-party short-notice private Mass cancellation scope"
+    }
+  ],
+  "summary": {
+    "new_reviewed_historical_rows": 36,
+    "reviewed_source_site_groups": 18,
+    "new_source_page_urls": 2,
+    "distinct_existing_historical_rows_already_reviewed_on_same_pages": 4,
+    "aggregate_reviewed_rows_after_wave2": 70,
+    "remaining_historical_rows": 226,
+    "approved_recurring_Masses": 0,
+    "approved_canonical_UnaCum_claims": 0,
+    "source_pages_reviewed_this_wave": 3,
+    "one_shared_with_wave1": "https://sspx.au/en/list-sspx-chapels-0"
+  },
+  "cases": [
+    {
+      "anchor": "RG-0FCC305AB988",
+      "country": "MX",
+      "historical_rows": [
+        2295
+      ],
+      "original_venue_names": [
+        "Misión - Cancún"
+      ],
+      "source_ids": [
+        "SSPXMAP:OPE-002362"
+      ],
+      "historical_url": "https://fsspx.mx/es/capillas-2",
+      "current_evidence_url": "https://fsspx.mx/es/capillas-2",
+      "source_class": "FIRST_PARTY_DISTRICT",
+      "decision": "RELATIVE_MONTHLY_HOLD",
+      "source_observation": "Cancún lists fourth Sunday 09:00, Friday and Saturday beforehand at 18:00. One source row should not become an unconditional Friday or Saturday weekly recurrence.",
+      "remaining_gate": "Split only after local date-specific interpretation",
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_WEEKLY_MASS_APPROVAL"
+    },
+    {
+      "anchor": "RG-16E60E0BD048",
+      "country": "MX",
+      "historical_rows": [
+        2316,
+        2317
+      ],
+      "original_venue_names": [
+        "Misión Querétaro"
+      ],
+      "source_ids": [
+        "SSPXMAP:OPE-002359"
+      ],
+      "historical_url": "https://fsspx.mx/es/capillas-2",
+      "current_evidence_url": "https://fsspx.mx/es/capillas-2",
+      "source_class": "FIRST_PARTY_DISTRICT",
+      "decision": "RELATIVE_MONTHLY_HOLD",
+      "source_observation": "Querétaro (Misión Santiago Apóstol) lists first and third Sunday 08:30/11:30, preceding Fridays at 18:00 and Saturdays at 10:30.",
+      "remaining_gate": "Site identity uses named Misión Santiago Apóstol, not generic Querétaro mission",
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_WEEKLY_MASS_APPROVAL"
+    },
+    {
+      "anchor": "RG-28D0D1EC95B8",
+      "country": "MX",
+      "historical_rows": [
+        2311
+      ],
+      "original_venue_names": [
+        "Misión - Zacatecas"
+      ],
+      "source_ids": [
+        "SSPXMAP:OPE-002584"
+      ],
+      "historical_url": "https://fsspx.mx/es/capillas-2",
+      "current_evidence_url": "https://fsspx.mx/es/capillas-2",
+      "source_class": "FIRST_PARTY_DISTRICT",
+      "decision": "RELATIVE_MONTHLY_HOLD",
+      "source_observation": "Zacatecas mission lists fourth Sunday 09:00, prior Friday and Saturday both 19:00. One historical row cannot represent two separate days.",
+      "remaining_gate": "Specific prior-weekend calendar confirmation required",
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_WEEKLY_MASS_APPROVAL"
+    },
+    {
+      "anchor": "RG-304D2E094C98",
+      "country": "MX",
+      "historical_rows": [
+        2307
+      ],
+      "original_venue_names": [
+        "Misión Don Bosco"
+      ],
+      "source_ids": [
+        "SSPXMAP:OPE-002361"
+      ],
+      "historical_url": "https://fsspx.mx/es/capillas-2",
+      "current_evidence_url": "https://fsspx.mx/es/capillas-2",
+      "source_class": "FIRST_PARTY_DISTRICT",
+      "decision": "QUARTERLY_DATE_UNVERIFIED",
+      "source_observation": "Chilapa Misión Don Bosco lists second Sunday 19:00 and the following Monday 08:00, every three months. No particular 2026 occurrence confirmed.",
+      "remaining_gate": "Reject unconditional monthly pattern; verify quarter alignment",
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_WEEKLY_MASS_APPROVAL"
+    },
+    {
+      "anchor": "RG-31EA97D878CC",
+      "country": "MX",
+      "historical_rows": [
+        2305
+      ],
+      "original_venue_names": [
+        "Capilla San Felipe de Jesús"
+      ],
+      "source_ids": [
+        "SSPXMAP:OPE-002366"
+      ],
+      "historical_url": "https://fsspx.mx/es/capillas-2",
+      "current_evidence_url": "https://fsspx.mx/es/capillas-2",
+      "source_class": "FIRST_PARTY_DISTRICT",
+      "decision": "RELATIVE_MONTHLY_HOLD",
+      "source_observation": "Villa de Álvarez Capilla San Felipe de Jesús lists second and fourth Sunday 08:30 and preceding Saturday 19:00.",
+      "remaining_gate": "Confirm pattern applies to both previous Saturdays",
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_WEEKLY_MASS_APPROVAL"
+    },
+    {
+      "anchor": "RG-4BC62D32CEDF",
+      "country": "MX",
+      "historical_rows": [
+        2299
+      ],
+      "original_venue_names": [
+        "Misión - Saltillo"
+      ],
+      "source_ids": [
+        "SSPXMAP:OPE-002356"
+      ],
+      "historical_url": "https://fsspx.mx/es/capillas-2",
+      "current_evidence_url": "https://fsspx.mx/es/capillas-2",
+      "source_class": "FIRST_PARTY_DISTRICT",
+      "decision": "RELATIVE_MONTHLY_HOLD",
+      "source_observation": "Saltillo Capilla Sagrado Corazón lists first, third and fourth Sunday 08:00, preceding Saturday 19:00.",
+      "remaining_gate": "Qualified Saturdays only; not every Saturday",
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_WEEKLY_MASS_APPROVAL"
+    },
+    {
+      "anchor": "RG-6F4FEAC935EB",
+      "country": "MX",
+      "historical_rows": [
+        2320,
+        2321,
+        2322
+      ],
+      "original_venue_names": [
+        "Priorato Nuestra Señora del Rosario"
+      ],
+      "source_ids": [
+        "SSPXMAP:OPE-001866"
+      ],
+      "historical_url": "https://fsspx.mx/es/capillas-2",
+      "current_evidence_url": "https://fsspx.mx/es/capillas-2",
+      "source_class": "FIRST_PARTY_DISTRICT",
+      "decision": "CONDITIONAL_WEEKDAY",
+      "source_observation": "León official district says Sunday 08:00/10:30/12:30, weekdays 07:15 except Monday 08:00 and 19:00 except Thursdays. Historical 'weekdays unspecified' rows must not be expanded without correctly parsing day exceptions.",
+      "remaining_gate": "Day-dependent recurrence, local feast exceptions",
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_WEEKLY_MASS_APPROVAL"
+    },
+    {
+      "anchor": "RG-80441763B83D",
+      "country": "MX",
+      "historical_rows": [
+        2309,
+        2310
+      ],
+      "original_venue_names": [
+        "Misión - S. Ignacio",
+        "Misión San Antonio María Claret"
+      ],
+      "source_ids": [
+        "SSPXMAP:OPE-002365",
+        "ao-research-sspx-mexico-completion-20261009-sspx-mx-comp-20261009-07-mision-s-ignacio"
+      ],
+      "historical_url": "https://fsspx.mx/es/capillas-2",
+      "current_evidence_url": "https://fsspx.mx/es/capillas-2",
+      "source_class": "FIRST_PARTY_DISTRICT",
+      "decision": "VENUE_NAME_SOURCE_CONFLICT",
+      "source_observation": "San Ignacio Cerro Gordo current district names Misión San Antonio María Claret with monthly Sunday 18:00 and following Monday 07:00. Frozen historical row 2310 is a differently named 'Misión - S. Ignacio' at the same CL2 anchor. Do not promote two times for two distinct venues.",
+      "remaining_gate": "Explicit historical source-alias adjudication required before any event",
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_WEEKLY_MASS_APPROVAL"
+    },
+    {
+      "anchor": "RG-80D5C367F702",
+      "country": "US",
+      "historical_rows": [
+        3596,
+        3598,
+        3599,
+        3602,
+        3603,
+        3606,
+        3607,
+        3610,
+        3611
+      ],
+      "original_venue_names": [
+        "Regina Caeli Catholic"
+      ],
+      "source_ids": [
+        "AO-AMER-R28-US-18-11"
+      ],
+      "historical_url": "https://reginacaeliparish.org/",
+      "current_evidence_url": "https://archgh.org/parishfinder",
+      "source_class": "DIOCESAN_DIRECTORY_PLUS_PARISH_CAUTION",
+      "decision": "PARISH_PRIVATE_MASS_CAUTION",
+      "source_observation": "Regina Caeli Houston site and local archdiocesan parish finder show the Sunday 08:30, 13:00, 14:30 and the sampled weekday times. Parish warns weekday private Masses can be cancelled at short notice; first-party page's dynamically embedded timetable is not fully captured in page text.",
+      "remaining_gate": "Secondary/archdiocesan corroboration not an excuse to guarantee private weekday occurrence",
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_WEEKLY_MASS_APPROVAL"
+    },
+    {
+      "anchor": "RG-8B0022CFEA1E",
+      "country": "AU",
+      "historical_rows": [
+        820,
+        2131
+      ],
+      "original_venue_names": [
+        "Our Lady of Compassion Church"
+      ],
+      "source_ids": [
+        "SSPXMAP:OPE-002415"
+      ],
+      "historical_url": "https://sspx.au/en/list-sspx-chapels-0",
+      "current_evidence_url": "https://sspx.au/en/list-sspx-chapels-0",
+      "source_class": "FIRST_PARTY_DISTRICT",
+      "decision": "ALTERNATIVE_SUNDAY_TIMES",
+      "source_observation": "Irymple Our Lady of Compassion lists first/third Sunday 09:00 OR 18:00, check bulletin.",
+      "remaining_gate": "Two clock options are not two simultaneous Masses",
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_WEEKLY_MASS_APPROVAL"
+    },
+    {
+      "anchor": "RG-8CA4581A961B",
+      "country": "MX",
+      "historical_rows": [
+        2302,
+        2303,
+        2304
+      ],
+      "original_venue_names": [
+        "Capilla San Atanasio"
+      ],
+      "source_ids": [
+        "SSPXMAP:OPE-002358"
+      ],
+      "historical_url": "https://fsspx.mx/es/capillas-2",
+      "current_evidence_url": "https://fsspx.mx/es/capillas-2",
+      "source_class": "FIRST_PARTY_DISTRICT",
+      "decision": "CONDITIONAL_WEEKDAY_AND_DUPLICATE",
+      "source_observation": "Guadalajara Capilla San Atanasio district lists Sunday 08:00/10:00/19:00; weekday 07:15 and 19:00 (Thursday 19:00). Historical duplicate 19:00 rows 2303/2304 are not evidence of two concurrent Masses.",
+      "remaining_gate": "The chapel address and the distinct San Atanasio priory address must not be silently merged",
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_WEEKLY_MASS_APPROVAL"
+    },
+    {
+      "anchor": "RG-A90C5887A16B",
+      "country": "MX",
+      "historical_rows": [
+        2312
+      ],
+      "original_venue_names": [
+        "Misión San Luis Rey"
+      ],
+      "source_ids": [
+        "SSPXMAP:OPE-002364"
+      ],
+      "historical_url": "https://fsspx.mx/es/capillas-2",
+      "current_evidence_url": "https://fsspx.mx/es/capillas-2",
+      "source_class": "FIRST_PARTY_DISTRICT",
+      "decision": "RELATIVE_MONTHLY_HOLD",
+      "source_observation": "Misión San Luis Rey lists first and third Sundays at 10:00; prior Fridays and Saturdays at 19:00.",
+      "remaining_gate": "One source row covers both days; keep day distinction",
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_WEEKLY_MASS_APPROVAL"
+    },
+    {
+      "anchor": "RG-AAD07EFEC8B7",
+      "country": "AU",
+      "historical_rows": [
+        304,
+        954,
+        2136,
+        2137
+      ],
+      "original_venue_names": [
+        "Sacred Heart of Jesus and Mary Church",
+        "Sacred Heart of Jesus and Mary Mission"
+      ],
+      "source_ids": [
+        "SSPXMAP:OPE-002418",
+        "ao-research-sspx-four-district-bulk-sspx-anz-au-singleton-sacred-heart-of-jesus-and-mary-church"
+      ],
+      "historical_url": "https://sspx.au/en/list-sspx-chapels-0",
+      "current_evidence_url": "https://sspx.au/en/list-sspx-chapels-0",
+      "source_class": "FIRST_PARTY_DISTRICT",
+      "decision": "ALTERNATIVE_SUNDAY_TIMES_AND_ALIAS",
+      "source_observation": "Singleton Sacred Heart of Jesus and Mary has duplicate church/mission labels, and first-party district lists Sunday 10:00 OR 16:00, check bulletin.",
+      "remaining_gate": "Four historical rows collapse to two options in ONE site; zero fixed approvals",
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_WEEKLY_MASS_APPROVAL"
+    },
+    {
+      "anchor": "RG-B82B5D5FB842",
+      "country": "MX",
+      "historical_rows": [
+        2298
+      ],
+      "original_venue_names": [
+        "Capilla Nuestra Señora de Guadalupe"
+      ],
+      "source_ids": [
+        "SSPXMAP:OPE-002355"
+      ],
+      "historical_url": "https://fsspx.mx/es/capillas-2",
+      "current_evidence_url": "https://fsspx.mx/es/capillas-2",
+      "source_class": "FIRST_PARTY_DISTRICT",
+      "decision": "WEEKDAY_DAY_UNKNOWN",
+      "source_observation": "Mexico City Capilla Nuestra Señora de Guadalupe lists weekday Low Mass 19:00 with Wednesday asking for confirmation. Other listed times at 18:30 are Rosary, not Mass.",
+      "remaining_gate": "No all-week 19:00 guarantee or misclassification of Rosary",
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_WEEKLY_MASS_APPROVAL"
+    },
+    {
+      "anchor": "RG-C1299B842E31",
+      "country": "NZ",
+      "historical_rows": [
+        583
+      ],
+      "original_venue_names": [
+        "Dunstall’s Funeral Chapel"
+      ],
+      "source_ids": [
+        "SSPXMAP:OPE-001937"
+      ],
+      "historical_url": "https://sspx.au/en/list-sspx-chapels-0",
+      "current_evidence_url": "https://sspx.au/en/list-sspx-chapels-0",
+      "source_class": "FIRST_PARTY_DISTRICT",
+      "decision": "MONTHLY_THIRD_SUNDAY",
+      "source_observation": "Napier/Clive Dunstall Funeral Chapel mission lists third Sunday 17:00.",
+      "remaining_gate": "Temporary hosted Mass venue; confirm live monthly bulletin and access",
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_WEEKLY_MASS_APPROVAL"
+    },
+    {
+      "anchor": "RG-D1BCCD10CF06",
+      "country": "NZ",
+      "historical_rows": [
+        787
+      ],
+      "original_venue_names": [
+        "Nelson"
+      ],
+      "source_ids": [
+        "SSPXMAP:OPE-002703"
+      ],
+      "historical_url": "https://sspx.au/en/list-sspx-chapels-0",
+      "current_evidence_url": "https://sspx.au/en/list-sspx-chapels-0",
+      "source_class": "FIRST_PARTY_DISTRICT",
+      "decision": "OCCASIONAL_MONTHLY",
+      "source_observation": "Nelson lists first Sunday 17:30 occasionally; telephone confirmation required.",
+      "remaining_gate": "Do not publish as guaranteed monthly date",
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_WEEKLY_MASS_APPROVAL"
+    },
+    {
+      "anchor": "RG-EB863FB4729A",
+      "country": "MX",
+      "historical_rows": [
+        2308
+      ],
+      "original_venue_names": [
+        "Misión Aguascalientes"
+      ],
+      "source_ids": [
+        "SSPXMAP:OPE-002572"
+      ],
+      "historical_url": "https://fsspx.mx/es/capillas-2",
+      "current_evidence_url": "https://fsspx.mx/es/capillas-2",
+      "source_class": "FIRST_PARTY_DISTRICT",
+      "decision": "RELATIVE_MONTHLY_HOLD",
+      "source_observation": "Aguascalientes Misión Ntra. Sra. de la Asunción lists fourth Sunday 17:00 and following Monday 07:30.",
+      "remaining_gate": "Confirm actual date in local calendar",
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_WEEKLY_MASS_APPROVAL"
+    },
+    {
+      "anchor": "RG-F39D21E78FE9",
+      "country": "MX",
+      "historical_rows": [
+        2293
+      ],
+      "original_venue_names": [
+        "Misión - Monterrey"
+      ],
+      "source_ids": [
+        "SSPXMAP:OPE-002367"
+      ],
+      "historical_url": "https://fsspx.mx/es/capillas-2",
+      "current_evidence_url": "https://fsspx.mx/es/capillas-2",
+      "source_class": "FIRST_PARTY_DISTRICT",
+      "decision": "AMBIGUOUS_PREVIOUS_FRIDAY",
+      "source_observation": "Santa Catarina/Monterrey Capilla Corazón Inmaculado de María lists first, third and fourth Sunday 13:00 and a preceding/previous Friday 19:00, worded 'El pasado viernes'.",
+      "remaining_gate": "Ambiguous relative Friday; do not generate a fixed recurrence",
+      "publication_status": "HOLD_RESEARCH_ONLY_NO_WEEKLY_MASS_APPROVAL"
+    }
+  ],
+  "row_references": [
+    {
+      "historical_row": 304,
+      "source_id": "ao-research-sspx-four-district-bulk-sspx-anz-au-singleton-sacred-heart-of-jesus-and-mary-church",
+      "effective_anchor": "RG-AAD07EFEC8B7",
+      "source_url": "https://sspx.au/en/list-sspx-chapels-0",
+      "original_day": "Sunday",
+      "original_clock": "10:00",
+      "original_frequency": "weekly",
+      "legacy_precision_holds": [
+        "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+      ],
+      "site_decision": "ALTERNATIVE_SUNDAY_TIMES_AND_ALIAS",
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 583,
+      "source_id": "SSPXMAP:OPE-001937",
+      "effective_anchor": "RG-C1299B842E31",
+      "source_url": "https://sspx.au/en/list-sspx-chapels-0",
+      "original_day": "Sunday",
+      "original_clock": "17:00",
+      "original_frequency": "monthly (3rd Sunday)",
+      "legacy_precision_holds": [
+        "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+      ],
+      "site_decision": "MONTHLY_THIRD_SUNDAY",
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 787,
+      "source_id": "SSPXMAP:OPE-002703",
+      "effective_anchor": "RG-D1BCCD10CF06",
+      "source_url": "https://sspx.au/en/list-sspx-chapels-0",
+      "original_day": "Sunday",
+      "original_clock": "17:30",
+      "original_frequency": "occasionally monthly (1st Sunday); call to confirm",
+      "legacy_precision_holds": [
+        "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+      ],
+      "site_decision": "OCCASIONAL_MONTHLY",
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 820,
+      "source_id": "SSPXMAP:OPE-002415",
+      "effective_anchor": "RG-8B0022CFEA1E",
+      "source_url": "https://sspx.au/en/list-sspx-chapels-0",
+      "original_day": "Sunday",
+      "original_clock": "09:00",
+      "original_frequency": "monthly (1st and 3rd Sunday)",
+      "legacy_precision_holds": [
+        "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+      ],
+      "site_decision": "ALTERNATIVE_SUNDAY_TIMES",
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 954,
+      "source_id": "SSPXMAP:OPE-002418",
+      "effective_anchor": "RG-AAD07EFEC8B7",
+      "source_url": "https://sspx.au/en/list-sspx-chapels-0",
+      "original_day": "Sunday",
+      "original_clock": "10:00",
+      "original_frequency": "weekly",
+      "legacy_precision_holds": [
+        "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+      ],
+      "site_decision": "ALTERNATIVE_SUNDAY_TIMES_AND_ALIAS",
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2131,
+      "source_id": "SSPXMAP:OPE-002415",
+      "effective_anchor": "RG-8B0022CFEA1E",
+      "source_url": "https://sspx.au/en/list-sspx-chapels-0",
+      "original_day": "Sunday",
+      "original_clock": "18:00",
+      "original_frequency": "monthly (1st and 3rd Sunday)",
+      "legacy_precision_holds": [
+        "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+      ],
+      "site_decision": "ALTERNATIVE_SUNDAY_TIMES",
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2136,
+      "source_id": "SSPXMAP:OPE-002418",
+      "effective_anchor": "RG-AAD07EFEC8B7",
+      "source_url": "https://sspx.au/en/list-sspx-chapels-0",
+      "original_day": "Sunday",
+      "original_clock": "16:00",
+      "original_frequency": "weekly",
+      "legacy_precision_holds": [
+        "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+      ],
+      "site_decision": "ALTERNATIVE_SUNDAY_TIMES_AND_ALIAS",
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2137,
+      "source_id": "ao-research-sspx-four-district-bulk-sspx-anz-au-singleton-sacred-heart-of-jesus-and-mary-church",
+      "effective_anchor": "RG-AAD07EFEC8B7",
+      "source_url": "https://sspx.au/en/list-sspx-chapels-0",
+      "original_day": "Sunday",
+      "original_clock": "16:00",
+      "original_frequency": "weekly",
+      "legacy_precision_holds": [
+        "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+      ],
+      "site_decision": "ALTERNATIVE_SUNDAY_TIMES_AND_ALIAS",
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2293,
+      "source_id": "SSPXMAP:OPE-002367",
+      "effective_anchor": "RG-F39D21E78FE9",
+      "source_url": "https://fsspx.mx/es/capillas-2",
+      "original_day": "(day adjacent to a main Sunday Mass - see excerpt)",
+      "original_clock": "19:00",
+      "original_frequency": "monthly (before/after a Sunday Mass)",
+      "legacy_precision_holds": [
+        "RELATIVE_OR_UNSPECIFIED_DAY",
+        "RELATIVE_MONTHLY_EXCEPTION"
+      ],
+      "site_decision": "AMBIGUOUS_PREVIOUS_FRIDAY",
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2295,
+      "source_id": "SSPXMAP:OPE-002362",
+      "effective_anchor": "RG-0FCC305AB988",
+      "source_url": "https://fsspx.mx/es/capillas-2",
+      "original_day": "(day adjacent to a main Sunday Mass - see excerpt)",
+      "original_clock": "18:00",
+      "original_frequency": "monthly (before/after a Sunday Mass)",
+      "legacy_precision_holds": [
+        "RELATIVE_OR_UNSPECIFIED_DAY",
+        "RELATIVE_MONTHLY_EXCEPTION"
+      ],
+      "site_decision": "RELATIVE_MONTHLY_HOLD",
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2298,
+      "source_id": "SSPXMAP:OPE-002355",
+      "effective_anchor": "RG-B82B5D5FB842",
+      "source_url": "https://fsspx.mx/es/capillas-2",
+      "original_day": "Weekdays (days not specified)",
+      "original_clock": "19:00",
+      "original_frequency": "weekly",
+      "legacy_precision_holds": [
+        "RELATIVE_OR_UNSPECIFIED_DAY",
+        "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+      ],
+      "site_decision": "WEEKDAY_DAY_UNKNOWN",
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2299,
+      "source_id": "SSPXMAP:OPE-002356",
+      "effective_anchor": "RG-4BC62D32CEDF",
+      "source_url": "https://fsspx.mx/es/capillas-2",
+      "original_day": "(day adjacent to a main Sunday Mass - see excerpt)",
+      "original_clock": "19:00",
+      "original_frequency": "monthly (before/after a Sunday Mass)",
+      "legacy_precision_holds": [
+        "RELATIVE_OR_UNSPECIFIED_DAY",
+        "RELATIVE_MONTHLY_EXCEPTION"
+      ],
+      "site_decision": "RELATIVE_MONTHLY_HOLD",
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2302,
+      "source_id": "SSPXMAP:OPE-002358",
+      "effective_anchor": "RG-8CA4581A961B",
+      "source_url": "https://fsspx.mx/es/capillas-2",
+      "original_day": "Weekdays (days not specified)",
+      "original_clock": "07:15",
+      "original_frequency": "weekly",
+      "legacy_precision_holds": [
+        "RELATIVE_OR_UNSPECIFIED_DAY"
+      ],
+      "site_decision": "CONDITIONAL_WEEKDAY_AND_DUPLICATE",
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2303,
+      "source_id": "SSPXMAP:OPE-002358",
+      "effective_anchor": "RG-8CA4581A961B",
+      "source_url": "https://fsspx.mx/es/capillas-2",
+      "original_day": "Weekdays (days not specified)",
+      "original_clock": "19:00",
+      "original_frequency": "weekly",
+      "legacy_precision_holds": [
+        "RELATIVE_OR_UNSPECIFIED_DAY"
+      ],
+      "site_decision": "CONDITIONAL_WEEKDAY_AND_DUPLICATE",
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2304,
+      "source_id": "SSPXMAP:OPE-002358",
+      "effective_anchor": "RG-8CA4581A961B",
+      "source_url": "https://fsspx.mx/es/capillas-2",
+      "original_day": "Weekdays (days not specified)",
+      "original_clock": "19:00",
+      "original_frequency": "weekly",
+      "legacy_precision_holds": [
+        "RELATIVE_OR_UNSPECIFIED_DAY"
+      ],
+      "site_decision": "CONDITIONAL_WEEKDAY_AND_DUPLICATE",
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2305,
+      "source_id": "SSPXMAP:OPE-002366",
+      "effective_anchor": "RG-31EA97D878CC",
+      "source_url": "https://fsspx.mx/es/capillas-2",
+      "original_day": "(day adjacent to a main Sunday Mass - see excerpt)",
+      "original_clock": "19:00",
+      "original_frequency": "monthly (before/after a Sunday Mass)",
+      "legacy_precision_holds": [
+        "RELATIVE_OR_UNSPECIFIED_DAY",
+        "RELATIVE_MONTHLY_EXCEPTION"
+      ],
+      "site_decision": "RELATIVE_MONTHLY_HOLD",
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2307,
+      "source_id": "SSPXMAP:OPE-002361",
+      "effective_anchor": "RG-304D2E094C98",
+      "source_url": "https://fsspx.mx/es/capillas-2",
+      "original_day": "(day adjacent to a main Sunday Mass - see excerpt)",
+      "original_clock": "08:00",
+      "original_frequency": "monthly (before/after a Sunday Mass)",
+      "legacy_precision_holds": [
+        "RELATIVE_OR_UNSPECIFIED_DAY",
+        "RELATIVE_MONTHLY_EXCEPTION"
+      ],
+      "site_decision": "QUARTERLY_DATE_UNVERIFIED",
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2308,
+      "source_id": "SSPXMAP:OPE-002572",
+      "effective_anchor": "RG-EB863FB4729A",
+      "source_url": "https://fsspx.mx/es/capillas-2",
+      "original_day": "(day adjacent to a main Sunday Mass - see excerpt)",
+      "original_clock": "07:30",
+      "original_frequency": "monthly (before/after a Sunday Mass)",
+      "legacy_precision_holds": [
+        "RELATIVE_OR_UNSPECIFIED_DAY",
+        "RELATIVE_MONTHLY_EXCEPTION"
+      ],
+      "site_decision": "RELATIVE_MONTHLY_HOLD",
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2309,
+      "source_id": "ao-research-sspx-mexico-completion-20261009-sspx-mx-comp-20261009-07-mision-s-ignacio",
+      "effective_anchor": "RG-80441763B83D",
+      "source_url": "https://fsspx.mx/es/capillas-2",
+      "original_day": "(day adjacent to a main Sunday Mass - see excerpt)",
+      "original_clock": "07:00",
+      "original_frequency": "monthly (before/after a Sunday Mass)",
+      "legacy_precision_holds": [
+        "RELATIVE_OR_UNSPECIFIED_DAY",
+        "RELATIVE_MONTHLY_EXCEPTION"
+      ],
+      "site_decision": "VENUE_NAME_SOURCE_CONFLICT",
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2310,
+      "source_id": "SSPXMAP:OPE-002365",
+      "effective_anchor": "RG-80441763B83D",
+      "source_url": "https://fsspx.mx/es/capillas-2",
+      "original_day": "(day adjacent to a main Sunday Mass - see excerpt)",
+      "original_clock": "07:00",
+      "original_frequency": "monthly (before/after a Sunday Mass)",
+      "legacy_precision_holds": [
+        "RELATIVE_OR_UNSPECIFIED_DAY",
+        "RELATIVE_MONTHLY_EXCEPTION"
+      ],
+      "site_decision": "VENUE_NAME_SOURCE_CONFLICT",
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2311,
+      "source_id": "SSPXMAP:OPE-002584",
+      "effective_anchor": "RG-28D0D1EC95B8",
+      "source_url": "https://fsspx.mx/es/capillas-2",
+      "original_day": "(day adjacent to a main Sunday Mass - see excerpt)",
+      "original_clock": "19:00",
+      "original_frequency": "monthly (before/after a Sunday Mass)",
+      "legacy_precision_holds": [
+        "RELATIVE_OR_UNSPECIFIED_DAY",
+        "RELATIVE_MONTHLY_EXCEPTION"
+      ],
+      "site_decision": "RELATIVE_MONTHLY_HOLD",
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2312,
+      "source_id": "SSPXMAP:OPE-002364",
+      "effective_anchor": "RG-A90C5887A16B",
+      "source_url": "https://fsspx.mx/es/capillas-2",
+      "original_day": "(day adjacent to a main Sunday Mass - see excerpt)",
+      "original_clock": "19:00",
+      "original_frequency": "monthly (before/after a Sunday Mass)",
+      "legacy_precision_holds": [
+        "RELATIVE_OR_UNSPECIFIED_DAY",
+        "RELATIVE_MONTHLY_EXCEPTION"
+      ],
+      "site_decision": "RELATIVE_MONTHLY_HOLD",
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2316,
+      "source_id": "SSPXMAP:OPE-002359",
+      "effective_anchor": "RG-16E60E0BD048",
+      "source_url": "https://fsspx.mx/es/capillas-2",
+      "original_day": "(day adjacent to a main Sunday Mass - see excerpt)",
+      "original_clock": "18:00",
+      "original_frequency": "monthly (before/after a Sunday Mass)",
+      "legacy_precision_holds": [
+        "RELATIVE_OR_UNSPECIFIED_DAY",
+        "RELATIVE_MONTHLY_EXCEPTION"
+      ],
+      "site_decision": "RELATIVE_MONTHLY_HOLD",
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2317,
+      "source_id": "SSPXMAP:OPE-002359",
+      "effective_anchor": "RG-16E60E0BD048",
+      "source_url": "https://fsspx.mx/es/capillas-2",
+      "original_day": "(day adjacent to a main Sunday Mass - see excerpt)",
+      "original_clock": "10:30",
+      "original_frequency": "monthly (before/after a Sunday Mass)",
+      "legacy_precision_holds": [
+        "RELATIVE_OR_UNSPECIFIED_DAY",
+        "RELATIVE_MONTHLY_EXCEPTION"
+      ],
+      "site_decision": "RELATIVE_MONTHLY_HOLD",
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2320,
+      "source_id": "SSPXMAP:OPE-001866",
+      "effective_anchor": "RG-6F4FEAC935EB",
+      "source_url": "https://fsspx.mx/es/capillas-2",
+      "original_day": "Weekdays (days not specified)",
+      "original_clock": "07:15",
+      "original_frequency": "weekly",
+      "legacy_precision_holds": [
+        "RELATIVE_OR_UNSPECIFIED_DAY"
+      ],
+      "site_decision": "CONDITIONAL_WEEKDAY",
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2321,
+      "source_id": "SSPXMAP:OPE-001866",
+      "effective_anchor": "RG-6F4FEAC935EB",
+      "source_url": "https://fsspx.mx/es/capillas-2",
+      "original_day": "Weekdays (days not specified)",
+      "original_clock": "08:00",
+      "original_frequency": "weekly",
+      "legacy_precision_holds": [
+        "RELATIVE_OR_UNSPECIFIED_DAY"
+      ],
+      "site_decision": "CONDITIONAL_WEEKDAY",
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 2322,
+      "source_id": "SSPXMAP:OPE-001866",
+      "effective_anchor": "RG-6F4FEAC935EB",
+      "source_url": "https://fsspx.mx/es/capillas-2",
+      "original_day": "Weekdays (days not specified)",
+      "original_clock": "19:00",
+      "original_frequency": "weekly",
+      "legacy_precision_holds": [
+        "RELATIVE_OR_UNSPECIFIED_DAY"
+      ],
+      "site_decision": "CONDITIONAL_WEEKDAY",
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 3596,
+      "source_id": "AO-AMER-R28-US-18-11",
+      "effective_anchor": "RG-80D5C367F702",
+      "source_url": "https://reginacaeliparish.org/",
+      "original_day": "Sunday",
+      "original_clock": "08:30",
+      "original_frequency": "weekly",
+      "legacy_precision_holds": [
+        "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+      ],
+      "site_decision": "PARISH_PRIVATE_MASS_CAUTION",
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 3598,
+      "source_id": "AO-AMER-R28-US-18-11",
+      "effective_anchor": "RG-80D5C367F702",
+      "source_url": "https://reginacaeliparish.org/",
+      "original_day": "Sunday",
+      "original_clock": "13:00",
+      "original_frequency": "weekly",
+      "legacy_precision_holds": [
+        "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+      ],
+      "site_decision": "PARISH_PRIVATE_MASS_CAUTION",
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 3599,
+      "source_id": "AO-AMER-R28-US-18-11",
+      "effective_anchor": "RG-80D5C367F702",
+      "source_url": "https://reginacaeliparish.org/",
+      "original_day": "Sunday",
+      "original_clock": "14:30",
+      "original_frequency": "weekly",
+      "legacy_precision_holds": [
+        "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+      ],
+      "site_decision": "PARISH_PRIVATE_MASS_CAUTION",
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 3602,
+      "source_id": "AO-AMER-R28-US-18-11",
+      "effective_anchor": "RG-80D5C367F702",
+      "source_url": "https://reginacaeliparish.org/",
+      "original_day": "Monday",
+      "original_clock": "09:00",
+      "original_frequency": "weekly",
+      "legacy_precision_holds": [
+        "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+      ],
+      "site_decision": "PARISH_PRIVATE_MASS_CAUTION",
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 3603,
+      "source_id": "AO-AMER-R28-US-18-11",
+      "effective_anchor": "RG-80D5C367F702",
+      "source_url": "https://reginacaeliparish.org/",
+      "original_day": "Tuesday",
+      "original_clock": "06:30",
+      "original_frequency": "weekly",
+      "legacy_precision_holds": [
+        "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+      ],
+      "site_decision": "PARISH_PRIVATE_MASS_CAUTION",
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 3606,
+      "source_id": "AO-AMER-R28-US-18-11",
+      "effective_anchor": "RG-80D5C367F702",
+      "source_url": "https://reginacaeliparish.org/",
+      "original_day": "Wednesday",
+      "original_clock": "09:00",
+      "original_frequency": "weekly",
+      "legacy_precision_holds": [
+        "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+      ],
+      "site_decision": "PARISH_PRIVATE_MASS_CAUTION",
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 3607,
+      "source_id": "AO-AMER-R28-US-18-11",
+      "effective_anchor": "RG-80D5C367F702",
+      "source_url": "https://reginacaeliparish.org/",
+      "original_day": "Thursday",
+      "original_clock": "06:30",
+      "original_frequency": "weekly",
+      "legacy_precision_holds": [
+        "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+      ],
+      "site_decision": "PARISH_PRIVATE_MASS_CAUTION",
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 3610,
+      "source_id": "AO-AMER-R28-US-18-11",
+      "effective_anchor": "RG-80D5C367F702",
+      "source_url": "https://reginacaeliparish.org/",
+      "original_day": "Friday",
+      "original_clock": "09:00",
+      "original_frequency": "weekly",
+      "legacy_precision_holds": [
+        "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+      ],
+      "site_decision": "PARISH_PRIVATE_MASS_CAUTION",
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    },
+    {
+      "historical_row": 3611,
+      "source_id": "AO-AMER-R28-US-18-11",
+      "effective_anchor": "RG-80D5C367F702",
+      "source_url": "https://reginacaeliparish.org/",
+      "original_day": "Saturday",
+      "original_clock": "06:30",
+      "original_frequency": "weekly",
+      "legacy_precision_holds": [
+        "VARIABLE_CLOCK_CONFIRM_LOCALLY"
+      ],
+      "site_decision": "PARISH_PRIVATE_MASS_CAUTION",
+      "publication_status": "HOLD_NO_PUBLIC_TIMETABLE_APPROVAL"
+    }
+  ],
+  "rule": "Live official source confirms only its exact documented pattern with exceptions; each approved event later requires a date-scoped source, exact CL2 site identity, and duplicate/ministerial review. Community name never establishes Una Cum or exact Missal at any given celebration."
+}
