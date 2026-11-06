@@ -1,0 +1,73 @@
+name: Sacred Art Phase 28 — geometric photograph identity replay
+on:
+  push:
+    branches:
+      - research/sacred-art-phase18-iiif-audit-20261106
+    paths:
+      - 'scripts/sacred-art/phase28-geometric-image-identity.py'
+      - '.github/workflows/sacred-art-phase28-feature-replay.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  compare-existing-image-bytes:
+    name: Reanalyse five historical museum research batches without new scraping
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install local geometric comparison dependencies
+        run: python -m pip install --disable-pip-version-check 'numpy>=2,<3' 'opencv-python-headless>=4.10,<5'
+      - name: Reuse 20 original museum images and Commons reference previews
+        uses: actions/download-artifact@v4
+        with:
+          name: phase18-iiif-audit-20-research-only
+          run-id: 42112061358
+          github-token: ${{ github.token }}
+          path: reference-evidence/phase18
+      - name: Reuse canvas-aware Phase 20 photographs
+        uses: actions/download-artifact@v4
+        with:
+          name: phase20-canvas-identity-research-only
+          run-id: 42169137895
+          github-token: ${{ github.token }}
+          path: reference-evidence/phase20
+      - name: Reuse Phase 25 museum and Commons photographs
+        uses: actions/download-artifact@v4
+        with:
+          name: phase25-six-museum-iiif-comparisons-research-only
+          run-id: 42182892988
+          github-token: ${{ github.token }}
+          path: reference-evidence/phase25
+      - name: Reuse Phase 26 museum and Commons photographs
+        uses: actions/download-artifact@v4
+        with:
+          name: sacred-art-phase26-three-iiif-research-only
+          run-id: 42203651963
+          github-token: ${{ github.token }}
+          path: reference-evidence/phase26
+      - name: Reuse Phase 27 Ghent photographs and selected originals
+        uses: actions/download-artifact@v4
+        with:
+          name: phase27-four-ghent-images-research-only
+          run-id: 42207977363
+          github-token: ${{ github.token }}
+          path: reference-evidence/phase27
+      - name: Validate and run local feature/homography audit
+        run: |
+          python -m py_compile scripts/sacred-art/phase28-geometric-image-identity.py
+          python scripts/sacred-art/phase28-geometric-image-identity.py
+      - name: Upload detailed research scores, no gallery changes
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase28-feature-identity-scores-research-only
+          path: artifacts/sacred-art-phase28-feature-identity/
+          retention-days: 7
+          if-no-files-found: warn
