@@ -47,6 +47,7 @@ jobs:
           node tests/sacred-atlas-96-admission-review.mjs
           node tests/sacred-atlas-169-consolidated-intake.mjs
           node tests/sacred-atlas-73-source-exception-adjudication.mjs
+          node tests/sacred-atlas-169-country-area-preflight.mjs
           node tests/sacred-atlas-67-source-evidence.mjs
           node tests/sacred-atlas-v10-b21-two-marian-places.mjs
       - name: V10 editorial master deterministic source audit
