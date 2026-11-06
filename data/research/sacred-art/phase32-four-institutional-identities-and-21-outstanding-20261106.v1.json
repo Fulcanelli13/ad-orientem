@@ -1,0 +1,155 @@
+{
+  "schema": "AO_SACRED_ART_PHASE32_FOUR_INSTITUTIONAL_IDENTITIES_20261106_V1",
+  "as_of": "2026-11-06",
+  "scope": "Research-only recovery of 177 owner-handpicked low-resolution artworks; exact-object identity separate from reuse rights and image quality",
+  "baseline": {
+    "phase30_supported": 150,
+    "phase31_added": 2,
+    "phase31_supported": 152,
+    "phase31_unresolved": 25
+  },
+  "new_identity_supported": [
+    {
+      "registry_id": "RECENT575::421",
+      "museum": "Musée des Beaux-Arts de Dijon, on deposit from Musée du Louvre",
+      "artist_or_attribution": "Master of the Beyghem Altarpiece (South Netherlands School)",
+      "official_title": "L'Arrestation du Christ",
+      "inventory": "MNR 389",
+      "deposit_inventory": "4154",
+      "source": "https://collections.louvre.fr/ark:/53355/cl010054119",
+      "grade": "OFFICIAL_MUSEUM_OBJECT_EXACT_ACCESSION",
+      "note": "MNR recovery artwork; French state holds for restitution. Former attribution Jan Joest of Calcar not current. Preserve recovered-property status.",
+      "photo_rights": "NOT_CLEARED",
+      "photo_approved": false,
+      "owner_handpick_preserved": true,
+      "published": false
+    },
+    {
+      "registry_id": "RECENT575::407",
+      "museum": "Palais des Beaux-Arts de Lille",
+      "artist_or_attribution": "Erasmus Quellinus II (figures); Jan Fyt (still life)",
+      "official_title": "Jésus chez Marthe et Marie",
+      "inventory": "P 65",
+      "source": "https://pop.culture.gouv.fr/notice/joconde/000PE016989",
+      "grade": "OFFICIAL_STATE_MUSEUM_OBJECT_EXACT_ACCESSION",
+      "note": "Current Joconde collaborative attribution is Quellinus II + Fyt. Former attribution Jan Erasmus Quellinus recorded historically, not current. Not Lille Jordaens P75 nor Bordeaux derivative.",
+      "photo_rights": "RMN_GALLIC_IMAGE_REUSE_BY_AUTHORIZATION_ONLY",
+      "photo_approved": false,
+      "owner_handpick_preserved": true,
+      "published": false
+    },
+    {
+      "registry_id": "RECENT575::384",
+      "museum": "Musée des Beaux-Arts de Tours",
+      "artist_or_attribution": "Rembrandt van Rijn",
+      "official_title": "La Fuite en Égypte",
+      "date": "1627",
+      "inventory": "1793-1-2 (current museum website; CONFLICT)",
+      "historical_cross_reference": "1950-13-1 (Commons and Toulouse museum exhibition PDF)",
+      "source": "https://musees.tours.fr/collections/la-fuite-en-egypte/",
+      "secondary_official_source": "https://augustins.toulouse.fr/wp-content/uploads/sites/17/2025/05/dossier_enseignants_C-O-final2.pdf",
+      "grade": "OFFICIAL_HOLDING_MUSEUM_OBJECT_WITH_INVENTORY_CONFLICT",
+      "note": "Object/painting identity supported by Tours museum photograph and 1627 title; institutional accession mismatch must be reconciled before catalogue export. Museum states attribution accepted by Rembrandt Research Project in 2001.",
+      "photo_rights": "MUSEUM_PHOTO_COPYRIGHT_NOT_CLEARED",
+      "photo_approved": false,
+      "owner_handpick_preserved": true,
+      "published": false
+    },
+    {
+      "registry_id": "RECENT575::369",
+      "museum": "Musée des Beaux-Arts de Strasbourg",
+      "artist_or_attribution": "Andrea Vaccaro",
+      "official_title": "Décapitated head of Saint John the Baptist (chef décapité de saint Jean-Baptiste)",
+      "inventory": "NOT_ESTABLISHED",
+      "source": "https://www.musees.strasbourg.eu/documents/d/musees/dp-musee-des-beaux-arts",
+      "grade": "OFFICIAL_MUSEUM_PUBLICATION_NO_ACCESSION",
+      "note": "2025 official museum press dossier identifies Andrea Vaccaro, the specific subject, and gift from Clémentine Gustin-Gomez in 2009. Exact museum inventory, photographic match and reproduction rights outstanding.",
+      "photo_rights": "NOT_CLEARED",
+      "photo_approved": false,
+      "owner_handpick_preserved": true,
+      "published": false
+    }
+  ],
+  "counts": {
+    "new_identity_supported": 4,
+    "official_exact_inventory": 2,
+    "official_object_with_inventory_discrepancy": 1,
+    "official_publication_no_inventory": 1,
+    "total_supported": 156,
+    "total_unresolved": 21,
+    "handpicked_total": 177,
+    "photos_replaced": 0
+  },
+  "remaining_unresolved_ids": [
+    "RECENT575::005",
+    "RECENT575::014",
+    "RECENT575::031",
+    "RECENT575::032",
+    "RECENT575::033",
+    "RECENT575::034",
+    "RECENT575::035",
+    "RECENT575::142",
+    "RECENT575::150",
+    "RECENT575::154",
+    "RECENT575::179",
+    "RECENT575::359",
+    "RECENT575::387",
+    "RECENT575::392",
+    "RECENT575::402",
+    "RECENT575::410",
+    "RECENT575::440",
+    "RECENT575::479",
+    "RECENT575::503",
+    "RECENT575::542",
+    "RECENT575::572"
+  ],
+  "priority_holds": [
+    {
+      "registry_ids": [
+        "RECENT575::005",
+        "RECENT575::031",
+        "RECENT575::032",
+        "RECENT575::033",
+        "RECENT575::034",
+        "RECENT575::035"
+      ],
+      "reason": "Six separate Jacob Herreyns I Life of Christ paintings at KMSKA. Commons/Lukasweb trace six compositions, but no direct KMSKA accession number per scene. KMSKA site has unrelated Ensor Christ cycle and Rubens Baptism; don't conflate."
+    },
+    {
+      "registry_id": "RECENT575::154",
+      "reason": "Bruges St Jerome by Bruno van Hollebeke has tentative 0000.GRO0420.I in Commons/Wikidata. An Anaïs Bouvy image is also mislabeled with this accession. Official object-level attribution needed."
+    },
+    {
+      "registry_id": "RECENT575::410",
+      "provisional_inventory": "P 190",
+      "provisional_joconde": "000PE017010",
+      "reason": "Lille Quellinus Solomon/Sheba has Commons plus Wikidata crosswalk, but official source could not be accessed; different Lille Dirck van Delen Solomon/Sheba is P 233. Do not borrow P233 or count P190 before official confirmation."
+    },
+    {
+      "registry_id": "RECENT575::392",
+      "provisional_inventory": "P 85",
+      "provisional_joconde": "000PE016876",
+      "reason": "Jordaens Saint Matthew and two apostles provisionally linked to Lille P85, but exact primary museum notice inaccessible."
+    },
+    {
+      "registry_id": "RECENT575::359",
+      "provisional_inventory": "1942-0009",
+      "reason": "Geneva Visitation crosswalk secondary; a later attribution to Champaigne's workshop conflicts with plain artist name in Commons. Museum direct object unavailable."
+    },
+    {
+      "registry_id": "RECENT575::402",
+      "reason": "Lille official Dérision du Christ by Cranach school (P740) and Jésus insulté par les soldats after Valentin de Boulogne (P417) are unrelated to provisional Ter Brugghen selected image. No false match."
+    },
+    {
+      "registry_id": "RECENT575::014",
+      "reason": "Toulouse Christ ressuscité selected photograph previously conflict with Les Âmes du Purgatoire official catalogue. Remains held."
+    }
+  ],
+  "governance": [
+    "No publication, image rights not inferred from catalogue identity",
+    "Exact selected Commons original protected",
+    "Separate owner handpicked image rows from physical painting entities and MNR/deposit legal contexts",
+    "No automatic art admissions or Prayer/Calendar assignments"
+  ],
+  "predecessor": "data/research/sacred-art/phase31-ghent-toulouse-identity-and-antwerp-cycle-holds-20261106.v1.json"
+}
