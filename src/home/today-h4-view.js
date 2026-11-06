@@ -6,7 +6,7 @@ import { HOME_C3_CSS } from "./c3-styles.js";
 import { c3PrayerMarkup,c3UpcomingMarkup } from "./c3-gallery.js";
 import { HOME_ENRICHERS_VERSION } from "./enrichers.js";
 import { homeDidYouKnowMarkup } from "./did-you-know-glossary.js";
-import { ICRSP_HOME_ORDO_CSS, renderIcrspFranceHomeOrdo } from "../calendar/icrsp-france-ordo-evidence.js";
+import { ICRSP_HOME_ORDO_CSS, renderIcrspFranceHomeOrdo, icrspFranceOrdoForDate } from "../calendar/icrsp-france-ordo-evidence.js";
 import { calendarMassColour } from "../calendar/colour-projection.js";
 import { calendarDisciplineForDate } from "../calendar/intelligence.js";
 // Display only verified liturgical colours; never infer them from the season.
@@ -34,6 +34,7 @@ export function h4Enabled(win=globalThis){
 }
 export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null,ordoFacts=null,properSections=[]}={}){
   const formularies=Array.isArray(vm.formularies)?vm.formularies:[];
+  const hasParticularOrdo=Boolean(icrspFranceOrdoForDate(vm.dateIso));
   const fr=vm.language==="fr",say=(en,frText)=>L(fr,en,frText),ready=vm.resolvedForSelection&&vm.properStatus==="ready"&&!vm.loading;
   const litColour=({"green":"green","vert":"green","white":"white","blanc":"white",
     "red":"red","rouge":"red","violet":"violet","purple":"violet",
@@ -77,7 +78,7 @@ export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null,ordo
   const resumeLabel=resume?[resume.date?dateLabel(resume.date,fr):"",resume.stepNumber?say("Card ","Carte ")+resume.stepNumber:""].filter(Boolean).join(" · "):"";
   const mainAction=resume?
     '<button type="button" class="aoH4Primary" data-resume-mass data-ao-resume-owner="R17_NATIVE"><span><strong>'+esc(say("Resume Mass","Reprendre la messe"))+'</strong><small>'+esc(resumeLabel)+'</small></span><span class="aoH4Arrow" aria-hidden="true">›</span></button>':
-    '<button type="button" class="aoH4Primary" data-home-mass-entry data-home-h4-begin'+(ready?'':' disabled aria-disabled="true"')+'><span><strong>'+esc(vm.isToday?say("Begin Mass","Commencer la messe"):say("Begin selected Mass","Commencer la messe choisie"))+'</strong><small>'+esc(selectedChoices)+'</small></span><span class="aoH4Arrow" aria-hidden="true">›</span></button>';
+    '<button type="button" class="aoH4Primary" data-home-mass-entry data-home-h4-begin'+(ready?'':' disabled aria-disabled="true"')+'><span><strong>'+esc(hasParticularOrdo?say("Begin general-calendar Mass","Commencer la messe du calendrier général"):vm.isToday?say("Begin Mass","Commencer la messe"):say("Begin selected Mass","Commencer la messe choisie"))+'</strong><small>'+esc(selectedChoices)+'</small></span><span class="aoH4Arrow" aria-hidden="true">›</span></button>';
   const unresolved=!resume&&!ready?'<div class="aoH4Status" role="status">'+esc(vm.loading?say("Resolving the selected Mass…","Résolution de la messe choisie…"):say("Mass texts are not yet available. Begin is unavailable.","Les textes de la messe ne sont pas encore disponibles. Le démarrage est indisponible."))+'</div>':"";
   const feature=model.enricherVisible?model.feature:null;
   const attrs=feature?.kind==="dynamic"?
