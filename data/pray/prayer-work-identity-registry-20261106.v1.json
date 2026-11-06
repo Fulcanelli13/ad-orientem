@@ -2973,7 +2973,7 @@
       "relations": [
         {
           "type": "reused-by",
-          "target": "pray.montfort_consecration_preparation"
+          "target": "pray.montfort_consecration"
         }
       ],
       "review": [],
@@ -3791,11 +3791,11 @@
       ],
       "classificationRule": "R1",
       "classificationStatus": "provisional-needs-source-judgement",
-      "parent": "pray.montfort_consecration_preparation",
+      "parent": "pray.montfort_consecration",
       "libraryListing": "programme-component-only"
     },
     {
-      "id": "pray.montfort_consecration",
+      "id": "montfort_consecration_act_1863",
       "title": "Montfort Act of Consecration",
       "family": "V",
       "subcategory": "Consecration",
@@ -3831,13 +3831,20 @@
       },
       "relations": [],
       "review": [
-        "Confirm addressee/classification against Latin source; family provisional.",
+        "Programme-owned act; classification inherits the Marian programme subject; family provisional.",
         "Programme component: do not create a new standalone prayer library choice."
       ],
       "classificationRule": "R1",
       "classificationStatus": "provisional-needs-source-judgement",
-      "parent": "pray.montfort_consecration_preparation",
-      "libraryListing": "programme-component-only"
+      "parent": "pray.montfort_consecration",
+      "libraryListing": "programme-component-only",
+      "reader_route": null,
+      "sourceCrosswalk": {
+        "work": "The final consecration act within Montfort preparation",
+        "sourceSymbol": "MONTFORT_B26_CONSECRATION_ACT_EN",
+        "programmeRoute": "pray.montfort_consecration",
+        "note": "Not itself a standalone app route."
+      }
     },
     {
       "id": "ignatius_suscipe_lasance_1908_en",
@@ -5791,7 +5798,7 @@
       }
     },
     {
-      "id": "pray.montfort_consecration_preparation",
+      "id": "pray.montfort_consecration",
       "title": "Montfort 33-day preparation",
       "family": "V",
       "subcategory": "Consecration",
@@ -5821,7 +5828,7 @@
         "holy_spirit_litany",
         "pray.holy_name_litany",
         "montfort_augustine_prayer",
-        "pray.montfort_consecration"
+        "montfort_consecration_act_1863"
       ],
       "facets": {
         "moment": [],
@@ -5833,7 +5840,13 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "reader_route": "pray.montfort_consecration",
+      "sourceCrosswalk": {
+        "programmeOwner": "MONTFORT_B26_PHASES",
+        "readerRoute": "pray.montfort_consecration",
+        "note": "The public route opens the entire 33-day preparation, not the concluding act in isolation."
+      }
     },
     {
       "id": "daily_morning_prayer",
