@@ -2,7 +2,7 @@
 // Compare LIVE critical asset bytes and build provenance against this exact run.
 import assert from "node:assert/strict";
 import {
- RELEASE_PROOF_FILENAME,MASS_SCHOLA_CRITICAL_PATHS,releaseCommitSha,releaseSha256,verifyReleaseProof
+ RELEASE_PROOF_FILENAME,MASS_SCHOLA_CRITICAL_PATHS,NOV6_FIRST_FRIDAY_LEONINE_CRITICAL_PATHS,releaseCommitSha,releaseSha256,verifyReleaseProof
 } from "./github-pages-release-proof.mjs";
 
 const raw=process.env.GITHUB_PAGES_URL;
@@ -92,6 +92,13 @@ ok("Novena reader, bilingual Pray search and Prayer router exact-byte parity");
 // source bytes from the same commit+run; never infer musical certification.
 for(const path of MASS_SCHOLA_CRITICAL_PATHS)await released(path);
 ok("Direct 65-card Mass, appointed 1962 Proper corrections and Schola exact-byte parity");
+
+// Exact original-source ICRSP November 6 appointment, Low Mass Gloria and
+// post-Mass Leonine prayers can each become stale independently of the
+// initial HTML and 65-card reader shell. Verify their actual network bytes.
+for(const path of NOV6_FIRST_FRIDAY_LEONINE_CRITICAL_PATHS)await released(path);
+ok("ICRSP Sacred Heart III-class Low Mass, Gloria and five Leonine prayers exact-byte parity");
+
 
 const registry=JSON.parse((await released("data/geography/seed-registry.v1.json")).toString("utf8"));
 const photos=JSON.parse((await released("data/geography/approved-place-media.v1.json")).toString("utf8"));
