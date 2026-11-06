@@ -1,0 +1,78 @@
+name: Sacred Atlas — one-pass 96 genuinely new-source photo search
+# Temporary, research-only workflow. It does NOT download or publish images.
+# Invoked only on this explicit workflow-file change; no schedule, dispatch or retries.
+on:
+  pull_request:
+    types: [synchronize]
+    branches: [main]
+    paths:
+      - '.github/workflows/sacred-atlas-96-gap-first-source-once.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  new-sources-not-old-commons:
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository && github.head_ref == 'research/sacred-atlas-151-noncommons-photo-coverage-20261105' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 24
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Unit test 96 new Places, no old frozen selections, no 500 retry and 429 stop
+        run: |
+          python -m py_compile tools/atlas/discover-sacred-atlas-96-new-photos.py
+          python tests/sacred-atlas-96-new-source-hunt-test.py
+      - name: Search 96 new-source Places only, no Commons, no retries
+        id: scan
+        continue-on-error: true
+        run: |
+          python tools/atlas/discover-sacred-atlas-96-new-photos.py \
+            --out /tmp/ao-atlas-96-noncommons-leads.json \
+            --max-sites 96 --spacing-seconds 3
+      - name: Save exact source metadata to research branch
+        if: always()
+        run: |
+          set -euo pipefail
+          file=/tmp/ao-atlas-96-noncommons-leads.json
+          if [ ! -s "$file" ]; then
+            echo "No research evidence generated";exit 0
+          fi
+          python - <<'PY'
+          import json,pathlib
+          j=json.loads(pathlib.Path('/tmp/ao-atlas-96-noncommons-leads.json').read_text())
+          assert j["schema"]=="AO_SACRED_ATLAS_151_NONCOMMONS_OPENVERSE_DISCOVERY_V1"
+          assert j["research_only"] and j["automated_publications"]==0
+          assert 0<=j["sites_queried"]<=96
+          assert all(r["already_selected_source"] is None for r in j["places"])
+          assert len({r["place_id"] for r in j["places"]})==len(j["places"])
+          assert all(not p["publication_authorized"] and not p["exact_site_verified"] and "commons.wikimedia.org" not in p["source_page"]
+              for r in j["places"] for p in r["candidates"])
+          print("Gap-first discovery audited:",j["sites_queried"],"site searches,",j["image_candidate_records"],"non-Commons leads")
+          PY
+          cp "$file" data/geography/research/sacred-atlas-96-new-source-results-20261105.v1.json
+          git add data/geography/research/sacred-atlas-96-new-source-results-20261105.v1.json
+          if ! git diff --cached --quiet;then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'research(atlas): save first 96 gap-first image-source results'
+            git push origin HEAD:refs/heads/research/sacred-atlas-151-noncommons-photo-coverage-20261105
+          fi
+      - name: Keep one-pass source evidence as an artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-atlas-96-new-source-discovery
+          path: /tmp/ao-atlas-96-noncommons-leads.json
+          if-no-files-found: warn
+          retention-days: 7
+      - name: Mark provider interruption without rerun
+        if: ${{ steps.scan.outcome == 'failure' }}
+        run: |
+          echo 'Provider stopped; preserved valid partial results and no automatic retries'
+          exit 1
