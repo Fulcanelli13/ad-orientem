@@ -1,0 +1,48 @@
+{
+  "schema": "AO_SACRED_ART_PHASE28_PHOTOGRAPHIC_QA_TIER_ONE_V1",
+  "reviewed": "2026-11-06",
+  "method": "Human visual comparison of owner-handpicked Commons photos against actual Phase18 museum preview image bytes, plus Phase28 geometric matching.",
+  "source_artifact": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42112061358/artifacts/13453694294",
+  "geometric_replay_artifact": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42218282365/artifacts/13502631340",
+  "records": [
+    {
+      "registry_id": "RECENT575::072",
+      "subject": "Annunciation",
+      "author": "Jan Janssens",
+      "museum_image_short_px": 2200,
+      "museum_original_short_px": 5237,
+      "identity": "SAME_COMPOSITION_GEOMETRICALLY_SUPPORTED",
+      "visual_qa": "Strong candidate; handpicked and museum reproductions have comparable colour/composition at preview size. Examine full resolution, compression and border before editor approval.",
+      "rights": "Musea Flemish IIIF rights PDM in manifest; separate specific source-image rights check still required",
+      "decision": "MANUAL_PHOTO_APPROVAL_PENDING"
+    },
+    {
+      "registry_id": "RECENT575::075",
+      "subject": "Saint Veronica of Binasco",
+      "author": "François-Joseph Navez",
+      "museum_image_short_px": 2200,
+      "museum_original_short_px": 4974,
+      "identity": "SAME_COMPOSITION_GEOMETRICALLY_SUPPORTED",
+      "visual_qa": "Museum image visibly flatter/less saturated than handpicked photograph. Do not infer that higher pixel dimensions mean higher photographic fidelity; review original colour and tonal mapping.",
+      "rights": "Museum manifest PDM, source policy review outstanding",
+      "decision": "MANUAL_PHOTO_APPROVAL_PENDING"
+    },
+    {
+      "registry_id": "RECENT575::076",
+      "subject": "Flagellation of Christ",
+      "author": "Peter Paul Rubens",
+      "museum_image_short_px": 2200,
+      "museum_original_short_px": 5048,
+      "identity": "SAME_COMPOSITION_GEOMETRICALLY_SUPPORTED",
+      "visual_qa": "Museum reproduction has a warmer/greener darker palette and different exposure than owner-selected photo; whole-painting comparison supports identity. Colour fidelity and source rights need verification.",
+      "rights": "Museum manifest PDM, source policy review outstanding",
+      "decision": "MANUAL_PHOTO_APPROVAL_PENDING"
+    }
+  ],
+  "nonnegotiable": [
+    "Preserve original bytes; do not auto-correct museum tonal range or saturation.",
+    "Actual photographic identity is not source-image licence.",
+    "No new image assets added to app gallery and no automatic replacement.",
+    "Preserve the user's previous approvals and exclude rejected paintings."
+  ]
+}
