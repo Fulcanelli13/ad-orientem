@@ -1,0 +1,1849 @@
+{
+  "schema": "AO_WORLD_MAJOR_SACRED_PLACES_REVIEW_V1",
+  "date": "2026-10-15",
+  "scope": "REVIEW_ONLY_DO_NOT_PUBLISH",
+  "source_of_truth": "data/geography/research/sacred-geography-coverage-first-r70.v1.json",
+  "canonical_places": "data/geography/seed-registry.v1.json",
+  "totals": {
+    "original_candidates": 750,
+    "published_places": 229,
+    "original_explicit_promotions": 44,
+    "original_provisional_name_links": 106,
+    "original_unresolved": 600,
+    "selection_under_review": 141,
+    "colliding_live_ids": 13
+  },
+  "governance": {
+    "canonical_identity": "One physical site, one Place ID; independent nearby religious locations keep separate IDs. Name matching and institutional association do not establish physical identity.",
+    "major_priority": "Worldwide ecclesiastical/devotional prominence; core sites must not be penalised merely because an automatic research label marked them Strong or Review.",
+    "source_policy": "Nomination from four existing curated discovery catalogues is adequate; release requires original site/custodian identity source and a defensible site pin.",
+    "editorial_status": "A site may be pilgrimage-worthy while apparition supernatural character remains unconfirmed, contested or rejected; encode distinct status.",
+    "customs_policy": "Do not discard SOT-07/SOT-07G evidence. Recommend removing standalone Customs Atlas map from navigation after content owners absorb practices in Calendar, Novenas, PRAY or Catholic Life & Traditions. No UI or data deletion in this review."
+  },
+  "medjugorje": {
+    "candidate_id": "SG-INV-0317",
+    "priority_override": "WORLD_ANCHOR_P0",
+    "name": "Međugorje — parish church of St James, Queen of Peace pilgrimages",
+    "address": "Gospin trg 1, 88266 Međugorje, Bosnia and Herzegovina",
+    "site_location": {
+      "latitude": 43.1906,
+      "longitude": 17.67757,
+      "precision": "church_building_OSM_way_centre",
+      "osm_way_id": "1115592386",
+      "coordinate_reference": "https://mapcarta.com/W1115592386"
+    },
+    "custodian_source": "https://www.medjugorje.hr/en/contact",
+    "pastoral_source": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2024/09/19/240919d.html",
+    "ecclesiastical_status": "2024 DDF nihil obstat for associated spiritual experience and public devotion; explicitly not a declaration that alleged apparitions are supernatural.",
+    "subsites_policy": "Apparition Hill and Cross Mountain are linked distinct locations. Do not invent or conflate pins for them in this initial site-level review.",
+    "published": false
+  },
+  "confirmed_canonical_relink_examples": [
+    {
+      "candidate_id": "SG-INV-0372",
+      "place_id": "place:VA:saint-peter-vatican",
+      "live_name": "St Peter's Basilica — Vatican"
+    },
+    {
+      "candidate_id": "SG-INV-0544",
+      "place_id": "place:PS:holy-sepulchre-jerusalem",
+      "live_name": "Church of the Holy Sepulchre — shared Christian sanctuary"
+    },
+    {
+      "candidate_id": "SG-INV-0566",
+      "place_id": "place:PS:nativity-bethlehem",
+      "live_name": "Church of the Nativity — shared Christian sanctuary"
+    },
+    {
+      "candidate_id": "SG-INV-0076",
+      "place_id": "place:IT:basilica-san-francesco-assisi",
+      "live_name": "Basilica di San Francesco d'Assisi"
+    },
+    {
+      "candidate_id": "SG-INV-0237",
+      "place_id": "place:IE:croagh-patrick-murrisk-pilgrimage-base",
+      "live_name": "Croagh Patrick — Murrisk Pilgrimage Base"
+    }
+  ],
+  "candidate_identity_collisions": [
+    {
+      "live_place_id": "place:GB:walsingham-catholic-shrine",
+      "live_name": "Catholic National Shrine and Basilica of Our Lady, Walsingham",
+      "candidates": [
+        {
+          "id": "SG-INV-0247",
+          "name": "National Shrine of Our Lady of Walsingham (Catholic)",
+          "country": "GB"
+        },
+        {
+          "id": "SG-INV-0248",
+          "name": "Anglican Shrine of Our Lady of Walsingham",
+          "country": "GB"
+        }
+      ],
+      "decision": "REQUIRES_DISTINCT_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "live_place_id": "place:IT:santa-chiara-assisi",
+      "live_name": "Basilica di Santa Chiara, Assisi",
+      "candidates": [
+        {
+          "id": "SG-INV-0076",
+          "name": "Basilica of Saint Francis of Assisi",
+          "country": "IT"
+        },
+        {
+          "id": "SG-INV-0077",
+          "name": "Basilica of Saint Clare, Assisi",
+          "country": "IT"
+        },
+        {
+          "id": "SG-INV-0078",
+          "name": "Basilica of Saint Mary of the Angels, Assisi",
+          "country": "IT"
+        }
+      ],
+      "decision": "REQUIRES_DISTINCT_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "live_place_id": "place:MX:basilica-guadalupe-mexico-city",
+      "live_name": "Insigne y Nacional Basílica de Santa María de Guadalupe",
+      "candidates": [
+        {
+          "id": "SG-INV-0426",
+          "name": "Basilica of Our Lady of Guadalupe, Mexico City",
+          "country": "MX"
+        },
+        {
+          "id": "SG-INV-0431",
+          "name": "Sanctuary of Our Lady of Guadalupe, Zacatecas",
+          "country": "MX"
+        }
+      ],
+      "decision": "REQUIRES_DISTINCT_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "live_place_id": "place:US:guadalupe-shrine-la-crosse",
+      "live_name": "Shrine of Our Lady of Guadalupe",
+      "candidates": [
+        {
+          "id": "SG-INV-0376",
+          "name": "Shrine of Our Lady of Guadalupe, La Crosse",
+          "country": "US"
+        },
+        {
+          "id": "SG-INV-0377",
+          "name": "National Shrine of Our Lady of Guadalupe, Allentown",
+          "country": "US"
+        }
+      ],
+      "decision": "REQUIRES_DISTINCT_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "live_place_id": "place:IN:basilica-bom-jesus-old-goa",
+      "live_name": "Basilica of Bom Jesus, Old Goa",
+      "candidates": [
+        {
+          "id": "SG-INV-0589",
+          "name": "Basilica of Bom Jesus, Old Goa",
+          "country": "IN"
+        },
+        {
+          "id": "SG-INV-0599",
+          "name": "Saint Catherine Cathedral, Old Goa",
+          "country": "IN"
+        }
+      ],
+      "decision": "REQUIRES_DISTINCT_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "live_place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+      "live_name": "Sanctuaire du Sacré-Cœur de Paray-le-Monial",
+      "candidates": [
+        {
+          "id": "SG-INV-0017",
+          "name": "Basilica of the Sacred Heart, Paray-le-Monial",
+          "country": "FR"
+        },
+        {
+          "id": "SG-INV-0018",
+          "name": "Basilica of Sacré-Cœur, Montmartre",
+          "country": "FR"
+        }
+      ],
+      "decision": "REQUIRES_DISTINCT_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "live_place_id": "place:AR:san-nicolas-virgen-rosario",
+      "live_name": "Santuario María del Rosario de San Nicolás",
+      "candidates": [
+        {
+          "id": "SG-INV-0491",
+          "name": "Sanctuary of Our Lady of San Nicolás",
+          "country": "AR"
+        },
+        {
+          "id": "SG-INV-0492",
+          "name": "Cathedral Basilica of Our Lady of the Rosary, Rosario",
+          "country": "AR"
+        }
+      ],
+      "decision": "REQUIRES_DISTINCT_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "live_place_id": "place:IE:lough-derg-station-island",
+      "live_name": "Lough Derg — Sanctuary of Saint Patrick",
+      "candidates": [
+        {
+          "id": "SG-INV-0238",
+          "name": "Saint Patrick's Purgatory, Lough Derg",
+          "country": "IE"
+        },
+        {
+          "id": "SG-INV-0245",
+          "name": "Saint Patrick's Cathedral, Armagh",
+          "country": "IE"
+        }
+      ],
+      "decision": "REQUIRES_DISTINCT_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "live_place_id": "place:EG:zeitoun-coptic-saint-mary",
+      "live_name": "Church of the Virgin Mary, Zeitoun (Coptic Orthodox)",
+      "candidates": [
+        {
+          "id": "SG-INV-0701",
+          "name": "Shrine of Our Lady of Zeitoun (Coptic Orthodox)",
+          "country": "EG"
+        },
+        {
+          "id": "SG-INV-0702",
+          "name": "Our Lady of Assiut shrine (Coptic Orthodox)",
+          "country": "EG"
+        }
+      ],
+      "decision": "REQUIRES_DISTINCT_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "live_place_id": "place:LB:monastery-saint-maron-annaya",
+      "live_name": "Monastery of Saint Maron — Annaya",
+      "candidates": [
+        {
+          "id": "SG-INV-0577",
+          "name": "Shrine of Saint Charbel, Annaya",
+          "country": "LB"
+        },
+        {
+          "id": "SG-INV-0580",
+          "name": "Monastery of Saint Maron, Annaya",
+          "country": "LB"
+        }
+      ],
+      "decision": "REQUIRES_DISTINCT_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "live_place_id": "place:FR:basilique-saint-martin-tours",
+      "live_name": "Basilique Saint-Martin de Tours",
+      "candidates": [
+        {
+          "id": "SG-INV-0019",
+          "name": "Basilica of Saint-Martin, Tours",
+          "country": "FR"
+        },
+        {
+          "id": "SG-INV-0021",
+          "name": "Sanctuary of the Holy Face, Tours",
+          "country": "FR"
+        }
+      ],
+      "decision": "REQUIRES_DISTINCT_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "live_place_id": "place:IT:basilica-san-domenico-bologna",
+      "live_name": "Basilica di San Domenico, Bologna",
+      "candidates": [
+        {
+          "id": "SG-INV-0063",
+          "name": "Sanctuary of Our Lady of San Luca, Bologna",
+          "country": "IT"
+        },
+        {
+          "id": "SG-INV-0084",
+          "name": "Basilica of Saint Dominic, Bologna",
+          "country": "IT"
+        }
+      ],
+      "decision": "REQUIRES_DISTINCT_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "live_place_id": "place:FR:notre-dame-paris",
+      "live_name": "Cathédrale Notre-Dame de Paris",
+      "candidates": [
+        {
+          "id": "SG-INV-0034",
+          "name": "Cathedral of Notre-Dame de Paris",
+          "country": "FR"
+        },
+        {
+          "id": "SG-INV-0037",
+          "name": "Sainte-Chapelle, Paris",
+          "country": "FR"
+        }
+      ],
+      "decision": "REQUIRES_DISTINCT_PHYSICAL_IDENTITY_REVIEW"
+    }
+  ],
+  "priority_review": [
+    {
+      "candidate_id": "SG-INV-0121",
+      "priority": "Essential",
+      "discovery_sources_count": 4,
+      "site_name": "Cathedral of Santiago de Compostela",
+      "country": "ES",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:ES:santiago-compostela-cathedral",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0001",
+      "priority": "Essential",
+      "discovery_sources_count": 4,
+      "site_name": "Sanctuary of Our Lady of Lourdes",
+      "country": "FR",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:FR:sanctuaire-notre-dame-de-lourdes",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0145",
+      "priority": "Essential",
+      "discovery_sources_count": 4,
+      "site_name": "Sanctuary of Our Lady of Fátima",
+      "country": "PT",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:PT:fatima-sanctuary",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0317",
+      "priority": "Strong",
+      "discovery_sources_count": 4,
+      "site_name": "Sanctuary of the Queen of Peace, Medjugorje",
+      "country": "BA",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "CONFIRMED_ABSENT_FROM_PUBLISHED_PLACE_SHRINE_APPARITION_SEEDS"
+    },
+    {
+      "candidate_id": "SG-INV-0106",
+      "priority": "Essential",
+      "discovery_sources_count": 3,
+      "site_name": "Monastery of Santa María de Montserrat",
+      "country": "ES",
+      "current_research_status": "CONFIRMED_EXISTING_PROMOTION",
+      "current_suggested_live_place_id": "place:ES:santa-maria-de-montserrat-abbey",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0080",
+      "priority": "Essential",
+      "discovery_sources_count": 3,
+      "site_name": "Sanctuary of Saint Pio of Pietrelcina, San Giovanni Rotondo",
+      "country": "IT",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:IT:santuario-san-pio-rotondo",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0002",
+      "priority": "Essential",
+      "discovery_sources_count": 3,
+      "site_name": "Sanctuary of Our Lady of La Salette",
+      "country": "FR",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:FR:notre-dame-la-salette-fallavaux",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0199",
+      "priority": "Essential",
+      "discovery_sources_count": 3,
+      "site_name": "Jasna Góra Monastery and Shrine of Our Lady of Częstochowa",
+      "country": "PL",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:PL:jasna-gora",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0426",
+      "priority": "Essential",
+      "discovery_sources_count": 3,
+      "site_name": "Basilica of Our Lady of Guadalupe, Mexico City",
+      "country": "MX",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:MX:basilica-guadalupe-mexico-city",
+      "verified_live_place_id": null,
+      "review_status": "COLLISION_REVIEW_REQUIRED"
+    },
+    {
+      "candidate_id": "SG-INV-0076",
+      "priority": "Essential",
+      "discovery_sources_count": 3,
+      "site_name": "Basilica of Saint Francis of Assisi",
+      "country": "IT",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:IT:santa-chiara-assisi",
+      "verified_live_place_id": "place:IT:basilica-san-francesco-assisi",
+      "review_status": "COLLISION_REVIEW_REQUIRED"
+    },
+    {
+      "candidate_id": "SG-INV-0235",
+      "priority": "Essential",
+      "discovery_sources_count": 3,
+      "site_name": "Shrine of Our Lady of Knock",
+      "country": "IE",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:IE:knock-shrine",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0183",
+      "priority": "Essential",
+      "discovery_sources_count": 3,
+      "site_name": "Basilica of Mariazell",
+      "country": "AT",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:AT:mariazell-basilica",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0036",
+      "priority": "Review",
+      "discovery_sources_count": 3,
+      "site_name": "Abbey of Mont-Saint-Michel",
+      "country": "FR",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:FR:abbaye-mont-saint-michel",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0095",
+      "priority": "Review",
+      "discovery_sources_count": 3,
+      "site_name": "Abbey of Monte Cassino",
+      "country": "IT",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:IT:montecassino-abbey",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0061",
+      "priority": "Strong",
+      "discovery_sources_count": 3,
+      "site_name": "Basilica of the Holy House, Loreto",
+      "country": "IT",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:IT:loreto-santa-casa",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0017",
+      "priority": "Strong",
+      "discovery_sources_count": 3,
+      "site_name": "Basilica of the Sacred Heart, Paray-le-Monial",
+      "country": "FR",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+      "verified_live_place_id": null,
+      "review_status": "COLLISION_REVIEW_REQUIRED"
+    },
+    {
+      "candidate_id": "SG-INV-0035",
+      "priority": "Review",
+      "discovery_sources_count": 3,
+      "site_name": "Cathedral of Notre-Dame de Chartres",
+      "country": "FR",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:FR:chartres-notre-dame",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0162",
+      "priority": "Strong",
+      "discovery_sources_count": 3,
+      "site_name": "Chapel of Grace, Altötting",
+      "country": "DE",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:DE:altoetting-gnadenkapelle",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0108",
+      "priority": "Strong",
+      "discovery_sources_count": 3,
+      "site_name": "Sanctuary of Our Lady of El Pilar, Zaragoza",
+      "country": "ES",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0081",
+      "priority": "Strong",
+      "discovery_sources_count": 3,
+      "site_name": "Sanctuary of Saint Michael the Archangel, Monte Sant'Angelo",
+      "country": "IT",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:IT:san-michele-gargano",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0054",
+      "priority": "Strong",
+      "discovery_sources_count": 3,
+      "site_name": "Sanctuary of the Eucharistic Miracle, Lanciano",
+      "country": "IT",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0107",
+      "priority": "Essential",
+      "discovery_sources_count": 2,
+      "site_name": "Royal Monastery of Santa María de Guadalupe, Extremadura",
+      "country": "ES",
+      "current_research_status": "CONFIRMED_EXISTING_PROMOTION",
+      "current_suggested_live_place_id": "place:ES:real-monasterio-santa-maria-guadalupe",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0210",
+      "priority": "Essential",
+      "discovery_sources_count": 2,
+      "site_name": "Divine Mercy Sanctuary, Kraków-Łagiewniki",
+      "country": "PL",
+      "current_research_status": "CONFIRMED_EXISTING_PROMOTION",
+      "current_suggested_live_place_id": "place:PL:divine-mercy-sanctuary-krakow-agiewniki",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0544",
+      "priority": "Essential",
+      "discovery_sources_count": 2,
+      "site_name": "Church of the Holy Sepulchre, Jerusalem",
+      "country": "IL",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": "place:PS:holy-sepulchre-jerusalem",
+      "review_status": "VERIFIED_LIVE_ID_RESEARCH_LEDGER_NEEDS_CORRECTION"
+    },
+    {
+      "candidate_id": "SG-INV-0583",
+      "priority": "Essential",
+      "discovery_sources_count": 2,
+      "site_name": "Basilica of Our Lady of Good Health, Velankanni",
+      "country": "IN",
+      "current_research_status": "CONFIRMED_EXISTING_PROMOTION",
+      "current_suggested_live_place_id": "place:IN:basilica-of-our-lady-of-good-health-vailankanni",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0372",
+      "priority": "Essential",
+      "discovery_sources_count": 2,
+      "site_name": "Saint Peter's Basilica and Tomb of the Apostle Peter",
+      "country": "VA",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": "place:VA:saint-peter-vatican",
+      "review_status": "VERIFIED_LIVE_ID_RESEARCH_LEDGER_NEEDS_CORRECTION"
+    },
+    {
+      "candidate_id": "SG-INV-0710",
+      "priority": "Essential",
+      "discovery_sources_count": 2,
+      "site_name": "Uganda Martyrs' Catholic Shrine, Namugongo",
+      "country": "UG",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:UG:namugongo-martyrs",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0708",
+      "priority": "Essential",
+      "discovery_sources_count": 2,
+      "site_name": "Sanctuary of Our Lady of Kibeho",
+      "country": "RW",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:RW:sanctuaire-kibeho",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0566",
+      "priority": "Essential",
+      "discovery_sources_count": 2,
+      "site_name": "Church of the Nativity, Bethlehem",
+      "country": "PS",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": "place:PS:nativity-bethlehem",
+      "review_status": "VERIFIED_LIVE_ID_RESEARCH_LEDGER_NEEDS_CORRECTION"
+    },
+    {
+      "candidate_id": "SG-INV-0038",
+      "priority": "Review",
+      "discovery_sources_count": 2,
+      "site_name": "Abbey church of Sainte-Foy, Conques",
+      "country": "FR",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0270",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Abbey of Einsiedeln",
+      "country": "CH",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:CH:einsiedeln-monastery",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0589",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Basilica of Bom Jesus, Old Goa",
+      "country": "IN",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:IN:basilica-bom-jesus-old-goa",
+      "verified_live_place_id": null,
+      "review_status": "COLLISION_REVIEW_REQUIRED"
+    },
+    {
+      "candidate_id": "SG-INV-0163",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Basilica of Our Lady of Kevelaer",
+      "country": "DE",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:DE:kevelaer-gnadenkapelle",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0633",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Basilica of Our Lady of Manaoag",
+      "country": "PH",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0450",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Basilica of Our Lady of Suyapa, Tegucigalpa",
+      "country": "HN",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0457",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Basilica of Our Lady of the Angels, Cartago",
+      "country": "CR",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0427",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Basilica of Our Lady of Zapopan",
+      "country": "MX",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:MX:basilica-zapopan",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0018",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Basilica of Sacré-Cœur, Montmartre",
+      "country": "FR",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+      "verified_live_place_id": null,
+      "review_status": "COLLISION_REVIEW_REQUIRED"
+    },
+    {
+      "candidate_id": "SG-INV-0675",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Basilica of Saint Anne, Bukit Mertajam",
+      "country": "MY",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0083",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Basilica of Saint Anthony, Padua",
+      "country": "IT",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0086",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Basilica of Saint Margaret, Cortona",
+      "country": "IT",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0085",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Basilica of Saint Rita, Cascia",
+      "country": "IT",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:IT:basilica-santa-rita-cascia",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0024",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Basilica of Saint Thérèse, Lisieux",
+      "country": "FR",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:FR:basilique-sainte-therese-lisieux",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0282",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Basilica of the Assumption, Velehrad",
+      "country": "CZ",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0444",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Basilica of the Black Christ of Esquipulas",
+      "country": "GT",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0176",
+      "priority": "Review",
+      "discovery_sources_count": 2,
+      "site_name": "Basilica of the Fourteen Holy Helpers, Vierzehnheiligen",
+      "country": "DE",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0254",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Canterbury Cathedral and Shrine of Saint Thomas Becket",
+      "country": "GB",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0034",
+      "priority": "Review",
+      "discovery_sources_count": 2,
+      "site_name": "Cathedral of Notre-Dame de Paris",
+      "country": "FR",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:FR:notre-dame-paris",
+      "verified_live_place_id": null,
+      "review_status": "COLLISION_REVIEW_REQUIRED"
+    },
+    {
+      "candidate_id": "SG-INV-0056",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Cathedral of Orvieto",
+      "country": "IT",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0550",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Church of All Nations, Gethsemane",
+      "country": "IL",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0546",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Church of the Transfiguration, Mount Tabor",
+      "country": "IL",
+      "current_research_status": "CONFIRMED_EXISTING_PROMOTION",
+      "current_suggested_live_place_id": "place:IL:basilica-of-the-transfiguration-mount-tabor",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0237",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Croagh Patrick",
+      "country": "IE",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": "place:IE:croagh-patrick-murrisk-pilgrimage-base",
+      "review_status": "VERIFIED_LIVE_ID_RESEARCH_LEDGER_NEEDS_CORRECTION"
+    },
+    {
+      "candidate_id": "SG-INV-0255",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Durham Cathedral and Shrine of Saint Cuthbert",
+      "country": "GB",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0301",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Gaboltov Marian Shrine",
+      "country": "SK",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0361",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "House of the Virgin Mary, Ephesus",
+      "country": "TR",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0296",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Marian Sanctuary of Levoča",
+      "country": "SK",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0238",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Saint Patrick's Purgatory, Lough Derg",
+      "country": "IE",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:IE:lough-derg-station-island",
+      "verified_live_place_id": null,
+      "review_status": "COLLISION_REVIEW_REQUIRED"
+    },
+    {
+      "candidate_id": "SG-INV-0253",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Saint Winefride's Well, Holywell",
+      "country": "GB",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:GB:holywell-st-winefride",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0155",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Sanctuary of Blessed Alexandrina, Balasar",
+      "country": "PT",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0320",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Sanctuary of Máriapócs",
+      "country": "HU",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0220",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Sanctuary of Our Lady of Banneux",
+      "country": "BE",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:BE:banneux",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0221",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Sanctuary of Our Lady of Beauraing",
+      "country": "BE",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:BE:beauraing",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0110",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Sanctuary of Our Lady of Covadonga",
+      "country": "ES",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0203",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Sanctuary of Our Lady of Kalwaria Zebrzydowska",
+      "country": "PL",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:PL:kalwaria-zebrzydowska",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0005",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Sanctuary of Our Lady of Pellevoisin",
+      "country": "FR",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:FR:pellevoisin",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0003",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Sanctuary of Our Lady of Pontmain",
+      "country": "FR",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:FR:pontmain",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0006",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Sanctuary of Our Lady of Rocamadour",
+      "country": "FR",
+      "current_research_status": "CONFIRMED_EXISTING_PROMOTION",
+      "current_suggested_live_place_id": "place:FR:sanctuary-of-our-lady-of-rocamadour",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0332",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Sanctuary of Our Lady of Šiluva",
+      "country": "LT",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:LT:siluva-apparition-chapel",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0205",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Sanctuary of Our Lady of Wambierzyce",
+      "country": "PL",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0215",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Sanctuary of Saint Maximilian Kolbe, Niepokalanów",
+      "country": "PL",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0279",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Sanctuary of Svatá Hora, Příbram",
+      "country": "CZ",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:CZ:svata-hora-pribram",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0334",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Sanctuary of Žemaičių Kalvarija",
+      "country": "LT",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0615",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Shrine of Our Lady of Akita",
+      "country": "JP",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:JP:our-lady-akita-convent",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0201",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Shrine of Our Lady of Święta Lipka",
+      "country": "PL",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0413",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Shrine of Our Lady of the Cape, Cap-de-la-Madeleine",
+      "country": "CA",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:CA:notre-dame-du-cap",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0007",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Shrine of Our Lady of the Miraculous Medal (Rue du Bac)",
+      "country": "FR",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:FR:rue-du-bac",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0213",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Shrine of Saint Anne, Góra Świętej Anny",
+      "country": "PL",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0152",
+      "priority": "Strong",
+      "discovery_sources_count": 2,
+      "site_name": "Shrine of the Holy Eucharistic Miracle, Santarém",
+      "country": "PT",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0382",
+      "priority": "Essential",
+      "discovery_sources_count": 1,
+      "site_name": "National Shrine of Our Lady of Czestochowa, Doylestown",
+      "country": "US",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:US:czestochowa-doylestown",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0209",
+      "priority": "Essential",
+      "discovery_sources_count": 1,
+      "site_name": "Sanctuary of Our Lady of Fatima, Zakopane",
+      "country": "PL",
+      "current_research_status": "CONFIRMED_EXISTING_PROMOTION",
+      "current_suggested_live_place_id": "place:PL:national-shrine-of-our-lady-of-fatima-zakopane-krzeptowki",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0376",
+      "priority": "Essential",
+      "discovery_sources_count": 1,
+      "site_name": "Shrine of Our Lady of Guadalupe, La Crosse",
+      "country": "US",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:US:guadalupe-shrine-la-crosse",
+      "verified_live_place_id": null,
+      "review_status": "COLLISION_REVIEW_REQUIRED"
+    },
+    {
+      "candidate_id": "SG-INV-0560",
+      "priority": "Essential",
+      "discovery_sources_count": 1,
+      "site_name": "Church of Saint Peter, Capernaum",
+      "country": "IL",
+      "current_research_status": "CONFIRMED_EXISTING_PROMOTION",
+      "current_suggested_live_place_id": "place:IL:capernaum-saint-peter-memorial",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0314",
+      "priority": "Essential",
+      "discovery_sources_count": 1,
+      "site_name": "National Shrine of Saint Joseph, Karlovac",
+      "country": "HR",
+      "current_research_status": "CONFIRMED_EXISTING_PROMOTION",
+      "current_suggested_live_place_id": "place:HR:national-shrine-of-saint-joseph-karlovac",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0374",
+      "priority": "Essential",
+      "discovery_sources_count": 1,
+      "site_name": "Basilica of the National Shrine of the Immaculate Conception, Washington DC",
+      "country": "US",
+      "current_research_status": "CONFIRMED_EXISTING_PROMOTION",
+      "current_suggested_live_place_id": "place:US:basilica-of-the-national-shrine-of-the-immaculate-conception-washington",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0668",
+      "priority": "Essential",
+      "discovery_sources_count": 1,
+      "site_name": "National Shrine of Our Lady of La Vang",
+      "country": "VN",
+      "current_research_status": "CONFIRMED_EXISTING_PROMOTION",
+      "current_suggested_live_place_id": "place:VN:our-lady-la-vang-national-shrine",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0309",
+      "priority": "Essential",
+      "discovery_sources_count": 1,
+      "site_name": "National Shrine of Our Lady of Bistrica, Marija Bistrica",
+      "country": "HR",
+      "current_research_status": "CONFIRMED_EXISTING_PROMOTION",
+      "current_suggested_live_place_id": "place:HR:national-shrine-of-our-lady-of-marija-bistrica",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0476",
+      "priority": "Essential",
+      "discovery_sources_count": 1,
+      "site_name": "National Shrine of Our Lady of Aparecida",
+      "country": "BR",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:BR:aparecida-national-shrine",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0489",
+      "priority": "Essential",
+      "discovery_sources_count": 1,
+      "site_name": "Basilica of Our Lady of Luján",
+      "country": "AR",
+      "current_research_status": "CONFIRMED_EXISTING_PROMOTION",
+      "current_suggested_live_place_id": "place:AR:basilica-of-our-lady-of-lujan",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0338",
+      "priority": "Essential",
+      "discovery_sources_count": 1,
+      "site_name": "Divine Mercy Sanctuary, Vilnius",
+      "country": "LT",
+      "current_research_status": "CONFIRMED_EXISTING_PROMOTION",
+      "current_suggested_live_place_id": "place:LT:divine-mercy-sanctuary-vilnius",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0650",
+      "priority": "Strong",
+      "discovery_sources_count": 1,
+      "site_name": "Basilica Minore del Santo Niño, Cebu",
+      "country": "PH",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0610",
+      "priority": "Strong",
+      "discovery_sources_count": 1,
+      "site_name": "Basilica of Our Lady Help of Christians, Sheshan",
+      "country": "CN",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0077",
+      "priority": "Strong",
+      "discovery_sources_count": 1,
+      "site_name": "Basilica of Saint Clare, Assisi",
+      "country": "IT",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:IT:santa-chiara-assisi",
+      "verified_live_place_id": null,
+      "review_status": "COLLISION_REVIEW_REQUIRED"
+    },
+    {
+      "candidate_id": "SG-INV-0340",
+      "priority": "Strong",
+      "discovery_sources_count": 1,
+      "site_name": "Basilica of the Assumption, Aglona",
+      "country": "LV",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0130",
+      "priority": "Strong",
+      "discovery_sources_count": 1,
+      "site_name": "Basilica of the Vera Cruz, Caravaca de la Cruz",
+      "country": "ES",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0169",
+      "priority": "Strong",
+      "discovery_sources_count": 1,
+      "site_name": "Cologne Cathedral and Shrine of the Three Kings",
+      "country": "DE",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0379",
+      "priority": "Strong",
+      "discovery_sources_count": 1,
+      "site_name": "National Shrine of Our Lady of Good Help, Champion",
+      "country": "US",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:US:champion-shrine",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0202",
+      "priority": "Strong",
+      "discovery_sources_count": 1,
+      "site_name": "Sanctuary of Our Lady of Gietrzwałd",
+      "country": "PL",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0574",
+      "priority": "Strong",
+      "discovery_sources_count": 1,
+      "site_name": "Shrine of Our Lady of Lebanon, Harissa",
+      "country": "LB",
+      "current_research_status": "CONFIRMED_EXISTING_PROMOTION",
+      "current_suggested_live_place_id": "place:LB:shrine-of-our-lady-of-lebanon-harissa",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0381",
+      "priority": "Essential",
+      "discovery_sources_count": 0,
+      "site_name": "National Shrine of Our Lady of Fatima, Lewiston",
+      "country": "US",
+      "current_research_status": "CONFIRMED_EXISTING_PROMOTION",
+      "current_suggested_live_place_id": "place:US:basilica-of-the-national-shrine-of-our-lady-of-fatima-lewiston",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0659",
+      "priority": "Essential",
+      "discovery_sources_count": 0,
+      "site_name": "National Shrine of Saint Joseph, Mandaue",
+      "country": "PH",
+      "current_research_status": "CONFIRMED_EXISTING_PROMOTION",
+      "current_suggested_live_place_id": "place:PH:national-shrine-of-saint-joseph-mandaue",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0565",
+      "priority": "Essential",
+      "discovery_sources_count": 0,
+      "site_name": "Church of Saint Peter, Jaffa",
+      "country": "IL",
+      "current_research_status": "CONFIRMED_EXISTING_PROMOTION",
+      "current_suggested_live_place_id": "place:IL:church-of-saint-peter-jaffa",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0377",
+      "priority": "Essential",
+      "discovery_sources_count": 0,
+      "site_name": "National Shrine of Our Lady of Guadalupe, Allentown",
+      "country": "US",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:US:guadalupe-shrine-la-crosse",
+      "verified_live_place_id": null,
+      "review_status": "COLLISION_REVIEW_REQUIRED"
+    },
+    {
+      "candidate_id": "SG-INV-0655",
+      "priority": "Essential",
+      "discovery_sources_count": 0,
+      "site_name": "International Shrine of Saint Pio of Pietrelcina, Santo Tomas Batangas",
+      "country": "PH",
+      "current_research_status": "CONFIRMED_EXISTING_PROMOTION",
+      "current_suggested_live_place_id": "place:PH:padre-pio-shrine-santo-tomas-batangas",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0551",
+      "priority": "Essential",
+      "discovery_sources_count": 0,
+      "site_name": "Church of Saint Peter in Gallicantu, Jerusalem",
+      "country": "IL",
+      "current_research_status": "CONFIRMED_EXISTING_PROMOTION",
+      "current_suggested_live_place_id": "place:IL:church-of-saint-peter-in-gallicantu-jerusalem",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0648",
+      "priority": "Essential",
+      "discovery_sources_count": 0,
+      "site_name": "National Shrine of Our Lady of Guadalupe, Makati",
+      "country": "PH",
+      "current_research_status": "CONFIRMED_EXISTING_PROMOTION",
+      "current_suggested_live_place_id": "place:PH:national-shrine-of-our-lady-of-guadalupe-makati",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0548",
+      "priority": "Essential",
+      "discovery_sources_count": 0,
+      "site_name": "Church of the Primacy of Saint Peter, Tabgha",
+      "country": "IL",
+      "current_research_status": "CONFIRMED_EXISTING_PROMOTION",
+      "current_suggested_live_place_id": "place:IL:church-of-the-primacy-of-saint-peter-tabgha",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0639",
+      "priority": "Essential",
+      "discovery_sources_count": 0,
+      "site_name": "National Shrine of Our Lady of Fatima, Valenzuela",
+      "country": "PH",
+      "current_research_status": "CONFIRMED_EXISTING_PROMOTION",
+      "current_suggested_live_place_id": "place:PH:national-shrine-of-our-lady-of-fatima-valenzuela",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0673",
+      "priority": "Essential",
+      "discovery_sources_count": 0,
+      "site_name": "Shrine of the Vietnamese Martyrs, La Vang",
+      "country": "VN",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0681",
+      "priority": "Essential",
+      "discovery_sources_count": 0,
+      "site_name": "Church of the Nativity of the Blessed Virgin Mary, Singapore",
+      "country": "SG",
+      "current_research_status": "CONFIRMED_EXISTING_PROMOTION",
+      "current_suggested_live_place_id": "place:SG:nativity-blessed-virgin-mary-hougang",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0431",
+      "priority": "Essential",
+      "discovery_sources_count": 0,
+      "site_name": "Sanctuary of Our Lady of Guadalupe, Zacatecas",
+      "country": "MX",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:MX:basilica-guadalupe-mexico-city",
+      "verified_live_place_id": null,
+      "review_status": "COLLISION_REVIEW_REQUIRED"
+    },
+    {
+      "candidate_id": "SG-INV-0706",
+      "priority": "Essential",
+      "discovery_sources_count": 0,
+      "site_name": "Notre-Dame de Lourdes Church, Casablanca",
+      "country": "MA",
+      "current_research_status": "CONFIRMED_EXISTING_PROMOTION",
+      "current_suggested_live_place_id": "place:MA:eglise-notre-dame-de-lourdes-casablanca",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0586",
+      "priority": "Essential",
+      "discovery_sources_count": 0,
+      "site_name": "Shrine of Our Lady of Lourdes, Poondi",
+      "country": "IN",
+      "current_research_status": "CONFIRMED_EXISTING_PROMOTION",
+      "current_suggested_live_place_id": "place:IN:basilica-of-our-lady-of-lourdes-poondi",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0248",
+      "priority": "Essential",
+      "discovery_sources_count": 0,
+      "site_name": "Anglican Shrine of Our Lady of Walsingham",
+      "country": "GB",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:GB:walsingham-catholic-shrine",
+      "verified_live_place_id": null,
+      "review_status": "COLLISION_REVIEW_REQUIRED"
+    },
+    {
+      "candidate_id": "SG-INV-0415",
+      "priority": "Essential",
+      "discovery_sources_count": 0,
+      "site_name": "Shrine of Our Lady of Fatima, Quebec",
+      "country": "CA",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0482",
+      "priority": "Essential",
+      "discovery_sources_count": 0,
+      "site_name": "Sanctuary of Our Lady of Fátima, Fortaleza",
+      "country": "BR",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0494",
+      "priority": "Essential",
+      "discovery_sources_count": 0,
+      "site_name": "Sanctuary of Our Lady of Lourdes, Alta Gracia",
+      "country": "AR",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0637",
+      "priority": "Essential",
+      "discovery_sources_count": 0,
+      "site_name": "National Shrine of Our Lady of Lourdes, Quezon City",
+      "country": "PH",
+      "current_research_status": "CONFIRMED_EXISTING_PROMOTION",
+      "current_suggested_live_place_id": "place:PH:national-shrine-of-our-lady-of-lourdes-quezon-city",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0680",
+      "priority": "Essential",
+      "discovery_sources_count": 0,
+      "site_name": "Church of Our Lady of Lourdes, Singapore",
+      "country": "SG",
+      "current_research_status": "CONFIRMED_EXISTING_PROMOTION",
+      "current_suggested_live_place_id": "place:SG:church-our-lady-of-lourdes-ophir",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0705",
+      "priority": "Essential",
+      "discovery_sources_count": 0,
+      "site_name": "Saint Peter's Cathedral, Rabat",
+      "country": "MA",
+      "current_research_status": "CONFIRMED_EXISTING_PROMOTION",
+      "current_suggested_live_place_id": "place:MA:cathedrale-saint-pierre-rabat",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0247",
+      "priority": "Essential",
+      "discovery_sources_count": 0,
+      "site_name": "National Shrine of Our Lady of Walsingham (Catholic)",
+      "country": "GB",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:GB:walsingham-catholic-shrine",
+      "verified_live_place_id": null,
+      "review_status": "COLLISION_REVIEW_REQUIRED"
+    },
+    {
+      "candidate_id": "SG-INV-0414",
+      "priority": "Essential",
+      "discovery_sources_count": 0,
+      "site_name": "Sanctuary of Our Lady of Lourdes, Rigaud",
+      "country": "CA",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0532",
+      "priority": "Essential",
+      "discovery_sources_count": 0,
+      "site_name": "Shrine of Our Lady of Lourdes, Montevideo",
+      "country": "UY",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0474",
+      "priority": "Essential",
+      "discovery_sources_count": 0,
+      "site_name": "Shrine of Our Lady of Fatima, Laventille",
+      "country": "TT",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0683",
+      "priority": "Essential",
+      "discovery_sources_count": 0,
+      "site_name": "Shrine of Our Lady of Fátima, Dili",
+      "country": "TL",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0609",
+      "priority": "Essential",
+      "discovery_sources_count": 0,
+      "site_name": "Shrine of Our Lady of Fatima, Karachi",
+      "country": "PK",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0746",
+      "priority": "Essential",
+      "discovery_sources_count": 0,
+      "site_name": "Saint Peter Chanel Memorial, Russell",
+      "country": "NZ",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:NZ:st-peter-chanel-russell",
+      "verified_live_place_id": null,
+      "review_status": "RESEARCH_LINK_REQUIRES_PHYSICAL_IDENTITY_REVIEW"
+    },
+    {
+      "candidate_id": "SG-INV-0456",
+      "priority": "Essential",
+      "discovery_sources_count": 0,
+      "site_name": "Shrine of Our Lady of Guadalupe, Matagalpa",
+      "country": "NI",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0721",
+      "priority": "Essential",
+      "discovery_sources_count": 0,
+      "site_name": "Sanctuary of Our Lady of Fatima, Namaacha",
+      "country": "MZ",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0726",
+      "priority": "Essential",
+      "discovery_sources_count": 0,
+      "site_name": "Saint Peter's Cathedral Basilica, Kumasi",
+      "country": "GH",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0459",
+      "priority": "Essential",
+      "discovery_sources_count": 0,
+      "site_name": "Shrine of Our Lady of Lourdes, San José",
+      "country": "CR",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0612",
+      "priority": "Essential",
+      "discovery_sources_count": 0,
+      "site_name": "Our Lady of Lourdes Shrine, Tianjin",
+      "country": "CN",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0449",
+      "priority": "Essential",
+      "discovery_sources_count": 0,
+      "site_name": "Shrine of Our Lady of Guadalupe, Belmopan",
+      "country": "BZ",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0729",
+      "priority": "Strong",
+      "discovery_sources_count": 0,
+      "site_name": "Basilica of Saint Anthony of Padua, Mugera",
+      "country": "BI",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0078",
+      "priority": "Strong",
+      "discovery_sources_count": 0,
+      "site_name": "Basilica of Saint Mary of the Angels, Assisi",
+      "country": "IT",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:IT:santa-chiara-assisi",
+      "verified_live_place_id": null,
+      "review_status": "COLLISION_REVIEW_REQUIRED"
+    },
+    {
+      "candidate_id": "SG-INV-0448",
+      "priority": "Strong",
+      "discovery_sources_count": 0,
+      "site_name": "Church of Saint Francis the Great, Antigua Guatemala",
+      "country": "GT",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0580",
+      "priority": "Strong",
+      "discovery_sources_count": 0,
+      "site_name": "Monastery of Saint Maron, Annaya",
+      "country": "LB",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:LB:monastery-saint-maron-annaya",
+      "verified_live_place_id": null,
+      "review_status": "COLLISION_REVIEW_REQUIRED"
+    },
+    {
+      "candidate_id": "SG-INV-0658",
+      "priority": "Strong",
+      "discovery_sources_count": 0,
+      "site_name": "National Shrine of Saint Anthony of Padua, Pila",
+      "country": "PH",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0502",
+      "priority": "Strong",
+      "discovery_sources_count": 0,
+      "site_name": "Sanctuary of Saint Alberto Hurtado, Santiago",
+      "country": "CL",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0168",
+      "priority": "Strong",
+      "discovery_sources_count": 0,
+      "site_name": "Shrine of Our Lady in the Kupfergasse, Cologne",
+      "country": "DE",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    },
+    {
+      "candidate_id": "SG-INV-0577",
+      "priority": "Strong",
+      "discovery_sources_count": 0,
+      "site_name": "Shrine of Saint Charbel, Annaya",
+      "country": "LB",
+      "current_research_status": "POTENTIAL_EXISTING_ID_REVIEW",
+      "current_suggested_live_place_id": "place:LB:monastery-saint-maron-annaya",
+      "verified_live_place_id": null,
+      "review_status": "COLLISION_REVIEW_REQUIRED"
+    },
+    {
+      "candidate_id": "SG-INV-0594",
+      "priority": "Strong",
+      "discovery_sources_count": 0,
+      "site_name": "Shrine of Saint Francis Xavier, Goa",
+      "country": "IN",
+      "current_research_status": "PHYSICAL_IDENTITY_SOURCE_AND_PIN_REVIEW",
+      "current_suggested_live_place_id": null,
+      "verified_live_place_id": null,
+      "review_status": "NO_VERIFIED_LIVE_ID_IN_RESEARCH_LEDGER"
+    }
+  ]
+}

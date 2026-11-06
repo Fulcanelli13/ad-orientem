@@ -1,0 +1,408 @@
+{
+  "schema": "AO_EXPLORE_SACRED_GEOGRAPHY_UNATTENDED_RESEARCH_B05_V1",
+  "research_date": "2026-10-26",
+  "publication": "RESEARCH_ONLY_NOT_PROMOTED",
+  "repository": "Fulcanelli13/ad-orientem",
+  "target_branch": "research/major-sacred-sites-coverage-reconciliation-20261015",
+  "reconciliation": {
+    "current_main_place_count": 498,
+    "current_main_registry_blob_sha": "59bdb90c14e39d916c6ed31df7102f6c22465982",
+    "current_main_path": "data/geography/seed-registry.v1.json",
+    "prior_b04_main_place_count": 414,
+    "delta_since_b04_baseline": 84,
+    "latest_research_branch_commit_before_this_pass": "1851e89bdb97edc87ad04f6f53086fe860a2a54a",
+    "latest_research_batch": "B04",
+    "historical_p32_first200_source_excerpt_coverage": 168,
+    "historical_p32_first200_remaining_without_excerpt": 32,
+    "philippines_checkpoint": "20 verified, 4 provisional, 1 held, 1 Quiapo enrichment; not independently recovered or added",
+    "note": "Main's 498 physical Places are current; P32 source-coverage and 750 worldwide leads are historical, not recalculated current coverage. The 84-place difference does not measure this research pass."
+  },
+  "counts": {
+    "new_distinct_candidate_dossiers": 9,
+    "source_supported_research_dossiers": 7,
+    "provisional_dossiers": 2,
+    "verified_history_but_current_access_held_subset": 1,
+    "canonical_duplicates_reconciled": 7,
+    "new_canonical_places": 0,
+    "coordinates_added": 0,
+    "walking_routes_added": 0,
+    "published": 0
+  },
+  "records": [
+    {
+      "candidate_id": "SG-INV-0349",
+      "name": "National Shrine of Our Lady of Letnica / Church of the Assumption",
+      "country": "XK",
+      "status": "SOURCE_VERIFIED_DIOCESAN_RESEARCH",
+      "canonical_place_id": null,
+      "summary_en": "The Roman Catholic Church of the Assumption in Letnicë, Viti municipality, is identified by the Diocese of Prizren–Prishtina as Kosovo's national Marian shrine. The diocese records its parish history from the early seventeenth century, veneration of Our Lady of Letnica (Zoja Cërnagore), a May pilgrimage and a novena on 6–14 August before the Assumption pilgrimage on 15 August. The diocese also associates Mother Teresa's vocational discernment with a 1928 visit; this remains an attributed diocesan historical account, not independently proven private testimony. Pilgrim liturgy and pastoral care are active.",
+      "summary_fr": "L'église catholique de l'Assomption à Letnicë, commune de Viti, est présentée par le diocèse de Prizren–Prishtina comme sanctuaire marial national du Kosovo. Le diocèse retrace l'histoire paroissiale depuis le début du XVIIe siècle et décrit la vénération de Notre-Dame de Letnica (Zoja Cërnagore), un pèlerinage en mai, puis une neuvaine du 6 au 14 août précédant la fête de l'Assomption, le 15 août. Il associe aussi le discernement de la vocation de Mère Teresa à une visite en 1928 : cette donnée reste un récit historique diocésain, non un témoignage personnel vérifié. La vie liturgique et l'accueil pastoral sont attestés.",
+      "evidence": [
+        {
+          "url": "https://www.kishakatolike.org/al/deanery/famullia-t-ngriturit-e-zojs-letnic",
+          "issuer": "Diocese of Prizren–Prishtina",
+          "tier": "DIOCESAN_PRIMARY",
+          "supports": "National shrine, dedication, image, May and August pilgrimage, history and pastoral care"
+        },
+        {
+          "url": "https://www.eeas.europa.eu/delegations/kosovo/following-mother-teresas-footsteps-how-eu-supported-cultural-tourism-route-reconnecting-shared_en",
+          "issuer": "European External Action Service",
+          "tier": "OFFICIAL_CIVIL",
+          "supports": "July 2026 route rehabilitation and continuing Assumption pilgrimage"
+        }
+      ],
+      "holds": [
+        "No exact OSM church-way/parcel identity certified",
+        "The diocese's account of Mother Teresa's 1928 decision is attributed rather than independently attested"
+      ],
+      "relics": "No bodily relics claimed",
+      "visitor": "Regular worship and pilgrimages; exact daily hours not established"
+    },
+    {
+      "candidate_id": "SG-INV-0604",
+      "name": "Saint Anne's Shrine, Kattimahana",
+      "country": "LK",
+      "status": "PROVISIONAL_JURISDICTION_CONFLICT",
+      "canonical_place_id": null,
+      "summary_en": "A Sri Lankan government report identifies St Anne's Church Shrine at Kattimahana as a Catholic pilgrimage destination with an annual feast programme in August. GCatholic separately lists a national shrine in Kattimahana, but assigns it to Chilaw, whereas the government report groups it under Kurunegala. Kattimahana is a distinct physical destination from the already registered St Anne's shrine at Talawila. The precise current ecclesiastical jurisdiction and national-shrine decree are not verified.",
+      "summary_fr": "Un rapport du gouvernement sri-lankais identifie l'église-sanctuaire Sainte-Anne de Kattimahana comme lieu de pèlerinage catholique avec des célébrations annuelles en août. GCatholic la présente également comme sanctuaire national, mais la rattache à Chilaw, tandis que le rapport officiel la classe sous Kurunegala. Kattimahana est un lieu distinct du sanctuaire Sainte-Anne de Talawila déjà enregistré. La juridiction ecclésiastique actuelle et le décret de sanctuaire national restent à confirmer.",
+      "evidence": [
+        {
+          "url": "https://tourismmin.gov.lk/web/images/annual-reports/Progress_Report_2018.pdf",
+          "issuer": "Sri Lankan Ministry of Tourism / Department of Christian Religious Affairs",
+          "tier": "OFFICIAL_CIVIL",
+          "supports": "2018 annual-feast infrastructure funding: Kattimahana St Anne shrine, August, under Kurunegala"
+        },
+        {
+          "url": "https://gcatholic.org/churches/asia/6505",
+          "issuer": "GCatholic",
+          "tier": "SECONDARY_CATHOLIC_DIRECTORY",
+          "supports": "National shrine title but contradictory Chilaw jurisdiction"
+        }
+      ],
+      "holds": [
+        "Primary diocesan church record and shrine decree required",
+        "Resolve Kurunegala versus Chilaw jurisdiction discrepancy",
+        "Do not conflate with Talawila canonical Place"
+      ],
+      "relics": "Not verified",
+      "visitor": "August feast evidenced historically; current access and Mass timetable unverified"
+    },
+    {
+      "candidate_id": "SG-INV-0575",
+      "name": "Our Lady of Mantara / Our Lady of Awaiting, Maghdouché",
+      "country": "LB",
+      "status": "SOURCE_VERIFIED_MELKITE_COMPLEX_PHYSICAL_HOLD",
+      "canonical_place_id": null,
+      "summary_en": "Our Lady of Mantara in Maghdouché is a Melkite Greek Catholic Marian pilgrimage complex in the archeparchy of Sidon and Deir el-Kamar. The grotto, basilica and statue-topped tower must be treated as distinct physical features within the sanctuary, not three invented Places. The Melkite hierarchy identifies the local parish as the Nativity of the Virgin; an event sponsored by its bishop records a festive Divine Liturgy at the basilica around the September Marian celebrations. The story that Mary waited here while Jesus preached near Sidon is a devotional tradition, not established biblical geography.",
+      "summary_fr": "Notre-Dame de Mantara, à Maghdouché, est un ensemble marial de pèlerinage de l'Église grecque-catholique melkite, dans l'archiéparchie de Saïda et Deir-el-Kamar. La grotte, la basilique et la tour portant une statue sont des éléments matériels distincts du sanctuaire ; ils ne justifient pas trois nouvelles fiches sans vérification. Le patriarcat identifie la paroisse locale sous le vocable de la Nativité de la Vierge ; une célébration patronnée par l'archevêque atteste une divine liturgie festive à la basilique. Le récit selon lequel Marie aurait attendu ici Jésus prêchant près de Sidon relève de la tradition pieuse, non d'une localisation biblique établie.",
+      "evidence": [
+        {
+          "url": "https://www.melkitepat.org/fre/melkite_greek_catholic_church/Archieparchie-de-Saida-et-Deir-el-Kamar-Liban/1000",
+          "issuer": "Melkite Greek Catholic Patriarchate",
+          "tier": "ECCLESIASTICAL_PRIMARY",
+          "supports": "Archeparchy and Maghdouché Nativity of Virgin parish"
+        },
+        {
+          "url": "https://maakmaghdouche.org/mother-of-god-festival/",
+          "issuer": "Maghdouché local festival association",
+          "tier": "LOCAL_ORGANISER",
+          "supports": "Bishop-presided celebration at Mantara basilica around September Nativity feast"
+        },
+        {
+          "url": "https://lebanonchurches.org/basilica-of-our-lady-of-mantara-maghdoucheh",
+          "issuer": "Lebanon Churches",
+          "tier": "HERITAGE_SECONDARY",
+          "supports": "Grotto, tower, basilica and Melkite identity"
+        }
+      ],
+      "holds": [
+        "Determine grotto versus basilica map features before promotion",
+        "Original sanctuary designation and reliable current visitor hours not verified",
+        "1721 rediscovery and Saint Helena accounts are local traditions, not authenticated historical facts"
+      ],
+      "relics": "No relics claimed",
+      "visitor": "Annual Nativity of Mary celebrations supported; current hours not verified"
+    },
+    {
+      "candidate_id": "SG-INV-0461",
+      "name": "San Felipe Church / Black Christ Sanctuary, Portobelo",
+      "country": "PA",
+      "status": "SOURCE_VERIFIED_TEMPORARY_ACCESS_RESTRICTION",
+      "canonical_place_id": null,
+      "summary_en": "San Felipe Church in Portobelo is the Catholic sanctuary of the Black Christ (Jesús Nazareno), honoured in a major local pilgrimage on 21 October. Panama's Ministry of Culture confirms restoration of the church and the separate San Juan de Dios chapel, including structural and heritage works begun in 2025. On 20 October 2026 contemporary reporting stated that San Felipe would remain closed during the 21 October celebration, with Masses outdoors and the image placed before the church. Do not advertise ordinary interior access until reopening is officially confirmed; the chapel and church must not be merged as one building.",
+      "summary_fr": "L'église San Felipe de Portobelo abrite le sanctuaire catholique du Christ Noir (Jésus de Nazareth), objet d'un important pèlerinage local le 21 octobre. Le ministère panaméen de la Culture confirme la restauration de l'église et de la chapelle distincte San Juan de Dios, commencée en 2025. Un reportage du 20 octobre 2026 indique que l'église resterait fermée pour la fête du 21 octobre, les messes ayant lieu en plein air et l'image étant placée devant le temple. Ne pas annoncer l'accès ordinaire à l'intérieur avant confirmation officielle de la réouverture ; ne pas confondre la chapelle et l'église.",
+      "evidence": [
+        {
+          "url": "https://micultura.gob.pa/2025/08/03/entregan-orden-de-proceder-para-restaurar-la-iglesia-san-felipe-en-portobelo/",
+          "issuer": "Panama Ministry of Culture",
+          "tier": "OFFICIAL_CIVIL",
+          "supports": "Exact San Felipe and San Juan de Dios physical identities, restoration project initiated August 2025"
+        },
+        {
+          "url": "https://micultura.gob.pa/2026/02/23/autoridades-inspeccionan-los-avances-de-la-restauracion-de-la-iglesia-de-portobelo/",
+          "issuer": "Panama Ministry of Culture",
+          "tier": "OFFICIAL_CIVIL",
+          "supports": "February 2026 restoration progress, distinct chapel and church"
+        },
+        {
+          "url": "https://www.prensa.com/sociedad/cristo-negro-de-portobelo-fe-y-tradicion-en-medio-de-la-restauracion/",
+          "issuer": "La Prensa Panamá",
+          "tier": "RECENT_LOCAL_REPORTING",
+          "supports": "20 October 2026 closure for feast, outdoor Mass and placement of image"
+        },
+        {
+          "url": "https://www.tvn-2.com/nacionales/portobelo-inicia-tiempo-oficial-fiesta_1_2009286.html",
+          "issuer": "TVN Panamá",
+          "tier": "LOCAL_REPORTING",
+          "supports": "21 October devotion, Mass, confession, novena and procession in earlier year"
+        }
+      ],
+      "holds": [
+        "Recheck church reopening and access before visitor publication",
+        "Separate San Juan de Dios chapel from San Felipe sanctuary",
+        "Origins of image in folklore must not be presented as verified history"
+      ],
+      "relics": "Venerated Christ statue, not a bodily relic",
+      "visitor": "Interior closed for October 2026 feast; worship held outdoors; 2027 reopening only a forecast"
+    },
+    {
+      "candidate_id": "SG-INV-0464",
+      "name": "National Shrine of Saint Lazarus, El Rincón",
+      "country": "CU",
+      "status": "SOURCE_VERIFIED_CATHOLIC_PRIMARY",
+      "canonical_place_id": null,
+      "summary_en": "The National Shrine of Saint Lazarus at El Rincón outside Havana is an active Catholic pilgrimage church. The Cuban Church documented the 11 February 2025 Jubilee of the Sick, celebrated by Cardinal Juan de la Caridad García, and announced blessings for the sick on the seventeenth of each month. The principal popular pilgrimage is on 17 December. The Catholic devotion to Saint Lazarus must be distinguished from the related Afro-Cuban religious identification with Babalú Ayé; neither establishes a claim about bodily relics.",
+      "summary_fr": "Le sanctuaire national Saint-Lazare d'El Rincón, près de La Havane, est une église catholique de pèlerinage en activité. L'Église de Cuba y rapporte le Jubilé des malades du 11 février 2025, célébré par le cardinal Juan de la Caridad García, et l'annonce de bénédictions des malades le 17 de chaque mois. Le grand pèlerinage populaire a lieu le 17 décembre. Il faut distinguer la dévotion catholique à saint Lazare de son association dans la religiosité afro-cubaine avec Babalú Ayé ; aucune relique corporelle n'est attestée.",
+      "evidence": [
+        {
+          "url": "https://iglesiacubana.org/jubileos/jubileo-de-los-enfermos-en-santuario-de-san-lazaro/",
+          "issuer": "Catholic Church in Cuba / Archdiocese of Havana",
+          "tier": "ECCLESIASTICAL_PRIMARY",
+          "supports": "National shrine, 11 February 2025 Eucharist, monthly blessing of sick"
+        },
+        {
+          "url": "https://visitcuba.com/es/destinos/santuario-de-san-lazaro/",
+          "issuer": "Visit Cuba tourism portal",
+          "tier": "VISITOR_CONTEXT",
+          "supports": "El Rincón visitor pilgrimage and 17 December celebration"
+        }
+      ],
+      "holds": [
+        "Exact sanctuary church OSM way not matched",
+        "Current opening hours not independently verified",
+        "Avoid conflating Catholic saint with Babalú Ayé or asserting miracles"
+      ],
+      "relics": "No relics verified",
+      "visitor": "Active Catholic pilgrimages, monthly sick blessings announced in 2025; current schedule to reconfirm"
+    },
+    {
+      "candidate_id": "SG-INV-0367",
+      "name": "Kirkkokari / Saint Henry's Island, Köyliö",
+      "country": "FI",
+      "status": "SOURCE_VERIFIED_CATHOLIC_PILGRIMAGE_HISTORICAL_CAUTION",
+      "canonical_place_id": null,
+      "summary_en": "Kirkkokari, the small island in Lake Köyliö associated with Saint Henry, remains a destination of Catholic pilgrimage in Finland. Helsinki's Saint Henry Cathedral parish announced a four-day pilgrimage from Turku culminating in Mass on Kirkkokari on 14 June 2026, with an additional bus pilgrimage. The traditional account of Henry's martyrdom by Lalli on the frozen lake is presented by Finnish Catholic sources as tradition rather than archaeologically demonstrated fact. This is an island pilgrimage site, not an operating parish church; boat access and schedules cannot be inferred.",
+      "summary_fr": "Kirkkokari, petite île du lac Köyliö associée à saint Henri, demeure un lieu de pèlerinage catholique en Finlande. La paroisse cathédrale Saint-Henri d'Helsinki a annoncé en 2026 un pèlerinage de quatre jours depuis Turku, culminant par une messe sur l'île le 14 juin, ainsi qu'un déplacement en autocar. Le récit du martyre d'Henri par Lalli sur le lac gelé est présenté par les sources catholiques finlandaises comme une tradition, non comme un fait archéologiquement démontré. Il s'agit d'un lieu de pèlerinage insulaire, non d'une église paroissiale en activité ; aucun accès en bateau ni horaire régulier n'est déduit.",
+      "evidence": [
+        {
+          "url": "https://henrik.katolinen.fi/kirkolliset-ilmoitukset-viikko-23-2/",
+          "issuer": "St Henry Catholic Cathedral Parish, Helsinki",
+          "tier": "PARISH_PRIMARY",
+          "supports": "2026 June 11–14 pilgrimage and Mass on Kirkkokari"
+        },
+        {
+          "url": "https://risti.katolinen.fi/12-9-pyhan-henrikin-katedraalin-vihkiminen-juhla/",
+          "issuer": "Holy Cross Catholic Parish, Finland",
+          "tier": "PARISH_PRIMARY",
+          "supports": "St Henry martyrdom account qualified as tradition"
+        }
+      ],
+      "holds": [
+        "Exact island feature and on-island altar/memorial geometry not reconciled",
+        "No assumed walking route, bridge, ferry or year-round access"
+      ],
+      "relics": "No relics verified",
+      "visitor": "June 2026 scheduled Catholic Mass and pilgrimage confirmed; no general access promise"
+    },
+    {
+      "candidate_id": "SG-INV-0507",
+      "name": "Our Lady of Candelaria Sanctuary, La Popa, Cartagena",
+      "country": "CO",
+      "status": "SOURCE_VERIFIED_CUSTODIAN_TITLE_CORRECTION",
+      "canonical_place_id": null,
+      "summary_en": "The Augustinian Recollect sanctuary and convent at Cerro de La Popa in Cartagena are dedicated to Our Lady of Candelaria, not to Our Lady of the Rosary as the inherited worldwide lead states. The Order's 2 February 2026 account documents the longstanding Candelaria devotion and its custodianship; its July 2026 account commemorates the fortieth anniversary of the Marian image's pontifical coronation in 1986, with the Archbishop of Cartagena celebrating Mass at the sanctuary. This is a Marian image and living Catholic sanctuary, not a claim of bodily relics.",
+      "summary_fr": "Le sanctuaire et le couvent des Augustins récollets sur le Cerro de La Popa, à Carthagène, sont dédiés à Notre-Dame de la Candelaria, et non à Notre-Dame du Rosaire comme l'indique l'ancien intitulé de la liste mondiale. Un article de l'Ordre du 2 février 2026 atteste cette dévotion et sa garde ; un autre, de juillet 2026, commémore les quarante ans du couronnement pontifical de l'image mariale en 1986, avec une messe présidée par l'archevêque de Carthagène. Il s'agit d'une image vénérée dans un sanctuaire catholique vivant, non d'une relique corporelle.",
+      "evidence": [
+        {
+          "url": "https://recoletos.org/candelaria/devocion-virgen-candelaria-agustinos-recoletos/",
+          "issuer": "Order of Augustinian Recollects",
+          "tier": "CUSTODIAN_PRIMARY",
+          "supports": "Correct Marian title and La Popa custody; February 2026 feast"
+        },
+        {
+          "url": "https://recoletos.org/it/candelaria/percent-e2-percent-81-percent-a040-aniversario-coronacion-pontificia-virgen-candelaria-cartagena/",
+          "issuer": "Order of Augustinian Recollects",
+          "tier": "CUSTODIAN_PRIMARY",
+          "supports": "July 2026 fortieth anniversary of 1986 coronation and Archbishop's Mass"
+        }
+      ],
+      "holds": [
+        "Canonical candidate title must be corrected editorially without changing SG-INV ID",
+        "Exact sanctuary versus convent site geometry and visitor hours not established"
+      ],
+      "relics": "Venerated Marian image, no bodily relics verified",
+      "visitor": "2026 public feast and Eucharistic celebration attested; daily hours unverified"
+    },
+    {
+      "candidate_id": "SG-INV-0688",
+      "name": "Rabban Hormizd Monastery, Alqosh",
+      "country": "IQ",
+      "status": "HISTORY_VERIFIED_CURRENT_ACCESS_HELD",
+      "canonical_place_id": null,
+      "summary_en": "The ancient Rabban Hormizd monastery in the mountains near Alqosh is an important site of East Syriac and Chaldean Catholic history. In a pastoral letter dated 10 December 2024, the Chaldean Patriarch explicitly included the monastery among Iraqi Christian heritage destinations proposed for Jubilee 2025 pilgrimages. This confirms Catholic pilgrimage relevance, not that the old cliffside monastery is currently staffed, safe or regularly open. It must not be conflated with the separate Monastery of Our Lady of the Seeds on the plain below Alqosh.",
+      "summary_fr": "L'ancien monastère de Rabban Hormizd, dans les montagnes proches d'Alqosh, est un lieu important de l'histoire syriaque orientale et chaldéenne catholique. Dans une lettre pastorale du 10 décembre 2024, le patriarche chaldéen le cite expressément parmi les lieux du patrimoine chrétien irakien proposés aux pèlerinages du Jubilé 2025. Cela atteste son intérêt pour le pèlerinage catholique, sans établir que l'ancien monastère accroché à la montagne soit aujourd'hui occupé, sûr ou régulièrement accessible. Il ne doit pas être confondu avec le monastère distinct de Notre-Dame-des-Semences, dans la plaine d'Alqosh.",
+      "evidence": [
+        {
+          "url": "https://chaldeanpatriarchate.com/2024/12/10/pastoral-letter-for-the-holy-year-2025-the-jubilee-is-a-spiritual-opportunity-for-new-beginnings-for-the-church-and-for-all-humanity/",
+          "issuer": "Chaldean Catholic Patriarchate",
+          "tier": "PATRIARCHAL_PRIMARY",
+          "supports": "Explicit named ancient monastery in 2025 Jubilee pilgrimage suggestions"
+        },
+        {
+          "url": "https://baghdadhope.blogspot.com/2016/02/al-qosh-reminder-of-christianitys.html",
+          "issuer": "Baghdadhope reproducing historical reporting",
+          "tier": "SECONDARY_CONTEXT",
+          "supports": "Distinct mountain monastery and another monastery near Alqosh"
+        }
+      ],
+      "holds": [
+        "Current ownership and regular liturgical custody not established",
+        "Safety, access, opening hours and route entirely unverified; no public visitor directions",
+        "Do not confuse with Our Lady of the Seeds monastery"
+      ],
+      "relics": "No present relic custody established",
+      "visitor": "Historical pilgrimage relevance only; current access held"
+    },
+    {
+      "candidate_id": "SG-INV-0471",
+      "name": "National Shrine of Our Lady Mother of Divine Providence, Cupey",
+      "country": "PR",
+      "status": "PROVISIONAL_CONSTRUCTION_AND_OBJECT_IDENTITY",
+      "canonical_place_id": null,
+      "summary_en": "A Catholic national-shrine project dedicated to Our Lady Mother of Divine Providence is documented at Cupey Alto in San Juan, Puerto Rico. An academic architecture study described the complex as under construction; a Catholic parish's 2014 notice referred to the future sanctuary grounds. Secondary Catholic directories now list a national shrine, but no accessible current archdiocesan completion, consecration or visitor-hours notice was verified. Crucially, the historic Marian image in the Metropolitan Cathedral of San Juan is a separate physical object and location, not evidence that the Cupey sanctuary houses it.",
+      "summary_fr": "Un projet catholique de sanctuaire national Notre-Dame-Mère-de-la-Divine-Providence est documenté à Cupey Alto, San Juan de Porto Rico. Une étude universitaire d'architecture le décrit en construction, tandis qu'une annonce paroissiale de 2014 évoquait le terrain du futur sanctuaire. Des annuaires catholiques secondaires le présentent aujourd'hui comme sanctuaire national, mais aucun avis archidiocésain récent sur son achèvement, sa consécration ou ses horaires n'a pu être vérifié. L'image mariale historique conservée dans la cathédrale métropolitaine de San Juan est un objet et un lieu distincts ; rien ne prouve ici son transfert à Cupey.",
+      "evidence": [
+        {
+          "url": "https://gcatholic.org/churches/centralamerica/4934",
+          "issuer": "GCatholic",
+          "tier": "SECONDARY_CATHOLIC_DIRECTORY",
+          "supports": "Cupey sanctuary name and San Juan archdiocesan jurisdiction"
+        },
+        {
+          "url": "https://dialnet.unirioja.es/descarga/articulo/5849042.pdf",
+          "issuer": "Academic architecture paper",
+          "tier": "ACADEMIC_HISTORICAL",
+          "supports": "National-shrine complex described as under construction, historical not current"
+        },
+        {
+          "url": "https://pacrired.org/event-858040",
+          "issuer": "Cristo Redentor Catholic parish",
+          "tier": "PARISH_PRIMARY_HISTORICAL",
+          "supports": "2014 Lenten mission on grounds of future Cupey sanctuary"
+        }
+      ],
+      "holds": [
+        "Current completed versus construction status unverified",
+        "Do not confuse shrine site with cathedral Marian image or nearby similarly named parish",
+        "Official contemporary liturgy, hours and custodial website inaccessible"
+      ],
+      "relics": "No relics verified; cathedral image not transferred by inference",
+      "visitor": "No current public visitor information established"
+    }
+  ],
+  "canonical_duplicate_prevention": [
+    {
+      "candidate_id": "SG-INV-0453",
+      "canonical_place_id": "place:NI:basilica-inmaculada-concepcion-el-viejo",
+      "action": "ENRICH_EXISTING_ONLY"
+    },
+    {
+      "candidate_id": "SG-INV-0323",
+      "canonical_place_id": "place:HU:bodajk-segito-szuz-maria-basilica",
+      "action": "ENRICH_EXISTING_ONLY"
+    },
+    {
+      "candidate_id": "SG-INV-0463",
+      "canonical_place_id": "place:CU:santuario-nacional-nuestra-senora-regla",
+      "action": "ENRICH_EXISTING_ONLY"
+    },
+    {
+      "candidate_id": "SG-INV-0614",
+      "canonical_place_id": "place:TW:wanjin-immaculate-conception-basilica",
+      "action": "ENRICH_EXISTING_ONLY_TITLE_ALIAS_WANLUAN_WANJIN"
+    },
+    {
+      "candidate_id": "SG-INV-0346",
+      "canonical_place_id": "place:UA:mother-god-zarvanytsia-basilica",
+      "action": "ENRICH_EXISTING_ONLY"
+    },
+    {
+      "candidate_id": "SG-INV-0537",
+      "canonical_place_id": "place:VE:basilica-nuestra-senora-chiquinquira-maracaibo",
+      "action": "ENRICH_EXISTING_ONLY"
+    },
+    {
+      "candidate_id": "SG-INV-0602",
+      "canonical_place_id": "place:LK:national-shrine-our-lady-matara",
+      "action": "ENRICH_EXISTING_ONLY_ALREADY_B04_RESEARCHED"
+    }
+  ],
+  "next_targets": [
+    {
+      "candidate_id": "SG-INV-0461",
+      "task": "Recheck San Felipe Portobelo official reopening and 2027 restoration milestones; retain current closed-access warning"
+    },
+    {
+      "candidate_id": "SG-INV-0471",
+      "task": "Find current Archdiocese of San Juan completion/consecration and visitor evidence; distinguish Cupey project from cathedral image"
+    },
+    {
+      "candidate_id": "SG-INV-0604",
+      "task": "Obtain Kurunegala/Chilaw primary diocesan source for Kattimahana jurisdiction and national shrine designation"
+    },
+    {
+      "candidate_id": "SG-INV-0688",
+      "task": "Chaldean Catholic custodian confirmation of current Rabban Hormizd access and distinct Our Lady of Seeds monastery"
+    },
+    {
+      "candidate_id": "SG-INV-0575",
+      "task": "Identify Mantara grotto versus basilica official site features and current custodial hours"
+    },
+    {
+      "candidate_id": "SG-INV-0349",
+      "task": "Find official Letnica exact church building OSM match without inventing coordinates"
+    },
+    {
+      "candidate_id": "SG-INV-0367",
+      "task": "Confirm Kirkkokari island access and distinguish altar/memorial from historic chapel foundations"
+    },
+    {
+      "candidate_id": "SG-INV-0704",
+      "task": "Latin Vicariate or Franciscan original cathedral source for Alexandria, still provisional in B03"
+    },
+    {
+      "candidate_id": "SG-INV-0461",
+      "task": "After access resolves, assess exact San Felipe church and separate San Juan de Dios chapel physical geometry"
+    }
+  ],
+  "guards": [
+    "No canonical IDs invented or changed",
+    "No source-backed research dossier equals publication certification",
+    "No inferred GPS or walking route",
+    "No unverified bodily relics or miracles",
+    "No inferred Traditional Latin Mass",
+    "No merge, deploy, or production changes",
+    "No paid services or rights-holder contact"
+  ]
+}

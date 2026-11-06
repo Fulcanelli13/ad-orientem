@@ -1,0 +1,279 @@
+{
+  "schema": "AO_EXPLORE_SACRED_GEOGRAPHY_UNATTENDED_RESEARCH_B03_V1",
+  "research_date": "2026-10-24",
+  "publication": "RESEARCH_ONLY_NOT_PROMOTED",
+  "repository": "Fulcanelli13/ad-orientem",
+  "source_branch": "research/major-sacred-sites-coverage-reconciliation-20261015",
+  "main_sha_checked": "4d3d12d09881e9cb601f65694d61ce76c5cc558f",
+  "baseline": {
+    "canonical_places_main": 347,
+    "worldwide_queue_rows": 750,
+    "prior_philippines_checkpoint": "20 verified research candidates, 4 provisional, 1 held, 1 Quiapo enrichment: historical report, not independently recovered",
+    "prior_B01_B02": "17 previously reported dossiers; local JSON outputs not found on canonical GitHub research branch; excluded from new count"
+  },
+  "counts": {
+    "records": 10,
+    "distinct_unmapped_candidates": 8,
+    "primary_or_church_source_supported_unmapped": 7,
+    "provisional_unmapped": 1,
+    "existing_canonical_enrichments": 2,
+    "new_canonical_place_ids": 0,
+    "new_coordinates": 0,
+    "new_routes": 0
+  },
+  "method": "Crosschecked exact candidate IDs in R70 against all 347 canonical Place IDs on main. Original institutional, diocesan, bishops-conference, Vatican and Catholic Church sources preferred. Directory-only details flagged. No new physical coordinates, route geometry or canonicals.",
+  "records": [
+    {
+      "candidate_id": "SG-INV-0715",
+      "name": "International Sanctuary of Jesus the Saviour and Mother Mary, Elele",
+      "country": "NG",
+      "status": "SOURCE_VERIFIED_RESEARCH",
+      "canonical_place_id": null,
+      "summary_en": "The International Sanctuary of Jesus the Saviour and Mother Mary at Elele, Rivers State, is a Catholic pilgrimage destination in the Diocese of Port Harcourt. The Catholic Bishops' Conference of Nigeria designated it as the venue for its 19–21 September 2025 Jubilee of Hope gathering, with Mass, confession, the Rosary, Benediction and the Way of the Cross.",
+      "summary_fr": "Le Sanctuaire international de Jésus Sauveur et de Marie, Mère de Dieu, à Elele (État de Rivers), est un lieu de pèlerinage catholique du diocèse de Port Harcourt. La Conférence épiscopale du Nigeria l'a choisi pour son rassemblement jubilaire des 19–21 septembre 2025, comprenant messe, confessions, rosaire, bénédiction du Saint-Sacrement et chemin de croix.",
+      "source_urls": [
+        "https://www.nigeriacatholicnetwork.com/cbcn-announces-jubilee-of-hope-celebration/",
+        "https://gcatholic.org/churches/africa/6566.htm"
+      ],
+      "qualifications": {
+        "feast": "2025 Jubilee dates are an event, not a fixed shrine feast",
+        "relics": "NOT_ESTABLISHED",
+        "history": "1985 origin and 2018 national title appear in secondary ecclesiastical directory; original decree not checked",
+        "visitor": "2025 gathering attested; current daily hours not checked"
+      },
+      "coordinates_added": false,
+      "publication_approved": false
+    },
+    {
+      "candidate_id": "SG-INV-0718",
+      "name": "Basilica of Mary Queen of the Apostles, Mvolyé, Yaoundé",
+      "country": "CM",
+      "status": "SOURCE_VERIFIED_RESEARCH",
+      "canonical_place_id": null,
+      "summary_en": "At Mvolyé in Yaoundé, the Basilica of Mary Queen of the Apostles stands on the site of the first church built by Spiritan missionaries in Cameroon. Pope Benedict XVI celebrated Vespers here on 18 March 2009. It is distinct from Yaoundé's Cathedral of Our Lady of Victories.",
+      "summary_fr": "À Mvolyé, à Yaoundé, la basilique Marie-Reine-des-Apôtres occupe l'emplacement de la première église construite au Cameroun par les missionnaires spiritains. Benoît XVI y a célébré les vêpres le 18 mars 2009. Elle est distincte de la cathédrale Notre-Dame-des-Victoires de Yaoundé.",
+      "source_urls": [
+        "https://www.vatican.va/content/benedict-xvi/fr/speeches/2009/march/documents/hf_ben-xvi_spe_20090318_vespri-yaounde.html",
+        "https://gcatholic.org/churches/africa/3858.htm"
+      ],
+      "qualifications": {
+        "history": "2006 basilica decree is directory-reported; decree text not inspected",
+        "relics": "NOT_ESTABLISHED",
+        "visitor": "Papal visit confirms functioning church in 2009; current opening not independently verified",
+        "identity": "Do not merge with Notre-Dame-des-Victoires cathedral already mapped"
+      },
+      "coordinates_added": false,
+      "publication_approved": false
+    },
+    {
+      "candidate_id": "SG-INV-0730",
+      "name": "Sanctuary of Our Lady of Lake Togo, Togoville",
+      "country": "TG",
+      "status": "SOURCE_VERIFIED_PRIMARY",
+      "canonical_place_id": null,
+      "summary_en": "On the shore of Lake Togo at Togoville, the Catholic shrine of Our Lady of the Lake venerates Mary as Mother of Mercy. John Paul II led an act of Marian consecration here on 9 August 1985; his address dates the shrine's beginnings to 1910 and separately recalls its dedication in 1973.",
+      "summary_fr": "Au bord du lac Togo, à Togoville, le sanctuaire catholique Notre-Dame-du-Lac invoque la Vierge comme Mère de Miséricorde. Jean-Paul II y a prononcé un acte de consécration mariale le 9 août 1985 ; son discours situe les débuts du sanctuaire en 1910 et évoque distinctement sa dédicace en 1973.",
+      "source_urls": [
+        "https://www.vatican.va/content/john-paul-ii/fr/speeches/1985/august/documents/hf_jp-ii_spe_19850809_santuario-togoville.html",
+        "https://www.vatican.va/content/john-paul-ii/fr/speeches/1985/august/documents/hf_jp-ii_spe_19850809_animisti-santuario.html"
+      ],
+      "qualifications": {
+        "history": "1910 start and 1973 dedication are different events",
+        "relics": "NOT_ESTABLISHED",
+        "visitor": "Documented pilgrimage in 1985, not current opening schedule",
+        "feast": "NO_SITE_SPECIFIC_ANNUAL_FEAST_VERIFIED"
+      },
+      "coordinates_added": false,
+      "publication_approved": false
+    },
+    {
+      "candidate_id": "SG-INV-0747",
+      "name": "Shrine of Saint Peter To Rot, Rakunai",
+      "country": "PG",
+      "status": "SOURCE_VERIFIED_PRIMARY",
+      "canonical_place_id": null,
+      "summary_en": "The shrine at Rakunai in East New Britain honours Peter To Rot, the Catholic lay catechist and martyr whose remains are kept at the local chapel. Pope Leo XIV canonised him on 19 October 2025, so the inherited candidate title 'Blessed Peter To Rot' is historically outdated. Rakunai's shrine must remain distinct from other commemorative sites.",
+      "summary_fr": "À Rakunai, en Nouvelle-Bretagne orientale, le sanctuaire honore Pierre To Rot, catéchiste laïc et martyr dont les restes reposent dans la chapelle locale. Léon XIV l'a canonisé le 19 octobre 2025 : l'ancien intitulé « Bienheureux Pierre To Rot » doit donc être actualisé lors de la révision éditoriale. Le sanctuaire ne doit pas être confondu avec d'autres lieux commémoratifs.",
+      "source_urls": [
+        "https://www.vatican.va/content/leo-xiv/en/homilies/2025/documents/20251019-canonizzazioni.html",
+        "https://www.vaticannews.va/en/church/news/2025-10/a-saint-to-be-for-a-nation-peter-to-rot-s-witness-shapes-papua.html",
+        "https://www.thenational.com.pg/special-masses-to-celebrate-pngs-first-saint/"
+      ],
+      "qualifications": {
+        "relics": "Vatican News reports remains in wooden box at Rakunai shrine; exact reliquary/access not independently inspected",
+        "visitor": "2025 local pilgrimage and shrine visits attested; hours not verified",
+        "identity": "Do not infer shrine coordinates from the village centroid",
+        "editorial": "Propose title update only; do not change SG-INV-0747 ID"
+      },
+      "coordinates_added": false,
+      "publication_approved": false
+    },
+    {
+      "candidate_id": "SG-INV-0725",
+      "name": "St Joseph Minor Basilica, Elmina",
+      "country": "GH",
+      "status": "SOURCE_VERIFIED_RESEARCH",
+      "canonical_place_id": null,
+      "summary_en": "St Joseph Minor Basilica at Elmina is an active Roman Catholic church of the Archdiocese of Cape Coast. The archdiocese's parish directory identifies its rector and parish outstations. Its dedication to St Joseph is secure, while historical foundation dates and a local annual pilgrimage programme require stronger original evidence.",
+      "summary_fr": "La basilique mineure Saint-Joseph d'Elmina est une église catholique en activité de l'archidiocèse de Cape Coast. L'annuaire archidiocésain identifie son recteur et les communautés qui en dépendent. Le vocable de saint Joseph est confirmé ; la date de fondation et un éventuel pèlerinage annuel demandent encore des sources historiques originales.",
+      "source_urls": [
+        "https://archcapegh.org/parishes/elmina-deanery/",
+        "https://gcatholic.org/churches/africa/"
+      ],
+      "qualifications": {
+        "history": "1880 is secondary and not certified by primary diocesan page",
+        "relics": "NOT_ESTABLISHED",
+        "visitor": "Active parish directory, not independently verified visitor hours",
+        "feast": "Saint Joseph patronage; no local feast timetable confirmed"
+      },
+      "coordinates_added": false,
+      "publication_approved": false
+    },
+    {
+      "candidate_id": "SG-INV-0731",
+      "name": "Cathedral Basilica of the Immaculate Conception, Mongomo",
+      "country": "GQ",
+      "status": "SOURCE_VERIFIED_PRIMARY",
+      "canonical_place_id": null,
+      "summary_en": "The Basilica of the Immaculate Conception at Mongomo is a Catholic cathedral-basilica. Pope Leo XIV celebrated Mass here on 22 April 2026, directly confirming its identity and contemporary use. Ecclesiastical directory evidence places its consecration in December 2011 and cathedral status in 2017; original decrees remain to be collated.",
+      "summary_fr": "La basilique-cathédrale de l'Immaculée-Conception à Mongomo est un lieu de culte catholique. Léon XIV y a célébré la messe le 22 avril 2026, attestant directement son identité et son usage récent. Un annuaire ecclésiastique situe sa consécration en décembre 2011 et son statut cathédral en 2017 ; les décrets originaux restent à vérifier.",
+      "source_urls": [
+        "https://www.vatican.va/content/leo-xiv/en/events/event.dir.html/content/vaticanevents/en/2026/4/22/guinea-equatoriale-messa-mongomo.html",
+        "https://gcatholic.org/churches/africa/6278"
+      ],
+      "qualifications": {
+        "history": "2011 consecration and 2017 cathedral dates directory-reported",
+        "relics": "NOT_ESTABLISHED",
+        "visitor": "Papal Mass 2026 attested; no general visitor hours asserted",
+        "feast": "Immaculate Conception dedication; no local patronal schedule asserted"
+      },
+      "coordinates_added": false,
+      "publication_approved": false
+    },
+    {
+      "candidate_id": "SG-INV-0729",
+      "name": "Basilica of St Anthony of Padua, Mugera",
+      "country": "BI",
+      "status": "SOURCE_VERIFIED_PRIMARY",
+      "canonical_place_id": null,
+      "summary_en": "St Anthony of Padua's parish church at Mugera, a historic Catholic mission centre in the Archdiocese of Gitega, was publicly proclaimed a minor basilica on 15 August 2025 during Cardinal Pietro Parolin's visit. The local Catholic Church traces the Mugera mission to 1899 and records St Anthony's parish feast on 13 June. The associated Marian pilgrimage and church building require distinct physical-site interpretation.",
+      "summary_fr": "L'église paroissiale Saint-Antoine-de-Padoue de Mugera, ancien centre missionnaire catholique de l'archidiocèse de Gitega, a été proclamée basilique mineure le 15 août 2025 lors de la visite du cardinal Pietro Parolin. L'Église locale fait remonter la mission de Mugera à 1899 et atteste la fête paroissiale de saint Antoine le 13 juin. Le pèlerinage marial associé et le bâtiment de l'église exigent une distinction précise des lieux.",
+      "source_urls": [
+        "https://eglisecatholique.bi/index.php/fr/dioceses/gitega/nouvelles-gitega/evolution-de-l-eglise-de-mugera-depuis-sa-creation-comme-mission.html",
+        "https://presidence.gov.bi/le-president-evariste-ndayishimiye-et-son-epouse-en-pelerinage-a-mugera-accueillent-le-cadeau-de-la-basilique-mineure-de-mugera/",
+        "https://diacenco.net/burundi-la-paroisse-saint-antoine-de-padoue-de-mugera-est-elevee-au-rang-de-basilique-mineure/"
+      ],
+      "qualifications": {
+        "history": "Local Church 2023 mission chronology; institutional state account of 2025 ceremony",
+        "relics": "NOT_ESTABLISHED",
+        "feast": "13 June Saint Anthony local patronal feast attested in 2023",
+        "visitor": "15 August 2025 pilgrimage attested; present hours not checked",
+        "identity": "Do not assume parish basilica and Marian shrine are identical structures"
+      },
+      "coordinates_added": false,
+      "publication_approved": false
+    },
+    {
+      "candidate_id": "SG-INV-0704",
+      "name": "St Catherine's Latin Catholic Cathedral, Alexandria",
+      "country": "EG",
+      "status": "PROVISIONAL_NEEDS_PRIMARY",
+      "canonical_place_id": null,
+      "summary_en": "St Catherine's Cathedral in Alexandria serves the Latin Catholic Apostolic Vicariate of Alexandria of Egypt. An ecclesiastical directory identifies the church and its dedication to St Catherine, but a directly accessible vicariate or Franciscan site-history record was not obtained in this pass; architectural chronology and visitor arrangements remain unverified.",
+      "summary_fr": "La cathédrale Sainte-Catherine d'Alexandrie dessert le vicariat apostolique latin d'Alexandrie d'Égypte. Un annuaire ecclésiastique confirme l'église et son vocable, mais aucune notice historique directe du vicariat ou des franciscains n'a été consultée lors de ce passage ; la chronologie du bâtiment et les modalités de visite restent à vérifier.",
+      "source_urls": [
+        "https://gcatholic.org/churches/africa/5088",
+        "https://gcatholic.org/dioceses/diocese/alex5"
+      ],
+      "qualifications": {
+        "history": "19th-century building dates are secondary and held",
+        "relics": "NOT_ESTABLISHED",
+        "visitor": "NOT_ESTABLISHED",
+        "identity": "Latin Catholic cathedral, not a Coptic Orthodox church"
+      },
+      "coordinates_added": false,
+      "publication_approved": false
+    },
+    {
+      "candidate_id": "SG-INV-0724",
+      "name": "Our Lady of Lusaka Marian Shrine",
+      "country": "ZM",
+      "status": "EXISTING_CANONICAL_ENRICHMENT",
+      "canonical_place_id": "place:ZM:archdiocese-lusaka-marian-shrine",
+      "summary_en": "The Archdiocese of Lusaka's Marian Shrine already has a canonical Place record. On 15 August 2025 the archdiocese documented an Assumption pilgrimage from Roma Pro-Cathedral to the shrine, culminating in Mass and a renewal of the archdiocese's Marian consecration. This supports enrichment of the existing Place, not a new pin or invented walking route.",
+      "summary_fr": "Le sanctuaire marial de l'archidiocèse de Lusaka possède déjà une fiche Place canonique. Le 15 août 2025, l'archidiocèse a relaté un pèlerinage de l'Assomption depuis la pro-cathédrale de Roma jusqu'au sanctuaire, conclu par la messe et le renouvellement de la consécration mariale du diocèse. Cette source enrichit la fiche existante sans justifier un nouveau point ni un itinéraire inventé.",
+      "source_urls": [
+        "https://lusakaarchdiocese.org/adl-2025-marian-pilgrimage/"
+      ],
+      "qualifications": {
+        "feast": "Assumption, 15 August 2025 diocesan pilgrimage attested",
+        "relics": "NOT_ESTABLISHED",
+        "visitor": "2025 event only, no general hours",
+        "identity": "Main seed registry already has same site and OSM point; do not duplicate"
+      },
+      "coordinates_added": false,
+      "publication_approved": false
+    },
+    {
+      "candidate_id": "SG-INV-0728",
+      "name": "Basilica of the Immaculate Conception, Ouidah",
+      "country": "BJ",
+      "status": "EXISTING_CANONICAL_ENRICHMENT",
+      "canonical_place_id": "place:BJ:immaculate-conception-basilica-ouidah",
+      "summary_en": "The Basilica of the Immaculate Conception at Ouidah already has a canonical Place record. Pope Benedict XVI visited on 19 November 2011 and signed the post-synodal exhortation Africae munus there. This primary Vatican evidence strengthens the existing basilica's history; it does not warrant another Place record.",
+      "summary_fr": "La basilique de l'Immaculée-Conception d'Ouidah figure déjà dans le registre canonique des Places. Benoît XVI l'a visitée le 19 novembre 2011 et y a signé l'exhortation post-synodale Africae munus. Cette source vaticane renforce la notice historique existante et ne justifie pas la création d'un second lieu.",
+      "source_urls": [
+        "https://www.vatican.va/content/benedict-xvi/en/speeches/2011/november/documents/hf_ben-xvi_spe_20111119_firma-es-ap.html"
+      ],
+      "qualifications": {
+        "history": "Papal visit and signing directly verified; 1989 basilica decree only separately directory-attested",
+        "relics": "NOT_ESTABLISHED",
+        "visitor": "2011 event only, current hours not verified",
+        "identity": "Already canonical; R70 unmatched classification is stale"
+      },
+      "coordinates_added": false,
+      "publication_approved": false
+    }
+  ],
+  "next_targets": [
+    {
+      "candidate_id": "SG-INV-0704",
+      "task": "Find Latin Vicariate or Franciscan original cathedral page and actual visitor information"
+    },
+    {
+      "candidate_id": "SG-INV-0729",
+      "task": "Resolve whether Mugera Marian pilgrimage shrine and St Anthony basilica are the same building/complex; primary shrine page"
+    },
+    {
+      "candidate_id": "SG-INV-0715",
+      "task": "Find original Elele shrine governance/history and relic/visitor documentation"
+    },
+    {
+      "candidate_id": "SG-INV-0747",
+      "task": "Confirm exact Rakunai shrine structure and post-canonization naming; no inferred GPS"
+    },
+    {
+      "candidate_id": "SG-INV-0718",
+      "task": "Find 2006 basilica decree and authoritative current visitor information"
+    },
+    {
+      "candidate_id": "SG-INV-0731",
+      "task": "Original 2011 basilica and 2017 cathedral decrees"
+    },
+    {
+      "candidate_id": "SG-INV-0725",
+      "task": "Diocesan historical foundation and public visiting information"
+    },
+    {
+      "candidate_id": "SG-INV-0730",
+      "task": "Contemporary diocesan pilgrimage programme and current opening"
+    }
+  ],
+  "guards": [
+    "No merges, deployments or production updates",
+    "No publication approvals",
+    "No invented coordinates, walking routes, relic claims or liturgical calendar overrides",
+    "No new canonical IDs assigned",
+    "No inference that modern Mass schedule implies a 1962 Traditional Latin Mass"
+  ]
+}

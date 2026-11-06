@@ -1,0 +1,84 @@
+{
+  "schema": "AO_EXPLORE_SACRED_GEOGRAPHY_UNATTENDED_RESEARCH_B15_V1",
+  "research_date": "2026-11-05",
+  "publication": "RESEARCH_ONLY_NOT_PROMOTED",
+  "reconciliation": {
+    "main_registry_path": "data/geography/seed-registry.v1.json",
+    "main_registry_blob_sha": "95a051468ea7da952965f8c25d7265d10b81f6c6",
+    "main_places_last_fully_parsed": 530,
+    "main_unchanged_from_B14": true,
+    "r70_queue_path": "data/geography/research/sacred-geography-r70-worldwide-coverage-queue.v1.json",
+    "r70_queue_blob_sha_current": "8ac474ec724251da87313e51e8581634f2b1a015",
+    "r70_queue_count_header": 750,
+    "philippines_checkpoint": "347 places, 20 verified, 4 provisional, 1 held, 1 Quiapo enrichment (historical)",
+    "new_canonical_ids": 0
+  },
+  "records": [
+    {
+      "record_id": "SG-B15-PR-CUPEY-2026-PILGRIMAGE-PROGRAM",
+      "kind": "EXISTING_DOSSIER_ENRICHMENT",
+      "status": "VERIFIED_ACTIVE_SHRINE_BUILDING_COMPLETION_HELD",
+      "name": "Santuario Nacional de Nuestra Señora Madre de la Divina Providencia, Cupey",
+      "summary_en": "The Catholic newspaper El Visitante published the sanctuary vicar's 27 October 2026 invitation to two forthcoming pilgrimages at Cupey: the patronal solemnity on 19 November (activities from 13:00, Mass at 15:00) and the Marian Jubilee closing on 5 December (programme from 09:30, Mass at 10:30). The communication anticipates buses, overflow parking and pilgrim groups from across Puerto Rico, providing current institutional use and access planning. It does not certify that the proposed permanent sanctuary church is completed, nor does it establish daily opening hours.",
+      "summary_fr": "Le journal catholique El Visitante a publié l'invitation du vicaire du sanctuaire datée du 27 octobre 2026 pour deux pèlerinages à Cupey : la solennité patronale du 19 novembre (activités dès 13 h, messe à 15 h) et la clôture du jubilé marial le 5 décembre (programme dès 9 h 30, messe à 10 h 30). La communication prévoit des autocars, des stationnements supplémentaires et l'accueil de groupes venus de Porto Rico. Elle confirme l'usage pastoral du lieu, sans prouver l'achèvement de l'église projetée ni des horaires quotidiens.",
+      "sources": [
+        {
+          "url": "https://elvisitantepr.com/santuario-de-la-providencia-anuncia-celebracion-de-la-patrona-y-clausura-del-ano-jubilar-mariano/",
+          "issuer": "El Visitante; reports 27 Oct 2026 communication of shrine vicar",
+          "support": "dated 2026 event programme and visitor logistics"
+        }
+      ],
+      "holds": [
+        "Building completion not certified",
+        "Event times are not routine opening hours",
+        "Do not confuse Cupey shrine with cathedral's historic Marian image"
+      ]
+    },
+    {
+      "record_id": "SG-B15-LK-KATTIMAHANA-DIOCESE-IDENTITY-CONFLICT",
+      "kind": "EXISTING_DOSSIER_ENRICHMENT",
+      "status": "PROVISIONAL_DIOCESAN_JURISDICTION_AND_CANONICAL_DECREE_HELD",
+      "name": "St Anne's Shrine, Kattimahana, Sri Lanka",
+      "summary_en": "Sri Lanka's Ministry of Tourism 2018 progress report lists St Anne's Church Shrine, Kattimahana, with an August feast and pilgrimage infrastructure allocation, under Kurunegala in its table. The independent GCatholic directory labels the site a national shrine but assigns it to the Diocese of Chilaw. These source statements conflict on diocesan jurisdiction and neither supplies the original ecclesiastical national-shrine decree. Treat the pilgrimage and St Anne dedication as corroborated, while holding canonical jurisdiction and national-title certification.",
+      "summary_fr": "Le rapport de progrès 2018 du ministère sri-lankais du Tourisme répertorie le sanctuaire Sainte-Anne de Kattimahana, sa fête d'août et une allocation pour les infrastructures de pèlerinage, sous la rubrique Kurunegala. L'annuaire indépendant GCatholic le qualifie de sanctuaire national mais l'attribue au diocèse de Chilaw. Ces indications divergent sur la juridiction et ne fournissent pas le décret ecclésiastique original. Le pèlerinage et la dédicace à sainte Anne sont documentés ; la juridiction et le titre canonique restent à vérifier.",
+      "sources": [
+        {
+          "url": "https://tourismmin.gov.lk/web/images/annual-reports/Progress_Report_2018.pdf",
+          "issuer": "Sri Lanka Ministry of Tourism",
+          "support": "2018 annual feast infrastructure listing, table 11.3"
+        },
+        {
+          "url": "https://gcatholic.org/churches/asia/6505",
+          "issuer": "GCatholic independent directory",
+          "support": "Chilaw jurisdiction and national shrine label; secondary"
+        }
+      ],
+      "holds": [
+        "Obtain competent diocesan/episcopal conference source for current jurisdiction",
+        "Obtain original ecclesiastical decree for national title",
+        "Government pilgrimage designation does not itself establish canonical national shrine status"
+      ]
+    }
+  ],
+  "counts": {
+    "existing_dossiers_enriched": 2,
+    "new_sites": 0,
+    "provisional_questions": 1,
+    "canonical_places_added": 0,
+    "coordinates_added": 0,
+    "routes_added": 0
+  },
+  "next_targets": [
+    "Kattimahana: competent diocese and shrine decree",
+    "Cupey: dated construction completion from archdiocese",
+    "Trà Kiệu: diocesan or parish source for separate entrances",
+    "Nishizaka: current custodian relic inventory",
+    "Aitara: present ecclesiastical national-title document",
+    "Tianjin and Dili identity holds"
+  ],
+  "policy": [
+    "No canonical IDs or Place edits",
+    "No coordinates, walking routes, or hours invented",
+    "No merge, publish, deployment, contacts or expenses"
+  ]
+}

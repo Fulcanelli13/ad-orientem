@@ -1,0 +1,437 @@
+{
+  "schema": "AO_EXPLORE_SACRED_GEOGRAPHY_UNATTENDED_RESEARCH_B11_V1",
+  "research_date": "2026-11-01",
+  "publication": "RESEARCH_ONLY_NOT_PROMOTED",
+  "repository": "Fulcanelli13/ad-orientem",
+  "target_branch": "research/major-sacred-sites-coverage-reconciliation-20261015",
+  "reconciliation": {
+    "main_registry_path": "data/geography/seed-registry.v1.json",
+    "main_registry_blob_sha": "abc23e63bd3a3d2bc3d51ad77c109c571437dc24",
+    "main_place_count": 530,
+    "previous_b10_main_count": 530,
+    "delta_since_b10": 0,
+    "previous_branch_head": "b24b122b2517e0e36f7bc4a4661493cd5b3150b9",
+    "historical_philippines_checkpoint": "347 Places, 20 verified, 4 provisional, 1 held, 1 Quiapo enrichment; historical only",
+    "r70_candidate_count": 750,
+    "r70_korea_candidates": 7,
+    "prior_batches_checked": "B03–B10; all eight new Suwon names absent",
+    "current_main_korean_places": 3,
+    "source_priority": "Suwon diocesan shrine directory, 2026 dated diocesan notices; not 1962-calendar adoption"
+  },
+  "counts": {
+    "research_records": 10,
+    "new_distinct_research_sites": 8,
+    "new_primary_verified_sites": 7,
+    "new_institutional_verified_history_provisional": 1,
+    "existing_research_enrichments": 1,
+    "non_place_programme_crosswalks": 1,
+    "new_canonical_places": 0,
+    "coordinates_added": 0,
+    "walking_routes_added": 0,
+    "published": 0
+  },
+  "research_id_policy": "SG-B11-* are additive research-only identifiers; never canonical Place IDs. SG-INV-0617 is preserved exactly.",
+  "records": [
+    {
+      "record_id": "SG-B11-KR-GUSAN",
+      "candidate_id": null,
+      "canonical_place_id": null,
+      "name": "Gusan Martyrs Shrine, Hanam",
+      "country": "KR",
+      "address_official": "하남시 미사강변북로 99 (망월동)",
+      "status": "NEW_DISTINCT_PRIMARY_VERIFIED_RESEARCH_ONLY",
+      "summary_en": "The Suwon diocese identifies Gusan as a historic Catholic village and shrine of Saint Anthony Kim Seong-u and eight other martyrs. It reports nine actual martyr graves, the saint's death on 29 April 1841, regular Masses and pre-Mass Rosary and confession. Grave claims are diocesan, not a separately obtained modern authentication certificate.",
+      "summary_fr": "Le diocèse de Suwon présente Gusan comme un ancien village catholique et sanctuaire de saint Antoine Kim Seong-u et de huit autres martyrs. Il signale neuf tombes réelles, le martyre du saint le 29 avril 1841, des messes régulières ainsi que le chapelet et la confession avant la messe. L'identification des tombes relève ici du témoignage diocésain, sans certificat contemporain distinct.",
+      "history": "Saint Anthony Kim Seong-u (1841); nineteenth-century persecuted Catholic village",
+      "devotion": "Martyrs; Rosary before Mass",
+      "feast": "Specific local feast not independently established; do not assign a 1962-calendar rank",
+      "relics": "Diocese describes graves of nine martyrs; individual modern custody certificates not acquired",
+      "visitor": "Diocesan timetable: Sunday and Tuesday–Saturday 11:00, subject to change",
+      "evidence": [
+        {
+          "url": "https://www.casuwon.or.kr/holyland/intro/13",
+          "issuer": "Diocese of Suwon",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "Identity, graves, history, address and worship"
+        },
+        {
+          "url": "https://www.casuwon.or.kr/info/notice/112351",
+          "issuer": "Diocese of Suwon",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "2026 planned WYD travelling-relic itinerary includes Gusan; travelling relics are not permanent shrine relics"
+        }
+      ],
+      "holds": [
+        "Do not equate WYD visiting relics with permanent shrine relic custody",
+        "No canonical Place ID, invented coordinates, GIS route or publication"
+      ]
+    },
+    {
+      "record_id": "SG-B11-KR-NAMYANG",
+      "candidate_id": null,
+      "canonical_place_id": null,
+      "name": "Namyang Marian Shrine, Hwaseong",
+      "country": "KR",
+      "address_official": "화성시 남양성지로 112 (남양동)",
+      "status": "NEW_DISTINCT_PRIMARY_VERIFIED_RESEARCH_ONLY",
+      "summary_en": "Dedicated to Our Lady of the Rosary on 7 October 1991, Namyang commemorates anonymous martyrs of the 1866 persecution and is described by the diocese as Korea's first officially designated Marian shrine. The grounds include a twenty-decade Rosary path, Marian statue and Divine Mercy devotion. Its sanctuary identity is established without asserting apparition approval.",
+      "summary_fr": "Consacré à Notre-Dame du Rosaire le 7 octobre 1991, Namyang commémore des martyrs anonymes de la persécution de 1866 ; le diocèse le présente comme le premier sanctuaire marial officiellement désigné en Corée. Le site comporte un parcours des vingt dizaines du Rosaire, une statue mariale et la dévotion à la Divine Miséricorde. Il ne s'agit pas d'une reconnaissance d'apparition.",
+      "history": "1866 persecution; 1991 Marian dedication",
+      "devotion": "Rosary path; Marian and Divine Mercy devotion",
+      "feast": "Specific local feast not independently established; do not assign a 1962-calendar rank",
+      "relics": "No authenticated bodily relic inventory identified",
+      "visitor": "Diocesan timetable lists Mass Sunday and Tuesday–Saturday at 11:00, confessions on specified days; check updates",
+      "evidence": [
+        {
+          "url": "https://www.casuwon.or.kr/holyland/intro/12",
+          "issuer": "Diocese of Suwon",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "Marian shrine designation, date, Rosary path, address and Masses"
+        },
+        {
+          "url": "https://www.casuwon.or.kr/info/notice/112351",
+          "issuer": "Diocese of Suwon",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "2026 scheduled travelling-relic pilgrimage includes Namyang"
+        }
+      ],
+      "holds": [
+        "Keep site Rosary path as descriptive feature, not synthetic GIS geometry",
+        "No canonical Place ID, invented coordinates, GIS route or publication"
+      ]
+    },
+    {
+      "record_id": "SG-B11-KR-NAMHANSAN",
+      "candidate_id": null,
+      "canonical_place_id": null,
+      "name": "Namhansanseong Martyrs Shrine, Gwangju",
+      "country": "KR",
+      "address_official": "경기도 광주시 남한산성면 남한산성로 763-58",
+      "status": "NEW_DISTINCT_PRIMARY_VERIFIED_RESEARCH_ONLY",
+      "summary_en": "The Suwon diocese identifies this fortress precinct as a martyr shrine associated with persecutions from 1791 through 1866 and Blessed Thomas Han Deok-un, who buried executed Christians. The diocese estimates roughly 300 martyrs but identifies only a fraction by name; its memorial grounds are distinct from the whole UNESCO fortress landscape.",
+      "summary_fr": "Le diocèse de Suwon situe ce sanctuaire des martyrs dans la forteresse de Namhansanseong, liée aux persécutions de 1791 à 1866 et au bienheureux Thomas Han Deok-un, qui ensevelissait les chrétiens exécutés. Le diocèse évoque environ trois cents martyrs, dont seule une partie est nommément connue ; le sanctuaire ne se confond pas avec toute la forteresse.",
+      "history": "Persecution site; Blessed Thomas Han Deok-un; diocesan estimate c.300 martyrs",
+      "devotion": "Prayer for departed souls and martyrs",
+      "feast": "Specific local feast not independently established; do not assign a 1962-calendar rank",
+      "relics": "No individual reliquary custody certified",
+      "visitor": "Diocesan listing: Sunday and Tuesday–Saturday 11:00 Mass; local memorial precinct, not all fortress gates",
+      "evidence": [
+        {
+          "url": "https://www.casuwon.or.kr/holyland/intro/11",
+          "issuer": "Diocese of Suwon",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "Identity, persecution history, address and liturgy"
+        },
+        {
+          "url": "https://www.casuwon.or.kr/info/news/diocese/113873",
+          "issuer": "Diocese of Suwon",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "28 October 2026 diocesan pilgrimage feature documents the Namhansanseong–Gusan course"
+        }
+      ],
+      "holds": [
+        "Do not pin individual fortress execution sites without exact evidence",
+        "No canonical Place ID, invented coordinates, GIS route or publication"
+      ]
+    },
+    {
+      "record_id": "SG-B11-KR-SONGOL",
+      "candidate_id": null,
+      "canonical_place_id": null,
+      "name": "Songol Martyrs Shrine, Yongin",
+      "country": "KR",
+      "address_official": "용인시 수지구 동천로 437번길 67 (동천동)",
+      "status": "NEW_DISTINCT_INSTITUTIONAL_VERIFIED_HISTORY_PROVISIONAL",
+      "summary_en": "The Diocese of Suwon lists Songol as a distinct Catholic shrine at its own Yongin address. A 2026 diocesan notice includes it in the forthcoming 17 November–8 December travelling-relic pilgrimage, while the official Didimgil programme names Songol as a route stage. A detailed source-checked account of its martyrs, permanent relics and current Mass timetable remains outstanding.",
+      "summary_fr": "Le diocèse de Suwon répertorie Songol comme sanctuaire catholique distinct, avec une adresse propre à Yongin. Un avis diocésain de 2026 le prévoit dans la tournée de reliques du 17 novembre au 8 décembre, et le programme officiel Didimgil le nomme comme étape. L'histoire précise de ses martyrs, les reliques permanentes et l'horaire actuel des messes restent à documenter.",
+      "history": "Historical narrative not independently retrieved; avoid attribution to specific martyrs",
+      "devotion": "Diocesan pilgrimage stage",
+      "feast": "Specific local feast not independently established; do not assign a 1962-calendar rank",
+      "relics": "No verified permanent relic custody; 2026 travelling-relic visit is scheduled, not yet completed as of 1 Nov",
+      "visitor": "2026 diocesan planned pilgrimage and route programme establish institutional use; current Mass hours unverified",
+      "evidence": [
+        {
+          "url": "https://www.casuwon.or.kr/holyland/intro",
+          "issuer": "Diocese of Suwon",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "Official shrine name and address"
+        },
+        {
+          "url": "https://www.casuwon.or.kr/info/notice/112351",
+          "issuer": "Diocese of Suwon",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "Future 17 Nov–8 Dec 2026 planned visit, not proof it occurred"
+        },
+        {
+          "url": "https://www.casuwon.or.kr/info/news/diocese/113873",
+          "issuer": "Diocese of Suwon",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "2026 diocesan route stage"
+        }
+      ],
+      "holds": [
+        "Provisional historical, feast and relic detail",
+        "Do not treat future scheduled visit as completed",
+        "No canonical Place ID, invented coordinates, GIS route or publication"
+      ]
+    },
+    {
+      "record_id": "SG-B11-KR-SURISAN",
+      "candidate_id": null,
+      "canonical_place_id": null,
+      "name": "Surisan Martyrs Shrine, Anyang",
+      "country": "KR",
+      "address_official": "안양시 만안구 병목안로 408 (안양동)",
+      "status": "NEW_DISTINCT_PRIMARY_VERIFIED_RESEARCH_ONLY",
+      "summary_en": "Surisan commemorates Saint Francis Choe Gyeong-hwan, a Catholic community leader martyred in 1839, and his persecuted family, including his wife Maria Yi Seong-rye and their son, priest Thomas Choe Yang-eop. The diocese identifies the saint's grave, a pilgrim chapel and reconstructed historic prayer house, and records the shrine's 2000 Jubilee pilgrimage designation.",
+      "summary_fr": "Surisan commémore saint François Choe Gyeong-hwan, responsable d'une communauté catholique mort martyr en 1839, et sa famille persécutée, dont son épouse Marie Yi Seong-rye et leur fils, le prêtre Thomas Choe Yang-eop. Le diocèse signale la tombe du saint, une chapelle de pèlerins et une maison de prière reconstituée, ainsi que sa désignation jubilaire en 2000.",
+      "history": "Saint Francis Choe Gyeong-hwan, martyred 1839; 2000 Jubilee pilgrimage designation",
+      "devotion": "Pilgrimage Mass, prayer for souls, periodic Holy Hours",
+      "feast": "Specific local feast not independently established; do not assign a 1962-calendar rank",
+      "relics": "Diocese identifies saint's grave and Friday relic-related devotion; no modern individual relic certificate acquired",
+      "visitor": "Diocesan page lists Sunday and Tuesday–Saturday 11:00 Mass, with exceptional Monday devotion",
+      "evidence": [
+        {
+          "url": "https://www.casuwon.or.kr/holyland/intro/7",
+          "issuer": "Diocese of Suwon",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "Saint's family, grave, 2000 status and Mass timetable"
+        },
+        {
+          "url": "https://www.casuwon.or.kr/info/notice/112351",
+          "issuer": "Diocese of Suwon",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "2026–27 planned travelling-relic route includes Surisan"
+        }
+      ],
+      "holds": [
+        "Distinguish the saint's grave from the reconstruction of a historic prayer house",
+        "No canonical Place ID, invented coordinates, GIS route or publication"
+      ]
+    },
+    {
+      "record_id": "SG-B11-KR-SUWON-HWASEONG",
+      "candidate_id": null,
+      "canonical_place_id": null,
+      "name": "Suwon Hwaseong Martyrs Shrine, Suwon",
+      "country": "KR",
+      "address_official": "수원시 팔달구 정조로 842 (북수동)",
+      "status": "NEW_DISTINCT_PRIMARY_VERIFIED_RESEARCH_ONLY",
+      "summary_en": "Declared a martyr shrine on 20 September 2000, this Catholic precinct within the Suwon Hwaseong fortress remembers more than eighty documented victims of the 1866–1873 persecution. The diocese distinguishes the present 1979 church from its 1932 Gothic predecessor, and describes relics of Saint Andrew Kim and five other martyrs in the present sanctuary. A September 2026 diocesan article documents ongoing memorial worship.",
+      "summary_fr": "Déclaré sanctuaire des martyrs le 20 septembre 2000, cet ensemble catholique situé dans la forteresse de Suwon Hwaseong commémore plus de quatre-vingts victimes documentées des persécutions de 1866 à 1873. Le diocèse distingue l'église actuelle de 1979 de l'édifice gothique de 1932 et mentionne des reliques de saint André Kim et de cinq autres martyrs. Un article diocésain de septembre 2026 confirme les commémorations.",
+      "history": "20 Sep 2000 formal shrine declaration; historic Buk-Su-dong Catholic parish",
+      "devotion": "Martyrs' prayer, confessions, night pilgrimage and exhibits",
+      "feast": "Specific local feast not independently established; do not assign a 1962-calendar rank",
+      "relics": "Diocese reports relics of six Korean saints; individual modern certificates and exact custody inventory not obtained",
+      "visitor": "Current diocesan page lists Masses and exhibitions; 2026 article differs on Saturday liturgy, so exact current schedule is held",
+      "evidence": [
+        {
+          "url": "https://www.casuwon.or.kr/holyland/intro/6",
+          "issuer": "Diocese of Suwon",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "2000 designation, 80 martyrs, relics, physical features and schedule"
+        },
+        {
+          "url": "https://www.casuwon.or.kr/journal/jubo/view/1508",
+          "issuer": "Diocese of Suwon",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "22 September 2026 diocesan shrine history and worship"
+        },
+        {
+          "url": "https://www.casuwon.or.kr/info/news/diocese/104412?page=20",
+          "issuer": "Diocese of Suwon",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "13 June 2025 diocesan account lists six saints' relics"
+        }
+      ],
+      "holds": [
+        "Do not equate whole UNESCO fortress with the shrine",
+        "Conflicting Saturday worship wording; no certified current timetable",
+        "Do not conflate original 1932 church with present 1979 building",
+        "No canonical Place ID, invented coordinates, GIS route or publication"
+      ]
+    },
+    {
+      "record_id": "SG-B11-KR-YANGGEUN",
+      "candidate_id": null,
+      "canonical_place_id": null,
+      "name": "Yanggeun Martyrs Shrine, Yangpyeong",
+      "country": "KR",
+      "address_official": "경기도 양평군 양평읍 물안개공원길 37",
+      "status": "NEW_DISTINCT_PRIMARY_VERIFIED_RESEARCH_ONLY",
+      "summary_en": "A 27 August 2026 diocesan report identifies Yanggeun as a Catholic memorial to the early Korean lay Church associated with brothers Ambrose Gwon Cheol-sin and Francis Xavier Gwon Il-sin, and the beatified couple Peter Jo Suk and Teresa Gwon Cheon-rye. The historical execution riverbank near the former Omit bridge is a distinct, approximately located feature, not a verified exact shrine coordinate.",
+      "summary_fr": "Un reportage diocésain du 27 août 2026 présente Yanggeun comme lieu de mémoire de la première communauté catholique coréenne, lié aux frères Ambroise Gwon Cheol-sin et François-Xavier Gwon Il-sin ainsi qu'aux bienheureux époux Pierre Jo Suk et Thérèse Gwon Cheon-rye. La rive d'exécution près de l'ancien pont Omit est un élément historique distinct, sans point géographique exact vérifié.",
+      "history": "Early lay Catholic movement and local martyrdom; 2014 beatifications",
+      "devotion": "Outdoor Stations of the Cross and Marian Masses",
+      "feast": "Specific local feast not independently established; do not assign a 1962-calendar rank",
+      "relics": "No authenticated relic inventory established",
+      "visitor": "Diocesan page lists Sunday 14:00, Tuesday–Saturday 11:00 Mass; Aug 2026 article reports a planned bridge, not proof of completion",
+      "evidence": [
+        {
+          "url": "https://www.casuwon.or.kr/holyland/intro/5",
+          "issuer": "Diocese of Suwon",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "Official address and Mass timetable"
+        },
+        {
+          "url": "https://www.casuwon.or.kr/info/news/diocese/112785",
+          "issuer": "Diocese of Suwon",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "27 Aug 2026 history, beatified couple, riverbank and bridge plan"
+        },
+        {
+          "url": "https://www.casuwon.or.kr/holyland/news/5?article=Y&page=1",
+          "issuer": "Diocese of Suwon",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "2026 shrine newsletters confirm active institution"
+        }
+      ],
+      "holds": [
+        "Do not pin inferred historical riverbank",
+        "2026 bridge completion unverified",
+        "No canonical Place ID, invented coordinates, GIS route or publication"
+      ]
+    },
+    {
+      "record_id": "SG-B11-KR-JUKSAN",
+      "candidate_id": null,
+      "canonical_place_id": null,
+      "name": "Juksan Martyrs Shrine, Anseong",
+      "country": "KR",
+      "address_official": "경기도 안성시 일죽면 종배길 115",
+      "status": "NEW_DISTINCT_PRIMARY_VERIFIED_RESEARCH_ONLY",
+      "summary_en": "The Suwon diocese identifies Juksan as a persecution-era execution shrine with twenty-four named martyrs in surviving historical records, including Blesseds Francis Park Gyeong-jin and Margaret Oh. It publishes an active Mass programme and lists the shrine in the 2026 travelling-relic pilgrimage. The site is a place of martyrdom, not proof that all twenty-four bodies or relics are preserved there.",
+      "summary_fr": "Le diocèse de Suwon identifie Juksan comme lieu d'exécution de la période des persécutions, avec vingt-quatre martyrs nommés dans les documents conservés, dont les bienheureux François Park Gyeong-jin et Marguerite Oh. Il publie un programme de messes et l'inscrit dans la tournée de reliques de 2026. Le lieu du martyre ne prouve pas la conservation sur place des corps des vingt-quatre victimes.",
+      "history": "1866 persecution; twenty-four named victims",
+      "devotion": "Martyrs' commemoration and Mass",
+      "feast": "Specific local feast not independently established; do not assign a 1962-calendar rank",
+      "relics": "No authenticated permanent relic custody established",
+      "visitor": "Diocesan listing: Sunday and Tuesday–Saturday 11:00 Mass",
+      "evidence": [
+        {
+          "url": "https://www.casuwon.or.kr/holyland/intro/2",
+          "issuer": "Diocese of Suwon",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "Martyrs, 24 names, beatified figures, address and Mass timetable"
+        },
+        {
+          "url": "https://www.casuwon.or.kr/info/notice/112351",
+          "issuer": "Diocese of Suwon",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "2026 planned travelling-relic programme includes Juksan"
+        }
+      ],
+      "holds": [
+        "Do not equate named martyrs with local physical graves",
+        "No canonical Place ID, invented coordinates, GIS route or publication"
+      ]
+    },
+    {
+      "record_id": "SG-B11-KR-DIDIMGIL-2026",
+      "candidate_id": null,
+      "canonical_place_id": null,
+      "name": "Suwon Didimgil pilgrimage network — programme crosswalk",
+      "country": "KR",
+      "status": "NON_PLACE_PROGRAMME_EVIDENCE_ONLY",
+      "summary_en": "The Diocese of Suwon's 28 October 2026 article documents Didimgil as a 17-stage, approximately 410-km pilgrimage network developed in 2011. The route links Catholic shrines and selected parish churches, and is not a list of 17 distinct shrine buildings. This is documentary route metadata only: no GPX, GIS geometry or walking directions were acquired.",
+      "summary_fr": "Un article du diocèse de Suwon daté du 28 octobre 2026 présente Didimgil comme un réseau de pèlerinage d'environ 410 km en dix-sept étapes, élaboré en 2011. Il relie des sanctuaires catholiques et certaines églises paroissiales ; les dix-sept étapes ne correspondent pas à dix-sept sanctuaires distincts. Il s'agit uniquement de métadonnées documentaires : aucun tracé GPX, géométrie SIG ou itinéraire de marche n'a été acquis.",
+      "evidence": [
+        {
+          "url": "https://www.casuwon.or.kr/info/news/diocese/113873",
+          "issuer": "Diocese of Suwon",
+          "tier": "DIOCESAN_DATED_PRIMARY",
+          "support": "28 Oct 2026: 17 stages, about 410 km, 2011 origin and sequence"
+        },
+        {
+          "url": "https://www.casuwon.or.kr/holyland/pilgrimage",
+          "issuer": "Diocese of Suwon",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "Stage list, stamp programme and route narratives, not downloadable GIS certification"
+        }
+      ],
+      "holds": [
+        "Do not create a Place for route network",
+        "No route geometry acquired or generated",
+        "Diocesan shrine directory lists 14 named shrines, route starts include churches; do not equate counts"
+      ]
+    },
+    {
+      "record_id": "SG-B11-JP-NISHIZAKA-RELIC-LOCATION",
+      "candidate_id": "SG-INV-0617",
+      "canonical_place_id": null,
+      "name": "Nishizaka Twenty-Six Martyrs precinct — museum versus church relic-location discrepancy",
+      "country": "JP",
+      "status": "EXISTING_RESEARCH_ENRICHMENT_RELIC_CUSTODY_HELD",
+      "summary_en": "The Japan Tourism Agency's official Nishizaka heritage description specifically locates a blood-stained cloth and bones attributed to Saints Paul Miki, James Kisai and John of Goto among the museum's relics. The Nagasaki tourism guide cited in B09 places martyrs' bones in St Philip's Church. Both sources support relics at the Jesuit-managed precinct, but the precise current building and reliquary custody cannot be certified without a contemporary Jesuit inventory.",
+      "summary_fr": "La notice officielle de l'Agence japonaise du tourisme situe explicitement, parmi les reliques du musée de Nishizaka, un tissu taché du sang d'un martyr et des ossements attribués à saint Paul Miki, saint Jacques Kisai et saint Jean de Goto. Le guide touristique de Nagasaki cité dans B09 situe des ossements dans l'église Saint-Philippe. Les deux sources attestent des reliques dans l'ensemble jésuite, mais leur emplacement actuel précis et leur conservation ne sont pas certifiés sans inventaire jésuite contemporain.",
+      "evidence": [
+        {
+          "url": "https://www.mlit.go.jp/tagengo-db/en/R2-00468.html",
+          "issuer": "Japan Tourism Agency",
+          "tier": "GOVERNMENT_HERITAGE_PRIMARY",
+          "support": "Museum section explicitly identifies blood-stained silk and bones of three martyrs"
+        },
+        {
+          "url": "https://nagasakicity.com/spots/detail/208/back-1",
+          "issuer": "Official Nagasaki tourism guide",
+          "tier": "LOCAL_TOURISM_PRIMARY",
+          "support": "B09 reported bones in St Philip's Church"
+        }
+      ],
+      "holds": [
+        "Museum-versus-church location unresolved",
+        "Do not claim independently authenticated contemporary relic custody",
+        "Preserve B07/B09 candidate SG-INV-0617 and one precinct identity"
+      ]
+    }
+  ],
+  "next_targets": [
+    {
+      "candidate_id": null,
+      "task": "Suwon Songol: retrieve full diocesan history, martyr attribution and current Mass schedule; retain provisional"
+    },
+    {
+      "candidate_id": null,
+      "task": "Suwon Hwaseong: reconcile conflicting Saturday Mass notices and obtain relic custody inventory; distinguish 1932 and 1979 buildings"
+    },
+    {
+      "candidate_id": null,
+      "task": "Suwon Yanggeun: verify actual bridge opening, avoid assigning execution-site coordinate"
+    },
+    {
+      "candidate_id": "SG-INV-0617",
+      "task": "Nishizaka: contemporary Jesuit inventory to resolve museum-versus-church relic location and current visitor hours"
+    },
+    {
+      "candidate_id": "SG-INV-0471",
+      "task": "Cupey: original archdiocesan vicariate letter and completed-building evidence"
+    },
+    {
+      "candidate_id": "SG-INV-0604",
+      "task": "Kattimahana: ecclesiastical national-shrine decree and current pilgrimage programme"
+    },
+    {
+      "candidate_id": "SG-INV-0670",
+      "task": "Trà Kiệu: official entrances and hill access; 2026 events already documented in B09"
+    },
+    {
+      "candidate_id": "SG-INV-0688",
+      "task": "Rabban Hormizd: current access/security and relic custody; 2026 Chaldean worship already documented in B10"
+    },
+    {
+      "candidate_id": "SG-INV-0683",
+      "task": "Dili claimed Fatima shrine: original diocesan designation or retain hold"
+    },
+    {
+      "candidate_id": "SG-INV-0612",
+      "task": "Tianjin Lourdes: primary ecclesiastical identity or retain hold"
+    }
+  ],
+  "restrictions": [
+    "Preserve all canonical Place IDs and previous editorial decisions",
+    "No new coordinates or synthetic pilgrimage paths",
+    "No publication, merges, deployments, custodian contact or spending",
+    "All new sites require editorial approval before promotion",
+    "Do not treat scheduled 2026–27 travelling relics as permanently held at each shrine"
+  ]
+}

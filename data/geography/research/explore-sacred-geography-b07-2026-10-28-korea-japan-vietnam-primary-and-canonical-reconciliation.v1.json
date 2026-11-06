@@ -1,0 +1,569 @@
+{
+  "schema": "AO_EXPLORE_SACRED_GEOGRAPHY_UNATTENDED_RESEARCH_B07_V1",
+  "research_date": "2026-10-28",
+  "publication": "RESEARCH_ONLY_NOT_PROMOTED",
+  "repository": "Fulcanelli13/ad-orientem",
+  "target_branch": "research/major-sacred-sites-coverage-reconciliation-20261015",
+  "reconciliation": {
+    "main_registry_path": "data/geography/seed-registry.v1.json",
+    "main_registry_blob_sha": "070bf5301445845b28cbc8abc02b29ffecbc56ca",
+    "main_place_count": 512,
+    "previous_b06_place_count": 512,
+    "delta_since_b06": 0,
+    "prior_philippines_checkpoint": "347 Places, 20 verified research candidates, 4 provisional, 1 held, 1 Quiapo enrichment: historical checkpoint, not additive",
+    "r70_queue_count": 750,
+    "prior_latest_batch": "B06",
+    "note": "All records are additive research; source-supported identity does not constitute production certification. 7 text-hint matches are flagged for correction but source records are untouched."
+  },
+  "counts": {
+    "distinct_research_dossiers": 13,
+    "new_distinct_site_research_dossiers": 8,
+    "existing_canonical_enrichments": 5,
+    "source_verified_new_site_dossiers": 8,
+    "provisional_new_site_dossiers": 0,
+    "incorrect_text_hint_crosswalk_holds": 7,
+    "duplicate_nishizaka_candidate_ids_prevented": 1,
+    "new_canonical_places": 0,
+    "coordinates_added": 0,
+    "walking_routes_added": 0,
+    "published": 0
+  },
+  "records": [
+    {
+      "candidate_id": "SG-INV-0626",
+      "name": "Solmoe Catholic Shrine, Dangjin",
+      "country": "KR",
+      "status": "SOURCE_VERIFIED_NEW_RESEARCH",
+      "canonical_place_id": null,
+      "summary_en": "Solmoe in Dangjin, Diocese of Daejeon, is the birthplace of Saint Andrew Kim Tae-gon, Korea's first native priest and a martyr. The Korean bishops' shrine directory records the active pilgrimage site at 132 Solmoe-ro; Dangjin municipality independently documents its history and Pope Francis's visit in 2014. The shrine grounds and memorial buildings are a single complex pending physical-feature verification.",
+      "summary_fr": "Le sanctuaire catholique de Solmoe, à Dangjin dans le diocèse de Daejeon, marque le lieu de naissance de saint André Kim Tae-gon, premier prêtre coréen et martyr. L'annuaire des sanctuaires de l'épiscopat coréen confirme le lieu de pèlerinage au 132 Solmoe-ro ; la municipalité de Dangjin décrit son histoire et la visite du pape François en 2014. Les bâtiments commémoratifs et les espaces de prière forment un ensemble dont les éléments restent à distinguer.",
+      "evidence": [
+        {
+          "url": "https://missa.cbck.or.kr/Shrines",
+          "issuer": "Catholic Bishops' Conference of Korea",
+          "tier": "EPISCOPAL_PRIMARY",
+          "support": "Diocesan-submitted active shrine directory, revised 27 July 2026"
+        },
+        {
+          "url": "https://www.dangjin.go.kr/en/sub03_01_02_02.do",
+          "issuer": "Dangjin City",
+          "tier": "MUNICIPAL_PRIMARY",
+          "support": "Saint Andrew Kim birthplace, shrine identity and 2014 papal visit"
+        }
+      ],
+      "feast": "Saint Andrew Kim Tae-gon; annual site-specific pilgrimage date not checked",
+      "relics": "No bodily relics independently verified",
+      "visitor": "CBCK lists current shrine contact; Dangjin City describes pilgrim visits",
+      "holds": [
+        "Determine exact prayer chapel, birth-site marker and grounds as physical features"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0627",
+      "name": "Saenamteo Martyrs' Memorial Church and Shrine, Seoul",
+      "country": "KR",
+      "status": "SOURCE_VERIFIED_NEW_RESEARCH",
+      "canonical_place_id": null,
+      "summary_en": "Saenamteo in Yongsan, Seoul, commemorates Catholic martyrs including Saint Andrew Kim Tae-gon. The Korean bishops list the shrine and the custodial memorial church at 80-8 Ichon-ro. Its own website publishes a living parish and pilgrim-Mass programme, confirming contemporary Catholic use. The historic execution ground and present memorial church should not be treated as identical nineteenth-century structures.",
+      "summary_fr": "Le sanctuaire des martyrs de Saenamteo, à Yongsan (Séoul), rappelle notamment le martyre de saint André Kim Tae-gon. La conférence épiscopale coréenne répertorie le sanctuaire et l'église commémorative au 80-8 Ichon-ro. Le site de la communauté publie un programme de messes paroissiales et de pèlerinage. Il faut distinguer le lieu historique des exécutions de l'église commémorative actuelle.",
+      "evidence": [
+        {
+          "url": "https://missa.cbck.or.kr/Shrines",
+          "issuer": "Catholic Bishops' Conference of Korea",
+          "tier": "EPISCOPAL_PRIMARY",
+          "support": "Diocesan directory and shrine contact"
+        },
+        {
+          "url": "https://saenamteo.or.kr/",
+          "issuer": "Saenamteo memorial church",
+          "tier": "CUSTODIAN_PRIMARY",
+          "support": "Martyrs and pilgrim Mass programme"
+        },
+        {
+          "url": "https://www.cbck.or.kr/koreanmartyrs/Shrines/75",
+          "issuer": "Korean bishops' martyrs commission",
+          "tier": "EPISCOPAL_PRIMARY",
+          "support": "Named martyrs and physical memorial site"
+        }
+      ],
+      "feast": "Korean Martyrs; local shrine observance needs separate verification",
+      "relics": "No bodily relics independently verified",
+      "visitor": "Custodian publishes regular pilgrim Mass and shrine visits; confirm before travel",
+      "holds": [
+        "Historical execution place versus current church footprint requires mapping separation"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0625",
+      "name": "Seosomun Martyrs' Shrine and History Museum, Seoul",
+      "country": "KR",
+      "status": "SOURCE_VERIFIED_NEW_RESEARCH",
+      "canonical_place_id": null,
+      "summary_en": "The Seosomun execution site in central Seoul is an established Korean Catholic martyrs' pilgrimage place. The bishops' 2026 directory lists it at 5 Chilpae-ro, with the shrine history museum and visiting information. The custodian recounts the 1801, 1839 and 1866–73 persecutions and the canonization of 44 martyrs associated with the site. The memorial park, martyr monument and underground museum are distinct features of one historic precinct.",
+      "summary_fr": "Le site des martyrs de Seosomun, au centre de Séoul, est un lieu de pèlerinage catholique coréen. L'annuaire épiscopal de 2026 le situe au 5 Chilpae-ro et mentionne le musée historique. L'organisme gestionnaire évoque les persécutions de 1801, 1839 et 1866–1873 ainsi que les 44 martyrs de ce lieu canonisés en 1984. Le parc, le monument et le musée souterrain sont des éléments distincts d'un même ensemble.",
+      "evidence": [
+        {
+          "url": "https://missa.cbck.or.kr/Shrines",
+          "issuer": "Catholic Bishops' Conference of Korea",
+          "tier": "EPISCOPAL_PRIMARY",
+          "support": "Shrine, address, museum and hours"
+        },
+        {
+          "url": "https://seosomun.com/index.do",
+          "issuer": "Seosomun Shrine History Museum",
+          "tier": "CUSTODIAN_PRIMARY",
+          "support": "Martyrdom history and museum identity"
+        },
+        {
+          "url": "https://english.visitseoul.net/area/Seosomun-Shrine-History-Museum/ENP030804",
+          "issuer": "Seoul tourism authority",
+          "tier": "MUNICIPAL_PRIMARY",
+          "support": "Museum visitor evidence and physical distinction"
+        }
+      ],
+      "feast": "Korean Martyrs; no separate fixed site feast verified",
+      "relics": "No bodily relics independently verified",
+      "visitor": "Bishops' directory lists museum 09:30–17:30, closed Mondays; subject to change",
+      "holds": [
+        "Park, monument and museum must not become duplicate Places"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0629",
+      "name": "Mirinae Catholic Shrine, Anseong",
+      "country": "KR",
+      "status": "SOURCE_VERIFIED_IDENTITY_RELIC_HOLD",
+      "canonical_place_id": null,
+      "summary_en": "Mirinae in Anseong, Diocese of Suwon, is a recognized Catholic pilgrimage site. The Korean bishops' updated directory lists its address at 420 Mirinae-sungji-ro and the shrine's custodial website. A government-data-derived tourism description identifies the tomb of Saint Andrew Kim Tae-gon and associated burial sites, but the precise custody, authenticity and current presentation of individual remains were not checked against an original diocesan inventory.",
+      "summary_fr": "Mirinae, à Anseong dans le diocèse de Suwon, est un lieu de pèlerinage catholique reconnu. L'annuaire épiscopal actualisé le situe au 420 Mirinae-sungji-ro et renvoie au site du sanctuaire. Une notice touristique issue de données publiques évoque la tombe de saint André Kim Tae-gon et d'autres sépultures ; l'inventaire diocésain des restes et leur présentation actuelle n'ont pas été contrôlés.",
+      "evidence": [
+        {
+          "url": "https://missa.cbck.or.kr/Shrines",
+          "issuer": "Catholic Bishops' Conference of Korea",
+          "tier": "EPISCOPAL_PRIMARY",
+          "support": "Active Mirinae shrine, address and custodian link"
+        },
+        {
+          "url": "https://korearoute.com/spots/mirinae-holy-site",
+          "issuer": "KoreaRoute citing Korean government tourism data",
+          "tier": "SECONDARY_GOV_DATA_DERIVED",
+          "support": "Tomb association and pilgrim history; not independent relic inventory"
+        }
+      ],
+      "feast": "Saint Andrew Kim Tae-gon; local shrine celebration date not checked",
+      "relics": "Saint Andrew Kim tomb association reported; exact relic custody and inventories HELD",
+      "visitor": "CBCK lists contact and shrine site; current opening times not certified",
+      "holds": [
+        "Obtain original diocesan tomb/relic inventory before certifying remains",
+        "Separate burial chapel from wider grounds in physical mapping"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0617",
+      "name": "Twenty-Six Martyrs of Japan memorial complex, Nishizaka Hill",
+      "country": "JP",
+      "status": "SOURCE_VERIFIED_NEW_RESEARCH",
+      "canonical_place_id": null,
+      "summary_en": "Nishizaka Hill in Nagasaki is the execution site of Saint Paul Miki and twenty-five companions on 5 February 1597. Official Nagasaki tourism identifies the monument, museum and adjacent Saint Philip's memorial church, which preserves reported martyr remains and receives pilgrims. Japan's national tourism agency records national pilgrimage designation and the church's liturgical use. The inherited SG-INV-0619 Nishizaka Hill lead is the same memorial precinct, not a second automatically publishable Place.",
+      "summary_fr": "À Nishizaka, à Nagasaki, saint Paul Miki et vingt-cinq compagnons furent exécutés le 5 février 1597. L'office officiel de tourisme décrit le monument, le musée et l'église commémorative Saint-Philippe, qui accueille des pèlerins et conserve des restes attribués aux martyrs. L'office national du tourisme confirme la reconnaissance comme lieu de pèlerinage. La fiche SG-INV-0619 désigne le même ensemble historique et ne doit pas engendrer un doublon.",
+      "evidence": [
+        {
+          "url": "https://www.nagasakicity.com/spots/detail/208",
+          "issuer": "Nagasaki official tourism",
+          "tier": "MUNICIPAL_PRIMARY",
+          "support": "Martyrdom site, monument, museum, church and pilgrim use"
+        },
+        {
+          "url": "https://www.japan.travel/en/ph/church/kyushu/nagasaki-area-churches/",
+          "issuer": "Japan National Tourism Organization",
+          "tier": "NATIONAL_TOURISM_PRIMARY",
+          "support": "Saint Philip church and national pilgrimage designation"
+        }
+      ],
+      "feast": "Martyrs of Japan; execution date 5 February 1597; do not infer 1962 calendar observance",
+      "relics": "Nagasaki official tourism reports bones of three martyrs at St Philip church; ecclesiastical inventory not inspected",
+      "visitor": "Monument and church receive pilgrims; museum has separately ticketed admission",
+      "holds": [
+        "SG-INV-0619 is same Nishizaka complex: cross-reference, no duplicate pin",
+        "Distinguish monument, museum and Saint Philip church",
+        "Verify original relic custody if displayed as relic detail"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0618",
+      "name": "Ōura Cathedral, Nagasaki",
+      "country": "JP",
+      "status": "EXISTING_CANONICAL_ENRICHMENT",
+      "canonical_place_id": "place:JP:oura-cathedral-nagasaki",
+      "summary_en": "Ōura Cathedral is already registered as place:JP:oura-cathedral-nagasaki. UNESCO identifies it as a component of the Hidden Christian Sites in the Nagasaki Region, and the custodian documents the discovery of Japan's hidden Christians. Crucial visitor correction: the official cathedral website explicitly says it does not normally celebrate Mass, including Sunday Mass, and directs worshippers to other churches. The heritage visit is ticketed; it must not be advertised as an ordinary parish-Mass venue.",
+      "summary_fr": "La cathédrale d'Ōura figure déjà sous place:JP:oura-cathedral-nagasaki. L'UNESCO l'inscrit parmi les sites des chrétiens cachés de Nagasaki, et son organisme gestionnaire présente la redécouverte des fidèles clandestins. Précision essentielle : le site officiel indique qu'aucune messe ordinaire, même dominicale, n'y est habituellement célébrée et renvoie les fidèles vers d'autres églises. La visite patrimoniale est payante et ne constitue pas une messe paroissiale.",
+      "evidence": [
+        {
+          "url": "https://oura-church.jp/",
+          "issuer": "Ōura Cathedral custodian",
+          "tier": "CUSTODIAN_PRIMARY",
+          "support": "Explicit no regular Mass, visiting and ticket details"
+        },
+        {
+          "url": "https://whc.unesco.org/en/list/1495",
+          "issuer": "UNESCO World Heritage Centre",
+          "tier": "INTERGOVERNMENTAL_PRIMARY",
+          "support": "Heritage identity and hidden Christian history"
+        }
+      ],
+      "feast": "Dedication to Twenty-Six Martyrs; no ordinary weekly Mass",
+      "relics": "No bodily relics independently verified",
+      "visitor": "Custodian lists 08:30–18:00 visiting and admission fee; regular Mass NOT held",
+      "holds": [
+        "Existing canonical Place only; update visitor warning after editorial review"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0670",
+      "name": "Our Lady of Trà Kiệu Marian Pilgrimage Centre",
+      "country": "VN",
+      "status": "SOURCE_VERIFIED_NEW_RESEARCH",
+      "canonical_place_id": null,
+      "summary_en": "The Diocese of Đà Nẵng documents the active Marian pilgrimage centre at Trà Kiệu. Its 2026 diocesan gathering took place on 29–30 May, moved forward because 31 May coincided with Trinity Sunday, with Mass, Eucharistic adoration, confession and Marian procession. The diocese also announced a recurring pilgrimage at 15:00 on the 13th of each month beginning January 2026. The Marian intervention narrative associated with nineteenth-century violence is a local devotional tradition, not an independently proven apparition.",
+      "summary_fr": "Le diocèse de Đà Nẵng atteste le centre de pèlerinage marial de Trà Kiệu. Le rassemblement diocésain de 2026 s'est tenu les 29–30 mai, avancé parce que le 31 mai tombait la fête de la Trinité, avec messe, adoration eucharistique, confessions et procession mariale. Depuis janvier 2026, le diocèse annonce un pèlerinage mensuel le 13 à 15 heures. Le récit d'une protection mariale pendant les violences du XIXe siècle est présenté comme tradition de dévotion, non comme apparition historiquement démontrée.",
+      "evidence": [
+        {
+          "url": "https://giaophandanang.org/dai-hoi-duc-me-tra-kieu-2026/",
+          "issuer": "Diocese of Đà Nẵng",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "2026 pilgrimage, worship and historic devotional context"
+        },
+        {
+          "url": "https://giaophandanang.org/album-hanh-huong-me-tra-kieu-thang-02-2026/",
+          "issuer": "Diocese of Đà Nẵng",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "Monthly pilgrimage changed to 13th, 15:00 from January 2026"
+        }
+      ],
+      "feast": "2026 major pilgrimage 29–30 May; monthly 13th is a devotional schedule, not fixed liturgical feast",
+      "relics": "No bodily relics independently verified",
+      "visitor": "Diocesan pilgrimage programme confirms public access on event dates; ordinary hours not certified",
+      "holds": [
+        "Main church, Bửu Châu grotto and outdoor altar require physical feature reconciliation",
+        "Do not present local apparition narrative as historically proven"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0671",
+      "name": "Our Lady of Măng Đen Marian Pilgrimage Centre",
+      "country": "VN",
+      "status": "SOURCE_VERIFIED_NEW_RESEARCH",
+      "canonical_place_id": null,
+      "summary_en": "The Diocese of Kon Tum confirms the active Măng Đen Marian pilgrimage centre, its official website, and public Masses in September and October 2026. A diocesan report records a Rosary feast Mass on 7 October 2026 and the appointment of a new rector. The sanctuary's Marian image and devotional practices are established; claims about miracles or an apparition are not independently authenticated here.",
+      "summary_fr": "Le diocèse de Kon Tum confirme l'activité du centre marial de Măng Đen, son site officiel et des messes publiques en septembre et octobre 2026. Un article diocésain relate la messe de Notre-Dame du Rosaire du 7 octobre 2026 et l'arrivée d'un nouveau responsable. La vénération de l'image mariale est attestée ; les récits de miracles ou d'apparitions ne sont pas authentifiés par cette recherche.",
+      "evidence": [
+        {
+          "url": "https://giaophankontum.com/thong-bao/thong-bao-trang-web-va-youtube-chinh-thuc-cua-trung-tam-hanh-huong-duc-me-mang-den",
+          "issuer": "Diocese of Kon Tum",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "Official pilgrimage centre and custodian site, September 2026"
+        },
+        {
+          "url": "https://giaophankontum.com/chuyen-muc/duc-me-mang-den",
+          "issuer": "Diocese of Kon Tum",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "October 2026 Masses and rector appointment"
+        }
+      ],
+      "feast": "7 October Rosary celebration attested; annual site feast not separately certified",
+      "relics": "No bodily relics independently verified",
+      "visitor": "Public Masses documented October 2026; routine hours not independently certified",
+      "holds": [
+        "Exact shrine image, outdoor chapel and surrounding grounds require physical mapping",
+        "No miracle or apparition claims certified"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0674",
+      "name": "Tac Say Pilgrimage Centre — Blessed Francis Xavier Trương Bửu Diệp",
+      "country": "VN",
+      "status": "SOURCE_VERIFIED_NEW_RESEARCH_BEATIFICATION_2026",
+      "canonical_place_id": null,
+      "summary_en": "The Tac Say Catholic pilgrimage centre in the Diocese of Cần Thơ commemorates Father Francis Xavier Trương Bửu Diệp, who was killed in 1946. He was beatified there on 2 July 2026 at a Mass presided over by Cardinal Luis Antonio Tagle; the Dicastery for the Causes of Saints records the beatification and Fides reports Pope Leo XIV's acknowledgement on 5 July. The earlier 'Servant of God' designation is now obsolete. The historical tomb at Tac Say is attested by Vatican reporting, but its exact current chapel and relic custody require direct verification.",
+      "summary_fr": "Le centre catholique de pèlerinage de Tắc Sậy, dans le diocèse de Cần Thơ, honore le père François-Xavier Trương Bửu Diệp, mort en 1946. Il y a été béatifié le 2 juillet 2026 lors d'une messe présidée par le cardinal Luis Antonio Tagle. Le dicastère des Causes des saints enregistre la béatification et Fides rapporte la mention du nouveau bienheureux par Léon XIV le 5 juillet. L'ancien titre de « serviteur de Dieu » n'est donc plus actuel. Sa sépulture à Tắc Sậy est attestée historiquement, mais la chapelle et la garde des reliques restent à préciser.",
+      "evidence": [
+        {
+          "url": "https://www.causesanti.va/it/celebrazioni/beatificazioni/2026/07/02.html",
+          "issuer": "Dicastery for the Causes of Saints",
+          "tier": "HOLY_SEE_PRIMARY",
+          "support": "Beatification 2 July 2026 and biography"
+        },
+        {
+          "url": "https://www.fides.org/en/news/77895-ANGELUS_Leo_XIV_May_Vietnamese_Blessed_Truong_Buu_Diep_intercede_for_all_those_who_proclaim_the_Gospel_in_situations_of_persecution",
+          "issuer": "Fides / Pontifical Mission Societies",
+          "tier": "VATICAN_NEWS_AGENCY",
+          "support": "Pope Leo XIV acknowledgement 5 July 2026"
+        },
+        {
+          "url": "https://www.vaticannews.va/vi/church/news/2025-12/cha-phanxico-truong-buu-diep-tuyen-phong-chan-phuoc.html",
+          "issuer": "Vatican News citing Diocese of Cần Thơ",
+          "tier": "ECCLESIASTICAL_REPORT",
+          "support": "Tac Say tomb history and original plans"
+        }
+      ],
+      "feast": "Beatification celebrated 2 July 2026; liturgical memorial date not verified",
+      "relics": "Historical burial at Tac Say documented; present tomb and relic inventory not independently inspected",
+      "visitor": "Tens of thousands attended July 2026 beatification; routine public opening not certified",
+      "holds": [
+        "Do not confuse outdoor beatification event venue with permanent church or tomb",
+        "Verify exact current tomb/relic custody",
+        "Avoid claiming 2 July is a universal feast"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0705",
+      "name": "Saint Peter's Cathedral, Rabat",
+      "country": "MA",
+      "status": "EXISTING_CANONICAL_ENRICHMENT",
+      "canonical_place_id": "place:MA:cathedrale-saint-pierre-rabat",
+      "summary_en": "Saint Peter's Cathedral is the active Catholic cathedral of the Archdiocese of Rabat. The archdiocese lists its address at Place du Golan and publishes a history of the cathedral and its interreligious urban setting. It is already present in the canonical Place registry; this dossier supplies authoritative custodial identity and visitor evidence without creating a second pin.",
+      "summary_fr": "La cathédrale Saint-Pierre est la cathédrale catholique en activité de l'archidiocèse de Rabat. L'archidiocèse la situe place du Golan et en présente l'histoire et le cadre urbain interreligieux. Elle figure déjà au registre canonique des lieux : cette recherche apporte des références institutionnelles sans créer un second point.",
+      "evidence": [
+        {
+          "url": "https://dioceserabat.org/les-paroisses/",
+          "issuer": "Archdiocese of Rabat",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "Cathedral identity, address and current contact"
+        },
+        {
+          "url": "https://dioceserabat.org/accueil-2/la-cathedrale-du-monde/",
+          "issuer": "Archdiocese of Rabat",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "Cathedral history, pilgrims and public access"
+        }
+      ],
+      "feast": "Not independently established as an annual liturgical feast at this physical site",
+      "relics": "No bodily relics independently verified",
+      "visitor": "Archdiocese describes visitors and parish contact; ordinary hours not verified",
+      "holds": [
+        "No new canonical Place; enrich existing only"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0706",
+      "name": "Notre-Dame de Lourdes Church, Casablanca",
+      "country": "MA",
+      "status": "EXISTING_CANONICAL_ENRICHMENT",
+      "canonical_place_id": "place:MA:eglise-notre-dame-de-lourdes-casablanca",
+      "summary_en": "Notre-Dame de Lourdes is an active Roman Catholic parish church in Casablanca, not a newly identified Marian shrine with a verified special decree. The Archdiocese of Rabat lists it at Rond-Point d'Europe and reported a public thanksgiving Mass there on 19 October 2025, attended by parishioners and visitors. It is already a canonical Place and should receive only evidence enrichment.",
+      "summary_fr": "Notre-Dame de Lourdes est une église paroissiale catholique active à Casablanca, sans décret de sanctuaire particulier vérifié. L'archidiocèse de Rabat la situe au rond-point d'Europe et relate une messe d'action de grâce publique célébrée le 19 octobre 2025, en présence de paroissiens et de visiteurs. Une fiche Place existe déjà : il s'agit d'un enrichissement, non d'un nouveau sanctuaire.",
+      "evidence": [
+        {
+          "url": "https://dioceserabat.org/les-paroisses/",
+          "issuer": "Archdiocese of Rabat",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "Parish identity and location"
+        },
+        {
+          "url": "https://dioceserabat.org/casablanca-le-pere-riccardo-zagaria-celebre-ses-30-de-sacerdoce/",
+          "issuer": "Archdiocese of Rabat",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "October 2025 public Mass and parish activity"
+        }
+      ],
+      "feast": "Not independently established as an annual liturgical feast at this physical site",
+      "relics": "No bodily relics independently verified",
+      "visitor": "Active parish and visitor attendance evidenced October 2025; current daily hours unverified",
+      "holds": [
+        "Do not promote unverified formal shrine title",
+        "Enrich existing Place only"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0721",
+      "name": "Sanctuary of Our Lady of Fatima, Namaacha",
+      "country": "MZ",
+      "status": "EXISTING_CANONICAL_ENRICHMENT",
+      "canonical_place_id": "place:MZ:namaacha-fatima-sanctuary",
+      "summary_en": "The Catholic Marian sanctuary at Namaacha, Archdiocese of Maputo, is already represented by a canonical Place. Catholic press reported the Archbishop's preparations for the 17–18 October 2026 annual pilgrimage, and documented the 2025 pilgrimage. These contemporary reports corroborate active ecclesiastical pilgrimage use, but do not establish ordinary opening hours, an original shrine decree or a specific 1962 liturgical schedule.",
+      "summary_fr": "Le sanctuaire marial catholique de Namaacha, dans l'archidiocèse de Maputo, possède déjà une fiche Place. La presse catholique a rapporté la préparation par l'archevêque du pèlerinage annuel des 17–18 octobre 2026, ainsi que celui de 2025. Ces témoignages attestent l'activité du pèlerinage, mais ne constituent ni un décret original de sanctuaire, ni des horaires ordinaires d'ouverture, ni un programme selon le missel de 1962.",
+      "evidence": [
+        {
+          "url": "https://www.aciafrica.org/index.php/news/24729/catholics-urged-to-prepare-for-encounter-with-god-at-mozambiques-namaacha-marian-pilgrimage",
+          "issuer": "ACI Africa reporting Archbishop of Maputo",
+          "tier": "CATHOLIC_PRESS_BISHOP_QUOTED",
+          "support": "2026 pilgrimage announced for 17–18 October"
+        },
+        {
+          "url": "https://www.aciafrica.org/news/18067/carry-home-faith-hope-and-service-marian-pilgrims-in-mozambique-told",
+          "issuer": "ACI Africa",
+          "tier": "CATHOLIC_PRESS_BISHOP_QUOTED",
+          "support": "2025 pilgrimage held 10–12 October"
+        }
+      ],
+      "feast": "October pilgrimage 17–18 in 2026; not assumed fixed liturgical feast",
+      "relics": "No bodily relics independently verified",
+      "visitor": "Annual public pilgrimages documented 2025 and 2026; daily access not checked",
+      "holds": [
+        "Obtain custodial original decree and permanent visiting timetable",
+        "Enrich existing Place only"
+      ]
+    },
+    {
+      "candidate_id": "SG-INV-0482",
+      "name": "Parish and Sanctuary of Our Lady of Fatima, Fortaleza",
+      "country": "BR",
+      "status": "EXISTING_CANONICAL_ENRICHMENT",
+      "canonical_place_id": "place:BR:fortaleza-fatima-sanctuary",
+      "summary_en": "The Archdiocese of Fortaleza identifies the parish and sanctuary of Our Lady of Fatima on Avenida 13 de Maio, already present in the canonical registry. It documented eleven Masses and a procession on 13 May 2026 and ten Masses and a procession on 13 October 2026. These are dated events, not evidence for a permanent daily timetable or a 1962 Mass. Other Fatima parishes in Fortaleza are distinct churches.",
+      "summary_fr": "L'archidiocèse de Fortaleza identifie la paroisse-sanctuaire Notre-Dame de Fatima sur l'Avenida 13 de Maio, déjà enregistrée comme Place canonique. Il relate onze messes et une procession le 13 mai 2026, puis dix messes et une procession le 13 octobre 2026. Ces programmes datés ne prouvent ni des horaires permanents ni une messe selon le missel de 1962. Les autres paroisses de Fatima de la ville sont des églises distinctes.",
+      "evidence": [
+        {
+          "url": "https://www.arquidiocesedefortaleza.org.br/igreja-de-fatima-celebra-nossa-senhora-com-11-missas-e-tradicional-procissao-na-quarta-feira-13/",
+          "issuer": "Archdiocese of Fortaleza",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "May 2026 Masses and procession"
+        },
+        {
+          "url": "https://www.arquidiocesedefortaleza.org.br/santuario-de-fatima-em-fortaleza-celebra-ultima-aparicao-de-nossa-senhora-nesta-terca-feira-com-11-missas-e-procissao/",
+          "issuer": "Archdiocese of Fortaleza",
+          "tier": "DIOCESAN_PRIMARY",
+          "support": "13 October 2026 programme and exact sanctuary"
+        }
+      ],
+      "feast": "13 May and 13 October 2026 observances attested",
+      "relics": "No bodily relics independently verified",
+      "visitor": "2026 diocesan Masses and procession documented; current daily timetable not certified",
+      "holds": [
+        "Do not merge other Fortaleza Fatima parishes",
+        "No new Place; evidence enrichment only"
+      ]
+    }
+  ],
+  "canonical_duplicate_prevention": [
+    {
+      "candidate_id": "SG-INV-0618",
+      "canonical_place_id": "place:JP:oura-cathedral-nagasaki",
+      "action": "ENRICH_EXISTING_ONLY_NO_NEW_PLACE"
+    },
+    {
+      "candidate_id": "SG-INV-0705",
+      "canonical_place_id": "place:MA:cathedrale-saint-pierre-rabat",
+      "action": "ENRICH_EXISTING_ONLY_NO_NEW_PLACE"
+    },
+    {
+      "candidate_id": "SG-INV-0706",
+      "canonical_place_id": "place:MA:eglise-notre-dame-de-lourdes-casablanca",
+      "action": "ENRICH_EXISTING_ONLY_NO_NEW_PLACE"
+    },
+    {
+      "candidate_id": "SG-INV-0721",
+      "canonical_place_id": "place:MZ:namaacha-fatima-sanctuary",
+      "action": "ENRICH_EXISTING_ONLY_NO_NEW_PLACE"
+    },
+    {
+      "candidate_id": "SG-INV-0482",
+      "canonical_place_id": "place:BR:fortaleza-fatima-sanctuary",
+      "action": "ENRICH_EXISTING_ONLY_NO_NEW_PLACE"
+    }
+  ],
+  "same_complex_cross_reference": [
+    {
+      "candidate_id": "SG-INV-0619",
+      "related_candidate_id": "SG-INV-0617",
+      "reason": "Nishizaka Hill martyrdom site is within same memorial precinct; distinguish physical features before any separate mapping"
+    }
+  ],
+  "crosswalk_false_positive_holds": [
+    {
+      "candidate_id": "SG-INV-0018",
+      "incorrect_text_hint_place_id": "place:FR:sanctuaire-sacre-coeur-paray",
+      "reason": "Montmartre Sacré-Cœur is not Paray-le-Monial Sacred Heart",
+      "action": "HOLD_TEXT_HINT_NOT_A_PHYSICAL_MATCH_NO_ID_CHANGE"
+    },
+    {
+      "candidate_id": "SG-INV-0050",
+      "incorrect_text_hint_place_id": "place:IT:chiesa-gesu-rome",
+      "reason": "Santa Maria Maggiore is not Chiesa del Gesù",
+      "action": "HOLD_TEXT_HINT_NOT_A_PHYSICAL_MATCH_NO_ID_CHANGE"
+    },
+    {
+      "candidate_id": "SG-INV-0076",
+      "incorrect_text_hint_place_id": "place:IT:santa-chiara-assisi",
+      "reason": "Basilica of Saint Francis is not Basilica of Saint Clare",
+      "action": "HOLD_TEXT_HINT_NOT_A_PHYSICAL_MATCH_NO_ID_CHANGE"
+    },
+    {
+      "candidate_id": "SG-INV-0078",
+      "incorrect_text_hint_place_id": "place:IT:santa-chiara-assisi",
+      "reason": "Santa Maria degli Angeli is not Saint Clare basilica",
+      "action": "HOLD_TEXT_HINT_NOT_A_PHYSICAL_MATCH_NO_ID_CHANGE"
+    },
+    {
+      "candidate_id": "SG-INV-0037",
+      "incorrect_text_hint_place_id": "place:FR:notre-dame-paris",
+      "reason": "Sainte-Chapelle is not Notre-Dame Cathedral",
+      "action": "HOLD_TEXT_HINT_NOT_A_PHYSICAL_MATCH_NO_ID_CHANGE"
+    },
+    {
+      "candidate_id": "SG-INV-0033",
+      "incorrect_text_hint_place_id": "place:FR:chapelle-saint-vincent-paris",
+      "reason": "Saint Vincent de Paul birthplace at Pouy is not Paris chapel",
+      "action": "HOLD_TEXT_HINT_NOT_A_PHYSICAL_MATCH_NO_ID_CHANGE"
+    },
+    {
+      "candidate_id": "SG-INV-0063",
+      "incorrect_text_hint_place_id": "place:IT:basilica-san-domenico-bologna",
+      "reason": "San Luca sanctuary is not San Domenico basilica",
+      "action": "HOLD_TEXT_HINT_NOT_A_PHYSICAL_MATCH_NO_ID_CHANGE"
+    }
+  ],
+  "next_targets": [
+    {
+      "candidate_id": "SG-INV-0683",
+      "task": "Find primary Dili diocesan evidence for exact Fatima shrine; distinguish Suai, Atauro, Manatuto and Dili churches"
+    },
+    {
+      "candidate_id": "SG-INV-0612",
+      "task": "Find original Tianjin Catholic authority confirming Lourdes shrine identity and access"
+    },
+    {
+      "candidate_id": "SG-INV-0609",
+      "task": "Karachi Fatima shrine title versus existing canonical parish; seek formal decree"
+    },
+    {
+      "candidate_id": "SG-INV-0604",
+      "task": "Kattimahana diocesan jurisdiction and national shrine decree; avoid Talawila conflation"
+    },
+    {
+      "candidate_id": "SG-INV-0471",
+      "task": "Cupey Puerto Rico sanctuary project completion versus cathedral Marian image"
+    },
+    {
+      "candidate_id": "SG-INV-0688",
+      "task": "Rabban Hormizd current Chaldean custodial access versus Our Lady of Seeds monastery"
+    },
+    {
+      "candidate_id": "SG-INV-0629",
+      "task": "Mirinae original diocesan relic/tomb inventory and precise chapel identity"
+    },
+    {
+      "candidate_id": "SG-INV-0617",
+      "task": "Nishizaka monument, Saint Philip church and museum mapping; confirm relic custody"
+    },
+    {
+      "candidate_id": "SG-INV-0670",
+      "task": "Trà Kiệu main church versus Bửu Châu devotional feature"
+    },
+    {
+      "candidate_id": "SG-INV-0674",
+      "task": "Tac Say current tomb/relic custody and post-beatification visitor programme"
+    },
+    {
+      "candidate_id": "SG-INV-0018",
+      "task": "Bulk audit of seven demonstrably incorrect text-hint crosswalks, then remaining 106 text-hint review queue"
+    }
+  ],
+  "guards": [
+    "Preserve all frozen canonical Place IDs and published records",
+    "No invented coordinates or walking routes",
+    "No 1962 Mass schedule inferred from modern parish Masses",
+    "No unverifiable miracle, apparition, or relic claim promoted",
+    "No merge, deploy, publication or paid services"
+  ]
+}
