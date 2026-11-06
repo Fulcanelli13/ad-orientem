@@ -105,7 +105,63 @@
     ],
     "image_metadata_rights": "Each of the 10 actual canvas annotations contains Creative Commons CC0 (https://creativecommons.org/publicdomain/zero/1.0/) and appropriate Paris Musées credit.",
     "rights_vs_fidelity": "Explicit CC0 is evidence for the exact museum image, but does not by itself approve visual/crop/colour fidelity or publication.",
-    "followup_geometric_run": "https://github.com/Fulcanelli13/ad-orientem/actions/workflows/sacred-art-phase30-paris-qa.yml"
+    "followup_geometric_run": "https://github.com/Fulcanelli13/ad-orientem/actions/workflows/sacred-art-phase30-paris-qa.yml",
+    "final_geometric_qa": {
+      "run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42260787085",
+      "artifact": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42260787085/artifacts/13523893751",
+      "ten_museum_canvases_assessed": 10,
+      "rights_declarations_explicit_cc0": 10,
+      "full_view_matches": 2,
+      "painting_detail_matches": 5,
+      "excluded_technical_reverse_or_nonmatch_canvases": 2,
+      "selected_originals_unavailable": 1,
+      "owner_selected_tissot_original_retrieval": {
+        "file": "The_Return_of_the_Prodigal_Son_James_Tissot.jpeg",
+        "result": "HTTP_429_UPLOAD_WIKIMEDIA",
+        "url": "https://commons.wikimedia.org/wiki/File:The_Return_of_the_Prodigal_Son_James_Tissot.jpeg",
+        "note": "Do not substitute another Commons file or count as photographic approval"
+      },
+      "lazerges": {
+        "selected_original": "https://commons.wikimedia.org/wiki/File:La_mort_de_la_Vierge,_Lazerges.jpg",
+        "full_front_views": [
+          0,
+          1
+        ],
+        "same_painting_details": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "technical_dark_canvas": 7,
+        "reverse_canvas": 8,
+        "canvas0_dimensions": [
+          2971,
+          2160
+        ],
+        "selected_current_dimensions": [
+          758,
+          558
+        ],
+        "canvas0_sift_ransac_inliers": 705,
+        "finding": "SAME_UNDERLYING_PAINTING; PHOTO_FIDELITY_HOLD_DARKER_EXPOSURE",
+        "rights_metadata": "CC0_EXPLICIT_ON_CANVAS"
+      },
+      "tissot": {
+        "museum_image_dimensions": [
+          3840,
+          2120
+        ],
+        "source_canvas": 0,
+        "rights_metadata": "CC0_EXPLICIT_ON_CANVAS",
+        "selected_commons_reference": "DOWNLOAD_BLOCKED_HTTP_429",
+        "identity_approval": "PENDING_EXACT_IMAGE_COMPARISON"
+      },
+      "approved_for_publication": 0,
+      "applied_to_gallery": 0,
+      "note": "Geometric candidate does not settle color fidelity, crop, technical features or in-app acceptance."
+    }
   },
   "other_identity_holds": [
     {
@@ -139,5 +195,7 @@
     "Identity evidence does not constitute source-photograph rights or quality approval.",
     "Image quality includes colour calibration, crop, exposure and resolution.",
     "Research branch only; zero gallery image replacements or prayer/calendar pairing."
-  ]
+  ],
+  "updated_at": "2026-11-06",
+  "delivery": "Ad_Orientem_Phase30_177_Artwork_and_Paris_CC0_Image_Master.xlsx"
 }
