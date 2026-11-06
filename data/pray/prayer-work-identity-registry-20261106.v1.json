@@ -49,8 +49,9 @@
     },
     "byAvailability": {
       "published": 46,
-      "route-unverified": 85,
-      "external-link": 2
+      "route-unverified": 84,
+      "external-link": 2,
+      "source-only": 1
     }
   },
   "works": [
@@ -3804,7 +3805,7 @@
       ],
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/montfort-consecration-b26.js",
-      "source_key": "MONTFORT_B26",
+      "source_key": "MONTFORT_B26_CONSECRATION_ACT_EN",
       "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
@@ -3817,7 +3818,7 @@
         {
           "id": "pray.montfort_consecration",
           "kind": "principal",
-          "sourceRef": "src/pray/montfort-consecration-b26.js#MONTFORT_B26"
+          "sourceRef": "src/pray/montfort-consecration-b26.js#MONTFORT_B26_CONSECRATION_ACT_EN"
         }
       ],
       "refs": [],
@@ -4166,13 +4167,15 @@
         "other": []
       },
       "relations": [],
-      "review": [
-        "Confirm addressee/classification against Latin source; family provisional."
-      ],
+      "review": [],
       "classificationRule": "R5",
-      "classificationStatus": "provisional-needs-source-judgement",
+      "classificationStatus": "confirmed-by-existing-latin",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "evidence": {
+        "latinSource": "src/pray/icrsp-seasonal-hymns.v1.js#ICRSP_SEASONAL_HYMNS_V1.audi_benigne",
+        "rule": "R5"
+      }
     },
     {
       "id": "o_sol_salutis",
@@ -4210,13 +4213,15 @@
         "other": []
       },
       "relations": [],
-      "review": [
-        "Confirm addressee/classification against Latin source; family provisional."
-      ],
+      "review": [],
       "classificationRule": "R5",
-      "classificationStatus": "provisional-needs-source-judgement",
+      "classificationStatus": "confirmed-by-existing-latin",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "evidence": {
+        "latinSource": "src/pray/icrsp-seasonal-hymns.v1.js#ICRSP_SEASONAL_HYMNS_V1.o_sol_salutis",
+        "rule": "R5"
+      }
     },
     {
       "id": "ex_more_docti",
@@ -4254,13 +4259,15 @@
         "other": []
       },
       "relations": [],
-      "review": [
-        "Confirm addressee/classification against Latin source; family provisional."
-      ],
+      "review": [],
       "classificationRule": "R5",
-      "classificationStatus": "provisional-needs-source-judgement",
+      "classificationStatus": "confirmed-by-existing-latin",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "evidence": {
+        "latinSource": "src/pray/icrsp-seasonal-hymns.v1.js#ICRSP_SEASONAL_HYMNS_V1.ex_more_docti",
+        "rule": "R5"
+      }
     },
     {
       "id": "lustra_sex",
@@ -6440,9 +6447,9 @@
       ],
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/office-dead-vespers-1960.js",
-      "source_key": "OFFICE_DEAD_VESPERS",
-      "availability": "route-unverified",
-      "verification": "pending-source-certification",
+      "source_key": "OFFICE_DEAD_VESPERS_1960_CONTEXT",
+      "availability": "source-only",
+      "verification": "source-owned-no-public-reader",
       "lang": {
         "la": "unassessed",
         "en": "unassessed",
@@ -6453,7 +6460,7 @@
         {
           "id": "office_dead_vespers_1960",
           "kind": "principal",
-          "sourceRef": "src/pray/office-dead-vespers-1960.js#OFFICE_DEAD_VESPERS"
+          "sourceRef": "src/pray/office-dead-vespers-1960.js#OFFICE_DEAD_VESPERS_1960_CONTEXT"
         }
       ],
       "refs": [],
@@ -6463,11 +6470,13 @@
         "other": []
       },
       "relations": [],
-      "review": [],
+      "review": [
+        "Source module explicitly states that this Office of the Dead Vespers assembler is not a public reader. Do not imply reader availability."
+      ],
       "classificationRule": "R2",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "not-a-public-reader"
     }
   ]
 }
