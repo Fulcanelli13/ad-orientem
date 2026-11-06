@@ -25,8 +25,8 @@ const unresolved=Object.freeze({
  DISMISSAL_GREETING:"Identify the printed 1961 greeting tone applicable to the dismissal context; do not copy the preceding Collect/Postcommunion dialogue."
 });
 const dynamic=Object.freeze({
- COLLECT_AMEN:Object.freeze({eventId:"COLLECT",sourceGate:"1962_SELECTED_PROPER_AND_UNIQUE_AME[N]_CUE",sourceFolio:["1961 Graduale Romanum 114*","1961 Graduale Romanum 116*"],sourceUrls:[FESTIVE_ORATION_AMEN_SOURCE.sourceUrl,OLD_SOLEMN_ORATION_AMEN_SOURCE.facsimile],variants:["DEFAULT_FESTIVE","FERIAL_RECTO_TONO_TEXT_ONLY","EXPLICIT_OLD_SOLEMN"],publicScoreApproved:false}),
- POSTCOMMUNION_AMEN:Object.freeze({eventId:"POSTCOMMUNION",sourceGate:"1962_SELECTED_PROPER_AND_UNIQUE_AME[N]_CUE",sourceFolio:["1961 Graduale Romanum 114*","1961 Graduale Romanum 116*"],sourceUrls:[FESTIVE_ORATION_AMEN_SOURCE.sourceUrl,OLD_SOLEMN_ORATION_AMEN_SOURCE.facsimile],variants:["DEFAULT_FESTIVE","FERIAL_RECTO_TONO_TEXT_ONLY","EXPLICIT_OLD_SOLEMN"],publicScoreApproved:false})
+ COLLECT_AMEN:Object.freeze({eventId:"COLLECT",sourceGate:"EXACT_1962_SELECTED_PROPER_AND_UNIQUE_AMEN_CUE",sourceFolio:["1961 Graduale Romanum 114*","1961 Graduale Romanum 116*"],sourceUrls:[FESTIVE_ORATION_AMEN_SOURCE.sourceUrl,OLD_SOLEMN_ORATION_AMEN_SOURCE.facsimile],variants:["DEFAULT_FESTIVE","FERIAL_RECTO_TONO_TEXT_ONLY","EXPLICIT_OLD_SOLEMN"],publicScoreApproved:false}),
+ POSTCOMMUNION_AMEN:Object.freeze({eventId:"POSTCOMMUNION",sourceGate:"EXACT_1962_SELECTED_PROPER_AND_UNIQUE_AMEN_CUE",sourceFolio:["1961 Graduale Romanum 114*","1961 Graduale Romanum 116*"],sourceUrls:[FESTIVE_ORATION_AMEN_SOURCE.sourceUrl,OLD_SOLEMN_ORATION_AMEN_SOURCE.facsimile],variants:["DEFAULT_FESTIVE","FERIAL_RECTO_TONO_TEXT_ONLY","EXPLICIT_OLD_SOLEMN"],publicScoreApproved:false})
 });
 const action=Object.freeze({
  GLORIA_INTONATION:"Collate selected Gloria VIII 1961 first phrase; add other settings only from independently authenticated selections.",
