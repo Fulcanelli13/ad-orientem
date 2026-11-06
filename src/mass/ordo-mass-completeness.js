@@ -37,7 +37,8 @@ function groupCheck(data,contract,group){
    return fail("INCOMPLETE_TRILINGUAL_"+group.field+"_"+i);
   if(nonempty(rule.sourcePath)&&row.sourcePath!==rule.sourcePath)
    return fail("ORATION_SOURCE_ID_"+group.field+"_"+i);
-  if(nonempty(rule.purpose)&&row.liturgicalPurpose!==rule.purpose)
+  if(nonempty(rule.purpose)&&rule.purpose!=="PRINCIPAL"&&
+     row.liturgicalPurpose!==rule.purpose)
    return fail("ORATION_PURPOSE_"+group.field+"_"+i);
   if(rule.text){
    if(LANGS.some(k=>!nonempty(rule.text[k])||
