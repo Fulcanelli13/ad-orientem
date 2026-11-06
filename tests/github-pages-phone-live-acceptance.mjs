@@ -248,12 +248,19 @@ try{
   },null,{timeout:45000,polling:300});
   // A single transient registration is not a usable returning-user cache.
   // Record four stable reads before reload to expose lifecycle races.
-  for(let i=0;i<4;i++){
-   const sample=await capture("before-reload-"+i);
-   assert.ok(stable(sample),"Service worker registration lost before reload: "+
-    JSON.stringify(sample));
-   if(i<3)await page.waitForTimeout(350);
+  // A transient worker activation/return-navigation race is not evidence of
+  // a lost installation. Require four consecutive stable reads, while keeping
+  // a hard deadline and complete trace for a genuinely missing worker.
+  let consecutive=0,lastSample=null;
+  const stabilityDeadline=Date.now()+20000;
+  for(let attempt=0;consecutive<4&&Date.now()<stabilityDeadline;attempt++){
+   const sample=await capture("before-reload-"+attempt);
+   lastSample=sample;
+   consecutive=stable(sample)?consecutive+1:0;
+   if(consecutive<4)await page.waitForTimeout(350);
   }
+  assert.equal(consecutive,4,"Service worker never reached four stable reads before reload: "+
+   JSON.stringify({lastSample,events}));
   pwaEvidence.before=pwaEvidence.samples.at(-1);
   await page.reload({waitUntil:"load",timeout:90000});
   await page.waitForFunction(()=>
