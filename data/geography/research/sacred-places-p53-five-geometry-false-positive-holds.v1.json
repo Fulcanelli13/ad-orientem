@@ -1,0 +1,77 @@
+{
+  "schema": "AO_SACRED_PLACES_P53_FIVE_FALSE_FEATURE_OR_SCOPE_HOLDS_V1",
+  "as_of": "2026-10-28",
+  "status": "IDENTITY_GEO_EXCEPTION_RESEARCH_ONLY",
+  "cases_reviewed": 5,
+  "unsafe_exact_footprints_explicitly_rejected": 3,
+  "scope_restoration_holds": 2,
+  "publication_authorized": 0,
+  "notes": [
+    "No geocoding promotion. Each candidate remains unresolved until its exact physical chapel or church building is identified.",
+    "Mapcarta/Osm landuse, castle, bus-stop or locality features are NOT interchangeable with exact Catholic sanctuary church geometry.",
+    "Name-based similarity does not override neighboring church distinction, especially two nearby churches with different Catholic owners.",
+    "Photography remains excluded from this research phase."
+  ],
+  "rows": [
+    {
+      "id": "SG-INV-0321",
+      "rank": 6,
+      "site": "National Shrine of Our Lady of Mátraverebély-Szentkút",
+      "false_osm": "osm:way:330540560",
+      "false_url": "https://mapcarta.com/W330540560",
+      "actual_feature": "Our Lady Parish Church at Dózsa György utca 4, 3 km south of Szentkút pilgrimage site",
+      "source_url": "https://szentkut.hu/en/contact-information",
+      "state": "WRONG_NEARBY_PARISH_CHURCH_NOT_SHRINE",
+      "next": "Identify actual Nagyboldogasszony Basilica building at Szentkút 14 separately",
+      "publication_authorized": false
+    },
+    {
+      "id": "SG-INV-0595",
+      "rank": 28,
+      "site": "Saint Alphonsa Shrine, Bharananganam",
+      "false_osm": "osm:way:799031282",
+      "false_url": "https://mapcarta.com/W799031282",
+      "actual_feature": "Named St Alphonsa Catholic Church OSM way nearby Tomb of St Alphonsa, but building=yes and shrine/tomb feature relationship ambiguous",
+      "source_url": "https://alphonsa.org/about/parish",
+      "state": "ADJACENT_CHURCH_TOMB_FEATURE_SELECTION_REQUIRED",
+      "next": "Preserve 200 m separation from St Mary's Forane Church; resolve exact Alphonsa shrine church footprint versus tomb/chapel",
+      "publication_authorized": false
+    },
+    {
+      "id": "SG-INV-0113",
+      "rank": 29,
+      "site": "Sanctuary of Our Lady of Torreciudad",
+      "false_osm": "osm:node:1455834434",
+      "false_url": "https://mapcarta.com/N1455834434",
+      "actual_feature": "OSM node is hamlet / locality Sanctuary of Torreciudad, not church footprint",
+      "source_url": "https://torreciudad.org/en/about-us/",
+      "state": "LOCALITY_NODE_NOT_CHURCH",
+      "next": "Identify exact physical sanctuary church footprint rather than locality coordinates",
+      "publication_authorized": false
+    },
+    {
+      "id": "SG-INV-0312",
+      "rank": 23,
+      "site": "Our Lady of Remete, Zagreb",
+      "false_osm": null,
+      "false_url": null,
+      "actual_feature": "Existing Carmelite church and monastery damaged by 2020 earthquakes; diocesan source says liturgy held in adjacent temporary structure",
+      "source_url": "https://www.zg-nadbiskupija.hr/zupe/85?ZupeId=140",
+      "state": "CHURCH_RESTORATION_AND_TEMPORARY_LITURGY_SITE_DISTINCT",
+      "next": "Map permanent sanctuary church independently; don't infer currently functioning chapel or Mass times",
+      "publication_authorized": false
+    },
+    {
+      "id": "SG-INV-0345",
+      "rank": 15,
+      "site": "Shrine of Our Lady of Berdychiv",
+      "false_osm": "osm:way:220719640",
+      "false_url": "https://mapcarta.com/W220719640",
+      "actual_feature": "OSM object is Carmelite monastery fortress tagged historic=castle/tourism=attraction, not individual shrine church; St Barbara Church at OSM way 220719638 is separate Catholic church approx 1km away",
+      "source_url": "https://rkc.org.ua/rkcz-v-ukrayini/naczionalni-svyatyni/",
+      "state": "MONASTERY_CASTLE_AND_OTHER_CHURCH_NOT_SHRINE_FOOTPRINT",
+      "next": "Find church of Immaculate Conception inside Carmelite complex as distinct OSM structure",
+      "publication_authorized": false
+    }
+  ]
+}

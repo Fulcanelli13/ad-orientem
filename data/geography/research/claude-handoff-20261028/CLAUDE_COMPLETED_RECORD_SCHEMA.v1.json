@@ -1,0 +1,134 @@
+{
+  "title": "Ad Orientem Sacred Places — Claude completed research row",
+  "version": "1.0",
+  "contract": "Research output. No edits to production registry; preserve original candidate_id and country.",
+  "required": [
+    "candidate_id",
+    "decision",
+    "display_name",
+    "mapping_country_code",
+    "country_original",
+    "site_category",
+    "catholic_status",
+    "locality",
+    "place_address",
+    "latitude",
+    "longitude",
+    "geometry_precision",
+    "source_refs",
+    "research_confidence",
+    "review_required",
+    "evidence_summary"
+  ],
+  "enum": {
+    "decision": [
+      "EXISTING_CANONICAL_REUSE",
+      "NEW_DISTINCT_PHYSICAL_SITE",
+      "EXACT_SITE_NEEDS_MORE_GEOMETRY",
+      "HISTORIC_CATHOLIC_HERITAGE",
+      "CURRENT_NON_CATHOLIC_HERITAGE",
+      "NOT_INDIVIDUAL_PLACE_ROUTE_OR_LANDSCAPE",
+      "OUT_OF_SCOPE_OR_INVALID"
+    ],
+    "site_category": [
+      "CATHEDRAL",
+      "BASILICA",
+      "CHURCH",
+      "CHAPEL",
+      "GROTTO",
+      "SHRINE",
+      "MONASTERY",
+      "RELIQUARY_OR_TOMB",
+      "PILGRIMAGE_COMPLEX",
+      "RUINS_OR_ARCHAEOLOGY",
+      "MONUMENT",
+      "ROUTE",
+      "LANDSCAPE",
+      "OTHER"
+    ],
+    "catholic_status": [
+      "CURRENT_LATIN_CATHOLIC",
+      "CURRENT_EASTERN_CATHOLIC",
+      "SHARED_CATHOLIC_AND_OTHER",
+      "HISTORICALLY_CATHOLIC",
+      "CURRENT_NON_CATHOLIC",
+      "CATHOLIC_IDENTITY_UNCERTAIN"
+    ],
+    "geometry_precision": [
+      "EXACT_BUILDING_POLYGON",
+      "EXACT_BUILDING_NODE",
+      "EXACT_SITE_POINT",
+      "COMPLEX_OR_PRECINCT_ONLY",
+      "SETTLEMENT_ONLY",
+      "UNLOCATED"
+    ],
+    "source_tier": [
+      "A_CUSTODIAN_OR_DIOCESE",
+      "B_CIVIC_HERITAGE_OR_OSM",
+      "C_SECONDARY_CONTEXT",
+      "D_INFERENCE"
+    ]
+  },
+  "row_shape": {
+    "candidate_id": "SG-INV-0000 (existing) or NEW:<country>:<slug> (new lead)",
+    "decision": "enum decision",
+    "display_name": "preferred official local language or established name",
+    "aliases": [
+      "additional attested names"
+    ],
+    "country_original": "unchanged source country code",
+    "mapping_country_code": "modern ISO alpha-2 country",
+    "administrative_area": "province/state/diocese as supported",
+    "locality": "city/town/village",
+    "place_address": "street or site address when provided; do not invent",
+    "latitude": "numeric or null",
+    "longitude": "numeric or null",
+    "google_maps_url": "optional Google Maps search link using grounded site coordinates or official address",
+    "geometry_precision": "enum",
+    "osm_ref": "osm:way:123 / osm:node:123 / null",
+    "osm_url": "exact OpenStreetMap object URL or null",
+    "wikidata_id": "Q... or null",
+    "site_category": "enum",
+    "catholic_status": "enum",
+    "rite": "Latin / Byzantine / Maronite / Chaldean / other attested / unknown",
+    "custodian": "named order/parish/diocese if sourced, otherwise null",
+    "jurisdiction": "diocese/eparchy if sourced",
+    "is_public_site": "true/false/null; source-backed only",
+    "distinct_from": [
+      "candidate or canonical IDs for different nearby features"
+    ],
+    "canonical_reuse_id": "place:XX:slug if existing, else null",
+    "proposed_new_place_id": "proposal only for genuinely new distinct physical site",
+    "source_refs": [
+      {
+        "url": "https://...",
+        "tier": "enum",
+        "issuer": "source owner",
+        "claim": "exact supported claim",
+        "accessed_on": "2026-10-28"
+      }
+    ],
+    "research_confidence": "HIGH / MEDIUM / LOW",
+    "inferred_fields": [
+      "names of any values reasoned from institution/feature rather than explicitly sourced"
+    ],
+    "review_required": "boolean",
+    "evidence_summary": "concise site-specific source and scope decision",
+    "remaining_unknowns": [
+      "explicit residual gaps; no artificial empty records"
+    ],
+    "photo_fields": "DO NOT RESEARCH, DOWNLOAD, POPULATE OR RECOMMEND IMAGES",
+    "publish_authorized": false
+  },
+  "deliverables": {
+    "completed_candidates.csv": "One row for every one of the original 750 candidate IDs; preserve frozen IDs; columns include original + new research fields.",
+    "completed_candidates.jsonl": "750 full records using schema, structured source refs and confidence at field level.",
+    "new_sites.jsonl": "Additional distinct sites discovered from Catholic sources, with stable proposed NEW IDs and nonduplication checks; distinct from original 750.",
+    "source_evidence.csv": "Candidate/field/claim/source URL/publisher/observed tag/evidence tier/confidence for audit.",
+    "canonical_reuse_crosswalk.csv": "Candidate ID -> existing canonical Place ID; never add as new physical site.",
+    "geography_exceptions.csv": "All 35 mapped historical exceptions carried forward with determinations and remaining holds.",
+    "field_coverage.json": "Denominators and completed vs inferred vs unknown per column; never treat inferred as verified.",
+    "unresolved_exceptions.csv": "Only genuinely irresolvable or inconsistent records with explicit next query.",
+    "summary.md": "Results and exact status; no marketing claims or fabricated release totals."
+  }
+}

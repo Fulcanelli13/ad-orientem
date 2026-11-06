@@ -1,0 +1,96 @@
+{
+  "schema": "AO_SACRED_PLACES_P53_GEOMETRY_THREE_CATHOLIC_WORSHIP_BUILDINGS_V1",
+  "date": "2026-10-28",
+  "status": "EXACT_BUILDING_CANDIDATE_RESEARCH_ONLY",
+  "canonical_places_before": 512,
+  "proposed_individually_disambiguated_building_features": 3,
+  "new_published_places": 0,
+  "site_specific_primary_owner_plus_osm_feature": true,
+  "release_gate": "VERIFY_SOURCE_AND_CURRENT_OSM_ID_IN_SEPARATE_CHANGESET_AND_PASS_REQUIRED_CI",
+  "notes": [
+    "Church footprint OSM IDs and lat/lng are based on retrieved feature descriptions, not an inspection of polygon vertices in OSM. Preserve exact attribution.",
+    "Building footprint matches are not physical-site publication by themselves; no new Places until independent release gate passes.",
+    "Sensible exceptions: one Armagh Anglican cathedral, one Yagma religious land-use site, multiple separate Neviges neighboring churches.",
+    "No photograph acquisition or copyright/licensing work is undertaken."
+  ],
+  "rows": [
+    {
+      "id": "SG-INV-0245",
+      "rank": 3,
+      "name": "St Patrick's Roman Catholic Cathedral, Armagh",
+      "country": "GB",
+      "inventory_country": "IE",
+      "lat": 54.3526,
+      "lng": -6.65898,
+      "osm": "osm:way:91239601",
+      "osm_url": "https://www.openstreetmap.org/way/91239601",
+      "geo_url": "https://mapcarta.com/W91239601",
+      "identity_url": "https://www.armagharchdiocese.org/parishes/parish-details/?parishID=9",
+      "identity_issuer": "Roman Catholic Archdiocese of Armagh",
+      "tags": {
+        "amenity": "place_of_worship",
+        "building": "cathedral",
+        "denomination": "roman_catholic"
+      },
+      "disambiguate": {
+        "wrong_osm": "osm:way:62046575",
+        "reason": "The second St Patrick's Cathedral belongs to the Church of Ireland (Anglican), and is south of the Catholic cathedral."
+      },
+      "note": "Current physical country GB (Northern Ireland), preserve historical candidate country IE; do not merge both St Patrick cathedrals.",
+      "publication_authorized": false,
+      "site_verified_to": "FEATURE_EVIDENCE_MATCHED_PENDING_RELEASE_QA"
+    },
+    {
+      "id": "SG-INV-0727",
+      "rank": 14,
+      "name": "Basilique Notre-Dame de Yagma",
+      "country": "BF",
+      "inventory_country": "HV",
+      "lat": 12.42754,
+      "lng": -1.62009,
+      "osm": "osm:way:157591164",
+      "osm_url": "https://www.openstreetmap.org/way/157591164",
+      "geo_url": "https://mapcarta.com/W157591164",
+      "identity_url": "https://catholique.bf/cardinal-philippe/768-erection-de-l-eglise-de-yagma-en-basilique-mineure",
+      "identity_issuer": "Archdiocese of Ouagadougou, homily at 2013 grant of Minor Basilica dignity",
+      "tags": {
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic"
+      },
+      "disambiguate": {
+        "wrong_osm": "osm:way:1041406096",
+        "reason": "Neighboring Sanctuaire marial de Yagma is mapped as landuse=religious about 190m west; not the individual basilica building."
+      },
+      "note": "Original HV is an outdated Upper Volta country code, resolve to Burkina Faso BF for map.",
+      "publication_authorized": false,
+      "site_verified_to": "FEATURE_EVIDENCE_MATCHED_PENDING_RELEASE_QA"
+    },
+    {
+      "id": "SG-INV-0165",
+      "rank": 21,
+      "name": "Mariendom Neviges — Maria, Königin des Friedens",
+      "country": "DE",
+      "inventory_country": "DE",
+      "lat": 51.31274,
+      "lng": 7.08745,
+      "osm": "osm:way:115768554",
+      "osm_url": "https://www.openstreetmap.org/way/115768554",
+      "geo_url": "https://mapcarta.com/W115768554",
+      "identity_url": "https://www.wallfahrt-neviges.de/",
+      "identity_issuer": "Wallfahrt Neviges Catholic shrine custodians",
+      "tags": {
+        "amenity": "place_of_worship",
+        "building": "church",
+        "denomination": "catholic"
+      },
+      "disambiguate": {
+        "wrong_osm": null,
+        "reason": "St Mariä Empfängnis and Evangelische Stadtkirche nearby are separate churches, not Mariendom."
+      },
+      "note": "Official custodian says Mariendom temporarily closed 24 Aug–29 Nov 2026 for electrical/lighting works; closure does not invalidate physical-site identity or imply Mass availability.",
+      "publication_authorized": false,
+      "site_verified_to": "FEATURE_EVIDENCE_MATCHED_PENDING_RELEASE_QA"
+    }
+  ]
+}
