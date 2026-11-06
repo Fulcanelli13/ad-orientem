@@ -1,0 +1,78 @@
+name: Sacred Art Phase 26 — photo acquisition and 87-source reconciliation
+on:
+  push:
+    branches:
+      - research/sacred-art-phase18-iiif-audit-20261106
+    paths:
+      - 'scripts/sacred-art/phase26-three-new-iiif.py'
+      - 'scripts/sacred-art/phase26-remaining87-anchors.py'
+      - '.github/workflows/sacred-art-phase26-bulk.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: sacred-art-phase26-bulk
+  cancel-in-progress: false
+
+jobs:
+  three-new-iiif:
+    name: Download and compare three newly identified museum object images
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install bounded image-audit dependencies
+        run: python -m pip install --disable-pip-version-check 'requests>=2.32,<3' 'Pillow>=11,<13'
+      - name: Validate scripts and acquire source images without any publication
+        run: |
+          python -m py_compile scripts/sacred-art/phase26-three-new-iiif.py
+          python scripts/sacred-art/phase26-three-new-iiif.py
+      - name: Upload temporary original photographs and contact sheets
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-phase26-three-iiif-research-only
+          path: artifacts/sacred-art-phase26-new-iiif/
+          retention-days: 7
+          if-no-files-found: warn
+
+  source-anchors-87:
+    name: Reconcile 87 unresolved paintings with museum source pages
+    runs-on: ubuntu-latest
+    timeout-minutes: 23
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install bounded source-parser dependencies
+        run: python -m pip install --disable-pip-version-check 'requests>=2.32,<3' 'beautifulsoup4>=4.12,<5'
+      - name: Reuse existing 157 Commons source records, no fresh Commons scraping
+        uses: actions/download-artifact@v4
+        with:
+          name: phase20-commons-provenance-157-research-only
+          run-id: 42169137895
+          github-token: ${{ github.token }}
+          path: reference-phase20
+      - name: Validate 90-object baseline and assess official links for all 87 unresolved
+        run: |
+          python -m py_compile scripts/sacred-art/phase26-remaining87-anchors.py
+          python scripts/sacred-art/phase26-remaining87-anchors.py
+      - name: Upload catalogue evidence and explicit holds, not artwork files
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-phase26-87-unresolved-source-crosswalk
+          path: artifacts/sacred-art-phase26-source-crosswalk/
+          retention-days: 7
+          if-no-files-found: warn
