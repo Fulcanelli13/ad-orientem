@@ -31,6 +31,7 @@ try{
    {form:"LOW",mode:"MISSAL",lang:"en",width:390,expect:true},
    {form:"MISSA_CANTATA_SIMPLE",mode:"LIVE",lang:"en",width:390,expect:false},
    {form:"SOLEMN",mode:"LIVE",lang:"en",width:390,expect:false},
+   {form:"LOW",mode:"LIVE",lang:"en",width:390,requiem:true,expect:true},
    {form:"LOW",mode:"LIVE",lang:"en",width:390,following:"requiem",expect:false},
  ]) {
   const context=await browser.newContext({viewport:{width:cfg.width,height:844},isMobile:true,
@@ -39,6 +40,7 @@ try{
   page.on("pageerror",err=>errors.push(String(err.message)));
   const params=new URLSearchParams({production:"1",form:cfg.form,mode:cfg.mode,lang:cfg.lang,secondConfiteor:"1"});
   if(cfg.following)params.set("following",cfg.following);
+  if(cfg.requiem)params.set("requiem","1");
   await page.goto("http://127.0.0.1:"+server.address().port+
    "/tests/fixtures/reader-phone-harness.html?"+params,{waitUntil:"domcontentloaded",timeout:75000});
   await page.waitForFunction(()=>["true","error"].includes(document.documentElement.dataset.harnessReady),
