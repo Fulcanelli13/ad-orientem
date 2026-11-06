@@ -4,6 +4,9 @@ on:
     paths:
       - "src/calendar/icrsp-france-ordo-evidence.js"
       - "src/mass/icrsp-first-friday-entry.js"
+      - "src/mass/icrsp-nov06-pro-papa-orations.js"
+      - "src/mass/browser-entry.js"
+      - "tests/icrsp-nov06-pro-papa-orations.mjs"
       - "src/home/today-h4-view.js"
       - "src/home/browser-entry.js"
       - "tests/icrsp-2026-november-ordo-home.mjs"
@@ -24,6 +27,8 @@ jobs:
       - run: npm install --no-audit --no-fund
       - name: Exact 6–7 November source and Home contract
         run: node tests/icrsp-2026-november-ordo-home.mjs
+      - name: Source-confirmed Pro Papa Collect, Secret, Postcommunion and reader boundaries
+        run: node tests/icrsp-nov06-pro-papa-orations.mjs
       - name: Existing H7 Home contract
         run: node tests/home-h4-door.mjs
       - run: npx playwright install --with-deps chromium
