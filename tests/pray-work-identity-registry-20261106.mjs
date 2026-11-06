@@ -64,8 +64,10 @@ for(const w of items){
  check(Array.isArray(w.refs),"Missing refs array: "+w.id);
  check(Array.isArray(w.relations),"Missing relationships: "+w.id);
  check(Array.isArray(w.review),"Missing review queue: "+w.id);
- check(["R2","R3","R4","R5"].includes(w.classificationRule),"Missing classification rule: "+w.id);
+ check(["R1","R2","R3","R4","R5"].includes(w.classificationRule),"Missing classification rule: "+w.id);
  check(w.verification!==w.availability,"Publication and verification collapsed: "+w.id);
+ check(w.parent===null||ids.has(w.parent),"Component has missing parent: "+w.id);
+ if(w.parent)check(w.classificationRule==="R1"&&w.libraryListing==="programme-component-only","Programme component must not be a standalone library item: "+w.id);
  check(w.lang&&["la","en","fr"].every(k=>["full","partial","none","unassessed"].includes(w.lang[k])),"Missing language coverage assessment: "+w.id);
  check(!("text" in w)&&!("en" in w)&&!("fr" in w)&&!("la" in w)&&!("body" in w),"Registry must not copy prayer bodies: "+w.id);
  if(w.availability==="published"){
