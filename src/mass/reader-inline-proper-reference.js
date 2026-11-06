@@ -9,6 +9,7 @@ import {createProperReferenceRegistry,PROPER_REFERENCE_LABELS} from "./reader-in
 import {participationReferenceScoresForParagraph} from "./reader-participation-reference-scores.js";
 import {resolveOrationAmenSourceHandoff} from "./reader-oration-amen-source-handoff.js";
 import {sourceBoundFestiveOrationAmenScores} from "./reader-oration-festive-amen-reference.js";
+import {resolveOrationAmenTonePolicy} from "./reader-oration-amen-tone-policy.js";
 
 export const JULY07_REFERENCE_NOTATION_SCHEMA="ao-reader-july07-reference-notation-v1";
 // The original printed Introit GABC includes a distinct conditional "T. P."
@@ -44,6 +45,7 @@ export const PROPER_REFERENCE_REGISTRY_STATUS=Object.freeze({
 });
 export const JULY07_REFERENCE_CSS=String.raw`
 .ao-proper-reference-notation{display:block;width:100%;min-width:0;margin:11px 0 8px;padding:9px 0 5px;border-top:1px solid rgba(218,196,156,.22);font-style:normal;max-width:100%;overflow:hidden}
+.ao-proper-reference-tone-note{display:block;margin:7px 0;padding:4px 0;color:var(--ao-muted,#b1aa9c);font:500 11px/1.5 var(--ao-font-ui,system-ui,sans-serif);max-width:100%;overflow-wrap:anywhere}
 .ao-proper-reference-label{display:block;font:600 10px/1.5 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.035em;color:var(--ao-muted,#b1aa9c);margin-bottom:6px}
 .ao-proper-reference-staff{display:block;min-width:0;width:100%;box-sizing:border-box;padding:7px 3px;border-radius:4px;background:#fff;color:#211d18}
 .ao-proper-reference-staff svg{display:block;max-width:100%;height:auto}
@@ -76,7 +78,7 @@ export function createDatedProperNotationPreview({
  const doc=root.ownerDocument;
  const query=String(doc?.defaultView?.location?.search??"");
  const active=enabled===null?new URLSearchParams(query).get("chant_preview")==="1":enabled===true;
- let entries=[],orationAmenHandoffs=[],generation=0,modal=null,modalEngraver=null,returnFocus=null;
+ let entries=[],toneNotes=[],orationAmenHandoffs=[],generation=0,modal=null,modalEngraver=null,returnFocus=null;
  function closeZoom(){
   if(modal?.open)modal.close();
   modalEngraver?.destroy();modalEngraver=null;
@@ -109,7 +111,8 @@ export function createDatedProperNotationPreview({
   ++generation;
   closeZoom();
   for(const e of entries){e.engraver?.destroy();e.host.remove()}
-  entries=[];orationAmenHandoffs=[];
+  for(const n of toneNotes)n.remove();
+  entries=[];toneNotes=[];orationAmenHandoffs=[];
  }
  function render({mode="LIVE",form,resolvedMass,massPlan=null,paragraphs=[],selectedSettings={}}={}){
   clear();
@@ -132,12 +135,20 @@ export function createDatedProperNotationPreview({
    const oration=resolveOrationAmenSourceHandoff({paragraph:p,paragraphs,form,resolvedMass});
    if(oration.status==="SOURCE_ORATION_AND_TONE_CERTIFIED_SCORE_PENDING")
     orationAmenHandoffs.push(oration);
+   const tone=resolveOrationAmenTonePolicy({paragraph:p,paragraphs,form,resolvedMass,selectedSettings});
+   if(tone.note){
+    const note=doc.createElement("small");note.className="ao-proper-reference-tone-note";
+    note.dataset.orationToneStatus=tone.status;
+    note.textContent=String(selectedSettings?.LANGUAGE??selectedSettings?.language??"en").toLowerCase().startsWith("fr")?
+     tone.note.fr:tone.note.en;
+    node.append(note);toneNotes.push(note);
+   }
    const scores=referenceScoresForParagraph({paragraph:p,resolvedMass,form});
    const participatory=participationReferenceScoresForParagraph({
     paragraph:p,paragraphs,form,resolvedMass,massPlan,selectedSettings
    });
    const orationScores=sourceBoundFestiveOrationAmenScores({
-    paragraph:p,paragraphs,form,resolvedMass
+    paragraph:p,paragraphs,form,resolvedMass,selectedSettings
    });
    for(const score of [...scores,...participatory,...orationScores]){
     const host=doc.createElement("span");host.className="ao-proper-reference-notation";
@@ -182,5 +193,6 @@ export function createDatedProperNotationPreview({
   state:()=>Object.freeze({enabled:active,mounted:entries.length,
    rendered:entries.filter(e=>e.host.dataset.referenceReady==="true").length,
    orationAmenSourceReady:orationAmenHandoffs.length,
-   orationAmenMusicPending:orationAmenHandoffs.length>0})});
+   orationAmenMusicPending:orationAmenHandoffs.length>0,
+   orationAmenUnscoredNotes:toneNotes.length})});
 }
