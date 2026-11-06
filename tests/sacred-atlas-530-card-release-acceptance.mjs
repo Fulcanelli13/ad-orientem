@@ -18,13 +18,15 @@ const ledger=json("data/geography/research/sacred-atlas-530-card-acceptance-2026
 const verified=json("data/geography/research/sacred-atlas-round25-23place-64-original-review-20261104.json");
 const frozen=json("data/geography/research/sacred-atlas-editorial-master-530-20261104.v1.json");
 const v10=RELEASES.find(x=>x.id==="V10-B20");
-assert.ok(v10,"V10 release must be present in the append-only Place chain");
+const v10b21=RELEASES.find(x=>x.id==="V10-B21");
+assert.ok(v10&&v10b21,"Both dated V10 admission manifests must be present in the append-only Place chain");
 const frozenIds=new Set(frozen.places.map(p=>p.place_id));
 assert.equal(frozenIds.size,530,"Frozen 4 November card cohort retains exactly 530 original identities");
 assert.deepEqual([v10.data.baseline.places,v10.data.proposed.places],[530,533]);
+assert.deepEqual([v10b21.data.baseline.places,v10b21.data.proposed.places],[533,535]);
 assert.deepEqual(geo.places.filter(p=>!frozenIds.has(p.place_id)).map(p=>p.place_id).sort(),
- v10.data.published_new.map(p=>p.place_id).sort(),
- "Only the three documented V10 Places can be added to the 530-card cohort");
+ [...v10.data.published_new,...v10b21.data.published_new].map(p=>p.place_id).sort(),
+ "Only the five documented V10-B20/B21 draft Place additions may extend the frozen 530-card cohort");
 
 assert.equal(ledger.schema,"AO_SACRED_ATLAS_530_PLACE_CARD_ACCEPTANCE_V1");
 assert.equal(ledger.counts.canonical_places,530);
