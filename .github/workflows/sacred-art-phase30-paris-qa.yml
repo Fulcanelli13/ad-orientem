@@ -1,0 +1,45 @@
+name: Sacred Art Phase 30 — Paris Musées photo identity QA
+on:
+  push:
+    branches:
+      - research/sacred-art-phase18-iiif-audit-20261106
+    paths:
+      - 'scripts/sacred-art/phase30-paris-geometric-visual-qa.py'
+      - '.github/workflows/sacred-art-phase30-paris-qa.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  inspect:
+    name: Score all Paris images and exact selected Tissot photograph
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install local CV and image validation
+        run: python -m pip install --disable-pip-version-check 'numpy>=2,<3' 'opencv-python-headless>=4.10,<5' 'Pillow>=11,<13' 'requests>=2.32,<3'
+      - name: Reuse ten original CC0 museum images
+        uses: actions/download-artifact@v4
+        with:
+          name: sacred-art-phase29-two-paris-museums-iiif-research-only
+          run-id: 42259841429
+          github-token: ${{ github.token }}
+          path: reference-paris
+      - name: Inspect geometric matching and exact-owner Tissot Commons original
+        run: |
+          python -m py_compile scripts/sacred-art/phase30-paris-geometric-visual-qa.py
+          python scripts/sacred-art/phase30-paris-geometric-visual-qa.py
+      - name: Save research-only image identity report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: phase30-paris-photo-identity-and-CC0-research-only
+          path: artifacts/sacred-art-phase30-paris-visual/
+          retention-days: 7
+          if-no-files-found: warn
