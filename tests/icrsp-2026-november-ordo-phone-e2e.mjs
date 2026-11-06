@@ -71,8 +71,9 @@ try{
  assert.equal(selected.rubric?.votiveClass,3,"First-Friday votive must be III class");
  assert.equal(selected.rubric?.gloria,true,"First-Friday Sacred Heart must HAVE Gloria");
  assert.equal(selected.rubric?.credo,false,"First-Friday Sacred Heart must omit Credo");
- const low=await page.evaluate(()=>globalThis.AO_R17_BROWSER_ENTRY?.selectTodayOption?.("form","LOW"));
- assert.equal(low,true,"Source-owned Mass preflight must accept Low Mass form");
+ assert.equal(selected.form,"LOW","ICRSP one-tap action must automatically select LOW");
+ assert.equal(await page.locator("[data-ao-full-mass-preflight]").getAttribute("data-ao-chosen-mass-form"),"LOW",
+   "Mass preflight must reflect Low form without a manual change");
  await page.waitForFunction(()=>globalThis.AO_CELEBRATION_ARCH_V1?.readiness?.loading===false,
   null,{timeout:40000});
  const source=await page.evaluate(()=>{
