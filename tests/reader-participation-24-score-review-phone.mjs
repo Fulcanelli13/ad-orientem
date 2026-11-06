@@ -70,7 +70,7 @@ try{
   assert.equal(overview.links,24);
   assert.equal(overview.plateLinks,28,"Eleven original witnesses, two requiring paired scans for both response excerpts");
   assert.deepEqual(overview.missingPlateLinks,[],"Each archived excerpt links its 1961 printed staff");
-  assert.equal(overview.plateIds.length,10,"Ten distinct printed pages cover eleven source records");
+  assert.equal(overview.plateIds.length,11,"Eleven distinct scanned page images cover eleven source records, with some shared pages");
   assert.equal(overview.eventGroups,15);
   assert.equal(overview.allUnapproved,true);
   assert.equal(overview.state.allUnapproved,true);
