@@ -102,7 +102,9 @@ check(!items.some(w=>w.id==="rosary.fatima-prayer"||w.id==="rosary.concluding-co
 check(A("icksp_us_therese_for_missionaries")?.availability==="external-link","Missionary prayer remains external");
 check(A("icksp_us_therese_perpetual_novena")?.availability==="external-link","Perpetual Institute novena remains external");
 check(A("st_therese")?.kind==="novena","Twenty-four Glory Bes remains its own novena");
-check(A("pray.holy_name_litany")?.relations.some(r=>r.target==="pray.montfort_consecration_preparation"),"Montfort must reference the shared Holy Name litany");
+check(A("pray.holy_name_litany")?.relations.some(r=>r.target==="pray.montfort_consecration"),"Montfort must reference the shared Holy Name litany");
+check(A("pray.montfort_consecration")?.legacyRows[0]===123,"The existing Montfort route must refer to its 33-day programme");
+check(A("montfort_consecration_act_1863")?.parent==="pray.montfort_consecration","The concluding act must be a child of Montfort preparation, not a competing route");
 
 const expectedNovenas=NOVENA_CORPUS_V4_IDS;
 check(expectedNovenas.length===16,"Original 16-novena corpus must remain present");
