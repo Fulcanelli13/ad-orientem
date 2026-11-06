@@ -19,7 +19,11 @@
     "missing_country_area": 0,
     "new_unflagged_sub500m": 0,
     "owner_approved": 0,
-    "authorized_for_production": 0
+    "authorized_for_production": 0,
+    "source_review_links_for_new_73": 73,
+    "prior_17_evidence_corrob": 17,
+    "second_pass_55_direct_pages": 55,
+    "second_pass_1_index_only": 1
   },
   "other_draft_p107": {
     "pr_number": 2541,
@@ -2987,7 +2991,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "FIRST_PASS_SITE_OR_EXCEPTION_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -2995,7 +2999,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "FIRST_PASS_SITE_OR_EXCEPTION_REVIEW",
+        "evidence_url": "https://diacenco.net/message-de-son-excellence-monseigneur-fulgence-muteba-archeveque-de-lubumbashi-et-president-de-la-cenco-a-loccasion-du-lancement-des-travaux-de-construction-du-sanctuaire-de-la-bienheureuse/",
+        "retrieval_class": "PREVIOUS_DIRECT_SOURCE_REVIEW",
+        "scope_note": "CENCO launched building works on 1 Dec 2025 for a new larger shrine; historic pilgrimage gathering is not evidence of completed new church footprint.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NEW_BUILD_CONSTRUCTION_HOLD",
+        "followup_action": "Identify currently existing worship site versus planned construction site; exclude speculative future building pins."
+      }
     },
     {
       "candidate_id": "SG-INV-0704",
@@ -3017,7 +3036,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "FIRST_PASS_SITE_OR_EXCEPTION_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -3025,7 +3044,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "FIRST_PASS_SITE_OR_EXCEPTION_REVIEW",
+        "evidence_url": "https://gcatholic.org/churches/africa/5088",
+        "retrieval_class": "PREVIOUS_DIRECT_SOURCE_REVIEW",
+        "scope_note": "GCatholic records Roman-Rite Cathedral of St Catherine, 3 place Sainte Catherine in Alexandria; existing geography URL is the same third-party directory.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "IDENTITY_FOUND_COORDINATE_UNCORROBORATED",
+        "followup_action": "Find current diocesan/order address or independently mapped named feature before accepted illustrative location."
+      }
     },
     {
       "candidate_id": "SG-INV-0021",
@@ -3051,7 +3085,7 @@
         "metres": 330
       },
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "FIRST_PASS_SITE_OR_EXCEPTION_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -3059,7 +3093,23 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "FIRST_PASS_SITE_OR_EXCEPTION_REVIEW",
+        "evidence_url": "https://paroisse-cathedrale-tours.fr/en/saint-face",
+        "retrieval_class": "PREVIOUS_DIRECT_SOURCE_REVIEW",
+        "scope_note": "Tours Cathedral parish lists Holy Face Oratory in Léon Papin-Dupont's former house at 8 rue Bernard Palissy; Tours Diocese lists St Martin Basilica separately.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "DISTINCT_FROM_NEAREST_ATTESTED",
+        "followup_action": "Retain distinct building identity, recheck staged point against rue Bernard Palissy before pin approval.",
+        "distinct_neighbour_evidence": true
+      }
     },
     {
       "candidate_id": "SG-INV-0731",
@@ -3081,7 +3131,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "FIRST_PASS_SITE_OR_EXCEPTION_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -3089,7 +3139,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "FIRST_PASS_SITE_OR_EXCEPTION_REVIEW",
+        "evidence_url": "https://www.vatican.va/content/leo-xiv/en/homilies/2026/documents/20260422-guinea-equatoriale-messa-mongomo.html",
+        "retrieval_class": "PREVIOUS_DIRECT_SOURCE_REVIEW",
+        "scope_note": "Vatican attests existing Cathedral Basilica of the Immaculate Conception in Mongomo during April 2026 papal Mass, distinct from planned Ciudad de la Paz cornerstone.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "BASILICA_IDENTITY_ATTESTED_GEO_HOLD",
+        "followup_action": "Create missing GQ country area and corroborate an independent location for the existing Mongomo basilica; never map the planned Ciudad de la Paz church to it."
+      }
     },
     {
       "candidate_id": "SG-INV-0558",
@@ -3115,7 +3180,7 @@
         "metres": 656
       },
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "FIRST_PASS_SITE_OR_EXCEPTION_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -3123,7 +3188,23 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "FIRST_PASS_SITE_OR_EXCEPTION_REVIEW",
+        "evidence_url": "https://ste-anne-jerusalem.org/en/",
+        "retrieval_class": "PREVIOUS_DIRECT_SOURCE_REVIEW",
+        "scope_note": "Missionaries of Africa operate St Anne's Basilica at Bethesda in Jerusalem's Old City; nearest recorded Dominus Flevit on Mount of Olives is not this site.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "DISTINCT_FROM_NEAREST_ATTESTED",
+        "followup_action": "Check St Anne site or precinct centre; preserve Bethesda as an adjacent complex feature, not duplicate church.",
+        "distinct_neighbour_evidence": true
+      }
     },
     {
       "candidate_id": "SG-INV-0720",
@@ -3145,7 +3226,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "INDEXED_INSTITUTIONAL_PAGE_DIRECT_FETCH_UNAVAILABLE",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -3153,7 +3234,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "INDEXED_INSTITUTIONAL_PAGE_DIRECT_FETCH_UNAVAILABLE",
+        "evidence_url": "https://www.diocesedeviana.ao/um-marco-de-fe-reabertura-do-santuario-da-muxima/",
+        "retrieval_class": "INDEXED_SOURCE_CORROBORATION",
+        "scope_note": "Diocese source indexed but blocked on live fetch; July 2026 report states Muxima sanctuary church reopened after rebuilding, location Vila da Muxima/Quissama; exact map point not certified.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "SITE_SCOPED_BUT_SOURCE_UNREACHABLE",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0191",
@@ -3175,7 +3271,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -3183,7 +3279,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://gurk.at/dom-zu-gurk/",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Gurk municipality confirms historic Dom zu Gurk and St Hemma tomb in crypt; municipal office address on page must not be mistaken for cathedral entrance.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0190",
@@ -3205,7 +3316,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -3213,7 +3324,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://www.kath-kirche-kaernten.at/pfarren/kirche/C3061/pfarrkirche-maria-woerth",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Diocesan parish lists Maria Woerth pilgrim church dedicated to Saints Primus and Felician and Pfarrplatz 1; parish contains multiple churches, keep precise church identity.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0739",
@@ -3235,7 +3361,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -3243,7 +3369,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://www.marymackillopplace.org.au/visit/memorial-chapel/",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Chapel custodian identifies Mary MacKillop Memorial Chapel at 7-11 Mount Street, North Sydney, with the saint's tomb inside, not a second physical Place.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0448",
@@ -3265,7 +3406,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -3273,7 +3414,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://directorio.arzobispadodeguatemala.org/directorio/santuario-arquidiocesano-del-santo-hermano-pedro-templo-de-san-francisco-el-grande-2M9L4J8V7Y6K",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Guatemala archdiocesan directory names San Francisco el Grande/Santo Hermano Pedro shrine in Sacatepequez vicariate; reject a precinct or neighbouring church polygon as exact footprint.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0327",
@@ -3295,7 +3451,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -3303,7 +3459,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://bazilika-esztergom.hu/bazilika/kapcsolat.html",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Esztergom basilica operator provides Szent Istvan ter 1 address, site-specific contact; does not independently validate staged map coordinate.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0322",
@@ -3325,7 +3496,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -3333,7 +3504,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://pecsiegyhazmegye.hu/hirarchivum/hortobagyi-cirill-foapattal-unnepeltuk-nagyboldogasszonyt-mariagyudon/",
+        "retrieval_class": "ALTERNATE_PAGE_RETRIEVED",
+        "scope_note": "Direct old diocesan attraction URL timed out; Pecs Diocese explicitly reports pilgrimage feast at Mariagyud shrine church. Confirm church versus other devotional features and precinct point.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0326",
@@ -3355,7 +3541,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -3363,7 +3549,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://turizmus.pannonhalmifoapatsag.hu/kapcsolat/elerhetosegek/",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Pannonhalma abbey tourism operator confirms main abbey at Var 1, distinct from guesthouses and winery; confirm chosen monastery precinct point.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0324",
@@ -3385,7 +3586,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -3393,7 +3594,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://marianosztrakegyhely.hu/kapcsolat/",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Márianosztra shrine/basilica custodian gives Nagy Lajos kiraly ter 1 and identifies basilica; address is not independently certified exact entrance geometry.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0321",
@@ -3415,7 +3631,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -3423,7 +3639,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://szentkut.hu/en/contact-information",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Official Szentkut National Shrine lists Matraverebely-Szentkut 14 and directions five kilometres beyond village; keep parish church in village separate from pilgrimage basilica site.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "DISTINCT_PRECINCT_SCOPE_REVIEW",
+        "followup_action": "Verify non-Latin/heritage status, individual physical site, appropriate type and precinct point."
+      }
     },
     {
       "candidate_id": "SG-INV-0678",
@@ -3445,7 +3676,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -3453,7 +3684,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://sisparnas.kemenpar.go.id/p/44096",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Indonesian government tourism register lists Gua Maria Kerep on Jalan Tentara Pelajar, Ambarawa, as a named attraction; outdoor cave precinct rather than assumed single church building.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0677",
@@ -3475,7 +3721,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -3483,7 +3729,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://www.indonesia.travel/id/id/travel-ideas/pilgrimage/gua-maria-sendangsono",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Indonesian national tourism describes Gua Maria Sendangsono pilgrimage grotto; do not collapse outdoor pilgrimage complex into an invented church footprint.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0553",
@@ -3509,7 +3770,7 @@
         "metres": 602
       },
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -3517,7 +3778,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://www.custodia.org/en/sanctuaries/ain-karem-saint-john-the-baptist/",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Franciscan Custody maintains Ain Karem Saint John the Baptist sanctuary; confirm church building rather than surrounding John-related sites.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0561",
@@ -3543,7 +3819,7 @@
         "metres": 1028
       },
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -3551,7 +3827,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://beatitudes.church/plan-your-visit/",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Church/Franciscan Sisters operator gives Mount of Beatitudes visit details and church/guesthouses distinction; map point remains site/complex illustrative.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0563",
@@ -3573,7 +3864,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -3581,7 +3872,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://www.carmelholylanddco.org/contacts/",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Discalced Carmelites list Stella Maris Monastery in Haifa and church contact separately from retreat centre; avoid pinning only an office or guesthouse.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0687",
@@ -3603,7 +3909,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "FIRST_PASS_SITE_OR_EXCEPTION_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -3611,7 +3917,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "FIRST_PASS_SITE_OR_EXCEPTION_REVIEW",
+        "evidence_url": "https://www.aliph-foundation.org/en/projects/mar-behnam",
+        "retrieval_class": "PREVIOUS_DIRECT_SOURCE_REVIEW",
+        "scope_note": "ALIPH describes Mar Behnam as Syriac Catholic Monastery in Khidr with heritage restoration; do not infer Latin rite, present-day Mass schedule, or exact church-building point.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NON_LATIN_CATHOLIC_HERITAGE_ATTESTED",
+        "followup_action": "Verify non-Latin/heritage status, individual physical site, appropriate type and precinct point."
+      }
     },
     {
       "candidate_id": "SG-INV-0098",
@@ -3633,7 +3954,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -3641,7 +3962,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://abbaziasannilo.org/contact",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Exarchic Monastery of Santa Maria Grottaferrata at Corso del Popolo 128 confirmed by monastery operator; Italo-Greek Byzantine tradition, never infer Latin-rite/TLM schedule.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "EASTERN_CATHOLIC_SCOPE_REVIEW",
+        "followup_action": "Verify non-Latin/heritage status, individual physical site, appropriate type and precinct point."
+      }
     },
     {
       "candidate_id": "SG-INV-0092",
@@ -3663,7 +3999,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -3671,7 +4007,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://sangerardo.it/contatti/",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Redemptorist San Gerardo shrine site contains sanctuary-specific contact and sections; avoid treating church and adjoining sanctuary buildings as automatically identical.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0629",
@@ -3693,7 +4044,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -3701,7 +4052,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://www.anseong.go.kr/en/contents.do?mId=0401040000",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Anseong municipal tourism identifies Mirinae Catholic shrine with tomb of St Andrew Kim at Mirinaeseongji-ro 420; complex site not an exact church doorway.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0627",
@@ -3727,7 +4093,7 @@
         "metres": 4504
       },
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -3735,7 +4101,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://saenamteo.or.kr/",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Saenamteo Catholic shrine and martyr memorial church have operator pages and pilgrimage content; source supports distinct complex identity, not certified GPS.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0581",
@@ -3757,7 +4138,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -3765,7 +4146,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://www.saintanthonykozhaya.com/contact",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Qozhaya monastery operator confirms Saint Anthony monastery in Holy Valley, northern Lebanon; Maronite Catholic rite rather than Latin TLM identification.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "EASTERN_CATHOLIC_SCOPE_REVIEW",
+        "followup_action": "Verify non-Latin/heritage status, individual physical site, appropriate type and precinct point."
+      }
     },
     {
       "candidate_id": "SG-INV-0604",
@@ -3787,7 +4183,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -3795,7 +4191,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://christian.gov.lk/churches/kurunegala-district.html",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Sri Lankan government church table lists St Anne's Shrine Kattimahana in Kurunegala district; named row, not a church entrance coordinate.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "GOVERNMENT_DIRECTORY_NAMED_ROW",
+        "followup_action": "Extract the named church row from the institutional index; find independent site/precinct location."
+      }
     },
     {
       "candidate_id": "SG-INV-0606",
@@ -3821,7 +4232,7 @@
         "metres": 4945
       },
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -3829,7 +4240,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://www.christian.gov.lk/churches/gampaha-district.html",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Sri Lankan government church table lists St Sebastian Shrine Kandana under Gampaha; named row, not a physical footprint assertion.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "GOVERNMENT_DIRECTORY_NAMED_ROW",
+        "followup_action": "Extract the named church row from the institutional index; find independent site/precinct location."
+      }
     },
     {
       "candidate_id": "SG-INV-0607",
@@ -3851,7 +4277,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -3859,7 +4285,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://www.christian.gov.lk/churches/puttalam-district.html",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Sri Lankan government church table lists Holy Cross National Shrine Marawila separately from Our Lady of Presentation and other churches; no exact pin certified.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "GOVERNMENT_DIRECTORY_NAMED_ROW",
+        "followup_action": "Extract the named church row from the institutional index; find independent site/precinct location."
+      }
     },
     {
       "candidate_id": "SG-INV-0333",
@@ -3885,7 +4326,7 @@
         "metres": 843
       },
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -3893,7 +4334,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://ausrosvartai.lt/en/contacts/",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Official Gate of Dawn shrine website distinguishes chapel in gate from Saint Teresa church; avoid treating adjacent church as the chapel point.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0339",
@@ -3915,7 +4371,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -3923,7 +4379,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://www.visitsiauliai.lt/en/sightseeing-places/the-hill-of-crosses/",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Official Siauliai tourism identifies Hill of Crosses at Jurgaiciai as open-air devotional landscape; separate the nearby chapel opposite it from main landscape pin.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "OUTDOOR_LANDSCAPE_SCOPE_REVIEW",
+        "followup_action": "Verify non-Latin/heritage status, individual physical site, appropriate type and precinct point."
+      }
     },
     {
       "candidate_id": "SG-INV-0337",
@@ -3945,7 +4416,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -3953,7 +4424,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://www.pivasiunai.lt/kontaktai/",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Official Pivasiunai pilgrimage parish website has dedicated church and Marian image sections plus contact; ensure map point is church rather than adjacent pilgrim centre.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0365",
@@ -3975,7 +4461,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -3983,7 +4469,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://www.visitluxembourg.com/place/cathedrale-notre-dame",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "National tourism page identifies Notre Dame Cathedral in Luxembourg City, distinct physical cathedral, not proof of exact entrance.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0434",
@@ -4005,7 +4506,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -4013,7 +4514,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://guanajuato.mx/municipios/recomendaciones/cristo-rey-en-el-cerro-del-cubilete-un-monumento-a-la-fe-y-la-historia/",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Guanajuato tourism describes summit Christ the King monument and sanctuary at its foot; pin must identify sanctuary or overall devotional complex, not automatically monument as church.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "MONUMENT_CHURCH_PRECINCT_SCOPE_REVIEW",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0430",
@@ -4035,7 +4551,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -4043,7 +4559,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://www.oaxaca.gob.mx/pueblos-magicos/",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Oaxaca state page explicitly mentions Marian shrine in Santa Catarina Juquila, but is town-scale tourism evidence, not a building-specific map coordinate.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "LOCALITY_ONLY_GEOMETRY_PENDING",
+        "followup_action": "Replace generic/mismatched source with a named-site institutional URL and check pin scope."
+      }
     },
     {
       "candidate_id": "SG-INV-0440",
@@ -4065,7 +4596,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -4073,7 +4604,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://www.santuariodelosmartiresmexicanos.com/contacto",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Mexican Martyrs sanctuary operator locates its sanctuary on Cerro del Tesoro in San Pedro Tlaquepaque, not Guadalajara city centre; preserve true municipality.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0667",
@@ -4095,7 +4641,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "FIRST_PASS_SITE_OR_EXCEPTION_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -4103,7 +4649,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "FIRST_PASS_SITE_OR_EXCEPTION_REVIEW",
+        "evidence_url": "https://whc.unesco.org/en/list/677/maps/",
+        "retrieval_class": "PREVIOUS_DIRECT_SOURCE_REVIEW",
+        "scope_note": "UNESCO identifies Miagao as its own named serial-property component; use component-specific geolocation rather than global serial-site centroid.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "HERITAGE_COMPONENT_ATTESTED",
+        "followup_action": "Extract and verify the exact property component, not the whole serial nomination."
+      }
     },
     {
       "candidate_id": "SG-INV-0636",
@@ -4125,7 +4686,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -4133,7 +4694,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://aranzazushrine.ph/index.php/contact/",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Aranzazu shrine parish operator lists Gen Luna Street Guitnangbayan I, San Mateo Rizal; shrine hall and office share campus, map church or explicitly marked complex point.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0645",
@@ -4159,7 +4735,7 @@
         "metres": 1137
       },
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "FIRST_PASS_SITE_OR_EXCEPTION_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -4167,7 +4743,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "FIRST_PASS_SITE_OR_EXCEPTION_REVIEW",
+        "evidence_url": "https://rcam.veritasph.net/clergy-of-manila/embed/",
+        "retrieval_class": "PREVIOUS_DIRECT_SOURCE_REVIEW",
+        "scope_note": "Archdiocesan clergy assignments name the Archdiocesan Shrine of Our Lady of Loreto in Sampaloc and Jose Figueras Street; clergy roll is not proof of exact map point/current status.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_IN_DIRECTORY",
+        "followup_action": "Extract the named church row from the institutional index; find independent site/precinct location."
+      }
     },
     {
       "candidate_id": "SG-INV-0647",
@@ -4189,7 +4780,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "FIRST_PASS_SITE_OR_EXCEPTION_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -4197,7 +4788,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "FIRST_PASS_SITE_OR_EXCEPTION_REVIEW",
+        "evidence_url": "https://dioceseofmalolos.ph/shrines-and-pilgrimage-sites/",
+        "retrieval_class": "PREVIOUS_DIRECT_SOURCE_REVIEW",
+        "scope_note": "Diocese lists the National Shrine of Our Lady of Salambao at San Pascual Baylon Parish, Obando; page is a multi-shrine directory, not entrance GPS.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_ATTESTED",
+        "followup_action": "Extract the named church row from the institutional index; find independent site/precinct location."
+      }
     },
     {
       "candidate_id": "SG-INV-0657",
@@ -4219,7 +4825,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "FIRST_PASS_SITE_OR_EXCEPTION_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -4227,7 +4833,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "FIRST_PASS_SITE_OR_EXCEPTION_REVIEW",
+        "evidence_url": "https://dioceseofmalolos.ph/shrines-and-pilgrimage-sites/",
+        "retrieval_class": "PREVIOUS_DIRECT_SOURCE_REVIEW",
+        "scope_note": "Diocese separately lists the National Shrine and Parish of St Anne, Hagonoy; no exact building-point proof.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_ATTESTED",
+        "followup_action": "Extract the named church row from the institutional index; find independent site/precinct location."
+      }
     },
     {
       "candidate_id": "SG-INV-0662",
@@ -4253,7 +4874,7 @@
         "metres": 947
       },
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "FIRST_PASS_SITE_OR_EXCEPTION_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -4261,7 +4882,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "FIRST_PASS_SITE_OR_EXCEPTION_REVIEW",
+        "evidence_url": "https://rcam.veritasph.net/clergy-of-manila/embed/",
+        "retrieval_class": "PREVIOUS_DIRECT_SOURCE_REVIEW",
+        "scope_note": "Archdiocesan directory names the Minor Basilica/National Shrine of San Lorenzo Ruiz at Plaza Lorenzo Ruiz, Binondo; person-specific assignments may change.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_IN_DIRECTORY",
+        "followup_action": "Extract the named church row from the institutional index; find independent site/precinct location."
+      }
     },
     {
       "candidate_id": "SG-INV-0653",
@@ -4287,7 +4923,7 @@
         "metres": 3422
       },
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "FIRST_PASS_SITE_OR_EXCEPTION_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -4295,7 +4931,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "FIRST_PASS_SITE_OR_EXCEPTION_REVIEW",
+        "evidence_url": "https://philippineshrines.org/national-capital-region-and-southern-luzon/",
+        "retrieval_class": "PREVIOUS_DIRECT_SOURCE_REVIEW",
+        "scope_note": "Catholic bishops' shrine association regional directory identifies National Shrine and Parish of the Sacred Heart in San Antonio Village, Makati; existing home-page URL is too broad.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_ATTESTED",
+        "followup_action": "Extract the named church row from the institutional index; find independent site/precinct location."
+      }
     },
     {
       "candidate_id": "SG-INV-0665",
@@ -4317,7 +4968,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "FIRST_PASS_SITE_OR_EXCEPTION_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -4325,7 +4976,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "FIRST_PASS_SITE_OR_EXCEPTION_REVIEW",
+        "evidence_url": "https://whc.unesco.org/en/list/677/maps/",
+        "retrieval_class": "PREVIOUS_DIRECT_SOURCE_REVIEW",
+        "scope_note": "UNESCO identifies Paoay as an individual serial-property component; UNESCO property pin/boundary does not certify church entrance.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "HERITAGE_COMPONENT_ATTESTED",
+        "followup_action": "Extract and verify the exact property component, not the whole serial nomination."
+      }
     },
     {
       "candidate_id": "SG-INV-0666",
@@ -4347,7 +5013,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "FIRST_PASS_SITE_OR_EXCEPTION_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -4355,7 +5021,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "FIRST_PASS_SITE_OR_EXCEPTION_REVIEW",
+        "evidence_url": "https://whc.unesco.org/en/list/677/maps/",
+        "retrieval_class": "PREVIOUS_DIRECT_SOURCE_REVIEW",
+        "scope_note": "UNESCO identifies Santa Maria, Ilocos Sur as an individual serial-property component; property data must not be conflated with Paoay, Miagao or Intramuros.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "HERITAGE_COMPONENT_ATTESTED",
+        "followup_action": "Extract and verify the exact property component, not the whole serial nomination."
+      }
     },
     {
       "candidate_id": "SG-INV-0608",
@@ -4377,7 +5058,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -4385,7 +5066,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://www.marianshrinepk.com/visit/",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "National Marian Shrine Mariamabad site operator identifies Shrine/Church of St Mary and St Joseph at Chak 3-RB District Sheikhupura; general grounds location only.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0217",
@@ -4407,7 +5103,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -4415,7 +5111,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://domgosci.benedyktyni.com/kontakt/",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Benedictine Tyniec guesthouse is an abbey-operated source; review distinct abbey complex from guesthouse building before choosing precinct coordinate.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0208",
@@ -4437,7 +5148,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -4445,7 +5156,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://www.redemptor.pl/parafieisanktuaria/bardo/",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Redemptorist province lists Our Lady of Bardo sanctuary at Plac Wolnosci 5 and Visitation parish; exact church building coordinate remains unchecked.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0204",
@@ -4467,7 +5193,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -4475,7 +5201,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://mbludzm.pl/parafia/",
+        "retrieval_class": "ALTERNATE_PAGE_RETRIEVED",
+        "scope_note": "Original Grobonet cemetery contact is a side service; actual shrine parish names Ludźmierz basilica and gives Jana Pawla II 124. Use parish source instead, no cemetery-only location inference.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "REPLACED_CEMETERY_DIRECTORY",
+        "followup_action": "Replace generic/mismatched source with a named-site institutional URL and check pin scope."
+      }
     },
     {
       "candidate_id": "SG-INV-0207",
@@ -4497,7 +5238,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -4505,7 +5246,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://archidiecezjalubelska.pl/parafia/?id=101741",
+        "retrieval_class": "ALTERNATE_PAGE_RETRIEVED",
+        "scope_note": "Original Wawolnica shrine contact returned server error; Lublin archdiocesan parish lists Wawolnica/St Adalbert and devotion to Our Lady of Keblo at Zamkowa 24; sanctuary basilica and historic chapel require scope review.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "REPLACED_UNAVAILABLE_OPERATOR_PAGE",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0153",
@@ -4531,7 +5287,7 @@
         "metres": 4779
       },
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -4539,7 +5295,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://www.visitportugal.com/pt-pt/content/santuario-de-cristo-rei",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Portuguese official tourism confirms Santuario Cristo Rei in Almada as statue/monument and sanctuary precinct, not simply a church building.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "MONUMENT_CHURCH_PRECINCT_SCOPE_REVIEW",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0149",
@@ -4561,7 +5332,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -4569,7 +5340,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://www.visitportugal.com/pt-pt/node/133125",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Portuguese tourism confirms Sanctuary of Senhora da Lapa in Sernancelhe with grotto and sacred image; legends must be attributed, not authenticated as miracles.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0150",
@@ -4591,7 +5377,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -4599,7 +5385,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://www.visitportugal.com/pt-pt/node/134774",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Portuguese tourism confirms Our Lady of Remedies hill sanctuary Lamego and monumental 686-step stairway; church vs stairs are separate geometric features.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0529",
@@ -4621,7 +5422,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -4629,7 +5430,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://encarnacion.gov.py/santuario-itacua/",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Encarnacion municipality identifies Itacua shrine in Punta Itacua, three-hectare precinct beyond town, not a downtown church.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0528",
@@ -4651,7 +5467,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -4659,7 +5475,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://visitparaguay.travel/places/santuario-virgen-de-paso-itape",
+        "retrieval_class": "ALTERNATE_PAGE_RETRIEVED",
+        "scope_note": "Original VisitParaguay city page was too broad; SENATUR specific shrine entry places Virgen del Paso by Tebicuary-mi river with own location code, distinct from Itape parish church.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "REPLACED_CITY_ONLY_LEAD",
+        "followup_action": "Replace generic/mismatched source with a named-site institutional URL and check pin scope."
+      }
     },
     {
       "candidate_id": "SG-INV-0328",
@@ -4681,7 +5512,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -4689,7 +5520,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://ersekseg.ro/en/templom/1123",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Archdiocese Alba Iulia lists Csiksomlyo Catholic Franciscan church and monastery at Str Szek 148; distinguish church site, monastery and outdoor pilgrimage grounds.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0307",
@@ -4711,7 +5557,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -4719,7 +5565,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://www.zaplaz.si/",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Zaplaz shrine operator names Assumption pilgrimage church above Catez and diocesan sanctuary status; distinct from Grozde relic chapel features.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0345",
@@ -4741,7 +5602,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -4749,7 +5610,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://sanctuary.karmel.org.ua/sample-page/kontakty/",
+        "retrieval_class": "ALTERNATE_PAGE_RETRIEVED",
+        "scope_note": "Original Carmelite link returned 403; official Berdychiv shrine/Discalced Carmelite contact shows Soborna 25 and distinguishes upper/lower church inside broader monastery complex.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "CARMELITE_COMPLEX_SCOPE_REVIEW",
+        "followup_action": "Verify non-Latin/heritage status, individual physical site, appropriate type and precinct point."
+      }
     },
     {
       "candidate_id": "SG-INV-0405",
@@ -4771,7 +5647,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -4779,7 +5655,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://cathedralstl.org/plan-your-visit",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Cathedral Basilica St Louis direct operator confirms 4431 Lindell Boulevard, St Louis, Missouri; separate from old downtown Basilica of St Louis King of France.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0406",
@@ -4801,7 +5692,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -4809,7 +5700,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://www.olacathedral.org/directionsparking/",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Los Angeles Cathedral of Our Lady of Angels parish site covers cathedral campus and parking separately; position should represent cathedral, not mausoleum or plaza only.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0409",
@@ -4831,7 +5737,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -4839,7 +5745,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://sanxaviermission.org/contact-us/",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "San Xavier del Bac Mission church operator lists 1950 W San Xavier Road Tucson and Catholic parish ministry; avoid identifying nearby convent or visitor parking as church.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0393",
@@ -4861,7 +5782,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -4869,7 +5790,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://mothercabrinishrine.org/directions",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Mother Cabrini shrine operator lists 20189 Cabrini Boulevard Golden Colorado; complex includes worship space and grounds, use illustrative site precision unless exact church anchored.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0412",
@@ -4891,7 +5827,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -4899,7 +5835,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://ourladyoflebanonshrine.com/contact",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Basilica and National Shrine Our Lady of Lebanon in North Jackson Ohio lists 2759 N Lipkey Road; Maronite Catholic devotional tradition should not be presented as TLM schedule.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "EASTERN_CATHOLIC_SCOPE_REVIEW",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0386",
@@ -4921,7 +5872,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -4929,7 +5880,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://thegrotto.org/visit/directions/",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "The Grotto/National Sanctuary Our Sorrowful Mother has official visit directions, multiple grounds and chapels; pin the shrine grounds unless specific chapel independently anchored.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0392",
@@ -4955,7 +5921,7 @@
         "metres": 3738
       },
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -4963,7 +5929,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://cabrininationalshrine.org/visit/",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Chicago National Shrine St Frances Xavier Cabrini operator identifies Lincoln Park shrine, not Colorado Mother Cabrini pilgrimage centre; keep separate locations.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0396",
@@ -4989,7 +5970,7 @@
         "metres": 4764
       },
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -4997,7 +5978,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://www.ols-chicago.com/contact-visit-us",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "National Shrine St Peregrine appears at Our Lady of Sorrows Basilica parish address 3121 West Jackson Blvd; do not create a duplicate second building pin if church is already canonical.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "SHARED_CHURCH_DEDICATION_SCOPE_REVIEW",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0398",
@@ -5019,7 +6015,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -5027,7 +6023,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://rscj.org/shrine/visit/",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Society of Sacred Heart identifies St Rose Philippine Duchesne Shrine at 619 North Second Street St Charles Missouri; different from other Sacred Heart ministries.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0383",
@@ -5049,7 +6060,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -5057,7 +6068,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://www.olop-shrine.org/contact-us/",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Our Lady of Peace Shrine and Church lists 2800 Mission College Blvd Santa Clara; prayer site and adjacent convent are distinct campus facilities.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0395",
@@ -5079,7 +6105,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -5087,7 +6113,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://shrineofstanthony.org/directions",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Franciscan Friars Conventual shrine gives visitor directions at Ellicott City; review site/precinct coordinate instead of implying exact friary or chapel entrance.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0531",
@@ -5109,7 +6150,7 @@
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -5117,7 +6158,22 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "SECOND_PASS_SOURCE_PAGE_REVIEW",
+        "evidence_url": "https://www.iglesiacatolicaflorida.org/parroquias/",
+        "retrieval_class": "DIRECT_PAGE_RETRIEVED",
+        "scope_note": "Uruguayan Diocese of Florida names Cathedral Basilica/Sanctuary Virgen de los Treinta y Tres at Alejandro Gallinal 504; sanctuary and cathedral are one physical-site record, not duplicates.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "NAMED_SITE_GEOMETRY_PENDING",
+        "followup_action": "Read named-site institutional page and reconcile operator/diocesan identity, physical scope and illustrative coordinate."
+      }
     },
     {
       "candidate_id": "SG-INV-0564",
@@ -5143,7 +6199,7 @@
         "metres": 110
       },
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "FIRST_PASS_SITE_OR_EXCEPTION_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -5151,7 +6207,23 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "FIRST_PASS_SITE_OR_EXCEPTION_REVIEW",
+        "evidence_url": "https://www.custodia.org/en/sanctuaries/nazareth-saint-joseph/",
+        "retrieval_class": "PREVIOUS_DIRECT_SOURCE_REVIEW",
+        "scope_note": "Franciscan Custody explicitly distinguishes St Joseph's Church (Nutrition) from adjacent Basilica of the Annunciation.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "DISTINCT_FROM_NEAREST_ATTESTED",
+        "followup_action": "Retain separate Place candidate; verify which building staged point represents, with accepted illustrative precision.",
+        "distinct_neighbour_evidence": true
+      }
     },
     {
       "candidate_id": "SG-INV-0554",
@@ -5177,7 +6249,7 @@
         "metres": 327
       },
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "FIRST_PASS_SITE_OR_EXCEPTION_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -5185,7 +6257,23 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "FIRST_PASS_SITE_OR_EXCEPTION_REVIEW",
+        "evidence_url": "https://www.cicts.org/our-services/",
+        "retrieval_class": "PREVIOUS_DIRECT_SOURCE_REVIEW",
+        "scope_note": "Christian Information Center lists Benedictine Basilica of Dormition and Assumptionist St Peter in Gallicantu as two separate Mount Zion churches.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "DISTINCT_FROM_NEAREST_ATTESTED",
+        "followup_action": "Verify Dormition precinct coordinate; do not collapse with Gallicantu.",
+        "distinct_neighbour_evidence": true
+      }
     },
     {
       "candidate_id": "SG-INV-0664",
@@ -5211,7 +6299,7 @@
         "metres": 311
       },
       "country_area_present": true,
-      "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
+      "site_evidence_status": "FIRST_PASS_SITE_OR_EXCEPTION_REVIEW",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
       "already_in_draft_unapproved": false,
@@ -5219,7 +6307,23 @@
       "evidence_decision": "PENDING",
       "publication_authorized": false,
       "imported_to_live": false,
-      "needs_separate_owner_approval": true
+      "needs_separate_owner_approval": true,
+      "source_review": {
+        "status": "FIRST_PASS_SITE_OR_EXCEPTION_REVIEW",
+        "evidence_url": "https://philhistoricsites.nhcp.gov.ph/registry_database/church-of-san-agustin-2/",
+        "retrieval_class": "PREVIOUS_DIRECT_SOURCE_REVIEW",
+        "scope_note": "Philippine historical-site register identifies San Agustin Church at Gen Luna/Real Streets in Intramuros; UNESCO separately records San Agustin as its own component, not Manila Cathedral.",
+        "review_on": "2026-11-06",
+        "source_provenance_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+        "source_to_site_investigated": true,
+        "source_to_point_proven": false,
+        "owner_approved": false,
+        "editorial_admission_finalized": false,
+        "public_import_allowed": false,
+        "site_identity_scope": "DISTINCT_FROM_NEAREST_ATTESTED",
+        "followup_action": "Use San Agustin's component/site coordinate; retain Manila Cathedral as a different church.",
+        "distinct_neighbour_evidence": true
+      }
     }
   ],
   "country_area_remediation": {
@@ -5236,5 +6340,16 @@
     ],
     "place_admissions": 0,
     "owner_approvals": 0
+  },
+  "source_review_status": {
+    "linked_register": "data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json",
+    "total_new_73": 73,
+    "original_priority_96_preserved": true,
+    "first_pass": 17,
+    "second_pass": 56,
+    "second_pass_direct_page": 55,
+    "second_pass_indexed_only": 1,
+    "site_point_geometry_not_independently_certified": true,
+    "owner_approval_granted": 0
   }
 }
