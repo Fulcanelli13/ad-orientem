@@ -17,6 +17,7 @@ export const MASS_SCHOLA_CRITICAL_PATHS=Object.freeze([
  "src/mass/browser-entry.js",
  "src/mass/reader-proper-runtime-recovery.js",
  "src/mass/proper-reader-slots.js",
+ "src/mass/ordo-mass-completeness.js",
  "src/mass/1962-april-paschal-proper-correction.js",
  "src/mass/1962-april-paschal-archival-witnesses.js",
  "src/mass/1962-passion-friday-commemorations.js",

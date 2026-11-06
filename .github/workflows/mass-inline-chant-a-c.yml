@@ -23,6 +23,9 @@ on:
       - 'tests/reader-participation-20-event-coverage.mjs'
       - 'src/mass/reader-participation-reference-scores.js'
       - 'src/mass/reader-participation-printed-plates.js'
+      - 'src/mass/reader-preface-1961-print-passage.js'
+      - 'tests/reader-preface-1961-two-book-passage-collation.mjs'
+      - 'scripts/mass/export-preface-eight-printed-collation.mjs'
       - 'tests/reader-participation-1961-printed-plates.mjs'
       - 'scripts/mass/audit-24-participation-source-phrases.mjs'
       - 'tests/reader-participation-24-source-gabc-equality.mjs'
@@ -94,6 +97,9 @@ jobs:
           node --check tests/reader-participation-24-score-review-phone.mjs
           node --check src/mass/reader-participation-reference-scores.js
           node --check src/mass/reader-participation-printed-plates.js
+          node --check src/mass/reader-preface-1961-print-passage.js
+          node --check tests/reader-preface-1961-two-book-passage-collation.mjs
+          node --check scripts/mass/export-preface-eight-printed-collation.mjs
           node --check tests/reader-participation-1961-printed-plates.mjs
           node --check scripts/mass/audit-24-participation-source-phrases.mjs
           node --check tests/reader-participation-24-source-gabc-equality.mjs
@@ -130,9 +136,11 @@ jobs:
           node tests/reader-two-greeting-transfer-candidates.mjs
           node tests/reader-participation-20-event-coverage.mjs
           node scripts/mass/export-24-participation-review-csv.mjs
+          node scripts/mass/export-preface-eight-printed-collation.mjs
           node scripts/mass/audit-24-participation-source-phrases.mjs
           node tests/reader-participation-reference-scores.mjs
           node tests/reader-participation-1961-printed-plates.mjs
+          node tests/reader-preface-1961-two-book-passage-collation.mjs
           node tests/reader-participation-24-source-gabc-equality.mjs
           node tests/reader-dismissal-variant-reference.mjs
           node tests/reader-canon-pax-responses.mjs
