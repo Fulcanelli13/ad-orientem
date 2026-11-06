@@ -51,6 +51,9 @@ try{
     missingPlateLinks:scoreCards.filter(c=>!c.querySelector('a[data-printed-plate="true"]')).map(c=>c.dataset.scoreId),
     plateIds:[...new Set([...document.querySelectorAll('a[data-printed-plate="true"]')]
        .map(a=>a.href))],
+    prefaceLocations:scoreCards.filter(c=>c.dataset.prefacePassage==="located").length,
+    exactPrefacePages:scoreCards.filter(c=>c.dataset.prefacePassage==="located"&&
+       c.querySelectorAll('a[data-printed-plate="true"]').length===2).length,
     allUnapproved:scoreCards.every(c=>c.dataset.approved==="false"),
     eventGroups:document.querySelectorAll(".event").length,
     badWidth:scoreCards.filter(c=>c.querySelector(".staff")?.scrollWidth>
@@ -68,9 +71,11 @@ try{
   assert.equal(overview.cards,24);
   assert.equal(overview.svgs,24);
   assert.equal(overview.links,24);
-  assert.equal(overview.plateLinks,28,"Eleven original witnesses, two requiring paired scans for both response excerpts");
+  assert.equal(overview.plateLinks,36,"Eight Preface responses require two EXACT 1961 books; other archived excerpts retain their witnesses");
   assert.deepEqual(overview.missingPlateLinks,[],"Each archived excerpt links its 1961 printed staff");
-  assert.equal(overview.plateIds.length,11,"Eleven distinct scanned page images cover eleven source records, with some shared pages");
+  assert.equal(overview.plateIds.length,13,"Original 1961 p.109 plus Graduale p.130*/p.131* are separately indexed");
+  assert.equal(overview.prefaceLocations,8);
+  assert.equal(overview.exactPrefacePages,8);
   assert.equal(overview.eventGroups,15);
   assert.equal(overview.allUnapproved,true);
   assert.equal(overview.state.allUnapproved,true);
