@@ -1,0 +1,142 @@
+{
+  "schema": "AO_SACRED_ART_PHASE28_FIVE_MUSEUM_OBJECTS_V1",
+  "date": "2026-11-06",
+  "scope": "Owner-handpicked low-resolution painting object identification, not photography approval.",
+  "baseline": {
+    "phase27_verified_records": 115,
+    "confirmed_new_records": 5,
+    "verified_after": 120,
+    "unidentified_after": 57,
+    "low_res_owner_handpicked_records": 177,
+    "actual_image_replacements": 0
+  },
+  "confirmed": [
+    {
+      "registry_id": "RECENT575::233",
+      "holding": "Musée des Augustins, Toulouse (Louvre MNR deposit)",
+      "title": "Saint Dominique",
+      "artist": "Anonymous Italian school, early 16th century",
+      "accession": "D 1952-3 / MNR 273",
+      "source": "https://pop.culture.gouv.fr/notice/rose-valland/MNR00273",
+      "identity_evidence": "Official Rose-Valland record explicitly lists the former Toulouse deposit D 1952-3, current location and exact saint subject.",
+      "cautions": "MNR recovered work with incomplete 1933–1945 ownership history: special ownership/restitution sensitivity; photo rights unverified; owner Commons metadata said 'Anonyme français' which conflicts with official Italian-school attribution.",
+      "object_identity_verified": true,
+      "photo_reuse_approved": false,
+      "quality_approved": false,
+      "gallery_replacement_approved": false
+    },
+    {
+      "registry_id": "RECENT575::236",
+      "holding": "Musée des Augustins, Toulouse (Louvre long-term loan)",
+      "title": "San Diego de Alcalá de Henares en extase devant la Croix",
+      "artist": "Bartolomé Esteban Murillo",
+      "accession": "D 1846 1 / RO 415",
+      "source": "https://collections.louvre.fr/en/ark:/53355/cl010058280",
+      "identity_evidence": "Louvre official inventory confirms full title, Murillo authorship, D 1846 1 and long-term Toulouse loan.",
+      "cautions": "A separately uploaded Commons photograph (5050 × 4888 px; file 'Augustins - San Diego de Alcala en extase devant la croix - Murillo - D 1846 1.jpg') is a research candidate only; it is not an owner-handpicked file and cannot be automatically substituted. Check photographer/image reuse rights before any promotion.",
+      "object_identity_verified": true,
+      "photo_reuse_approved": false,
+      "quality_approved": false,
+      "gallery_replacement_approved": false
+    },
+    {
+      "registry_id": "RECENT575::293",
+      "holding": "Musée des Beaux-Arts de Strasbourg",
+      "title": "La Résurrection de Lazare",
+      "artist": "Jan van de Venne",
+      "accession": "MBA 134",
+      "source": "https://pop.culture.gouv.fr/notice/joconde/00190023070",
+      "identity_evidence": "Official Joconde record identifies painter, subject, panel dimensions 59.2 × 84 cm, inventory MBA 134 and holding institution.",
+      "cautions": "Photograph credits Strasbourg museum service/Bacher; no image reuse clearance.",
+      "object_identity_verified": true,
+      "photo_reuse_approved": false,
+      "quality_approved": false,
+      "gallery_replacement_approved": false
+    },
+    {
+      "registry_id": "RECENT575::295",
+      "holding": "Musée des Beaux-Arts de Strasbourg",
+      "title": "Lazare et le mauvais riche",
+      "artist": "Gabriel Metsu",
+      "accession": "MBA 214",
+      "source": "https://pop.culture.gouv.fr/notice/joconde/00190023057",
+      "identity_evidence": "Official Joconde record gives exact title, Metsu, MBA 214, 73 × 61 cm, same museum and iconography.",
+      "cautions": "Image credits Strasbourg museum service/Bacher/Plisson/Bertola; specific photo reuse not cleared.",
+      "object_identity_verified": true,
+      "photo_reuse_approved": false,
+      "quality_approved": false,
+      "gallery_replacement_approved": false
+    },
+    {
+      "registry_id": "RECENT575::364",
+      "holding": "Musée des Beaux-Arts de Strasbourg",
+      "title": "Vierge en oraison",
+      "artist": "Giovanni Battista Salvi, called Sassoferrato",
+      "accession": "44.2019.2.11",
+      "source": "https://collections.musees.strasbourg.eu/en/document/vierge-en-oraison/5ee33891461cda28a3a5d53e",
+      "identity_evidence": "Official Strasbourg collections page lists Sassoferrato, Vierge en oraison, 67 × 56 cm, inventory 44.2019.2.11, received in 2019.",
+      "cautions": "Multiple versions of Sassoferrato Virgin in prayer exist; visual identity against owner-selected photograph still required. Strasbourg's image page directs requests to its photothèque.",
+      "object_identity_verified": true,
+      "photo_reuse_approved": false,
+      "quality_approved": false,
+      "gallery_replacement_approved": false
+    }
+  ],
+  "extra_holds": [
+    {
+      "registry_id": "RECENT575::369",
+      "source": "https://www.musees.strasbourg.eu/documents/d/musees/dp-musee-des-beaux-arts",
+      "reason": "Official museum press mentions Andrea Vaccaro painting of severed head of John the Baptist (donated 2009), but exact object inventory and visual counterpart not yet verified."
+    },
+    {
+      "registry_id": "RECENT575::392",
+      "source": "https://www.wikidata.org/wiki/Wikidata:WikiProject_sum_of_all_paintings/Collection/Palais_des_beaux-arts_de_Lille",
+      "reason": "Lille Jordaens St Matthew and Two Apostles P85/Joconde 000PE016876 cross-referenced, but the authoritative record could not be opened; keep provisional."
+    }
+  ],
+  "image_method_correction": {
+    "phase27_research_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42207977363",
+    "visual_findings": [
+      {
+        "registry_id": "RECENT575::238",
+        "museum_canvas": 0,
+        "comparison": "SAME_UNDERLYING_PAINTING_FRAME_DIFFERENCE",
+        "sift_inliers": 498,
+        "sift_ratio": 0.99
+      },
+      {
+        "registry_id": "RECENT575::240",
+        "museum_canvas": 0,
+        "comparison": "SAME_UNDERLYING_PAINTING_FRAME_EXPOSURE_DIFFERENCE",
+        "sift_inliers": 532,
+        "sift_ratio": 0.93
+      },
+      {
+        "registry_id": "RECENT575::240",
+        "museum_canvas": 1,
+        "comparison": "WRONG_PANEL_NOT_THE_SELECTED_HANDPICKED_PAINTING",
+        "sift_inliers": 5,
+        "sift_ratio": 0.38
+      },
+      {
+        "registry_id": "RECENT575::242",
+        "comparison": "COMPARISON_UNAVAILABLE_SELECTED_COMMONS_REQUEST_FAILED",
+        "photo_rights": "HOLD"
+      },
+      {
+        "registry_id": "RECENT575::247",
+        "comparison": "COMPARISON_UNAVAILABLE_SELECTED_COMMONS_RATE_LIMIT",
+        "photo_rights": "HOLD"
+      }
+    ],
+    "feature_workflow": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42218282365",
+    "notes": "SIFT geometric consistency is evidence of exact image identity, not a licence/photographic quality approval; frame/crop/colour differences can invalidate pHash."
+  },
+  "policy": [
+    "No gallery deployment or image changes.",
+    "Retain owner-selected Commons references and explicit rejections.",
+    "Never auto-admit alternative Wikimedia photographs.",
+    "Do not collapse object identity and photographer rights.",
+    "No prayer/calendar associations at this stage."
+  ]
+}
