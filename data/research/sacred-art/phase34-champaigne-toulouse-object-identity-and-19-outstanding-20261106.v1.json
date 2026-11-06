@@ -1,0 +1,134 @@
+{
+  "schema": "AO_SACRED_ART_PHASE34_CHAMPAIGNE_TOULOUSE_CORRECTED_OBJECT_IDENTITY_20261106_V1",
+  "as_of": "2026-11-06",
+  "scope": "Only 177 low-resolution owner-handpicked artwork/photo selections; museum object identity evidence independent of image rights, quality or application publication",
+  "baseline": {
+    "identity_supported": 157,
+    "unresolved": 20,
+    "handpicked_rows": 177
+  },
+  "new_identity_supported": [
+    {
+      "registry_id": "RECENT575::014",
+      "selected_photo_title": "Champaigne Christ ressuscité Toulouse",
+      "artist": "Philippe de Champaigne",
+      "official_title": "Les Âmes du Purgatoire",
+      "alternate_subject_title": "Le Christ ressuscité / Christ ressuscité descendant au Purgatoire",
+      "holding_museum": "Musée des Augustins, Toulouse",
+      "museum_accession": "2004 1 218",
+      "secondary_inventory": "Ro 43",
+      "date_approx": "circa 1652",
+      "medium": "Oil on canvas",
+      "dimensions_cm": "384 × 255.5",
+      "official_museum_object_url": "https://collections.augustins.toulouse.fr/fr/notice/2004-1-218-les-ames-du-purgatoire-b35ce3cd-498e-4a7f-a4d9-4ed873b8270f",
+      "official_state_object_url": "https://pop.culture.gouv.fr/notice/joconde/05620000043",
+      "original_owner_selected_commons": "https://commons.wikimedia.org/wiki/File:Champaigne_Christ_ressuscit%C3%A9_Toulouse.jpg",
+      "evidence_grade": "OFFICIAL_MUSEUM_EXACT_OBJECT_WITH_SELECTED_PHOTO_SOURCE_LINK",
+      "resolved_issue": "The museum official title refers to the souls in Purgatory, but same composition prominently shows Christ risen. The selected Commons original links to accession 2004 1 218. Prior Phase30-33 subject mismatch was incorrect; same exact object.",
+      "photo_rights": "NOT_CLEARED_PHOTOGRAPH_CREDIT_DANIEL_MARTIN",
+      "photo_quality_approved": false,
+      "replacement_approved": false,
+      "owner_handpicked_preserved": true,
+      "published": false
+    }
+  ],
+  "research_outcomes": {
+    "herreyns_antwerp_six": {
+      "registry_ids": [
+        "RECENT575::005",
+        "RECENT575::031",
+        "RECENT575::032",
+        "RECENT575::033",
+        "RECENT575::034",
+        "RECENT575::035"
+      ],
+      "status": "HOLD_LUKASWEB_IDENTIFICATION_ONLY_MISSING_SIX_EXACT_KMSKA_CATALOGUE_IDS",
+      "note": "Selected Commons photographs link separate historical Lukasweb photo URLs and say Jacob Herreyns I and KMSKA, but no direct object catalogue or exact accession for individual paintings found. Do not confuse with James Ensor's unrelated Life of Christ cycle or with KMSKA Rubens Baptism.",
+      "example_originals": [
+        "https://commons.wikimedia.org/wiki/File:Jacob_Herreyns_I_-_Scenes_from_the_Life_of_Christ_-_Baptism_of_Christ.jpg",
+        "https://commons.wikimedia.org/wiki/File:Jacob_Herreyns_I_-_Scenes_from_the_life_of_Christ_-_The_Last_Supper.jpg"
+      ]
+    },
+    "still_held": [
+      {
+        "registry_id": "RECENT575::150",
+        "candidate": "1995.GRO0021.I",
+        "reason": "Current exact Musea Brugge object accession not confirmed directly; secondary candidate only."
+      },
+      {
+        "registry_id": "RECENT575::154",
+        "candidate": "0000.GRO0420.I",
+        "reason": "Attribution and accession contradictory between secondary photographs; seek direct institution."
+      },
+      {
+        "registry_id": "RECENT575::392",
+        "candidate": "Lille P 85 / Joconde 000PE016876",
+        "reason": "Direct institutional object record not independently retrievable."
+      },
+      {
+        "registry_id": "RECENT575::402",
+        "candidate": "Lille P 48 / Joconde 000PE017694",
+        "reason": "School of Ter Brugghen identification is secondary; precise object/artist not settled."
+      },
+      {
+        "registry_id": "RECENT575::410",
+        "candidate": "Lille P 190 / Joconde 000PE017010",
+        "reason": "Jan Erasmus Quellinus attribution conflicts with anonymous attribution; no direct object confirmation."
+      },
+      {
+        "registry_id": "RECENT575::479",
+        "candidate": "Dijon CA 232",
+        "reason": "Bouguereau Return of Tobit inventory found in selected Commons / secondary; direct museum record pending."
+      },
+      {
+        "registry_id": "RECENT575::440",
+        "reason": "Generic Deposition title could match several distinct Dijon paintings; no source-based composition match."
+      },
+      {
+        "registry_id": "RECENT575::359",
+        "reason": "Geneva Champaigne Visitation painting vs workshop attribution; direct museum record pending."
+      }
+    ]
+  },
+  "metrics": {
+    "new_identity_supported": 1,
+    "total_identity_supported": 158,
+    "total_unresolved": 19,
+    "coverage": 0.8926553672316384,
+    "total_owner_handpicked": 177,
+    "photo_replacements_approved": 0,
+    "photo_replacements_published": 0,
+    "paris_cc0_photo_canvases_recovered": 10
+  },
+  "remaining_unresolved_ids": [
+    "RECENT575::005",
+    "RECENT575::031",
+    "RECENT575::032",
+    "RECENT575::033",
+    "RECENT575::034",
+    "RECENT575::035",
+    "RECENT575::142",
+    "RECENT575::150",
+    "RECENT575::154",
+    "RECENT575::179",
+    "RECENT575::359",
+    "RECENT575::387",
+    "RECENT575::392",
+    "RECENT575::402",
+    "RECENT575::410",
+    "RECENT575::440",
+    "RECENT575::479",
+    "RECENT575::503",
+    "RECENT575::542"
+  ],
+  "excel_master": "Ad_Orientem_Phase34_177_Artwork_Identity_and_Paris_CC0_Master.xlsx",
+  "safeguards": [
+    "One original owner-handpicked Commons selection retained per row",
+    "Do not conflate distinct paintings based on similar subjects",
+    "Never auto-admit non-handpicked Commons files",
+    "Painting identity does not grant reproduction rights",
+    "Photo fidelity includes crop, color, exposure, image composition",
+    "No public app image replacements; no Prayer/Calendar assignments; no production deployment"
+  ],
+  "predecessor": "data/research/sacred-art/phase33-brest-inha-workshop-attribution-and-20-outstanding-20261106.v1.json"
+}
