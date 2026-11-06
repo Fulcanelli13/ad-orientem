@@ -58,6 +58,7 @@ export function twoGreetingTransferCandidates({
  if(!target||!paragraph||paragraph.kind==="RUBRIC"||
    !Array.isArray(paragraphs)||paragraphs.filter(x=>x===paragraph).length!==1||
    paragraphs.filter(p=>p?.id===paragraph.id).length!==1||
+   paragraphs.filter(p=>Array.isArray(p?.sourceCueIds)&&p.sourceCueIds.includes(target.cueId)).length!==1||
    !sourced(paragraph,canon.sourceLatin))return Object.freeze([]);
  if(paragraph.sourceBlockId&&paragraph.sourceBlockId!==target.blockId)return Object.freeze([]);
  const proper=resolvedMass?.proper,context=resolvedMass?.provenance?.musicToneContext;
