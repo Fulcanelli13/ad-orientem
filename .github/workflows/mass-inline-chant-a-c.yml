@@ -6,6 +6,10 @@ on:
     paths:
       - 'src/mass/reader-inline-chant.js'
       - 'src/mass/reader-participation-neume-policy.js'
+      - 'src/mass/reader-offertory-quiet.js'
+      - 'src/mass/reader-native-preview.js'
+      - 'tests/reader-offertory-oremus-voice-boundary.mjs'
+      - 'tests/reader-offertory-oremus-voice-phone.mjs'
       - 'src/mass/reader-two-greeting-transfer-candidates.js'
       - 'data/mass/two-greeting-music-source-crosswalk.v1.json'
       - 'tests/reader-two-greeting-transfer-candidates.mjs'
@@ -69,6 +73,10 @@ jobs:
         run: |
           node --check src/mass/reader-inline-chant.js
           node --check src/mass/reader-participation-neume-policy.js
+          node --check src/mass/reader-offertory-quiet.js
+          node --check src/mass/reader-native-preview.js
+          node --check tests/reader-offertory-oremus-voice-boundary.mjs
+          node --check tests/reader-offertory-oremus-voice-phone.mjs
           node --check src/mass/reader-two-greeting-transfer-candidates.js
           node --check tests/reader-two-greeting-transfer-candidates.mjs
           node --check tests/reader-two-greeting-transfer-phone.mjs
@@ -105,6 +113,7 @@ jobs:
           node --check src/mass/reader-dom.js
           node tests/reader-inline-chant-a-c.mjs
           node tests/reader-participation-neume-policy.mjs
+          node tests/reader-offertory-oremus-voice-boundary.mjs
           node tests/reader-two-greeting-transfer-candidates.mjs
           node tests/reader-participation-20-event-coverage.mjs
           node tests/reader-participation-reference-scores.mjs
@@ -126,6 +135,7 @@ jobs:
         run: |
           node tests/reader-inline-chant-a-c-phone.mjs
           node tests/reader-participation-reference-phone.mjs
+          node tests/reader-offertory-oremus-voice-phone.mjs
           node tests/reader-two-greeting-transfer-phone.mjs
           node tests/reader-dismissal-variant-phone.mjs
           node tests/reader-oration-festive-amen-phone.mjs
@@ -156,6 +166,15 @@ jobs:
         with:
           name: mass-participation-research-reference-neumes
           path: .tmp/mass-participation-preview/*.png
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Retain 1962 Offertory Oremus sung/Schola/secret phone screens
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-1962-offertory-voice-boundary
+          path: .tmp/offertory-oremus-voice-boundary/*.png
           if-no-files-found: warn
           retention-days: 14
 

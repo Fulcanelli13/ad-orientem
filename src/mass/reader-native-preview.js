@@ -71,7 +71,7 @@ import { projectCurated65PriestStation } from "./reader-priest-station65.js";
 import { createReaderTransientController, partTransitionCinematic, resolveCanonStageBellCinematic } from "./reader-transients.js";
 import {projectHolyThursdayBell,projectEasterVigilGloriaBell} from "./reader-triduum-bells.js";
 import {projectLowMassCommunionWarning} from "./reader-low-communion-bell.js";
-import { projectPriestQuietOffertory } from "./reader-offertory-quiet.js";
+import { projectPriestQuietOffertory,resolveOffertoryVoiceBoundary } from "./reader-offertory-quiet.js";
 import { projectLiveCinematicScene, projectGoodFridayDeathScene } from "./reader-cinematic-scenes.js";
 import { createReaderRubricEventController } from "./reader-rubric-events.js";
 import { withPublishedCanonParagraphRubrics } from "./reader-canon-published-rubrics.js";
@@ -1825,7 +1825,15 @@ export async function mountNativeReaderPreview({
       ordinaryVoice:owned.priestVoice,
       observedPriestAction:priestLane,observation:observedPriestEvent
     });
-    const priestVoice=observedPriest?.priestVoice??priestVoiceState.priestVoice;
+    // 1962 n. 513: C0108 Oremus remains sung. C0109 is the Schola's
+    // independent Offertory proper, not a second priest chant. C0110 is
+    // the first source-owned quiet prayer. Do not infer any audio event.
+    const offertoryVoice=resolveOffertoryVoiceBoundary({
+      cueId:activeCueId,sourceClock:sourceCueClocks.get(activeCueId)??null,
+      form,mode:readerModel?.presentationMode,
+      ordinaryVoice:priestVoiceState.priestVoice
+    });
+    const priestVoice=observedPriest?.priestVoice??offertoryVoice.priestVoice;
     const priestQuietOffertory=projectPriestQuietOffertory({
       cueId:activeCueId,
       sourceClock:sourceCueClocks.get(activeCueId)??null,
@@ -1862,7 +1870,9 @@ export async function mountNativeReaderPreview({
       posture:focusedFaithful ? focusedFaithful.source : postureResolved.owner,
       schola:scholaProjection.ownership,
       priestEntrance:priestEntrance.sourceOwner,
-      priestVoice:observedPriest?.priestVoice ? "EXPLICIT_SOURCE_PRIEST_EVENT" : priestVoiceState.owner==="EXISTING_SOURCE_VOICE" ? owned.ownership.priestVoice : priestVoiceState.owner,
+      priestVoice:observedPriest?.priestVoice ? "EXPLICIT_SOURCE_PRIEST_EVENT" :
+        offertoryVoice.applied ? offertoryVoice.owner :
+        priestVoiceState.owner==="EXISTING_SOURCE_VOICE" ? owned.ownership.priestVoice : priestVoiceState.owner,
       priestPosition:observedPriest?.priestPosition ? "EXPLICIT_SOURCE_PRIEST_EVENT" : owned.ownership.priestPosition,
       priestAction:observedCanon?.priestAction ? "INDEPENDENT_CANON_PRIEST_OBSERVATION" :
         observedPriest?.priestAction ? "EXPLICIT_SOURCE_PRIEST_EVENT" : preMassPriestAction
