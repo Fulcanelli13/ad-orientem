@@ -11,9 +11,9 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 530,
+    "places": 536,
     "places_with_linked_records": 273,
-    "places_without_direct_claim": 257,
+    "places_without_direct_claim": 263,
     "multicategory_heritage_places": 212,
     "shrines": 257,
     "pilgrimages": 240,
@@ -285,7 +285,13 @@
       "place:PL:lichen-marian-basilica",
       "place:MX:ocotlan-basilica-tlaxcala",
       "place:US:san-francisco-de-asis-ranchos-taos",
-      "place:AR:catamarca-cathedral-valle"
+      "place:AR:catamarca-cathedral-valle",
+      "place:AT:heiligenkreuz-abbey-church",
+      "place:US:our-lady-snows-belleville",
+      "place:PH:santo-nino-basilica-cebu",
+      "place:EC:el-cisne-basilica",
+      "place:PL:popieluszko-shrine-warsaw",
+      "place:DE:fulda-cathedral-st-salvator"
     ],
     "customs_without_exact_place": [
       {
@@ -6009,6 +6015,42 @@
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:AT:heiligenkreuz-abbey-church",
+      "display_name": "Stiftskirche Heiligenkreuz — Cistercian Abbey Church",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:US:our-lady-snows-belleville",
+      "display_name": "National Shrine of Our Lady of the Snows — Belleville",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PH:santo-nino-basilica-cebu",
+      "display_name": "Basilica Minore del Santo Niño de Cebu",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:EC:el-cisne-basilica",
+      "display_name": "Santuario Nacional de Nuestra Señora de El Cisne",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PL:popieluszko-shrine-warsaw",
+      "display_name": "Kościół św. Stanisława Kostki — Sanktuarium bł. Jerzego Popiełuszki",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:DE:fulda-cathedral-st-salvator",
+      "display_name": "Dom St. Salvator zu Fulda",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     }
   ],
   "distinct_place_links": {
@@ -6336,5 +6378,16 @@
     "photo_research_id": 61,
     "no_photographs_approved": true,
     "no_mass_times_promoted": true
+  },
+  "georeference_tranche_20261105_p107": {
+    "manifest": "data/geography/research/sacred-places-p107-six-map-first-sites.v1.json",
+    "places_added": 6,
+    "source_records_added": 12,
+    "existing_place_id_replacements": 0,
+    "images_added": 0,
+    "guide_text_added": 0,
+    "operational_directory_links_added": 0,
+    "photo_rights_gate": "SEPARATE",
+    "publication_status": "PENDING_CI_AND_MERGE"
   }
 }

@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import {LIVE} from "./helpers/sacred-places-live-baseline.mjs";
 import {readFileSync,existsSync} from "node:fs";
 import {resolveApprovedPlaceMedia,buildExplorePlaceProfiles} from "../src/find/place-profiles.js";
 import {compactHeritagePlaceSheet} from "../src/find/heritage-presentation.js";
@@ -11,7 +12,7 @@ const gal=read("data/geography/approved-place-gallery.v1.json");
 const review=read("data/geography/research/photo-finder-20261030/decisions.json").decisions;
 const ledger=read("data/geography/research/photo-finder-20261030/releases/sacred-atlas-530-cover-closure-106-v1.json");
 const retry=read(ledger.source_recovery_report);
-assert.equal(geo.places.length,530);
+assert.equal(geo.places.length,LIVE.places);
 assert.equal(ledger.canonical_places,530);
 assert.equal(ledger.approved_cover_count,307);
 assert.equal(ledger.chosen_rank1_places,395);
@@ -43,7 +44,7 @@ assert.ok(!byPlace.has("place:CU:el-cobre-caridad-basilica"));
 const mapSource=readFileSync(new URL("../src/find/explore-map-medallions.js",import.meta.url),"utf8");
 assert.ok(mapSource.includes('"CHURCH","SHRINE","RELIC","PILGRIMAGE"'));
 const profiles=buildExplorePlaceProfiles({geography:geo,media:{approved:reg.items,gallery:gal.items}},{});
-assert.equal(profiles.length,530,"All canonical Places need profiles, even without photographs");
+assert.equal(profiles.length,LIVE.places,"All canonical Places need profiles, even without photographs");
 let photo=0,illustrated=0;
 for(const p of profiles){
  const approved=resolveApprovedPlaceMedia(reg.items,p.place_id);
@@ -64,7 +65,7 @@ for(const p of profiles){
  }
 }
 if(reg.items.length===307)assert.deepEqual([photo,illustrated],[307,223]);
-assert.equal(photo+illustrated,530);
+assert.equal(photo+illustrated,LIVE.places);
 const chosen=profiles.find(p=>!p.media);
 assert.ok(chosen);
 const expanded=renderExploreToString(buildExploreViewModel({
@@ -74,4 +75,4 @@ const expanded=renderExploreToString(buildExploreViewModel({
 assert.ok(expanded.includes('data-explore-place-owner="'+chosen.place_id+'"'));
 assert.ok(expanded.includes('aoExplorePlaceMedia aoSacredPlaceSymbolFallback'));
 assert.ok(!expanded.includes('<img class="aoExplorePlaceMedia"'));
-console.log("PASS 530 physical Place previews: "+photo+" approved photos + "+illustrated+" neutral category symbols; 106 frozen source holds, no false approvals");
+console.log("PASS "+LIVE.places+" physical Place previews: "+photo+" approved photos + "+illustrated+" neutral category symbols; 106 frozen source holds, no false approvals");

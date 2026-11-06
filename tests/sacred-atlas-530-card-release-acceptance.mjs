@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import {LIVE} from "./helpers/sacred-places-live-baseline.mjs";
 import {createHash} from "node:crypto";
 import {readFileSync} from "node:fs";
 import {projectExploreDataset} from "../src/find/explore-projection.js";
@@ -23,7 +24,7 @@ assert.equal(ledger.counts.missing_approved_photo,142);
 assert.equal(ledger.counts.verified_unapproved_photo_sites,21);
 assert.equal(ledger.counts.no_verified_original_sites,121);
 assert.equal(ledger.counts.approved_gallery_photos,42);
-assert.equal(geo.places.length,530);
+assert.equal(geo.places.length,LIVE.places);
 assert.equal(covers.items.length,388);
 assert.equal(gallery.items.length,42);
 assert.equal(verified.places.length,23);
@@ -32,7 +33,7 @@ assert.equal(ledger.photo_gaps.length,142);
 const placeById=new Map(geo.places.map(p=>[p.place_id,p]));
 const mediaById=new Map(covers.items.map(m=>[m.place_id,m]));
 const verifiedIds=new Set(verified.places.map(p=>p.place_id));
-assert.equal(placeById.size,530,"no duplicate Place identities");
+assert.equal(placeById.size,LIVE.places,"no duplicate Place identities");
 assert.equal(mediaById.size,388,"no duplicate published covers");
 assert.equal(new Set(ledger.photo_gaps.map(p=>p.place_id)).size,142,"no duplicate fallback Places");
 assert.ok(covers.items.every(r=>placeById.has(r.place_id)),"no media orphans");
@@ -40,7 +41,9 @@ assert.ok(covers.items.every(r=>placeById.has(r.place_id)),"no media orphans");
 // receives a DIFFERENT independently verified direct-source cover.
 assert.ok(verified.places.every(r=>placeById.has(r.place_id)),
   "Every R25 research original must remain associated with a canonical Place");
-const gaps=geo.places.filter(p=>!mediaById.has(p.place_id));
+const frozenSiteIds=new Set([...ledger.photo_gaps.map(p=>p.place_id),...covers.items.map(p=>p.place_id)]);
+assert.equal(frozenSiteIds.size,530,"2026-11-04 photo ledger remains an immutable 530-Place snapshot");
+const gaps=geo.places.filter(p=>frozenSiteIds.has(p.place_id)&&!mediaById.has(p.place_id));
 assert.deepEqual(
  ledger.photo_gaps.map(p=>p.place_id).sort(),
  gaps.map(p=>p.place_id).sort(),
@@ -87,8 +90,8 @@ const dataset={
 const projection=projectExploreDataset(dataset);
 const profiles=buildExplorePlaceProfiles(dataset,projection,{today:"2026-11-04"});
 const profileById=new Map(profiles.map(p=>[p.place_id,p]));
-assert.equal(profiles.length,530,"one rendered-ready profile for every canonical Place");
-assert.equal(profileById.size,530);
+assert.equal(profiles.length,LIVE.places,"one rendered-ready profile for every canonical Place");
+assert.equal(profileById.size,LIVE.places);
 let photoCards=0,symbolCards=0;
 for(const raw of geo.places){
  const p=profileById.get(raw.place_id);
@@ -121,7 +124,7 @@ for(const raw of geo.places){
  }
 }
 assert.equal(photoCards,388);
-assert.equal(symbolCards,142);
+assert.equal(symbolCards,LIVE.places-covers.items.length,"new canonical Places receive honest neutral media fallbacks");
 
 // All 142 fallbacks must also survive the expanded detail reader, not merely
 // the compact preview. Check both languages and exact canonical ownership.
@@ -141,4 +144,4 @@ for(const raw of gaps){
   assert.ok(html.includes("aoExplorePlaceSheet"),"detail reader missing");
  }
 }
-console.log("SACRED ATLAS FINISH LINE PASS: 530/530 EN/FR Place previews, 142/142 EN/FR detailed fallbacks, 388 verified local photo binaries, 42 unchanged gallery records, and zero unapproved images.");
+console.log("SACRED ATLAS FINISH LINE PASS: "+LIVE.places+"/"+LIVE.places+" EN/FR Place previews, 142 historical EN/FR detailed fallbacks, 388 verified local photo binaries, 42 unchanged gallery records, and zero unapproved images.");

@@ -42,7 +42,7 @@ for(const pair of live.candidate_pairs){
  if(before)assert.equal(now,true,"Cannot revoke an existing approved-photo flag");
 }
 assert.equal(live.counts.venues_screened,review.counts.venues_screened);
-assert.equal(live.counts.canonical_places,review.counts.canonical_places);
+assert.ok(live.counts.canonical_places>=review.counts.canonical_places,"Research snapshot must not block later independently approved canonical sites");
 assert.ok(live.counts.confirmed_links>=review.counts.confirmed_links+1,
   "P92 immutable 23 links plus the separately source-confirmed Guadalupe venue");
 assert.equal(live.counts.within_350m_pairs,review.counts.within_350m_pairs);
