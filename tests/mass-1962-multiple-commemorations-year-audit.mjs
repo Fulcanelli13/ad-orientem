@@ -35,7 +35,7 @@ let browser;try{
      const {properToReaderSlots}=
        await import("/src/mass/proper-reader-slots.js");
      const forms=["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"];
-     const groups=[
+     const sourceGroupPairs=[
        ["collects","COLLECT_SET"],["secrets","SECRET_SET"],
        ["postcommunions","POSTCOMMUNION_SET"]
      ];
@@ -63,7 +63,7 @@ let browser;try{
              if(projected.status!=="CERTIFIED")return result;
              const data=projected.proper?.data??projected.proper;
              const decision=data?.commemorationFormDecision;
-             const counts=groups.map(([field])=>Array.isArray(data?.[field])?
+             const counts=sourceGroupPairs.map(([field])=>Array.isArray(data?.[field])?
                data[field].length:0);
              const expected=decision?.prayerGroupCount??(
                Number.isInteger(decision?.appliedCount)?decision.appliedCount+1:null);
@@ -77,7 +77,7 @@ let browser;try{
                  " expected "+expected);
              for(const language of ["en","fr"]){
                const projection=properToReaderSlots(data,{language});
-               for(const [field,slot] of groups){
+               for(const [field,slot] of sourceGroupPairs){
                  const entry=projection.slots?.[slot];
                  if(entry?.status!=="READY"){
                    failures.push(language+" "+slot+" "+(entry?.reason??"not ready"));
