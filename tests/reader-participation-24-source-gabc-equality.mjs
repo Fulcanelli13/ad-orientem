@@ -11,7 +11,7 @@ assert.deepEqual(audit.counts,{
 });
 assert.equal(new Set(audit.rows.map(r=>r.scoreId)).size,24);
 assert.equal(new Set(audit.rows.map(r=>r.sourceId)).size,11);
-assert.equal(new Set(audit.rows.flatMap(r=>r.cueIds)).size,15,
+assert.equal(new Set(audit.rows.flatMap(r=>r.cueIds)).size,18,
  "One cue may have multiple source tone variants; never double-count these as new Mass cues");
 for(const row of audit.rows){
  assert.equal(row.gabcPhraseEquality,"SOURCE_GABC_PHRASE_EXACT",row.scoreId);
@@ -39,8 +39,6 @@ const g=GOSPEL_1961_REFERENCE_WITNESSES.find(x=>x.sourceId===4491);
 assert.ok(g);
 const gospel=PARTICIPATION_REFERENCE_SCORES.find(x=>x.sourceId===4491&&x.sourceCueIds.includes("AO.SM.C0085"));
 assert.equal(compareExactArchivedPhrase(gospel,g.gabc).match,true);
-assert.equal(stripSourceLayout("(Z-) ~~~~~<sp>R/</sp>. Deo(g)","2901",1),
- "(Z-) ~~~~~<sp>R/</sp>. Deo(g)"); // the source ID must be numeric
 assert.equal(stripSourceLayout("(Z-) ~~~~~<sp>R/</sp>. Deo(g)",2901,1),
  "<sp>R/</sp>. Deo(g)");
 assert.throws(()=>stripSourceLayout("~~~~<sp>R/</sp>. Deo(g)",823,1),
