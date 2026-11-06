@@ -66,13 +66,11 @@ export const PREFACE_SOLEMNIOR_RESEARCH_SCORES=Object.freeze(rows.map((row,i)=>{
   toneFamily:"SOLEMNIOR_1961_SOURCE_UNASSIGNED",
   printWitnesses:PREFACE_SOLEMNIOR_WITNESSES,
   originalFullSourceGabc:PREFACE_SOLEMNIOR_ORIGINAL_GABC,
-  gabc:"name: "+row.label+" (Tonus solemnior 1961);"+
-       "
+  gabc:`name: ${row.label} (Tonus solemnior 1961);
 office-part: Toni Communes;
-source: GR 1961 p.132*, LU 1961 p.110;"+
-       "
+source: GR 1961 p.132*, LU 1961 p.110;
 %%
-(c3) "+phrase+" (::)",
+(c3) ${phrase} (::)`,
   originalSourceGabcChecked:true,
   printedPagesLocated:true,
   printedNoteParity:"PENDING_INDEPENDENT_NEUME_COLLATION",
