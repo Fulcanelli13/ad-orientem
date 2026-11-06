@@ -44,7 +44,7 @@
   ],
   "blockingQuestions": [
     "Certify any ferial oration Amen independently; 1961 p.114* ferial A says recto tono and does not provide the same festive two-note response to borrow",
-    "Obtain independent second-reader pitch/sign verification of 1961 old solemn p.116* (c4) research excerpt before any publication; old simple p.119* is separate and may not be used for Mass",
+    "Independent musical/editorial sign-off on 1961 old solemn p.116* c4 g-h (upward STEP), cross-checked against Liber Usualis 1961 p.100, required before any score publication; old simple p.119* is separate and never imported into Mass",
     "Review any non-standard or shortened conclusion (Per Christum Dominum nostrum etc.) against the selected 1962 Proper and source",
     "Preserve one-conclusion commemoration groups and separately source each intermediate Amen",
     "Do not adopt 1974/1979 notations into the 1962 Mass by matching a title or word Amen",
@@ -114,10 +114,10 @@
       "sourceImage": "https://gregobase.selapa.net/sources/2/993.png",
       "pdfPageZeroIndex": 117,
       "clefWitness": "1961 old solemn p.115*; GregoBase #4488, original (c4) greeting",
-      "melodicWitness": "p.116* R. Amen, two separate square notes ascending by a third, reference candidate under (c4) staff; independent editorial sign verification pending",
-      "gabcBody": "(c4) <sp>R/</sp>. A(g)men.(i.) (::)",
+      "melodicWitness": "1961 Graduale Romanum p. 116* and Liber Usualis p. 100 both show a ONE-STEP ascend between A and men: under c4, g to h. The neighboring 1961 p. 115* GregoBase #4488 greeting verifies c4 adjacent g-h pitch orientation. Previous g-i (third) research transcription rejected. No musical publication approval.",
+      "gabcBody": "(c4) <sp>R/</sp>. A(g)men.(h.) (::)",
       "contextGate": "EXPLICIT_OLD_SOLEMN_1961_PLUS_1962_SOURCE_PROPER_PLUS_UNIQUE_AMEN_CUE_PLUS_FULL_PER_OMNIA_SAECULA_SAECULORUM_ENDING",
-      "scoreStatus": "FACSIMILE_VISUAL_CANDIDATE_RESEARCH_PREVIEW_ONLY_NOT_PUBLICLY_APPROVED",
+      "scoreStatus": "TWO_1961_WITNESSES_STEP_RECOLLATED_RESEARCH_PREVIEW_ONLY__INDEPENDENT_MUSICAL_APPROVAL_PENDING",
       "exclusions": [
         "DEFAULT_FESTIVE",
         "DEFAULT_FERIAL",
@@ -126,7 +126,8 @@
         "ABBREVIATED_ORATION_CONCLUSION",
         "LOW_MASS",
         "UNSOURCED_ORATION"
-      ]
+      ],
+      "sourceCrosscheck": "Liber Usualis (Solesmes, 1961), p. 100, https://gregobase.selapa.net/sources/3/211.png"
     }
   ],
   "ferialAndOptional1961": {
@@ -161,7 +162,7 @@
         "sourceUrl": "https://gregobase.selapa.net/chant.php?id=4488",
         "scope": "MASS_PRAYERS_EXCEPT_ORATIO_SUPER_POPULUM_INCLUDING_REQUIEM_AND_FLECTAMUS_GENUA_RITES",
         "selection": "EXPLICIT_ONLY",
-        "congregationAmen": "1961_FOLIO_116_PRINTED_ASCENDING_TWO_NOTE_AMEN_REFERENCE_TRANSCRIBED_IN_REVIEW_ONLY",
+        "congregationAmen": "1961_GRADUALE_116_AND_LIBER_100__ASCENDING_STEP_C4_G_H__REVIEW_ONLY",
         "allowFixedNeumes": false,
         "uiPolicy": "EXPLICIT_OLD_SOLEMN_SOURCE_SELECTED__NOTATION_FOR_RESEARCH_ONLY",
         "allowOptInResearchNeumes": true

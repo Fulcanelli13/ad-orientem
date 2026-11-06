@@ -32,7 +32,9 @@ const festive=(p,paragraphs,resolvedMass,tone="OLD_SOLEMN_1961")=>
  sourceBoundFestiveOrationAmenScores({paragraph:p,paragraphs,resolvedMass,
  form:"SOLEMN",selectedSettings:{ORATION_TONE:tone}});
 assert.equal(OLD_SOLEMN_ORATION_AMEN_SOURCE.sourceFolio,"116*");
-assert.match(OLD_SOLEMN_ORATION_AMEN_SOURCE.gabc,/\(c4\).*A\(g\)men\.\(i\.\)/);
+assert.match(OLD_SOLEMN_ORATION_AMEN_SOURCE.gabc,/\(c4\).*A\(g\)men\.\(h\.\)/);
+assert.doesNotMatch(OLD_SOLEMN_ORATION_AMEN_SOURCE.gabc,/A\(g\)men\.\(i\.\)/,
+ "Printed 1961 original shows a step, NOT a third");
 assert.notEqual(OLD_SOLEMN_ORATION_AMEN_SOURCE.gabc.includes("(c3)"),true);
 assert.equal(OLD_SOLEMN_ORATION_AMEN_SOURCE.publicScoreApproved,false);
 for(const language of ["en","fr"]){

@@ -14,12 +14,14 @@ export const OLD_SOLEMN_ORATION_AMEN_SOURCE=Object.freeze({
  companionGreetingId:4488,
  companionGreetingGabc:"(c4) DO(g)mi(h)nus(h) vo(gh)bís(hg)cum.(g.) (::)",
  selection:"OLD_SOLEMN_1961",
- reviewStatus:"1961_FACSIMILE_VISUAL_COLLATION_RESEARCH_ONLY__INDEPENDENT_EDITORIAL_APPROVAL_PENDING",
+ reviewStatus:"1961_GRADUALE_116_AND_LIBER_100_G_TO_H_STEP_VISUALLY_COLLATED__INDEPENDENT_EDITORIAL_APPROVAL_PENDING",
  publicScoreApproved:false,
- // The old solemn p.116* R. Amen is two notes with A lower than men.
- // They are transcribed under the c4 system of p.115*. Keep distinct from
- // old simple (c3) A(g)men(h) and festive (c3) A(h)men(h).
- gabc:"name: Old solemn oration Amen (ad libitum);\noffice-part: Toni Communes;\nsource: Graduale Romanum (Solesmes, 1961), p. 116*;\n%%\n(c4) <sp>R/</sp>. A(g)men.(i.) (::)"
+ // The old solemn p.116* R. Amen is an upward STEP (not a third):
+ // first syllable at the same c4 g as the greeting's Dom(inus),
+ // second syllable at adjacent c4 h (cf. GregoBase #4488).
+ // Collated visually with the 1961 Graduale p.116* and Liber p.100.
+ // Keep separate from old simple (c3) g-h and festive (c3) h-h.
+ gabc:"name: Old solemn oration Amen (ad libitum);\noffice-part: Toni Communes;\nsource: Graduale Romanum (Solesmes, 1961), p. 116*;\n%%\n(c4) <sp>R/</sp>. A(g)men.(h.) (::)"
 });
 const norm=s=>String(s??"").normalize("NFD")
  .replace(/[\u0300-\u036f]/g,"").replace(/æ/gi,"ae").replace(/œ/gi,"oe")
