@@ -44,6 +44,19 @@ for(const cueId of ["AO.SM.C0074","AO.SM.C0087","AO.SM.C0255"]){
   paragraph:{kind:"TEXT",sourceCueIds:[cueId],primary:null}}),null,
   "Dynamic response cannot get a guessed Amen or Gospel conclusion");
 }
+// The source's after-Gospel Laus tibi, Christe remains in the reader, but
+// according to 1962 High-Mass music guidance it is not sung by the choir.
+// An instantiated Latin response must still never trigger a neume.
+const afterGospel={kind:"TEXT",sourceCueIds:["AO.SM.C0087"],
+ primary:"℟. Laus tibi, Christe."};
+for(const form of ["SOLEMN","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE"]){
+ assert.equal(participationNeumeOpportunity({cueId:"AO.SM.C0087",
+  form,paragraph:afterGospel}),null,
+  "Gospel conclusion is a spoken response, not a sung Gregorian cue");
+}
+assert.equal(PARTICIPATION_NEUME_POLICY.find(x=>x.id==="GOSPEL_CONCLUSION")?.sungExclusion,
+ "GOSPEL_END_LAUS_TIBI_CHRISTE_RESPONDED_NOT_SUNG");
+
 const [minister,response]=APPROVED_MASS_INLINE_GABC;
 for(const score of [minister,response]){
  const paragraph={kind:"TEXT",sourceCueIds:[score.sourceCueId],primary:score.sourceLatin,
