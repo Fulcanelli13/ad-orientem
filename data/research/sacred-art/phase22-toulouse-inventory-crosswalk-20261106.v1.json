@@ -1,0 +1,102 @@
+{
+  "schema": "AO_SACRED_ART_MUSEUM_IDENTITY_PHASE22_V1",
+  "recorded_at": "2026-11-06",
+  "sources": [
+    {
+      "name": "Toulouse Métropole – main collection inventory",
+      "url": "https://data.toulouse-metropole.fr/explore/dataset/inventaire-collections-augustins/",
+      "source_method": "official full JSON export; 3959 records"
+    },
+    {
+      "name": "Toulouse Métropole – deposited works",
+      "url": "https://data.toulouse-metropole.fr/explore/dataset/inventaire-des-oeuvres-deposees-au-musee-des-augustins/",
+      "source_method": "official full JSON export; 108 records"
+    }
+  ],
+  "evidence_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42172802324",
+  "evidence_artifact": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42172802324/artifacts/13481763393",
+  "baseline": {
+    "low_resolution_owner_handpicked": 177,
+    "objects_confirmed_prior": 31,
+    "new_official_museum_identifications": 3,
+    "objects_confirmed_after": 34,
+    "remaining_unresolved": 143
+  },
+  "newly_confirmed": [
+    {
+      "registry_id": "RECENT575::092",
+      "artist_master": "Frans Francken the Younger",
+      "artist_official": "FRANCKEN, Frans II",
+      "title_official": "Les Noces de Cana",
+      "inventory": "RO 862",
+      "museum": "Musée des Augustins, Toulouse",
+      "evidence": "EXACT_INVENTORY_TITLE_AND_ARTIST_IN_OFFICIAL_EXPORT",
+      "image_reuse": "NOT_VERIFIED",
+      "image_quality": "NOT_VERIFIED"
+    },
+    {
+      "registry_id": "RECENT575::097",
+      "artist_master": "Pierre Subleyras",
+      "artist_official": "SUBLEYRAS, Pierre Hubert",
+      "title_official": "Saint Joseph tenant l'Enfant Jésus",
+      "inventory": "2004 1 282",
+      "museum": "Musée des Augustins, Toulouse",
+      "evidence": "EXACT_INVENTORY_TITLE_AND_ARTIST_IN_OFFICIAL_EXPORT",
+      "image_reuse": "NOT_VERIFIED",
+      "image_quality": "NOT_VERIFIED"
+    },
+    {
+      "registry_id": "RECENT575::098",
+      "artist_master": "Nicolas Tournier",
+      "artist_official": "TOURNIER, Nicolas",
+      "title_official": "Saint Pierre",
+      "inventory": "2015 2 1",
+      "museum": "Musée des Augustins, Toulouse",
+      "evidence": "EXACT_INVENTORY_ARTIST_AND_CORRECTED_SUBJECT_AFTER_MALFORMED_COMMONS_TITLE",
+      "title_correction_pending": true,
+      "image_reuse": "NOT_VERIFIED",
+      "image_quality": "NOT_VERIFIED"
+    }
+  ],
+  "unresolved_toulouse": [
+    {
+      "registry_id": "RECENT575::014",
+      "reason": "Master records tentative attribution and wrong/ambiguous Commons subject; no museum number"
+    },
+    {
+      "registry_id": "RECENT575::082",
+      "reason": "No exact museum inventory/accession identified"
+    },
+    {
+      "registry_id": "RECENT575::089",
+      "reason": "No exact museum inventory/accession identified"
+    },
+    {
+      "registry_id": "RECENT575::229",
+      "reason": "No exact museum inventory/accession identified"
+    },
+    {
+      "registry_id": "RECENT575::233",
+      "reason": "Deposit number D 1952 3 not found in two retrieved official inventories; identity/title also malformed"
+    },
+    {
+      "registry_id": "RECENT575::236",
+      "reason": "Deposit number D 1846 1 not found in two retrieved official inventories"
+    }
+  ],
+  "previously_verified_in_toulouse": [
+    "RECENT575::096",
+    "RECENT575::220",
+    "RECENT575::221",
+    "RECENT575::222",
+    "RECENT575::223",
+    "RECENT575::231"
+  ],
+  "constraints": [
+    "Museum objects are not automatically image-quality certified.",
+    "Joconde/pop open-data metadata permissions are distinct from specific photographs.",
+    "Owner-handpicked Commons paintings remain preserved; no non-handpicked Commons admissions.",
+    "No live gallery changes, image replacements, calendar pairings, or prayer placements.",
+    "Reject only explicitly rejected artworks, not rejected placements."
+  ]
+}
