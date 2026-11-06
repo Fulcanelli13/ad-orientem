@@ -57,7 +57,8 @@ assert.deepEqual(
  "Dated 151-photo-gap ledger must equal the unchanged original 530-Place cohort");
 assert.equal(gaps.length,LIVE.places-covers.items.length,
  "Every subsequent canonical Place lacking an approved cover must retain a fallback");
-assert.equal(gaps.length,154);
+assert.equal(gaps.length,ledger.counts.missing_approved_photo+v10.data.new_places+v10b21.data.new_places,
+ "Historical 151 missing-cover cohort plus five unphotographed draft admissions");
 assert.ok(geo.places.filter(p=>!frozenIds.has(p.place_id)).every(p=>!mediaById.has(p.place_id)),
  "V10 may not silently promote an unreviewed cover photograph");
 for(const row of ledger.photo_gaps){
