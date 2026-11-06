@@ -79,6 +79,6 @@ export function renderIcrspFranceHomeOrdo(date,language="en"){
   '<strong>'+esc(mass.title[lng])+'</strong>'+
   '<p>'+esc(notes.join(" · "))+'</p><p>'+esc(items)+'</p>'+readings+
   '<a href="'+esc(record.sourceOrdo)+'" target="_blank" rel="noopener noreferrer">'+esc(t("Official ICRSP ordo","Ordo officiel ICRSP"))+'</a>'+
-  '<button type="button" data-home-icrsp-votive="VOTIVE">'+esc(t("Find this Mass in the votive Mass catalogue","Retrouver cette messe dans le catalogue des messes votives"))+' ›</button>'+
+  '<button type="button" data-home-icrsp-votive="VOTIVE">'+esc((record.date==="2026-11-06"?t("Use Sacred Heart votive · Low Mass","Choisir la messe votive du Sacré-Cœur · messe basse"):t("Find this Mass in the votive Mass catalogue","Retrouver cette messe dans le catalogue des messes votives")))+' ›</button>'+
   '<small>'+esc(t("Institute-specific record. Your actual Mass must be selected before opening the reader.","Ordo propre à l’Institut. Le formulaire réellement célébré doit être sélectionné avant d’ouvrir le lecteur."))+'</small></section>';
 }

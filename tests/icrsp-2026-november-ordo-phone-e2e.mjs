@@ -51,12 +51,42 @@ try{
  await door.waitFor({state:"visible"});
  assert.equal(await door.locator("[data-home-icrsp-ordo='2026-11-06']").count(),1);
  assert.match(await door.innerText(),/Begin general-calendar Mass/);
+ assert.match(await door.innerText(),/Use Sacred Heart votive/);
  await door.locator("[data-home-icrsp-votive='VOTIVE']").click();
- await page.waitForFunction(()=>String(globalThis.AO_CELEBRATION_ARCH_V1?.stage??"").toLowerCase()==="votive",
-  null,{timeout:30000});
+ await page.waitForFunction(()=>{
+   const a=globalThis.AO_CELEBRATION_ARCH_V1;
+   return a?.actualCelebration?.id==="sacred_heart"&&
+     a?.votiveBasis==="first_friday"&&
+     a?.rubric?.gloria===true&&a?.rubric?.credo===false;
+ },null,{timeout:30000});
+ const selected=await page.evaluate(()=>{
+   const a=globalThis.AO_CELEBRATION_ARCH_V1;
+   const pre=globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight??null;
+   return {actualId:a?.actualCelebration?.id,properPath:globalThis.AO_CELEBRATION_CATALOGUE?.sacred_heart?.path,
+     basis:a?.votiveBasis,rubric:a?.rubric,form:pre?.chosenForm??pre?.form,
+     selectedDate:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate};
+ });
+ assert.deepEqual([selected.actualId,selected.properPath,selected.basis,selected.selectedDate],
+   ["sacred_heart","Votive/Pent02-5","first_friday","2026-11-06"]);
+ assert.equal(selected.rubric?.votiveClass,3,"First-Friday votive must be III class");
+ assert.equal(selected.rubric?.gloria,true,"First-Friday Sacred Heart must HAVE Gloria");
+ assert.equal(selected.rubric?.credo,false,"First-Friday Sacred Heart must omit Credo");
+ assert.equal(selected.form,"LOW","ICRSP one-tap action must automatically select LOW");
+ assert.equal(await page.locator("[data-ao-full-mass-preflight]").getAttribute("data-ao-chosen-mass-form"),"LOW",
+   "Mass preflight must reflect Low form without a manual change");
+ await page.waitForFunction(()=>globalThis.AO_CELEBRATION_ARCH_V1?.readiness?.loading===false,
+  null,{timeout:40000});
+ const source=await page.evaluate(()=>{
+   const a=globalThis.AO_CELEBRATION_ARCH_V1;
+   return {path:a.resolvedProper?.sourcePath??a.resolvedProper?.data?.sourcePath??null,
+     ready:a.readiness,hasProper:!!a.resolvedProper};
+ });
+ console.log("ICRSP_2026_11_06_SACRED_HEART_PROPER "+JSON.stringify(source));
+ assert.ok(source.hasProper,"Exact Sacred Heart Proper failed to resolve: "+JSON.stringify(source));
+ assert.equal(source.path,"Votive/Pent02-5","Unexpected actual Mass Proper");
  assert.equal(errors.length,0,"Runtime errors: "+JSON.stringify(errors));
  await page.close();
- console.log("PASS: actual phone Home and H7 6 Nov 2026: green feria distinct from ICRSP white Cogitationes, source and votive chooser.");
+ console.log("PASS: actual 390px ICRSP 6 Nov Home → Sacred Heart selected → III class Gloria yes Credo no → Low Mass source-owned Proper.");
 }finally{
  await browser?.close().catch(()=>{});
  await new Promise(ok=>server.close(ok));
