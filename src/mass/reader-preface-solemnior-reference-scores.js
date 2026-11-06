@@ -52,7 +52,7 @@ export const PREFACE_SOLEMNIOR_RESEARCH_SCORES=Object.freeze(rows.map((row,i)=>{
   throw Error("PREFACE_SOLEMNIOR_PHRASE_INDEX_CHANGED_"+row.index);
  return Object.freeze({
   id:"AO.REF.PREFACE_SOLEMNIOR_1961."+row.cueId.split(".").at(-1),
-  eventId:["PREFACE_GREETING","PREFACE_GREETING","PREFACE_SURSUM_CORDA","PREFACE_GRATIAS"][i],
+  eventId:"PREFACE_DIALOGUE",
   sourceId:PREFACE_SOLEMNIOR_SOURCE_ID,
   sourceName:"Toni Praefationum (3. Tonus solemnior)",
   sourceUrl:PREFACE_SOLEMNIOR_SOURCE_URL,
