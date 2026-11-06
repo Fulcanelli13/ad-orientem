@@ -118,8 +118,8 @@ export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null,ordo
   '<div class="mks"><span class="mk">'+esc(vm.rank)+'</span><span class="mk c">'+esc(vm.colour)+'</span>'+marksMarkup+'</div>'+
   '<section class="aoTodayV2Mass"><button type="button" class="btn glass aoH7Enter" data-home-h7-enter>'+
   '<span><b>'+esc(say("Enter the Mass","Entrer dans la messe"))+'</b><small lang="la">'+esc(vm.massIntroit||say("Mass of the day","Messe du jour"))+'</small></span>'+
-  '<span class="ar" aria-hidden="true">›</span></button></section>'+icrspOrdo+'</div></section>'+
-  '<nav class="dateRail aoH4Week wk aoH7Week" aria-label="'+esc(say("Week","Semaine"))+'">'+week+'</nav>'+
+  '<span class="ar" aria-hidden="true">›</span></button></section></div></section>'+
+  '<nav class="dateRail aoH4Week wk aoH7Week" aria-label="'+esc(say("Week","Semaine"))+'">'+week+'</nav>'+icrspOrdo+
   (coverage&&!coverage.complete?'<p class="aoH4Status" role="status">'+esc(say("Some translations are unavailable.","Certaines traductions sont indisponibles."))+'</p>':"")+
   '<section class="aoTodayV2PrayerThroughDay sec" id="ao-home-prayer-through-day" tabindex="-1"><div class="aoH4SectionHead"><h2>'+esc(say("Pray","Prier"))+'</h2><button type="button" data-home-cu-route="pray.library">'+esc(say("All prayers","Toutes les prières"))+' ›</button></div>'+
   '<div class="aoTodayV2Zone aoTodayV2PrayNow">'+c3PrayerMarkup({fr,feature,attrs,role:nextRole,title:prayerTitle,description:prayerCaption,due})+
