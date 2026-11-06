@@ -5577,7 +5577,7 @@
       ],
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/little-crown-b30.js",
-      "source_key": "pray.little_crown",
+      "source_key": "LITTLE_CROWN_B30_BEADS",
       "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
@@ -5590,7 +5590,7 @@
         {
           "id": "pray.little_crown",
           "kind": "principal",
-          "sourceRef": "src/pray/little-crown-b30.js#pray.little_crown"
+          "sourceRef": "src/pray/little-crown-b30.js#LITTLE_CROWN_B30_BEADS"
         }
       ],
       "refs": [],
@@ -5604,7 +5604,13 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "reader_route": "pray.little_crown",
+      "sourceCrosswalk": {
+        "programmaticSource": "LITTLE_CROWN_B30_BEADS",
+        "externalPublicRoute": "pray.little_crown",
+        "note": "Source object and route alias differ; no UI ownership change."
+      }
     },
     {
       "id": "pray.st_joseph_seven_sorrows",
@@ -5617,7 +5623,7 @@
       ],
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/st-joseph-seven-sorrows-joys-b24.js",
-      "source_key": "pray.st_joseph_seven_sorrows",
+      "source_key": "JOSEPH_SEVEN_PRAYERS_B24",
       "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
@@ -5630,7 +5636,7 @@
         {
           "id": "pray.st_joseph_seven_sorrows",
           "kind": "principal",
-          "sourceRef": "src/pray/st-joseph-seven-sorrows-joys-b24.js#pray.st_joseph_seven_sorrows"
+          "sourceRef": "src/pray/st-joseph-seven-sorrows-joys-b24.js#JOSEPH_SEVEN_PRAYERS_B24"
         }
       ],
       "refs": [],
@@ -5644,7 +5650,13 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "reader_route": "pray.st_joseph_seven_sorrows",
+      "sourceCrosswalk": {
+        "programmaticSource": "JOSEPH_SEVEN_PRAYERS_B24",
+        "externalPublicRoute": "pray.st_joseph_seven_sorrows",
+        "note": "Source object and route alias differ; no UI ownership change."
+      }
     },
     {
       "id": "pray.stations",
@@ -5741,7 +5753,7 @@
       ],
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/penitential-psalms-source.js",
-      "source_key": "pray.penitential_psalms",
+      "source_key": "PENITENTIAL_PSALMS_VULGATE",
       "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
@@ -5754,7 +5766,7 @@
         {
           "id": "pray.penitential_psalms",
           "kind": "principal",
-          "sourceRef": "src/pray/penitential-psalms-source.js#pray.penitential_psalms"
+          "sourceRef": "src/pray/penitential-psalms-source.js#PENITENTIAL_PSALMS_VULGATE"
         }
       ],
       "refs": [
@@ -5770,7 +5782,13 @@
       "classificationRule": "R3",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "reader_route": "pray.penitential_psalms",
+      "sourceCrosswalk": {
+        "programmaticSource": "PENITENTIAL_PSALMS_VULGATE",
+        "externalPublicRoute": "pray.penitential_psalms",
+        "note": "Source object and route alias differ; no UI ownership change."
+      }
     },
     {
       "id": "pray.montfort_consecration_preparation",
@@ -6319,7 +6337,7 @@
       ],
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/good-death-data.js",
-      "source_key": "pray.good_death",
+      "source_key": "GOOD_DEATH_DYING_V384",
       "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
@@ -6332,7 +6350,7 @@
         {
           "id": "pray.good_death",
           "kind": "principal",
-          "sourceRef": "src/pray/good-death-data.js#pray.good_death"
+          "sourceRef": "src/pray/good-death-data.js#GOOD_DEATH_DYING_V384"
         }
       ],
       "refs": [
@@ -6349,7 +6367,13 @@
       "classificationRule": "R2",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "reader_route": "pray.good_death",
+      "sourceCrosswalk": {
+        "programmaticSource": "GOOD_DEATH_DYING_V384",
+        "externalPublicRoute": "pray.good_death",
+        "note": "Source object and route alias differ; no UI ownership change."
+      }
     },
     {
       "id": "pray.dying_companion",
