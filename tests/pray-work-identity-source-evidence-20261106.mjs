@@ -90,6 +90,16 @@ for(const w of ext){
 const counts=evidence.reduce((a,x)=>(a[x.sourceResult]=(a[x.sourceResult]||0)+1,a),{});
 const checkable=evidence.filter(x=>pure.has(x.owner));
 const strictIssues=checkable.filter(x=>x.sourceResult==="source-key-unresolved");
+const {supportedDirectPrayerRoute}=await import(pathToFileURL(join(root,"src/pray/internal-route-owner.js")).href);
+const traditionalSource=read("src/pray/traditional-pray-runtime.js");
+const traditionalSection=traditionalSource.slice(traditionalSource.indexOf("const ROUTES=Object.freeze({"),traditionalSource.indexOf("\n});",traditionalSource.indexOf("const ROUTES=Object.freeze({"))+4);
+const canonicalRoutes=reg.works.filter(w=>/^(pray\.|mass\.|programme\.)/.test(w.id));
+const routeContracts=canonicalRoutes.map(w=>{
+ const internal=supportedDirectPrayerRoute(w.id);
+ const traditional=traditionalSection.includes('"'+w.id+'":Object.freeze(');
+ return {id:w.id,legacyRows:w.legacyRows,internal,traditional,declared:internal||traditional};
+});
+const missingRouteContracts=routeContracts.filter(x=>!x.declared);
 const summaries={
  schema:"ao.pray.identity-source-route-audit.v1",
  rule:"A source export or route token proves owner evidence, not live public reader availability or exact printed edition.",
@@ -99,6 +109,9 @@ const summaries={
  noRuntimeToken:evidence.filter(x=>!x.runtimeTokenFiles.length).length,
  importFailures:[...modules].filter(([p,m])=>m.__importFailure).map(([p,m])=>({path:p,error:m.__importFailure})),
  strictIssues:strictIssues.map(x=>({id:x.id,path:x.owner,key:x.key})),
+ runtimeRouteDeclarations:routeContracts.length,
+ routeDeclarationProblems:missingRouteContracts,
+ routeDeclarations:routeContracts,
  unverifiedRoutes:evidence.filter(x=>x.availability==="route-unverified").length,
  externalLinks:evidence.filter(x=>x.availability==="external-link").length,
  sourceOnly:evidence.filter(x=>x.availability==="source-only").length,
@@ -108,4 +121,6 @@ console.log(JSON.stringify(summaries,null,2));
 assert.equal(reg.works.length,133,"Unexpected registry size");
 assert.equal(evidence.length,87,"Stage 2 must cover exactly 84 route-unverified, 2 external links, 1 source-only");
 assert.equal(strictIssues.length,0,"Registry has broken source-key pointers in importable, source-owned modules");
+assert.equal(routeContracts.length,24,"Expected 24 existing public route identities; Montfort Act has no separate route");
+assert.equal(missingRouteContracts.length,0,"Registry contains non-existent public route IDs");
 console.log("Stage 2 source evidence audit PASS. Runtime token detection is NOT public availability certification.");
