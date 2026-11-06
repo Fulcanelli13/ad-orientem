@@ -1,0 +1,128 @@
+{
+  "schema": "AO_SACRED_ART_MUSEUM_IDENTITY_PHASE22_INSTITUTIONAL_V1",
+  "recorded_at": "2026-11-06",
+  "scope": "Eight additional direct institutional object records after the Toulouse full-inventory batch; research only.",
+  "prior_verified_baseline": 34,
+  "new_verified": [
+    {
+      "registry_id": "RECENT575::313",
+      "official_artist": "Jacques Stella",
+      "official_title": "L'Enfant Jésus retrouvé au Temple par ses parents",
+      "inventory": "1979-169",
+      "holding": "Musée des Beaux-Arts de Lyon",
+      "official_object_url": "https://collections.mba-lyon.fr/en/notice/1979-169-l-enfant-jesus-retrouve-au-temple-par-ses-parents-126df953-28b2-4fa7-8105-4687dfc4531a",
+      "identity_verified": true,
+      "photo_rights_note": "Museum photograph credited © Lyon MBA – Photo Alain Basset",
+      "photo_quality_approved": false,
+      "published": false
+    },
+    {
+      "registry_id": "RECENT575::315",
+      "official_artist": "Ribera, Jusepe de (attributed to)",
+      "official_title": "Le Repentir de saint Pierre",
+      "inventory": "X 807-b; MI 1226",
+      "holding": "Musée des Beaux-Arts de Lyon (Louvre deposit)",
+      "official_object_url": "https://collections.louvre.fr/ark:/53355/cl010053355",
+      "identity_verified": true,
+      "photo_rights_note": "Museum photograph rights not verified; attribution to Ribera",
+      "photo_quality_approved": false,
+      "published": false
+    },
+    {
+      "registry_id": "RECENT575::317",
+      "official_artist": "Jacob Jordaens",
+      "official_title": "L'Adoration des bergers",
+      "inventory": "A 72",
+      "holding": "Musée des Beaux-Arts de Lyon (Louvre deposit)",
+      "official_object_url": "https://collections.louvre.fr/ark:/53355/cl010058859",
+      "identity_verified": true,
+      "photo_rights_note": "Museum image © Louvre, reuse not verified",
+      "photo_quality_approved": false,
+      "published": false
+    },
+    {
+      "registry_id": "RECENT575::372",
+      "official_artist": "Perugino (Pietro Vannucci)",
+      "official_title": "L'Ascension du Christ",
+      "inventory": "A 134",
+      "holding": "Musée des Beaux-Arts de Lyon (Louvre deposit)",
+      "official_object_url": "https://collections.louvre.fr/ark:/53355/cl010058889",
+      "identity_verified": true,
+      "photo_rights_note": "Museum image © Louvre, reuse not verified",
+      "photo_quality_approved": false,
+      "published": false
+    },
+    {
+      "registry_id": "RECENT575::373",
+      "official_artist": "Nicolas Poussin",
+      "official_title": "La Fuite en Égypte",
+      "inventory": "2014.5.1 (earlier RF 2008-1)",
+      "holding": "Musée des Beaux-Arts de Lyon",
+      "official_object_url": "https://collections.mba-lyon.fr/fr/notice/2014-5-1-la-fuite-en-egypte-5d37927e-4d6e-41a1-90a9-b724f77782ae",
+      "identity_verified": true,
+      "photo_rights_note": "Photo © Lyon MBA – Alain Basset; exact photograph rights not cleared",
+      "photo_quality_approved": false,
+      "published": false
+    },
+    {
+      "registry_id": "RECENT575::446",
+      "official_artist": "Adam Elsheimer",
+      "official_title": "Saint Laurent",
+      "inventory": "825.1.57",
+      "holding": "Musée Fabre, Montpellier",
+      "official_object_url": "https://www.museefabre.fr/recherche/musee%3AMUS_BIEN%3A2945",
+      "identity_verified": true,
+      "photo_rights_note": "Photo © Musée Fabre – Frédéric Jaulmes; specific reuse rights unverified",
+      "photo_quality_approved": false,
+      "published": false
+    },
+    {
+      "registry_id": "RECENT575::450",
+      "official_artist": "Anonymous (historically various attributions)",
+      "official_title": "Le Martyre de sainte Cécile",
+      "inventory": "825.1.166",
+      "holding": "Musée Fabre, Montpellier",
+      "official_object_url": "https://www.museefabre.fr/recherche/musee%3AMUS_BIEN%3A2813",
+      "identity_verified": true,
+      "photo_rights_note": "Anonymous current attribution; photo © Musée Fabre – Frédéric Jaulmes",
+      "photo_quality_approved": false,
+      "published": false
+    },
+    {
+      "registry_id": "RECENT575::452",
+      "official_artist": "Francisco de Zurbarán",
+      "official_title": "Sainte Agathe",
+      "inventory": "852.1.3",
+      "holding": "Musée Fabre, Montpellier",
+      "official_object_url": "https://www.museefabre.fr/recherche/musee%3AMUS_BIEN%3A3508",
+      "identity_verified": true,
+      "photo_rights_note": "Museum photograph rights not verified",
+      "photo_quality_approved": false,
+      "published": false
+    }
+  ],
+  "new_count": 8,
+  "revised_verified_total": 42,
+  "revised_unverified": 135,
+  "separately_corroborated_but_not_in_direct_museum_total": {
+    "registry_id": "RECENT575::312",
+    "source": "https://agorha.inha.fr/ark:/54721/e096ec4e-9bdf-4729-9d09-9cebbd8d6503",
+    "inventory": "B.286",
+    "holding": "Musée des Beaux-Arts de Lyon",
+    "editorial_attribution": "19th-century copy after Titian painted by Eugène Delacroix; not autograph Titian",
+    "status": "TRUSTED_INSTITUTIONAL_AGGREGATOR_NOT_YET_DIRECT_MUSEUM_OBJECT",
+    "photo_rights": "UNVERIFIED"
+  },
+  "exceptions": [
+    "Ribera is attributed, not unequivocally autograph.",
+    "The Fabre Saint Cecilia remains anonymous; historical attributions are not owner approvals.",
+    "A Louvre-owned work deposited at Lyon must retain both owner and physical holding institution.",
+    "Museum photo credits are not a public reuse licence."
+  ],
+  "guardrails": [
+    "No changes to artwork approvals or rejection decisions.",
+    "No non-handpicked Commons promotion.",
+    "No actual photo upgrades certified.",
+    "No published gallery files, prayer or calendar pairing changes."
+  ]
+}
