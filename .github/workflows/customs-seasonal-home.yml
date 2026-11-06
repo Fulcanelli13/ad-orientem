@@ -4,6 +4,10 @@ on:
     types: [opened, synchronize, reopened, ready_for_review]
     paths:
       - "src/customs/seasonal-home-spotlight.js"
+      - "src/home/home-first-monthly-observances.js"
+      - "src/mass/reader-post-low-mass.js"
+      - "src/mass/reader-dom.js"
+      - "tests/home-customs-post-low-mass-leonine.mjs"
       - "src/customs/year-led-library.js"
       - "src/calendar/calendar-runtime.js"
       - "src/home/today-v2-sections.js"
@@ -33,6 +37,10 @@ jobs:
           node --check src/home/presentation.js
           node --check tests/customs-seasonal-home-year.mjs
           node tests/customs-seasonal-home-year.mjs
+          node --check src/home/home-first-monthly-observances.js
+          node --check src/mass/reader-post-low-mass.js
+          node --check tests/home-customs-post-low-mass-leonine.mjs
+          node tests/home-customs-post-low-mass-leonine.mjs
           node tests/calendar-customs-context.mjs
           node tests/calendar-customs-search.mjs
 
