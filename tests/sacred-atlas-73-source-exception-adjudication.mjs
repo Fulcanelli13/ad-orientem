@@ -55,4 +55,49 @@ assert.deepEqual(exceptionCounts, {
 assert.equal(counts.owner_approved, 0);
 assert.equal(counts.publish_authorized, 0);
 assert.equal(intake.candidates.filter(x => x.publication_authorized || x.imported_to_live).length, 0);
-console.log("PASS 73 Atlas source and exception triage: 65 scope-classified, eight named-site holds, 17 retrieved-source corroborations, zero approval or import");
+const second = rows.filter(x => x.second_pass?.source_content_check_performed);
+assert.equal(second.length, 56, "Every originally unchecked site-source row needs an explicit second-pass outcome");
+assert.ok(second.every(x => !x.evidence_content_reviewed_now), "Original 17 first-pass decisions remain historic");
+assert.equal(rows.filter(x => x.evidence_content_reviewed_now).length, 17);
+assert.equal(audit.second_pass.screened, 56);
+assert.equal(audit.second_pass.source_page_retrieved, 55);
+assert.equal(audit.second_pass.index_only_corrob, 1);
+assert.equal(audit.second_pass.source_replacements, 5);
+assert.equal(counts.second_pass_source_rechecks, 56);
+assert.equal(counts.second_pass_retrieved_pages, 55);
+assert.equal(counts.second_pass_indexed_only, 1);
+assert.equal(counts.total_candidates_with_some_source_evidence_review, 73);
+const replacements = [];
+const indexed = [];
+for (const row of second) {
+  const follow = row.second_pass;
+  assert.match(follow.corroborating_url, /^https:\/);
+  assert.ok(follow.content_finding.length > 70, row.candidate_id);
+  assert.ok(follow.site_scope_outcome.length > 10, row.candidate_id);
+  assert.equal(follow.source_content_check_performed, true);
+  assert.equal(follow.staged_coordinate_independently_verified, false);
+  assert.equal(follow.site_admission_approved, false);
+  assert.equal(follow.photo_rights_assessed, false);
+  assert.equal(row.publishable, false);
+  if (follow.evidence_access === "ALTERNATE_PAGE_RETRIEVED") {
+    replacements.push(row.candidate_id);
+    assert.notEqual(follow.corroborating_url, row.geography_url, row.candidate_id);
+  }
+  if (follow.evidence_access === "INDEXED_SOURCE_CORROBORATION") {
+    indexed.push(row.candidate_id);
+    assert.equal(follow.source_http_retrieval, false);
+  } else {
+    assert.ok(["DIRECT_PAGE_RETRIEVED", "ALTERNATE_PAGE_RETRIEVED"].includes(follow.evidence_access));
+    assert.equal(follow.source_http_retrieval, true);
+  }
+}
+assert.deepEqual(replacements.sort(), ["SG-INV-0204","SG-INV-0207","SG-INV-0322","SG-INV-0345","SG-INV-0528"]);
+assert.deepEqual(indexed, ["SG-INV-0720"]);
+for (const id of ["SG-INV-0098","SG-INV-0339","SG-INV-0396","SG-INV-0434","SG-INV-0528"]) {
+  const row = rows.find(x => x.candidate_id === id);
+  assert.ok(row.second_pass.site_scope_outcome !== "NAMED_SITE_GEOMETRY_PENDING", "Site-specific type/identity caution must remain: " + id);
+}
+assert.equal(audit.second_pass.coordinates_approved, 0);
+assert.equal(audit.second_pass.owner_approvals, 0);
+assert.equal(audit.second_pass.publication_authorized, 0);
+console.log("PASS 73 Atlas source cases: 17 first-pass corroborations + 55 directly retrieved and one indexed second-pass review; five repaired sources, zero approvals/import");
