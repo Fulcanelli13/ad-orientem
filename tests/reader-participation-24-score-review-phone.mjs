@@ -47,6 +47,10 @@ try{
    return {state,loaded:document.documentElement.dataset.reviewReady,
     cards:scoreCards.length,svgs:scoreCards.filter(c=>c.querySelector(".staff svg")).length,
     links:scoreCards.filter(c=>c.querySelector('a[href^="https://gregobase.selapa.net/chant.php?id="]')).length,
+    plateLinks:scoreCards.reduce((n,c)=>n+c.querySelectorAll('a[data-printed-plate="true"]').length,0),
+    missingPlateLinks:scoreCards.filter(c=>!c.querySelector('a[data-printed-plate="true"]')).map(c=>c.dataset.scoreId),
+    plateIds:[...new Set([...document.querySelectorAll('a[data-printed-plate="true"]')]
+       .map(a=>a.href))],
     allUnapproved:scoreCards.every(c=>c.dataset.approved==="false"),
     eventGroups:document.querySelectorAll(".event").length,
     badWidth:scoreCards.filter(c=>c.querySelector(".staff")?.scrollWidth>
@@ -64,6 +68,9 @@ try{
   assert.equal(overview.cards,24);
   assert.equal(overview.svgs,24);
   assert.equal(overview.links,24);
+  assert.equal(overview.plateLinks,28,"Eleven original witnesses, two requiring paired scans for both response excerpts");
+  assert.deepEqual(overview.missingPlateLinks,[],"Each archived excerpt links its 1961 printed staff");
+  assert.equal(overview.plateIds.length,10,"Ten distinct printed pages cover eleven source records");
   assert.equal(overview.eventGroups,15);
   assert.equal(overview.allUnapproved,true);
   assert.equal(overview.state.allUnapproved,true);
@@ -97,7 +104,8 @@ try{
     ".tmp/mass-participation-24-review/dismissal-alternatives-"+width+".png"),fullPage:true});
   }
   console.log("PASS_24_SCORE_REVIEW",JSON.stringify({width,engraved:overview.svgs,
-   sourceLinks:overview.links,events:overview.eventGroups,allUnapproved:true}));
+   sourceLinks:overview.links,printedScans:overview.plateLinks,
+   events:overview.eventGroups,allUnapproved:true}));
   await page.close();
  }
 }finally{
