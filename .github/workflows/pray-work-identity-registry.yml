@@ -12,6 +12,7 @@ on:
     paths:
       - data/pray/prayer-work-identity-registry-20261106.v1.json
       - tests/pray-work-identity-registry-20261106.mjs
+      - tests/pray-work-identity-source-evidence-20261106.mjs
       - .github/workflows/pray-work-identity-registry.yml
   workflow_dispatch:
 permissions:
