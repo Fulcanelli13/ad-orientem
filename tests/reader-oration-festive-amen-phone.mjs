@@ -52,6 +52,11 @@ try{
     en.textContent=p.secondary;
     node.append(lat,en);body.append(node);
    }
+   const originals=[...body.querySelectorAll(".ao-reader-paragraph")].map(node=>({
+    id:node.dataset.paragraphId,
+    primary:node.querySelector(".ao-line-primary").textContent,
+    secondary:node.querySelector(".ao-line-secondary").textContent
+   }));
    const resolved=(kind)=>({schema:"ao-resolved-mass-v2",form:"SOLEMN",
     proper:{status:"READY",sourcePath,data:proper},
     provenance:{musicToneContext:{schema:"ao-1962-sourced-tone-context-v1",
@@ -65,7 +70,7 @@ try{
    const width=body.querySelector(".ao-proper-reference-staff")?.getBoundingClientRect().width;
    const ids=[...body.querySelectorAll("[data-reference-score]")].map(x=>x.dataset.referenceScore);
    const allUnapproved=[...body.querySelectorAll("[data-reference-score]")].every(x=>x.dataset.approved==="false");
-   const intact=rows.every(p=>{
+   const intact=originals.every(p=>{
     const node=[...body.querySelectorAll(".ao-reader-paragraph")].find(n=>n.dataset.paragraphId===p.id);
     return node?.querySelector(".ao-line-primary")?.textContent===p.primary&&
       node?.querySelector(".ao-line-secondary")?.textContent===p.secondary;
