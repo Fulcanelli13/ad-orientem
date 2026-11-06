@@ -11,13 +11,13 @@ const html='<!doctype html><html><head><link href="./ao-inline-a1.css" rel="styl
 const assets=()=>Object.fromEntries(criticalReleasePaths(html).map(p=>[p,releaseSha256(Buffer.from("critical:"+p))]));
 const proof=()=>createReleaseProof({sha:shaA,runId:"1234567",indexHtml:html,assetSha256:assets()});
 
-test("build provenance identifies source commit, run and 34 critical deployed files",()=>{
+test("build provenance identifies source commit, run and 35 critical deployed files",()=>{
  const p=proof();
  assert.equal(p.schema,RELEASE_PROOF_SCHEMA);
  assert.equal(p.source_sha,shaA);
  assert.equal(p.workflow_run_id,"1234567");
  assert.equal(MASS_SCHOLA_CRITICAL_PATHS.length,16);
- assert.equal(Object.keys(p.critical_sha256).length,34);
+ assert.equal(Object.keys(p.critical_sha256).length,35);
  for(const file of MASS_SCHOLA_CRITICAL_PATHS){
   assert.ok(file.startsWith("src/mass/"));
   assert.ok(Object.hasOwn(p.critical_sha256,file),"Missing live Mass/Schola reader proof: "+file);
@@ -25,7 +25,7 @@ test("build provenance identifies source commit, run and 34 critical deployed fi
  for(const file of ["src/pray/novena-runtime.js","src/pray/prayer-design-pilot.js","src/pray/presentation-runtime.js"]){
   assert.ok(Object.hasOwn(p.critical_sha256,file),"Missing live Pray reader proof: "+file);
  }
- assert.equal(NOV6_FIRST_FRIDAY_LEONINE_CRITICAL_PATHS.length,8);
+ assert.equal(NOV6_FIRST_FRIDAY_LEONINE_CRITICAL_PATHS.length,9);
  for(const file of NOV6_FIRST_FRIDAY_LEONINE_CRITICAL_PATHS)
    assert.ok(Object.hasOwn(p.critical_sha256,file),"Missing deployed ICRSP/Leonine source proof: "+file);
  assert.ok(!Object.hasOwn(p.critical_sha256,RELEASE_PROOF_FILENAME),"The manifest cannot hash itself");
@@ -51,6 +51,9 @@ test("missing, malformed or substituted critical bytes do not certify the deploy
  const staleSacredHeart={...p,critical_sha256:{...p.critical_sha256}};
  delete staleSacredHeart.critical_sha256["src/mass/icrsp-first-friday-entry.js"];
  assert.throws(()=>verifyReleaseProof(staleSacredHeart,{expectedSha:shaA,expectedRunId:"1234567",indexHtml:html}),/Missing critical release digest/);
+ const staleProPapa={...p,critical_sha256:{...p.critical_sha256}};
+ delete staleProPapa.critical_sha256["src/mass/icrsp-nov06-pro-papa-orations.js"];
+ assert.throws(()=>verifyReleaseProof(staleProPapa,{expectedSha:shaA,expectedRunId:"1234567",indexHtml:html}),/Missing critical release digest/);
  const staleLeonine={...p,critical_sha256:{...p.critical_sha256}};
  delete staleLeonine.critical_sha256["src/pray/horarium-leonine-source-blocks.js"];
  assert.throws(()=>verifyReleaseProof(staleLeonine,{expectedSha:shaA,expectedRunId:"1234567",indexHtml:html}),/Missing critical release digest/);
@@ -96,7 +99,7 @@ test("release scripts consume the shared proof and audit the actual published by
  assert.match(live,/Direct 65-card Mass, appointed 1962 Proper corrections and Schola exact-byte parity/);
  assert.match(live,/for\(const path of NOV6_FIRST_FRIDAY_LEONINE_CRITICAL_PATHS\)await released\(path\)/,
    "Source-specific Sacred Heart and Leonine modules must be fetched from public Pages");
- assert.match(live,/ICRSP Sacred Heart III-class Low Mass, Gloria and five Leonine prayers exact-byte parity/);
+ assert.match(live,/ICRSP Sacred Heart III-class Low Mass, Gloria, Pro Papa threefold orations and five Leonine prayers exact-byte parity/);
  assert.match(live,/if\(i<5\)await new Promise/);
 });
 

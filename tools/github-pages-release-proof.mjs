@@ -38,6 +38,7 @@ export const NOV6_FIRST_FRIDAY_LEONINE_CRITICAL_PATHS=Object.freeze([
  "src/home/today-h4-view.js",
  "src/calendar/icrsp-france-ordo-evidence.js",
  "src/mass/icrsp-first-friday-entry.js",
+ "src/mass/icrsp-nov06-pro-papa-orations.js",
  "src/mass/reader-post-low-mass.js",
  "src/mass/reader-dom.js",
  "src/pray/canonical-data.js",
