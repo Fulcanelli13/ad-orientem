@@ -6,6 +6,8 @@ const intake = read("data/geography/research/sacred-atlas-169-owner-review-intak
 const priority = read("data/geography/research/sacred-atlas-96-priority-unapproved-preimport-20261106.v1.json");
 const b21 = read("data/geography/research/sacred-places-v10-b21-two-marian-site-admissions-20261106.v1.json");
 const sourceReview = read("data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json");
+const newPriorityReview = read("data/geography/research/sacred-atlas-29-priority-evidence-screen-20261106.v1.json");
+const newPriorityById = new Map(newPriorityReview.records.map(x => [x.candidate_id, x]));
 const reviewedById = new Map(sourceReview.records.map(x => [x.candidate_id, x]));
 const geography = read("data/geography/seed-registry.v1.json");
 const rows = intake.candidates;
@@ -53,6 +55,19 @@ for (const row of rows) {
     assert.equal(row.country_code, old.country_code);
     assert.equal(row.staged_point.latitude, old.location_preview.latitude);
     assert.equal(row.staged_point.longitude, old.location_preview.longitude);
+    const reviewedPriority = newPriorityById.get(row.candidate_id);
+    if (reviewedPriority) {
+      assert.equal(row.site_evidence_status, "PRIORITY29_SITE_SOURCE_SCREENED_GEOMETRY_PENDING");
+      assert.equal(row.source_review.evidence_url, reviewedPriority.source_url_used);
+      assert.equal(row.source_review.status, reviewedPriority.source_scope_status);
+      assert.equal(row.source_review.source_to_point_proven, false);
+      assert.equal(row.source_review.owner_approved, false);
+      assert.equal(row.source_review.public_import_allowed, false);
+      assert.deepEqual(old.admission_review.source_page_screen_20261106.source_url, reviewedPriority.source_url_used);
+    } else {
+      assert.ok(old.admission_review.source_evidence_pass, "Earlier 67 evidence decisions must be retained");
+      assert.equal(row.site_evidence_status, old.admission_review.source_evidence_pass.status);
+    }
   } else {
     assert.equal(row.prior_priority_manifest, null);
     assert.equal(row.intake_lane !== "PRIORITY_OWNER_EVIDENCE_REVIEW", true);
@@ -84,13 +99,17 @@ assert.deepEqual(newlyNear, [], "No additional proximity exception may be silent
 assert.equal(rows.filter(x => x.prior_priority_manifest).length, 96);
 assert.equal(rows.filter(x => !x.prior_priority_manifest).length, 73);
 assert.equal(rows.filter(x => x.already_in_draft_unapproved).length, 2);
-assert.equal(rows.filter(x => x.source_review?.source_to_site_investigated).length, 73);
+assert.equal(rows.filter(x => x.source_review?.source_to_site_investigated).length, 102);
 assert.equal(rows.filter(x => x.source_review?.retrieval_class === "INDEXED_SOURCE_CORROBORATION").length, 1);
-assert.equal(rows.filter(x => x.source_review?.retrieval_class === "ALTERNATE_PAGE_RETRIEVED").length, 5);
+assert.equal(rows.filter(x => x.source_review?.retrieval_class === "ALTERNATE_PAGE_RETRIEVED").length, 7);
 assert.equal(intake.source_review_status.total_new_73, 73);
 assert.equal(intake.source_review_status.second_pass_direct_page, 55);
 assert.equal(intake.source_review_status.second_pass_indexed_only, 1);
 assert.equal(intake.source_review_status.owner_approval_granted, 0);
+assert.equal(newPriorityReview.records.length, 29);
+assert.equal(intake.priority29_source_screen.source_screened_total_169, 169);
+assert.equal(intake.priority29_source_screen.owner_approved, 0);
+assert.equal(rows.filter(x => x.source_review?.retrieval_class === "INDEXED_SOURCE_ONLY").length, 1);
 assert.equal(rows.filter(x => x.publication_authorized).length, 0);
 assert.equal(rows.filter(x => x.owner_decision === "APPROVED").length, 0);
 assert.equal(intake.other_draft_p107.within_169, 0);
@@ -101,6 +120,7 @@ assert.deepEqual(intake.counts, {
   b21_unapproved_draft_overlap:2, missing_country_area:0, new_unflagged_sub500m:0,
   owner_approved:0, authorized_for_production:0,
   source_review_links_for_new_73:73, prior_17_evidence_corrob:17,
-  second_pass_55_direct_pages:55, second_pass_1_index_only:1
+  second_pass_55_direct_pages:55, second_pass_1_index_only:1,
+  priority_new29_site_source_screened:29, total_source_review_169:169
 });
-console.log("PASS 169 Claude owner-review records: 96 priority, 73 evidence-linked sources/holds, two B21 draft overlaps, zero auto-publication");
+console.log("PASS 169 Claude source reviews: 67 priority history + 29 priority new + 73 other; zero Place approvals or auto-publication");
