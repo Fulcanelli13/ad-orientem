@@ -1,0 +1,98 @@
+{
+  "schema": "AO_SACRED_ART_PHASE35_LILLE_P190_OBJECT_AND_ATTRIBUTION_20261106_V1",
+  "as_of": "2026-11-06",
+  "scope": "Owner-handpicked 177 low-resolution selected paintings; museum-object identity separate from image reproduction rights and publication",
+  "baseline": {
+    "identity_supported": 158,
+    "unresolved": 19
+  },
+  "newly_verified": [
+    {
+      "registry_id": "RECENT575::410",
+      "selected_file_title": "Jan Erasmus Quellinus - Solomon and the Queen of Sheba",
+      "title_official": "Salomon et la reine de Saba",
+      "holding": "Palais des Beaux-Arts de Lille",
+      "inventory": "P 190",
+      "museum_catalogue_url": "https://pba-opacweb.lille.fr/fr/notice/p-190-salomon-et-la-reine-de-saba-4842637b-ee19-4333-9a02-b5b811b18713",
+      "museum_object_id": "4842637b-ee19-4333-9a02-b5b811b18713",
+      "state_catalogue_reference": "000PE017010",
+      "medium": "oil on wood",
+      "dimensions_cm": [
+        131.7,
+        163.5
+      ],
+      "date": "17th century",
+      "museum_primary_attribution": "VOS Cornelis de — d'après (after Cornelis de Vos)",
+      "museum_former_attribution": "QUELLIN Erasme II — ancienne attribution (formerly Erasmus Quellinus II)",
+      "evidence_grade": "PRIMARY_MUSEUM_OBJECT_EXACT_ACCESSION_AND_CURRENT_ATTRIBUTION",
+      "evidence": "Museum current catalogue directly confirms P 190 and both current/former attribution fields; full catalogue previously updated 2025-10-16. Owner Commons label says Jan Erasmus Quellinus; preserve selected original but fix scholarly metadata.",
+      "distinct_object_warning": "NOT Dirck van Delen Salomon et la reine de Saba (Lille inventory P 233).",
+      "photographer_credit": "©RMN-GP – cliché Hervé Lewandowski",
+      "photo_rights": "NOT_CLEARED",
+      "photo_quality_approved": false,
+      "owner_handpicked_file_preserved": true,
+      "published": false
+    }
+  ],
+  "unresolved_ids": [
+    "RECENT575::005",
+    "RECENT575::031",
+    "RECENT575::032",
+    "RECENT575::033",
+    "RECENT575::034",
+    "RECENT575::035",
+    "RECENT575::142",
+    "RECENT575::150",
+    "RECENT575::154",
+    "RECENT575::179",
+    "RECENT575::359",
+    "RECENT575::387",
+    "RECENT575::392",
+    "RECENT575::402",
+    "RECENT575::440",
+    "RECENT575::479",
+    "RECENT575::503",
+    "RECENT575::542"
+  ],
+  "totals": {
+    "identity_supported": 159,
+    "unresolved": 18,
+    "handpicked_rows": 177,
+    "coverage_percent": 89.83,
+    "photographs_replaced": 0
+  },
+  "holds": [
+    {
+      "registry_id": "RECENT575::392",
+      "candidate": "Lille P 85",
+      "status": "SECONDARY_CROSSWALK_ONLY",
+      "note": "Jordaens Matthew with two apostles exact official museum notice still to be obtained."
+    },
+    {
+      "registry_id": "RECENT575::402",
+      "candidate": "Lille P 48",
+      "status": "IDENTITY_ATTRIBUTION_DISPUTE",
+      "note": "Historic School of Hendrick ter Brugghen versus restoration-era autograph discussion; no direct catalog record confirmed in this phase."
+    },
+    {
+      "registry_ids": [
+        "RECENT575::005",
+        "RECENT575::031",
+        "RECENT575::032",
+        "RECENT575::033",
+        "RECENT575::034",
+        "RECENT575::035"
+      ],
+      "status": "SIX_INDIVIDUAL_KMSKA_MUSEUM_INVENTORIES_MISSING",
+      "note": "Never conflate individual Jacob Herreyns I paintings or substitute unrelated Christ-life cycles."
+    }
+  ],
+  "safeguards": [
+    "No new Commons files admitted",
+    "No artwork removed or relabelled in production",
+    "No approved photo replacements",
+    "No Calendar or Prayer assignment changes",
+    "Research branch only, no public deployment"
+  ],
+  "predecessor": "data/research/sacred-art/phase34-champaigne-toulouse-object-identity-and-19-outstanding-20261106.v1.json"
+}
