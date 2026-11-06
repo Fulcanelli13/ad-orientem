@@ -11,6 +11,7 @@ import {resolveOrationAmenSourceHandoff} from "./reader-oration-amen-source-hand
 import {sourceBoundFestiveOrationAmenScores} from "./reader-oration-festive-amen-reference.js";
 import {sourceBoundOldSolemnOrationAmenScores} from "./reader-oration-old-solemn-amen-reference.js";
 import {resolveOrationAmenTonePolicy} from "./reader-oration-amen-tone-policy.js";
+import {twoGreetingTransferCandidates,GREETING_TRANSFER_EXPLICIT_SELECTION} from "./reader-two-greeting-transfer-candidates.js";
 
 export const JULY07_REFERENCE_NOTATION_SCHEMA="ao-reader-july07-reference-notation-v1";
 // The original printed Introit GABC includes a distinct conditional "T. P."
@@ -119,6 +120,12 @@ export function createDatedProperNotationPreview({
   clear();
   if(!active||!["LIVE","MISSAL"].includes(mode))return 0;
   const g=generation;
+  // Separate second research opt-in: ?chant_preview=1&greeting_transfer=1961.
+  // Does not certify this 1961 oration melody at the two other Mass locations.
+  const greetingRequest=new URLSearchParams(query).get("greeting_transfer")==="1961";
+  const researchSettings=greetingRequest?
+    {...selectedSettings,GREETING_TRANSFER_SOURCE:GREETING_TRANSFER_EXPLICIT_SELECTION}:
+    selectedSettings;
   const unique=new Map(),byCue=new Map();
   for(const p of paragraphs){
    for(const cueId of p.sourceCueIds??[]){
@@ -154,18 +161,26 @@ export function createDatedProperNotationPreview({
    const oldSolemnScores=sourceBoundOldSolemnOrationAmenScores({
     paragraph:p,paragraphs,form,resolvedMass,selectedSettings
    });
-   for(const score of [...scores,...participatory,...orationScores,...oldSolemnScores]){
+   const greetingCandidates=twoGreetingTransferCandidates({
+    paragraph:p,paragraphs,form,resolvedMass,selectedSettings:researchSettings
+   });
+   for(const score of [...scores,...participatory,...orationScores,...oldSolemnScores,...greetingCandidates]){
     const host=doc.createElement("span");host.className="ao-proper-reference-notation";
     host.dataset.referenceScore=score.id;
     host.dataset.approved="false";
     const title=doc.createElement("small");title.className="ao-proper-reference-label";
-    title.textContent=(score.sourceCueIds?.length?
-      (score.kind==="CELEBRANT_INTONATION"?"Celebrant intonation":"Sung response"):
-      PROPER_REFERENCE_LABELS[score.key])+
-     " · 1961 reference transcription · review pending";
+    title.textContent=score.sourceContextCertified===false?
+      "Sung response · 1961 melody; use here NOT source-certified · research hypothesis":
+      ((score.sourceCueIds?.length?
+       (score.kind==="CELEBRANT_INTONATION"?"Celebrant intonation":"Sung response"):
+       PROPER_REFERENCE_LABELS[score.key])+
+       " · 1961 reference transcription · review pending");
     const staff=doc.createElement("span");staff.className="ao-proper-reference-staff";
     staff.setAttribute("role","img");
-    staff.setAttribute("aria-label",(score.incipit??score.sourceName)+" · Gregorian square notation, archival transcription pending editorial comparison");
+    staff.setAttribute("aria-label",(score.incipit??score.sourceName)+
+      (score.sourceContextCertified===false?
+       " · Gregorian reference melody; use at this Mass location NOT verified":
+       " · Gregorian square notation, archival transcription pending editorial comparison"));
     const expand=doc.createElement("button");expand.type="button";
     expand.className="ao-proper-reference-expand";expand.textContent="Enlarge notation";
     expand.setAttribute("aria-label","Enlarge Gregorian notation for "+(score.incipit??score.sourceName));
