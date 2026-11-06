@@ -18,11 +18,14 @@ const READY=new URL("__ao_bootstrap_completed__",BASE).href;
 // Measured 2026-10-28 bootstrap: 388 files; 2026-10-29: 431 files;
 // 2026-11-03: 514 original runtime + install resources. A 512-item cap
 // blocked both first install and any one-file update once the graph reached
-// 512. 544 retains a firm resource ceiling with 30 spare files for a staged
-// update, while preserving the original unchanged 35 MB hard byte ceiling.
+// 512. The 2026-11-05 live postdeploy graph grew to 545 unique resources
+// (Prayer 183, Mass 190, other 172) and breached the earlier 544-item cap,
+// breaking fresh offline snapshots even though the production deploy passed.
+// 640 preserves a firm resource ceiling with ~95-file headroom and retains
+// the unchanged 35 MB byte ceiling, transactional staging and digest checks.
 // Never drop ESM dependencies, icons, the prior valid snapshot, or safety
 // verification just to fit the bound.
-const MAX_ITEMS=544,MAX_BYTES=35_000_000;
+const MAX_ITEMS=640,MAX_BYTES=35_000_000;
 let stagedJob=null,activeVersion=null;
 const liveClients=new Map();
  // Only the first-use Prayer graph is promoted from a lazy module graph into
