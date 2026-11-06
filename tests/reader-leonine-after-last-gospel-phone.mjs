@@ -47,7 +47,8 @@ try{
    total:window.__AO_PHONE_PREVIEW?.model?.totalCards??null,
    current:window.__AO_PHONE_PREVIEW?.getCurrentCard?.()?.title}));
   assert.equal(initial.error,null,"Reader mount: "+JSON.stringify({cfg,initial,errors}));
-  assert.equal(initial.total,65,"After-Mass devotion must not change the 65-card source model");
+  assert.equal(initial.total,cfg.mode==="LIVE"?65:30,
+   "After-Mass devotion must preserve original LIVE 65 / MISSAL 30-card models");
   // Jump to the exact final source-owned Gospel card, rather than invent
   // a second prayer card or a different liturgical step.
   const final=await page.evaluate(()=>{
