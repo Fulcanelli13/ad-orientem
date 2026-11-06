@@ -5,6 +5,8 @@ const read = path => JSON.parse(readFileSync(new URL("../" + path, import.meta.u
 const intake = read("data/geography/research/sacred-atlas-169-owner-review-intake-20261106.v1.json");
 const priority = read("data/geography/research/sacred-atlas-96-priority-unapproved-preimport-20261106.v1.json");
 const b21 = read("data/geography/research/sacred-places-v10-b21-two-marian-site-admissions-20261106.v1.json");
+const sourceReview = read("data/geography/research/sacred-atlas-73-source-exception-adjudication-20261106.v1.json");
+const reviewedById = new Map(sourceReview.records.map(x => [x.candidate_id, x]));
 const geography = read("data/geography/seed-registry.v1.json");
 const rows = intake.candidates;
 const byId = new Map(rows.map(x => [x.candidate_id, x]));
@@ -54,7 +56,23 @@ for (const row of rows) {
   } else {
     assert.equal(row.prior_priority_manifest, null);
     assert.equal(row.intake_lane !== "PRIORITY_OWNER_EVIDENCE_REVIEW", true);
-    assert.equal(row.site_evidence_status, "UNREVIEWED_IN_PRIOR_96_PASS");
+    const reviewed = reviewedById.get(row.candidate_id);
+    assert.ok(reviewed, "Every non-priority candidate must retain a source review record");
+    const status = reviewed.evidence_content_reviewed_now
+      ? "FIRST_PASS_SITE_OR_EXCEPTION_REVIEW"
+      : reviewed.second_pass.evidence_access === "INDEXED_SOURCE_CORROBORATION"
+        ? "INDEXED_INSTITUTIONAL_PAGE_DIRECT_FETCH_UNAVAILABLE"
+        : "SECOND_PASS_SOURCE_PAGE_REVIEW";
+    assert.equal(row.site_evidence_status, status);
+    assert.equal(row.source_review.status, status);
+    assert.equal(row.source_review.evidence_url,
+      reviewed.evidence_content_reviewed_now ? reviewed.verified_source_url : reviewed.second_pass.corroborating_url);
+    assert.equal(row.source_review.source_to_site_investigated, true);
+    assert.equal(row.source_review.source_to_point_proven, false);
+    assert.equal(row.source_review.owner_approved, false);
+    assert.equal(row.source_review.public_import_allowed, false);
+    assert.equal(row.source_review.site_identity_scope,
+      reviewed.evidence_content_reviewed_now ? reviewed.source_content_verification : reviewed.second_pass.site_scope_outcome);
   }
   const existingAdmission = b21ById.get(row.candidate_id);
   assert.equal(row.already_in_draft_unapproved, !!existingAdmission);
@@ -66,6 +84,13 @@ assert.deepEqual(newlyNear, [], "No additional proximity exception may be silent
 assert.equal(rows.filter(x => x.prior_priority_manifest).length, 96);
 assert.equal(rows.filter(x => !x.prior_priority_manifest).length, 73);
 assert.equal(rows.filter(x => x.already_in_draft_unapproved).length, 2);
+assert.equal(rows.filter(x => x.source_review?.source_to_site_investigated).length, 73);
+assert.equal(rows.filter(x => x.source_review?.retrieval_class === "INDEXED_SOURCE_CORROBORATION").length, 1);
+assert.equal(rows.filter(x => x.source_review?.retrieval_class === "ALTERNATE_PAGE_RETRIEVED").length, 5);
+assert.equal(intake.source_review_status.total_new_73, 73);
+assert.equal(intake.source_review_status.second_pass_direct_page, 55);
+assert.equal(intake.source_review_status.second_pass_indexed_only, 1);
+assert.equal(intake.source_review_status.owner_approval_granted, 0);
 assert.equal(rows.filter(x => x.publication_authorized).length, 0);
 assert.equal(rows.filter(x => x.owner_decision === "APPROVED").length, 0);
 assert.equal(intake.other_draft_p107.within_169, 0);
@@ -76,4 +101,4 @@ assert.deepEqual(intake.counts, {
   b21_unapproved_draft_overlap:2, missing_country_area:0, new_unflagged_sub500m:0,
   owner_approved:0, authorized_for_production:0
 });
-console.log("PASS 169 Claude owner-review records: 96 priority + 65 source review + 8 holds, 73 newly staged; 2 B21 draft overlaps, all country-area scaffolding present, zero auto-publication");
+console.log("PASS 169 Claude owner-review records: 96 priority, 73 evidence-linked sources/holds, two B21 draft overlaps, zero auto-publication");
