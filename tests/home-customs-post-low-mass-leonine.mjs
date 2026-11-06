@@ -54,7 +54,10 @@ assert.equal(postLowMassLeonineEligible(prepared,{cardTitle:"Last Gospel"},"MISS
 assert.equal(postLowMassLeonineEligible({...prepared,session:{...prepared.session,resolvedMass:{...prepared.session.resolvedMass,form:"SOLEMN"}}},finished,"LIVE"),false);
 assert.equal(postLowMassLeonineEligible({...prepared,session:{...prepared.session,resolvedMass:{...prepared.session.resolvedMass,form:"MISSA_CANTATA_SIMPLE"}}},finished,"LIVE"),false);
 assert.equal(postLowMassLeonineEligible({...prepared,session:{...prepared.session,plan:{...prepared.session.plan,followingGraphs:["REQUIEM_ABSOLUTION"]}}},finished,"LIVE"),false);
-assert.equal(postLowMassLeonineEligible({...prepared,session:{...prepared.session,plan:{...prepared.session.plan,overlayGraphs:["NUPTIAL"]}}},finished,"LIVE"),false);
+assert.equal(postLowMassLeonineEligible({...prepared,session:{...prepared.session,plan:{...prepared.session.plan,overlayGraphs:["NUPTIAL"]}}},finished,"LIVE"),true,
+ "Nuptial Low Mass may omit Leonine prayers but the devotion remains optionally accessible");
+assert.equal(postLowMassLeonineEligible({...prepared,session:{...prepared.session,plan:{...prepared.session.plan,overlayGraphs:["REQUIEM"]},resolvedMass:{...prepared.session.resolvedMass,overlays:["REQUIEM"]}}},finished,"LIVE"),true,
+ "A Low Requiem without following absolution may allow optional Leonine prayers");
 assert.equal(postLowMassLeonineEligible({...prepared,session:{...prepared.session,plan:{kind:"GOOD_FRIDAY",followingGraphs:[],overlayGraphs:[]}}},finished,"LIVE"),false);
 const en=postLowMassLeonineSections("en"),fr=postLowMassLeonineSections("fr");
 assert.equal(en.length,5);
