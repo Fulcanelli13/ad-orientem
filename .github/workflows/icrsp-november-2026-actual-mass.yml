@@ -3,6 +3,7 @@ on:
   pull_request:
     paths:
       - "src/calendar/icrsp-france-ordo-evidence.js"
+      - "src/mass/icrsp-first-friday-entry.js"
       - "src/home/today-h4-view.js"
       - "src/home/browser-entry.js"
       - "tests/icrsp-2026-november-ordo-home.mjs"
