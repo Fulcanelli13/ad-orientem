@@ -5,7 +5,8 @@ import {assertExploreGeographyRegistry} from "../src/find/geography-contracts.js
 import {assertShrinesPilgrimagesRegistry} from "../src/find/shrines-contracts.js";
 const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
 const g=read("data/geography/seed-registry.v1.json"),h=read("data/explore/heritage-place-reconciliation.review.v1.json"),s=read("data/shrines/shrines-pilgrimages-seed.v1.json"),sources=read("data/shrines/source-registry.v1.json"),staged=read("data/geography/research/sacred-atlas-96-priority-unapproved-preimport-20261106.v1.json"),rel=read("data/geography/research/sacred-places-v10-b21-two-marian-site-admissions-20261106.v1.json");
-assert.equal(RELEASES.at(-1).id,"V10-B21");
+assert.ok(RELEASES.some(x=>x.id==="V10-B21"),"B21 admissions stay in the append-only history");
+assert.ok(RELEASES.findIndex(x=>x.id==="V10-B21")<RELEASES.findIndex(x=>x.id==="V10-C9"),"C9 area extension follows, never replaces, the B21 admission");
 assert.equal(rel.status,"DRAFT_PR_SITE_CORROBORATED_OWNER_APPROVAL_PENDING_NOT_LIVE");
 assert.equal(rel.owner_approved,false);
 assert.equal(rel.production_approved,false);
