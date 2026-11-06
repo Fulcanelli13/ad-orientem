@@ -4,7 +4,7 @@
     "masterplan": "AO_Prayer_Corpus_Masterplan.md (owner supplied, 2026-11-06)",
     "baseline": "main 12ccaf7131e6880f08663de4645adbe9099161b1",
     "canonicalSource": "src/pray/canonical-data.js",
-    "scope": "research-only; no application import, no Prayer reader, no text alterations"
+    "scope": "Research-only classification: NO application import; route-unverified does not mean unpublished or hidden; no texts, readers, assets, routes, or UI are changed."
   },
   "policy": {
     "onePrimaryFamily": true,
@@ -15,7 +15,8 @@
     "noLearnToPrayModule": true,
     "editionsNotTexts": true,
     "referenceOnlyCollections": true,
-    "documentationStatus": "PROVISIONAL_NEEDS_SOURCE_AUDIT"
+    "documentationStatus": "PROVISIONAL_NEEDS_SOURCE_AUDIT",
+    "routeAvailabilityUnverifiedIsNotAnUnpublishInstruction": true
   },
   "families": {
     "I": "God, the Most Holy Trinity",
@@ -48,7 +49,7 @@
     },
     "byAvailability": {
       "published": 46,
-      "programme-only": 85,
+      "route-unverified": 85,
       "external-link": 2
     }
   },
@@ -105,7 +106,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "foundations_our_father",
@@ -159,7 +162,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "foundations_hail_mary",
@@ -213,7 +218,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "foundations_glory_be",
@@ -267,7 +274,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "foundations_apostles_creed",
@@ -321,7 +330,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "foundations_act_of_faith",
@@ -375,7 +386,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "foundations_act_of_hope",
@@ -429,7 +442,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "foundations_act_of_love",
@@ -483,7 +498,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "foundations_morning_offering",
@@ -539,7 +556,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "foundations_grace_before_meals",
@@ -595,7 +614,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "foundations_grace_after_meals",
@@ -651,7 +672,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "foundations_prayer_of_adoration",
@@ -707,7 +730,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "devotion_consecration_christ_king",
@@ -761,7 +786,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "sacred_heart_short_prayer",
@@ -815,7 +842,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "sacred_heart_aspiration_trust",
@@ -869,7 +898,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "sacrament_act_of_contrition",
@@ -923,7 +954,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "mass_confiteor",
@@ -977,7 +1010,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "adoration_lord_i_am_not_worthy",
@@ -1033,7 +1068,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "mass_devotion_leonine",
@@ -1093,7 +1130,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "marian_hail_holy_queen",
@@ -1147,7 +1186,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "marian_memorare",
@@ -1201,7 +1242,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "weekday_magnificat",
@@ -1255,7 +1298,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R3",
+      "classificationStatus": "proposed"
     },
     {
       "id": "marian_consecration_immaculate_heart",
@@ -1299,7 +1344,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "sub_tuum",
@@ -1353,7 +1400,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "litany_loreto_1962",
@@ -1442,7 +1491,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "adoration_anima_christi",
@@ -1496,7 +1547,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "adoration_spiritual_communion",
@@ -1550,7 +1603,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "benediction_o_salutaris",
@@ -1604,7 +1659,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "benediction_tantum_ergo",
@@ -1664,7 +1721,9 @@
           "plannedWork": "Pange lingua gloriosi (full hymn); not yet admitted"
         }
       ],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "benediction_divine_praises",
@@ -1718,7 +1777,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "adoration_litany_blessed_sacrament",
@@ -1772,7 +1833,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "benediction_versicles",
@@ -1826,7 +1889,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "benediction_adoremus_ps116",
@@ -1882,7 +1947,9 @@
         ]
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "sacrament_come_holy_spirit",
@@ -1936,7 +2003,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "traditional_veni_sancte_sequence",
@@ -1990,7 +2059,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "weekday_benedictus",
@@ -2044,7 +2115,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R3",
+      "classificationStatus": "proposed"
     },
     {
       "id": "foundations_guardian_angel",
@@ -2098,7 +2171,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "devotion_prayer_st_michael",
@@ -2152,7 +2227,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "devotion_memorare_st_joseph",
@@ -2206,7 +2283,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "devotion_litany_st_joseph",
@@ -2260,7 +2339,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "devotion_ad_te_beate_ioseph",
@@ -2314,7 +2395,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "devotion_st_anthony_lost_items",
@@ -2368,7 +2451,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "church_prayer_for_pope",
@@ -2422,7 +2507,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R4",
+      "classificationStatus": "proposed"
     },
     {
       "id": "foundations_eternal_rest",
@@ -2511,7 +2598,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R2",
+      "classificationStatus": "proposed"
     },
     {
       "id": "dead_de_profundis",
@@ -2575,7 +2664,9 @@
           "target": "pray.penitential_psalms"
         }
       ],
-      "review": []
+      "review": [],
+      "classificationRule": "R3",
+      "classificationStatus": "proposed"
     },
     {
       "id": "dead_fidelium_deus",
@@ -2629,7 +2720,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R2",
+      "classificationStatus": "proposed"
     },
     {
       "id": "litany_sacred_heart",
@@ -2643,7 +2736,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/traditional-pray-data.js",
       "source_key": "SACRED_HEART_DEVOTIONS_V382.litany",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -2665,7 +2758,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "consecration_human_race_sacred_heart",
@@ -2679,7 +2774,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/traditional-pray-data.js",
       "source_key": "SACRED_HEART_DEVOTIONS_V382.humanRaceConsecration",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -2701,7 +2796,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "holy_face_golden_arrow",
@@ -2715,7 +2812,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/icksp-golden-arrow-reparation.v1.js",
       "source_key": "GOLDEN_ARROW_REPARATION_V1",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -2737,7 +2834,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "pray.holy_name_litany",
@@ -2751,7 +2850,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/traditional-pray-data.js",
       "source_key": "HOLY_NAME_LITANY_V381",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -2778,7 +2877,9 @@
           "target": "pray.montfort_consecration_preparation"
         }
       ],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "communion_before_thomas",
@@ -2792,7 +2893,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/traditional-pray-data.js",
       "source_key": "COMMUNION_TREASURY_V383.beforeThomas",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -2814,7 +2915,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "communion_before_ambrose",
@@ -2828,7 +2931,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/traditional-pray-data.js",
       "source_key": "COMMUNION_TREASURY_V383.beforeAmbrose",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -2850,7 +2953,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "communion_after_thomas",
@@ -2864,7 +2969,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/traditional-pray-data.js",
       "source_key": "COMMUNION_TREASURY_V383.afterThomas",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -2886,7 +2991,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "communion_after_bonaventure",
@@ -2900,7 +3007,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/traditional-pray-data.js",
       "source_key": "COMMUNION_TREASURY_V383.afterBonaventure",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -2922,7 +3029,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "communion_en_ego",
@@ -2936,7 +3045,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/traditional-pray-data.js",
       "source_key": "COMMUNION_TREASURY_V383.enEgo",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -2958,7 +3067,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "holy_spirit_litany",
@@ -2972,7 +3083,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/montfort-original-prayers-b27.js",
       "source_key": "MONTFORT_B27_PRAYERS.holySpirit",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -2994,7 +3105,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "pray.litany_saints",
@@ -3008,7 +3121,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/presentation-runtime.js",
       "source_key": "pray.litany_saints",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -3030,7 +3143,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "priest_intercession_eternal_priest_1914_en",
@@ -3044,7 +3159,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/priestly-intercessions-b19.js",
       "source_key": "PRIESTLY_INTERCESSIONS_B19",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -3066,7 +3181,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R4",
+      "classificationStatus": "proposed"
     },
     {
       "id": "priest_intercession_vocations_raccolta_1910",
@@ -3080,7 +3197,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/priestly-intercessions-b19.js",
       "source_key": "PRIESTLY_INTERCESSIONS_B19",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -3102,7 +3219,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R4",
+      "classificationStatus": "proposed"
     },
     {
       "id": "priest_intercession_perseverance_raccolta_1910",
@@ -3116,7 +3235,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/priestly-intercessions-b19.js",
       "source_key": "PRIESTLY_INTERCESSIONS_B19",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -3138,7 +3257,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R4",
+      "classificationStatus": "proposed"
     },
     {
       "id": "icksp_us_therese_for_missionaries",
@@ -3177,7 +3298,9 @@
       "review": [
         "Distinct prayer or recension? Current witnesses show different functions; retain separate pending historical collation."
       ],
-      "externalUrl": "https://www.institute-christ-king.org/resources/devotions-prayers/621-devotions-novena-therese-child-jesus"
+      "externalUrl": "https://www.institute-christ-king.org/resources/devotions-prayers/621-devotions-novena-therese-child-jesus",
+      "classificationRule": "R5",
+      "classificationStatus": "provisional-needs-source-judgement"
     },
     {
       "id": "icksp_us_therese_benedict_xv",
@@ -3191,7 +3314,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/icksp-therese-devotions.v1.js",
       "source_key": "ICKSP_THERESE_DEVOTIONS_V1.prayerFromNovena",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -3215,7 +3338,9 @@
       "relations": [],
       "review": [
         "Distinct prayer or recension? Current witnesses show different functions; retain separate pending historical collation."
-      ]
+      ],
+      "classificationRule": "R5",
+      "classificationStatus": "provisional-needs-source-judgement"
     },
     {
       "id": "occasional_for_sick_lasance_1911_en",
@@ -3229,7 +3354,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/occasional-intercessions-b20.js",
       "source_key": "OCCASIONAL_INTERCESSIONS_B20",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -3251,7 +3376,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R4",
+      "classificationStatus": "proposed"
     },
     {
       "id": "occasional_holy_family_lasance_1910_en",
@@ -3265,7 +3392,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/occasional-intercessions-b20.js",
       "source_key": "OCCASIONAL_INTERCESSIONS_B20",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -3287,7 +3414,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "occasional_peace_raccolta_1910_18",
@@ -3301,7 +3430,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/occasional-intercessions-b21.js",
       "source_key": "OCCASIONAL_INTERCESSIONS_B21",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -3323,7 +3452,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R4",
+      "classificationStatus": "proposed"
     },
     {
       "id": "occasional_travel_lasance_1911_en",
@@ -3337,7 +3468,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/occasional-intercessions-b21.js",
       "source_key": "OCCASIONAL_INTERCESSIONS_B21",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -3359,7 +3490,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R4",
+      "classificationStatus": "proposed"
     },
     {
       "id": "occasional_discernment_lasance_1911_en",
@@ -3373,7 +3506,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/occasional-intercessions-b21.js",
       "source_key": "OCCASIONAL_INTERCESSIONS_B21",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -3395,7 +3528,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R4",
+      "classificationStatus": "proposed"
     },
     {
       "id": "good_death_jesus_mary_joseph",
@@ -3409,7 +3544,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/good-death-data.js",
       "source_key": "JESUS_MARY_JOSEPH_V384",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -3431,7 +3566,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R2",
+      "classificationStatus": "proposed"
     },
     {
       "id": "good_death_proficiscere",
@@ -3445,7 +3582,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/good-death-data.js",
       "source_key": "PROFICISCERE_V384",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -3467,7 +3604,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R2",
+      "classificationStatus": "proposed"
     },
     {
       "id": "montfort_augustine_prayer",
@@ -3481,7 +3620,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/montfort-original-prayers-b27.js",
       "source_key": "MONTFORT_B27_PRAYERS.augustine",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -3505,7 +3644,9 @@
       "relations": [],
       "review": [
         "Confirm addressee/classification against Latin source; family provisional."
-      ]
+      ],
+      "classificationRule": "R5",
+      "classificationStatus": "provisional-needs-source-judgement"
     },
     {
       "id": "pray.montfort_consecration",
@@ -3519,7 +3660,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/montfort-consecration-b26.js",
       "source_key": "MONTFORT_B26",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -3543,7 +3684,9 @@
       "relations": [],
       "review": [
         "Confirm addressee/classification against Latin source; family provisional."
-      ]
+      ],
+      "classificationRule": "R5",
+      "classificationStatus": "provisional-needs-source-judgement"
     },
     {
       "id": "ignatius_suscipe_lasance_1908_en",
@@ -3557,7 +3700,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/prayer-acquisition-historical-witnesses.v1.js",
       "source_key": "PRAYER_ACQUISITION_WITNESSES_V1",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -3584,7 +3727,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "lasance_prayer_before_meditation_1908_en",
@@ -3598,7 +3743,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/prayer-acquisition-historical-witnesses.v1.js",
       "source_key": "PRAYER_ACQUISITION_WITNESSES_V1",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -3620,7 +3765,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "thomas_aquinas_concede_mihi_lasance_1908_en",
@@ -3634,7 +3781,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/prayer-acquisition-historical-witnesses.v1.js",
       "source_key": "PRAYER_ACQUISITION_WITNESSES_V1",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -3661,7 +3808,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "lasance_prayer_after_meditation_1908_en",
@@ -3675,7 +3824,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/prayer-acquisition-historical-witnesses.v1.js",
       "source_key": "PRAYER_ACQUISITION_WITNESSES_V1",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -3697,7 +3846,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "te_deum",
@@ -3711,7 +3862,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/traditional-pray-data.js",
       "source_key": "SACRED_HYMNS_V381.te_deum",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -3733,7 +3884,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "ave_maris_stella",
@@ -3747,7 +3900,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/traditional-pray-data.js",
       "source_key": "SACRED_HYMNS_V381.ave_maris_stella",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -3769,7 +3922,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "vexilla_regis",
@@ -3783,7 +3938,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/icrsp-seasonal-hymns.v1.js",
       "source_key": "ICRSP_SEASONAL_HYMNS_V1.vexilla_regis",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -3807,7 +3962,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "audi_benigne",
@@ -3821,7 +3978,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/icrsp-seasonal-hymns.v1.js",
       "source_key": "ICRSP_SEASONAL_HYMNS_V1.audi_benigne",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -3847,7 +4004,9 @@
       "relations": [],
       "review": [
         "Confirm addressee/classification against Latin source; family provisional."
-      ]
+      ],
+      "classificationRule": "R5",
+      "classificationStatus": "provisional-needs-source-judgement"
     },
     {
       "id": "o_sol_salutis",
@@ -3861,7 +4020,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/icrsp-seasonal-hymns.v1.js",
       "source_key": "ICRSP_SEASONAL_HYMNS_V1.o_sol_salutis",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -3887,7 +4046,9 @@
       "relations": [],
       "review": [
         "Confirm addressee/classification against Latin source; family provisional."
-      ]
+      ],
+      "classificationRule": "R5",
+      "classificationStatus": "provisional-needs-source-judgement"
     },
     {
       "id": "ex_more_docti",
@@ -3901,7 +4062,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/icrsp-seasonal-hymns.v1.js",
       "source_key": "ICRSP_SEASONAL_HYMNS_V1.ex_more_docti",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -3927,7 +4088,9 @@
       "relations": [],
       "review": [
         "Confirm addressee/classification against Latin source; family provisional."
-      ]
+      ],
+      "classificationRule": "R5",
+      "classificationStatus": "provisional-needs-source-judgement"
     },
     {
       "id": "lustra_sex",
@@ -3941,7 +4104,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/icrsp-seasonal-hymns.v1.js",
       "source_key": "ICRSP_SEASONAL_HYMNS_V1.lustra_sex",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -3965,7 +4128,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "ad_regias_agni_dapes",
@@ -3980,7 +4145,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/icrsp-seasonal-hymns.v1.js",
       "source_key": "ICRSP_SEASONAL_HYMNS_V1.ad_regias_agni_dapes",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -4007,7 +4172,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "aeterne_rex_altissime",
@@ -4021,7 +4188,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/icrsp-seasonal-hymns.v1.js",
       "source_key": "ICRSP_SEASONAL_HYMNS_V1.aeterne_rex_altissime",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -4043,7 +4210,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "veni_creator",
@@ -4057,7 +4226,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/traditional-pray-data.js",
       "source_key": "SACRED_HYMNS_V381.veni_creator",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -4079,7 +4248,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "christmas",
@@ -4093,7 +4264,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/novena-corpus-v4.js",
       "source_key": "NOVENA_CORPUS_V4.christmas",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -4117,7 +4288,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "christ_the_king",
@@ -4131,7 +4304,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/novena-corpus-v4.js",
       "source_key": "NOVENA_CORPUS_V4.christ_the_king",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -4155,7 +4328,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "divine_infant_king",
@@ -4169,7 +4344,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/icksp-divine-infant-king-novena.v1.js",
       "source_key": "ICKSP_DIVINE_INFANT_KING_NOVENA_V1",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -4191,7 +4366,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "sacred_heart",
@@ -4205,7 +4382,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/novena-corpus-v4.js",
       "source_key": "NOVENA_CORPUS_V4.sacred_heart",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -4227,7 +4404,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "corpus_christi",
@@ -4241,7 +4420,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/novena-corpus-v4.js",
       "source_key": "NOVENA_CORPUS_V4.corpus_christi",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -4263,7 +4442,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "holy_ghost",
@@ -4277,7 +4458,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/novena-corpus-v4.js",
       "source_key": "NOVENA_CORPUS_V4.holy_ghost",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -4301,7 +4482,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "immaculate_conception",
@@ -4315,7 +4498,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/novena-corpus-v4.js",
       "source_key": "NOVENA_CORPUS_V4.immaculate_conception",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -4342,7 +4525,9 @@
           "target": "icksp_immaculate_conception"
         }
       ],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "icksp_immaculate_conception",
@@ -4356,7 +4541,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/icksp-immaculate-conception-novena.v1.js",
       "source_key": "ICKSP_IMMACULATE_CONCEPTION_NOVENA_V1",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -4383,7 +4568,9 @@
           "target": "immaculate_conception"
         }
       ],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "immaculate_heart",
@@ -4397,7 +4584,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/novena-corpus-v4.js",
       "source_key": "NOVENA_CORPUS_V4.immaculate_heart",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -4419,7 +4606,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "annunciation",
@@ -4433,7 +4622,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/novena-corpus-v4.js",
       "source_key": "NOVENA_CORPUS_V4.annunciation",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -4455,7 +4644,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "assumption",
@@ -4469,7 +4660,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/novena-corpus-v4.js",
       "source_key": "NOVENA_CORPUS_V4.assumption",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -4491,7 +4682,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "seven_sorrows",
@@ -4505,7 +4698,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/novena-corpus-v4.js",
       "source_key": "NOVENA_CORPUS_V4.seven_sorrows",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -4527,7 +4720,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "perpetual_help",
@@ -4541,7 +4736,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/novena-corpus-v4.js",
       "source_key": "NOVENA_CORPUS_V4.perpetual_help",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -4563,7 +4758,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "st_joseph",
@@ -4577,7 +4774,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/novena-corpus-v4.js",
       "source_key": "NOVENA_CORPUS_V4.st_joseph",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -4599,7 +4796,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "st_michael",
@@ -4613,7 +4812,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/novena-corpus-v4.js",
       "source_key": "NOVENA_CORPUS_V4.st_michael",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -4635,7 +4834,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "st_anthony_nine_tuesdays",
@@ -4649,7 +4850,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/novena-corpus-v4.js",
       "source_key": "NOVENA_CORPUS_V4.st_anthony_nine_tuesdays",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -4671,7 +4872,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "st_therese",
@@ -4685,7 +4888,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/novena-corpus-v4.js",
       "source_key": "NOVENA_CORPUS_V4.st_therese",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -4707,7 +4910,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "icksp_us_therese_perpetual_novena",
@@ -4744,7 +4949,9 @@
       },
       "relations": [],
       "review": [],
-      "externalUrl": "https://www.institute-christ-king.org/resources/devotions-prayers/621-devotions-novena-therese-child-jesus"
+      "externalUrl": "https://www.institute-christ-king.org/resources/devotions-prayers/621-devotions-novena-therese-child-jesus",
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "holy_souls",
@@ -4758,7 +4965,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/novena-corpus-v4.js",
       "source_key": "NOVENA_CORPUS_V4.holy_souls",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -4782,7 +4989,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R2",
+      "classificationStatus": "proposed"
     },
     {
       "id": "holy_face_1887",
@@ -4796,7 +5005,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/holy-face-janvier-1887-b25.js",
       "source_key": "NOVENA_HOLY_FACE_1887_B25",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -4818,7 +5027,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "stabat_mater",
@@ -4832,7 +5043,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/canonical-data.js",
       "source_key": "PRAY_CANONICAL_DATA_V435930.stabat",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -4856,7 +5067,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "angelus",
@@ -4870,7 +5083,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/canonical-data.js",
       "source_key": "PRAY_CANONICAL_DATA_V435930.angelus",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -4897,7 +5110,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "regina_caeli",
@@ -4911,7 +5126,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/canonical-data.js",
       "source_key": "PRAY_CANONICAL_DATA_V435930.regina",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -4935,7 +5150,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "pray.rosary",
@@ -4949,7 +5166,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/presentation-runtime.js",
       "source_key": "pray.rosary",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -4992,7 +5209,9 @@
           "legacyRow": 110,
           "kind": "collect"
         }
-      ]
+      ],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "pray.divine_mercy",
@@ -5006,7 +5225,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/presentation-runtime.js",
       "source_key": "pray.divine_mercy",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -5028,7 +5247,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "pray.five_wounds",
@@ -5042,7 +5263,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/five-wounds-chaplet.v1.js",
       "source_key": "pray.five_wounds",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -5064,7 +5285,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "pray.precious_blood",
@@ -5078,7 +5301,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/precious-blood-chaplet.v1.js",
       "source_key": "pray.precious_blood",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -5100,7 +5323,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "pray.little_crown",
@@ -5114,7 +5339,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/little-crown-b30.js",
       "source_key": "pray.little_crown",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -5136,7 +5361,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "pray.st_joseph_seven_sorrows",
@@ -5150,7 +5377,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/st-joseph-seven-sorrows-joys-b24.js",
       "source_key": "pray.st_joseph_seven_sorrows",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -5172,7 +5399,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "pray.stations",
@@ -5186,7 +5415,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/presentation-runtime.js",
       "source_key": "pray.stations",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -5210,7 +5439,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "pray.seven_words",
@@ -5224,7 +5455,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/seven-words-offline-1889.v1.js",
       "source_key": "pray.seven_words",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -5248,7 +5479,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "pray.penitential_psalms",
@@ -5262,7 +5495,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/penitential-psalms-source.js",
       "source_key": "pray.penitential_psalms",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -5286,7 +5519,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R3",
+      "classificationStatus": "proposed"
     },
     {
       "id": "pray.montfort_consecration_preparation",
@@ -5300,7 +5535,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/montfort-consecration-b26.js",
       "source_key": "MONTFORT_B26_PHASES",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -5327,7 +5562,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "daily_morning_prayer",
@@ -5341,7 +5578,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/traditional-pray-data.js",
       "source_key": "MORNING_PRAYER_SEQUENCE_V381",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -5375,7 +5612,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "daily_evening_prayer",
@@ -5389,7 +5628,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/traditional-pray-data.js",
       "source_key": "EVENING_PRAYER_SEQUENCE_V381",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -5426,7 +5665,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "pray.nightly_examen",
@@ -5440,7 +5681,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/traditional-pray-runtime.js",
       "source_key": "pray.nightly_examen",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -5464,7 +5705,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "pray.confession",
@@ -5478,7 +5721,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/presentation-runtime.js",
       "source_key": "pray.confession",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -5503,7 +5746,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "mass.prepare",
@@ -5517,7 +5762,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/traditional-pray-runtime.js",
       "source_key": "mass.prepare",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -5541,7 +5786,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "mass.thanksgiving",
@@ -5555,7 +5802,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/traditional-pray-runtime.js",
       "source_key": "mass.thanksgiving",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -5579,7 +5826,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "pray.adoration",
@@ -5593,7 +5842,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/presentation-runtime.js",
       "source_key": "pray.adoration",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -5615,7 +5864,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "pray.benediction",
@@ -5629,7 +5880,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/presentation-runtime.js",
       "source_key": "pray.benediction",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -5656,7 +5907,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "pray.forty_hours",
@@ -5670,7 +5923,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/forty-hours-solemn.js",
       "source_key": "pray.forty_hours",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -5692,7 +5945,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "programme.first_friday",
@@ -5706,7 +5961,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/presentation-runtime.js",
       "source_key": "programme.first_friday",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -5733,7 +5988,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "programme.first_saturday",
@@ -5747,7 +6004,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/presentation-runtime.js",
       "source_key": "programme.first_saturday",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -5774,7 +6031,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "pray.good_death",
@@ -5788,7 +6047,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/good-death-data.js",
       "source_key": "pray.good_death",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -5813,7 +6072,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R2",
+      "classificationStatus": "proposed"
     },
     {
       "id": "pray.dying_companion",
@@ -5827,7 +6088,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/dying-companion-flow.js",
       "source_key": "pray.dying_companion",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -5852,7 +6113,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R2",
+      "classificationStatus": "proposed"
     },
     {
       "id": "pray.tenebrae",
@@ -5866,7 +6129,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/tenebrae-1960.js",
       "source_key": "pray.tenebrae",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -5890,7 +6153,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R5",
+      "classificationStatus": "proposed"
     },
     {
       "id": "office_dead_vespers_1960",
@@ -5904,7 +6169,7 @@
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/office-dead-vespers-1960.js",
       "source_key": "OFFICE_DEAD_VESPERS",
-      "availability": "programme-only",
+      "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
         "la": "unassessed",
@@ -5926,7 +6191,9 @@
         "other": []
       },
       "relations": [],
-      "review": []
+      "review": [],
+      "classificationRule": "R2",
+      "classificationStatus": "proposed"
     }
   ]
 }
