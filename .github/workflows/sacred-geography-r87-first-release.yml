@@ -1,5 +1,18 @@
 name: Sacred Geography R87 first canonical release
 on:
+  push:
+    branches:
+      - 'research/v10-sacred-atlas-b20-admission-20261105'
+    paths:
+      - 'data/geography/**'
+      - 'data/shrines/**'
+      - 'data/explore/heritage-place-reconciliation.review.v1.json'
+      - 'tests/sacred-atlas-**'
+      - 'tests/sacred-geography-**'
+      - 'tests/explore-geography-contracts.mjs'
+      - 'tests/shrines-pilgrimages-contracts.mjs'
+      - 'tools/geography/audit-sacred-atlas-editorial.mjs'
+      - '.github/workflows/sacred-geography-r87-first-release.yml'
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
     branches: [main]
@@ -25,6 +38,19 @@ jobs:
       - run: npm install --no-audit --no-fund
       - name: New physical sites, original source and coordinate contract
         run: node tests/sacred-geography-r87-first-release.mjs
+      - name: V10 B21 two Marian admissions and 96-candidate preflight
+        run: |
+          node tests/sacred-atlas-96-country-area-preflight.mjs
+          node tests/sacred-atlas-96-admission-review.mjs
+          node tests/sacred-atlas-67-source-evidence.mjs
+          node tests/sacred-atlas-v10-b21-two-marian-places.mjs
+      - name: V10 editorial master deterministic source audit
+        run: node tests/sacred-atlas-editorial-master-530-contract.mjs
+      - name: V10 broader graph and reader profiles
+        run: |
+          node tests/sacred-geography-r70-worldwide-coverage.mjs
+          node tests/sacred-atlas-530-card-release-acceptance.mjs
+          node tests/explore-pilgrimage-journey.mjs
       - name: Geography and Shrine registry integrity
         run: |
           node tests/explore-geography-contracts.mjs
