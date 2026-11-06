@@ -4,6 +4,9 @@ on:
     paths:
       - "src/calendar/icrsp-france-ordo-evidence.js"
       - "src/mass/icrsp-first-friday-entry.js"
+      - "src/mass/ordo-mass-completeness.js"
+      - "tests/mass-ordo-completeness.mjs"
+      - "tests/icrsp-2026-nov07-phone-e2e.mjs"
       - "src/mass/icrsp-nov06-pro-papa-orations.js"
       - "src/mass/browser-entry.js"
       - "tests/icrsp-nov06-pro-papa-orations.mjs"
@@ -29,8 +32,12 @@ jobs:
         run: node tests/icrsp-2026-november-ordo-home.mjs
       - name: Source-confirmed Pro Papa Collect, Secret, Postcommunion and reader boundaries
         run: node tests/icrsp-nov06-pro-papa-orations.mjs
+      - name: Source-Ordo completeness for 6 and 7 November and negative cases
+        run: node tests/mass-ordo-completeness.mjs
       - name: Existing H7 Home contract
         run: node tests/home-h4-door.mjs
       - run: npx playwright install --with-deps chromium
-      - name: Phone Home to source-attested votive selector
+      - name: Phone Home to source-attested Sacred Heart votive selector
         run: node tests/icrsp-2026-november-ordo-phone-e2e.mjs
+      - name: Phone Home to actual First Saturday Immaculate Heart source
+        run: node tests/icrsp-2026-nov07-phone-e2e.mjs
