@@ -11,7 +11,7 @@
   "authoritative": false,
   "autopublish": false,
   "requires_owner_approval": true,
-  "note": "NOT an admitted-Place release. Preview points and candidate names only; no code imports this file. No exact building coordinate is certified, and temporary IDs must never be interpreted as place_id. Country-area structure is now complete for all 96 staging candidates on this draft branch; owner/identity/coordinate/source approval remains outstanding.",
+  "note": "NOT an admitted-Place release. Preview points and candidate names only; no code imports this file. No exact building coordinate is certified, and temporary IDs must never be interpreted as place_id. Country-area structure is now complete for all 96 staging candidates on this draft branch; owner/identity/coordinate/source approval remains outstanding. Admission-review lanes and 96 collision-free semantic ID proposals are recorded, but no place_id has been assigned or source/coordinate independently verified.",
   "counts": {
     "staging_candidates": 96,
     "actual_draft_places": 533,
@@ -20,7 +20,23 @@
     "approved": 0,
     "publishable": 0,
     "country_area_candidates_resolved": 9,
-    "country_area_definitions_added": 6
+    "country_area_definitions_added": 6,
+    "review_lanes": {
+      "priority_identity_and_pin_review": 67,
+      "secondary_or_approximate_review": 26,
+      "shared_directory_source_exceptions": 3
+    },
+    "proposed_unreserved_canonical_ids": 96,
+    "preview_precision": {
+      "site": 45,
+      "complex_anchor": 36,
+      "locality": 15
+    },
+    "historical_source_tiers": {
+      "A": 78,
+      "B": 18
+    },
+    "owner_approved": 0
   },
   "blocking_conditions": [
     "Owner approval and physical-site identity reviewed",
@@ -55,7 +71,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:AL:shrine-of-our-lady-of-good-counsel-shkoder",
+      "admission_review": {
+        "lane": "SECONDARY_OR_APPROXIMATE_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "locality",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0496",
@@ -80,7 +112,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:AR:sanctuary-of-saint-jose-gabriel-brochero-villa-cura-brochero",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0198",
@@ -105,7 +153,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:AT:basilica-of-sonntagberg",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0195",
@@ -130,7 +194,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:AT:saint-florian-abbey",
+      "admission_review": {
+        "lane": "SECONDARY_OR_APPROXIMATE_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "complex_anchor",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0187",
@@ -155,7 +235,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:AT:sanctuary-of-absam",
+      "admission_review": {
+        "lane": "SECONDARY_OR_APPROXIMATE_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0737",
@@ -180,7 +276,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:AU:national-shrine-of-our-lady-of-mount-carmel-middle-park",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0738",
@@ -205,7 +317,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:AU:national-shrine-of-our-lady-of-the-sacred-heart-randwick",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0318",
@@ -230,7 +358,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:BA:marian-shrine-of-olovo",
+      "admission_review": {
+        "lane": "SECONDARY_OR_APPROXIMATE_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "locality",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0228",
@@ -255,7 +399,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:BE:abbey-of-maredsous",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "complex_anchor",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0227",
@@ -280,7 +440,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:BE:basilica-of-the-holy-blood-bruges",
+      "admission_review": {
+        "lane": "SECONDARY_OR_APPROXIMATE_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "locality",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0226",
@@ -305,7 +481,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:BE:cathedral-of-our-lady-antwerp",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0729",
@@ -330,7 +522,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:BI:basilica-of-saint-anthony-of-padua-mugera",
+      "admission_review": {
+        "lane": "SECONDARY_OR_APPROXIMATE_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "locality",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0541",
@@ -355,7 +563,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:BO:sanctuary-of-our-lady-of-copacabana",
+      "admission_review": {
+        "lane": "SECONDARY_OR_APPROXIMATE_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "complex_anchor",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0543",
@@ -380,7 +604,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:BO:shrine-of-our-lady-of-socavon-oruro",
+      "admission_review": {
+        "lane": "SECONDARY_OR_APPROXIMATE_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "locality",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0481",
@@ -405,7 +645,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:BR:basilica-of-our-lady-of-conceicao-da-praia-salvador",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0488",
@@ -430,7 +686,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:BR:sanctuary-of-blessed-jose-de-anchieta-anchieta",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0485",
@@ -455,7 +727,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:BR:sanctuary-of-bom-jesus-da-lapa-bahia",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "complex_anchor",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0484",
@@ -480,7 +768,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:BR:sanctuary-of-bom-jesus-de-matosinhos-congonhas",
+      "admission_review": {
+        "lane": "SECONDARY_OR_APPROXIMATE_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "complex_anchor",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0479",
@@ -505,7 +809,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:BR:sanctuary-of-our-lady-of-piedade-caete",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0486",
@@ -530,7 +850,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:BR:sanctuary-of-saint-paulina-nova-trento",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "complex_anchor",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0343",
@@ -555,7 +891,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:BY:marian-sanctuary-of-baruny",
+      "admission_review": {
+        "lane": "SECONDARY_OR_APPROXIMATE_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "locality",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0344",
@@ -580,7 +932,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:BY:marian-shrine-of-trokeli",
+      "admission_review": {
+        "lane": "SECONDARY_OR_APPROXIMATE_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0342",
@@ -605,7 +973,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:BY:national-shrine-of-our-lady-of-budslau",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0420",
@@ -630,7 +1014,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:CA:ermitage-saint-antoine-lac-bouchette",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "complex_anchor",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0419",
@@ -655,7 +1055,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:CA:national-shrine-of-saint-kateri-tekakwitha-kahnawake",
+      "admission_review": {
+        "lane": "SECONDARY_OR_APPROXIMATE_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "locality",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0421",
@@ -680,7 +1096,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:CA:national-shrine-of-the-little-flower-wakaw",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0415",
@@ -705,7 +1137,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:CA:sanctuaire-notre-dame-de-fatima-la-pocatiere",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0274",
@@ -730,7 +1178,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:CH:sanctuary-of-our-lady-of-bourguillon",
+      "admission_review": {
+        "lane": "SECONDARY_OR_APPROXIMATE_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0275",
@@ -755,7 +1219,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:CH:sanctuary-of-our-lady-of-valere-sion",
+      "admission_review": {
+        "lane": "SECONDARY_OR_APPROXIMATE_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "locality",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0502",
@@ -780,7 +1260,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:CL:sanctuary-of-saint-alberto-hurtado-santiago",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "complex_anchor",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0500",
@@ -805,7 +1301,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:CL:sanctuary-of-santa-teresa-de-los-andes-auco",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0501",
@@ -830,7 +1342,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:CL:shrine-of-our-lady-of-lo-vasquez",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0505",
@@ -855,7 +1383,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:CO:national-shrine-of-our-lady-of-mount-carmel-bogota",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0507",
@@ -880,7 +1424,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:CO:shrine-of-our-lady-of-the-rosary-la-popa-cartagena",
+      "admission_review": {
+        "lane": "SECONDARY_OR_APPROXIMATE_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "complex_anchor",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0466",
@@ -905,7 +1465,25 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:CU:national-shrine-of-jesus-nazareno-del-rescate-arroyo-arenas",
+      "admission_review": {
+        "lane": "SHARED_DIRECTORY_SOURCE_EXCEPTION",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": true,
+        "source_registry_url_collision_ids": [
+          "AO-P33-SITE-SG-INV-0463"
+        ],
+        "site_specific_source_corroboration_needed": true,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0465",
@@ -930,7 +1508,25 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:CU:national-shrine-of-saint-barbara-havana",
+      "admission_review": {
+        "lane": "SHARED_DIRECTORY_SOURCE_EXCEPTION",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": true,
+        "source_registry_url_collision_ids": [
+          "AO-P33-SITE-SG-INV-0463"
+        ],
+        "site_specific_source_corroboration_needed": true,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0464",
@@ -955,7 +1551,25 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:CU:national-shrine-of-saint-lazarus-el-rincon",
+      "admission_review": {
+        "lane": "SHARED_DIRECTORY_SOURCE_EXCEPTION",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": true,
+        "source_registry_url_collision_ids": [
+          "AO-P33-SITE-SG-INV-0463"
+        ],
+        "site_specific_source_corroboration_needed": true,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0292",
@@ -980,7 +1594,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:CZ:monastery-of-the-mother-of-god-kraliky",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "complex_anchor",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0286",
@@ -1005,7 +1635,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:CZ:sanctuary-of-mary-help-of-christians-zlate-hory",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "complex_anchor",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0287",
@@ -1030,7 +1676,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:CZ:shrine-of-our-lady-of-sorrows-sloup",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "complex_anchor",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0294",
@@ -1055,7 +1717,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:CZ:strahov-monastery",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "complex_anchor",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0293",
@@ -1080,7 +1758,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:CZ:tepla-abbey",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "complex_anchor",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0178",
@@ -1105,7 +1799,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:DE:andechs-abbey",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "complex_anchor",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0180",
@@ -1130,7 +1840,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:DE:basilica-of-saint-lawrence-kempten",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0179",
@@ -1155,7 +1881,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:DE:ottobeuren-abbey",
+      "admission_review": {
+        "lane": "SECONDARY_OR_APPROXIMATE_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "complex_anchor",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0168",
@@ -1180,7 +1922,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:DE:shrine-of-our-lady-in-the-kupfergasse-cologne",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "complex_anchor",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0691",
@@ -1205,7 +1963,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:DZ:basilica-of-notre-dame-de-santa-cruz-oran",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0693",
@@ -1230,7 +2004,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:DZ:monastery-of-tibhirine-and-martyrs-graves",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "complex_anchor",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0517",
@@ -1255,7 +2045,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:EC:national-shrine-of-divine-mercy-guayaquil",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0514",
@@ -1280,7 +2086,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:EC:sanctuary-of-our-lady-of-guayco-bolivar",
+      "admission_review": {
+        "lane": "SECONDARY_OR_APPROXIMATE_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0513",
@@ -1305,7 +2127,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:EC:sanctuary-of-our-lady-of-the-cave-of-peace-la-paz",
+      "admission_review": {
+        "lane": "SECONDARY_OR_APPROXIMATE_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "locality",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0516",
@@ -1330,7 +2168,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:EC:sanctuary-of-saint-narcisa-de-jesus-nobol",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0519",
@@ -1355,7 +2209,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:EC:sanctuary-of-schoenstatt-guayaquil",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0129",
@@ -1380,7 +2250,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:ES:basilica-of-our-lady-of-the-miracles-agreda",
+      "admission_review": {
+        "lane": "SECONDARY_OR_APPROXIMATE_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "locality",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0144",
@@ -1405,7 +2291,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:ES:basilica-of-san-juan-de-dios-granada",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0130",
@@ -1430,7 +2332,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:ES:basilica-of-the-vera-cruz-caravaca-de-la-cruz",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "complex_anchor",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0139",
@@ -1455,7 +2373,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:ES:cathedral-of-cordoba-mezquita-catedral",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0134",
@@ -1480,7 +2414,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:ES:cathedral-of-the-holy-cross-cadiz",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0123",
@@ -1505,7 +2455,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:ES:convent-of-saint-teresa-avila",
+      "admission_review": {
+        "lane": "SECONDARY_OR_APPROXIMATE_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0140",
@@ -1530,7 +2496,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:ES:monastery-of-el-escorial",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "complex_anchor",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0142",
@@ -1555,7 +2537,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:ES:monastery-of-poblet",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "complex_anchor",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0124",
@@ -1580,7 +2578,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:ES:monastery-of-santo-domingo-de-silos",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "complex_anchor",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0119",
@@ -1605,7 +2619,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:ES:sanctuary-of-our-lady-of-el-henar",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0113",
@@ -1630,7 +2660,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:ES:sanctuary-of-our-lady-of-torreciudad",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0125",
@@ -1655,7 +2701,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:ES:sanctuary-of-saint-ignatius-of-loyola-azpeitia",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0133",
@@ -1680,7 +2742,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:ES:sanctuary-of-the-great-promise-valladolid",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0126",
@@ -1705,7 +2783,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:ES:shrine-at-the-cave-of-saint-ignatius-manresa",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "complex_anchor",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0128",
@@ -1730,7 +2824,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:ES:shrine-of-saint-dominic-caleruega",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "complex_anchor",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0044",
@@ -1755,7 +2865,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:FR:abbey-of-fontgombault",
+      "admission_review": {
+        "lane": "SECONDARY_OR_APPROXIMATE_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "locality",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0048",
@@ -1780,7 +2906,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:FR:abbey-of-saint-michel-de-frigolet",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "complex_anchor",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0047",
@@ -1805,7 +2947,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:FR:cathedral-of-saint-benigne-dijon",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0008",
@@ -1830,7 +2988,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:FR:sanctuary-of-our-lady-of-betharram",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "complex_anchor",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0250",
@@ -1855,7 +3029,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:GB:carfin-grotto",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "complex_anchor",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0252",
@@ -1880,7 +3070,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:GB:shrine-of-our-lady-of-mount-carmel-aylesford-priory",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "complex_anchor",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0445",
@@ -1905,7 +3111,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:GT:national-shrine-of-the-sacred-heart-guatemala-city",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0312",
@@ -1930,7 +3152,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:HR:sanctuary-of-our-lady-of-remete-zagreb",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0316",
@@ -1955,7 +3193,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:HR:shrine-of-blessed-alojzije-stepinac-zagreb",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "complex_anchor",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0246",
@@ -1980,7 +3234,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:IE:abbey-of-kylemore",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "complex_anchor",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0549",
@@ -2005,7 +3275,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:IL:church-of-the-wedding-at-cana-kafr-kanna",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0105",
@@ -2030,7 +3316,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:IT:abbey-of-fossanova",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "complex_anchor",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0096",
@@ -2055,7 +3357,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:IT:basilica-of-saint-benedict-norcia",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0102",
@@ -2080,7 +3398,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:IT:basilica-of-saint-john-the-evangelist-ravenna",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0103",
@@ -2105,7 +3439,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:IT:charterhouse-of-pavia",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "complex_anchor",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0104",
@@ -2130,7 +3480,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:IT:sacra-di-san-michele-piedmont",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "complex_anchor",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0065",
@@ -2155,7 +3521,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:IT:sanctuary-of-oropa",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "complex_anchor",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0074",
@@ -2180,7 +3562,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:IT:sanctuary-of-our-lady-of-the-mystical-rose-montichiari",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0616",
@@ -2205,7 +3603,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:JP:our-lady-of-tsuwano-otome-pass",
+      "admission_review": {
+        "lane": "SECONDARY_OR_APPROXIMATE_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0712",
@@ -2230,7 +3644,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:KE:national-shrine-of-our-lady-of-africa-subukia",
+      "admission_review": {
+        "lane": "SECONDARY_OR_APPROXIMATE_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "locality",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0689",
@@ -2255,7 +3685,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:KZ:national-shrine-of-the-queen-of-peace-ozernoye",
+      "admission_review": {
+        "lane": "SECONDARY_OR_APPROXIMATE_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "locality",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0578",
@@ -2280,7 +3726,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:LB:shrine-of-saint-rafqa-jrabta",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "complex_anchor",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0350",
@@ -2305,7 +3767,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:ME:sanctuary-of-our-lady-of-the-rocks-perast",
+      "admission_review": {
+        "lane": "SECONDARY_OR_APPROXIMATE_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "locality",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0569",
@@ -2330,7 +3808,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:PS:church-of-saint-lazarus-al-eizariya",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0567",
@@ -2355,7 +3849,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:PS:shepherds-field-church-beit-sahour",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "complex_anchor",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0473",
@@ -2380,7 +3890,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:TT:shrine-of-our-lady-of-la-divina-pastora-siparia",
+      "admission_review": {
+        "lane": "SECONDARY_OR_APPROXIMATE_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "locality",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0613",
@@ -2405,7 +3931,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:TW:national-shrine-of-our-lady-of-china-meishan",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     },
     {
       "candidate_id": "SG-INV-0722",
@@ -2430,7 +3972,23 @@
       "canonical_place_id": null,
       "source_ref": null,
       "verified_at": null,
-      "notes": null
+      "notes": null,
+      "proposed_place_id_not_reserved": "place:ZA:ngome-marian-shrine",
+      "admission_review": {
+        "lane": "PRIORITY_IDENTITY_AND_PIN_REVIEW",
+        "owner_decision": "PENDING",
+        "site_identity_decision": "PENDING_INDEPENDENT_EDITORIAL_REVIEW",
+        "gps_decision": "PENDING_EVIDENCE_OR_EXPLICIT_ILLUSTRATIVE_ACCEPTANCE",
+        "recorded_source_tier_is_historical_only": true,
+        "coordinate_is_illustrative_preview": true,
+        "exact_building_or_entrance_claim": false,
+        "map_precision_to_retain_if_accepted": "site",
+        "identity_url_scope_exception": false,
+        "source_registry_url_collision_ids": [],
+        "site_specific_source_corroboration_needed": false,
+        "source_url_confirmed_live_in_this_pass": false,
+        "canonical_import_ready": false
+      }
     }
   ],
   "country_area_preflight_on": "2026-11-06",
@@ -2498,5 +4056,16 @@
       "geo_area_id": "geo:country:ZA",
       "resolution": "COUNTRY_AREA_DEFINED_NO_PLACE_APPROVAL"
     }
-  ]
+  ],
+  "review_policy": {
+    "precision_not_authentication": "site/complex_anchor/locality values are map-rendering scopes, not certified building GPS or entrances",
+    "historical_source_tiers_not_editorial_signoff": true,
+    "proposal_ids_not_canonical": "proposed_place_id_not_reserved is for review only; canonical_place_id stays null until actual approval",
+    "shared_directory_rule": "URL reuse across distinct sites or existing source-record site scope requires direct named-site evidence before sourcing the new Place; never reuse the prior Place source ID automatically",
+    "all_proposed_pins_require_owner_decision": true,
+    "may_use_illustrative_locality_if_accepted": true,
+    "no_runtime_import": true,
+    "preserve_cl2_canonical_ids": true,
+    "no_tlm_venue_or_schedule_inference": true
+  }
 }
