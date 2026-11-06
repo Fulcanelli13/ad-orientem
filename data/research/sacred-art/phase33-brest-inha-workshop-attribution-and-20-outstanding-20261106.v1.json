@@ -1,0 +1,84 @@
+{
+  "schema": "AO_SACRED_ART_PHASE33_INHA_BREST_WORKSHOP_IDENTITY_V1",
+  "as_of": "2026-11-06",
+  "scope": "Research identity ledger for 177 owner-handpicked low-resolution works only; no gallery replacement or publication",
+  "previous_phase32": {
+    "identity_supported": 156,
+    "unresolved": 21
+  },
+  "new_identity_supported": [
+    {
+      "registry_id": "RECENT575::572",
+      "selected_title": "L'élévation de la croix",
+      "museum": "Musée des Beaux-Arts de Brest",
+      "official_inventory": "968.8.1",
+      "official_attribution": "Workshop of Luca Giordano (Giordano Luca, atelier de)",
+      "source_institution": "Institut national d'histoire de l'art (INHA) — RETIF, Répertoire des tableaux italiens dans les collections publiques françaises",
+      "official_source": "https://agorha.inha.fr/recherche?affichage=cartouche&facets=&fieldSort=&filters=&noticeType=&page=2&pageSize=20&selectionId=&sort=&terms=notice_liee%3A+%2218a3117b-c055-4d7f-9644-e331002f3811%22&type=simple&withAttachment=false",
+      "source_evidence": "INHA RETIF catalogue search result explicitly lists L'Elévation de la Croix, Giordano Luca atelier de, 17e siècle, Brest, 968.8.1; record modified 2025-04-01.",
+      "evidence_grade": "OFFICIAL_INSTITUTIONAL_INVENTORY_LISTING",
+      "attribution_caution": "NOT autograph Giordano: previous Commons title abbreviated Luca Giordano 1685c, but institutional attribution is workshop, date broadly 17th century. No direct individual artwork detail URL fetched.",
+      "handpicked_commons": "https://commons.wikimedia.org/wiki/File:Pierre-Luca_Giordano_1685c_L%27%C3%A9l%C3%A9vation_de_la_croix.jpg",
+      "photo_licence": "NOT_CLEARED",
+      "photo_quality_approved": false,
+      "owner_selected_image_preserved": true,
+      "published": false
+    }
+  ],
+  "metrics": {
+    "new_institutional_inventory_supported": 1,
+    "total_identity_supported": 157,
+    "remaining_unresolved": 20,
+    "owner_handpicked_records": 177,
+    "photos_replaced": 0
+  },
+  "remaining_unresolved_ids": [
+    "RECENT575::005",
+    "RECENT575::014",
+    "RECENT575::031",
+    "RECENT575::032",
+    "RECENT575::033",
+    "RECENT575::034",
+    "RECENT575::035",
+    "RECENT575::142",
+    "RECENT575::150",
+    "RECENT575::154",
+    "RECENT575::179",
+    "RECENT575::359",
+    "RECENT575::387",
+    "RECENT575::392",
+    "RECENT575::402",
+    "RECENT575::410",
+    "RECENT575::440",
+    "RECENT575::479",
+    "RECENT575::503",
+    "RECENT575::542"
+  ],
+  "priority_holds": {
+    "antwerp_six": [
+      "RECENT575::005",
+      "RECENT575::031",
+      "RECENT575::032",
+      "RECENT575::033",
+      "RECENT575::034",
+      "RECENT575::035"
+    ],
+    "reason": "Six distinct selected Jacob Herreyns paintings, individual KMSKA accession IDs still not established",
+    "other_concerns": [
+      "Lille P85/P190 provisional; no exact official object source retrieved",
+      "Bruges St Jerome attribution and museum accessions inconsistent between secondary image captions",
+      "Toulouse Christ ressuscité linked museum image is a subject mismatch",
+      "Tours Rembrandt accession conflict 1793-1-2 versus 1950-13-1 retained",
+      "Paris Lazerges/Tissot image rights metadata does not settle visual fidelity"
+    ]
+  },
+  "workbook": "Ad_Orientem_Phase33_177_Artwork_Identity_and_Paris_CC0_Master.xlsx",
+  "controls": [
+    "Original selected images, rejections and distinct photo rows unchanged",
+    "No museum photograph replacement approved",
+    "No additional artwork admissions",
+    "No Prayer/Calendar pairing changes",
+    "Research branch only, no public deployment"
+  ],
+  "predecessor": "data/research/sacred-art/phase32-four-institutional-identities-and-21-outstanding-20261106.v1.json"
+}
