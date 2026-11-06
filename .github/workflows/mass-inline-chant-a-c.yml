@@ -6,6 +6,9 @@ on:
     paths:
       - 'src/mass/reader-inline-chant.js'
       - 'src/mass/reader-participation-neume-policy.js'
+      - 'src/mass/reader-offertory-quiet.js'
+      - 'src/mass/reader-native-preview.js'
+      - 'tests/reader-offertory-oremus-voice-boundary.mjs'
       - 'src/mass/reader-two-greeting-transfer-candidates.js'
       - 'data/mass/two-greeting-music-source-crosswalk.v1.json'
       - 'tests/reader-two-greeting-transfer-candidates.mjs'
@@ -69,6 +72,9 @@ jobs:
         run: |
           node --check src/mass/reader-inline-chant.js
           node --check src/mass/reader-participation-neume-policy.js
+          node --check src/mass/reader-offertory-quiet.js
+          node --check src/mass/reader-native-preview.js
+          node --check tests/reader-offertory-oremus-voice-boundary.mjs
           node --check src/mass/reader-two-greeting-transfer-candidates.js
           node --check tests/reader-two-greeting-transfer-candidates.mjs
           node --check tests/reader-two-greeting-transfer-phone.mjs
@@ -105,6 +111,7 @@ jobs:
           node --check src/mass/reader-dom.js
           node tests/reader-inline-chant-a-c.mjs
           node tests/reader-participation-neume-policy.mjs
+          node tests/reader-offertory-oremus-voice-boundary.mjs
           node tests/reader-two-greeting-transfer-candidates.mjs
           node tests/reader-participation-20-event-coverage.mjs
           node tests/reader-participation-reference-scores.mjs
