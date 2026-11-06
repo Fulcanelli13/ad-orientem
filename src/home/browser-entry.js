@@ -480,19 +480,27 @@ export function createHomeOwner(win=globalThis){
         showRouteError("mass.icrsp.source-date",icrspVotive);return;
       }
       void navigateHomeShortcut("mass",{trigger:icrspVotive,routeId:"mass.icrsp.votive"})
-        .then(ok=>{
+        .then(async ok=>{
           if(!ok)return;
-          // The Institute's evidence is a recommendation, NOT a selected
-          // Proper. Delegate exact eligibility and formulary to the host.
-          const r17=win?.AO_R17_BROWSER_ENTRY;
-          const bridge=r17?.chooseCelebrationKind?.("VOTIVE");
-          if(bridge?.ok===true)return;
-          const choice=win?.document?.querySelector?.('[data-ao-full-mass-preflight] [data-full-mass-category="VOTIVE"]');
-          if(choice){choice.click();return;}
+          if(officialDate==="2026-11-06"){
+            // Source-scoped exact first-Friday votive, not an unsupported
+            // global substitution of the canonical Friday ferial Office.
+            const {selectIcrspFirstFridayLowMass}=await import("../mass/icrsp-first-friday-entry.js");
+            const choice=selectIcrspFirstFridayLowMass({win,dateIso:officialDate});
+            if(choice.ok===true){clearRouteError();return;}
+            const notice=win?.document?.querySelector?.("[data-full-mass-category-error]");
+            if(notice){notice.hidden=false;notice.textContent="Sacred Heart Low Mass could not be certified: "+choice.reason;}
+            showRouteError("mass.icrsp.sacred-heart",icrspVotive);
+            return;
+          }
+          // Other dates still route to the exact source-owned votive catalogue.
+          const result=win?.AO_R17_BROWSER_ENTRY?.chooseCelebrationKind?.("VOTIVE");
+          if(result?.ok===true){clearRouteError();return;}
           const notice=win?.document?.querySelector?.("[data-full-mass-category-error]");
           if(notice){notice.hidden=false;notice.textContent="Votive Mass selection unavailable; do not begin with an unverified Proper."}
         }).catch(error=>{
-          try{win?.console?.error?.("ICRSP votive Mass selector failed",error)}catch{}
+          try{win?.console?.error?.("ICRSP votive Mass selection failed",error)}catch{}
+          showRouteError("mass.icrsp.votive",icrspVotive);
         });
       return;
     }
