@@ -7,6 +7,8 @@ const prior=read("data/geography/research/sacred-atlas-round25-23place-64-origin
 const geo=read("data/geography/seed-registry.v1.json");
 const covers=read("data/geography/approved-place-media.v1.json");
 const directFive=read("data/geography/research/sacred-atlas-direct-open-photo-five-release-report-20261105.v1.json");
+const directBatchTwo=read("data/geography/research/sacred-atlas-direct-source-batch-two-20261105.v1.json");
+const directBatchTwoProof=read("data/geography/research/sacred-atlas-direct-source-batch-two-report-20261105.v1.json");
 const frozen=read("data/geography/research/sacred-atlas-editorial-master-530-20261104.v1.json");
 const v10=RELEASES.find(r=>r.id==="V10-B20"),v10b21=RELEASES.find(r=>r.id==="V10-B21");
 assert.ok(v10&&v10b21&&v10.data.new_places===3&&v10b21.data.new_places===2);
@@ -66,7 +68,20 @@ for(const row of m.rows){
  assert.ok(old&&cross&&place,"Unknown site in recovered source batch");
  assert.equal(row.canonical_name,place.name.official);
  assert.equal(row.place_name,old.name);
- assert.ok(!approvedIds.has(row.place_id));
+ const separatelyApprovedCover=currentCoverById.get(row.place_id);
+ if(separatelyApprovedCover){
+  // R26 original photos are still unapproved; these are DISTINCT rights-cleared
+  // modern source releases with independently checked identity and pixel proof.
+  assert.equal(separatelyApprovedCover.source_place_ref,"DIRECT_PEXELS_FLICKR_BATCH_TWO_20261105");
+  const source=directBatchTwo.items.find(x=>x.place_id===row.place_id);
+  const proof=directBatchTwoProof.approved.find(x=>x.place_id===row.place_id);
+  assert.ok(source&&proof,"A separately approved photo requires the independent source and rights record");
+  assert.equal(separatelyApprovedCover.source_url,source.source_page);
+  assert.equal(separatelyApprovedCover.asset_path,proof.asset_path);
+  assert.equal(separatelyApprovedCover.derivative_sha256,proof.derivative_sha256);
+  assert.equal(separatelyApprovedCover.source_sha1,proof.source_original_sha1);
+  assert.ok(separatelyApprovedCover.rights_verified&&separatelyApprovedCover.subject_verified&&separatelyApprovedCover.crop_reviewed);
+ } else assert.equal(approvedIds.has(row.place_id),false);
  assert.ok(row.cohort===old.cohort);
  assert.equal(row.publication_authorized,false);
  assert.equal(row.exact_site_subject_verified_for_publication,false);

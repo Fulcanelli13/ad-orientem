@@ -30,9 +30,10 @@ assert.deepEqual(p104.baseline,{places:522,sources:830,crosswalk:522,unlinked:25
 assert.deepEqual(p104.proposed,{places:529,sources:844,crosswalk:529,unlinked:257,geo_areas:146,directory_links:22});
 assert.ok(RELEASES.some(r=>r.id==="P104"),"Historical P104 must remain frozen");
 const v10=RELEASES.find(r=>r.id==="V10-B20");
-assert.ok(v10,"V10 retains P106's 530/846/24 source-verified baseline");
+const b21=RELEASES.find(r=>r.id==="V10-B21");
+assert.ok(v10&&b21,"V10 retains P106's 530/846/24 source-verified baseline");
 assert.deepEqual([v10.data.baseline.places,v10.data.baseline.sources,v10.data.baseline.directory_links],[530,846,24]);
-assert.deepEqual([LIVE.places,LIVE.sources,LIVE.links],[v10.data.proposed.places,v10.data.proposed.sources,v10.data.proposed.directory_links]);
+assert.deepEqual([LIVE.places,LIVE.sources,LIVE.links],[b21.data.proposed.places,b21.data.proposed.sources,b21.data.proposed.directory_links],"Live counts follow append-only B21 draft; historic B20 snapshot remains frozen");
 assert.deepEqual([geo.places.length,src.sources.length],[LIVE.places,LIVE.sources]);
 assert.ok(geo.directoryPlaceLinks.length>=LIVE.links,
   "Historical source links must persist; later individually verified venue joins may extend them");

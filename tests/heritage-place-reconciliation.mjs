@@ -90,7 +90,7 @@ assert.equal(R.counts.places,G.places.length);
 assert.equal(R.counts.places_with_linked_records+1,linked,"Previously claimless Santhome gains the only additional post-snapshot linked Place");
 for(const kind of ["shrines","pilgrimages","relics","apparitions","customs","novena_context","routes","directory_links"]){
  const distinct=R.place_crosswalk.filter(p=>p.record_ids[kind]?.length).length;
- assert.equal(R.distinct_place_links[kind],distinct,"The dated historical crosswalk count must remain immutable");
+ assert.equal(R.distinct_place_links[kind],distinct,"Current review crosswalk must agree with source-owned Place links; frozen historic ledgers are separately preserved");
 }
 const actualCurrentRelicPlaceCount=[...expected.values()].filter(categories=>categories.has("relics")).length;
 assert.equal(actualCurrentRelicPlaceCount,R.distinct_place_links.relics+5,

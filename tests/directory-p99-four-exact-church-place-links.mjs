@@ -18,12 +18,13 @@ assert.deepEqual([g.places.length,sources.sources.length],[LIVE.places,LIVE.sour
 assert.ok(g.directoryPlaceLinks.length>=LIVE.links,
   "Historical source links must persist; later individually verified venue joins may extend them");
 const v10=RELEASES.find(r=>r.id==="V10-B20");
-assert.ok(v10,"V10 must preserve and extend the P106 530/846/24 snapshot");
+const b21=RELEASES.find(r=>r.id==="V10-B21");
+assert.ok(v10&&b21,"V10 must preserve and extend the P106 530/846/24 snapshot");
 assert.deepEqual([v10.data.baseline.places,v10.data.baseline.sources,v10.data.baseline.directory_links],[530,846,24]);
-assert.deepEqual([LIVE.places,LIVE.sources,LIVE.links],[v10.data.proposed.places,v10.data.proposed.sources,v10.data.proposed.directory_links]);
+assert.deepEqual([LIVE.places,LIVE.sources,LIVE.links],[b21.data.proposed.places,b21.data.proposed.sources,b21.data.proposed.directory_links],"Live counts follow append-only B21 draft; historic B20 snapshot remains frozen");
 assert.equal(manifest.new_places,4);
 assert.equal(manifest.confirmed_directory_links_added,4);
-assert.equal(g.geoAreas.length,146);
+assert.equal(g.geoAreas.length,LIVE.areas,"Current country areas must include the six C6 preflight definitions");
 assertExploreGeographyRegistry({geoAreas:g.geoAreas,places:g.places,directoryPlaceLinks:g.directoryPlaceLinks});
 const col=Object.fromEntries(r.columns.map((s,i)=>[s,i]));
 const sourceIndex=new Map(sources.sources.map(s=>[s.id,s]));
