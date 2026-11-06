@@ -13,6 +13,10 @@ on:
       - "tests/mass-texts-sheet-phone-e2e.mjs"
       - "tests/m1-mass-access-phone-e2e.mjs"
       - "tests/m1-mass-root-phone-e2e.mjs"
+      - "src/home/today-h4-view.js"
+      - "src/home/browser-entry.js"
+      - "src/mass/browser-entry.js"
+      - "tests/mass-h7-votive-chooser-phone.mjs"
       - "tests/mass-november-2026-release-gate-e2e.mjs"
       - "tests/m1-default-mass-resume-phone-e2e.mjs"
       - ".github/workflows/m1-mass-access-preview.yml"
@@ -36,6 +40,7 @@ jobs:
       - run: node tests/m1-mass-access-phone-e2e.mjs
       - run: node tests/mass-texts-sheet-phone-e2e.mjs
       - run: node tests/m1-mass-root-phone-e2e.mjs
+      - run: node tests/mass-h7-votive-chooser-phone.mjs
       # Independent readiness evidence: the broad R17 phone suite may stop
       # earlier on unrelated Schola tests, hiding the All Souls result.
       - run: node tests/mass-november-2026-release-gate-e2e.mjs
