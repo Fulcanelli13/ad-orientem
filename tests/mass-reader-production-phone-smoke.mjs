@@ -5,7 +5,13 @@ import {chromium} from "@playwright/test";
 import {mkdir,writeFile} from "node:fs/promises";
 import {resolve} from "node:path";
 
-const origin=new URL("https://ad-orientem.vercel.app/");
+// The owner's 4 November 2026 publication policy is GitHub Pages ONLY.
+// Test the actual public project URL, never a retired Vercel deployment.
+const PAGES_PUBLIC_URL="https://fulcanelli13.github.io/ad-orientem/";
+const raw=String(process.env.AO_PAGES_URL||PAGES_PUBLIC_URL);
+const origin=new URL(raw.endsWith("/")?raw:raw+"/");
+if(origin.href!==PAGES_PUBLIC_URL)
+ throw Error("MASS_PRODUCTION_SMOKE_MUST_TARGET_CANONICAL_GITHUB_PAGES: "+origin.href);
 const output=resolve("artifacts/mass-reader-production-smoke");
 await mkdir(output,{recursive:true});
 const cases=[
@@ -13,7 +19,7 @@ const cases=[
   {width:390,form:"SOLEMN",language:"fr",locale:"fr-FR"},
   {width:390,form:"LOW",language:"en",locale:"en-GB"},
 ];
-const report={schema:"AO_MASS_PRODUCTION_VISUAL_QA_V1",origin:origin.origin,
+const report={schema:"AO_MASS_PRODUCTION_VISUAL_QA_V1",origin:origin.href,
   expectedCommit:process.env.GITHUB_SHA??null,
   startedAt:new Date().toISOString(),cases:[],physicalDeviceVerified:false};
 const positions=()=>{const api=window.AO_R17_NATIVE_READER_PREVIEW;
@@ -63,7 +69,7 @@ try{
     try{
       const response=await page.goto(origin.href+"?aoR17Reader=native&qa=mass-reader-phone",
         {waitUntil:"domcontentloaded",timeout:90000});
-      assert.equal(response?.status(),200,"Public Vercel entry must return HTTP 200");
+      assert.equal(response?.status(),200,"Public GitHub Pages Mass entry must return HTTP 200");
       await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner===true,
         null,{timeout:60000});
       // H7 has two source-owned steps: first the visible "Enter the Mass"
