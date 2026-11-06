@@ -10,6 +10,8 @@ on:
       - 'tests/sacred-atlas-**'
       - 'tests/sacred-geography-**'
       - 'tests/explore-geography-contracts.mjs'
+      - 'tests/explore-pilgrimage-journey.mjs'
+      - 'tests/relic-*.mjs'
       - 'tests/shrines-pilgrimages-contracts.mjs'
       - 'tools/geography/audit-sacred-atlas-editorial.mjs'
       - '.github/workflows/sacred-geography-r87-first-release.yml'
