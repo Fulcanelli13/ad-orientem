@@ -1,0 +1,144 @@
+{
+  "schema": "AO_SACRED_ART_PHASE26_BULK_SOURCE_AND_IMAGE_AUDIT_V1",
+  "date": "2026-11-06",
+  "scope": "177 owner-handpicked low-resolution Commons artworks; exact museum identity / source image quality / rights must remain separate",
+  "research_only": true,
+  "baseline": {
+    "prior_verified_registry_records": 90,
+    "new_verified_registry_records": 4,
+    "verified_registry_records": 94,
+    "unverified_registry_records": 83,
+    "identified_fraction": 0.5310734463276836,
+    "original_selected_image_records": 177,
+    "image_replacements_approved": 0,
+    "gallery_deployments": 0
+  },
+  "verified": [
+    {
+      "registry_id": "RECENT575::329",
+      "museum": "Musée des Beaux-Arts de Nancy",
+      "accession": "87.8.1",
+      "title": "Noli me tangere",
+      "attribution": "Jan Brueghel II, Jacob Jordaens and Lucas van Uden",
+      "official_source": "https://collections-mba.nancy.fr/fr/notice/87-8-1-noli-me-tangere-d160a26e-e6b6-4894-9ad5-6f589ef48b86",
+      "specific_photo_rights": "Cliché Claude Philippot; reuse NOT VERIFIED",
+      "exact_object_identity_verified": true,
+      "image_publication_approved": false
+    },
+    {
+      "registry_id": "RECENT575::362",
+      "museum": "Musées de Strasbourg",
+      "accession": "44.2015.1.1",
+      "title": "Le Repos pendant la fuite en Egypte",
+      "attribution": "Reynaud Levieux",
+      "official_source": "https://collections.musees.strasbourg.eu/en/document/le-repos-pendant-la-fuite-en-egypte/5ee33891461cda28a3a5d52e?pos=7",
+      "specific_photo_rights": "Museum requests contacting its image library; photo reuse not verified",
+      "exact_object_identity_verified": true,
+      "image_publication_approved": false
+    },
+    {
+      "registry_id": "RECENT575::566",
+      "museum": "Musée Magnin, Dijon",
+      "accession": "1938 E 16",
+      "title": "Le Christ mort soutenu par Dieu le Père",
+      "attribution": "Attributed to Master of the Lille Adoration",
+      "official_source": "https://musee-magnin.fr/media/document/salon-hercule-oeuvrespdf-2",
+      "specific_photo_rights": "RMN/Grand Palais professional photo requirements; not verified",
+      "exact_object_identity_verified": true,
+      "image_publication_approved": false,
+      "note": "Selected Commons title 'Trinité' is descriptive; current institutional catalogue title differs"
+    },
+    {
+      "registry_id": "RECENT575::382",
+      "museum": "Musée des Beaux-Arts et d'Archéologie de Besançon",
+      "accession": "2022.1.1",
+      "title": "Anges portant la colonne de la Passion",
+      "attribution": "Simon Vouet",
+      "official_source": "https://memoirevive.besancon.fr/document/75-ans-des-amis",
+      "specific_photo_rights": "Museum/municipal source catalogue, actual photo rights unverified",
+      "exact_object_identity_verified": true,
+      "image_publication_approved": false,
+      "note": "Distinct fragment from Anges portant les instruments de la Passion, accession 896.1.140"
+    }
+  ],
+  "github_jobs": {
+    "run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42203651963",
+    "iiif_artifact": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42203651963/artifacts/13495252387",
+    "source_artifact": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42203651963/artifacts/13494424835",
+    "workflow_research_only": true,
+    "image_manifests_examined": 3,
+    "museum_photograph_previews_retrieved": 3,
+    "owner_selected_commons_images_retrieved": 2,
+    "image_rights_cleared": 0,
+    "museum_urls_detected_in_87_unresolved": 12,
+    "official_source_pages_fetched": 12,
+    "official_source_pages_accessible": 2,
+    "source_pages_automatically_promoted_to_verified": 0
+  },
+  "photo_review": [
+    {
+      "registry_id": "RECENT575::077",
+      "museum_iiif": "https://imagehub.mskgent.be/iiif/3/1166/manifest.json",
+      "museum_original_dimensions": "2809x3537",
+      "reference_retrieved": false,
+      "visual_status": "UNCOMPARABLE_REFERENCE_MISSING",
+      "rights": "HOLD",
+      "do_not_publish": true
+    },
+    {
+      "registry_id": "RECENT575::114",
+      "museum_iiif": "https://dam.museabrugge.be/iiif/3/12440/manifest.json",
+      "museum_original_dimensions": "4482x7455",
+      "reference_retrieved": true,
+      "visual_status": "SAME_ARTWORK_MANUALLY_IDENTIFIED_FRAME_DIFFERENCE",
+      "note": "Automated perceptual mismatch due frame, not different underlying painting; selected image includes calibration strip",
+      "rights": "HOLD",
+      "do_not_publish": true
+    },
+    {
+      "registry_id": "RECENT575::143",
+      "museum_iiif": "https://dam.museabrugge.be/iiif/3/12439/manifest.json",
+      "museum_original_dimensions": "4528x7568",
+      "reference_retrieved": true,
+      "visual_status": "SAME_FRAMED_ARTWORK_NO_OBVIOUS_BETTER_SOURCE",
+      "rights": "HOLD",
+      "do_not_publish": true
+    }
+  ],
+  "unresolved_exceptions": [
+    {
+      "registry_id": "RECENT575::014",
+      "status": "HOLD_SOURCE_SUBJECT_MISMATCH",
+      "description": "Official Toulouse link concerns Philippe de Champaigne's Les Âmes du Purgatoire, not necessarily selected Commons file named Christ ressuscité; manual identity audit required",
+      "source": "https://www.augustins.org/fr/notice/2004-1-218-les-ames-du-purgatoire-b35ce3cd-498e-4a7f-a4d9-4ed873b8270f"
+    },
+    {
+      "registry_id": "RECENT575::154",
+      "status": "HOLD_AMBIGUOUS_ACCESSION_ATTRIBUTION",
+      "description": "Original Commons file names Bruno Van Hollebeke; available art-history indexing disagrees about accession 0000.GRO0420.I and Anaïs Bouvy. Do not borrow a substitute St Jerome without museum-level photographic confirmation.",
+      "source": "https://commons.wikimedia.org/wiki/File:Heilige_Hi%C3%ABronymus,_circa_1817_-_circa_1892,_Groeningemuseum,_0041048000.jpg"
+    },
+    {
+      "registry_id": "RECENT575::359",
+      "status": "HOLD_WORKSHOP_ATTRIBUTION",
+      "description": "Geneva Visitation 1942-0009 cited under Philippe de Champaigne workshop in one catalogue, not secure autograph",
+      "source": "https://www.mahmah.ch/collection/oeuvres/la-visitation/1942-0009"
+    },
+    {
+      "registry_id": "RECENT575::392",
+      "status": "PROVISIONAL_JOCONDE_RECORD",
+      "description": "P85/Joconde 000PE016876 strongly cross-referenced but live authoritative object record was inaccessible; not added to verified count",
+      "source": "https://pop.culture.gouv.fr/notice/joconde/000PE016876"
+    }
+  ],
+  "delivery": "Ad_Orientem_Phase26_Full_177_Artwork_Recovery_2026-11-06.xlsx",
+  "policy": [
+    "Keep explicitly rejected paintings excluded, placement rejection not painting rejection.",
+    "Preserve all owner-handpicked file variants until reviewed.",
+    "No non-owner Commons promotion.",
+    "Museum catalogue metadata licence is not photo licence.",
+    "Do not auto-crop frames/color charts or adjust museum reproduction.",
+    "Complete image curation before description, themes, Scripture, prayer or calendar matching."
+  ],
+  "upstream_counts_integrity": "94/177 counts registry records identified, not distinct physical paintings; known duplicate object groups are preserved for later deduplication."
+}
