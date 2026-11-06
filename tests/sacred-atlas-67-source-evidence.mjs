@@ -1,0 +1,41 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+const data=JSON.parse(readFileSync(new URL("../data/geography/research/sacred-atlas-96-priority-unapproved-preimport-20261106.v1.json",import.meta.url),"utf8"));
+const priority=data.candidates.filter(c=>c.admission_review.lane==="PRIORITY_IDENTITY_AND_PIN_REVIEW");
+assert.equal(priority.length,67);
+const seen={};
+for(const c of priority){
+ const ev=c.admission_review.source_evidence_pass;
+ assert.equal(ev.reviewed_on,"2026-11-06");
+ assert.equal(ev.existing_identity_url,c.identity_source_url);
+ assert.match(ev.suggested_source_url,/^https:\/\//);
+ assert.equal(ev.source_content_checked,true);
+ assert.equal(ev.site_identity_approved_for_publication,false);
+ assert.equal(c.owner_approved,false);
+ assert.equal(c.publishable,false);
+ assert.equal(c.canonical_place_id,null);
+ assert.equal(c.source_ref,null);
+ assert.equal(c.verified_at,null);
+ assert.equal(c.admission_review.canonical_import_ready,false);
+ seen[ev.status]=(seen[ev.status]||0)+1;
+ if(ev.gps_independently_verified_in_this_pass){
+  assert.ok(["SG-INV-0415","SG-INV-0722"].includes(c.candidate_id));
+  assert.equal(c.location_preview.coordinate_independently_verified,true);
+  assert.ok(ev.official_coordinate_evidence.distance_from_preview_m<1.5);
+  assert.equal(ev.official_coordinate_evidence.acceptance_scope,"NAMED_SITE_POINT_ONLY_NO_ENTRANCE_CLAIM");
+ }else assert.equal(c.location_preview.coordinate_independently_verified,false);
+}
+assert.deepEqual(data.counts.priority_source_evidence_pass,{...seen,reviewed:67,independently_checked_site_coordinates:2,related_pilgrimage_church_coordinate_near_complex:1,owner_approved:0,import_ready:0});
+assert.equal(seen.NAMED_SITE_SOURCE_RETRIEVED,52);
+assert.equal(seen.SITE_SCOPE_REVIEW_NEEDED,6);
+assert.equal(seen.SOURCE_FETCH_UNAVAILABLE_THIS_PASS,8);
+assert.equal(seen.IDENTITY_SOURCE_SCOPE_CORRECTED,1);
+const norcia=priority.find(x=>x.candidate_id==="SG-INV-0096");
+assert.equal(norcia.admission_review.source_evidence_pass.status,"IDENTITY_SOURCE_SCOPE_CORRECTED");
+assert.equal(norcia.admission_review.source_evidence_pass.suggested_source_url,"https://oroeterra.cultura.gov.it/spazi/basilica-di-s-benedetto/");
+const kraliky=priority.find(x=>x.candidate_id==="SG-INV-0292");
+assert.ok(kraliky.admission_review.source_evidence_pass.nearby_related_site_point.distance_from_preview_m<35);
+assert.equal(kraliky.location_preview.coordinate_independently_verified,false);
+assert.equal(priority.filter(x=>x.location_preview.coordinate_independently_verified).length,2);
+assert.equal(data.candidates.filter(x=>x.owner_approved||x.publishable||x.canonical_place_id!==null).length,0);
+console.log("PASS: 67 priority evidence source outcomes; 2 exact independent official coordinate corroborations; zero owner approvals or canonical imports");

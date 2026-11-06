@@ -50,7 +50,7 @@ for(const c of staged.candidates){
  assert.equal(c.canonical_place_id,null,c.candidate_id);
  assert.equal(c.source_ref,null,c.candidate_id);
  assert.equal(c.verified_at,null,c.candidate_id);
- assert.equal(c.location_preview.coordinate_independently_verified,false,c.candidate_id);
+ assert.equal(c.location_preview.coordinate_independently_verified,["SG-INV-0415","SG-INV-0722"].includes(c.candidate_id),c.candidate_id);
 }
 assert.equal(assertExploreGeographyRegistry(geography).pass,true);
 console.log("PASS: six country areas, nine former area gaps resolved, 96 candidate publication gates still closed");

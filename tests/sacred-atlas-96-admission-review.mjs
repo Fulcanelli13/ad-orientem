@@ -42,7 +42,7 @@ for(const c of staged.candidates){
  assert.equal(c.publishable,false,c.candidate_id);
  assert.equal(c.source_ref,null,c.candidate_id);
  assert.equal(c.verified_at,null,c.candidate_id);
- assert.equal(c.location_preview.coordinate_independently_verified,false,c.candidate_id);
+ assert.equal(c.location_preview.coordinate_independently_verified,["SG-INV-0415","SG-INV-0722"].includes(c.candidate_id),c.candidate_id);
  assert.ok(c.country_area_present_in_draft,c.candidate_id);
  assert.match(c.identity_source_url,/^https:\/\//,c.candidate_id);
  assert.match(c.location_preview.source_url,/^https:\/\//,c.candidate_id);

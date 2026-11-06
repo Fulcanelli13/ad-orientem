@@ -11,7 +11,7 @@
   "authoritative": false,
   "autopublish": false,
   "requires_owner_approval": true,
-  "note": "NOT an admitted-Place release. Preview points and candidate names only; no code imports this file. No exact building coordinate is certified, and temporary IDs must never be interpreted as place_id. Country-area structure is now complete for all 96 staging candidates on this draft branch; owner/identity/coordinate/source approval remains outstanding. Admission-review lanes and 96 collision-free semantic ID proposals are recorded, but no place_id has been assigned or source/coordinate independently verified.",
+  "note": "NOT an admitted-Place release. Preview points and candidate names only; no code imports this file. No exact building coordinate is certified, and temporary IDs must never be interpreted as place_id. Country-area structure is now complete for all 96 staging candidates on this draft branch; owner/identity/coordinate/source approval remains outstanding. Admission-review lanes and 96 collision-free semantic ID proposals are recorded, but no place_id has been assigned or source/coordinate independently verified. Source evidence pass for all 67 priority records: explicit site-name status, URL scope exceptions and two source-coordinate confirmations; zero owner signoff.",
   "counts": {
     "staging_candidates": 96,
     "actual_draft_places": 533,
@@ -36,7 +36,18 @@
       "A": 78,
       "B": 18
     },
-    "owner_approved": 0
+    "owner_approved": 0,
+    "priority_source_evidence_pass": {
+      "NAMED_SITE_SOURCE_RETRIEVED": 52,
+      "SOURCE_FETCH_UNAVAILABLE_THIS_PASS": 8,
+      "SITE_SCOPE_REVIEW_NEEDED": 6,
+      "IDENTITY_SOURCE_SCOPE_CORRECTED": 1,
+      "reviewed": 67,
+      "independently_checked_site_coordinates": 2,
+      "related_pilgrimage_church_coordinate_near_complex": 1,
+      "owner_approved": 0,
+      "import_ready": 0
+    }
   },
   "blocking_conditions": [
     "Owner approval and physical-site identity reviewed",
@@ -127,7 +138,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://diocesiscruzdeleje.org.ar/parroquia-ntra-sra-del-transito-y-santo-cura-brochero-santuario/",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://diocesiscruzdeleje.org.ar/parroquia-ntra-sra-del-transito-y-santo-cura-brochero-santuario/",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -168,7 +189,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://www.sonntagberg.at/pfarre-basilika-sonntagberg-mostviertel/",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://www.sonntagberg.at/pfarre-basilika-sonntagberg-mostviertel/",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -291,7 +322,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://www.carmelites.au/about-the-carmelites/olmc",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://www.carmelites.au/about-the-carmelites/olmc",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -332,7 +373,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://www.sacredheart.org.au/national-shrine",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://www.sacredheart.org.au/national-shrine",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -414,7 +465,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://www.maredsous.com/",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://www.maredsous.com/",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -496,7 +557,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://www.dekathedraal.be/en/visit",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://www.dekathedraal.be/en/visit",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -660,7 +731,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://arquidiocesesalvador.org.br/confira-os-novos-horarios-das-missas-e-atividades-religiosas-na-basilica-santuario-nossa-senhora-da-conceicao-da-praia/",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://arquidiocesesalvador.org.br/confira-os-novos-horarios-das-missas-e-atividades-religiosas-na-basilica-santuario-nossa-senhora-da-conceicao-da-praia/",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -701,7 +782,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://www.santuariodeanchieta.com/",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://www.santuariodeanchieta.com/",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -742,7 +833,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://santuariodobomjesusdalapa.com/santuario-bom-jesus-da-lapa/",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://santuariodobomjesusdalapa.com/santuario-bom-jesus-da-lapa/",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -824,7 +925,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "SOURCE_FETCH_UNAVAILABLE_THIS_PASS",
+          "existing_identity_url": "https://arquidiocesebh.org.br/arquidiocese/santuarios/santuario-basilica-nossa-senhora-da-piedade/",
+          "evidence_scope_note": "Original cited identity page could not be independently retrieved in this session. Do not mark the source URL invalid; alternative source or later retry needed.",
+          "suggested_source_url": "https://arquidiocesebh.org.br/arquidiocese/santuarios/santuario-basilica-nossa-senhora-da-piedade/",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -865,7 +976,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://santuariosantapaulina.org.br/conheca-o-santuario/",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://santuariosantapaulina.org.br/conheca-o-santuario/",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -988,7 +1109,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://www.budslau.by/",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://www.budslau.by/",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -1029,7 +1160,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://st-antoine.org/fr/nous-joindre/",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://st-antoine.org/fr/nous-joindre/",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -1111,7 +1252,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "SITE_SCOPE_REVIEW_NEEDED",
+          "existing_identity_url": "https://www.padiocese.ca/parish-locator",
+          "evidence_scope_note": "Diocesan directory names Shrine of St Theresa in Wakaw; proposed National Shrine / Little Flower title needs exact designation review.",
+          "suggested_source_url": "https://www.padiocese.ca/parish-locator",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -1124,7 +1275,7 @@
         "latitude": 47.36891,
         "longitude": -70.05569,
         "precision_suggestion": "site",
-        "coordinate_independently_verified": false,
+        "coordinate_independently_verified": true,
         "source_url": "https://toponymie.gouv.qc.ca/ct/ToposWeb/Fiche.aspx?no_seq=150108"
       },
       "identity_source_url": "https://toponymie.gouv.qc.ca/ct/ToposWeb/Fiche.aspx?no_seq=150108",
@@ -1152,7 +1303,28 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://toponymie.gouv.qc.ca/ct/ToposWeb/Fiche.aspx?no_seq=150108",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://toponymie.gouv.qc.ca/ct/ToposWeb/Fiche.aspx?no_seq=150108",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": true,
+          "official_coordinate_evidence": {
+            "latitude": 47.36891,
+            "longitude": -70.05569,
+            "source_url": "https://toponymie.gouv.qc.ca/ct/ToposWeb/Fiche.aspx?no_seq=150108",
+            "authority": "Commission de toponymie du Québec",
+            "scope": "OFFICIAL_NAMED_WORSHIP_SITE_COORDINATE",
+            "confirmed_precision": "site",
+            "distance_from_preview_m": 0,
+            "checked_on": "2026-11-06",
+            "acceptance_scope": "NAMED_SITE_POINT_ONLY_NO_ENTRANCE_CLAIM"
+          }
+        }
       }
     },
     {
@@ -1275,7 +1447,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://padrealbertohurtado.cl/santuario/",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://padrealbertohurtado.cl/santuario/",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -1316,7 +1498,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://www.diocesisdesanfelipe.cl/bienvenidos/2022/07/15/santuario-santa-teresa-de-los-andes/",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://www.diocesisdesanfelipe.cl/bienvenidos/2022/07/15/santuario-santa-teresa-de-los-andes/",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -1357,7 +1549,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://www.iglesia.cl/49579-rector-del-santuario-de-lo-vasquez-entrega-nuevo-balance-continua-gran-afluencia-de-peregrinos-y-recinto-mantiene-horario-de-atencion-habitual.html",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://www.iglesia.cl/49579-rector-del-santuario-de-lo-vasquez-entrega-nuevo-balance-continua-gran-afluencia-de-peregrinos-y-recinto-mantiene-horario-de-atencion-habitual.html",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -1398,7 +1600,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "SOURCE_FETCH_UNAVAILABLE_THIS_PASS",
+          "existing_identity_url": "https://centroaffd.arquibogota.org.co/directorio-general-AB",
+          "evidence_scope_note": "Original cited identity page could not be independently retrieved in this session. Do not mark the source URL invalid; alternative source or later retry needed.",
+          "suggested_source_url": "https://centroaffd.arquibogota.org.co/directorio-general-AB",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -1609,7 +1821,27 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "SITE_SCOPE_REVIEW_NEEDED",
+          "existing_identity_url": "https://www.bihk.cz/dieceze/kostel/nanebevzeti-panny-marie-36",
+          "evidence_scope_note": "Diocesan GPS and page identify the pilgrimage church of the Assumption at Králíky; the candidate names the larger Mother of God monastery/complex. Do not equate individual church and whole precinct.",
+          "suggested_source_url": "https://www.bihk.cz/dieceze/kostel/nanebevzeti-panny-marie-36",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false,
+          "nearby_related_site_point": {
+            "latitude": 50.074712,
+            "longitude": 16.782398666666666,
+            "source_url": "https://www.bihk.cz/dieceze/kostel/nanebevzeti-panny-marie-36",
+            "authority": "Diocese of Hradec Králové",
+            "scope": "PILGRIMAGE_CHURCH_COORDINATE_NOT_WHOLE_MONASTERY",
+            "distance_from_preview_m": 21.46,
+            "site_identity_scope": "PILGRIMAGE_CHURCH_NEAR_MONASTERY_COMPLEX_PIN",
+            "coordinate_independently_verified_for_whole_complex": false
+          }
+        }
       }
     },
     {
@@ -1650,7 +1882,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://www.mariahilf.eu/",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://www.mariahilf.eu/",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -1691,7 +1933,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://www.farnostsloup.cz/page.php",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://www.farnostsloup.cz/page.php",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -1732,7 +1984,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://www.strahovskyklaster.cz/en/for-visitors/what-you-can-visit",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://www.strahovskyklaster.cz/en/for-visitors/what-you-can-visit",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -1773,7 +2035,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://klastertepla.cz/aktuality-pozvanky-oznameni",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://klastertepla.cz/aktuality-pozvanky-oznameni",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -1814,7 +2086,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://www.andechs.de/wallfahrer-pilger.html",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://www.andechs.de/wallfahrer-pilger.html",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -1855,7 +2137,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://www2.bistum-augsburg.de/basilika-minor-st-lorenz_id586144",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://www2.bistum-augsburg.de/basilika-minor-st-lorenz_id586144",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -1937,7 +2229,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://www.katholisch-in-koeln.de/ueber-uns/st-maria-in-der-kupfergasse/",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://www.katholisch-in-koeln.de/ueber-uns/st-maria-in-der-kupfergasse/",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -1978,7 +2280,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://eglise-catholique-algerie.org/eglise-algerie/diocese-oran/",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://eglise-catholique-algerie.org/eglise-algerie/diocese-oran/",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -2019,7 +2331,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://www.moines-tibhirine.org/fr/histoire/tibhirine-aujourdhui/nouvelle-esperance",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://www.moines-tibhirine.org/fr/histoire/tibhirine-aujourdhui/nouvelle-esperance",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -2060,7 +2382,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "SITE_SCOPE_REVIEW_NEEDED",
+          "existing_identity_url": "https://communio.arquidiocesisdeguayaquil.org.ec/info/directorio/",
+          "evidence_scope_note": "Cited URL is an archdiocesan priest directory, not a site-specific Divine Mercy shrine profile.",
+          "suggested_source_url": "https://communio.arquidiocesisdeguayaquil.org.ec/info/directorio/",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -2183,7 +2515,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://www.ssnj.ec/santuario/",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://www.ssnj.ec/santuario/",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -2224,7 +2566,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://www.schoenstatt.ec/santuarios",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://www.schoenstatt.ec/santuarios",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -2306,7 +2658,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "SOURCE_FETCH_UNAVAILABLE_THIS_PASS",
+          "existing_identity_url": "https://www.sjdgranada.es/la-basilica-granada",
+          "evidence_scope_note": "Original cited identity page could not be independently retrieved in this session. Do not mark the source URL invalid; alternative source or later retry needed.",
+          "suggested_source_url": "https://www.sjdgranada.es/la-basilica-granada",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -2347,7 +2709,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://www.lacruzdecaravaca.com/contacto/",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://www.lacruzdecaravaca.com/contacto/",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -2388,7 +2760,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://mezquita-catedraldecordoba.es/organiza-la-visita/entradas-y-horarios/",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://mezquita-catedraldecordoba.es/organiza-la-visita/entradas-y-horarios/",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -2429,7 +2811,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://catedraldecadiz.com/horarios-visita-turistica/",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://catedraldecadiz.com/horarios-visita-turistica/",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -2511,7 +2903,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "SITE_SCOPE_REVIEW_NEEDED",
+          "existing_identity_url": "https://www.patrimonionacional.es/visita/real-monasterio-de-san-lorenzo-de-el-escorial",
+          "evidence_scope_note": "Official national heritage webpage renders unresolved dynamic placeholders in extraction; cannot use page text alone to certify the named monastery.",
+          "suggested_source_url": "https://www.patrimonionacional.es/visita/real-monasterio-de-san-lorenzo-de-el-escorial",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -2552,7 +2954,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://www.poblet.cat/fr/",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://www.poblet.cat/fr/",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -2593,7 +3005,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://www.abadiadesilos.es/",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://www.abadiadesilos.es/",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -2634,7 +3056,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://diocesisdesegovia.es/2026/05/20/los-misioneros-de-los-santos-apostoles-asumen-la-atencion-del-santuario-del-henar/",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://diocesisdesegovia.es/2026/05/20/los-misioneros-de-los-santos-apostoles-asumen-la-atencion-del-santuario-del-henar/",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -2675,7 +3107,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://torreciudad.org/en/book-your-visit/",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://torreciudad.org/en/book-your-visit/",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -2716,7 +3158,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://loyola.global/es/santuario",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://loyola.global/es/santuario",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -2757,7 +3209,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://webmail.archivalladolid.org/entidad.php?Clave=tbagprom",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://webmail.archivalladolid.org/entidad.php?Clave=tbagprom",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -2798,7 +3260,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://www.covamanresa.cat/es/home",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://www.covamanresa.cat/es/home",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -2839,7 +3311,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://caleruega.dominicos.es/es/contactar/",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://caleruega.dominicos.es/es/contactar/",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -2921,7 +3403,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://www.frigolet.com/",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://www.frigolet.com/",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -2962,7 +3454,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "SOURCE_FETCH_UNAVAILABLE_THIS_PASS",
+          "existing_identity_url": "https://www.diocese-dijon.com/paroisses/agglomeration-dijonnaise/dijon-centre-et-ouest/dijon-saint-benigne/",
+          "evidence_scope_note": "Original cited identity page could not be independently retrieved in this session. Do not mark the source URL invalid; alternative source or later retry needed.",
+          "suggested_source_url": "https://www.diocese-dijon.com/paroisses/agglomeration-dijonnaise/dijon-centre-et-ouest/dijon-saint-benigne/",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -3003,7 +3505,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://www.betharram.fr/contacts/betharram-contacts.html",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://www.betharram.fr/contacts/betharram-contacts.html",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -3044,7 +3556,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://www.carfingrotto.org/copy-of-contact",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://www.carfingrotto.org/copy-of-contact",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -3085,7 +3607,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://rcaos.org.uk/diocese/southwark-shrines/aylesford-priory/",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://rcaos.org.uk/diocese/southwark-shrines/aylesford-priory/",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -3126,7 +3658,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://santuariosc.com/ubicacion",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://santuariosc.com/ubicacion",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -3167,7 +3709,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "SITE_SCOPE_REVIEW_NEEDED",
+          "existing_identity_url": "https://www.zg-nadbiskupija.hr/zupe/85?ZupeId=140",
+          "evidence_scope_note": "Archdiocesan parish directory opened; individual Marian shrine/Remete scope requires a more specific section.",
+          "suggested_source_url": "https://www.zg-nadbiskupija.hr/zupe/85?ZupeId=140",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -3208,7 +3760,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://ika.hkm.hr/english/the-sarcophagus-containing-the-earthly-remains-of-cardinal-alojzije-stepinac-has-been-opened/",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://ika.hkm.hr/english/the-sarcophagus-containing-the-earthly-remains-of-cardinal-alojzije-stepinac-has-been-opened/",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -3249,7 +3811,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://www.benedictines.org.uk/our-houses/kylemore-abbey",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://www.benedictines.org.uk/our-houses/kylemore-abbey",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -3290,7 +3862,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://www.custodia.org/en/news/cana-of-galilee-the-joy-of-jesus-first-miracle/",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://www.custodia.org/en/news/cana-of-galilee-the-joy-of-jesus-first-miracle/",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -3331,7 +3913,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "SOURCE_FETCH_UNAVAILABLE_THIS_PASS",
+          "existing_identity_url": "https://www.italia.it/en/lazio/latina/cistercian-abbey-fossanova",
+          "evidence_scope_note": "Original cited identity page could not be independently retrieved in this session. Do not mark the source URL invalid; alternative source or later retry needed.",
+          "suggested_source_url": "https://www.italia.it/en/lazio/latina/cistercian-abbey-fossanova",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -3372,7 +3964,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "IDENTITY_SOURCE_SCOPE_CORRECTED",
+          "existing_identity_url": "https://en.nursia.org/",
+          "evidence_scope_note": "Existing identity URL en.nursia.org names the separate Abbazia di San Benedetto in Monte. Do not reuse as basilica identity evidence. The Italian Ministry of Culture's Basilica di S. Benedetto page directly names the Norcia basilica at Piazza San Benedetto.",
+          "suggested_source_url": "https://oroeterra.cultura.gov.it/spazi/basilica-di-s-benedetto/",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -3413,7 +4015,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://www.turismo.ra.it/en/culture-and-history/religious-buildings/basilica-san-giovanni-evangelista/",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://www.turismo.ra.it/en/culture-and-history/religious-buildings/basilica-san-giovanni-evangelista/",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -3454,7 +4066,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "SOURCE_FETCH_UNAVAILABLE_THIS_PASS",
+          "existing_identity_url": "https://lombardiabeniculturali.it/architetture/schede-complete/LMD80-00005",
+          "evidence_scope_note": "Original cited identity page could not be independently retrieved in this session. Do not mark the source URL invalid; alternative source or later retry needed.",
+          "suggested_source_url": "https://lombardiabeniculturali.it/architetture/schede-complete/LMD80-00005",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -3495,7 +4117,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "SOURCE_FETCH_UNAVAILABLE_THIS_PASS",
+          "existing_identity_url": "http://www.sacradisanmichele.com",
+          "evidence_scope_note": "Original cited identity page could not be independently retrieved in this session. Do not mark the source URL invalid; alternative source or later retry needed.",
+          "suggested_source_url": "http://www.sacradisanmichele.com",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -3536,7 +4168,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "SOURCE_FETCH_UNAVAILABLE_THIS_PASS",
+          "existing_identity_url": "https://www.sacrimonti.org/en/sacro-monte-di-oropa?p=1665",
+          "evidence_scope_note": "Original cited identity page could not be independently retrieved in this session. Do not mark the source URL invalid; alternative source or later retry needed.",
+          "suggested_source_url": "https://www.sacrimonti.org/en/sacro-monte-di-oropa?p=1665",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -3577,7 +4219,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://www.diocesi.brescia.it/wp-content/uploads/sites/2/2021/09/7dicembre2019-IstituzioneSantuarioDiocesanoRosaMistica.pdf",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://www.diocesi.brescia.it/wp-content/uploads/sites/2/2021/09/7dicembre2019-IstituzioneSantuarioDiocesanoRosaMistica.pdf",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -3741,7 +4393,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://www.rafqa.com/Convent-Saint-Rafqa",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://www.rafqa.com/Convent-Saint-Rafqa",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -3823,7 +4485,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "SITE_SCOPE_REVIEW_NEEDED",
+          "existing_identity_url": "https://www.custodia.org/en/sanctuaries/bethany/",
+          "evidence_scope_note": "Franciscan Custody page presents Bethany holy places; proposed specific Church of St Lazarus needs building-level scope reconciliation.",
+          "suggested_source_url": "https://www.custodia.org/en/sanctuaries/bethany/",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -3864,7 +4536,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://www.custodia.org/en/sanctuaries/bethlehem-the-shepherds-field-and-grotto/",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://www.custodia.org/en/sanctuaries/bethlehem-the-shepherds-field-and-grotto/",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -3946,7 +4628,17 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://www.chiayicath.org.tw/churchdetail_tw.php?id=5590",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://www.chiayicath.org.tw/churchdetail_tw.php?id=5590",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": false
+        }
       }
     },
     {
@@ -3959,7 +4651,7 @@
         "latitude": -27.855267,
         "longitude": 31.453717,
         "precision_suggestion": "site",
-        "coordinate_independently_verified": false,
+        "coordinate_independently_verified": true,
         "source_url": "https://catholicdirectory.org.za/eshowe-2/"
       },
       "identity_source_url": "https://catholicdirectory.org.za/eshowe-2/",
@@ -3987,7 +4679,28 @@
         "source_registry_url_collision_ids": [],
         "site_specific_source_corroboration_needed": false,
         "source_url_confirmed_live_in_this_pass": false,
-        "canonical_import_ready": false
+        "canonical_import_ready": false,
+        "source_evidence_pass": {
+          "reviewed_on": "2026-11-06",
+          "status": "NAMED_SITE_SOURCE_RETRIEVED",
+          "existing_identity_url": "https://catholicdirectory.org.za/eshowe-2/",
+          "evidence_scope_note": "Existing primary/institutional source page retrieved and supports the named site's existence; not a verification of the exact staged GPS or any title, relic, TLM status, opening hours or liturgical schedule.",
+          "suggested_source_url": "https://catholicdirectory.org.za/eshowe-2/",
+          "source_content_checked": true,
+          "site_identity_approved_for_publication": false,
+          "gps_independently_verified_in_this_pass": true,
+          "official_coordinate_evidence": {
+            "latitude": -27.855266666666665,
+            "longitude": 31.453716666666665,
+            "source_url": "https://catholicdirectory.org.za/eshowe-2/",
+            "authority": "Southern African Catholic Bishops Conference directory (Eshowe Diocese)",
+            "scope": "DIOCESAN_SHRINE_GPS",
+            "confirmed_precision": "site",
+            "distance_from_preview_m": 0.05,
+            "checked_on": "2026-11-06",
+            "acceptance_scope": "NAMED_SITE_POINT_ONLY_NO_ENTRANCE_CLAIM"
+          }
+        }
       }
     }
   ],
@@ -4066,6 +4779,7 @@
     "may_use_illustrative_locality_if_accepted": true,
     "no_runtime_import": true,
     "preserve_cl2_canonical_ids": true,
-    "no_tlm_venue_or_schedule_inference": true
+    "no_tlm_venue_or_schedule_inference": true,
+    "verified_geography_boundary": "Independent direct authority point coordinates for two named sites do not waive owner identity/admission approval. Pilgrimage church near a monastery does not certify the whole complex's exact building position."
   }
 }
