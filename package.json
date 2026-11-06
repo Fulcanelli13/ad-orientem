@@ -66,7 +66,7 @@
     "test:mass-icon-review": "node tests/mass-icon-gap-review.mjs && npm run test:mass-icon-necessity && npm run test:mass-icon-source",
     "test:mass-integration-grid": "node tests/mass-form-special-integration.mjs",
     "test:observed-mass": "node tests/observed-mass-source.mjs",
-    "test:full-mass-phone": "node tests/full-mass-preflight-phone-e2e.mjs",
+    "test:full-mass-phone": "node tests/full-mass-preflight-phone-e2e.mjs && node tests/home-h7-votive-entry-phone-e2e.mjs",
     "test:reader-special-structure": "node tests/reader-special-structure.mjs",
     "test:reader-asperges": "node tests/reader-asperges.mjs",
     "test:reader-objective-runtime": "node tests/reader-objective-runtime.mjs",
