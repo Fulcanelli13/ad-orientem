@@ -55,7 +55,7 @@ for(const language of ["en","fr"]){
   assert.equal(score(responses.at(-1),all,m,"LOW").length,0);
   assert.equal(score(responses.at(-1),all,{...m,provenance:{}}).length,0);
   assert.equal(score(responses.at(-1),all,{...m,proper:{status:"MISSING"}}).length,0);
-  const wrong={...all.at(-2),latin:"Per omnia saecula saeculorum, but unrelated."};
+  const wrong={...all.at(-2),latin:"Unrelated Latin text.",primary:"Unrelated Latin text.",secondary:"Unrelated English text.",alternate:"Unrelated Latin text."};
   assert.equal(score(all.at(-1),[...all.slice(0,-2),wrong,all.at(-1)],m).length,0);
   assert.equal(score(responses.at(-1),[...all,responses.at(-1)],m).length,0);
   const short=data(1,false),shortRows=rows(short,slot,language);
