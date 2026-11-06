@@ -99,6 +99,8 @@ assert.deepEqual(intake.counts, {
   source_rows:169, unique_candidates:169, priority:96, source_class_review:65,
   specific_holds:8, priority_in_previous_96:96, additional_73_integrated:73,
   b21_unapproved_draft_overlap:2, missing_country_area:0, new_unflagged_sub500m:0,
-  owner_approved:0, authorized_for_production:0
+  owner_approved:0, authorized_for_production:0,
+  source_review_links_for_new_73:73, prior_17_evidence_corrob:17,
+  second_pass_55_direct_pages:55, second_pass_1_index_only:1
 });
 console.log("PASS 169 Claude owner-review records: 96 priority, 73 evidence-linked sources/holds, two B21 draft overlaps, zero auto-publication");
