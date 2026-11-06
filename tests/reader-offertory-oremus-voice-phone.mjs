@@ -52,9 +52,11 @@ try{
      owner:state.ownership?.priestVoice,quiet:state.priestQuietOffertory??null,
      text:shell?.textContent??"",hasScore:Boolean(shell?.querySelector("[data-reference-score]"))};
    };
+   const properSourcePlaceholderMounted=api.model.cards.some(c=>c.paragraphs?.some(p=>
+     (p.sourceCueIds??[]).includes("AO.SM.C0109")));
    return {total:api.model.totalCards,
     oremus:await focus("AO.SM.C0108"),
-    proper:await focus("AO.SM.C0109"),
+    properSourcePlaceholderMounted,
     quiet:await focus("AO.SM.C0110")};
   });
   assert.equal(result.total,65);
@@ -62,16 +64,14 @@ try{
   assert.equal(result.oremus.voice,"SUNG / CLEAR","1962 n.513 must show chanted Oremus");
   assert.equal(result.oremus.owner,"MR1962_513_A_OFFERTORY_OREMUS_SUNG");
   assert.match(result.oremus.text,/Orémus/);
-  assert.equal(result.proper.cue,"AO.SM.C0109");
-  assert.equal(result.proper.voice,null,
-   "Schola's Offertory proper cannot forge an audible priest voice");
-  assert.equal(result.proper.owner,"SOURCE_PROPER_OFFERTORY_NOT_A_PRIEST_SUNG_CUE");
+  assert.equal(result.properSourcePlaceholderMounted,false,
+   "The canonical C0109 source action is replaced by the resolved Proper; it is not a reader paragraph or evidence of a second priest chant");
   assert.equal(result.quiet.cue,"AO.SM.C0110");
   assert.equal(result.quiet.voice,"SECRET / QUIET");
   assert.equal(result.quiet.owner,"SUNG_SOURCE_OFFERTORY_PRIEST_PRIVATE");
   assert.equal(result.quiet.quiet?.iconKey,"priest_silent");
   assert.equal(result.oremus.hasScore,false,"No guessed priest Oremus neumes");
-  assert.equal(result.proper.hasScore,false,"No invented Offertory proper score");
+  // Dynamic Proper and Schola music are independent of the priest Oremus cue.
   await mkdir(resolve(root,".tmp/offertory-oremus-voice-boundary"),{recursive:true});
   await page.screenshot({path:resolve(root,
    ".tmp/offertory-oremus-voice-boundary/phone-"+width+".png"),fullPage:true});
