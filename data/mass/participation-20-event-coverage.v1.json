@@ -9,6 +9,7 @@
     "approvedCatalogue": "src/mass/reader-inline-chant-approved.js",
     "orationSourceGate": "src/mass/reader-oration-amen-source-handoff.js",
     "orationToneGate": "src/mass/reader-oration-amen-tone-policy.js",
+    "twoGreetingContextTransferLedger": "data/mass/two-greeting-music-source-crosswalk.v1.json",
     "gospelConclusionNonSungAuthority": "https://media.musicasacra.com/pdf/highmass.pdf",
     "gospelConclusionCeremonialCorroboration": "https://acss.sspxusa.org/rubrics/highmass/HighMass-Master-of-Ceremonies.pdf",
     "publication": "ONLY_EXACT_ITE_VIII_2_FRAGMENTS_APPROVED_AS_OF_2026_11_06"
@@ -50,6 +51,7 @@
         "https://gregobase.selapa.net/chant.php?id=961"
       ],
       "conditionalSources": null,
+      "contextTransferCandidate": null,
       "reviewAction": "Collate selected Gloria VIII 1961 first phrase; add other settings only from independently authenticated selections."
     },
     {
@@ -73,6 +75,7 @@
         "https://gregobase.selapa.net/chant.php?id=4487"
       ],
       "conditionalSources": null,
+      "contextTransferCandidate": null,
       "reviewAction": "Collate printed 1961 festive Et cum spiritu tuo; keep ferial and older tone choices distinct."
     },
     {
@@ -107,6 +110,7 @@
         ],
         "publicScoreApproved": false
       },
+      "contextTransferCandidate": null,
       "reviewAction": "Verify full selected Proper conclusion and the 1961 p.114*/116* response; no automatic pitch inference or public score."
     },
     {
@@ -133,6 +137,7 @@
         "https://gregobase.selapa.net/chant.php?id=4491"
       ],
       "conditionalSources": null,
+      "contextTransferCandidate": null,
       "reviewAction": "Collate both standard/ad-lib 1961 Gospel greetings and require explicit selection of the alternative."
     },
     {
@@ -159,6 +164,7 @@
         "https://gregobase.selapa.net/chant.php?id=4491"
       ],
       "conditionalSources": null,
+      "contextTransferCandidate": null,
       "reviewAction": "Collate both standard/ad-lib 1961 Gloria tibi Domine source responses."
     },
     {
@@ -176,6 +182,7 @@
       "fixedResearchSourceIds": [],
       "fixedResearchWitnesses": [],
       "conditionalSources": null,
+      "contextTransferCandidate": null,
       "reviewAction": "This 1962 High-Mass response is made after the Gospel but NOT sung by the choir; preserve its Latin/vernacular text, without a score (Haynes 2007, p. 5; SSPX high-Mass MC guide)."
     },
     {
@@ -200,6 +207,7 @@
         "https://gregobase.selapa.net/chant.php?id=749"
       ],
       "conditionalSources": null,
+      "contextTransferCandidate": null,
       "reviewAction": "Collate selected Credo III 1961 incipit; source-score setting must match the Mass programme."
     },
     {
@@ -217,6 +225,15 @@
       "fixedResearchSourceIds": [],
       "fixedResearchWitnesses": [],
       "conditionalSources": null,
+      "contextTransferCandidate": {
+        "sourceId": 4487,
+        "sourceUrl": "https://gregobase.selapa.net/chant.php?id=4487",
+        "sourceContextCertified": false,
+        "publicScoreApproved": false,
+        "candidateSelection": "ORATION_FESTIVE_4487_UNVERIFIED_CONTEXT",
+        "printedSourceScope": "1961_ORATION_GREETING_ONLY",
+        "requiredAction": "Verify musical source transfer specifically for OFFERTORY_GREETING"
+      },
       "reviewAction": "Verify an independent 1961 Offertory greeting source and its actual liturgical tone; same words do not license borrowing Collect or Preface notes."
     },
     {
@@ -243,6 +260,7 @@
         "https://gregobase.selapa.net/chant.php?id=4450"
       ],
       "conditionalSources": null,
+      "contextTransferCandidate": null,
       "reviewAction": "Collate the exact 1961 Preface-opening Amen; never borrow an oration Amen by identical text."
     },
     {
@@ -269,6 +287,7 @@
         "https://gregobase.selapa.net/chant.php?id=4450"
       ],
       "conditionalSources": null,
+      "contextTransferCandidate": null,
       "reviewAction": "Collate solemn/ferial 1961 Preface dialogue response against their separate printed witnesses."
     },
     {
@@ -295,6 +314,7 @@
         "https://gregobase.selapa.net/chant.php?id=4450"
       ],
       "conditionalSources": null,
+      "contextTransferCandidate": null,
       "reviewAction": "Collate solemn/ferial Habemus ad Dominum responses; no guessed tone from priest pitch."
     },
     {
@@ -321,6 +341,7 @@
         "https://gregobase.selapa.net/chant.php?id=4450"
       ],
       "conditionalSources": null,
+      "contextTransferCandidate": null,
       "reviewAction": "Collate solemn/ferial Dignum et iustum est responses against their exact source."
     },
     {
@@ -344,6 +365,7 @@
         "https://gregobase.selapa.net/chant.php?id=7282"
       ],
       "conditionalSources": null,
+      "contextTransferCandidate": null,
       "reviewAction": "Collate 1961 Canon-ending Amen from source #7282, never a generic Amen."
     },
     {
@@ -367,6 +389,7 @@
         "https://gregobase.selapa.net/chant.php?id=4327"
       ],
       "conditionalSources": null,
+      "contextTransferCandidate": null,
       "reviewAction": "Collate the distinct 1961 Pax-prelude Amen from source #4327."
     },
     {
@@ -390,6 +413,7 @@
         "https://gregobase.selapa.net/chant.php?id=7282"
       ],
       "conditionalSources": null,
+      "contextTransferCandidate": null,
       "reviewAction": "Verify printed phrase equality for both Pater noster tones; retain exact response #7282."
     },
     {
@@ -413,6 +437,7 @@
         "https://gregobase.selapa.net/chant.php?id=4327"
       ],
       "conditionalSources": null,
+      "contextTransferCandidate": null,
       "reviewAction": "Collate 1961 Pax Domini Et cum spiritu tuo from source #4327."
     },
     {
@@ -436,6 +461,7 @@
         "https://gregobase.selapa.net/chant.php?id=4487"
       ],
       "conditionalSources": null,
+      "contextTransferCandidate": null,
       "reviewAction": "Collate 1961 festive greeting; do not assume identical notes for ferial."
     },
     {
@@ -470,6 +496,7 @@
         ],
         "publicScoreApproved": false
       },
+      "contextTransferCandidate": null,
       "reviewAction": "Source-bind selected 1962 Postcommunion (including commemorations), then collate 1961 festive/old solemn excerpts; ferial stays recto tono."
     },
     {
@@ -487,6 +514,15 @@
       "fixedResearchSourceIds": [],
       "fixedResearchWitnesses": [],
       "conditionalSources": null,
+      "contextTransferCandidate": {
+        "sourceId": 4487,
+        "sourceUrl": "https://gregobase.selapa.net/chant.php?id=4487",
+        "sourceContextCertified": false,
+        "publicScoreApproved": false,
+        "candidateSelection": "ORATION_FESTIVE_4487_UNVERIFIED_CONTEXT",
+        "printedSourceScope": "1961_ORATION_GREETING_ONLY",
+        "requiredAction": "Verify musical source transfer specifically for DISMISSAL_GREETING"
+      },
       "reviewAction": "Identify the printed 1961 greeting tone applicable to the dismissal context; do not copy the preceding Collect/Postcommunion dialogue."
     },
     {
@@ -519,6 +555,7 @@
         "https://gregobase.selapa.net/chant.php?id=823"
       ],
       "conditionalSources": null,
+      "contextTransferCandidate": null,
       "reviewAction": "Keep two approved Ite VIII score fragments restricted to that setting; review Benedicamus VIII and Requiescant alternatives separately."
     }
   ]
