@@ -1,0 +1,90 @@
+{
+  "schema": "AO_SACRED_ART_FIRST_FIVE_MASTER_ACQUISITION_V1",
+  "asOf": "2026-10-17",
+  "context": "Acquisition into build artifacts only. No publication, no replacement of the curator-selected physical work, no new aesthetic rating.",
+  "approvalSource": "data/research/sacred-art-user-frozen-decisions-20261017.v1.json",
+  "productionMediaSource": "data/calendar/sacred-art-certified-media.v1.json",
+  "policy": {
+    "noRightsHolderContact": true,
+    "noPaidLicences": true,
+    "neverAutoPublish": true,
+    "neverAssumeCandidatePhotoIsUserApproved": true,
+    "requiresExactOriginal": true,
+    "requiresCanonicalGospelAndPhoneQA": true,
+    "excludePradoMediaIncludingThirdPartyMirrors": true
+  },
+  "works": [
+    {
+      "artworkId": "ART-eter-aul-ubens-doration-of-the-agi",
+      "feast": "Epiphany",
+      "researchDate": "2026-01-06",
+      "subject": "Matthew 2:1–12",
+      "artist": "Peter Paul Rubens",
+      "title": "Adoration of the Magi",
+      "sourceObjectUrl": "https://www.museodelprado.es/en/the-collection/art-work/adoration-of-the-magi/b6440da1-0c0c-4ead-84b7-f5a017e2fd17",
+      "sourceKind": "HOLD_PRADO_SOURCE_POLICY",
+      "note": "Prado-associated reproduction excluded by user's 2026-10-20 instruction; preserve approved artwork but do not fetch museum/Commons/mirror pixels.",
+      "provider": null,
+      "commonsTitle": "File:La adoración de los Reyes Magos (Rubens, Prado).jpg",
+      "verifiedMuseumAccession": "P001638",
+      "filePageUrl": "https://commons.wikimedia.org/wiki/File:La_adoraci%C3%B3n_de_los_Reyes_Magos_(Rubens,_Prado).jpg",
+      "sourcePolicy": {
+        "status": "HOLD_PRADO_SOURCE_POLICY",
+        "noFetch": true,
+        "noPromotion": true,
+        "appliesToMirrorsAndCommons": true
+      }
+    },
+    {
+      "artworkId": "ART-hilippe-de-hampaigne-he-nnunciation",
+      "feast": "Annunciation",
+      "researchDate": "2026-03-25",
+      "subject": "Luke 1:26–38",
+      "artist": "Philippe de Champaigne",
+      "title": "The Annunciation",
+      "sourceObjectUrl": "https://www.metmuseum.org/art/collection/search/438724",
+      "provider": "MET_OPEN_ACCESS",
+      "museumObjectId": 438724,
+      "accession": "2004.31",
+      "sourceKind": "PUBLIC_DOMAIN_OBJECT_API_VERIFIED",
+      "note": "User approved this exact Met physical painting; Met Open Access primary image may be acquired, but final crop/phone/Proper release remains blocked."
+    },
+    {
+      "artworkId": "ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+      "feast": "Laetare Sunday",
+      "researchDate": "2026-03-15",
+      "subject": "John 6:1–15",
+      "artist": "Giovanni Lanfranco",
+      "title": "Miracle of Loaves and Fishes",
+      "sourceObjectUrl": "https://onlinecollection.nationalgallery.ie/objects/10345/the-miracle-of-the-loaves-and-fishes",
+      "sourceKind": "PENDING_EXACT_OPEN_FILE",
+      "note": "Original now identified as National Gallery of Ireland NGI.72; Commons faithful-reproduction file is only 1285x683px, so premium mobile master acquisition remains on hold."
+    },
+    {
+      "artworkId": "ART-rtus-olffort-scension-ntwerp-osary-cycle",
+      "feast": "Ascension",
+      "researchDate": "2026-05-14",
+      "subject": "Mark 16:14–20",
+      "artist": "Artus Wolffort",
+      "title": "Ascension — Antwerp Rosary cycle",
+      "sourceObjectUrl": "https://www.sintpaulusantwerpen.be/en/art-history/art-collection/15-mysteries/",
+      "sourceKind": "COMMONS_PUBLIC_DOMAIN_ART_SOURCE_FOR_TECHNICAL_STAGING",
+      "note": "Commons file identifies Artus Wolffort Ascension in Antwerp St Paulus Rosary cycle, oil on panel c.1617; original 3348x4500px; source-photo and mobile QA pending.",
+      "provider": "WIKIMEDIA_COMMONS_PD_ART",
+      "commonsTitle": "File:Artus Wolffort - Ascension of Jesus Christ.jpg",
+      "filePageUrl": "https://commons.wikimedia.org/wiki/File:Artus_Wolffort_-_Ascension_of_Jesus_Christ.jpg",
+      "verifiedMuseumAccession": null
+    },
+    {
+      "artworkId": "ART-ean-estout-entecost",
+      "feast": "Pentecost",
+      "researchDate": "2026-05-24",
+      "subject": "John 14:23–31 / Acts 2 (feast subject)",
+      "artist": "Jean Restout",
+      "title": "Pentecost",
+      "sourceObjectUrl": "https://commons.wikimedia.org/wiki/File:Jean_II_Restout_-_Pentec%C3%B4te.jpg",
+      "sourceKind": "PENDING_QUALITY_AND_PHOTO_MATCH",
+      "note": "Louvre Restout INV20303 exact painting confirmed; currently verified Commons sources are 1000x589 or 1240x730, below 2000px technical threshold."
+    }
+  ]
+}

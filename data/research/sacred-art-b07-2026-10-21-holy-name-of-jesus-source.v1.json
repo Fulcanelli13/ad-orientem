@@ -1,0 +1,155 @@
+{
+  "schema": "AO_SACRED_ART_CONTINUATION_B07_V1",
+  "batchId": "AO-ART-2026-10-21-B07",
+  "asOf": "2026-10-21",
+  "repository": "Fulcanelli13/ad-orientem",
+  "branch": "research/w60-sanctoral-art-physical-dedupe-20261015",
+  "scope": "Research a genuine remaining major-feast subject source, preserving existing catalogue identities and editorial decisions. Source and rights review only; no artwork catalogue or production mutation.",
+  "upstream": {
+    "b06": "data/research/sacred-art-b06-2026-10-21-peter-paul-and-doctor-source-gaps.v1.json",
+    "majorFeastPriority": "data/calendar/sacred-art-major-feast-research-leads.v1.json on platform/885-sacred-art-candidates",
+    "calendarPrioritySeed": "data/calendar/sacred-art-class-ii-iii-occasions-20261013.v1.json on platform/885-sacred-art-candidates",
+    "catalogue": "data/calendar/sacred-art-candidates.v1.json on platform/885-sacred-art-candidates",
+    "freeze": "data/research/sacred-art-user-frozen-decisions-20261017.v1.json"
+  },
+  "rules": {
+    "preserveExistingUserDecisions": true,
+    "noPradoOrMirrors": true,
+    "noNewCanonicalArtworkID": true,
+    "noRatingOrApprovalInferenceFromMissingRecords": true,
+    "noRawImageAcquisitionRetry": true,
+    "noProductionCertification": true
+  },
+  "record": {
+    "recordId": "B07-01",
+    "category": "Major Class II devotional subject research — Most Holy Name of Jesus",
+    "existingArtworkId": null,
+    "canonicalCatalogueMatch": "No matching Gaulli/Baciccio title or physical-object record found in the 281-entry PR #887 candidate snapshot; no matching name or object 2005-34 found in the reconciled W64 physical five-star file. This does not prove absence from older external ratings; keep editorial state unassigned and require historical decision crosswalk before any future selection.",
+    "painting": {
+      "artist": "Giovanni Battista Gaulli, called Il Baciccio",
+      "title": "The Triumph of the Name of Jesus",
+      "date": "1676–1679",
+      "institution": "Princeton University Art Museum",
+      "objectNumber": "2005-34",
+      "medium": "oil on paper, laid down on canvas",
+      "dimensions": "163 × 111 cm (frame 175.9 × 123.5 × 7.9 cm)",
+      "officialObjectUrl": "https://artmuseum.princeton.edu/art/collections/objects/45004"
+    },
+    "subjectRelation": {
+      "assessment": "Exact devotional subject: the IHS monogram is adored by saints and angels; the museum links the ceiling fresco iconography to Philippians 2:10.",
+      "qualification": "This is a preparatory oil sketch (bozzetto) for the Gesù church ceiling fresco, not the finished fresco. It represents the Holy Name devotion directly, but does not itself verify that the Holy Name was the 1962 liturgical principal on 4 January 2026."
+    },
+    "calendarRelation": {
+      "researchTarget": "Most Holy Name of Jesus, listed as a rank-2 editorial occasion for 2026-01-04 in the existing Class II/III seed.",
+      "dayResolver": "That seed marks observed-principal status unconfirmed; no observed-day assignment or calendar coverage is changed.",
+      "source": "data/calendar/sacred-art-class-ii-iii-occasions-20261013.v1.json on platform/885-sacred-art-candidates"
+    },
+    "image": {
+      "officialObjectImageRoute": "Princeton object page provides download interface and IIIF manifest.",
+      "iiifManifest": "https://data.artmuseum.princeton.edu/iiif/objects/45004",
+      "firstFullView": {
+        "url": "https://media.artmuseum.princeton.edu/iiif/3/collection/PUAMSTU2016_43095/full/max/0/default.jpg",
+        "pixels": "6131 × 8935",
+        "ratio": 0.686,
+        "physicalPaintedRatio": 0.681,
+        "interpretation": "Full first object view; ratio differs from the painted dimensions by about 0.7%, consistent with an uncropped full-artwork reproduction."
+      },
+      "additionalViews": "Six further IIIF canvases are details/views; use the first full-object view for whole painting if later acquired.",
+      "acquired": false,
+      "attemptedAccess": "A browser open of the maximum-image endpoint timed out; no image bytes, hash, pixel inspection, or crop QA were obtained. Do not retry the same blocked byte transfer in this environment."
+    },
+    "rights": {
+      "painting": "Underlying 1676–79 painting is public domain.",
+      "photoPolicy": "Princeton states that high-resolution images of public-domain works may be freely downloaded from the online collection for use without seeking approval, and requests the credit 'Image courtesy of the Princeton University Art Museum.'",
+      "photoRightsEvidenceUrl": "https://artmuseum.princeton.edu/art/our-collections/image-use-and-access",
+      "objectEvidenceUrl": "https://artmuseum.princeton.edu/art/collections/objects/45004",
+      "licenceClassification": "Institutional no-approval reproduction/use policy verified; the museum does not label this route CC0 or use an explicit commercial-use clause in the inspected record.",
+      "commercialReuse": "No-approval use route is clear; commercial scope not expressly stated. Keep rights status conditional until the intended distribution context is checked against the published policy.",
+      "attribution": "Image courtesy of the Princeton University Art Museum; include the museum caption if image is later used."
+    },
+    "mobile": {
+      "sourceOrientation": "Portrait",
+      "recommendation": "Contain/letterbox the full oil sketch; do not center-crop the tall heavenly-to-earthly composition.",
+      "qaStatus": "Aspect ratio supported by IIIF metadata only; visual crop QA pending actual image bytes."
+    },
+    "decisionState": {
+      "discovered": true,
+      "physicalIdentityVerified": true,
+      "sourceRouteFound": true,
+      "sourceAcquired": false,
+      "rightsEvidence": "Institutional no-approval public-domain image-use policy; no explicit CC0/commercial clause",
+      "editorialApproved": false,
+      "productionCertified": false,
+      "rating": "No rating assigned or changed. Absence from the consulted rating snapshot is not permission to change historical choices."
+    },
+    "status": "EXACT_SUBJECT_AND_OBJECT_VERIFIED; HIGH_RES_IIIF_ROUTE_FOUND; FREE_NO_APPROVAL_USE_POLICY_FOUND; COMMERCIAL_SCOPE_NOT_EXPLICIT; SOURCE_BYTES_NOT_ACQUIRED; EDITORIAL_AND_PRODUCTION_GATES_OPEN"
+  },
+  "totals": {
+    "targets": 1,
+    "newPhysicalPaintingIdentitiesVerified": 1,
+    "existingArtworkIDsReused": 0,
+    "newCanonicalArtworkIDs": 0,
+    "exactSubjectRoutesFound": 1,
+    "sourceRoutesIdentified": 1,
+    "explicitReusePolicyFindings": 1,
+    "imageDimensionsVerifiedFromIIIF": 1,
+    "rawImageFilesAcquired": 0,
+    "sha256Recorded": 0,
+    "imageIntegrityChecks": 0,
+    "mobileCropInspections": 0,
+    "editorialApprovalsChanged": 0,
+    "productionMastersCertified": 0,
+    "strictCalendarCoverageChanges": 0
+  },
+  "progress": {
+    "baseline": {
+      "calendarCatalogue": 451,
+      "pr887CatalogueSnapshot": 281,
+      "approvedArtworkIDs": 107,
+      "lockedArtworkIDs": 90,
+      "permanentRejections": 68,
+      "historicW64FivePhysicalIDs": 109,
+      "sourceIdentityMasterLeads": 222,
+      "previouslyArchivedOriginals": 8,
+      "pendingOriginals": 214,
+      "classIDateAssociations": "53/53",
+      "classIStrict": "18/53",
+      "majorClassIIStrict": "13/24",
+      "otherClassIIStrict": "6/52",
+      "certifiedProductionMasters": 0
+    },
+    "afterB07": {
+      "calendarCatalogue": 451,
+      "pr887CatalogueSnapshot": 281,
+      "approvedArtworkIDs": 107,
+      "lockedArtworkIDs": 90,
+      "permanentRejections": 68,
+      "historicW64FivePhysicalIDs": 109,
+      "sourceIdentityMasterLeads": 222,
+      "previouslyArchivedOriginals": 8,
+      "pendingOriginals": 214,
+      "cumulativeB01toB07": {
+        "verifiedOrReconfirmedPhysicalIdentityTargets": 30,
+        "sourceRoutes": 27,
+        "sourceRightsFindings": 26,
+        "rawImageFilesAcquired": 0,
+        "newCanonicalArtworkIDs": 0,
+        "ratingsOrApprovalsChanged": 0,
+        "certifiedProductionMasters": 0
+      },
+      "classIDateAssociations": "53/53 unchanged",
+      "classIStrict": "18/53 unchanged",
+      "majorClassIIStrict": "13/24 unchanged",
+      "otherClassIIStrict": "6/52 unchanged"
+    }
+  },
+  "queue": {
+    "nextPriority": [
+      "Continue on W60 from this B07 file. First select an unresolved high-priority exact major Class II subject or approved Class I source gap after excluding already-recorded B01–B07 source leads.",
+      "When a source delivers no image bytes, do not repeat the same transfer; continue metadata, rights, identity, or another independent source route.",
+      "Keep Doctor gaps open: Cyril of Alexandria has one officially verified physical oil portrait identity with no linked photo, a second Braga photo lead is provisional; Cyril of Jerusalem still has no suitable verified second painting.",
+      "Before any later editorial evaluation, reconcile physical object against the complete historical user-rating record; absence from the 281 candidate branch or W64 5-star file alone is not proof of never reviewed."
+    ],
+    "nextCheckpoint": "AO-ART-2026-10-21-B08 — continue highest-priority unresolved exact Class I / major Class II source work on the W60 research branch; do not wait for approval after this save point."
+  }
+}

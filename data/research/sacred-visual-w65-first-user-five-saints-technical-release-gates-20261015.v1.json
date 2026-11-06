@@ -1,0 +1,187 @@
+{
+  "schema": "AO_SACRED_VISUAL_W65_SAINT_ARTWORK_TECHNICAL_REVIEW_V1",
+  "asOf": "2026-10-15",
+  "sourceOwner": "data/research/sacred-visual-w64-rated5-bible-atlas-and-saints-map-exact-subject-reuse-20261015.v1.json",
+  "releaseRule": "User rating 5 is an aesthetic selection, never automatic reproduction rights, attribution, correct original-photo ID, acceptable resolution, or production approval.",
+  "nativePilotCount": 6,
+  "currentAestheticFiveCandidates": 2,
+  "publishedPortraitAssets": 0,
+  "entries": [
+    {
+      "saintId": "saint:therese-of-lisieux",
+      "artworkId": "carmel-lisieux-1925-therese-aux-roses",
+      "artist": "Celine Martin (Soeur Genevieve de la Sainte-Face)",
+      "artworkTitle": "Therese aux roses (1925)",
+      "subjectType": "DEVOTIONAL_PORTRAIT",
+      "aestheticRating": 5,
+      "noAestheticRerating": true,
+      "primaryArtistEvidence": "https://archives.carmeldelisieux.fr/personnage/celine-martin/",
+      "artistDied": 1959,
+      "archiveLead": "https://archives.carmeldelisieux.fr/en/naissance-dune-sainte/iconographie-theresienne/tableaux-2/",
+      "rights": {
+        "state": "HOLD_UNTIL_INDEPENDENTLY_VERIFIABLE_EXISTING_REUSE_RIGHTS",
+        "note": "Creator died in 1959; ordinary life+70 rights may run through 2029 in applicable jurisdictions, subject to local legal rules. Do not assert global public-domain status.",
+        "discoveryPolicy": "EXISTING_PUBLIC_DOMAIN_OR_PREEXISTING_OPEN_LICENSE_ONLY_NO_CONTACT",
+        "outreachAllowed": false,
+        "paidLicenceAcquisitionAllowed": false
+      },
+      "provenance": {
+        "originalObjectId": null,
+        "exactReproductionUrl": null,
+        "hash": null,
+        "ratedImageMatched": false,
+        "ratedSourceLandingPageUrl": "https://archives.carmeldelisieux.fr/en/naissance-dune-sainte/iconographie-theresienne/tableaux-2/",
+        "ratedSourceLandingPageMatchesW64": true,
+        "ratedFileSha256": null,
+        "physicalOriginal": {
+          "artist": "Céline Martin (Sœur Geneviève de la Sainte-Face)",
+          "workTitle": "Thérèse aux roses",
+          "year": 1925,
+          "medium": "PAINTING",
+          "dimensionsCm": {
+            "height": 86,
+            "width": 65
+          },
+          "custodian": "Carmel of Lisieux",
+          "authoritativeOriginalDescription": "https://archives.carmeldelisieux.fr/en/naissance-dune-sainte/iconographie-theresienne/tableaux-2/",
+          "exactPhotoOfThisOriginalCertified": false,
+          "warning": "The Lisieux archives document numerous copies, engravings and derivative interpretations. Identical titles or iconography are not proof of matching the 1925 physical painting."
+        }
+      },
+      "media": {
+        "localAsset": null,
+        "rightsVerified": false,
+        "phoneVisualQA": false,
+        "cropVerified": false,
+        "alternateSourceCandidate": {
+          "vendor": "Bridgeman Images",
+          "assetNumber": "PCT4295048",
+          "url": "https://www.bridgemanimages.com/en-US/cartier-patrice/portrait-of-saint-therese-of-the-child-jesus-by-his-sister-celine-martin-engraving/engraving/asset/4295048",
+          "widthPx": 3498,
+          "heightPx": 4750,
+          "sourceMedium": "ENGRAVING",
+          "credit": "Patrice Cartier / Bridgeman Images",
+          "licensing": "EXCLUDED_COMMERCIAL_DERIVATIVE",
+          "relationToUserRatedOriginal": "DERIVATIVE_REPRODUCTION_NOT_CERTIFIED_PHOTO_OF_PAINTING",
+          "maySubstituteForFiveRatedPainting": false,
+          "releaseAllowed": false,
+          "note": "Commercially licensed engraving is not the rated painting and is outside the no-permissions/no-paid-licences policy. Do not purchase or use."
+        }
+      },
+      "releaseAllowed": false,
+      "nextAction": "Search existing demonstrably open-licensed or public-domain reproduction sources for the same original. Verify jurisdiction, original/photo identity, exact-file reuse terms and mobile quality from published evidence alone. If none qualify, leave artwork unassigned; no outreach or paid licensing."
+    },
+    {
+      "saintId": "saint:margaret-mary-alacoque",
+      "artworkId": "podesti-margaret-mary-source",
+      "artist": "Francesco Podesti (Commons attribution; museum object verification pending)",
+      "artworkTitle": "Apparizione a Marguerite Marie Alacoque",
+      "subjectType": "MYSTICAL_APPARITION_SCENE_NOT_SOLO_PORTRAIT",
+      "aestheticRating": 5,
+      "noAestheticRerating": true,
+      "source": "https://commons.wikimedia.org/wiki/File:Apparizione_a_Marguerite_Marie_Alacoque.jpg",
+      "rights": {
+        "state": "EXISTING_COMMONS_REUSE_TERMS_REQUIRE_FILE_LEVEL_VERIFICATION_NO_OUTREACH",
+        "notes": [
+          "Commons states public-domain faithful reproduction and uploader CC BY-SA 4.0.",
+          "Author died 1895, so the underlying old painting is widely public domain.",
+          "File photographer/source described as uploader own work; verify the original object and rights/attribution for the exact reproduced file."
+        ],
+        "discoveryPolicy": "EXISTING_PUBLIC_DOMAIN_OR_PREEXISTING_OPEN_LICENSE_ONLY_NO_CONTACT",
+        "outreachAllowed": false,
+        "paidLicenceAcquisitionAllowed": false
+      },
+      "provenance": {
+        "originalObjectId": null,
+        "exactReproductionUrl": null,
+        "hash": null,
+        "ratedImageMatched": false,
+        "claimedMuseum": "Vatican Museums",
+        "ratedSourceLandingPageUrl": "https://commons.wikimedia.org/wiki/File:Apparizione_a_Marguerite_Marie_Alacoque.jpg",
+        "ratedSourceLandingPageMatchesW64": true,
+        "ratedFileSha256": null,
+        "independentPublishedObjectAttribution": {
+          "author": "Teodoro De Giorgio",
+          "work": "The devotion to the Sacred Heart of Christ: A theological and iconographic study (Osaka, 2021)",
+          "reference": "https://www.academia.edu/figures/36808214/figure-1-francesco-podesti-apparition-of-jesus-to-margue",
+          "citedImageDescription": "Francesco Podesti, Apparition of Jesus to Marguerite-Marie Alacoque, before 1864, Vatican Museums",
+          "status": "SECONDARY_SCHOLARLY_CORROBORATION_OF_ARTIST_AND_COLLECTION_NOT_PRIMARY_ACCESSION_CERTIFICATION"
+        },
+        "primaryMuseumAccessionVerified": false,
+        "commonsExactFile": {
+          "fileDescriptionUrl": "https://commons.wikimedia.org/wiki/File:Apparizione_a_Marguerite_Marie_Alacoque.jpg",
+          "originalPublishedPixels": {
+            "width": 800,
+            "height": 600
+          },
+          "bytes": 49529,
+          "sha1AsDeclaredByCommons": "8274c6a9570d4ab8941874933989f0d50e175dc1",
+          "sourceFileSha1IndependentlyRehashed": false,
+          "fileUploadedOn": "2016-06-09",
+          "originalImageReproductionQuality": "ONLY_800x600_NO_HIGHER_RESOLUTION_ON_THIS_COMMONS_RECORD",
+          "licensesDeclared": [
+            "PD-ART_FAITHFUL_2D_PHOTOGRAPH",
+            "CC-BY-SA-4.0_FROM_UPLOADER"
+          ],
+          "rightsLegalReviewComplete": false,
+          "creditLicensePage": "https://creativecommons.org/licenses/by-sa/4.0/"
+        },
+        "officialMuseumSiteRightNotice": "https://www.museivaticani.va/content/museivaticani/en/copyright.html"
+      },
+      "media": {
+        "originalListedWidth": 800,
+        "originalListedHeight": 600,
+        "originalListedBytes": 49529,
+        "localAsset": null,
+        "rightsVerified": false,
+        "phoneVisualQA": false,
+        "cropVerified": false
+      },
+      "releaseAllowed": false,
+      "nextAction": "Verify exact Commons file licence and attribution against current published source metadata; look for existing open-source higher-resolution reproduction of same original, with verifiable author/object match. If no suitable openly reusable file exists, leave artwork unassigned. No museum contact."
+    }
+  ],
+  "guardrails": {
+    "singleCanonicalArtId": true,
+    "noShrinePhotoAsPortrait": true,
+    "noNewPaintingOrNewRating": true,
+    "noMapPinFromArt": true,
+    "no1962MassChange": true,
+    "neverReleaseWhenRightsUnknown": true,
+    "keepSourceMapPortraitNullUntilCertified": true,
+    "noPermissionRequestsOrExternalRightsHolderContact": true,
+    "noPaidImageLicenses": true,
+    "allowOnlyPreexistingOpenLicenceOrPublicDomainWithVerifiedSource": true,
+    "doNotReplaceUnavailableRatedOriginalWithUnratedPainting": true
+  },
+  "validationNote": "Compared both W65 source landing URLs with W64's exact user-five-rated canonical physical record museumSourceURL. Matching landing pages are corroborated; actual uploaded pixels, hash, collection accession and release rights remain unverified.",
+  "sourceVerificationUpdate": {
+    "asOf": "2026-10-15",
+    "sources": [
+      "https://archives.carmeldelisieux.fr/en/naissance-dune-sainte/iconographie-theresienne/tableaux-2/",
+      "https://archives.carmeldelisieux.fr/en/naissance-dune-sainte/iconographie-theresienne/copies-de-therese-aux-roses/",
+      "https://commons.wikimedia.org/wiki/File:Apparizione_a_Marguerite_Marie_Alacoque.jpg",
+      "https://www.bridgemanimages.com/en-US/cartier-patrice/portrait-of-saint-therese-of-the-child-jesus-by-his-sister-celine-martin-engraving/engraving/asset/4295048"
+    ],
+    "verifiedFacts": [
+      "Original Céline 1925 portrait is a painting measuring 86x65 cm and held at the Carmel of Lisieux",
+      "Lisieux archives record widespread copies, so derivatives are not equivalent to original",
+      "Commons Podesti file states exactly 800x600, 49,529 bytes, and an SHA1 checksum",
+      "A high-resolution commercial Thérèse engraving exists but does not establish a photograph of the five-star original"
+    ],
+    "verifiedExactImageFiles": 0,
+    "releaseApprovals": 0
+  },
+  "policyUpdate": {
+    "date": "2026-10-15",
+    "userDecision": "DO_NOT_ASK_ANYONE_FOR_PERMISSIONS",
+    "scope": "ALL_AD_ORIENTEM_SACRED_ART",
+    "allowed": "RESEARCH_ALREADY_PUBLISHED_RIGHTS_NOTICES_PUBLIC_DOMAIN_OPEN_LICENSES_AND_VERIFIABLE_FILES",
+    "notAllowed": [
+      "NO_EMAIL_OR_OTHER_OUTREACH_TO_MUSEUMS_ARCHIVES_ARTISTS_OR_RIGHTS_HOLDERS",
+      "NO_PERMISSION_REQUEST_DRAFTS_OR_FUTURE_REQUESTS",
+      "NO_PAID_LICENCE_ENQUIRIES_OR_PURCHASES"
+    ],
+    "fallback": "LEAVE_IMAGE_UNASSIGNED_OR_USE_AN_EXISTING_DIFFERENT_APPROVED_AND_LEGALLY_REUSABLE_WORK_ONLY_IF_EDITORIALLY_AUTHORIZED"
+  }
+}

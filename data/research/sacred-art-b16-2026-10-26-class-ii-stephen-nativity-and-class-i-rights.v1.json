@@ -1,0 +1,368 @@
+{
+  "schema": "AO_SACRED_ART_CONTINUATION_B16_V1",
+  "batchId": "AO-ART-2026-10-26-B16",
+  "asOf": "2026-10-26",
+  "repository": "Fulcanelli13/ad-orientem",
+  "branch": "research/w60-sanctoral-art-physical-dedupe-20261015",
+  "scope": "Additive source, physical-object, image-rights and acquisition-status research only. No canonical IDs, ratings, user selections, Prado/Fra Angelico acquisitions, publication, merge, deployment, licences or paid operations.",
+  "reconciliation": {
+    "latestRead": "data/research/sacred-art-b15-2026-10-25-lateran-exact-scene-transfiguration-and-class-i-rights.v1.json",
+    "earlierRead": "data/research/sacred-art-b03-2026-10-21-class-ii-nativity-cross-simon-jude-lateran.v1.json and B14",
+    "sourceBranch": "platform/885-sacred-art-candidates",
+    "sourceCatalogue": "data/calendar/sacred-art-candidates.v1.json",
+    "sourceCatalogueEntries": 281,
+    "bulkIntake": "data/research/sacred-art-bulk-source-intake-451-20261020.v1.json",
+    "bulkIntakeEntries": 451,
+    "frozenDecisions": "data/research/sacred-art-user-frozen-decisions-20261017.v1.json",
+    "sourceCrosswalk": "The 281 candidate list has no Saint Stephen, Le Nain Nativity or Le Brun Andrew/Stephen candidate by these exact object identities. The 451 intake already includes APPROVED_LOCKED Juan de Juanes Martyrdom of Saint Stephen (Prado hold), APPROVED_LOCKED Cleveland Caravaggio Crucifixion of Saint Andrew, and APPROVED_LOCKED/held Rubens Saint Andrew contexts. New research alternatives do not replace these decisions. Other parallel research branches exist; no global-newness claim.",
+    "historicLocks": "All 107 approved/68 rejected source snapshot statuses, legacy five-star decisions, exclusion policies and canonical IDs untouched."
+  },
+  "records": [
+    {
+      "researchId": "B16-01",
+      "subject": "Approved Class I Christ the King / Benson Salvator Mundi",
+      "kind": "EXACT_AUCTION_IMAGE_ROUTE_CONDITIONAL",
+      "artist": "Ambrosius Benson",
+      "title": "Salvator Mundi",
+      "object": {
+        "auction": "Christie's London, 3 December 2019, lot 4; lot 6238407",
+        "support": "oil on wood panel",
+        "sizeCm": [
+          91.4,
+          86.1
+        ],
+        "objectUrl": "https://www.christies.com/zh-cn/lot/lot-6238407"
+      },
+      "image": {
+        "filePage": "https://commons.wikimedia.org/wiki/File:Ambrosius_Benson_-_Salvator_Mundi.jpeg",
+        "pixelsReported": [
+          2987,
+          3200
+        ],
+        "bytesReported": 7773073,
+        "commonsSha1": "86832ebbbcb54f3a364bc32aaf67791a727d6b7c",
+        "origin": "Christie's photograph copied to Commons on 15 November 2019",
+        "rights": "Commons PD-Art/PDM assessment (US faithful 2D reproductions); original photograph supplied from Christie's restricted site. Not independently licensed CC0 and reuse may differ by jurisdiction. Treat as CONDITIONAL / legal-review hold; do not use auction site as free source.",
+        "selectedImageMatch": "Unresolved: physical dimensions match B15 lot, but user-approved source image has not been compared to original pixels."
+      },
+      "assessment": "New accessible exact-lot file page, not an independently photographed alternative. No approved image replacement or unrestricted-worldwide claim.",
+      "status": "RESEARCH_ONLY",
+      "sourceFileAcquired": false,
+      "localHashVerified": false,
+      "cropQaCompleted": false,
+      "editorialApprovalChanged": false,
+      "productionMasterCertified": false
+    },
+    {
+      "researchId": "B16-02",
+      "subject": "Approved Class I / Van Dyck source-rights precision",
+      "kind": "EXISTING_OBJECT_RIGHTS_QUALIFICATION",
+      "artist": "Anthony van Dyck",
+      "title": "Christ on the Cross, 'Le coup de lance'",
+      "object": {
+        "institution": "KMSKA Antwerp",
+        "inventory": "297",
+        "date": "1620",
+        "medium": "oil on panel",
+        "sizeCm": [
+          429.6,
+          310
+        ],
+        "url": "https://kmska.be/en/masterpiece/christ-on-the-cross-le-coup-de-lance-0"
+      },
+      "image": {
+        "iiifManifest": "https://iiif.kmska.be/iiif/3/301/manifest.json",
+        "route": "Museum Download TIF link",
+        "rights": "KMSKA explicitly says image may be downloaded free; professional use directed to museum contact form. Do not equate free download with unrestricted commercial licence. No contact or purchase undertaken."
+      },
+      "assessment": "Identity and IIIF route confirmed; retain rights/use hold for commercial app until source terms clearly permit. Not a new object.",
+      "status": "RESEARCH_ONLY",
+      "sourceFileAcquired": false,
+      "localHashVerified": false,
+      "cropQaCompleted": false,
+      "editorialApprovalChanged": false,
+      "productionMasterCertified": false
+    },
+    {
+      "researchId": "B16-03",
+      "subject": "Class II Nativity of the Blessed Virgin Mary, 8 September",
+      "kind": "NEW_DISTINCT_EXACT_SUBJECT_OIL_CC0_PHOTO",
+      "artist": "Louis and Mathieu Le Nain (institutional attribution)",
+      "title": "La Naissance de la Vierge",
+      "object": {
+        "institution": "Cathédrale Notre-Dame de Paris / COARC",
+        "inventory": [
+          "NDP 766",
+          "COA-EMO2385"
+        ],
+        "heritage": "Palissy PM75001301",
+        "date": "1640 (Notre-Dame); c.1642 (Commons catalogue)",
+        "medium": "oil on canvas",
+        "sizeCm": [
+          220,
+          145
+        ],
+        "institutionalUrl": "https://www.notredamedeparis.fr/oeuvre/la-naissance-de-la-vierge/"
+      },
+      "image": {
+        "filePage": "https://commons.wikimedia.org/wiki/File:%22La_Naissance_de_la_Vierge%22,_Louis_Le_Nain,_vers_1642._Cath%C3%A9drale_Notre-Dame_de_Paris._(35768117340).jpg",
+        "photographer": "Grégory Lejeune",
+        "license": "CC0 1.0 explicitly by photographer, Flickr licence checked by FlickreviewR on 2022-12-21",
+        "reportedPixels": [
+          2937,
+          4438
+        ],
+        "commonsSha1": "7d1f645df82da73635da909e32a7dd3d49849a24",
+        "quality": "Vertical oil; photo made in 2017 before documented 2024 restoration; colour/lighting and restored-version differences require QA."
+      },
+      "assessment": "Exact subject, new physical object distinct from B03 Andrea di Bartolo NGA 1939.1.42. Neither painting approved or promoted.",
+      "status": "RESEARCH_ONLY",
+      "sourceFileAcquired": false,
+      "localHashVerified": false,
+      "cropQaCompleted": false,
+      "editorialApprovalChanged": false,
+      "productionMasterCertified": false
+    },
+    {
+      "researchId": "B16-04",
+      "subject": "Class II Saint Stephen Protomartyr, 26 December",
+      "kind": "NEW_DISTINCT_EXACT_SUBJECT_OIL_CC_BY_PHOTO",
+      "artist": "Charles Le Brun",
+      "title": "La Lapidation de saint Étienne",
+      "object": {
+        "institution": "Cathédrale Notre-Dame de Paris",
+        "inventory": "NDP 772i (external catalogue; verify exact inventory before publication)",
+        "date": "1651",
+        "medium": "large altar painting (May of Notre-Dame)",
+        "institutionalUrl": "https://www.notredamedeparis.fr/en/understand/paintings/the-stoning-of-saint-stephen/",
+        "officialSummary": "Commissioned by Parisian goldsmiths; scene based on Acts 7:55–60."
+      },
+      "image": {
+        "filePage": "https://commons.wikimedia.org/wiki/File:Charles_Le_Brun_-_La_Lapidation_de_Saint_%C3%89tienne_-_02.jpg",
+        "photographer": "GO69",
+        "captured": "2024-06-02",
+        "license": "CC BY 4.0 (photographer's own work; attribution and alteration notice required)",
+        "reportedPixels": [
+          3648,
+          2550
+        ],
+        "commonsSha1": "11fd48e16583896360eaa83603530c3b4c5711cc"
+      },
+      "assessment": "Exact Catholic cathedral commission with reusable attributed photo; historical APPROVED_LOCKED Juan de Juanes/Prado source stays frozen and excluded from acquisition. Research alternative only.",
+      "status": "RESEARCH_ONLY",
+      "sourceFileAcquired": false,
+      "localHashVerified": false,
+      "cropQaCompleted": false,
+      "editorialApprovalChanged": false,
+      "productionMasterCertified": false
+    },
+    {
+      "researchId": "B16-05",
+      "subject": "Class II Saint Stephen Protomartyr, 26 December",
+      "kind": "NEW_DISTINCT_EXACT_SUBJECT_OIL_VRTS_PHOTO",
+      "artist": "Rembrandt van Rijn",
+      "title": "La Lapidation de saint Étienne",
+      "object": {
+        "institution": "Musée des Beaux-Arts de Lyon",
+        "inventory": "A 2735",
+        "date": "1625 (institution; Commons metadata 1624 is inconsistent)",
+        "medium": "oil on wood",
+        "sizeCm": [
+          89,
+          123
+        ],
+        "institutionalUrl": "https://www.mba-lyon.fr/fr/fiche-oeuvre/la-lapidation-de-saint-etienne"
+      },
+      "image": {
+        "filePage": "https://commons.wikimedia.org/wiki/File:La_Lapidation_de_Saint_Etienne_-_Rembrandt_(A_2735).jpg",
+        "photographer": "Alain Basset",
+        "reportedPixels": [
+          1200,
+          863
+        ],
+        "license": "Commons PD-Art/PDM with VRTS photographer permission ticket 2014040710006537; use requires jurisdiction-specific review if needed",
+        "commonsSha1": "247b1a23a85755d4e1854a5b763a4aea31852b8e"
+      },
+      "assessment": "Exact Acts 7 martyrdom oil. Museum confirms identity, year and provenance; 1200px reproduction may be too small for high-resolution master. Distinct from Rembrandt's 1635 etching and Le Brun oil; do not displace approved Juan de Juanes.",
+      "status": "RESEARCH_ONLY",
+      "sourceFileAcquired": false,
+      "localHashVerified": false,
+      "cropQaCompleted": false,
+      "editorialApprovalChanged": false,
+      "productionMasterCertified": false
+    },
+    {
+      "researchId": "B16-06",
+      "subject": "Class II Saint Stephen liturgical contextual illustration",
+      "kind": "NEW_DISTINCT_EXACT_FEAST_MISSAL_CC0",
+      "artist": "Apollonio de' Bonfratelli",
+      "title": "Historiated Initial (E) Excised from the Colonna Missal: The Martyrdom of Saint Stephen",
+      "object": {
+        "institution": "Cleveland Museum of Art",
+        "accession": "1985.140",
+        "date": "c.1532",
+        "medium": "ink, tempera, liquid gold on vellum",
+        "sizeCm": [
+          10,
+          10
+        ],
+        "objectUrl": "https://www.clevelandart.org/art/1985.140"
+      },
+      "image": {
+        "route": "Museum open-access download",
+        "license": "Cleveland Open Access: copy, modify and distribute without permission; CC0-equivalent unrestricted use per object page",
+        "pixels": "Not checked"
+      },
+      "assessment": "Strong exact feast liturgical evidence: original initial introduced Offertory 'Elegerunt Apostoli Stephanum' for 26 December. Tiny illuminated manuscript fragment, not oil-painting hero. Distinct from all other Stephen works.",
+      "status": "RESEARCH_ONLY",
+      "sourceFileAcquired": false,
+      "localHashVerified": false,
+      "cropQaCompleted": false,
+      "editorialApprovalChanged": false,
+      "productionMasterCertified": false
+    },
+    {
+      "researchId": "B16-07",
+      "subject": "Class II Saint Andrew Apostle, 30 November",
+      "kind": "NEW_DISTINCT_EXACT_SUBJECT_OIL_PHOTO_RIGHTS_CONDITIONAL",
+      "artist": "Charles Le Brun",
+      "title": "Le Crucifiement de saint André",
+      "object": {
+        "institution": "Cathédrale Notre-Dame de Paris",
+        "inventory": "NDP 772g",
+        "heritage": "Palissy PM75000737",
+        "date": "1647",
+        "medium": "monumental oil altarpiece / May",
+        "institutionalUrl": "https://www.notredamedeparis.fr/en/understand/paintings/the-crucifixion-of-saint-andrew/"
+      },
+      "image": {
+        "filePage": "https://commons.wikimedia.org/wiki/File:Charles_Lebrun_-_Le_Crucifiement_de_saint_Andr%C3%A9.jpg",
+        "reportedPixels": [
+          1783,
+          2316
+        ],
+        "license": "Commons PD-Art/PDM assessment; source was cathedral image, file EXIF photographer copyright holder noted; not an independent CC0 release. Other Commons 2024 photographs may offer clearer terms; inspect individually."
+      },
+      "assessment": "Exact saint martyrdom; distinct from already approved Cleveland Caravaggio 1976.2 and Rubens contexts. Do not promote; source photo rights conditional.",
+      "status": "RESEARCH_ONLY",
+      "sourceFileAcquired": false,
+      "localHashVerified": false,
+      "cropQaCompleted": false,
+      "editorialApprovalChanged": false,
+      "productionMasterCertified": false
+    },
+    {
+      "researchId": "B16-08",
+      "subject": "Class II Saint Andrew Apostle, 30 November",
+      "kind": "DISTINCT_PREPARATORY_OIL_NOT_ALTARPIECE",
+      "artist": "Charles Le Brun",
+      "title": "The Martyrdom of Saint Andrew",
+      "object": {
+        "institution": "J. Paul Getty Museum",
+        "inventory": "84.PA.669",
+        "date": "1646–47",
+        "medium": "oil on canvas",
+        "sizeCm": [
+          98.4,
+          80
+        ],
+        "officialCatalogue": "https://www.getty.edu/publications/resources/virtuallibrary/0892360909.pdf",
+        "institutionalArticle": "https://www.getty.edu/news/notre-dames-centuries-of-survival-captured-in-art/"
+      },
+      "image": {
+        "rightsPolicy": "https://www.getty.edu/legal/terms-of-use/",
+        "status": "Getty open-content programme generally CC0 for eligible public-domain object images; specific Getty artwork page/CC0 image badge and downloadable file not verified this pass."
+      },
+      "assessment": "Getty explicitly identifies this as a preparatory modello for Le Brun's different physical 1647 Notre-Dame altarpiece. Do not dedupe these into one physical painting or count Getty study as cathedral original. Existing approved Andrew selection unchanged.",
+      "status": "RESEARCH_ONLY",
+      "sourceFileAcquired": false,
+      "localHashVerified": false,
+      "cropQaCompleted": false,
+      "editorialApprovalChanged": false,
+      "productionMasterCertified": false
+    },
+    {
+      "researchId": "B16-09",
+      "subject": "Previously acquired GitHub Actions artwork bytes",
+      "kind": "EXPIRY_RISK_CHECKPOINT_NOT_NEW_ARTWORK",
+      "artifacts": [
+        {
+          "object": "Met Rosary 437216",
+          "artifactId": 11669918762,
+          "runId": 38054264962,
+          "expiresAt": "2026-11-09T13:03:49Z",
+          "expired": false,
+          "archiveBytes": 11446312,
+          "archiveDigest": "sha256:1d09cd2a6c2f13bd4c1666e624b450e4fa8fd50913ddb6ab59f88e4f963fdee6"
+        },
+        {
+          "object": "NGA Saint Lawrence 106362",
+          "artifactId": 11684723858,
+          "runId": 38093287797,
+          "expiresAt": "2026-11-09T22:58:00Z",
+          "expired": false,
+          "archiveBytes": 160155080,
+          "archiveDigest": "sha256:8c376da85fabc413c551a5675175d6bac6e3186f3096c00fee565d9390c40b54"
+        },
+        {
+          "object": "Met Navez Holy Innocents 438462",
+          "artifactId": 11669761734,
+          "runId": 38052449434,
+          "expiresAt": "2026-11-09T12:34:47Z",
+          "expired": false,
+          "archiveBytes": 60819468,
+          "archiveDigest": "sha256:a366352358d8a450ced7249877e0f4dc79d997b499b0c2c75f5aa8da24839feb"
+        }
+      ],
+      "assessment": "GitHub API checked all three artifacts still live on 2026-10-26. These are ZIP archive digests, not per-artwork image hashes. No ZIP downloaded, no bytes independently rehashed or preserved this pass. Keep priority for zero-euro archive rescue; no assumption rescue branch already finished.",
+      "status": "RESEARCH_ONLY",
+      "sourceFileAcquired": false,
+      "localHashVerified": false,
+      "cropQaCompleted": false,
+      "editorialApprovalChanged": false,
+      "productionMasterCertified": false
+    },
+    {
+      "researchId": "B16-10",
+      "subject": "Saint Cyril of Jerusalem Doctor portrait",
+      "kind": "HELD_NO_NEW_VERIFIED_CATHOLIC_WESTERN_OIL",
+      "assessment": "Search yielded low-resolution Greek Orthodox/Serbian frescoes and generic saint labels; no authoritative Catholic museum oil object with exact Cyril-of-Jerusalem identity. Do not substitute Cyril of Alexandria or Cyril/Methodius, stock art, or Orthodox icons. Continue held.",
+      "status": "RESEARCH_ONLY",
+      "sourceFileAcquired": false,
+      "localHashVerified": false,
+      "cropQaCompleted": false,
+      "editorialApprovalChanged": false,
+      "productionMasterCertified": false
+    }
+  ],
+  "totals": {
+    "researchRecords": 10,
+    "distinctNewPhysicalObjectLeads": 5,
+    "additionalDistinctGettyModello": 1,
+    "existingClassIRightsInvestigations": 2,
+    "artifactAvailabilityRecheck": 1,
+    "doctorHold": 1,
+    "explicitlyCc0NewPhotoRoutes": 1,
+    "explicitlyCcByNewPhotoRoutes": 1,
+    "otherOpenMuseumDownloadRoutes": 1,
+    "conditionallyReusablePhotoRoutes": 3,
+    "imagesDownloaded": 0,
+    "localHashesRecomputed": 0,
+    "mobileCropQA": 0,
+    "ratingsChanged": 0,
+    "canonicalIdsCreated": 0,
+    "productionMastersCertified": 0
+  },
+  "limitations": "External image bytes could not be downloaded because container network DNS resolution for Commons failed (curl exit 6). Source-reported dimensions and SHA-1 values are not local hashes. All source descriptions/rights need human QA before release.",
+  "nextQueue": [
+    "URGENT before 9 Nov 2026: preserve the three still-live GitHub Actions ZIPs with zero-cost durable storage and verify archive SHA-256 and per-image hashes; coordinate with rescue/sacred-art-zero-euro-20261024 rather than duplicating.",
+    "Resolve approved Class I Benson selected-image identity and jurisdiction-specific Commons PD-Art reuse versus Christie's original image restrictions; no unauthorized production use.",
+    "Class I Van Dyck KMSKA 297: establish unambiguous commercial-app reuse permission from published terms without contacting or paying rights holders; otherwise hold.",
+    "Class II 8 Sep: compare Le Nain CC0 photo to B03 Andrea di Bartolo CC0, run real 390px crop and restored colour QA; preserve all frozen ratings.",
+    "Class II 26 Dec: compare Notre-Dame Le Brun CC BY4, Lyon Rembrandt VRT, Cleveland Colonna Missal against already-approved Juan de Juanes while preserving Prado exclusion; do not auto-select.",
+    "Class II 30 Nov: keep Notre-Dame Le Brun altarpiece distinct from Getty 84.PA.669 modello; check individually licensed 2024 Commons photographs and Getty object's CC0 badge.",
+    "Cyril of Jerusalem Western Catholic oil portrait remains held; pursue museum accession evidence, not generic stock.",
+    "Audit only actual unresearched Class II gaps and branch-overlap with B28–B56 parallel Sacred Art research before claiming global newness."
+  ],
+  "publicationGate": "RESEARCH_ONLY; source-verified leads are NOT production masters; no approvals, image acquisitions, canonical ID mutations, publishing, merging or deployment."
+}

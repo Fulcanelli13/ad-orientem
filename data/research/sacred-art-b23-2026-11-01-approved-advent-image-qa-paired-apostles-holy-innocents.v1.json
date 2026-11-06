@@ -1,0 +1,349 @@
+{
+  "schema": "ad-orientem.sacred-art.unattended-research.v1",
+  "batchId": "B23",
+  "asOf": "2026-11-01",
+  "repository": "Fulcanelli13/ad-orientem",
+  "branch": "research/w60-sanctoral-art-physical-dedupe-20261015",
+  "scope": "RESEARCH_ONLY_NO_PRODUCTION",
+  "sourceReconciliation": {
+    "previous": "data/research/sacred-art-b22-2026-10-31-philip-james-matthias-and-archive-exception.v1.json",
+    "baseline": "data/research/sacred-art-b03-2026-10-21-class-ii-nativity-cross-simon-jude-lateran.v1.json",
+    "candidateBranch": "platform/885-sacred-art-candidates",
+    "candidatePath": "data/calendar/sacred-art-candidates.v1.json",
+    "candidateCount": 281,
+    "intakePath": "data/research/sacred-art-bulk-source-intake-451-20261020.v1.json",
+    "intakeCount": 451,
+    "exactAccessionCheck": "NGI.115, SK-C-1360, SK-C-1363, MG1123, Louvre INV20298 and NT108873 absent from candidate and intake by exact accession. B03–B22 scanned for overlaps; earlier B15 Ricci Lateran and B22 individual apostles were not recounted. This is not a complete historical-workbook dedupe."
+  },
+  "records": [
+    {
+      "researchId": "B23-01",
+      "kind": "APPROVED_CLASS_I_EXACT_OBJECT_AND_PHOTO_RIGHTS_HOLD",
+      "feast": "2026-12-13 Advent III",
+      "subject": "Saint John the Baptist questioned by priests and Levites",
+      "object": {
+        "artist": "Bernardo Strozzi",
+        "title": "Saint John the Baptist interrogated about Christ",
+        "date": "circa 1618–1620",
+        "medium": "oil on canvas",
+        "dimensionsCm": [
+          110,
+          115
+        ],
+        "custodian": "National Trust, Kedleston Hall",
+        "inventory": "NT 108873",
+        "official": "https://www.nationaltrustcollections.org.uk/object/108873"
+      },
+      "image": {
+        "officialCredit": "© National Trust / Andrew Patterson",
+        "commons": "https://commons.wikimedia.org/wiki/Category:New_Testament_paintings_by_Bernardo_Strozzi",
+        "commonsReportedFile": "Bernardo Strozzi (1581-1644) - Saint John the Baptist Interrogated about Christ - 108873 - National Trust.jpg",
+        "commonsReportedPixels": [
+          1200,
+          932
+        ],
+        "licence": "National Trust photograph is explicitly credited and image ordered/licensed; no independently verified unrestricted exact-image route. Commons reuse claim is not enough to clear this source photograph.",
+        "frameQa": "not completed",
+        "nativeBytesAcquired": false,
+        "sha256Recomputed": false
+      },
+      "identity": "National Trust corrects historical misidentification as Incredulity of Saint Thomas; exact John 1:19–28 subject. Companion NT108872 Christ and the Samaritan Woman is a different painting, not the same physical work.",
+      "summaryEn": "The approved Advent III Strozzi is securely identified as Kedleston NT 108873. The owner explicitly corrects its former 'Incredulity of Thomas' label. The visible National Trust/Andrew Patterson photograph is rights-controlled; a 1200px Commons derivative does not independently clear reuse or satisfy native hero quality.",
+      "summaryFr": "Le Strozzi approuvé pour le troisième dimanche de l'Avent est identifié : Kedleston, NT 108873. Le National Trust corrige l'ancienne identification comme « Incrédulité de saint Thomas ». La photographie créditée au National Trust / Andrew Patterson reste soumise à vérification des droits ; le fichier Commons de 1 200 px ne suffit pas à certifier l'image maîtresse.",
+      "evidence": [
+        "https://www.nationaltrustcollections.org.uk/object/108873",
+        "https://commons.wikimedia.org/wiki/Category:New_Testament_paintings_by_Bernardo_Strozzi"
+      ],
+      "status": "EXACT_OBJECT_VERIFIED_PHOTO_RIGHTS_HELD"
+    },
+    {
+      "researchId": "B23-02",
+      "kind": "APPROVED_CLASS_I_EXACT_OBJECT_IMAGE_ROUTE_QUALITY_SPLIT",
+      "feast": "2026-12-20 Advent IV",
+      "subject": "Preaching of Saint John the Baptist",
+      "object": {
+        "artist": "Giovanni Battista Gaulli (Baciccio)",
+        "title": "La Prédication de saint Jean Baptiste",
+        "date": "before 1685 per INHA; Louvre labels 17th century",
+        "medium": "oil on canvas",
+        "dimensionsCm": [
+          182,
+          172
+        ],
+        "custodian": "Musée du Louvre",
+        "inventory": "INV 20298",
+        "official": "https://collections.louvre.fr/en/ark:/53355/cl010062348",
+        "independent": "https://agorha.inha.fr/ark:/54721/256c8a25-8d28-410a-9fca-64583803f3cb"
+      },
+      "imageRoutes": [
+        {
+          "file": "https://commons.wikimedia.org/wiki/File:Baciccio,_predica_del_battista,_seconda_met%C3%A0_del_xvii_sec.JPG",
+          "pixels": [
+            2964,
+            2452
+          ],
+          "photographer": "Sailko",
+          "licence": "CC BY-SA 3.0",
+          "visualPreviewQa": "REJECT_AS_IS_FOR_HERO: prominent ornate gold frame and gallery wall; angled photographed painting; cropping and perspective correction required; no native-pixel QA"
+        },
+        {
+          "file": "https://commons.wikimedia.org/wiki/File:Baciccio_-_The_Preaching_of_St_John_the_Baptist_-_WGA01117.jpg",
+          "pixels": [
+            1000,
+            1072
+          ],
+          "licence": "Commons PD-Art/PDM faithful reproduction; jurisdiction-dependent",
+          "visualPreviewQa": "frame-free whole painting, but only 1000x1072 and 153KB; insufficient certified high-resolution original"
+        }
+      ],
+      "summaryEn": "The approved Gaulli original is Louvre INV 20298, an oil canvas historically commissioned for the Jesuits and acquired by Louis XIV in 1685. Two exact-work image routes are now differentiated: the 2964px CC BY-SA photo visibly includes its frame; the 1000px frame-free WGA reproduction is too small for a certified high-resolution hero. Do not silently use the framed photo.",
+      "summaryFr": "L'œuvre approuvée de Gaulli est la toile du Louvre INV 20298, commandée initialement pour les jésuites puis acquise pour Louis XIV en 1685. Deux photographies exactes ont été distinguées : le fichier CC BY-SA de 2 964 px montre visiblement le cadre ; la reproduction WGA sans cadre n'atteint que 1 000 px. Aucune ne constitue encore un maître haute définition certifié.",
+      "evidence": [
+        "https://collections.louvre.fr/en/ark:/53355/cl010062348",
+        "https://agorha.inha.fr/ark:/54721/256c8a25-8d28-410a-9fca-64583803f3cb",
+        "https://commons.wikimedia.org/wiki/File:Baciccio,_predica_del_battista,_seconda_met%C3%A0_del_xvii_sec.JPG",
+        "https://commons.wikimedia.org/wiki/File:Baciccio_-_The_Preaching_of_St_John_the_Baptist_-_WGA01117.jpg"
+      ],
+      "status": "OBJECT_VERIFIED_FRAME_FREE_HIGH_RES_HELD"
+    },
+    {
+      "researchId": "B23-03",
+      "kind": "NEW_DISTINCT_CLASS_II_PAIRED_APOSTLES_OIL",
+      "feast": "2026-05-11 Saints Philip and James (1962 calendar)",
+      "subject": "Saint Philip the Apostle and Saint James the Less together",
+      "object": {
+        "artist": "Paolo Veronese",
+        "title": "Saints Philip and James the Less",
+        "date": "c.1560s",
+        "medium": "oil on canvas",
+        "dimensionsCm": [
+          204,
+          156
+        ],
+        "custodian": "National Gallery of Ireland, Dublin",
+        "inventory": "NGI.115",
+        "institutionalHistoricalCatalogue": "https://upload.wikimedia.org/wikipedia/commons/2/25/Catalogue_of_pictures_and_other_works_of_art_in_the_National_Gallery_of_Ireland%2C_and_the_National_Portrait_Gallery_%28IA_catalogueofpictu00nati_4%29.pdf",
+        "historicalObjectId": 1727
+      },
+      "imageRoutes": [
+        {
+          "file": "https://commons.wikimedia.org/wiki/File:Paolo_veronese,_santi_filippo_e_giacomo_minore,_1560-69_ca._01.jpg",
+          "pixels": [
+            2970,
+            3702
+          ],
+          "photographer": "Sailko",
+          "licence": "CC BY 3.0",
+          "visualPreviewQa": "REJECT_AS_IS_FOR_HERO: ornate frame occupies substantial perimeter; crop/geometry QA necessary"
+        },
+        {
+          "file": "https://commons.wikimedia.org/wiki/File:Saints_Philip_and_James_the_Less_.PNG",
+          "pixels": [
+            309,
+            406
+          ],
+          "licence": "National Gallery of Ireland CC BY 4.0 as stated on file page",
+          "visualPreviewQa": "very low-resolution; frame-free status not independently pixel-checked"
+        }
+      ],
+      "identityNote": "The historical National Gallery catalogue explicitly describes Saint Philip standing with cross and Saint James seated with book and fuller's club; this is the apostles' paired feast, not Philip the Deacon/Evangelist despite erroneous Wikidata depiction metadata.",
+      "summaryEn": "A single genuine oil painting depicts both apostles celebrated together on 11 May in the 1962 calendar. Veronese's NGI.115 is physically distinct from the separate after-Van-Dyck miniatures B22. The 2970x3702 CC BY photo includes an ornate frame, while the gallery-attributed frame-free reproduction is only 309x406. Retain as an unapproved candidate until frame-free crop and visual review.",
+      "summaryFr": "Une seule peinture à l'huile représente les deux apôtres fêtés ensemble le 11 mai dans le calendrier de 1962 : Véronèse, NGI.115, Dublin. Elle est distincte des miniatures séparées d'après Van Dyck du lot B22. La photographie CC BY de 2 970 × 3 702 px comprend un cadre ornemental ; l'autre reproduction attribuée au musée n'atteint que 309 × 406 px. Candidat non approuvé, en attente de contrôle visuel.",
+      "evidence": [
+        "https://commons.wikimedia.org/wiki/Category:Saints_Philip_and_James_the_Less_(NGI.115)_by_Paolo_Veronese",
+        "https://commons.wikimedia.org/wiki/File:Paolo_veronese,_santi_filippo_e_giacomo_minore,_1560-69_ca._01.jpg",
+        "https://commons.wikimedia.org/wiki/File:Saints_Philip_and_James_the_Less_.PNG"
+      ],
+      "status": "NEW_UNAPPROVED_PAIRED_SUBJECT_FRAMED_PHOTO_HOLD"
+    },
+    {
+      "researchId": "B23-04",
+      "kind": "NEW_DISTINCT_CLASS_II_HOLY_INNOCENTS_OIL_CC0",
+      "feast": "2026-12-28 Holy Innocents",
+      "subject": "Massacre of the Innocents",
+      "object": {
+        "artist": "Alessandro Magnasco",
+        "title": "Massacre of the Innocents",
+        "date": "c.1725 / 1715–1740",
+        "medium": "oil on canvas",
+        "dimensionsCm": [
+          65.5,
+          83.5
+        ],
+        "custodian": "Mauritshuis collection, on loan to Rijksmuseum",
+        "inventoryRijks": "SK-C-1360",
+        "inventoryMauritshuis": "816",
+        "official": "https://www.rijksmuseum.nl/en/collection/object/Massacre-of-the-Innocents--40ab43e4955593ae1ddd76d5c6d86211"
+      },
+      "image": {
+        "file": "https://commons.wikimedia.org/wiki/File:De_kindermoord_te_Bethlehem_Rijksmuseum_SK-C-1360.jpeg",
+        "pixels": [
+          3560,
+          2788
+        ],
+        "licence": "Rijksmuseum public domain; Commons metadata CC0",
+        "sourceAcquired": false,
+        "sha256Recomputed": false,
+        "nativeQa": false
+      },
+      "summaryEn": "Magnasco's dark eighteenth-century oil painting is a distinct exact Matthew 2:16–18 Holy Innocents candidate, with a documented Rijksmuseum/Mauritshuis accession crosswalk and a 3560px CC0 image route. It is not the already archived Navez 2023.733. Violent subject matter and mobile crop require editorial review.",
+      "summaryFr": "Le Massacre des Innocents de Magnasco est une toile distincte du XVIIIe siècle illustrant Matthieu 2,16–18. Les inventaires Rijksmuseum SK-C-1360 et Mauritshuis 816 désignent la même œuvre ; une image CC0 de 3 560 px est repérée. Ce n'est pas le Navez déjà archivé. Le sujet violent et le recadrage mobile demandent une revue éditoriale.",
+      "evidence": [
+        "https://www.rijksmuseum.nl/en/collection/object/Massacre-of-the-Innocents--40ab43e4955593ae1ddd76d5c6d86211",
+        "https://commons.wikimedia.org/wiki/File:De_kindermoord_te_Bethlehem_Rijksmuseum_SK-C-1360.jpeg"
+      ],
+      "status": "NEW_UNAPPROVED_OPEN_IMAGE_ROUTE"
+    },
+    {
+      "researchId": "B23-05",
+      "kind": "NEW_DISTINCT_CLASS_II_HOLY_INNOCENTS_OIL_CC0",
+      "feast": "2026-12-28 Holy Innocents",
+      "subject": "Massacre of the Innocents",
+      "object": {
+        "artist": "Ludovico Mazzolino",
+        "title": "Massacre of the Innocents",
+        "date": "circa 1528",
+        "medium": "oil on panel",
+        "dimensionsCm": [
+          31,
+          38
+        ],
+        "custodian": "Mauritshuis collection, on loan to Rijksmuseum",
+        "inventoryRijks": "SK-C-1363",
+        "inventoryMauritshuis": "323",
+        "official": "https://www.rijksmuseum.nl/en/collection/object/Massacre-of-the-Innocents--ca31745a01b1cdd1b6c7658727827629"
+      },
+      "image": {
+        "file": "https://commons.wikimedia.org/wiki/File:De_kindermoord_te_Bethlehem_Rijksmuseum_SK-C-1363.jpeg",
+        "pixels": [
+          5508,
+          4532
+        ],
+        "licence": "Rijksmuseum public domain; Commons CC0",
+        "sourceAcquired": false,
+        "sha256Recomputed": false,
+        "nativeQa": false
+      },
+      "summaryEn": "A second physically distinct Holy Innocents oil painting, Mazzolino SK-C-1363 / Mauritshuis 323, has a 5508px CC0 route. The artist and museum inventory must not be conflated with Magnasco SK-C-1360. Renaissance style and crowded violent composition may make it less suitable than the existing Navez candidate.",
+      "summaryFr": "Deuxième œuvre distincte sur les Saints Innocents : Mazzolino, huile sur panneau, Rijksmuseum SK-C-1363 / Mauritshuis 323. Une image CC0 de 5 508 px est signalée. Ne pas confondre cette œuvre avec le Magnasco SK-C-1360 ; sa composition Renaissance très chargée reste à évaluer face au Navez déjà retenu comme candidat.",
+      "evidence": [
+        "https://www.rijksmuseum.nl/en/collection/object/Massacre-of-the-Innocents--ca31745a01b1cdd1b6c7658727827629",
+        "https://commons.wikimedia.org/wiki/File:De_kindermoord_te_Bethlehem_Rijksmuseum_SK-C-1363.jpeg"
+      ],
+      "status": "NEW_UNAPPROVED_OPEN_IMAGE_ROUTE"
+    },
+    {
+      "researchId": "B23-06",
+      "kind": "NEW_DISTINCT_SECONDARY_ADVENT_IV_OIL_PHOTO_CC_BY_SA",
+      "feast": "2026-12-20 Advent IV (alternative only)",
+      "subject": "Preaching of Saint John the Baptist",
+      "object": {
+        "artist": "Annibale Carracci",
+        "title": "Prédication de saint Jean-Baptiste",
+        "date": "around 1600",
+        "medium": "oil on canvas",
+        "dimensionsCm": [
+          39,
+          52
+        ],
+        "custodian": "Musée de Grenoble",
+        "inventory": "MG 1123 / Inv 197",
+        "official": "https://www.museedegrenoble.fr/oeuvre/305/1922-predication-de-saint-jean-baptiste.htm"
+      },
+      "image": {
+        "file": "https://commons.wikimedia.org/wiki/File:Annibal_Carrache_-_Pr%C3%A9dication_de_Saint_Jean-Baptiste.jpg",
+        "pixels": [
+          2360,
+          1780
+        ],
+        "photographer": "Tylwyth Eldar",
+        "licence": "CC BY-SA 4.0",
+        "notes": "File page identifies this as independent own-work photograph and separately lists another version with frame; frame-free appearance needs native visual QA",
+        "sourceAcquired": false,
+        "sha256Recomputed": false,
+        "nativeQa": false
+      },
+      "summaryEn": "A different physical painting of Saint John's preaching is documented at Grenoble, MG1123. Its independent 2360px CC BY-SA photo is an exact-object zero-fee candidate. This is an alternative for future review only; it does not replace the approved Gaulli for Advent IV.",
+      "summaryFr": "Une toile distincte représentant la prédication de saint Jean-Baptiste est conservée à Grenoble, MG 1123. Une photographie indépendante de 2 360 px, sous CC BY-SA 4.0, offre une piste gratuite. Il ne s'agit que d'une alternative à examiner : le Gaulli approuvé pour le quatrième dimanche de l'Avent demeure inchangé.",
+      "evidence": [
+        "https://www.museedegrenoble.fr/oeuvre/305/1922-predication-de-saint-jean-baptiste.htm",
+        "https://commons.wikimedia.org/wiki/File:Annibal_Carrache_-_Pr%C3%A9dication_de_Saint_Jean-Baptiste.jpg"
+      ],
+      "status": "NEW_UNAPPROVED_ALTERNATIVE"
+    },
+    {
+      "researchId": "B23-07",
+      "kind": "ARCHIVE_PRESERVATION_EXCEPTION_RECHECK",
+      "subject": "Three older approved-art source ZIP artifacts omitted from B26/B27 preservation inventory",
+      "artifacts": [
+        {
+          "artwork": "Caracciolo Calling of Saint Matthew",
+          "artifactId": 11664124885,
+          "runId": 38038829532,
+          "expiresAt": "2026-11-09T08:43:46Z",
+          "expired": false,
+          "bytes": 125908252
+        },
+        {
+          "artwork": "Murillo Immaculate Conception",
+          "artifactId": 11666577879,
+          "runId": 38044853035,
+          "expiresAt": "2026-11-09T10:32:31Z",
+          "expired": false,
+          "bytes": 116548990
+        },
+        {
+          "artwork": "Cavallino Adoration of the Shepherds",
+          "artifactId": 11667353162,
+          "runId": 38044853035,
+          "expiresAt": "2026-11-09T10:33:24Z",
+          "expired": false,
+          "bytes": 118285106
+        }
+      ],
+      "archiveContext": "B27 draft release documents 16 B26 source waves (290 image files) and 9 supplemental packages; these three old artifact IDs are absent from B26 index. Fresh GitHub run artifact listings on 2026-11-01 confirm all three still unexpired. No durable hash-matched copy independently established.",
+      "summaryEn": "Urgent 9 November preservation exception remains open: three pre-B26 source ZIPs still exist but are not listed in the 16-wave rescue inventory. The existing zero-cost archive owner should verify a durable hash-matched copy or rescue these using the existing workflow. This pass did not transfer archives or alter rescue branch.",
+      "summaryFr": "L'exception de conservation avant le 9 novembre reste ouverte : trois ZIP anciens sont encore disponibles, mais absents de l'inventaire de sauvegarde B26. Le flux d'archivage gratuit existant doit confirmer une copie durable avec empreintes vérifiées ou les sauvegarder. Aucun transfert ni changement de branche de secours n'a été effectué.",
+      "evidence": [
+        "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38038829532",
+        "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38044853035",
+        "https://github.com/Fulcanelli13/ad-orientem/blob/rescue/sacred-art-zero-euro-20261024/docs/research/sacred-art-zero-euro-rescue-b27.md",
+        "https://github.com/Fulcanelli13/ad-orientem/blob/rescue/sacred-art-zero-euro-20261024/data/research/sacred-art-b26-290-source-archive-preservation-index.csv"
+      ],
+      "status": "URGENT_UNRESOLVED_DURABLE_COPY_UNVERIFIED"
+    }
+  ],
+  "totals": {
+    "researchRecords": 7,
+    "newDistinctPhysicalArtworkLeads": 4,
+    "approvedClassIExistingObjectSourceInvestigations": 2,
+    "urgentArchiveExceptionRecords": 1,
+    "freelyLicensedPhotoRoutesDocumentedForNewLeads": 4,
+    "originalImageBytesAcquiredThisPass": 0,
+    "newLocalSHA256Computed": 0,
+    "nativePixelLevelQA": 0,
+    "preliminaryPreviewVisualFindings": 2,
+    "editorialApprovalsOrRatingsChanged": 0,
+    "canonicalIdsCreated": 0,
+    "productionMastersCertified": 0
+  },
+  "nextQueue": [
+    "Before 2026-11-09 08:43 UTC, coordinate with existing zero-euro rescue owner to verify or preserve the three B23-07 old ZIPs; rehash durable source bytes and leave release unpublished.",
+    "Find a frame-free native high-resolution exact Gaulli Louvre INV20298 photograph with explicit reuse rights; do not ship the framed Sailko source as a hero.",
+    "Resolve Strozzi NT108873 rights with an independent openly licensed exact-object photograph, without contacting the National Trust or paying.",
+    "Check frame-free native image and 390px mobile crop for paired Veronese NGI.115; retain the approved selections and reject framed hero masters.",
+    "Compare Magnasco SK-C-1360 and Mazzolino SK-C-1363 to existing archived Navez 2023.733 for Holy Innocents; seek human aesthetic review only after image acquisition and rights QA.",
+    "Revisit approved Benson and All Souls Carracci physical-original/source holds without claiming a certified master."
+  ],
+  "publicationGate": {
+    "researchOnly": true,
+    "requiresHumanAestheticReview": true,
+    "requiresRightsIdentityAndNativeImageQA": true,
+    "sourceFileAcquired": false,
+    "merge": false,
+    "deploy": false,
+    "publish": false,
+    "paidExtras": false,
+    "contactedRightsHolders": false
+  }
+}

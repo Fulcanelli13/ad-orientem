@@ -1,0 +1,244 @@
+{
+  "schema": "AO_SACRED_ART_RESEARCH_BATCH_V1",
+  "batchId": "B24",
+  "asOf": "2026-11-02",
+  "repository": "Fulcanelli13/ad-orientem",
+  "branch": "research/w60-sanctoral-art-physical-dedupe-20261015",
+  "scope": "ADDITIVE_RESEARCH_ONLY",
+  "reconciliation": {
+    "prior": "data/research/sacred-art-b23-2026-11-01-approved-advent-image-qa-paired-apostles-holy-innocents.v1.json",
+    "historical": "data/research/sacred-art-b03-2026-10-21-class-ii-nativity-cross-simon-jude-lateran.v1.json",
+    "candidate": "platform/885-sacred-art-candidates:data/calendar/sacred-art-candidates.v1.json",
+    "candidateCount": 281,
+    "intake": "data/research/sacred-art-bulk-source-intake-451-20261020.v1.json",
+    "intakeCount": 451,
+    "dedupe": "Exact accessions 1957.14.6, 1983.451, and 1970.17.107 absent from 281-candidate catalogue and 451-work intake. Existing approved CMA 1959.189 found in intake as cma-135659 and must NOT be duplicated. Earlier legacy Van Dyck Saint Martin at WGA is a separate physical painting, not the NGA Boeckhorst panel. No global historical-workbook dedupe claimed."
+  },
+  "policy": {
+    "preserveAllUserDecisions": true,
+    "blockedMuseum": "Prado",
+    "blockedArtists": [
+      "Fra Angelico",
+      "El Greco"
+    ],
+    "noCanonicalIds": true,
+    "noMerge": true,
+    "noPublish": true,
+    "noDeploy": true,
+    "noContact": true,
+    "noPaidExtras": true,
+    "mastersCertified": false
+  },
+  "records": [
+    {
+      "researchId": "B24-01",
+      "kind": "APPROVED_CLASS_I_EXISTING_OBJECT_EXACT_CC0_FALLBACK",
+      "feast": "2026-12-08 Immaculate Conception",
+      "existingId": "cma-135659",
+      "artist": "Bartolomé Esteban Murillo",
+      "title": "The Immaculate Conception",
+      "accession": "Cleveland Museum of Art 1959.189",
+      "date": "c. 1680",
+      "medium": "oil on canvas",
+      "unframedCm": [
+        220.5,
+        127.5
+      ],
+      "objectUrl": "https://www.clevelandart.org/art/1959.189",
+      "imageRoute": "https://commons.wikimedia.org/wiki/File:Clevelandart_1959.189.jpg",
+      "imageRouteDimensionsPx": [
+        1951,
+        3400
+      ],
+      "imageRouteLicense": "CC0; CMA-origin Wikimedia upload",
+      "rightsPolicy": "https://www.clevelandart.org/open-access",
+      "summaryEn": "An independently traceable, frame-free 1,951 × 3,400 image route exists for the exact already-approved Murillo painting. The museum explicitly grants CC0 reuse for its open-access images. This provides a zero-fee fallback route but does not demonstrate that the previously acquired source ZIP has been durably preserved or that this file is a certified production master.",
+      "summaryFr": "Une reproduction sans cadre de 1 951 × 3 400 pixels correspond exactement au Murillo déjà approuvé. Le musée autorise la réutilisation CC0 de ses images en libre accès. C'est une solution de repli gratuite, sans preuve de sauvegarde durable du ZIP ancien ni certification de l'image maîtresse.",
+      "evidence": [
+        "https://www.clevelandart.org/art/1959.189",
+        "https://www.clevelandart.org/open-access",
+        "https://commons.wikimedia.org/wiki/File:Clevelandart_1959.189.jpg"
+      ],
+      "status": "RIGHTS_AND_ROUTE_VERIFIED; SOURCE_BYTES_AND_CROP_QA_PENDING"
+    },
+    {
+      "researchId": "B24-02",
+      "kind": "NEW_DISTINCT_CLASS_II_SAINT_JOHN_OIL",
+      "feast": "2026-12-27 Saint John Apostle and Evangelist",
+      "artist": "Titian / Italian 16th century; Kress Foundation says Titian and Workshop",
+      "title": "Saint John the Evangelist on Patmos",
+      "accession": "National Gallery of Art 1957.14.6; Kress K2066",
+      "date": "c. 1553–1555",
+      "medium": "oil on canvas",
+      "dimensionsCm": [
+        237.6,
+        263
+      ],
+      "objectUrl": "https://www.nga.gov/artworks/43725-saint-john-evangelist-patmos",
+      "imageRoute": "https://api.nga.gov/iiif/71e09ac6-9143-49fe-b25b-bb4bf5b56dfc/full/full/0/default.jpg",
+      "rightsPolicy": "https://www.nga.gov/artworks/free-images-and-open-access",
+      "summaryEn": "Exact Saint John Evangelist subject, a large Venetian confraternity ceiling painting showing the vision on Patmos. NGA offers a public-domain download. Kress labels the artist Titian and Workshop while NGA lists Titian with Italian 16th Century associated: preserve this attribution distinction. A preview shows a frame-free, near-square composition with extreme foreshortening; phone hero crop and native pixels remain unchecked.",
+      "summaryFr": "Œuvre représentant précisément saint Jean l'Évangéliste à Patmos, conçue pour le plafond d'une confrérie vénitienne. La NGA fournit une image du domaine public. La fondation Kress indique « Titien et atelier », tandis que la NGA présente « Titien » et une association à l'école italienne du XVIe siècle : conserver cette nuance. Cadrage mobile et fichier natif non contrôlés.",
+      "evidence": [
+        "https://www.nga.gov/artworks/43725-saint-john-evangelist-patmos",
+        "https://www.kressfoundation.org/kress-collection/artwork/ef857ec33fd9a5a0a592870bd0238a23d4d3ef80415a96bf6041a4dcb5ab070f"
+      ],
+      "status": "NEW_UNAPPROVED_EXACT_SAINT_OPEN_IMAGE_ROUTE"
+    },
+    {
+      "researchId": "B24-03",
+      "kind": "NEW_DISTINCT_CLASS_II_SAINT_JOHN_OIL_ALTERNATIVE",
+      "feast": "2026-12-27 Saint John Apostle and Evangelist",
+      "artist": "Hans Baldung (called Baldung Grien)",
+      "title": "Saint John on Patmos",
+      "accession": "Metropolitan Museum of Art 1983.451",
+      "date": "c. 1511",
+      "medium": "oil, gold and white metal on spruce",
+      "paintedSurfaceCm": [
+        87.3,
+        75.6
+      ],
+      "objectUrl": "https://www.metmuseum.org/art/collection/search/435600",
+      "imageRoute": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/435600/797368/main-image",
+      "rightsPolicy": "https://www.metmuseum.org/about-the-met/policies-and-documents/open-access",
+      "summaryEn": "Separate physical painting showing Saint John writing Revelation while seeing the Virgin and Child in a vision; originally part of a Strasbourg triptych. The Met marks the exact object image Public Domain and provides a download. Preliminary preview shows the complete panel with narrow painted edges, but no native bytes, hash or 390px mobile crop were checked.",
+      "summaryFr": "Peinture distincte représentant saint Jean écrivant l'Apocalypse et contemplant la Vierge à l'Enfant ; ancien élément d'un triptyque de Strasbourg. Le Met signale l'image de l'objet comme domaine public et la rend téléchargeable. Seul l'aperçu a été vu ; fichier natif, empreinte et cadrage sur téléphone restent à vérifier.",
+      "evidence": [
+        "https://www.metmuseum.org/art/collection/search/435600"
+      ],
+      "status": "NEW_UNAPPROVED_EXACT_SAINT_PUBLIC_DOMAIN_IMAGE_ROUTE"
+    },
+    {
+      "researchId": "B24-04",
+      "kind": "NEW_DISTINCT_OTHER_FEAST_SAINT_MARTIN_OIL_IDENTITY_CORRECTION",
+      "feast": "2026-11-11 Saint Martin of Tours (not counted as a major Class II coverage improvement)",
+      "artist": "Jan Boeckhorst; formerly attributed to Anthony van Dyck",
+      "title": "Saint Martin Dividing His Cloak",
+      "accession": "National Gallery of Art 1970.17.107",
+      "date": "c. 1640–1645",
+      "medium": "oil on panel",
+      "objectUrl": "https://www.nga.gov/artworks/52251-saint-martin-dividing-his-cloak",
+      "imageRoute": "https://api.nga.gov/iiif/974b5ba2-dbe1-4167-bf51-e069624fbb70/full/full/0/default.jpg",
+      "rightsPolicy": "https://www.nga.gov/artworks/free-images-and-open-access",
+      "summaryEn": "An exact Saint Martin scene and public-domain NGA image. Crucially, NGA rejects the old Van Dyck attribution for this specific panel after panel-mark and technique analysis, attributing it to Boeckhorst. The legacy intake also contains a Van Dyck Saint Martin at WGA, but it is not established to be this NGA panel; retain as distinct, do not rewrite the legacy entry or score.",
+      "summaryFr": "Scène précise du partage du manteau de saint Martin, avec image du domaine public à la NGA. L'institution écarte pour ce panneau l'ancienne attribution à Van Dyck, à la suite de l'étude du bois et de la technique, et retient Jan Boeckhorst. Le Saint Martin anciennement inscrit sous Van Dyck dans l'inventaire WGA n'est pas identifié à ce panneau : ne pas fusionner ni modifier sa note.",
+      "evidence": [
+        "https://www.nga.gov/artworks/52251-saint-martin-dividing-his-cloak"
+      ],
+      "status": "NEW_UNAPPROVED_RESEARCH_LEAD; ATTRIBUTION_CROSSWALK_NOT_DUPLICATE"
+    },
+    {
+      "researchId": "B24-05",
+      "kind": "APPROVED_CLASS_I_BENSON_OBJECT_ICONOGRAPHY_GATE",
+      "feast": "Christ the King (existing approved Benson retained)",
+      "artist": "Ambrosius Benson",
+      "title": "Salvator Mundi",
+      "objectUrl": "https://www.christies.com/zh-cn/lot/lot-6238407",
+      "imageRoute": "https://commons.wikimedia.org/wiki/File:Ambrosius_Benson_-_Salvator_Mundi.jpeg",
+      "pixelsReported": [
+        2987,
+        3200
+      ],
+      "summaryEn": "Christie's primary lot essay explicitly states the figure deliberately eludes definitive identification as Father or Son: Salvator Mundi globe and blessing coexist with the papal tiara associated with God the Father. It also describes a panel designed to be seen from below, likely atop an altarpiece. Preserve the user's Christ the King approval, but do not assert unqualified iconographic identification or treat the Christie's-derived photograph as independently rights-cleared. Commons PD-Art treatment is jurisdiction-dependent.",
+      "summaryFr": "La notice originale de Christie's précise que l'identification de la figure comme Père ou Fils reste délibérément ambiguë : globe et bénédiction du Salvator Mundi coexistent avec la tiare du Père. Le panneau aurait été conçu pour être vu d'en bas, probablement au sommet d'un retable. Conserver le choix approuvé pour le Christ-Roi, sans prétendre à une identification iconographique certaine ni à la libre réutilisation universelle de la photographie de vente.",
+      "evidence": [
+        "https://www.christies.com/zh-cn/lot/lot-6238407",
+        "https://commons.wikimedia.org/wiki/File:Ambrosius_Benson_-_Salvator_Mundi.jpeg"
+      ],
+      "status": "EXISTING_APPROVAL_RETAINED; ICONOGRAPHY_AMBIGUOUS; PHOTO_RIGHTS_HELD"
+    },
+    {
+      "researchId": "B24-06",
+      "kind": "APPROVED_CLASS_I_ALL_SOULS_SOURCE_ORIENTATION_HOLD",
+      "feast": "2026-11-02 All Souls",
+      "artist": "Ludovico Carracci",
+      "title": "An Angel Frees the Souls of Purgatory",
+      "reportedCustodian": "Pinacoteca Vaticana",
+      "reportedPhysicalDimensionsCm": [
+        44,
+        51
+      ],
+      "imageRoute": "https://commons.wikimedia.org/wiki/File:Carracci-Purgatory.jpg",
+      "imagePixels": [
+        866,
+        1200
+      ],
+      "summaryEn": "WGA and Commons still reproduce the same 866 × 1200 portrait file, while the frequently quoted 44 × 51 cm dimensions are not orientation-labelled in a custodial record. Secondary websites reverse the order to 51 × 44. This cannot establish a wrong reproduction, but it confirms that the dimensional discrepancy is not resolved by independent institutional evidence. Keep exact-object and high-resolution master certification held.",
+      "summaryFr": "WGA et Commons reproduisent toujours le même fichier vertical de 866 × 1 200 pixels, tandis que les dimensions 44 × 51 cm circulent sans indication institutionnelle certaine de l'ordre hauteur/largeur. D'autres sources inversent les chiffres. Cette divergence ne démontre pas que la reproduction est fausse ; l'identité de l'objet et le maître haute définition restent non certifiés.",
+      "evidence": [
+        "https://beta.wga.hu/artists/carracci-lodovico-rca68553c81de94/an-angel-frees-the-souls-of-purgatory-rabe8f2105f93a5",
+        "https://commons.wikimedia.org/wiki/File:Carracci-Purgatory.jpg"
+      ],
+      "status": "EXISTING_APPROVAL_RETAINED; INSTITUTIONAL_DIMENSION_WITNESS_PENDING"
+    },
+    {
+      "researchId": "B24-07",
+      "kind": "URGENT_SOURCE_ARCHIVE_PRESERVATION_RECHECK",
+      "subject": "Three pre-B26 source ZIPs expiring 9 November",
+      "artifacts": [
+        {
+          "id": 11664124885,
+          "run": 38038829532,
+          "work": "Caracciolo Calling of Saint Matthew",
+          "expired": false,
+          "expiresAt": "2026-11-09T08:43:46Z"
+        },
+        {
+          "id": 11666577879,
+          "run": 38044853035,
+          "work": "Murillo Immaculate Conception",
+          "expired": false,
+          "expiresAt": "2026-11-09T10:32:31Z"
+        },
+        {
+          "id": 11667353162,
+          "run": 38044853035,
+          "work": "Cavallino Adoration of the Shepherds",
+          "expired": false,
+          "expiresAt": "2026-11-09T10:33:24Z"
+        }
+      ],
+      "summaryEn": "GitHub Actions artifact listings rechecked on 2 November: all three old ZIPs still exist and report expired=false, with their recorded 9 November UTC expiration. The B26/B27 preservation inventory did not include these IDs as of the last reviewed ledger. No new durable hash-matched copy has been independently verified in this pass. The official CMA CC0 Murillo image route is a fallback for that single painting, not proof that the complete older ZIP is preserved.",
+      "summaryFr": "Les listes d'artefacts GitHub Actions vérifiées le 2 novembre confirment que les trois ZIP anciens sont encore disponibles, avec échéance le 9 novembre UTC. Leur conservation durable par empreinte SHA-256 n'a pas été confirmée dans ce passage ; le fichier CC0 du Murillo ne remplace pas la vérification de l'archive complète.",
+      "evidence": [
+        "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38038829532",
+        "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38044853035"
+      ],
+      "status": "URGENT_UNEXPIRED; DURABLE_COPY_UNVERIFIED"
+    }
+  ],
+  "totals": {
+    "researchRecords": 7,
+    "newDistinctPhysicalLeads": 3,
+    "newMajorClassIILeads": 2,
+    "otherFeastLeads": 1,
+    "approvedClassIInvestigations": 3,
+    "archiveExceptionRechecks": 1,
+    "existingApprovedOpenImageFallbacks": 1,
+    "sourceFilesAcquiredThisPass": 0,
+    "newSha256ThisPass": 0,
+    "nativePixelQaThisPass": 0,
+    "mobileCropQaThisPass": 0,
+    "canonicalIdsCreated": 0,
+    "approvalsChanged": 0,
+    "productionMastersCertified": 0
+  },
+  "limitations": "Official NGA/Met/CMA object pages and public-domain download routes were checked, but the execution container could not resolve external hosts to acquire image bytes. The web previews are not a substitute for native image QA. No changes to the rescue archive branch were made.",
+  "nextQueue": [
+    "Before 2026-11-09 08:43 UTC, confirm durable SHA-256 matched copies of all three B24-07 source ZIPs using existing zero-cost rescue workflow; do not assume Commons Murillo file preserves the ZIP.",
+    "Acquire and verify native official NGA Titian 1957.14.6 and Met Baldung 1983.451 for 27 December; test portrait/390px hero crops and compare to any prior user selections.",
+    "Acquire exact official CMA Murillo 1959.189 or the 1951x3400 CC0 Commons museum-origin file; verify bytes and full frame-free composition while preserving existing locked approval.",
+    "Find independently cleared high-resolution frame-free Gaulli INV20298 and Strozzi NT108873 routes; do not ship framed Sailko or rights-held National Trust photographs.",
+    "Resolve Benson auction-photo rights and All Souls Carracci institutional object/orientation with custodial evidence; retain all user selections.",
+    "Continue missing Class II feast subjects from actual canonical gap queue, excluding previously rejected works and already researched B03–B23 leads."
+  ],
+  "publicationGate": {
+    "researchOnly": true,
+    "humanAestheticReviewRequired": true,
+    "nativeImageRightsAndCropQaRequired": true,
+    "merge": false,
+    "publish": false,
+    "deploy": false,
+    "paidExtras": false
+  }
+}
