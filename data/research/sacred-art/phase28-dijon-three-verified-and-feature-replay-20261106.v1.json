@@ -1,0 +1,64 @@
+{
+  "schema": "AO_SACRED_ART_PHASE28_DIJON_OBJECT_MATCHES_V1",
+  "recorded_at": "2026-11-06",
+  "prior_verified_registry_records": 120,
+  "new_verified_registry_records": 3,
+  "total_verified_registry_records": 123,
+  "unresolved_registry_records": 54,
+  "total_low_resolution_owner_handpicked_records": 177,
+  "confirmations": [
+    {
+      "registry_id": "RECENT575::418",
+      "museum": "Musée des Beaux-Arts de Dijon",
+      "inventory": "5008",
+      "title": "Le Crucifiement de saint André (copie d'après Le Caravage)",
+      "attribution": "Attributed to Louis Finson or Abraham Vinck; copy after Caravaggio",
+      "exact_object_url": "https://pop.culture.gouv.fr/notice/joconde/01370006162",
+      "evidence": "Official Joconde notice identifies the 5008 painting, dimensions, subject, museum and cautious attribution.",
+      "photo_rights": "Museum of Dijon photograph ©; not cleared",
+      "image_admission": false
+    },
+    {
+      "registry_id": "RECENT575::430",
+      "museum": "Musée des Beaux-Arts de Dijon",
+      "inventory": "CA 41",
+      "title": "Le Martyre de saint Sébastien",
+      "attribution": "Jacopo Bassano",
+      "exact_object_url": "https://agorha.inha.fr/recherche?affichage=mosaic&facets=&fieldSort=&filters=&noticeType=ARTWORK&page=1&pageSize=20&selectionId=&sort=&terms=notice_liee%3A+%22dae79003-5a3f-4293-bcd8-315a6617a5bc%22&type=simple&withAttachment=false",
+      "supporting_museum_source": "https://beaux-arts.dijon.fr/data/pdf/FicheVieDesOeuvres.pdf",
+      "evidence": "INHA RETIF collection record lists painting, Jacopo Bassano, date 1574, inventory ca.41 in Dijon. The museum's historical accession paper independently discusses acquisition.",
+      "photo_rights": "Not evaluated",
+      "image_admission": false
+    },
+    {
+      "registry_id": "RECENT575::501",
+      "museum": "Musée des Beaux-Arts de Dijon",
+      "inventory": "CA 1420 A; right reverse wing",
+      "title": "Presentation of Christ in the Temple",
+      "attribution": "Painted by Melchior Broederlam, sculptural retable by Jacques de Baerze",
+      "exact_object_url": "https://musees.dijon.fr/artworks/retable-de-la-crucifixion/",
+      "supporting_pop": "https://pop.culture.gouv.fr/notice/joconde/01370009315",
+      "evidence": "Official Dijon collection and Joconde record specifically identify the Presentation in the Temple on the right reverse wing, rather than treating entire retable as a single image.",
+      "photo_rights": "© Musée des Beaux-Arts de Dijon / François Jay; not cleared",
+      "image_admission": false,
+      "scope_caution": "Photo must depict Presentation panel; do not substitute entire retable or different wing."
+    }
+  ],
+  "image_identity_replay": {
+    "run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42218282365",
+    "research_artifact": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42218282365/artifacts/13502631340",
+    "five_source_batches": true,
+    "museum_candidate_images_scored": 95,
+    "unique_registry_records_assessed": 33,
+    "with_geometric_match": 22,
+    "geometric_match_candidate_images": 37,
+    "photos_approved": 0,
+    "rights_cleared": 0
+  },
+  "policy": [
+    "This count is owner-handpicked registry rows, not necessarily distinct physical paintings.",
+    "Exact object identity, image content, photo rights, and quality are separate.",
+    "Never auto-approve alternative Commons, frame crops, or photographic colour edits.",
+    "No gallery or prayer/calendar modifications."
+  ]
+}
