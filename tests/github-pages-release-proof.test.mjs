@@ -11,13 +11,13 @@ const html='<!doctype html><html><head><link href="./ao-inline-a1.css" rel="styl
 const assets=()=>Object.fromEntries(criticalReleasePaths(html).map(p=>[p,releaseSha256(Buffer.from("critical:"+p))]));
 const proof=()=>createReleaseProof({sha:shaA,runId:"1234567",indexHtml:html,assetSha256:assets()});
 
-test("build provenance identifies source commit, run and 35 critical deployed files",()=>{
+test("build provenance identifies source commit, run and 36 critical deployed files",()=>{
  const p=proof();
  assert.equal(p.schema,RELEASE_PROOF_SCHEMA);
  assert.equal(p.source_sha,shaA);
  assert.equal(p.workflow_run_id,"1234567");
- assert.equal(MASS_SCHOLA_CRITICAL_PATHS.length,16);
- assert.equal(Object.keys(p.critical_sha256).length,35);
+ assert.equal(MASS_SCHOLA_CRITICAL_PATHS.length,17);
+ assert.equal(Object.keys(p.critical_sha256).length,36);
  for(const file of MASS_SCHOLA_CRITICAL_PATHS){
   assert.ok(file.startsWith("src/mass/"));
   assert.ok(Object.hasOwn(p.critical_sha256,file),"Missing live Mass/Schola reader proof: "+file);
@@ -51,6 +51,9 @@ test("missing, malformed or substituted critical bytes do not certify the deploy
  const staleSacredHeart={...p,critical_sha256:{...p.critical_sha256}};
  delete staleSacredHeart.critical_sha256["src/mass/icrsp-first-friday-entry.js"];
  assert.throws(()=>verifyReleaseProof(staleSacredHeart,{expectedSha:shaA,expectedRunId:"1234567",indexHtml:html}),/Missing critical release digest/);
+ const staleOrdoGate={...p,critical_sha256:{...p.critical_sha256}};
+ delete staleOrdoGate.critical_sha256["src/mass/ordo-mass-completeness.js"];
+ assert.throws(()=>verifyReleaseProof(staleOrdoGate,{expectedSha:shaA,expectedRunId:"1234567",indexHtml:html}),/Missing critical release digest/);
  const staleProPapa={...p,critical_sha256:{...p.critical_sha256}};
  delete staleProPapa.critical_sha256["src/mass/icrsp-nov06-pro-papa-orations.js"];
  assert.throws(()=>verifyReleaseProof(staleProPapa,{expectedSha:shaA,expectedRunId:"1234567",indexHtml:html}),/Missing critical release digest/);
