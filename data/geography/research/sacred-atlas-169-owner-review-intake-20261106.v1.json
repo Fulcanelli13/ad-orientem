@@ -16,7 +16,7 @@
     "priority_in_previous_96": 96,
     "additional_73_integrated": 73,
     "b21_unapproved_draft_overlap": 2,
-    "missing_country_area": 3,
+    "missing_country_area": 0,
     "new_unflagged_sub500m": 0,
     "owner_approved": 0,
     "authorized_for_production": 0
@@ -3080,7 +3080,7 @@
       "preflight_flag": "DIRECT_GEO_EVIDENCE_REQUIRED",
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
-      "country_area_present": false,
+      "country_area_present": true,
       "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
@@ -3144,7 +3144,7 @@
       "preflight_flag": "CLEAR",
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
-      "country_area_present": false,
+      "country_area_present": true,
       "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
@@ -3602,7 +3602,7 @@
       "preflight_flag": "CLEAR",
       "additional_live_535_review": "NONE",
       "nearest_current_draft_place": null,
-      "country_area_present": false,
+      "country_area_present": true,
       "site_evidence_status": "UNREVIEWED_IN_PRIOR_96_PASS",
       "prior_priority_manifest": null,
       "draft_b21_place_id": null,
@@ -5221,5 +5221,20 @@
       "imported_to_live": false,
       "needs_separate_owner_approval": true
     }
-  ]
+  ],
+  "country_area_remediation": {
+    "manifest": "data/geography/research/sacred-places-v10-c9-three-country-area-preflight-20261106.v1.json",
+    "added": [
+      "geo:country:AO",
+      "geo:country:GQ",
+      "geo:country:IQ"
+    ],
+    "resolved_candidate_ids": [
+      "SG-INV-0687",
+      "SG-INV-0720",
+      "SG-INV-0731"
+    ],
+    "place_admissions": 0,
+    "owner_approvals": 0
+  }
 }
