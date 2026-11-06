@@ -1,3 +1,6 @@
+/* 2026-11-06 source-verified Low Mass release: Sacred Heart votive + Leonine post-Mass prayers.
+ * Bump the worker script bytes so an installed GitHub Pages client checks the new release.
+ */
 /* Ad Orientem: versioned, transactional offline bootstrap snapshots.
  * No Scripture-packs or user data are owned, deleted or cached by this worker.
  * Scope is strictly the containing GitHub Pages project path.
