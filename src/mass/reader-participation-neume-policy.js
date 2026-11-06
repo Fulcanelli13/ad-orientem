@@ -61,6 +61,7 @@ export const PARTICIPATION_NEUME_POLICY=Object.freeze([
   {
     "id": "GOSPEL_CONCLUSION",
     "kind": "PEOPLE_RESPONSE",
+    "sungExclusion": "GOSPEL_END_LAUS_TIBI_CHRISTE_RESPONDED_NOT_SUNG",
     "cueIds": [
       "AO.SM.C0087"
     ],
@@ -213,7 +214,7 @@ const SUNG_FORMS=new Set(["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN
 export function participationNeumeOpportunity({cueId,form,paragraph=null}={}){
  if(!SUNG_FORMS.has(String(form??"").toUpperCase()))return null;
  const id=String(cueId??"");const row=cueMap.get(id);
- if(!row||!paragraph||paragraph.kind==="RUBRIC")return null;
+ if(!row||row.sungExclusion||!paragraph||paragraph.kind==="RUBRIC")return null;
  const paragraphCues=Array.isArray(paragraph.sourceCueIds)?paragraph.sourceCueIds.map(String):[];
  if(!paragraphCues.includes(id))return null;
  // Missing dynamically selected Proper/response text must not get a guessed Amen.
