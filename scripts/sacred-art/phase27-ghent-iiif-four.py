@@ -44,7 +44,6 @@ def main():
             "iiif_manifest","current_short_px","canvas_count","downloaded_museum_images",
             "reference_status","rights_gate","best_canvas_index","best_original_short_px",
             "best_score","best_comparison","selected_museum_image","error")})
-    import csv
     with (OUT/"four_image_audit.csv").open("w",encoding="utf-8",newline="") as f:
         writer=csv.DictWriter(f,fieldnames=list(rows[0]));writer.writeheader();writer.writerows(rows)
     cards=[]
