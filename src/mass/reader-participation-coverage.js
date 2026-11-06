@@ -17,10 +17,12 @@ export const PARTICIPATION_COVERAGE_SOURCES=Object.freeze({
  approvedCatalogue:"src/mass/reader-inline-chant-approved.js",
  orationSourceGate:"src/mass/reader-oration-amen-source-handoff.js",
  orationToneGate:"src/mass/reader-oration-amen-tone-policy.js",
+ gospelConclusionNonSungAuthority:"https://media.musicasacra.com/pdf/highmass.pdf",
+ gospelConclusionCeremonialCorroboration:"https://acss.sspxusa.org/rubrics/highmass/HighMass-Master-of-Ceremonies.pdf",
  publication:"ONLY_EXACT_ITE_VIII_2_FRAGMENTS_APPROVED_AS_OF_2026_11_06"
 });
 const unresolved=Object.freeze({
- GOSPEL_CONCLUSION:"Find the independently printed and text-matched Gospel-ending response; #4490/#4491 cover the opening exchange only, not this cue.",
+ GOSPEL_CONCLUSION:"This 1962 High-Mass response is made after the Gospel but NOT sung by the choir; preserve its Latin/vernacular text, without a score (Haynes 2007, p. 5; SSPX high-Mass MC guide).",
  OFFERTORY_GREETING:"Verify an independent 1961 Offertory greeting source and its actual liturgical tone; same words do not license borrowing Collect or Preface notes.",
  DISMISSAL_GREETING:"Identify the printed 1961 greeting tone applicable to the dismissal context; do not copy the preceding Collect/Postcommunion dialogue."
 });
@@ -58,12 +60,14 @@ export function buildParticipationCoverage(){
    s.sourceCueIds?.length&&s.sourceCueIds.every(c=>cues.includes(c)));
   const publicExcerpts=APPROVED_MASS_INLINE_GABC.filter(s=>cues.includes(s.sourceCueId));
   const conditional=dynamic[event.id]??null;
-  const state=publicExcerpts.length?"LIMITED_PUBLIC_EXACT_SETTING":
+  const nonSung=event.sungExclusion??null;
+  const state=nonSung?"EXCLUDED_NON_SUNG_RESPONSE":
+   publicExcerpts.length?"LIMITED_PUBLIC_EXACT_SETTING":
    conditional?"DYNAMIC_SOURCE_BOUND_RESEARCH_ONLY":
    research.length?"FIXED_SOURCE_RESEARCH_ONLY":"SOURCE_CUE_UNMAPPED";
   return {
    id:event.id,kind:event.kind,eventId:event.eventId,variant:event.variant,
-   cueIds:[...cues],
+   cueIds:[...cues],sungExclusion:nonSung,
    state,
    publicScoreIds:publicExcerpts.map(s=>s.scoreId),
    fixedResearchIds:research.map(s=>s.id),
@@ -82,6 +86,9 @@ export function buildParticipationCoverage(){
   eventsFixedResearchOnly:events.filter(e=>e.state==="FIXED_SOURCE_RESEARCH_ONLY").length,
   eventsDynamicSourceBound:events.filter(e=>e.state==="DYNAMIC_SOURCE_BOUND_RESEARCH_ONLY").length,
   eventsSourceUnmapped:events.filter(e=>e.state==="SOURCE_CUE_UNMAPPED").length,
+  eventsExcludedNonSung:events.filter(e=>e.state==="EXCLUDED_NON_SUNG_RESPONSE").length,
+  sungEligibleEvents:events.filter(e=>e.state!=="EXCLUDED_NON_SUNG_RESPONSE").length,
+  sungEligibleCueIds:new Set(events.filter(e=>e.state!=="EXCLUDED_NON_SUNG_RESPONSE").flatMap(e=>e.cueIds)).size,
   eventsWithAnyFixedResearch:events.filter(e=>e.fixedResearchIds.length>0).length
  });
  return {schema:PARTICIPATION_COVERAGE_SCHEMA,
