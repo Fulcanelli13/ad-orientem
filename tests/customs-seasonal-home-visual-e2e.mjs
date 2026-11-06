@@ -84,8 +84,13 @@ try{
         Boolean(state.resolution?.day?.main)&&
         Boolean(document.querySelector(".homeScreen.aoTodayH4 .aoH4Custom"));
     },item.date,{timeout:45000});
-    const custom=page.locator(".homeScreen .aoH4Custom");
-    assert.equal(await custom.count(),1,"H4 must show exactly one selected Customs teaser");
+    // The restored Home may show several independent, source-backed customs
+    // plus First Friday/Saturday programme cards on the same day. Find the
+    // exact reviewed article without mistaking another published card for it.
+    const custom=page.locator(".homeScreen .aoH4Custom[data-home-calendar-view='day']")
+      .filter({hasText:article.title.en});
+    assert.equal(await custom.count(),1,
+      "H4 must expose this canonical Customs teaser exactly once");
     assert.equal(await custom.getAttribute("data-home-calendar-date"),item.date);
     assert.equal(await custom.getAttribute("data-home-calendar-view"),"day");
     assert.equal(await custom.locator("strong").innerText(),article.title.en,
