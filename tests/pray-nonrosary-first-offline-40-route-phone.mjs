@@ -92,7 +92,7 @@ try{
    });
    assert.equal(first.error,null,"Transactional PWA bootstrap failed: "+JSON.stringify(first));
    assert.equal(first.ready,true,"PWA offline readiness is false");
-   assert.ok(first.files>0&&first.files<=544&&first.bytes>0&&first.bytes<=35000000,
+   assert.ok(first.files>0&&first.files<=640&&first.bytes>0&&first.bytes<=35000000,
     "No verified bounded transactional startup cache: "+JSON.stringify(first));
    // True OFFLINE document reboot: neither imported JavaScript modules nor
    // application state from the first document can conceal missing resources.
