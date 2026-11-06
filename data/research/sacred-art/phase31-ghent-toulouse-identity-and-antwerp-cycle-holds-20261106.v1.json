@@ -1,0 +1,181 @@
+{
+  "schema": "AO_SACRED_ART_PHASE31_GHENT_TOURNIER_INSTITUTIONAL_IDENTITY_V1",
+  "as_of": "2026-11-06",
+  "scope": "Owner-handpicked low-resolution painting registry, institutional object identity only; research branch, no public gallery change",
+  "baseline": {
+    "prior_identity_supported_rows": 150,
+    "prior_unresolved_rows": 27,
+    "handpicked_registry_rows": 177
+  },
+  "identity_decisions": [
+    {
+      "registry_id": "RECENT575::051",
+      "status": "OFFICIAL_MUSEUM_EXACT_OBJECT_VERIFIED",
+      "museum": "Museum of Fine Arts Ghent (MSK)",
+      "artist_official": "Anonymous Master",
+      "title_official": "Pieta",
+      "inventory": "1937-M",
+      "object_type": "Oil on canvas, 161.5 × 238.5 cm",
+      "period": "17th–18th century",
+      "official_object_url": "https://www.mskgent.be/en/collection/1937-m",
+      "official_iiif_manifest": "https://imagehub.mskgent.be/iiif/3/7534/manifest.json",
+      "handpicked_commons": "https://commons.wikimedia.org/wiki/File:Anonieme_meester_-_Pieta_-_1937-M_-_Museum_of_Fine_Arts_Ghent_(MSK).jpg",
+      "evidence": "Museum page explicitly identifies anonymous painter, Pietà, exact accession 1937-M and IIIF manifest. Former provisional accession/Commons-only hold is closed.",
+      "photo_rights": "Museum object page states Public Domain; verify exact image asset and photograph/reuse terms separately",
+      "photo_quality_approved": false,
+      "selected_image_preserved": true,
+      "publication": false
+    },
+    {
+      "registry_id": "RECENT575::229",
+      "status": "OFFICIAL_MUSEUM_EXACT_OBJECT_VERIFIED",
+      "museum": "Musée des Augustins Toulouse",
+      "artist_official": "Nicolas Tournier",
+      "title_official": "Le Christ descendu de la Croix",
+      "title_english": "Deposition from the Cross",
+      "inventory": "2004 1 285",
+      "alternate_inventory": "Ro 283",
+      "date": "circa 1630",
+      "object_type": "Oil on canvas, 238 × 183 cm",
+      "official_object_url": "https://collections.augustins.toulouse.fr/fr/notice/2004-1-285-le-christ-descendu-de-la-croix-e60a58dc-051c-4790-88e9-d64db06abd45",
+      "handpicked_commons": "https://commons.wikimedia.org/wiki/File:Nicolas_Tournier_-_Entombment_-_WGA23040.jpg",
+      "evidence": "The selected Commons file labeled 'Entombment' identifies the exact official Augustins object, inventory 2004 1 285. Official title corresponds to deposition, not the different museum painting 'Le Christ porté au tombeau' (2004 1 286).",
+      "caution": "Commons lists a divergent physical dimension (305×154 cm) while museum official is 238×183 cm; object UUID and accession agree; preserve dimension discrepancy for later image/catalogue reconciliation.",
+      "photo_rights": "Official Augustins photo credited to photographers; verify exact museum reproduction rights before use",
+      "photo_quality_approved": false,
+      "selected_image_preserved": true,
+      "publication": false
+    }
+  ],
+  "counts": {
+    "new_official_inventory_matches": 2,
+    "identity_supported_registry_rows": 152,
+    "unresolved_registry_rows": 25,
+    "handpicked_registry_rows": 177,
+    "image_photographs_approved": 0,
+    "image_replacements": 0
+  },
+  "remaining_unresolved_registry_ids": [
+    "RECENT575::005",
+    "RECENT575::014",
+    "RECENT575::031",
+    "RECENT575::032",
+    "RECENT575::033",
+    "RECENT575::034",
+    "RECENT575::035",
+    "RECENT575::142",
+    "RECENT575::150",
+    "RECENT575::154",
+    "RECENT575::179",
+    "RECENT575::359",
+    "RECENT575::369",
+    "RECENT575::384",
+    "RECENT575::387",
+    "RECENT575::392",
+    "RECENT575::402",
+    "RECENT575::407",
+    "RECENT575::410",
+    "RECENT575::421",
+    "RECENT575::440",
+    "RECENT575::479",
+    "RECENT575::503",
+    "RECENT575::542",
+    "RECENT575::572"
+  ],
+  "antwerp_six_distinct_cycle_panels": [
+    {
+      "registry_id": "RECENT575::005",
+      "selected_title": "Marriage at Cana",
+      "artist_in_selected_file": "Jacob Herreyns I",
+      "museum_candidate": "KMSKA Antwerp",
+      "museum_inventory": "NOT_ESTABLISHED",
+      "status": "HOLD_NO_OFFICIAL_EXACT_RECORD",
+      "note": "Six individual selected photographs. No official individual object accession established; do not borrow the verified Jacob Herreyns God the Father inventory 190 or merge scenes."
+    },
+    {
+      "registry_id": "RECENT575::031",
+      "selected_title": "Christ Handing the Keys to Saint Peter",
+      "artist_in_selected_file": "Jacob Herreyns I",
+      "museum_candidate": "KMSKA Antwerp",
+      "museum_inventory": "NOT_ESTABLISHED",
+      "status": "HOLD_NO_OFFICIAL_EXACT_RECORD",
+      "note": "Six individual selected photographs. No official individual object accession established; do not borrow the verified Jacob Herreyns God the Father inventory 190 or merge scenes."
+    },
+    {
+      "registry_id": "RECENT575::032",
+      "selected_title": "Baptism of Christ",
+      "artist_in_selected_file": "Jacob Herreyns I",
+      "museum_candidate": "KMSKA Antwerp",
+      "museum_inventory": "NOT_ESTABLISHED",
+      "status": "HOLD_NO_OFFICIAL_EXACT_RECORD",
+      "note": "Six individual selected photographs. No official individual object accession established; do not borrow the verified Jacob Herreyns God the Father inventory 190 or merge scenes."
+    },
+    {
+      "registry_id": "RECENT575::033",
+      "selected_title": "Mary Magdalene Washing the Feet of Jesus",
+      "artist_in_selected_file": "Jacob Herreyns I",
+      "museum_candidate": "KMSKA Antwerp",
+      "museum_inventory": "NOT_ESTABLISHED",
+      "status": "HOLD_NO_OFFICIAL_EXACT_RECORD",
+      "note": "Six individual selected photographs. No official individual object accession established; do not borrow the verified Jacob Herreyns God the Father inventory 190 or merge scenes."
+    },
+    {
+      "registry_id": "RECENT575::034",
+      "selected_title": "Raising of Lazarus",
+      "artist_in_selected_file": "Jacob Herreyns I",
+      "museum_candidate": "KMSKA Antwerp",
+      "museum_inventory": "NOT_ESTABLISHED",
+      "status": "HOLD_NO_OFFICIAL_EXACT_RECORD",
+      "note": "Six individual selected photographs. No official individual object accession established; do not borrow the verified Jacob Herreyns God the Father inventory 190 or merge scenes."
+    },
+    {
+      "registry_id": "RECENT575::035",
+      "selected_title": "Return of the Prodigal Son",
+      "artist_in_selected_file": "Jacob Herreyns I",
+      "museum_candidate": "KMSKA Antwerp",
+      "museum_inventory": "NOT_ESTABLISHED",
+      "status": "HOLD_NO_OFFICIAL_EXACT_RECORD",
+      "note": "Six individual selected photographs. No official individual object accession established; do not borrow the verified Jacob Herreyns God the Father inventory 190 or merge scenes."
+    }
+  ],
+  "selected_holds": [
+    {
+      "registry_id": "RECENT575::014",
+      "issue": "Museum page previously recovered depicts Souls in Purgatory rather than selected Christ ressuscité; exact image/identity conflict."
+    },
+    {
+      "registry_id": "RECENT575::392",
+      "issue": "Lille P85 and Joconde linkage secondary, museum exact page not independently confirmed."
+    },
+    {
+      "registry_id": "RECENT575::407",
+      "issue": "Lille Jesus with Martha and Mary, possible P65, source not independently verified; after/collaborator attribution and exact painting unresolved."
+    },
+    {
+      "registry_id": "RECENT575::410",
+      "issue": "Do not confuse with Dirck van Delen Queen of Sheba at Lille, accession P233; selected painting attributed to Jan Erasmus Quellinus."
+    },
+    {
+      "registry_id": "RECENT575::542",
+      "issue": "Magnin 1938 E 294/Joconde 50110001768 requires exact museum source."
+    },
+    {
+      "registry_id": "RECENT575::572",
+      "issue": "Brest workshop of Luca Giordano / Elevation of the Cross accession 968.8.1 from Commons provisional; no exact direct museum object."
+    },
+    {
+      "registry_id": "RECENT575::154",
+      "issue": "Groeningemuseum St Jerome presumed 0000.GRO0420.I from Commons; current museum catalogue and attribution not yet independently verified."
+    }
+  ],
+  "photography_and_curation": {
+    "paris_phase30_prior_recovery": "10 CC0-declared images remain research-only; Lazerges exposure review and Tissot exact original match pending",
+    "new_images_selected": 0,
+    "new_images_published": 0,
+    "handpicked_commons_selections_preserved": true,
+    "rejected_artworks_not_promoted": true,
+    "museum_inventory_evidence_not_equal_to_photo_use_permission": true
+  },
+  "preceding_ledger": "data/research/sacred-art/phase30-paris-cc0-recovery-and-three-museum-identities-20261106.v1.json",
+  "source_reviewed_date": "2026-11-06"
+}
