@@ -71,6 +71,13 @@ try{
   assert.equal(final.section,cfg.expect,
    "Real source-owned Last Gospel Leonine gate "+JSON.stringify({cfg,final}));
   if(cfg.expect){
+   // The production reader refreshes source cues without a card transition.
+   // This render omits cardTitle and supplies only sectionTitle: it must not
+   // remove the Leonine panel before the user can enter it via Next.
+   await page.evaluate(()=>window.__AO_PHONE_PREVIEW.syncState());
+   await page.waitForTimeout(180);
+   assert.equal(await page.locator("#ao-r17-native-reader-preview [data-ao-post-low-mass-leonine]").count(),1,
+    "Cue-only refresh removed Leonine prayers from the terminal Last Gospel");
    assert.equal(final.blocks,5,"Missing five sequential Leonine source blocks");
    assert.equal(final.translation,5,"Each prayer must include paired translation");
    assert.match(final.latin,/Ave Maria/);
