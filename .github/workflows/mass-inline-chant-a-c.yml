@@ -6,6 +6,10 @@ on:
     paths:
       - 'src/mass/reader-inline-chant.js'
       - 'src/mass/reader-participation-neume-policy.js'
+      - 'src/mass/reader-participation-coverage.js'
+      - 'data/mass/participation-20-event-coverage.v1.json'
+      - 'scripts/mass/build-participation-coverage.mjs'
+      - 'tests/reader-participation-20-event-coverage.mjs'
       - 'src/mass/reader-participation-reference-scores.js'
       - 'src/mass/reader-gospel-response-reference-scores.js'
       - 'src/mass/reader-dismissal-variant-reference-scores.js'
@@ -61,6 +65,9 @@ jobs:
         run: |
           node --check src/mass/reader-inline-chant.js
           node --check src/mass/reader-participation-neume-policy.js
+          node --check src/mass/reader-participation-coverage.js
+          node --check scripts/mass/build-participation-coverage.mjs
+          node --check tests/reader-participation-20-event-coverage.mjs
           node --check src/mass/reader-participation-reference-scores.js
           node --check src/mass/reader-gospel-response-reference-scores.js
           node --check src/mass/reader-dismissal-variant-reference-scores.js
@@ -91,6 +98,7 @@ jobs:
           node --check src/mass/reader-dom.js
           node tests/reader-inline-chant-a-c.mjs
           node tests/reader-participation-neume-policy.mjs
+          node tests/reader-participation-20-event-coverage.mjs
           node tests/reader-participation-reference-scores.mjs
           node tests/reader-dismissal-variant-reference.mjs
           node tests/reader-canon-pax-responses.mjs
