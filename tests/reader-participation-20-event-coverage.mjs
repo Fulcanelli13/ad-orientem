@@ -77,6 +77,11 @@ for(const event of model.events){
  if(event.state==="SOURCE_CUE_UNMAPPED"){
   assert.equal(researched.length,0);
   assert.equal(event.conditionalSources,null);
+  assert.equal(event.contextTransferCandidate?.sourceId,4487);
+  assert.equal(event.contextTransferCandidate?.sourceContextCertified,false);
+  assert.equal(event.contextTransferCandidate?.publicScoreApproved,false);
+ }else{
+  assert.equal(event.contextTransferCandidate,null);
  }
  if(event.state==="DYNAMIC_SOURCE_BOUND_RESEARCH_ONLY"){
   assert.equal(researched.length,0,"Dynamic Amen is NOT a fixed score catalogue record");
