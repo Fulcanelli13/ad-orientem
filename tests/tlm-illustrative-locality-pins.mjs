@@ -839,6 +839,13 @@ for(const r of withheld){
   assert.equal(item.geo.source_ref,pin.sourceRef);
   assert.equal(item.geo.lat,pin.lat);assert.equal(item.geo.lng,pin.lng);
   assert.ok(!item.actions[0]?.url.includes("/maps/dir/"));
+ }else if(CL2_ILLUSTRATIVE_LOCALITY_PINS_R26[r.cl2_anchor]){
+   assert.ok(["RG-5E751D3AAEFA","RG-650EDC1EC27B"].includes(r.cl2_anchor),"Only the two Excel R26 geography approvals enter this overlay");
+   const pin=CL2_ILLUSTRATIVE_LOCALITY_PINS_R26[r.cl2_anchor];
+   assert.ok(item?.map_publishable&&item.geo?.precision==="locality"&&item.geo?.approximate);
+   assert.equal(item.geo.source_ref,pin.sourceRef);
+   assert.equal(item.geo.lat,pin.lat);assert.equal(item.geo.lng,pin.lng);
+   assert.ok(!item.actions[0]?.url.includes("/maps/dir/"),"R26 must search rather than GPS route");
  }else if(laterPreciseSiteIds.has(r.cl2_anchor)){
   assert.ok(item?.map_publishable&&item.geo?.precision==="site","Excel precise site must use independently sourced site point: "+r.cl2_anchor);
   assert.ok(item.geo.source_ref&&!item.geo.source_ref.startsWith("geonames"),"Precise point may not use city-centre evidence: "+r.cl2_anchor);
