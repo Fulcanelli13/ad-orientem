@@ -30,5 +30,7 @@ jobs:
           node-version: 22
       - name: Verify required check remains unconditional
         run: node tests/required-main-gate-contract.mjs
+      - name: Verify source-Ordo Mass completeness (mandatory for every PR)
+        run: node tests/mass-ordo-completeness.mjs
       - name: Full existing non-browser regression suite
         run: npm test
