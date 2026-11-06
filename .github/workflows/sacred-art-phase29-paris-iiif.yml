@@ -1,0 +1,37 @@
+name: Sacred Art Phase 29 — Paris Musées two IIIF photos
+on:
+  push:
+    branches:
+      - research/sacred-art-phase18-iiif-audit-20261106
+    paths:
+      - 'scripts/sacred-art/phase29-paris-museums-iiif.py'
+      - '.github/workflows/sacred-art-phase29-paris-iiif.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  paris-two:
+    name: Inspect two Paris Musées official image manifests, no gallery writes
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install bounded image-audit dependencies
+        run: python -m pip install --disable-pip-version-check 'requests>=2.32,<3' 'Pillow>=11,<13'
+      - name: Validate Python and acquire only two handpicked museum images
+        run: |
+          python -m py_compile scripts/sacred-art/phase29-paris-museums-iiif.py
+          python scripts/sacred-art/phase29-paris-museums-iiif.py
+      - name: Store temporary image evidence only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-phase29-two-paris-museums-iiif-research-only
+          path: artifacts/sacred-art-phase29-paris-iiif/
+          retention-days: 7
+          if-no-files-found: warn
