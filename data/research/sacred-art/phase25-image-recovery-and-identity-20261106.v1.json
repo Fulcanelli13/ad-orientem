@@ -1,0 +1,133 @@
+{
+  "schema": "AO_SACRED_ART_PHASE25_IMAGE_QUALITY_AND_IDENTITY_V1",
+  "as_of": "2026-11-06",
+  "research_only": true,
+  "publication_changes": 0,
+  "owner_handpicked_selection_changes": 0,
+  "baseline": {
+    "low_resolution_owner_handpicked_records": 177,
+    "identified_prior": 87,
+    "additional_exact_museum_records": 3,
+    "identified_now": 90,
+    "still_unverified": 87,
+    "iiif_manifests_mapped_in_recovery_register": 29,
+    "potential_duplicate_object_identity_groups": 2
+  },
+  "new_museum_record_confirmations": [
+    {
+      "registry_id": "RECENT575::077",
+      "artist": "Jan Janssens",
+      "title": "Christ Crowned with Thorns",
+      "accession": "1929-BA",
+      "museum": "MSK Ghent",
+      "official_object": "https://www.mskgent.be/en/collection/1929-ba",
+      "iiif_manifest": "https://imagehub.mskgent.be/iiif/3/1166/manifest.json",
+      "source_commons": "https://commons.wikimedia.org/wiki/File:Jan_Janssens_-_The_crowning_with_thorns.jpg",
+      "caution": "Not the larger 1929-BB composition; reference Commons identifies 1929-BA; photograph not publication approved",
+      "image_rights_status": "OBJECT_PUBLIC_DOMAIN; EXACT_PHOTOGRAPH_TO_REVIEW"
+    },
+    {
+      "registry_id": "RECENT575::114",
+      "artist": "Jacob van Oost I",
+      "title": "Saint Anthony Raises a Man from the Dead",
+      "accession": "0000.GRO0178.I",
+      "museum": "Musea Brugge",
+      "official_object": "https://vlaamsekunstcollectie.be/collectie/0000-GRO0178-I",
+      "iiif_manifest": "https://dam.museabrugge.be/iiif/3/12440/manifest.json",
+      "caution": "Same physical painting as already identified RECENT575::156; retain both handpicked Commons records until duplicate review",
+      "image_rights_status": "IMAGE_COPYRIGHT_UNDETERMINED"
+    },
+    {
+      "registry_id": "RECENT575::143",
+      "artist": "Jacob van Oost I",
+      "title": "Vision of Saint Anthony of Padua",
+      "accession": "0000.GRO0177.I",
+      "museum": "Musea Brugge",
+      "official_object": "https://vlaamsekunstcollectie.be/collectie/0000-gro0177-i",
+      "iiif_manifest": "https://dam.museabrugge.be/iiif/3/12439/manifest.json",
+      "caution": "Distinct companion painting to 0000.GRO0178.I; must not be mistaken for its companion",
+      "image_rights_status": "IMAGE_COPYRIGHT_UNDETERMINED"
+    }
+  ],
+  "image_acquisition": {
+    "github_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42182892988",
+    "github_artifact": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42182892988/artifacts/13485748582",
+    "manifests_examined": 6,
+    "museum_canvas_photographs_downloaded": 11,
+    "handpicked_commons_comparisons_downloaded": 3,
+    "handpicked_commons_failed_429": 3,
+    "strong_visual_candidates": 1,
+    "possible_visual_candidates": 2,
+    "rights_holds": 6,
+    "approved_for_publication": 0,
+    "records": [
+      {
+        "registry_id": "RECENT575::152",
+        "museum_canvases_downloaded": 1,
+        "commons_retrieved": true,
+        "original_short_px": 4935,
+        "score": 27.79,
+        "status": "POSSIBLE_VISUAL_CANDIDATE_MANUAL_REVIEW",
+        "rights_gate": "HOLD_NEEDS_REVIEW",
+        "visual_caution": "Museum image includes bottom colour calibration strip; source cropping and colour need review; potential shared object with RECENT575::147"
+      },
+      {
+        "registry_id": "RECENT575::255",
+        "museum_canvases_downloaded": 1,
+        "commons_retrieved": true,
+        "original_short_px": 4831,
+        "score": 21.27,
+        "status": "POSSIBLE_VISUAL_CANDIDATE_MANUAL_REVIEW",
+        "rights_gate": "HOLD_PAGE_MANIFEST_CONFLICT",
+        "visual_caution": "Museum reproduction visibly darker and less warm than owner-selected image; evaluate fidelity before considering substitution"
+      },
+      {
+        "registry_id": "RECENT575::262",
+        "museum_canvases_downloaded": 1,
+        "commons_retrieved": true,
+        "original_short_px": 4498,
+        "score": 7.48,
+        "status": "STRONG_VISUAL_CANDIDATE_MANUAL_REVIEW",
+        "rights_gate": "HOLD_PAGE_MANIFEST_CONFLICT",
+        "visual_caution": "Current KMSKA attribution to van Dyck, formerly Rubens; museum reproduction is darker and lower contrast than selected image"
+      },
+      {
+        "registry_id": "RECENT575::267",
+        "museum_canvases_downloaded": 1,
+        "commons_retrieved": false,
+        "original_short_px": null,
+        "score": null,
+        "status": "NO_COMPARISON_COMMONS_429",
+        "rights_gate": "HOLD_NEEDS_REVIEW",
+        "visual_caution": "Museum preview includes frame; do not replace handpicked image without exact photo comparison"
+      },
+      {
+        "registry_id": "RECENT575::271",
+        "museum_canvases_downloaded": 1,
+        "commons_retrieved": false,
+        "original_short_px": null,
+        "score": null,
+        "status": "NO_COMPARISON_COMMONS_429",
+        "rights_gate": "HOLD_NEEDS_REVIEW",
+        "visual_caution": "Museum preview includes ornate frame; entire subject composition must be checked"
+      },
+      {
+        "registry_id": "RECENT575::272",
+        "museum_canvases_downloaded": 6,
+        "commons_retrieved": false,
+        "original_short_px": null,
+        "score": null,
+        "status": "NO_COMPARISON_COMMONS_429_MULTI_CANVAS",
+        "rights_gate": "HOLD_NEEDS_REVIEW",
+        "visual_caution": "Six distinct IIIF canvases (whole painting plus detail views); never choose arbitrary canvas"
+      }
+    ]
+  },
+  "next_recovery": {
+    "source_image_recheck": "Retry only 3 throttled selected Commons files, with bounded slow requests; no substitution from non-handpicked Commons",
+    "newly_confirmed_iiif": "Three new exact museum manifests can be entered into a subsequent read-only photograph batch",
+    "identity_backlog": "87 registry records still require exact museum object matching; deduplicate physical museum object separately from preserving handpicked photo records",
+    "final_editorial_sequence": "Finish photo acquisition and curation before description, then Scripture/theme classification, then prayer/calendar matching"
+  },
+  "curated_gallery_unchanged": true
+}
