@@ -60,7 +60,8 @@ const dataset={
  media:{approved:media.items}
 };
 const projection=projectExploreDataset(dataset),features=exploreMapFeatures(projection.byLens.shrines);
-assert.equal(features.length,260,"Exactly one pin per live source-backed shrine physical Place");
+assert.equal(features.length,seed.shrines.length,"Exactly one pin per live source-backed shrine physical Place");
+assert.equal(new Set(features.map(x=>x.properties.item_id)).size,features.length,"No duplicate shrine map markers");
 const profiles=buildExplorePlaceProfiles(dataset,projection,{today:"2026-10-11"});
 assert.equal(profiles.length,LIVE.places);
 assert.equal(profiles.filter(p=>p.illustrated_guide).length,5);
