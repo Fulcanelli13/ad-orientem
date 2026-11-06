@@ -105,7 +105,7 @@ function monthlyObservancesMarkup(model){
  const entries=model?.monthlyObservances??[];
  if(!entries.length)return "";
  const title=model.language==="fr"?"Dévotions du mois":"Monthly devotions";
- return '<section class="aoTodayV2CustomSpotlight aoTcmCard" data-home-monthly-observances><h2>'+esc(title)+'</h2>'+
+ return '<section class="aoTodayV2MonthlyDevotions aoTcmCard" data-home-monthly-observances><h2>'+esc(title)+'</h2>'+
   '<div class="aoTodayV2GlanceEvents">'+renderHomeFirstMonthlyObservances(entries,model.language)+'</div></section>';
 }
 
