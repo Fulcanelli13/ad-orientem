@@ -6,6 +6,8 @@ on:
       - "tests/reader-all-saints-asperges-phone.mjs"
       - "tests/calendar-imminent-mass-gate-2026.mjs"
       - "tests/mass-november-2026-release-gate-e2e.mjs"
+      - "tests/mass-reader-production-phone-smoke.mjs"
+      - "tests/mass-reader-production-pages-contract.mjs"
       - "src/mass/**"
   workflow_dispatch:
 permissions:
@@ -53,7 +55,11 @@ jobs:
           node-version: "22"
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
-      - name: Real public deployment, anonymous EN/FR LIVE and Schola controls
+      - name: Check exclusive GitHub Pages live Mass target
+        run: node tests/mass-reader-production-pages-contract.mjs
+      - name: Real public GitHub Pages, anonymous EN/FR LIVE and Schola controls
+        env:
+          AO_PAGES_URL: https://fulcanelli13.github.io/ad-orientem/
         run: node tests/mass-reader-production-phone-smoke.mjs
       - uses: actions/upload-artifact@v4
         if: always()
