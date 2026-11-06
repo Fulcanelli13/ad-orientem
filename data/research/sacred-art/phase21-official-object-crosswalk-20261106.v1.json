@@ -1,0 +1,145 @@
+{
+  "schema": "AO_SACRED_ART_OFFICIAL_OBJECT_CROSSWALK_PHASE21_V1",
+  "date": "2026-11-06",
+  "scope": "Owner-handpicked paintings under 1200px short edge. Museum identity research only; no image promotion.",
+  "baseline": {
+    "low_res_handpicked": 177,
+    "pre_phase21_official_objects": 21,
+    "phase21_additional_exact_object_confirmations": 10,
+    "total_confirmed_objects": 31,
+    "still_to_verify": 146
+  },
+  "correction": "The Phase20 157-item backlog contains 10 newly confirmed objects, leaving 147 outstanding within that backlog. However the earlier 21-object baseline and the 157-item set may include overlap in counting if their record sets are not disjoint; use explicit registry-ID union, not summed totals, when producing global progress.",
+  "new_confirmed": [
+    {
+      "registry_id": "RECENT575::096",
+      "artist": "Pietro Ricchi",
+      "title": "Saint Cecilia",
+      "accession": "2004 1 296",
+      "official_object_url": "https://pop.culture.gouv.fr/notice/joconde/05620000473",
+      "rights_hold": "JOCONDE_PHOTO_RIGHTS_HOLD",
+      "exact_object_verified": true,
+      "image_downloaded_this_phase": false,
+      "approved_for_gallery": false
+    },
+    {
+      "registry_id": "RECENT575::220",
+      "artist": "Sébastien Bourdon",
+      "title": "Martyrdom of Saint Andrew",
+      "accession": "2004 1 52",
+      "official_object_url": "https://pop.culture.gouv.fr/notice/joconde/05620000033",
+      "rights_hold": "JOCONDE_PHOTO_RIGHTS_HOLD",
+      "exact_object_verified": true,
+      "image_downloaded_this_phase": false,
+      "approved_for_gallery": false
+    },
+    {
+      "registry_id": "RECENT575::221",
+      "artist": "Francesco Cairo",
+      "title": "Mystical Marriage of Saint Catherine",
+      "accession": "2004 1 73",
+      "official_object_url": "https://pop.culture.gouv.fr/notice/joconde/05620000316",
+      "rights_hold": "JOCONDE_PHOTO_RIGHTS_HOLD",
+      "exact_object_verified": true,
+      "image_downloaded_this_phase": false,
+      "approved_for_gallery": false
+    },
+    {
+      "registry_id": "RECENT575::222",
+      "artist": "Jacques Stella",
+      "title": "Marriage of the Virgin",
+      "accession": "2004 1 75",
+      "official_object_url": "https://pop.culture.gouv.fr/notice/joconde/05620000368",
+      "rights_hold": "JOCONDE_PHOTO_RIGHTS_HOLD",
+      "exact_object_verified": true,
+      "image_downloaded_this_phase": false,
+      "approved_for_gallery": false
+    },
+    {
+      "registry_id": "RECENT575::223",
+      "artist": "Gabriel Blanchard",
+      "title": "Purification of the Virgin",
+      "accession": "2004 1 213",
+      "official_object_url": "https://pop.culture.gouv.fr/notice/joconde/05620000017",
+      "rights_hold": "JOCONDE_PHOTO_RIGHTS_HOLD",
+      "exact_object_verified": true,
+      "image_downloaded_this_phase": false,
+      "approved_for_gallery": false
+    },
+    {
+      "registry_id": "RECENT575::231",
+      "artist": "Wenceslas Cobergher",
+      "title": "Ecce Homo",
+      "accession": "2004 1 64",
+      "official_object_url": "https://pop.culture.gouv.fr/notice/joconde/05620001269",
+      "rights_hold": "JOCONDE_PHOTO_RIGHTS_HOLD",
+      "exact_object_verified": true,
+      "image_downloaded_this_phase": false,
+      "approved_for_gallery": false
+    },
+    {
+      "registry_id": "RECENT575::147",
+      "artist": "Jacob van Oost I",
+      "title": "Christ Crowned with Thorns",
+      "accession": "0000.GRO0672.I",
+      "official_object_url": "https://vlaamsekunstcollectie.be/en/collection/0000-GRO0672-I",
+      "rights_hold": "IMAGE_RIGHTS_UNDETERMINED",
+      "exact_object_verified": true,
+      "image_downloaded_this_phase": false,
+      "approved_for_gallery": false
+    },
+    {
+      "registry_id": "RECENT575::148",
+      "artist": "Gaspar de Crayer",
+      "title": "Ghost of Samuel Appears to the Witch of Endor",
+      "accession": "0000.GRO1302.I",
+      "official_object_url": "https://www.museabrugge.be/en/collection/work/id/0000_gro1302_i",
+      "rights_hold": "MUSEUM_POLICY_RIGHTS_RECONCILE",
+      "exact_object_verified": true,
+      "image_downloaded_this_phase": false,
+      "approved_for_gallery": false
+    },
+    {
+      "registry_id": "RECENT575::155",
+      "artist": "Guido Reni (after composition; museum attribution)",
+      "title": "Coronation of Mary",
+      "accession": "0000.GRO0599.I",
+      "official_object_url": "https://vlaamsekunstcollectie.be/en/collection/0000-GRO0599-I",
+      "rights_hold": "COPY_AFTER_COMPOSITION; IMAGE_RIGHTS_UNDETERMINED",
+      "exact_object_verified": true,
+      "image_downloaded_this_phase": false,
+      "approved_for_gallery": false
+    },
+    {
+      "registry_id": "RECENT575::156",
+      "artist": "Jacob van Oost I",
+      "title": "Saint Antony Raising a Man from the Dead",
+      "accession": "0000.GRO0178.I",
+      "official_object_url": "https://vlaamsekunstcollectie.be/en/collection/0000-GRO0178-I",
+      "rights_hold": "IMAGE_RIGHTS_UNDETERMINED",
+      "exact_object_verified": true,
+      "image_downloaded_this_phase": false,
+      "approved_for_gallery": false
+    }
+  ],
+  "bulk_verification": {
+    "github_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42170904638",
+    "results": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42170904638/artifacts/13480738813",
+    "official_additional_verified": 1,
+    "french_endpoint_errors": 32,
+    "other_endpoint_errors": 5,
+    "rights_status": "not_applicable_to_catalogue_metadata"
+  },
+  "explicit_holds": [
+    "RECENT575::014 Commons source page names a different subject, verify before matching.",
+    "RECENT575::155 museum says modified copy after Guido Reni; not automatically autograph.",
+    "RECENT575::148 conflict/ambiguity in photography rights labels across museum sources."
+  ],
+  "policy": [
+    "Preserve owner handpicks and artwork exclusions.",
+    "No non-handpicked Commons promotion.",
+    "Museum object identity, specific photo rights, and photographic quality are separate gates.",
+    "No prayer/calendar pairings until gallery curated.",
+    "No app gallery files modified."
+  ]
+}
