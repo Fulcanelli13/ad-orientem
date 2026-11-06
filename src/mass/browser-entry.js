@@ -29,6 +29,8 @@ import { installShellFocusVisibilityGuard } from "../app/shell-focus-visibility.
 import { recoverReaderProperOmissions } from "./reader-proper-runtime-recovery.js";
 import { installPentecostSunday1960PrefaceSource } from "./1962-pentecost-sunday-prefatio1960-source.js";
 import {select1962CommemorationsForMassForm} from "./1962-commemoration-form-source.js";
+import {isExplicitIcrspFirstFridaySelection} from "./icrsp-first-friday-entry.js";
+import {projectIcrspNov06ProPapaOrations} from "./icrsp-nov06-pro-papa-orations.js";
 import {resolve1962AllSoulsSuccession} from "./1962-all-souls-consecutive-rites.js";
 import {allSouls1962RequiemOverlay,is1962AllSoulsCalendarMass,
   resolve1962AllSoulsAdditionalProper} from "./1962-all-souls-source.js";
@@ -903,6 +905,23 @@ export function createBrowserMassController({rogationPreflight=null,fullMassPref
           throw new Error("LOCAL_ADDITIONAL_ORATIONS_"+result.reason);
         presentedProper=result.proper;
       }
+      // ICRSP particular ordo for 6 Nov 2026 explicitly prescribes
+      // Or. pro Papa. The generic Sacred Heart Proper has only the principal
+      // prayers; attach the verified second Collect/Secret/Postcommunion only
+      // following the institute's explicit, date-scoped Home choice.
+      const proPapa=projectIcrspNov06ProPapaOrations({
+        proper:presentedProper,
+        date:resolvedMass.date,
+        form:chosen?.form??options.celebrationForm,
+        actualCelebrationId:arch()?.actualCelebration?.id??null,
+        votiveBasis:arch()?.votiveBasis??null,
+        explicitInstituteSelection:isExplicitIcrspFirstFridaySelection({
+          win:globalThis,dateIso:resolvedMass.date
+        })
+      });
+      if(proPapa.status==="UNVERIFIED")
+        throw Error("ICRSP_NOV06_PRO_PAPA_"+proPapa.reason);
+      presentedProper=proPapa.proper;
       let allSoulsSuccession=null;
       if(chosen?.allSoulsSuccession){
         const canonical=calendarResolution?.date===resolvedMass.date
