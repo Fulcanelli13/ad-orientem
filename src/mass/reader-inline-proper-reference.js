@@ -9,6 +9,7 @@ import {createProperReferenceRegistry,PROPER_REFERENCE_LABELS} from "./reader-in
 import {participationReferenceScoresForParagraph} from "./reader-participation-reference-scores.js";
 import {resolveOrationAmenSourceHandoff} from "./reader-oration-amen-source-handoff.js";
 import {sourceBoundFestiveOrationAmenScores} from "./reader-oration-festive-amen-reference.js";
+import {sourceBoundOldSolemnOrationAmenScores} from "./reader-oration-old-solemn-amen-reference.js";
 import {resolveOrationAmenTonePolicy} from "./reader-oration-amen-tone-policy.js";
 
 export const JULY07_REFERENCE_NOTATION_SCHEMA="ao-reader-july07-reference-notation-v1";
@@ -150,7 +151,10 @@ export function createDatedProperNotationPreview({
    const orationScores=sourceBoundFestiveOrationAmenScores({
     paragraph:p,paragraphs,form,resolvedMass,selectedSettings
    });
-   for(const score of [...scores,...participatory,...orationScores]){
+   const oldSolemnScores=sourceBoundOldSolemnOrationAmenScores({
+    paragraph:p,paragraphs,form,resolvedMass,selectedSettings
+   });
+   for(const score of [...scores,...participatory,...orationScores,...oldSolemnScores]){
     const host=doc.createElement("span");host.className="ao-proper-reference-notation";
     host.dataset.referenceScore=score.id;
     host.dataset.approved="false";
