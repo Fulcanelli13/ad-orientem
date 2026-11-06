@@ -49,6 +49,12 @@ jobs:
           node tests/sacred-atlas-v10-b21-two-marian-places.mjs
       - name: V10 editorial master deterministic source audit
         run: node tests/sacred-atlas-editorial-master-530-contract.mjs
+      - name: Preserve nine new approved covers and editorial photo rights
+        run: |
+          node tests/sacred-atlas-r26-existing21-original-cover-triage-contract.mjs
+          node tests/shrine-marian-editorial-inventory-contract.mjs
+          node tests/explore-sacred-photo-crosswalk.mjs
+          node tests/relic-principal-sites-bulk.mjs
       - name: V10 broader graph and reader profiles
         run: |
           node tests/sacred-geography-r70-worldwide-coverage.mjs
