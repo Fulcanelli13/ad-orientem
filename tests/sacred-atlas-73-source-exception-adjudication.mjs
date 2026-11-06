@@ -71,7 +71,7 @@ const replacements = [];
 const indexed = [];
 for (const row of second) {
   const follow = row.second_pass;
-  assert.match(follow.corroborating_url, /^https:\/);
+  assert.ok(follow.corroborating_url.startsWith("https://"), row.candidate_id);
   assert.ok(follow.content_finding.length > 70, row.candidate_id);
   assert.ok(follow.site_scope_outcome.length > 10, row.candidate_id);
   assert.equal(follow.source_content_check_performed, true);
