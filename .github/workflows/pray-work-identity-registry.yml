@@ -6,6 +6,7 @@ on:
     paths:
       - data/pray/prayer-work-identity-registry-20261106.v1.json
       - tests/pray-work-identity-registry-20261106.mjs
+      - tests/pray-work-identity-source-evidence-20261106.mjs
       - .github/workflows/pray-work-identity-registry.yml
   pull_request:
     paths:
@@ -26,3 +27,5 @@ jobs:
           node-version: '22'
       - name: Validate 133-work registry and reference integrity
         run: node tests/pray-work-identity-registry-20261106.mjs
+      - name: Audit source exports separately from reader routes
+        run: node tests/pray-work-identity-source-evidence-20261106.mjs
