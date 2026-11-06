@@ -18,7 +18,8 @@ assert.deepEqual(model.counts,{
  events:20,uniqueCueIds:23,exactPublicFragments:2,
  fixedResearchExcerpts:24,eventsLimitedPublic:1,
  eventsFixedResearchOnly:14,eventsDynamicSourceBound:2,
- eventsSourceUnmapped:3,eventsWithAnyFixedResearch:15
+ eventsSourceUnmapped:2,eventsExcludedNonSung:1,
+ sungEligibleEvents:19,sungEligibleCueIds:22,eventsWithAnyFixedResearch:15
 });
 assert.equal(PARTICIPATION_NEUME_POLICY.length,20);
 assert.equal(PARTICIPATION_REFERENCE_SCORES.length,24);
@@ -59,6 +60,17 @@ for(const event of model.events){
   assert.equal(source.publicScoreApproved,false,"Research excerpt unexpectedly approved: "+source.id);
   assert.ok(source.sourceUrl.startsWith("https://"));
  }
+ if(event.state==="EXCLUDED_NON_SUNG_RESPONSE"){
+  assert.equal(event.id,"GOSPEL_CONCLUSION");
+  assert.equal(event.sungExclusion,"GOSPEL_END_LAUS_TIBI_CHRISTE_RESPONDED_NOT_SUNG");
+  assert.equal(researched.length,0);
+  assert.equal(approved.length,0);
+  assert.equal(event.conditionalSources,null);
+  const spoken={kind:"TEXT",sourceCueIds:["AO.SM.C0087"],primary:"℟. Laus tibi, Christe."};
+  assert.equal(participationNeumeOpportunity({
+   cueId:"AO.SM.C0087",form:"SOLEMN",paragraph:spoken
+  }),null,"Spoken Gospel response must never be treated as a sung cue");
+ }
  if(event.state!=="LIMITED_PUBLIC_EXACT_SETTING"){
   assert.equal(approved.length,0,"No silent public promotion");
  }
@@ -77,7 +89,10 @@ for(const event of model.events){
 }
 assert.equal(handled.size,23);
 assert.deepEqual(model.events.filter(x=>x.state==="SOURCE_CUE_UNMAPPED").map(x=>x.id),[
- "GOSPEL_CONCLUSION","OFFERTORY_GREETING","DISMISSAL_GREETING"
+ "OFFERTORY_GREETING","DISMISSAL_GREETING"
+]);
+assert.deepEqual(model.events.filter(x=>x.state==="EXCLUDED_NON_SUNG_RESPONSE").map(x=>x.id),[
+ "GOSPEL_CONCLUSION"
 ]);
 assert.deepEqual(model.events.filter(x=>x.state==="DYNAMIC_SOURCE_BOUND_RESEARCH_ONLY").map(x=>x.id),[
  "COLLECT_AMEN","POSTCOMMUNION_AMEN"
@@ -104,4 +119,4 @@ for(const id of ["AO.SM.C0087","AO.SM.C0107","AO.SM.C0258"]){
 }
 const lowForm=buildParticipationCoverage();
 assert.equal(lowForm.counts.exactPublicFragments,2,"Inventory is metadata, never a Low Mass score attachment");
-console.log("PASS 20/20 sung-participation events, 23 unique source cues, 24 research excerpts, 2 Ite VIII public, 2 Proper-dynamic, 3 source gaps");
+console.log("PASS 20 audited events / 19 sung-eligible / 23 cues, 24 research excerpts, 2 Ite VIII public, 2 Proper-dynamic, 2 score gaps, Gospel conclusion spoken-only");
