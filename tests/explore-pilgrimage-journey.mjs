@@ -11,6 +11,7 @@ const seed=JSON.parse(readFileSync(new URL("../data/shrines/shrines-pilgrimages-
 const registry=JSON.parse(readFileSync(new URL("../data/shrines/source-registry.v1.json",import.meta.url),"utf8"));
 const geography=JSON.parse(readFileSync(new URL("../data/geography/seed-registry.v1.json",import.meta.url),"utf8"));
 const admission=JSON.parse(readFileSync(new URL("../data/geography/research/sacred-places-v10-b20-three-relic-shrines-release.v1.json",import.meta.url),"utf8"));
+const b21=JSON.parse(readFileSync(new URL("../data/geography/research/sacred-places-v10-b21-two-marian-site-admissions-20261106.v1.json",import.meta.url),"utf8"));
 const evidence=JSON.parse(readFileSync(new URL("../data/shrines/route-stage-evidence-20261020.v1.json",import.meta.url),"utf8"));
 assert.equal(evidence.schema,"AO_PILGRIMAGE_STAGE_EVIDENCE_V1");
 const geometry=JSON.parse(readFileSync(new URL("../data/shrines/route-geometry-review-20261020.v1.json",import.meta.url),"utf8"));
@@ -145,8 +146,8 @@ assert.equal(saintLouis.stageSiteAnchors[1].placeId,"place:MU:pere-laval-sainte-
 assert.ok(journeys.every(j=>j.routeGeometry===null&&j.mappedStages.length===0&&j.stops.length===0));
 assert.ok(journeys.every(j=>j.mappedStages.length===0),
  "Named stages are not navigable geographic stops");
-assert.equal(seed.pilgrimages.length,240+admission.new_places,"New devotional destinations must not become mapped walking routes");
-for(const row of admission.published_new){
+assert.equal(seed.pilgrimages.length,240+admission.new_places+b21.new_places,"New devotional destinations must not become mapped walking routes");
+for(const row of [...admission.published_new,...b21.published_new]){
  const pilgrimage=seed.pilgrimages.find(p=>p.pilgrimage_id===row.pilgrimage_id);
  assert.ok(pilgrimage&&pilgrimage.destination_shrine_id===row.shrine_id);
  assert.deepEqual(pilgrimage.route_ids,[],"No route is inferred for a new V10 sacred place");
