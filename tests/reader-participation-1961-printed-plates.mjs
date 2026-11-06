@@ -31,10 +31,11 @@ for(const score of PARTICIPATION_REFERENCE_SCORES){
  seen.add(score.id);
 }
 assert.equal(seen.size,24);
-assert.equal(linked,28,"Two two-page witnesses each attach to two archival excerpts");
-assert.equal(uniqueUrls.size,11);
+assert.equal(linked,40,"Eleven records now include the full GR p.130*-131* Preface sequence; archive score cards choose exact phrase pages");
+assert.equal(uniqueUrls.size,13);
 const expected={
-  4449:["3/220.png"],4450:["3/220.png"],4487:["3/209.png"],
+  4449:["3/220.png","2/1007.png","2/1008.png"],
+  4450:["3/220.png","2/1008.png"],4487:["3/209.png"],
   4490:["3/217.png"],4491:["3/218.png"],7282:["3/221.png"],
   4327:["3/221.png"],961:["2/906.png"],749:["2/941.png"],
   2901:["3/150.png","3/151.png"],
@@ -55,4 +56,4 @@ for(const row of lines.slice(1)){
  assert.match(row,/DO_NOT_PUBLISH/);
  assert.match(row,/https:\/\/gregobase\.selapa\.net\/sources\/[23]\/\d+\.png/);
 }
-console.log("PASS 11 archival source records, 11 distinct original 1961 page scans, 28 plate links on 24 unapproved GABC excerpts");
+console.log("PASS 11 archival source records, 13 distinct 1961 page scans, 40 record-plate associations on 24 unapproved excerpts");

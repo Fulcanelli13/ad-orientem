@@ -7,12 +7,14 @@ import {fileURLToPath} from "node:url";
 import {dirname} from "node:path";
 import {PARTICIPATION_REFERENCE_SCORES} from "../../src/mass/reader-participation-reference-scores.js";
 import {printedPlatesForParticipationScore} from "../../src/mass/reader-participation-printed-plates.js";
+import {printedPassageForPrefaceScore} from "../../src/mass/reader-preface-1961-print-passage.js";
 import {buildParticipationCoverage} from "../../src/mass/reader-participation-coverage.js";
 
 export const PARTICIPATION_SCORE_REVIEW_CSV_SCHEMA="ao-1961-participation-24-score-review-v1";
 export const PARTICIPATION_SCORE_REVIEW_HEADERS=Object.freeze([
  "event_id","cue_ids","score_id","source_id","source_name","source_folio",
  "source_url","printed_1961_plate_urls","printed_1961_plate_pages","printed_source_note_parity",
+ "printed_preface_phrase_location",
  "tone_family","formula","latin","gabc_sha256","gabc_body",
  "current_print_note_verification","context_review","public_score_approved",
  "editorial_action","reviewer_source_match","reviewer_neume_match",
@@ -41,6 +43,8 @@ export function buildParticipationScoreReviewCsv(){
       !s.sourceUrl?.startsWith("https://gregobase.selapa.net/chant.php?id="))
     throw Error("NON_REVIEW_ONLY_OR_UNSOURCED_GABC_"+id);
    const witness=printedPlatesForParticipationScore(s.sourceId);
+   const exactPreface=printedPassageForPrefaceScore(s.id);
+   const printedPages=exactPreface?.printWitnesses??witness?.plates;
    if(!witness||witness.sourceNoteByNoteParity!=="UNVERIFIED"||
       witness.publicScoreApproved!==false||witness.plates.length<1)
     throw Error("PRINTED_FACSIMILE_OR_REVIEW_GATE_MISSING_"+s.sourceId);
@@ -49,9 +53,10 @@ export function buildParticipationScoreReviewCsv(){
    rows.push([
     event.id,s.sourceCueIds.join(" | "),s.id,s.sourceId,
     s.sourceName,s.sourceFolio,s.sourceUrl,
-    witness.plates.map(p=>p.url).join(" | "),
-    witness.plates.map(p=>p.book+" p. "+p.page).join(" | "),
+    printedPages.map(p=>p.url).join(" | "),
+    printedPages.map(p=>p.book+" p. "+p.page).join(" | "),
     witness.sourceNoteByNoteParity,
+    exactPreface?exactPreface.sectionTitle+" — "+exactPreface.position:"",
     s.toneFamily??s.settingId??"",s.formula??"",s.sourceLatin,
     digest,body,s.printVerification??"PENDING_NOTE_BY_NOTE_FACSIMILE_COLLATION",
     "PRINTED_EXCERPT__SELECTED_MASS_VARIANT_NOT_INFERRED",false,

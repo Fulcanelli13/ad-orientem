@@ -13,8 +13,15 @@ const witness=(sourceId,plates)=>Object.freeze({
  plates:Object.freeze(plates),facsimileMatchesSourceIdentity:true,
  sourceNoteByNoteParity:"UNVERIFIED",publicScoreApproved:false});
 export const PARTICIPATION_1961_PRINTED_PLATES=Object.freeze([
- witness(4449,[plate("Liber Usualis · Solesmes 1961","109",LU+"220.png")]),
- witness(4450,[plate("Liber Usualis · Solesmes 1961","109",LU+"220.png")]),
+ witness(4449,[
+  plate("Liber Usualis · Solesmes 1961","109",LU+"220.png"),
+  plate("Graduale Romanum · Solesmes 1961","130*",GR+"1007.png"),
+  plate("Graduale Romanum · Solesmes 1961","131*",GR+"1008.png")
+ ]),
+ witness(4450,[
+  plate("Liber Usualis · Solesmes 1961","109",LU+"220.png"),
+  plate("Graduale Romanum · Solesmes 1961","131*",GR+"1008.png")
+ ]),
  witness(4487,[plate("Liber Usualis · Solesmes 1961","98",LU+"209.png")]),
  witness(4490,[plate("Liber Usualis · Solesmes 1961","106",LU+"217.png")]),
  witness(4491,[plate("Liber Usualis · Solesmes 1961","107",LU+"218.png")]),
