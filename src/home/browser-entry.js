@@ -735,6 +735,26 @@ export function createHomeOwner(win=globalThis){
       }
       return;
     }
+    const monthly=target?.closest?.("[data-home-monthly-route]");
+    if(monthly){
+      event.preventDefault?.();
+      event.stopImmediatePropagation?.();
+      const id=monthly.dataset?.homeMonthlyRoute;
+      if(!["programme.first_friday","programme.first_saturday"].includes(id)){
+        showRouteError("home.monthly-devotion",monthly);return;
+      }
+      // The canonical Pray owner is lazy-loaded. Open its exact programme,
+      // never a substitute generic prayer hub or a tracking-only view.
+      void import("../pray/browser-entry.js")
+        .then(m=>m.ensurePrayReader({win}))
+        .then(()=>win?.AO_PRAY_V435930?.open?.(id,{trigger:monthly})===true)
+        .then(ok=>{if(ok)clearRouteError();else showRouteError(id,monthly);})
+        .catch(error=>{
+          try{win?.console?.error?.("Home monthly devotion unavailable",id,error)}catch{}
+          showRouteError(id,monthly);
+        });
+      return;
+    }
     const route=target?.closest?.("[data-home-cu-route]");
     if(route){
       event.preventDefault?.();
