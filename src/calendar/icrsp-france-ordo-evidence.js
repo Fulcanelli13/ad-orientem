@@ -68,7 +68,7 @@ export function renderIcrspFranceHomeOrdo(date,language="en"){
   t("Preface of the ","Préface du ")+mass.preface[lng]
  ].join(" · ");
  const notes=[
-  office.name[lng]+" · "+classLabel(office.class)+" · "+t("green Office","office vert")
+  office.name[lng]+" · "+classLabel(office.class)+" · "+(office.colour==="WHITE"?t("white Office","office blanc"):t("green Office","office vert"))
  ].concat(record.observances.includes("FIRST_FRIDAY")?[t("First Friday","Premier vendredi")]:[])
   .concat(record.observances.includes("FIRST_SATURDAY")?[t("First Saturday","Premier samedi")]:[])
   .concat(record.observances.includes("FRIDAY_ABSTINENCE")?[t("Friday abstinence","Abstinence du vendredi")]:[]);
