@@ -61,7 +61,7 @@ for (const row of rows) {
   assert.equal(row.draft_b21_place_id, existingAdmission?.place_id || null);
   if (existingAdmission) assert.ok(geography.places.some(p => p.place_id === existingAdmission.place_id));
 }
-assert.deepEqual(missingAreas.sort(), ["SG-INV-0687", "SG-INV-0720", "SG-INV-0731"]);
+assert.deepEqual(missingAreas, [], "All 169 owner-review candidates have civil country-area scaffolding");
 assert.deepEqual(newlyNear, [], "No additional proximity exception may be silently hidden");
 assert.equal(rows.filter(x => x.prior_priority_manifest).length, 96);
 assert.equal(rows.filter(x => !x.prior_priority_manifest).length, 73);
@@ -73,7 +73,7 @@ for (const id of intake.other_draft_p107.candidate_ids) assert.ok(!byId.has(id))
 assert.deepEqual(intake.counts, {
   source_rows:169, unique_candidates:169, priority:96, source_class_review:65,
   specific_holds:8, priority_in_previous_96:96, additional_73_integrated:73,
-  b21_unapproved_draft_overlap:2, missing_country_area:3, new_unflagged_sub500m:0,
+  b21_unapproved_draft_overlap:2, missing_country_area:0, new_unflagged_sub500m:0,
   owner_approved:0, authorized_for_production:0
 });
-console.log("PASS 169 Claude owner-review records: 96 priority + 65 source review + 8 holds, 73 newly staged; 2 B21 draft overlaps, 3 country-area holds, zero auto-publication");
+console.log("PASS 169 Claude owner-review records: 96 priority + 65 source review + 8 holds, 73 newly staged; 2 B21 draft overlaps, all country-area scaffolding present, zero auto-publication");
