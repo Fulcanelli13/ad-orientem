@@ -2048,6 +2048,7 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
       speakerEvidence:p.speakerEvidence??null,
       liturgicalGroup:p.liturgicalGroup??null,
       prayerRole:p.prayerRole??null,
+      orationGroupIndex:Number.isInteger(p.orationGroupIndex)?p.orationGroupIndex:null,
       languageOwner:p.languageOwner??null,
       sourceBlockId:p.sourceBlockId??null,
       sectionBoundaryBefore:p.sectionBoundaryBefore??null,
@@ -4726,7 +4727,6 @@ export function createReaderDomAdapter({
           const notice=doc.createElement("p");
           notice.className="ao-verified-oration-count";
           notice.dataset.verifiedOrationCount="2";
-          const label=orationNames[sourceOrationField][frenchReader?1:0];
           notice.textContent=frenchReader
             ?"Deux "+(sourceOrationField==="POSTCOMMUNION_SET"?"postcommunions":
               sourceOrationField==="SECRET_SET"?"secrètes":"collectes")+
