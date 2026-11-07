@@ -1,0 +1,75 @@
+{
+  "schema": "AO_SACRED_ART_PHASE42_PRIORITY22_ACTUAL_IMAGE_COMPARISON_BOARD_V1",
+  "as_of": "2026-11-07",
+  "scope": "Research-only photograph comparison board for the 22 Phase41 P1 handpicked selections; no gallery replacement or photo permission inference",
+  "source_of_truth": "data/research/sacred-art/phase41-owner169-photographic-readiness-and-37-iiif-20261107.v1.json",
+  "selected_registry_ids": [
+    "RECENT575::004",
+    "RECENT575::018",
+    "RECENT575::020",
+    "RECENT575::021",
+    "RECENT575::025",
+    "RECENT575::026",
+    "RECENT575::037",
+    "RECENT575::039",
+    "RECENT575::042",
+    "RECENT575::044",
+    "RECENT575::054",
+    "RECENT575::072",
+    "RECENT575::075",
+    "RECENT575::076",
+    "RECENT575::114",
+    "RECENT575::143",
+    "RECENT575::152",
+    "RECENT575::153",
+    "RECENT575::238",
+    "RECENT575::240",
+    "RECENT575::255",
+    "RECENT575::262"
+  ],
+  "evidence": {
+    "workflow_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42367925605",
+    "artifact": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42367925605/artifacts/13571904398",
+    "research_source_phases": [
+      "phase18",
+      "phase20",
+      "phase25",
+      "phase26",
+      "phase27"
+    ],
+    "previous_geometric_scores": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42218282365/artifacts/13502631340",
+    "image_pair_count": 22,
+    "handpicked_reference_available": 22,
+    "museum_candidate_available": 22,
+    "strong_same_painting_geometric_evidence": 22,
+    "score_summary": "Phase28 SIFT/homography best candidate for each selected owner image (per-painting not per-candidate image test).",
+    "review_document": "review_board.html",
+    "review_metadata": "review_decisions.json",
+    "object_image_scope": "The actual archived photo bytes are displayed side by side; no subjective colour/crop/fidelity approval issued."
+  },
+  "editorial_next_actions": [
+    "Inspect per-pair framing, crop, panel scope, details vs full painting and colour/exposure against handpicked reference.",
+    "For institutional candidates with manifest RIGHTS_UNDETERMINED, do not infer reuse rights from the canvas or from Commons Public Domain label.",
+    "For PDM/CC0 declarations, confirm the declaration applies to the exact photographic bytes supplied, not merely the historical painting object.",
+    "Mark a replacement eligible only after legal/photographic/editorial approval, not automatically from dimensions or homography.",
+    "Preserve original selected image bytes, aliases, explicit rejects and placement restrictions.",
+    "After approved individual photographs, update curated image bank and test app, Prayer/Calendar placement only when authorized."
+  ],
+  "metrics": {
+    "owner_selected_photo_rows": 177,
+    "museum_identity_supported": 169,
+    "archival_identity_holds": 8,
+    "priority_22_actual_image_pairs_available": 22,
+    "candidate_geometric_same_painting": 22,
+    "photo_rights_cleared": 0,
+    "photo_fidelity_approved": 0,
+    "gallery_photos_replaced": 0,
+    "original_owner_handpicks_removed": 0
+  },
+  "delivery": {
+    "visual_review_archive": "Ad_Orientem_Phase42_22_Photo_Comparison_Board.zip",
+    "current_excel_master": "Ad_Orientem_Phase42_177_Artwork_Photo_Review_Master.xlsx",
+    "workflow_artifact_retention_days": 14,
+    "publication": "NONE"
+  }
+}
