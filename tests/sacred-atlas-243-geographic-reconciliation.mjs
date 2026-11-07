@@ -8,7 +8,7 @@ const geo=read("data/geography/seed-registry.v1.json");
 const groups=source.candidate_ids_by_lane, all=new Set(Object.values(groups).flat());
 assert.equal(coords.schema,"AO_SACRED_ATLAS_243_30_MISSING_COORDINATE_STAGE_V1");
 assert.equal(decisions.schema,"AO_SACRED_ATLAS_243_PROXIMITY_AND_AREAS_V1");
-assert.equal(coords.status,"RESEARCH_ONLY_UNAPPROVED");
+assert.equal(coords.status,"RESEARCH_IDENTITY_RECONCILED_16_CASES_NO_ADMISSION");
 assert.equal(decisions.status,"RESEARCH_ONLY_NO_GEOAREA_ADMISSION");
 assert.equal(geo.places.length,535,"No unapproved Place admission");
 assert.equal(coords.counts.missing_original,40);
@@ -17,17 +17,17 @@ assert.equal(groups.F_MISSING_COORDINATE.length,30);
 assert.deepEqual(new Set(coords.candidates.map(x=>x.candidate_id)),new Set(groups.F_MISSING_COORDINATE));
 assert.equal(new Set(coords.candidates.map(x=>x.candidate_id)).size,30);
 const marked=coords.candidates.filter(x=>x.coordinate_stage);
-assert.equal(marked.length,21);
-assert.equal(marked.filter(x=>x.coordinate_stage.decision==="SITE_ILLUSTRATIVE").length,14);
-assert.equal(marked.filter(x=>x.coordinate_stage.decision!=="SITE_ILLUSTRATIVE").length,7);
-assert.equal(coords.candidates.filter(x=>x.hold).length,9);
+assert.equal(marked.length,24);
+assert.equal(marked.filter(x=>x.coordinate_stage.decision==="SITE_ILLUSTRATIVE").length,23);
+assert.equal(marked.filter(x=>x.coordinate_stage.decision!=="SITE_ILLUSTRATIVE").length,1);
+assert.equal(coords.candidates.filter(x=>x.hold).length,6);
 assert.equal(coords.nonpin_original_missing_coordinate_ids.length,10);
 assert.equal(new Set(coords.nonpin_original_missing_coordinate_ids).size,10);
 for(const id of coords.nonpin_original_missing_coordinate_ids){
  assert.ok(all.has(id),id);
  assert.ok(!groups.F_MISSING_COORDINATE.includes(id),id);
 }
-assert.equal(coords.counts.still_without_proposed_point,19);
+assert.equal(coords.counts.still_without_proposed_point,16);
 for(const row of coords.candidates){
  assert.equal(row.import_ready,false);
  assert.equal(row.publicly_published,false);
@@ -42,6 +42,49 @@ for(const row of coords.candidates){
  assert.ok(c.scope_note.length>45,row.candidate_id);
  }
 }
+assert.equal(coords.counts.second_pass_case_reviews,16);
+assert.equal(coords.counts.second_pass_added_coordinate_proposals,3);
+assert.equal(coords.counts.second_pass_promoted_geometry_leads,6);
+assert.equal(coords.counts.correction_events,1);
+assert.equal(coords.counts.existing_place_reuse_from_original_F_lane,2);
+const find = id => coords.candidates.find(x=>x.candidate_id===id);
+for(const id of ["SG-INV-0679","SG-INV-0475","SG-INV-0230"]){
+ const row=find(id);
+ assert.equal(row.hold,null,id);
+ assert.equal(row.coordinate_stage.decision,"SITE_ILLUSTRATIVE");
+ assert.ok(row.identity_research);
+ assert.equal(row.coordinate_stage.coordinate_owner_approved,false);
+}
+const sano=find("SG-INV-0535");
+assert.equal(sano.coordinate_stage.lat,-34.0942);
+assert.equal(sano.coordinate_stage.lng,-56.2112);
+assert.equal(sano.coordinate_stage.prior_source_point.lng,-56.21338);
+assert.equal(sano.coordinate_stage.prior_source_point.lat,-34.09417);
+assert.notEqual(sano.coordinate_stage.lng,sano.coordinate_stage.prior_source_point.lng);
+for(const id of ["SG-INV-0071","SG-INV-0229","SG-INV-0723"]){
+ assert.equal(find(id).coordinate_stage,null,id);
+ assert.ok(find(id).hold,id);
+}
+const reuse = [
+ ["SG-INV-0676","place:MY:st-jude-church-rawang","REUSE_EXISTING_RAWANG_SITE_DIFFERENT_CITY"],
+ ["SG-INV-0534","place:UY:santuario-nuestra-senora-del-carmen-carmelo","REUSE_EXISTING_SANTUARIO_CARMELO"]
+];
+for(const [id,place,code] of reuse){
+ const row=find(id);
+ assert.equal(row.hold.code,code);
+ assert.equal(row.coordinate_stage,null);
+ assert.ok(geo.places.some(x=>x.place_id===place),place);
+}
+const historical=find("SG-INV-0233");
+assert.equal(historical.hold.code,"DEMOLISHED_CHAPEL_HISTORIC_HERITAGE_ONLY");
+assert.equal(historical.coordinate_stage,null);
+const rakunai=find("SG-INV-0747");
+assert.equal(rakunai.coordinate_stage.decision,"GEOMETRY_NEEDS_SECOND_SOURCE");
+const urkupina=find("SG-INV-0542");
+assert.equal(urkupina.coordinate_stage.decision,"SITE_ILLUSTRATIVE");
+assert.match(urkupina.coordinate_stage.scope_note,/San Ildefonso/i);
+const kfifan=find("SG-INV-0579");
+assert.equal(kfifan.coordinate_stage.decision,"SITE_ILLUSTRATIVE");
 const near=decisions.source_nearest_proximity_cases;
 assert.equal(near.length,10);
 assert.equal(near.filter(x=>x.source_distance_m_to_production_place<100).length,2);
@@ -77,4 +120,4 @@ for(const a of area){
 assert.match(area.find(x=>x.code==="XK").code_note,/not formally assigned ISO/);
 assert.equal(decisions.counts.production_imports,0);
 assert.equal(coords.counts.production_imports,0);
-console.log("PASS Atlas geography: 21 staged illustrative coordinate leads (14 stronger, 7 qualified), 19 without point, 10 proximity cases, five active-area prerequisites; 0 admissions");
+console.log("PASS Atlas geography: 24 staged site coordinates (23 stronger, 1 qualified), 16 without point, 10 proximity cases, five active-area prerequisites; 0 admissions");
