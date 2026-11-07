@@ -25,6 +25,11 @@ on:
       - 'src/mass/reader-participation-printed-plates.js'
       - 'src/mass/reader-preface-1961-print-passage.js'
       - 'src/mass/reader-preface-solemnior-reference-scores.js'
+      - 'src/mass/reader-participation-28-research-inventory.js'
+      - 'tests/fixtures/reader-participation-28-source-review.html'
+      - 'scripts/mass/export-28-participation-research-review.mjs'
+      - 'tests/reader-participation-28-research-inventory.mjs'
+      - 'tests/reader-participation-28-research-phone.mjs'
       - 'tests/fixtures/reader-preface-solemnior-source-review.html'
       - 'tests/reader-preface-solemnior-1961-four-reference-scores.mjs'
       - 'tests/reader-preface-solemnior-1961-phone.mjs'
@@ -103,6 +108,10 @@ jobs:
           node --check src/mass/reader-participation-printed-plates.js
           node --check src/mass/reader-preface-1961-print-passage.js
           node --check src/mass/reader-preface-solemnior-reference-scores.js
+          node --check src/mass/reader-participation-28-research-inventory.js
+          node --check scripts/mass/export-28-participation-research-review.mjs
+          node --check tests/reader-participation-28-research-inventory.mjs
+          node --check tests/reader-participation-28-research-phone.mjs
           node --check tests/reader-preface-solemnior-1961-four-reference-scores.mjs
           node --check tests/reader-preface-solemnior-1961-phone.mjs
           node --check tests/reader-preface-1961-two-book-passage-collation.mjs
@@ -143,12 +152,14 @@ jobs:
           node tests/reader-two-greeting-transfer-candidates.mjs
           node tests/reader-participation-20-event-coverage.mjs
           node scripts/mass/export-24-participation-review-csv.mjs
+          node scripts/mass/export-28-participation-research-review.mjs
           node scripts/mass/export-preface-eight-printed-collation.mjs
           node scripts/mass/audit-24-participation-source-phrases.mjs
           node tests/reader-participation-reference-scores.mjs
           node tests/reader-participation-1961-printed-plates.mjs
           node tests/reader-preface-1961-two-book-passage-collation.mjs
           node tests/reader-preface-solemnior-1961-four-reference-scores.mjs
+          node tests/reader-participation-28-research-inventory.mjs
           node tests/reader-participation-24-source-gabc-equality.mjs
           node tests/reader-dismissal-variant-reference.mjs
           node tests/reader-canon-pax-responses.mjs
@@ -170,6 +181,7 @@ jobs:
           node tests/reader-participation-reference-phone.mjs
           node tests/reader-participation-24-score-review-phone.mjs
           node tests/reader-preface-solemnior-1961-phone.mjs
+          node tests/reader-participation-28-research-phone.mjs
           node tests/reader-offertory-oremus-voice-phone.mjs
           node tests/reader-two-greeting-transfer-phone.mjs
           node tests/reader-dismissal-variant-phone.mjs
@@ -194,6 +206,15 @@ jobs:
           path: .tmp/mass-inline-all-saints/*.png
           if-no-files-found: warn
           retention-days: 14
+
+      - name: Retain consolidated 28-source Gregorian editorial review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-1961-28-participation-editorial-research
+          path: .tmp/mass-participation-28-review/*
+          if-no-files-found: warn
+          retention-days: 21
 
       - name: Retain 1961 Most Solemn Preface four-response research phone screens
         if: always()

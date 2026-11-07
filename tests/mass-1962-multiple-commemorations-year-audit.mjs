@@ -3,7 +3,7 @@
 // civil-date or named-feast mapping. No automatic rubrical certification.
 import assert from "node:assert/strict";
 import http from "node:http";
-import {readFile} from "node:fs/promises";
+import {readFile,mkdir,writeFile} from "node:fs/promises";
 import {extname,resolve,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
@@ -24,7 +24,7 @@ let browser;try{
  page.on("console",m=>{if(m.type()==="error")console.error("SOURCE_PAGE_ERROR",m.text().slice(0,350))});
  const dates=Array.from({length:365},(_,i)=>new Date(Date.UTC(2026,0,i+1,12)).toISOString().slice(0,10));
  const aggregate={multi:[],single:[],inseparable:[],failures:[],unmappedGroups:[],
-   formDecisions:{},certifiedFormCases:0,uncertifiedFormCases:[],certifiedOrationFailures:[],checked:0};
+   formDecisions:{},certifiedFormCases:0,uncertifiedFormCases:[],certifiedOrationFailures:[],recoveredInseparable:[],checked:0};
  for(let offset=0;offset<dates.length;offset+=30){
    const batch=dates.slice(offset,offset+30);
    const items=await page.evaluate(async dates=>{
@@ -34,6 +34,8 @@ let browser;try{
        await import("/src/mass/1962-commemoration-form-source.js");
      const {properToReaderSlots}=
        await import("/src/mass/proper-reader-slots.js");
+     const {recoverReaderProperOmissions}=
+       await import("/src/mass/reader-proper-runtime-recovery.js");
      const forms=["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"];
      const sourceGroupPairs=[
        ["collects","COLLECT_SET"],["secrets","SECRET_SET"],
@@ -54,9 +56,34 @@ let browser;try{
            trilingual:["collects","secrets","postcommunions"].map(k=>(p?.[k]??[]).map(x=>(["lat","en","fr"].every(l=>!!String(x?.[l]??"").trim())))),
            sourcePath:p?.sourcePath};
          if(r?.status==="ready" && r?.proper?.status==="ready" && comms.length){
+           // Actual Mass preparation ALWAYS recovers pinned source-owned
+           // omissions before form selection. The old audit only recovered
+           // 30 June; Passion Friday and Christmas Octave were misclassified.
+           const prepared=await recoverReaderProperOmissions(r.proper,{
+             hostResolver:globalThis.AO_RUNTIME_V8.resolver.properResolver,
+             principalCelebrationId:r.day.main.id,calendarDate:date
+           });
+           const repaired=prepared?.data??prepared;
+           const rawCounts=["collects","secrets","postcommunions"].map(
+             field=>Array.isArray(p?.[field])?p[field].length:0);
+           const recoveredCounts=["collects","secrets","postcommunions"].map(
+             field=>Array.isArray(repaired?.[field])?repaired[field].length:0);
+           if(rawCounts.some((v,i)=>v!==recoveredCounts[i])||
+              repaired?.inseparableApostolicSources?.status==="SOURCE_VERIFIED"||
+              repaired?.verifiedNativityOctaveCommemoration?.status==="SOURCE_VERIFIED"||
+              repaired?.verifiedPassionFridayCommemorations?.status==="SOURCE_VERIFIED"){
+             row.readerSourceRecovery={
+               originalSource:p?.sourcePath??null,
+               recoveredSource:repaired?.sourcePath??null,
+               rawCounts,recoveredCounts,
+               inseparableStatus:repaired?.inseparableApostolicSources?.status??null,
+               nativityStatus:repaired?.verifiedNativityOctaveCommemoration?.status??null,
+               passionStatus:repaired?.verifiedPassionFridayCommemorations?.status??null
+             };
+           }
            row.formChecks=forms.map(form=>{
              const projected=select({
-               proper:r.proper,calendarResolution:r,
+               proper:prepared,calendarResolution:r,
                form,celebrationId:"mass_of_day"
              });
              const result={form,status:projected.status,reason:projected.reason??null};
@@ -106,6 +133,7 @@ let browser;try{
      if(row.commemorations?.some(x=>x.inseparable))aggregate.inseparable.push(row);
      if(row.sourceCommemorations?.length>1||row.prayerCounts?.some(x=>x>2))
        aggregate.unmappedGroups.push(row);
+     if(row.readerSourceRecovery)aggregate.recoveredInseparable.push({date:row.date,...row.readerSourceRecovery});
      for(const decision of row.formChecks??[]){
        const key=decision.status==="CERTIFIED"?"CERTIFIED":
          decision.reason??decision.status;
@@ -124,12 +152,13 @@ let browser;try{
        }
      }
    }
-   console.log("MASS_1962_2026_SCAN",JSON.stringify({checked:aggregate.checked,multi:aggregate.multi.length,single:aggregate.single.length,unmappedGroups:aggregate.unmappedGroups.length,failed:aggregate.failures.length}));
+   console.log("MASS_1962_2026_SCAN",JSON.stringify({checked:aggregate.checked,multi:aggregate.multi.length,single:aggregate.single.length,unmappedGroups:aggregate.unmappedGroups.length,failed:aggregate.failures.length,certified:aggregate.certifiedFormCases}));
  }
  console.log("MASS_1962_MULTI_WITNESSES="+JSON.stringify(aggregate.multi));
  console.log("MASS_1962_SOURCE_GROUP_CANDIDATES="+JSON.stringify(aggregate.unmappedGroups));
  console.log("MASS_1962_FORM_ORATION_COVERAGE="+JSON.stringify({certified:aggregate.certifiedFormCases,uncertified:aggregate.uncertifiedFormCases.length,decisions:aggregate.formDecisions,unverifiedCandidates:aggregate.uncertifiedFormCases.slice(0,90)}));
  console.log("MASS_1962_CERTIFIED_ORATION_FAILURES="+JSON.stringify(aggregate.certifiedOrationFailures));
+ console.log("MASS_1962_EXISTING_SOURCE_RECOVERY="+JSON.stringify(aggregate.recoveredInseparable));
  console.log("MASS_1962_SOURCE_SCAN_SUMMARY="+JSON.stringify({checked:aggregate.checked,failures:aggregate.failures.slice(0,30),multiDates:aggregate.multi.map(x=>x.date),single:aggregate.single.length,inseparableDates:aggregate.inseparable.map(x=>x.date)}));
  assert.equal(aggregate.checked,365);
  assert.deepEqual(aggregate.failures,[],
@@ -137,7 +166,48 @@ let browser;try{
  assert.ok(aggregate.single.length>0,"Resolver returned no commemoration evidence");
  assert.ok(aggregate.certifiedFormCases>0,
    "No certified 1962 form-specific Masses were exercised");
+ const peter=aggregate.recoveredInseparable.find(x=>x.date==="2026-06-30");
+ assert.equal(peter?.inseparableStatus,"SOURCE_VERIFIED",
+   "Actual reader failed to recover the preexisting St Peter and St Paul source");
+ assert.equal(aggregate.uncertifiedFormCases.some(x=>x.date==="2026-06-30"),false,
+   "Original 1962 apostolic group was incorrectly left uncertified");
+ for(const date of ["2026-03-27","2026-12-26","2026-12-28"]){
+   const recovered=aggregate.recoveredInseparable.find(x=>x.date===date);
+   const status=date==="2026-03-27"?recovered?.passionStatus:
+     recovered?.nativityStatus;
+   assert.equal(status,"SOURCE_VERIFIED",
+     date+" original three-language source recovery was not admitted");
+   assert.equal(aggregate.uncertifiedFormCases.some(x=>x.date===date),false,
+     date+" historical source recovery must reach all four forms");
+ }
+ assert.equal(aggregate.certifiedFormCases+
+   aggregate.uncertifiedFormCases.length,
+   4*(aggregate.single.length+aggregate.multi.length+aggregate.inseparable.filter(
+     x=>!aggregate.single.some(y=>y.date===x.date)&&
+       !aggregate.multi.some(y=>y.date===x.date)).length),
+   "Every commemoration date must have four explicit Mass-form decisions");
  assert.deepEqual(aggregate.certifiedOrationFailures,[],
    "An existing source-certified 1962 Mass lost prayers on its way to LIVE/Missal");
- console.log("PASS: 365 resolved 2026 1962 dates; all source-certified form orations retained EN/FR. Uncertified cases are listed, never silently certified.");
+ const coverage={
+   schema:"ao-1962-2026-mass-oration-form-coverage-v1",
+   authority:"ACTUAL_1962_DAY_RESOLVER_AND_RECOVERED_READER_SOURCE",
+   calendarDaysChecked:aggregate.checked,
+   calendarFailures:aggregate.failures,
+   certifiedFormCases:aggregate.certifiedFormCases,
+   unverifiedFormCases:aggregate.uncertifiedFormCases.length,
+   decisionCounts:aggregate.formDecisions,
+   multiCommemorationDates:aggregate.multi.map(x=>x.date),
+   sourceRecovery:aggregate.recoveredInseparable,
+   certifiedFailures:aggregate.certifiedOrationFailures,
+   // Deliberately retain every exception, not only the first 90 log previews.
+   unverifiedQueue:aggregate.uncertifiedFormCases,
+   scope:"GENERAL_ROMAN_1962_NON_CONVENTUAL_MASSES_WITH_CALENDAR_COMMEMORATIONS",
+   certificationRule:"Only original 1962 source-certified forms count as covered",
+   independentInstituteVotivesIncluded:false
+ };
+ await mkdir(resolve(root,"artifacts/mass"),{recursive:true});
+ await writeFile(resolve(root,"artifacts/mass/1962-2026-source-oration-coverage.json"),
+   JSON.stringify(coverage,null,2)+"\n");
+ console.log("MASS_1962_COVERAGE_ARTIFACT=artifacts/mass/1962-2026-source-oration-coverage.json");
+ console.log("PASS: 365 resolved 2026 1962 dates; source-certified form orations and recovered inseparable Mass retained EN/FR. All uncertified cases exported without invented certification.");
 }finally{await browser?.close();await new Promise(done=>server.close(done))}
