@@ -91,12 +91,36 @@ for(const work of pending){
    literalText,routeDeclared,
    notes:[]};
  if(sourceStatus==="object-id-is-source-alias")record.notes.push("Original source-member ID differs from catalogue identity; do not merge without edition comparison.");
+ if(value?.language&&typeof value?.text==="string"&&value.text.trim().length>25){
+   record.originalLanguageWitness={language:value.language,body:"text-present",sourceEdition:value.edition||null};
+ }
+ if(work.id==="montfort_consecration_act_1863"&&Array.isArray(value)&&value.every(x=>typeof x==="string")){
+   record.originalLanguageWitness={language:"en",body:"text-present",paragraphs:value.length,sourceExport:work.source_key};
+ }
+ if(work.id==="stabat_mater"){
+   record.stanzaCount=Array.isArray(value)?value.length:null;
+   record.bodyWitness="Latin stanzas only; no complete hymn or independent EN/FR body in this source key";
+   record.completeness="partial-existing-source-not-certified-complete";
+   if(record.stanzaCount!==13)faults.push({id:work.id,issue:"Stabat existing 13-stanza source has changed; manually review completeness"});
+ }
+
  if(className==="additional-novena"){
     record.dayCount=Array.isArray(value?.days)?value.days.length:null;
     record.novenaForm=value?.form||null;
     record.novenaPattern=value?.pattern||null;
     record.frenchSourceStatus=value?.frenchTextStatus||null;
     record.hasRepeatedText=!!(value?.repeatText||value?.prayer);
+    const present=x=>typeof x==="string"&&x.trim().length>25;
+    record.properPrayerBodies=Object.fromEntries(["la","en","fr"].map(k=>{
+      const repeated=present(value?.repeatText?.[k])||present(value?.prayer?.[k]);
+      const daily=value?.days?.filter(d=>present(d?.text?.[k]))?.length||0;
+      return [k,{repeatedProper:repeated,daySpecificProperCount:daily,properTextPresent:repeated||daily===9}];
+    }));
+    if(work.id==="holy_face_1887"){
+      record.notes.push("French daily guides and titles are not translations of the nine historical English proper prayers.");
+      if(record.properPrayerBodies.fr.properTextPresent)faults.push({id:work.id,issue:"Holy Face historical English-only witness unexpectedly has French propers: require source review"});
+    }
+
     if(record.dayCount!==9)faults.push({id:work.id,issue:"Additional novena lacks nine days"});
     if(!value?.form)faults.push({id:work.id,issue:"Additional novena form missing"});
  }
