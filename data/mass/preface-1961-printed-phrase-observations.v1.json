@@ -628,5 +628,36 @@
       "sourceGabcComparison": "DO_NOT_DERIVE_PRINT_FROM_GABC",
       "publicationDecision": "DO_NOT_PUBLISH"
     }
+  ],
+  "gregoBaseEditorialChangeWatch": [
+    {
+      "sourceId": 4449,
+      "recordUrl": "https://gregobase.selapa.net/chant.php?id=4449",
+      "loggedSourceHistory": [
+        "2015-09-02: final neume dot alignment changed from (f.e.) to (fe..) and a textual stop added after tuo",
+        "2022-09-12: double punctum mora and V. Dominus grouping adjustments",
+        "2014-03-07: punctum mora positioning edited"
+      ],
+      "independenceWarning": "Modern GABC editorial history is not the 1961 physical print. Check each original rhythmic dot and syllable-neume grouping before confirming equality."
+    },
+    {
+      "sourceId": 4450,
+      "recordUrl": "https://gregobase.selapa.net/chant.php?id=4450",
+      "loggedSourceHistory": [
+        "2015-09-02: final neume dot alignment changed from (f.e.) to (fe..) and a textual stop added after tuo",
+        "2022-09-12: Dómino grouping, double punctum mora and V. Dominus grouping adjusted"
+      ],
+      "independenceWarning": "Modern GABC source may include later editorial alterations; compare printed witness at original staff, not only GABC phrase string."
+    },
+    {
+      "sourceId": 4451,
+      "recordUrl": "https://gregobase.selapa.net/chant.php?id=4451",
+      "loggedSourceHistory": [
+        "2014-03-07: spacing marker ! added before quilisma",
+        "2015-09-02: final neume dot placement and text stop adjusted",
+        "2022-09-12: double punctum mora and V. Dominus grouping adjusted"
+      ],
+      "independenceWarning": "Quilisma spacing and rhythmic sign interpretation require printed neume inspection; do not infer independent source parity."
+    }
   ]
 }
