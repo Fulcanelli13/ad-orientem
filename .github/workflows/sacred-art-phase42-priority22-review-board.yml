@@ -1,0 +1,77 @@
+name: Sacred Art Phase 42 — 22 handpicked photo comparison pairs
+on:
+  push:
+    branches:
+      - research/sacred-art-phase18-iiif-audit-20261106
+    paths:
+      - 'scripts/sacred-art/phase42-priority22-side-by-side.py'
+      - '.github/workflows/sacred-art-phase42-priority22-review-board.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  visual-board:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download existing Phase 18 research images
+        uses: actions/download-artifact@v4
+        with:
+          name: phase18-iiif-audit-20-research-only
+          run-id: 42112061358
+          github-token: ${{ github.token }}
+          path: reference-evidence/phase18
+      - name: Download existing Phase 20 research images
+        uses: actions/download-artifact@v4
+        with:
+          name: phase20-canvas-identity-research-only
+          run-id: 42169137895
+          github-token: ${{ github.token }}
+          path: reference-evidence/phase20
+      - name: Download existing Phase 25 research images
+        uses: actions/download-artifact@v4
+        with:
+          name: phase25-six-museum-iiif-comparisons-research-only
+          run-id: 42182892988
+          github-token: ${{ github.token }}
+          path: reference-evidence/phase25
+      - name: Download existing Phase 26 research images
+        uses: actions/download-artifact@v4
+        with:
+          name: sacred-art-phase26-three-iiif-research-only
+          run-id: 42203651963
+          github-token: ${{ github.token }}
+          path: reference-evidence/phase26
+      - name: Download existing Phase 27 research images
+        uses: actions/download-artifact@v4
+        with:
+          name: phase27-four-ghent-images-research-only
+          run-id: 42207977363
+          github-token: ${{ github.token }}
+          path: reference-evidence/phase27
+      - name: Download Phase 28 geometric comparison evidence
+        uses: actions/download-artifact@v4
+        with:
+          name: phase28-feature-identity-scores-research-only
+          run-id: 42218282365
+          github-token: ${{ github.token }}
+          path: reference-scores
+      - name: Assemble exact-image side-by-side quality review
+        run: |
+          python -m py_compile scripts/sacred-art/phase42-priority22-side-by-side.py
+          python scripts/sacred-art/phase42-priority22-side-by-side.py
+      - name: Retain visual review board; never deploy or auto-approve
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-phase42-priority22-actual-photo-board-research-only
+          path: artifacts/sacred-art-phase42-priority22-board/
+          retention-days: 14
+          if-no-files-found: warn
