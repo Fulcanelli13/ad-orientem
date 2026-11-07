@@ -2040,8 +2040,14 @@
       ]
     }
   ],
-  "ciRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42334657481",
-  "ciResult": "source-audit-produced; snapshot differed on additional metadata; pending pass after refresh",
+  "ciRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42334718834",
+  "ciResult": "completed/success",
   "checkedAt": "2026-11-07",
-  "notes": "This is source-owner/shape/route declaration evidence; do not treat language token candidates as full prayer translations, or route declarations as UI reachability."
+  "notes": "This is source-owner/shape/route declaration evidence; do not treat language token candidates as full prayer translations, or route declarations as UI reachability.",
+  "evidenceReviewNotes": [
+    "48 of 48 remaining catalogued entries have source or declared-route evidence; this is not a count of 48 individually full prayer texts.",
+    "The Holy Face 1887 source contains nine EN day proper prayers but no FR/LA day proper prayers. FR guides are not full source prayers.",
+    "Canonical-data stabat owns 13 Latin stanzas only; source completeness and other hymn witnesses require independent review.",
+    "Composite reader routes and sequence controllers may not contain independently language-scoped prayer bodies. Do not mark them untranslated or unavailable based on this record."
+  ]
 }
