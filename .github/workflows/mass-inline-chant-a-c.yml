@@ -31,6 +31,8 @@ on:
       - 'scripts/mass/export-preface-12-independent-print-worklist.mjs'
       - 'tests/reader-preface-12-independent-print-worklist.mjs'
       - 'tests/reader-preface-1961-printed-phrase-observations.mjs'
+      - 'tests/reader-preface-1961-first-notehead-preflight.mjs'
+      - 'data/mass/preface-1961-initial-notehead-preflight.v1.json'
       - 'data/mass/preface-1961-printed-phrase-observations.v1.json'
       - 'tests/reader-participation-28-research-inventory.mjs'
       - 'tests/reader-participation-28-research-phone.mjs'
@@ -117,6 +119,7 @@ jobs:
           node --check scripts/mass/export-preface-12-independent-print-worklist.mjs
           node --check tests/reader-preface-12-independent-print-worklist.mjs
           node --check tests/reader-preface-1961-printed-phrase-observations.mjs
+          node --check tests/reader-preface-1961-first-notehead-preflight.mjs
           node --check tests/reader-participation-28-research-inventory.mjs
           node --check tests/reader-participation-28-research-phone.mjs
           node --check tests/reader-preface-solemnior-1961-four-reference-scores.mjs
@@ -163,6 +166,7 @@ jobs:
           node scripts/mass/export-preface-12-independent-print-worklist.mjs
           node tests/reader-preface-12-independent-print-worklist.mjs
           node tests/reader-preface-1961-printed-phrase-observations.mjs
+          node tests/reader-preface-1961-first-notehead-preflight.mjs
           node scripts/mass/export-preface-eight-printed-collation.mjs
           node scripts/mass/audit-24-participation-source-phrases.mjs
           node tests/reader-participation-reference-scores.mjs
