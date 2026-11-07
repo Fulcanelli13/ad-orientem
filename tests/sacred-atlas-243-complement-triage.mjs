@@ -36,7 +36,7 @@ for (const [name, expected] of Object.entries(required)) {
 const ids = Object.values(groups).flat();
 assert.equal(ids.length, 243);
 assert.equal(new Set(ids).size, 243, "All provisional candidate IDs must be unique");
-for (const id of ids) assert.match(id, /^(?:SG-INV-\\d{4}|CL-[A-Z]{2}-\\d{8}-\\d{2})$/);
+for (const id of ids) assert.match(id, /^(?:SG-INV-\d{4}|CL-[A-Z]{2}-\d{8}-\d{2})$/);
 
 const intakeIds = new Set(prior.records.map(row => row.candidate_id));
 assert.equal(intakeIds.size, 169);
