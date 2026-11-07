@@ -270,6 +270,115 @@ try{
   console.log("ICRSP_NOV07_"+kind.toUpperCase()+"_PHONE_NEXT_PASS "+
    JSON.stringify({before,after,secondBelowReadingZone}));
  }
+ // P0: exercise every reader NEXT from first prayer to the Last Gospel,
+ // not only direct jumps to the three multi-oration cards. The 65 source
+ // cards keep the optional second Confiteor in the graph; 64 are normally
+ // visible. The visible catch-up list is the actual reader's own ordering.
+ const itinerary=await page.evaluate(()=>{
+  const root=document.querySelector("#ao-r17-native-reader-preview");
+  const preview=globalThis.AO_R17_NATIVE_READER_PREVIEW;
+  const entries=[...root.querySelectorAll(
+   "[data-reader-section-all] [data-reader-section]")];
+  const ids=entries.map(x=>x.getAttribute("data-reader-section"));
+  const labels=entries.map(x=>x.innerText);
+  const omitted=(preview.model?.cards??[]).filter(c=>!ids.includes(c.sectionId))
+   .map(c=>({id:c.sectionId,title:c.title,source:c.sourceSectionId,
+    omittedByRite:c.omittedByRite??null,stateOnly:c.stateOnly??false,
+    curatedPresentationReview:c.curatedPresentationReview??false,
+    blocks:c.blocks?.map(b=>b.blockId)??[]}));
+  const start=preview.showSection(ids[0]);
+  return {ids,labels,omitted,modelCards:preview.model?.totalCards,
+   started:start?.sectionId,mode:root.querySelector("[data-ao-reader-shell]")?.dataset.mode};
+ });
+ assert.equal(itinerary.mode,"LIVE");
+ assert.equal(itinerary.modelCards,65,"Source-owned 65-card graph regressed");
+ assert.equal(new Set(itinerary.ids).size,itinerary.ids.length,
+  "Catch-up menu duplicates canonical prayer cards");
+ assert.equal(itinerary.ids.length,59,
+  "7 November Low Mass should hide the four no-Credo moments, optional Confiteor and Low-Mass incensation: "+JSON.stringify(itinerary.omitted));
+ assert.equal(itinerary.omitted.length,6);
+ assert.equal(itinerary.omitted.filter(x=>x.source==="AO.CARD.009").length,4,
+  "Votive no-Credo must exclude exactly four Credo moments");
+ assert.equal(itinerary.omitted.filter(x=>x.blocks.includes("AO.SM.B077")).length,1,
+  "Optional second Confiteor should account for one omitted moment");
+ assert.equal(itinerary.omitted.filter(x=>x.omittedByRite==="1962_FORM_NO_INCENSE").length,1,
+  "Low Mass omission of incensation should account for one omitted moment");
+ assert.equal(itinerary.started,itinerary.ids[0]);
+ assert.ok(itinerary.labels.some(x=>/Gloria/i.test(x)),
+  "Required Immaculate Heart Gloria missing from reader itinerary");
+ assert.ok(!itinerary.labels.some(x=>/Credo/i.test(x)),
+  "7 November ICRSP Adeamus erroneously displays Credo");
+ assert.ok(itinerary.labels.some(x=>/Preface/i.test(x)),
+  "Marian Preface card missing from LIVE itinerary");
+ assert.ok(itinerary.labels.at(-1)?.includes("Last Gospel"),
+  "Last Gospel is not the last canonical prayer card");
+ const walked=[];
+ for(let index=0;index<itinerary.ids.length;index++){
+  const view=await page.evaluate(()=>{
+   const root=document.querySelector("#ao-r17-native-reader-preview");
+   const preview=globalThis.AO_R17_NATIVE_READER_PREVIEW;
+   const current=preview.getCurrentCard();
+   const body=root.querySelector(".ao-prayer-card");
+   const second=body?.querySelector('.ao-reader-paragraph[data-oration-group-index="2"]');
+   const viewport=body?.getBoundingClientRect(),rect=second?.getBoundingClientRect();
+   return {id:current?.sectionId,title:current?.title,
+    sourceSection:current?.sourceSectionId,
+    paragraphCount:current?.paragraphs?.length??0,
+    visibleLength:body?.innerText?.length??0,
+    unseenSecond:Boolean(rect&&viewport&&
+     rect.top>viewport.top+Math.min(viewport.height*.5,280))};
+  });
+  assert.equal(view.id,itinerary.ids[index],
+   "NEXT skipped or reordered card "+index+": "+JSON.stringify(view));
+  assert.ok(view.visibleLength>0,"Empty rendered reader card: "+view.title);
+  walked.push({id:view.id,title:view.title,source:view.sourceSection});
+  if(index===itinerary.ids.length-1)break;
+  await nextArrow.click();
+  let now=await page.evaluate(()=>
+   globalThis.AO_R17_NATIVE_READER_PREVIEW.getCurrentCard()?.sectionId);
+  if(now===view.id){
+   assert.equal(view.unseenSecond,true,
+    "Unexpected NEXT stall on a card without an unseen second oration: "+view.title);
+   await nextArrow.click();
+   now=await page.evaluate(()=>
+    globalThis.AO_R17_NATIVE_READER_PREVIEW.getCurrentCard()?.sectionId);
+  }
+  assert.equal(now,itinerary.ids[index+1],
+   "NEXT did not reach the next canonical source card after "+view.title);
+ }
+ assert.equal(walked.length,itinerary.ids.length);
+ assert.ok(walked.some(x=>x.source==="AO.CARD.003"),
+  "Gloria must be rendered in the actual linear reading");
+ assert.ok(!walked.some(x=>x.source==="AO.CARD.009"),
+  "Credo must be absent from this votive Mass's linear reading");
+ assert.ok(walked.some(x=>x.source==="AO.CARD.012"),
+  "Preface source card not reached in the actual linear reading");
+ assert.equal(walked.at(-1).source,"AO.CARD.030");
+ // Leonine prayers belong after the 65-card Mass, never as a 66th card.
+ const beforeLeonine=await page.evaluate(()=>{
+  const root=document.querySelector("#ao-r17-native-reader-preview");
+  return {ending:root.dataset.r17PostMass??"",
+   count:root.querySelectorAll("[data-ao-post-low-mass-leonine] [data-leonine-block]").length};
+ });
+ assert.equal(beforeLeonine.count,5,
+  "Low Mass must retain all five sourced Leonine blocks after Last Gospel");
+ await nextArrow.click();
+ const leonine=await page.evaluate(()=>{
+  const root=document.querySelector("#ao-r17-native-reader-preview");
+  return {ending:root.dataset.r17PostMass,
+   id:globalThis.AO_R17_NATIVE_READER_PREVIEW.getCurrentCard()?.sectionId,
+   count:root.querySelectorAll("[data-ao-post-low-mass-leonine] [data-leonine-block]").length,
+   scrollTop:root.querySelector(".ao-prayer-card")?.scrollTop};
+ });
+ assert.equal(leonine.ending,"leonine",
+  "NEXT after Last Gospel bypassed the separate Leonine devotion");
+ assert.equal(leonine.id,itinerary.ids.at(-1),
+  "Leonine prayers must not become another canonical Mass card");
+ assert.equal(leonine.count,5);
+ console.log("ICRSP_NOV07_FULL_LINEAR_LOW_MASS_PASS "+JSON.stringify({
+  sourceCards:itinerary.modelCards,visibleCards:walked.length,
+  gloria:true,credo:false,preface:true,leonine:leonine.count
+ }));
  assert.deepEqual(errors,[],"Runtime errors");
  console.log("ICRSP_NOV07_LIVE_POSTCOMMUNIONS "+JSON.stringify({
   sourcePath:snapshot.sourcePath,groups:displayed.rows.map(x=>x.group),
