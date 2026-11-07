@@ -51,6 +51,7 @@ jobs:
           node tests/sacred-atlas-67-source-evidence.mjs
           node tests/sacred-atlas-29-priority-source-review.mjs
           node tests/sacred-atlas-169-owner-review-packet.mjs
+          node tests/sacred-atlas-16-evidence-repairs.mjs
           node tests/sacred-atlas-v10-b21-two-marian-places.mjs
       - name: V10 editorial master deterministic source audit
         run: node tests/sacred-atlas-editorial-master-530-contract.mjs

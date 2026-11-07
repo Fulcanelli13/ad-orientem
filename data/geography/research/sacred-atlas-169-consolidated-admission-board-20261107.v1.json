@@ -11,12 +11,12 @@
   "counts": {
     "total": 169,
     "A_OWNER_REVIEW_ILLUSTRATIVE": 98,
-    "B_OWNER_REVIEW_WITH_SCOPE_NOTE": 53,
-    "C_REPAIR_EVIDENCE_OR_TITLE": 12,
-    "D_PHYSICAL_IDENTITY_HOLD": 4,
+    "B_OWNER_REVIEW_WITH_SCOPE_NOTE": 68,
+    "C_REPAIR_EVIDENCE_OR_TITLE": 0,
+    "D_PHYSICAL_IDENTITY_HOLD": 1,
     "E_EXISTING_DRAFT_SIGNOFF": 2,
-    "presentable_to_owner": 151,
-    "pre_decision_holds_or_repairs": 16,
+    "presentable_to_owner": 166,
+    "pre_decision_holds_or_repairs": 1,
     "existing_draft_requiring_signoff": 2,
     "approved": 0,
     "import_ready": 0,
@@ -152,11 +152,11 @@
       "place_type_proposal": "basilica",
       "unreserved_place_id": "place:AT:sanctuary-of-absam",
       "already_draft_place_id": null,
-      "lane": "C_REPAIR_EVIDENCE_OR_TITLE",
-      "owner_review_presentable": false,
-      "assessment_note": "Source and displayed site title or building scope still require a closer match.",
+      "lane": "B_OWNER_REVIEW_WITH_SCOPE_NOTE",
+      "owner_review_presentable": true,
+      "assessment_note": "New supporting source resolves prior identity/title/source blocker for OWNER REVIEW ONLY; Church point near parish basilica; do not pin original apparition house as a second church.",
       "identity_url": "https://www.absam.at/Unser_Absam/Kirche_und_Religion/Pfarramt",
-      "best_evidence_url": "https://www.absam.at/Unser_Absam/Kirche_und_Religion/Pfarramt",
+      "best_evidence_url": "https://pfarre-absam.at/at/wallfahrt/kirche.php",
       "geo_evidence_url": "https://www.absam.at/Unser_Absam/Kirche_und_Religion/Pfarramt",
       "supplementary_evidence": null,
       "site_scope_finding": "PARISH_RECORD_REQUIRES_SHRINE_SCOPE",
@@ -171,7 +171,21 @@
       "owner_decision": "PENDING",
       "identity_final": false,
       "publication_authorized": false,
-      "import_ready": false
+      "import_ready": false,
+      "proposed_display_name": "Basilica of Saint Michael, Marian Pilgrimage Church of Absam",
+      "original_source_title_preserved": "Sanctuary of Absam",
+      "correction_requires_owner_acceptance": true,
+      "repair_evidence": {
+        "source_url": "https://pfarre-absam.at/at/wallfahrt/kirche.php",
+        "source_authority": "PARISH_SHRINE_OPERATOR",
+        "finding": "The parish identifies the pilgrimage image within St Michael's parish basilica. The municipal authority confirms basilica status since 2000; one existing church building, not an apparition-window Place.",
+        "scope_limit": "Church point near parish basilica; do not pin original apparition house as a second church.",
+        "external_map": null,
+        "verified_at": "2026-11-07",
+        "physical_site_owner_approved": false,
+        "accepted_illustrative_point": false,
+        "publication_authorized": false
+      }
     },
     {
       "candidate_id": "SG-INV-0737",
@@ -609,11 +623,11 @@
       "place_type_proposal": "shrine",
       "unreserved_place_id": "place:BY:marian-sanctuary-of-baruny",
       "already_draft_place_id": null,
-      "lane": "C_REPAIR_EVIDENCE_OR_TITLE",
-      "owner_review_presentable": false,
-      "assessment_note": "Historical Uniate record cannot certify current Catholic status.",
+      "lane": "B_OWNER_REVIEW_WITH_SCOPE_NOTE",
+      "owner_review_presentable": true,
+      "assessment_note": "New supporting source resolves prior identity/title/source blocker for OWNER REVIEW ONLY; Only a locality-scale anchor is supplied; no independently certified church entrance.",
       "identity_url": "https://presstoarch.amu.edu.pl/index.php/pss/article/view/46477",
-      "best_evidence_url": "https://presstoarch.amu.edu.pl/index.php/pss/article/view/46477",
+      "best_evidence_url": "https://catholicnews.by/u-barunah-z-udzelam-biskupa-grodzenskaga-adznachyli-gadavinu-skladannja-karon-na-cudadzejny-abraz-maci-bozhaj/",
       "geo_evidence_url": "https://www.vle.lt/straipsnis/barunai/",
       "supplementary_evidence": null,
       "site_scope_finding": "HISTORIC_UNIATE_CURRENT_CHURCH_STATUS_HOLD",
@@ -628,7 +642,21 @@
       "owner_decision": "PENDING",
       "identity_final": false,
       "publication_authorized": false,
-      "import_ready": false
+      "import_ready": false,
+      "proposed_display_name": "Sanctuary of Our Lady Consoler of the Afflicted, Baruny",
+      "original_source_title_preserved": "Marian Sanctuary of Baruny",
+      "correction_requires_owner_acceptance": true,
+      "repair_evidence": {
+        "source_url": "https://catholicnews.by/u-barunah-z-udzelam-biskupa-grodzenskaga-adznachyli-gadavinu-skladannja-karon-na-cudadzejny-abraz-maci-bozhaj/",
+        "source_authority": "DIOCESAN_CATHOLIC_NEWS_2025",
+        "finding": "Catholic diocesan reporting records current 2025 celebrations at the Baruny diocesan Marian shrine and 2024 image coronation. Historical Basilian Greek-Catholic/Uniate provenance is retained separately; present-day Roman Catholic parish use is documented.",
+        "scope_limit": "Only a locality-scale anchor is supplied; no independently certified church entrance.",
+        "external_map": null,
+        "verified_at": "2026-11-07",
+        "physical_site_owner_approved": false,
+        "accepted_illustrative_point": false,
+        "publication_authorized": false
+      }
     },
     {
       "candidate_id": "SG-INV-0344",
@@ -987,11 +1015,11 @@
       "place_type_proposal": "shrine",
       "unreserved_place_id": "place:CO:shrine-of-our-lady-of-the-rosary-la-popa-cartagena",
       "already_draft_place_id": null,
-      "lane": "C_REPAIR_EVIDENCE_OR_TITLE",
-      "owner_review_presentable": false,
-      "assessment_note": "Source unresolved, direct page unavailable, or wrong-site provenance needs correction before owner signoff.",
+      "lane": "B_OWNER_REVIEW_WITH_SCOPE_NOTE",
+      "owner_review_presentable": true,
+      "assessment_note": "New supporting source resolves prior identity/title/source blocker for OWNER REVIEW ONLY; Change owner-facing title to Candelaria; do not assign the lower parish church as the hilltop pin.",
       "identity_url": "https://www.cartagena.gov.co/noticias/cartagena-indias-destino-turistico-religioso-espiritual-esta-semana-santa-primera-vez-ruta-patrimonial-denominada-ruta-esperanza-llega-tres-lugares-gran-valor-historico",
-      "best_evidence_url": "https://www.cartagena.gov.co/noticias/cartagena-indias-celebra-novena-virgen-candelaria-patrona-espiritual-ciudad",
+      "best_evidence_url": "https://www.cartagena.gov.co/noticias/cartagena-indias-destino-turistico-religioso-espiritual-esta-semana-santa-primera-vez-ruta-patrimonial-denominada-ruta-esperanza-llega-tres-lugares-gran-valor-historico",
       "geo_evidence_url": "https://www.cartagena.gov.co/noticias/cartagena-indias-destino-turistico-religioso-espiritual-esta-semana-santa-primera-vez-ruta-patrimonial-denominada-ruta-esperanza-llega-tres-lugares-gran-valor-historico",
       "supplementary_evidence": null,
       "site_scope_finding": "LA_POPA_DISTINCT_FROM_LOWER_HERMITAGE",
@@ -1006,7 +1034,21 @@
       "owner_decision": "PENDING",
       "identity_final": false,
       "publication_authorized": false,
-      "import_ready": false
+      "import_ready": false,
+      "proposed_display_name": "Church and Convent of Santa Cruz de La Popa (Our Lady of Candelaria)",
+      "original_source_title_preserved": "Shrine of Our Lady of the Rosary, La Popa, Cartagena",
+      "correction_requires_owner_acceptance": true,
+      "repair_evidence": {
+        "source_url": "https://www.cartagena.gov.co/noticias/cartagena-indias-destino-turistico-religioso-espiritual-esta-semana-santa-primera-vez-ruta-patrimonial-denominada-ruta-esperanza-llega-tres-lugares-gran-valor-historico",
+        "source_authority": "CITY_GOVERNMENT_2025",
+        "finding": "Cartagena officially distinguishes hilltop Convento y Santuario Santa Cruz-La Popa, housing the image of the Virgin of Candelaria, from the lower Ermita de La Candelaria in Pie de la Popa. The inherited Our Lady of the Rosary dedication is incorrect.",
+        "scope_limit": "Change owner-facing title to Candelaria; do not assign the lower parish church as the hilltop pin.",
+        "external_map": null,
+        "verified_at": "2026-11-07",
+        "physical_site_owner_approved": false,
+        "accepted_illustrative_point": false,
+        "publication_authorized": false
+      }
     },
     {
       "candidate_id": "SG-INV-0466",
@@ -1043,9 +1085,9 @@
       "place_type_proposal": "shrine",
       "unreserved_place_id": "place:CU:national-shrine-of-saint-barbara-havana",
       "already_draft_place_id": null,
-      "lane": "C_REPAIR_EVIDENCE_OR_TITLE",
-      "owner_review_presentable": false,
-      "assessment_note": "Source and displayed site title or building scope still require a closer match.",
+      "lane": "B_OWNER_REVIEW_WITH_SCOPE_NOTE",
+      "owner_review_presentable": true,
+      "assessment_note": "New supporting source resolves prior identity/title/source blocker for OWNER REVIEW ONLY; Owner must approve the corrected parish-level title before entry, with no claim of national canonical designation.",
       "identity_url": "https://arquidiocesisdelahabana.org/parroquias/",
       "best_evidence_url": "https://arquidiocesisdelahabana.org/parroquias/",
       "geo_evidence_url": "https://arquidiocesisdelahabana.org/parroquias/",
@@ -1062,7 +1104,21 @@
       "owner_decision": "PENDING",
       "identity_final": false,
       "publication_authorized": false,
-      "import_ready": false
+      "import_ready": false,
+      "proposed_display_name": "Parish of Saint Barbara, Párraga, Havana",
+      "original_source_title_preserved": "National Shrine of Saint Barbara, Havana",
+      "correction_requires_owner_acceptance": true,
+      "repair_evidence": {
+        "source_url": "https://arquidiocesisdelahabana.org/parroquias/",
+        "source_authority": "ARCHDIOCESAN_PARISH_DIRECTORY",
+        "finding": "The Archdiocese of Havana lists Parroquia de Santa Bárbara at Calixto García and Hatuey, Párraga. Formal National Shrine designation is not established by its directory; omit the unsupported rank from display.",
+        "scope_limit": "Owner must approve the corrected parish-level title before entry, with no claim of national canonical designation.",
+        "external_map": null,
+        "verified_at": "2026-11-07",
+        "physical_site_owner_approved": false,
+        "accepted_illustrative_point": false,
+        "publication_authorized": false
+      }
     },
     {
       "candidate_id": "SG-INV-0464",
@@ -1411,9 +1467,9 @@
       "place_type_proposal": "shrine",
       "unreserved_place_id": "place:EC:national-shrine-of-divine-mercy-guayaquil",
       "already_draft_place_id": null,
-      "lane": "C_REPAIR_EVIDENCE_OR_TITLE",
-      "owner_review_presentable": false,
-      "assessment_note": "Official archdiocesan site attests shrine but not the proposed National title.",
+      "lane": "B_OWNER_REVIEW_WITH_SCOPE_NOTE",
+      "owner_review_presentable": true,
+      "assessment_note": "New supporting source resolves prior identity/title/source blocker for OWNER REVIEW ONLY; Retain site address and source-scoped shrine identity; do not silently assert National or a GPS-exact door.",
       "identity_url": "https://communio.arquidiocesisdeguayaquil.org.ec/info/directorio/",
       "best_evidence_url": "https://communio.arquidiocesisdeguayaquil.org.ec/info/directorio/",
       "geo_evidence_url": "https://communio.arquidiocesisdeguayaquil.org.ec/info/directorio/",
@@ -1435,7 +1491,21 @@
       "owner_decision": "PENDING",
       "identity_final": false,
       "publication_authorized": false,
-      "import_ready": false
+      "import_ready": false,
+      "proposed_display_name": "Sanctuary of the Lord of Divine Mercy, Guayaquil",
+      "original_source_title_preserved": "National Shrine of Divine Mercy, Guayaquil",
+      "correction_requires_owner_acceptance": true,
+      "repair_evidence": {
+        "source_url": "https://communio.arquidiocesisdeguayaquil.org.ec/info/directorio/",
+        "source_authority": "ARCHDIOCESAN_PARISH_DIRECTORY",
+        "finding": "The Guayaquil archdiocesan directory names Santuario del Señor de la Divina Misericordia at km 26 Vía a la Costa. A third-party GCatholic page says National Shrine, but that adjective is not confirmed by the official directory; use the official neutral name.",
+        "scope_limit": "Retain site address and source-scoped shrine identity; do not silently assert National or a GPS-exact door.",
+        "external_map": null,
+        "verified_at": "2026-11-07",
+        "physical_site_owner_approved": false,
+        "accepted_illustrative_point": false,
+        "publication_authorized": false
+      }
     },
     {
       "candidate_id": "SG-INV-0514",
@@ -1556,11 +1626,11 @@
       "place_type_proposal": "basilica",
       "unreserved_place_id": "place:ES:basilica-of-our-lady-of-the-miracles-agreda",
       "already_draft_place_id": null,
-      "lane": "C_REPAIR_EVIDENCE_OR_TITLE",
-      "owner_review_presentable": false,
-      "assessment_note": "Source and displayed site title or building scope still require a closer match.",
+      "lane": "B_OWNER_REVIEW_WITH_SCOPE_NOTE",
+      "owner_review_presentable": true,
+      "assessment_note": "New supporting source resolves prior identity/title/source blocker for OWNER REVIEW ONLY; Locality-level point only until accepted; distinguish the surviving basilica from demolished Augustinian monastery.",
       "identity_url": "https://www.osma-soria.org/la-diocesis/guia-diocesana/",
-      "best_evidence_url": "https://www.osma-soria.org/la-diocesis/guia-diocesana/",
+      "best_evidence_url": "https://parroquiaagreda.es/portfolio-item/basilica-de-nuestra-senora-de-los-milagros",
       "geo_evidence_url": "https://www.osma-soria.org/la-diocesis/guia-diocesana/",
       "supplementary_evidence": null,
       "site_scope_finding": "DIOCESAN_PARISH_DIRECTORY",
@@ -1575,7 +1645,21 @@
       "owner_decision": "PENDING",
       "identity_final": false,
       "publication_authorized": false,
-      "import_ready": false
+      "import_ready": false,
+      "proposed_display_name": "Minor Basilica of Our Lady of the Miracles, Ágreda",
+      "original_source_title_preserved": "Basilica of Our Lady of the Miracles, Ágreda",
+      "correction_requires_owner_acceptance": true,
+      "repair_evidence": {
+        "source_url": "https://parroquiaagreda.es/portfolio-item/basilica-de-nuestra-senora-de-los-milagros",
+        "source_authority": "ACTIVE_CATHOLIC_PARISH_OPERATOR",
+        "finding": "The parish itself explicitly calls the site Basílica de Nuestra Señora de los Milagros and records the title of minor basilica and aggregation to Lateran in 1932; physical site is former Augustinian church, not missing convent.",
+        "scope_limit": "Locality-level point only until accepted; distinguish the surviving basilica from demolished Augustinian monastery.",
+        "external_map": null,
+        "verified_at": "2026-11-07",
+        "physical_site_owner_approved": false,
+        "accepted_illustrative_point": false,
+        "publication_authorized": false
+      }
     },
     {
       "candidate_id": "SG-INV-0144",
@@ -1729,9 +1813,9 @@
       "place_type_proposal": "monastery",
       "unreserved_place_id": "place:ES:monastery-of-el-escorial",
       "already_draft_place_id": null,
-      "lane": "C_REPAIR_EVIDENCE_OR_TITLE",
-      "owner_review_presentable": false,
-      "assessment_note": "Dynamic official heritage page does not supply reliable readable evidence of the named monastery.",
+      "lane": "B_OWNER_REVIEW_WITH_SCOPE_NOTE",
+      "owner_review_presentable": true,
+      "assessment_note": "New supporting source resolves prior identity/title/source blocker for OWNER REVIEW ONLY; Mark as monumental abbey/royal heritage precinct, not a separate basilica building pin or proof of a traditional Mass schedule.",
       "identity_url": "https://www.patrimonionacional.es/visita/real-monasterio-de-san-lorenzo-de-el-escorial",
       "best_evidence_url": "https://www.patrimonionacional.es/visita/real-monasterio-de-san-lorenzo-de-el-escorial",
       "geo_evidence_url": "https://www.patrimonionacional.es/visita/real-monasterio-de-san-lorenzo-de-el-escorial",
@@ -1748,7 +1832,21 @@
       "owner_decision": "PENDING",
       "identity_final": false,
       "publication_authorized": false,
-      "import_ready": false
+      "import_ready": false,
+      "proposed_display_name": "Royal Monastery of San Lorenzo de El Escorial",
+      "original_source_title_preserved": "Monastery of El Escorial",
+      "correction_requires_owner_acceptance": true,
+      "repair_evidence": {
+        "source_url": "https://www.patrimonionacional.es/visita/real-monasterio-de-san-lorenzo-de-el-escorial",
+        "source_authority": "NATIONAL_HERITAGE_OPERATOR",
+        "finding": "Patrimonio Nacional's full readable visitor page identifies the royal monastery and describes basilica, royal pantheon, library, palace and museum facilities as one heritage complex.",
+        "scope_limit": "Mark as monumental abbey/royal heritage precinct, not a separate basilica building pin or proof of a traditional Mass schedule.",
+        "external_map": null,
+        "verified_at": "2026-11-07",
+        "physical_site_owner_approved": false,
+        "accepted_illustrative_point": false,
+        "publication_authorized": false
+      }
     },
     {
       "candidate_id": "SG-INV-0142",
@@ -2037,9 +2135,9 @@
       "place_type_proposal": "cathedral",
       "unreserved_place_id": "place:FR:cathedral-of-saint-benigne-dijon",
       "already_draft_place_id": null,
-      "lane": "C_REPAIR_EVIDENCE_OR_TITLE",
-      "owner_review_presentable": false,
-      "assessment_note": "Source unresolved, direct page unavailable, or wrong-site provenance needs correction before owner signoff.",
+      "lane": "B_OWNER_REVIEW_WITH_SCOPE_NOTE",
+      "owner_review_presentable": true,
+      "assessment_note": "New supporting source resolves prior identity/title/source blocker for OWNER REVIEW ONLY; Never place cathedral at parish office address; proposed site point remains illustrative.",
       "identity_url": "https://www.diocese-dijon.com/paroisses/agglomeration-dijonnaise/dijon-centre-et-ouest/dijon-saint-benigne/",
       "best_evidence_url": "https://www.diocese-dijon.com/paroisses/agglomeration-dijonnaise/dijon-centre-et-ouest/dijon-saint-benigne/",
       "geo_evidence_url": "https://www.diocese-dijon.com/paroisses/agglomeration-dijonnaise/dijon-centre-et-ouest/dijon-saint-benigne/",
@@ -2060,7 +2158,21 @@
       "owner_decision": "PENDING",
       "identity_final": false,
       "publication_authorized": false,
-      "import_ready": false
+      "import_ready": false,
+      "proposed_display_name": "Cathedral of Saint-Bénigne, Dijon",
+      "original_source_title_preserved": "Cathedral of Saint-Bénigne, Dijon",
+      "correction_requires_owner_acceptance": true,
+      "repair_evidence": {
+        "source_url": "https://www.diocese-dijon.com/paroisses/agglomeration-dijonnaise/dijon-centre-et-ouest/dijon-saint-benigne/",
+        "source_authority": "CATHOLIC_DIOCESE",
+        "finding": "Dijon Diocese confirms the cathedral Saint-Bénigne at Place Saint-Bénigne, Dijon, separately from parish secretariat at 6 rue Danton. Original record's failed fetch is superseded by readable direct diocesan page.",
+        "scope_limit": "Never place cathedral at parish office address; proposed site point remains illustrative.",
+        "external_map": null,
+        "verified_at": "2026-11-07",
+        "physical_site_owner_approved": false,
+        "accepted_illustrative_point": false,
+        "publication_authorized": false
+      }
     },
     {
       "candidate_id": "SG-INV-0008",
@@ -2185,9 +2297,9 @@
       "place_type_proposal": "shrine",
       "unreserved_place_id": "place:HR:sanctuary-of-our-lady-of-remete-zagreb",
       "already_draft_place_id": null,
-      "lane": "C_REPAIR_EVIDENCE_OR_TITLE",
-      "owner_review_presentable": false,
-      "assessment_note": "Source and displayed site title or building scope still require a closer match.",
+      "lane": "B_OWNER_REVIEW_WITH_SCOPE_NOTE",
+      "owner_review_presentable": true,
+      "assessment_note": "New supporting source resolves prior identity/title/source blocker for OWNER REVIEW ONLY; Church, Carmelite monastery and interim liturgical building are distinct internal features of one shrine precinct.",
       "identity_url": "https://www.zg-nadbiskupija.hr/zupe/85?ZupeId=140",
       "best_evidence_url": "https://www.zg-nadbiskupija.hr/zupe/85?ZupeId=140",
       "geo_evidence_url": "https://www.zg-nadbiskupija.hr/zupe/85?ZupeId=140",
@@ -2204,7 +2316,21 @@
       "owner_decision": "PENDING",
       "identity_final": false,
       "publication_authorized": false,
-      "import_ready": false
+      "import_ready": false,
+      "proposed_display_name": "Shrine of Our Lady of Remete, Zagreb",
+      "original_source_title_preserved": "Sanctuary of Our Lady of Remete, Zagreb",
+      "correction_requires_owner_acceptance": true,
+      "repair_evidence": {
+        "source_url": "https://www.zg-nadbiskupija.hr/zupe/85?ZupeId=140",
+        "source_authority": "CATHOLIC_ARCHDIOCESE",
+        "finding": "Zagreb Archdiocese explicitly describes Svetište Majke Božje Remetske and the historical church/monastery at Česmičkoga 1. The page notes 2020 earthquake damage and rebuilding; do not assert current sanctuary-church access without a separate current opening check.",
+        "scope_limit": "Church, Carmelite monastery and interim liturgical building are distinct internal features of one shrine precinct.",
+        "external_map": null,
+        "verified_at": "2026-11-07",
+        "physical_site_owner_approved": false,
+        "accepted_illustrative_point": false,
+        "publication_authorized": false
+      }
     },
     {
       "candidate_id": "SG-INV-0316",
@@ -2517,9 +2643,9 @@
       "place_type_proposal": "chapel",
       "unreserved_place_id": "place:JP:our-lady-of-tsuwano-otome-pass",
       "already_draft_place_id": null,
-      "lane": "C_REPAIR_EVIDENCE_OR_TITLE",
-      "owner_review_presentable": false,
-      "assessment_note": "Source unresolved, direct page unavailable, or wrong-site provenance needs correction before owner signoff.",
+      "lane": "B_OWNER_REVIEW_WITH_SCOPE_NOTE",
+      "owner_review_presentable": true,
+      "assessment_note": "New supporting source resolves prior identity/title/source blocker for OWNER REVIEW ONLY; Change owner-facing name and identity source. Pin only Otome Pass chapel at illustrative site precision.",
       "identity_url": "https://www.japan.travel/en/ph/church/chugoku/tsuwano-catholic-church-st-marys-church-tsuwano/",
       "best_evidence_url": "https://www.kankou-shimane.com/en/destinations/9398",
       "geo_evidence_url": "https://www.japan.travel/en/spot/2324/",
@@ -2541,7 +2667,29 @@
       "owner_decision": "PENDING",
       "identity_final": false,
       "publication_authorized": false,
-      "import_ready": false
+      "import_ready": false,
+      "proposed_display_name": "Otome Toge Maria Chapel, Tsuwano",
+      "original_source_title_preserved": "Our Lady of Tsuwano, Otome Pass",
+      "correction_requires_owner_acceptance": true,
+      "repair_evidence": {
+        "source_url": "https://www.kankou-shimane.com/en/destinations/9398",
+        "source_authority": "OFFICIAL_SHIMANE_TOURISM",
+        "finding": "Shimane prefectural tourism describes Otome Toge Maria Chapel at Otome Pass, not Tsuwano parish church. Independent local map feature near 34.473075,131.770838 is approximately 68 m from staged point. Legends about Marian appearances must be attributed as traditions, never authenticated apparitions.",
+        "scope_limit": "Change owner-facing name and identity source. Pin only Otome Pass chapel at illustrative site precision.",
+        "external_map": {
+          "point": {
+            "lat": 34.473074548312,
+            "lng": 131.77083849184
+          },
+          "osm_way": null,
+          "distance_to_staged_preview_m": 68,
+          "exact_entrance_certified": false
+        },
+        "verified_at": "2026-11-07",
+        "physical_site_owner_approved": false,
+        "accepted_illustrative_point": false,
+        "publication_authorized": false
+      }
     },
     {
       "candidate_id": "SG-INV-0712",
@@ -2662,11 +2810,11 @@
       "place_type_proposal": "church",
       "unreserved_place_id": "place:PS:church-of-saint-lazarus-al-eizariya",
       "already_draft_place_id": null,
-      "lane": "C_REPAIR_EVIDENCE_OR_TITLE",
-      "owner_review_presentable": false,
-      "assessment_note": "Source and displayed site title or building scope still require a closer match.",
+      "lane": "B_OWNER_REVIEW_WITH_SCOPE_NOTE",
+      "owner_review_presentable": true,
+      "assessment_note": "New supporting source resolves prior identity/title/source blocker for OWNER REVIEW ONLY; Pin Franciscan church not tomb crypt/Greek Orthodox church/whole village unless point precision matches.",
       "identity_url": "https://www.custodia.org/en/sanctuaries/bethany/",
-      "best_evidence_url": "https://www.custodia.org/en/sanctuaries/bethany/",
+      "best_evidence_url": "https://www.custodia.org/en/news/in-bethany-the-feast-of-saints-martha-mary-and-lazarus-the-friends-of-jesus-a-symbol-of-the-three-dimensions-of-christian-life/",
       "geo_evidence_url": "https://www.custodia.org/en/sanctuaries/bethany/",
       "supplementary_evidence": null,
       "site_scope_finding": "Franciscan Custody page presents Bethany holy places; proposed specific Church of St Lazarus needs building-level scope reconciliation.",
@@ -2685,7 +2833,21 @@
       "owner_decision": "PENDING",
       "identity_final": false,
       "publication_authorized": false,
-      "import_ready": false
+      "import_ready": false,
+      "proposed_display_name": "Franciscan Church of Saint Lazarus, Bethany (al-Eizariya)",
+      "original_source_title_preserved": "Church of Saint Lazarus, al-Eizariya",
+      "correction_requires_owner_acceptance": true,
+      "repair_evidence": {
+        "source_url": "https://www.custodia.org/en/news/in-bethany-the-feast-of-saints-martha-mary-and-lazarus-the-friends-of-jesus-a-symbol-of-the-three-dimensions-of-christian-life/",
+        "source_authority": "FRANCISCAN_CUSTODY_2026",
+        "finding": "The Franciscan Custody's 2026 liturgical report explicitly names the Church of Saint Lazarus in Bethany and distinguishes liturgy in Lazarus's Tomb crypt and subsequent pilgrim stops. Church is a real separately named building within the holy-sites complex.",
+        "scope_limit": "Pin Franciscan church not tomb crypt/Greek Orthodox church/whole village unless point precision matches.",
+        "external_map": null,
+        "verified_at": "2026-11-07",
+        "physical_site_owner_approved": false,
+        "accepted_illustrative_point": false,
+        "publication_authorized": false
+      }
     },
     {
       "candidate_id": "SG-INV-0567",
@@ -2816,7 +2978,7 @@
       "already_draft_place_id": null,
       "lane": "D_PHYSICAL_IDENTITY_HOLD",
       "owner_review_presentable": false,
-      "assessment_note": "NEW_BUILD_CONSTRUCTION_HOLD",
+      "assessment_note": "Keep new-building site unpublished/owner-unreviewable until an existing worship location is explicitly differentiated from the construction project and its site point corroborated.",
       "identity_url": "https://diacenco.net/message-de-son-excellence-monseigneur-fulgence-muteba-archeveque-de-lubumbashi-et-president-de-la-cenco-a-loccasion-du-lancement-des-travaux-de-construction-du-sanctuaire-de-la-bienheureuse/",
       "best_evidence_url": "https://diacenco.net/message-de-son-excellence-monseigneur-fulgence-muteba-archeveque-de-lubumbashi-et-president-de-la-cenco-a-loccasion-du-lancement-des-travaux-de-construction-du-sanctuaire-de-la-bienheureuse/",
       "geo_evidence_url": "https://gcatholic.org/churches/africa/5676",
@@ -2833,7 +2995,21 @@
       "owner_decision": "PENDING",
       "identity_final": false,
       "publication_authorized": false,
-      "import_ready": false
+      "import_ready": false,
+      "proposed_display_name": "National Shrine of Blessed Anuarite — planned new building, Isiro",
+      "original_source_title_preserved": "National Shrine of Blessed Anuarite, Isiro",
+      "correction_requires_owner_acceptance": true,
+      "repair_evidence": {
+        "source_url": "https://diacenco.net/message-de-son-excellence-monseigneur-fulgence-muteba-archeveque-de-lubumbashi-et-president-de-la-cenco-a-loccasion-du-lancement-des-travaux-de-construction-du-sanctuaire-de-la-bienheureuse/",
+        "source_authority": "CENCO_2025_AND_DRC_STATE",
+        "finding": "CENCO says works on the new grand shrine were launched 1 Dec 2025; state reporting identifies the new project on former Isiro military airfield land. Existing pilgrim commemorations and the saint's remains at Isiro cathedral do not establish the new building as completed or its footprint.",
+        "scope_limit": "Keep new-building site unpublished/owner-unreviewable until an existing worship location is explicitly differentiated from the construction project and its site point corroborated.",
+        "external_map": null,
+        "verified_at": "2026-11-07",
+        "physical_site_owner_approved": false,
+        "accepted_illustrative_point": false,
+        "publication_authorized": false
+      }
     },
     {
       "candidate_id": "SG-INV-0704",
@@ -2842,11 +3018,11 @@
       "place_type_proposal": "cathedral",
       "unreserved_place_id": null,
       "already_draft_place_id": null,
-      "lane": "D_PHYSICAL_IDENTITY_HOLD",
-      "owner_review_presentable": false,
-      "assessment_note": "IDENTITY_FOUND_COORDINATE_UNCORROBORATED",
+      "lane": "B_OWNER_REVIEW_WITH_SCOPE_NOTE",
+      "owner_review_presentable": true,
+      "assessment_note": "New supporting source resolves prior identity/title/source blocker for OWNER REVIEW ONLY; Original 31.194753,29.894503 staged site point is approximately 30 m from OSM footprint centroid, adequate for illustrative review only.",
       "identity_url": "https://www.aciprensa.com/noticias/116311/de-roma-a-alejandria-el-jubileo-de-los-jovenes-continua-su-mision-en-egipto",
-      "best_evidence_url": "https://gcatholic.org/churches/africa/5088",
+      "best_evidence_url": "https://mapcarta.com/W655944901",
       "geo_evidence_url": "https://gcatholic.org/churches/africa/5088",
       "supplementary_evidence": null,
       "site_scope_finding": "IDENTITY_FOUND_COORDINATE_UNCORROBORATED",
@@ -2861,7 +3037,29 @@
       "owner_decision": "PENDING",
       "identity_final": false,
       "publication_authorized": false,
-      "import_ready": false
+      "import_ready": false,
+      "proposed_display_name": "Saint Catherine Roman Catholic Cathedral, Alexandria",
+      "original_source_title_preserved": "Saint Catherine Latin Catholic Cathedral, Alexandria",
+      "correction_requires_owner_acceptance": true,
+      "repair_evidence": {
+        "source_url": "https://mapcarta.com/W655944901",
+        "source_authority": "INDEPENDENT_OSM_BUILDING_PLUS_GCATHOLIC",
+        "finding": "OSM way 655944901 labels Saint Catherine Cathedral as Roman Catholic church building at 31.19455,29.89471; independent address record gives 3 Place Sainte Catherine in Alexandria, not the Coptic or Greek Orthodox cathedrals.",
+        "scope_limit": "Original 31.194753,29.894503 staged site point is approximately 30 m from OSM footprint centroid, adequate for illustrative review only.",
+        "external_map": {
+          "point": {
+            "lat": 31.19455,
+            "lng": 29.89471
+          },
+          "osm_way": 655944901,
+          "distance_to_staged_preview_m": 30,
+          "exact_entrance_certified": false
+        },
+        "verified_at": "2026-11-07",
+        "physical_site_owner_approved": false,
+        "accepted_illustrative_point": false,
+        "publication_authorized": false
+      }
     },
     {
       "candidate_id": "SG-INV-0021",
@@ -2902,11 +3100,11 @@
       "place_type_proposal": "basilica",
       "unreserved_place_id": null,
       "already_draft_place_id": null,
-      "lane": "D_PHYSICAL_IDENTITY_HOLD",
-      "owner_review_presentable": false,
-      "assessment_note": "BASILICA_IDENTITY_ATTESTED_GEO_HOLD",
+      "lane": "B_OWNER_REVIEW_WITH_SCOPE_NOTE",
+      "owner_review_presentable": true,
+      "assessment_note": "New supporting source resolves prior identity/title/source blocker for OWNER REVIEW ONLY; Staged locality point lies approximately 52 m from mapped basilica; preserve locality/complex illustrative scope, not an entrance or future cathedral.",
       "identity_url": "https://www.vatican.va/content/leo-xiv/es/homilies/2026/documents/20260422-guinea-equatoriale-messa-mongomo.html",
-      "best_evidence_url": "https://www.vatican.va/content/leo-xiv/en/homilies/2026/documents/20260422-guinea-equatoriale-messa-mongomo.html",
+      "best_evidence_url": "https://mapcarta.com/W496238151",
       "geo_evidence_url": "https://gcatholic.org/churches/africa/6278",
       "supplementary_evidence": null,
       "site_scope_finding": "BASILICA_IDENTITY_ATTESTED_GEO_HOLD",
@@ -2921,7 +3119,29 @@
       "owner_decision": "PENDING",
       "identity_final": false,
       "publication_authorized": false,
-      "import_ready": false
+      "import_ready": false,
+      "proposed_display_name": "Cathedral Basilica of the Immaculate Conception, Mongomo",
+      "original_source_title_preserved": "Basilica of the Immaculate Conception, Mongomo",
+      "correction_requires_owner_acceptance": true,
+      "repair_evidence": {
+        "source_url": "https://mapcarta.com/W496238151",
+        "source_authority": "INDEPENDENT_OSM_BUILDING_PLUS_VATICAN",
+        "finding": "OSM way 496238151 labels the Catholic cathedral basilica at 1.62257,11.29871; Vatican documents papal Mass at the existing Mongomo basilica on 22 April 2026, distinct from the future Ciudad de la Paz cathedral.",
+        "scope_limit": "Staged locality point lies approximately 52 m from mapped basilica; preserve locality/complex illustrative scope, not an entrance or future cathedral.",
+        "external_map": {
+          "point": {
+            "lat": 1.62257,
+            "lng": 11.29871
+          },
+          "osm_way": 496238151,
+          "distance_to_staged_preview_m": 53,
+          "exact_entrance_certified": false
+        },
+        "verified_at": "2026-11-07",
+        "physical_site_owner_approved": false,
+        "accepted_illustrative_point": false,
+        "publication_authorized": false
+      }
     },
     {
       "candidate_id": "SG-INV-0558",
@@ -2962,9 +3182,9 @@
       "place_type_proposal": "shrine",
       "unreserved_place_id": null,
       "already_draft_place_id": null,
-      "lane": "C_REPAIR_EVIDENCE_OR_TITLE",
-      "owner_review_presentable": false,
-      "assessment_note": "Source unresolved, direct page unavailable, or wrong-site provenance needs correction before owner signoff.",
+      "lane": "B_OWNER_REVIEW_WITH_SCOPE_NOTE",
+      "owner_review_presentable": true,
+      "assessment_note": "New supporting source resolves prior identity/title/source blocker for OWNER REVIEW ONLY; Preserve locality precision; source establishes sanctuary location in village, not precise doorway geometry.",
       "identity_url": "https://www.diocesedeviana.ao/santuario-nossa-senhora-da-conceicao-da-muxima/",
       "best_evidence_url": "https://www.diocesedeviana.ao/um-marco-de-fe-reabertura-do-santuario-da-muxima/",
       "geo_evidence_url": "https://www.diocesedeviana.ao/santuario-nossa-senhora-da-conceicao-da-muxima/",
@@ -2981,7 +3201,21 @@
       "owner_decision": "PENDING",
       "identity_final": false,
       "publication_authorized": false,
-      "import_ready": false
+      "import_ready": false,
+      "proposed_display_name": "Sanctuary of Our Lady of the Conception, Muxima",
+      "original_source_title_preserved": "Santuário Nossa Senhora da Conceição da Muxima",
+      "correction_requires_owner_acceptance": true,
+      "repair_evidence": {
+        "source_url": "https://www.diocesedeviana.ao/um-marco-de-fe-reabertura-do-santuario-da-muxima/",
+        "source_authority": "DIOCESE_OF_VIANA_2026",
+        "finding": "Diocese of Viana confirms church reopening and altar dedication on 13 July 2026, following renovation; dedicated shrine entry locates it in Vila da Muxima, Quissamã. Earlier fetch limitation has been resolved by readable primary-source material.",
+        "scope_limit": "Preserve locality precision; source establishes sanctuary location in village, not precise doorway geometry.",
+        "external_map": null,
+        "verified_at": "2026-11-07",
+        "physical_site_owner_approved": false,
+        "accepted_illustrative_point": false,
+        "publication_authorized": false
+      }
     },
     {
       "candidate_id": "SG-INV-0191",
@@ -4682,11 +4916,11 @@
       "place_type_proposal": "basilica",
       "unreserved_place_id": null,
       "already_draft_place_id": null,
-      "lane": "D_PHYSICAL_IDENTITY_HOLD",
-      "owner_review_presentable": false,
-      "assessment_note": "St Peregrine shrine is within Our Lady of Sorrows Basilica; avoid creating two physical buildings for one church.",
+      "lane": "B_OWNER_REVIEW_WITH_SCOPE_NOTE",
+      "owner_review_presentable": true,
+      "assessment_note": "New supporting source resolves prior identity/title/source blocker for OWNER REVIEW ONLY; No second church pin for St Peregrine; if basilica is admitted, name one physical site and associate the devotion with it, never infer TLM.",
       "identity_url": "https://gcatholic.org/churches/northamerica/0778",
-      "best_evidence_url": "https://www.ols-chicago.com/contact-visit-us",
+      "best_evidence_url": "https://www.archchicago.org/about-us/parish-directory",
       "geo_evidence_url": "https://www.ols-chicago.com/contact-visit-us",
       "supplementary_evidence": null,
       "site_scope_finding": "SHARED_CHURCH_DEDICATION_SCOPE_REVIEW",
@@ -4705,7 +4939,21 @@
       "owner_decision": "PENDING",
       "identity_final": false,
       "publication_authorized": false,
-      "import_ready": false
+      "import_ready": false,
+      "proposed_display_name": "Our Lady of Sorrows Basilica — National Shrine of Saint Peregrine, Chicago",
+      "original_source_title_preserved": "National Shrine of Saint Peregrine, Chicago",
+      "correction_requires_owner_acceptance": true,
+      "repair_evidence": {
+        "source_url": "https://www.archchicago.org/about-us/parish-directory",
+        "source_authority": "ARCHDIOCESE_AND_SITE_OPERATOR",
+        "finding": "Archdiocese of Chicago's parish directory places the National Shrine of St Peregrine within Our Lady of Sorrows Basilica at 3121 W Jackson Blvd. Its operator confirms a single basilica site with Peregrine devotions. The 535-Place draft does not contain this Chicago basilica; create at most one physical Place, with the shrine as an associated dedication.",
+        "scope_limit": "No second church pin for St Peregrine; if basilica is admitted, name one physical site and associate the devotion with it, never infer TLM.",
+        "external_map": null,
+        "verified_at": "2026-11-07",
+        "physical_site_owner_approved": false,
+        "accepted_illustrative_point": false,
+        "publication_authorized": false
+      }
     },
     {
       "candidate_id": "SG-INV-0398",
@@ -4915,5 +5163,27 @@
       "publication_authorized": false,
       "import_ready": false
     }
-  ]
+  ],
+  "remediation_16": {
+    "manifest": "data/geography/research/sacred-atlas-16-evidence-repairs-20261107.v1.json",
+    "prior_counts": {
+      "A": 98,
+      "B": 53,
+      "C": 12,
+      "D": 4,
+      "E": 2
+    },
+    "new_counts": {
+      "A": 98,
+      "B": 68,
+      "C": 0,
+      "D": 1,
+      "E": 2
+    },
+    "owner_reviewable": 166,
+    "moved_from_hold": 15,
+    "construction_hold_remaining": 1,
+    "owner_approvals": 0,
+    "production_changes": 0
+  }
 }

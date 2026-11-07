@@ -1,23 +1,46 @@
-# Sacred Atlas — Claude 169: owner review and hold matrix
+# Sacred Atlas — Claude 169: owner decision and corrected-site register
 
-**7 November 2026. Research-only proposal, not approved or live.** Exact physical sites and accepted illustrative-point precision still require owner approval. The 169 candidates are separate from the current 530 published / 535 unmerged draft Places. Two B21 draft candidates must never be re-imported.
+**Updated 7 November 2026. Research-only owner-review proposal; zero approved or live candidates.** All corrections preserve the original candidate ID and research title. `proposed_display_name` in the JSON is a suggested corrected label; it cannot replace a canonical label without owner approval.
 
 | Decision lane | Count | Meaning |
 |---|---:|---|
-| A — Standard owner review, illustrative point | 98 | Named site; source-screened; exact entrance not certified |
-| B — Owner review, qualifier required | 53 | Explain rite/precinct/near-neighbour or locality-source caveat |
-| C — Source or title repair first | 12 | Fix identity source, title or wrong-site mapping |
-| D — Physical identity hold | 4 | Construction/geometry/co-located church unresolved |
-| E — Already in B21 draft | 2 | La Pocatière and Ngome, approval required but no duplicate |
-| **Total** | **169** | **151 reviewable, 16 repair/hold, 2 already drafted; 0 approved** |
+| A — Standard owner review, illustrative pin | 98 | Site source screened; no exact entrance claim |
+| B — Owner review with named-site/rite/precinct qualification | 68 | Includes 15 newly resolved evidence/title/geography cases; all still require owner approval |
+| C — Evidence/title repairs outstanding | 0 | 12 prior cases now have qualifying evidence or corrected display-name proposals |
+| D — Physical identity hold | 1 | Isiro planned new shrine building—not an existing certified building pin |
+| E — Already in B21 draft | 2 | La Pocatière and Ngome, do not duplicate |
+| **Total** | **169** | **166 reviewable + 1 hold + 2 already drafted; zero owner-approved** |
 
-**Editorial safeguards:** A/B are presentable for review only. No candidate has an owner-approved point or permission to publish. A pin may be illustrative at site, complex or locality scale, but never label it as an entrance/GPS fix. Keep Maronite, Byzantine and Syriac Catholic distinctions, outdoor shrines and shared church-building identities source-scoped. The photograph/guide approval stream is separate.
+**Why Isiro remains held:** CENCO launched construction of the grand Anuarite shrine on 1 December 2025; no proof the new building has been completed. Do not map pilgrims visiting the older shrine/cathedral to a speculative new cathedral/shrine footprint.
 
-## All 169 records
+**Approval boundary:** A/B means eligible to present for a site-by-site owner decision, not preapproved to publish. All site/precinct/locality coordinates remain illustrative and non-navigation-grade; preserve Catholic rite distinctions, named church vs relic/tomb vs neighbouring chapel, and avoid TLM schedule inferences. Photo rights and editorial long guides are separate.
+
+## Targeted 16 corrections and disposition
+
+| Candidate | Prior concern | Owner-review display name | Result | Corroboration |
+|---|---|---|---|---|
+| SG-INV-0187 | C REPAIR EVIDENCE OR TITLE | Basilica of Saint Michael, Marian Pilgrimage Church of Absam | Review with site caution | [Evidence](https://pfarre-absam.at/at/wallfahrt/kirche.php) |
+| SG-INV-0343 | C REPAIR EVIDENCE OR TITLE | Sanctuary of Our Lady Consoler of the Afflicted, Baruny | Review with site caution | [Evidence](https://catholicnews.by/u-barunah-z-udzelam-biskupa-grodzenskaga-adznachyli-gadavinu-skladannja-karon-na-cudadzejny-abraz-maci-bozhaj/) |
+| SG-INV-0507 | C REPAIR EVIDENCE OR TITLE | Church and Convent of Santa Cruz de La Popa (Our Lady of Candelaria) | Review with site caution | [Evidence](https://www.cartagena.gov.co/noticias/cartagena-indias-destino-turistico-religioso-espiritual-esta-semana-santa-primera-vez-ruta-patrimonial-denominada-ruta-esperanza-llega-tres-lugares-gran-valor-historico) |
+| SG-INV-0465 | C REPAIR EVIDENCE OR TITLE | Parish of Saint Barbara, Párraga, Havana | Review with site caution | [Evidence](https://arquidiocesisdelahabana.org/parroquias/) |
+| SG-INV-0517 | C REPAIR EVIDENCE OR TITLE | Sanctuary of the Lord of Divine Mercy, Guayaquil | Review with site caution | [Evidence](https://communio.arquidiocesisdeguayaquil.org.ec/info/directorio/) |
+| SG-INV-0129 | C REPAIR EVIDENCE OR TITLE | Minor Basilica of Our Lady of the Miracles, Ágreda | Review with site caution | [Evidence](https://parroquiaagreda.es/portfolio-item/basilica-de-nuestra-senora-de-los-milagros) |
+| SG-INV-0140 | C REPAIR EVIDENCE OR TITLE | Royal Monastery of San Lorenzo de El Escorial | Review with site caution | [Evidence](https://www.patrimonionacional.es/visita/real-monasterio-de-san-lorenzo-de-el-escorial) |
+| SG-INV-0047 | C REPAIR EVIDENCE OR TITLE | Cathedral of Saint-Bénigne, Dijon | Review with site caution | [Evidence](https://www.diocese-dijon.com/paroisses/agglomeration-dijonnaise/dijon-centre-et-ouest/dijon-saint-benigne/) |
+| SG-INV-0312 | C REPAIR EVIDENCE OR TITLE | Shrine of Our Lady of Remete, Zagreb | Review with site caution | [Evidence](https://www.zg-nadbiskupija.hr/zupe/85?ZupeId=140) |
+| SG-INV-0616 | C REPAIR EVIDENCE OR TITLE | Otome Toge Maria Chapel, Tsuwano | Review with site caution | [Evidence](https://www.kankou-shimane.com/en/destinations/9398) |
+| SG-INV-0569 | C REPAIR EVIDENCE OR TITLE | Franciscan Church of Saint Lazarus, Bethany (al-Eizariya) | Review with site caution | [Evidence](https://www.custodia.org/en/news/in-bethany-the-feast-of-saints-martha-mary-and-lazarus-the-friends-of-jesus-a-symbol-of-the-three-dimensions-of-christian-life/) |
+| SG-INV-0720 | C REPAIR EVIDENCE OR TITLE | Sanctuary of Our Lady of the Conception, Muxima | Review with site caution | [Evidence](https://www.diocesedeviana.ao/um-marco-de-fe-reabertura-do-santuario-da-muxima/) |
+| SG-INV-0704 | D PHYSICAL IDENTITY HOLD | Saint Catherine Roman Catholic Cathedral, Alexandria | Review with site caution | [Evidence](https://mapcarta.com/W655944901) |
+| SG-INV-0731 | D PHYSICAL IDENTITY HOLD | Cathedral Basilica of the Immaculate Conception, Mongomo | Review with site caution | [Evidence](https://mapcarta.com/W496238151) |
+| SG-INV-0396 | D PHYSICAL IDENTITY HOLD | Our Lady of Sorrows Basilica — National Shrine of Saint Peregrine, Chicago | Review with site caution | [Evidence](https://www.archchicago.org/about-us/parish-directory) |
+| SG-INV-0717 | D PHYSICAL IDENTITY HOLD | National Shrine of Blessed Anuarite — planned new building, Isiro | Construction hold | [Evidence](https://diacenco.net/message-de-son-excellence-monseigneur-fulgence-muteba-archeveque-de-lubumbashi-et-president-de-la-cenco-a-loccasion-du-lancement-des-travaux-de-construction-du-sanctuaire-de-la-bienheureuse/) |
+
+## Complete 169-place owner review inventory
 
 ### A OWNER REVIEW ILLUSTRATIVE — 98
 
-| ID | Place | Country | Proposed scope | Evidence and review constraint |
+| Candidate | Site for owner review | Country | Approximate precision | Evidence and disposition |
 |---|---|---|---|---|
 | SG-INV-0496 | Sanctuary of Saint José Gabriel Brochero, Villa Cura Brochero | AR | `site` | [Source](https://diocesiscruzdeleje.org.ar/parroquia-ntra-sra-del-transito-y-santo-cura-brochero-santuario/); Named physical site has screened source evidence; illustrative pin and owner decision remain pending. |
 | SG-INV-0198 | Basilica of Sonntagberg | AT | `site` | [Source](https://www.sonntagberg.at/pfarre-basilika-sonntagberg-mostviertel/); Named physical site has screened source evidence; illustrative pin and owner decision remain pending. |
@@ -118,12 +141,13 @@
 | SG-INV-0395 | Shrine of Saint Anthony, Ellicott City | US | `complex_anchor` | [Source](https://shrineofstanthony.org/directions); Named physical site has screened source evidence; illustrative pin and owner decision remain pending. |
 | SG-INV-0531 | Sanctuary of the Virgin of the Thirty-Three, Florida | UY | `site` | [Source](https://www.iglesiacatolicaflorida.org/parroquias/); Named physical site has screened source evidence; illustrative pin and owner decision remain pending. |
 
-### B OWNER REVIEW WITH SCOPE NOTE — 53
+### B OWNER REVIEW WITH SCOPE NOTE — 68
 
-| ID | Place | Country | Proposed scope | Evidence and review constraint |
+| Candidate | Site for owner review | Country | Approximate precision | Evidence and disposition |
 |---|---|---|---|---|
 | SG-INV-0348 | Shrine of Our Lady of Good Counsel, Shkodër | AL | `locality` | [Source](https://albaniaembassy.orderofmalta.int/en/news/shkoder-sanctuary-our-lady-of-good-counsel-elevated-to-minor-basilica-status-on-feast-day/); Explicit physical-site, rite or source qualification remains necessary. |
 | SG-INV-0195 | Saint Florian Abbey | AT | `complex_anchor` | [Source](https://www.kloesterreich.at/kloster-stifte/stift-st-florian/); Explicit physical-site, rite or source qualification remains necessary. |
+| SG-INV-0187 | Basilica of Saint Michael, Marian Pilgrimage Church of Absam | AT | `site` | [Source](https://pfarre-absam.at/at/wallfahrt/kirche.php); New supporting source resolves prior identity/title/source blocker for OWNER REVIEW ONLY; Church point near parish basilica; do not pin original apparition house as a second church. |
 | SG-INV-0318 | Marian shrine of Olovo | BA | `locality` | [Source](https://olovo.gov.ba/?page_id=294); Explicit physical-site, rite or source qualification remains necessary. |
 | SG-INV-0227 | Basilica of the Holy Blood, Bruges | BE | `locality` | [Source](https://holyblood.com/welkom); Explicit physical-site, rite or source qualification remains necessary. |
 | SG-INV-0729 | Basilica of Saint Anthony of Padua, Mugera | BI | `locality` | [Source](https://www.vaticannews.va/fr/vatican/news/2025-08/le-cardinal-parolin-au-burundi-au-service-du-bien-commun.html); Explicit physical-site, rite or source qualification remains necessary. |
@@ -131,28 +155,41 @@
 | SG-INV-0543 | Shrine of Our Lady of Socavón, Oruro | BO | `locality` | [Source](https://ceb.bo/2025/08/su-santidad-leon-xiv-ha-elevado-el-santuario-del-socavon-a-basilica-menor/); Explicit physical-site, rite or source qualification remains necessary. |
 | SG-INV-0484 | Sanctuary of Bom Jesus de Matosinhos, Congonhas | BR | `complex_anchor` | [Source](https://whc.unesco.org/en/list/334/); Explicit physical-site, rite or source qualification remains necessary. |
 | SG-INV-0479 | Sanctuary of Our Lady of Piedade, Caeté | BR | `site` | [Source](https://santuarionossasenhoradapiedade.arquidiocesebh.org.br/santuario/localizacao-e-como-chegar/); New institutional source found, but the original recorded fetch is still unavailable. |
+| SG-INV-0343 | Sanctuary of Our Lady Consoler of the Afflicted, Baruny | BY | `locality` | [Source](https://catholicnews.by/u-barunah-z-udzelam-biskupa-grodzenskaga-adznachyli-gadavinu-skladannja-karon-na-cudadzejny-abraz-maci-bozhaj/); New supporting source resolves prior identity/title/source blocker for OWNER REVIEW ONLY; Only a locality-scale anchor is supplied; no independently certified church entrance. |
 | SG-INV-0419 | National Shrine of Saint Kateri Tekakwitha, Kahnawake | CA | `locality` | [Source](https://nationalsaintkaterishrine.ca/); Explicit physical-site, rite or source qualification remains necessary. |
 | SG-INV-0421 | National Shrine of the Little Flower, Wakaw | CA | `site` | [Source](https://news.rcdos.ca/2026/09/24/st-therese-institute-wakaw-pilgrimage/); Locality-scale approximate pin, not a certified church entrance. |
 | SG-INV-0274 | Sanctuary of Our Lady of Bourguillon | CH | `site` | [Source](https://fribourg.ch/fr/fribourg/architecture-et-monuments/sanctuaire-notre-dame-de-bourguillon/); Explicit physical-site, rite or source qualification remains necessary. |
 | SG-INV-0275 | Sanctuary of Our Lady of Valère, Sion | CH | `locality` | [Source](https://diocese-sion.ch/prier/faire-un-pelerinage/valere-et-longeborgne); Explicit physical-site, rite or source qualification remains necessary. |
 | SG-INV-0505 | National Shrine of Our Lady of Mount Carmel, Bogotá | CO | `site` | [Source](https://visitbogota.co/es/que-hacer-en-bogota/cultura/santuario-nacional-nuestra-senora-del-carmen); New institutional source found, but the original recorded fetch is still unavailable. |
+| SG-INV-0507 | Church and Convent of Santa Cruz de La Popa (Our Lady of Candelaria) | CO | `complex_anchor` | [Source](https://www.cartagena.gov.co/noticias/cartagena-indias-destino-turistico-religioso-espiritual-esta-semana-santa-primera-vez-ruta-patrimonial-denominada-ruta-esperanza-llega-tres-lugares-gran-valor-historico); New supporting source resolves prior identity/title/source blocker for OWNER REVIEW ONLY; Change owner-facing title to Candelaria; do not assign the lower parish church as the hilltop pin. |
+| SG-INV-0465 | Parish of Saint Barbara, Párraga, Havana | CU | `site` | [Source](https://arquidiocesisdelahabana.org/parroquias/); New supporting source resolves prior identity/title/source blocker for OWNER REVIEW ONLY; Owner must approve the corrected parish-level title before entry, with no claim of national canonical designation. |
 | SG-INV-0292 | Monastery of the Mother of God, Králíky | CZ | `complex_anchor` | [Source](https://www.bihk.cz/dieceze/kostel/nanebevzeti-panny-marie-36); Locality-scale approximate pin, not a certified church entrance. |
 | SG-INV-0179 | Ottobeuren Abbey | DE | `complex_anchor` | [Source](https://www.ottobeuren.de/de/tourismus-aktivitaet/kunst-kultur/kirchen-kloester.php); Explicit physical-site, rite or source qualification remains necessary. |
+| SG-INV-0517 | Sanctuary of the Lord of Divine Mercy, Guayaquil | EC | `site` | [Source](https://communio.arquidiocesisdeguayaquil.org.ec/info/directorio/); New supporting source resolves prior identity/title/source blocker for OWNER REVIEW ONLY; Retain site address and source-scoped shrine identity; do not silently assert National or a GPS-exact door. |
 | SG-INV-0513 | Sanctuary of Our Lady of the Cave of Peace, La Paz | EC | `locality` | [Source](https://www.gplapaz.gob.ec/turismo/); Explicit physical-site, rite or source qualification remains necessary. |
+| SG-INV-0129 | Minor Basilica of Our Lady of the Miracles, Ágreda | ES | `locality` | [Source](https://parroquiaagreda.es/portfolio-item/basilica-de-nuestra-senora-de-los-milagros); New supporting source resolves prior identity/title/source blocker for OWNER REVIEW ONLY; Locality-level point only until accepted; distinguish the surviving basilica from demolished Augustinian monastery. |
 | SG-INV-0144 | Basilica of San Juan de Dios, Granada | ES | `site` | [Source](https://turismo.granada.org/en/basilica-san-juan-dios); New institutional source found, but the original recorded fetch is still unavailable. |
 | SG-INV-0123 | Convent of Saint Teresa, Ávila | ES | `site` | [Source](https://www.avilaturismo.com/en/church-and-convent-os-st-teresa); Explicit physical-site, rite or source qualification remains necessary. |
+| SG-INV-0140 | Royal Monastery of San Lorenzo de El Escorial | ES | `complex_anchor` | [Source](https://www.patrimonionacional.es/visita/real-monasterio-de-san-lorenzo-de-el-escorial); New supporting source resolves prior identity/title/source blocker for OWNER REVIEW ONLY; Mark as monumental abbey/royal heritage precinct, not a separate basilica building pin or proof of a traditional Mass schedule. |
 | SG-INV-0044 | Abbey of Fontgombault | FR | `locality` | [Source](https://abbaye-fontgombault.fr/website/pages/FR/abbaye.html); Explicit physical-site, rite or source qualification remains necessary. |
+| SG-INV-0047 | Cathedral of Saint-Bénigne, Dijon | FR | `site` | [Source](https://www.diocese-dijon.com/paroisses/agglomeration-dijonnaise/dijon-centre-et-ouest/dijon-saint-benigne/); New supporting source resolves prior identity/title/source blocker for OWNER REVIEW ONLY; Never place cathedral at parish office address; proposed site point remains illustrative. |
+| SG-INV-0312 | Shrine of Our Lady of Remete, Zagreb | HR | `site` | [Source](https://www.zg-nadbiskupija.hr/zupe/85?ZupeId=140); New supporting source resolves prior identity/title/source blocker for OWNER REVIEW ONLY; Church, Carmelite monastery and interim liturgical building are distinct internal features of one shrine precinct. |
 | SG-INV-0105 | Abbey of Fossanova | IT | `complex_anchor` | [Source](https://cultura.gov.it/luogo/abbazia-di-fossanova); New institutional source found, but the original recorded fetch is still unavailable. |
 | SG-INV-0096 | Basilica of Saint Benedict, Norcia | IT | `site` | [Source](https://oroeterra.cultura.gov.it/spazi/basilica-di-s-benedetto/); Locality-scale approximate pin, not a certified church entrance. |
 | SG-INV-0103 | Charterhouse of Pavia | IT | `complex_anchor` | [Source](https://museilombardia.cultura.gov.it/musei/museo-della-certosa-di-pavia/); New institutional source found, but the original recorded fetch is still unavailable. |
 | SG-INV-0104 | Sacra di San Michele, Piedmont | IT | `complex_anchor` | [Source](https://turismotorino.org/it/visita/cosa-fare-e-vedere/spiritualita/i-luoghi-dello-spirito/sacra-di-san-michele); New institutional source found, but the original recorded fetch is still unavailable. |
 | SG-INV-0065 | Sanctuary of Oropa | IT | `complex_anchor` | [Source](https://www.santuariodioropa.it/contatti/); New institutional source found, but the original recorded fetch is still unavailable. |
+| SG-INV-0616 | Otome Toge Maria Chapel, Tsuwano | JP | `site` | [Source](https://www.kankou-shimane.com/en/destinations/9398); New supporting source resolves prior identity/title/source blocker for OWNER REVIEW ONLY; Change owner-facing name and identity source. Pin only Otome Pass chapel at illustrative site precision. |
 | SG-INV-0712 | National Shrine of Our Lady of Africa, Subukia | KE | `locality` | [Source](https://archdioceseofnairobi.org/?p=8000); Explicit physical-site, rite or source qualification remains necessary. |
 | SG-INV-0689 | National Shrine of the Queen of Peace, Ozernoye | KZ | `locality` | [Source](https://kazakhstan.travel/en/attractions/607); Explicit physical-site, rite or source qualification remains necessary. |
 | SG-INV-0350 | Sanctuary of Our Lady of the Rocks, Perast | ME | `locality` | [Source](https://www.enciklopedija.hr/clanak/gospa-od-skrpjela); Explicit physical-site, rite or source qualification remains necessary. |
+| SG-INV-0569 | Franciscan Church of Saint Lazarus, Bethany (al-Eizariya) | PS | `site` | [Source](https://www.custodia.org/en/news/in-bethany-the-feast-of-saints-martha-mary-and-lazarus-the-friends-of-jesus-a-symbol-of-the-three-dimensions-of-christian-life/); New supporting source resolves prior identity/title/source blocker for OWNER REVIEW ONLY; Pin Franciscan church not tomb crypt/Greek Orthodox church/whole village unless point precision matches. |
 | SG-INV-0473 | Shrine of Our Lady of La Divina Pastora, Siparia | TT | `locality` | [Source](https://boroughofsiparia.gov.tt/our-history/); Explicit physical-site, rite or source qualification remains necessary. |
+| SG-INV-0704 | Saint Catherine Roman Catholic Cathedral, Alexandria | EG | `site` | [Source](https://mapcarta.com/W655944901); New supporting source resolves prior identity/title/source blocker for OWNER REVIEW ONLY; Original 31.194753,29.894503 staged site point is approximately 30 m from OSM footprint centroid, adequate for illustrative review |
 | SG-INV-0021 | Sanctuary of the Holy Face, Tours | FR | `complex_anchor` | [Source](https://paroisse-cathedrale-tours.fr/en/saint-face); Different church from nearby registered building; approve only a point for the correct church. |
+| SG-INV-0731 | Cathedral Basilica of the Immaculate Conception, Mongomo | GQ | `locality` | [Source](https://mapcarta.com/W496238151); New supporting source resolves prior identity/title/source blocker for OWNER REVIEW ONLY; Staged locality point lies approximately 52 m from mapped basilica; preserve locality/complex illustrative scope, not an entrance  |
 | SG-INV-0558 | Church of Saint Anne, Jerusalem | IL | `complex_anchor` | [Source](https://ste-anne-jerusalem.org/en/); Different church from nearby registered building; approve only a point for the correct church. |
+| SG-INV-0720 | Sanctuary of Our Lady of the Conception, Muxima | AO | `locality` | [Source](https://www.diocesedeviana.ao/um-marco-de-fe-reabertura-do-santuario-da-muxima/); New supporting source resolves prior identity/title/source blocker for OWNER REVIEW ONLY; Preserve locality precision; source establishes sanctuary location in village, not precise doorway geometry. |
 | SG-INV-0321 | Shrine of Our Lady of Mátraverebély-Szentkút | HU | `complex_anchor` | [Source](https://szentkut.hu/en/contact-information); Explicit physical-site, rite or source qualification remains necessary. |
 | SG-INV-0563 | Stella Maris Carmelite Monastery, Mount Carmel | IL | `locality` | [Source](https://www.carmelholylanddco.org/contacts/); Explicit physical-site, rite or source qualification remains necessary. |
 | SG-INV-0687 | Shrine of Mar Behnam (Syriac Christian heritage) | IQ | `complex_anchor` | [Source](https://www.aliph-foundation.org/en/projects/mar-behnam); Explicit physical-site, rite or source qualification remains necessary. |
@@ -172,43 +209,29 @@
 | SG-INV-0528 | Shrine of Our Lady of Itapé | PY | `locality` | [Source](https://visitparaguay.travel/places/santuario-virgen-de-paso-itape); Explicit physical-site, rite or source qualification remains necessary. |
 | SG-INV-0345 | Sanctuary of Our Lady of Berdychiv | UA | `complex_anchor` | [Source](https://sanctuary.karmel.org.ua/sample-page/kontakty/); Explicit physical-site, rite or source qualification remains necessary. |
 | SG-INV-0412 | National Shrine of Our Lady of Lebanon, North Jackson | US | `complex_anchor` | [Source](https://ourladyoflebanonshrine.com/contact); Explicit physical-site, rite or source qualification remains necessary. |
+| SG-INV-0396 | Our Lady of Sorrows Basilica — National Shrine of Saint Peregrine, Chicago | US | `site` | [Source](https://www.archchicago.org/about-us/parish-directory); New supporting source resolves prior identity/title/source blocker for OWNER REVIEW ONLY; No second church pin for St Peregrine; if basilica is admitted, name one physical site and associate the devotion with it, never i |
 | SG-INV-0564 | Church of Saint Joseph, Nazareth | IL | `complex_anchor` | [Source](https://www.custodia.org/en/sanctuaries/nazareth-saint-joseph/); Different church from nearby registered building; approve only a point for the correct church. |
 | SG-INV-0554 | Church of the Dormition, Mount Zion | IL | `complex_anchor` | [Source](https://www.cicts.org/our-services/); Different church from nearby registered building; approve only a point for the correct church. |
 | SG-INV-0664 | San Agustin Church, Intramuros Manila | PH | `complex_anchor` | [Source](https://philhistoricsites.nhcp.gov.ph/registry_database/church-of-san-agustin-2/); Different church from nearby registered building; approve only a point for the correct church. |
 
-### C REPAIR EVIDENCE OR TITLE — 12
+### C REPAIR EVIDENCE OR TITLE — 0
 
-| ID | Place | Country | Proposed scope | Evidence and review constraint |
+| Candidate | Site for owner review | Country | Approximate precision | Evidence and disposition |
 |---|---|---|---|---|
-| SG-INV-0187 | Sanctuary of Absam | AT | `site` | [Source](https://www.absam.at/Unser_Absam/Kirche_und_Religion/Pfarramt); Source and displayed site title or building scope still require a closer match. |
-| SG-INV-0343 | Marian Sanctuary of Baruny | BY | `locality` | [Source](https://presstoarch.amu.edu.pl/index.php/pss/article/view/46477); Historical Uniate record cannot certify current Catholic status. |
-| SG-INV-0507 | Shrine of Our Lady of the Rosary, La Popa, Cartagena | CO | `complex_anchor` | [Source](https://www.cartagena.gov.co/noticias/cartagena-indias-celebra-novena-virgen-candelaria-patrona-espiritual-ciudad); Source unresolved, direct page unavailable, or wrong-site provenance needs correction before owner signoff. |
-| SG-INV-0465 | National Shrine of Saint Barbara, Havana | CU | `site` | [Source](https://arquidiocesisdelahabana.org/parroquias/); Source and displayed site title or building scope still require a closer match. |
-| SG-INV-0517 | National Shrine of Divine Mercy, Guayaquil | EC | `site` | [Source](https://communio.arquidiocesisdeguayaquil.org.ec/info/directorio/); Official archdiocesan site attests shrine but not the proposed National title. |
-| SG-INV-0129 | Basilica of Our Lady of the Miracles, Ágreda | ES | `locality` | [Source](https://www.osma-soria.org/la-diocesis/guia-diocesana/); Source and displayed site title or building scope still require a closer match. |
-| SG-INV-0140 | Monastery of El Escorial | ES | `complex_anchor` | [Source](https://www.patrimonionacional.es/visita/real-monasterio-de-san-lorenzo-de-el-escorial); Dynamic official heritage page does not supply reliable readable evidence of the named monastery. |
-| SG-INV-0047 | Cathedral of Saint-Bénigne, Dijon | FR | `site` | [Source](https://www.diocese-dijon.com/paroisses/agglomeration-dijonnaise/dijon-centre-et-ouest/dijon-saint-benigne/); Source unresolved, direct page unavailable, or wrong-site provenance needs correction before owner signoff. |
-| SG-INV-0312 | Sanctuary of Our Lady of Remete, Zagreb | HR | `site` | [Source](https://www.zg-nadbiskupija.hr/zupe/85?ZupeId=140); Source and displayed site title or building scope still require a closer match. |
-| SG-INV-0616 | Our Lady of Tsuwano, Otome Pass | JP | `site` | [Source](https://www.kankou-shimane.com/en/destinations/9398); Source unresolved, direct page unavailable, or wrong-site provenance needs correction before owner signoff. |
-| SG-INV-0569 | Church of Saint Lazarus, al-Eizariya | PS | `site` | [Source](https://www.custodia.org/en/sanctuaries/bethany/); Source and displayed site title or building scope still require a closer match. |
-| SG-INV-0720 | Santuário Nossa Senhora da Conceição da Muxima | AO | `locality` | [Source](https://www.diocesedeviana.ao/um-marco-de-fe-reabertura-do-santuario-da-muxima/); Source unresolved, direct page unavailable, or wrong-site provenance needs correction before owner signoff. |
 
-### D PHYSICAL IDENTITY HOLD — 4
+### D PHYSICAL IDENTITY HOLD — 1
 
-| ID | Place | Country | Proposed scope | Evidence and review constraint |
+| Candidate | Site for owner review | Country | Approximate precision | Evidence and disposition |
 |---|---|---|---|---|
-| SG-INV-0717 | National Shrine of Blessed Anuarite, Isiro | CD | `site` | [Source](https://diacenco.net/message-de-son-excellence-monseigneur-fulgence-muteba-archeveque-de-lubumbashi-et-president-de-la-cenco-a-loccasion-du-lancement-des-travaux-de-construction-du-sanctuaire-de-la-bienheureuse/); NEW_BUILD_CONSTRUCTION_HOLD |
-| SG-INV-0704 | Saint Catherine Latin Catholic Cathedral, Alexandria | EG | `site` | [Source](https://gcatholic.org/churches/africa/5088); IDENTITY_FOUND_COORDINATE_UNCORROBORATED |
-| SG-INV-0731 | Basilica of the Immaculate Conception, Mongomo | GQ | `locality` | [Source](https://www.vatican.va/content/leo-xiv/en/homilies/2026/documents/20260422-guinea-equatoriale-messa-mongomo.html); BASILICA_IDENTITY_ATTESTED_GEO_HOLD |
-| SG-INV-0396 | National Shrine of Saint Peregrine, Chicago | US | `site` | [Source](https://www.ols-chicago.com/contact-visit-us); St Peregrine shrine is within Our Lady of Sorrows Basilica; avoid creating two physical buildings for one church. |
+| SG-INV-0717 | National Shrine of Blessed Anuarite — planned new building, Isiro | CD | `site` | [Source](https://diacenco.net/message-de-son-excellence-monseigneur-fulgence-muteba-archeveque-de-lubumbashi-et-president-de-la-cenco-a-loccasion-du-lancement-des-travaux-de-construction-du-sanctuaire-de-la-bienheureuse/); Keep new-building site unpublished/owner-unreviewable until an existing worship location is explicitly differentiated from the construction project and its site point corroborated. |
 
 ### E EXISTING DRAFT SIGNOFF — 2
 
-| ID | Place | Country | Proposed scope | Evidence and review constraint |
+| Candidate | Site for owner review | Country | Approximate precision | Evidence and disposition |
 |---|---|---|---|---|
 | SG-INV-0415 | Sanctuaire Notre-Dame-de-Fatima, La Pocatière | CA | `site` | [Source](https://toponymie.gouv.qc.ca/ct/ToposWeb/Fiche.aspx?no_seq=150108); Already represented in B21 draft; owner signoff on existing Place only, no duplicate. |
 | SG-INV-0722 | Ngome Marian Shrine | ZA | `site` | [Source](https://catholicdirectory.org.za/eshowe-2/); Already represented in B21 draft; owner signoff on existing Place only, no duplicate. |
 
-## Release gate
+## Unchanged prohibitions
 
-Before any admission: direct owner decision, source-scoped site identity, accepted illustrative-point precision, nonduplicated canonical Place ID, type/rite qualification, app-contract validation and explicit GitHub Pages release authorization. C and D remain in research until their issue is corrected. B21 entries in E are not new admissions.
+All 169 remain owner-decision `PENDING`, with `identity_final=false`, `point.owner_accepted=false`, `import_ready=false`, and `publication_authorized=false`. The two already in draft are unapproved records, not new admissions. No production registry writes, no Vercel, no GitHub Pages release without explicit decision and green checks.
