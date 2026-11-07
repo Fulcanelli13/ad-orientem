@@ -198,6 +198,7 @@ try{
  assert.equal(afterReveal.route,"SECOND_PRAYER_REVEALED");
  assert.ok(afterReveal.scrollTop>beforeNext.scrollTop+8,
   "NEXT did not scroll to the second Postcommunion");
+ console.log("ICRSP_NEXT_REVEAL_DEBUG "+JSON.stringify({beforeNext,afterReveal}));
  assert.ok(afterReveal.secondTop<=afterReveal.viewportTop+
   Math.min(afterReveal.viewportHeight*.46,210)+8,
   "Second Postcommunion not revealed in the visible reading zone");
