@@ -7,12 +7,14 @@ on:
       - data/pray/prayer-work-identity-registry-20261106.v1.json
       - tests/pray-work-identity-registry-20261106.mjs
       - tests/pray-work-identity-source-evidence-20261106.mjs
+      - tests/pray-work-language-source-audit-20261107.mjs
       - .github/workflows/pray-work-identity-registry.yml
   pull_request:
     paths:
       - data/pray/prayer-work-identity-registry-20261106.v1.json
       - tests/pray-work-identity-registry-20261106.mjs
       - tests/pray-work-identity-source-evidence-20261106.mjs
+      - tests/pray-work-language-source-audit-20261107.mjs
       - .github/workflows/pray-work-identity-registry.yml
   workflow_dispatch:
 permissions:
@@ -30,3 +32,5 @@ jobs:
         run: node tests/pray-work-identity-registry-20261106.mjs
       - name: Audit source exports separately from reader routes
         run: node tests/pray-work-identity-source-evidence-20261106.mjs
+      - name: Audit 36 novena, traditional, and hymn source-language works
+        run: node tests/pray-work-language-source-audit-20261107.mjs
