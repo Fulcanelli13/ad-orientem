@@ -1,0 +1,204 @@
+{
+  "schema": "AO_SACRED_ART_PHASE37_FULL_SEVENTEEN_INSTITUTIONAL_RESEARCH_V1",
+  "as_of": "2026-11-07",
+  "scope": "Research-only institutional identity pass of all 17 Phase36 identity holds, preserving owner-selected art and separating museum accession from photo rights",
+  "baseline": {
+    "identity_supported": 160,
+    "unresolved": 17,
+    "total_handpicked_rows": 177
+  },
+  "institutionally_supported_added": [
+    {
+      "registry_id": "RECENT575::479",
+      "title": "Le Retour de Tobie / The Return of Tobias",
+      "artist": "William-Adolphe Bouguereau",
+      "museum": "Musée des Beaux-Arts de Dijon",
+      "identity_grade": "HISTORICAL_HOLDING_MUSEUM_PUBLISHED_CATALOGUE",
+      "evidence": "Early museum guide, Picture in the Museum of Dijon (Jeanne Magnin, published Dijon 1914/15) identifies Bouguereau, The Return of Toby, catalogue no. 232 and city acquisition at 1858 Dijon painting exhibition; period source matches selected painting title and museum. Book excerpt indexed in searchable scan; full page visual could not be retrieved, so modern CA 232 is still not independently confirmed by current museum object notice.",
+      "catalogue_number_historical": "232",
+      "modern_inventory_candidate_not_independently_confirmed": "CA 232",
+      "source": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Picture_in_the_Museum_of_Dijon_%28IA_pictureinmuseumo00muse%29.pdf",
+      "corroboration": "https://fr.wikisource.org/wiki/Page:Larousse_-_Grand_dictionnaire_universel_du_XIXe_si%C3%A8cle_-_Tome_2%2C_part._3%2C_Bj-Bo.djvu/298",
+      "secondary_selected": "https://commons.wikimedia.org/wiki/File:Le_retour_de_Tobie_-_William-Adolphe_Bouguereau_-_MBA_Dijon_CA_232.jpg",
+      "photo_rights": "NOT_CLEARED",
+      "photo_approved": false,
+      "published": false
+    },
+    {
+      "registry_id": "RECENT575::359",
+      "title": "La Visitation (Geneva modello)",
+      "artist": "Philippe de Champaigne",
+      "museum": "Musée d'art et d'histoire de Genève",
+      "identity_grade": "OFFICIAL_OTHER_MUSEUM_REFERENCE_TO_HOLDING_NO_ACCESSION",
+      "evidence": "French government Joconde notice 04640036278 authored for Villeneuve-lès-Avignon's separate Visitation (PL 86.1.5) specifically says Geneva's Musée d'art et d'histoire also owns a Visitation dated c.1650. This distinguishes Geneva modello from the monumental Villeneuve-lès-Avignon canvas; selected Commons and historic collection listings supply candidate Geneva accession 1942-0009 but no direct MAH object notice fetched.",
+      "source": "https://pop.culture.gouv.fr/notice/joconde/04640036278",
+      "accession_candidate_only": "1942-0009",
+      "secondary_source": "https://commons.wikimedia.org/wiki/Paintings_in_the_Mus%C3%A9e_d%27Art_et_d%27Histoire_%28Geneva%29",
+      "different_work": "PL 86.1.5 is Villeneuve-lès-Avignon painting NOT Geneva painting",
+      "photo_rights": "NOT_CLEARED",
+      "photo_approved": false,
+      "published": false
+    }
+  ],
+  "retained_holds": [
+    {
+      "registry_id": "RECENT575::005",
+      "status": "HOLD_KMSKA_INDIVIDUAL_ACCESSION",
+      "evidence": "Legacy Lukasweb photo trace retained; present KMSKA public collection index/REST DataHub accessible as documentation but specific item match was not obtained.",
+      "source": "https://commons.wikimedia.org/wiki/File:Jacob_Herreyns_I_-_Scenes_from_the_Life_of_Christ_-_Marriage_at_Cana.jpg",
+      "next": "Match exact composition in KMSKA museum 13,977-item DataHub or historical Anet catalogue.",
+      "photo_approved": false,
+      "production_changed": false
+    },
+    {
+      "registry_id": "RECENT575::031",
+      "status": "HOLD_KMSKA_INDIVIDUAL_ACCESSION",
+      "source": "https://commons.wikimedia.org/wiki/File:Jacob_Herreyns_I_-_Scenes_from_the_Life_of_Christ_-_Christ_Handing_the_Keys_to_St_Peter.jpg",
+      "next": "Exact KMSKA accession and accession-scoped object URL; no reuse of God the Father 190.",
+      "photo_approved": false,
+      "production_changed": false
+    },
+    {
+      "registry_id": "RECENT575::032",
+      "status": "HOLD_KMSKA_INDIVIDUAL_ACCESSION",
+      "source": "https://commons.wikimedia.org/wiki/File:Jacob_Herreyns_I_-_Scenes_from_the_Life_of_Christ_-_Baptism_of_Christ.jpg",
+      "next": "Exact KMSKA Herreyns record; Rubens Baptism 707 is DIFFERENT artwork.",
+      "photo_approved": false,
+      "production_changed": false
+    },
+    {
+      "registry_id": "RECENT575::033",
+      "status": "HOLD_KMSKA_INDIVIDUAL_ACCESSION",
+      "source": "https://commons.wikimedia.org/wiki/File:Jacob_Herreyns_I_-_Scenes_from_the_Life_of_Christ_-_Mary_Magdalene_washing_the_feet_of_Jesus.jpg",
+      "next": "Individual selected photo to official item identity crosswalk.",
+      "photo_approved": false,
+      "production_changed": false
+    },
+    {
+      "registry_id": "RECENT575::034",
+      "status": "HOLD_KMSKA_INDIVIDUAL_ACCESSION",
+      "source": "https://commons.wikimedia.org/wiki/File:Jacob_Herreyns_I_-_Scenes_from_the_Life_of_Christ_-_The_raising_of_Lazarus.jpg",
+      "next": "Individual Herreyns panel; do not substitute Ensor 3469 series.",
+      "photo_approved": false,
+      "production_changed": false
+    },
+    {
+      "registry_id": "RECENT575::035",
+      "status": "HOLD_KMSKA_INDIVIDUAL_ACCESSION",
+      "source": "https://commons.wikimedia.org/wiki/File:Jacob_Herreyns_I_-_Scenes_from_the_Life_of_Christ_-_Return_of_the_Prodigal_Son.jpg",
+      "next": "Herreyns panel not Rubens The Prodigal Son.",
+      "photo_approved": false,
+      "production_changed": false
+    },
+    {
+      "registry_id": "RECENT575::142",
+      "status": "HOLD_ICONOGRAPHY_SAME_TITLE_FALSE_MATCH",
+      "evidence": "KIK-IRPA BALaT exact-title Visioen van Thomas van Aquino, object 89062, is attributed to Hendrik Herregouts, dated 1701–1710, located Onze-Lieve-Vrouwekerk Bruges. Selected Commons file instead names Gaspar de Crayer, and external Bruges guide independently associates de Crayer's 1644 painting with the same church. Treat as TWO candidate paintings, do not transfer object 89062 to selected de Crayer image without geometric photo comparison.",
+      "source": "https://balat.kikirpa.be/en/object/89062/",
+      "secondary": "https://opwegnaardekunst.nl/museums/brugge-onze-lieve-vrouwekerk-en-de-sint-salvator-kathedraal/",
+      "next": "Compare images/physical measurements; source de Crayer-specific heritage object photo.",
+      "photo_approved": false,
+      "production_changed": false
+    },
+    {
+      "registry_id": "RECENT575::150",
+      "status": "HOLD_CURRENT_OBJECT_PAGE",
+      "evidence": "Owner Commons + secondary Flemish art crosswalk give 1995.GRO0021.I, female martyr Jacob van Oost; current museum exact page not retrieved.",
+      "source": "https://commons.wikimedia.org/wiki/File:Jacob_van_Oost_(I)_-_Female_Martyr_-_WGA16650.jpg",
+      "inventory_candidate": "1995.GRO0021.I",
+      "next": "Musea Brugge direct object / archive identifier.",
+      "photo_approved": false,
+      "production_changed": false
+    },
+    {
+      "registry_id": "RECENT575::154",
+      "status": "HOLD_ATTRIBUTION_COLLISION",
+      "evidence": "Two captions assign 0000.GRO0420.I to Bruno van Hollebeke versus Anaïs Bouvy for Saint Jerome. Do not conflate or overwrite owner-selected attribution.",
+      "source": "https://www.wikidata.org/wiki/Wikidata:WikiProject_sum_of_all_paintings/Collection/Groeningemuseum",
+      "inventory_candidate": "0000.GRO0420.I",
+      "next": "Exact image-side comparison against Musea Brugge object record and maker history.",
+      "photo_approved": false,
+      "production_changed": false
+    },
+    {
+      "registry_id": "RECENT575::179",
+      "status": "HOLD_INDIVIDUAL_PANEL",
+      "evidence": "Friedländer 1403 / KIK object 152399 points to St Nicholas retable; exact enthroned bishop panel and selected photo not definitively crosswalked. Preserve separate photo rows RECENT575::179 / RECENT575::180.",
+      "source": "https://commons.wikimedia.org/wiki/File:Master_of_the_Legend_of_Saint_Augustine_-_Episcopal_Saint_Enthroned,_Friedl%C3%A4nder,_ENP,_vol._6,_nr._245.jpg",
+      "next": "Compare exact Friedländer plate with museum's separate Nicholas retable components.",
+      "photo_approved": false,
+      "production_changed": false
+    },
+    {
+      "registry_id": "RECENT575::392",
+      "status": "HOLD_CURRENT_LILLE_OBJECT",
+      "evidence": "Historic Lille catalogue crosswalk Jordaens Saint Matthew + two apostles = P 85 / Joconde 000PE016876; adjacent Jordaens apostle panels P82/P83/P84 must remain separate; current museum official object not retrieved.",
+      "source": "https://www.wikidata.org/wiki/Wikidata:WikiProject_sum_of_all_paintings/Catalog/Catalogue_of_paintings_in_the_mus%C3%A9e_de_Lille%2C_1893",
+      "inventory_candidate": "P 85",
+      "next": "Get exact museum/current catalogue or source-proven catalogue plate.",
+      "photo_approved": false,
+      "production_changed": false
+    },
+    {
+      "registry_id": "RECENT575::402",
+      "status": "HOLD_ATTRIBUTION_RESTORATION",
+      "evidence": "P48 and school of Hendrick ter Brugghen historical crosswalk; reported 2024 restoration attribution debate; do not substitute Lille Cranach P740 or set autograph attribution without museum decision.",
+      "source": "https://commons.wikimedia.org/wiki/Paintings_of_Jesus_Christ_being_crowned_with_thorns",
+      "inventory_candidate": "P 48",
+      "next": "Primary Lille P48 object record and dated conservation report.",
+      "photo_approved": false,
+      "production_changed": false
+    },
+    {
+      "registry_id": "RECENT575::440",
+      "status": "HOLD_UNMATCHED_ANONYMOUS_DEPOSITION",
+      "evidence": "Selected anonymous Dijon 58.5 x 42.3 cm image still not connected to official museum accession; reject visually different similarly titled works.",
+      "next": "Find museum accession via exact photo match and dimensions.",
+      "photo_approved": false,
+      "production_changed": false
+    },
+    {
+      "registry_id": "RECENT575::503",
+      "status": "HOLD_CURRENT_GRENOBLE_OBJECT",
+      "evidence": "Teniers after Palma il Giovane miniature 22.2x17cm, MG2405, Joconde 09940006297 secondary source only; official Grenoble object not accessible. Do not mistake for Magnin Palma Giovane 1938 E443 or Lille van Mol Christ with Angel.",
+      "source": "https://commons.wikimedia.org/wiki/File:David_Teniers_-_Dead_Christ_supported_by_an_Angel.jpg",
+      "inventory_candidate": "MG 2405",
+      "next": "Exact institutional notice / relevant source photograph and attribution.",
+      "photo_approved": false,
+      "production_changed": false
+    },
+    {
+      "registry_id": "RECENT575::542",
+      "status": "HOLD_CURRENT_MAGNIN_OBJECT",
+      "evidence": "Wikidata/Commons cites Magnin 1938 E 294 Joconde 50110001768, but current object record not independently retrieved.",
+      "source": "https://www.wikidata.org/wiki/Wikidata:WikiProject_sum_of_all_paintings/Collection/Mus%C3%A9e_Magnin",
+      "inventory_candidate": "1938 E 294",
+      "next": "French POP or Magnin museum exact notice.",
+      "photo_approved": false,
+      "production_changed": false
+    }
+  ],
+  "metrics": {
+    "reviewed": 17,
+    "identity_supported_added": 2,
+    "identity_supported_total": 162,
+    "remaining_object_identity_holds": 15,
+    "owner_handpicked_records": 177,
+    "photo_approvals": 0,
+    "app_image_replacements": 0
+  },
+  "important_collision": "BALaT Thomas Aquinas object 89062 is Hendrik Herregouts, not selected Gaspar de Crayer; reuse only with composition verification",
+  "source_access_limitations": [
+    "KMSKA DataHub has REST API and ~13,977 records; direct bulk query not accessible in current web retrieval",
+    "Current Lille, Musea Brugge, Grenoble, Geneva MAH, Magnin collection detail pages incomplete or unavailable",
+    "Historic Dijon museum book indexed excerpt but page image could not be fetched; keep historical vs modern inventories separate"
+  ],
+  "governance": [
+    "No new Commons admissions, photo replacement or art pairing",
+    "Publication unchanged",
+    "Different objects and panel/photos not merged",
+    "Do not assign provisional accession as museum-confirmed",
+    "No added research rights inferred from CC0 metadata"
+  ],
+  "predecessor": "data/research/sacred-art/phase36-eighteen-record-bulk-institutional-audit-20261106.v1.json"
+}
