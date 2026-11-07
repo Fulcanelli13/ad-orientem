@@ -293,3 +293,27 @@ Seven supplementary registry identities now have new **readerBodyEvidence** poin
 **Stabat Mater, independently checked:** `PRAY_CANONICAL_DATA_V435930.stabat` contains exactly the first **13 tercets** and stops at *Fac me tecum pie flere*. The usual liturgical sequence contains **20 tercets**, with seven further tercets ending *Quando corpus morietur*; compare https://oremus.lat/en/prayer/stabat-mater. Do not label this source as a full sequence or replace it without an authorised complete source; no canonical reader text has been modified.
 
 **Further gates:** identify and certify the remaining supplemental work bodies one by one (including external historical sources and independent first-edition witnesses); verify actual offline use and all relevant source-language alternatives; address the known Stabat and Holy Face holds; reconcile this draft against advancing `main`; and only then consider integrating the approved nine-family library classification. No public app changes, generic Prayer renderer, merge or GitHub Pages deployment have occurred.
+
+## Stage 8 — four complete chaplet bodies and 1962 Stabat source decision (7 November 2026)
+
+**Executed passing original-browser gate:** https://github.com/Fulcanelli13/ad-orientem/actions/runs/42403675308, test on head `9d2786ea2af03b58aa66a1e368908cbf794c127e`. Actual Chromium **612 / 612** DOM-vs-original-source comparisons passed across 320px and 390px and the EN/FR interfaces. Historical print facsimile recertification is separate.
+
+| Original specialised reader | Exact source comparisons | Scope |
+| --- | ---: | --- |
+| Five Wounds | **124** | All 30 source-owned canonical repetition positions in both interfaces/two widths and selected Latin switch |
+| Little Crown | **128** | All 15 paired aspirations and reused canonical prayer bodies in EN/FR and selected Latin text |
+| Saint Joseph Seven Sorrows/Joys | **140** | Seven English historical supplications + three canonical repetitions each, concluding antiphon/versicle/response/collect and Latin checks |
+| Precious Blood | **220** | Historical opening, 33 Pater, seven Gloria, seven historical responses, English-only closing, final V/R/collect and a Latin switch |
+| **Total** | **612** | Four existing reader engines, no generic replacement |
+
+Per-work evidence is indexed in `data/pray/prayer-work-stage8-four-chaplets-acceptance-20261107.v1.json`. GitHub Actions artifact `prayer-stage8-four-chaplets-full-source-body` (ID 13586182585) retains the actual run's machine-readable matrix. Four additional supplementary work identities now have `readerBodyEvidence` pointers; the cumulative count is **20 sampled source-body work identities (19 supplemental + one canonical reuse)**, with 65 supplemental works not individually demonstrated by these per-work certificates. This does **not** unpublish or recertify them, and no known live routes were removed.
+
+### Stabat Mater — source decision significantly advanced
+
+A **specific 1962 liturgical edition** has now been identified: the Benziger `Missale Romanum` *editio iuxta typicam*, September 15, Seven Sorrows, printed pp. 671–672. Its `Stabat Mater` sequence has **20 tercets**, ending with *Quando corpus morietur*. The complete sequence differs from anthologies that concatenate two **alternative** nineteenth tercets into 21. In the September Missal, stanza 19 begins *Christe, cum sit hinc exire*; *Fac me cruce custodiri* is a distinct textual alternative rather than a second consecutive stanza. Sources: https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf (printed 671–672) and https://extraordinaryform.org/masses/0915SevenSorrowsBVMM20.pdf.
+
+A seven-tercet **research-only missing-text candidate** is now saved in `data/pray/prayer-work-stabat-1962-20-tercet-candidate-20261107.v1.json`. It distinguishes the September 20-tercet sequence from a shorter Passiontide usage also found in the 1962 Missal. The September OCR appears to omit `ne` in stanza 18 where the Passiontide OCR and another September witness preserve it. Because source-image screenshot retrieval was not successful in this pass, **full print-image collation is still held**. The canonical 13-tercet array, Stations reader and Mass sequence are unchanged; the research candidate cannot be mistaken for an admitted complete Prayer or historical translation.
+
+The passing Stage 8 CI does not certify historical printed pages, translation provenance of independent EN/FR texts, all Latin alternatives, full offline use, or the entire Prayer corpus. The draft nine-family taxonomy is still not integrated into production. The repository remains GitHub-only; PR #2594 is draft, unmerged and undeployed.
+
+**Next:** independent original print-image comparison for the 1962 *Stabat Mater*, then a separately gated complete-variant admission; source-body/edition checks for Seven Words, penitential Scripture, litanies, historical Lasance witnesses and remaining devotional works; only after these gates consider the nine-family public Prayer catalogue.
