@@ -1,19 +1,25 @@
 {
   "schema": "AO_SACRED_ATLAS_243_30_MISSING_COORDINATE_STAGE_V1",
   "prepared_on": "2026-11-07",
-  "status": "RESEARCH_ONLY_UNAPPROVED",
+  "status": "RESEARCH_IDENTITY_RECONCILED_16_CASES_NO_ADMISSION",
   "source_cohort": 243,
   "counts": {
     "missing_original": 40,
     "location_actionable_lane": 30,
-    "staged_points": 21,
-    "site_illustrative_points": 14,
-    "geometry_or_identity_leads": 7,
-    "location_identity_holds": 9,
+    "staged_points": 24,
+    "site_illustrative_points": 23,
+    "geometry_or_identity_leads": 1,
+    "location_identity_holds": 6,
     "nonpin_lanes": 10,
-    "still_without_proposed_point": 19,
+    "still_without_proposed_point": 16,
     "owner_approved": 0,
-    "production_imports": 0
+    "production_imports": 0,
+    "second_pass_case_reviews": 16,
+    "second_pass_added_coordinate_proposals": 3,
+    "second_pass_promoted_geometry_leads": 6,
+    "correction_events": 1,
+    "existing_place_reuse_from_original_F_lane": 2,
+    "historic_original_F_lane_without_active_pin": 1
   },
   "nonpin_original_missing_coordinate_ids": [
     "SG-INV-0612",
@@ -34,16 +40,34 @@
       "coordinate_stage": {
         "lat": -17.39834,
         "lng": -66.28153,
-        "decision": "FEATURE_IDENTITY_REVIEW",
-        "source_url": "https://mapcarta.com/es/W207815827",
-        "scope_note": "OSM church is San Ildefonso, established Urkupiña shrine; never label a future sanctuary/basilica as this building.",
+        "decision": "SITE_ILLUSTRATIVE",
+        "source_url": "https://evangelizacion.ceb.bo/urcupina-una-fe-con-sello-de-integracion-nacional/",
+        "scope_note": "Bolivian episcopal evangelization service confirms Templo San Ildefonso was designated Santuario Arquidiocesano Virgen María de Urkupiña by archiepiscopal decree 1998/091, same church building at Plaza 15 de Agosto; Cerro Cota apparition site is separate. Existing OSM building lat/lng is supported by Quillacollo municipality.",
         "precision": "site_illustrative_not_entrance",
         "source_attribution": "© OpenStreetMap contributors (ODbL 1.0)",
-        "coordinate_owner_approved": false
+        "coordinate_owner_approved": false,
+        "prior_source_point": {
+          "lat": -17.39834,
+          "lng": -66.28153,
+          "source_url": "https://mapcarta.com/es/W207815827",
+          "decision": "FEATURE_IDENTITY_REVIEW"
+        },
+        "independent_scope_source_added": true,
+        "owner_coordinate_approved": false
       },
       "hold": null,
       "import_ready": false,
-      "publicly_published": false
+      "publicly_published": false,
+      "identity_research": {
+        "updated_on": "2026-11-07",
+        "outcome": "INDEPENDENT_SITE_SCOPE_CORROBORATED",
+        "notes": "Bolivian episcopal evangelization service confirms Templo San Ildefonso was designated Santuario Arquidiocesano Virgen María de Urkupiña by archiepiscopal decree 1998/091, same church building at Plaza 15 de Agosto; Cerro Cota apparition site is separate. Existing OSM building lat/lng is supported by Quillacollo municipality.",
+        "source_urls": [
+          "https://evangelizacion.ceb.bo/urcupina-una-fe-con-sello-de-integracion-nacional/",
+          "https://mapcarta.com/es/W207815827"
+        ],
+        "owner_admission_approved": false
+      }
     },
     {
       "candidate_id": "SG-INV-0509",
@@ -80,18 +104,36 @@
     {
       "candidate_id": "SG-INV-0131",
       "coordinate_stage": {
-        "lat": 43.3645379,
-        "lng": -3.4169509,
-        "decision": "GEOMETRY_NEEDS_SECOND_SOURCE",
-        "source_url": "https://pte.es/sitio/Limpias/st23801/Santuario-del-Santo-Cristo-de-la-Agonia-de-Limpias-Iglesia-de-San-Pedro.html",
-        "scope_note": "Santo Cristo devotion is at San Pedro church; third-party GPS lead only.",
+        "lat": 43.3644977,
+        "lng": -3.4172386,
+        "decision": "SITE_ILLUSTRATIVE",
+        "source_url": "https://www.escapadarural.com/que-hacer/limpias/iglesia-de-san-pedro-o-del-santo-cristo",
+        "scope_note": "Iglesia San Pedro Apóstol = Santuario Santo Cristo de la Agonía. Independent map site centroid 43.3644977,-3.4172386; original Pte.es point ~20m off, neither exact entrance. Ownership not inferred.",
         "precision": "site_illustrative_not_entrance",
         "source_attribution": "Cited source",
-        "coordinate_owner_approved": false
+        "coordinate_owner_approved": false,
+        "prior_source_point": {
+          "lat": 43.3645379,
+          "lng": -3.4169509,
+          "source_url": "https://pte.es/sitio/Limpias/st23801/Santuario-del-Santo-Cristo-de-la-Agonia-de-Limpias-Iglesia-de-San-Pedro.html",
+          "decision": "GEOMETRY_NEEDS_SECOND_SOURCE"
+        },
+        "independent_scope_source_added": true,
+        "owner_coordinate_approved": false
       },
       "hold": null,
       "import_ready": false,
-      "publicly_published": false
+      "publicly_published": false,
+      "identity_research": {
+        "updated_on": "2026-11-07",
+        "outcome": "INDEPENDENT_SITE_SCOPE_CORROBORATED",
+        "notes": "Iglesia San Pedro Apóstol = Santuario Santo Cristo de la Agonía. Independent map site centroid 43.3644977,-3.4172386; original Pte.es point ~20m off, neither exact entrance. Ownership not inferred.",
+        "source_urls": [
+          "https://www.escapadarural.com/que-hacer/limpias/iglesia-de-san-pedro-o-del-santo-cristo",
+          "https://pte.es/sitio/Limpias/st23801/Santuario-del-Santo-Cristo-de-la-Agonia-de-Limpias-Iglesia-de-San-Pedro.html"
+        ],
+        "owner_admission_approved": false
+      }
     },
     {
       "candidate_id": "SG-INV-0367",
@@ -127,13 +169,32 @@
     },
     {
       "candidate_id": "SG-INV-0679",
-      "coordinate_stage": null,
-      "hold": {
-        "code": "NO_VERIFIED_SHRINE_FEATURE",
-        "note": "Lembah Karmel near Cikanyere but generic village coordinates are not the retreat/shrine grounds."
+      "coordinate_stage": {
+        "lat": -6.743222,
+        "lng": 107.100917,
+        "decision": "SITE_ILLUSTRATIVE",
+        "source_url": "https://www.seputarharapanindah.com/2012/02/info-tempat-ziarah-umat-katholik.html",
+        "scope_note": "Catholic parish confirms 2025 pilgrimage and Mass in chapel; the 2012 site-specific travel directions give -6°44'35.6,107°06'03.3. Approximate 2012 coordinates, not exact door, not Cikanyere village centroid.",
+        "precision": "site_illustrative_not_entrance",
+        "source_attribution": "Site-referenced source, not navigational accuracy",
+        "coordinate_owner_approved": false,
+        "reviewed_name": "Kapel Santa Teresia dari Lisieux / Gua Maria Lembah Karmel, Cikanyere",
+        "confidence_note": "OLD_INDEPENDENT_SITE_GPS_WITH_2026_PARISH_CORROBORATION"
       },
+      "hold": null,
       "import_ready": false,
-      "publicly_published": false
+      "publicly_published": false,
+      "identity_research": {
+        "updated_on": "2026-11-07",
+        "outcome": "STAGE_SITE",
+        "reviewed_site_name": "Kapel Santa Teresia dari Lisieux / Gua Maria Lembah Karmel, Cikanyere",
+        "source_urls": [
+          "https://theodorus.org/ziarah-rohani-ke-kapel-lembah-karmel-cikanyere/",
+          "https://gcatholic.org/churches/asia-east/149479"
+        ],
+        "notes": "Catholic parish confirms 2025 pilgrimage and Mass in chapel; the 2012 site-specific travel directions give -6°44'35.6,107°06'03.3. Approximate 2012 coordinates, not exact door, not Cikanyere village centroid.",
+        "owner_admission_approved": false
+      }
     },
     {
       "candidate_id": "SG-INV-0239",
@@ -155,47 +216,106 @@
       "candidate_id": "SG-INV-0071",
       "coordinate_stage": null,
       "hold": {
-        "code": "REUSE_OR_WRONG_SHRINE_TITLE",
-        "note": "Already-linked Bergamo canonical places and distinct Colle Gallo Madonna della Neve require target resolution."
+        "code": "MISIDENTIFIED_EXISTING_OR_DISTINCT_SANCTUARY",
+        "note": "Bergamo Santa Maria Maggiore (place:IT:basilica-santa-maria-maggiore-bergamo) and Madonna della Neve Rocchetta (place:IT:madonna-neve-rocchetta-bergamo) already canonical. Other distinct diocesan Marian shrine Santa Maria ad Nives al Colle Gallo is in Gaverina Terme; another Beata Vergine della Neve sanctuary is in Foppolo. Proposal's blended title does not identify which building. Never auto-import from town name.",
+        "disposition": "HOLD_NO_PIN"
       },
       "import_ready": false,
-      "publicly_published": false
+      "publicly_published": false,
+      "identity_research": {
+        "updated_on": "2026-11-07",
+        "outcome": "HOLD_NO_PIN",
+        "reviewed_site_name": null,
+        "source_urls": [
+          "https://diocesibg.it/santuario/santa-maria-ad-nives-al-colle-gallo/",
+          "https://diocesibg.it/santuario/beata-vergine-della-neve/"
+        ],
+        "notes": "Bergamo Santa Maria Maggiore (place:IT:basilica-santa-maria-maggiore-bergamo) and Madonna della Neve Rocchetta (place:IT:madonna-neve-rocchetta-bergamo) already canonical. Other distinct diocesan Marian shrine Santa Maria ad Nives al Colle Gallo is in Gaverina Terme; another Beata Vergine della Neve sanctuary is in Foppolo. Proposal's blended title does not identify which building. Never auto-import from town name.",
+        "owner_admission_approved": false
+      }
     },
     {
       "candidate_id": "SG-INV-0475",
-      "coordinate_stage": null,
-      "hold": {
-        "code": "UNCONFIRMED_PHYSICAL_IDENTITY",
-        "note": "Our Lady of the Angels Kingston shrine not established at an individually locatable building."
+      "coordinate_stage": {
+        "lat": 18.0202,
+        "lng": -76.81379,
+        "decision": "SITE_ILLUSTRATIVE",
+        "source_url": "https://jm.geoview.info/our_lady_of_the_angels_catholic_church%2C20697652138w",
+        "scope_note": "OSM church polygon at 75A Molynes Road. Catholic parish/church verified; no evidence of distinct official Marian shrine title; title MUST be corrected, no school/presbytery pin.",
+        "precision": "site_illustrative_not_entrance",
+        "source_attribution": "Cross-checked source and OpenStreetMap contributors (ODbL 1.0)",
+        "coordinate_owner_approved": false,
+        "reviewed_name": "Our Lady of the Angels Catholic Church, Molynes Road, Kingston",
+        "confidence_note": "OSM_IDENTIFIED_BUILDING_POLYGON"
       },
+      "hold": null,
       "import_ready": false,
-      "publicly_published": false
+      "publicly_published": false,
+      "identity_research": {
+        "updated_on": "2026-11-07",
+        "outcome": "STAGE_SITE",
+        "reviewed_site_name": "Our Lady of the Angels Catholic Church, Molynes Road, Kingston",
+        "source_urls": [
+          "https://higgler.org/place/st-andrew/molynes-gardens/our-lady-of-the-angels-catholic-church"
+        ],
+        "notes": "OSM church polygon at 75A Molynes Road. Catholic parish/church verified; no evidence of distinct official Marian shrine title; title MUST be corrected, no school/presbytery pin.",
+        "owner_admission_approved": false
+      }
     },
     {
       "candidate_id": "SG-INV-0579",
       "coordinate_stage": {
         "lat": 34.22314,
         "lng": 35.72315,
-        "decision": "GEOMETRY_NEEDS_SECOND_SOURCE",
-        "source_url": "https://lebanon.worldplaces.me/view-place/52905768-deir-kfifane.html",
-        "scope_note": "Kfifan monastery St Cyprian and Justina containing St Nimatullah shrine; crowdsource coordinate.",
+        "decision": "SITE_ILLUSTRATIVE",
+        "source_url": "https://maronites.church/sites/st-cyprianus-and-justina-kfifan/",
+        "scope_note": "Official Maronite monastery of Sts Cyprian and Justina at Kfifan independently matches mapped Deir Kfifane and St Nimatullah Hardini shrine, with clustered local named points within ~100m of existing secondary point. Site representative, not certified tomb entrance.",
         "precision": "site_illustrative_not_entrance",
         "source_attribution": "Cited source",
-        "coordinate_owner_approved": false
+        "coordinate_owner_approved": false,
+        "prior_source_point": {
+          "lat": 34.22314,
+          "lng": 35.72315,
+          "source_url": "https://lebanon.worldplaces.me/view-place/52905768-deir-kfifane.html",
+          "decision": "GEOMETRY_NEEDS_SECOND_SOURCE"
+        },
+        "independent_scope_source_added": true,
+        "owner_coordinate_approved": false
       },
       "hold": null,
       "import_ready": false,
-      "publicly_published": false
+      "publicly_published": false,
+      "identity_research": {
+        "updated_on": "2026-11-07",
+        "outcome": "INDEPENDENT_SITE_SCOPE_CORROBORATED",
+        "notes": "Official Maronite monastery of Sts Cyprian and Justina at Kfifan independently matches mapped Deir Kfifane and St Nimatullah Hardini shrine, with clustered local named points within ~100m of existing secondary point. Site representative, not certified tomb entrance.",
+        "source_urls": [
+          "https://maronites.church/sites/st-cyprianus-and-justina-kfifan/",
+          "https://lebanon.worldplaces.me/view-place/52905768-deir-kfifane.html"
+        ],
+        "owner_admission_approved": false
+      }
     },
     {
       "candidate_id": "SG-INV-0676",
       "coordinate_stage": null,
       "hold": {
-        "code": "UNCONFIRMED_PHYSICAL_IDENTITY",
-        "note": "Generic Kuala Lumpur church directory does not identify a distinct St Jude shrine building."
+        "code": "REUSE_EXISTING_RAWANG_SITE_DIFFERENT_CITY",
+        "note": "Archdiocese of Kuala Lumpur documents Church of St Jude at Jalan Lim Kak, Rawang, Selangor, NOT a distinct Kuala Lumpur-city shrine. Exact physical church is already place:MY:st-jude-church-rawang (existing geo 3.3170625,101.5771875). Keep candidate as link/alias to existing Place, no new Catholic pin.",
+        "disposition": "NO_NEW_PIN"
       },
       "import_ready": false,
-      "publicly_published": false
+      "publicly_published": false,
+      "identity_research": {
+        "updated_on": "2026-11-07",
+        "outcome": "NO_NEW_PIN",
+        "reviewed_site_name": null,
+        "source_urls": [
+          "https://www.archkl.org/north-west-district"
+        ],
+        "notes": "Archdiocese of Kuala Lumpur documents Church of St Jude at Jalan Lim Kak, Rawang, Selangor, NOT a distinct Kuala Lumpur-city shrine. Exact physical church is already place:MY:st-jude-church-rawang (existing geo 3.3170625,101.5771875). Keep candidate as link/alias to existing Place, no new Catholic pin.",
+        "owner_admission_approved": false
+      }
     },
     {
       "candidate_id": "SG-INV-0716",
@@ -218,16 +338,34 @@
       "coordinate_stage": {
         "lat": 11.87374,
         "lng": -86.05127,
-        "decision": "GEOMETRY_NEEDS_SECOND_SOURCE",
-        "source_url": "https://nicaragua.worldplaces.me/es/review/91906396-santuario-diocesano-nuestra-senora-de-candelaria-diriomo.html",
-        "scope_note": "Reported Diriomo shrine location; pastoral centre directory ~680m away; confirm footprint.",
+        "decision": "SITE_ILLUSTRATIVE",
+        "source_url": "https://www.mined.gob.ni/mapatradicionesculturapopular/listing/diriomo/",
+        "scope_note": "Nicaragua Ministry of Education identifies Our Lady Candelaria pilgrimage church in Diriomo; separately geotagged photograph of exact church ~40m from prior site map point. Do not use pastoral-family office 679m away.",
         "precision": "site_illustrative_not_entrance",
         "source_attribution": "Cited source",
-        "coordinate_owner_approved": false
+        "coordinate_owner_approved": false,
+        "prior_source_point": {
+          "lat": 11.87374,
+          "lng": -86.05127,
+          "source_url": "https://nicaragua.worldplaces.me/es/review/91906396-santuario-diocesano-nuestra-senora-de-candelaria-diriomo.html",
+          "decision": "GEOMETRY_NEEDS_SECOND_SOURCE"
+        },
+        "independent_scope_source_added": true,
+        "owner_coordinate_approved": false
       },
       "hold": null,
       "import_ready": false,
-      "publicly_published": false
+      "publicly_published": false,
+      "identity_research": {
+        "updated_on": "2026-11-07",
+        "outcome": "INDEPENDENT_SITE_SCOPE_CORROBORATED",
+        "notes": "Nicaragua Ministry of Education identifies Our Lady Candelaria pilgrimage church in Diriomo; separately geotagged photograph of exact church ~40m from prior site map point. Do not use pastoral-family office 679m away.",
+        "source_urls": [
+          "https://www.mined.gob.ni/mapatradicionesculturapopular/listing/diriomo/",
+          "https://nicaragua.worldplaces.me/es/review/91906396-santuario-diocesano-nuestra-senora-de-candelaria-diriomo.html"
+        ],
+        "owner_admission_approved": false
+      }
     },
     {
       "candidate_id": "SG-INV-0455",
@@ -247,33 +385,77 @@
     },
     {
       "candidate_id": "SG-INV-0230",
-      "coordinate_stage": null,
-      "hold": {
-        "code": "MULTIPLE_ECHT_CHAPELS",
-        "note": "Edith Stein's convent chapel and St Landricus adoration chapel are distinct; Chapel of Our Lady title insufficient."
+      "coordinate_stage": {
+        "lat": 51.098033,
+        "lng": 5.881275,
+        "decision": "SITE_ILLUSTRATIVE",
+        "source_url": "https://www.wikidata.org/wiki/Q17365925",
+        "scope_note": "Independently documented 1691 Marian pilgrimage chapel, Bosstraat 33, Echt, nationally protected monument 14265. Point from geotag ~site location, not precision entry.",
+        "precision": "site_illustrative_not_entrance",
+        "source_attribution": "Cross-checked source and OpenStreetMap contributors (ODbL 1.0)",
+        "coordinate_owner_approved": false,
+        "reviewed_name": "Kapel Onze Lieve Vrouw van Schilberg, Echt",
+        "confidence_note": "NATIONAL_HERITAGE_IDENTITY_PLUS_GEOTAG"
       },
+      "hold": null,
       "import_ready": false,
-      "publicly_published": false
+      "publicly_published": false,
+      "identity_research": {
+        "updated_on": "2026-11-07",
+        "outcome": "STAGE_SITE",
+        "reviewed_site_name": "Kapel Onze Lieve Vrouw van Schilberg, Echt",
+        "source_urls": [
+          "https://monumentenregister.cultureelerfgoed.nl/monumenten/14265",
+          "https://bedevaart.meertens.knaw.nl/plaats/189"
+        ],
+        "notes": "Independently documented 1691 Marian pilgrimage chapel, Bosstraat 33, Echt, nationally protected monument 14265. Point from geotag ~site location, not precision entry.",
+        "owner_admission_approved": false
+      }
     },
     {
       "candidate_id": "SG-INV-0229",
       "coordinate_stage": null,
       "hold": {
-        "code": "MULTIPLE_SITTARD_CHAPELS",
-        "note": "Sittard has De Wieër Marian chapel, Sacred Heart basilica and others; title too generic."
+        "code": "GENERIC_TITLE_AMONG_DISTINCT_CHAPELS",
+        "note": "Sittard has at least two different Marian chapels: Koningin des Hemels at De Wieër/Engelenkampstraat (OSM 50.99721,5.86574) and Our Lady of Sorrows at Kollenberg (50.98864,5.88014); there is also a Marian devotion inside Basilica of Sacred Heart. Generic Chapel of Our Lady does not identify target. Alternatives are not proposed as a selected coordinate.",
+        "disposition": "HOLD_NO_PIN"
       },
       "import_ready": false,
-      "publicly_published": false
+      "publicly_published": false,
+      "identity_research": {
+        "updated_on": "2026-11-07",
+        "outcome": "HOLD_NO_PIN",
+        "reviewed_site_name": null,
+        "source_urls": [
+          "https://www.mariakapelvinden.nl/overzicht-sittard",
+          "https://mapcarta.com/W284905214",
+          "https://mapcarta.com/N5613555590"
+        ],
+        "notes": "Sittard has at least two different Marian chapels: Koningin des Hemels at De Wieër/Engelenkampstraat (OSM 50.99721,5.86574) and Our Lady of Sorrows at Kollenberg (50.98864,5.88014); there is also a Marian devotion inside Basilica of Sacred Heart. Generic Chapel of Our Lady does not identify target. Alternatives are not proposed as a selected coordinate.",
+        "owner_admission_approved": false
+      }
     },
     {
       "candidate_id": "SG-INV-0233",
       "coordinate_stage": null,
       "hold": {
-        "code": "HISTORIC_SITE_NOT_ACTIVE_BUILDING",
-        "note": "Heilige Stede Amsterdam is a historic devotion, not proven present independent Catholic church building."
+        "code": "DEMOLISHED_CHAPEL_HISTORIC_HERITAGE_ONLY",
+        "note": "Heilige Stede original Catholic miracle chapel demolished 1908 (Rokin 78/near Kalverstraat). Stille Omgang currently continues in Amsterdam; do not present original chapel as extant operating Catholic church or create new active-church pin. Historic marker could use Rokin former site under heritage module only.",
+        "disposition": "NO_NEW_PIN"
       },
       "import_ready": false,
-      "publicly_published": false
+      "publicly_published": false,
+      "identity_research": {
+        "updated_on": "2026-11-07",
+        "outcome": "NO_NEW_PIN",
+        "reviewed_site_name": null,
+        "source_urls": [
+          "https://www.deanderekaart.amsterdam/en/walks/2-the-miracle-of-amsterdam",
+          "https://bedevaart.meertens.knaw.nl/plaats/30"
+        ],
+        "notes": "Heilige Stede original Catholic miracle chapel demolished 1908 (Rokin 78/near Kalverstraat). Stille Omgang currently continues in Amsterdam; do not present original chapel as extant operating Catholic church or create new active-church pin. Historic marker could use Rokin former site under heritage module only.",
+        "owner_admission_approved": false
+      }
     },
     {
       "candidate_id": "SG-INV-0745",
@@ -392,42 +574,91 @@
       "coordinate_stage": {
         "lat": 49.381269,
         "lng": 27.61802,
-        "decision": "GEOMETRY_NEEDS_SECOND_SOURCE",
-        "source_url": "https://travels.in.ua/en-US/object/985/letychiv-castle-dominican-monastery",
-        "scope_note": "Letychiv Castle/Assumption Church pilgrimage precinct, secondary historical coordinate.",
+        "decision": "SITE_ILLUSTRATIVE",
+        "source_url": "https://zabytki.in.ua/service/uk/location/object/905",
+        "scope_note": "Independent Ukrainian castle-monastery inventory matches 49.3813722,27.6180249 for Dominican monastery vs 49.381269,27.61802 earlier; site point retained as illustrative for Catholic Assumption sanctuary inside historic castle complex, not gate.",
         "precision": "site_illustrative_not_entrance",
         "source_attribution": "Cited source",
-        "coordinate_owner_approved": false
+        "coordinate_owner_approved": false,
+        "prior_source_point": {
+          "lat": 49.381269,
+          "lng": 27.61802,
+          "source_url": "https://travels.in.ua/en-US/object/985/letychiv-castle-dominican-monastery",
+          "decision": "GEOMETRY_NEEDS_SECOND_SOURCE"
+        },
+        "independent_scope_source_added": true,
+        "owner_coordinate_approved": false
       },
       "hold": null,
       "import_ready": false,
-      "publicly_published": false
+      "publicly_published": false,
+      "identity_research": {
+        "updated_on": "2026-11-07",
+        "outcome": "INDEPENDENT_SITE_SCOPE_CORROBORATED",
+        "notes": "Independent Ukrainian castle-monastery inventory matches 49.3813722,27.6180249 for Dominican monastery vs 49.381269,27.61802 earlier; site point retained as illustrative for Catholic Assumption sanctuary inside historic castle complex, not gate.",
+        "source_urls": [
+          "https://zabytki.in.ua/service/uk/location/object/905",
+          "https://travels.in.ua/en-US/object/985/letychiv-castle-dominican-monastery"
+        ],
+        "owner_admission_approved": false
+      }
     },
     {
       "candidate_id": "SG-INV-0534",
       "coordinate_stage": null,
       "hold": {
-        "code": "COLONIA_VS_CARMELO_AMBIGUITY",
-        "note": "Uruguay bishops list Santuario del Carmen at Carmelo in Colonia department, not necessarily Colonia del Sacramento."
+        "code": "REUSE_EXISTING_SANTUARIO_CARMELO",
+        "note": "Bishops' directory identifies Santuario del Carmen / Templo Viejo in city of Carmelo, Colonia DEPARTMENT, not Colonia del Sacramento. Already canonical place:UY:santuario-nuestra-senora-del-carmen-carmelo at -33.9995625,-58.2879375, close to Commons sanctuary site geotag -33.999833,-58.288028. Do not reuse nearby parish church Nuestra Señora del Carmen at -33.99755,-58.28414.",
+        "disposition": "NO_NEW_PIN"
       },
       "import_ready": false,
-      "publicly_published": false
+      "publicly_published": false,
+      "identity_research": {
+        "updated_on": "2026-11-07",
+        "outcome": "NO_NEW_PIN",
+        "reviewed_site_name": null,
+        "source_urls": [
+          "https://iglesiacatolica.org.uy/mercedes/",
+          "https://www.juntacolonia.gub.uy/alcalde-jose-sebastian-quinones-carmelo/",
+          "https://commons.wikimedia.org/wiki/Category:Santuario_del_Carmen"
+        ],
+        "notes": "Bishops' directory identifies Santuario del Carmen / Templo Viejo in city of Carmelo, Colonia DEPARTMENT, not Colonia del Sacramento. Already canonical place:UY:santuario-nuestra-senora-del-carmen-carmelo at -33.9995625,-58.2879375, close to Commons sanctuary site geotag -33.999833,-58.288028. Do not reuse nearby parish church Nuestra Señora del Carmen at -33.99755,-58.28414.",
+        "owner_admission_approved": false
+      }
     },
     {
       "candidate_id": "SG-INV-0535",
       "coordinate_stage": {
-        "lat": -34.09417,
-        "lng": -56.21338,
-        "decision": "GEOMETRY_NEEDS_SECOND_SOURCE",
-        "source_url": "https://www.uruguayenvacaciones.com/floridaimagen.html",
-        "scope_note": "Reported Capilla San Cono Florida GPS, not Basilica Cathedral of Thirty-Three.",
+        "lat": -34.0942,
+        "lng": -56.2112,
+        "decision": "SITE_ILLUSTRATIVE",
+        "source_url": "https://mapcarta.com/es/N2131742844",
+        "scope_note": "CRITICAL CORRECTION: prior -34.09417,-56.21338 was labelled Cathedral Basilica (not San Cono chapel) by tourism source. Named OSM node 2131742844 is Capilla San Cono at approximately -34.0942,-56.2112, also confirmed by geotagged chapel photography. Do not use old coordinates.",
         "precision": "site_illustrative_not_entrance",
         "source_attribution": "Cited source",
-        "coordinate_owner_approved": false
+        "coordinate_owner_approved": false,
+        "prior_source_point": {
+          "lat": -34.09417,
+          "lng": -56.21338,
+          "source_url": "https://www.uruguayenvacaciones.com/floridaimagen.html",
+          "decision": "GEOMETRY_NEEDS_SECOND_SOURCE"
+        },
+        "independent_scope_source_added": true,
+        "owner_coordinate_approved": false
       },
       "hold": null,
       "import_ready": false,
-      "publicly_published": false
+      "publicly_published": false,
+      "identity_research": {
+        "updated_on": "2026-11-07",
+        "outcome": "INDEPENDENT_SITE_SCOPE_CORROBORATED",
+        "notes": "CRITICAL CORRECTION: prior -34.09417,-56.21338 was labelled Cathedral Basilica (not San Cono chapel) by tourism source. Named OSM node 2131742844 is Capilla San Cono at approximately -34.0942,-56.2112, also confirmed by geotagged chapel photography. Do not use old coordinates.",
+        "source_urls": [
+          "https://mapcarta.com/es/N2131742844",
+          "https://www.uruguayenvacaciones.com/floridaimagen.html"
+        ],
+        "owner_admission_approved": false
+      }
     },
     {
       "candidate_id": "SG-INV-0539",
@@ -449,11 +680,31 @@
       "candidate_id": "SG-INV-0723",
       "coordinate_stage": null,
       "hold": {
-        "code": "MISSING_EXACT_SHRINE_FEATURE",
-        "note": "Benedict Daswa Tshitanini pilgrimage site lacks source-backed distinct shrine footprint."
+        "code": "TSHITANINI_EVENT_VS_NWELI_ACTIVE_SHRINE",
+        "note": "Tshitanini was 2015 beatification field and remains stalled future shrine project due unresolved land title. Active shrine and tomb located in Our Lady of the Assumption parish church, Nweli; Nweli is not yet canonical in this 535-Place registry and would require separate candidate/site validation. Do not pin a completed Tshitanini shrine or wrongly merge two villages.",
+        "disposition": "HOLD_NO_PIN"
       },
       "import_ready": false,
-      "publicly_published": false
+      "publicly_published": false,
+      "identity_research": {
+        "updated_on": "2026-11-07",
+        "outcome": "HOLD_NO_PIN",
+        "reviewed_site_name": null,
+        "source_urls": [
+          "https://www.scross.co.za/2026/02/10-years-after-beatification-how-is-the-daswa-sainthood-cause-going/",
+          "https://www.aciafrica.org/index.php/news/17605/south-africas-blessed-benedict-daswa-model-of-courage-apostle-of-life-catholic-priest-at-beatification-anniversary"
+        ],
+        "notes": "Tshitanini was 2015 beatification field and remains stalled future shrine project due unresolved land title. Active shrine and tomb located in Our Lady of the Assumption parish church, Nweli; Nweli is not yet canonical in this 535-Place registry and would require separate candidate/site validation. Do not pin a completed Tshitanini shrine or wrongly merge two villages.",
+        "owner_admission_approved": false
+      }
     }
-  ]
+  ],
+  "research_policy": {
+    "all_coordinates_provisional": true,
+    "reuse_existing_canonical_place_for_rawang_and_carmelo": true,
+    "identified_non_extant_chapel_amsterdam_is_not_current_church": true,
+    "keep_marriage_of_building_and_shrine_title_separate": true,
+    "wrong_uruguay_coordinate_must_not_recur": true,
+    "do_not_infer_owner_approval": true
+  }
 }
