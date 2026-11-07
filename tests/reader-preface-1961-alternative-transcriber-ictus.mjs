@@ -63,5 +63,8 @@ assert.equal(review.openIssue.decision,
 assert.equal(review.openIssue.firstPrintedLocation.page,"132*");
 assert.equal(review.openIssue.secondPrintedLocation.page,"110");
 assert.equal(review.openIssue.secondHighResolutionCopy.zeroBasedPdfPage,133);
+assert.equal(review.openIssue.alternateChangeHistory.date,"2023-03-30");
+assert.ok(review.openIssue.alternateChangeHistory.loggedDescription.includes("adding ictus"));
+assert.ok(review.openIssue.alternateChangeHistory.meaning.includes("does not establish"));
 assert.ok(review.evidenceMethod.includes("NOT independent validation"));
 console.log("PASS 12 independent GABC-entry response comparisons: 11 exact, 1 unresolved 1961 solemnior spí ictus difference, 0 musical certifications or public approvals");
