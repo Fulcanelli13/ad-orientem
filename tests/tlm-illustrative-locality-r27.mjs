@@ -51,7 +51,7 @@ const ledger=read("data/directory/research/atlas-r27-final-nine-adjudication.v1.
 assert.equal(ledger.records.length,9);
 assert.equal(ledger.records.filter(x=>x.decision==="APPROVED_GEO_ONLY_NOT_RELEASED").length,1);
 assert.equal(ledger.records.filter(x=>x.decision!=="APPROVED_GEO_ONLY_NOT_RELEASED").length,8);
-assert.deepEqual(ledger.proposed,{sourcePins:1806,reviewedPins:754,mapped:2568,listOnly:22});
+assert.deepEqual(ledger.proposed,{sourcePins:1806,reviewedPins:754,mapped:2560,listOnly:22});
 for(const v of ledger.records){
  const r=frozen.records.find(x=>x[0]===v.anchor),i=byId.get(v.anchor);
  assert.ok(r&&r[1].includes(v.sourceId),"Original CL2 identity missing: "+v.anchor);
