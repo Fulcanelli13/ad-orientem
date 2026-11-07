@@ -11,12 +11,12 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 530,
-    "places_with_linked_records": 273,
+    "places": 535,
+    "places_with_linked_records": 278,
     "places_without_direct_claim": 257,
-    "multicategory_heritage_places": 212,
-    "shrines": 257,
-    "pilgrimages": 240,
+    "multicategory_heritage_places": 217,
+    "shrines": 262,
+    "pilgrimages": 245,
     "relic_claims": 122,
     "apparition_accounts": 33,
     "canonical_customs": 13,
@@ -440,6 +440,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:AR:catamarca-cathedral-valle",
+      "display_name": "Catedral Basílica de Nuestra Señora del Valle — Catamarca",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:AR:catedral-basilica-nuestra-senora-rosario",
       "display_name": "Basílica Catedral Nuestra Señora del Rosario",
       "record_ids": {},
@@ -509,6 +515,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:AT:p48-sg-0197-239345806",
+      "display_name": "Salzburger Dom (Cathedral of Saints Rupert and Virgil)",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:AT:wallfahrtsbasilika-maria-plain",
       "display_name": "Wallfahrtsbasilika Maria Plain",
       "record_ids": {},
@@ -531,6 +543,12 @@
           "pilgrimage:AU:marian-valley-destination"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:AU:p48-sg-0743-155809136",
+      "display_name": "St Patrick's Cathedral, Melbourne",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -628,6 +646,12 @@
           "att:DEV-006:BEAURAING"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:BE:p46-sg-0225-30163817",
+      "display_name": "Basilique Nationale du Sacré-Cœur de Koekelberg",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -736,6 +760,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:BR:santuario-basilica-divino-pai-eterno-trindade",
+      "display_name": "Santuário Basílica do Divino Pai Eterno",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:BZ:belmopan-our-lady-guadalupe-co-cathedral",
       "display_name": "Our Lady of Guadalupe Co-Cathedral, Belmopan",
       "record_ids": {
@@ -815,6 +845,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:CA:p48-sg-0424-103862161",
+      "display_name": "Basilique-cathédrale Notre-Dame-de-Québec",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:CA:rigaud-notre-dame-lourdes-sanctuary",
       "display_name": "Sanctuaire Notre-Dame-de-Lourdes de Rigaud",
       "record_ids": {
@@ -844,6 +880,19 @@
         ],
         "customs": [
           "att:DEV-007:SAINTE-ANNE-BEAUPRE"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:CA:sanctuaire-notre-dame-de-fatima-la-pocatiere",
+      "display_name": "Sanctuaire de Notre-Dame-de-Fatima",
+      "record_ids": {
+        "shrines": [
+          "shrine:CA:sanctuaire-notre-dame-de-fatima-la-pocatiere"
+        ],
+        "pilgrimages": [
+          "pilgrimage:CA:sanctuaire-notre-dame-de-fatima-la-pocatiere:destination"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -898,6 +947,12 @@
           "pilgrimage:CH:mariastein-destination"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:CH:p46-sg-0272-319525195",
+      "display_name": "Chapelle Notre-Dame des Marches",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -1056,6 +1111,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:CZ:basilika-panny-marie-bolestne-bohosudov",
+      "display_name": "Bazilika Panny Marie Bolestné, Bohosudov",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:CZ:bazilika-navstiveni-panny-marie-svaty-kopecek",
       "display_name": "Bazilika Navštívení Panny Marie, Svatý Kopeček",
       "record_ids": {},
@@ -1074,9 +1135,25 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:CZ:poutni-kostel-jmena-panny-marie-krtiny",
+      "display_name": "Poutní kostel Jména Panny Marie, Křtiny",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:CZ:poutni-kostel-svateho-jana-nepomuckeho-zelena-hora",
       "display_name": "Poutní kostel svatého Jana Nepomuckého na Zelené hoře",
       "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:CZ:st-ignatius-jihlava",
+      "display_name": "Kostel svatého Ignáce z Loyoly, Jihlava",
+      "record_ids": {
+        "directory_links": [
+          "link:directory-place:CZ:st-ignatius-jihlava"
+        ]
+      },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -1157,6 +1234,16 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:DE:basilika-st-clemens-hannover",
+      "display_name": "Propsteikirche Basilika St. Clemens, Hannover",
+      "record_ids": {
+        "directory_links": [
+          "link:directory-place:DE:basilika-st-clemens-hannover"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:DE:basilika-st-martin-weingarten",
       "display_name": "Basilika St. Martin, Weingarten",
       "record_ids": {},
@@ -1192,6 +1279,16 @@
         ],
         "routes": [
           "route:DE:preith-bettbrunn"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:DE:friedhofskirche-st-michael-altoetting",
+      "display_name": "Friedhofskirche St. Michael, Altötting",
+      "record_ids": {
+        "directory_links": [
+          "link:directory-place:DE:friedhofskirche-st-michael-altoetting"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -1270,6 +1367,24 @@
     {
       "place_id": "place:DE:marienbasilika-kevelaer",
       "display_name": "Marienbasilika Kevelaer",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:DE:p42-sg-inv-0181",
+      "display_name": "Basilika Mariä Himmelfahrt des Klosters Ettal",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:DE:p43-sg-0166-110413193",
+      "display_name": "Alte Wallfahrtskirche Werl",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:DE:p43-sg-0166-110413194",
+      "display_name": "Wallfahrtsbasilika Mariä Heimsuchung",
       "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
@@ -1424,6 +1539,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:EC:p43-sg-0511-561028428",
+      "display_name": "Santuario Nacional de Nuestra Señora de El Quinche",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:EE:saints-peter-paul-cathedral-tallinn",
       "display_name": "Saints Peter and Paul Catholic Cathedral — Tallinn",
       "record_ids": {},
@@ -1526,6 +1647,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:ES:catedral-santa-maria-burgos",
+      "display_name": "Catedral de Santa María de Burgos",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:ES:convento-san-juan-cruz-segovia",
       "display_name": "Convento de San Juan de la Cruz, Segovia",
       "record_ids": {
@@ -1556,6 +1683,48 @@
     {
       "place_id": "place:ES:ermita-virgen-rocio-almonte",
       "display_name": "Ermita de Nuestra Señora del Rocío",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:ES:p42-sg-inv-0118",
+      "display_name": "Santuario de Nuestra Señora de Regla",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:ES:p42-sg-inv-0135",
+      "display_name": "Basílica de la Sagrada Família",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:ES:p42-sg-inv-0136",
+      "display_name": "Catedral Primada de Santa María de Toledo",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:ES:p42-sg-inv-0138",
+      "display_name": "Catedral de Santa María de la Sede de Sevilla",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:ES:p44-sg-0115-1051808405",
+      "display_name": "Basílica de la Mare de Déu de Núria",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:ES:p44-sg-0132-1241117725",
+      "display_name": "Basílica del Sant Crist de Balaguer",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:ES:p48-sg-0114-122873003",
+      "display_name": "Basílica de Nuestra Señora de la Candelaria",
       "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
@@ -1626,6 +1795,12 @@
     {
       "place_id": "place:FO:mariukirkjan-torshavn",
       "display_name": "Mariukirkjan — St Mary's Catholic Church, Tórshavn",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:abbatiale-saint-pierre-solesmes",
+      "display_name": "Église abbatiale Saint-Pierre de Solesmes",
       "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
@@ -1720,6 +1895,18 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:FR:basilique-notre-dame-bon-secours-lablachere",
+      "display_name": "Basilique Notre-Dame-de-Bon-Secours, Lablachère",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:basilique-notre-dame-buglose",
+      "display_name": "Basilique Notre-Dame de Buglose",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:FR:basilique-notre-dame-fourviere-lyon",
       "display_name": "Basilique Notre-Dame de Fourvière",
       "record_ids": {},
@@ -1728,6 +1915,18 @@
     {
       "place_id": "place:FR:basilique-notre-dame-garde-marseille",
       "display_name": "Basilique Notre-Dame de la Garde",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:basilique-notre-dame-lepine",
+      "display_name": "Basilique Notre-Dame de L'Épine",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:basilique-notre-dame-marienthal",
+      "display_name": "Basilique Notre-Dame de Marienthal",
       "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
@@ -1760,6 +1959,16 @@
         "novena_context": [
           "novena-place:immaculate_heart:notre-dame-victoires",
           "novena-place:seven_sorrows:notre-dame-victoires"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:basilique-saint-bernard-fontaine-les-dijon",
+      "display_name": "Basilique Saint-Bernard de Fontaine-lès-Dijon",
+      "record_ids": {
+        "directory_links": [
+          "link:directory-place:FR:basilique-saint-bernard-fontaine-les-dijon"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -2034,6 +2243,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:FR:chapelle-notre-dame-peiniere",
+      "display_name": "Chapelle Notre-Dame de La Peinière",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:FR:chapelle-saint-vincent-paris",
       "display_name": "Chapelle Saint-Vincent-de-Paul, Paris",
       "record_ids": {
@@ -2230,6 +2445,36 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:FR:p42-sg-inv-0012",
+      "display_name": "Basilique Notre-Dame-de-la-Délivrande",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:p42-sg-inv-0022",
+      "display_name": "Basilique Notre-Dame du Sacré-Cœur d’Issoudun",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:p42-sg-inv-0032",
+      "display_name": "Basilique Saint-Régis de Lalouvesc",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:p42-sg-inv-0042",
+      "display_name": "Cathédrale Notre-Dame de Strasbourg",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:p42-sg-inv-0045",
+      "display_name": "Basilique Saint-Victor de Marseille",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:FR:pellevoisin",
       "display_name": "Sanctuaire Notre-Dame de Miséricorde de Pellevoisin",
       "record_ids": {
@@ -2311,6 +2556,16 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:FR:saint-bruno-bordeaux",
+      "display_name": "Église Saint-Bruno de Bordeaux",
+      "record_ids": {
+        "directory_links": [
+          "link:directory-place:FR:saint-bruno-bordeaux"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:FR:saint-hilaire-le-grand-poitiers",
       "display_name": "Église Saint-Hilaire-le-Grand, Poitiers",
       "record_ids": {
@@ -2338,6 +2593,16 @@
         ],
         "apparitions": [
           "apparition:FR:saint-joseph-cotignac"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:FR:saint-louis-de-gonzague-pau",
+      "display_name": "Église Saint-Louis-de-Gonzague de Pau",
+      "record_ids": {
+        "directory_links": [
+          "link:directory-place:FR:saint-louis-de-gonzague-pau"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -2471,6 +2736,32 @@
       "place_id": "place:GB:holywell-st-winefride-church",
       "display_name": "St Winefride's RC Church, Holywell",
       "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:GB:p42-sg-inv-0249",
+      "display_name": "Our Lady of the Taper Catholic Shrine Church",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:GB:sacred-heart-caterham",
+      "display_name": "Church of the Sacred Heart of Jesus, Caterham",
+      "record_ids": {
+        "directory_links": [
+          "link:directory-place:GB:sacred-heart-caterham"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:GB:st-mary-catholic-brewood",
+      "display_name": "Roman Catholic Church of St Mary, Brewood",
+      "record_ids": {
+        "directory_links": [
+          "link:directory-place:GB:st-mary-catholic-brewood"
+        ]
+      },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -2658,6 +2949,12 @@
           "shrine:HR:national-shrine-of-saint-joseph-karlovac"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:HR:p46-sg-0313-308623424",
+      "display_name": "Svetište Gospe od Utočišta u Aljmašu",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -2993,6 +3290,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:IT:basilica-san-domenico-siena",
+      "display_name": "Basilica Cateriniana di San Domenico",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:IT:basilica-san-francesco-assisi",
       "display_name": "Basilica di San Francesco d'Assisi",
       "record_ids": {
@@ -3214,6 +3517,19 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:IT:genova-cattedrale-san-lorenzo",
+      "display_name": "Cattedrale Metropolitana di San Lorenzo",
+      "record_ids": {
+        "shrines": [
+          "shrine:IT:genova-cattedrale-san-lorenzo"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IT:genova-cattedrale-san-lorenzo:destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:IT:lanciano-eucharistic-miracle",
       "display_name": "Santuario del Miracolo Eucaristico — Chiesa di San Francesco, Lanciano",
       "record_ids": {
@@ -3294,6 +3610,42 @@
           "relic:IT:ortona-san-tommaso"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:p42-sg-inv-0070",
+      "display_name": "Basilica Santuario di Santa Maria del Fonte",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:p43-sg-0057-3422378",
+      "display_name": "Santuario dell'Amore Misericordioso",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:p43-sg-0075-262801874",
+      "display_name": "Santuario della Madonna di Canneto",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:p43-sg-0091-11888423",
+      "display_name": "Nuovo Santuario di San Gabriele dell'Addolorata",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:p43-sg-0091-11888425",
+      "display_name": "Antico Santuario di San Gabriele dell'Addolorata",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:p43-sg-0094-144658381",
+      "display_name": "Basilica Santuario di San Giuseppe da Copertino",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -3388,6 +3740,16 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:IT:san-canziano-padova",
+      "display_name": "Chiesa di San Canziano, Padova",
+      "record_ids": {
+        "directory_links": [
+          "link:directory-place:IT:san-canziano-padova"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:IT:san-geremia-santa-lucia-venezia",
       "display_name": "Santuario di Santa Lucia — Chiesa di San Geremia, Venezia",
       "record_ids": {
@@ -3431,6 +3793,19 @@
         ],
         "relics": [
           "relic:IT:san-pietro-ciel-doro"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:san-pietro-in-vincoli-rome",
+      "display_name": "Basilica di San Pietro in Vincoli",
+      "record_ids": {
+        "shrines": [
+          "shrine:IT:san-pietro-in-vincoli-rome"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IT:san-pietro-in-vincoli-rome:destination"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -3587,6 +3962,19 @@
         ],
         "relics": [
           "relic:IT:santa-maria-vallicella-rome"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:IT:santi-xii-apostoli-rome",
+      "display_name": "Basilica dei Santi XII Apostoli",
+      "record_ids": {
+        "shrines": [
+          "shrine:IT:santi-xii-apostoli-rome"
+        ],
+        "pilgrimages": [
+          "pilgrimage:IT:santi-xii-apostoli-rome:destination"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -3753,8 +4141,20 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:KR:haemi-martyrs-shrine-main-church",
+      "display_name": "Haemi Martyrs International Shrine — Main Church",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:KR:jeoldusan-martyrs-shrine-seoul",
       "display_name": "Jeoldusan Korean Martyrs' Shrine — Seoul",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:KR:p48-sg-0628-210335697",
+      "display_name": "Myeongdong Cathedral (Cathedral of the Immaculate Conception)",
       "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
@@ -4135,6 +4535,18 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:MX:ocotlan-basilica-tlaxcala",
+      "display_name": "Basílica de Nuestra Señora de Ocotlán",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:MX:p48-sg-0432-155296070",
+      "display_name": "Basílica de Nuestra Señora de la Soledad",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:MY:st-anne-bukit-mertajam",
       "display_name": "Minor Basilica of Saint Anne, Bukit Mertajam",
       "record_ids": {
@@ -4232,6 +4644,12 @@
     {
       "place_id": "place:NI:ermita-guadalupe-matagalpa",
       "display_name": "Ermita de Guadalupe, Matagalpa",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:NL:bedevaartskerk-martelaren-gorcum-brielle",
+      "display_name": "Bedevaartskerk HH. Martelaren van Gorcum",
       "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
@@ -4468,6 +4886,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:PH:p42-sg-inv-0638",
+      "display_name": "Basilica and National Shrine of Our Lady of Mount Carmel",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:PH:padre-pio-shrine-santo-tomas-batangas",
       "display_name": "Padre Pio Shrine, Santo Tomas, Batangas",
       "record_ids": {
@@ -4497,6 +4921,18 @@
           "shrine:PK:karachi-our-lady-fatima-parish"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PL:bazylika-bartlomieja-jadwigi-trzebnica",
+      "display_name": "Bazylika św. Bartłomieja Apostoła i św. Jadwigi",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PL:bazylika-mariacka-gdansk",
+      "display_name": "Bazylika Mariacka Wniebowzięcia Najświętszej Maryi Panny",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -4602,6 +5038,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:PL:lichen-marian-basilica",
+      "display_name": "Bazylika Najświętszej Maryi Panny Licheńskiej",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:PL:national-shrine-of-our-lady-of-fatima-zakopane-krzeptowki",
       "display_name": "National Shrine of Our Lady of Fatima, Zakopane-Krzeptówki",
       "record_ids": {
@@ -4609,6 +5051,18 @@
           "shrine:PL:national-shrine-of-our-lady-of-fatima-zakopane-krzeptowki"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PL:p42-sg-inv-0211",
+      "display_name": "Kościół św. Katarzyny Aleksandryjskiej, Sanktuarium Matki Bożej Bolesnej",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PL:p46-sg-0215-229930104",
+      "display_name": "Bazylika Niepokalanej Wszechpośredniczki Łask w Niepokalanowie",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -4657,6 +5111,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:PR:basilica-monserrate-hormigueros",
+      "display_name": "Basílica Nuestra Señora de la Monserrate",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:PS:basilica-agony-gethsemane",
       "display_name": "Basilica of the Agony (Church of All Nations), Gethsemane",
       "record_ids": {},
@@ -4701,6 +5161,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:PT:basilica-sao-bento-porta-aberta",
+      "display_name": "Basílica de São Bento da Porta Aberta",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:PT:fatima-sanctuary",
       "display_name": "Santuário de Nossa Senhora do Rosário de Fátima",
       "record_ids": {
@@ -4722,6 +5188,12 @@
           "att:DEV-007:FATIMA-MAY13"
         ]
       },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PT:p48-sg-0156-96319696",
+      "display_name": "Igreja de Santo António de Lisboa",
+      "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
@@ -5217,6 +5689,22 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:US:historic-chapel-our-lady-la-leche-st-augustine",
+      "display_name": "Historic Chapel of Our Lady of La Leche",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:US:holy-family-log-church-cahokia",
+      "display_name": "Holy Family Log Church, Cahokia",
+      "record_ids": {
+        "directory_links": [
+          "link:directory-place:US:holy-family-log-church-cahokia"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:US:holy-hill",
       "display_name": "Basilica and National Shrine of Mary Help of Christians at Holy Hill",
       "record_ids": {
@@ -5226,6 +5714,16 @@
         "pilgrimages": [
           "pilgrimage:US:holy-hill-destination",
           "pilgrimage:US:holy-hill-traditional"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:US:immaculate-conception-cathedral-lake-charles",
+      "display_name": "Cathedral of the Immaculate Conception, Lake Charles",
+      "record_ids": {
+        "directory_links": [
+          "link:directory-place:US:immaculate-conception-cathedral-lake-charles"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -5298,8 +5796,26 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:US:p42-sg-inv-0378",
+      "display_name": "Basilica and National Shrine of Our Lady of Consolation",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:US:p48-sg-0400-866036994",
+      "display_name": "St. Joseph Shrine, Detroit",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:US:sacred-heart-shrine-hales-corners",
       "display_name": "Sacred Heart Shrine, Hales Corners",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:US:san-francisco-de-asis-ranchos-taos",
+      "display_name": "San Francisco de Asís Mission Church — Ranchos de Taos",
       "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
@@ -5319,6 +5835,16 @@
         ],
         "customs": [
           "att:DEV-006:SETON-SEA-SERVICES"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:US:st-agnes-saint-paul",
+      "display_name": "Church of Saint Agnes, Saint Paul",
+      "record_ids": {
+        "directory_links": [
+          "link:directory-place:US:st-agnes-saint-paul"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -5352,6 +5878,26 @@
         ],
         "customs": [
           "att:DEV-007:FISKDALE-ST-ANNE-NOVENA"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:US:st-boniface-sioux-city",
+      "display_name": "St. Boniface Catholic Church, Sioux City",
+      "record_ids": {
+        "directory_links": [
+          "link:directory-place:US:st-boniface-sioux-city"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:US:st-john-cantius-chicago",
+      "display_name": "St. John Cantius Church, Chicago",
+      "record_ids": {
+        "directory_links": [
+          "link:directory-place:US:st-john-cantius-chicago"
         ]
       },
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
@@ -5498,6 +6044,19 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:ZA:ngome-marian-shrine",
+      "display_name": "Ngome Marian Shrine — Tabernacle of the Most High",
+      "record_ids": {
+        "shrines": [
+          "shrine:ZA:ngome-marian-shrine"
+        ],
+        "pilgrimages": [
+          "pilgrimage:ZA:ngome-marian-shrine:destination"
+        ]
+      },
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:ZM:archdiocese-lusaka-marian-shrine",
       "display_name": "Archdiocese of Lusaka Marian Shrine",
       "record_ids": {
@@ -5515,505 +6074,11 @@
       "display_name": "Sacred Heart Cathedral, Harare",
       "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:CZ:basilika-panny-marie-bolestne-bohosudov",
-      "display_name": "Bazilika Panny Marie Bolestné, Bohosudov",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:CZ:poutni-kostel-jmena-panny-marie-krtiny",
-      "display_name": "Poutní kostel Jména Panny Marie, Křtiny",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:FR:basilique-notre-dame-bon-secours-lablachere",
-      "display_name": "Basilique Notre-Dame-de-Bon-Secours, Lablachère",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:FR:basilique-notre-dame-buglose",
-      "display_name": "Basilique Notre-Dame de Buglose",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:FR:basilique-notre-dame-marienthal",
-      "display_name": "Basilique Notre-Dame de Marienthal",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:FR:basilique-notre-dame-lepine",
-      "display_name": "Basilique Notre-Dame de L'Épine",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:BR:santuario-basilica-divino-pai-eterno-trindade",
-      "display_name": "Santuário Basílica do Divino Pai Eterno",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:ES:catedral-santa-maria-burgos",
-      "display_name": "Catedral de Santa María de Burgos",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:FR:abbatiale-saint-pierre-solesmes",
-      "display_name": "Église abbatiale Saint-Pierre de Solesmes",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:FR:chapelle-notre-dame-peiniere",
-      "display_name": "Chapelle Notre-Dame de La Peinière",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:IT:basilica-san-domenico-siena",
-      "display_name": "Basilica Cateriniana di San Domenico",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:KR:haemi-martyrs-shrine-main-church",
-      "display_name": "Haemi Martyrs International Shrine — Main Church",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:NL:bedevaartskerk-martelaren-gorcum-brielle",
-      "display_name": "Bedevaartskerk HH. Martelaren van Gorcum",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:PL:bazylika-bartlomieja-jadwigi-trzebnica",
-      "display_name": "Bazylika św. Bartłomieja Apostoła i św. Jadwigi",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:PL:bazylika-mariacka-gdansk",
-      "display_name": "Bazylika Mariacka Wniebowzięcia Najświętszej Maryi Panny",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:PR:basilica-monserrate-hormigueros",
-      "display_name": "Basílica Nuestra Señora de la Monserrate",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:PT:basilica-sao-bento-porta-aberta",
-      "display_name": "Basílica de São Bento da Porta Aberta",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:US:historic-chapel-our-lady-la-leche-st-augustine",
-      "display_name": "Historic Chapel of Our Lady of La Leche",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:ES:p42-sg-inv-0136",
-      "display_name": "Catedral Primada de Santa María de Toledo",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:ES:p42-sg-inv-0138",
-      "display_name": "Catedral de Santa María de la Sede de Sevilla",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:FR:p42-sg-inv-0042",
-      "display_name": "Cathédrale Notre-Dame de Strasbourg",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:FR:p42-sg-inv-0012",
-      "display_name": "Basilique Notre-Dame-de-la-Délivrande",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:PH:p42-sg-inv-0638",
-      "display_name": "Basilica and National Shrine of Our Lady of Mount Carmel",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:ES:p42-sg-inv-0135",
-      "display_name": "Basílica de la Sagrada Família",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:FR:p42-sg-inv-0045",
-      "display_name": "Basilique Saint-Victor de Marseille",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:ES:p42-sg-inv-0118",
-      "display_name": "Santuario de Nuestra Señora de Regla",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:FR:p42-sg-inv-0022",
-      "display_name": "Basilique Notre-Dame du Sacré-Cœur d’Issoudun",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:PL:p42-sg-inv-0211",
-      "display_name": "Kościół św. Katarzyny Aleksandryjskiej, Sanktuarium Matki Bożej Bolesnej",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:IT:p42-sg-inv-0070",
-      "display_name": "Basilica Santuario di Santa Maria del Fonte",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:GB:p42-sg-inv-0249",
-      "display_name": "Our Lady of the Taper Catholic Shrine Church",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:FR:p42-sg-inv-0032",
-      "display_name": "Basilique Saint-Régis de Lalouvesc",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:DE:p42-sg-inv-0181",
-      "display_name": "Basilika Mariä Himmelfahrt des Klosters Ettal",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:US:p42-sg-inv-0378",
-      "display_name": "Basilica and National Shrine of Our Lady of Consolation",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:DE:p43-sg-0166-110413194",
-      "display_name": "Wallfahrtsbasilika Mariä Heimsuchung",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:DE:p43-sg-0166-110413193",
-      "display_name": "Alte Wallfahrtskirche Werl",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:IT:p43-sg-0057-3422378",
-      "display_name": "Santuario dell'Amore Misericordioso",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:IT:p43-sg-0091-11888423",
-      "display_name": "Nuovo Santuario di San Gabriele dell'Addolorata",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:IT:p43-sg-0091-11888425",
-      "display_name": "Antico Santuario di San Gabriele dell'Addolorata",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:IT:p43-sg-0094-144658381",
-      "display_name": "Basilica Santuario di San Giuseppe da Copertino",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:IT:p43-sg-0075-262801874",
-      "display_name": "Santuario della Madonna di Canneto",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:EC:p43-sg-0511-561028428",
-      "display_name": "Santuario Nacional de Nuestra Señora de El Quinche",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:ES:p44-sg-0115-1051808405",
-      "display_name": "Basílica de la Mare de Déu de Núria",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:ES:p44-sg-0132-1241117725",
-      "display_name": "Basílica del Sant Crist de Balaguer",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:BE:p46-sg-0225-30163817",
-      "display_name": "Basilique Nationale du Sacré-Cœur de Koekelberg",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:PL:p46-sg-0215-229930104",
-      "display_name": "Bazylika Niepokalanej Wszechpośredniczki Łask w Niepokalanowie",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:HR:p46-sg-0313-308623424",
-      "display_name": "Svetište Gospe od Utočišta u Aljmašu",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:CH:p46-sg-0272-319525195",
-      "display_name": "Chapelle Notre-Dame des Marches",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:KR:p48-sg-0628-210335697",
-      "display_name": "Myeongdong Cathedral (Cathedral of the Immaculate Conception)",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:US:p48-sg-0400-866036994",
-      "display_name": "St. Joseph Shrine, Detroit",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:ES:p48-sg-0114-122873003",
-      "display_name": "Basílica de Nuestra Señora de la Candelaria",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:MX:p48-sg-0432-155296070",
-      "display_name": "Basílica de Nuestra Señora de la Soledad",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:AT:p48-sg-0197-239345806",
-      "display_name": "Salzburger Dom (Cathedral of Saints Rupert and Virgil)",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:AU:p48-sg-0743-155809136",
-      "display_name": "St Patrick's Cathedral, Melbourne",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:CA:p48-sg-0424-103862161",
-      "display_name": "Basilique-cathédrale Notre-Dame-de-Québec",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:PT:p48-sg-0156-96319696",
-      "display_name": "Igreja de Santo António de Lisboa",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:PL:lichen-marian-basilica",
-      "display_name": "Bazylika Najświętszej Maryi Panny Licheńskiej",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:MX:ocotlan-basilica-tlaxcala",
-      "display_name": "Basílica de Nuestra Señora de Ocotlán",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:US:san-francisco-de-asis-ranchos-taos",
-      "display_name": "San Francisco de Asís Mission Church — Ranchos de Taos",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:AR:catamarca-cathedral-valle",
-      "display_name": "Catedral Basílica de Nuestra Señora del Valle — Catamarca",
-      "record_ids": {},
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:US:st-boniface-sioux-city",
-      "display_name": "St. Boniface Catholic Church, Sioux City",
-      "record_ids": {
-        "directory_links": [
-          "link:directory-place:US:st-boniface-sioux-city"
-        ]
-      },
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:US:st-agnes-saint-paul",
-      "display_name": "Church of Saint Agnes, Saint Paul",
-      "record_ids": {
-        "directory_links": [
-          "link:directory-place:US:st-agnes-saint-paul"
-        ]
-      },
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:US:st-john-cantius-chicago",
-      "display_name": "St. John Cantius Church, Chicago",
-      "record_ids": {
-        "directory_links": [
-          "link:directory-place:US:st-john-cantius-chicago"
-        ]
-      },
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:IT:san-canziano-padova",
-      "display_name": "Chiesa di San Canziano, Padova",
-      "record_ids": {
-        "directory_links": [
-          "link:directory-place:IT:san-canziano-padova"
-        ]
-      },
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:FR:saint-louis-de-gonzague-pau",
-      "display_name": "Église Saint-Louis-de-Gonzague de Pau",
-      "record_ids": {
-        "directory_links": [
-          "link:directory-place:FR:saint-louis-de-gonzague-pau"
-        ]
-      },
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:FR:saint-bruno-bordeaux",
-      "display_name": "Église Saint-Bruno de Bordeaux",
-      "record_ids": {
-        "directory_links": [
-          "link:directory-place:FR:saint-bruno-bordeaux"
-        ]
-      },
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:CZ:st-ignatius-jihlava",
-      "display_name": "Kostel svatého Ignáce z Loyoly, Jihlava",
-      "record_ids": {
-        "directory_links": [
-          "link:directory-place:CZ:st-ignatius-jihlava"
-        ]
-      },
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:DE:friedhofskirche-st-michael-altoetting",
-      "display_name": "Friedhofskirche St. Michael, Altötting",
-      "record_ids": {
-        "directory_links": [
-          "link:directory-place:DE:friedhofskirche-st-michael-altoetting"
-        ]
-      },
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:FR:basilique-saint-bernard-fontaine-les-dijon",
-      "display_name": "Basilique Saint-Bernard de Fontaine-lès-Dijon",
-      "record_ids": {
-        "directory_links": [
-          "link:directory-place:FR:basilique-saint-bernard-fontaine-les-dijon"
-        ]
-      },
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:GB:sacred-heart-caterham",
-      "display_name": "Church of the Sacred Heart of Jesus, Caterham",
-      "record_ids": {
-        "directory_links": [
-          "link:directory-place:GB:sacred-heart-caterham"
-        ]
-      },
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:GB:st-mary-catholic-brewood",
-      "display_name": "Roman Catholic Church of St Mary, Brewood",
-      "record_ids": {
-        "directory_links": [
-          "link:directory-place:GB:st-mary-catholic-brewood"
-        ]
-      },
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:US:immaculate-conception-cathedral-lake-charles",
-      "display_name": "Cathedral of the Immaculate Conception, Lake Charles",
-      "record_ids": {
-        "directory_links": [
-          "link:directory-place:US:immaculate-conception-cathedral-lake-charles"
-        ]
-      },
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:US:holy-family-log-church-cahokia",
-      "display_name": "Holy Family Log Church, Cahokia",
-      "record_ids": {
-        "directory_links": [
-          "link:directory-place:US:holy-family-log-church-cahokia"
-        ]
-      },
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
-    },
-    {
-      "place_id": "place:DE:basilika-st-clemens-hannover",
-      "display_name": "Propsteikirche Basilika St. Clemens, Hannover",
-      "record_ids": {
-        "directory_links": [
-          "link:directory-place:DE:basilika-st-clemens-hannover"
-        ]
-      },
-      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     }
   ],
   "distinct_place_links": {
-    "shrines": 257,
-    "pilgrimages": 212,
+    "shrines": 262,
+    "pilgrimages": 217,
     "relics": 92,
     "apparitions": 30,
     "customs": 55,
@@ -6336,5 +6401,25 @@
     "photo_research_id": 61,
     "no_photographs_approved": true,
     "no_mass_times_promoted": true
+  },
+  "georeference_tranche_20261105_v10": {
+    "schema": "AO_SACRED_ATLAS_V10_3_SOURCE_CLAIMED_SITES",
+    "date": "2026-11-05",
+    "manifest": "data/geography/research/sacred-places-v10-b20-three-relic-shrines-release.v1.json",
+    "new_place_ids": [
+      "place:IT:santi-xii-apostoli-rome",
+      "place:IT:san-pietro-in-vincoli-rome",
+      "place:IT:genova-cattedrale-san-lorenzo"
+    ],
+    "source_registry_count_before": 846,
+    "source_registry_count_after": 855,
+    "shrines_before": 257,
+    "shrines_after": 260,
+    "pilgrimages_before": 240,
+    "pilgrimages_after": 243,
+    "approved_new_media": 0,
+    "directory_venue_links_added": 0,
+    "status": "PR_REVIEW_ONLY",
+    "policy": "The prior 530-place crosswalk remains a reconstructable historical subset; no new relic authenticated, TLM association inferred or photograph approved."
   }
 }

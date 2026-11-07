@@ -1,0 +1,58 @@
+{
+  "schema": "AO_SACRED_PLACES_V10_C9_THREE_COUNTRY_AREAS_V1",
+  "date": "2026-11-06",
+  "status": "DRAFT_PR_GEOGRAPHIC_STRUCTURE_ONLY_ZERO_PLACES_NO_PUBLICATION",
+  "nonproduction": true,
+  "baseline": {
+    "places": 535,
+    "sources": 858,
+    "crosswalk": 535,
+    "unlinked": 257,
+    "geo_areas": 152,
+    "directory_links": 24
+  },
+  "proposed": {
+    "places": 535,
+    "sources": 858,
+    "crosswalk": 535,
+    "unlinked": 257,
+    "geo_areas": 155,
+    "directory_links": 24
+  },
+  "new_places": 0,
+  "published_new": [],
+  "new_source_records": 0,
+  "new_country_area_count": 3,
+  "new_geo_areas": [
+    "geo:country:AO",
+    "geo:country:GQ",
+    "geo:country:IQ"
+  ],
+  "resolved_intake_candidates": [
+    {
+      "candidate_id": "SG-INV-0720",
+      "country_code": "AO",
+      "geo_area_id": "geo:country:AO"
+    },
+    {
+      "candidate_id": "SG-INV-0731",
+      "country_code": "GQ",
+      "geo_area_id": "geo:country:GQ"
+    },
+    {
+      "candidate_id": "SG-INV-0687",
+      "country_code": "IQ",
+      "geo_area_id": "geo:country:IQ"
+    }
+  ],
+  "intake_manifest": "data/geography/research/sacred-atlas-169-owner-review-intake-20261106.v1.json",
+  "policy": {
+    "preserve_all_535_draft_place_identities": true,
+    "add_only_country_areas": true,
+    "no_new_pins": true,
+    "owner_approvals": 0,
+    "import_ready": 0,
+    "geometry_uncertified": true,
+    "no_latin_rite_inference": true
+  }
+}

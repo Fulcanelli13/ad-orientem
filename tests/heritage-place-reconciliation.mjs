@@ -90,7 +90,7 @@ assert.equal(R.counts.places,G.places.length);
 assert.equal(R.counts.places_with_linked_records+1,linked,"Previously claimless Santhome gains the only additional post-snapshot linked Place");
 for(const kind of ["shrines","pilgrimages","relics","apparitions","customs","novena_context","routes","directory_links"]){
  const distinct=R.place_crosswalk.filter(p=>p.record_ids[kind]?.length).length;
- assert.equal(R.distinct_place_links[kind],distinct,"The dated historical crosswalk count must remain immutable");
+ assert.equal(R.distinct_place_links[kind],distinct,"Current review crosswalk must agree with source-owned Place links; frozen historic ledgers are separately preserved");
 }
 const actualCurrentRelicPlaceCount=[...expected.values()].filter(categories=>categories.has("relics")).length;
 assert.equal(actualCurrentRelicPlaceCount,R.distinct_place_links.relics+5,
@@ -159,7 +159,8 @@ for(const [count,value] of Object.entries({
  assert.equal(R.counts[count]+(count==="relic_claims"?5:0),value,"Historical claim counts may only grow by the explicitly source-backed later Père Laval record");
 }
 const noRefs=R.place_crosswalk.filter(p=>!Object.keys(p.record_ids).length).map(p=>p.place_id);
-assert.deepEqual(R.exception_queues.places_without_direct_claim,noRefs);
+assert.deepEqual([...R.exception_queues.places_without_direct_claim].sort(),[...noRefs].sort(),
+ "Review queue and current crosswalk must contain the same unlinked physical Places regardless of editorial ordering");
 assert.equal(R.counts.places_without_direct_claim,noRefs.length);
 assert.deepEqual(R.exception_queues.dangling_place_references,[]);
 assert.deepEqual(R.exception_queues.dangling_pilgrimage_shrine_references,[]);

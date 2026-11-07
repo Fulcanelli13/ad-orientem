@@ -1,0 +1,80 @@
+{
+  "schema": "AO_SACRED_PLACES_V10_B21_TWO_MARIAN_SITE_ADMISSIONS_V1",
+  "date": "2026-11-06",
+  "status": "DRAFT_PR_SITE_CORROBORATED_OWNER_APPROVAL_PENDING_NOT_LIVE",
+  "baseline": {
+    "places": 533,
+    "sources": 855,
+    "crosswalk": 533,
+    "unlinked": 257,
+    "geo_areas": 152,
+    "directory_links": 24
+  },
+  "proposed": {
+    "places": 535,
+    "sources": 858,
+    "crosswalk": 535,
+    "unlinked": 257,
+    "geo_areas": 152,
+    "directory_links": 24
+  },
+  "new_places": 2,
+  "new_source_records": 3,
+  "new_shrines": 2,
+  "new_pilgrimages": 2,
+  "owner_approved": false,
+  "production_approved": false,
+  "published_new": [
+    {
+      "candidate_id": "SG-INV-0415",
+      "place_id": "place:CA:sanctuaire-notre-dame-de-fatima-la-pocatiere",
+      "shrine_id": "shrine:CA:sanctuaire-notre-dame-de-fatima-la-pocatiere",
+      "pilgrimage_id": "pilgrimage:CA:sanctuaire-notre-dame-de-fatima-la-pocatiere:destination",
+      "source_ids": [
+        "SHR-CA-LA-POCATIERE-FATIMA-TOPO",
+        "SHR-CA-LA-POCATIERE-FATIMA-HERITAGE"
+      ],
+      "country_code": "CA",
+      "precision": "site",
+      "coordinates": [
+        47.36891,
+        -70.05569
+      ],
+      "geo_source_url": "https://toponymie.gouv.qc.ca/ct/ToposWeb/Fiche.aspx?no_seq=150108",
+      "geo_source_ref": "quebec-toponymie:150108",
+      "photo_publication": "NO_APPROVED_MEDIA",
+      "guide_publication": "BILINGUAL_SYNOPSIS_ONLY_SECOND_EDITOR_PENDING",
+      "owner_publication": "PENDING_EXPLICIT_SIGNOFF"
+    },
+    {
+      "candidate_id": "SG-INV-0722",
+      "place_id": "place:ZA:ngome-marian-shrine",
+      "shrine_id": "shrine:ZA:ngome-marian-shrine",
+      "pilgrimage_id": "pilgrimage:ZA:ngome-marian-shrine:destination",
+      "source_ids": [
+        "SHR-ZA-NGOME-ESHOWE"
+      ],
+      "country_code": "ZA",
+      "precision": "site",
+      "coordinates": [
+        -27.855267,
+        31.453717
+      ],
+      "geo_source_url": "https://catholicdirectory.org.za/eshowe-2/",
+      "geo_source_ref": "sacbc:eshowe:ngome-gps",
+      "photo_publication": "NO_APPROVED_MEDIA",
+      "guide_publication": "BILINGUAL_SYNOPSIS_ONLY_SECOND_EDITOR_PENDING",
+      "owner_publication": "PENDING_EXPLICIT_SIGNOFF"
+    }
+  ],
+  "policy": {
+    "preserve_all_533_previous_places": true,
+    "source_backed_map_point_not_entrance": true,
+    "no_new_approved_covers": true,
+    "no_tlm_venue_inference": true,
+    "owner_decision_required_before_merge": true,
+    "no_inference_of_apparition_approval": true,
+    "github_actions_pages_only": true,
+    "no_vercel": true
+  }
+}

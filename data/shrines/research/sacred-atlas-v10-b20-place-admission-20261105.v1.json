@@ -1,0 +1,59 @@
+{
+  "schema": "AO_SACRED_ATLAS_B20_V10_PLACE_ADMISSION_REVIEW_V1",
+  "as_of": "2026-11-05",
+  "status": "DRAFT_PR_NOT_PUBLICATION_APPROVAL",
+  "canonical_place_count_before": 530,
+  "canonical_place_count_proposed": 533,
+  "media_approved_for_new_places": 0,
+  "new_place_count": 3,
+  "records": [
+    {
+      "place_id": "place:IT:santi-xii-apostoli-rome",
+      "shrine_id": "shrine:IT:santi-xii-apostoli-rome",
+      "pilgrimage_id": "pilgrimage:IT:santi-xii-apostoli-rome:destination",
+      "photo_status": "NO_APPROVED_MEDIA_NEW_SITE",
+      "editorial_status": "RESEARCH_SOURCE_REVIEWED_SECOND_EDITOR_PENDING",
+      "coordinate_source": "https://www.turismoroma.it/en/node/713",
+      "claim_status": "RELIC_TRADITION_QUALIFIED",
+      "source_ids": [
+        "SHR-IT-XII-APOSTOLI-CRYPT",
+        "SHR-IT-XII-APOSTOLI-LOCATION"
+      ]
+    },
+    {
+      "place_id": "place:IT:san-pietro-in-vincoli-rome",
+      "shrine_id": "shrine:IT:san-pietro-in-vincoli-rome",
+      "pilgrimage_id": "pilgrimage:IT:san-pietro-in-vincoli-rome:destination",
+      "photo_status": "NO_APPROVED_MEDIA_NEW_SITE",
+      "editorial_status": "RESEARCH_SOURCE_REVIEWED_SECOND_EDITOR_PENDING",
+      "coordinate_source": "https://www.turismoroma.it/en/node/716",
+      "claim_status": "RELIC_TRADITION_QUALIFIED",
+      "source_ids": [
+        "SHR-IT-PIETRO-VINCOLI-CUSTODY",
+        "SHR-IT-PIETRO-VINCOLI-GEO",
+        "SHR-IT-PIETRO-VINCOLI-HERITAGE"
+      ]
+    },
+    {
+      "place_id": "place:IT:genova-cattedrale-san-lorenzo",
+      "shrine_id": "shrine:IT:genova-cattedrale-san-lorenzo",
+      "pilgrimage_id": "pilgrimage:IT:genova-cattedrale-san-lorenzo:destination",
+      "photo_status": "NO_APPROVED_MEDIA_NEW_SITE",
+      "editorial_status": "RESEARCH_SOURCE_REVIEWED_SECOND_EDITOR_PENDING",
+      "coordinate_source": "https://www.visitgenoa.it/en/node/7790",
+      "claim_status": "RELIC_TRADITION_QUALIFIED",
+      "source_ids": [
+        "SHR-IT-GENOVA-CATHEDRAL-HISTORY",
+        "SHR-IT-GENOVA-CATHEDRAL-CUSTODY",
+        "SHR-IT-GENOVA-CATHEDRAL-TREASURY",
+        "SHR-IT-GENOVA-CATHEDRAL-GEO"
+      ]
+    }
+  ],
+  "not_published": [
+    "Unapproved media or claims",
+    "Independent bilingual editorial sign-off",
+    "Current visitor/access information"
+  ],
+  "guidance": "Existing approved imagery must not be re-approved or substituted. Do not mistake relic traditions for scientific authentication. No automatic Liturgical Calendar or TLM Directory associations."
+}

@@ -1,0 +1,44 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {LIVE,RELEASES} from "./helpers/sacred-places-live-baseline.mjs";
+import {assertExploreGeographyRegistry} from "../src/find/geography-contracts.js";
+import {assertShrinesPilgrimagesRegistry} from "../src/find/shrines-contracts.js";
+const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
+const g=read("data/geography/seed-registry.v1.json"),h=read("data/explore/heritage-place-reconciliation.review.v1.json"),s=read("data/shrines/shrines-pilgrimages-seed.v1.json"),sources=read("data/shrines/source-registry.v1.json"),staged=read("data/geography/research/sacred-atlas-96-priority-unapproved-preimport-20261106.v1.json"),rel=read("data/geography/research/sacred-places-v10-b21-two-marian-site-admissions-20261106.v1.json");
+assert.ok(RELEASES.some(x=>x.id==="V10-B21"),"B21 admissions stay in the append-only history");
+assert.ok(RELEASES.findIndex(x=>x.id==="V10-B21")<RELEASES.findIndex(x=>x.id==="V10-C9"),"C9 area extension follows, never replaces, the B21 admission");
+assert.equal(rel.status,"DRAFT_PR_SITE_CORROBORATED_OWNER_APPROVAL_PENDING_NOT_LIVE");
+assert.equal(rel.owner_approved,false);
+assert.equal(rel.production_approved,false);
+assert.deepEqual([rel.baseline.places,rel.proposed.places],[533,535]);
+assert.deepEqual([rel.baseline.sources,rel.proposed.sources],[855,858]);
+assert.equal(g.places.length,LIVE.places);
+assert.equal(sources.sources.length,LIVE.sources);
+assert.equal(h.place_crosswalk.length,LIVE.heritage_crosswalk);
+assert.equal(s.shrines.length,262);
+assert.equal(s.pilgrimages.length,245);
+assert.equal(assertExploreGeographyRegistry(g).pass,true);
+assert.equal(assertShrinesPilgrimagesRegistry({...s,sources:sources.sources,places:g.places}).pass,true);
+const bySource=new Map(sources.sources.map(x=>[x.id,x]));
+for(const r of rel.published_new){
+ const p=g.places.find(x=>x.place_id===r.place_id);assert.ok(p,r.place_id);
+ assert.equal(p.place_type,"shrine");assert.equal(p.address.country_code,r.country_code);assert.equal(p.geo.matched_country_code,r.country_code);
+ assert.equal(p.geo.precision,"site");assert.equal(p.geo.geocoding_source,"OFFICIAL_SOURCE");
+ assert.equal(p.geo.source_url,r.geo_source_url);assert.equal(p.geo.source_ref,r.geo_source_ref);
+ assert.equal(p.geo.verified_at,"2026-11-06");assert.deepEqual([p.geo.lat,p.geo.lng],r.coordinates);
+ assert.deepEqual(p.source_ids,r.source_ids);
+ for(const id of p.source_ids){assert.ok(bySource.has(id));assert.match(bySource.get(id).url,/^https:\/\//);}
+ const shrine=s.shrines.find(x=>x.shrine_id===r.shrine_id&&x.place_id===p.place_id);assert.ok(shrine);
+ assert.equal(shrine.shrine_kind,"MARIAN");assert.equal(shrine.recognition_class,"UNKNOWN");
+ assert.ok(shrine.origin_summary.length>100&&shrine.origin_summary_fr.length>100);
+ assert.ok(s.pilgrimages.some(x=>x.pilgrimage_id===r.pilgrimage_id&&x.destination_shrine_id===r.shrine_id));
+ assert.ok(h.place_crosswalk.some(x=>x.place_id===r.place_id));
+ const c=staged.candidates.find(x=>x.candidate_id===r.candidate_id);assert.ok(c);
+ assert.equal(c.admission_review.draft_place_id,r.place_id);
+ assert.equal(c.admission_review.draft_admission_status,"REVIEW_ONLY_IN_UNMERGED_PR_OWNER_SIGNOFF_PENDING");
+ assert.equal(c.owner_approved,false);assert.equal(c.publishable,false);
+ assert.equal(c.canonical_place_id,null);assert.equal(c.admission_review.canonical_import_ready,false);
+ assert.equal(r.owner_publication,"PENDING_EXPLICIT_SIGNOFF");
+}
+assert.equal(staged.candidates.filter(x=>x.admission_review.draft_place_id).length,2);
+console.log("PASS B21: 535 draft Places, 858 sources, 262 shrines, 245 destinations; zero production sign-off");

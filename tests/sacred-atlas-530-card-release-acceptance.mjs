@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import {createHash} from "node:crypto";
 import {readFileSync} from "node:fs";
+import {LIVE,RELEASES} from "./helpers/sacred-places-live-baseline.mjs";
 import {projectExploreDataset} from "../src/find/explore-projection.js";
 import {buildExplorePlaceProfiles,resolveApprovedPlaceMedia} from "../src/find/place-profiles.js";
 import {compactHeritagePlaceSheet} from "../src/find/heritage-presentation.js";
@@ -15,6 +16,17 @@ const shrineSources=json("data/shrines/source-registry.v1.json");
 const phenomena=json("data/explore/sacred-phenomena-seed.v1.json");
 const ledger=json("data/geography/research/sacred-atlas-530-card-acceptance-20261104.v1.json");
 const verified=json("data/geography/research/sacred-atlas-round25-23place-64-original-review-20261104.json");
+const frozen=json("data/geography/research/sacred-atlas-editorial-master-530-20261104.v1.json");
+const v10=RELEASES.find(x=>x.id==="V10-B20");
+const v10b21=RELEASES.find(x=>x.id==="V10-B21");
+assert.ok(v10&&v10b21,"Both dated V10 admission manifests must be present in the append-only Place chain");
+const frozenIds=new Set(frozen.places.map(p=>p.place_id));
+assert.equal(frozenIds.size,530,"Frozen 4 November card cohort retains exactly 530 original identities");
+assert.deepEqual([v10.data.baseline.places,v10.data.proposed.places],[530,533]);
+assert.deepEqual([v10b21.data.baseline.places,v10b21.data.proposed.places],[533,535]);
+assert.deepEqual(geo.places.filter(p=>!frozenIds.has(p.place_id)).map(p=>p.place_id).sort(),
+ [...v10.data.published_new,...v10b21.data.published_new].map(p=>p.place_id).sort(),
+ "Only the five documented V10-B20/B21 draft Place additions may extend the frozen 530-card cohort");
 
 assert.equal(ledger.schema,"AO_SACRED_ATLAS_530_PLACE_CARD_ACCEPTANCE_V1");
 assert.equal(ledger.counts.canonical_places,530);
@@ -23,7 +35,7 @@ assert.equal(ledger.counts.missing_approved_photo,142);
 assert.equal(ledger.counts.verified_unapproved_photo_sites,21);
 assert.equal(ledger.counts.no_verified_original_sites,121);
 assert.equal(ledger.counts.approved_gallery_photos,42);
-assert.equal(geo.places.length,530);
+assert.equal(geo.places.length,LIVE.places);
 assert.equal(covers.items.length,388);
 assert.equal(gallery.items.length,42);
 assert.equal(verified.places.length,23);
@@ -32,19 +44,23 @@ assert.equal(ledger.photo_gaps.length,142);
 const placeById=new Map(geo.places.map(p=>[p.place_id,p]));
 const mediaById=new Map(covers.items.map(m=>[m.place_id,m]));
 const verifiedIds=new Set(verified.places.map(p=>p.place_id));
-assert.equal(placeById.size,530,"no duplicate Place identities");
+assert.equal(placeById.size,LIVE.places,"no duplicate Place identities");
 assert.equal(mediaById.size,388,"no duplicate published covers");
 assert.equal(new Set(ledger.photo_gaps.map(p=>p.place_id)).size,142,"no duplicate fallback Places");
 assert.ok(covers.items.every(r=>placeById.has(r.place_id)),"no media orphans");
-// The 23 R25 candidate photo sources remain research-only even if a site later
-// receives a DIFFERENT independently verified direct-source cover.
-assert.ok(verified.places.every(r=>placeById.has(r.place_id)),
-  "Every R25 research original must remain associated with a canonical Place");
+assert.ok(verified.places.every(r=>placeById.has(r.place_id)),"Every R25 research original retains a canonical physical site; separate, vetted new photos may exist");
 const gaps=geo.places.filter(p=>!mediaById.has(p.place_id));
+const frozenGaps=gaps.filter(p=>frozenIds.has(p.place_id));
 assert.deepEqual(
  ledger.photo_gaps.map(p=>p.place_id).sort(),
- gaps.map(p=>p.place_id).sort(),
- "missing-photo ledger must equal actual canonical registry minus approved media");
+ frozenGaps.map(p=>p.place_id).sort(),
+ "Dated 142-photo-gap ledger must equal the original 530 Place IDs after nine independently approved covers");
+assert.equal(gaps.length,LIVE.places-covers.items.length,
+ "Every subsequent canonical Place lacking an approved cover must retain a fallback");
+assert.equal(gaps.length,ledger.counts.missing_approved_photo+v10.data.new_places+v10b21.data.new_places,
+ "Current 142 missing-cover cohort plus five unphotographed draft admissions");
+assert.ok(geo.places.filter(p=>!frozenIds.has(p.place_id)).every(p=>!mediaById.has(p.place_id)),
+ "V10 may not silently promote an unreviewed cover photograph");
 for(const row of ledger.photo_gaps){
  const site=placeById.get(row.place_id);
  assert.equal(row.name,site.name.official);
@@ -87,8 +103,8 @@ const dataset={
 const projection=projectExploreDataset(dataset);
 const profiles=buildExplorePlaceProfiles(dataset,projection,{today:"2026-11-04"});
 const profileById=new Map(profiles.map(p=>[p.place_id,p]));
-assert.equal(profiles.length,530,"one rendered-ready profile for every canonical Place");
-assert.equal(profileById.size,530);
+assert.equal(profiles.length,LIVE.places,"one rendered-ready profile for every canonical Place");
+assert.equal(profileById.size,LIVE.places);
 let photoCards=0,symbolCards=0;
 for(const raw of geo.places){
  const p=profileById.get(raw.place_id);
@@ -121,9 +137,9 @@ for(const raw of geo.places){
  }
 }
 assert.equal(photoCards,388);
-assert.equal(symbolCards,142);
+assert.equal(symbolCards,LIVE.places-388);
 
-// All 142 fallbacks must also survive the expanded detail reader, not merely
+// Every current fallback (142 from the original cohort + 5 draft admissions) must survive the expanded detail reader, not merely
 // the compact preview. Check both languages and exact canonical ownership.
 for(const raw of gaps){
  for(const lang of ["en","fr"]){
@@ -141,4 +157,4 @@ for(const raw of gaps){
   assert.ok(html.includes("aoExplorePlaceSheet"),"detail reader missing");
  }
 }
-console.log("SACRED ATLAS FINISH LINE PASS: 530/530 EN/FR Place previews, 142/142 EN/FR detailed fallbacks, 388 verified local photo binaries, 42 unchanged gallery records, and zero unapproved images.");
+console.log("SACRED ATLAS CARD CONTRACT PASS: "+LIVE.places+"/"+LIVE.places+" EN/FR Place previews, "+gaps.length+" EN/FR detailed neutral fallbacks, frozen 530-place/142-gap updated evidence, 388 exact approved photo binaries, 42 unchanged gallery records, and zero unapproved images.");

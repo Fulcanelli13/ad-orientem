@@ -10,6 +10,8 @@ const places=json("data/geography/seed-registry.v1.json");
 const images=json("data/geography/approved-place-media.v1.json");
 const phenomena=json("data/explore/sacred-phenomena-seed.v1.json");
 const ledger=json("data/shrines/editorial-master-inventory-20261021.v1.json");
+const admission=json("data/shrines/research/sacred-atlas-v10-b20-place-admission-20261105.v1.json");
+const b21=json("data/geography/research/sacred-places-v10-b21-two-marian-site-admissions-20261106.v1.json");
 const newGuides=json("data/shrines/illustrated-place-guides-world-marian-r1.v1.json");
 const newSaintGuides=json("data/shrines/illustrated-place-guides-global-saints-r1.v1.json");
 const globalMarianB2=json("data/shrines/illustrated-place-guides-global-marian-b2.v1.json");
@@ -24,13 +26,22 @@ const placeById=new Map(places.places.map(x=>[x.place_id,x]));
 const imageByPlace=new Map(images.items.map(x=>[x.place_id,x]));
 const approvedGallery=json("data/geography/approved-place-gallery.v1.json");
 const allGuides=[...oldGuideFiles.flatMap(path=>json(path).guides),...newGuides.guides,...newSaintGuides.guides,...globalMarianB2.guides];
-assert.equal(canonical.shrines.length,257);
-assert.equal(canonical.pilgrimages.length,240);
+const historicalShrines=new Set(ledger.shrines.map(x=>x.shrine_id));
+const historicalPilgrimages=new Set(ledger.pilgrimages.map(x=>x.pilgrimage_id));
+assert.equal(ledger.shrines.length,257,"Frozen October shrine inventory remains intact");
+assert.equal(ledger.pilgrimages.length,240,"Frozen October pilgrimage inventory remains intact");
+assert.equal(admission.records.length,3);
+assert.equal(b21.published_new.length,2);
+assert.equal(canonical.shrines.length,ledger.shrines.length+admission.records.length+b21.published_new.length);
+assert.equal(canonical.pilgrimages.length,ledger.pilgrimages.length+admission.records.length+b21.published_new.length);
+assert.deepEqual(canonical.shrines.filter(x=>!historicalShrines.has(x.shrine_id)).map(x=>x.shrine_id).sort(),
+ [...admission.records,...b21.published_new].map(x=>x.shrine_id).sort(),"Only five sourced V10 draft shrine identities added");
+assert.deepEqual(canonical.pilgrimages.filter(x=>!historicalPilgrimages.has(x.pilgrimage_id)).map(x=>x.pilgrimage_id).sort(),
+ [...admission.records,...b21.published_new].map(x=>x.pilgrimage_id).sort(),"Only five sourced V10 draft pilgrimages added");
 assert.equal(canonical.routes.length,20);
 assert.equal(phenomena.apparitions.length,33);
-assert.deepEqual([...new Set(ledger.shrines.map(x=>x.shrine_id))].sort(),[...shrineIds].sort());
-assert.deepEqual([...new Set(ledger.pilgrimages.map(x=>x.pilgrimage_id))].sort(),
- canonical.pilgrimages.map(x=>x.pilgrimage_id).sort());
+assert.ok(ledger.shrines.every(x=>shrineIds.has(x.shrine_id)),"No existing shrine was removed");
+assert.ok(ledger.pilgrimages.every(x=>historicalPilgrimages.has(x.pilgrimage_id)&&canonical.pilgrimages.some(p=>p.pilgrimage_id===x.pilgrimage_id)),"No existing pilgrimage removed");
 assert.deepEqual([...new Set(ledger.routes.map(x=>x.route_id))].sort(),
  canonical.routes.map(x=>x.route_id).sort());
 assert.deepEqual([...new Set(ledger.apparitionSites.map(x=>x.apparition_id))].sort(),
@@ -216,4 +227,4 @@ assert.match(loader,/safeArray\(illustratedGlobalSaintsR1\?\.guides\)/);
 assert.ok(ledger.shrines.every(s=>s.place_verified&&s.geo_available&&s.source_count>0));
 assert.ok(ledger.pilgrimages.every(p=>p.source_count>0&&
  (!p.destination_shrine_id||shrineIds.has(p.destination_shrine_id))));
-console.log("PASS: 257 shrines, 118 Marian, 240 pilgrimages, 20 routes, 33 apparition records, 33 detailed guides; all 31 approved local site photographs have complete bilingual guides (7 Marian and 4 Saints guides newly added).");
+console.log("PASS: frozen 257-shrine/240-pilgrimage October cohort, 5 sourced V10 draft additions, 20 unchanged routes, 33 apparition records, 33 published guides; later approved photographs independently verified.");
