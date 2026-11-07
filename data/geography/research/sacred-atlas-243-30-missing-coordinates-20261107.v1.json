@@ -1,0 +1,459 @@
+{
+  "schema": "AO_SACRED_ATLAS_243_30_MISSING_COORDINATE_STAGE_V1",
+  "prepared_on": "2026-11-07",
+  "status": "RESEARCH_ONLY_UNAPPROVED",
+  "source_cohort": 243,
+  "counts": {
+    "missing_original": 40,
+    "location_actionable_lane": 30,
+    "staged_points": 21,
+    "site_illustrative_points": 14,
+    "geometry_or_identity_leads": 7,
+    "location_identity_holds": 9,
+    "nonpin_lanes": 10,
+    "still_without_proposed_point": 19,
+    "owner_approved": 0,
+    "production_imports": 0
+  },
+  "nonpin_original_missing_coordinate_ids": [
+    "SG-INV-0612",
+    "SG-INV-0700",
+    "SG-INV-0698",
+    "SG-INV-0699",
+    "SG-INV-0702",
+    "SG-INV-0360",
+    "SG-INV-0371",
+    "SG-INV-0525",
+    "SG-INV-0329",
+    "SG-INV-0451"
+  ],
+  "scope": "A coordinate is a proposed illustrative site pin only, not an approved church identity, exact entry or navigation-grade GPS. The remaining 10 no-coordinate records are link-only reuse or non-current-Catholic heritage/identity-hold lanes. Public and draft place registry unchanged.",
+  "candidates": [
+    {
+      "candidate_id": "SG-INV-0542",
+      "coordinate_stage": {
+        "lat": -17.39834,
+        "lng": -66.28153,
+        "decision": "FEATURE_IDENTITY_REVIEW",
+        "source_url": "https://mapcarta.com/es/W207815827",
+        "scope_note": "OSM church is San Ildefonso, established Urkupiña shrine; never label a future sanctuary/basilica as this building.",
+        "precision": "site_illustrative_not_entrance",
+        "source_attribution": "© OpenStreetMap contributors (ODbL 1.0)",
+        "coordinate_owner_approved": false
+      },
+      "hold": null,
+      "import_ready": false,
+      "publicly_published": false
+    },
+    {
+      "candidate_id": "SG-INV-0509",
+      "coordinate_stage": {
+        "lat": 4.56836,
+        "lng": -74.09584,
+        "decision": "SITE_ILLUSTRATIVE",
+        "source_url": "https://mapcarta.com/es/W1393672774",
+        "scope_note": "Bogotá Divino Niño sanctuary religious precinct, not entrance.",
+        "precision": "site_illustrative_not_entrance",
+        "source_attribution": "© OpenStreetMap contributors (ODbL 1.0)",
+        "coordinate_owner_approved": false
+      },
+      "hold": null,
+      "import_ready": false,
+      "publicly_published": false
+    },
+    {
+      "candidate_id": "SG-INV-0290",
+      "coordinate_stage": {
+        "lat": 49.485329,
+        "lng": 13.580676,
+        "decision": "SITE_ILLUSTRATIVE",
+        "source_url": "https://www.bip.cz/cs/katalog/kostely/filialni-kostel-sv-jana-nepomuckeho",
+        "scope_note": "Diocese locates St John Nepomuk Church; remove conflated second dedication to St John Baptist.",
+        "precision": "site_illustrative_not_entrance",
+        "source_attribution": "Cited source",
+        "coordinate_owner_approved": false
+      },
+      "hold": null,
+      "import_ready": false,
+      "publicly_published": false
+    },
+    {
+      "candidate_id": "SG-INV-0131",
+      "coordinate_stage": {
+        "lat": 43.3645379,
+        "lng": -3.4169509,
+        "decision": "GEOMETRY_NEEDS_SECOND_SOURCE",
+        "source_url": "https://pte.es/sitio/Limpias/st23801/Santuario-del-Santo-Cristo-de-la-Agonia-de-Limpias-Iglesia-de-San-Pedro.html",
+        "scope_note": "Santo Cristo devotion is at San Pedro church; third-party GPS lead only.",
+        "precision": "site_illustrative_not_entrance",
+        "source_attribution": "Cited source",
+        "coordinate_owner_approved": false
+      },
+      "hold": null,
+      "import_ready": false,
+      "publicly_published": false
+    },
+    {
+      "candidate_id": "SG-INV-0367",
+      "coordinate_stage": {
+        "lat": 61.14742089,
+        "lng": 22.3255635,
+        "decision": "SITE_ILLUSTRATIVE",
+        "source_url": "https://www.kyppi.fi/palveluikkuna/mjreki/read/asp/r_kohde_det.aspx?KOHDE_ID=319010019",
+        "scope_note": "Finland heritage registry coordinates for Kirkkokari island, not an active church.",
+        "precision": "site_illustrative_not_entrance",
+        "source_attribution": "Cited source",
+        "coordinate_owner_approved": false
+      },
+      "hold": null,
+      "import_ready": false,
+      "publicly_published": false
+    },
+    {
+      "candidate_id": "CL-FR-20261105-14",
+      "coordinate_stage": {
+        "lat": 44.152875,
+        "lng": 5.098385,
+        "decision": "SITE_ILLUSTRATIVE",
+        "source_url": "https://www.barroux.org/comment-venir-au-monastere/",
+        "scope_note": "Abbey's exact published visitor GPS; not building entrance.",
+        "precision": "site_illustrative_not_entrance",
+        "source_attribution": "Cited source",
+        "coordinate_owner_approved": false
+      },
+      "hold": null,
+      "import_ready": false,
+      "publicly_published": false
+    },
+    {
+      "candidate_id": "SG-INV-0679",
+      "coordinate_stage": null,
+      "hold": {
+        "code": "NO_VERIFIED_SHRINE_FEATURE",
+        "note": "Lembah Karmel near Cikanyere but generic village coordinates are not the retreat/shrine grounds."
+      },
+      "import_ready": false,
+      "publicly_published": false
+    },
+    {
+      "candidate_id": "SG-INV-0239",
+      "coordinate_stage": {
+        "lat": 53.14276,
+        "lng": -6.90804,
+        "decision": "SITE_ILLUSTRATIVE",
+        "source_url": "https://mapcarta.com/N451716106",
+        "scope_note": "Tully Kildare Holy Well, NOT the Kilcullen well 53.1294,-6.74184.",
+        "precision": "site_illustrative_not_entrance",
+        "source_attribution": "© OpenStreetMap contributors (ODbL 1.0)",
+        "coordinate_owner_approved": false
+      },
+      "hold": null,
+      "import_ready": false,
+      "publicly_published": false
+    },
+    {
+      "candidate_id": "SG-INV-0071",
+      "coordinate_stage": null,
+      "hold": {
+        "code": "REUSE_OR_WRONG_SHRINE_TITLE",
+        "note": "Already-linked Bergamo canonical places and distinct Colle Gallo Madonna della Neve require target resolution."
+      },
+      "import_ready": false,
+      "publicly_published": false
+    },
+    {
+      "candidate_id": "SG-INV-0475",
+      "coordinate_stage": null,
+      "hold": {
+        "code": "UNCONFIRMED_PHYSICAL_IDENTITY",
+        "note": "Our Lady of the Angels Kingston shrine not established at an individually locatable building."
+      },
+      "import_ready": false,
+      "publicly_published": false
+    },
+    {
+      "candidate_id": "SG-INV-0579",
+      "coordinate_stage": {
+        "lat": 34.22314,
+        "lng": 35.72315,
+        "decision": "GEOMETRY_NEEDS_SECOND_SOURCE",
+        "source_url": "https://lebanon.worldplaces.me/view-place/52905768-deir-kfifane.html",
+        "scope_note": "Kfifan monastery St Cyprian and Justina containing St Nimatullah shrine; crowdsource coordinate.",
+        "precision": "site_illustrative_not_entrance",
+        "source_attribution": "Cited source",
+        "coordinate_owner_approved": false
+      },
+      "hold": null,
+      "import_ready": false,
+      "publicly_published": false
+    },
+    {
+      "candidate_id": "SG-INV-0676",
+      "coordinate_stage": null,
+      "hold": {
+        "code": "UNCONFIRMED_PHYSICAL_IDENTITY",
+        "note": "Generic Kuala Lumpur church directory does not identify a distinct St Jude shrine building."
+      },
+      "import_ready": false,
+      "publicly_published": false
+    },
+    {
+      "candidate_id": "SG-INV-0716",
+      "coordinate_stage": {
+        "lat": 6.16127778,
+        "lng": 6.77677778,
+        "decision": "SITE_ILLUSTRATIVE",
+        "source_url": "https://www.wikidata.org/wiki/Q5052196",
+        "scope_note": "Onitsha Holy Trinity Cathedral Basilica; Wikidata linked OSM way, archdiocese provides 1 Mission Road.",
+        "precision": "site_illustrative_not_entrance",
+        "source_attribution": "Cited source",
+        "coordinate_owner_approved": false
+      },
+      "hold": null,
+      "import_ready": false,
+      "publicly_published": false
+    },
+    {
+      "candidate_id": "SG-INV-0454",
+      "coordinate_stage": {
+        "lat": 11.87374,
+        "lng": -86.05127,
+        "decision": "GEOMETRY_NEEDS_SECOND_SOURCE",
+        "source_url": "https://nicaragua.worldplaces.me/es/review/91906396-santuario-diocesano-nuestra-senora-de-candelaria-diriomo.html",
+        "scope_note": "Reported Diriomo shrine location; pastoral centre directory ~680m away; confirm footprint.",
+        "precision": "site_illustrative_not_entrance",
+        "source_attribution": "Cited source",
+        "coordinate_owner_approved": false
+      },
+      "hold": null,
+      "import_ready": false,
+      "publicly_published": false
+    },
+    {
+      "candidate_id": "SG-INV-0455",
+      "coordinate_stage": {
+        "lat": 12.4365,
+        "lng": -86.87903,
+        "decision": "SITE_ILLUSTRATIVE",
+        "source_url": "https://mapcarta.com/W305067006",
+        "scope_note": "Active La Merced León church, NOT La Merced ruins at León Viejo 12.39895,-86.61717.",
+        "precision": "site_illustrative_not_entrance",
+        "source_attribution": "© OpenStreetMap contributors (ODbL 1.0)",
+        "coordinate_owner_approved": false
+      },
+      "hold": null,
+      "import_ready": false,
+      "publicly_published": false
+    },
+    {
+      "candidate_id": "SG-INV-0230",
+      "coordinate_stage": null,
+      "hold": {
+        "code": "MULTIPLE_ECHT_CHAPELS",
+        "note": "Edith Stein's convent chapel and St Landricus adoration chapel are distinct; Chapel of Our Lady title insufficient."
+      },
+      "import_ready": false,
+      "publicly_published": false
+    },
+    {
+      "candidate_id": "SG-INV-0229",
+      "coordinate_stage": null,
+      "hold": {
+        "code": "MULTIPLE_SITTARD_CHAPELS",
+        "note": "Sittard has De Wieër Marian chapel, Sacred Heart basilica and others; title too generic."
+      },
+      "import_ready": false,
+      "publicly_published": false
+    },
+    {
+      "candidate_id": "SG-INV-0233",
+      "coordinate_stage": null,
+      "hold": {
+        "code": "HISTORIC_SITE_NOT_ACTIVE_BUILDING",
+        "note": "Heilige Stede Amsterdam is a historic devotion, not proven present independent Catholic church building."
+      },
+      "import_ready": false,
+      "publicly_published": false
+    },
+    {
+      "candidate_id": "SG-INV-0745",
+      "coordinate_stage": {
+        "lat": -41.32884,
+        "lng": 174.77066,
+        "decision": "SITE_ILLUSTRATIVE",
+        "source_url": "https://mapcarta.com/W326643170",
+        "scope_note": "Sisters of Compassion chapel on Island Bay campus, separate from Home of Compassion buildings.",
+        "precision": "site_illustrative_not_entrance",
+        "source_attribution": "© OpenStreetMap contributors (ODbL 1.0)",
+        "coordinate_owner_approved": false
+      },
+      "hold": null,
+      "import_ready": false,
+      "publicly_published": false
+    },
+    {
+      "candidate_id": "SG-INV-0461",
+      "coordinate_stage": {
+        "lat": 9.5541,
+        "lng": -79.65466,
+        "decision": "SITE_ILLUSTRATIVE",
+        "source_url": "https://mapcarta.com/36846084",
+        "scope_note": "Iglesia San Felipe Portobelo houses Black Christ statue, one church, not separate shrine building.",
+        "precision": "site_illustrative_not_entrance",
+        "source_attribution": "© OpenStreetMap contributors (ODbL 1.0)",
+        "coordinate_owner_approved": false
+      },
+      "hold": null,
+      "import_ready": false,
+      "publicly_published": false
+    },
+    {
+      "candidate_id": "SG-INV-0523",
+      "coordinate_stage": {
+        "lat": -7.9018,
+        "lng": -78.56577,
+        "decision": "SITE_ILLUSTRATIVE",
+        "source_url": "https://mapcarta.com/W897994016",
+        "scope_note": "Otuzco Virgen de la Puerta church opposite Plaza; matches Peru government tourism inventory.",
+        "precision": "site_illustrative_not_entrance",
+        "source_attribution": "© OpenStreetMap contributors (ODbL 1.0)",
+        "coordinate_owner_approved": false
+      },
+      "hold": null,
+      "import_ready": false,
+      "publicly_published": false
+    },
+    {
+      "candidate_id": "SG-INV-0747",
+      "coordinate_stage": {
+        "lat": -4.274543,
+        "lng": 152.126021,
+        "decision": "GEOMETRY_NEEDS_SECOND_SOURCE",
+        "source_url": "https://www.destinationes.com/pilgrimage/rakunai",
+        "scope_note": "Rakunai St Peter To Rot secondary guide coordinate; exact church/shrine OSM footprint not corroborated.",
+        "precision": "site_illustrative_not_entrance",
+        "source_attribution": "Cited source",
+        "coordinate_owner_approved": false
+      },
+      "hold": null,
+      "import_ready": false,
+      "publicly_published": false
+    },
+    {
+      "candidate_id": "SG-INV-0154",
+      "coordinate_stage": {
+        "lat": 41.20784,
+        "lng": -8.55297,
+        "decision": "SITE_ILLUSTRATIVE",
+        "source_url": "https://mapcarta.com/35983324",
+        "scope_note": "Ermesinde Sacred Heart Catholic church way; separate canonical sanctuary title check.",
+        "precision": "site_illustrative_not_entrance",
+        "source_attribution": "© OpenStreetMap contributors (ODbL 1.0)",
+        "coordinate_owner_approved": false
+      },
+      "hold": null,
+      "import_ready": false,
+      "publicly_published": false
+    },
+    {
+      "candidate_id": "SG-INV-0308",
+      "coordinate_stage": {
+        "lat": 46.2260083,
+        "lng": 15.5215889,
+        "decision": "SITE_ILLUSTRATIVE",
+        "source_url": "https://commons.wikimedia.org/wiki/Category:Calvary_in_%C5%A0marje_pri_Jel%C5%A1ah",
+        "scope_note": "Site geotag for linear Calvary stations, not the starting point or chapel entrance.",
+        "precision": "site_illustrative_not_entrance",
+        "source_attribution": "Cited source",
+        "coordinate_owner_approved": false
+      },
+      "hold": null,
+      "import_ready": false,
+      "publicly_published": false
+    },
+    {
+      "candidate_id": "SG-INV-0713",
+      "coordinate_stage": {
+        "lat": -6.43449722,
+        "lng": 38.89851667,
+        "decision": "SITE_ILLUSTRATIVE",
+        "source_url": "https://commons.wikimedia.org/wiki/Category:Holy_Ghost_Catholic_Mission_%28Bagamoyo%29",
+        "scope_note": "Holy Ghost Mission Bagamoyo site geotag: church and museum complex, not town centroid.",
+        "precision": "site_illustrative_not_entrance",
+        "source_attribution": "Cited source",
+        "coordinate_owner_approved": false
+      },
+      "hold": null,
+      "import_ready": false,
+      "publicly_published": false
+    },
+    {
+      "candidate_id": "SG-INV-0347",
+      "coordinate_stage": {
+        "lat": 49.381269,
+        "lng": 27.61802,
+        "decision": "GEOMETRY_NEEDS_SECOND_SOURCE",
+        "source_url": "https://travels.in.ua/en-US/object/985/letychiv-castle-dominican-monastery",
+        "scope_note": "Letychiv Castle/Assumption Church pilgrimage precinct, secondary historical coordinate.",
+        "precision": "site_illustrative_not_entrance",
+        "source_attribution": "Cited source",
+        "coordinate_owner_approved": false
+      },
+      "hold": null,
+      "import_ready": false,
+      "publicly_published": false
+    },
+    {
+      "candidate_id": "SG-INV-0534",
+      "coordinate_stage": null,
+      "hold": {
+        "code": "COLONIA_VS_CARMELO_AMBIGUITY",
+        "note": "Uruguay bishops list Santuario del Carmen at Carmelo in Colonia department, not necessarily Colonia del Sacramento."
+      },
+      "import_ready": false,
+      "publicly_published": false
+    },
+    {
+      "candidate_id": "SG-INV-0535",
+      "coordinate_stage": {
+        "lat": -34.09417,
+        "lng": -56.21338,
+        "decision": "GEOMETRY_NEEDS_SECOND_SOURCE",
+        "source_url": "https://www.uruguayenvacaciones.com/floridaimagen.html",
+        "scope_note": "Reported Capilla San Cono Florida GPS, not Basilica Cathedral of Thirty-Three.",
+        "precision": "site_illustrative_not_entrance",
+        "source_attribution": "Cited source",
+        "coordinate_owner_approved": false
+      },
+      "hold": null,
+      "import_ready": false,
+      "publicly_published": false
+    },
+    {
+      "candidate_id": "SG-INV-0539",
+      "coordinate_stage": {
+        "lat": 10.05958,
+        "lng": -69.27014,
+        "decision": "SITE_ILLUSTRATIVE",
+        "source_url": "https://mapcarta.com/es/N4305648457",
+        "scope_note": "Santa Rosa Church/Divina Pastora shrine, not another downtown Parroquia Divina Pastora.",
+        "precision": "site_illustrative_not_entrance",
+        "source_attribution": "© OpenStreetMap contributors (ODbL 1.0)",
+        "coordinate_owner_approved": false
+      },
+      "hold": null,
+      "import_ready": false,
+      "publicly_published": false
+    },
+    {
+      "candidate_id": "SG-INV-0723",
+      "coordinate_stage": null,
+      "hold": {
+        "code": "MISSING_EXACT_SHRINE_FEATURE",
+        "note": "Benedict Daswa Tshitanini pilgrimage site lacks source-backed distinct shrine footprint."
+      },
+      "import_ready": false,
+      "publicly_published": false
+    }
+  ]
+}
