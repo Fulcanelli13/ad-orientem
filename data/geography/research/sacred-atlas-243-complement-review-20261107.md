@@ -2,7 +2,7 @@
 
 **7 November 2026. Research-only triage. No additional Place approval, import, or public publication.**
 
-This reconciles the original [Stage 25 unified master](../../../../data/geography/research/sacred-atlas-243-complement-triage-20261107.v1.json) by its SHA-256
+This reconciles the original Stage 25 unified master (uploaded source snapshot, not committed to this branch) by its SHA-256
 `11e580c0509d6ce4927068e2d0c8efa807577e8046a5f6694813fb9d0f1475b7`.
 The 942-row CSV contains 530 production identities and 412 noncanonical Claude proposals. The earlier 169-row intake and this complementary 243-ID roster are **disjoint and exhaustive** by source candidate ID. The full original CSV is external to this PR; the roster is a classification snapshot, **not a source-page verification of all 243**.
 
