@@ -8,6 +8,7 @@ on:
       - tests/pray-work-identity-registry-20261106.mjs
       - tests/pray-work-identity-source-evidence-20261106.mjs
       - tests/pray-work-language-source-audit-20261107.mjs
+      - tests/pray-work-remaining-source-audit-20261107.mjs
       - data/pray/prayer-work-language-evidence-20261107.v1.json
       - .github/workflows/pray-work-identity-registry.yml
   pull_request:
@@ -16,6 +17,7 @@ on:
       - tests/pray-work-identity-registry-20261106.mjs
       - tests/pray-work-identity-source-evidence-20261106.mjs
       - tests/pray-work-language-source-audit-20261107.mjs
+      - tests/pray-work-remaining-source-audit-20261107.mjs
       - data/pray/prayer-work-language-evidence-20261107.v1.json
       - .github/workflows/pray-work-identity-registry.yml
   workflow_dispatch:
@@ -36,6 +38,8 @@ jobs:
         run: node tests/pray-work-identity-source-evidence-20261106.mjs
       - name: Audit 36 novena, traditional, and hymn source-language works
         run: node tests/pray-work-language-source-audit-20261107.mjs
+      - name: Audit 48 remaining source-owned prayer and programme identities
+        run: node tests/pray-work-remaining-source-audit-20261107.mjs
       - name: Run existing novena and traditional source-to-card regression contracts
         run: |
           node tests/pray-novenas.mjs
