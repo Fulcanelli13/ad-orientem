@@ -1,0 +1,173 @@
+{
+  "schema": "ao.pray.registry.stage6.body-stage-browser-evidence.v1",
+  "sourceCommit": "eaea5cdede3b354759cb624135fdd4f4b3865b55",
+  "branch": "research/prayer-work-identity-registry-20261106",
+  "pullRequest": 2594,
+  "run": {
+    "id": 42367087292,
+    "url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42367087292",
+    "conclusion": "success"
+  },
+  "scope": "Existing reader behavior on research branch; classification registry is not used by runtime. Browser body parity, guided stage testing and selected control paths, NOT all variants or independent first-edition certification.",
+  "bodyParity": {
+    "test": "tests/pray-work-nine-intercessions-visible-phone-20261107.mjs",
+    "jobId": 128387305752,
+    "outcome": "success",
+    "sourceWorks": [
+      {
+        "id": "priest_intercession_eternal_priest_1914_en",
+        "route": "pray.for_priests",
+        "purpose": "priests",
+        "classification": "independent-supplemental-source"
+      },
+      {
+        "id": "priest_intercession_vocations_raccolta_1910",
+        "route": "pray.for_priests",
+        "purpose": "vocations",
+        "classification": "independent-supplemental-source"
+      },
+      {
+        "id": "priest_intercession_perseverance_raccolta_1910",
+        "route": "pray.for_priests",
+        "purpose": "perseverance",
+        "classification": "independent-supplemental-source"
+      },
+      {
+        "id": "occasional_for_sick_lasance_1911_en",
+        "route": "pray.occasional_intercessions",
+        "purpose": "sick",
+        "classification": "independent-supplemental-source"
+      },
+      {
+        "id": "occasional_holy_family_lasance_1910_en",
+        "route": "pray.occasional_intercessions",
+        "purpose": "family",
+        "classification": "independent-supplemental-source"
+      },
+      {
+        "id": "occasional_peace_raccolta_1910_18",
+        "route": "pray.occasional_intercessions",
+        "purpose": "peace",
+        "classification": "independent-supplemental-source"
+      },
+      {
+        "id": "occasional_travel_lasance_1911_en",
+        "route": "pray.occasional_intercessions",
+        "purpose": "travel",
+        "classification": "independent-supplemental-source"
+      },
+      {
+        "id": "occasional_discernment_lasance_1911_en",
+        "route": "pray.occasional_intercessions",
+        "purpose": "discernment",
+        "classification": "independent-supplemental-source"
+      },
+      {
+        "id": "devotion_ad_te_beate_ioseph",
+        "route": "pray.occasional_intercessions",
+        "purpose": "difficulties",
+        "classification": "reuse-of-existing-canonical-source"
+      }
+    ],
+    "uniqueSourceWorks": 9,
+    "supplementalSourceWorks": 8,
+    "canonicalSourceReuse": 1,
+    "selections": 36,
+    "widths": [
+      320,
+      390
+    ],
+    "uiLanguages": [
+      "en",
+      "fr"
+    ],
+    "whatPassed": "Displayed text matched source-owned prayer text (normalised whitespace) and real language tag. EN/LA switches and French-language notices were exercised wherever applicable.",
+    "importantLimits": [
+      "A French interface may correctly show an original English or Latin text with a source notice; this is not a French translation certificate.",
+      "Printer-facsimile certification and original-edition rights still require independent evidence."
+    ],
+    "artifact": {
+      "id": 13571704914,
+      "name": "prayer-stage6-nine-intercession-body-parity"
+    }
+  },
+  "specialistReaders": {
+    "adoration": {
+      "jobId": 128387305590,
+      "passed": true,
+      "guidedStageVariants": 104,
+      "sourceRoundTrips": 12,
+      "stagePositionReturns": 16,
+      "treasurySourceHandoffs": 28,
+      "artifact": {
+        "id": 13571439147,
+        "name": "prayer-stage6-adoration-guided"
+      }
+    },
+    "confessionBenediction": {
+      "jobId": 128387305888,
+      "passed": true,
+      "confessionPaths": 3,
+      "examRiteAftercareCardChecks": 272,
+      "benedictionStageChecks": 72,
+      "ordinaryBenedictionStages": 7,
+      "christKingOptInStages": 11,
+      "widths": [
+        320,
+        390
+      ],
+      "uiLanguages": [
+        "en",
+        "fr"
+      ],
+      "artifact": {
+        "id": 13571798279,
+        "name": "prayer-stage6-confession-benediction"
+      }
+    },
+    "rosaryChaplets": {
+      "jobId": 128387305838,
+      "passed": true,
+      "rosarySourceReaderWidths": [
+        320,
+        390
+      ],
+      "tests": [
+        "tests/rosary-canonical-phone-controls.mjs",
+        "tests/pray-chaplet-f07-variants-phone.mjs"
+      ],
+      "chapletVariants": [
+        "five-wounds",
+        "precious-blood",
+        "little-crown"
+      ],
+      "widths": [
+        320,
+        390
+      ],
+      "artifact": {
+        "id": 13572615462,
+        "name": "prayer-stage6-rosary-chaplet-captures"
+      },
+      "limits": [
+        "Rosary checks protect the canonical bead engine, Scripture handoffs, text/navigation and layout, not every bead's independent translation witness.",
+        "Chaplet tests check original source-owned first-prayer, controls, next/previous and rollback-safe navigation, not all bead-position bodies or original print editions."
+      ]
+    }
+  },
+  "availabilityPolicy": {
+    "all84SupplementalWorkFullRouteCertificates": false,
+    "sourceOfTruth": "original live owners",
+    "registryImportedToRuntime": false,
+    "publicationChanges": false,
+    "sourceBodyMutations": false,
+    "genericRendererIntroduced": false,
+    "learningModuleIntroduced": false,
+    "deployments": false
+  },
+  "next": [
+    "Reconcile body-visible source truth for other individual supplemental prayers: Golden Arrow, Litany, historical witnesses, Holy Face and Good Death before broad verification claims.",
+    "Audit independent original-source print/text editions and source language gaps separately from browser acceptance.",
+    "Only then draft no-duplication taxonomy references for the Prayer catalogue without changing specialised readers."
+  ]
+}
