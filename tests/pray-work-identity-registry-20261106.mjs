@@ -41,6 +41,10 @@ check(new Set(preservedCanonicalIds).size===48,"Duplicate canonical source owner
 check(originalCanonicalIds.every(x=>preservedCanonicalIds.includes(x)),"Canonical corpus has lost a legacy ID");
 check(items.filter(w=>w.legacyCanonicalIds.length>0).length===46,"48 canonical forms must group into 46 independent works");
 
+const audited=items.filter(w=>w.sourceBodyEvidence);
+check(audited.length===36,"Stage 3 needs evidence for all 36 works");
+check(registry.counts.sourceBodyAudited===36,"Audited work count drifted");
+check(registry.counts.routeUIVerified===0,"Source testing must not pretend browser reader verification");
 const expectedAvailable=["published","route-unverified","external-link","source-only"];
 check(Object.keys(registry.counts.byAvailability).every(x=>expectedAvailable.includes(x)),"Unexpected availability term");
 check(registry.counts.catalogueWorks===items.length,"Embedded catalogue count is stale");
