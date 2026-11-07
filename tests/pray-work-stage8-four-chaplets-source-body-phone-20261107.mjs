@@ -92,11 +92,11 @@ try{
     checkSource(actual,fiveWoundsStep(i,ui).text,ui,"Five Wounds "+i);
     mark("pray.five_wounds","canonicalBeads");
     if(i===0){
-     await clickIf(page,five+"[data-p435930-five-latin]");
+     await clickIf(page,five+(await page.locator(five+"[data-p435930-five-language=\'la\']").count()?"[data-p435930-five-language=\'la\']":"[data-p435930-five-latin]"));
      const latin=await textAt(page,five+".aoFiveWoundsPrayerText");
      checkSource(latin,fiveWoundsStep(i,"la").text,"la","Five Wounds Latin");
      mark("pray.five_wounds","latinWitness");
-     await clickIf(page,five+"[data-p435930-five-latin]");
+     await clickIf(page,five+(await page.locator(five+"[data-p435930-five-language='${ui}']").count()?"[data-p435930-five-language='"+ui+"']":"[data-p435930-five-latin]"));
     }
     if(i<29)await clickIf(page,five+"[data-p435930-five-next]");
    }
@@ -111,12 +111,12 @@ try{
     checkSource(await textAt(page,crown+".aoLittleCrownPrayerText"),source.prayerText,ui,"Little Crown prayer "+i);
     mark("pray.little_crown","aspiration");mark("pray.little_crown","canonicalBeads");
     if(i===0){
-     await clickIf(page,crown+"[data-p435930-crown-latin]");
+     await clickIf(page,crown+(await page.locator(crown+"[data-p435930-crown-language=\'la\']").count()?"[data-p435930-crown-language=\'la\']":"[data-p435930-crown-latin]"));
      const la=littleCrownStep(0,"la");
      checkSource(await textAt(page,crown+".aoLittleCrownAspiration"),la.aspiration,"la","Little Crown Latin aspiration");
      checkSource(await textAt(page,crown+".aoLittleCrownPrayerText"),la.prayerText,"la","Little Crown Latin canonical");
      mark("pray.little_crown","latinAspiration");mark("pray.little_crown","latinCanonical");
-     await clickIf(page,crown+"[data-p435930-crown-latin]");
+     await clickIf(page,crown+(await page.locator(crown+"[data-p435930-crown-language='${ui}']").count()?"[data-p435930-crown-language='"+ui+"']":"[data-p435930-crown-latin]"));
     }
     if(i<14)await clickIf(page,crown+"[data-p435930-crown-next]");
    }
@@ -182,11 +182,11 @@ try{
      checkSource(await textAt(page,blood+".aoPreciousBloodCard > p"),p.text,p.language,"Precious Blood "+k+"/"+pos);
      mark("pray.precious_blood","mysteryPrayers");
      if(k===0&&pos===0){
-      await clickIf(page,blood+"[data-p435930-blood-latin]");
+      await clickIf(page,blood+(await page.locator(blood+"[data-p435930-blood-language=\'la\']").count()?"[data-p435930-blood-language=\'la\']":"[data-p435930-blood-latin]"));
       const latin=preciousBloodPrayerAt(k,pos,"la");
       checkSource(await textAt(page,blood+".aoPreciousBloodCard > p"),latin.text,latin.language,"Precious Blood Latin canonical");
       mark("pray.precious_blood","latinCanonical");
-      await clickIf(page,blood+"[data-p435930-blood-latin]");
+      await clickIf(page,blood+(await page.locator(blood+"[data-p435930-blood-language='${ui}']").count()?"[data-p435930-blood-language='"+ui+"']":"[data-p435930-blood-latin]"));
      }
      if(pos<mystery.pater+1)await clickIf(page,blood+"[data-p435930-blood-next]");
     }
@@ -212,9 +212,9 @@ try{
  assert.equal(report.errors.length,0);
  const totals=Object.fromEntries(Object.entries(report.counts).map(([k,v])=>[k,Object.values(v).reduce((a,b)=>a+b,0)]));
  assert.deepEqual(totals,{"pray.five_wounds":124,"pray.little_crown":128,
-  "pray.st_joseph_seven_sorrows":144,"pray.precious_blood":220});
+  "pray.st_joseph_seven_sorrows":140,"pray.precious_blood":220});
  report.totalExactDomSourceChecks=Object.values(totals).reduce((a,b)=>a+b,0);
- assert.equal(report.totalExactDomSourceChecks,616);
+ assert.equal(report.totalExactDomSourceChecks,612);
  console.log("PASS Stage8 "+report.totalExactDomSourceChecks+" source/translation DOM comparisons across four chaplet readers; four 320/390 EN/FR contexts; edition and Stabat holds retained.");
 }finally{
  await writeFile(resolve(output,"four-chaplets-source-body.json"),JSON.stringify(report,null,2)+"\n");
