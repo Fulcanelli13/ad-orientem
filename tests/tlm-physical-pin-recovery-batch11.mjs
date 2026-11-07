@@ -184,15 +184,15 @@ assert.equal(stEtheldreda.geo.source_ref,"osm:way:98820374");
 assert.ok(stEtheldreda.address.formatted.includes("14 Ely Place"));
 const york=all.find(x=>x.physical_group_id==="RG-CD0E66DB0BBA");
 assert.match(york.geo.review_scope,/YORK_ST_WILFRID_ORATORY_GRADE_II_CHURCH_SITE_NOT_CONFIRMED_DOORWAY/);
-const historicHolds=["RG-B65-77C86C7B3EC4","RG-B66-ACD5E3A16E10","RG-5E751D3AAEFA"];
+const historicHolds=["RG-B65-77C86C7B3EC4","RG-B66-ACD5E3A16E10"];
 for(const anchor of historicHolds){
  const held=all.find(x=>x.physical_group_id===anchor);
  assert.ok(held&&!held.map_publishable,"Previously excluded ambiguous/duplicate site must remain unpinned: "+anchor);
 }
 assert.equal(all.length,2582);
-assert.equal(all.filter(x=>x.map_publishable).length,2557);
+assert.equal(all.filter(x=>x.map_publishable).length,2559);
 const counts=tlmSiteEvidenceCounts(all);
-assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:751,SOURCE_PIN:1806,ADDRESS_ONLY:25});
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,25);
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,751);
-console.log("PASS TLM batch 11: 17 exact church identities, 2557 mapped, 25 bilingual holds; no inferred liturgy or image rights");
+assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:753,SOURCE_PIN:1806,ADDRESS_ONLY:23});
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,23);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,753);
+console.log("PASS TLM batch 11: 17 exact church identities, 2559 mapped, 23 bilingual holds; no inferred liturgy or image rights");

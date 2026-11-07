@@ -4,10 +4,34 @@ on:
   pull_request:
     paths:
       - 'tests/mass-1962-multiple-commemorations-year-audit.mjs'
+      - 'src/mass/browser-entry.js'
+      - 'src/mass/1962-commemoration-form-source.js'
+      - 'src/mass/1962-multiple-commemoration-source.js'
+      - 'src/mass/1962-passion-friday-commemorations.js'
+      - 'src/mass/reader-proper-runtime-recovery.js'
+      - 'src/mass/proper-reader-slots.js'
+      - 'src/mass/ordo-mass-completeness.js'
+      - 'src/calendar/print-proper.js'
+      - 'src/calendar/liturgical-year.js'
+      - 'src/calendar/ordo-mass-facts.js'
+      - 'src/mass/host-adapter.js'
+      - 'src/home/browser-entry.js'
       - '.github/workflows/mass-1962-multi-commemoration-source-audit.yml'
   push:
     paths:
       - 'tests/mass-1962-multiple-commemorations-year-audit.mjs'
+      - 'src/mass/browser-entry.js'
+      - 'src/mass/1962-commemoration-form-source.js'
+      - 'src/mass/1962-multiple-commemoration-source.js'
+      - 'src/mass/1962-passion-friday-commemorations.js'
+      - 'src/mass/reader-proper-runtime-recovery.js'
+      - 'src/mass/proper-reader-slots.js'
+      - 'src/mass/ordo-mass-completeness.js'
+      - 'src/calendar/print-proper.js'
+      - 'src/calendar/liturgical-year.js'
+      - 'src/calendar/ordo-mass-facts.js'
+      - 'src/mass/host-adapter.js'
+      - 'src/home/browser-entry.js'
       - '.github/workflows/mass-1962-multi-commemoration-source-audit.yml'
 jobs:
   entire-calendar-witness:
@@ -22,5 +46,5 @@ jobs:
           node-version: '22'
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
-      - name: Inspect actual 2026 source calendar for multiple commemorations
+      - name: Gate 365 actual 2026 day resolutions and source-certified oration groups in all Mass forms
         run: node tests/mass-1962-multiple-commemorations-year-audit.mjs

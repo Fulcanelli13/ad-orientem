@@ -63,9 +63,9 @@ assert.ok(poi.facts.some(x=>x.label==="Map position"&&x.value.includes("building
 const campus=all.find(x=>x.physical_group_id==="RG-B70-2945A96ECEDE");
 assert.ok(campus.facts.some(x=>x.label==="Map position"&&x.value.includes("campus")));
 assert.equal(all.length,2582);
-assert.equal(all.filter(x=>x.map_publishable).length,2557);
+assert.equal(all.filter(x=>x.map_publishable).length,2559);
 const counts=tlmSiteEvidenceCounts(all);
-assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:751,SOURCE_PIN:1806,ADDRESS_ONLY:25});
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,25);
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,751);
-console.log("PASS TLM batch 12: eight reviewed source-identities, 2557 mapped, 25 unpinned; no invented Mass or image rights");
+assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:753,SOURCE_PIN:1806,ADDRESS_ONLY:23});
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,23);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,753);
+console.log("PASS TLM batch 12: eight reviewed source-identities, 2559 mapped, 23 unpinned; no invented Mass or image rights");
