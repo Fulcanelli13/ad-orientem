@@ -6,6 +6,7 @@ Every hit is a candidate: no automatic institutional identity promotion.
 """
 from __future__ import annotations
 import concurrent.futures
+import html
 import json
 import re
 import time
@@ -44,7 +45,8 @@ def fetch(url,params=None):
                     record["document"]=json.loads(text)
                     record["json"]=True
                 except Exception:
-                    record["text"]=re.sub(r"\s+"," ",re.sub(r"<[^>]+>"," ",text))[:16000]
+                    no_scripts=re.sub(r"<(script|style)\\b[^>]*>.*?</\\1>"," ",text,flags=re.I|re.S)
+                record["text"]=re.sub(r"\\s+"," ",html.unescape(re.sub(r"<[^>]+>"," ",no_scripts)))[:60000]
     except Exception as exc:
         record["error"]=f"{type(exc).__name__}: {str(exc)[:250]}"
     return record
@@ -141,6 +143,18 @@ def probe_entry(entry):
     else:
         raw=r.get("text","")
         result["page_excerpt"]=raw[:3500]
+        terms=["Jordaens","Ter Brugghen","Dérision","Numéro d’inventaire","Numéro d'inventaire",
+          "Inventaire","Attribution","Teniers","Palma","Jacob","de Wet","Tibériade",
+          "Christ mort","Saint Matthieu","GRO0420","Herregouts","Statut juridique",
+          "P 85","P 48","MG 2405","1938 E 294","990","notice"]
+        spans=[]
+        for term in terms:
+            m=re.search(re.escape(term),raw,re.I)
+            if m:
+                snippet=raw[max(0,m.start()-180):min(len(raw),m.end()+700)]
+                if snippet not in spans:spans.append(snippet)
+        result["notice_relevant_spans"]=spans[:18]
+        result["page_text_length"]=len(raw)
         result["term_occurrences"]={term:len(re.findall(re.escape(term),raw,re.I))
               for term in ("Herreyns","Ter Brugghen","Jordaens","de Wet","Teniers","GRO0420","Herregouts")}
     return result
@@ -151,6 +165,9 @@ def main():
     assert outstanding==EXPECTED,(sorted(outstanding),sorted(EXPECTED))
     start=time.monotonic()
     kmska=scan_kmska()
+    institutional_oai=fetch("https://datahub.vlaamsekunstcollectie.be/oai/",{"verb":"ListIdentifiers","metadataPrefix":"oai_lido"})
+    oai_check={k:v for k,v in institutional_oai.items() if k not in ("document","text")}
+    oai_check["response_excerpt"]=institutional_oai.get("text","")[:1200]
     jobs=[(rid,label,url,*rest) for rid,entries in PROBES.items() for label,url,*rest in entries]
     with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
         retrieved=list(pool.map(probe_entry,jobs))
@@ -159,7 +176,7 @@ def main():
       "schema":"AO_SACRED_ART_PHASE39_BOUNDED_OFFICIAL_ENDPOINT_EVIDENCE",
       "baseline":{"identity_supported":163,"unresolved":14,"handpicked":177},
       "reviewed_registry_ids":sorted(outstanding),
-      "kmska_scan":kmska,
+      "kmska_scan":kmska,"flemish_institutional_oai_probe":oai_check,
       "other_source_probes":retrieved,
       "elapsed_seconds":round(time.monotonic()-start,2),
       "research_only":True,"gallery_replacements":0,"new_artwork_admissions":0,
