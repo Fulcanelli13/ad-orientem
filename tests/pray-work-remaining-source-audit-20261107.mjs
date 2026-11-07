@@ -180,6 +180,9 @@ const report={
  sourceImportFailures:[...modules].filter(([p,m])=>m?.error).map(([path,m])=>({path,error:m.error})),
  hardIssues:issues,rows:results
 };
+console.log("AO_PRAY_STAGE4_REPORT_BEGIN");
+console.log(JSON.stringify(report));
+console.log("AO_PRAY_STAGE4_REPORT_END");
 const snapshot=JSON.parse(read("data/pray/prayer-work-remaining-source-evidence-20261107.v1.json"));
 assert.equal(snapshot.schema,report.schema,"Recorded Stage 4 evidence schema changed");
 assert.deepEqual(snapshot.rows,report.rows,"48-work source/owner hashes or statuses drifted; require an explicit new evidence audit");
@@ -191,9 +194,7 @@ for(const row of report.rows){
  assert.equal(link.sourceHash,row.sourceHash,"Registry source digest mismatch for "+row.id);
  assert.equal(link.readerRouteDeclared,row.routeDeclared,"Route declaration evidence drifted for "+row.id);
 }
-console.log("AO_PRAY_STAGE4_REPORT_BEGIN");
-console.log(JSON.stringify(report));
-console.log("AO_PRAY_STAGE4_REPORT_END");
+
 assert.equal(pending.length,48,"Expected 48 unassessed supplementary work identities");
 assert.deepEqual(counts,{"individual-source":19,"litany-reader":1,"additional-novena":3,"canonical-composite":3,"devotion-or-chaplet":10,"reader-or-programme":12});
 assert.equal(new Set(results.map(x=>x.id)).size,48);
