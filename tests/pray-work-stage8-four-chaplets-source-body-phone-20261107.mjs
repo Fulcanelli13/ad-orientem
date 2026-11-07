@@ -63,6 +63,10 @@ async function clickIf(page,selector){
  assert.equal(await el.count(),1,"Missing original reader control "+selector);
  await el.evaluate(n=>n.click());
 }
+async function pickLang(page,base,kind,code){
+ const option=base+'[data-p435930-'+kind+'-language="'+code+'"]';
+ return clickIf(page,(await page.locator(option).count())?option:base+'[data-p435930-'+kind+'-latin]');
+}
 let browser;
 try{
  browser=await chromium.launch({headless:true});
@@ -92,11 +96,11 @@ try{
     checkSource(actual,fiveWoundsStep(i,ui).text,ui,"Five Wounds "+i);
     mark("pray.five_wounds","canonicalBeads");
     if(i===0){
-     await clickIf(page,five+(await page.locator(five+"[data-p435930-five-language=\'la\']").count()?"[data-p435930-five-language=\'la\']":"[data-p435930-five-latin]"));
+     await pickLang(page,five,"five","la");
      const latin=await textAt(page,five+".aoFiveWoundsPrayerText");
      checkSource(latin,fiveWoundsStep(i,"la").text,"la","Five Wounds Latin");
      mark("pray.five_wounds","latinWitness");
-     await clickIf(page,five+(await page.locator(five+"[data-p435930-five-language='${ui}']").count()?"[data-p435930-five-language='"+ui+"']":"[data-p435930-five-latin]"));
+     await pickLang(page,five,"five",ui);
     }
     if(i<29)await clickIf(page,five+"[data-p435930-five-next]");
    }
@@ -111,12 +115,12 @@ try{
     checkSource(await textAt(page,crown+".aoLittleCrownPrayerText"),source.prayerText,ui,"Little Crown prayer "+i);
     mark("pray.little_crown","aspiration");mark("pray.little_crown","canonicalBeads");
     if(i===0){
-     await clickIf(page,crown+(await page.locator(crown+"[data-p435930-crown-language=\'la\']").count()?"[data-p435930-crown-language=\'la\']":"[data-p435930-crown-latin]"));
+     await pickLang(page,crown,"crown","la");
      const la=littleCrownStep(0,"la");
      checkSource(await textAt(page,crown+".aoLittleCrownAspiration"),la.aspiration,"la","Little Crown Latin aspiration");
      checkSource(await textAt(page,crown+".aoLittleCrownPrayerText"),la.prayerText,"la","Little Crown Latin canonical");
      mark("pray.little_crown","latinAspiration");mark("pray.little_crown","latinCanonical");
-     await clickIf(page,crown+(await page.locator(crown+"[data-p435930-crown-language='${ui}']").count()?"[data-p435930-crown-language='"+ui+"']":"[data-p435930-crown-latin]"));
+     await pickLang(page,crown,"crown",ui);
     }
     if(i<14)await clickIf(page,crown+"[data-p435930-crown-next]");
    }
@@ -182,11 +186,11 @@ try{
      checkSource(await textAt(page,blood+".aoPreciousBloodCard > p"),p.text,p.language,"Precious Blood "+k+"/"+pos);
      mark("pray.precious_blood","mysteryPrayers");
      if(k===0&&pos===0){
-      await clickIf(page,blood+(await page.locator(blood+"[data-p435930-blood-language=\'la\']").count()?"[data-p435930-blood-language=\'la\']":"[data-p435930-blood-latin]"));
+      await pickLang(page,blood,"blood","la");
       const latin=preciousBloodPrayerAt(k,pos,"la");
       checkSource(await textAt(page,blood+".aoPreciousBloodCard > p"),latin.text,latin.language,"Precious Blood Latin canonical");
       mark("pray.precious_blood","latinCanonical");
-      await clickIf(page,blood+(await page.locator(blood+"[data-p435930-blood-language='${ui}']").count()?"[data-p435930-blood-language='"+ui+"']":"[data-p435930-blood-latin]"));
+      await pickLang(page,blood,"blood",ui);
      }
      if(pos<mystery.pater+1)await clickIf(page,blood+"[data-p435930-blood-next]");
     }
