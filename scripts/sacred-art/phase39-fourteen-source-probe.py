@@ -112,7 +112,10 @@ def scan_kmska():
 PROBES={
  "RECENT575::142":[("KIK_IRPA_HERREGOUTS_DIFFERENT_ARTWORK","https://balat.kikirpa.be/en/object/89062/")],
  "RECENT575::154":[("FLEMISH_OFFICIAL_ST_JEROME","https://vlaamsekunstcollectie.be/en/collection/0000-GRO0420-I"),
-   ("BRUGGE_OFFICIAL_ST_JEROME","https://www.museabrugge.be/collection/work/id/0000_gro0420_i")],
+   ("BRUGGE_OFFICIAL_ST_JEROME","https://www.museabrugge.be/collection/work/id/0000_gro0420_i"),
+   ("FLEMISH_OAI_ST_JEROME","https://datahub.vlaamsekunstcollectie.be/oai/",
+    {"verb":"GetRecord","metadataPrefix":"oai_lido",
+     "identifier":"oai:datahub.vlaamsekunstcollectie.be:www.museabrugge.be:0000_GRO0420_I"})],
  "RECENT575::179":[("KIK_IRPA_NICHOLAS_ALTARPIECE","https://balat.kikirpa.be/en/object/152399/")],
  "RECENT575::392":[("POP_JOCONDE_P85","https://pop.culture.gouv.fr/notice/joconde/000PE016876")],
  "RECENT575::402":[("POP_JOCONDE_P48","https://pop.culture.gouv.fr/notice/joconde/000PE017694")],
