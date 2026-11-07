@@ -172,7 +172,12 @@
       },
       "literalText": null,
       "routeDeclared": null,
-      "notes": []
+      "notes": [],
+      "originalLanguageWitness": {
+        "language": "en",
+        "body": "text-present",
+        "sourceEdition": null
+      }
     },
     {
       "id": "priest_intercession_vocations_raccolta_1910",
@@ -654,7 +659,13 @@
       "routeDeclared": null,
       "notes": [
         "Programme child, not a registered standalone route."
-      ]
+      ],
+      "originalLanguageWitness": {
+        "language": "en",
+        "body": "text-present",
+        "paragraphs": 10,
+        "sourceExport": "MONTFORT_B26_CONSECRATION_ACT_EN"
+      }
     },
     {
       "id": "ignatius_suscipe_lasance_1908_en",
@@ -691,7 +702,12 @@
       },
       "literalText": null,
       "routeDeclared": null,
-      "notes": []
+      "notes": [],
+      "originalLanguageWitness": {
+        "language": "en",
+        "body": "text-present",
+        "sourceEdition": null
+      }
     },
     {
       "id": "lasance_prayer_before_meditation_1908_en",
@@ -728,7 +744,12 @@
       },
       "literalText": null,
       "routeDeclared": null,
-      "notes": []
+      "notes": [],
+      "originalLanguageWitness": {
+        "language": "en",
+        "body": "text-present",
+        "sourceEdition": null
+      }
     },
     {
       "id": "thomas_aquinas_concede_mihi_lasance_1908_en",
@@ -765,7 +786,12 @@
       },
       "literalText": null,
       "routeDeclared": null,
-      "notes": []
+      "notes": [],
+      "originalLanguageWitness": {
+        "language": "en",
+        "body": "text-present",
+        "sourceEdition": null
+      }
     },
     {
       "id": "lasance_prayer_after_meditation_1908_en",
@@ -802,7 +828,12 @@
       },
       "literalText": null,
       "routeDeclared": null,
-      "notes": []
+      "notes": [],
+      "originalLanguageWitness": {
+        "language": "en",
+        "body": "text-present",
+        "sourceEdition": null
+      }
     },
     {
       "id": "divine_infant_king",
@@ -876,7 +907,24 @@
       "novenaForm": "REPEAT_FORM",
       "novenaPattern": "SOURCE_REPEAT_ONLY",
       "frenchSourceStatus": "TRADITIONAL_FRENCH_WITNESS_1885_NOTICE_TRANSCRIPTION",
-      "hasRepeatedText": true
+      "hasRepeatedText": true,
+      "properPrayerBodies": {
+        "la": {
+          "repeatedProper": false,
+          "daySpecificProperCount": 0,
+          "properTextPresent": false
+        },
+        "en": {
+          "repeatedProper": true,
+          "daySpecificProperCount": 0,
+          "properTextPresent": true
+        },
+        "fr": {
+          "repeatedProper": true,
+          "daySpecificProperCount": 0,
+          "properTextPresent": true
+        }
+      }
     },
     {
       "id": "icksp_immaculate_conception",
@@ -938,7 +986,24 @@
       "novenaForm": "REPEAT_FORM",
       "novenaPattern": "SOURCE_REPEAT_ONLY",
       "frenchSourceStatus": "TRADITIONAL_FRENCH_WITNESS_1903_PERIOD_SPECIFIC",
-      "hasRepeatedText": true
+      "hasRepeatedText": true,
+      "properPrayerBodies": {
+        "la": {
+          "repeatedProper": false,
+          "daySpecificProperCount": 0,
+          "properTextPresent": false
+        },
+        "en": {
+          "repeatedProper": true,
+          "daySpecificProperCount": 0,
+          "properTextPresent": true
+        },
+        "fr": {
+          "repeatedProper": true,
+          "daySpecificProperCount": 0,
+          "properTextPresent": true
+        }
+      }
     },
     {
       "id": "holy_face_1887",
@@ -1007,12 +1072,31 @@
       },
       "literalText": null,
       "routeDeclared": null,
-      "notes": [],
+      "notes": [
+        "French daily guides and titles are not translations of the nine historical English proper prayers."
+      ],
       "dayCount": 9,
       "novenaForm": "DAY_SPECIFIC",
       "novenaPattern": "SOURCE_REPEAT_ONLY",
       "frenchSourceStatus": "HISTORICAL_ENGLISH_ONLY_NO_FRENCH_WITNESS",
-      "hasRepeatedText": false
+      "hasRepeatedText": false,
+      "properPrayerBodies": {
+        "la": {
+          "repeatedProper": false,
+          "daySpecificProperCount": 0,
+          "properTextPresent": false
+        },
+        "en": {
+          "repeatedProper": false,
+          "daySpecificProperCount": 9,
+          "properTextPresent": true
+        },
+        "fr": {
+          "repeatedProper": false,
+          "daySpecificProperCount": 0,
+          "properTextPresent": false
+        }
+      }
     },
     {
       "id": "stabat_mater",
@@ -1049,7 +1133,10 @@
       },
       "literalText": null,
       "routeDeclared": null,
-      "notes": []
+      "notes": [],
+      "stanzaCount": 13,
+      "bodyWitness": "Latin stanzas only; no complete hymn or independent EN/FR body in this source key",
+      "completeness": "partial-existing-source-not-certified-complete"
     },
     {
       "id": "angelus",
@@ -1953,8 +2040,8 @@
       ]
     }
   ],
-  "ciRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42334351656",
-  "ciResult": "completed/success",
+  "ciRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42334657481",
+  "ciResult": "source-audit-produced; snapshot differed on additional metadata; pending pass after refresh",
   "checkedAt": "2026-11-07",
   "notes": "This is source-owner/shape/route declaration evidence; do not treat language token candidates as full prayer translations, or route declarations as UI reachability."
 }
