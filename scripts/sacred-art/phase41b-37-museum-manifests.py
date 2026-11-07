@@ -89,7 +89,7 @@ def analyze(pair):
     return out
 
 def main():
-    with ROOT.open(encoding="utf8-sig",newline="") as f: rows=list(csv.DictReader(f))
+    with ROOT.open(encoding="utf-8-sig",newline="") as f: rows=list(csv.DictReader(f))
     assert len(rows)==177
     ledger=json.loads(LEDGER.read_text(encoding="utf8"))
     held={x["registry_id"] for x in ledger["retained_eight"]}
