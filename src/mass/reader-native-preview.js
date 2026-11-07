@@ -2541,7 +2541,7 @@ export async function mountNativeReaderPreview({
     const prayer=next.getBoundingClientRect?.();
     if(!viewport||!prayer||viewport.height<=0)return false;
     // Once the second prayer is in the reading zone, NEXT advances normally.
-    const readingZone=viewport.top+Math.min(viewport.height*.46,210);
+    const readingZone=viewport.top+Math.min(viewport.height*.5,280);
     if(prayer.top<=readingZone)return false;
     const start=scroll.scrollTop;
     const offset=Math.min(viewport.height*.20,90);
