@@ -54,7 +54,9 @@
       "source-only": 1
     },
     "sourceBodyAudited": 36,
-    "routeUIVerified": 0
+    "routeUIVerified": 0,
+    "supplementalSourceOwnerAudited": 84,
+    "remaining48Audited": 48
   },
   "works": [
     {
@@ -2961,7 +2963,16 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#holy_face_golden_arrow",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "individual-source",
+        "sourceResolution": "object-id-exact",
+        "sourceHash": "b158618bb84023b8d261fcc64d5e18d6efe2cba420e773a4711822875ffa9e05",
+        "readerRouteDeclared": null,
+        "sourceOnlyNotUIVerified": true
+      }
     },
     {
       "id": "pray.holy_name_litany",
@@ -3320,7 +3331,16 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "programme-context-verify"
+      "libraryListing": "programme-context-verify",
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#holy_spirit_litany",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "individual-source",
+        "sourceResolution": "object-id-exact",
+        "sourceHash": "4e0232e5496a1c2e6e7abe89b9b5834e396d73385aee2f687172e1cb8cee0495",
+        "readerRouteDeclared": null,
+        "sourceOnlyNotUIVerified": true
+      }
     },
     {
       "id": "pray.litany_saints",
@@ -3360,7 +3380,16 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#pray.litany_saints",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "litany-reader",
+        "sourceResolution": "route-runtime-no-export",
+        "sourceHash": null,
+        "readerRouteDeclared": true,
+        "sourceOnlyNotUIVerified": true
+      }
     },
     {
       "id": "priest_intercession_eternal_priest_1914_en",
@@ -3400,7 +3429,16 @@
       "classificationRule": "R4",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#priest_intercession_eternal_priest_1914_en",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "individual-source",
+        "sourceResolution": "array-member-id-exact",
+        "sourceHash": "804e5e59789958cb72f9b990f47d36cf8e365a9e2be44ccacea1a032b9eb7f20",
+        "readerRouteDeclared": null,
+        "sourceOnlyNotUIVerified": true
+      }
     },
     {
       "id": "priest_intercession_vocations_raccolta_1910",
@@ -3440,7 +3478,16 @@
       "classificationRule": "R4",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#priest_intercession_vocations_raccolta_1910",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "individual-source",
+        "sourceResolution": "array-member-id-exact",
+        "sourceHash": "9f201f25bb1f5f1841d2148904c0c7f54d263497a8190880b34d82f5395f198d",
+        "readerRouteDeclared": null,
+        "sourceOnlyNotUIVerified": true
+      }
     },
     {
       "id": "priest_intercession_perseverance_raccolta_1910",
@@ -3480,7 +3527,16 @@
       "classificationRule": "R4",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#priest_intercession_perseverance_raccolta_1910",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "individual-source",
+        "sourceResolution": "array-member-id-exact",
+        "sourceHash": "b4cf8f94d01e42b26dd753c43a12aabddd1d1925c3d36cab054a51020ba5d0fb",
+        "readerRouteDeclared": null,
+        "sourceOnlyNotUIVerified": true
+      }
     },
     {
       "id": "icksp_us_therese_for_missionaries",
@@ -3565,7 +3621,16 @@
       "classificationRule": "R5",
       "classificationStatus": "provisional-needs-source-judgement",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#icksp_us_therese_benedict_xv",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "individual-source",
+        "sourceResolution": "object-id-exact",
+        "sourceHash": "8b659f6b6c0fc100bce0f735cabc72ac083bb890f147daeb277261e8e975e23e",
+        "readerRouteDeclared": null,
+        "sourceOnlyNotUIVerified": true
+      }
     },
     {
       "id": "occasional_for_sick_lasance_1911_en",
@@ -3605,7 +3670,16 @@
       "classificationRule": "R4",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#occasional_for_sick_lasance_1911_en",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "individual-source",
+        "sourceResolution": "array-member-id-exact",
+        "sourceHash": "76452f289ed0ace5b94e8d90fb1964ea58d1273d96cfbb9da72eca29ed256bf6",
+        "readerRouteDeclared": null,
+        "sourceOnlyNotUIVerified": true
+      }
     },
     {
       "id": "occasional_holy_family_lasance_1910_en",
@@ -3645,7 +3719,16 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#occasional_holy_family_lasance_1910_en",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "individual-source",
+        "sourceResolution": "array-member-id-exact",
+        "sourceHash": "cd6106c53b501262ea0c59f17f9bc32f33ea69b1e31eb735ed99b37542397b65",
+        "readerRouteDeclared": null,
+        "sourceOnlyNotUIVerified": true
+      }
     },
     {
       "id": "occasional_peace_raccolta_1910_18",
@@ -3685,7 +3768,16 @@
       "classificationRule": "R4",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#occasional_peace_raccolta_1910_18",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "individual-source",
+        "sourceResolution": "array-member-id-exact",
+        "sourceHash": "07964e7a2f9d2013e98965dda2fbe0648bd06e02f127062793d838ee9d28632e",
+        "readerRouteDeclared": null,
+        "sourceOnlyNotUIVerified": true
+      }
     },
     {
       "id": "occasional_travel_lasance_1911_en",
@@ -3725,7 +3817,16 @@
       "classificationRule": "R4",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#occasional_travel_lasance_1911_en",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "individual-source",
+        "sourceResolution": "array-member-id-exact",
+        "sourceHash": "cb198fe0d9d0fe526b8932b07954876e647af049a37f0dc654139ee3bb8d49ac",
+        "readerRouteDeclared": null,
+        "sourceOnlyNotUIVerified": true
+      }
     },
     {
       "id": "occasional_discernment_lasance_1911_en",
@@ -3765,7 +3866,16 @@
       "classificationRule": "R4",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#occasional_discernment_lasance_1911_en",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "individual-source",
+        "sourceResolution": "array-member-id-exact",
+        "sourceHash": "6a63c566e8285129f229710d284e58fb66db8c176848e1a7a74e0e1bf4eac559",
+        "readerRouteDeclared": null,
+        "sourceOnlyNotUIVerified": true
+      }
     },
     {
       "id": "good_death_jesus_mary_joseph",
@@ -3805,7 +3915,16 @@
       "classificationRule": "R2",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#good_death_jesus_mary_joseph",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "individual-source",
+        "sourceResolution": "exported-source",
+        "sourceHash": "84ea467b390ad6429d0b5b611bddfa9eb095e397decece774e7d43a0aced33c4",
+        "readerRouteDeclared": null,
+        "sourceOnlyNotUIVerified": true
+      }
     },
     {
       "id": "good_death_proficiscere",
@@ -3845,7 +3964,16 @@
       "classificationRule": "R2",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#good_death_proficiscere",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "individual-source",
+        "sourceResolution": "exported-source",
+        "sourceHash": "1e2e7709057e70d73079804b8e5b6eeb168e49c3364368a6657749d4c1fd0b1f",
+        "readerRouteDeclared": null,
+        "sourceOnlyNotUIVerified": true
+      }
     },
     {
       "id": "montfort_augustine_prayer",
@@ -3890,7 +4018,16 @@
       "classificationRule": "R1",
       "classificationStatus": "provisional-needs-source-judgement",
       "parent": "pray.montfort_consecration",
-      "libraryListing": "programme-component-only"
+      "libraryListing": "programme-component-only",
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#montfort_augustine_prayer",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "individual-source",
+        "sourceResolution": "object-id-is-source-alias",
+        "sourceHash": "04998dc19c63e6f894ce9fa4eb5bdffd6a0100051a200346cca048360ef9a9ed",
+        "readerRouteDeclared": null,
+        "sourceOnlyNotUIVerified": true
+      }
     },
     {
       "id": "montfort_consecration_act_1863",
@@ -3942,6 +4079,15 @@
         "sourceSymbol": "MONTFORT_B26_CONSECRATION_ACT_EN",
         "programmeRoute": "pray.montfort_consecration",
         "note": "Not itself a standalone app route."
+      },
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#montfort_consecration_act_1863",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "individual-source",
+        "sourceResolution": "source-array-of-paragraphs",
+        "sourceHash": "7190cc202931768f690c2aa7af1b007b6a2d9114b4dbadb326dfda5a28142dca",
+        "readerRouteDeclared": null,
+        "sourceOnlyNotUIVerified": true
       }
     },
     {
@@ -3987,7 +4133,16 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#ignatius_suscipe_lasance_1908_en",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "individual-source",
+        "sourceResolution": "array-member-id-exact",
+        "sourceHash": "644c569e6167a8324d50e188872a46ce4a6d2c7172d670ee6632cb0dea30860d",
+        "readerRouteDeclared": null,
+        "sourceOnlyNotUIVerified": true
+      }
     },
     {
       "id": "lasance_prayer_before_meditation_1908_en",
@@ -4027,7 +4182,16 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#lasance_prayer_before_meditation_1908_en",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "individual-source",
+        "sourceResolution": "array-member-id-exact",
+        "sourceHash": "bb0b39a174b0b84fd855a0caade57ebd50713c2a64cc1cf979b08b2287612260",
+        "readerRouteDeclared": null,
+        "sourceOnlyNotUIVerified": true
+      }
     },
     {
       "id": "thomas_aquinas_concede_mihi_lasance_1908_en",
@@ -4072,7 +4236,16 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#thomas_aquinas_concede_mihi_lasance_1908_en",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "individual-source",
+        "sourceResolution": "array-member-id-exact",
+        "sourceHash": "dc38326337a7b5f42e024a95c56fe17aeb8ee22cf85ffff4091cdc8461e16496",
+        "readerRouteDeclared": null,
+        "sourceOnlyNotUIVerified": true
+      }
     },
     {
       "id": "lasance_prayer_after_meditation_1908_en",
@@ -4112,7 +4285,16 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#lasance_prayer_after_meditation_1908_en",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "individual-source",
+        "sourceResolution": "array-member-id-exact",
+        "sourceHash": "2c9d953ee199e8afedad9af8f63f50770600cb1d84ebbcdaab3ad934f57c380f",
+        "readerRouteDeclared": null,
+        "sourceOnlyNotUIVerified": true
+      }
     },
     {
       "id": "te_deum",
@@ -4934,7 +5116,16 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#divine_infant_king",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "additional-novena",
+        "sourceResolution": "object-id-exact",
+        "sourceHash": "842ebee42cfe12575fd520412df6c3cee6e81b02afd9a13909ca7f9beb67b9c7",
+        "readerRouteDeclared": null,
+        "sourceOnlyNotUIVerified": true
+      }
     },
     {
       "id": "sacred_heart",
@@ -5242,7 +5433,16 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#icksp_immaculate_conception",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "additional-novena",
+        "sourceResolution": "object-id-exact",
+        "sourceHash": "c0cfcf9e01c795e4796f2da4d951d2abda19ab39a2d5c0f1694a371c7c4bb638",
+        "readerRouteDeclared": null,
+        "sourceOnlyNotUIVerified": true
+      }
     },
     {
       "id": "immaculate_heart",
@@ -5965,7 +6165,16 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#holy_face_1887",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "additional-novena",
+        "sourceResolution": "object-id-exact",
+        "sourceHash": "6058853e1f1bf646727b5976f11f2860dbacca5c3bdba3dfd1c5c3d38ba64181",
+        "readerRouteDeclared": null,
+        "sourceOnlyNotUIVerified": true
+      }
     },
     {
       "id": "stabat_mater",
@@ -6007,7 +6216,16 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#stabat_mater",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "canonical-composite",
+        "sourceResolution": "exported-array",
+        "sourceHash": "266caad2bcdac1da233d6f4b2570e837a7dd5f282f61161199acb46edd876453",
+        "readerRouteDeclared": null,
+        "sourceOnlyNotUIVerified": true
+      }
     },
     {
       "id": "angelus",
@@ -6052,7 +6270,16 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#angelus",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "canonical-composite",
+        "sourceResolution": "exported-source",
+        "sourceHash": "ec34f9375bdd38d9def5c5046f8aeb139b5caa6d80fe8e1b696663e8bc147636",
+        "readerRouteDeclared": null,
+        "sourceOnlyNotUIVerified": true
+      }
     },
     {
       "id": "regina_caeli",
@@ -6094,7 +6321,16 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#regina_caeli",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "canonical-composite",
+        "sourceResolution": "exported-source",
+        "sourceHash": "b725009d754eda87c8debd9e1a98282311d3c00a1b48a14a4fa294f302bb069b",
+        "readerRouteDeclared": null,
+        "sourceOnlyNotUIVerified": true
+      }
     },
     {
       "id": "pray.rosary",
@@ -6155,7 +6391,16 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#pray.rosary",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "devotion-or-chaplet",
+        "sourceResolution": "route-runtime-no-export",
+        "sourceHash": null,
+        "readerRouteDeclared": true,
+        "sourceOnlyNotUIVerified": true
+      }
     },
     {
       "id": "pray.divine_mercy",
@@ -6195,7 +6440,16 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#pray.divine_mercy",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "devotion-or-chaplet",
+        "sourceResolution": "route-runtime-no-export",
+        "sourceHash": null,
+        "readerRouteDeclared": true,
+        "sourceOnlyNotUIVerified": true
+      }
     },
     {
       "id": "pray.five_wounds",
@@ -6242,6 +6496,15 @@
         "publicRoute": "pray.five_wounds",
         "kind": "structured-collection-or-reader-controller",
         "note": "Source export is distinct from public module route. This evidence does not assert a full independent prayer body."
+      },
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#pray.five_wounds",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "devotion-or-chaplet",
+        "sourceResolution": "exported-array",
+        "sourceHash": "6d84262c99e7c3a5d6740a03532a93ea92c84fe4690557e0e45d6b9d57cd683d",
+        "readerRouteDeclared": true,
+        "sourceOnlyNotUIVerified": true
       }
     },
     {
@@ -6290,6 +6553,15 @@
         "kind": "structured-collection-or-reader-controller",
         "note": "Source export is distinct from public module route. This evidence does not assert a full independent prayer body.",
         "relatedExport": "PRECIOUS_BLOOD_HISTORICAL_PRAYERS_V1"
+      },
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#pray.precious_blood",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "devotion-or-chaplet",
+        "sourceResolution": "exported-array",
+        "sourceHash": "fe07137e39ac75fe92232b74ee27e01a2ce71d328eb142c103bc6ee9ca1a0c6e",
+        "readerRouteDeclared": true,
+        "sourceOnlyNotUIVerified": true
       }
     },
     {
@@ -6336,6 +6608,15 @@
         "programmaticSource": "LITTLE_CROWN_B30_BEADS",
         "externalPublicRoute": "pray.little_crown",
         "note": "Source object and route alias differ; no UI ownership change."
+      },
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#pray.little_crown",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "devotion-or-chaplet",
+        "sourceResolution": "exported-array",
+        "sourceHash": "0e29f344f3c56caf9654ae752a6268db1675ec733680fac4f46d9db31431f215",
+        "readerRouteDeclared": true,
+        "sourceOnlyNotUIVerified": true
       }
     },
     {
@@ -6382,6 +6663,15 @@
         "programmaticSource": "JOSEPH_SEVEN_PRAYERS_B24",
         "externalPublicRoute": "pray.st_joseph_seven_sorrows",
         "note": "Source object and route alias differ; no UI ownership change."
+      },
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#pray.st_joseph_seven_sorrows",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "devotion-or-chaplet",
+        "sourceResolution": "exported-array",
+        "sourceHash": "6defad6e87daae888a3963585320dd7ebd7db038bbf850c0166f0253c6c9d1a1",
+        "readerRouteDeclared": true,
+        "sourceOnlyNotUIVerified": true
       }
     },
     {
@@ -6424,7 +6714,16 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#pray.stations",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "devotion-or-chaplet",
+        "sourceResolution": "route-runtime-no-export",
+        "sourceHash": null,
+        "readerRouteDeclared": true,
+        "sourceOnlyNotUIVerified": true
+      }
     },
     {
       "id": "pray.seven_words",
@@ -6473,6 +6772,15 @@
         "publicRoute": "pray.seven_words",
         "kind": "structured-collection-or-reader-controller",
         "note": "Source export is distinct from public module route. This evidence does not assert a full independent prayer body."
+      },
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#pray.seven_words",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "devotion-or-chaplet",
+        "sourceResolution": "object-id-is-source-alias",
+        "sourceHash": "a21e42f580dfb2a4b091696f0ea0165adfdc3b89870a9fa3e9cff50597893d9d",
+        "readerRouteDeclared": true,
+        "sourceOnlyNotUIVerified": true
       }
     },
     {
@@ -6521,6 +6829,15 @@
         "programmaticSource": "PENITENTIAL_PSALMS_VULGATE",
         "externalPublicRoute": "pray.penitential_psalms",
         "note": "Source object and route alias differ; no UI ownership change."
+      },
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#pray.penitential_psalms",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "devotion-or-chaplet",
+        "sourceResolution": "exported-array",
+        "sourceHash": "b1dc23b7fbc6b2b1467b2a15eab2f4a67ab7af931304c8215ca8a18a959bfa42",
+        "readerRouteDeclared": true,
+        "sourceOnlyNotUIVerified": true
       }
     },
     {
@@ -6572,6 +6889,15 @@
         "programmeOwner": "MONTFORT_B26_PHASES",
         "readerRoute": "pray.montfort_consecration",
         "note": "The public route opens the entire 33-day preparation, not the concluding act in isolation."
+      },
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#pray.montfort_consecration",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "devotion-or-chaplet",
+        "sourceResolution": "exported-array",
+        "sourceHash": "2572a1ae7d1ef42e8d3db079e64b396cabbd77e5da4401887da7c2905d6b3ee5",
+        "readerRouteDeclared": true,
+        "sourceOnlyNotUIVerified": true
       }
     },
     {
@@ -6769,7 +7095,16 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#pray.nightly_examen",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "reader-or-programme",
+        "sourceResolution": "route-runtime-no-export",
+        "sourceHash": null,
+        "readerRouteDeclared": true,
+        "sourceOnlyNotUIVerified": true
+      }
     },
     {
       "id": "pray.confession",
@@ -6812,7 +7147,16 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#pray.confession",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "reader-or-programme",
+        "sourceResolution": "route-runtime-no-export",
+        "sourceHash": null,
+        "readerRouteDeclared": true,
+        "sourceOnlyNotUIVerified": true
+      }
     },
     {
       "id": "mass.prepare",
@@ -6854,7 +7198,16 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#mass.prepare",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "reader-or-programme",
+        "sourceResolution": "route-runtime-no-export",
+        "sourceHash": null,
+        "readerRouteDeclared": true,
+        "sourceOnlyNotUIVerified": true
+      }
     },
     {
       "id": "mass.thanksgiving",
@@ -6896,7 +7249,16 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#mass.thanksgiving",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "reader-or-programme",
+        "sourceResolution": "route-runtime-no-export",
+        "sourceHash": null,
+        "readerRouteDeclared": true,
+        "sourceOnlyNotUIVerified": true
+      }
     },
     {
       "id": "pray.adoration",
@@ -6936,7 +7298,16 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#pray.adoration",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "reader-or-programme",
+        "sourceResolution": "route-runtime-no-export",
+        "sourceHash": null,
+        "readerRouteDeclared": true,
+        "sourceOnlyNotUIVerified": true
+      }
     },
     {
       "id": "pray.benediction",
@@ -6981,7 +7352,16 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#pray.benediction",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "reader-or-programme",
+        "sourceResolution": "route-runtime-no-export",
+        "sourceHash": null,
+        "readerRouteDeclared": true,
+        "sourceOnlyNotUIVerified": true
+      }
     },
     {
       "id": "pray.forty_hours",
@@ -7028,6 +7408,15 @@
         "publicRoute": "pray.forty_hours",
         "kind": "structured-collection-or-reader-controller",
         "note": "Source export is distinct from public module route. This evidence does not assert a full independent prayer body."
+      },
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#pray.forty_hours",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "reader-or-programme",
+        "sourceResolution": "exported-array",
+        "sourceHash": "95124aa6a5ece9a02d8b8b1506ead8d538ab378df33ff70f5005768ae47cb442",
+        "readerRouteDeclared": true,
+        "sourceOnlyNotUIVerified": true
       }
     },
     {
@@ -7073,7 +7462,16 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#programme.first_friday",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "reader-or-programme",
+        "sourceResolution": "route-runtime-no-export",
+        "sourceHash": null,
+        "readerRouteDeclared": true,
+        "sourceOnlyNotUIVerified": true
+      }
     },
     {
       "id": "programme.first_saturday",
@@ -7118,7 +7516,16 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#programme.first_saturday",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "reader-or-programme",
+        "sourceResolution": "route-runtime-no-export",
+        "sourceHash": null,
+        "readerRouteDeclared": true,
+        "sourceOnlyNotUIVerified": true
+      }
     },
     {
       "id": "pray.good_death",
@@ -7167,6 +7574,15 @@
         "programmaticSource": "GOOD_DEATH_DYING_V384",
         "externalPublicRoute": "pray.good_death",
         "note": "Source object and route alias differ; no UI ownership change."
+      },
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#pray.good_death",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "reader-or-programme",
+        "sourceResolution": "exported-source",
+        "sourceHash": "b0491df8c5b9a159092c4aeb9c615acaa4bb36a2716ea92395cccbce9707e2cc",
+        "readerRouteDeclared": true,
+        "sourceOnlyNotUIVerified": true
       }
     },
     {
@@ -7217,6 +7633,15 @@
         "publicRoute": "pray.dying_companion",
         "kind": "structured-collection-or-reader-controller",
         "note": "Source export is distinct from public module route. This evidence does not assert a full independent prayer body."
+      },
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#pray.dying_companion",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "reader-or-programme",
+        "sourceResolution": "exported-array",
+        "sourceHash": "ef3b84ca3b44881cb678c5fe89a8e32cacf25425e28aba93db02bff6f5d193f1",
+        "readerRouteDeclared": true,
+        "sourceOnlyNotUIVerified": true
       }
     },
     {
@@ -7266,6 +7691,15 @@
         "publicRoute": "pray.tenebrae",
         "kind": "structured-collection-or-reader-controller",
         "note": "Source export is distinct from public module route. This evidence does not assert a full independent prayer body."
+      },
+      "sourceOwnerEvidence": {
+        "auditRef": "data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#pray.tenebrae",
+        "checkedBy": "tests/pray-work-remaining-source-audit-20261107.mjs",
+        "evidenceClass": "reader-or-programme",
+        "sourceResolution": "exported-controller",
+        "sourceHash": null,
+        "readerRouteDeclared": true,
+        "sourceOnlyNotUIVerified": true
       }
     },
     {
