@@ -1,0 +1,176 @@
+{
+  "schema": "AO_SACRED_ATLAS_FIVE_COUNTRY_AREA_PREVIEW_V1",
+  "prepared_on": "2026-11-07",
+  "status": "RESEARCH_ONLY_NOT_ADMITTED",
+  "source_manifest": "sacred-atlas-243-proximity-area-decisions-20261107.v1.json",
+  "counts": {
+    "active_catholic_country_prerequisites": 5,
+    "standard_iso_compatible": 4,
+    "operational_territory_adapter_hold": 1,
+    "heritage_deferred": 4,
+    "geo_areas_appended_to_canonical": 0,
+    "candidate_places_admitted": 0
+  },
+  "heritage_only_deferred_codes": [
+    "AM",
+    "CY",
+    "ET",
+    "TN"
+  ],
+  "proposals": [
+    {
+      "source_country_code": "BF",
+      "standard_code_state": "OFFICIAL_ISO_3166_1_ALPHA2",
+      "canonical_compatibility": "STRUCTURALLY_COMPATIBLE_UNAPPROVED",
+      "proposed_geo_area": {
+        "geo_area_id": "geo:country:BF",
+        "name": {
+          "official": "Burkina Faso",
+          "aliases": []
+        },
+        "area_system": "CIVIL",
+        "area_type": "country",
+        "parent_geo_area_ids": [
+          "geo:world"
+        ],
+        "mappable": true,
+        "codes": {
+          "iso_alpha2": "BF"
+        }
+      },
+      "required_candidate_ids": [
+        "SG-INV-0727"
+      ],
+      "authority_url": "https://www.iso.org/iso-3166-country-codes.html",
+      "owner_review_status": "PENDING",
+      "canonical_area_insert_authorized": false
+    },
+    {
+      "source_country_code": "HT",
+      "standard_code_state": "OFFICIAL_ISO_3166_1_ALPHA2",
+      "canonical_compatibility": "STRUCTURALLY_COMPATIBLE_UNAPPROVED",
+      "proposed_geo_area": {
+        "geo_area_id": "geo:country:HT",
+        "name": {
+          "official": "Haiti",
+          "aliases": [
+            "Haïti"
+          ]
+        },
+        "area_system": "CIVIL",
+        "area_type": "country",
+        "parent_geo_area_ids": [
+          "geo:world"
+        ],
+        "mappable": true,
+        "codes": {
+          "iso_alpha2": "HT"
+        }
+      },
+      "required_candidate_ids": [
+        "SG-INV-0470"
+      ],
+      "authority_url": "https://www.iso.org/iso-3166-country-codes.html",
+      "owner_review_status": "PENDING",
+      "canonical_area_insert_authorized": false
+    },
+    {
+      "source_country_code": "TL",
+      "standard_code_state": "OFFICIAL_ISO_3166_1_ALPHA2",
+      "canonical_compatibility": "STRUCTURALLY_COMPATIBLE_UNAPPROVED",
+      "proposed_geo_area": {
+        "geo_area_id": "geo:country:TL",
+        "name": {
+          "official": "Timor-Leste",
+          "aliases": [
+            "East Timor",
+            "Timor oriental"
+          ]
+        },
+        "area_system": "CIVIL",
+        "area_type": "country",
+        "parent_geo_area_ids": [
+          "geo:world"
+        ],
+        "mappable": true,
+        "codes": {
+          "iso_alpha2": "TL"
+        }
+      },
+      "required_candidate_ids": [
+        "SG-INV-0682",
+        "SG-INV-0683"
+      ],
+      "authority_url": "https://www.iso.org/iso-3166-country-codes.html",
+      "owner_review_status": "PENDING",
+      "canonical_area_insert_authorized": false
+    },
+    {
+      "source_country_code": "TR",
+      "standard_code_state": "OFFICIAL_ISO_3166_1_ALPHA2",
+      "canonical_compatibility": "STRUCTURALLY_COMPATIBLE_UNAPPROVED",
+      "proposed_geo_area": {
+        "geo_area_id": "geo:country:TR",
+        "name": {
+          "official": "Türkiye",
+          "aliases": [
+            "Turkey",
+            "Turquie"
+          ]
+        },
+        "area_system": "CIVIL",
+        "area_type": "country",
+        "parent_geo_area_ids": [
+          "geo:world"
+        ],
+        "mappable": true,
+        "codes": {
+          "iso_alpha2": "TR"
+        }
+      },
+      "required_candidate_ids": [
+        "SG-INV-0364",
+        "SG-INV-0361"
+      ],
+      "authority_url": "https://www.iso.org/iso-3166-country-codes.html",
+      "owner_review_status": "PENDING",
+      "canonical_area_insert_authorized": false
+    },
+    {
+      "source_country_code": "XK",
+      "standard_code_state": "OPERATIONAL_USER_ASSIGNED_NOT_ISO",
+      "canonical_compatibility": "BLOCKED_ROUTING_ADAPTER_REQUIRED",
+      "proposed_geo_area": {
+        "geo_area_id": "geo:country:XK",
+        "name": {
+          "official": "Kosovo",
+          "aliases": [
+            "Kosova",
+            "Kosovo*"
+          ]
+        },
+        "area_system": "CIVIL",
+        "area_type": "country",
+        "parent_geo_area_ids": [
+          "geo:world"
+        ],
+        "mappable": true,
+        "codes": {}
+      },
+      "operational_code_route": {
+        "source_country_code": "XK",
+        "source_system": "EUROSTAT_EU_PRACTICAL",
+        "cannot_write_into_codes_iso_alpha2": true,
+        "requires_explicit_adapter_or_schema_decision": true
+      },
+      "designation_note": "The label Kosovo is a place label only; it carries no position on disputed status or recognition. For EU displays, apply the institutional status-neutral footnote as appropriate.",
+      "required_candidate_ids": [
+        "SG-INV-0349"
+      ],
+      "authority_url": "https://op.europa.eu/en/web/eu-vocabularies/countries-and-territories",
+      "owner_review_status": "PENDING",
+      "canonical_area_insert_authorized": false
+    }
+  ],
+  "policy": "Research definitions have no automatic admission. Kosovo/XK requires an explicit mapping decision because XK is user-assigned rather than an assigned ISO alpha-2 country code; do not smuggle XK into codes.iso_alpha2. First sync the PR with current main, then validate all functional dependent country routing before authorized release."
+}
