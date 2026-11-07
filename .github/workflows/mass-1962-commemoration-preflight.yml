@@ -25,6 +25,8 @@ on:
       - 'tests/mass-1962-form-source-selection.mjs'
       - 'tests/mass-1962-multiple-commemoration-failclosed.mjs'
       - 'tests/mass-1962-two-commemorations-real-e2e.mjs'
+      - 'tests/mass-1962-two-commemorations-phone-next.mjs'
+      - 'src/mass/reader-native-preview.js'
       - 'tests/mass-1962-privileged-witnesses-e2e.mjs'
       - 'tests/mass-1962-peter-paul-source-witness-e2e.mjs'
       - 'tests/mass-1962-mission-source-probe-e2e.mjs'
@@ -57,6 +59,8 @@ on:
       - 'tests/mass-1962-form-source-selection.mjs'
       - 'tests/mass-1962-multiple-commemoration-failclosed.mjs'
       - 'tests/mass-1962-two-commemorations-real-e2e.mjs'
+      - 'tests/mass-1962-two-commemorations-phone-next.mjs'
+      - 'src/mass/reader-native-preview.js'
       - 'tests/mass-1962-privileged-witnesses-e2e.mjs'
       - 'tests/mass-1962-peter-paul-source-witness-e2e.mjs'
       - 'tests/mass-1962-mission-source-probe-e2e.mjs'
@@ -101,6 +105,8 @@ jobs:
         run: node tests/mass-1962-privileged-witnesses-e2e.mjs
       - name: Source-certified 2026 double commemorations in all four Mass forms
         run: node tests/mass-1962-two-commemorations-real-e2e.mjs
+      - name: Verify real phone NEXT through three source texts under two conclusions
+        run: node tests/mass-1962-two-commemorations-phone-next.mjs
       - name: Inspect 11 exact November–December 1962 unresolved source cases
         run: node tests/mass-1962-nov-dec-11-source-e2e.mjs
       - name: Verify St Peter / St Paul inseparable source witness days
