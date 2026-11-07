@@ -45,8 +45,9 @@ def fetch(url,params=None):
                     record["document"]=json.loads(text)
                     record["json"]=True
                 except Exception:
-                    no_scripts=re.sub(r"<(script|style)\\b[^>]*>.*?</\\1>"," ",text,flags=re.I|re.S)
-                record["text"]=re.sub(r"\\s+"," ",html.unescape(re.sub(r"<[^>]+>"," ",no_scripts)))[:60000]
+                    pass
+                no_scripts=re.sub(r"<(script|style)\b[^>]*>.*?</\1>"," ",text,flags=re.I|re.S)
+                record["text"]=re.sub(r"\s+"," ",html.unescape(re.sub(r"<[^>]+>"," ",no_scripts)))[:90000]
     except Exception as exc:
         record["error"]=f"{type(exc).__name__}: {str(exc)[:250]}"
     return record
@@ -155,6 +156,19 @@ def probe_entry(entry):
                 if snippet not in spans:spans.append(snippet)
         result["notice_relevant_spans"]=spans[:18]
         result["page_text_length"]=len(raw)
+        # French POP embeds the official Joconde notice as serialized React data.
+        # Extract only explicit catalogue keys; never infer a painting from matching words.
+        decoded=raw.replace('\\\\"','"').replace('\\\"','"')
+        fields={}
+        for key in ("TITR","TICO","AUTR","INV","DIMS","LOCA","REPR","ATTR","BIBL",
+                    "PHOTO","COPY","MILL","PERI","HIST","ETAT","STAT","GENE"):
+            m=re.search(r'"'+key+r'":(\\[[^\\]]{0,1200}\\]|"(?:\\\\.|[^"])*"|[^,]{1,700})',decoded)
+            if m:
+                val=m.group(1)
+                try:val=json.loads(val)
+                except Exception:pass
+                fields[key]=val
+        result["joconde_fields_from_embedded_payload"]=fields
         result["term_occurrences"]={term:len(re.findall(re.escape(term),raw,re.I))
               for term in ("Herreyns","Ter Brugghen","Jordaens","de Wet","Teniers","GRO0420","Herregouts")}
     return result
@@ -168,6 +182,18 @@ def main():
     institutional_oai=fetch("https://datahub.vlaamsekunstcollectie.be/oai/",{"verb":"ListIdentifiers","metadataPrefix":"oai_lido"})
     oai_check={k:v for k,v in institutional_oai.items() if k not in ("document","text")}
     oai_check["response_excerpt"]=institutional_oai.get("text","")[:1200]
+    # OAI-PMH supports set-scoped listing; test known and likely creator sets
+    # without querying or publishing images.
+    oai_filters=[]
+    for spec in ("creator:jacob_herreyns_i","creator:herreyns_jacob","institution:kmska"):
+        filtered=fetch("https://datahub.vlaamsekunstcollectie.be/oai/",
+           {"verb":"ListIdentifiers","metadataPrefix":"oai_lido","set":spec})
+        xml=filtered.get("excerpt","")
+        oai_filters.append({"set":spec,"status":filtered["status"],"error":filtered["error"],
+            "content_type":filtered["content_type"],"body_excerpt":xml[:450],
+            "creator_mentions":len(re.findall("herreyns",filtered.get("text",""),re.I)),
+            "list_xml_excerpt":filtered.get("text","")[:1000]})
+    oai_check["set_filters"]=oai_filters
     jobs=[(rid,label,url,*rest) for rid,entries in PROBES.items() for label,url,*rest in entries]
     with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
         retrieved=list(pool.map(probe_entry,jobs))
