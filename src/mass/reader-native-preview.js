@@ -2526,6 +2526,34 @@ export async function mountNativeReaderPreview({
     return showCard(nextVisibleCard(current,"previous"));
   }
 
+  // The 65-card reader deliberately retains multiple source-owned Collects,
+  // Secrets and Postcommunions on their established Mass card. Pressing NEXT
+  // must not bypass a second prayer that remains below the phone viewport.
+  // This scrolls within the SAME canonical card, without an invented rite,
+  // cue, or extra 66th card. The section jump remains available for catch-up.
+  function revealUnseenSecondOration(){
+    if(!current?.paragraphs?.some?.(p=>p.orationGroupIndex===2))return false;
+    const scroll=host.querySelector?.(".ao-prayer-card");
+    const next=scroll?.querySelector?.(
+      '.ao-reader-paragraph[data-oration-group-index="2"]');
+    if(!next)return false;
+    const viewport=scroll.getBoundingClientRect?.();
+    const prayer=next.getBoundingClientRect?.();
+    if(!viewport||!prayer||viewport.height<=0)return false;
+    // Once the second prayer is in the reading zone, NEXT advances normally.
+    const readingZone=viewport.top+Math.min(viewport.height*.46,210);
+    if(prayer.top<=readingZone)return false;
+    const start=scroll.scrollTop;
+    const offset=Math.min(viewport.height*.20,90);
+    scroll.scrollTop=Math.min(
+      Math.max(0,scroll.scrollHeight-scroll.clientHeight),
+      start+prayer.top-viewport.top-offset);
+    if(scroll.scrollTop<=start+8)return false;
+    cueTracker?.refresh?.();
+    root.dataset.aoNextOration="SECOND_PRAYER_REVEALED";
+    return true;
+  }
+
   function nextReaderCard(){
     if(inGenericProcession && ready.genericProcessionController){
       const state=ready.genericProcessionController.project();
@@ -2601,6 +2629,7 @@ export async function mountNativeReaderPreview({
       const state=mandatumController.project();
       if(!state.atEnd){mandatumController.next();return showMandatumStage();}
     }
+    if(revealUnseenSecondOration())return null;
     const card=nextVisibleCard(current,"next");
     if(!card){
       // The Mass's final Last Gospel remains the 65th curated prayer card.
