@@ -6208,7 +6208,7 @@
       ],
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/five-wounds-chaplet.v1.js",
-      "source_key": "pray.five_wounds",
+      "source_key": "FIVE_WOUNDS_CHAPLET_V1",
       "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
@@ -6221,7 +6221,7 @@
         {
           "id": "pray.five_wounds",
           "kind": "principal",
-          "sourceRef": "src/pray/five-wounds-chaplet.v1.js#pray.five_wounds"
+          "sourceRef": "src/pray/five-wounds-chaplet.v1.js#FIVE_WOUNDS_CHAPLET_V1"
         }
       ],
       "refs": [],
@@ -6235,7 +6235,14 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "reader_route": "pray.five_wounds",
+      "sourceCrosswalk": {
+        "sourceExport": "FIVE_WOUNDS_CHAPLET_V1",
+        "publicRoute": "pray.five_wounds",
+        "kind": "structured-collection-or-reader-controller",
+        "note": "Source export is distinct from public module route. This evidence does not assert a full independent prayer body."
+      }
     },
     {
       "id": "pray.precious_blood",
@@ -6248,7 +6255,7 @@
       ],
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/precious-blood-chaplet.v1.js",
-      "source_key": "pray.precious_blood",
+      "source_key": "PRECIOUS_BLOOD_MYSTERIES_V1",
       "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
@@ -6261,7 +6268,7 @@
         {
           "id": "pray.precious_blood",
           "kind": "principal",
-          "sourceRef": "src/pray/precious-blood-chaplet.v1.js#pray.precious_blood"
+          "sourceRef": "src/pray/precious-blood-chaplet.v1.js#PRECIOUS_BLOOD_MYSTERIES_V1"
         }
       ],
       "refs": [],
@@ -6275,7 +6282,15 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "reader_route": "pray.precious_blood",
+      "sourceCrosswalk": {
+        "sourceExport": "PRECIOUS_BLOOD_MYSTERIES_V1",
+        "publicRoute": "pray.precious_blood",
+        "kind": "structured-collection-or-reader-controller",
+        "note": "Source export is distinct from public module route. This evidence does not assert a full independent prayer body.",
+        "relatedExport": "PRECIOUS_BLOOD_HISTORICAL_PRAYERS_V1"
+      }
     },
     {
       "id": "pray.little_crown",
@@ -6422,7 +6437,7 @@
       ],
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/seven-words-offline-1889.v1.js",
-      "source_key": "pray.seven_words",
+      "source_key": "SEVEN_WORDS_LOCAL_EN_1889_V1",
       "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
@@ -6435,7 +6450,7 @@
         {
           "id": "pray.seven_words",
           "kind": "principal",
-          "sourceRef": "src/pray/seven-words-offline-1889.v1.js#pray.seven_words"
+          "sourceRef": "src/pray/seven-words-offline-1889.v1.js#SEVEN_WORDS_LOCAL_EN_1889_V1"
         }
       ],
       "refs": [],
@@ -6451,7 +6466,14 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "reader_route": "pray.seven_words",
+      "sourceCrosswalk": {
+        "sourceExport": "SEVEN_WORDS_LOCAL_EN_1889_V1",
+        "publicRoute": "pray.seven_words",
+        "kind": "structured-collection-or-reader-controller",
+        "note": "Source export is distinct from public module route. This evidence does not assert a full independent prayer body."
+      }
     },
     {
       "id": "pray.penitential_psalms",
@@ -6972,7 +6994,7 @@
       ],
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/forty-hours-solemn.js",
-      "source_key": "pray.forty_hours",
+      "source_key": "FORTY_HOURS_SOLEMN_STAGES",
       "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
@@ -6985,7 +7007,7 @@
         {
           "id": "pray.forty_hours",
           "kind": "principal",
-          "sourceRef": "src/pray/forty-hours-solemn.js#pray.forty_hours"
+          "sourceRef": "src/pray/forty-hours-solemn.js#FORTY_HOURS_SOLEMN_STAGES"
         }
       ],
       "refs": [],
@@ -6999,7 +7021,14 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "reader_route": "pray.forty_hours",
+      "sourceCrosswalk": {
+        "sourceExport": "FORTY_HOURS_SOLEMN_STAGES",
+        "publicRoute": "pray.forty_hours",
+        "kind": "structured-collection-or-reader-controller",
+        "note": "Source export is distinct from public module route. This evidence does not assert a full independent prayer body."
+      }
     },
     {
       "id": "programme.first_friday",
@@ -7151,7 +7180,7 @@
       ],
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/dying-companion-flow.js",
-      "source_key": "pray.dying_companion",
+      "source_key": "DYING_COMPANION_STAGES",
       "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
@@ -7164,7 +7193,7 @@
         {
           "id": "pray.dying_companion",
           "kind": "principal",
-          "sourceRef": "src/pray/dying-companion-flow.js#pray.dying_companion"
+          "sourceRef": "src/pray/dying-companion-flow.js#DYING_COMPANION_STAGES"
         }
       ],
       "refs": [
@@ -7181,7 +7210,14 @@
       "classificationRule": "R2",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "reader_route": "pray.dying_companion",
+      "sourceCrosswalk": {
+        "sourceExport": "DYING_COMPANION_STAGES",
+        "publicRoute": "pray.dying_companion",
+        "kind": "structured-collection-or-reader-controller",
+        "note": "Source export is distinct from public module route. This evidence does not assert a full independent prayer body."
+      }
     },
     {
       "id": "pray.tenebrae",
@@ -7194,7 +7230,7 @@
       ],
       "legacyCanonicalIds": [],
       "owner_module": "src/pray/tenebrae-1960.js",
-      "source_key": "pray.tenebrae",
+      "source_key": "compileTenebraeHour",
       "availability": "route-unverified",
       "verification": "pending-source-certification",
       "lang": {
@@ -7207,7 +7243,7 @@
         {
           "id": "pray.tenebrae",
           "kind": "principal",
-          "sourceRef": "src/pray/tenebrae-1960.js#pray.tenebrae"
+          "sourceRef": "src/pray/tenebrae-1960.js#compileTenebraeHour"
         }
       ],
       "refs": [],
@@ -7223,7 +7259,14 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "reader_route": "pray.tenebrae",
+      "sourceCrosswalk": {
+        "sourceExport": "compileTenebraeHour",
+        "publicRoute": "pray.tenebrae",
+        "kind": "structured-collection-or-reader-controller",
+        "note": "Source export is distinct from public module route. This evidence does not assert a full independent prayer body."
+      }
     },
     {
       "id": "office_dead_vespers_1960",
