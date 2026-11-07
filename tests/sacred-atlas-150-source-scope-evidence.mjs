@@ -6,7 +6,7 @@ const complement = read("data/geography/research/sacred-atlas-243-complement-tri
 const first = read("data/geography/research/sacred-atlas-169-consolidated-admission-board-20261107.v1.json");
 const geo = read("data/geography/seed-registry.v1.json");
 assert.equal(board.schema, "AO_SACRED_ATLAS_150_SOURCE_SCOPE_SCREEN_V1");
-assert.equal(board.status, "RESEARCH_ONLY_SECOND_SOURCE_PASS_PARTIAL_NO_OWNER_APPROVAL");
+assert.equal(board.status, "RESEARCH_ONLY_THIRD_SOURCE_PASS_PARTIAL_NO_OWNER_APPROVAL");
 assert.equal(board.records.length, 150);
 assert.equal(geo.places.length, 535, "No unauthorized Place admission");
 const lanes = complement.candidate_ids_by_lane;
@@ -40,11 +40,12 @@ for (const row of board.records) {
 }
 assert.equal(new Set(board.records.map(r=>r.candidate_id)).size, 150);
 assert.equal(screened, board.counts.independently_page_screened);
-assert.equal(screened, 97);
+assert.equal(screened, 114);
 assert.equal(board.counts.second_pass_source_upgrade, 38);
 assert.equal(board.review_batches.initial_page_level, 59);
 assert.equal(board.review_batches.second_source_upgrade, 38);
-assert.equal(board.review_batches.remaining_unchecked, 53);
+assert.equal(board.review_batches.third_source_upgrade, 17);
+assert.equal(board.review_batches.remaining_unchecked, 36);
 for (const id of ["SG-INV-0397","SG-INV-0399","SG-INV-0598","SG-INV-0297","SG-INV-0630","SG-INV-0652","SG-INV-0670","SG-INV-0536"]) {
   const row = board.records.find(x => x.candidate_id === id);
   assert.ok(row, id);
