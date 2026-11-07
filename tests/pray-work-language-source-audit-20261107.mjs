@@ -102,6 +102,15 @@ const report={schema:"ao.pray.language-source-evidence-20261107.v1",
  seasonalLanguagePresence:rows.filter(x=>x.type==="source-hymn").map(x=>({id:x.id,...x.languageText,editions:x.editions.map(e=>({id:e.id,...e.languageText}))})),
  flaggedForReview:issues,
  rows};
+const snapshot=JSON.parse(read("data/pray/prayer-work-language-evidence-20261107.v1.json"));
+assert.equal(snapshot.schema,report.schema,"Source evidence snapshot schema mismatch");
+assert.deepEqual(snapshot.rows,report.rows,"Recorded source evidence is stale or prayer corpus changed; re-audit before publishing");
+assert.deepEqual(snapshot.flaggedForReview,report.flaggedForReview,"Review issues have changed without recorded approval");
+for(const row of rows){
+ const linked=byId.get(row.id)?.sourceBodyEvidence;
+ assert.ok(linked&&linked.type===row.type,"Work lacks source audit pointer: "+row.id);
+ assert.equal(linked.auditRef,"data/pray/prayer-work-language-evidence-20261107.v1.json#"+row.id);
+}
 console.log("AO_PRAY_STAGE3_REPORT_BEGIN");
 console.log(JSON.stringify(report));
 console.log("AO_PRAY_STAGE3_REPORT_END");
