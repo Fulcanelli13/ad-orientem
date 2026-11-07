@@ -53,9 +53,6 @@ for(const l of ["en","fr"]){
  assert.ok(profile.includes("Google Maps"));
 }
 for(const hold of [
- "RG-5926C75531A7", // Modesto has address and Google Place ID, no numeric POI coordinate
- "RG-A74DC06D4545", // Ciudad Juárez church number 533/553 unresolved; colony point not site
- "RG-615FF6835AAE", // Poprad vs Kálnica identity conflict
  "RG-832AB0C2265E", // Sold Chelmsford prior site
  "RG-24B468C40EBC", // Ashford/Snave same-site alias
 ]){
@@ -63,6 +60,6 @@ for(const hold of [
   "R23 must not pin unrelated held/alias record: "+hold);
 }
 assert.equal(items.length,2582);
-assert.equal(items.filter(v=>v.map_publishable).length,2560);
-assert.deepEqual(tlmSiteEvidenceCounts(items),{ALL:2582,REVIEWED_PIN:754,SOURCE_PIN:1806,ADDRESS_ONLY:22});
-console.log("PASS R23: one Excel-reviewed named Sacred Heart Chapel POI grid centre; 2560/2582 mapped, 22 held; EN/FR, provenance, no door directions or current schedule, no Cainta parish confusion");
+assert.equal(items.filter(v=>v.map_publishable).length,2568);
+assert.deepEqual(tlmSiteEvidenceCounts(items),{ALL:2582,REVIEWED_PIN:762,SOURCE_PIN:1806,ADDRESS_ONLY:14});
+console.log("PASS R23: one Excel-reviewed named Sacred Heart Chapel POI grid centre; 2568/2582 mapped, 14 held; EN/FR, provenance, no door directions or current schedule, no Cainta parish confusion");

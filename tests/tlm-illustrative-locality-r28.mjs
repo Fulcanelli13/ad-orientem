@@ -1,0 +1,66 @@
+// R28: owner-directed eight remaining illustrative Atlas markers, no chapel-door GPS.
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R28} from "../src/find/cl2-illustrative-locality-pins-r28.js";
+import {validateCL2PhysicalIndex,projectCL2PhysicalDirectory} from "../src/find/cl2-physical-directory.js";
+import {projectPreliminaryR49,projectPublishedProvisionalMassSites,tlmSiteEvidenceCounts} from "../src/find/preliminary-directory-r49.js";
+import {renderDirectoryVenueCard} from "../src/find/directory-card.js";
+import {renderTlmChurchProfile} from "../src/find/tlm-church-profile.js";
+const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
+const frozen=validateCL2PhysicalIndex(read("data/directory/generated/cl2-physical-site-index.v1.json"));
+const base=projectPublishedProvisionalMassSites(projectPreliminaryR49(read("data/directory/preliminary-map-r49.v1.json")),read("data/directory/published-provisional-mass-sites-20261026.v1.json"));
+const items=projectCL2PhysicalDirectory(base,frozen);
+const byId=new Map(items.map(v=>[v.physical_group_id,v]));
+const approvals=Object.entries(CL2_ILLUSTRATIVE_LOCALITY_PINS_R28);
+const ids=["RG-0DCEDA190517","RG-2C84B50B3667","RG-50082C65DA56","RG-5926C75531A7","RG-615FF6835AAE","RG-A74DC06D4545","RG-B72-7441A9AFEE69","RG-B72-BD22249C1E0A"];
+assert.deepEqual(approvals.map(([id])=>id),ids);
+const ledger=read("data/directory/research/atlas-r28-owner-approximate-completion.v1.json");
+assert.equal(ledger.sites.length,8);
+assert.deepEqual(ledger.target,{all:2582,sourcePins:1806,reviewedPins:762,mapped:2568,listOnly:14});
+assert.deepEqual(ledger.remainingNotSeparatePins,{sameSiteAliases:13,historicalClosedSite:1});
+for(const [id,pin] of approvals){
+ const original=frozen.records.find(v=>v[0]===id),site=byId.get(id);
+ assert.ok(original&&original[1].includes(pin.sourceId),"Frozen CL2 source not matched: "+id);
+ assert.equal(original[2],pin.name);
+ assert.equal(original[3],pin.country);
+ assert.ok(original[4].includes(pin.addressNeedle));
+ assert.equal(items.filter(x=>x.physical_group_id===id).length,1,"No duplicate physical records");
+ assert.ok(site?.map_publishable&&site.geo?.approximate&&site.geo.precision==="locality");
+ assert.equal(site.map_state,"PROVISIONAL");
+ assert.equal(site.title,pin.name);
+ assert.equal(site.source_id,pin.sourceId);
+ assert.equal(site.source_location_description,original[4]);
+ assert.equal(site.geo.lat,pin.lat);assert.equal(site.geo.lng,pin.lng);
+ assert.equal(site.geo.source_ref,pin.sourceRef);assert.equal(site.geo.source_url,pin.sourceUrl);
+ assert.equal(site.geo.review_scope,pin.reviewScope);
+ assert.equal(site.geo.attribution,pin.attribution);
+ assert.equal(site.affiliation_scope,"SOURCE_LABEL_ONLY");
+ assert.match(site.status,/MASS UNVERIFIED/);
+ assert.equal(site.cover_media,undefined);assert.equal(site.celebration_evidence,undefined);
+ assert.equal(site.sections.length,0);
+ assert.ok(site.source_links.some(x=>x.url===pin.sourceUrl));
+ assert.equal(site.actions.length,1);assert.equal(site.actions[0].label,"Search location");
+ const url=new URL(site.actions[0].url);
+ assert.equal(url.hostname,"www.google.com");assert.equal(url.pathname,"/maps/search/");
+ assert.ok(url.searchParams.get("query").includes(pin.searchAddress),"Exact named place/address search must be used: "+id);
+ assert.ok(!site.actions[0].url.includes("/maps/dir/"));
+ assert.ok(!site.actions[0].url.includes(String(pin.lat)+","+String(pin.lng)));
+ for(const lang of ["en","fr"]){
+  const card=renderDirectoryVenueCard(site,lang),profile=renderTlmChurchProfile(site,lang);
+  assert.ok(card.includes('data-explore-item="'+site.item_id+'"'));
+  assert.ok(profile.includes("aoTlmProfileSources"));
+  assert.ok(profile.includes("Google Maps"));
+ }
+}
+assert.match(byId.get("RG-615FF6835AAE").geo.attribution,/Kálnica/,"Do not silently rewrite contradictory Poprad address");
+assert.match(byId.get("RG-2C84B50B3667").geo.attribution,/HISTORICAL/,"Closed Bootle parish is not a current Mass listing");
+assert.match(byId.get("RG-B72-BD22249C1E0A").geo.attribution,/ROUGH CARTOGRAPHIC INTERPOLATION/,"Do not disguise schematic Gabon point as measured location");
+assert.match(byId.get("RG-B72-7441A9AFEE69").geo.attribution,/NOT verified/,"Bissobilam and Bissobinam identity remains uncertain");
+for(const id of ["RG-832AB0C2265E","RG-24B468C40EBC"]){
+ assert.ok(!byId.get(id).map_publishable&&!byId.get(id).geo,"Historic Chelmsford and Ashford/Snave alias remain without duplicate active pins");
+}
+assert.equal(items.length,2582);
+assert.deepEqual(tlmSiteEvidenceCounts(items),{ALL:2582,REVIEWED_PIN:762,SOURCE_PIN:1806,ADDRESS_ONLY:14});
+assert.equal(items.filter(v=>v.map_publishable).length,2568);
+assert.equal(items.filter(v=>!v.map_publishable).length,14);
+console.log("PASS R28: 8 source-locked owner-authorized approximate pins, 2568/2582 mapped, 13 aliases + 1 closed history list-only; no direct GPS, no current Mass inferred");
