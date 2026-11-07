@@ -1,0 +1,113 @@
+{
+  "schema": "ao.pray.registry.stage7.rendered-source-acceptance.v1",
+  "checkedAt": "2026-11-07",
+  "branch": "research/prayer-work-identity-registry-20261106",
+  "pullRequest": 2594,
+  "sourceCommit": "eefee0ad9f6996f5d9a30496d5e31f86d4c7f1ee",
+  "run": {
+    "id": 42371997631,
+    "url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42371997631",
+    "jobId": 128401858434,
+    "artifactId": 13573908301,
+    "conclusion": "success"
+  },
+  "test": "tests/pray-work-stage7-rendered-witnesses-20261107.mjs",
+  "browser": "Chromium through GitHub Actions; service workers blocked",
+  "widths": [
+    320,
+    390
+  ],
+  "uiLanguages": [
+    "en",
+    "fr"
+  ],
+  "renderedExactBodyChecks": 68,
+  "failedChecks": 0,
+  "coverage": [
+    {
+      "workId": "holy_face_golden_arrow",
+      "route": "pray.sacred_heart",
+      "sourceRole": "Golden Arrow; independent 1884 English and 1887 French recensions",
+      "checks": 4
+    },
+    {
+      "workId": "holy_face_1887",
+      "route": "pray.novenas",
+      "sourceRole": "Nine complete original English proper prayers, with French source notice",
+      "checks": 36
+    },
+    {
+      "workId": "holy_spirit_litany",
+      "route": "pray.montfort_consecration",
+      "sourceRole": "Historical English Litany of the Holy Ghost, complete ordered rows",
+      "checks": 4
+    },
+    {
+      "workId": "pray.holy_name_litany",
+      "route": "pray.montfort_consecration",
+      "sourceRole": "Montfort embedded Holy Name litany rows; NOT certification of the standalone Litany reader",
+      "checks": 4,
+      "embeddedOnly": true
+    },
+    {
+      "workId": "montfort_augustine_prayer",
+      "route": "pray.montfort_consecration",
+      "sourceRole": "Transmitted English and Latin Montfort §67 prayer rows",
+      "checks": 4
+    },
+    {
+      "workId": "montfort_consecration_act_1863",
+      "route": "pray.montfort_consecration",
+      "sourceRole": "Full English Faber 1863 consecration act on day 34",
+      "checks": 4
+    },
+    {
+      "workId": "good_death_jesus_mary_joseph",
+      "route": "pray.dying_companion",
+      "sourceRole": "All three invocations, English and French visible faces",
+      "checks": 4
+    },
+    {
+      "workId": "good_death_proficiscere",
+      "route": "pray.dying_companion",
+      "sourceRole": "Complete editorial vernacular and Latin Roman Ritual witnesses, with provenance status",
+      "checks": 8
+    }
+  ],
+  "uniqueSourceRoles": 8,
+  "uniquePrimaryWorksWithReaderBodyEvidence": 7,
+  "stabatMater": {
+    "workId": "stabat_mater",
+    "currentCanonicalTercets": 13,
+    "traditionalSequenceTercets": 20,
+    "missingTercetNumbers": [
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "status": "partial-source-no-complete-hymn-certificate",
+    "reference": "https://oremus.lat/en/prayer/stabat-mater",
+    "notAltered": true
+  },
+  "qualifications": [
+    "The embedded Montfort Holy Name litany was tested, but this is not a certificate for the standalone pray.holy_name_litany route.",
+    "French Holy Face guidance is not a verified translation of the nine English proper prayers.",
+    "English and French Golden Arrow texts are historically distinct recensions, not certified literal equivalents.",
+    "Montfort original printed pages and source edition identity remain uncollated.",
+    "Proficiscere English/French bodies are editorial renderings aligned to the Latin post-1922 order; no exact 1962 printed edition certificate.",
+    "The Stabat source is partial (13 of the traditional 20 tercets). Another owned complete text must be sought or carefully admitted before any correction.",
+    "Stage 7 browser compares repository-owned source bodies; it does not independently authenticate original historical prints, licence rights, offline use, or the full Prayer corpus."
+  ],
+  "sourceReaderCompleteCertified": false,
+  "historicalSourcePrintCertified": false,
+  "fullFrenchTranslationCertified": false,
+  "registryImportedToRuntime": false,
+  "publicationChanges": false,
+  "prayerTextChanges": false,
+  "genericRendererIntroduced": false,
+  "deployments": false
+}
