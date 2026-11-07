@@ -87,7 +87,33 @@ try{
    await page.waitForFunction(()=>Boolean(
     globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId&&
     document.querySelector("#ao-r17-native-reader-preview [data-ao-reader-shell]")
-   ),null,{timeout:70000});
+   ),null,{timeout:25000}).catch(async error=>{
+    const detail=await page.evaluate(()=>{
+     const st=globalThis.AO_RUNTIME_V8?.store?.getState?.();
+     const api=globalThis.AO_R17_BROWSER_ENTRY;
+     const status=api?.status?.();
+     const host=globalThis.AO_CELEBRATION_API?.getResolvedMass?.();
+     const shell=globalThis.AO_APP_SHELL_V1?.status?.();
+     const native=document.querySelector("#ao-r17-native-reader-preview");
+     const preflight=document.querySelector("[data-ao-full-mass-preflight]");
+     return {
+      selectedDate:st?.selectedDate,resolving:st?.resolving,
+      route:st?.route,activeShell:shell?.active,visibleOwner:shell?.visibleOwner,
+      currentHostDate:host?.date,hostSource:host?.proper?.data?.sourcePath,
+      browserStatus:{installed:status?.installed,
+       chosenForm:status?.fullMassPreflight?.chosenForm,
+       phase:status?.phase,readiness:status?.readiness},
+      preflight:{exists:!!preflight,visible:Boolean(preflight&&
+       getComputedStyle(preflight).display!=="none"),text:preflight?.innerText?.slice(0,700)},
+      native:{exists:!!native,text:native?.innerText?.slice(0,350)},
+      dialog:[...document.querySelectorAll("[role=dialog]")].filter(x=>
+       getComputedStyle(x).display!=="none").map(x=>x.innerText.slice(0,300)),
+      pageErrors:[]
+     };
+    });
+    throw new Error(date+" reader handoff failed: "+JSON.stringify(detail)+
+      " / prior errors: "+JSON.stringify(pageErrors)+" / "+error.message);
+   });
    const next=page.locator("#ao-r17-native-reader-preview [data-reader-nav='next']");
    const rows=[];
    for(const [name,source] of [
