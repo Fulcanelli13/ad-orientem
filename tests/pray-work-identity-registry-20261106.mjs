@@ -76,32 +76,49 @@ check(stabatCandidate.qualityGates.full20SequenceAdmittedToCanonical===false &&
  stabatCandidate.qualityGates.fullStanzaSetPrintImageCollated===false &&
  stabatCandidate.existingCanonical.modified===false,"Stabat critical-edition hold must not be claimed completed");
 check(stabatCandidate.missingFromCanonical[5].latin.startsWith("Christe, cum sit hinc exire"),"1962 September stanza 19 may not be replaced with a different recension");
+const stage9=JSON.parse(readFileSync(join(root,"data/pray/prayer-work-stage9-source-owner-acceptance-20261107.v1.json"),"utf8"));
+check(stage9.run.conclusion==="success" && stage9.failedAssertions===0,"Stage 9 source-owner browser gate must pass");
+check(stage9.verified.historicalSevenWords.renderedExactBodyChecks===36 &&
+ stage9.verified.penitential.referencePositionChecks===28 &&
+ stage9.verified.litany.offlineUnavailableFailureChecks===4 &&
+ stage9.verified.lasance.historicalLanguageWitnesses===6,"Stage 9 evidence matrix changed");
+check(stage9.perWorkNewVisibleBodyEvidence.length===1 &&
+ stage9.perWorkNewVisibleBodyEvidence[0]==="pray.seven_words","Only Seven Words has new source-exact browser body evidence");
+check(stage9.verified.penitential.fullPsalmBodiesCertified===0 &&
+ stage9.verified.litany.fullLitanyBodiesCertified===0 &&
+ stage9.verified.lasance.liveReaderBodiesCertified===0,"Do not elevate source/absence checks to complete verse/prayer proof");
+check(stage9.perWorkUnchanged.every(id=>!A(id)?.readerBodyEvidence),"Stage 9 source-only works must not receive reader-body certificate");
 const visibleBodyWorks=items.filter(w=>w.readerBodyEvidence);
-check(visibleBodyWorks.length===20,"Stage 6 nine + Stage 7 seven + Stage 8 four work identities require source-visible evidence");
+check(visibleBodyWorks.length===21,"Stage 6 nine + Stage 7 seven + Stage 8 four + Stage 9 one identity require browser body evidence");
 check(browserBodyEvidence.bodyParity.supplementalSourceWorks===8,"Stage 6 eight supplemental works have sampled visible-body checks");
 check(browserBodyEvidence.bodyParity.canonicalSourceReuse===1,"One canonical St Joseph prayer must remain shared");
-check(registry.counts.visibleBodyComparedWorks===20 && registry.counts.visibleBodyComparedSupplementalWorks===19 &&
+check(registry.counts.visibleBodyComparedWorks===21 && registry.counts.visibleBodyComparedSupplementalWorks===20 &&
  registry.counts.visibleBodyCanonicalReuseWorks===1,"Stage 8 cumulative reader-body evidence counts drifted");
 check(registry.counts.visibleBodyStage6Works===9 && registry.counts.visibleBodyStage7Works===7 &&
- registry.counts.visibleBodyStage8Works===4,"Stage-specific reader-body counts drifted");
+ registry.counts.visibleBodyStage8Works===4 && registry.counts.visibleBodyStage9Works===1,"Stage-specific reader-body counts drifted");
 for(const w of visibleBodyWorks){
  const isStage6=nineBrowserIds.includes(w.id);
  const isStage7=stage7WorkIds.includes(w.id);
  const isStage8=stage8WorkIds.includes(w.id);
- check(Number(isStage6)+Number(isStage7)+Number(isStage8)===1,"Registry identity has zero/multiple browser owners: "+w.id);
+ const isStage9=w.id==="pray.seven_words";
+ check(Number(isStage6)+Number(isStage7)+Number(isStage8)+Number(isStage9)===1,"Registry identity has zero/multiple browser owners: "+w.id);
  const evidencePath=isStage6
   ?"data/pray/prayer-work-body-stage-browser-acceptance-20261107.v1.json#"+w.id
   :isStage7
    ?"data/pray/prayer-work-stage7-rendered-source-acceptance-20261107.v1.json#"+w.id
-   :"data/pray/prayer-work-stage8-four-chaplets-acceptance-20261107.v1.json#"+w.id;
+   :isStage8
+    ?"data/pray/prayer-work-stage8-four-chaplets-acceptance-20261107.v1.json#"+w.id
+    :"data/pray/prayer-work-stage9-source-owner-acceptance-20261107.v1.json#"+w.id;
  check(w.readerBodyEvidence.auditRef===evidencePath,"Wrong browser-body evidence pointer "+w.id);
  if(isStage7)check(w.readerBodyEvidence.route===stage7.coverage.find(row=>row.workId===w.id)?.route,"Stage 7 reader owner mismatch "+w.id);
  if(isStage8)check(w.readerBodyEvidence.route===stage8.workCoverage.find(row=>row.workId===w.id)?.route,"Stage 8 reader owner mismatch "+w.id);
+ if(isStage9)check(w.readerBodyEvidence.route===stage9.verified.historicalSevenWords.route,"Stage 9 original Seven Words reader owner mismatch "+w.id);
  check(w.readerBodyEvidence.historicalSourcePrintCertified===false && w.readerBodyEvidence.sourceReaderCompleteCertified===false,
   "Source-visible checks cannot certify original print or all offline variants "+w.id);
 }
 check(stage7.registryImportedToRuntime===false&&stage7.publicationChanges===false&&stage7.prayerTextChanges===false,"Stage 7 must remain research-only with no text/publication changes");
 check(stage8.registryImportedToRuntime===false&&stage8.publicationChanges===false&&stage8.prayerTextChanges===false,"Stage 8 must remain research-only with no text/publication changes");
+check(stage9.registryImportedToRuntime===false || (stage9.publicationChanges===false&&stage9.prayerTextChanges===false), "Stage 9 must not publish or mutate source text");
 check(browserBodyEvidence.availabilityPolicy?.registryImportedToRuntime===false,"Draft registry must not be treated as a production import");
 check(registry.counts.routeUIVerified===0,"Targeted body tests are not complete 84-work browser route certificates");
 const expectedAvailable=["published","route-unverified","external-link","source-only"];
