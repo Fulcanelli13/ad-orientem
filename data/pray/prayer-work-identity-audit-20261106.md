@@ -223,3 +223,27 @@ The dedicated validator also ran **12 existing specialist devotional regression 
 | Historical first-edition and rights certification | Separate per-work review | Pending; cannot be inferred from text-field presence |
 
 **No changes to Mass, Rosary, Confession, Benediction, Adoration, Office, novena readers, prayer texts, assets, public navigation or homepage.** The draft registry remains unconsumed by production code. The next gated work is targeted reader-level / browser acceptance and source-edition qualification, followed by category-facing wiring only when authorised. GitHub Actions + Pages remain the only publication infrastructure.
+
+## Stage 5 — existing reader browser acceptance (7 November 2026)
+
+Completed workflow: https://github.com/Fulcanelli13/ad-orientem/actions/runs/42365571236. Tested head: `666f524e20a56f61d3456699920719bf9d7de625`. Both browser jobs finished successfully. Machine-readable index: `data/pray/prayer-work-reader-browser-acceptance-20261107.v1.json`.
+
+| Actual Chromium browser gate | Result | Scope |
+| --- | --- | --- |
+| Existing Prayer routes | **41/41** | Entry at 320px and 390px, English and French |
+| Total Prayer entry variations | **164/164** | Route/owner opening and native navigation, entry-level only |
+| Novena programme readers | **19/19** | All sixteen main + Divine Infant King, Institute Immaculate Conception, Holy Face |
+| Historical novena day positions | **171/171** | Nine days for each programme |
+| Guided card variants | **2736/2736** | Full chapter/width/language matrix in the existing novena reader |
+| Simple day variants | **684/684** | Existing simple-mode novena source bodies |
+| French-English witness round trips | **324/324** | Source-language face controls where proper French source exists |
+
+GitHub Actions artifacts: `prayer-registry-stage5-41-entry-routes` and `prayer-registry-stage5-19-novena-programmes` from workflow run 42365571236. Both are preserved by GitHub Actions as short-retention evidence (seven days); their counts and IDs are permanently indexed in the evidence JSON.
+
+**Scope boundary:** This is browser acceptance of existing Prayer routes and specialised novena readers on the research branch. It does **not** establish 84/84 per-work public reader certificates, all-stage coverage for the 41 entry routes, complete offline-first access, full LA/EN/FR translation fidelity, copyright status or original historical edition collation. Source work identity is different from reader route identity. Existing 84 route-unverified supplemental statuses remain unchanged.
+
+**Textual exceptions held:** the nine 1887 Holy Face proper-day prayers retain their English-only witness when no certified French original exists; and the canonical Stabat Mater source comprises only 13 Latin stanzas, so a claim of a complete hymn remains blocked without separate sourcing.
+
+**Non-regression:** The workflow imports the original existing 41-route and 19-novena browser tests rather than creating a second reader, did not alter app code and has no publication or deployment actions. PR #2594 remains a draft.
+
+**Next evidence gate:** verify the displayed prayer bodies and language/source labels inside each multi-text route, especially clergy, intercessions, chaplets, Rosary, Confession, Adoration and Benediction. Preserve the existing specialised readers and run their full-stage device acceptance before any category UI change. Separate source-edition review from release availability.
