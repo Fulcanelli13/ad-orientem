@@ -1,15 +1,15 @@
 {
   "schema": "AO_SACRED_ATLAS_150_SOURCE_SCOPE_SCREEN_V1",
   "prepared_on": "2026-11-07",
-  "status": "RESEARCH_ONLY_PAGE_LEVEL_PARTIAL_NO_OWNER_APPROVAL",
+  "status": "RESEARCH_ONLY_SECOND_SOURCE_PASS_PARTIAL_NO_OWNER_APPROVAL",
   "source_snapshot": "Ad_Orientem_Unified_Sacred_Places_Master_STAGE25_2026-11-06.csv",
   "first_intake_and_second_cohort_separate": true,
   "counts": {
     "candidates": 150,
     "qualified": 33,
     "standard": 117,
-    "independently_page_screened": 59,
-    "not_yet_page_screened": 91,
+    "independently_page_screened": 97,
+    "not_yet_page_screened": 53,
     "by_source_class": {
       "NO_SITE_SPECIFIC_IDENTITY_URL": 1,
       "SECONDARY_OR_GENERIC_OR_HERITAGE": 6,
@@ -17,25 +17,55 @@
       "THIRD_PARTY_CHURCH_DIRECTORY": 72
     },
     "by_outcome": {
+      "ADJACENT_COMPLEX_NOT_SAME_BUILDING": 1,
+      "ARCHDIOCESAN_NOT_NATIONAL_SHRINE": 1,
+      "CAMPUS_MUSEUM_ADDRESS_DISTINCTION": 1,
+      "CATHOLIC_PARISH_RITE_TITLE_QUALIFICATION": 1,
       "COMPLEX_SCOPE_CORRECTION": 5,
+      "DIOCESAN_MARIAN_COMPLEX_DISTINCTION": 1,
+      "DIOCESAN_PILGRIMAGE_CENTRE_CORROBORATED": 1,
+      "DIOCESAN_SHRINE_BASILICA_CORROBORATED": 1,
+      "DIOCESAN_SHRINE_TITLE_CORROBORATED": 1,
       "DISTINCT_BUILDING_SCOPE_CORRECTION": 3,
+      "DISTINCT_BUILDING_SITE_CORROBORATED": 1,
+      "GREEK_CATHOLIC_RITE_COMPLEX_SCOPE": 1,
+      "HILLTOP_STATUE_PILGRIMAGE_COMPLEX": 1,
       "HISTORICAL_CATHOLIC_SCOPE": 1,
-      "NOT_YET_INDEPENDENTLY_PAGE_SCREENED": 91,
+      "HISTORIC_MISSION_VS_BASILICA_SCOPE": 1,
+      "INTERNATIONAL_SHRINE_TITLE_CORROBORATED": 1,
+      "MARIAN_MONASTIC_COMPLEX_CORROBORATED": 1,
+      "MULTIFEATURE_HILLTOP_SHRINE": 1,
+      "MUNICIPAL_LANDMARK_CORROBORATED": 1,
+      "MUSEUM_PARK_CHAPEL_SCOPE_CORROBORATED": 1,
+      "NATIONAL_BASILICA_DISTINCT_FROM_CATHEDRAL": 1,
+      "NATIONAL_SHRINE_PARISH_CORROBORATED": 9,
+      "NOT_YET_INDEPENDENTLY_PAGE_SCREENED": 53,
       "RITE_SCOPE_CORRECTION": 2,
       "SAME_BUILDING_TITLE_CORRECTION": 1,
+      "SEASONAL_ACCESS_SCOPE": 1,
+      "SEMINARY_NONPUBLIC_SCOPE": 1,
+      "SHRINE_CUSTODIAN_CORROBORATED": 1,
+      "SHRINE_INSIDE_CHURCH_NOT_SECOND_BUILDING": 1,
+      "SHRINE_SITE_ADDRESS_CORROBORATED": 1,
+      "SITE_BUILDING_TITLE_CORROBORATED": 1,
       "SITE_SCOPE_UNCLEAR": 3,
-      "SITE_SOURCE_CORROBORATED": 38,
+      "SITE_SOURCE_CORROBORATED": 39,
+      "SITE_TITLE_SCOPE_QUALIFICATION": 1,
       "SOURCE_UNUSABLE_NOW": 1,
+      "STATE_TOURISM_SITE_ADDRESS_CORROBORATED": 1,
       "TEMPORARY_ACCESS_QUALIFICATION": 2,
+      "THREE_CHURCH_COMPLEX_SCOPE": 1,
       "TITLE_SCOPE_NEEDS_CORROBORATION": 2,
+      "UNESCO_MULTIBUILDING_SANCTUARY": 1,
       "WRONG_BUILDING_SOURCE_CORRECTION": 1
     },
     "missing_stage25_identity_url": 1,
     "missing_stage25_geography_url": 8,
     "approved": 0,
-    "published": 0
+    "published": 0,
+    "second_pass_source_upgrade": 38
   },
-  "method": "All 150 identified against Stage25 and 243-ID triage roster; page-level verified findings are explicitly marked. An unreviewed supplied link or GCatholic directory is NOT a source verification; physical site, exact point, title, current rite, and canonical eligibility are separate gates.",
+  "method": "All 150 identified against Stage25 and 243-ID triage roster; page-level verified findings are explicitly marked. An unreviewed supplied link or GCatholic directory is NOT a source verification; physical site, exact point, title, current rite, and canonical eligibility are separate gates. Second pass expanded page-scope checks using institutional, civil, sanctuary-custodian and Catholic shrine-association pages. These are independently reviewed sources, not approved sites.",
   "notes": "Page-level research outcomes rely on the linked institutional, governmental or secondary source as stated, not automated checks of all 150 supplied pages. Source screening never reserves a Place ID or approves publication.",
   "records": [
     {
@@ -1230,11 +1260,14 @@
       "submitted_status": "RESEARCH_PENDING",
       "source_class_from_url": "THIRD_PARTY_CHURCH_DIRECTORY",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "SITE_BUILDING_TITLE_CORROBORATED",
+        "evidence_url": "https://svetiste-sibenik.hr/raspored-svetista/",
+        "scope_finding": "Shrine custodian identifies Croatian National Shrine of Saint Nicholas Tavelić at the Church of Saint Francis, Šibenik; single church building with national shrine function.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -1260,11 +1293,14 @@
       "submitted_status": "RESEARCH_PENDING",
       "source_class_from_url": "THIRD_PARTY_CHURCH_DIRECTORY",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "SITE_SOURCE_CORROBORATED",
+        "evidence_url": "https://www.ndpshaiti.org/index.php?Itemid=282&id=97&option=com_content&view=article",
+        "scope_finding": "Our Lady of Perpetual Help devotion organisation identifies the national sanctuary at Bel-Air, Port-au-Prince. Present building condition and access are not established.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -1414,11 +1450,14 @@
       "submitted_status": "RESEARCH_PENDING",
       "source_class_from_url": "THIRD_PARTY_CHURCH_DIRECTORY",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "ADJACENT_COMPLEX_NOT_SAME_BUILDING",
+        "evidence_url": "https://www.carmeldejerusalem.com/en/o%C3%B9-nous-sommes",
+        "scope_finding": "Jerusalem Carmel identifies its monastery as adjoining Pater Noster/Eleona, not an identical church/building; monastery and church pins must be distinguished.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -1448,11 +1487,14 @@
       "submitted_status": "RESEARCH_PENDING",
       "source_class_from_url": "THIRD_PARTY_CHURCH_DIRECTORY",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "DISTINCT_BUILDING_SITE_CORROBORATED",
+        "evidence_url": "https://goa-tourism.com/church/se-cathedral-goa/",
+        "scope_finding": "Government of Goa tourism identifies Se Cathedral dedicated to St Catherine, Old Goa; physically distinct from nearby Basilica of Bom Jesus.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -1478,11 +1520,14 @@
       "submitted_status": "RESEARCH_PENDING",
       "source_class_from_url": "THIRD_PARTY_CHURCH_DIRECTORY",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "THREE_CHURCH_COMPLEX_SCOPE",
+        "evidence_url": "https://www.keralatourism.org/christianity/edappally-perunnal/58",
+        "scope_finding": "Kerala Tourism identifies St George Syro-Malabar Forane Church at Edappally and explicitly says three churches stand on the same site; identify the intended church before pinning.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -1538,11 +1583,14 @@
       "submitted_status": "RESEARCH_PENDING",
       "source_class_from_url": "THIRD_PARTY_CHURCH_DIRECTORY",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "SITE_TITLE_SCOPE_QUALIFICATION",
+        "evidence_url": "https://archgoadaman.com/novena-and-feast-of-st-joseph-vaz-2026/",
+        "scope_finding": "Archdiocese of Goa identifies Old Church of Our Lady of Health, Rua Escravo de Maria, Sancoale as the St Joseph Vaz novena and feast site; do not presume a new stand-alone shrine building or independent formal title.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -1658,11 +1706,14 @@
       "submitted_status": "RESEARCH_PENDING",
       "source_class_from_url": "THIRD_PARTY_CHURCH_DIRECTORY",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "MULTIFEATURE_HILLTOP_SHRINE",
+        "evidence_url": "https://www.keralatourism.org/destination/malayattoor-church-ernakulam/354/",
+        "scope_finding": "Kerala Tourism describes Malayattoor St Thomas Syro-Malabar hilltop church, Golden Cross, Marthoma Mandapam, relic site, and stations; do not treat every feature as same GPS point.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -1718,11 +1769,14 @@
       "submitted_status": "RESEARCH_PENDING",
       "source_class_from_url": "THIRD_PARTY_CHURCH_DIRECTORY",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "STATE_TOURISM_SITE_ADDRESS_CORROBORATED",
+        "evidence_url": "https://www.italia.it/it/toscana/firenze/abbazia-di-san-miniato-al-monte-a-firenze",
+        "scope_finding": "Italy national tourism site identifies Abbazia di San Miniato al Monte at Via delle Porte Sante 34, Florence; monastery and church remain one precinct pending footprint review.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -2300,11 +2354,14 @@
       "submitted_status": "RESEARCH_PENDING",
       "source_class_from_url": "SUPPLIED_INSTITUTIONAL_OR_MUNICIPAL_LINK_UNCHECKED",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "MUSEUM_PARK_CHAPEL_SCOPE_CORROBORATED",
+        "evidence_url": "https://www.seosomun.org/en/retrieveContents.do?mCode=233",
+        "scope_finding": "Official museum visitor page gives 5 Chilpae-ro, Seoul within Seosomun Historic Park; museum, martyr memorial and underground Mass chapel are subfeatures.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -2510,11 +2567,14 @@
       "submitted_status": "RESEARCH_PENDING",
       "source_class_from_url": "THIRD_PARTY_CHURCH_DIRECTORY",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "CATHOLIC_PARISH_RITE_TITLE_QUALIFICATION",
+        "evidence_url": "https://katolis.lv/draudze/skaistkalnes-svetas-jaunavas-marijas-debesis-uznemsanas-draudze/",
+        "scope_finding": "Latvian Catholic Church directory identifies Skaistkalne parish of Assumption; basilica rank not independently established by this page, keep title separately unverified.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -2750,11 +2810,14 @@
       "submitted_status": "NEW_OFFICIAL_SOURCE_REVIEWED",
       "source_class_from_url": "THIRD_PARTY_CHURCH_DIRECTORY",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "UNESCO_MULTIBUILDING_SANCTUARY",
+        "evidence_url": "https://whc.unesco.org/en/list/1274/",
+        "scope_finding": "UNESCO identifies Santuario de Jesús Nazareno de Atotonilco 14 km from San Miguel de Allende, one church with multiple smaller chapels; distinguish wider World Heritage listing from church point.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -2968,11 +3031,14 @@
       "submitted_status": "RESEARCH_PENDING",
       "source_class_from_url": "THIRD_PARTY_CHURCH_DIRECTORY",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "ARCHDIOCESAN_NOT_NATIONAL_SHRINE",
+        "evidence_url": "https://philippineshrines.org/mindanao/",
+        "scope_finding": "Association of Catholic Shrines lists Archdiocesan Shrine of Divine Mercy in El Salvador City, declared 8 September 2008; must not inherit Marilao National Shrine title.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -2998,11 +3064,14 @@
       "submitted_status": "RESEARCH_PENDING",
       "source_class_from_url": "THIRD_PARTY_CHURCH_DIRECTORY",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "INTERNATIONAL_SHRINE_TITLE_CORROBORATED",
+        "evidence_url": "https://philippineshrines.org/national-capital-region-and-southern-luzon/",
+        "scope_finding": "Shrine association identifies Antipolo Cathedral as International Shrine of Our Lady of Peace and Good Voyage / Immaculate Conception Parish, international designation 2024.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -3028,11 +3097,14 @@
       "submitted_status": "RESEARCH_PENDING",
       "source_class_from_url": "THIRD_PARTY_CHURCH_DIRECTORY",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "MARIAN_MONASTIC_COMPLEX_CORROBORATED",
+        "evidence_url": "https://tourism.cebu.gov.ph/explore/sibonga/",
+        "scope_finding": "Cebu provincial tourism identifies Simala as a Marian pilgrimage monastic shrine in Sibonga; site existence confirmed but individual church footprint remains a separate question.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -3058,11 +3130,14 @@
       "submitted_status": "RESEARCH_PENDING",
       "source_class_from_url": "THIRD_PARTY_CHURCH_DIRECTORY",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "NATIONAL_SHRINE_PARISH_CORROBORATED",
+        "evidence_url": "https://dioceseofmalolos.ph/shrines-and-pilgrimage-sites/",
+        "scope_finding": "Diocese of Malolos lists National Shrine and Parish of Divine Mercy at Sta Rosa I, Marilao, declared national shrine 2002; one church site.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -3088,11 +3163,14 @@
       "submitted_status": "RESEARCH_PENDING",
       "source_class_from_url": "THIRD_PARTY_CHURCH_DIRECTORY",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "NATIONAL_SHRINE_PARISH_CORROBORATED",
+        "evidence_url": "https://philippineshrines.org/national-capital-region-and-southern-luzon/",
+        "scope_finding": "Shrine association names National Shrine of Mary Help of Christians at Don Bosco, Parañaque City; parish/shrine title on same site.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -3148,11 +3226,14 @@
       "submitted_status": "RESEARCH_PENDING",
       "source_class_from_url": "THIRD_PARTY_CHURCH_DIRECTORY",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "NATIONAL_SHRINE_PARISH_CORROBORATED",
+        "evidence_url": "https://philippineshrines.org/national-capital-region-and-southern-luzon/",
+        "scope_finding": "Philippine Catholic shrine association names National Shrine of Our Lady of the Rosary La Naval de Manila at Santo Domingo Parish, Quezon City; one shared church site.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -3178,11 +3259,14 @@
       "submitted_status": "RESEARCH_PENDING",
       "source_class_from_url": "THIRD_PARTY_CHURCH_DIRECTORY",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "NATIONAL_SHRINE_PARISH_CORROBORATED",
+        "evidence_url": "https://philippineshrines.org/national-capital-region-and-southern-luzon/",
+        "scope_finding": "Shrine association identifies National Shrine and Parish of Our Lady of Sorrows at Poblacion, Dolores, Quezon, declared 2017.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -3208,11 +3292,14 @@
       "submitted_status": "RESEARCH_PENDING",
       "source_class_from_url": "THIRD_PARTY_CHURCH_DIRECTORY",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "NATIONAL_SHRINE_PARISH_CORROBORATED",
+        "evidence_url": "https://philippineshrines.org/national-capital-region-and-southern-luzon/",
+        "scope_finding": "Shrine association names National Shrine and Parish of Our Lady of the Abandoned at Santa Ana, Manila; distinguish Muntinlupa diocesan shrine with same dedication.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -3238,11 +3325,14 @@
       "submitted_status": "RESEARCH_PENDING",
       "source_class_from_url": "THIRD_PARTY_CHURCH_DIRECTORY",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "NATIONAL_SHRINE_PARISH_CORROBORATED",
+        "evidence_url": "https://philippineshrines.org/national-capital-region-and-southern-luzon/",
+        "scope_finding": "Shrine association names Our Lady of the Miraculous Medal National Shrine Parish at Sucat, Muntinlupa; normalise typo from directory, avoid confusing Paco shrine.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -3298,11 +3388,14 @@
       "submitted_status": "RESEARCH_PENDING",
       "source_class_from_url": "THIRD_PARTY_CHURCH_DIRECTORY",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "NATIONAL_SHRINE_PARISH_CORROBORATED",
+        "evidence_url": "https://philippineshrines.org/national-capital-region-and-southern-luzon/",
+        "scope_finding": "Shrine association lists National Shrine and Parish of San Antonio de Padua at Poblacion, Pila, Laguna.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -3358,11 +3451,14 @@
       "submitted_status": "RESEARCH_PENDING",
       "source_class_from_url": "THIRD_PARTY_CHURCH_DIRECTORY",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "NATIONAL_SHRINE_PARISH_CORROBORATED",
+        "evidence_url": "https://philippineshrines.org/national-capital-region-and-southern-luzon/",
+        "scope_finding": "Shrine association lists National Shrine and Parish of Saint Jude Thaddeus, San Miguel Manila, declared 2010; distinguish other St Jude parishes elsewhere.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -3388,11 +3484,14 @@
       "submitted_status": "RESEARCH_PENDING",
       "source_class_from_url": "THIRD_PARTY_CHURCH_DIRECTORY",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "NATIONAL_SHRINE_PARISH_CORROBORATED",
+        "evidence_url": "https://philippineshrines.org/national-capital-region-and-southern-luzon/",
+        "scope_finding": "Shrine association names Regal Parish and National Shrine of Saint Michael and the Archangels in San Miguel, Manila.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -3418,11 +3517,14 @@
       "submitted_status": "RESEARCH_PENDING",
       "source_class_from_url": "THIRD_PARTY_CHURCH_DIRECTORY",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "DIOCESAN_SHRINE_TITLE_CORROBORATED",
+        "evidence_url": "https://philippineshrines.org/national-capital-region-and-southern-luzon/",
+        "scope_finding": "Shrine association lists Saint Therese of the Child Jesus at Mayamot, Antipolo as a diocesan shrine/parish, not national shrine.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -3448,11 +3550,14 @@
       "submitted_status": "RESEARCH_PENDING",
       "source_class_from_url": "THIRD_PARTY_CHURCH_DIRECTORY",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "DIOCESAN_SHRINE_BASILICA_CORROBORATED",
+        "evidence_url": "https://diecezja.siedlce.pl/parafie/parafia-narodzenia-nmp-i-sw-apostolow-piotra-i-pawla-sanktuarium-maryjne-bazylika-mniejsza/",
+        "scope_finding": "Siedlce diocese identifies Marian shrine and minor basilica, Leśna Podlaska, at ul. Bpa Moszyńskiego 2; Catholic parish under Pauline care.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -3478,11 +3583,14 @@
       "submitted_status": "RESEARCH_PENDING",
       "source_class_from_url": "THIRD_PARTY_CHURCH_DIRECTORY",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "SHRINE_CUSTODIAN_CORROBORATED",
+        "evidence_url": "https://www.swietykrzyz.pl/kategorie/kontakt",
+        "scope_finding": "Sanktuarium Święty Krzyż site's own contact and liturgy navigation confirms Holy Cross sanctuary/basilica pilgrimage and relics; precise church feature still needs map review.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -3692,11 +3800,14 @@
       "submitted_status": "RESEARCH_PENDING",
       "source_class_from_url": "THIRD_PARTY_CHURCH_DIRECTORY",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "GREEK_CATHOLIC_RITE_COMPLEX_SCOPE",
+        "evidence_url": "https://www.grkatpo.sk/farnost/lutina/",
+        "scope_finding": "Greek Catholic Archeparchy of Prešov lists Ľutina 133 parish, Dormition minor basilica, Holy Family church and multiple distinct hill chapels; do not imply Roman-Latin rite.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -3992,11 +4103,14 @@
       "submitted_status": "RESEARCH_PENDING",
       "source_class_from_url": "THIRD_PARTY_CHURCH_DIRECTORY",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "MUNICIPAL_LANDMARK_CORROBORATED",
+        "evidence_url": "https://www.minneapolismn.gov/resident-services/property-housing/preservation/landmarks-districts/landmarks/basilica-saint-mary/",
+        "scope_finding": "Minneapolis government heritage listing explicitly identifies Basilica of Saint Mary; landmark record is not proof of 1962 liturgical programme.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -4052,11 +4166,14 @@
       "submitted_status": "RESEARCH_PENDING",
       "source_class_from_url": "THIRD_PARTY_CHURCH_DIRECTORY",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "HISTORIC_MISSION_VS_BASILICA_SCOPE",
+        "evidence_url": "https://www.rcbo.org/directories/parishes/mission-basilica/",
+        "scope_finding": "Diocese of Orange identifies active Mission Basilica parish at 31520 Camino Capistrano and references historic Mission San Juan Capistrano as national shrine; separate building and site-footprint decision required.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -4082,11 +4199,14 @@
       "submitted_status": "RESEARCH_PENDING",
       "source_class_from_url": "THIRD_PARTY_CHURCH_DIRECTORY",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "SHRINE_INSIDE_CHURCH_NOT_SECOND_BUILDING",
+        "evidence_url": "https://natlshrinestdymphna.org/site/",
+        "scope_finding": "National Shrine of St Dymphna states it is INSIDE St Mary's Church, Massillon; physical single-building site; access through gift shop when church locked.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -4142,11 +4262,14 @@
       "submitted_status": "RESEARCH_PENDING",
       "source_class_from_url": "THIRD_PARTY_CHURCH_DIRECTORY",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "CAMPUS_MUSEUM_ADDRESS_DISTINCTION",
+        "evidence_url": "https://www.littleflower.org/national-shrine-and-museum-of-st-therese/plan-your-visit/",
+        "scope_finding": "Carmelite custodian lists National Shrine of St Thérèse at 8433 Bailey Rd and museum at 8501 Bailey Rd, both Darien campus; shrine and museum not identical entrance.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -4172,11 +4295,14 @@
       "submitted_status": "SOURCE_IDENTITY_REVIEWED_STAGE5",
       "source_class_from_url": "SUPPLIED_INSTITUTIONAL_OR_MUNICIPAL_LINK_UNCHECKED",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "SEMINARY_NONPUBLIC_SCOPE",
+        "evidence_url": "https://fsspolgs.org/contact-us/",
+        "scope_finding": "FSSP Our Lady of Guadalupe Seminary confirms institution and Denton campus physical address 7880 W Denton Road; educational/formation institution, do not imply public access or ordinary parish Mass.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -4232,11 +4358,14 @@
       "submitted_status": "RESEARCH_PENDING",
       "source_class_from_url": "THIRD_PARTY_CHURCH_DIRECTORY",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "SEASONAL_ACCESS_SCOPE",
+        "evidence_url": "https://www.katerishrine.org/",
+        "scope_finding": "Saint Kateri Shrine Fonda current visitor site distinguishes winter grounds from closed St Peter chapel, museum and no Mass November–April; keep season/visit claims source-scoped.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -4262,11 +4391,14 @@
       "submitted_status": "RESEARCH_PENDING",
       "source_class_from_url": "THIRD_PARTY_CHURCH_DIRECTORY",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "SHRINE_SITE_ADDRESS_CORROBORATED",
+        "evidence_url": "https://amm.org/visit-us/directions/",
+        "scope_finding": "Association of Miraculous Medal identifies National Shrine, Perryville at 1805 W St Joseph St (association postal office 1811), not exact entrance GPS.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -4322,11 +4454,14 @@
       "submitted_status": "RESEARCH_PENDING",
       "source_class_from_url": "THIRD_PARTY_CHURCH_DIRECTORY",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "NATIONAL_BASILICA_DISTINCT_FROM_CATHEDRAL",
+        "evidence_url": "https://conferenciaepiscopalvenezolana.com/diocesis-de-guanare-celebro-26-aniversario-de-la-basilica-menor-santuario-nacional-virgen-de-coromoto/",
+        "scope_finding": "Venezuelan Episcopal Conference confirms National Sanctuary and Minor Basilica of Our Lady of Coromoto built at apparition site; distinct from Guanare cathedral formerly holding relic.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -4442,11 +4577,14 @@
       "submitted_status": "RESEARCH_PENDING",
       "source_class_from_url": "THIRD_PARTY_CHURCH_DIRECTORY",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "DIOCESAN_PILGRIMAGE_CENTRE_CORROBORATED",
+        "evidence_url": "https://giaophankontum.com/giao-phan/giao-xu/mien-kontum/giao-hat-kontum/trung-tam-hanh-huong-duc-me-mang-den",
+        "scope_finding": "Kon Tum diocese identifies Our Lady of Măng Đen pilgrimage centre in Măng Đen commune; statue/shrine physical feature still requires map choice.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -4472,11 +4610,14 @@
       "submitted_status": "RESEARCH_PENDING",
       "source_class_from_url": "THIRD_PARTY_CHURCH_DIRECTORY",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "DIOCESAN_MARIAN_COMPLEX_DISTINCTION",
+        "evidence_url": "https://giaophandanang.org/linh-dia-tra-kieu-trung-tam-thanh-mau-giao-phan-da-nang/",
+        "scope_finding": "Đà Nẵng diocesan history explicitly distinguishes Trà Kiệu parish church from Marian hilltop sanctuary chapel built on Bửu Châu; do not pin both to one generic locality.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -4502,11 +4643,14 @@
       "submitted_status": "RESEARCH_PENDING",
       "source_class_from_url": "THIRD_PARTY_CHURCH_DIRECTORY",
       "web_evidence_review": {
-        "outcome": "NOT_YET_INDEPENDENTLY_PAGE_SCREENED",
-        "evidence_url": null,
-        "scope_finding": "Source URL is a provisional research lead only; independently verify physical site, title, current status and precise feature before owner review",
-        "page_level_research_performed": false,
-        "point_certified": false
+        "outcome": "HILLTOP_STATUE_PILGRIMAGE_COMPLEX",
+        "evidence_url": "https://gpphanthiet.com/index.php/news/T-T-Thanh-Mau-Tapao/Lich-Su-Duc-Me-Ta-Pao-5227/",
+        "scope_finding": "Phan Thiết diocese describes Tà Pao hilltop Marian statue, altar and wider pilgrimage structures; single local diocesan devotion centre not automatic separate basilica.",
+        "page_level_research_performed": true,
+        "point_certified": false,
+        "independent_source_upgrade": true,
+        "reviewed_on": "2026-11-07",
+        "review_batch": "ATLAS_SOURCE_UPGRADE_02"
       },
       "owner_decision": "PENDING",
       "physical_site_approved": false,
@@ -4574,5 +4718,10 @@
       "import_ready": false,
       "publication_authorized": false
     }
-  ]
+  ],
+  "review_batches": {
+    "initial_page_level": 59,
+    "second_source_upgrade": 38,
+    "remaining_unchecked": 53
+  }
 }
