@@ -247,3 +247,29 @@ GitHub Actions artifacts: `prayer-registry-stage5-41-entry-routes` and `prayer-r
 **Non-regression:** The workflow imports the original existing 41-route and 19-novena browser tests rather than creating a second reader, did not alter app code and has no publication or deployment actions. PR #2594 remains a draft.
 
 **Next evidence gate:** verify the displayed prayer bodies and language/source labels inside each multi-text route, especially clergy, intercessions, chaplets, Rosary, Confession, Adoration and Benediction. Preserve the existing specialised readers and run their full-stage device acceptance before any category UI change. Separate source-edition review from release availability.
+
+## Stage 6 — exact visible bodies and specialised reader regression gates (7 November 2026)
+
+Four dedicated actual Chromium jobs passed: https://github.com/Fulcanelli13/ad-orientem/actions/runs/42367087292 (test head `eaea5cdede3b354759cb624135fdd4f4b3865b55`). The workflow has no deployment steps and continues to operate on the existing reader code.
+
+| Browser evidence | Verified result | Scope limitation |
+| --- | ---: | --- |
+| Individually rendered intercessions | **36 / 36** selected contexts | Three for priests + six occasional intentions, at 320/390 EN/FR |
+| Source-owned distinct works matched | **9** | Eight supplemental prayer texts, plus canonical *Ad te, beate Ioseph* reused for difficulties |
+| Confession | **272** stage/card checks | Three paths (regular, returning, general); 320/390 EN/FR; not a test of private sins or absolution |
+| Benediction | **72** stage checks | Ordinary seven-stage form and optional eleven-stage Christ the King sequence |
+| Adoration | **104** guided stage variants | Four guided modes, 12 source-language round trips, 16 quiet position returns and 28 Eucharistic Treasury handoffs |
+| Rosary | **2** viewport acceptance passes | Canonical donor bead engine, Scripture links, source and navigation at 320/390; not all beads and language combinations |
+| Chaplets | **6** viewport × form passes | Five Wounds, Precious Blood, Little Crown at 320/390; first prayer/control/next/previous and rollback behavior, not every bead text |
+
+Stage 6 introduced one **new** source-exact browser test: `tests/pray-work-nine-intercessions-visible-phone-20261107.mjs`. It compares actual source text (normalising whitespace only), displayed language tags, source notices and available Latin alternates across 36 selections. The five imported occasional texts are not duplicated: the sixth occasion, difficulties, reuses canonical St Joseph. No unattested French prayer is generated or represented as verified.
+
+Other Stage 6 jobs reuse pre-existing original-reader tests: `tests/pray-confession-benediction-stage-matrix-phone.mjs`, `tests/pray-adoration-full-stage-phone.mjs`, `tests/rosary-canonical-phone-controls.mjs` and `tests/pray-chaplet-f07-variants-phone.mjs`. The source-face regression tests `pray-historical-intercessions-novena-visible-v1.mjs` and `pray-confession-adoration-chaplet-stage-faces-v1.mjs` also passed.
+
+Permanent index: `data/pray/prayer-work-body-stage-browser-acceptance-20261107.v1.json`. GitHub retained browser evidence in four short-retention artifacts: `prayer-stage6-nine-intercession-body-parity`, `prayer-stage6-confession-benediction`, `prayer-stage6-adoration-guided` and `prayer-stage6-rosary-chaplet-captures`.
+
+**Important certification boundary:** one original prayer body visible in an existing composite route does not establish all-stage/full-language access to all 84 supplemental source-owned works. No source/rights/first-edition print certification was granted. `routeUIVerified` remains zero in the registry (meaning zero **complete 84-work reader certificates**), even though selected body and specialised-stage browser checks now have individual positive evidence. Source availability, publication and textual verification fields remain independent.
+
+**Remaining reader/body work:** individually inspect original text ownership and displayed witnesses for Golden Arrow, Montfort source components, historical meditation witnesses, Holy Face, the Stabat Mater partial text and the remaining supplemental works. A separate print/edition-language review is still required for historical sources. The nine-family library presentation stays unimplemented until explicitly approved.
+
+**Non-regression:** no production Prayer categories, Mass, Rosary, Confession, Adoration, Benediction, reader texts, homepage or deployments altered; the existing GitHub-only publication policy is unchanged. PR #2594 stays draft.
