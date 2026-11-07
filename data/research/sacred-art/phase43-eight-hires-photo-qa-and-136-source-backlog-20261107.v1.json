@@ -1,0 +1,273 @@
+{
+  "schema": "AO_SACRED_ART_PHASE43_EIGHT_HIGHRES_QA_136_FUTURE_SOURCE_QUEUE_V1",
+  "as_of": "2026-11-07",
+  "research_scope": "177 owner-handpicked selected image rows; 169 museum identity-supported; eight archival exact-identity holds; no replacement approvals",
+  "baseline": {
+    "owner_selected_records": 177,
+    "identity_supported": 169,
+    "object_identity_holds": 8,
+    "previous_photographic_comparison_records": 33,
+    "previous_no_comparison": 136
+  },
+  "phase43_highres": {
+    "audit_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42371640201",
+    "evidence_artifact": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42371640201/artifacts/13574181220",
+    "method": "Reuse handpicked Phase42 originals; retrieve bounded 3200px official IIIF canvas; SIFT/RANSAC align; compare overlapping pixels. Non-color-managed approximate median CIE76 and luma differences are diagnostic only.",
+    "attempted": 8,
+    "successful": 7,
+    "blocked": 1,
+    "full_native_files_downloaded": 0,
+    "downloaded_width_px": 3200,
+    "observed_ranges": {
+      "sift_inliers": [
+        976,
+        1845
+      ],
+      "overlap_reference": [
+        0.8893,
+        0.8999
+      ],
+      "median_delta_e76_non_color_managed": [
+        2.94,
+        6.59
+      ],
+      "signed_mean_luma_difference_8bit": [
+        -0.76,
+        1.79
+      ]
+    },
+    "records": [
+      {
+        "registry_id": "RECENT575::004",
+        "museum": "KMSKA Antwerp",
+        "new_3200px_museum_photo_retrieved": true,
+        "highres_dimensions": [
+          3200,
+          4487
+        ],
+        "original_native_canvas": [
+          4803,
+          6734
+        ],
+        "selected_short_edge": 801,
+        "homography_inliers": 1129,
+        "overlap_coverage_selected": 0.8999,
+        "non_color_managed_median_delta_e76": 5.83,
+        "mean_luma_difference_8bit": -0.76,
+        "review_flags": [],
+        "photo_rights_approved": false,
+        "visual_fidelity_approved": false,
+        "publication_approved": false
+      },
+      {
+        "registry_id": "RECENT575::018",
+        "museum": "KMSKA Antwerp",
+        "new_3200px_museum_photo_retrieved": true,
+        "highres_dimensions": [
+          3200,
+          3660
+        ],
+        "original_native_canvas": [
+          5338,
+          6106
+        ],
+        "selected_short_edge": 904,
+        "homography_inliers": 1230,
+        "overlap_coverage_selected": 0.8914,
+        "non_color_managed_median_delta_e76": 5.83,
+        "mean_luma_difference_8bit": 1.16,
+        "review_flags": [
+          "ALTARPIECE_PANEL_SCOPE_CHECK"
+        ],
+        "photo_rights_approved": false,
+        "visual_fidelity_approved": false,
+        "publication_approved": false
+      },
+      {
+        "registry_id": "RECENT575::020",
+        "museum": "KMSKA Antwerp",
+        "new_3200px_museum_photo_retrieved": true,
+        "highres_dimensions": [
+          3200,
+          3544
+        ],
+        "original_native_canvas": [
+          5110,
+          5659
+        ],
+        "selected_short_edge": 801,
+        "homography_inliers": 976,
+        "overlap_coverage_selected": 0.8893,
+        "non_color_managed_median_delta_e76": 4.81,
+        "mean_luma_difference_8bit": 1.26,
+        "review_flags": [
+          "SIX_OTHER_CANVASES_NOT_INTERCHANGEABLE",
+          "PHASE42_ARCHIVED_550PX_NOT_HIGHEST_RESOLUTION"
+        ],
+        "photo_rights_approved": false,
+        "visual_fidelity_approved": false,
+        "publication_approved": false
+      },
+      {
+        "registry_id": "RECENT575::021",
+        "museum": "KMSKA Antwerp",
+        "new_3200px_museum_photo_retrieved": true,
+        "highres_dimensions": [
+          3200,
+          2592
+        ],
+        "original_native_canvas": [
+          6451,
+          5224
+        ],
+        "selected_short_edge": 976,
+        "homography_inliers": 1331,
+        "overlap_coverage_selected": 0.8951,
+        "non_color_managed_median_delta_e76": 4.49,
+        "mean_luma_difference_8bit": 1.8,
+        "review_flags": [],
+        "photo_rights_approved": false,
+        "visual_fidelity_approved": false,
+        "publication_approved": false
+      },
+      {
+        "registry_id": "RECENT575::025",
+        "museum": "KMSKA Antwerp",
+        "new_3200px_museum_photo_retrieved": true,
+        "highres_dimensions": [
+          3200,
+          4060
+        ],
+        "original_native_canvas": [
+          5108,
+          6481
+        ],
+        "selected_short_edge": 890,
+        "homography_inliers": 1845,
+        "overlap_coverage_selected": 0.8945,
+        "non_color_managed_median_delta_e76": 2.94,
+        "mean_luma_difference_8bit": 1.01,
+        "review_flags": [],
+        "photo_rights_approved": false,
+        "visual_fidelity_approved": false,
+        "publication_approved": false
+      },
+      {
+        "registry_id": "RECENT575::026",
+        "museum": "KMSKA Antwerp",
+        "new_3200px_museum_photo_retrieved": true,
+        "highres_dimensions": [
+          3200,
+          2523
+        ],
+        "original_native_canvas": [
+          6558,
+          5170
+        ],
+        "selected_short_edge": 901,
+        "homography_inliers": 1185,
+        "overlap_coverage_selected": 0.8953,
+        "non_color_managed_median_delta_e76": 6.59,
+        "mean_luma_difference_8bit": 1.79,
+        "review_flags": [
+          "SELECTED_ATTRIBUTION_HENDRICK_DE_CLERCK_VS_MUSEUM_JOHANN_ROTTENHAMMER"
+        ],
+        "photo_rights_approved": false,
+        "visual_fidelity_approved": false,
+        "publication_approved": false
+      },
+      {
+        "registry_id": "RECENT575::072",
+        "museum": "MSK Ghent",
+        "new_3200px_museum_photo_retrieved": true,
+        "highres_dimensions": [
+          3200,
+          3747
+        ],
+        "original_native_canvas": [
+          5237,
+          6132
+        ],
+        "selected_short_edge": 1051,
+        "homography_inliers": 1639,
+        "overlap_coverage_selected": 0.8911,
+        "non_color_managed_median_delta_e76": 4.18,
+        "mean_luma_difference_8bit": -0.27,
+        "review_flags": [
+          "MSK_GHENT_HIGH_RES_AND_COMMERCIAL_SOURCE_POLICY_REVIEW"
+        ],
+        "photo_rights_approved": false,
+        "visual_fidelity_approved": false,
+        "publication_approved": false
+      },
+      {
+        "registry_id": "RECENT575::054",
+        "museum": "MSK Ghent",
+        "new_3200px_museum_photo_retrieved": false,
+        "selected_dimensions": [
+          800,
+          621
+        ],
+        "manifest_native_canvas": [
+          800,
+          621
+        ],
+        "image_request": "https://imagehub.mskgent.be/iiif/2/public%2F6350.tif/full/3200,/0/default.jpg",
+        "error": "HTTP 403 Forbidden",
+        "review_flags": [
+          "NO_PROVEN_PIXEL_UPGRADE",
+          "REQUESTED_SIZE_NOT_AVAILABLE",
+          "HIGH_RES_COMMERCIAL_REQUEST_REQUIRES_POLICY_REVIEW"
+        ],
+        "photo_rights_approved": false,
+        "visual_fidelity_approved": false,
+        "publication_approved": false
+      }
+    ]
+  },
+  "photo_rights": {
+    "KMSKA": "https://kmska.be/en/disclaimer",
+    "KMSKA_policy": "KMSKA states public-domain artwork photographs freely reusable; official object page must be checked for exact image and copyright status. Source manifest with 'rights undetermined' alone is not a CC0 grant.",
+    "MSK_Ghent": "https://www.mskgent.be/en/collection/image-rights",
+    "MSK_Ghent_policy": "Collection images reusable at displayed collection resolution, but higher-resolution or commercial publications are directed to Art in Flanders; do not infer permission for 3200px source reuse.",
+    "scope": "No automatic photo-specific right clearance or replacement."
+  },
+  "next_136_without_prior_QA": {
+    "total": 136,
+    "tiers": {
+      "P0_existing_museum_IIIF_mapped": 4,
+      "P1_selected_under_600px": 19,
+      "P2_selected_600_to_899px": 72,
+      "P3_selected_900px_or_more": 41
+    },
+    "ready_to_compare_IIIF_ids": [
+      "RECENT575::051",
+      "RECENT575::179",
+      "RECENT575::184",
+      "RECENT575::279"
+    ],
+    "museum_buckets": {
+      "Musee_des_Augustins_Toulouse": 15,
+      "Palais_des_Beaux_Arts_Lille": 13,
+      "Musee_Magnin_Dijon": 12,
+      "Musee_Beaux_Arts_Dijon": 11,
+      "Musee_Grenoble": 11,
+      "Musee_Beaux_Arts_Lyon": 9,
+      "Groeningemuseum_Bruges": 8
+    },
+    "queue_note": "136 listed individually in new workbook tab Phase43 Source Queue 136; no invented source images or rights; source discovery must preserve handpicked originals and exact painting identity."
+  },
+  "governance": [
+    "No published artwork gallery mutation",
+    "No new art admissions",
+    "No original handpicked selected Commons files removed",
+    "No Prayer/Calendar art assignments edited",
+    "No automatic cropping, exposure correction or color transformation",
+    "No commercial-rights assumption from object PDM or manifest undetermined rights"
+  ],
+  "delivery": {
+    "workbook": "Ad_Orientem_Phase43_177_Artwork_Highres_And_Source_Backlog.xlsx",
+    "highres_artifact": "Ad_Orientem_Phase43_Eight_Highres_QA.zip"
+  },
+  "predecessor": "data/research/sacred-art/phase42-twenty-two-exact-image-review-board-20261107.v1.json"
+}
