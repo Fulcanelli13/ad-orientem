@@ -4,7 +4,7 @@
 import {eligibleRenderedDirectoryImage} from "./directory-card.js";
 import {massInstitutionEmblem} from "./institution-emblems.js";
 import {discoverCenterDistanceKm} from "./mapcn-discover-rail.js";
-import {tlmApproximateMapLabel} from "./tlm-approximate-map-disclosure.js";
+import {tlmApproximateMapLabel,tlmApproximateMapSource} from "./tlm-approximate-map-disclosure.js";
 const A=v=>Array.isArray(v)?v:[];
 const T=v=>String(v??"").trim();
 const E=v=>T(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -50,7 +50,7 @@ export function renderTlmMapResultRail({items=[],language="en",selectedId=null,c
      emblem?'<img data-tlm-emblem-image loading="lazy" decoding="async" src="'+E(emblem.image)+'" alt="">':
      '<span aria-hidden="true">✠</span>')+'</span>';
   html+='<span class="aoTlmMapRailCopy">'+(!photo?'<small class="aoAtlasMassPhotoNotice">'+E(L(language,"No approved photograph","Aucune photographie approuvée"))+'</small>':'')+'<strong>'+E(item.title)+'</strong><small>'+E(item.subtitle||"")+'</small>'+
-    (illustrative?'<em data-tlm-approximate-source="r28">'+E(illustrative)+'</em>':
+    (illustrative?'<em data-tlm-approximate-source="'+tlmApproximateMapSource(item)+'">'+E(illustrative)+'</em>':
      item.celebration_evidence?'<em>'+E(L(language,"1962 documented · named Masses only","1962 attesté · messes désignées seulement"))+'</em>':
      '<em>'+E(L(language,"Mass details · check source","Messes · vérifier à la source"))+'</em>')+
     '</span><span class="aoTlmMapRailArrow" aria-hidden="true">›</span></button></div>';

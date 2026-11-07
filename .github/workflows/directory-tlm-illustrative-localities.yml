@@ -10,6 +10,10 @@ on:
       - 'src/find/cl2-illustrative-locality-pins-r27.js'
       - 'src/find/cl2-illustrative-locality-pins-r28.js'
       - 'src/find/tlm-church-profile.js'
+      - 'src/find/tlm-approximate-map-disclosure.js'
+      - 'src/find/directory-card.js'
+      - 'src/find/tlm-map-result-rail.js'
+      - 'tests/tlm-locality-disclosure-all.mjs'
       - 'tests/tlm-illustrative-locality-pins.mjs'
       - 'tests/tlm-illustrative-locality-r26.mjs'
       - 'tests/tlm-illustrative-locality-r27.mjs'
@@ -38,5 +42,7 @@ jobs:
         run: node tests/tlm-illustrative-locality-r27.mjs
       - name: Verify R28 eight approximate owner-authorized maps and closed/alias holds
         run: node tests/tlm-illustrative-locality-r28.mjs
+      - name: Disclose all older and R28 locality markers in EN/FR cards and map rail
+        run: node tests/tlm-locality-disclosure-all.mjs
       - name: Preserve worldwide CL2 physical-site identity and count
         run: node tests/cl2-worldwide-directory-acceptance.mjs
