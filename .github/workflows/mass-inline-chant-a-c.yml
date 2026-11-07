@@ -35,6 +35,8 @@ on:
       - 'tests/reader-preface-1961-remaining-print-groups.mjs'
       - 'tests/reader-preface-1961-first-six-pitch-candidates.mjs'
       - 'tests/reader-preface-1961-remaining-six-pitch-candidates.mjs'
+      - 'tests/reader-preface-1961-alternative-transcriber-ictus.mjs'
+      - 'data/mass/preface-1961-alt-transcriber-rhythmic-differences.v1.json'
       - 'data/mass/preface-1961-remaining-six-print-pitch-candidates.v1.json'
       - 'data/mass/preface-1961-first-six-print-pitch-candidates.v1.json'
       - 'data/mass/preface-1961-remaining-printed-groups.v1.json'
@@ -129,6 +131,7 @@ jobs:
           node --check tests/reader-preface-1961-remaining-print-groups.mjs
           node --check tests/reader-preface-1961-first-six-pitch-candidates.mjs
           node --check tests/reader-preface-1961-remaining-six-pitch-candidates.mjs
+          node --check tests/reader-preface-1961-alternative-transcriber-ictus.mjs
           node --check tests/reader-participation-28-research-inventory.mjs
           node --check tests/reader-participation-28-research-phone.mjs
           node --check tests/reader-preface-solemnior-1961-four-reference-scores.mjs
@@ -179,6 +182,7 @@ jobs:
           node tests/reader-preface-1961-remaining-print-groups.mjs
           node tests/reader-preface-1961-first-six-pitch-candidates.mjs
           node tests/reader-preface-1961-remaining-six-pitch-candidates.mjs
+          node tests/reader-preface-1961-alternative-transcriber-ictus.mjs
           node scripts/mass/export-preface-eight-printed-collation.mjs
           node scripts/mass/audit-24-participation-source-phrases.mjs
           node tests/reader-participation-reference-scores.mjs
