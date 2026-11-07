@@ -64,12 +64,206 @@
     "photo_rights_cleared": 0,
     "photo_fidelity_approved": 0,
     "gallery_photos_replaced": 0,
-    "original_owner_handpicks_removed": 0
+    "original_owner_handpicks_removed": 0,
+    "visual_screened_at_thumbnail_resolution": 22,
+    "photos_flagged_for_frame_or_calibration_variance": 6,
+    "photos_flagged_for_tonal_or_colour_shift": 7,
+    "thumbnail_comparable_no_approval": 8
   },
   "delivery": {
     "visual_review_archive": "Ad_Orientem_Phase42_22_Photo_Comparison_Board.zip",
     "current_excel_master": "Ad_Orientem_Phase42_177_Artwork_Photo_Review_Master.xlsx",
     "workflow_artifact_retention_days": 14,
     "publication": "NONE"
+  },
+  "visual_screening": {
+    "reviewer": "assistant visual inspection of four Phase42 contact-sheet image groups",
+    "limitations": "Contact-sheet/thumbnail inspection. Full-resolution image/color-managed QA and legal/licence checks are required before approval.",
+    "records": [
+      {
+        "registry_id": "RECENT575::114",
+        "status": "FRAME_OR_CALIBRATION_VARIANCE",
+        "note": "Museum Anthony miracle preview includes outer frame and color target; selected crop differs, so not a direct replacement.",
+        "screening_method": "CONTACT_SHEET_PREVIEW_NOT_COLOR_CALIBRATED",
+        "photo_rights_cleared": false,
+        "publication_approved": false
+      },
+      {
+        "registry_id": "RECENT575::143",
+        "status": "NO_CLEAR_VISUAL_UPGRADE",
+        "note": "Both images appear similarly framed and include calibration material; no clear visual gain at contact-sheet resolution.",
+        "screening_method": "CONTACT_SHEET_PREVIEW_NOT_COLOR_CALIBRATED",
+        "photo_rights_cleared": false,
+        "publication_approved": false
+      },
+      {
+        "registry_id": "RECENT575::152",
+        "status": "FRAME_OR_CALIBRATION_VARIANCE",
+        "note": "Museum Christ Crowned with Thorns photo includes a calibration strip and a different lower crop; not publishable as-is.",
+        "screening_method": "CONTACT_SHEET_PREVIEW_NOT_COLOR_CALIBRATED",
+        "photo_rights_cleared": false,
+        "publication_approved": false
+      },
+      {
+        "registry_id": "RECENT575::153",
+        "status": "FRAME_OR_CALIBRATION_VARIANCE",
+        "note": "Museum Last Supper photo includes a calibration target and compositional margin differences; colour also appears shifted.",
+        "screening_method": "CONTACT_SHEET_PREVIEW_NOT_COLOR_CALIBRATED",
+        "photo_rights_cleared": false,
+        "publication_approved": false
+      },
+      {
+        "registry_id": "RECENT575::238",
+        "status": "FRAME_OR_CALIBRATION_VARIANCE",
+        "note": "Museum Jordaens Assumption includes ornate frame and a different crop; selected painting-only version should be preserved.",
+        "screening_method": "CONTACT_SHEET_PREVIEW_NOT_COLOR_CALIBRATED",
+        "photo_rights_cleared": false,
+        "publication_approved": false
+      },
+      {
+        "registry_id": "RECENT575::240",
+        "status": "FRAME_OR_CALIBRATION_VARIANCE",
+        "note": "Museum Crucifixion has different black background/frame and colour balance; requires canvas extraction and fidelity check.",
+        "screening_method": "CONTACT_SHEET_PREVIEW_NOT_COLOR_CALIBRATED",
+        "photo_rights_cleared": false,
+        "publication_approved": false
+      },
+      {
+        "registry_id": "RECENT575::255",
+        "status": "TONAL_OR_COLOUR_SHIFT",
+        "note": "Museum Adoration of Kings reproduction looks substantially darker, greener and less vivid than selected photo.",
+        "screening_method": "CONTACT_SHEET_PREVIEW_NOT_COLOR_CALIBRATED",
+        "photo_rights_cleared": false,
+        "publication_approved": false
+      },
+      {
+        "registry_id": "RECENT575::262",
+        "status": "TONAL_OR_COLOUR_SHIFT",
+        "note": "Museum Three Crosses rendering looks greener/yellower than the owner-selected warmer image.",
+        "screening_method": "CONTACT_SHEET_PREVIEW_NOT_COLOR_CALIBRATED",
+        "photo_rights_cleared": false,
+        "publication_approved": false
+      },
+      {
+        "registry_id": "RECENT575::004",
+        "status": "THUMBNAIL_COMPARABLE",
+        "note": "Same composition and broadly comparable crop/colour at contact-sheet scale; test full-resolution sharpness and photographer rights.",
+        "screening_method": "CONTACT_SHEET_PREVIEW_NOT_COLOR_CALIBRATED",
+        "photo_rights_cleared": false,
+        "publication_approved": false
+      },
+      {
+        "registry_id": "RECENT575::018",
+        "status": "THUMBNAIL_COMPARABLE",
+        "note": "Same Last Supper composition, crop and overall tonality; review panel boundary and image rights before upgrade.",
+        "screening_method": "CONTACT_SHEET_PREVIEW_NOT_COLOR_CALIBRATED",
+        "photo_rights_cleared": false,
+        "publication_approved": false
+      },
+      {
+        "registry_id": "RECENT575::020",
+        "status": "THUMBNAIL_COMPARABLE",
+        "note": "Same Saint Sebastian scene with broadly similar image rendering; verify finer tonal changes and licence.",
+        "screening_method": "CONTACT_SHEET_PREVIEW_NOT_COLOR_CALIBRATED",
+        "photo_rights_cleared": false,
+        "publication_approved": false
+      },
+      {
+        "registry_id": "RECENT575::021",
+        "status": "THUMBNAIL_COMPARABLE",
+        "note": "Same Good Samaritan composition and comparable contact-sheet appearance; candidate remains unapproved.",
+        "screening_method": "CONTACT_SHEET_PREVIEW_NOT_COLOR_CALIBRATED",
+        "photo_rights_cleared": false,
+        "publication_approved": false
+      },
+      {
+        "registry_id": "RECENT575::025",
+        "status": "THUMBNAIL_COMPARABLE",
+        "note": "Same Purification of Mary composition, similar crop and tonal appearance at preview size.",
+        "screening_method": "CONTACT_SHEET_PREVIEW_NOT_COLOR_CALIBRATED",
+        "photo_rights_cleared": false,
+        "publication_approved": false
+      },
+      {
+        "registry_id": "RECENT575::026",
+        "status": "THUMBNAIL_COMPARABLE",
+        "note": "Same Baptist composition, similar image appearance; older and museum attributions must remain source-scoped.",
+        "screening_method": "CONTACT_SHEET_PREVIEW_NOT_COLOR_CALIBRATED",
+        "photo_rights_cleared": false,
+        "publication_approved": false
+      },
+      {
+        "registry_id": "RECENT575::037",
+        "status": "FRAME_OR_CALIBRATION_VARIANCE",
+        "note": "Museum candidate includes a broad gilded frame; the selected image is painting-focused. Full candidate not a like-for-like replacement.",
+        "screening_method": "CONTACT_SHEET_PREVIEW_NOT_COLOR_CALIBRATED",
+        "photo_rights_cleared": false,
+        "publication_approved": false
+      },
+      {
+        "registry_id": "RECENT575::039",
+        "status": "TONAL_OR_COLOUR_SHIFT",
+        "note": "Museum Thomas image appears darker/flatter than the selected photo; preserve handpicked colour pending exact assessment.",
+        "screening_method": "CONTACT_SHEET_PREVIEW_NOT_COLOR_CALIBRATED",
+        "photo_rights_cleared": false,
+        "publication_approved": false
+      },
+      {
+        "registry_id": "RECENT575::042",
+        "status": "TONAL_OR_COLOUR_SHIFT",
+        "note": "Museum Saint Anthony Temptation preview appears noticeably less saturated/flatter than handpicked version.",
+        "screening_method": "CONTACT_SHEET_PREVIEW_NOT_COLOR_CALIBRATED",
+        "photo_rights_cleared": false,
+        "publication_approved": false
+      },
+      {
+        "registry_id": "RECENT575::044",
+        "status": "TONAL_OR_COLOUR_SHIFT",
+        "note": "Museum Old Crossbow Guild triptych preview appears muted/flatter relative to handpicked image.",
+        "screening_method": "CONTACT_SHEET_PREVIEW_NOT_COLOR_CALIBRATED",
+        "photo_rights_cleared": false,
+        "publication_approved": false
+      },
+      {
+        "registry_id": "RECENT575::054",
+        "status": "THUMBNAIL_COMPARABLE",
+        "note": "Museum Pietà and owner-selected image appear closely aligned in composition/crop/tonality; check exact PDM photo scope and full-resolution detail.",
+        "screening_method": "CONTACT_SHEET_PREVIEW_NOT_COLOR_CALIBRATED",
+        "photo_rights_cleared": false,
+        "publication_approved": false
+      },
+      {
+        "registry_id": "RECENT575::072",
+        "status": "THUMBNAIL_COMPARABLE",
+        "note": "Museum Annunciation candidate closely resembles selected image at contact-sheet scale; verify exact photographer/licence and full-resolution sharpness.",
+        "screening_method": "CONTACT_SHEET_PREVIEW_NOT_COLOR_CALIBRATED",
+        "photo_rights_cleared": false,
+        "publication_approved": false
+      },
+      {
+        "registry_id": "RECENT575::075",
+        "status": "TONAL_OR_COLOUR_SHIFT",
+        "note": "Museum Saint Veronica of Binasco reproduction looks significantly flatter and less saturated; do not replace for pixel count alone.",
+        "screening_method": "CONTACT_SHEET_PREVIEW_NOT_COLOR_CALIBRATED",
+        "photo_rights_cleared": false,
+        "publication_approved": false
+      },
+      {
+        "registry_id": "RECENT575::076",
+        "status": "TONAL_OR_COLOUR_SHIFT",
+        "note": "Museum Flagellation shows greener/yellower, lower-contrast rendering compared with selected warmer reproduction.",
+        "screening_method": "CONTACT_SHEET_PREVIEW_NOT_COLOR_CALIBRATED",
+        "photo_rights_cleared": false,
+        "publication_approved": false
+      }
+    ],
+    "status_counts": {
+      "FRAME_OR_CALIBRATION_VARIANCE": 6,
+      "NO_CLEAR_VISUAL_UPGRADE": 1,
+      "TONAL_OR_COLOUR_SHIFT": 7,
+      "THUMBNAIL_COMPARABLE": 8
+    },
+    "publication_approved": 0,
+    "replacement_action": "NONE"
   }
 }
