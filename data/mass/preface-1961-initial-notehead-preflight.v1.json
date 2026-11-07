@@ -1,0 +1,303 @@
+{
+  "schema": "ao-1961-preface-first-12-independent-printed-notehead-preflight-v1",
+  "date": "2026-11-07",
+  "scope": "Six response melodies, each visually compared in LU 1961 and GR 1961; twelve witness-specific inspections; no new music or print certification.",
+  "methodology": "Count apparent square noteheads under consecutive Latin syllables from the printed facsimile, without taking positions or counts from the GABC. Compare only these coarse group counts to the source notation in regression tests. Full pitch, neume shape and Solesmes rhythmic sign collation remains necessary.",
+  "noteGroupingConvention": "Counts follow separate sung syllables; compounds are counted as all visible square-noteheads, but the neume type, quilisma, morae and pitch are not certified.",
+  "sources": [
+    "https://gregobase.selapa.net/sources/3/220.png",
+    "https://gregobase.selapa.net/sources/3/221.png",
+    "https://gregobase.selapa.net/sources/2/1007.png",
+    "https://gregobase.selapa.net/sources/2/1008.png",
+    "https://gregobase.selapa.net/sources/2/1009.png",
+    "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf"
+  ],
+  "count": {
+    "responsesPreflighted": 6,
+    "witnessComparisons": 12,
+    "books": 2,
+    "distinctPrintedPagePlates": 5,
+    "printNoteheadCountPreflights": 12,
+    "independentPitchCertifications": 0,
+    "independentRhythmicCertifications": 0,
+    "newPublicApprovals": 0
+  },
+  "caveats": [
+    "500-pixel original Liber Usualis facsimile is legible for short groups but too coarse for independent rhythmic-sign acceptance.",
+    "The parallel Graduale PDF supplies higher-resolution page images; it is not a third textual edition or a new independent compositional source.",
+    "A match in square-notehead counts does not imply the same pitches, melodic contour, neume shapes, quilisma or rhythmic signs.",
+    "The printed wording is 'justum'; reader normalized 'iustum' is an orthographic variant and not part of this batch."
+  ],
+  "rows": [
+    {
+      "tone": "SOLEMN",
+      "sourceId": 4449,
+      "cueId": "AO.SM.C0136",
+      "phrase": "Amen",
+      "book": "Liber Usualis, Solesmes 1961",
+      "printedWitnessUrl": "https://gregobase.selapa.net/sources/3/220.png",
+      "independentPdfWitness": null,
+      "visibleSyllableNoteheadCounts": [
+        1,
+        2
+      ],
+      "observedFromPrint": "PRELIMINARY_SQUARE_NOTEHEAD_COUNT_ONLY",
+      "noteheadCountAgreementWithSourceGabc": "TO_BE_RECHECKED_BY_MACHINE",
+      "pitchParity": "NOT_CERTIFIED",
+      "solesmesMarkParity": "NOT_CERTIFIED",
+      "exactNeumeIdentity": "NOT_CERTIFIED"
+    },
+    {
+      "tone": "SOLEMN",
+      "sourceId": 4449,
+      "cueId": "AO.SM.C0136",
+      "phrase": "Amen",
+      "book": "Graduale Romanum, Solesmes 1961",
+      "printedWitnessUrl": "https://gregobase.selapa.net/sources/2/1007.png",
+      "independentPdfWitness": {
+        "url": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+        "pdfPageOneBased": 132,
+        "printedPage": "130*"
+      },
+      "visibleSyllableNoteheadCounts": [
+        1,
+        2
+      ],
+      "observedFromPrint": "PRELIMINARY_SQUARE_NOTEHEAD_COUNT_ONLY",
+      "noteheadCountAgreementWithSourceGabc": "TO_BE_RECHECKED_BY_MACHINE",
+      "pitchParity": "NOT_CERTIFIED",
+      "solesmesMarkParity": "NOT_CERTIFIED",
+      "exactNeumeIdentity": "NOT_CERTIFIED"
+    },
+    {
+      "tone": "FERIAL",
+      "sourceId": 4450,
+      "cueId": "AO.SM.C0136",
+      "phrase": "Amen",
+      "book": "Liber Usualis, Solesmes 1961",
+      "printedWitnessUrl": "https://gregobase.selapa.net/sources/3/220.png",
+      "independentPdfWitness": null,
+      "visibleSyllableNoteheadCounts": [
+        1,
+        2
+      ],
+      "observedFromPrint": "PRELIMINARY_SQUARE_NOTEHEAD_COUNT_ONLY",
+      "noteheadCountAgreementWithSourceGabc": "TO_BE_RECHECKED_BY_MACHINE",
+      "pitchParity": "NOT_CERTIFIED",
+      "solesmesMarkParity": "NOT_CERTIFIED",
+      "exactNeumeIdentity": "NOT_CERTIFIED"
+    },
+    {
+      "tone": "FERIAL",
+      "sourceId": 4450,
+      "cueId": "AO.SM.C0136",
+      "phrase": "Amen",
+      "book": "Graduale Romanum, Solesmes 1961",
+      "printedWitnessUrl": "https://gregobase.selapa.net/sources/2/1008.png",
+      "independentPdfWitness": {
+        "url": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+        "pdfPageOneBased": 133,
+        "printedPage": "131*"
+      },
+      "visibleSyllableNoteheadCounts": [
+        1,
+        2
+      ],
+      "observedFromPrint": "PRELIMINARY_SQUARE_NOTEHEAD_COUNT_ONLY",
+      "noteheadCountAgreementWithSourceGabc": "TO_BE_RECHECKED_BY_MACHINE",
+      "pitchParity": "NOT_CERTIFIED",
+      "solesmesMarkParity": "NOT_CERTIFIED",
+      "exactNeumeIdentity": "NOT_CERTIFIED"
+    },
+    {
+      "tone": "SOLEMNIOR",
+      "sourceId": 4451,
+      "cueId": "AO.SM.C0136",
+      "phrase": "Amen",
+      "book": "Liber Usualis, Solesmes 1961",
+      "printedWitnessUrl": "https://gregobase.selapa.net/sources/3/221.png",
+      "independentPdfWitness": null,
+      "visibleSyllableNoteheadCounts": [
+        1,
+        2
+      ],
+      "observedFromPrint": "PRELIMINARY_SQUARE_NOTEHEAD_COUNT_ONLY",
+      "noteheadCountAgreementWithSourceGabc": "TO_BE_RECHECKED_BY_MACHINE",
+      "pitchParity": "NOT_CERTIFIED",
+      "solesmesMarkParity": "NOT_CERTIFIED",
+      "exactNeumeIdentity": "NOT_CERTIFIED"
+    },
+    {
+      "tone": "SOLEMNIOR",
+      "sourceId": 4451,
+      "cueId": "AO.SM.C0136",
+      "phrase": "Amen",
+      "book": "Graduale Romanum, Solesmes 1961",
+      "printedWitnessUrl": "https://gregobase.selapa.net/sources/2/1009.png",
+      "independentPdfWitness": {
+        "url": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+        "pdfPageOneBased": 134,
+        "printedPage": "132*"
+      },
+      "visibleSyllableNoteheadCounts": [
+        1,
+        2
+      ],
+      "observedFromPrint": "PRELIMINARY_SQUARE_NOTEHEAD_COUNT_ONLY",
+      "noteheadCountAgreementWithSourceGabc": "TO_BE_RECHECKED_BY_MACHINE",
+      "pitchParity": "NOT_CERTIFIED",
+      "solesmesMarkParity": "NOT_CERTIFIED",
+      "exactNeumeIdentity": "NOT_CERTIFIED"
+    },
+    {
+      "tone": "SOLEMN",
+      "sourceId": 4449,
+      "cueId": "AO.SM.C0138",
+      "phrase": "Et cum spiritu tuo",
+      "book": "Liber Usualis, Solesmes 1961",
+      "printedWitnessUrl": "https://gregobase.selapa.net/sources/3/220.png",
+      "independentPdfWitness": null,
+      "visibleSyllableNoteheadCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1
+      ],
+      "observedFromPrint": "PRELIMINARY_SQUARE_NOTEHEAD_COUNT_ONLY",
+      "noteheadCountAgreementWithSourceGabc": "TO_BE_RECHECKED_BY_MACHINE",
+      "pitchParity": "NOT_CERTIFIED",
+      "solesmesMarkParity": "NOT_CERTIFIED",
+      "exactNeumeIdentity": "NOT_CERTIFIED"
+    },
+    {
+      "tone": "SOLEMN",
+      "sourceId": 4449,
+      "cueId": "AO.SM.C0138",
+      "phrase": "Et cum spiritu tuo",
+      "book": "Graduale Romanum, Solesmes 1961",
+      "printedWitnessUrl": "https://gregobase.selapa.net/sources/2/1008.png",
+      "independentPdfWitness": {
+        "url": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+        "pdfPageOneBased": 133,
+        "printedPage": "131*"
+      },
+      "visibleSyllableNoteheadCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        1
+      ],
+      "observedFromPrint": "PRELIMINARY_SQUARE_NOTEHEAD_COUNT_ONLY",
+      "noteheadCountAgreementWithSourceGabc": "TO_BE_RECHECKED_BY_MACHINE",
+      "pitchParity": "NOT_CERTIFIED",
+      "solesmesMarkParity": "NOT_CERTIFIED",
+      "exactNeumeIdentity": "NOT_CERTIFIED"
+    },
+    {
+      "tone": "FERIAL",
+      "sourceId": 4450,
+      "cueId": "AO.SM.C0138",
+      "phrase": "Et cum spiritu tuo",
+      "book": "Liber Usualis, Solesmes 1961",
+      "printedWitnessUrl": "https://gregobase.selapa.net/sources/3/220.png",
+      "independentPdfWitness": null,
+      "visibleSyllableNoteheadCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "observedFromPrint": "PRELIMINARY_SQUARE_NOTEHEAD_COUNT_ONLY",
+      "noteheadCountAgreementWithSourceGabc": "TO_BE_RECHECKED_BY_MACHINE",
+      "pitchParity": "NOT_CERTIFIED",
+      "solesmesMarkParity": "NOT_CERTIFIED",
+      "exactNeumeIdentity": "NOT_CERTIFIED"
+    },
+    {
+      "tone": "FERIAL",
+      "sourceId": 4450,
+      "cueId": "AO.SM.C0138",
+      "phrase": "Et cum spiritu tuo",
+      "book": "Graduale Romanum, Solesmes 1961",
+      "printedWitnessUrl": "https://gregobase.selapa.net/sources/2/1008.png",
+      "independentPdfWitness": {
+        "url": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+        "pdfPageOneBased": 133,
+        "printedPage": "131*"
+      },
+      "visibleSyllableNoteheadCounts": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "observedFromPrint": "PRELIMINARY_SQUARE_NOTEHEAD_COUNT_ONLY",
+      "noteheadCountAgreementWithSourceGabc": "TO_BE_RECHECKED_BY_MACHINE",
+      "pitchParity": "NOT_CERTIFIED",
+      "solesmesMarkParity": "NOT_CERTIFIED",
+      "exactNeumeIdentity": "NOT_CERTIFIED"
+    },
+    {
+      "tone": "SOLEMNIOR",
+      "sourceId": 4451,
+      "cueId": "AO.SM.C0138",
+      "phrase": "Et cum spiritu tuo",
+      "book": "Liber Usualis, Solesmes 1961",
+      "printedWitnessUrl": "https://gregobase.selapa.net/sources/3/221.png",
+      "independentPdfWitness": null,
+      "visibleSyllableNoteheadCounts": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1
+      ],
+      "observedFromPrint": "PRELIMINARY_SQUARE_NOTEHEAD_COUNT_ONLY",
+      "noteheadCountAgreementWithSourceGabc": "TO_BE_RECHECKED_BY_MACHINE",
+      "pitchParity": "NOT_CERTIFIED",
+      "solesmesMarkParity": "NOT_CERTIFIED",
+      "exactNeumeIdentity": "NOT_CERTIFIED"
+    },
+    {
+      "tone": "SOLEMNIOR",
+      "sourceId": 4451,
+      "cueId": "AO.SM.C0138",
+      "phrase": "Et cum spiritu tuo",
+      "book": "Graduale Romanum, Solesmes 1961",
+      "printedWitnessUrl": "https://gregobase.selapa.net/sources/2/1009.png",
+      "independentPdfWitness": {
+        "url": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+        "pdfPageOneBased": 134,
+        "printedPage": "132*"
+      },
+      "visibleSyllableNoteheadCounts": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        1
+      ],
+      "observedFromPrint": "PRELIMINARY_SQUARE_NOTEHEAD_COUNT_ONLY",
+      "noteheadCountAgreementWithSourceGabc": "TO_BE_RECHECKED_BY_MACHINE",
+      "pitchParity": "NOT_CERTIFIED",
+      "solesmesMarkParity": "NOT_CERTIFIED",
+      "exactNeumeIdentity": "NOT_CERTIFIED"
+    }
+  ]
+}
