@@ -57,8 +57,14 @@ for(const row of manifest.records){
 // R2-only municipality decisions remain unchanged. Later R17 Excel approval allows an
 // independently identified San Jose SCHOOL/CAMPUS vicinity, not a chapel footprint.
 // Keep the original historical name conflict and all other unapproved holds.
-for(const id of ["RG-50082C65DA56","RG-B66-ACD5E3A16E10","RG-615FF6835AAE","RG-2C84B50B3667"]){
- assert.ok(!registry[id]);assert.ok(!byId.get(id)?.map_publishable,"Identity or closed site hold must stay unpinned: "+id);
+for(const id of ["RG-50082C65DA56","RG-615FF6835AAE","RG-2C84B50B3667"]){
+ assert.ok(!registry[id],"Earlier R2 must not claim precision for later approximate identity");
+ const now=byId.get(id);
+ assert.ok(now?.map_publishable&&now.geo?.precision==="locality"&&now.geo.review_scope,"R28 owner-approved source-city marker preserves source identity uncertainty: "+id);
+ assert.ok(now.actions.every(x=>!x.url.includes("/maps/dir/")));
+}
+for(const id of ["RG-B66-ACD5E3A16E10"]){
+ assert.ok(!registry[id]);assert.ok(!byId.get(id)?.map_publishable,"The unrelated historic duplicate identity remains held: "+id);
 }
 const sanJoseId="RG-18E53EDD9E9C",sanJose=byId.get(sanJoseId);
 assert.ok(!registry[sanJoseId],"R2 must not retroactively approve San Jose");
@@ -71,7 +77,7 @@ assert.equal(sanJose.affiliation_scope,"SOURCE_LABEL_ONLY");
 assert.match(sanJose.status,/MASS UNVERIFIED/);
 assert.ok(sanJose.actions.every(a=>!a.url.includes("/maps/dir/")),
  "No route to approximate school/campus centroid");
-assert.equal(all.length,2582);assert.equal(all.filter(x=>x.map_publishable).length,2560);
-assert.deepEqual(tlmSiteEvidenceCounts(all),{ALL:2582,REVIEWED_PIN:754,SOURCE_PIN:1806,ADDRESS_ONLY:22});
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,22);
-console.log("PASS TLM R2: 93 Excel-approved GeoNames town centroids, frozen IDs, EN/FR cards, 2560 mapped, 22 unpinned, no GPS routing");
+assert.equal(all.length,2582);assert.equal(all.filter(x=>x.map_publishable).length,2568);
+assert.deepEqual(tlmSiteEvidenceCounts(all),{ALL:2582,REVIEWED_PIN:762,SOURCE_PIN:1806,ADDRESS_ONLY:14});
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,14);
+console.log("PASS TLM R2: 93 Excel-approved GeoNames town centroids, frozen IDs, EN/FR cards, 2568 mapped, 14 unpinned, no GPS routing");

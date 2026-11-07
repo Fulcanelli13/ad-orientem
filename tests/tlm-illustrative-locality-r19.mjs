@@ -56,6 +56,6 @@ const other=byId.get("RG-505FF513488A");
 assert.ok(other&&other.physical_group_id!==id&&other.title.includes("Concepcionistas"),
  "Concepcionistas Franciscanas is a DIFFERENT church in Alcalá");
 assert.equal(items.length,2582);
-assert.equal(items.filter(x=>x.map_publishable).length,2560);
-assert.deepEqual(tlmSiteEvidenceCounts(items),{ALL:2582,REVIEWED_PIN:754,SOURCE_PIN:1806,ADDRESS_ONLY:22});
-console.log("PASS R19: one historic Adoratrices complex-vicinity CL2 marker, Snave alias no duplicate, R23 adds one separate named-chapel grid-cell marker (2560/2582 total); schedule/door/CL27 remain unverified");
+assert.equal(items.filter(x=>x.map_publishable).length,2568);
+assert.deepEqual(tlmSiteEvidenceCounts(items),{ALL:2582,REVIEWED_PIN:762,SOURCE_PIN:1806,ADDRESS_ONLY:14});
+console.log("PASS R19: one historic Adoratrices complex-vicinity CL2 marker, Snave alias no duplicate, R23 adds one separate named-chapel grid-cell marker (2568/2582 total); schedule/door/CL27 remain unverified");

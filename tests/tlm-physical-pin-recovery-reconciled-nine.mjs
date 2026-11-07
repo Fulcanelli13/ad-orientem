@@ -188,7 +188,10 @@ for(const anchor of ["RG-72909EA31C02","RG-B70-6CCD0C36B97D"]){
  assert.equal(site.actions.length,1);
  assert.ok(!site.actions[0].url.includes("/maps/dir/"));
 }
-for(const anchor of ["RG-50082C65DA56","RG-B66-ACD5E3A16E10"]){
+const sheffield=all.find(x=>x.physical_group_id==="RG-50082C65DA56");
+assert.ok(sheffield?.map_publishable&&sheffield.geo?.precision==="locality"&&sheffield.geo.review_scope.includes("SHEFFIELD_CITY_ONLY"));
+assert.ok(sheffield.actions.every(a=>!a.url.includes("/maps/dir/")),"R28 Sheffield discovery pin must not route to unverified Handsworth/Walkley chapel");
+for(const anchor of ["RG-B66-ACD5E3A16E10"]){
  const held=all.find(x=>x.physical_group_id===anchor);
  assert.ok(held&&!held.map_publishable,"Historical identity/duplicate hold must remain unpinned: "+anchor);
 }
@@ -202,8 +205,8 @@ assert.ok(sanJose.actions.every(a=>!a.url.includes("/maps/dir/")));
 const wells=all.find(x=>x.physical_group_id==="RG-8DE39E8E9415");
 assert.ok(wells?.map_publishable && wells.geo.review_scope.includes("GCATHOLIC_MATCHED"),"Wells later reviewed site-cell pin must not be reverted to earlier hold");
 assert.equal(all.length,2582);
-assert.equal(all.filter(x=>x.map_publishable).length,2560);
-assert.deepEqual(tlmSiteEvidenceCounts(all),{ALL:2582,REVIEWED_PIN:754,SOURCE_PIN:1806,ADDRESS_ONLY:22});
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,22);
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,754);
-console.log("PASS TLM nine site-pin reconciliation: 9 newly mapped, 23 already canonical, 2560 mapped, 22 address-only, 2 held identities plus San Jose named-campus exception preserved; Wells later site-cell review preserved");
+assert.equal(all.filter(x=>x.map_publishable).length,2568);
+assert.deepEqual(tlmSiteEvidenceCounts(all),{ALL:2582,REVIEWED_PIN:762,SOURCE_PIN:1806,ADDRESS_ONLY:14});
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,14);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,762);
+console.log("PASS TLM nine site-pin reconciliation: 9 newly mapped, 23 already canonical, 2568 mapped, 14 address-only, 1 remaining identity hold plus Sheffield symbolic source-city and San Jose campus exception preserved; Wells later site-cell review preserved");

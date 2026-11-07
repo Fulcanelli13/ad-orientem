@@ -1,3 +1,4 @@
+import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R28} from "../src/find/cl2-illustrative-locality-pins-r28.js";
 // The whole-world directory, not a smaller R49 showcase, is the Explore owner.
 // This proves one site per CL2 effective physical identity and that additional
 // source listings remain accessible without fabricated pins, times or status.
@@ -41,7 +42,7 @@ const world=projectCL2PhysicalDirectory(published,index,{mapAffiliation:reported
 assert.equal(world.length,2582,"2,579 distinct CL2 physical sites + 3 published external additions");
 assert.equal(new Set(world.map(item=>item.item_id)).size,2582);
 assert.equal(new Set(world.filter(x=>x.physical_group_id).map(x=>x.physical_group_id)).size,2579);
-assert.equal(world.filter(x=>x.map_publishable).length,2560);
+assert.equal(world.filter(x=>x.map_publishable).length,2568);
 const diocesanQuality=read("data/directory/research/diocesan-coordinate-quality-audit-20261031.v1.json");
 assert.equal(diocesanQuality.schema,"AO_DIOCESAN_COORDINATE_QUALITY_AUDIT_V1");
 assert.equal(diocesanQuality.records.length,587);
@@ -75,7 +76,7 @@ for(const row of diocesanQuality.records){
   assert.equal(item.geo.source_ref,row.coordinate_ref);
  }
  if(row.lat===null){
-  const newlyApproved=CL2_ILLUSTRATIVE_LOCALITY_PINS_R3[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R5[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R6[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R7[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R8[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R9[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R10[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R11[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R12[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R13[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R14[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R15[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R16[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R17_R18[row.physical_group_id];
+  const newlyApproved=CL2_ILLUSTRATIVE_LOCALITY_PINS_R3[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R5[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R6[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R7[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R8[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R9[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R10[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R11[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R12[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R13[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R14[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R15[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R16[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R17_R18[row.physical_group_id]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R28[row.physical_group_id];
   if(newlyApproved){
    assert.equal(item.map_publishable,true,"Only explicitly Excel-approved geography may turn an older audit blocker into a discovery pin");
    assert.equal(item.geo.approximate,true);
@@ -261,7 +262,7 @@ const additional=world.filter(x=>x.physical_site_source==="CL2_MASTER"&&
  !published.some(b=>b.source_id===x.source_id));
 assert.equal(additional.length,735);
 const newSites=additional.filter(x=>!x.map_publishable);
-assert.equal(newSites.length,22);
+assert.equal(newSites.length,14);
 assert.ok(newSites.every(x=>x.map_state==="ADDRESS_ONLY"&&x.geo===null&&
  x.sections.length===0&&x.actions.length===0&&x.source_ids.length>=1));
 assert.ok(newSites.every(x=>/MASS UNVERIFIED/.test(x.status)));
@@ -277,10 +278,10 @@ const diocesanGroupIds=new Set(index.records.filter(x=>x[5]==="Diocesan").map(x=
 assert.equal(diocesanGroupIds.size,584);
 const diocesan=world.filter(x=>diocesanGroupIds.has(x.physical_group_id));
 assert.equal(diocesan.length,584);
-const newlyApprovedDiocesan=[...Object.keys(CL2_ILLUSTRATIVE_LOCALITY_PINS_R3),...Object.keys(CL2_ILLUSTRATIVE_LOCALITY_PINS_R5),...Object.keys(CL2_ILLUSTRATIVE_LOCALITY_PINS_R6),...Object.keys(CL2_ILLUSTRATIVE_LOCALITY_PINS_R13)]
+const newlyApprovedDiocesan=[...Object.keys(CL2_ILLUSTRATIVE_LOCALITY_PINS_R3),...Object.keys(CL2_ILLUSTRATIVE_LOCALITY_PINS_R5),...Object.keys(CL2_ILLUSTRATIVE_LOCALITY_PINS_R6),...Object.keys(CL2_ILLUSTRATIVE_LOCALITY_PINS_R13),...Object.keys(CL2_ILLUSTRATIVE_LOCALITY_PINS_R28)]
  .filter(id=>diocesanGroupIds.has(id));
-assert.equal(newlyApprovedDiocesan.length,3,
- "Only Excel-approved R3 St Vit, R5 St Barbara and R13 Santa Casa may gain approximate diocesan coordinates");
+assert.equal(newlyApprovedDiocesan.length,4,
+ "R28 adds source-reported Poprad town PROVISIONAL marker; it does not establish the identity of the actual Kálnica chapel or any verified current diocesan Mass");
 assert.equal(diocesan.filter(x=>x.map_publishable).length,580+newlyApprovedDiocesan.length);
 assert.equal(diocesan.filter(x=>!x.map_publishable).length,4-newlyApprovedDiocesan.length);
 for(const [group] of [["RG-14C05BCC015B"],["RG-3B5F15EA02ED"],["RG-DF3BA1A9A39C"],["RG-3EE76EFE0DC3"],["RG-270210292F78"],["RG-AA00B3C74515"],["RG-77CC30491D1E"],["RG-769233567FB2"],["RG-A9687EEF16FC"],["RG-5A52F4C1379D"],["RG-B68-086D5372D517"],["RG-2CFE11950F95"],["RG-4E6E8B55676B"],["RG-EE22A08568B9"],["RG-48A5E9F09178"],["RG-1EE1D2C9B3EB"],["RG-DE5F8ED4E2F7"],["RG-322AA8195E65"],["RG-C7F25752659D"],["RG-4D09923C6B74"],["RG-8DC436A75526"],["RG-938EAA84BA0A"],["RG-A0933DE542C7"],["RG-8CB13769F987"],["RG-BBB3789ADB9A"],["RG-0BB62E04774C"],["RG-783CD50DD217"],["RG-04ED0DAE5D46"],["RG-13C11CB31E3F"],["RG-7E91D5FD0AC3"],["RG-D2CECBA0C364"],["RG-F03B6AF4FA24"],["RG-CC73C2CBD613"],["RG-B30F94A20F69"],["RG-C3F8A4083DC9"],["RG-D1C52ADC007B"],["RG-1EDB76F4B57B"],["RG-A768309560A6"],["RG-19BD1D3D4E73"],["RG-2577094CF7E4"],["RG-3E135A9E5C09"],["RG-AE6B9D48B695"],["RG-2181DD7D9F32"],["RG-97D731A26655"],["RG-261733295B4C"]]){
@@ -502,12 +503,12 @@ assert.equal(filterPreliminaryR49(world,{}).length,2582,
  "Unfiltered directory must include the worldwide corpus, not just R49");
 const vm=buildExploreViewModel({language:"en",lens:"tlm",items:world,view:"list",
  filters:{directoryGroup:"ALL",affiliations:[],query:""}});
-assert.equal(vm.mapped,2560);
-assert.equal(vm.addressOnly,22);
+assert.equal(vm.mapped,2568);
+assert.equal(vm.addressOnly,14);
 const html=renderExploreToString(vm);
 assert.match(html,/2,582|2582/);
-assert.match(html,/22/);
+assert.match(html,/14/);
 assert.match(html,/list only · no map pin/);
 assert.doesNotMatch(html,/735 address only/);
 assert.doesNotMatch(html,/2,579 mapped/);
-console.log("PASS CL2 worldwide directory: 2,579 physical sites, 35 R49 aliases absorbed, 22 list-only, 158 R1 + 93 R2 + 91 approved R3 illustrative markers plus 6 R6 localities and reviewed sites, 3 published additions");
+console.log("PASS CL2 worldwide directory: 2,579 physical sites, 35 R49 aliases absorbed, 14 list-only, 158 R1 + 93 R2 + 91 approved R3 illustrative markers plus 6 R6 localities and reviewed sites, 3 published additions");
