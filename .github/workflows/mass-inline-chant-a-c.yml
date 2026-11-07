@@ -24,6 +24,10 @@ on:
       - 'src/mass/reader-participation-reference-scores.js'
       - 'src/mass/reader-participation-printed-plates.js'
       - 'src/mass/reader-preface-1961-print-passage.js'
+      - 'src/mass/reader-preface-solemnior-reference-scores.js'
+      - 'tests/fixtures/reader-preface-solemnior-source-review.html'
+      - 'tests/reader-preface-solemnior-1961-four-reference-scores.mjs'
+      - 'tests/reader-preface-solemnior-1961-phone.mjs'
       - 'tests/reader-preface-1961-two-book-passage-collation.mjs'
       - 'scripts/mass/export-preface-eight-printed-collation.mjs'
       - 'tests/reader-participation-1961-printed-plates.mjs'
@@ -98,6 +102,9 @@ jobs:
           node --check src/mass/reader-participation-reference-scores.js
           node --check src/mass/reader-participation-printed-plates.js
           node --check src/mass/reader-preface-1961-print-passage.js
+          node --check src/mass/reader-preface-solemnior-reference-scores.js
+          node --check tests/reader-preface-solemnior-1961-four-reference-scores.mjs
+          node --check tests/reader-preface-solemnior-1961-phone.mjs
           node --check tests/reader-preface-1961-two-book-passage-collation.mjs
           node --check scripts/mass/export-preface-eight-printed-collation.mjs
           node --check tests/reader-participation-1961-printed-plates.mjs
@@ -141,6 +148,7 @@ jobs:
           node tests/reader-participation-reference-scores.mjs
           node tests/reader-participation-1961-printed-plates.mjs
           node tests/reader-preface-1961-two-book-passage-collation.mjs
+          node tests/reader-preface-solemnior-1961-four-reference-scores.mjs
           node tests/reader-participation-24-source-gabc-equality.mjs
           node tests/reader-dismissal-variant-reference.mjs
           node tests/reader-canon-pax-responses.mjs
@@ -161,6 +169,7 @@ jobs:
           node tests/reader-inline-chant-a-c-phone.mjs
           node tests/reader-participation-reference-phone.mjs
           node tests/reader-participation-24-score-review-phone.mjs
+          node tests/reader-preface-solemnior-1961-phone.mjs
           node tests/reader-offertory-oremus-voice-phone.mjs
           node tests/reader-two-greeting-transfer-phone.mjs
           node tests/reader-dismissal-variant-phone.mjs
@@ -185,6 +194,15 @@ jobs:
           path: .tmp/mass-inline-all-saints/*.png
           if-no-files-found: warn
           retention-days: 14
+
+      - name: Retain 1961 Most Solemn Preface four-response research phone screens
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mass-preface-solemnior-1961-four-source-excerpts
+          path: .tmp/mass-preface-solemnior-1961/*.png
+          if-no-files-found: warn
+          retention-days: 21
 
       - name: Retain entire 24-score participation source review gallery and CSV
         if: always()
