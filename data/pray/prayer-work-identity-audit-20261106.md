@@ -149,3 +149,35 @@ An important identity collision was repaired:
 This correction does not rename a live app route or change the Montfort reader. It avoids the registry falsely assigning that route to a single source prayer.
 
 **Reader availability still unverified:** 84 additional source-owned records require actual UI-level checking by language, edition and context. The 24 route declarations are a subset of route ownership evidence and must not be subtracted from 84 as though they had passed browser tests.
+
+## Stage 3 — 36-work language-body and source-to-card audit
+
+Executed and passed in GitHub Actions: https://github.com/Fulcanelli13/ad-orientem/actions/runs/42332029090
+
+Machine-readable evidence: data/pray/prayer-work-language-evidence-20261107.v1.json (36 work rows, source keys, body-presence measures, version/recension information, and existing reader-container links). Test: tests/pray-work-language-source-audit-20261107.mjs.
+
+| Source group | Catalogued works | Evidence |
+| --- | ---: | --- |
+| Main novenas | 16 | Each has nine specified days with English and French proper prayer bodies, whether repeated or day-specific. No independent Latin proper bodies detected in this module; Latin common prayers or canonical references must be assessed separately. |
+| Traditional standalone prayers/hymns | 11 | Source object contains Latin, English and French prayer/hymn bodies; each retains its distinct source owner. |
+| Traditional daily orders | 2 | Morning and evening sequences reference existing canonical prayer IDs. Evening additionally and correctly refers to the separately owned Nightly Examination reader route. No copied body text. |
+| Seasonal hymns | 7 works, eight recensions | All have Latin and English texts. Five work groups also have French texts. The two without French are the Easter Ad regias/Ad cenam recensions and Aeterne Rex altissime. |
+| **Total** | **36** | Source-structure coverage, not a new historical-translation certification. |
+
+The audit first reported a false missing source for Nightly Examination because this is a companion route, not a member of the 48-record canonical text bank. Its cross-owner reference was validated; the source test now passes without treating the companion as an invented prayer.
+
+Seven pre-existing source and renderer contract suites were additionally executed:
+
+1. pray-novenas.mjs
+2. pray-whole-novena-component-audit.mjs
+3. pray-traditional-life.mjs
+4. icrsp-seasonal-hymns.mjs
+5. pray-traditional-six-source-to-card-v1.mjs
+6. pray-final-four-traditional-source-to-card-v1.mjs
+7. pray-direct-hymns-bedside-b16.mjs
+
+Results include 19 novena programmes (171 day occasions), 258 original-source-to-card checks across six prayer reader contexts, and 75 additional original-source-to-rendered-card checks. All seven suites passed in the cited run.
+
+**No publication status or live-reader verification was upgraded by these results.** Each of the 36 registry records now has a sourceBodyEvidence pointer and evidence profile, but remains source/route unverified until independently tested at the actual browser UI and verified against source editions. In particular, the `lang` certification flags remain `unassessed` for these supplemental items. The full registry still has 84 route-unverified records, of which 36 now have additional measured source-body evidence.
+
+**Next controlled batch:** the other 48 route-unverified works across the Institute novenas, occasional intentions, clergy, Holy Face, Rosary and specialised-devotion modules. Evaluate each source/route with explicit owner and language evidence. After the source inventory is complete, test published routes and bilingual display end-to-end before a navigation or homepage change.
