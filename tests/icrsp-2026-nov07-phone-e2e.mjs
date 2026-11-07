@@ -97,7 +97,7 @@ try{
  // The original 2026 phone test stopped at preflight/prepare. The user
  // actually follows the NATIVE 65-card reader: prove BOTH real prayers
  // survive source composition and are physically rendered on Postcommunion.
- const rendered=await page.evaluate(async()=>{
+ const liveProof=await page.evaluate(async()=>{
   const expected=(await globalThis.AO_R17_BROWSER_ENTRY.prepare())
    ?.session?.resolvedMass?.proper;
   const donor=expected?.data??expected;
@@ -135,14 +135,14 @@ try{
     ?.getAttribute("data-mode")
   };
  });
- assert.equal(rendered.mode,"LIVE","Native LIVE reader not mounted");
- assert.equal(rendered.summaries.length,1,
-  "Expected exactly one source-owned Postcommunion card: "+JSON.stringify(rendered));
- const displayed=rendered.summaries[0];
+ assert.equal(liveProof.mode,"LIVE","Native LIVE reader not mounted");
+ assert.equal(liveProof.summaries.length,1,
+  "Expected exactly one source-owned Postcommunion card: "+JSON.stringify(liveProof));
+ const displayed=liveProof.summaries[0];
  assert.deepEqual([...new Set(displayed.rows.map(x=>x.group).filter(Number.isInteger))],
   [1,2],"Postcommunion card omitted a source-owned prayer group");
- for(const prayer of rendered.source){
-  const languageText=snapshot.en?prayer.en:prayer.en;
+ for(const prayer of liveProof.source){
+  const languageText=prayer.en;
   assert.ok(displayed.rows.some(x=>x.vernacular?.includes(languageText.slice(0,65))),
     "Postcommunion not in final prayer card: "+languageText.slice(0,65));
  }
