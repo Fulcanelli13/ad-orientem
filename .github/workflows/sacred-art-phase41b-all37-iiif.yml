@@ -1,0 +1,36 @@
+name: Sacred Art Phase 41B — all 37 IIIF declarations (research only)
+on:
+  push:
+    branches:
+      - research/sacred-art-phase18-iiif-audit-20261106
+    paths:
+      - 'scripts/sacred-art/phase41b-37-museum-manifests.py'
+      - '.github/workflows/sacred-art-phase41b-all37-iiif.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  iiif-source-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install bounded HTTP client
+        run: python -m pip install --disable-pip-version-check 'requests>=2.32,<3'
+      - name: Fetch metadata for all 37 selected-object museum manifests
+        run: |
+          python -m py_compile scripts/sacred-art/phase41b-37-museum-manifests.py
+          python scripts/sacred-art/phase41b-37-museum-manifests.py
+      - name: Upload research-only rights declaration evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-phase41b-all37-iiif-metadata-research-only
+          path: artifacts/sacred-art-phase41b-37-iiif/
+          retention-days: 14
+          if-no-files-found: warn
