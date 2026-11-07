@@ -54,7 +54,7 @@ assert.deepEqual(ledger.proposed,{sourcePins:1806,reviewedPins:754,mapped:2560,l
 for(const v of ledger.records){
  const r=frozen.records.find(x=>x[0]===v.anchor),i=byId.get(v.anchor);
  assert.ok(r&&r[1].includes(v.sourceId),"Original CL2 identity missing: "+v.anchor);
- assert.equal(r[2],v.title.replace(/ — (?:Reading|Bootle \/ Ford|Sheffield|Modesto|Poprad\? \/ Kálnica|Ciudad Juárez|Bissobilam|Meteck-Mavi).*$/,"")||r[2]);
+ assert.equal(i.title,r[2],"Published venue must retain exact frozen source title");
  assert.ok(i);
  if(v.anchor!==id)assert.ok(!i.map_publishable&&!i.geo,"R27 held exact identity must stay list-only: "+v.anchor);
 }

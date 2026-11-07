@@ -68,6 +68,6 @@ for(const hold of [
   "R26 must not pin held, historical or alias location: "+hold);
 }
 assert.equal(items.length,2582);
-assert.equal(items.filter(x=>x.map_publishable).length,2559);
-assert.deepEqual(tlmSiteEvidenceCounts(items),{ALL:2582,REVIEWED_PIN:753,SOURCE_PIN:1806,ADDRESS_ONLY:23});
-console.log("PASS R26: two Excel GEO-only vicinity markers, 2559/2582 mapped and 23 list-only; UK cemetery and PH parent-parish proxies never route to a chapel entrance or assert present Mass");
+assert.equal(items.filter(x=>x.map_publishable).length,2560);
+assert.deepEqual(tlmSiteEvidenceCounts(items),{ALL:2582,REVIEWED_PIN:754,SOURCE_PIN:1806,ADDRESS_ONLY:22});
+console.log("PASS R26: two Excel GEO-only vicinity markers, 2560/2582 mapped and 22 list-only; UK cemetery and PH parent-parish proxies never route to a chapel entrance or assert present Mass");
