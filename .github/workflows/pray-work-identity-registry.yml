@@ -8,6 +8,7 @@ on:
       - tests/pray-work-identity-registry-20261106.mjs
       - tests/pray-work-identity-source-evidence-20261106.mjs
       - tests/pray-work-language-source-audit-20261107.mjs
+      - data/pray/prayer-work-language-evidence-20261107.v1.json
       - .github/workflows/pray-work-identity-registry.yml
   pull_request:
     paths:
@@ -15,6 +16,7 @@ on:
       - tests/pray-work-identity-registry-20261106.mjs
       - tests/pray-work-identity-source-evidence-20261106.mjs
       - tests/pray-work-language-source-audit-20261107.mjs
+      - data/pray/prayer-work-language-evidence-20261107.v1.json
       - .github/workflows/pray-work-identity-registry.yml
   workflow_dispatch:
 permissions:
@@ -34,3 +36,12 @@ jobs:
         run: node tests/pray-work-identity-source-evidence-20261106.mjs
       - name: Audit 36 novena, traditional, and hymn source-language works
         run: node tests/pray-work-language-source-audit-20261107.mjs
+      - name: Run existing novena and traditional source-to-card regression contracts
+        run: |
+          node tests/pray-novenas.mjs
+          node tests/pray-whole-novena-component-audit.mjs
+          node tests/pray-traditional-life.mjs
+          node tests/icrsp-seasonal-hymns.mjs
+          node tests/pray-traditional-six-source-to-card-v1.mjs
+          node tests/pray-final-four-traditional-source-to-card-v1.mjs
+          node tests/pray-direct-hymns-bedside-b16.mjs
