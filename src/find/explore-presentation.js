@@ -680,7 +680,7 @@ function tlmEvidenceFilters(vm){
     '<div class="aoTlmEvidenceOptions">'+options.map(([value,name])=>
       pill("siteEvidence",value,name+" ("+String(counts[value]??0)+")",selected)).join("")+'</div>'+
     '<small>'+esc(L(vm.language,
-      "These mapped records include both source-matched sites and illustrative town/village points. A map pin does not establish the church building, entrance or current Mass. Una Cum, missal, canonical status and celebrant are never inferred from affiliation.",
+      "These mapped records include source-matched sites and illustrative town/village points; a pin does not establish a church building, entrance or current Mass. No published site-wide Una Cum, missal, canonical-status or celebrant claims are inferred from affiliation.",
       "Ces fiches comprennent des sites recoupés avec leurs sources et des repères indicatifs de ville ou village. Un point ne confirme ni bâtiment, ni entrée, ni messe actuelle. Le caractère « una cum », le missel, le statut canonique et le célébrant ne sont jamais déduits de l’affiliation."))+'</small></section>';
 }
 function tlmCelebrationFilters(vm){
