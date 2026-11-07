@@ -52,7 +52,9 @@
       "route-unverified": 84,
       "external-link": 2,
       "source-only": 1
-    }
+    },
+    "sourceBodyAudited": 36,
+    "routeUIVerified": 0
   },
   "works": [
     {
@@ -2855,7 +2857,19 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceBodyEvidence": {
+        "auditRef": "data/pray/prayer-work-language-evidence-20261107.v1.json#litany_sacred_heart",
+        "checkedBy": "tests/pray-work-language-source-audit-20261107.mjs",
+        "status": "source-presence-only; edition/rights/parity and browser reader unverified",
+        "type": "standalone-text",
+        "readerContainer": "pray.sacred_heart",
+        "languageTextPresence": {
+          "la": "text-present",
+          "en": "text-present",
+          "fr": "text-present"
+        }
+      }
     },
     {
       "id": "consecration_human_race_sacred_heart",
@@ -2895,7 +2909,19 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceBodyEvidence": {
+        "auditRef": "data/pray/prayer-work-language-evidence-20261107.v1.json#consecration_human_race_sacred_heart",
+        "checkedBy": "tests/pray-work-language-source-audit-20261107.mjs",
+        "status": "source-presence-only; edition/rights/parity and browser reader unverified",
+        "type": "standalone-text",
+        "readerContainer": "pray.sacred_heart",
+        "languageTextPresence": {
+          "la": "text-present",
+          "en": "text-present",
+          "fr": "text-present"
+        }
+      }
     },
     {
       "id": "holy_face_golden_arrow",
@@ -2980,7 +3006,19 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceBodyEvidence": {
+        "auditRef": "data/pray/prayer-work-language-evidence-20261107.v1.json#pray.holy_name_litany",
+        "checkedBy": "tests/pray-work-language-source-audit-20261107.mjs",
+        "status": "source-presence-only; edition/rights/parity and browser reader unverified",
+        "type": "standalone-text",
+        "readerContainer": "pray.holy_name_litany",
+        "languageTextPresence": {
+          "la": "text-present",
+          "en": "text-present",
+          "fr": "text-present"
+        }
+      }
     },
     {
       "id": "communion_before_thomas",
@@ -3020,7 +3058,19 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceBodyEvidence": {
+        "auditRef": "data/pray/prayer-work-language-evidence-20261107.v1.json#communion_before_thomas",
+        "checkedBy": "tests/pray-work-language-source-audit-20261107.mjs",
+        "status": "source-presence-only; edition/rights/parity and browser reader unverified",
+        "type": "standalone-text",
+        "readerContainer": "pray.communion_treasury",
+        "languageTextPresence": {
+          "la": "text-present",
+          "en": "text-present",
+          "fr": "text-present"
+        }
+      }
     },
     {
       "id": "communion_before_ambrose",
@@ -3060,7 +3110,19 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceBodyEvidence": {
+        "auditRef": "data/pray/prayer-work-language-evidence-20261107.v1.json#communion_before_ambrose",
+        "checkedBy": "tests/pray-work-language-source-audit-20261107.mjs",
+        "status": "source-presence-only; edition/rights/parity and browser reader unverified",
+        "type": "standalone-text",
+        "readerContainer": "pray.communion_treasury",
+        "languageTextPresence": {
+          "la": "text-present",
+          "en": "text-present",
+          "fr": "text-present"
+        }
+      }
     },
     {
       "id": "communion_after_thomas",
@@ -3100,7 +3162,19 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceBodyEvidence": {
+        "auditRef": "data/pray/prayer-work-language-evidence-20261107.v1.json#communion_after_thomas",
+        "checkedBy": "tests/pray-work-language-source-audit-20261107.mjs",
+        "status": "source-presence-only; edition/rights/parity and browser reader unverified",
+        "type": "standalone-text",
+        "readerContainer": "pray.communion_treasury",
+        "languageTextPresence": {
+          "la": "text-present",
+          "en": "text-present",
+          "fr": "text-present"
+        }
+      }
     },
     {
       "id": "communion_after_bonaventure",
@@ -3140,7 +3214,19 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceBodyEvidence": {
+        "auditRef": "data/pray/prayer-work-language-evidence-20261107.v1.json#communion_after_bonaventure",
+        "checkedBy": "tests/pray-work-language-source-audit-20261107.mjs",
+        "status": "source-presence-only; edition/rights/parity and browser reader unverified",
+        "type": "standalone-text",
+        "readerContainer": "pray.communion_treasury",
+        "languageTextPresence": {
+          "la": "text-present",
+          "en": "text-present",
+          "fr": "text-present"
+        }
+      }
     },
     {
       "id": "communion_en_ego",
@@ -3180,7 +3266,19 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceBodyEvidence": {
+        "auditRef": "data/pray/prayer-work-language-evidence-20261107.v1.json#communion_en_ego",
+        "checkedBy": "tests/pray-work-language-source-audit-20261107.mjs",
+        "status": "source-presence-only; edition/rights/parity and browser reader unverified",
+        "type": "standalone-text",
+        "readerContainer": "pray.communion_treasury",
+        "languageTextPresence": {
+          "la": "text-present",
+          "en": "text-present",
+          "fr": "text-present"
+        }
+      }
     },
     {
       "id": "holy_spirit_litany",
@@ -4054,7 +4152,19 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceBodyEvidence": {
+        "auditRef": "data/pray/prayer-work-language-evidence-20261107.v1.json#te_deum",
+        "checkedBy": "tests/pray-work-language-source-audit-20261107.mjs",
+        "status": "source-presence-only; edition/rights/parity and browser reader unverified",
+        "type": "standalone-text",
+        "readerContainer": "pray.sacred_hymns",
+        "languageTextPresence": {
+          "la": "text-present",
+          "en": "text-present",
+          "fr": "text-present"
+        }
+      }
     },
     {
       "id": "ave_maris_stella",
@@ -4094,7 +4204,19 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceBodyEvidence": {
+        "auditRef": "data/pray/prayer-work-language-evidence-20261107.v1.json#ave_maris_stella",
+        "checkedBy": "tests/pray-work-language-source-audit-20261107.mjs",
+        "status": "source-presence-only; edition/rights/parity and browser reader unverified",
+        "type": "standalone-text",
+        "readerContainer": "pray.sacred_hymns",
+        "languageTextPresence": {
+          "la": "text-present",
+          "en": "text-present",
+          "fr": "text-present"
+        }
+      }
     },
     {
       "id": "vexilla_regis",
@@ -4136,7 +4258,32 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceBodyEvidence": {
+        "auditRef": "data/pray/prayer-work-language-evidence-20261107.v1.json#vexilla_regis",
+        "checkedBy": "tests/pray-work-language-source-audit-20261107.mjs",
+        "status": "source-presence-only; edition/rights/parity and browser reader unverified",
+        "type": "source-hymn",
+        "readerContainer": "pray.sacred_hymns",
+        "languageTextPresence": {
+          "la": "text-present",
+          "en": "text-present",
+          "fr": "text-present"
+        },
+        "recensions": [
+          {
+            "id": "vexilla_regis",
+            "languageTextPresence": {
+              "la": "text-present",
+              "en": "text-present",
+              "fr": "text-present"
+            },
+            "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0901_ancien",
+            "englishEditionUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Lyra_Catholica-_containing_all_the_Breviary_and_Missal_hymns%2C_with_others_from_various_sources._Translated_by_Edward_Caswall_%28IA_LyraCatholica%29.pdf",
+            "frenchEditionUrl": "https://www.domgueranger.net/lannee-liturgique-passion-et-semaine-sainte-historique-mystique-pratique-et-prieres/"
+          }
+        ]
+      }
     },
     {
       "id": "audi_benigne",
@@ -4182,6 +4329,31 @@
       "evidence": {
         "latinSource": "src/pray/icrsp-seasonal-hymns.v1.js#ICRSP_SEASONAL_HYMNS_V1.audi_benigne",
         "rule": "R5"
+      },
+      "sourceBodyEvidence": {
+        "auditRef": "data/pray/prayer-work-language-evidence-20261107.v1.json#audi_benigne",
+        "checkedBy": "tests/pray-work-language-source-audit-20261107.mjs",
+        "status": "source-presence-only; edition/rights/parity and browser reader unverified",
+        "type": "source-hymn",
+        "readerContainer": "pray.sacred_hymns",
+        "languageTextPresence": {
+          "la": "text-present",
+          "en": "text-present",
+          "fr": "text-present"
+        },
+        "recensions": [
+          {
+            "id": "audi_benigne",
+            "languageTextPresence": {
+              "la": "text-present",
+              "en": "text-present",
+              "fr": "text-present"
+            },
+            "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=x9ef3247f_lisible",
+            "englishEditionUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Lyra_Catholica-_containing_all_the_Breviary_and_Missal_hymns%2C_with_others_from_various_sources._Translated_by_Edward_Caswall_%28IA_LyraCatholica%29.pdf",
+            "frenchEditionUrl": "https://www.domgueranger.net/lannee-liturgique-le-careme-historique-mystique-pratique-prieres/"
+          }
+        ]
       }
     },
     {
@@ -4228,6 +4400,31 @@
       "evidence": {
         "latinSource": "src/pray/icrsp-seasonal-hymns.v1.js#ICRSP_SEASONAL_HYMNS_V1.o_sol_salutis",
         "rule": "R5"
+      },
+      "sourceBodyEvidence": {
+        "auditRef": "data/pray/prayer-work-language-evidence-20261107.v1.json#o_sol_salutis",
+        "checkedBy": "tests/pray-work-language-source-audit-20261107.mjs",
+        "status": "source-presence-only; edition/rights/parity and browser reader unverified",
+        "type": "source-hymn",
+        "readerContainer": "pray.sacred_hymns",
+        "languageTextPresence": {
+          "la": "text-present",
+          "en": "text-present",
+          "fr": "text-present"
+        },
+        "recensions": [
+          {
+            "id": "o_sol_salutis",
+            "languageTextPresence": {
+              "la": "text-present",
+              "en": "text-present",
+              "fr": "text-present"
+            },
+            "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0155_ancien",
+            "englishEditionUrl": "https://lyp.network/lyp/497-commentary-on-the-seasons/501-lent/3639-chapter-4-morning-and-night-prayers-for-lent",
+            "frenchEditionUrl": "https://www.domgueranger.net/lannee-liturgique-le-careme-historique-mystique-pratique-prieres/"
+          }
+        ]
       }
     },
     {
@@ -4274,6 +4471,31 @@
       "evidence": {
         "latinSource": "src/pray/icrsp-seasonal-hymns.v1.js#ICRSP_SEASONAL_HYMNS_V1.ex_more_docti",
         "rule": "R5"
+      },
+      "sourceBodyEvidence": {
+        "auditRef": "data/pray/prayer-work-language-evidence-20261107.v1.json#ex_more_docti",
+        "checkedBy": "tests/pray-work-language-source-audit-20261107.mjs",
+        "status": "source-presence-only; edition/rights/parity and browser reader unverified",
+        "type": "source-hymn",
+        "readerContainer": "pray.sacred_hymns",
+        "languageTextPresence": {
+          "la": "text-present",
+          "en": "text-present",
+          "fr": "text-present"
+        },
+        "recensions": [
+          {
+            "id": "ex_more_docti",
+            "languageTextPresence": {
+              "la": "text-present",
+              "en": "text-present",
+              "fr": "text-present"
+            },
+            "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=xd82464db_lisible",
+            "englishEditionUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Lyra_Catholica-_containing_all_the_Breviary_and_Missal_hymns%2C_with_others_from_various_sources._Translated_by_Edward_Caswall_%28IA_LyraCatholica%29.pdf",
+            "frenchEditionUrl": "https://www.domgueranger.net/lannee-liturgique-le-careme-propre-du-temps/?lang=en"
+          }
+        ]
       }
     },
     {
@@ -4316,7 +4538,32 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceBodyEvidence": {
+        "auditRef": "data/pray/prayer-work-language-evidence-20261107.v1.json#lustra_sex",
+        "checkedBy": "tests/pray-work-language-source-audit-20261107.mjs",
+        "status": "source-presence-only; edition/rights/parity and browser reader unverified",
+        "type": "source-hymn",
+        "readerContainer": "pray.sacred_hymns",
+        "languageTextPresence": {
+          "la": "text-present",
+          "en": "text-present",
+          "fr": "text-present"
+        },
+        "recensions": [
+          {
+            "id": "lustra_sex",
+            "languageTextPresence": {
+              "la": "text-present",
+              "en": "text-present",
+              "fr": "text-present"
+            },
+            "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=x628ec868_lisible",
+            "englishEditionUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Devotions_commemorative_of_the_most_adorable_Passion_of_Our_Lord_and_Saviour_Jesus_Christ-_translated_from_Catholic_sources_%28IA_DevotionsCommemorativeOf%29.pdf",
+            "frenchEditionUrl": "https://www.domgueranger.net/lannee-liturgique-jeudi-vendredi-et-samedi-saint-propre-du-temps/"
+          }
+        ]
+      }
     },
     {
       "id": "ad_regias_agni_dapes",
@@ -4362,7 +4609,43 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceBodyEvidence": {
+        "auditRef": "data/pray/prayer-work-language-evidence-20261107.v1.json#ad_regias_agni_dapes",
+        "checkedBy": "tests/pray-work-language-source-audit-20261107.mjs",
+        "status": "source-presence-only; edition/rights/parity and browser reader unverified",
+        "type": "source-hymn",
+        "readerContainer": "pray.sacred_hymns",
+        "languageTextPresence": {
+          "la": "text-present",
+          "en": "text-present",
+          "fr": "not-in-object"
+        },
+        "recensions": [
+          {
+            "id": "ad_regias_agni_dapes",
+            "languageTextPresence": {
+              "la": "text-present",
+              "en": "text-present",
+              "fr": "not-in-object"
+            },
+            "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0913_ancien",
+            "englishEditionUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Lyra_Catholica-_containing_all_the_Breviary_and_Missal_hymns%2C_with_others_from_various_sources._Translated_by_Edward_Caswall_%28IA_LyraCatholica%29.pdf",
+            "frenchEditionUrl": null
+          },
+          {
+            "id": "ad_cenam_agni_providi",
+            "languageTextPresence": {
+              "la": "text-present",
+              "en": "text-present",
+              "fr": "not-in-object"
+            },
+            "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0920_ancien",
+            "englishEditionUrl": "https://www.preces-latinae.org/thesaurus/Hymni/AdCenamAgni.html",
+            "frenchEditionUrl": null
+          }
+        ]
+      }
     },
     {
       "id": "aeterne_rex_altissime",
@@ -4402,7 +4685,32 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceBodyEvidence": {
+        "auditRef": "data/pray/prayer-work-language-evidence-20261107.v1.json#aeterne_rex_altissime",
+        "checkedBy": "tests/pray-work-language-source-audit-20261107.mjs",
+        "status": "source-presence-only; edition/rights/parity and browser reader unverified",
+        "type": "source-hymn",
+        "readerContainer": "pray.sacred_hymns",
+        "languageTextPresence": {
+          "la": "text-present",
+          "en": "text-present",
+          "fr": "not-in-object"
+        },
+        "recensions": [
+          {
+            "id": "aeterne_rex_altissime",
+            "languageTextPresence": {
+              "la": "text-present",
+              "en": "text-present",
+              "fr": "not-in-object"
+            },
+            "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0938_ancien",
+            "englishEditionUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Lyra_Catholica-_containing_all_the_Breviary_and_Missal_hymns%2C_with_others_from_various_sources._Translated_by_Edward_Caswall_%28IA_LyraCatholica%29.pdf",
+            "frenchEditionUrl": null
+          }
+        ]
+      }
     },
     {
       "id": "veni_creator",
@@ -4442,7 +4750,19 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceBodyEvidence": {
+        "auditRef": "data/pray/prayer-work-language-evidence-20261107.v1.json#veni_creator",
+        "checkedBy": "tests/pray-work-language-source-audit-20261107.mjs",
+        "status": "source-presence-only; edition/rights/parity and browser reader unverified",
+        "type": "standalone-text",
+        "readerContainer": "pray.sacred_hymns",
+        "languageTextPresence": {
+          "la": "text-present",
+          "en": "text-present",
+          "fr": "text-present"
+        }
+      }
     },
     {
       "id": "christmas",
@@ -4484,7 +4804,31 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceBodyEvidence": {
+        "auditRef": "data/pray/prayer-work-language-evidence-20261107.v1.json#christmas",
+        "checkedBy": "tests/pray-work-language-source-audit-20261107.mjs",
+        "status": "source-presence-only; edition/rights/parity and browser reader unverified",
+        "type": "novena-programme",
+        "readerContainer": "novena-reader",
+        "programmeForm": "DAY_SPECIFIC",
+        "dayCount": 9,
+        "properBasis": {
+          "la": "no-independent-proper-detected",
+          "en": "nine-day-specific-propers",
+          "fr": "nine-day-specific-propers"
+        },
+        "recurringTextPresence": {
+          "la": "not-in-object",
+          "en": "not-in-object",
+          "fr": "not-in-object"
+        },
+        "dayProperCounts": {
+          "la": 0,
+          "en": 9,
+          "fr": 9
+        }
+      }
     },
     {
       "id": "christ_the_king",
@@ -4526,7 +4870,31 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceBodyEvidence": {
+        "auditRef": "data/pray/prayer-work-language-evidence-20261107.v1.json#christ_the_king",
+        "checkedBy": "tests/pray-work-language-source-audit-20261107.mjs",
+        "status": "source-presence-only; edition/rights/parity and browser reader unverified",
+        "type": "novena-programme",
+        "readerContainer": "novena-reader",
+        "programmeForm": "REPEAT_FORM",
+        "dayCount": 9,
+        "properBasis": {
+          "la": "no-independent-proper-detected",
+          "en": "repeated-proper",
+          "fr": "repeated-proper"
+        },
+        "recurringTextPresence": {
+          "la": "not-in-object",
+          "en": "text-present",
+          "fr": "text-present"
+        },
+        "dayProperCounts": {
+          "la": 0,
+          "en": 0,
+          "fr": 0
+        }
+      }
     },
     {
       "id": "divine_infant_king",
@@ -4606,7 +4974,31 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceBodyEvidence": {
+        "auditRef": "data/pray/prayer-work-language-evidence-20261107.v1.json#sacred_heart",
+        "checkedBy": "tests/pray-work-language-source-audit-20261107.mjs",
+        "status": "source-presence-only; edition/rights/parity and browser reader unverified",
+        "type": "novena-programme",
+        "readerContainer": "novena-reader",
+        "programmeForm": "REPEAT_FORM",
+        "dayCount": 9,
+        "properBasis": {
+          "la": "no-independent-proper-detected",
+          "en": "repeated-proper",
+          "fr": "repeated-proper"
+        },
+        "recurringTextPresence": {
+          "la": "not-in-object",
+          "en": "text-present",
+          "fr": "text-present"
+        },
+        "dayProperCounts": {
+          "la": 0,
+          "en": 0,
+          "fr": 0
+        }
+      }
     },
     {
       "id": "corpus_christi",
@@ -4646,7 +5038,31 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceBodyEvidence": {
+        "auditRef": "data/pray/prayer-work-language-evidence-20261107.v1.json#corpus_christi",
+        "checkedBy": "tests/pray-work-language-source-audit-20261107.mjs",
+        "status": "source-presence-only; edition/rights/parity and browser reader unverified",
+        "type": "novena-programme",
+        "readerContainer": "novena-reader",
+        "programmeForm": "REPEAT_FORM",
+        "dayCount": 9,
+        "properBasis": {
+          "la": "no-independent-proper-detected",
+          "en": "repeated-proper",
+          "fr": "repeated-proper"
+        },
+        "recurringTextPresence": {
+          "la": "not-in-object",
+          "en": "text-present",
+          "fr": "text-present"
+        },
+        "dayProperCounts": {
+          "la": 0,
+          "en": 0,
+          "fr": 0
+        }
+      }
     },
     {
       "id": "holy_ghost",
@@ -4688,7 +5104,31 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceBodyEvidence": {
+        "auditRef": "data/pray/prayer-work-language-evidence-20261107.v1.json#holy_ghost",
+        "checkedBy": "tests/pray-work-language-source-audit-20261107.mjs",
+        "status": "source-presence-only; edition/rights/parity and browser reader unverified",
+        "type": "novena-programme",
+        "readerContainer": "novena-reader",
+        "programmeForm": "DAY_SPECIFIC",
+        "dayCount": 9,
+        "properBasis": {
+          "la": "no-independent-proper-detected",
+          "en": "nine-day-specific-propers",
+          "fr": "nine-day-specific-propers"
+        },
+        "recurringTextPresence": {
+          "la": "not-in-object",
+          "en": "not-in-object",
+          "fr": "not-in-object"
+        },
+        "dayProperCounts": {
+          "la": 0,
+          "en": 9,
+          "fr": 9
+        }
+      }
     },
     {
       "id": "immaculate_conception",
@@ -4733,7 +5173,31 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceBodyEvidence": {
+        "auditRef": "data/pray/prayer-work-language-evidence-20261107.v1.json#immaculate_conception",
+        "checkedBy": "tests/pray-work-language-source-audit-20261107.mjs",
+        "status": "source-presence-only; edition/rights/parity and browser reader unverified",
+        "type": "novena-programme",
+        "readerContainer": "novena-reader",
+        "programmeForm": "DAY_SPECIFIC",
+        "dayCount": 9,
+        "properBasis": {
+          "la": "no-independent-proper-detected",
+          "en": "nine-day-specific-propers",
+          "fr": "nine-day-specific-propers"
+        },
+        "recurringTextPresence": {
+          "la": "not-in-object",
+          "en": "not-in-object",
+          "fr": "not-in-object"
+        },
+        "dayProperCounts": {
+          "la": 0,
+          "en": 9,
+          "fr": 9
+        }
+      }
     },
     {
       "id": "icksp_immaculate_conception",
@@ -4818,7 +5282,31 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceBodyEvidence": {
+        "auditRef": "data/pray/prayer-work-language-evidence-20261107.v1.json#immaculate_heart",
+        "checkedBy": "tests/pray-work-language-source-audit-20261107.mjs",
+        "status": "source-presence-only; edition/rights/parity and browser reader unverified",
+        "type": "novena-programme",
+        "readerContainer": "novena-reader",
+        "programmeForm": "REPEAT_FORM",
+        "dayCount": 9,
+        "properBasis": {
+          "la": "no-independent-proper-detected",
+          "en": "repeated-proper",
+          "fr": "repeated-proper"
+        },
+        "recurringTextPresence": {
+          "la": "not-in-object",
+          "en": "text-present",
+          "fr": "text-present"
+        },
+        "dayProperCounts": {
+          "la": 0,
+          "en": 0,
+          "fr": 0
+        }
+      }
     },
     {
       "id": "annunciation",
@@ -4858,7 +5346,31 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceBodyEvidence": {
+        "auditRef": "data/pray/prayer-work-language-evidence-20261107.v1.json#annunciation",
+        "checkedBy": "tests/pray-work-language-source-audit-20261107.mjs",
+        "status": "source-presence-only; edition/rights/parity and browser reader unverified",
+        "type": "novena-programme",
+        "readerContainer": "novena-reader",
+        "programmeForm": "DAY_SPECIFIC",
+        "dayCount": 9,
+        "properBasis": {
+          "la": "no-independent-proper-detected",
+          "en": "nine-day-specific-propers",
+          "fr": "nine-day-specific-propers"
+        },
+        "recurringTextPresence": {
+          "la": "not-in-object",
+          "en": "not-in-object",
+          "fr": "not-in-object"
+        },
+        "dayProperCounts": {
+          "la": 0,
+          "en": 9,
+          "fr": 9
+        }
+      }
     },
     {
       "id": "assumption",
@@ -4898,7 +5410,31 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceBodyEvidence": {
+        "auditRef": "data/pray/prayer-work-language-evidence-20261107.v1.json#assumption",
+        "checkedBy": "tests/pray-work-language-source-audit-20261107.mjs",
+        "status": "source-presence-only; edition/rights/parity and browser reader unverified",
+        "type": "novena-programme",
+        "readerContainer": "novena-reader",
+        "programmeForm": "DAY_SPECIFIC",
+        "dayCount": 9,
+        "properBasis": {
+          "la": "no-independent-proper-detected",
+          "en": "nine-day-specific-propers",
+          "fr": "nine-day-specific-propers"
+        },
+        "recurringTextPresence": {
+          "la": "not-in-object",
+          "en": "not-in-object",
+          "fr": "not-in-object"
+        },
+        "dayProperCounts": {
+          "la": 0,
+          "en": 9,
+          "fr": 9
+        }
+      }
     },
     {
       "id": "seven_sorrows",
@@ -4938,7 +5474,31 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceBodyEvidence": {
+        "auditRef": "data/pray/prayer-work-language-evidence-20261107.v1.json#seven_sorrows",
+        "checkedBy": "tests/pray-work-language-source-audit-20261107.mjs",
+        "status": "source-presence-only; edition/rights/parity and browser reader unverified",
+        "type": "novena-programme",
+        "readerContainer": "novena-reader",
+        "programmeForm": "DAY_SPECIFIC",
+        "dayCount": 9,
+        "properBasis": {
+          "la": "no-independent-proper-detected",
+          "en": "nine-day-specific-propers",
+          "fr": "nine-day-specific-propers"
+        },
+        "recurringTextPresence": {
+          "la": "not-in-object",
+          "en": "not-in-object",
+          "fr": "not-in-object"
+        },
+        "dayProperCounts": {
+          "la": 0,
+          "en": 9,
+          "fr": 9
+        }
+      }
     },
     {
       "id": "perpetual_help",
@@ -4978,7 +5538,31 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceBodyEvidence": {
+        "auditRef": "data/pray/prayer-work-language-evidence-20261107.v1.json#perpetual_help",
+        "checkedBy": "tests/pray-work-language-source-audit-20261107.mjs",
+        "status": "source-presence-only; edition/rights/parity and browser reader unverified",
+        "type": "novena-programme",
+        "readerContainer": "novena-reader",
+        "programmeForm": "REPEAT_FORM",
+        "dayCount": 9,
+        "properBasis": {
+          "la": "no-independent-proper-detected",
+          "en": "repeated-proper",
+          "fr": "repeated-proper"
+        },
+        "recurringTextPresence": {
+          "la": "not-in-object",
+          "en": "text-present",
+          "fr": "text-present"
+        },
+        "dayProperCounts": {
+          "la": 0,
+          "en": 0,
+          "fr": 0
+        }
+      }
     },
     {
       "id": "st_joseph",
@@ -5018,7 +5602,31 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceBodyEvidence": {
+        "auditRef": "data/pray/prayer-work-language-evidence-20261107.v1.json#st_joseph",
+        "checkedBy": "tests/pray-work-language-source-audit-20261107.mjs",
+        "status": "source-presence-only; edition/rights/parity and browser reader unverified",
+        "type": "novena-programme",
+        "readerContainer": "novena-reader",
+        "programmeForm": "DAY_SPECIFIC",
+        "dayCount": 9,
+        "properBasis": {
+          "la": "no-independent-proper-detected",
+          "en": "nine-day-specific-propers",
+          "fr": "nine-day-specific-propers"
+        },
+        "recurringTextPresence": {
+          "la": "not-in-object",
+          "en": "not-in-object",
+          "fr": "not-in-object"
+        },
+        "dayProperCounts": {
+          "la": 0,
+          "en": 9,
+          "fr": 9
+        }
+      }
     },
     {
       "id": "st_michael",
@@ -5058,7 +5666,31 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceBodyEvidence": {
+        "auditRef": "data/pray/prayer-work-language-evidence-20261107.v1.json#st_michael",
+        "checkedBy": "tests/pray-work-language-source-audit-20261107.mjs",
+        "status": "source-presence-only; edition/rights/parity and browser reader unverified",
+        "type": "novena-programme",
+        "readerContainer": "novena-reader",
+        "programmeForm": "REPEAT_FORM",
+        "dayCount": 9,
+        "properBasis": {
+          "la": "no-independent-proper-detected",
+          "en": "repeated-proper",
+          "fr": "repeated-proper"
+        },
+        "recurringTextPresence": {
+          "la": "not-in-object",
+          "en": "text-present",
+          "fr": "text-present"
+        },
+        "dayProperCounts": {
+          "la": 0,
+          "en": 0,
+          "fr": 0
+        }
+      }
     },
     {
       "id": "st_anthony_nine_tuesdays",
@@ -5098,7 +5730,31 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceBodyEvidence": {
+        "auditRef": "data/pray/prayer-work-language-evidence-20261107.v1.json#st_anthony_nine_tuesdays",
+        "checkedBy": "tests/pray-work-language-source-audit-20261107.mjs",
+        "status": "source-presence-only; edition/rights/parity and browser reader unverified",
+        "type": "novena-programme",
+        "readerContainer": "novena-reader",
+        "programmeForm": "REPEAT_FORM",
+        "dayCount": 9,
+        "properBasis": {
+          "la": "no-independent-proper-detected",
+          "en": "repeated-proper",
+          "fr": "repeated-proper"
+        },
+        "recurringTextPresence": {
+          "la": "not-in-object",
+          "en": "text-present",
+          "fr": "text-present"
+        },
+        "dayProperCounts": {
+          "la": 0,
+          "en": 0,
+          "fr": 0
+        }
+      }
     },
     {
       "id": "st_therese",
@@ -5138,7 +5794,31 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceBodyEvidence": {
+        "auditRef": "data/pray/prayer-work-language-evidence-20261107.v1.json#st_therese",
+        "checkedBy": "tests/pray-work-language-source-audit-20261107.mjs",
+        "status": "source-presence-only; edition/rights/parity and browser reader unverified",
+        "type": "novena-programme",
+        "readerContainer": "novena-reader",
+        "programmeForm": "REPEAT_FORM",
+        "dayCount": 9,
+        "properBasis": {
+          "la": "no-independent-proper-detected",
+          "en": "repeated-proper",
+          "fr": "repeated-proper"
+        },
+        "recurringTextPresence": {
+          "la": "not-in-object",
+          "en": "text-present",
+          "fr": "text-present"
+        },
+        "dayProperCounts": {
+          "la": 0,
+          "en": 0,
+          "fr": 0
+        }
+      }
     },
     {
       "id": "icksp_us_therese_perpetual_novena",
@@ -5221,7 +5901,31 @@
       "classificationRule": "R2",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceBodyEvidence": {
+        "auditRef": "data/pray/prayer-work-language-evidence-20261107.v1.json#holy_souls",
+        "checkedBy": "tests/pray-work-language-source-audit-20261107.mjs",
+        "status": "source-presence-only; edition/rights/parity and browser reader unverified",
+        "type": "novena-programme",
+        "readerContainer": "novena-reader",
+        "programmeForm": "DAY_SPECIFIC",
+        "dayCount": 9,
+        "properBasis": {
+          "la": "no-independent-proper-detected",
+          "en": "nine-day-specific-propers",
+          "fr": "nine-day-specific-propers"
+        },
+        "recurringTextPresence": {
+          "la": "not-in-object",
+          "en": "not-in-object",
+          "fr": "not-in-object"
+        },
+        "dayProperCounts": {
+          "la": 0,
+          "en": 9,
+          "fr": 9
+        }
+      }
     },
     {
       "id": "holy_face_1887",
@@ -5898,7 +6602,29 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceBodyEvidence": {
+        "auditRef": "data/pray/prayer-work-language-evidence-20261107.v1.json#daily_morning_prayer",
+        "checkedBy": "tests/pray-work-language-source-audit-20261107.mjs",
+        "status": "source-presence-only; edition/rights/parity and browser reader unverified",
+        "type": "reference-only-daily-order",
+        "readerContainer": "pray.morning_evening",
+        "canonicalOrderedRefs": [
+          "foundations_sign_of_cross",
+          "sacrament_come_holy_spirit",
+          "foundations_our_father",
+          "foundations_hail_mary",
+          "foundations_apostles_creed",
+          "foundations_act_of_faith",
+          "foundations_act_of_hope",
+          "foundations_act_of_love",
+          "sacrament_act_of_contrition",
+          "foundations_guardian_angel",
+          "foundations_glory_be"
+        ],
+        "companionRefs": [],
+        "missingUnownedRefs": []
+      }
     },
     {
       "id": "daily_evening_prayer",
@@ -5953,7 +6679,33 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "unverified-existing-reader"
+      "libraryListing": "unverified-existing-reader",
+      "sourceBodyEvidence": {
+        "auditRef": "data/pray/prayer-work-language-evidence-20261107.v1.json#daily_evening_prayer",
+        "checkedBy": "tests/pray-work-language-source-audit-20261107.mjs",
+        "status": "source-presence-only; edition/rights/parity and browser reader unverified",
+        "type": "reference-only-daily-order",
+        "readerContainer": "pray.morning_evening",
+        "canonicalOrderedRefs": [
+          "foundations_sign_of_cross",
+          "sacrament_come_holy_spirit",
+          "foundations_our_father",
+          "foundations_hail_mary",
+          "foundations_apostles_creed",
+          "foundations_act_of_faith",
+          "foundations_act_of_hope",
+          "foundations_act_of_love",
+          "pray.nightly_examen",
+          "sacrament_act_of_contrition",
+          "dead_de_profundis",
+          "marian_hail_holy_queen",
+          "foundations_glory_be"
+        ],
+        "companionRefs": [
+          "pray.nightly_examen"
+        ],
+        "missingUnownedRefs": []
+      }
     },
     {
       "id": "pray.nightly_examen",
