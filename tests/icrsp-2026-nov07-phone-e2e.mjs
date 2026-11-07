@@ -94,7 +94,65 @@ try{
   assert.deepEqual(snapshot[language].counts,
    {COLLECT_SET:2,SECRET_SET:2,POSTCOMMUNION_SET:2});
  }
+ // The original 2026 phone test stopped at preflight/prepare. The user
+ // actually follows the NATIVE 65-card reader: prove BOTH real prayers
+ // survive source composition and are physically rendered on Postcommunion.
+ const rendered=await page.evaluate(async()=>{
+  const expected=(await globalThis.AO_R17_BROWSER_ENTRY.prepare())
+   ?.session?.resolvedMass?.proper;
+  const donor=expected?.data??expected;
+  await globalThis.AO_R17_BROWSER_ENTRY.enter();
+  const preview=globalThis.AO_R17_NATIVE_READER_PREVIEW;
+  if(!preview?.showSection)throw Error("NATIVE_MASS_READER_NOT_MOUNTED");
+  const links=[...document.querySelectorAll(
+   "#ao-r17-native-reader-preview [data-reader-section]")];
+  const candidates=links.filter(x=>/postcommun/i.test(x.textContent??""));
+  const summaries=[];
+  for(const link of candidates){
+   const id=link.getAttribute("data-reader-section");
+   const card=preview.showSection(id);
+   if(!card)continue;
+   const owned=(card.blocks??[]).some(x=>x.blockId==="AO.SM.B088");
+   if(!owned)continue;
+   const shell=document.querySelector("#ao-r17-native-reader-preview");
+   const renderedText=shell?.querySelector(".ao-prayer-card")?.innerText??"";
+   summaries.push({
+    id,sourceSection:card.sourceSectionId??card.sectionId,
+    labels:[...shell.querySelectorAll(".ao-reader-paragraph")].map(
+     x=>x.getAttribute("data-oration-group-index")),
+    rows:(card.paragraphs??[]).map(x=>({
+     group:x.orationGroupIndex,role:x.prayerRole,
+     latin:x.latin,vernacular:x.vernacular
+    })),
+    renderedText
+   });
+  }
+  return {
+   candidates:candidates.length,
+   summaries,
+   source:(donor?.postcommunions??[]).map(x=>({en:x.en,fr:x.fr,lat:x.lat})),
+   mode:document.querySelector("#ao-r17-native-reader-preview [data-ao-reader-shell]")
+    ?.getAttribute("data-mode")
+  };
+ });
+ assert.equal(rendered.mode,"LIVE","Native LIVE reader not mounted");
+ assert.equal(rendered.summaries.length,1,
+  "Expected exactly one source-owned Postcommunion card: "+JSON.stringify(rendered));
+ const displayed=rendered.summaries[0];
+ assert.deepEqual([...new Set(displayed.rows.map(x=>x.group).filter(Number.isInteger))],
+  [1,2],"Postcommunion card omitted a source-owned prayer group");
+ for(const prayer of rendered.source){
+  const languageText=snapshot.en?prayer.en:prayer.en;
+  assert.ok(displayed.rows.some(x=>x.vernacular?.includes(languageText.slice(0,65))),
+    "Postcommunion not in final prayer card: "+languageText.slice(0,65));
+ }
+ assert.ok(displayed.renderedText.length>120,
+  "Native Postcommunion card renders no visible prayers");
  assert.deepEqual(errors,[],"Runtime errors");
+ console.log("ICRSP_NOV07_LIVE_POSTCOMMUNIONS "+JSON.stringify({
+  sourcePath:snapshot.sourcePath,groups:displayed.rows.map(x=>x.group),
+  roles:displayed.rows.map(x=>x.role),renderedLength:displayed.renderedText.length
+ }));
  console.log("ICRSP_NOV07_ADEAMUS_PHONE_PASS "+JSON.stringify(snapshot));
 }finally{
  await browser?.close().catch(()=>{});
