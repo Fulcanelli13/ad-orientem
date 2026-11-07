@@ -56,21 +56,29 @@ let browser;try{
            trilingual:["collects","secrets","postcommunions"].map(k=>(p?.[k]??[]).map(x=>(["lat","en","fr"].every(l=>!!String(x?.[l]??"").trim())))),
            sourcePath:p?.sourcePath};
          if(r?.status==="ready" && r?.proper?.status==="ready" && comms.length){
-           // The production Mass preparation first recovers pinned source
-           // omissions before selecting the form. The inseparable apostolic
-           // prayer on June 30 is a verified example; querying the raw day
-           // alone falsely reports all four forms as uncertified.
-           const inseparable=comms.some(q=>q?.inseparable===true);
-           let prepared=r.proper;
-           if(inseparable){
-             prepared=await recoverReaderProperOmissions(r.proper,{
-               hostResolver:globalThis.AO_RUNTIME_V8.resolver.properResolver,
-               principalCelebrationId:r.day.main.id,calendarDate:date
-             });
+           // Actual Mass preparation ALWAYS recovers pinned source-owned
+           // omissions before form selection. The old audit only recovered
+           // 30 June; Passion Friday and Christmas Octave were misclassified.
+           const prepared=await recoverReaderProperOmissions(r.proper,{
+             hostResolver:globalThis.AO_RUNTIME_V8.resolver.properResolver,
+             principalCelebrationId:r.day.main.id,calendarDate:date
+           });
+           const repaired=prepared?.data??prepared;
+           const rawCounts=["collects","secrets","postcommunions"].map(
+             field=>Array.isArray(p?.[field])?p[field].length:0);
+           const recoveredCounts=["collects","secrets","postcommunions"].map(
+             field=>Array.isArray(repaired?.[field])?repaired[field].length:0);
+           if(rawCounts.some((v,i)=>v!==recoveredCounts[i])||
+              repaired?.inseparableApostolicSources?.status==="SOURCE_VERIFIED"||
+              repaired?.verifiedNativityOctaveCommemoration?.status==="SOURCE_VERIFIED"||
+              repaired?.verifiedPassionFridayCommemorations?.status==="SOURCE_VERIFIED"){
              row.readerSourceRecovery={
-               status:prepared?.data?.inseparableApostolicSources?.status??null,
-               originalSource:r.proper.data?.sourcePath??null,
-               recoveredSource:prepared?.data?.sourcePath??null
+               originalSource:p?.sourcePath??null,
+               recoveredSource:repaired?.sourcePath??null,
+               rawCounts,recoveredCounts,
+               inseparableStatus:repaired?.inseparableApostolicSources?.status??null,
+               nativityStatus:repaired?.verifiedNativityOctaveCommemoration?.status??null,
+               passionStatus:repaired?.verifiedPassionFridayCommemorations?.status??null
              };
            }
            row.formChecks=forms.map(form=>{
@@ -150,7 +158,7 @@ let browser;try{
  console.log("MASS_1962_SOURCE_GROUP_CANDIDATES="+JSON.stringify(aggregate.unmappedGroups));
  console.log("MASS_1962_FORM_ORATION_COVERAGE="+JSON.stringify({certified:aggregate.certifiedFormCases,uncertified:aggregate.uncertifiedFormCases.length,decisions:aggregate.formDecisions,unverifiedCandidates:aggregate.uncertifiedFormCases.slice(0,90)}));
  console.log("MASS_1962_CERTIFIED_ORATION_FAILURES="+JSON.stringify(aggregate.certifiedOrationFailures));
- console.log("MASS_1962_RECOVERED_INSEPARABLE="+JSON.stringify(aggregate.recoveredInseparable));
+ console.log("MASS_1962_EXISTING_SOURCE_RECOVERY="+JSON.stringify(aggregate.recoveredInseparable));
  console.log("MASS_1962_SOURCE_SCAN_SUMMARY="+JSON.stringify({checked:aggregate.checked,failures:aggregate.failures.slice(0,30),multiDates:aggregate.multi.map(x=>x.date),single:aggregate.single.length,inseparableDates:aggregate.inseparable.map(x=>x.date)}));
  assert.equal(aggregate.checked,365);
  assert.deepEqual(aggregate.failures,[],
@@ -159,10 +167,19 @@ let browser;try{
  assert.ok(aggregate.certifiedFormCases>0,
    "No certified 1962 form-specific Masses were exercised");
  const peter=aggregate.recoveredInseparable.find(x=>x.date==="2026-06-30");
- assert.equal(peter?.status,"SOURCE_VERIFIED",
+ assert.equal(peter?.inseparableStatus,"SOURCE_VERIFIED",
    "Actual reader failed to recover the preexisting St Peter and St Paul source");
  assert.equal(aggregate.uncertifiedFormCases.some(x=>x.date==="2026-06-30"),false,
    "Original 1962 apostolic group was incorrectly left uncertified");
+ for(const date of ["2026-03-27","2026-12-26","2026-12-28"]){
+   const recovered=aggregate.recoveredInseparable.find(x=>x.date===date);
+   const status=date==="2026-03-27"?recovered?.passionStatus:
+     recovered?.nativityStatus;
+   assert.equal(status,"SOURCE_VERIFIED",
+     date+" original three-language source recovery was not admitted");
+   assert.equal(aggregate.uncertifiedFormCases.some(x=>x.date===date),false,
+     date+" historical source recovery must reach all four forms");
+ }
  assert.equal(aggregate.certifiedFormCases+
    aggregate.uncertifiedFormCases.length,
    4*(aggregate.single.length+aggregate.multi.length+aggregate.inseparable.filter(
@@ -180,7 +197,7 @@ let browser;try{
    unverifiedFormCases:aggregate.uncertifiedFormCases.length,
    decisionCounts:aggregate.formDecisions,
    multiCommemorationDates:aggregate.multi.map(x=>x.date),
-   inseparableRecovery:aggregate.recoveredInseparable,
+   sourceRecovery:aggregate.recoveredInseparable,
    certifiedFailures:aggregate.certifiedOrationFailures,
    // Deliberately retain every exception, not only the first 90 log previews.
    unverifiedQueue:aggregate.uncertifiedFormCases,
