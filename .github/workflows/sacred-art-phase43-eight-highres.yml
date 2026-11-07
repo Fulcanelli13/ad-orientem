@@ -1,0 +1,44 @@
+name: Sacred Art Phase 43 — eight high-res exact-photo QA (research only)
+on:
+  push:
+    branches:
+      - research/sacred-art-phase18-iiif-audit-20261106
+    paths:
+      - 'scripts/sacred-art/phase43-eight-highres-geometric-qa.py'
+      - '.github/workflows/sacred-art-phase43-eight-highres.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  highres-eight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install bounded image processing dependencies
+        run: python -m pip install --disable-pip-version-check 'requests>=2.32,<3' 'Pillow>=11,<13' 'numpy>=2,<3' 'opencv-python-headless>=4.10,<5'
+      - name: Download 22 owner-original and museum-source comparisons
+        uses: actions/download-artifact@v4
+        with:
+          name: sacred-art-phase42-priority22-actual-photo-board-research-only
+          run-id: 42367925605
+          github-token: ${{ github.token }}
+          path: reference-phase42
+      - name: Run full-object institutional image QA, no publication
+        run: |
+          python -m py_compile scripts/sacred-art/phase43-eight-highres-geometric-qa.py
+          python scripts/sacred-art/phase43-eight-highres-geometric-qa.py
+      - name: Save research-only image evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-phase43-eight-highres-research-only
+          path: artifacts/sacred-art-phase43-eight-highres/
+          retention-days: 10
+          if-no-files-found: warn
