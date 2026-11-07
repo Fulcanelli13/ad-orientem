@@ -61,6 +61,14 @@ def analyze(pair):
         for c in canvases[:40]:
             if isinstance(c,dict):
                 out["width_height"].append([c.get("width"),c.get("height")])
+                # Paris Musées IIIF v2 puts an explicit CC0 on each individual
+                # canvas metadata list as label 'Droits' / 'Copyright'.
+                for field in (c.get("metadata") or [])[:30]:
+                    if not isinstance(field,dict):continue
+                    label=str(field.get("label","")).strip().lower()
+                    value=str(field.get("value","")).strip()
+                    if label in ("droits","copyright","rights","license") and value:
+                        rights.append(value)
                 for k in ("license","rights"):
                     if c.get(k):rights.append(str(c[k]))
                 if c.get("images"):
