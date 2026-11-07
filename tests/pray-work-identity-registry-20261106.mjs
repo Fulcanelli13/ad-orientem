@@ -51,7 +51,22 @@ check(registry.counts.supplementalSourceOwnerAudited===84,"Supplementary audited
 check(registry.counts.remaining48Audited===48,"Stage 4 count drifted");
 check(items.filter(w=>w.availability==="route-unverified").length===84,"Do not silently change route availability from source evidence");
 
-check(registry.counts.routeUIVerified===0,"Source testing must not pretend browser reader verification");
+const browserBodyEvidence=JSON.parse(readFileSync(join(root,"data/pray/prayer-work-body-stage-browser-acceptance-20261107.v1.json"),"utf8"));
+check(browserBodyEvidence.run.conclusion==="success","Source body evidence must refer to completed CI");
+const nineBrowserIds=browserBodyEvidence.bodyParity.sourceWorks.map(w=>w.id);
+check(nineBrowserIds.length===9 && new Set(nineBrowserIds).size===9,"Stage 6 has nine distinct directly compared work IDs");
+const visibleBodyWorks=items.filter(w=>w.readerBodyEvidence);
+check(visibleBodyWorks.length===9,"Only nine source-owned works have actual sampled body comparison evidence");
+check(browserBodyEvidence.bodyParity.supplementalSourceWorks===8,"Only eight supplemental works have sampled visible-body checks");
+check(browserBodyEvidence.bodyParity.canonicalSourceReuse===1,"One canonical St Joseph prayer must remain shared");
+check(registry.counts.visibleBodyComparedWorks===9 && registry.counts.visibleBodyComparedSupplementalWorks===8,"Per-work browser body evidence count drifted");
+for(const w of visibleBodyWorks){
+ check(nineBrowserIds.includes(w.id),"Registry claims body-visible evidence for an untested work: "+w.id);
+ check(w.readerBodyEvidence.auditRef==="data/pray/prayer-work-body-stage-browser-acceptance-20261107.v1.json#"+w.id,"Wrong browser body evidence pointer "+w.id);
+ check(w.readerBodyEvidence.historicalSourcePrintCertified===false&&w.readerBodyEvidence.sourceReaderCompleteCertified===false,"Visible text tests cannot certify full original editions "+w.id);
+}
+check(browserBodyEvidence.classificationAndRelease?.registryImportedToRuntime!==true,"Draft registry must not be treated as a production import");
+check(registry.counts.routeUIVerified===0,"Targeted body tests are not complete 84-work browser route certificates");
 const expectedAvailable=["published","route-unverified","external-link","source-only"];
 check(Object.keys(registry.counts.byAvailability).every(x=>expectedAvailable.includes(x)),"Unexpected availability term");
 check(registry.counts.catalogueWorks===items.length,"Embedded catalogue count is stale");
