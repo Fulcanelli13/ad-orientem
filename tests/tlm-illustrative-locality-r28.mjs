@@ -6,6 +6,8 @@ import {validateCL2PhysicalIndex,projectCL2PhysicalDirectory} from "../src/find/
 import {projectPreliminaryR49,projectPublishedProvisionalMassSites,tlmSiteEvidenceCounts} from "../src/find/preliminary-directory-r49.js";
 import {renderDirectoryVenueCard} from "../src/find/directory-card.js";
 import {renderTlmChurchProfile} from "../src/find/tlm-church-profile.js";
+import {renderTlmMapResultRail} from "../src/find/tlm-map-result-rail.js";
+import {tlmApproximateMapLabel,tlmApproximateMapNotice,isR28ApproximateMarker} from "../src/find/tlm-approximate-map-disclosure.js";
 const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
 const frozen=validateCL2PhysicalIndex(read("data/directory/generated/cl2-physical-site-index.v1.json"));
 const base=projectPublishedProvisionalMassSites(projectPreliminaryR49(read("data/directory/preliminary-map-r49.v1.json")),read("data/directory/published-provisional-mass-sites-20261026.v1.json"));
@@ -45,13 +47,28 @@ for(const [id,pin] of approvals){
  assert.ok(url.searchParams.get("query").includes(pin.searchAddress),"Exact named place/address search must be used: "+id);
  assert.ok(!site.actions[0].url.includes("/maps/dir/"));
  assert.ok(!site.actions[0].url.includes(String(pin.lat)+","+String(pin.lng)));
+ assert.ok(isR28ApproximateMarker(site),"R28 mapped record must be explicitly marked approximate");
  for(const lang of ["en","fr"]){
   const card=renderDirectoryVenueCard(site,lang),profile=renderTlmChurchProfile(site,lang);
+  const rail=renderTlmMapResultRail({items:[site],language:lang,center:{lat:pin.lat,lng:pin.lng}});
+  const short=tlmApproximateMapLabel(site,lang),detail=tlmApproximateMapNotice(site,lang);
+  assert.ok(short&&detail);
   assert.ok(card.includes('data-explore-item="'+site.item_id+'"'));
+  assert.ok(card.includes('data-tlm-approximate-source="r28"')&&card.includes(short),"Directory card must show localized approximate position: "+id);
+  assert.ok(rail.includes('data-tlm-approximate-source="r28"')&&rail.includes(short),"Map rail must not imply a verified church: "+id);
   assert.ok(profile.includes("aoTlmProfileSources"));
+  assert.ok(profile.includes('data-tlm-approximate-source="r28"'),"Church profile must disclose approximate position: "+id);
   assert.ok(profile.includes("Google Maps"));
+  assert.ok(!profile.includes("Directions on Google Maps"),"R28 offers only named-location search");
+  if(lang==="en")assert.match(detail,/Mass|church|chapel|village/);
  }
 }
+assert.match(tlmApproximateMapLabel(byId.get("RG-615FF6835AAE"),"en"),/Disputed source town/);
+assert.match(tlmApproximateMapNotice(byId.get("RG-615FF6835AAE"),"en"),/Kálnica/);
+assert.match(tlmApproximateMapLabel(byId.get("RG-B72-BD22249C1E0A"),"en"),/Schematic area/);
+assert.match(tlmApproximateMapNotice(byId.get("RG-B72-BD22249C1E0A"),"en"),/NOT measured village coordinates/);
+assert.match(tlmApproximateMapLabel(byId.get("RG-B72-7441A9AFEE69"),"fr"),/Village incertain/);
+assert.equal(tlmApproximateMapLabel(byId.get("RG-832AB0C2265E"),"en"),null);
 assert.match(byId.get("RG-615FF6835AAE").geo.attribution,/Kálnica/,"Do not silently rewrite contradictory Poprad address");
 assert.match(byId.get("RG-2C84B50B3667").geo.attribution,/HISTORICAL/,"Closed Bootle parish is not a current Mass listing");
 assert.match(byId.get("RG-B72-BD22249C1E0A").geo.attribution,/ROUGH CARTOGRAPHIC INTERPOLATION/,"Do not disguise schematic Gabon point as measured location");
