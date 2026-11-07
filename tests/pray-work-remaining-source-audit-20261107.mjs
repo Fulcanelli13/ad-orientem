@@ -180,6 +180,17 @@ const report={
  sourceImportFailures:[...modules].filter(([p,m])=>m?.error).map(([path,m])=>({path,error:m.error})),
  hardIssues:issues,rows:results
 };
+const snapshot=JSON.parse(read("data/pray/prayer-work-remaining-source-evidence-20261107.v1.json"));
+assert.equal(snapshot.schema,report.schema,"Recorded Stage 4 evidence schema changed");
+assert.deepEqual(snapshot.rows,report.rows,"48-work source/owner hashes or statuses drifted; require an explicit new evidence audit");
+assert.deepEqual(snapshot.hardIssues,report.hardIssues,"Recorded hard issues diverged from live sources");
+for(const row of report.rows){
+ const work=registry.works.find(w=>w.id===row.id);
+ const link=work?.sourceOwnerEvidence;
+ assert.ok(link&&link.auditRef==="data/pray/prayer-work-remaining-source-evidence-20261107.v1.json#"+row.id,"Missing Stage 4 per-work source evidence link: "+row.id);
+ assert.equal(link.sourceHash,row.sourceHash,"Registry source digest mismatch for "+row.id);
+ assert.equal(link.readerRouteDeclared,row.routeDeclared,"Route declaration evidence drifted for "+row.id);
+}
 console.log("AO_PRAY_STAGE4_REPORT_BEGIN");
 console.log(JSON.stringify(report));
 console.log("AO_PRAY_STAGE4_REPORT_END");
