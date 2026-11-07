@@ -1,0 +1,105 @@
+{
+  "schema": "ao.pray.stage9.source-owner-boundary-acceptance.v1",
+  "checkedAt": "2026-11-07",
+  "branch": "research/prayer-work-identity-registry-20261106",
+  "pullRequest": 2594,
+  "sourceCommit": "2a76eeea40c207a37fc921ceacfb6fced590ddfe",
+  "run": {
+    "id": 42404759624,
+    "url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42404759624",
+    "jobId": 128499951993,
+    "artifactId": 13587425562,
+    "conclusion": "success"
+  },
+  "test": "tests/pray-work-stage9-source-owner-boundaries-phone-20261107.mjs",
+  "browser": "Playwright Chromium in GitHub Actions; 320px and 390px, EN/FR; Wikisource access intentionally blocked",
+  "widths": [
+    320,
+    390
+  ],
+  "languages": [
+    "en",
+    "fr"
+  ],
+  "failedAssertions": 0,
+  "verified": {
+    "historicalSevenWords": {
+      "workId": "pray.seven_words",
+      "route": "pray.seven_words",
+      "source": "src/pray/seven-words-offline-1889.v1.js",
+      "renderedExactBodyChecks": 36,
+      "sevenMeditations": 28,
+      "originalOpening": 4,
+      "historicalMarianAppendix": 4,
+      "originalLanguage": "en",
+      "availableDespiteWikisourceBlock": true,
+      "printFacsimileCollated": false
+    },
+    "penitential": {
+      "workId": "pray.penitential_psalms",
+      "route": "pray.penitential_psalms",
+      "referencePositionChecks": 28,
+      "sourceSequence": [
+        6,
+        31,
+        37,
+        50,
+        101,
+        129,
+        142
+      ],
+      "scriptureOwner": "AO_RUNTIME_V8.scriptureService",
+      "fullPsalmBodiesCertified": 0,
+      "fullSevenPsalmConcordanceCertified": false
+    },
+    "litany": {
+      "workId": "pray.litany_saints",
+      "route": "pray.litany_saints",
+      "distinctHistoricalWitnesses": 2,
+      "offlineUnavailableFailureChecks": 4,
+      "sourcePrintedEditions": [
+        "1883 English",
+        "1862 French"
+      ],
+      "fullLitanyBodiesCertified": 0,
+      "printCollationCertified": false,
+      "liturgical1962EditionCertified": false
+    },
+    "lasance": {
+      "sourceOwner": "src/pray/prayer-acquisition-historical-witnesses.v1.js",
+      "historicalLanguageWitnesses": 6,
+      "english": 4,
+      "latin": 2,
+      "french": 0,
+      "recordSourceGatePassed": true,
+      "liveReaderBodiesCertified": 0,
+      "fullLiveRoutesProven": false,
+      "printedPageStatus": "source module records individual page-image checks; independent re-collation not undertaken in this Stage"
+    }
+  },
+  "perWorkNewVisibleBodyEvidence": [
+    "pray.seven_words"
+  ],
+  "perWorkUnchanged": [
+    "pray.penitential_psalms",
+    "pray.litany_saints",
+    "ignatius_suscipe_lasance_1908_en",
+    "lasance_prayer_before_meditation_1908_en",
+    "thomas_aquinas_concede_mihi_lasance_1908_en",
+    "lasance_prayer_after_meditation_1908_en"
+  ],
+  "limits": [
+    "External Wikisource blocked while local app assets were served over test HTTP; not a certification of offline service-worker installation, Scripture caching, or whole-site network disconnection.",
+    "Seven Words comparisons test exact locally packaged source after the existing parser and rendering. The 1889 printed facsimile remains uncollated; two known editorial corrections retain notices.",
+    "Traditional Psalm reference navigation does not prove complete fetched Douay-Rheims/CPDV, Crampon 1923, or Vulgate verse bodies or seven-psalm offline caching.",
+    "Litany fail-closed checks do not demonstrate the full live 1883 English or 1862 French transcriptions; the 1962 ritual source remains uncertified.",
+    "Lasance language-specific source records do not automatically prove direct user access through a public Prayer reader, even where source-specific release allows a hub.",
+    "The canonical 13-tercet Stabat source remains partial and unaffected."
+  ],
+  "independentPrintedSourceCertifiedThisStage": 0,
+  "registryImportedToRuntime": false,
+  "publicationChanges": false,
+  "prayerTextChanges": false,
+  "readerChanges": false,
+  "deployments": false
+}
