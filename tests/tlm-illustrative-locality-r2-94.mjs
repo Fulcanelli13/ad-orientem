@@ -57,8 +57,14 @@ for(const row of manifest.records){
 // R2-only municipality decisions remain unchanged. Later R17 Excel approval allows an
 // independently identified San Jose SCHOOL/CAMPUS vicinity, not a chapel footprint.
 // Keep the original historical name conflict and all other unapproved holds.
-for(const id of ["RG-50082C65DA56","RG-B66-ACD5E3A16E10","RG-615FF6835AAE","RG-2C84B50B3667"]){
- assert.ok(!registry[id]);assert.ok(!byId.get(id)?.map_publishable,"Identity or closed site hold must stay unpinned: "+id);
+for(const id of ["RG-50082C65DA56","RG-615FF6835AAE","RG-2C84B50B3667"]){
+ assert.ok(!registry[id],"Earlier R2 must not claim precision for later approximate identity");
+ const now=byId.get(id);
+ assert.ok(now?.map_publishable&&now.geo?.precision==="locality"&&now.geo.review_scope,"R28 owner-approved source-city marker preserves source identity uncertainty: "+id);
+ assert.ok(now.actions.every(x=>!x.url.includes("/maps/dir/")));
+}
+for(const id of ["RG-B66-ACD5E3A16E10"]){
+ assert.ok(!registry[id]);assert.ok(!byId.get(id)?.map_publishable,"The unrelated historic duplicate identity remains held: "+id);
 }
 const sanJoseId="RG-18E53EDD9E9C",sanJose=byId.get(sanJoseId);
 assert.ok(!registry[sanJoseId],"R2 must not retroactively approve San Jose");
