@@ -190,7 +190,7 @@ let browser;try{
  };
  await mkdir(resolve(root,"artifacts/mass"),{recursive:true});
  await writeFile(resolve(root,"artifacts/mass/1962-2026-source-oration-coverage.json"),
-   JSON.stringify(coverage,null,2)+"\\n");
+   JSON.stringify(coverage,null,2)+"\n");
  console.log("MASS_1962_COVERAGE_ARTIFACT=artifacts/mass/1962-2026-source-oration-coverage.json");
  console.log("PASS: 365 resolved 2026 1962 dates; source-certified form orations and recovered inseparable Mass retained EN/FR. All uncertified cases exported without invented certification.");
 }finally{await browser?.close();await new Promise(done=>server.close(done))}
