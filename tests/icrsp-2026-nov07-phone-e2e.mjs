@@ -281,16 +281,28 @@ try{
    "[data-reader-section-all] [data-reader-section]")];
   const ids=entries.map(x=>x.getAttribute("data-reader-section"));
   const labels=entries.map(x=>x.innerText);
+  const omitted=(preview.model?.cards??[]).filter(c=>!ids.includes(c.sectionId))
+   .map(c=>({id:c.sectionId,title:c.title,source:c.sourceSectionId,
+    omittedByRite:c.omittedByRite??null,stateOnly:c.stateOnly??false,
+    curatedPresentationReview:c.curatedPresentationReview??false,
+    blocks:c.blocks?.map(b=>b.blockId)??[]}));
   const start=preview.showSection(ids[0]);
-  return {ids,labels,modelCards:preview.model?.totalCards,
+  return {ids,labels,omitted,modelCards:preview.model?.totalCards,
    started:start?.sectionId,mode:root.querySelector("[data-ao-reader-shell]")?.dataset.mode};
  });
  assert.equal(itinerary.mode,"LIVE");
  assert.equal(itinerary.modelCards,65,"Source-owned 65-card graph regressed");
  assert.equal(new Set(itinerary.ids).size,itinerary.ids.length,
   "Catch-up menu duplicates canonical prayer cards");
- assert.equal(itinerary.ids.length,64,
-  "7 November ordinary Low Mass should display 64 cards (second Confiteor optional)");
+ assert.equal(itinerary.ids.length,59,
+  "7 November Low Mass should hide the four no-Credo moments, optional Confiteor and Low-Mass incensation: "+JSON.stringify(itinerary.omitted));
+ assert.equal(itinerary.omitted.length,6);
+ assert.equal(itinerary.omitted.filter(x=>x.source==="AO.CARD.009").length,4,
+  "Votive no-Credo must exclude exactly four Credo moments");
+ assert.equal(itinerary.omitted.filter(x=>x.blocks.includes("AO.SM.B077")).length,1,
+  "Optional second Confiteor should account for one omitted moment");
+ assert.equal(itinerary.omitted.filter(x=>x.omittedByRite==="1962_FORM_NO_INCENSE").length,1,
+  "Low Mass omission of incensation should account for one omitted moment");
  assert.equal(itinerary.started,itinerary.ids[0]);
  assert.ok(itinerary.labels.some(x=>/Gloria/i.test(x)),
   "Required Immaculate Heart Gloria missing from reader itinerary");
@@ -334,7 +346,7 @@ try{
   assert.equal(now,itinerary.ids[index+1],
    "NEXT did not reach the next canonical source card after "+view.title);
  }
- assert.equal(walked.length,64);
+ assert.equal(walked.length,itinerary.ids.length);
  assert.ok(walked.some(x=>x.source==="AO.CARD.003"),
   "Gloria must be rendered in the actual linear reading");
  assert.ok(!walked.some(x=>x.source==="AO.CARD.009"),
