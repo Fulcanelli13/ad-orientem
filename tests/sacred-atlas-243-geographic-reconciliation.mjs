@@ -5,6 +5,7 @@ const coords=read("data/geography/research/sacred-atlas-243-30-missing-coordinat
 const decisions=read("data/geography/research/sacred-atlas-243-proximity-area-decisions-20261107.v1.json");
 const source=read("data/geography/research/sacred-atlas-243-complement-triage-20261107.v1.json");
 const geo=read("data/geography/seed-registry.v1.json");
+const preview=read("data/geography/research/sacred-atlas-five-active-country-area-preview-20261107.v1.json");
 const groups=source.candidate_ids_by_lane, all=new Set(Object.values(groups).flat());
 assert.equal(coords.schema,"AO_SACRED_ATLAS_243_30_MISSING_COORDINATE_STAGE_V1");
 assert.equal(decisions.schema,"AO_SACRED_ATLAS_243_PROXIMITY_AND_AREAS_V1");
@@ -118,6 +119,36 @@ for(const a of area){
  if(a.decision==="HERITAGE_ONLY_DEFER")assert.equal(a.eligible_active_review_candidate_ids.length,0);
 }
 assert.match(area.find(x=>x.code==="XK").code_note,/not formally assigned ISO/);
+assert.equal(preview.schema,"AO_SACRED_ATLAS_FIVE_COUNTRY_AREA_PREVIEW_V1");
+assert.equal(preview.status,"RESEARCH_ONLY_NOT_ADMITTED");
+assert.equal(preview.proposals.length,5);
+assert.equal(preview.counts.standard_iso_compatible,4);
+assert.equal(preview.counts.operational_territory_adapter_hold,1);
+assert.equal(preview.counts.geo_areas_appended_to_canonical,0);
+assert.equal(preview.counts.candidate_places_admitted,0);
+assert.deepEqual(new Set(preview.heritage_only_deferred_codes),new Set(["AM","CY","ET","TN"]));
+for(const entry of preview.proposals){
+ assert.equal(entry.owner_review_status,"PENDING");
+ assert.equal(entry.canonical_area_insert_authorized,false);
+ assert.equal(entry.proposed_geo_area.area_system,"CIVIL");
+ assert.equal(entry.proposed_geo_area.area_type,"country");
+ assert.deepEqual(entry.proposed_geo_area.parent_geo_area_ids,["geo:world"]);
+ assert.ok(!existingAreas.has(entry.proposed_geo_area.geo_area_id));
+ const source=area.find(a=>a.code===entry.source_country_code);
+ assert.ok(source,entry.source_country_code);
+ assert.deepEqual(new Set(entry.required_candidate_ids),new Set(source.eligible_active_review_candidate_ids));
+ if(entry.source_country_code==="XK"){
+  assert.equal(entry.standard_code_state,"OPERATIONAL_USER_ASSIGNED_NOT_ISO");
+  assert.equal(entry.canonical_compatibility,"BLOCKED_ROUTING_ADAPTER_REQUIRED");
+  assert.equal(entry.proposed_geo_area.codes.iso_alpha2,undefined);
+  assert.equal(entry.operational_code_route.cannot_write_into_codes_iso_alpha2,true);
+  assert.equal(entry.operational_code_route.requires_explicit_adapter_or_schema_decision,true);
+ }else{
+  assert.equal(entry.standard_code_state,"OFFICIAL_ISO_3166_1_ALPHA2");
+  assert.equal(entry.proposed_geo_area.codes.iso_alpha2,entry.source_country_code);
+  assert.equal(entry.canonical_compatibility,"STRUCTURALLY_COMPATIBLE_UNAPPROVED");
+ }
+}
 assert.equal(decisions.counts.production_imports,0);
 assert.equal(coords.counts.production_imports,0);
 console.log("PASS Atlas geography: 24 staged site coordinates (23 stronger, 1 qualified), 16 without point, 10 proximity cases, five active-area prerequisites; 0 admissions");
