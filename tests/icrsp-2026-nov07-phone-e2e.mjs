@@ -122,9 +122,10 @@ try{
      x=>x.getAttribute("data-oration-group-index")),
     rows:(card.paragraphs??[]).map(x=>({
      group:x.orationGroupIndex,role:x.prayerRole,
-     latin:x.latin,vernacular:x.vernacular
+     primary:x.primary,alternate:x.alternate,sourcePath:x.sourcePath
     })),
-    renderedText
+    renderedText,
+    countNotice:shell?.querySelector(".ao-verified-oration-count")?.innerText??null
    });
   }
   return {
@@ -144,8 +145,9 @@ try{
   candidates:liveProof.candidates,
   cards:liveProof.summaries.map(x=>({
     id:x.id,sourceSection:x.sourceSection,
-    rows:x.rows.map(y=>({group:y.group,role:y.role,latin:String(y.latin??"").slice(0,100),
-      vernacular:String(y.vernacular??"").slice(0,100)})),
+    rows:x.rows.map(y=>({group:y.group,role:y.role,primary:String(y.primary??"").slice(0,100),
+      sourcePath:y.sourcePath})),
+    notice:x.countNotice,
     rendered:String(x.renderedText).slice(0,500),
   }))
  }));
@@ -153,9 +155,15 @@ try{
   [1,2],"Postcommunion card omitted a source-owned prayer group");
  for(const prayer of liveProof.source){
   const languageText=prayer.en;
-  assert.ok(displayed.rows.some(x=>x.vernacular?.includes(languageText.slice(0,65))),
+  assert.ok(displayed.rows.some(x=>x.primary?.includes(languageText.slice(0,65))),
     "Postcommunion not in final prayer card: "+languageText.slice(0,65));
+  assert.ok(displayed.renderedText.includes(languageText.slice(0,65)),
+    "Postcommunion source not visibly rendered: "+languageText.slice(0,65));
  }
+ assert.match(displayed.countNotice??"",/Two Postcommunions.*Prayer for the Pope/,
+  "The reader does not indicate that a second Postcommunion is below");
+ assert.match(displayed.renderedText,/Second Postcommunion.*Prayer for the Pope/,
+  "The additional Postcommunion lacks its distinct source-owned label");
  assert.ok(displayed.renderedText.length>120,
   "Native Postcommunion card renders no visible prayers");
  assert.deepEqual(errors,[],"Runtime errors");
