@@ -166,6 +166,50 @@ try{
   "The additional Postcommunion lacks its distinct source-owned label");
  assert.ok(displayed.renderedText.length>120,
   "Native Postcommunion card renders no visible prayers");
+ // The user-facing NEXT control is not allowed to skip an unseen second
+ // Postcommunion just because both paragraphs technically exist in DOM.
+ // Test the real navigation from an untouched 390px prayer card.
+ const beforeNext=await page.evaluate(()=>{
+  const root=document.querySelector("#ao-r17-native-reader-preview");
+  const card=root.querySelector(".ao-prayer-card");
+  const second=card.querySelector('[data-oration-group-index="2"]');
+  const rect=card.getBoundingClientRect(),next=second.getBoundingClientRect();
+  return {id:globalThis.AO_R17_NATIVE_READER_PREVIEW.getCurrentCard()?.sectionId,
+   scrollTop:card.scrollTop,secondTop:next.top,viewportTop:rect.top,
+   viewportHeight:rect.height};
+ });
+ assert.ok(beforeNext.secondTop>beforeNext.viewportTop+
+  Math.min(beforeNext.viewportHeight*.5,280),
+  "The 390px first Postcommunion must put its second oration below reading position");
+ const nextArrow=page.locator("#ao-r17-native-reader-preview [data-reader-nav='next']");
+ await nextArrow.click();
+ const afterReveal=await page.evaluate(()=>{
+  const root=document.querySelector("#ao-r17-native-reader-preview");
+  const card=root.querySelector(".ao-prayer-card");
+  const second=card.querySelector('[data-oration-group-index="2"]');
+  const rect=card.getBoundingClientRect(),next=second.getBoundingClientRect();
+  return {id:globalThis.AO_R17_NATIVE_READER_PREVIEW.getCurrentCard()?.sectionId,
+   scrollTop:card.scrollTop,secondTop:next.top,viewportTop:rect.top,
+   viewportHeight:rect.height,
+   route:root.dataset.aoNextOration};
+ });
+ assert.equal(afterReveal.id,beforeNext.id,
+  "NEXT skipped the second Postcommunion and left the canonical card");
+ assert.equal(afterReveal.route,"SECOND_PRAYER_REVEALED");
+ assert.ok(afterReveal.scrollTop>beforeNext.scrollTop+8,
+  "NEXT did not scroll to the second Postcommunion");
+ console.log("ICRSP_NEXT_REVEAL_DEBUG "+JSON.stringify({beforeNext,afterReveal}));
+ assert.ok(afterReveal.secondTop<=afterReveal.viewportTop+
+  Math.min(afterReveal.viewportHeight*.5,280)+8,
+  "Second Postcommunion not revealed in the visible reading zone");
+ await nextArrow.click();
+ const afterAdvance=await page.evaluate(()=>
+  globalThis.AO_R17_NATIVE_READER_PREVIEW.getCurrentCard()?.sectionId);
+ assert.notEqual(afterAdvance,beforeNext.id,
+  "NEXT must advance after the second Postcommunion is brought into view");
+ console.log("ICRSP_NOV07_REAL_NEXT_POSTCOMMUNION_PASS "+JSON.stringify({
+  beforeNext,afterReveal,afterAdvance
+ }));
  assert.deepEqual(errors,[],"Runtime errors");
  console.log("ICRSP_NOV07_LIVE_POSTCOMMUNIONS "+JSON.stringify({
   sourcePath:snapshot.sourcePath,groups:displayed.rows.map(x=>x.group),
