@@ -150,7 +150,7 @@ try{
    await open("pray.litany_saints");
    await page.waitForSelector(scope+"[data-p435930-lit-retry]",{timeout:20000});
    assert.equal(await page.locator(scope+"[data-ao-private-litany-invocations]").count(),0);
-   const cite=await page.locator(scope+" .aoP435930Source").last().innerText();
+   const cite=await page.locator(scope+" .aoP435930Source").last().evaluate(el=>el.textContent||"");
    assert.ok(cite.includes(ui==="fr"?"1862":"1883"),"Historically distinct Litany edition notice missing");
    report.litany.offlineErrorSurfaces++;
    report.pageErrors.push(...errors.map(message=>({width,ui,message})));
