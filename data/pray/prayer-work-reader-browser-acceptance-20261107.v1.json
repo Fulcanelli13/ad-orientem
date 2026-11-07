@@ -1,0 +1,100 @@
+{
+  "schema": "ao.pray.reader-browser-acceptance.v1",
+  "observedAt": "2026-11-07",
+  "scope": "Browser acceptance of existing Prayer routes and 19 novena programme readers on the research PR head; these tests do not consume the proposed nine-family registry.",
+  "git": {
+    "repository": "Fulcanelli13/ad-orientem",
+    "branch": "research/prayer-work-identity-registry-20261106",
+    "headShaTested": "666f524e20a56f61d3456699920719bf9d7de625",
+    "pullRequest": 2594,
+    "workflowRunId": 42365571236,
+    "workflowUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42365571236",
+    "conclusion": "success"
+  },
+  "jobs": [
+    {
+      "name": "entry-routes",
+      "jobId": 128382795837,
+      "conclusion": "success",
+      "test": "tests/pray-41-route-entry-variants-phone.mjs",
+      "artifacts": [
+        {
+          "id": 13570738964,
+          "name": "prayer-registry-stage5-41-entry-routes",
+          "path": "artifacts/pray-41-route-entry/browser-entry-variants.json"
+        }
+      ],
+      "verified": {
+        "uniqueExistingRoutes": 41,
+        "viewportWidths": [
+          320,
+          390
+        ],
+        "uiLanguages": [
+          "en",
+          "fr"
+        ],
+        "entryVariantsPassed": 164,
+        "entryVariantsFailed": 0
+      },
+      "limits": [
+        "ENTRY_ONLY: not complete route-stages, offline first-use, original print edition, or complete translation witnesses",
+        "An existing route is not a distinct source-text work and does not prove all 84 supplemental source identities are individually visible"
+      ]
+    },
+    {
+      "name": "novena-programmes",
+      "jobId": 128382796082,
+      "conclusion": "success",
+      "test": "tests/pray-novena-all-19-stages-language-phone.mjs",
+      "artifacts": [
+        {
+          "id": 13570549525,
+          "name": "prayer-registry-stage5-19-novena-programmes",
+          "path": "artifacts/pray-novena-all-programmes/nineteen-novena-all-stages-phone.json"
+        }
+      ],
+      "verified": {
+        "programmes": 19,
+        "properDayPositions": 171,
+        "guidedCardVariants": 2736,
+        "simpleDayVariants": 684,
+        "frenchEnglishSourceSwitches": 324,
+        "viewportWidths": [
+          320,
+          390
+        ],
+        "uiLanguages": [
+          "en",
+          "fr"
+        ]
+      },
+      "limits": [
+        "The source-witness controls correctly retain the English-only Holy Face historical proper prayers",
+        "This does not certify independent 1887 photographic collation or produce a French historical proper-text translation",
+        "Programme stage acceptance does not certify 19 additional independent new prayer bodies"
+      ]
+    }
+  ],
+  "availabilityStatusUnchanged": {
+    "supplementalWorksRouteUnverified": 84,
+    "originalCanonicalPublishedWorkEntries": 46,
+    "externalLinkOnly": 2,
+    "sourceOnly": 1
+  },
+  "classificationAndRelease": {
+    "registryUsedByRuntime": false,
+    "readerTextAltered": false,
+    "readerUIAltered": false,
+    "homepageAltered": false,
+    "deployPerformed": false,
+    "independentPrintCertifiedByThisRun": 0,
+    "full84SourceWorksVisibleCertifiedByThisRun": 0
+  },
+  "nextGates": [
+    "Reader-level body-identity and visible-language checks for each individual work hosted inside multi-text routes (source file presence is not body-level verification).",
+    "Specialised full-stage browser regression for Rosary, Confession, Adoration, Benediction and other high-impact experiences, without changing their readers.",
+    "Independent textual edition/translation provenance review, especially Stabat Mater full hymn and Holy Face French proper prayer.",
+    "Only after these pass, review a reference-only interface taxonomy wiring PR; never bulk-hide published content based on pending verification."
+  ]
+}
