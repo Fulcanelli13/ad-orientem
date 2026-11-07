@@ -181,3 +181,45 @@ Results include 19 novena programmes (171 day occasions), 258 original-source-to
 **No publication status or live-reader verification was upgraded by these results.** Each of the 36 registry records now has a sourceBodyEvidence pointer and evidence profile, but remains source/route unverified until independently tested at the actual browser UI and verified against source editions. In particular, the `lang` certification flags remain `unassessed` for these supplemental items. The full registry still has 84 route-unverified records, of which 36 now have additional measured source-body evidence.
 
 **Next controlled batch:** the other 48 route-unverified works across the Institute novenas, occasional intentions, clergy, Holy Face, Rosary and specialised-devotion modules. Evaluate each source/route with explicit owner and language evidence. After the source inventory is complete, test published routes and bilingual display end-to-end before a navigation or homepage change.
+
+## Stage 4 — remaining 48 work identities: completed source ownership batch (7 November 2026)
+
+Passing CI: https://github.com/Fulcanelli13/ad-orientem/actions/runs/42334718834
+
+Machine-readable evidence: data/pray/prayer-work-remaining-source-evidence-20261107.v1.json. Executable test: tests/pray-work-remaining-source-audit-20261107.mjs. Every remaining work has an individual sourceOwnerEvidence pointer and a source digest where its resolved data structure supports hashing. No prayer body was copied into the classification registry.
+
+| Evidence class | Records | Distinction |
+| --- | ---: | --- |
+| Individual source prayers | 19 | Direct source object/member or historical witness; original language and provenance remain independently qualified |
+| Litany-specialist reader | 1 | Route ownership, not complete text collation |
+| Additional Institute/Holy Face novenas | 3 | Distinct nine-day programme identities, no merging with the main 16 |
+| Canonical composite prayers | 3 | Angelus, Regina Caeli and a Stabat Mater source-stanza array, not extra 48-prayer-bank records |
+| Chaplets, Rosary, Stations and other devotion/way texts | 10 | Structured components and canonical prayer references, not new standalone prayers |
+| Specialised companion readers and programmes | 12 | Existing route, sequence and source-controller contracts only |
+| **Total** | **48** | All 48 have an explicit evidence classification; no UI-level availability upgrade |
+
+Result: **zero unresolved source-export checks, zero import failures, zero declared route contract mismatches** in the tested code. Twenty-three of the 48 carry actual existing route declarations. Their presence in a module registry still does not establish live browser rendering. Six earlier route-ID/source-export conflations were corrected without modifying reader routes.
+
+Important edition/language findings:
+
+- Divine Infant King (ICKSP) and the Institute Immaculate Conception novena preserve nine days with separately sourced English and French repeated proper prayers. The latter remains distinct from the main day-specific Immaculate Conception novena.
+- The Janvier 1887 Holy Face novena has nine English historical day-proper prayers. Its French guides/titles are not French translations of those nine prayer bodies; no complete French proper-text source is currently claimed.
+- The Stabat Mater source array in canonical-data.js contains **13 Latin stanzas**, not a certified complete hymn. The catalogue entry must remain qualified as a partial source rather than automatically treated as a full prayer. A complete edition or additional source must be audited separately.
+- The Five Wounds source retains 30 canonical-reference beads; Precious Blood retains seven mysteries; Little Crown retains 15 beads; Joseph Seven Sorrows and Joys retains seven prayers; Seven Last Words retains seven source entries; Penitential Psalms retain seven Vulgate-numbered Scripture references.
+- Historical witness aliases remain attached to their existing source identities, including the Montfort final act, which is a paragraph array belonging to the 33-day preparation programme; no separate live route was created.
+- Language-field candidates from a source structure are never equated with independently verified full prayer translations. Reader controllers, schedule data and Scripture reference arrays naturally have no independent prayer-body languages.
+
+The dedicated validator also ran **12 existing specialist devotional regression suites** for the extra Institute novenas, Holy Face, Montfort, Little Crown, clergy, occasional intercessions, Seven Words, penitential sources and chaplets. All twelve passed, as did the earlier seven novena/traditional source-to-card suites. This makes **19 existing specialist/source regression suites**, in addition to the new registry and source-pointer audit tests, green in the cited workflow run.
+
+### Correct cumulative progress and release boundary
+
+| Stage | Scope | Status |
+| --- | --- | --- |
+| Canonical identities | 48 source records / 46 grouped canonical work identities | Structurally checked; historical editions not all freshly recertified |
+| Supplemental source evidence | 36 Stage-3 text-body analyses + 48 Stage-4 source-owner analyses = **84 / 84** | Complete at repository source/structure level only |
+| Other registered items | 2 external-link-only and 1 source-only Office | Explicitly not counted as published readers |
+| Existing module-route contracts | 24 / 24 source-declared | Pass, but not browser-reachability proof |
+| Actual browser/page and language presentation | 84 supplemental route-unverified records | **Not yet certified** |
+| Historical first-edition and rights certification | Separate per-work review | Pending; cannot be inferred from text-field presence |
+
+**No changes to Mass, Rosary, Confession, Benediction, Adoration, Office, novena readers, prayer texts, assets, public navigation or homepage.** The draft registry remains unconsumed by production code. The next gated work is targeted reader-level / browser acceptance and source-edition qualification, followed by category-facing wiring only when authorised. GitHub Actions + Pages remain the only publication infrastructure.
