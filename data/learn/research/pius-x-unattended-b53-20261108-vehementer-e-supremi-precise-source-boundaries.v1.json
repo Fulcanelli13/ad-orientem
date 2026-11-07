@@ -1,0 +1,59 @@
+{
+  "schema": "AO_SPX_B53_PRIMARY_SOURCE_BOUNDARIES_V1",
+  "date": "2026-11-08",
+  "status": "RESEARCH_ONLY_READY_FOR_HUMAN_CERTIFICATION_NOT_CERTIFIED",
+  "continuity": "B52 latest committed on branch; 2026-11-07 B53 prior attempted write not present; no duplicate family count; baseline 68 contexts/65 improved/64 complete human-pending remains historical",
+  "records": [
+    {
+      "id": "SPX-EXP-024",
+      "decision": "SUBSTANTIVE_SCOPE_GUARD_AND_LOCATOR_REPAIR",
+      "source": "Vehementer nos (1906)",
+      "enLocators": "§3 general rejection of separation principle; §§5–12 historical French law, concordat, hierarchy, property; §13 formal condemnation",
+      "frLocators": "Fausseté du principe de la Séparation; La Séparation est particulièrement funeste et injuste en France; Associations cultuelles; L'Eglise ne sera pas libre; Droit de propriété violé; La condamnation",
+      "en": "In Vehementer nos, We reject the thesis that civil society owes no public duty to God; We also condemn the French separation law of 1905 for its breach of the Concordat and its injuries to the Church's hierarchical liberty and property. The general doctrinal argument and the particular legal judgment must both be stated; applying the latter to a different law requires examination of that law.",
+      "fr": "Dans Vehementer nos, Nous rejetons la thèse selon laquelle la société civile n'aurait aucun devoir public envers Dieu ; Nous condamnons aussi la loi française de séparation de 1905 pour la rupture du Concordat et les atteintes à la liberté hiérarchique et aux biens de l'Église. Il faut distinguer le principe doctrinal général du jugement porté sur cette loi précise ; l'application de ce dernier à une autre législation exige un examen propre.",
+      "provenance": "EDITORIAL_PARAPHRASE_IN_HISTORICAL_PAPAL_VOICE_NOT_VERBATIM",
+      "note": "Do not reduce encyclical to condemnation of one historical statute only: §3 explicitly condemns separation as a principle.",
+      "urls": [
+        "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_11021906_vehementer-nos.html",
+        "https://www.vatican.va/content/pius-x/fr/encyclicals/documents/hf_p-x_enc_11021906_vehementer-nos.html"
+      ]
+    },
+    {
+      "id": "SPX-EXP-028",
+      "decision": "EXACT_ENGLISH_LOCATORS_AND_THEOLOGICAL_SCOPE",
+      "enLocators": "E supremi §§3–4 (apostasy and papal programme), §§6–7 (divine victory and human prayer/action), §8 (Christological foundation)",
+      "frLocators": "Use corresponding unnumbered passages on programme de tout restaurer dans le Christ, victory of God, prayer and action; do not transplant English paragraph numbering",
+      "en": "We place Our confidence in Christ, in whom We undertake to restore all things. The promised victory belongs to God; it does not release us from prayer, instruction, and faithful action, nor does it announce a date for temporal success.",
+      "fr": "Nous mettons notre confiance dans le Christ, en qui Nous entreprenons de tout restaurer. La victoire appartient à Dieu ; elle ne nous dispense ni de la prière, ni de l'enseignement, ni de l'action fidèle, et n'annonce aucune date de succès temporel.",
+      "provenance": "EDITORIAL_PARAPHRASE_IN_HISTORICAL_PAPAL_VOICE_NOT_VERBATIM",
+      "urls": [
+        "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+        "https://www.vatican.va/content/pius-x/fr/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html"
+      ]
+    }
+  ],
+  "counts": {
+    "existingDistinctFamiliesExamined": 2,
+    "newFamilies": 0,
+    "certified": 0
+  },
+  "chanoine": {
+    "originalEnglishWitness": "BLOCKED_NO_FABRICATION",
+    "B39": "PRESERVED",
+    "specialistHolds": [
+      "CSE142",
+      "CSE143"
+    ]
+  },
+  "nextQueue": [
+    "Human review B53 wording against original B50 draft; no automatic certification",
+    "Cross-check French E supremi exact anchor passages",
+    "Consolidate B43–B53 and exclude B41 duplicate contexts",
+    "Continue distinct unresolved families, skipping inaccessible Chanoine original"
+  ],
+  "merge": false,
+  "publish": false,
+  "deploy": false,
+  "paidServices": false
+}
