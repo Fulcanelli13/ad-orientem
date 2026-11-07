@@ -56,13 +56,13 @@ export function renderTlmMapResultRail({items=[],language="en",selectedId=null,c
     '</span><span class="aoTlmMapRailArrow" aria-hidden="true">›</span></button></div>';
  }
  html+='</div><footer class="aoTlmMapRailFoot"><small>'+E(loading?"":L(language,
-   "Showing the closest "+selected.length+" of "+list.length+" mapped matches. Unmapped venues remain in List.",
-   "Affichage des "+selected.length+" lieux les plus proches parmi "+list.length+" résultats cartographiés. Les lieux sans repère restent dans la liste."))+
+   "Showing the closest "+selected.length+" of "+list.length+" mapped records. Linked aliases and historical listings remain in the Directory.",
+   "Affichage des "+selected.length+" fiches les plus proches parmi "+list.length+" repères cartographiques. Les alias de lieux et les notices historiques restent dans l’annuaire."))+
    '</small><button type="button" data-tlm-map-open-directory>'+
    E(L(language,"Open full directory","Ouvrir l’annuaire complet"))+'</button>'+
    (unpinned?'<button type="button" data-tlm-map-open-unmapped>'+
-     E(L(language,"Browse "+unpinned+" unpinned church profiles",
-       "Consulter "+unpinned+" fiches d’églises sans repère"))+'</button>':"")+
+     E(L(language,"Browse "+unpinned+" list-only records",
+       "Consulter "+unpinned+" fiches non cartographiées"))+'</button>':"")+
    '</footer></details></aside>';
  return html;
 }

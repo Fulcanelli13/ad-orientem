@@ -673,15 +673,15 @@ function tlmEvidenceFilters(vm){
     ["ALL",L(vm.language,"All sites","Tous les lieux")],
     ["REVIEWED_PIN",L(vm.language,"Reviewed / illustrative map pin","Repère vérifié / indicatif")],
     ["SOURCE_PIN",L(vm.language,"Provisional map pin","Repère cartographique provisoire")],
-    ["ADDRESS_ONLY",L(vm.language,"Address only","Adresse uniquement")],
+    ["ADDRESS_ONLY",L(vm.language,"List-only record","Fiche uniquement en liste")],
   ];
   return '<section class="aoTlmEvidenceFacets" aria-label="'+esc(L(vm.language,"Location evidence","Preuves de localisation"))+'">'+
     '<strong>'+esc(L(vm.language,"Location evidence","Preuves de localisation"))+'</strong>'+
     '<div class="aoTlmEvidenceOptions">'+options.map(([value,name])=>
       pill("siteEvidence",value,name+" ("+String(counts[value]??0)+")",selected)).join("")+'</div>'+
     '<small>'+esc(L(vm.language,
-      "These mapped records include source-matched sites and illustrative town/village points; a pin does not establish a church building, entrance or current Mass. No published site-wide Una Cum, missal, canonical-status or celebrant claims are inferred from affiliation.",
-      "Ces fiches comprennent des sites recoupés avec leurs sources et des repères indicatifs de ville ou village. Un point ne confirme ni bâtiment, ni entrée, ni messe actuelle. Le caractère « una cum », le missel, le statut canonique et le célébrant ne sont jamais déduits de l’affiliation."))+'</small></section>';
+      "These mapped records include source-matched sites and illustrative town/village points; a pin does not establish a church building, entrance or current Mass. List-only records may be aliases or historical sites, not missing pins. No published site-wide Una Cum, missal, canonical-status or celebrant claims are inferred from affiliation.",
+      "Ces fiches comprennent des sites recoupés avec leurs sources et des repères indicatifs de ville ou village. Un point ne confirme ni bâtiment, ni entrée, ni messe actuelle. Les fiches uniquement en liste peuvent être des alias ou des lieux historiques, et non des repères manquants. Le caractère « una cum », le missel, le statut canonique et le célébrant ne sont jamais déduits de l’affiliation."))+'</small></section>';
 }
 function tlmCelebrationFilters(vm){
   const counts=vm.tlmCelebrationEvidenceCounts??{},current=vm.filters?.celebrationEvidence??"ALL";
