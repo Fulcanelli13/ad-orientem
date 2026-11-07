@@ -56,7 +56,6 @@ for(const hold of [
  "RG-5926C75531A7", // Modesto has address and Google Place ID, no numeric POI coordinate
  "RG-A74DC06D4545", // Ciudad Juárez church number 533/553 unresolved; colony point not site
  "RG-615FF6835AAE", // Poprad vs Kálnica identity conflict
- "RG-6C322C1860C9", // Chiltern denomination/location conflict and 2026 property sale
  "RG-832AB0C2265E", // Sold Chelmsford prior site
  "RG-24B468C40EBC", // Ashford/Snave same-site alias
 ]){

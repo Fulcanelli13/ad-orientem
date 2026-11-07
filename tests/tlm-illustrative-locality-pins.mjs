@@ -22,6 +22,7 @@ import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R17_R18} from "../src/find/cl2-illustrati
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R19} from "../src/find/cl2-illustrative-locality-pins-r19.js";
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R23} from "../src/find/cl2-illustrative-locality-pins-r23.js";
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R26} from "../src/find/cl2-illustrative-locality-pins-r26.js";
+import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R27} from "../src/find/cl2-illustrative-locality-pins-r27.js";
 import {validateCL2PhysicalIndex,projectCL2PhysicalDirectory} from "../src/find/cl2-physical-directory.js";
 import {projectPreliminaryR49,projectPublishedProvisionalMassSites} from "../src/find/preliminary-directory-r49.js";
 import {renderTlmChurchProfile} from "../src/find/tlm-church-profile.js";
@@ -846,7 +847,14 @@ for(const r of withheld){
    assert.equal(item.geo.source_ref,pin.sourceRef);
    assert.equal(item.geo.lat,pin.lat);assert.equal(item.geo.lng,pin.lng);
    assert.ok(!item.actions[0]?.url.includes("/maps/dir/"),"R26 must search rather than GPS route");
- }else if(laterPreciseSiteIds.has(r.cl2_anchor)){
+ }else if(CL2_ILLUSTRATIVE_LOCALITY_PINS_R27[r.cl2_anchor]){
+   assert.equal(r.cl2_anchor,"RG-6C322C1860C9","R27 only approves Chiltern town-centre locality");
+   const pin=CL2_ILLUSTRATIVE_LOCALITY_PINS_R27[r.cl2_anchor];
+   assert.ok(item?.map_publishable&&item.geo?.precision==="locality"&&item.geo?.approximate);
+   assert.equal(item.geo.source_ref,pin.sourceRef);
+   assert.equal(item.geo.lat,pin.lat);assert.equal(item.geo.lng,pin.lng);
+   assert.ok(!item.actions[0]?.url.includes("/maps/dir/"));
+  }else if(laterPreciseSiteIds.has(r.cl2_anchor)){
   assert.ok(item?.map_publishable&&item.geo?.precision==="site","Excel precise site must use independently sourced site point: "+r.cl2_anchor);
   assert.ok(item.geo.source_ref&&!item.geo.source_ref.startsWith("geonames"),"Precise point may not use city-centre evidence: "+r.cl2_anchor);
  }else{
@@ -872,6 +880,8 @@ assert.deepEqual(Object.keys(CL2_ILLUSTRATIVE_LOCALITY_PINS_R23),["RG-C4138959E1
 assert.ok(items.get("RG-C4138959E1D3").map_publishable,"R23 has Excel GEO approval for named chapel Plus Code cell");
 assert.deepEqual(Object.keys(CL2_ILLUSTRATIVE_LOCALITY_PINS_R26),["RG-5E751D3AAEFA","RG-650EDC1EC27B"]);
 for(const id of Object.keys(CL2_ILLUSTRATIVE_LOCALITY_PINS_R26))assert.ok(items.get(id).map_publishable,"R26 Excel GEO-only marker missing: "+id);
+assert.deepEqual(Object.keys(CL2_ILLUSTRATIVE_LOCALITY_PINS_R27),["RG-6C322C1860C9"]);
+assert.ok(items.get("RG-6C322C1860C9").map_publishable,"R27 Excel GEO-only Chiltern town point missing");
 assert.ok(!items.get("RG-24B468C40EBC").map_publishable,"Ashford/Snave alias must not make second map marker");
 assert.ok(items.get("RG-E8AB816F595F").map_publishable,"Snave R3 physical site remains mapped");
 assert.equal(world.length,2582);

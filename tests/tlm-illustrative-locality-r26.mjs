@@ -59,7 +59,6 @@ for(const hold of [
  "RG-0DCEDA190517", // Reading: uncertain church identity
  "RG-50082C65DA56", // Sheffield: St Joseph ambiguity
  "RG-615FF6835AAE", // Poprad/Kálnica contradiction
- "RG-6C322C1860C9", // Chiltern name/occupancy
  "RG-A74DC06D4545", // Ciudad Juárez address dispute
  "RG-5926C75531A7", // Modesto named POI lacks numeric point
  "RG-832AB0C2265E", // Chelmsford historic; no active pin
