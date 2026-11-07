@@ -210,6 +210,66 @@ try{
  console.log("ICRSP_NOV07_REAL_NEXT_POSTCOMMUNION_PASS "+JSON.stringify({
   beforeNext,afterReveal,afterAdvance
  }));
+ // The shared NEXT interception must also protect the two other source
+ // prayer groups. Exercise the actual phone control instead of assuming the
+ // Postcommunion success covers the Collect and Secret rendering paths.
+ for(const kind of ["Collect","Secret"]){
+  const before=await page.evaluate(kind=>{
+   const root=document.querySelector("#ao-r17-native-reader-preview");
+   const preview=globalThis.AO_R17_NATIVE_READER_PREVIEW;
+   const links=[...root.querySelectorAll("[data-reader-section]")]
+    .filter(x=>new RegExp(kind,"i").test(x.textContent??""));
+   for(const link of links){
+    const card=preview.showSection(link.getAttribute("data-reader-section"));
+    if(!card?.paragraphs?.some(p=>p.orationGroupIndex===2))continue;
+    const scroll=root.querySelector(".ao-prayer-card");
+    const first=scroll?.querySelector('.ao-reader-paragraph[data-oration-group-index="1"]');
+    const second=scroll?.querySelector('.ao-reader-paragraph[data-oration-group-index="2"]');
+    if(!first||!second)continue;
+    const viewport=scroll.getBoundingClientRect(),prayer=second.getBoundingClientRect();
+    return {id:card.sectionId,scrollTop:scroll.scrollTop,viewportTop:viewport.top,
+     viewportHeight:viewport.height,secondTop:prayer.top,
+     groups:[...new Set([...scroll.querySelectorAll(
+      ".ao-reader-paragraph[data-oration-group-index]")].map(x=>
+       Number(x.getAttribute("data-oration-group-index"))))].filter(Number.isInteger).sort(),
+     renderedLength:scroll.innerText.length};
+   }
+   return null;
+  },kind);
+  assert.ok(before,kind+" source-owned second oration was not found in the LIVE reader");
+  assert.deepEqual(before.groups,[1,2],kind+" lost a prayer in the rendered card");
+  assert.ok(before.renderedLength>100,kind+" card has no substantive prayers");
+  const secondBelowReadingZone=before.secondTop>
+   before.viewportTop+Math.min(before.viewportHeight*.5,280);
+  await nextArrow.click();
+  const after=await page.evaluate(()=>{
+   const root=document.querySelector("#ao-r17-native-reader-preview");
+   const scroll=root.querySelector(".ao-prayer-card");
+   const second=scroll?.querySelector('.ao-reader-paragraph[data-oration-group-index="2"]');
+   const viewport=scroll?.getBoundingClientRect(),prayer=second?.getBoundingClientRect();
+   return {id:globalThis.AO_R17_NATIVE_READER_PREVIEW.getCurrentCard()?.sectionId,
+    scrollTop:scroll?.scrollTop,viewportTop:viewport?.top,
+    viewportHeight:viewport?.height,secondTop:prayer?.top};
+  });
+  if(secondBelowReadingZone){
+   assert.equal(after.id,before.id,kind+" NEXT skipped the second source prayer");
+   assert.ok(after.scrollTop>before.scrollTop+8,
+    kind+" NEXT did not move to the second source prayer");
+   assert.ok(after.secondTop<=after.viewportTop+
+    Math.min(after.viewportHeight*.5,280)+8,
+    kind+" second prayer was not brought into reading position");
+   await nextArrow.click();
+   const afterAdvance=await page.evaluate(()=>
+    globalThis.AO_R17_NATIVE_READER_PREVIEW.getCurrentCard()?.sectionId);
+   assert.notEqual(afterAdvance,before.id,
+    kind+" NEXT failed to advance after revealing the second prayer");
+  }else{
+   assert.notEqual(after.id,before.id,
+    kind+" NEXT should advance when its second prayer is already in reading position");
+  }
+  console.log("ICRSP_NOV07_"+kind.toUpperCase()+"_PHONE_NEXT_PASS "+
+   JSON.stringify({before,after,secondBelowReadingZone}));
+ }
  assert.deepEqual(errors,[],"Runtime errors");
  console.log("ICRSP_NOV07_LIVE_POSTCOMMUNIONS "+JSON.stringify({
   sourcePath:snapshot.sourcePath,groups:displayed.rows.map(x=>x.group),
