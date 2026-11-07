@@ -65,7 +65,7 @@ for(const w of visibleBodyWorks){
  check(w.readerBodyEvidence.auditRef==="data/pray/prayer-work-body-stage-browser-acceptance-20261107.v1.json#"+w.id,"Wrong browser body evidence pointer "+w.id);
  check(w.readerBodyEvidence.historicalSourcePrintCertified===false&&w.readerBodyEvidence.sourceReaderCompleteCertified===false,"Visible text tests cannot certify full original editions "+w.id);
 }
-check(browserBodyEvidence.classificationAndRelease?.registryImportedToRuntime!==true,"Draft registry must not be treated as a production import");
+check(browserBodyEvidence.availabilityPolicy?.registryImportedToRuntime===false,"Draft registry must not be treated as a production import");
 check(registry.counts.routeUIVerified===0,"Targeted body tests are not complete 84-work browser route certificates");
 const expectedAvailable=["published","route-unverified","external-link","source-only"];
 check(Object.keys(registry.counts.byAvailability).every(x=>expectedAvailable.includes(x)),"Unexpected availability term");
