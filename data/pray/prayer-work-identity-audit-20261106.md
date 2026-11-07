@@ -317,3 +317,22 @@ A seven-tercet **research-only missing-text candidate** is now saved in `data/pr
 The passing Stage 8 CI does not certify historical printed pages, translation provenance of independent EN/FR texts, all Latin alternatives, full offline use, or the entire Prayer corpus. The draft nine-family taxonomy is still not integrated into production. The repository remains GitHub-only; PR #2594 is draft, unmerged and undeployed.
 
 **Next:** independent original print-image comparison for the 1962 *Stabat Mater*, then a separately gated complete-variant admission; source-body/edition checks for Seven Words, penitential Scripture, litanies, historical Lasance witnesses and remaining devotional works; only after these gates consider the nine-family public Prayer catalogue.
+
+## Stage 9 — historical Seven Words and source-owner limitations (7 November 2026)
+
+Actual passing Chromium run: https://github.com/Fulcanelli13/ad-orientem/actions/runs/42404759624, head `2a76eeea40c207a37fc921ceacfb6fced590ddfe`. Original reader tested at 320/390px and EN/FR with the external Wikisource sites blocked; no app source text was modified.
+
+| Tested area | Passed checks | Certification boundary |
+| --- | ---: | --- |
+| Seven Words, 1889 Baltimore Manual | **36/36** | Seven complete locally packaged meditations × 4, original opening × 4 and concluding Marian appendix × 4, original language tagged English even in French UI; actual text compared to the embedded 1889 witness |
+| Penitential Psalms | **28/28** | Vulgate-numbered seven reference positions × 4. Full actual Douay–Rheims/CPDV, Crampon or Vulgate verse bodies and all seven offline cache states are **not** certified |
+| Litany of the Saints | **4/4** | Existing private reader fails closed instead of inventing an unavailable historical 1883 English/1862 French source. This is not full Litany text certification |
+| Lasance historic acquisition records | **6/6** | Four 1908 English and two separate Latin source records pass source-store/print-status and translation-availability checks; live reader exposure and per-work DOM text are **not** certified |
+
+Evidence file: `data/pray/prayer-work-stage9-source-owner-acceptance-20261107.v1.json`. GitHub Actions short-retention artifact: `prayer-stage9-source-owner-boundaries` (ID 13587425562). Original body source test: `tests/pray-work-stage9-source-owner-boundaries-phone-20261107.mjs`. Seven Words is the **only** newly evidenced source-owned work at reader-body level; the registry's running total is now **21** (20 supplemental + one reused canonical), leaving **64** supplemental source works without such individual proof. The individual routes and source status were not promoted or unpublished.
+
+**Historical restrictions retained:** the Baltimore Manual print scan is not word-for-word collated and known editorial text corrections remain disclosed; the seven penitential psalm verses are owned by Scripture and may require online load or explicit verified cache; the Litany uses two distinct historical web transcriptions and does not have a certified 1962 complete text; staged Lasance print-certified English/Latin witnesses must not be treated as live rendered French prayers.
+
+**Next evidence gate:** complete Psalm EN/FR/LA source-service and offline warm-cache retrievals with exact verse completeness; independently qualify printed English and French Litany transcriptions and verify their native browser reading; test actual Lasance prayers in their designated source-owned readers or identify which remain staged. Keep the Stabat 13/20 hold and original Rosary, Confession, Adoration/Benediction reader engines unchanged.
+
+No UI redesign, new generic Prayer renderer, publication, merge or deployment. The research registry is still not imported into the live application.
