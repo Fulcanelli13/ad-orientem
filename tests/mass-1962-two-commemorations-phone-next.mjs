@@ -83,6 +83,14 @@ try{
     date+" should have principal prayer plus one shared-conclusion group");
    assert.deepEqual(preflight.joined,Array(3).fill("MULTIPLE_COMMEMORATIONS"),
     date+" two named commemorations are not composed under one conclusion");
+   // A historical Calendar date deliberately requires two explicit Begin
+   // activations. Preserve the app's date-mismatch guard; the first press
+   // warns, and only the second enters the selected historical Mass.
+   await door.locator("[data-home-h4-begin]").click();
+   const warning=door.locator("[data-home-mass-date-warning]");
+   await warning.waitFor({state:"visible",timeout:8000});
+   assert.match(await warning.innerText(),new RegExp(date),
+    "Historical-date confirmation must name the actual selected date");
    await door.locator("[data-home-h4-begin]").click();
    await page.waitForFunction(()=>Boolean(
     globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId&&
