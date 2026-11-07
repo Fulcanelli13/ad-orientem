@@ -9,6 +9,7 @@ on:
       - tests/pray-work-identity-source-evidence-20261106.mjs
       - tests/pray-work-language-source-audit-20261107.mjs
       - tests/pray-work-remaining-source-audit-20261107.mjs
+      - data/pray/prayer-work-remaining-source-evidence-20261107.v1.json
       - data/pray/prayer-work-language-evidence-20261107.v1.json
       - .github/workflows/pray-work-identity-registry.yml
   pull_request:
@@ -18,6 +19,7 @@ on:
       - tests/pray-work-identity-source-evidence-20261106.mjs
       - tests/pray-work-language-source-audit-20261107.mjs
       - tests/pray-work-remaining-source-audit-20261107.mjs
+      - data/pray/prayer-work-remaining-source-evidence-20261107.v1.json
       - data/pray/prayer-work-language-evidence-20261107.v1.json
       - .github/workflows/pray-work-identity-registry.yml
   workflow_dispatch:
@@ -40,6 +42,20 @@ jobs:
         run: node tests/pray-work-language-source-audit-20261107.mjs
       - name: Audit 48 remaining source-owned prayer and programme identities
         run: node tests/pray-work-remaining-source-audit-20261107.mjs
+      - name: Run twelve existing specialist devotional source/structure regression contracts
+        run: |
+          node tests/icksp-divine-infant-king-novena.mjs
+          node tests/icksp-immaculate-conception-novena.mjs
+          node tests/pray-b25-holy-face-full-novena.mjs
+          node tests/pray-b26-montfort-source-faithful-preparation.mjs
+          node tests/pray-b27-montfort-three-prayers.mjs
+          node tests/pray-b30-little-crown.mjs
+          node tests/pray-priests-intercessions-b19.mjs
+          node tests/pray-occasional-intercessions-b20.mjs
+          node tests/pray-occasional-intercessions-b21.mjs
+          node tests/icksp-seven-words-offline.mjs
+          node tests/pray-penitential-litany-tenebrae-source-faces-v1.mjs
+          node tests/pray-chaplet-f07-contract.mjs
       - name: Run existing novena and traditional source-to-card regression contracts
         run: |
           node tests/pray-novenas.mjs
