@@ -1,0 +1,44 @@
+name: Sacred Art Phase 44B — 23 selected-source photo comparisons (research only)
+on:
+  push:
+    branches:
+      - research/sacred-art-phase18-iiif-audit-20261106
+    paths:
+      - 'scripts/sacred-art/phase44b-exact-selected-photo-compare.py'
+      - '.github/workflows/sacred-art-phase44b-photo-identity.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  compare23:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image-comparison dependencies
+        run: python -m pip install --disable-pip-version-check 'requests>=2.32,<3' 'Pillow>=11,<13' 'numpy>=2,<3' 'opencv-python-headless>=4.10,<5'
+      - name: Recover exact Phase44 museum research previews
+        uses: actions/download-artifact@v4
+        with:
+          name: sacred-art-phase44-bulk23-official-source-research-only
+          run-id: 42403687711
+          github-token: ${{ github.token }}
+          path: reference-phase44
+      - name: Compare only handpicked Commons files against bounded institutional previews
+        run: |
+          python -m py_compile scripts/sacred-art/phase44b-exact-selected-photo-compare.py
+          python scripts/sacred-art/phase44b-exact-selected-photo-compare.py
+      - name: Save per-artwork source evidence without publication
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-phase44b-bulk23-photo-geometry-research-only
+          path: artifacts/sacred-art-phase44b-selected-reference-compare/
+          retention-days: 14
+          if-no-files-found: warn
