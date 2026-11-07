@@ -59,7 +59,6 @@ for(const hold of [
  "RG-0DCEDA190517", // Reading: uncertain church identity
  "RG-50082C65DA56", // Sheffield: St Joseph ambiguity
  "RG-615FF6835AAE", // Poprad/Kálnica contradiction
- "RG-6C322C1860C9", // Chiltern name/occupancy
  "RG-A74DC06D4545", // Ciudad Juárez address dispute
  "RG-5926C75531A7", // Modesto named POI lacks numeric point
  "RG-832AB0C2265E", // Chelmsford historic; no active pin
@@ -69,6 +68,6 @@ for(const hold of [
   "R26 must not pin held, historical or alias location: "+hold);
 }
 assert.equal(items.length,2582);
-assert.equal(items.filter(x=>x.map_publishable).length,2559);
-assert.deepEqual(tlmSiteEvidenceCounts(items),{ALL:2582,REVIEWED_PIN:753,SOURCE_PIN:1806,ADDRESS_ONLY:23});
-console.log("PASS R26: two Excel GEO-only vicinity markers, 2559/2582 mapped and 23 list-only; UK cemetery and PH parent-parish proxies never route to a chapel entrance or assert present Mass");
+assert.equal(items.filter(x=>x.map_publishable).length,2560);
+assert.deepEqual(tlmSiteEvidenceCounts(items),{ALL:2582,REVIEWED_PIN:754,SOURCE_PIN:1806,ADDRESS_ONLY:22});
+console.log("PASS R26: two Excel GEO-only vicinity markers, 2560/2582 mapped and 22 list-only; UK cemetery and PH parent-parish proxies never route to a chapel entrance or assert present Mass");

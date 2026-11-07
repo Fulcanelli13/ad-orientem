@@ -190,9 +190,9 @@ for(const anchor of historicHolds){
  assert.ok(held&&!held.map_publishable,"Previously excluded ambiguous/duplicate site must remain unpinned: "+anchor);
 }
 assert.equal(all.length,2582);
-assert.equal(all.filter(x=>x.map_publishable).length,2559);
+assert.equal(all.filter(x=>x.map_publishable).length,2560);
 const counts=tlmSiteEvidenceCounts(all);
-assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:753,SOURCE_PIN:1806,ADDRESS_ONLY:23});
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,23);
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,753);
-console.log("PASS TLM batch 11: 17 exact church identities, 2559 mapped, 23 bilingual holds; no inferred liturgy or image rights");
+assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:754,SOURCE_PIN:1806,ADDRESS_ONLY:22});
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,22);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,754);
+console.log("PASS TLM batch 11: 17 exact church identities, 2560 mapped, 22 bilingual holds; no inferred liturgy or image rights");
