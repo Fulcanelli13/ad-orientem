@@ -179,7 +179,7 @@ try{
    viewportHeight:rect.height};
  });
  assert.ok(beforeNext.secondTop>beforeNext.viewportTop+
-  Math.min(beforeNext.viewportHeight*.46,210),
+  Math.min(beforeNext.viewportHeight*.5,280),
   "The 390px first Postcommunion must put its second oration below reading position");
  const nextArrow=page.locator("#ao-r17-native-reader-preview [data-reader-nav='next']");
  await nextArrow.click();
@@ -200,7 +200,7 @@ try{
   "NEXT did not scroll to the second Postcommunion");
  console.log("ICRSP_NEXT_REVEAL_DEBUG "+JSON.stringify({beforeNext,afterReveal}));
  assert.ok(afterReveal.secondTop<=afterReveal.viewportTop+
-  Math.min(afterReveal.viewportHeight*.46,210)+8,
+  Math.min(afterReveal.viewportHeight*.5,280)+8,
   "Second Postcommunion not revealed in the visible reading zone");
  await nextArrow.click();
  const afterAdvance=await page.evaluate(()=>
