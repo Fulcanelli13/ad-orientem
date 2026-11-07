@@ -1,0 +1,73 @@
+{
+  "schema": "ao.pray.stabat-mater-1962-variant-research.v1",
+  "date": "2026-11-07",
+  "status": "RESEARCH_CANDIDATE_SOURCE_COLLATION_HOLD",
+  "summary": "The existing canonical Stabat Mater array is an extracted first-thirteen-tercet source. The 1962 Benziger Missale has a twenty-tercet September 15 sequence; do not conflate this with the shorter Feria VI post Passion Sunday sequence or a 21-tercet anthology combining mutually exclusive stanza 19 alternatives.",
+  "existingCanonical": {
+    "file": "src/pray/canonical-data.js",
+    "export": "PRAY_CANONICAL_DATA_V435930.stabat",
+    "tercets": 13,
+    "finalIncipit": "Fac me tecum pie flere",
+    "complete": false,
+    "modified": false
+  },
+  "source": {
+    "work": "Missale Romanum editio iuxta typicam, Benziger Brothers, 1962",
+    "digitalOcr": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf",
+    "sevenSorrowsPrintedPages": "671-672",
+    "ocrLineRange": "34018-34097",
+    "furtherCatholicWitness": "https://extraordinaryform.org/masses/0915SevenSorrowsBVMM20.pdf",
+    "textStatus": "DIGITAL_OCR_AND_1962_MASS_SHEET_MATCH_STRUCTURE; PRINTED_PAGE_IMAGE_DIRECT_COLLATION_PENDING",
+    "septemberSequenceTercets": 20,
+    "passionFridayUse": "The same 1962 Missale OCR places a shorter Stabat sequence in Passiontide (printed p. 501) ending after the eighteenth tercet. Keep its liturgical use distinct."
+  },
+  "missingFromCanonical": [
+    {
+      "position": 14,
+      "latin": "Iuxta Crucem tecum stare,\nEt me tibi sociare,\nIn planctu desidero."
+    },
+    {
+      "position": 15,
+      "latin": "Virgo virginum præclara,\nMihi iam non sis amara:\nFac me tecum plangere."
+    },
+    {
+      "position": 16,
+      "latin": "Fac, ut portem Christi mortem,\nPassionis fac consortem,\nEt plagas recolere."
+    },
+    {
+      "position": 17,
+      "latin": "Fac me plagis vulnerari,\nFac me Cruce inebriari,\nEt cruore Filii."
+    },
+    {
+      "position": 18,
+      "latin": "Flammis ne urar succensus,\nPer te, Virgo, sim defensus,\nIn die iudicii.",
+      "qualification": "September OCR appears to omit 'ne' in 'Flammis urar succensus'; March 1962 text and independent September source include 'ne'. Do not settle without image-level printed page comparison."
+    },
+    {
+      "position": 19,
+      "latin": "Christe, cum sit hinc exire,\nDa per Matrem me venire\nAd palmam victoriæ.",
+      "qualification": "Chosen on the Sept 1962 Mass sheet. The alternative 'Fac me cruce custodiri ...' is NOT an extra twenty-first stanza in this witness."
+    },
+    {
+      "position": 20,
+      "latin": "Quando corpus morietur,\nFac, ut animæ donetur\nParadisi gloria. Amen."
+    }
+  ],
+  "historicalVariants": {
+    "stanza19Alternate": "Fac me cruce custodiri,\nMorte Christi præmuniri,\nConfoveri gratia.",
+    "source": "https://la.wikisource.org/wiki/Stabat_Mater_(Blume_atque_Bannister)",
+    "policy": "Mutually exclusive edition readings at stanza 19. Do not combine as 21 stanzas in the 1962 September Mass sequence.",
+    "septemberStanza18OcrCaution": "Printed-page proof required for 'ne' before urar. More than one OCR/transcription witness differs; avoid confident claim of exact print wording."
+  },
+  "qualityGates": {
+    "fullLatinSourceCandidateIdentified": true,
+    "full20SequenceAdmittedToCanonical": false,
+    "fullStanzaSetPrintImageCollated": false,
+    "englishTranslationIndependentCertified": false,
+    "frenchTranslationIndependentCertified": false,
+    "stationsReaderChanged": false,
+    "massReaderChanged": false,
+    "originalCanonicalChanged": false
+  },
+  "next": "Compare the scanned September 15 printed pages word-for-word, then decide whether to add a separate 20-tercet standalone devotion witness or correct the canonical Stabat source without conflating it with the shorter liturgical sequence. Preserve Mass and Stations source ownership."
+}
