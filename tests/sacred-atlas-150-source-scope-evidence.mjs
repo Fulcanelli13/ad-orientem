@@ -51,7 +51,7 @@ for (const id of ["SG-INV-0397","SG-INV-0399","SG-INV-0598","SG-INV-0297","SG-IN
   assert.equal(row.web_evidence_review.page_level_research_performed, true);
   assert.equal(row.web_evidence_review.independent_source_upgrade, true);
   assert.equal(row.web_evidence_review.point_certified, false);
-  assert.match(row.web_evidence_review.evidence_url, /^https?:\\/\\//);
+  assert.ok(["http:", "https:"].includes(new URL(row.web_evidence_review.evidence_url).protocol));
 }
 assert.equal(150-screened, board.counts.not_yet_page_screened);
 assert.equal(board.counts.qualified, 33);
