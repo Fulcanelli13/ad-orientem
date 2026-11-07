@@ -1,0 +1,97 @@
+{
+  "schema": "AO_SACRED_ART_PHASE41_OWNER169_PHOTO_READINESS_AND_37_IIIF_V1",
+  "as_of": "2026-11-07",
+  "scope": "Research and editorial image QA for original 177 handpicked low-resolution artwork/photo records; no new admissions, no production publishing",
+  "baseline": {
+    "identity_supported": 169,
+    "object_identity_holds": 8,
+    "total_original_selected_photo_rows": 177,
+    "predecessor": "data/research/sacred-art/phase40-nine-artworks-oai-identity-conclusions-eight-remaining-20261107.v1.json"
+  },
+  "evidence": {
+    "phase41_commons": {
+      "run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42366834134",
+      "artifact": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42366834134/artifacts/13572016907",
+      "selected_supported_rows": 169,
+      "metadata_success_live": 80,
+      "metadata_http_429": 89,
+      "metadata_archival_fallback_provenance": {
+        "run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42169137895",
+        "artifact": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42169137895/artifacts/13480765363",
+        "prior_source_records": 157,
+        "supported_rows_recovered_from_archive": 89,
+        "separate_archival_holds": 8,
+        "usage": "Historical metadata fallback only, not a fresh Commons API verification"
+      },
+      "selected_shortest_side_px": {
+        "under_600": 22,
+        "from_600_to_899": 87,
+        "at_least_900": 60
+      },
+      "image_bytes_retrieved": 0
+    },
+    "museum_iiif": {
+      "run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42367346495",
+      "artifact": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42367346495/artifacts/13571778697",
+      "mapped_manifests_in_current_excel": 37,
+      "older_repo_csv_manifests": 20,
+      "supplemental_manifests_from_phase40_excel": 17,
+      "successfully_retrieved": 37,
+      "source_rights_metadata": {
+        "public_domain_mark": 20,
+        "paris_canvas_level_cc0": 2,
+        "rights_undetermined": 15
+      },
+      "multi_canvas_records": 10,
+      "caution": "A PDM/CC0 declaration applies to the cited source/material and its scope. Do not assume it clears a different photographer's museum replacement; no images were visually certified or rights approved.",
+      "paris_fidelity": "RECENT575::184 Lazerges official full view same underlying painting, but darker exposure than selected image; RECENT575::279 Tissot selected Commons download previously blocked (429). Ten individual Paris annotation/canvas CC0 declarations from Phase30 must remain distinct from two object manifest records."
+    },
+    "existing_geometric_evidence": {
+      "prior_candidate_image_tests": 95,
+      "distinct_owner_handpicked_selections_with_qa_records": 33,
+      "selections_with_strong_geometric_candidates": 22,
+      "selections_inconclusive": 2,
+      "selections_with_reference_image_not_downloaded": 9,
+      "selections_with_no_prior_candidate_qa_record": 136,
+      "actual_scoreable_unique_selections": 24,
+      "supported_selections_without_scoreable_geometric_comparison": 145,
+      "caution": "A QA record with REFERENCE_NOT_DOWNLOADED is not a scoreable geometric comparison. Multiple candidate tests for one painting do not increase distinct-photo coverage."
+    },
+    "workbook": {
+      "filename": "Ad_Orientem_Phase41_177_Artwork_Photo_Readiness_Master.xlsx",
+      "sheets_added": [
+        "Phase41 Photo Readiness",
+        "Phase41 Dashboard"
+      ],
+      "prior_history_preserved": true,
+      "registry_rows": 177,
+      "dashboard_formula_reconciliation": "PASSED",
+      "formula_error_scan": "ZERO_MATCHES"
+    },
+    "review_queue": {
+      "p1_same_painting_candidate_rights_or_fidelity_review": 22,
+      "p2_source_or_competent_rights_research": 34,
+      "p3_museum_photo_source_discovery": 113,
+      "archival_identity_holds": 8,
+      "overall": 177,
+      "next_task": "Compare actual pixels of the 22 P1 candidates with exact handpicked files; confirm photo-specific legal status, crop, tonal fidelity, object/panel scope, photographer credit. Preserve current selections pending explicitly audited approval."
+    }
+  },
+  "controls": [
+    "Never select a new non-owner-handpicked Commons painting merely because Commons says public domain",
+    "Retain object-level duplicate photo selections separately from physical painting count",
+    "No automated image upgrades or generic colour auto-correction",
+    "No substitution of panorama/detail/reverse canvas for the full selected painting",
+    "Photographic rights, same-painting geometry and crop/colour fidelity are independent gates",
+    "No artist attribution flattened from historical to current without provenance",
+    "GitHub Actions and Pages only for actual future app publishing; this phase changes no published assets"
+  ],
+  "publication": {
+    "gallery_replacements": 0,
+    "photo_approvals": 0,
+    "prayer_art_changes": 0,
+    "calendar_art_changes": 0,
+    "main_branch_changes": 0
+  },
+  "status": "RESEARCH_DONE_REPLACEMENT_QA_PENDING"
+}
