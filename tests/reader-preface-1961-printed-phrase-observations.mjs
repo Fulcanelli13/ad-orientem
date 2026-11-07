@@ -21,6 +21,10 @@ assert.ok(!data.witnessReadings.some(x=>x.publicScoreApproved||x.musicalParity!=
 assert.equal(data.rubricalPrintEvidence.solemn.rubricGroups.length,6);
 assert.equal(data.rubricalPrintEvidence.ferial.rubricGroups.length,5);
 assert.equal(data.rubricalPrintEvidence.solemnior.automaticUseAuthorized,false);
+assert.deepEqual(data.gregoBaseEditorialChangeWatch.map(x=>x.sourceId),[4449,4450,4451]);
+assert.ok(data.gregoBaseEditorialChangeWatch.every(x=>x.loggedSourceHistory.length>=2&&
+ x.recordUrl.endsWith("id="+x.sourceId)&&
+ x.independenceWarning.includes("printed")||x.independenceWarning.includes("Printed")));
 for(const source of master.rows){
  const observed=data.witnessReadings.filter(x=>x.sourceId===source.sourceId&&x.cueId===source.cueId);
  assert.equal(observed.length,2,"Both original printed books must be inspected: "+source.scoreId);
