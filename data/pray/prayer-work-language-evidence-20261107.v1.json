@@ -1,0 +1,1266 @@
+{
+  "schema": "ao.pray.language-source-evidence-20261107.v1",
+  "scope": "Repository source text presence and programmed references; NOT browser rendering, translation parity, copyright or print certification",
+  "checkedBy": "tests/pray-work-language-source-audit-20261107.mjs",
+  "ciRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42331825952",
+  "ciResult": "completed/success",
+  "baseline": "research/prayer-work-identity-registry-20261106",
+  "assessedWorks": 36,
+  "novenaCount": 16,
+  "directTraditionalObjects": 11,
+  "dailyOrders": 2,
+  "seasonalWorkRecords": 7,
+  "programmeBodyCoverage": [
+    {
+      "id": "holy_ghost",
+      "form": "DAY_SPECIFIC",
+      "days": 9,
+      "en": "nine-day-specific-propers",
+      "fr": "nine-day-specific-propers",
+      "la": "no-independent-proper-detected"
+    },
+    {
+      "id": "christmas",
+      "form": "DAY_SPECIFIC",
+      "days": 9,
+      "en": "nine-day-specific-propers",
+      "fr": "nine-day-specific-propers",
+      "la": "no-independent-proper-detected"
+    },
+    {
+      "id": "corpus_christi",
+      "form": "REPEAT_FORM",
+      "days": 9,
+      "en": "repeated-proper",
+      "fr": "repeated-proper",
+      "la": "no-independent-proper-detected"
+    },
+    {
+      "id": "sacred_heart",
+      "form": "REPEAT_FORM",
+      "days": 9,
+      "en": "repeated-proper",
+      "fr": "repeated-proper",
+      "la": "no-independent-proper-detected"
+    },
+    {
+      "id": "immaculate_conception",
+      "form": "DAY_SPECIFIC",
+      "days": 9,
+      "en": "nine-day-specific-propers",
+      "fr": "nine-day-specific-propers",
+      "la": "no-independent-proper-detected"
+    },
+    {
+      "id": "annunciation",
+      "form": "DAY_SPECIFIC",
+      "days": 9,
+      "en": "nine-day-specific-propers",
+      "fr": "nine-day-specific-propers",
+      "la": "no-independent-proper-detected"
+    },
+    {
+      "id": "assumption",
+      "form": "DAY_SPECIFIC",
+      "days": 9,
+      "en": "nine-day-specific-propers",
+      "fr": "nine-day-specific-propers",
+      "la": "no-independent-proper-detected"
+    },
+    {
+      "id": "seven_sorrows",
+      "form": "DAY_SPECIFIC",
+      "days": 9,
+      "en": "nine-day-specific-propers",
+      "fr": "nine-day-specific-propers",
+      "la": "no-independent-proper-detected"
+    },
+    {
+      "id": "st_joseph",
+      "form": "DAY_SPECIFIC",
+      "days": 9,
+      "en": "nine-day-specific-propers",
+      "fr": "nine-day-specific-propers",
+      "la": "no-independent-proper-detected"
+    },
+    {
+      "id": "holy_souls",
+      "form": "DAY_SPECIFIC",
+      "days": 9,
+      "en": "nine-day-specific-propers",
+      "fr": "nine-day-specific-propers",
+      "la": "no-independent-proper-detected"
+    },
+    {
+      "id": "perpetual_help",
+      "form": "REPEAT_FORM",
+      "days": 9,
+      "en": "repeated-proper",
+      "fr": "repeated-proper",
+      "la": "no-independent-proper-detected"
+    },
+    {
+      "id": "st_therese",
+      "form": "REPEAT_FORM",
+      "days": 9,
+      "en": "repeated-proper",
+      "fr": "repeated-proper",
+      "la": "no-independent-proper-detected"
+    },
+    {
+      "id": "st_anthony_nine_tuesdays",
+      "form": "REPEAT_FORM",
+      "days": 9,
+      "en": "repeated-proper",
+      "fr": "repeated-proper",
+      "la": "no-independent-proper-detected"
+    },
+    {
+      "id": "christ_the_king",
+      "form": "REPEAT_FORM",
+      "days": 9,
+      "en": "repeated-proper",
+      "fr": "repeated-proper",
+      "la": "no-independent-proper-detected"
+    },
+    {
+      "id": "immaculate_heart",
+      "form": "REPEAT_FORM",
+      "days": 9,
+      "en": "repeated-proper",
+      "fr": "repeated-proper",
+      "la": "no-independent-proper-detected"
+    },
+    {
+      "id": "st_michael",
+      "form": "REPEAT_FORM",
+      "days": 9,
+      "en": "repeated-proper",
+      "fr": "repeated-proper",
+      "la": "no-independent-proper-detected"
+    }
+  ],
+  "traditionalLanguagePresence": [
+    {
+      "id": "litany_sacred_heart",
+      "la": "text-present",
+      "en": "text-present",
+      "fr": "text-present"
+    },
+    {
+      "id": "consecration_human_race_sacred_heart",
+      "la": "text-present",
+      "en": "text-present",
+      "fr": "text-present"
+    },
+    {
+      "id": "pray.holy_name_litany",
+      "la": "text-present",
+      "en": "text-present",
+      "fr": "text-present"
+    },
+    {
+      "id": "communion_before_thomas",
+      "la": "text-present",
+      "en": "text-present",
+      "fr": "text-present"
+    },
+    {
+      "id": "communion_before_ambrose",
+      "la": "text-present",
+      "en": "text-present",
+      "fr": "text-present"
+    },
+    {
+      "id": "communion_after_thomas",
+      "la": "text-present",
+      "en": "text-present",
+      "fr": "text-present"
+    },
+    {
+      "id": "communion_after_bonaventure",
+      "la": "text-present",
+      "en": "text-present",
+      "fr": "text-present"
+    },
+    {
+      "id": "communion_en_ego",
+      "la": "text-present",
+      "en": "text-present",
+      "fr": "text-present"
+    },
+    {
+      "id": "te_deum",
+      "la": "text-present",
+      "en": "text-present",
+      "fr": "text-present"
+    },
+    {
+      "id": "ave_maris_stella",
+      "la": "text-present",
+      "en": "text-present",
+      "fr": "text-present"
+    },
+    {
+      "id": "veni_creator",
+      "la": "text-present",
+      "en": "text-present",
+      "fr": "text-present"
+    }
+  ],
+  "seasonalLanguagePresence": [
+    {
+      "id": "vexilla_regis",
+      "la": "text-present",
+      "en": "text-present",
+      "fr": "text-present",
+      "editions": [
+        {
+          "id": "vexilla_regis",
+          "la": "text-present",
+          "en": "text-present",
+          "fr": "text-present"
+        }
+      ]
+    },
+    {
+      "id": "audi_benigne",
+      "la": "text-present",
+      "en": "text-present",
+      "fr": "text-present",
+      "editions": [
+        {
+          "id": "audi_benigne",
+          "la": "text-present",
+          "en": "text-present",
+          "fr": "text-present"
+        }
+      ]
+    },
+    {
+      "id": "ad_regias_agni_dapes",
+      "la": "text-present",
+      "en": "text-present",
+      "fr": "not-in-object",
+      "editions": [
+        {
+          "id": "ad_regias_agni_dapes",
+          "la": "text-present",
+          "en": "text-present",
+          "fr": "not-in-object"
+        },
+        {
+          "id": "ad_cenam_agni_providi",
+          "la": "text-present",
+          "en": "text-present",
+          "fr": "not-in-object"
+        }
+      ]
+    },
+    {
+      "id": "aeterne_rex_altissime",
+      "la": "text-present",
+      "en": "text-present",
+      "fr": "not-in-object",
+      "editions": [
+        {
+          "id": "aeterne_rex_altissime",
+          "la": "text-present",
+          "en": "text-present",
+          "fr": "not-in-object"
+        }
+      ]
+    },
+    {
+      "id": "lustra_sex",
+      "la": "text-present",
+      "en": "text-present",
+      "fr": "text-present",
+      "editions": [
+        {
+          "id": "lustra_sex",
+          "la": "text-present",
+          "en": "text-present",
+          "fr": "text-present"
+        }
+      ]
+    },
+    {
+      "id": "o_sol_salutis",
+      "la": "text-present",
+      "en": "text-present",
+      "fr": "text-present",
+      "editions": [
+        {
+          "id": "o_sol_salutis",
+          "la": "text-present",
+          "en": "text-present",
+          "fr": "text-present"
+        }
+      ]
+    },
+    {
+      "id": "ex_more_docti",
+      "la": "text-present",
+      "en": "text-present",
+      "fr": "text-present",
+      "editions": [
+        {
+          "id": "ex_more_docti",
+          "la": "text-present",
+          "en": "text-present",
+          "fr": "text-present"
+        }
+      ]
+    }
+  ],
+  "flaggedForReview": [],
+  "rows": [
+    {
+      "id": "litany_sacred_heart",
+      "legacyRows": [
+        49
+      ],
+      "type": "standalone-text",
+      "source": "src/pray/traditional-pray-data.js",
+      "sourceKey": "SACRED_HEART_DEVOTIONS_V382.litany",
+      "languages": {
+        "la": "text-present",
+        "en": "text-present",
+        "fr": "text-present"
+      },
+      "ownerTextSourceEvidence": "imported-source-object",
+      "readerContainer": "pray.sacred_heart"
+    },
+    {
+      "id": "consecration_human_race_sacred_heart",
+      "legacyRows": [
+        50
+      ],
+      "type": "standalone-text",
+      "source": "src/pray/traditional-pray-data.js",
+      "sourceKey": "SACRED_HEART_DEVOTIONS_V382.humanRaceConsecration",
+      "languages": {
+        "la": "text-present",
+        "en": "text-present",
+        "fr": "text-present"
+      },
+      "ownerTextSourceEvidence": "imported-source-object",
+      "readerContainer": "pray.sacred_heart"
+    },
+    {
+      "id": "pray.holy_name_litany",
+      "legacyRows": [
+        52
+      ],
+      "type": "standalone-text",
+      "source": "src/pray/traditional-pray-data.js",
+      "sourceKey": "HOLY_NAME_LITANY_V381",
+      "languages": {
+        "la": "text-present",
+        "en": "text-present",
+        "fr": "text-present"
+      },
+      "ownerTextSourceEvidence": "imported-source-object",
+      "readerContainer": "pray.holy_name_litany"
+    },
+    {
+      "id": "communion_before_thomas",
+      "legacyRows": [
+        53
+      ],
+      "type": "standalone-text",
+      "source": "src/pray/traditional-pray-data.js",
+      "sourceKey": "COMMUNION_TREASURY_V383.beforeThomas",
+      "languages": {
+        "la": "text-present",
+        "en": "text-present",
+        "fr": "text-present"
+      },
+      "ownerTextSourceEvidence": "imported-source-object",
+      "readerContainer": "pray.communion_treasury"
+    },
+    {
+      "id": "communion_before_ambrose",
+      "legacyRows": [
+        54
+      ],
+      "type": "standalone-text",
+      "source": "src/pray/traditional-pray-data.js",
+      "sourceKey": "COMMUNION_TREASURY_V383.beforeAmbrose",
+      "languages": {
+        "la": "text-present",
+        "en": "text-present",
+        "fr": "text-present"
+      },
+      "ownerTextSourceEvidence": "imported-source-object",
+      "readerContainer": "pray.communion_treasury"
+    },
+    {
+      "id": "communion_after_thomas",
+      "legacyRows": [
+        55
+      ],
+      "type": "standalone-text",
+      "source": "src/pray/traditional-pray-data.js",
+      "sourceKey": "COMMUNION_TREASURY_V383.afterThomas",
+      "languages": {
+        "la": "text-present",
+        "en": "text-present",
+        "fr": "text-present"
+      },
+      "ownerTextSourceEvidence": "imported-source-object",
+      "readerContainer": "pray.communion_treasury"
+    },
+    {
+      "id": "communion_after_bonaventure",
+      "legacyRows": [
+        56
+      ],
+      "type": "standalone-text",
+      "source": "src/pray/traditional-pray-data.js",
+      "sourceKey": "COMMUNION_TREASURY_V383.afterBonaventure",
+      "languages": {
+        "la": "text-present",
+        "en": "text-present",
+        "fr": "text-present"
+      },
+      "ownerTextSourceEvidence": "imported-source-object",
+      "readerContainer": "pray.communion_treasury"
+    },
+    {
+      "id": "communion_en_ego",
+      "legacyRows": [
+        57
+      ],
+      "type": "standalone-text",
+      "source": "src/pray/traditional-pray-data.js",
+      "sourceKey": "COMMUNION_TREASURY_V383.enEgo",
+      "languages": {
+        "la": "text-present",
+        "en": "text-present",
+        "fr": "text-present"
+      },
+      "ownerTextSourceEvidence": "imported-source-object",
+      "readerContainer": "pray.communion_treasury"
+    },
+    {
+      "id": "te_deum",
+      "legacyRows": [
+        78
+      ],
+      "type": "standalone-text",
+      "source": "src/pray/traditional-pray-data.js",
+      "sourceKey": "SACRED_HYMNS_V381.te_deum",
+      "languages": {
+        "la": "text-present",
+        "en": "text-present",
+        "fr": "text-present"
+      },
+      "ownerTextSourceEvidence": "imported-source-object",
+      "readerContainer": "pray.sacred_hymns"
+    },
+    {
+      "id": "ave_maris_stella",
+      "legacyRows": [
+        79
+      ],
+      "type": "standalone-text",
+      "source": "src/pray/traditional-pray-data.js",
+      "sourceKey": "SACRED_HYMNS_V381.ave_maris_stella",
+      "languages": {
+        "la": "text-present",
+        "en": "text-present",
+        "fr": "text-present"
+      },
+      "ownerTextSourceEvidence": "imported-source-object",
+      "readerContainer": "pray.sacred_hymns"
+    },
+    {
+      "id": "veni_creator",
+      "legacyRows": [
+        88
+      ],
+      "type": "standalone-text",
+      "source": "src/pray/traditional-pray-data.js",
+      "sourceKey": "SACRED_HYMNS_V381.veni_creator",
+      "languages": {
+        "la": "text-present",
+        "en": "text-present",
+        "fr": "text-present"
+      },
+      "ownerTextSourceEvidence": "imported-source-object",
+      "readerContainer": "pray.sacred_hymns"
+    },
+    {
+      "id": "daily_morning_prayer",
+      "legacyRows": [
+        124
+      ],
+      "type": "reference-only-daily-order",
+      "source": "src/pray/traditional-pray-data.js",
+      "sourceKey": "MORNING_PRAYER_SEQUENCE_V381",
+      "orderedRefs": [
+        "foundations_sign_of_cross",
+        "sacrament_come_holy_spirit",
+        "foundations_our_father",
+        "foundations_hail_mary",
+        "foundations_apostles_creed",
+        "foundations_act_of_faith",
+        "foundations_act_of_hope",
+        "foundations_act_of_love",
+        "sacrament_act_of_contrition",
+        "foundations_guardian_angel",
+        "foundations_glory_be"
+      ],
+      "orderedRefsCount": 11,
+      "referencedCompanions": [],
+      "missingUnownedRefs": [],
+      "readerContainer": "pray.morning_evening",
+      "languages": {
+        "la": "composed-from-references",
+        "en": "composed-from-references",
+        "fr": "composed-from-references"
+      }
+    },
+    {
+      "id": "daily_evening_prayer",
+      "legacyRows": [
+        125
+      ],
+      "type": "reference-only-daily-order",
+      "source": "src/pray/traditional-pray-data.js",
+      "sourceKey": "EVENING_PRAYER_SEQUENCE_V381",
+      "orderedRefs": [
+        "foundations_sign_of_cross",
+        "sacrament_come_holy_spirit",
+        "foundations_our_father",
+        "foundations_hail_mary",
+        "foundations_apostles_creed",
+        "foundations_act_of_faith",
+        "foundations_act_of_hope",
+        "foundations_act_of_love",
+        "pray.nightly_examen",
+        "sacrament_act_of_contrition",
+        "dead_de_profundis",
+        "marian_hail_holy_queen",
+        "foundations_glory_be"
+      ],
+      "orderedRefsCount": 13,
+      "referencedCompanions": [
+        "pray.nightly_examen"
+      ],
+      "missingUnownedRefs": [],
+      "readerContainer": "pray.morning_evening",
+      "languages": {
+        "la": "composed-from-references",
+        "en": "composed-from-references",
+        "fr": "composed-from-references"
+      }
+    },
+    {
+      "id": "vexilla_regis",
+      "legacyRows": [
+        80
+      ],
+      "type": "source-hymn",
+      "source": "src/pray/icrsp-seasonal-hymns.v1.js",
+      "sourceKey": "ICRSP_SEASONAL_HYMNS_V1.vexilla_regis",
+      "editions": [
+        {
+          "id": "vexilla_regis",
+          "languageText": {
+            "la": "text-present",
+            "en": "text-present",
+            "fr": "text-present"
+          },
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0901_ancien",
+          "englishEdition": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Lyra_Catholica-_containing_all_the_Breviary_and_Missal_hymns%2C_with_others_from_various_sources._Translated_by_Edward_Caswall_%28IA_LyraCatholica%29.pdf",
+          "frenchEdition": "https://www.domgueranger.net/lannee-liturgique-passion-et-semaine-sainte-historique-mystique-pratique-et-prieres/",
+          "office": "Vespers",
+          "season": "Passiontide"
+        }
+      ],
+      "languageText": {
+        "la": "text-present",
+        "en": "text-present",
+        "fr": "text-present"
+      },
+      "readerContainer": "pray.sacred_hymns"
+    },
+    {
+      "id": "audi_benigne",
+      "legacyRows": [
+        81
+      ],
+      "type": "source-hymn",
+      "source": "src/pray/icrsp-seasonal-hymns.v1.js",
+      "sourceKey": "ICRSP_SEASONAL_HYMNS_V1.audi_benigne",
+      "editions": [
+        {
+          "id": "audi_benigne",
+          "languageText": {
+            "la": "text-present",
+            "en": "text-present",
+            "fr": "text-present"
+          },
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=x9ef3247f_lisible",
+          "englishEdition": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Lyra_Catholica-_containing_all_the_Breviary_and_Missal_hymns%2C_with_others_from_various_sources._Translated_by_Edward_Caswall_%28IA_LyraCatholica%29.pdf",
+          "frenchEdition": "https://www.domgueranger.net/lannee-liturgique-le-careme-historique-mystique-pratique-prieres/",
+          "office": "Vespers",
+          "season": "Lent"
+        }
+      ],
+      "languageText": {
+        "la": "text-present",
+        "en": "text-present",
+        "fr": "text-present"
+      },
+      "readerContainer": "pray.sacred_hymns"
+    },
+    {
+      "id": "ad_regias_agni_dapes",
+      "legacyRows": [
+        85,
+        86
+      ],
+      "type": "source-hymn",
+      "source": "src/pray/icrsp-seasonal-hymns.v1.js",
+      "sourceKey": "ICRSP_SEASONAL_HYMNS_V1.ad_regias_agni_dapes",
+      "editions": [
+        {
+          "id": "ad_regias_agni_dapes",
+          "languageText": {
+            "la": "text-present",
+            "en": "text-present",
+            "fr": "not-in-object"
+          },
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0913_ancien",
+          "englishEdition": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Lyra_Catholica-_containing_all_the_Breviary_and_Missal_hymns%2C_with_others_from_various_sources._Translated_by_Edward_Caswall_%28IA_LyraCatholica%29.pdf",
+          "frenchEdition": null,
+          "office": "Vespers · Roman Breviary version",
+          "season": "Eastertide"
+        },
+        {
+          "id": "ad_cenam_agni_providi",
+          "languageText": {
+            "la": "text-present",
+            "en": "text-present",
+            "fr": "not-in-object"
+          },
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0920_ancien",
+          "englishEdition": "https://www.preces-latinae.org/thesaurus/Hymni/AdCenamAgni.html",
+          "frenchEdition": null,
+          "office": "Vespers · historical pre-1632 form",
+          "season": "Eastertide"
+        }
+      ],
+      "languageText": {
+        "la": "text-present",
+        "en": "text-present",
+        "fr": "not-in-object"
+      },
+      "readerContainer": "pray.sacred_hymns"
+    },
+    {
+      "id": "aeterne_rex_altissime",
+      "legacyRows": [
+        87
+      ],
+      "type": "source-hymn",
+      "source": "src/pray/icrsp-seasonal-hymns.v1.js",
+      "sourceKey": "ICRSP_SEASONAL_HYMNS_V1.aeterne_rex_altissime",
+      "editions": [
+        {
+          "id": "aeterne_rex_altissime",
+          "languageText": {
+            "la": "text-present",
+            "en": "text-present",
+            "fr": "not-in-object"
+          },
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0938_ancien",
+          "englishEdition": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Lyra_Catholica-_containing_all_the_Breviary_and_Missal_hymns%2C_with_others_from_various_sources._Translated_by_Edward_Caswall_%28IA_LyraCatholica%29.pdf",
+          "frenchEdition": null,
+          "office": "Matins",
+          "season": "Ascension"
+        }
+      ],
+      "languageText": {
+        "la": "text-present",
+        "en": "text-present",
+        "fr": "not-in-object"
+      },
+      "readerContainer": "pray.sacred_hymns"
+    },
+    {
+      "id": "lustra_sex",
+      "legacyRows": [
+        84
+      ],
+      "type": "source-hymn",
+      "source": "src/pray/icrsp-seasonal-hymns.v1.js",
+      "sourceKey": "ICRSP_SEASONAL_HYMNS_V1.lustra_sex",
+      "editions": [
+        {
+          "id": "lustra_sex",
+          "languageText": {
+            "la": "text-present",
+            "en": "text-present",
+            "fr": "text-present"
+          },
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=x628ec868_lisible",
+          "englishEdition": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Devotions_commemorative_of_the_most_adorable_Passion_of_Our_Lord_and_Saviour_Jesus_Christ-_translated_from_Catholic_sources_%28IA_DevotionsCommemorativeOf%29.pdf",
+          "frenchEdition": "https://www.domgueranger.net/lannee-liturgique-jeudi-vendredi-et-samedi-saint-propre-du-temps/",
+          "office": "Lauds",
+          "season": "Passiontide"
+        }
+      ],
+      "languageText": {
+        "la": "text-present",
+        "en": "text-present",
+        "fr": "text-present"
+      },
+      "readerContainer": "pray.sacred_hymns"
+    },
+    {
+      "id": "o_sol_salutis",
+      "legacyRows": [
+        82
+      ],
+      "type": "source-hymn",
+      "source": "src/pray/icrsp-seasonal-hymns.v1.js",
+      "sourceKey": "ICRSP_SEASONAL_HYMNS_V1.o_sol_salutis",
+      "editions": [
+        {
+          "id": "o_sol_salutis",
+          "languageText": {
+            "la": "text-present",
+            "en": "text-present",
+            "fr": "text-present"
+          },
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=a0155_ancien",
+          "englishEdition": "https://lyp.network/lyp/497-commentary-on-the-seasons/501-lent/3639-chapter-4-morning-and-night-prayers-for-lent",
+          "frenchEdition": "https://www.domgueranger.net/lannee-liturgique-le-careme-historique-mystique-pratique-prieres/",
+          "office": "Lauds",
+          "season": "Lent"
+        }
+      ],
+      "languageText": {
+        "la": "text-present",
+        "en": "text-present",
+        "fr": "text-present"
+      },
+      "readerContainer": "pray.sacred_hymns"
+    },
+    {
+      "id": "ex_more_docti",
+      "legacyRows": [
+        83
+      ],
+      "type": "source-hymn",
+      "source": "src/pray/icrsp-seasonal-hymns.v1.js",
+      "sourceKey": "ICRSP_SEASONAL_HYMNS_V1.ex_more_docti",
+      "editions": [
+        {
+          "id": "ex_more_docti",
+          "languageText": {
+            "la": "text-present",
+            "en": "text-present",
+            "fr": "text-present"
+          },
+          "sourceUrl": "https://icrspfrance.fr/textes-liturgiques.php?article=xd82464db_lisible",
+          "englishEdition": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Lyra_Catholica-_containing_all_the_Breviary_and_Missal_hymns%2C_with_others_from_various_sources._Translated_by_Edward_Caswall_%28IA_LyraCatholica%29.pdf",
+          "frenchEdition": "https://www.domgueranger.net/lannee-liturgique-le-careme-propre-du-temps/?lang=en",
+          "office": "Matins",
+          "season": "Lent"
+        }
+      ],
+      "languageText": {
+        "la": "text-present",
+        "en": "text-present",
+        "fr": "text-present"
+      },
+      "readerContainer": "pray.sacred_hymns"
+    },
+    {
+      "id": "holy_ghost",
+      "legacyRows": [
+        94
+      ],
+      "type": "novena-programme",
+      "source": "src/pray/novena-corpus-v4.js",
+      "sourceKey": "NOVENA_CORPUS_V4.holy_ghost",
+      "form": "DAY_SPECIFIC",
+      "days": 9,
+      "bodyBasis": {
+        "la": "no-independent-proper-detected",
+        "en": "nine-day-specific-propers",
+        "fr": "nine-day-specific-propers"
+      },
+      "repeatText": {
+        "la": "not-in-object",
+        "en": "not-in-object",
+        "fr": "not-in-object"
+      },
+      "properDayTextCounts": {
+        "la": 0,
+        "en": 9,
+        "fr": 9
+      },
+      "sourceWork": "Blessed Be God: A Complete Catholic Prayer Book",
+      "sourceUrl": "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Novena_For_Christmas",
+      "frenchTextStatus": "EDITORIAL_TRANSLATION_ALIGNED_TO_ENGLISH_SOURCE",
+      "readerContainer": "novena-reader"
+    },
+    {
+      "id": "christmas",
+      "legacyRows": [
+        89
+      ],
+      "type": "novena-programme",
+      "source": "src/pray/novena-corpus-v4.js",
+      "sourceKey": "NOVENA_CORPUS_V4.christmas",
+      "form": "DAY_SPECIFIC",
+      "days": 9,
+      "bodyBasis": {
+        "la": "no-independent-proper-detected",
+        "en": "nine-day-specific-propers",
+        "fr": "nine-day-specific-propers"
+      },
+      "repeatText": {
+        "la": "not-in-object",
+        "en": "not-in-object",
+        "fr": "not-in-object"
+      },
+      "properDayTextCounts": {
+        "la": 0,
+        "en": 9,
+        "fr": 9
+      },
+      "sourceWork": "Blessed Be God: A Complete Catholic Prayer Book",
+      "sourceUrl": "https://en.wikisource.org/wiki/Blessed_be_God_(Callan)/Novena_For_Christmas",
+      "frenchTextStatus": "EDITORIAL_TRANSLATION_ALIGNED_TO_ENGLISH_SOURCE",
+      "readerContainer": "novena-reader"
+    },
+    {
+      "id": "corpus_christi",
+      "legacyRows": [
+        93
+      ],
+      "type": "novena-programme",
+      "source": "src/pray/novena-corpus-v4.js",
+      "sourceKey": "NOVENA_CORPUS_V4.corpus_christi",
+      "form": "REPEAT_FORM",
+      "days": 9,
+      "bodyBasis": {
+        "la": "no-independent-proper-detected",
+        "en": "repeated-proper",
+        "fr": "repeated-proper"
+      },
+      "repeatText": {
+        "la": "not-in-object",
+        "en": "text-present",
+        "fr": "text-present"
+      },
+      "properDayTextCounts": {
+        "la": 0,
+        "en": 0,
+        "fr": 0
+      },
+      "sourceWork": "The Catholic Prayer Book and Manual of Meditations",
+      "sourceUrl": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Novena_for_the_Festival_of_Corpus_Christi",
+      "frenchTextStatus": "EDITORIAL_TRANSLATION_ALIGNED_TO_ENGLISH_SOURCE",
+      "readerContainer": "novena-reader"
+    },
+    {
+      "id": "sacred_heart",
+      "legacyRows": [
+        92
+      ],
+      "type": "novena-programme",
+      "source": "src/pray/novena-corpus-v4.js",
+      "sourceKey": "NOVENA_CORPUS_V4.sacred_heart",
+      "form": "REPEAT_FORM",
+      "days": 9,
+      "bodyBasis": {
+        "la": "no-independent-proper-detected",
+        "en": "repeated-proper",
+        "fr": "repeated-proper"
+      },
+      "repeatText": {
+        "la": "not-in-object",
+        "en": "text-present",
+        "fr": "text-present"
+      },
+      "properDayTextCounts": {
+        "la": 0,
+        "en": 0,
+        "fr": 0
+      },
+      "sourceWork": "The Catholic Prayer Book and Manual of Meditations",
+      "sourceUrl": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Novena_for_the_Feast_of_the_Sacred_Heart",
+      "frenchTextStatus": "EDITORIAL_TRANSLATION_ALIGNED_TO_ENGLISH_SOURCE",
+      "readerContainer": "novena-reader"
+    },
+    {
+      "id": "immaculate_conception",
+      "legacyRows": [
+        95
+      ],
+      "type": "novena-programme",
+      "source": "src/pray/novena-corpus-v4.js",
+      "sourceKey": "NOVENA_CORPUS_V4.immaculate_conception",
+      "form": "DAY_SPECIFIC",
+      "days": 9,
+      "bodyBasis": {
+        "la": "no-independent-proper-detected",
+        "en": "nine-day-specific-propers",
+        "fr": "nine-day-specific-propers"
+      },
+      "repeatText": {
+        "la": "not-in-object",
+        "en": "not-in-object",
+        "fr": "not-in-object"
+      },
+      "properDayTextCounts": {
+        "la": 0,
+        "en": 9,
+        "fr": 9
+      },
+      "sourceWork": "The Catholic Prayer Book and Manual of Meditations",
+      "sourceUrl": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Novena_in_Preparation_for_the_Feast_of_the_Immaculate_Conception",
+      "frenchTextStatus": "EDITORIAL_TRANSLATION_ALIGNED_TO_ENGLISH_SOURCE",
+      "readerContainer": "novena-reader"
+    },
+    {
+      "id": "annunciation",
+      "legacyRows": [
+        98
+      ],
+      "type": "novena-programme",
+      "source": "src/pray/novena-corpus-v4.js",
+      "sourceKey": "NOVENA_CORPUS_V4.annunciation",
+      "form": "DAY_SPECIFIC",
+      "days": 9,
+      "bodyBasis": {
+        "la": "no-independent-proper-detected",
+        "en": "nine-day-specific-propers",
+        "fr": "nine-day-specific-propers"
+      },
+      "repeatText": {
+        "la": "not-in-object",
+        "en": "not-in-object",
+        "fr": "not-in-object"
+      },
+      "properDayTextCounts": {
+        "la": 0,
+        "en": 9,
+        "fr": 9
+      },
+      "sourceWork": "Mary, Help of Christians: Novenas in Preparation for the Principal Feasts of the Blessed Virgin",
+      "sourceUrl": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+      "frenchTextStatus": "EDITORIAL_TRANSLATION_ALIGNED_TO_ENGLISH_SOURCE",
+      "readerContainer": "novena-reader"
+    },
+    {
+      "id": "assumption",
+      "legacyRows": [
+        99
+      ],
+      "type": "novena-programme",
+      "source": "src/pray/novena-corpus-v4.js",
+      "sourceKey": "NOVENA_CORPUS_V4.assumption",
+      "form": "DAY_SPECIFIC",
+      "days": 9,
+      "bodyBasis": {
+        "la": "no-independent-proper-detected",
+        "en": "nine-day-specific-propers",
+        "fr": "nine-day-specific-propers"
+      },
+      "repeatText": {
+        "la": "not-in-object",
+        "en": "not-in-object",
+        "fr": "not-in-object"
+      },
+      "properDayTextCounts": {
+        "la": 0,
+        "en": 9,
+        "fr": 9
+      },
+      "sourceWork": "Mary, Help of Christians: Novenas in Preparation for the Principal Feasts of the Blessed Virgin",
+      "sourceUrl": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+      "frenchTextStatus": "EDITORIAL_TRANSLATION_ALIGNED_TO_ENGLISH_SOURCE",
+      "readerContainer": "novena-reader"
+    },
+    {
+      "id": "seven_sorrows",
+      "legacyRows": [
+        100
+      ],
+      "type": "novena-programme",
+      "source": "src/pray/novena-corpus-v4.js",
+      "sourceKey": "NOVENA_CORPUS_V4.seven_sorrows",
+      "form": "DAY_SPECIFIC",
+      "days": 9,
+      "bodyBasis": {
+        "la": "no-independent-proper-detected",
+        "en": "nine-day-specific-propers",
+        "fr": "nine-day-specific-propers"
+      },
+      "repeatText": {
+        "la": "not-in-object",
+        "en": "not-in-object",
+        "fr": "not-in-object"
+      },
+      "properDayTextCounts": {
+        "la": 0,
+        "en": 9,
+        "fr": 9
+      },
+      "sourceWork": "Mary, Help of Christians: Novenas in Preparation for the Principal Feasts of the Blessed Virgin",
+      "sourceUrl": "https://www.gutenberg.org/files/33671/33671-h/33671-h.htm",
+      "frenchTextStatus": "EDITORIAL_TRANSLATION_ALIGNED_TO_ENGLISH_SOURCE",
+      "readerContainer": "novena-reader"
+    },
+    {
+      "id": "st_joseph",
+      "legacyRows": [
+        102
+      ],
+      "type": "novena-programme",
+      "source": "src/pray/novena-corpus-v4.js",
+      "sourceKey": "NOVENA_CORPUS_V4.st_joseph",
+      "form": "DAY_SPECIFIC",
+      "days": 9,
+      "bodyBasis": {
+        "la": "no-independent-proper-detected",
+        "en": "nine-day-specific-propers",
+        "fr": "nine-day-specific-propers"
+      },
+      "repeatText": {
+        "la": "not-in-object",
+        "en": "not-in-object",
+        "fr": "not-in-object"
+      },
+      "properDayTextCounts": {
+        "la": 0,
+        "en": 9,
+        "fr": 9
+      },
+      "sourceWork": "The Catholic Prayer Book and Manual of Meditations",
+      "sourceUrl": "https://en.wikisource.org/wiki/The_Catholic_Prayer_Book_and_Manual_of_Meditations/Novena_of_St._Joseph",
+      "frenchTextStatus": "EDITORIAL_TRANSLATION_ALIGNED_TO_ENGLISH_SOURCE",
+      "readerContainer": "novena-reader"
+    },
+    {
+      "id": "holy_souls",
+      "legacyRows": [
+        107
+      ],
+      "type": "novena-programme",
+      "source": "src/pray/novena-corpus-v4.js",
+      "sourceKey": "NOVENA_CORPUS_V4.holy_souls",
+      "form": "DAY_SPECIFIC",
+      "days": 9,
+      "bodyBasis": {
+        "la": "no-independent-proper-detected",
+        "en": "nine-day-specific-propers",
+        "fr": "nine-day-specific-propers"
+      },
+      "repeatText": {
+        "la": "not-in-object",
+        "en": "not-in-object",
+        "fr": "not-in-object"
+      },
+      "properDayTextCounts": {
+        "la": 0,
+        "en": 9,
+        "fr": 9
+      },
+      "sourceWork": "Novena for the Holy Souls in Purgatory",
+      "sourceUrl": "https://www.catholickingdom.com/s_Library/Books/M/Manual_of_the_Purgatorian_Society_OCR_CK.pdf",
+      "frenchTextStatus": "EDITORIAL_TRANSLATION_ALIGNED_TO_ENGLISH_SOURCE",
+      "readerContainer": "novena-reader"
+    },
+    {
+      "id": "perpetual_help",
+      "legacyRows": [
+        101
+      ],
+      "type": "novena-programme",
+      "source": "src/pray/novena-corpus-v4.js",
+      "sourceKey": "NOVENA_CORPUS_V4.perpetual_help",
+      "form": "REPEAT_FORM",
+      "days": 9,
+      "bodyBasis": {
+        "la": "no-independent-proper-detected",
+        "en": "repeated-proper",
+        "fr": "repeated-proper"
+      },
+      "repeatText": {
+        "la": "not-in-object",
+        "en": "text-present",
+        "fr": "text-present"
+      },
+      "properDayTextCounts": {
+        "la": 0,
+        "en": 0,
+        "fr": 0
+      },
+      "sourceWork": "With God: A Book of Prayers and Reflections",
+      "sourceUrl": "https://en.wikisource.org/wiki/Page:Withgodbookofpra00las.djvu/699",
+      "frenchTextStatus": "EDITORIAL_TRANSLATION_ALIGNED_TO_ENGLISH_SOURCE",
+      "readerContainer": "novena-reader"
+    },
+    {
+      "id": "st_therese",
+      "legacyRows": [
+        105
+      ],
+      "type": "novena-programme",
+      "source": "src/pray/novena-corpus-v4.js",
+      "sourceKey": "NOVENA_CORPUS_V4.st_therese",
+      "form": "REPEAT_FORM",
+      "days": 9,
+      "bodyBasis": {
+        "la": "no-independent-proper-detected",
+        "en": "repeated-proper",
+        "fr": "repeated-proper"
+      },
+      "repeatText": {
+        "la": "not-in-object",
+        "en": "text-present",
+        "fr": "text-present"
+      },
+      "properDayTextCounts": {
+        "la": 0,
+        "en": 0,
+        "fr": 0
+      },
+      "sourceWork": "Novena of the Twenty-Four Glory Bes to St Thérèse of Lisieux",
+      "sourceUrl": "https://www.ewtn.com/catholicism/devotions/novena-of-the-twentyfour-glory-bes-to-st-therese-the-little-flower-293",
+      "frenchTextStatus": "EDITORIAL_TRANSLATION_ALIGNED_TO_ENGLISH_SOURCE",
+      "readerContainer": "novena-reader"
+    },
+    {
+      "id": "st_anthony_nine_tuesdays",
+      "legacyRows": [
+        104
+      ],
+      "type": "novena-programme",
+      "source": "src/pray/novena-corpus-v4.js",
+      "sourceKey": "NOVENA_CORPUS_V4.st_anthony_nine_tuesdays",
+      "form": "REPEAT_FORM",
+      "days": 9,
+      "bodyBasis": {
+        "la": "no-independent-proper-detected",
+        "en": "repeated-proper",
+        "fr": "repeated-proper"
+      },
+      "repeatText": {
+        "la": "not-in-object",
+        "en": "text-present",
+        "fr": "text-present"
+      },
+      "properDayTextCounts": {
+        "la": 0,
+        "en": 0,
+        "fr": 0
+      },
+      "sourceWork": "Devotion of the Nine Tuesdays to St Anthony",
+      "sourceUrl": "https://www.pamphlets.info/Australia/acts1014/",
+      "frenchTextStatus": "EDITORIAL_TRANSLATION_ALIGNED_TO_TRADITIONAL_ENGLISH_SOURCE",
+      "readerContainer": "novena-reader"
+    },
+    {
+      "id": "christ_the_king",
+      "legacyRows": [
+        90
+      ],
+      "type": "novena-programme",
+      "source": "src/pray/novena-corpus-v4.js",
+      "sourceKey": "NOVENA_CORPUS_V4.christ_the_king",
+      "form": "REPEAT_FORM",
+      "days": 9,
+      "bodyBasis": {
+        "la": "no-independent-proper-detected",
+        "en": "repeated-proper",
+        "fr": "repeated-proper"
+      },
+      "repeatText": {
+        "la": "not-in-object",
+        "en": "text-present",
+        "fr": "text-present"
+      },
+      "properDayTextCounts": {
+        "la": 0,
+        "en": 0,
+        "fr": 0
+      },
+      "sourceWork": "Preces et Pia Opera / Thésaurisons pour le Ciel",
+      "sourceUrl": "https://www.liberius.net/livres/Thesaurisons_pour_le_Ciel_000001335.pdf",
+      "frenchTextStatus": "SOURCE_LOCKED_TRADITIONAL_FRENCH",
+      "readerContainer": "novena-reader"
+    },
+    {
+      "id": "immaculate_heart",
+      "legacyRows": [
+        97
+      ],
+      "type": "novena-programme",
+      "source": "src/pray/novena-corpus-v4.js",
+      "sourceKey": "NOVENA_CORPUS_V4.immaculate_heart",
+      "form": "REPEAT_FORM",
+      "days": 9,
+      "bodyBasis": {
+        "la": "no-independent-proper-detected",
+        "en": "repeated-proper",
+        "fr": "repeated-proper"
+      },
+      "repeatText": {
+        "la": "not-in-object",
+        "en": "text-present",
+        "fr": "text-present"
+      },
+      "properDayTextCounts": {
+        "la": 0,
+        "en": 0,
+        "fr": 0
+      },
+      "sourceWork": "The Raccolta · Prayer to the Immaculate Heart of Mary",
+      "sourceUrl": "https://en.wikisource.org/wiki/The_Raccolta_%281857%29/Prayer_to_the_Immaculate_Heart_of_Mary",
+      "frenchTextStatus": "TRADITIONAL_FRENCH_WITNESS_VARIANT_NOT_PRINT_COLLATED",
+      "readerContainer": "novena-reader"
+    },
+    {
+      "id": "st_michael",
+      "legacyRows": [
+        103
+      ],
+      "type": "novena-programme",
+      "source": "src/pray/novena-corpus-v4.js",
+      "sourceKey": "NOVENA_CORPUS_V4.st_michael",
+      "form": "REPEAT_FORM",
+      "days": 9,
+      "bodyBasis": {
+        "la": "no-independent-proper-detected",
+        "en": "repeated-proper",
+        "fr": "repeated-proper"
+      },
+      "repeatText": {
+        "la": "not-in-object",
+        "en": "text-present",
+        "fr": "text-present"
+      },
+      "properDayTextCounts": {
+        "la": 0,
+        "en": 0,
+        "fr": 0
+      },
+      "sourceWork": "Leonine Prayer to St Michael the Archangel",
+      "sourceUrl": "https://laportelatine.org/spiritualite/prieres-et-devotions/priere-a-saint-michel",
+      "frenchTextStatus": "SOURCE_LOCKED_TRADITIONAL_FRENCH",
+      "readerContainer": "novena-reader"
+    }
+  ]
+}

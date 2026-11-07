@@ -1,0 +1,69 @@
+name: Prayer registry reader acceptance — existing interfaces
+on:
+  push:
+    branches:
+      - research/prayer-work-identity-registry-20261106
+    paths:
+      - .github/workflows/pray-work-reader-browser-acceptance-20261107.yml
+      - tests/pray-41-route-entry-variants-phone.mjs
+      - tests/pray-novena-all-19-stages-language-phone.mjs
+      - data/pray/prayer-work-identity-registry-20261106.v1.json
+  pull_request:
+    branches: [main]
+    paths:
+      - .github/workflows/pray-work-reader-browser-acceptance-20261107.yml
+      - tests/pray-41-route-entry-variants-phone.mjs
+      - tests/pray-novena-all-19-stages-language-phone.mjs
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pray-registry-reader-acceptance-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  entry-routes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Existing Prayer route inventory invariants
+        run: node tests/pray-route-language-matrix-v1.mjs && node tests/pray-release-coverage-evidence-v1.mjs
+      - name: Exercise 41 source-owned entries at 320 and 390 pixels in EN and FR
+        run: node tests/pray-41-route-entry-variants-phone.mjs
+      - name: Preserve route entry evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prayer-registry-stage5-41-entry-routes
+          path: artifacts/pray-41-route-entry/browser-entry-variants.json
+          if-no-files-found: warn
+          retention-days: 7
+  novena-programmes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Exercise all 19 programme days, languages, source witnesses and guided stages
+        run: node tests/pray-novena-all-19-stages-language-phone.mjs
+      - name: Preserve programme stage evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prayer-registry-stage5-19-novena-programmes
+          path: artifacts/pray-novena-all-programmes/nineteen-novena-all-stages-phone.json
+          if-no-files-found: warn
+          retention-days: 7
