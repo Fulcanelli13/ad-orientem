@@ -57,12 +57,13 @@
     "routeUIVerified": 0,
     "supplementalSourceOwnerAudited": 84,
     "remaining48Audited": 48,
-    "visibleBodyComparedWorks": 20,
-    "visibleBodyComparedSupplementalWorks": 19,
+    "visibleBodyComparedWorks": 21,
+    "visibleBodyComparedSupplementalWorks": 20,
     "visibleBodyCanonicalReuseWorks": 1,
     "visibleBodyStage6Works": 9,
     "visibleBodyStage7Works": 7,
-    "visibleBodyStage8Works": 4
+    "visibleBodyStage8Works": 4,
+    "visibleBodyStage9Works": 1
   },
   "works": [
     {
@@ -6967,6 +6968,15 @@
         "sourceHash": "a21e42f580dfb2a4b091696f0ea0165adfdc3b89870a9fa3e9cff50597893d9d",
         "readerRouteDeclared": true,
         "sourceOnlyNotUIVerified": true
+      },
+      "readerBodyEvidence": {
+        "status": "all-seven-historical-source-word-bodies-matched-in-tested-contexts",
+        "auditRef": "data/pray/prayer-work-stage9-source-owner-acceptance-20261107.v1.json#pray.seven_words",
+        "sourceId": "pray.seven_words",
+        "route": "pray.seven_words",
+        "scope": "All 7 locally packaged 1889 historical meditations, original opening and Marian appendix exactly matched at 320/390px EN/FR while Wikisource blocked; no print-facsimile or Scripture service certification",
+        "historicalSourcePrintCertified": false,
+        "sourceReaderCompleteCertified": false
       }
     },
     {
