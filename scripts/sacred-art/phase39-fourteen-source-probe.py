@@ -144,6 +144,8 @@ def probe_entry(entry):
     else:
         raw=r.get("text","")
         result["page_excerpt"]=raw[:3500]
+        if label.startswith("POP_JOCONDE"):
+            result["full_official_catalogue_text"]=raw[:6500]
         terms=["Jordaens","Ter Brugghen","Dérision","Numéro d’inventaire","Numéro d'inventaire",
           "Inventaire","Attribution","Teniers","Palma","Jacob","de Wet","Tibériade",
           "Christ mort","Saint Matthieu","GRO0420","Herregouts","Statut juridique",
@@ -192,7 +194,9 @@ def main():
         oai_filters.append({"set":spec,"status":filtered["status"],"error":filtered["error"],
             "content_type":filtered["content_type"],"body_excerpt":xml[:450],
             "creator_mentions":len(re.findall("herreyns",filtered.get("text",""),re.I)),
-            "list_xml_excerpt":filtered.get("text","")[:1000]})
+            "list_xml_excerpt":filtered.get("text","")[:1000],
+            "identifiers":list(dict.fromkeys(re.findall(r"oai:datahub\\.vlaamsekunstcollectie\\.be:kmska\\.be:[a-z0-9]+",filtered.get("text",""),re.I)))[:100],
+            "has_resumption_token":("resumptionToken" in filtered.get("excerpt",""))})
     oai_check["set_filters"]=oai_filters
     jobs=[(rid,label,url,*rest) for rid,entries in PROBES.items() for label,url,*rest in entries]
     with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
