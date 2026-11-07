@@ -44,6 +44,13 @@ check(items.filter(w=>w.legacyCanonicalIds.length>0).length===46,"48 canonical f
 const audited=items.filter(w=>w.sourceBodyEvidence);
 check(audited.length===36,"Stage 3 needs evidence for all 36 works");
 check(registry.counts.sourceBodyAudited===36,"Audited work count drifted");
+const ownerAudited=items.filter(w=>w.sourceOwnerEvidence);
+check(ownerAudited.length===48,"Remaining 48 works need Stage 4 source-owner evidence");
+check(new Set([...audited,...ownerAudited].map(w=>w.id)).size===84,"84 route-unverified works must have distinct Stage 3 or Stage 4 evidence");
+check(registry.counts.supplementalSourceOwnerAudited===84,"Supplementary audited source-owner count drifted");
+check(registry.counts.remaining48Audited===48,"Stage 4 count drifted");
+check(items.filter(w=>w.availability==="route-unverified").length===84,"Do not silently change route availability from source evidence");
+
 check(registry.counts.routeUIVerified===0,"Source testing must not pretend browser reader verification");
 const expectedAvailable=["published","route-unverified","external-link","source-only"];
 check(Object.keys(registry.counts.byAvailability).every(x=>expectedAvailable.includes(x)),"Unexpected availability term");
