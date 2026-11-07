@@ -139,6 +139,16 @@ try{
  assert.equal(liveProof.summaries.length,1,
   "Expected exactly one source-owned Postcommunion card: "+JSON.stringify(liveProof));
  const displayed=liveProof.summaries[0];
+ console.log("NOV07_POSTCOMMUNION_RENDER_DEBUG "+JSON.stringify({
+  source:liveProof.source.map(x=>({en:String(x.en).slice(0,95),lat:String(x.lat).slice(0,75)})),
+  candidates:liveProof.candidates,
+  cards:liveProof.summaries.map(x=>({
+    id:x.id,sourceSection:x.sourceSection,
+    rows:x.rows.map(y=>({group:y.group,role:y.role,latin:String(y.latin??"").slice(0,100),
+      vernacular:String(y.vernacular??"").slice(0,100)})),
+    rendered:String(x.renderedText).slice(0,500),
+  }))
+ }));
  assert.deepEqual([...new Set(displayed.rows.map(x=>x.group).filter(Number.isInteger))],
   [1,2],"Postcommunion card omitted a source-owned prayer group");
  for(const prayer of liveProof.source){
