@@ -337,20 +337,20 @@ try{
    await captures("04-approved-venue-profile");
 
    // A map pin is not a prerequisite for a publishable church card. Validate
-   // the real map → unpinned Directory → preview → full profile interaction
+   // the real map → list-only aliases/historical Directory → preview → full profile interaction
    // in each accepted 320/390/1440 language/viewport scenario.
    await venueExpanded.locator("[data-find-close-detail]").click();
    await page.locator("#ao-find-modular-root [data-find-query]").fill("");
    await page.locator('[data-find-filter="view"][data-find-filter-value="map"]').click();
    const unpinnedLink=page.locator(".aoTlmMapRail [data-tlm-map-open-unmapped]");
    await unpinnedLink.waitFor({state:"visible",timeout:30000});
-   assert.match(await unpinnedLink.innerText(),/175/,
-     "Map must explicitly expose all filtered address-only church profiles");
+   assert.match(await unpinnedLink.innerText(),/\b14\b/,
+     "Map must expose the 14 remaining alias/historical list-only records, not imply missing church pins");
    await unpinnedLink.click();
    await page.locator('.aoFindBody[data-find-view="list"][data-explore-lens="tlm"]')
      .waitFor({state:"visible",timeout:30000});
-   assert.equal(Number(await page.locator(".aoFindResultMeta strong").innerText()),175,
-     "Unpinned shortcut must apply the canonical ADDRESS_ONLY filter");
+   assert.equal(Number(await page.locator(".aoFindResultMeta strong").innerText()),14,
+     "List-only shortcut must apply canonical ADDRESS_ONLY without duplicate map geometry");
    const unpinnedCard=page.locator(".aoTlmVenueCard").first();
    await unpinnedCard.waitFor({state:"visible",timeout:12000});
    await unpinnedCard.click();

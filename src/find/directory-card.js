@@ -1,5 +1,6 @@
 // Exact-identity, approved-media-only Traditional Mass venue cards.
 import { massInstitutionEmblem } from "./institution-emblems.js";
+import {tlmApproximateMapLabel} from "./tlm-approximate-map-disclosure.js";
 const E=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const A=v=>Array.isArray(v)?v:[];
 const L=(lang,en,fr)=>lang==="fr"?fr:en;
@@ -200,6 +201,7 @@ export function renderDirectoryVenueCard(item,language="en"){
     ["SOURCE-REPORTED","UNCLASSIFIED","SCHEDULE UNVERIFIED","OFFICIAL · TIMES UNCONFIRMED"].includes(status);
   const schedule=L(language,provisional?"Mass times not independently verified":A(item?.sections).length?"Mass details available · check official source":"Mass times not verified",
     provisional?"Horaires non vérifiés indépendamment":A(item?.sections).length?"Horaires disponibles · vérifier à la source":"Horaires non vérifiés");
+  const illustrative=tlmApproximateMapLabel(item,language);
   return '<button type="button" class="aoFindCard aoExploreCard aoTlmVenueCard" data-explore-item="'+E(item.item_id)+'" data-explore-lens="tlm">'
     +'<span class="aoTlmVenueVisual" data-visual-kind="'+(photo?"photo":"fallback")+'">'
     +(photo?'<img loading="lazy" decoding="async" src="'+E(img.asset_path)+'" alt="'+E(language==="fr"?img.alt_fr:img.alt_en)+'">':renderDirectoryIdentityFallback(item,language,"card"))
@@ -208,7 +210,7 @@ export function renderDirectoryVenueCard(item,language="en"){
     +'<span>'+E(affiliation||groupLabel(item.community_id,language)||L(language,"Church / chapel","Église / chapelle"))+'</span></span>'
     +'<strong class="aoTlmVenueTitle">'+E(item.title||L(language,"Unnamed venue","Lieu sans nom"))+'</strong>'
     +'<span class="aoTlmVenueLocality">'+inlineIcon('place')+'<span>'+E(item.subtitle||"")+'</span></span>'
-    +'<span class="aoTlmVenueSchedule">'+inlineIcon('schedule')+'<span>'+E(schedule)+'</span></span>'
+    +'<span class="aoTlmVenueSchedule"'+(illustrative?' data-tlm-approximate-source="r28"':"")+'>'+inlineIcon('schedule')+'<span>'+E(illustrative||schedule)+'</span></span>'
     +(item.celebration_evidence?'<span class="aoTlmVenueSourceEdition" data-tlm-celebration-evidence="'+E(item.celebration_evidence.source_id)+'">'+
         E(L(language,"1962 Missal · specific Masses only","Missel de 1962 · certaines messes seulement"))+'</span>':'')
     +(status?'<span class="aoTlmVenueStatus">'+E(tlmVenueStatusLabel(status,language))+'</span>':'')

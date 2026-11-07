@@ -57,10 +57,10 @@ const initialMap=renderExploreToString(buildExploreViewModel({
   language:"en",lens:"tlm",view:"map",items:world,filters:{directoryGroup:"ALL",affiliations:[],query:""}
 }));
 assert.ok(initialMap.includes("data-tlm-map-open-unmapped"));
-assert.ok(initialMap.includes("Browse 14 unpinned church profiles"));
+assert.ok(initialMap.includes("Browse 14 list-only records"));
 const frenchRail=renderTlmMapResultRail({language:"fr",items:[],addressOnlyCount:14});
 assert.ok(frenchRail.includes("data-tlm-map-open-unmapped"));
-assert.ok(frenchRail.includes("14 fiches d’églises sans repère"));
+assert.ok(frenchRail.includes("14 fiches non cartographiées"));
 assert.doesNotMatch(renderTlmMapResultRail({items:[],addressOnlyCount:0}),/data-tlm-map-open-unmapped/);
 const list=renderExploreToString(buildExploreViewModel({
   language:"en",lens:"tlm",view:"list",items:unpinned,
@@ -76,4 +76,4 @@ const frenchPreview=renderExploreToString(buildExploreViewModel({
 }));
 assert.ok(frenchPreview.includes("Lieu physique répertorié"),
   "The French church preview must use its translated source-safety description");
-console.log("PASS TLM unpinned cards: 25/14 bilingual church cards and profiles remain accessible independently of map pins");
+console.log("PASS TLM list-only records: 14 bilingual alias/historical directory records remain accessible without duplicate physical-site pins");
