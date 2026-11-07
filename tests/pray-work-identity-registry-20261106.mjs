@@ -55,16 +55,31 @@ const browserBodyEvidence=JSON.parse(readFileSync(join(root,"data/pray/prayer-wo
 check(browserBodyEvidence.run.conclusion==="success","Source body evidence must refer to completed CI");
 const nineBrowserIds=browserBodyEvidence.bodyParity.sourceWorks.map(w=>w.id);
 check(nineBrowserIds.length===9 && new Set(nineBrowserIds).size===9,"Stage 6 has nine distinct directly compared work IDs");
+const stage7=JSON.parse(readFileSync(join(root,"data/pray/prayer-work-stage7-rendered-source-acceptance-20261107.v1.json"),"utf8"));
+check(stage7.run.conclusion==="success" && stage7.renderedExactBodyChecks===68 && stage7.failedChecks===0,"Stage 7 rendered witnesses require 68 passing checks");
+check(stage7.coverage.reduce((n,row)=>n+row.checks,0)===68,"Stage 7 per-source checks must sum to 68");
+check(stage7.coverage.filter(row=>row.embeddedOnly).map(row=>row.workId).join(",")==="pray.holy_name_litany","Embedded Holy Name test does not certify its independent reader");
+const stage7WorkIds=stage7.coverage.filter(row=>!row.embeddedOnly).map(row=>row.workId);
+check(stage7WorkIds.length===7 && new Set(stage7WorkIds).size===7,"Stage 7 requires seven independently evidenced source identities");
+check(nineBrowserIds.every(id=>!stage7WorkIds.includes(id)),"Stage 7 evidence must not duplicate Stage 6 source identities");
 const visibleBodyWorks=items.filter(w=>w.readerBodyEvidence);
-check(visibleBodyWorks.length===9,"Only nine source-owned works have actual sampled body comparison evidence");
-check(browserBodyEvidence.bodyParity.supplementalSourceWorks===8,"Only eight supplemental works have sampled visible-body checks");
+check(visibleBodyWorks.length===16,"Stage 6 nine + Stage 7 seven source-owned works require visible-body evidence");
+check(browserBodyEvidence.bodyParity.supplementalSourceWorks===8,"Stage 6 eight supplemental works have sampled visible-body checks");
 check(browserBodyEvidence.bodyParity.canonicalSourceReuse===1,"One canonical St Joseph prayer must remain shared");
-check(registry.counts.visibleBodyComparedWorks===9 && registry.counts.visibleBodyComparedSupplementalWorks===8,"Per-work browser body evidence count drifted");
+check(registry.counts.visibleBodyComparedWorks===16 && registry.counts.visibleBodyComparedSupplementalWorks===15 && registry.counts.visibleBodyCanonicalReuseWorks===1,"Per-work browser body evidence counts drifted");
+check(registry.counts.visibleBodyStage6Works===9 && registry.counts.visibleBodyStage7Works===7,"Stage-specific reader-body evidence counts drifted");
 for(const w of visibleBodyWorks){
- check(nineBrowserIds.includes(w.id),"Registry claims body-visible evidence for an untested work: "+w.id);
- check(w.readerBodyEvidence.auditRef==="data/pray/prayer-work-body-stage-browser-acceptance-20261107.v1.json#"+w.id,"Wrong browser body evidence pointer "+w.id);
+ const isStage6=nineBrowserIds.includes(w.id);
+ const isStage7=stage7WorkIds.includes(w.id);
+ check(isStage6||isStage7,"Registry claims body-visible evidence for an untested work: "+w.id);
+ const evidencePath=isStage6
+  ?"data/pray/prayer-work-body-stage-browser-acceptance-20261107.v1.json#"+w.id
+  :"data/pray/prayer-work-stage7-rendered-source-acceptance-20261107.v1.json#"+w.id;
+ check(w.readerBodyEvidence.auditRef===evidencePath,"Wrong browser body evidence pointer "+w.id);
+ if(isStage7)check(w.readerBodyEvidence.route===stage7.coverage.find(row=>row.workId===w.id)?.route,"Stage 7 reader owner mismatch "+w.id);
  check(w.readerBodyEvidence.historicalSourcePrintCertified===false&&w.readerBodyEvidence.sourceReaderCompleteCertified===false,"Visible text tests cannot certify full original editions "+w.id);
 }
+check(stage7.registryImportedToRuntime===false&&stage7.publicationChanges===false&&stage7.prayerTextChanges===false,"Stage 7 must remain research-only with no text or publication changes");
 check(browserBodyEvidence.availabilityPolicy?.registryImportedToRuntime===false,"Draft registry must not be treated as a production import");
 check(registry.counts.routeUIVerified===0,"Targeted body tests are not complete 84-work browser route certificates");
 const expectedAvailable=["published","route-unverified","external-link","source-only"];
