@@ -6,7 +6,7 @@ const complement = read("data/geography/research/sacred-atlas-243-complement-tri
 const first = read("data/geography/research/sacred-atlas-169-consolidated-admission-board-20261107.v1.json");
 const geo = read("data/geography/seed-registry.v1.json");
 assert.equal(board.schema, "AO_SACRED_ATLAS_150_SOURCE_SCOPE_SCREEN_V1");
-assert.equal(board.status, "RESEARCH_ONLY_THIRD_SOURCE_PASS_PARTIAL_NO_OWNER_APPROVAL");
+assert.equal(board.status, "RESEARCH_FINAL36_SOURCE_SCREEN_ALL_ROUTED_UNAPPROVED");
 assert.equal(board.records.length, 150);
 assert.equal(geo.places.length, 535, "No unauthorized Place admission");
 const lanes = complement.candidate_ids_by_lane;
@@ -40,12 +40,17 @@ for (const row of board.records) {
 }
 assert.equal(new Set(board.records.map(r=>r.candidate_id)).size, 150);
 assert.equal(screened, board.counts.independently_page_screened);
-assert.equal(screened, 114);
+assert.equal(screened, 150);
 assert.equal(board.counts.second_pass_source_upgrade, 38);
 assert.equal(board.review_batches.initial_page_level, 59);
 assert.equal(board.review_batches.second_source_upgrade, 38);
 assert.equal(board.review_batches.third_source_upgrade, 17);
-assert.equal(board.review_batches.remaining_unchecked, 36);
+assert.equal(board.review_batches.fourth_source_scope, 36);
+assert.equal(board.review_batches.remaining_unchecked, 0);
+assert.equal(board.review_batches.final36_site_corroborated, 31);
+assert.equal(board.review_batches.final36_identity_holds, 5);
+assert.equal(board.counts.fourth_pass_source_scope_reviews, 36);
+assert.equal(board.counts.final36_identity_holds, 5);
 for (const id of ["SG-INV-0397","SG-INV-0399","SG-INV-0598","SG-INV-0297","SG-INV-0630","SG-INV-0652","SG-INV-0670","SG-INV-0536"]) {
   const row = board.records.find(x => x.candidate_id === id);
   assert.ok(row, id);
@@ -59,6 +64,28 @@ assert.equal(board.counts.qualified, 33);
 assert.equal(board.counts.standard, 117);
 assert.equal(board.counts.approved, 0);
 assert.equal(board.counts.published, 0);
+const held = [
+  "CL-CD-20261105-28", "SG-INV-0023", "SG-INV-0471",
+  "SG-INV-0683", "CL-UG-20261105-26"
+];
+for (const id of held) {
+ const item = board.records.find(x=>x.candidate_id===id);
+ assert.ok(item, id);
+ assert.equal(item.web_evidence_review.review_batch, "ATLAS_FINAL36_SOURCE_SCOPE_20261107");
+ assert.equal(item.web_evidence_review.site_identity_corroborated, false);
+ assert.equal(item.web_evidence_review.independent_source_upgrade, false);
+ assert.equal(item.web_evidence_review.owner_admission_authorized, false);
+ assert.equal(item.physical_site_approved, false);
+ assert.equal(item.coordinate_approved, false);
+ assert.equal(item.publication_authorized, false);
+}
+const final36 = board.records.filter(x=>x.web_evidence_review.review_batch === "ATLAS_FINAL36_SOURCE_SCOPE_20261107");
+assert.equal(final36.length,36);
+assert.equal(final36.filter(x=>x.web_evidence_review.site_identity_corroborated).length,31);
+assert.equal(final36.filter(x=>!x.web_evidence_review.site_identity_corroborated).length,5);
+assert.ok(board.records.every(x=>x.web_evidence_review.page_level_research_performed));
+assert.equal(board.records.filter(x=>x.web_evidence_review.outcome==="NOT_YET_INDEPENDENTLY_PAGE_SCREENED").length,0);
+
 assert.equal(board.records.filter(x=>x.source_class_from_url==="THIRD_PARTY_CHURCH_DIRECTORY").length,72);
 for (const [id,outcome] of [
   ["SG-INV-0173","WRONG_BUILDING_SOURCE_CORRECTION"],
