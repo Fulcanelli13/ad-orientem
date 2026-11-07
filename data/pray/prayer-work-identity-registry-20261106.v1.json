@@ -57,11 +57,12 @@
     "routeUIVerified": 0,
     "supplementalSourceOwnerAudited": 84,
     "remaining48Audited": 48,
-    "visibleBodyComparedWorks": 16,
-    "visibleBodyComparedSupplementalWorks": 15,
+    "visibleBodyComparedWorks": 20,
+    "visibleBodyComparedSupplementalWorks": 19,
     "visibleBodyCanonicalReuseWorks": 1,
     "visibleBodyStage6Works": 9,
-    "visibleBodyStage7Works": 7
+    "visibleBodyStage7Works": 7,
+    "visibleBodyStage8Works": 4
   },
   "works": [
     {
@@ -6654,6 +6655,15 @@
         "sourceHash": "6d84262c99e7c3a5d6740a03532a93ea92c84fe4690557e0e45d6b9d57cd683d",
         "readerRouteDeclared": true,
         "sourceOnlyNotUIVerified": true
+      },
+      "readerBodyEvidence": {
+        "status": "all-primary-positions-visible-source-body-match-in-tested-contexts",
+        "auditRef": "data/pray/prayer-work-stage8-four-chaplets-acceptance-20261107.v1.json#pray.five_wounds",
+        "sourceId": "pray.five_wounds",
+        "route": "pray.five_wounds",
+        "scope": "30/30 repetition positions (EN/FR, two widths); selected Latin check",
+        "historicalSourcePrintCertified": false,
+        "sourceReaderCompleteCertified": false
       }
     },
     {
@@ -6711,6 +6721,15 @@
         "sourceHash": "fe07137e39ac75fe92232b74ee27e01a2ce71d328eb142c103bc6ee9ca1a0c6e",
         "readerRouteDeclared": true,
         "sourceOnlyNotUIVerified": true
+      },
+      "readerBodyEvidence": {
+        "status": "all-primary-positions-visible-source-body-match-in-tested-contexts",
+        "auditRef": "data/pray/prayer-work-stage8-four-chaplets-acceptance-20261107.v1.json#pray.precious_blood",
+        "sourceId": "pray.precious_blood",
+        "route": "pray.precious_blood",
+        "scope": "47/47 mystery positions plus original opening and closing (EN/FR, two widths); selected Latin",
+        "historicalSourcePrintCertified": false,
+        "sourceReaderCompleteCertified": false
       }
     },
     {
@@ -6766,6 +6785,15 @@
         "sourceHash": "0e29f344f3c56caf9654ae752a6268db1675ec733680fac4f46d9db31431f215",
         "readerRouteDeclared": true,
         "sourceOnlyNotUIVerified": true
+      },
+      "readerBodyEvidence": {
+        "status": "all-primary-positions-visible-source-body-match-in-tested-contexts",
+        "auditRef": "data/pray/prayer-work-stage8-four-chaplets-acceptance-20261107.v1.json#pray.little_crown",
+        "sourceId": "pray.little_crown",
+        "route": "pray.little_crown",
+        "scope": "15/15 aspirations and 15/15 prayers (EN/FR, two widths); selected Latin check",
+        "historicalSourcePrintCertified": false,
+        "sourceReaderCompleteCertified": false
       }
     },
     {
@@ -6821,6 +6849,15 @@
         "sourceHash": "6defad6e87daae888a3963585320dd7ebd7db038bbf850c0166f0253c6c9d1a1",
         "readerRouteDeclared": true,
         "sourceOnlyNotUIVerified": true
+      },
+      "readerBodyEvidence": {
+        "status": "all-primary-positions-visible-source-body-match-in-tested-contexts",
+        "auditRef": "data/pray/prayer-work-stage8-four-chaplets-acceptance-20261107.v1.json#pray.st_joseph_seven_sorrows",
+        "sourceId": "pray.st_joseph_seven_sorrows",
+        "route": "pray.st_joseph_seven_sorrows",
+        "scope": "7/7 English source supplications, 21/21 canonical repetitions and full four-part conclusion (EN/FR, two widths); selected Latin",
+        "historicalSourcePrintCertified": false,
+        "sourceReaderCompleteCertified": false
       }
     },
     {
