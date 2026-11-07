@@ -1,0 +1,298 @@
+{
+  "schema": "AO_SACRED_ART_PHASE44_TWENTY_THREE_PHOTO_SOURCE_BATCH_V1",
+  "as_of": "2026-11-07",
+  "scope": "23 owner-handpicked artworks from Phase43 no-prior-comparison backlog; 4 museum manifest objects + 19 selected photos under 600px; no live art changes",
+  "baseline": {
+    "handpicked": 177,
+    "identity_supported": 169,
+    "identity_holds": 8,
+    "prior_no_QA_queue": 136
+  },
+  "batch": {
+    "attempted": 23,
+    "distinct_ids": 23,
+    "iiif_manifest_records": 4,
+    "iiif_manifest_retrieved": 4,
+    "other_museum_page_records": 19,
+    "html_pages_retrieved": 18,
+    "pdf_only": 1,
+    "institutional_preview_files_downloaded": 30,
+    "source_photo_results": {
+      "exact_owner_selected_commons_retrieved": 2,
+      "blocked_by_Wikimedia_HTTP_429": 21,
+      "comparison_attempts_with_original_bytes": 2,
+      "new_same_painting_geometric_support": 1,
+      "geometric_051_SIFT_inliers": 1866,
+      "phase30_existing_184_geometric_inliers": 705
+    },
+    "preview_classification": {
+      "official_iiif_canvases": 4,
+      "additional_official_painting_previews_but_not_geometrically_certified": 7,
+      "museum_page_direct_linked_painting_images": 2,
+      "not_artwork_or_missing_image_previews": 10
+    },
+    "suitable_resolution_leads_only_not_approvals": 5,
+    "prospective_short_edge_improvements": [
+      {
+        "registry_id": "RECENT575::179",
+        "selected_px": 1099,
+        "museum_retrieved_px": 1400,
+        "identity": "BRUGES_ST_NICHOLAS_MUSEUM_CANVAS",
+        "exact_selected_photo_match": "NOT_RECHECKED"
+      },
+      {
+        "registry_id": "RECENT575::184",
+        "selected_px": 558,
+        "museum_retrieved_px": 2160,
+        "identity": "PARIS_LAZERGES_MUSEUM_CANVAS",
+        "exact_selected_photo_match": "PHASE30_GEOMETRICALLY_SUPPORTED_DARKER_TONALITY"
+      },
+      {
+        "registry_id": "RECENT575::279",
+        "selected_px": 957,
+        "museum_retrieved_px": 2120,
+        "identity": "PARIS_TISSOT_MUSEUM_CANVAS",
+        "exact_selected_photo_match": "SELECTED_REFERENCE_BLOCKED"
+      },
+      {
+        "registry_id": "RECENT575::506",
+        "selected_px": 512,
+        "museum_retrieved_px": 670,
+        "identity": "CLAUDE_VIGNON_GRENOBLE_MUSEUM_LINKED_IMAGE",
+        "exact_selected_photo_match": "SELECTED_REFERENCE_BLOCKED"
+      },
+      {
+        "registry_id": "RECENT575::518",
+        "selected_px": 512,
+        "museum_retrieved_px": 712,
+        "identity": "BERNARDO_STROZZI_GRENOBLE_MUSEUM_LINKED_IMAGE",
+        "exact_selected_photo_match": "SELECTED_REFERENCE_BLOCKED"
+      }
+    ]
+  },
+  "results": [
+    {
+      "registry_id": "RECENT575::014",
+      "tier": "P1_LOW_RES",
+      "source_status": "MUSEUM_SITE_LOGOS_OR_UNRELATED_GALLERY_IMAGES_NOT_EXACT_PAINTING",
+      "selected_photo_match": "SELECTED_REFERENCE_RETRIEVED_OFFICIAL_SITE_LOGO_NO_GEOMETRIC_MATCH",
+      "photo_rights": "NOT_CLEARED",
+      "replacement_approved": false
+    },
+    {
+      "registry_id": "RECENT575::051",
+      "tier": "P0_ALREADY_MAPPED_IIIF",
+      "source_status": "OFFICIAL_CANVAS_RETRIEVED",
+      "selected_photo_match": "STRONG_SIFT_1866_INLIERS",
+      "photo_rights": "MANIFEST_PDM_IMAGE_SCOPE_REVIEW",
+      "replacement_approved": false
+    },
+    {
+      "registry_id": "RECENT575::092",
+      "tier": "P1_LOW_RES",
+      "source_status": "MUSEUM_SITE_LOGOS_OR_UNRELATED_GALLERY_IMAGES_NOT_EXACT_PAINTING",
+      "selected_photo_match": "SELECTED_COMMONS_REFERENCE_BLOCKED_429",
+      "photo_rights": "NOT_CLEARED",
+      "replacement_approved": false
+    },
+    {
+      "registry_id": "RECENT575::179",
+      "tier": "P0_ALREADY_MAPPED_IIIF",
+      "source_status": "OFFICIAL_CANVAS_RETRIEVED",
+      "selected_photo_match": "SELECTED_COMMONS_REFERENCE_BLOCKED_429",
+      "photo_rights": "MANIFEST_PDM_IMAGE_SCOPE_REVIEW",
+      "replacement_approved": false
+    },
+    {
+      "registry_id": "RECENT575::184",
+      "tier": "P0_ALREADY_MAPPED_IIIF",
+      "source_status": "OFFICIAL_CANVAS_RETRIEVED",
+      "selected_photo_match": "PREVIOUS_PHASE30_SIFT_705_INLIERS_NOT_REPLAYED",
+      "photo_rights": "CANVAS_CC0_EXPLICIT_SCOPE_AND_FIDELITY_REVIEW",
+      "replacement_approved": false
+    },
+    {
+      "registry_id": "RECENT575::279",
+      "tier": "P0_ALREADY_MAPPED_IIIF",
+      "source_status": "OFFICIAL_CANVAS_RETRIEVED",
+      "selected_photo_match": "SELECTED_COMMONS_REFERENCE_BLOCKED_429",
+      "photo_rights": "CANVAS_CC0_EXPLICIT_SCOPE_AND_FIDELITY_REVIEW",
+      "replacement_approved": false
+    },
+    {
+      "registry_id": "RECENT575::330",
+      "tier": "P1_LOW_RES",
+      "source_status": "MUSEUM_SITE_LOGOS_OR_UNRELATED_GALLERY_IMAGES_NOT_EXACT_PAINTING",
+      "selected_photo_match": "SELECTED_COMMONS_REFERENCE_BLOCKED_429",
+      "photo_rights": "NOT_CLEARED",
+      "replacement_approved": false
+    },
+    {
+      "registry_id": "RECENT575::369",
+      "tier": "P1_LOW_RES",
+      "source_status": "INSTITUTIONAL_PDF_ONLY",
+      "selected_photo_match": "SELECTED_COMMONS_REFERENCE_BLOCKED_429",
+      "photo_rights": "NOT_CLEARED",
+      "replacement_approved": false
+    },
+    {
+      "registry_id": "RECENT575::392",
+      "tier": "P1_LOW_RES",
+      "source_status": "OFFICIAL_PAGE_ARTWORK_PREVIEW_FOUND_NOT_GEOMETRICALLY_VERIFIED",
+      "selected_photo_match": "SELECTED_COMMONS_REFERENCE_BLOCKED_429",
+      "photo_rights": "NOT_CLEARED",
+      "replacement_approved": false
+    },
+    {
+      "registry_id": "RECENT575::394",
+      "tier": "P1_LOW_RES",
+      "source_status": "OFFICIAL_PAGE_ARTWORK_PREVIEW_FOUND_NOT_GEOMETRICALLY_VERIFIED",
+      "selected_photo_match": "SELECTED_COMMONS_REFERENCE_BLOCKED_429",
+      "photo_rights": "NOT_CLEARED",
+      "replacement_approved": false
+    },
+    {
+      "registry_id": "RECENT575::407",
+      "tier": "P1_LOW_RES",
+      "source_status": "OFFICIAL_PAGE_ARTWORK_PREVIEW_FOUND_NOT_GEOMETRICALLY_VERIFIED",
+      "selected_photo_match": "SELECTED_COMMONS_REFERENCE_BLOCKED_429",
+      "photo_rights": "NOT_CLEARED",
+      "replacement_approved": false
+    },
+    {
+      "registry_id": "RECENT575::409",
+      "tier": "P1_LOW_RES",
+      "source_status": "MUSEUM_SITE_LOGOS_OR_UNRELATED_GALLERY_IMAGES_NOT_EXACT_PAINTING",
+      "selected_photo_match": "SELECTED_COMMONS_REFERENCE_BLOCKED_429",
+      "photo_rights": "NOT_CLEARED",
+      "replacement_approved": false
+    },
+    {
+      "registry_id": "RECENT575::410",
+      "tier": "P1_LOW_RES",
+      "source_status": "MUSEUM_SITE_LOGOS_OR_UNRELATED_GALLERY_IMAGES_NOT_EXACT_PAINTING",
+      "selected_photo_match": "SELECTED_COMMONS_REFERENCE_BLOCKED_429",
+      "photo_rights": "NOT_CLEARED",
+      "replacement_approved": false
+    },
+    {
+      "registry_id": "RECENT575::418",
+      "tier": "P1_LOW_RES",
+      "source_status": "OFFICIAL_PAGE_ARTWORK_PREVIEW_FOUND_NOT_GEOMETRICALLY_VERIFIED",
+      "selected_photo_match": "SELECTED_COMMONS_REFERENCE_BLOCKED_429",
+      "photo_rights": "NOT_CLEARED",
+      "replacement_approved": false
+    },
+    {
+      "registry_id": "RECENT575::425",
+      "tier": "P1_LOW_RES",
+      "source_status": "OFFICIAL_PAGE_ARTWORK_PREVIEW_FOUND_NOT_GEOMETRICALLY_VERIFIED",
+      "selected_photo_match": "SELECTED_COMMONS_REFERENCE_BLOCKED_429",
+      "photo_rights": "NOT_CLEARED",
+      "replacement_approved": false
+    },
+    {
+      "registry_id": "RECENT575::430",
+      "tier": "P1_LOW_RES",
+      "source_status": "NO_IMAGE_CANDIDATE",
+      "selected_photo_match": "SELECTED_COMMONS_REFERENCE_BLOCKED_429",
+      "photo_rights": "NOT_CLEARED",
+      "replacement_approved": false
+    },
+    {
+      "registry_id": "RECENT575::433",
+      "tier": "P1_LOW_RES",
+      "source_status": "OFFICIAL_PAGE_ARTWORK_PREVIEW_FOUND_NOT_GEOMETRICALLY_VERIFIED",
+      "selected_photo_match": "SELECTED_COMMONS_REFERENCE_BLOCKED_429",
+      "photo_rights": "NOT_CLEARED",
+      "replacement_approved": false
+    },
+    {
+      "registry_id": "RECENT575::450",
+      "tier": "P1_LOW_RES",
+      "source_status": "MUSEUM_IMAGE_RETRIEVAL_FAILED",
+      "selected_photo_match": "SELECTED_COMMONS_REFERENCE_BLOCKED_429",
+      "photo_rights": "NOT_CLEARED",
+      "replacement_approved": false
+    },
+    {
+      "registry_id": "RECENT575::484",
+      "tier": "P1_LOW_RES",
+      "source_status": "MUSEUM_SITE_LOGOS_OR_UNRELATED_GALLERY_IMAGES_NOT_EXACT_PAINTING",
+      "selected_photo_match": "SELECTED_COMMONS_REFERENCE_BLOCKED_429",
+      "photo_rights": "NOT_CLEARED",
+      "replacement_approved": false
+    },
+    {
+      "registry_id": "RECENT575::486",
+      "tier": "P1_LOW_RES",
+      "source_status": "OFFICIAL_PAGE_ARTWORK_PREVIEW_FOUND_NOT_GEOMETRICALLY_VERIFIED",
+      "selected_photo_match": "SELECTED_COMMONS_REFERENCE_BLOCKED_429",
+      "photo_rights": "NOT_CLEARED",
+      "replacement_approved": false
+    },
+    {
+      "registry_id": "RECENT575::487",
+      "tier": "P1_LOW_RES",
+      "source_status": "MUSEUM_SITE_LOGOS_OR_UNRELATED_GALLERY_IMAGES_NOT_EXACT_PAINTING",
+      "selected_photo_match": "SELECTED_COMMONS_REFERENCE_BLOCKED_429",
+      "photo_rights": "NOT_CLEARED",
+      "replacement_approved": false
+    },
+    {
+      "registry_id": "RECENT575::506",
+      "tier": "P1_LOW_RES",
+      "source_status": "EXACT_MUSEUM_WEBPAGE_LINKED_NAVIGART_IMAGE_RECOVERED",
+      "selected_photo_match": "SELECTED_COMMONS_REFERENCE_BLOCKED_429",
+      "photo_rights": "MUSEUM_PHOTOGRAPHER_CREDITED_NOT_CLEARED",
+      "museum_source": "https://images.navigart.fr/1000/5C/78/5C78573.jpg",
+      "selected_short_px": 512,
+      "museum_retrieved_short_px": 670,
+      "replacement_approved": false
+    },
+    {
+      "registry_id": "RECENT575::518",
+      "tier": "P1_LOW_RES",
+      "source_status": "EXACT_MUSEUM_WEBPAGE_LINKED_NAVIGART_IMAGE_RECOVERED",
+      "selected_photo_match": "SELECTED_COMMONS_REFERENCE_BLOCKED_429",
+      "photo_rights": "MUSEUM_PHOTOGRAPHER_CREDITED_NOT_CLEARED",
+      "museum_source": "https://images.navigart.fr/1000/5C/98/5C98224.jpg",
+      "selected_short_px": 512,
+      "museum_retrieved_short_px": 712,
+      "replacement_approved": false
+    }
+  ],
+  "evidence": {
+    "phase44_official_preview_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42403687711",
+    "phase44_official_preview_artifact": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42403687711/artifacts/13586338546",
+    "phase44b_selected_file_compare_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42403995604",
+    "phase44b_selected_file_compare_artifact": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42403995604/artifacts/13586314201",
+    "phase44c_Grenoble_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42404483374",
+    "phase44c_Grenoble_artifact": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42404483374/artifacts/13586389867",
+    "official_Grenoble_credit_source": "https://www.museedegrenoble.fr/oeuvre/155/1922-jesus-parmi-les-docteurs.htm",
+    "Toulouse_open_data_rights": "https://collections.augustins.toulouse.fr/fr/open-data"
+  },
+  "interpretation": {
+    "geometric_identity": "Strong 051 is same painting not necessarily better photograph; canvas shortest edge equals current image; no approval.",
+    "photo_source": "An HTML og:image showing site branding can have very large pixels but is unrelated to the artwork.",
+    "paris": "Lazerges nine canvases include details and technical/reverse images; selected front full view and photo darkness comparison required. Tissot selected Commons inaccessible.",
+    "grenoble": "Photographer credit J.-L. Lacroix; artwork public-domain statement not an automatic licence for the exact hosted photograph.",
+    "Joconde": "Seven government-page painting previews no higher pixel-edge than selected image, not replacement candidates as fetched.",
+    "rights": "Rights data and object copyright do not imply permission for a different museum photograph; crop, exposure, sharpness and exact visual match remain independent."
+  },
+  "publication": {
+    "image_replacements": 0,
+    "new_artwork_admissions": 0,
+    "calendar_pairing_edits": 0,
+    "prayer_pairing_edits": 0,
+    "original_handpicked_files_removed": 0
+  },
+  "next_queue": {
+    "previous_no_comparison": 136,
+    "one_new_comparison_supported": "RECENT575::051",
+    "other_22_covered_but_21_selected_refs_blocked": "NOT_COMPLETED_AS_EXACT_PHOTO_QA",
+    "remaining_unattempted_in_136": 113
+  },
+  "workbook": "Ad_Orientem_Phase44_177_Artwork_Bulk23_Source_Recovery_Master.xlsx",
+  "predecessor": "data/research/sacred-art/phase43-eight-hires-photo-qa-and-136-source-backlog-20261107.v1.json"
+}
