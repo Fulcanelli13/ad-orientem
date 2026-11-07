@@ -28,7 +28,7 @@ const hits=(value,path="",data={la:[],en:[],fr:[]},level=0)=>{
  if(Array.isArray(value)){for(let i=0;i<Math.min(value.length,60);i++)hits(value[i],path+"["+i+"]",data,level+1);return data}
  for(const [k,v] of Object.entries(value)){
    const next=path?path+"."+k:k;
-   if(bodyKey.test(k)&&typeof v==="string"&&v.trim().length>25)data[bodyLanguage(k)].push(next);
+   if(bodyKey.test(k)&&typeof v==="string"&&v.trim().length>25 && (level===0 || /(^|[.])(text|prayer|repeatText|opening|closing|collect|meditation|commonPrayers|versicle|response|words|days|aspirations|proper)[.\[]/i.test(path)))data[bodyLanguage(k)].push(next);
    if((k==="text"||k==="prayer"||k==="meditation"||k==="collect"||k==="repeatText")&&typeof v==="object")
      hits(v,next,data,level+1);
    else if(typeof v==="object"&&v!==null)hits(v,next,data,level+1);
@@ -67,8 +67,12 @@ for(const work of pending){
  else if(value!==undefined){
     sourceStatus=typeof value==="function"?"exported-controller":isArray?"exported-array":"exported-source";
     if(isArray&&className==="individual-source"){
+      if(value.every(v=>typeof v==="string"&&v.trim().length>0)){
+        sourceStatus="source-array-of-paragraphs";
+      }else{
       const x=value.find(v=>v?.id===work.id);
       if(x){value=x;sourceStatus="array-member-id-exact"}else faults.push({id:work.id,issue:"source array missing exact member"});
+      }
     }else if(value&&typeof value==="object"&&value.id){
       crosswalkId=value.id;sourceStatus=value.id===work.id?"object-id-exact":"object-id-is-source-alias";
     }
