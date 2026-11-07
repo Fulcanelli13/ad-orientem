@@ -55,8 +55,9 @@ for(const [id,text]of Object.entries(owners)){
 for(const [id,arr]of [["daily_morning_prayer",MORNING_PRAYER_SEQUENCE_V381],["daily_evening_prayer",EVENING_PRAYER_SEQUENCE_V381]]){
  const w=byId.get(id);assert.ok(w);assert.ok(Array.isArray(arr)&&arr.length>=10,"Daily order missing required source references "+id);
  const refs=arr.map(x=>x[0]);
- const missing=refs.filter(x=>!PRAY_CANONICAL_DATA_V435930.prayers[x]);
- add(w,"reference-only-daily-order",w.owner_module,{orderedRefs:refs,orderedRefsCount:refs.length,missingCanonicalRefs:missing,readerContainer:"pray.morning_evening",languages:{la:"composed-from-references",en:"composed-from-references",fr:"composed-from-references"}});
+ const missing=refs.filter(x=>!PRAY_CANONICAL_DATA_V435930.prayers[x] && !(x==="pray.nightly_examen" && traditionalRead.includes('"pray.nightly_examen":Object.freeze(')));
+ const referencedCompanions=refs.filter(x=>x==="pray.nightly_examen");
+ add(w,"reference-only-daily-order",w.owner_module,{orderedRefs:refs,orderedRefsCount:refs.length,referencedCompanions,missingUnownedRefs:missing,readerContainer:"pray.morning_evening",languages:{la:"composed-from-references",en:"composed-from-references",fr:"composed-from-references"}});
  if(missing.length)issues.push({id,problem:"daily order has missing canonical ID",missing});
 }
 assert.equal(Object.keys(owners).length+2,13);
