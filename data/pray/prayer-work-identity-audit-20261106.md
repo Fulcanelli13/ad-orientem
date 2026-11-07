@@ -273,3 +273,23 @@ Permanent index: `data/pray/prayer-work-body-stage-browser-acceptance-20261107.v
 **Remaining reader/body work:** individually inspect original text ownership and displayed witnesses for Golden Arrow, Montfort source components, historical meditation witnesses, Holy Face, the Stabat Mater partial text and the remaining supplemental works. A separate print/edition-language review is still required for historical sources. The nine-family library presentation stays unimplemented until explicitly approved.
 
 **Non-regression:** no production Prayer categories, Mass, Rosary, Confession, Adoration, Benediction, reader texts, homepage or deployments altered; the existing GitHub-only publication policy is unchanged. PR #2594 stays draft.
+
+## Stage 7 — rendered historical sources inside existing composite readers (7 November 2026)
+
+GitHub Actions **passed 68/68 exact rendered-source comparisons** in four Chromium environments (320/390px × EN/FR): https://github.com/Fulcanelli13/ad-orientem/actions/runs/42371997631. The checked commit was `eefee0ad9f6996f5d9a30496d5e31f86d4c7f1ee`. The test was `tests/pray-work-stage7-rendered-witnesses-20261107.mjs`; the short-retention artifact is `prayer-stage7-rendered-historical-witnesses` (ID 13573908301), and the durable evidence index is `data/pray/prayer-work-stage7-rendered-source-acceptance-20261107.v1.json`.
+
+| Original-reader source scope | Browser checks | Scope and restriction |
+| --- | ---: | --- |
+| Golden Arrow | 4 | Independent 1884 English and 1887 French recensions visible, no fabricated Latin |
+| Holy Face 1887 | 36 | All nine *complete English daily propers* at both widths and both interface languages; French interface discloses missing proper translation |
+| Montfort embedded three historical components | 12 | Original row order and texts for Holy Spirit, embedded Holy Name and Montfort §67 prayer; embedded Holy Name is **not** a standalone litany reader certificate |
+| Montfort 1863 consecration act | 4 | Complete English historical act on selected day 34; not mislabelled as a French historical witness |
+| Jesus–Mary–Joseph bedside invocations | 4 | All three invocations present in the original Dying Companion |
+| Proficiscere commendation | 8 | English/French editorial reading text, explicit provenance caveat and unchanged 1937 Latin text behind the real Latin switch |
+| **Total** | **68** | Four mobile/language configurations; zero failed assertions |
+
+Seven supplementary registry identities now have new **readerBodyEvidence** pointers. These do not change their `availability`, `verification` or published status; the embedded Holy Name role is explicitly not mistaken for a stand-alone source-reader certificate. The existing nine Stage-6 source-work proofs also remain intact. Source-body parity is not equivalent to independent print-source collation or licensing approval.
+
+**Stabat Mater, independently checked:** `PRAY_CANONICAL_DATA_V435930.stabat` contains exactly the first **13 tercets** and stops at *Fac me tecum pie flere*. The usual liturgical sequence contains **20 tercets**, with seven further tercets ending *Quando corpus morietur*; compare https://oremus.lat/en/prayer/stabat-mater. Do not label this source as a full sequence or replace it without an authorised complete source; no canonical reader text has been modified.
+
+**Further gates:** identify and certify the remaining supplemental work bodies one by one (including external historical sources and independent first-edition witnesses); verify actual offline use and all relevant source-language alternatives; address the known Stabat and Holy Face holds; reconcile this draft against advancing `main`; and only then consider integrating the approved nine-family library classification. No public app changes, generic Prayer renderer, merge or GitHub Pages deployment have occurred.
