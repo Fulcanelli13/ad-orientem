@@ -1,0 +1,41 @@
+name: Prayer registry Stage 8 — four complete chaplet source-body phone gates
+on:
+  push:
+    branches:
+      - research/prayer-work-identity-registry-20261106
+    paths:
+      - .github/workflows/pray-work-stage8-four-chaplets-20261107.yml
+      - tests/pray-work-stage8-four-chaplets-source-body-phone-20261107.mjs
+      - data/pray/prayer-work-identity-registry-20261106.v1.json
+  pull_request:
+    branches: [main]
+    paths:
+      - .github/workflows/pray-work-stage8-four-chaplets-20261107.yml
+      - tests/pray-work-stage8-four-chaplets-source-body-phone-20261107.mjs
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pray-stage8-four-chaplets-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  all-chaplet-source-bodies:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Compare all original chaplet stage bodies against owned sources
+        run: node tests/pray-work-stage8-four-chaplets-source-body-phone-20261107.mjs
+      - name: Retain actual browser source-parity evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prayer-stage8-four-chaplets-full-source-body
+          path: artifacts/pray-work-stage8-four-chaplets/four-chaplets-source-body.json
+          if-no-files-found: warn
+          retention-days: 7
