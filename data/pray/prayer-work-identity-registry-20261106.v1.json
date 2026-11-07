@@ -56,7 +56,10 @@
     "sourceBodyAudited": 36,
     "routeUIVerified": 0,
     "supplementalSourceOwnerAudited": 84,
-    "remaining48Audited": 48
+    "remaining48Audited": 48,
+    "visibleBodyComparedWorks": 9,
+    "visibleBodyComparedSupplementalWorks": 8,
+    "visibleBodyCanonicalReuseWorks": 1
   },
   "works": [
     {
@@ -2484,7 +2487,16 @@
       "classificationRule": "R5",
       "classificationStatus": "proposed",
       "parent": null,
-      "libraryListing": "existing-library"
+      "libraryListing": "existing-library",
+      "readerBodyEvidence": {
+        "status": "visible-source-body-match-in-sampled-contexts",
+        "auditRef": "data/pray/prayer-work-body-stage-browser-acceptance-20261107.v1.json#devotion_ad_te_beate_ioseph",
+        "scope": "2 phone widths × 2 UI languages, exact text and labelled original language; not full-source-edition or all-variant certification",
+        "sourceId": "devotion_ad_te_beate_ioseph",
+        "route": "pray.occasional_intercessions",
+        "historicalSourcePrintCertified": false,
+        "sourceReaderCompleteCertified": false
+      }
     },
     {
       "id": "devotion_st_anthony_lost_items",
@@ -3438,6 +3450,15 @@
         "sourceHash": "804e5e59789958cb72f9b990f47d36cf8e365a9e2be44ccacea1a032b9eb7f20",
         "readerRouteDeclared": null,
         "sourceOnlyNotUIVerified": true
+      },
+      "readerBodyEvidence": {
+        "status": "visible-source-body-match-in-sampled-contexts",
+        "auditRef": "data/pray/prayer-work-body-stage-browser-acceptance-20261107.v1.json#priest_intercession_eternal_priest_1914_en",
+        "scope": "2 phone widths × 2 UI languages, exact text and labelled original language; not full-source-edition or all-variant certification",
+        "sourceId": "priest_intercession_eternal_priest_1914_en",
+        "route": "pray.for_priests",
+        "historicalSourcePrintCertified": false,
+        "sourceReaderCompleteCertified": false
       }
     },
     {
@@ -3487,6 +3508,15 @@
         "sourceHash": "9f201f25bb1f5f1841d2148904c0c7f54d263497a8190880b34d82f5395f198d",
         "readerRouteDeclared": null,
         "sourceOnlyNotUIVerified": true
+      },
+      "readerBodyEvidence": {
+        "status": "visible-source-body-match-in-sampled-contexts",
+        "auditRef": "data/pray/prayer-work-body-stage-browser-acceptance-20261107.v1.json#priest_intercession_vocations_raccolta_1910",
+        "scope": "2 phone widths × 2 UI languages, exact text and labelled original language; not full-source-edition or all-variant certification",
+        "sourceId": "priest_intercession_vocations_raccolta_1910",
+        "route": "pray.for_priests",
+        "historicalSourcePrintCertified": false,
+        "sourceReaderCompleteCertified": false
       }
     },
     {
@@ -3536,6 +3566,15 @@
         "sourceHash": "b4cf8f94d01e42b26dd753c43a12aabddd1d1925c3d36cab054a51020ba5d0fb",
         "readerRouteDeclared": null,
         "sourceOnlyNotUIVerified": true
+      },
+      "readerBodyEvidence": {
+        "status": "visible-source-body-match-in-sampled-contexts",
+        "auditRef": "data/pray/prayer-work-body-stage-browser-acceptance-20261107.v1.json#priest_intercession_perseverance_raccolta_1910",
+        "scope": "2 phone widths × 2 UI languages, exact text and labelled original language; not full-source-edition or all-variant certification",
+        "sourceId": "priest_intercession_perseverance_raccolta_1910",
+        "route": "pray.for_priests",
+        "historicalSourcePrintCertified": false,
+        "sourceReaderCompleteCertified": false
       }
     },
     {
@@ -3679,6 +3718,15 @@
         "sourceHash": "76452f289ed0ace5b94e8d90fb1964ea58d1273d96cfbb9da72eca29ed256bf6",
         "readerRouteDeclared": null,
         "sourceOnlyNotUIVerified": true
+      },
+      "readerBodyEvidence": {
+        "status": "visible-source-body-match-in-sampled-contexts",
+        "auditRef": "data/pray/prayer-work-body-stage-browser-acceptance-20261107.v1.json#occasional_for_sick_lasance_1911_en",
+        "scope": "2 phone widths × 2 UI languages, exact text and labelled original language; not full-source-edition or all-variant certification",
+        "sourceId": "occasional_for_sick_lasance_1911_en",
+        "route": "pray.occasional_intercessions",
+        "historicalSourcePrintCertified": false,
+        "sourceReaderCompleteCertified": false
       }
     },
     {
@@ -3728,6 +3776,15 @@
         "sourceHash": "cd6106c53b501262ea0c59f17f9bc32f33ea69b1e31eb735ed99b37542397b65",
         "readerRouteDeclared": null,
         "sourceOnlyNotUIVerified": true
+      },
+      "readerBodyEvidence": {
+        "status": "visible-source-body-match-in-sampled-contexts",
+        "auditRef": "data/pray/prayer-work-body-stage-browser-acceptance-20261107.v1.json#occasional_holy_family_lasance_1910_en",
+        "scope": "2 phone widths × 2 UI languages, exact text and labelled original language; not full-source-edition or all-variant certification",
+        "sourceId": "occasional_holy_family_lasance_1910_en",
+        "route": "pray.occasional_intercessions",
+        "historicalSourcePrintCertified": false,
+        "sourceReaderCompleteCertified": false
       }
     },
     {
@@ -3777,6 +3834,15 @@
         "sourceHash": "07964e7a2f9d2013e98965dda2fbe0648bd06e02f127062793d838ee9d28632e",
         "readerRouteDeclared": null,
         "sourceOnlyNotUIVerified": true
+      },
+      "readerBodyEvidence": {
+        "status": "visible-source-body-match-in-sampled-contexts",
+        "auditRef": "data/pray/prayer-work-body-stage-browser-acceptance-20261107.v1.json#occasional_peace_raccolta_1910_18",
+        "scope": "2 phone widths × 2 UI languages, exact text and labelled original language; not full-source-edition or all-variant certification",
+        "sourceId": "occasional_peace_raccolta_1910_18",
+        "route": "pray.occasional_intercessions",
+        "historicalSourcePrintCertified": false,
+        "sourceReaderCompleteCertified": false
       }
     },
     {
@@ -3826,6 +3892,15 @@
         "sourceHash": "cb198fe0d9d0fe526b8932b07954876e647af049a37f0dc654139ee3bb8d49ac",
         "readerRouteDeclared": null,
         "sourceOnlyNotUIVerified": true
+      },
+      "readerBodyEvidence": {
+        "status": "visible-source-body-match-in-sampled-contexts",
+        "auditRef": "data/pray/prayer-work-body-stage-browser-acceptance-20261107.v1.json#occasional_travel_lasance_1911_en",
+        "scope": "2 phone widths × 2 UI languages, exact text and labelled original language; not full-source-edition or all-variant certification",
+        "sourceId": "occasional_travel_lasance_1911_en",
+        "route": "pray.occasional_intercessions",
+        "historicalSourcePrintCertified": false,
+        "sourceReaderCompleteCertified": false
       }
     },
     {
@@ -3875,6 +3950,15 @@
         "sourceHash": "6a63c566e8285129f229710d284e58fb66db8c176848e1a7a74e0e1bf4eac559",
         "readerRouteDeclared": null,
         "sourceOnlyNotUIVerified": true
+      },
+      "readerBodyEvidence": {
+        "status": "visible-source-body-match-in-sampled-contexts",
+        "auditRef": "data/pray/prayer-work-body-stage-browser-acceptance-20261107.v1.json#occasional_discernment_lasance_1911_en",
+        "scope": "2 phone widths × 2 UI languages, exact text and labelled original language; not full-source-edition or all-variant certification",
+        "sourceId": "occasional_discernment_lasance_1911_en",
+        "route": "pray.occasional_intercessions",
+        "historicalSourcePrintCertified": false,
+        "sourceReaderCompleteCertified": false
       }
     },
     {
