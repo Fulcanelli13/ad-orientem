@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import {libraryVariantFamily} from "../src/pray/library-variant-groups.js";
 import {readFileSync} from "node:fs";
 import http from "node:http";
-import {readFile} from "node:fs/promises";
+import {readFile,mkdir} from "node:fs/promises";
 import {extname,resolve,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
@@ -503,10 +503,15 @@ try{
  assert.match(await fullStabat.locator(".aoP435930StationStabatCompleteVerse").nth(18).innerText(),/Christe, cum sit hinc exire/);
  assert.match(await fullStabat.locator(".aoP435930StationStabatCompleteVerse").nth(19).innerText(),/Quando corpus morietur/);
  assert.ok((await fullStabat.locator('a[href*="ordo.fsspx.org"]').count())===1,"Source link missing");
+ await mkdir(resolve(root,"artifacts/pray-contemplative-daily"),{recursive:true});
  for(const width of [320,390]){
   await page.setViewportSize({width,height:844});
   const geometry=await page.evaluate(()=>({client:document.documentElement.clientWidth,scroll:document.documentElement.scrollWidth}));
   assert.ok(geometry.scroll<=geometry.client+2,width+"px complete Stabat folio causes horizontal overflow");
+  await fullStabat.locator(".aoP435930StationStabatCompleteVerse").first().scrollIntoViewIfNeeded();
+  await page.screenshot({path:resolve(root,"artifacts/pray-contemplative-daily/stabat-full-opening-"+width+".png"),animations:"disabled"});
+  await fullStabat.locator(".aoP435930StationStabatCompleteVerse").last().scrollIntoViewIfNeeded();
+  await page.screenshot({path:resolve(root,"artifacts/pray-contemplative-daily/stabat-full-closing-"+width+".png"),animations:"disabled"});
  }
 
 
