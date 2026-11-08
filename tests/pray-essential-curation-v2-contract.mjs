@@ -85,6 +85,14 @@ test("Correct titles are presentation-only; English and French labels are distin
   "The prayer text itself must remain Latin on the first face");
 });
 
+test("Narrow Essential tiles abbreviate only the displayed Latin incipit",()=>{
+ const html=claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2,prayers:texts,esc:escape,locale:"en"});
+ const creed=html.split('data-p435930-lib-open="foundations_apostles_creed"')[1]?.split("</button>")[0]||"";
+ assert.match(creed,/<small lang="la">Credo in Deum<\/small>/);
+ assert.match(creed,/<i lang="la">Credo in Deum<\/i>/);
+ assert.match(texts.foundations_apostles_creed.la,/Credo in Deum Patrem omnipotentem/);
+});
+
 test("Moving a prayer never breaks its original reversible Holy Card reader",()=>{
  for(const id of ESSENTIAL_HOLY_CARD_IDS_V1){
   const p=texts[id];
