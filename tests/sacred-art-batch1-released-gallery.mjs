@@ -5,6 +5,30 @@ import { SACRED_ART_RELEASED_GALLERY_V1, releasedGalleryAt, releasedGalleryBySou
 import { showC3ArtInfo, openC3ReleasedArtGallery, stepC3ReleasedArtGallery, returnFromC3ReleasedArtGallery, closeC3ArtInfo } from "../src/home/c3-gallery.js";
 
 const selected = JSON.parse(readFileSync(new URL("../data/calendar/sacred-art-2026-batch01-60-exact-photo-owner-decisions-20261102.v1.json", import.meta.url),"utf8"));
+const batch=JSON.parse(readFileSync(new URL("../data/artwork/sacred-art-batch1-25-release-progress.v1.json",import.meta.url),"utf8"));
+assert.equal(batch.proposedBatchTarget,25);
+assert.equal(batch.counts.previouslyReleasedPhotoEntries,16);
+assert.equal(batch.counts.photoCandidatesInNextNine,9);
+assert.equal(batch.counts.totalBatchWorkItems,25);
+assert.equal(batch.counts.newlyReleasedInThisChange,0);
+assert.equal(batch.counts.unreleasedNewWorks,9);
+assert.equal(batch.counts.nineQueueTotalApprovedPrayerPositions,41);
+assert.equal(batch.productionAlreadyReleased.length,16);
+assert.equal(batch.nextNineSourcePhotographWorkQueue.length,9);
+for(const photo of batch.productionAlreadyReleased){
+  const source=RELEASED_MODULE_PAINTINGS[photo.moduleId];
+  assert.ok(source,"Known release registry required for "+photo.id);
+  assert.equal(photo.source,source.source);
+  assert.equal(photo.localImage,source.image);
+  assert.equal(photo.publiclyRenderEligibleNow,true);
+  assert.equal(photo.newPhotoRelease,false);
+}
+for(const painting of batch.nextNineSourcePhotographWorkQueue){
+  assert.equal(painting.explicitlyNotReleaseApproved,true);
+  assert.equal(painting.appImage,null);
+  assert.ok(painting.blockers.includes("EXACT_PHOTO_RIGHTS_QA_AND_VISUAL_CHECK_PENDING"));
+  assert.ok(painting.selectedSlotIds.length===painting.knownSelectedSlotCount);
+}
 assert.equal(selected.counts.approve,25);
 assert.equal(selected.counts.reject,35);
 assert.ok(selected.rows.every(x=>x.appPublicationApproved===false),"The selected 25 cannot become released through gallery indexing");
