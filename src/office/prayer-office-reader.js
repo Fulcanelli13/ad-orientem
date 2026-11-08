@@ -6,6 +6,7 @@
 import {ROMAN_OFFICE_HOURS,officeRouteState} from "./office-route-state.js";
 import {officePrivateSourceReviewAllowed} from "./office-private-preview-gate.js";
 import {installOfficeShortcut} from "../pray/browser-entry.js";
+import {latinComplineReleaseEligibility} from "./latin-compline-public-release.js";
 const STYLE=`
 /* The legacy Prayer header is positioned above the mount even with hidden
    set by its donor. Suppress it only while the native Office is in the DOM. */
@@ -34,6 +35,12 @@ const STYLE=`
 .aoOfficeReader .aoOfPrivateReview .aoOfFrameControls{display:flex;justify-content:space-between;align-items:center;gap:8px}
 .aoOfficeReader .aoOfPrivateReview .aoOfFrameTop{display:flex;justify-content:space-between;gap:8px}
 .aoOfficeReader .aoOfPrivateReview .aoOfProvenance{display:block;font:11px/1.4 system-ui;overflow-wrap:anywhere}
+.aoOfficeReader .aoOfPublicLatin{border:1px solid #5f5547;border-radius:12px;padding:13px;margin:14px 0;min-width:0}
+.aoOfficeReader .aoOfPublicLatin select{min-height:44px;background:#101821;color:#e9e4d9;border:1px solid #5f5547;border-radius:9px;padding:9px 12px}
+.aoOfficeReader .aoOfPublicLatin .aoOfFrame{padding:14px 2px;overflow-wrap:anywhere}
+.aoOfficeReader .aoOfPublicLatin .aoOfFrameControls{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.aoOfficeReader .aoOfPublicLatin .aoOfProvenance{display:block;font:11px/1.45 system-ui;color:#c9ad78;overflow-wrap:anywhere}
+.aoOfficeReader .aoOfPublicLatin .aoOfSourceLine{margin:12px 0;font:400 18px/1.65 Georgia,serif;color:#e9e4d9}
 
 `;
 function todayLocal(){
@@ -90,6 +97,7 @@ export function openDivineOfficeReader(win=globalThis,{date=todayLocal()}={}){
  const back=d.createElement("button");back.type="button";
  back.textContent="← Prayer";back.setAttribute("aria-label","Return to Prayer");
  back.addEventListener("click",()=>{
+   publicLatin?.dispose?.();
    localReview?.instance?.dispose?.();
    host.remove();
    restoreBackground();
@@ -121,6 +129,8 @@ export function openDivineOfficeReader(win=globalThis,{date=todayLocal()}={}){
  }
  const status=d.createElement("div");status.className="aoOfStatus";
  status.setAttribute("aria-live","polite");host.append(status);
+ const publicSlot=d.createElement("div");publicSlot.className="aoOfPublicLatin";
+ let publicLatin=null;
  // Only an explicit localhost-only development session may fetch noncertified
  // Office source text. Never expose this affordance on GitHub Pages.
  let localReview=null;
@@ -175,18 +185,43 @@ export function openDivineOfficeReader(win=globalThis,{date=todayLocal()}={}){
      b.setAttribute("aria-pressed",String(b.dataset.officeHour===hour));
    }
    const current=officeRouteState({date:input.value,hour});
+   publicLatin?.dispose?.();publicLatin=null;
+   publicSlot.remove();publicSlot.replaceChildren();
    status.replaceChildren();
    const heading=d.createElement("strong");heading.textContent=
+     current.status==="RELEASED"?"Latin Compline · available":
      current.status==="SOURCE_RESEARCH_ONLY"?"Source pilot prepared · not yet published":"Hour not yet available";
    status.append(heading);
    const msg=d.createElement("p");
-   msg.textContent=current.status==="SOURCE_RESEARCH_ONLY"
+   msg.textContent=current.status==="RELEASED"
+     ?"Certified Latin Compline for this date; other Hours and languages remain independently gated."
+     :current.status==="SOURCE_RESEARCH_ONLY"
      ?(current.label+" · This Office remains held for independent rubrical, translation and publication checks. No substitute text will be displayed.")
      :"The selected date and Hour have not passed independent Office source and rubrical verification.";
    status.append(msg);
    const metadata=d.createElement("small");metadata.textContent=
-      "Office date: "+(current.officeDate||"unresolved")+" · Status: "+current.reason+" · Reading enabled: no · Published: no";
+      "Office date: "+(current.officeDate||"unresolved")+" · Status: "+current.reason+
+      " · Reading enabled: "+(current.readingEnabled?"yes":"no")+
+      " · Published: "+(current.published?"yes":"no");
    status.append(metadata);
+   const release=latinComplineReleaseEligibility({date:input.value,hour});
+   if(current.status==="RELEASED"&&release.status==="ELIGIBLE"){
+    const button=d.createElement("button");button.type="button";
+    button.textContent="Read Latin Compline";
+    publicSlot.append(button);status.after(publicSlot);
+    button.addEventListener("click",async()=>{
+     if(publicLatin){publicLatin.dispose();publicLatin=null;
+      button.textContent="Read Latin Compline";return}
+     button.disabled=true;
+     try{
+      const {mountPublishedLatinCompline}=await import("./latin-compline-public-page.js");
+      if(!host.isConnected||input.value!==release.date||hour!=="COMPLINE")return;
+      const reading=d.createElement("div");publicSlot.append(reading);
+      publicLatin=mountPublishedLatinCompline(reading,{win,date:release.date});
+      button.textContent="Close Latin Compline";
+     }finally{button.disabled=false}
+    });
+   }
  }
  input.addEventListener("change",draw);
  mount.prepend(host);
