@@ -22,7 +22,7 @@ const server=http.createServer(async(req,res)=>{
  }catch(error){res.writeHead(error?.code==="ENOENT"?404:500);res.end(String(error?.message||error))}
 });
 await new Promise((yes,no)=>{server.once("error",no);server.listen(0,"127.0.0.1",yes)});
-const normalize=v=>String(v??"").normalize("NFC").replace(/\\s+/g,"");
+const normalize=v=>String(v??"").normalize("NFC").replace(/\s+/g,"");
 const scope="#aoPray435930.open ";
 let browser,checked=0;
 try{
