@@ -118,10 +118,21 @@ export function select1962CommemorationsForMassForm({
   // physical main.path. Its selected Proper legitimately inherits a Sunday
   // source. Trust that exact RESOLVED source identity only in the narrow
   // post-Pentecost ordinary-feria category, never in a saint/votive case.
+  // Other nonconventual IV-class Roman ferias (before Lent, during
+  // Eastertide, post-Pentecost continuation, and the 5 January feria).
+  // Their Calendar main owner is :feria:4:w without a physical main.path,
+  // while the *resolved* Proper inherits a named seasonal/Octave source.
+  // Require a narrowly identified original template, never infer that
+  // any arbitrary source on a generic date is a lawful principal Mass.
+  const fourthClassFeriaSource=String(data.sourcePath??envelope?.sourcePath??"");
+  const ordinaryGenericFeriaSource=main?.path==null&&
+    String(main?.id??"")===":feria:4:w"&&Number(main.rank)===4&&
+    (/^Tempora\/(?:Quadp[0-9]+-0|Pasc[0-9]+-0|Pent[0-9]+-0[ar]?)$/.test(fourthClassFeriaSource)||
+     (calendarResolution.date==="2026-01-05"&&fourthClassFeriaSource==="Sancti/01-01"));
   const inheritedPentecostFeria=main?.path==null&&
     String(main?.id??"")===":feria:4:w"&&Number(main.rank)===4&&
     /^Tempora\/Pent[0-9]{1,2}-0$/.test(String(data.sourcePath??envelope?.sourcePath??""));
-  const matchedPrincipalSource=inheritedPentecostFeria||
+  const matchedPrincipalSource=inheritedPentecostFeria||ordinaryGenericFeriaSource||
     canonical(data.sourcePath??envelope?.sourcePath)===canonical(main.path);
   const identified=comms.length===1&&sources.length===1&&
     canonical(namedSource.path)===observedPath&&admissiblePrayerSource&&
@@ -188,8 +199,8 @@ export function select1962CommemorationsForMassForm({
   // of II/III class but omitted in a non-conventual sung Mass. This is
   // source-owned, not a feast-name lookup or an institution's local Ordo.
   // Class IV ferias without an identified principal source stay withheld.
-  const typedSanctoralMain=/^sancti:[0-9]{2}-[0-9]{2}:[23]:/i.test(mainId)&&
-    /^Sancti\/[0-9]{2}-[0-9]{2}$/.test(String(main.path??""))&&
+  const typedSanctoralMain=/^sancti:[0-9]{2}-[0-9]{2}[a-z]*:[23]:/i.test(mainId)&&
+    /^Sancti\/[0-9]{2}-[0-9]{2}[a-z]*$/.test(String(main.path??""))&&
     [2,3].includes(Number(main.rank));
   const typedAdventMain=/^tempora:Adv[1-4]-[1-6]:3:/i.test(mainId)&&
     /^Tempora\/Adv[1-4]-[1-6]$/.test(String(main.path??""))&&
@@ -206,6 +217,28 @@ export function select1962CommemorationsForMassForm({
     /^Tempora\/Quad[1-5]-[1-6]$/.test(String(main.path??""))&&
     [3,4].includes(Number(only.rank))&&!only.privileged&&
     /^sancti:[0-9]{2}-[0-9]{2}[a-z]*:[34]:/i.test(commId)&&
+    /^Sancti\/[0-9]{2}-[0-9]{2}[a-z]*$/.test(String(only.path??""));
+  // 1960 General Rubrics §§78–79, 108–114: Saturday BVM is the
+  // selected IV-class Mass when the IV-class Saturday office permits it.
+  // Its selected Commune C10c/C10t source is distinct from a conventual
+  // or independently requested BVM votive Mass; the earlier celebrationId
+  // guard excludes observed/local alternatives. A named IV-class saint
+  // is an ordinary commemoration, retained in Low but not in cantu.
+  const saturday=new Date(String(calendarResolution.date)+"T12:00:00Z")
+    .getUTCDay()===6;
+  const saturdayBvmSource=saturday&&!sunday&&Number(main.rank)===4&&
+    /^commune:C10[ct]:4:/i.test(mainId)&&
+    /^Commune\/C10[ct]$/.test(String(main.path??""))&&
+    /^Sancti\/[0-9]{2}-[0-9]{2}[a-z]*$/.test(String(only.path??""))&&
+    Number(only.rank)===4&&!only.privileged&&
+    /^sancti:[0-9]{2}-[0-9]{2}[a-z]*:4:/i.test(commId);
+  // A source-owned ordinary IV-class saint on a *generic* IV-class feria,
+  // with the original Collect, Secret and Postcommunion independently
+  // present in all three languages. Main source is the genuine inherited
+  // Proper, not the saint's own orphaned commemorative text.
+  const ordinaryGenericFourthClassFeria=ordinaryGenericFeriaSource&&
+    !sunday&&Number(only.rank)===4&&!only.privileged&&
+    /^sancti:[0-9]{2}-[0-9]{2}[a-z]*:4:/i.test(commId)&&
     /^Sancti\/[0-9]{2}-[0-9]{2}[a-z]*$/.test(String(only.path??""));
   // Ordinary commemoration on a IV-class feria after Pentecost.
   // General Rubrics §§108–114: source-identified ordinary commemorations
@@ -232,7 +265,9 @@ export function select1962CommemorationsForMassForm({
     ordinarySunday?"II_CLASS_SUNDAY_SINGLE_II_CLASS_SANCTORAL_FEAST_NON_CONVENTUAL":
     ordinaryFourthClassSaint?"NON_SUNDAY_II_III_CLASS_SINGLE_IV_CLASS_SANCTORAL_COMMEMORATION":
     ordinaryPentecostFeria?"PENTECOST_SEASON_IV_CLASS_FERIA_ORDINARY_COMMEMORATION":
-    ordinaryLentenFeria?"LENT_PASSION_III_CLASS_FERIA_ORDINARY_COMMEMORATION":null;
+    ordinaryLentenFeria?"LENT_PASSION_III_CLASS_FERIA_ORDINARY_COMMEMORATION":
+    saturdayBvmSource?"SATURDAY_BVM_IV_CLASS_ORDINARY_SANCTORAL_COMMEMORATION":
+    ordinaryGenericFourthClassFeria?"GENERIC_IV_CLASS_FERIA_ORDINARY_SANCTORAL_COMMEMORATION":null;
   if(!scope)return untouched(proper,"RUBRICAL_CLASSIFICATION_PENDING");
   if(!GROUPS.every(key=>array(data[key]).length===2&&data[key].every(sourceText)))
     return untouched(proper,"ORATION_SOURCE_INCOMPLETE");
@@ -251,6 +286,10 @@ export function select1962CommemorationsForMassForm({
         ["1960_GENERAL_RUBRICS_25_A_111_A_D_112_113_114","1960_MISSAL_RUBRICS_433_434"]:
       ordinaryFourthClassSaint?
         ["1960_GENERAL_RUBRICS_111_C_D_112_113","1960_MISSAL_RUBRICS_433_434"]:
+      saturdayBvmSource?
+        ["1960_GENERAL_RUBRICS_78_79_111_D_112_113_114","1960_MISSAL_RUBRICS_433_434"]:
+      ordinaryGenericFourthClassFeria?
+        ["1960_GENERAL_RUBRICS_108_111_D_112_113_114","1960_MISSAL_RUBRICS_433_434"]:
       ordinaryPentecostFeria?
         ["1960_GENERAL_RUBRICS_108_111_D_112_113_114","1960_MISSAL_RUBRICS_433_434"]:
         ["1960_GENERAL_RUBRICS_108_111_113","1960_MISSAL_RUBRICS_433_434"]),
