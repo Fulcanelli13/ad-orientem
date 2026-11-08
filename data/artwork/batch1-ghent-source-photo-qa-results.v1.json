@@ -1,0 +1,105 @@
+{
+  "schema": "AO_SACRED_ART_BATCH1_GHENT_THREE_SOURCE_PHOTO_BYTE_QA_V1",
+  "verified_at": "2026-11-08T17:45:00Z",
+  "run": {
+    "id": 42506405562,
+    "conclusion": "success",
+    "head_sha": "c8167b291783e597f0b83370121461b4eff46bb8",
+    "url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42506405562",
+    "artifact_id": 13628005113,
+    "artifact_url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42506405562/artifacts/13628005113",
+    "artifact_retention_days": 14
+  },
+  "object": {
+    "id": "artwork-pending:07",
+    "title": "Adoration of the Mystic Lamb",
+    "part_of": "Ghent Altarpiece",
+    "location": "St Bavo's Cathedral Ghent",
+    "artist": "Hubert and Jan van Eyck",
+    "exact_subject": "central lower panel",
+    "existing_prayer_slots": 3,
+    "source_artwork_url": "https://canon.codart.nl/artwork/ghent-altarpiece/"
+  },
+  "source_photos": [
+    {
+      "id": "ghent-codart-2016",
+      "declared_source": "CODART (per Commons metadata)",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Ghent_altarpiece,_middle_panel,_by_Hubert_van_Eyck.jpg",
+      "pixels": [
+        2735,
+        1564
+      ],
+      "bytes": 3737040,
+      "sha256": "5af9852d1ad19c66a0bedcdd415fe7d26510ae32e15580ec2b70fadf7f21136b",
+      "status": "SOURCE_BYTES_VERIFIED_PHOTO_NOT_APPROVED"
+    },
+    {
+      "id": "ghent-yorck-project",
+      "declared_source": "Yorck Project / DIRECTMEDIA",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Hubert_van_Eyck_004.jpg",
+      "pixels": [
+        6739,
+        3791
+      ],
+      "bytes": 21212539,
+      "sha256": "a780bd15233bcc72f17c0a70fbaf44f0fce0ad85378a087609d8938ea668c681",
+      "status": "SOURCE_BYTES_VERIFIED_PHOTO_NOT_APPROVED"
+    },
+    {
+      "id": "ghent-wga",
+      "declared_source": "Web Gallery of Art",
+      "commons_page": "https://commons.wikimedia.org/wiki/File:Genter_altar,_lamb_adoration_-_Jan_van_Eyck.jpg",
+      "pixels": [
+        2878,
+        1799
+      ],
+      "bytes": 7387638,
+      "sha256": "d6cc58b42bd7878ca1ed912c27a9c9fd608819c98bed27030999041c44cad08c",
+      "status": "SOURCE_BYTES_VERIFIED_PHOTO_NOT_APPROVED"
+    }
+  ],
+  "independent_artifact_verification": {
+    "zip_crc_pass": true,
+    "photo_dimensions_rechecked": true,
+    "original_sha256_rechecked": true,
+    "three_photo_contact_sheet_inspected": true,
+    "three_exact_panel_compositions_visible": true,
+    "all_show_historical_look_not_restored_2020_cleared": false
+  },
+  "visual_observations": [
+    "All three images visibly depict the same Adoration panel with lamb, altar, fountain, kneeling worshippers and surrounding groups.",
+    "The CODART and Yorck editions have broadly similar framing and muted colour, with differences in contrast and rendering.",
+    "The WGA edition appears appreciably brighter and more saturated, and has slightly different edge crop; it must not be silently substituted.",
+    "The current post-2020-restoration photographic state was not established by these sources. They may predate conservation, and the panel should be assessed against reliable institutional restoration-state evidence before publication."
+  ],
+  "publication_status": {
+    "owner_selected_specific_photo": false,
+    "photo_reuse_rights_cleared_for_app": false,
+    "artinflanders_photo_contract_restrictions_resolved": false,
+    "new_app_asset": false,
+    "source_app_registry_changes": 0,
+    "app_public_gallery_modifications": 0
+  },
+  "remaining_huesca": {
+    "artwork": "La Venida del Espíritu Santo",
+    "artist": "Mateo Cerezo (attribution requires source-qualified language)",
+    "inventory": "Museo de Huesca 00029",
+    "best_independently_available_exact_source_px": [
+      567,
+      479
+    ],
+    "reproductions_larger_based_on_upscaling_not_counted": true,
+    "official_gallery_did_not_list_00029_as_a_featured_17thcentury_image": true,
+    "official_current_photo_reuse_rights_unknown": true,
+    "status": "NO_INDEPENDENT_LARGE_SOURCE_FOUND"
+  },
+  "counts": {
+    "source_image_originals_acquired": 3,
+    "passes_1200px_shortside": 3,
+    "exact_artworks_covered": 1,
+    "remaining_nine_source_photos_identified": 9,
+    "photos_newly_approved": 0,
+    "app_publication_changes": 0
+  },
+  "source_ledger": "data/artwork/batch1-ghent-three-exact-panel-candidate-photos.v1.json"
+}
