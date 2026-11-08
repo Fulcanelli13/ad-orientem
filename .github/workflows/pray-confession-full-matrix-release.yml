@@ -1,0 +1,48 @@
+name: Prayer Confession full source and phone matrix
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/pray/confession-paths.js"
+      - "src/pray/confession-continuous-examination.js"
+      - "src/pray/presentation-runtime.js"
+      - "src/pray/canonical-data.js"
+      - "tests/pray-confession-paths.mjs"
+      - "tests/pray-confession-dual-axis-phone.mjs"
+      - "tests/pray-confession-benediction-stage-matrix-phone.mjs"
+      - ".github/workflows/pray-confession-full-matrix-release.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: prayer-confession-matrix-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  confession-source-and-phone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-audit --no-fund
+      - name: Certify three-source-path privacy and role ownership
+        run: node tests/pray-confession-paths.mjs
+      - name: Install real Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Verify all Confession cards at 320/390 px in English and French
+        run: node tests/pray-confession-benediction-stage-matrix-phone.mjs
+      - name: Verify source-owned navigation, continuous/cards switch and privacy
+        run: node tests/pray-confession-dual-axis-phone.mjs
+      - name: Retain actual phone evidence and source-owned matrix
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: confession-full-phone-matrix
+          path: |
+            artifacts/pray-stage-matrix/confession-benediction-stage-matrix.json
+            artifacts/pray-confession-dual-axis/
+          if-no-files-found: warn
+          retention-days: 21
