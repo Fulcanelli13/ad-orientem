@@ -35,19 +35,20 @@ export function validateBatch1PhotoDecisions(decisionRecord){
   if(typeof d.credit_and_license_acknowledged!=="boolean"||typeof d.display_edition_acknowledged!=="boolean")fail("required explicit acknowledgement booleans missing");
   if(typeof d.publication_qa_requested!=="boolean")fail("publication QA request boolean missing");
   if(d.photo_id==null){
-   if(d.decision!=="hold"||d.photo_source_sha256!=null||d.publication_qa_requested)fail("cannot select/approve a missing photo");
+   if(d.decision!=="hold"||d.photo_source_sha256!=null||d.photo_display_edition_sha256!=null||d.publication_qa_requested)fail("cannot select/approve a missing photo");
    holds.push({artwork_id:d.artwork_id,reason:"No photo selected"});
    continue;
   }
   const p=w.options.find(p=>p.photo_id===d.photo_id);
   if(!p)fail("unknown exact photo ID "+d.photo_id+" for "+d.artwork_id);
   if(d.photo_source_sha256!==p.source_sha256)fail("source SHA-256 mismatch for "+d.photo_id);
+  if(d.photo_display_edition_sha256!==p.display_edition_sha256)fail("display edition SHA-256 mismatch for "+d.photo_id);
   if(d.technical_rights_gate!==p.rights_state)fail("photo rights-state mismatch for "+d.photo_id);
   if(d.decision==="approve"){
    if(!p.eligible_for_publication_qa_request)fail("rights/quality-held photo cannot be approved: "+d.photo_id);
    if(!d.credit_and_license_acknowledged||!d.display_edition_acknowledged)fail("credit and full-scene edition must be explicitly acknowledged for "+d.photo_id);
    if(!d.publication_qa_requested)fail("approval must request separate publication QA");
-   requests.push({artwork_id:d.artwork_id,photo_id:p.photo_id,source_sha256:p.source_sha256,prayer_placements:w.prayer_placements,release_authorized:false});
+   requests.push({artwork_id:d.artwork_id,photo_id:p.photo_id,source_original_sha256:p.source_sha256,display_edition_sha256:p.display_edition_sha256,prayer_placements:w.prayer_placements,release_authorized:false});
   }else{
    if(d.publication_qa_requested)fail("non-approved photo cannot request publication QA");
    if(d.decision==="hold")holds.push({artwork_id:d.artwork_id,reason:"Owner held photo / existing assignment unchanged"});
@@ -55,7 +56,7 @@ export function validateBatch1PhotoDecisions(decisionRecord){
   }
  }
  return {
-  schema:"AO_SACRED_ART_BATCH1_VALIDATED_OWNER_PHOTO_DECISIONS_V1",
+  schema:"AO_SACRED_ART_BATCH1_VALIDATED_OWNER_PHOTO_DECISIONS_V2",
   checked_photo_versions:seen.size,
   eligible_qa_requests:requests,
   selections_not_release_ready:photoPreferences,
