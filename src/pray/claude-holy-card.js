@@ -29,16 +29,18 @@ export function claudeHolyCardCase({ids=ESSENTIAL_HOLY_CARD_IDS_V1,prayers,esc,t
     const published=safeImage(source)&&!usedImages.has(source);
     if(published)usedImages.add(source);
     const canonicalTitle=essentialHolyCardDisplayTitle(id,p,locale),firstWords=incipit(p)||canonicalTitle;
+    // Narrow three-column collection: abbreviate the *caption*, never the underlying source prayer.
+    const shelfIncipit=firstWords.length>24?firstWords.split(/\s+/).slice(0,3).join(" "):firstWords;
     // The collection is captured immediately on route entry. An approved
     // image may still be decoding, especially below the initial viewport;
     // always preserve a readable source-derived face underneath the photo.
     const typePlate='<span class="aoClaudeHolyTypePlate" aria-hidden="true"><b>'+esc(canonicalTitle)+'</b>'+
-      '<i lang="la">'+esc(firstWords)+'</i></span>';
+      '<i lang="la">'+esc(shelfIncipit)+'</i></span>';
     const plate=published?typePlate+'<img src="'+esc(source)+'" alt="" loading="'+(i<12?'eager':'lazy')+'" decoding="async">':typePlate;
     return '<button type="button" data-p435930-lib-open="'+esc(id)+'" aria-label="'+esc(canonicalTitle)+'">'+
       '<div class="aoClaudeHolyFanIn"><div class="aoClaudeHolyCasePlate'+(published?'':' aoClaudeHolyCasePlateText')+'" aria-hidden="true">'+
        plate+'</div>'+
-      '<small lang="la">'+esc(firstWords)+'</small></div></button>';
+      '<small lang="la">'+esc(shelfIncipit)+'</small></div></button>';
    }).join('')+'</div></section>';
 }
 export function claudeHolyCard({id,p,face="en",vernacular="en",esc,flipped=false,artUrl="",artCredit=null,flipLabel="Turn card"}={}){
