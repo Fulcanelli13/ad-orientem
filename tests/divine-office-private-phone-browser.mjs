@@ -95,8 +95,13 @@ async function stubSources(page,opts={}){
  return seen;
 }
 async function waitReady(page){
- await page.waitForFunction(()=>document.querySelector(".aoOfReadiness")?.textContent
-   .includes("NOT certified"),null,{timeout:30000});
+ await page.waitForFunction(()=>{
+  const text=document.querySelector(".aoOfReadiness")?.textContent||"";
+  return text.includes("NOT certified")||text.startsWith("Source preview withheld:")||
+   text.startsWith("Source unavailable:");
+ },null,{timeout:30000});
+ const status=await page.locator(".aoOfReadiness").innerText();
+ assert.match(status,/NOT certified/, "Expected source preview; reader reports: "+status);
 }
 async function waitWithheld(page){
  await page.waitForFunction(()=>document.querySelector(".aoOfReadiness")?.textContent
