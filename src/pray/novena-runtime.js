@@ -390,8 +390,12 @@ function open(opts={}){
  const requested=String(opts?.novenaId||'');
  if(requested&&ALL_NOVENAS[requested]){
   N.id=requested;N.screen=opts?.returnSearch&&typeof opts.returnSearch.query==='string'?'day':'detail';
+  // Keep existing search-origin navigation unchanged. A separately validated
+  // work-level day link only overrides the entry screen/day for this novena.
+  const directDay=Number.isInteger(opts?.novenaDay)&&opts.novenaDay>=1&&opts.novenaDay<=9?opts.novenaDay:null;
+  if(directDay!==null)N.screen='day';
   const status=calStatus(ALL_NOVENAS[requested]);
-  N.day=status.kind==='active'?status.day:1;
+  N.day=directDay??(status.kind==='active'?status.day:1);
  }else{
   N.screen='overview';N.id=null;N.day=1;
  }

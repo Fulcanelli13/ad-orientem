@@ -1015,7 +1015,9 @@ function open(route,opts={}){
       ?{massStep:0,massDepth:opts.depth==="full"?"full":"brief"}:{}),
     ...(route==="pray.morning_evening"?{dailyMode:"guided",dailyDirectId:null,dailyStep:0,dailyLength:"standard",returnToDaily:false}:{})
    ,...(route==="pray.nightly_examen"?{examenStep:0,returnToDaily:false}:{}),
-    ...(route==="pray.dying_companion"?{dying:"now"}:{}),
+    // Work-level devotional entry may focus an existing bedside prayer step.
+    // Only the original three stages are accepted; no sacramental action is implied.
+    ...(route==="pray.dying_companion"?{dying:DYING_COMPANION_STAGES.includes(opts.dyingStep)?opts.dyingStep:"now"}:{}),
     ...(route==="pray.sacred_hymns"?{hymn:"te_deum",hymnLang:null}:{}),
     ...(route==="pray.good_death"?{goodDeathStep:0}:{}),
     ...(route==="pray.meal_prayers"?{mealStep:0}:{}),
