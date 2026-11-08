@@ -130,7 +130,8 @@ for(const source of RED_BOOKLET_PRIVATE_HISTORICAL_WORKS_V1){
 const ui=read("src/pray/presentation-runtime.js"),treasury=read("src/pray/traditional-pray-runtime.js");
 assert.match(ui,/data-p435930-red-historical/,"Library must expose source-backed Before Mass and Confession prayers");
 assert.match(ui,/redBookletPrivateHistoricalWorksForSubject\(LIB.subject,q\)/,"Historical private prayer search must work");
-assert.match(ui,/historicalPrayer:work.sourceId/,"Confession Library link must preserve the exact source ID");
+assert.match(ui,/CONF\.historicalPrayer=work\.sourceId/,"Confession Library link must preserve and select the exact source ID in-place");
+assert.match(ui,/CONF\.returnPrayerSnapshot=receipt/,"Confession Library deep link must retain return context");
 assert.match(ui,/massPrayer:work.sourceId/,"Before Mass Library link must preserve the exact source ID");
 assert.match(ui,/data-p435930-conf-historical-back/,"Confession must keep historical prayer distinct from sacramental flow");
 assert.match(ui,/data-ao-confession-source-language-fallback/,"No unverified French translation");
