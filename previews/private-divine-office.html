@@ -34,7 +34,6 @@ button{cursor:pointer}button:disabled{opacity:.4;cursor:default}button:focus-vis
 <script type="module">
 import {mountPrivateOfficeReview} from "../src/office/private-office-review-page.js";
 import {DIVINUM_OFFICIUM_PIN} from "../src/app/source-transport-compat.js";
-const URL="../../data/office/research/advent-i-2026-universal-commemoration.json";
 mountPrivateOfficeReview(document.getElementById("reader"),{
  fetchSource:(url,options)=>fetch(url,options),
  readUniversalWitness:async()=>{
