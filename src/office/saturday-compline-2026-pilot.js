@@ -313,11 +313,15 @@ export async function assembleWeekdayComplinePilot({
   minor("Ant 4","ANTIPHON");
   prayer("Kyrie","KYRIE");
   prayer("Pater noster Et","PATER_NOSTER");
-  prayer("Dominus","DIALOGUE",x=>x.slice(2,4));
+  // Preserve BOTH alternative dialogue pairs from the pinned witness.
+  // The 1961 Ordinary chooses priest / non-priest at presentation time.
+  prayer("Dominus","DIALOGUE",x=>x.slice(0,4));
   prayer("Oremus","OREMUS",x=>x.slice(0,1));
   prayer("Oratio Visita_","COLLECT");
   prayer("Per Dominum","CONCLUSION");
-  prayer("Dominus","DIALOGUE",x=>x.slice(2,4));
+  // Preserve BOTH alternative dialogue pairs from the pinned witness.
+  // The 1961 Ordinary chooses priest / non-priest at presentation time.
+  prayer("Dominus","DIALOGUE",x=>x.slice(0,4));
   prayer("Benedicamus Domino","DISMISSAL",x=>x.slice(0,2));
   prayer("Benedictio Completorium2","BLESSING",x=>x.slice(0,1));
   // Advent seasonal Marian antiphon: retain source-owned verse and collect;
