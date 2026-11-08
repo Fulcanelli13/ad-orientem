@@ -17,6 +17,14 @@ export const LATIN_COMPLINE_RELEASE_SCHEMA="ao.office.latin-compline-release.v1"
 export const LATIN_COMPLINE_RELEASE=Object.freeze({
  date:"2026-11-28",hour:"COMPLINE",calendarScope:"UNIVERSAL",
  sourceRevision:PIN,language:"la",
+ // Not every 1961 Breviary prints the same Latin Psalter: Mame, Dessain and
+ // the Vatican have Vulgate and Pius XII translation variants. The pinned
+ // Latin source is the Vulgata text, not the Pius XII Psalter translation.
+ sourcePsalterFamily:"VULGATA_BIBLIORUM",
+ target1961Edition:"MAME_1961_VULGATA",
+ target1961PsalterFamily:"VULGATA_BIBLIORUM",
+ // Original 1961 Vulgata Saturday Psalter leaf has not yet been collated:
+ exact1961EditionPsalterLeafVerified:false,
  ordinary1961SequenceReviewed:true,saturdayAppointmentReviewed:true,
  // Do not change these flags without documentary certification:
  psalter1961VerbatimCollated:false,
@@ -37,6 +45,10 @@ export function latinComplineReleaseEligibility({
     calendarScope!==LATIN_COMPLINE_RELEASE.calendarScope)
   return empty("HOUR_DATE_OR_CALENDAR_OUTSIDE_LATIN_RELEASE");
  if(LATIN_COMPLINE_RELEASE.sourceRevision!==PIN||
+    LATIN_COMPLINE_RELEASE.sourcePsalterFamily!=="VULGATA_BIBLIORUM"||
+    LATIN_COMPLINE_RELEASE.target1961Edition!=="MAME_1961_VULGATA"||
+    LATIN_COMPLINE_RELEASE.target1961PsalterFamily!=="VULGATA_BIBLIORUM"||
+    !LATIN_COMPLINE_RELEASE.exact1961EditionPsalterLeafVerified||
     !LATIN_COMPLINE_RELEASE.ordinary1961SequenceReviewed||
     !LATIN_COMPLINE_RELEASE.saturdayAppointmentReviewed||
     !LATIN_COMPLINE_RELEASE.psalter1961VerbatimCollated||
