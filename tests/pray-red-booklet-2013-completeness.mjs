@@ -132,6 +132,8 @@ assert.match(ui,/data-p435930-red-historical/,"Library must expose source-backed
 assert.match(ui,/redBookletPrivateHistoricalWorksForSubject\(LIB.subject,q\)/,"Historical private prayer search must work");
 assert.match(ui,/CONF\.historicalPrayer=work\.sourceId/,"Confession Library link must preserve and select the exact source ID in-place");
 assert.match(ui,/CONF\.returnPrayerSnapshot=receipt/,"Confession Library deep link must retain return context");
+assert.match(ui,/CONF\.stage===2&&CONF\.path&&!CONF\.historicalPrayer&&confessionRiteCards\(CONF\.path\)/,
+ "Standalone historical Confession prayers must not invoke the sacramental rite side rail without a selected path");
 assert.match(ui,/massPrayer:work.sourceId/,"Before Mass Library link must preserve the exact source ID");
 assert.match(ui,/data-p435930-conf-historical-back/,"Confession must keep historical prayer distinct from sacramental flow");
 assert.match(ui,/data-ao-confession-source-language-fallback/,"No unverified French translation");
