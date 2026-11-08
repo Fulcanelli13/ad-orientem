@@ -23,6 +23,7 @@ import {createPrayerPurposeIndex,prayerPurposeFor,prayerPurposeDefault,normalize
 import {COMMUNION_PRAYER_PURPOSES} from "./communion-prayer-purpose-map.js";
 import {RED_BOOKLET_SUSCIPE_LIBRARY_LINK_V1 as SUSCIPE_LINK} from "./red-booklet-suscipe-library-link.v1.js";
 import {redBookletPrivateHistoricalSource} from "./red-booklet-private-historical-works.v1.js";
+import {RED_BOOKLET_2013_VARIANT_WITNESSES_V1 as BOOKLET_VARIANTS} from "./red-booklet-2013-variant-witnesses.v1.js";
 import {GOOD_DEATH_PRAYER_PURPOSES} from "./good-death-purpose-map.js";
 import {buildPersonalDailyPlan,personalDailyOptions,personalDailyDirectPlan,loadPersonalDailyPrefs,savePersonalDailyPrefs,changePersonalDailyPrefs} from "./daily-personal-rule.js";
 import {personalDailyPrayerCard,personalDailyPurposeSection,dailyPersonalSettings,dailyPersonalPrayerCatalog,dailyPersonalList} from "./daily-personal-prayer-view.js";
@@ -767,12 +768,23 @@ function renderCommunionTreasury(){
   const commonSource=tab==="before"?d.sources.beforeFrenchLatin:d.sources.afterFrenchLatin;
   const formation=tab==="before"?`<div class="aoTP381PrayerList"><button type="button" data-tp381-route="learn.rites.first_communion"><span><b>${esc(L("Preparing a child for First Communion?","Préparez-vous un enfant à la première Communion ?"))}</b><small>${esc(L("Open the sacramental formation guide; these private prayers are not a substitute.","Ouvrir le guide de formation sacramentelle ; ces prières privées ne le remplacent pas."))}</small></span><i aria-hidden="true">→</i></button></div>`:"";
   const indulgence=tab==="after"?`<details class="aoTP381Source"><summary>${esc(L("Indulgences · current discipline","Indulgences · discipline actuelle"))}</summary><p>${esc(L("The current Enchiridion grants a partial indulgence for an approved act of thanksgiving after Communion and expressly gives Anima Christi and En ego as examples. It grants a plenary indulgence for devoutly reciting En ego before an image of Christ crucified after Communion on any Friday of Lent, under the usual conditions. Historical days-or-years grants printed in old missals are not the current way indulgences are measured.","L’Enchiridion actuel accorde une indulgence partielle pour une formule pieuse approuvée d’action de grâces après la Communion et donne expressément comme exemples l’Anima Christi et l’En ego. Il accorde une indulgence plénière à qui récite pieusement l’En ego devant une image du Christ crucifié après la Communion, un vendredi du Carême, aux conditions habituelles. Les anciennes concessions exprimées en jours ou en années dans les vieux missels ne constituent plus la manière actuelle de mesurer les indulgences."))}</p><p><a href="${esc(d.sources.currentIndulgences)}" target="_blank" rel="noopener">${esc(L("Apostolic Penitentiary · Enchiridion","Pénitencerie apostolique · Enchiridion"))} ↗</a></p></details>`:"";
+  // These three SHORT traditional aspirations occur on the booklet's
+  // printed p. 64. They are optional and never increase the ten complete
+  // Communion prayer cards or the fixed four-card After Mass folio.
+  const bookletAspirations=tab==="after"
+   ?'<details class="aoTP381SecondaryOptions" data-ao-booklet-sacred-heart-aspirations>'+
+    '<summary>'+esc(L("Three short Sacred Heart aspirations · optional",
+      "Trois courtes aspirations au Sacré-Cœur · facultatives"))+'</summary>'+
+    (isFr()?'<p data-ao-booklet-original-language>Textes traditionnels anglais. Aucune traduction française de cette édition n\u2019a été inventée.</p>':'')+
+    BOOKLET_VARIANTS.heartAspirations.englishLines.map((line,i)=>
+     '<p class="aoTP381TextParagraph" data-ao-booklet-heart-aspiration="'+(i+1)+'" lang="en">'+esc(line)+'</p>').join('')+
+    '<small>'+esc(BOOKLET_VARIANTS.heartAspirations.source)+'</small></details>':"";
   const tabs=`<nav class="aoTP381DaypartStrip" aria-label="${esc(L("Communion prayer phase","Temps de prière de Communion"))}"><button type="button" data-tp381-communion="before" aria-pressed="${tab==="before"}" class="${tab==="before"?"active":""}">${esc(L("Before Communion","Avant la Communion"))}</button><button type="button" data-tp381-communion="after" aria-pressed="${tab==="after"}" class="${tab==="after"?"active":""}">${esc(L("After Communion","Après la Communion"))}</button></nav>`;
   // Purpose-labelled source buttons are visible before the prayer; the
   // existing timeline/swipes remain as secondary, non-compulsory navigation.
   const direct=communionPurposePicker(tab,stages,id);
   const options=`<details class="aoTP381SecondaryOptions" data-ao-communion-options><summary>${esc(L("Sources and guidance","Sources et conseils"))}</summary><div class="aoTP381SecondaryOptionsBody"><p>${esc(L("A sourced treasury of prayers long printed before and after Mass in the Roman-Missal tradition, retained only where the French Catholic tradition is also attested.","Un trésor de prières sourcées, longtemps imprimées avant et après la Messe dans la tradition du Missel romain, retenues seulement lorsqu’elles sont également attestées dans la tradition catholique française."))}</p><p>${esc(context)}</p>${traditionalContextGuide("communion")}${formation}${indulgence}${source(L("French & Latin traditional prayer witness","Témoin traditionnel français & latin"),commonSource)}</div></details>`;
-  return `${head(L("Traditional Communion Prayers","Prières traditionnelles de Communion"))}<main class="aoP435930Body aoTP381DonorBody">${tabs}${direct}${card}${options}</main>`;
+  return `${head(L("Traditional Communion Prayers","Prières traditionnelles de Communion"))}<main class="aoP435930Body aoTP381DonorBody">${tabs}${direct}${card}${bookletAspirations}${options}</main>`;
 }
 const GOOD_DEATH_STAGES=Object.freeze([
   ["devotion_litany_st_joseph","Litany of Saint Joseph","Litanies de saint Joseph"],

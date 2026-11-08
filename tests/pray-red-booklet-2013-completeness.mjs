@@ -13,6 +13,7 @@ import {RED_BOOKLET_SUSCIPE_LIBRARY_LINK_V1,redBookletSuscipeLibraryLinksForSubj
 import {personalDailyDirectPlan,defaultPersonalDailyPrefs} from "../src/pray/daily-personal-rule.js";
 import {RED_BOOKLET_PRIVATE_HISTORICAL_WORKS_V1,redBookletPrivateHistoricalWork,
  redBookletPrivateHistoricalSource,redBookletPrivateHistoricalWorksForSubject} from "../src/pray/red-booklet-private-historical-works.v1.js";
+import {RED_BOOKLET_2013_VARIANT_WITNESSES_V1 as BOOKLET_VARIANTS} from "../src/pray/red-booklet-2013-variant-witnesses.v1.js";
 const read=path=>readFileSync(new URL("../"+path,import.meta.url),"utf8");
 const registry=JSON.parse(read("data/pray/red-booklet-2013-completeness.v1.json"));
 const mass=JSON.parse(read("data/research/mass-ordo-red-missal-2013-editorial.v1.json"));
@@ -27,6 +28,7 @@ assert.equal((mass.reviewedWithoutTextChange||[]).length,209);
 assert.equal((mass.ceremonialOutOfEnglishScope||[]).length,15);
 assert.ok(!registry.works.some(x=>["mass_canon","mass_proper","mass_confiteor"].includes(x.id)),"Mass forms belong to existing 1962 source owner, not a second devotional corpus");
 const byStatus={reader_present:[],variant_requires_comparison:[],unresolved:[]};
+const collatedShortForms=new Set(["conf_angel","communion_heart_aspirations"]);
 const indexedCommunion=new Set(["pre_thomas","pre_ambrose","communion_thanks","communion_heart","holy_spirit_augustine","our_lady_65","communion_dying","communion_heart_intercession","communion_thomas","communion_bonaventure","crucifix"]);
 const indexedAll=new Set([...indexedCommunion,"ignatius_suscipe",...RED_BOOKLET_PRIVATE_HISTORICAL_WORKS_V1.map(x=>x.id)]);
 const requiredGroups=["before_mass","before_communion","after_low_mass","benediction","confession","after_communion","devotional","marian"];
@@ -35,7 +37,7 @@ for(const w of registry.works){
  assert.ok(w.pdfPage>=4&&w.pdfPage<=68,"Outside booklet scanned text "+w.id);
  assert.ok(requiredGroups.includes(w.section),"Unknown booklet group "+w.id);
  assert.ok(w.title.length>5);
- assert.equal(w.wordingCollatedAgainst2013,false,"Exact English collation must be individually evidenced before promotion "+w.id);
+ assert.equal(w.wordingCollatedAgainst2013,collatedShortForms.has(w.id),"Only two printed short source faces have exact 2013 edition evidence: "+w.id);
  assert.equal(w.discoverableAsIndividualLibraryWork,indexedAll.has(w.id),"Only exact, clickable source-owner links may claim Library discoverability: "+w.id);
  if(indexedAll.has(w.id)){
   assert.equal(w.discoverabilityProof?.sourceId,w.owner?.symbol,"Library must lead to the original text identity: "+w.id);
@@ -53,10 +55,39 @@ for(const w of registry.works){
  }else assert.equal(w.status,"unresolved","Non-published or variant entry requires an exact owner before any published claim "+w.id);
 }
 assert.deepEqual(Object.fromEntries(Object.entries(byStatus).map(([k,v])=>[k,v.length])),{
- reader_present:34,variant_requires_comparison:3,unresolved:0
+ reader_present:36,variant_requires_comparison:1,unresolved:0
 });
 for(const required of ["pre_thomas","pre_ambrose","communion_thanks","communion_heart","holy_spirit_augustine","our_lady_65","communion_dying","communion_heart_intercession","communion_thomas","communion_bonaventure","crucifix","ben_tantum","ben_praises","leonine","angelus","regina","rosary","ignatius_suscipe","before_mass","conf_exam_prayer","conf_thanksgiving","conf_joseph"])assert.ok(byStatus.reader_present.includes(required),required);
-assert.deepEqual(byStatus.unresolved,[],"No source-owner gaps remain; three variants stay held");
+assert.deepEqual(byStatus.unresolved,[],"No source-owner gaps remain; one Rosary bead variant stays held");
+assert.deepEqual(byStatus.variant_requires_comparison,["fatima"],"Do not silently certify the existing Rosary bead text without an exact player comparison");
+// User-supplied 2013 Red Booklet: the page 59 Guardian Angel prayer is a
+// short private Confession invocation, NOT the full canonical Angele Dei.
+const angel=BOOKLET_VARIANTS.guardianAngelConfession;
+assert.equal(angel.english,"My Guardian Angel, help me to make a good confession.");
+assert.equal(angel.printedPage,59);
+assert.equal(DATA.prayers.foundations_guardian_angel.en.startsWith("Angel of God"),true,
+ "Canonical Guardian Angel prayer must not be overwritten");
+const aspirations=BOOKLET_VARIANTS.heartAspirations;
+assert.equal(aspirations.printedPage,64);
+assert.deepEqual(aspirations.englishLines,[
+ "Heart of Jesus, burning with love for us, set our hearts on fire with love of Thee.",
+ "Heart of Jesus, I put my trust in Thee.",
+ "Sweet Heart of Jesus, grant that I may love Thee more and more."
+]);
+assert.ok(DATA.prayers.sacred_heart_aspiration_trust.en.startsWith("Most Sacred Heart"),
+ "Original independent Sacred Heart trust prayer must remain untouched");
+const fatima=BOOKLET_VARIANTS.fatimaDecade;
+assert.equal(fatima.printedPage,67);
+assert.match(fatima.english,/forgive us our sins[.] Save us from the fires of hell[.]/);
+assert.equal(fatima.donorWordingCertified,false,"Fatima's optional original Rosary donor cannot be silently declared collated");
+for(const id of collatedShortForms){
+ const w=registry.works.find(x=>x.id===id);
+ assert.equal(w.bookletPageReviewed,true);
+ assert.equal(w.sourceWitness.wordingCollatedAgainst2013,true);
+ assert.equal(w.relatedOriginalCanonicalPrayer.replaced,false);
+}
+assert.equal(registry.works.find(w=>w.id==="fatima").sourceVariantComparator.donorTextNotYetCompared,true);
+
 const ignatius=registry.works.find(w=>w.id==="ignatius_suscipe");
 assert.equal(ignatius.owner.route,"pray.morning_evening");
 assert.ok(prayerAcquisitionCandidates("self_offering",{language:"en"}).some(x=>x.id==="ignatius_suscipe_lasance_1908_en"),"Existing EN Suscipe source prayer must remain available");
@@ -129,6 +160,12 @@ for(const source of RED_BOOKLET_PRIVATE_HISTORICAL_WORKS_V1){
 }
 const ui=read("src/pray/presentation-runtime.js"),treasury=read("src/pray/traditional-pray-runtime.js");
 assert.match(ui,/data-p435930-red-historical/,"Library must expose source-backed Before Mass and Confession prayers");
+assert.match(ui,/data-ao-booklet-guardian-confession/,"Confession stage zero must offer the short optional Guardian Angel form");
+assert.match(ui,/BOOKLET_VARIANTS\.guardianAngelConfession\.english/,"Confession must display the source-owned short invocation, not Angele Dei");
+assert.match(treasury,/data-ao-booklet-sacred-heart-aspirations/,"After Communion must present optional distinct aspirations");
+assert.match(treasury,/BOOKLET_VARIANTS\.heartAspirations\.englishLines\.map/,"All three independent aspirations must be shown");
+assert.match(treasury,/\$\{tabs\}\$\{direct\}\$\{card\}\$\{bookletAspirations\}\$\{options\}/,"Short aspirations are supplemental, not extra Communion cards");
+assert.match(treasury,/MASS_THANKSGIVING_SOURCE_IDS/,"The fixed four-card After Mass folio remains independent");
 assert.match(ui,/redBookletPrivateHistoricalWorksForSubject\(LIB.subject,q\)/,"Historical private prayer search must work");
 assert.match(ui,/CONF\.historicalPrayer=work\.sourceId/,"Confession Library link must preserve and select the exact source ID in-place");
 assert.match(ui,/CONF\.returnPrayerSnapshot=receipt/,"Confession Library deep link must retain return context");
@@ -152,4 +189,4 @@ assert.match(treasury,/communionStep:communionTarget\?\.index\?\?0/,"Selected wo
 assert.match(treasury,/opts.dailySourcePrayer!==undefined&&!requestedDailySource\)return false/,"Suscipe deep link must reject unrecognized source IDs");
 assert.match(treasury,/data-tp381-suscipe-lang/,"Suscipe must offer only the attested EN/LA source-language choices");
 assert.match(treasury,/dailyDirectLanguage:requestedDailySource\?\.\[0\]/,"Source language must not be borrowed from saved preferences");
-console.log("PASS booklet scan: 37 source works; sixteen source-owned private prayers searchable and opened by source ID (eleven Communion, Suscipe EN/LA, four Mass/Confession); 34 located, 3 variants, 0 owner gaps, separate 256 cues; no 2013 word-for-word or French translation claims");
+console.log("PASS booklet scan: 37 source works; 36 live source owners, 1 held Rosary bead wording, 2 short printed forms exactly compared; sixteen individual Library works; no invention of French/Latin, no change to canonical Mass or Rosary");

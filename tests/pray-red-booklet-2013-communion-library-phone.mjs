@@ -78,6 +78,36 @@ try{
     assert.ok(Number.isInteger(state.communionStep));
     checked++;
    }
+   // Print-checked short form at Confession preparation: optional, never a
+   // replacement for Angele Dei, path selection or absolution.
+   assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.confession",{returnContext:null})),true);
+   const angel=page.locator(scope+"[data-ao-booklet-guardian-confession]");
+   await angel.waitFor({state:"visible",timeout:10000});
+   assert.equal(normalize(await angel.locator('p[lang="en"]').innerText()),
+    normalize("My Guardian Angel, help me to make a good confession."));
+   if(ui==="fr")assert.equal(await angel.locator("[data-ao-booklet-original-language]").count(),1);
+   checked++;
+   // The 2013 Sacred Heart aspirations are three independent short
+   // invocations after Communion, not additional complete prayer stops.
+   assert.equal(await page.evaluate(()=>globalThis.AO_TRADITIONAL_PRAY_V381.open("pray.communion_treasury",{returnContext:null})),true);
+   await page.locator(scope+"[data-tp381-communion='after']").evaluate(el=>el.click());
+   const short=page.locator(scope+"[data-ao-booklet-sacred-heart-aspirations]");
+   await short.waitFor({state:"attached",timeout:10000});
+   await short.locator("summary").evaluate(el=>el.click());
+   const expected=[
+    "Heart of Jesus, burning with love for us, set our hearts on fire with love of Thee.",
+    "Heart of Jesus, I put my trust in Thee.",
+    "Sweet Heart of Jesus, grant that I may love Thee more and more."
+   ];
+   assert.equal(await short.locator("[data-ao-booklet-heart-aspiration]").count(),3);
+   for(let i=0;i<expected.length;i++){
+    const line=short.locator('[data-ao-booklet-heart-aspiration="'+(i+1)+'"]');
+    assert.equal(await line.getAttribute("lang"),"en");
+    assert.equal(normalize(await line.innerText()),normalize(expected[i]));
+   }
+   if(ui==="fr")assert.equal(await short.locator("[data-ao-booklet-original-language]").count(),1);
+   assert.equal((await page.evaluate(()=>globalThis.AO_TRADITIONAL_PRAY_V381.state())).route,"pray.communion_treasury");
+   checked+=3;
    // Suscipe opens the unchanged, source-owned Morning Offering reader. Its
    // Latin witness is independently printed; the French UI never invents FR.
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.library",{returnContext:null})),true);
@@ -178,6 +208,8 @@ try{
    console.log("PASS "+width+"px "+ui+": all eleven Communion works open exact source cards; title search and invalid source guard.");
   }finally{await context.close()}
  }
- assert.equal(checked,68,"Eleven Communion, Suscipe EN/LA and four Mass/Confession prayers in four device/language combinations");
- console.log("PASS 68 source-owned prayer comparisons: eleven Communion, EN/LA Suscipe and four Mass/Confession works × 320/390 EN/FR; no invented translations or 2013-text claims.");
+ const expected=(LINKS.length+SUSCIPE.languages.length+PRIVATE.length+4)*4;
+ assert.equal(expected,84,"New short source cases must not replace any of the former 68 reader comparisons");
+ assert.equal(checked,expected,"All 16 historical direct works plus four short-form assertions must pass across four phone/language combinations");
+ console.log("PASS "+checked+" source-owned reading checks: eleven Communion works, Suscipe EN/LA, four Mass/Confession works, the Guardian Angel invocation and three Sacred Heart aspirations × 320/390 EN/FR; no invented translations.");
 }finally{await browser?.close().catch(()=>{});await new Promise(done=>server.close(done))}

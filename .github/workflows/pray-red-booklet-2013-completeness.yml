@@ -8,6 +8,7 @@ on:
       - src/pray/red-booklet-communion-library-links.v1.js
       - src/pray/red-booklet-suscipe-library-link.v1.js
       - src/pray/red-booklet-private-historical-works.v1.js
+      - src/pray/red-booklet-2013-variant-witnesses.v1.js
       - src/pray/presentation-runtime.js
       - src/pray/traditional-pray-runtime.js
       - src/pray/traditional-pray-data.js
@@ -22,6 +23,7 @@ on:
       - src/pray/red-booklet-communion-library-links.v1.js
       - src/pray/red-booklet-suscipe-library-link.v1.js
       - src/pray/red-booklet-private-historical-works.v1.js
+      - src/pray/red-booklet-2013-variant-witnesses.v1.js
       - src/pray/presentation-runtime.js
       - src/pray/traditional-pray-runtime.js
       - src/pray/traditional-pray-data.js
@@ -53,5 +55,5 @@ jobs:
           node-version: '22'
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
-      - name: Compare eleven Communion prayers, Suscipe EN/LA and four Mass/Confession originals in Library on 320/390px EN/FR
+      - name: Compare exact source owned prayers plus three short booklet variants in 320/390px EN/FR
         run: node tests/pray-red-booklet-2013-communion-library-phone.mjs
