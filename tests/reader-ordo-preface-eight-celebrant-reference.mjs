@@ -14,7 +14,7 @@ const source=JSON.parse(readFileSync(new URL(
  import.meta.url),"utf8"));
 const sung=JSON.parse(readFileSync(new URL(
  "../data/presentation/reader-text-sung.v1.json",import.meta.url),"utf8"));
-const cueRecords=sung.blocks.flatMap(b=>b.cues??b.Cues??b.records??[]);
+const cueRecords=sung.blocks.flatMap(b=>b.units??[]);
 const byCue=new Map(cueRecords.map(c=>[c.cue_id,c]));
 assert.equal(PREFACE_CELEBRANT_INLINE_SCHEMA,"ao-ordo-preface-1961-8-celebrant-reference-v1");
 assert.equal(PREFACE_CELEBRANT_INLINE_SCORES.length,8);
