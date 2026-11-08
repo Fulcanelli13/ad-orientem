@@ -222,12 +222,15 @@ export async function loadPreliminaryR49({fetchImpl=fetch}={}){
   // If the new static file is unavailable in an older cached site snapshot,
   // omit these OPTIONAL contact details without losing all 2,582 churches.
   // Never substitute historical Mass times or any inferred community status.
+  let contacts=null;
   try{
-    const contacts=await fetchImpl(CL27_SITE_CONTACT_URL,{headers:{accept:"application/json"}});
-    cache=contacts?.ok?attachPublishedSiteContactEvidence(liturgical,await contacts.json()):liturgical;
+    contacts=await fetchImpl(CL27_SITE_CONTACT_URL,{headers:{accept:"application/json"}});
   }catch{
-    cache=liturgical;
+    // An older cached asset set may lack this OPTIONAL nonliturgical manifest.
   }
+  // Invalid or misjoined release contents must be rejected, not silently
+  // mistaken for verified church identity or a successful contact enrichment.
+  cache=contacts?.ok?attachPublishedSiteContactEvidence(liturgical,await contacts.json()):liturgical;
   return cache;
 }
 /**
