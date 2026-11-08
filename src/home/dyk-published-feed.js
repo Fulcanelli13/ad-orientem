@@ -134,6 +134,55 @@ export function dykWeiser16Model(data,id,date,language="en"){
  });
 }
 
+
+ // Distinct final R50 release; review flags in the private research bank never
+ // authorize themselves. All selected facts use verified original Weiser folios.
+const R50B_SOURCE=new URL("../../data/did-you-know/weiser-r50-second-sixteen-publication.v1.json",import.meta.url);
+const R50B_SCHEMA="AO_DYK_R50B_WEISER16_PUBLICATION_V1";
+let r50bLoad=null;
+export function loadDykWeiserSecond16Release(win=globalThis){
+ if(r50bLoad)return r50bLoad;
+ r50bLoad=Promise.resolve().then(()=>win.fetch(R50B_SOURCE,{cache:"no-store"})).then(r=>{
+   if(!r?.ok)throw Error("DYK_R50B_UNAVAILABLE");return r.json();
+ }).catch(error=>{r50bLoad=null;throw error});
+ return r50bLoad;
+}
+export function dykWeiserSecond16Candidates(data,date){
+ if(!validDate(date)||data?.schema!==R50B_SCHEMA||data.release_stage!=="APPROVED_PARTIAL_LIVE"||
+    !Array.isArray(data.records)||data.records.length!==16)return [];
+ const seenIds=new Set(),seenSources=new Set();
+ return data.records.filter(row=>{
+   const c=row?.pilot_home_copy,s=row?.source;
+   if(!/^DYK-R50B-W-(?:00[1-9]|01[0-6])$/.test(row?.id||"")||seenIds.has(row.id)||
+      !clean(row?.source_id)||seenSources.has(row.source_id))return false;
+   seenIds.add(row.id);seenSources.add(row.source_id);
+   return row.source_family==="WEISER_1958"&&row.historical_local_only===true&&
+      row.publication_kind==="EVERGREEN_HISTORICAL"&&
+      row.editorial_approval===true&&row.release_authorized===true&&
+      row.semantic_novelty_reviewed===true&&row.published===true&&
+      c?.final_english_signoff===true&&c?.final_french_signoff===true&&
+      clean(c.en).length>25&&clean(c.fr).length>25&&clean(row.region_scope).length>3&&
+      safeUrl(s?.url)&&s.original_image_checked===true&&s.deep_link_checked===true&&
+      s.source_record_id===row.source_id&&
+      Array.isArray(s.printed_pages)&&s.printed_pages.length>0&&
+      Array.isArray(s.pdf_pages_1based)&&s.pdf_pages_1based.length===s.printed_pages.length&&
+      s.printed_pages.every((p,i)=>Number.isInteger(p)&&p>=1&&p<=366&&
+        s.pdf_pages_1based[i]===p+18);
+ });
+}
+export function dykWeiserSecond16Model(data,id,date,language="en"){
+ const row=dykWeiserSecond16Candidates(data,date).find(r=>r.id===id);
+ if(!row)return null;
+ const fr=language==="fr";
+ return Object.freeze({
+  id:row.id,language:fr?"fr":"en",fact:row.pilot_home_copy[fr?"fr":"en"],
+  label:fr?"Weiser · Coutumes historiques":"Weiser · Historical customs",
+  sourceId:row.source_id,sourceUrl:row.source.url,
+  links:row.source.pdf_pages_1based.map(page=>({page,url:row.source.url+"#page="+page})),
+  published:true
+ });
+}
+
 let selectionPromise=null;
 export function loadDykPrioritySelection(win=globalThis){
  if(selectionPromise)return selectionPromise;
@@ -218,14 +267,16 @@ export function dykPublishedMarkup(model){
 }
 export async function openDykPublishedSource(win,{id,date,language="en",trigger}={}){
  if(!win?.document?.createElement||!id||!validDate(date))return false;
- const [data,historical,r50]=await Promise.all([
+ const [data,historical,r50,r50b]=await Promise.all([
    loadDykPrioritySelection(win).catch(()=>null),
    loadDykHistoricalRelease(win).catch(()=>null),
-   loadDykWeiser16Release(win).catch(()=>null)
+   loadDykWeiser16Release(win).catch(()=>null),
+   loadDykWeiserSecond16Release(win).catch(()=>null)
  ]);
  const model=dykPublishedModel(data,id,date,language)||
    dykHistoricalModel(historical,id,date,language)||
-   dykWeiser16Model(r50,id,date,language);
+   dykWeiser16Model(r50,id,date,language)||
+   dykWeiserSecond16Model(r50b,id,date,language);
  if(!model)return false;
  const node=win.document.createElement("div");node.innerHTML=dykPublishedMarkup(model);
  const shade=node.querySelector("[data-dyk-published-shade]");

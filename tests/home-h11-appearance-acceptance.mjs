@@ -422,7 +422,7 @@ try{
         globalThis.AO_GLOSSARY_V1?.status?.()?.open===false,
         null,{timeout:10000});
     }else{
-      assert.match(historicalId,/^DYK-(?:G520-W-0|R50-W-0)/);
+      assert.match(historicalId,/^DYK-(?:G520-W-0|R50-W-0|R50B-W-0)/);
       const source=h4.locator("[data-dyk-published='"+historicalId+"']");
       await source.waitFor({state:"visible",timeout:30000});
       assert.equal(await source.locator("a[href*='#page=']").count()>=1,true,

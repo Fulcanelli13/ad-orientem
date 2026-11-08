@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
-import {dykPublishedCandidates,dykPublishedPick,dykPublishedModel,dykPublishedMarkup,dykHistoricalCandidates,dykHistoricalModel,dykWeiser16Candidates,dykWeiser16Model,dykHomeRotationSlot,DYK_GLOSSARY_FALLBACK_IDS} from "../src/home/dyk-published-feed.js";
+import {dykPublishedCandidates,dykPublishedPick,dykPublishedModel,dykPublishedMarkup,dykHistoricalCandidates,dykHistoricalModel,dykWeiser16Candidates,dykWeiser16Model,dykWeiserSecond16Candidates,dykWeiserSecond16Model,dykHomeRotationSlot,DYK_GLOSSARY_FALLBACK_IDS} from "../src/home/dyk-published-feed.js";
 const original=JSON.parse(readFileSync(
  "data/research/did-you-know/dyk-r34-high-signal-24-editorial-selection.v1.json","utf8"));
 import {HOME_DYK_GLOSSARY_IDS,HOME_DYK_GLOSSARY_FACTS,homeDidYouKnowSelect} from "../src/home/did-you-know-glossary.js";
@@ -75,6 +75,43 @@ for(const [group,key] of [
 const wrongPage=clone(r50);wrongPage.records[0].source.pdf_pages_1based[0]++;
 assert.equal(dykWeiser16Candidates(wrongPage,"2026-11-08").length,15,
  "Wrong original printed-page to PDF-page mapping must fail closed");
+
+const r50b=JSON.parse(readFileSync(
+ "data/did-you-know/weiser-r50-second-sixteen-publication.v1.json","utf8"));
+const r50bRows=dykWeiserSecond16Candidates(r50b,"2026-11-08");
+assert.equal(r50bRows.length,16,"New second sixteen Weiser records must pass the explicit release gate");
+assert.equal(new Set([...histRows,...r50Rows,...r50bRows].map(x=>x.id)).size,52);
+assert.equal(new Set([...histRows,...r50Rows,...r50bRows].map(x=>x.source_id)).size,52,
+ "All historical source identifiers must remain globally unique");
+for(const row of r50bRows){
+ assert.ok(row.pilot_home_copy.en.length>25&&row.pilot_home_copy.fr.length>25);
+ assert.equal(row.historical_local_only,true);
+ assert.equal(row.source.original_image_checked,true);
+ assert.equal(row.source.deep_link_checked,true);
+ assert.equal(row.source.source_record_id,row.source_id);
+ assert.ok(row.source.printed_pages.every((pg,i)=>row.source.pdf_pages_1based[i]===pg+18));
+ const model=dykWeiserSecond16Model(r50b,row.id,"2026-11-08","fr");
+ assert.equal(model.fact,row.pilot_home_copy.fr);
+ assert.ok(dykPublishedMarkup(model).includes("#page="));
+}
+assert.deepEqual(dykWeiserSecond16Candidates({...r50b,release_stage:"RESEARCH_ONLY"},"2026-11-08"),[]);
+assert.deepEqual(dykWeiserSecond16Candidates(r50b,"2026-11-31"),[]);
+for(const [group,key] of [
+ ["row","editorial_approval"],["row","release_authorized"],
+ ["row","semantic_novelty_reviewed"],["row","historical_local_only"],["row","published"],
+ ["copy","final_english_signoff"],["copy","final_french_signoff"],
+ ["source","original_image_checked"],["source","deep_link_checked"]]){
+ const damaged=clone(r50b),row=damaged.records[0];
+ if(group==="row")row[key]=false;
+ else if(group==="copy")row.pilot_home_copy[key]=false;
+ else row.source[key]=false;
+ assert.equal(dykWeiserSecond16Candidates(damaged,"2026-11-08").length,15,
+  "Unapproved R50B record must be excluded: "+group+"."+key);
+}
+const r50bWrongPage=clone(r50b);
+r50bWrongPage.records[0].source.pdf_pages_1based[0]++;
+assert.equal(dykWeiserSecond16Candidates(r50bWrongPage,"2026-11-08").length,15);
+
 
 
 // Every new public teaser must resolve to an existing source-backed bilingual
@@ -156,6 +193,7 @@ for(const [published,poolSize] of [
  [[],DYK_GLOSSARY_FALLBACK_IDS.length],
  [histRows.map(x=>x.id),DYK_GLOSSARY_FALLBACK_IDS.length+20],
  [[...histRows,...r50Rows].map(x=>x.id),DYK_GLOSSARY_FALLBACK_IDS.length+36],
+ [[...histRows,...r50Rows,...r50bRows].map(x=>x.id),DYK_GLOSSARY_FALLBACK_IDS.length+52],
  [["DYK-M04-CANON-021","DYK-M04-CANON-022","DYK-M04-CANON-047","DYK-M04-CANON-058"],DYK_GLOSSARY_FALLBACK_IDS.length+4]
 ]){
  const cycle=alignedDates(poolSize);
@@ -174,4 +212,4 @@ const expanded=clone(data);
 expanded.records.push({id:"DYK-UNRELEASED-PLACEHOLDER",editorial_approval:false,release_authorized:false});
 assert.equal(dykPublishedCandidates(expanded,"2026-11-02").length,1);
 
-console.log("PASS H7 60-fact Discovery: 24 Glossary + 36 independently released historical, original R34 held, bilingual original-page links and nonrepeating rotation");
+console.log("PASS H7 76-fact Discovery: 24 Glossary + 52 independently released historical, original R34 held, bilingual original-page links and nonrepeating rotation");
