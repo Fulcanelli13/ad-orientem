@@ -185,6 +185,22 @@ let browser;try{
    const remaining=aggregate.uncertifiedFormCases.filter(x=>x.date===date);
    assert.deepEqual(remaining,[],date+" original 1962 Mass-form orations are still uncertified");
  }
+ // Source-owned IV-class ordinary commemorations on generic ferias,
+ // Saturday Marian Masses, and the suffixed 21 July sanctoral source.
+ // These twelve checks use the ACTUAL 2026 resolver, not constructed
+ // fixtures: all four nonconventual forms must be explicitly classified.
+ for(const date of [
+   "2026-01-05","2026-02-03","2026-02-14","2026-04-17",
+   "2026-04-23","2026-06-02","2026-06-09","2026-06-15",
+   "2026-06-20","2026-07-11","2026-07-21","2026-08-01"
+ ]){
+   const original=aggregate.single.find(x=>x.date===date);
+   assert.ok(original,date+" original Calendar commemoration was not resolved");
+   assert.deepEqual(original.prayers,[2,2,2],
+     date+" original source must have separate Collect/Secret/Postcommunion");
+   const pending=aggregate.uncertifiedFormCases.filter(x=>x.date===date);
+   assert.deepEqual(pending,[],date+" source-identified IV-class Mass remains unverified");
+ }
  for(const date of ["2026-03-27","2026-12-26","2026-12-28"]){
    const recovered=aggregate.recoveredInseparable.find(x=>x.date===date);
    const status=date==="2026-03-27"?recovered?.passionStatus:
