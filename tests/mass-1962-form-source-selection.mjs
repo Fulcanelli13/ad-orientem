@@ -137,7 +137,7 @@ for(const [date,mainPath,saintPath] of [
     calendarCommemorations:[{path:saintPath,prayerSourcePath:saintPath,
       name:"Original calendar commemoration"}]};
   const witness={...day,date,day:{
-    main:{id:":feria:4:w",rank:4,path:mainPath,title:"Post-Pentecost feria"},
+    main:{id:":feria:4:w",rank:4,path:null,title:"Post-Pentecost feria"},
     commemorations:[{id:"sancti:"+saintPath.slice(-5)+":4:w",
       rank:4,path:saintPath,title:"Ordinary fourth-class commemoration"}]},
     proper:{status:"ready",data:source}};
@@ -167,6 +167,9 @@ for(const [date,mainPath,saintPath] of [
   assert.equal(select({proper:{...source,calendarCommemorations:[
     {path:saintPath,prayerSourcePath:"Sancti/11-05"}]},
     calendarResolution:witness,form:"LOW"}).reason,"RUBRICAL_CLASSIFICATION_PENDING");
+  assert.equal(select({proper:{...source,sourcePath:"Tempora/Quad1-0"},
+    calendarResolution:witness,form:"LOW"}).reason,"RUBRICAL_CLASSIFICATION_PENDING",
+    "Unrelated season may not inherit Pentecost source identity");
   assert.equal(select({proper:{...source,secrets:[one]},
     calendarResolution:witness,form:"LOW"}).reason,"ORATION_SOURCE_INCOMPLETE");
 }
