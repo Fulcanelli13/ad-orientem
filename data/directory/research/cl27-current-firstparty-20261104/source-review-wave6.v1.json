@@ -1,0 +1,1522 @@
+{
+  "schema": "AO_CL27_CURRENT_SOURCE_WAVE6_V1",
+  "reviewed_at": "2026-11-08",
+  "publication": "RESEARCH_ONLY_NO_LIVE_MASS_OR_CL27_PROMOTION",
+  "canonical_source": {
+    "original_pr": 1775,
+    "blob_sha": "842b30caad7b6ad08ffed098cc136080fe89eb6d"
+  },
+  "summary": {
+    "previous_reviewed": 211,
+    "source_group_count": 35,
+    "new_original_rows_reviewed": 53,
+    "cumulative_reviewed": 264,
+    "remaining_historical_rows": 32,
+    "approved_live_mass_events": 0,
+    "approved_cl27_ecclesial_claims": 0,
+    "approved_coordinate_changes": 0
+  },
+  "policy": [
+    "Current operator schedule is source evidence, not individual dated event approval",
+    "One physical CL2 anchor; aliases never mint new church",
+    "Keep original source-row history unchanged",
+    "No unsafe extrapolation of 1962 rite from Latin language",
+    "No automatic SSPX ownership from chapel listed in district directory",
+    "Alternative Sunday clocks and conditional month-week recurrence not flattened",
+    "Special feasts and expired bulletins supersede generalized claims only within dated validity"
+  ],
+  "records": [
+    {
+      "cl2_anchor": "RG-7D5AA61CAE06",
+      "source_venue_name": "Chapelle Notre-Dame de Fatima",
+      "country": "FR",
+      "historical_rows": [
+        464,
+        2430,
+        2431
+      ],
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/oratoire-notre-dame-de-fatima"
+      ],
+      "historical_claims": [
+        {
+          "row": 464,
+          "source_id": "SSPXMAP:OPE-001512",
+          "day_pattern": "Sunday",
+          "time": "10:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Sunday 10h00\""
+        },
+        {
+          "row": 2430,
+          "source_id": "SSPXMAP:OPE-001512",
+          "day_pattern": "Friday",
+          "time": "18:30",
+          "frequency": "monthly (first Friday)",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"1er vendredi du mois: 18h30\""
+        },
+        {
+          "row": 2431,
+          "source_id": "SSPXMAP:OPE-001512",
+          "day_pattern": "Saturday",
+          "time": "09:00",
+          "frequency": "monthly (first Saturday)",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"1er samedi du mois: 9h00\""
+        }
+      ],
+      "current_evidence_url": "https://laportelatine.org/lieux/merigny/montlucon",
+      "evidence_kind": "FIRST_PARTY_CURRENT_LISTING",
+      "decision": "PATTERN_CORROBORATED_MINISTRY_SCOPE",
+      "observation": "Montluçon Chapelle Notre-Dame de Fatima: Sunday 10:00, first Friday 18:30, first Saturday 09:00 on district page. Institution explicitly Fraternité de la Transfiguration, not automatically SSPX-owned chapel or Mass-specific Una Cum.",
+      "remaining_gate": "Confirm actual dated celebrations and whether any special exceptions apply; preserve friend-community versus SSPX directory role.",
+      "scope": "SOURCE_SCOPED_CHURCH_OR_COMMUNITY_NOT_AUTOMATIC_OWNERSHIP_OR_ANY_MASS",
+      "published_current_occurrences": 0,
+      "not_established": [
+        "dated_2026_occurrence",
+        "exact_1962_books",
+        "una_cum",
+        "named_pope_in_canon",
+        "canonical_status",
+        "venue_ownership",
+        "visitor_entrance"
+      ],
+      "publication_status": "RESEARCH_ONLY_HOLD_UNTIL_EXPLICIT_EVENT_VALIDATION"
+    },
+    {
+      "cl2_anchor": "RG-32D17317FC55",
+      "source_venue_name": "Chapelle Notre-Dame du Rosaire",
+      "country": "FR",
+      "historical_rows": [
+        315,
+        1090
+      ],
+      "historical_source_urls": [
+        "https://laportelatine.org/lieux/montgardin/le-laus"
+      ],
+      "historical_claims": [
+        {
+          "row": 315,
+          "source_id": "ao-research-sspx-france-first-party-sspx-lpl-montgardin-le-laus",
+          "day_pattern": "Sunday",
+          "time": "09:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Dimanche 9h00\""
+        },
+        {
+          "row": 1090,
+          "source_id": "SSPX-LPL-MONTGARDIN-LE-LAUS",
+          "day_pattern": "Sunday",
+          "time": "09:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Dimanche 9h00\""
+        }
+      ],
+      "current_evidence_url": "https://laportelatine.org/lieux/montgardin/le-laus",
+      "evidence_kind": "FIRST_PARTY_CURRENT_LISTING",
+      "decision": "DUPLICATE_HISTORICAL_PATTERN_ONE_SITE",
+      "observation": "The same Le Laus Chapelle Notre-Dame du Rosaire Sunday 09:00 pattern appears in two frozen row IDs. The official France district lists one named chapel, not two distinct simultaneous Masses; nearby Montgardin Maison Notre-Dame has its own 07:25 and 10:30 Sunday programme.",
+      "remaining_gate": "Resolve row aliases under original CL2 site and dated occurrence; never multiply one source-listed Mass into two.",
+      "scope": "SOURCE_SCOPED_CHURCH_OR_COMMUNITY_NOT_AUTOMATIC_OWNERSHIP_OR_ANY_MASS",
+      "published_current_occurrences": 0,
+      "not_established": [
+        "dated_2026_occurrence",
+        "exact_1962_books",
+        "una_cum",
+        "named_pope_in_canon",
+        "canonical_status",
+        "venue_ownership",
+        "visitor_entrance"
+      ],
+      "publication_status": "RESEARCH_ONLY_HOLD_UNTIL_EXPLICIT_EVENT_VALIDATION"
+    },
+    {
+      "cl2_anchor": "RG-EC5A4BA48BF9",
+      "source_venue_name": "Birmingham Oratory — Immaculate Conception",
+      "country": "GB",
+      "historical_rows": [
+        2397
+      ],
+      "historical_source_urls": [
+        "https://birminghamoratory.org.uk/mass-times/"
+      ],
+      "historical_claims": [
+        {
+          "row": 2397,
+          "source_id": "ORD-GB-BIRMINGHAM-ORATORY-IMMACULATE-CONCEPTION",
+          "day_pattern": "Weekdays (days not specified)",
+          "time": "17:45",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Weekdays 5.45pm Mass (Latin), preceded by Rosary at 5.25pm\""
+        }
+      ],
+      "current_evidence_url": "https://birminghamoratory.org.uk/mass-times/",
+      "evidence_kind": "DIRECT_ORATORY_PUBLIC_SCHEDULE",
+      "decision": "LATIN_LANGUAGE_NOT_1962_PROOF",
+      "observation": "Birmingham Oratory weekday 17:45 Mass in Latin follows 17:25 Rosary; this is a genuine Mass separate from exposition and devotion. The word Latin alone does not identify the 1962 Missal. Earlier Wave 1 covered Sunday and Saturday rows; only outstanding 17:45 row is reviewed here.",
+      "remaining_gate": "Do not assign Roman 1962 to this Latin weekday Mass without explicit books/rite evidence; check dated notices for exceptions.",
+      "scope": "SOURCE_SCOPED_CHURCH_OR_COMMUNITY_NOT_AUTOMATIC_OWNERSHIP_OR_ANY_MASS",
+      "published_current_occurrences": 0,
+      "not_established": [
+        "dated_2026_occurrence",
+        "exact_1962_books",
+        "una_cum",
+        "named_pope_in_canon",
+        "canonical_status",
+        "venue_ownership",
+        "visitor_entrance"
+      ],
+      "publication_status": "RESEARCH_ONLY_HOLD_UNTIL_EXPLICIT_EVENT_VALIDATION"
+    },
+    {
+      "cl2_anchor": "RG-DA2F4D212252",
+      "source_venue_name": "Oxford Oratory — St Aloysius Gonzaga",
+      "country": "GB",
+      "historical_rows": [
+        2400
+      ],
+      "historical_source_urls": [
+        "https://www.oxfordoratory.org.uk/mass-times.php"
+      ],
+      "historical_claims": [
+        {
+          "row": 2400,
+          "source_id": "ORD-GB-OXFORD-ORATORY-ST-ALOYSIUS",
+          "day_pattern": "Wednesday",
+          "time": "18:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Wednesday 18:00 Mass is Latin\""
+        }
+      ],
+      "current_evidence_url": "https://www.oxfordoratory.org.uk/mass-times.php",
+      "evidence_kind": "DIRECT_ORATORY_PUBLIC_SCHEDULE",
+      "decision": "LATIN_LANGUAGE_NOT_1962_PROOF",
+      "observation": "Oxford Wednesday 18:00 Mass is marked Latin, while Sunday 08:00 is specifically the older-form Low Mass and Sunday 11:00 is solemn Latin. These are distinct celebrations and their precise books must not be inferred from shared Latin language.",
+      "remaining_gate": "Do not convert Wednesday 18:00 into an old-rite Mass or assume it uses the same Missal as Sunday 08:00.",
+      "scope": "SOURCE_SCOPED_CHURCH_OR_COMMUNITY_NOT_AUTOMATIC_OWNERSHIP_OR_ANY_MASS",
+      "published_current_occurrences": 0,
+      "not_established": [
+        "dated_2026_occurrence",
+        "exact_1962_books",
+        "una_cum",
+        "named_pope_in_canon",
+        "canonical_status",
+        "venue_ownership",
+        "visitor_entrance"
+      ],
+      "publication_status": "RESEARCH_ONLY_HOLD_UNTIL_EXPLICIT_EVENT_VALIDATION"
+    },
+    {
+      "cl2_anchor": "RG-440E0B1F1274",
+      "source_venue_name": "Białystok",
+      "country": "PL",
+      "historical_rows": [
+        2179,
+        2180
+      ],
+      "historical_source_urls": [
+        "https://www.institutdubonpasteur.org/nos-apostolats/lieux-dapostolat-dans-le-monde/bialystok/"
+      ],
+      "historical_claims": [
+        {
+          "row": 2179,
+          "source_id": "ao-ibp-bia-ystok-ul-szkolna-2a-15-640-bia-ystok-polska-12",
+          "day_pattern": "Weekdays (days not specified)",
+          "time": "07:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Tous les jours de la semaine : Messes lues à 7h00 et 18h00\""
+        },
+        {
+          "row": 2180,
+          "source_id": "ao-ibp-bia-ystok-ul-szkolna-2a-15-640-bia-ystok-polska-12",
+          "day_pattern": "Weekdays (days not specified)",
+          "time": "18:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Tous les jours de la semaine : Messes lues à 7h00 et 18h00\""
+        }
+      ],
+      "current_evidence_url": "https://www.institutdubonpasteur.org/nos-apostolats/lieux-dapostolat-dans-le-monde/bialystok/",
+      "evidence_kind": "INSTITUTE_CURRENT_OFFICIAL_LIST",
+      "decision": "PATTERN_CORROBORATED_WITH_CHURCH_LOCATION",
+      "observation": "Białystok Institute of the Good Shepherd site at ul. Szkolna 2a explicitly lists weekday Low Masses 07:00 and 18:00. Sunday/feast services 08:00, 10:30 Sung, 17:00 are distinct; confession after Mass is not another Mass.",
+      "remaining_gate": "Official page is a standing programme not 2026 dated occurrences. Scope to IBP apostolate, not every Mass by another provider in the city.",
+      "scope": "SOURCE_SCOPED_CHURCH_OR_COMMUNITY_NOT_AUTOMATIC_OWNERSHIP_OR_ANY_MASS",
+      "published_current_occurrences": 0,
+      "not_established": [
+        "dated_2026_occurrence",
+        "exact_1962_books",
+        "una_cum",
+        "named_pope_in_canon",
+        "canonical_status",
+        "venue_ownership",
+        "visitor_entrance"
+      ],
+      "publication_status": "RESEARCH_ONLY_HOLD_UNTIL_EXPLICIT_EVENT_VALIDATION"
+    },
+    {
+      "cl2_anchor": "RG-270DB00DC743",
+      "source_venue_name": "Tolentino",
+      "country": "IT",
+      "historical_rows": [
+        1861
+      ],
+      "historical_source_urls": [
+        "https://www.institutdubonpasteur.org/nos-apostolats/lieux-dapostolat-dans-le-monde/tolentino/"
+      ],
+      "historical_claims": [
+        {
+          "row": 1861,
+          "source_id": "ao-ibp-tolentino-iglesia-di-sacro-cuore-dei-sacconi-tolentino-11",
+          "day_pattern": "Sunday",
+          "time": "16:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Tous les dimanches : Messe : 16h00\""
+        }
+      ],
+      "current_evidence_url": "https://www.institutdubonpasteur.org/nos-apostolats/lieux-dapostolat-dans-le-monde/tolentino/",
+      "evidence_kind": "INSTITUTE_OFFICIAL_PAGE_UNDATED",
+      "decision": "INSTITUTE_SERVES_ONLY_TWO_MONTHLY_WITNESSES",
+      "observation": "Tolentino Sacro Cuore dei Sacconi page says 16:00 Mass every Sunday in collaboration with confraternity but IBP itself provides only TWO Sundays per month. This distinction defeats automatic attribution of all recurring 16:00 Sundays to IBP.",
+      "remaining_gate": "Identify dated 2026 Sunday schedule and celebrant/operator before generating any individual monthly IBP participation or weekly event.",
+      "scope": "SOURCE_SCOPED_CHURCH_OR_COMMUNITY_NOT_AUTOMATIC_OWNERSHIP_OR_ANY_MASS",
+      "published_current_occurrences": 0,
+      "not_established": [
+        "dated_2026_occurrence",
+        "exact_1962_books",
+        "una_cum",
+        "named_pope_in_canon",
+        "canonical_status",
+        "venue_ownership",
+        "visitor_entrance"
+      ],
+      "publication_status": "RESEARCH_ONLY_HOLD_UNTIL_EXPLICIT_EVENT_VALIDATION"
+    },
+    {
+      "cl2_anchor": "RG-F9DE7CC00A01",
+      "source_venue_name": "Carmel of the Holy Trinity",
+      "country": "US",
+      "historical_rows": [
+        432,
+        2401
+      ],
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/carmel-of-the-holy-trinity"
+      ],
+      "historical_claims": [
+        {
+          "row": 432,
+          "source_id": "SSPXMAP:OPE-001242",
+          "day_pattern": "Sunday",
+          "time": "08:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Sunday: 8:00 am\""
+        },
+        {
+          "row": 2401,
+          "source_id": "SSPXMAP:OPE-001242",
+          "day_pattern": "Saturday",
+          "time": "08:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Saturday: 8:00 am\""
+        }
+      ],
+      "current_evidence_url": "https://sspx.org/en/list-sspx-chapels",
+      "evidence_kind": "FIRST_PARTY_US_DISTRICT_DIRECTORY",
+      "decision": "PATTERN_CORROBORATED_HOSTED_CARMEL",
+      "observation": "Spokane Carmel of the Holy Trinity at 4027 S Wilbur Rd listed by US district with Sunday 08:00 and Saturday 08:00. Convent-hosted celebration, not proof that SSPX owns the Carmel or that all Masses have SSPX celebrants.",
+      "remaining_gate": "Confirm public access and current date/exception with Carmel; no site-wide institute, Una Cum, canonical or ownership inference.",
+      "scope": "SOURCE_SCOPED_CHURCH_OR_COMMUNITY_NOT_AUTOMATIC_OWNERSHIP_OR_ANY_MASS",
+      "published_current_occurrences": 0,
+      "not_established": [
+        "dated_2026_occurrence",
+        "exact_1962_books",
+        "una_cum",
+        "named_pope_in_canon",
+        "canonical_status",
+        "venue_ownership",
+        "visitor_entrance"
+      ],
+      "publication_status": "RESEARCH_ONLY_HOLD_UNTIL_EXPLICIT_EVENT_VALIDATION"
+    },
+    {
+      "cl2_anchor": "RG-79A74B2D1B07",
+      "source_venue_name": "Queen of All Saints Chapel",
+      "country": "US",
+      "historical_rows": [
+        943,
+        3008
+      ],
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/queen-of-all-saints-chapel"
+      ],
+      "historical_claims": [
+        {
+          "row": 943,
+          "source_id": "SSPXMAP:OPE-001100",
+          "day_pattern": "Sunday",
+          "time": "07:30",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Sunday Mass: 6:30 Confessions, 7:30 Low Mass, 8:45 Confessions, 10:00 High Mass\""
+        },
+        {
+          "row": 3008,
+          "source_id": "SSPXMAP:OPE-001100",
+          "day_pattern": "Sunday",
+          "time": "10:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Sunday Mass: 6:30 Confessions, 7:30 Low Mass, 8:45 Confessions, 10:00 High Mass\""
+        }
+      ],
+      "current_evidence_url": "https://sspx.org/en/list-sspx-chapels",
+      "evidence_kind": "FIRST_PARTY_US_DISTRICT_DIRECTORY",
+      "decision": "PATTERN_CORROBORATED_DISTINCT_SERVICE_TYPES",
+      "observation": "Springfield Missouri Queen of All Saints Chapel has Sunday 07:30 Low and 10:00 High, with confessions at 06:30 and 08:45. Distinct confessions are never Mass records.",
+      "remaining_gate": "Verify dates and holiday exceptions; keep one chapel identity with two time-distinct Sunday Masses.",
+      "scope": "SOURCE_SCOPED_CHURCH_OR_COMMUNITY_NOT_AUTOMATIC_OWNERSHIP_OR_ANY_MASS",
+      "published_current_occurrences": 0,
+      "not_established": [
+        "dated_2026_occurrence",
+        "exact_1962_books",
+        "una_cum",
+        "named_pope_in_canon",
+        "canonical_status",
+        "venue_ownership",
+        "visitor_entrance"
+      ],
+      "publication_status": "RESEARCH_ONLY_HOLD_UNTIL_EXPLICIT_EVENT_VALIDATION"
+    },
+    {
+      "cl2_anchor": "RG-A6CF8B6A9B59",
+      "source_venue_name": "North American Martyrs Chapel",
+      "country": "US",
+      "historical_rows": [
+        788
+      ],
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/north-american-martyrs-chapel"
+      ],
+      "historical_claims": [
+        {
+          "row": 788,
+          "source_id": "SSPXMAP:OPE-001104",
+          "day_pattern": "Sunday",
+          "time": "09:30",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Sunday: 9:30 am\""
+        }
+      ],
+      "current_evidence_url": "https://sspx.org/en/list-sspx-chapels",
+      "evidence_kind": "FIRST_PARTY_US_DISTRICT_DIRECTORY",
+      "decision": "PATTERN_CORROBORATED_SOURCE_ONLY",
+      "observation": "North American Martyrs Chapel Hudson Falls NY listed Sunday 09:30 at 100 Boulevard. Venue location and listed programme match the frozen historical row.",
+      "remaining_gate": "Current first-party standing schedule is not a specific dated occurrence; check exceptions and ministry-level details.",
+      "scope": "SOURCE_SCOPED_CHURCH_OR_COMMUNITY_NOT_AUTOMATIC_OWNERSHIP_OR_ANY_MASS",
+      "published_current_occurrences": 0,
+      "not_established": [
+        "dated_2026_occurrence",
+        "exact_1962_books",
+        "una_cum",
+        "named_pope_in_canon",
+        "canonical_status",
+        "venue_ownership",
+        "visitor_entrance"
+      ],
+      "publication_status": "RESEARCH_ONLY_HOLD_UNTIL_EXPLICIT_EVENT_VALIDATION"
+    },
+    {
+      "cl2_anchor": "RG-086C9F59E2FF",
+      "source_venue_name": "Our Lady of Lourdes Chapel",
+      "country": "US",
+      "historical_rows": [
+        839
+      ],
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/our-lady-of-lourdes-chapel"
+      ],
+      "historical_claims": [
+        {
+          "row": 839,
+          "source_id": "SSPXMAP:OPE-001232",
+          "day_pattern": "Sunday",
+          "time": "12:30",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Sunday: 12:30 pm\""
+        }
+      ],
+      "current_evidence_url": "https://sspx.org/en/list-sspx-chapels",
+      "evidence_kind": "FIRST_PARTY_US_DISTRICT_DIRECTORY",
+      "decision": "PATTERN_CORROBORATED_NAME_NORMALIZATION",
+      "observation": "Bethlehem West Virginia listed as Our Lady of Lourdes at 25 Chapel Road, Sunday 12:30. Original CL2 calls the same place Our Lady of Lourdes Chapel; keep alias without new pin.",
+      "remaining_gate": "Confirm locality and present event from district; do not confuse with unrelated same-name Honolulu mission.",
+      "scope": "SOURCE_SCOPED_CHURCH_OR_COMMUNITY_NOT_AUTOMATIC_OWNERSHIP_OR_ANY_MASS",
+      "published_current_occurrences": 0,
+      "not_established": [
+        "dated_2026_occurrence",
+        "exact_1962_books",
+        "una_cum",
+        "named_pope_in_canon",
+        "canonical_status",
+        "venue_ownership",
+        "visitor_entrance"
+      ],
+      "publication_status": "RESEARCH_ONLY_HOLD_UNTIL_EXPLICIT_EVENT_VALIDATION"
+    },
+    {
+      "cl2_anchor": "RG-27CEC8F13531",
+      "source_venue_name": "Saint Peter Chanel Mission",
+      "country": "US",
+      "historical_rows": [
+        1000
+      ],
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/saint-peter-chanel-mission"
+      ],
+      "historical_claims": [
+        {
+          "row": 1000,
+          "source_id": "SSPXMAP:OPE-001197",
+          "day_pattern": "Sunday",
+          "time": "16:00",
+          "frequency": "2nd Sunday of the month",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"2nd Sunday: 4:00 pm\""
+        }
+      ],
+      "current_evidence_url": "https://sspx.org/en/list-sspx-chapels",
+      "evidence_kind": "FIRST_PARTY_US_DISTRICT_DIRECTORY",
+      "decision": "SECOND_SUNDAY_ONLY_NOT_WEEKLY",
+      "observation": "Saint Peter Chanel Mission in Keaau Hawaii, 16-291 Maile St, Sunday 16:00 only on 2nd Sunday. Not a four-Sundays recurring weekly Mass.",
+      "remaining_gate": "Date-match second Sunday and local exceptions before publishing.",
+      "scope": "SOURCE_SCOPED_CHURCH_OR_COMMUNITY_NOT_AUTOMATIC_OWNERSHIP_OR_ANY_MASS",
+      "published_current_occurrences": 0,
+      "not_established": [
+        "dated_2026_occurrence",
+        "exact_1962_books",
+        "una_cum",
+        "named_pope_in_canon",
+        "canonical_status",
+        "venue_ownership",
+        "visitor_entrance"
+      ],
+      "publication_status": "RESEARCH_ONLY_HOLD_UNTIL_EXPLICIT_EVENT_VALIDATION"
+    },
+    {
+      "cl2_anchor": "RG-354A4E662CCE",
+      "source_venue_name": "Saint Therese Chapel",
+      "country": "US",
+      "historical_rows": [
+        1014
+      ],
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/saint-therese-chapel-keno"
+      ],
+      "historical_claims": [
+        {
+          "row": 1014,
+          "source_id": "SSPXMAP:OPE-001134",
+          "day_pattern": "Sunday",
+          "time": "10:30",
+          "frequency": "1st, 3rd and 5th Sunday of the month",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"1st, 3rd, 5th Sunday: 10:30 am\""
+        }
+      ],
+      "current_evidence_url": "https://sspx.org/en/list-sspx-chapels",
+      "evidence_kind": "FIRST_PARTY_US_DISTRICT_DIRECTORY",
+      "decision": "FIRST_THIRD_FIFTH_SUNDAY_QUALIFIERS",
+      "observation": "Saint Therese Chapel at 12371 Keno Worden Rd, Keno OR, lists 10:30 on 1st, 3rd, 5th Sundays; do not conflate other Saint Therese chapels in NY or WI.",
+      "remaining_gate": "Keep exact month-week recurrence and verify actual dated occurrence before publication.",
+      "scope": "SOURCE_SCOPED_CHURCH_OR_COMMUNITY_NOT_AUTOMATIC_OWNERSHIP_OR_ANY_MASS",
+      "published_current_occurrences": 0,
+      "not_established": [
+        "dated_2026_occurrence",
+        "exact_1962_books",
+        "una_cum",
+        "named_pope_in_canon",
+        "canonical_status",
+        "venue_ownership",
+        "visitor_entrance"
+      ],
+      "publication_status": "RESEARCH_ONLY_HOLD_UNTIL_EXPLICIT_EVENT_VALIDATION"
+    },
+    {
+      "cl2_anchor": "RG-3D7CC2D55D0C",
+      "source_venue_name": "Immaculate Conception Church",
+      "country": "US",
+      "historical_rows": [
+        635
+      ],
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/immaculate-conception-church-gilford"
+      ],
+      "historical_claims": [
+        {
+          "row": 635,
+          "source_id": "SSPXMAP:OPE-001414",
+          "day_pattern": "Sunday",
+          "time": "14:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Sunday: 2:00 pm\""
+        }
+      ],
+      "current_evidence_url": "https://sspx.org/en/list-sspx-chapels",
+      "evidence_kind": "FIRST_PARTY_US_DISTRICT_DIRECTORY",
+      "decision": "PATTERN_CORROBORATED_DISAMBIGUATED",
+      "observation": "Gilford New Hampshire Immaculate Conception Church is listed at 500 Morrill St with Sunday 14:00. Distinct from Post Falls Idaho Immaculate Conception Church.",
+      "remaining_gate": "Do not join homonyms across states; still require current event proof.",
+      "scope": "SOURCE_SCOPED_CHURCH_OR_COMMUNITY_NOT_AUTOMATIC_OWNERSHIP_OR_ANY_MASS",
+      "published_current_occurrences": 0,
+      "not_established": [
+        "dated_2026_occurrence",
+        "exact_1962_books",
+        "una_cum",
+        "named_pope_in_canon",
+        "canonical_status",
+        "venue_ownership",
+        "visitor_entrance"
+      ],
+      "publication_status": "RESEARCH_ONLY_HOLD_UNTIL_EXPLICIT_EVENT_VALIDATION"
+    },
+    {
+      "cl2_anchor": "RG-D9CDE7A6D49D",
+      "source_venue_name": "Holy Name of Jesus Academy",
+      "country": "US",
+      "historical_rows": [
+        622
+      ],
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/holy-name-of-jesus-academy-massena"
+      ],
+      "historical_claims": [
+        {
+          "row": 622,
+          "source_id": "SSPXMAP:OPE-001231",
+          "day_pattern": "Sunday",
+          "time": "09:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Sunday: 9:00 am (call first)\""
+        }
+      ],
+      "current_evidence_url": "https://sspx.org/en/list-sspx-chapels",
+      "evidence_kind": "FIRST_PARTY_US_DISTRICT_DIRECTORY",
+      "decision": "CALL_FIRST_SUNDAY_PATTERN",
+      "observation": "Holy Name of Jesus Academy Massena NY lists Sunday 09:00 but explicitly says call first. Academy is a host site; listing is not unconditional weekly public access.",
+      "remaining_gate": "Do not publish a guaranteed Sunday Mass; verify academy access, local announcements and ministry scope.",
+      "scope": "SOURCE_SCOPED_CHURCH_OR_COMMUNITY_NOT_AUTOMATIC_OWNERSHIP_OR_ANY_MASS",
+      "published_current_occurrences": 0,
+      "not_established": [
+        "dated_2026_occurrence",
+        "exact_1962_books",
+        "una_cum",
+        "named_pope_in_canon",
+        "canonical_status",
+        "venue_ownership",
+        "visitor_entrance"
+      ],
+      "publication_status": "RESEARCH_ONLY_HOLD_UNTIL_EXPLICIT_EVENT_VALIDATION"
+    },
+    {
+      "cl2_anchor": "RG-CDD12C9995CA",
+      "source_venue_name": "Our Lady of Victory",
+      "country": "US",
+      "historical_rows": [
+        862
+      ],
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/our-lady-of-victory"
+      ],
+      "historical_claims": [
+        {
+          "row": 862,
+          "source_id": "SSPXMAP:OPE-001020",
+          "day_pattern": "Sunday",
+          "time": "16:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Sunday Mass at 4 PM\""
+        }
+      ],
+      "current_evidence_url": "https://sspx.org/en/list-sspx-chapels",
+      "evidence_kind": "FIRST_PARTY_SITE_ONLY",
+      "decision": "HISTORICAL_SUNDAY_CLOCK_NOT_CONFIRMED",
+      "observation": "US directory lists Our Lady of Victory, Necedah WI, but no 16:00 time on the checked current district listing. The identically named churches in Las Vegas and Davie are distinct physical sites.",
+      "remaining_gate": "Keep frozen Sunday 16:00 unverified; never borrow times from Las Vegas or Davie.",
+      "scope": "SOURCE_SCOPED_CHURCH_OR_COMMUNITY_NOT_AUTOMATIC_OWNERSHIP_OR_ANY_MASS",
+      "published_current_occurrences": 0,
+      "not_established": [
+        "dated_2026_occurrence",
+        "exact_1962_books",
+        "una_cum",
+        "named_pope_in_canon",
+        "canonical_status",
+        "venue_ownership",
+        "visitor_entrance"
+      ],
+      "publication_status": "RESEARCH_ONLY_HOLD_UNTIL_EXPLICIT_EVENT_VALIDATION"
+    },
+    {
+      "cl2_anchor": "RG-F5EB70B57E4A",
+      "source_venue_name": "Saint Michael the Archangel Chapel",
+      "country": "US",
+      "historical_rows": [
+        997,
+        2406
+      ],
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/saint-michael-the-archangel-chapel"
+      ],
+      "historical_claims": [
+        {
+          "row": 997,
+          "source_id": "SSPXMAP:OPE-001245",
+          "day_pattern": "Saturday",
+          "time": "08:00",
+          "frequency": "monthly (4th Saturday)",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Mass is once a month on the 4th Saturday 8:00am\""
+        },
+        {
+          "row": 2406,
+          "source_id": "SSPXMAP:OPE-001245",
+          "day_pattern": "Friday",
+          "time": "19:00",
+          "frequency": "monthly (Friday before 4th Saturday)",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"7:00PM on the Friday preceding the 4th Saturday\""
+        }
+      ],
+      "current_evidence_url": "https://sspx.org/en/list-sspx-chapels",
+      "evidence_kind": "FIRST_PARTY_SITE_ONLY",
+      "decision": "FOURTH_SATURDAY_TIMES_NOT_CONFIRMED",
+      "observation": "Midland Texas Saint Michael the Archangel Chapel at 3001 W Golf Course Rd is listed as a place, but current district page does not publish the historical fourth-Saturday 08:00 or preceding-Friday 19:00 schedule.",
+      "remaining_gate": "Keep both historical time claims held. Do not transfer time from the similarly named Texas Spring church.",
+      "scope": "SOURCE_SCOPED_CHURCH_OR_COMMUNITY_NOT_AUTOMATIC_OWNERSHIP_OR_ANY_MASS",
+      "published_current_occurrences": 0,
+      "not_established": [
+        "dated_2026_occurrence",
+        "exact_1962_books",
+        "una_cum",
+        "named_pope_in_canon",
+        "canonical_status",
+        "venue_ownership",
+        "visitor_entrance"
+      ],
+      "publication_status": "RESEARCH_ONLY_HOLD_UNTIL_EXPLICIT_EVENT_VALIDATION"
+    },
+    {
+      "cl2_anchor": "RG-ADC62D1999CD",
+      "source_venue_name": "Saint Joseph Mission",
+      "country": "US",
+      "historical_rows": [
+        982
+      ],
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/saint-joseph-mission"
+      ],
+      "historical_claims": [
+        {
+          "row": 982,
+          "source_id": "SSPXMAP:OPE-001179",
+          "day_pattern": "Sunday",
+          "time": "09:30",
+          "frequency": "1st and 3rd Sunday of the month",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Sunday Mass on the 1st and 3rd Sundays of each month; 8:30 a.m. Confessions; 9:30 a.m. Mass\""
+        }
+      ],
+      "current_evidence_url": "https://sspx.org/en/list-sspx-chapels",
+      "evidence_kind": "FIRST_PARTY_SITE_ONLY",
+      "decision": "FIRST_THIRD_SUNDAY_TIMES_NOT_CONFIRMED",
+      "observation": "Saint Joseph Mission St Maries Idaho is listed at 81525 Highway 3; current general US directory refers the user to fsspx.today without 09:30 first/third-Sunday verification.",
+      "remaining_gate": "Do not generalize one occurrence or assert monthly 09:30 until dated operator evidence is available.",
+      "scope": "SOURCE_SCOPED_CHURCH_OR_COMMUNITY_NOT_AUTOMATIC_OWNERSHIP_OR_ANY_MASS",
+      "published_current_occurrences": 0,
+      "not_established": [
+        "dated_2026_occurrence",
+        "exact_1962_books",
+        "una_cum",
+        "named_pope_in_canon",
+        "canonical_status",
+        "venue_ownership",
+        "visitor_entrance"
+      ],
+      "publication_status": "RESEARCH_ONLY_HOLD_UNTIL_EXPLICIT_EVENT_VALIDATION"
+    },
+    {
+      "cl2_anchor": "RG-8CFB1A73D206",
+      "source_venue_name": "Saint Stephen Chapel",
+      "country": "US",
+      "historical_rows": [
+        1012
+      ],
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/saint-stephen-chapel"
+      ],
+      "historical_claims": [
+        {
+          "row": 1012,
+          "source_id": "SSPXMAP:OPE-002567",
+          "day_pattern": "Sunday",
+          "time": "16:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"4:00PM Mass Sundays; Confessions at 3:15pm\""
+        }
+      ],
+      "current_evidence_url": "https://sspx.org/en/list-sspx-chapels",
+      "evidence_kind": "FIRST_PARTY_SITE_ONLY",
+      "decision": "SUNDAY_1600_NOT_CONFIRMED",
+      "observation": "Saint Stephen Chapel Grants Pass OR, 316 Hoffman Way, appears in US official directory, but this directory does not establish the original Sunday 16:00 time.",
+      "remaining_gate": "Use chapel-specific programme for a date before publishing.",
+      "scope": "SOURCE_SCOPED_CHURCH_OR_COMMUNITY_NOT_AUTOMATIC_OWNERSHIP_OR_ANY_MASS",
+      "published_current_occurrences": 0,
+      "not_established": [
+        "dated_2026_occurrence",
+        "exact_1962_books",
+        "una_cum",
+        "named_pope_in_canon",
+        "canonical_status",
+        "venue_ownership",
+        "visitor_entrance"
+      ],
+      "publication_status": "RESEARCH_ONLY_HOLD_UNTIL_EXPLICIT_EVENT_VALIDATION"
+    },
+    {
+      "cl2_anchor": "RG-DAB77948EF11",
+      "source_venue_name": "Saint Lawrence Chapel",
+      "country": "US",
+      "historical_rows": [
+        988
+      ],
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/saint-lawrence-chapel"
+      ],
+      "historical_claims": [
+        {
+          "row": 988,
+          "source_id": "SSPXMAP:OPE-001073",
+          "day_pattern": "Sunday",
+          "time": "10:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Sunday 10:00AM (Metalocator)\""
+        }
+      ],
+      "current_evidence_url": "https://sspx.org/en/list-sspx-chapels",
+      "evidence_kind": "FIRST_PARTY_SITE_ONLY",
+      "decision": "SUNDAY_1000_NOT_CONFIRMED",
+      "observation": "Saint Lawrence Chapel South Windsor CT, 1001 Foster St Extension, is listed officially, but no actual 10:00 Sunday time is present on current general directory.",
+      "remaining_gate": "Do not treat historical Mass time as current, even though site identity is supported.",
+      "scope": "SOURCE_SCOPED_CHURCH_OR_COMMUNITY_NOT_AUTOMATIC_OWNERSHIP_OR_ANY_MASS",
+      "published_current_occurrences": 0,
+      "not_established": [
+        "dated_2026_occurrence",
+        "exact_1962_books",
+        "una_cum",
+        "named_pope_in_canon",
+        "canonical_status",
+        "venue_ownership",
+        "visitor_entrance"
+      ],
+      "publication_status": "RESEARCH_ONLY_HOLD_UNTIL_EXPLICIT_EVENT_VALIDATION"
+    },
+    {
+      "cl2_anchor": "RG-31ABE67F81E8",
+      "source_venue_name": "Sacred Heart Chapel",
+      "country": "NG",
+      "historical_rows": [
+        951,
+        3009
+      ],
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/sacred-heart-chapel"
+      ],
+      "historical_claims": [
+        {
+          "row": 951,
+          "source_id": "SSPXMAP:OPE-002058",
+          "day_pattern": "Saturday",
+          "time": "17:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Saturday 5pm, Sunday 9am\""
+        },
+        {
+          "row": 3009,
+          "source_id": "SSPXMAP:OPE-002058",
+          "day_pattern": "Sunday",
+          "time": "09:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Saturday 5pm, Sunday 9am\""
+        }
+      ],
+      "current_evidence_url": "https://fsspx.africa/en/list-sspx-chapels-2",
+      "evidence_kind": "FIRST_PARTY_AFRICA_DISTRICT",
+      "decision": "PATTERN_CORROBORATED_DISTINCT_CHAPEL",
+      "observation": "Abuja Sacred Heart Chapel, 44 Khartoum St, Wuse Zone 5, lists Saturday 17:00 and Sunday 09:00. Separate from Lagos St Pius X or Enugu St Michael priory, which serves the region.",
+      "remaining_gate": "Verify dated exceptions and chapel access; do not merge with the similarly named Sacred Heart elsewhere.",
+      "scope": "SOURCE_SCOPED_CHURCH_OR_COMMUNITY_NOT_AUTOMATIC_OWNERSHIP_OR_ANY_MASS",
+      "published_current_occurrences": 0,
+      "not_established": [
+        "dated_2026_occurrence",
+        "exact_1962_books",
+        "una_cum",
+        "named_pope_in_canon",
+        "canonical_status",
+        "venue_ownership",
+        "visitor_entrance"
+      ],
+      "publication_status": "RESEARCH_ONLY_HOLD_UNTIL_EXPLICIT_EVENT_VALIDATION"
+    },
+    {
+      "cl2_anchor": "RG-98D6A35C40D4",
+      "source_venue_name": "Saint Pius V Chapel",
+      "country": "NG",
+      "historical_rows": [
+        1004,
+        3040
+      ],
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/saint-pius-v-chapel-onithsha"
+      ],
+      "historical_claims": [
+        {
+          "row": 1004,
+          "source_id": "SSPXMAP:OPE-002057",
+          "day_pattern": "Saturday",
+          "time": "17:30",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Saturday Mass at 5:30 pm; Sunday Mass at 9:00 am\""
+        },
+        {
+          "row": 3040,
+          "source_id": "SSPXMAP:OPE-002057",
+          "day_pattern": "Sunday",
+          "time": "09:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Saturday Mass at 5:30 pm; Sunday Mass at 9:00 am\""
+        }
+      ],
+      "current_evidence_url": "https://fsspx.africa/en/list-sspx-chapels-2",
+      "evidence_kind": "FIRST_PARTY_AFRICA_DISTRICT",
+      "decision": "PATTERN_CORROBORATED_BUT_BULLETIN_VARIATION",
+      "observation": "Onitsha St Pius V Chapel, 34 Anyika Street Awada Obosi, currently lists Saturday 17:30 and Sunday 09:00. Past district bulletins list later Saturday clocks and alternate month-week Sunday programmes. Current directory is a standing source, not immutable date proof.",
+      "remaining_gate": "Do not carry older bulletin exceptions into 2026 blindly or suppress dated updates. Preserve distinct Onitsha vs Lagos St Pius X identities.",
+      "scope": "SOURCE_SCOPED_CHURCH_OR_COMMUNITY_NOT_AUTOMATIC_OWNERSHIP_OR_ANY_MASS",
+      "published_current_occurrences": 0,
+      "not_established": [
+        "dated_2026_occurrence",
+        "exact_1962_books",
+        "una_cum",
+        "named_pope_in_canon",
+        "canonical_status",
+        "venue_ownership",
+        "visitor_entrance"
+      ],
+      "publication_status": "RESEARCH_ONLY_HOLD_UNTIL_EXPLICIT_EVENT_VALIDATION"
+    },
+    {
+      "cl2_anchor": "RG-208861BCA8D1",
+      "source_venue_name": "Immaculate Heart of Mary Chapel",
+      "country": "NG",
+      "historical_rows": [
+        638
+      ],
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/immaculate-heart-of-mary-chapel-port-harcourt"
+      ],
+      "historical_claims": [
+        {
+          "row": 638,
+          "source_id": "SSPXMAP:OPE-002059",
+          "day_pattern": "Sunday",
+          "time": "16:00",
+          "frequency": "monthly (1st, 3rd and 5th Sunday)",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Sunday Mass at 4pm on first, third and fifth Sunday of the month\""
+        }
+      ],
+      "current_evidence_url": "https://fsspx.africa/en/list-sspx-chapels-2",
+      "evidence_kind": "FIRST_PARTY_AFRICA_DISTRICT",
+      "decision": "FIRST_THIRD_FIFTH_SUNDAY_ONLY",
+      "observation": "Port Harcourt Immaculate Heart of Mary Chapel, Flat 20 Federal Department of Agriculture Quarters, lists 16:00 first, third, fifth Sundays; official page requires contacting district for more information.",
+      "remaining_gate": "No every-Sunday recurrence; respect host site and conditional announcements.",
+      "scope": "SOURCE_SCOPED_CHURCH_OR_COMMUNITY_NOT_AUTOMATIC_OWNERSHIP_OR_ANY_MASS",
+      "published_current_occurrences": 0,
+      "not_established": [
+        "dated_2026_occurrence",
+        "exact_1962_books",
+        "una_cum",
+        "named_pope_in_canon",
+        "canonical_status",
+        "venue_ownership",
+        "visitor_entrance"
+      ],
+      "publication_status": "RESEARCH_ONLY_HOLD_UNTIL_EXPLICIT_EVENT_VALIDATION"
+    },
+    {
+      "cl2_anchor": "RG-7C07DE0299FF",
+      "source_venue_name": "St. Paul's Mission",
+      "country": "ZA",
+      "historical_rows": [
+        1060,
+        3074
+      ],
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/st-paul-s-mission"
+      ],
+      "historical_claims": [
+        {
+          "row": 1060,
+          "source_id": "SSPXMAP:OPE-002085",
+          "day_pattern": "Saturday",
+          "time": "08:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Saturday: Mass at 8:00 am; Sunday: Mass at 8:30 am\""
+        },
+        {
+          "row": 3074,
+          "source_id": "SSPXMAP:OPE-002085",
+          "day_pattern": "Sunday",
+          "time": "08:30",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Saturday: Mass at 8:00 am; Sunday: Mass at 8:30 am\""
+        }
+      ],
+      "current_evidence_url": "https://fsspx.africa/en/list-sspx-chapels-2",
+      "evidence_kind": "FIRST_PARTY_AFRICA_DISTRICT",
+      "decision": "PATTERN_SUBJECT_TO_CHANGE",
+      "observation": "Saint Paul's Mission in Folweni, South Africa, lists Saturday 08:00 and Sunday 08:30 but explicitly says times can change and should be confirmed.",
+      "remaining_gate": "Mark as contact-first mission and never guarantee an event or entrance.",
+      "scope": "SOURCE_SCOPED_CHURCH_OR_COMMUNITY_NOT_AUTOMATIC_OWNERSHIP_OR_ANY_MASS",
+      "published_current_occurrences": 0,
+      "not_established": [
+        "dated_2026_occurrence",
+        "exact_1962_books",
+        "una_cum",
+        "named_pope_in_canon",
+        "canonical_status",
+        "venue_ownership",
+        "visitor_entrance"
+      ],
+      "publication_status": "RESEARCH_ONLY_HOLD_UNTIL_EXPLICIT_EVENT_VALIDATION"
+    },
+    {
+      "cl2_anchor": "RG-6FEB08A4B66F",
+      "source_venue_name": "Minimas del Perpetuo Socorro de Marìa",
+      "country": "MX",
+      "historical_rows": [
+        743,
+        2452
+      ],
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/minimas-del-perpetuo-socorro-de-maria"
+      ],
+      "historical_claims": [
+        {
+          "row": 743,
+          "source_id": "SSPXMAP:OPE-002369",
+          "day_pattern": "Sunday",
+          "time": "07:30",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Domingo: 7:30\""
+        },
+        {
+          "row": 2452,
+          "source_id": "SSPXMAP:OPE-002369",
+          "day_pattern": "Weekdays (Semana)",
+          "time": "07:30",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Semana: 7:30\""
+        }
+      ],
+      "current_evidence_url": "https://fsspx.mx/es/capillas-2",
+      "evidence_kind": "FIRST_PARTY_MEXICO_DISTRICT",
+      "decision": "PATTERN_CORROBORATED_CONVENT_HOSTED",
+      "observation": "Mínimas Franciscanas del Perpetuo Socorro de María at Avenida Xochiquetzal 249 in Mexico City lists Sunday 07:30 and weekday 07:30. This is a religious women's convent, not SSPX legal ownership or guaranteed public access.",
+      "remaining_gate": "Check dates, congregation role and actual priest; do not conflate with neighbouring SSPX district house at #249 4A.",
+      "scope": "SOURCE_SCOPED_CHURCH_OR_COMMUNITY_NOT_AUTOMATIC_OWNERSHIP_OR_ANY_MASS",
+      "published_current_occurrences": 0,
+      "not_established": [
+        "dated_2026_occurrence",
+        "exact_1962_books",
+        "una_cum",
+        "named_pope_in_canon",
+        "canonical_status",
+        "venue_ownership",
+        "visitor_entrance"
+      ],
+      "publication_status": "RESEARCH_ONLY_HOLD_UNTIL_EXPLICIT_EVENT_VALIDATION"
+    },
+    {
+      "cl2_anchor": "RG-858025A0E37C",
+      "source_venue_name": "Capela Santo Antônio",
+      "country": "BR",
+      "historical_rows": [
+        386,
+        2487
+      ],
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/capela-santo-antonio"
+      ],
+      "historical_claims": [
+        {
+          "row": 386,
+          "source_id": "SSPXMAP:OPE-002637",
+          "day_pattern": "Sunday",
+          "time": "08:00",
+          "frequency": "monthly (last Sunday)",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Último fim de semana do mês: Domingo às 8h e 11h\""
+        },
+        {
+          "row": 2487,
+          "source_id": "SSPXMAP:OPE-002637",
+          "day_pattern": "Sunday",
+          "time": "11:00",
+          "frequency": "monthly (last Sunday)",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Último fim de semana do mês: Domingo às 8h e 11h\""
+        }
+      ],
+      "current_evidence_url": "https://domantonio.fsspx.com.br/priorados-missoes-e-comunidades-amigas/",
+      "evidence_kind": "FIRST_PARTY_BRAZIL_COMMUNITY_LIST",
+      "decision": "LAST_SUNDAY_ONLY_WITH_VISITING_PRIORY",
+      "observation": "Brazil operator list identifies Capela Santo Antônio in Cravinhos/Ribeirão Preto, Estrada Manuel Amaro 300; on last weekend of each month Sunday 08:00 and 11:00. Neither is a general weekly pattern.",
+      "remaining_gate": "Check dated mission weekend and local venue; do not infer all last Sundays if mission rescheduled.",
+      "scope": "SOURCE_SCOPED_CHURCH_OR_COMMUNITY_NOT_AUTOMATIC_OWNERSHIP_OR_ANY_MASS",
+      "published_current_occurrences": 0,
+      "not_established": [
+        "dated_2026_occurrence",
+        "exact_1962_books",
+        "una_cum",
+        "named_pope_in_canon",
+        "canonical_status",
+        "venue_ownership",
+        "visitor_entrance"
+      ],
+      "publication_status": "RESEARCH_ONLY_HOLD_UNTIL_EXPLICIT_EVENT_VALIDATION"
+    },
+    {
+      "cl2_anchor": "RG-9B5F40D1BDED",
+      "source_venue_name": "Capilla San José",
+      "country": "ES",
+      "historical_rows": [
+        416,
+        2499
+      ],
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/capilla-san-jose-estepona"
+      ],
+      "historical_claims": [
+        {
+          "row": 416,
+          "source_id": "SSPXMAP:OPE-002672",
+          "day_pattern": "Sunday",
+          "time": "19:00",
+          "frequency": "monthly (1st Sunday)",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"1º domingo de mes 19:00 | Lunes siguiente 8:30\""
+        },
+        {
+          "row": 2499,
+          "source_id": "SSPXMAP:OPE-002672",
+          "day_pattern": "Monday",
+          "time": "08:30",
+          "frequency": "monthly (Monday after 1st Sunday)",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"1º domingo de mes 19:00 | Lunes siguiente 8:30\""
+        }
+      ],
+      "current_evidence_url": "https://fsspx.es/es/capillas-0",
+      "evidence_kind": "FIRST_PARTY_SPAIN_DISTRICT",
+      "decision": "RELATIVE_FIRST_SUNDAY_MONDAY_PATTERN",
+      "observation": "Estepona Capilla San José at C.C. Isdabe del Sol local 8, Avenida Matas Verdes 1: first Sunday 19:00 and following Monday 08:30. Monday is relative to the first Sunday, not automatically the first Monday.",
+      "remaining_gate": "Build only calendar-correct date occurrences after confirmation; never flatten to all Sundays or Mondays.",
+      "scope": "SOURCE_SCOPED_CHURCH_OR_COMMUNITY_NOT_AUTOMATIC_OWNERSHIP_OR_ANY_MASS",
+      "published_current_occurrences": 0,
+      "not_established": [
+        "dated_2026_occurrence",
+        "exact_1962_books",
+        "una_cum",
+        "named_pope_in_canon",
+        "canonical_status",
+        "venue_ownership",
+        "visitor_entrance"
+      ],
+      "publication_status": "RESEARCH_ONLY_HOLD_UNTIL_EXPLICIT_EVENT_VALIDATION"
+    },
+    {
+      "cl2_anchor": "RG-60EAFFCD684B",
+      "source_venue_name": "Our Lady Queen of Peace Church",
+      "country": "CA",
+      "historical_rows": [
+        866
+      ],
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/our-lady-queen-of-peace-church"
+      ],
+      "historical_claims": [
+        {
+          "row": 866,
+          "source_id": "SSPXMAP:OPE-001982",
+          "day_pattern": "Sunday",
+          "time": "10:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Sunday: 10:00 am | Weekdays: call for Mass Times\""
+        }
+      ],
+      "current_evidence_url": "https://sspx.ca/en/our-lady-queen-peace-30146",
+      "evidence_kind": "FIRST_PARTY_CANADA_SITE",
+      "decision": "PATTERN_WITH_OBSOLETE_2023_CANCEL_NOTE",
+      "observation": "Our Lady Queen of Peace in Vernon BC lists Sunday 10:00, but the same static church page embeds a cancellation dated November 12, 2023; its 2025 priory bulletin says Sunday almost always 10:00, verify by phone.",
+      "remaining_gate": "Historical cancellation is not a 2026 no-Mass day, and the recurring clock is not a guaranteed current-week service.",
+      "scope": "SOURCE_SCOPED_CHURCH_OR_COMMUNITY_NOT_AUTOMATIC_OWNERSHIP_OR_ANY_MASS",
+      "published_current_occurrences": 0,
+      "not_established": [
+        "dated_2026_occurrence",
+        "exact_1962_books",
+        "una_cum",
+        "named_pope_in_canon",
+        "canonical_status",
+        "venue_ownership",
+        "visitor_entrance"
+      ],
+      "publication_status": "RESEARCH_ONLY_HOLD_UNTIL_EXPLICIT_EVENT_VALIDATION"
+    },
+    {
+      "cl2_anchor": "RG-F61760F13D97",
+      "source_venue_name": "Church of the Holy Face of Jesus",
+      "country": "CA",
+      "historical_rows": [
+        560
+      ],
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/church-of-the-holy-face-of-jesus"
+      ],
+      "historical_claims": [
+        {
+          "row": 560,
+          "source_id": "SSPXMAP:OPE-001992",
+          "day_pattern": "Sunday",
+          "time": "10:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Sunday: 10:00 am | Weekdays: Call for Mass times\""
+        }
+      ],
+      "current_evidence_url": "https://toronto.sspx.ca/en/schedule-mass-and-announcements-st-catharines-48852",
+      "evidence_kind": "DATED_OCT_NOV_2026_BULLETIN",
+      "decision": "HISTORICAL_SUNDAY_1000_CONFLICTS_WITH_DATED_1600",
+      "observation": "St Catharines Holy Face of Jesus Church has generic directory Sunday 10:00, but a dated Oct–Nov 2026 official priory programme specifies 16:00 for October Sundays and Nov 1, and first Friday/Saturday exceptions. Recheck actual Nov 8 onward independently.",
+      "remaining_gate": "Do not publish generic 10:00 as a weekly 2026 occurrence; dated bulletin outranks static listing within its valid dates. Must not confuse with neighbouring Canadian Martyrs Church.",
+      "scope": "SOURCE_SCOPED_CHURCH_OR_COMMUNITY_NOT_AUTOMATIC_OWNERSHIP_OR_ANY_MASS",
+      "published_current_occurrences": 0,
+      "not_established": [
+        "dated_2026_occurrence",
+        "exact_1962_books",
+        "una_cum",
+        "named_pope_in_canon",
+        "canonical_status",
+        "venue_ownership",
+        "visitor_entrance"
+      ],
+      "publication_status": "RESEARCH_ONLY_HOLD_UNTIL_EXPLICIT_EVENT_VALIDATION"
+    },
+    {
+      "cl2_anchor": "RG-6F16A016F04B",
+      "source_venue_name": "Church of the Canadian Martyrs",
+      "country": "CA",
+      "historical_rows": [
+        559,
+        2633
+      ],
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/church-of-the-canadian-martyrs"
+      ],
+      "historical_claims": [
+        {
+          "row": 559,
+          "source_id": "SSPXMAP:OPE-001990",
+          "day_pattern": "Sunday",
+          "time": "10:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Sunday: 10:00 am or 5:00 pm | Call for Mass times\""
+        },
+        {
+          "row": 2633,
+          "source_id": "SSPXMAP:OPE-001990",
+          "day_pattern": "Sunday",
+          "time": "17:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Sunday: 10:00 am or 5:00 pm | Call for Mass times\""
+        }
+      ],
+      "current_evidence_url": "https://sspx.ca/en/church-canadian-martyrs-30162",
+      "evidence_kind": "FIRST_PARTY_CANADA_SITE",
+      "decision": "ONLY_1000_CORROBORATED_1700_UNSUPPORTED",
+      "observation": "Warminster Ontario Church of the Canadian Martyrs at 9767 Highway 12 explicitly lists Sunday 10:00 and asks to check current schedule. A separate frozen 17:00 Sunday alternative is NOT supported on current church page.",
+      "remaining_gate": "Do not publish simultaneous 10:00+17:00 every Sunday; review dated current priest bulletin and original alias row key.",
+      "scope": "SOURCE_SCOPED_CHURCH_OR_COMMUNITY_NOT_AUTOMATIC_OWNERSHIP_OR_ANY_MASS",
+      "published_current_occurrences": 0,
+      "not_established": [
+        "dated_2026_occurrence",
+        "exact_1962_books",
+        "una_cum",
+        "named_pope_in_canon",
+        "canonical_status",
+        "venue_ownership",
+        "visitor_entrance"
+      ],
+      "publication_status": "RESEARCH_ONLY_HOLD_UNTIL_EXPLICIT_EVENT_VALIDATION"
+    },
+    {
+      "cl2_anchor": "RG-A306B10B763B",
+      "source_venue_name": "Jézus Szentséges Szíve Kápolna",
+      "country": "HU",
+      "historical_rows": [
+        647,
+        2706,
+        2707
+      ],
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/jezus-szentseges-szive-kapolna"
+      ],
+      "historical_claims": [
+        {
+          "row": 647,
+          "source_id": "SSPXMAP:OPE-002216",
+          "day_pattern": "Sunday",
+          "time": "16:00",
+          "frequency": "monthly (1st Sunday, winter time)",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"1. Sonntag: 17:00 (Sommerzeit) / 16:00 (Winterzeit); 2. Sonntag: 9:00 (Vasgyári kórház kápolnája)\""
+        },
+        {
+          "row": 2706,
+          "source_id": "SSPXMAP:OPE-002216",
+          "day_pattern": "Sunday",
+          "time": "17:00",
+          "frequency": "monthly (1st Sunday, summer time)",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"1. Sonntag: 17:00 (Sommerzeit) / 16:00 (Winterzeit); 2. Sonntag: 9:00 (Vasgyári kórház kápolnája)\""
+        },
+        {
+          "row": 2707,
+          "source_id": "SSPXMAP:OPE-002216",
+          "day_pattern": "Sunday",
+          "time": "09:00",
+          "frequency": "monthly (2nd Sunday)",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"1. Sonntag: 17:00 (Sommerzeit) / 16:00 (Winterzeit); 2. Sonntag: 9:00 (Vasgyári kórház kápolnája)\""
+        }
+      ],
+      "current_evidence_url": "https://fsspx.hu/hu/miserend-46281",
+      "evidence_kind": "FIRST_PARTY_HUNGARY_2026_SCHEDULE_INDEX",
+      "decision": "FIXED_MONTHLY_PATTERN_NOT_SUPPORTED_HERE",
+      "observation": "Hungarian SSPX 2026 schedule page identifies Miskolc Jézus Szentséges Szíve chapel at hospital address and says Masses are occasional, with actual dates in downloadable November 2026 schedules. The frozen 1st-Sunday 16:00 winter/17:00 summer and 2nd-Sunday 09:00 schemes are not confirmed by this current HTML page.",
+      "remaining_gate": "Consult dated published 2026 PDF schedule and verify source/season before any fixed monthly recurrence. No default three Masses every month.",
+      "scope": "SOURCE_SCOPED_CHURCH_OR_COMMUNITY_NOT_AUTOMATIC_OWNERSHIP_OR_ANY_MASS",
+      "published_current_occurrences": 0,
+      "not_established": [
+        "dated_2026_occurrence",
+        "exact_1962_books",
+        "una_cum",
+        "named_pope_in_canon",
+        "canonical_status",
+        "venue_ownership",
+        "visitor_entrance"
+      ],
+      "publication_status": "RESEARCH_ONLY_HOLD_UNTIL_EXPLICIT_EVENT_VALIDATION"
+    },
+    {
+      "cl2_anchor": "RG-9DB299EB9AFB",
+      "source_venue_name": "Kapelle Maria Miterlöserin",
+      "country": "AT",
+      "historical_rows": [
+        665,
+        2719
+      ],
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/kapelle-maria-miterloserin"
+      ],
+      "historical_claims": [
+        {
+          "row": 665,
+          "source_id": "SSPXMAP:OPE-002264",
+          "day_pattern": "Sunday",
+          "time": "18:30",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Sonntag: 18:30 Uhr oder 9.00 Uhr\""
+        },
+        {
+          "row": 2719,
+          "source_id": "SSPXMAP:OPE-002264",
+          "day_pattern": "Sunday",
+          "time": "09:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Sonntag: 18:30 Uhr oder 9.00 Uhr\""
+        }
+      ],
+      "current_evidence_url": "https://fsspx.at/de/kapelle-maria-miterloeserin-31358",
+      "evidence_kind": "FIRST_PARTY_AUSTRIA_SITE_ONLY",
+      "decision": "ALTERNATIVE_SUNDAY_CLOCKS_NOT_CONFIRMED",
+      "observation": "Austria SSPX describes Kapelle Maria Miterlöserin in Lienz as served from Innsbruck, but current page refers to downloadable schedule/FSSPX today rather than confirming 18:30 and 09:00 every Sunday. Original source says 18:30 OR 09:00.",
+      "remaining_gate": "Preserve mutually exclusive alternative clocks and verify specific date; do not create two simultaneous Sunday Masses.",
+      "scope": "SOURCE_SCOPED_CHURCH_OR_COMMUNITY_NOT_AUTOMATIC_OWNERSHIP_OR_ANY_MASS",
+      "published_current_occurrences": 0,
+      "not_established": [
+        "dated_2026_occurrence",
+        "exact_1962_books",
+        "una_cum",
+        "named_pope_in_canon",
+        "canonical_status",
+        "venue_ownership",
+        "visitor_entrance"
+      ],
+      "publication_status": "RESEARCH_ONLY_HOLD_UNTIL_EXPLICIT_EVENT_VALIDATION"
+    },
+    {
+      "cl2_anchor": "RG-F78E459E839F",
+      "source_venue_name": "St Joseph (Victoria Street)",
+      "country": "SG",
+      "historical_rows": [
+        1255
+      ],
+      "historical_source_urls": [
+        "https://adorientem.church/find/st-joseph-victoria-street-victoria-st-e57041fa"
+      ],
+      "historical_claims": [
+        {
+          "row": 1255,
+          "source_id": "AO-ASIA-SG-002",
+          "day_pattern": "Sunday",
+          "time": "14:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Next Sunday 14:00 Low Mass\""
+        }
+      ],
+      "current_evidence_url": "https://sjcvs.org.sg/",
+      "evidence_kind": "FIRST_PARTY_PARISH_PLUS_COMMUNITY_SECONDARY",
+      "decision": "TRADITIONAL_1400_NOT_IN_MAIN_PARISH_SCHEDULE",
+      "observation": "St Joseph's Church Victoria Street Singapore parish page identifies the site and ordinary Mass schedule but omits Sunday 14:00 older-form Mass. Separate Latin Mass Directory and Extraordinary Form Community page list Sunday 14:00. Existence/rite should remain scoped to the separate community rather than inherited by every parish Mass.",
+      "remaining_gate": "Get 2026 Sunday Latin community bulletin or social announcement; maintain distinct church identity from St Joseph Bukit Timah and preserve current Mass uncertainty.",
+      "scope": "SOURCE_SCOPED_CHURCH_OR_COMMUNITY_NOT_AUTOMATIC_OWNERSHIP_OR_ANY_MASS",
+      "published_current_occurrences": 0,
+      "not_established": [
+        "dated_2026_occurrence",
+        "exact_1962_books",
+        "una_cum",
+        "named_pope_in_canon",
+        "canonical_status",
+        "venue_ownership",
+        "visitor_entrance"
+      ],
+      "publication_status": "RESEARCH_ONLY_HOLD_UNTIL_EXPLICIT_EVENT_VALIDATION"
+    },
+    {
+      "cl2_anchor": "RG-B0B5E828070F",
+      "source_venue_name": "Our Lady of Songshan",
+      "country": "TW",
+      "historical_rows": [
+        1839
+      ],
+      "historical_source_urls": [
+        "https://adorientem.church/find/our-lady-of-songshan-nanjing-e-rd-9c345207"
+      ],
+      "historical_claims": [
+        {
+          "row": 1839,
+          "source_id": "AO-ASIA-TW-005",
+          "day_pattern": "Sunday",
+          "time": "18:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Sunday 18:00 Low Mass (1962 Missal)\""
+        }
+      ],
+      "current_evidence_url": "https://taipei.catholic.org.tw/taipei/eng/deanery/24/",
+      "evidence_kind": "DIOCESAN_PARISH_SITE_ONLY",
+      "decision": "HISTORICAL_1800_LATIN_NOT_CONFIRMED_AT_NAMED_SITE",
+      "observation": "Archdiocese of Taipei identifies Our Lady of Songshan Catholic Church at 352 Section 5 Nanjing East Road with a Sunday 10:00 general Mass. A separate diocesan directory may show Latin Sunday 18:00 at an Immaculate Conception church in Nansongshan; those names are not proof of same physical site or the 1962 books.",
+      "remaining_gate": "Do not import an 18:00 1962 Sunday Mass to Our Lady of Songshan from another church's Latin-language entry; require official event and exact CL2 identity crosswalk.",
+      "scope": "SOURCE_SCOPED_CHURCH_OR_COMMUNITY_NOT_AUTOMATIC_OWNERSHIP_OR_ANY_MASS",
+      "published_current_occurrences": 0,
+      "not_established": [
+        "dated_2026_occurrence",
+        "exact_1962_books",
+        "una_cum",
+        "named_pope_in_canon",
+        "canonical_status",
+        "venue_ownership",
+        "visitor_entrance"
+      ],
+      "publication_status": "RESEARCH_ONLY_HOLD_UNTIL_EXPLICIT_EVENT_VALIDATION"
+    },
+    {
+      "cl2_anchor": "RG-93E29458AF18",
+      "source_venue_name": "Domaine Notre-Dame",
+      "country": "FR",
+      "historical_rows": [
+        580,
+        2443
+      ],
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/notre-dame-de-salerans"
+      ],
+      "historical_claims": [
+        {
+          "row": 580,
+          "source_id": "SSPXMAP:OPE-001688",
+          "day_pattern": "Sunday",
+          "time": "11:00",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Sunday 11h00 (en principe)\""
+        },
+        {
+          "row": 2443,
+          "source_id": "SSPXMAP:OPE-001688",
+          "day_pattern": "Monday, Tuesday, Wednesday, Thursday, Friday",
+          "time": "11:30",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Weekdays 11h30 (en principe)\""
+        }
+      ],
+      "current_evidence_url": "https://laportelatine.org/types-de-lieux/communaute-amie",
+      "evidence_kind": "FIRST_PARTY_ASSOCIATE_COMMUNITY_SITE_ONLY",
+      "decision": "SUNDAY_WEEKDAY_TIMES_UNVERIFIED",
+      "observation": "France SSPX identifies Domaine Notre-Dame at Salérans, Laragne, as Père Avril / community amie. This source verifies named place and community association but does not confirm original 11:00 Sunday and 11:30 weekday times as a current programme.",
+      "remaining_gate": "Contact/specific operator publication and date required; do not infer SSPX ownership, 1962 books or unrestricted access.",
+      "scope": "SOURCE_SCOPED_CHURCH_OR_COMMUNITY_NOT_AUTOMATIC_OWNERSHIP_OR_ANY_MASS",
+      "published_current_occurrences": 0,
+      "not_established": [
+        "dated_2026_occurrence",
+        "exact_1962_books",
+        "una_cum",
+        "named_pope_in_canon",
+        "canonical_status",
+        "venue_ownership",
+        "visitor_entrance"
+      ],
+      "publication_status": "RESEARCH_ONLY_HOLD_UNTIL_EXPLICIT_EVENT_VALIDATION"
+    },
+    {
+      "cl2_anchor": "RG-1219EF56C316",
+      "source_venue_name": "Convent of Christ the King",
+      "country": "US",
+      "historical_rows": [
+        565
+      ],
+      "historical_source_urls": [
+        "https://map.fsspx.org/en/places/convent-of-christ-the-king"
+      ],
+      "historical_claims": [
+        {
+          "row": 565,
+          "source_id": "SSPXMAP:OPE-001253",
+          "day_pattern": "Tuesday to Friday",
+          "time": "07:30",
+          "frequency": "weekly",
+          "original_excerpt": "Official source, retrieved 2026-10-23: \"Tue-Fri 7:30 am (when a priest is available)\""
+        }
+      ],
+      "current_evidence_url": "https://sspx.org/en/list-sspx-chapels",
+      "evidence_kind": "FIRST_PARTY_CONVENT_IDENTITY_ONLY",
+      "decision": "TUESDAY_FRIDAY_IF_PRIEST_AVAILABLE_NOT_CURRENTLY_VERIFIED",
+      "observation": "US SSPX directory confirms Kansas City Convent of Christ the King, 1409 E Meyer Boulevard, but current general listing does not validate historical Tuesday-Friday 07:30 when a priest is available. Convent ministry/legal ownership must be distinct from supplying priest.",
+      "remaining_gate": "Keep all weekday times conditional and require convent's own dated schedule; do not guarantee public attendance.",
+      "scope": "SOURCE_SCOPED_CHURCH_OR_COMMUNITY_NOT_AUTOMATIC_OWNERSHIP_OR_ANY_MASS",
+      "published_current_occurrences": 0,
+      "not_established": [
+        "dated_2026_occurrence",
+        "exact_1962_books",
+        "una_cum",
+        "named_pope_in_canon",
+        "canonical_status",
+        "venue_ownership",
+        "visitor_entrance"
+      ],
+      "publication_status": "RESEARCH_ONLY_HOLD_UNTIL_EXPLICIT_EVENT_VALIDATION"
+    }
+  ]
+}
