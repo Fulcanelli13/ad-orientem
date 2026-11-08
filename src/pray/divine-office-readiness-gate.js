@@ -33,7 +33,7 @@ export function getDivineOfficePrayerReadiness({date}={}){
   discoverableInPrayer:true,
   featuredOnHome:false,
   externalReaderUrl:null,
-  releaseStatus:released?"LATIN_COMPLINE_28_NOV_RELEASED":"NATIVE_NAVIGATION_AVAILABLE_TEXT_UNRELEASED",
+  releaseStatus:released?"LATIN_COMPLINE_DATE_CERTIFIED_RELEASED":"NATIVE_NAVIGATION_AVAILABLE_TEXT_UNRELEASED",
   localCalendarApproved:false,
   liturgicallyCertified:released,
   translationApproved:false,
