@@ -7,6 +7,11 @@ on:
       - 'src/art/sacred-art-taxonomy-v1.js'
       - 'scripts/art/build-sacred-art-category-match-v1.mjs'
       - 'tests/sacred-art-category-match-wave1.mjs'
+      - 'src/home/c3-gallery.js'
+      - 'src/home/today-h4-view.js'
+      - 'src/home/browser-entry.js'
+      - 'src/home/c3-styles.js'
+      - 'tests/sacred-art-released-category-navigation.mjs'
       - '.github/workflows/sacred-art-category-match-wave1.yml'
   workflow_dispatch: {}
 permissions:
@@ -26,6 +31,12 @@ jobs:
           node-version: '22'
       - name: Verify classification and old Prayer slot preservation
         run: node tests/sacred-art-category-match-wave1.mjs
+      - name: Verify gallery subject filter, bilingual labels and original artwork return
+        run: node tests/sacred-art-released-category-navigation.mjs
+      - name: Preserve original 16-photo released gallery navigation
+        run: node tests/sacred-art-batch1-released-gallery.mjs
+      - name: Check edited application JavaScript parses
+        run: node --check src/home/today-h4-view.js && node --check src/home/browser-entry.js && node --check src/home/c3-gallery.js
       - name: Generate 989 x 267 subject and destination crosswalk
         run: node scripts/art/build-sacred-art-category-match-v1.mjs
       - name: Verify generated master counts, categories and all protection gates
