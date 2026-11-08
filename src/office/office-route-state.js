@@ -29,9 +29,10 @@ export function officeRouteState({date,hour,calendarScope="UNIVERSAL"}={}){
  if(hour==="COMPLINE"){
    const released=latinComplineReleaseEligibility({date,hour,calendarScope});
    if(released.status==="ELIGIBLE"){
+    const appointment=reviewAdventIComplineAppointment(date);
     return Object.freeze({date,hour,status:"RELEASED",
       reason:"PRINTED_LATIN_COMPLINE_CERTIFIED",
-      label:"Saturday Compline · 28 November 2026",
+      label:appointment.appointment.label,
       officeDate:date,sourceRevision:released.sourceRevision,
       sourceResearch:true,readingEnabled:true,published:true});
    }
