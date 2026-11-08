@@ -15,7 +15,8 @@ const empty=freeze({schema:"ao-schola-selected-score-access-v1",
  * Original Kyriale facsimiles are shown only for explicitly selected local
  * settings. A matched GABC transcription remains provisional, not certified. */
 export function resolveScholaSelectedScoreAccess({itinerary,resolvedMass,form}={}){
- if(itinerary?.supported!==true || !Array.isArray(itinerary.properProgramme))
+ if(String(form??"").toUpperCase()==="LOW" || itinerary?.supported!==true ||
+   !Array.isArray(itinerary.properProgramme))
   return empty;
  const seenScores=new Set();
  const proper=itinerary.properProgramme.filter(entry=>
