@@ -80,7 +80,7 @@ function projection(corpus){
  const missal=projectGranularMissalCards(base,{language:"en"});
  const first=projectSourceFirstLiveModel({...base,presentationMode:"LIVE"},canon);
  const live=projectCuratedOrdinaryLiveCards(first);
- if(live.totalCards!==65)throw Error("LIVE source projection is not 65 cards: "+live.totalCards);
+ if(![65,66,67].includes(live.totalCards))throw Error("LIVE source projection has unsupported card count: "+live.totalCards);
  return {live,missal};
 }
 const cardRows=[],pageRows=[],moments=[],assignments=[],positions=new Map();
@@ -227,7 +227,7 @@ fs.writeFileSync(path.join(out,"README.md"),[
  "01_ICON_FILES lists icon hashes/keys.",
  "02_CUE_ASSIGNMENTS lists the 414 source crosswalk entries plus exact LIVE,",
  "conditional approved extension and text-only/suppression assignments.",
- "03_LIVE_CARDS maps the standard 65 curated cards for Low and Sung.",
+ "03_LIVE_CARDS maps the source-backed LIVE 65 baseline and optional supported pre-Gospel split(s).",
  "04_MISSAL_PAGES maps source-granular Missal pages.",
  "05_ALL_MOMENTS contains all 1962 ordinary source cues, including text-only.",
  "06_CANONICAL_MEANINGS maps semantic meaning to approved source artwork.",
