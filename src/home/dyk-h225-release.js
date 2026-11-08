@@ -14,7 +14,7 @@ const FAMILIES=Object.freeze({
 });
 const clean=x=>typeof x==="string"?x.trim():"";
 const validDate=x=>{
- if(typeof x!=="string"||!/^\\d{4}-\\d{2}-\\d{2}$/.test(x))return false;
+ if(typeof x!=="string"||!/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.test(x))return false;
  const dt=new Date(x+"T12:00:00Z");
  return !Number.isNaN(dt.getTime())&&dt.toISOString().slice(0,10)===x;
 };
