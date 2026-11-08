@@ -65,6 +65,85 @@ export const JULY07_REFERENCE_CSS=String.raw`
 .ao-proper-reference-zoom .ao-proper-reference-wide svg{display:block;max-width:100%;height:auto}
 .ao-proper-reference-zoom .ao-proper-reference-wide svg :is(path,polygon,polyline,line,text){fill:currentColor}
 @media(max-width:480px){.ao-proper-reference-zoom{width:100vw;height:100dvh;max-height:none;border-radius:0}}
+
+/* Claude A/C presentation: embedded dark-ink staff, not a boxed research widget. */
+.ao-proper-reference-notation{
+ display:grid;grid-template-columns:22px minmax(0,1fr);
+ gap:2px 6px;min-width:0;width:100%;max-width:100%;
+ box-sizing:border-box;margin:9px 0 14px;padding:10px 0 8px;
+ border-top:1px solid rgba(206,190,220,.11);
+ background:transparent;border-radius:0;box-shadow:none;overflow:hidden
+}
+.ao-proper-reference-mark{
+ grid-column:1;grid-row:1;align-self:start;color:#d58a80;
+ font:500 22px/1.5 var(--ao-font-liturgical,Georgia,serif)
+}
+.ao-proper-reference-expand{
+ grid-column:2;grid-row:1;display:block;min-width:0;width:100%;
+ min-height:44px;margin:0;padding:0;border:0;
+ background:transparent;color:inherit;text-align:left;cursor:zoom-in;
+ border-radius:0;font:inherit
+}
+.ao-proper-reference-expand:focus-visible{
+ outline:2px solid var(--ao-mass-accent,#aabed3);outline-offset:2px
+}
+.ao-proper-reference-staff{
+ display:block;width:100%;min-width:0;min-height:48px;
+ padding:0;border:0;border-radius:0;box-shadow:none;
+ background:transparent!important;color:var(--ao-text-primary,#eee4d8)
+}
+.ao-proper-reference-staff svg{
+ display:block;width:100%;max-width:100%;height:auto;color:inherit;
+ /* Exsurge paints some score glyphs with explicit black SVG attributes.
+    Normalize those actual pixels to warm liturgical ink on the dark reader. */
+ filter:brightness(0) invert(.9)
+}
+.ao-proper-reference-label{
+ grid-column:2;grid-row:2;display:block;min-width:0;
+ margin:2px 0 0;padding:0;letter-spacing:.015em;
+ font:500 10px/1.4 var(--ao-font-ui,system-ui,sans-serif);
+ color:var(--ao-muted,#aaa79f);overflow-wrap:anywhere
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph>.ao-proper-reference-notation{
+ grid-column:1 / -1;grid-row:2
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-proper-reference-staff{
+ color:var(--ao-text-primary,#e9e4d9)
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-proper-reference-mark{
+ color:var(--ao-missal-rubric-red,#df7e80)
+}
+.ao-proper-reference-toggle{
+ grid-column:1;grid-row:2;display:block;align-self:center;
+ min-width:28px;min-height:28px;margin:0;padding:2px;
+ background:transparent;border:0;border-radius:3px;
+ color:var(--ao-muted,#aaa79f);
+ font:600 11px/1.25 var(--ao-font-ui,system-ui,sans-serif);
+ cursor:pointer
+}
+.ao-proper-reference-toggle:focus-visible{
+ outline:2px solid var(--ao-mass-accent,#aabed3)
+}
+.ao-proper-reference-notation[data-reference-view="text"]{
+ border-top:0;margin:0;padding:2px 0
+}
+.ao-proper-reference-notation[data-reference-view="text"] .ao-proper-reference-mark,
+.ao-proper-reference-notation[data-reference-view="text"] .ao-proper-reference-expand{
+ display:none!important
+}
+.ao-proper-reference-error{grid-column:2}
+.ao-proper-reference-zoom .ao-proper-reference-wide{
+ background:#0b1018;color:#ece9e1
+}
+.ao-proper-reference-zoom .ao-proper-reference-wide svg{
+ filter:brightness(0) invert(.9)
+}
+@media(max-width:480px){
+ .ao-proper-reference-notation{
+  grid-template-columns:19px minmax(0,1fr);gap:2px 4px
+ }
+ .ao-proper-reference-mark{font-size:20px}
+}
 `;
 
 // The selected 1962 Proper and its exact source-owned paragraph authorize
@@ -176,12 +255,15 @@ export function createDatedProperNotationPreview({
     host.dataset.referenceScore=score.id;
     host.dataset.approved="false";
     const title=doc.createElement("small");title.className="ao-proper-reference-label";
+    const category=score.sourceCueIds?.length?
+      (score.kind==="CELEBRANT_INTONATION"?"Intonation":"Response"):
+      PROPER_REFERENCE_LABELS[score.key]??"Chant";
     title.textContent=score.sourceContextCertified===false?
-      "Sung response · 1961 melody; use here NOT source-certified · research hypothesis":
-      ((score.sourceCueIds?.length?
-       (score.kind==="CELEBRANT_INTONATION"?"Celebrant intonation":"Sung response"):
-       PROPER_REFERENCE_LABELS[score.key])+
-       " · 1961 reference transcription · review pending");
+      "1961 · NOT source-certified for this Mass":
+      category+" · 1961 review pending";
+    title.title=score.sourceContextCertified===false?
+      "A reference transcription, not verified as this Mass's music.":
+      "1961 reference transcription awaiting independent editorial musical review.";
     const staff=doc.createElement("span");staff.className="ao-proper-reference-staff";
     staff.setAttribute("role","img");
     staff.setAttribute("aria-label",(score.incipit??score.sourceName)+
@@ -189,10 +271,39 @@ export function createDatedProperNotationPreview({
        " · Gregorian reference melody; use at this Mass location NOT verified":
        " · Gregorian square notation, archival transcription pending editorial comparison"));
     const expand=doc.createElement("button");expand.type="button";
-    expand.className="ao-proper-reference-expand";expand.textContent="Enlarge notation";
+    expand.className="ao-proper-reference-expand";
+    expand.title="Tap the Gregorian staff to enlarge";
     expand.setAttribute("aria-label","Enlarge Gregorian notation for "+(score.incipit??score.sourceName));
     expand.addEventListener("click",e=>{e.stopPropagation();void zoom(score,expand)});
-    host.append(title,expand,staff);node.append(host);
+    const mark=doc.createElement("span");
+    mark.className="ao-proper-reference-mark";
+    mark.textContent=score.kind==="CELEBRANT_INTONATION"?"℣":
+      /^\s*℟/.test(score.sourceLatin??"")?"℟":
+      /^\s*℣/.test(score.sourceLatin??"")?"℣":"♫";
+    mark.setAttribute("aria-hidden","true");
+    expand.append(staff);
+    host.dataset.referenceView="notation";
+    const viewToggle=doc.createElement("button");viewToggle.type="button";
+    viewToggle.className="ao-proper-reference-toggle";
+    viewToggle.textContent="Aa";
+    viewToggle.setAttribute("aria-label","Show text without Gregorian notation");
+    viewToggle.setAttribute("aria-pressed","true");
+    viewToggle.addEventListener("click",event=>{
+      event.stopPropagation();
+      const notation=host.dataset.referenceView==="notation";
+      host.dataset.referenceView=notation?"text":"notation";
+      viewToggle.textContent=notation?"♫":"Aa";
+      viewToggle.setAttribute("aria-pressed",String(!notation));
+      viewToggle.setAttribute("aria-label",notation?
+        "Show Gregorian notation":"Show text without Gregorian notation");
+    });
+    host.append(mark,expand,title,viewToggle);
+    // A/C: LIVE translations follow the sung staff, not precede it.
+    // MISSAL keeps the two bilingual columns in grid row 1 with this
+    // single full-width staff in grid row 2.
+    const translation=node.querySelector(":scope > .ao-line-secondary");
+    if(translation)node.insertBefore(host,translation);
+    else node.append(host);
     const entry={host,score,engraver:null};entries.push(entry);
     try{
      const engraver=engraverFactory({viewport:staff,document:doc});

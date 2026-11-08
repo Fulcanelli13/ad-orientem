@@ -77,6 +77,26 @@ try{
     approved:marks.map(m=>m.dataset.approved),
     staffSvg:marks.filter(m=>m.querySelector(".ao-proper-reference-staff svg")).length,
     referenceScores:marks.map(m=>m.dataset.referenceScore),
+    acPresentation:marks.map(m=>{
+      const mark=m.querySelector(".ao-proper-reference-mark");
+      const expand=m.querySelector(".ao-proper-reference-expand");
+      const staff=m.querySelector(".ao-proper-reference-staff");
+      const style=staff?getComputedStyle(staff):null;
+      return {
+       marker:mark?.textContent??"",
+       markerColor:mark?getComputedStyle(mark).color:null,
+       directTap:expand?.contains(staff)===true,
+       translationFollowsStaff:(()=>{
+         const gloss=m.parentElement?.querySelector(":scope > .ao-line-secondary");
+         return !gloss||(m.compareDocumentPosition(gloss)&Node.DOCUMENT_POSITION_FOLLOWING)!==0;
+       })(),
+       staffBackground:style?.backgroundColor??null,
+       staffPixelFilter:staff?.querySelector('svg')?getComputedStyle(staff.querySelector('svg')).filter:null,
+       label:m.querySelector(".ao-proper-reference-label")?.textContent?.trim()??"",
+       wrapperWidth:m.clientWidth,staffWidth:staff?.clientWidth??0,
+       parentWidth:m.parentElement?.clientWidth??0
+      };
+     }),
     literalLatin:host?.querySelector('[data-cue-id="AO.SM.C0138"] .ao-line-primary')
       ?.textContent?.trim()??null,
     sourceMacros:window.__AO_PHONE_PREVIEW?.sourceModel?.totalCards,
@@ -108,12 +128,48 @@ try{
     "The original bilingual prayer must remain");
    assert.equal(after.sourceMacros,30,"No change to the original Mass macro source");
    assert.ok(after.width<=after.viewport+1,"No horizontal phone overflow");
+   assert.ok(after.acPresentation.every(x=>["℣","℟","♫"].includes(x.marker)),
+    "A/C must show the liturgical role beside the score");
+   assert.ok(after.acPresentation.every(x=>x.directTap),
+    "Tap-to-enlarge must attach to the staff itself, not a boxed secondary button");
+   assert.ok(after.acPresentation.every(x=>x.translationFollowsStaff),
+    "The Claude A/C Latin sung staff must precede its vernacular gloss");
+   assert.ok(after.acPresentation.every(x=>
+     x.staffBackground==="rgba(0, 0, 0, 0)"||x.staffBackground==="transparent"),
+    "Claude A/C unboxed presentation must not return to the grey/white score panel");
+   assert.ok(after.acPresentation.every(x=>x.staffPixelFilter?.includes("brightness(0)")),
+    "Actual Exsurge SVG must normalize black score glyphs to readable light ink on dark Ordo");
+
+   assert.ok(after.acPresentation.every(x=>x.label.includes("1961")&&x.label.length<70),
+    "Small provenance copy, no oversized review-workbench metadata");
+   assert.ok(after.acPresentation.every(x=>x.staffWidth>0&&x.wrapperWidth>0),
+    "Source score must occupy the prayer's available reading column");
    // Capture the actual Ordo content, not the still-open preferences sheet.
    await page.click("[data-reader-preferences-close]");
    assert.equal(await page.locator('[data-role="mass-preferences"]').getAttribute("data-open"),"false");
+   // The A/C score surface opens a full-size vector rendering.
+   await page.locator(".ao-proper-reference-expand").first().click();
+   await page.waitForFunction(()=>Boolean(document.querySelector(
+     ".ao-proper-reference-zoom[open] .ao-proper-reference-wide svg")),null,
+     {timeout:15000});
+   await page.locator(".ao-proper-reference-zoom header button").click();
+   assert.equal(await page.locator(".ao-proper-reference-zoom").count(),0,
+     "Closing zoom returns to the same canonical Mass card");
    await page.screenshot({path:resolve(out,
      "ordo-"+form.toLowerCase()+"-"+mode+"-"+width+"-notation.png"),
     animations:"disabled"});
+   // The A/C Aa/♫ switch is local to the paragraph; Latin remains.
+   const localView=page.locator(".ao-proper-reference-notation").first();
+   const localToggle=localView.locator(".ao-proper-reference-toggle");
+   assert.equal(await localToggle.textContent(),"Aa");
+   await localToggle.click();
+   assert.equal(await localView.getAttribute("data-reference-view"),"text");
+   assert.equal(await localToggle.textContent(),"♫");
+   assert.equal(await localView.locator(".ao-proper-reference-expand").isVisible(),false);
+   assert.ok((await state()).literalLatin?.length>8);
+   await localToggle.click();
+   assert.equal(await localView.getAttribute("data-reference-view"),"notation");
+   assert.equal(await localView.locator(".ao-proper-reference-expand").isVisible(),true);
    // Reopen preferences: the on/off state must survive closing the sheet.
    await page.click("[data-reader-preferences]");
    assert.equal((await state()).pressed,"true");
