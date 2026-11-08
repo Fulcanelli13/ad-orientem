@@ -4,7 +4,7 @@
  * This is used solely by previews/private-divine-office.html.
  */
 import {assemblePrivateOfficeReview} from "./private-office-review.js";
-import {COMPLINE_CONTEXT,projectComplineRecitation}
+import {COMPLINE_CONTEXT,COMPLINE_MINISTER,projectComplineRecitation}
  from "./compline-recitation-projection.js";
 const TITLES={la:"Latine",en:"English",fr:"Français"};
 const KIND={
@@ -68,8 +68,18 @@ export function mountPrivateOfficeReview(root,{win=globalThis,fetchSource=win.fe
  }
  recitation.value=COMPLINE_CONTEXT.FINAL_PRAYER;
  recitation.setAttribute("aria-label","Compline recitation context");
+ const presider=el(d,"select");
+ for(const [value,title] of [
+  [COMPLINE_MINISTER.NON_PRIEST,"Solo or lay-led — Dómine exáudi"],
+  [COMPLINE_MINISTER.PRIEST,"Priest presiding — Dóminus vobíscum"]
+ ]){
+  const option=el(d,"option");option.value=value;option.textContent=title;
+  presider.append(option);
+ }
+ presider.value=COMPLINE_MINISTER.NON_PRIEST;
+ presider.setAttribute("aria-label","Compline presiding minister");
  const load=txt(d,"button","Read source preview");load.type="button";
- chooser.append(hours,date,mode,recitation,load);root.append(chooser);
+ chooser.append(hours,date,mode,recitation,presider,load);root.append(chooser);
  const state=txt(d,"p","Select a date and Hour to load pinned source text.","aoOfReadiness");
  state.setAttribute("aria-live","polite");root.append(state);
  const section=el(d,"article","aoOfFrame");
@@ -105,7 +115,9 @@ export function mountPrivateOfficeReview(root,{win=globalThis,fetchSource=win.fe
    });
    if(token!==serial)return;
    const result=source.hour==="COMPLINE"&&source.status==="PRIVATE_SOURCE_TEXT_REVIEW"?
-    projectComplineRecitation(source,{context:recitation.value}):source;
+    projectComplineRecitation(source,{
+     context:recitation.value,minister:presider.value
+    }):source;
    if(result.status!=="PRIVATE_SOURCE_TEXT_REVIEW"){
     state.textContent="Source preview withheld: "+result.reason;
     return;
@@ -116,6 +128,7 @@ export function mountPrivateOfficeReview(root,{win=globalThis,fetchSource=win.fe
     (result.readingEventCount?result.readingEventCount+" printed-ordinary moments · ":"")+
     result.eventCount+" source events · "+
     (result.openingPaterOmitted?"last-prayer examen":"recitation as selected")+
+    (result.presidingMinister?" · "+result.presidingMinister.toLowerCase().replaceAll("_"," "):"")+
     " · NOT certified for public prayer";
    show();
   }catch(err){if(token===serial)state.textContent="Source unavailable: "+String(err?.message??err)}
@@ -124,11 +137,13 @@ export function mountPrivateOfficeReview(root,{win=globalThis,fetchSource=win.fe
  load.addEventListener("click",loadPreview);
  hours.addEventListener("change",()=>{invalidate();
   recitation.disabled=hours.value!=="COMPLINE";
+  presider.disabled=hours.value!=="COMPLINE";
   if(hours.value==="VESPERS")date.value="2026-11-28";
   state.textContent="Load the selected private source preview";
  });
  date.addEventListener("change",()=>{invalidate();state.textContent="Load the selected private source preview"});
  recitation.addEventListener("change",()=>{if(active?.hour==="COMPLINE")void loadPreview()});
+ presider.addEventListener("change",()=>{if(active?.hour==="COMPLINE")void loadPreview()});
  mode.addEventListener("change",()=>{
   if(active?.hour==="COMPLINE"&&active.availableLanguages?.length===1&&mode.value!=="la"){
    // A Latin source session never silently inherits a cached English/French
@@ -137,6 +152,7 @@ export function mountPrivateOfficeReview(root,{win=globalThis,fetchSource=win.fe
   }else if(active)show();
  });
  recitation.disabled=hours.value!=="COMPLINE";
+ presider.disabled=hours.value!=="COMPLINE";
  previous.addEventListener("click",()=>{if(active){index--;show()}});
  next.addEventListener("click",()=>{if(active){index++;show()}});
  invalidate();
