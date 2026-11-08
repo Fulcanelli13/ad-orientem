@@ -2578,7 +2578,7 @@ function renderLibrary(){
  rows=prayerSubjectsForLibrary(rows,LIB.subject);
  if(q)rows=rows.filter(p=>[p.title,p.titleFr,p.en,p.fr,p.la,p.id].join(' ').toLowerCase().includes(q));
  const cats=[['all',L('All','Toutes')],...Object.entries(DATA.categories||{}).map(([id,v])=>[id,isFr()?v.fr:v.en])];
- const historicalWorks=prayerSupplementalLiveWorksForSubject(LIB.subject,q);
+ const historicalWorks=LIB.cat==='all'?prayerSupplementalLiveWorksForSubject(LIB.subject,q):[];
  // Work-level links carry no prayer body; each points to the existing B19
  // or B20/B21 original reader with its exact selected source purpose.
  const historicalSection=!historicalWorks.length||LIB.cat==='essentials'?'':(
@@ -4814,7 +4814,9 @@ function onClick(e){
   // Exact work IDs must resolve to a registered existing source-owned reader.
   // Unknown/staged IDs must not navigate to a plausible but wrong prayer.
   const work=prayerSupplementalLiveWork(b.dataset.p435930SubjectWork);
-  if(!work||view!=='library'||LIB.open||LIB.subject!==work.subject||!internalPrayerView(work.route))
+  if(!work||view!=='library'||LIB.open||LIB.cat!=='all'||
+     (LIB.subject!==work.subject&&!(LIB.subject==='all'&&LIB.q.trim()))||
+     !internalPrayerView(work.route))
    return;
   clearInternalPrayerRouteErrors();
   pushView();
