@@ -6,6 +6,9 @@ on:
     paths:
       - 'data/artwork/batch1-three-photo-release-preflight.v1.json'
       - 'tests/sacred-art-batch1-three-photo-release-preflight.mjs'
+      - 'data/artwork/batch1-photo-release-decision-contract.v1.json'
+      - 'scripts/art/validate-batch1-photo-decisions.mjs'
+      - 'tests/sacred-art-batch1-photo-release-decisions.mjs'
       - '.github/workflows/sacred-art-batch1-three-photo-preflight.yml'
   workflow_dispatch: {}
 permissions:
