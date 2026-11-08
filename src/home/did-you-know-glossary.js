@@ -1,4 +1,4 @@
-import {loadDykPrioritySelection,dykPublishedCandidates,loadDykHistoricalRelease,dykHistoricalCandidates,dykHomeRotationSlot,DYK_GLOSSARY_FALLBACK_IDS} from "./dyk-published-feed.js";
+import {loadDykPrioritySelection,dykPublishedCandidates,loadDykHistoricalRelease,dykHistoricalCandidates,loadDykWeiser16Release,dykWeiser16Candidates,dykHomeRotationSlot,DYK_GLOSSARY_FALLBACK_IDS} from "./dyk-published-feed.js";
 // Transitional Home "Did you know?" projection from the already published
 // bilingual Glossary. No second fact bank, generated AI claims or unreviewed
 // Weiser/Pitrè research. The canonical Discovery owner replaces this adapter
@@ -152,20 +152,22 @@ export function hydrateHomeDidYouKnow(root,win=globalThis){
   const date=state?.selectedDate??root?.querySelector?.(".homeScreen [data-home-dyk-date]")?.dataset?.homeDykDate;
   if(!button||!date||typeof win?.fetch!=="function")return false;
   const fr=button.closest(".homeScreen")?.dataset?.homeLanguage==="fr";
-  // The same safe Home card owns both kinds of discovery. Select once after
-  // loading the two canonical sources, avoiding a misleading intermediate flash.
+  // One safe Home card rotates approved Glossary, original 20 historical items,
+  // and the separately source-checked 16 new Weiser items without UI redesign.
   void Promise.all([
     loadEntries(win).catch(()=>[]),
     loadDykPrioritySelection(win).catch(()=>null),
-    loadDykHistoricalRelease(win).catch(()=>null)
-  ]).then(([entries,data,historical])=>{
+    loadDykHistoricalRelease(win).catch(()=>null),
+    loadDykWeiser16Release(win).catch(()=>null)
+  ]).then(([entries,data,historical,r50])=>{
     const screen=button.closest(".homeScreen");
     const selectedDate=win?.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate??
       root?.querySelector?.(".homeScreen [data-home-dyk-date]")?.dataset?.homeDykDate;
     if(!button.isConnected||screen?.dataset?.homeLanguage!==(fr?"fr":"en")||selectedDate!==date)return;
     const candidates=[
       ...(data?dykPublishedCandidates(data,date):[]),
-      ...(historical?dykHistoricalCandidates(historical,date):[])
+      ...(historical?dykHistoricalCandidates(historical,date):[]),
+      ...(r50?dykWeiser16Candidates(r50,date):[])
     ];
     const slot=dykHomeRotationSlot(date,candidates.map(row=>row.id),HOME_DYK_GLOSSARY_IDS);
     const published=candidates.find(row=>row.id===slot);
