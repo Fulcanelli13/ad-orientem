@@ -1,3 +1,7 @@
+/* 2026-11-08 CL27 five site-contact profile publication on GitHub Pages.
+ * Refresh installed clients to discover exact-site contact panels and manifest.
+ * No liturgical timetable, GPS, or canonical status changes are introduced.
+ */
 /* 2026-11-06 source-verified Low Mass release: Sacred Heart votive + Leonine post-Mass prayers.
  * Bump the worker script bytes so an installed GitHub Pages client checks the new release.
  */

@@ -1,5 +1,6 @@
 import { CL2_PHYSICAL_SITE_INDEX_URL,projectCL2PhysicalDirectory } from "./cl2-physical-directory.js";
 import {matchesPublicCL27Facets} from "./cl27-public-facets.js";
+import {CL27_SITE_CONTACT_URL,attachPublishedSiteContactEvidence} from "./tlm-site-contact-evidence.js";
 import {
   CL27_PUBLIC_CELEBRATION_URL,attachPublishedCelebrationEvidence,tlmCelebrationEvidenceClass,
 } from "./tlm-celebration-evidence.js";
@@ -216,7 +217,27 @@ export async function loadPreliminaryR49({fetchImpl=fetch}={}){
   // closed. Never publish a partial or incorrectly joined liturgical claim.
   const claims=await fetchImpl(CL27_PUBLIC_CELEBRATION_URL,{headers:{accept:"application/json"}});
   if(!claims?.ok)throw new Error("CL27 exact-celebration evidence manifest unavailable: HTTP "+claims?.status);
-  cache=attachPublishedCelebrationEvidence(canonical,await claims.json());
+  const liturgical=attachPublishedCelebrationEvidence(canonical,await claims.json());
+  // Site-only contact evidence has an independent exact-identity release gate.
+  // If the new static file is unavailable in an older cached site snapshot,
+  // omit these OPTIONAL contact details without losing all 2,582 churches.
+  // Never substitute historical Mass times or any inferred community status.
+  let contacts=null;
+  try{
+    contacts=await fetchImpl(CL27_SITE_CONTACT_URL,{headers:{accept:"application/json"}});
+  }catch{
+    // An older cached asset set may lack this OPTIONAL nonliturgical manifest.
+  }
+  // Invalid or misjoined release contents must be rejected, not silently
+  // mistaken for verified church identity or a successful contact enrichment.
+  if(contacts?.ok){
+    const optionalManifest=await contacts.json();
+    // Older directory tests and offline snapshots can return unrelated JSON
+    // for a newly added optional URL. Treat that as absence, never approval.
+    // A correctly tagged contact release is strictly validated by the joiner.
+    cache=optionalManifest?.schema==="AO_CL27_EXACT_SITE_CONTACT_RELEASE_V1"
+      ?attachPublishedSiteContactEvidence(liturgical,optionalManifest):liturgical;
+  }else cache=liturgical;
   return cache;
 }
 /**
