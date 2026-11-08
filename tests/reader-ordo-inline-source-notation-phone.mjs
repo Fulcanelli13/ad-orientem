@@ -148,6 +148,18 @@ try{
    await page.screenshot({path:resolve(out,
      "ordo-"+form.toLowerCase()+"-"+mode+"-"+width+"-notation.png"),
     animations:"disabled"});
+   // The A/C Aa/♫ switch is local to the paragraph; Latin remains.
+   const localView=page.locator(".ao-proper-reference-notation").first();
+   const localToggle=localView.locator(".ao-proper-reference-toggle");
+   assert.equal(await localToggle.textContent(),"Aa");
+   await localToggle.click();
+   assert.equal(await localView.getAttribute("data-reference-view"),"text");
+   assert.equal(await localToggle.textContent(),"♫");
+   assert.equal(await localView.locator(".ao-proper-reference-expand").isVisible(),false);
+   assert.ok((await state()).literalLatin?.length>8);
+   await localToggle.click();
+   assert.equal(await localView.getAttribute("data-reference-view"),"notation");
+   assert.equal(await localView.locator(".ao-proper-reference-expand").isVisible(),true);
    // Reopen preferences: the on/off state must survive closing the sheet.
    await page.click("[data-reader-preferences]");
    assert.equal((await state()).pressed,"true");
