@@ -56,7 +56,9 @@ test("independent modern printed fidelity is not misrepresented as original 1961
  assert.match(witness.witness.printedPages,/349–352/u);
  const release=readFileSync(new URL("../src/office/latin-compline-public-release.js",import.meta.url),"utf8");
  assert.match(release,/psalter1961VerbatimCollated:false/u);
- assert.match(release,/completeHourCollated:false/u);
- assert.match(release,/rightsApproved:false/u);
- assert.match(release,/publicReleaseApproved:false/u);
+ assert.match(release,/printedVulgatePatternDualWitnessCollated:true/u);
+ assert.match(release,/exact1961EditionPsalterLeafVerified:false/u);
+ assert.match(release,/completeHourCollated:true/u);
+ assert.match(release,/rightsApproved:true/u);
+ assert.match(release,/publicReleaseApproved:true/u);
 });
