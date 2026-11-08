@@ -42,6 +42,8 @@ export function selectIcrspNov08SundayMass({win=globalThis,dateIso}={}){
  if(a?.actualCelebration?.id!=="mass_of_day"&&
     win?.AO_CELEBRATION_API?.getResolvedMass?.()?.celebrationId!=="mass_of_day")
    return Object.freeze({ok:false,reason:"GENERAL_SUNDAY_MASS_NOT_SELECTED"});
+ if(a?.votiveBasis!=="ordinary")
+   return Object.freeze({ok:false,reason:"GENERAL_SUNDAY_BASIS_NOT_CONFIRMED"});
  if(bridge.selectTodayOption("form",FORM)!==true)
    return Object.freeze({ok:false,reason:"LOW_MASS_FORM_NOT_ACCEPTED"});
  selectedByHost.set(win,Object.freeze({date:DATE,path:PATH,principal:PRINCIPAL,form:FORM}));
@@ -67,7 +69,7 @@ export function projectIcrspNov08SundayProPapaOrations({
  if(!icrspNov08SundaySourceAttested()||date!==DATE)
   return hold(proper,"ICRSP_SUNDAY_ORDO_OR_DATE_MISSING");
  if(form!==FORM||![null,"mass_of_day"].includes(actualCelebrationId)||
-    votiveBasis!=null)
+    votiveBasis!=="ordinary")
   return hold(proper,"ICRSP_SUNDAY_SELECTED_FORM_OR_KIND_CHANGED");
  const envelope=proper?.data&&typeof proper.data==="object"?proper:null;
  const data=inputProper(proper);
@@ -84,7 +86,7 @@ export function projectIcrspNov08SundayProPapaOrations({
  }
  const contract=Object.freeze({
   id:"ICRSP_FRANCE_2026-11-08_SUNDAY_PRO_PAPA",date:DATE,form:FORM,
-  celebrationId:"mass_of_day",votiveBasis:null,sourcePath:PATH,
+  celebrationId:"mass_of_day",votiveBasis:"ordinary",sourcePath:PATH,
   sourceOrdo:dateOrdo().sourceOrdo,sourceScope:dateOrdo().scope,
   universalPrescription:false,
   orations:Object.freeze(Object.fromEntries(GROUPS.map(key=>[key,
