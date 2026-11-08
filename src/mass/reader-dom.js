@@ -1176,14 +1176,6 @@ button.ao-schola-control{cursor:pointer}
 .ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph .ao-reading-petition+.ao-reading-petition{
   margin-block-start:.34em
 }
-/* Book-like rhythm: no horizontal rule after every source clause. */
-.ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-kind="TEXT"]{
-  border-bottom:0;padding-top:5px;padding-bottom:5px
-}
-.ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-kind="VERSICLE"],
-.ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-kind="RESPONSE"]{
-  border:0;padding-top:5px;padding-bottom:5px
-}
 .ao-reader-shell[data-mode="MISSAL"] .ao-state-ribbon{
   grid-template-columns:minmax(0,1fr) minmax(0,1fr);
 }
@@ -1288,6 +1280,15 @@ button.ao-schola-control{cursor:pointer}
     padding:18px 12px 64px!important;
   }
   .ao-reader-shell[data-mode="MISSAL"]{--ao-missal-column-gap:14px}
+}
+/* Keep the prayer text flowing: the bilingual Missal has no box/rule
+   between source clauses. Headings and source rubric order remain unchanged. */
+.ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-kind="TEXT"]{
+  border-bottom:0;padding-top:5px;padding-bottom:5px
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-kind="VERSICLE"],
+.ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-kind="RESPONSE"]{
+  border:0;padding-top:5px;padding-bottom:5px
 }
 /* LIVE illumination is determined only by data-reading-position below.
    data-active remains independent source-event state and never lights text. */
