@@ -10,7 +10,7 @@ import {DIVINUM_OFFICIUM_PIN as PIN}
  from "../app/source-transport-compat.js";
 import {assemblePrivateOfficeReview}
  from "./private-office-review.js";
-import {COMPLINE_CONTEXT,projectComplineRecitation}
+import {COMPLINE_CONTEXT,COMPLINE_MINISTER,projectComplineRecitation}
  from "./compline-recitation-projection.js";
 
 export const LATIN_COMPLINE_RELEASE_SCHEMA="ao.office.latin-compline-release.v1";
@@ -69,24 +69,29 @@ export function latinComplineReleaseEligibility({
  */
 export async function loadPublishedLatinCompline({
  date,hour="COMPLINE",calendarScope="UNIVERSAL",
- context=COMPLINE_CONTEXT.FINAL_PRAYER,fetchSource
+ context=COMPLINE_CONTEXT.FINAL_PRAYER,
+ minister=COMPLINE_MINISTER.NON_PRIEST,fetchSource
 }={}){
  const permission=latinComplineReleaseEligibility({date,hour,calendarScope});
  if(permission.status!=="ELIGIBLE")return permission;
  if(!Object.values(COMPLINE_CONTEXT).includes(context))
   return empty("UNAPPROVED_RECITATION_CONTEXT");
+ if(!Object.values(COMPLINE_MINISTER).includes(minister))
+  return empty("UNAPPROVED_PRESIDING_MINISTER");
  if(typeof fetchSource!=="function")return empty("SOURCE_TRANSPORT_REQUIRED");
  const original=await assemblePrivateOfficeReview({
   hour:"COMPLINE",date,fetchSource,languageMode:"latin"
  });
  if(original.status!=="PRIVATE_SOURCE_TEXT_REVIEW")
   return empty("PINNED_LATIN_SOURCE_UNAVAILABLE");
- const projected=projectComplineRecitation(original,{context});
+ const projected=projectComplineRecitation(original,{context,minister});
  if(projected.status!=="PRIVATE_SOURCE_TEXT_REVIEW"||
     projected.readingEventCount!==40||
     projected.sourceEventCount!==42||
     projected.printedPsalmDisplayFrames!==41||
     projected.blessingAmensRestoredFromPinnedSource!==2||
+    projected.ministerDialoguesResolved!==2||
+    projected.presidingMinister!==minister||
     projected.availableLanguages.length!==1||
     projected.availableLanguages[0]!=="la")
   return empty("COMPLETE_PRINTED_LATIN_READING_UNRESOLVED");
