@@ -400,8 +400,9 @@ const STYLE='.aoDykPublishedShade{position:fixed;inset:0;z-index:2147483620;back
 '@media(min-width:720px){.aoDykPublishedShade{align-items:center;padding:20px}.aoDykPublishedCard{border-radius:16px}}';
 export function dykPublishedMarkup(model){
  if(!model?.published||!safeUrl(model.sourceUrl)||!Array.isArray(model.links)||!model.links.length||
-   model.links.some(x=>!Number.isInteger(x.page)||x.page<1||x.page>5000||
-      x.url!==model.sourceUrl+"#page="+x.page))return "";
+   model.links.some(x=>Number.isInteger(x.page)?
+     (x.page<1||x.page>5000||x.url!==model.sourceUrl+"#page="+x.page):
+     (x.page!==null||x.url!==model.sourceUrl||!clean(x.label))))return "";
  const fr=model.language==="fr";
  return '<style>'+STYLE+'</style><div class="aoDykPublishedShade" data-dyk-published-shade>'+
    '<article class="aoDykPublishedCard" role="dialog" aria-modal="true" aria-labelledby="ao-dyk-published-title" data-dyk-published="'+esc(model.id)+'">'+
@@ -410,24 +411,26 @@ export function dykPublishedMarkup(model){
    (fr?"Le saviez-vous ?":"Did you know?")+'</h2><p>'+esc(model.fact)+'</p>'+
    '<p>'+esc(fr?"Source originale":"Original source")+' · '+esc(model.sourceId)+'</p>'+
    model.links.map((x,i)=>'<p><a href="'+esc(x.url)+'" target="_blank" rel="noopener noreferrer">'+
-     esc((fr?"Consulter la source, PDF p. ":"Read source, PDF p. ")+x.page)+'</a></p>').join("")+
+     esc(x.page===null?x.label:(fr?"Consulter la source, PDF p. ":"Read source, PDF p. ")+x.page)+'</a></p>').join("")+
    '<small>'+esc(fr?"Contexte historique ou rubrique de 1962 selon la source citée.":"Historical context or 1962 rubric, as identified in the cited source.")+'</small>'+
    '</article></div>';
 }
 export async function openDykPublishedSource(win,{id,date,language="en",trigger}={}){
  if(!win?.document?.createElement||!id||!validDate(date))return false;
- const [data,historical,r50,r50b,mixed]=await Promise.all([
+ const [data,historical,r50,r50b,mixed,h125]=await Promise.all([
    loadDykPrioritySelection(win).catch(()=>null),
    loadDykHistoricalRelease(win).catch(()=>null),
    loadDykWeiser16Release(win).catch(()=>null),
    loadDykWeiserSecond16Release(win).catch(()=>null),
-   loadDykMixed24Release(win).catch(()=>null)
+   loadDykMixed24Release(win).catch(()=>null),
+   loadDyk125Release(win).catch(()=>null)
  ]);
  const model=dykPublishedModel(data,id,date,language)||
    dykHistoricalModel(historical,id,date,language)||
    dykWeiser16Model(r50,id,date,language)||
    dykWeiserSecond16Model(r50b,id,date,language)||
-   dykMixed24Model(mixed,id,date,language);
+   dykMixed24Model(mixed,id,date,language)||
+   dyk125Model(h125,id,date,language);
  if(!model)return false;
  const node=win.document.createElement("div");node.innerHTML=dykPublishedMarkup(model);
  const shade=node.querySelector("[data-dyk-published-shade]");
