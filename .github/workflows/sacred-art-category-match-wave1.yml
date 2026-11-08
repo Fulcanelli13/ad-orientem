@@ -12,6 +12,7 @@ on:
       - 'src/home/browser-entry.js'
       - 'src/home/c3-styles.js'
       - 'tests/sacred-art-released-category-navigation.mjs'
+      - 'tools/build-web-preview.mjs'
       - '.github/workflows/sacred-art-category-match-wave1.yml'
   workflow_dispatch: {}
 permissions:
@@ -41,6 +42,12 @@ jobs:
         run: node scripts/art/build-sacred-art-category-match-v1.mjs
       - name: Verify generated master counts, categories and all protection gates
         run: node tests/sacred-art-category-match-wave1.mjs
+      - name: Build public Pages preview with the new taxonomy
+        run: node tools/build-web-preview.mjs
+      - name: Keep full 989-group research mapping out of public Pages
+        run: |
+          test ! -e dist/web-preview/data/artwork/sacred-art-category-match-989-267.v1.json
+          test -f dist/web-preview/src/art/sacred-art-taxonomy-v1.js
       - name: Commit subject/destination master, not new art assets
         if: success() && github.ref == 'refs/heads/feat/sacred-art-category-matching-wave1-20261108'
         shell: bash
