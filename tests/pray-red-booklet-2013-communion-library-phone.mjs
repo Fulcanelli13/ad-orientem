@@ -208,6 +208,8 @@ try{
    console.log("PASS "+width+"px "+ui+": all eleven Communion works open exact source cards; title search and invalid source guard.");
   }finally{await context.close()}
  }
- assert.equal(checked,68,"Eleven Communion, Suscipe EN/LA and four Mass/Confession prayers in four device/language combinations");
- console.log("PASS 68 source-owned prayer comparisons: eleven Communion, EN/LA Suscipe and four Mass/Confession works × 320/390 EN/FR; no invented translations or 2013-text claims.");
+ const expected=(LINKS.length+SUSCIPE.languages.length+PRIVATE.length+4)*4;
+ assert.equal(expected,84,"New short source cases must not replace any of the former 68 reader comparisons");
+ assert.equal(checked,expected,"All 16 historical direct works plus four short-form assertions must pass across four phone/language combinations");
+ console.log("PASS "+checked+" source-owned reading checks: eleven Communion works, Suscipe EN/LA, four Mass/Confession works, the Guardian Angel invocation and three Sacred Heart aspirations × 320/390 EN/FR; no invented translations.");
 }finally{await browser?.close().catch(()=>{});await new Promise(done=>server.close(done))}
