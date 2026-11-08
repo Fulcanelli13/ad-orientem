@@ -145,7 +145,7 @@ export function select1962CommemorationsForMassForm({
     Number(only.rank)===3&&
     /^sancti:[0-9]{2}-[0-9]{2}:1:/i.test(mainId)&&
     /^tempora:Quad[1-5]-[1-6](?:Feria)?:3:/i.test(commId)&&
-    /^Tempora\\/Quad[1-5]-[1-6]$/.test(String(only.path??""));
+    /^Tempora\/Quad[1-5]-[1-6]$/.test(String(only.path??""));
   // RG 109(c): days in the Octave of Christmas are privileged
   // commemorations in ALL Mass forms, even though the host's synthetic
   // 12-26c/12-28c placeholder carries an incorrect IV-class source rank
