@@ -179,7 +179,7 @@ export function hydrateHomeDidYouKnow(root,win=globalThis){
     const published=candidates.find(row=>row.id===slot);
     if(published){
       const fact=published.pilot_home_copy||published.editorial_review_copy;
-      const historical=published.source_family!=="ROMAN_MASS_1962";
+      const historical=!["ROMAN_MASS_1962","ROMAN_GENERAL_RUBRICS_1962"].includes(published.source_family);
       button.querySelector("[data-home-dyk-title]").textContent=historical?
         (fr?"Coutumes et traditions":"Customs and traditions"):
         published.topic==="roman_1962_celebrant_rubrics"?
