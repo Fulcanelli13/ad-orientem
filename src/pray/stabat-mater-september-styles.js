@@ -12,9 +12,9 @@ export const STABAT_MATER_SEPTEMBER_CSS=String.raw`
 }
 #aoPray435930 :is([data-ao-stabat-full-september],[data-ao-stabat-library-full])>summary::-webkit-details-marker{display:none}
 #aoPray435930 :is([data-ao-stabat-full-september],[data-ao-stabat-library-full])>summary::after{
- content:\"+\";position:absolute;right:0;top:4px;color:var(--liturgical,#c7ae6d);font:500 1.15rem/1.1 system-ui,sans-serif;
+ content:"+";position:absolute;right:0;top:4px;color:var(--liturgical,#c7ae6d);font:500 1.15rem/1.1 system-ui,sans-serif;
 }
-#aoPray435930 :is([data-ao-stabat-full-september],[data-ao-stabat-library-full])[open]>summary::after{content:\"−\"}
+#aoPray435930 :is([data-ao-stabat-full-september],[data-ao-stabat-library-full])[open]>summary::after{content:"−"}
 #aoPray435930 :is([data-ao-stabat-full-september],[data-ao-stabat-library-full])>summary:focus-visible{
  outline:2px solid var(--liturgical,#c7ae6d);outline-offset:3px;border-radius:3px;
 }
