@@ -1,0 +1,880 @@
+{
+  "schema": "AO_DYK_H150_ORIGINALS25_PUBLICATION_V1",
+  "created": "2026-11-08",
+  "release_stage": "APPROVED_PARTIAL_LIVE",
+  "release_kind": "SOURCE_REVIEWED_BILINGUAL_PITRE_ROMAN_RITUAL_AND_RURAL",
+  "counts": {
+    "pitre": 8,
+    "ritus": 8,
+    "prayerbook": 7,
+    "calendar": 2,
+    "total": 25
+  },
+  "method": "Standalone reviewed release manifest. Pitrè relies on recovered 1900 original-image Italian-anchor records. 1962 Ritus and General Rubrics paraphrases checked against published 1962 translations and page images. Rural Life Prayerbook 1956 headings/text checked at EWTN. Historic customs not conflated with modern or universal rites. Specific duplicate checks against the 100? no: 125 prior released entries and 612 private previews; five descriptions rewritten to distinguish observed actions.",
+  "records": [
+    {
+      "id": "DYK-H150-P-001",
+      "source_id": "PIT1900-IT-024",
+      "source_family": "PITRE_1900",
+      "topic": "SICILIAN_HISTORICAL_FEAST",
+      "pilot_home_copy": {
+        "en": "Pitrè recorded two local dates for Saint Joseph festivities in Canicattini: 19 March and the first Sunday in September.",
+        "fr": "Pitrè a relevé deux dates locales de fêtes de saint Joseph à Canicattini : le 19 mars et le premier dimanche de septembre.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "pdf_pages_1based": [
+          505
+        ],
+        "printed_pages": [
+          447
+        ],
+        "original_image_checked": true,
+        "original_italian_anchor": "il 19 Marzo e la prima Domenica di Settembre",
+        "primary_locator": "Pitrè, 1900, printed p. 447",
+        "evidence_tier": "PRIOR_1900_FACSIMILE_IMAGE_AND_ITALIAN_ANCHOR_CHECKED",
+        "source_record_id": "PIT1900-IT-024",
+        "deep_link_checked": true
+      },
+      "editorial_approval": true,
+      "release_authorized": true,
+      "semantic_novelty_reviewed": true,
+      "published": true,
+      "research_record_id": "DYK-UM01-030",
+      "region_scope": "Sicilian local practice described in 1900; no assertion of present-day continuation",
+      "historical_local_only": true,
+      "publication_kind": "EVERGREEN_HISTORICAL"
+    },
+    {
+      "id": "DYK-H150-P-002",
+      "source_id": "PIT1900-NEW-048",
+      "source_family": "PITRE_1900",
+      "topic": "SICILIAN_HISTORICAL_FEAST",
+      "pilot_home_copy": {
+        "en": "Children in Pitrè's account of an old Palermo procession carried little ceramic water pitchers, called quartare, decorated with flowers.",
+        "fr": "Dans le récit de Pitrè d'une ancienne procession à Palerme, des enfants portaient de petites cruches d'eau en terre cuite, les quartare, décorées de fleurs.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "pdf_pages_1based": [
+          142
+        ],
+        "printed_pages": [
+          80
+        ],
+        "original_image_checked": true,
+        "original_italian_anchor": "quartare",
+        "primary_locator": "Pitrè, 1900, printed p. 80",
+        "evidence_tier": "PRIOR_1900_FACSIMILE_IMAGE_AND_ITALIAN_ANCHOR_CHECKED",
+        "source_record_id": "PIT1900-NEW-048",
+        "deep_link_checked": true
+      },
+      "editorial_approval": true,
+      "release_authorized": true,
+      "semantic_novelty_reviewed": true,
+      "published": true,
+      "research_record_id": "DYK-UM02-035",
+      "region_scope": "Sicilian local practice described in 1900; no assertion of present-day continuation",
+      "historical_local_only": true,
+      "publication_kind": "EVERGREEN_HISTORICAL"
+    },
+    {
+      "id": "DYK-H150-P-003",
+      "source_id": "PIT1900-NEW-020",
+      "source_family": "PITRE_1900",
+      "topic": "SICILIAN_HISTORICAL_FEAST",
+      "pilot_home_copy": {
+        "en": "Historical confraternities offered wax publicly for Saint Rosalia's feast in Palermo.",
+        "fr": "Des confréries offraient publiquement de la cire pour la fête de sainte Rosalie à Palerme.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "pdf_pages_1based": [
+          95
+        ],
+        "printed_pages": [
+          33
+        ],
+        "original_image_checked": true,
+        "original_italian_anchor": "offrire la cera di uso",
+        "primary_locator": "Pitrè, 1900, printed p. 33",
+        "evidence_tier": "PRIOR_1900_FACSIMILE_IMAGE_AND_ITALIAN_ANCHOR_CHECKED",
+        "source_record_id": "PIT1900-NEW-020",
+        "deep_link_checked": true
+      },
+      "editorial_approval": true,
+      "release_authorized": true,
+      "semantic_novelty_reviewed": true,
+      "published": true,
+      "research_record_id": "DYK-UM03-028",
+      "region_scope": "Sicilian local practice described in 1900; no assertion of present-day continuation",
+      "historical_local_only": true,
+      "publication_kind": "EVERGREEN_HISTORICAL"
+    },
+    {
+      "id": "DYK-H150-P-004",
+      "source_id": "PIT1900-NEW-028",
+      "source_family": "PITRE_1900",
+      "topic": "SICILIAN_HISTORICAL_FEAST",
+      "pilot_home_copy": {
+        "en": "Pitrè distinguished a local prohibition on the public procession of Saints Cosmas and Damian from continued celebrations inside their church.",
+        "fr": "Pitrè distinguait une interdiction locale de procession publique des saints Côme et Damien du maintien de leur fête à l'intérieur de l'église.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "pdf_pages_1based": [
+          133
+        ],
+        "printed_pages": [
+          71
+        ],
+        "original_image_checked": true,
+        "original_italian_anchor": "la festa si ripete in chiesa",
+        "primary_locator": "Pitrè, 1900, printed p. 71",
+        "evidence_tier": "PRIOR_1900_FACSIMILE_IMAGE_AND_ITALIAN_ANCHOR_CHECKED",
+        "source_record_id": "PIT1900-NEW-028",
+        "deep_link_checked": true
+      },
+      "editorial_approval": true,
+      "release_authorized": true,
+      "semantic_novelty_reviewed": true,
+      "published": true,
+      "research_record_id": "DYK-UM03-031",
+      "region_scope": "Sicilian local practice described in 1900; no assertion of present-day continuation",
+      "historical_local_only": true,
+      "publication_kind": "EVERGREEN_HISTORICAL"
+    },
+    {
+      "id": "DYK-H150-P-005",
+      "source_id": "PIT1900-NEW-037",
+      "source_family": "PITRE_1900",
+      "topic": "SICILIAN_HISTORICAL_FEAST",
+      "pilot_home_copy": {
+        "en": "At a historic Palermo fair, produce sellers displayed watercolour narrative panels recounting episodes from the lives of the physician-martyrs Cosmas and Damian.",
+        "fr": "Lors d'une ancienne foire palermitaine, des vendeurs de fruits exposaient des panneaux narratifs à l'aquarelle illustrant des épisodes de la vie des saints médecins Côme et Damien.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "pdf_pages_1based": [
+          136
+        ],
+        "printed_pages": [
+          74
+        ],
+        "original_image_checked": true,
+        "original_italian_anchor": "quadri su tela ad acquarello",
+        "primary_locator": "Pitrè, 1900, printed p. 74",
+        "evidence_tier": "PRIOR_1900_FACSIMILE_IMAGE_AND_ITALIAN_ANCHOR_CHECKED",
+        "source_record_id": "PIT1900-NEW-037",
+        "deep_link_checked": true
+      },
+      "editorial_approval": true,
+      "release_authorized": true,
+      "semantic_novelty_reviewed": true,
+      "published": true,
+      "research_record_id": "DYK-UM03-033",
+      "region_scope": "Sicilian local practice described in 1900; no assertion of present-day continuation",
+      "historical_local_only": true,
+      "publication_kind": "EVERGREEN_HISTORICAL"
+    },
+    {
+      "id": "DYK-H150-P-006",
+      "source_id": "PIT1900-NEW-059",
+      "source_family": "PITRE_1900",
+      "topic": "SICILIAN_HISTORICAL_FEAST",
+      "pilot_home_copy": {
+        "en": "Pitrè described the old devotional standard kept in Piazza Armerina as adorned with silver sheet-metal work and jewels donated in thanksgiving.",
+        "fr": "Pitrè décrivait l'ancien étendard de dévotion conservé à Piazza Armerina comme enrichi d'ornements d'argent et de bijoux offerts en action de grâce.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "pdf_pages_1based": [
+          616
+        ],
+        "printed_pages": [
+          558
+        ],
+        "original_image_checked": true,
+        "original_italian_anchor": "una lamina d argento",
+        "primary_locator": "Pitrè, 1900, printed p. 558",
+        "evidence_tier": "PRIOR_1900_FACSIMILE_IMAGE_AND_ITALIAN_ANCHOR_CHECKED",
+        "source_record_id": "PIT1900-NEW-059",
+        "deep_link_checked": true
+      },
+      "editorial_approval": true,
+      "release_authorized": true,
+      "semantic_novelty_reviewed": true,
+      "published": true,
+      "research_record_id": "DYK-UM03-037",
+      "region_scope": "Sicilian local practice described in 1900; no assertion of present-day continuation",
+      "historical_local_only": true,
+      "publication_kind": "EVERGREEN_HISTORICAL"
+    },
+    {
+      "id": "DYK-H150-P-007",
+      "source_id": "PIT1900-NEW-087",
+      "source_family": "PITRE_1900",
+      "topic": "SICILIAN_HISTORICAL_FEAST",
+      "pilot_home_copy": {
+        "en": "Pitrè records Geraci Siculo households preparing a dairy-based festival gift for a local Blessed Sacrament celebration.",
+        "fr": "Pitrè relate qu'à Geraci Siculo des familles préparaient un présent à base de lait pour une fête locale du Saint-Sacrement.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "pdf_pages_1based": [
+          188
+        ],
+        "printed_pages": [
+          126
+        ],
+        "original_image_checked": true,
+        "original_italian_anchor": "latte",
+        "primary_locator": "Pitrè, 1900, printed p. 126",
+        "evidence_tier": "PRIOR_1900_FACSIMILE_IMAGE_AND_ITALIAN_ANCHOR_CHECKED",
+        "source_record_id": "PIT1900-NEW-087",
+        "deep_link_checked": true
+      },
+      "editorial_approval": true,
+      "release_authorized": true,
+      "semantic_novelty_reviewed": true,
+      "published": true,
+      "research_record_id": "DYK-UM03-043",
+      "region_scope": "Sicilian local practice described in 1900; no assertion of present-day continuation",
+      "historical_local_only": true,
+      "publication_kind": "EVERGREEN_HISTORICAL"
+    },
+    {
+      "id": "DYK-H150-P-008",
+      "source_id": "PIT1900-NEW-078",
+      "source_family": "PITRE_1900",
+      "topic": "SICILIAN_HISTORICAL_FEAST",
+      "pilot_home_copy": {
+        "en": "Pitrè reported the statue of Saint James visiting orchards and gardens near Gratteri as well as houses.",
+        "fr": "Pitrè relatait comment la statue de saint Jacques visitait aussi les vergers et les jardins des environs de Gratteri.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "pdf_pages_1based": [
+          186
+        ],
+        "printed_pages": [
+          124
+        ],
+        "original_image_checked": true,
+        "original_italian_anchor": "giardini",
+        "primary_locator": "Pitrè, 1900, printed p. 124",
+        "evidence_tier": "PRIOR_1900_FACSIMILE_IMAGE_AND_ITALIAN_ANCHOR_CHECKED",
+        "source_record_id": "PIT1900-NEW-078",
+        "deep_link_checked": true
+      },
+      "editorial_approval": true,
+      "release_authorized": true,
+      "semantic_novelty_reviewed": true,
+      "published": true,
+      "research_record_id": "DYK-UM02-043",
+      "region_scope": "Sicilian local practice described in 1900; no assertion of present-day continuation",
+      "historical_local_only": true,
+      "publication_kind": "EVERGREEN_HISTORICAL"
+    },
+    {
+      "id": "DYK-H150-M-001",
+      "source_id": "RS1962.H150.GLORIA_BOWS",
+      "source_family": "ROMAN_MASS_1962",
+      "topic": "ROMAN_1962_CELEBRANT_DETAIL",
+      "pilot_home_copy": {
+        "en": "In the 1962 Roman Mass, the priest bows his head at several phrases of the Gloria, including Adoramus te and Gratias agimus tibi.",
+        "fr": "Dans la messe romaine de 1962, le prêtre incline la tête à plusieurs passages du Gloria, notamment à Adoramus te et Gratias agimus tibi.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdf_pages_1based": [
+          5
+        ],
+        "printed_pages": [
+          5
+        ],
+        "primary_locator": "Ritus servandus IV.3",
+        "supporting_event_ids": [
+          "B01-003",
+          "B01-004",
+          "B01-005",
+          "B01-006",
+          "B01-007"
+        ],
+        "original_image_checked": true,
+        "original_edition": "Ritus servandus (1962), published English translation; no independent original Latin certification",
+        "source_record_id": "RS1962.H150.GLORIA_BOWS",
+        "deep_link_checked": true
+      },
+      "editorial_approval": true,
+      "release_authorized": true,
+      "semantic_novelty_reviewed": true,
+      "published": true,
+      "region_scope": "1962 Roman Mass, celebrant or server gesture in specified form; not a congregational obligation",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "publication_kind": "ROMAN_1962_RUBRIC"
+    },
+    {
+      "id": "DYK-H150-M-002",
+      "source_id": "RS1962.H150.GLORIA_FINAL_CROSS",
+      "source_family": "ROMAN_MASS_1962",
+      "topic": "ROMAN_1962_CELEBRANT_DETAIL",
+      "pilot_home_copy": {
+        "en": "At Cum Sancto Spiritu near the end of the Gloria, the 1962 Ritus instructs the celebrant to make the sign of the cross.",
+        "fr": "Au Cum Sancto Spiritu vers la fin du Gloria, le Ritus de 1962 prescrit au célébrant de faire le signe de croix.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdf_pages_1based": [
+          5
+        ],
+        "printed_pages": [
+          5
+        ],
+        "primary_locator": "Ritus servandus IV.3",
+        "supporting_event_ids": [
+          "B01-008"
+        ],
+        "original_image_checked": true,
+        "original_edition": "Ritus servandus (1962), published English translation; no independent original Latin certification",
+        "source_record_id": "RS1962.H150.GLORIA_FINAL_CROSS",
+        "deep_link_checked": true
+      },
+      "editorial_approval": true,
+      "release_authorized": true,
+      "semantic_novelty_reviewed": true,
+      "published": true,
+      "region_scope": "1962 Roman Mass, celebrant or server gesture in specified form; not a congregational obligation",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "publication_kind": "ROMAN_1962_RUBRIC"
+    },
+    {
+      "id": "DYK-H150-M-003",
+      "source_id": "RS1962.H150.JOINED_FINGERS_POSTCONSECRATION",
+      "source_family": "ROMAN_MASS_1962",
+      "topic": "ROMAN_1962_CELEBRANT_DETAIL",
+      "pilot_home_copy": {
+        "en": "After consecrating the Host, the priest keeps thumb and forefinger joined until the ablution, except when handling the consecrated Host.",
+        "fr": "Après avoir consacré l'hostie, le prêtre garde le pouce et l'index joints jusqu'à l'ablution, sauf lorsqu'il doit toucher l'hostie consacrée.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdf_pages_1based": [
+          15
+        ],
+        "printed_pages": [
+          15
+        ],
+        "primary_locator": "Ritus servandus VIII.5",
+        "supporting_event_ids": [
+          "B01-020",
+          "B01-021"
+        ],
+        "original_image_checked": true,
+        "original_edition": "Ritus servandus (1962), published English translation; no independent original Latin certification",
+        "source_record_id": "RS1962.H150.JOINED_FINGERS_POSTCONSECRATION",
+        "deep_link_checked": true
+      },
+      "editorial_approval": true,
+      "release_authorized": true,
+      "semantic_novelty_reviewed": true,
+      "published": true,
+      "region_scope": "1962 Roman Mass, celebrant or server gesture in specified form; not a congregational obligation",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "publication_kind": "ROMAN_1962_RUBRIC"
+    },
+    {
+      "id": "DYK-H150-M-004",
+      "source_id": "RS1962.H150.SERVER_CHASUBLE_BELL",
+      "source_family": "ROMAN_MASS_1962",
+      "topic": "ROMAN_1962_CELEBRANT_DETAIL",
+      "pilot_home_copy": {
+        "en": "At the elevation of the Host in the 1962 Low Mass, the server raises the back edge of the priest's chasuble and rings a small bell three times.",
+        "fr": "Lors de l'élévation de l'hostie à la messe basse de 1962, le servant relève légèrement l'arrière de la chasuble et sonne trois fois une petite clochette.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdf_pages_1based": [
+          15
+        ],
+        "printed_pages": [
+          15
+        ],
+        "primary_locator": "Ritus servandus VIII.6",
+        "supporting_event_ids": [
+          "B01-025"
+        ],
+        "original_image_checked": true,
+        "original_edition": "Ritus servandus (1962), published English translation; no independent original Latin certification",
+        "source_record_id": "RS1962.H150.SERVER_CHASUBLE_BELL",
+        "deep_link_checked": true
+      },
+      "editorial_approval": true,
+      "release_authorized": true,
+      "semantic_novelty_reviewed": true,
+      "published": true,
+      "region_scope": "1962 Roman Mass, celebrant or server gesture in specified form; not a congregational obligation",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "publication_kind": "ROMAN_1962_RUBRIC"
+    },
+    {
+      "id": "DYK-H150-M-005",
+      "source_id": "RS1962.H150.SANCTIFICAS_CROSSES",
+      "source_family": "ROMAN_MASS_1962",
+      "topic": "ROMAN_1962_CELEBRANT_DETAIL",
+      "pilot_home_copy": {
+        "en": "In the Canon's phrase sanctificas, vivificas, benedicis, the priest marks each of those three verbs with its own sign of the cross.",
+        "fr": "Dans la phrase du Canon sanctificas, vivificas, benedicis, le prêtre marque chacun de ces trois verbes d'un signe de croix.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdf_pages_1based": [
+          17
+        ],
+        "printed_pages": [
+          17
+        ],
+        "primary_locator": "Ritus servandus IX.3",
+        "supporting_event_ids": [
+          "B01-032"
+        ],
+        "original_image_checked": true,
+        "original_edition": "Ritus servandus (1962), published English translation; no independent original Latin certification",
+        "source_record_id": "RS1962.H150.SANCTIFICAS_CROSSES",
+        "deep_link_checked": true
+      },
+      "editorial_approval": true,
+      "release_authorized": true,
+      "semantic_novelty_reviewed": true,
+      "published": true,
+      "region_scope": "1962 Roman Mass, celebrant or server gesture in specified form; not a congregational obligation",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "publication_kind": "ROMAN_1962_RUBRIC"
+    },
+    {
+      "id": "DYK-H150-M-006",
+      "source_id": "RS1962.H150.PER_IPSUM_HOST",
+      "source_family": "ROMAN_MASS_1962",
+      "topic": "ROMAN_1962_CELEBRANT_DETAIL",
+      "pilot_home_copy": {
+        "en": "At the concluding Per ipsum of the Canon, the celebrant traces five crosses using the consecrated Host itself, then makes a small joint elevation.",
+        "fr": "Au Per ipsum final du Canon, le célébrant trace cinq croix avec l'hostie consacrée elle-même, puis procède à une petite élévation conjointe.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdf_pages_1based": [
+          17
+        ],
+        "printed_pages": [
+          17
+        ],
+        "primary_locator": "Ritus servandus IX.3",
+        "supporting_event_ids": [
+          "B01-033"
+        ],
+        "original_image_checked": true,
+        "original_edition": "Ritus servandus (1962), published English translation; no independent original Latin certification",
+        "source_record_id": "RS1962.H150.PER_IPSUM_HOST",
+        "deep_link_checked": true
+      },
+      "editorial_approval": true,
+      "release_authorized": true,
+      "semantic_novelty_reviewed": true,
+      "published": true,
+      "region_scope": "1962 Roman Mass, celebrant or server gesture in specified form; not a congregational obligation",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "publication_kind": "ROMAN_1962_RUBRIC"
+    },
+    {
+      "id": "DYK-H150-M-007",
+      "source_id": "RS1962.H150.COMMUNION_THREE_INVOCATIONS",
+      "source_family": "ROMAN_MASS_1962",
+      "topic": "ROMAN_1962_CELEBRANT_DETAIL",
+      "pilot_home_copy": {
+        "en": "Before giving Holy Communion to the faithful, the priest says Ecce Agnus Dei and then repeats Domine, non sum dignus three times.",
+        "fr": "Avant de donner la sainte communion aux fidèles, le prêtre dit Ecce Agnus Dei, puis répète trois fois Domine, non sum dignus.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdf_pages_1based": [
+          20
+        ],
+        "printed_pages": [
+          20
+        ],
+        "primary_locator": "Ritus servandus X.6",
+        "supporting_event_ids": [
+          "B01-036",
+          "B01-037"
+        ],
+        "original_image_checked": true,
+        "original_edition": "Ritus servandus (1962), published English translation; no independent original Latin certification",
+        "source_record_id": "RS1962.H150.COMMUNION_THREE_INVOCATIONS",
+        "deep_link_checked": true
+      },
+      "editorial_approval": true,
+      "release_authorized": true,
+      "semantic_novelty_reviewed": true,
+      "published": true,
+      "region_scope": "1962 Roman Mass, celebrant or server gesture in specified form; not a congregational obligation",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "publication_kind": "ROMAN_1962_RUBRIC"
+    },
+    {
+      "id": "DYK-H150-M-008",
+      "source_id": "RS1962.H150.PURIFICATION_WINE_WATER",
+      "source_family": "ROMAN_MASS_1962",
+      "topic": "ROMAN_1962_CELEBRANT_DETAIL",
+      "pilot_home_copy": {
+        "en": "The Roman Mass's two ablutions use different liquids: first wine alone, then wine mixed with water to wash the celebrant's fingertips.",
+        "fr": "Les deux ablutions de la messe romaine emploient des liquides différents : d'abord du vin seul, puis du vin mêlé d'eau pour laver les doigts du célébrant.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdf_pages_1based": [
+          20
+        ],
+        "printed_pages": [
+          20
+        ],
+        "primary_locator": "Ritus servandus X.5",
+        "supporting_event_ids": [],
+        "original_image_checked": true,
+        "original_edition": "Ritus servandus (1962), published English translation; no independent original Latin certification",
+        "source_record_id": "RS1962.H150.PURIFICATION_WINE_WATER",
+        "deep_link_checked": true,
+        "page_only_evidence": "Original Ritus servandus X.5, page 20, inspected directly"
+      },
+      "editorial_approval": true,
+      "release_authorized": true,
+      "semantic_novelty_reviewed": true,
+      "published": true,
+      "region_scope": "1962 Roman Mass, celebrant or server gesture in specified form; not a congregational obligation",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "publication_kind": "ROMAN_1962_RUBRIC"
+    },
+    {
+      "id": "DYK-H150-B-001",
+      "source_id": "RLP1956.H150.EASTER_LAMB",
+      "source_family": "RURAL_LIFE_PRAYERBOOK_1956",
+      "topic": "HISTORICAL_CATHOLIC_BLESSING",
+      "pilot_home_copy": {
+        "en": "The 1956 Rural Life Prayerbook includes a blessing for Easter lamb, explicitly connecting the food to Exodus and Christ's Resurrection.",
+        "fr": "Le Rural Life Prayerbook de 1956 contient une bénédiction de l'agneau pascal, reliant explicitement cet aliment à l'Exode et à la Résurrection du Christ.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "html",
+        "url": "https://www.ewtn.com/catholicism/library/rural-life-prayerbook-11881",
+        "pdf_pages_1based": [],
+        "primary_locator": "Blessing of a Lamb",
+        "original_text_checked": true,
+        "publication_year": 1956,
+        "source_record_id": "RLP1956.H150.EASTER_LAMB",
+        "deep_link_checked": true
+      },
+      "editorial_approval": true,
+      "release_authorized": true,
+      "semantic_novelty_reviewed": true,
+      "published": true,
+      "region_scope": "Historical prayerbook entry; not a mandatory element of Mass or a universal present-day custom",
+      "historical_local_only": true,
+      "publication_kind": "SOURCE_SCOPED_HISTORICAL"
+    },
+    {
+      "id": "DYK-H150-B-002",
+      "source_id": "RLP1956.H150.EASTER_EGGS",
+      "source_family": "RURAL_LIFE_PRAYERBOOK_1956",
+      "topic": "HISTORICAL_CATHOLIC_BLESSING",
+      "pilot_home_copy": {
+        "en": "A 1956 Catholic rural prayerbook includes a blessing of eggs that invokes gratitude for the Resurrection; its editor says the blessing is especially suited to Easter.",
+        "fr": "Un recueil catholique rural de 1956 contient une bénédiction des œufs rendant grâce pour la Résurrection ; son éditeur la présente comme particulièrement adaptée à Pâques.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "html",
+        "url": "https://www.ewtn.com/catholicism/library/rural-life-prayerbook-11881",
+        "pdf_pages_1based": [],
+        "primary_locator": "Blessing of Eggs",
+        "original_text_checked": true,
+        "publication_year": 1956,
+        "source_record_id": "RLP1956.H150.EASTER_EGGS",
+        "deep_link_checked": true
+      },
+      "editorial_approval": true,
+      "release_authorized": true,
+      "semantic_novelty_reviewed": true,
+      "published": true,
+      "region_scope": "Historical prayerbook entry; not a mandatory element of Mass or a universal present-day custom",
+      "historical_local_only": true,
+      "publication_kind": "SOURCE_SCOPED_HISTORICAL"
+    },
+    {
+      "id": "DYK-H150-B-003",
+      "source_id": "RLP1956.H150.JOHN_WINE",
+      "source_family": "RURAL_LIFE_PRAYERBOOK_1956",
+      "topic": "HISTORICAL_CATHOLIC_BLESSING",
+      "pilot_home_copy": {
+        "en": "The Rural Life Prayerbook describes a Saint John's Day blessing of wine brought by the faithful after Mass, recalling the old story of the apostle surviving poison.",
+        "fr": "Le Rural Life Prayerbook décrit, à la Saint-Jean l'Évangéliste, une bénédiction du vin apporté par les fidèles après la messe, en souvenir du récit traditionnel de l'apôtre épargné par le poison.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "html",
+        "url": "https://www.ewtn.com/catholicism/library/rural-life-prayerbook-11881",
+        "pdf_pages_1based": [],
+        "primary_locator": "Blessing of Wine on the Feast of Saint John, Apostle and Evangelist",
+        "original_text_checked": true,
+        "publication_year": 1956,
+        "source_record_id": "RLP1956.H150.JOHN_WINE",
+        "deep_link_checked": true
+      },
+      "editorial_approval": true,
+      "release_authorized": true,
+      "semantic_novelty_reviewed": true,
+      "published": true,
+      "region_scope": "Historical prayerbook entry; not a mandatory element of Mass or a universal present-day custom",
+      "historical_local_only": true,
+      "publication_kind": "SOURCE_SCOPED_HISTORICAL"
+    },
+    {
+      "id": "DYK-H150-B-004",
+      "source_id": "RLP1956.H150.HARVEST_BARN",
+      "source_family": "RURAL_LIFE_PRAYERBOOK_1956",
+      "topic": "HISTORICAL_CATHOLIC_BLESSING",
+      "pilot_home_copy": {
+        "en": "Among its historical blessings, the 1956 Rural Life Prayerbook includes a prayer over a barn and its stored harvest, asking that gathered crops be preserved from harm.",
+        "fr": "Parmi ses anciennes bénédictions, le Rural Life Prayerbook de 1956 contient une prière pour la grange et les récoltes entreposées, demandant leur préservation.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "html",
+        "url": "https://www.ewtn.com/catholicism/library/rural-life-prayerbook-11881",
+        "pdf_pages_1based": [],
+        "primary_locator": "Blessing of the Barn and the Stored Harvest",
+        "original_text_checked": true,
+        "publication_year": 1956,
+        "source_record_id": "RLP1956.H150.HARVEST_BARN",
+        "deep_link_checked": true
+      },
+      "editorial_approval": true,
+      "release_authorized": true,
+      "semantic_novelty_reviewed": true,
+      "published": true,
+      "region_scope": "Historical prayerbook entry; not a mandatory element of Mass or a universal present-day custom",
+      "historical_local_only": true,
+      "publication_kind": "SOURCE_SCOPED_HISTORICAL"
+    },
+    {
+      "id": "DYK-H150-B-005",
+      "source_id": "RLP1956.H150.FIELD_CROSSES",
+      "source_family": "RURAL_LIFE_PRAYERBOOK_1956",
+      "topic": "HISTORICAL_CATHOLIC_BLESSING",
+      "pilot_home_copy": {
+        "en": "A traditional blessing for crosses placed in fields and vineyards, reproduced in a 1956 prayerbook, was associated with the Finding of the Holy Cross or the following Sunday.",
+        "fr": "Une bénédiction traditionnelle des croix destinées aux champs et aux vignes, reproduite dans un livre de 1956, était associée à l'Invention de la Sainte Croix ou au dimanche suivant.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "html",
+        "url": "https://www.ewtn.com/catholicism/library/rural-life-prayerbook-11881",
+        "pdf_pages_1based": [],
+        "primary_locator": "Blessing of Crosses to Be Set in Fields, Vineyards, etc.",
+        "original_text_checked": true,
+        "publication_year": 1956,
+        "source_record_id": "RLP1956.H150.FIELD_CROSSES",
+        "deep_link_checked": true
+      },
+      "editorial_approval": true,
+      "release_authorized": true,
+      "semantic_novelty_reviewed": true,
+      "published": true,
+      "region_scope": "Historical prayerbook entry; not a mandatory element of Mass or a universal present-day custom",
+      "historical_local_only": true,
+      "publication_kind": "SOURCE_SCOPED_HISTORICAL"
+    },
+    {
+      "id": "DYK-H150-B-006",
+      "source_id": "RLP1956.H150.NATIVITY_MARY_SEEDS",
+      "source_family": "RURAL_LIFE_PRAYERBOOK_1956",
+      "topic": "HISTORICAL_CATHOLIC_BLESSING",
+      "pilot_home_copy": {
+        "en": "The 1956 Rural Life Prayerbook preserves a blessing of seeds, flowers and crops for 8 September, the Nativity of the Blessed Virgin Mary.",
+        "fr": "Le Rural Life Prayerbook de 1956 conserve une bénédiction des semences, fleurs et récoltes pour le 8 septembre, Nativité de la Bienheureuse Vierge Marie.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "html",
+        "url": "https://www.ewtn.com/catholicism/library/rural-life-prayerbook-11881",
+        "pdf_pages_1based": [],
+        "primary_locator": "Blessing of Seeds, Flowers, and Crops on the Feast of the Birth of the Blessed Virgin Mary",
+        "original_text_checked": true,
+        "publication_year": 1956,
+        "source_record_id": "RLP1956.H150.NATIVITY_MARY_SEEDS",
+        "deep_link_checked": true
+      },
+      "editorial_approval": true,
+      "release_authorized": true,
+      "semantic_novelty_reviewed": true,
+      "published": true,
+      "region_scope": "Historical prayerbook entry; not a mandatory element of Mass or a universal present-day custom",
+      "historical_local_only": true,
+      "publication_kind": "SOURCE_SCOPED_HISTORICAL"
+    },
+    {
+      "id": "DYK-H150-B-007",
+      "source_id": "RLP1956.H150.LIBRARY_BLESSING",
+      "source_family": "RURAL_LIFE_PRAYERBOOK_1956",
+      "topic": "HISTORICAL_CATHOLIC_BLESSING",
+      "pilot_home_copy": {
+        "en": "The 1956 Rural Life Prayerbook even includes a blessing for a library, asking that readers grow in both learning and love of God.",
+        "fr": "Le Rural Life Prayerbook de 1956 contient même une bénédiction pour une bibliothèque, demandant que ses lecteurs progressent dans le savoir et l'amour de Dieu.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "html",
+        "url": "https://www.ewtn.com/catholicism/library/rural-life-prayerbook-11881",
+        "pdf_pages_1based": [],
+        "primary_locator": "Blessing of a Library",
+        "original_text_checked": true,
+        "publication_year": 1956,
+        "source_record_id": "RLP1956.H150.LIBRARY_BLESSING",
+        "deep_link_checked": true
+      },
+      "editorial_approval": true,
+      "release_authorized": true,
+      "semantic_novelty_reviewed": true,
+      "published": true,
+      "region_scope": "Historical prayerbook entry; not a mandatory element of Mass or a universal present-day custom",
+      "historical_local_only": true,
+      "publication_kind": "SOURCE_SCOPED_HISTORICAL"
+    },
+    {
+      "id": "DYK-H150-C-001",
+      "source_id": "RUBR1962.H150.ADVENT_LATE_FERIAS",
+      "source_family": "ROMAN_GENERAL_RUBRICS_1962",
+      "topic": "ROMAN_1962_CALENDAR",
+      "pilot_home_copy": {
+        "en": "Under the 1962 Roman calendar rules, the weekdays of Advent from 17 to 23 December are II-class ferias; earlier Advent weekdays normally have a lower rank, apart from Ember Days.",
+        "fr": "D'après le calendrier romain de 1962, les féries de l'Avent du 17 au 23 décembre sont de IIe classe ; les féries précédentes ont normalement un rang inférieur, sauf les Quatre-Temps.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://maternalheart.org/library/1962rubrics.pdf",
+        "pdf_pages_1based": [
+          16
+        ],
+        "primary_locator": "General Rubrics nn. 23–25, Advent ferias",
+        "original_image_checked": true,
+        "original_text_checked": true,
+        "source_record_id": "RUBR1962.H150.ADVENT_LATE_FERIAS",
+        "deep_link_checked": true
+      },
+      "editorial_approval": true,
+      "release_authorized": true,
+      "semantic_novelty_reviewed": true,
+      "published": true,
+      "region_scope": "1962 General Rubrics, with the rubrical qualifications stated; not the postconciliar calendar",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "publication_kind": "ROMAN_1962_CALENDAR"
+    },
+    {
+      "id": "DYK-H150-C-002",
+      "source_id": "RUBR1962.H150.ASH_HOLY_WEEK",
+      "source_family": "ROMAN_GENERAL_RUBRICS_1962",
+      "topic": "ROMAN_1962_CALENDAR",
+      "pilot_home_copy": {
+        "en": "The 1962 calendar gives Ash Wednesday and the weekdays of Holy Week I-class rank, restricting which other celebrations or commemorations can displace them.",
+        "fr": "Le calendrier de 1962 donne au mercredi des Cendres et aux jours de semaine de la Semaine sainte le rang de Ire classe, limitant les fêtes ou commémoraisons qui peuvent les supplanter.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://maternalheart.org/library/1962rubrics.pdf",
+        "pdf_pages_1based": [
+          16
+        ],
+        "primary_locator": "General Rubrics n. 23, I-class ferias",
+        "original_image_checked": true,
+        "original_text_checked": true,
+        "source_record_id": "RUBR1962.H150.ASH_HOLY_WEEK",
+        "deep_link_checked": true
+      },
+      "editorial_approval": true,
+      "release_authorized": true,
+      "semantic_novelty_reviewed": true,
+      "published": true,
+      "region_scope": "1962 General Rubrics, with the rubrical qualifications stated; not the postconciliar calendar",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "publication_kind": "ROMAN_1962_CALENDAR"
+    }
+  ]
+}

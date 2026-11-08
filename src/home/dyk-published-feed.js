@@ -332,6 +332,93 @@ export function dyk125Model(data,id,date,language="en"){
    label,sourceId:row.source_id,sourceUrl:s.url,links,published:true});
 }
 
+
+const H150_SOURCE=new URL("../../data/did-you-know/dyk-h150-originals-25-publication.v1.json",import.meta.url);
+const H150_SCHEMA="AO_DYK_H150_ORIGINALS25_PUBLICATION_V1";
+const H150_URLS=Object.freeze({
+ PITRE_1900:"https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+ ROMAN_MASS_1962:"https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+ RURAL_LIFE_PRAYERBOOK_1956:"https://www.ewtn.com/catholicism/library/rural-life-prayerbook-11881",
+ ROMAN_GENERAL_RUBRICS_1962:"https://maternalheart.org/library/1962rubrics.pdf"
+});
+let h150Promise=null;
+export function loadDyk150Release(win=globalThis){
+ if(h150Promise)return h150Promise;
+ h150Promise=Promise.resolve().then(()=>win.fetch(H150_SOURCE,{cache:"no-store"})).then(r=>{
+  if(!r?.ok)throw Error("DYK_H150_UNAVAILABLE");return r.json();
+ }).catch(e=>{h150Promise=null;throw e});
+ return h150Promise;
+}
+export function dyk150Candidates(data,date){
+ if(!validDate(date)||data?.schema!==H150_SCHEMA||data.release_stage!=="APPROVED_PARTIAL_LIVE"||
+    data.counts?.pitre!==8||data.counts?.ritus!==8||data.counts?.prayerbook!==7||
+    data.counts?.calendar!==2||data.counts?.total!==25||
+    !Array.isArray(data.records)||data.records.length!==25)return [];
+ const seenIds=new Set(),seenSources=new Set();
+ return data.records.filter(row=>{
+  const id=row?.id||"",c=row?.pilot_home_copy,s=row?.source;
+  if(!/^DYK-H150-(?:P-00[1-8]|M-00[1-8]|B-00[1-7]|C-00[1-2])$/.test(id)||
+     seenIds.has(id)||!clean(row?.source_id)||seenSources.has(row.source_id))return false;
+  seenIds.add(id);seenSources.add(row.source_id);
+  const group=id.slice(9,10);
+  const expectedFamily={P:"PITRE_1900",M:"ROMAN_MASS_1962",
+    B:"RURAL_LIFE_PRAYERBOOK_1956",C:"ROMAN_GENERAL_RUBRICS_1962"}[group];
+  const isHtml=group==="B";
+  const pdfPages=s?.pdf_pages_1based;
+  const pagesValid=isHtml?
+    (s?.type==="html"&&Array.isArray(pdfPages)&&pdfPages.length===0&&
+     clean(s.primary_locator).length>6):
+    (s?.type==="pdf"&&Array.isArray(pdfPages)&&pdfPages.length===1&&
+     Number.isInteger(pdfPages[0])&&pdfPages[0]>0&&pdfPages[0]<700);
+  const specific=group==="P"?
+    (row.historical_local_only===true&&row.publication_kind==="EVERGREEN_HISTORICAL"&&
+     row.topic==="SICILIAN_HISTORICAL_FEAST"&&s?.original_image_checked===true&&
+     clean(s.original_italian_anchor).length>4&&Array.isArray(s.printed_pages)&&
+     s.printed_pages.length===1&&Number.isInteger(s.printed_pages[0])&&
+     s.printed_pages[0]>0&&pdfPages?.[0]>s.printed_pages[0]&&
+     /^PIT1900-/.test(row.source_id)):
+   group==="M"?
+    (row.historical_local_only===false&&row.liturgical_rubric_1962===true&&
+     row.publication_kind==="ROMAN_1962_RUBRIC"&&row.topic==="ROMAN_1962_CELEBRANT_DETAIL"&&
+     /^RS1962[.]H150[.]/.test(row.source_id)&&
+     /^Ritus servandus [IVX]+[.][0-9]+$/.test(s?.primary_locator||"")&&
+     s?.original_image_checked===true&&Array.isArray(s.printed_pages)&&
+     s.printed_pages.length===1&&s.printed_pages[0]===pdfPages?.[0]&&
+     Array.isArray(s.supporting_event_ids)&&
+     s.supporting_event_ids.every(x=>/^B01-0[0-4][0-9]$/.test(x))):
+   group==="B"?
+    (row.historical_local_only===true&&row.publication_kind==="SOURCE_SCOPED_HISTORICAL"&&
+     row.topic==="HISTORICAL_CATHOLIC_BLESSING"&&
+     /^RLP1956[.]H150[.]/.test(row.source_id)&&s?.original_text_checked===true):
+    (row.historical_local_only===false&&row.liturgical_rubric_1962===true&&
+     row.publication_kind==="ROMAN_1962_CALENDAR"&&row.topic==="ROMAN_1962_CALENDAR"&&
+     /^RUBR1962[.]H150[.]/.test(row.source_id)&&s?.original_image_checked===true&&
+     s.original_text_checked===true&&pdfPages?.[0]===16);
+  return pagesValid&&specific&&row.source_family===expectedFamily&&
+    s?.url===H150_URLS[expectedFamily]&&s.source_record_id===row.source_id&&
+    s.deep_link_checked===true&&row.editorial_approval===true&&
+    row.release_authorized===true&&row.semantic_novelty_reviewed===true&&
+    row.published===true&&c?.final_english_signoff===true&&
+    c?.final_french_signoff===true&&clean(c.en).length>30&&
+    clean(c.fr).length>30&&clean(row.region_scope).length>6;
+ });
+}
+export function dyk150Model(data,id,date,language="en"){
+ const row=dyk150Candidates(data,date).find(r=>r.id===id);if(!row)return null;
+ const fr=language==="fr",s=row.source;
+ const label=row.source_family==="ROMAN_MASS_1962"?
+   (fr?"Messe romaine · Gestes de 1962":"Roman Mass · 1962 gestures"):
+   row.source_family==="PITRE_1900"?
+    (fr?"Pitrè · Fêtes siciliennes":"Pitrè · Sicilian feasts"):
+   row.source_family==="ROMAN_GENERAL_RUBRICS_1962"?
+    (fr?"Calendrier romain · 1962":"Roman calendar · 1962"):
+    (fr?"Bénédictions · 1956":"Blessings · 1956");
+ const links=s.type==="pdf"?s.pdf_pages_1based.map(page=>({page,url:s.url+"#page="+page})):
+   [{page:null,url:s.url,label:fr?"Consulter la section originale":"Read original source section"}];
+ return Object.freeze({id:row.id,language:fr?"fr":"en",fact:row.pilot_home_copy[fr?"fr":"en"],
+   label,sourceId:row.source_id,sourceUrl:s.url,links,published:true});
+}
+
 let selectionPromise=null;
 export function loadDykPrioritySelection(win=globalThis){
  if(selectionPromise)return selectionPromise;
@@ -417,20 +504,22 @@ export function dykPublishedMarkup(model){
 }
 export async function openDykPublishedSource(win,{id,date,language="en",trigger}={}){
  if(!win?.document?.createElement||!id||!validDate(date))return false;
- const [data,historical,r50,r50b,mixed,h125]=await Promise.all([
+ const [data,historical,r50,r50b,mixed,h125,h150]=await Promise.all([
    loadDykPrioritySelection(win).catch(()=>null),
    loadDykHistoricalRelease(win).catch(()=>null),
    loadDykWeiser16Release(win).catch(()=>null),
    loadDykWeiserSecond16Release(win).catch(()=>null),
    loadDykMixed24Release(win).catch(()=>null),
-   loadDyk125Release(win).catch(()=>null)
+   loadDyk125Release(win).catch(()=>null),
+   loadDyk150Release(win).catch(()=>null)
  ]);
  const model=dykPublishedModel(data,id,date,language)||
    dykHistoricalModel(historical,id,date,language)||
    dykWeiser16Model(r50,id,date,language)||
    dykWeiserSecond16Model(r50b,id,date,language)||
    dykMixed24Model(mixed,id,date,language)||
-   dyk125Model(h125,id,date,language);
+   dyk125Model(h125,id,date,language)||
+   dyk150Model(h150,id,date,language);
  if(!model)return false;
  const node=win.document.createElement("div");node.innerHTML=dykPublishedMarkup(model);
  const shade=node.querySelector("[data-dyk-published-shade]");
