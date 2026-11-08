@@ -6,7 +6,7 @@ import {createLatinComplinePinnedReader,assembleLatinDatedComplinePilot}
  from "../src/office/saturday-compline-2026-pilot.js";
 import {assemblePrivateOfficeReview,projectPrivateOfficeReview}
  from "../src/office/private-office-review.js";
-import {COMPLINE_CONTEXT,projectComplineRecitation}
+import {COMPLINE_CONTEXT,COMPLINE_MINISTER,projectComplineRecitation}
  from "../src/office/compline-recitation-projection.js";
 import {projectSaturdayComplinePsalmFrame}
  from "../src/office/compline-psalm-display-projection.js";
@@ -88,6 +88,25 @@ test("all eight appointed dates assemble 42 complete Latin blocks without readin
    assert.equal(reading.readingEventCount,40);
    assert.equal(reading.readingEvents.length,40);
    assert.equal(reading.blessingAmensRestoredFromPinnedSource,2);
+   assert.equal(reading.presidingMinister,COMPLINE_MINISTER.NON_PRIEST);
+   assert.equal(reading.ministerDialoguesResolved,2);
+   const soloDialogues=reading.frames.filter(f=>f.kind==="DIALOGUE");
+   assert.equal(soloDialogues.length,2);
+   assert.ok(soloDialogues.every(f=>f.texts.la[0]==="V. Dómine, exáudi oratiónem meam."));
+   assert.ok(soloDialogues.every(f=>f.sourceTexts.la[0]==="V. Dóminus vobíscum."));
+   const priest=projectComplineRecitation(review,{
+    context,minister:COMPLINE_MINISTER.PRIEST
+   });
+   assert.equal(priest.status,"PRIVATE_SOURCE_TEXT_REVIEW",date+" "+context+": "+priest.reason);
+   assert.equal(priest.readingEventCount,40);
+   assert.equal(priest.sourceEventCount,42);
+   assert.equal(priest.ministerDialoguesResolved,2);
+   const priestDialogues=priest.frames.filter(f=>f.kind==="DIALOGUE");
+   assert.equal(priestDialogues.length,2);
+   assert.ok(priestDialogues.every(f=>f.texts.la[0]==="V. Dóminus vobíscum."));
+   assert.ok(priestDialogues.every(f=>f.texts.la[1]==="R. Et cum spíritu tuo."));
+   assert.ok(priestDialogues.every(f=>f.sourceTexts.la.length===4));
+   assert.equal(priest.published,false);
    const confession=reading.frames.find(frame=>frame.kind==="CONFITEOR");
    assert.ok(confession,"printed 1961 single recitation Confiteor");
    assert.equal(confession.gestureRubrics?.la,"Percutit sibi pectus");
@@ -237,4 +256,5 @@ test("1961 §147 and Office §56: last-prayer Compline substitutes examen for ON
  assert.equal(other.blessingAmensRestoredFromPinnedSource,2);
  assert.equal(other.published,false);
  assert.equal(projectComplineRecitation(raw,{context:"CHOIR_UNDEFINED"}).status,"WITHHELD");
+ assert.equal(projectComplineRecitation(raw,{minister:"UNKNOWN"}).status,"WITHHELD");
 });
