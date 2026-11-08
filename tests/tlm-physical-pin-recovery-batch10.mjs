@@ -173,5 +173,5 @@ assert.equal(all.filter(x=>x.map_publishable).length,2569);
 const counts=tlmSiteEvidenceCounts(all);
 assert.deepEqual(counts,{ALL:2583,REVIEWED_PIN:763,SOURCE_PIN:1806,ADDRESS_ONLY:14});
 assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,14);
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,762);
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,763);
 console.log("PASS TLM batch 10: 14 exact sites, 2569 pins, 14 bilingual unpinned, no inferred rites or media");
