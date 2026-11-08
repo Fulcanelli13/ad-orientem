@@ -37,7 +37,7 @@ const VISITA_CONCLUSION_SOURCE="Psalterium/Common/Prayers#Per Dominum";
 // The Mame 1961 Ordinary §65, p.139 prints the short "Per Dóminum"
 // and an Amen after Visita, not a full long doxology.
 const VISITA_SHORT=Object.freeze({
- la:"Per Dóminum.",en:"Through our Lord.",fr:"Par le Seigneur."
+ la:"Per Dóminum.",en:"Through our Lord.",fr:"Par notre Seigneur."
 });
 const CONFITEOR_GESTURES=Object.freeze({
  la:Object.freeze({markup:"/:(percutit sibi pectus):/",label:"Percutit sibi pectus"}),
@@ -167,14 +167,15 @@ export function projectComplineRecitation(review,{
     languageKeys.some(l=>{
      const rows=f.texts?.[l];
      return !Array.isArray(rows)||rows.length!==2||
-      !/^r\.\s/u.test(rows[0])||rows[1]!=="R. Amen."||
+      !/^r\.\s/u.test(rows[0])||!/^R\.\s/u.test(rows[1])||
       (l==="la"&&!rows[0].startsWith("r. Per Dóminum nostrum "));
     }))return withheld("COMPLINE_1961_VISITA_SHORT_CONCLUSION_SOURCE_CHANGED");
    const texts=Object.freeze(Object.fromEntries(languageKeys.map(l=>[
     l,Object.freeze([VISITA_SHORT[l],f.texts[l][1]])
    ])));
    resultFrames.push(Object.freeze({...f,sourceTexts:f.texts,texts,
-    shortConclusionPrinted1961:true,printConformed:true}));
+    shortConclusionPrinted1961:true,printConformed:true,
+    unapprovedVernacularShortConclusion:true}));
    continue;
   }
   if(f.sourceId===DIALOGUE_SOURCE){
