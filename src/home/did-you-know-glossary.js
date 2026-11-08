@@ -1,4 +1,4 @@
-import {loadDykPrioritySelection,dykPublishedCandidates,dykHomeRotationSlot,DYK_GLOSSARY_FALLBACK_IDS} from "./dyk-published-feed.js";
+import {loadDykPrioritySelection,dykPublishedCandidates,loadDykHistoricalRelease,dykHistoricalCandidates,dykHomeRotationSlot,DYK_GLOSSARY_FALLBACK_IDS} from "./dyk-published-feed.js";
 // Transitional Home "Did you know?" projection from the already published
 // bilingual Glossary. No second fact bank, generated AI claims or unreviewed
 // Weiser/Pitrè research. The canonical Discovery owner replaces this adapter
@@ -156,13 +156,17 @@ export function hydrateHomeDidYouKnow(root,win=globalThis){
   // loading the two canonical sources, avoiding a misleading intermediate flash.
   void Promise.all([
     loadEntries(win).catch(()=>[]),
-    loadDykPrioritySelection(win).catch(()=>null)
-  ]).then(([entries,data])=>{
+    loadDykPrioritySelection(win).catch(()=>null),
+    loadDykHistoricalRelease(win).catch(()=>null)
+  ]).then(([entries,data,historical])=>{
     const screen=button.closest(".homeScreen");
     const selectedDate=win?.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate??
       root?.querySelector?.(".homeScreen [data-home-dyk-date]")?.dataset?.homeDykDate;
     if(!button.isConnected||screen?.dataset?.homeLanguage!==(fr?"fr":"en")||selectedDate!==date)return;
-    const candidates=data?dykPublishedCandidates(data,date):[];
+    const candidates=[
+      ...(data?dykPublishedCandidates(data,date):[]),
+      ...(historical?dykHistoricalCandidates(historical,date):[])
+    ];
     const slot=dykHomeRotationSlot(date,candidates.map(row=>row.id),HOME_DYK_GLOSSARY_IDS);
     const published=candidates.find(row=>row.id===slot);
     if(published){

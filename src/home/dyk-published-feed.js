@@ -40,6 +40,52 @@ export function dykHomeRotationSlot(date,publishedIds=[],fallbackIds=DYK_GLOSSAR
  return order[((ordinal%ids.length)+ids.length)%ids.length];
 }
 
+// Publish only the separately source-verified, bilingual historical release projection.
+// The 640-row research registry and 612 private previews remain outside the live bundle.
+const HISTORY_SOURCE=new URL("../../data/did-you-know/weiser-historical-20-publication.v1.json",import.meta.url);
+const HISTORY_SCHEMA="AO_DYK_HISTORICAL_WEISER20_PUBLICATION_V1";
+let historicalLoad=null;
+export function loadDykHistoricalRelease(win=globalThis){
+ if(historicalLoad)return historicalLoad;
+ historicalLoad=Promise.resolve().then(()=>win.fetch(HISTORY_SOURCE,{cache:"no-store"})).then(r=>{
+   if(!r?.ok)throw Error("DYK_HISTORICAL_UNAVAILABLE");return r.json();
+ }).catch(error=>{historicalLoad=null;throw error});
+ return historicalLoad;
+}
+export function dykHistoricalCandidates(data,date){
+ if(!validDate(date)||data?.schema!==HISTORY_SCHEMA||
+    data.release_stage!=="APPROVED_PARTIAL_LIVE"||
+    !Array.isArray(data.records)||data.records.length!==20)return [];
+ const unique=new Set();
+ return data.records.filter(row=>{
+   const copy=row?.pilot_home_copy,source=row?.source;
+   if(!/^DYK-G520-W-0(?:0[1-9]|1[0-9]|20)$/.test(row?.id||"")||unique.has(row.id))return false;
+   unique.add(row.id);
+   return row.editorial_approval===true&&row.release_authorized===true&&
+     row.semantic_novelty_reviewed===true&&row.historical_local_only===true&&
+     row.publication_kind==="EVERGREEN_HISTORICAL"&&
+     row.source_family==="WEISER_1958"&&
+     copy?.final_english_signoff===true&&copy?.final_french_signoff===true&&
+     clean(copy.en).length>25&&clean(copy.fr).length>25&&
+     safeUrl(source?.url)&&source?.original_image_checked===true&&source?.deep_link_checked===true&&
+     source.source_record_id===row.source_id&&
+     Array.isArray(source.pdf_pages_1based)&&source.pdf_pages_1based.length>0&&
+     source.pdf_pages_1based.every(p=>Number.isInteger(p)&&p>=1&&p<=384);
+ });
+}
+export function dykHistoricalModel(data,id,date,language="en"){
+ const row=dykHistoricalCandidates(data,date).find(r=>r.id===id);
+ if(!row)return null;
+ const fr=language==="fr";
+ return Object.freeze({
+   id:row.id,language:fr?"fr":"en",fact:row.pilot_home_copy[fr?"fr":"en"],
+   label:fr?"Weiser · Coutumes historiques":"Weiser · Historical customs",
+   sourceId:row.source_id,sourceUrl:row.source.url,
+   links:row.source.pdf_pages_1based.map(page=>({page,url:row.source.url+"#page="+page})),
+   published:true
+ });
+}
+
 let selectionPromise=null;
 export function loadDykPrioritySelection(win=globalThis){
  if(selectionPromise)return selectionPromise;
@@ -124,8 +170,12 @@ export function dykPublishedMarkup(model){
 }
 export async function openDykPublishedSource(win,{id,date,language="en",trigger}={}){
  if(!win?.document?.createElement||!id||!validDate(date))return false;
- let data;try{data=await loadDykPrioritySelection(win)}catch{return false}
- const model=dykPublishedModel(data,id,date,language);
+ const [data,historical]=await Promise.all([
+   loadDykPrioritySelection(win).catch(()=>null),
+   loadDykHistoricalRelease(win).catch(()=>null)
+ ]);
+ const model=dykPublishedModel(data,id,date,language)||
+   dykHistoricalModel(historical,id,date,language);
  if(!model)return false;
  const node=win.document.createElement("div");node.innerHTML=dykPublishedMarkup(model);
  const shade=node.querySelector("[data-dyk-published-shade]");
