@@ -72,6 +72,9 @@ try{
    assert.equal(source.status,"ready",date+" calendar not ready");
    assert.equal(source.properStatus,"ready",date+" Proper not ready");
    assert.equal(source.date,date);
+   assert.equal(source.ordo.gloria,true,
+    "1960 Breviary 237(b) and Missal 431(a): Sunday Gloria must be certified");
+   assert.equal(source.ordo.credo,true,"Credo prescribed on II-class Sunday");
    assert.equal(source.main?.rank,2,"Resumed Sunday must be II class");
    assert.match(String(source.main?.title),/V|Fifth|5th/i,
     "Resumed fifth Sunday title missing");
@@ -158,7 +161,10 @@ try{
       ["PRINCIPAL_ORATION","ADDITIONAL_ORATION"].includes(x.prayerRole))
       .map(x=>({role:x.prayerRole,group:x.orationGroupIndex}))}));
     return {sourceCards:p.model?.totalCards,visible:nav.length,titles,
-     properCards,mode:root.querySelector("[data-ao-reader-shell]")?.dataset.mode,
+     properCards,
+     prefaceTexts:(p.model?.cards??[]).filter(c=>c.sourceSectionId==="AO.CARD.012")
+      .map(c=>c.paragraphs?.map(x=>String(x.latin??x.primary??x.vernacular??"")).join(" ")),
+     mode:root.querySelector("[data-ao-reader-shell]")?.dataset.mode,
      omitted:(p.model?.cards??[]).filter(c=>!nav.some(n=>
       n.getAttribute("data-reader-section")===c.sectionId))
       .map(c=>({source:c.sourceSectionId,title:c.title,omittedByRite:c.omittedByRite}))};
@@ -170,10 +176,16 @@ try{
    assert.ok(it.titles.some(t=>/Gloria/i.test(t)),"Sunday Gloria missing");
    assert.ok(it.titles.some(t=>/Credo/i.test(t)),"Sunday Credo missing");
    assert.ok(it.titles.some(t=>/Preface/i.test(t)),"Sunday Preface missing");
-   assert.equal(it.properCards.length,3,"Expected source-owned three oration cards");
-   for(const card of it.properCards)
+   // SECRET spans two existing canonical cards: its private prayer
+   // and audible Per omnia conclusion. It is not a fourth source oration.
+   const prayingCards=it.properCards.filter(c=>c.prayers.length);
+   assert.equal(prayingCards.length,3,"One Collect, one Secret and one Postcommunion");
+   for(const card of prayingCards)
     assert.deepEqual(card.prayers,[{role:"PRINCIPAL_ORATION",group:1}],
      "Additional or missing Sunday prayer in "+card.source);
+   assert.equal(it.prefaceTexts.length,1,"Sunday must have one canonical Preface");
+   assert.match(it.prefaceTexts[0],/Trinitat|unus\s+es\s+Deus|F[ií]lio\s+tuo/i,
+    "Reader Preface lacks sourced Holy Trinity text");
    assert.deepEqual(errors,[],"Browser errors");
    console.log("NOV08_1962_MASS_PHONE_PASS "+JSON.stringify({
     date,form,language:lang,source:prepared.sourcePath,
