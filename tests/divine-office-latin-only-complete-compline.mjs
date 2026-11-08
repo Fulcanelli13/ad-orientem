@@ -97,8 +97,11 @@ test("all eight appointed dates assemble 42 complete Latin blocks without readin
     const p102=psalmFrames.filter(x=>x.sourceId.includes("Psalm102#"));
     assert.equal(p87.length,19);
     assert.equal(p102.length,22);
-    assert.deepEqual(p87.map(x=>x.printedVerseLabel),
-     Array.from({length:19},(_,i)=>"87:"+(i+1)));
+    assert.deepEqual(p87.map(x=>x.printedVerseLabel),[
+     "87:2","87:3","87:4","87:5–6","87:6","87:7","87:8","87:9",
+     "87:9–10","87:10","87:11","87:12","87:13","87:14",
+     "87:15","87:16","87:17","87:18","87:19"
+    ]);
     assert.deepEqual(p102.map(x=>x.printedVerseLabel),[
      ...Array.from({length:12},(_,i)=>"102:"+(i+1)),
      "102:13–14","102:14–15","102:16","102:17",
@@ -147,7 +150,7 @@ test("printed Saturday psalm labelling refuses source drift and preserves origin
   subIndex:0,subTotal:19,focusType:"PSALM_VERSE",
   texts:Object.freeze({la:Object.freeze(["87:2 Dómine, Deus salútis meæ"])})});
  const projected=projectSaturdayComplinePsalmFrame(original);
- assert.equal(projected.label,"87:1");
+ assert.equal(projected.label,"87:2");
  assert.equal(projected.texts.la[0],"Dómine, Deus salútis meæ");
  assert.equal(original.texts.la[0],"87:2 Dómine, Deus salútis meæ");
  assert.equal(projectSaturdayComplinePsalmFrame({...original,
