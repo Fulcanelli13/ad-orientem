@@ -1,7 +1,7 @@
 {
-  "schema": "AO_SACRED_ART_BATCH1_OWNER_PHOTO_DECISION_CONTRACT_V1",
+  "schema": "AO_SACRED_ART_BATCH1_OWNER_PHOTO_DECISION_CONTRACT_V2",
   "as_of": "2026-11-08",
-  "input_schema": "AO_SACRED_ART_BATCH1_OWNER_PHOTO_REVIEW_DECISIONS_V1",
+  "input_schema": "AO_SACRED_ART_BATCH1_OWNER_PHOTO_REVIEW_DECISIONS_V2",
   "research_only": true,
   "reference_queue": "data/artwork/batch1-nine-artwork-photo-readiness-v1.json",
   "policy": {
@@ -12,7 +12,8 @@
     "rights_and_credits_independently_reverified_before_release": true,
     "licence_authority_not_granted_by_owner_choice": true,
     "unhandpicked_commons_never_autopromoted": true,
-    "github_pages_publication_forbidden_on_this_research_branch": true
+    "github_pages_publication_forbidden_on_this_research_branch": true,
+    "original_photo_and_edition_sha256_separate": true
   },
   "totals": {
     "artworks": 9,
@@ -30,7 +31,8 @@
           "photo_id": "cma-official-fullframe",
           "source_sha256": "022572a6fa03b4ff9e1a04dc6b92345b2239b0c2998468e58705028b1dad073b",
           "rights_state": "cleared",
-          "eligible_for_publication_qa_request": true
+          "eligible_for_publication_qa_request": true,
+          "display_edition_sha256": "ca7cd0c516768c608e3e01db5a5bd05c472557bbd6eed8616a63bc3929434520"
         }
       ]
     },
@@ -42,7 +44,8 @@
           "photo_id": "met-official-fullframe",
           "source_sha256": "8d1914deed2b46063f9c4ae89a8471b1ada97fc09f0604b62443280070c4cf0e",
           "rights_state": "cleared",
-          "eligible_for_publication_qa_request": true
+          "eligible_for_publication_qa_request": true,
+          "display_edition_sha256": "65f9402889b198d56e8f5038fe76b2561fb56002893de07a79d08169ea852004"
         }
       ]
     },
@@ -54,7 +57,8 @@
           "photo_id": "cerezo-existing-source",
           "source_sha256": "c376acaf7c0935a384731d0c6ea8e37d6bc8ad050adb1145883f86d8eb44331c",
           "rights_state": "unknown",
-          "eligible_for_publication_qa_request": false
+          "eligible_for_publication_qa_request": false,
+          "display_edition_sha256": null
         }
       ]
     },
@@ -66,7 +70,8 @@
           "photo_id": "teniers-commons",
           "source_sha256": "6a697614cfe96b9f62921af0015eeca08fbc26ed0103dbefe9abe98c5342658e",
           "rights_state": "unresolved",
-          "eligible_for_publication_qa_request": false
+          "eligible_for_publication_qa_request": false,
+          "display_edition_sha256": null
         }
       ]
     },
@@ -78,7 +83,8 @@
           "photo_id": "champaigne-rvalette",
           "source_sha256": "c4250c3888a03434b5128c8b6bccaca0a37168e323b8fb31a1edd7d13ad12869",
           "rights_state": "unresolved",
-          "eligible_for_publication_qa_request": false
+          "eligible_for_publication_qa_request": false,
+          "display_edition_sha256": null
         }
       ]
     },
@@ -90,7 +96,8 @@
           "photo_id": "crivelli-commons",
           "source_sha256": "67509963a0515b44b6403c7ea33451d96b6e564d9c05e07f7a1e645970afdc0f",
           "rights_state": "blocked",
-          "eligible_for_publication_qa_request": false
+          "eligible_for_publication_qa_request": false,
+          "display_edition_sha256": null
         }
       ]
     },
@@ -102,19 +109,22 @@
           "photo_id": "ghent-codart-2016",
           "source_sha256": "5af9852d1ad19c66a0bedcdd415fe7d26510ae32e15580ec2b70fadf7f21136b",
           "rights_state": "unresolved",
-          "eligible_for_publication_qa_request": false
+          "eligible_for_publication_qa_request": false,
+          "display_edition_sha256": null
         },
         {
           "photo_id": "ghent-yorck-project",
           "source_sha256": "a780bd15233bcc72f17c0a70fbaf44f0fce0ad85378a087609d8938ea668c681",
           "rights_state": "unresolved",
-          "eligible_for_publication_qa_request": false
+          "eligible_for_publication_qa_request": false,
+          "display_edition_sha256": null
         },
         {
           "photo_id": "ghent-wga",
           "source_sha256": "d6cc58b42bd7878ca1ed912c27a9c9fd608819c98bed27030999041c44cad08c",
           "rights_state": "unresolved",
-          "eligible_for_publication_qa_request": false
+          "eligible_for_publication_qa_request": false,
+          "display_edition_sha256": null
         }
       ]
     },
@@ -126,7 +136,8 @@
           "photo_id": "reni-commons",
           "source_sha256": "4f9eaee1c1abe0df9ae70e36bfcfd113c0e556a8022c4c98d7a72d2a392b71ad",
           "rights_state": "unresolved",
-          "eligible_for_publication_qa_request": false
+          "eligible_for_publication_qa_request": false,
+          "display_edition_sha256": null
         }
       ]
     },
@@ -138,13 +149,15 @@
           "photo_id": "lanfranco-wga-existing",
           "source_sha256": "f9a4b9f5f180138b438c61da836ac176a21b9162e736da7372c07e5ea6f74ffa",
           "rights_state": "unresolved",
-          "eligible_for_publication_qa_request": false
+          "eligible_for_publication_qa_request": false,
+          "display_edition_sha256": null
         },
         {
           "photo_id": "lanfranco-sailko-frameless",
-          "source_sha256": "bc70834b049d1c98d61035823bc59f1a4a64e9c752529d37ecebd16aa479e3e5",
+          "source_sha256": "13ceac9a8d54c0468a1414af4ea3331d1312474e487c71119f25d03916cb2654",
           "rights_state": "cleared",
-          "eligible_for_publication_qa_request": true
+          "eligible_for_publication_qa_request": true,
+          "display_edition_sha256": "bc70834b049d1c98d61035823bc59f1a4a64e9c752529d37ecebd16aa479e3e5"
         }
       ]
     }
@@ -155,6 +168,7 @@
     "The owner's preference for a rights-held option is recorded but cannot release that file",
     "Approval of a licence-cleared candidate advances only to CI, attribution/visual QA and a separate release PR",
     "No image may replace the previously selected WGA photo without explicit replacement choice",
-    "Never modify canonical 65 Mass cards, Calendar heroes, rejected photo assignments or protected Prayer covers during staging"
+    "Never modify canonical 65 Mass cards, Calendar heroes, rejected photo assignments or protected Prayer covers during staging",
+    "A photo approval requires the source-original SHA256 and the displayed WebP edition SHA256 to match separately"
   ]
 }
