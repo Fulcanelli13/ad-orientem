@@ -17,6 +17,15 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+
+# Keep only the latest successful Pages-release parity run. While a newer
+# Pages publication finishes, its predecessor's exact-SHA check must not
+# fail against the correctly superseding public HTML. Scope PR lint jobs
+# separately so they cannot cancel a production live parity verification.
+concurrency:
+  group: installed-pages-parity-${{ github.event_name == 'pull_request' && github.event.pull_request.number || 'main' }}
+  cancel-in-progress: true
+
 jobs:
   validate-pr:
     if: ${{ github.event_name == 'pull_request' }}
@@ -32,6 +41,7 @@ jobs:
         run: |
           node --check tests/canonical-pages-live-parity.mjs
           node --check tests/installed-pages-live-phone.mjs
+          node tests/installed-pages-parity-concurrency.mjs
 
   verify-live-installed-path:
     # Never compare the branch against a site that has not published it yet.
