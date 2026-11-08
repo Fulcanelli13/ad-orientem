@@ -1,0 +1,68 @@
+name: Sacred Art — Lanfranco NGI.72 frameless photographic review
+on:
+  push:
+    branches: [research/sacred-art-batch1-lanfranco-frameless-20261108]
+    paths:
+      - 'data/artwork/batch1-lanfranco-sailko-frameless-review.v1.json'
+      - 'scripts/art/batch1_lanfranco_sailko_frameless_review.py'
+      - 'tests/sacred-art-batch1-lanfranco-frameless-review.mjs'
+      - '.github/workflows/sacred-art-lanfranco-frameless-review.yml'
+  workflow_dispatch: {}
+permissions:
+  contents: write
+concurrency:
+  group: sacred-art-lanfranco-frameless-research
+  cancel-in-progress: true
+jobs:
+  research-frameless-edition:
+    name: Verify exact original and stage painting-only photo outside Pages
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Enforce immutable WGA selection and new Sailko photo approval hold
+        run: node tests/sacred-art-batch1-lanfranco-frameless-review.mjs
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Pillow for authenticated, colour-managed photo processing
+        run: python -m pip install --disable-pip-version-check 'Pillow==12.0.0'
+      - name: Compile photo source and boundary-transform scripts
+        run: python -m py_compile scripts/art/batch1_seven_original_photo_qa.py scripts/art/batch1_lanfranco_sailko_frameless_review.py
+      - name: Hash-check WGA and Sailko originals and exclude physical frame
+        run: python scripts/art/batch1_lanfranco_sailko_frameless_review.py
+      - name: Check new stage bytes, source evidence and no-publication status
+        run: node tests/sacred-art-batch1-lanfranco-frameless-review.mjs
+      - name: Preserve visual review and source original comparisons
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lanfranco-ngi72-frameless-edition-review-not-published
+          path: |
+            artifacts/sacred-art-batch1-lanfranco-frameless/*
+            assets/staged/sacred-art-batch1/09-lanfranco-sailko-painting-only-review.webp
+            data/artwork/batch1-lanfranco-sailko-frameless-qa-output.v1.json
+          retention-days: 14
+          if-no-files-found: warn
+      - name: Commit ONLY unapproved derivative and QA metadata to research branch
+        if: success() && github.ref == 'refs/heads/research/sacred-art-batch1-lanfranco-frameless-20261108'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add assets/staged/sacred-art-batch1/09-lanfranco-sailko-painting-only-review.webp
+          git add data/artwork/batch1-lanfranco-sailko-frameless-qa-output.v1.json
+          git diff --cached --name-only | while IFS= read -r path; do
+            case "$path" in
+              assets/staged/sacred-art-batch1/09-lanfranco-sailko-painting-only-review.webp|data/artwork/batch1-lanfranco-sailko-frameless-qa-output.v1.json) ;;
+              *) echo "PROHIBITED FILE: $path" >&2; exit 1 ;;
+            esac
+          done
+          if git diff --cached --quiet; then echo "No changed review files"; exit 0; fi
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'research(art): store Sailko painting-only review edition outside public Pages'
+          git pull --rebase origin research/sacred-art-batch1-lanfranco-frameless-20261108
+          git push origin HEAD:refs/heads/research/sacred-art-batch1-lanfranco-frameless-20261108
