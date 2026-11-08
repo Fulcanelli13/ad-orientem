@@ -12,10 +12,15 @@ import {assemblePrivateOfficeReview}
  from "./private-office-review.js";
 import {COMPLINE_CONTEXT,COMPLINE_MINISTER,projectComplineRecitation}
  from "./compline-recitation-projection.js";
+import {reviewAdventIComplineAppointment}
+ from "./compline-advent-2026-appointments.js";
 
 export const LATIN_COMPLINE_RELEASE_SCHEMA="ao.office.latin-compline-release.v1";
 export const LATIN_COMPLINE_RELEASE=Object.freeze({
- date:"2026-11-28",hour:"COMPLINE",calendarScope:"UNIVERSAL",
+ date:"2026-11-28",
+ // Each date is certified independently; never infer an entire Advent week.
+ approvedDates:Object.freeze(["2026-11-28","2026-12-05"]),
+ hour:"COMPLINE",calendarScope:"UNIVERSAL",
  sourceRevision:PIN,language:"la",
  // Not every 1961 Breviary prints the same Latin Psalter: Mame, Dessain and
  // the Vatican have Vulgate and Pius XII translation variants. The pinned
@@ -49,9 +54,22 @@ const empty=(reason)=>Object.freeze({
 export function latinComplineReleaseEligibility({
  date,hour="COMPLINE",calendarScope="UNIVERSAL"
 }={}){
- if(hour!=="COMPLINE"||date!==LATIN_COMPLINE_RELEASE.date||
+ if(hour!=="COMPLINE"||
+    !LATIN_COMPLINE_RELEASE.approvedDates.includes(date)||
     calendarScope!==LATIN_COMPLINE_RELEASE.calendarScope)
   return empty("HOUR_DATE_OR_CALENDAR_OUTSIDE_LATIN_RELEASE");
+ const appointment=reviewAdventIComplineAppointment(date);
+ // Both released dates must be Saturday after Sunday First Vespers,
+ // with the identical independently collated Psalm 87/102 and
+ // Advent Alma Redemptoris section. No day-of-week inference.
+ if(appointment.status!=="EXPLICIT_ROMAN_1960_APPOINTMENT_RESEARCH"||
+    appointment.appointment?.weekday!=="Sabbato"||
+    appointment.appointment?.psalmDay!=="Sabbato"||
+    appointment.appointment?.marianSection!=="Advent"||
+    appointment.appointment?.officeClass!=="SUNDAY_FIRST_VESPERS"||
+    appointment.appointment?.rubricalReason!==
+     "FIRST_VESPERS_OF_ADVENT_SUNDAY_COMPLINE_SATURDAY_BR166_B")
+  return empty("SATURDAY_ADVENT_COMPLINE_APPOINTMENT_CHANGED");
  if(LATIN_COMPLINE_RELEASE.sourceRevision!==PIN||
     LATIN_COMPLINE_RELEASE.sourcePsalterFamily!=="VULGATA_BIBLIORUM"||
     LATIN_COMPLINE_RELEASE.target1961Edition!=="MAME_1961_VULGATA"||
@@ -75,8 +93,8 @@ export function latinComplineReleaseEligibility({
  });
 }
 /**
- * The runtime path is complete and testable with mocked transport; the
- * fixed, checked-in release gate above is deliberately closed today.
+ * Every date has a fixed source-backed appointment and a closed-by-default
+ * release gate; the original 1961 Mame Psalter facsimile remains unverified.
  */
 export async function loadPublishedLatinCompline({
  date,hour="COMPLINE",calendarScope="UNIVERSAL",
@@ -110,6 +128,6 @@ export async function loadPublishedLatinCompline({
   ...projected,schema:LATIN_COMPLINE_RELEASE_SCHEMA,reviewOnly:false,
   status:"PUBLIC_LATIN_COMPLINE",published:true,publishable:true,
   readingPublished:true,rightsApproved:true,liturgicallyCertified:true,
-  sourceTextReleased:true,releaseDate:LATIN_COMPLINE_RELEASE.date
+  sourceTextReleased:true,releaseDate:date
  });
 }
