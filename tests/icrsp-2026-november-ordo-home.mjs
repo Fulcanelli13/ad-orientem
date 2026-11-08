@@ -81,5 +81,5 @@ assert.match(handler,/\["2026-11-06","2026-11-07"\]/);
 assert.match(handler,/navigateHomeShortcut\("mass"/);
 assert.match(handler,/selectIcrspNovemberLowMass/);
 assert.match(handler,/dateIso:officialDate/);
-assert.match(handler,/ICRSP Low Mass could not be certified/);
+assert.match(handler,/ICRSP selected Mass could not be certified/);
 console.log("PASS: 2026-11-06 ICRSP feria vs Cogitationes actual votive, 2026-11-07 Adeamus, bilingual Home and exact host handoff.");
