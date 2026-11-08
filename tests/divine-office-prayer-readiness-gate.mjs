@@ -5,22 +5,23 @@ import {getDivineOfficePrayerReadiness as gate,DIVINE_OFFICE_PUBLIC_MODULE_ID}
 import {internalPrayerView,supportedDirectPrayerRoute}
  from "../src/pray/internal-route-owner.js";
 
-test("eight reviewed dates can be inspected internally but none are public Prayer modules",()=>{
+test("eight reviewed dates remain text-held although native navigation is registered",()=>{
  let count=0;
  for(let day=28;day<=30;day++){
   const r=gate({date:"2026-11-"+day});
   assert.equal(r.researchPreviewEligible,true);
   count++;
   assert.equal(r.published,false);
-  assert.equal(r.publicRouteEnabled,false);
-  assert.equal(r.registeredAsPrayerModule,false);
-  assert.equal(r.discoverableInPrayer,false);
+  assert.equal(r.publicRouteEnabled,true);
+  assert.equal(r.sourceTextReleased,false);
+  assert.equal(r.registeredAsPrayerModule,true);
+  assert.equal(r.discoverableInPrayer,true);
   assert.equal(r.rightsApproved,false);
  }
  for(let day=1;day<=5;day++){
   const r=gate({date:"2026-12-0"+day});
   assert.equal(r.researchPreviewEligible,true);
-  assert.equal(r.publiclyNavigable,false);
+  assert.equal(r.publiclyNavigable,true);
   assert.equal(r.publishable,false);
   count++;
  }
