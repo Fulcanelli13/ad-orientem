@@ -53,6 +53,11 @@ test("all eight appointed dates assemble 42 complete Latin blocks without readin
   assert.equal(result.sourceRevision,PIN);
   assert.deepEqual(result.availableLanguages,["la"]);
   assert.equal(result.blockCount,42);
+  assert.equal(result.blocks.at(-1).kind,"FINAL_ASSISTANCE");
+  assert.match(result.blocks.at(-1).texts.la[0],/^Divínum auxílium/u);
+  assert.equal(result.blocks.at(-1).texts.la[1],"R. Amen.");
+  assert.equal(result.blocks.some(x=>x.kind==="FINAL_RESPONSE"),false);
+  assert.match(result.blocks.find(x=>x.kind==="BLESSING"&&x.sourceId.includes("Completorium2")).texts.la[0],/Benedícat et custódiat/u);
   assert.ok(result.focusFrameCount>42);
   assert.ok(result.blocks.every(b=>
    Object.keys(b.texts).length===1&&Array.isArray(b.texts.la)&&b.texts.la.length>0));

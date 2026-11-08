@@ -26,6 +26,13 @@ test("1960 rubric 166(b): Saturday Compline, not Sunday, after Advent First Vesp
  assert.equal(p.rubricalAppointment,
   "SATURDAY_COMPLINE_AFTER_SUNDAY_FIRST_VESPERS_BR166B");
  assert.equal(p.hour,"COMPLINE");
+ assert.equal(p.blocks.at(-1).kind,"FINAL_ASSISTANCE");
+ for(const lang of ["la","en","fr"]){
+  assert.equal(p.blocks.at(-1).texts[lang].length,2);
+  assert.match(p.blocks.at(-1).texts[lang][1],/^R\. /u);
+ }
+ assert.match(p.blocks.at(-1).texts.la[0],/^Divínum auxílium/u);
+ assert.ok(p.blocks.every(x=>x.kind!=="FINAL_RESPONSE"));
  assert.equal(p.blockCount,42);
  assert.equal(p.blocks.filter(x=>x.kind==="PSALM").length,3);
  assert.deepEqual(p.blocks.filter(x=>x.kind==="PSALM").map(x=>x.sourceId),[

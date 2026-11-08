@@ -51,7 +51,7 @@ const allowed=Object.freeze({
   "Converte nos","Deus in adjutorium","Alleluia","Gloria","Dominus",
   "Kyrie","Oremus","Oratio Visita_","Per Dominum",
   "Jube domne","Benedictio Completorium_",
-  "Benedictio Completorium2","Benedicamus Domino","Fidelium animae"],
+  "Benedictio Completorium2","Benedicamus Domino","Fidelium animae","Divinum auxilium"],
  [MARIAN]:COMPLINE_MARIAN_SOURCE_SECTIONS
 });
 const MAX_SOURCE_READS=24;
@@ -342,7 +342,29 @@ export async function assembleWeekdayComplinePilot({
   blocks.push(projectBlock("MARIAN_ANTIPHON",MARIAN,appointment.marianSection,marian));
   prayer("Oremus","OREMUS",x=>x.slice(0,1));
   blocks.push(projectBlock("MARIAN_COLLECT",MARIAN,appointment.marianSection+":Oratio",marianCollect));
-  prayer("Fidelium animae","FINAL_RESPONSE",x=>x.slice(0,2));
+  // The 1961 Rubricae (179c, 181) distinguishes Compline's
+  // "Benedicat et custodiat" blessing from the post-Marian final
+  // "Divinum auxilium". "Fidelium animae" is NOT Compline's end.
+  // Divinum Officium's pinned section has a 1963 rubric and optional
+  // community response: select only its exact source-owned main line.
+  // The R. Amen is sourced without invention from the already loaded
+  // Common/Prayers#Fidelium animae response, NOT its Office versicle.
+  const finalLines={},finalIncipit={
+   la:/^Divínum auxílium \+ máneat semper nobíscum\.$/u,
+   en:/^May the divine assistance \+ remain with us always\.$/u,
+   fr:/^Que le secours divin \+ demeure toujours avec nous\.$/u
+  };
+  for(const l of active){
+   const main=at(l,PRAYERS,"Divinum auxilium")
+    .find(row=>finalIncipit[l].test(row));
+   const amen=at(l,PRAYERS,"Fidelium animae")
+    .find(row=>/^R\.\s/u.test(row));
+   if(!main||!amen)
+    throw Error("COMPLINE_1961_FINAL_ASSISTANCE_SOURCE_UNRESOLVED:"+l);
+   finalLines[l]=[main,amen];
+  }
+  blocks.push(projectBlock("FINAL_ASSISTANCE",PRAYERS,
+   "Divinum auxilium + Fidelium animae:Amen",finalLines));
   if(blocks.length!==42)throw Error("COMPLINE_REQUIRED_SEQUENCE_COUNT_CHANGED:"+blocks.length);
   const frames=[];
   blocks.forEach((b,eventIndex)=>{
