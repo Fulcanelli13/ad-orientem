@@ -241,7 +241,10 @@ try{
    for(const prayer of reader.textSource)
     assert.ok(reader.renderedText.includes(prayer.slice(0,45)),
      "Source-owned Postcommunion text omitted in live reader");
-   assert.match(reader.renderedText,/Second Postcommunion|Deuxième postcommunion|Seconde postcommunion/i);
+   // St Theodore is a rubrically admitted *commemoration*, not the
+   // independently added papal oration that November 8 displayed as a
+   // second Postcommunion. Preserve the reader's liturgical role label.
+   assert.match(reader.renderedText,/Commemoration|Commémoration|Commémoraison/i);
    assert.match(reader.renderedText,/Theodore|Théodore|Præsta nobis/i);
    assert.ok(reader.secondTop>reader.viewportTop+Math.min(reader.viewportHeight*.5,280),
     "Additional Postcommunion must begin below the initial reading zone");
