@@ -87,6 +87,7 @@ export function renderTlmChurchProfile(item,language="en"){
  const introEmblem=!v.ministries.length?listedEmblem:one?massInstitutionEmblem(one.raw?.community_id):null;
  const introLabel=one?one.community:v.ministries.length>1?
    L(language,"Multiple ministries","Plusieurs ministères"):listedAffiliation;
+ const siteContact=item?.site_contact_evidence??null;
  const preliminary=Boolean(item?.preliminary_group)||T(item?.map_state)==="PROVISIONAL"||v.unverified;
  const statusText=preliminary?L(language,"Provisional venue · check source","Lieu provisoire · consulter la source"):
    T(item?.status)||L(language,"Consult original sources","Consulter les sources originales");
@@ -130,12 +131,29 @@ export function renderTlmChurchProfile(item,language="en"){
    detail("Una cum",one?one.unaCum:unknown(language),null)+'</section>';
  // Give every source-backed CL2 site a useful first action, even if it has
  // no independently publishable recurring Mass timetable or contact object.
- const primaryLink=values(contact.schedule_url).find(https)||
+ const primaryLink=(siteContact&&https(siteContact.review_source_url)?siteContact.review_source_url:null)||
+   values(contact.schedule_url).find(https)||
    (exact&&https(scoped.source_url)?scoped.source_url:null)||
    values(contact.website).find(https)||sourceLinks[0]?.url;
  if(primaryLink)html+='<div class="aoTlmProfilePrimaryAction">'+
    link(primaryLink,L(language,"Consult original church / Mass information",
      "Consulter la source originale de l’église ou des messes"))+'</div>';
+ // A named site/contact is verifiable independently from ANY Mass timing,
+ // ownership, priest, ecclesial stance, or liturgical book. One CL2 site only.
+ if(siteContact){
+   html+='<section class="aoTlmProfilePanel aoTlmProfileSiteContact" data-cl27-site-contact="'+E(siteContact.cl2_anchor)+'">'+
+    '<h3>'+E(L(language,"Source-confirmed church details","Renseignements confirmés par la source"))+'</h3>'+
+    '<div class="aoTlmProfileIdentityGrid">'+
+    detail(L(language,"Community named on the site page","Communauté indiquée sur la fiche du lieu"),
+      siteContact.community_named_by_source,null)+
+    detail(L(language,"Published contact telephone","Téléphone publié"),siteContact.public_phone,null)+
+    '</div><p>'+E(language==="fr"?siteContact.note_fr:siteContact.note_en)+'</p>'+
+    '<p class="aoTlmProfileCaution">'+E(L(language,
+      "This source identifies the site and its published contact. It does not verify current Mass times, visitor access, legal ownership, missal, Una Cum, or canonical status.",
+      "Cette source identifie le lieu et ses coordonnées publiées. Elle ne confirme ni les horaires actuels, ni l’accès, la propriété, le missel, le caractère « una cum » ou le statut canonique."))+'</p>'+
+    '<div class="aoTlmProfileActions">'+link(siteContact.review_source_url,L(language,
+      "View source church page and check Mass programme","Consulter la fiche du lieu et vérifier les horaires"))+'</div></section>';
+ }
  // Preserve source-owned summaries only when their schedule content is
  // publishable. An unverified row can carry a stale timetable in item.summary:
  // suppress it even though ministry.schedules have already been filtered out.
