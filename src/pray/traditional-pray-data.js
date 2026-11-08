@@ -380,6 +380,26 @@ export const COMMUNION_TREASURY_V383=Object.freeze({
     "sourceYear": 2008,
     "wordingCollatedAgainst2013": false
   },
+  "mercifulJesusDying1911": {
+    "title": "Prayer for Those in Their Agony · O Most Merciful Jesus",
+    "titleFr": "Prière pour les agonisants · Ô Jésus très miséricordieux",
+    "en": "O most merciful Jesus, Lover of souls! I pray Thee, by the agony of Thy most sacred Heart, and by the sorrows of Thy immaculate Mother, cleanse in Thine own blood the sinners of the whole world who are now in their agony and about to die this day. Amen.\n\nHeart of Jesus, once in agony, pity the dying.",
+    "witness": "F. X. Lasance, With God (1911), p. 819, traditional Prayer for the Faithful in Their Agony. The complete historical source has the following concluding aspiration, which is preserved.",
+    "sourceUrl": "https://novenaregina.com/prayers/prayer-for-the-faithful-in-their-agony",
+    "sourceYear": 1911,
+    "sourcePrintedPage": 819,
+    "wordingCollatedAgainst2013": false
+  },
+  "sacredHeartIntercession1910": {
+    "title": "Prayer to the Sacred Heart for the Church",
+    "titleFr": "Prière au Sacré-Cœur pour l’Église",
+    "en": "O most sacred Heart of Jesus, pour down Thy blessings abundantly upon Thy Church, upon the Supreme Pontiff, and upon all the clergy; give perseverance to the just, convert sinners, enlighten unbelievers, bless our parents, friends and benefactors, help the dying, free the souls in Purgatory, and extend over all hearts the sweet empire of Thy love. Amen.",
+    "witness": "The Raccolta, 1910, no. 171, p. 147; Pius X, 16 June 1906. Historical indulgence claims are not presented as current law.",
+    "sourceUrl": "https://manualistpress.com/prayers/prayer-sacred-heart-for-the-church-raccolta-1910/",
+    "sourceYear": 1910,
+    "sourcePrintedPage": 147,
+    "wordingCollatedAgainst2013": false
+  },
   "enEgo": {
     "title": "Prayer Before a Crucifix · En ego",
     "titleFr": "Prière devant le Crucifix · En ego",
