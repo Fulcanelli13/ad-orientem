@@ -1,7 +1,12 @@
-name: Divine Office — focused Compline core (private, no publication)
+name: Divine Office — native entry, Compline and Vespers source-first integration
 on:
   pull_request:
     paths:
+      - 'src/office/**'
+      - 'data/office/research/**'
+      - 'docs/DIVINE-OFFICE-**'
+      - 'tests/divine-office-**'
+      - 'tests/fixtures/office/**'
       - 'src/office/compline-advent-2026-appointments.js'
       - 'src/office/weekday-compline-psalter-plan.js'
       - 'src/office/pinned-section-heading-parser.js'
@@ -34,7 +39,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Syntax and private source-first Compline acceptance
+      - name: Syntax and source-first Office acceptance
         run: |
           node --check src/office/compline-advent-2026-appointments.js
           node --check src/office/weekday-compline-psalter-plan.js
@@ -50,3 +55,5 @@ jobs:
           node --test tests/divine-office-advent-i-full-week-compline.mjs
           node --test tests/divine-office-prayer-readiness-gate.mjs
           node --test tests/divine-office-native-entry.mjs
+          for file in src/office/*.js; do node --check "$file"; done
+          for test in tests/divine-office-advent-first-vespers-*.mjs tests/divine-office-advent-i-collect-ending-1960-research.mjs tests/divine-office-at-reference-resolver.mjs tests/divine-office-reviewed-hour-handoff.mjs; do node --test "$test"; done
