@@ -179,9 +179,10 @@ let browser;try{
      pending:aggregate.uncertifiedFormCases.filter(x=>x.date===date)
    }));
  }
- for(const date of ["2026-03-19","2026-03-25","2026-07-16","2026-10-05"]){
+ for(const date of ["2026-02-23","2026-02-24","2026-03-06",
+   "2026-03-19","2026-03-25","2026-07-16","2026-10-05"]){
    const remaining=aggregate.uncertifiedFormCases.filter(x=>x.date===date);
-   assert.deepEqual(remaining,[],date+" original privileged Lenten feria is still missing");
+   assert.deepEqual(remaining,[],date+" original 1962 Mass-form orations are still uncertified");
  }
  for(const date of ["2026-03-27","2026-12-26","2026-12-28"]){
    const recovered=aggregate.recoveredInseparable.find(x=>x.date===date);
