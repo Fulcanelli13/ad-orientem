@@ -13,6 +13,24 @@ export const PROPER_REFERENCE_BINDINGS=Object.freeze([
  // Epiphany, 6 January. The same "Vidimus stellam" incipit is in
  // DISTINCT Alleluia (1961 p. 58, Mode II) and Communion (p. 59, Mode IV);
  // role + paragraph + 1962 source owner prevents cross-melody borrowing.
+ // Immaculate Conception (8 December), p. 400–404 in GR 1961.
+ // Source role, printed page, full Latin opening and Mass appointment are
+ // simultaneous guards; the common incipits are insufficient on their own.
+ {sourcePath:"Sancti/12-08",monthDay:"12-08",role:"INTROIT",paragraphId:"INTROIT.1",
+  scoreId:"GREGOBASE-622",openings:["gaudens gaudebo in domino et exsultabit anima mea"]},
+ {sourcePath:"Sancti/12-08",monthDay:"12-08",role:"GRADUAL",paragraphId:"GRADUAL.1",
+  scoreId:"GREGOBASE-713",openings:["benedicta es tu virgo maria a domino deo excelso"]},
+ {sourcePath:"Sancti/12-08",monthDay:"12-08",role:"ALLELUIA",paragraphId:"ALLELUIA_TRACT_SEQUENCE.1",
+  scoreId:"GREGOBASE-1057",openings:["tota pulchra es maria et macula originalis non est in te"]},
+ // Original 1962 Graduale also carries the Alleluia; never present it
+ // without the independently matched Benedicta es tu Gradual.
+ {sourcePath:"Sancti/12-08",monthDay:"12-08",role:"ALLELUIA",paragraphId:"GRADUAL.1",
+  scoreId:"GREGOBASE-1057",afterScoreId:"GREGOBASE-713",
+  openings:["tota pulchra es maria et macula originalis non est in te"]},
+ {sourcePath:"Sancti/12-08",monthDay:"12-08",role:"OFFERTORY",paragraphId:"OFFERTORY.1",
+  scoreId:"GREGOBASE-210",openings:["ave maria gratia plena dominus tecum benedicta tu in mulieribus"]},
+ {sourcePath:"Sancti/12-08",monthDay:"12-08",role:"COMMUNION",paragraphId:"COMMUNION.1",
+  scoreId:"GREGOBASE-1004",openings:["gloriosa dicta sunt de te maria quia fecit tibi magna"]},
  {sourcePath:"Sancti/01-06",monthDay:"01-06",role:"INTROIT",paragraphId:"INTROIT.1",
   scoreId:"GREGOBASE-403",openings:["ecce advenit dominator dominus"]},
  {sourcePath:"Sancti/01-06",monthDay:"01-06",role:"GRADUAL",paragraphId:"GRADUAL.1",

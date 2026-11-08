@@ -6,6 +6,7 @@
 import {createOfflineChantEngraver} from "./reader-chant-engraver.js";
 import {ALL_SAINTS_REFERENCE_SCORES} from "./reader-inline-all-saints-reference.js";
 import {EPIPHANY_REFERENCE_SCORES} from "./reader-inline-epiphany-reference.js";
+import {IMMACULATE_CONCEPTION_REFERENCE_SCORES} from "./reader-inline-immaculate-reference.js";
 import {createProperReferenceRegistry,PROPER_REFERENCE_LABELS} from "./reader-inline-proper-registry.js";
 import {participationReferenceScoresForParagraph} from "./reader-participation-reference-scores.js";
 import {prefaceCelebrantInlineScoresForParagraph} from "./reader-preface-celebrant-inline-reference.js";
@@ -41,7 +42,7 @@ export const JULY07_REFERENCE_GABC=Object.freeze([{"key":"INTROIT","id":"GREGOBA
 // Scores are immutable archive transcriptions. The source-owned registry is
 // data-driven and can select any future verified Proper-to-score binding.
 const properReferenceRegistry=createProperReferenceRegistry({
- scores:[...JULY07_REFERENCE_GABC,...ALL_SAINTS_REFERENCE_SCORES,...EPIPHANY_REFERENCE_SCORES]
+ scores:[...JULY07_REFERENCE_GABC,...ALL_SAINTS_REFERENCE_SCORES,...EPIPHANY_REFERENCE_SCORES,...IMMACULATE_CONCEPTION_REFERENCE_SCORES]
 });
 export const PROPER_REFERENCE_REGISTRY_STATUS=Object.freeze({
  schema:properReferenceRegistry.schema,
