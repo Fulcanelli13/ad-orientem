@@ -1,0 +1,80 @@
+{
+  "schema": "AO_SACRED_ART_BATCH1_LANFRANCO_EXACT_SOURCE_PHOTO_QA_V1",
+  "verified_at_utc": "2026-11-08T17:14:50Z",
+  "run": {
+    "id": 42503819382,
+    "conclusion": "success",
+    "head_sha": "e6c290ce9f00cedd87f397930dc44c29a05278c2",
+    "url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42503819382",
+    "artifact_id": 13626945453,
+    "artifact_url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42503819382/artifacts/13626945453",
+    "artifact_retention_days": 14
+  },
+  "object": {
+    "title": "The Miracle of the Loaves and Fishes",
+    "artist": "Giovanni Lanfranco",
+    "museum": "National Gallery of Ireland",
+    "inventory": "NGI.72",
+    "source": "https://onlinecollection.nationalgallery.ie/objects/10345/the-miracle-of-the-loaves-and-fishes",
+    "prayer_positions": 3
+  },
+  "selected": {
+    "sourceFile": "Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg",
+    "dims": [
+      1285,
+      683
+    ],
+    "sha256": "f9a4b9f5f180138b438c61da836ac176a21b9162e736da7372c07e5ea6f74ffa",
+    "bytes": 947637,
+    "framing": "PAINTING_ONLY",
+    "preserved_as_selected": true
+  },
+  "candidate": {
+    "sourceFile": "Giovanni lanfranco, moltiplicazione dei pani e dei pesci, 1624-25, 01.jpg",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File:Giovanni_lanfranco,_moltiplicazione_dei_pani_e_dei_pesci,_1624-25,_01.jpg",
+    "dims": [
+      4914,
+      2802
+    ],
+    "sha256": "13ceac9a8d54c0468a1414af4ea3331d1312474e487c71119f25d03916cb2654",
+    "bytes": 6932835,
+    "photographer": "Sailko",
+    "photoTaken": "2020-01-28",
+    "license": "CC BY 3.0 Unported",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/",
+    "commercial_reuse_permitted_under_license": true,
+    "credit_and_adaptation_notice_required": true,
+    "framing": "GOLDEN_PHYSICAL_FRAME_VISIBLE",
+    "user_selected_this_photo": false
+  },
+  "comparison": {
+    "zip_crc_pass": true,
+    "sha256_reverified_independently": true,
+    "dimensions_reverified_independently": true,
+    "photo_source_identity": "SAME_EXACT_NGI_72_PAINTING",
+    "ratio_change_fraction": 0.06785,
+    "measured_long_side_gain": 3.824,
+    "measured_short_side_gain": 4.103,
+    "candidate_display_webp": {
+      "dimensions": [
+        1600,
+        912
+      ],
+      "sha256": "224c9d1c3663d25d086a34980bf6893d32fd1f9df622b362c3b0bc85600152cb",
+      "bytes": 247158,
+      "full_frame": true,
+      "crop_applied": false
+    },
+    "visual_review_observation": "The candidate shows a broad gilt physical frame absent from the WGA selection. Candidate color is somewhat warmer/darker and more saturated. Both show same people and landscape composition, but raw candidate cannot replace frameless source without display-edition decision.",
+    "editorial_decision": "HOLD_FOR_USER_EXACT_PHOTO_APPROVAL_AND_FRAMELESS_DISPLAY_EDITION_REVIEW"
+  },
+  "rights_and_release": {
+    "app_photo_released": false,
+    "existing_selected_photo_replaced": false,
+    "source_photo_quality_pass": true,
+    "photo_legal_license_details_recorded": true,
+    "owner_explicit_photo_approval": false,
+    "public_pages_changed": false
+  },
+  "next_step": "Prepare a painting-only (physical frame excluded) candidate rendition as review-only, with full painted scene preserved; obtain approval for exact Sailko photo and the rendering before production. Do not alter existing selected WGA photo."
+}
