@@ -31,8 +31,8 @@ assert.equal(ledger.blocked_false_merges.length, 6, 'Six false-merge guards requ
 assert.equal(ledger.scope.unlinked_museum_identified_selections, 156);
 assert.equal(ledger.next.museum_identity_holds, 8);
 assert.equal(ledger.scope.rejected_research_source_records_kept_excluded, 1599);
-assert.equal(ledger.scope.selected_handpicked_images, 177);
-assert.equal(ledger.scope.selected_handpicked_images, uniqueSelected.size + 156 + 8);
+assert.equal(ledger.scope.selected_photographs, 177);
+assert.equal(ledger.scope.selected_photographs, uniqueSelected.size + 156 + 8);
 assert.equal(ledger.hard_guards.do_not_admit_unapproved_commons_images, true);
 assert.equal(ledger.hard_guards.selected_owner_photographs_preserved, true);
 const linked = (selected, group) => joined.has(`${selected}::${group}`);
