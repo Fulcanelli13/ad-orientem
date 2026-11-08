@@ -2593,7 +2593,7 @@ function renderLibrary(){
   '<h3>'+esc(L('Traditional Communion prayers','Prières traditionnelles de Communion'))+'</h3>'+
   '<p>'+esc(L('Open the complete prayer in its existing Communion reader. The 2013 booklet wording has not yet been compared.','Ouvrir la prière intégrale dans son lecteur de Communion. Le texte du livret de 2013 reste à comparer.'))+'</p>'+
   '<div class="aoP435930ModuleGrid">'+privateCommunionWorks.map(work=>
-   '<button type="button" class="aoP435930ModuleCard" data-'+(work.id==="ignatius_suscipe"?'p435930-red-suscipe':'p435930-red-communion')+'="'+esc(work.id)+'"'>'+
+   '<button type="button" class="aoP435930ModuleCard" '+(work.id==="ignatius_suscipe"?'data-p435930-red-suscipe="'+esc(work.id)+'"':'data-p435930-red-communion="'+esc(work.id)+'"')+'>'+
    moduleIcon(work.route)+'<small class="aoP435930ModuleKind">'+
    esc(L(work.phase==='before'?'BEFORE COMMUNION':'AFTER COMMUNION',
      work.phase==='before'?'AVANT LA COMMUNION':'APRÈS LA COMMUNION'))+'</small>'+
