@@ -255,3 +255,37 @@ Psalterium containing the Saturday Psalm 87 and Psalm 102 text, followed
 by word-by-word comparison against all 473 pinned words and the
 remaining 1961 Compline Ordinary/seasonal elements. Do not substitute
 a Pius XII Psalter because its date and Roman Office rubrics match.
+
+
+## Priest / non-priest Compline dialogues — implemented in the reader
+
+The original **1961 Mame** *Ordinarium*, §65 and §66 (printed pp.
+**139–140**, PDF pages 139–140), prints two permitted alternatives at
+**both** conclusion dialogue positions:
+
+- If a priest presides: `V. Dóminus vobíscum / R. Et cum spíritu tuo`.
+- In solo or non-priest recitation: `V. Dómine, exáudi oratiónem
+  meam / R. Et clamor meus ad te véniat`.
+
+Previously the Compline parser silently selected the second pair for all
+users. It now retains **both** pairs from the same pinned
+`Psalterium/Common/Prayers#Dominus` source and the reading projection
+chooses the correct pair at the two positions. The new **presiding
+minister** choice is independent of the earlier **final prayer / other
+time** choice. Default remains the solo/non-priest alternative.
+
+In both situations, the full original four-line source remains in
+`sourceTexts`. The 1961 reader still has 40 moments; no new prayer is
+invented and the original extraction still has 42 events. Source
+drift, an unknown minister or missing response withholds the Hour.
+The native Latin-only reader, private EN/FR reader, eight-date unit tests
+and 320px / 390px browser tests now exercise this distinction.
+
+Printed witness:
+https://unavocesevilla.com/LIBROSLITURGICOS/BREVIARIUM%20ROMANUM.1961.pdf#page=140
+
+This correction does **not** change
+`psalter1961VerbatimCollated=false`,
+`completeHourCollated=false`,
+`rightsApproved=false` or
+`publicReleaseApproved=false`. The public Hour remains withheld.
