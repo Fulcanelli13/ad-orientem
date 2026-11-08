@@ -338,9 +338,33 @@
       "printedPage": 62,
       "pdfPage": 63,
       "section": "after_communion",
-      "status": "unresolved",
+      "status": "reader_present",
       "wordingCollatedAgainst2013": false,
-      "discoverableAsIndividualLibraryWork": false
+      "discoverableAsIndividualLibraryWork": true,
+      "owner": {
+        "path": "src/pray/traditional-pray-data.js",
+        "symbol": "thanksgivingMyGoodJesus",
+        "route": "pray.communion_treasury"
+      },
+      "discoverabilityProof": {
+        "index": "src/pray/red-booklet-communion-library-links.v1.js",
+        "route": "pray.communion_treasury",
+        "sourceId": "thanksgivingMyGoodJesus",
+        "searchSurface": "pray.library",
+        "opensExactSourceCard": true,
+        "languageWitnesses": [
+          "en"
+        ],
+        "independentFrenchSourceAvailable": false,
+        "independentLatinSourceAvailable": false
+      },
+      "sourceWitness": {
+        "edition": 2008,
+        "sourceUrl": "https://archives.sophronius.org/raw-books/Latin%20-%20English%20Mass%20Booklet%20%281%29_text.pdf",
+        "originalBodyProvidedBy": "traditional-pray-data.js",
+        "wordingCollatedAgainst2013": false
+      },
+      "note": "A full, earlier 2008 English-booklet witness is owned by Communion Treasury; not represented as an exact 2013 collation. No independent FR or LA witness is asserted."
     },
     {
       "id": "communion_heart",
@@ -348,9 +372,33 @@
       "printedPage": 62,
       "pdfPage": 63,
       "section": "after_communion",
-      "status": "unresolved",
+      "status": "reader_present",
       "wordingCollatedAgainst2013": false,
-      "discoverableAsIndividualLibraryWork": false
+      "discoverableAsIndividualLibraryWork": true,
+      "owner": {
+        "path": "src/pray/traditional-pray-data.js",
+        "symbol": "eucharisticHeartAspiration",
+        "route": "pray.communion_treasury"
+      },
+      "discoverabilityProof": {
+        "index": "src/pray/red-booklet-communion-library-links.v1.js",
+        "route": "pray.communion_treasury",
+        "sourceId": "eucharisticHeartAspiration",
+        "searchSurface": "pray.library",
+        "opensExactSourceCard": true,
+        "languageWitnesses": [
+          "en"
+        ],
+        "independentFrenchSourceAvailable": false,
+        "independentLatinSourceAvailable": false
+      },
+      "sourceWitness": {
+        "edition": 1910,
+        "sourceUrl": "https://motherofmercychapter.com/Prayers/The%20Raccolta%20-%201910%20Collection%20of%20Indulgenced%20Prayers%20and%20Good%20Works.pdf",
+        "originalBodyProvidedBy": "traditional-pray-data.js",
+        "wordingCollatedAgainst2013": false
+      },
+      "note": "1910 Raccolta no. 161 authentic historic English aspiration; 2013 booklet spelling/wording uncollated; historical indulgence cannot be represented as current."
     },
     {
       "id": "ignatius_suscipe",
