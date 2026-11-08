@@ -1,0 +1,81 @@
+{
+  "schema": "AO_SACRED_ART_PHASE45_FULL_CORPUS_CENSUS_V1",
+  "as_of": "2026-11-08",
+  "status": "RESEARCH_ONLY_NOT_GALLERY_PUBLICATION",
+  "units": {
+    "source_records": "Original source, review, duplicate, rejection and research entries; not distinct physical paintings",
+    "operational_groups": "Frozen research groups; not fully deduplicated physical paintings",
+    "selected_177": "Handpicked low-resolution photo file records; not independently a new 177 distinct paintings",
+    "module_16": "16 explicit module painting release entries with existing source assets; not entire live gallery",
+    "calendar": "365 proposed annual artwork date mappings; not verified production"
+  },
+  "counts": {
+    "source_records": 3205,
+    "operational_groups": 989,
+    "unique_source_urls": 2769,
+    "source_records_mapped_into_operational_groups": 1150,
+    "source_records_outside_operational_groups": 2055,
+    "distinct_excluded_group_ids_not_necessarily_paintings": 1952,
+    "owner_rejected_original_source_records": 1599,
+    "operational_photo_qa": 548,
+    "operational_rights_or_alternative": 441,
+    "group_level_native_photo_verified_in_frozen_snapshot": 0,
+    "group_level_user_photo_quality_approved_in_frozen_snapshot": 0,
+    "group_level_exact_photo_rights_certified_in_frozen_snapshot": 0,
+    "group_level_production_released_in_frozen_snapshot": 0,
+    "semantic_lexical_labels_unverified": 657,
+    "semantic_groups_missing_subject_tags": 332,
+    "recent_selected_files": 177,
+    "recent_identity_supported": 169,
+    "recent_identity_holds": 8,
+    "recent_photo_upgrades_approved": 0,
+    "exact_source_url_matches_recent177_to_operational989": 0,
+    "normalized_title_and_artist_candidate_matches_not_verified": 1,
+    "module_released_image_entries": 16,
+    "module_assets_existing": 16,
+    "module_entries_with_matching_original_urls_in_operational_groups": 14,
+    "module_entries_without_exact_source_url_match": 2,
+    "calendar_days_2026": 365,
+    "calendar_proposed_mappings": 134,
+    "calendar_pending_or_held": 231,
+    "duplicate_review_groups": 18,
+    "certified_distinct_physical_paintings": null,
+    "whole_library_release_percentage": null
+  },
+  "crosswalk_cautions": [
+    "Source records 3205 != distinct artworks",
+    "989 is an operational research group total, not a deduplicated physical-painting total",
+    "2055 source records outside the operational set include 1599 explicit REJECT records; excluded record IDs must not be auto-admitted",
+    "177 photo-selection records have 0 exact-source-URL matches in frozen 989 group source index; this is a missing crosswalk, not proof of distinct paintings",
+    "1 candidate exact normalized title/artist match does not establish same physical object",
+    "16 actual module release entries include 14 original-source URLs already present in the 989 work master; cannot sum these populations",
+    "Zero production flags in the 2026-11-03 frozen master do not negate later independently confirmed releases",
+    "134 calendar image mappings are proposed and not a deployed-site image certification"
+  ],
+  "sources": {
+    "phase45_gh_actions": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42479108878",
+    "phase45_archive": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42479108878/artifacts/13616568232",
+    "original_source_records": "data/artwork/research-source-records-3205.v1.json",
+    "grouped_research": "data/artwork/research-operational-989.v1.json",
+    "semantic_labels": "data/artwork/research-semantic-candidates-989.v1.json",
+    "original_editorial_duplicate_decisions": "data/artwork/research-prior-duplicate-decisions.v1.json",
+    "selected177": "scripts/sacred-art/artworks_177.csv",
+    "release_registry": "src/art/released-module-paintings.v1.js",
+    "calendar_annual_status": "data/artwork/home-2026-annual-release-census.v1.json",
+    "current_workbook": "Ad_Orientem_Phase45_Full_Sacred_Art_Corpus_Census_20261108.xlsx"
+  },
+  "next": [
+    "Create a canonical exact-artwork crosswalk joining later 177 selected image rows to the 989 operational groups, using holding museum and accession or exact composition.",
+    "Preserve all rejections, panel distinctions, user-approved photographs and source preferences.",
+    "Work in large museum batches over 548 photo-QA and 441 rights/alternative-source grouped candidates.",
+    "Visually review 657 lexical subject labels, classify 332 untagged groups.",
+    "Conduct route-by-route production audit for Gallery, Home, Calendar, Prayer, Rosary and other published module images on GitHub Pages.",
+    "Publish replacements only after picture-specific licensing, native image QA, crop, colour, approval and regression testing; GitHub Pages only."
+  ],
+  "safeguards": {
+    "application_changed": false,
+    "original_handpicked_changed": false,
+    "owner_rejections_preserved": true,
+    "photos_replaced": 0
+  }
+}
