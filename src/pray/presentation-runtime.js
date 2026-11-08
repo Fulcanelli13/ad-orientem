@@ -531,7 +531,8 @@ function open(id,opts={}){
   else if(id==='pray.precious_blood'){view='preciousBlood';PRECIOUS_BLOOD={phase:0,bead:0,latin:false,showMeditation:false}}
   else if(id==='pray.rosary_methods'){view='rosaryMethods';}
   else if(id==='pray.confession'){view='confession';CONF=freshConfessionState();
-    if(historicalDeepLink){CONF.stage=historicalDeepLink.stage;CONF.historicalPrayer=historicalDeepLink.sourceId;}
+    if(historicalDeepLink){CONF.stage=historicalDeepLink.stage;CONF.historicalPrayer=historicalDeepLink.sourceId;
+      CONF.returnPrayerSnapshot=opts.returnPrayerSnapshot||null;}
   }
   else if(id==='pray.benediction'){view='benediction';BEN={step:0,divinePraises:false,praisesForm:'1962',celebration:'ordinary',feastOptions:{...CHRIST_KING_OPTION_DEFAULTS}};}
   else if(id==='pray.adoration')view='adoration';
@@ -1950,6 +1951,8 @@ function renderConfession(){
    '<p>'+esc(L('This private prayer neither performs nor simulates sacramental Confession.',
     'Cette prière privée ne réalise ni ne simule la confession sacramentelle.'))+'</p>'+
    confessionHistoricalPrayerCard(historical)+
+   (CONF.returnPrayerSnapshot?'<button type="button" class="aoP435930Primary" data-p435930-conf-historical-library-back>'+
+     esc(L('Return to Prayer Library','Retour au livre de prières'))+'</button>':'')+
    '<button type="button" class="aoP435930Primary" data-p435930-conf-historical-back>'+
    esc(L('Go to Confession preparation','Voir la préparation à la confession'))+'</button></main>';
  }
@@ -4897,6 +4900,11 @@ function onClick(e){
   if(!DATA.prayers?.[id])return;
   pushView();LIB.open=id;LIB.language=null;PILOT_LORETO_GROUP=false;
   view='library';return render();
+ }
+ if(b.matches('[data-p435930-conf-historical-library-back]')&&view==='confession'&&CONF.returnPrayerSnapshot){
+  const receipt=CONF.returnPrayerSnapshot;
+  CONF.historicalPrayer=null;CONF.returnPrayerSnapshot=null;
+  return restoreHandoff(receipt);
  }
  if(b.matches('[data-p435930-conf-historical-back]')&&view==='confession'){
   CONF.historicalPrayer=null;
