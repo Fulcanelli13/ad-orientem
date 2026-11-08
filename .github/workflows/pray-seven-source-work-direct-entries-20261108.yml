@@ -1,0 +1,53 @@
+name: Prayer seven source works — direct EN FR reader entry
+on:
+  push:
+    branches:
+      - feat/prayer-seven-source-work-direct-entries-20261108
+    paths:
+      - .github/workflows/pray-seven-source-work-direct-entries-20261108.yml
+      - src/pray/prayer-seven-source-work-links.v1.js
+      - src/pray/presentation-runtime.js
+      - src/pray/novena-runtime.js
+      - src/pray/traditional-pray-runtime.js
+      - tests/pray-seven-source-work-entries-20261108.mjs
+      - tests/pray-seven-source-work-entries-phone-20261108.mjs
+  pull_request:
+    branches: [main]
+    paths:
+      - .github/workflows/pray-seven-source-work-direct-entries-20261108.yml
+      - src/pray/prayer-seven-source-work-links.v1.js
+      - src/pray/presentation-runtime.js
+      - src/pray/novena-runtime.js
+      - src/pray/traditional-pray-runtime.js
+      - tests/pray-seven-source-work-entries-20261108.mjs
+      - tests/pray-seven-source-work-entries-phone-20261108.mjs
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: prayer-seven-source-works-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  seven-sources:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - name: Validate seven exact source owners and existing original readers
+        run: node tests/pray-seven-source-work-entries-20261108.mjs
+  seven-source-phone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Seven original readers × 320/390px × EN/FR
+        run: node tests/pray-seven-source-work-entries-phone-20261108.mjs
