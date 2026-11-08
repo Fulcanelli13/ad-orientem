@@ -4,6 +4,7 @@ import { RELEASED_MODULE_PAINTINGS } from "../art/released-module-paintings.v1.j
 import { SACRED_ART_RELEASED_GALLERY_V1, releasedGalleryAt, releasedGalleryBySource } from "../art/released-gallery-batch1.v1.js";
 import { SACRED_ART_CATEGORIES_V1, sacredArtReleasedPhotoClassification } from "../art/sacred-art-taxonomy-v1.js";
 import { sacredArtCrossModuleLinks } from "../art/sacred-art-crossmodule-links-v1.js";
+import { sacredArtGalleryTargets } from "./sacred-art-gallery-targets.js";
 import { releasedDateGospelHero2026 } from "./released-date-gospel-heroes-2026.js";
 import {approved2026HomeArtwork} from "./approved-dated-artwork-2026.js";
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -255,6 +256,7 @@ function showReleasedGalleryIndex(dlg,index){
   }))return false;
   dlg.__c3GalleryIndex=index;
   const taxonomy=sacredArtReleasedPhotoClassification(entry.moduleId);
+  dlg.__c3CurrentWorkId=taxonomy?.id??null;
   const scene=dlg.querySelector("[data-c3-art-scene]");
   if(scene){
     scene.textContent=taxonomy ? taxonomy.scene+" · "+taxonomy.categoryIds.map(c=>SACRED_ART_CATEGORIES_V1[c]?.en).filter(Boolean).join(" · ") : "";
@@ -275,7 +277,26 @@ function showReleasedGalleryIndex(dlg,index){
     if(links?.bibleAtlas.length)parts.push(fr?"Historia Salutis : scène correspondante":"Historia Salutis: corresponding scene");
     if(links?.mass.length)parts.push(fr?"Messe : lien théologique":"Mass: theological connection");
     if(links?.calendar.length)parts.push((fr?"Calendrier : ":"Calendar: ")+links.calendar.map(x=>x.date).join(", "));
-    connections.textContent=parts.join(" · ");
+    connections.replaceChildren(dlg.ownerDocument.createTextNode(parts.join(" · ")));
+    if(links?.currentlyPublicPhoto){
+      const names={joy:["Joyful","joyeux"],sor:["Sorrowful","douloureux"],glo:["Glorious","glorieux"],lum:["Luminous","lumineux"]};
+      for(const target of sacredArtGalleryTargets(taxonomy.id)){
+        const button=dlg.ownerDocument.createElement("button");
+        button.type="button";
+        button.dataset.c3ArtTargetKind=target.kind;
+        button.dataset.c3ArtTargetId=target.id;
+        let label="";
+        if(target.kind==="scripture")label=(fr?"Lire l'Écriture · ":"Read Scripture · ")+target.id;
+        else if(target.kind==="rosary"){
+          const family=target.id.slice(0,3),number=target.id.slice(3);
+          label=(fr?"Rosaire · ":"Rosary · ")+(fr?names[family]?.[1]:names[family]?.[0])+" "+number;
+        }else if(target.kind==="bibleAtlas")
+          label=fr?"Ouvrir la scène biblique":"Open biblical scene";
+        button.textContent=label;
+        button.className="aoC3ArtRelatedAction";
+        connections.append(button);
+      }
+    }
     connections.hidden=!parts.length;
   }
   const nav=dlg.querySelector("[data-home-c3-gallery-nav]");
@@ -293,6 +314,7 @@ export function showC3ArtInfo(root,button){
   dlg.__c3OriginalArtwork=a;
   dlg.__c3GalleryIndex=null;
   dlg.__c3GalleryCategory="all";
+  dlg.__c3CurrentWorkId=null;
   const scene=dlg.querySelector("[data-c3-art-scene]");
   if(scene){scene.hidden=true;scene.textContent="";}
   const connections=dlg.querySelector("[data-c3-art-connections]");
@@ -345,6 +367,7 @@ export function returnFromC3ReleasedArtGallery(root){
   if(!paintC3ArtInfoDialog(dlg,dlg.__c3OriginalArtwork))return false;
   dlg.__c3GalleryIndex=null;
   dlg.__c3GalleryCategory="all";
+  dlg.__c3CurrentWorkId=null;
   const scene=dlg.querySelector("[data-c3-art-scene]");
   if(scene){scene.hidden=true;scene.textContent="";}
   const connections=dlg.querySelector("[data-c3-art-connections]");
@@ -362,5 +385,6 @@ export function closeC3ArtInfo(root){
   dlg.__c3OriginalArtwork=null;
   dlg.__c3GalleryIndex=null;
   dlg.__c3GalleryCategory="all";
+  dlg.__c3CurrentWorkId=null;
   return true;
 }
