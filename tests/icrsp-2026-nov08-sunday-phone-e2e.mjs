@@ -66,9 +66,12 @@ try{
    "The universal Roman 1962 Sunday is never given institute-specific prayers");
   assert.equal(general.status,"NOT_APPLICABLE");
   assert.equal(general.untouched,true);
-  await card.locator('[data-home-icrsp-sunday="SUNDAY"]').click();
+  await page.locator(".homeScreen .aoH7HomeView [data-home-h7-enter]").click();
   const door=page.locator(".homeScreen .aoH7DoorView:not([hidden])");
-  await door.waitFor({state:"visible",timeout:45000});
+  await door.waitFor({state:"visible",timeout:30000});
+  const instituteButton=door.locator('[data-home-icrsp-sunday="SUNDAY"]');
+  await instituteButton.waitFor({state:"visible",timeout:15000});
+  await instituteButton.click();
   await page.waitForFunction(()=>Boolean(
     globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight?.chosenForm==="LOW"
   ),null,{timeout:45000});
