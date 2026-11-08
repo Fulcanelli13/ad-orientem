@@ -2,6 +2,7 @@
 // a particular Mass complete. Unlike sourceOrdoExpectation in the compiled
 // Proper, this contract must be transcribed from an external dated authority,
 // with separate rubrical and text review. This module never adds Mass prayers.
+import {review1962OrationLimits} from "./1962-oration-limit-review.js";
 const FIELDS=Object.freeze(["collects","secrets","postcommunions"]);
 const LANGS=Object.freeze(["lat","en","fr"]);
 const hold=(reason,details={})=>Object.freeze({
@@ -51,6 +52,13 @@ export function assessIndependentOrdoSourceClaim({
     return hold("ADDITIONAL_PRAYER_SOURCE_MISSING_"+field+"_"+i);
   }
  }
+ // A published three-oration claim is not automatically a lawful
+ // three-orations Mass. Check the independent 1960/1962 capacity first.
+ const rubric=review1962OrationLimits({expectation,form});
+ if(rubric.status==="RUBRICAL_HOLD")
+  return hold(rubric.reason,{rubric:rubric.rubric??null,
+   sourceClaimedGroups:rubric.sourceClaimedGroups,
+   rubricalConflict:true});
  const review=expectation.independentRubricalReview??{};
  if(review.status!=="AUTHORIZED"||!goodText(review.permissionOrPrivilegeEvidenceUrl))
   return hold("RUBRICAL_AUTHORITY_NOT_YET_VERIFIED",{
