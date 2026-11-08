@@ -34,7 +34,7 @@ const fixtures=data.records.map(c=>{
 });
 assert.equal(data.records.slice(5).length,11);
 assert.ok(data.records.slice(5).every(c=>c.community_named_by_source==="FSSPX District de France"));
-assert.ok(data.records.slice(5).every(c=>c.note_en.includes("distinct")||c.note_en.includes("serv")||c.note_en.includes("separate")||c.note_en.includes("contact")||c.note_en.includes("date-specific"));
+assert.ok(data.records.slice(5).every(c=>c.note_en.includes("distinct")||c.note_en.includes("serv")||c.note_en.includes("separate")||c.note_en.includes("contact")||c.note_en.includes("date-specific")));
 const unrelated=Object.freeze({kind:"TLM_VENUE",source_id:"UNRELATED",
  source_ids:["UNRELATED"],physical_group_id:"RG-000000000000",
  country_code:"FR",title:"Unrelated church",source_links:[]});
