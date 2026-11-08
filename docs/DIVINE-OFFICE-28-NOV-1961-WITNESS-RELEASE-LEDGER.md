@@ -101,3 +101,44 @@ source and citation fidelity, but does not establish full verbatim collation
 against a complete 1961 printed Breviary. Publication remains withheld:
 1961_psalter_verbatim_collated=false, latin_public_release_certified=false,
 published=false.
+
+## Printed Latin Saturday Psalter: second independent witness (8 Nov 2026)
+
+A substantive new source was found: David Siefker (ed.), *Diurnale
+Romanum* (2008), laid out according to the John XXIII 1961 Roman Office,
+printed **Saturday Compline pp. 349–352**. This is a complete, readable
+Latin-English edition and includes the antiphon *Intret oratio mea*,
+**Psalmus 87** (printed pp. 349–350), **Psalmus 102 i** (pp. 350–351),
+**Psalmus 102 ii** (pp. 351–352), and the repeated antiphon. Its
+printed layout directly corroborates the Saturday appointment and the
+1–12 / 13–22 division.
+
+Source: https://www.scribd.com/document/761102039/Breviarium-romanum-Breviario-romano-1961-1962
+(text of the printed book at "Sábbato ad Completórium"; a modern 2008
+typesetting, **not an original 1961 Mame psalter leaf**).
+
+All **41 recitation stich incipits** were checked against this independent
+printed presentation, then placed in the private witness register
+`data/office/research/compline-saturday-printed-diurnale-2008-row-witness.json`.
+The required CI test verifies those 41 original Latin source rows on
+each subsequent change; the register stays excluded from the curated
+GitHub Pages release. This protects the actual words against accidental
+source swaps without publishing review data.
+
+The following spelling distinctions require explicit source accounting:
+- Printed *fœnum* versus pinned *fænum* in Psalm 102's second half.
+  This is an orthographic lexical variant, not a missing sentence.
+- Printed *Angeli* versus pinned *Ángeli*, an accent distinction.
+
+**Certification boundary.** The two modern independent print witnesses
+(2008 complete Diurnale and 2023 1962-pattern Psalterium) substantively
+strengthen Latin Saturday Psalm appointment and textual fidelity.
+However a 41-stich **incipit** regression is not a substitute for
+byte-for-byte collation of every line of the original 1961 printed
+Psalterium. Thus the exact-original-edition flag remains false;
+no rights or publication flag is promoted. This also keeps the
+currently staged native public reader's release gate closed.
+
+The next meaningful step is a normalized **full-word** printed collation
+that documents every substantive discrepancy, followed by independent
+review of the complete dated Hour and a narrow publication decision.
