@@ -1,0 +1,41 @@
+name: Sacred Art Phase 47 — public Pages module photo census (read only)
+on:
+  push:
+    branches:
+      - research/sacred-art-phase18-iiif-audit-20261106
+    paths:
+      - 'scripts/sacred-art/phase47-public-gallery-asset-census.py'
+      - '.github/workflows/sacred-art-phase47-live-module-asset-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  public-census:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          path: production-main
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install HTTP client
+        run: python -m pip install --disable-pip-version-check 'requests>=2.32,<3'
+      - name: Validate and inspect main at exact SHA and published static paths
+        run: |
+          python -m py_compile scripts/sacred-art/phase47-public-gallery-asset-census.py
+          python scripts/sacred-art/phase47-public-gallery-asset-census.py
+      - name: Retain exact-SHA research evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-phase47-pages-photo-census-research-only
+          path: artifacts/sacred-art-phase47-main-gallery-census/
+          retention-days: 14
+          if-no-files-found: warn
