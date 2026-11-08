@@ -1,0 +1,42 @@
+name: Divine Office — focused Compline core (private, no publication)
+on:
+  pull_request:
+    paths:
+      - 'src/office/compline-advent-2026-appointments.js'
+      - 'src/office/weekday-compline-psalter-plan.js'
+      - 'src/office/pinned-section-heading-parser.js'
+      - 'src/office/saturday-compline-2026-pilot.js'
+      - 'src/pray/divine-office-readiness-gate.js'
+      - 'tests/divine-office-saturday-compline-pilot.mjs'
+      - 'tests/divine-office-weekday-compline-psalter.mjs'
+      - 'tests/divine-office-advent-i-full-week-compline.mjs'
+      - 'tests/divine-office-prayer-readiness-gate.mjs'
+      - 'tests/fixtures/office/advent-i-*-compline-*.json'
+      - '.github/workflows/office-compline-core.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-private-core:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax and private source-first Compline acceptance
+        run: |
+          node --check src/office/compline-advent-2026-appointments.js
+          node --check src/office/weekday-compline-psalter-plan.js
+          node --check src/office/pinned-section-heading-parser.js
+          node --check src/office/saturday-compline-2026-pilot.js
+          node --check src/pray/divine-office-readiness-gate.js
+          node --test tests/divine-office-saturday-compline-pilot.mjs
+          node --test tests/divine-office-weekday-compline-psalter.mjs
+          node --test tests/divine-office-advent-i-full-week-compline.mjs
+          node --test tests/divine-office-prayer-readiness-gate.mjs
