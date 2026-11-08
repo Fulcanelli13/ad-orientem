@@ -73,7 +73,7 @@ const detail=(label,value,note)=>'<div class="aoTlmProfileDatum"><small>'+E(labe
  (note?'<span>'+E(note)+'</span>':'')+'</div>';
 const link=(url,title,cls)=>https(url)?'<a'+(cls?' class="'+E(cls)+'"':'')+' href="'+E(url)+'" target="_blank" rel="noopener noreferrer">'+E(title)+'</a>':"";
 const heading=(title,lang)=>'<h3>'+E(title)+'</h3>';
-export function renderTlmChurchProfile(item,language="en"){
+export function renderTlmChurchProfile(item,language="en",{asOf}={}){
  const v=buildTlmChurchProfile(item,language),venue=v.venue;
  const sourceLinks=A(item?.source_links).filter(s=>https(s?.url));
  const contact=venue?.contact??{};
@@ -227,7 +227,7 @@ export function renderTlmChurchProfile(item,language="en"){
  // Dated first-party bulletin: display ONLY explicit dates that have not
  // passed in the CHAPEL's local civil calendar. No RRULE or implied Sundays.
  if(datedProgramme){
-  const dates=upcomingPrintedMasses(datedProgramme);
+  const dates=upcomingPrintedMasses(datedProgramme,{asOf});
   html+='<div class="aoTlmProfileDatedProgramme" data-cl27-dated-programme="'+E(datedProgramme.cl2_anchor)+'">'+
     '<h4>'+E(L(language,"Masses explicitly listed in the 2026 calendar","Messes explicitement datées dans le calendrier 2026"))+'</h4>';
   if(!dates.length)html+='<p>'+E(L(language,
