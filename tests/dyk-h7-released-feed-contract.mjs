@@ -3,7 +3,25 @@ import {readFileSync} from "node:fs";
 import {dykPublishedCandidates,dykPublishedPick,dykPublishedModel,dykPublishedMarkup,dykHomeRotationSlot,DYK_GLOSSARY_FALLBACK_IDS} from "../src/home/dyk-published-feed.js";
 const original=JSON.parse(readFileSync(
  "data/research/did-you-know/dyk-r34-high-signal-24-editorial-selection.v1.json","utf8"));
+import {HOME_DYK_GLOSSARY_IDS,HOME_DYK_GLOSSARY_FACTS,homeDidYouKnowSelect} from "../src/home/did-you-know-glossary.js";
 const clone=x=>JSON.parse(JSON.stringify(x));
+// Every new public teaser must resolve to an existing source-backed bilingual
+// Glossary entry and must never silently expose draft research as public copy.
+const gloss=JSON.parse(readFileSync("data/glossary/concepts-151-300.v1.json","utf8"));
+assert.equal(HOME_DYK_GLOSSARY_IDS.length,24);
+assert.equal(new Set(HOME_DYK_GLOSSARY_IDS).size,24);
+assert.deepEqual(new Set(Object.keys(HOME_DYK_GLOSSARY_FACTS)),new Set(HOME_DYK_GLOSSARY_IDS));
+for(const id of HOME_DYK_GLOSSARY_IDS){
+ const source=gloss.entries.find(row=>row.id===id);
+ assert.ok(source,"Missing canonical source "+id);
+ assert.equal(source.status,"SOURCE_OWNER_LOCKED");
+ assert.equal(source.definition_status,"SOURCE_BACKED");
+ assert.ok(source.source_ids.length>0);
+ assert.ok(HOME_DYK_GLOSSARY_FACTS[id].en.length>25);
+ assert.ok(HOME_DYK_GLOSSARY_FACTS[id].fr.length>25);
+ assert.equal(homeDidYouKnowSelect(gloss.entries,"2026-11-08",id)?.id,id);
+}
+
 for(const date of ["2026-11-01","2026-11-02","2026-12-25","2027-04-04"]){
  assert.deepEqual(dykPublishedCandidates(original,date),[],"Unapproved R34 must never publish");
  assert.equal(dykPublishedPick(original,date),null);
