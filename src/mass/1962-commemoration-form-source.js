@@ -193,10 +193,10 @@ export function select1962CommemorationsForMassForm({
   // Other IV-class contexts (Saturday BVM, Christmas/Epiphany, special
   // vigils, institute calendars) remain outside this narrow certification.
   const ordinaryPentecostFeria=!sunday&&Number(main.rank)===4&&
-    /^Tempora\\/Pent[0-9]{1,2}-0$/.test(String(main.path??""))&&
+    /^Tempora\/Pent[0-9]{1,2}-0$/.test(String(main.path??""))&&
     Number(only.rank)===4&&!only.privileged&&
     /^sancti:[0-9]{2}-[0-9]{2}[a-z]*:4:/i.test(commId)&&
-    /^Sancti\\/[0-9]{2}-[0-9]{2}[a-z]*$/.test(String(only.path??""));
+    /^Sancti\/[0-9]{2}-[0-9]{2}[a-z]*$/.test(String(only.path??""));
   const ordinaryFourthClassSaint=!nativityOctavePlaceholder&&!sunday&&
     !only.privileged&&
     Number(only.rank)===4&&/^sancti:[0-9]{2}-[0-9]{2}[a-z]*:4:/i.test(commId)&&
