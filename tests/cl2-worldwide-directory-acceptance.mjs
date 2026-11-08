@@ -39,10 +39,10 @@ const reported=(label,group)=>{
    group==="SSPX"?"SSPX":"OTHER";
 };
 const world=projectCL2PhysicalDirectory(published,index,{mapAffiliation:reported});
-assert.equal(world.length,2582,"2,579 distinct CL2 physical sites + 3 published external additions");
-assert.equal(new Set(world.map(item=>item.item_id)).size,2582);
-assert.equal(new Set(world.filter(x=>x.physical_group_id).map(x=>x.physical_group_id)).size,2579);
-assert.equal(world.filter(x=>x.map_publishable).length,2568);
+assert.equal(world.length,2583,"2,580 distinct CL2 physical sites + 3 published external additions");
+assert.equal(new Set(world.map(item=>item.item_id)).size,2583);
+assert.equal(new Set(world.filter(x=>x.physical_group_id).map(x=>x.physical_group_id)).size,2580);
+assert.equal(world.filter(x=>x.map_publishable).length,2569);
 const diocesanQuality=read("data/directory/research/diocesan-coordinate-quality-audit-20261031.v1.json");
 assert.equal(diocesanQuality.schema,"AO_DIOCESAN_COORDINATE_QUALITY_AUDIT_V1");
 assert.equal(diocesanQuality.records.length,587);
