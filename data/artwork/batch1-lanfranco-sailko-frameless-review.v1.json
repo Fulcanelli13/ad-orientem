@@ -1,0 +1,93 @@
+{
+  "schema": "AO_SACRED_ART_BATCH1_LANFRANCO_SAILKO_FRAMELESS_REVIEW_V1",
+  "date": "2026-11-08",
+  "status": "RESEARCH_ONLY_PHOTOGRAPH_CANDIDATE_NO_EDITORIAL_APPROVAL",
+  "original_research": "data/artwork/batch1-lanfranco-sailko-verified-photo-qa.v1.json",
+  "existing_selection_protected": {
+    "file": "Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg",
+    "sha256": "f9a4b9f5f180138b438c61da836ac176a21b9162e736da7372c07e5ea6f74ffa",
+    "image_pixels": [
+      1285,
+      683
+    ],
+    "app_selection_unchanged": true
+  },
+  "candidate": {
+    "painting": "Giovanni Lanfranco — The Miracle of the Loaves and Fishes",
+    "institution": "National Gallery of Ireland",
+    "object_id": "NGI.72",
+    "source": "https://commons.wikimedia.org/wiki/File:Giovanni_lanfranco,_moltiplicazione_dei_pani_e_dei_pesci,_1624-25,_01.jpg",
+    "source_file_title": "Giovanni lanfranco, moltiplicazione dei pani e dei pesci, 1624-25, 01.jpg",
+    "original_pixels": [
+      4914,
+      2802
+    ],
+    "source_sha256": "13ceac9a8d54c0468a1414af4ea3331d1312474e487c71119f25d03916cb2654",
+    "photographer": "Sailko",
+    "source_license": "CC BY 3.0 Unported",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/",
+    "photo_use_rights": "COMMERCIAL_ADAPTATIONS_PERMITTED_WITH_CREDIT_AND_LICENSE_LINK",
+    "attribution": "Painting: Giovanni Lanfranco, The Miracle of the Loaves and Fishes (NGI.72). Photograph: Sailko (2020), CC BY 3.0 Unported; edited to exclude the photographed physical frame and resized.",
+    "license_attribution_required": true,
+    "edit_notice_required": true,
+    "user_selected_this_specific_photo": false
+  },
+  "transformation": {
+    "purpose": "Remove gilded photographed physical frame, not any painted figure or painting interior",
+    "method": "PIL_QUAD_PERSPECTIVE_CORRECTION_AND_DOWNRES_LANCZOS",
+    "quad_points_source_pixels_in_order": [
+      "upper_left",
+      "lower_left",
+      "lower_right",
+      "upper_right"
+    ],
+    "quad_xy": [
+      [
+        185,
+        184
+      ],
+      [
+        171,
+        2617
+      ],
+      [
+        4730,
+        2617
+      ],
+      [
+        4730,
+        184
+      ]
+    ],
+    "quad_native_output_pixels": [
+      4552,
+      2434
+    ],
+    "max_display_dimensions": [
+      1600,
+      900
+    ],
+    "pixel_edition_changes": "Perspective rectification at painting boundary; resize; sRGB colour management; no generative fill, retouch, scene alteration or 16:9 hero crop",
+    "preserve_whole_painted_scene_intent": true,
+    "edge_boundaries_require_final_visual_approval": true
+  },
+  "output": {
+    "candidate_file": "assets/staged/sacred-art-batch1/09-lanfranco-sailko-painting-only-review.webp",
+    "report_file": "data/artwork/batch1-lanfranco-sailko-frameless-qa-output.v1.json",
+    "private_review_artifacts_folder": "artifacts/sacred-art-batch1-lanfranco-frameless/",
+    "release_registry_unchanged": true,
+    "new_app_photo_release_count": 0,
+    "pages_publication": false
+  },
+  "release_gates": [
+    "Exact Sailko JPEG SHA256 and dimensions must match",
+    "Existing WGA selection SHA256 and dimensions must match",
+    "No border/faces/figures removed; final edges visually reviewed",
+    "Credit Sailko, CC BY 3.0 license link, and frame-removal/resize adaptation disclosed",
+    "Owner explicitly selects Sailko's exact photographic version",
+    "Owner explicitly approves painting-only photographic edition before public placement",
+    "Full display always uses contain; no automatic cover 16:9"
+  ],
+  "owner_approval_for_exact_version": false,
+  "owner_approval_for_display_edition": false
+}
