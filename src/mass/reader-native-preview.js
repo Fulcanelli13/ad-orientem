@@ -2526,32 +2526,40 @@ export async function mountNativeReaderPreview({
     return showCard(nextVisibleCard(current,"previous"));
   }
 
-  // The 65-card reader deliberately retains multiple source-owned Collects,
-  // Secrets and Postcommunions on their established Mass card. Pressing NEXT
-  // must not bypass a second prayer that remains below the phone viewport.
-  // This scrolls within the SAME canonical card, without an invented rite,
-  // cue, or extra 66th card. The section jump remains available for catch-up.
-  function revealUnseenSecondOration(){
-    if(!current?.paragraphs?.some?.(p=>p.orationGroupIndex===2))return false;
+  // A single liturgical oration GROUP may contain two source-owned prayers
+  // under one conclusion (1960 Missal §437). Looking only for group index 2
+  // still allows NEXT to bypass the second commemoration within that group.
+  // Navigate by the exact rendered source prayer roles, never by invented
+  // Amen/Orémus boundaries or by a fixed number of groups.
+  function revealUnseenSourceOration(){
+    const secondaryRoles=new Set([
+      "ADDITIONAL_ORATION","FIRST_COMMEMORATION","SECOND_COMMEMORATION",
+      "ORATION_UNDER_ONE_CONCLUSION",
+    ]);
+    if(!current?.paragraphs?.some?.(p=>secondaryRoles.has(p.prayerRole)))return false;
     const scroll=host.querySelector?.(".ao-prayer-card");
-    const next=scroll?.querySelector?.(
-      '.ao-reader-paragraph[data-oration-group-index="2"]');
-    if(!next)return false;
-    const viewport=scroll.getBoundingClientRect?.();
-    const prayer=next.getBoundingClientRect?.();
-    if(!viewport||!prayer||viewport.height<=0)return false;
-    // Once the second prayer is in the reading zone, NEXT advances normally.
+    const viewport=scroll?.getBoundingClientRect?.();
+    if(!scroll||!viewport||viewport.height<=0)return false;
     const readingZone=viewport.top+Math.min(viewport.height*.5,280);
-    if(prayer.top<=readingZone)return false;
-    const start=scroll.scrollTop;
-    const offset=Math.min(viewport.height*.20,90);
-    scroll.scrollTop=Math.min(
-      Math.max(0,scroll.scrollHeight-scroll.clientHeight),
-      start+prayer.top-viewport.top-offset);
-    if(scroll.scrollTop<=start+8)return false;
-    cueTracker?.refresh?.();
-    root.dataset.aoNextOration="SECOND_PRAYER_REVEALED";
-    return true;
+    // DOM order is the certified Proper order, including the two separate
+    // commemorations composed under one liturgical conclusion.
+    for(const prayer of scroll.querySelectorAll?.(
+      ".ao-reader-paragraph[data-prayer-role]")??[]){
+      if(!secondaryRoles.has(prayer.dataset.prayerRole))continue;
+      const target=prayer.getBoundingClientRect?.();
+      if(!target||target.top<=readingZone)continue;
+      const start=scroll.scrollTop;
+      const offset=Math.min(viewport.height*.20,90);
+      scroll.scrollTop=Math.min(
+        Math.max(0,scroll.scrollHeight-scroll.clientHeight),
+        start+target.top-viewport.top-offset);
+      if(scroll.scrollTop<=start+8)continue;
+      cueTracker?.refresh?.();
+      root.dataset.aoNextOration=prayer.dataset.prayerRole==="SECOND_COMMEMORATION"
+        ?"SECOND_COMMEMORATION_REVEALED":"SECOND_PRAYER_REVEALED";
+      return true;
+    }
+    return false;
   }
 
   function nextReaderCard(){
@@ -2629,7 +2637,7 @@ export async function mountNativeReaderPreview({
       const state=mandatumController.project();
       if(!state.atEnd){mandatumController.next();return showMandatumStage();}
     }
-    if(revealUnseenSecondOration())return null;
+    if(revealUnseenSourceOration())return null;
     const card=nextVisibleCard(current,"next");
     if(!card){
       // The Mass's final Last Gospel remains the 65th curated prayer card.
