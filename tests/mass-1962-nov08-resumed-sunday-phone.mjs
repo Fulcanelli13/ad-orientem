@@ -184,8 +184,10 @@ try{
     assert.deepEqual(card.prayers,[{role:"PRINCIPAL_ORATION",group:1}],
      "Additional or missing Sunday prayer in "+card.source);
    assert.equal(it.prefaceTexts.length,1,"Sunday must have one canonical Preface");
-   assert.match(it.prefaceTexts[0],/Trinitat|unus\s+es\s+Deus|F[ií]lio\s+tuo/i,
-    "Reader Preface lacks sourced Holy Trinity text");
+   // LIVE may project the verified Preface in the reader's selected
+   // vernacular; do not demand that its displayed paragraph be Latin.
+   assert.match(it.prefaceTexts[0],/Trinitat|Trinit[yé]|Sainte\s+Trinit[eé]|unus\s+es\s+Deus/i,
+    "Reader Preface lacks the verified Trinity text");
    assert.deepEqual(errors,[],"Browser errors");
    console.log("NOV08_1962_MASS_PHONE_PASS "+JSON.stringify({
     date,form,language:lang,source:prepared.sourcePath,
