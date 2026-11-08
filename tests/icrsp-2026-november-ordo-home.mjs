@@ -28,7 +28,7 @@ assert.deepEqual([saturday.office.class,saturday.office.colour],[4,"WHITE"]);
 assert.deepEqual([saturday.mass.introit,saturday.mass.colour,saturday.mass.class],["Adeamus","WHITE",3]);
 assert.equal(saturday.mass.title.en,"Votive Mass of the Immaculate Heart of Mary");
 assert.deepEqual(saturday.observances,["FIRST_SATURDAY"]);
-for(const unreviewed of ["2026-11-05","2026-11-08","2026-12-04","2027-11-05","",null])
+for(const unreviewed of ["2026-11-05","2026-11-09","2026-12-04","2027-11-05","",null])
  assert.equal(icrspFranceOrdoForDate(unreviewed),null,
   "No uncited mass appointment or cross-year assumption for "+unreviewed);
 const snippet=renderIcrspFranceHomeOrdo("2026-11-06","en");
@@ -47,7 +47,18 @@ assert.match(renderIcrspFranceHomeOrdo("2026-11-06","fr"),/Messe votive du Sacr�
 assert.match(renderIcrspFranceHomeOrdo("2026-11-07","fr"),/Cœur Immaculé de Marie/);
 assert.match(renderIcrspFranceHomeOrdo("2026-11-07","en"),/Use Immaculate Heart votive · Low Mass/);
 assert.match(renderIcrspFranceHomeOrdo("2026-11-07","en"),/Prayer for the Pope/);
-assert.equal(renderIcrspFranceHomeOrdo("2026-11-08"),"");
+const sunday=icrspFranceOrdoForDate("2026-11-08");
+assert.deepEqual([sunday.mass.kind,sunday.mass.introit,sunday.mass.class],
+ ["SUNDAY","Dicit Dominus",2]);
+assert.equal(sunday.mass.prayerForPope,true);
+assert.equal(sunday.mass.principalId,"tempora:Epi5-0:2:g");
+assert.match(sunday.sourceOrdo,/icrspfrance\.fr\/ordo\.php\?d=2026-11-08/);
+const sundayView=renderIcrspFranceHomeOrdo("2026-11-08","en");
+assert.match(sundayView,/Prayer for the Pope/);
+assert.match(sundayView,/Mass in green/);
+assert.match(sundayView,/Credo/);
+assert.match(sundayView,/data-home-icrsp-sunday="SUNDAY"/);
+assert.match(renderIcrspFranceHomeOrdo("2026-11-08","fr"),/messe dominicale ICRSP/);
 
 const vm={
  dateIso:"2026-11-06",language:"en",formularies:[],week:[],weekday:"Friday",
@@ -62,7 +73,7 @@ assert.equal((output.match(/data-home-icrsp-ordo="2026-11-06"/g)||[]).length,2,
 assert.match(output,/Begin general-calendar Mass/);
 assert.match(output,/Si iniquitates/,"Existing universal Proper must not be silently swapped");
 assert.match(output,/Cogitationes/,"Observed institute Mass must be visible at first entry");
-assert.doesNotMatch(h4HomeView({...vm,dateIso:"2026-11-08"},model),/data-home-icrsp-ordo/);
+assert.match(h4HomeView({...vm,dateIso:"2026-11-08"},model),/data-home-icrsp-sunday="SUNDAY"/);
 const handler=readFileSync("src/home/browser-entry.js","utf8");
 assert.match(handler,/data-home-icrsp-votive/);
 assert.match(handler,/state\(win\)\?\.selectedDate/);
