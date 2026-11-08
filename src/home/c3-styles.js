@@ -82,6 +82,29 @@ export const HOME_C3_CSS=String.raw`/* C3 Living Gallery extends (does not repla
   outline:2px solid var(--sage);outline-offset:2px
 }
 
+/* Gallery links are subordinate to the painting and cannot imply image approval. */
+.aoH7Screens .aoC3ArtDialog .aoC3ArtConnections{
+  display:flex;flex-wrap:wrap;gap:7px;align-items:center;
+  margin:5px 0 12px;font:12px/1.5 var(--sans);color:var(--mu)
+}
+.aoH7Screens .aoC3ArtDialog [data-c3-art-connections][hidden],
+.aoH7Screens .aoC3ArtDialog [data-c3-art-target-error][hidden]{display:none!important}
+.aoH7Screens .aoC3ArtDialog .aoC3ArtConnections .aoC3ArtRelatedAction{
+  display:inline-flex;align-items:center;margin:2px 2px 2px 0;
+  min-height:44px;padding:8px 12px;border:1px solid var(--ln);
+  border-radius:9px;background:var(--sf2);color:var(--ink);
+  font:500 12px/1.3 var(--sans);text-align:left;cursor:pointer
+}
+.aoH7Screens .aoC3ArtDialog .aoC3ArtRelatedAction:focus-visible{
+  outline:2px solid var(--sage);outline-offset:3px
+}
+.aoH7Screens .aoC3ArtDialog .aoC3ArtRelatedAction:disabled{
+  opacity:.6;cursor:progress
+}
+.aoH7Screens .aoC3ArtDialog [data-c3-art-target-error]{
+  margin:8px 0;color:var(--ink);font:500 12px/1.4 var(--sans)
+}
+
 /* C3 nested Week controls must override inherited H7 general button dimensions. */
 .aoH7Screens .aoH7HomeView .aoH4Upcoming.wkc .aoC3UpcomingCard>.aoC3Info{
  position:absolute!important;right:0!important;top:0!important;z-index:6!important;
