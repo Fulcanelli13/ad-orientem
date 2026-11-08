@@ -1,0 +1,424 @@
+{
+  "schema": "ao-1961-preface-six-short-response-printed-pitch-candidates-v1",
+  "evidenceDate": "2026-11-07",
+  "auditMethod": "Direct visual reading of square-note staff positions in original 1961 Solesmes scans, compared with the stored GABC only after recording the pitch candidates. The higher-resolution CMAA scan has a numbered PDF page reference for every Graduale witness; Liber Usualis has an independent printed plate image.",
+  "criticalLimit": "These are provisional diatonic pitch-position readings, not independent certification of neume shapes, Solesmes rhythmic marks, accents, morae, or ritual tone selection. A second expert reading of each printed staff is not yet recorded.",
+  "counts": {
+    "shortResponseMelodies": 6,
+    "printedWitnessPointers": 12,
+    "printedBooks": 2,
+    "uniqueSourcePlates": 5,
+    "sourceCandidatePitchConcordances": 6,
+    "secondReviewerConfirmed": 0,
+    "rhythmicSignCertifications": 0,
+    "fullNeumeCertifications": 0,
+    "newPublicApprovals": 0
+  },
+  "sourceImages": {
+    "LU109": "https://gregobase.selapa.net/sources/3/220.png",
+    "LU110": "https://gregobase.selapa.net/sources/3/221.png",
+    "GR130": "https://gregobase.selapa.net/sources/2/1007.png",
+    "GR131": "https://gregobase.selapa.net/sources/2/1008.png",
+    "GR132": "https://gregobase.selapa.net/sources/2/1009.png"
+  },
+  "rows": [
+    {
+      "sourceId": 4449,
+      "family": "SOLEMN",
+      "cueId": "AO.SM.C0136",
+      "phrase": "Amen",
+      "printedClefReading": "C_CLEF_LINE_3__PROVISIONAL",
+      "independentlyReadPrintedPitchCandidates": [
+        {
+          "printedSyllable": "A",
+          "diatonicPitches": [
+            "e"
+          ]
+        },
+        {
+          "printedSyllable": "men",
+          "diatonicPitches": [
+            "e",
+            "f"
+          ]
+        }
+      ],
+      "pitchesReferTo": "GABC_DIATONIC_NOTE_NAMES_WITH_C3_CLEF; POSITIONS READ FROM PRINTED STAFF, NOT PERFORMANCE OCTAVES",
+      "witnessChecks": [
+        {
+          "book": "Liber Usualis, Solesmes 1961",
+          "plateUrl": "https://gregobase.selapa.net/sources/3/220.png",
+          "printedPage": "109",
+          "evidence": "Original scanned printed page, inspected visually",
+          "printLegibility": "MODERATE_FOR_NOTEHEAD_POSITION; MARKS_NOT_CERTIFIED",
+          "observerStatus": "FIRST_VISUAL_PITCH_CANDIDATE"
+        },
+        {
+          "book": "Graduale Romanum, Solesmes 1961",
+          "plateUrl": "https://gregobase.selapa.net/sources/2/1007.png",
+          "printedPage": "130*",
+          "evidence": "Original page image + larger second reproduction in CMAA scan",
+          "higherResolutionPdfUrl": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+          "higherResolutionPdfPageOneBased": 132,
+          "printLegibility": "BETTER_FOR_NOTEHEAD_POSITION; MARKS_NOT_CERTIFIED",
+          "observerStatus": "FIRST_VISUAL_PITCH_CANDIDATE"
+        }
+      ],
+      "singleNoteheadAndContourReview": "PRELIMINARY_VISUAL_CONCORDANCE_CANDIDATE",
+      "secondIndependentReview": false,
+      "noteShapeParity": "UNVERIFIED",
+      "rhythmicSignParity": "UNVERIFIED",
+      "publicScoreApproved": false,
+      "decision": "HOLD_FOR_SECOND_VISUAL_REVIEW"
+    },
+    {
+      "sourceId": 4449,
+      "family": "SOLEMN",
+      "cueId": "AO.SM.C0138",
+      "phrase": "Et cum spíritu tuo",
+      "printedClefReading": "C_CLEF_LINE_3__PROVISIONAL",
+      "independentlyReadPrintedPitchCandidates": [
+        {
+          "printedSyllable": "Et",
+          "diatonicPitches": [
+            "e"
+          ]
+        },
+        {
+          "printedSyllable": "cum",
+          "diatonicPitches": [
+            "f"
+          ]
+        },
+        {
+          "printedSyllable": "spí",
+          "diatonicPitches": [
+            "g"
+          ]
+        },
+        {
+          "printedSyllable": "ri",
+          "diatonicPitches": [
+            "e"
+          ]
+        },
+        {
+          "printedSyllable": "tu",
+          "diatonicPitches": [
+            "f"
+          ]
+        },
+        {
+          "printedSyllable": "tu",
+          "diatonicPitches": [
+            "g",
+            "f"
+          ]
+        },
+        {
+          "printedSyllable": "o",
+          "diatonicPitches": [
+            "f"
+          ]
+        }
+      ],
+      "pitchesReferTo": "GABC_DIATONIC_NOTE_NAMES_WITH_C3_CLEF; POSITIONS READ FROM PRINTED STAFF, NOT PERFORMANCE OCTAVES",
+      "witnessChecks": [
+        {
+          "book": "Liber Usualis, Solesmes 1961",
+          "plateUrl": "https://gregobase.selapa.net/sources/3/220.png",
+          "printedPage": "109",
+          "evidence": "Original scanned printed page, inspected visually",
+          "printLegibility": "MODERATE_FOR_NOTEHEAD_POSITION; MARKS_NOT_CERTIFIED",
+          "observerStatus": "FIRST_VISUAL_PITCH_CANDIDATE"
+        },
+        {
+          "book": "Graduale Romanum, Solesmes 1961",
+          "plateUrl": "https://gregobase.selapa.net/sources/2/1008.png",
+          "printedPage": "131*",
+          "evidence": "Original page image + larger second reproduction in CMAA scan",
+          "higherResolutionPdfUrl": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+          "higherResolutionPdfPageOneBased": 133,
+          "printLegibility": "BETTER_FOR_NOTEHEAD_POSITION; MARKS_NOT_CERTIFIED",
+          "observerStatus": "FIRST_VISUAL_PITCH_CANDIDATE"
+        }
+      ],
+      "singleNoteheadAndContourReview": "PRELIMINARY_VISUAL_CONCORDANCE_CANDIDATE",
+      "secondIndependentReview": false,
+      "noteShapeParity": "UNVERIFIED",
+      "rhythmicSignParity": "UNVERIFIED",
+      "publicScoreApproved": false,
+      "decision": "HOLD_FOR_SECOND_VISUAL_REVIEW"
+    },
+    {
+      "sourceId": 4450,
+      "family": "FERIAL",
+      "cueId": "AO.SM.C0136",
+      "phrase": "Amen",
+      "printedClefReading": "C_CLEF_LINE_3__PROVISIONAL",
+      "independentlyReadPrintedPitchCandidates": [
+        {
+          "printedSyllable": "A",
+          "diatonicPitches": [
+            "e"
+          ]
+        },
+        {
+          "printedSyllable": "men",
+          "diatonicPitches": [
+            "e",
+            "f"
+          ]
+        }
+      ],
+      "pitchesReferTo": "GABC_DIATONIC_NOTE_NAMES_WITH_C3_CLEF; POSITIONS READ FROM PRINTED STAFF, NOT PERFORMANCE OCTAVES",
+      "witnessChecks": [
+        {
+          "book": "Liber Usualis, Solesmes 1961",
+          "plateUrl": "https://gregobase.selapa.net/sources/3/220.png",
+          "printedPage": "109",
+          "evidence": "Original scanned printed page, inspected visually",
+          "printLegibility": "MODERATE_FOR_NOTEHEAD_POSITION; MARKS_NOT_CERTIFIED",
+          "observerStatus": "FIRST_VISUAL_PITCH_CANDIDATE"
+        },
+        {
+          "book": "Graduale Romanum, Solesmes 1961",
+          "plateUrl": "https://gregobase.selapa.net/sources/2/1008.png",
+          "printedPage": "131*",
+          "evidence": "Original page image + larger second reproduction in CMAA scan",
+          "higherResolutionPdfUrl": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+          "higherResolutionPdfPageOneBased": 133,
+          "printLegibility": "BETTER_FOR_NOTEHEAD_POSITION; MARKS_NOT_CERTIFIED",
+          "observerStatus": "FIRST_VISUAL_PITCH_CANDIDATE"
+        }
+      ],
+      "singleNoteheadAndContourReview": "PRELIMINARY_VISUAL_CONCORDANCE_CANDIDATE",
+      "secondIndependentReview": false,
+      "noteShapeParity": "UNVERIFIED",
+      "rhythmicSignParity": "UNVERIFIED",
+      "publicScoreApproved": false,
+      "decision": "HOLD_FOR_SECOND_VISUAL_REVIEW"
+    },
+    {
+      "sourceId": 4450,
+      "family": "FERIAL",
+      "cueId": "AO.SM.C0138",
+      "phrase": "Et cum spíritu tuo",
+      "printedClefReading": "C_CLEF_LINE_3__PROVISIONAL",
+      "independentlyReadPrintedPitchCandidates": [
+        {
+          "printedSyllable": "Et",
+          "diatonicPitches": [
+            "e"
+          ]
+        },
+        {
+          "printedSyllable": "cum",
+          "diatonicPitches": [
+            "f"
+          ]
+        },
+        {
+          "printedSyllable": "spí",
+          "diatonicPitches": [
+            "g"
+          ]
+        },
+        {
+          "printedSyllable": "ri",
+          "diatonicPitches": [
+            "e"
+          ]
+        },
+        {
+          "printedSyllable": "tu",
+          "diatonicPitches": [
+            "f"
+          ]
+        },
+        {
+          "printedSyllable": "tu",
+          "diatonicPitches": [
+            "g"
+          ]
+        },
+        {
+          "printedSyllable": "o",
+          "diatonicPitches": [
+            "f"
+          ]
+        }
+      ],
+      "pitchesReferTo": "GABC_DIATONIC_NOTE_NAMES_WITH_C3_CLEF; POSITIONS READ FROM PRINTED STAFF, NOT PERFORMANCE OCTAVES",
+      "witnessChecks": [
+        {
+          "book": "Liber Usualis, Solesmes 1961",
+          "plateUrl": "https://gregobase.selapa.net/sources/3/220.png",
+          "printedPage": "109",
+          "evidence": "Original scanned printed page, inspected visually",
+          "printLegibility": "MODERATE_FOR_NOTEHEAD_POSITION; MARKS_NOT_CERTIFIED",
+          "observerStatus": "FIRST_VISUAL_PITCH_CANDIDATE"
+        },
+        {
+          "book": "Graduale Romanum, Solesmes 1961",
+          "plateUrl": "https://gregobase.selapa.net/sources/2/1008.png",
+          "printedPage": "131*",
+          "evidence": "Original page image + larger second reproduction in CMAA scan",
+          "higherResolutionPdfUrl": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+          "higherResolutionPdfPageOneBased": 133,
+          "printLegibility": "BETTER_FOR_NOTEHEAD_POSITION; MARKS_NOT_CERTIFIED",
+          "observerStatus": "FIRST_VISUAL_PITCH_CANDIDATE"
+        }
+      ],
+      "singleNoteheadAndContourReview": "PRELIMINARY_VISUAL_CONCORDANCE_CANDIDATE",
+      "secondIndependentReview": false,
+      "noteShapeParity": "UNVERIFIED",
+      "rhythmicSignParity": "UNVERIFIED",
+      "publicScoreApproved": false,
+      "decision": "HOLD_FOR_SECOND_VISUAL_REVIEW"
+    },
+    {
+      "sourceId": 4451,
+      "family": "SOLEMNIOR",
+      "cueId": "AO.SM.C0136",
+      "phrase": "Amen",
+      "printedClefReading": "C_CLEF_LINE_3__PROVISIONAL",
+      "independentlyReadPrintedPitchCandidates": [
+        {
+          "printedSyllable": "A",
+          "diatonicPitches": [
+            "e"
+          ]
+        },
+        {
+          "printedSyllable": "men",
+          "diatonicPitches": [
+            "e",
+            "f"
+          ]
+        }
+      ],
+      "pitchesReferTo": "GABC_DIATONIC_NOTE_NAMES_WITH_C3_CLEF; POSITIONS READ FROM PRINTED STAFF, NOT PERFORMANCE OCTAVES",
+      "witnessChecks": [
+        {
+          "book": "Liber Usualis, Solesmes 1961",
+          "plateUrl": "https://gregobase.selapa.net/sources/3/221.png",
+          "printedPage": "110",
+          "evidence": "Original scanned printed page, inspected visually",
+          "printLegibility": "MODERATE_FOR_NOTEHEAD_POSITION; MARKS_NOT_CERTIFIED",
+          "observerStatus": "FIRST_VISUAL_PITCH_CANDIDATE"
+        },
+        {
+          "book": "Graduale Romanum, Solesmes 1961",
+          "plateUrl": "https://gregobase.selapa.net/sources/2/1009.png",
+          "printedPage": "132*",
+          "evidence": "Original page image + larger second reproduction in CMAA scan",
+          "higherResolutionPdfUrl": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+          "higherResolutionPdfPageOneBased": 134,
+          "printLegibility": "BETTER_FOR_NOTEHEAD_POSITION; MARKS_NOT_CERTIFIED",
+          "observerStatus": "FIRST_VISUAL_PITCH_CANDIDATE"
+        }
+      ],
+      "singleNoteheadAndContourReview": "PRELIMINARY_VISUAL_CONCORDANCE_CANDIDATE",
+      "secondIndependentReview": false,
+      "noteShapeParity": "UNVERIFIED",
+      "rhythmicSignParity": "UNVERIFIED",
+      "publicScoreApproved": false,
+      "decision": "HOLD_FOR_SECOND_VISUAL_REVIEW"
+    },
+    {
+      "sourceId": 4451,
+      "family": "SOLEMNIOR",
+      "cueId": "AO.SM.C0138",
+      "phrase": "Et cum spíritu tuo",
+      "printedClefReading": "C_CLEF_LINE_3__PROVISIONAL",
+      "independentlyReadPrintedPitchCandidates": [
+        {
+          "printedSyllable": "Et",
+          "diatonicPitches": [
+            "e"
+          ]
+        },
+        {
+          "printedSyllable": "cum",
+          "diatonicPitches": [
+            "f"
+          ]
+        },
+        {
+          "printedSyllable": "spí",
+          "diatonicPitches": [
+            "g"
+          ]
+        },
+        {
+          "printedSyllable": "ri",
+          "diatonicPitches": [
+            "f"
+          ]
+        },
+        {
+          "printedSyllable": "tu",
+          "diatonicPitches": [
+            "e",
+            "f"
+          ]
+        },
+        {
+          "printedSyllable": "tu",
+          "diatonicPitches": [
+            "g",
+            "f"
+          ]
+        },
+        {
+          "printedSyllable": "o",
+          "diatonicPitches": [
+            "f"
+          ]
+        }
+      ],
+      "pitchesReferTo": "GABC_DIATONIC_NOTE_NAMES_WITH_C3_CLEF; POSITIONS READ FROM PRINTED STAFF, NOT PERFORMANCE OCTAVES",
+      "witnessChecks": [
+        {
+          "book": "Liber Usualis, Solesmes 1961",
+          "plateUrl": "https://gregobase.selapa.net/sources/3/221.png",
+          "printedPage": "110",
+          "evidence": "Original scanned printed page, inspected visually",
+          "printLegibility": "MODERATE_FOR_NOTEHEAD_POSITION; MARKS_NOT_CERTIFIED",
+          "observerStatus": "FIRST_VISUAL_PITCH_CANDIDATE"
+        },
+        {
+          "book": "Graduale Romanum, Solesmes 1961",
+          "plateUrl": "https://gregobase.selapa.net/sources/2/1009.png",
+          "printedPage": "132*",
+          "evidence": "Original page image + larger second reproduction in CMAA scan",
+          "higherResolutionPdfUrl": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+          "higherResolutionPdfPageOneBased": 134,
+          "printLegibility": "BETTER_FOR_NOTEHEAD_POSITION; MARKS_NOT_CERTIFIED",
+          "observerStatus": "FIRST_VISUAL_PITCH_CANDIDATE"
+        }
+      ],
+      "singleNoteheadAndContourReview": "PRELIMINARY_VISUAL_CONCORDANCE_CANDIDATE",
+      "secondIndependentReview": false,
+      "noteShapeParity": "UNVERIFIED",
+      "rhythmicSignParity": "UNVERIFIED",
+      "publicScoreApproved": false,
+      "decision": "HOLD_FOR_SECOND_VISUAL_REVIEW"
+    }
+  ],
+  "specialRisks": [
+    {
+      "cueId": "AO.SM.C0136",
+      "reason": "The A-men final two-note figure and its printed rhythmic dots need neume-by-neume dot/episema review in each tone."
+    },
+    {
+      "cueId": "AO.SM.C0138",
+      "reason": "Solemn tu-o uses a descending two-note group; Ferial has a separate single-note tu; Most Solemn includes two-note tu groups. Pitch differences can be confused when comparing only group counts."
+    },
+    {
+      "sourceId": 4451,
+      "reason": "Editorial history of #4451 modifies spacing around quilisma elsewhere in the Preface dialogue; preserve source and printed staff distinction."
+    }
+  ]
+}

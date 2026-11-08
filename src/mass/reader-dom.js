@@ -398,6 +398,7 @@ background:rgba(225,207,145,.07);color:#ecf0e8;font:600 11px/1.3 var(--ao-font-u
 .ao-reader-paragraph[data-chant-phrased="true"] .ao-line-secondary{white-space:pre-line}
 .ao-speaker-turn{display:block;margin:0 0 6px;font:650 9px/1.25 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.10em;text-transform:uppercase;color:var(--ao-mass-accent-text)}
 .ao-oration-label{display:block;margin:0 0 7px;font:600 10px/1.3 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.055em;color:var(--ao-mass-accent-text)}
+.ao-verified-oration-count{font:600 11px/1.45 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.025em;color:var(--ao-mass-accent-text);border-inline-start:2px solid var(--ao-mass-accent-text);padding:7px 10px;margin:2px 0 12px;background:color-mix(in srgb,var(--ao-mass-accent) 8%,transparent)}
 .ao-reader-shell[data-mode="MISSAL"] .ao-oration-label{grid-column:1 / -1}
 .ao-reader-shell:not([data-mode="LIVE"]) .ao-speaker-turn{display:none}
 .ao-reader-paragraph[data-kind="RESPONSE"]{padding-left:14px;border-left:2px solid rgba(200,217,233,.50);color:#dbe5ee}
@@ -2047,6 +2048,7 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
       speakerEvidence:p.speakerEvidence??null,
       liturgicalGroup:p.liturgicalGroup??null,
       prayerRole:p.prayerRole??null,
+      orationGroupIndex:Number.isInteger(p.orationGroupIndex)?p.orationGroupIndex:null,
       languageOwner:p.languageOwner??null,
       sourceBlockId:p.sourceBlockId??null,
       sectionBoundaryBefore:p.sectionBoundaryBefore??null,
@@ -4701,6 +4703,15 @@ export function createReaderDomAdapter({
         const multiOration=current.paragraphs.filter(p=>p.prayerRole=== "PRINCIPAL_ORATION"||
           p.prayerRole==="FIRST_COMMEMORATION"||p.prayerRole==="SECOND_COMMEMORATION"||
           p.prayerRole==="ADDITIONAL_ORATION"||p.prayerRole==="ORATION_UNDER_ONE_CONCLUSION").length>1;
+        const papalOration=current.paragraphs.some(p=>
+          p.prayerRole==="ADDITIONAL_ORATION"&&
+          p.sourcePath==="1962_MISSALE_TABULA_ORATIONUM_PRO_PAPA");
+        const sourceOrationField=current.paragraphs.find(p=>
+          p.prayerRole==="PRINCIPAL_ORATION")?.liturgicalGroup?.split(".")?.[0];
+        const orationNames={
+          COLLECT_SET:["Collect","Collecte"],SECRET_SET:["Secret","Secrète"],
+          POSTCOMMUNION_SET:["Postcommunion","Postcommunion"]
+        };
         const frenchReader=String(prepared?.readerPreferences?.language??"en").toLowerCase().startsWith("fr");
         const orationLabels={
           PRINCIPAL_ORATION:frenchReader?"Oraison principale":"Principal prayer",
@@ -4709,6 +4720,22 @@ export function createReaderDomAdapter({
           SECOND_COMMEMORATION:frenchReader?"Deuxième commémoraison":"Second commemoration",
           ORATION_UNDER_ONE_CONCLUSION:frenchReader?"Oraison à conclusion commune":"Prayer under one conclusion",
         };
+        if(papalOration&&multiOration&&orationNames[sourceOrationField]){
+          // The two prayers are in ONE of the established 65 reader cards,
+          // not separate Mass steps. Make the independently sourced second
+          // papal oration unmistakable even before scrolling on a phone.
+          const notice=doc.createElement("p");
+          notice.className="ao-verified-oration-count";
+          notice.dataset.verifiedOrationCount="2";
+          notice.textContent=frenchReader
+            ?"Deux "+(sourceOrationField==="POSTCOMMUNION_SET"?"postcommunions":
+              sourceOrationField==="SECRET_SET"?"secrètes":"collectes")+
+              " · la seconde est pour le Pape, plus bas sur cette carte."
+            :"Two "+(sourceOrationField==="POSTCOMMUNION_SET"?"Postcommunions":
+              sourceOrationField==="SECRET_SET"?"Secrets":"Collects")+
+              " · the second is the Prayer for the Pope, farther down this card.";
+          body.append(notice);
+        }
         const decorateThisSection=/\b(Introit|Gloria|Credo|Preface|Canon|Consecration|Last Gospel)\b/i.test(current.sectionTitle);
         // The sermon is a genuine non-liturgical pause, not a missing prayer.
         // Give the faithful a simple bilingual prompt; never invent the
@@ -4766,6 +4793,8 @@ export function createReaderDomAdapter({
           if(p.speakerRole)node.dataset.speakerRole=p.speakerRole;
           if(p.liturgicalGroup)node.dataset.liturgicalGroup=p.liturgicalGroup;
           if(p.prayerRole)node.dataset.prayerRole=p.prayerRole;
+          if(Number.isInteger(p.orationGroupIndex))
+            node.dataset.orationGroupIndex=String(p.orationGroupIndex);
           if(p.sourceBlockId)node.dataset.sourceBlockId=p.sourceBlockId;
           if(p.sectionBoundaryBefore)node.dataset.sectionBoundary=p.sectionBoundaryBefore;
           if(p.languageOwner==="SOURCE_PUBLIC_LIVE_INVITATION")
@@ -4810,9 +4839,17 @@ export function createReaderDomAdapter({
              p.prayerRole!=="PRINCIPAL_ORATION")){
             orationCaption=doc.createElement("small");
             orationCaption.className="ao-oration-label";
-            orationCaption.textContent=p.prayerRole==="ORATION_UNDER_ONE_CONCLUSION"&&
-              String(p.id).endsWith(".MISSION")
-                ?(frenchReader?"Pour les Missions · même conclusion":"For the Missions · one shared conclusion")
+            const named=orationNames[sourceOrationField];
+            orationCaption.textContent=papalOration&&named&&
+              [1,2].includes(p.orationGroupIndex)
+              ?p.orationGroupIndex===1
+                ?(frenchReader?"Première "+named[1]:"First "+named[0])
+                :(frenchReader?"Seconde "+named[1]+" · Pour le Pape":
+                  "Second "+named[0]+" · Prayer for the Pope")
+              :p.prayerRole==="ORATION_UNDER_ONE_CONCLUSION"&&
+                String(p.id).endsWith(".MISSION")
+                ?(frenchReader?"Pour les Missions · même conclusion":
+                  "For the Missions · one shared conclusion")
                 :orationLabels[p.prayerRole];
             node.append(orationCaption);
           }

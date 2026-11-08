@@ -1,0 +1,663 @@
+{
+  "schema": "ao-preface-1961-independent-printed-phrase-visual-preflight-v1",
+  "evidenceDate": "2026-11-07",
+  "method": "Direct visual inspection of all five original 1961 page images; phrase text was recorded separately from source GABC, while musical notes were not transcribed at high enough resolution to certify.",
+  "counts": {
+    "responseTonePairs": 12,
+    "originalBookWitnesses": 24,
+    "distinctPrintedPages": 5,
+    "independentPrintedPhraseReadings": 24,
+    "amenMotifPreflights": 6,
+    "independentMusicalCertifications": 0,
+    "newPublicApprovals": 0
+  },
+  "scope": "Research only; the two already-approved public Ite VIII excerpts are not changed.",
+  "sourcePlates": {
+    "LU109": "https://gregobase.selapa.net/sources/3/220.png",
+    "LU110": "https://gregobase.selapa.net/sources/3/221.png",
+    "GR130": "https://gregobase.selapa.net/sources/2/1007.png",
+    "GR131": "https://gregobase.selapa.net/sources/2/1008.png",
+    "GR132": "https://gregobase.selapa.net/sources/2/1009.png"
+  },
+  "rubricalPrintEvidence": {
+    "source": "Graduale Romanum (Solesmes 1961)",
+    "solemn": {
+      "page": "130*",
+      "url": "https://gregobase.selapa.net/sources/2/1007.png",
+      "printedSection": "1. Tonus solemnis",
+      "rubricGroups": [
+        {
+          "key": "SUNDAY",
+          "text": "in dominicis",
+          "application": "SOURCE_SCOPE_ONLY"
+        },
+        {
+          "key": "FESTIVE_OR_SATURDAY_BVM",
+          "text": "in Missis festivis et in Missa de Officio S. Mariae in sabbato",
+          "application": "SOURCE_SCOPE_ONLY"
+        },
+        {
+          "key": "CHRISTMAS_OR_PENTECOST_VIGIL",
+          "text": "in vigiliis Nativitatis Domini et Pentecostes",
+          "application": "SOURCE_SCOPE_ONLY"
+        },
+        {
+          "key": "HOLY_THURSDAY_OR_EASTER_VIGIL",
+          "text": "feria V. in Cena Domini et in Missa Vigiliae paschalis",
+          "application": "SOURCE_SCOPE_ONLY"
+        },
+        {
+          "key": "OCTAVE",
+          "text": "per octavas",
+          "application": "SOURCE_SCOPE_ONLY"
+        },
+        {
+          "key": "VOTIVE_CLASSES_I_II_III",
+          "text": "in Missis votivis I., II. et III. classis",
+          "application": "SOURCE_SCOPE_ONLY"
+        }
+      ]
+    },
+    "ferial": {
+      "page": "131*",
+      "url": "https://gregobase.selapa.net/sources/2/1008.png",
+      "printedSection": "2. Tonus ferialis",
+      "rubricGroups": [
+        {
+          "key": "COMMEMORATION",
+          "text": "in Commemorationibus",
+          "application": "SOURCE_SCOPE_ONLY"
+        },
+        {
+          "key": "FERIA",
+          "text": "in feriis",
+          "application": "SOURCE_SCOPE_ONLY"
+        },
+        {
+          "key": "VIGIL_CLASSES_II_III",
+          "text": "in vigiliis II. et III. classis",
+          "application": "SOURCE_SCOPE_ONLY"
+        },
+        {
+          "key": "VOTIVE_CLASS_IV",
+          "text": "in Missis votivis IV. classis",
+          "application": "SOURCE_SCOPE_ONLY"
+        },
+        {
+          "key": "MASSES_FOR_THE_DEAD",
+          "text": "in Missis defunctorum",
+          "application": "SOURCE_SCOPE_ONLY"
+        }
+      ]
+    },
+    "solemnior": {
+      "page": "132*",
+      "url": "https://gregobase.selapa.net/sources/2/1009.png",
+      "printedSection": "3. Tonus solemnior",
+      "usageDirectiveOnCitedPage": "NONE_SEEN_ON_THIS_PAGE",
+      "automaticUseAuthorized": false
+    }
+  },
+  "normalizedLatinPolicy": "Transcriptions omit printed syllable hyphens and editorial accents; printed 'justum' maps to reader/source 'iustum' orthographically without changing musical syllables. These normalizations are not evidence of print-neume equality.",
+  "witnessReadings": [
+    {
+      "sourceId": 4449,
+      "toneFamily": "SOLEMN",
+      "sourceSection": "1. Tonus solemnis",
+      "cueId": "AO.SM.C0136",
+      "printedReading": "Amen.",
+      "phraseIdentity": "Amen",
+      "printedOrthography": "AS_PRINTED",
+      "printedWitness": {
+        "book": "LU 1961",
+        "page": "109",
+        "plateUrl": "https://gregobase.selapa.net/sources/3/220.png"
+      },
+      "inspectionStatus": "PRINTED_AMEN_MOTIF_LOCATED",
+      "notesOnLegibility": "Response Amen is legible with separate A- and -men alignment; a short final note grouping is visible, but its pitch count, intervals, and individual Solesmes signs have not been independently transcribed.",
+      "independentPrintedPitchTranscription": null,
+      "independentPrintedNeumeTranscription": null,
+      "independentPrintedRhythmicSignTranscription": null,
+      "musicalParity": "NOT_CERTIFIED",
+      "sourceGabcComparison": "DO_NOT_DERIVE_PRINT_FROM_GABC",
+      "publicationDecision": "DO_NOT_PUBLISH"
+    },
+    {
+      "sourceId": 4449,
+      "toneFamily": "SOLEMN",
+      "sourceSection": "1. Tonus solemnis",
+      "cueId": "AO.SM.C0136",
+      "printedReading": "Amen.",
+      "phraseIdentity": "Amen",
+      "printedOrthography": "AS_PRINTED",
+      "printedWitness": {
+        "book": "GR 1961",
+        "page": "130*",
+        "plateUrl": "https://gregobase.selapa.net/sources/2/1007.png"
+      },
+      "inspectionStatus": "PRINTED_AMEN_MOTIF_LOCATED",
+      "notesOnLegibility": "Response Amen is legible with separate A- and -men alignment; a short final note grouping is visible, but its pitch count, intervals, and individual Solesmes signs have not been independently transcribed.",
+      "independentPrintedPitchTranscription": null,
+      "independentPrintedNeumeTranscription": null,
+      "independentPrintedRhythmicSignTranscription": null,
+      "musicalParity": "NOT_CERTIFIED",
+      "sourceGabcComparison": "DO_NOT_DERIVE_PRINT_FROM_GABC",
+      "publicationDecision": "DO_NOT_PUBLISH"
+    },
+    {
+      "sourceId": 4449,
+      "toneFamily": "SOLEMN",
+      "sourceSection": "1. Tonus solemnis",
+      "cueId": "AO.SM.C0138",
+      "printedReading": "Et cum spiritu tuo.",
+      "phraseIdentity": "Et cum spiritu tuo",
+      "printedOrthography": "ACCENTS_HYPHENATION_OMITTED_FROM_TRANSCRIPTION",
+      "printedWitness": {
+        "book": "LU 1961",
+        "page": "109",
+        "plateUrl": "https://gregobase.selapa.net/sources/3/220.png"
+      },
+      "inspectionStatus": "PRINTED_PHRASE_TEXT_LOCATED",
+      "notesOnLegibility": "Response words are legible on the named printed staff; no independent pitch, neume-shape, or rhythmic-sign parity is claimed.",
+      "independentPrintedPitchTranscription": null,
+      "independentPrintedNeumeTranscription": null,
+      "independentPrintedRhythmicSignTranscription": null,
+      "musicalParity": "NOT_CERTIFIED",
+      "sourceGabcComparison": "DO_NOT_DERIVE_PRINT_FROM_GABC",
+      "publicationDecision": "DO_NOT_PUBLISH"
+    },
+    {
+      "sourceId": 4449,
+      "toneFamily": "SOLEMN",
+      "sourceSection": "1. Tonus solemnis",
+      "cueId": "AO.SM.C0138",
+      "printedReading": "Et cum spiritu tuo.",
+      "phraseIdentity": "Et cum spiritu tuo",
+      "printedOrthography": "ACCENTS_HYPHENATION_OMITTED_FROM_TRANSCRIPTION",
+      "printedWitness": {
+        "book": "GR 1961",
+        "page": "131*",
+        "plateUrl": "https://gregobase.selapa.net/sources/2/1008.png"
+      },
+      "inspectionStatus": "PRINTED_PHRASE_TEXT_LOCATED",
+      "notesOnLegibility": "Response words are legible on the named printed staff; no independent pitch, neume-shape, or rhythmic-sign parity is claimed.",
+      "independentPrintedPitchTranscription": null,
+      "independentPrintedNeumeTranscription": null,
+      "independentPrintedRhythmicSignTranscription": null,
+      "musicalParity": "NOT_CERTIFIED",
+      "sourceGabcComparison": "DO_NOT_DERIVE_PRINT_FROM_GABC",
+      "publicationDecision": "DO_NOT_PUBLISH"
+    },
+    {
+      "sourceId": 4449,
+      "toneFamily": "SOLEMN",
+      "sourceSection": "1. Tonus solemnis",
+      "cueId": "AO.SM.C0140",
+      "printedReading": "Habemus ad Dominum.",
+      "phraseIdentity": "Habemus ad Dominum",
+      "printedOrthography": "ACCENTS_HYPHENATION_OMITTED_FROM_TRANSCRIPTION",
+      "printedWitness": {
+        "book": "LU 1961",
+        "page": "109",
+        "plateUrl": "https://gregobase.selapa.net/sources/3/220.png"
+      },
+      "inspectionStatus": "PRINTED_PHRASE_TEXT_LOCATED",
+      "notesOnLegibility": "Response words are legible on the named printed staff; no independent pitch, neume-shape, or rhythmic-sign parity is claimed.",
+      "independentPrintedPitchTranscription": null,
+      "independentPrintedNeumeTranscription": null,
+      "independentPrintedRhythmicSignTranscription": null,
+      "musicalParity": "NOT_CERTIFIED",
+      "sourceGabcComparison": "DO_NOT_DERIVE_PRINT_FROM_GABC",
+      "publicationDecision": "DO_NOT_PUBLISH"
+    },
+    {
+      "sourceId": 4449,
+      "toneFamily": "SOLEMN",
+      "sourceSection": "1. Tonus solemnis",
+      "cueId": "AO.SM.C0140",
+      "printedReading": "Habemus ad Dominum.",
+      "phraseIdentity": "Habemus ad Dominum",
+      "printedOrthography": "ACCENTS_HYPHENATION_OMITTED_FROM_TRANSCRIPTION",
+      "printedWitness": {
+        "book": "GR 1961",
+        "page": "131*",
+        "plateUrl": "https://gregobase.selapa.net/sources/2/1008.png"
+      },
+      "inspectionStatus": "PRINTED_PHRASE_TEXT_LOCATED",
+      "notesOnLegibility": "Response words are legible on the named printed staff; no independent pitch, neume-shape, or rhythmic-sign parity is claimed.",
+      "independentPrintedPitchTranscription": null,
+      "independentPrintedNeumeTranscription": null,
+      "independentPrintedRhythmicSignTranscription": null,
+      "musicalParity": "NOT_CERTIFIED",
+      "sourceGabcComparison": "DO_NOT_DERIVE_PRINT_FROM_GABC",
+      "publicationDecision": "DO_NOT_PUBLISH"
+    },
+    {
+      "sourceId": 4449,
+      "toneFamily": "SOLEMN",
+      "sourceSection": "1. Tonus solemnis",
+      "cueId": "AO.SM.C0143",
+      "printedReading": "Dignum et justum est.",
+      "phraseIdentity": "Dignum et justum est",
+      "printedOrthography": "PRINTED_JUSTUM__READER_IUSTUM",
+      "printedWitness": {
+        "book": "LU 1961",
+        "page": "109",
+        "plateUrl": "https://gregobase.selapa.net/sources/3/220.png"
+      },
+      "inspectionStatus": "PRINTED_PHRASE_TEXT_LOCATED",
+      "notesOnLegibility": "Response words are legible on the named printed staff; no independent pitch, neume-shape, or rhythmic-sign parity is claimed.",
+      "independentPrintedPitchTranscription": null,
+      "independentPrintedNeumeTranscription": null,
+      "independentPrintedRhythmicSignTranscription": null,
+      "musicalParity": "NOT_CERTIFIED",
+      "sourceGabcComparison": "DO_NOT_DERIVE_PRINT_FROM_GABC",
+      "publicationDecision": "DO_NOT_PUBLISH"
+    },
+    {
+      "sourceId": 4449,
+      "toneFamily": "SOLEMN",
+      "sourceSection": "1. Tonus solemnis",
+      "cueId": "AO.SM.C0143",
+      "printedReading": "Dignum et justum est.",
+      "phraseIdentity": "Dignum et justum est",
+      "printedOrthography": "PRINTED_JUSTUM__READER_IUSTUM",
+      "printedWitness": {
+        "book": "GR 1961",
+        "page": "131*",
+        "plateUrl": "https://gregobase.selapa.net/sources/2/1008.png"
+      },
+      "inspectionStatus": "PRINTED_PHRASE_TEXT_LOCATED",
+      "notesOnLegibility": "Response words are legible on the named printed staff; no independent pitch, neume-shape, or rhythmic-sign parity is claimed.",
+      "independentPrintedPitchTranscription": null,
+      "independentPrintedNeumeTranscription": null,
+      "independentPrintedRhythmicSignTranscription": null,
+      "musicalParity": "NOT_CERTIFIED",
+      "sourceGabcComparison": "DO_NOT_DERIVE_PRINT_FROM_GABC",
+      "publicationDecision": "DO_NOT_PUBLISH"
+    },
+    {
+      "sourceId": 4450,
+      "toneFamily": "FERIAL",
+      "sourceSection": "2. Tonus ferialis",
+      "cueId": "AO.SM.C0136",
+      "printedReading": "Amen.",
+      "phraseIdentity": "Amen",
+      "printedOrthography": "AS_PRINTED",
+      "printedWitness": {
+        "book": "LU 1961",
+        "page": "109",
+        "plateUrl": "https://gregobase.selapa.net/sources/3/220.png"
+      },
+      "inspectionStatus": "PRINTED_AMEN_MOTIF_LOCATED",
+      "notesOnLegibility": "Response Amen is legible with separate A- and -men alignment; a short final note grouping is visible, but its pitch count, intervals, and individual Solesmes signs have not been independently transcribed.",
+      "independentPrintedPitchTranscription": null,
+      "independentPrintedNeumeTranscription": null,
+      "independentPrintedRhythmicSignTranscription": null,
+      "musicalParity": "NOT_CERTIFIED",
+      "sourceGabcComparison": "DO_NOT_DERIVE_PRINT_FROM_GABC",
+      "publicationDecision": "DO_NOT_PUBLISH"
+    },
+    {
+      "sourceId": 4450,
+      "toneFamily": "FERIAL",
+      "sourceSection": "2. Tonus ferialis",
+      "cueId": "AO.SM.C0136",
+      "printedReading": "Amen.",
+      "phraseIdentity": "Amen",
+      "printedOrthography": "AS_PRINTED",
+      "printedWitness": {
+        "book": "GR 1961",
+        "page": "131*",
+        "plateUrl": "https://gregobase.selapa.net/sources/2/1008.png"
+      },
+      "inspectionStatus": "PRINTED_AMEN_MOTIF_LOCATED",
+      "notesOnLegibility": "Response Amen is legible with separate A- and -men alignment; a short final note grouping is visible, but its pitch count, intervals, and individual Solesmes signs have not been independently transcribed.",
+      "independentPrintedPitchTranscription": null,
+      "independentPrintedNeumeTranscription": null,
+      "independentPrintedRhythmicSignTranscription": null,
+      "musicalParity": "NOT_CERTIFIED",
+      "sourceGabcComparison": "DO_NOT_DERIVE_PRINT_FROM_GABC",
+      "publicationDecision": "DO_NOT_PUBLISH"
+    },
+    {
+      "sourceId": 4450,
+      "toneFamily": "FERIAL",
+      "sourceSection": "2. Tonus ferialis",
+      "cueId": "AO.SM.C0138",
+      "printedReading": "Et cum spiritu tuo.",
+      "phraseIdentity": "Et cum spiritu tuo",
+      "printedOrthography": "ACCENTS_HYPHENATION_OMITTED_FROM_TRANSCRIPTION",
+      "printedWitness": {
+        "book": "LU 1961",
+        "page": "109",
+        "plateUrl": "https://gregobase.selapa.net/sources/3/220.png"
+      },
+      "inspectionStatus": "PRINTED_PHRASE_TEXT_LOCATED",
+      "notesOnLegibility": "Response words are legible on the named printed staff; no independent pitch, neume-shape, or rhythmic-sign parity is claimed.",
+      "independentPrintedPitchTranscription": null,
+      "independentPrintedNeumeTranscription": null,
+      "independentPrintedRhythmicSignTranscription": null,
+      "musicalParity": "NOT_CERTIFIED",
+      "sourceGabcComparison": "DO_NOT_DERIVE_PRINT_FROM_GABC",
+      "publicationDecision": "DO_NOT_PUBLISH"
+    },
+    {
+      "sourceId": 4450,
+      "toneFamily": "FERIAL",
+      "sourceSection": "2. Tonus ferialis",
+      "cueId": "AO.SM.C0138",
+      "printedReading": "Et cum spiritu tuo.",
+      "phraseIdentity": "Et cum spiritu tuo",
+      "printedOrthography": "ACCENTS_HYPHENATION_OMITTED_FROM_TRANSCRIPTION",
+      "printedWitness": {
+        "book": "GR 1961",
+        "page": "131*",
+        "plateUrl": "https://gregobase.selapa.net/sources/2/1008.png"
+      },
+      "inspectionStatus": "PRINTED_PHRASE_TEXT_LOCATED",
+      "notesOnLegibility": "Response words are legible on the named printed staff; no independent pitch, neume-shape, or rhythmic-sign parity is claimed.",
+      "independentPrintedPitchTranscription": null,
+      "independentPrintedNeumeTranscription": null,
+      "independentPrintedRhythmicSignTranscription": null,
+      "musicalParity": "NOT_CERTIFIED",
+      "sourceGabcComparison": "DO_NOT_DERIVE_PRINT_FROM_GABC",
+      "publicationDecision": "DO_NOT_PUBLISH"
+    },
+    {
+      "sourceId": 4450,
+      "toneFamily": "FERIAL",
+      "sourceSection": "2. Tonus ferialis",
+      "cueId": "AO.SM.C0140",
+      "printedReading": "Habemus ad Dominum.",
+      "phraseIdentity": "Habemus ad Dominum",
+      "printedOrthography": "ACCENTS_HYPHENATION_OMITTED_FROM_TRANSCRIPTION",
+      "printedWitness": {
+        "book": "LU 1961",
+        "page": "109",
+        "plateUrl": "https://gregobase.selapa.net/sources/3/220.png"
+      },
+      "inspectionStatus": "PRINTED_PHRASE_TEXT_LOCATED",
+      "notesOnLegibility": "Response words are legible on the named printed staff; no independent pitch, neume-shape, or rhythmic-sign parity is claimed.",
+      "independentPrintedPitchTranscription": null,
+      "independentPrintedNeumeTranscription": null,
+      "independentPrintedRhythmicSignTranscription": null,
+      "musicalParity": "NOT_CERTIFIED",
+      "sourceGabcComparison": "DO_NOT_DERIVE_PRINT_FROM_GABC",
+      "publicationDecision": "DO_NOT_PUBLISH"
+    },
+    {
+      "sourceId": 4450,
+      "toneFamily": "FERIAL",
+      "sourceSection": "2. Tonus ferialis",
+      "cueId": "AO.SM.C0140",
+      "printedReading": "Habemus ad Dominum.",
+      "phraseIdentity": "Habemus ad Dominum",
+      "printedOrthography": "ACCENTS_HYPHENATION_OMITTED_FROM_TRANSCRIPTION",
+      "printedWitness": {
+        "book": "GR 1961",
+        "page": "131*",
+        "plateUrl": "https://gregobase.selapa.net/sources/2/1008.png"
+      },
+      "inspectionStatus": "PRINTED_PHRASE_TEXT_LOCATED",
+      "notesOnLegibility": "Response words are legible on the named printed staff; no independent pitch, neume-shape, or rhythmic-sign parity is claimed.",
+      "independentPrintedPitchTranscription": null,
+      "independentPrintedNeumeTranscription": null,
+      "independentPrintedRhythmicSignTranscription": null,
+      "musicalParity": "NOT_CERTIFIED",
+      "sourceGabcComparison": "DO_NOT_DERIVE_PRINT_FROM_GABC",
+      "publicationDecision": "DO_NOT_PUBLISH"
+    },
+    {
+      "sourceId": 4450,
+      "toneFamily": "FERIAL",
+      "sourceSection": "2. Tonus ferialis",
+      "cueId": "AO.SM.C0143",
+      "printedReading": "Dignum et justum est.",
+      "phraseIdentity": "Dignum et justum est",
+      "printedOrthography": "PRINTED_JUSTUM__READER_IUSTUM",
+      "printedWitness": {
+        "book": "LU 1961",
+        "page": "109",
+        "plateUrl": "https://gregobase.selapa.net/sources/3/220.png"
+      },
+      "inspectionStatus": "PRINTED_PHRASE_TEXT_LOCATED",
+      "notesOnLegibility": "Response words are legible on the named printed staff; no independent pitch, neume-shape, or rhythmic-sign parity is claimed.",
+      "independentPrintedPitchTranscription": null,
+      "independentPrintedNeumeTranscription": null,
+      "independentPrintedRhythmicSignTranscription": null,
+      "musicalParity": "NOT_CERTIFIED",
+      "sourceGabcComparison": "DO_NOT_DERIVE_PRINT_FROM_GABC",
+      "publicationDecision": "DO_NOT_PUBLISH"
+    },
+    {
+      "sourceId": 4450,
+      "toneFamily": "FERIAL",
+      "sourceSection": "2. Tonus ferialis",
+      "cueId": "AO.SM.C0143",
+      "printedReading": "Dignum et justum est.",
+      "phraseIdentity": "Dignum et justum est",
+      "printedOrthography": "PRINTED_JUSTUM__READER_IUSTUM",
+      "printedWitness": {
+        "book": "GR 1961",
+        "page": "131*",
+        "plateUrl": "https://gregobase.selapa.net/sources/2/1008.png"
+      },
+      "inspectionStatus": "PRINTED_PHRASE_TEXT_LOCATED",
+      "notesOnLegibility": "Response words are legible on the named printed staff; no independent pitch, neume-shape, or rhythmic-sign parity is claimed.",
+      "independentPrintedPitchTranscription": null,
+      "independentPrintedNeumeTranscription": null,
+      "independentPrintedRhythmicSignTranscription": null,
+      "musicalParity": "NOT_CERTIFIED",
+      "sourceGabcComparison": "DO_NOT_DERIVE_PRINT_FROM_GABC",
+      "publicationDecision": "DO_NOT_PUBLISH"
+    },
+    {
+      "sourceId": 4451,
+      "toneFamily": "SOLEMNIOR",
+      "sourceSection": "3. Tonus solemnior",
+      "cueId": "AO.SM.C0136",
+      "printedReading": "Amen.",
+      "phraseIdentity": "Amen",
+      "printedOrthography": "AS_PRINTED",
+      "printedWitness": {
+        "book": "LU 1961",
+        "page": "110",
+        "plateUrl": "https://gregobase.selapa.net/sources/3/221.png"
+      },
+      "inspectionStatus": "PRINTED_AMEN_MOTIF_LOCATED",
+      "notesOnLegibility": "Response Amen is legible with separate A- and -men alignment; a short final note grouping is visible, but its pitch count, intervals, and individual Solesmes signs have not been independently transcribed.",
+      "independentPrintedPitchTranscription": null,
+      "independentPrintedNeumeTranscription": null,
+      "independentPrintedRhythmicSignTranscription": null,
+      "musicalParity": "NOT_CERTIFIED",
+      "sourceGabcComparison": "DO_NOT_DERIVE_PRINT_FROM_GABC",
+      "publicationDecision": "DO_NOT_PUBLISH"
+    },
+    {
+      "sourceId": 4451,
+      "toneFamily": "SOLEMNIOR",
+      "sourceSection": "3. Tonus solemnior",
+      "cueId": "AO.SM.C0136",
+      "printedReading": "Amen.",
+      "phraseIdentity": "Amen",
+      "printedOrthography": "AS_PRINTED",
+      "printedWitness": {
+        "book": "GR 1961",
+        "page": "132*",
+        "plateUrl": "https://gregobase.selapa.net/sources/2/1009.png"
+      },
+      "inspectionStatus": "PRINTED_AMEN_MOTIF_LOCATED",
+      "notesOnLegibility": "Response Amen is legible with separate A- and -men alignment; a short final note grouping is visible, but its pitch count, intervals, and individual Solesmes signs have not been independently transcribed.",
+      "independentPrintedPitchTranscription": null,
+      "independentPrintedNeumeTranscription": null,
+      "independentPrintedRhythmicSignTranscription": null,
+      "musicalParity": "NOT_CERTIFIED",
+      "sourceGabcComparison": "DO_NOT_DERIVE_PRINT_FROM_GABC",
+      "publicationDecision": "DO_NOT_PUBLISH"
+    },
+    {
+      "sourceId": 4451,
+      "toneFamily": "SOLEMNIOR",
+      "sourceSection": "3. Tonus solemnior",
+      "cueId": "AO.SM.C0138",
+      "printedReading": "Et cum spiritu tuo.",
+      "phraseIdentity": "Et cum spiritu tuo",
+      "printedOrthography": "ACCENTS_HYPHENATION_OMITTED_FROM_TRANSCRIPTION",
+      "printedWitness": {
+        "book": "LU 1961",
+        "page": "110",
+        "plateUrl": "https://gregobase.selapa.net/sources/3/221.png"
+      },
+      "inspectionStatus": "PRINTED_PHRASE_TEXT_LOCATED",
+      "notesOnLegibility": "Response words are legible on the named printed staff; no independent pitch, neume-shape, or rhythmic-sign parity is claimed.",
+      "independentPrintedPitchTranscription": null,
+      "independentPrintedNeumeTranscription": null,
+      "independentPrintedRhythmicSignTranscription": null,
+      "musicalParity": "NOT_CERTIFIED",
+      "sourceGabcComparison": "DO_NOT_DERIVE_PRINT_FROM_GABC",
+      "publicationDecision": "DO_NOT_PUBLISH"
+    },
+    {
+      "sourceId": 4451,
+      "toneFamily": "SOLEMNIOR",
+      "sourceSection": "3. Tonus solemnior",
+      "cueId": "AO.SM.C0138",
+      "printedReading": "Et cum spiritu tuo.",
+      "phraseIdentity": "Et cum spiritu tuo",
+      "printedOrthography": "ACCENTS_HYPHENATION_OMITTED_FROM_TRANSCRIPTION",
+      "printedWitness": {
+        "book": "GR 1961",
+        "page": "132*",
+        "plateUrl": "https://gregobase.selapa.net/sources/2/1009.png"
+      },
+      "inspectionStatus": "PRINTED_PHRASE_TEXT_LOCATED",
+      "notesOnLegibility": "Response words are legible on the named printed staff; no independent pitch, neume-shape, or rhythmic-sign parity is claimed.",
+      "independentPrintedPitchTranscription": null,
+      "independentPrintedNeumeTranscription": null,
+      "independentPrintedRhythmicSignTranscription": null,
+      "musicalParity": "NOT_CERTIFIED",
+      "sourceGabcComparison": "DO_NOT_DERIVE_PRINT_FROM_GABC",
+      "publicationDecision": "DO_NOT_PUBLISH"
+    },
+    {
+      "sourceId": 4451,
+      "toneFamily": "SOLEMNIOR",
+      "sourceSection": "3. Tonus solemnior",
+      "cueId": "AO.SM.C0140",
+      "printedReading": "Habemus ad Dominum.",
+      "phraseIdentity": "Habemus ad Dominum",
+      "printedOrthography": "ACCENTS_HYPHENATION_OMITTED_FROM_TRANSCRIPTION",
+      "printedWitness": {
+        "book": "LU 1961",
+        "page": "110",
+        "plateUrl": "https://gregobase.selapa.net/sources/3/221.png"
+      },
+      "inspectionStatus": "PRINTED_PHRASE_TEXT_LOCATED",
+      "notesOnLegibility": "Response words are legible on the named printed staff; no independent pitch, neume-shape, or rhythmic-sign parity is claimed.",
+      "independentPrintedPitchTranscription": null,
+      "independentPrintedNeumeTranscription": null,
+      "independentPrintedRhythmicSignTranscription": null,
+      "musicalParity": "NOT_CERTIFIED",
+      "sourceGabcComparison": "DO_NOT_DERIVE_PRINT_FROM_GABC",
+      "publicationDecision": "DO_NOT_PUBLISH"
+    },
+    {
+      "sourceId": 4451,
+      "toneFamily": "SOLEMNIOR",
+      "sourceSection": "3. Tonus solemnior",
+      "cueId": "AO.SM.C0140",
+      "printedReading": "Habemus ad Dominum.",
+      "phraseIdentity": "Habemus ad Dominum",
+      "printedOrthography": "ACCENTS_HYPHENATION_OMITTED_FROM_TRANSCRIPTION",
+      "printedWitness": {
+        "book": "GR 1961",
+        "page": "132*",
+        "plateUrl": "https://gregobase.selapa.net/sources/2/1009.png"
+      },
+      "inspectionStatus": "PRINTED_PHRASE_TEXT_LOCATED",
+      "notesOnLegibility": "Response words are legible on the named printed staff; no independent pitch, neume-shape, or rhythmic-sign parity is claimed.",
+      "independentPrintedPitchTranscription": null,
+      "independentPrintedNeumeTranscription": null,
+      "independentPrintedRhythmicSignTranscription": null,
+      "musicalParity": "NOT_CERTIFIED",
+      "sourceGabcComparison": "DO_NOT_DERIVE_PRINT_FROM_GABC",
+      "publicationDecision": "DO_NOT_PUBLISH"
+    },
+    {
+      "sourceId": 4451,
+      "toneFamily": "SOLEMNIOR",
+      "sourceSection": "3. Tonus solemnior",
+      "cueId": "AO.SM.C0143",
+      "printedReading": "Dignum et justum est.",
+      "phraseIdentity": "Dignum et justum est",
+      "printedOrthography": "PRINTED_JUSTUM__READER_IUSTUM",
+      "printedWitness": {
+        "book": "LU 1961",
+        "page": "110",
+        "plateUrl": "https://gregobase.selapa.net/sources/3/221.png"
+      },
+      "inspectionStatus": "PRINTED_PHRASE_TEXT_LOCATED",
+      "notesOnLegibility": "Response words are legible on the named printed staff; no independent pitch, neume-shape, or rhythmic-sign parity is claimed.",
+      "independentPrintedPitchTranscription": null,
+      "independentPrintedNeumeTranscription": null,
+      "independentPrintedRhythmicSignTranscription": null,
+      "musicalParity": "NOT_CERTIFIED",
+      "sourceGabcComparison": "DO_NOT_DERIVE_PRINT_FROM_GABC",
+      "publicationDecision": "DO_NOT_PUBLISH"
+    },
+    {
+      "sourceId": 4451,
+      "toneFamily": "SOLEMNIOR",
+      "sourceSection": "3. Tonus solemnior",
+      "cueId": "AO.SM.C0143",
+      "printedReading": "Dignum et justum est.",
+      "phraseIdentity": "Dignum et justum est",
+      "printedOrthography": "PRINTED_JUSTUM__READER_IUSTUM",
+      "printedWitness": {
+        "book": "GR 1961",
+        "page": "132*",
+        "plateUrl": "https://gregobase.selapa.net/sources/2/1009.png"
+      },
+      "inspectionStatus": "PRINTED_PHRASE_TEXT_LOCATED",
+      "notesOnLegibility": "Response words are legible on the named printed staff; no independent pitch, neume-shape, or rhythmic-sign parity is claimed.",
+      "independentPrintedPitchTranscription": null,
+      "independentPrintedNeumeTranscription": null,
+      "independentPrintedRhythmicSignTranscription": null,
+      "musicalParity": "NOT_CERTIFIED",
+      "sourceGabcComparison": "DO_NOT_DERIVE_PRINT_FROM_GABC",
+      "publicationDecision": "DO_NOT_PUBLISH"
+    }
+  ],
+  "gregoBaseEditorialChangeWatch": [
+    {
+      "sourceId": 4449,
+      "recordUrl": "https://gregobase.selapa.net/chant.php?id=4449",
+      "loggedSourceHistory": [
+        "2015-09-02: final neume dot alignment changed from (f.e.) to (fe..) and a textual stop added after tuo",
+        "2022-09-12: double punctum mora and V. Dominus grouping adjustments",
+        "2014-03-07: punctum mora positioning edited"
+      ],
+      "independenceWarning": "Modern GABC editorial history is not the 1961 physical print. Check each original rhythmic dot and syllable-neume grouping before confirming equality."
+    },
+    {
+      "sourceId": 4450,
+      "recordUrl": "https://gregobase.selapa.net/chant.php?id=4450",
+      "loggedSourceHistory": [
+        "2015-09-02: final neume dot alignment changed from (f.e.) to (fe..) and a textual stop added after tuo",
+        "2022-09-12: Dómino grouping, double punctum mora and V. Dominus grouping adjusted"
+      ],
+      "independenceWarning": "Modern GABC source may include later editorial alterations; compare printed witness at original staff, not only GABC phrase string."
+    },
+    {
+      "sourceId": 4451,
+      "recordUrl": "https://gregobase.selapa.net/chant.php?id=4451",
+      "loggedSourceHistory": [
+        "2014-03-07: spacing marker ! added before quilisma",
+        "2015-09-02: final neume dot placement and text stop adjusted",
+        "2022-09-12: double punctum mora and V. Dominus grouping adjusted"
+      ],
+      "independenceWarning": "Quilisma spacing and rhythmic sign interpretation require printed neume inspection; do not infer independent source parity."
+    }
+  ]
+}

@@ -4,6 +4,7 @@
  */
 import {massInstitutionEmblem} from "./institution-emblems.js";
 import {eligibleRenderedDirectoryImage,renderDirectoryGallery,renderDirectoryIdentityFallback} from "./directory-card.js";
+import {tlmApproximateMapNotice} from "./tlm-approximate-map-disclosure.js";
 const A=v=>Array.isArray(v)?v:[];
 const T=v=>String(v??"").trim();
 const E=v=>T(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
@@ -214,7 +215,9 @@ export function renderTlmChurchProfile(item,language="en"){
    html+='<p class="aoTlmProfileSourceLocation"><strong>'+E(L(language,
      "Location in original directory","Localisation selon l’annuaire d’origine"))+': </strong>'+
      E(sourceLocation)+'</p>';
- if(T(item?.geo?.precision)==="locality")html+='<p class="aoTlmProfileCaution">'+E(L(language,"Illustrative town marker ONLY — not the church GPS location. Open the documented name/address in your navigation app.","Repère indicatif de la commune UNIQUEMENT — ce n’est pas la position GPS de l’église. Utilisez le nom et l’adresse documentés dans votre GPS."))+'</p>';
+ const indicativeNotice=tlmApproximateMapNotice(item,language);
+ if(indicativeNotice)html+='<p class="aoTlmProfileCaution" data-tlm-approximate-source="r28">'+E(indicativeNotice)+'</p>';
+ else if(T(item?.geo?.precision)==="locality")html+='<p class="aoTlmProfileCaution">'+E(L(language,"Illustrative town marker ONLY — not the church GPS location. Open the documented name/address in your navigation app.","Repère indicatif de la commune UNIQUEMENT — ce n’est pas la position GPS de l’église. Utilisez le nom et l’adresse documentés dans votre GPS."))+'</p>';
  else if(item?.geo?.approximate||item?.geo?.indicative_only)html+='<p class="aoTlmProfileCaution">'+E(L(language,"Map pin is indicative; the entrance is not verified.","Repère cartographique indicatif ; entrée non vérifiée."))+'</p>';
  const urls=[...values(contact.website),...values(contact.schedule_url),...values(contact.bulletin_url)];
  const links=[...new Set(urls.filter(https))];

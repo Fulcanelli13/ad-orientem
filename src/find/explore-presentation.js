@@ -3,6 +3,7 @@ import { MASS_EMBLEM_GROUPS, massInstitutionEmblem } from "./institution-emblems
 import { renderDirectoryVenueCard,eligibleDirectoryImage,eligibleRenderedDirectoryImage,renderDirectoryGallery,renderDirectoryIdentityFallback } from "./directory-card.js";
 import {renderTlmChurchProfile} from "./tlm-church-profile.js";
 import {renderTlmMapResultRail} from "./tlm-map-result-rail.js";
+import {tlmApproximateMapNotice} from "./tlm-approximate-map-disclosure.js";
 import {PUBLIC_CL27_AXES} from "./cl27-public-facets.js";
 import { renderHeritageToString, compactHeritagePlaceSheet, sacredPlaceSynopsis, placeTypeLabel } from "./heritage-presentation.js";
 import { renderPilgrimageJourneyPanel, journeysForCanonicalPlace } from "./pilgrimage-journey.js";
@@ -469,6 +470,8 @@ function compactExploreItemSheet(vm){
   else if(item.geo?.approximate||item.geo?.indicative_only)html+='<p class="aoExplorePreviewCaution">'+esc(L(lang,
     "Map position is indicative, not a verified entrance.",
     "Position indicative, non une entrée vérifiée."))+'</p>';
+  const approximateNotice=isMass?tlmApproximateMapNotice(item,lang):null;
+  if(approximateNotice)html+='<p class="aoExplorePreviewCaution" data-tlm-approximate-source="r28">'+esc(approximateNotice)+'</p>';
   if(isRelic||isApparition)html+='<p class="aoExplorePreviewCaution">'+esc(isRelic
     ?L(lang,"Reported custody does not authenticate a relic.","Le lieu de conservation rapporté n’authentifie pas la relique.")
     :L(lang,"A reported apparition is not thereby authenticated.","Un récit d’apparition ne constitue pas une authentification."))+'</p>';
@@ -668,17 +671,17 @@ function tlmEvidenceFilters(vm){
   const counts=vm.tlmSiteEvidenceCounts??{},selected=vm.filters?.siteEvidence??"ALL";
   const options=[
     ["ALL",L(vm.language,"All sites","Tous les lieux")],
-    ["REVIEWED_PIN",L(vm.language,"Source-reviewed site pin","Repère de site vérifié par source")],
+    ["REVIEWED_PIN",L(vm.language,"Reviewed / illustrative map pin","Repère vérifié / indicatif")],
     ["SOURCE_PIN",L(vm.language,"Provisional map pin","Repère cartographique provisoire")],
-    ["ADDRESS_ONLY",L(vm.language,"Address only","Adresse uniquement")],
+    ["ADDRESS_ONLY",L(vm.language,"List-only record","Fiche uniquement en liste")],
   ];
   return '<section class="aoTlmEvidenceFacets" aria-label="'+esc(L(vm.language,"Location evidence","Preuves de localisation"))+'">'+
     '<strong>'+esc(L(vm.language,"Location evidence","Preuves de localisation"))+'</strong>'+
     '<div class="aoTlmEvidenceOptions">'+options.map(([value,name])=>
       pill("siteEvidence",value,name+" ("+String(counts[value]??0)+")",selected)).join("")+'</div>'+
     '<small>'+esc(L(vm.language,
-      "A reviewed site pin is source-supported geography, not a confirmed church entrance or current Mass. No published site-wide Una Cum, missal, canonical-status or celebrant claims are inferred from affiliation.",
-      "Un repère vérifié par source concerne la géographie, non une entrée confirmée ni une messe actuelle. Aucune conclusion sur « una cum », le missel, le statut canonique ou le célébrant n’est déduite de l’affiliation."))+'</small></section>';
+      "These mapped records include source-matched sites and illustrative town/village points; a pin does not establish a church building, entrance or current Mass. List-only records may be aliases or historical sites, not missing pins. No published site-wide Una Cum, missal, canonical-status or celebrant claims are inferred from affiliation.",
+      "Ces fiches comprennent des sites recoupés avec leurs sources et des repères indicatifs de ville ou village. Un point ne confirme ni bâtiment, ni entrée, ni messe actuelle. Les fiches uniquement en liste peuvent être des alias ou des lieux historiques, et non des repères manquants. Le caractère « una cum », le missel, le statut canonique et le célébrant ne sont jamais déduits de l’affiliation."))+'</small></section>';
 }
 function tlmCelebrationFilters(vm){
   const counts=vm.tlmCelebrationEvidenceCounts??{},current=vm.filters?.celebrationEvidence??"ALL";
@@ -978,7 +981,7 @@ export function renderExploreToString(vm){
     if(["apparitions","relics"].includes(vm.lens))html+='<p class="aoExploreSacredCaution">'+esc(vm.lens==="apparitions"?L(vm.language,"Historical accounts and ecclesiastical recognition are not identical to an authenticated supernatural event.","Les récits historiques et leur accueil ecclésial ne prouvent pas, à eux seuls, l’origine surnaturelle des phénomènes."):L(vm.language,"These pins identify reported custody or veneration, not independent authentication of any relic.","Ces repères indiquent un lieu de conservation ou de vénération, sans authentification indépendante des reliques."))+'</p>';
     if(vm.lens==="tlm"&&vm.mapped){
       html+='<details class="aoMapLegend" aria-label="'+esc(L(vm.language,"Map legend","Légende de la carte"))+'"><summary>'+esc(L(vm.language,"Map symbols","Symboles de la carte"))+'</summary>'
-        +'<span class="aoMapLegendLabel">'+esc(Object.hasOwn(f,"directoryGroup")?L(vm.language,"Source affiliation","Affiliation selon les sources"):L(vm.language,"Celebrated by","Célébrée par"))+'</span>'
+        +'<span class="aoMapLegendLabel">'+esc(L(vm.language,"Source affiliation","Affiliation selon les sources"))+'</span>'
         +massLegendItem("FSSP","FSSP")+massLegendItem("ICKSP","ICKSP")
         +massLegendItem("SSPX","SSPX")+massLegendItem("IBP","IBP")+massLegendItem("AASJMV","AASJMV")
         +massLegendItem("DIOCESAN",L(vm.language,"Diocesan","Diocésain"))

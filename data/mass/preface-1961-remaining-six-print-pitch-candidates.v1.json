@@ -1,0 +1,468 @@
+{
+  "schema": "ao-1961-preface-six-long-response-printed-pitch-candidates-v1",
+  "date": "2026-11-07",
+  "reviewMethod": "First-pass visual staff-position reading of each printed 1961 response in the two Solesmes books, compared against GABC afterward. Includes compound groups; single-source agreement alone is not a certification.",
+  "counts": {
+    "additionalResponseSettings": 6,
+    "additionalBookWitnessPointers": 12,
+    "combinedResponseSettings": 12,
+    "combinedBookWitnessPointers": 24,
+    "distinctPlateURLsInThisBatch": 4,
+    "sourceCandidatePitchConcordances": 6,
+    "independentlyCertifiedNeumeShapes": 0,
+    "independentlyCertifiedSolesmesMarks": 0,
+    "newPublicApprovals": 0
+  },
+  "clarification": "Latin spelling justum in printed GR, iustum in normalized reader. For ornate signs, pitch letters refer to provisional note-bearing positions, not square-head counts; do not infer quilisma, episema, mora or glyph exactness.",
+  "rows": [
+    {
+      "tone": "SOLEMN",
+      "sourceId": 4449,
+      "cueId": "AO.SM.C0140",
+      "printedText": "Habémus ad Dóminum",
+      "printedClefReading": "C_CLEF_LINE_3__PROVISIONAL",
+      "firstVisualPrintPitchCandidates": [
+        {
+          "syllable": "Ha",
+          "diatonicPitches": [
+            "g"
+          ]
+        },
+        {
+          "syllable": "bé",
+          "diatonicPitches": [
+            "f",
+            "g",
+            "h"
+          ]
+        },
+        {
+          "syllable": "mus",
+          "diatonicPitches": [
+            "g"
+          ]
+        },
+        {
+          "syllable": "ad",
+          "diatonicPitches": [
+            "g"
+          ]
+        },
+        {
+          "syllable": "Dó",
+          "diatonicPitches": [
+            "f",
+            "g"
+          ]
+        },
+        {
+          "syllable": "mi",
+          "diatonicPitches": [
+            "f"
+          ]
+        },
+        {
+          "syllable": "num",
+          "diatonicPitches": [
+            "f",
+            "e"
+          ]
+        }
+      ],
+      "originalPrintWitnesses": [
+        {
+          "book": "Liber Usualis, Solesmes 1961",
+          "printedPage": "109",
+          "plateUrl": "https://gregobase.selapa.net/sources/3/220.png",
+          "observation": "VISUAL_PRINT_CANDIDATE; SECOND_REVIEW_PENDING"
+        },
+        {
+          "book": "Graduale Romanum, Solesmes 1961",
+          "printedPage": "131*",
+          "plateUrl": "https://gregobase.selapa.net/sources/2/1008.png",
+          "largerCopy": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+          "largerCopyPdfPageOneBased": 133,
+          "observation": "VISUAL_PRINT_CANDIDATE; SECOND_REVIEW_PENDING"
+        }
+      ],
+      "palaeographicFocus": "NEUME_CONTOUR_AND_PUNCTA_MORAE",
+      "visualPitchParity": "FIRST_PASS_CANDIDATE_ONLY",
+      "secondReaderConfirmed": false,
+      "neumeGroupShapesCertified": false,
+      "printedRhythmicMarksCertified": false,
+      "publicScoreApproved": false,
+      "publicationDecision": "DO_NOT_PUBLISH"
+    },
+    {
+      "tone": "FERIAL",
+      "sourceId": 4450,
+      "cueId": "AO.SM.C0140",
+      "printedText": "Habémus ad Dóminum",
+      "printedClefReading": "C_CLEF_LINE_3__PROVISIONAL",
+      "firstVisualPrintPitchCandidates": [
+        {
+          "syllable": "Ha",
+          "diatonicPitches": [
+            "g"
+          ]
+        },
+        {
+          "syllable": "bé",
+          "diatonicPitches": [
+            "h"
+          ]
+        },
+        {
+          "syllable": "mus",
+          "diatonicPitches": [
+            "g"
+          ]
+        },
+        {
+          "syllable": "ad",
+          "diatonicPitches": [
+            "f"
+          ]
+        },
+        {
+          "syllable": "Dó",
+          "diatonicPitches": [
+            "g"
+          ]
+        },
+        {
+          "syllable": "mi",
+          "diatonicPitches": [
+            "f"
+          ]
+        },
+        {
+          "syllable": "num",
+          "diatonicPitches": [
+            "f",
+            "e"
+          ]
+        }
+      ],
+      "originalPrintWitnesses": [
+        {
+          "book": "Liber Usualis, Solesmes 1961",
+          "printedPage": "109",
+          "plateUrl": "https://gregobase.selapa.net/sources/3/220.png",
+          "observation": "VISUAL_PRINT_CANDIDATE; SECOND_REVIEW_PENDING"
+        },
+        {
+          "book": "Graduale Romanum, Solesmes 1961",
+          "printedPage": "131*",
+          "plateUrl": "https://gregobase.selapa.net/sources/2/1008.png",
+          "largerCopy": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+          "largerCopyPdfPageOneBased": 133,
+          "observation": "VISUAL_PRINT_CANDIDATE; SECOND_REVIEW_PENDING"
+        }
+      ],
+      "palaeographicFocus": "NEUME_CONTOUR_AND_PUNCTA_MORAE",
+      "visualPitchParity": "FIRST_PASS_CANDIDATE_ONLY",
+      "secondReaderConfirmed": false,
+      "neumeGroupShapesCertified": false,
+      "printedRhythmicMarksCertified": false,
+      "publicScoreApproved": false,
+      "publicationDecision": "DO_NOT_PUBLISH"
+    },
+    {
+      "tone": "SOLEMNIOR",
+      "sourceId": 4451,
+      "cueId": "AO.SM.C0140",
+      "printedText": "Habémus ad Dóminum",
+      "printedClefReading": "C_CLEF_LINE_3__PROVISIONAL",
+      "firstVisualPrintPitchCandidates": [
+        {
+          "syllable": "Ha",
+          "diatonicPitches": [
+            "e"
+          ]
+        },
+        {
+          "syllable": "bé",
+          "diatonicPitches": [
+            "e",
+            "f",
+            "g",
+            "h"
+          ]
+        },
+        {
+          "syllable": "mus",
+          "diatonicPitches": [
+            "g"
+          ]
+        },
+        {
+          "syllable": "ad",
+          "diatonicPitches": [
+            "g",
+            "f"
+          ]
+        },
+        {
+          "syllable": "Dó",
+          "diatonicPitches": [
+            "f",
+            "g",
+            "h"
+          ]
+        },
+        {
+          "syllable": "mi",
+          "diatonicPitches": [
+            "f"
+          ]
+        },
+        {
+          "syllable": "num",
+          "diatonicPitches": [
+            "f",
+            "e"
+          ]
+        }
+      ],
+      "originalPrintWitnesses": [
+        {
+          "book": "Liber Usualis, Solesmes 1961",
+          "printedPage": "110",
+          "plateUrl": "https://gregobase.selapa.net/sources/3/221.png",
+          "observation": "VISUAL_PRINT_CANDIDATE; SECOND_REVIEW_PENDING"
+        },
+        {
+          "book": "Graduale Romanum, Solesmes 1961",
+          "printedPage": "132*",
+          "plateUrl": "https://gregobase.selapa.net/sources/2/1009.png",
+          "largerCopy": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+          "largerCopyPdfPageOneBased": 134,
+          "observation": "VISUAL_PRINT_CANDIDATE; SECOND_REVIEW_PENDING"
+        }
+      ],
+      "palaeographicFocus": "QUIlISMA_CADENCE_EPISema_AND_COMPLEX_NEUMES",
+      "visualPitchParity": "FIRST_PASS_CANDIDATE_ONLY",
+      "secondReaderConfirmed": false,
+      "neumeGroupShapesCertified": false,
+      "printedRhythmicMarksCertified": false,
+      "publicScoreApproved": false,
+      "publicationDecision": "DO_NOT_PUBLISH"
+    },
+    {
+      "tone": "SOLEMN",
+      "sourceId": 4449,
+      "cueId": "AO.SM.C0143",
+      "printedText": "Dignum et justum est",
+      "printedClefReading": "C_CLEF_LINE_3__PROVISIONAL",
+      "firstVisualPrintPitchCandidates": [
+        {
+          "syllable": "Di",
+          "diatonicPitches": [
+            "f",
+            "g",
+            "h"
+          ]
+        },
+        {
+          "syllable": "gnum",
+          "diatonicPitches": [
+            "g"
+          ]
+        },
+        {
+          "syllable": "et",
+          "diatonicPitches": [
+            "g"
+          ]
+        },
+        {
+          "syllable": "ju",
+          "diatonicPitches": [
+            "f",
+            "g"
+          ]
+        },
+        {
+          "syllable": "stum",
+          "diatonicPitches": [
+            "f"
+          ]
+        },
+        {
+          "syllable": "est",
+          "diatonicPitches": [
+            "f",
+            "e"
+          ]
+        }
+      ],
+      "originalPrintWitnesses": [
+        {
+          "book": "Liber Usualis, Solesmes 1961",
+          "printedPage": "109",
+          "plateUrl": "https://gregobase.selapa.net/sources/3/220.png",
+          "observation": "VISUAL_PRINT_CANDIDATE; SECOND_REVIEW_PENDING"
+        },
+        {
+          "book": "Graduale Romanum, Solesmes 1961",
+          "printedPage": "131*",
+          "plateUrl": "https://gregobase.selapa.net/sources/2/1008.png",
+          "largerCopy": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+          "largerCopyPdfPageOneBased": 133,
+          "observation": "VISUAL_PRINT_CANDIDATE; SECOND_REVIEW_PENDING"
+        }
+      ],
+      "palaeographicFocus": "NEUME_CONTOUR_AND_PUNCTA_MORAE",
+      "visualPitchParity": "FIRST_PASS_CANDIDATE_ONLY",
+      "secondReaderConfirmed": false,
+      "neumeGroupShapesCertified": false,
+      "printedRhythmicMarksCertified": false,
+      "publicScoreApproved": false,
+      "publicationDecision": "DO_NOT_PUBLISH"
+    },
+    {
+      "tone": "FERIAL",
+      "sourceId": 4450,
+      "cueId": "AO.SM.C0143",
+      "printedText": "Dignum et justum est",
+      "printedClefReading": "C_CLEF_LINE_3__PROVISIONAL",
+      "firstVisualPrintPitchCandidates": [
+        {
+          "syllable": "Di",
+          "diatonicPitches": [
+            "h"
+          ]
+        },
+        {
+          "syllable": "gnum",
+          "diatonicPitches": [
+            "g"
+          ]
+        },
+        {
+          "syllable": "et",
+          "diatonicPitches": [
+            "f"
+          ]
+        },
+        {
+          "syllable": "ju",
+          "diatonicPitches": [
+            "g"
+          ]
+        },
+        {
+          "syllable": "stum",
+          "diatonicPitches": [
+            "f"
+          ]
+        },
+        {
+          "syllable": "est",
+          "diatonicPitches": [
+            "f",
+            "e"
+          ]
+        }
+      ],
+      "originalPrintWitnesses": [
+        {
+          "book": "Liber Usualis, Solesmes 1961",
+          "printedPage": "109",
+          "plateUrl": "https://gregobase.selapa.net/sources/3/220.png",
+          "observation": "VISUAL_PRINT_CANDIDATE; SECOND_REVIEW_PENDING"
+        },
+        {
+          "book": "Graduale Romanum, Solesmes 1961",
+          "printedPage": "131*",
+          "plateUrl": "https://gregobase.selapa.net/sources/2/1008.png",
+          "largerCopy": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+          "largerCopyPdfPageOneBased": 133,
+          "observation": "VISUAL_PRINT_CANDIDATE; SECOND_REVIEW_PENDING"
+        }
+      ],
+      "palaeographicFocus": "NEUME_CONTOUR_AND_PUNCTA_MORAE",
+      "visualPitchParity": "FIRST_PASS_CANDIDATE_ONLY",
+      "secondReaderConfirmed": false,
+      "neumeGroupShapesCertified": false,
+      "printedRhythmicMarksCertified": false,
+      "publicScoreApproved": false,
+      "publicationDecision": "DO_NOT_PUBLISH"
+    },
+    {
+      "tone": "SOLEMNIOR",
+      "sourceId": 4451,
+      "cueId": "AO.SM.C0143",
+      "printedText": "Dignum et justum est",
+      "printedClefReading": "C_CLEF_LINE_3__PROVISIONAL",
+      "firstVisualPrintPitchCandidates": [
+        {
+          "syllable": "Di",
+          "diatonicPitches": [
+            "f",
+            "g",
+            "h"
+          ]
+        },
+        {
+          "syllable": "gnum",
+          "diatonicPitches": [
+            "g"
+          ]
+        },
+        {
+          "syllable": "et",
+          "diatonicPitches": [
+            "g",
+            "f"
+          ]
+        },
+        {
+          "syllable": "ju",
+          "diatonicPitches": [
+            "f",
+            "g",
+            "h"
+          ]
+        },
+        {
+          "syllable": "stum",
+          "diatonicPitches": [
+            "f"
+          ]
+        },
+        {
+          "syllable": "est",
+          "diatonicPitches": [
+            "f",
+            "e"
+          ]
+        }
+      ],
+      "originalPrintWitnesses": [
+        {
+          "book": "Liber Usualis, Solesmes 1961",
+          "printedPage": "110",
+          "plateUrl": "https://gregobase.selapa.net/sources/3/221.png",
+          "observation": "VISUAL_PRINT_CANDIDATE; SECOND_REVIEW_PENDING"
+        },
+        {
+          "book": "Graduale Romanum, Solesmes 1961",
+          "printedPage": "132*",
+          "plateUrl": "https://gregobase.selapa.net/sources/2/1009.png",
+          "largerCopy": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+          "largerCopyPdfPageOneBased": 134,
+          "observation": "VISUAL_PRINT_CANDIDATE; SECOND_REVIEW_PENDING"
+        }
+      ],
+      "palaeographicFocus": "QUIlISMA_CADENCE_EPISema_AND_COMPLEX_NEUMES",
+      "visualPitchParity": "FIRST_PASS_CANDIDATE_ONLY",
+      "secondReaderConfirmed": false,
+      "neumeGroupShapesCertified": false,
+      "printedRhythmicMarksCertified": false,
+      "publicScoreApproved": false,
+      "publicationDecision": "DO_NOT_PUBLISH"
+    }
+  ]
+}

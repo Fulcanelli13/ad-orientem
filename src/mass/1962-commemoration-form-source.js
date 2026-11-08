@@ -132,8 +132,8 @@ export function select1962CommemorationsForMassForm({
   // §108(e): a displaced Advent feria is privileged even in Sung Mass.
   // The prayerSourcePath may be the canonical Sunday-template alias but
   // the actual commemoration PATH must identify the named weekday.
-  const privilegedAdvent=/^sancti:[0-9]{2}-[0-9]{2}:[12]:/i.test(mainId)&&
-    [1,2].includes(Number(main.rank))&&Number(only.rank)===3&&
+  const privilegedAdvent=/^sancti:[0-9]{2}-[0-9]{2}:[123]:/i.test(mainId)&&
+    [1,2,3].includes(Number(main.rank))&&Number(only.rank)===3&&
     /^tempora:Adv[1-4]-[1-6]:3:/i.test(commId)&&
     /^Tempora\/Adv[1-4]-[1-6]$/i.test(String(only.path??""));
   // RG 109(c): days in the Octave of Christmas are privileged
@@ -155,10 +155,26 @@ export function select1962CommemorationsForMassForm({
     data.verifiedNativityOctaveCommemoration?.originalChristmasSource==="Sancti/12-25m3"&&
     data.verifiedNativityOctaveCommemoration?.privilege==="RG_108_AND_109_C"&&
     data.verifiedNativityOctaveCommemoration?.orationCount===2;
+  // General Rubrics §111(c–d), Missal §434(a,c,d): one source-identified
+  // ordinary IV-class commemoration is retained in a non-Sunday Low Mass
+  // of II/III class but omitted in a non-conventual sung Mass. This is
+  // source-owned, not a feast-name lookup or an institution's local Ordo.
+  // Class IV ferias without an identified principal source stay withheld.
+  const typedSanctoralMain=/^sancti:[0-9]{2}-[0-9]{2}:[23]:/i.test(mainId)&&
+    /^Sancti\/[0-9]{2}-[0-9]{2}$/.test(String(main.path??""))&&
+    [2,3].includes(Number(main.rank));
+  const typedAdventMain=/^tempora:Adv[1-4]-[1-6]:3:/i.test(mainId)&&
+    /^Tempora\/Adv[1-4]-[1-6]$/.test(String(main.path??""))&&
+    Number(main.rank)===3;
+  const ordinaryFourthClassSaint=!sunday&&!only.privileged&&
+    Number(only.rank)===4&&/^sancti:[0-9]{2}-[0-9]{2}[a-z]*:4:/i.test(commId)&&
+    /^Sancti\/[0-9]{2}-[0-9]{2}[a-z]*$/i.test(String(only.path??""))&&
+    (typedSanctoralMain||typedAdventMain);
   const scope=nativityOctaveOwner?"PRIVILEGED_CHRISTMAS_OCTAVE_II_CLASS_MASS":
     privilegedSunday?"PRIVILEGED_SUNDAY_UNDER_I_CLASS_SANCTORAL":
     privilegedAdvent?"PRIVILEGED_ADVENT_FERIA_UNDER_SANCTORAL":
-    ordinarySunday?"II_CLASS_SUNDAY_SINGLE_II_CLASS_SANCTORAL_FEAST_NON_CONVENTUAL":null;
+    ordinarySunday?"II_CLASS_SUNDAY_SINGLE_II_CLASS_SANCTORAL_FEAST_NON_CONVENTUAL":
+    ordinaryFourthClassSaint?"NON_SUNDAY_II_III_CLASS_SINGLE_IV_CLASS_SANCTORAL_COMMEMORATION":null;
   if(!scope)return untouched(proper,"RUBRICAL_CLASSIFICATION_PENDING");
   if(!GROUPS.every(key=>array(data[key]).length===2&&data[key].every(sourceText)))
     return untouched(proper,"ORATION_SOURCE_INCOMPLETE");
@@ -170,7 +186,9 @@ export function select1962CommemorationsForMassForm({
     scope,
     authorities:Object.freeze(nativityOctaveOwner?
       ["1960_GENERAL_RUBRICS_108_109_C_111","1960_MISSAL_RUBRICS_433_434"]:
-      ["1960_GENERAL_RUBRICS_108_111_113","1960_MISSAL_RUBRICS_433_434"]),
+      ordinaryFourthClassSaint?
+        ["1960_GENERAL_RUBRICS_111_C_D_112_113","1960_MISSAL_RUBRICS_433_434"]:
+        ["1960_GENERAL_RUBRICS_108_111_113","1960_MISSAL_RUBRICS_433_434"]),
     mainId,commemorationId:commId
   });
   const selected=Object.freeze({...data,

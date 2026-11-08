@@ -2,6 +2,7 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R27} from "../src/find/cl2-illustrative-locality-pins-r27.js";
+import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R28} from "../src/find/cl2-illustrative-locality-pins-r28.js";
 import {validateCL2PhysicalIndex,projectCL2PhysicalDirectory} from "../src/find/cl2-physical-directory.js";
 import {projectPreliminaryR49,projectPublishedProvisionalMassSites,tlmSiteEvidenceCounts} from "../src/find/preliminary-directory-r49.js";
 import {renderDirectoryVenueCard} from "../src/find/directory-card.js";
@@ -56,11 +57,11 @@ for(const v of ledger.records){
  assert.ok(r&&r[1].includes(v.sourceId),"Original CL2 identity missing: "+v.anchor);
  assert.equal(i.title,r[2],"Published venue must retain exact frozen source title");
  assert.ok(i);
- if(v.anchor!==id)assert.ok(!i.map_publishable&&!i.geo,"R27 held exact identity must stay list-only: "+v.anchor);
+ if(v.anchor!==id)assert.ok(CL2_ILLUSTRATIVE_LOCALITY_PINS_R28[v.anchor]&&i.map_publishable&&i.geo?.precision==="locality","R28 owner-authorized approximate override must retain original R27 historical research hold: "+v.anchor);
 }
 for(const hold of ["RG-832AB0C2265E","RG-24B468C40EBC"]){
  assert.ok(byId.has(hold)&&!byId.get(hold).map_publishable,"Historical Chelmsford and Ashford/Snave alias remain list only");
 }
 assert.equal(items.length,2582);
-assert.deepEqual(tlmSiteEvidenceCounts(items),{ALL:2582,REVIEWED_PIN:754,SOURCE_PIN:1806,ADDRESS_ONLY:22});
-console.log("PASS R27: one Excel GEO-only Chiltern town marker; full nine-site hold ledger, 2560/2582 mapped, no current Mass, no GPS directions, frozen 2582 CL2 source identities");
+assert.deepEqual(tlmSiteEvidenceCounts(items),{ALL:2582,REVIEWED_PIN:762,SOURCE_PIN:1806,ADDRESS_ONLY:14});
+console.log("PASS R27: one Excel GEO-only Chiltern town marker; full nine-site hold ledger, 2568/2582 mapped, no current Mass, no GPS directions, frozen 2582 CL2 source identities");
