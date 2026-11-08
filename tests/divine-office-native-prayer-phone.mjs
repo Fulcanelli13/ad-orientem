@@ -76,8 +76,20 @@ try{
   await page.screenshot({path:resolve(out,width+"-office-door.png"),
    animations:"disabled",fullPage:false});
   receipt.screenshots.push(width+"-office-door.png");
+  // The donor's invisible header must never be a hit target over Office Back.
+  const header=page.locator("#aoPray435930 .aoP435930Head");
+  assert.equal(await header.getAttribute("inert")!==null,true,
+   "Legacy Prayer header must be inert while Office is open");
+  const target=await office.getByRole("button",{name:"Return to Prayer"}).evaluate(el=>{
+   const rect=el.getBoundingClientRect();
+   const top=document.elementFromPoint(rect.left+rect.width/2,rect.top+rect.height/2);
+   return Boolean(top===el||el.contains(top));
+  });
+  assert.equal(target,true,"Legacy Prayer header still overlays the native Office Back button");
   await office.getByRole("button",{name:"Return to Prayer"}).click();
   assert.equal(await office.count(),0,"Office overlay survives local Back");
+  assert.equal(await header.getAttribute("inert"),null,
+   "Legacy Prayer header inert state not restored on Back");
   await door.waitFor({state:"visible",timeout:12000});
   await door.click();
   await office.waitFor({state:"visible",timeout:12000});

@@ -46,22 +46,42 @@ export function openDivineOfficeReader(win=globalThis,{date=todayLocal()}={}){
  if(opened!==true&&opened?.ok!==true)return false;
  const mount=d.querySelector("#aoPray435930 .aoP435930Mount");
  if(!mount)return false;
- // The donor's floating header may intercept touches even when marked hidden.
- // Inline display + pointer suppression wins over its legacy positioning rules,
- // and the exact prior style is restored on native Back or route teardown.
+ // Snapshot the donor's original DOM attributes BEFORE suppressing them.
+ // An earlier implementation set display:none!important, then overwrote it
+ // with an ordinary inline display assignment. Legacy !important CSS
+ // consequently exposed the invisible Back header as a pointer overlay.
+ const previous=[...mount.children].map(node=>({
+   node,hidden:node.hidden,style:node.getAttribute("style"),
+   inert:node.hasAttribute("inert")
+ }));
  const legacyHeader=d.querySelector("#aoPray435930 .aoP435930Head");
- const legacyHeaderStyle=legacyHeader?.getAttribute("style")??null;
- if(legacyHeader){
-   legacyHeader.style.setProperty("display","none","important");
-   legacyHeader.style.setProperty("pointer-events","none","important");
- }
- const restoreHeader=()=>{
-   if(!legacyHeader)return;
-   if(legacyHeaderStyle===null)legacyHeader.removeAttribute("style");
-   else legacyHeader.setAttribute("style",legacyHeaderStyle);
+ const headerInPrevious=previous.some(({node})=>
+   node===legacyHeader||node.contains(legacyHeader));
+ const headerExtra=legacyHeader&&!headerInPrevious?{
+   node:legacyHeader,hidden:legacyHeader.hidden,
+   style:legacyHeader.getAttribute("style"),inert:legacyHeader.hasAttribute("inert")
+ }:null;
+ const disableBackground=node=>{
+   node.hidden=true;
+   node.setAttribute("inert","");
+   node.style.setProperty("display","none","important");
+   node.style.setProperty("visibility","hidden","important");
+   node.style.setProperty("pointer-events","none","important");
  };
- const previous=[...mount.children].map(node=>({node,hidden:node.hidden,display:node.style.display}));
- previous.forEach(({node})=>{node.hidden=true;node.style.display="none"});
+ previous.forEach(({node})=>disableBackground(node));
+ if(headerExtra)disableBackground(headerExtra.node);
+ let restored=false;
+ const restoreBackground=()=>{
+   if(restored)return;
+   restored=true;
+   for(const {node,hidden,style,inert} of [...previous,...(headerExtra?[headerExtra]:[])]){
+     node.hidden=hidden;
+     if(style===null)node.removeAttribute("style");
+     else node.setAttribute("style",style);
+     if(inert)node.setAttribute("inert","");
+     else node.removeAttribute("inert");
+   }
+ };
  const host=d.createElement("section");
  host.className="aoOfficeReader";
  host.setAttribute("aria-label","Divine Office");
@@ -71,8 +91,7 @@ export function openDivineOfficeReader(win=globalThis,{date=todayLocal()}={}){
  back.addEventListener("click",()=>{
    localReview?.instance?.dispose?.();
    host.remove();
-   restoreHeader();
-   previous.forEach(({node,hidden,display})=>{node.hidden=hidden;node.style.display=display});
+   restoreBackground();
  });
  host.append(back);
  const kicker=d.createElement("p");kicker.className="aoOfKicker";
@@ -173,7 +192,7 @@ export function openDivineOfficeReader(win=globalThis,{date=todayLocal()}={}){
  // rather than taking the Office's own Back control.
  if(typeof win.MutationObserver==="function"){
   const watcher=new win.MutationObserver(()=>{
-   if(!host.isConnected){restoreHeader();watcher.disconnect()}
+   if(!host.isConnected){restoreBackground();watcher.disconnect()}
   });
   watcher.observe(mount,{childList:true});
  }
