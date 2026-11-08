@@ -183,6 +183,73 @@ export function dykWeiserSecond16Model(data,id,date,language="en"){
  });
 }
 
+
+ // The H100 mixed-source release is a reviewed public projection, never a
+ // loader for the private Pitrè/1962 research banks. Two exact source families.
+const H100_SOURCE=new URL("../../data/did-you-know/dyk-h100-pitre-ritus-24-publication.v1.json",import.meta.url);
+const H100_SCHEMA="AO_DYK_H100_PITRE12_RITUS12_PUBLICATION_V1";
+const H100_PITRE_URL="https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf";
+const H100_RITUS_URL="https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/";
+let h100Load=null;
+export function loadDykMixed24Release(win=globalThis){
+ if(h100Load)return h100Load;
+ h100Load=Promise.resolve().then(()=>win.fetch(H100_SOURCE,{cache:"no-store"})).then(r=>{
+  if(!r?.ok)throw Error("DYK_H100_UNAVAILABLE");return r.json();
+ }).catch(error=>{h100Load=null;throw error});
+ return h100Load;
+}
+export function dykMixed24Candidates(data,date){
+ if(!validDate(date)||data?.schema!==H100_SCHEMA||data.release_stage!=="APPROVED_PARTIAL_LIVE"||
+   !Array.isArray(data.records)||data.records.length!==24)return [];
+ const seenIds=new Set(),seenSources=new Set();
+ return data.records.filter(row=>{
+  const c=row?.pilot_home_copy,s=row?.source;
+  if(!/^DYK-H100-[PM]-0(?:0[1-9]|1[0-2])$/.test(row?.id||"")||
+     seenIds.has(row.id)||!clean(row?.source_id)||seenSources.has(row.source_id))return false;
+  seenIds.add(row.id);seenSources.add(row.source_id);
+  const pitre=row.id.includes("-P-");
+  const family=pitre?"PITRE_1900":"ROMAN_MASS_1962";
+  const sourceUrl=pitre?H100_PITRE_URL:H100_RITUS_URL;
+  const qualified=pitre?
+   (row.historical_local_only===true&&row.topic==="historical_customs"&&
+    row.publication_kind==="EVERGREEN_HISTORICAL"&&
+    clean(s?.original_italian_anchor).length>4&&
+    Array.isArray(s?.printed_pages)&&s.printed_pages.length===1&&
+    Number.isInteger(s.printed_pages[0])&&s.printed_pages[0]>0&&
+    s.printed_pages[0]<600):
+   (row.historical_local_only===false&&row.liturgical_rubric_1962===true&&
+    row.topic==="roman_1962_celebrant_rubrics"&&
+    row.publication_kind==="ROMAN_1962_RUBRIC"&&
+    /^Ritus servandus [IVX]+[.][0-9]+(?:[–-][0-9]+)?$/.test(s?.primary_locator||"")&&
+    Array.isArray(s?.printed_pages)&&s.printed_pages.length>0&&
+    s.printed_pages.every((p,i)=>s.pdf_pages_1based?.[i]===p));
+  return qualified&&row.source_family===family&&s?.url===sourceUrl&&
+    row.editorial_approval===true&&row.release_authorized===true&&
+    row.semantic_novelty_reviewed===true&&row.published===true&&
+    c?.final_english_signoff===true&&c?.final_french_signoff===true&&
+    clean(c.en).length>30&&clean(c.fr).length>30&&clean(row.region_scope).length>5&&
+    s.original_image_checked===true&&s.deep_link_checked===true&&
+    s.source_record_id===row.source_id&&
+    Array.isArray(s.pdf_pages_1based)&&s.pdf_pages_1based.length>0&&
+    s.pdf_pages_1based.length<=2&&
+    s.pdf_pages_1based.every(p=>Number.isInteger(p)&&p>=1&&p<700);
+ });
+}
+export function dykMixed24Model(data,id,date,language="en"){
+ const row=dykMixed24Candidates(data,date).find(r=>r.id===id);
+ if(!row)return null;
+ const fr=language==="fr";
+ const mass=row.source_family==="ROMAN_MASS_1962";
+ return Object.freeze({
+  id:row.id,language:fr?"fr":"en",fact:row.pilot_home_copy[fr?"fr":"en"],
+  label:mass?(fr?"Messe romaine · Ritus servandus":"Roman Mass · Ritus servandus"):
+    (fr?"Pitrè · Fêtes siciliennes historiques":"Pitrè · Historical Sicilian feasts"),
+  sourceId:row.source_id,sourceUrl:row.source.url,
+  links:row.source.pdf_pages_1based.map(page=>({page,url:row.source.url+"#page="+page})),
+  published:true
+ });
+}
+
 let selectionPromise=null;
 export function loadDykPrioritySelection(win=globalThis){
  if(selectionPromise)return selectionPromise;
@@ -267,16 +334,18 @@ export function dykPublishedMarkup(model){
 }
 export async function openDykPublishedSource(win,{id,date,language="en",trigger}={}){
  if(!win?.document?.createElement||!id||!validDate(date))return false;
- const [data,historical,r50,r50b]=await Promise.all([
+ const [data,historical,r50,r50b,mixed]=await Promise.all([
    loadDykPrioritySelection(win).catch(()=>null),
    loadDykHistoricalRelease(win).catch(()=>null),
    loadDykWeiser16Release(win).catch(()=>null),
-   loadDykWeiserSecond16Release(win).catch(()=>null)
+   loadDykWeiserSecond16Release(win).catch(()=>null),
+   loadDykMixed24Release(win).catch(()=>null)
  ]);
  const model=dykPublishedModel(data,id,date,language)||
    dykHistoricalModel(historical,id,date,language)||
    dykWeiser16Model(r50,id,date,language)||
-   dykWeiserSecond16Model(r50b,id,date,language);
+   dykWeiserSecond16Model(r50b,id,date,language)||
+   dykMixed24Model(mixed,id,date,language);
  if(!model)return false;
  const node=win.document.createElement("div");node.innerHTML=dykPublishedMarkup(model);
  const shade=node.querySelector("[data-dyk-published-shade]");

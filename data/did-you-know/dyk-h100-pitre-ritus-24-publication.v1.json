@@ -1,0 +1,878 @@
+{
+  "schema": "AO_DYK_H100_PITRE12_RITUS12_PUBLICATION_V1",
+  "created": "2026-11-08",
+  "release_stage": "APPROVED_PARTIAL_LIVE",
+  "release_kind": "SOURCE_LINKED_BILINGUAL_CUSTOMS_AND_ROMAN_RUBRICS",
+  "sources": [
+    {
+      "family": "PITRE_1900",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+      "provenance": "1900 edition, original scan-page position verified against prior folio ledger R33"
+    },
+    {
+      "family": "ROMAN_MASS_1962",
+      "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+      "provenance": "1962 Ritus servandus English translation, visible page and numbered rubric"
+    }
+  ],
+  "notes": "Pitrè reports historical local customs; modern continuation and miracles are not inferred. Ritus records describe celebrant or minister rubrics, not laity obligations. No automatic publication from private research.",
+  "counts": {
+    "pitre": 12,
+    "ritus": 12,
+    "total": 24
+  },
+  "records": [
+    {
+      "id": "DYK-H100-P-001",
+      "research_record_id": "DYK-UM01-021",
+      "source_id": "PIT1900-IT-008",
+      "source_family": "PITRE_1900",
+      "topic": "historical_customs",
+      "pilot_home_copy": {
+        "en": "At Saint Joseph's feast in Ribera, Pitrè described a household table where three poor guests represented the Holy Family.",
+        "fr": "Pour la fête de saint Joseph à Ribera, Pitrè décrit une table familiale où trois hôtes pauvres représentaient la Sainte Famille.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "pdf_pages_1based": [
+          501
+        ],
+        "printed_pages": [
+          443
+        ],
+        "original_edition": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_id": "PIT1900-IT-008",
+        "primary_locator": "printed p. 443, scan p. 501",
+        "original_italian_anchor": "un vecchio, una giovane ed un bambino",
+        "original_image_checked": true,
+        "deep_link_checked": true,
+        "verification_basis": "R33 restored prior image+Italian-anchor checks; exact PDF scan-page offset reconciled before this release"
+      },
+      "region_scope": "Historical local feasts in Sicily, as described by Pitrè in 1900",
+      "historical_local_only": true,
+      "semantic_novelty_reviewed": true,
+      "editorial_approval": true,
+      "release_authorized": true,
+      "publication_kind": "EVERGREEN_HISTORICAL",
+      "published": true
+    },
+    {
+      "id": "DYK-H100-P-002",
+      "research_record_id": "DYK-UM01-028",
+      "source_id": "PIT1900-IT-002",
+      "source_family": "PITRE_1900",
+      "topic": "historical_customs",
+      "pilot_home_copy": {
+        "en": "Pitrè described a ceremonial Entry of Laurel near Saint Joseph's feast in Ribera, with boughs collected outside town and brought in on horseback.",
+        "fr": "Pitrè a décrit près de la fête de saint Joseph à Ribera une entrée cérémonielle de laurier, dont les branches étaient ramassées hors de la ville puis apportées à cheval.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "pdf_pages_1based": [
+          499
+        ],
+        "printed_pages": [
+          441
+        ],
+        "original_edition": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_id": "PIT1900-IT-002",
+        "primary_locator": "printed p. 441, scan p. 499",
+        "original_italian_anchor": "due lunghe file di cavalieri",
+        "original_image_checked": true,
+        "deep_link_checked": true,
+        "verification_basis": "R33 restored prior image+Italian-anchor checks; exact PDF scan-page offset reconciled before this release"
+      },
+      "region_scope": "Historical local feasts in Sicily, as described by Pitrè in 1900",
+      "historical_local_only": true,
+      "semantic_novelty_reviewed": true,
+      "editorial_approval": true,
+      "release_authorized": true,
+      "publication_kind": "EVERGREEN_HISTORICAL",
+      "published": true
+    },
+    {
+      "id": "DYK-H100-P-003",
+      "research_record_id": "DYK-UM01-027",
+      "source_id": "PIT1900-IT-031",
+      "source_family": "PITRE_1900",
+      "topic": "historical_customs",
+      "pilot_home_copy": {
+        "en": "Pitrè described food and agricultural produce being auctioned in Canicattini to support a local Saint Joseph festival.",
+        "fr": "Pitrè a décrit à Canicattini la vente aux enchères d'aliments et de produits agricoles au profit de la fête locale de saint Joseph.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "pdf_pages_1based": [
+          506
+        ],
+        "printed_pages": [
+          448
+        ],
+        "original_edition": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_id": "PIT1900-IT-031",
+        "primary_locator": "printed p. 448, scan p. 506",
+        "original_italian_anchor": "vendita dei doni",
+        "original_image_checked": true,
+        "deep_link_checked": true,
+        "verification_basis": "R33 restored prior image+Italian-anchor checks; exact PDF scan-page offset reconciled before this release"
+      },
+      "region_scope": "Historical local feasts in Sicily, as described by Pitrè in 1900",
+      "historical_local_only": true,
+      "semantic_novelty_reviewed": true,
+      "editorial_approval": true,
+      "release_authorized": true,
+      "publication_kind": "EVERGREEN_HISTORICAL",
+      "published": true
+    },
+    {
+      "id": "DYK-H100-P-004",
+      "research_record_id": "DYK-UM02-028",
+      "source_id": "PIT1900-NEW-018",
+      "source_family": "PITRE_1900",
+      "topic": "historical_customs",
+      "pilot_home_copy": {
+        "en": "In historical Palermo, spectators watched fireworks for Saint Rosalia from boats decorated with lanterns.",
+        "fr": "À Palerme, des spectateurs regardaient autrefois les feux d'artifice de sainte Rosalie depuis des bateaux ornés de lanternes.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "pdf_pages_1based": [
+          93
+        ],
+        "printed_pages": [
+          31
+        ],
+        "original_edition": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_id": "PIT1900-NEW-018",
+        "primary_locator": "printed p. 31, scan p. 93",
+        "original_italian_anchor": "barche",
+        "original_image_checked": true,
+        "deep_link_checked": true,
+        "verification_basis": "R33 restored prior image+Italian-anchor checks; exact PDF scan-page offset reconciled before this release"
+      },
+      "region_scope": "Historical local feasts in Sicily, as described by Pitrè in 1900",
+      "historical_local_only": true,
+      "semantic_novelty_reviewed": true,
+      "editorial_approval": true,
+      "release_authorized": true,
+      "publication_kind": "EVERGREEN_HISTORICAL",
+      "published": true
+    },
+    {
+      "id": "DYK-H100-P-005",
+      "research_record_id": "DYK-UM02-032",
+      "source_id": "PIT1900-NEW-033",
+      "source_family": "PITRE_1900",
+      "topic": "historical_customs",
+      "pilot_home_copy": {
+        "en": "Historical Palermo festival stalls sold edible sweets shaped like Saints Cosmas and Damian.",
+        "fr": "Des étals de fêtes de l'ancien Palerme vendaient des friandises représentant les saints Côme et Damien.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "pdf_pages_1based": [
+          135
+        ],
+        "printed_pages": [
+          73
+        ],
+        "original_edition": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_id": "PIT1900-NEW-033",
+        "primary_locator": "printed p. 73, scan p. 135",
+        "original_italian_anchor": "venditori de santi in pasta",
+        "original_image_checked": true,
+        "deep_link_checked": true,
+        "verification_basis": "R33 restored prior image+Italian-anchor checks; exact PDF scan-page offset reconciled before this release"
+      },
+      "region_scope": "Historical local feasts in Sicily, as described by Pitrè in 1900",
+      "historical_local_only": true,
+      "semantic_novelty_reviewed": true,
+      "editorial_approval": true,
+      "release_authorized": true,
+      "publication_kind": "EVERGREEN_HISTORICAL",
+      "published": true
+    },
+    {
+      "id": "DYK-H100-P-006",
+      "research_record_id": "DYK-UM02-036",
+      "source_id": "PIT1900-NEW-054",
+      "source_family": "PITRE_1900",
+      "topic": "historical_customs",
+      "pilot_home_copy": {
+        "en": "The bearers of Saints Cosmas and Damian's statues spun their litter rapidly in circles in Palermo's Kalsa quarter.",
+        "fr": "Les porteurs des statues des saints Côme et Damien faisaient tournoyer leur brancard dans le quartier de la Kalsa, à Palerme.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "pdf_pages_1based": [
+          146
+        ],
+        "printed_pages": [
+          84
+        ],
+        "original_edition": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_id": "PIT1900-NEW-054",
+        "primary_locator": "printed p. 84, scan p. 146",
+        "original_italian_anchor": "con giri vorticosi",
+        "original_image_checked": true,
+        "deep_link_checked": true,
+        "verification_basis": "R33 restored prior image+Italian-anchor checks; exact PDF scan-page offset reconciled before this release"
+      },
+      "region_scope": "Historical local feasts in Sicily, as described by Pitrè in 1900",
+      "historical_local_only": true,
+      "semantic_novelty_reviewed": true,
+      "editorial_approval": true,
+      "release_authorized": true,
+      "publication_kind": "EVERGREEN_HISTORICAL",
+      "published": true
+    },
+    {
+      "id": "DYK-H100-P-007",
+      "research_record_id": "DYK-UM02-040",
+      "source_id": "PIT1900-NEW-073",
+      "source_family": "PITRE_1900",
+      "topic": "historical_customs",
+      "pilot_home_copy": {
+        "en": "Pitrè described a Holy Spirit feast at Gangi preceded by celebrations on seven successive Thursdays.",
+        "fr": "Pitrè décrivait à Gangi une fête du Saint-Esprit précédée de célébrations pendant sept jeudis successifs.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "pdf_pages_1based": [
+          184
+        ],
+        "printed_pages": [
+          122
+        ],
+        "original_edition": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_id": "PIT1900-NEW-073",
+        "primary_locator": "printed p. 122, scan p. 184",
+        "original_italian_anchor": "giovedi",
+        "original_image_checked": true,
+        "deep_link_checked": true,
+        "verification_basis": "R33 restored prior image+Italian-anchor checks; exact PDF scan-page offset reconciled before this release"
+      },
+      "region_scope": "Historical local feasts in Sicily, as described by Pitrè in 1900",
+      "historical_local_only": true,
+      "semantic_novelty_reviewed": true,
+      "editorial_approval": true,
+      "release_authorized": true,
+      "publication_kind": "EVERGREEN_HISTORICAL",
+      "published": true
+    },
+    {
+      "id": "DYK-H100-P-008",
+      "research_record_id": "DYK-UM02-044",
+      "source_id": "PIT1900-NEW-080",
+      "source_family": "PITRE_1900",
+      "topic": "historical_customs",
+      "pilot_home_copy": {
+        "en": "An old Saint James celebration in Gratteri included grape clusters tied to the statue's silver staff.",
+        "fr": "Une ancienne fête de saint Jacques à Gratteri comprenait des grappes de raisin attachées au bâton d'argent de sa statue.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "pdf_pages_1based": [
+          187
+        ],
+        "printed_pages": [
+          125
+        ],
+        "original_edition": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_id": "PIT1900-NEW-080",
+        "primary_locator": "printed p. 125, scan p. 187",
+        "original_italian_anchor": "grap poli d uva",
+        "original_image_checked": true,
+        "deep_link_checked": true,
+        "verification_basis": "R33 restored prior image+Italian-anchor checks; exact PDF scan-page offset reconciled before this release"
+      },
+      "region_scope": "Historical local feasts in Sicily, as described by Pitrè in 1900",
+      "historical_local_only": true,
+      "semantic_novelty_reviewed": true,
+      "editorial_approval": true,
+      "release_authorized": true,
+      "publication_kind": "EVERGREEN_HISTORICAL",
+      "published": true
+    },
+    {
+      "id": "DYK-H100-P-009",
+      "research_record_id": "DYK-UM02-048",
+      "source_id": "PIT1900-NEW-095",
+      "source_family": "PITRE_1900",
+      "topic": "historical_customs",
+      "pilot_home_copy": {
+        "en": "Young shepherds once carried ribboned frames decorated with small animal-shaped caciocavalli cheeses in Geraci Siculo.",
+        "fr": "De jeunes bergers portaient autrefois à Geraci Siculo des armatures ornées de rubans et de petits fromages caciocavalli en forme d'animaux.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "pdf_pages_1based": [
+          190
+        ],
+        "printed_pages": [
+          128
+        ],
+        "original_edition": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_id": "PIT1900-NEW-095",
+        "primary_locator": "printed p. 128, scan p. 190",
+        "original_italian_anchor": "caciocavalli",
+        "original_image_checked": true,
+        "deep_link_checked": true,
+        "verification_basis": "R33 restored prior image+Italian-anchor checks; exact PDF scan-page offset reconciled before this release"
+      },
+      "region_scope": "Historical local feasts in Sicily, as described by Pitrè in 1900",
+      "historical_local_only": true,
+      "semantic_novelty_reviewed": true,
+      "editorial_approval": true,
+      "release_authorized": true,
+      "publication_kind": "EVERGREEN_HISTORICAL",
+      "published": true
+    },
+    {
+      "id": "DYK-H100-P-010",
+      "research_record_id": "DYK-UM03-048",
+      "source_id": "PIT1900-NEW-111",
+      "source_family": "PITRE_1900",
+      "topic": "historical_customs",
+      "pilot_home_copy": {
+        "en": "At a historical Saint Cyrus festival in Marineo, a child dressed as an angel descended on a rope to recite a prayer before the saint's statue.",
+        "fr": "Lors d'une ancienne fête de saint Cyr à Marineo, un enfant déguisé en ange descendait le long d'une corde pour réciter une prière devant la statue du saint.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "pdf_pages_1based": [
+          197
+        ],
+        "printed_pages": [
+          135
+        ],
+        "original_edition": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_id": "PIT1900-NEW-111",
+        "primary_locator": "printed p. 135, scan p. 197",
+        "original_italian_anchor": "vestito da angelo per un anello",
+        "original_image_checked": true,
+        "deep_link_checked": true,
+        "verification_basis": "R33 restored prior image+Italian-anchor checks; exact PDF scan-page offset reconciled before this release"
+      },
+      "region_scope": "Historical local feasts in Sicily, as described by Pitrè in 1900",
+      "historical_local_only": true,
+      "semantic_novelty_reviewed": true,
+      "editorial_approval": true,
+      "release_authorized": true,
+      "publication_kind": "EVERGREEN_HISTORICAL",
+      "published": true
+    },
+    {
+      "id": "DYK-H100-P-011",
+      "research_record_id": "DYK-UM02-039",
+      "source_id": "PIT1900-NEW-068",
+      "source_family": "PITRE_1900",
+      "topic": "historical_customs",
+      "pilot_home_copy": {
+        "en": "During an old Assumption procession at Piazza Armerina, a senior lawyer rang a silver bell to signal stops.",
+        "fr": "Lors d'une ancienne procession de l'Assomption à Piazza Armerina, un avocat de haut rang agitait une cloche d'argent pour signaler les haltes.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "pdf_pages_1based": [
+          618
+        ],
+        "printed_pages": [
+          560
+        ],
+        "original_edition": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_id": "PIT1900-NEW-068",
+        "primary_locator": "printed p. 560, scan p. 618",
+        "original_italian_anchor": "campanello",
+        "original_image_checked": true,
+        "deep_link_checked": true,
+        "verification_basis": "R33 restored prior image+Italian-anchor checks; exact PDF scan-page offset reconciled before this release"
+      },
+      "region_scope": "Historical local feasts in Sicily, as described by Pitrè in 1900",
+      "historical_local_only": true,
+      "semantic_novelty_reviewed": true,
+      "editorial_approval": true,
+      "release_authorized": true,
+      "publication_kind": "EVERGREEN_HISTORICAL",
+      "published": true
+    },
+    {
+      "id": "DYK-H100-P-012",
+      "research_record_id": "DYK-UM02-038",
+      "source_id": "PIT1900-NEW-062",
+      "source_family": "PITRE_1900",
+      "topic": "historical_customs",
+      "pilot_home_copy": {
+        "en": "A historical Assumption cavalcade in Piazza Armerina reenacted Count Roger's entry and carried a copy of a Marian banner.",
+        "fr": "Une ancienne cavalcade de l'Assomption à Piazza Armerina reconstituait l'entrée du comte Roger et portait une copie d'une bannière mariale.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "pdf_pages_1based": [
+          617
+        ],
+        "printed_pages": [
+          559
+        ],
+        "original_edition": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_id": "PIT1900-NEW-062",
+        "primary_locator": "printed p. 559, scan p. 617",
+        "original_italian_anchor": "cavalcata",
+        "original_image_checked": true,
+        "deep_link_checked": true,
+        "verification_basis": "R33 restored prior image+Italian-anchor checks; exact PDF scan-page offset reconciled before this release"
+      },
+      "region_scope": "Historical local feasts in Sicily, as described by Pitrè in 1900",
+      "historical_local_only": true,
+      "semantic_novelty_reviewed": true,
+      "editorial_approval": true,
+      "release_authorized": true,
+      "publication_kind": "EVERGREEN_HISTORICAL",
+      "published": true
+    },
+    {
+      "id": "DYK-H100-M-001",
+      "source_id": "RS1962.I_1.SACRISTY_RIBBONS",
+      "source_family": "ROMAN_MASS_1962",
+      "topic": "roman_1962_celebrant_rubrics",
+      "pilot_home_copy": {
+        "en": "Before vesting for Mass, the 1962 Roman rubrics tell the priest to find the day's texts in the Missal and arrange its ribbons, then wash his hands.",
+        "fr": "Avant de revêtir les ornements, les rubriques romaines de 1962 demandent au prêtre de repérer les textes du jour dans le missel, de placer les signets, puis de se laver les mains.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdf_pages_1based": [
+          1
+        ],
+        "printed_pages": [
+          1
+        ],
+        "original_edition": "Ritus servandus in celebratione Missae, Missale Romanum (1962), English translation",
+        "source_record_id": "RS1962.I_1.SACRISTY_RIBBONS",
+        "primary_locator": "Ritus servandus I.1",
+        "original_image_checked": true,
+        "deep_link_checked": true,
+        "verification_basis": "Original paragraph wording and page image reviewed in 1962 Ritus PDF; bounded to celebrating priest and specified Mass form"
+      },
+      "region_scope": "Traditional Roman Mass of 1962, celebrant/minister rubric; not a universal congregation posture instruction",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "semantic_novelty_reviewed": true,
+      "editorial_approval": true,
+      "release_authorized": true,
+      "publication_kind": "ROMAN_1962_RUBRIC",
+      "published": true
+    },
+    {
+      "id": "DYK-H100-M-002",
+      "source_id": "RS1962.I_1.HOST_FRAGMENTS",
+      "source_family": "ROMAN_MASS_1962",
+      "topic": "roman_1962_celebrant_rubrics",
+      "pilot_home_copy": {
+        "en": "While preparing the chalice before Mass, the priest is directed to brush loose fragments from the unconsecrated large Host before placing it on the paten.",
+        "fr": "En préparant le calice avant la messe, le prêtre doit enlever les petits fragments éventuels de la grande hostie non consacrée avant de la placer sur la patène.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdf_pages_1based": [
+          1
+        ],
+        "printed_pages": [
+          1
+        ],
+        "original_edition": "Ritus servandus in celebratione Missae, Missale Romanum (1962), English translation",
+        "source_record_id": "RS1962.I_1.HOST_FRAGMENTS",
+        "primary_locator": "Ritus servandus I.1",
+        "original_image_checked": true,
+        "deep_link_checked": true,
+        "verification_basis": "Original paragraph wording and page image reviewed in 1962 Ritus PDF; bounded to celebrating priest and specified Mass form"
+      },
+      "region_scope": "Traditional Roman Mass of 1962, celebrant/minister rubric; not a universal congregation posture instruction",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "semantic_novelty_reviewed": true,
+      "editorial_approval": true,
+      "release_authorized": true,
+      "publication_kind": "ROMAN_1962_RUBRIC",
+      "published": true
+    },
+    {
+      "id": "DYK-H100-M-003",
+      "source_id": "RS1962.I_3.AMICE_CROSS",
+      "source_family": "ROMAN_MASS_1962",
+      "topic": "roman_1962_celebrant_rubrics",
+      "pilot_home_copy": {
+        "en": "The priest kisses the small cross at the centre of the amice before placing the cloth over his head as he vests for the traditional Roman Mass.",
+        "fr": "Le prêtre baise la petite croix au centre de l'amict avant de passer ce linge sur sa tête en revêtant les ornements de la messe romaine traditionnelle.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdf_pages_1based": [
+          1
+        ],
+        "printed_pages": [
+          1
+        ],
+        "original_edition": "Ritus servandus in celebratione Missae, Missale Romanum (1962), English translation",
+        "source_record_id": "RS1962.I_3.AMICE_CROSS",
+        "primary_locator": "Ritus servandus I.3",
+        "original_image_checked": true,
+        "deep_link_checked": true,
+        "verification_basis": "Original paragraph wording and page image reviewed in 1962 Ritus PDF; bounded to celebrating priest and specified Mass form"
+      },
+      "region_scope": "Traditional Roman Mass of 1962, celebrant/minister rubric; not a universal congregation posture instruction",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "semantic_novelty_reviewed": true,
+      "editorial_approval": true,
+      "release_authorized": true,
+      "publication_kind": "ROMAN_1962_RUBRIC",
+      "published": true
+    },
+    {
+      "id": "DYK-H100-M-004",
+      "source_id": "RS1962.I_3_4.STOLE_CROSSED",
+      "source_family": "ROMAN_MASS_1962",
+      "topic": "roman_1962_celebrant_rubrics",
+      "pilot_home_copy": {
+        "en": "The priest crosses the two ends of his stole over his breast when vesting; the 1962 Ritus gives a different, straight-hanging arrangement for a bishop using pontificals.",
+        "fr": "Le prêtre croise les deux pans de son étole sur sa poitrine en s'habillant ; le Ritus de 1962 prévoit une disposition non croisée pour un évêque usant des pontificaux.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdf_pages_1based": [
+          1
+        ],
+        "printed_pages": [
+          1
+        ],
+        "original_edition": "Ritus servandus in celebratione Missae, Missale Romanum (1962), English translation",
+        "source_record_id": "RS1962.I_3_4.STOLE_CROSSED",
+        "primary_locator": "Ritus servandus I.3–4",
+        "original_image_checked": true,
+        "deep_link_checked": true,
+        "verification_basis": "Original paragraph wording and page image reviewed in 1962 Ritus PDF; bounded to celebrating priest and specified Mass form"
+      },
+      "region_scope": "Traditional Roman Mass of 1962, celebrant/minister rubric; not a universal congregation posture instruction",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "semantic_novelty_reviewed": true,
+      "editorial_approval": true,
+      "release_authorized": true,
+      "publication_kind": "ROMAN_1962_RUBRIC",
+      "published": true
+    },
+    {
+      "id": "DYK-H100-M-005",
+      "source_id": "RS1962.II_1.RESERVED_SACRAMENT",
+      "source_family": "ROMAN_MASS_1962",
+      "topic": "roman_1962_celebrant_rubrics",
+      "pilot_home_copy": {
+        "en": "On the way to the altar, the priest genuflects when passing the place where the Blessed Sacrament is reserved: a specific reverence distinct from a bow to another altar.",
+        "fr": "En se rendant à l'autel, le prêtre fait la génuflexion en passant devant le lieu où le Saint-Sacrement est réservé : une révérence distincte du salut devant un autre autel.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdf_pages_1based": [
+          2
+        ],
+        "printed_pages": [
+          2
+        ],
+        "original_edition": "Ritus servandus in celebratione Missae, Missale Romanum (1962), English translation",
+        "source_record_id": "RS1962.II_1.RESERVED_SACRAMENT",
+        "primary_locator": "Ritus servandus II.1",
+        "original_image_checked": true,
+        "deep_link_checked": true,
+        "verification_basis": "Original paragraph wording and page image reviewed in 1962 Ritus PDF; bounded to celebrating priest and specified Mass form"
+      },
+      "region_scope": "Traditional Roman Mass of 1962, celebrant/minister rubric; not a universal congregation posture instruction",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "semantic_novelty_reviewed": true,
+      "editorial_approval": true,
+      "release_authorized": true,
+      "publication_kind": "ROMAN_1962_RUBRIC",
+      "published": true
+    },
+    {
+      "id": "DYK-H100-M-006",
+      "source_id": "RS1962.II_5.SOLEMN_CREDENCE",
+      "source_family": "ROMAN_MASS_1962",
+      "topic": "roman_1962_celebrant_rubrics",
+      "pilot_home_copy": {
+        "en": "At Solemn Mass, the chalice and other vessels are prepared on the credence table; the priest processes with deacon and subdeacon rather than carrying the chalice as at Low Mass.",
+        "fr": "À la messe solennelle, le calice et les autres objets sont préparés sur la crédence ; le prêtre entre avec le diacre et le sous-diacre au lieu de porter lui-même le calice comme à la messe basse.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdf_pages_1based": [
+          2
+        ],
+        "printed_pages": [
+          2
+        ],
+        "original_edition": "Ritus servandus in celebratione Missae, Missale Romanum (1962), English translation",
+        "source_record_id": "RS1962.II_5.SOLEMN_CREDENCE",
+        "primary_locator": "Ritus servandus II.5",
+        "original_image_checked": true,
+        "deep_link_checked": true,
+        "verification_basis": "Original paragraph wording and page image reviewed in 1962 Ritus PDF; bounded to celebrating priest and specified Mass form"
+      },
+      "region_scope": "Traditional Roman Mass of 1962, celebrant/minister rubric; not a universal congregation posture instruction",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "semantic_novelty_reviewed": true,
+      "editorial_approval": true,
+      "release_authorized": true,
+      "publication_kind": "ROMAN_1962_RUBRIC",
+      "published": true
+    },
+    {
+      "id": "DYK-H100-M-007",
+      "source_id": "RS1962.III_1.JOINED_THUMBS",
+      "source_family": "ROMAN_MASS_1962",
+      "topic": "roman_1962_celebrant_rubrics",
+      "pilot_home_copy": {
+        "en": "At the prayers at the foot of the altar, the celebrant joins his hands with the right thumb over the left in the form of a cross, a position prescribed until after the Consecration.",
+        "fr": "Aux prières au bas de l'autel, le célébrant joint les mains avec le pouce droit sur le gauche, en forme de croix ; les rubriques prescrivent cette disposition jusqu'après la consécration.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdf_pages_1based": [
+          2
+        ],
+        "printed_pages": [
+          2
+        ],
+        "original_edition": "Ritus servandus in celebratione Missae, Missale Romanum (1962), English translation",
+        "source_record_id": "RS1962.III_1.JOINED_THUMBS",
+        "primary_locator": "Ritus servandus III.1",
+        "original_image_checked": true,
+        "deep_link_checked": true,
+        "verification_basis": "Original paragraph wording and page image reviewed in 1962 Ritus PDF; bounded to celebrating priest and specified Mass form"
+      },
+      "region_scope": "Traditional Roman Mass of 1962, celebrant/minister rubric; not a universal congregation posture instruction",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "semantic_novelty_reviewed": true,
+      "editorial_approval": true,
+      "release_authorized": true,
+      "publication_kind": "ROMAN_1962_RUBRIC",
+      "published": true
+    },
+    {
+      "id": "DYK-H100-M-008",
+      "source_id": "RS1962.III_4.OTHER_ALTAR",
+      "source_family": "ROMAN_MASS_1962",
+      "topic": "roman_1962_celebrant_rubrics",
+      "pilot_home_copy": {
+        "en": "Once a priest has begun his own Mass, the 1962 rubrics tell him not to interrupt it when the Blessed Sacrament is elevated at another altar, even nearby.",
+        "fr": "Lorsque le prêtre a commencé sa propre messe, les rubriques de 1962 lui demandent de ne pas l'interrompre au moment d'une élévation du Saint-Sacrement à un autre autel, même proche.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdf_pages_1based": [
+          3
+        ],
+        "printed_pages": [
+          3
+        ],
+        "original_edition": "Ritus servandus in celebratione Missae, Missale Romanum (1962), English translation",
+        "source_record_id": "RS1962.III_4.OTHER_ALTAR",
+        "primary_locator": "Ritus servandus III.4",
+        "original_image_checked": true,
+        "deep_link_checked": true,
+        "verification_basis": "Original paragraph wording and page image reviewed in 1962 Ritus PDF; bounded to celebrating priest and specified Mass form"
+      },
+      "region_scope": "Traditional Roman Mass of 1962, celebrant/minister rubric; not a universal congregation posture instruction",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "semantic_novelty_reviewed": true,
+      "editorial_approval": true,
+      "release_authorized": true,
+      "publication_kind": "ROMAN_1962_RUBRIC",
+      "published": true
+    },
+    {
+      "id": "DYK-H100-M-009",
+      "source_id": "RS1962.III_6.MINISTER_POSTURE",
+      "source_family": "ROMAN_MASS_1962",
+      "topic": "roman_1962_celebrant_rubrics",
+      "pilot_home_copy": {
+        "en": "At the opening Introibo dialogue, the server kneels in the form described for Low Mass, whereas the ministers stand in Solemn Mass.",
+        "fr": "Au dialogue initial Introibo, le servant est à genoux dans la forme prévue pour la messe basse, tandis que les ministres se tiennent debout à la messe solennelle.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdf_pages_1based": [
+          3
+        ],
+        "printed_pages": [
+          3
+        ],
+        "original_edition": "Ritus servandus in celebratione Missae, Missale Romanum (1962), English translation",
+        "source_record_id": "RS1962.III_6.MINISTER_POSTURE",
+        "primary_locator": "Ritus servandus III.6",
+        "original_image_checked": true,
+        "deep_link_checked": true,
+        "verification_basis": "Original paragraph wording and page image reviewed in 1962 Ritus PDF; bounded to celebrating priest and specified Mass form"
+      },
+      "region_scope": "Traditional Roman Mass of 1962, celebrant/minister rubric; not a universal congregation posture instruction",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "semantic_novelty_reviewed": true,
+      "editorial_approval": true,
+      "release_authorized": true,
+      "publication_kind": "ROMAN_1962_RUBRIC",
+      "published": true
+    },
+    {
+      "id": "DYK-H100-M-010",
+      "source_id": "RS1962.III_6.JUDICA_OMISSION",
+      "source_family": "ROMAN_MASS_1962",
+      "topic": "roman_1962_celebrant_rubrics",
+      "pilot_home_copy": {
+        "en": "The opening Psalm Judica me is omitted at Requiem Masses and from Passion Sunday through Holy Thursday inclusive, though the Introibo antiphon remains.",
+        "fr": "Le psaume initial Judica me est omis aux messes de Requiem et du dimanche de la Passion jusqu'au Jeudi saint inclus, mais l'antienne Introibo demeure.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdf_pages_1based": [
+          3
+        ],
+        "printed_pages": [
+          3
+        ],
+        "original_edition": "Ritus servandus in celebratione Missae, Missale Romanum (1962), English translation",
+        "source_record_id": "RS1962.III_6.JUDICA_OMISSION",
+        "primary_locator": "Ritus servandus III.6",
+        "original_image_checked": true,
+        "deep_link_checked": true,
+        "verification_basis": "Original paragraph wording and page image reviewed in 1962 Ritus PDF; bounded to celebrating priest and specified Mass form"
+      },
+      "region_scope": "Traditional Roman Mass of 1962, celebrant/minister rubric; not a universal congregation posture instruction",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "semantic_novelty_reviewed": true,
+      "editorial_approval": true,
+      "release_authorized": true,
+      "publication_kind": "ROMAN_1962_RUBRIC",
+      "published": true
+    },
+    {
+      "id": "DYK-H100-M-011",
+      "source_id": "RS1962.III_7.CONFITEOR_CHEST",
+      "source_family": "ROMAN_MASS_1962",
+      "topic": "roman_1962_celebrant_rubrics",
+      "pilot_home_copy": {
+        "en": "During the priest's Confiteor at the foot of the altar, the 1962 Ritus directs three strikes on the breast at mea culpa while his left hand rests there.",
+        "fr": "Pendant le Confiteor du prêtre au bas de l'autel, le Ritus de 1962 prescrit trois coups sur la poitrine à mea culpa, la main gauche restant posée sur celle-ci.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdf_pages_1based": [
+          3
+        ],
+        "printed_pages": [
+          3
+        ],
+        "original_edition": "Ritus servandus in celebratione Missae, Missale Romanum (1962), English translation",
+        "source_record_id": "RS1962.III_7.CONFITEOR_CHEST",
+        "primary_locator": "Ritus servandus III.7",
+        "original_image_checked": true,
+        "deep_link_checked": true,
+        "verification_basis": "Original paragraph wording and page image reviewed in 1962 Ritus PDF; bounded to celebrating priest and specified Mass form"
+      },
+      "region_scope": "Traditional Roman Mass of 1962, celebrant/minister rubric; not a universal congregation posture instruction",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "semantic_novelty_reviewed": true,
+      "editorial_approval": true,
+      "release_authorized": true,
+      "publication_kind": "ROMAN_1962_RUBRIC",
+      "published": true
+    },
+    {
+      "id": "DYK-H100-M-012",
+      "source_id": "RS1962.IX_1.UNDE_CROSSES",
+      "source_family": "ROMAN_MASS_1962",
+      "topic": "roman_1962_celebrant_rubrics",
+      "pilot_home_copy": {
+        "en": "After the Consecration, at Unde et memores the priest makes three crosses over Host and chalice together, then one over the Host and one over the chalice.",
+        "fr": "Après la consécration, à Unde et memores, le prêtre trace trois croix au-dessus de l'hostie et du calice ensemble, puis une croix sur l'hostie et une sur le calice.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdf_pages_1based": [
+          16
+        ],
+        "printed_pages": [
+          16
+        ],
+        "original_edition": "Ritus servandus in celebratione Missae, Missale Romanum (1962), English translation",
+        "source_record_id": "RS1962.IX_1.UNDE_CROSSES",
+        "primary_locator": "Ritus servandus IX.1",
+        "original_image_checked": true,
+        "deep_link_checked": true,
+        "verification_basis": "Original paragraph wording and page image reviewed in 1962 Ritus PDF; bounded to celebrating priest and specified Mass form"
+      },
+      "region_scope": "Traditional Roman Mass of 1962, celebrant/minister rubric; not a universal congregation posture instruction",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "semantic_novelty_reviewed": true,
+      "editorial_approval": true,
+      "release_authorized": true,
+      "publication_kind": "ROMAN_1962_RUBRIC",
+      "published": true
+    }
+  ]
+}

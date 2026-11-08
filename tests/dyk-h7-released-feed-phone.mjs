@@ -23,17 +23,19 @@ fact.pilot_destination_audit.publishable_deep_link=true;
 fact.pilot_destination_audit.exact_in_app_route_verified=true;
 fact.pilot_source_folio.link_browser_verified=true;
 // Choose an actual upcoming date on which the single test-only R34 approval
-// wins the 77-entry (24 Glossary + 20 Weiser + 16 R50 + 16 R50B + 1 R34) rotation.
+// wins the 101-entry (100 published + 1 test-only R34) mixed rotation.
 const historical=JSON.parse(await readFile(resolve(root,
  "data/did-you-know/weiser-historical-20-publication.v1.json"),"utf8"));
 const r50=JSON.parse(await readFile(resolve(root,
  "data/did-you-know/weiser-r50-sixteen-publication.v1.json"),"utf8"));
 const r50b=JSON.parse(await readFile(resolve(root,
  "data/did-you-know/weiser-r50-second-sixteen-publication.v1.json"),"utf8"));
-const historicalIds=[...historical.records,...r50.records,...r50b.records].map(x=>x.id);
+const h100=JSON.parse(await readFile(resolve(root,
+ "data/did-you-know/dyk-h100-pitre-ritus-24-publication.v1.json"),"utf8"));
+const historicalIds=[...historical.records,...r50.records,...r50b.records,...h100.records].map(x=>x.id);
 const dayMs=86400000;
 const base=Date.UTC(2026,10,1);
-const testDate=Array.from({length:90},(_,i)=>
+const testDate=Array.from({length:150},(_,i)=>
  new Date(base+i*dayMs).toISOString().slice(0,10))
  .find(date=>dykHomeRotationSlot(date,[...historicalIds,fact.id],DYK_GLOSSARY_FALLBACK_IDS)===fact.id);
 assert.ok(testDate,"Test-only R34 release must receive one legitimate daily slot");
@@ -68,7 +70,7 @@ try{
    },{date:testDate});
   const errors=[];page.on("pageerror",e=>errors.push(String(e)));
   try{
-   // The checked-in R34 source has zero approvals. The 52 published
+   // The checked-in R34 source has zero approvals. The 76 published
    // historical and 24 Glossary cards are independently permitted on Home.
    await page.goto(origin+"/index.html?aoR17Reader=native",{waitUntil:"domcontentloaded",timeout:60000});
    await page.waitForSelector(".homeScreen.aoH7Screens .aoH7HomeView",{timeout:45000});

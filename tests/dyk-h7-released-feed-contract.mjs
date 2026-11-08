@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
-import {dykPublishedCandidates,dykPublishedPick,dykPublishedModel,dykPublishedMarkup,dykHistoricalCandidates,dykHistoricalModel,dykWeiser16Candidates,dykWeiser16Model,dykWeiserSecond16Candidates,dykWeiserSecond16Model,dykHomeRotationSlot,DYK_GLOSSARY_FALLBACK_IDS} from "../src/home/dyk-published-feed.js";
+import {dykPublishedCandidates,dykPublishedPick,dykPublishedModel,dykPublishedMarkup,dykHistoricalCandidates,dykHistoricalModel,dykWeiser16Candidates,dykWeiser16Model,dykWeiserSecond16Candidates,dykWeiserSecond16Model,dykMixed24Candidates,dykMixed24Model,dykHomeRotationSlot,DYK_GLOSSARY_FALLBACK_IDS} from "../src/home/dyk-published-feed.js";
 const original=JSON.parse(readFileSync(
  "data/research/did-you-know/dyk-r34-high-signal-24-editorial-selection.v1.json","utf8"));
 import {HOME_DYK_GLOSSARY_IDS,HOME_DYK_GLOSSARY_FACTS,homeDidYouKnowSelect} from "../src/home/did-you-know-glossary.js";
@@ -112,6 +112,58 @@ const r50bWrongPage=clone(r50b);
 r50bWrongPage.records[0].source.pdf_pages_1based[0]++;
 assert.equal(dykWeiserSecond16Candidates(r50bWrongPage,"2026-11-08").length,15);
 
+const h100=JSON.parse(readFileSync(
+ "data/did-you-know/dyk-h100-pitre-ritus-24-publication.v1.json","utf8"));
+const h100Rows=dykMixed24Candidates(h100,"2026-11-08");
+assert.equal(h100Rows.length,24,"100-fact release requires all 12 Pitrè and all 12 Ritus records");
+assert.equal(h100Rows.filter(row=>row.source_family==="PITRE_1900").length,12);
+assert.equal(h100Rows.filter(row=>row.source_family==="ROMAN_MASS_1962").length,12);
+const releasedAll=[...histRows,...r50Rows,...r50bRows,...h100Rows];
+assert.equal(releasedAll.length,76);
+assert.equal(new Set(releasedAll.map(row=>row.id)).size,76);
+assert.equal(new Set(releasedAll.map(row=>row.source_id)).size,76);
+for(const row of h100Rows){
+ const model=dykMixed24Model(h100,row.id,"2026-11-08","fr");
+ assert.equal(model.fact,row.pilot_home_copy.fr);
+ assert.ok(dykPublishedMarkup(model).includes("#page="+row.source.pdf_pages_1based[0]));
+ assert.equal(row.source.original_image_checked,true);
+ assert.equal(row.source.source_record_id,row.source_id);
+ assert.ok(row.pilot_home_copy.en.length>30&&row.pilot_home_copy.fr.length>30);
+ if(row.source_family==="PITRE_1900"){
+  assert.equal(row.historical_local_only,true);
+  assert.ok(row.source.original_italian_anchor.length>4);
+  assert.ok(row.source.pdf_pages_1based[0]!==row.source.printed_pages[0],
+   "Pitrè uses reconciled original print/scan offsets");
+ }else{
+  assert.equal(row.liturgical_rubric_1962,true);
+  assert.ok(row.source.printed_pages.every((p,i)=>row.source.pdf_pages_1based[i]===p));
+ }
+}
+assert.deepEqual(dykMixed24Candidates({...h100,release_stage:"RESEARCH_ONLY"},"2026-11-08"),[]);
+assert.deepEqual(dykMixed24Candidates(h100,"2026-11-31"),[]);
+for(const [group,key] of [
+ ["row","editorial_approval"],["row","release_authorized"],
+ ["row","semantic_novelty_reviewed"],["row","published"],
+ ["copy","final_english_signoff"],["copy","final_french_signoff"],
+ ["source","original_image_checked"],["source","deep_link_checked"]]){
+ const damaged=clone(h100);const row=damaged.records[0];
+ if(group==="row")row[key]=false;
+ else if(group==="copy")row.pilot_home_copy[key]=false;
+ else row.source[key]=false;
+ assert.equal(dykMixed24Candidates(damaged,"2026-11-08").length,23,
+  "Private or unsigned H100 fact must not publish: "+group+"."+key);
+}
+const malformedPitre=clone(h100);
+malformedPitre.records[0].source.url="https://invalid.example/other.pdf";
+assert.equal(dykMixed24Candidates(malformedPitre,"2026-11-08").length,23);
+const malformedRitus=clone(h100);
+malformedRitus.records[12].source.pdf_pages_1based[0]=99;
+assert.equal(dykMixed24Candidates(malformedRitus,"2026-11-08").length,23);
+const changedFamily=clone(h100);
+changedFamily.records[12].source_family="PITRE_1900";
+assert.equal(dykMixed24Candidates(changedFamily,"2026-11-08").length,23);
+
+
 
 
 // Every new public teaser must resolve to an existing source-backed bilingual
@@ -194,6 +246,7 @@ for(const [published,poolSize] of [
  [histRows.map(x=>x.id),DYK_GLOSSARY_FALLBACK_IDS.length+20],
  [[...histRows,...r50Rows].map(x=>x.id),DYK_GLOSSARY_FALLBACK_IDS.length+36],
  [[...histRows,...r50Rows,...r50bRows].map(x=>x.id),DYK_GLOSSARY_FALLBACK_IDS.length+52],
+ [releasedAll.map(x=>x.id),100],
  [["DYK-M04-CANON-021","DYK-M04-CANON-022","DYK-M04-CANON-047","DYK-M04-CANON-058"],DYK_GLOSSARY_FALLBACK_IDS.length+4]
 ]){
  const cycle=alignedDates(poolSize);
@@ -212,4 +265,4 @@ const expanded=clone(data);
 expanded.records.push({id:"DYK-UNRELEASED-PLACEHOLDER",editorial_approval:false,release_authorized:false});
 assert.equal(dykPublishedCandidates(expanded,"2026-11-02").length,1);
 
-console.log("PASS H7 76-fact Discovery: 24 Glossary + 52 independently released historical, original R34 held, bilingual original-page links and nonrepeating rotation");
+console.log("PASS H7 100-fact Discovery: 24 Glossary + 52 Weiser + 12 Pitre + 12 Ritus, original R34 held, bilingual original-page links and nonrepeating rotation");
