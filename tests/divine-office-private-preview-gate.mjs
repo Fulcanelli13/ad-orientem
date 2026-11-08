@@ -16,8 +16,8 @@ test("explicit local-only source preview opens only on loopback with opt-in",()=
 });
 test("exact date Latin reader is enabled while Vespers and all other Hours stay withheld",async()=>{
  const {officeRouteState}=await import("../src/office/office-route-state.js");
- for(const hour of ["VESPERS","COMPLINE"]){
-  const r=officeRouteState({date:"2026-11-28",hour});
+ for(const date of ["2026-11-28","2026-12-05"])for(const hour of ["VESPERS","COMPLINE"]){
+  const r=officeRouteState({date,hour});
   const released=hour==="COMPLINE";
   assert.equal(r.readingEnabled,released);
   assert.equal(r.published,released);
