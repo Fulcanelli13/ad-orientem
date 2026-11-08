@@ -53,6 +53,7 @@ import {angelusCommunalParts} from "./angelus-folio-recitation.js";
 import {internalPrayerView,supportedDirectPrayerRoute} from "./internal-route-owner.js";
 import {renderLittleCrownB30} from "./little-crown-presentation-b30.js";
 import {PRAYER_SUBJECTS_V1,prayerSubjectsForLibrary,prayerSubjectCounts} from "./prayer-subject-index.v1.js";
+import {guidedPrayerLinksForSubject} from "./prayer-subject-guided-links.v1.js";
 import {FIVE_WOUNDS_SOURCE_V1,FIVE_WOUNDS_WOUNDS_V1,FIVE_WOUNDS_CHAPLET_V1,fiveWoundsStep,fiveWoundsGroupProgress} from "./five-wounds-chaplet.v1.js";
 import {PRECIOUS_BLOOD_HISTORICAL_SOURCE_V1,PRECIOUS_BLOOD_HISTORICAL_PRAYERS_V1,PRECIOUS_BLOOD_MYSTERIES_V1,PRECIOUS_BLOOD_TOTALS_V1,preciousBloodMystery,preciousBloodPrayerAt} from "./precious-blood-chaplet.v1.js";
 import {PRIESTLY_INTERCESSION_PURPOSES_B19,priestlyIntercessionFor} from "./priestly-intercessions-b19.js";
@@ -2576,6 +2577,14 @@ function renderLibrary(){
  rows=prayerSubjectsForLibrary(rows,LIB.subject);
  if(q)rows=rows.filter(p=>[p.title,p.titleFr,p.en,p.fr,p.la,p.id].join(' ').toLowerCase().includes(q));
  const cats=[['all',L('All','Toutes')],...Object.entries(DATA.categories||{}).map(([id,v])=>[id,isFr()?v.fr:v.en])];
+ const guidedLinks=guidedPrayerLinksForSubject(LIB.subject);
+ const guidedSection=LIB.subject==='all'||LIB.cat==='essentials'||!guidedLinks.length||q?
+  '':('<section class="aoP435930LibraryRelated" data-ao-prayer-subject-guided="'+esc(LIB.subject)+'">'+
+   '<h3>'+esc(L('Guided devotions','Dévotions guidées'))+'</h3>'+
+   '<p>'+esc(L('These open their existing devotional readers, not a rewritten library text.','Ces dévotions ouvrent leurs parcours propres, sans réécriture du texte.'))+'</p>'+
+   '<div class="aoP435930ModuleGrid">'+
+   guidedLinks.map(item=>prayFamilyItem(['own',item.id,L(item.en,item.fr),L(item.descriptionEn,item.descriptionFr)],true)).join('')+
+   '</div></section>');
  const subjectCounts=prayerSubjectCounts(canon);
  // Secondary theological browse; does not alter the approved Prayer entrance
  // or admit any unpublished research record as a runnable prayer.
@@ -2586,7 +2595,7 @@ function renderLibrary(){
   PRAYER_SUBJECTS_V1.map(subject=>'<button type="button" data-p435930-lib-subject="'+subject.id+'" aria-pressed="'+String(LIB.subject===subject.id)+'">'+
     esc(isFr()?subject.fr:subject.en)+' <small>'+subjectCounts.counts[subject.id]+'</small></button>').join('')+
   '</div><p class="aoP435930SourceNote">'+esc(L('Only existing published texts are included. Unverified research works are not shown as readable prayers.','Seuls les textes déjà publiés sont inclus. Les œuvres non vérifiées ne sont pas présentées comme prières disponibles.'))+'</p></details>';
- return `${head(L('Prayer Library','Livre de prières'),`${Object.keys(DATA.prayers||{}).length} ${L('prayers','prières')}`)}<main class="aoP435930Body">${libraryOverviewGuide()}<label class="aoP435930Search"><span>${assetIcon('ao-ui-search')}</span><input type="search" data-p435930-lib-search value="${esc(LIB.q)}" placeholder="${esc(L('Search prayers','Rechercher une prière'))}"></label><div class="aoP435930Chips">${cats.map(([id,n])=>`<button type="button" class="${id===LIB.cat?'active':''}" data-p435930-lib-cat="${esc(id)}">${esc(n)}</button>`).join('')}</div>${subjectBrowse}<div class="aoP435930LibraryList" data-ao-prayer-subject-results="${esc(LIB.subject)}">${LIB.cat==="essentials"&&!q?claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_IDS_V1,prayers:DATA.prayers,esc,title:L("Essential Prayers","Prières essentielles"),artFor:releasedPrayerCardArtUrl}):renderLibraryEntryRows(rows,q)}</div></main>`;
+ return `${head(L('Prayer Library','Livre de prières'),`${Object.keys(DATA.prayers||{}).length} ${L('prayers','prières')}`)}<main class="aoP435930Body">${libraryOverviewGuide()}<label class="aoP435930Search"><span>${assetIcon('ao-ui-search')}</span><input type="search" data-p435930-lib-search value="${esc(LIB.q)}" placeholder="${esc(L('Search prayers','Rechercher une prière'))}"></label><div class="aoP435930Chips">${cats.map(([id,n])=>`<button type="button" class="${id===LIB.cat?'active':''}" data-p435930-lib-cat="${esc(id)}">${esc(n)}</button>`).join('')}</div>${subjectBrowse}<div class="aoP435930LibraryList" data-ao-prayer-subject-results="${esc(LIB.subject)}">${LIB.cat==="essentials"&&!q?claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_IDS_V1,prayers:DATA.prayers,esc,title:L("Essential Prayers","Prières essentielles"),artFor:releasedPrayerCardArtUrl}):renderLibraryEntryRows(rows,q)}</div>${guidedSection}</main>`;
 }
 function monthIndex(key){const d=dateObj(key);return d?d.getFullYear()*12+d.getMonth():null}
 function consecutive(records,needed){const done=records.filter(x=>x.complete).sort((a,b)=>a.date.localeCompare(b.date));if(!done.length)return 0;let c=1;for(let i=done.length-1;i>0;i--){const a=monthIndex(done[i].date),b=monthIndex(done[i-1].date);if(a-b===1)c++;else break}return Math.min(c,needed)}
