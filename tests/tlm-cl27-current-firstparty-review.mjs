@@ -494,7 +494,7 @@ assert.equal(new Set([...earlierW6,...reviewedW6]).size,264);
 assert.equal(296-earlierW6.size-reviewedW6.size,32);
 const w6ById=new Map(wave6.records.map(x=>[x.cl2_anchor,x]));
 for(const id of ["RG-F61760F13D97","RG-6F16A016F04B","RG-A306B10B763B","RG-9DB299EB9AFB","RG-B0B5E828070F"]){
- assert.ok(/CONFLICT|UNSUPPORTED|NOT_CONFIRMED/.test(w6ById.get(id).decision),"Do not promote disputed historical clock");
+ assert.ok(/CONFLICT|UNSUPPORTED|NOT_CONFIRMED|NOT_SUPPORTED/.test(w6ById.get(id).decision),"Do not promote disputed historical clock");
 }
 assert.ok(w6ById.get("RG-EC5A4BA48BF9").decision.includes("NOT_1962_PROOF"));
 assert.ok(w6ById.get("RG-DA2F4D212252").decision.includes("NOT_1962_PROOF"));
