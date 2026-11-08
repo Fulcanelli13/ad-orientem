@@ -89,7 +89,7 @@ jobs:
       - name: Validate public 390px LIVE/Missal and returning-user phone smoke code
         run: node --check tests/github-pages-phone-live-acceptance.mjs
       - name: Validate public committed offline snapshot and consent test code
-        run: node --check tests/installed-pages-live-phone.mjs && node --check tests/offline-snapshot-e2e.mjs
+        run: node --check tests/installed-pages-live-phone.mjs && node --check tests/offline-snapshot-e2e.mjs && node tests/installed-pages-first-boot-retry-contract.mjs
       - name: Build allowlisted static release
         run: node tools/build-web-preview.mjs
       - name: Validate base path, noindex, release safety and 1GB Pages cap
