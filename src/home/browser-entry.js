@@ -2,6 +2,7 @@ import { openMassTextsSheet } from "../mass/mass-texts-sheet.js";
 import { ensureLearnModule } from "../learn/lazy-module-registry.js";
 import { verifiedH4WeekColour } from "./today-h4-view.js";
 import { selectC3PrayerSlide,showC3ArtInfo,closeC3ArtInfo,openC3ReleasedArtGallery,stepC3ReleasedArtGallery,filterC3ReleasedArtGallery,returnFromC3ReleasedArtGallery } from "./c3-gallery.js";
+import { openReleasedSacredArtTarget } from "./sacred-art-gallery-targets.js";
 import { openH4ChoicesSheet,closeH4ChoicesSheet } from "./today-h4-change-sheet.js";
 import { HOME_PRESENTATION_VERSION, renderHome, reconcileTodayHero } from "./presentation.js";
 import { loadSharedSanctoralReadModel } from "../calendar/living-sanctoral-read-model.js";
@@ -394,6 +395,32 @@ export function createHomeOwner(win=globalThis){
         if(exact&&!exact.disabled){exact.click();return;}
       }
       void openRoute(retry.dataset?.homeShortcutRetry,{trigger:retry});
+      return;
+    }
+    const artworkTarget=target?.closest?.("[data-c3-art-target-kind]");
+    if(artworkTarget){
+      event.preventDefault?.();event.stopImmediatePropagation?.();
+      const dialog=root(win)?.querySelector?.("[data-home-c3-art-dialog]");
+      if(!dialog?.open||!dialog.contains(artworkTarget)||
+         !Number.isInteger(dialog.__c3GalleryIndex)||artworkTarget.disabled)return;
+      const error=dialog.querySelector("[data-c3-art-target-error]");
+      if(error){error.hidden=true;error.textContent="";}
+      artworkTarget.disabled=true;
+      void openReleasedSacredArtTarget(win,{
+        workId:dialog.__c3CurrentWorkId,
+        kind:artworkTarget.dataset.c3ArtTargetKind,
+        id:artworkTarget.dataset.c3ArtTargetId
+      }).then(opened=>{
+        artworkTarget.disabled=false;
+        if(opened){closeC3ArtInfo(root(win));return;}
+        if(error){error.hidden=false;error.textContent=state(win)?.language==="fr"
+          ?"Cette destination n’est pas disponible.":"This destination could not be opened.";}
+      }).catch(err=>{
+        artworkTarget.disabled=false;
+        try{win?.console?.error?.("Sacred Art destination rejected",err)}catch{}
+        if(error){error.hidden=false;error.textContent=state(win)?.language==="fr"
+          ?"Cette destination n’est pas disponible.":"This destination could not be opened.";}
+      });
       return;
     }
     const c3Step=target?.closest?.("[data-home-c3-prayer-step]");
