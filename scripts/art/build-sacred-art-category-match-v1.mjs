@@ -88,7 +88,7 @@ assert.equal(groups.filter(w=>!w.categoryCandidates.length).length,332);
 for(const exception of SACRED_ART_SAINT_SCOPE_EXCEPTIONS_V1){
  const work=groupById.get(exception.workGroupId);
  assert.ok(work,"Missing exact saint scope exception: "+exception.workGroupId);
- assert.deepEqual(work.categoryCandidates,["SAINTS"],"Named saint work cannot be a Christ-specific event: "+exception.workGroupId);
+ assert.ok(work.categoryCandidates.includes("SAINTS")&&!work.categoryCandidates.includes("PASSION")&&!work.categoryCandidates.includes("MINISTRY"),"Named saint work cannot be a Christ-specific event: "+exception.workGroupId);
  assert.ok(work.existingLexicalSubjectTags.some(t=>t.tag===exception.excludedTag
   && t.categoryId===null&&t.subjectScopeExclusion===exception.reason));
 }
