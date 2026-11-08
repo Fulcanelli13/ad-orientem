@@ -1,0 +1,70 @@
+name: Sacred Art Batch 1 — two verified full-frame mobile staging assets
+on:
+  push:
+    branches:
+      - research/sacred-art-batch1-seven-physical-photos-20261108
+    paths:
+      - 'data/artwork/batch1-two-mobile-staging.v1.json'
+      - 'scripts/art/batch1_two_mobile_contain_stage.py'
+      - 'tests/sacred-art-batch1-two-mobile-staging.mjs'
+      - '.github/workflows/sacred-art-batch1-two-staged-webps.yml'
+  workflow_dispatch: {}
+permissions:
+  contents: write
+concurrency:
+  group: sacred-art-batch1-two-mobile-stage
+  cancel-in-progress: true
+jobs:
+  derive-verified-full-scene:
+    name: Exact-hash museum originals to unapproved staged WebP (no Pages release)
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Enforce exact source and no-publication staging contract
+        run: node tests/sacred-art-batch1-two-mobile-staging.mjs
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install image quality tools
+        run: python -m pip install --disable-pip-version-check 'Pillow==12.0.0'
+      - name: Compile source and full-scene transformer
+        run: python -m py_compile scripts/art/batch1_firstparty_photo_acquire.py scripts/art/batch1_two_mobile_contain_stage.py
+      - name: Download two exact officially CC0/public-domain museum source photographs
+        run: python scripts/art/batch1_firstparty_photo_acquire.py
+      - name: Verify SHA256 and derive two full-frame mobile WebP research assets
+        run: python scripts/art/batch1_two_mobile_contain_stage.py
+      - name: Verify generated staging index and actual bytes
+        run: node tests/sacred-art-batch1-two-mobile-staging.mjs
+      - name: Preserve staging quality evidence even if push unavailable
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-batch1-two-unapproved-fullscene-webps
+          path: |
+            assets/staged/sacred-art-batch1/*.webp
+            data/artwork/batch1-two-mobile-staging-output.v1.json
+            artifacts/sacred-art-firstparty-batch1/run-report.json
+          retention-days: 14
+          if-no-files-found: warn
+      - name: Commit verified staging assets to research branch ONLY
+        if: success() && github.ref == 'refs/heads/research/sacred-art-batch1-seven-physical-photos-20261108'
+        run: |
+          set -euo pipefail
+          git add assets/staged/sacred-art-batch1/01-crucifixion-cma-fullframe.webp
+          git add assets/staged/sacred-art-batch1/02-teresa-met-fullframe.webp
+          git add data/artwork/batch1-two-mobile-staging-output.v1.json
+          git diff --cached --name-only | while IFS= read -r file; do
+            case "$file" in
+              assets/staged/sacred-art-batch1/01-crucifixion-cma-fullframe.webp|assets/staged/sacred-art-batch1/02-teresa-met-fullframe.webp|data/artwork/batch1-two-mobile-staging-output.v1.json) ;;
+              *) echo "Unexpected staged file: $file" >&2; exit 1 ;;
+            esac
+          done
+          if git diff --cached --quiet; then echo "No staged image changes"; exit 0; fi
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'research(art): stage two SHA-pinned full-scene museum WebPs outside Pages'
+          git push origin HEAD:refs/heads/research/sacred-art-batch1-seven-physical-photos-20261108
