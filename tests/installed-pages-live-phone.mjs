@@ -19,6 +19,11 @@ const report={
 };
 await mkdir(output,{recursive:true});
 let browser,context,page,failure=null;
+// Fresh public site readiness can race the first browser's module load during
+// Pages publication. A second *independent* profile is the bounded recovery;
+// all offline/snapshot assertions below remain mandatory on the successful one.
+const MAX_FRESH_BOOT_ATTEMPTS=2;
+report.firstBootAttempts=[];
 
 async function capture(name){
  const data=await page.evaluate(label=>{
@@ -54,17 +59,53 @@ async function showSettings(){
 }
 try{
  browser=await chromium.launch({headless:true});
- context=await browser.newContext({
+ const freshProfile={
   viewport:{width:390,height:844},isMobile:true,hasTouch:true,
   deviceScaleFactor:1,serviceWorkers:"allow",locale:"en-GB"
- });
- page=await context.newPage();
- page.on("pageerror",e=>report.pageErrors.push(String(e?.message||e).slice(0,500)));
- const response=await page.goto(base+"?ao_p0_installed_phone_probe="+Date.now(),
-  {waitUntil:"domcontentloaded",timeout:75000});
- assert.equal(response?.status(),200,"Public GitHub Pages entry did not respond HTTP 200");
- await page.waitForFunction(()=>globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner===true,
-  null,{timeout:60000});
+ };
+ for(let attempt=1;attempt<=MAX_FRESH_BOOT_ATTEMPTS;attempt++){
+  // A failed first boot must never leave its service worker or cache inside
+  // the profile used for release certification.
+  if(context)await context.close();
+  context=await browser.newContext(freshProfile);
+  page=await context.newPage();
+  page.on("pageerror",e=>report.pageErrors.push(String(e?.message||e).slice(0,500)));
+  let httpStatus=null;
+  try{
+   const response=await page.goto(base+"?ao_p0_installed_phone_probe="+Date.now()+
+     "&fresh_attempt="+attempt,{waitUntil:"domcontentloaded",timeout:75000});
+   httpStatus=response?.status()??null;
+   assert.equal(httpStatus,200,"Public GitHub Pages entry did not respond HTTP 200");
+   await page.waitForFunction(()=>
+     globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner===true,
+     null,{timeout:60000});
+   report.firstBootAttempts.push({attempt,httpStatus,ready:true});
+   if(attempt>1)console.warn("P0_PUBLIC_FIRST_BOOT_RECOVERED="+
+     JSON.stringify({attempt,failedPriorAttempts:attempt-1}));
+   break;
+  }catch(error){
+   const observed=await page.evaluate(()=>({
+     readyState:document.readyState,
+     location:location.href,
+     shellDefined:Boolean(globalThis.AO_APP_SHELL_V1),
+     shellStatus:globalThis.AO_APP_SHELL_V1?.status?.()??null,
+     offlineStatus:globalThis.AO_OFFLINE_APP_V1?.status??null,
+     scriptElements:document.querySelectorAll("script").length,
+   })).catch(e=>({diagnosticError:String(e?.message??e)}));
+   const failureEvidence={
+     attempt,httpStatus,ready:false,
+     error:String(error?.message??error).slice(0,500),observed,
+     pageErrors:report.pageErrors.slice(-10)
+   };
+   report.firstBootAttempts.push(failureEvidence);
+   console.warn("P0_PUBLIC_FIRST_BOOT_ATTEMPT_FAILED="+JSON.stringify(failureEvidence));
+   await page.screenshot({path:resolve(output,"first-boot-failure-"+attempt+".png"),
+     animations:"disabled"}).catch(()=>{});
+   // Never conceal persistent boot failures. If all fresh profiles fail,
+   // reject the release rather than asserting that the app is offline-ready.
+   if(attempt===MAX_FRESH_BOOT_ATTEMPTS)throw error;
+  }
+ }
  // A fresh browser has never had an offline snapshot. Wait for actual
  // service-worker stage/readiness; failing it must not be disguised as PASS.
  await page.waitForFunction(()=>{
