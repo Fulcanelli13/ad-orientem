@@ -11,6 +11,8 @@ import {prayerAcquisitionCandidates} from "../src/pray/prayer-acquisition-histor
 import {RED_BOOKLET_COMMUNION_LIBRARY_LINKS_V1,redBookletCommunionLibraryLinksForSubject,redBookletCommunionLibraryLink} from "../src/pray/red-booklet-communion-library-links.v1.js";
 import {RED_BOOKLET_SUSCIPE_LIBRARY_LINK_V1,redBookletSuscipeLibraryLinksForSubject} from "../src/pray/red-booklet-suscipe-library-link.v1.js";
 import {personalDailyDirectPlan,defaultPersonalDailyPrefs} from "../src/pray/daily-personal-rule.js";
+import {RED_BOOKLET_PRIVATE_HISTORICAL_WORKS_V1,redBookletPrivateHistoricalWork,
+ redBookletPrivateHistoricalSource,redBookletPrivateHistoricalWorksForSubject} from "../src/pray/red-booklet-private-historical-works.v1.js";
 const read=path=>readFileSync(new URL("../"+path,import.meta.url),"utf8");
 const registry=JSON.parse(read("data/pray/red-booklet-2013-completeness.v1.json"));
 const mass=JSON.parse(read("data/research/mass-ordo-red-missal-2013-editorial.v1.json"));
@@ -26,7 +28,7 @@ assert.equal((mass.ceremonialOutOfEnglishScope||[]).length,15);
 assert.ok(!registry.works.some(x=>["mass_canon","mass_proper","mass_confiteor"].includes(x.id)),"Mass forms belong to existing 1962 source owner, not a second devotional corpus");
 const byStatus={reader_present:[],variant_requires_comparison:[],unresolved:[]};
 const indexedCommunion=new Set(["pre_thomas","pre_ambrose","communion_thanks","communion_heart","holy_spirit_augustine","our_lady_65","communion_dying","communion_heart_intercession","communion_thomas","communion_bonaventure","crucifix"]);
-const indexedAll=new Set([...indexedCommunion,"ignatius_suscipe"]);
+const indexedAll=new Set([...indexedCommunion,"ignatius_suscipe",...RED_BOOKLET_PRIVATE_HISTORICAL_WORKS_V1.map(x=>x.id)]);
 const requiredGroups=["before_mass","before_communion","after_low_mass","benediction","confession","after_communion","devotional","marian"];
 for(const w of registry.works){
  assert.equal(w.pdfPage,w.printedPage+1,"Wrong PDF page reference "+w.id);
@@ -45,16 +47,16 @@ for(const w of registry.works){
   assert.notEqual(w.status,"unresolved","An unresolved work must not masquerade as an identified reader "+w.id);
   const source=read(w.owner.path);
   assert.ok(source.includes(w.owner.symbol),"Reader owner cannot be located: "+w.id+" / "+w.owner.symbol);
-  assert.match(w.owner.route,/^pray\./);
+  assert.match(w.owner.route,/^(pray|mass)\./);
   if(w.owner.path.endsWith("canonical-data.js"))assert.ok(DATA.prayers[w.owner.symbol],"Canonical record missing for "+w.id);
   if(w.owner.path.endsWith("traditional-pray-data.js"))assert.ok(COMMUNION_TREASURY_V383[w.owner.symbol],"Communion source key missing for "+w.id);
  }else assert.equal(w.status,"unresolved","Non-published or variant entry requires an exact owner before any published claim "+w.id);
 }
 assert.deepEqual(Object.fromEntries(Object.entries(byStatus).map(([k,v])=>[k,v.length])),{
- reader_present:30,variant_requires_comparison:3,unresolved:4
+ reader_present:34,variant_requires_comparison:3,unresolved:0
 });
-for(const required of ["pre_thomas","pre_ambrose","communion_thanks","communion_heart","holy_spirit_augustine","our_lady_65","communion_dying","communion_heart_intercession","communion_thomas","communion_bonaventure","crucifix","ben_tantum","ben_praises","leonine","angelus","regina","rosary","ignatius_suscipe"])assert.ok(byStatus.reader_present.includes(required),required);
-for(const required of ["before_mass","conf_exam_prayer","conf_thanksgiving","conf_joseph"])assert.ok(byStatus.unresolved.includes(required),required);
+for(const required of ["pre_thomas","pre_ambrose","communion_thanks","communion_heart","holy_spirit_augustine","our_lady_65","communion_dying","communion_heart_intercession","communion_thomas","communion_bonaventure","crucifix","ben_tantum","ben_praises","leonine","angelus","regina","rosary","ignatius_suscipe","before_mass","conf_exam_prayer","conf_thanksgiving","conf_joseph"])assert.ok(byStatus.reader_present.includes(required),required);
+assert.deepEqual(byStatus.unresolved,[],"No source-owner gaps remain; three variants stay held");
 const ignatius=registry.works.find(w=>w.id==="ignatius_suscipe");
 assert.equal(ignatius.owner.route,"pray.morning_evening");
 assert.ok(prayerAcquisitionCandidates("self_offering",{language:"en"}).some(x=>x.id==="ignatius_suscipe_lasance_1908_en"),"Existing EN Suscipe source prayer must remain available");
@@ -105,7 +107,35 @@ for(const lang of suscipe.languages){
  assert.equal(direct?.rows?.[0]?.language,lang);
 }
 assert.equal(personalDailyDirectPlan({daypart:"evening",prefs:defaultPersonalDailyPrefs("en"),sourceId:suscipe.sourceIds.en}),null);
+assert.equal(RED_BOOKLET_PRIVATE_HISTORICAL_WORKS_V1.length,4);
+assert.equal(redBookletPrivateHistoricalWorksForSubject("all").length,0);
+assert.equal(redBookletPrivateHistoricalWorksForSubject("III").length,1);
+assert.equal(redBookletPrivateHistoricalWorksForSubject("I").length,2);
+assert.equal(redBookletPrivateHistoricalWorksForSubject("VI").length,1);
+assert.equal(redBookletPrivateHistoricalWorksForSubject("all","confession").length,1);
+assert.equal(redBookletPrivateHistoricalWork("missing"),null);
+assert.equal(redBookletPrivateHistoricalSource("missing"),null);
+for(const source of RED_BOOKLET_PRIVATE_HISTORICAL_WORKS_V1){
+ const row=registry.works.find(x=>x.id===source.id);
+ assert.equal(row.owner.symbol,source.sourceId);
+ assert.equal(row.owner.route,source.route);
+ assert.equal(row.printedPage,source.printedPage);
+ assert.equal(row.wordingCollatedAgainst2013,false);
+ assert.equal(source.wordingCollatedAgainst2013,false);
+ assert.deepEqual(source.languages,["en"]);
+ assert.ok(source.text.length>100,"All four added historical prayer bodies must be complete "+source.id);
+ assert.match(source.sourceUrl,/^https:\/\//);
+ assert.equal(row.sourceWitness?.sourceUrl,source.sourceUrl);
+}
 const ui=read("src/pray/presentation-runtime.js"),treasury=read("src/pray/traditional-pray-runtime.js");
+assert.match(ui,/data-p435930-red-historical/,"Library must expose source-backed Before Mass and Confession prayers");
+assert.match(ui,/redBookletPrivateHistoricalWorksForSubject\(LIB.subject,q\)/,"Historical private prayer search must work");
+assert.match(ui,/historicalPrayer:work.sourceId/,"Confession Library link must preserve the exact source ID");
+assert.match(ui,/massPrayer:work.sourceId/,"Before Mass Library link must preserve the exact source ID");
+assert.match(ui,/data-p435930-conf-historical-back/,"Confession must keep historical prayer distinct from sacramental flow");
+assert.match(ui,/data-ao-confession-source-language-fallback/,"No unverified French translation");
+assert.match(treasury,/opts.massPrayer!==undefined/,"Before Mass original source deep links must be validated");
+assert.match(treasury,/massFourEndsDeclaration1904/,"Before Mass source must be in complete traditional folio");
 assert.match(ui,/data-p435930-red-communion/,"Library list must expose source-owned links");
 assert.match(ui,/redBookletCommunionLibraryLinksForSubject\(LIB.subject,q\)/,"Library search must include indexed Communion prayers");
 assert.match(ui,/communionPrayer:work.sourceId/,"Library must hand off the exact source ID");
@@ -119,4 +149,4 @@ assert.match(treasury,/communionStep:communionTarget\?\.index\?\?0/,"Selected wo
 assert.match(treasury,/opts.dailySourcePrayer!==undefined&&!requestedDailySource\)return false/,"Suscipe deep link must reject unrecognized source IDs");
 assert.match(treasury,/data-tp381-suscipe-lang/,"Suscipe must offer only the attested EN/LA source-language choices");
 assert.match(treasury,/dailyDirectLanguage:requestedDailySource\?\.\[0\]/,"Source language must not be borrowed from saved preferences");
-console.log("PASS booklet scan: 37 source works; twelve source-owned private prayers searchable and opened by source ID (eleven Communion, Suscipe EN/LA); 30 located, 3 variants, 4 holds, separate 256 cues; no 2013 word-for-word or French translation claims");
+console.log("PASS booklet scan: 37 source works; sixteen source-owned private prayers searchable and opened by source ID (eleven Communion, Suscipe EN/LA, four Mass/Confession); 34 located, 3 variants, 0 owner gaps, separate 256 cues; no 2013 word-for-word or French translation claims");
