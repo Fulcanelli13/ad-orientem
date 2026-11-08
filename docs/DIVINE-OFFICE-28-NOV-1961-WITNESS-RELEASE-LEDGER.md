@@ -66,3 +66,38 @@ checks for the 1961 printed-order transformation (both recitation contexts,
 no post-canticle Kyrie/Pater, both blessing Amens, 40 reading events).
 The source and printed witnesses are distinct records. No new runtime
 provider or commercial licence was added.
+
+
+## 8 November follow-up: verse/stich source fidelity and reading labels
+
+Comparison of the pinned Saturday Psalm 87 / Psalm 102 Latin rows with the
+2023 printed *Psalterium Romanum iuxta ritum 1962* (Saturday Compline,
+pp. 177–179), plus independent Clementine Vulgate biblical verse references,
+requires distinguishing recitation stichs from Bible verse numbering.
+
+- Biblical Psalm 87:1 is the superscription; "Domine, Deus salutis meae"
+  correctly begins at Psalm 87:2. A stich ordinal is not a Bible citation.
+- Psalm 87 contains 19 recitation stichs, of which some cross the biblical
+  boundaries 87:5–6 and 87:9–10.
+- Psalm 102 contains 22 recitation stichs, divided as 1–12 / 13–22. Stiches
+  cross the boundaries 102:13–14, 14–15, and 17–18. The visible source
+  number jump does not mean "Homo, sicut faenum" or another word is absent.
+- The new private reading display projection strips only source numeric
+  prefixes and shows conservative biblical reference or span labels. Every
+  original source line is retained separately, with its original source
+  identity and source verse number. A changed sequence or language row
+  identity fails closed, never silently renumbered or reconstructed.
+- For 28 November and 5 December, strict tests check all 19+22 display
+  frames, the crossing boundaries, source-word preservation and
+  source-numbering drift; other dates retain the existing reviewed source.
+
+Witnesses: https://ccregis.org/psalter_lt.pdf (2023 typesetting, pp. 177–179),
+https://www.ccel.org/ccel/b/bible/vul/cache/vul.pdf (Clementine Psalm 87),
+https://www.wilbourhall.org/pdfs/vulgate.pdf (Clementine Psalm 102).
+
+The accessible 1961 Mame scan holds the Ordinary only (145 PDF pages)
+and does not contain the actual Saturday psalter leaves. This work improves
+source and citation fidelity, but does not establish full verbatim collation
+against a complete 1961 printed Breviary. Publication remains withheld:
+1961_psalter_verbatim_collated=false, latin_public_release_certified=false,
+published=false.
