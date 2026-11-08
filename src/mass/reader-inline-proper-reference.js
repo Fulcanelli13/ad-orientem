@@ -110,6 +110,24 @@ export const JULY07_REFERENCE_CSS=String.raw`
 .ao-reader-shell[data-mode="MISSAL"] .ao-proper-reference-mark{
  color:var(--ao-missal-rubric-red,#df7e80)
 }
+.ao-proper-reference-toggle{
+ grid-column:1;grid-row:2;display:block;align-self:center;
+ min-width:28px;min-height:28px;margin:0;padding:2px;
+ background:transparent;border:0;border-radius:3px;
+ color:var(--ao-muted,#aaa79f);
+ font:600 11px/1.25 var(--ao-font-ui,system-ui,sans-serif);
+ cursor:pointer
+}
+.ao-proper-reference-toggle:focus-visible{
+ outline:2px solid var(--ao-mass-accent,#aabed3)
+}
+.ao-proper-reference-notation[data-reference-view="text"]{
+ border-top:0;margin:0;padding:2px 0
+}
+.ao-proper-reference-notation[data-reference-view="text"] .ao-proper-reference-mark,
+.ao-proper-reference-notation[data-reference-view="text"] .ao-proper-reference-expand{
+ display:none!important
+}
 .ao-proper-reference-error{grid-column:2}
 .ao-proper-reference-zoom .ao-proper-reference-wide{
  background:#0b1018;color:#ece9e1
@@ -258,7 +276,22 @@ export function createDatedProperNotationPreview({
       /^\s*℣/.test(score.sourceLatin??"")?"℣":"♫";
     mark.setAttribute("aria-hidden","true");
     expand.append(staff);
-    host.append(mark,expand,title);node.append(host);
+    host.dataset.referenceView="notation";
+    const viewToggle=doc.createElement("button");viewToggle.type="button";
+    viewToggle.className="ao-proper-reference-toggle";
+    viewToggle.textContent="Aa";
+    viewToggle.setAttribute("aria-label","Show text without Gregorian notation");
+    viewToggle.setAttribute("aria-pressed","true");
+    viewToggle.addEventListener("click",event=>{
+      event.stopPropagation();
+      const notation=host.dataset.referenceView==="notation";
+      host.dataset.referenceView=notation?"text":"notation";
+      viewToggle.textContent=notation?"♫":"Aa";
+      viewToggle.setAttribute("aria-pressed",String(!notation));
+      viewToggle.setAttribute("aria-label",notation?
+        "Show Gregorian notation":"Show text without Gregorian notation");
+    });
+    host.append(mark,expand,title,viewToggle);node.append(host);
     const entry={host,score,engraver:null};entries.push(entry);
     try{
      const engraver=engraverFactory({viewport:staff,document:doc});
