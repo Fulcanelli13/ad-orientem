@@ -87,6 +87,7 @@ try{
        markerColor:mark?getComputedStyle(mark).color:null,
        directTap:expand?.contains(staff)===true,
        staffBackground:style?.backgroundColor??null,
+       staffPixelFilter:staff?.querySelector('svg')?getComputedStyle(staff.querySelector('svg')).filter:null,
        label:m.querySelector(".ao-proper-reference-label")?.textContent?.trim()??"",
        wrapperWidth:m.clientWidth,staffWidth:staff?.clientWidth??0,
        parentWidth:m.parentElement?.clientWidth??0
@@ -130,6 +131,9 @@ try{
    assert.ok(after.acPresentation.every(x=>
      x.staffBackground==="rgba(0, 0, 0, 0)"||x.staffBackground==="transparent"),
     "Claude A/C unboxed presentation must not return to the grey/white score panel");
+   assert.ok(after.acPresentation.every(x=>x.staffPixelFilter?.includes("brightness(0)")),
+    "Actual Exsurge SVG must normalize black score glyphs to readable light ink on dark Ordo");
+
    assert.ok(after.acPresentation.every(x=>x.label.includes("1961")&&x.label.length<70),
     "Small provenance copy, no oversized review-workbench metadata");
    assert.ok(after.acPresentation.every(x=>x.staffWidth>0&&x.wrapperWidth>0),
