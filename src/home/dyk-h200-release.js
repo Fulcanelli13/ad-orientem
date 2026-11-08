@@ -6,7 +6,7 @@ const RITUS="https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translate
 const CE_URLS=new Set(["03246a","03245b","06151a","05399b","14506a","12446c"].map(x=>"https://www.newadvent.org/cathen/"+x+".htm"));
 const RITUS_PAGES=Object.freeze({"VI.3":8,"VIII.4":14,"VIII.5":15,"VII.5":10,"VI.5":9});
 const clean=x=>typeof x==="string"?x.trim():"";
-const validDate=x=>typeof x==="string"&&/^\d{4}-\d{2}-\d{2}$/.test(x)&&new Date(x+"T12:00:00Z").toISOString().slice(0,10)===x;
+const validDate=x=>{if(typeof x!=="string"||!/^\d{4}-\d{2}-\d{2}$/.test(x))return false;const date=new Date(x+"T12:00:00Z");return !Number.isNaN(date.getTime())&&date.toISOString().slice(0,10)===x;};
 let promise=null;
 export function loadDyk200Release(win=globalThis){
  if(promise)return promise;
