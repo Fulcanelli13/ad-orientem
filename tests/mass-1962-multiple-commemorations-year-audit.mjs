@@ -173,15 +173,15 @@ let browser;try{
    "Original 1962 apostolic group was incorrectly left uncertified");
  // The original date-resolved source must reach every Mass form; a
  // synthetically passing rule fixture alone cannot close the 2026 queue.
- for(const date of ["2026-07-16","2026-10-05"]){
+ for(const date of ["2026-06-02","2026-06-09","2026-06-15","2026-07-16","2026-10-05"]){
    console.log("PENTECOST_FERIA_PROBE="+JSON.stringify({
      date,day:aggregate.single.find(x=>x.date===date),
      pending:aggregate.uncertifiedFormCases.filter(x=>x.date===date)
    }));
  }
  for(const date of ["2026-02-23","2026-02-24","2026-03-06",
-   "2026-03-19","2026-03-25","2026-07-16","2026-10-05",
-   "2026-11-23"]){
+   "2026-03-19","2026-03-25","2026-06-02","2026-06-09","2026-06-15",
+   "2026-07-16","2026-10-05","2026-11-23"]){
    const remaining=aggregate.uncertifiedFormCases.filter(x=>x.date===date);
    assert.deepEqual(remaining,[],date+" original 1962 Mass-form orations are still uncertified");
  }
