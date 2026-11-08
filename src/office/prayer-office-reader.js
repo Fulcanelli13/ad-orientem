@@ -122,7 +122,13 @@ export function openDivineOfficeReader(win=globalThis,{date=todayLocal()}={}){
  const example=d.createElement("button");example.type="button";
  example.textContent="Advent pilot · 28 Nov 2026";
  example.addEventListener("click",()=>{input.value="2026-11-28";hour="COMPLINE";draw()});
- bar.append(example);host.append(bar);
+ bar.append(example);
+ const secondSaturday=d.createElement("button");secondSaturday.type="button";
+ secondSaturday.textContent="Advent II · 5 Dec 2026";
+ secondSaturday.addEventListener("click",()=>{
+  input.value="2026-12-05";hour="COMPLINE";draw();
+ });
+ bar.append(secondSaturday);host.append(bar);
  const hours=d.createElement("div");hours.className="aoOfHours";host.append(hours);
  let hour="VESPERS";
  for(const row of ROMAN_OFFICE_HOURS){
