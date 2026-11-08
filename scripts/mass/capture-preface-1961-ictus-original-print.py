@@ -37,7 +37,7 @@ w,h=page.rect.width,page.rect.height
 clips={
  "GR132_full_preface_response":(0.18,0.285,0.97,0.365),
  "GR132_et_cum_staff":(0.47,0.285,0.86,0.36),
- "GR132_spi_neume_context":(0.59,0.29,0.72,0.35),
+ "GR132_spi_neume_context":(0.548,0.285,0.632,0.355),
 }
 for name,(x0,y0,x1,y1) in clips.items():
  rect=fitz.Rect(x0*w,y0*h,x1*w,y1*h)
