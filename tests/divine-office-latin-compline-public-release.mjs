@@ -8,8 +8,9 @@ import {officeRouteState} from "../src/office/office-route-state.js";
 import {getDivineOfficePrayerReadiness}
  from "../src/pray/divine-office-readiness-gate.js";
 
-test("only traditional Latin Compline on 28 November is approved; exact 1961 facsimile remains unverified",()=>{
+test("two Advent Saturdays only: traditional Latin without unverified original 1961 facsimile claim",()=>{
  assert.equal(LATIN_COMPLINE_RELEASE.date,"2026-11-28");
+ assert.deepEqual(LATIN_COMPLINE_RELEASE.approvedDates,["2026-11-28","2026-12-05"]);
  assert.equal(LATIN_COMPLINE_RELEASE.language,"la");
  assert.equal(LATIN_COMPLINE_RELEASE.sourcePsalterFamily,"VULGATA_BIBLIORUM");
  assert.equal(LATIN_COMPLINE_RELEASE.target1961Edition,"MAME_1961_VULGATA");
@@ -18,25 +19,30 @@ test("only traditional Latin Compline on 28 November is approved; exact 1961 fac
  assert.equal(LATIN_COMPLINE_RELEASE.ordinary1961SequenceReviewed,true);
  assert.equal(LATIN_COMPLINE_RELEASE.saturdayAppointmentReviewed,true);
  assert.equal(LATIN_COMPLINE_RELEASE.psalter1961VerbatimCollated,false);
+ assert.equal(latinComplineReleaseEligibility({date:"2026-12-05"}).status,"ELIGIBLE");
  assert.equal(LATIN_COMPLINE_RELEASE.printedVulgatePatternDualWitnessCollated,true);
  assert.equal(LATIN_COMPLINE_RELEASE.releaseBasis,"ROMAN_1960_OFFICE_TRADITIONAL_VULGATE_LATIN");
  assert.equal(LATIN_COMPLINE_RELEASE.completeHourCollated,true);
  assert.equal(LATIN_COMPLINE_RELEASE.rightsApproved,true);
  assert.equal(LATIN_COMPLINE_RELEASE.publicReleaseApproved,true);
- const r=latinComplineReleaseEligibility({
-  date:"2026-11-28",hour:"COMPLINE",calendarScope:"UNIVERSAL"
- });
- assert.equal(r.status,"ELIGIBLE");
- assert.equal(r.published,true);
- assert.equal(r.sourceTextReleased,true);
- assert.equal(r.exact1961PsalterLeafVerified,false);
- assert.equal(r.language,"la");
+ for(const date of LATIN_COMPLINE_RELEASE.approvedDates){
+  const r=latinComplineReleaseEligibility({
+   date,hour:"COMPLINE",calendarScope:"UNIVERSAL"
+  });
+  assert.equal(r.status,"ELIGIBLE",date);
+  assert.equal(r.date,date);
+  assert.equal(r.published,true);
+  assert.equal(r.sourceTextReleased,true);
+  assert.equal(r.exact1961PsalterLeafVerified,false);
+  assert.equal(r.language,"la");
+ }
 });
 test("no public Office route can fetch unapproved source words",async()=>{
  for(const options of [
   {date:"2026-11-28",hour:"VESPERS"},
   {date:"2026-11-29",hour:"COMPLINE"},
-  {date:"2026-12-05",hour:"COMPLINE"},
+  {date:"2026-12-01",hour:"COMPLINE"},
+  {date:"2026-12-06",hour:"COMPLINE"},
   {date:"2026-11-28",hour:"COMPLINE",calendarScope:"LOCAL"},
   {date:"2027-11-28",hour:"COMPLINE"},
   {date:"2026-11-28",hour:"MATINS"}
