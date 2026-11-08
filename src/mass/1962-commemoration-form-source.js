@@ -185,6 +185,18 @@ export function select1962CommemorationsForMassForm({
   const typedAdventMain=/^tempora:Adv[1-4]-[1-6]:3:/i.test(mainId)&&
     /^Tempora\/Adv[1-4]-[1-6]$/.test(String(main.path??""))&&
     Number(main.rank)===3;
+  // Ordinary commemoration on a IV-class feria after Pentecost.
+  // General Rubrics §§108–114: source-identified ordinary commemorations
+  // are retained in the Low Mass but not nonconventual Masses in cantu.
+  // A weekday's inherited Sunday Proper remains the principal source;
+  // neither its inherited Sunday text nor the saint name proves a feast.
+  // Other IV-class contexts (Saturday BVM, Christmas/Epiphany, special
+  // vigils, institute calendars) remain outside this narrow certification.
+  const ordinaryPentecostFeria=!sunday&&Number(main.rank)===4&&
+    /^Tempora\\/Pent[0-9]{1,2}-0$/.test(String(main.path??""))&&
+    Number(only.rank)===4&&!only.privileged&&
+    /^sancti:[0-9]{2}-[0-9]{2}[a-z]*:4:/i.test(commId)&&
+    /^Sancti\\/[0-9]{2}-[0-9]{2}[a-z]*$/.test(String(only.path??""));
   const ordinaryFourthClassSaint=!nativityOctavePlaceholder&&!sunday&&
     !only.privileged&&
     Number(only.rank)===4&&/^sancti:[0-9]{2}-[0-9]{2}[a-z]*:4:/i.test(commId)&&
@@ -195,7 +207,8 @@ export function select1962CommemorationsForMassForm({
     privilegedAdvent?"PRIVILEGED_ADVENT_FERIA_UNDER_SANCTORAL":
     privilegedLentenFeria?"PRIVILEGED_LENT_PASSION_FERIA_UNDER_I_CLASS_SANCTORAL":
     ordinarySunday?"II_CLASS_SUNDAY_SINGLE_II_CLASS_SANCTORAL_FEAST_NON_CONVENTUAL":
-    ordinaryFourthClassSaint?"NON_SUNDAY_II_III_CLASS_SINGLE_IV_CLASS_SANCTORAL_COMMEMORATION":null;
+    ordinaryFourthClassSaint?"NON_SUNDAY_II_III_CLASS_SINGLE_IV_CLASS_SANCTORAL_COMMEMORATION":
+    ordinaryPentecostFeria?"PENTECOST_SEASON_IV_CLASS_FERIA_ORDINARY_COMMEMORATION":null;
   if(!scope)return untouched(proper,"RUBRICAL_CLASSIFICATION_PENDING");
   if(!GROUPS.every(key=>array(data[key]).length===2&&data[key].every(sourceText)))
     return untouched(proper,"ORATION_SOURCE_INCOMPLETE");
@@ -212,6 +225,8 @@ export function select1962CommemorationsForMassForm({
         ["1960_GENERAL_RUBRICS_25_A_108_E_111_A_113","1960_MISSAL_RUBRICS_433_434"]:
       ordinaryFourthClassSaint?
         ["1960_GENERAL_RUBRICS_111_C_D_112_113","1960_MISSAL_RUBRICS_433_434"]:
+      ordinaryPentecostFeria?
+        ["1960_GENERAL_RUBRICS_108_111_D_112_113_114","1960_MISSAL_RUBRICS_433_434"]:
         ["1960_GENERAL_RUBRICS_108_111_113","1960_MISSAL_RUBRICS_433_434"]),
     mainId,commemorationId:commId
   });
