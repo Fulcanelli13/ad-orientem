@@ -343,6 +343,26 @@ export const COMMUNION_TREASURY_V383=Object.freeze({
     "fr": "Transpercez mon âme, très doux Seigneur Jésus, dans tout ce qu'elle a de plus profond et de plus intime ; transpercez-la du dard tout suave et tout salutaire de votre amour, de ce dard de la véritable et pure charité, de cette charité très sainte qu'a eue votre apôtre saint Jean ; en sorte que mon âme languisse et se fonde sans cesse d'amour et de désir pour vous seul. Qu'elle soupire après vous et se sente défaillir à la pensée de vos tabernacles ; qu'elle n'aspire qu'à sa délivrance et à son union avec vous.\n\nFaites que mon âme ait faim de vous qui êtes le pain des anges, aliment des âmes saintes, notre pain quotidien supersubstantiel ayant en lui toute douceur et toute suavité délectable.\n\nÔ vous que le désir des anges est de contempler, puisse mon cœur être toujours affamé et toujours se nourrir de vous, mon âme être remplie jusque dans ses profondeurs de la suavité de vos délices. Que mon cœur ait toujours soif de vous, source de vie, source de sagesse et de science, source d'éternelle lumière, torrent de délices, abondance de la maison de Dieu.\n\nQu'il n'aspire jamais qu'à vous, ne cherche et ne trouve que vous ; qu'il tende vers vous et parvienne jusqu'à vous ; qu'il ne pense qu'à vous, ne parle que de vous, et qu'il accomplisse toutes choses pour l'honneur et la gloire de votre nom, avec humilité et discernement, avec amour et plaisir, avec facilité et affection, avec persévérance jusqu'à la fin. Soyez toujours mon seul espoir et toute ma confiance, mes richesses et mes délices, mon plaisir et ma joie, mon repos et ma tranquillité, ma paix et ma suavité, mon parfum et ma douceur, ma nourriture et ma force, mon refuge et mon secours, ma sagesse et mon partage, mon bien et mon trésor. Qu'en vous seul, mon esprit et mon cœur soient à jamais fixés, affermis et inébranlablement enracinés. Amen.",
     "witness": "Roman Missal thanksgiving tradition; French witness: Opus Dei devotional."
   },
+  "thanksgivingMyGoodJesus": {
+    "title": "Thanksgiving After Communion · My Good Jesus",
+    "titleFr": "Action de grâces après la Communion · Mon bon Jésus",
+    "en": "My good Jesus, I pray Thee to bless me; keep me in Thy love; grant me the grace of final perseverance. Help me to become a saint. Safeguarded by Thee in soul and in body, may I never swerve from the right road, but surely reach Thy kingdom, where—not in dim mysteries, as in this dark world of ours, but—face to face we shall look upon Thee. There wilt Thou satisfy me with Thyself and fill me with such sweetness that I shall neither hunger nor thirst forevermore: Who with God the Father and the Holy Ghost livest and reignest world without end. Amen.",
+    "witness": "Traditional English source witness: Coalition Ecclesia Dei, Latin–English Booklet Missal, fourth edition, fifth printing (2008), printed p. 62. Independently published in the 2013 booklet; exact 2013 proofreading not yet certified.",
+    "sourceUrl": "https://archives.sophronius.org/raw-books/Latin%20-%20English%20Mass%20Booklet%20%281%29_text.pdf",
+    "sourcePrintedPage": 62,
+    "sourceYear": 2008,
+    "wordingCollatedAgainst2013": false
+  },
+  "eucharisticHeartAspiration": {
+    "title": "May the Heart of Jesus in the Most Blessed Sacrament",
+    "titleFr": "Que le Cœur de Jésus dans le Très Saint Sacrement soit loué",
+    "en": "May the Heart of Jesus in the most Blessed Sacrament be praised, adored, and loved with grateful affection, at every moment, in all the tabernacles of the world, even to the end of time. Amen.",
+    "witness": "The Raccolta, 1910, no. 161, original English prayer; Pius IX, 29 February 1868. Historical indulgence is not represented as current.",
+    "sourceUrl": "https://manualistpress.com/prayers/prayer-at-the-beginning-of-mass-raccolta-1910/",
+    "sourcePrintedPage": 73,
+    "sourceYear": 1910,
+    "wordingCollatedAgainst2013": false
+  },
   "enEgo": {
     "title": "Prayer Before a Crucifix · En ego",
     "titleFr": "Prière devant le Crucifix · En ego",
