@@ -1,3 +1,4 @@
+import {renderIcrspFranceIntakeHold} from "./icrsp-france-ordo-intake-status.js";
 // Source-attested particular Ordo, NEVER a replacement for the general 1962
 // calendar, never an automatic selection of an alternate/votive Proper.
 // ICRSP/ICKSP France's published Ordo describes what its priests celebrate.
@@ -74,7 +75,7 @@ export const ICRSP_HOME_ORDO_CSS=`
 `;
 export function renderIcrspFranceHomeOrdo(date,language="en"){
  const record=icrspFranceOrdoForDate(date);
- if(!record)return "";
+ if(!record)return renderIcrspFranceIntakeHold(date,language);
  const fr=language==="fr",lng=fr?"fr":"en",t=(en,frText)=>fr?frText:en;
  const office=record.office,mass=record.mass;
  const classLabel=x=>fr?x+"e classe":"Class "+x;
