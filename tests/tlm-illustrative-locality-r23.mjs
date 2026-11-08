@@ -59,7 +59,7 @@ for(const hold of [
  assert.ok(byId.has(hold)&&!byId.get(hold).map_publishable&&!byId.get(hold).geo,
   "R23 must not pin unrelated held/alias record: "+hold);
 }
-assert.equal(items.length,2582);
-assert.equal(items.filter(v=>v.map_publishable).length,2568);
-assert.deepEqual(tlmSiteEvidenceCounts(items),{ALL:2582,REVIEWED_PIN:762,SOURCE_PIN:1806,ADDRESS_ONLY:14});
-console.log("PASS R23: one Excel-reviewed named Sacred Heart Chapel POI grid centre; 2568/2582 mapped, 14 held; EN/FR, provenance, no door directions or current schedule, no Cainta parish confusion");
+assert.equal(items.length,2583);
+assert.equal(items.filter(v=>v.map_publishable).length,2569);
+assert.deepEqual(tlmSiteEvidenceCounts(items),{ALL:2583,REVIEWED_PIN:763,SOURCE_PIN:1806,ADDRESS_ONLY:14});
+console.log("PASS R23: one Excel-reviewed named Sacred Heart Chapel POI grid centre; 2569/2583 mapped, 14 held; EN/FR, provenance, no door directions or current schedule, no Cainta parish confusion");

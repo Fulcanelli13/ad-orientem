@@ -204,9 +204,9 @@ assert.match(sanJose.geo.attribution,/inconsistently titled Saint Athanasius/,
 assert.ok(sanJose.actions.every(a=>!a.url.includes("/maps/dir/")));
 const wells=all.find(x=>x.physical_group_id==="RG-8DE39E8E9415");
 assert.ok(wells?.map_publishable && wells.geo.review_scope.includes("GCATHOLIC_MATCHED"),"Wells later reviewed site-cell pin must not be reverted to earlier hold");
-assert.equal(all.length,2582);
-assert.equal(all.filter(x=>x.map_publishable).length,2568);
-assert.deepEqual(tlmSiteEvidenceCounts(all),{ALL:2582,REVIEWED_PIN:762,SOURCE_PIN:1806,ADDRESS_ONLY:14});
+assert.equal(all.length,2583);
+assert.equal(all.filter(x=>x.map_publishable).length,2569);
+assert.deepEqual(tlmSiteEvidenceCounts(all),{ALL:2583,REVIEWED_PIN:763,SOURCE_PIN:1806,ADDRESS_ONLY:14});
 assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,14);
-assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,762);
-console.log("PASS TLM nine site-pin reconciliation: 9 newly mapped, 23 already canonical, 2568 mapped, 14 address-only, 1 remaining identity hold plus Sheffield symbolic source-city and San Jose campus exception preserved; Wells later site-cell review preserved");
+assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,763);
+console.log("PASS TLM nine site-pin reconciliation: 9 newly mapped, 23 already canonical, 2569 mapped, 14 address-only, 1 remaining identity hold plus Sheffield symbolic source-city and San Jose campus exception preserved; Wells later site-cell review preserved");

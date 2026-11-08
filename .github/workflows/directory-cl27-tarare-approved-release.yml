@@ -1,0 +1,36 @@
+name: CL27 Tarare approved church and dated Mass release
+on:
+  pull_request:
+    paths:
+      - 'data/directory/generated/cl2-physical-site-index.v1.json'
+      - 'data/directory/cl27-dated-mass-programme-tarare-20261108.v1.json'
+      - 'src/find/cl2-physical-directory.js'
+      - 'src/find/cl2-tarare-approved-pin.js'
+      - 'src/find/tlm-dated-mass-programme.js'
+      - 'src/find/preliminary-directory-r49.js'
+      - 'src/find/tlm-church-profile.js'
+      - 'tests/tlm-cl27-tarare-approved-release.mjs'
+      - 'tests/cl2-worldwide-directory-acceptance.mjs'
+      - '.github/workflows/directory-cl27-tarare-approved-release.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  approved-tarare-site:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Exact site, indicative pin, nine dates and bilingual profile
+        run: node tests/tlm-cl27-tarare-approved-release.mjs
+      - name: Worldwide CL2 master reconciliation
+        run: node tests/cl2-worldwide-directory-acceptance.mjs
+      - name: Curated GitHub Pages packaging
+        run: |
+          node tools/build-web-preview.mjs
+          test -f dist/web-preview/data/directory/cl27-dated-mass-programme-tarare-20261108.v1.json
+          test -f dist/web-preview/src/find/cl2-tarare-approved-pin.js
+          test ! -f dist/web-preview/data/directory/research/cl27-tarare-new-site-20261108/intake.v1.json

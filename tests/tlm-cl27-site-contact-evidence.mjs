@@ -8,7 +8,7 @@ const data=JSON.parse(readFileSync(new URL(
 const master=JSON.parse(readFileSync(new URL(
  "../data/directory/generated/cl2-physical-site-index.v1.json",import.meta.url),"utf8"));
 assert.equal(master.schema,"AO_CL2_PHYSICAL_SITE_RUNTIME_INDEX_V1");
-assert.equal(master.counts.effective_physical_sites,2579);
+assert.equal(master.counts.effective_physical_sites,2580);
 assert.equal(data.records.length,16);
 const byAnchor=new Map(master.records.map(row=>[row[0],row]));
 const fixtures=data.records.map(c=>{
@@ -83,4 +83,4 @@ repeated.records[1].source_id=repeated.records[0].source_id;
 mustReject(fixtures,repeated);
 assert.ok(!renderTlmChurchProfile(unrelated,"en").includes("data-cl27-site-contact"),
  "Other church profiles remain unchanged");
-console.log("PASS CL27 exact-site contact publication: 16/2579 physical CL2 records, EN/FR cards and source links, 0 new Mass, ownership or ecclesial claims");
+console.log("PASS CL27 exact-site contact publication: 16/2580 physical CL2 records, EN/FR cards and source links, 0 new Mass, ownership or ecclesial claims");

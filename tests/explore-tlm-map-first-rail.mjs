@@ -11,7 +11,7 @@ const load=p=>JSON.parse(readFileSync(p,"utf8"));
 const r49=projectPreliminaryR49(load("data/directory/preliminary-map-r49.v1.json"));
 const ext=projectPublishedProvisionalMassSites(r49,load("data/directory/published-provisional-mass-sites-20261026.v1.json"));
 const all=projectCL2PhysicalDirectory(ext,load("data/directory/generated/cl2-physical-site-index.v1.json"));
-assert.equal(all.length,2582);
+assert.equal(all.length,2583);
 const nearChicago={
  contains:([lng,lat])=>lng>=-88&&lng<=-87&&lat>=41&&lat<=43,
 };

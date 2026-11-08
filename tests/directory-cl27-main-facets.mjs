@@ -71,13 +71,13 @@ const published=attachPublishedCelebrationEvidence(full,claims);
 assert.deepEqual(new Set(PUBLIC_CL27_AXES.map(a=>a.key)),new Set(taxonomy.dimensions.map(x=>x.key)));
 const cl27Counts=publicCL27FacetCounts(published);
 assert.equal(cl27Counts.missal_edition["1962"],2);
-assert.equal(cl27Counts.missal_edition.UNKNOWN,2580);
+assert.equal(cl27Counts.missal_edition.UNKNOWN,2581);
 assert.equal(cl27Counts.liturgical_use.ROMAN,2);
 for(const axis of PUBLIC_CL27_AXES.filter(x=>!["institute_or_community","liturgical_use","missal_edition"].includes(x.key))){
- assert.equal(cl27Counts[axis.key].UNKNOWN,2582,axis.key);
+ assert.equal(cl27Counts[axis.key].UNKNOWN,2583,axis.key);
 }
 assert.equal(filterPreliminaryR49(published,{cl27Facets:{missal_edition:"1962"}}).length,2);
-assert.equal(filterPreliminaryR49(published,{cl27Facets:{missal_edition:"UNKNOWN"}}).length,2580);
+assert.equal(filterPreliminaryR49(published,{cl27Facets:{missal_edition:"UNKNOWN"}}).length,2581);
 assert.equal(filterPreliminaryR49(published,{cl27Facets:{liturgical_use:"ROMAN",missal_edition:"1962"},countryCodes:["US"]}).length,2);
 assert.equal(filterPreliminaryR49(published,{cl27Facets:{liturgical_use:"UNKNOWN",missal_edition:"1962"}}).length,0);
 assert.equal(filterPreliminaryR49(published,{cl27Facets:{una_cum:"UNKNOWN",missal_edition:"1962"}}).length,2);

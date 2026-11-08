@@ -18,7 +18,7 @@ const r49=projectPreliminaryR49(read("data/directory/preliminary-map-r49.v1.json
 const published=projectPublishedProvisionalMassSites(r49,
   read("data/directory/published-provisional-mass-sites-20261026.v1.json"));
 const world=projectCL2PhysicalDirectory(published,index);
-assert.equal(world.length,2582);
+assert.equal(world.length,2583);
 const unpinned=world.filter(item=>item.kind==="TLM_VENUE"&&!item.map_publishable);
 assert.equal(unpinned.length,14,"The list-only count must be reviewed when site positions change");
 assert.equal(filterPreliminaryR49(world,{siteEvidence:"ADDRESS_ONLY"}).length,14,

@@ -76,8 +76,8 @@ assert.match(byId.get("RG-B72-7441A9AFEE69").geo.attribution,/NOT verified/,"Bis
 for(const id of ["RG-832AB0C2265E","RG-24B468C40EBC"]){
  assert.ok(!byId.get(id).map_publishable&&!byId.get(id).geo,"Historic Chelmsford and Ashford/Snave alias remain without duplicate active pins");
 }
-assert.equal(items.length,2582);
-assert.deepEqual(tlmSiteEvidenceCounts(items),{ALL:2582,REVIEWED_PIN:762,SOURCE_PIN:1806,ADDRESS_ONLY:14});
-assert.equal(items.filter(v=>v.map_publishable).length,2568);
+assert.equal(items.length,2583);
+assert.deepEqual(tlmSiteEvidenceCounts(items),{ALL:2583,REVIEWED_PIN:763,SOURCE_PIN:1806,ADDRESS_ONLY:14});
+assert.equal(items.filter(v=>v.map_publishable).length,2569);
 assert.equal(items.filter(v=>!v.map_publishable).length,14);
-console.log("PASS R28: 8 source-locked owner-authorized approximate pins, 2568/2582 mapped, 13 aliases + 1 closed history list-only; no direct GPS, no current Mass inferred");
+console.log("PASS R28: 8 source-locked owner-authorized approximate pins, 2569/2583 mapped, 13 aliases + 1 closed history list-only; no direct GPS, no current Mass inferred");
