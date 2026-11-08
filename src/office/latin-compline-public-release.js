@@ -19,7 +19,10 @@ export const LATIN_COMPLINE_RELEASE_SCHEMA="ao.office.latin-compline-release.v1"
 export const LATIN_COMPLINE_RELEASE=Object.freeze({
  date:"2026-11-28",
  // Each date is certified independently; never infer an entire Advent week.
- approvedDates:Object.freeze(["2026-11-28","2026-11-29","2026-11-30","2026-12-05"]),
+ approvedDates:Object.freeze([
+  "2026-11-28","2026-11-29","2026-11-30","2026-12-01",
+  "2026-12-02","2026-12-03","2026-12-04","2026-12-05"
+ ]),
  hour:"COMPLINE",calendarScope:"UNIVERSAL",
  sourceRevision:PIN,language:"la",
  // Not every 1961 Breviary prints the same Latin Psalter: Mame, Dessain and
@@ -33,6 +36,15 @@ export const LATIN_COMPLINE_RELEASE=Object.freeze({
  ordinary1961SequenceReviewed:true,saturdayAppointmentReviewed:true,
  sundayAppointmentReviewed:true,
  sundayPrintedVulgate329WordsDualWitnessCollated:true,
+ // Independent Clementine Vulgate Project Psalmi 11/12/15/33/60/69/
+ // 70/76/85: all 1,536 original Latin words checked independently,
+ // with exactly ten explicitly accounted spelling differences.
+ weekdayIndependentClementine1536WordsCollated:true,
+ weekdayClementineWitnessRevision:"1f7093a14fa61374b0fe85db1965d9bd45dfdae1",
+ // Two independently published printed Roman Psalters establish
+ // weekday psalm assignments. We do NOT claim dual full-word collation
+ // to the modern printings, nor an original Mame 1961 facsimile.
+ weekdayPrintedAppointmentsReviewed:true,
  // A verbatim 1961 Mame Saturday Psalter leaf has NOT been obtained.
  // This release is not represented as a reproduction of that edition.
  psalter1961VerbatimCollated:false,
@@ -69,6 +81,26 @@ const APPROVED_DATE_PROFILES=Object.freeze({
   reason:"ST_ANDREW_APOSTLE_II_CLASS_SUNDAY_COMPLINE_BR168_D",
   printedPsalmDisplayFrames:30
  }),
+ "2026-12-01":Object.freeze({
+  psalmDay:"Feria III",weekday:"Feria III",officeClass:"FERIA",
+  reason:"ADVENT_FERIA_TUESDAY_CURRENT_WEEKDAY_BR171_E",
+  printedPsalmDisplayFrames:26
+ }),
+ "2026-12-02":Object.freeze({
+  psalmDay:"Feria IV",weekday:"Feria IV",officeClass:"III_FEAST",
+  reason:"ST_BIBIANA_III_CLASS_CURRENT_WEEKDAY_BR169_E",
+  printedPsalmDisplayFrames:30
+ }),
+ "2026-12-03":Object.freeze({
+  psalmDay:"Feria V",weekday:"Feria V",officeClass:"III_FEAST",
+  reason:"ST_FRANCIS_XAVIER_III_CLASS_CURRENT_WEEKDAY_BR169_E",
+  printedPsalmDisplayFrames:33
+ }),
+ "2026-12-04":Object.freeze({
+  psalmDay:"Feria VI",weekday:"Feria VI",officeClass:"III_FEAST",
+  reason:"ST_PETER_CHRYSOLOGUS_III_CLASS_CURRENT_WEEKDAY_BR169_E",
+  printedPsalmDisplayFrames:36
+ }),
  "2026-12-05":Object.freeze({
   psalmDay:"Sabbato",weekday:"Sabbato",officeClass:"SUNDAY_FIRST_VESPERS",
   reason:"FIRST_VESPERS_OF_ADVENT_SUNDAY_COMPLINE_SATURDAY_BR166_B",
@@ -104,6 +136,10 @@ export function latinComplineReleaseEligibility({
     !LATIN_COMPLINE_RELEASE.printedVulgatePatternDualWitnessCollated||
     !LATIN_COMPLINE_RELEASE.sundayAppointmentReviewed||
     !LATIN_COMPLINE_RELEASE.sundayPrintedVulgate329WordsDualWitnessCollated||
+    !LATIN_COMPLINE_RELEASE.weekdayIndependentClementine1536WordsCollated||
+    LATIN_COMPLINE_RELEASE.weekdayClementineWitnessRevision!==
+      "1f7093a14fa61374b0fe85db1965d9bd45dfdae1"||
+    !LATIN_COMPLINE_RELEASE.weekdayPrintedAppointmentsReviewed||
     LATIN_COMPLINE_RELEASE.releaseBasis!=="ROMAN_1960_OFFICE_TRADITIONAL_VULGATE_LATIN"||
     !LATIN_COMPLINE_RELEASE.completeHourCollated||
     !LATIN_COMPLINE_RELEASE.rightsApproved||
