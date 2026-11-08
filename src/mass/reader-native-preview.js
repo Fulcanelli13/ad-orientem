@@ -3153,7 +3153,7 @@ export async function mountNativeReaderPreview({
       form:prepared.session.resolvedMass.form,
       resolvedMass:prepared.session.resolvedMass,
       massPlan:prepared.session.plan,
-      tracks:ready.scholaState?.trackIds??[],
+      tracks:ready.scholaState?.tracks??ready.scholaState?.trackIds??[],
       sanctusPerformance:ready.scholaState?.project?.()?.sanctusPerformance,
     }),scholaLocalProgramme),{selectedEventId:selectedScholaEvent?.id??null}),
     onScholaPerformanceChange:change=>{
@@ -3163,7 +3163,7 @@ export async function mountNativeReaderPreview({
         form:prepared.session.resolvedMass.form,
         resolvedMass:prepared.session.resolvedMass,
         massPlan:prepared.session.plan,
-        tracks:ready.scholaState?.trackIds??[],
+        tracks:ready.scholaState?.tracks??ready.scholaState?.trackIds??[],
         sanctusPerformance:ready.scholaState?.project?.()?.sanctusPerformance,
       }),scholaLocalProgramme);
       const result=scholaPerformance.change(itinerary,change);
@@ -3196,7 +3196,7 @@ export async function mountNativeReaderPreview({
         form:prepared.session.resolvedMass.form,
         resolvedMass:prepared.session.resolvedMass,
         massPlan:prepared.session.plan,
-        tracks:ready.scholaState?.trackIds??[],
+        tracks:ready.scholaState?.tracks??ready.scholaState?.trackIds??[],
         sanctusPerformance:ready.scholaState?.project?.()?.sanctusPerformance,
       }),scholaLocalProgramme);
       const event=itinerary.supported
@@ -3253,7 +3253,7 @@ export async function mountNativeReaderPreview({
           form:prepared.session.resolvedMass.form,
           resolvedMass:prepared.session.resolvedMass,
           massPlan:prepared.session.plan,
-          tracks:ready.scholaState?.trackIds??[],
+          tracks:ready.scholaState?.tracks??ready.scholaState?.trackIds??[],
           sanctusPerformance:ready.scholaState?.project?.()?.sanctusPerformance,
         }),scholaLocalProgramme);
         scholaPerformance.change(sourceItinerary,{
@@ -3652,7 +3652,7 @@ export async function mountNativeReaderPreview({
       form:prepared.session.resolvedMass.form,
       resolvedMass:prepared.session.resolvedMass,
       massPlan:prepared.session.plan,
-      tracks:ready.scholaState?.trackIds??[],
+      tracks:ready.scholaState?.tracks??ready.scholaState?.trackIds??[],
       sanctusPerformance:ready.scholaState?.project?.()?.sanctusPerformance,
     }),scholaLocalProgramme)),
     getTransientState:()=>activeCueId ? ready.transientState.project(activeCueId) : ready.transientState.project(null),
