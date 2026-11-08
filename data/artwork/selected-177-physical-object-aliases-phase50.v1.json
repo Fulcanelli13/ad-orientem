@@ -1,0 +1,138 @@
+{
+  "schema": "AO_SACRED_ART_SELECTED_177_INTERNAL_OBJECT_ALIASES_PHASE50_V1",
+  "asOf": "2026-11-08",
+  "status": "RESEARCH_VERIFIED_SAME_PHYSICAL_OBJECT",
+  "scope": "Within the 177 handpicked selection records, NOT a 177→989 cross-register relationship and NOT a photo replacement.",
+  "pairs": [
+    {
+      "physical_id": "KMS-PHYSICAL::museabrugge:0000.GRO0672.I",
+      "selected_ids": [
+        "RECENT575::147",
+        "RECENT575::152"
+      ],
+      "name": "Christ Crowned with Thorns / Doornenkroning",
+      "artist": "Jacob van Oost I",
+      "museum": "Musea Brugge, Groeningemuseum",
+      "inventory": "0000.GRO0672.I",
+      "year": "1661",
+      "basis": "Museum object title, artist, year, dimensions 122.1×97.8 cm; selected Commons filenames share that painting.",
+      "primary_catalogue": "https://collectie.museabrugge.be/en/collection/work/id/0000_GRO0672_I",
+      "independent_institution": "https://vlaamsekunstcollectie.be/en/collection/0000-GRO0672-I",
+      "selected_photo_urls": [
+        "https://commons.wikimedia.org/wiki/File:Doornenkroning,_1661,_Groeningemuseum,_0040103000.jpg",
+        "https://commons.wikimedia.org/wiki/File:Jacob_van_Oost_I_-_Christ_Crowned_with_Thorns.jpg"
+      ],
+      "photo_versions_preserved": true
+    },
+    {
+      "physical_id": "KMS-PHYSICAL::museabrugge:0000.GRO0178.I",
+      "selected_ids": [
+        "RECENT575::114",
+        "RECENT575::156"
+      ],
+      "name": "Saint Anthony Raises a Man from the Dead",
+      "artist": "Jacob van Oost I",
+      "museum": "Musea Brugge / Groeningemuseum (same institution family)",
+      "inventory": "0000.GRO0178.I",
+      "year": "circa 1640–1650",
+      "basis": "Selected photographs name the same painting, artist and Musea Brugge; Commons artwork record provides Groeningemuseum accession 0000.GRO0178.I and museum/LUKAS source.",
+      "institutional_record_from_commons": "http://groeningemuseum.be/collection/work/id/0000_GRO0178_I",
+      "selected_photo_urls": [
+        "https://commons.wikimedia.org/wiki/File:Heilige_Antonius_wekt_een_dode_terug_tot_leven_-_Jacob_van_Oost_-_Musea_Brugge_-_1.jpg",
+        "https://commons.wikimedia.org/wiki/File:Heilige_Antonius_wekt_een_dode_terug_tot_leven,_circa_1640_-_circa_1650,_Groeningemuseum,_0040431001.jpg"
+      ],
+      "photo_versions_preserved": true,
+      "independent_museum_page_recheck_required": true
+    },
+    {
+      "physical_id": "KMS-PHYSICAL::strasbourg:44.2015.1.1",
+      "selected_ids": [
+        "RECENT575::362",
+        "RECENT575::363"
+      ],
+      "name": "Rest on the Flight into Egypt / Le Repos pendant la Fuite en Égypte",
+      "artist": "Reynaud Levieux",
+      "museum": "Musée des Beaux-Arts de Strasbourg",
+      "inventory": "44.2015.1.1",
+      "year": "circa 1650",
+      "basis": "Official Strasbourg museum accession, title, artist and 73.5×99 cm; both selected Commons photos refer to that painting.",
+      "primary_catalogue": "https://collections.musees.strasbourg.eu/fr/document/le-repos-pendant-la-fuite-en-egypte/5ee33891461cda28a3a5d52e",
+      "selected_photo_urls": [
+        "https://commons.wikimedia.org/wiki/File:Levieux_Repos_pendant_la_Fuite_en_%C3%89gypte.jpg",
+        "https://commons.wikimedia.org/wiki/File:Reynaud_Levieux,_Le_repos_pendant_la_fuite_en_%C3%89gypte.jpg"
+      ],
+      "photo_versions_preserved": true
+    },
+    {
+      "physical_id": "KMS-PHYSICAL::lille:P.820",
+      "selected_ids": [
+        "RECENT575::398",
+        "RECENT575::477"
+      ],
+      "name": "The Ascension of the Elect / Paradise",
+      "artist": "Dieric Bouts",
+      "museum": "Palais des Beaux-Arts de Lille",
+      "inventory": "P.820",
+      "year": "circa 1450",
+      "basis": "Museum catalogue calls the painting L'Ascension des élus, while WGA uses Paradise; the file for the later selection has accession P.820 and WGA identifier b/bouts/dirk_e/1/4paradis.",
+      "primary_catalogue": "https://pba-opacweb.lille.fr/fr/notice/p-820-l-ascension-des-elus-76173856-7ef8-4661-8b99-ac3dd343a80f",
+      "selected_photo_urls": [
+        "https://commons.wikimedia.org/wiki/File:Dieric_Bouts_-_Paradise_-_WGA02965.jpg",
+        "https://commons.wikimedia.org/wiki/File:Dieric_Bouts_-_The_Ascension_of_the_Elect,_also_known_as_Paradise.jpg"
+      ],
+      "photo_versions_preserved": true
+    }
+  ],
+  "explicit_non_aliases": [
+    {
+      "selected_ids": [
+        "RECENT575::398",
+        "RECENT575::399"
+      ],
+      "reason": "Bouts Paradise and Bouts Hell are different physical panels of the same triptych; must not merge",
+      "source": "https://pba-opacweb.lille.fr/fr/notice/p-1808-la-chute-des-damnes-283c6bdd-6b80-480b-a8a9-e26da9f17684"
+    },
+    {
+      "selected_ids": [
+        "RECENT575::114",
+        "RECENT575::143"
+      ],
+      "reason": "Van Oost Saint Anthony raises a dead man and Van Oost vision of Saint Anthony of Padua are different subjects"
+    },
+    {
+      "selected_ids": [
+        "RECENT575::147",
+        "RECENT575::151"
+      ],
+      "reason": "Van Oost Crowning with Thorns and Provoost Crucifixion are different physical paintings"
+    },
+    {
+      "selected_ids": [
+        "RECENT575::271",
+        "RECENT575::272"
+      ],
+      "reason": "Groeningemuseum last judgments painted by different artists, Jan Provoost and Pieter Pourbus, cannot be merged by title"
+    }
+  ],
+  "counts": {
+    "handpicked_rows_total": 177,
+    "confirmed_duplicate_pairs_within_handpicked": 4,
+    "selected_rows_in_confirmed_pairs": 8,
+    "proven_row_overcount": 4,
+    "distinct_physical_paintings_upper_bound": 173,
+    "exact_distinct_physical_paintings_unknown": true,
+    "verified_177_to_989_relationships_unchanged": 14,
+    "selected_rows_crosslinked_to_989_unchanged": 13,
+    "unlinked_museum_rows_still": 156,
+    "unresolved_identity_holds_still": 8
+  },
+  "safeguards": {
+    "preserve_every_selected_photo": true,
+    "no_automatic_image_replacement": true,
+    "no_automatic_photo_release": true,
+    "no_commons_promotion_of_unhandpicked_files": true,
+    "do_not_overwrite_989_groups": true,
+    "rejected_source_records_excluded": 1599,
+    "do_not_count_distinct_paintings_from_raw_rows": true
+  }
+}
