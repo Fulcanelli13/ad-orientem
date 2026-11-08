@@ -4,7 +4,7 @@ import {readFileSync} from "node:fs";
 import {DIVINUM_OFFICIUM_PIN as PIN} from "../src/app/source-transport-compat.js";
 import {createLatinComplinePinnedReader,assembleLatinDatedComplinePilot}
  from "../src/office/saturday-compline-2026-pilot.js";
-import {assemblePrivateOfficeReview}
+import {assemblePrivateOfficeReview,projectPrivateOfficeReview}
  from "../src/office/private-office-review.js";
 import {COMPLINE_CONTEXT,projectComplineRecitation}
  from "../src/office/compline-recitation-projection.js";
@@ -72,6 +72,30 @@ test("all eight appointed dates assemble 42 complete Latin blocks without readin
   assert.ok(transport.calls.length>0);
   assert.ok(transport.calls.every(u=>u.includes("/Latin/")));
   assert.equal(reader.cachedDistinctFiles(),reader.maxDistinctFiles);
+  // Re-using the exact source pilot, independently project its PRINTED 1961
+  // ordinary, not the raw 42-event research extraction.
+  const review=projectPrivateOfficeReview({
+   hour:"COMPLINE",date,pilot:result,languageMode:"latin"
+  });
+  assert.equal(review.status,"PRIVATE_SOURCE_TEXT_REVIEW",date+": "+review.reason);
+  for(const context of [COMPLINE_CONTEXT.FINAL_PRAYER,COMPLINE_CONTEXT.OTHER_TIME]){
+   const reading=projectComplineRecitation(review,{context});
+   assert.equal(reading.status,"PRIVATE_SOURCE_TEXT_REVIEW",
+    date+" "+context+": "+reading.reason);
+   assert.equal(reading.sourceEventCount,42);
+   assert.equal(reading.readingEventCount,40);
+   assert.equal(reading.readingEvents.length,40);
+   assert.equal(reading.blessingAmensRestoredFromPinnedSource,2);
+   assert.equal(reading.postCanticleKyrieOmitted,true);
+   assert.equal(reading.postCanticlePaterOmitted,true);
+   assert.equal(reading.readingPublished,false);
+   assert.equal(reading.liturgicallyCertified,false);
+   assert.equal(reading.published,false);
+   assert.ok(reading.frames.every(f=>
+    f.sourceId!=="Psalterium/Common/Prayers#Kyrie"&&
+    f.sourceId!=="Psalterium/Common/Prayers#Pater noster Et"));
+   assert.ok(reading.frames.some(f=>f.kind==="FINAL_ASSISTANCE"));
+  }
   await assert.rejects(reader.section("Psalterium/Common/Prayers","Pater noster","fr"),/COMPLINE_LANGUAGE_NOT_SUPPORTED/);
  }
 });
