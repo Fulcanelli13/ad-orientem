@@ -31,6 +31,8 @@ import { installPentecostSunday1960PrefaceSource } from "./1962-pentecost-sunday
 import {select1962CommemorationsForMassForm} from "./1962-commemoration-form-source.js";
 import {isExplicitIcrspNovemberLowMassSelection} from "./icrsp-first-friday-entry.js";
 import {projectIcrspNovemberProPapaOrations} from "./icrsp-nov06-pro-papa-orations.js";
+import {isExplicitIcrspNov08SundaySelection,projectIcrspNov08SundayProPapaOrations}
+  from "./icrsp-nov08-sunday-pro-papa.js";
 import {requireMassOrdoCompleteness} from "./ordo-mass-completeness.js";
 import {resolve1962AllSoulsSuccession} from "./1962-all-souls-consecutive-rites.js";
 import {allSouls1962RequiemOverlay,is1962AllSoulsCalendarMass,
@@ -922,9 +924,22 @@ export function createBrowserMassController({rogationPreflight=null,fullMassPref
       if(proPapa.status==="UNVERIFIED")
         throw Error("ICRSP_NOVEMBER_PRO_PAPA_"+proPapa.reason);
       presentedProper=proPapa.proper;
+      const explicitSunday=isExplicitIcrspNov08SundaySelection({
+        win:globalThis,dateIso:resolvedMass.date
+      });
+      const sundayPapa=projectIcrspNov08SundayProPapaOrations({
+        proper:presentedProper,date:resolvedMass.date,form,
+        actualCelebrationId:arch()?.actualCelebration?.id??
+          resolvedMass.celebrationId??null,
+        votiveBasis:arch()?.votiveBasis??null,
+        explicitInstituteSelection:explicitSunday
+      });
+      if(sundayPapa.status==="UNVERIFIED")
+        throw Error("ICRSP_SUNDAY_PRO_PAPA_"+sundayPapa.reason);
+      presentedProper=sundayPapa.proper;
       const contract=presentedProper?.data?.sourceOrdoExpectation??
         presentedProper?.sourceOrdoExpectation??null;
-      if(explicitlySelected&&!contract)
+      if((explicitlySelected||explicitSunday)&&!contract)
         throw Error("ICRSP_VERIFIED_MASS_ORDO_CONTRACT_MISSING");
       requireMassOrdoCompleteness({
         proper:presentedProper,contract,date:resolvedMass.date,form,
