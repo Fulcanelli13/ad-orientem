@@ -1,6 +1,6 @@
 {
   "schema": "AO_SACRED_ART_BATCH1_TWO_SOURCE_MOBILE_CONTAIN_STAGING_V1",
-  "scope": "UNPUBLISHED_RESEARCH_STAGING_ONLY",
+  "scope": "UNPUBLISHED_APP_RESEARCH_STAGING_ON_GITHUB_BRANCH",
   "source_photo_verification": "data/artwork/batch1-two-firstparty-verified-source-photos.v1.json",
   "source_photo_acquisition_script": "scripts/art/batch1_firstparty_photo_acquire.py",
   "no_publication": true,
@@ -13,7 +13,6 @@
   ],
   "output_folder": "assets/staged/sacred-art-batch1",
   "protected_main_gallery_registry": "src/art/released-module-paintings.v1.js",
-  "eligible_only_after_signoff": false,
   "items": [
     {
       "id": "artwork-pending:01",
@@ -60,5 +59,7 @@
     "Source full-byte SHA256 mismatch prevents derivative staging",
     "GitHub Actions push authorized only to same research branch",
     "Require explicit owner decision on the specific photographic version before main merge"
-  ]
+  ],
+  "requires_explicit_photo_signoff_before_main": true,
+  "repository_visibility_note": "Research branch files may be accessible through GitHub, but staged images are excluded from GitHub Pages and application assets."
 }
