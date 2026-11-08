@@ -358,8 +358,7 @@ export const COMMUNION_TREASURY_V383=Object.freeze({
     "titleFr": "Que le Cœur de Jésus dans le Très Saint Sacrement soit loué",
     "en": "May the Heart of Jesus in the most Blessed Sacrament be praised, adored, and loved with grateful affection, at every moment, in all the tabernacles of the world, even to the end of time. Amen.",
     "witness": "The Raccolta, 1910, no. 161, original English prayer; Pius IX, 29 February 1868. Historical indulgence is not represented as current.",
-    "sourceUrl": "https://manualistpress.com/prayers/prayer-at-the-beginning-of-mass-raccolta-1910/",
-    "sourcePrintedPage": 73,
+    "sourceUrl": "https://motherofmercychapter.com/Prayers/The%20Raccolta%20-%201910%20Collection%20of%20Indulgenced%20Prayers%20and%20Good%20Works.pdf",
     "sourceYear": 1910,
     "wordingCollatedAgainst2013": false
   },
