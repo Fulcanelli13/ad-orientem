@@ -10,7 +10,6 @@ export const STABAT_MATER_SEPTEMBER_SOURCE=Object.freeze({
   occasion:"SEVEN_SORROWS_SEPTEMBER_15",
   language:"la",
   sourceWitnesses:Object.freeze([
-    "https://ordo.fsspx.org/en/day/2026-09-15?lang=la",
     "https://extraordinaryform.org/masses/0915SevenSorrowsBVMM20.pdf"
   ]),
   printed1962ImageIndependentlyCollated:false,
