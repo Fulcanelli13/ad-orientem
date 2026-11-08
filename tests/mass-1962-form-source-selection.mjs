@@ -126,6 +126,51 @@ for(const [date,mainPath,commPath] of [
     form:"SOLEMN"}).reason,"RUBRICAL_CLASSIFICATION_PENDING");
 }
 
+// Actual 2026 day owners: a IV-class feria using the inherited
+// post-Pentecost Sunday Proper, with an ordinary IV-class saint. The
+// Ordinary retains the Calendar identity; Low alone retains prayers.
+for(const [date,mainPath,saintPath] of [
+  ["2026-10-05","Tempora/Pent19-0","Sancti/10-05"],
+  ["2026-07-16","Tempora/Pent07-0","Sancti/07-16"]
+]){
+  const source={...base,sourcePath:mainPath,
+    calendarCommemorations:[{path:saintPath,prayerSourcePath:saintPath,
+      name:"Original calendar commemoration"}]};
+  const witness={...day,date,day:{
+    main:{id:":feria:4:w",rank:4,path:mainPath,title:"Post-Pentecost feria"},
+    commemorations:[{id:"sancti:"+saintPath.slice(-5)+":4:w",
+      rank:4,path:saintPath,title:"Ordinary fourth-class commemoration"}]},
+    proper:{status:"ready",data:source}};
+  for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+    const selected=select({proper:source,calendarResolution:witness,form});
+    assert.equal(selected.status,"CERTIFIED",date+"/"+form+": "+selected.reason);
+    assert.equal(selected.decision.scope,
+      "PENTECOST_SEASON_IV_CLASS_FERIA_ORDINARY_COMMEMORATION");
+    const n=form==="LOW"?2:1;
+    assert.equal(selected.decision.appliedCount,n-1);
+    for(const group of ["collects","secrets","postcommunions"])
+      assert.equal(selected.proper[group].length,n,date+"/"+form+"/"+group);
+    for(const language of ["en","fr"]){
+      const slots=properToReaderSlots(selected.proper,{language}).slots;
+      for(const name of ["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"]){
+        assert.equal(slots[name].status,"READY",date+"/"+form+"/"+language+"/"+name);
+        assert.equal(slots[name].data.paragraphs.length,n);
+      }
+    }
+    assert.equal(assessPrintableProper(witness,{language:"en",massForm:form}).ok,true);
+  }
+  // Refuse unverified principal ranks, unrelated prayer owners, and
+  // different seasons. Do not promote institute-specific substitute Masses.
+  assert.equal(select({proper:source,calendarResolution:{...witness,
+    day:{...witness.day,main:{...witness.day.main,rank:3}}},
+    form:"LOW"}).reason,"RUBRICAL_CLASSIFICATION_PENDING");
+  assert.equal(select({proper:{...source,calendarCommemorations:[
+    {path:saintPath,prayerSourcePath:"Sancti/11-05"}]},
+    calendarResolution:witness,form:"LOW"}).reason,"RUBRICAL_CLASSIFICATION_PENDING");
+  assert.equal(select({proper:{...source,secrets:[one]},
+    calendarResolution:witness,form:"LOW"}).reason,"ORATION_SOURCE_INCOMPLETE");
+}
+
 for(const [change,reason] of [
   [{date:"2026-10-12"},"RUBRICAL_CLASSIFICATION_PENDING"],
   [{day:{main:{...day.day.main,rank:1},commemorations:day.day.commemorations}},"RUBRICAL_CLASSIFICATION_PENDING"],
