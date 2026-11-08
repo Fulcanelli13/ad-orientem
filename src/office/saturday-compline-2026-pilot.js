@@ -29,6 +29,15 @@ const PSALMS_TO_READ=Object.freeze({
 const BASE="https://raw.githubusercontent.com/DivinumOfficium/divinum-officium/"+PIN+"/web/www/horas/";
 const LOCALE=Object.freeze({la:"Latin",en:"English",fr:"Francais"});
 const LANGS=Object.freeze(["la","en","fr"]);
+const LATIN_ONLY=Object.freeze(["la"]);
+function checkedLanguages(value){
+ if(value===undefined)return LANGS;
+ if(!Array.isArray(value))return null;
+ if(value.length===1&&value[0]==="la")return LATIN_ONLY;
+ if(value.length===3&&LANGS.every(l=>value.includes(l))&&
+   new Set(value).size===3)return LANGS;
+ return null;
+}
 const PSALMI="Psalterium/Psalmi/Psalmi minor";
 const SPECIAL="Psalterium/Special/Minor Special";
 const PRAYERS="Psalterium/Common/Prayers";
@@ -53,7 +62,9 @@ function held(reason,weekday="Sabbato"){
   canPreview:false,rightsApproved:false,publishable:false,published:false
  });
 }
-export function createComplinePinnedReader({fetchSource,weekday=null,date=null}={}){
+export function createComplinePinnedReader({fetchSource,weekday=null,date=null,languages}={}){
+ const active=checkedLanguages(languages);
+ if(!active)throw Error("COMPLINE_LANGUAGE_SCOPE_NOT_APPROVED");
  const reviewed=date===null?null:reviewAdventIComplineAppointment(date);
  if(date!==null&&reviewed.status!=="EXPLICIT_ROMAN_1960_APPOINTMENT_RESEARCH")
   throw Error("COMPLINE_UNREVIEWED_DATE_READER_WITHHELD");
@@ -65,7 +76,7 @@ export function createComplinePinnedReader({fetchSource,weekday=null,date=null}=
  const psalmIds=PSALMS_TO_READ[psalmDay];
  const cache=new Map();
  function url(path,language){
-  if(!Object.hasOwn(LOCALE,language))
+  if(!Object.hasOwn(LOCALE,language)||!active.includes(language))
    throw Error("COMPLINE_LANGUAGE_NOT_SUPPORTED");
   if(!Object.hasOwn(allowed,path)&&
     !psalmIds.some(n=>path==="Psalterium/Psalmorum/Psalm"+n))
@@ -113,7 +124,8 @@ export function createComplinePinnedReader({fetchSource,weekday=null,date=null}=
  }
  return Object.freeze({
   sourceRevision:PIN,weekday:psalmDay,date,section,psalm,
-  cachedDistinctFiles:()=>cache.size,maxDistinctFiles:(4+psalmIds.length)*3
+  languages:active,cachedDistinctFiles:()=>cache.size,
+  maxDistinctFiles:(4+psalmIds.length)*active.length
  });
 }
 function sourceLines(lines){
@@ -131,7 +143,7 @@ function textOf(lines){
 function sourceId(path,name){return path+"#"+name}
 function projectBlock(kind,path,name,parts){
  const texts={};
- for(const l of LANGS){
+ for(const l of Object.keys(parts)){
   texts[l]=Object.freeze(textOf(parts[l]));
  }
  return Object.freeze({
@@ -166,8 +178,10 @@ function stanzas(lines){
  return parts.some(x=>!x.length)?null:parts;
 }
 export async function assembleWeekdayComplinePilot({
- reader,weekday="Sabbato",date=null
+ reader,weekday="Sabbato",date=null,languages
 }={}){
+ const active=checkedLanguages(languages);
+ if(!active)return held("COMPLINE_LANGUAGE_SCOPE_NOT_APPROVED",weekday);
  const appointedDate=date??(weekday==="Sabbato"?"2026-11-28":
   weekday==="Feria III"?"2026-12-01":null);
  const review=reviewAdventIComplineAppointment(appointedDate);
@@ -176,6 +190,8 @@ export async function assembleWeekdayComplinePilot({
  const appointment=review.appointment,psalmDay=appointment.psalmDay;
  const psalmIds=PSALMS_TO_READ[psalmDay];
  if(reader?.sourceRevision!==PIN||reader.weekday!==psalmDay||
+    !Array.isArray(reader.languages)||reader.languages.length!==active.length||
+    active.some(l=>!reader.languages.includes(l))||
     (date!==null&&reader.date!==date)||
     typeof reader.section!=="function"||
     typeof reader.psalm!=="function")
@@ -186,7 +202,7 @@ export async function assembleWeekdayComplinePilot({
   const paths=Object.keys(allowed);
   // Four named source leaves plus only the appointed psalms per locale.
   // Saturday uses 21 pinned documents, Tuesday uses 24. No annual sweep.
-  await Promise.all(LANGS.map(async l=>{
+  await Promise.all(active.map(async l=>{
    sections[l]={};
    for(const path of paths){
     sections[l][path]={};
@@ -202,7 +218,7 @@ export async function assembleWeekdayComplinePilot({
   const at=(l,p,n)=>sections[l][p][n];
   const append=(kind,p,n,selector=null)=>{
    const parts={};
-   for(const l of LANGS)parts[l]=selector?
+   for(const l of active)parts[l]=selector?
     selector(at(l,p,n),l):at(l,p,n);
    blocks.push(projectBlock(kind,p,n,parts));
   };
@@ -230,7 +246,8 @@ export async function assembleWeekdayComplinePilot({
   prayer("Alleluia","ALLELUIA",x=>x.filter(z=>!z.startsWith("(")).slice(0,1));
   const plan=planWeeklyComplinePsalter({
    weekday:psalmDay,marianSection:appointment.marianSection,
-   sourceSections:Object.fromEntries(LANGS.map(l=>[
+   languages:active,
+   sourceSections:Object.fromEntries(active.map(l=>[
     l,at(l,PSALMI,"Completorium")
    ]))
   });
@@ -239,10 +256,10 @@ export async function assembleWeekdayComplinePilot({
      plan.segments.length!==3)
    throw Error(plan.reason||"COMPLINE_WEEKDAY_PINNED_PSALTER_UNRESOLVED");
   blocks.push(projectBlock("ANTIPHON",PSALMI,"Completorium:"+psalmDay,
-   Object.fromEntries(LANGS.map(l=>[l,[plan.antiphons[l]]]))));
+   Object.fromEntries(active.map(l=>[l,[plan.antiphons[l]]]))));
   for(const {number,start,end} of plan.segments){
    const portions={};
-   for(const l of LANGS){
+   for(const l of active){
     const lines=betweenNumbered(sections[l].psalms[number],
      number,start,end);
     if(!lines)throw Error("COMPLINE_PSALM_PART_MISSING:"+l+":"+number);
@@ -252,7 +269,7 @@ export async function assembleWeekdayComplinePilot({
     Number(new RegExp("^"+number+":([0-9]+)[a-z]? ","u")
      .exec(line)?.[1]));
    if(labels.some(n=>!Number.isInteger(n))||
-      LANGS.some(l=>portions[l].length!==labels.length))
+      active.some(l=>portions[l].length!==labels.length))
     throw Error("COMPLINE_PSALM_SOURCE_ROW_ALIGNMENT_LOST:"+number);
    const range=String(labels[0])+"-"+String(labels.at(-1));
    blocks.push(projectBlock("PSALM","Psalterium/Psalmorum/Psalm"+number,
@@ -260,7 +277,7 @@ export async function assembleWeekdayComplinePilot({
    prayer("Gloria","DOXOLOGY");
   }
   blocks.push(projectBlock("ANTIPHON",PSALMI,"Completorium:"+psalmDay,
-   Object.fromEntries(LANGS.map(l=>[l,[plan.antiphons[l]]]))));
+   Object.fromEntries(active.map(l=>[l,[plan.antiphons[l]]]))));
   minor("Hymnus Completorium","HYMN",x=>{
    const part=stanzas(x);
    if(!part||part.length<2)throw Error("COMPLINE_HYMN_INVALID");
@@ -281,7 +298,7 @@ export async function assembleWeekdayComplinePilot({
   minor("Versum 4","VERSICLE");
   minor("Ant 4","ANTIPHON");
   const nunc={};
-  for(const l of LANGS){
+  for(const l of active){
    const lines=sections[l].psalms[233].split(/\r?\n/u)
     .filter(z=>/^2:(?:29|30|31|32)\s/u.test(z));
    if(lines.length!==4)throw Error("COMPLINE_NUNC_DIMMITTIS_UNRESOLVED:"+l);
@@ -304,7 +321,7 @@ export async function assembleWeekdayComplinePilot({
   // do NOT infer other-season alternates. The embedded $Oremus is replaced
   // with its actual existing Common/Prayers source rather than shown raw.
   const marian={},marianCollect={};
-  for(const l of LANGS){
+  for(const l of active){
    const all=at(l,MARIAN,appointment.marianSection);
    const prayerAt=all.findIndex(z=>z.trim()==="$Oremus");
    if(prayerAt<5||prayerAt>=all.length-1)
@@ -330,16 +347,16 @@ export async function assembleWeekdayComplinePilot({
     b.texts.la.length:1;
    const hymn=b.kind==="HYMN";
    const segments=hymn?
-    Object.fromEntries(LANGS.map(l=>[l,stanzas(b.texts[l])])):
+    Object.fromEntries(active.map(l=>[l,stanzas(b.texts[l])])):
     null;
    const perBlock=hymn?segments.la.length:portion;
-   if(hymn&&LANGS.some(l=>segments[l]?.length!==perBlock))
+   if(hymn&&active.some(l=>segments[l]?.length!==perBlock))
     throw Error("COMPLINE_HYMN_STANZAS_NOT_ALIGNED");
    if((b.kind==="PSALM"||b.kind==="CANTICLE")&&
-     LANGS.some(l=>b.texts[l].length!==perBlock))
+     active.some(l=>b.texts[l].length!==perBlock))
     throw Error("COMPLINE_VERSE_LANGUAGES_MISALIGNED");
    for(let subIndex=0;subIndex<perBlock;subIndex++){
-    const texts=Object.fromEntries(LANGS.map(l=>[l,
+    const texts=Object.fromEntries(active.map(l=>[l,
      hymn?segments[l][subIndex]:
      perBlock===1?b.texts[l]:[b.texts[l][subIndex]]]));
     frames.push(Object.freeze({
@@ -366,7 +383,7 @@ export async function assembleWeekdayComplinePilot({
     appointedDate==="2026-12-01"?
     "ADVENT_I_FERIA_III_OFFICE_BR170_171_E":
     appointment.rubricalReason,
-   sourceRevision:PIN,availableLanguages:LANGS,
+   sourceRevision:PIN,availableLanguages:active,
    blocks:Object.freeze(blocks),blockCount:blocks.length,
    frames:Object.freeze(frames),focusFrameCount:frames.length,
    sourceTextAltered:false,sourceDocumentsPerLanguage:4+psalmIds.length,
@@ -390,4 +407,13 @@ export async function assembleFerialTuesdayComplinePilot({reader}={}){
 }
 export async function assembleDatedComplinePilot({reader,date}={}){
  return assembleWeekdayComplinePilot({reader,date});
+}
+
+/** Source-first Latin Compline independent of uncleared translations.
+ * It remains a noncertified release candidate, not a public Hour. */
+export function createLatinComplinePinnedReader({fetchSource,date}={}){
+ return createComplinePinnedReader({fetchSource,date,languages:LATIN_ONLY});
+}
+export async function assembleLatinDatedComplinePilot({reader,date}={}){
+ return assembleWeekdayComplinePilot({reader,date,languages:LATIN_ONLY});
 }

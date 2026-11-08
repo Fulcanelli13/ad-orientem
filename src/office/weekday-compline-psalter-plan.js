@@ -20,6 +20,16 @@ export const COMPLINE_PSALTER_WEEKDAYS=Object.freeze([
 export const COMPLINE_MARIAN_SOURCE_SECTIONS=Object.freeze([
  "Advent","Nativiti","Quadragesimae","Paschalis","Postpentecost"
 ]);
+const DEFAULT_COMPLINE_LANGUAGES=Object.freeze(["la","en","fr"]);
+function reviewedLanguages(languages){
+ if(!Array.isArray(languages)||!languages.includes("la")||
+   languages.length!==new Set(languages).size||
+   !languages.every(l=>DEFAULT_COMPLINE_LANGUAGES.includes(l))||
+   !(languages.length===1&&languages[0]==="la"||
+     languages.length===3&&DEFAULT_COMPLINE_LANGUAGES.every(l=>languages.includes(l))))
+  return null;
+ return Object.freeze([...languages]);
+}
 const SPEC=Object.freeze({
  "Dominica":"4,90,133",
  "Feria II":"6,7(2-10),7(11-18)",
@@ -38,17 +48,19 @@ function withhold(reason){
  });
 }
 export function planWeeklyComplinePsalter({
-  weekday,marianSection,sourceSections
+  weekday,marianSection,sourceSections,languages=DEFAULT_COMPLINE_LANGUAGES
 }={}){
+ const active=reviewedLanguages(languages);
+ if(!active)return withhold("COMPLINE_LANGUAGE_SET_NOT_REVIEWED");
  if(!COMPLINE_PSALTER_WEEKDAYS.includes(weekday))
   return withhold("COMPLINE_FERIA_NOT_APPOINTED");
  if(!COMPLINE_MARIAN_SOURCE_SECTIONS.includes(marianSection))
   return withhold("COMPLINE_MARIAN_SEASON_NOT_APPOINTED");
- if(!sourceSections||!["la","en","fr"].every(l=>
+ if(!sourceSections||!active.every(l=>
    Array.isArray(sourceSections[l])&&sourceSections[l].length>=14))
   return withhold("COMPLINE_PINNED_WEEKDAY_SOURCE_UNAVAILABLE");
  let antiphons={},sequences={};
- for(const lang of ["la","en","fr"]){
+ for(const lang of active){
   const rows=sourceSections[lang],i=rows.findIndex(
    line=>line.startsWith(weekday+" = "));
   if(i<0||i+1>=rows.length)return withhold("COMPLINE_FERIA_SOURCE_ROW_MISSING:"+lang);
@@ -75,6 +87,7 @@ export function planWeeklyComplinePsalter({
   schema:OFFICE_WEEKLY_COMPLINE_PLAN,
   status:"SOURCE_FIRST_WEEKDAY_PSALTER_APPOINTMENT_RESEARCH_ONLY",
   weekday,marianSection,sourceRevision:PIN,
+  availableLanguages:active,
   sourceId:"Psalterium/Psalmi/Psalmi minor#Completorium",
   antiphons:Object.freeze(antiphons),
   segments:Object.freeze(segments),
