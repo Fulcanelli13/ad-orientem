@@ -146,13 +146,13 @@ export function select1962CommemorationsForMassForm({
     /^tempora:Adv[1-4]-[1-6]:3:/i.test(commId)&&
     /^Tempora\/Adv[1-4]-[1-6]$/i.test(String(only.path??""));
   // RG 25(a), 108(e), 111(a): the displaced III-class feria of Lent
-  // or Passiontide is privileged beneath an actually selected I-class
+  // or Passiontide is privileged beneath an actually selected I/II-class
   // sanctoral Mass. This is true in all four non-conventual forms.
   // Require exact original 1962 principal, feria, rank and prayer ownership:
   // the calendar commemorative label by itself does not authorize a prayer.
-  const privilegedLentenFeria=!sunday&&Number(main.rank)===1&&
+  const privilegedLentenFeria=!sunday&&[1,2].includes(Number(main.rank))&&
     Number(only.rank)===3&&
-    /^sancti:[0-9]{2}-[0-9]{2}:1:/i.test(mainId)&&
+    /^sancti:[0-9]{2}-[0-9]{2}:[12]:/i.test(mainId)&&
     /^tempora:Quad[1-5]-[1-6](?:Feria)?:3:/i.test(commId)&&
     /^Tempora\/Quad[1-5]-[1-6]$/.test(String(only.path??""));
   // RG 109(c): days in the Octave of Christmas are privileged
@@ -194,6 +194,19 @@ export function select1962CommemorationsForMassForm({
   const typedAdventMain=/^tempora:Adv[1-4]-[1-6]:3:/i.test(mainId)&&
     /^Tempora\/Adv[1-4]-[1-6]$/.test(String(main.path??""))&&
     Number(main.rank)===3;
+  // 1960 General Rubrics §§25(a), 108, 111(a,d), 112-114:
+  // a Lent/Passiontide III-class feria is the principal celebration
+  // when a III-class sanctoral feast is impeded. An authenticated
+  // ordinary sanctoral commemoration is kept in nonconventual Low Mass;
+  // the same ordinary commemoration is omitted in nonconventual
+  // Masses in cantu. Ember and Holy Week ferias are not IV-class
+  // or III-class generic cases and must retain separate rite ownership.
+  const ordinaryLentenFeria=!sunday&&Number(main.rank)===3&&
+    /^tempora:Quad[1-5]-[1-6]:3:/i.test(mainId)&&
+    /^Tempora\/Quad[1-5]-[1-6]$/.test(String(main.path??""))&&
+    [3,4].includes(Number(only.rank))&&!only.privileged&&
+    /^sancti:[0-9]{2}-[0-9]{2}[a-z]*:[34]:/i.test(commId)&&
+    /^Sancti\/[0-9]{2}-[0-9]{2}[a-z]*$/.test(String(only.path??""));
   // Ordinary commemoration on a IV-class feria after Pentecost.
   // General Rubrics §§108–114: source-identified ordinary commemorations
   // are retained in the Low Mass but not nonconventual Masses in cantu.
@@ -213,10 +226,13 @@ export function select1962CommemorationsForMassForm({
   const scope=nativityOctaveOwner?"PRIVILEGED_CHRISTMAS_OCTAVE_II_CLASS_MASS":
     privilegedSunday?"PRIVILEGED_SUNDAY_UNDER_I_CLASS_SANCTORAL":
     privilegedAdvent?"PRIVILEGED_ADVENT_FERIA_UNDER_SANCTORAL":
-    privilegedLentenFeria?"PRIVILEGED_LENT_PASSION_FERIA_UNDER_I_CLASS_SANCTORAL":
+    privilegedLentenFeria?(Number(main.rank)===1?
+      "PRIVILEGED_LENT_PASSION_FERIA_UNDER_I_CLASS_SANCTORAL":
+      "PRIVILEGED_LENT_PASSION_FERIA_UNDER_II_CLASS_SANCTORAL"):
     ordinarySunday?"II_CLASS_SUNDAY_SINGLE_II_CLASS_SANCTORAL_FEAST_NON_CONVENTUAL":
     ordinaryFourthClassSaint?"NON_SUNDAY_II_III_CLASS_SINGLE_IV_CLASS_SANCTORAL_COMMEMORATION":
-    ordinaryPentecostFeria?"PENTECOST_SEASON_IV_CLASS_FERIA_ORDINARY_COMMEMORATION":null;
+    ordinaryPentecostFeria?"PENTECOST_SEASON_IV_CLASS_FERIA_ORDINARY_COMMEMORATION":
+    ordinaryLentenFeria?"LENT_PASSION_III_CLASS_FERIA_ORDINARY_COMMEMORATION":null;
   if(!scope)return untouched(proper,"RUBRICAL_CLASSIFICATION_PENDING");
   if(!GROUPS.every(key=>array(data[key]).length===2&&data[key].every(sourceText)))
     return untouched(proper,"ORATION_SOURCE_INCOMPLETE");
@@ -231,6 +247,8 @@ export function select1962CommemorationsForMassForm({
       ["1960_GENERAL_RUBRICS_108_109_C_111","1960_MISSAL_RUBRICS_433_434"]:
       privilegedLentenFeria?
         ["1960_GENERAL_RUBRICS_25_A_108_E_111_A_113","1960_MISSAL_RUBRICS_433_434"]:
+      ordinaryLentenFeria?
+        ["1960_GENERAL_RUBRICS_25_A_111_A_D_112_113_114","1960_MISSAL_RUBRICS_433_434"]:
       ordinaryFourthClassSaint?
         ["1960_GENERAL_RUBRICS_111_C_D_112_113","1960_MISSAL_RUBRICS_433_434"]:
       ordinaryPentecostFeria?
