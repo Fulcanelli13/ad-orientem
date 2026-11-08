@@ -80,11 +80,12 @@ jobs:
                 "data/did-you-know/weiser-r50-second-sixteen-publication.v1.json",
                 "data/did-you-know/dyk-h100-pitre-ritus-24-publication.v1.json",
                 "data/did-you-know/dyk-h125-multisource-25-publication.v1.json",
-                "data/did-you-know/dyk-h150-originals-25-publication.v1.json"];
+                "data/did-you-know/dyk-h150-originals-25-publication.v1.json",
+                "data/did-you-know/dyk-h175-multisource-25-publication.v1.json"];
               if(!needed.every(path=>d.files.find(row=>row.path===path)?.exact===true))
                 process.exit(1);
             '; then
-              echo "P0: all fifteen production sources, including 150-fact Discovery, match deployed release"
+              echo "P0: all sixteen production sources, including 175-fact Discovery, match deployed release"
               break
             fi
             if [ "$attempt" = 12 ]; then
@@ -110,14 +111,15 @@ jobs:
                 "data/did-you-know/weiser-r50-second-sixteen-publication.v1.json",
                 "data/did-you-know/dyk-h100-pitre-ritus-24-publication.v1.json",
                 "data/did-you-know/dyk-h125-multisource-25-publication.v1.json",
-                "data/did-you-know/dyk-h150-originals-25-publication.v1.json"
+                "data/did-you-know/dyk-h150-originals-25-publication.v1.json",
+                "data/did-you-know/dyk-h175-multisource-25-publication.v1.json"
           ]){
             const entry=d.files.find(x=>x.path===path);
             assert.ok(entry,"Public-file audit missing "+path);
             assert.equal(entry.exact,true,"Public Pages is not serving expected release bytes: "+path);
           }
           console.log("P0_PAGES_SOURCE_EXACT_PASS="+JSON.stringify({
-            release:d.testedCommit,filesVerified:15,server:d.target,
+            release:d.testedCommit,filesVerified:16,server:d.target,
             physicalHandsetVerified:false
           }));
           EOF
