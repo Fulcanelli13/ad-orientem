@@ -1,0 +1,243 @@
+{
+  "schema": "AO_SACRED_ART_BATCH1_SEVEN_ORIGINAL_PHOTO_ACQUISITION_V1",
+  "as_of": "2026-11-08",
+  "branch_scope": "PRIVATE_RESEARCH_NO_PUBLICATION",
+  "source_queue": "data/artwork/sacred-art-batch1-25-release-progress.v1.json",
+  "previous_museum_verified": "data/artwork/batch1-two-firstparty-verified-source-photos.v1.json",
+  "counts": {
+    "remaining_works": 7,
+    "existing_prayer_positions": 26,
+    "original_selected_commons_files_to_check": 6,
+    "selected_photo_page_absent": 1,
+    "new_photos_release_approved": 0,
+    "public_gallery_changes": 0
+  },
+  "safeguards": [
+    "Never auto-promote a non-handpicked Commons photo",
+    "Never substitute a different object despite a matching artist/title or subject",
+    "Source painting identity does not grant photographic rights",
+    "Approved Prayer placements do not independently approve source-file selection",
+    "Commercial site must not reuse official National Gallery CC BY-NC-ND images",
+    "Keep exact work and exact photo acquisition separately",
+    "No Pages or Vercel publication from research branch",
+    "The four Phase 50 aliases and all prior rejection records remain protected"
+  ],
+  "items": [
+    {
+      "id": "artwork-pending:03",
+      "title": "Pentecost",
+      "editorial_artist": "Mateo Cerezo",
+      "selected_photo_page": "https://commons.wikimedia.org/wiki/File:Mateo_cerezo-la_venida_del_espiritu_santo.JPG",
+      "museum_name": "NOT_YET_INDEPENDENTLY_IDENTIFIED",
+      "museum_accession": null,
+      "exact_object_status": "HOLD_OBJECT_CATALOGUE_CORROBORATION",
+      "source_file_title": "Mateo_cerezo-la_venida_del_espiritu_santo.JPG",
+      "photo_rights": "NOT_INDEPENDENTLY_VERIFIED",
+      "hold": [
+        "UNRESOLVED_INSTITUTIONAL_INVENTORY",
+        "REUSABLE_PHOTO_LICENCE_NOT_VERIFIED"
+      ],
+      "source_explanation": "Previously selected Commons work label; not enough to establish exact museum object from first-party catalogue.",
+      "placement_count": 5,
+      "placement_ids": [
+        "HERO-14",
+        "COV-sacrament_come_holy_spirit",
+        "STG-pray.rosary-14",
+        "COV-novena.holy_ghost",
+        "STG-novena.holy_ghost-01"
+      ],
+      "release_allowed": false,
+      "handpicked_photograph": false,
+      "source_download_needed": true,
+      "source_image_original_sha256": null,
+      "source_image_verified_dimensions": null,
+      "app_asset_path": null,
+      "app_publication_allowed": false,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Mateo_cerezo-la_venida_del_espiritu_santo.JPG"
+    },
+    {
+      "id": "artwork-pending:04",
+      "title": "Agony in the Garden — Antwerp Rosary cycle",
+      "editorial_artist": "David Teniers the Elder",
+      "selected_photo_page": "https://commons.wikimedia.org/wiki/File:David_Teniers_the_Elder_-_The_Agony_in_the_Garden.jpg",
+      "museum_name": "St. Paul's Church, Antwerp (as Commons source)",
+      "museum_accession": null,
+      "exact_object_status": "ARTIST_LOCATION_REPORT_PENDING_CATALOG_CONFIRMATION",
+      "source_file_title": "David_Teniers_the_Elder_-_The_Agony_in_the_Garden.jpg",
+      "photo_rights": "COMMONS_PD_ART_RESEARCH_ONLY",
+      "hold": [
+        "COMMONS_FILE_SUMMARY_TITLE_DISAGREES_WITH_FILE_NAME",
+        "OBJECT_IDENTITY_AND_REPRODUCTION_RIGHTS_CHECK"
+      ],
+      "source_explanation": "Commons filename Agony in Garden; image page summary displays The Death of Christ, requiring visual/manual verification, not an inferred replacement.",
+      "placement_count": 4,
+      "placement_ids": [
+        "HERO-06",
+        "STG-pray.rosary-07",
+        "STG-pray.precious_blood-02",
+        "STG-pray.tenebrae-01"
+      ],
+      "release_allowed": false,
+      "handpicked_photograph": false,
+      "source_download_needed": true,
+      "source_image_original_sha256": null,
+      "source_image_verified_dimensions": null,
+      "app_asset_path": null,
+      "app_publication_allowed": false,
+      "source_url": "https://commons.wikimedia.org/wiki/File:David_Teniers_the_Elder_-_The_Agony_in_the_Garden.jpg"
+    },
+    {
+      "id": "artwork-pending:05",
+      "title": "Presentation of Jesus at the Temple",
+      "editorial_artist": "Philippe de Champaigne",
+      "selected_photo_page": "https://commons.wikimedia.org/wiki/File:Philippe%20de%20Champaigne-Pr%C3%A9sentation%20au%20temple.jpg",
+      "museum_name": "Royal Museums of Fine Arts of Belgium, Brussels",
+      "museum_accession": "25",
+      "exact_object_status": "CATALOGUE_CONFIRMED_1648_BRUSSELS_NOT_1628_DIJON",
+      "source_file_title": "Philippe_de_Champaigne-Présentation_au_temple.jpg",
+      "photo_rights": "OWN_PHOTOGRAPH_BY_RVALETTE_CC_BY_SA_4_0_COMMONS",
+      "hold": [
+        "NO_AUTO_PROMOTION_OF_UNHANDPICKED_COMMONS_PHOTO",
+        "SOURCE_PHOTO_QA_AND_EDITORIAL_ADMISSION_PENDING"
+      ],
+      "source_explanation": "Brussels 1648 inventory 25. Distinct from Dijon 1628 CA104; selected Commons photograph 2994x3906 reported; photographer Rvalette CC BY-SA.",
+      "placement_count": 4,
+      "placement_ids": [
+        "HERO-04",
+        "STG-pray.rosary-05",
+        "STG-prayer.seven_sorrows_chaplet-01",
+        "STG-pray.st_joseph_seven_sorrows-04"
+      ],
+      "release_allowed": false,
+      "handpicked_photograph": false,
+      "source_download_needed": true,
+      "source_image_original_sha256": null,
+      "source_image_verified_dimensions": null,
+      "app_asset_path": null,
+      "app_publication_allowed": false,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Philippe%20de%20Champaigne-Pr%C3%A9sentation%20au%20temple.jpg"
+    },
+    {
+      "id": "artwork-pending:06",
+      "title": "Saint Thomas Aquinas",
+      "editorial_artist": "Carlo Crivelli",
+      "selected_photo_page": "https://commons.wikimedia.org/wiki/File:Saint_Thomas_Aquinas_(Crivelli%2C_15th-century).jpg",
+      "museum_name": "The National Gallery, London",
+      "museum_accession": "NG788.9",
+      "exact_object_status": "INSTITUTIONAL_CATALOGUE_CONFIRMED",
+      "source_file_title": "Saint_Thomas_Aquinas_(Crivelli,_15th-century).jpg",
+      "photo_rights": "COMMONS_PD_ART_CLAIM_SEPARATE_FROM_NATIONAL_GALLERY_IMAGE_CC_BY_NC_ND",
+      "hold": [
+        "NATIONAL_GALLERY_OFFICIAL_IMAGE_CC_BY_NC_ND_UNSUITABLE_FOR_COMMERCIAL_DERIVATIVE_USE",
+        "NO_AUTO_PROMOTION_OF_UNHANDPICKED_COMMONS_PHOTO"
+      ],
+      "source_explanation": "Selected Commons original reportedly 2813x4226, derived from National Gallery original. Museum's official image licence CC BY-NC-ND; exact photo commercial reuse requires separate eligibility.",
+      "placement_count": 4,
+      "placement_ids": [
+        "COV-benediction_o_salutaris",
+        "COV-benediction_tantum_ergo",
+        "STG-pray.benediction-02",
+        "STG-pray.litany_saints-05"
+      ],
+      "release_allowed": false,
+      "handpicked_photograph": false,
+      "source_download_needed": true,
+      "source_image_original_sha256": null,
+      "source_image_verified_dimensions": null,
+      "app_asset_path": null,
+      "app_publication_allowed": false,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Saint_Thomas_Aquinas_(Crivelli%2C_15th-century).jpg"
+    },
+    {
+      "id": "artwork-pending:07",
+      "title": "Adoration of the Mystic Lamb",
+      "editorial_artist": "Hubert and Jan van Eyck",
+      "selected_photo_page": null,
+      "museum_name": "Saint Bavo's Cathedral, Ghent",
+      "museum_accession": null,
+      "exact_object_status": "AD0RATION_PANEL_GHENT_ALTARPIECE_CONFIRMED",
+      "source_file_title": null,
+      "photo_rights": "NO_EXISTING_EXACT_SELECTION_PHOTO_SOURCE_AND_NO_FIRST_PARTY_REUSE_GRANT",
+      "hold": [
+        "NO_SOURCE_PAGE_IN_CANONICAL_SLOT",
+        "KIK_IRPA_PHOTO_RIGHTS_NOT_VERIFIED",
+        "PANEL_VARIANT_AND_RESTORATION_STATE_NOT_SELECTED"
+      ],
+      "source_explanation": "Canonical source lacks specific file; Closer to Van Eyck restoration images are not automatically distributable. No substitute from Commons without editorial selection.",
+      "placement_count": 3,
+      "placement_ids": [
+        "STG-pray.benediction-04",
+        "COV-pray.litany_saints",
+        "STG-pray.litany_saints-06"
+      ],
+      "release_allowed": false,
+      "handpicked_photograph": false,
+      "source_download_needed": false,
+      "source_image_original_sha256": null,
+      "source_image_verified_dimensions": null,
+      "app_asset_path": null,
+      "app_publication_allowed": false,
+      "source_url": null
+    },
+    {
+      "id": "artwork-pending:08",
+      "title": "Archangel Michael Defeating Satan",
+      "editorial_artist": "Guido Reni",
+      "selected_photo_page": "https://commons.wikimedia.org/wiki/File:GuidoReni_MichaelDefeatsSatan.jpg",
+      "museum_name": "Santa Maria della Concezione dei Cappuccini, Rome",
+      "museum_accession": null,
+      "exact_object_status": "ORIGINAL_LOCATION_KNOWN",
+      "source_file_title": "GuidoReni_MichaelDefeatsSatan.jpg",
+      "photo_rights": "COMMONS_PD_ART_RESEARCH_ONLY",
+      "hold": [
+        "EXACT_PHOTOGRAPHER_RIGHTS_PROVENANCE_PENDING",
+        "DO_NOT_SUBSTITUTE_SWEDISH_NATIONALMUSEUM_COPY"
+      ],
+      "source_explanation": "Rome original. Nationalmuseum NMDrh 644 is a COPY after Guido Reni, explicitly excluded as same-object high-res substitution.",
+      "placement_count": 3,
+      "placement_ids": [
+        "COV-novena.st_michael",
+        "COV-mass_devotion_leonine",
+        "COV-devotion_prayer_st_michael"
+      ],
+      "release_allowed": false,
+      "handpicked_photograph": false,
+      "source_download_needed": true,
+      "source_image_original_sha256": null,
+      "source_image_verified_dimensions": null,
+      "app_asset_path": null,
+      "app_publication_allowed": false,
+      "source_url": "https://commons.wikimedia.org/wiki/File:GuidoReni_MichaelDefeatsSatan.jpg"
+    },
+    {
+      "id": "artwork-pending:09",
+      "title": "Miracle of Loaves and Fishes",
+      "editorial_artist": "Giovanni Lanfranco",
+      "selected_photo_page": "https://commons.wikimedia.org/wiki/File:Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg",
+      "museum_name": "National Gallery of Ireland, Dublin",
+      "museum_accession": "NGI.72",
+      "exact_object_status": "INSTITUTIONAL_CATALOGUE_CONFIRMED",
+      "source_file_title": "Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg",
+      "photo_rights": "NGI_OFFERS_CC_BY_4_ONLY_ON_MARKED_OBJECT_PHOTOS_NOT_ASSUMED_FOR_NGI_72",
+      "hold": [
+        "SELECTED_COMMONS_IMAGE_1285x683_BELOW_1200_PX_SHORTSIDE_TARGET",
+        "NGI_72_PHOTOGRAPH_CC_BY_ELIGIBILITY_NOT_YET_VERIFIED"
+      ],
+      "source_explanation": "Selected Commons reproduction reportedly 1285x683, short-side deficient. Exact NGI object NGI.72; official object-specific CC BY/4 download has not been certified.",
+      "placement_count": 3,
+      "placement_ids": [
+        "COV-foundations_our_father",
+        "COV-foundations_grace_before_meals",
+        "COV-foundations_grace_after_meals"
+      ],
+      "release_allowed": false,
+      "handpicked_photograph": false,
+      "source_download_needed": true,
+      "source_image_original_sha256": null,
+      "source_image_verified_dimensions": null,
+      "app_asset_path": null,
+      "app_publication_allowed": false,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg"
+    }
+  ]
+}
