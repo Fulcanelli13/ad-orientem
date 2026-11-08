@@ -11,6 +11,8 @@ import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
 import {COMMUNION_TREASURY_V383 as SOURCE} from "../src/pray/traditional-pray-data.js";
 import {RED_BOOKLET_COMMUNION_LIBRARY_LINKS_V1 as LINKS} from "../src/pray/red-booklet-communion-library-links.v1.js";
+import {RED_BOOKLET_SUSCIPE_LIBRARY_LINK_V1 as SUSCIPE} from "../src/pray/red-booklet-suscipe-library-link.v1.js";
+import {prayerAcquisitionCandidates} from "../src/pray/prayer-acquisition-historical-witnesses.v1.js";
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",".mjs":"text/javascript; charset=utf-8",".json":"application/json",".css":"text/css; charset=utf-8",".svg":"image/svg+xml",".png":"image/png",".jpg":"image/jpeg",".webp":"image/webp",".woff2":"font/woff2"};
 const server=http.createServer(async(req,res)=>{
@@ -65,6 +67,36 @@ try{
     assert.ok(Number.isInteger(state.communionStep));
     checked++;
    }
+   // Suscipe opens the unchanged, source-owned Morning Offering reader. Its
+   // Latin witness is independently printed; the French UI never invents FR.
+   assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.library",{returnContext:null})),true);
+   await page.locator(scope+'[data-p435930-lib-search]').evaluate(el=>{
+    el.value="Suscipe";el.dispatchEvent(new Event("input",{bubbles:true}));
+   });
+   const suscipeEntry=page.locator(scope+'[data-p435930-red-suscipe="ignatius_suscipe"]');
+   assert.equal(await suscipeEntry.count(),1,"Suscipe must be discoverable by name globally");
+   await suscipeEntry.evaluate(el=>el.click());
+   await page.waitForFunction(id=>{
+    const state=globalThis.AO_TRADITIONAL_PRAY_V381?.state?.();
+    return state?.route==="pray.morning_evening"&&state.dailyMode==="direct"&&state.dailyDirectId===id;
+   },SUSCIPE.sourceIds.en,{timeout:15000});
+   for(const language of ["en","la"]){
+    const id=SUSCIPE.sourceIds[language];
+    if(language==="la")await page.locator(scope+'[data-tp381-suscipe-lang="la"]').evaluate(el=>el.click());
+    const source=prayerAcquisitionCandidates("self_offering",{language}).find(x=>x.id===id);
+    const card=page.locator(scope+'[data-ao-personal-source="'+id+'"]');
+    assert.equal(await card.count(),1,"Suscipe original source card missing "+language);
+    const face=card.locator('.aoTP381Reader');
+    assert.equal(await face.getAttribute("lang"),language,"Source language mismatched "+language);
+    assert.equal(normalize(await face.innerText()),normalize(source.text),"Original Lasance wording differs "+language);
+    const state=await page.evaluate(()=>globalThis.AO_TRADITIONAL_PRAY_V381.state());
+    assert.equal(state.dailyDirectId,id);
+    assert.equal(state.dailyDirectLanguage,language);
+    checked++;
+   }
+   assert.equal(await page.locator(scope+'[data-ao-suscipe-source-note]').count(),1);
+   assert.equal(await page.evaluate(()=>globalThis.AO_TRADITIONAL_PRAY_V381.open("pray.morning_evening",{dailySourcePrayer:"bogus"})),false);
+   assert.equal((await page.evaluate(()=>globalThis.AO_TRADITIONAL_PRAY_V381.state())).dailyDirectId,SUSCIPE.sourceIds.la);
    // Source-only links must be found by title even without subject selection.
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.library",{returnContext:null})),true);
    await page.locator(scope+'[data-p435930-lib-search]').evaluate(el=>{el.value="Bonaventure";el.dispatchEvent(new Event("input",{bubbles:true}))});
@@ -82,6 +114,6 @@ try{
    console.log("PASS "+width+"px "+ui+": all five Communion works open exact source cards; title search and invalid source guard.");
   }finally{await context.close()}
  }
- assert.equal(checked,20,"Five source texts × four device/language combinations");
- console.log("PASS 20 complete, source-owned Communion body comparisons across 320/390 EN/FR; no copied Red Booklet text.");
+ assert.equal(checked,28,"Five Communion plus Suscipe EN and LA in four device/language combinations");
+ console.log("PASS 28 source-owned reading-body comparisons, five Communion plus EN/LA Suscipe × 320/390 EN/FR; no copied Red Booklet wording.");
 }finally{await browser?.close().catch(()=>{});await new Promise(done=>server.close(done))}
