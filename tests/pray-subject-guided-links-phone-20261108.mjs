@@ -49,7 +49,7 @@ try{
     assert.equal(await link.count(),1,"Missing source-owned guided link "+item.id);
     assert.ok((await link.innerText()).includes(ui==="fr"?item.fr:item.en),"Source-owned guided link title language failed "+item.id);
     await link.evaluate(el=>el.click());
-    await page.waitForFunction(view=>document.querySelector("#aoPray435930.open")?.dataset.aoPrayView===view,views[item.id],{timeout:15000});
+    await page.waitForFunction(view=>document.querySelector("#aoPray435930.open .aoP435930Mount")?.dataset.aoPrayView===view,views[item.id],{timeout:15000});
     assert.equal(await page.locator(scope+".aoP435930Body").count(),1,"Source reader failed to render "+item.id);
     checked++;
    }
