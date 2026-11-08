@@ -26,6 +26,9 @@ const mode=requestedMode==="MISSAL"?"MISSAL":"LIVE";
 const t=(lat,en,fr)=>lang==="fr"?({lat,en:"",fr}):({lat,en,fr:""});
 // Test-only source proof; deliberately distinct from production Proper.
 const separatelyNamedChants=params.get("sourceChants")==="1";
+// Only for the real-phone notation acceptance: an exact, already pinned
+// 1962 All Saints Proper, never a synthetic title-to-score lookup.
+const exactScoredProper=params.get("scoreProper")==="all-saints";
 const alternateIsTract=params.get("tract")==="1";
 const altKind=alternateIsTract?"TRACT":"ALLELUIA";
 const altSection=alternateIsTract?"Tractus":"Alleluia";
@@ -72,6 +75,19 @@ const proper={
   communion:t("Floréte, flores","Send forth flowers","Fleurissez, fleurs"),
   postcommunions:[t("Sacratíssimæ Genetrícis tuæ","May the prayers of Thy most holy Mother","Que les prières de votre très sainte Mère")],
 };
+if(exactScoredProper){
+ Object.assign(proper,{
+  sourcePath:"Sancti/11-01",
+  introit:t("Gaudeámus omnes in Dómino, diem festum celebrántes sub honóre Sanctórum ómnium.",
+    "Let us rejoice in the Lord","Réjouissons-nous dans le Seigneur"),
+  gradual:t("Timéte Dóminum, omnes Sancti ejus: quóniam nihil deest timéntibus eum.",
+    "Fear the Lord, all ye His saints","Craignez le Seigneur, vous tous ses saints"),
+  offertory:t("Justórum ánimæ in manu Dei sunt, et non tanget illos torméntum malítiæ.",
+    "The souls of the just are in God's hand","Les âmes des justes sont dans la main de Dieu"),
+  communion:t("Beáti mundo corde, quóniam ipsi Deum vidébunt; beáti pacífici.",
+    "Blessed are the clean of heart","Bienheureux les cœurs purs")
+ });
+}
 const rite=String(params.get("rite")??(params.get("asperges")==="1"?"asperges":"")).toLowerCase();
 const withAsperges=rite==="asperges";
 const withPalm=rite==="palm";
@@ -88,26 +104,28 @@ const followingActions=following==="corpus"?["CORPUS_CHRISTI_PROCESSION"]:
   following==="requiem"?["REQUIEM_ABSOLUTION"]:[];
 const allowedForms=new Set(["MISSA_CANTATA_INCENSE","MISSA_CANTATA_SIMPLE","SOLEMN","LOW"]);
 if(!allowedForms.has(requestedForm))throw new Error("Unsupported test fixture form");
-const fixtureDate=params.get("date")||(withGoodFriday?"2026-04-03":withEasterVigil?"2027-03-27":"2026-10-04");
+const fixtureDate=params.get("date")||(exactScoredProper?"2026-11-01":withGoodFriday?"2026-04-03":withEasterVigil?"2027-03-27":"2026-10-04");
 if(!/^20[0-9]{2}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12][0-9]|3[01])$/.test(fixtureDate))throw new Error("Invalid test fixture date");
 const resolvedMass={
   schema:"ao-resolved-mass-v2",
   date:fixtureDate,
   form:requestedForm,
   presentationMode:mode,
-  actualCelebration:withGoodFriday?{id:"good-friday",type:"CALENDAR",title:"Good Friday"}:
+  actualCelebration:exactScoredProper?{id:"all-saints",type:"CALENDAR",title:"All Saints"}:
+    withGoodFriday?{id:"good-friday",type:"CALENDAR",title:"Good Friday"}:
     withEasterVigil?{id:"easter-vigil",type:"CALENDAR",title:"Easter Vigil"}:
     withCandlemas?{id:"purificatio-bmv",type:"CALENDAR",title:"Purification of Our Lady"}:
     fixtureRequiem?{id:"requiem",type:"REQUIEM",title:"Requiem"}:
     following==="corpus"?{id:"corpus-christi",type:"CALENDAR",title:"Corpus Christi"}:
     {id:"holy_rosary",type:params.get("print")==="1"?"CALENDAR":"VOTIVE",title:"Holy Rosary"},
-  calendarCelebration:withGoodFriday?{id:"good-friday",type:"CALENDAR",title:"Good Friday"}:
+  calendarCelebration:exactScoredProper?{id:"all-saints",type:"CALENDAR",title:"All Saints"}:
+    withGoodFriday?{id:"good-friday",type:"CALENDAR",title:"Good Friday"}:
     withEasterVigil?{id:"easter-vigil",type:"CALENDAR",title:"Easter Vigil"}:
     withCandlemas?{id:"purificatio-bmv",type:"CALENDAR",title:"Purification of Our Lady"}:
     {id:"Tempora/Pent18-0",type:"CALENDAR",title:"Sunday"},
   explicitlySelectedCelebration:params.get("print")!=="1",
-  proper:{status:"READY",data:proper,sourcePath:"Sancti/10-07"},
-  overlays:fixtureRequiem?["REQUIEM"]:(params.get("print")==="1"?[]:["VOTIVE_PROPER"]),
+  proper:{status:"READY",data:proper,sourcePath:proper.sourcePath},
+  overlays:fixtureRequiem?["REQUIEM"]:(exactScoredProper||params.get("print")==="1"?[]:["VOTIVE_PROPER"]),
   precedingRites,
   followingActions,
   distinctRite:withGoodFriday?"GOOD_FRIDAY":withEasterVigil?"EASTER_VIGIL":null,
