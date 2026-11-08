@@ -66,7 +66,11 @@ assert.ok(agnus.structuralAnchorsPrinted.some(x=>x.includes("dona nobis pacem"))
 const kyrieVIII=ledger.scores.find(x=>x.gregobaseId===1184);
 assert.ok(kyrieVIII.sourceHistoryPriorityChecks.some(x=>x.includes("virga")));
 const dom=readFileSync(new URL("../src/mass/reader-dom.js",import.meta.url),"utf8");
-assert.doesNotMatch(dom,/data-schola-score-open|offlineKyrialeResearchScore\(/);
+// Provisional Proper notation is source-bound and labeled; unverified
+// Kyriale research GABC remains outside the public Schola experience.
+assert.doesNotMatch(dom,/offlineKyrialeResearchScore\(/);
+assert.match(dom,/resolveScholaSelectedScoreAccess\(\{itinerary,/);
+assert.match(dom,/score\.publicScoreApproved!==false/);
 // M24: real printed structural collation of Kyrie XVI, p. 54*.
 // Structural repetition/text checkpoints are NOT melodic/neume approvals.
 const kx=ledger.scores.find(x=>x.gregobaseId===545);
