@@ -39,6 +39,27 @@ export const HOME_C3_CSS=String.raw`/* C3 Living Gallery extends (does not repla
 .aoH7Screens .aoC3ArtDialog p{font:13px/1.4 var(--sans);color:var(--mu);margin:0 0 12px}
 .aoH7Screens .aoC3ArtDialog a{color:var(--sage)}
 .aoH7Screens .aoC3ArtDialog button{min-height:44px;border:1px solid var(--ln);background:var(--sf2);color:var(--ink);padding:0 16px;margin:10px 0;border-radius:8px}
+
+/* Batch 1: gallery controls live only in the existing painting-info dialog.
+   Front-page/H7 cards and the selected dated artwork stay unchanged. */
+.aoH7Screens .aoC3ArtDialog [data-home-c3-gallery-nav][hidden],
+.aoH7Screens .aoC3ArtDialog [data-home-c3-gallery-launcher][hidden]{display:none!important}
+.aoH7Screens .aoC3ArtDialog .aoC3GalleryNav{
+ display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);
+ align-items:center;gap:8px;margin-top:8px
+}
+.aoH7Screens .aoC3ArtDialog .aoC3GalleryNav output{
+ min-width:46px;text-align:center;color:var(--mu);font:500 12px/1.4 var(--sans);font-variant-numeric:tabular-nums
+}
+.aoH7Screens .aoC3ArtDialog .aoC3GalleryNav button{
+ margin:4px 0;width:100%;padding:8px 10px;font:500 12px/1.3 var(--sans)
+}
+.aoH7Screens .aoC3ArtDialog .aoC3GalleryNav [data-home-c3-gallery-back]{
+ grid-column:1/-1;width:auto;justify-self:center
+}
+.aoH7Screens .aoC3ArtDialog [data-home-c3-gallery-launcher] button{
+ width:100%;font:500 12px/1.4 var(--sans)
+}
 @media(max-width:359px){.aoH7Screens .aoH7HomeView .aoH7Hero[data-c3-orientation="portrait"]{height:530px!important}.aoH7Screens .aoC3PrayerSlide,.aoH7Screens .aoH7HomeView .aoC3PrayerAction,.aoH7Screens .aoH7HomeView .aoH4Prayer.np.aoC3PrayerAction{min-height:196px!important}.aoH7Screens .aoH4Upcoming.wkc .aoC3UpcomingCard{flex-basis:142px}}
 
 /* C3 nested Week controls must override inherited H7 general button dimensions. */
