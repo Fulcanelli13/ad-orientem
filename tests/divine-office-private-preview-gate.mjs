@@ -14,11 +14,12 @@ test("explicit local-only source preview opens only on loopback with opt-in",()=
  assert.equal(officePrivateSourceReviewAllowed(local("127.0.0.1","?aoOfficeReview=1","file:")),false);
  assert.equal(officePrivateSourceReviewAllowed(null),false);
 });
-test("Office research remains unpublished and a bare route never bypasses source gates",async()=>{
+test("exact date Latin reader is enabled while Vespers and all other Hours stay withheld",async()=>{
  const {officeRouteState}=await import("../src/office/office-route-state.js");
  for(const hour of ["VESPERS","COMPLINE"]){
   const r=officeRouteState({date:"2026-11-28",hour});
-  assert.equal(r.readingEnabled,false);
-  assert.equal(r.published,false);
+  const released=hour==="COMPLINE";
+  assert.equal(r.readingEnabled,released);
+  assert.equal(r.published,released);
  }
 });
