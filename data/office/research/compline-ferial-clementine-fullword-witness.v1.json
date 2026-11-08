@@ -1,0 +1,148 @@
+{
+  "schema": "ao.office.weekday-complete-clementine-independent-lexical-witness.v1",
+  "source": {
+    "repository": "jrichter/ClementineVulgateConverter",
+    "revision": "1f7093a14fa61374b0fe85db1965d9bd45dfdae1",
+    "path": "latin/Ps.lat",
+    "url": "https://github.com/jrichter/ClementineVulgateConverter/blob/1f7093a14fa61374b0fe85db1965d9bd45dfdae1/latin/Ps.lat",
+    "tradition": "Clementine Vulgate Project public-domain Latin Scripture, independent of Divinum Officium upstream",
+    "acquisition": "2026-11-08",
+    "encodingNote": "The mirror contained an archaic U+009C œ misdecoding in Psalm 76 cœpi; restored to œ in the archived extraction (not a textual emendation)."
+  },
+  "printedAssignmentReferences": [
+    {
+      "document": "Consociatio Christi Regis, Psalterium Romanum iuxta ritum 1962, Latin-English, 2023",
+      "url": "https://ccregis.org/psalter_lt-en.pdf",
+      "scope": {
+        "feriaIII": "76–77",
+        "feriaIV": "101–102",
+        "feriaV": "124–126",
+        "feriaVI": "151–153"
+      },
+      "verification": "Printed Compline psalm sequence and numbering are indexed; not a claim that every printed token was separately collated."
+    },
+    {
+      "document": "David Siefker, Diurnale Romanum Latin-English, 2008",
+      "url": "https://www.latinmassschedule.com/Resources/Diurnale_Romanum__Latin_English.pdf",
+      "scope": {
+        "feriaIII": "451–453",
+        "feriaIV": "497–498",
+        "feriaV": "540–542",
+        "feriaVI": "587–589"
+      },
+      "verification": "Independent printed weekly Compline appointment; not a second full-word collation."
+    }
+  ],
+  "releaseBoundary": {
+    "dates": [
+      "2026-12-01",
+      "2026-12-02",
+      "2026-12-03",
+      "2026-12-04"
+    ],
+    "language": "la",
+    "sourceFamily": "CLEMENTINE_VULGATE",
+    "originalMame1961PsalmLeafCertified": false,
+    "exactOriginalEditionReproduction": false,
+    "translatorRightsIncluded": false
+  },
+  "psalms": {
+    "11": {
+      "latin": "Salvum me fac, Domine, quoniam defecit sanctus, quoniam diminutæ sunt veritates a filiis hominum. Vana locuti sunt unusquisque ad proximum suum ; labia dolosa, in corde et corde locuti sunt. Disperdat Dominus universa labia dolosa, et linguam magniloquam. Qui dixerunt : Linguam nostram magnificabimus ; labia nostra a nobis sunt. Quis noster dominus est ? Propter miseriam inopum, et gemitum pauperum, nunc exsurgam, dicit Dominus. Ponam in salutari ; fiducialiter agam in eo. Eloquia Domini, eloquia casta ; argentum igne examinatum, probatum terræ, purgatum septuplum. Tu, Domine, servabis nos, et custodies nos a generatione hac in æternum. In circuitu impii ambulant : secundum altitudinem tuam multiplicasti filios hominum."
+    },
+    "12": {
+      "latin": "Usquequo, Domine, oblivisceris me in finem ? usquequo avertis faciem tuam a me ? quamdiu ponam consilia in anima mea ; dolorem in corde meo per diem ? usquequo exaltabitur inimicus meus super me ? Respice, et exaudi me, Domine Deus meus. Illumina oculos meos, ne umquam obdormiam in morte ; nequando dicat inimicus meus : Prævalui adversus eum. Qui tribulant me exsultabunt si motus fuero ; ego autem in misericordia tua speravi. Exsultabit cor meum in salutari tuo. Cantabo Domino qui bona tribuit mihi ; et psallam nomini Domini altissimi."
+    },
+    "15": {
+      "latin": "Conserva me, Domine, quoniam speravi in te. Dixi Domino : Deus meus es tu, quoniam bonorum meorum non eges. Sanctis qui sunt in terra ejus, mirificavit omnes voluntates meas in eis. Multiplicatæ sunt infirmitates eorum : postea acceleraverunt. Non congregabo conventicula eorum de sanguinibus, nec memor ero nominum eorum per labia mea. Dominus pars hæreditatis meæ, et calicis mei : tu es qui restitues hæreditatem meam mihi. Funes ceciderunt mihi in præclaris ; etenim hæreditas mea præclara est mihi. Benedicam Dominum qui tribuit mihi intellectum ; insuper et usque ad noctem increpuerunt me renes mei. Providebam Dominum in conspectu meo semper : quoniam a dextris est mihi, ne commovear. Propter hoc lætatum est cor meum, et exsultavit lingua mea ; insuper et caro mea requiescet in spe. Quoniam non derelinques animam meam in inferno, nec dabis sanctum tuum videre corruptionem. Notas mihi fecisti vias vitæ ; adimplebis me lætitia cum vultu tuo : delectationes in dextera tua usque in finem."
+    },
+    "33": {
+      "latin": "Benedicam Dominum in omni tempore ; semper laus ejus in ore meo. In Domino laudabitur anima mea : audiant mansueti, et lætentur. Magnificate Dominum mecum, et exaltemus nomen ejus in idipsum. Exquisivi Dominum, et exaudivit me ; et ex omnibus tribulationibus meis eripuit me. Accedite ad eum, et illuminamini ; et facies vestræ non confundentur. Iste pauper clamavit, et Dominus exaudivit eum, et de omnibus tribulationibus ejus salvavit eum. Immittet angelus Domini in circuitu timentium eum, et eripiet eos. Gustate et videte quoniam suavis est Dominus ; beatus vir qui sperat in eo. Timete Dominum, omnes sancti ejus, quoniam non est inopia timentibus eum. Divites eguerunt, et esurierunt ; inquirentes autem Dominum non minuentur omni bono. Venite, filii ; audite me : timorem Domini docebo vos. Quis est homo qui vult vitam ; diligit dies videre bonos ? Prohibe linguam tuam a malo, et labia tua ne loquantur dolum. Diverte a malo, et fac bonum ; inquire pacem, et persequere eam. Oculi Domini super justos, et aures ejus in preces eorum. Vultus autem Domini super facientes mala, ut perdat de terra memoriam eorum. Clamaverunt justi, et Dominus exaudivit eos ; et ex omnibus tribulationibus eorum liberavit eos. Juxta est Dominus iis qui tribulato sunt corde, et humiles spiritu salvabit. Multæ tribulationes justorum ; et de omnibus his liberabit eos Dominus. Custodit Dominus omnia ossa eorum : unum ex his non conteretur. Mors peccatorum pessima ; et qui oderunt justum delinquent. Redimet Dominus animas servorum suorum, et non delinquent omnes qui sperant in eo."
+    },
+    "60": {
+      "latin": "Exaudi, Deus, deprecationem meam ; intende orationi meæ. A finibus terræ ad te clamavi, dum anxiaretur cor meum ; in petra exaltasti me. Deduxisti me, quia factus es spes mea : turris fortitudinis a facie inimici. Inhabitabo in tabernaculo tuo in sæcula ; protegar in velamento alarum tuarum. Quoniam tu, Deus meus, exaudisti orationem meam ; dedisti hæreditatem timentibus nomen tuum. Dies super dies regis adjicies ; annos ejus usque in diem generationis et generationis. Permanet in æternum in conspectu Dei : misericordiam et veritatem ejus quis requiret ? Sic psalmum dicam nomini tuo in sæculum sæculi, ut reddam vota mea de die in diem."
+    },
+    "69": {
+      "latin": "Deus, in adjutorium meum intende ; Domine, ad adjuvandum me festina. Confundantur, et revereantur, qui quærunt animam meam. Avertantur retrorsum, et erubescant, qui volunt mihi mala ; avertantur statim erubescentes qui dicunt mihi : Euge, euge ! Exsultent et lætentur in te omnes qui quærunt te ; et dicant semper : Magnificetur Dominus, qui diligunt salutare tuum. Ego vero egenus et pauper sum ; Deus, adjuva me. Adjutor meus et liberator meus es tu ; Domine, ne moreris."
+    },
+    "70": {
+      "latin": "In te, Domine, speravi ; non confundar in æternum. In justitia tua libera me, et eripe me : inclina ad me aurem tuam, et salva me. Esto mihi in Deum protectorem, et in locum munitum, ut salvum me facias : quoniam firmamentum meum et refugium meum es tu. Deus meus, eripe me de manu peccatoris, et de manu contra legem agentis, et iniqui : quoniam tu es patientia mea, Domine ; Domine, spes mea a juventute mea. In te confirmatus sum ex utero ; de ventre matris meæ tu es protector meus ; in te cantatio mea semper. Tamquam prodigium factus sum multis ; et tu adjutor fortis. Repleatur os meum laude, ut cantem gloriam tuam, tota die magnitudinem tuam. Ne projicias me in tempore senectutis ; cum defecerit virtus mea, ne derelinquas me. Quia dixerunt inimici mei mihi, et qui custodiebant animam meam consilium fecerunt in unum, dicentes : Deus dereliquit eum : persequimini et comprehendite eum, quia non est qui eripiat. Deus, ne elongeris a me ; Deus meus, in auxilium meum respice. Confundantur et deficiant detrahentes animæ meæ ; operiantur confusione et pudore qui quærunt mala mihi. Ego autem semper sperabo, et adjiciam super omnem laudem tuam. Os meum annuntiabit justitiam tuam, tota die salutare tuum. Quoniam non cognovi litteraturam, introibo in potentias Domini ; Domine, memorabor justitiæ tuæ solius. Deus, docuisti me a juventute mea ; et usque nunc pronuntiabo mirabilia tua. Et usque in senectam et senium, Deus, ne derelinquas me, donec annuntiem brachium tuum generationi omni quæ ventura est, potentiam tuam, et justitiam tuam, Deus, usque in altissima ; quæ fecisti magnalia, Deus : quis similis tibi ? Quantas ostendisti mihi tribulationes multas et malas ! et conversus vivificasti me, et de abyssis terræ iterum reduxisti me. Multiplicasti magnificentiam tuam ; et conversus consolatus es me. Nam et ego confitebor tibi in vasis psalmi veritatem tuam, Deus ; psallam tibi in cithara, sanctus Israël. Exsultabunt labia mea cum cantavero tibi ; et anima mea quam redemisti. Sed et lingua mea tota die meditabitur justitiam tuam, cum confusi et reveriti fuerint qui quærunt mala mihi."
+    },
+    "76": {
+      "latin": "Voce mea ad Dominum clamavi ; voce mea ad Deum, et intendit mihi. In die tribulationis meæ Deum exquisivi ; manibus meis nocte contra eum, et non sum deceptus. Renuit consolari anima mea ; memor fui Dei, et delectatus sum, et exercitatus sum, et defecit spiritus meus. Anticipaverunt vigilias oculi mei ; turbatus sum, et non sum locutus. Cogitavi dies antiquos, et annos æternos in mente habui. Et meditatus sum nocte cum corde meo, et exercitabar, et scopebam spiritum meum. Numquid in æternum projiciet Deus ? aut non apponet ut complacitior sit adhuc ? aut in finem misericordiam suam abscindet, a generatione in generationem ? aut obliviscetur misereri Deus ? aut continebit in ira sua misericordias suas ? Et dixi : Nunc cœpi ; hæc mutatio dexteræ Excelsi. Memor fui operum Domini, quia memor ero ab initio mirabilium tuorum : et meditabor in omnibus operibus tuis, et in adinventionibus tuis exercebor. Deus, in sancto via tua : quis deus magnus sicut Deus noster ? Tu es Deus qui facis mirabilia : notam fecisti in populis virtutem tuam. Redemisti in brachio tuo populum tuum, filios Jacob et Joseph. Viderunt te aquæ, Deus ; viderunt te aquæ, et timuerunt : et turbatæ sunt abyssi. Multitudo sonitus aquarum ; vocem dederunt nubes. Etenim sagittæ tuæ transeunt ; vox tonitrui tui in rota. Illuxerunt coruscationes tuæ orbi terræ ; commota est, et contremuit terra. In mari via tua, et semitæ tuæ in aquis multis, et vestigia tua non cognoscentur. Deduxisti sicut oves populum tuum, in manu Moysi et Aaron."
+    },
+    "85": {
+      "latin": "Inclina, Domine, aurem tuam et exaudi me, quoniam inops et pauper sum ego. Custodi animam meam, quoniam sanctus sum ; salvum fac servum tuum, Deus meus, sperantem in te. Miserere mei, Domine, quoniam ad te clamavi tota die ; lætifica animam servi tui, quoniam ad te, Domine, animam meam levavi. Quoniam tu, Domine, suavis et mitis, et multæ misericordiæ omnibus invocantibus te. Auribus percipe, Domine, orationem meam, et intende voci deprecationis meæ. In die tribulationis meæ clamavi ad te, quia exaudisti me. Non est similis tui in diis, Domine, et non est secundum opera tua. Omnes gentes quascumque fecisti venient, et adorabunt coram te, Domine, et glorificabunt nomen tuum. Quoniam magnus es tu, et faciens mirabilia ; tu es Deus solus. Deduc me, Domine, in via tua, et ingrediar in veritate tua ; lætetur cor meum, ut timeat nomen tuum. Confitebor tibi, Domine Deus meus, in toto corde meo, et glorificabo nomen tuum in æternum : quia misericordia tua magna est super me, et eruisti animam meam ex inferno inferiori. Deus, iniqui insurrexerunt super me, et synagoga potentium quæsierunt animam meam : et non proposuerunt te in conspectu suo. Et tu, Domine Deus, miserator et misericors ; patiens, et multæ misericordiæ, et verax. Respice in me, et miserere mei ; da imperium tuum puero tuo, et salvum fac filium ancillæ tuæ. Fac mecum signum in bonum, ut videant qui oderunt me, et confundantur : quoniam tu, Domine, adjuvisti me, et consolatus es me."
+    }
+  },
+  "allowedOrthographicVariants": [
+    {
+      "psalm": 15,
+      "wordIndex": 53,
+      "pinned": "hereditatis",
+      "independent": "haereditatis"
+    },
+    {
+      "psalm": 15,
+      "wordIndex": 62,
+      "pinned": "hereditatem",
+      "independent": "haereditatem"
+    },
+    {
+      "psalm": 15,
+      "wordIndex": 71,
+      "pinned": "hereditas",
+      "independent": "haereditas"
+    },
+    {
+      "psalm": 60,
+      "wordIndex": 53,
+      "pinned": "hereditatem",
+      "independent": "haereditatem"
+    },
+    {
+      "psalm": 60,
+      "wordIndex": 61,
+      "pinned": "adicies",
+      "independent": "adiicies"
+    },
+    {
+      "psalm": 70,
+      "wordIndex": 114,
+      "pinned": "proicias",
+      "independent": "proiicias"
+    },
+    {
+      "psalm": 70,
+      "wordIndex": 183,
+      "pinned": "adiciam",
+      "independent": "adiiciam"
+    },
+    {
+      "psalm": 70,
+      "wordIndex": 234,
+      "pinned": "bracchium",
+      "independent": "brachium"
+    },
+    {
+      "psalm": 76,
+      "wordIndex": 80,
+      "pinned": "proiciet",
+      "independent": "proiiciet"
+    },
+    {
+      "psalm": 76,
+      "wordIndex": 165,
+      "pinned": "bracchio",
+      "independent": "brachio"
+    }
+  ],
+  "totals": {
+    "independentLatinWords": 1536,
+    "independentPsalms": 9,
+    "approvedOrthographicVariants": 10,
+    "missingOrExtraWords": 0,
+    "substantiveDifferences": 0
+  },
+  "sourceFamilyClaim": "Complete independent Clementine Vulgate 9-Psalm lexical collation with documented original orthographies, not a claim to have collated original 1961 Mame Psalter facsimile or modern printed page-by-page words."
+}
