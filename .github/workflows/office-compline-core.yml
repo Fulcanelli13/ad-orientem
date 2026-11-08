@@ -62,6 +62,7 @@ jobs:
           node --test tests/divine-office-saturday-printed-full-word.mjs
           node --test tests/divine-office-saturday-fullword-2023-witness.mjs
           node --test tests/divine-office-sunday-printed-full-word.mjs
+          node --test tests/divine-office-ferial-independent-clementine-fullword.mjs
           node --test tests/divine-office-private-review.mjs
           node --test tests/divine-office-latin-only-complete-compline.mjs
           node --check src/office/compline-recitation-projection.js
