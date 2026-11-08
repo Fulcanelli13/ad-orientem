@@ -186,6 +186,30 @@ try{
   assert.match(await office.locator(".aoOfReadiness").innerText(),/42 source events/);
   assert.equal(await office.locator(".aoOfLanguage").count(),2);
   assert.ok(sourceRequests.size>0,"Native Office did not fetch original pinned source");
+  // Second private run must assemble LATIN independently, with no access to
+  // English/French source leaves; switching back to bilingual reassembles.
+  const requests=[];
+  app.on("request",req=>{
+   if(req.url().startsWith(sourceBase))requests.push(req.url());
+  });
+  const mode=office.locator(".aoOfPrivateReview .aoOfOptions select").nth(1);
+  await mode.selectOption("la");
+  const start=requests.length;
+  await office.locator(".aoOfPrivateReview .aoOfOptions button").click();
+  await waitReady(app);
+  assert.equal(await office.locator(".aoOfLanguage").count(),1);
+  assert.match(await office.locator(".aoOfReadiness").innerText(),/42 source events/);
+  const latinRequests=requests.slice(start);
+  assert.ok(latinRequests.length>0,"Latin-only private reader did not fetch pinned Latin text");
+  assert.ok(latinRequests.every(u=>u.includes("/Latin/")),
+   "Latin-only Compline touched an English/French source");
+  await app.screenshot({path:resolve(OUT,"390-native-prayer-compline-latin-only.png"),
+   animations:"disabled",fullPage:false});
+  receipt.screenshots.push("390-native-prayer-compline-latin-only.png");
+  await mode.selectOption("laen");
+  await waitReady(app);
+  assert.equal(await office.locator(".aoOfLanguage").count(),2,
+   "Bilingual switch did not reassemble independently sourced translations");
   assert.equal(appErrors.length,0,"Native private source browser errors: "+appErrors.join(" | "));
   await app.screenshot({path:resolve(OUT,"390-native-prayer-compline-private.png"),
    animations:"disabled",fullPage:false});

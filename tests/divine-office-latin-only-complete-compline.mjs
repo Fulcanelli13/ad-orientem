@@ -65,7 +65,7 @@ test("all eight appointed dates assemble 42 complete Latin blocks without readin
   assert.ok(transport.calls.length>0);
   assert.ok(transport.calls.every(u=>u.includes("/Latin/")));
   assert.equal(reader.cachedDistinctFiles(),reader.maxDistinctFiles);
-  await assert.rejects(reader.psalm(87,"fr"),/COMPLINE_LANGUAGE_NOT_SUPPORTED/);
+  await assert.rejects(reader.section("Psalterium/Common/Prayers","Pater noster","fr"),/COMPLINE_LANGUAGE_NOT_SUPPORTED/);
  }
 });
 test("native review projects Latin source text without any English/French witness",async()=>{

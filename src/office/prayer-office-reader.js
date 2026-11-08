@@ -46,6 +46,20 @@ export function openDivineOfficeReader(win=globalThis,{date=todayLocal()}={}){
  if(opened!==true&&opened?.ok!==true)return false;
  const mount=d.querySelector("#aoPray435930 .aoP435930Mount");
  if(!mount)return false;
+ // The donor's floating header may intercept touches even when marked hidden.
+ // Inline display + pointer suppression wins over its legacy positioning rules,
+ // and the exact prior style is restored on native Back or route teardown.
+ const legacyHeader=d.querySelector("#aoPray435930 .aoP435930Head");
+ const legacyHeaderStyle=legacyHeader?.getAttribute("style")??null;
+ if(legacyHeader){
+   legacyHeader.style.setProperty("display","none","important");
+   legacyHeader.style.setProperty("pointer-events","none","important");
+ }
+ const restoreHeader=()=>{
+   if(!legacyHeader)return;
+   if(legacyHeaderStyle===null)legacyHeader.removeAttribute("style");
+   else legacyHeader.setAttribute("style",legacyHeaderStyle);
+ };
  const previous=[...mount.children].map(node=>({node,hidden:node.hidden,display:node.style.display}));
  previous.forEach(({node})=>{node.hidden=true;node.style.display="none"});
  const host=d.createElement("section");
@@ -57,6 +71,7 @@ export function openDivineOfficeReader(win=globalThis,{date=todayLocal()}={}){
  back.addEventListener("click",()=>{
    localReview?.instance?.dispose?.();
    host.remove();
+   restoreHeader();
    previous.forEach(({node,hidden,display})=>{node.hidden=hidden;node.style.display=display});
  });
  host.append(back);
@@ -154,6 +169,14 @@ export function openDivineOfficeReader(win=globalThis,{date=todayLocal()}={}){
  }
  input.addEventListener("change",draw);
  mount.prepend(host);
+ // Also restore the header if the app navigates away by removing this mount,
+ // rather than taking the Office's own Back control.
+ if(typeof win.MutationObserver==="function"){
+  const watcher=new win.MutationObserver(()=>{
+   if(!host.isConnected){restoreHeader();watcher.disconnect()}
+  });
+  watcher.observe(mount,{childList:true});
+ }
  draw();
  mount.scrollTop=0;
  return true;
