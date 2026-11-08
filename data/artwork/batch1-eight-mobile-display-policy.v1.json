@@ -1,0 +1,162 @@
+{
+  "schema": "AO_SACRED_ART_BATCH1_EIGHT_PHOTO_DISPLAY_PREPRODUCTION_V1",
+  "date": "2026-11-08",
+  "scope": "PROPOSAL_NO_USER_SIGNOFF_NO_PAGES_RELEASE",
+  "source_artwork_qa": [
+    "data/artwork/batch1-two-firstparty-verified-source-photos.v1.json",
+    "data/artwork/batch1-seven-original-photo-byte-qa.v1.json"
+  ],
+  "known_covered_prayer_positions": 41,
+  "no_newly_published_images": true,
+  "no_automatic_editorial_approval": true,
+  "hero_proposal": {
+    "preserve_complete_painted_scene": true,
+    "object_fit": "contain",
+    "optional_underlay": "blurred_dimmed_same_work_full_bleed_background_NOT_A_DIFFERENT_PAINTING",
+    "photo_crop_requires_explicit_owner_signoff": true
+  },
+  "subjects": [
+    {
+      "id": "artwork-pending:01",
+      "source_image_dimensions_px": [
+        2673,
+        3400
+      ],
+      "known_existing_prayer_placement_count": 9,
+      "source_readiness": "CMA_OPEN_ACCESS_CCO_FIRST_PARTY",
+      "full_frame_default": true,
+      "automatic_cover_allowed": false,
+      "home_hero_16_9_fraction_remaining_after_cover": 0.4422,
+      "home_hero_16_9_area_removed_pct": 55.8,
+      "prayer_3_4_area_removed_pct": 4.6,
+      "photo_edition_approved": false
+    },
+    {
+      "id": "artwork-pending:02",
+      "source_image_dimensions_px": [
+        3094,
+        4000
+      ],
+      "known_existing_prayer_placement_count": 6,
+      "source_readiness": "MET_PUBLIC_DOMAIN_FIRST_PARTY",
+      "full_frame_default": true,
+      "automatic_cover_allowed": false,
+      "home_hero_16_9_fraction_remaining_after_cover": 0.4351,
+      "home_hero_16_9_area_removed_pct": 56.5,
+      "prayer_3_4_area_removed_pct": 3,
+      "photo_edition_approved": false
+    },
+    {
+      "id": "artwork-pending:03",
+      "source_image_dimensions_px": [
+        567,
+        479
+      ],
+      "known_existing_prayer_placement_count": 5,
+      "source_readiness": "LOW_RESOLUTION_UNSUITABLE",
+      "full_frame_default": true,
+      "automatic_cover_allowed": false,
+      "home_hero_16_9_fraction_remaining_after_cover": 0.6658,
+      "home_hero_16_9_area_removed_pct": 33.4,
+      "prayer_3_4_area_removed_pct": 36.6,
+      "photo_edition_approved": false
+    },
+    {
+      "id": "artwork-pending:04",
+      "source_image_dimensions_px": [
+        1333,
+        1799
+      ],
+      "known_existing_prayer_placement_count": 4,
+      "source_readiness": "COMMONS_SOURCE_RIGHTS_REVIEW_PENDING",
+      "full_frame_default": true,
+      "automatic_cover_allowed": false,
+      "home_hero_16_9_fraction_remaining_after_cover": 0.4168,
+      "home_hero_16_9_area_removed_pct": 58.3,
+      "prayer_3_4_area_removed_pct": 1.2,
+      "photo_edition_approved": false
+    },
+    {
+      "id": "artwork-pending:05",
+      "source_image_dimensions_px": [
+        2994,
+        3906
+      ],
+      "known_existing_prayer_placement_count": 4,
+      "source_readiness": "COMMONS_CC_BY_SA_4_REVIEW_PENDING",
+      "full_frame_default": true,
+      "automatic_cover_allowed": false,
+      "home_hero_16_9_fraction_remaining_after_cover": 0.4312,
+      "home_hero_16_9_area_removed_pct": 56.9,
+      "prayer_3_4_area_removed_pct": 2.2,
+      "photo_edition_approved": false
+    },
+    {
+      "id": "artwork-pending:06",
+      "source_image_dimensions_px": [
+        2813,
+        4226
+      ],
+      "known_existing_prayer_placement_count": 4,
+      "source_readiness": "RIGHTS_CONFLICT_NATIONAL_GALLERY_VS_COMMONS_PD_ART",
+      "full_frame_default": true,
+      "automatic_cover_allowed": false,
+      "home_hero_16_9_fraction_remaining_after_cover": 0.3744,
+      "home_hero_16_9_area_removed_pct": 62.6,
+      "prayer_3_4_area_removed_pct": 11.2,
+      "photo_edition_approved": false
+    },
+    {
+      "id": "artwork-pending:08",
+      "source_image_dimensions_px": [
+        1657,
+        2441
+      ],
+      "known_existing_prayer_placement_count": 3,
+      "source_readiness": "COMMONS_PROVENANCE_REVIEW_PENDING",
+      "full_frame_default": true,
+      "automatic_cover_allowed": false,
+      "home_hero_16_9_fraction_remaining_after_cover": 0.3818,
+      "home_hero_16_9_area_removed_pct": 61.8,
+      "prayer_3_4_area_removed_pct": 9.5,
+      "photo_edition_approved": false
+    },
+    {
+      "id": "artwork-pending:09",
+      "source_image_dimensions_px": [
+        1285,
+        683
+      ],
+      "known_existing_prayer_placement_count": 3,
+      "source_readiness": "LOW_RESOLUTION_UNSUITABLE",
+      "full_frame_default": true,
+      "automatic_cover_allowed": false,
+      "home_hero_16_9_fraction_remaining_after_cover": 0.9449,
+      "home_hero_16_9_area_removed_pct": 5.5,
+      "prayer_3_4_area_removed_pct": 60.1,
+      "photo_edition_approved": false
+    }
+  ],
+  "missing_photo": {
+    "id": "artwork-pending:07",
+    "work": "Adoration of the Mystic Lamb",
+    "existing_prayer_placements": 3,
+    "museum_reproduction_rights": "Art in Flanders lists contractual restrictions; no exact owner-selected photograph",
+    "historical_commons_candidate": "https://commons.wikimedia.org/wiki/File:Ghent_Altarpiece_-_Adoration_of_the_Mystic_Lamb.jpg",
+    "unhandpicked_candidate_must_not_enter_curated_gallery": true
+  },
+  "commercial_reuse_evidence": {
+    "NGI_72": "https://onlinecollection.nationalgallery.ie/objects/10345/the-miracle-of-the-loaves-and-fishes",
+    "NGI_policy": "https://www.nationalgallery.ie/explore-and-learn/creative-commons-download-artwork",
+    "NGI_disposition": "Object page provides download link; CC BY 4 icon/terms for this exact file not verified, therefore licence held",
+    "HUESCA_00029": "https://ceres.mcu.es/pages/ResultSearch?MuseumsRolSearch=1&MuseumsSearch=&hipertextSearch=1&listaMuseos=null&search=advanced&simpleSearch=0&txtSimpleSearch=Lienzo+%28Material%29",
+    "HUESCA_disposition": "Only 567x479 Commons source independently recovered; no eligible high-resolution exact-photo replacement found in current pass",
+    "GHENT": "https://artinflanders.be/en/artwork/ghent-altarpiece-9",
+    "GHENT_disposition": "Institutional photograph contractual restrictions; historical Commons photo is unhandpicked and not automatically admitted",
+    "NG_LONDON": "https://www.nationalgallery.org.uk/documentation/ngacuk/licences",
+    "NG_LONDON_disposition": "NG-supplied CC BY-NC-ND not suitable for commercial derivatives. Separate Commons PD-Art claim may require jurisdiction-specific review; do not infer clearance."
+  },
+  "proof_artifact_name": "Ad_Orientem_Sacred_Art_Batch1_Mobile_Display_Proof.html",
+  "source_images_staged_for_app_count": 0,
+  "new_photo_editorial_signoffs": 0
+}
