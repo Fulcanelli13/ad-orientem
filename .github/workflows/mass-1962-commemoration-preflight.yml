@@ -13,6 +13,9 @@ on:
       - 'src/mass/browser-entry.js'
       - 'src/mass/host-adapter.js'
       - 'src/mass/reader-proper-runtime-recovery.js'
+      - 'src/mass/1962-st-clement-papal-common.js'
+      - 'data/mass/1962-st-clement-papal-common-nov23.v1.json'
+      - 'tests/mass-1962-st-clement-source.mjs'
       - 'src/mass/ordo-mass-completeness.js'
       - 'src/mass/icrsp-first-friday-entry.js'
       - 'src/mass/icrsp-nov06-pro-papa-orations.js'
@@ -50,6 +53,9 @@ on:
       - 'src/mass/browser-entry.js'
       - 'src/mass/host-adapter.js'
       - 'src/mass/reader-proper-runtime-recovery.js'
+      - 'src/mass/1962-st-clement-papal-common.js'
+      - 'data/mass/1962-st-clement-papal-common-nov23.v1.json'
+      - 'tests/mass-1962-st-clement-source.mjs'
       - 'src/mass/ordo-mass-completeness.js'
       - 'src/mass/icrsp-first-friday-entry.js'
       - 'src/mass/icrsp-nov06-pro-papa-orations.js'
@@ -90,6 +96,7 @@ jobs:
       - run: node tests/calendar-ordo-1962-rules.mjs
       - run: node tests/mass-1962-commemoration-preflight.mjs
       - run: node tests/mass-1962-form-source-selection.mjs
+      - run: node tests/mass-1962-st-clement-source.mjs
       - run: node tests/mass-1962-multiple-commemoration-failclosed.mjs
       - run: node tests/mass-1962-mission-sunday.mjs
       - run: node tests/full-mass-preflight.mjs
