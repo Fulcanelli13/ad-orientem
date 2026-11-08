@@ -55,7 +55,8 @@ for(const corpus of corpora){
           const result=chunks(original,block.Block_ID,"TEXT",mode);
           assert.equal(result.join(""),original,
             block.Block_ID+"/"+unit.cue_id+"/"+language+"/"+mode+": content was altered");
-          assert.ok(result.every(Boolean),"No empty synthetic prayer fragment");
+          if(original)assert.ok(result.every(Boolean),"No empty synthetic prayer fragment");
+          else assert.deepEqual(result,[""],"Empty canonical source stays empty");
         }
       }
       visited++;
