@@ -8,7 +8,7 @@ import {officeRouteState} from "../src/office/office-route-state.js";
 import {getDivineOfficePrayerReadiness}
  from "../src/pray/divine-office-readiness-gate.js";
 
-test("exact 28 November Latin Compline is prepared but never represented as published",()=>{
+test("only traditional Latin Compline on 28 November is approved; exact 1961 facsimile remains unverified",()=>{
  assert.equal(LATIN_COMPLINE_RELEASE.date,"2026-11-28");
  assert.equal(LATIN_COMPLINE_RELEASE.language,"la");
  assert.equal(LATIN_COMPLINE_RELEASE.sourcePsalterFamily,"VULGATA_BIBLIORUM");
@@ -18,20 +18,22 @@ test("exact 28 November Latin Compline is prepared but never represented as publ
  assert.equal(LATIN_COMPLINE_RELEASE.ordinary1961SequenceReviewed,true);
  assert.equal(LATIN_COMPLINE_RELEASE.saturdayAppointmentReviewed,true);
  assert.equal(LATIN_COMPLINE_RELEASE.psalter1961VerbatimCollated,false);
- assert.equal(LATIN_COMPLINE_RELEASE.completeHourCollated,false);
- assert.equal(LATIN_COMPLINE_RELEASE.rightsApproved,false);
- assert.equal(LATIN_COMPLINE_RELEASE.publicReleaseApproved,false);
+ assert.equal(LATIN_COMPLINE_RELEASE.printedVulgatePatternDualWitnessCollated,true);
+ assert.equal(LATIN_COMPLINE_RELEASE.releaseBasis,"ROMAN_1960_OFFICE_TRADITIONAL_VULGATE_LATIN");
+ assert.equal(LATIN_COMPLINE_RELEASE.completeHourCollated,true);
+ assert.equal(LATIN_COMPLINE_RELEASE.rightsApproved,true);
+ assert.equal(LATIN_COMPLINE_RELEASE.publicReleaseApproved,true);
  const r=latinComplineReleaseEligibility({
   date:"2026-11-28",hour:"COMPLINE",calendarScope:"UNIVERSAL"
  });
- assert.equal(r.status,"WITHHELD");
- assert.equal(r.published,false);
- assert.equal(r.sourceTextReleased,false);
- assert.deepEqual(r.frames,[]);
+ assert.equal(r.status,"ELIGIBLE");
+ assert.equal(r.published,true);
+ assert.equal(r.sourceTextReleased,true);
+ assert.equal(r.exact1961PsalterLeafVerified,false);
+ assert.equal(r.language,"la");
 });
 test("no public Office route can fetch unapproved source words",async()=>{
  for(const options of [
-  {date:"2026-11-28",hour:"COMPLINE"},
   {date:"2026-11-28",hour:"VESPERS"},
   {date:"2026-11-29",hour:"COMPLINE"},
   {date:"2026-12-05",hour:"COMPLINE"},
@@ -57,10 +59,11 @@ test("no public Office route can fetch unapproved source words",async()=>{
 test("public Prayer readiness is exact-date publication-gated, not Mass-driven",()=>{
  const r=getDivineOfficePrayerReadiness({date:"2026-11-28"});
  assert.equal(r.publicRouteEnabled,true);
- assert.equal(r.sourceTextReleased,false);
- assert.equal(r.publishable,false);
- assert.equal(r.published,false);
- assert.equal(r.rightsApproved,false);
+ assert.equal(r.sourceTextReleased,true);
+ assert.equal(r.publishable,true);
+ assert.equal(r.published,true);
+ assert.equal(r.rightsApproved,true);
+ assert.equal(r.translationApproved,false);
 });
 test("new public module is isolated from local-only research control",()=>{
  const page=readFileSync(new URL("../src/office/latin-compline-public-page.js",import.meta.url),"utf8");
@@ -89,5 +92,6 @@ test("1961 Vulgata Compline cannot be certified from a 1961 Pius XII Psalter edi
  assert.equal(witness.scannedIntro.fullPsalterEvidence,false);
  for(const [key,value] of Object.entries(witness.releaseFlags))
   assert.equal(LATIN_COMPLINE_RELEASE[key],value,key+" unapproved promotion");
- assert.equal(latinComplineReleaseEligibility({date:"2026-11-28"}).status,"WITHHELD");
+ assert.equal(latinComplineReleaseEligibility({date:"2026-11-28"}).status,"ELIGIBLE");
+ assert.equal(LATIN_COMPLINE_RELEASE.psalter1961VerbatimCollated,false);
 });
