@@ -2,6 +2,7 @@ import { glossaryContextCapsule } from "../app/contextual-study.js";
 import { POST_LOW_MASS_LEONINE_CSS, syncPostLowMassLeoninePrayers } from "./reader-post-low-mass.js";
 import { decorateLiturgicalSpeaker } from "../app/liturgical-speakers.js";
 import { insertChantPhraseBreaks } from "./reader-chant-line-layout.js";
+import { readingPrayerFragments } from "./reader-reading-paragraphs.js";
 import {createInlineChantController, INLINE_CHANT_CSS} from "./reader-inline-chant.js";
 import {createDatedProperNotationPreview, JULY07_REFERENCE_CSS} from "./reader-inline-proper-reference.js";
 import {selectedMassInlineSettings} from "./reader-inline-chant-selector.js";
@@ -1166,6 +1167,23 @@ button.ao-schola-control{cursor:pointer}
 .ao-reader-shell[data-mode="MISSAL"] .ao-prayer-body{
   max-width:1120px;width:100%;gap:0;
 }
+/* Short reading paragraphs inside an unchanged canonical source cue.
+   The bilingual columns are independently typeset, not new cards or cues. */
+.ao-reader-shell .ao-reader-paragraph .ao-reading-petition{display:block}
+.ao-reader-shell .ao-reader-paragraph .ao-reading-petition+.ao-reading-petition{
+  margin-block-start:.38em
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph .ao-reading-petition+.ao-reading-petition{
+  margin-block-start:.34em
+}
+/* Book-like rhythm: no horizontal rule after every source clause. */
+.ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-kind="TEXT"]{
+  border-bottom:0;padding-top:5px;padding-bottom:5px
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-kind="VERSICLE"],
+.ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph[data-kind="RESPONSE"]{
+  border:0;padding-top:5px;padding-bottom:5px
+}
 .ao-reader-shell[data-mode="MISSAL"] .ao-state-ribbon{
   grid-template-columns:minmax(0,1fr) minmax(0,1fr);
 }
@@ -1911,11 +1929,38 @@ function appendRitualFragment(target,text,doc,{active=false}={}){
   });
 }
 
-function renderReaderText(target,text,{anchor=null,active=false}={}){
+function renderReaderText(target,text,{anchor=null,active=false,readingContext=null,noReadingBreaks=false}={}){
   if(!target)return false;
   const doc=target.ownerDocument??globalThis.document;
   if(!doc?.createTextNode){target.textContent=String(text??"");return false;}
   const raw=String(text??"");
+  const row=target.closest?.(".ao-reader-paragraph");
+  const context=readingContext??{
+    sourceBlockId:row?.dataset?.sourceBlockId,
+    kind:row?.dataset?.kind,
+    mode:target.closest?.(".ao-reader-shell")?.dataset?.mode,
+  };
+  if(!noReadingBreaks){
+    const petitions=readingPrayerFragments(raw,context);
+    if(petitions.length>1){
+      // Every visual span lives INSIDE the one canonical cue paragraph.
+      // Focus, bells, exact rubric ownership and card boundaries stay put.
+      target.replaceChildren();
+      let matched=false;
+      for(const petition of petitions){
+        const span=doc.createElement("span");
+        span.className="ao-reading-petition";
+        matched=renderReaderText(span,petition,{anchor,active,noReadingBreaks:true})||matched;
+        target.append(span);
+      }
+      // A rare liturgical gesture anchor crossing a visual break wins:
+      // keep the whole cue on one line rather than suppress the highlight.
+      if(active&&!matched&&ritualAnchorFragments(anchor).some(fragment=>
+        foldRitualText(raw).text.includes(foldRitualText(fragment).text)))
+        return renderReaderText(target,raw,{anchor,active,noReadingBreaks:true});
+      return matched;
+    }
+  }
   const fragments=active ? ritualAnchorFragments(anchor) : [];
   target.replaceChildren();
   if(!fragments.length){
@@ -5006,7 +5051,9 @@ export function createReaderDomAdapter({
           }):null;
           renderReaderText(primary,conciseSource?.text??bookRubric?.text??
             liveBriefCopy?.text??
-            (p.kind==="RUBRIC"?stripRubricBrackets(p.primary):p.primary));
+            (p.kind==="RUBRIC"?stripRubricBrackets(p.primary):p.primary),{
+              readingContext:{sourceBlockId:p.sourceBlockId,kind:p.kind,mode},
+            });
           if(bookRubric){
             node.dataset.missalRubricLanguage=bookRubric.requestedLanguage;
             node.dataset.sourceRubricWitness=bookRubric.owner;
@@ -5024,8 +5071,9 @@ export function createReaderDomAdapter({
             const secondary=doc.createElement("span");
             secondary.className="ao-line-secondary";
             if(!p.secondary)secondary.dataset.missalOnly="true";
-            secondary.textContent=parallel;
-            decorateLiturgicalSpeaker(secondary,parallel);
+            renderReaderText(secondary,parallel,{
+              readingContext:{sourceBlockId:p.sourceBlockId,kind:p.kind,mode},
+            });
             node.append(secondary);
           }
           const inlineRubrics=mode==="MISSAL"
