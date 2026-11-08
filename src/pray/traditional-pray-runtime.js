@@ -641,6 +641,8 @@ const COMMUNION_AFTER=Object.freeze([
   ["adoration_anima_christi","Anima Christi","Anima Christi"],
   ["thanksgivingMyGoodJesus","My Good Jesus · Thanksgiving","Mon bon Jésus · Action de grâces"],
   ["eucharisticHeartAspiration","Sacred Heart in the Blessed Sacrament","Cœur de Jésus dans le Très Saint Sacrement"],
+  ["holySpiritAugustineTraditional","Prayer to the Holy Spirit","Prière au Saint-Esprit"],
+  ["ourLadyAfterCommunionTraditional","Prayer to Our Lady","Prière à Notre-Dame"],
   ["afterThomas","St Thomas Aquinas","Saint Thomas d'Aquin"],
   ["afterBonaventure","St Bonaventure","Saint Bonaventure"],
   ["enEgo","En ego","En ego"]
