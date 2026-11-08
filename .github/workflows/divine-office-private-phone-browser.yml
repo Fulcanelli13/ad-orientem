@@ -1,0 +1,40 @@
+name: Divine Office private reader — 320/390 browser acceptance
+
+on:
+  pull_request:
+    paths:
+      - 'src/office/**'
+      - 'previews/private-divine-office.html'
+      - 'data/office/research/advent-i-2026-universal-commemoration.json'
+      - 'tests/fixtures/office/**'
+      - 'tests/divine-office-private-phone-browser.mjs'
+      - '.github/workflows/divine-office-private-phone-browser.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-preview-browser:
+    name: Private reader phone screenshots / source fidelity
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Run original-text Compline and First Vespers at 320/390
+        run: node tests/divine-office-private-phone-browser.mjs
+      - name: Upload private phone screenshots and acceptance receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: divine-office-private-phone-320-390
+          path: artifacts/divine-office-private-phone/
+          if-no-files-found: warn
+          retention-days: 14
