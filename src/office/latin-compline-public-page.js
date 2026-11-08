@@ -21,7 +21,10 @@ export function mountPublishedLatinCompline(root,{
  const section=create(d,"section","aoOfPublishedLatin");
  const title=create(d,"h2",null,"Completorium · Latine");
  const note=create(d,"p",null,
-  "Breviarium Romanum · Compline · Saturday, 28 November 2026");
+  "Breviarium Romanum · Compline · "+({
+   "2026-11-28":"Saturday, 28 November 2026",
+   "2026-12-05":"Saturday, 5 December 2026"
+  }[date]??"Date not certified"));
  const contextLabel=create(d,"label",null,"Recitation: ");
  const contextSelect=create(d,"select");
  for(const [id,name] of [
@@ -90,7 +93,7 @@ export function mountPublishedLatinCompline(root,{
     return;
    }
    active=result;index=0;
-   status.textContent="Latin Compline · "+result.readingEventCount+
+   status.textContent="Latin Compline · "+date+" · "+result.readingEventCount+
     " reading moments · "+result.sourceFrameCount+" source frames";
    render();
   }catch(error){
