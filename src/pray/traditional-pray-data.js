@@ -362,6 +362,24 @@ export const COMMUNION_TREASURY_V383=Object.freeze({
     "sourceYear": 1910,
     "wordingCollatedAgainst2013": false
   },
+  "holySpiritAugustineTraditional": {
+    "title": "Prayer to the Holy Spirit · Traditional Attribution",
+    "titleFr": "Prière au Saint-Esprit · Attribution traditionnelle",
+    "en": "Breathe into me, Holy Spirit, that my thoughts may all be holy.\nMove in me, Holy Spirit, that my work, too may be holy.\nAttract my heart, Holy Spirit, that I may love only what is holy.\nStrengthen me, Holy Spirit, that I may defend all that is holy.\nProtect me, Holy Spirit, that I always may be holy. Amen.",
+    "witness": "Coalition Ecclesia Dei, Latin–English Booklet Missal, fourth edition, fifth printing (2008), p. 65; traditionally attributed there to St Augustine. Historical authorship remains unverified; no claim of authenticity.",
+    "sourceUrl": "https://archives.sophronius.org/raw-books/Latin%20-%20English%20Mass%20Booklet%20%281%29_text.pdf",
+    "sourceYear": 2008,
+    "wordingCollatedAgainst2013": false
+  },
+  "ourLadyAfterCommunionTraditional": {
+    "title": "A Prayer to Our Lady After Communion",
+    "titleFr": "Prière à Notre-Dame après la Communion",
+    "en": "O Mary, most holy Virgin Mother, lo, I have received thy well-beloved Son, Whom thou didst conceive in thy stainless womb, didst bring forth and suckle, and enfold in thy sweet embraces.\n\nSee, humbly and lovingly I give back to thee the Son Whom it was all rapture and delight for thee to look upon; I offer Him to be clasped in thy arms, to be loved with all thy heart, and to be offered up to the Holy Trinity in the supreme homage of adoration, for thy honor and glory, and for my needs and those of all mankind.\n\nMost loving Mother, I beg thee to obtain for me forgiveness of all my sins, grace in abundance to serve Him more faithfully from now onward, and lastly, final perseverance, so that I may praise Him with thee forever and ever. Amen.",
+    "witness": "A Prayer to Our Lady, traditional after-Communion prayer; Coalition Ecclesia Dei, Latin–English Booklet Missal, fourth edition, fifth printing (2008), p. 65. Old Latin Oratio ad Mariam Virginem post Missam is separately attested; this English wording has not been collated against 2013.",
+    "sourceUrl": "https://archives.sophronius.org/raw-books/Latin%20-%20English%20Mass%20Booklet%20%281%29_text.pdf",
+    "sourceYear": 2008,
+    "wordingCollatedAgainst2013": false
+  },
   "enEgo": {
     "title": "Prayer Before a Crucifix · En ego",
     "titleFr": "Prière devant le Crucifix · En ego",
