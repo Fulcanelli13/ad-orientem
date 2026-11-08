@@ -27,7 +27,11 @@ const STYLE=`
 .aoOfficeReader .aoOfPrivateReview{border:1px solid #5f5547;border-radius:12px;padding:10px;margin:14px 0;min-width:0;overflow-wrap:anywhere}
 .aoOfficeReader .aoOfPrivateReviewNotice{font:12px/1.5 system-ui;color:#c9ad78}
 .aoOfficeReader .aoOfPrivateReview select{min-height:44px;background:#101821;color:#e9e4d9;border:1px solid #5f5547;border-radius:9px;padding:9px 12px}
-.aoOfficeReader .aoOfPrivateReview .aoOfOptions{display:flex;flex-wrap:wrap;gap:8px}
+.aoOfficeReader .aoOfPrivateReview .aoOfOptions{display:flex;flex-wrap:wrap;gap:8px;min-width:0;max-width:100%}
+.aoOfficeReader .aoOfPrivateReview .aoOfOptions>*{min-width:0;max-width:100%}
+@media(max-width:480px){.aoOfficeReader .aoOfPrivateReview .aoOfOptions select{width:100%}}
+.aoOfficeReader .aoOfPublicLatin label{display:block;max-width:100%;margin:8px 0}
+.aoOfficeReader .aoOfPublicLatin select{max-width:100%;min-width:0}
 .aoOfficeReader .aoOfPrivateReview .aoOfFrame{border:1px solid #5f5547;border-radius:12px;padding:15px;margin:12px 0}
 .aoOfficeReader .aoOfPrivateReview .aoOfColumns{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:15px}
 .aoOfficeReader .aoOfPrivateReview .aoOfLanguage{min-width:0;overflow-wrap:anywhere}
