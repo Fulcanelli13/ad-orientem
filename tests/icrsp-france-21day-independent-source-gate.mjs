@@ -6,6 +6,8 @@ import {ICRSP_FRANCE_INTAKE_WINDOW,icrspFranceOrdoIntakeStatus}
  from "../src/calendar/icrsp-france-ordo-intake-status.js";
 import {assessIndependentOrdoSourceClaim}
  from "../src/mass/independent-ordo-source-gate.js";
+import {review1962OrationLimits}
+ from "../src/mass/1962-oration-limit-review.js";
 import {h4HomeView} from "../src/home/today-h4-view.js";
 import {projectIcrspNovemberProPapaOrations}
  from "../src/mass/icrsp-nov06-pro-papa-orations.js";
@@ -62,8 +64,32 @@ for(const e of ledger.entries){
   assert.ok(e.independentRubricalReview.rubricFlags.some(f=>f.startsWith("RGMR_434_")),
    "Source-attested extra oration conflicts with class-specific 1960 limits: "+e.date);
  }
+ const norm=review1962OrationLimits({expectation:e,form:"LOW"});
+ const claimedReason=day===9?
+  "SECOND_CLASS_DAY_MORE_THAN_ONE_ADDITIONAL_ORATION":
+  [15,22].includes(day)?
+   "SECOND_CLASS_SUNDAY_PRO_PAPA_NOT_ORDINARILY_ADMITTED":
+  day===29?
+   "FIRST_CLASS_NON_PRIVILEGED_ADDITIONAL_ORATION":
+   "PRO_PAPA_LEGAL_CATEGORY_AND_PERMISSION_UNRESOLVED";
+ assert.equal(norm.reason,claimedReason,
+  "1962 norms must be assessed independently from the Institute's text "+e.date);
+ assert.equal(norm.certified,false);
  const intake=icrspFranceOrdoIntakeStatus(e.date);
  assert.equal(intake?.status,"SOURCE_ATTESTED_READER_NOT_CERTIFIED");
+ if(day===9){
+  assert.equal(intake.reason,
+   "SOURCE_CLAIMS_EXCEED_II_CLASS_1962_LIMIT_NO_EXCEPTION_DOCUMENTED");
+  assert.equal(intake.separateSourceClaimedOrationGroups,3);
+  assert.equal(intake.ordinary1962GroupMaximum,2);
+  assert.equal(e.independentRubricalReview.reviewOutcome,
+   "DOCUMENTED_CONFLICT_NOT_AUTHORIZED");
+  assert.equal(e.independentRubricalReview.resolvedForPublication,false);
+  const three=review1962OrationLimits({expectation:e,form:"MISSA_CANTATA_SIMPLE"});
+  assert.equal(three.reason,
+   "SECOND_CLASS_DAY_MORE_THAN_ONE_ADDITIONAL_ORATION");
+ }
+
  assert.equal(intake?.instituteMassSelectionAllowed,false);
  assert.equal(intake?.mayCertifyReader,false);
  assert.equal(icrspFranceOrdoForDate(e.date),null,
@@ -76,6 +102,13 @@ for(const e of ledger.entries){
   assert.doesNotMatch(ui,/data-home-icrsp-(sunday|votive)=/,
    "An intake-only Ordo must not offer a falsely certified institute Mass");
   assert.match(ui,lng==="en"?/not yet verified/:/non encore vérifiée/);
+  if(day===9){
+   assert.match(ui,/data-mass-1962-rubric-conflict="RGMR_434_C"/);
+   assert.match(ui,lng==="en"?/only one separate additional oration/:
+    /une seule oraison supplémentaire distincte/);
+   assert.match(ui,/Missal1960%20rubrics.html/);
+  }
+
  }
  const unsourced=assessIndependentOrdoSourceClaim({
   expectation:e,communityId:"ICRSP_FRANCE_PARTICULAR_ORDO",date:e.date,
@@ -126,9 +159,16 @@ for(const day of [9,10,15,23,29]){
   expectation:e,communityId:"ICRSP_FRANCE_PARTICULAR_ORDO",
   date:e.date,form:"LOW",proper
  });
+ const rubricReasons={
+  9:"SECOND_CLASS_DAY_MORE_THAN_ONE_ADDITIONAL_ORATION",
+  10:"PRO_PAPA_LEGAL_CATEGORY_AND_PERMISSION_UNRESOLVED",
+  15:"SECOND_CLASS_SUNDAY_PRO_PAPA_NOT_ORDINARILY_ADMITTED",
+  23:"PRO_PAPA_LEGAL_CATEGORY_AND_PERMISSION_UNRESOLVED",
+  29:"FIRST_CLASS_NON_PRIVILEGED_ADDITIONAL_ORATION"
+ };
  assert.deepEqual([completeButUnauthorized.status,completeButUnauthorized.reason],
-  ["HOLD","RUBRICAL_AUTHORITY_NOT_YET_VERIFIED"],
-  "Even perfectly displayed text must not certify absent privilege/permission evidence");
+  ["HOLD",rubricReasons[day]],
+  "Even fully supplied text must not certify a norm-incompatible or unclassified addition");
  const wrong={...proper,postcommunions:proper.postcommunions.map((x,i)=>
   i===order.length-1?stub("OTHER_ORATION"):x)};
  assert.match(assessIndependentOrdoSourceClaim({
@@ -155,6 +195,20 @@ assert.match(page,/Begin general-calendar Mass/,
 assert.doesNotMatch(page,/data-home-icrsp-(sunday|votive)=/);
 assert.equal(renderIcrspFranceHomeOrdo("2026-11-30"),"",
  "The source audit must not invent future unreviewed days");
+assert.equal((page.match(/data-mass-1962-rubric-conflict="RGMR_434_C"/g)||[]).length,2,
+ "Specific rubrical warning must be on Home and Mass door");
+const day9=ledger.entries[0];
+const bypass={...day9,independentRubricalReview:{
+ ...day9.independentRubricalReview,status:"AUTHORIZED",
+ permissionOrPrivilegeEvidenceUrl:"https://example.invalid/fabricated-proof"
+}};
+const fake9={data:Object.fromEntries(["collects","secrets","postcommunions"].map(k=>
+ [k,day9.sourceClaim.sourceOrder.map(id=>stub(id))]))};
+assert.equal(assessIndependentOrdoSourceClaim({
+ expectation:bypass,communityId:"ICRSP_FRANCE_PARTICULAR_ORDO",
+ date:"2026-11-09",form:"LOW",proper:fake9
+}).reason,"SECOND_CLASS_DAY_MORE_THAN_ONE_ADDITIONAL_ORATION",
+ "A data-field claim of authorization may not override a statutory group limit");
 assert.equal(icrspFranceOrdoIntakeStatus("2026-11-08"),null,
  "Preserve the previously verified 8 Nov source record");
 assert.ok(renderIcrspFranceHomeOrdo("2026-11-08").includes(
