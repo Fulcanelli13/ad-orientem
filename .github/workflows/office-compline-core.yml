@@ -7,6 +7,11 @@ on:
       - 'src/office/pinned-section-heading-parser.js'
       - 'src/office/saturday-compline-2026-pilot.js'
       - 'src/pray/divine-office-readiness-gate.js'
+      - 'src/office/prayer-office-reader.js'
+      - 'src/office/office-route-state.js'
+      - 'src/pray/browser-entry.js'
+      - 'src/pray/lazy-module-registry.js'
+      - 'tests/divine-office-native-entry.mjs'
       - 'tests/divine-office-saturday-compline-pilot.mjs'
       - 'tests/divine-office-weekday-compline-psalter.mjs'
       - 'tests/divine-office-advent-i-full-week-compline.mjs'
@@ -36,7 +41,12 @@ jobs:
           node --check src/office/pinned-section-heading-parser.js
           node --check src/office/saturday-compline-2026-pilot.js
           node --check src/pray/divine-office-readiness-gate.js
+          node --check src/office/prayer-office-reader.js
+          node --check src/office/office-route-state.js
+          node --check src/pray/browser-entry.js
+          node --check src/pray/lazy-module-registry.js
           node --test tests/divine-office-saturday-compline-pilot.mjs
           node --test tests/divine-office-weekday-compline-psalter.mjs
           node --test tests/divine-office-advent-i-full-week-compline.mjs
           node --test tests/divine-office-prayer-readiness-gate.mjs
+          node --test tests/divine-office-native-entry.mjs
