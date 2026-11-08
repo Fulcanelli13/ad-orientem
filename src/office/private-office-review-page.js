@@ -30,6 +30,8 @@ function renderFrame(d,host,frame,position,total,mode){
   const col=el(d,"section","aoOfLanguage");
   col.setAttribute("lang",lang);
   col.append(txt(d,"h3",TITLES[lang]));
+  if(frame.gestureRubrics?.[lang])
+   col.append(txt(d,"small",frame.gestureRubrics[lang],"aoOfEditorialNote"));
   for(const line of frame.texts[lang]||[])
    col.append(txt(d,"p",line,"aoOfSourceLine"));
   columns.append(col);
