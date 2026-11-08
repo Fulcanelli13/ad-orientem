@@ -189,9 +189,12 @@ export async function assembleWeekdayComplinePilot({
   return held("OFFICE_DATE_APPOINTMENT_NOT_REVIEWED",weekday);
  const appointment=review.appointment,psalmDay=appointment.psalmDay;
  const psalmIds=PSALMS_TO_READ[psalmDay];
+ // Pre-existing trilingual deterministic adapters omit language metadata.
+ // The new Latin-only adapter MUST declare its restriction explicitly.
+ const readerLanguages=reader?.languages??LANGS;
  if(reader?.sourceRevision!==PIN||reader.weekday!==psalmDay||
-    !Array.isArray(reader.languages)||reader.languages.length!==active.length||
-    active.some(l=>!reader.languages.includes(l))||
+    !Array.isArray(readerLanguages)||readerLanguages.length!==active.length||
+    active.some(l=>!readerLanguages.includes(l))||
     (date!==null&&reader.date!==date)||
     typeof reader.section!=="function"||
     typeof reader.psalm!=="function")
