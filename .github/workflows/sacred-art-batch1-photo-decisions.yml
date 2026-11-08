@@ -1,0 +1,27 @@
+name: Sacred Art Batch 1 — photograph owner decision validation
+on:
+  push:
+    branches:
+      - research/sacred-art-batch1-photo-decisions-20261108
+    paths:
+      - 'data/artwork/batch1-photo-release-decision-contract.v1.json'
+      - 'scripts/art/validate-batch1-photo-decisions.mjs'
+      - 'tests/sacred-art-batch1-photo-release-decisions.mjs'
+      - '.github/workflows/sacred-art-batch1-photo-decisions.yml'
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  photo-decision-validation:
+    name: Guard exact source, prior selection, photo rights, manual release only
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate source-photo decision schema and reject automatic publication
+        run: node tests/sacred-art-batch1-photo-release-decisions.mjs
+      - name: Verify source validation script syntax
+        run: node --check scripts/art/validate-batch1-photo-decisions.mjs
