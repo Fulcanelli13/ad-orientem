@@ -11,6 +11,10 @@ import {getDivineOfficePrayerReadiness}
 test("exact 28 November Latin Compline is prepared but never represented as published",()=>{
  assert.equal(LATIN_COMPLINE_RELEASE.date,"2026-11-28");
  assert.equal(LATIN_COMPLINE_RELEASE.language,"la");
+ assert.equal(LATIN_COMPLINE_RELEASE.sourcePsalterFamily,"VULGATA_BIBLIORUM");
+ assert.equal(LATIN_COMPLINE_RELEASE.target1961Edition,"MAME_1961_VULGATA");
+ assert.equal(LATIN_COMPLINE_RELEASE.target1961PsalterFamily,"VULGATA_BIBLIORUM");
+ assert.equal(LATIN_COMPLINE_RELEASE.exact1961EditionPsalterLeafVerified,false);
  assert.equal(LATIN_COMPLINE_RELEASE.ordinary1961SequenceReviewed,true);
  assert.equal(LATIN_COMPLINE_RELEASE.saturdayAppointmentReviewed,true);
  assert.equal(LATIN_COMPLINE_RELEASE.psalter1961VerbatimCollated,false);
@@ -68,4 +72,22 @@ test("new public module is isolated from local-only research control",()=>{
  assert.match(route,/current.status==="RELEASED"/u);
  assert.match(route,/mountPublishedLatinCompline/u);
  assert.match(route,/officePrivateSourceReviewAllowed/u);
+});
+test("1961 Vulgata Compline cannot be certified from a 1961 Pius XII Psalter edition",()=>{
+ const witness=JSON.parse(readFileSync(new URL(
+  "../data/office/research/1961-psalter-edition-families.v1.json",import.meta.url),"utf8"));
+ assert.equal(witness.target.targetEdition,LATIN_COMPLINE_RELEASE.target1961Edition);
+ assert.equal(witness.target.sourcePsalterFamily,LATIN_COMPLINE_RELEASE.sourcePsalterFamily);
+ assert.equal(witness.target.specificPrintedPsalterPagesSeen,false);
+ assert.equal(witness.target.fullVerbatimCollationCertified,false);
+ assert.equal(witness.editionWitnesses.length,4);
+ assert.ok(witness.editionWitnesses.some(x=>x.id==="MAME_1961_VULGATA"&&
+  x.targetFamilyMatch&&x.psalterFamily==="VULGATA_BIBLIORUM"));
+ assert.ok(witness.editionWitnesses.some(x=>x.id==="MAME_1961_PIUS_XII"&&
+  !x.targetFamilyMatch&&x.psalterFamily!=="VULGATA_BIBLIORUM"));
+ assert.ok(witness.editionWitnesses.every(x=>x.verifiedSaturdayPsalmFullPages===false));
+ assert.equal(witness.scannedIntro.fullPsalterEvidence,false);
+ for(const [key,value] of Object.entries(witness.releaseFlags))
+  assert.equal(LATIN_COMPLINE_RELEASE[key],value,key+" unapproved promotion");
+ assert.equal(latinComplineReleaseEligibility({date:"2026-11-28"}).status,"WITHHELD");
 });
