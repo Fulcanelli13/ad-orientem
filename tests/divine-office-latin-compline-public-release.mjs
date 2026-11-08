@@ -55,8 +55,8 @@ test("no public Office route can fetch unapproved source words",async()=>{
  for(const options of [
   {date:"2026-11-28",hour:"VESPERS"},
   {date:"2026-12-06",hour:"COMPLINE"},
-  {date:"2026-12-01",hour:"COMPLINE"},
-  {date:"2026-12-06",hour:"COMPLINE"},
+  {date:"2026-12-07",hour:"COMPLINE"},
+  {date:"2026-12-08",hour:"COMPLINE"},
   {date:"2026-11-28",hour:"COMPLINE",calendarScope:"LOCAL"},
   {date:"2027-11-28",hour:"COMPLINE"},
   {date:"2026-11-28",hour:"MATINS"}
