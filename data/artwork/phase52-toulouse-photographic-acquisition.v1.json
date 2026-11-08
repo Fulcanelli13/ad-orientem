@@ -1,0 +1,101 @@
+{
+  "schema": "AO_SACRED_ART_PHASE52_PHOTO_ACQUISITION_CANDIDATES_V1",
+  "as_of": "2026-11-08",
+  "scope": "Two exact-museum-object, independently photographed high-resolution research candidates at Toulouse; no image editorial approval",
+  "policy": [
+    "Do not auto-promote non-handpicked Commons photos",
+    "Do not replace original selected photographs",
+    "Identity of the public-domain painting is not rights of a particular photograph",
+    "Attribution and CC BY-SA 4.0 share-alike compliance must be retained",
+    "No public release or usage in Home/Prayer/Calendar",
+    "Do not use Vercel"
+  ],
+  "baseline": {
+    "selected_photographs": 177,
+    "operational_groups": 989,
+    "verified_cross_register_relationships": 14,
+    "verified_selected_rows_crosslinked": 13,
+    "rejected_records_protected": 1599
+  },
+  "counts": {
+    "candidates": 2,
+    "reported_above_1200px_short_side": 2,
+    "bytes_verified_by_direct_download": 0,
+    "photo_pixel_visual_qa_completed": 0,
+    "editorially_approved": 0,
+    "app_published": 0
+  },
+  "candidates": [
+    {
+      "id": "AO-P52-TOULOUSE-STELLA-001",
+      "selected_id": "RECENT575::222",
+      "physical_object_id": "AO-MUSEUM::MUS-E-DES-AUGUSTINS::2004_1_75",
+      "title": "Marriage of the Virgin / Mariage de la Vierge",
+      "painter": "Jacques Stella",
+      "museum": "Musée des Augustins, Toulouse",
+      "museum_inventory": "2004 1 75",
+      "official_collection": "https://collections.augustins.toulouse.fr/fr/notice/2004-1-75-mariage-de-la-vierge-91bacee5-41a6-4ff2-bc25-0e96c618d236",
+      "official_joconde": "https://pop.culture.gouv.fr/notice/joconde/05620000368",
+      "selected_original": {
+        "source_file_title": "Jacques Stella - Le Mariage de la Vierge - Musée des Augustins - 2004 1 75.jpg",
+        "short_side_px_reported": 629,
+        "original_verified_bytes": false
+      },
+      "candidate": {
+        "commons_file_title": "Augustins - Le Mariage de la Vierge - Jacques Stella Joconde05620000368.jpg",
+        "commons_description_url": "https://commons.wikimedia.org/wiki/File:Augustins_-_Le_Mariage_de_la_Vierge_-_Jacques_Stella_Joconde05620000368.jpg",
+        "source_wikidata_mirror": "https://www.wikidata.org/wiki/File:Augustins_-_Le_Mariage_de_la_Vierge_-_Jacques_Stella_Joconde05620000368.jpg",
+        "width": 4996,
+        "height": 4005,
+        "source_bytes_reported": 14725300,
+        "sha1_hex": "c030bdd741bccc8cb25f00e6dbd4c826633f415f",
+        "photographer": "Didier Descouens",
+        "photo_date": "2018-12-23",
+        "license_id": "CC-BY-SA-4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "rights_notes": "Commercial copying is permitted with attribution; cropped or otherwise adapted editions require appropriate share-alike distribution of the adaptation. Photograph is independently made, not the museum's POP catalogue photo credited STC.",
+        "is_exact_same_physical_object": true,
+        "is_same_photograph_as_handpicked": false,
+        "is_user_handpicked": false,
+        "verified_image_bytes_in_this_phase": false,
+        "status": "RESEARCH_CANDIDATE_NOT_EDITORIALLY_ADMITTED"
+      },
+      "next_check": "Acquire and SHA1/dimension check; compare full painting framing/color against selected original; owner must explicitly approve any replacement."
+    },
+    {
+      "id": "AO-P52-TOULOUSE-BOURDON-002",
+      "selected_id": "RECENT575::220",
+      "physical_object_id": "AO-MUSEUM::MUS-E-DES-AUGUSTINS::2004_1_52",
+      "title": "Martyrdom of Saint Andrew / Le Martyre de saint André",
+      "painter": "Sébastien Bourdon",
+      "museum": "Musée des Augustins, Toulouse",
+      "museum_inventory": "2004 1 52",
+      "official_collection": "https://pop.culture.gouv.fr/notice/joconde/05620000033",
+      "official_joconde": "https://pop.culture.gouv.fr/notice/joconde/05620000033",
+      "selected_original": {
+        "source_file_title": "Sébastien Bourdon - Le Martyre de Saint André - Musée des Augustins - 2004 1 52.jpg",
+        "short_side_px_reported": 677,
+        "original_verified_bytes": false
+      },
+      "candidate": {
+        "commons_file_title": "Augustins - Le Martyre de Saint André - Sébastien Bourdon 2004 1 52.jpg",
+        "commons_description_url": "https://commons.wikimedia.org/wiki/File:Augustins_-_Le_Martyre_de_Saint_André_-_Sébastien_Bourdon_2004_1_52.jpg",
+        "width": 5168,
+        "height": 6037,
+        "source_bytes_reported": 25498292,
+        "sha1_hex": "45ddc99bb7a98ac16fa6b0fb8c936c66c5932c92",
+        "photographer": "Didier Descouens",
+        "photo_date": "2017-12-27",
+        "license_id": "CC-BY-SA-4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "rights_notes": "Independent CC BY-SA photo, not museum POP photo attributed Bernard Delorme. Commercial use possible subject to attribution and share-alike when adapted.",
+        "is_exact_same_physical_object": true,
+        "is_same_photograph_as_handpicked": false,
+        "is_user_handpicked": false,
+        "verified_image_bytes_in_this_phase": false,
+        "status": "RESEARCH_CANDIDATE_NOT_EDITORIALLY_ADMITTED"
+      },
+      "next_check": "Acquire and SHA1/dimension check; compare against selected original; no automatic publication."
+    }
+  ]
+}
