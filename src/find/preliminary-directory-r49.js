@@ -230,7 +230,14 @@ export async function loadPreliminaryR49({fetchImpl=fetch}={}){
   }
   // Invalid or misjoined release contents must be rejected, not silently
   // mistaken for verified church identity or a successful contact enrichment.
-  cache=contacts?.ok?attachPublishedSiteContactEvidence(liturgical,await contacts.json()):liturgical;
+  if(contacts?.ok){
+    const optionalManifest=await contacts.json();
+    // Older directory tests and offline snapshots can return unrelated JSON
+    // for a newly added optional URL. Treat that as absence, never approval.
+    // A correctly tagged contact release is strictly validated by the joiner.
+    cache=optionalManifest?.schema==="AO_CL27_EXACT_SITE_CONTACT_RELEASE_V1"
+      ?attachPublishedSiteContactEvidence(liturgical,optionalManifest):liturgical;
+  }else cache=liturgical;
   return cache;
 }
 /**
