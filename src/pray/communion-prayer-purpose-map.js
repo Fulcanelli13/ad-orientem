@@ -20,6 +20,8 @@ export const COMMUNION_PRAYER_PURPOSES=Object.freeze({
    ids:Object.freeze(["adoration_anima_christi","eucharisticHeartAspiration","afterBonaventure"])}),
   Object.freeze({id:"thanksgiving",titleEn:"Thanksgiving",titleFr:"Action de grâces",relationship:"distinct",
    ids:Object.freeze(["thanksgivingMyGoodJesus","afterThomas"])}),
+  Object.freeze({id:"intercession",titleEn:"Invocation and intercession",titleFr:"Invocation et intercession",relationship:"distinct",
+   ids:Object.freeze(["holySpiritAugustineTraditional","ourLadyAfterCommunionTraditional"])}),
   Object.freeze({id:"crucifix",titleEn:"Prayer before the Crucifix",titleFr:"Prière devant le Crucifix",relationship:"distinct",
    ids:Object.freeze(["enEgo"])})
  ])
