@@ -49,7 +49,7 @@ export function verify1962Nov09TheodoreSource({
    data?.sourcePath!==NOV09_THEODORE_SOURCE.principalPath)
   return refuse(proper,"LATERAN_1962_SOURCE_IDENTITY_CHANGED");
  const decision=data?.commemorationFormDecision;
- if(decision?.status!=="CERTIFIED"||
+ if(decision?.status!=="CERTIFIED"||decision.form!==form||
     decision.scope!=="NON_SUNDAY_II_III_CLASS_SINGLE_IV_CLASS_SANCTORAL_COMMEMORATION"||
     decision.mainId!==NOV09_THEODORE_SOURCE.principalId||
     decision.commemorationId!==NOV09_THEODORE_SOURCE.commemorationId||
