@@ -56,6 +56,7 @@ export function mountPublishedLatinCompline(root,{
   frame.replaceChildren();
   frame.append(create(d,"small","aoOfEvent",
    item.kind.replaceAll("_"," ")+(item.label?" · "+item.label:"")));
+  if(item.gestureRubrics?.la)frame.append(create(d,"small","aoOfEditorialNote","Rubrica · "+item.gestureRubrics.la));
   for(const line of item.texts.la||[])
    frame.append(create(d,"p","aoOfSourceLine",line));
   if(item.editorialRubric)frame.append(create(d,"small","aoOfEditorialNote",
