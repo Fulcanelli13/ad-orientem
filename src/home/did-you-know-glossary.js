@@ -106,7 +106,7 @@ export function hydrateHomeDidYouKnow(root,win=globalThis){
       button.dataset.homeDykFactId=published.id;
       button.dataset.homeDykFactDate=date;
     }else{
-      const id=slot&&/^G\\d{3}$/.test(slot)?slot:selectedId(date);
+      const id=slot&&/^G\d{3}$/.test(slot)?slot:selectedId(date);
       const entry=homeDidYouKnowSelect(entries,date,id);
       if(!entry)throw Error("GLOSSARY_ENTRY_NOT_VERIFIED");
       button.querySelector("[data-home-dyk-title]").textContent=fr?entry.labels.fr:entry.labels.en;
