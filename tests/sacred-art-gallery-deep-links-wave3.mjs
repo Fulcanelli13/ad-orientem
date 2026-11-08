@@ -74,7 +74,7 @@ const entry=read("src/home/browser-entry.js");
 const html=read("src/home/today-h4-view.js");
 const styles=read("src/home/c3-styles.js");
 assert.match(gallery,/sacredArtGalleryTargets\(taxonomy\.id\)/);
-assert.match(gallery,/data\.c3ArtTargetKind=target\.kind/);
+assert.match(gallery,/button\.dataset\.c3ArtTargetKind=target\.kind/);
 assert.match(gallery,/dlg\.__c3CurrentWorkId=taxonomy\?\.id/);
 assert.match(entry,/openReleasedSacredArtTarget\(win,/);
 assert.match(entry,/dialog\.contains\(artworkTarget\)/);
