@@ -43,7 +43,10 @@ export function mountPublishedLatinCompline(root,{
  navigation.append(previous,count,next);
  const provenance=create(d,"small","aoOfProvenance",
   "Roman Breviary, 1960 rubrics · Latin only · source references shown for each moment.");
- section.append(title,note,contextLabel,status,frame,navigation,provenance);
+ const sourceNotice=create(d,"a","aoOfProvenance","Divinum Officium Latin source · MIT licence and attribution");
+ sourceNotice.href=new URL("src/office/LICENSE-DIVINUM-OFFICIUM-MIT.txt",win.location.href).href;
+ sourceNotice.rel="noopener noreferrer";
+ section.append(title,note,contextLabel,status,frame,navigation,provenance,sourceNotice);
  root.replaceChildren(section);
  let active=null,index=0,sequence=0,disposed=false;
  function render(){
