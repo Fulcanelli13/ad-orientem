@@ -23,7 +23,8 @@ import "./prayer-cover-photo-qa-styles.js";
 import {renderPrayerSelectedCoverQA} from "./prayer-cover-photo-qa.v1.js";
 import "./stations-verified-artwork-styles.js";
 import {renderVerifiedStationArtwork} from "./stations-verified-artwork-release.v1.js";
-import {ESSENTIAL_HOLY_CARD_IDS_V1,essentialHolyCardParts} from "./essential-holy-card-parts.js";
+import {ESSENTIAL_HOLY_CARD_IDS_V1,ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2,essentialHolyCardDisplayTitle,essentialHolyCardParts} from "./essential-holy-card-parts.js";
+import {essentialPrayerPreferredReadingRecord} from "./essential-prayer-witness-policy.v1.js";
 import {claudeHolyCard,claudeHolyCardCase,installClaudeHolyBackFocus} from "./claude-holy-card.js";
 import {renderEssentialFlowReader,essentialFlowReaderEnabled} from "./essential-flow-reader.js";
 import "./essential-flow-reader-styles.js";
@@ -673,7 +674,7 @@ function sourceLine(p){
   'VULGATE_PSALM_AND_SHORTENED_OFFICE_RESPONSES'
  ].includes(scopedComparison.category);
  const textualVariant=PRAYER_WITNESSED_VARIANTS[p.id];
- const variantNotice=textualVariant?`<p class="aoP435930SourceWitnessNote">${esc(L(textualVariant.noteEn,textualVariant.noteFr))} <a href="${esc(textualVariant.url)}" target="_blank" rel="noopener noreferrer">${esc(L('Original French witness','Témoin français original'))} ↗</a></p>`:'';
+ const variantNotice=textualVariant?`<p class="aoP435930SourceWitnessNote"${p.id==="foundations_act_of_hope"?' data-ao-essential-editorial-reading="true"':""}>${esc(L(textualVariant.noteEn,textualVariant.noteFr))} <a href="${esc(textualVariant.url)}" target="_blank" rel="noopener noreferrer">${esc(L('Original French witness','Témoin français original'))} ↗</a></p>`:'';
  const langHold=p.id==='marian_consecration_immaculate_heart'
    ?`<p>${esc(L('This consecration is documented in English only; no equivalent French or Latin formula has been certified.','Cette consécration est documentée en anglais seulement ; aucune formule française ou latine équivalente n’a été certifiée.'))}</p>`
    :'';
@@ -777,10 +778,11 @@ function prayerBlock(id,opts={}){
   // flat text document. Text still comes exclusively from canonical-data.
   const vern=p[lang()]?lang():p.en?'en':p.fr?'fr':null;
   const pref=CLAUDE_HOLY_PREF.language;
+  const displayRecord=essentialPrayerPreferredReadingRecord(id,p);
   const chosen=pref==='both'&&p.la&&vern?'both':pref&&p[pref]?pref:(p.la?'la':vern);
   // F01 approval authority: Claude's original reversible Holy Card, not the
    // newer R2 continuous flow. Flow is retained by explicit opt-in only.
-   return chosen?(ESSENTIAL_FLOW_ALTERNATIVE_ENABLED?renderEssentialFlowReader({id,p,face:chosen,vernacular:vern||'en',esc,artUrl:releasedPrayerCardArtUrl(id),artCredit:releasedPrayerCardArt(id)}):claudeHolyCard({id,p,face:chosen,vernacular:vern||'en',flipped:CLAUDE_HOLY_PREF.flipped,esc,flipLabel:L('Turn card','Retourner la carte'),artUrl:releasedPrayerCardArtUrl(id),artCredit:releasedPrayerCardArt(id)})):
+   return chosen?(ESSENTIAL_FLOW_ALTERNATIVE_ENABLED?renderEssentialFlowReader({id,p:displayRecord,face:chosen,vernacular:vern||'en',esc,artUrl:releasedPrayerCardArtUrl(id),artCredit:releasedPrayerCardArt(id)}):claudeHolyCard({id,p:displayRecord,face:chosen,vernacular:vern||'en',flipped:CLAUDE_HOLY_PREF.flipped,esc,flipLabel:L('Turn card','Retourner la carte'),artUrl:releasedPrayerCardArtUrl(id),artCredit:releasedPrayerCardArt(id)})):
    callout(esc(L('Prayer source unavailable.','Prière source indisponible.')),'warn');
  }
  if(id==='mass_devotion_leonine'&&!opts.record){
@@ -2615,21 +2617,21 @@ function renderLibrary(){
    return renderPilotLoreto({record:p,id:LIB.open,language:selected,group:PILOT_LORETO_GROUP,head,L,esc,sourceLine,libraryContextMarkup});
   }
   const editorialCover=ESSENTIAL_HOLY_CARD_IDS_V1.includes(LIB.open)?"":prayerEditorialArtworkMarkup("COV-"+LIB.open,{className:"aoPrayerEditorialCardCover"});
-  const holyIndex=ESSENTIAL_HOLY_CARD_IDS_V1.indexOf(LIB.open);
+  const holyIndex=ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2.indexOf(LIB.open);
   const holyFooter=holyIndex<0?'':'<nav class="aoClaudeHolyFoot" aria-label="'+esc(L('Prayer card navigation','Navigation des cartes'))+'">'+
    '<button type="button" data-p435930-essential-prev '+(holyIndex===0?'disabled':'')+' aria-label="'+esc(L('Previous prayer','Prière précédente'))+'">‹</button>'+
-   '<span>'+esc(isFr()?(p.titleFr||p.title):p.title)+'</span>'+
-   '<button type="button" data-p435930-essential-next '+(holyIndex===ESSENTIAL_HOLY_CARD_IDS_V1.length-1?'disabled':'')+' aria-label="'+esc(L('Next prayer','Prière suivante'))+'">☞</button></nav>';
+   '<span>'+esc(essentialHolyCardDisplayTitle(LIB.open,p,lang()))+'</span>'+
+   '<button type="button" data-p435930-essential-next '+(holyIndex===ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2.length-1?'disabled':'')+' aria-label="'+esc(L('Next prayer','Prière suivante'))+'">☞</button></nav>';
   const missing=['en','fr','la'].filter(k=>!p[k]),hasUi=!!p[lang()];
   const missingUi=!hasUi?callout(`${esc(L('No vernacular translation is available in the current UI language.','Aucune traduction vernaculaire n’est disponible dans la langue actuelle de l’interface.'))} ${esc(L('The available source text is shown without fabricating a substitute.','Le texte source disponible est affiché sans fabriquer de traduction de substitution.'))}`,'rubric'):'';
   const category=isFr()?(DATA.categories?.[p.category]?.fr||p.category):(DATA.categories?.[p.category]?.en||p.category),langs=['en','fr','la'].filter(k=>p[k]).map(k=>k.toUpperCase()).join(' · ');
-  return `${head(isFr()?(p.titleFr||p.title):p.title,L('Prayer Library','Livre de prières'))}<main class="aoP435930Body aoP435930LibraryReader${PRAYER_READER_PILOT_ENABLED?' aoReaderPilotSingle':''}" data-ao-library-card="single">${PRAYER_READER_PILOT_ENABLED?pilotFocusButton({L,esc}):''}${missingUi}${editorialCover}<section class="aoDevoCard" data-ao-devo-card="${esc(LIB.open)}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(isFr()?(p.titleFr||p.title):p.title)}">${prayerBlock(LIB.open,{scriptureContext:true})}</div></section>${holyFooter}${holyIndex>=0?"":libraryContextMarkup(p)}<div class="aoP435930Meta"><span>${esc(L('Category','Catégorie'))}: <b>${esc(category)}</b></span><span>${esc(L('Languages','Langues'))}: <b>${esc(langs||L('Source language only','Langue source seulement'))}</b></span>${missing.length?`<span>${esc(L('Not available','Non disponible'))}: <b>${missing.map(x=>x.toUpperCase()).join(' · ')}</b></span>`:''}</div></main>`
+  return `${head(essentialHolyCardDisplayTitle(LIB.open,p,lang()),L('Prayer Library','Livre de prières'))}<main class="aoP435930Body aoP435930LibraryReader${PRAYER_READER_PILOT_ENABLED?' aoReaderPilotSingle':''}" data-ao-library-card="single">${PRAYER_READER_PILOT_ENABLED?pilotFocusButton({L,esc}):''}${missingUi}${editorialCover}<section class="aoDevoCard" data-ao-devo-card="${esc(LIB.open)}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(isFr()?(p.titleFr||p.title):p.title)}">${prayerBlock(LIB.open,{scriptureContext:true})}</div></section>${holyFooter}${holyIndex>=0?"":libraryContextMarkup(p)}<div class="aoP435930Meta"><span>${esc(L('Category','Catégorie'))}: <b>${esc(category)}</b></span><span>${esc(L('Languages','Langues'))}: <b>${esc(langs||L('Source language only','Langue source seulement'))}</b></span>${missing.length?`<span>${esc(L('Not available','Non disponible'))}: <b>${missing.map(x=>x.toUpperCase()).join(' · ')}</b></span>`:''}</div></main>`
  }
  if(LIB.cat==='essentials'&&!LIB.q.trim()){
-  // The ninth homepage door opens the 32-prayer mosaic, not all library rows.
+  // The ninth homepage door opens the curated 19-prayer mosaic, not all library rows.
   return `${head(L('Essential Prayers','Prières essentielles'))}<main class="aoP435930Body aoEssentialMosaicLanding" data-ao-pray-essential-landing="true">
    <section class="aoPrayEssentialIntro"><p>${esc(L('Choose a traditional prayer. Each opens its verified canonical text.','Choisissez une prière traditionnelle. Chaque carte ouvre son texte canonique vérifié.'))}</p></section>
-   ${claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_IDS_V1,prayers:DATA.prayers,esc,title:L('Essential Prayers','Prières essentielles'),artFor:releasedPrayerCardArtUrl})}
+   ${claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2,prayers:DATA.prayers,locale:lang(),esc,title:L('Essential Prayers','Prières essentielles'),artFor:releasedPrayerCardArtUrl})}
    <button type="button" class="aoPrayEssentialLibraryLink" data-p435930-lib-all>${esc(L('Browse the full Prayer Library','Parcourir toutes les prières'))}</button>
   </main>`;
  }
@@ -2721,7 +2723,7 @@ function renderLibrary(){
   PRAYER_SUBJECTS_V1.map(subject=>'<button type="button" data-p435930-lib-subject="'+subject.id+'" aria-pressed="'+String(LIB.subject===subject.id)+'">'+
     esc(isFr()?subject.fr:subject.en)+' <small>'+(subjectCounts.counts[subject.id]+prayerSupplementalLiveWorksForSubject(subject.id).length +prayerSevenSourceWorksForSubject(subject.id).length+redBookletCommunionLibraryLinksForSubject(subject.id).length+redBookletSuscipeLibraryLinksForSubject(subject.id).length+redBookletPrivateHistoricalWorksForSubject(subject.id).length+(subject.id==='V'?1:0))+'</small></button>').join('')+
   '</div><p class="aoP435930SourceNote">'+esc(L('Only accessible canonical and source-owned reader texts are included. Unverified research works are not shown as readable prayers.','Seuls les textes canoniques et les prières déjà accessibles dans leurs parcours d’origine sont inclus. Les œuvres de recherche non vérifiées ne sont pas présentées comme disponibles.'))+'</p></details>';
- return `${head(L('Prayer Library','Livre de prières'),`${Object.keys(DATA.prayers||{}).length} ${L('prayers','prières')}`)}<main class="aoP435930Body">${libraryOverviewGuide()}<label class="aoP435930Search"><span>${assetIcon('ao-ui-search')}</span><input type="search" data-p435930-lib-search value="${esc(LIB.q)}" placeholder="${esc(L('Search prayers','Rechercher une prière'))}"></label><div class="aoP435930Chips">${cats.map(([id,n])=>`<button type="button" class="${id===LIB.cat?'active':''}" data-p435930-lib-cat="${esc(id)}">${esc(n)}</button>`).join('')}</div>${subjectBrowse}<div class="aoP435930LibraryList" data-ao-prayer-subject-results="${esc(LIB.subject)}">${LIB.cat==="essentials"&&!q?claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_IDS_V1,prayers:DATA.prayers,esc,title:L("Essential Prayers","Prières essentielles"),artFor:releasedPrayerCardArtUrl}):(rows.length||!(historicalWorks.length+sourceDeepWorks.length+privateCommunionWorks.length+privateHistoricalWorks.length+(stabatSeptember?1:0))?renderLibraryEntryRows(rows,q):'')}</div>${communionSection}${privateHistoricalSection}${historicalSection}${stabatLibrarySection}${guidedSection}</main>`;
+ return `${head(L('Prayer Library','Livre de prières'),`${Object.keys(DATA.prayers||{}).length} ${L('prayers','prières')}`)}<main class="aoP435930Body">${libraryOverviewGuide()}<label class="aoP435930Search"><span>${assetIcon('ao-ui-search')}</span><input type="search" data-p435930-lib-search value="${esc(LIB.q)}" placeholder="${esc(L('Search prayers','Rechercher une prière'))}"></label><div class="aoP435930Chips">${cats.map(([id,n])=>`<button type="button" class="${id===LIB.cat?'active':''}" data-p435930-lib-cat="${esc(id)}">${esc(n)}</button>`).join('')}</div>${subjectBrowse}<div class="aoP435930LibraryList" data-ao-prayer-subject-results="${esc(LIB.subject)}">${LIB.cat==="essentials"&&!q?claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2,prayers:DATA.prayers,locale:lang(),esc,title:L("Essential Prayers","Prières essentielles"),artFor:releasedPrayerCardArtUrl}):(rows.length||!(historicalWorks.length+sourceDeepWorks.length+privateCommunionWorks.length+privateHistoricalWorks.length+(stabatSeptember?1:0))?renderLibraryEntryRows(rows,q):'')}</div>${communionSection}${privateHistoricalSection}${historicalSection}${stabatLibrarySection}${guidedSection}</main>`;
 }
 function monthIndex(key){const d=dateObj(key);return d?d.getFullYear()*12+d.getMonth():null}
 function consecutive(records,needed){const done=records.filter(x=>x.complete).sort((a,b)=>a.date.localeCompare(b.date));if(!done.length)return 0;let c=1;for(let i=done.length-1;i>0;i--){const a=monthIndex(done[i].date),b=monthIndex(done[i-1].date);if(a-b===1)c++;else break}return Math.min(c,needed)}
@@ -3761,12 +3763,12 @@ function installLibraryParagraphFocus(m,id){
    if(x==null)return;
    const dx=event.clientX-x,dy=event.clientY-y;x=null;y=null;
    if(Math.abs(dx)<50||Math.abs(dx)<=Math.abs(dy)*1.4)return;
-   const index=ESSENTIAL_HOLY_CARD_IDS_V1.indexOf(id);
+   const index=ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2.indexOf(id);
    const next=index+(dx<0?1:-1);
-   if(next<0||next>=ESSENTIAL_HOLY_CARD_IDS_V1.length)return;
+   if(next<0||next>=ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2.length)return;
    CLAUDE_HOLY_PREF.flipped=false;CLAUDE_HOLY_PREF.scrollRatio=0;
-   if(view==='library')LIB.open=ESSENTIAL_HOLY_CARD_IDS_V1[next];
-   else if(view==='prayerOnly')prayerId=ESSENTIAL_HOLY_CARD_IDS_V1[next];
+   if(view==='library')LIB.open=ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2[next];
+   else if(view==='prayerOnly')prayerId=ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2[next];
    render();
   });
   return;
@@ -4632,12 +4634,12 @@ function onClick(e){
   return;
  }
  if(b.hasAttribute('data-p435930-essential-prev')||b.hasAttribute('data-p435930-essential-next')){
-  const id=view==='library'?LIB.open:prayerId,index=ESSENTIAL_HOLY_CARD_IDS_V1.indexOf(id);
+  const id=view==='library'?LIB.open:prayerId,index=ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2.indexOf(id);
   const next=index+(b.hasAttribute('data-p435930-essential-next')?1:-1);
-  if(next<0||next>=ESSENTIAL_HOLY_CARD_IDS_V1.length)return;
+  if(next<0||next>=ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2.length)return;
   CLAUDE_HOLY_PREF.flipped=false;CLAUDE_HOLY_PREF.scrollRatio=0;
-  if(view==='library')LIB.open=ESSENTIAL_HOLY_CARD_IDS_V1[next];
-  else if(view==='prayerOnly')prayerId=ESSENTIAL_HOLY_CARD_IDS_V1[next];
+  if(view==='library')LIB.open=ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2[next];
+  else if(view==='prayerOnly')prayerId=ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2[next];
   return render();
  }
  if(b.matches('[data-p435930-essential-flip]')){

@@ -10,8 +10,8 @@ export const PRAY_COLLATION_NOTICES_V1=Object.freeze({
     },
     "relatedWitnesses": [
       {
-        "label": "Traditional French catechism (historical comparison, not exact app edition)",
-        "url": "https://fr.wikisource.org/wiki/Page:Cat%C3%A9chisme_%C3%A0_l%E2%80%99usage_de_toutes_les_%C3%A9glises_de_l%E2%80%99empire_fran%C3%A7ais.djvu/164"
+        "label": "1906 French catechism · traditional Notre Père (historical wording, punctuation differs)",
+        "url": "https://fr.wikisource.org/wiki/Cat%C3%A9chisme_illustr%C3%A9_des_v%C3%A9rit%C3%A9s_n%C3%A9cessaires/Pri%C3%A8res"
       }
     ]
   },

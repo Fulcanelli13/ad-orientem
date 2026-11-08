@@ -769,7 +769,7 @@ try{
    }
    if(id==="foundations_our_father"){
      const witnesses=await page.locator("#aoPray435930.open .aoP435930Source a").evaluateAll(nodes=>nodes.map(x=>x.href));
-     assert.ok(witnesses.some(x=>x.includes("wikisource.org/wiki/Page:")),"historical French Our Father witness missing");
+     assert.ok(witnesses.some(x=>{const u=new URL(x);return u.hostname==="fr.wikisource.org"&&decodeURIComponent(u.pathname).startsWith("/wiki/Catéchisme_illustré_des_vérités_nécessaires/Prières");}),"1906 French Our Father source witness missing");
    }
    if(id==="foundations_act_of_hope"){
      assert.match(prayer.source,/Dans cette foi/,"published French textual anomaly must be explicitly recorded");
