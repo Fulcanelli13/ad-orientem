@@ -1,0 +1,34 @@
+name: Sacred Art Phase 45 — whole-library reconciled census (research only)
+on:
+  push:
+    branches:
+      - research/sacred-art-phase18-iiif-audit-20261106
+    paths:
+      - 'scripts/sacred-art/phase45-full-library-census.py'
+      - '.github/workflows/sacred-art-phase45-full-library-census.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  census:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Reconcile full artwork corpus, release and calendar records
+        run: |
+          python -m py_compile scripts/sacred-art/phase45-full-library-census.py
+          python scripts/sacred-art/phase45-full-library-census.py
+      - name: Retain complete research-only census and traceable CSV exports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-phase45-full-library-census-research-only
+          path: artifacts/sacred-art-phase45-full-census/
+          retention-days: 14
+          if-no-files-found: warn
