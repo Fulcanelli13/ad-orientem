@@ -6,29 +6,37 @@ on:
       - "tests/installed-pages-live-phone.mjs"
       - "tests/canonical-pages-live-parity.mjs"
       - ".github/workflows/installed-pages-live-phone.yml"
-  # GitHub's Pages "dynamic" deployment does not reliably emit workflow_run.
-  # Direct main pushes provide an independently observable release trigger.
-  push:
-    branches: [main]
-    paths:
-      - "index.html"
-      - "sw.js"
-      - "src/app/offline-boot.js"
-      - "src/settings/**"
-      - "src/home/**"
-      - "src/calendar/**"
-      - "tests/installed-pages-live-phone.mjs"
-      - "tests/canonical-pages-live-parity.mjs"
-      - ".github/workflows/installed-pages-live-phone.yml"
+  # The explicit Pages release below performs the real deployment, including
+  # its live source/phone/offline checks. Starting this independent byte parity
+  # on a push used to race the Pages concurrency queue and fail against the
+  # PREVIOUS public release after 12 retries. Start only after it has finished.
+  # GitHub's implicit "pages build and deployment" workflow is not the owner.
   workflow_run:
-    workflows: ["pages build and deployment"]
+    workflows: ["Ad Orientem — GitHub Pages release"]
     types: [completed]
   workflow_dispatch:
 permissions:
   contents: read
 jobs:
+  validate-pr:
+    if: ${{ github.event_name == 'pull_request' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate independent live-parity scripts without racing production Pages
+        run: |
+          node --check tests/canonical-pages-live-parity.mjs
+          node --check tests/installed-pages-live-phone.mjs
+
   verify-live-installed-path:
-    if: ${{ github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main') }}
+    # Never compare the branch against a site that has not published it yet.
+    # A successful explicit Pages release is the only automatic source of truth.
+    if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main' && github.event.workflow_run.event == 'push') }}
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
