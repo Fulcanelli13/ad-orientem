@@ -54,7 +54,7 @@ for(const x of p.alternative_nonhandpicked_research_leads){
   assert.ok(x.original_pixels.width>=1200&&x.original_pixels.height>=1200);
 }
 assert.equal(p.hard_guards.no_selected_photo_replacement_without_explicit_approval,true);
-assert.equal(p.hard_guards.no_commons_promotion_of_unhandpicked,true);
+assert.equal(p.hard_guards.do_not_auto_promote_nonhandpicked_commons,true);
 assert.equal(p.hard_guards.require_visual_qa_of_new_image_bytes,true);
 assert.equal(p.hard_guards.require_exact_photo_license,true);
 console.log('Phase 51 PASS: 18/18 sources below 1200px short-side target; 15 accession-backed objects; 0 releases; 14 historical cross-register links preserved.');
