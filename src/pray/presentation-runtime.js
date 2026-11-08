@@ -57,6 +57,7 @@ import {guidedPrayerLinksForSubject} from "./prayer-subject-guided-links.v1.js";
 import {PRAYER_SUPPLEMENTAL_LIVE_WORK_LINKS_V1,prayerSupplementalLiveWork,prayerSupplementalLiveWorksForSubject} from "./prayer-supplemental-live-works.v1.js";
 import {prayerSevenSourceWork,prayerSevenSourceWorksForSubject} from "./prayer-seven-source-work-links.v1.js";
 import {redBookletCommunionLibraryLink,redBookletCommunionLibraryLinksForSubject} from "./red-booklet-communion-library-links.v1.js";
+import {RED_BOOKLET_SUSCIPE_LIBRARY_LINK_V1,redBookletSuscipeLibraryLinksForSubject} from "./red-booklet-suscipe-library-link.v1.js";
 import {FIVE_WOUNDS_SOURCE_V1,FIVE_WOUNDS_WOUNDS_V1,FIVE_WOUNDS_CHAPLET_V1,fiveWoundsStep,fiveWoundsGroupProgress} from "./five-wounds-chaplet.v1.js";
 import {PRECIOUS_BLOOD_HISTORICAL_SOURCE_V1,PRECIOUS_BLOOD_HISTORICAL_PRAYERS_V1,PRECIOUS_BLOOD_MYSTERIES_V1,PRECIOUS_BLOOD_TOTALS_V1,preciousBloodMystery,preciousBloodPrayerAt} from "./precious-blood-chaplet.v1.js";
 import {PRIESTLY_INTERCESSION_PURPOSES_B19,priestlyIntercessionFor} from "./priestly-intercessions-b19.js";
@@ -2585,12 +2586,14 @@ function renderLibrary(){
  const historicalWorks=LIB.cat==='all'?prayerSupplementalLiveWorksForSubject(LIB.subject,q):[];
  const sourceDeepWorks=LIB.cat==='all'?prayerSevenSourceWorksForSubject(LIB.subject,q):[];
  const communionWorks=LIB.cat==='all'?redBookletCommunionLibraryLinksForSubject(LIB.subject,q):[];
- const communionSection=!communionWorks.length?'':(
+ const suscipeWorks=LIB.cat==='all'?redBookletSuscipeLibraryLinksForSubject(LIB.subject,q):[];
+ const privateCommunionWorks=[...communionWorks,...suscipeWorks];
+ const communionSection=!privateCommunionWorks.length?'':(
   '<section class="aoP435930LibraryRelated" data-ao-red-booklet-communion-library>'+
   '<h3>'+esc(L('Traditional Communion prayers','Prières traditionnelles de Communion'))+'</h3>'+
   '<p>'+esc(L('Open the complete prayer in its existing Communion reader. The 2013 booklet wording has not yet been compared.','Ouvrir la prière intégrale dans son lecteur de Communion. Le texte du livret de 2013 reste à comparer.'))+'</p>'+
-  '<div class="aoP435930ModuleGrid">'+communionWorks.map(work=>
-   '<button type="button" class="aoP435930ModuleCard" data-p435930-red-communion="'+esc(work.id)+'">'+
+  '<div class="aoP435930ModuleGrid">'+privateCommunionWorks.map(work=>
+   '<button type="button" class="aoP435930ModuleCard" data-'+(work.id==="ignatius_suscipe"?'p435930-red-suscipe':'p435930-red-communion')+'="'+esc(work.id)+'"'>'+
    moduleIcon(work.route)+'<small class="aoP435930ModuleKind">'+
    esc(L(work.phase==='before'?'BEFORE COMMUNION':'AFTER COMMUNION',
      work.phase==='before'?'AVANT LA COMMUNION':'APRÈS LA COMMUNION'))+'</small>'+
@@ -2637,9 +2640,9 @@ function renderLibrary(){
   '<div class="aoP435930Chips" role="group" aria-label="'+esc(L('Theological prayer families','Familles théologiques de prières'))+'">'+
   '<button type="button" data-p435930-lib-subject="all" aria-pressed="'+String(LIB.subject==='all')+'">'+esc(L('All subjects','Tous les sujets'))+'</button>'+
   PRAYER_SUBJECTS_V1.map(subject=>'<button type="button" data-p435930-lib-subject="'+subject.id+'" aria-pressed="'+String(LIB.subject===subject.id)+'">'+
-    esc(isFr()?subject.fr:subject.en)+' <small>'+(subjectCounts.counts[subject.id]+prayerSupplementalLiveWorksForSubject(subject.id).length +prayerSevenSourceWorksForSubject(subject.id).length+redBookletCommunionLibraryLinksForSubject(subject.id).length)+'</small></button>').join('')+
+    esc(isFr()?subject.fr:subject.en)+' <small>'+(subjectCounts.counts[subject.id]+prayerSupplementalLiveWorksForSubject(subject.id).length +prayerSevenSourceWorksForSubject(subject.id).length+redBookletCommunionLibraryLinksForSubject(subject.id).length+redBookletSuscipeLibraryLinksForSubject(subject.id).length)+'</small></button>').join('')+
   '</div><p class="aoP435930SourceNote">'+esc(L('Only accessible canonical and source-owned reader texts are included. Unverified research works are not shown as readable prayers.','Seuls les textes canoniques et les prières déjà accessibles dans leurs parcours d’origine sont inclus. Les œuvres de recherche non vérifiées ne sont pas présentées comme disponibles.'))+'</p></details>';
- return `${head(L('Prayer Library','Livre de prières'),`${Object.keys(DATA.prayers||{}).length} ${L('prayers','prières')}`)}<main class="aoP435930Body">${libraryOverviewGuide()}<label class="aoP435930Search"><span>${assetIcon('ao-ui-search')}</span><input type="search" data-p435930-lib-search value="${esc(LIB.q)}" placeholder="${esc(L('Search prayers','Rechercher une prière'))}"></label><div class="aoP435930Chips">${cats.map(([id,n])=>`<button type="button" class="${id===LIB.cat?'active':''}" data-p435930-lib-cat="${esc(id)}">${esc(n)}</button>`).join('')}</div>${subjectBrowse}<div class="aoP435930LibraryList" data-ao-prayer-subject-results="${esc(LIB.subject)}">${LIB.cat==="essentials"&&!q?claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_IDS_V1,prayers:DATA.prayers,esc,title:L("Essential Prayers","Prières essentielles"),artFor:releasedPrayerCardArtUrl}):(rows.length||!(historicalWorks.length+sourceDeepWorks.length+communionWorks.length)?renderLibraryEntryRows(rows,q):'')}</div>${communionSection}${historicalSection}${guidedSection}</main>`;
+ return `${head(L('Prayer Library','Livre de prières'),`${Object.keys(DATA.prayers||{}).length} ${L('prayers','prières')}`)}<main class="aoP435930Body">${libraryOverviewGuide()}<label class="aoP435930Search"><span>${assetIcon('ao-ui-search')}</span><input type="search" data-p435930-lib-search value="${esc(LIB.q)}" placeholder="${esc(L('Search prayers','Rechercher une prière'))}"></label><div class="aoP435930Chips">${cats.map(([id,n])=>`<button type="button" class="${id===LIB.cat?'active':''}" data-p435930-lib-cat="${esc(id)}">${esc(n)}</button>`).join('')}</div>${subjectBrowse}<div class="aoP435930LibraryList" data-ao-prayer-subject-results="${esc(LIB.subject)}">${LIB.cat==="essentials"&&!q?claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_IDS_V1,prayers:DATA.prayers,esc,title:L("Essential Prayers","Prières essentielles"),artFor:releasedPrayerCardArtUrl}):(rows.length||!(historicalWorks.length+sourceDeepWorks.length+privateCommunionWorks.length)?renderLibraryEntryRows(rows,q):'')}</div>${communionSection}${historicalSection}${guidedSection}</main>`;
 }
 function monthIndex(key){const d=dateObj(key);return d?d.getFullYear()*12+d.getMonth():null}
 function consecutive(records,needed){const done=records.filter(x=>x.complete).sort((a,b)=>a.date.localeCompare(b.date));if(!done.length)return 0;let c=1;for(let i=done.length-1;i>0;i--){const a=monthIndex(done[i].date),b=monthIndex(done[i-1].date);if(a-b===1)c++;else break}return Math.min(c,needed)}
@@ -4840,6 +4843,24 @@ function onClick(e){
   if(!DATA.prayers?.[id])return;
   pushView();LIB.open=id;LIB.language=null;PILOT_LORETO_GROUP=false;
   view='library';return render();
+ }
+ if(b.dataset.p435930RedSuscipe){
+  const work=RED_BOOKLET_SUSCIPE_LIBRARY_LINK_V1;
+  if(b.dataset.p435930RedSuscipe!==work.id||view!=='library'||LIB.open||
+     LIB.cat!=='all'||(LIB.subject!==work.subject&&!(LIB.subject==='all'&&LIB.q.trim())))return;
+  clearInternalPrayerRouteErrors();
+  const openSource=window.AO_PRAY_V435930?.open;
+  if(typeof openSource!=='function')return showInternalPrayerRouteError(b,work.route);
+  try{
+   const receipt=captureResume();
+   const opened=openSource(work.route,{dailySourcePrayer:work.sourceIds.en,
+    returnContext:PRAY_CTX,returnPrayerSnapshot:receipt});
+   if(opened!==true&&opened?.ok!==true)showInternalPrayerRouteError(b,work.route);
+  }catch(error){
+   console.error('Suscipe source reader entry failed',error);
+   showInternalPrayerRouteError(b,work.route);
+  }
+  return;
  }
  if(b.dataset.p435930RedCommunion){
   const work=redBookletCommunionLibraryLink(b.dataset.p435930RedCommunion);
