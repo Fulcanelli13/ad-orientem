@@ -75,6 +75,10 @@ try{
      name:x.name,path:x.path,prayerSourcePath:x.prayerSourcePath,rank:x.rank,
      inseparable:!!x.inseparable})),
     sourcePath:data?.sourcePath,
+    clementCorrections:(data?.sourceEditorialCorrections??[])
+      .filter(x=>x.id==="1962_CLEMENT_PAPAL_COMMON_1942_EDIT").length,
+    principalOrationIncipits:Object.fromEntries(["secrets","postcommunions"].map(k=>
+      [k,String(data?.[k]?.[0]?.lat??"").split("\\n")[0].slice(0,115)])),
     prayers:Object.fromEntries(groups.map(k=>[k,(data?.[k]??[]).map(x=>({
      lat:!!String(x?.lat??x?.la??"").trim(),en:!!String(x?.en??"").trim(),
      fr:!!String(x?.fr??"").trim(),sourcePath:x?.sourcePath??null}))])),
@@ -88,7 +92,7 @@ try{
   ["2026-11-10","Sancti/11-10","Sancti/11-10o","ORDINARY"],
   ["2026-11-11","Sancti/11-11","Sancti/11-11cc","ORDINARY"],
   ["2026-11-19","Sancti/11-19","Sancti/11-19o","ORDINARY"],
-  ["2026-11-23","Sancti/11-23","Sancti/11-23cc","SOURCE_FRENCH_HOLD"],
+  ["2026-11-23","Sancti/11-23","Sancti/11-23cc","CORRECTED_PAPAL_COMMON"],
   ["2026-11-24","Sancti/11-24","Sancti/11-24o","ORDINARY"],
   ["2026-11-26","Sancti/11-26","Sancti/11-26t","ORDINARY"],
   ["2026-12-02","Sancti/12-02","Tempora/Adv1-3","PRIVILEGED_ADVENT"],
@@ -112,14 +116,9 @@ try{
   for(const field of ["collects","secrets","postcommunions"]){
    assert.equal(f.prayers[field].length,2,date+" two original ordered source prayer groups");
   }
-  const isOrdinary=rule==="ORDINARY";
+  const isOrdinary=rule==="ORDINARY"||rule==="CORRECTED_PAPAL_COMMON";
   const isAdvent=rule==="PRIVILEGED_ADVENT";
   for(const [form,decision] of Object.entries(f.formDecisions)){
-   if(rule==="SOURCE_FRENCH_HOLD"){
-    assert.equal(decision.status,"UNVERIFIED",date+"/"+form+" incomplete original translation");
-    assert.equal(decision.reason,"ORATION_SOURCE_INCOMPLETE",date+"/"+form);
-    continue;
-   }
    const shouldInclude=form==="LOW"||isAdvent;
    const expectedCount=shouldInclude?2:1;
    assert.equal(decision.status,"CERTIFIED",date+"/"+form+": "+decision.reason);
@@ -138,8 +137,13 @@ try{
    }
   }
  }
- const held=findings.find(x=>x.date==="2026-11-23");
- assert.equal(held.prayers.secrets[0].fr,false,"Original Clement Secret remains untranslated");
- assert.equal(held.prayers.postcommunions[0].fr,false,"Original Clement Postcommunion remains untranslated");
- console.log("PASS: 11 exact original Roman 1962 witnesses; 10 source-complete dates across four forms; 23 November missing principal French source explicitly withheld.");
+ const corrected=findings.find(x=>x.date==="2026-11-23");
+ assert.equal(corrected.clementCorrections,1,"23 Nov exact source amendment did not reach original reader");
+ assert.equal(corrected.prayers.secrets[0].fr,true);
+ assert.equal(corrected.prayers.postcommunions[0].fr,true);
+ assert.match(corrected.principalOrationIncipits.secrets,/^Oblátis munéribus/);
+ assert.match(corrected.principalOrationIncipits.postcommunions,/^Refectióne sancta/);
+ assert.equal(corrected.prayers.secrets[1].fr,true,"St Felicity Secret unchanged");
+ assert.equal(corrected.prayers.postcommunions[1].fr,true,"St Felicity Postcommunion unchanged");
+ console.log("PASS: 11 exact original Roman 1962 witnesses; St Clement's 1942 Common restored in LAT/EN/FR; St Felicity Low-only orations retained.");
 }finally{await browser?.close();await new Promise(done=>server.close(done))}
