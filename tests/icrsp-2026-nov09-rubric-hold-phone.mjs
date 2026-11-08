@@ -172,20 +172,37 @@ try{
     await globalThis.AO_R17_BROWSER_ENTRY.enter();
     const preview=globalThis.AO_R17_NATIVE_READER_PREVIEW;
     return {mounted:Boolean(preview?.root?.isConnected),
-     cards:preview?.model?.totalCards??null};
+     cards:preview?.model?.totalCards??null,
+     preGospel:(preview?.model?.cards??[])
+      .filter(card=>card.sourceSectionId==="AO.CARD.006")
+      .map(card=>({title:card.title,
+       paragraphCount:card.paragraphs?.length??0,
+       sourceSectionId:card.sourceSectionId}))};
    });
    console.log("NOV09_NATIVE_ENTRY_RESULT "+JSON.stringify(entered));
    assert.equal(entered.mounted,true,"R17 entry resolved without mounting native reader");
-   assert.equal(entered.cards,65,"Unexpected native Mass card count after R17 entry");
+   // The curated 65-card source family permits one extra card only when the
+   // actual day's Proper has an independently sourced pre-Gospel chant cut
+   // (Gradual / Alleluia or Sequence); never pad to 66 unconditionally.
+   assert.ok([65,66].includes(entered.cards),
+    "Unexpected number of source-curated Mass cards after R17 entry");
+   assert.equal(entered.preGospel.length,entered.cards-64,
+    "Only the day's original source-backed pre-Gospel chant may add a card");
+   assert.ok(entered.preGospel.every(c=>c.paragraphCount>0),
+    "Pre-Gospel source cut must not be a phantom or empty card");
+   if(entered.cards===66){
+    assert.match(entered.preGospel[0].title,/Gradual/i);
+    assert.match(entered.preGospel[1].title,/Alleluia|Tract|Sequence/i);
+   }
    await page.waitForFunction(()=>Boolean(
-    globalThis.AO_R17_NATIVE_READER_PREVIEW?.model?.totalCards===65&&
+    [65,66].includes(globalThis.AO_R17_NATIVE_READER_PREVIEW?.model?.totalCards)&&
     typeof globalThis.AO_R17_NATIVE_READER_PREVIEW?.showSection==="function"&&
     globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId&&
     document.querySelector("#ao-r17-native-reader-preview [data-ao-reader-shell]")
    ),null,{timeout:65000});
    const reader=await page.evaluate(async(language)=>{
     const preview=globalThis.AO_R17_NATIVE_READER_PREVIEW;
-    if(!preview?.showSection||preview?.model?.totalCards!==65)
+    if(!preview?.showSection||![65,66].includes(preview?.model?.totalCards))
      throw Error("CANONICAL_NATIVE_READER_NOT_OPEN");
     const cards=preview.model.cards??[],roles={};
     for(const [source,group] of [
