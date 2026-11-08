@@ -34,7 +34,7 @@ const server=http.createServer(async(req,res)=>{
 await new Promise((ok,fail)=>{server.once("error",fail);server.listen(0,"127.0.0.1",ok)});
 const origin="http://127.0.0.1:"+server.address().port;
 const receipt={schema:"ao.office.native-prayer-door-phone.v1",
- scenarios:[],screenshots:[],publicTextReleased:false,success:false};
+ scenarios:[],screenshots:[],publicTextReleased:true,success:false};
 const browser=await chromium.launch({headless:true,args:["--no-sandbox"]});
 try{
  for(const width of [320,390]){
@@ -72,9 +72,10 @@ try{
   await office.locator('input[type="date"]').fill("2026-11-28");
   await office.locator('input[type="date"]').dispatchEvent("change");
   await office.locator('[data-office-hour="COMPLINE"]').click();
-  assert.match(await office.locator(".aoOfStatus").innerText(),/Source pilot prepared/i);
+  assert.match(await office.locator(".aoOfStatus").innerText(),/Latin Compline · available/i);
+  assert.equal(await office.getByRole("button",{name:"Read Latin Compline"}).count(),1);
   assert.match(await office.locator(".aoOfStatus").innerText(),/Office date: 2026-11-28/);
-  assert.match(await office.locator(".aoOfStatus").innerText(),/Reading enabled: no/);
+  assert.match(await office.locator(".aoOfStatus").innerText(),/Reading enabled: yes/);
   await office.locator('[data-office-hour="VESPERS"]').click();
   assert.match(await office.locator(".aoOfStatus").innerText(),/Office date: 2026-11-29/);
   assert.equal(officeSourceRequests.length,sourceBaseline,
@@ -114,7 +115,7 @@ try{
 
   assert.deepEqual(errors.filter(x=>/TypeError|SyntaxError|ReferenceError/.test(x)),[],
    "App exception after Office reader journey");
-  receipt.scenarios.push({width,validHours:8,compliantSourceHold:true,
+  receipt.scenarios.push({width,validHours:8,latinComplineReady:true,
    backToPrayer:true,backToHome:true,noUnapprovedSourceFetch:true,passed:true});
   await ctx.close();
  }
