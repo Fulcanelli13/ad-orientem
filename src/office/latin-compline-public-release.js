@@ -19,7 +19,7 @@ export const LATIN_COMPLINE_RELEASE_SCHEMA="ao.office.latin-compline-release.v1"
 export const LATIN_COMPLINE_RELEASE=Object.freeze({
  date:"2026-11-28",
  // Each date is certified independently; never infer an entire Advent week.
- approvedDates:Object.freeze(["2026-11-28","2026-12-05"]),
+ approvedDates:Object.freeze(["2026-11-28","2026-11-29","2026-11-30","2026-12-05"]),
  hour:"COMPLINE",calendarScope:"UNIVERSAL",
  sourceRevision:PIN,language:"la",
  // Not every 1961 Breviary prints the same Latin Psalter: Mame, Dessain and
@@ -31,6 +31,8 @@ export const LATIN_COMPLINE_RELEASE=Object.freeze({
  // Original 1961 Vulgata Saturday Psalter leaf has not yet been collated:
  exact1961EditionPsalterLeafVerified:false,
  ordinary1961SequenceReviewed:true,saturdayAppointmentReviewed:true,
+ sundayAppointmentReviewed:true,
+ sundayPrintedVulgate330WordsDualWitnessCollated:true,
  // A verbatim 1961 Mame Saturday Psalter leaf has NOT been obtained.
  // This release is not represented as a reproduction of that edition.
  psalter1961VerbatimCollated:false,
@@ -51,6 +53,28 @@ const empty=(reason)=>Object.freeze({
  availableLanguages:Object.freeze([]),
  sourceTextReleased:false,rightsApproved:false,publishable:false,published:false
 });
+const APPROVED_DATE_PROFILES=Object.freeze({
+ "2026-11-28":Object.freeze({
+  psalmDay:"Sabbato",weekday:"Sabbato",officeClass:"SUNDAY_FIRST_VESPERS",
+  reason:"FIRST_VESPERS_OF_ADVENT_SUNDAY_COMPLINE_SATURDAY_BR166_B",
+  printedPsalmDisplayFrames:41
+ }),
+ "2026-11-29":Object.freeze({
+  psalmDay:"Dominica",weekday:"Dominica",officeClass:"I_SUNDAY",
+  reason:"ADVENT_SUNDAY_COMPLINE_SUNDAY_BR166_H",
+  printedPsalmDisplayFrames:30
+ }),
+ "2026-11-30":Object.freeze({
+  psalmDay:"Dominica",weekday:"Feria II",officeClass:"II_FEAST",
+  reason:"ST_ANDREW_APOSTLE_II_CLASS_SUNDAY_COMPLINE_BR168_D",
+  printedPsalmDisplayFrames:30
+ }),
+ "2026-12-05":Object.freeze({
+  psalmDay:"Sabbato",weekday:"Sabbato",officeClass:"SUNDAY_FIRST_VESPERS",
+  reason:"FIRST_VESPERS_OF_ADVENT_SUNDAY_COMPLINE_SATURDAY_BR166_B",
+  printedPsalmDisplayFrames:41
+ })
+});
 export function latinComplineReleaseEligibility({
  date,hour="COMPLINE",calendarScope="UNIVERSAL"
 }={}){
@@ -59,17 +83,17 @@ export function latinComplineReleaseEligibility({
     calendarScope!==LATIN_COMPLINE_RELEASE.calendarScope)
   return empty("HOUR_DATE_OR_CALENDAR_OUTSIDE_LATIN_RELEASE");
  const appointment=reviewAdventIComplineAppointment(date);
- // Both released dates must be Saturday after Sunday First Vespers,
- // with the identical independently collated Psalm 87/102 and
- // Advent Alma Redemptoris section. No day-of-week inference.
- if(appointment.status!=="EXPLICIT_ROMAN_1960_APPOINTMENT_RESEARCH"||
-    appointment.appointment?.weekday!=="Sabbato"||
-    appointment.appointment?.psalmDay!=="Sabbato"||
+ // Every dated appointment has its own immutable rubrical certificate.
+ // Sunday and St Andrew use Sunday psalms; the two Saturdays still use
+ // Saturday psalms. Never equate a Sunday with the previous Saturday.
+ const profile=APPROVED_DATE_PROFILES[date];
+ if(!profile||appointment.status!=="EXPLICIT_ROMAN_1960_APPOINTMENT_RESEARCH"||
+    appointment.appointment?.weekday!==profile.weekday||
+    appointment.appointment?.psalmDay!==profile.psalmDay||
     appointment.appointment?.marianSection!=="Advent"||
-    appointment.appointment?.officeClass!=="SUNDAY_FIRST_VESPERS"||
-    appointment.appointment?.rubricalReason!==
-     "FIRST_VESPERS_OF_ADVENT_SUNDAY_COMPLINE_SATURDAY_BR166_B")
-  return empty("SATURDAY_ADVENT_COMPLINE_APPOINTMENT_CHANGED");
+    appointment.appointment?.officeClass!==profile.officeClass||
+    appointment.appointment?.rubricalReason!==profile.reason)
+  return empty("DATED_ADVENT_COMPLINE_APPOINTMENT_CHANGED");
  if(LATIN_COMPLINE_RELEASE.sourceRevision!==PIN||
     LATIN_COMPLINE_RELEASE.sourcePsalterFamily!=="VULGATA_BIBLIORUM"||
     LATIN_COMPLINE_RELEASE.target1961Edition!=="MAME_1961_VULGATA"||
@@ -78,6 +102,8 @@ export function latinComplineReleaseEligibility({
     !LATIN_COMPLINE_RELEASE.ordinary1961SequenceReviewed||
     !LATIN_COMPLINE_RELEASE.saturdayAppointmentReviewed||
     !LATIN_COMPLINE_RELEASE.printedVulgatePatternDualWitnessCollated||
+    !LATIN_COMPLINE_RELEASE.sundayAppointmentReviewed||
+    !LATIN_COMPLINE_RELEASE.sundayPrintedVulgate330WordsDualWitnessCollated||
     LATIN_COMPLINE_RELEASE.releaseBasis!=="ROMAN_1960_OFFICE_TRADITIONAL_VULGATE_LATIN"||
     !LATIN_COMPLINE_RELEASE.completeHourCollated||
     !LATIN_COMPLINE_RELEASE.rightsApproved||
@@ -88,6 +114,7 @@ export function latinComplineReleaseEligibility({
   date,hour,calendarScope,sourceRevision:PIN,
   releaseBasis:LATIN_COMPLINE_RELEASE.releaseBasis,
   exact1961PsalterLeafVerified:false,
+  psalmDay:profile.psalmDay,printedPsalmDisplayFrames:profile.printedPsalmDisplayFrames,
   language:"la",sourceTextReleased:true,rightsApproved:true,
   publishable:true,published:true
  });
@@ -117,7 +144,7 @@ export async function loadPublishedLatinCompline({
  if(projected.status!=="PRIVATE_SOURCE_TEXT_REVIEW"||
     projected.readingEventCount!==40||
     projected.sourceEventCount!==42||
-    projected.printedPsalmDisplayFrames!==41||
+    projected.printedPsalmDisplayFrames!==permission.printedPsalmDisplayFrames||
     projected.blessingAmensRestoredFromPinnedSource!==2||
     projected.ministerDialoguesResolved!==2||
     projected.presidingMinister!==minister||
