@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import {libraryVariantFamily} from "../src/pray/library-variant-groups.js";
 import {readFileSync} from "node:fs";
 import http from "node:http";
-import {readFile} from "node:fs/promises";
+import {readFile,mkdir} from "node:fs/promises";
 import {extname,resolve,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
@@ -489,6 +489,45 @@ try{
  await stationBody.focus();
  await page.keyboard.press("ArrowLeft");
  assert.equal(await stationProgress.getAttribute("aria-valuenow"),"1","Keyboard previous station failed");
+
+ // September 15's full Latin poem has its own 20-tercet folio at the end;
+ // it must never change the 13 traditional between-station excerpts.
+ await page.locator('#aoPray435930.open .aoP435930StationRail [data-p435930-station-step="13"]').click();
+ assert.equal(await stationProgress.getAttribute("aria-valuenow"),"14","Full Stabat folio requires the final Station");
+ const fullStabat=page.locator("#aoPray435930.open [data-ao-stabat-full-september]");
+ assert.equal(await fullStabat.count(),1,"Missing complete September Stabat after the Fourteenth Station");
+ await fullStabat.locator(":scope > summary").click();
+ assert.equal(await fullStabat.locator(".aoP435930StationStabatCompleteVerse").count(),20,
+  "Full September Stabat must have exactly twenty Latin tercets");
+ assert.match(await fullStabat.locator(".aoP435930StationStabatCompleteVerse").nth(17).innerText(),/Flammis ne urar/);
+ assert.match(await fullStabat.locator(".aoP435930StationStabatCompleteVerse").nth(18).innerText(),/Christe, cum sit hinc exire/);
+ assert.match(await fullStabat.locator(".aoP435930StationStabatCompleteVerse").nth(19).innerText(),/Quando corpus morietur/);
+ assert.ok((await fullStabat.locator('a[href*="extraordinaryform.org/masses/0915SevenSorrowsBVMM20.pdf"]').count())===1,"Source link missing");
+ await mkdir(resolve(root,"artifacts/pray-contemplative-daily"),{recursive:true});
+ for(const width of [320,390]){
+  await page.setViewportSize({width,height:844});
+  const geometry=await page.evaluate(()=>({client:document.documentElement.clientWidth,scroll:document.documentElement.scrollWidth}));
+  assert.ok(geometry.scroll<=geometry.client+2,width+"px complete Stabat folio causes horizontal overflow");
+  await fullStabat.locator(".aoP435930StationStabatCompleteVerse").first().scrollIntoViewIfNeeded();
+  await page.screenshot({path:resolve(root,"artifacts/pray-contemplative-daily/stabat-full-opening-"+width+".png"),animations:"disabled"});
+  await fullStabat.locator(".aoP435930StationStabatCompleteVerse").last().scrollIntoViewIfNeeded();
+  await page.screenshot({path:resolve(root,"artifacts/pray-contemplative-daily/stabat-full-closing-"+width+".png"),animations:"disabled"});
+ }
+
+ // The complete source must also be findable as a standalone Prayer Library
+ // work; users should not need to traverse fourteen Stations to access it.
+ await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.library",{returnContext:null}));
+ await page.locator('#aoPray435930.open [data-p435930-lib-search]').fill("Stabat");
+ const stabatLibrary=page.locator("#aoPray435930.open [data-ao-stabat-library-full]");
+ assert.equal(await stabatLibrary.count(),1,"Full Stabat not discoverable through Prayer Library search");
+ await stabatLibrary.locator(":scope > summary").click();
+ assert.equal(await stabatLibrary.locator(".aoP435930StationStabatCompleteVerse").count(),20,
+  "Standalone Library Stabat must expose all 20 Latin tercets");
+ assert.equal(await stabatLibrary.locator(".aoP435930StationStabatCompleteVerse").nth(17).getAttribute("lang"),null,
+  "Latin work uses one inherited language scope rather than fabricated translations");
+ assert.equal(await stabatLibrary.locator(".aoP435930StationFullStabat").getAttribute("lang"),"la");
+
+
 
  for(const [route,owner,nextTitle] of [
   ["pray.penitential_psalms","penitential","penitential-1"],
