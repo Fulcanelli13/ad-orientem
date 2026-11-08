@@ -12,13 +12,15 @@
     "operational_groups": 989,
     "selected_photographs": 177,
     "selected_links_supported_by_previous_evidence": 10,
-    "unlinked_museum_identified_selections": 158,
+    "unlinked_museum_identified_selections": 156,
     "identity_holds": 8,
-    "explicit_prohibited_merge_pairs": 5,
+    "explicit_prohibited_merge_pairs": 6,
     "rejected_research_source_records_kept_excluded": 1599,
     "registered_module_images_previously_checked_http200": 16,
     "new_selected_links_verified_phase49": 1,
-    "selected_links_total": 11
+    "selected_links_total": 14,
+    "selected_records_with_verified_group": 13,
+    "additional_selected_links_verified_phase49": 3
   },
   "verified_object_links": [
     {
@@ -159,6 +161,57 @@
       "photo_same_bytes_assumed": false,
       "owner_photo_replaced": false,
       "release_approved": false
+    },
+    {
+      "selected_id": "RECENT575::262",
+      "group_id": "CANONICAL::ART-nthony-van-yck-he-ance-hrust",
+      "institution": "KMSKA Antwerp",
+      "inventory": "297",
+      "subject": "Anthony van Dyck — The Lance Thrust / De lanssteek",
+      "status": "SAME_PHYSICAL_PAINTING_CONFIRMED_PHASE49",
+      "selected_photo_source": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Christ_on_the_Cross_between_the_Two_Thieves_-_WGA20235.jpg",
+      "existing_group_source": "https://commons.wikimedia.org/wiki/File:Anthony_van_Dyck_-_Christ_on_the_cross_between_the_two_criminals.jpg",
+      "institutional_catalogue": "https://vlaamsekunstcollectie.be/en/collectie/297",
+      "evidence": "Both Commons image records identify the KMSKA 1620 Le Coup de lance / The Lance Thrust, 429.6×310 cm, museum inventory 297; two different photograph versions and two previously separate artwork groups representing one physical painting.",
+      "photo_same_bytes_assumed": false,
+      "owner_photo_replaced": false,
+      "release_approved": false,
+      "new_confirmation_in_phase49": true
+    },
+    {
+      "selected_id": "RECENT575::220",
+      "group_id": "REVIEW::commons:65879554",
+      "institution": "Musée des Augustins, Toulouse",
+      "inventory": "2004 1 52",
+      "subject": "Sébastien Bourdon — Martyrdom of Saint Andrew",
+      "status": "SAME_PHYSICAL_PAINTING_CONFIRMED_PHASE49",
+      "selected_photo_source": "https://commons.wikimedia.org/wiki/File:S%C3%A9bastien_Bourdon_-_Le_Martyre_de_Saint_Andr%C3%A9_-_Mus%C3%A9e_des_Augustins_-_2004_1_52.jpg",
+      "existing_group_source": "https://commons.wikimedia.org/wiki/File:Augustins_-_Le_Martyre_de_Saint_Andr%C3%A9_-_S%C3%A9bastien_Bourdon_2004_1_52.jpg",
+      "institutional_catalogue": "https://pop.culture.gouv.fr/notice/joconde/05620000033",
+      "evidence": "French Ministry Joconde record identifies Sébastien Bourdon painting as museum inv.2004 1 52; both Commons photographs explicitly identify this museum accession. Group's artist field 'Didier Descouens' is photographer attribution, not painter; new image 5168px remains unselected, CC BY-SA 4.0, not automatically admitted.",
+      "group_artist_metadata_correction": "Didier Descouens is the photographer; painter Sébastien Bourdon",
+      "alternate_photo_license_review": "CC BY-SA 4.0, no replacement authorization",
+      "photo_same_bytes_assumed": false,
+      "owner_photo_replaced": false,
+      "release_approved": false,
+      "new_confirmation_in_phase49": true
+    },
+    {
+      "selected_id": "RECENT575::369",
+      "group_id": "REVIEW::commons:163857133",
+      "institution": "Musée des Beaux-Arts de Strasbourg",
+      "inventory": "44.2009.3.1",
+      "subject": "Andrea Vaccaro — Head of Saint John the Baptist",
+      "status": "SAME_PHYSICAL_PAINTING_CONFIRMED_PHASE49",
+      "selected_photo_source": "https://commons.wikimedia.org/wiki/File:Andrea_Vaccaro,_T%C3%AAte_de_Saint-Jean_Baptiste.jpg",
+      "existing_group_source": "https://commons.wikimedia.org/wiki/File:81_Andrea_Vaccaro%2C_T%C3%AAte_de_saint_Jean-Baptiste.jpg",
+      "institutional_catalogue": "https://commons.wikimedia.org/wiki/Category:Head_of_Saint_John_the_Baptist_(Andrea_Vaccaro)",
+      "evidence": "Both different Commons files are catalogued as visual reproductions of Andrea Vaccaro's Strasbourg painting inv.44.2009.3.1 (Joconde 00190087473), in the same structured-artwork category. Group 'DCHNwam' identifies uploader photographer, not painter.",
+      "group_artist_metadata_correction": "DCHNwam is uploader/photographer; painter Andrea Vaccaro",
+      "photo_same_bytes_assumed": false,
+      "owner_photo_replaced": false,
+      "release_approved": false,
+      "new_confirmation_in_phase49": true
     }
   ],
   "blocked_false_merges": [
@@ -198,6 +251,15 @@
       "museum_source_selected": "https://vlaamsekunstcollectie.be/en/collectie/297",
       "museum_source_group": "https://vlaamsekunstcollectie.be/en/collectie/406",
       "never_merge_on_title_alone": true
+    },
+    {
+      "selected_id": "RECENT575::076",
+      "group_id": "CANONICAL::ART-eter-aul-ubens-courging-at-the-illar-ntwerp-osary-cycle",
+      "status": "DIFFERENT_PHYSICAL_PAINTINGS",
+      "reason": "Rubens Flagellation study at MSK Ghent, inventory 1910-Z, 37.4×35.1 cm is a preparatory oil sketch; the Antwerp St Paul's Church Rosary cycle's Flagellation is 219×161 cm. Shared composition and painter do not make one physical work.",
+      "selected_source": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_Flagellation_of_Christ_-_WGA20432.jpg",
+      "group_source": "https://commons.wikimedia.org/wiki/File:Flagellation-of-christ-_Rubens.jpg",
+      "never_merge_on_title_alone": true
     }
   ],
   "hard_guards": {
@@ -212,7 +274,7 @@
   },
   "next": {
     "verified_total_cannot_be_increased_without_object_evidence": true,
-    "museum_identified_no_link": 158,
+    "museum_identified_no_link": 156,
     "museum_identity_holds": 8,
     "priority_holdings": [
       "Musée des Augustins Toulouse: 15",
@@ -225,13 +287,21 @@
   },
   "phase49_review": {
     "date": "2026-11-08",
-    "verified_new_object_pairs": [
-      "RECENT575::262 <-> REVIEW::kmska:zmaloe"
+    "new_selected_records_resolved": [
+      "RECENT575::262",
+      "RECENT575::220",
+      "RECENT575::369"
     ],
-    "new_false_merge_guards": [
-      "RECENT575::262 !<-> REVIEW::kmska:d7e5gq"
+    "new_crossregister_relationships": 4,
+    "two_groups_one_painting": "RECENT575::262 links to both REVIEW::kmska:zmaloe and CANONICAL::ART-nthony-van-yck-he-ance-hrust",
+    "more_false_merge_guards": [
+      "RECENT575::262 / REVIEW::kmska:d7e5gq",
+      "RECENT575::076 / CANONICAL::ART-eter-aul-ubens-courging-at-the-illar-ntwerp-osary-cycle"
     ],
-    "unchanged_identity_holds": 8,
-    "no_automatic_photo_promotion": true
+    "artist_metadata_issue": "Old source-group artist field sometimes contains credited photographer rather than painting creator.",
+    "no_auto_photo_promotion": true,
+    "no_gallery_release": true,
+    "museum_unlinked_left": 156,
+    "identity_holds_unchanged": 8
   }
 }
