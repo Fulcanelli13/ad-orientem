@@ -1,0 +1,98 @@
+{
+  "schema": "AO_SACRED_ART_BATCH1_GHENT_EXACT_PANEL_THREE_PHOTOGRAPHS_V1",
+  "created_at": "2026-11-08",
+  "policy": "RESEARCH_ONLY_NONHANDPICKED_COMMONS_EXCLUDED_FROM_AUTOMATIC_CURATED_GALLERY",
+  "canonical_artwork": {
+    "pending_id": "artwork-pending:07",
+    "title": "Adoration of the Mystic Lamb",
+    "artist": "Hubert and Jan van Eyck",
+    "panel": "central lower Adoration of the Lamb panel",
+    "part_of": "Ghent Altarpiece",
+    "collection": "St Bavo's Cathedral, Ghent",
+    "source": "https://canon.codart.nl/artwork/ghent-altarpiece/",
+    "wga_reference": "e/eyck_van/jan/09ghent/1open3/l3adora",
+    "existing_prayer_positions": 3,
+    "prior_selected_photo": null
+  },
+  "candidates": [
+    {
+      "id": "ghent-codart-2016",
+      "source_filename": "Ghent altarpiece, middle panel, by Hubert van Eyck.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Ghent_altarpiece,_middle_panel,_by_Hubert_van_Eyck.jpg",
+      "expected_dimensions": [
+        2735,
+        1564
+      ],
+      "source_provenance": "CODART",
+      "file_credit": "Photo source attributed to CODART in Commons metadata",
+      "declared_rights": "COMMONS_PD_ART_PDM",
+      "restoration_period": "HISTORICAL_PRE_2020_RESTORATION_OR_UNCONFIRMED",
+      "eligibility": "CANDIDATE_REQUIRES_PHOTO_SOURCE_RIGHTS_AND_EDITORIAL_SELECTION"
+    },
+    {
+      "id": "ghent-yorck-project",
+      "source_filename": "Hubert van Eyck 004.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Hubert_van_Eyck_004.jpg",
+      "expected_dimensions": [
+        6739,
+        3791
+      ],
+      "source_provenance": "The Yorck Project / DIRECTMEDIA, high-res file uploaded 2018",
+      "file_credit": "Yorck Project reproduction",
+      "declared_rights": "COMMONS_PD_ART_YORCK_GFDL_REFERENCE",
+      "restoration_period": "HISTORICAL_PRE_2020_RESTORATION",
+      "eligibility": "CANDIDATE_REQUIRES_VISUAL_AND_RIGHTS_REVIEW"
+    },
+    {
+      "id": "ghent-wga",
+      "source_filename": "Genter altar, lamb adoration - Jan van Eyck.jpg",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Genter_altar,_lamb_adoration_-_Jan_van_Eyck.jpg",
+      "expected_dimensions": [
+        2878,
+        1799
+      ],
+      "source_provenance": "Web Gallery of Art, derivative crop from another file",
+      "file_credit": "WGA photographic reproduction",
+      "declared_rights": "COMMONS_PD_ART_PDM",
+      "restoration_period": "HISTORICAL_PRE_2020_RESTORATION",
+      "eligibility": "CANDIDATE_REQUIRES_VISUAL_AND_RIGHTS_REVIEW"
+    }
+  ],
+  "comparison_requirements": [
+    "Exact original Ghent panel, not Coxcie's later copy",
+    "No auto-selected photo from Commons",
+    "Review pre/post 2020 restoration state and Lamb facial appearance; avoid claiming historical versions are restored originals",
+    "Object physically at St Bavo's, not official Art in Flanders licensed photograph",
+    "Check dimensions, SHA-256, original framing, color cast and digital processing separately",
+    "Compare full painting before any hero crop; crop requires specific owner approval"
+  ],
+  "license_notes": {
+    "artinflanders": "https://artinflanders.be/en/artwork/ghent-altarpiece-9",
+    "institutional_status": "CONTRACTUAL_RESTRICTIONS",
+    "not_a_license_override": "Commons faithful-reproduction PD-Art claims do not remove contractual licensing requirements of a separately supplied Art in Flanders photograph."
+  },
+  "cerezo_remaining_hold": {
+    "id": "artwork-pending:03",
+    "exact_museum": "Museo de Huesca",
+    "inventory": "00029",
+    "museum_catalogue": "https://ceres.mcu.es/pages/ResultSearch?MuseumsRolSearch=1&MuseumsSearch=&hipertextSearch=1&listaMuseos=null&search=advanced&simpleSearch=0&txtSimpleSearch=Lienzo+%28Material%29",
+    "only_exact_source_dimensions": [
+      567,
+      479
+    ],
+    "third_party_enlargement": "UPSCALED_FROM_SAME_567x479_BYTES_NOT_HIGH_QUALITY_SOURCE",
+    "museum_photo_rights": "UNKNOWN",
+    "source_photo_release_approved": false,
+    "status": "HOLD_NO_INDEPENDENT_HIRES_EXACT_PHOTOGRAPH"
+  },
+  "counts": {
+    "candidate_photographs": 3,
+    "existing_prayer_slots": 3,
+    "newly_approved_photographs": 0,
+    "new_app_photo_assets": 0,
+    "newly_published_paintings": 0
+  },
+  "publish": false,
+  "owner_selected_specific_photo": false,
+  "exact_photo_legal_review_pending": true
+}
