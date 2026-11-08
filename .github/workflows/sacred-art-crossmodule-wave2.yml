@@ -4,8 +4,12 @@ on:
     paths:
       - 'src/art/sacred-art-crossmodule-links-v1.js'
       - 'src/home/c3-gallery.js'
+      - 'src/home/sacred-art-gallery-targets.js'
+      - 'src/home/browser-entry.js'
+      - 'src/home/c3-styles.js'
       - 'src/home/today-h4-view.js'
       - 'tests/sacred-art-crossmodule-links-wave2.mjs'
+      - 'tests/sacred-art-gallery-deep-links-wave3.mjs'
       - '.github/workflows/sacred-art-crossmodule-wave2.yml'
   push:
     branches:
@@ -13,8 +17,12 @@ on:
     paths:
       - 'src/art/sacred-art-crossmodule-links-v1.js'
       - 'src/home/c3-gallery.js'
+      - 'src/home/sacred-art-gallery-targets.js'
+      - 'src/home/browser-entry.js'
+      - 'src/home/c3-styles.js'
       - 'src/home/today-h4-view.js'
       - 'tests/sacred-art-crossmodule-links-wave2.mjs'
+      - 'tests/sacred-art-gallery-deep-links-wave3.mjs'
       - '.github/workflows/sacred-art-crossmodule-wave2.yml'
 permissions:
   contents: read
@@ -29,6 +37,8 @@ jobs:
           node-version: '22'
       - name: Verify Rosary, Bible Atlas, Mass and Calendar identities
         run: node tests/sacred-art-crossmodule-links-wave2.mjs
+      - name: Verify released-gallery exact destination handoffs
+        run: node tests/sacred-art-gallery-deep-links-wave3.mjs
       - name: Verify existing 989 / 267 registry and released gallery
         run: |
           node tests/sacred-art-category-match-wave1.mjs
@@ -37,6 +47,8 @@ jobs:
         run: |
           node --check src/art/sacred-art-crossmodule-links-v1.js
           node --check src/home/c3-gallery.js
+          node --check src/home/sacred-art-gallery-targets.js
+          node --check src/home/browser-entry.js
           node --check src/home/today-h4-view.js
       - name: Build GitHub Pages preview without research JSON
         run: |
