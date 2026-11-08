@@ -93,7 +93,10 @@ export const JULY07_REFERENCE_CSS=String.raw`
  background:transparent!important;color:var(--ao-text-primary,#eee4d8)
 }
 .ao-proper-reference-staff svg{
- display:block;width:100%;max-width:100%;height:auto;color:inherit
+ display:block;width:100%;max-width:100%;height:auto;color:inherit;
+ /* Exsurge paints some score glyphs with explicit black SVG attributes.
+    Normalize those actual pixels to warm liturgical ink on the dark reader. */
+ filter:brightness(0) invert(.9)
 }
 .ao-proper-reference-label{
  grid-column:2;grid-row:2;display:block;min-width:0;
@@ -131,6 +134,9 @@ export const JULY07_REFERENCE_CSS=String.raw`
 .ao-proper-reference-error{grid-column:2}
 .ao-proper-reference-zoom .ao-proper-reference-wide{
  background:#0b1018;color:#ece9e1
+}
+.ao-proper-reference-zoom .ao-proper-reference-wide svg{
+ filter:brightness(0) invert(.9)
 }
 @media(max-width:480px){
  .ao-proper-reference-notation{
