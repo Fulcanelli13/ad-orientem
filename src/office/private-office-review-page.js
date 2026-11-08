@@ -33,7 +33,7 @@ function renderFrame(d,host,frame,position,total,mode){
   columns.append(col);
  }
  host.append(columns);
- host.append(txt(d,"small",frame.sourceId,"aoOfProvenance"));
+ host.append(txt(d,"small",frame.sourceId||"Editorial research note · no original text witness","aoOfProvenance"));
 }
 export function mountPrivateOfficeReview(root,{win=globalThis,fetchSource=win.fetch?.bind(win),
  readUniversalWitness=null}={}){
@@ -73,6 +73,7 @@ export function mountPrivateOfficeReview(root,{win=globalThis,fetchSource=win.fe
  }
  function invalidate(){
   serial++;active=null;section.replaceChildren();previous.disabled=next.disabled=true;
+  load.disabled=false;
  }
  async function loadPreview(){
   invalidate();let token=serial;load.disabled=true;
