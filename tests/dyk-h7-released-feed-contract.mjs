@@ -1,10 +1,42 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
-import {dykPublishedCandidates,dykPublishedPick,dykPublishedModel,dykPublishedMarkup,dykHomeRotationSlot,DYK_GLOSSARY_FALLBACK_IDS} from "../src/home/dyk-published-feed.js";
+import {dykPublishedCandidates,dykPublishedPick,dykPublishedModel,dykPublishedMarkup,dykHistoricalCandidates,dykHistoricalModel,dykHomeRotationSlot,DYK_GLOSSARY_FALLBACK_IDS} from "../src/home/dyk-published-feed.js";
 const original=JSON.parse(readFileSync(
  "data/research/did-you-know/dyk-r34-high-signal-24-editorial-selection.v1.json","utf8"));
 import {HOME_DYK_GLOSSARY_IDS,HOME_DYK_GLOSSARY_FACTS,homeDidYouKnowSelect} from "../src/home/did-you-know-glossary.js";
 const clone=x=>JSON.parse(JSON.stringify(x));
+
+const history=JSON.parse(readFileSync(
+ "data/did-you-know/weiser-historical-20-publication.v1.json","utf8"));
+const histRows=dykHistoricalCandidates(history,"2026-11-08");
+assert.equal(histRows.length,20,"All 20 historically scoped bilingual facts must pass release gates");
+assert.equal(new Set(histRows.map(x=>x.id)).size,20);
+assert.equal(new Set(histRows.map(x=>x.source_id)).size,20);
+for(const row of histRows){
+ assert.ok(row.pilot_home_copy.en.length>25&&row.pilot_home_copy.fr.length>25);
+ assert.equal(row.historical_local_only,true);
+ assert.equal(row.source.original_image_checked,true);
+ assert.equal(row.semantic_novelty_reviewed,true);
+ assert.equal(row.source.source_record_id,row.source_id);
+ assert.ok(row.source.pdf_pages_1based.every(p=>Number.isInteger(p)&&p>0&&p<=384));
+ const model=dykHistoricalModel(history,row.id,"2026-11-08","fr");
+ assert.equal(model.fact,row.pilot_home_copy.fr);
+ assert.ok(dykPublishedMarkup(model).includes("data-dyk-published"));
+ assert.ok(dykPublishedMarkup(model).includes("#page="));
+}
+assert.deepEqual(dykHistoricalCandidates({...history,release_stage:"RESEARCH_ONLY"},"2026-11-08"),[]);
+for(const property of ["editorial_approval","release_authorized","semantic_novelty_reviewed","historical_local_only"]){
+ const tampered=clone(history);tampered.records[0][property]=false;
+ assert.equal(dykHistoricalCandidates(tampered,"2026-11-08").length,19,
+  "No publication when "+property+" is withheld");
+}
+for(const property of ["original_image_checked","deep_link_checked"]){
+ const tampered=clone(history);tampered.records[0].source[property]=false;
+ assert.equal(dykHistoricalCandidates(tampered,"2026-11-08").length,19,
+  "No publication when "+property+" is withheld");
+}
+assert.equal(dykHistoricalCandidates(history,"2026-11-31").length,0);
+
 // Every new public teaser must resolve to an existing source-backed bilingual
 // Glossary entry and must never silently expose draft research as public copy.
 const gloss=JSON.parse(readFileSync("data/glossary/concepts-151-300.v1.json","utf8"));
@@ -82,6 +114,7 @@ function alignedDates(size,cycles=1){
 }
 for(const [published,poolSize] of [
  [[],DYK_GLOSSARY_FALLBACK_IDS.length],
+ [histRows.map(x=>x.id),DYK_GLOSSARY_FALLBACK_IDS.length+20],
  [["DYK-M04-CANON-021","DYK-M04-CANON-022","DYK-M04-CANON-047","DYK-M04-CANON-058"],DYK_GLOSSARY_FALLBACK_IDS.length+4]
 ]){
  const cycle=alignedDates(poolSize);
