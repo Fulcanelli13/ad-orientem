@@ -735,6 +735,26 @@ try{
      {waitUntil:"networkidle",timeout:55000});
    await page.waitForFunction(()=>document.documentElement.dataset.harnessReady==="true",
      null,{timeout:25000});
+   // Real 65-card Ordo: an appointed Proper must display its square
+   // notation BEFORE opening Settings or the separate Schola menu.
+   await page.evaluate(()=>{
+     const api=window.__AO_PHONE_PREVIEW;
+     const card=api.model.cards.find(c=>c.title==="Introit");
+     assertCard(card,"Epiphany Introit absent");
+     api.showSequence(card.sequence);
+     function assertCard(item,message){if(!item)throw new Error(message)}
+   });
+   await page.waitForFunction(()=>!!document.querySelector(
+     '.ao-reader-paragraph [data-reference-score="GREGOBASE-403"][data-reference-ready="true"] svg'),
+     null,{timeout:20000});
+   assert.equal(await page.locator("[data-reader-chant-preview]").getAttribute("aria-pressed"),"true",
+     "Epiphany notation was hidden behind the reader's preference control");
+   assert.equal(await page.locator('[data-reference-score="GREGOBASE-403"]').getAttribute("data-approved"),"false",
+     "Auto-visible Epiphany score must remain provisional");
+   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false,
+     "Epiphany default inline score overflows "+width+"px");
+   await page.screenshot({path:resolve(out,"ordo-epiphany-default-inline-"+width+".png"),
+     animations:"disabled"});
    const epiphanyClock=await page.evaluate(()=>({
      priest:window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId,
      cue:window.__AO_PHONE_PREVIEW.getActiveCue(),
@@ -785,6 +805,27 @@ try{
      {waitUntil:"networkidle",timeout:55000});
    await page.waitForFunction(()=>document.documentElement.dataset.harnessReady==="true",
      null,{timeout:25000});
+   // 8 December source-bound music must be present in the prayer column
+   // without visiting Music Plan, Schola, or the notation-preferences panel.
+   await page.evaluate(()=>{
+     const api=window.__AO_PHONE_PREVIEW;
+     const card=api.model.cards.find(c=>c.title==="Introit");
+     if(!card)throw new Error("Immaculate Conception Introit absent");
+     api.showSequence(card.sequence);
+   });
+   await page.waitForFunction(()=>!!document.querySelector(
+     '.ao-reader-paragraph [data-reference-score="GREGOBASE-622"][data-reference-ready="true"] svg'),
+     null,{timeout:20000});
+   assert.equal(await page.locator("[data-reader-chant-preview]").getAttribute("aria-pressed"),"true",
+     "Immaculate Conception inline score requires hidden opt-in");
+   assert.equal(await page.locator('[data-reference-score="GREGOBASE-622"]').getAttribute("data-approved"),"false",
+     "Original 1961 transcription is not fully musically approved");
+   assert.equal(await page.locator('[data-reference-score="GREGOBASE-655"]').count(),0,
+     "Wrong Introit mode / psalm was selected");
+   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false,
+     "Immaculate Conception default score overflows "+width+"px");
+   await page.screenshot({path:resolve(out,"ordo-immaculate-default-inline-"+width+".png"),
+     animations:"disabled"});
    const immaculateBefore=await page.evaluate(()=>({
      priest:window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId,
      cue:window.__AO_PHONE_PREVIEW.getActiveCue(),
