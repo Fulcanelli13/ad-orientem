@@ -77,6 +77,21 @@ try{
     approved:marks.map(m=>m.dataset.approved),
     staffSvg:marks.filter(m=>m.querySelector(".ao-proper-reference-staff svg")).length,
     referenceScores:marks.map(m=>m.dataset.referenceScore),
+    acPresentation:marks.map(m=>{
+      const mark=m.querySelector(".ao-proper-reference-mark");
+      const expand=m.querySelector(".ao-proper-reference-expand");
+      const staff=m.querySelector(".ao-proper-reference-staff");
+      const style=staff?getComputedStyle(staff):null;
+      return {
+       marker:mark?.textContent??"",
+       markerColor:mark?getComputedStyle(mark).color:null,
+       directTap:expand?.contains(staff)===true,
+       staffBackground:style?.backgroundColor??null,
+       label:m.querySelector(".ao-proper-reference-label")?.textContent?.trim()??"",
+       wrapperWidth:m.clientWidth,staffWidth:staff?.clientWidth??0,
+       parentWidth:m.parentElement?.clientWidth??0
+      };
+     }),
     literalLatin:host?.querySelector('[data-cue-id="AO.SM.C0138"] .ao-line-primary')
       ?.textContent?.trim()??null,
     sourceMacros:window.__AO_PHONE_PREVIEW?.sourceModel?.totalCards,
@@ -108,6 +123,25 @@ try{
     "The original bilingual prayer must remain");
    assert.equal(after.sourceMacros,30,"No change to the original Mass macro source");
    assert.ok(after.width<=after.viewport+1,"No horizontal phone overflow");
+   assert.ok(after.acPresentation.every(x=>["℣","℟","♫"].includes(x.marker)),
+    "A/C must show the liturgical role beside the score");
+   assert.ok(after.acPresentation.every(x=>x.directTap),
+    "Tap-to-enlarge must attach to the staff itself, not a boxed secondary button");
+   assert.ok(after.acPresentation.every(x=>
+     x.staffBackground==="rgba(0, 0, 0, 0)"||x.staffBackground==="transparent"),
+    "Claude A/C unboxed presentation must not return to the grey/white score panel");
+   assert.ok(after.acPresentation.every(x=>x.label.includes("1961")&&x.label.length<70),
+    "Small provenance copy, no oversized review-workbench metadata");
+   assert.ok(after.acPresentation.every(x=>x.staffWidth>0&&x.wrapperWidth>0),
+    "Source score must occupy the prayer's available reading column");
+   // The A/C score surface opens a full-size vector rendering.
+   await page.locator(".ao-proper-reference-expand").first().click();
+   await page.waitForFunction(()=>Boolean(document.querySelector(
+     ".ao-proper-reference-zoom[open] .ao-proper-reference-wide svg")),null,
+     {timeout:15000});
+   await page.locator(".ao-proper-reference-zoom header button").click();
+   assert.equal(await page.locator(".ao-proper-reference-zoom").count(),0,
+     "Closing zoom returns to the same canonical Mass card");
    // Capture the actual Ordo content, not the still-open preferences sheet.
    await page.click("[data-reader-preferences-close]");
    assert.equal(await page.locator('[data-role="mass-preferences"]').getAttribute("data-open"),"false");
