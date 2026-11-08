@@ -266,19 +266,21 @@ test("1961 §147 and Office §56: last-prayer Compline substitutes examen for ON
  assert.equal(projectComplineRecitation(raw,{minister:"UNKNOWN"}).status,"WITHHELD");
 });
 
-test("published Saturday Latin Compline loads 40 complete 1960-rubric moments from pinned 21-file source",async()=>{
- const permission=latinComplineReleaseEligibility({date:"2026-11-28"});
+test("both published Saturdays load complete 40-moment Latin Compline across both contexts and ministers",async()=>{
+ for(const date of ["2026-11-28","2026-12-05"]){
+ const permission=latinComplineReleaseEligibility({date});
  assert.equal(permission.status,"ELIGIBLE");
  assert.equal(permission.exact1961PsalterLeafVerified,false);
  for(const minister of [COMPLINE_MINISTER.NON_PRIEST,COMPLINE_MINISTER.PRIEST]){
   for(const context of [COMPLINE_CONTEXT.FINAL_PRAYER,COMPLINE_CONTEXT.OTHER_TIME]){
    const transport=source();
    const r=await loadPublishedLatinCompline({
-    date:"2026-11-28",context,minister,fetchSource:transport.fetchSource
+    date:date,context,minister,fetchSource:transport.fetchSource
    });
    assert.equal(r.status,"PUBLIC_LATIN_COMPLINE",r.reason);
    assert.equal(r.hour,"COMPLINE");
-   assert.equal(r.civilDate,"2026-11-28");
+   assert.equal(r.civilDate,date);
+   assert.equal(r.releaseDate,date);
    assert.equal(r.published,true);
    assert.equal(r.liturgicallyCertified,true);
    assert.equal(r.rightsApproved,true);
@@ -307,9 +309,10 @@ test("published Saturday Latin Compline loads 40 complete 1960-rubric moments fr
    assert.ok(transport.calls.every(url=>url.includes("/Latin/")));
   }
  }
+ }
 });
 test("unsupported public Office dates never fetch or invent source words",async()=>{
- for(const date of ["2026-11-27","2026-11-29","2026-12-05","2026-12-06"]){
+ for(const date of ["2026-11-27","2026-11-29","2026-11-30","2026-12-01","2026-12-02","2026-12-03","2026-12-04","2026-12-06"]){
   const transport=source();
   const r=await loadPublishedLatinCompline({date,fetchSource:transport.fetchSource});
   assert.equal(r.status,"WITHHELD");
