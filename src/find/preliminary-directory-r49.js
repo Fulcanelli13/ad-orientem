@@ -1,5 +1,6 @@
 import { CL2_PHYSICAL_SITE_INDEX_URL,projectCL2PhysicalDirectory } from "./cl2-physical-directory.js";
 import {matchesPublicCL27Facets} from "./cl27-public-facets.js";
+import {CL27_SITE_CONTACT_URL,attachPublishedSiteContactEvidence} from "./tlm-site-contact-evidence.js";
 import {
   CL27_PUBLIC_CELEBRATION_URL,attachPublishedCelebrationEvidence,tlmCelebrationEvidenceClass,
 } from "./tlm-celebration-evidence.js";
@@ -216,7 +217,17 @@ export async function loadPreliminaryR49({fetchImpl=fetch}={}){
   // closed. Never publish a partial or incorrectly joined liturgical claim.
   const claims=await fetchImpl(CL27_PUBLIC_CELEBRATION_URL,{headers:{accept:"application/json"}});
   if(!claims?.ok)throw new Error("CL27 exact-celebration evidence manifest unavailable: HTTP "+claims?.status);
-  cache=attachPublishedCelebrationEvidence(canonical,await claims.json());
+  const liturgical=attachPublishedCelebrationEvidence(canonical,await claims.json());
+  // Site-only contact evidence has an independent exact-identity release gate.
+  // If the new static file is unavailable in an older cached site snapshot,
+  // omit these OPTIONAL contact details without losing all 2,582 churches.
+  // Never substitute historical Mass times or any inferred community status.
+  try{
+    const contacts=await fetchImpl(CL27_SITE_CONTACT_URL,{headers:{accept:"application/json"}});
+    cache=contacts?.ok?attachPublishedSiteContactEvidence(liturgical,await contacts.json()):liturgical;
+  }catch{
+    cache=liturgical;
+  }
   return cache;
 }
 /**
