@@ -27,7 +27,9 @@ const paths=[
  "data/did-you-know/dyk-h100-pitre-ritus-24-publication.v1.json",
  "data/did-you-know/dyk-h125-multisource-25-publication.v1.json",
  "data/did-you-know/dyk-h150-originals-25-publication.v1.json",
- "data/did-you-know/dyk-h175-multisource-25-publication.v1.json"
+ "data/did-you-know/dyk-h175-multisource-25-publication.v1.json",
+ "data/did-you-know/dyk-h200-three-sources-25-publication.v1.json",
+ "src/home/dyk-h200-release.js"
 ];
 // The Pages build deliberately installs its noindex meta into the release
 // artifact without changing checked-in index.html. Compare public bytes with

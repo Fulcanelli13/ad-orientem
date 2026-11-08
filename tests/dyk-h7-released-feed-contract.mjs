@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
-import {dykPublishedCandidates,dykPublishedPick,dykPublishedModel,dykPublishedMarkup,dykHistoricalCandidates,dykHistoricalModel,dykWeiser16Candidates,dykWeiser16Model,dykWeiserSecond16Candidates,dykWeiserSecond16Model,dykMixed24Candidates,dykMixed24Model,dyk125Candidates,dyk125Model,dyk150Candidates,dyk150Model,dyk175Candidates,dyk175Model,dykHomeRotationSlot,DYK_GLOSSARY_FALLBACK_IDS} from "../src/home/dyk-published-feed.js";
+import {dykPublishedCandidates,dykPublishedPick,dykPublishedModel,dykPublishedMarkup,dykHistoricalCandidates,dykHistoricalModel,dykWeiser16Candidates,dykWeiser16Model,dykWeiserSecond16Candidates,dykWeiserSecond16Model,dykMixed24Candidates,dykMixed24Model,dyk125Candidates,dyk125Model,dyk150Candidates,dyk150Model,dyk175Candidates,dyk175Model,dyk200Candidates,dyk200Model,dykHomeRotationSlot,DYK_GLOSSARY_FALLBACK_IDS} from "../src/home/dyk-published-feed.js";
 const original=JSON.parse(readFileSync(
  "data/research/did-you-know/dyk-r34-high-signal-24-editorial-selection.v1.json","utf8"));
 import {HOME_DYK_GLOSSARY_IDS,HOME_DYK_GLOSSARY_FACTS,homeDidYouKnowSelect} from "../src/home/did-you-know-glossary.js";
@@ -326,6 +326,62 @@ assert.equal(dyk175Candidates(badRitus175,"2026-11-08").length,24);
 
 
 
+
+const h200=JSON.parse(readFileSync(
+ "data/did-you-know/dyk-h200-three-sources-25-publication.v1.json","utf8"));
+const h200Rows=dyk200Candidates(h200,"2026-11-08");
+assert.equal(h200Rows.length,25,"Every H200 source, language and publication gate must pass");
+for(const [family,count] of [["CATHOLIC_ENCYCLOPEDIA_HISTORICAL",8],
+ ["RURAL_LIFE_PRAYERBOOK_1956",10],["ROMAN_MASS_1962",7]]){
+ assert.equal(h200Rows.filter(x=>x.source_family===family).length,count);
+}
+const all200=[...all175,...h200Rows];
+assert.equal(all200.length,176,"200 facts = 24 Glossary + 176 individually released");
+assert.equal(new Set(all200.map(x=>x.id)).size,176);
+assert.equal(new Set(all200.map(x=>x.source_id)).size,176,"H200 source IDs must not repeat earlier releases");
+const previouslyPublishedEnglish=new Set(all175.map(x=>x.pilot_home_copy.en.trim().toLowerCase()));
+for(const row of h200Rows){
+ assert.ok(!previouslyPublishedEnglish.has(row.pilot_home_copy.en.trim().toLowerCase()));
+ for(const language of ["en","fr"]){
+  const model=dyk200Model(h200,row.id,"2026-11-08",language);
+  assert.equal(model.fact,row.pilot_home_copy[language]);
+  const html=dykPublishedMarkup(model);
+  assert.ok(html.includes("data-dyk-published"));
+  assert.equal(model.links.length,1);
+  if(row.source.type==="pdf"){
+   assert.equal(model.links[0].url,row.source.url+"#page="+row.source.pdf_pages_1based[0]);
+  }else{
+   assert.equal(model.links[0].page,null);
+   assert.equal(model.links[0].url,row.source.url);
+   assert.equal(model.links[0].label,language==="fr"?"Consulter l'article ou la section":"Read original article or section");
+   assert.ok(html.includes(language==="fr"?"Consulter l&#39;article ou la section":"Read original article or section"),"Source dialog escapes the French apostrophe");
+  }
+ }
+ assert.equal(row.source.source_record_id,row.source_id);
+}
+assert.deepEqual(dyk200Candidates({...h200,release_stage:"RESEARCH_ONLY"},"2026-11-08"),[]);
+assert.deepEqual(dyk200Candidates(h200,"2026-11-31"),[]);
+assert.deepEqual(dyk200Candidates(h200,"2026-99-99"),[]);
+for(const [group,key] of [["row","editorial_approval"],["row","release_authorized"],
+ ["row","semantic_novelty_reviewed"],["row","published"],
+ ["copy","final_english_signoff"],["copy","final_french_signoff"],
+ ["source","deep_link_checked"]]){
+ const broken=clone(h200),row=broken.records[0];
+ if(group==="row")row[key]=false;
+ else if(group==="copy")row.pilot_home_copy[key]=false;
+ else row.source[key]=false;
+ assert.equal(dyk200Candidates(broken,"2026-11-08").length,24,
+  "Unapproved H200 record must never publish: "+group+"."+key);
+}
+for(const [index,key,value] of [
+ [0,"url","https://invalid.example/fake"],[8,"original_text_checked",false],
+ [18,"pdf_pages_1based",[90]],[18,"supporting_event_ids",[]]]){
+ const broken=clone(h200);broken.records[index].source[key]=value;
+ assert.equal(dyk200Candidates(broken,"2026-11-08").length,24,
+  "Misattributed H200 source or unsupported 1962 rubric must fail closed: "+key);
+}
+
+
 // Every new public teaser must resolve to an existing source-backed bilingual
 // Glossary entry and must never silently expose draft research as public copy.
 const gloss=JSON.parse(readFileSync("data/glossary/concepts-151-300.v1.json","utf8"));
@@ -410,6 +466,7 @@ for(const [published,poolSize] of [
  [all125.map(x=>x.id),125],
  [all150.map(x=>x.id),150],
  [all175.map(x=>x.id),175],
+  [all200.map(x=>x.id),200],
  [["DYK-M04-CANON-021","DYK-M04-CANON-022","DYK-M04-CANON-047","DYK-M04-CANON-058"],DYK_GLOSSARY_FALLBACK_IDS.length+4]
 ]){
  const cycle=alignedDates(poolSize);
@@ -428,4 +485,4 @@ const expanded=clone(data);
 expanded.records.push({id:"DYK-UNRELEASED-PLACEHOLDER",editorial_approval:false,release_authorized:false});
 assert.equal(dykPublishedCandidates(expanded,"2026-11-02").length,1);
 
-console.log("PASS H7 175-fact Discovery: 24 Glossary + 52 Weiser + 35 Pitre + 36 Ritus + 21 rural blessings + 7 other, original R34 held, bilingual original-page links and nonrepeating rotation");
+console.log("PASS H7 200-fact Discovery: 24 Glossary plus 176 approved EN/FR historical, cultural and rubrical facts, original R34 held, bilingual original-page links and nonrepeating rotation");
