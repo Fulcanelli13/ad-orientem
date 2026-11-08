@@ -8,6 +8,9 @@ on:
       - 'data/office/research/advent-i-2026-universal-commemoration.json'
       - 'tests/fixtures/office/**'
       - 'tests/divine-office-private-phone-browser.mjs'
+      - 'tests/divine-office-native-prayer-phone.mjs'
+      - 'src/pray/browser-entry.js'
+      - 'src/pray/lazy-module-registry.js'
       - '.github/workflows/divine-office-private-phone-browser.yml'
   workflow_dispatch:
 
@@ -30,11 +33,15 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - name: Run original-text Compline and First Vespers at 320/390
         run: node tests/divine-office-private-phone-browser.mjs
+      - name: Exercise native Prayer door, Office selector and App back navigation
+        run: node tests/divine-office-native-prayer-phone.mjs
       - name: Upload private phone screenshots and acceptance receipt
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: divine-office-private-phone-320-390
-          path: artifacts/divine-office-private-phone/
+          path: |
+            artifacts/divine-office-private-phone/
+            artifacts/divine-office-native-phone/
           if-no-files-found: warn
           retention-days: 14
