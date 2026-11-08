@@ -24,7 +24,8 @@ function hold(reason){return Object.freeze({
 function textsValid(frames){
  return Array.isArray(frames)&&frames.length>40&&frames.length<300&&
  frames.every(f=>f&&typeof f.kind==="string"&&
-  typeof f.sourceId==="string"&&f.sourceId.length>0&&
+  (typeof f.sourceId==="string"&&f.sourceId.length>0||
+    f.kind==="RESEARCH_CALENDAR_NOTICE"&&f.sourceId===null)&&
   LANGUAGES.every(l=>Array.isArray(f.texts?.[l])&&f.texts[l].length>0&&
    f.texts[l].every(t=>typeof t==="string"&&t.length>0&&t.length<20000)));
 }
