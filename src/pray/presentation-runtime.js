@@ -52,6 +52,7 @@ import {updateDevotionalProgress,devotionalProgressMarkup} from "./devotional-pr
 import {angelusCommunalParts} from "./angelus-folio-recitation.js";
 import {internalPrayerView,supportedDirectPrayerRoute} from "./internal-route-owner.js";
 import {renderLittleCrownB30} from "./little-crown-presentation-b30.js";
+import {PRAYER_SUBJECTS_V1,prayerSubjectsForLibrary,prayerSubjectCounts} from "./prayer-subject-index.v1.js";
 import {FIVE_WOUNDS_SOURCE_V1,FIVE_WOUNDS_WOUNDS_V1,FIVE_WOUNDS_CHAPLET_V1,fiveWoundsStep,fiveWoundsGroupProgress} from "./five-wounds-chaplet.v1.js";
 import {PRECIOUS_BLOOD_HISTORICAL_SOURCE_V1,PRECIOUS_BLOOD_HISTORICAL_PRAYERS_V1,PRECIOUS_BLOOD_MYSTERIES_V1,PRECIOUS_BLOOD_TOTALS_V1,preciousBloodMystery,preciousBloodPrayerAt} from "./precious-blood-chaplet.v1.js";
 import {PRIESTLY_INTERCESSION_PURPOSES_B19,priestlyIntercessionFor} from "./priestly-intercessions-b19.js";
@@ -523,7 +524,7 @@ function open(id,opts={}){
   else if(id==='pray.visit_blessed_sacrament'){view='adoration';ADOR.mode='visit'}
   else if(id==='pray.library'){
     // Direct Library entry resets selected prayer. In-Library Back retains its own state.
-    view='library';LIB.open=null;LIB.language=null;LIB.cat='all';LIB.q='';PILOT_LORETO_GROUP=false;
+    view='library';LIB.open=null;LIB.language=null;LIB.cat='all';LIB.subject='all';LIB.subjectOpen=false;LIB.q='';PILOT_LORETO_GROUP=false;
   }
   else if(id==='pray.for_priests'){view='priests';PRIESTS={purpose:'priests',latin:false}}
   else if(id==='pray.occasional_intercessions'){view='occasionals';OCCASIONAL={purpose:'sick',latin:false}}
@@ -2339,7 +2340,7 @@ function renderAdoration(){
  return `${head(L('Adoration & Visit','Adoration et visite'),ADOR.mode==='visit'?L('Guided Visit','Visite guidée'):ADOR.mode==='open'?L('Open-ended Adoration','Adoration libre'):ADOR.mode==='holy'?L('Guided Holy Hour','Heure Sainte guidée'):ADOR.mode==='four'?L('Four Ends method','Méthode des quatre fins'):ADOR.mode==='night'?L('Night Adoration in the Home · Fr Mateo','Adoration nocturne au foyer · P. Mateo'):L('Eucharistic Treasury','Trésor eucharistique'))}<main class="aoP435930Body aoP435930AdorationReader" data-ao-adoration-folio="v1" data-ao-adoration-mode="${esc(ADOR.mode)}" data-ao-adoration-step="${stage}"><button class="aoP435930InlineBack" data-p435930-ador-home>${assetIcon('ao-ui-back')} ${esc(L('Choose another mode','Choisir un autre mode'))}</button>${content}${devotionalGuide('adoration')} </main>`;
 }
 function familyOf(p){return libraryVariantFamily(p.id)||p.id}
-let LIB={q:'',cat:'all',open:null,language:null};
+let LIB={q:'',cat:'all',subject:'all',subjectOpen:false,open:null,language:null};
 function normalizedSource(p){const pr=p.provenance||{},ed=prayEditionWitness(p.id);const review=prayCanonicalSourceReviewV1(p.id);return {id:p.id,collationStatus:review.status,independentPrintCertified:review.independentPrintCertified,originalCorpusDirectSourceUrlPresent:review.originalCorpusDirectSourceUrlPresent,editionOrLocaleDiscrepancyRecorded:review.editionOrLocaleDiscrepancyRecorded,family:familyOf(p),work:pr.work||p.title||p.id,witness:ed?.label.en||pr.witness||p.source||'Normalized existing corpus',url:praySourceURL(p),quality:ed?.witnessType||pr.quality||p.sourceStatus||'LEGACY_SOURCE_DOCUMENTED_NOT_PRIMARY_COLLATED',adaptation:pr.adaptation||'UNSPECIFIED',languages:pr.languages||Object.fromEntries(['en','fr','la'].filter(k=>p[k]).map(k=>[k,'AVAILABLE']))}}
 const SOURCE_REGISTRY=Object.freeze(Object.fromEntries(Object.values(DATA.prayers||{}).map(p=>[p.id,Object.freeze(normalizedSource(p))])));
 function libraryOverviewGuide(){
@@ -2570,9 +2571,22 @@ function renderLibrary(){
    <button type="button" class="aoPrayEssentialLibraryLink" data-p435930-lib-all>${esc(L('Browse the full Prayer Library','Parcourir toutes les prières'))}</button>
   </main>`;
  }
- const q=LIB.q.trim().toLowerCase();let rows=Object.values(DATA.prayers||{}).filter(p=>LIB.cat==='all'||p.category===LIB.cat);if(q)rows=rows.filter(p=>[p.title,p.titleFr,p.en,p.fr,p.la,p.id].join(' ').toLowerCase().includes(q));
+ const q=LIB.q.trim().toLowerCase(),canon=Object.values(DATA.prayers||{});
+ let rows=canon.filter(p=>LIB.cat==='all'||p.category===LIB.cat);
+ rows=prayerSubjectsForLibrary(rows,LIB.subject);
+ if(q)rows=rows.filter(p=>[p.title,p.titleFr,p.en,p.fr,p.la,p.id].join(' ').toLowerCase().includes(q));
  const cats=[['all',L('All','Toutes')],...Object.entries(DATA.categories||{}).map(([id,v])=>[id,isFr()?v.fr:v.en])];
- return `${head(L('Prayer Library','Livre de prières'),`${Object.keys(DATA.prayers||{}).length} ${L('prayers','prières')}`)}<main class="aoP435930Body">${libraryOverviewGuide()}<label class="aoP435930Search"><span>${assetIcon('ao-ui-search')}</span><input type="search" data-p435930-lib-search value="${esc(LIB.q)}" placeholder="${esc(L('Search prayers','Rechercher une prière'))}"></label><div class="aoP435930Chips">${cats.map(([id,n])=>`<button type="button" class="${id===LIB.cat?'active':''}" data-p435930-lib-cat="${esc(id)}">${esc(n)}</button>`).join('')}</div><div class="aoP435930LibraryList">${LIB.cat==="essentials"&&!q?claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_IDS_V1,prayers:DATA.prayers,esc,title:L("Essential Prayers","Prières essentielles"),artFor:releasedPrayerCardArtUrl}):renderLibraryEntryRows(rows,q)}</div></main>`;
+ const subjectCounts=prayerSubjectCounts(canon);
+ // Secondary theological browse; does not alter the approved Prayer entrance
+ // or admit any unpublished research record as a runnable prayer.
+ const subjectBrowse='<details class="aoP435930LibrarySubjects" data-ao-prayer-subject-browser '+(LIB.subjectOpen?'open':'')+'>'+
+  '<summary>'+esc(L('Browse by subject','Parcourir par sujet'))+'</summary>'+
+  '<div class="aoP435930Chips" role="group" aria-label="'+esc(L('Theological prayer families','Familles théologiques de prières'))+'">'+
+  '<button type="button" data-p435930-lib-subject="all" aria-pressed="'+String(LIB.subject==='all')+'">'+esc(L('All subjects','Tous les sujets'))+'</button>'+
+  PRAYER_SUBJECTS_V1.map(subject=>'<button type="button" data-p435930-lib-subject="'+subject.id+'" aria-pressed="'+String(LIB.subject===subject.id)+'">'+
+    esc(isFr()?subject.fr:subject.en)+' <small>'+subjectCounts.counts[subject.id]+'</small></button>').join('')+
+  '</div><p class="aoP435930SourceNote">'+esc(L('Only existing published texts are included. Unverified research works are not shown as readable prayers.','Seuls les textes déjà publiés sont inclus. Les œuvres non vérifiées ne sont pas présentées comme prières disponibles.'))+'</p></details>';
+ return `${head(L('Prayer Library','Livre de prières'),`${Object.keys(DATA.prayers||{}).length} ${L('prayers','prières')}`)}<main class="aoP435930Body">${libraryOverviewGuide()}<label class="aoP435930Search"><span>${assetIcon('ao-ui-search')}</span><input type="search" data-p435930-lib-search value="${esc(LIB.q)}" placeholder="${esc(L('Search prayers','Rechercher une prière'))}"></label><div class="aoP435930Chips">${cats.map(([id,n])=>`<button type="button" class="${id===LIB.cat?'active':''}" data-p435930-lib-cat="${esc(id)}">${esc(n)}</button>`).join('')}</div>${subjectBrowse}<div class="aoP435930LibraryList" data-ao-prayer-subject-results="${esc(LIB.subject)}">${LIB.cat==="essentials"&&!q?claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_IDS_V1,prayers:DATA.prayers,esc,title:L("Essential Prayers","Prières essentielles"),artFor:releasedPrayerCardArtUrl}):renderLibraryEntryRows(rows,q)}</div></main>`;
 }
 function monthIndex(key){const d=dateObj(key);return d?d.getFullYear()*12+d.getMonth():null}
 function consecutive(records,needed){const done=records.filter(x=>x.complete).sort((a,b)=>a.date.localeCompare(b.date));if(!done.length)return 0;let c=1;for(let i=done.length-1;i>0;i--){const a=monthIndex(done[i].date),b=monthIndex(done[i-1].date);if(a-b===1)c++;else break}return Math.min(c,needed)}
@@ -3927,7 +3941,7 @@ function routeOwn(id){
  if(next==='library'){
   // A fresh Library door must not reopen the previous source prayer.
   LIB.open=null;LIB.language=null;PILOT_LORETO_GROUP=false;LIB.q='';
-  LIB.cat=PRAYER_PILOT_ENABLED&&entryView==='home'?'essentials':'all';
+  LIB.cat=PRAYER_PILOT_ENABLED&&entryView==='home'?'essentials':'all';LIB.subject='all';LIB.subjectOpen=false;
  }
  if(next==='stations'){STATIONS.step=0;lastStationsFxStep=null}
  if(next==='tenebrae'){TEN.day=0;TEN.hour='MATINS';TEN.step=0;TEN.guided=true;TEN.model=null;TEN.error=null;TEN.loading=false;TEN.epoch++}
@@ -4714,8 +4728,13 @@ function onClick(e){
  if(b.dataset.p435930OpenPrayer)return openPrayerOnly(b.dataset.p435930OpenPrayer);
  if(b.dataset.p435930StationStep!=null){STATIONS.step=Math.max(0,Math.min(13,+b.dataset.p435930StationStep));return render()}
  if(b.matches('[data-p435930-station-finish]')&&STATIONS.step===13){STATIONS.step=0;return backToParent()}
- if(b.matches('[data-p435930-lib-all]')){LIB.cat='all';LIB.q='';return render()}
- if(b.dataset.p435930LibCat!=null){LIB.cat=b.dataset.p435930LibCat;return render()}
+ if(b.matches('[data-p435930-lib-all]')){LIB.cat='all';LIB.subject='all';LIB.subjectOpen=false;LIB.q='';return render()}
+ if(b.dataset.p435930LibCat!=null){LIB.cat=b.dataset.p435930LibCat;LIB.subject='all';return render()}
+ if(b.dataset.p435930LibSubject!=null){
+  const id=b.dataset.p435930LibSubject;
+  if(id!=='all'&&!PRAYER_SUBJECTS_V1.some(x=>x.id===id))return;
+  LIB.subject=id;LIB.subjectOpen=true;LIB.cat='all';return render();
+ }
  if(b.dataset.p435930LibOpen){LIB.open=b.dataset.p435930LibOpen;LIB.language=null;PILOT_LORETO_GROUP=false;return render()}
  if(b.dataset.p435930ScriptureRetry){
   // Retry only the exact currently displayed source identity, never switch
