@@ -126,6 +126,76 @@ for(const [date,mainPath,commPath] of [
     form:"SOLEMN"}).reason,"RUBRICAL_CLASSIFICATION_PENDING");
 }
 
+// Source-identified Lent feria: ordinary commemoration only in Low Mass.
+for(const [date,feriaPath,saintPath,rank] of [
+ ["2026-02-23","Tempora/Quad1-1","Sancti/02-23",3],
+ ["2026-03-06","Tempora/Quad2-5","Sancti/03-06",3],
+ ["2026-03-24","Tempora/Quad5-2","Sancti/03-24",4]
+]){
+ const source={...base,sourcePath:feriaPath,
+   calendarCommemorations:[{path:saintPath,prayerSourcePath:saintPath,
+     name:"Original Lenten commemoration"}]};
+ const witness={...day,date,day:{
+   main:{id:"tempora:"+feriaPath.slice("Tempora/".length)+":3:v",
+     rank:3,path:feriaPath,title:"Lenten feria"},
+   commemorations:[{id:"sancti:"+saintPath.slice("Sancti/".length)+":"+rank+":w",
+     rank,path:saintPath,title:"Impeded saint"}]},
+   proper:{status:"ready",data:source}};
+ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+   const selected=select({proper:source,calendarResolution:witness,form});
+   assert.equal(selected.status,"CERTIFIED",date+"/"+form+": "+selected.reason);
+   assert.equal(selected.decision.scope,"LENT_PASSION_III_CLASS_FERIA_ORDINARY_COMMEMORATION");
+   const n=form==="LOW"?2:1;
+   for(const field of ["collects","secrets","postcommunions"])
+     assert.equal(selected.proper[field].length,n,date+"/"+form+"/"+field);
+   for(const language of ["en","fr"]){
+     const slots=properToReaderSlots(selected.proper,{language}).slots;
+     for(const name of ["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"]){
+       assert.equal(slots[name].status,"READY");
+       assert.equal(slots[name].data.paragraphs.length,n);
+     }
+   }
+   assert.equal(assessPrintableProper(witness,{language:"fr",massForm:form}).ok,true);
+ }
+ for(const [mutant,expected] of [
+  [{...source,calendarCommemorations:[{path:saintPath,prayerSourcePath:"Sancti/04-13"}]},
+    "RUBRICAL_CLASSIFICATION_PENDING"],
+  [{...source,secrets:[one]},"ORATION_SOURCE_INCOMPLETE"]
+ ]){
+   assert.equal(select({proper:mutant,calendarResolution:witness,form:"LOW"}).reason,expected);
+ }
+ assert.equal(select({proper:source,calendarResolution:witness,
+   form:"LOW",isConventual:true}).reason,"CONVENTUAL_RULES_NOT_VERIFIED");
+}
+// II-class St Matthias displaces, but must commemorate, the III-class
+// Lenten feria in Low AND nonconventual Sung/Solemn Mass.
+{
+ const date="2026-02-24",path="Sancti/02-24",feria="Tempora/Quad1-2";
+ const source={...base,sourcePath:path,calendarCommemorations:[
+   {path:feria,prayerSourcePath:feria,name:"Feria III Lent"}]};
+ const witness={...day,date,day:{
+   main:{id:"sancti:02-24:2:r",rank:2,path,title:"St Matthias"},
+   commemorations:[{id:"tempora:Quad1-2:3:v",rank:3,path:feria,
+     title:"Lenten feria"}]},proper:{status:"ready",data:source}};
+ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+   const result=select({proper:source,calendarResolution:witness,form});
+   assert.equal(result.status,"CERTIFIED",form+": "+result.reason);
+   assert.equal(result.decision.scope,"PRIVILEGED_LENT_PASSION_FERIA_UNDER_II_CLASS_SANCTORAL");
+   assert.equal(result.decision.appliedCount,1);
+   for(const field of ["collects","secrets","postcommunions"])
+     assert.equal(result.proper[field].length,2);
+   for(const language of ["en","fr"]){
+     const slots=properToReaderSlots(result.proper,{language}).slots;
+     for(const slot of ["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"]){
+       assert.equal(slots[slot].status,"READY");
+       assert.equal(slots[slot].data.paragraphs.length,2);
+     }
+   }
+ }
+ assert.equal(select({proper:{...source,secrets:[one]},
+   calendarResolution:witness,form:"SOLEMN"}).reason,"ORATION_SOURCE_INCOMPLETE");
+}
+
 // Actual 2026 day owners: a IV-class feria using the inherited
 // post-Pentecost Sunday Proper, with an ordinary IV-class saint. The
 // Ordinary retains the Calendar identity; Low alone retains prayers.
