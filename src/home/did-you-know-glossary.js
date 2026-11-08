@@ -1,10 +1,10 @@
-import {loadDykPrioritySelection,dykPublishedPick} from "./dyk-published-feed.js";
+import {loadDykPrioritySelection,dykPublishedCandidates,dykHomeRotationSlot,DYK_GLOSSARY_FALLBACK_IDS} from "./dyk-published-feed.js";
 // Transitional Home "Did you know?" projection from the already published
 // bilingual Glossary. No second fact bank, generated AI claims or unreviewed
 // Weiser/Pitrè research. The canonical Discovery owner replaces this adapter
 // after its independent editorial publication gate is satisfied.
 const GLOSSARY_URL=new URL("../../data/glossary/concepts-151-300.v1.json",import.meta.url);
-export const HOME_DYK_GLOSSARY_IDS=Object.freeze(["G195","G213","G219","G235","G194","G240"]);
+export const HOME_DYK_GLOSSARY_IDS=DYK_GLOSSARY_FALLBACK_IDS;
 // Reviewed public preview copy. Each bilingual observation is a narrow paraphrase
 // of the matching source-backed Glossary explanation; never use the definition
 // as the discovery. This is NOT the unpublished 1,001-candidate DYK corpus.
@@ -37,13 +37,9 @@ export const HOME_DYK_GLOSSARY_FACTS=Object.freeze({
 let glossaryLoad=null;
 const safeText=value=>typeof value==="string"?value.trim():"";
 function selectedId(date){
-  const match=/^(\d{4})-(\d{2})-(\d{2})$/.exec(String(date??""));
-  if(!match)return HOME_DYK_GLOSSARY_IDS[0];
-  // Stable for a selected calendar date. No persistence, counters or claims
-  // of freshness independent of the referenced Glossary source.
-  const ordinal=Date.UTC(Number(match[1]),Number(match[2])-1,Number(match[3]))/86400000;
-  return HOME_DYK_GLOSSARY_IDS[((ordinal%HOME_DYK_GLOSSARY_IDS.length)+HOME_DYK_GLOSSARY_IDS.length)%HOME_DYK_GLOSSARY_IDS.length];
+ return dykHomeRotationSlot(date,[],HOME_DYK_GLOSSARY_IDS)??HOME_DYK_GLOSSARY_IDS[0];
 }
+
 export function homeDidYouKnowMarkup(language="en"){
   const fr=language==="fr";
   return '<button type="button" class="aoHomeDYK" data-home-dyk-open disabled aria-disabled="true">'+
@@ -52,8 +48,8 @@ export function homeDidYouKnowMarkup(language="en"){
     '<strong data-home-dyk-fact role="status">'+(fr?"Chargement d’une notice sourcée…":"Loading a source-backed discovery…")+'</strong>'+
     '<span class="aoHomeDYKSource" data-home-dyk-source></span></button>';
 }
-export function homeDidYouKnowSelect(entries,date){
-  const id=selectedId(date);
+export function homeDidYouKnowSelect(entries,date,requestedId=selectedId(date)){
+  const id=requestedId;
   const entry=Array.isArray(entries)?entries.find(x=>x?.id===id):null;
   // Source owner has already marked these glossary definitions source-backed.
   // Reject unfinished or malformed metadata; do not silently fabricate copy.
@@ -84,43 +80,52 @@ export function hydrateHomeDidYouKnow(root,win=globalThis){
   const date=state?.selectedDate??root?.querySelector?.(".homeScreen [data-home-dyk-date]")?.dataset?.homeDykDate;
   if(!button||!date||typeof win?.fetch!=="function")return false;
   const fr=button.closest(".homeScreen")?.dataset?.homeLanguage==="fr";
-  const fallbackReady=loadEntries(win).then(entries=>{
-    const entry=homeDidYouKnowSelect(entries,date);
-    if(!button.isConnected||button.closest(".homeScreen")?.dataset?.homeLanguage!==(fr?"fr":"en"))return;
-    if(!entry)throw Error("GLOSSARY_ENTRY_NOT_VERIFIED");
-    button.querySelector("[data-home-dyk-title]").textContent=fr?entry.labels.fr:entry.labels.en;
-    // The fact is the sourced explanatory observation, never the dictionary definition.
-    button.querySelector("[data-home-dyk-fact]").textContent=HOME_DYK_GLOSSARY_FACTS[entry.id][fr?"fr":"en"];
-    button.querySelector("[data-home-dyk-source]").textContent=fr?"Glossaire · Voir la notion ›":"Glossary · Read the term ›";
-    button.dataset.homeDykEntry=entry.id;
-    button.disabled=false;button.removeAttribute("aria-disabled");
+  // The same safe Home card owns both kinds of discovery. Select once after
+  // loading the two canonical sources, avoiding a misleading intermediate flash.
+  void Promise.all([
+    loadEntries(win).catch(()=>[]),
+    loadDykPrioritySelection(win).catch(()=>null)
+  ]).then(([entries,data])=>{
+    const screen=button.closest(".homeScreen");
+    const selectedDate=win?.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate??
+      root?.querySelector?.(".homeScreen [data-home-dyk-date]")?.dataset?.homeDykDate;
+    if(!button.isConnected||screen?.dataset?.homeLanguage!==(fr?"fr":"en")||selectedDate!==date)return;
+    const candidates=data?dykPublishedCandidates(data,date):[];
+    const slot=dykHomeRotationSlot(date,candidates.map(row=>row.id),HOME_DYK_GLOSSARY_IDS);
+    const published=candidates.find(row=>row.id===slot);
+    if(published){
+      const fact=published.pilot_home_copy||published.editorial_review_copy;
+      const historical=published.source_family!=="ROMAN_MASS_1962";
+      button.querySelector("[data-home-dyk-title]").textContent=historical?
+        (fr?"Coutumes et traditions":"Customs and traditions"):
+        (fr?"Le Canon romain":"The Roman Canon");
+      button.querySelector("[data-home-dyk-fact]").textContent=fact[fr?"fr":"en"];
+      button.querySelector("[data-home-dyk-source]").textContent=fr?
+        "Découverte · Lire la source ›":"Discovery · Read the source ›";
+      delete button.dataset.homeDykEntry;
+      button.dataset.homeDykFactId=published.id;
+      button.dataset.homeDykFactDate=date;
+    }else{
+      const id=slot&&/^G\\d{3}$/.test(slot)?slot:selectedId(date);
+      const entry=homeDidYouKnowSelect(entries,date,id);
+      if(!entry)throw Error("GLOSSARY_ENTRY_NOT_VERIFIED");
+      button.querySelector("[data-home-dyk-title]").textContent=fr?entry.labels.fr:entry.labels.en;
+      button.querySelector("[data-home-dyk-fact]").textContent=HOME_DYK_GLOSSARY_FACTS[entry.id][fr?"fr":"en"];
+      button.querySelector("[data-home-dyk-source]").textContent=fr?
+        "Glossaire · Voir la notion ›":"Glossary · Read the term ›";
+      delete button.dataset.homeDykFactId;
+      delete button.dataset.homeDykFactDate;
+      button.dataset.homeDykEntry=entry.id;
+    }
+    button.disabled=false;
+    button.removeAttribute("aria-disabled");
   }).catch(()=>{
     if(!button.isConnected)return;
     button.querySelector("[data-home-dyk-fact]").textContent=fr?
       "Notice indisponible pour le moment.":"Discovery temporarily unavailable.";
     button.querySelector("[data-home-dyk-title]").textContent=fr?"Source indisponible":"Source unavailable";
+    button.disabled=true;
+    button.setAttribute("aria-disabled","true");
   });
-  // A released R34 discovery can replace the published Glossary fallback
-  // only when every source, EN/FR, semantic, date and destination gate passes.
-  // No R34 candidate currently passes; ordinary H7 remains unchanged.
-  void fallbackReady.then(()=>loadDykPrioritySelection(win)).then(data=>{
-    const row=dykPublishedPick(data,date);
-    if(!row||!button.isConnected)return;
-    const currentDate=win?.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate??
-      root?.querySelector?.(".homeScreen [data-home-dyk-date]")?.dataset?.homeDykDate;
-    if(currentDate!==date||button.closest(".homeScreen")?.dataset?.homeLanguage!==(fr?"fr":"en"))return;
-    const fact=row.pilot_home_copy||row.editorial_review_copy;
-    const historical=row.source_family!=="ROMAN_MASS_1962";
-    button.querySelector("[data-home-dyk-title]").textContent=historical?
-      (fr?"Coutumes et traditions":"Customs and traditions"):
-      (fr?"Le Canon romain":"The Roman Canon");
-    button.querySelector("[data-home-dyk-fact]").textContent=fact[fr?"fr":"en"];
-    button.querySelector("[data-home-dyk-source]").textContent=fr?
-      "Découverte · Lire la source ›":"Discovery · Read the source ›";
-    delete button.dataset.homeDykEntry;
-    button.dataset.homeDykFactId=row.id;
-    button.dataset.homeDykFactDate=date;
-    button.disabled=false;button.removeAttribute("aria-disabled");
-  }).catch(()=>{}); // Unapproved, malformed or unavailable master: retain Glossary.
   return true;
 }
