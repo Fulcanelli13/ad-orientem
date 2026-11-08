@@ -111,7 +111,7 @@ export function resolveSourceFirstComplineOrdo({date,calendarScope="UNIVERSAL",
     !OFFICE_COMPLINE_MARIAN_SECTIONS.includes(record.marianSection)||
     record.marianSource?.section!==record.marianSection||
     record.marianSource?.sourceId!==
-      "Psalterium/Antiphonae finales BMV#"+record.marianSection||
+      "Psalterium/Mariaant#"+record.marianSection||
     record.marianSource?.reviewedInOfficeOrdo!==true)
   return failed(date,"OFFICE_WEEKDAY_OR_SEASONAL_MARIAN_EVIDENCE_INCOMPLETE");
  // Special orders bypass the ordinary Psalm pattern, even when they have a
@@ -226,7 +226,7 @@ export function researchWitnessForReviewedAdventCompline(appointment){
   marianSection:appointment.marianSection,
   marianSource:Object.freeze({
    section:appointment.marianSection,
-   sourceId:"Psalterium/Antiphonae finales BMV#"+
+   sourceId:"Psalterium/Mariaant#"+
     appointment.marianSection,
    reviewedInOfficeOrdo:true
   }),
