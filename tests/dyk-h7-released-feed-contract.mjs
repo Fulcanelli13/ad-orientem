@@ -63,7 +63,8 @@ function alignedDates(size,cycles=1){
    new Date((start+i)*86400000).toISOString().slice(0,10));
 }
 for(const [published,poolSize] of [
- [[],6],[["DYK-M04-CANON-021","DYK-M04-CANON-022","DYK-M04-CANON-047","DYK-M04-CANON-058"],10]
+ [[],DYK_GLOSSARY_FALLBACK_IDS.length],
+ [["DYK-M04-CANON-021","DYK-M04-CANON-022","DYK-M04-CANON-047","DYK-M04-CANON-058"],DYK_GLOSSARY_FALLBACK_IDS.length+4]
 ]){
  const cycle=alignedDates(poolSize);
  const results=cycle.map(date=>dykHomeRotationSlot(date,published));
