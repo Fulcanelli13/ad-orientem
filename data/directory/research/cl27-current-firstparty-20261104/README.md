@@ -99,4 +99,23 @@ Run the existing targeted CI check: `node tests/tlm-cl27-current-firstparty-revi
 
 Seven groups have evidence-based source-claim dispositions; **99** await this level of review. The separate publication/event generation gate is still **closed** for all seven, and all frozen historical rows remain. A collision-source disposition is not automatically an approved current event.
 
-The complete **296** historical-source review programme now stands **139 reviewed / 157 pending**. This is source review, not live-event verification completion. Run the existing `node tests/tlm-cl27-current-firstparty-review.mjs` guard to confirm row census, 106 historical collision preservation, seven source adjudications, 50 role observations, and **zero** unsupported app promotions.
+At the Wave 3 checkpoint the **296** historical-source review programme stood at **139 reviewed / 157 pending**. This is source review, not live-event verification completion. Run the existing `node tests/tlm-cl27-current-firstparty-review.mjs` guard to confirm row census, 106 historical collision preservation, seven source adjudications, 50 role observations, and **zero** unsupported app promotions.
+
+## Wave 4 — eight site groups / 28 more original timetable rows (8 November 2026)
+
+`source-review-wave4.v1.json` extends the *same* original 296-row CL27 source list with **28 newly reviewed, previously untouched historical rows**. The cumulative census is **167/296 reviewed (56.4%); 129 still unreviewed**. The eight canonical CL2 anchors are immutable; this is **not** 28 new events, 28 churches, or 28 approved schedules.
+
+| Site / source scope | Original rows newly reviewed | Finding |
+| --- | ---: | --- |
+| Capela Imaculada Conceição, historical Campinas / possible Indaiatuba replacement (Brazil) | 4 | **Current operator source conflict**: older Campinas address and schedule coexist with updated Indaiatuba address and February 2026 bulletin. DO NOT equate or remap locations by title alone. |
+| Chapelle de l'Immaculée Conception, Poitiers (France) | 4 | First-party source confirms Sunday 09:00/10:30 and first Friday/Saturday. **Fraternité de la Transfiguration**, not automatically SSPX-owned. |
+| Chapelle de l'Immaculée, Saint-Jean-de-La-Ruelle (France) | 4 | Sunday 08:30/10:30, Fri/Sat 18:00; Monday 09:00 only during school term, **09:30 after school holidays**. Confessions 17:30 are not Mass. |
+| Prieuré Sainte-Famille / Chapelle du Sacré-Cœur, Lévis (Canada) | 4 | Operator weekly hours corroborated by a **25 Oct–8 Nov 2026 dated semainier**; identify the actual chapel and keep Résidences du Précieux-Sang separate. |
+| Casa Dom Vital, Arujá (Brazil) | 3 | Official autonomous-house listing supports Mon–Sat 07:15, Sunday 08:00/10:00 for the named onsite chapel; independent dates and exceptions remain unverified. |
+| Chapelle Notre-Dame-de-la-Délivrande, Fort-de-France (Martinique) | 3 | Sunday 07:00 Low / 09:00 Sung, weekday 06:30; Thursday 07:15 is **Exposition, not Mass**. Priory is at a different address. |
+| Chapelle Sainte-Anne, Vannes (France) | 3 | Sunday 08:15/10:00 and weekday 18:00, but **school-term Thursdays 11:15**; do not borrow St-Nolff priory or St-Yves chapel schedules. |
+| Corpus Christi Church, Edmonds (USA) | 3 | Sunday 09:00; ordinary Saturday 18:00 **versus first Saturday 09:00**. Mutually exclusive recurrence rules. |
+
+The observations, original source-day-clock excerpts, source IDs, live evidence URLs, individual holds and specific no-promotion constraints are preserved in the Wave 4 JSON. Representative current sources: [Brazil operator](https://fsspx.com.br/pt/priorados-e-capelas-51589), [Brazil February 2026 bulletin](https://fsspx.com.br/sites/default/files/documents/boletim-priorado-fevereiro-2026.pdf), [Poitiers](https://laportelatine.org/lieux/merigny/poitiers), [Saint-Jean-de-la-Ruelle](https://laportelatine.org/lieux/prieure-saint-martin/saint-jean-de-la-ruelle), [Lévis 2026 semainier](https://levis.sspx.ca/fr/semainier-du-25-octobre-au-8-novembre-2026-61654), [Fort-de-France](https://laportelatine.org/lieux/fort-de-france/chapelle-fort-de-france), [Vannes](https://laportelatine.org/lieux/saint-nolff/vannes), [Edmonds SSPX Mass Centers](https://icc.id.sspx.org/en/mass-centers-31326).
+
+All 28 stay **research-only**: **0 new current Mass events, 0 published CL27 ecclesial or Una Cum statements, 0 map-coordinate changes, 0 duplicated canonical venues**. A current first-party pattern is still not approval for a date-specific celebration. The historical collision ledger remains at seven source-adjudicated of 106 groups, 99 still pending. Existing workflow `node tests/tlm-cl27-current-firstparty-review.mjs` now checks the 167-row four-wave unique ID census, precision/source roles, and zero-publication rules. Do not merge the 2026-10-26 CL27 draft stack as a prerequisite to continuing this research.
