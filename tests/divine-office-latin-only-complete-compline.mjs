@@ -8,6 +8,8 @@ import {assemblePrivateOfficeReview,projectPrivateOfficeReview}
  from "../src/office/private-office-review.js";
 import {COMPLINE_CONTEXT,projectComplineRecitation}
  from "../src/office/compline-recitation-projection.js";
+import {projectSaturdayComplinePsalmFrame}
+ from "../src/office/compline-psalm-display-projection.js";
 
 const load=name=>JSON.parse(readFileSync(
  new URL("../tests/fixtures/office/"+name+"-la.json",import.meta.url),"utf8"));
@@ -86,6 +88,32 @@ test("all eight appointed dates assemble 42 complete Latin blocks without readin
    assert.equal(reading.readingEventCount,40);
    assert.equal(reading.readingEvents.length,40);
    assert.equal(reading.blessingAmensRestoredFromPinnedSource,2);
+   const saturday=date==="2026-11-28"||date==="2026-12-05";
+   assert.equal(reading.printedPsalmDisplayFrames,saturday?41:0);
+   if(saturday){
+    const psalmFrames=reading.frames.filter(x=>x.sourceNumberingNormalized);
+    assert.equal(psalmFrames.length,41);
+    const p87=psalmFrames.filter(x=>x.sourceId.includes("Psalm87#"));
+    const p102=psalmFrames.filter(x=>x.sourceId.includes("Psalm102#"));
+    assert.equal(p87.length,19);
+    assert.equal(p102.length,22);
+    assert.deepEqual(p87.map(x=>x.printedVerseLabel),
+     Array.from({length:19},(_,i)=>"87:"+(i+1)));
+    assert.deepEqual(p102.map(x=>x.printedVerseLabel),[
+     ...Array.from({length:12},(_,i)=>"102:"+(i+1)),
+     "102:13–14","102:14–15","102:16","102:17",
+     "102:17–18","102:18","102:19","102:20","102:21","102:22"
+    ]);
+    assert.equal(p87[0].sourceVerseLabel,"87:2");
+    assert.match(p87[0].sourceTexts.la[0],/^87:2 Dómine/u);
+    assert.match(p87[0].texts.la[0],/^Dómine/u);
+    assert.equal(p102[12].sourceVerseLabel,"102:13");
+    assert.match(p102[12].texts.la[0],/quóniam ipse cognóvit figméntum nostrum/u);
+    assert.equal(p102[13].printedVerseLabel,"102:14–15");
+    assert.match(p102[13].texts.la[0],/homo, sicut fænum/u);
+    assert.ok(psalmFrames.every(x=>
+     x.texts.la[0]===x.sourceTexts.la[0].replace(/^\d+:\d+ /u,"")));
+   }
    assert.equal(reading.postCanticleKyrieOmitted,true);
    assert.equal(reading.postCanticlePaterOmitted,true);
    assert.equal(reading.readingPublished,false);
@@ -113,6 +141,18 @@ test("native review projects Latin source text without any English/French witnes
  assert.equal(reading.publishable,false);
  assert.equal(reading.published,false);
  assert.ok(transport.calls.every(x=>x.includes("/Latin/")));
+});
+test("printed Saturday psalm labelling refuses source drift and preserves originals",()=>{
+ const original=Object.freeze({kind:"PSALM",sourceId:"Psalterium/Psalmorum/Psalm87#2-19",
+  subIndex:0,subTotal:19,focusType:"PSALM_VERSE",
+  texts:Object.freeze({la:Object.freeze(["87:2 Dómine, Deus salútis meæ"])})});
+ const projected=projectSaturdayComplinePsalmFrame(original);
+ assert.equal(projected.label,"87:1");
+ assert.equal(projected.texts.la[0],"Dómine, Deus salútis meæ");
+ assert.equal(original.texts.la[0],"87:2 Dómine, Deus salútis meæ");
+ assert.equal(projectSaturdayComplinePsalmFrame({...original,
+  texts:{la:["87:3 Dómine, Deus salútis meæ"]}}),null);
+ assert.equal(projectSaturdayComplinePsalmFrame({...original,subTotal:18}),null);
 });
 test("Latin missing source fails closed and cannot display partial Hour",async()=>{
  const r=await assemblePrivateOfficeReview({
