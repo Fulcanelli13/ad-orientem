@@ -29,18 +29,20 @@ try{
  browser=await chromium.launch({headless:true});
  await mkdir(out,{recursive:true});
  const base="http://127.0.0.1:"+server.address().port;
- for(const {width,form,mode} of [
-  {width:320,form:"MISSA_CANTATA_INCENSE",mode:"live"},
-  {width:390,form:"MISSA_CANTATA_INCENSE",mode:"missal"},
-  {width:390,form:"LOW",mode:"live"}
+ for(const {width,form,mode,tone} of [
+  {width:320,form:"MISSA_CANTATA_INCENSE",mode:"live",tone:"SOLEMN"},
+  {width:390,form:"MISSA_CANTATA_INCENSE",mode:"missal",tone:"SOLEMN"},
+  {width:390,form:"MISSA_CANTATA_INCENSE",mode:"live",tone:"FERIAL"},
+  {width:390,form:"MISSA_CANTATA_INCENSE",mode:"missal",tone:"FERIAL"},
+  {width:390,form:"LOW",mode:"live",tone:"SOLEMN"}
  ]){
   const context=await browser.newContext({viewport:{width,height:844},
    isMobile:true,hasTouch:true,deviceScaleFactor:1});
   const page=await context.newPage();
   const errors=[];
   page.on("pageerror",e=>errors.push(String(e?.message??e)));
-  const qp=new URLSearchParams({production:"1",print:"1",notation:"1",
-   form,mode});
+  const qp=new URLSearchParams({production:"1",print:"1",
+   notation:tone==="FERIAL"?"ferial":"1",form,mode});
   await page.goto(base+"/tests/fixtures/reader-phone-harness.html?"+qp.toString(),
    {waitUntil:"domcontentloaded",timeout:60000});
   await page.waitForFunction(()=>["true","error"].includes(
@@ -170,6 +172,46 @@ try{
    await localToggle.click();
    assert.equal(await localView.getAttribute("data-reference-view"),"notation");
    assert.equal(await localView.locator(".ao-proper-reference-expand").isVisible(),true);
+   // Actual 65-card Ordo coverage, not the source-review gallery:
+   // show the celebrant's four 1961 verses at their original source cues.
+   // A ferial 1962 context selects ONLY the 1961 ferial witnesses.
+   const prefatoryCues=["AO.SM.C0135","AO.SM.C0137","AO.SM.C0139","AO.SM.C0141"];
+   for(const cue of prefatoryCues){
+    const scoreId="AO.REF.PREFACE_CELEBRANT_"+tone+"."+cue.slice(-4);
+    const nav=await page.evaluate(id=>{
+     const api=window.__AO_PHONE_PREVIEW;
+     const target=(api.model?.cards??[]).find(c=>JSON.stringify(c).includes(id));
+     if(!target)return {error:"SOURCE_CUE_CARD_NOT_FOUND",id};
+     api.showSequence(target.sequence);
+     return {error:null,index:target.sequence,id};
+    },cue);
+    assert.equal(nav.error,null,JSON.stringify(nav));
+    await page.waitForFunction(({id,score})=>Boolean(document.querySelector(
+     '[data-cue-id="'+id+'"] .ao-proper-reference-notation[data-reference-score="'+score+'"][data-reference-ready="true"]')),
+     {id:cue,score:scoreId},{timeout:20000});
+    const reading=await page.evaluate(({id,score})=>{
+     const paragraph=document.querySelector('[data-cue-id="'+id+'"]');
+     const staff=paragraph?.querySelector('[data-reference-score="'+score+'"]');
+     return {sourceCue:id,sourceText:paragraph?.querySelector(".ao-line-primary")?.textContent?.trim(),
+      notation:!!staff,scoreId:staff?.dataset.referenceScore,
+      scoreSvg:!!staff?.querySelector(".ao-proper-reference-staff svg"),
+      marker:staff?.querySelector(".ao-proper-reference-mark")?.textContent??null,
+      count:document.querySelectorAll('.ao-proper-reference-notation[data-reference-score="'+score+'"]').length,
+      approved:staff?.dataset.approved,viewportWidth:innerWidth,
+      overflow:document.documentElement.scrollWidth-innerWidth,
+      modelCards:window.__AO_PHONE_PREVIEW?.sourceModel?.totalCards};
+    },{id:cue,score:scoreId});
+    assert.equal(reading.scoreId,scoreId,
+     "1961 "+tone+" celebrant must engrave at its own Ordo cue "+cue);
+    assert.equal(reading.scoreSvg,true);
+    assert.equal(reading.marker,"℣");
+    assert.equal(reading.count,1,"Never duplicate one celebrant source cue");
+    assert.equal(reading.approved,"false");
+    assert.ok(reading.sourceText?.length>8,"Latin source cannot disappear");
+    assert.ok(reading.overflow<=1,"New staff cannot overflow 320/390 px screen");
+    assert.equal(reading.modelCards,30,"No new source macros from chant");
+    console.log("PASS actual Ordo Preface celebrant",JSON.stringify({width,mode,tone,...reading}));
+   }
    // Reopen preferences: the on/off state must survive closing the sheet.
    await page.click("[data-reader-preferences]");
    assert.equal((await state()).pressed,"true");
