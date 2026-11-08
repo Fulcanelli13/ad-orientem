@@ -29,9 +29,32 @@
       "printedPage": 3,
       "pdfPage": 4,
       "section": "before_mass",
-      "status": "unresolved",
+      "status": "reader_present",
       "wordingCollatedAgainst2013": false,
-      "discoverableAsIndividualLibraryWork": false
+      "discoverableAsIndividualLibraryWork": true,
+      "owner": {
+        "path": "src/pray/red-booklet-private-historical-works.v1.js",
+        "symbol": "massFourEndsDeclaration1904",
+        "route": "mass.prepare"
+      },
+      "discoverabilityProof": {
+        "index": "src/pray/red-booklet-private-historical-works.v1.js",
+        "route": "mass.prepare",
+        "sourceId": "massFourEndsDeclaration1904",
+        "searchSurface": "pray.library",
+        "opensExactSourceCard": true,
+        "languageWitnesses": [
+          "en"
+        ],
+        "independentFrenchSourceAvailable": false,
+        "independentLatinSourceAvailable": false
+      },
+      "sourceWitness": {
+        "sourceUrl": "https://www.sanctatrinitas.org/Prayers_Before_Mass_Prayers_Before_Holy_Communion_Prayers_After_Holy_Communion_and_Thanksgiving_After_Mass.html",
+        "originalBodyProvidedBy": "red-booklet-private-historical-works.v1.js",
+        "wordingCollatedAgainst2013": false
+      },
+      "note": "Full independent English historic four-ends declaration associated with 1904 St Pius X devotional source; this modern online English witness is NOT identified as a 1904 English printing or a 2013 word-for-word transcription."
     },
     {
       "id": "pre_thomas",
@@ -46,7 +69,14 @@
         "route": "pray.communion_treasury"
       },
       "wordingCollatedAgainst2013": false,
-      "discoverableAsIndividualLibraryWork": false
+      "discoverableAsIndividualLibraryWork": true,
+      "discoverabilityProof": {
+        "index": "src/pray/red-booklet-communion-library-links.v1.js",
+        "route": "pray.communion_treasury",
+        "sourceId": "beforeThomas",
+        "searchSurface": "pray.library",
+        "opensExactSourceCard": true
+      }
     },
     {
       "id": "pre_ambrose",
@@ -61,7 +91,14 @@
         "route": "pray.communion_treasury"
       },
       "wordingCollatedAgainst2013": false,
-      "discoverableAsIndividualLibraryWork": false
+      "discoverableAsIndividualLibraryWork": true,
+      "discoverabilityProof": {
+        "index": "src/pray/red-booklet-communion-library-links.v1.js",
+        "route": "pray.communion_treasury",
+        "sourceId": "beforeAmbrose",
+        "searchSurface": "pray.library",
+        "opensExactSourceCard": true
+      }
     },
     {
       "id": "pre_faith",
@@ -294,9 +331,32 @@
       "printedPage": 61,
       "pdfPage": 62,
       "section": "confession",
-      "status": "unresolved",
+      "status": "reader_present",
       "wordingCollatedAgainst2013": false,
-      "discoverableAsIndividualLibraryWork": false
+      "discoverableAsIndividualLibraryWork": true,
+      "owner": {
+        "path": "src/pray/red-booklet-private-historical-works.v1.js",
+        "symbol": "confAfterExaminationTraditional",
+        "route": "pray.confession"
+      },
+      "discoverabilityProof": {
+        "index": "src/pray/red-booklet-private-historical-works.v1.js",
+        "route": "pray.confession",
+        "sourceId": "confAfterExaminationTraditional",
+        "searchSurface": "pray.library",
+        "opensExactSourceCard": true,
+        "languageWitnesses": [
+          "en"
+        ],
+        "independentFrenchSourceAvailable": false,
+        "independentLatinSourceAvailable": false
+      },
+      "sourceWitness": {
+        "sourceUrl": "https://catholicharboroffaithandmorals.com/Tenth%20Sunday%20After%20Pentecost.html",
+        "originalBodyProvidedBy": "red-booklet-private-historical-works.v1.js",
+        "wordingCollatedAgainst2013": false
+      },
+      "note": "Independent traditional LONGER form of the post-examination prayer. Different from the abridged 2013 prayer; intentionally not promoted as the same English wording."
     },
     {
       "id": "conf_thanksgiving",
@@ -304,9 +364,32 @@
       "printedPage": 61,
       "pdfPage": 62,
       "section": "confession",
-      "status": "unresolved",
+      "status": "reader_present",
       "wordingCollatedAgainst2013": false,
-      "discoverableAsIndividualLibraryWork": false
+      "discoverableAsIndividualLibraryWork": true,
+      "owner": {
+        "path": "src/pray/red-booklet-private-historical-works.v1.js",
+        "symbol": "confThanksgivingLasance1910",
+        "route": "pray.confession"
+      },
+      "discoverabilityProof": {
+        "index": "src/pray/red-booklet-private-historical-works.v1.js",
+        "route": "pray.confession",
+        "sourceId": "confThanksgivingLasance1910",
+        "searchSurface": "pray.library",
+        "opensExactSourceCard": true,
+        "languageWitnesses": [
+          "en"
+        ],
+        "independentFrenchSourceAvailable": false,
+        "independentLatinSourceAvailable": false
+      },
+      "sourceWitness": {
+        "sourceUrl": "https://en.wikisource.org/wiki/The_young_man%27s_guide/Confession_Devotions",
+        "originalBodyProvidedBy": "red-booklet-private-historical-works.v1.js",
+        "wordingCollatedAgainst2013": false
+      },
+      "note": "Complete English historical Thanksgiving After Confession from F. X. Lasance 1910 with a separate final aspiration. Reader is private Thanksgiving after an actual Confession, not absolution."
     },
     {
       "id": "conf_joseph",
@@ -314,9 +397,32 @@
       "printedPage": 61,
       "pdfPage": 62,
       "section": "confession",
-      "status": "unresolved",
+      "status": "reader_present",
       "wordingCollatedAgainst2013": false,
-      "discoverableAsIndividualLibraryWork": false
+      "discoverableAsIndividualLibraryWork": true,
+      "owner": {
+        "path": "src/pray/red-booklet-private-historical-works.v1.js",
+        "symbol": "confJosephPurity1896",
+        "route": "pray.confession"
+      },
+      "discoverabilityProof": {
+        "index": "src/pray/red-booklet-private-historical-works.v1.js",
+        "route": "pray.confession",
+        "sourceId": "confJosephPurity1896",
+        "searchSurface": "pray.library",
+        "opensExactSourceCard": true,
+        "languageWitnesses": [
+          "en"
+        ],
+        "independentFrenchSourceAvailable": false,
+        "independentLatinSourceAvailable": false
+      },
+      "sourceWitness": {
+        "sourceUrl": "https://en.wikisource.org/wiki/A_Manual_of_Prayers_for_the_Use_of_the_Catholic_Laity/Morning_Prayers",
+        "originalBodyProvidedBy": "red-booklet-private-historical-works.v1.js",
+        "wordingCollatedAgainst2013": false
+      },
+      "note": "Complete original English Catholic laity manual prayer for purity to St Joseph. Independently verified older text; 2013 wording and missing translations remain separate holds."
     },
     {
       "id": "communion_thanks",
@@ -324,9 +430,33 @@
       "printedPage": 62,
       "pdfPage": 63,
       "section": "after_communion",
-      "status": "unresolved",
+      "status": "reader_present",
       "wordingCollatedAgainst2013": false,
-      "discoverableAsIndividualLibraryWork": false
+      "discoverableAsIndividualLibraryWork": true,
+      "owner": {
+        "path": "src/pray/traditional-pray-data.js",
+        "symbol": "thanksgivingMyGoodJesus",
+        "route": "pray.communion_treasury"
+      },
+      "discoverabilityProof": {
+        "index": "src/pray/red-booklet-communion-library-links.v1.js",
+        "route": "pray.communion_treasury",
+        "sourceId": "thanksgivingMyGoodJesus",
+        "searchSurface": "pray.library",
+        "opensExactSourceCard": true,
+        "languageWitnesses": [
+          "en"
+        ],
+        "independentFrenchSourceAvailable": false,
+        "independentLatinSourceAvailable": false
+      },
+      "sourceWitness": {
+        "edition": 2008,
+        "sourceUrl": "https://archives.sophronius.org/raw-books/Latin%20-%20English%20Mass%20Booklet%20%281%29_text.pdf",
+        "originalBodyProvidedBy": "traditional-pray-data.js",
+        "wordingCollatedAgainst2013": false
+      },
+      "note": "A full, earlier 2008 English-booklet witness is owned by Communion Treasury; not represented as an exact 2013 collation. No independent FR or LA witness is asserted."
     },
     {
       "id": "communion_heart",
@@ -334,9 +464,33 @@
       "printedPage": 62,
       "pdfPage": 63,
       "section": "after_communion",
-      "status": "unresolved",
+      "status": "reader_present",
       "wordingCollatedAgainst2013": false,
-      "discoverableAsIndividualLibraryWork": false
+      "discoverableAsIndividualLibraryWork": true,
+      "owner": {
+        "path": "src/pray/traditional-pray-data.js",
+        "symbol": "eucharisticHeartAspiration",
+        "route": "pray.communion_treasury"
+      },
+      "discoverabilityProof": {
+        "index": "src/pray/red-booklet-communion-library-links.v1.js",
+        "route": "pray.communion_treasury",
+        "sourceId": "eucharisticHeartAspiration",
+        "searchSurface": "pray.library",
+        "opensExactSourceCard": true,
+        "languageWitnesses": [
+          "en"
+        ],
+        "independentFrenchSourceAvailable": false,
+        "independentLatinSourceAvailable": false
+      },
+      "sourceWitness": {
+        "edition": 1910,
+        "sourceUrl": "https://motherofmercychapter.com/Prayers/The%20Raccolta%20-%201910%20Collection%20of%20Indulgenced%20Prayers%20and%20Good%20Works.pdf",
+        "originalBodyProvidedBy": "traditional-pray-data.js",
+        "wordingCollatedAgainst2013": false
+      },
+      "note": "1910 Raccolta no. 161 authentic historic English aspiration; 2013 booklet spelling/wording uncollated; historical indulgence cannot be represented as current."
     },
     {
       "id": "ignatius_suscipe",
@@ -346,13 +500,25 @@
       "section": "after_communion",
       "status": "reader_present",
       "wordingCollatedAgainst2013": false,
-      "discoverableAsIndividualLibraryWork": false,
+      "discoverableAsIndividualLibraryWork": true,
       "owner": {
         "path": "src/pray/prayer-acquisition-historical-witnesses.v1.js",
         "symbol": "ignatius_suscipe_lasance_1908_en",
         "route": "pray.morning_evening"
       },
-      "note": "1908 source-owned EN/LA Suscipe is already a selectable Morning Offering; not yet specifically accessible from After Communion, booklet's 2013 English wording remains uncollated, no French prayer claimed"
+      "note": "Lasance 1908 Suscipe EN and LA original reader remains the source owner and is individually reachable by Library lookup; the 2013 Red Booklet wording has NOT been collated; no French source witness asserted",
+      "discoverabilityProof": {
+        "index": "src/pray/red-booklet-suscipe-library-link.v1.js",
+        "route": "pray.morning_evening",
+        "sourceId": "ignatius_suscipe_lasance_1908_en",
+        "searchSurface": "pray.library",
+        "opensExactSourceCard": true,
+        "languageWitnesses": [
+          "en",
+          "la"
+        ],
+        "independentFrenchSourceAvailable": false
+      }
     },
     {
       "id": "communion_anima",
@@ -382,7 +548,14 @@
         "route": "pray.communion_treasury"
       },
       "wordingCollatedAgainst2013": false,
-      "discoverableAsIndividualLibraryWork": false
+      "discoverableAsIndividualLibraryWork": true,
+      "discoverabilityProof": {
+        "index": "src/pray/red-booklet-communion-library-links.v1.js",
+        "route": "pray.communion_treasury",
+        "sourceId": "afterBonaventure",
+        "searchSurface": "pray.library",
+        "opensExactSourceCard": true
+      }
     },
     {
       "id": "communion_thomas",
@@ -397,7 +570,14 @@
         "route": "pray.communion_treasury"
       },
       "wordingCollatedAgainst2013": false,
-      "discoverableAsIndividualLibraryWork": false
+      "discoverableAsIndividualLibraryWork": true,
+      "discoverabilityProof": {
+        "index": "src/pray/red-booklet-communion-library-links.v1.js",
+        "route": "pray.communion_treasury",
+        "sourceId": "afterThomas",
+        "searchSurface": "pray.library",
+        "opensExactSourceCard": true
+      }
     },
     {
       "id": "communion_dying",
@@ -405,9 +585,33 @@
       "printedPage": 64,
       "pdfPage": 65,
       "section": "after_communion",
-      "status": "unresolved",
+      "status": "reader_present",
       "wordingCollatedAgainst2013": false,
-      "discoverableAsIndividualLibraryWork": false
+      "discoverableAsIndividualLibraryWork": true,
+      "owner": {
+        "path": "src/pray/traditional-pray-data.js",
+        "symbol": "mercifulJesusDying1911",
+        "route": "pray.communion_treasury"
+      },
+      "discoverabilityProof": {
+        "index": "src/pray/red-booklet-communion-library-links.v1.js",
+        "route": "pray.communion_treasury",
+        "sourceId": "mercifulJesusDying1911",
+        "searchSurface": "pray.library",
+        "opensExactSourceCard": true,
+        "languageWitnesses": [
+          "en"
+        ],
+        "independentFrenchSourceAvailable": false,
+        "independentLatinSourceAvailable": false
+      },
+      "sourceWitness": {
+        "edition": 1911,
+        "sourceUrl": "https://novenaregina.com/prayers/prayer-for-the-faithful-in-their-agony",
+        "originalBodyProvidedBy": "traditional-pray-data.js",
+        "wordingCollatedAgainst2013": false
+      },
+      "note": "Lasance 1911 p.819 is a complete verified EN historical witness; its final aspiration is preserved. Not the exact 2013 booklet transcription, and no separate FR/LA witness is asserted."
     },
     {
       "id": "communion_heart_intercession",
@@ -415,9 +619,33 @@
       "printedPage": 64,
       "pdfPage": 65,
       "section": "after_communion",
-      "status": "unresolved",
+      "status": "reader_present",
       "wordingCollatedAgainst2013": false,
-      "discoverableAsIndividualLibraryWork": false
+      "discoverableAsIndividualLibraryWork": true,
+      "owner": {
+        "path": "src/pray/traditional-pray-data.js",
+        "symbol": "sacredHeartIntercession1910",
+        "route": "pray.communion_treasury"
+      },
+      "discoverabilityProof": {
+        "index": "src/pray/red-booklet-communion-library-links.v1.js",
+        "route": "pray.communion_treasury",
+        "sourceId": "sacredHeartIntercession1910",
+        "searchSurface": "pray.library",
+        "opensExactSourceCard": true,
+        "languageWitnesses": [
+          "en"
+        ],
+        "independentFrenchSourceAvailable": false,
+        "independentLatinSourceAvailable": false
+      },
+      "sourceWitness": {
+        "edition": 1910,
+        "sourceUrl": "https://manualistpress.com/prayers/prayer-sacred-heart-for-the-church-raccolta-1910/",
+        "originalBodyProvidedBy": "traditional-pray-data.js",
+        "wordingCollatedAgainst2013": false
+      },
+      "note": "The Raccolta 1910 no.171 p.147 is a complete pre-2013 English witness to this devotion; historical indulgence text is not a current indulgence claim. 2013 booklet wording remains uncollated."
     },
     {
       "id": "communion_heart_aspirations",
@@ -447,7 +675,14 @@
         "route": "pray.communion_treasury"
       },
       "wordingCollatedAgainst2013": false,
-      "discoverableAsIndividualLibraryWork": false
+      "discoverableAsIndividualLibraryWork": true,
+      "discoverabilityProof": {
+        "index": "src/pray/red-booklet-communion-library-links.v1.js",
+        "route": "pray.communion_treasury",
+        "sourceId": "enEgo",
+        "searchSurface": "pray.library",
+        "opensExactSourceCard": true
+      }
     },
     {
       "id": "holy_spirit_augustine",
@@ -455,9 +690,33 @@
       "printedPage": 65,
       "pdfPage": 66,
       "section": "devotional",
-      "status": "unresolved",
+      "status": "reader_present",
       "wordingCollatedAgainst2013": false,
-      "discoverableAsIndividualLibraryWork": false
+      "discoverableAsIndividualLibraryWork": true,
+      "owner": {
+        "path": "src/pray/traditional-pray-data.js",
+        "symbol": "holySpiritAugustineTraditional",
+        "route": "pray.communion_treasury"
+      },
+      "discoverabilityProof": {
+        "index": "src/pray/red-booklet-communion-library-links.v1.js",
+        "route": "pray.communion_treasury",
+        "sourceId": "holySpiritAugustineTraditional",
+        "searchSurface": "pray.library",
+        "opensExactSourceCard": true,
+        "languageWitnesses": [
+          "en"
+        ],
+        "independentFrenchSourceAvailable": false,
+        "independentLatinSourceAvailable": false
+      },
+      "sourceWitness": {
+        "edition": 2008,
+        "sourceUrl": "https://archives.sophronius.org/raw-books/Latin%20-%20English%20Mass%20Booklet%20%281%29_text.pdf",
+        "originalBodyProvidedBy": "traditional-pray-data.js",
+        "wordingCollatedAgainst2013": false
+      },
+      "note": "The historical booklet ATTRIBUTES this prayer to Augustine; authenticity of authorship is not established. Printed 2008 EN witness; no 2013 word-for-word collation."
     },
     {
       "id": "our_lady_65",
@@ -465,9 +724,33 @@
       "printedPage": 65,
       "pdfPage": 66,
       "section": "devotional",
-      "status": "unresolved",
+      "status": "reader_present",
       "wordingCollatedAgainst2013": false,
-      "discoverableAsIndividualLibraryWork": false
+      "discoverableAsIndividualLibraryWork": true,
+      "owner": {
+        "path": "src/pray/traditional-pray-data.js",
+        "symbol": "ourLadyAfterCommunionTraditional",
+        "route": "pray.communion_treasury"
+      },
+      "discoverabilityProof": {
+        "index": "src/pray/red-booklet-communion-library-links.v1.js",
+        "route": "pray.communion_treasury",
+        "sourceId": "ourLadyAfterCommunionTraditional",
+        "searchSurface": "pray.library",
+        "opensExactSourceCard": true,
+        "languageWitnesses": [
+          "en"
+        ],
+        "independentFrenchSourceAvailable": false,
+        "independentLatinSourceAvailable": false
+      },
+      "sourceWitness": {
+        "edition": 2008,
+        "sourceUrl": "https://archives.sophronius.org/raw-books/Latin%20-%20English%20Mass%20Booklet%20%281%29_text.pdf",
+        "originalBodyProvidedBy": "traditional-pray-data.js",
+        "wordingCollatedAgainst2013": false
+      },
+      "note": "A printed 2008 English devotional witness is now a complete original source-owned card, searchable in the Library; Latin and French versions are not implied, 2013 wording uncollated."
     },
     {
       "id": "angelus",

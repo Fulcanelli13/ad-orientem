@@ -151,21 +151,27 @@ for(const lang of ["en","fr"]){
   checks++;
  }
 }
-// Communion Treasury: 7 preparation + 4 thanksgiving positions, both user
-// languages, with original Latin on every applicable source.
+// Communion Treasury: preserve seven established preparations and test
+// ten independently source-owned prayers after Communion. Historical
+// English-only sources must remain English in a French interface, with a
+// visible fallback notice rather than a fabricated translation. The four-card
+// After Mass Folio is a separate fixed itinerary, not this treasury list.
 for(const lang of ["en","fr"]){
  language=lang;
  for(const phase of ["before","after"]){
   S.communion=phase;
   const stages=phase==="before"?r.COMMUNION_BEFORE:r.COMMUNION_AFTER;
-  assert.equal(stages.length,phase==="before"?7:4);
+  assert.equal(stages.length,phase==="before"?7:10);
   for(let i=0;i<stages.length;i++){
    S.communionStep=i;
    const id=stages[i][0],rec=canonical[id]||COMMUNION_TREASURY_V383[id];
    assert.ok(rec,"Unknown source "+id);
    const html=r.renderCommunionTreasury();
    assert.ok(html.includes('data-ao-devo-card="communion-'+phase+'-'+id+'"'));
-   visible(html,rec[lang],"Communion "+id+"/"+lang);
+   const sourceLanguage=rec[lang]?lang:rec.en?"en":"fr";
+   visible(html,rec[sourceLanguage],"Communion "+id+"/"+lang+" (source "+sourceLanguage+")");
+   if(lang!==sourceLanguage)assert.ok(html.includes("data-tp381-source-language-fallback"),
+    "French UI must disclose unavailable translation for "+id);
    if(rec.la)visible(html,rec.la,"Communion Latin "+id);
    checks++;
   }
@@ -189,4 +195,4 @@ for(const lang of ["en","fr"]){
   checks++;
  }
 }
-console.log("PASS · "+checks+" original-source-to-visible-card checks across 6 Prayer routes: Library 48×2, Morning/Evening 1905/1913 × EN/FR/LA, Examen 5×2, Meals 4×2, Communion 11×2 and Sacred Heart 4×2; Latin source identities and historical edition holds preserved");
+console.log("PASS · "+checks+" original-source-to-visible-card checks across 6 Prayer routes: Library 48×2, Morning/Evening 1905/1913 × EN/FR/LA, Examen 5×2, Meals 4×2, Communion 17×2 and Sacred Heart 4×2; Latin source identities and historical edition holds preserved");

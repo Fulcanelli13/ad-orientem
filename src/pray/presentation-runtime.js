@@ -56,6 +56,10 @@ import {PRAYER_SUBJECTS_V1,prayerSubjectsForLibrary,prayerSubjectCounts} from ".
 import {guidedPrayerLinksForSubject} from "./prayer-subject-guided-links.v1.js";
 import {PRAYER_SUPPLEMENTAL_LIVE_WORK_LINKS_V1,prayerSupplementalLiveWork,prayerSupplementalLiveWorksForSubject} from "./prayer-supplemental-live-works.v1.js";
 import {prayerSevenSourceWork,prayerSevenSourceWorksForSubject} from "./prayer-seven-source-work-links.v1.js";
+import {redBookletCommunionLibraryLink,redBookletCommunionLibraryLinksForSubject} from "./red-booklet-communion-library-links.v1.js";
+import {RED_BOOKLET_SUSCIPE_LIBRARY_LINK_V1,redBookletSuscipeLibraryLinksForSubject} from "./red-booklet-suscipe-library-link.v1.js";
+import {RED_BOOKLET_PRIVATE_HISTORICAL_WORKS_V1,redBookletPrivateHistoricalSource,
+ redBookletPrivateHistoricalWork,redBookletPrivateHistoricalWorksForSubject} from "./red-booklet-private-historical-works.v1.js";
 import {FIVE_WOUNDS_SOURCE_V1,FIVE_WOUNDS_WOUNDS_V1,FIVE_WOUNDS_CHAPLET_V1,fiveWoundsStep,fiveWoundsGroupProgress} from "./five-wounds-chaplet.v1.js";
 import {PRECIOUS_BLOOD_HISTORICAL_SOURCE_V1,PRECIOUS_BLOOD_HISTORICAL_PRAYERS_V1,PRECIOUS_BLOOD_MYSTERIES_V1,PRECIOUS_BLOOD_TOTALS_V1,preciousBloodMystery,preciousBloodPrayerAt} from "./precious-blood-chaplet.v1.js";
 import {PRIESTLY_INTERCESSION_PURPOSES_B19,priestlyIntercessionFor} from "./priestly-intercessions-b19.js";
@@ -258,7 +262,7 @@ function semanticRails(){
  }else if(view==='confession'){
    // The phone accompanies preparation only. The sign-of-cross cue belongs
    // to the first rehearsal card, not to every card or an implied live rite.
-   if(CONF.stage===2&&confessionRiteCards(CONF.path)[CONF.riteStep]?.id==='cross-and-blessing')left=semanticRailChip('ao-live-sign-cross',L('Sign of Cross','Signe de croix'),L('Before entering','Avant d’entrer'),{channel:'transient'});
+   if(CONF.stage===2&&CONF.path&&!CONF.historicalPrayer&&confessionRiteCards(CONF.path)[CONF.riteStep]?.id==='cross-and-blessing')left=semanticRailChip('ao-live-sign-cross',L('Sign of Cross','Signe de croix'),L('Before entering','Avant d’entrer'),{channel:'transient'});
    right=semanticRailChip(
      'ao-rich-confession',
      L('Confession','Confession'),
@@ -465,6 +469,10 @@ function shell(){
 }
 function mount(){return shell().querySelector('.aoP435930Mount')}
 function open(id,opts={}){
+  const historicalDeepLink=id==='pray.confession'&&opts.historicalPrayer!==undefined
+    ?redBookletPrivateHistoricalSource(opts.historicalPrayer):null;
+  if(id==='pray.confession'&&opts.historicalPrayer!==undefined&&
+      (!historicalDeepLink||historicalDeepLink.route!=='pray.confession'))return false;
   actionCinematics.reset();
   ANGELUS_PILOT_ENTRY=false;
   // Do not corrupt return context or Back state for an unsupported deep link.
@@ -522,7 +530,10 @@ function open(id,opts={}){
   else if(id==='pray.little_crown'){view='littleCrown';LITTLE_CROWN={index:0,latin:false}}
   else if(id==='pray.precious_blood'){view='preciousBlood';PRECIOUS_BLOOD={phase:0,bead:0,latin:false,showMeditation:false}}
   else if(id==='pray.rosary_methods'){view='rosaryMethods';}
-  else if(id==='pray.confession'){view='confession';CONF=freshConfessionState();}
+  else if(id==='pray.confession'){view='confession';CONF=freshConfessionState();
+    if(historicalDeepLink){CONF.stage=historicalDeepLink.stage;CONF.historicalPrayer=historicalDeepLink.sourceId;
+      CONF.returnPrayerSnapshot=opts.returnPrayerSnapshot||null;}
+  }
   else if(id==='pray.benediction'){view='benediction';BEN={step:0,divinePraises:false,praisesForm:'1962',celebration:'ordinary',feastOptions:{...CHRIST_KING_OPTION_DEFAULTS}};}
   else if(id==='pray.adoration')view='adoration';
   else if(id==='pray.stations'){view='stations';STATIONS.step=0}
@@ -1915,7 +1926,36 @@ function confessionExaminationView(ex){
  ${pos===cards.length-1?confessionContritionPicker(L("Act of Contrition","Acte de contrition")):""}`;
 }
 
+ function confessionHistoricalPrayerCard(work){
+ const paras=work.text.split(/\n\s*\n/).filter(Boolean)
+  .map(p=>'<p class="aoTP381TextParagraph">'+esc(p)+'</p>').join('');
+ return '<article class="aoTP381PrayerCard" data-ao-confession-historical-source="'+esc(work.sourceId)+'">'+
+  '<h3>'+esc(L(work.en,work.fr))+'</h3>'+
+  (isFr()?'<p class="aoP435930SourceLanguageNotice" data-ao-confession-source-language-fallback>'+
+    esc('Texte source anglais : aucune traduction française attestée n’a été substituée.')+'</p>':'')+
+  '<div class="aoTP381Reader" lang="en">'+paras+'</div>'+
+  '<p class="aoP435930SourceNote">'+esc(L(
+    'Private historical prayer. The 2013 booklet wording is not yet collated.',
+    'Prière privée historique. Le texte du livret de 2013 reste à comparer.'
+  ))+'</p>'+
+  '<details class="aoP435930ConfSources"><summary>'+esc(L('Historical source','Source historique'))+'</summary>'+
+  '<p>'+esc(work.sourceEdition)+'</p><a href="'+esc(work.sourceUrl)+'" target="_blank" rel="noopener noreferrer">'+
+  esc(L('Read printed-source transcription','Lire la transcription de la source'))+' ↗</a></details></article>';
+}
+
 function renderConfession(){
+ const historical=redBookletPrivateHistoricalSource(CONF.historicalPrayer);
+ if(historical?.route==='pray.confession'){
+  return head(L(historical.en,historical.fr),L('Confession · private prayers','Confession · prières privées'))+
+   '<main class="aoP435930Body aoP435930ConfessionReader" data-ao-confession-private-reader="'+esc(historical.id)+'">'+
+   '<p>'+esc(L('This private prayer neither performs nor simulates sacramental Confession.',
+    'Cette prière privée ne réalise ni ne simule la confession sacramentelle.'))+'</p>'+
+   confessionHistoricalPrayerCard(historical)+
+   (CONF.returnPrayerSnapshot?'<button type="button" class="aoP435930Primary" data-p435930-conf-historical-library-back>'+
+     esc(L('Return to Prayer Library','Retour au livre de prières'))+'</button>':'')+
+   '<button type="button" class="aoP435930Primary" data-p435930-conf-historical-back>'+
+   esc(L('Go to Confession preparation','Voir la préparation à la confession'))+'</button></main>';
+ }
  const stages=[L('Prepare','Préparer'),L('Examination','Examen'),L('Before entering','Avant d’entrer'),L('After','Après')];
  const ex=isFr()?DATA.examFr:DATA.exam;
  const path=confessionPath(CONF.path);
@@ -1982,6 +2022,15 @@ function renderConfession(){
  CONF.stage===3&&cardSequence&&cardIndex===cardSequence.length-1?
  `<details class="aoP435930ConfHistoricalOptions" data-ao-batch03-conf-thanks><summary>${esc(L('Optional thanksgiving prayer','Prière d’action de grâces facultative'))}</summary>
  <p>${esc(L('This is private thanksgiving after an actual Confession, not proof of absolution or a substitute for assigned penance.','Action de grâces personnelle après une confession réelle, non preuve de l’absolution ni substitut à la pénitence imposée.'))}</p>${guidePrayers([{id:'foundations_glory_be',kicker:L('Glory Be','Gloire au Père')}])}</details>`:'';
+ const privatePrayers=RED_BOOKLET_PRIVATE_HISTORICAL_WORKS_V1.filter(w=>
+   w.route==='pray.confession'&&w.stage===CONF.stage);
+ const optionalHistorical=privatePrayers.length?
+  '<details class="aoP435930ConfHistoricalOptions" data-ao-confession-private-choices><summary>'+
+   esc(L('Traditional private prayers · optional','Prières traditionnelles privées · facultatives'))+'</summary>'+
+   '<p>'+esc(L('Read before entering or after an actual Confession; these prayers do not replace a priest, absolution or assigned penance.',
+   'À lire avant d’entrer ou après une confession réellement reçue : ces prières ne remplacent ni le prêtre, ni l’absolution, ni la pénitence imposée.'))+'</p>'+
+   privatePrayers.map(w=>'<button type="button" class="aoP435930ModuleCard" data-p435930-conf-historical="'+esc(w.sourceId)+'">'+
+    esc(L(w.en,w.fr))+' · EN</button>').join('')+'</details>':'';
  const lastCard=CONF.stage===3&&CONF.afterStep===confessionAfterCards().length-1;
  const stageBoundary=CONF.stage===0||(CONF.stage===1&&CONF.reading==='continuous')||(cardSequence&&cardIndex===cardSequence.length-1);
  // A step button is warranted at a section boundary, not within an
@@ -1993,7 +2042,7 @@ function renderConfession(){
    esc(choice==='cards'?L('By section','Par section'):L('Read continuously','Lire sans interruption'))+'</button>').join('')+'</nav>':'';
  const sectionRail=guideRail(stages,CONF.stage,'conf');
  const stageEyebrow=`<small class="aoP435930ConfProgressLabel">${CONF.stage+1} ${esc(L('OF','SUR'))} ${stages.length} · ${esc(stages[CONF.stage])}</small>`;
- return `${head(L('Confession','Confession'),confessionModeLabel(CONF.path))}<div class="aoP435930ConfNavShell">${stageEyebrow}${sectionRail}</div><main class="aoP435930Body aoP435930ConfessionReader" data-ao-confession-section="${CONF.stage}" data-ao-confession-card-index="${cardIndex}" data-ao-confession-final="${cardSequence?cardIndex===cardSequence.length-1:'false'}">${readingChoice}${CONF.stage===0?(globalThis.__AO_PRAYER_ART_QA_PREVIEW__===true?renderPrayerSelectedCoverQA("COV-pray.confession",isFr(),{qaOnly:true}):releasedModulePhotoMarkup("confession",{className:"aoPrayerConfessionCover"})):""}${body}${optionalPrayers}${devotionalGuide('confession')}${sources}${navigation}</main>`;
+ return `${head(L('Confession','Confession'),confessionModeLabel(CONF.path))}<div class="aoP435930ConfNavShell">${stageEyebrow}${sectionRail}</div><main class="aoP435930Body aoP435930ConfessionReader" data-ao-confession-section="${CONF.stage}" data-ao-confession-card-index="${cardIndex}" data-ao-confession-final="${cardSequence?cardIndex===cardSequence.length-1:'false'}">${readingChoice}${CONF.stage===0?(globalThis.__AO_PRAYER_ART_QA_PREVIEW__===true?renderPrayerSelectedCoverQA("COV-pray.confession",isFr(),{qaOnly:true}):releasedModulePhotoMarkup("confession",{className:"aoPrayerConfessionCover"})):""}${body}${optionalPrayers}${optionalHistorical}${devotionalGuide('confession')}${sources}${navigation}</main>`;
 }
 const BEN_STAGES=[
  ['exposition','Exposition','Exposition'],['adoration','Adoration','Adoration'],['hymn','Tantum Ergo','Tantum Ergo'],['prayer','Versicle & collect','Verset et oraison'],['blessing','Blessing','Bénédiction'],['praises','Divine Praises','Louanges divines'],['reposition','Reposition','Reposition']
@@ -2583,6 +2632,33 @@ function renderLibrary(){
  const cats=[['all',L('All','Toutes')],...Object.entries(DATA.categories||{}).map(([id,v])=>[id,isFr()?v.fr:v.en])];
  const historicalWorks=LIB.cat==='all'?prayerSupplementalLiveWorksForSubject(LIB.subject,q):[];
  const sourceDeepWorks=LIB.cat==='all'?prayerSevenSourceWorksForSubject(LIB.subject,q):[];
+ const communionWorks=LIB.cat==='all'?redBookletCommunionLibraryLinksForSubject(LIB.subject,q):[];
+ const suscipeWorks=LIB.cat==='all'?redBookletSuscipeLibraryLinksForSubject(LIB.subject,q):[];
+ const privateHistoricalWorks=LIB.cat==='all'?redBookletPrivateHistoricalWorksForSubject(LIB.subject,q):[];
+ const privateCommunionWorks=[...communionWorks,...suscipeWorks];
+ const privateHistoricalSection=!privateHistoricalWorks.length?'':(
+  '<section class="aoP435930LibraryRelated" data-ao-red-booklet-historical-library>'+
+  '<h3>'+esc(L('Mass and Confession · private historical prayers','Messe et confession · prières privées historiques'))+'</h3>'+
+  '<p>'+esc(L('Original historical English forms. The 2013 booklet wording is not certified identical.',
+    'Textes anglais historiques ; l’identité avec le livret de 2013 n’est pas certifiée.'))+'</p>'+
+  '<div class="aoP435930ModuleGrid">'+privateHistoricalWorks.map(w=>
+   '<button type="button" class="aoP435930ModuleCard" data-p435930-red-historical="'+esc(w.id)+'">'+
+    '<small>'+esc(w.route==='mass.prepare'?L('BEFORE MASS','AVANT LA MESSE'):L('CONFESSION · PRIVATE','CONFESSION · PRIVÉ'))+'</small>'+
+    '<b>'+esc(L(w.en,w.fr))+'</b><span>EN</span></button>').join('')+'</div></section>');
+ const communionSection=!privateCommunionWorks.length?'':(
+  '<section class="aoP435930LibraryRelated" data-ao-red-booklet-communion-library>'+
+  '<h3>'+esc(L('Traditional Communion prayers','Prières traditionnelles de Communion'))+'</h3>'+
+  '<p>'+esc(L('Open the complete prayer in its existing Communion reader. The 2013 booklet wording has not yet been compared.','Ouvrir la prière intégrale dans son lecteur de Communion. Le texte du livret de 2013 reste à comparer.'))+'</p>'+
+  '<div class="aoP435930ModuleGrid">'+privateCommunionWorks.map(work=>
+   '<button type="button" class="aoP435930ModuleCard" '+(work.id==="ignatius_suscipe"?'data-p435930-red-suscipe="'+esc(work.id)+'"':'data-p435930-red-communion="'+esc(work.id)+'"')+'>'+
+   moduleIcon(work.route)+'<small class="aoP435930ModuleKind">'+
+   esc(L(work.phase==='before'?'BEFORE COMMUNION':'AFTER COMMUNION',
+     work.phase==='before'?'AVANT LA COMMUNION':'APRÈS LA COMMUNION'))+'</small>'+
+   '<b>'+esc(L(work.en,work.fr))+'</b>'+
+   '<span class="aoP435930ModuleDescription">'+esc(work.languages.map(x=>x.toUpperCase()).join(' · '))+'</span>'+
+   '<i aria-hidden="true">'+assetIcon('ao-ui-next')+'</i></button>'
+  ).join('')+'</div></section>'
+ );
  // Work-level links carry no prayer body; each points to the existing B19
  // or B20/B21 original reader with its exact selected source purpose.
  const historicalSection=(!historicalWorks.length&&!sourceDeepWorks.length)||LIB.cat==='essentials'?'':(
@@ -2621,9 +2697,9 @@ function renderLibrary(){
   '<div class="aoP435930Chips" role="group" aria-label="'+esc(L('Theological prayer families','Familles théologiques de prières'))+'">'+
   '<button type="button" data-p435930-lib-subject="all" aria-pressed="'+String(LIB.subject==='all')+'">'+esc(L('All subjects','Tous les sujets'))+'</button>'+
   PRAYER_SUBJECTS_V1.map(subject=>'<button type="button" data-p435930-lib-subject="'+subject.id+'" aria-pressed="'+String(LIB.subject===subject.id)+'">'+
-    esc(isFr()?subject.fr:subject.en)+' <small>'+(subjectCounts.counts[subject.id]+prayerSupplementalLiveWorksForSubject(subject.id).length+prayerSevenSourceWorksForSubject(subject.id).length)+'</small></button>').join('')+
+    esc(isFr()?subject.fr:subject.en)+' <small>'+(subjectCounts.counts[subject.id]+prayerSupplementalLiveWorksForSubject(subject.id).length +prayerSevenSourceWorksForSubject(subject.id).length+redBookletCommunionLibraryLinksForSubject(subject.id).length+redBookletSuscipeLibraryLinksForSubject(subject.id).length+redBookletPrivateHistoricalWorksForSubject(subject.id).length)+'</small></button>').join('')+
   '</div><p class="aoP435930SourceNote">'+esc(L('Only accessible canonical and source-owned reader texts are included. Unverified research works are not shown as readable prayers.','Seuls les textes canoniques et les prières déjà accessibles dans leurs parcours d’origine sont inclus. Les œuvres de recherche non vérifiées ne sont pas présentées comme disponibles.'))+'</p></details>';
- return `${head(L('Prayer Library','Livre de prières'),`${Object.keys(DATA.prayers||{}).length} ${L('prayers','prières')}`)}<main class="aoP435930Body">${libraryOverviewGuide()}<label class="aoP435930Search"><span>${assetIcon('ao-ui-search')}</span><input type="search" data-p435930-lib-search value="${esc(LIB.q)}" placeholder="${esc(L('Search prayers','Rechercher une prière'))}"></label><div class="aoP435930Chips">${cats.map(([id,n])=>`<button type="button" class="${id===LIB.cat?'active':''}" data-p435930-lib-cat="${esc(id)}">${esc(n)}</button>`).join('')}</div>${subjectBrowse}<div class="aoP435930LibraryList" data-ao-prayer-subject-results="${esc(LIB.subject)}">${LIB.cat==="essentials"&&!q?claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_IDS_V1,prayers:DATA.prayers,esc,title:L("Essential Prayers","Prières essentielles"),artFor:releasedPrayerCardArtUrl}):(rows.length||!(historicalWorks.length+sourceDeepWorks.length)?renderLibraryEntryRows(rows,q):'')}</div>${historicalSection}${guidedSection}</main>`;
+ return `${head(L('Prayer Library','Livre de prières'),`${Object.keys(DATA.prayers||{}).length} ${L('prayers','prières')}`)}<main class="aoP435930Body">${libraryOverviewGuide()}<label class="aoP435930Search"><span>${assetIcon('ao-ui-search')}</span><input type="search" data-p435930-lib-search value="${esc(LIB.q)}" placeholder="${esc(L('Search prayers','Rechercher une prière'))}"></label><div class="aoP435930Chips">${cats.map(([id,n])=>`<button type="button" class="${id===LIB.cat?'active':''}" data-p435930-lib-cat="${esc(id)}">${esc(n)}</button>`).join('')}</div>${subjectBrowse}<div class="aoP435930LibraryList" data-ao-prayer-subject-results="${esc(LIB.subject)}">${LIB.cat==="essentials"&&!q?claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_IDS_V1,prayers:DATA.prayers,esc,title:L("Essential Prayers","Prières essentielles"),artFor:releasedPrayerCardArtUrl}):(rows.length||!(historicalWorks.length+sourceDeepWorks.length+privateCommunionWorks.length+privateHistoricalWorks.length)?renderLibraryEntryRows(rows,q):'')}</div>${communionSection}${privateHistoricalSection}${historicalSection}${guidedSection}</main>`;
 }
 function monthIndex(key){const d=dateObj(key);return d?d.getFullYear()*12+d.getMonth():null}
 function consecutive(records,needed){const done=records.filter(x=>x.complete).sort((a,b)=>a.date.localeCompare(b.date));if(!done.length)return 0;let c=1;for(let i=done.length-1;i>0;i--){const a=monthIndex(done[i].date),b=monthIndex(done[i-1].date);if(a-b===1)c++;else break}return Math.min(c,needed)}
@@ -4824,6 +4900,87 @@ function onClick(e){
   if(!DATA.prayers?.[id])return;
   pushView();LIB.open=id;LIB.language=null;PILOT_LORETO_GROUP=false;
   view='library';return render();
+ }
+ if(b.matches('[data-p435930-conf-historical-library-back]')&&view==='confession'&&CONF.returnPrayerSnapshot){
+  const receipt=CONF.returnPrayerSnapshot;
+  CONF.historicalPrayer=null;CONF.returnPrayerSnapshot=null;
+  return restoreHandoff(receipt);
+ }
+ if(b.matches('[data-p435930-conf-historical-back]')&&view==='confession'){
+  CONF.historicalPrayer=null;
+  if(!CONF.path)CONF.stage=0;
+  return render();
+ }
+ if(b.dataset.p435930ConfHistorical&&view==='confession'){
+  const work=redBookletPrivateHistoricalSource(b.dataset.p435930ConfHistorical);
+  if(!work||work.route!=='pray.confession'||work.stage!==CONF.stage)return;
+  CONF.historicalPrayer=work.sourceId;return render();
+ }
+ if(b.dataset.p435930RedHistorical){
+  const work=redBookletPrivateHistoricalWork(b.dataset.p435930RedHistorical);
+  if(!work||view!=='library'||LIB.open||LIB.cat!=='all'||
+     (LIB.subject!==work.subject&&!(LIB.subject==='all'&&LIB.q.trim())))return;
+  clearInternalPrayerRouteErrors();
+  const receipt=captureResume();
+  if(work.route==='pray.confession'){
+   // Confession and the Library share this runtime: navigate in place.
+   // Calling the outer open API during an active Library event can
+   // re-enter/reset the source reader, losing a selected historical card.
+   // This only selects a PRIVATE prayer, never a sacramental stage or record.
+   pushView();
+   view='confession';
+   CONF=freshConfessionState();
+   CONF.stage=work.stage;
+   CONF.historicalPrayer=work.sourceId;
+   CONF.returnPrayerSnapshot=receipt;
+   return render();
+  }
+  const openSource=window.AO_PRAY_V435930?.open;
+  if(typeof openSource!=='function')return showInternalPrayerRouteError(b,work.route);
+  try{
+   const opened=openSource(work.route,{massPrayer:work.sourceId,
+    returnContext:PRAY_CTX,returnPrayerSnapshot:receipt});
+   if(opened!==true&&opened?.ok!==true)showInternalPrayerRouteError(b,work.route);
+  }catch(error){console.error('Historic private prayer entry failed',error);showInternalPrayerRouteError(b,work.route);}
+  return;
+ }
+ if(b.dataset.p435930RedSuscipe){
+  const work=RED_BOOKLET_SUSCIPE_LIBRARY_LINK_V1;
+  if(b.dataset.p435930RedSuscipe!==work.id||view!=='library'||LIB.open||
+     LIB.cat!=='all'||(LIB.subject!==work.subject&&!(LIB.subject==='all'&&LIB.q.trim())))return;
+  clearInternalPrayerRouteErrors();
+  const openSource=window.AO_PRAY_V435930?.open;
+  if(typeof openSource!=='function')return showInternalPrayerRouteError(b,work.route);
+  try{
+   const receipt=captureResume();
+   const opened=openSource(work.route,{dailySourcePrayer:work.sourceIds.en,
+    returnContext:PRAY_CTX,returnPrayerSnapshot:receipt});
+   if(opened!==true&&opened?.ok!==true)showInternalPrayerRouteError(b,work.route);
+  }catch(error){
+   console.error('Suscipe source reader entry failed',error);
+   showInternalPrayerRouteError(b,work.route);
+  }
+  return;
+ }
+ if(b.dataset.p435930RedCommunion){
+  const work=redBookletCommunionLibraryLink(b.dataset.p435930RedCommunion);
+  if(!work||view!=='library'||LIB.open||LIB.cat!=='all'||
+    (LIB.subject!==work.subject&&!(LIB.subject==='all'&&LIB.q.trim())))return;
+  clearInternalPrayerRouteErrors();
+  // Use the patched, original source-runtime open API; never mirror prayer
+  // text or claim that a matching title proves identical 2013 wording.
+  const openSource=window.AO_PRAY_V435930?.open;
+  if(typeof openSource!=='function')return showInternalPrayerRouteError(b,work.route);
+  try{
+   const receipt=captureResume();
+   const opened=openSource(work.route,{communionPrayer:work.sourceId,
+    returnContext:PRAY_CTX,returnPrayerSnapshot:receipt});
+   if(opened!==true&&opened?.ok!==true)showInternalPrayerRouteError(b,work.route);
+  }catch(error){
+   console.error('Communion prayer source entry failed',error);
+   showInternalPrayerRouteError(b,work.route);
+  }
+  return;
  }
  if(b.dataset.p435930SourceWork){
   const work=prayerSevenSourceWork(b.dataset.p435930SourceWork);

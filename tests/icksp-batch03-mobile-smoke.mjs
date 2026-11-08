@@ -84,7 +84,10 @@ try{
  await page.locator("[data-tp381-communion-source='beforeAmbrose']").evaluate(el=>el.click());
  assert.match(await page.locator("[data-ao-devo-card]").first().getAttribute("data-ao-devo-card"),/beforeAmbrose/);
  await page.locator("[data-tp381-communion='after']").evaluate(el=>el.click());
- assert.equal(await page.locator("[data-tp381-communion-purpose]").count(),3);
+ assert.equal(await page.locator("[data-tp381-communion-purpose]").count(),4,
+  "Three established purpose groups and one distinct historical intercession group");
+ assert.equal(await page.locator("[data-tp381-communion-purpose='intercession']").count(),1,
+  "Historical intercessions must be separately identified, not mixed into Thanksgiving");
  await page.locator("[data-tp381-communion-source='afterBonaventure']").evaluate(el=>el.click());
  assert.match(await page.locator("[data-ao-devo-card]").first().getAttribute("data-ao-devo-card"),/afterBonaventure/);
  assert.deepEqual(errors,[],"Prayer module browser exceptions");

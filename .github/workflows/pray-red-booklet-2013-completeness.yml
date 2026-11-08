@@ -2,16 +2,32 @@ name: Prayer red booklet 2013 — completeness register
 on:
   push:
     branches:
-      - feat/red-booklet-2013-full-prayer-coverage-20261108
+      - 'feat/red-booklet-*'
     paths:
       - data/pray/red-booklet-2013-completeness.v1.json
+      - src/pray/red-booklet-communion-library-links.v1.js
+      - src/pray/red-booklet-suscipe-library-link.v1.js
+      - src/pray/red-booklet-private-historical-works.v1.js
+      - src/pray/presentation-runtime.js
+      - src/pray/traditional-pray-runtime.js
+      - src/pray/traditional-pray-data.js
+      - src/pray/communion-prayer-purpose-map.js
       - tests/pray-red-booklet-2013-completeness.mjs
+      - tests/pray-red-booklet-2013-communion-library-phone.mjs
       - .github/workflows/pray-red-booklet-2013-completeness.yml
   pull_request:
     branches: [main]
     paths:
       - data/pray/red-booklet-2013-completeness.v1.json
+      - src/pray/red-booklet-communion-library-links.v1.js
+      - src/pray/red-booklet-suscipe-library-link.v1.js
+      - src/pray/red-booklet-private-historical-works.v1.js
+      - src/pray/presentation-runtime.js
+      - src/pray/traditional-pray-runtime.js
+      - src/pray/traditional-pray-data.js
+      - src/pray/communion-prayer-purpose-map.js
       - tests/pray-red-booklet-2013-completeness.mjs
+      - tests/pray-red-booklet-2013-communion-library-phone.mjs
       - .github/workflows/pray-red-booklet-2013-completeness.yml
   workflow_dispatch:
 permissions:
@@ -25,5 +41,17 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Verify 37 booklet private prayers and their app source owners
+      - name: Verify 37 booklet works and direct Communion Library source links
         run: node tests/pray-red-booklet-2013-completeness.mjs
+  booklet-communion-library-phone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Compare eleven Communion prayers, Suscipe EN/LA and four Mass/Confession originals in Library on 320/390px EN/FR
+        run: node tests/pray-red-booklet-2013-communion-library-phone.mjs

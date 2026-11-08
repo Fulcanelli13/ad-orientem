@@ -21,6 +21,8 @@ import {dailyHorizonState} from "./quiet-devotional-progression.js";
 import {createDailySessionTimer,sessionClockLabel} from "./daily-session-timer.js";
 import {createPrayerPurposeIndex,prayerPurposeFor,prayerPurposeDefault,normalizePrayerPurposeSelection} from "./prayer-purpose-index.js";
 import {COMMUNION_PRAYER_PURPOSES} from "./communion-prayer-purpose-map.js";
+import {RED_BOOKLET_SUSCIPE_LIBRARY_LINK_V1 as SUSCIPE_LINK} from "./red-booklet-suscipe-library-link.v1.js";
+import {redBookletPrivateHistoricalSource} from "./red-booklet-private-historical-works.v1.js";
 import {GOOD_DEATH_PRAYER_PURPOSES} from "./good-death-purpose-map.js";
 import {buildPersonalDailyPlan,personalDailyOptions,personalDailyDirectPlan,loadPersonalDailyPrefs,savePersonalDailyPrefs,changePersonalDailyPrefs} from "./daily-personal-rule.js";
 import {personalDailyPrayerCard,personalDailyPurposeSection,dailyPersonalSettings,dailyPersonalPrayerCatalog,dailyPersonalList} from "./daily-personal-prayer-view.js";
@@ -235,7 +237,14 @@ function savePersonalDailyChoice(next){
 function dailyReadingPlan(){
  const prefs=personalDailyPrefs();
  if(S.dailyMode==="direct"&&S.dailyDirectId){
-  const result=personalDailyDirectPlan({daypart:S.daypart,prefs,sourceId:S.dailyDirectId});
+  // The independent source-Library handoff must not change saved daily preferences.
+  const needsOriginalLanguage=S.dailyDirectLanguage&&
+   Object.values(SUSCIPE_LINK.sourceIds).includes(S.dailyDirectId);
+  const result=needsOriginalLanguage
+   ?personalDailyDirectPlan({
+     daypart:S.daypart,prefs:{...prefs,language:S.dailyDirectLanguage},sourceId:S.dailyDirectId
+    })
+   :personalDailyDirectPlan({daypart:S.daypart,prefs,sourceId:S.dailyDirectId});
   if(result)return result;
  }
  return buildPersonalDailyPlan({daypart:S.daypart,prefs});
@@ -422,12 +431,19 @@ function renderMorningEvening(){
   :existingNav;
  const full=buildPersonalDailyPlan({daypart:S.daypart,prefs:{...prefs,length:"full",mode:"standard"}});
  const other=personalDailyOptions(S.daypart,prefs.language,prefs.edition).filter(row=>row.kind==="additional");
+ const sourceOriginal=direct&&Object.values(SUSCIPE_LINK.sourceIds).includes(S.dailyDirectId);
+ const sourceLanguageNav=sourceOriginal?'<nav class="aoTP381DaypartStrip" data-ao-suscipe-source-lang aria-label="'+esc(L('Original prayer language','Langue originale de la prière'))+'">'+
+  ['en','la'].map(lang=>'<button type="button" data-tp381-suscipe-lang="'+lang+'" aria-pressed="'+String(S.dailyDirectLanguage===lang)+'">'+(lang==='la'?'LATIN':'ENGLISH')+'</button>').join('')+'</nav>'+
+  '<p class="aoTP381Intro" data-ao-suscipe-source-note>'+esc(L(
+   'Complete 1908 original: English or Latin. The 2013 booklet wording has not yet been compared; no French text is attested.',
+   'Texte intégral de 1908 : anglais ou latin. Le texte du livret de 2013 reste à comparer ; aucune traduction française n’est attestée.'
+  ))+'</p>':'';
  const body=browse?dailyPersonalPrayerCatalog(full,other,{esc,L})
   :continuous?renderDailyContinuous(rows)
   :guided||direct?renderDailyGuided(rows)
   :plan.mode==="personal"?dailyPersonalList(rows,{esc,L,isFr:isFr()})
   :plan.mode==="approved"?dailyApprovedSequenceList(rows):prayerRows(rows.map(x=>[x.id,x.title,x.note]));
- return `${head(L("Morning & Evening Prayer","Prières du matin & du soir"))}<main class="aoP435930Body aoTP381DonorBody" data-ao-hours-family="rule" data-ao-hours-owner="${S.daypart}"><div class="aoDailyOpeningRail">${choice}${editionPills}${nav}</div>${guided?dailyHorizonMarkup(rows.length):""}${direct?'<small class="aoDailyDirectHint">'+esc(L("Individual prayer · not added to your daily rule","Prière individuelle · non ajoutée à votre règle quotidienne"))+'</small>':""}${body}${guided?dailyTimerControls():""}${dailyPersonalSettings(plan,prefs,{esc,L,expanded:PERSONAL_DAILY_SETTINGS_OPEN,showEdition:!DAILY_UX_PILOT_ENABLED})}${options}${source(plan.sourceLabel,plan.sourceUrl)}</main>`;
+ return `${head(L("Morning & Evening Prayer","Prières du matin & du soir"))}<main class="aoP435930Body aoTP381DonorBody" data-ao-hours-family="rule" data-ao-hours-owner="${S.daypart}"><div class="aoDailyOpeningRail">${choice}${editionPills}${nav}</div>${guided?dailyHorizonMarkup(rows.length):""}${direct?'<small class="aoDailyDirectHint">'+esc(L("Individual prayer · not added to your daily rule","Prière individuelle · non ajoutée à votre règle quotidienne"))+'</small>':""}${sourceLanguageNav}${body}${guided?dailyTimerControls():""}${dailyPersonalSettings(plan,prefs,{esc,L,expanded:PERSONAL_DAILY_SETTINGS_OPEN,showEdition:!DAILY_UX_PILOT_ENABLED})}${options}${source(plan.sourceLabel,plan.sourceUrl)}</main>`;
 }
 const HYMN_KEYS=Object.freeze(["te_deum","veni_creator","ave_maris_stella",...ICRSP_SEASONAL_HYMN_IDS_V1]);
 const hymnById=id=>SACRED_HYMNS_V381[id]||ICRSP_SEASONAL_HYMNS_V1[id]||null;
@@ -564,7 +580,7 @@ function sourcedPrayerCard(item,label,{focusParagraphs=false,verseFocus=false,ho
   const face=prayerSourceFacesV1(item,isFr()?"fr":"en");
   const vern=face.vernacular,latin=face.latin,both=!!(vern&&latin);
   const show=v=>verseFocus?String(v??"").split(/\n/).filter(t=>t.trim()).map(t=>'<p class="aoTP381TextParagraph">'+esc(t)+'</p>').join(""):hoursFamily?hoursParagraphs(v):focusParagraphs?prayerParagraphs(v):nl(v);
-  return `<article class="aoTP381PrayerCard"><h3>${esc(label)}</h3>${traditionalSourceFallbackNotice(face)}${existingLatinSwitch(both)}${both?`<button type="button" data-tp381-flip aria-label="${esc(L("Switch prayer language","Changer la langue de la prière"))}"><span data-face-v lang="${face.vernacularLanguage}">${show(vern)}</span><span data-face-la lang="la" hidden>${show(latin)}</span></button>`:`<div class="aoTP381Reader" lang="${face.vernacularLanguage||(latin?'la':'en')}">${show(vern||latin)}</div>`}</article>`;
+  return `<article class="aoTP381PrayerCard"><h3>${esc(label)}</h3>${traditionalSourceFallbackNotice(face)}${existingLatinSwitch(both)}${both?`<button type="button" data-tp381-flip aria-label="${esc(L("Switch prayer language","Changer la langue de la prière"))}"><span data-face-v lang="${face.vernacularLanguage}">${show(vern)}</span><span data-face-la lang="la" hidden>${show(latin)}</span></button>`:`<div class="aoTP381Reader" lang="${face.vernacularLanguage||(latin?'la':'en')}">${show(vern||latin)}</div>`}${item?.sourceUrl?source(item.witness||label,item.sourceUrl):""}</article>`;
 }
 const HEART_STAGES=Object.freeze(["litany","reparation","golden_arrow","consecration"]);
 function heartTitle(id){return id==="litany"?L("Litany","Litanies"):id==="reparation"?L("Pius XI · Reparation","Pie XI · Réparation"):id==="golden_arrow"?L("Golden Arrow","Flèche d’Or"):L("Consecration","Consécration")}
@@ -628,6 +644,12 @@ const COMMUNION_BEFORE=Object.freeze([
 ]);
 const COMMUNION_AFTER=Object.freeze([
   ["adoration_anima_christi","Anima Christi","Anima Christi"],
+  ["thanksgivingMyGoodJesus","My Good Jesus · Thanksgiving","Mon bon Jésus · Action de grâces"],
+  ["eucharisticHeartAspiration","Sacred Heart in the Blessed Sacrament","Cœur de Jésus dans le Très Saint Sacrement"],
+  ["holySpiritAugustineTraditional","Prayer to the Holy Spirit","Prière au Saint-Esprit"],
+  ["ourLadyAfterCommunionTraditional","Prayer to Our Lady","Prière à Notre-Dame"],
+  ["mercifulJesusDying1911","O Most Merciful Jesus · For the Dying","Ô Jésus très miséricordieux · Pour les agonisants"],
+  ["sacredHeartIntercession1910","Sacred Heart · For the Church","Sacré-Cœur · Pour l’Église"],
   ["afterThomas","St Thomas Aquinas","Saint Thomas d'Aquin"],
   ["afterBonaventure","St Bonaventure","Saint Bonaventure"],
   ["enEgo","En ego","En ego"]
@@ -638,10 +660,17 @@ const COMMUNION_AFTER=Object.freeze([
  * Both lengths read existing canonical Prayer corpus and communion-treasury
  * witnesses. The full sequence is simply a longer set of the same texts.
  */
+// The Mass Folio's published after-Mass four-card order is fixed. The
+// independent Communion Treasury can offer additional private source works
+// without implicitly changing the full Mass reader or its progress totals.
+const MASS_THANKSGIVING_SOURCE_IDS=Object.freeze([
+ "adoration_anima_christi","afterThomas","afterBonaventure","enEgo"
+]);
 function massFolioPrayerStages(){
   const before=S.route==="mass.prepare";
-  const all=before?COMMUNION_BEFORE:COMMUNION_AFTER;
-  if(S.massDepth==="full")return all;
+  const all=before?COMMUNION_BEFORE:COMMUNION_AFTER.filter(([id])=>
+    MASS_THANKSGIVING_SOURCE_IDS.includes(id));
+  if(S.massDepth==="full")return before?[...all,["massFourEndsDeclaration1904","Four Ends of Mass · Declaration","Quatre fins de la Messe · Offrande"]]:all;
   return before?[all[0],all[1],all[4]]:[all[0]];
 }
 function renderMassFolioPrayers(){
@@ -650,8 +679,11 @@ function renderMassFolioPrayers(){
   const step=Math.max(0,Math.min(stages.length-1,Number(S.massStep)||0));
   const [id,titleEn,titleFr]=stages[step];
   const corpus=COMMUNION_TREASURY_V383;
-  const prayer=data().prayers?.[id]
-    ?prayerCard(id,{focusParagraphs:true})
+  const historical=redBookletPrivateHistoricalSource(id);
+  const privateWitness=historical?{en:historical.text,title:historical.en,
+    titleFr:historical.fr,witness:historical.sourceEdition,sourceUrl:historical.sourceUrl}:null;
+  const prayer=historical?sourcedPrayerCard(privateWitness,L(titleEn,titleFr),{focusParagraphs:true})
+    :data().prayers?.[id]?prayerCard(id,{focusParagraphs:true})
     :sourcedPrayerCard(corpus[id],L(corpus[id]?.title||titleEn,corpus[id]?.titleFr||titleFr),{focusParagraphs:true});
   const title=before?L("Preparation before Mass","Préparation avant la messe"):
     L("Thanksgiving after Mass","Action de grâces après la messe");
@@ -660,10 +692,11 @@ function renderMassFolioPrayers(){
       "Priez à votre rythme. Vous pouvez rejoindre à tout moment la messe sélectionnée.")
     :L("These are private prayers of thanksgiving, not part of the Mass rite.",
       "Ces prières personnelles d’action de grâces ne font pas partie du rite de la messe.");
-  const finish=before?'<button type="button" data-tp381-mass-continue>'+
+  const finish=before&&OPEN_OPTS.massPrayer?'<button type="button" data-tp381-back>'+esc(L("Return to Prayer Library","Retour au livre de prières"))+'</button>':
+    before?'<button type="button" data-tp381-mass-continue>'+
     esc(L("Proceed to Mass","Passer à la messe"))+'</button>':
     '<button type="button" data-tp381-mass-finish>'+esc(L("Finish","Terminer"))+'</button>';
-  const secondary=before?'<button type="button" data-tp381-mass-cancel>'+
+  const secondary=before&&!OPEN_OPTS.massPrayer?'<button type="button" data-tp381-mass-cancel>'+
     esc(L("Back to Mass choices","Retour aux choix de la messe"))+'</button>':"";
   const prev=step>0?'<button type="button" data-tp381-mass-step="'+(step-1)+'">'+
     esc(L("Previous prayer","Prière précédente"))+'</button>':"";
@@ -698,6 +731,13 @@ function rememberCommunionPurpose(phase,group,id){
  try{globalThis.localStorage?.setItem(COMMUNION_PURPOSE_KEY,JSON.stringify(next))}catch{}
 }
 function communionStages(){return S.communion==="after"?COMMUNION_AFTER:COMMUNION_BEFORE}
+function communionDeepLinkTarget(sourceId){
+ for(const [phase,stages] of [["before",COMMUNION_BEFORE],["after",COMMUNION_AFTER]]){
+  const index=stages.findIndex(row=>row[0]===sourceId);
+  if(index>=0)return {phase,index};
+ }
+ return null;
+}
 function communionPurposePicker(phase,stages,activeId){
  const groups=COMMUNION_PURPOSE_INDEX[phase],current=prayerPurposeFor(COMMUNION_PURPOSE_INDEX,phase,activeId)||groups[0];
  const idLabels=new Map(stages.map(([id,en,fr])=>[id,L(en,fr)]));
@@ -1007,13 +1047,33 @@ function render(){
 }
 function open(route,opts={}){
   if(!ROUTES[route])return false;
+  const sourceMass=route==="mass.prepare"&&opts.massPrayer!==undefined
+    ?redBookletPrivateHistoricalSource(opts.massPrayer):null;
+  if(route==="mass.prepare"&&opts.massPrayer!==undefined&&
+     (!sourceMass||sourceMass.route!=="mass.prepare"))return false;
+  const requestedDailySource=route==="pray.morning_evening"&&opts.dailySourcePrayer!==undefined
+    ?Object.entries(SUSCIPE_LINK.sourceIds).find(([,id])=>id===opts.dailySourcePrayer):null;
+  if(route==="pray.morning_evening"&&opts.dailySourcePrayer!==undefined&&!requestedDailySource)return false;
+  const directDaily=requestedDailySource?personalDailyDirectPlan({
+    daypart:"morning",prefs:{...personalDailyPrefs(),language:requestedDailySource[0]},sourceId:requestedDailySource[1]
+  }):null;
+  if(requestedDailySource&&!directDaily)return false;
+  // A specific source-owned prayer must open at its real card, not the
+  // default first card; unknown IDs fail closed without navigating.
+  const communionTarget=route==="pray.communion_treasury"&&opts.communionPrayer!==undefined
+    ?communionDeepLinkTarget(opts.communionPrayer):null;
+  if(route==="pray.communion_treasury"&&opts.communionPrayer!==undefined&&!communionTarget)return false;
   resetDailySessionTimer();
   OPEN_RECEIPT=captureObservedModuleOrigin(window,"pray");
   OPEN_OPTS={...opts};MASS_HANDOFF_BUSY=false;
   S={...S,route,screen:"module",prayerId:null,guidedFromList:false,
     ...(route==="mass.prepare"||route==="mass.thanksgiving"
-      ?{massStep:0,massDepth:opts.depth==="full"?"full":"brief"}:{}),
-    ...(route==="pray.morning_evening"?{dailyMode:"guided",dailyDirectId:null,dailyStep:0,dailyLength:"standard",returnToDaily:false}:{})
+      ?{massStep:sourceMass?COMMUNION_BEFORE.length:0,massDepth:sourceMass||opts.depth==="full"?"full":"brief"}:{}),
+    ...(route==="pray.morning_evening"?{daypart:directDaily?"morning":S.daypart,
+        dailyMode:directDaily?"direct":"guided",
+        dailyDirectId:directDaily?.sourceId||null,
+        dailyDirectLanguage:requestedDailySource?.[0]||null,
+        dailyStep:0,dailyLength:"standard",returnToDaily:false}:{})
    ,...(route==="pray.nightly_examen"?{examenStep:0,returnToDaily:false}:{}),
     // Work-level devotional entry may focus an existing bedside prayer step.
     // Only the original three stages are accepted; no sacramental action is implied.
@@ -1022,7 +1082,7 @@ function open(route,opts={}){
     ...(route==="pray.good_death"?{goodDeathStep:0}:{}),
     ...(route==="pray.meal_prayers"?{mealStep:0}:{}),
     ...(route==="pray.sacred_heart"?{sacredHeart:HEART_STAGES.includes(opts.prayer) ? opts.prayer : "litany"}:{}),
-    ...(route==="pray.communion_treasury"?{communion:"before",communionStep:0}:{}),
+    ...(route==="pray.communion_treasury"?{communion:communionTarget?.phase||"before",communionStep:communionTarget?.index??0}:{}),
     ...(route==="pray.holy_name_litany"?{litanyMode:"guided",litanyStep:0}:{})};
   BASE_OPEN("pray.hub",opts);
   render();return true;
@@ -1065,7 +1125,7 @@ function goHome(){
 }
 function handleClick(e){
   const b=e.target.closest?.("button,[data-tp381-flip]");if(!b||!root()?.classList.contains("open"))return;
-  if(!b.matches("[data-tp381-back],[data-tp381-home],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-heart],[data-tp381-golden-arrow],[data-tp381-joseph-edition],[data-tp381-b01-meal],[data-tp381-b01-hope],[data-tp381-b01-contrition],[data-tp381-examen-contrition-open],[data-tp381-communion],[data-tp381-communion-pick],[data-tp381-communion-purpose],[data-tp381-communion-source],[data-tp381-good-death-purpose],[data-tp381-good-death-source],[data-tp381-dying],[data-tp381-dying-step],[data-tp381-flip],[data-tp381-latin-switch],[data-tp381-glossary],[data-tp381-daily-mode],[data-tp381-daily-presentation],[data-tp381-daily-quick],[data-tp381-flow-jump],[data-tp381-timer-toggle],[data-tp381-timer-control],[data-tp381-timer-target],[data-tp381-approved-daily-form],[data-tp381-personal-action],[data-tp381-personal-variant],[data-tp381-personal-purpose],[data-tp381-direct-prayer],[data-tp381-daily-length],[data-tp381-daily-card-index],[data-tp381-daily-step],[data-tp381-daily-overview],[data-tp381-daily-examen],[data-tp381-examen-step],[data-tp381-examen-return],[data-tp381-examen-overview],[data-tp381-litany-mode],[data-tp381-litany-step],[data-tp381-mass-step],[data-tp381-mass-continue],[data-tp381-mass-cancel],[data-tp381-mass-finish]"))return;
+  if(!b.matches("[data-tp381-back],[data-tp381-home],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-heart],[data-tp381-golden-arrow],[data-tp381-joseph-edition],[data-tp381-b01-meal],[data-tp381-b01-hope],[data-tp381-b01-contrition],[data-tp381-examen-contrition-open],[data-tp381-communion],[data-tp381-communion-pick],[data-tp381-communion-purpose],[data-tp381-communion-source],[data-tp381-good-death-purpose],[data-tp381-good-death-source],[data-tp381-dying],[data-tp381-dying-step],[data-tp381-flip],[data-tp381-latin-switch],[data-tp381-glossary],[data-tp381-daily-mode],[data-tp381-daily-presentation],[data-tp381-daily-quick],[data-tp381-flow-jump],[data-tp381-timer-toggle],[data-tp381-timer-control],[data-tp381-timer-target],[data-tp381-approved-daily-form],[data-tp381-personal-action],[data-tp381-personal-variant],[data-tp381-personal-purpose],[data-tp381-direct-prayer],[data-tp381-suscipe-lang],[data-tp381-daily-length],[data-tp381-daily-card-index],[data-tp381-daily-step],[data-tp381-daily-overview],[data-tp381-daily-examen],[data-tp381-examen-step],[data-tp381-examen-return],[data-tp381-examen-overview],[data-tp381-litany-mode],[data-tp381-litany-step],[data-tp381-mass-step],[data-tp381-mass-continue],[data-tp381-mass-cancel],[data-tp381-mass-finish]"))return;
   e.preventDefault();e.stopImmediatePropagation();
   if(b.matches("[data-tp381-back]"))return back();
   if(b.matches("[data-tp381-home]"))return goHome();
@@ -1212,11 +1272,20 @@ function handleClick(e){
     if(length!=="standard"&&!dailyLengthOptions().includes(length))return;
     S.dailyLength=length;S.dailyStep=0;S.dailyMode="guided";return render();
   }
+  if(b.hasAttribute("data-tp381-suscipe-lang")){
+    if(S.route!=="pray.morning_evening"||S.screen!=="module"||
+       S.dailyMode!=="direct"||!Object.values(SUSCIPE_LINK.sourceIds).includes(S.dailyDirectId))return;
+    const language=b.dataset.tp381SuscipeLang,sourceId=SUSCIPE_LINK.sourceIds[language];
+    if(!sourceId||!personalDailyDirectPlan({
+      daypart:"morning",prefs:{...personalDailyPrefs(),language},sourceId
+    }))return;
+    S.dailyDirectLanguage=language;S.dailyDirectId=sourceId;S.dailyStep=0;return render();
+  }
   if(b.hasAttribute("data-tp381-direct-prayer")){
     if(S.route!=="pray.morning_evening"||S.screen!=="module")return;
     const sourceId=b.dataset.tp381DirectPrayer;
     if(!personalDailyDirectPlan({daypart:S.daypart,prefs:personalDailyPrefs(),sourceId}))return;
-    S.dailyDirectId=sourceId;S.dailyMode="direct";S.dailyStep=0;S.guidedFromList=true;return render();
+    S.dailyDirectId=sourceId;S.dailyDirectLanguage=null;S.dailyMode="direct";S.dailyStep=0;S.guidedFromList=true;return render();
   }
   if(b.hasAttribute("data-tp381-daily-card-index")){
     if(S.route!=="pray.morning_evening"||S.screen!=="module"||!["personal","approved"].includes(dailyReadingPlan().mode))return;

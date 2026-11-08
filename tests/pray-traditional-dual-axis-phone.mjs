@@ -637,10 +637,15 @@ try{
  assert.equal(selectedSource.before.disposition,"foundations_act_of_hope");
  await page.locator("#aoPray435930 [data-tp381-communion='after']").evaluate(el=>el.click());
  const after=await snapshot();
- assert.equal(after.stops,4);assert.equal(after.index,0);
+ assert.equal(after.stops,10,"The source-owned Communion Treasury has ten complete after-prayers");assert.equal(after.index,0);
  assert.equal(after.id,"communion-after-adoration_anima_christi");
  await page.screenshot({path:resolve(captures,"communion-after-390-fr.png"),animations:"disabled"});
- const afterIds=["adoration_anima_christi","afterThomas","afterBonaventure","enEgo"];
+ const afterIds=[
+ "adoration_anima_christi","thanksgivingMyGoodJesus","eucharisticHeartAspiration",
+ "holySpiritAugustineTraditional","ourLadyAfterCommunionTraditional",
+ "mercifulJesusDying1911","sacredHeartIntercession1910",
+ "afterThomas","afterBonaventure","enEgo"
+];
  for(let i=0;i<afterIds.length;i++){
   await page.locator("#aoPray435930 .aoDevoStop").nth(i).evaluate(el=>el.click());
   const stage=await snapshot();
@@ -650,7 +655,8 @@ try{
  }
  // Separate the thanksgiving act, Christ-centred prayers and En ego.
  const afterPicker=page.locator("#aoPray435930 [data-ao-communion-purpose-picker='after']");
- assert.equal(await afterPicker.locator("[data-tp381-communion-purpose]").count(),3);
+ assert.equal(await afterPicker.locator("[data-tp381-communion-purpose]").count(),4,
+  "Historical intercessions need their own purpose without changing original prayer identities");
  await page.locator("#aoPray435930 [data-tp381-communion-purpose='union']").evaluate(el=>el.click());
  assert.equal((await snapshot()).id,"communion-after-adoration_anima_christi");
  await page.locator("#aoPray435930 [data-tp381-communion-source='afterBonaventure']").evaluate(el=>el.click());
@@ -658,7 +664,13 @@ try{
  assert.ok((await page.locator("#aoPray435930 .aoTP381PrayerCard").innerText()).length>250);
  await page.screenshot({path:resolve(captures,"communion-after-purpose-bonaventure-390-fr.png"),animations:"disabled"});
  await page.locator("#aoPray435930 [data-tp381-communion-purpose='thanksgiving']").evaluate(el=>el.click());
- assert.equal((await snapshot()).id,"communion-after-afterThomas","Real thanksgiving text cannot be conflated with En ego");
+ assert.equal((await snapshot()).id,"communion-after-thanksgivingMyGoodJesus",
+  "The newly source-backed thanksgiving must remain distinct from the established St Thomas text");
+ await page.locator("#aoPray435930 [data-tp381-communion-source='afterThomas']").evaluate(el=>el.click());
+ assert.equal((await snapshot()).id,"communion-after-afterThomas","St Thomas remains an independent complete choice");
+ await page.locator("#aoPray435930 [data-tp381-communion-purpose='intercession']").evaluate(el=>el.click());
+ assert.equal((await snapshot()).id,"communion-after-holySpiritAugustineTraditional",
+  "English-only historical intercession is independently selectable");
  await page.locator("#aoPray435930 [data-tp381-communion-purpose='crucifix']").evaluate(el=>el.click());
  assert.equal((await snapshot()).id,"communion-after-enEgo");
  await swipe(5,-135);
