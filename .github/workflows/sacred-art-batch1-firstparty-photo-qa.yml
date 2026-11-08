@@ -1,0 +1,46 @@
+name: Sacred Art Batch 1 — first-party original photos (private QA)
+on:
+  push:
+    branches:
+      - research/sacred-art-batch1-met-cma-photo-stage-20261108
+    paths:
+      - 'data/artwork/batch1-two-firstparty-photo-stage.v1.json'
+      - 'scripts/art/batch1_firstparty_photo_acquire.py'
+      - 'tests/sacred-art-batch1-firstparty-photo-stage.mjs'
+      - '.github/workflows/sacred-art-batch1-firstparty-photo-qa.yml'
+  workflow_dispatch: {}
+permissions:
+  contents: read
+concurrency:
+  group: sacred-art-batch1-firstparty-private
+  cancel-in-progress: true
+jobs:
+  acquire-private-review:
+    name: Verify exact museum CC0 source photos (no publication)
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify no automatic releases, replacements or selected-artwork changes
+        run: node tests/sacred-art-batch1-firstparty-photo-stage.mjs
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install image verification dependency
+        run: python -m pip install --disable-pip-version-check 'Pillow==12.0.0'
+      - name: Check isolated research script syntax
+        run: python -m py_compile scripts/art/batch1_firstparty_photo_acquire.py
+      - name: Download and image-verify exact CMA and Met objects (PRIVATE REVIEW ONLY)
+        run: python scripts/art/batch1_firstparty_photo_acquire.py
+      - name: Preserve candidate originals, museum metadata, and reviewer previews
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-two-firstparty-museum-photo-reviews
+          path: |
+            artifacts/sacred-art-firstparty-batch1/*
+          retention-days: 14
+          if-no-files-found: warn
