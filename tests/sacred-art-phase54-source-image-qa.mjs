@@ -1,0 +1,34 @@
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+const load = p => JSON.parse(readFileSync(new URL(p, import.meta.url), 'utf8'));
+const photos = load('../data/artwork/phase54-two-toulouse-exact-image-qa.v1.json');
+const earlier = load('../data/artwork/phase52-toulouse-photographic-acquisition.v1.json');
+const master = load('../data/artwork/canonical-selected-photo-identity-decisions.v1.json');
+assert.equal(photos.verified_run.conclusion,'success');
+assert.equal(photos.verified_run.id,42491213226);
+assert.equal(photos.verification.verified_candidate_images,2);
+assert.equal(photos.verification.source_archive_zip_crc_pass,true);
+assert.equal(photos.verification.editorial_approvals,0);
+assert.equal(photos.verification.photographic_replacements_published,0);
+assert.equal(photos.candidates.length,2);
+assert.equal(earlier.candidates.length,2);
+const originalIds=new Set();
+for(const pair of photos.candidates){
+  assert.ok(!originalIds.has(pair.selection_id), 'Duplicated selected photo');
+  originalIds.add(pair.selection_id);
+  const row=earlier.candidates.find(r=>r.selected_id===pair.selection_id);
+  assert.ok(row,'Missing preceding source record');
+  assert.equal(pair.museum_inventory,row.museum_inventory);
+  assert.equal(pair.alternative.sha1,row.candidate.sha1_hex);
+  assert.deepEqual([pair.alternative.width,pair.alternative.height],[row.candidate.width,row.candidate.height]);
+  assert.equal(pair.alternative.user_handpicked,false,'New non-handpicked Commons photo cannot be auto-admitted');
+  assert.equal(pair.source_approval,false);
+  assert.equal(pair.replacement_approved,false);
+  assert.equal(pair.visual_review.decision,'HOLD_FOR_COLOR_REFERENCE_AND_OWNER_EDITORIAL_SELECTION');
+}
+assert.equal(master.phase54_photo_quality.verified_photographic_alternatives,2);
+assert.equal(master.phase54_photo_quality.final_editorial_approvals,0);
+assert.equal(master.phase54_photo_quality.public_image_replacements,0);
+assert.equal(master.verified_object_links.length,14,'Unchanged cross-register relationships');
+assert.equal(master.scope.rejected_research_source_records_kept_excluded,1599);
+console.log('Phase 54 PASS: 2 source-image byte verifications; 2 comparison reviews; 0 gallery releases; 14 cross-register links unchanged.');
