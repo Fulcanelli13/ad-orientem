@@ -1,0 +1,87 @@
+{
+  "schema": "ao-preface-1961-solemnior-spi-ictus-original-print-witness-v1",
+  "inspectionDate": "2026-11-08",
+  "issueKey": "AO.PREFACE.SOLEMNIOR.ET_CUM.SPÍ.VERTICAL_EPISEMA",
+  "phrase": {
+    "family": "SOLEMNIOR",
+    "sourceId": 4451,
+    "alternateId": 7676,
+    "cueId": "AO.SM.C0138",
+    "syllable": "spí",
+    "primaryGabcNote": "g",
+    "alternateGabcNote": "g'",
+    "difference": "VERTICAL_EPISEMA_NOT_PITCH"
+  },
+  "evidenceCapture": {
+    "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42475658590",
+    "artifactUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42475658590/artifacts/13614803505",
+    "artifactName": "mass-preface-1961-original-ictus-highres-research",
+    "reproducibleScript": "scripts/mass/capture-preface-1961-ictus-original-print.py",
+    "imageManifest": "capture-manifest.json"
+  },
+  "printedWitnesses": [
+    {
+      "book": "Liber Usualis",
+      "edition": "Solesmes 1961",
+      "printedPage": "110",
+      "sourceUrl": "https://gregobase.selapa.net/sources/3/221.png",
+      "originalImageSize": [
+        480,
+        782
+      ],
+      "originalImageSha256": "d9c045ce0784b3687e2404c33b242884d2a9316fae8c8c3a4df1e69e48d5bfda",
+      "evidenceFile": "LU110_et_cum_staff.png",
+      "evidenceFileSha256": "c5a61ce465a0eb68982ae331f4d41f3eee9ea93948078d40c5984d1fee39040f",
+      "observation": "A distinct short vertical stroke is visible immediately beneath the single note aligned to 'spí'. Unlike nearby unmarked single notes, the note has a separate small vertical mark below its notehead.",
+      "printedSignReading": "VERTICAL_EPISEMA_PRESENT",
+      "inspectionStatus": "PRINTED_SIGN_VISUALLY_SUPPORTED_BY_ORIGINAL_LU_IMAGE",
+      "caveat": "The original page scan is 480x782 pixels; the interpretation is specific to this visible stroke, not approval of the full chant."
+    },
+    {
+      "book": "Graduale Romanum",
+      "edition": "Solesmes 1961",
+      "printedPage": "132*",
+      "sourceUrl": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+      "sourcePdfPageZeroBased": 133,
+      "sourcePageSizePoints": [
+        432,
+        648
+      ],
+      "sourcePdfSha256": "See artifact source-gr-1961-kyriale.sha256",
+      "evidenceFile": "GR132_et_cum_staff.png",
+      "evidenceFileSha256": "12c02dfd58f56297728687092db3b521e42e9f162f20cae31a8089c11dd4183d",
+      "printedNoteApproximatePageNormalized": {
+        "x": 0.584,
+        "y": 0.318
+      },
+      "observation": "A tiny isolated dark mark is visible just below and left of the printed 'spí' note in the 864-dpi clip, while the true source glyph remains insufficiently resolved to establish its exact orientation/shape or distinguish reliably from print/scan noise.",
+      "printedSignReading": "INDETERMINATE",
+      "inspectionStatus": "PRINTED_SIGN_NEEDS_CLEARER_GR_SCAN",
+      "caveat": "The image is a direct high-resolution rasterization of a finite-resolution scanned PDF. Higher rendering DPI cannot restore details absent in the embedded scan.",
+      "detailedNeumeCropFile": "GR132_spi_neume_context.png",
+      "detailedNeumeCropSha256": "1b626a88722f6d26df6c84e43ae9ce1179af5dffea21f6ec2abfa4ed7517d179",
+      "detailedNeumeCropNormalized": [
+        0.548,
+        0.285,
+        0.632,
+        0.355
+      ]
+    }
+  ],
+  "decision": {
+    "reading": "LU_PRINT_SUPPORTS_ALTERNATE_SPI_G_APOSTROPHE",
+    "bothOriginalWitnessesIndependentlyConfirmed": false,
+    "action": "KEEP_PRIMARY_GABC_UNCHANGED_PENDING_GR_OR_SECOND_EXPERT_READING",
+    "researchScoreApproved": false,
+    "publicScoreApproved": false,
+    "all12PrefaceMusicCertified": false,
+    "preciseNextStep": "Check a genuinely independent sharper photographic reproduction of GR 1961 p.132* at the Et cum spí- syllable. Do not upscale existing low-resolution scans to simulate additional evidence."
+  },
+  "counts": {
+    "originalPrintedWitnesses": 2,
+    "witnessesWithPositiveVisibleMark": 1,
+    "witnessesUnresolved": 1,
+    "newlyMusicallyCertifiedResponses": 0,
+    "newlyApprovedPublicScores": 0
+  }
+}
