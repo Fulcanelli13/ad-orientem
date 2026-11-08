@@ -25,7 +25,7 @@
     "researchArtworkGroups": 989,
     "researchGroupsWithTitleBasedCategoryCandidates": 657,
     "researchGroupsStillWithoutTitleCategory": 332,
-    "exactSaintSubjectScopeCorrections": 3,
+    "exactSaintSubjectScopeCorrections": 9,
     "canonicalPrayerPositions": 267,
     "previouslyReleasedPhotoEntries": 16,
     "manuallyCategorizedCuratedWorks": 25,
@@ -184,19 +184,14 @@
         "CANONICAL::met-440393",
         "CANONICAL::cma-127746",
         "REVIEW::met:437330",
-        "REVIEW::cma:111479",
         "REVIEW::met:435770",
-        "REVIEW::commons:10289552",
         "REVIEW::commons:15177655",
         "REVIEW::commons:41102135",
         "REVIEW::commons:56247851",
-        "REVIEW::commons:26597275",
         "REVIEW::commons:75930307",
         "REVIEW::commons:17397237",
-        "REVIEW::commons:29827917",
         "REVIEW::commons:94830142",
         "REVIEW::commons:74197382",
-        "CANONICAL::ART-eter-aul-ubens-iracles-of-aint-rancis-avier",
         "REVIEW::nga:1142",
         "REVIEW::rijks:200111840",
         "REVIEW::rijks:20027184",
@@ -244,7 +239,6 @@
         "CANONICAL::ART-iandomenico-iepolo-escent-from-the-ross-rado-assion-series",
         "CANONICAL::C34:franciscodezurbaransaintlukeasapainterbeforechristonthecross",
         "CANONICAL::met-436835",
-        "CANONICAL::W05-027",
         "CANONICAL::W07-014",
         "CANONICAL::ART-nthony-van-yck-he-ance-hrust",
         "CANONICAL::cma-97181",
@@ -10640,15 +10634,15 @@
       "title": "The Crucifixion of Saint Peter",
       "artist": "Caravaggio",
       "categoryCandidates": [
-        "PASSION",
         "SAINTS"
       ],
       "existingLexicalSubjectTags": [
         {
           "tag": "CHR-CRUCIFIX",
           "confidence": 97,
-          "categoryId": "PASSION",
-          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE"
+          "categoryId": null,
+          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE",
+          "subjectScopeExclusion": "NAMED_SAINT_MARTYRDOM_NOT_CRUCIFIXION_OF_CHRIST"
         },
         {
           "tag": "SNT-PATRONS",
@@ -10657,6 +10651,7 @@
           "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE"
         }
       ],
+      "saintSubjectTitleScopeReviewed": true,
       "matchEvidence": "TITLE_AND_ARTIST_LEXICAL_CANDIDATES_ONLY",
       "visualSubjectVerification": false,
       "categoryReviewState": "UNVERIFIED_CANDIDATE_TAGGED",
@@ -13491,15 +13486,15 @@
       "title": "The Miracles of Saint James the Greater",
       "artist": "Noël Nicolas Coypel (French, 1690–1734)",
       "categoryCandidates": [
-        "MINISTRY",
         "SAINTS"
       ],
       "existingLexicalSubjectTags": [
         {
           "tag": "CHR-MIRACLE",
           "confidence": 83,
-          "categoryId": "MINISTRY",
-          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE"
+          "categoryId": null,
+          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE",
+          "subjectScopeExclusion": "NAMED_SAINT_MIRACLES_NOT_CHRISTS_PUBLIC_MINISTRY"
         },
         {
           "tag": "SNT-PATRONS",
@@ -13508,6 +13503,7 @@
           "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE"
         }
       ],
+      "saintSubjectTitleScopeReviewed": true,
       "matchEvidence": "TITLE_AND_ARTIST_LEXICAL_CANDIDATES_ONLY",
       "visualSubjectVerification": false,
       "categoryReviewState": "UNVERIFIED_CANDIDATE_TAGGED",
@@ -14103,15 +14099,15 @@
       "title": "A miracle by Saint Benedict",
       "artist": "Luca Giordano",
       "categoryCandidates": [
-        "MINISTRY",
         "SAINTS"
       ],
       "existingLexicalSubjectTags": [
         {
           "tag": "CHR-MIRACLE",
           "confidence": 83,
-          "categoryId": "MINISTRY",
-          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE"
+          "categoryId": null,
+          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE",
+          "subjectScopeExclusion": "NAMED_SAINT_MIRACLES_NOT_CHRISTS_PUBLIC_MINISTRY"
         },
         {
           "tag": "SNT-PATRONS",
@@ -14120,6 +14116,7 @@
           "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE"
         }
       ],
+      "saintSubjectTitleScopeReviewed": true,
       "matchEvidence": "TITLE_AND_ARTIST_LEXICAL_CANDIDATES_ONLY",
       "visualSubjectVerification": false,
       "categoryReviewState": "UNVERIFIED_CANDIDATE_TAGGED",
@@ -15727,15 +15724,15 @@
       "title": "French: Le Miracle de saint Just | The Miracle of Saint Justus \" \"",
       "artist": "Peter Paul Rubens",
       "categoryCandidates": [
-        "MINISTRY",
         "SAINTS"
       ],
       "existingLexicalSubjectTags": [
         {
           "tag": "CHR-MIRACLE",
           "confidence": 83,
-          "categoryId": "MINISTRY",
-          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE"
+          "categoryId": null,
+          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE",
+          "subjectScopeExclusion": "NAMED_SAINT_MIRACLES_NOT_CHRISTS_PUBLIC_MINISTRY"
         },
         {
           "tag": "SNT-PATRONS",
@@ -15744,6 +15741,7 @@
           "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE"
         }
       ],
+      "saintSubjectTitleScopeReviewed": true,
       "matchEvidence": "TITLE_AND_ARTIST_LEXICAL_CANDIDATES_ONLY",
       "visualSubjectVerification": false,
       "categoryReviewState": "UNVERIFIED_CANDIDATE_TAGGED",
@@ -17537,7 +17535,6 @@
       "title": "Saint Isabel of Portugal Healing the Wounds of a Sick Woman",
       "artist": "Goya y Lucientes, Francisco",
       "categoryCandidates": [
-        "MINISTRY",
         "CHURCH_LIFE",
         "SAINTS"
       ],
@@ -17545,8 +17542,9 @@
         {
           "tag": "CHR-MIRACLE",
           "confidence": 83,
-          "categoryId": "MINISTRY",
-          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE"
+          "categoryId": null,
+          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE",
+          "subjectScopeExclusion": "NAMED_SAINT_MIRACLES_NOT_CHRISTS_PUBLIC_MINISTRY"
         },
         {
           "tag": "LIFE-SICK",
@@ -17561,6 +17559,7 @@
           "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE"
         }
       ],
+      "saintSubjectTitleScopeReviewed": true,
       "matchEvidence": "TITLE_AND_ARTIST_LEXICAL_CANDIDATES_ONLY",
       "visualSubjectVerification": false,
       "categoryReviewState": "UNVERIFIED_CANDIDATE_TAGGED",
@@ -20600,8 +20599,7 @@
       "title": "Miracles of Saint Francis Xavier",
       "artist": "Peter Paul Rubens",
       "categoryCandidates": [
-        "SAINTS",
-        "MINISTRY"
+        "SAINTS"
       ],
       "existingLexicalSubjectTags": [
         {
@@ -20613,8 +20611,9 @@
         {
           "tag": "CHR-MIRACLE",
           "confidence": 83,
-          "categoryId": "MINISTRY",
-          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE"
+          "categoryId": null,
+          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE",
+          "subjectScopeExclusion": "NAMED_SAINT_MIRACLES_NOT_CHRISTS_PUBLIC_MINISTRY"
         },
         {
           "tag": "SNT-PATRONS",
@@ -20623,6 +20622,7 @@
           "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE"
         }
       ],
+      "saintSubjectTitleScopeReviewed": true,
       "matchEvidence": "TITLE_AND_ARTIST_LEXICAL_CANDIDATES_ONLY",
       "visualSubjectVerification": false,
       "categoryReviewState": "UNVERIFIED_CANDIDATE_TAGGED",
