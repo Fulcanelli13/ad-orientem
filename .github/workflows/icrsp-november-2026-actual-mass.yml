@@ -5,6 +5,8 @@ on:
       - "src/calendar/icrsp-france-ordo-evidence.js"
       - "src/calendar/icrsp-france-ordo-intake-status.js"
       - "src/mass/independent-ordo-source-gate.js"
+      - "src/mass/1962-oration-limit-review.js"
+      - "tests/icrsp-2026-nov09-rubric-hold-phone.mjs"
       - "data/research/icrsp-france-ordo-2026-11-09-29-independent.v1.json"
       - "tests/icrsp-france-21day-independent-source-gate.mjs"
       - "src/mass/icrsp-first-friday-entry.js"
@@ -52,3 +54,5 @@ jobs:
         run: node tests/icrsp-2026-nov07-phone-e2e.mjs
       - name: Phone ICRSP Sunday 8 Nov source and second papal Postcommunion NEXT
         run: node tests/icrsp-2026-nov08-sunday-phone-e2e.mjs
+      - name: Phone Nov 9 II-class rubric conflict remains visible without a fabricated three-orations Mass
+        run: node tests/icrsp-2026-nov09-rubric-hold-phone.mjs
