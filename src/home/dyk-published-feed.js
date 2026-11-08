@@ -469,7 +469,7 @@ export function dyk175Candidates(data,date){
     row.topic==="ROMAN_1962_CELEBRANT_DETAIL"&&
     row.publication_kind==="ROMAN_1962_RUBRIC"&&
     /^RS1962[.]H175[.]/.test(row.source_id)&&
-    /^Ritus servandus (VI[.]([2478])|VII[.]([36]))$/.test(s?.primary_locator||"")&&
+    /^Ritus servandus (VI[.]([24678])|VII[.]([36]))$/.test(s?.primary_locator||"")&&
     H175_RITUS_PAGES[s.primary_locator.slice(16)]===pages?.[0]&&
     Array.isArray(s.printed_pages)&&s.printed_pages.length===1&&s.printed_pages[0]===pages[0]);
   return Boolean(pageGate&&familyGate&&row.source_family===family&&s?.url===H175_URLS[family]&&
