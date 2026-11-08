@@ -140,7 +140,19 @@ export function auditGeoArea(area, path = "geo_area") {
     const iso = area?.codes?.iso_alpha2;
     if (!nonEmpty(iso) || !/^[A-Z]{2}$/.test(iso)) {
       issues.push(issue("COUNTRY_ISO_REQUIRED", `${path}.codes.iso_alpha2`, "Civil country areas require a two-letter uppercase ISO code."));
+    } else if (iso === "XK") {
+      issues.push(issue("KOSOVO_XK_IS_NOT_ISO", `${path}.codes.iso_alpha2`,
+        "Kosovo XK is user-assigned; use the explicit operational territory GeoArea instead."));
     }
+  }
+  // Never launder a user-assigned operational code into the ISO field.
+  if (area?.codes?.operational_alpha2 !== undefined) {
+    const validKosovo = area.geo_area_id === "geo:territory:XK"
+      && area.area_system === "CIVIL" && area.area_type === "other"
+      && area.codes.operational_alpha2 === "XK" && !area.codes.iso_alpha2;
+    if (!validKosovo) issues.push(issue("INVALID_OPERATIONAL_AREA_CODE",
+      `${path}.codes.operational_alpha2`,
+      "Operational codes need an explicit non-ISO civil territory identity."));
   }
 
   if (area.mappable === false && (area.boundary_ref || validLatLng(area.centroid))) {
