@@ -21,6 +21,7 @@ import {dailyHorizonState} from "./quiet-devotional-progression.js";
 import {createDailySessionTimer,sessionClockLabel} from "./daily-session-timer.js";
 import {createPrayerPurposeIndex,prayerPurposeFor,prayerPurposeDefault,normalizePrayerPurposeSelection} from "./prayer-purpose-index.js";
 import {COMMUNION_PRAYER_PURPOSES} from "./communion-prayer-purpose-map.js";
+import {RED_BOOKLET_SUSCIPE_LIBRARY_LINK_V1 as SUSCIPE_LINK} from "./red-booklet-suscipe-library-link.v1.js";
 import {GOOD_DEATH_PRAYER_PURPOSES} from "./good-death-purpose-map.js";
 import {buildPersonalDailyPlan,personalDailyOptions,personalDailyDirectPlan,loadPersonalDailyPrefs,savePersonalDailyPrefs,changePersonalDailyPrefs} from "./daily-personal-rule.js";
 import {personalDailyPrayerCard,personalDailyPurposeSection,dailyPersonalSettings,dailyPersonalPrayerCatalog,dailyPersonalList} from "./daily-personal-prayer-view.js";
@@ -235,7 +236,9 @@ function savePersonalDailyChoice(next){
 function dailyReadingPlan(){
  const prefs=personalDailyPrefs();
  if(S.dailyMode==="direct"&&S.dailyDirectId){
-  const result=personalDailyDirectPlan({daypart:S.daypart,prefs,sourceId:S.dailyDirectId});
+  // The independent source-Library handoff must not change saved daily preferences.
+  const sourcePrefs=S.dailyDirectLanguage?{...prefs,language:S.dailyDirectLanguage}:prefs;
+  const result=personalDailyDirectPlan({daypart:S.daypart,prefs:sourcePrefs,sourceId:S.dailyDirectId});
   if(result)return result;
  }
  return buildPersonalDailyPlan({daypart:S.daypart,prefs});
@@ -422,12 +425,19 @@ function renderMorningEvening(){
   :existingNav;
  const full=buildPersonalDailyPlan({daypart:S.daypart,prefs:{...prefs,length:"full",mode:"standard"}});
  const other=personalDailyOptions(S.daypart,prefs.language,prefs.edition).filter(row=>row.kind==="additional");
+ const sourceOriginal=direct&&Object.values(SUSCIPE_LINK.sourceIds).includes(S.dailyDirectId);
+ const sourceLanguageNav=sourceOriginal?'<nav class="aoTP381DaypartStrip" data-ao-suscipe-source-lang aria-label="'+esc(L('Original prayer language','Langue originale de la prière'))+'">'+
+  ['en','la'].map(lang=>'<button type="button" data-tp381-suscipe-lang="'+lang+'" aria-pressed="'+String(S.dailyDirectLanguage===lang)+'">'+(lang==='la'?'LATIN':'ENGLISH')+'</button>').join('')+'</nav>'+
+  '<p class="aoTP381Intro" data-ao-suscipe-source-note>'+esc(L(
+   'Complete 1908 original: English or Latin. The 2013 booklet wording has not yet been compared; no French text is attested.',
+   'Texte intégral de 1908 : anglais ou latin. Le texte du livret de 2013 reste à comparer ; aucune traduction française n’est attestée.'
+  ))+'</p>':'';
  const body=browse?dailyPersonalPrayerCatalog(full,other,{esc,L})
   :continuous?renderDailyContinuous(rows)
   :guided||direct?renderDailyGuided(rows)
   :plan.mode==="personal"?dailyPersonalList(rows,{esc,L,isFr:isFr()})
   :plan.mode==="approved"?dailyApprovedSequenceList(rows):prayerRows(rows.map(x=>[x.id,x.title,x.note]));
- return `${head(L("Morning & Evening Prayer","Prières du matin & du soir"))}<main class="aoP435930Body aoTP381DonorBody" data-ao-hours-family="rule" data-ao-hours-owner="${S.daypart}"><div class="aoDailyOpeningRail">${choice}${editionPills}${nav}</div>${guided?dailyHorizonMarkup(rows.length):""}${direct?'<small class="aoDailyDirectHint">'+esc(L("Individual prayer · not added to your daily rule","Prière individuelle · non ajoutée à votre règle quotidienne"))+'</small>':""}${body}${guided?dailyTimerControls():""}${dailyPersonalSettings(plan,prefs,{esc,L,expanded:PERSONAL_DAILY_SETTINGS_OPEN,showEdition:!DAILY_UX_PILOT_ENABLED})}${options}${source(plan.sourceLabel,plan.sourceUrl)}</main>`;
+ return `${head(L("Morning & Evening Prayer","Prières du matin & du soir"))}<main class="aoP435930Body aoTP381DonorBody" data-ao-hours-family="rule" data-ao-hours-owner="${S.daypart}"><div class="aoDailyOpeningRail">${choice}${editionPills}${nav}</div>${guided?dailyHorizonMarkup(rows.length):""}${direct?'<small class="aoDailyDirectHint">'+esc(L("Individual prayer · not added to your daily rule","Prière individuelle · non ajoutée à votre règle quotidienne"))+'</small>':""}${sourceLanguageNav}${body}${guided?dailyTimerControls():""}${dailyPersonalSettings(plan,prefs,{esc,L,expanded:PERSONAL_DAILY_SETTINGS_OPEN,showEdition:!DAILY_UX_PILOT_ENABLED})}${options}${source(plan.sourceLabel,plan.sourceUrl)}</main>`;
 }
 const HYMN_KEYS=Object.freeze(["te_deum","veni_creator","ave_maris_stella",...ICRSP_SEASONAL_HYMN_IDS_V1]);
 const hymnById=id=>SACRED_HYMNS_V381[id]||ICRSP_SEASONAL_HYMNS_V1[id]||null;
@@ -1014,6 +1024,13 @@ function render(){
 }
 function open(route,opts={}){
   if(!ROUTES[route])return false;
+  const requestedDailySource=route==="pray.morning_evening"&&opts.dailySourcePrayer!==undefined
+    ?Object.entries(SUSCIPE_LINK.sourceIds).find(([,id])=>id===opts.dailySourcePrayer):null;
+  if(route==="pray.morning_evening"&&opts.dailySourcePrayer!==undefined&&!requestedDailySource)return false;
+  const directDaily=requestedDailySource?personalDailyDirectPlan({
+    daypart:"morning",prefs:{...personalDailyPrefs(),language:requestedDailySource[0]},sourceId:requestedDailySource[1]
+  }):null;
+  if(requestedDailySource&&!directDaily)return false;
   // A specific source-owned prayer must open at its real card, not the
   // default first card; unknown IDs fail closed without navigating.
   const communionTarget=route==="pray.communion_treasury"&&opts.communionPrayer!==undefined
@@ -1025,7 +1042,11 @@ function open(route,opts={}){
   S={...S,route,screen:"module",prayerId:null,guidedFromList:false,
     ...(route==="mass.prepare"||route==="mass.thanksgiving"
       ?{massStep:0,massDepth:opts.depth==="full"?"full":"brief"}:{}),
-    ...(route==="pray.morning_evening"?{dailyMode:"guided",dailyDirectId:null,dailyStep:0,dailyLength:"standard",returnToDaily:false}:{})
+    ...(route==="pray.morning_evening"?{daypart:directDaily?"morning":S.daypart,
+        dailyMode:directDaily?"direct":"guided",
+        dailyDirectId:directDaily?.sourceId||null,
+        dailyDirectLanguage:requestedDailySource?.[0]||null,
+        dailyStep:0,dailyLength:"standard",returnToDaily:false}:{})
    ,...(route==="pray.nightly_examen"?{examenStep:0,returnToDaily:false}:{}),
     // Work-level devotional entry may focus an existing bedside prayer step.
     // Only the original three stages are accepted; no sacramental action is implied.
@@ -1077,7 +1098,7 @@ function goHome(){
 }
 function handleClick(e){
   const b=e.target.closest?.("button,[data-tp381-flip]");if(!b||!root()?.classList.contains("open"))return;
-  if(!b.matches("[data-tp381-back],[data-tp381-home],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-heart],[data-tp381-golden-arrow],[data-tp381-joseph-edition],[data-tp381-b01-meal],[data-tp381-b01-hope],[data-tp381-b01-contrition],[data-tp381-examen-contrition-open],[data-tp381-communion],[data-tp381-communion-pick],[data-tp381-communion-purpose],[data-tp381-communion-source],[data-tp381-good-death-purpose],[data-tp381-good-death-source],[data-tp381-dying],[data-tp381-dying-step],[data-tp381-flip],[data-tp381-latin-switch],[data-tp381-glossary],[data-tp381-daily-mode],[data-tp381-daily-presentation],[data-tp381-daily-quick],[data-tp381-flow-jump],[data-tp381-timer-toggle],[data-tp381-timer-control],[data-tp381-timer-target],[data-tp381-approved-daily-form],[data-tp381-personal-action],[data-tp381-personal-variant],[data-tp381-personal-purpose],[data-tp381-direct-prayer],[data-tp381-daily-length],[data-tp381-daily-card-index],[data-tp381-daily-step],[data-tp381-daily-overview],[data-tp381-daily-examen],[data-tp381-examen-step],[data-tp381-examen-return],[data-tp381-examen-overview],[data-tp381-litany-mode],[data-tp381-litany-step],[data-tp381-mass-step],[data-tp381-mass-continue],[data-tp381-mass-cancel],[data-tp381-mass-finish]"))return;
+  if(!b.matches("[data-tp381-back],[data-tp381-home],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-heart],[data-tp381-golden-arrow],[data-tp381-joseph-edition],[data-tp381-b01-meal],[data-tp381-b01-hope],[data-tp381-b01-contrition],[data-tp381-examen-contrition-open],[data-tp381-communion],[data-tp381-communion-pick],[data-tp381-communion-purpose],[data-tp381-communion-source],[data-tp381-good-death-purpose],[data-tp381-good-death-source],[data-tp381-dying],[data-tp381-dying-step],[data-tp381-flip],[data-tp381-latin-switch],[data-tp381-glossary],[data-tp381-daily-mode],[data-tp381-daily-presentation],[data-tp381-daily-quick],[data-tp381-flow-jump],[data-tp381-timer-toggle],[data-tp381-timer-control],[data-tp381-timer-target],[data-tp381-approved-daily-form],[data-tp381-personal-action],[data-tp381-personal-variant],[data-tp381-personal-purpose],[data-tp381-direct-prayer],[data-tp381-suscipe-lang],[data-tp381-daily-length],[data-tp381-daily-card-index],[data-tp381-daily-step],[data-tp381-daily-overview],[data-tp381-daily-examen],[data-tp381-examen-step],[data-tp381-examen-return],[data-tp381-examen-overview],[data-tp381-litany-mode],[data-tp381-litany-step],[data-tp381-mass-step],[data-tp381-mass-continue],[data-tp381-mass-cancel],[data-tp381-mass-finish]"))return;
   e.preventDefault();e.stopImmediatePropagation();
   if(b.matches("[data-tp381-back]"))return back();
   if(b.matches("[data-tp381-home]"))return goHome();
@@ -1223,6 +1244,15 @@ function handleClick(e){
     const length=b.dataset.tp381DailyLength;
     if(length!=="standard"&&!dailyLengthOptions().includes(length))return;
     S.dailyLength=length;S.dailyStep=0;S.dailyMode="guided";return render();
+  }
+  if(b.hasAttribute("data-tp381-suscipe-lang")){
+    if(S.route!=="pray.morning_evening"||S.screen!=="module"||
+       S.dailyMode!=="direct"||!Object.values(SUSCIPE_LINK.sourceIds).includes(S.dailyDirectId))return;
+    const language=b.dataset.tp381SuscipeLang,sourceId=SUSCIPE_LINK.sourceIds[language];
+    if(!sourceId||!personalDailyDirectPlan({
+      daypart:"morning",prefs:{...personalDailyPrefs(),language},sourceId
+    }))return;
+    S.dailyDirectLanguage=language;S.dailyDirectId=sourceId;S.dailyStep=0;return render();
   }
   if(b.hasAttribute("data-tp381-direct-prayer")){
     if(S.route!=="pray.morning_evening"||S.screen!=="module")return;
