@@ -18,7 +18,7 @@ const f=(id,photo,decision="approve")=>{
  const w=contract.work_items.find(w=>w.artwork_id===id);
  const p=w.options.find(p=>p.photo_id===photo);
  return {artwork_id:id,artwork_title:"Reviewer-selected photo",prayer_placements:w.prayer_placements,
- photo_id:photo,photo_source_sha256:p.source_sha256,decision,
+ photo_id:photo,photo_source_sha256:p.source_sha256,photo_display_edition_sha256:p.display_edition_sha256,decision,
  credit_and_license_acknowledged:true,display_edition_acknowledged:true,
  technical_rights_gate:p.rights_state,publication_qa_requested:decision==="approve",
  actual_publication_authorized:false};
@@ -37,6 +37,7 @@ assert.equal(valid.public_gallery_modifications,0);
 assert.equal(valid.publication_authorized,false);
 assert.throws(()=>validate({...form,decisions:[f("artwork-pending:06","crivelli-commons")]}),/rights\/quality-held photo/);
 assert.throws(()=>validate({...form,decisions:[{...f("artwork-pending:01","cma-official-fullframe"),photo_source_sha256:"000"}]}),/SHA-256 mismatch/);
+assert.throws(()=>validate({...form,decisions:[{...f("artwork-pending:09","lanfranco-sailko-frameless"),photo_display_edition_sha256:"000"}]}),/display edition SHA-256 mismatch/);
 assert.throws(()=>validate({...form,decisions:[{...f("artwork-pending:01","cma-official-fullframe"),display_edition_acknowledged:false}]}),/explicitly acknowledged/);
 assert.throws(()=>validate({...form,decisions:[{...f("artwork-pending:01","cma-official-fullframe"),actual_publication_authorized:true}]}),/cannot be authorized/);
 assert.throws(()=>validate({...form,decisions:[f("artwork-pending:01","cma-official-fullframe"),f("artwork-pending:01","cma-official-fullframe")]}),/duplicate artwork/);
