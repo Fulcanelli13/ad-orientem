@@ -100,7 +100,7 @@ try{
    };
    const refusal=projectIcrspNov08SundayProPapaOrations({
     proper:mass?.proper,date:"2026-11-08",form:"MISSA_CANTATA_SIMPLE",
-    actualCelebrationId:"mass_of_day",votiveBasis:null,explicitInstituteSelection:true
+    actualCelebrationId:"mass_of_day",votiveBasis:"ordinary",explicitInstituteSelection:true
    });
    return {explicit,date:mass?.date,form:mass?.form,source:p?.sourcePath,
     decision:p?.proPapaOrationDecision?.status,contract:p?.sourceOrdoExpectation?.id,
