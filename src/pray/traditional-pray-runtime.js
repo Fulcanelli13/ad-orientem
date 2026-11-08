@@ -237,7 +237,8 @@ function dailyReadingPlan(){
  const prefs=personalDailyPrefs();
  if(S.dailyMode==="direct"&&S.dailyDirectId){
   // The independent source-Library handoff must not change saved daily preferences.
-  const sourcePrefs=S.dailyDirectLanguage?{...prefs,language:S.dailyDirectLanguage}:prefs;
+  const sourcePrefs=S.dailyDirectLanguage&&Object.values(SUSCIPE_LINK.sourceIds).includes(S.dailyDirectId)
+   ?{...prefs,language:S.dailyDirectLanguage}:prefs;
   const result=personalDailyDirectPlan({daypart:S.daypart,prefs:sourcePrefs,sourceId:S.dailyDirectId});
   if(result)return result;
  }
@@ -1258,7 +1259,7 @@ function handleClick(e){
     if(S.route!=="pray.morning_evening"||S.screen!=="module")return;
     const sourceId=b.dataset.tp381DirectPrayer;
     if(!personalDailyDirectPlan({daypart:S.daypart,prefs:personalDailyPrefs(),sourceId}))return;
-    S.dailyDirectId=sourceId;S.dailyMode="direct";S.dailyStep=0;S.guidedFromList=true;return render();
+    S.dailyDirectId=sourceId;S.dailyDirectLanguage=null;S.dailyMode="direct";S.dailyStep=0;S.guidedFromList=true;return render();
   }
   if(b.hasAttribute("data-tp381-daily-card-index")){
     if(S.route!=="pray.morning_evening"||S.screen!=="module"||!["personal","approved"].includes(dailyReadingPlan().mode))return;
