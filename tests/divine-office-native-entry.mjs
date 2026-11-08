@@ -5,12 +5,13 @@ test("Roman Office keeps eight separate canonical Hours",()=>{
   assert.deepEqual(ROMAN_OFFICE_HOURS.map(x=>x.id),
    ["MATINS","LAUDS","PRIME","TERCE","SEXT","NONE","VESPERS","COMPLINE"]);
 });
-test("Advent I Compline appointment is research, never public text",()=>{
+test("only 28 November Latin Compline releases; seven later dates stay research-only",()=>{
   for(const date of ["2026-11-28","2026-11-29","2026-11-30","2026-12-01","2026-12-02","2026-12-03","2026-12-04","2026-12-05"]){
     const result=officeRouteState({date,hour:"COMPLINE"});
-    assert.equal(result.status,"SOURCE_RESEARCH_ONLY");
-    assert.equal(result.readingEnabled,false);
-    assert.equal(result.published,false);
+    const released=date==="2026-11-28";
+    assert.equal(result.status,released?"RELEASED":"SOURCE_RESEARCH_ONLY");
+    assert.equal(result.readingEnabled,released);
+    assert.equal(result.published,released);
   }
 });
 test("First Vespers retains separate civil and Office dates",()=>{
