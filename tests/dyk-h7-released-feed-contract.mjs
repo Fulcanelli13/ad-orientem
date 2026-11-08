@@ -353,7 +353,8 @@ for(const row of h200Rows){
   }else{
    assert.equal(model.links[0].page,null);
    assert.equal(model.links[0].url,row.source.url);
-   assert.ok(html.includes(language==="fr"?"Consulter l'article":"Read original article"));
+   assert.equal(model.links[0].label,language==="fr"?"Consulter l'article ou la section":"Read original article or section");
+   assert.ok(html.includes(language==="fr"?"Consulter l&#39;article ou la section":"Read original article or section"),"Source dialog escapes the French apostrophe");
   }
  }
  assert.equal(row.source.source_record_id,row.source_id);
