@@ -643,6 +643,8 @@ const COMMUNION_AFTER=Object.freeze([
   ["eucharisticHeartAspiration","Sacred Heart in the Blessed Sacrament","Cœur de Jésus dans le Très Saint Sacrement"],
   ["holySpiritAugustineTraditional","Prayer to the Holy Spirit","Prière au Saint-Esprit"],
   ["ourLadyAfterCommunionTraditional","Prayer to Our Lady","Prière à Notre-Dame"],
+  ["mercifulJesusDying1911","O Most Merciful Jesus · For the Dying","Ô Jésus très miséricordieux · Pour les agonisants"],
+  ["sacredHeartIntercession1910","Sacred Heart · For the Church","Sacré-Cœur · Pour l’Église"],
   ["afterThomas","St Thomas Aquinas","Saint Thomas d'Aquin"],
   ["afterBonaventure","St Bonaventure","Saint Bonaventure"],
   ["enEgo","En ego","En ego"]
