@@ -123,7 +123,22 @@ export function select1962CommemorationsForMassForm({
   const inheritedPentecostFeria=main?.path==null&&
     String(main?.id??"")===":feria:4:w"&&Number(main.rank)===4&&
     /^Tempora\/Pent[0-9]{1,2}-0(?:a|r)?$/.test(String(data.sourcePath??envelope?.sourcePath??""));
-  const matchedPrincipalSource=inheritedPentecostFeria||
+  // Eastertide 2026: two specifically attested IV-class ferias inherit
+  // the current Sunday's Mass Proper. Do not infer this from a source
+  // prefix alone: neither a Rogation feria nor a saint's own Mass may
+  // be silently certified. The separate saint's prayers are matched below.
+  // 17 April: St Anicetus; 23 April: St George.
+  // https://ordo.fsspx.org/en/day/2026-04-17
+  // https://ordo.fsspx.org/en/day/2026-04-23
+  const easterFeriaWitness={
+    "2026-04-17":{proper:"Tempora/Pasc1-0",saint:"Sancti/04-17"},
+    "2026-04-23":{proper:"Tempora/Pasc2-0",saint:"Sancti/04-23"}
+  }[String(calendarResolution.date)]??null;
+  const inheritedEasterFeria=main?.path==null&&
+    String(main?.id??"")===":feria:4:w"&&Number(main.rank)===4&&
+    easterFeriaWitness!==null&&
+    String(data.sourcePath??envelope?.sourcePath??"")===easterFeriaWitness.proper;
+  const matchedPrincipalSource=inheritedPentecostFeria||inheritedEasterFeria||
     canonical(data.sourcePath??envelope?.sourcePath)===canonical(main.path);
   const identified=comms.length===1&&sources.length===1&&
     canonical(namedSource.path)===observedPath&&admissiblePrayerSource&&
@@ -250,6 +265,15 @@ export function select1962CommemorationsForMassForm({
     Number(only.rank)===4&&!only.privileged&&
     /^sancti:02-14:4:/i.test(commId)&&
     String(only.path)==="Sancti/02-14";
+  // RG 26, 107-114: an ordinary IV-class saint's commemoration on the
+  // two independently sourced 2026 Easter ferias is used in Low Mass
+  // but not a non-conventual Mass in cantu. No assumption for other
+  // Paschal weekdays, special litanies, local feasts or conventual forms.
+  const ordinaryEasterFeria=inheritedEasterFeria&&!sunday&&
+    Number(only.rank)===4&&!only.privileged&&
+    String(only.path)===easterFeriaWitness.saint&&
+    String(commId).toLowerCase().startsWith(
+      "sancti:"+easterFeriaWitness.saint.slice("Sancti/".length).toLowerCase()+":4:");
   const ordinaryFourthClassSaint=!nativityOctavePlaceholder&&!sunday&&
     !only.privileged&&
     Number(only.rank)===4&&/^sancti:[0-9]{2}-[0-9]{2}[a-z]*:4:/i.test(commId)&&
@@ -264,6 +288,7 @@ export function select1962CommemorationsForMassForm({
     ordinarySunday?"II_CLASS_SUNDAY_SINGLE_II_CLASS_SANCTORAL_FEAST_NON_CONVENTUAL":
     ordinaryFourthClassSaint?"NON_SUNDAY_II_III_CLASS_SINGLE_IV_CLASS_SANCTORAL_COMMEMORATION":
     ordinaryPentecostFeria?"PENTECOST_SEASON_IV_CLASS_FERIA_ORDINARY_COMMEMORATION":
+    ordinaryEasterFeria?"EASTER_SEASON_IV_CLASS_FERIA_ORDINARY_COMMEMORATION":
     ordinaryLentenFeria?"LENT_PASSION_III_CLASS_FERIA_ORDINARY_COMMEMORATION":
     (saturdayBvmOrdinary||septuagesimaSaturdayBvmOrdinary)?
       "SATURDAY_BVM_IV_CLASS_ORDINARY_SANCTORAL_COMMEMORATION":null;
@@ -289,6 +314,8 @@ export function select1962CommemorationsForMassForm({
         ["1960_GENERAL_RUBRICS_111_C_D_112_113","1960_MISSAL_RUBRICS_433_434"]:
       ordinaryPentecostFeria?
         ["1960_GENERAL_RUBRICS_108_111_D_112_113_114","1960_MISSAL_RUBRICS_433_434"]:
+      ordinaryEasterFeria?
+        ["1960_GENERAL_RUBRICS_26_107_111_A_D_112_113_114","1960_MISSAL_RUBRICS_433_434"]:
         ["1960_GENERAL_RUBRICS_108_111_113","1960_MISSAL_RUBRICS_433_434"]),
     mainId,commemorationId:commId
   });
