@@ -2,7 +2,8 @@ import assert from "node:assert/strict";
 import pinned from "../data/mass/1962-in-albis-secret-source.v1.json" with {type:"json"};
 import {recoverReaderProperOmissions} from "../src/mass/reader-proper-runtime-recovery.js";
 import {recover1962InAlbisSecretFromPinnedSource,
-  hasExact1962InAlbisSecretSourceOwner} from "../src/mass/1962-in-albis-secret-source.js";
+  hasExact1962InAlbisSecretSourceOwner,
+  recover1962InAlbisFeriaFrenchSecretOrder} from "../src/mass/1962-in-albis-secret-source.js";
 import {properToReaderSlots} from "../src/mass/proper-reader-slots.js";
 
 const PER_DOM={
@@ -167,3 +168,53 @@ assert.ok(recover1962InAlbisSecretFromPinnedSource(placeholder,ID,normalizer),
  "Unresolved source macro is not an authentic conflicting translated Secret");
 
 console.log("PASS In Albis (1962) Secret: exact git-blob-pinned trilingual prayer, French macro reposition, source-first recovery, native reader Secret slot, no mismatched Mass substitution.");
+
+// 17 April 2026, non-conventual IV-class feria, inherits Pasc1-0's
+// two-line principal Secret and separately commemorates St Anicetus.
+// The original French macro-before-body donor must be repaired in the
+// *first* Secret; St Anicetus must remain wholly untouched.
+const stAnicetus={lat:"Secret Anicetus (Latin)",en:"Secret Anicetus (English)",
+ fr:"Secrète de saint Anicet",sourcePath:"Sancti/04-17:Secreta"};
+const inheritedPrincipal={lat:recovered.lat,en:recovered.en,
+ fr:originalFrenchDonorOrder,sourcePath:"Tempora/Pasc1-0:Secreta"};
+const inheritedFeria=fixed([inheritedPrincipal,stAnicetus],{
+ principalCelebrationId:":feria:4:w",
+ calendarCommemorations:[{path:"Sancti/04-17",prayerSourcePath:"Sancti/04-17"}],
+ collects:[{lat:"Principal Collect",en:"Principal Collect",fr:"Collecte principale"},
+  {lat:"Anicetus Collect",en:"Anicetus Collect",fr:"Collecte de saint Anicet"}],
+ postcommunions:[{lat:"Principal Postcommunion",en:"Principal Postcommunion",fr:"Postcommunion principale"},
+  {lat:"Anicetus Postcommunion",en:"Anicetus Postcommunion",fr:"Postcommunion Anicet"}]
+});
+const inheritedCorrected=recover1962InAlbisFeriaFrenchSecretOrder(
+ inheritedFeria,":feria:4:w","2026-04-17",normalizer);
+assert.ok(inheritedCorrected,"Exact 17 April inherited-source correction must be available");
+assert.equal(inheritedCorrected.fr,recovered.fr);
+assert.equal(inheritedCorrected.lat,inheritedPrincipal.lat);
+assert.equal(inheritedCorrected.en,inheritedPrincipal.en);
+assert.equal(inheritedFeria.secrets[1],stAnicetus);
+const inAlbisFeriaRuntime=await recoverReaderProperOmissions(inheritedFeria,{
+ hostResolver:mockHost,principalCelebrationId:":feria:4:w",calendarDate:"2026-04-17"
+});
+assert.equal(inAlbisFeriaRuntime.secrets.length,2);
+assert.equal(inAlbisFeriaRuntime.secrets[0].fr,recovered.fr);
+assert.deepEqual(inAlbisFeriaRuntime.secrets[1],stAnicetus);
+for(const language of ["en","fr"]){
+ const projected=properToReaderSlots(inAlbisFeriaRuntime,{language});
+ assert.equal(projected.slots.SECRET_SET.status,"READY",language);
+ assert.equal(projected.slots.SECRET_SET.data.paragraphs.length,2);
+}
+for(const [mutant,identity,date] of [
+ [inheritedFeria,":feria:4:w","2026-04-18"],
+ [inheritedFeria,"tempora:Pasc1-0:1:w","2026-04-17"],
+ [{...inheritedFeria,sourcePath:"Tempora/Pasc2-0"},":feria:4:w","2026-04-17"],
+ [{...inheritedFeria,calendarCommemorations:[]},":feria:4:w","2026-04-17"],
+ [{...inheritedFeria,secrets:[{...inheritedPrincipal,fr:"Autre secrète"},stAnicetus]},
+   ":feria:4:w","2026-04-17"],
+ [{...inheritedFeria,secrets:[inheritedPrincipal,{...stAnicetus,sourcePath:"Sancti/04-23"}]},
+   ":feria:4:w","2026-04-17"],
+ [{...inheritedFeria,requestedCelebrationId:"votive"},":feria:4:w","2026-04-17"]
+]){
+ assert.equal(recover1962InAlbisFeriaFrenchSecretOrder(
+   mutant,identity,date,normalizer),null,"Inherited owner mismatch must fail closed");
+}
+console.log("PASS 17 April 2026: preserve both Secrets; re-order only exact pinned inherited French macro-first source; all alternate owners fail closed.");

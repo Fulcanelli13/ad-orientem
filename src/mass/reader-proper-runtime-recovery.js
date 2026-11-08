@@ -4,7 +4,8 @@ import {render1962EasterPrefaceVariant} from "./1962-easter-preface-form.js";
 import {recover1962NativityOctaveCommemoration} from "./1962-nativity-octave-source.js";
 import {recover1962StClementPapalCommon} from "./1962-st-clement-papal-common.js";
 import {recover1962PassionFridaySources} from "./1962-passion-friday-commemorations.js";
-import {recover1962InAlbisSecretFromPinnedSource} from "./1962-in-albis-secret-source.js";
+import {recover1962InAlbisSecretFromPinnedSource,
+ recover1962InAlbisFeriaFrenchSecretOrder} from "./1962-in-albis-secret-source.js";
 import {required1962MarianPrefaceOwner,verifyMarianLatinSourceRule,render1962MarianPrefaceForm,isSelected1962MarianPrefaceForm} from "./1962-marian-preface-source.js";
 import {required1962SeasonalSanctoralPrefaceOwner,originalSanctoralLacksOwnPreface,matches1962SeasonalSanctoralSelection,required1962May11ApostlesPrefaceOwner,authenticMay11ApostolicOriginal,matches1962May11ApostlesSelection} from "./1962-seasonal-sanctoral-preface-source.js";
 import {required1962ResidualPrefaceOwner,authentic1962ResidualOriginal,render1962ResidualPreface,matches1962ResidualSelected} from "./1962-residual-preface-source.js";
@@ -429,6 +430,9 @@ export async function recoverReaderProperOmissions(proper,{
   // Latin string alone would make the older recovery logic skip the slot.
   const sourceOwnedSecret=recover1962InAlbisSecretFromPinnedSource(
     data,principalCelebrationId??data.principalCelebrationId??data.mainId,cleanLines);
+  const inAlbisInheritedFeriaSecret=recover1962InAlbisFeriaFrenchSecretOrder(
+    data,principalCelebrationId??data.principalCelebrationId??data.mainId,
+    calendarDate??data.selectedMassDate??null,cleanLines);
   const needs={
     epistle:!textUsable(data.epistle),
     secrets:Boolean(sourceOwnedSecret)||(!arrayUsable(data.secrets)&&!textUsable(data.secret)),
@@ -452,7 +456,8 @@ export async function recoverReaderProperOmissions(proper,{
     data.inseparableApostolicSources?.status!=="SOURCE_VERIFIED";
   if(!Object.values(needs).some(Boolean)&&!missingOrations&&!recoveredPreface&&
      !needsApostolicSource&&!recoveredChants&&!needsChristmasOctave&&
-     !repairedAprilPaschal&&!needsPassionFriday)return proper;
+     !repairedAprilPaschal&&!needsPassionFriday&&
+     !inAlbisInheritedFeriaSecret)return proper;
 
   const next={...data};
   // Restore ONLY the exact source-identified 1962 non-Cistercian Collect;
@@ -512,6 +517,10 @@ export async function recoverReaderProperOmissions(proper,{
   }
   if(recoveredChants)next.readerChantSourceProof=recoveredChants;
   if(recoveredPreface)next.preface=recoveredPreface;
+  if(inAlbisInheritedFeriaSecret){
+    next.secrets=Object.freeze([inAlbisInheritedFeriaSecret,data.secrets[1]]);
+    next.secret=inAlbisInheritedFeriaSecret;
+  }
   if(needs.epistle){
     const value=await recoverText(hostResolver,path,["Lectio"],diagnostic);
     if(textUsable(value))next.epistle=value;
