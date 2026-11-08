@@ -422,11 +422,16 @@ try{
         globalThis.AO_GLOSSARY_V1?.status?.()?.open===false,
         null,{timeout:10000});
     }else{
-      assert.match(historicalId,/^DYK-(?:G520-W-0|R50-W-0|R50B-W-0|H100-[PM]-0)/);
+      assert.match(historicalId,/^DYK-(?:G520-W-0|R50-W-0|R50B-W-0|H100-[PM]-0|H125-[PMX]-0)/);
       const source=h4.locator("[data-dyk-published='"+historicalId+"']");
       await source.waitFor({state:"visible",timeout:30000});
-      assert.equal(await source.locator("a[href*='#page=']").count()>=1,true,
-        "Historical discovery must display its precise source page");
+      if(/^DYK-H125-X-00[1-4]$/.test(historicalId)){
+        assert.equal(await source.locator("a[href^='https://']").count()>=1,true,
+          "Historical webpage must open its exact original source URL");
+      }else{
+        assert.equal(await source.locator("a[href*='#page=']").count()>=1,true,
+          "Historical PDF discovery must display its precise source page");
+      }
       await h4.keyboard.press("Escape");
       await source.waitFor({state:"detached",timeout:10000});
     }
