@@ -13,8 +13,8 @@
     "difference": "VERTICAL_EPISEMA_NOT_PITCH"
   },
   "evidenceCapture": {
-    "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42475080888",
-    "artifactUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42475080888/artifacts/13614704520",
+    "workflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42475658590",
+    "artifactUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42475658590/artifacts/13614803505",
     "artifactName": "mass-preface-1961-original-ictus-highres-research",
     "reproducibleScript": "scripts/mass/capture-preface-1961-ictus-original-print.py",
     "imageManifest": "capture-manifest.json"
@@ -54,10 +54,18 @@
         "x": 0.584,
         "y": 0.318
       },
-      "observation": "An isolated dark speck appears just below the 'spí' note in the 864-dpi direct source-PDF crop, approximately where a short vertical episema would occur; the speck is too small to distinguish confidently from scanning or print noise.",
+      "observation": "A tiny isolated dark mark is visible just below and left of the printed 'spí' note in the 864-dpi clip, while the true source glyph remains insufficiently resolved to establish its exact orientation/shape or distinguish reliably from print/scan noise.",
       "printedSignReading": "INDETERMINATE",
       "inspectionStatus": "PRINTED_SIGN_NEEDS_CLEARER_GR_SCAN",
-      "caveat": "The image is a direct high-resolution rasterization of a finite-resolution scanned PDF. Higher rendering DPI cannot restore details absent in the embedded scan."
+      "caveat": "The image is a direct high-resolution rasterization of a finite-resolution scanned PDF. Higher rendering DPI cannot restore details absent in the embedded scan.",
+      "detailedNeumeCropFile": "GR132_spi_neume_context.png",
+      "detailedNeumeCropSha256": "1b626a88722f6d26df6c84e43ae9ce1179af5dffea21f6ec2abfa4ed7517d179",
+      "detailedNeumeCropNormalized": [
+        0.548,
+        0.285,
+        0.632,
+        0.355
+      ]
     }
   ],
   "decision": {
