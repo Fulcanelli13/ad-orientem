@@ -1,0 +1,45 @@
+name: Sacred Art — Ghent exact panel source photos (private review)
+on:
+  push:
+    branches: [research/sacred-art-batch1-ghent-panel-review-20261108]
+    paths:
+      - 'data/artwork/batch1-ghent-three-exact-panel-candidate-photos.v1.json'
+      - 'scripts/art/batch1_ghent_three_source_photo_qa.py'
+      - 'tests/sacred-art-batch1-ghent-photo-candidates.mjs'
+      - '.github/workflows/sacred-art-batch1-ghent-panel-photos.yml'
+  workflow_dispatch: {}
+permissions:
+  contents: read
+concurrency:
+  group: sacred-art-batch1-ghent-photo-research
+  cancel-in-progress: true
+jobs:
+  verify-photo-candidates:
+    name: Exact Ghent panel source-photo QA, no gallery publication
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Assert artwork identity, exact photo-selection hold, and Huesca hold
+        run: node tests/sacred-art-batch1-ghent-photo-candidates.mjs
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Pillow verification dependency
+        run: python -m pip install --disable-pip-version-check 'Pillow==12.0.0'
+      - name: Verify image processing syntax
+        run: python -m py_compile scripts/art/batch1_ghent_three_source_photo_qa.py
+      - name: Acquire three specific candidate originals and generate contact review
+        run: python scripts/art/batch1_ghent_three_source_photo_qa.py
+      - name: Preserve exact source bytes, previews, SHA256 and all holds
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-ghent-three-exact-panel-photo-private-review
+          path: |
+            artifacts/sacred-art-batch1-ghent-panel-review/*
+          retention-days: 14
+          if-no-files-found: warn
