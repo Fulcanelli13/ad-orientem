@@ -121,6 +121,28 @@ try{
    await choice.locator('[data-h4-option="beforeMass"]').selectOption("none");
    await choice.locator("[data-h4-sheet-close]").last().click();
    await choice.waitFor({state:"detached",timeout:20000});
+   const originalSelection=await page.evaluate(async()=>{
+    const r=await globalThis.AO_RUNTIME_V8.resolver.resolveDay("2026-11-09");
+    const mod=await import("/src/mass/1962-commemoration-form-source.js");
+    const original=r.proper?.data??r.proper;
+    const chosen=mod.select1962CommemorationsForMassForm({
+     proper:r.proper,calendarResolution:r,form:"LOW",
+     celebrationId:"mass_of_day",isConventual:false,observedSource:false
+    });
+    const data=chosen.proper?.data??chosen.proper;
+    return {principal:r.day?.main,commemorations:r.day?.commemorations,
+     initialCounts:["collects","secrets","postcommunions"].map(k=>original?.[k]?.length),
+     selectorStatus:chosen.status,selectorReason:chosen.reason,
+     selectorDecision:data?.commemorationFormDecision,
+     selectedRows:["collects","secrets","postcommunions"].map(k=>
+      (data?.[k]??[]).map(x=>({
+       sourcePath:x.sourcePath??null,prayerSourcePath:x.prayerSourcePath??null,
+       purpose:x.liturgicalPurpose??null,latin:String(x.lat??"").slice(0,130)
+      })))
+    };
+   });
+   console.log("NOV09_INDEPENDENT_EXISTING_LOWMASS_SOURCE_DIAGNOSTIC "+
+    JSON.stringify(originalSelection));
    const assembled=await page.evaluate(async()=>{
     const r=await globalThis.AO_R17_BROWSER_ENTRY.prepare();
     const mass=r?.session?.resolvedMass,p=mass?.proper?.data??mass?.proper;
