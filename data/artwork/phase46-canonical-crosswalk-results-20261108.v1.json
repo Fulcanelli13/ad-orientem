@@ -1,0 +1,100 @@
+{
+  "schema": "AO_SACRED_ART_PHASE46_CANONICAL_CROSSWALK_RESULTS_V1",
+  "as_of": "2026-11-08",
+  "status": "RESEARCH_BRANCH_CANONICAL_IDENTITY_RELATIONSHIP_IMPLEMENTED_AND_CI_VERIFIED",
+  "populations": {
+    "historical_source_records": 3205,
+    "operational_work_group_ids": 989,
+    "owner_handpicked_photo_records": 177,
+    "explicit_module_released_photo_entries": 16
+  },
+  "verified_links": [
+    {
+      "selected_id": "RECENT575::255",
+      "work_group": "REVIEW::kmska:fd4huh",
+      "physical_object": "KMSKA inv.439, Artus Wolfordt / Wolffort, Adoration of the Magi",
+      "primary": "https://kmska.be/nl/meesterwerk/aanbidding-door-de-koningen-7",
+      "status": "VERIFIED_SAME_PHYSICAL_OBJECT"
+    },
+    {
+      "selected_id": "RECENT575::377",
+      "work_group": "PRAYER::angelus--caravaggio",
+      "physical_object": "Caravaggio Annunciation, Musée des Beaux-Arts de Nancy, separately published Commons photographs",
+      "primary": "https://commons.wikimedia.org/wiki/Category:The_Annunciation_by_Caravaggio",
+      "status": "VERIFIED_SAME_PHYSICAL_OBJECT"
+    }
+  ],
+  "negative_pairs": [
+    {
+      "selected_id": "RECENT575::324",
+      "group_id": "CANONICAL::ART-eter-aul-ubens-doration-of-the-agi",
+      "reason": "Rubens Lyon A118 and Prado Adoration of the Magi are different physical paintings"
+    },
+    {
+      "selected_id": "RECENT575::324",
+      "group_id": "REVIEW::commons:34140055",
+      "reason": "Rubens Lyon selected painting versus Hermitage workshop painting"
+    },
+    {
+      "selected_id": "RECENT575::423",
+      "group_id": "CANONICAL::ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple",
+      "reason": "Champaigne Dijon CA104 (1628) versus Brussels inv25 (1648)"
+    },
+    {
+      "selected_id": "RECENT575::407",
+      "group_id": "REVIEW::commons:87808145",
+      "reason": "Lille P65 Quellinus/Fyt versus separate Van Utrecht/Quellinus 2019 auction painting"
+    }
+  ],
+  "counts": {
+    "validated_selected_to_group_links": 2,
+    "protected_false_merge_pairs": 4,
+    "selected_artworks_with_false_merge_guards": 3,
+    "selected_artworks_with_no_reliable_group_link": 167,
+    "selected_artworks_with_unresolved_own_physical_identity": 8,
+    "total_selected_without_verified_link": 175,
+    "machine_eligible_lexical_candidate_pairs": 0,
+    "group_level_module_release_source_links": 22,
+    "historical_release_source_links_excluded_from_989": 1,
+    "module_photographs_existing_in_repo": 16,
+    "rejected_source_records_preserved": 1599,
+    "photo_replacements_approved": 0,
+    "production_gallery_modifications": 0
+  },
+  "implementation": {
+    "canonical_decisions": "data/artwork/canonical-selected-photo-identity-decisions.v1.json",
+    "reproducible_script": "scripts/sacred-art/phase46-physical-artwork-crosswalk.py",
+    "ci_workflow": ".github/workflows/sacred-art-phase46-canonical-crosswalk.yml",
+    "ci_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42482181152",
+    "ci_artifact": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42482181152/artifacts/13618186796",
+    "data_exports": [
+      "selected_177_to_989_crosswalk.csv",
+      "operational_989_to_selected_photo_crosswalk.csv",
+      "unverified_candidate_pairs.csv",
+      "explicit_verified_pair_decisions.csv",
+      "explicit_false_merge_guards.csv",
+      "released_module16_existing_group_links.csv",
+      "historical_release_source_links.json",
+      "summary.json",
+      "hard_guards.json"
+    ],
+    "spreadsheet": "Ad_Orientem_Phase46_Canonical_Artwork_Crosswalk_Master.xlsx"
+  },
+  "integrity": {
+    "exact_177_rows": true,
+    "exact_989_rows": true,
+    "exact_16_release_rows": true,
+    "all_1599_original_rejections_preserved": true,
+    "false_merges_never_automatically_approved": true,
+    "historical_source_alias_not_readded_into_operational_989": true,
+    "original_handpicked_image_files_modified": false,
+    "published_gallery_modified": false
+  },
+  "caveats": [
+    "Do not interpret zero lexical candidate pairs as proof that 175 selected photographs are distinct from the 989 groups; conservative validation requires primary museum evidence and composition.",
+    "987 other operational research groups remain without a verified link to this later 177-file subset; those groups might themselves contain physically duplicate artworks.",
+    "The 989 physical work deduplication and wider live-gallery route publication census remain separate incomplete tasks.",
+    "A verified physical painting relationship does not approve reuse, replacement or publication of different photographic files.",
+    "Preserve user original photo choices, explicit exclusions, and placement restrictions. GitHub Pages only, no Vercel."
+  ]
+}
