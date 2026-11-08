@@ -23,7 +23,7 @@ for(const a of SACRED_ART_RELEASED_GALLERY_V1){
   assert.equal(a.releaseState,"PREVIOUSLY_RELEASED_EXACT_MODULE_PHOTO");
   assert.equal(a.newEditorialApproval,false);
   assert.equal(a.newPublication,false);
-  assert.match(a.image,/^\/assets\/(prayer|home)\//);
+  assert.match(a.image,/^assets\/(prayer|home)\//);
   assert.ok(releasedGalleryBySource(a.source)===a,"Gallery source join must be exact");
 }
 assert.equal(releasedGalleryAt(-1),null);
