@@ -43,6 +43,7 @@ test("printed/modern spelling variation never silently earns 1961 exact-edition 
  assert.equal(witness.observedOrthographicDifferences[1].print,"Angeli");
  const source=readFileSync(new URL("../src/office/latin-compline-public-release.js",import.meta.url),"utf8");
  assert.match(source,/psalter1961VerbatimCollated:false/u);
- assert.match(source,/completeHourCollated:false/u);
- assert.match(source,/publicReleaseApproved:false/u);
+ assert.match(source,/exact1961EditionPsalterLeafVerified:false/u);
+ assert.match(source,/printedVulgatePatternDualWitnessCollated:true/u);
+ assert.match(source,/publicReleaseApproved:true/u);
 });
