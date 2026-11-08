@@ -9,6 +9,7 @@ on:
       - src/pray/presentation-runtime.js
       - src/pray/traditional-pray-runtime.js
       - tests/pray-red-booklet-2013-completeness.mjs
+      - tests/pray-red-booklet-2013-communion-library-phone.mjs
       - .github/workflows/pray-red-booklet-2013-completeness.yml
   pull_request:
     branches: [main]
@@ -18,6 +19,7 @@ on:
       - src/pray/presentation-runtime.js
       - src/pray/traditional-pray-runtime.js
       - tests/pray-red-booklet-2013-completeness.mjs
+      - tests/pray-red-booklet-2013-communion-library-phone.mjs
       - .github/workflows/pray-red-booklet-2013-completeness.yml
   workflow_dispatch:
 permissions:
@@ -33,3 +35,15 @@ jobs:
           node-version: '22'
       - name: Verify 37 booklet works and direct Communion Library source links
         run: node tests/pray-red-booklet-2013-completeness.mjs
+  booklet-communion-library-phone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Compare five complete Communion source bodies through Library on 320/390px EN/FR
+        run: node tests/pray-red-booklet-2013-communion-library-phone.mjs
