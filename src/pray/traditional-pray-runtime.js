@@ -238,9 +238,13 @@ function dailyReadingPlan(){
  const prefs=personalDailyPrefs();
  if(S.dailyMode==="direct"&&S.dailyDirectId){
   // The independent source-Library handoff must not change saved daily preferences.
-  const sourcePrefs=S.dailyDirectLanguage&&Object.values(SUSCIPE_LINK.sourceIds).includes(S.dailyDirectId)
-   ?{...prefs,language:S.dailyDirectLanguage}:prefs;
-  const result=personalDailyDirectPlan({daypart:S.daypart,prefs:sourcePrefs,sourceId:S.dailyDirectId});
+  const needsOriginalLanguage=S.dailyDirectLanguage&&
+   Object.values(SUSCIPE_LINK.sourceIds).includes(S.dailyDirectId);
+  const result=needsOriginalLanguage
+   ?personalDailyDirectPlan({
+     daypart:S.daypart,prefs:{...prefs,language:S.dailyDirectLanguage},sourceId:S.dailyDirectId
+    })
+   :personalDailyDirectPlan({daypart:S.daypart,prefs,sourceId:S.dailyDirectId});
   if(result)return result;
  }
  return buildPersonalDailyPlan({daypart:S.daypart,prefs});
