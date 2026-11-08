@@ -1,0 +1,1037 @@
+{
+  "schema": "ao-independent-institute-ordo-audit-v1",
+  "recordType": "INDEPENDENT_EDITORIAL_INTAKE_NOT_A_MASS_PROJECTOR",
+  "sourceName": "ICRSP France Province original November 2026 Ordo",
+  "sourceUrl": "https://icrspfrance.fr/ordo.php?d=2026-11-09",
+  "sourceScope": "ICRSP_FRANCE_PARTICULAR_ORDO",
+  "reviewedOn": "2026-11-08",
+  "start": "2026-11-09",
+  "end": "2026-11-29",
+  "scopeWarning": "This is a provincial Ordo; church patrons, dedications, diocesan and local proper feasts may add or replace prescriptions. It does not certify every institute church worldwide.",
+  "rubricAuthority": "1960 Roman Missal rubrics §§274-284, 433-465; see https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html",
+  "scopeOfReview": "The dated Ordo's stated Mass, Gloria, Credo, Preface, papal prayer and explicit Mass commemorations; not independent proof of each prayer's authority, text readiness, rubrical permissions or applicability to a specific community or form.",
+  "entries": [
+    {
+      "date": "2026-11-09",
+      "liturgicalDay": "Lateran Archbasilica dedication",
+      "listedMassIncipit": "Terribilis",
+      "listedMassClass": 2,
+      "listedMassColour": "WHITE",
+      "listedGloria": true,
+      "listedCredo": true,
+      "listedPreface": "COMMON",
+      "officialOrdoUrl": "https://icrspfrance.fr/ordo.php?d=2026-11-09#j2026-11-09",
+      "sourceClaim": {
+        "additionalOrations": [
+          {
+            "kind": "COMMEMORATION",
+            "saintId": "SAINT_THEODORE_MARTYR"
+          },
+          {
+            "kind": "ORATIO_PRO_PAPA",
+            "source": "MISSALE_ROMANUM_PRO_PAPA"
+          }
+        ],
+        "sourceOrder": [
+          "PRINCIPAL",
+          "COMMEMORATION:SAINT_THEODORE_MARTYR",
+          "ORATIO_PRO_PAPA"
+        ],
+        "expectedCollectCount": 3,
+        "expectedSecretCount": 3,
+        "expectedPostcommunionCount": 3
+      },
+      "independentRubricalReview": {
+        "status": "PENDING_INDEPENDENT_AUTHORITY",
+        "rubricFlags": [
+          "RGMR_434_C_OTHER_SECOND_CLASS_ONE_EXTRA_LIMIT",
+          "RGMR_457_D_IF_IMPERATA"
+        ],
+        "permissionOrPrivilegeEvidenceUrl": null,
+        "affectedMassForms": [
+          "LOW",
+          "SUNG",
+          "SOLEMN"
+        ]
+      },
+      "editorialState": {
+        "principalSourceTextMatched": false,
+        "commemorationTextsMatched": false,
+        "additionalTextsMatched": false,
+        "readerVerified": false,
+        "publishedInstituteSelection": false,
+        "holdReason": "SOURCE_ATTESTED_BUT_COMPLETE_LOCAL_FORM_NOT_YET_CERTIFIED"
+      }
+    },
+    {
+      "date": "2026-11-10",
+      "liturgicalDay": "Saint Andrew Avellino",
+      "listedMassIncipit": "Os justi",
+      "listedMassClass": 3,
+      "listedMassColour": "WHITE",
+      "listedGloria": true,
+      "listedCredo": false,
+      "listedPreface": "COMMON",
+      "officialOrdoUrl": "https://icrspfrance.fr/ordo.php?d=2026-11-10#j2026-11-10",
+      "sourceClaim": {
+        "additionalOrations": [
+          {
+            "kind": "COMMEMORATION",
+            "saintId": "SAINT_TRYPHON_AND_COMPANIONS"
+          },
+          {
+            "kind": "ORATIO_PRO_PAPA",
+            "source": "MISSALE_ROMANUM_PRO_PAPA"
+          }
+        ],
+        "sourceOrder": [
+          "PRINCIPAL",
+          "COMMEMORATION:SAINT_TRYPHON_AND_COMPANIONS",
+          "ORATIO_PRO_PAPA"
+        ],
+        "expectedCollectCount": 3,
+        "expectedSecretCount": 3,
+        "expectedPostcommunionCount": 3
+      },
+      "independentRubricalReview": {
+        "status": "PENDING_INDEPENDENT_AUTHORITY",
+        "rubricFlags": [
+          "RGMR_434_A_NONCONVENTUAL_SUNG_RESTRICTION",
+          "RGMR_457_D_IF_IMPERATA"
+        ],
+        "permissionOrPrivilegeEvidenceUrl": null,
+        "affectedMassForms": [
+          "LOW",
+          "SUNG",
+          "SOLEMN"
+        ]
+      },
+      "editorialState": {
+        "principalSourceTextMatched": false,
+        "commemorationTextsMatched": false,
+        "additionalTextsMatched": false,
+        "readerVerified": false,
+        "publishedInstituteSelection": false,
+        "holdReason": "SOURCE_ATTESTED_BUT_COMPLETE_LOCAL_FORM_NOT_YET_CERTIFIED"
+      }
+    },
+    {
+      "date": "2026-11-11",
+      "liturgicalDay": "Saint Martin of Tours",
+      "listedMassIncipit": "Statuit ei",
+      "listedMassClass": 3,
+      "listedMassColour": "WHITE",
+      "listedGloria": true,
+      "listedCredo": false,
+      "listedPreface": "COMMON",
+      "officialOrdoUrl": "https://icrspfrance.fr/ordo.php?d=2026-11-11#j2026-11-11",
+      "sourceClaim": {
+        "additionalOrations": [
+          {
+            "kind": "COMMEMORATION",
+            "saintId": "SAINT_MENNAS_MARTYR"
+          },
+          {
+            "kind": "ORATIO_PRO_PAPA",
+            "source": "MISSALE_ROMANUM_PRO_PAPA"
+          }
+        ],
+        "sourceOrder": [
+          "PRINCIPAL",
+          "COMMEMORATION:SAINT_MENNAS_MARTYR",
+          "ORATIO_PRO_PAPA"
+        ],
+        "expectedCollectCount": 3,
+        "expectedSecretCount": 3,
+        "expectedPostcommunionCount": 3
+      },
+      "independentRubricalReview": {
+        "status": "PENDING_INDEPENDENT_AUTHORITY",
+        "rubricFlags": [
+          "RGMR_434_A_NONCONVENTUAL_SUNG_RESTRICTION",
+          "RGMR_457_D_IF_IMPERATA"
+        ],
+        "permissionOrPrivilegeEvidenceUrl": null,
+        "affectedMassForms": [
+          "LOW",
+          "SUNG",
+          "SOLEMN"
+        ]
+      },
+      "editorialState": {
+        "principalSourceTextMatched": false,
+        "commemorationTextsMatched": false,
+        "additionalTextsMatched": false,
+        "readerVerified": false,
+        "publishedInstituteSelection": false,
+        "holdReason": "SOURCE_ATTESTED_BUT_COMPLETE_LOCAL_FORM_NOT_YET_CERTIFIED"
+      }
+    },
+    {
+      "date": "2026-11-12",
+      "liturgicalDay": "Saint Martin I, Pope and Martyr",
+      "listedMassIncipit": "Si diligis me",
+      "listedMassClass": 3,
+      "listedMassColour": "RED",
+      "listedGloria": true,
+      "listedCredo": false,
+      "listedPreface": "COMMON",
+      "officialOrdoUrl": "https://icrspfrance.fr/ordo.php?d=2026-11-12#j2026-11-12",
+      "sourceClaim": {
+        "additionalOrations": [
+          {
+            "kind": "ORATIO_PRO_PAPA",
+            "source": "MISSALE_ROMANUM_PRO_PAPA"
+          }
+        ],
+        "sourceOrder": [
+          "PRINCIPAL",
+          "ORATIO_PRO_PAPA"
+        ],
+        "expectedCollectCount": 2,
+        "expectedSecretCount": 2,
+        "expectedPostcommunionCount": 2
+      },
+      "independentRubricalReview": {
+        "status": "PENDING_INDEPENDENT_AUTHORITY",
+        "rubricFlags": [
+          "RGMR_434_A_NONCONVENTUAL_SUNG_RESTRICTION",
+          "RGMR_457_D_IF_IMPERATA"
+        ],
+        "permissionOrPrivilegeEvidenceUrl": null,
+        "affectedMassForms": [
+          "LOW",
+          "SUNG",
+          "SOLEMN"
+        ]
+      },
+      "editorialState": {
+        "principalSourceTextMatched": false,
+        "commemorationTextsMatched": false,
+        "additionalTextsMatched": false,
+        "readerVerified": false,
+        "publishedInstituteSelection": false,
+        "holdReason": "SOURCE_ATTESTED_BUT_COMPLETE_LOCAL_FORM_NOT_YET_CERTIFIED"
+      }
+    },
+    {
+      "date": "2026-11-13",
+      "liturgicalDay": "Saint Didacus",
+      "listedMassIncipit": "Justus",
+      "listedMassClass": 3,
+      "listedMassColour": "WHITE",
+      "listedGloria": true,
+      "listedCredo": false,
+      "listedPreface": "COMMON",
+      "officialOrdoUrl": "https://icrspfrance.fr/ordo.php?d=2026-11-13#j2026-11-13",
+      "sourceClaim": {
+        "additionalOrations": [
+          {
+            "kind": "ORATIO_PRO_PAPA",
+            "source": "MISSALE_ROMANUM_PRO_PAPA"
+          }
+        ],
+        "sourceOrder": [
+          "PRINCIPAL",
+          "ORATIO_PRO_PAPA"
+        ],
+        "expectedCollectCount": 2,
+        "expectedSecretCount": 2,
+        "expectedPostcommunionCount": 2
+      },
+      "independentRubricalReview": {
+        "status": "PENDING_INDEPENDENT_AUTHORITY",
+        "rubricFlags": [
+          "RGMR_434_A_NONCONVENTUAL_SUNG_RESTRICTION",
+          "RGMR_457_D_IF_IMPERATA"
+        ],
+        "permissionOrPrivilegeEvidenceUrl": null,
+        "affectedMassForms": [
+          "LOW",
+          "SUNG",
+          "SOLEMN"
+        ]
+      },
+      "editorialState": {
+        "principalSourceTextMatched": false,
+        "commemorationTextsMatched": false,
+        "additionalTextsMatched": false,
+        "readerVerified": false,
+        "publishedInstituteSelection": false,
+        "holdReason": "SOURCE_ATTESTED_BUT_COMPLETE_LOCAL_FORM_NOT_YET_CERTIFIED"
+      }
+    },
+    {
+      "date": "2026-11-14",
+      "liturgicalDay": "Saint Josaphat",
+      "listedMassIncipit": "Gaudeamus",
+      "listedMassClass": 3,
+      "listedMassColour": "RED",
+      "listedGloria": true,
+      "listedCredo": false,
+      "listedPreface": "COMMON",
+      "officialOrdoUrl": "https://icrspfrance.fr/ordo.php?d=2026-11-14#j2026-11-14",
+      "sourceClaim": {
+        "additionalOrations": [
+          {
+            "kind": "ORATIO_PRO_PAPA",
+            "source": "MISSALE_ROMANUM_PRO_PAPA"
+          }
+        ],
+        "sourceOrder": [
+          "PRINCIPAL",
+          "ORATIO_PRO_PAPA"
+        ],
+        "expectedCollectCount": 2,
+        "expectedSecretCount": 2,
+        "expectedPostcommunionCount": 2
+      },
+      "independentRubricalReview": {
+        "status": "PENDING_INDEPENDENT_AUTHORITY",
+        "rubricFlags": [
+          "RGMR_434_A_NONCONVENTUAL_SUNG_RESTRICTION",
+          "RGMR_457_D_IF_IMPERATA"
+        ],
+        "permissionOrPrivilegeEvidenceUrl": null,
+        "affectedMassForms": [
+          "LOW",
+          "SUNG",
+          "SOLEMN"
+        ]
+      },
+      "editorialState": {
+        "principalSourceTextMatched": false,
+        "commemorationTextsMatched": false,
+        "additionalTextsMatched": false,
+        "readerVerified": false,
+        "publishedInstituteSelection": false,
+        "holdReason": "SOURCE_ATTESTED_BUT_COMPLETE_LOCAL_FORM_NOT_YET_CERTIFIED"
+      }
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalDay": "Resumed Sixth Sunday after Epiphany",
+      "listedMassIncipit": "Dicit Dominus",
+      "listedMassClass": 2,
+      "listedMassColour": "GREEN",
+      "listedGloria": true,
+      "listedCredo": true,
+      "listedPreface": "HOLY_TRINITY",
+      "officialOrdoUrl": "https://icrspfrance.fr/ordo.php?d=2026-11-15#j2026-11-15",
+      "sourceClaim": {
+        "additionalOrations": [
+          {
+            "kind": "ORATIO_PRO_PAPA",
+            "source": "MISSALE_ROMANUM_PRO_PAPA"
+          }
+        ],
+        "sourceOrder": [
+          "PRINCIPAL",
+          "ORATIO_PRO_PAPA"
+        ],
+        "expectedCollectCount": 2,
+        "expectedSecretCount": 2,
+        "expectedPostcommunionCount": 2
+      },
+      "independentRubricalReview": {
+        "status": "PENDING_INDEPENDENT_AUTHORITY",
+        "rubricFlags": [
+          "RGMR_434_B_SECOND_CLASS_SUNDAY_RESTRICTION",
+          "RGMR_457_D_IF_IMPERATA"
+        ],
+        "permissionOrPrivilegeEvidenceUrl": null,
+        "affectedMassForms": [
+          "LOW",
+          "SUNG",
+          "SOLEMN"
+        ]
+      },
+      "editorialState": {
+        "principalSourceTextMatched": false,
+        "commemorationTextsMatched": false,
+        "additionalTextsMatched": false,
+        "readerVerified": false,
+        "publishedInstituteSelection": false,
+        "holdReason": "SOURCE_ATTESTED_BUT_COMPLETE_LOCAL_FORM_NOT_YET_CERTIFIED"
+      }
+    },
+    {
+      "date": "2026-11-16",
+      "liturgicalDay": "Saint Gertrude",
+      "listedMassIncipit": "Dilexisti",
+      "listedMassClass": 3,
+      "listedMassColour": "WHITE",
+      "listedGloria": true,
+      "listedCredo": false,
+      "listedPreface": "COMMON",
+      "officialOrdoUrl": "https://icrspfrance.fr/ordo.php?d=2026-11-16#j2026-11-16",
+      "sourceClaim": {
+        "additionalOrations": [
+          {
+            "kind": "ORATIO_PRO_PAPA",
+            "source": "MISSALE_ROMANUM_PRO_PAPA"
+          }
+        ],
+        "sourceOrder": [
+          "PRINCIPAL",
+          "ORATIO_PRO_PAPA"
+        ],
+        "expectedCollectCount": 2,
+        "expectedSecretCount": 2,
+        "expectedPostcommunionCount": 2
+      },
+      "independentRubricalReview": {
+        "status": "PENDING_INDEPENDENT_AUTHORITY",
+        "rubricFlags": [
+          "RGMR_434_A_NONCONVENTUAL_SUNG_RESTRICTION",
+          "RGMR_457_D_IF_IMPERATA"
+        ],
+        "permissionOrPrivilegeEvidenceUrl": null,
+        "affectedMassForms": [
+          "LOW",
+          "SUNG",
+          "SOLEMN"
+        ]
+      },
+      "editorialState": {
+        "principalSourceTextMatched": false,
+        "commemorationTextsMatched": false,
+        "additionalTextsMatched": false,
+        "readerVerified": false,
+        "publishedInstituteSelection": false,
+        "holdReason": "SOURCE_ATTESTED_BUT_COMPLETE_LOCAL_FORM_NOT_YET_CERTIFIED"
+      }
+    },
+    {
+      "date": "2026-11-17",
+      "liturgicalDay": "Saint Gregory Thaumaturgus",
+      "listedMassIncipit": "Statuit",
+      "listedMassClass": 3,
+      "listedMassColour": "WHITE",
+      "listedGloria": true,
+      "listedCredo": false,
+      "listedPreface": "COMMON",
+      "officialOrdoUrl": "https://icrspfrance.fr/ordo.php?d=2026-11-17#j2026-11-17",
+      "sourceClaim": {
+        "additionalOrations": [
+          {
+            "kind": "ORATIO_PRO_PAPA",
+            "source": "MISSALE_ROMANUM_PRO_PAPA"
+          }
+        ],
+        "sourceOrder": [
+          "PRINCIPAL",
+          "ORATIO_PRO_PAPA"
+        ],
+        "expectedCollectCount": 2,
+        "expectedSecretCount": 2,
+        "expectedPostcommunionCount": 2
+      },
+      "independentRubricalReview": {
+        "status": "PENDING_INDEPENDENT_AUTHORITY",
+        "rubricFlags": [
+          "RGMR_434_A_NONCONVENTUAL_SUNG_RESTRICTION",
+          "RGMR_457_D_IF_IMPERATA"
+        ],
+        "permissionOrPrivilegeEvidenceUrl": null,
+        "affectedMassForms": [
+          "LOW",
+          "SUNG",
+          "SOLEMN"
+        ]
+      },
+      "editorialState": {
+        "principalSourceTextMatched": false,
+        "commemorationTextsMatched": false,
+        "additionalTextsMatched": false,
+        "readerVerified": false,
+        "publishedInstituteSelection": false,
+        "holdReason": "SOURCE_ATTESTED_BUT_COMPLETE_LOCAL_FORM_NOT_YET_CERTIFIED"
+      }
+    },
+    {
+      "date": "2026-11-18",
+      "liturgicalDay": "Dedication of the Basilicas of Saints Peter and Paul",
+      "listedMassIncipit": "Terribilis",
+      "listedMassClass": 3,
+      "listedMassColour": "WHITE",
+      "listedGloria": true,
+      "listedCredo": true,
+      "listedPreface": "COMMON",
+      "officialOrdoUrl": "https://icrspfrance.fr/ordo.php?d=2026-11-18#j2026-11-18",
+      "sourceClaim": {
+        "additionalOrations": [
+          {
+            "kind": "ORATIO_PRO_PAPA",
+            "source": "MISSALE_ROMANUM_PRO_PAPA"
+          }
+        ],
+        "sourceOrder": [
+          "PRINCIPAL",
+          "ORATIO_PRO_PAPA"
+        ],
+        "expectedCollectCount": 2,
+        "expectedSecretCount": 2,
+        "expectedPostcommunionCount": 2
+      },
+      "independentRubricalReview": {
+        "status": "PENDING_INDEPENDENT_AUTHORITY",
+        "rubricFlags": [
+          "RGMR_434_A_NONCONVENTUAL_SUNG_RESTRICTION",
+          "RGMR_457_D_IF_IMPERATA"
+        ],
+        "permissionOrPrivilegeEvidenceUrl": null,
+        "affectedMassForms": [
+          "LOW",
+          "SUNG",
+          "SOLEMN"
+        ]
+      },
+      "editorialState": {
+        "principalSourceTextMatched": false,
+        "commemorationTextsMatched": false,
+        "additionalTextsMatched": false,
+        "readerVerified": false,
+        "publishedInstituteSelection": false,
+        "holdReason": "SOURCE_ATTESTED_BUT_COMPLETE_LOCAL_FORM_NOT_YET_CERTIFIED"
+      }
+    },
+    {
+      "date": "2026-11-19",
+      "liturgicalDay": "Saint Elizabeth of Hungary",
+      "listedMassIncipit": "Cognovi",
+      "listedMassClass": 3,
+      "listedMassColour": "WHITE",
+      "listedGloria": true,
+      "listedCredo": false,
+      "listedPreface": "COMMON",
+      "officialOrdoUrl": "https://icrspfrance.fr/ordo.php?d=2026-11-19#j2026-11-19",
+      "sourceClaim": {
+        "additionalOrations": [
+          {
+            "kind": "COMMEMORATION",
+            "saintId": "SAINT_PONTIAN_POPE_MARTYR"
+          },
+          {
+            "kind": "ORATIO_PRO_PAPA",
+            "source": "MISSALE_ROMANUM_PRO_PAPA"
+          }
+        ],
+        "sourceOrder": [
+          "PRINCIPAL",
+          "COMMEMORATION:SAINT_PONTIAN_POPE_MARTYR",
+          "ORATIO_PRO_PAPA"
+        ],
+        "expectedCollectCount": 3,
+        "expectedSecretCount": 3,
+        "expectedPostcommunionCount": 3
+      },
+      "independentRubricalReview": {
+        "status": "PENDING_INDEPENDENT_AUTHORITY",
+        "rubricFlags": [
+          "RGMR_434_A_NONCONVENTUAL_SUNG_RESTRICTION",
+          "RGMR_457_D_IF_IMPERATA"
+        ],
+        "permissionOrPrivilegeEvidenceUrl": null,
+        "affectedMassForms": [
+          "LOW",
+          "SUNG",
+          "SOLEMN"
+        ]
+      },
+      "editorialState": {
+        "principalSourceTextMatched": false,
+        "commemorationTextsMatched": false,
+        "additionalTextsMatched": false,
+        "readerVerified": false,
+        "publishedInstituteSelection": false,
+        "holdReason": "SOURCE_ATTESTED_BUT_COMPLETE_LOCAL_FORM_NOT_YET_CERTIFIED"
+      }
+    },
+    {
+      "date": "2026-11-20",
+      "liturgicalDay": "Saint Felix of Valois",
+      "listedMassIncipit": "Justus",
+      "listedMassClass": 3,
+      "listedMassColour": "WHITE",
+      "listedGloria": true,
+      "listedCredo": false,
+      "listedPreface": "COMMON",
+      "officialOrdoUrl": "https://icrspfrance.fr/ordo.php?d=2026-11-20#j2026-11-20",
+      "sourceClaim": {
+        "additionalOrations": [
+          {
+            "kind": "ORATIO_PRO_PAPA",
+            "source": "MISSALE_ROMANUM_PRO_PAPA"
+          }
+        ],
+        "sourceOrder": [
+          "PRINCIPAL",
+          "ORATIO_PRO_PAPA"
+        ],
+        "expectedCollectCount": 2,
+        "expectedSecretCount": 2,
+        "expectedPostcommunionCount": 2
+      },
+      "independentRubricalReview": {
+        "status": "PENDING_INDEPENDENT_AUTHORITY",
+        "rubricFlags": [
+          "RGMR_434_A_NONCONVENTUAL_SUNG_RESTRICTION",
+          "RGMR_457_D_IF_IMPERATA"
+        ],
+        "permissionOrPrivilegeEvidenceUrl": null,
+        "affectedMassForms": [
+          "LOW",
+          "SUNG",
+          "SOLEMN"
+        ]
+      },
+      "editorialState": {
+        "principalSourceTextMatched": false,
+        "commemorationTextsMatched": false,
+        "additionalTextsMatched": false,
+        "readerVerified": false,
+        "publishedInstituteSelection": false,
+        "holdReason": "SOURCE_ATTESTED_BUT_COMPLETE_LOCAL_FORM_NOT_YET_CERTIFIED"
+      }
+    },
+    {
+      "date": "2026-11-21",
+      "liturgicalDay": "Presentation of the Blessed Virgin Mary",
+      "listedMassIncipit": "Salve Sancta Parens",
+      "listedMassClass": 3,
+      "listedMassColour": "WHITE",
+      "listedGloria": true,
+      "listedCredo": true,
+      "listedPreface": "BVM_ET_TE_IN_PRAESENTATIONE",
+      "officialOrdoUrl": "https://icrspfrance.fr/ordo.php?d=2026-11-21#j2026-11-21",
+      "sourceClaim": {
+        "additionalOrations": [
+          {
+            "kind": "ORATIO_PRO_PAPA",
+            "source": "MISSALE_ROMANUM_PRO_PAPA"
+          }
+        ],
+        "sourceOrder": [
+          "PRINCIPAL",
+          "ORATIO_PRO_PAPA"
+        ],
+        "expectedCollectCount": 2,
+        "expectedSecretCount": 2,
+        "expectedPostcommunionCount": 2
+      },
+      "independentRubricalReview": {
+        "status": "PENDING_INDEPENDENT_AUTHORITY",
+        "rubricFlags": [
+          "RGMR_434_A_NONCONVENTUAL_SUNG_RESTRICTION",
+          "RGMR_457_D_IF_IMPERATA"
+        ],
+        "permissionOrPrivilegeEvidenceUrl": null,
+        "affectedMassForms": [
+          "LOW",
+          "SUNG",
+          "SOLEMN"
+        ]
+      },
+      "editorialState": {
+        "principalSourceTextMatched": false,
+        "commemorationTextsMatched": false,
+        "additionalTextsMatched": false,
+        "readerVerified": false,
+        "publishedInstituteSelection": false,
+        "holdReason": "SOURCE_ATTESTED_BUT_COMPLETE_LOCAL_FORM_NOT_YET_CERTIFIED"
+      }
+    },
+    {
+      "date": "2026-11-22",
+      "liturgicalDay": "Last Sunday after Pentecost",
+      "listedMassIncipit": "Dicit Dominus",
+      "listedMassClass": 2,
+      "listedMassColour": "GREEN",
+      "listedGloria": true,
+      "listedCredo": true,
+      "listedPreface": "HOLY_TRINITY",
+      "officialOrdoUrl": "https://icrspfrance.fr/ordo.php?d=2026-11-22#j2026-11-22",
+      "sourceClaim": {
+        "additionalOrations": [
+          {
+            "kind": "ORATIO_PRO_PAPA",
+            "source": "MISSALE_ROMANUM_PRO_PAPA"
+          }
+        ],
+        "sourceOrder": [
+          "PRINCIPAL",
+          "ORATIO_PRO_PAPA"
+        ],
+        "expectedCollectCount": 2,
+        "expectedSecretCount": 2,
+        "expectedPostcommunionCount": 2
+      },
+      "independentRubricalReview": {
+        "status": "PENDING_INDEPENDENT_AUTHORITY",
+        "rubricFlags": [
+          "RGMR_434_B_SECOND_CLASS_SUNDAY_RESTRICTION",
+          "RGMR_457_D_IF_IMPERATA"
+        ],
+        "permissionOrPrivilegeEvidenceUrl": null,
+        "affectedMassForms": [
+          "LOW",
+          "SUNG",
+          "SOLEMN"
+        ]
+      },
+      "editorialState": {
+        "principalSourceTextMatched": false,
+        "commemorationTextsMatched": false,
+        "additionalTextsMatched": false,
+        "readerVerified": false,
+        "publishedInstituteSelection": false,
+        "holdReason": "SOURCE_ATTESTED_BUT_COMPLETE_LOCAL_FORM_NOT_YET_CERTIFIED"
+      }
+    },
+    {
+      "date": "2026-11-23",
+      "liturgicalDay": "Saint Clement I, Pope and Martyr",
+      "listedMassIncipit": "Dicit Dominus",
+      "listedMassClass": 3,
+      "listedMassColour": "RED",
+      "listedGloria": true,
+      "listedCredo": false,
+      "listedPreface": "COMMON",
+      "officialOrdoUrl": "https://icrspfrance.fr/ordo.php?d=2026-11-23#j2026-11-23",
+      "sourceClaim": {
+        "additionalOrations": [
+          {
+            "kind": "COMMEMORATION",
+            "saintId": "SAINT_FELICITY_MARTYR"
+          },
+          {
+            "kind": "ORATIO_PRO_PAPA",
+            "source": "MISSALE_ROMANUM_PRO_PAPA"
+          }
+        ],
+        "sourceOrder": [
+          "PRINCIPAL",
+          "COMMEMORATION:SAINT_FELICITY_MARTYR",
+          "ORATIO_PRO_PAPA"
+        ],
+        "expectedCollectCount": 3,
+        "expectedSecretCount": 3,
+        "expectedPostcommunionCount": 3
+      },
+      "independentRubricalReview": {
+        "status": "PENDING_INDEPENDENT_AUTHORITY",
+        "rubricFlags": [
+          "RGMR_434_A_NONCONVENTUAL_SUNG_RESTRICTION",
+          "RGMR_457_D_IF_IMPERATA"
+        ],
+        "permissionOrPrivilegeEvidenceUrl": null,
+        "affectedMassForms": [
+          "LOW",
+          "SUNG",
+          "SOLEMN"
+        ]
+      },
+      "editorialState": {
+        "principalSourceTextMatched": false,
+        "commemorationTextsMatched": false,
+        "additionalTextsMatched": false,
+        "readerVerified": false,
+        "publishedInstituteSelection": false,
+        "holdReason": "PRINCIPAL_FRENCH_SECRET_AND_POSTCOMMUNION_SOURCE_NOT_YET_CLOSED"
+      }
+    },
+    {
+      "date": "2026-11-24",
+      "liturgicalDay": "Saint John of the Cross",
+      "listedMassIncipit": "In medio",
+      "listedMassClass": 3,
+      "listedMassColour": "WHITE",
+      "listedGloria": true,
+      "listedCredo": true,
+      "listedPreface": "COMMON",
+      "officialOrdoUrl": "https://icrspfrance.fr/ordo.php?d=2026-11-24#j2026-11-24",
+      "sourceClaim": {
+        "additionalOrations": [
+          {
+            "kind": "COMMEMORATION",
+            "saintId": "SAINT_CHRYSOGONUS_MARTYR"
+          },
+          {
+            "kind": "ORATIO_PRO_PAPA",
+            "source": "MISSALE_ROMANUM_PRO_PAPA"
+          }
+        ],
+        "sourceOrder": [
+          "PRINCIPAL",
+          "COMMEMORATION:SAINT_CHRYSOGONUS_MARTYR",
+          "ORATIO_PRO_PAPA"
+        ],
+        "expectedCollectCount": 3,
+        "expectedSecretCount": 3,
+        "expectedPostcommunionCount": 3
+      },
+      "independentRubricalReview": {
+        "status": "PENDING_INDEPENDENT_AUTHORITY",
+        "rubricFlags": [
+          "RGMR_434_A_NONCONVENTUAL_SUNG_RESTRICTION",
+          "RGMR_457_D_IF_IMPERATA"
+        ],
+        "permissionOrPrivilegeEvidenceUrl": null,
+        "affectedMassForms": [
+          "LOW",
+          "SUNG",
+          "SOLEMN"
+        ]
+      },
+      "editorialState": {
+        "principalSourceTextMatched": false,
+        "commemorationTextsMatched": false,
+        "additionalTextsMatched": false,
+        "readerVerified": false,
+        "publishedInstituteSelection": false,
+        "holdReason": "SOURCE_ATTESTED_BUT_COMPLETE_LOCAL_FORM_NOT_YET_CERTIFIED"
+      }
+    },
+    {
+      "date": "2026-11-25",
+      "liturgicalDay": "Saint Catherine of Alexandria",
+      "listedMassIncipit": "Loquebar",
+      "listedMassClass": 3,
+      "listedMassColour": "RED",
+      "listedGloria": true,
+      "listedCredo": false,
+      "listedPreface": "COMMON",
+      "officialOrdoUrl": "https://icrspfrance.fr/ordo.php?d=2026-11-25#j2026-11-25",
+      "sourceClaim": {
+        "additionalOrations": [
+          {
+            "kind": "ORATIO_PRO_PAPA",
+            "source": "MISSALE_ROMANUM_PRO_PAPA"
+          }
+        ],
+        "sourceOrder": [
+          "PRINCIPAL",
+          "ORATIO_PRO_PAPA"
+        ],
+        "expectedCollectCount": 2,
+        "expectedSecretCount": 2,
+        "expectedPostcommunionCount": 2
+      },
+      "independentRubricalReview": {
+        "status": "PENDING_INDEPENDENT_AUTHORITY",
+        "rubricFlags": [
+          "RGMR_434_A_NONCONVENTUAL_SUNG_RESTRICTION",
+          "RGMR_457_D_IF_IMPERATA"
+        ],
+        "permissionOrPrivilegeEvidenceUrl": null,
+        "affectedMassForms": [
+          "LOW",
+          "SUNG",
+          "SOLEMN"
+        ]
+      },
+      "editorialState": {
+        "principalSourceTextMatched": false,
+        "commemorationTextsMatched": false,
+        "additionalTextsMatched": false,
+        "readerVerified": false,
+        "publishedInstituteSelection": false,
+        "holdReason": "SOURCE_ATTESTED_BUT_COMPLETE_LOCAL_FORM_NOT_YET_CERTIFIED"
+      }
+    },
+    {
+      "date": "2026-11-26",
+      "liturgicalDay": "Saint Sylvester, Abbot",
+      "listedMassIncipit": "Os justi",
+      "listedMassClass": 3,
+      "listedMassColour": "WHITE",
+      "listedGloria": true,
+      "listedCredo": false,
+      "listedPreface": "COMMON",
+      "officialOrdoUrl": "https://icrspfrance.fr/ordo.php?d=2026-11-26#j2026-11-26",
+      "sourceClaim": {
+        "additionalOrations": [
+          {
+            "kind": "COMMEMORATION",
+            "saintId": "SAINT_PETER_OF_ALEXANDRIA_MARTYR"
+          },
+          {
+            "kind": "ORATIO_PRO_PAPA",
+            "source": "MISSALE_ROMANUM_PRO_PAPA"
+          }
+        ],
+        "sourceOrder": [
+          "PRINCIPAL",
+          "COMMEMORATION:SAINT_PETER_OF_ALEXANDRIA_MARTYR",
+          "ORATIO_PRO_PAPA"
+        ],
+        "expectedCollectCount": 3,
+        "expectedSecretCount": 3,
+        "expectedPostcommunionCount": 3
+      },
+      "independentRubricalReview": {
+        "status": "PENDING_INDEPENDENT_AUTHORITY",
+        "rubricFlags": [
+          "RGMR_434_A_NONCONVENTUAL_SUNG_RESTRICTION",
+          "RGMR_457_D_IF_IMPERATA"
+        ],
+        "permissionOrPrivilegeEvidenceUrl": null,
+        "affectedMassForms": [
+          "LOW",
+          "SUNG",
+          "SOLEMN"
+        ]
+      },
+      "editorialState": {
+        "principalSourceTextMatched": false,
+        "commemorationTextsMatched": false,
+        "additionalTextsMatched": false,
+        "readerVerified": false,
+        "publishedInstituteSelection": false,
+        "holdReason": "SOURCE_ATTESTED_BUT_COMPLETE_LOCAL_FORM_NOT_YET_CERTIFIED"
+      }
+    },
+    {
+      "date": "2026-11-27",
+      "liturgicalDay": "Feria: Sunday Mass used",
+      "listedMassIncipit": "Sunday Mass",
+      "listedMassClass": 4,
+      "listedMassColour": "GREEN",
+      "listedGloria": false,
+      "listedCredo": false,
+      "listedPreface": "COMMON",
+      "officialOrdoUrl": "https://icrspfrance.fr/ordo.php?d=2026-11-27#j2026-11-27",
+      "sourceClaim": {
+        "additionalOrations": [
+          {
+            "kind": "ORATIO_PRO_PAPA",
+            "source": "MISSALE_ROMANUM_PRO_PAPA"
+          }
+        ],
+        "sourceOrder": [
+          "PRINCIPAL",
+          "ORATIO_PRO_PAPA"
+        ],
+        "expectedCollectCount": 2,
+        "expectedSecretCount": 2,
+        "expectedPostcommunionCount": 2
+      },
+      "independentRubricalReview": {
+        "status": "PENDING_INDEPENDENT_AUTHORITY",
+        "rubricFlags": [
+          "RGMR_434_A_NONCONVENTUAL_SUNG_RESTRICTION",
+          "RGMR_457_D_IF_IMPERATA"
+        ],
+        "permissionOrPrivilegeEvidenceUrl": null,
+        "affectedMassForms": [
+          "LOW",
+          "SUNG",
+          "SOLEMN"
+        ]
+      },
+      "editorialState": {
+        "principalSourceTextMatched": false,
+        "commemorationTextsMatched": false,
+        "additionalTextsMatched": false,
+        "readerVerified": false,
+        "publishedInstituteSelection": false,
+        "holdReason": "SOURCE_ATTESTED_BUT_COMPLETE_LOCAL_FORM_NOT_YET_CERTIFIED"
+      }
+    },
+    {
+      "date": "2026-11-28",
+      "liturgicalDay": "Our Lady on Saturday",
+      "listedMassIncipit": "Salve Sancta Parens",
+      "listedMassClass": 4,
+      "listedMassColour": "WHITE",
+      "listedGloria": true,
+      "listedCredo": false,
+      "listedPreface": "BVM_ET_TE_IN_VENERATIONE",
+      "officialOrdoUrl": "https://icrspfrance.fr/ordo.php?d=2026-11-28#j2026-11-28",
+      "sourceClaim": {
+        "additionalOrations": [
+          {
+            "kind": "ORATIO_PRO_PAPA",
+            "source": "MISSALE_ROMANUM_PRO_PAPA"
+          }
+        ],
+        "sourceOrder": [
+          "PRINCIPAL",
+          "ORATIO_PRO_PAPA"
+        ],
+        "expectedCollectCount": 2,
+        "expectedSecretCount": 2,
+        "expectedPostcommunionCount": 2
+      },
+      "independentRubricalReview": {
+        "status": "PENDING_INDEPENDENT_AUTHORITY",
+        "rubricFlags": [
+          "RGMR_434_A_NONCONVENTUAL_SUNG_RESTRICTION",
+          "RGMR_457_D_IF_IMPERATA"
+        ],
+        "permissionOrPrivilegeEvidenceUrl": null,
+        "affectedMassForms": [
+          "LOW",
+          "SUNG",
+          "SOLEMN"
+        ]
+      },
+      "editorialState": {
+        "principalSourceTextMatched": false,
+        "commemorationTextsMatched": false,
+        "additionalTextsMatched": false,
+        "readerVerified": false,
+        "publishedInstituteSelection": false,
+        "holdReason": "SOURCE_ATTESTED_BUT_COMPLETE_LOCAL_FORM_NOT_YET_CERTIFIED"
+      }
+    },
+    {
+      "date": "2026-11-29",
+      "liturgicalDay": "First Sunday of Advent",
+      "listedMassIncipit": "Ad Te levavi",
+      "listedMassClass": 1,
+      "listedMassColour": "VIOLET",
+      "listedGloria": false,
+      "listedCredo": true,
+      "listedPreface": "HOLY_TRINITY",
+      "officialOrdoUrl": "https://icrspfrance.fr/ordo.php?d=2026-11-29#j2026-11-29",
+      "sourceClaim": {
+        "additionalOrations": [
+          {
+            "kind": "ORATIO_PRO_PAPA",
+            "source": "MISSALE_ROMANUM_PRO_PAPA"
+          }
+        ],
+        "sourceOrder": [
+          "PRINCIPAL",
+          "ORATIO_PRO_PAPA"
+        ],
+        "expectedCollectCount": 2,
+        "expectedSecretCount": 2,
+        "expectedPostcommunionCount": 2
+      },
+      "independentRubricalReview": {
+        "status": "PENDING_INDEPENDENT_AUTHORITY",
+        "rubricFlags": [
+          "RGMR_434_A_FIRST_CLASS_RESTRICTION",
+          "RGMR_457_D_IF_IMPERATA"
+        ],
+        "permissionOrPrivilegeEvidenceUrl": null,
+        "affectedMassForms": [
+          "LOW",
+          "SUNG",
+          "SOLEMN"
+        ]
+      },
+      "editorialState": {
+        "principalSourceTextMatched": false,
+        "commemorationTextsMatched": false,
+        "additionalTextsMatched": false,
+        "readerVerified": false,
+        "publishedInstituteSelection": false,
+        "holdReason": "SOURCE_ATTESTED_BUT_COMPLETE_LOCAL_FORM_NOT_YET_CERTIFIED"
+      }
+    }
+  ]
+}
