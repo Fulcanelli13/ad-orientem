@@ -180,9 +180,16 @@ def main():
         for g in r["distinct_known_false_group_ids"]:groupnegative[g].append(r["selected_id"])
     for x in candidates:groupcandidates[x["group_id"]].append(x["selected_id"])
     releasegroups=defaultdict(list)
+    historical_release_source_links=[]
     for r in releases:
         for x in json.loads(r["exactSourceURLLinked989Groups"] or "[]"):
-            if x not in workby:raise ValueError("release crosswalk references nonexistent 989 group")
+            # Prior source-URL matches came from the full 3205 source corpus.
+            # Some correspond to historical or superseded groups excluded
+            # from the canonical operational 989; never auto-reinstate them.
+            if x not in workby:
+                historical_release_source_links.append({"moduleKey":r["moduleKey"],
+                   "sourceGroupId":x,"status":"HISTORICAL_SOURCE_NOT_IN_ACTIVE_989"})
+                continue
             releasegroups[x].append(r["moduleKey"])
     workrows=[]
     for w in works:
@@ -223,6 +230,7 @@ def main():
          "candidate_pairs_not_verified":len(candidates),
          "distinct_989_groups_with_candidate_links":len({x["group_id"] for x in candidates}),
          "released_module_group_links":sum(len(v) for v in releasegroups.values()),
+         "historical_release_source_links_outside_active_989":len(historical_release_source_links),
          "rejected_source_rows_preserved":len(rejectrecords),
          "photo_upgrade_approvals":0,"new_public_gallery_assignments":0
        },
@@ -252,6 +260,8 @@ def main():
     write_csv(OUT/"explicit_false_merge_guards.csv",negative)
     write_csv(OUT/"released_module16_existing_group_links.csv",releases)
     (OUT/"summary.json").write_text(json.dumps(summary,ensure_ascii=False,indent=2)+"\n",encoding="utf8")
+    (OUT/"historical_release_source_links.json").write_text(
+        json.dumps(historical_release_source_links,ensure_ascii=False,indent=2)+"\n",encoding="utf8")
     (OUT/"hard_guards.json").write_text(json.dumps(duplicate_guards,ensure_ascii=False,indent=2)+"\n",encoding="utf8")
     print(json.dumps({"summary":summary["counts"],"hard_guards":duplicate_guards},ensure_ascii=False,indent=2),flush=True)
 if __name__=="__main__":
