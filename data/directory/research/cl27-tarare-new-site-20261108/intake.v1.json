@@ -1,0 +1,139 @@
+{
+  "schema": "AO_CL27_NEW_CL2_SITE_DATED_INTAKE_V1",
+  "status": "HOLD_RESEARCH_ONLY_NOT_PART_OF_WORLDWIDE_DIRECTORY",
+  "candidate_id": "CL2-CANDIDATE-FR-TARARE-BEL-AIR-20261108",
+  "owner_approval": "PENDING",
+  "reviewed_at": "2026-11-08",
+  "excel_master": {
+    "url": "https://docs.google.com/spreadsheets/d/1qLQDsYfddY4K9DdPuC0tbrxI7Poe_DgKCzkpYwVCpFg/edit",
+    "site_intake_tab": "CL2 New Site Intake",
+    "site_range": "A1:P2",
+    "dated_intake_tab": "CL27 Dated Programme Intake",
+    "dated_range": "A1:L10"
+  },
+  "physical_site": {
+    "name": "Chapelle Notre-Dame de Bel Air",
+    "country": "FR",
+    "address": "1620 chemin de Bel Air, 69170 Tarare, France",
+    "associated_ministry": "Capucins de Morgon",
+    "published_phone": "+33 7 83 01 99 32",
+    "site_identity_source_url": "https://laportelatine.org/lieux/morgon/chapelle-notre-dame-de-bel-air-tarare",
+    "existing_cl2_anchor": null,
+    "source_link_to_cl2": null,
+    "coordinate_status": "NO_INDEPENDENTLY_VERIFIED_POSITION",
+    "source_status": "FIRST_PARTY_SITE_AND_NAMED_2026_2027_PROGRAMME",
+    "duplicate_check": {
+      "checked_existing_cl2_site_count": 2579,
+      "checked_excel_profile_count": 2582,
+      "result": "NO_EXACT_PHYSICAL_SITE_MATCH",
+      "nearby_distinct_sites": [
+        "Capucins de Morgon Villié-Morgon convent",
+        "Église Saint-Cyr at Anse"
+      ],
+      "must_not_alias_to_nearby": true
+    }
+  },
+  "programme": {
+    "source_url": "https://laportelatine.org/lieux/morgon/chapelle-notre-dame-de-bel-air-tarare",
+    "source_statement": "Les messes sont célébrées par les moines de Morgon à 10 h 30, aux dates suivantes",
+    "timezone": "Europe/Paris",
+    "source_scope": "NAMED_DATES_ONLY_2026_TO_2027_NO_RECURRENCE",
+    "events": [
+      {
+        "local_date": "2026-10-11",
+        "local_time": "10:30",
+        "service_type": "MASS",
+        "mass_form": "NOT_STATED",
+        "verification_state": "FIRST_PARTY_PROGRAMME_NOT_LIVE_CONFIRMATION",
+        "publication_status": "PAST_LISTED_DATE"
+      },
+      {
+        "local_date": "2026-11-15",
+        "local_time": "10:30",
+        "service_type": "MASS",
+        "mass_form": "NOT_STATED",
+        "verification_state": "FIRST_PARTY_PROGRAMME_NOT_LIVE_CONFIRMATION",
+        "publication_status": "HOLD_UNTIL_CL2_OWNER_APPROVAL"
+      },
+      {
+        "local_date": "2026-12-13",
+        "local_time": "10:30",
+        "service_type": "MASS",
+        "mass_form": "NOT_STATED",
+        "verification_state": "FIRST_PARTY_PROGRAMME_NOT_LIVE_CONFIRMATION",
+        "publication_status": "HOLD_UNTIL_CL2_OWNER_APPROVAL"
+      },
+      {
+        "local_date": "2027-01-24",
+        "local_time": "10:30",
+        "service_type": "MASS",
+        "mass_form": "NOT_STATED",
+        "verification_state": "FIRST_PARTY_PROGRAMME_NOT_LIVE_CONFIRMATION",
+        "publication_status": "HOLD_UNTIL_CL2_OWNER_APPROVAL"
+      },
+      {
+        "local_date": "2027-02-28",
+        "local_time": "10:30",
+        "service_type": "MASS",
+        "mass_form": "NOT_STATED",
+        "verification_state": "FIRST_PARTY_PROGRAMME_NOT_LIVE_CONFIRMATION",
+        "publication_status": "HOLD_UNTIL_CL2_OWNER_APPROVAL"
+      },
+      {
+        "local_date": "2027-03-21",
+        "local_time": "10:30",
+        "service_type": "MASS",
+        "mass_form": "NOT_STATED",
+        "verification_state": "FIRST_PARTY_PROGRAMME_NOT_LIVE_CONFIRMATION",
+        "publication_status": "HOLD_UNTIL_CL2_OWNER_APPROVAL"
+      },
+      {
+        "local_date": "2027-04-18",
+        "local_time": "10:30",
+        "service_type": "MASS",
+        "mass_form": "NOT_STATED",
+        "verification_state": "FIRST_PARTY_PROGRAMME_NOT_LIVE_CONFIRMATION",
+        "publication_status": "HOLD_UNTIL_CL2_OWNER_APPROVAL"
+      },
+      {
+        "local_date": "2027-05-23",
+        "local_time": "10:30",
+        "service_type": "MASS",
+        "mass_form": "NOT_STATED",
+        "verification_state": "FIRST_PARTY_PROGRAMME_NOT_LIVE_CONFIRMATION",
+        "publication_status": "HOLD_UNTIL_CL2_OWNER_APPROVAL"
+      },
+      {
+        "local_date": "2027-06-20",
+        "local_time": "10:30",
+        "service_type": "MASS",
+        "mass_form": "NOT_STATED",
+        "verification_state": "FIRST_PARTY_PROGRAMME_NOT_LIVE_CONFIRMATION",
+        "publication_status": "HOLD_UNTIL_CL2_OWNER_APPROVAL"
+      }
+    ]
+  },
+  "exclusions": {
+    "do_not_publish_to": "data/directory/generated/cl2-physical-site-index.v1.json",
+    "not_in_live_directory": true,
+    "not_in_global_mass_calendar": true,
+    "no_extra_weekly_sundays": true,
+    "do_not_assign": [
+      "legal_building_owner",
+      "canonical_status",
+      "una_cum",
+      "named_pope_in_canon",
+      "missal_edition",
+      "rubrical_basis",
+      "confirmed_celebrant",
+      "precise_chapel_entrance",
+      "current_mass_availability"
+    ]
+  },
+  "next_actions": [
+    "Obtain explicit CL2 site identity approval in Excel master; do not synthesize an RG anchor",
+    "Independently verify illustrative locality coordinates, record evidence and approval if map marker will be used",
+    "Upon owner approval, add canonical site through controlled CL2 master promotion, then link dated entries to exact stable site ID",
+    "Publish only nonexpired printed date records, source-scoped and with cancellation notice, after date-aware regression and GitHub Pages CI"
+  ]
+}
