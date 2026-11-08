@@ -77,3 +77,54 @@ export function projectSaturdayComplinePsalmFrame(frame){
   printedPsalmWitness:SATURDAY_COMPLINE_PRINTED_PSALM_WITNESS
  });
 }
+
+
+/**
+ * Print-conforming Sunday Compline display for 29–30 November 2026.
+ *
+ * The printed 2008 Diurnale Romanum (pp. 104–106) and the 2023
+ * Psalterium Romanum (pp. 30–31) appoint Psalms 4, 90, 133.
+ * Psalm 4:2 and 133:1 divide across two separate liturgical stichs.
+ * Keep these source sublabels (2a/2b and 1a/1b), rather than inventing
+ * a distinct biblical verse number or displaying machine prefixes.
+ */
+const SUNDAY_COMPLINE_PSALM_SOURCE_LABELS=Object.freeze({
+ "Psalterium/Psalmorum/Psalm4#2-10":Object.freeze([
+  "2a","2b","3","4","5","6","7","8","9","10"
+ ]),
+ "Psalterium/Psalmorum/Psalm90#1-16":Object.freeze([
+  "1","2","3","4","5","6","7","8","9","10","11","12",
+  "13","14","15","16"
+ ]),
+ "Psalterium/Psalmorum/Psalm133#1-3":Object.freeze([
+  "1a","1b","2","3"
+ ])
+});
+export const SUNDAY_COMPLINE_PRINTED_PSALM_WITNESS=
+ "2008 Diurnale Romanum, pp. 104–106; 2023 Psalterium Romanum, pp. 30–31";
+export function projectSundayComplinePsalmFrame(frame){
+ if(frame?.kind!=="PSALM"||
+    !/^Psalterium\/Psalmorum\/Psalm(?:4|90|133)#/u.test(frame.sourceId||""))
+  return frame;
+ const printed=SUNDAY_COMPLINE_PSALM_SOURCE_LABELS[frame.sourceId];
+ const i=frame.subIndex;
+ if(!printed||!Number.isInteger(i)||i<0||i>=printed.length||
+    frame.subTotal!==printed.length||frame.focusType!=="PSALM_VERSE"||
+    !frame.texts?.la)return null;
+ const number=/Psalm(4|90|133)#/u.exec(frame.sourceId)?.[1];
+ if(!number)return null;
+ const label=number+":"+printed[i],texts={};
+ for(const [language,lines] of Object.entries(frame.texts)){
+  if(!["la","en","fr"].includes(language)||!Array.isArray(lines)||
+     lines.length!==1||typeof lines[0]!=="string")return null;
+  const prefix=new RegExp("^"+label+" (.+)$","u").exec(lines[0]);
+  if(!prefix?.[1]?.trim())return null;
+  texts[language]=Object.freeze([prefix[1]]);
+ }
+ return Object.freeze({
+  ...frame,label,texts:Object.freeze(texts),sourceTexts:frame.texts,
+  sourceVerseLabel:label,printedVerseLabel:label,
+  sourceNumberingNormalized:true,originalSourceOnly:false,
+  printConformed:true,printedPsalmWitness:SUNDAY_COMPLINE_PRINTED_PSALM_WITNESS
+ });
+}
