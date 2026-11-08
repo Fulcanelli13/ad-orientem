@@ -1,0 +1,91 @@
+{
+  "schema": "AO_SACRED_ART_BATCH1_FIRST_PARTY_IMAGE_STAGE_V1",
+  "created_at": "2026-11-08",
+  "source_batch1_register": "data/artwork/sacred-art-batch1-25-release-progress.v1.json",
+  "description": "Stage independently licensed first-party photographs for two of the nine already editorially placed paintings; do not promote new images to app.",
+  "rules": {
+    "auto_release": false,
+    "auto_owner_photo_selection": false,
+    "asset_commit": false,
+    "pages_deploy": false,
+    "source_attribution_corrected_only_in_research": true,
+    "require_cc0_on_specific_photo": true,
+    "require_exact_inventory": true,
+    "require_full_image_visual_review": true,
+    "requires_explicit_editorial_decision": true
+  },
+  "counted": {
+    "candidate_physical_paintings": 2,
+    "existing_prayer_positions_total": 15,
+    "paintings_newly_released": 0,
+    "photographs_approved": 0,
+    "remaining_batch1_pending_paintings": 9
+  },
+  "items": [
+    {
+      "id": "artwork-pending:01",
+      "existing_batch1_rank": 1,
+      "sourcePage": "https://clevelandart.org/art/1916.786",
+      "title": "The Crucifixion",
+      "original_editorial_artist": "Sodoma (Italian, 1477–1549)",
+      "institutional_artist": "follower of Sodoma",
+      "attribution_requires_editorial_reconciliation": true,
+      "museum": "Cleveland Museum of Art",
+      "inventory": "1916.786",
+      "api_url": "https://openaccess-api.clevelandart.org/api/artworks/1916.786",
+      "museum_object_id": null,
+      "source_identity": "CANONICAL::cma-97147",
+      "expected_api_photo_rights": "CMA_SHARE_LICENSE_CC0",
+      "expected_title_fragment": "Crucifixion",
+      "image_url_from_api_only": true,
+      "max_download_bytes": 60000000,
+      "existing_prayer_positions": [
+        "STG-pray.five_wounds-02",
+        "STG-pray.five_wounds-03",
+        "COV-pray.stations",
+        "COV-pray.seven_words",
+        "STG-pray.seven_words-01",
+        "STG-pray.seven_words-02",
+        "STG-pray.seven_words-04",
+        "STG-pray.seven_words-05",
+        "STG-pray.tenebrae-02"
+      ],
+      "expected_existing_prayer_position_count": 9,
+      "source_photo_status": "NOT_YET_ACQUIRED",
+      "original_selected_photo_replaced": false,
+      "image_release_approved": false,
+      "editorial_placement_unchanged": true
+    },
+    {
+      "id": "artwork-pending:02",
+      "existing_batch1_rank": 2,
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/437542",
+      "title": "Saint Teresa of Avila Interceding for Souls in Purgatory",
+      "original_editorial_artist": "Peter Paul Rubens",
+      "institutional_artist": "Workshop of Peter Paul Rubens",
+      "attribution_requires_editorial_reconciliation": true,
+      "museum": "The Metropolitan Museum of Art",
+      "inventory": "17.190.19",
+      "api_url": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437542",
+      "museum_object_id": 437542,
+      "source_identity": "CANONICAL::met-437542",
+      "expected_api_photo_rights": "MET_IS_PUBLIC_DOMAIN_TRUE",
+      "expected_title_fragment": "Saint Teresa of Avila Interceding",
+      "image_url_from_api_only": true,
+      "max_download_bytes": 60000000,
+      "existing_prayer_positions": [
+        "COV-novena.holy_souls",
+        "STG-novena.holy_souls-01",
+        "COV-foundations_eternal_rest",
+        "COV-dead_de_profundis",
+        "COV-dead_fidelium_deus",
+        "STG-pray.penitential_psalms-06"
+      ],
+      "expected_existing_prayer_position_count": 6,
+      "source_photo_status": "NOT_YET_ACQUIRED",
+      "original_selected_photo_replaced": false,
+      "image_release_approved": false,
+      "editorial_placement_unchanged": true
+    }
+  ]
+}
