@@ -128,7 +128,17 @@ export function openDivineOfficeReader(win=globalThis,{date=todayLocal()}={}){
  secondSaturday.addEventListener("click",()=>{
   input.value="2026-12-05";hour="COMPLINE";draw();
  });
- bar.append(secondSaturday);host.append(bar);
+ bar.append(secondSaturday);
+ // The two independently verified Sunday-Psalter appointments.
+ for(const [date,caption] of [
+  ["2026-11-29","Advent I Sunday · 29 Nov"],
+  ["2026-11-30","St Andrew · 30 Nov"]
+ ]){
+  const go=d.createElement("button");go.type="button";go.textContent=caption;
+  go.addEventListener("click",()=>{input.value=date;hour="COMPLINE";draw()});
+  bar.append(go);
+ }
+ host.append(bar);
  const hours=d.createElement("div");hours.className="aoOfHours";host.append(hours);
  let hour="VESPERS";
  for(const row of ROMAN_OFFICE_HOURS){
