@@ -9,7 +9,7 @@
   "end": "2026-11-29",
   "scopeWarning": "This is a provincial Ordo; church patrons, dedications, diocesan and local proper feasts may add or replace prescriptions. It does not certify every institute church worldwide.",
   "rubricAuthority": "1960 Roman Missal rubrics §§274-284, 433-465; see https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html",
-  "scopeOfReview": "The dated Ordo's stated Mass, Gloria, Credo, Preface, papal prayer and explicit Mass commemorations; not independent proof of each prayer's authority, text readiness, rubrical permissions or applicability to a specific community or form. Day-class values are Ordo headings; they do not assert the class of a distinct votive or Sunday-derived Mass on a feria.",
+  "scopeOfReview": "The dated Ordo's stated Mass, Gloria, Credo, Preface, papal prayer and explicit Mass commemorations; not independent proof of each prayer's authority, text readiness, rubrical permissions or applicability to a specific community or form. Day-class values are Ordo headings; they do not assert the class of a distinct votive or Sunday-derived Mass on a feria. Additional Nov 9 rubrical conflict recorded without editing the canonical universal Proper or treating the published Ordo as an authorization.",
   "entries": [
     {
       "date": "2026-11-09",
@@ -51,7 +51,22 @@
           "LOW",
           "SUNG",
           "SOLEMN"
-        ]
+        ],
+        "reviewOutcome": "DOCUMENTED_CONFLICT_NOT_AUTHORIZED",
+        "ordinary1962MaxSeparateOrationGroups": 2,
+        "sourceClaimsSeparateOrationGroups": 3,
+        "norm": "RGMR_434_C",
+        "normUrl": "https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html",
+        "rubricAnalysis": "9 Nov 2026 is a non-Sunday II-class day. RGMR §434(c) admits only one ordinary or privileged additional oration besides the principal one. The ICRSP France Ordo lists commemoration of St Theodore and pro Papa; these are distinct purposes. Under the general rule they cannot both be added as independent separate-conclusion groups. The public Ordo does not by itself document an exception, privilege or legal classification for pro Papa; §457(d) would also bar an oratio imperata on a II-class day. No automatic exclusion of either source-claimed prayer is inferred.",
+        "legalCategoryOfProPapa": "UNDETERMINED",
+        "documentationNeeded": [
+          "Whether pro Papa is commanded as an oratio imperata, another special institute concession, or a directive of different legal category",
+          "Specific competent authority/date/scope for a claimed exception allowing both distinct additions on this II-class day",
+          "Which oration is actually said in Low and Sung celebrations and its conclusion grouping"
+        ],
+        "sourceOrdoTextUrl": "https://icrspfrance.fr/textes-de-la-messe.php?d=2026-11-09",
+        "sourceOrdoStatement": "Messe (Terribilis) de la Dédicace. Gloria. Mém. de S. Théodore & pro Papa. Credo. Préf. commune.",
+        "resolvedForPublication": false
       },
       "editorialState": {
         "principalSourceTextMatched": false,
@@ -59,7 +74,7 @@
         "additionalTextsMatched": false,
         "readerVerified": false,
         "publishedInstituteSelection": false,
-        "holdReason": "SOURCE_ATTESTED_BUT_COMPLETE_LOCAL_FORM_NOT_YET_CERTIFIED"
+        "holdReason": "SECOND_CLASS_DAY_THREE_SOURCE_CLAIMS_CONFLICT_WITH_RGMR_434_C"
       },
       "ordoLiturgicalDayClass": 2,
       "actualMassClassIndependentlyAttested": null
