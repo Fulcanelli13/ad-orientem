@@ -1,0 +1,133 @@
+{
+  "schema": "AO_SACRED_ART_PHASE47_TEN_PHYSICAL_IDENTITIES_AND_LIVE_MODULE_CENSUS_V1",
+  "as_of": "2026-11-08",
+  "research_only": true,
+  "counts": {
+    "original_source_records": 3205,
+    "operational_work_groups": 989,
+    "handpicked_selected_photo_records": 177,
+    "selected_photos_with_verified_group_physical_identity": 10,
+    "new_verified_links_this_phase": 8,
+    "selected_photos_without_verified_group_link": 167,
+    "selected_photos_in_historical_identity_hold": 8,
+    "selected_photos_identity_supported_but_group_unlinked": 159,
+    "explicit_false_merge_pairs_preserved": 4,
+    "source_records_with_explicit_owner_rejection_preserved": 1599,
+    "released_module_photo_registry_entries": 16,
+    "released_module_photo_files_present_main": 16,
+    "released_module_photos_reachable_with_image_HTTP_200": 16,
+    "live_module_photo_failures_observed": 0,
+    "static_image_files_scanned_in_source": 763,
+    "source_code_static_image_paths": 323,
+    "source_code_referenced_existing_assets": 258,
+    "source_code_referenced_missing_assets": 65,
+    "image_replacements_approved_or_published_in_this_research_phase": 0
+  },
+  "new_same_physical_painting_links": [
+    {
+      "selected_id": "RECENT575::004",
+      "work_group": "REVIEW::kmska:skpzca",
+      "institution": "KMSKA Antwerp",
+      "accession": "376",
+      "official": "https://vlaamsekunstcollectie.be/collectie/376"
+    },
+    {
+      "selected_id": "RECENT575::025",
+      "work_group": "REVIEW::kmska:55mlcq",
+      "institution": "KMSKA Antwerp",
+      "accession": "328",
+      "official": "https://vlaamsekunstcollectie.be/collectie/328"
+    },
+    {
+      "selected_id": "RECENT575::381",
+      "work_group": "REVIEW::commons:26597275",
+      "institution": "Musée des Beaux-Arts de Bordeaux",
+      "accession": "Bx E 455",
+      "official": "https://www.musba-bordeaux.fr/le-miracle-de-saint-just"
+    },
+    {
+      "selected_id": "RECENT575::364",
+      "work_group": "REVIEW::commons:87865020",
+      "institution": "Musée des Beaux-Arts de Strasbourg",
+      "accession": "44.2019.2.11",
+      "official": "https://collections.musees.strasbourg.eu/fr/document/vierge-en-oraison/5ee33891461cda28a3a5d53e"
+    },
+    {
+      "selected_id": "RECENT575::346",
+      "work_group": "REVIEW::commons:66235769",
+      "institution": "Musée des Beaux-Arts de Marseille",
+      "accession": "NOT_YET_RECOVERED",
+      "official": "https://www.wga.hu/html_m/b/bassetti/index.html"
+    },
+    {
+      "selected_id": "RECENT575::002",
+      "work_group": "REVIEW::kmska:nz7obw",
+      "institution": "KMSKA Antwerp",
+      "accession": "509",
+      "official": "https://vlaamsekunstcollectie.be/collectie/509"
+    },
+    {
+      "selected_id": "RECENT575::041",
+      "work_group": "REVIEW::kmska:n22nyq",
+      "institution": "KMSKA Antwerp",
+      "accession": "107",
+      "official": "https://vlaamsekunstcollectie.be/en/collection/107"
+    },
+    {
+      "selected_id": "RECENT575::026",
+      "work_group": "REVIEW::kmska:v7cp9u",
+      "institution": "KMSKA Antwerp",
+      "accession": "883",
+      "official": "https://vlaamsekunstcollectie.be/en/collection/883?same=artist",
+      "attribution_caution": "Owner-selected Commons historical Hendrick de Clerck/Hans Rottenhammer versus museum Johann Rottenhammer; identity of physical inventory 883 supported; attribution remains source-scoped."
+    }
+  ],
+  "previously_confirmed_links": [
+    {
+      "selected_id": "RECENT575::255",
+      "work_group": "REVIEW::kmska:fd4huh",
+      "inventory": "KMSKA 439"
+    },
+    {
+      "selected_id": "RECENT575::377",
+      "work_group": "PRAYER::angelus--caravaggio",
+      "painting": "Caravaggio Annunciation Nancy"
+    }
+  ],
+  "public_module_census": {
+    "production_main_sha": "750287870dee735d5a7293cbcc91cab7d6b6e57c",
+    "pages_url": "https://fulcanelli13.github.io/ad-orientem/",
+    "live_homepage_status": 200,
+    "http_verified_module_images": 16,
+    "image_source": "src/art/released-module-paintings.v1.js",
+    "http_check_note": "All 16 registered module photograph URLs served image/* with status 200. HTTP reachability is not visual proof that each route renders them.",
+    "assets_scan_note": "763 source image assets include icons/place-gallery/backgrounds. Not distinct physical paintings or a full delivered gallery count.",
+    "missing_static_refs_note": "65 absent referenced paths are confined to src/assets/asset-registry.js, mostly active icon asset names; cannot infer runtime UI regressions from static strings alone."
+  },
+  "evidence": {
+    "github_action_canonical_crosswalk": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42483343177",
+    "canonical_artifact": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42483343177/artifacts/13618500924",
+    "github_action_live_module": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42483203566",
+    "live_artifact": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42483203566/artifacts/13618910676",
+    "canonical_decisions": "data/artwork/canonical-selected-photo-identity-decisions.v1.json",
+    "canonical_workflow": ".github/workflows/sacred-art-phase46-canonical-crosswalk.yml",
+    "live_module_script": "scripts/sacred-art/phase47-public-gallery-asset-census.py",
+    "live_module_workflow": ".github/workflows/sacred-art-phase47-live-module-asset-audit.yml",
+    "workbook": "Ad_Orientem_Phase47_Sacred_Art_Crosswalk_and_Live_Release_Master.xlsx"
+  },
+  "policy_guards": [
+    "Owner-selected photos are preserved and separate from any other photographic versions",
+    "Verified identity only means the same physical painting. Do not overwrite photo, title, artist or owner approval",
+    "Preserve four cross-register false-merge negatives, especially separate Rubens canvases and Champaigne paintings",
+    "Preserve all 1599 prior explicit rejection records and all placement restrictions",
+    "Not all 989 operational groups are unique physical paintings; do not claim completion percentage",
+    "16 public module photographs are not the whole app gallery; route-by-route browser-visible audit remains open",
+    "Research branch only; no Vercel deployment, no Pages publication from this work"
+  ],
+  "next_work": [
+    "Cross-link remaining 159 identity-supported selected photos to 989 groups using accession-level institutional records and Wikimedia file metadata, rather than title matching",
+    "Resolve eight physical-object archival holds separately",
+    "Audit other published art systems beyond the 16 module release photos by route and deployed source SHA",
+    "Handle 65 icon asset source references as separate UI asset-maintenance queue, not painting backlog"
+  ]
+}
