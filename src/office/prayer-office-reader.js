@@ -121,7 +121,7 @@ export function openDivineOfficeReader(win=globalThis,{date=todayLocal()}={}){
  label.append(input);bar.append(label);
  const example=d.createElement("button");example.type="button";
  example.textContent="Advent pilot · 28 Nov 2026";
- example.addEventListener("click",()=>{input.value="2026-11-28";draw()});
+ example.addEventListener("click",()=>{input.value="2026-11-28";hour="COMPLINE";draw()});
  bar.append(example);host.append(bar);
  const hours=d.createElement("div");hours.className="aoOfHours";host.append(hours);
  let hour="VESPERS";
