@@ -23,10 +23,11 @@ import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R23} from "./cl2-illustrative-locality-pi
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R26} from "./cl2-illustrative-locality-pins-r26.js";
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R27} from "./cl2-illustrative-locality-pins-r27.js";
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R28} from "./cl2-illustrative-locality-pins-r28.js";
+import {CL2_TARARE_APPROVED_PIN} from "./cl2-tarare-approved-pin.js";
 export const CL2_PHYSICAL_SITE_INDEX_URL=new URL("../../data/directory/generated/cl2-physical-site-index.v1.json",import.meta.url).href;
-export const CL2_PHYSICAL_SITE_COUNT=2579;
+export const CL2_PHYSICAL_SITE_COUNT=2580;
 export const CL2_EXPECTED_R49_GROUPS=1844;
-export const CL2_EXPECTED_NEW_GROUPS=735;
+export const CL2_EXPECTED_NEW_GROUPS=736;
 const T=v=>String(v??"").trim();
 const normal=s=>T(s).normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
 const validUrl=s=>/^https?:\/\/[^\s<>"']+$/i.test(s);
@@ -1949,7 +1950,7 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
    Number(Boolean(b.geo?.precision==="building"))-Number(Boolean(a.geo?.precision==="building")));
   const selected=linked[0]??null;
   const review=REVIEWED_SITE_GEO_SOURCES[anchor]??null;
-  const newPin=REVIEWED_NEW_SITE_PINS[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R2[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R3[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R4[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R5[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R6[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R7[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R8[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R9[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R10[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R11[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R12[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R13[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R14[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R15[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R16[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R17_R18[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R19[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R23[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R26[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R27[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R28[anchor]??null;
+  const newPin=REVIEWED_NEW_SITE_PINS[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R2[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R3[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R4[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R5[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R6[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R7[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R8[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R9[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R10[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R11[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R12[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R13[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R14[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R15[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R16[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R17_R18[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R19[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R23[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R26[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R27[anchor]??CL2_ILLUSTRATIVE_LOCALITY_PINS_R28[anchor]??CL2_TARARE_APPROVED_PIN[anchor]??null;
   const siteGeoSource=review?linked.find(x=>x.source_id===review.sourceId):null;
   if(review&&(!selected||!sourceIds.includes(review.sourceId)||
      !siteGeoSource?.geo||!Number.isFinite(siteGeoSource.geo.lat)||
@@ -2025,8 +2026,8 @@ export function projectCL2PhysicalDirectory(baseItems,index,{mapAffiliation}={})
     community_id,preliminary_group:"UNKNOWN",affiliation_scope:"SOURCE_LABEL_ONLY",
     eyebrow:affiliationName,status:"RESEARCH-LISTED · MASS UNVERIFIED",
     title:T(name),subtitle:[newPin?.correctedAddress||T(description),country].filter(Boolean).join(" · "),
-    summary:"Physical site recorded in the research master. Current traditional Mass use, the minister, liturgical books and timetable have not been independently verified.",
-    summary_fr:"Lieu physique répertorié dans la base de recherche. La célébration actuelle de la messe traditionnelle, son célébrant, les livres liturgiques et les horaires n’ont pas été vérifiés indépendamment.",
+    summary:anchor==="RG-874DCE028C98"?"La Porte Latine lists nine individually dated Masses at this chapel for 2026–27; these are published plans, not confirmed occurrences. Check the source before travelling.":"Physical site recorded in the research master. Current traditional Mass use, the minister, liturgical books and timetable have not been independently verified.",
+    summary_fr:anchor==="RG-874DCE028C98"?"La Porte Latine publie neuf dates de messes pour 2026–27. C’est un programme annoncé et non une confirmation ; vérifiez avant de partir.":"Lieu physique répertorié dans la base de recherche. La célébration actuelle de la messe traditionnelle, son célébrant, les livres liturgiques et les horaires n’ont pas été vérifiés indépendamment.",
     address:{formatted:newPin?.correctedAddress||T(description)||country},
     geo:newPin?Object.freeze({
      lat:newPin.lat,lng:newPin.lng,precision:newPin.precision||"site",approximate:true,
