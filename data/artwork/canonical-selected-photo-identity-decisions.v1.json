@@ -1,0 +1,102 @@
+{
+  "schema": "AO_CANONICAL_SELECTED_PHOTO_PHYSICAL_ARTWORK_LINKS_V1",
+  "as_of": "2026-11-08",
+  "policy": {
+    "verified_relation": "Same physical artwork only; selected photograph remains independently curated",
+    "negative_relation": "Explicit physical-object nonidentity prevents title/artist-only merging",
+    "matching_restrictions": "No automatic merge from artist, translated title or iconography. Museum inventory, holding institution, direct historical source or visual composition must support physical identity.",
+    "no_release_without_photo_gates": true,
+    "owner_rejections_preserved": true
+  },
+  "verified_same_physical_object": [
+    {
+      "selected_id": "RECENT575::255",
+      "group_id": "REVIEW::kmska:fd4huh",
+      "institution": "KMSKA Antwerp",
+      "inventory": "439",
+      "selected_title": "Aanbidding der Koningen",
+      "group_title": "Aanbidding door de koningen",
+      "selected_artist": "Artus Wolffort",
+      "museum_attribution": "Artus Wolfordt",
+      "selected_commons": "https://commons.wikimedia.org/wiki/File:Artus_Wolffort_-_Aanbidding_der_Koningen_-_439_-_Royal_Museum_of_Fine_Arts_Antwerp.jpg",
+      "existing_group_source": "http://kmska.be/collection/work/data/fd4huh",
+      "authoritative_museum": "https://kmska.be/nl/meesterwerk/aanbidding-door-de-koningen-7",
+      "evidence": "Owner-selected filename states KMSKA 439, while the holding museum independently identifies Artus Wolfordt's painting as accession 439 and links the collection image.",
+      "status": "SAME_PHYSICAL_PAINTING_CONFIRMED",
+      "photographs_same_bytes": false,
+      "owner_selected_photo_replaced": false,
+      "release_approved": false
+    },
+    {
+      "selected_id": "RECENT575::377",
+      "group_id": "PRAYER::angelus--caravaggio",
+      "institution": "Musée des Beaux-Arts de Nancy",
+      "inventory": "NOT_YET_RECONCILED_IN_THIS_LINK",
+      "selected_title": "Annunciation",
+      "group_title": "The Annunciation",
+      "selected_artist": "Caravaggio",
+      "museum_attribution": "Caravaggio",
+      "selected_commons": "https://commons.wikimedia.org/wiki/File:Caravaggio_-_The_Annunciation.JPG",
+      "existing_group_source": "https://commons.wikimedia.org/wiki/File:Annunciation-Caravaggio.jpg",
+      "authoritative_source": "https://commons.wikimedia.org/wiki/Category:The_Annunciation_by_Caravaggio",
+      "evidence": "Both distinct selected Commons files are categorized as photographic versions of the single Caravaggio Annunciation at Musée des Beaux-Arts de Nancy; selected original explicitly lists Nancy holding and dimensions 285x205cm.",
+      "status": "SAME_PHYSICAL_PAINTING_CONFIRMED",
+      "photographs_same_bytes": false,
+      "owner_selected_photo_replaced": false,
+      "release_approved": false
+    }
+  ],
+  "prohibited_false_merges": [
+    {
+      "selected_id": "RECENT575::324",
+      "group_id": "CANONICAL::ART-eter-aul-ubens-doration-of-the-agi",
+      "status": "DIFFERENT_PHYSICAL_PAINTINGS",
+      "selected_holding": "Musée des Beaux-Arts de Lyon",
+      "selected_inventory": "A 118",
+      "other_holding": "Museo del Prado Madrid",
+      "reason": "Rubens made distinct Adorations; the selected WGA20231 is the 1617–18 Lyon canvas, while the group source is the 1609/1628–29 Madrid/Prado painting.",
+      "selected_source": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Adoration_of_the_Magi_-_WGA20231.jpg",
+      "holding_source": "https://www.mba-lyon.fr/fr/fiche-oeuvre/ladoration-des-mages",
+      "group_source": "https://commons.wikimedia.org/wiki/File:La_adoraci%C3%B3n_de_los_Reyes_Magos_(Rubens%2C_Prado).jpg"
+    },
+    {
+      "selected_id": "RECENT575::324",
+      "group_id": "REVIEW::commons:34140055",
+      "status": "DIFFERENT_PHYSICAL_PAINTINGS",
+      "selected_holding": "Musée des Beaux-Arts de Lyon",
+      "other_holding": "State Hermitage Museum, Saint Petersburg",
+      "reason": "Selected Rubens Lyon 1617–18 painting cannot be merged with separately attributed workshop version at the Hermitage solely because of title.",
+      "selected_source": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Adoration_of_the_Magi_-_WGA20231.jpg",
+      "group_source": "https://commons.wikimedia.org/wiki/File:%27Adoration_of_the_Magi%27%2C_workshop_of_Peter_Paul_Rubens%2C_The_Hermitage.JPG"
+    },
+    {
+      "selected_id": "RECENT575::423",
+      "group_id": "CANONICAL::ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple",
+      "status": "DIFFERENT_PHYSICAL_PAINTINGS",
+      "selected_holding": "Musée des Beaux-Arts de Dijon",
+      "selected_inventory": "CA 104",
+      "other_holding": "Royal Museums of Fine Arts of Belgium Brussels",
+      "other_inventory": "25",
+      "reason": "Dijon CA104 (1628, 392x325cm) versus Brussels inv25 (1648, 257x197cm) are two different Champaigne paintings.",
+      "selected_source": "https://musees.dijon.fr/artworks/la-presentation-au-temple/",
+      "other_source": "https://fine-arts-museum.be/fr/la-collection/philippe-de-champaigne-la-presentation-au-temple?artist=de-champaigne-philippe&string=Champaigne"
+    },
+    {
+      "selected_id": "RECENT575::407",
+      "group_id": "REVIEW::commons:87808145",
+      "status": "DIFFERENT_PHYSICAL_PAINTINGS",
+      "selected_holding": "Palais des Beaux-Arts de Lille",
+      "selected_inventory": "P 65",
+      "other_holding": "Cambi auction Milan 2019, lot 279",
+      "reason": "Lille painting after Quellinus II/Fyt, inv P65, differs in location, attribution and physical size from Van Utrecht/Quellinus still-life kitchen scene in Cambi auction (86×113.5cm).",
+      "selected_source": "https://commons.wikimedia.org/wiki/File:Erasmus_Quellinus_II_and_Jan_Fyt_-_Jesus_in_the_House_of_Martha_and_Mary.jpg",
+      "other_source": "https://commons.wikimedia.org/wiki/File:Adriaen_van_Utrecht_and_Erasmus_Quellinus_(II)_-_Jesus_in_the_house_of_Martha_and_Mary.jpg"
+    }
+  ],
+  "requirements_before_more_verifications": [
+    "Object-level holding and accession comparison preferred; composition check for cross-photograph links",
+    "A reviewer must inspect different photograph crops where same inventory cannot be demonstrated",
+    "Preserve all user-handpicked Commons files and all original rejections",
+    "No user-image replacement or Prayer/Calendar remapping from physical identity linkage alone"
+  ]
+}
