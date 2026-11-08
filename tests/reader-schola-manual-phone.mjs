@@ -778,6 +778,62 @@ try{
      "Epiphany notation caused horizontal phone overflow");
    assert.deepEqual(errors,[],"Epiphany source notation produced uncaught page errors");
 
+   // Immaculate Conception 8 December, Sancti/12-08: five separate
+   // archived GABCs from printed folios 400–404. In particular, do NOT
+   // borrow the similar p.103** Gaudens gaudebo from another source.
+   await page.goto("http://127.0.0.1:4297/tests/fixtures/reader-phone-harness.html?production=1&aoLiveCards=65&scoreProper=immaculate",
+     {waitUntil:"networkidle",timeout:55000});
+   await page.waitForFunction(()=>document.documentElement.dataset.harnessReady==="true",
+     null,{timeout:25000});
+   const immaculateBefore=await page.evaluate(()=>({
+     priest:window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId,
+     cue:window.__AO_PHONE_PREVIEW.getActiveCue(),
+     choir:window.__AO_PHONE_PREVIEW.getScholaState().trackId
+   }));
+   await page.locator("[data-schola-events-open]").click();
+   const immaculateMenu=page.locator('[data-role="schola-events-menu"]');
+   const immaculateScores=await immaculateMenu.locator("[data-schola-score-open]").evaluateAll(buttons=>
+     buttons.map(b=>b.dataset.scholaScoreOpen));
+   assert.deepEqual(immaculateScores,
+     ["GREGOBASE-622","GREGOBASE-713","GREGOBASE-1057","GREGOBASE-210","GREGOBASE-1004"],
+     width+"px Immaculate Conception must display exactly five authentic source-owned score references");
+   assert.equal(new Set(immaculateScores).size,5,
+     "Immaculate Conception duplicated a source score");
+   assert.equal(immaculateScores.includes("GREGOBASE-655"),false,
+     "Wrong Gaudens gaudebo p.103** replaced exact p.400 Immaculate Conception Introit");
+   assert.equal(immaculateScores.includes("GREGOBASE-843"),false,
+     "Different Ave Maria Offertory p.[79] replaced 8 December p.404");
+   assert.equal(await immaculateMenu.locator('[data-schola-proper-track="GRADUAL"] [data-schola-score-open="GREGOBASE-1057"]').count(),1,
+     "The appointed Alleluia was lost from combined 1962 Graduale");
+   assert.equal(await immaculateMenu.locator('[data-schola-proper-track="OFFERTORY"] [data-schola-score-open="GREGOBASE-210"]').count(),1,
+     "The source-appointed Ave Maria Offertory is not linked to 1961 p.404");
+   const immaculateOffertory=immaculateMenu.locator('[data-schola-score-open="GREGOBASE-210"]');
+   await immaculateOffertory.evaluate(b=>b.closest("details").open=true);
+   await immaculateOffertory.click();
+   const immaculateModal=page.locator('[data-schola-score-modal="GREGOBASE-210"]');
+   await immaculateModal.waitFor({state:"visible"});
+   await page.waitForFunction(()=>
+     document.querySelector('[data-schola-score-modal="GREGOBASE-210"]')?.dataset.scholaScoreReady==="true",
+     null,{timeout:25000});
+   assert.ok(await immaculateModal.locator("svg").count()>0,
+     "1961 Immaculate Conception Offertory not engraved locally");
+   assert.match(await immaculateModal.innerText(),/NOT independently musically approved/);
+   assert.match(await immaculateModal.locator("a").getAttribute("href"),/chant\.php\?id=210$/);
+   await page.screenshot({path:resolve(out,"schola-immaculate-five-scores-"+width+".png"),
+     animations:"disabled"});
+   await immaculateModal.locator("[data-schola-score-close]").click();
+   assert.equal(await page.locator("[data-schola-score-modal]").count(),0);
+   assert.deepEqual(await page.evaluate(()=>({
+     priest:window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId,
+     cue:window.__AO_PHONE_PREVIEW.getActiveCue(),
+     choir:window.__AO_PHONE_PREVIEW.getScholaState().trackId
+   })),immaculateBefore,
+     "Provisional Immaculate Conception score advanced Mass or independent Schola");
+   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false,
+     "Immaculate Conception score viewer overflowed compact phone");
+   assert.deepEqual(errors,[],"Immaculate Conception source notation raised JS errors");
+
+
   }finally{await ctx.close();}
  }
  console.log("PASS LIVE Schola: manual phrase clock, no early Benedictus release, 320/390 phone layout, no Mass focus movement");
