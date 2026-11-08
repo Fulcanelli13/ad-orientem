@@ -423,7 +423,10 @@ export function buildReaderSectionCard({
     if(raw.length===0 && !explicitNotApplicable && !stateOnly && block.Branch_Status!=="OPTIONAL_LOCAL_CUSTOM") {
       throw new Error(block.Block_ID+": block contains no reader text");
     }
-    const projected=raw.length ? projectResolvedReaderText({status:"READY",paragraphs:raw}) : [];
+    const projected=raw.length ? projectResolvedReaderText({status:"READY",paragraphs:raw})
+      .map(p=>Object.freeze({...p,sourceBlockId:block.Proper_Slot?null:block.Block_ID})) : [];
+    // Source block identity is only reading-layout metadata: the source cue,
+    // translation and canonical event identities remain exactly the same.
     paragraphs.push(...projected);
     blockMeta.push(Object.freeze({
       blockId:block.Block_ID,
