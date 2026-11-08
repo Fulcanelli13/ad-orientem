@@ -132,6 +132,9 @@ try{
   const header=page.locator("#aoPray435930 .aoP435930Head");
   assert.equal(await header.getAttribute("inert")!==null,true,
    "Legacy Prayer header must be inert while Office is open");
+  // The public reader scrolls a long sequence; restore the Back target
+  // to the viewport before performing the hit-test at its centre.
+  await office.getByRole("button",{name:"Return to Prayer"}).scrollIntoViewIfNeeded();
   const target=await office.getByRole("button",{name:"Return to Prayer"}).evaluate(el=>{
    const rect=el.getBoundingClientRect();
    const top=document.elementFromPoint(rect.left+rect.width/2,rect.top+rect.height/2);
