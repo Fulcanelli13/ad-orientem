@@ -457,7 +457,7 @@ export function dyk175Candidates(data,date){
   const familyGate=group==="P"?
    (row.historical_local_only===true&&row.topic==="SICILIAN_HISTORICAL_FEAST"&&
     row.publication_kind==="EVERGREEN_HISTORICAL"&&
-    /^PIT1900-/.test(row.source_id)&&clean(s?.original_italian_anchor).length>4&&
+    /^PIT1900-/.test(row.source_id)&&clean(s?.original_italian_anchor).length>=4&&
     Array.isArray(s?.printed_pages)&&s.printed_pages.length===1&&
     Number.isInteger(s.printed_pages[0])&&s.printed_pages[0]>0&&
     pages?.[0]>s.printed_pages[0]):
