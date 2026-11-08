@@ -1,0 +1,164 @@
+{
+  "schema": "AO_BATCH1_SEVEN_ORIGINAL_SELECTED_PHOTOS_VERIFIED_V1",
+  "verified_at": "2026-11-08",
+  "artifact_name": "sacred-art-seven-source-original-qa-private",
+  "artifact_url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42499722894/artifacts/13624793596",
+  "workflow_url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42499722894",
+  "workflow_id": 42499722894,
+  "conclusion": "success",
+  "source_commit": "0095c2d499329146daaffc6b2ba761c24ea355f6",
+  "sources": [
+    "data/artwork/batch1-seven-photos-acquisition.v1.json",
+    "data/artwork/batch1-seven-institutional-source-catalogue.v1.json"
+  ],
+  "proof": "Six actual source image bytes downloaded from the exact named previous Commons source files; Pillow decoded and dimensions checked; independently re-read ZIP, passed CRC, checked image dimensions and SHA256 versus runner report; inspected six-image contact sheet. Neither painting identity nor photographic reuse permission is created by this download.",
+  "counts": {
+    "remaining_paintings": 7,
+    "existing_prayer_assignments": 26,
+    "sources_acquired": 6,
+    "photos_meeting_1200px_short_side": 4,
+    "photos_below_1200px_short_side": 2,
+    "missing_exact_photo_selection": 1,
+    "source_file_download_failures": 0,
+    "photo_files_release_approved": 0,
+    "new_public_artwork": 0
+  },
+  "works": [
+    {
+      "id": "artwork-pending:03",
+      "title": "Pentecost",
+      "museum": "Museo de Huesca",
+      "museum_inventory": "00029",
+      "selected_source_state": "ACQUIRED_BELOW_1200_PX_TARGET_REVIEW_ONLY",
+      "verified_file_dimensions": [
+        567,
+        479
+      ],
+      "verified_sha256": "c376acaf7c0935a384731d0c6ea8e37d6bc8ad050adb1145883f86d8eb44331c",
+      "source_bytes_verified": true,
+      "passes_resolution_min_1200px_short_side": false,
+      "visual_preview_contact_sheet_inspected": true,
+      "commercial_image_reuse_cleared": false,
+      "source_selection_approved": false,
+      "app_asset_published": false
+    },
+    {
+      "id": "artwork-pending:04",
+      "title": "Agony in the Garden",
+      "museum": "St. Pauluskerk, Antwerp",
+      "museum_inventory": "E6 / PA.029.E0006",
+      "selected_source_state": "SOURCE_BYTES_QA_PASS_REVIEW_ONLY",
+      "verified_file_dimensions": [
+        1333,
+        1799
+      ],
+      "verified_sha256": "6a697614cfe96b9f62921af0015eeca08fbc26ed0103dbefe9abe98c5342658e",
+      "source_bytes_verified": true,
+      "passes_resolution_min_1200px_short_side": true,
+      "visual_preview_contact_sheet_inspected": true,
+      "commercial_image_reuse_cleared": false,
+      "source_selection_approved": false,
+      "app_asset_published": false
+    },
+    {
+      "id": "artwork-pending:05",
+      "title": "Presentation of Jesus at the Temple",
+      "museum": "Royal Museums of Fine Arts of Belgium",
+      "museum_inventory": "25",
+      "selected_source_state": "SOURCE_BYTES_QA_PASS_REVIEW_ONLY",
+      "verified_file_dimensions": [
+        2994,
+        3906
+      ],
+      "verified_sha256": "c4250c3888a03434b5128c8b6bccaca0a37168e323b8fb31a1edd7d13ad12869",
+      "source_bytes_verified": true,
+      "passes_resolution_min_1200px_short_side": true,
+      "visual_preview_contact_sheet_inspected": true,
+      "commercial_image_reuse_cleared": false,
+      "source_selection_approved": false,
+      "app_asset_published": false
+    },
+    {
+      "id": "artwork-pending:06",
+      "title": "Saint Thomas Aquinas",
+      "museum": "National Gallery, London",
+      "museum_inventory": "NG788.9",
+      "selected_source_state": "SOURCE_BYTES_QA_PASS_REVIEW_ONLY",
+      "verified_file_dimensions": [
+        2813,
+        4226
+      ],
+      "verified_sha256": "67509963a0515b44b6403c7ea33451d96b6e564d9c05e07f7a1e645970afdc0f",
+      "source_bytes_verified": true,
+      "passes_resolution_min_1200px_short_side": true,
+      "visual_preview_contact_sheet_inspected": true,
+      "commercial_image_reuse_cleared": false,
+      "source_selection_approved": false,
+      "app_asset_published": false
+    },
+    {
+      "id": "artwork-pending:07",
+      "title": "Adoration of the Mystic Lamb",
+      "museum": "St. Bavo's Cathedral, Ghent",
+      "museum_inventory": null,
+      "selected_source_state": "HOLD_NO_EXACT_SOURCE_FILE_SELECTED",
+      "verified_file_dimensions": null,
+      "verified_sha256": null,
+      "source_bytes_verified": false,
+      "passes_resolution_min_1200px_short_side": false,
+      "visual_preview_contact_sheet_inspected": false,
+      "commercial_image_reuse_cleared": false,
+      "source_selection_approved": false,
+      "app_asset_published": false
+    },
+    {
+      "id": "artwork-pending:08",
+      "title": "Archangel Michael Defeating Satan",
+      "museum": "Santa Maria della Concezione, Rome",
+      "museum_inventory": null,
+      "selected_source_state": "SOURCE_BYTES_QA_PASS_REVIEW_ONLY",
+      "verified_file_dimensions": [
+        1657,
+        2441
+      ],
+      "verified_sha256": "4f9eaee1c1abe0df9ae70e36bfcfd113c0e556a8022c4c98d7a72d2a392b71ad",
+      "source_bytes_verified": true,
+      "passes_resolution_min_1200px_short_side": true,
+      "visual_preview_contact_sheet_inspected": true,
+      "commercial_image_reuse_cleared": false,
+      "source_selection_approved": false,
+      "app_asset_published": false
+    },
+    {
+      "id": "artwork-pending:09",
+      "title": "Miracle of the Loaves and Fishes",
+      "museum": "National Gallery of Ireland",
+      "museum_inventory": "NGI.72",
+      "selected_source_state": "ACQUIRED_BELOW_1200_PX_TARGET_REVIEW_ONLY",
+      "verified_file_dimensions": [
+        1285,
+        683
+      ],
+      "verified_sha256": "f9a4b9f5f180138b438c61da836ac176a21b9162e736da7372c07e5ea6f74ffa",
+      "source_bytes_verified": true,
+      "passes_resolution_min_1200px_short_side": false,
+      "visual_preview_contact_sheet_inspected": true,
+      "commercial_image_reuse_cleared": false,
+      "source_selection_approved": false,
+      "app_asset_published": false
+    }
+  ],
+  "research_notes": [
+    "Cerezo Museo de Huesca inv 00029 and Teniers Antwerp Rosary cycle E6 confirmed in independently indexed institutional collection information",
+    "Teniers Commons English title mismatch does not override institutional Agony in the Garden identification",
+    "Brussels 1648 Philippe de Champaigne painting inv 25 is distinct from Dijon 1628 CA104",
+    "Crivelli museum NG788.9 official photos licensed CC BY-NC-ND, not permission for commercial derivative app use",
+    "Ghent Altarpiece no exact selected photographic file",
+    "Reni original in Rome not Swedish NMDrh 644 copy",
+    "Lanfranco NGI.72 museum supports some CC BY 4 images, but exact photo license unverified; selected Commons file too small"
+  ],
+  "no_auto_release": true,
+  "no_photo_replacements": true,
+  "no_assumed_owner_permission": true,
+  "publication_assets_modified": 0
+}
