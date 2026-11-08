@@ -157,6 +157,16 @@ let browser;try{
  console.log("MASS_1962_MULTI_WITNESSES="+JSON.stringify(aggregate.multi));
  console.log("MASS_1962_SOURCE_GROUP_CANDIDATES="+JSON.stringify(aggregate.unmappedGroups));
  console.log("MASS_1962_FORM_ORATION_COVERAGE="+JSON.stringify({certified:aggregate.certifiedFormCases,uncertified:aggregate.uncertifiedFormCases.length,decisions:aggregate.formDecisions,unverifiedCandidates:aggregate.uncertifiedFormCases.slice(0,90)}));
+ // Preview the exact still-unclassified calendar/source owner pairs.
+ // This diagnostic does not authorize any new rubric by itself.
+ for(const pendingDate of [...new Set(aggregate.uncertifiedFormCases.map(x=>x.date))]){
+   const source=aggregate.single.find(x=>x.date===pendingDate)||
+     aggregate.multi.find(x=>x.date===pendingDate);
+   console.log("MASS_1962_UNRESOLVED_OWNER="+JSON.stringify({
+      date:pendingDate,source,
+      forms:aggregate.uncertifiedFormCases.filter(x=>x.date===pendingDate)
+   }));
+ }
  console.log("MASS_1962_CERTIFIED_ORATION_FAILURES="+JSON.stringify(aggregate.certifiedOrationFailures));
  console.log("MASS_1962_EXISTING_SOURCE_RECOVERY="+JSON.stringify(aggregate.recoveredInseparable));
  console.log("MASS_1962_SOURCE_SCAN_SUMMARY="+JSON.stringify({checked:aggregate.checked,failures:aggregate.failures.slice(0,30),multiDates:aggregate.multi.map(x=>x.date),single:aggregate.single.length,inseparableDates:aggregate.inseparable.map(x=>x.date)}));
