@@ -6,6 +6,8 @@ import {createLatinComplinePinnedReader,assembleLatinDatedComplinePilot}
  from "../src/office/saturday-compline-2026-pilot.js";
 import {assemblePrivateOfficeReview}
  from "../src/office/private-office-review.js";
+import {COMPLINE_CONTEXT,projectComplineRecitation}
+ from "../src/office/compline-recitation-projection.js";
 
 const load=name=>JSON.parse(readFileSync(
  new URL("../tests/fixtures/office/"+name+"-la.json",import.meta.url),"utf8"));
@@ -112,4 +114,33 @@ test("language scopes and unreviewed dates never silently default to other witne
   });
   assert.equal(x.status,"WITHHELD");
  }
+});
+
+test("1961 §147 and Office §56: last-prayer Compline substitutes examen for ONLY the opening Pater",async()=>{
+ const transport=source();
+ const raw=await assemblePrivateOfficeReview({
+  hour:"COMPLINE",date:"2026-11-28",
+  fetchSource:transport.fetchSource,languageMode:"latin"
+ });
+ assert.equal(raw.status,"PRIVATE_SOURCE_TEXT_REVIEW",raw.reason);
+ const final=projectComplineRecitation(raw,{context:COMPLINE_CONTEXT.FINAL_PRAYER});
+ assert.equal(final.status,"PRIVATE_SOURCE_TEXT_REVIEW",final.reason);
+ assert.equal(final.eventCount,42,"complete original source register preserved");
+ assert.equal(final.frames.length,raw.frames.length);
+ assert.equal(final.openingPaterOmitted,true);
+ assert.equal(final.editorialRubricFrames,1);
+ assert.equal(final.frames.filter(f=>f.kind==="EXAMINATION").length,1);
+ assert.equal(final.frames.some(f=>f.kind==="PATER_NOSTER"&&
+  f.sourceId==="Psalterium/Common/Prayers#Pater noster"),false);
+ assert.ok(final.frames.some(f=>f.kind==="PATER_NOSTER"&&
+  f.sourceId==="Psalterium/Common/Prayers#Pater noster Et"),
+  "later Compline Pater noster must remain");
+ assert.equal(final.frames.find(f=>f.kind==="EXAMINATION").originalSourceOnly,false);
+ assert.equal(final.published,false);
+ const other=projectComplineRecitation(raw,{context:COMPLINE_CONTEXT.OTHER_TIME});
+ assert.equal(other.status,"PRIVATE_SOURCE_TEXT_REVIEW");
+ assert.equal(other.frames.some(f=>f.sourceId==="Psalterium/Common/Prayers#Pater noster"),true);
+ assert.equal(other.editorialRubricFrames,0);
+ assert.equal(other.published,false);
+ assert.equal(projectComplineRecitation(raw,{context:"CHOIR_UNDEFINED"}).status,"WITHHELD");
 });

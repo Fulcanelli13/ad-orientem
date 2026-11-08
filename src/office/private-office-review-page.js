@@ -4,6 +4,8 @@
  * This is used solely by previews/private-divine-office.html.
  */
 import {assemblePrivateOfficeReview} from "./private-office-review.js";
+import {COMPLINE_CONTEXT,projectComplineRecitation}
+ from "./compline-recitation-projection.js";
 const TITLES={la:"Latine",en:"English",fr:"Français"};
 const KIND={
  OPENING:"Opening",PSALM:"Psalm",PSALM_PORTION:"Psalm",ANTIPHON:"Antiphon",
@@ -11,7 +13,7 @@ const KIND={
  MAGNIFICAT:"Magnificat",CANTICLE:"Canticle",COLLECT:"Collect",
  MARIAN_ANTIPHON:"Marian antiphon",MARIAN_COLLECT:"Marian collect",
  CONCLUSION:"Conclusion",DOXOLOGY:"Gloria Patri",GLORIA:"Gloria Patri",
- VERSICLE:"Versicle",DISMISSAL:"Dismissal",RESEARCH_CALENDAR_NOTICE:"Source note"
+ VERSICLE:"Versicle",DISMISSAL:"Dismissal",EXAMINATION:"Examination of conscience",RESEARCH_CALENDAR_NOTICE:"Source note"
 };
 const el=(d,t,c)=>{let n=d.createElement(t);if(c)n.className=c;return n;};
 function txt(d,tag,value,klass){const n=el(d,tag,klass);n.textContent=value;return n;}
@@ -33,6 +35,7 @@ function renderFrame(d,host,frame,position,total,mode){
   columns.append(col);
  }
  host.append(columns);
+ if(frame.editorialRubric)host.append(txt(d,"small","Editorial rubric · this is a pause, not a liturgical prayer text","aoOfEditorialNote"));
  host.append(txt(d,"small",frame.sourceId||"Editorial research note · no original text witness","aoOfProvenance"));
 }
 export function mountPrivateOfficeReview(root,{win=globalThis,fetchSource=win.fetch?.bind(win),
@@ -54,8 +57,17 @@ export function mountPrivateOfficeReview(root,{win=globalThis,fetchSource=win.fe
  for(const [value,title] of [["laen","Latin / English"],["lafr","Latin / Français"],["la","Latin only"]]){
   let o=el(d,"option");o.value=value;o.textContent=title;mode.append(o);
  }
+ const recitation=el(d,"select");
+ for(const [value,title] of [
+  [COMPLINE_CONTEXT.FINAL_PRAYER,"Compline as final prayer of the day"],
+  [COMPLINE_CONTEXT.OTHER_TIME,"Compline at another time"]
+ ]){
+  const option=el(d,"option");option.value=value;option.textContent=title;recitation.append(option);
+ }
+ recitation.value=COMPLINE_CONTEXT.FINAL_PRAYER;
+ recitation.setAttribute("aria-label","Compline recitation context");
  const load=txt(d,"button","Read source preview");load.type="button";
- chooser.append(hours,date,mode,load);root.append(chooser);
+ chooser.append(hours,date,mode,recitation,load);root.append(chooser);
  const state=txt(d,"p","Select a date and Hour to load pinned source text.","aoOfReadiness");
  state.setAttribute("aria-live","polite");root.append(state);
  const section=el(d,"article","aoOfFrame");
@@ -85,11 +97,13 @@ export function mountPrivateOfficeReview(root,{win=globalThis,fetchSource=win.fe
   try{
    const universalWitness=hours.value==="VESPERS"
     ?await readUniversalWitness?.():null;
-   const result=await assemblePrivateOfficeReview({
+   const source=await assemblePrivateOfficeReview({
     hour:hours.value,date:date.value,fetchSource,universalWitness,
     languageMode:hours.value==="COMPLINE"&&mode.value==="la"?"latin":"trilingual"
    });
    if(token!==serial)return;
+   const result=source.hour==="COMPLINE"&&source.status==="PRIVATE_SOURCE_TEXT_REVIEW"?
+    projectComplineRecitation(source,{context:recitation.value}):source;
    if(result.status!=="PRIVATE_SOURCE_TEXT_REVIEW"){
     state.textContent="Source preview withheld: "+result.reason;
     return;
@@ -97,17 +111,20 @@ export function mountPrivateOfficeReview(root,{win=globalThis,fetchSource=win.fe
    active=result;index=0;
    state.textContent=result.hour+" · civil "+result.civilDate+
     " · Office "+result.officeDate+" · "+result.eventCount+
-    " source events · trilingual preview · NOT certified for public prayer";
+    " source events · "+(result.openingPaterOmitted?"last-prayer examen":"recitation as selected")+
+    " · NOT certified for public prayer";
    show();
   }catch(err){if(token===serial)state.textContent="Source unavailable: "+String(err?.message??err)}
   finally{if(token===serial)load.disabled=false}
  }
  load.addEventListener("click",loadPreview);
  hours.addEventListener("change",()=>{invalidate();
+  recitation.disabled=hours.value!=="COMPLINE";
   if(hours.value==="VESPERS")date.value="2026-11-28";
   state.textContent="Load the selected private source preview";
  });
  date.addEventListener("change",()=>{invalidate();state.textContent="Load the selected private source preview"});
+ recitation.addEventListener("change",()=>{if(active?.hour==="COMPLINE")void loadPreview()});
  mode.addEventListener("change",()=>{
   if(active?.hour==="COMPLINE"&&active.availableLanguages?.length===1&&mode.value!=="la"){
    // A Latin source session never silently inherits a cached English/French
@@ -115,6 +132,7 @@ export function mountPrivateOfficeReview(root,{win=globalThis,fetchSource=win.fe
    void loadPreview();
   }else if(active)show();
  });
+ recitation.disabled=hours.value!=="COMPLINE";
  previous.addEventListener("click",()=>{if(active){index--;show()}});
  next.addEventListener("click",()=>{if(active){index++;show()}});
  invalidate();
