@@ -1,0 +1,48 @@
+{
+  "schema": "AO_1962_CLEMENT_23_NOV_PAPAL_COMMON_V1",
+  "date": "2026-11-23",
+  "principalId": "sancti:11-23:3:r",
+  "principalPath": "Sancti/11-23",
+  "commemorationPath": "Sancti/11-23cc",
+  "scope": "1962_ROMAN_MASS_OF_THE_DAY_ONLY_NONCONVENTUAL",
+  "decision": "Use the post-1942 Sovereign Pontiffs Common Secret and Postcommunion. The pinned legacy 11-23 files contain pre-1942 Clement-specific Latin and English and no French. Keep Clement's original Collect and St Felicity's three original commemorative prayer groups.",
+  "authority": {
+    "latin1962": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf",
+    "french1962": "https://icrspfrance.fr/textes-de-la-messe.php?d=2026-11-23",
+    "independent1962": "https://ordo.fsspx.org/fr/day/2026-11-23?bilingual=1",
+    "englishCommon": "https://icksp.org.uk/newbrighton/st-pius-v/",
+    "archiveLegacy": "https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Sancti/11-23.txt",
+    "editionNote": "ICRSP historical editorial note §13: original Clement-specific Secret replaced in 1942 by Sovereign Pontiffs Common."
+  },
+  "recoveredPrayers": {
+    "secrets": {
+      "legacyLatinIncipit": "Múnera tibi, Dómine, obláta sanctífica",
+      "lat": "Oblátis munéribus, quǽsumus, Dómine, Ecclésiam tuam benígnus illúmina: ut, et gregis tui profíciat ubíque succéssus, et grati fiant nómini tuo, te gubernánte, pastóres.\nPer Dóminum nostrum Jesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum. Amen.",
+      "en": "In Thy loving kindness, we beseech Thee, O Lord, be moved by the offering of our gifts and enlighten Thy Church: that Thy flock may prosper everywhere and the Shepherds, under Thy direction, may be pleasing to Thy Name.\nThrough our Lord Jesus Christ, Thy Son, Who liveth and reigneth with Thee in the unity of the Holy Ghost, God, world without end. Amen.",
+      "fr": "Grâce à l’offrande de ces présents, accordez, Seigneur, la lumière à votre Église ; faites prospérer partout votre troupeau, et daignez diriger ses pasteurs pour qu’ils vous soient agréables.\nPar Notre-Seigneur Jésus-Christ, votre Fils, qui vit et règne avec vous en l’unité du Saint-Esprit, Dieu, pour tous les siècles des siècles. Ainsi soit-il."
+    },
+    "postcommunions": {
+      "legacyLatinIncipit": "Córporis sacri et pretiósi Sánguinis repléti",
+      "lat": "Refectióne sancta enutrítam gubérna, quǽsumus, Dómine, tuam placátus Ecclésiam: ut, poténti moderatióne dirécta, et increménta libertátis accípiat et in religiónis integritáte persístat.\nPer Dóminum nostrum Jesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum. Amen.",
+      "en": "Since Thy Church has been nourished by the sacred repast, govern her in Thy clemency, we beseech Thee, O Lord, so that under the guidance of Thy mighty rule she may enjoy greater freedom and abiding integrity of religion.\nThrough our Lord Jesus Christ, Thy Son, Who liveth and reigneth with Thee in the unity of the Holy Ghost, God, world without end. Amen.",
+      "fr": "Seigneur, dirigez avec amour votre Église qui vient de se nourrir à cette table sainte, pour que, sous votre conduite toute-puissante, elle voie grandir sa liberté, et garde la religion dans toute sa pureté.\nPar Notre-Seigneur Jésus-Christ, votre Fils, qui vit et règne avec vous en l’unité du Saint-Esprit, Dieu, pour tous les siècles des siècles. Ainsi soit-il."
+    }
+  },
+  "doNotApply": [
+    "alternate St Columban Mass",
+    "local votive Mass",
+    "other date",
+    "mismatched principal source",
+    "missing saint Felicity owner",
+    "already source-selected modern Common",
+    "other languages or versions",
+    "different legacy Latin source"
+  ],
+  "preservation": [
+    "original raw source unchanged",
+    "Collect unchanged",
+    "Felicity commemorative Collect Secret and Postcommunion unchanged",
+    "No 66th LIVE card",
+    "No source inference beyond the exact 2026 date and source owner"
+  ]
+}
