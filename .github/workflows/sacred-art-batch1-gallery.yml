@@ -1,0 +1,43 @@
+name: Sacred Art Batch 1 — released gallery contract
+on:
+  push:
+    branches:
+      - feat/sacred-art-batch1-released-gallery-20261108
+    paths:
+      - 'src/art/released-gallery-batch1.v1.js'
+      - 'src/home/c3-gallery.js'
+      - 'src/home/today-h4-view.js'
+      - 'src/home/browser-entry.js'
+      - 'src/home/c3-styles.js'
+      - 'data/artwork/sacred-art-batch1-25-release-progress.v1.json'
+      - 'tests/sacred-art-batch1-released-gallery.mjs'
+      - '.github/workflows/sacred-art-batch1-gallery.yml'
+  pull_request:
+    paths:
+      - 'src/art/released-gallery-batch1.v1.js'
+      - 'src/home/c3-gallery.js'
+      - 'src/home/today-h4-view.js'
+      - 'src/home/browser-entry.js'
+      - 'src/home/c3-styles.js'
+      - 'data/artwork/sacred-art-batch1-25-release-progress.v1.json'
+      - 'tests/sacred-art-batch1-released-gallery.mjs'
+      - '.github/workflows/sacred-art-batch1-gallery.yml'
+permissions:
+  contents: read
+concurrency:
+  group: sacred-art-batch1-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  released-gallery:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test released gallery and no-promotion protections
+        run: node tests/sacred-art-batch1-released-gallery.mjs
+      - name: Test existing H7 Home art UX
+        run: node tests/home-c3-gallery.mjs
+      - name: Test existing Prayer art placement and release controls
+        run: node tests/prayer-artwork-267-integration.mjs
+      - name: Test existing annual Home artwork date protections
+        run: node tests/home-2026-annual-artwork-coverage.mjs
