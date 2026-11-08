@@ -145,3 +145,40 @@ Full source URLs and exact historical row IDs are stored alongside each decision
 **Integrity:** 211 unique historical source rows across Waves 1–5 (34 + 36 + 69 + 28 + 44), no overlap; the 106 original collision groups and seven source adjudications remain unchanged. `node tests/tlm-cl27-current-firstparty-review.mjs` enforces the source-ID, CL2 anchor, 211-row total and zero-publication boundaries.
 
 **Next phase:** the remaining **85** rows require current source identity checks, especially older crowd-sourced Asia/Africa entries, location/host ambiguity and the 99 collision groups not yet source-adjudicated. Prioritize credible operator pages before any event-level admission. The current CL27 draft must not be merged wholesale as a substitute for an explicitly authorized live schedule.
+
+## Wave 6 — 53 additional historical claims / 35 physical-site source groups (8 November 2026)
+
+`source-review-wave6.v1.json` adds 53 previously untouched frozen CL2 historical-row assessments. The cumulative source-page assessment count rises to **264/296 (89.2%)**, with 32 rows still awaiting disposition at this checkpoint. The operator/diocesan/institute page is recorded separately from the frozen source URL and includes a field-level evidence/uncertainty conclusion. **Zero current Mass events are approved**.
+
+Notable source caveats:
+
+- **St Catharines Holy Face, Canada:** dated October–November 2026 official notices list Sunday 16:00 where the old generic directory claimed 10:00. The latter must not be published as an invariant weekly schedule.
+- **Warminster Canadian Martyrs:** site-level Sunday 10:00 corroborated, 17:00 historical alternative not corroborated by the current parish listing.
+- **Hungary, Miskolc:** historical winter/summer first-Sunday and second-Sunday clocks are not established by the current operator's HTML; use individual dated PDF programme and keep potentially different hospital chapel identity separate.
+- **Austria, Lienz:** 18:30 *or* 09:00 alternatives cannot generate two simultaneous Sunday Masses.
+- **Birmingham and Oxford Oratories:** Latin-language Mass labels do not prove the same Missal edition as an explicitly identified 1962/older-form celebration.
+- **Singapore, Victoria Street:** Sunday 14:00 older-form celebration appears on a community directory but not the general parish schedule; require a direct dated community source, without attributing every parish celebration to the old rite.
+- **Nigeria, Onitsha:** the current district listing says Saturday 17:30 and Sunday 09:00; preserve exceptions from separately dated bulletins.
+- **Brazil, Mexico, Spain, Idaho missions:** monthly, fifth-Sunday, first/third, fourth-Saturday or relative preceding-Friday/Monday schedules must retain their calendrical predicates. Do not replace conditional visits with guaranteed weekly events.
+- **Community hosts:** the Carmelite convent, Mínimas Franciscanas and other institutes are not legally owned by SSPX merely because the institute lists Mass there.
+
+Source link, old day/time, exact CL2 site identity, evidence type and final event-level gate remain beside each of the 53 row assessments. This is source review, not liturgical/canonical publication.
+
+## Wave 7 — research disposition closure (8 November 2026)
+
+`source-review-wave7-source-dispositions.v1.json` records the remaining **32 unique frozen historical rows at 25 CL2 sites**. These are **explicit source-gap/time-uncertainty dispositions**, not 32 newly source-certified current Masses.
+
+**Final historical census: 296/296 rows accounted for, with 264 earlier source-reviewed assessments and 32 final research holds.** The *unassessed-row count* is now zero; the number of **new approved live Mass events remains zero**. The 106 legacy collision groups remain fully preserved, with only seven source-adjudicated and 99 outstanding for event-level evaluation. The full CL27 schedule publication and 2026 feast/exception confirmation programme is therefore **NOT completed** by this research census.
+
+The final set distinguishes:
+
+- **Direct official corroboration of a pattern but not a 2026 occurrence:** e.g. Cahokia Holy Family Log Church Sunday 09:00; Saint-Quentin La Charité Sunday 11:00; Châtillon-sur-Chalaronne Sunday 08:30.
+- **Verified place, unverified historic clock:** e.g. Batea, Saint-Paul-de-Serre, Georgetown Illinois; no invented time or live event.
+- **Relative monthly mission dates:** Rosario's Saturday 19:30 before the fourth Sunday, not a fixed Saturday of the month.
+- **Third-party or stale schedule without an authenticated current operator:** historic listings from the Philippines, Kenya, Cape Town, India, Indonesia, Japan, Taiwan, Nigeria and Benin. Their original clock claims remain searchable research evidence, **not certified**; some cite a broken parish bulletin link.
+- **Explicit source-identity errors:** the Jakarta entry combines two chapels and assumed *Sunday* for an 11:00 time lacking a day label. Neither a unified venue nor a Sunday Mass is established.
+- **Source-specific liturgical proof:** no cathedral, school, monastery, parish website or institute affiliation alone establishes 1962 Missal, a particular celebrant, Una Cum, a Pope named at a Mass, canonical status or unrestricted public access.
+
+No CL2 venue identities, pins or navigation coordinates change. This draft adds no app timetable or approved ecclesial data. The source-review integrity test now checks that all **296 original historical row IDs** occur once across Waves 1–7, preserve their original URL/anchor, and remain free of unsupported public event promotions.
+
+**Next implementation gate:** admit *individual source-scoped facts* to existing live church profiles only when primary evidence supports the exact field. For recurring/datable Masses require the approved event publisher: canonical physical CL2 site, ministry/celebration evidence, local timezone and date/calendar predicate, parish exceptions, source timestamp, collision resolution, and a clear freshness policy. Prioritize resolving the 99 collision groups rather than another mapping exercise. Never merge this old stacked draft wholesale or deploy Vercel.
