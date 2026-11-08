@@ -33,6 +33,8 @@ import {isExplicitIcrspNovemberLowMassSelection} from "./icrsp-first-friday-entr
 import {projectIcrspNovemberProPapaOrations} from "./icrsp-nov06-pro-papa-orations.js";
 import {isExplicitIcrspNov08SundaySelection,projectIcrspNov08SundayProPapaOrations}
   from "./icrsp-nov08-sunday-pro-papa.js";
+import {verify1962Nov09TheodoreSource}
+  from "./1962-nov09-theodore-commemoration.js";
 import {requireMassOrdoCompleteness} from "./ordo-mass-completeness.js";
 import {resolve1962AllSoulsSuccession} from "./1962-all-souls-consecutive-rites.js";
 import {allSouls1962RequiemOverlay,is1962AllSoulsCalendarMass,
@@ -908,6 +910,19 @@ export function createBrowserMassController({rogationPreflight=null,fullMassPref
           throw new Error("LOCAL_ADDITIONAL_ORATIONS_"+result.reason);
         presentedProper=result.proper;
       }
+      // Source-certified 1962 Roman LOW Mass already includes Theodore
+      // in the original resolver. Independently check its three sets
+      // without inserting any extra prayer. Institute pro Papa remains held.
+      const nov09Theodore=verify1962Nov09TheodoreSource({
+        proper:presentedProper,date:resolvedMass.date,
+        form:chosen?.form??options.celebrationForm,calendarResolution,
+        celebrationId:resolvedMass.celebrationId??"mass_of_day",
+        observedSource:Boolean(observed),
+        isConventual:resolvedMass.conventualMass??false
+      });
+      if(nov09Theodore.status==="UNVERIFIED")
+        throw Error("NOV09_THEODORE_"+nov09Theodore.reason);
+      presentedProper=nov09Theodore.proper;
       // One source-vs-reader gate for every declared verified Mass contract.
       // The 6 and 7 November ICRSP appointments expressly include Or. pro
       // Papa, which is not part of the original one-prayer votive Proper.

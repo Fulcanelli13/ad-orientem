@@ -27,7 +27,16 @@ export function icrspFranceOrdoIntakeStatus(date){
   generalMassUnchanged:true,
   instituteMassSelectionAllowed:false,
   mayCertifyReader:false,
-  reason:"INSTITUTE_ORATIONS_AND_RUBRICAL_AUTHORITY_AWAIT_INDEPENDENT_REVIEW"
+  ...(date==="2026-11-09"?{
+    independentRubricConflict:"RGMR_434_C_CLASS_II_ONE_ADDITIONAL_LIMIT",
+    listedAdditionalPurposes:["SAINT_THEODORE_COMMEMORATION","ORATIO_PRO_PAPA"],
+    separateSourceClaimedOrationGroups:3,
+    ordinary1962GroupMaximum:2,
+    reviewStatus:"DOCUMENTED_CONFLICT_NOT_AUTHORIZED"
+  }:{}),
+  reason:date==="2026-11-09"?
+   "SOURCE_CLAIMS_EXCEED_II_CLASS_1962_LIMIT_NO_EXCEPTION_DOCUMENTED":
+   "INSTITUTE_ORATIONS_AND_RUBRICAL_AUTHORITY_AWAIT_INDEPENDENT_REVIEW"
  });
 }
 export function renderIcrspFranceIntakeHold(date,language="en"){
@@ -45,6 +54,14 @@ export function renderIcrspFranceIntakeHold(date,language="en"){
     "The Institute’s dated Ordo lists additional prayers. Their sequence, texts and applicable rubrical authority have not yet been independently certified in Ad Orientem. The standard Mass button opens the general 1962 calendar Proper, not the Institute’s complete Mass.",
     "L’Ordo daté de l’Institut prescrit des oraisons supplémentaires. Leur ordre, leurs textes et les permissions rubricales applicables ne sont pas encore certifiés indépendamment dans Ad Orientem. Le bouton de messe ordinaire ouvre le Propre du calendrier général de 1962, pas la messe complète de l’Institut."
   ))+'</p>'+
+  (item.independentRubricConflict?
+    '<p data-mass-1962-rubric-conflict="RGMR_434_C">'+esc(say(
+      "9 November: the ICRSP France Ordo names the commemoration of St Theodore and the Prayer for the Pope. The general 1962 rule for this II-class day admits only one separate additional oration. The authority for including both has not been established; do not interpret the three listed prayers as an approved Mass form.",
+      "9 novembre : l’Ordo de l’ICRSP France mentionne la mémoire de saint Théodore et l’oraison pour le Pape. La règle générale de 1962, pour ce jour de IIe classe, n’admet qu’une seule oraison supplémentaire distincte. L’autorisation d’inclure les deux n’est pas établie : les trois oraisons citées ne constituent pas un formulaire approuvé."
+    ))+'</p>'+
+    '<a href="https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html" target="_blank" rel="noopener noreferrer">'+
+    esc(say("1960 Missal rubric §434(c)","Rubrique du Missel 1960 §434(c)"))+'</a>'
+    :"")+
   '<a href="'+esc(item.sourceOrdo)+'" target="_blank" rel="noopener noreferrer">'+
   esc(say("View official institute Ordo","Consulter l’Ordo officiel de l’Institut"))+'</a>'+
   '</section>';
