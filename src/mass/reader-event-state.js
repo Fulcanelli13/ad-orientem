@@ -17,10 +17,35 @@ function eventUrl(file,baseUrl){
   return new URL("../../data/mass/"+file,baseUrl);
 }
 
+// A single short-lived GitHub Pages/CDN 503 must not blank an otherwise
+// complete Mass. Retry only transport failures and explicit transient HTTP
+// responses; all six original MC-event JSON files are still mandatory,
+// validated and used without fallback, synthetic events or stale data.
+const RETRYABLE_EVENT_STATUSES=new Set([429,500,502,503,504]);
+const EVENT_MAX_ATTEMPTS=3;
 async function readJson(fetchImpl,url){
-  const response=await fetchImpl(url);
-  if(!response?.ok)throw new Error("Unable to load canonical Mass events ("+(response?.status??"network")+")");
-  return response.json();
+  for(let attempt=1;attempt<=EVENT_MAX_ATTEMPTS;attempt++){
+    let response;
+    try{
+      response=await fetchImpl(url);
+    }catch(error){
+      // User/navigation cancellation is not a connection fault to retry.
+      if(error?.name==="AbortError"||attempt===EVENT_MAX_ATTEMPTS)
+        throw new Error("Unable to load canonical Mass events (network)",{cause:error});
+      await new Promise(resolve=>setTimeout(resolve,attempt*200));
+      continue;
+    }
+    if(response?.ok){
+      // Malformed JSON is source corruption, not a transient HTTP error:
+      // never retry it into a quiet substitute or a false-certified reader.
+      return response.json();
+    }
+    const status=response?.status??"network";
+    if(!RETRYABLE_EVENT_STATUSES.has(Number(status))||attempt===EVENT_MAX_ATTEMPTS)
+      throw new Error("Unable to load canonical Mass events ("+status+")");
+    await new Promise(resolve=>setTimeout(resolve,attempt*200));
+  }
+  throw new Error("Unable to load canonical Mass events (network)");
 }
 
 export async function loadCanonicalReaderEvents({
