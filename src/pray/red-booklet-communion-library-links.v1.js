@@ -1,5 +1,5 @@
 /**
- * Discoverability pointers for seven source-owned Communion
+ * Discoverability pointers for nine source-owned Communion
  * source prayers named in the 2013 Coalition Red Booklet.
  *
  * The 2013 booklet is ONLY an inventory witness here: its English wording
@@ -13,6 +13,8 @@ const POINTERS=Object.freeze([
   ["pre_ambrose","beforeAmbrose","before",6],
   ["communion_thanks","thanksgivingMyGoodJesus","after",62],
   ["communion_heart","eucharisticHeartAspiration","after",62],
+  ["holy_spirit_augustine","holySpiritAugustineTraditional","after",65],
+  ["our_lady_65","ourLadyAfterCommunionTraditional","after",65],
   ["communion_thomas","afterThomas","after",64],
   ["communion_bonaventure","afterBonaventure","after",63],
   ["crucifix","enEgo","after",65]
