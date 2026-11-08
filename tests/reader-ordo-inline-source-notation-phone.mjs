@@ -86,6 +86,10 @@ try{
        marker:mark?.textContent??"",
        markerColor:mark?getComputedStyle(mark).color:null,
        directTap:expand?.contains(staff)===true,
+       translationFollowsStaff:(()=>{
+         const gloss=m.parentElement?.querySelector(":scope > .ao-line-secondary");
+         return !gloss||(m.compareDocumentPosition(gloss)&Node.DOCUMENT_POSITION_FOLLOWING)!==0;
+       })(),
        staffBackground:style?.backgroundColor??null,
        staffPixelFilter:staff?.querySelector('svg')?getComputedStyle(staff.querySelector('svg')).filter:null,
        label:m.querySelector(".ao-proper-reference-label")?.textContent?.trim()??"",
@@ -128,6 +132,8 @@ try{
     "A/C must show the liturgical role beside the score");
    assert.ok(after.acPresentation.every(x=>x.directTap),
     "Tap-to-enlarge must attach to the staff itself, not a boxed secondary button");
+   assert.ok(after.acPresentation.every(x=>x.translationFollowsStaff),
+    "The Claude A/C Latin sung staff must precede its vernacular gloss");
    assert.ok(after.acPresentation.every(x=>
      x.staffBackground==="rgba(0, 0, 0, 0)"||x.staffBackground==="transparent"),
     "Claude A/C unboxed presentation must not return to the grey/white score panel");
