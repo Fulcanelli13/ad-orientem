@@ -220,8 +220,8 @@ try{
           rosary:home?.querySelectorAll(".aoH4Chips button").length,
           events:home?.querySelectorAll(".aoH4Upcoming .aoTodayV2Event").length,
           read:home?.querySelectorAll(".aoH4Read button").length,
-          dykInsideRead:home?.querySelectorAll(".aoH4Read [data-home-dyk-entry]").length,
-          dykStandalone:home?.querySelectorAll(".aoH4DiscoveryStandalone [data-home-dyk-entry]").length,
+          dykInsideRead:home?.querySelectorAll(".aoH4Read [data-home-dyk-open]").length,
+          dykStandalone:home?.querySelectorAll(".aoH4DiscoveryStandalone [data-home-dyk-open]").length,
           dykAfterWeek:home?.querySelector(".aoTodayV2CalendarGlance")?.nextElementSibling?.classList.contains("aoH4DiscoveryStandalone")===true,
           dykBeforeRead:home?.querySelector(".aoH4DiscoveryStandalone")?.nextElementSibling?.classList.contains("aoTodayV2Below")===true,
           hiddenOldTabs:home?.querySelectorAll(".aoTodayV2Tabs").length,
@@ -396,25 +396,40 @@ try{
       {state:"attached",timeout:30000});
     await h4.locator(".aoH4CalendarBack [data-home-calendar-today]").click();
     await h4.waitForSelector(".homeScreen.aoTodayH4 .aoH7HomeView",{state:"visible",timeout:10000});
-    // A cold Home click must lazy-load the exact source-owned glossary entry,
-    // not open Daily Catechism, an empty Learn hub, or a generic glossary.
-    await h4.waitForSelector(".homeScreen.aoTodayH4 [data-home-dyk-entry]",
-      {state:"visible",timeout:20000});
-    const dykId=await h4.locator(".homeScreen.aoTodayH4 [data-home-dyk-entry]")
-      .getAttribute("data-home-dyk-entry");
-    assert.match(dykId,/^G\d{3}$/);
-    await h4.locator(".homeScreen.aoTodayH4 [data-home-dyk-entry]").click();
-    await h4.waitForFunction(id=>
-      globalThis.AO_GLOSSARY_V1?.status?.()?.detailId===id,
-      dykId,{timeout:30000});
-    await h4.keyboard.press("Escape");
-    await h4.waitForFunction(()=>
-      globalThis.AO_GLOSSARY_V1?.status?.()?.detailId===null,
-      null,{timeout:10000});
-    await h4.keyboard.press("Escape");
-    await h4.waitForFunction(()=>
-      globalThis.AO_GLOSSARY_V1?.status?.()?.open===false,
-      null,{timeout:10000});
+    // Both a source-backed Glossary entry and a published Weiser historical
+    // discovery are valid owners of the same Home card.
+    const dykCard=h4.locator(".homeScreen.aoTodayH4 [data-home-dyk-open]");
+    await dykCard.waitFor({state:"visible",timeout:20000});
+    await h4.waitForFunction(()=>{
+      const el=document.querySelector(".homeScreen.aoTodayH4 [data-home-dyk-open]");
+      return Boolean(el&&!el.disabled&&(el.dataset.homeDykEntry||el.dataset.homeDykFactId));
+    },null,{timeout:20000});
+    const glossaryId=await dykCard.getAttribute("data-home-dyk-entry");
+    const historicalId=await dykCard.getAttribute("data-home-dyk-fact-id");
+    assert.ok(glossaryId||historicalId,"Home discovery must have an exact source owner");
+    await dykCard.click();
+    if(glossaryId){
+      assert.match(glossaryId,/^G\\d{3}$/);
+      await h4.waitForFunction(id=>
+        globalThis.AO_GLOSSARY_V1?.status?.()?.detailId===id,
+        glossaryId,{timeout:30000});
+      await h4.keyboard.press("Escape");
+      await h4.waitForFunction(()=>
+        globalThis.AO_GLOSSARY_V1?.status?.()?.detailId===null,
+        null,{timeout:10000});
+      await h4.keyboard.press("Escape");
+      await h4.waitForFunction(()=>
+        globalThis.AO_GLOSSARY_V1?.status?.()?.open===false,
+        null,{timeout:10000});
+    }else{
+      assert.match(historicalId,/^DYK-G520-W-0/);
+      const source=h4.locator("[data-dyk-published='"+historicalId+"']");
+      await source.waitFor({state:"visible",timeout:30000});
+      assert.equal(await source.locator("a[href*='#page=']").count()>=1,true,
+        "Historical discovery must display its precise source page");
+      await h4.keyboard.press("Escape");
+      await source.waitFor({state:"detached",timeout:10000});
+    }
     assert.equal(await h4.locator(".homeScreen.aoTodayH4").count(),1,
       "Closing exact DYK source must return to the same Home");
     assert.equal(h4Errors.length,0,prefix+" H4 page errors: "+JSON.stringify(h4Errors));
