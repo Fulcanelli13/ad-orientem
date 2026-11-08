@@ -88,6 +88,19 @@ test("all eight appointed dates assemble 42 complete Latin blocks without readin
    assert.equal(reading.readingEventCount,40);
    assert.equal(reading.readingEvents.length,40);
    assert.equal(reading.blessingAmensRestoredFromPinnedSource,2);
+   const confession=reading.frames.find(frame=>frame.kind==="CONFITEOR");
+   assert.ok(confession,"printed 1961 single recitation Confiteor");
+   assert.equal(confession.gestureRubrics?.la,"Percutit sibi pectus");
+   assert.match(confession.sourceTexts.la[0],/\/\:\(percutit sibi pectus\)\:\//u);
+   assert.ok(!confession.texts.la[0].includes("/:"),"editorial gesture syntax not recited");
+   assert.ok(confession.texts.la[0].startsWith("Confíteor Deo"));
+   const hymn=reading.frames.filter(frame=>frame.kind==="HYMN");
+   assert.equal(hymn.length,3);
+   assert.ok(hymn[0].texts.la[0].startsWith("Te lucis ante términum"));
+   assert.ok(hymn[2].texts.la[0].startsWith("Præsta, Pater piíssime"));
+   assert.ok(hymn[0].sourceTexts.la[0].startsWith("v. Te lucis"));
+   assert.ok(hymn[2].sourceTexts.la[0].startsWith("* Præsta"));
+   assert.ok(hymn.every(frame=>frame.texts.la.every(line=>!line.startsWith("* "))));
    const saturday=date==="2026-11-28"||date==="2026-12-05";
    assert.equal(reading.printedPsalmDisplayFrames,saturday?41:0);
    if(saturday){
