@@ -20,7 +20,8 @@
     "unresolved means no precise source owner has yet been matched; NOT a claim that the prayer is absent from all modules",
     "Every entry needs separate completion evidence for wording, bilingual source rights, and user-visible discoverability",
     "No scanned book pages or the full copyrighted 2013 English booklet transcription should be committed from this audit",
-    "The 1962 Missal and existing Mass form/rubric sources remain controlling"
+    "The 1962 Missal and existing Mass form/rubric sources remain controlling",
+    "The 2013 booklet was inspected directly for the three short variants on printed pp. 59, 64, 67. Exact collation is claimed only for two newly published optional English source faces; the Fatima bead-owner wording remains held."
   ],
   "works": [
     {
@@ -301,14 +302,28 @@
       "printedPage": 59,
       "pdfPage": 60,
       "section": "confession",
-      "status": "variant_requires_comparison",
+      "status": "reader_present",
       "owner": {
-        "path": "src/pray/canonical-data.js",
-        "symbol": "foundations_guardian_angel",
+        "path": "src/pray/red-booklet-2013-variant-witnesses.v1.js",
+        "symbol": "guardianAngelConfession",
         "route": "pray.confession"
       },
-      "wordingCollatedAgainst2013": false,
-      "discoverableAsIndividualLibraryWork": false
+      "wordingCollatedAgainst2013": true,
+      "discoverableAsIndividualLibraryWork": false,
+      "bookletPageReviewed": true,
+      "bookletEditionSource": "User-provided May 2013 Fourth Edition, Tenth Printing PDF; printed p. 59, PDF p. 60",
+      "variantDecision": "Distinct short Guardian Angel invocation; no substitution for the full Angele Dei or sacramental preparation",
+      "relatedOriginalCanonicalPrayer": {
+        "path": "src/pray/canonical-data.js",
+        "symbol": "foundations_guardian_angel",
+        "replaced": false
+      },
+      "sourceWitness": {
+        "edition": "May 2013 Red Booklet, printed p. 59",
+        "sourceOwner": "src/pray/red-booklet-2013-variant-witnesses.v1.js",
+        "wordingCollatedAgainst2013": true,
+        "independentTraditionalContext": "https://stccc.org/examination-of-conscience/"
+      }
     },
     {
       "id": "conf_contrition",
@@ -653,14 +668,28 @@
       "printedPage": 64,
       "pdfPage": 65,
       "section": "after_communion",
-      "status": "variant_requires_comparison",
+      "status": "reader_present",
       "owner": {
+        "path": "src/pray/red-booklet-2013-variant-witnesses.v1.js",
+        "symbol": "heartAspirations",
+        "route": "pray.communion_treasury"
+      },
+      "wordingCollatedAgainst2013": true,
+      "discoverableAsIndividualLibraryWork": false,
+      "bookletPageReviewed": true,
+      "bookletEditionSource": "User-provided May 2013 Fourth Edition, Tenth Printing PDF; printed p. 64, PDF p. 65",
+      "variantDecision": "Three distinct short aspirations; the existing Sacred Heart trust aspiration and Act of Reparation remain intact",
+      "relatedOriginalCanonicalPrayer": {
         "path": "src/pray/canonical-data.js",
         "symbol": "sacred_heart_aspiration_trust",
-        "route": "pray.library"
+        "replaced": false
       },
-      "wordingCollatedAgainst2013": false,
-      "discoverableAsIndividualLibraryWork": false
+      "sourceWitness": {
+        "edition": "May 2013 Red Booklet, printed p. 64",
+        "sourceOwner": "src/pray/red-booklet-2013-variant-witnesses.v1.js",
+        "wordingCollatedAgainst2013": true,
+        "independentTraditionalContext": "https://archseattle.org/sacredheart/"
+      }
     },
     {
       "id": "crucifix",
@@ -810,7 +839,18 @@
         "route": "pray.rosary"
       },
       "wordingCollatedAgainst2013": false,
-      "discoverableAsIndividualLibraryWork": false
+      "discoverableAsIndividualLibraryWork": false,
+      "bookletPageReviewed": true,
+      "bookletEditionSource": "User-provided May 2013 Fourth Edition, Tenth Printing PDF; printed p. 67, PDF p. 68",
+      "variantDecision": "2013 English Fatima decade text identified; retain canonical donor and optional setting until exact live bead wording is independently compared",
+      "sourceVariantComparator": {
+        "path": "src/pray/red-booklet-2013-variant-witnesses.v1.js",
+        "symbol": "fatimaDecade",
+        "printedPage": 67,
+        "wordingPublishedToDonor": false,
+        "donorTextNotYetCompared": true,
+        "independentTraditionalContext": "https://wafboston.org/prayers"
+      }
     }
   ]
 }
