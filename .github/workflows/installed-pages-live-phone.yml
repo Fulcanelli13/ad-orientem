@@ -39,6 +39,10 @@ jobs:
     if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main' && github.event.workflow_run.event == 'push') }}
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    env:
+      # workflow_run jobs default GITHUB_SHA to the *latest main*, which may
+      # move ahead of the deployed source while Pages waits in its queue.
+      AO_PAGES_RELEASE_SHA: ${{ github.event.workflow_run.head_sha || github.sha }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -61,11 +65,13 @@ jobs:
               const d=JSON.parse(readFileSync("test-output/canonical-pages-parity/report.json"));
               const needed=["index.html","sw.js","src/app/offline-boot.js",
                 "src/settings/presentation.js","src/settings/browser-entry.js",
-                "src/home/today-v2-sections.js","src/calendar/observed-commemoration-labels.js"];
+                "src/home/today-v2-sections.js","src/calendar/observed-commemoration-labels.js",
+                "src/home/did-you-know-glossary.js","src/home/dyk-published-feed.js",
+                "data/did-you-know/weiser-historical-20-publication.v1.json"];
               if(!needed.every(path=>d.files.find(row=>row.path===path)?.exact===true))
                 process.exit(1);
             '; then
-              echo "P0: all seven production sources now match deployed release"
+              echo "P0: all ten production sources, including 44-fact Discovery, match deployed release"
               break
             fi
             if [ "$attempt" = 12 ]; then
@@ -84,14 +90,16 @@ jobs:
           for(const path of [
             "index.html","sw.js","src/app/offline-boot.js",
             "src/settings/presentation.js","src/settings/browser-entry.js",
-            "src/home/today-v2-sections.js","src/calendar/observed-commemoration-labels.js"
+            "src/home/today-v2-sections.js","src/calendar/observed-commemoration-labels.js",
+                "src/home/did-you-know-glossary.js","src/home/dyk-published-feed.js",
+                "data/did-you-know/weiser-historical-20-publication.v1.json"
           ]){
             const entry=d.files.find(x=>x.path===path);
             assert.ok(entry,"Public-file audit missing "+path);
             assert.equal(entry.exact,true,"Public Pages is not serving expected release bytes: "+path);
           }
           console.log("P0_PAGES_SOURCE_EXACT_PASS="+JSON.stringify({
-            release:d.testedCommit,filesVerified:7,server:d.target,
+            release:d.testedCommit,filesVerified:10,server:d.target,
             physicalHandsetVerified:false
           }));
           EOF
