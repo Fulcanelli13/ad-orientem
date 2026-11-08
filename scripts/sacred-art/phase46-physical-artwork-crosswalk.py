@@ -26,10 +26,10 @@ FILE={
 }
 def read_csv(path):
     with path.open(encoding="utf-8-sig",newline="") as f:return list(csv.DictReader(f))
-def write_csv(path,rows):
-    if not rows:raise ValueError("empty csv "+path)
+def write_csv(path,rows,columns=None):
+    if not rows and not columns:raise ValueError("empty csv without schema "+str(path))
     with path.open("w",encoding="utf-8",newline="") as f:
-        writer=csv.DictWriter(f,fieldnames=list(rows[0]),extrasaction="ignore")
+        writer=csv.DictWriter(f,fieldnames=(list(rows[0]) if rows else columns),extrasaction="ignore")
         writer.writeheader()
         for item in rows:
             writer.writerow({k:json.dumps(v,ensure_ascii=False) if isinstance(v,(list,dict)) else v for k,v in item.items()})
@@ -85,7 +85,13 @@ def candidate(selected,work):
     if scene_same:ts=max(ts,.90)
     # The source painting's author must match (or a documented attribution
     # variant), and title/scenes cannot be completely unrelated.
-    viable=(sa>=.82 and ts>=.62) or (sa>=.68 and ts>=.88)
+    viable=((sa>=.82 and ts>=.62) or (sa>=.68 and ts>=.88))
+    # If the selected image has a known scene, never propose a different
+    # scene merely because shared words ('Christ', 'Adoration') inflate scores.
+    if scene_a and not scene_same:
+        viable=False
+    if not scene_a and tj<.48 and tr<.86:
+        viable=False
     rank=round(.50*sa+.38*ts+.12*(1 if scene_same else 0),4)
     return {"artist_similarity":round(sa,4),"title_similarity":round(ts,4),
         "shared_iconographic_scene":scene_a if scene_same else None,
@@ -236,7 +242,12 @@ def main():
     assert not any(x["originalUserDecision"]=="REJECT" for x in [] )
     write_csv(OUT/"selected_177_to_989_crosswalk.csv",selected_rows)
     write_csv(OUT/"operational_989_to_selected_photo_crosswalk.csv",workrows)
-    write_csv(OUT/"unverified_candidate_pairs.csv",candidates)
+    write_csv(OUT/"unverified_candidate_pairs.csv",candidates,
+        columns=["selected_id","group_id","selected_title","group_title","selected_artist",
+        "group_artist","selected_museum","selected_source","group_source","candidate_rank",
+        "artist_similarity","title_similarity","shared_iconographic_scene","decision",
+        "physical_object_identity_certified","photo_bytes_verified_same","original_owner_photo_preserved",
+        "group_prior_user_states","review_required","source_row_count"])
     write_csv(OUT/"explicit_verified_pair_decisions.csv",verified)
     write_csv(OUT/"explicit_false_merge_guards.csv",negative)
     write_csv(OUT/"released_module16_existing_group_links.csv",releases)
