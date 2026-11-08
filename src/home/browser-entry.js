@@ -469,13 +469,15 @@ export function createHomeOwner(win=globalThis){
         });
       return;
     }
-    const icrspVotive=target?.closest?.("[data-home-icrsp-votive]");
+    const icrspVotive=target?.closest?.("[data-home-icrsp-votive],[data-home-icrsp-sunday]");
     if(icrspVotive){
       event.preventDefault?.();event.stopImmediatePropagation?.();
       const officialDate=icrspVotive.closest?.("[data-home-icrsp-ordo]")?.dataset?.homeIcrspOrdo;
       const selection=state(win)?.selectedDate;
-      if(icrspVotive.dataset?.homeIcrspVotive!=="VOTIVE"||
-         !["2026-11-06","2026-11-07"].includes(officialDate)||
+      const sunday=icrspVotive.dataset?.homeIcrspSunday==="SUNDAY";
+      if(!(sunday?officialDate==="2026-11-08":
+        icrspVotive.dataset?.homeIcrspVotive==="VOTIVE"&&
+        ["2026-11-06","2026-11-07"].includes(officialDate))||
          selection!==officialDate){
         showRouteError("mass.icrsp.source-date",icrspVotive);return;
       }
@@ -486,13 +488,16 @@ export function createHomeOwner(win=globalThis){
           // contract. Do not silently fall back to an unrelated Proper.
           const {selectIcrspNovemberLowMass}=await import(
             "../mass/icrsp-first-friday-entry.js");
-          const choice=selectIcrspNovemberLowMass({win,dateIso:officialDate});
+          const choice=sunday?
+            (await import("../mass/icrsp-nov08-sunday-pro-papa.js"))
+              .selectIcrspNov08SundayMass({win,dateIso:officialDate}):
+            selectIcrspNovemberLowMass({win,dateIso:officialDate});
           if(choice.ok===true){clearRouteError();return;}
           const notice=win?.document?.querySelector?.(
             "[data-full-mass-category-error]");
           if(notice){
             notice.hidden=false;
-            notice.textContent="ICRSP Low Mass could not be certified: "+choice.reason;
+            notice.textContent="ICRSP selected Mass could not be certified: "+choice.reason;
           }
           showRouteError("mass.icrsp.verified-votive",icrspVotive);
         }).catch(error=>{
