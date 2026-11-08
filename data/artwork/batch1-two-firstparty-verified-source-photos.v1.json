@@ -1,0 +1,83 @@
+{
+  "schema": "AO_SACRED_ART_BATCH1_TWO_MUSEUM_PHOTO_VERIFICATION_V1",
+  "observed_at": "2026-11-08T16:09:30Z",
+  "source_workflow": {
+    "run_id": 42498412812,
+    "head_commit": "f2ca1404726b8d8d58796e9585ab8b7e47eee81e",
+    "url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42498412812",
+    "conclusion": "success",
+    "artifact_id": 13624546994,
+    "artifact_link": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42498412812/artifacts/13624546994",
+    "artifact_retention_days": 14
+  },
+  "independent_archive_check": {
+    "zip_crc_pass": true,
+    "sha256_verified_against_run": true,
+    "jpeg_dimensions_checked": true,
+    "icc_profile_present_both": true,
+    "full_originals_recovered": 2,
+    "review_previews_inspected": 2
+  },
+  "scope": "Photographic source readiness for two already assigned paintings (9 + 6 Prayer positions); no source image changes to public app.",
+  "original_files": [
+    {
+      "queue_id": "artwork-pending:01",
+      "source": "https://www.clevelandart.org/art/1916.786",
+      "inventory": "1916.786",
+      "official_image_url": "https://openaccess-cdn.clevelandart.org/1916.786/1916.786_print.jpg",
+      "reported_painting_title": "The Crucifixion",
+      "editorial_artist": "Sodoma (Italian, 1477–1549)",
+      "institutional_attribution": "follower of Sodoma",
+      "attribution_conflict": "Museum's artist creator record has qualifier follower of; older app name implies Sodoma's authorship without qualifier",
+      "rights": "CMA_SHARE_LICENSE_CC0",
+      "width": 2673,
+      "height": 3400,
+      "bytes": 8293229,
+      "sha256": "022572a6fa03b4ff9e1a04dc6b92345b2239b0c2998468e58705028b1dad073b",
+      "assigned_prayer_positions": 9,
+      "visual_screen": "Entire painting visible in extracted source preview; no source-photo watermark observed at review scale; dark oil/crucifixion scene, strong full-frame composition",
+      "crop_status": "ORIGINAL_UNALTERED_CROP_NOT_APPROVED",
+      "state": "FIRST_PARTY_SOURCE_VERIFIED_NOT_RELEASED"
+    },
+    {
+      "queue_id": "artwork-pending:02",
+      "source": "https://www.metmuseum.org/art/collection/search/437542",
+      "inventory": "17.190.19",
+      "object_id": 437542,
+      "official_image_url": "https://images.metmuseum.org/CRDImages/ep/original/DP-18296-013.jpg",
+      "reported_painting_title": "Saint Teresa of Avila Interceding for Souls in Purgatory",
+      "editorial_artist": "Peter Paul Rubens",
+      "institutional_attribution": "Workshop of Peter Paul Rubens",
+      "api_artistDisplayName": "Peter Paul Rubens",
+      "attribution_conflict": "Museum's current object webpage attributes to workshop; public object API artistDisplayName omits this qualifier, so don't silently choose artist credit in runtime",
+      "rights": "MET_IS_PUBLIC_DOMAIN_TRUE",
+      "width": 3094,
+      "height": 4000,
+      "bytes": 4103505,
+      "sha256": "8d1914deed2b46063f9c4ae89a8471b1ada97fc09f0604b62443280070c4cf0e",
+      "assigned_prayer_positions": 6,
+      "visual_screen": "Entire painting visible with painted edge/border; no source-photo watermark observed at review scale; colour fidelity and any frameless rendition not yet separately reviewed",
+      "crop_status": "PAINTING_BORDER_PRESENT_REVIEW_DISPLAY_EDITION_BEFORE_USE",
+      "state": "FIRST_PARTY_SOURCE_VERIFIED_NOT_RELEASED"
+    }
+  ],
+  "counts": {
+    "exact_objects": 2,
+    "source_jpegs_fetched": 2,
+    "source_jpegs_sha256_verified": 2,
+    "existing_prayer_placements_covered": 15,
+    "newly_published_paintings": 0,
+    "photo_editions_approved": 0,
+    "remaining_batch1_nine_pending_paintings": 9
+  },
+  "publication_guards": {
+    "no_new_artwork_choice": true,
+    "no_user_photo_approval_inferred": true,
+    "no_auto_replacement": true,
+    "no_main_app_asset_import": true,
+    "no_pages_deploy": true,
+    "no_license_based_commons_promotion": true,
+    "resolve_attribution_variants_before_publish": true
+  },
+  "next_action": "Use the original full-image files and object metadata for curator/owner-facing review, compare against existing selection where it exists, prepare cropped mobile samples separately, and document explicit photo release authorization before any production entry."
+}
