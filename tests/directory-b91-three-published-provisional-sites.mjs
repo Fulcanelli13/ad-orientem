@@ -10,10 +10,12 @@ import {
 import {exploreMapFeatures} from "../src/find/map-runtime.js";
 import {CL2_PHYSICAL_SITE_INDEX_URL} from "../src/find/cl2-physical-directory.js";
 import {CL27_PUBLIC_CELEBRATION_URL} from "../src/find/tlm-celebration-evidence.js";
+import {CL27_SITE_CONTACT_URL} from "../src/find/tlm-site-contact-evidence.js";
 const base=JSON.parse(readFileSync(fileURLToPath(PRELIMINARY_R49_URL),"utf8"));
 const release=JSON.parse(readFileSync("data/directory/published-provisional-mass-sites-20261026.v1.json","utf8"));
 const worldwide=JSON.parse(readFileSync("data/directory/generated/cl2-physical-site-index.v1.json","utf8"));
 const publishedWitnesses=JSON.parse(readFileSync(fileURLToPath(CL27_PUBLIC_CELEBRATION_URL),"utf8"));
+const publishedContacts=JSON.parse(readFileSync(fileURLToPath(CL27_SITE_CONTACT_URL),"utf8"));
 const old=projectPreliminaryR49(base);
 assert.equal(old.length,1879);
 assert.equal(release.record_count,PUBLISHED_PROVISIONAL_MASS_SITES_EXPECTED);
@@ -58,6 +60,7 @@ const api=async url=>{
  calls.push(String(url));
  return {ok:true,status:200,json:async()=>String(url)===CL2_PHYSICAL_SITE_INDEX_URL?worldwide:
    String(url)===CL27_PUBLIC_CELEBRATION_URL?publishedWitnesses:
+   String(url)===CL27_SITE_CONTACT_URL?publishedContacts:
    String(url).includes("published-provisional")?release:base};
 };
 const live=await loadPreliminaryR49({fetchImpl:api});
@@ -67,8 +70,12 @@ assert.equal(live.filter(x=>x.map_state==="ADDRESS_ONLY").length,14);
 assert.ok(added.every(x=>live.some(v=>v.item_id===x.item_id)));
 assert.equal(live.filter(x=>x.celebration_evidence).length,2,
  "The source-owned CL27 witness overlay must not alter the B91 physical-site census");
+assert.equal(live.filter(x=>x.site_contact_evidence).length,5,
+ "Exactly five source-linked community/contact claims must join canonical CL2 sites");
+assert.ok(live.filter(x=>x.site_contact_evidence).every(x=>!x.site_contact_evidence.mass_times&&!x.site_contact_evidence.una_cum));
 assert.deepEqual(calls,[PRELIMINARY_R49_URL,
   new URL("../data/directory/published-provisional-mass-sites-20261026.v1.json",import.meta.url).href,
   CL2_PHYSICAL_SITE_INDEX_URL,
-  CL27_PUBLIC_CELEBRATION_URL]);
+  CL27_PUBLIC_CELEBRATION_URL,
+  CL27_SITE_CONTACT_URL]);
 console.log("PASS B91 controlled Mass-map release: 3 source-backed provisional additions retained inside 2582-record worldwide directory, 2568 mapped, 14 list-only, zero certified schedules");
