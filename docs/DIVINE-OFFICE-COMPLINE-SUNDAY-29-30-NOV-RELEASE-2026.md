@@ -30,7 +30,7 @@ reader can fetch any source.
 ## Independently verified complete Sunday psalter
 
 The appointed text comprises **30 original Latin recitation stichs
-and 330 Latin word tokens**:
+and 329 Latin word tokens**:
 
 | Psalm | Recitation stichs | Printed source |
 | --- | ---: | --- |
