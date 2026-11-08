@@ -26,6 +26,12 @@ on:
       - 'tools/prepare-github-pages-release.mjs'
       - 'tools/check-github-pages-live.mjs'
       - 'tools/github-pages-release-proof.mjs'
+      - 'tests/icrsp-france-21day-independent-source-gate.mjs'
+      - 'src/calendar/icrsp-france-ordo-intake-status.js'
+      - 'src/calendar/icrsp-france-ordo-evidence.js'
+      - 'src/mass/independent-ordo-source-gate.js'
+      - 'src/home/today-h4-view.js'
+      - 'data/research/icrsp-france-ordo-2026-11-09-29-independent.v1.json'
       - 'tests/github-pages-phone-live-acceptance.mjs'
       - 'tests/installed-pages-live-phone.mjs'
       - '.github/workflows/github-pages.yml'
@@ -72,6 +78,8 @@ jobs:
         run: node --check tools/check-github-pages-live.mjs && node --check tools/prepare-github-pages-release.mjs && node --check tools/github-pages-release-proof.mjs
       - name: Reject stale source SHA, workflow run and changed critical assets
         run: node --test tests/github-pages-release-proof.test.mjs
+      - name: Fail the release for missing ICRSP source expectations or falsely certified unreviewed Masses
+        run: node tests/icrsp-france-21day-independent-source-gate.mjs
       - name: Validate public 390px LIVE/Missal and returning-user phone smoke code
         run: node --check tests/github-pages-phone-live-acceptance.mjs
       - name: Validate public committed offline snapshot and consent test code

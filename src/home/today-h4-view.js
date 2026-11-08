@@ -7,6 +7,7 @@ import { c3PrayerMarkup,c3UpcomingMarkup } from "./c3-gallery.js";
 import { HOME_ENRICHERS_VERSION } from "./enrichers.js";
 import { homeDidYouKnowMarkup } from "./did-you-know-glossary.js";
 import { ICRSP_HOME_ORDO_CSS, renderIcrspFranceHomeOrdo, icrspFranceOrdoForDate } from "../calendar/icrsp-france-ordo-evidence.js";
+import {icrspFranceOrdoIntakeStatus} from "../calendar/icrsp-france-ordo-intake-status.js";
 import { calendarMassColour } from "../calendar/colour-projection.js";
 import { calendarDisciplineForDate } from "../calendar/intelligence.js";
 // Display only verified liturgical colours; never infer them from the season.
@@ -34,7 +35,8 @@ export function h4Enabled(win=globalThis){
 }
 export function h4HomeView(vm,model,{resume=null,coverage=null,choices=null,ordoFacts=null,properSections=[]}={}){
   const formularies=Array.isArray(vm.formularies)?vm.formularies:[];
-  const hasParticularOrdo=Boolean(icrspFranceOrdoForDate(vm.dateIso));
+  const hasParticularOrdo=Boolean(
+    icrspFranceOrdoForDate(vm.dateIso)||icrspFranceOrdoIntakeStatus(vm.dateIso));
   const fr=vm.language==="fr",say=(en,frText)=>L(fr,en,frText),ready=vm.resolvedForSelection&&vm.properStatus==="ready"&&!vm.loading;
   const litColour=({"green":"green","vert":"green","white":"white","blanc":"white",
     "red":"red","rouge":"red","violet":"violet","purple":"violet",

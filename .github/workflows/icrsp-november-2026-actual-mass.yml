@@ -1,8 +1,12 @@
-name: ICRSP 6–8 November 2026 actual Mass vs universal feria
+name: ICRSP 6–29 November 2026 sourced Mass and independent Ordo intake
 on:
   pull_request:
     paths:
       - "src/calendar/icrsp-france-ordo-evidence.js"
+      - "src/calendar/icrsp-france-ordo-intake-status.js"
+      - "src/mass/independent-ordo-source-gate.js"
+      - "data/research/icrsp-france-ordo-2026-11-09-29-independent.v1.json"
+      - "tests/icrsp-france-21day-independent-source-gate.mjs"
       - "src/mass/icrsp-first-friday-entry.js"
       - "src/mass/ordo-mass-completeness.js"
       - "tests/mass-ordo-completeness.mjs"
@@ -31,6 +35,8 @@ jobs:
         with:
           node-version: "22"
       - run: npm install --no-audit --no-fund
+      - name: Independently audit 21 original dated institute Ordo records and enforce unverified local-Mass holds
+        run: node tests/icrsp-france-21day-independent-source-gate.mjs
       - name: Exact 6–7 November source and Home contract
         run: node tests/icrsp-2026-november-ordo-home.mjs
       - name: Source-confirmed Pro Papa Collect, Secret, Postcommunion and reader boundaries
