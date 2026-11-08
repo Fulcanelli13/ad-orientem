@@ -360,13 +360,25 @@
       "section": "after_communion",
       "status": "reader_present",
       "wordingCollatedAgainst2013": false,
-      "discoverableAsIndividualLibraryWork": false,
+      "discoverableAsIndividualLibraryWork": true,
       "owner": {
         "path": "src/pray/prayer-acquisition-historical-witnesses.v1.js",
         "symbol": "ignatius_suscipe_lasance_1908_en",
         "route": "pray.morning_evening"
       },
-      "note": "1908 source-owned EN/LA Suscipe is already a selectable Morning Offering; not yet specifically accessible from After Communion, booklet's 2013 English wording remains uncollated, no French prayer claimed"
+      "note": "Lasance 1908 Suscipe EN and LA original reader remains the source owner and is individually reachable by Library lookup; the 2013 Red Booklet wording has NOT been collated; no French source witness asserted",
+      "discoverabilityProof": {
+        "index": "src/pray/red-booklet-suscipe-library-link.v1.js",
+        "route": "pray.morning_evening",
+        "sourceId": "ignatius_suscipe_lasance_1908_en",
+        "searchSurface": "pray.library",
+        "opensExactSourceCard": true,
+        "languageWitnesses": [
+          "en",
+          "la"
+        ],
+        "independentFrenchSourceAvailable": false
+      }
     },
     {
       "id": "communion_anima",
