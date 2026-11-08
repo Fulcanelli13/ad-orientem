@@ -1,0 +1,48 @@
+name: Sacred Art — classify 989 and match 267 existing Prayer positions
+on:
+  push:
+    branches:
+      - feat/sacred-art-category-matching-wave1-20261108
+    paths:
+      - 'src/art/sacred-art-taxonomy-v1.js'
+      - 'scripts/art/build-sacred-art-category-match-v1.mjs'
+      - 'tests/sacred-art-category-match-wave1.mjs'
+      - '.github/workflows/sacred-art-category-match-wave1.yml'
+  workflow_dispatch: {}
+permissions:
+  contents: write
+concurrency:
+  group: sacred-art-category-match-wave1
+  cancel-in-progress: true
+jobs:
+  classify-and-match:
+    name: Build real category and existing Prayer match crosswalk
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify classification and old Prayer slot preservation
+        run: node tests/sacred-art-category-match-wave1.mjs
+      - name: Generate 989 x 267 subject and destination crosswalk
+        run: node scripts/art/build-sacred-art-category-match-v1.mjs
+      - name: Verify generated master counts, categories and all protection gates
+        run: node tests/sacred-art-category-match-wave1.mjs
+      - name: Commit subject/destination master, not new art assets
+        if: success() && github.ref == 'refs/heads/feat/sacred-art-category-matching-wave1-20261108'
+        shell: bash
+        run: |
+          set -euo pipefail
+          git add data/artwork/sacred-art-category-match-989-267.v1.json
+          git diff --cached --name-only | while IFS= read -r file; do
+            case "$file" in
+              data/artwork/sacred-art-category-match-989-267.v1.json) ;;
+              *) echo "Unexpected file: $file" >&2; exit 1 ;;
+            esac
+          done
+          if git diff --cached --quiet; then echo 'No new master changes'; exit 0; fi
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'art(index): materialize 989 artwork categories and 267 existing Prayer matches'
+          git pull --rebase origin feat/sacred-art-category-matching-wave1-20261108
+          git push origin HEAD:refs/heads/feat/sacred-art-category-matching-wave1-20261108
