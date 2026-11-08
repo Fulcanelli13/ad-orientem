@@ -43,6 +43,7 @@ jobs:
           node-version: '22'
       - name: Syntax and source-first Office acceptance
         run: |
+          node --check src/office/office-ordo-compline-resolver.js
           node --check src/office/compline-advent-2026-appointments.js
           node --check src/office/weekday-compline-psalter-plan.js
           node --check src/office/pinned-section-heading-parser.js
@@ -57,6 +58,7 @@ jobs:
           node --test tests/divine-office-advent-i-full-week-compline.mjs
           node --test tests/divine-office-prayer-readiness-gate.mjs
           node --test tests/divine-office-native-entry.mjs
+          node --test tests/divine-office-source-first-calendar-resolver.mjs
           node --test tests/divine-office-latin-compline-public-release.mjs
           node --test tests/divine-office-saturday-printed-diurnale-witness.mjs
           node --test tests/divine-office-saturday-printed-full-word.mjs
