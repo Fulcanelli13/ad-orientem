@@ -1,0 +1,51 @@
+import assert from "node:assert/strict";
+import {createHash} from "node:crypto";
+import {readFileSync, statSync} from "node:fs";
+const root=new URL("../",import.meta.url);
+const path=p=>new URL(p,root);
+const manifest=JSON.parse(readFileSync(path("research/sacred-art/batch1-three-photo-manual-release-gate.v1.json"),"utf8"));
+assert.equal(manifest.schema,"AO_SACRED_ART_BATCH1_CLEAN_THREE_PHOTO_MANUAL_RELEASE_GATE_V1");
+assert.equal(manifest.new_public_photos,0);
+assert.equal(manifest.existing_public_gallery_entries,16);
+assert.equal(manifest.physical_artworks,3);
+assert.equal(manifest.existing_prayer_placements,18);
+assert.equal(manifest.manual_photo_approval_pending,true);
+assert.equal(manifest.release_allowed,false);
+assert.equal(manifest.ready_for_merge,false);
+assert.equal(manifest.photos.length,3);
+const pages=readFileSync(path("tools/build-web-preview.mjs"),"utf8");
+assert.match(pages,/"assets\/staged"/,"Pages build must explicitly exclude staged media");
+const slots=new Set(),ids=new Set();
+for(const photo of manifest.photos){
+ assert.ok(!ids.has(photo.id));ids.add(photo.id);
+ assert.ok(photo.path.startsWith("assets/staged/sacred-art-batch1/"));
+ assert.equal(photo.source_photo_approved_by_owner,false);
+ assert.equal(photo.display_edition_approved_by_owner,false);
+ assert.equal(photo.public_app_image_registered,false);
+ assert.equal(photo.public_placement_change_authorized,false);
+ assert.equal(photo.object_fit,"contain");
+ assert.equal(photo.allow_cover_crop,false);
+ assert.match(photo.original_sha256,/^[a-f0-9]{64}$/);
+ assert.match(photo.edition_sha256,/^[a-f0-9]{64}$/);
+ const bytes=readFileSync(path(photo.path));
+ assert.equal(bytes.length,photo.edition_bytes);
+ assert.equal(statSync(path(photo.path)).size,photo.edition_bytes);
+ assert.equal(bytes.toString("ascii",0,4),"RIFF");
+ assert.equal(bytes.toString("ascii",8,12),"WEBP");
+ assert.equal(createHash("sha256").update(bytes).digest("hex"),photo.edition_sha256,photo.id+" edition SHA mismatch");
+ assert.ok(photo.edition_pixels[0]>=1000&&photo.edition_pixels[1]>=800);
+ for(const slot of photo.prayer_assignments){
+   assert.ok(!slots.has(slot),"Duplicate Prayer position "+slot);
+   slots.add(slot);
+ }
+}
+assert.equal(slots.size,18);
+const teresa=manifest.photos.find(p=>p.id==="artwork-pending:02");
+assert.match(teresa.attribution,/Workshop/);
+const cma=manifest.photos.find(p=>p.id==="artwork-pending:01");
+assert.match(cma.attribution,/Follower/);
+const sailko=manifest.photos.find(p=>p.id==="artwork-pending:09");
+assert.match(sailko.photo_credit,/Sailko/);
+assert.match(sailko.photo_credit,/perspective-rectified/);
+assert.equal(sailko.license_url,"https://creativecommons.org/licenses/by/3.0/");
+console.log("PASS sacred art 3-photo approval gate: 3 source- and edition-locked files, 18 unique Prayer slots, no public entry, no owner approvals assumed.");
