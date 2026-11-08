@@ -1,0 +1,43 @@
+name: Sacred Art Phase 46 — canonical object crosswalk (research only)
+on:
+  push:
+    branches:
+      - research/sacred-art-phase18-iiif-audit-20261106
+    paths:
+      - 'scripts/sacred-art/phase46-physical-artwork-crosswalk.py'
+      - 'data/artwork/canonical-selected-photo-identity-decisions.v1.json'
+      - '.github/workflows/sacred-art-phase46-canonical-crosswalk.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  crosswalk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download immutable Phase45 source census tables
+        uses: actions/download-artifact@v4
+        with:
+          name: sacred-art-phase45-full-library-census-research-only
+          run-id: 42479108878
+          github-token: ${{ github.token }}
+          path: reference-phase45
+      - name: Validate and build 177 to 989 canonical identity crosswalk
+        run: |
+          python -m py_compile scripts/sacred-art/phase46-physical-artwork-crosswalk.py
+          python scripts/sacred-art/phase46-physical-artwork-crosswalk.py
+      - name: Publish only research crosswalk tables
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-phase46-canonical-identity-crosswalk-research-only
+          path: artifacts/sacred-art-phase46-identity-crosswalk/
+          retention-days: 14
+          if-no-files-found: warn
