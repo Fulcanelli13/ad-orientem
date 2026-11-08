@@ -1,5 +1,5 @@
 /**
- * 2013 Red Booklet completeness follow-up: nine source-owned complete Communion
+ * 2013 Red Booklet completeness follow-up: eleven source-owned complete Communion
  * source prayers discoverable in the Library. No new prayer bodies or
  * assertions of exact 2013 English wording.
  */
@@ -121,9 +121,9 @@ try{
    assert.equal(after.route,prior.route);
    assert.equal(after.communionStep,prior.communionStep);
    assert.deepEqual(errors,[],"Browser JavaScript errors "+width+"/"+ui);
-   console.log("PASS "+width+"px "+ui+": all nine Communion works open exact source cards; title search and invalid source guard.");
+   console.log("PASS "+width+"px "+ui+": all eleven Communion works open exact source cards; title search and invalid source guard.");
   }finally{await context.close()}
  }
- assert.equal(checked,44,"Nine Communion plus Suscipe EN and LA in four device/language combinations");
- console.log("PASS 44 source-owned reading-body comparisons, nine Communion plus EN/LA Suscipe × 320/390 EN/FR; no invented French or exact-2013 collation claims.");
+ assert.equal(checked,52,"Eleven Communion plus Suscipe EN and LA in four device/language combinations");
+ console.log("PASS 52 source-owned reading-body comparisons, eleven Communion plus EN/LA Suscipe × 320/390 EN/FR; no invented French or exact-2013 collation claims.");
 }finally{await browser?.close().catch(()=>{});await new Promise(done=>server.close(done))}
