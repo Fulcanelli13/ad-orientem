@@ -1,5 +1,6 @@
 // Actual production Ordo: the 65-card reader's own Mass-preferences button
-// must expose source-cue notation (preview) without an undocumented URL flag.
+// must show source-cue notation automatically (no URL flag, no prefs tap),
+// with a reversible text-only preference and strict Low-Mass hold.
 import assert from "node:assert/strict";
 import http from "node:http";
 import {readFile,mkdir} from "node:fs/promises";
@@ -107,20 +108,25 @@ try{
   },rootSelector);
   const before=await state();
   assert.equal(before.control,true);
-  assert.equal(before.pressed,"false");
-  assert.equal(before.scoreCount,0,"Provisional music may never auto-publish");
+  if(form==="LOW"){
+   assert.equal(before.pressed,"false","Low Mass must never auto-enable notation");
+   assert.equal(before.scoreCount,0,"Low Mass must retain its unscored printed text");
+  }else{
+   assert.equal(before.pressed,"true","Gregorian notation must be visible by default at sung Mass");
+   await page.waitForFunction(()=>document.querySelectorAll(
+     ".ao-proper-reference-notation[data-reference-ready=true]").length>0,null,
+     {timeout:20000});
+  }
+  const firstMounted=await state();
   await page.click("[data-reader-preferences]");
   const button=page.locator("[data-reader-chant-preview]");
   if(form==="LOW"){
    assert.equal((await state()).disabled,true,"Low Mass has text only");
   }else{
    assert.equal((await state()).disabled,false);
-   await button.click();
-   await page.waitForFunction(()=>document.querySelectorAll(
-     ".ao-proper-reference-notation[data-reference-ready=true]").length>0,null,
-     {timeout:20000});
    const after=await state();
-   assert.equal(after.pressed,"true");
+   assert.equal(after.pressed,"true","Settings must reflect the default visible notation");
+   assert.ok(firstMounted.staffSvg>0,"Notation must already be engraved before opening preferences");
    assert.ok(after.scoreCount>0,"Actual Ordo card must have source-linked Gregorian score");
    assert.equal(after.staffSvg,after.scoreCount,
     "Selected source notation must engrave to actual inline Exsurge SVG");
@@ -294,7 +300,7 @@ try{
     "Turning notation off must not remove the Latin text");
   }
   assert.deepEqual(errors,[],"No actual reader runtime errors: "+errors.join("|"));
-  console.log("PASS actual Ordo Gregorian control",JSON.stringify({width,form,mode,before,after:await state()}));
+  console.log("PASS actual Ordo Gregorian default-visible control",JSON.stringify({width,form,mode,before,after:await state()}));
   await context.close();
  }
 }finally{
