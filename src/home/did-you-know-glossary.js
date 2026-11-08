@@ -184,7 +184,7 @@ export function hydrateHomeDidYouKnow(root,win=globalThis){
       const historical=!["ROMAN_MASS_1962","ROMAN_GENERAL_RUBRICS_1962"].includes(published.source_family);
       button.querySelector("[data-home-dyk-title]").textContent=historical?
         (fr?"Coutumes et traditions":"Customs and traditions"):
-        published.topic==="roman_1962_celebrant_rubrics"?
+        ["roman_1962_celebrant_rubrics","ROMAN_1962_CELEBRANT_DETAIL"].includes(published.topic)?
           (fr?"La messe romaine":"The Roman Mass"):
         published.source_family==="ROMAN_GENERAL_RUBRICS_1962"?
           (fr?"Calendrier et rubriques":"Calendar and rubrics"):
