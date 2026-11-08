@@ -305,6 +305,59 @@ for(const [date,saint] of [
     form:"LOW",celebrationId:"votive"}).reason,"ALTERNATE_FORMULARY");
 }
 
+// 3 February 2026: ordinary St Blaise commemoration on the IV-class
+// feria after Septuagesima, inheriting Quadp1-0. Do not misidentify
+// the inherited Sunday text as the selected Sunday Mass.
+{
+ const date="2026-02-03",proper="Tempora/Quadp1-0",saint="Sancti/02-03";
+ const source={...base,sourcePath:proper,calendarCommemorations:[
+  {path:saint,prayerSourcePath:saint,name:"St Blaise, Bishop and Martyr"}]};
+ const witness={...day,date,day:{
+  main:{id:":feria:4:w",rank:4,path:null,title:"Feria III after Septuagesima"},
+  commemorations:[{id:"sancti:02-03:4:r",rank:4,path:saint,
+   title:"St Blaise, Bishop and Martyr"}]},
+  proper:{status:"ready",data:source}};
+ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+  const result=select({proper:source,calendarResolution:witness,form});
+  assert.equal(result.status,"CERTIFIED",date+"/"+form+": "+result.reason);
+  assert.equal(result.decision.scope,
+   "SEPTUAGESIMA_IV_CLASS_FERIA_ORDINARY_COMMEMORATION");
+  const count=form==="LOW"?2:1;
+  assert.equal(result.decision.appliedCount,count-1);
+  for(const group of ["collects","secrets","postcommunions"])
+   assert.equal(result.proper[group].length,count,date+"/"+form+"/"+group);
+  for(const language of ["en","fr"]){
+   const slots=properToReaderSlots(result.proper,{language}).slots;
+   for(const slot of ["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"]){
+    assert.equal(slots[slot].status,"READY",date+"/"+form+"/"+language+"/"+slot);
+    assert.equal(slots[slot].data.paragraphs.length,count);
+   }
+   assert.equal(assessPrintableProper(witness,{language,massForm:form}).ok,true);
+  }
+ }
+ for(const [mutantSource,mutantDay,reason] of [
+  [source,{...witness,date:"2026-02-04"},"RUBRICAL_CLASSIFICATION_PENDING"],
+  [{...source,sourcePath:"Tempora/Quadp2-0"},witness,"RUBRICAL_CLASSIFICATION_PENDING"],
+  [{...source,sourcePath:"Sancti/02-03"},witness,"RUBRICAL_CLASSIFICATION_PENDING"],
+  [{...source,calendarCommemorations:[{path:saint,
+   prayerSourcePath:"Sancti/02-04"}]},witness,"RUBRICAL_CLASSIFICATION_PENDING"],
+  [{...source,secrets:[one]},witness,"ORATION_SOURCE_INCOMPLETE"],
+  [source,{...witness,day:{...witness.day,main:{...witness.day.main,
+    id:"tempora:Quadp1-0:2:v"}}},"RUBRICAL_CLASSIFICATION_PENDING"],
+  [source,{...witness,day:{...witness.day,main:{...witness.day.main,
+    rank:3}}},"RUBRICAL_CLASSIFICATION_PENDING"],
+  [source,{...witness,day:{...witness.day,commemorations:[{
+    ...witness.day.commemorations[0],rank:3}]}},"RUBRICAL_CLASSIFICATION_PENDING"]
+ ]){
+  assert.equal(select({proper:mutantSource,calendarResolution:mutantDay,
+   form:"LOW"}).reason,reason);
+ }
+ assert.equal(select({proper:source,calendarResolution:witness,
+  form:"LOW",isConventual:true}).reason,"CONVENTUAL_RULES_NOT_VERIFIED");
+ assert.equal(select({proper:source,calendarResolution:witness,
+  form:"LOW",celebrationId:"votive"}).reason,"ALTERNATE_FORMULARY");
+}
+
 // 21 July 2026: III-class St Lawrence of Brindisi uses a revised
 // -r principal Proper; IV-class St Praxedes is separately commemorated
 // in Low Mass, not in the three nonconventual Masses in cantu.
