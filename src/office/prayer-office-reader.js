@@ -138,6 +138,18 @@ export function openDivineOfficeReader(win=globalThis,{date=todayLocal()}={}){
   go.addEventListener("click",()=>{input.value=date;hour="COMPLINE";draw()});
   bar.append(go);
  }
+ // Advent ferias and III-class saints each retain their own weekday
+ // Compline psalter; this is not a Sunday/feast fallback.
+ for(const [date,caption] of [
+  ["2026-12-01","Advent Tuesday · 1 Dec"],
+  ["2026-12-02","St Bibiana · 2 Dec"],
+  ["2026-12-03","St Francis Xavier · 3 Dec"],
+  ["2026-12-04","St Peter Chrysologus · 4 Dec"]
+ ]){
+  const go=d.createElement("button");go.type="button";go.textContent=caption;
+  go.addEventListener("click",()=>{input.value=date;hour="COMPLINE";draw()});
+  bar.append(go);
+ }
  host.append(bar);
  const hours=d.createElement("div");hours.className="aoOfHours";host.append(hours);
  let hour="VESPERS";
