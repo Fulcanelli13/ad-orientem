@@ -2,6 +2,7 @@ import {certifyPreGospelChantParts} from "./reader-pre-gospel-chant-source.js";
 import {repair1962AprilPaschalProper} from "./1962-april-paschal-proper-correction.js";
 import {render1962EasterPrefaceVariant} from "./1962-easter-preface-form.js";
 import {recover1962NativityOctaveCommemoration} from "./1962-nativity-octave-source.js";
+import {recover1962StClementPapalCommon} from "./1962-st-clement-papal-common.js";
 import {recover1962PassionFridaySources} from "./1962-passion-friday-commemorations.js";
 import {recover1962InAlbisSecretFromPinnedSource} from "./1962-in-albis-secret-source.js";
 import {required1962MarianPrefaceOwner,verifyMarianLatinSourceRule,render1962MarianPrefaceForm,isSelected1962MarianPrefaceForm} from "./1962-marian-preface-source.js";
@@ -649,5 +650,16 @@ export async function recoverReaderProperOmissions(proper,{
       ...(next.sourceEditorialCorrections??[]),...sourceEnglishRecoveries
     ]);
   }
+  // 23 November 1962: never fill the two missing French strings with
+  // translations of the obsolete pre-1942 Latin prayers. The source-owned
+  // corrected Sovereign Pontiffs Common must replace ALL THREE languages
+  // for the original principal Secret and Postcommunion, preserving the
+  // complete St Felicity commemoration and other cards unchanged.
+  const clement=recover1962StClementPapalCommon({
+    data:next,calendarDate,
+    principalCelebrationId:principalCelebrationId??
+      data.principalCelebrationId??data.mainId
+  });
+  if(clement)Object.assign(next,clement);
   return rewrap(envelope,Object.freeze(next));
 }
