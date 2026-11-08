@@ -55,13 +55,15 @@ try{
       sequence:c.sequence,id:c.id,sectionId:c.sectionId}))};
    api.showSequence(target.sequence);
    const reader=document.querySelector("#ao-r17-native-reader-preview");
-   return {error:null,totalCards:api.model.totalCards,visibleTitle:
+   return {error:null,totalCards:api.model.totalCards,
+    canonicalSourceCards:api.sourceModel?.totalCards,visibleTitle:
     reader?.querySelector('[data-role="section-title"]')?.textContent,
     target:{sequence:target.sequence,sectionId:target.sectionId},
     cueReady:!!reader?.querySelector('[data-cue-id="AO.SM.C0138"]')};
   });
   assert.equal(entry.error,null,JSON.stringify(entry));
-  assert.equal(entry.totalCards,65,"Canonical Ordo remains 65 source cards");
+  assert.equal(entry.canonicalSourceCards,65,"Canonical Ordo retains the 65-card source model");
+  assert.ok(entry.totalCards>=65,"MISSAL can expand source blocks but may not lose Mass cards");
   const rootSelector="#ao-r17-native-reader-preview";
   const state=()=>page.evaluate(rootSelector=>{
    const host=document.querySelector(rootSelector);
@@ -76,7 +78,7 @@ try{
     referenceScores:marks.map(m=>m.dataset.referenceScore),
     literalLatin:host?.querySelector('[data-cue-id="AO.SM.C0138"] .ao-line-primary')
       ?.textContent?.trim()??null,
-    sourceCards:window.__AO_PHONE_PREVIEW?.model?.totalCards,
+    sourceCards:window.__AO_PHONE_PREVIEW?.sourceModel?.totalCards,
     width:document.documentElement.scrollWidth,viewport:innerWidth,
    };
   },rootSelector);
