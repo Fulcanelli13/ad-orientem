@@ -165,6 +165,15 @@ export function select1962CommemorationsForMassForm({
     data.verifiedNativityOctaveCommemoration?.originalChristmasSource==="Sancti/12-25m3"&&
     data.verifiedNativityOctaveCommemoration?.privilege==="RG_108_AND_109_C"&&
     data.verifiedNativityOctaveCommemoration?.orationCount===2;
+  // The host's 12-26c/12-28c placeholders masquerade as ordinary
+  // IV-class sanctoral sources. They are NOT IV-class commemoration prayers.
+  // The source-verified Nativity-octave branch above is the only allowed
+  // way to admit their Christmas Collect, Secret and Postcommunion.
+  // Otherwise fail closed, including when proof metadata was stripped.
+  const nativityOctavePlaceholder=
+    ["2026-12-26","2026-12-28"].includes(String(calendarResolution.date))&&
+    ["Sancti/12-26","Sancti/12-28"].includes(String(main.path??""))&&
+    String(only.path??"")===String(main.path)+"c";
   // General Rubrics §111(c–d), Missal §434(a,c,d): one source-identified
   // ordinary IV-class commemoration is retained in a non-Sunday Low Mass
   // of II/III class but omitted in a non-conventual sung Mass. This is
@@ -176,7 +185,8 @@ export function select1962CommemorationsForMassForm({
   const typedAdventMain=/^tempora:Adv[1-4]-[1-6]:3:/i.test(mainId)&&
     /^Tempora\/Adv[1-4]-[1-6]$/.test(String(main.path??""))&&
     Number(main.rank)===3;
-  const ordinaryFourthClassSaint=!sunday&&!only.privileged&&
+  const ordinaryFourthClassSaint=!nativityOctavePlaceholder&&!sunday&&
+    !only.privileged&&
     Number(only.rank)===4&&/^sancti:[0-9]{2}-[0-9]{2}[a-z]*:4:/i.test(commId)&&
     /^Sancti\/[0-9]{2}-[0-9]{2}[a-z]*$/i.test(String(only.path??""))&&
     (typedSanctoralMain||typedAdventMain);
