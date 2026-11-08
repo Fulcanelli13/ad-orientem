@@ -64,6 +64,15 @@ try{
     assert.equal(await page.locator(selected).getAttribute("aria-pressed"),"true","Wrong original reader purpose selected "+item.id);
     checks++;
    }
+   // A work can be found without first knowing its theological subject.
+   assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.library",{returnContext:null})),true);
+   await page.locator(scope+'[data-p435930-lib-search]').evaluate(el=>{el.value='journey';el.dispatchEvent(new Event('input',{bubbles:true}))});
+   const searchHit=page.locator(scope+'[data-p435930-subject-work="occasional_travel_lasance_1911_en"]');
+   assert.equal(await searchHit.count(),1,"Global Library search must find the original journey prayer");
+   await searchHit.evaluate(el=>el.click());
+   await page.waitForFunction(()=>document.querySelector("#aoPray435930.open .aoP435930Mount")?.dataset.aoPrayView==='occasionals',null,{timeout:10000});
+   const searchPrayer=await page.locator(scope+'[data-ao-occasional-intercession] .aoOccasionalText').innerText();
+   assert.equal(normalize(searchPrayer),normalize(occasionalIntercessionB21For('travel',ui,false,DATA.prayers.devotion_ad_te_beate_ioseph).text));
    assert.deepEqual(errs,[],"Unexpected browser JS error "+width+"/"+ui);
    console.log("PASS "+width+"px "+ui+": 8/8 historical individual entries, original source languages and full prayer bodies.");
   }finally{await ctx.close()}
