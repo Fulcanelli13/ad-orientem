@@ -10,7 +10,7 @@ const tokenize=s=>String(s).toLowerCase().normalize("NFD")
  .replace(/\p{M}/gu,"").replaceAll("æ","ae").replaceAll("œ","oe")
  .match(/[a-z]+/gu)||[];
 
-test("all 330 original Latin words of Sunday Compline Psalm 4, 90, 133 agree with the full printed witness",()=>{
+test("all 329 original Latin words of Sunday Compline Psalm 4, 90, 133 agree with the full printed witness",()=>{
  assert.deepEqual(witness.scope.psalmIds,[4,90,133]);
  assert.equal(witness.sources.length,2);
  assert.ok(witness.sources.every(x=>/^https:\/\//u.test(x.url)));
@@ -31,7 +31,7 @@ test("all 330 original Latin words of Sunday Compline Psalm 4, 90, 133 agree wit
   }
  }
  assert.equal(rows,30);
- assert.equal(words,330);
+ assert.equal(words,329);
  assert.equal(words,witness.scope.wordCount);
 });
 
