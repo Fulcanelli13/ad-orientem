@@ -188,8 +188,13 @@ try{
       const style=getComputedStyle(boot);
       return style.display==="none"||style.visibility==="hidden"||Number(style.opacity)<.02;
     },null,{timeout:60000});
-    await h4.waitForFunction(()=>Boolean(document.querySelector(
-      ".homeScreen.aoTodayH4 [data-home-dyk-entry]")),null,{timeout:20000});
+    await h4.waitForFunction(()=>{
+      const card=document.querySelector(".homeScreen.aoTodayH4 [data-home-dyk-open]");
+      // Both the already published Glossary and the historical Discovery source
+      // own the same H7 Home card; either is a valid completed hydration.
+      return Boolean(card&&!card.disabled&&
+        (card.dataset.homeDykEntry||card.dataset.homeDykFactId));
+    },null,{timeout:20000});
     assert.equal(await h4.locator("[data-home-daily-catechism]").count(),0,
       "H4 must not show Catechism");
     const auditH4=async label=>{
