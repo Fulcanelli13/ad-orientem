@@ -7,13 +7,18 @@
  *     Saturday Compline, printed pp. 177-179.
  *   - Clementine Vulgate, Psalms 87 and 102.
  *
- * The pinned source has Psalm 87 beginning at source label 87:2 (and repeats
- * 87:9); Psalm 102's recitation stichs cross canonical verses 13-15 and
- * 17-18. These are source *label* / musical-phrase boundaries, not missing
- * prayer text. Do not silently renumber their words as single Bible verses.
+ * Psalm 87:1 is the superscription in Clementine biblical numbering;
+ * "Domine, Deus salutis" correctly starts at 87:2. The pinned liturgical
+ * stichs cross canonical boundaries 87:5-6 and 87:9-10; Psalm 102's
+ * recitation stichs likewise cross 13-15 and 17-18. Do not turn a
+ * recitation-stich ordinal into a misleading biblical citation.
  * Only the private reading projection applies this transformation.
  */
 const SOURCE_87=Object.freeze([2,3,4,5,6,7,8,9,9,10,11,12,13,14,15,16,17,18,19]);
+const PRINTED_87=Object.freeze([
+ "2","3","4","5–6","6","7","8","9","9–10","10",
+ "11","12","13","14","15","16","17","18","19"
+]);
 const SOURCE_102_A=Object.freeze([1,2,3,4,5,6,7,8,9,10,11,12]);
 const SOURCE_102_B=Object.freeze([13,14,16,17,17,18,19,20,21,22]);
 const PRINTED_102_B=Object.freeze([
@@ -21,7 +26,7 @@ const PRINTED_102_B=Object.freeze([
 ]);
 const RULES=Object.freeze({
  "Psalterium/Psalmorum/Psalm87#2-19":Object.freeze({
-  number:87,raw:SOURCE_87,display:SOURCE_87.map((_,i)=>String(i+1))
+  number:87,raw:SOURCE_87,display:PRINTED_87
  }),
  "Psalterium/Psalmorum/Psalm102#1-12":Object.freeze({
   number:102,raw:SOURCE_102_A,display:SOURCE_102_A.map(String)
