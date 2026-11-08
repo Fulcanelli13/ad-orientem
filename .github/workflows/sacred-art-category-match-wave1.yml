@@ -16,7 +16,7 @@ on:
       - '.github/workflows/sacred-art-category-match-wave1.yml'
   workflow_dispatch: {}
 permissions:
-  contents: write
+  contents: read
 concurrency:
   group: sacred-art-category-match-wave1
   cancel-in-progress: true
@@ -48,19 +48,5 @@ jobs:
         run: |
           test ! -e dist/web-preview/data/artwork/sacred-art-category-match-989-267.v1.json
           test -f dist/web-preview/src/art/sacred-art-taxonomy-v1.js
-      - name: Commit subject/destination master, not new art assets
-        if: success() && github.ref == 'refs/heads/feat/sacred-art-category-matching-wave1-20261108'
-        shell: bash
-        run: |
-          set -euo pipefail
-          git add data/artwork/sacred-art-category-match-989-267.v1.json
-          git diff --cached --name-only | while IFS= read -r file; do
-            case "$file" in
-              data/artwork/sacred-art-category-match-989-267.v1.json) ;;
-              *) echo "Unexpected file: $file" >&2; exit 1 ;;
-            esac
-          done
-          if git diff --cached --quiet; then echo 'No new master changes'; exit 0; fi
-          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'art(index): materialize 989 artwork categories and 267 existing Prayer matches'
-          git pull --rebase origin feat/sacred-art-category-matching-wave1-20261108
-          git push origin HEAD:refs/heads/feat/sacred-art-category-matching-wave1-20261108
+      - name: Verify generated category/placement master is deterministic and committed
+        run: git diff --exit-code -- data/artwork/sacred-art-category-match-989-267.v1.json
