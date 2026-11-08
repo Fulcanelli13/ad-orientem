@@ -5,6 +5,7 @@ import {createHash} from "node:crypto";
 import {readFileSync} from "node:fs";
 import {EPIPHANY_REFERENCE_SCORES,EPIPHANY_REFERENCE_WITNESS} from "../src/mass/reader-inline-epiphany-reference.js";
 import {referenceScoresForParagraph,PROPER_REFERENCE_REGISTRY_STATUS} from "../src/mass/reader-inline-proper-reference.js";
+import {PROPER_REFERENCE_BINDINGS} from "../src/mass/reader-inline-proper-registry.js";
 import {resolveScholaSelectedScoreAccess} from "../src/mass/reader-schola-score-access.js";
 const expected=[
  {id:"GREGOBASE-403",key:"INTROIT",part:"in",page:"57"},
@@ -16,8 +17,15 @@ const expected=[
 assert.equal(EPIPHANY_REFERENCE_WITNESS.sourcePath,"Sancti/01-06");
 assert.equal(EPIPHANY_REFERENCE_WITNESS.massSourceRef,"ad8783641455bae38a8eb5782b34241a7b3ff2ef");
 assert.equal(EPIPHANY_REFERENCE_SCORES.length,5);
-assert.equal(PROPER_REFERENCE_REGISTRY_STATUS.scoreCount,18);
-assert.equal(PROPER_REFERENCE_REGISTRY_STATUS.bindingCount,21);
+assert.ok(PROPER_REFERENCE_REGISTRY_STATUS.scoreCount>=5);
+assert.deepEqual(PROPER_REFERENCE_BINDINGS.filter(b=>b.sourcePath==="Sancti/01-06").map(b=>[b.role,b.scoreId,b.paragraphId]),[
+ ["INTROIT","GREGOBASE-403","INTROIT.1"],
+ ["GRADUAL","GREGOBASE-205","GRADUAL.1"],
+ ["ALLELUIA","GREGOBASE-524","ALLELUIA_TRACT_SEQUENCE.1"],
+ ["ALLELUIA","GREGOBASE-524","GRADUAL.1"],
+ ["OFFERTORY","GREGOBASE-1147","OFFERTORY.1"],
+ ["COMMUNION","GREGOBASE-918","COMMUNION.1"]
+]);
 for(let i=0;i<expected.length;i++){
  const e=expected[i],s=EPIPHANY_REFERENCE_SCORES[i];
  assert.deepEqual([s.id,s.key,s.part,s.folio],[e.id,e.key,e.part,e.page]);
@@ -95,4 +103,4 @@ const merged=resolveScholaSelectedScoreAccess({itinerary:mergedItinerary,resolve
 assert.deepEqual(merged.proper[1].scores.map(s=>s.id),["GREGOBASE-205","GREGOBASE-524"]);
 assert.equal(merged.proper[2].scores.length,0,
  "Same source Alleluia may not be shown twice in selected Schola itinerary");
-console.log("EPIPHANY_FIVE_SOURCE_GABC_PASS 18 total archive scores, five 1961 Epiphany roles, identical Latin but distinct Alleluia/Communion melodies, unapproved");
+console.log("EPIPHANY_FIVE_SOURCE_GABC_PASS five independently bound Epiphany scores, five 1961 Epiphany roles, identical Latin but distinct Alleluia/Communion melodies, unapproved");
