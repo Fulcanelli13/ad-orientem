@@ -1,0 +1,29 @@
+name: Prayer red booklet 2013 — completeness register
+on:
+  push:
+    branches:
+      - feat/red-booklet-2013-full-prayer-coverage-20261108
+    paths:
+      - data/pray/red-booklet-2013-completeness.v1.json
+      - tests/pray-red-booklet-2013-completeness.mjs
+      - .github/workflows/pray-red-booklet-2013-completeness.yml
+  pull_request:
+    branches: [main]
+    paths:
+      - data/pray/red-booklet-2013-completeness.v1.json
+      - tests/pray-red-booklet-2013-completeness.mjs
+      - .github/workflows/pray-red-booklet-2013-completeness.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  booklet-prayer-coverage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify 37 booklet private prayers and their app source owners
+        run: node tests/pray-red-booklet-2013-completeness.mjs
