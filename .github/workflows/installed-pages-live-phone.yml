@@ -17,6 +17,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+
 jobs:
   validate-pr:
     if: ${{ github.event_name == 'pull_request' }}
@@ -32,8 +33,15 @@ jobs:
         run: |
           node --check tests/canonical-pages-live-parity.mjs
           node --check tests/installed-pages-live-phone.mjs
+          node tests/installed-pages-parity-concurrency.mjs
 
   verify-live-installed-path:
+    # Only successful publication runs enqueue this job, so failed or skipped
+    # Pages workflows never cancel an in-flight valid public parity check.
+    # A newer successful publication supersedes the older exact-SHA comparison.
+    concurrency:
+      group: installed-pages-parity-main
+      cancel-in-progress: true
     # Never compare the branch against a site that has not published it yet.
     # A successful explicit Pages release is the only automatic source of truth.
     if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_branch == 'main' && github.event.workflow_run.event == 'push') }}
