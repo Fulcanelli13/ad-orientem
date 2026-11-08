@@ -4825,6 +4825,37 @@ function onClick(e){
   pushView();LIB.open=id;LIB.language=null;PILOT_LORETO_GROUP=false;
   view='library';return render();
  }
+ if(b.dataset.p435930SourceWork){
+  const work=prayerSevenSourceWork(b.dataset.p435930SourceWork);
+  if(!work||view!=='library'||LIB.open||LIB.cat!=='all'||
+   (LIB.subject!==work.subject&&!(LIB.subject==='all'&&LIB.q.trim())))return;
+  clearInternalPrayerRouteErrors();
+  if(work.mode==='internal'){
+   if(!internalPrayerView(work.route))return showInternalPrayerRouteError(b,work.route);
+   pushView();
+   routeOwn(work.route,work.options);
+   if(work.options.historicalPrayer){
+    queueMicrotask(()=>{
+     const summary=mount()?.querySelector('[data-ao-montfort-b27-original="'+work.options.historicalPrayer+'"] > summary');
+     summary?.focus?.({preventScroll:false});
+    });
+   }
+   return;
+  }
+  // The original Novena and Traditional Prayer runtimes extend this public
+  // source-owned API. Do not invent a substitute body if a route is unavailable.
+  const openSource=window.AO_PRAY_V435930?.open;
+  if(typeof openSource!=='function')return showInternalPrayerRouteError(b,work.route);
+  try{
+   const receipt=captureResume();
+   const opened=openSource(work.route,{...work.options,returnContext:PRAY_CTX,returnPrayerSnapshot:receipt});
+   if(opened!==true&&opened?.ok!==true)showInternalPrayerRouteError(b,work.route);
+  }catch(error){
+   console.error('Prayer source entry failed',error);
+   showInternalPrayerRouteError(b,work.route);
+  }
+  return;
+ }
  if(b.dataset.p435930SubjectWork){
   // Exact work IDs must resolve to a registered existing source-owned reader.
   // Unknown/staged IDs must not navigate to a plausible but wrong prayer.
