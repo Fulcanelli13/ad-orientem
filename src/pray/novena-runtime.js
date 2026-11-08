@@ -389,9 +389,13 @@ function open(opts={}){
  detailFromOverview=false;dayAboutOpen=false;
  const requested=String(opts?.novenaId||'');
  if(requested&&ALL_NOVENAS[requested]){
-  N.id=requested;N.screen=opts?.returnSearch&&typeof opts.returnSearch.query==='string'?'day':'detail';
+  N.id=requested;
+  // Explicit work-level day links enter this source's own full novena reader.
+  // No automatic completion, translated prayer or cross-novena stage is inferred.
+  const directDay=Number.isInteger(opts?.novenaDay)&&opts.novenaDay>=1&&opts.novenaDay<=9?opts.novenaDay:null;
+  N.screen=directDay!==null||(opts?.returnSearch&&typeof opts.returnSearch.query==='string')?'day':'detail';
   const status=calStatus(ALL_NOVENAS[requested]);
-  N.day=status.kind==='active'?status.day:1;
+  N.day=directDay??(status.kind==='active'?status.day:1);
  }else{
   N.screen='overview';N.id=null;N.day=1;
  }
