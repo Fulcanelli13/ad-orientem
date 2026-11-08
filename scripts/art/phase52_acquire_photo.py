@@ -10,6 +10,9 @@ import hashlib
 import json
 from pathlib import Path
 import time
+from datetime import datetime, timezone
+from email.utils import parsedate_to_datetime
+from urllib.error import HTTPError, URLError
 from urllib.parse import quote
 from urllib.request import Request, urlopen
 
@@ -22,28 +25,70 @@ def commons_url(title):
     hash_ = hashlib.md5(normalized.encode("utf-8")).hexdigest()
     return "https://upload.wikimedia.org/wikipedia/commons/" + hash_[0] + "/" + hash_[:2] + "/" + quote(normalized, safe="()_-.")
 
+_last_request_started = None
+
+def _pace_requests(min_gap_seconds=25):
+    """Avoid bursts from shared GitHub-hosted runners."""
+    global _last_request_started
+    now = time.monotonic()
+    if _last_request_started is not None:
+        remaining = min_gap_seconds - (now - _last_request_started)
+        if remaining > 0:
+            time.sleep(remaining)
+    _last_request_started = time.monotonic()
+
+def _retry_after_seconds(header, default=65):
+    """Respect Retry-After (seconds or HTTP date) without infinite retries."""
+    if not header:
+        return default
+    try:
+        return max(0, int(float(header)))
+    except (ValueError, TypeError):
+        try:
+            future = parsedate_to_datetime(header)
+            return max(0, int((future - datetime.now(timezone.utc)).total_seconds()))
+        except (ValueError, TypeError, OverflowError):
+            return default
+
 def fetch_exact(title, destination, max_bytes=30_000_000):
     url = commons_url(title)
-    req = Request(url, headers={"User-Agent": "AdOrientemSacredArtResearch/1.0 (no publishing; research integrity check)"})
+    request = Request(url, headers={
+        "User-Agent": "AdOrientemSacredArtResearch/1.1 (https://github.com/Fulcanelli13/ad-orientem; research-only)",
+        "Accept": "image/jpeg,image/*;q=0.8",
+    })
     last = None
-    for attempt in range(2):
+    for attempt in range(3):
+        _pace_requests()
         try:
-            with urlopen(req, timeout=35) as response:
+            with urlopen(request, timeout=35) as response:
                 if response.status != 200:
-                    raise RuntimeError("HTTP status " + str(response.status))
+                    raise RuntimeError("Unexpected HTTP status " + str(response.status))
                 content_type = response.headers.get("Content-Type", "")
-                if not content_type.startswith("image/jpeg") and not content_type.startswith("image/"):
+                if not content_type.startswith("image/"):
                     raise RuntimeError("Non-image response: " + content_type)
                 data = response.read(max_bytes + 1)
                 if len(data) > max_bytes:
                     raise RuntimeError("Image exceeds size limit")
             destination.write_bytes(data)
             return url, hashlib.sha1(data).hexdigest(), len(data)
-        except Exception as exc:
+        except HTTPError as exc:
             last = exc
-            if attempt == 0:
-                time.sleep(2)
-    raise RuntimeError("Download unsuccessful: " + str(last))
+            if exc.code not in (429, 503) or attempt == 2:
+                break
+            delay = _retry_after_seconds(exc.headers.get("Retry-After"))
+            # A long Retry-After means this acquisition should be deferred, not hammered.
+            if delay > 150:
+                raise RuntimeError("Deferred: Wikimedia rate limit requests waiting "
+                                   + str(delay) + " seconds; no further requests attempted")
+            print("Wikimedia HTTP " + str(exc.code) + ": respecting Retry-After "
+                  + str(delay) + " seconds", flush=True)
+            time.sleep(delay)
+        except (URLError, TimeoutError) as exc:
+            last = exc
+            if attempt == 2:
+                break
+            time.sleep(15 * (attempt + 1))
+    raise RuntimeError("Download unsuccessful after bounded respectful retries: " + str(last))
 
 def contact_sheet(selected_file, candidate_file, target, credit):
     with Image.open(selected_file) as selected, Image.open(candidate_file) as candidate:
@@ -67,6 +112,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--out", default="phase52-review-output")
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--only", action="append", default=[], help="Specific manifest ID(s) to acquire; default all")
     args = parser.parse_args()
     data = json.loads(SOURCE.read_text(encoding="utf-8"))
     assert data["counts"]["candidates"] == 2
@@ -74,9 +120,12 @@ def main():
     assert data["counts"]["editorially_approved"] == 0
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
+    selected = [item for item in data["candidates"] if not args.only or item["id"] in args.only]
+    if not selected or any(key not in {x["id"] for x in data["candidates"]} for key in args.only):
+        parser.error("--only must name existing candidate IDs")
     results = []
     any_failure = False
-    for candidate in data["candidates"]:
+    for candidate in selected:
         source = candidate["selected_original"]
         photo = candidate["candidate"]
         assert not photo["is_user_handpicked"] and not photo["verified_image_bytes_in_this_phase"]
