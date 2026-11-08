@@ -254,8 +254,8 @@ export function createDatedProperNotationPreview({
     const mark=doc.createElement("span");
     mark.className="ao-proper-reference-mark";
     mark.textContent=score.kind==="CELEBRANT_INTONATION"?"℣":
-      /^\\s*℟/.test(score.sourceLatin??"")?"℟":
-      /^\\s*℣/.test(score.sourceLatin??"")?"℣":"♫";
+      /^\s*℟/.test(score.sourceLatin??"")?"℟":
+      /^\s*℣/.test(score.sourceLatin??"")?"℣":"♫";
     mark.setAttribute("aria-hidden","true");
     expand.append(staff);
     host.append(mark,expand,title);node.append(host);
