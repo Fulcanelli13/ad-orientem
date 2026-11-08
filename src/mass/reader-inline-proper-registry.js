@@ -10,6 +10,25 @@ export const PROPER_REFERENCE_LABELS=Object.freeze({
 // score identifier. For genuine Commons, a future source-specific binding can
 // omit monthDay and serve as many dates as appoint that exact source.
 export const PROPER_REFERENCE_BINDINGS=Object.freeze([
+ // Epiphany, 6 January. The same "Vidimus stellam" incipit is in
+ // DISTINCT Alleluia (1961 p. 58, Mode II) and Communion (p. 59, Mode IV);
+ // role + paragraph + 1962 source owner prevents cross-melody borrowing.
+ {sourcePath:"Sancti/01-06",monthDay:"01-06",role:"INTROIT",paragraphId:"INTROIT.1",
+  scoreId:"GREGOBASE-403",openings:["ecce advenit dominator dominus"]},
+ {sourcePath:"Sancti/01-06",monthDay:"01-06",role:"GRADUAL",paragraphId:"GRADUAL.1",
+  scoreId:"GREGOBASE-205",openings:["omnes de saba venient aurum et thus deferentes"]},
+ {sourcePath:"Sancti/01-06",monthDay:"01-06",role:"ALLELUIA",paragraphId:"ALLELUIA_TRACT_SEQUENCE.1",
+  scoreId:"GREGOBASE-524",openings:["vidimus stellam eius in oriente"]},
+ // The pinned 1962 source contains the Alleluia inside its Graduale section.
+ // Only a Gradual paragraph that ALSO contains the genuine Alleluia text,
+ // after the matched Gradual, may display the companion score.
+ {sourcePath:"Sancti/01-06",monthDay:"01-06",role:"ALLELUIA",paragraphId:"GRADUAL.1",
+  scoreId:"GREGOBASE-524",afterScoreId:"GREGOBASE-205",
+  openings:["vidimus stellam eius in oriente"]},
+ {sourcePath:"Sancti/01-06",monthDay:"01-06",role:"OFFERTORY",paragraphId:"OFFERTORY.1",
+  scoreId:"GREGOBASE-1147",openings:["reges tharsis et insulae munera offerent"]},
+ {sourcePath:"Sancti/01-06",monthDay:"01-06",role:"COMMUNION",paragraphId:"COMMUNION.1",
+  scoreId:"GREGOBASE-918",openings:["vidimus stellam eius in oriente"]},
  {sourcePath:"Sancti/07-07",monthDay:"07-07",role:"INTROIT",paragraphId:"INTROIT.1",
   scoreId:"GREGOBASE-48",openings:["sacerdotes tui domine induant iustitiam"]},
  {sourcePath:"Sancti/07-07",monthDay:"07-07",role:"GRADUAL",paragraphId:"GRADUAL.1",
