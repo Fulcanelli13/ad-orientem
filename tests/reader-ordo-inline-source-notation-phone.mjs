@@ -212,6 +212,9 @@ try{
     assert.equal(reading.modelCards,30,"No new source macros from chant");
     console.log("PASS actual Ordo Preface celebrant",JSON.stringify({width,mode,tone,...reading}));
    }
+   // Revisit the initial source response for the original on/off regression.
+   await page.evaluate(sequence=>window.__AO_PHONE_PREVIEW.showSequence(sequence),
+    entry.target.sequence);
    // Reopen preferences: the on/off state must survive closing the sheet.
    await page.click("[data-reader-preferences]");
    assert.equal((await state()).pressed,"true");
