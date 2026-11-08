@@ -159,7 +159,9 @@ export function projectComplineRecitation(review,{context="FINAL_PRAYER"}={}){
   if(clean===null)return withheld("COMPLINE_SOURCE_MARKUP_CHANGED");
   const numbered=projectSaturdayComplinePsalmFrame(clean);
   if(numbered===null)return withheld("COMPLINE_SATURDAY_PSALM_NUMBERING_DRIFT");
-  if(numbered!==f)psalmLabelCount++;
+  // Cleaning source markup also creates Confiteor/hymn frames; do not
+  // count those as Psalm display-label projections.
+  if(numbered!==clean)psalmLabelCount++;
   resultFrames.push(numbered);
  }
  const saturday=review.civilDate==="2026-11-28"||review.civilDate==="2026-12-05";
