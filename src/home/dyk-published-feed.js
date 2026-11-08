@@ -8,7 +8,7 @@ const esc=x=>String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&
 const validDate=x=>{if(!/^\d{4}-\d{2}-\d{2}$/.test(x||""))return false;const date=new Date(x+"T12:00:00Z");return !Number.isNaN(date.getTime())&&date.toISOString().slice(0,10)===x;};
 // Stable per-day shuffle across the *combined* published and Glossary pool.
 // No browser storage, tracking, paid runtime, or unreviewed research publication.
-export const DYK_GLOSSARY_FALLBACK_IDS=Object.freeze(["G195","G213","G219","G235","G194","G240"]);
+export const DYK_GLOSSARY_FALLBACK_IDS=Object.freeze(["G195","G213","G219","G235","G194","G240","G197","G200","G203","G212","G215","G216","G218","G224","G241","G242","G248","G255","G259","G260","G274","G283","G290","G300"]);
 function shuffledHomeIds(ids,cycle){
  const ordered=[...new Set(ids)].sort();
  let state=2166136261;
