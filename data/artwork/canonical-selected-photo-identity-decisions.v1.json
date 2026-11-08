@@ -323,5 +323,18 @@
     "official_source_passports": 15,
     "source_selected_records_with_passports": 18,
     "no_rejection_reversal": true
+  },
+  "phase54_photo_quality": {
+    "exact_image_qa_ledger": "data/artwork/phase54-two-toulouse-exact-image-qa.v1.json",
+    "verified_photographic_alternatives": 2,
+    "independently_verified_originals": 2,
+    "completed_full_image_contact_sheet_comparisons": 2,
+    "final_editorial_approvals": 0,
+    "public_image_replacements": 0,
+    "selected_photo_ids": [
+      "RECENT575::222",
+      "RECENT575::220"
+    ],
+    "remaining_gate": "Museum color fidelity reference and owner editorial admission required for unhandpicked Commons sources"
   }
 }
