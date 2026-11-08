@@ -4,7 +4,9 @@
  * into the production Prayer reader. This module requires real pinned leaves.
  */
 import {DIVINUM_OFFICIUM_PIN as PIN} from "../app/source-transport-compat.js";
-import {createComplinePinnedReader,assembleDatedComplinePilot} from "./saturday-compline-2026-pilot.js";
+import {createComplinePinnedReader,assembleDatedComplinePilot,
+ createLatinComplinePinnedReader,assembleLatinDatedComplinePilot}
+ from "./saturday-compline-2026-pilot.js";
 import {createAdventFirstVespersBoundedPinnedReader} from "./advent-first-vespers-bounded-preview-reader.js";
 import {assembleAdventI2026PrivatePreviewSession} from "./advent-first-vespers-preview-session.js";
 import {buildAdventI2026ReadingFocus} from "./advent-first-vespers-reading-focus.js";
@@ -21,33 +23,39 @@ function hold(reason){return Object.freeze({
  sourceRevision:PIN,reviewOnly:true,readingPublished:false,
  rightsApproved:false,liturgicallyCertified:false,publishable:false,published:false
 });}
-function textsValid(frames){
+function textsValid(frames,activeLanguages=LANGUAGES){
  return Array.isArray(frames)&&frames.length>40&&frames.length<300&&
  frames.every(f=>f&&typeof f.kind==="string"&&
   (typeof f.sourceId==="string"&&f.sourceId.length>0||
     f.kind==="RESEARCH_CALENDAR_NOTICE"&&f.sourceId===null)&&
-  LANGUAGES.every(l=>Array.isArray(f.texts?.[l])&&f.texts[l].length>0&&
+  activeLanguages.every(l=>Array.isArray(f.texts?.[l])&&f.texts[l].length>0&&
    f.texts[l].every(t=>typeof t==="string"&&t.length>0&&t.length<20000)));
 }
-export function projectPrivateOfficeReview({hour,date,pilot,focus}={}){
+export function projectPrivateOfficeReview({hour,date,pilot,focus,languageMode="trilingual"}={}){
+ if(!["trilingual","latin"].includes(languageMode))return hold("REVIEW_LANGUAGE_MODE_NOT_SUPPORTED");
+ const activeLanguages=languageMode==="latin"?["la"]:LANGUAGES;
  if(!["COMPLINE","VESPERS"].includes(hour)||typeof date!=="string")
   return hold("HOUR_OR_DATE_OUTSIDE_PRIVATE_REVIEW");
  if(hour==="COMPLINE"){
   if(!COMPLINE_DATES.has(date)||!pilot||
    !/^SOURCE_FIRST_(?:SATURDAY|FERIAL_TUESDAY|APPOINTED)_COMPLINE_RESEARCH_NOT_CERTIFIED$/.test(pilot.status)||
    pilot.sourceRevision!==PIN||pilot.hour!=="COMPLINE"||
+   !Array.isArray(pilot.availableLanguages)||
+   pilot.availableLanguages.length!==activeLanguages.length||
+   activeLanguages.some(l=>!pilot.availableLanguages.includes(l))||
    pilot.civilDate!==date||pilot.officeDate!==date||
    pilot.blockCount!==42||pilot.blocks?.length!==42||
    pilot.frames?.length!==pilot.focusFrameCount||
    pilot.rightsApproved!==false||pilot.publishable!==false||
    pilot.published!==false||pilot.officeCompletenessCertified!==false||
    pilot.translationApproved!==false||
-   !textsValid(pilot.frames))
+   !textsValid(pilot.frames,activeLanguages))
    return hold("COMPLINE_EXACT_UNPUBLISHED_SOURCE_PROOF_MISSING");
   return Object.freeze({
    schema:PRIVATE_OFFICE_REVIEW_SCHEMA,status:"PRIVATE_SOURCE_TEXT_REVIEW",
    civilDate:date,officeDate:date,hour,
    events:pilot.blocks,frames:pilot.frames,sourceRevision:PIN,
+   availableLanguages:Object.freeze([...activeLanguages]),
    eventCount:42,frameCount:pilot.frames.length,reviewOnly:true,
    readingPublished:false,rightsApproved:false,liturgicallyCertified:false,
    publishable:false,published:false
@@ -76,15 +84,19 @@ export function projectPrivateOfficeReview({hour,date,pilot,focus}={}){
  });
 }
 export async function assemblePrivateOfficeReview({
- hour,date,fetchSource,universalWitness=null
+ hour,date,fetchSource,universalWitness=null,languageMode="trilingual"
 }={}){
+ if(!["trilingual","latin"].includes(languageMode))return hold("REVIEW_LANGUAGE_MODE_NOT_SUPPORTED");
  if(typeof fetchSource!=="function")return hold("FETCH_TRANSPORT_REQUIRED");
  if(hour==="COMPLINE"){
   if(!COMPLINE_DATES.has(date))return hold("COMPLINE_DATE_NOT_REVIEWED");
   try{
-   const reader=createComplinePinnedReader({date,fetchSource});
-   const pilot=await assembleDatedComplinePilot({reader,date});
-   return projectPrivateOfficeReview({hour,date,pilot});
+   const latin=languageMode==="latin";
+   const reader=latin?createLatinComplinePinnedReader({date,fetchSource}):
+    createComplinePinnedReader({date,fetchSource});
+   const pilot=latin?await assembleLatinDatedComplinePilot({reader,date}):
+    await assembleDatedComplinePilot({reader,date});
+   return projectPrivateOfficeReview({hour,date,pilot,languageMode});
   }catch(error){return hold("COMPLINE_SOURCE_FAILURE:"+String(error?.message??error))}
  }
  if(hour==="VESPERS"&&date==="2026-11-28"){

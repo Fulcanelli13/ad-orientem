@@ -86,7 +86,8 @@ export function mountPrivateOfficeReview(root,{win=globalThis,fetchSource=win.fe
    const universalWitness=hours.value==="VESPERS"
     ?await readUniversalWitness?.():null;
    const result=await assemblePrivateOfficeReview({
-    hour:hours.value,date:date.value,fetchSource,universalWitness
+    hour:hours.value,date:date.value,fetchSource,universalWitness,
+    languageMode:hours.value==="COMPLINE"&&mode.value==="la"?"latin":"trilingual"
    });
    if(token!==serial)return;
    if(result.status!=="PRIVATE_SOURCE_TEXT_REVIEW"){
@@ -107,7 +108,13 @@ export function mountPrivateOfficeReview(root,{win=globalThis,fetchSource=win.fe
   state.textContent="Load the selected private source preview";
  });
  date.addEventListener("change",()=>{invalidate();state.textContent="Load the selected private source preview"});
- mode.addEventListener("change",()=>{if(active)show()});
+ mode.addEventListener("change",()=>{
+  if(active?.hour==="COMPLINE"&&active.availableLanguages?.length===1&&mode.value!=="la"){
+   // A Latin source session never silently inherits a cached English/French
+   // witness. Reload the separately sourced three-language review explicitly.
+   void loadPreview();
+  }else if(active)show();
+ });
  previous.addEventListener("click",()=>{if(active){index--;show()}});
  next.addEventListener("click",()=>{if(active){index++;show()}});
  invalidate();
