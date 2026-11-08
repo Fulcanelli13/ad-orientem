@@ -79,7 +79,7 @@ export function createDatedProperNotationPreview({
  if(!root?.querySelectorAll)throw new TypeError("Mass reader root required");
  const doc=root.ownerDocument;
  const query=String(doc?.defaultView?.location?.search??"");
- const active=enabled===null?new URLSearchParams(query).get("chant_preview")==="1":enabled===true;
+ let active=enabled===null?new URLSearchParams(query).get("chant_preview")==="1":enabled===true;
  let entries=[],toneNotes=[],orationAmenHandoffs=[],generation=0,modal=null,modalEngraver=null,returnFocus=null;
  function closeZoom(){
   if(modal?.open)modal.close();
@@ -108,6 +108,13 @@ export function createDatedProperNotationPreview({
    modalEngraver=engraverFactory({viewport:wide,document:doc});
    modalEngraver.observe?.();await modalEngraver.engrave(score.gabc);
   }catch{if(modal===dialog)closeZoom()}
+ }
+ function setEnabled(next){
+  const value=next===true;
+  if(active===value)return active;
+  active=value;
+  if(!active)clear();
+  return active;
  }
  function clear(){
   ++generation;
@@ -208,7 +215,8 @@ export function createDatedProperNotationPreview({
   }
   return entries.length;
  }
- return Object.freeze({render,clear,destroy:clear,enabled:active,
+ return Object.freeze({render,clear,destroy:clear,setEnabled,
+  get enabled(){return active},
   state:()=>Object.freeze({enabled:active,mounted:entries.length,
    rendered:entries.filter(e=>e.host.dataset.referenceReady==="true").length,
    orationAmenSourceReady:orationAmenHandoffs.length,
