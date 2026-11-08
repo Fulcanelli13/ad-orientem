@@ -124,3 +124,64 @@ export function recover1962InAlbisSecretFromPinnedSource(data,principalCelebrati
    })
  });
 }
+
+// One specifically verified inherited Sunday Proper on Friday 17 April 2026.
+// The calendar's IV-class feria is the principal Mass, while St Anicetus
+// owns the SECOND oration of each group. The same Pasc1-0 French [Secreta]
+// has the originally pinned $Per Dominum macro BEFORE the prayer body.
+// Restore ONLY the principal French line order, preserving the actual
+// Latin/English and St Anicetus rows; never claim this is the I-class
+// Dominica in Albis itself or change the canonical Calendar identity.
+export function recover1962InAlbisFeriaFrenchSecretOrder(
+ data,principalCelebrationId,calendarDate,cleanLines
+){
+ if(calendarDate!=="2026-04-17"||
+   principalCelebrationId!==":feria:4:w"||
+   typeof cleanLines!=="function"||
+   data?.sourcePath!==SOURCE_PATH||
+   data?.requestedCelebrationId&&data.requestedCelebrationId!=="mass_of_day"||
+   data?.riteProfile==="requiem")return null;
+ const comm=data.calendarCommemorations;
+ const originals=data.secrets;
+ if(!Array.isArray(comm)||comm.length!==1||
+   comm[0]?.path!=="Sancti/04-17"||
+   comm[0]?.prayerSourcePath!=="Sancti/04-17"||
+   !Array.isArray(originals)||originals.length!==2||
+   !Array.isArray(data.collects)||data.collects.length!==2||
+   !Array.isArray(data.postcommunions)||data.postcommunions.length!==2||
+   originals[0]?.oneConclusion)return null;
+ const first=originals[0],second=originals[1];
+ if(String(first.sourcePath??"").trim()&&
+    !String(first.sourcePath).startsWith(SOURCE_PATH))return null;
+ if(String(second.sourcePath??"").trim()&&
+    !String(second.sourcePath).startsWith("Sancti/04-17"))return null;
+ if(!["lat","en","fr"].every(k=>resolvedText(first[k]))||
+   !["lat","en","fr"].every(k=>resolvedText(second[k])))return null;
+ const expected={};
+ for(const [key,lang] of [["lat","la"],["en","en"],["fr","fr"]]){
+   const rows=source.languages?.[lang]?.rows;
+   if(!Array.isArray(rows)||rows.length!==2)return null;
+   const body=rows.find(x=>!MACRO.test(String(x)));
+   if(!body)return null;
+   expected[key]=cleanLines([body,"$Per Dominum"],lang);
+   if(!resolvedText(expected[key]))return null;
+ }
+ // Source parity for both principal Latin and English texts is required
+ // before changing even a single character in the French rendering.
+ if(!sameCertifiedPrayerBody(first.lat,expected.lat)||
+    !sameCertifiedPrayerBody(first.en,expected.en)||
+    !/per\s+[oó]mnia\s+s/iu.test(first.lat.split("\n")[1]??"")||
+    !/world without end/iu.test(first.en.split("\n")[1]??"")||
+    !exactFrenchDonorOrder(first.fr,expected.fr))return null;
+ return Object.freeze({...first,fr:expected.fr,
+   sourcePath:first.sourcePath??"Tempora/Pasc1-0:Secreta",
+   sourceEvidence:Object.freeze({
+     schema:IN_ALBIS_SECRET_SOURCE_VERSION,
+     correction:"2026_04_17_INHERITED_FERIA_FRENCH_MACRO_ORDER",
+     parentSource:SOURCE_PATH,commemorationSource:"Sancti/04-17",
+     originalFrenchPreservedInHost:true,
+     principalLatinEnglishPreserved:true,
+     sourceGitBlobSha:source.languages.fr.gitBlobSha
+   })
+ });
+}
