@@ -41,8 +41,8 @@ export function resolveScholaSelectedScoreAccess({itinerary,resolvedMass,form}={
     status:scores.length?"SOURCE_BOUND_PROVISIONAL_1961_NOTATION":"NO_VERIFIED_SCORE_BINDING",
     scores:freeze(scores),notAnApproval:true,actuallySinging:"UNKNOWN"});
  });
- const seenMovements=new Set();
- const ordinary=(itinerary.events??[]).flatMap(event=>{
+ // A Requiem has its own prescribed Ordinary: a saved non-Requiem\n // Kyriale profile must not imply that its setting was appointed here.\n const requiem=resolvedMass?.overlays?.includes("REQUIEM")===true;\n const seenMovements=new Set();
+ const ordinary=(requiem?[]:itinerary.events??[]).flatMap(event=>{
   const movement=event?.trackId;
   if(event?.kind!=="CHANT" || !ORDINARY.has(movement) ||
      seenMovements.has(movement))return [];
