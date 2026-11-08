@@ -7,6 +7,7 @@ import {createOfflineChantEngraver} from "./reader-chant-engraver.js";
 import {ALL_SAINTS_REFERENCE_SCORES} from "./reader-inline-all-saints-reference.js";
 import {createProperReferenceRegistry,PROPER_REFERENCE_LABELS} from "./reader-inline-proper-registry.js";
 import {participationReferenceScoresForParagraph} from "./reader-participation-reference-scores.js";
+import {prefaceCelebrantInlineScoresForParagraph} from "./reader-preface-celebrant-inline-reference.js";
 import {resolveOrationAmenSourceHandoff} from "./reader-oration-amen-source-handoff.js";
 import {sourceBoundFestiveOrationAmenScores} from "./reader-oration-festive-amen-reference.js";
 import {sourceBoundOldSolemnOrationAmenScores} from "./reader-oration-old-solemn-amen-reference.js";
@@ -241,6 +242,9 @@ export function createDatedProperNotationPreview({
    const participatory=participationReferenceScoresForParagraph({
     paragraph:p,paragraphs,form,resolvedMass,massPlan,selectedSettings
    });
+   const celebrantPreface=prefaceCelebrantInlineScoresForParagraph({
+    paragraph:p,paragraphs,form,resolvedMass
+   });
    const orationScores=sourceBoundFestiveOrationAmenScores({
     paragraph:p,paragraphs,form,resolvedMass,selectedSettings
    });
@@ -250,7 +254,7 @@ export function createDatedProperNotationPreview({
    const greetingCandidates=twoGreetingTransferCandidates({
     paragraph:p,paragraphs,form,resolvedMass,selectedSettings:researchSettings
    });
-   for(const score of [...scores,...participatory,...orationScores,...oldSolemnScores,...greetingCandidates]){
+   for(const score of [...scores,...participatory,...celebrantPreface,...orationScores,...oldSolemnScores,...greetingCandidates]){
     const host=doc.createElement("span");host.className="ao-proper-reference-notation";
     host.dataset.referenceScore=score.id;
     host.dataset.approved="false";
