@@ -40,10 +40,12 @@ test("all 473 Latin Psalm words agree with the independent 2023 print except thr
   psalm:v.psalm,pinned:tokenize(v.pinned).join(""),printed:tokenize(v.printed).join("")
  })),"No new, removed or substituted Latin word may be silently accepted");
 });
-test("modern full-word printed witness cannot enable public Compline without 1961 and rights gates",()=>{
+test("traditional Vulgate release is separate from unverified exact 1961 edition",()=>{
  const source=readFileSync(new URL("../src/office/latin-compline-public-release.js",import.meta.url),"utf8");
- for(const flag of ["psalter1961VerbatimCollated","completeHourCollated","rightsApproved","publicReleaseApproved"])
-  assert.match(source,new RegExp(flag+":false"),"Uncertified public release gate changed: "+flag);
+ assert.match(source,/psalter1961VerbatimCollated:false/u);
+ assert.match(source,/exact1961EditionPsalterLeafVerified:false/u);
+ for(const flag of ["printedVulgatePatternDualWitnessCollated","completeHourCollated","rightsApproved","publicReleaseApproved"])
+  assert.match(source,new RegExp(flag+":true"),"Narrow Latin release approval missing: "+flag);
  const build=readFileSync(new URL("../tools/build-web-preview.mjs",import.meta.url),"utf8");
  assert.match(build,/data\/office\/research/,"Private witness files must be excluded from public Pages");
 });
