@@ -244,6 +244,93 @@ for(const [date,mainPath,saintPath] of [
     calendarResolution:witness,form:"LOW"}).reason,"ORATION_SOURCE_INCOMPLETE");
 }
 
+// Original 2026 resolved 1962 sources: generic IV-class ferias,
+// Saturday BVM Masses and a suffix-named III-class sanctoral Mass.
+// All hold exactly one ordinary IV-class saint commemoration. Preserve
+// each named source and its separate LAT/EN/FR orations; Low alone
+// includes the commemoration in the nonconventual Roman Mass.
+const classFourOwners=[
+ ["2026-01-05",":feria:4:w",null,"Sancti/01-01","sancti:01-05:4:r","Sancti/01-05",
+  "GENERIC_IV_CLASS_FERIA_ORDINARY_SANCTORAL_COMMEMORATION"],
+ ["2026-02-03",":feria:4:w",null,"Tempora/Quadp1-0","sancti:02-03:4:r","Sancti/02-03",
+  "GENERIC_IV_CLASS_FERIA_ORDINARY_SANCTORAL_COMMEMORATION"],
+ ["2026-04-17",":feria:4:w",null,"Tempora/Pasc1-0","sancti:04-17:4:r","Sancti/04-17",
+  "GENERIC_IV_CLASS_FERIA_ORDINARY_SANCTORAL_COMMEMORATION"],
+ ["2026-04-23",":feria:4:w",null,"Tempora/Pasc2-0","sancti:04-23:4:r","Sancti/04-23",
+  "GENERIC_IV_CLASS_FERIA_ORDINARY_SANCTORAL_COMMEMORATION"],
+ ["2026-06-02",":feria:4:w",null,"Tempora/Pent01-0a","sancti:06-02:4:r","Sancti/06-02",
+  "GENERIC_IV_CLASS_FERIA_ORDINARY_SANCTORAL_COMMEMORATION"],
+ ["2026-06-09",":feria:4:w",null,"Tempora/Pent02-0r","sancti:06-09:4:r","Sancti/06-09",
+  "GENERIC_IV_CLASS_FERIA_ORDINARY_SANCTORAL_COMMEMORATION"],
+ ["2026-06-15",":feria:4:w",null,"Tempora/Pent03-0r","sancti:06-15:4:w","Sancti/06-15",
+  "GENERIC_IV_CLASS_FERIA_ORDINARY_SANCTORAL_COMMEMORATION"],
+ ["2026-02-14","commune:C10c:4:w","Commune/C10c","Commune/C10c",
+  "sancti:02-14:4:r","Sancti/02-14",
+  "SATURDAY_BVM_IV_CLASS_ORDINARY_SANCTORAL_COMMEMORATION"],
+ ["2026-06-20","commune:C10t:4:w","Commune/C10t","Commune/C10t",
+  "sancti:06-20:4:r","Sancti/06-20",
+  "SATURDAY_BVM_IV_CLASS_ORDINARY_SANCTORAL_COMMEMORATION"],
+ ["2026-07-11","commune:C10t:4:w","Commune/C10t","Commune/C10t",
+  "sancti:07-11:4:r","Sancti/07-11",
+  "SATURDAY_BVM_IV_CLASS_ORDINARY_SANCTORAL_COMMEMORATION"],
+ ["2026-08-01","commune:C10t:4:w","Commune/C10t","Commune/C10t",
+  "sancti:08-01r:4:r","Sancti/08-01r",
+  "SATURDAY_BVM_IV_CLASS_ORDINARY_SANCTORAL_COMMEMORATION"],
+ ["2026-07-21","sancti:07-21r:3:w","Sancti/07-21r","Sancti/07-21r",
+  "sancti:07-21:4:w","Sancti/07-21",
+  "NON_SUNDAY_II_III_CLASS_SINGLE_IV_CLASS_SANCTORAL_COMMEMORATION"]
+];
+for(const [date,mainId,mainPath,properPath,commId,commPath,scope] of classFourOwners){
+ const mainRank=mainId.includes(":3:")?3:4;
+ const source={...base,sourcePath:properPath,
+   calendarCommemorations:[{path:commPath,prayerSourcePath:commPath,
+     name:"Original 1962 IV-class commemorated saint"}]};
+ const resolution={...day,date,day:{
+   main:{id:mainId,rank:mainRank,path:mainPath,title:"Authenticated 1962 principal"},
+   commemorations:[{id:commId,rank:4,path:commPath,privileged:false,
+     title:"Ordinary commemoration"}]},
+   proper:{status:"ready",data:source}};
+ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+   const result=select({proper:source,calendarResolution:resolution,form});
+   assert.equal(result.status,"CERTIFIED",date+"/"+form+"/"+result.reason);
+   assert.equal(result.decision.scope,scope,date+"/"+form+"/scope");
+   const count=form==="LOW"?2:1;
+   assert.equal(result.decision.appliedCount,count-1);
+   for(const [field,slot] of [
+    ["collects","COLLECT_SET"],["secrets","SECRET_SET"],
+    ["postcommunions","POSTCOMMUNION_SET"]
+   ]){
+     assert.equal(result.proper[field].length,count,date+"/"+form+"/"+field);
+     assert.deepEqual(result.proper[field][0],one,"Principal oration altered");
+     for(const language of ["en","fr"]){
+       const selected=properToReaderSlots(result.proper,{language}).slots[slot];
+       assert.equal(selected.status,"READY",date+"/"+form+"/"+language+"/"+slot);
+       assert.equal(selected.data.paragraphs.length,count);
+     }
+   }
+   const printed=assessPrintableProper(resolution,{language:"fr",massForm:form});
+   assert.equal(printed.ok,true,date+"/"+form+": "+printed.reason);
+ }
+ assert.equal(select({proper:{...source,sourcePath:"Tempora/Quad1-0"},
+   calendarResolution:resolution,form:"LOW"}).reason,"RUBRICAL_CLASSIFICATION_PENDING",
+   "Unrelated Proper may never inherit a generic IV-class identity");
+ assert.equal(select({proper:{...source,calendarCommemorations:[
+   {path:commPath,prayerSourcePath:"Sancti/09-07"}]},
+   calendarResolution:resolution,form:"LOW"}).reason,"RUBRICAL_CLASSIFICATION_PENDING");
+ assert.equal(select({proper:{...source,postcommunions:[one]},
+   calendarResolution:resolution,form:"LOW"}).reason,"ORATION_SOURCE_INCOMPLETE");
+ assert.equal(select({proper:source,calendarResolution:resolution,
+   form:"LOW",celebrationId:"votive"}).reason,"ALTERNATE_FORMULARY");
+ assert.equal(select({proper:source,calendarResolution:resolution,
+   form:"LOW",isConventual:true}).reason,"CONVENTUAL_RULES_NOT_VERIFIED");
+ if(scope==="SATURDAY_BVM_IV_CLASS_ORDINARY_SANCTORAL_COMMEMORATION"){
+   const wrongDate="2026-02-13";
+   assert.equal(select({proper:source,calendarResolution:{...resolution,date:wrongDate},
+     form:"LOW"}).reason,"RUBRICAL_CLASSIFICATION_PENDING",
+     "Saturday BVM may never be inferred on a Friday");
+ }
+}
+
 for(const [change,reason] of [
   [{date:"2026-10-12"},"RUBRICAL_CLASSIFICATION_PENDING"],
   [{day:{main:{...day.day.main,rank:1},commemorations:day.day.commemorations}},"RUBRICAL_CLASSIFICATION_PENDING"],
