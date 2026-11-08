@@ -43,7 +43,7 @@ for(const guard of [
  {...saints,overlays:["REQUIEM"]}
 ]){
  const withheld=resolveScholaSelectedScoreAccess({itinerary,resolvedMass:guard,form:"SOLEMN"});
- assert.equal(withheld.proper.every(x=>x.scores.length===0),true);
+ assert.equal(withheld.proper.every(x=>x.scores.length===0),true);\n if(guard.overlays.includes("REQUIEM"))assert.deepEqual(withheld.ordinary,[],\n   "A stored non-Requiem Kyriale programme leaked into the Requiem");
 }
 const low=resolveScholaSelectedScoreAccess({itinerary,resolvedMass:saints,form:"LOW"});
 assert.equal(low.proper.every(r=>r.scores.length===0),true);
