@@ -114,9 +114,18 @@ export function select1962CommemorationsForMassForm({
   const inSeasonAlias=/^tempora\/adv[1-4]-[1-6]$/.test(observedPath)&&
     prayerPath===observedPath.replace(/-[1-6]$/,"-0");
   const admissiblePrayerSource=prayerPath===observedPath||inSeasonAlias;
+  // A IV-class universal feria is a generic Calendar observance without a
+  // physical main.path. Its selected Proper legitimately inherits a Sunday
+  // source. Trust that exact RESOLVED source identity only in the narrow
+  // post-Pentecost ordinary-feria category, never in a saint/votive case.
+  const inheritedPentecostFeria=main?.path==null&&
+    String(main?.id??"")===":feria:4:w"&&Number(main.rank)===4&&
+    /^Tempora\/Pent[0-9]{1,2}-0$/.test(String(data.sourcePath??envelope?.sourcePath??""));
+  const matchedPrincipalSource=inheritedPentecostFeria||
+    canonical(data.sourcePath??envelope?.sourcePath)===canonical(main.path);
   const identified=comms.length===1&&sources.length===1&&
     canonical(namedSource.path)===observedPath&&admissiblePrayerSource&&
-    canonical(data.sourcePath??envelope?.sourcePath)===canonical(main.path)&&
+    matchedPrincipalSource&&
     !only.inseparable&&!namedSource.inseparable;
   if(!identified)return untouched(proper,"RUBRICAL_CLASSIFICATION_PENDING");
   const mainId=String(main.id??""),commId=String(only.id??"");
@@ -192,8 +201,7 @@ export function select1962CommemorationsForMassForm({
   // neither its inherited Sunday text nor the saint name proves a feast.
   // Other IV-class contexts (Saturday BVM, Christmas/Epiphany, special
   // vigils, institute calendars) remain outside this narrow certification.
-  const ordinaryPentecostFeria=!sunday&&Number(main.rank)===4&&
-    /^Tempora\/Pent[0-9]{1,2}-0$/.test(String(main.path??""))&&
+  const ordinaryPentecostFeria=inheritedPentecostFeria&&!sunday&&
     Number(only.rank)===4&&!only.privileged&&
     /^sancti:[0-9]{2}-[0-9]{2}[a-z]*:4:/i.test(commId)&&
     /^Sancti\/[0-9]{2}-[0-9]{2}[a-z]*$/.test(String(only.path??""));
