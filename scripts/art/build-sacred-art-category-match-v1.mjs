@@ -18,6 +18,7 @@ import {fileURLToPath} from "node:url";
 import {SACRED_ART_CURATED_WORKS_V1,SACRED_ART_CATEGORIES_V1} from "../../src/art/sacred-art-taxonomy-v1.js";
 import {RELEASED_MODULE_PAINTINGS} from "../../src/art/released-module-paintings.v1.js";
 import {SACRED_ART_SAINT_SCOPE_EXCEPTIONS_V1,lexicalSaintScopeException} from "./sacred-art-saint-scope-exceptions-v1.mjs";
+import {SACRED_ART_PLACE_TITLE_EXCEPTIONS_V1,lexicalPlaceTitleException} from "./sacred-art-place-title-exceptions-v1.mjs";
 
 const ROOT=resolve(dirname(fileURLToPath(import.meta.url)),"../..");
 const read=p=>JSON.parse(readFileSync(resolve(ROOT,p),"utf8"));
@@ -58,7 +59,7 @@ const categoryForTag=tag=>{
 };
 const groups=gallery.artworks.map(w=>{
  const candidates=(w.subjectCandidates??[]).map(t=>{
-  const exception=lexicalSaintScopeException(w,t.tag);
+  const exception=lexicalSaintScopeException(w,t.tag)||lexicalPlaceTitleException(w,t.tag);
   return {
    tag:t.tag,confidence:t.confidence,
    categoryId:exception?null:categoryForTag(t.tag),
@@ -71,8 +72,13 @@ const groups=gallery.artworks.map(w=>{
   workGroupId:w.workGroupId,title:w.title,artist:w.artist,
   categoryCandidates:categories,
   existingLexicalSubjectTags:candidates,
-  ...(candidates.some(t=>t.subjectScopeExclusion)?{
+  ...(candidates.some(t=>SACRED_ART_SAINT_SCOPE_EXCEPTIONS_V1.some(e=>
+     e.workGroupId===w.workGroupId&&e.excludedTag===t.tag&&e.reason===t.subjectScopeExclusion))?{
    saintSubjectTitleScopeReviewed:true
+  }:{}),
+  ...(candidates.some(t=>SACRED_ART_PLACE_TITLE_EXCEPTIONS_V1.some(e=>
+     e.workGroupId===w.workGroupId&&e.excludedTag===t.tag&&e.reason===t.subjectScopeExclusion))?{
+   placeTitleScopeReviewed:true
   }:{}),
   matchEvidence:"TITLE_AND_ARTIST_LEXICAL_CANDIDATES_ONLY",
   visualSubjectVerification:false,
@@ -92,6 +98,14 @@ for(const exception of SACRED_ART_SAINT_SCOPE_EXCEPTIONS_V1){
  assert.ok(work.existingLexicalSubjectTags.some(t=>t.tag===exception.excludedTag
   && t.categoryId===null&&t.subjectScopeExclusion===exception.reason));
 }
+for(const exception of SACRED_ART_PLACE_TITLE_EXCEPTIONS_V1){
+ const work=groupById.get(exception.workGroupId);
+ assert.ok(work&&work.categoryCandidates.includes("PASSION")&&!work.categoryCandidates.includes("SAINTS"),
+   "San Polo place title cannot imply saint depiction: "+exception.workGroupId);
+ assert.ok(work.existingLexicalSubjectTags.some(t=>t.tag==="SNT-PATRONS"&&t.categoryId===null&&
+  t.subjectScopeExclusion===exception.reason));
+}
+assert.equal(SACRED_ART_PLACE_TITLE_EXCEPTIONS_V1.length,12);
 for(const art of groups)for(const tag of art.categoryCandidates)assert.ok(SACRED_ART_CATEGORIES_V1[tag]);
 
 const released=Object.entries(RELEASED_MODULE_PAINTINGS).map(([moduleId,photo])=>{
@@ -198,7 +212,8 @@ const output={
   "data/artwork/sacred-art-batch1-25-release-progress.v1.json",
   "src/art/released-module-paintings.v1.js",
   "src/art/sacred-art-taxonomy-v1.js",
-  "scripts/art/sacred-art-saint-scope-exceptions-v1.mjs"
+  "scripts/art/sacred-art-saint-scope-exceptions-v1.mjs",
+  "scripts/art/sacred-art-place-title-exceptions-v1.mjs"
  ],
  state:"CATEGORY_INDEX_AND_EXISTING_PLACEMENT_MATCHES_NOT_NEW_EDITORIAL_APPROVAL",
  policies:{
@@ -206,6 +221,7 @@ const output={
   photoRightsIndependentFromArtworkSubject:true,
   neverPromoteLexicalTagToVerifiedDepiction:true,
   retainOriginalLexicalTagsAfterSaintSubjectDisambiguation:true,
+  retainOriginalLexicalTagsAfterPlaceTitleDisambiguation:true,
   preserve267CanonicalSlotAssignments:true,
   protectOriginalCovers:true,
   preserveRosaryDecadeArtwork:true,
@@ -218,6 +234,7 @@ const output={
   researchGroupsWithTitleBasedCategoryCandidates:657,
   researchGroupsStillWithoutTitleCategory:332,
   exactSaintSubjectScopeCorrections:SACRED_ART_SAINT_SCOPE_EXCEPTIONS_V1.length,
+  exactPlaceNameScopeCorrections:SACRED_ART_PLACE_TITLE_EXCEPTIONS_V1.length,
   canonicalPrayerPositions:classifiedSlots.length,
   previouslyReleasedPhotoEntries:released.length,
   manuallyCategorizedCuratedWorks:released.length+pendingMatches.length,
