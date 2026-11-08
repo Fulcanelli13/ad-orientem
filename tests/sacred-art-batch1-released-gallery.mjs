@@ -17,8 +17,8 @@ for(const a of SACRED_ART_RELEASED_GALLERY_V1){
   assert.ok(original);
   assert.equal(a.id,"released-photo:"+a.moduleId);
   assert.equal(a.source,original.source);
-  assert.equal(a.image,"/"+original.image);
-  assert.equal(a.original,"/"+original.original);
+  assert.equal(a.image,original.image);
+  assert.equal(a.original,original.original);
   assert.equal(a.releasePr,original.releasePr);
   assert.equal(a.releaseState,"PREVIOUSLY_RELEASED_EXACT_MODULE_PHOTO");
   assert.equal(a.newEditorialApproval,false);
