@@ -182,6 +182,59 @@ for(const [cue,unit] of [...sourceCues].sort((a,b)=>a[0].localeCompare(b[0]))){
    icon_assignment_count:assignments.filter(x=>x.cue_id===cue&&x.form===form).length});
  }
 }
+// COMPLETE BANK PASS. The earlier 80-file source-mapped export was not the
+// whole bank. Reconcile every original icon in the five source libraries, plus
+// retained older LIVE art. User-rejected exact V4.6 IDs remain metadata only.
+const bankInventory=[];
+const inventorySeen=new Set();
+const lockById=new Map(lock.items.map(x=>[x.id,x]));
+for(const [key,item] of byKey){
+ const primaryId=item.authority==="v46"?"v46_"+key:
+  item.authority==="approved"&&key.startsWith("final_")?key.slice(6):key;
+ const verdict=lockById.get(primaryId);
+ const status=verdict?.status||
+  (item.authority==="oct29"?"APPROVED_CONCEPT_CONDITIONAL":
+   item.authority==="reviewed"?"APPROVED_REVIEWED_VARIANT":
+   item.authority==="canonical"?"CANONICAL_RUNTIME_MEANING":"UNDETERMINED");
+ const rejected=status==="reject";
+ const inclusion=!rejected;
+ if(inclusion)select(key,item.path,
+  "COMPLETE_BANK_"+item.authority+"_"+status);
+ bankInventory.push({key,path:item.path,bank:item.authority,
+  source_lock_id:verdict?.id||"",
+  source_lock_name:verdict?.name||"",
+  source_lock_status:status,
+  archive_decision:rejected?"EXCLUDED_REJECTED":"INCLUDED",
+  runtime_status:item.authority==="canonical"?"CANONICAL_SEMANTIC_ASSET":
+   item.authority==="oct29"?"GESTURE_CONDITIONAL":
+   item.authority==="v46"?"LEGACY_BANK_NOT_PROOF_OF_DISPLAY":
+   "BANK_VARIANT_NOT_PROOF_OF_DISPLAY",
+  github_source:source+item.path});
+ inventorySeen.add(item.path);
+}
+for(const dir of ["live-actors","live-audible","live-audio","live-cue",
+ "live-gesture","live-guidance","live-posture","live-priest-position"]){
+ const rel="assets/active/"+dir;
+ for(const file of fs.readdirSync(path.join(root,rel))){
+  if(!/\.(?:svg|png|webp)$/i.test(file))continue;
+  const loc=rel+"/"+file;
+  if(inventorySeen.has(loc))continue;
+  const suppressed=loc==="assets/active/live-priest-position/ao-live-priest-foot-altar.png";
+  if(!suppressed)select("legacy:"+dir+":"+file,loc,
+   "LEGACY_LIVE_BANK_UNVERIFIED");
+  bankInventory.push({key:"legacy:"+dir+":"+file,path:loc,
+   bank:"legacy-live",source_lock_id:"",source_lock_name:"",
+   source_lock_status:suppressed?"USER_SUPPRESSED_FOOT_CENTER":"LEGACY_NOT_CURRENTLY_VERIFIED",
+   archive_decision:suppressed?"EXCLUDED_SUPPRESSED":"INCLUDED",
+   runtime_status:"ARCHIVAL_LEGACY_NOT_CERTIFIED_AS_CURRENT",
+   github_source:source+loc});
+  inventorySeen.add(loc);
+ }
+}
+csv("08_FULL_BANK_INVENTORY.csv",["key","path","bank","source_lock_id",
+ "source_lock_name","source_lock_status","archive_decision","runtime_status",
+ "github_source"],bankInventory);
+
 const assetRows=[];
 for(const [loc,item] of [...used].sort((a,b)=>a[0].localeCompare(b[0]))){
  const from=path.join(root,loc),to=path.join(out,loc);
@@ -210,14 +263,36 @@ csv("04_MISSAL_PAGES.csv",["form","mode","number","id","title","source_section",
 csv("05_ALL_MOMENTS.csv",["form","cue_id","macro","block","title","latin","english",
  "live_card","live_title","missal_page","missal_title","source_only","icon_assignment_count"],moments);
 csv("06_CANONICAL_MEANINGS.csv",["meaning_id","lane","name","key","path","status"],meanings);
-json("REGISTRY.json",{schema:"AO_MASS_ICON_EXPORT_V1",commit:process.env.GITHUB_SHA||"",
+json("REGISTRY.json",{schema:"AO_MASS_COMPLETE_ICON_EXPORT_V2",bankInventory,commit:process.env.GITHUB_SHA||"",
  files:assetRows,assignments,liveCards:cardRows,missalPages:pageRows,moments,
  canonicalMeanings:meanings,rejectedAssetIDs:lock.permanentlyRejectedExactArtwork.map(x=>x.id)});
-const summary={iconFiles:assetRows.length,sourceCrosswalk:crosswalk.rows.length,
+const summary={iconFiles:assetRows.length,completeBankInventoryRows:bankInventory.length,sourceCrosswalk:crosswalk.rows.length,
  assignmentRows:assignments.length,liveCardsPerForm:cardRows.length/2,
  missalPagesPerForm:pageRows.length/2,cues:sourceCues.size,
  missingArtMeanings:meanings.filter(x=>!x.path).length};
 json("SUMMARY.json",summary);
+const esc=v=>String(v??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;");
+const inventoryByPath=new Map();
+for(const item of bankInventory){
+ const old=inventoryByPath.get(item.path);
+ if(!old||item.bank==="canonical")inventoryByPath.set(item.path,item);
+}
+const cards=assetRows.map(row=>{
+ const entry=inventoryByPath.get(row.path)||{};
+ const status=String(entry.source_lock_status||"SOURCE_ASSIGNED");
+ const bank=String(entry.bank||"SOURCE_ASSIGNED");
+ return '<article data-text="'+esc([row.path,bank,status,row.keys].join(" ").toLowerCase())+
+ '"><div class="preview"><img loading="lazy" src="'+esc(row.path)+'" alt="'+esc(row.path)+'"></div>'+
+ '<div class="details"><strong>'+esc(row.path.split("/").at(-1))+'</strong><small>'+
+ esc(bank+' · '+status)+'</small><code>'+esc(row.path)+'</code></div></article>';
+}).join("\n");
+fs.writeFileSync(path.join(out,"ICON_GALLERY.html"),'<!doctype html><html lang="en"><meta charset="utf-8">'+
+ '<meta name="viewport" content="width=device-width,initial-scale=1"><title>Ad Orientem Mass Icon Bank</title>'+
+ '<style>body{background:#10151b;color:#eff1ed;font-family:system-ui,sans-serif;margin:0;padding:24px}h1{font-family:Georgia,serif}p{color:#abb4bd;max-width:860px}input{background:#242c34;border:1px solid #4f5e69;color:white;padding:12px;border-radius:9px;font-size:16px;width:min(94%,560px)}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;margin-top:22px}article{border:1px solid #34414d;border-radius:12px;overflow:hidden;background:#18222a}.preview{height:155px;display:flex;align-items:center;justify-content:center;background:#e8e8df;padding:14px}.preview img{max-height:130px;max-width:100%;object-fit:contain}.details{padding:12px;display:grid;gap:6px;overflow-wrap:anywhere}small{color:#b7c5ce}code{font-size:11px;color:#c0b59a}article[hidden]{display:none}</style>'+
+ '<h1>Mass · LIVE / MISSAL icon bank</h1><p>Original source assets, not redrawn. Includes canonical and source-assigned art plus labelled approved variants and legacy artwork. The rejection register preserves excluded images as metadata, not active icons.</p>'+
+ '<input id="search" placeholder="Filter filename, bank or approval status" aria-label="Filter icons"><p id="count"></p><div class="grid">'+cards+'</div>'+
+ '<script>const input=document.querySelector("#search"),el=[...document.querySelectorAll("article")];function apply(){let q=input.value.toLowerCase().trim(),n=0;for(let a of el){a.hidden=!a.dataset.text.includes(q);if(!a.hidden)n++}document.querySelector("#count").textContent=n+" of "+el.length+" source files"}input.addEventListener("input",apply);apply()</script></html>');
+
 fs.writeFileSync(path.join(out,"README.md"),[
  "# Ad Orientem: LIVE / MISSAL Mass icon export",
  "Source repository: https://github.com/Fulcanelli13/ad-orientem",
@@ -231,6 +306,8 @@ fs.writeFileSync(path.join(out,"README.md"),[
  "04_MISSAL_PAGES maps source-granular Missal pages.",
  "05_ALL_MOMENTS contains all 1962 ordinary source cues, including text-only.",
  "06_CANONICAL_MEANINGS maps semantic meaning to approved source artwork.",
+ "08_FULL_BANK_INVENTORY separates source bank, archive inclusion and exclusions.",
+ "ICON_GALLERY.html is an offline sortable visual gallery of included files.",
  "REGISTRY.json is the complete machine-readable export.",
  "sources/ retains authoritative registries and the user rejection lock.",
  "",
@@ -239,6 +316,8 @@ fs.writeFileSync(path.join(out,"README.md"),[
  "and local conditions govern display. Null artwork and rejected Foot Centre",
  "substitutions remain text-only. V4.6 SVG files sometimes embed pixel art.",
  "Special-rite overlays are not misrepresented as ordinary 65-card events.",
+ "No rejected or suppressed artwork is copied into this ZIP; excluded identifiers",
+ "are preserved in the register only. Legacy assets are not asserted as active.",
  "",
  ...Object.entries(summary).map(([k,v])=>k+": "+v),
  ""].join("\n"));
