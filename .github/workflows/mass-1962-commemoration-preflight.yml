@@ -27,6 +27,8 @@ on:
       - 'tests/mass-1962-two-commemorations-real-e2e.mjs'
       - 'tests/mass-1962-two-commemorations-phone-next.mjs'
       - 'tests/mass-1962-nov08-resumed-sunday-phone.mjs'
+      - 'src/calendar/ordo-1962-ordinary-rule-review.js'
+      - 'tests/calendar-ordo-1962-rules.mjs'
       - 'src/mass/reader-native-preview.js'
       - 'tests/mass-1962-privileged-witnesses-e2e.mjs'
       - 'tests/mass-1962-peter-paul-source-witness-e2e.mjs'
@@ -62,6 +64,8 @@ on:
       - 'tests/mass-1962-two-commemorations-real-e2e.mjs'
       - 'tests/mass-1962-two-commemorations-phone-next.mjs'
       - 'tests/mass-1962-nov08-resumed-sunday-phone.mjs'
+      - 'src/calendar/ordo-1962-ordinary-rule-review.js'
+      - 'tests/calendar-ordo-1962-rules.mjs'
       - 'src/mass/reader-native-preview.js'
       - 'tests/mass-1962-privileged-witnesses-e2e.mjs'
       - 'tests/mass-1962-peter-paul-source-witness-e2e.mjs'
@@ -83,6 +87,7 @@ jobs:
           node-version: '22'
       - run: node --check src/mass/calendar-preflight-context.js
       - run: node --check src/mass/full-mass-preflight.js
+      - run: node tests/calendar-ordo-1962-rules.mjs
       - run: node tests/mass-1962-commemoration-preflight.mjs
       - run: node tests/mass-1962-form-source-selection.mjs
       - run: node tests/mass-1962-multiple-commemoration-failclosed.mjs
