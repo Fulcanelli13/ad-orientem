@@ -1,5 +1,5 @@
 /**
- * 2013 Red Booklet completeness follow-up: five existing full Communion
+ * 2013 Red Booklet completeness follow-up: seven source-owned complete Communion
  * source prayers discoverable in the Library. No new prayer bodies or
  * assertions of exact 2013 English wording.
  */
@@ -60,10 +60,15 @@ try{
     assert.equal(await reader.count(),1,"Incorrect Communion reader card "+link.id);
     const vernacular=reader.locator('[data-face-v],.aoTP381Reader').first();
     const actual=await vernacular.innerText();
-    const expected=SOURCE[link.sourceId]?.[ui];
+    const expected=SOURCE[link.sourceId]?.[ui]||SOURCE[link.sourceId]?.en||SOURCE[link.sourceId]?.fr;
+    const actualLanguage=SOURCE[link.sourceId]?.[ui]?ui:SOURCE[link.sourceId]?.en?"en":"fr";
     assert.ok(expected?.length>30,"Missing original source text "+link.id+"/"+ui);
     assert.equal(normalize(actual),normalize(expected),"Original prayer body lost or changed "+link.id+"/"+ui);
-    assert.equal(await vernacular.getAttribute("lang"),ui,"Wrong original vernacular face "+link.id+"/"+ui);
+    assert.equal(await vernacular.getAttribute("lang"),actualLanguage,"Wrong source-owned language "+link.id+"/"+ui);
+    if(ui!==actualLanguage){
+     assert.equal(await reader.locator('[data-tp381-source-language-fallback]').count(),1,
+      "No UI warning that the printed prayer is shown in its original English source language");
+    }
     assert.ok(Number.isInteger(state.communionStep));
     checked++;
    }
@@ -111,9 +116,9 @@ try{
    assert.equal(after.route,prior.route);
    assert.equal(after.communionStep,prior.communionStep);
    assert.deepEqual(errors,[],"Browser JavaScript errors "+width+"/"+ui);
-   console.log("PASS "+width+"px "+ui+": all five Communion works open exact source cards; title search and invalid source guard.");
+   console.log("PASS "+width+"px "+ui+": all seven Communion works open exact source cards; title search and invalid source guard.");
   }finally{await context.close()}
  }
- assert.equal(checked,28,"Five Communion plus Suscipe EN and LA in four device/language combinations");
- console.log("PASS 28 source-owned reading-body comparisons, five Communion plus EN/LA Suscipe × 320/390 EN/FR; no copied Red Booklet wording.");
+ assert.equal(checked,36,"Seven Communion plus Suscipe EN and LA in four device/language combinations");
+ console.log("PASS 36 source-owned reading-body comparisons, seven Communion plus EN/LA Suscipe × 320/390 EN/FR; no invented French or exact-2013 collation claims.");
 }finally{await browser?.close().catch(()=>{});await new Promise(done=>server.close(done))}
