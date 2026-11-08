@@ -7,7 +7,8 @@
     "matching_restrictions": "No automatic merge from artist, translated title or iconography. Museum inventory, holding institution, direct historical source or visual composition must support physical identity.",
     "no_release_without_photo_gates": true,
     "owner_rejections_preserved": true,
-    "photo_scope": "All confirmed relationships refer to the physical painting only. Image bytes/crop/permissions unchanged."
+    "photo_scope": "All confirmed relationships refer to the physical painting only. Image bytes/crop/permissions unchanged.",
+    "identity_review_date": "2026-11-08"
   },
   "verified_same_physical_object": [
     {
@@ -139,6 +140,64 @@
       "owner_selected_photo_replaced": false,
       "release_approved": false,
       "ambiguity_guard": "NOT Marcantonio Bassetti's other Saint Sebastian (89×117cm), private collection"
+    },
+    {
+      "selected_id": "RECENT575::002",
+      "group_id": "REVIEW::kmska:nz7obw",
+      "institution": "KMSKA Antwerp",
+      "inventory": "509",
+      "selected_title": "Ecstasy of Saint Teresa",
+      "group_title": "Heilige Theresia van Ávila in extase",
+      "selected_artist": "Gerard Seghers",
+      "museum_attribution": "Gerard Seghers",
+      "selected_commons": "https://commons.wikimedia.org/wiki/File:Gerard_Seghers_-_Ecstasy_of_Saint_Teresa.jpg",
+      "existing_group_source": "http://kmska.be/collection/work/data/nz7obw",
+      "authoritative_museum": "https://vlaamsekunstcollectie.be/collectie/509",
+      "iiif_manifest": "https://iiif.kmska.be/iiif/2/503/manifest.json",
+      "evidence": "The handpicked selected photograph is explicitly KMSKA collection object 509 by Gerard Seghers; institution's exact record states artist, title, 264.7×195.5cm, PURL nz7obw and IIIF manifest 503. Same physical painting.",
+      "status": "SAME_PHYSICAL_PAINTING_CONFIRMED",
+      "photographs_same_bytes": false,
+      "owner_selected_photo_replaced": false,
+      "release_approved": false
+    },
+    {
+      "selected_id": "RECENT575::041",
+      "group_id": "REVIEW::kmska:n22nyq",
+      "institution": "KMSKA Antwerp",
+      "inventory": "107",
+      "selected_title": "The Citizens of Antwerp bring back to Saint Norbert the Monstrance and sacred vessels",
+      "group_title": "De teruggave van de kerkschatten aan de heilige Norbertus",
+      "selected_artist": "Cornelis de Vos",
+      "museum_attribution": "Cornelis de Vos",
+      "selected_commons": "https://commons.wikimedia.org/wiki/File:Cornelis_de_Vos_-_The_Citizens_of_Antwerp_bring_back_to_Saint_Norbert_the_Monstrance_and_sacred_vessels.jpg",
+      "existing_group_source": "http://kmska.be/collection/work/data/n22nyq",
+      "authoritative_museum": "https://vlaamsekunstcollectie.be/en/collection/107",
+      "iiif_manifest": "https://iiif.kmska.be/iiif/2/113/manifest.json",
+      "evidence": "Selected painting labelled KMSKA 107, Cornelis de Vos's scene of Antwerp citizens restituting the sacred vessels to Saint Norbert; institution confirms 1630 painting, inventory 107, 153×249 cm, persistent object n22nyq.",
+      "status": "SAME_PHYSICAL_PAINTING_CONFIRMED",
+      "photographs_same_bytes": false,
+      "owner_selected_photo_replaced": false,
+      "release_approved": false
+    },
+    {
+      "selected_id": "RECENT575::026",
+      "group_id": "REVIEW::kmska:v7cp9u",
+      "institution": "KMSKA Antwerp",
+      "inventory": "883",
+      "selected_title": "The baptism of Christ",
+      "group_title": "Doopsel van Christus",
+      "selected_artist": "Hendrick de Clerck / Hans Rottenhammer (historical joint attribution)",
+      "museum_attribution": "Johann (Hans) Rottenhammer",
+      "selected_commons": "https://commons.wikimedia.org/wiki/File:Hendrick_de_Clerck_-_The_baptism_of_Christ.jpg",
+      "existing_group_source": "http://kmska.be/collection/work/data/v7cp9u",
+      "authoritative_museum": "https://vlaamsekunstcollectie.be/en/collection/883?same=artist",
+      "iiif_manifest": "https://iiif.kmska.be/iiif/2/1158/manifest.json",
+      "evidence": "Selected artwork resolves to KMSKA object 883 and the same IIIF manifest 1158; authoritative museum identifies Johann Rottenhammer, oil on copper 29.5×37.7cm, persistent object v7cp9u. Commons historical credit includes Hendrick de Clerck and Hans Rottenhammer; current museum attribution controls museum field, historical alias is retained.",
+      "status": "SAME_PHYSICAL_PAINTING_CONFIRMED",
+      "historical_attribution_disagreement": "Hendrick de Clerck was the selected Commons attribution; source museum currently credits Johann Rottenhammer. Record both, don't conflate attribution changes with different physical object.",
+      "photographs_same_bytes": false,
+      "owner_selected_photo_replaced": false,
+      "release_approved": false
     }
   ],
   "prohibited_false_merges": [
