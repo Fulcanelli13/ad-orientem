@@ -24,7 +24,7 @@ export const NOV09_THEODORE_SOURCE=Object.freeze({
   }),
   secrets:Object.freeze({
    lat:"Súscipe, Dómine, fidélium preces cum oblatiónibus hostiárum: et, intercedénte beáto Theodóro Mártyre tuo, per hæc piæ devotiónis offícia ad cæléstem glóriam transeámus. Per Dóminum nostrum Iesum Christum, Fílium tuum: Qui tecum vivit et regnat in unitáte Spíritus Sancti, Deus, per ómnia sǽcula sæculórum. Amen.",
-   en:"Accept, O Lord, the prayers and sacrificial gifts of Your faithful people, that, through these rites of love and devotion we may pass over to the glory of heaven. Through our Lord Jesus Christ, Thy Son, who liveth and reigneth with Thee in the unity of the Holy Ghost, God, world without end. Amen.",
+   en:"Receive, O Lord, the prayers of the faithful together with the sacrificial offerings; and, through the intercession of blessed Theodore, Thy Martyr, grant that by these acts of pious devotion we may pass to heavenly glory. Through our Lord Jesus Christ, Thy Son, who liveth and reigneth with Thee in the unity of the Holy Ghost, God, world without end. Amen.",
    fr:"Agréez, Seigneur, les prières des fidèles avec l’offrande des hosties, et faites que le bienheureux Théodore, votre Martyr, intercédant en notre faveur, nous parvenions, en accomplissant ces devoirs d’une pieuse dévotion, à la gloire céleste. Par Notre-Seigneur Jésus-Christ, votre Fils, qui, étant Dieu, vit et règne avec vous dans l’unité du Saint-Esprit, dans tous les siècles des siècles. Ainsi soit-il."
   }),
   postcommunions:Object.freeze({
