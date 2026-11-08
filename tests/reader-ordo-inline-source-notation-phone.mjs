@@ -56,14 +56,15 @@ try{
    api.showSequence(target.sequence);
    const reader=document.querySelector("#ao-r17-native-reader-preview");
    return {error:null,totalCards:api.model.totalCards,
-    canonicalSourceCards:api.sourceModel?.totalCards,visibleTitle:
+    sourceMacros:api.sourceModel?.totalCards,visibleTitle:
     reader?.querySelector('[data-role="section-title"]')?.textContent,
     target:{sequence:target.sequence,sectionId:target.sectionId},
     cueReady:!!reader?.querySelector('[data-cue-id="AO.SM.C0138"]')};
   });
   assert.equal(entry.error,null,JSON.stringify(entry));
-  assert.equal(entry.canonicalSourceCards,65,"Canonical Ordo retains the 65-card source model");
-  assert.ok(entry.totalCards>=65,"MISSAL can expand source blocks but may not lose Mass cards");
+  assert.equal(entry.sourceMacros,30,"The 30 original Mass source macros remain intact");
+  assert.ok(entry.totalCards>=65,"MISSAL may expand units but cannot lose the canonical 65-card Mass");
+  if(mode==="live")assert.equal(entry.totalCards,65,"LIVE stays at exactly 65 cards");
   const rootSelector="#ao-r17-native-reader-preview";
   const state=()=>page.evaluate(rootSelector=>{
    const host=document.querySelector(rootSelector);
@@ -78,7 +79,7 @@ try{
     referenceScores:marks.map(m=>m.dataset.referenceScore),
     literalLatin:host?.querySelector('[data-cue-id="AO.SM.C0138"] .ao-line-primary')
       ?.textContent?.trim()??null,
-    sourceCards:window.__AO_PHONE_PREVIEW?.sourceModel?.totalCards,
+    sourceMacros:window.__AO_PHONE_PREVIEW?.sourceModel?.totalCards,
     width:document.documentElement.scrollWidth,viewport:innerWidth,
    };
   },rootSelector);
@@ -105,7 +106,7 @@ try{
     "Editorial-preview notation is never published-approved music");
    assert.ok(after.literalLatin&&after.literalLatin.length>8,
     "The original bilingual prayer must remain");
-   assert.equal(after.sourceCards,65,"No new card to accommodate notation");
+   assert.equal(after.sourceMacros,30,"No change to the original Mass macro source");
    assert.ok(after.width<=after.viewport+1,"No horizontal phone overflow");
    await page.screenshot({path:resolve(out,
      "ordo-"+form.toLowerCase()+"-"+mode+"-"+width+"-notation.png"),
