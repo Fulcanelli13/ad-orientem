@@ -75,6 +75,15 @@ try{
   await page.waitForFunction(()=>Boolean(
     globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight?.chosenForm==="LOW"
   ),null,{timeout:45000});
+  const selectionDiagnostic=await page.evaluate(()=>({
+    resolved:(()=>{const m=globalThis.AO_CELEBRATION_API?.getResolvedMass?.();
+      return {date:m?.date,celebrationId:m?.celebrationId,
+       requested:m?.requestedCelebrationId,form:m?.form}})(),
+    arch:{id:globalThis.AO_CELEBRATION_ARCH_V1?.actualCelebration?.id,
+      votiveBasis:globalThis.AO_CELEBRATION_ARCH_V1?.votiveBasis},
+    preflight:globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight?.chosenForm
+  }));
+  console.log("ICRSP_NOV08_SELECTION_DIAGNOSTIC "+JSON.stringify(selectionDiagnostic));
   const prepared=await page.evaluate(async()=>{
    const {isExplicitIcrspNov08SundaySelection,projectIcrspNov08SundayProPapaOrations}
     =await import("/src/mass/icrsp-nov08-sunday-pro-papa.js");
