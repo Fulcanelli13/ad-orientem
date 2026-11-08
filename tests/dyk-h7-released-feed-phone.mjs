@@ -23,9 +23,9 @@ fact.pilot_destination_audit.publishable_deep_link=true;
 fact.pilot_destination_audit.exact_in_app_route_verified=true;
 fact.pilot_source_folio.link_browser_verified=true;
 // Choose an actual upcoming date on which the single test-only R34 approval
-// wins the 176-entry (175 public + 1 test-only R34) mixed rotation.
+// wins the 201-entry (200 public + 1 test-only R34) mixed rotation.
 // Inspect 365 days: any interval of at least 2*N-1 days contains a full
-// 151-day aligned cycle, so a valid test-only candidate must appear.
+// 201-day aligned cycle, so a valid test-only candidate must appear.
 const historical=JSON.parse(await readFile(resolve(root,
  "data/did-you-know/weiser-historical-20-publication.v1.json"),"utf8"));
 const r50=JSON.parse(await readFile(resolve(root,
@@ -40,10 +40,12 @@ const h150=JSON.parse(await readFile(resolve(root,
  "data/did-you-know/dyk-h150-originals-25-publication.v1.json"),"utf8"));
 const h175=JSON.parse(await readFile(resolve(root,
  "data/did-you-know/dyk-h175-multisource-25-publication.v1.json"),"utf8"));
-const historicalIds=[...historical.records,...r50.records,...r50b.records,...h100.records,...h125.records,...h150.records,...h175.records].map(x=>x.id);
+const h200=JSON.parse(await readFile(resolve(root,
+ "data/did-you-know/dyk-h200-three-sources-25-publication.v1.json"),"utf8"));
+const historicalIds=[...historical.records,...r50.records,...r50b.records,...h100.records,...h125.records,...h150.records,...h175.records,...h200.records].map(x=>x.id);
 const dayMs=86400000;
 const base=Date.UTC(2026,10,1);
-const testDate=Array.from({length:365},(_,i)=>
+const testDate=Array.from({length:500},(_,i)=>
  new Date(base+i*dayMs).toISOString().slice(0,10))
  .find(date=>dykHomeRotationSlot(date,[...historicalIds,fact.id],DYK_GLOSSARY_FALLBACK_IDS)===fact.id);
 assert.ok(testDate,"Test-only R34 release must receive one legitimate daily slot");
