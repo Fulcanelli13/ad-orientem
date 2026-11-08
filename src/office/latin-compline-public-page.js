@@ -3,7 +3,7 @@
  * This module is only imported from a certification-gated Office route.
  * Source-originated text always enters through textContent.
  */
-import {COMPLINE_CONTEXT} from "./compline-recitation-projection.js";
+import {COMPLINE_CONTEXT,COMPLINE_MINISTER} from "./compline-recitation-projection.js";
 import {loadPublishedLatinCompline}
  from "./latin-compline-public-release.js";
 
@@ -32,6 +32,16 @@ export function mountPublishedLatinCompline(root,{
  }
  contextSelect.value=COMPLINE_CONTEXT.FINAL_PRAYER;
  contextLabel.append(contextSelect);
+ const ministerLabel=create(d,"label",null,"Presiding minister: ");
+ const ministerSelect=create(d,"select");
+ for(const [id,title] of [
+  [COMPLINE_MINISTER.NON_PRIEST,"Solo or lay-led — Dómine exáudi"],
+  [COMPLINE_MINISTER.PRIEST,"Priest presiding — Dóminus vobíscum"]
+ ]){
+  const option=create(d,"option",null,title);option.value=id;ministerSelect.append(option);
+ }
+ ministerSelect.value=COMPLINE_MINISTER.NON_PRIEST;
+ ministerLabel.append(ministerSelect);
  const status=create(d,"p","aoOfPublishedStatus","Preparing Latin Compline");
  status.setAttribute("aria-live","polite");
  const frame=create(d,"article","aoOfFrame");
@@ -46,7 +56,7 @@ export function mountPublishedLatinCompline(root,{
  const sourceNotice=create(d,"a","aoOfProvenance","Divinum Officium Latin source · MIT licence and attribution");
  sourceNotice.href=new URL("src/office/LICENSE-DIVINUM-OFFICIUM-MIT.txt",win.location.href).href;
  sourceNotice.rel="noopener noreferrer";
- section.append(title,note,contextLabel,status,frame,navigation,provenance,sourceNotice);
+ section.append(title,note,contextLabel,ministerLabel,status,frame,navigation,provenance,sourceNotice);
  root.replaceChildren(section);
  let active=null,index=0,sequence=0,disposed=false;
  function render(){
@@ -72,7 +82,7 @@ export function mountPublishedLatinCompline(root,{
   status.textContent="Loading Latin Compline";
   try{
    const result=await loadPublishedLatinCompline({
-    date,context:contextSelect.value,fetchSource
+    date,context:contextSelect.value,minister:ministerSelect.value,fetchSource
    });
    if(disposed||token!==sequence)return;
    if(result.status!=="PUBLIC_LATIN_COMPLINE"){
@@ -91,6 +101,7 @@ export function mountPublishedLatinCompline(root,{
  previous.addEventListener("click",()=>{if(active){index--;render()}});
  next.addEventListener("click",()=>{if(active){index++;render()}});
  contextSelect.addEventListener("change",()=>{void load()});
+ ministerSelect.addEventListener("change",()=>{void load()});
  void load();
  return Object.freeze({dispose(){
   disposed=true;sequence++;root.replaceChildren();
