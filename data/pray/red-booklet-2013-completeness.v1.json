@@ -550,9 +550,33 @@
       "printedPage": 65,
       "pdfPage": 66,
       "section": "devotional",
-      "status": "unresolved",
+      "status": "reader_present",
       "wordingCollatedAgainst2013": false,
-      "discoverableAsIndividualLibraryWork": false
+      "discoverableAsIndividualLibraryWork": true,
+      "owner": {
+        "path": "src/pray/traditional-pray-data.js",
+        "symbol": "holySpiritAugustineTraditional",
+        "route": "pray.communion_treasury"
+      },
+      "discoverabilityProof": {
+        "index": "src/pray/red-booklet-communion-library-links.v1.js",
+        "route": "pray.communion_treasury",
+        "sourceId": "holySpiritAugustineTraditional",
+        "searchSurface": "pray.library",
+        "opensExactSourceCard": true,
+        "languageWitnesses": [
+          "en"
+        ],
+        "independentFrenchSourceAvailable": false,
+        "independentLatinSourceAvailable": false
+      },
+      "sourceWitness": {
+        "edition": 2008,
+        "sourceUrl": "https://archives.sophronius.org/raw-books/Latin%20-%20English%20Mass%20Booklet%20%281%29_text.pdf",
+        "originalBodyProvidedBy": "traditional-pray-data.js",
+        "wordingCollatedAgainst2013": false
+      },
+      "note": "The historical booklet ATTRIBUTES this prayer to Augustine; authenticity of authorship is not established. Printed 2008 EN witness; no 2013 word-for-word collation."
     },
     {
       "id": "our_lady_65",
@@ -560,9 +584,33 @@
       "printedPage": 65,
       "pdfPage": 66,
       "section": "devotional",
-      "status": "unresolved",
+      "status": "reader_present",
       "wordingCollatedAgainst2013": false,
-      "discoverableAsIndividualLibraryWork": false
+      "discoverableAsIndividualLibraryWork": true,
+      "owner": {
+        "path": "src/pray/traditional-pray-data.js",
+        "symbol": "ourLadyAfterCommunionTraditional",
+        "route": "pray.communion_treasury"
+      },
+      "discoverabilityProof": {
+        "index": "src/pray/red-booklet-communion-library-links.v1.js",
+        "route": "pray.communion_treasury",
+        "sourceId": "ourLadyAfterCommunionTraditional",
+        "searchSurface": "pray.library",
+        "opensExactSourceCard": true,
+        "languageWitnesses": [
+          "en"
+        ],
+        "independentFrenchSourceAvailable": false,
+        "independentLatinSourceAvailable": false
+      },
+      "sourceWitness": {
+        "edition": 2008,
+        "sourceUrl": "https://archives.sophronius.org/raw-books/Latin%20-%20English%20Mass%20Booklet%20%281%29_text.pdf",
+        "originalBodyProvidedBy": "traditional-pray-data.js",
+        "wordingCollatedAgainst2013": false
+      },
+      "note": "A printed 2008 English devotional witness is now a complete original source-owned card, searchable in the Library; Latin and French versions are not implied, 2013 wording uncollated."
     },
     {
       "id": "angelus",
