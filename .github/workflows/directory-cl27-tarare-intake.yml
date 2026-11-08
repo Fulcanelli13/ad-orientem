@@ -1,0 +1,29 @@
+name: CL27 Tarare new-site intake hold guard
+
+on:
+  pull_request:
+    paths:
+      - 'data/directory/research/cl27-tarare-new-site-20261108/**'
+      - 'tests/tlm-cl27-tarare-new-site-intake.mjs'
+      - '.github/workflows/directory-cl27-tarare-intake.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tarare-held-site:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify exact nine dates, absent CL2 anchor and no live timetable
+        run: node tests/tlm-cl27-tarare-new-site-intake.mjs
+      - name: Ensure held intake is excluded from the curated GitHub Pages release
+        run: |
+          node tools/build-web-preview.mjs
+          test ! -f dist/web-preview/data/directory/research/cl27-tarare-new-site-20261108/intake.v1.json
+          test -f dist/web-preview/data/directory/cl27-dated-mass-programme-paita-20261108.v1.json
