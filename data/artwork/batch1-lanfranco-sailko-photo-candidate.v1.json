@@ -1,0 +1,88 @@
+{
+  "schema": "AO_SACRED_ART_BATCH1_LANFRANCO_PHOTOGRAPHIC_REPLACEMENT_CANDIDATE_V1",
+  "prepared": "2026-11-08",
+  "intent": "Recover exactly identified high-resolution photograph for already-approved Lanfranco painting; user photo selection remains a separate gate.",
+  "painting": {
+    "id": "artwork-pending:09",
+    "title": "The Miracle of the Loaves and Fishes",
+    "artist": "Giovanni Lanfranco",
+    "institution": "National Gallery of Ireland",
+    "inventory": "NGI.72",
+    "objectURL": "https://onlinecollection.nationalgallery.ie/objects/10345/the-miracle-of-the-loaves-and-fishes",
+    "dimensions_cm": [
+      229,
+      426
+    ],
+    "existing_prayer_slot_count": 3,
+    "original_location": "Chapel of the Blessed Sacrament, San Paolo fuori le Mura, Rome"
+  },
+  "existing": {
+    "selection": "WGA12454 Commons file, already selected; not superseded",
+    "commonsTitle": "Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg",
+    "expected_dimensions_px": [
+      1285,
+      683
+    ],
+    "expected_sha256": "f9a4b9f5f180138b438c61da836ac176a21b9162e736da7372c07e5ea6f74ffa"
+  },
+  "proposed": {
+    "commonsPage": "https://commons.wikimedia.org/wiki/File:Giovanni_lanfranco,_moltiplicazione_dei_pani_e_dei_pesci,_1624-25,_01.jpg",
+    "commonsTitle": "Giovanni lanfranco, moltiplicazione dei pani e dei pesci, 1624-25, 01.jpg",
+    "photographer": "Sailko",
+    "photographDate": "2020-01-28",
+    "originalPixelsReported": [
+      4914,
+      2802
+    ],
+    "sourceLicense": "CC BY 3.0 Unported",
+    "licenseURI": "https://creativecommons.org/licenses/by/3.0/",
+    "licenseAllowsCommercialReuse": true,
+    "licenseAllowsDerivatives": true,
+    "attributionMustCreditPhotographer": true,
+    "licenseEvidence": "https://commons.wikimedia.org/wiki/File:Giovanni_lanfranco,_moltiplicazione_dei_pani_e_dei_pesci,_1624-25,_01.jpg",
+    "museumPhotoOfficialLicenseUnverified": true,
+    "supportedExactPhysicalPainting": true,
+    "userPhotoHandpicked": false,
+    "userPhotoReplacementApproved": false
+  },
+  "qa_policy": {
+    "source_byte_download": true,
+    "matching_source_filename_required": true,
+    "short_side_min_px": 1200,
+    "max_bytes": 25000000,
+    "source_sha256_required": true,
+    "aspect_diff_max_fraction": 0.1,
+    "output": "artifacts/sacred-art-batch1-lanfranco",
+    "private_artifacts_only": true,
+    "preserve_original_composition": true,
+    "produce_full_frame_webp_preview": true,
+    "produce_edited_crop": false,
+    "source_photo_credit": "Photo: Sailko · CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/). New WebP edition resized from original. Artwork: Giovanni Lanfranco, NGI.72.",
+    "staging_in_app": false,
+    "commit_binary_to_app": false,
+    "publication_forbidden": true
+  },
+  "cer_ezo_hold": {
+    "id": "artwork-pending:03",
+    "museum": "Museo de Huesca",
+    "inventory": "00029",
+    "author": "Mateo Cerezo (attribution historic ambiguity)",
+    "existing_resolution_px": [
+      567,
+      479
+    ],
+    "exact_museum_source": "https://ceres.mcu.es/pages/ResultSearch?MuseumsRolSearch=1&MuseumsSearch=&hipertextSearch=1&listaMuseos=null&search=advanced&simpleSearch=0&txtSimpleSearch=Lienzo+%28Material%29",
+    "source_evidence": "https://commons.wikimedia.org/wiki/Category:Religious_paintings_in_the_Museo_de_Huesca",
+    "selected_photo_unchanged": true,
+    "no_superresolution_upscaling": true,
+    "museum_image_rights_unverified": true,
+    "status": "HOLD_ORIGINAL_IMAGE_LOW_RESOLUTION_AND_NO_SOURCE_QUALITY_RECOVERY"
+  },
+  "promotion_gate": {
+    "owner_approval_for_specific_Sailko_photo_required": true,
+    "explicit_approval_of_full_frame_display_required": true,
+    "attribution_and_CC_BY_3_0_credit_in_app_required": true,
+    "original_selection_must_remain_until_approval": true,
+    "replacement_allowed_now": false
+  }
+}
