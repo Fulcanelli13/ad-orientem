@@ -126,21 +126,35 @@ test("1961 §147 and Office §56: last-prayer Compline substitutes examen for ON
  const final=projectComplineRecitation(raw,{context:COMPLINE_CONTEXT.FINAL_PRAYER});
  assert.equal(final.status,"PRIVATE_SOURCE_TEXT_REVIEW",final.reason);
  assert.equal(final.eventCount,42,"complete original source register preserved");
- assert.equal(final.frames.length,raw.frames.length);
+ assert.equal(final.frames.length,raw.frames.length-2,
+  "1961 §65 removes post-Nunc Kyrie and second Pater");
+ assert.equal(final.sourceEventCount,42);
+ assert.equal(final.readingEventCount,40);
+ assert.equal(final.readingEvents.length,40);
+ assert.equal(final.postCanticleKyrieOmitted,true);
+ assert.equal(final.postCanticlePaterOmitted,true);
+ assert.equal(final.blessingAmensRestoredFromPinnedSource,2);
+ assert.ok(final.frames.filter(f=>f.kind==="BLESSING").every(f=>
+  f.texts.la.at(-1)==="R. Amen."));
+ assert.ok(final.frames.every(f=>f.sourceId!=="Psalterium/Common/Prayers#Kyrie"&&
+  f.sourceId!=="Psalterium/Common/Prayers#Pater noster Et"));
  assert.equal(final.openingPaterOmitted,true);
  assert.equal(final.editorialRubricFrames,1);
  assert.equal(final.frames.filter(f=>f.kind==="EXAMINATION").length,1);
  assert.equal(final.frames.some(f=>f.kind==="PATER_NOSTER"&&
   f.sourceId==="Psalterium/Common/Prayers#Pater noster"),false);
- assert.ok(final.frames.some(f=>f.kind==="PATER_NOSTER"&&
-  f.sourceId==="Psalterium/Common/Prayers#Pater noster Et"),
-  "later Compline Pater noster must remain");
+ assert.equal(final.frames.some(f=>f.sourceId==="Psalterium/Common/Prayers#Pater noster Et"),false,
+  "the printed 1961 Compline ordinary never has a post-Nunc Pater");
  assert.equal(final.frames.find(f=>f.kind==="EXAMINATION").originalSourceOnly,false);
  assert.equal(final.published,false);
  const other=projectComplineRecitation(raw,{context:COMPLINE_CONTEXT.OTHER_TIME});
  assert.equal(other.status,"PRIVATE_SOURCE_TEXT_REVIEW");
  assert.equal(other.frames.some(f=>f.sourceId==="Psalterium/Common/Prayers#Pater noster"),true);
  assert.equal(other.editorialRubricFrames,0);
+ assert.equal(other.readingEventCount,40);
+ assert.equal(other.frames.some(f=>f.sourceId==="Psalterium/Common/Prayers#Kyrie"),false);
+ assert.equal(other.frames.some(f=>f.sourceId==="Psalterium/Common/Prayers#Pater noster Et"),false);
+ assert.equal(other.blessingAmensRestoredFromPinnedSource,2);
  assert.equal(other.published,false);
  assert.equal(projectComplineRecitation(raw,{context:"CHOIR_UNDEFINED"}).status,"WITHHELD");
 });

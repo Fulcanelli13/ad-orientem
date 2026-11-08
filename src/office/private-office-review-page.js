@@ -110,8 +110,10 @@ export function mountPrivateOfficeReview(root,{win=globalThis,fetchSource=win.fe
    }
    active=result;index=0;
    state.textContent=result.hour+" · civil "+result.civilDate+
-    " · Office "+result.officeDate+" · "+result.eventCount+
-    " source events · "+(result.openingPaterOmitted?"last-prayer examen":"recitation as selected")+
+    " · Office "+result.officeDate+" · "+
+    (result.readingEventCount?result.readingEventCount+" printed-ordinary moments · ":"")+
+    result.eventCount+" source events · "+
+    (result.openingPaterOmitted?"last-prayer examen":"recitation as selected")+
     " · NOT certified for public prayer";
    show();
   }catch(err){if(token===serial)state.textContent="Source unavailable: "+String(err?.message??err)}
