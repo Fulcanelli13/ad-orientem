@@ -6,6 +6,7 @@ on:
     paths:
       - data/pray/red-booklet-2013-completeness.v1.json
       - src/pray/red-booklet-communion-library-links.v1.js
+      - src/pray/red-booklet-suscipe-library-link.v1.js
       - src/pray/presentation-runtime.js
       - src/pray/traditional-pray-runtime.js
       - tests/pray-red-booklet-2013-completeness.mjs
@@ -16,6 +17,7 @@ on:
     paths:
       - data/pray/red-booklet-2013-completeness.v1.json
       - src/pray/red-booklet-communion-library-links.v1.js
+      - src/pray/red-booklet-suscipe-library-link.v1.js
       - src/pray/presentation-runtime.js
       - src/pray/traditional-pray-runtime.js
       - tests/pray-red-booklet-2013-completeness.mjs
@@ -45,5 +47,5 @@ jobs:
           node-version: '22'
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
-      - name: Compare five complete Communion source bodies through Library on 320/390px EN/FR
+      - name: Compare five Communion prayers and Suscipe EN/LA originals in Library on 320/390px EN/FR
         run: node tests/pray-red-booklet-2013-communion-library-phone.mjs
