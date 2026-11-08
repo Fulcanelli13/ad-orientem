@@ -43,7 +43,7 @@ export function latinComplineReleaseEligibility({
     !LATIN_COMPLINE_RELEASE.completeHourCollated||
     !LATIN_COMPLINE_RELEASE.rightsApproved||
     !LATIN_COMPLINE_RELEASE.publicReleaseApproved)
-  return empty("PRINTED_PSSALTER_COMPLETENESS_RIGHTS_OR_RELEASE_UNCERTIFIED");
+  return empty("PRINTED_PSALTER_COMPLETENESS_RIGHTS_OR_RELEASE_UNCERTIFIED");
  return Object.freeze({
   schema:LATIN_COMPLINE_RELEASE_SCHEMA,status:"ELIGIBLE",
   date,hour,calendarScope,sourceRevision:PIN,
@@ -79,7 +79,7 @@ export async function loadPublishedLatinCompline({
     projected.availableLanguages[0]!=="la")
   return empty("COMPLETE_PRINTED_LATIN_READING_UNRESOLVED");
  return Object.freeze({
-  ...projected,schema:LATIN_COMPLINE_RELEASE_SCHEMA,
+  ...projected,schema:LATIN_COMPLINE_RELEASE_SCHEMA,reviewOnly:false,
   status:"PUBLIC_LATIN_COMPLINE",published:true,publishable:true,
   readingPublished:true,rightsApproved:true,liturgicallyCertified:true,
   sourceTextReleased:true,releaseDate:LATIN_COMPLINE_RELEASE.date
