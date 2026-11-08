@@ -114,6 +114,17 @@ def main():
     for x in verified+negative:
         if x["selected_id"] not in selectedby or x["group_id"] not in workby:
             raise ValueError("decision references nonexistent artwork "+str(x))
+    # The identity link must point at the exact selected photograph and at the
+    # same pre-existing operational group source, never an invented image URL.
+    for link in verified:
+        owner=selectedby[link["selected_id"]]
+        group=workby[link["group_id"]]
+        if link.get("selected_commons")!=owner["handpickedCommonsUrl"]:
+            raise ValueError("Selected original photograph provenance mismatch: "+link["selected_id"])
+        if link.get("existing_group_source")!=group["selectedSourceUrl"]:
+            raise ValueError("Existing group source provenance mismatch: "+link["group_id"])
+    if len({x["selected_id"] for x in verified})!=len(verified):
+        raise ValueError("A handpicked selection has multiple physical object links; adjudicate before linking")
     for x in negative:
         assert selectedby[x["selected_id"]]["title"] and workby[x["group_id"]]["artworkTitle"]
     source_records_by_group=defaultdict(list)
