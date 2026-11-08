@@ -38,12 +38,14 @@ export async function openReleasedSacredArtTarget(win,{workId,kind,id}={}){
     // No mutation of bead corpus, mystery ordering or source text occurs.
     const outcome=await win?.AO_MODULES?.open?.("pray.rosary",{
      sourceObject:{type:"rosary",mysteryId:id},
-     returnContext:null
+     returnContext:null,
+     onCloseReturn:()=>{void Promise.resolve(shell.navigate("home")).catch(()=>{})}
     });
     accepted=outcome?.ok===true;
    }else if(kind==="bibleAtlas"){
     accepted=(await win?.AO_FIND_APP_V1?.openAtlasEvent?.(
-      "biblical:event:"+id
+      "biblical:event:"+id,
+      {onCloseReturn:()=>{void Promise.resolve(shell.navigate("home")).catch(()=>{})}}
     ))===true;
    }
   }
