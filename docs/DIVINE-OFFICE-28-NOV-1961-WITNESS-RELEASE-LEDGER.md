@@ -142,3 +142,50 @@ currently staged native public reader's release gate closed.
 The next meaningful step is a normalized **full-word** printed collation
 that documents every substantive discrepancy, followed by independent
 review of the complete dated Hour and a narrow publication decision.
+
+
+## 8 November — full-word printed Saturday Psalter reconciliation
+
+The previous 41-stich **incipit** register has been superseded as a
+completeness test by an independently reviewed **full-line** Latin
+witness: `data/office/research/compline-saturday-diurnale-2008-full-line-witness.json`.
+This transcribes all 19 recitation lines of Psalm 87 and all 22 lines of
+Psalm 102 (segments 1–12 / 13–22), from the accessible text of the
+2008 Siefker *Diurnale Romanum*, Saturday Compline, printed pp. 349–352.
+Witness: https://www.scribd.com/document/761102039/Breviarium-romanum-Breviario-romano-1961-1962
+
+The complete source-vs-print comparison checks **473 Latin word tokens**
+across all **41/41 recitation stichs**, not just the first few words.
+**Zero substantive word or ordering discrepancies** remain after
+documented Latin orthographic normalization. Exactly **two non-identical
+literal rows** remain:
+
+- Psalm 102, recitation row 14: print `fœnum` versus pinned `fænum`.
+- Psalm 102, recitation row 20: print `Angeli` versus pinned `Ángeli`.
+
+Required CI test:
+`tests/divine-office-saturday-printed-full-word.mjs`. It checks full
+word-order equality, expects exactly those two literal differences, and
+explicitly detects omissions **inside** verses. Its token threshold is
+the actual 473, not the erroneous 540 initially used in a test; no
+Latin prayer text was changed to fix that test. The register remains
+outside curated GitHub Pages.
+
+### Rights and specificity
+
+At the exact pinned Divinum Officium source commit
+`126a07f91ede04664108abb6fb20ace3f4de14b9`, the GitHub `LICENSE`
+is MIT (copyright 2026 Divinum Officium); its original credits describe
+the Latin Vulgate as public-domain material. The maintainers also
+confirmed general liturgical text reuse on 5 March 2026, discussion
+#5071. We now ship the original full MIT licence and pinned attribution
+as `src/office/LICENSE-DIVINUM-OFFICIUM-MIT.txt`, linked directly from
+the staged Latin reader. None of this grants public release of
+French Propers or English hymn translations.
+
+The **2008 printed edition** is a complete, independent
+1961-pattern Latin textual witness but **not a facsimile of the 1961
+Mame psalter**. Consequently keep
+`psalter1961VerbatimCollated=false`. Also leave the separate
+**complete dated Hour / release approval** gates closed until explicitly
+resolved; green source and UI CI alone do not constitute certification.
