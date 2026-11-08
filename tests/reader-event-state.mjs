@@ -82,14 +82,14 @@ console.log("reader event state: PASS");
 const canonicalFixture=name=>({events:[{id:"MC-TST-"+
   String(READER_EVENT_FILES.indexOf(name)+1).padStart(3,"0"),
   actor:"PRIEST",title:"Source-owned test event"}]});
-const response=(status,name)=>({ok:status===200,status,
+const fakeHttpResponse=(status,name)=>({ok:status===200,status,
   json:async()=>canonicalFixture(name)});
 const visits=new Map();
 const recovered=await loadCanonicalReaderEvents({
   fetchImpl:async url=>{
     const name=String(url).split("/").pop();
     const n=(visits.get(name)??0)+1;visits.set(name,n);
-    return response(name==="mc-events-06.v1.json"&&n===1?503:200,name);
+    return fakeHttpResponse(name==="mc-events-06.v1.json"&&n===1?503:200,name);
   }
 });
 assert.equal(recovered.length,6,"Reader must have all six event chunks");
@@ -101,8 +101,8 @@ for(const status of [404,503]){
   let requests=0;
   await assert.rejects(loadCanonicalReaderEvents({fetchImpl:async url=>{
     const name=String(url).split("/").pop();
-    if(name==="mc-events-06.v1.json"){requests++;return response(status,name)}
-    return response(200,name);
+    if(name==="mc-events-06.v1.json"){requests++;return fakeHttpResponse(status,name)}
+    return fakeHttpResponse(200,name);
   }}),new RegExp("Unable to load canonical Mass events \\("+status+"\\)"));
   assert.equal(requests,status===503?3:1,
     "Permanent 404 must fail immediately; 503 must fail after finite retries");
@@ -112,7 +112,7 @@ await assert.rejects(loadCanonicalReaderEvents({
    const name=String(url).split("/").pop();
    if(name==="mc-events-06.v1.json")return {ok:true,status:200,
      json:async()=>{throw new SyntaxError("Bad event JSON")}};
-   return response(200,name);
+   return fakeHttpResponse(200,name);
  }
 }),/Bad event JSON/,
 "Malformed canonical event source cannot be suppressed by retry");
@@ -121,7 +121,7 @@ await assert.rejects(loadCanonicalReaderEvents({fetchImpl:async url=>{
  const name=String(url).split("/").pop();
  if(name==="mc-events-06.v1.json"){canceled++;
    throw Object.assign(new Error("cancel"),{name:"AbortError"})}
- return response(200,name);
-}}),/Unable to load canonical Mass events \\(network\\)/);
+ return fakeHttpResponse(200,name);
+}}),/Unable to load canonical Mass events \(network\)/);
 assert.equal(canceled,1,"Aborted load must not continue after navigation");
 console.log("reader canonical event loader: transient 503 recovered; persistent 503, 404, malformed source and abort fail closed");
