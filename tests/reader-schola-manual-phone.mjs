@@ -726,6 +726,58 @@ try{
    assert.equal(overflow,false,"Schola controls overflow narrow phone");
    assert.deepEqual(errors,[],"Runtime page errors");
    await page.screenshot({path:resolve(out,"live-schola-correction-"+width+".png"),animations:"disabled"});
+
+   // Epiphany (6 January): exact source appointment and FIVE independent
+   // 1961 archived melodies. The 1962 Graduale includes the Alleluia in the
+   // same source paragraph; its Mode II "Vidimus" must NOT borrow the
+   // separate Mode IV "Vidimus" Communion score.
+   await page.goto("http://127.0.0.1:4297/tests/fixtures/reader-phone-harness.html?production=1&aoLiveCards=65&scoreProper=epiphany",
+     {waitUntil:"networkidle",timeout:55000});
+   await page.waitForFunction(()=>document.documentElement.dataset.harnessReady==="true",
+     null,{timeout:25000});
+   const epiphanyClock=await page.evaluate(()=>({
+     priest:window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId,
+     cue:window.__AO_PHONE_PREVIEW.getActiveCue(),
+     choir:window.__AO_PHONE_PREVIEW.getScholaState().trackId
+   }));
+   await page.locator("[data-schola-events-open]").click();
+   const epiphanyMenu=page.locator('[data-role="schola-events-menu"]');
+   const epiphanyScores=await epiphanyMenu.locator("[data-schola-score-open]").evaluateAll(buttons=>
+     buttons.map(b=>b.dataset.scholaScoreOpen));
+   assert.deepEqual(epiphanyScores,
+     ["GREGOBASE-403","GREGOBASE-205","GREGOBASE-524","GREGOBASE-1147","GREGOBASE-918"],
+     width+"px Epiphany did not render exactly five distinct source-owned 1961 melodies");
+   assert.equal(new Set(epiphanyScores).size,5,"Epiphany score was duplicated across chant roles");
+   assert.equal(await epiphanyMenu.locator('[data-schola-proper-score-state="NO_VERIFIED_SCORE_BINDING"]').count(),0,
+     "Verified Epiphany scores wrongly marked as unavailable");
+   assert.equal(await epiphanyMenu.locator('[data-schola-proper-track="GRADUAL"] [data-schola-score-open="GREGOBASE-524"]').count(),1,
+     "Printed 1962 Graduale lost its independent Alleluia score");
+   assert.equal(await epiphanyMenu.locator('[data-schola-proper-track="COMMUNION"] [data-schola-score-open="GREGOBASE-918"]').count(),1,
+     "Mode IV Communion inherited the different Mode II Alleluia");
+   const alleluia=epiphanyMenu.locator('[data-schola-score-open="GREGOBASE-524"]');
+   await alleluia.evaluate(b=>b.closest("details").open=true);
+   await alleluia.click();
+   const epiphanyModal=page.locator('[data-schola-score-modal="GREGOBASE-524"]');
+   await epiphanyModal.waitFor({state:"visible"});
+   await page.waitForFunction(()=>
+     document.querySelector('[data-schola-score-modal="GREGOBASE-524"]')?.dataset.scholaScoreReady==="true",
+     null,{timeout:25000});
+   assert.ok(await epiphanyModal.locator("svg").count()>0,
+     "Epiphany Alleluia did not engrave locally from pinned 1961 archive");
+   assert.match(await epiphanyModal.innerText(),/NOT independently musically approved/);
+   assert.match(await epiphanyModal.locator('a').getAttribute("href"),/chant\.php\?id=524$/);
+   await page.screenshot({path:resolve(out,"schola-epiphany-five-scores-"+width+".png"),animations:"disabled"});
+   await epiphanyModal.locator("[data-schola-score-close]").click();
+   assert.equal(await page.locator("[data-schola-score-modal]").count(),0);
+   assert.deepEqual(await page.evaluate(()=>({
+     priest:window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId,
+     cue:window.__AO_PHONE_PREVIEW.getActiveCue(),
+     choir:window.__AO_PHONE_PREVIEW.getScholaState().trackId
+   })),epiphanyClock,"Epiphany notation changed Mass card or independent Schola time");
+   assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),false,
+     "Epiphany notation caused horizontal phone overflow");
+   assert.deepEqual(errors,[],"Epiphany source notation produced uncaught page errors");
+
   }finally{await ctx.close();}
  }
  console.log("PASS LIVE Schola: manual phrase clock, no early Benedictus release, 320/390 phone layout, no Mass focus movement");
