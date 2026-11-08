@@ -34,7 +34,7 @@ test("41 complete printed Latin Saturday psalm lines match the pinned source lex
   }
  }
  assert.equal(count,41);
- assert.ok(tokenCount>540,"full-word collation must not collapse to 41 incipits");
+ assert.equal(tokenCount,473,"all words across 41 printed recitation stichs must be tested");
  assert.deepEqual(differences,[{psalm:102,row:14},{psalm:102,row:20}]);
  assert.deepEqual(witness.expectedOrthographicDifferences.map(x=>({
   psalm:x.psalm,row:x.row
