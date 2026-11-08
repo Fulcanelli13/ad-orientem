@@ -698,6 +698,13 @@ function rememberCommunionPurpose(phase,group,id){
  try{globalThis.localStorage?.setItem(COMMUNION_PURPOSE_KEY,JSON.stringify(next))}catch{}
 }
 function communionStages(){return S.communion==="after"?COMMUNION_AFTER:COMMUNION_BEFORE}
+function communionDeepLinkTarget(sourceId){
+ for(const [phase,stages] of [["before",COMMUNION_BEFORE],["after",COMMUNION_AFTER]]){
+  const index=stages.findIndex(row=>row[0]===sourceId);
+  if(index>=0)return {phase,index};
+ }
+ return null;
+}
 function communionPurposePicker(phase,stages,activeId){
  const groups=COMMUNION_PURPOSE_INDEX[phase],current=prayerPurposeFor(COMMUNION_PURPOSE_INDEX,phase,activeId)||groups[0];
  const idLabels=new Map(stages.map(([id,en,fr])=>[id,L(en,fr)]));
@@ -1007,6 +1014,11 @@ function render(){
 }
 function open(route,opts={}){
   if(!ROUTES[route])return false;
+  // A specific source-owned prayer must open at its real card, not the
+  // default first card; unknown IDs fail closed without navigating.
+  const communionTarget=route==="pray.communion_treasury"&&opts.communionPrayer!==undefined
+    ?communionDeepLinkTarget(opts.communionPrayer):null;
+  if(route==="pray.communion_treasury"&&opts.communionPrayer!==undefined&&!communionTarget)return false;
   resetDailySessionTimer();
   OPEN_RECEIPT=captureObservedModuleOrigin(window,"pray");
   OPEN_OPTS={...opts};MASS_HANDOFF_BUSY=false;
@@ -1022,7 +1034,7 @@ function open(route,opts={}){
     ...(route==="pray.good_death"?{goodDeathStep:0}:{}),
     ...(route==="pray.meal_prayers"?{mealStep:0}:{}),
     ...(route==="pray.sacred_heart"?{sacredHeart:HEART_STAGES.includes(opts.prayer) ? opts.prayer : "litany"}:{}),
-    ...(route==="pray.communion_treasury"?{communion:"before",communionStep:0}:{}),
+    ...(route==="pray.communion_treasury"?{communion:communionTarget?.phase||"before",communionStep:communionTarget?.index??0}:{}),
     ...(route==="pray.holy_name_litany"?{litanyMode:"guided",litanyStep:0}:{})};
   BASE_OPEN("pray.hub",opts);
   render();return true;
