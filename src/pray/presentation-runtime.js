@@ -4920,12 +4920,26 @@ function onClick(e){
   const work=redBookletPrivateHistoricalWork(b.dataset.p435930RedHistorical);
   if(!work||view!=='library'||LIB.open||LIB.cat!=='all'||
      (LIB.subject!==work.subject&&!(LIB.subject==='all'&&LIB.q.trim())))return;
+  clearInternalPrayerRouteErrors();
+  const receipt=captureResume();
+  if(work.route==='pray.confession'){
+   // Confession and the Library share this runtime: navigate in place.
+   // Calling the outer open API during an active Library event can
+   // re-enter/reset the source reader, losing a selected historical card.
+   // This only selects a PRIVATE prayer, never a sacramental stage or record.
+   pushView();
+   view='confession';
+   CONF=freshConfessionState();
+   CONF.stage=work.stage;
+   CONF.historicalPrayer=work.sourceId;
+   CONF.returnPrayerSnapshot=receipt;
+   return render();
+  }
   const openSource=window.AO_PRAY_V435930?.open;
   if(typeof openSource!=='function')return showInternalPrayerRouteError(b,work.route);
   try{
-   const receipt=captureResume();
-   const option=work.route==='mass.prepare'?{massPrayer:work.sourceId}:{historicalPrayer:work.sourceId};
-   const opened=openSource(work.route,{...option,returnContext:PRAY_CTX,returnPrayerSnapshot:receipt});
+   const opened=openSource(work.route,{massPrayer:work.sourceId,
+    returnContext:PRAY_CTX,returnPrayerSnapshot:receipt});
    if(opened!==true&&opened?.ok!==true)showInternalPrayerRouteError(b,work.route);
   }catch(error){console.error('Historic private prayer entry failed',error);showInternalPrayerRouteError(b,work.route);}
   return;
