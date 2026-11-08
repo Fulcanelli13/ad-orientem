@@ -189,3 +189,29 @@ Mame psalter**. Consequently keep
 `psalter1961VerbatimCollated=false`. Also leave the separate
 **complete dated Hour / release approval** gates closed until explicitly
 resolved; green source and UI CI alone do not constitute certification.
+
+## Independent 2023 full-word Latin concordance — 8 November 2026
+
+The complete source-text word sequences for Saturday Psalm 87 (**223 words**)
+and Psalm 102 (**250 words**) have been compared with the Latin columns
+of the independently published *Psalterium Romanum iuxta ritum 1962*
+(Consociatio Christi Regis, 2023), Saturday Compline, printed pp. **177–179**.
+
+**473 words agree in order after typographic normalization**, allowing
+exactly three documented spelling variants: `sepulchris`/`sepulcris`
+and `sepulchro`/`sepulcro` (Psalm 87), and `fœnum`/`fænum`
+(Psalm 102). Accent marks, ligatures and punctuation are not used to
+hide added or missing words. The full transcribed print witness is
+preserved in
+`data/office/research/compline-saturday-printed-2023-fullword-witness.v1.json`;
+`tests/divine-office-saturday-fullword-2023-witness.mjs` enforces all
+473 tokens, the exact allowed variants and unchanged public withholding
+flags in the Office CI. The printed page's physical text wrapping is
+**not** assumed to match the source's 19/22 recitation stichs.
+
+Printed witness: https://ccregis.org/psalter_lt-en.pdf (pp. 177–179).
+This is independent of the already tested 2008 *Diurnale* full-word
+comparison, but **neither edition is an original 1961 Mame Psalterium
+leaf**. The exact-original 1961 verbatim, entire-Hour, rights and
+public-release gates therefore remain **FALSE**. No public Office
+prayer text is enabled.
