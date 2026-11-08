@@ -220,6 +220,21 @@ export function select1962CommemorationsForMassForm({
     Number(only.rank)===4&&!only.privileged&&
     /^sancti:[0-9]{2}-[0-9]{2}[a-z]*:4:/i.test(commId)&&
     /^Sancti\/[0-9]{2}-[0-9]{2}[a-z]*$/.test(String(only.path??""));
+  // General Rubrics §§78-79, 109-114; Missal §§389(b), 433-434.
+  // On a 4th-class Saturday the appointed Marian celebration owns the
+  // Communion Proper (C10t), while the fourth-class saint is a separate
+  // ordinary commemoration in a nonconventual Low Mass. It is omitted
+  // in a nonconventual Mass in cantu. Do not interpret this as a votive
+  // Mass request, a saint's own principal Mass, or another Marian form.
+  // Exact 1962 main owner, named saint, source path and oration text are
+  // independently checked below before any oration is admitted.
+  const saturdayBvmOrdinary=!sunday&&
+    Number(main.rank)===4&&mainId==="commune:C10t:4:w"&&
+    String(main.path)==="Commune/C10t"&&
+    String(data.sourcePath)==="Commune/C10t"&&
+    Number(only.rank)===4&&!only.privileged&&
+    /^sancti:[0-9]{2}-[0-9]{2}[a-z]*:4:/i.test(commId)&&
+    /^Sancti\/[0-9]{2}-[0-9]{2}[a-z]*$/i.test(String(only.path??""));
   const ordinaryFourthClassSaint=!nativityOctavePlaceholder&&!sunday&&
     !only.privileged&&
     Number(only.rank)===4&&/^sancti:[0-9]{2}-[0-9]{2}[a-z]*:4:/i.test(commId)&&
@@ -234,7 +249,8 @@ export function select1962CommemorationsForMassForm({
     ordinarySunday?"II_CLASS_SUNDAY_SINGLE_II_CLASS_SANCTORAL_FEAST_NON_CONVENTUAL":
     ordinaryFourthClassSaint?"NON_SUNDAY_II_III_CLASS_SINGLE_IV_CLASS_SANCTORAL_COMMEMORATION":
     ordinaryPentecostFeria?"PENTECOST_SEASON_IV_CLASS_FERIA_ORDINARY_COMMEMORATION":
-    ordinaryLentenFeria?"LENT_PASSION_III_CLASS_FERIA_ORDINARY_COMMEMORATION":null;
+    ordinaryLentenFeria?"LENT_PASSION_III_CLASS_FERIA_ORDINARY_COMMEMORATION":
+    saturdayBvmOrdinary?"SATURDAY_BVM_IV_CLASS_ORDINARY_SANCTORAL_COMMEMORATION":null;
   if(!scope)return untouched(proper,"RUBRICAL_CLASSIFICATION_PENDING");
   if(!GROUPS.every(key=>array(data[key]).length===2&&data[key].every(sourceText)))
     return untouched(proper,"ORATION_SOURCE_INCOMPLETE");
@@ -251,6 +267,8 @@ export function select1962CommemorationsForMassForm({
         ["1960_GENERAL_RUBRICS_25_A_108_E_111_A_113","1960_MISSAL_RUBRICS_433_434"]:
       ordinaryLentenFeria?
         ["1960_GENERAL_RUBRICS_25_A_111_A_D_112_113_114","1960_MISSAL_RUBRICS_433_434"]:
+      saturdayBvmOrdinary?
+        ["1960_GENERAL_RUBRICS_78_79_109_111_A_D_112_113","1960_MISSAL_RUBRICS_389_B_433_434"]:
       ordinaryFourthClassSaint?
         ["1960_GENERAL_RUBRICS_111_C_D_112_113","1960_MISSAL_RUBRICS_433_434"]:
       ordinaryPentecostFeria?
