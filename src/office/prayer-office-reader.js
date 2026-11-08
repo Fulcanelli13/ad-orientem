@@ -5,6 +5,9 @@
  */
 import {ROMAN_OFFICE_HOURS,officeRouteState} from "./office-route-state.js";
 const STYLE=`
+/* The legacy Prayer header is positioned above the mount even with hidden
+   set by its donor. Suppress it only while the native Office is in the DOM. */
+#aoPray435930:has(.aoOfficeReader) .aoP435930Head{display:none!important;pointer-events:none!important}
 .aoOfficeReader{max-width:900px;margin:0 auto;min-height:70vh;padding:18px 14px 42px;background:#080c12;color:#e9e4d9}
 .aoOfficeReader *{box-sizing:border-box}.aoOfficeReader .aoOfKicker{font:500 11px/1.4 system-ui;letter-spacing:.16em;text-transform:uppercase;color:#c9ad78}
 .aoOfficeReader h1{font:400 clamp(29px,6vw,46px)/1.12 Georgia,serif;margin:8px 0 12px}
