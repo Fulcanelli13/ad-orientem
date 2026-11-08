@@ -30,7 +30,7 @@ const universal=JSON.parse(readFileSync(new URL(
 function complineFetch({corruptFrench=false}={}){
  return async(url)=>{
   assert.ok(url.startsWith(prefix));
-  const m=/^(Latin|English|Francais)\/(.+)\.txt$/u.exec(url.slice(prefix.length));
+  const m=/^(Latin|English|Francais)\/(.+)\.txt$/u.exec(decodeURIComponent(url.slice(prefix.length)));
   assert.ok(m,"no unpinned or non-language source");
   const lang=languages[m[1]],path=m[2],f=compline[lang];
   let body;
