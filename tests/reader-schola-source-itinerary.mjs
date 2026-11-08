@@ -67,6 +67,38 @@ assert.ok(cards.length>=65,"Real-card-shaped fixture must exceed the ordinary 65
 assert.equal(new Set(cards.map(x=>x.sectionId)).size,cards.length);
 assert.equal(MASS_SCHOLA_EVENT_SPECS.length,36);
 const plan=buildScholaMusicItinerary(args);
+
+// The real Schola controller gives the event itinerary its resolved Proper
+// text tracks. The menu must not guess melodies or duplicate the printed
+// Communion antiphon as a second performance.
+const fivePropers=["INTROIT","GRADUAL","ALLELUIA_TRACT_SEQUENCE","OFFERTORY","COMMUNION"];
+const resolvedTracks=tracks.map(id=>fivePropers.includes(id)?{
+ id,kind:"PROPER",segments:[{id:id+".1",source:"RESOLVED_PROPER_"+id,
+  latin:"Latin source "+id,english:"Translation "+id}]
+}:id);
+const selectedPlan=buildScholaMusicItinerary({...args,tracks:resolvedTracks});
+assert.deepEqual(selectedPlan.properProgramme.map(x=>x.trackId),fivePropers);
+assert.equal(selectedPlan.events.length,plan.events.length,"Proper panel added liturgical events");
+for(const item of selectedPlan.properProgramme){
+ assert.equal(item.lines[0].latin,"Latin source "+item.trackId);
+ assert.equal(item.lines[0].translation,"Translation "+item.trackId);
+ assert.equal(item.source,"THIS_MASS_RESOLVED_1962_PROPER");
+ assert.equal(item.status,"SOURCE_TEXT_ONLY_NOT_APPROVED_SCORE");
+ assert.equal(item.actuallySinging,"UNKNOWN");
+}
+assert.equal(selectedPlan.properProgramme.filter(x=>x.trackId==="COMMUNION").length,1);
+const mismatchedTracks=resolvedTracks.map(t=>t?.id==="OFFERTORY"?{
+ ...t,segments:t.segments.map(line=>({...line,source:"WRONG_MASS"}))
+}:t);
+assert.ok(!buildScholaMusicItinerary({...args,tracks:mismatchedTracks})
+ .properProgramme.some(x=>x.trackId==="OFFERTORY"),
+ "Unmatched Proper source must not leak into the Mass programme");
+assert.deepEqual(buildScholaMusicItinerary({...args,form:"LOW",tracks:resolvedTracks}).properProgramme,[]);
+assert.match(read("src/mass/reader-native-preview.js"),
+ /tracks:ready\.scholaState\?\.tracks\?\?ready\.scholaState\?\.trackIds/,
+ "Actual reader must pass the Schola's resolved text tracks, not IDs only");
+assert.match(read("src/mass/reader-dom.js"),/dataset\.scholaProperTrack=entry\.trackId/,
+ "Mass menu must expose the selected-mass Proper text");
 assert.equal(plan.supported,true);
 assert.equal(plan.activeClock,"SCHOLA_INDEPENDENT");
 const prefaceMusic=plan.events.find(e=>e.id==="PREFACE_DIALOGUE");
