@@ -1169,7 +1169,7 @@ button.ao-schola-control{cursor:pointer}
 }
 /* Short reading paragraphs inside an unchanged canonical source cue.
    The bilingual columns are independently typeset, not new cards or cues. */
-.ao-reader-shell .ao-reader-paragraph .ao-reading-petition{display:block}
+.ao-reader-shell .ao-reader-paragraph .ao-reading-petition{display:block;white-space:normal}
 .ao-reader-shell .ao-reader-paragraph .ao-reading-petition+.ao-reading-petition{
   margin-block-start:.38em
 }
