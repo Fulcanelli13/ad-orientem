@@ -55,11 +55,10 @@ function sourceFixture(url,{dropFrenchPsalm=false}={}){
  }
  const v=f.vespers;
  if(Object.hasOwn(v.leaves,path))return v.leaves[path];
- if(Object.hasOwn(v.sections,path))
-  return Object.entries(v.sections[path])
-   .map(([key,lines])=>"["+key+"]\n"+lines.join("\n")).join("\n\n")+"\n";
- const sections=f.saturday.sections[path];
- if(!sections)throw Error("UNSUPPORTED_SOURCE:"+path);
+ // Both fixture cohorts extract distinct headings from the SAME original
+ // pinned file. Combine headings rather than preferring a partial fixture.
+ const sections={...(f.saturday.sections[path]||{}),...(v.sections[path]||{})};
+ if(!Object.keys(sections).length)throw Error("UNSUPPORTED_SOURCE:"+path);
  return Object.entries(sections)
   .map(([key,lines])=>"["+key+"]\n"+lines.join("\n")).join("\n\n")+"\n";
 }
