@@ -10,6 +10,8 @@ import {COMPLINE_CONTEXT,COMPLINE_MINISTER,projectComplineRecitation}
  from "../src/office/compline-recitation-projection.js";
 import {projectSaturdayComplinePsalmFrame}
  from "../src/office/compline-psalm-display-projection.js";
+import {loadPublishedLatinCompline,latinComplineReleaseEligibility}
+ from "../src/office/latin-compline-public-release.js";
 
 const load=name=>JSON.parse(readFileSync(
  new URL("../tests/fixtures/office/"+name+"-la.json",import.meta.url),"utf8"));
@@ -262,4 +264,56 @@ test("1961 §147 and Office §56: last-prayer Compline substitutes examen for ON
  assert.equal(other.published,false);
  assert.equal(projectComplineRecitation(raw,{context:"CHOIR_UNDEFINED"}).status,"WITHHELD");
  assert.equal(projectComplineRecitation(raw,{minister:"UNKNOWN"}).status,"WITHHELD");
+});
+
+test("published Saturday Latin Compline loads 40 complete 1960-rubric moments from pinned 21-file source",async()=>{
+ const permission=latinComplineReleaseEligibility({date:"2026-11-28"});
+ assert.equal(permission.status,"ELIGIBLE");
+ assert.equal(permission.exact1961PsalterLeafVerified,false);
+ for(const minister of [COMPLINE_MINISTER.NON_PRIEST,COMPLINE_MINISTER.PRIEST]){
+  for(const context of [COMPLINE_CONTEXT.FINAL_PRAYER,COMPLINE_CONTEXT.OTHER_TIME]){
+   const transport=source();
+   const r=await loadPublishedLatinCompline({
+    date:"2026-11-28",context,minister,fetchSource:transport.fetchSource
+   });
+   assert.equal(r.status,"PUBLIC_LATIN_COMPLINE",r.reason);
+   assert.equal(r.hour,"COMPLINE");
+   assert.equal(r.civilDate,"2026-11-28");
+   assert.equal(r.published,true);
+   assert.equal(r.liturgicallyCertified,true);
+   assert.equal(r.rightsApproved,true);
+   assert.equal(r.readingEventCount,40);
+   assert.equal(r.sourceEventCount,42);
+   assert.equal(r.ministerDialoguesResolved,2);
+   assert.equal(r.visitaShortConclusionPrinted1961,true);
+   assert.equal(r.blessingAmensRestoredFromPinnedSource,2);
+   assert.equal(r.printedPsalmDisplayFrames,41);
+   assert.deepEqual(r.availableLanguages,["la"]);
+   assert.ok(r.frames.length>80);
+   assert.equal(r.presidingMinister,minister);
+   assert.equal(r.recitationContext,context);
+   assert.ok(r.frames.every(f=>Object.keys(f.texts).every(l=>l==="la")));
+   assert.ok(r.frames.every(f=>!JSON.stringify(f.texts).includes("/:")));
+   assert.equal(r.frames.filter(f=>f.kind==="EXAMINATION").length,
+    context===COMPLINE_CONTEXT.FINAL_PRAYER?1:0);
+   const conclusion=r.frames.find(f=>f.shortConclusionPrinted1961);
+   assert.deepEqual(conclusion.texts.la,["Per Dóminum.","R. Amen."]);
+   const dialogues=r.frames.filter(f=>f.kind==="DIALOGUE");
+   assert.equal(dialogues.length,2);
+   assert.ok(dialogues.every(f=>f.texts.la[0]===
+    (minister===COMPLINE_MINISTER.PRIEST?
+     "V. Dóminus vobíscum.":"V. Dómine, exáudi oratiónem meam.")));
+   assert.ok(transport.calls.length>0);
+   assert.ok(transport.calls.every(url=>url.includes("/Latin/")));
+  }
+ }
+});
+test("unsupported public Office dates never fetch or invent source words",async()=>{
+ for(const date of ["2026-11-27","2026-11-29","2026-12-05","2026-12-06"]){
+  const transport=source();
+  const r=await loadPublishedLatinCompline({date,fetchSource:transport.fetchSource});
+  assert.equal(r.status,"WITHHELD");
+  assert.equal(r.published,false);
+  assert.equal(transport.calls.length,0);
+ }
 });
