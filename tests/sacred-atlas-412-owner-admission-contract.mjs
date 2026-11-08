@@ -10,6 +10,7 @@ const staged=read("data/geography/research/sacred-atlas-243-30-missing-coordinat
 const prox=read("data/geography/research/sacred-atlas-243-proximity-area-decisions-20261107.v1.json");
 const geo=read("data/geography/seed-registry.v1.json");
 const area=read("data/geography/research/sacred-atlas-five-active-country-area-preview-20261107.v1.json");
+const reviewPackets=read("data/geography/research/sacred-atlas-334-owner-review-three-batches-20261108.v1.json");
 
 assert.equal(all.schema,"AO_SACRED_ATLAS_412_CONSOLIDATED_ADMISSION_DECISION_BOARD_V1");
 assert.equal(all.status,"DRAFT_OWNER_REVIEW_READY_NOT_APPROVED_OR_PUBLISHED");
@@ -109,4 +110,31 @@ assert.equal(area.proposals.length,5);
 assert.equal(all.country_preflight.no_added_to_canonical,true);
 assert.ok(!geo.geoAreas.some(a=>a.geo_area_id==="geo:territory:XK"));
 assert.equal(area.proposals.find(x=>x.source_country_code==="XK").proposed_geo_area.codes.iso_alpha2,undefined);
+assert.equal(reviewPackets.schema,"AO_SACRED_ATLAS_334_OWNER_BATCHES_V1");
+assert.equal(reviewPackets.status,"REVIEW_PACKET_NO_APPROVAL");
+assert.equal(reviewPackets.counts.presentable,334);
+assert.equal(reviewPackets.counts.batches,3);
+assert.equal(reviewPackets.counts.owner_approved,0);
+assert.equal(reviewPackets.counts.places_imported,0);
+assert.deepEqual(reviewPackets.batches.map(x=>[x.id,x.count]),[
+ ["INITIAL_166",166],
+ ["INSTITUTIONAL_SCREENED_145",145],
+ ["ILLUSTRATIVE_COORDINATES_23",23]
+]);
+const batchRows=reviewPackets.batches.flatMap(x=>x.records);
+assert.equal(batchRows.length,334);
+assert.equal(new Set(batchRows.map(x=>x.candidate_id)).size,334);
+const actualReviewIds=new Set(all.records.filter(x=>x.review_class==="OWNER_REVIEW_PRESENTABLE").map(x=>x.candidate_id));
+assert.deepEqual(new Set(batchRows.map(x=>x.candidate_id)),actualReviewIds);
+for(const batch of reviewPackets.batches){
+ assert.equal(batch.count,batch.records.length);
+ assert.equal(batch.owner_decision_required,true);
+ assert.equal(batch.admission_authorized,false);
+ for(const row of batch.records){
+  assert.equal(row.owner_decision,"PENDING");
+  assert.equal(row.admit,false);
+  assert.equal(row.proposed_site_point.entrance_certified,false);
+  assert.equal(row.proposed_site_point.coordinate_owner_approved,false);
+ }
+}
 console.log("PASS 412 candidate registry: 334 owner-review, 2 draft signoffs, 4 reuses, 54 heritage, 6 P107, 11 identity holds, 1 geometry hold, zero approvals/imports");
