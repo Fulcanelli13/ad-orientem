@@ -1,6 +1,6 @@
 # Compline: printed-witness release ledger — 28 November 2026
 
-**Status: source-backed PRIVATE READING, not yet a public Latin Hour.**
+**Current scope: Latin Saturday Compline 28 Nov 2026 approved for release on a 1960-rubric traditional-Vulgate basis; no original 1961 Mame Psalter facsimile certified.** The historical audit entries below document earlier private-only decisions.
 This ledger distinguishes original source extraction, 1961 printed-Ordinary
 correction, the 1962 Latin psalter, and what remains uncertified. No public
 publication flag may be set by this document alone.
@@ -289,3 +289,40 @@ This correction does **not** change
 `completeHourCollated=false`,
 `rightsApproved=false` or
 `publicReleaseApproved=false`. The public Hour remains withheld.
+
+## Release decision (8 November 2026): traditional Latin Compline only
+
+This supersedes earlier **private-only** release flags in the historical
+audit sections above, for one sharply delimited use case. Publication is
+approved for **Latin Saturday Compline on civil Saturday 28 November 2026**
+under the universal 1960 Roman Office rubrics.
+
+- Printed 1961 **Mame Ordinary** §§54–67 governs complete reading order,
+  the two alternatives at both concluding dialogues, the solo Confiteor,
+  the opening Pater/examen distinction, the short `Per Dóminum` after
+  `Visita`, the blessing Amens and Advent Marian antiphon/collect.
+- Both independent later printed traditional-Vulgate Psalter witnesses
+  (2008 complete `Diurnale Romanum` and 2023 printed `Psalterium`)
+  agree in the 473 compared words of Psalms 87 and 102 after documented
+  orthographic variants. This is **not** a claim to have collated the
+  missing original 1961 Mame Saturday Psalter leaves.
+- Pinned original Latin source revision is `126a07f91ede04664108abb6fb20ace3f4de14b9`;
+  Divinum Officium MIT licence and credits are shipped and visibly
+  linked in the native public reader.
+- `printedVulgatePatternDualWitnessCollated=true`,
+  `completeHourCollated=true`, `rightsApproved=true`,
+  `publicReleaseApproved=true`; separately,
+  `psalter1961VerbatimCollated=false` and
+  `exact1961EditionPsalterLeafVerified=false`. Those facts must
+  never be conflated.
+- The public release must fail closed if the pinned original Latin
+  source or its 42-event → 40-moment projection changes. Exactly one
+  date, one language and one universal calendar scope are enabled.
+  Seven other Compline dates, Vespers and all other Hours, plus
+  English/French texts, remain withheld.
+
+CI gates include the exact 1961 Ordinary assertions, dual independent
+full-word psalm comparisons, both priest/non-priest recitation contexts,
+mobile widths 320/390, native Back and App convergence. A PR build is
+not proof of publication; merge and GitHub Pages deployment require all
+tests to pass.
