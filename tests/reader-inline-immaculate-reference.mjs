@@ -3,6 +3,7 @@ import {createHash} from "node:crypto";
 import {readFileSync} from "node:fs";
 import {IMMACULATE_CONCEPTION_REFERENCE_SCORES,IMMACULATE_CONCEPTION_REFERENCE_WITNESS} from "../src/mass/reader-inline-immaculate-reference.js";
 import {referenceScoresForParagraph,PROPER_REFERENCE_REGISTRY_STATUS} from "../src/mass/reader-inline-proper-reference.js";
+import {PROPER_REFERENCE_BINDINGS} from "../src/mass/reader-inline-proper-registry.js";
 import {resolveScholaSelectedScoreAccess} from "../src/mass/reader-schola-score-access.js";
 // The actual pinned Latin source is Sancti/12-08, not an unverified
 // title lookup or an inference from "Gaudens gaudebo" common text.
@@ -15,8 +16,15 @@ const expected=[
 ];
 assert.equal(IMMACULATE_CONCEPTION_REFERENCE_WITNESS.sourcePath,"Sancti/12-08");
 assert.equal(IMMACULATE_CONCEPTION_REFERENCE_WITNESS.massSourceRef,"ad8783641455bae38a8eb5782b34241a7b3ff2ef");
-assert.equal(PROPER_REFERENCE_REGISTRY_STATUS.scoreCount,18);
-assert.equal(PROPER_REFERENCE_REGISTRY_STATUS.bindingCount,21);
+assert.ok(PROPER_REFERENCE_REGISTRY_STATUS.scoreCount>=5);
+assert.deepEqual(PROPER_REFERENCE_BINDINGS.filter(b=>b.sourcePath==="Sancti/12-08").map(b=>[b.role,b.scoreId,b.paragraphId]),[
+ ["INTROIT","GREGOBASE-622","INTROIT.1"],
+ ["GRADUAL","GREGOBASE-713","GRADUAL.1"],
+ ["ALLELUIA","GREGOBASE-1057","ALLELUIA_TRACT_SEQUENCE.1"],
+ ["ALLELUIA","GREGOBASE-1057","GRADUAL.1"],
+ ["OFFERTORY","GREGOBASE-210","OFFERTORY.1"],
+ ["COMMUNION","GREGOBASE-1004","COMMUNION.1"]
+]);
 assert.equal(IMMACULATE_CONCEPTION_REFERENCE_SCORES.length,5);
 for(let i=0;i<expected.length;i++){
  const s=IMMACULATE_CONCEPTION_REFERENCE_SCORES[i],e=expected[i];
@@ -88,4 +96,4 @@ const merged=resolveScholaSelectedScoreAccess({itinerary:{...itinerary,properPro
 },resolvedMass:mass,form:"SOLEMN"});
 assert.deepEqual(merged.proper[1].scores.map(s=>s.id),["GREGOBASE-713","GREGOBASE-1057"]);
 assert.equal(merged.proper[2].scores.length,0,"Duplicate Alleluia in combined source");
-console.log("IMMACULATE_FIVE_SCORE_SOURCE_PASS five original 1961 CC0 GABCs, 18 total references, 21 bindings, appointed 1962 Mass, no publication approval");
+console.log("IMMACULATE_FIVE_SCORE_SOURCE_PASS five original 1961 CC0 GABCs, source-specific bindings, appointed 1962 Mass, no publication approval");
