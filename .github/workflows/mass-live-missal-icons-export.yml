@@ -5,7 +5,7 @@ on:
       - export/mass-live-missal-icons-20261108
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 jobs:
   export-mass-icons:
     runs-on: ubuntu-latest
@@ -29,3 +29,14 @@ jobs:
           path: AO_Mass_Live_Missal_Icons_2026-11-08.zip
           retention-days: 7
           if-no-files-found: error
+      - name: Publish persistent public ZIP URL on isolated download branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin refs/heads/downloads/mass-icons-20261108:refs/remotes/origin/downloads/mass-icons-20261108
+          git switch -c mass-icons-download origin/downloads/mass-icons-20261108
+          mkdir -p downloads
+          cp AO_Mass_Live_Missal_Icons_2026-11-08.zip downloads/Ad_Orientem_Mass_Icons.zip
+          git add downloads/Ad_Orientem_Mass_Icons.zip
+          git commit -m "downloads: source-verified Mass LIVE/MISSAL icon ZIP"
+          git push origin HEAD:refs/heads/downloads/mass-icons-20261108
