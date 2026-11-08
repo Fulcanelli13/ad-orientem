@@ -1,12 +1,15 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {readingPrayerFragments,PRAYER_READING_PARAGRAPHS_VERSION} from "../src/mass/reader-reading-paragraphs.js";
+import {createReaderSectionResolver} from "../src/mass/reader-sections.js";
+import {buildReaderSectionCard} from "../src/mass/reader-text.js";
 
 const read=path=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
 const corpora=[
   read("../data/presentation/reader-text-sung.v1.json"),
   read("../data/presentation/reader-text-low.v1.json"),
 ];
+const sectionResolver=createReaderSectionResolver(read("../data/presentation/reader-section-map.v0.13.1.json"));
 const row=(model,blockId,cueId)=>{
   const block=model.blocks.find(block=>block.Block_ID===blockId);
   assert.ok(block,blockId+" must exist");
@@ -19,6 +22,21 @@ const chunks=(text,block,kind="TEXT",mode="MISSAL")=>
 assert.equal(PRAYER_READING_PARAGRAPHS_VERSION,"mass-prayer-reading-paragraphs-v1");
 
 for(const corpus of corpora){
+  // The complete real reader projection must carry block IDs through to DOM.
+  const canonCard=buildReaderSectionCard({
+    corpus,section:sectionResolver.sectionById("AO.CARD.014"),
+  });
+  const paterCard=buildReaderSectionCard({
+    corpus,section:sectionResolver.sectionById("AO.CARD.019"),
+  });
+  const teRow=canonCard.paragraphs.find(p=>p.id==="AO.SM.C0153");
+  const paterRow=paterCard.paragraphs.find(p=>p.id==="AO.SM.C0209");
+  assert.equal(teRow?.sourceBlockId,"AO.SM.B047");
+  assert.equal(paterRow?.sourceBlockId,"AO.SM.B063");
+  assert.ok(chunks(teRow.primary,teRow.sourceBlockId).length>=2,
+    "Projected Te igitur must actually receive display breaks");
+  assert.ok(chunks(paterRow.primary,paterRow.sourceBlockId).length>=4,
+    "Projected Pater must actually receive display breaks");
   // Authentic 1962 Te igitur and Pater noster—not simulated samples.
   const te=row(corpus,"AO.SM.B047","AO.SM.C0153");
   assert.ok(chunks(te.latin,"AO.SM.B047").length>=3,"Te igitur petitions");
