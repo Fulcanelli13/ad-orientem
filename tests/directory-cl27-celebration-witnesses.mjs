@@ -18,15 +18,15 @@ const ex=projectPublishedProvisionalMassSites(base,
  load("data/directory/published-provisional-mass-sites-20261026.v1.json"));
 const full=projectCL2PhysicalDirectory(ex,
  load("data/directory/generated/cl2-physical-site-index.v1.json"));
-assert.equal(full.length,2582);
+assert.equal(full.length,2583);
 const released=attachPublishedCelebrationEvidence(full,claim);
 assert.equal(released.length,full.length);
 assert.equal(tlmCelebrationEvidenceCounts(released).SOURCE_1962,2);
-assert.equal(tlmCelebrationEvidenceCounts(released).NOT_ESTABLISHED,2580);
-assert.equal(filterPreliminaryR49(released,{celebrationEvidence:"ALL"}).length,2582);
+assert.equal(tlmCelebrationEvidenceCounts(released).NOT_ESTABLISHED,2581);
+assert.equal(filterPreliminaryR49(released,{celebrationEvidence:"ALL"}).length,2583);
 assert.equal(filterPreliminaryR49(released,{celebrationEvidence:"SOURCE_1962"}).length,2);
-assert.equal(filterPreliminaryR49(released,{celebrationEvidence:"NOT_ESTABLISHED"}).length,2580);
-assert.equal(filterPreliminaryR49(released,{celebrationEvidence:"BAD"}).length,2582);
+assert.equal(filterPreliminaryR49(released,{celebrationEvidence:"NOT_ESTABLISHED"}).length,2581);
+assert.equal(filterPreliminaryR49(released,{celebrationEvidence:"BAD"}).length,2583);
 const two=filterPreliminaryR49(released,{celebrationEvidence:"SOURCE_1962"});
 assert.deepEqual(two.map(x=>x.source_id).sort(),["V19:SJC-001","V19:SJC-002"]);
 assert.ok(two.every(x=>x.community_id==="CANONS_ST_JOHN_CANTIUS"));
@@ -83,7 +83,7 @@ assert.ok(full.every(i=>!i.celebration_evidence));
 const english=renderExploreToString(buildExploreViewModel({
  items:two,lens:"tlm",view:"list",filters:{directoryGroup:"ALL",celebrationEvidence:"SOURCE_1962",
  siteEvidence:"ALL",affiliations:[]},tlmCelebrationEvidenceCounts:tlmCelebrationEvidenceCounts(released),
- tlmSiteEvidenceCounts:{ALL:2582,REVIEWED_PIN:341,SOURCE_PIN:1806,ADDRESS_ONLY:435}
+ tlmSiteEvidenceCounts:{ALL:2583,REVIEWED_PIN:342,SOURCE_PIN:1806,ADDRESS_ONLY:435}
 }));
 assert.match(english,/Source identifies 1962 Mass/);
 assert.match(english,/No approved edition witness yet/);
@@ -96,4 +96,4 @@ const french=renderExploreToString(buildExploreViewModel({
 }));
 assert.match(french,/Source attestant une messe de 1962/);
 assert.match(french,/Édition non encore attestée/);
-console.log("PASS CL27 1962 owner-witness publication: 2 exact sources, 2580 not established, 0 inferred Una Cum or status");
+console.log("PASS CL27 1962 owner-witness publication: 2 exact sources, 2581 not established, 0 inferred Una Cum or status");
