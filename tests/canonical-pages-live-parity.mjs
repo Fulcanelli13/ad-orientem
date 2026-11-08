@@ -17,15 +17,31 @@ const paths=[
  "src/settings/presentation.js",
  "src/settings/browser-entry.js",
  "src/home/today-v2-sections.js",
- "src/calendar/observed-commemoration-labels.js"
+ "src/calendar/observed-commemoration-labels.js",
+ // Source-owned 44-item Home Discovery publication, not private research.
+ "src/home/did-you-know-glossary.js",
+ "src/home/dyk-published-feed.js",
+ "data/did-you-know/weiser-historical-20-publication.v1.json"
 ];
+// The Pages build deliberately installs its noindex meta into the release
+// artifact without changing checked-in index.html. Compare public bytes with
+// those *released* bytes, not against the pre-build entrypoint.
+const releasedExpected=(path,source)=>{
+ if(path!=="index.html")return source;
+ const original=source.toString("utf8");
+ const robots='<meta name="robots" content="noindex,nofollow,noarchive">';
+ const html=/<meta\\s+name=["']robots["']/i.test(original)?
+   original:original.replace(/<head>/i,"<head>"+robots);
+ if(!html.includes(robots))throw Error("Pages release robots directive missing");
+ return Buffer.from(html,"utf8");
+};
 const sha=b=>createHash("sha256").update(b).digest("hex");
 const run=String(process.env.GITHUB_RUN_ID||"local");
 const report={schema:"AO_CANONICAL_PAGES_PARITY_V1",timestamp:new Date().toISOString(),
- testedCommit:process.env.GITHUB_SHA||"local",target:base,files:[],publicExact:false,
+ testedCommit:process.env.AO_PAGES_RELEASE_SHA||process.env.GITHUB_SHA||"local",target:base,files:[],publicExact:false,
  sourceChecks:{missing:[],stale:[],matches:[],transportErrors:[]}};
 for(const path of paths){
- const expected=readFileSync(new URL("../"+path,import.meta.url));
+ const expected=releasedExpected(path,readFileSync(new URL("../"+path,import.meta.url)));
  const row={path,expectedSHA256:sha(expected),expectedBytes:expected.length};
  try{
   const url=new URL(path,base);url.searchParams.set("ao_parity_run",run);
