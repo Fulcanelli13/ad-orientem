@@ -120,10 +120,11 @@ for(const a of area){
 }
 assert.match(area.find(x=>x.code==="XK").code_note,/not formally assigned ISO/);
 assert.equal(preview.schema,"AO_SACRED_ATLAS_FIVE_COUNTRY_AREA_PREVIEW_V1");
-assert.equal(preview.status,"RESEARCH_ONLY_NOT_ADMITTED");
+assert.equal(preview.status,"RESEARCH_ONLY_ROUTING_CODE_PREPARED_NOT_ADMITTED");
 assert.equal(preview.proposals.length,5);
 assert.equal(preview.counts.standard_iso_compatible,4);
 assert.equal(preview.counts.operational_territory_adapter_hold,1);
+assert.equal(preview.counts.operational_territory_adapter_prepared,1);
 assert.equal(preview.counts.geo_areas_appended_to_canonical,0);
 assert.equal(preview.counts.candidate_places_admitted,0);
 assert.deepEqual(new Set(preview.heritage_only_deferred_codes),new Set(["AM","CY","ET","TN"]));
@@ -131,7 +132,7 @@ for(const entry of preview.proposals){
  assert.equal(entry.owner_review_status,"PENDING");
  assert.equal(entry.canonical_area_insert_authorized,false);
  assert.equal(entry.proposed_geo_area.area_system,"CIVIL");
- assert.equal(entry.proposed_geo_area.area_type,"country");
+ assert.ok(["country","other"].includes(entry.proposed_geo_area.area_type));
  assert.deepEqual(entry.proposed_geo_area.parent_geo_area_ids,["geo:world"]);
  assert.ok(!existingAreas.has(entry.proposed_geo_area.geo_area_id));
  const source=area.find(a=>a.code===entry.source_country_code);
@@ -139,14 +140,18 @@ for(const entry of preview.proposals){
  assert.deepEqual(new Set(entry.required_candidate_ids),new Set(source.eligible_active_review_candidate_ids));
  if(entry.source_country_code==="XK"){
   assert.equal(entry.standard_code_state,"OPERATIONAL_USER_ASSIGNED_NOT_ISO");
-  assert.equal(entry.canonical_compatibility,"BLOCKED_ROUTING_ADAPTER_REQUIRED");
+  assert.equal(entry.canonical_compatibility,"ADAPTER_PREPARED_STILL_UNAPPROVED");
   assert.equal(entry.proposed_geo_area.codes.iso_alpha2,undefined);
   assert.equal(entry.operational_code_route.cannot_write_into_codes_iso_alpha2,true);
-  assert.equal(entry.operational_code_route.requires_explicit_adapter_or_schema_decision,true);
+  assert.equal(entry.operational_code_route.requires_explicit_adapter_or_schema_decision,false);
+  assert.equal(entry.proposed_geo_area.geo_area_id,"geo:territory:XK");
+  assert.equal(entry.proposed_geo_area.area_type,"other");
+  assert.equal(entry.proposed_geo_area.codes.operational_alpha2,"XK");
  }else{
   assert.equal(entry.standard_code_state,"OFFICIAL_ISO_3166_1_ALPHA2");
   assert.equal(entry.proposed_geo_area.codes.iso_alpha2,entry.source_country_code);
   assert.equal(entry.canonical_compatibility,"STRUCTURALLY_COMPATIBLE_UNAPPROVED");
+  assert.equal(entry.proposed_geo_area.area_type,"country");
  }
 }
 assert.equal(decisions.counts.production_imports,0);
