@@ -8,7 +8,7 @@ const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
 const src=read("data/artwork/research-semantic-candidates-989.v1.json");
 const queue=read("data/artwork/sacred-art-batch1-25-release-progress.v1.json");
 assert.equal(src.artworks.length,989);
-assert.equal(SACRED_ART_SAINT_SCOPE_EXCEPTIONS_V1.length,3);
+assert.equal(SACRED_ART_SAINT_SCOPE_EXCEPTIONS_V1.length,9);
 const known={};
 for(const exception of SACRED_ART_SAINT_SCOPE_EXCEPTIONS_V1){
  const original=src.artworks.find(w=>w.workGroupId===exception.workGroupId);
@@ -72,19 +72,30 @@ if(existsSync(new URL("../"+gen,import.meta.url))){
  assert.equal(master.counts.researchArtworkGroups,989);
  assert.equal(master.counts.researchGroupsWithTitleBasedCategoryCandidates,657);
  assert.equal(master.counts.researchGroupsStillWithoutTitleCategory,332);
- assert.equal(master.counts.exactSaintSubjectScopeCorrections,3);
+ assert.equal(master.counts.exactSaintSubjectScopeCorrections,9);
  assert.ok(master.policies.retainOriginalLexicalTagsAfterSaintSubjectDisambiguation);
  assert.ok(master.generatedFrom.includes("scripts/art/sacred-art-saint-scope-exceptions-v1.mjs"));
  for(const exception of SACRED_ART_SAINT_SCOPE_EXCEPTIONS_V1){
   const derived=master.researchGroupsTitleCandidateIndex.find(w=>w.workGroupId===exception.workGroupId);
   assert.ok(derived?.saintSubjectTitleScopeReviewed);
-  assert.deepEqual(derived.categoryCandidates,["SAINTS"],"Saint-specific image must not become a Christ event: "+exception.workGroupId);
+  assert.ok(derived.categoryCandidates.includes("SAINTS")&&!derived.categoryCandidates.includes("MINISTRY")&&!derived.categoryCandidates.includes("PASSION"),"Saint-specific image must not become a Christ event: "+exception.workGroupId);
   assert.ok(derived.existingLexicalSubjectTags.some(t=>t.tag===exception.excludedTag&&t.categoryId===null&&
      t.subjectScopeExclusion===exception.reason));
   assert.ok(master.categoryDefinitions.find(c=>c.id==="SAINTS")?.proposedResearchGroupIds.includes(exception.workGroupId));
-  assert.equal(master.categoryDefinitions.some(c=>c.id!=="SAINTS"&&c.proposedResearchGroupIds.includes(exception.workGroupId)),false);
+  assert.equal(master.categoryDefinitions.some(c=>["MINISTRY","PASSION"].includes(c.id)&&c.proposedResearchGroupIds.includes(exception.workGroupId)),false);
   assert.ok(known[exception.workGroupId].subjectCandidates.some(t=>t.tag===exception.excludedTag),
     "Original 989 research source must not be rewritten");
+ }
+ // The converse matters: Christ on the Cross with a saint present remains
+ // a Christ Passion image; an indiscriminate "Saint" keyword guard is invalid.
+ for(const mixedId of [
+  "CANONICAL::C34:franciscodezurbaran046jpg",
+  "REVIEW::nga:30"
+ ]){
+  const mixed=master.researchGroupsTitleCandidateIndex.find(w=>w.workGroupId===mixedId);
+  assert.ok(mixed?.categoryCandidates.includes("PASSION"),
+    "Saint appears in a real Christ Passion title: preserve both subjects");
+  assert.equal(mixed.saintSubjectTitleScopeReviewed,undefined);
  }
  assert.equal(master.canonicalPrayerSlotCategoryCrosswalk.some(s=>
    s.researchGroupIds.some(id=>SACRED_ART_SAINT_SCOPE_EXCEPTIONS_V1.some(e=>e.workGroupId===id))),false,
