@@ -28,7 +28,9 @@ const t=(lat,en,fr)=>lang==="fr"?({lat,en:"",fr}):({lat,en,fr:""});
 const separatelyNamedChants=params.get("sourceChants")==="1";
 // Only for the real-phone notation acceptance: an exact, already pinned
 // 1962 All Saints Proper, never a synthetic title-to-score lookup.
-const exactScoredProper=params.get("scoreProper")==="all-saints";
+const scoredProperKind=String(params.get("scoreProper")??"");
+const epiphanyScoredProper=scoredProperKind==="epiphany";
+const exactScoredProper=scoredProperKind==="all-saints"||epiphanyScoredProper;
 const alternateIsTract=params.get("tract")==="1";
 const altKind=alternateIsTract?"TRACT":"ALLELUIA";
 const altSection=alternateIsTract?"Tractus":"Alleluia";
@@ -88,6 +90,25 @@ if(exactScoredProper){
     "Blessed are the clean of heart","Bienheureux les cœurs purs")
  });
 }
+// The five exact 6 January 1962 source texts, including its original
+// Graduale paragraph, which contains BOTH Gradual and Alleluia. This is a
+// source-binding fixture only; default unrelated Mass prayers are not
+// asserted as an entire Epiphany Missal transcription.
+if(epiphanyScoredProper){
+ Object.assign(proper,{
+  sourcePath:"Sancti/01-06",
+  introit:t("Ecce, advénit dominátor Dóminus: et regnum in manu ejus et potéstas et impérium.",
+    "Behold, the Lord the ruler is come","Voici que le Seigneur, le dominateur, est venu"),
+  gradual:t("Omnes de Saba vénient, aurum et thus deferéntes, et laudem Dómino annuntiántes. V. Surge et illumináre, Jerúsalem: quia glória Dómini super te orta est. Allelúja, allelúja. Vídimus stellam ejus in Oriénte, et vénimus cum munéribus adoráre Dóminum. Allelúja.",
+    "All they from Saba shall come, bringing gold and frankincense. Alleluia: We have seen His star in the East.",
+    "Tous ceux de Saba viendront, portant de l'or et de l'encens. Alléluia : nous avons vu son étoile en Orient."),
+  offertory:t("Reges Tharsis, et ínsulæ múnera ófferent: reges Arabum et Saba dona addúcent: et adorábunt eum omnes reges terræ.",
+    "The kings of Tharsis and the islands shall offer presents","Les rois de Tharsis et des îles offriront des présents"),
+  communion:t("Vídimus stellam ejus in Oriénte, et vénimus cum munéribus adoráre Dóminum.",
+    "We have seen His star in the East, and have come with gifts to adore the Lord",
+    "Nous avons vu son étoile en Orient et sommes venus avec des présents adorer le Seigneur")
+ });
+}
 const rite=String(params.get("rite")??(params.get("asperges")==="1"?"asperges":"")).toLowerCase();
 const withAsperges=rite==="asperges";
 const withPalm=rite==="palm";
@@ -104,21 +125,23 @@ const followingActions=following==="corpus"?["CORPUS_CHRISTI_PROCESSION"]:
   following==="requiem"?["REQUIEM_ABSOLUTION"]:[];
 const allowedForms=new Set(["MISSA_CANTATA_INCENSE","MISSA_CANTATA_SIMPLE","SOLEMN","LOW"]);
 if(!allowedForms.has(requestedForm))throw new Error("Unsupported test fixture form");
-const fixtureDate=params.get("date")||(exactScoredProper?"2026-11-01":withGoodFriday?"2026-04-03":withEasterVigil?"2027-03-27":"2026-10-04");
+const fixtureDate=params.get("date")||(epiphanyScoredProper?"2027-01-06":exactScoredProper?"2026-11-01":withGoodFriday?"2026-04-03":withEasterVigil?"2027-03-27":"2026-10-04");
 if(!/^20[0-9]{2}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12][0-9]|3[01])$/.test(fixtureDate))throw new Error("Invalid test fixture date");
 const resolvedMass={
   schema:"ao-resolved-mass-v2",
   date:fixtureDate,
   form:requestedForm,
   presentationMode:mode,
-  actualCelebration:exactScoredProper?{id:"all-saints",type:"CALENDAR",title:"All Saints"}:
+  actualCelebration:epiphanyScoredProper?{id:"epiphany",type:"CALENDAR",title:"Epiphany of Our Lord"}:
+    exactScoredProper?{id:"all-saints",type:"CALENDAR",title:"All Saints"}:
     withGoodFriday?{id:"good-friday",type:"CALENDAR",title:"Good Friday"}:
     withEasterVigil?{id:"easter-vigil",type:"CALENDAR",title:"Easter Vigil"}:
     withCandlemas?{id:"purificatio-bmv",type:"CALENDAR",title:"Purification of Our Lady"}:
     fixtureRequiem?{id:"requiem",type:"REQUIEM",title:"Requiem"}:
     following==="corpus"?{id:"corpus-christi",type:"CALENDAR",title:"Corpus Christi"}:
     {id:"holy_rosary",type:params.get("print")==="1"?"CALENDAR":"VOTIVE",title:"Holy Rosary"},
-  calendarCelebration:exactScoredProper?{id:"all-saints",type:"CALENDAR",title:"All Saints"}:
+  calendarCelebration:epiphanyScoredProper?{id:"epiphany",type:"CALENDAR",title:"Epiphany of Our Lord"}:
+    exactScoredProper?{id:"all-saints",type:"CALENDAR",title:"All Saints"}:
     withGoodFriday?{id:"good-friday",type:"CALENDAR",title:"Good Friday"}:
     withEasterVigil?{id:"easter-vigil",type:"CALENDAR",title:"Easter Vigil"}:
     withCandlemas?{id:"purificatio-bmv",type:"CALENDAR",title:"Purification of Our Lady"}:
