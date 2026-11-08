@@ -48,6 +48,8 @@ for(const work of LINKS){
 }
 assert.equal(prayerSupplementalLiveWork("unverified_or_missing_prayer"),null);
 assert.deepEqual(prayerSupplementalLiveWorksForSubject("all"),[]);
+assert.deepEqual(prayerSupplementalLiveWorksForSubject("all","Journey").map(x=>x.id),["occasional_travel_lasance_1911_en"]);
+assert.deepEqual(prayerSupplementalLiveWorksForSubject("all","perseverance").map(x=>x.id),["priest_intercession_perseverance_raccolta_1910"]);
 const ui=readFileSync(new URL("../src/pray/presentation-runtime.js",import.meta.url),"utf8");
 for(const signal of [
  'PRAYER_SUPPLEMENTAL_LIVE_WORK_LINKS_V1',
