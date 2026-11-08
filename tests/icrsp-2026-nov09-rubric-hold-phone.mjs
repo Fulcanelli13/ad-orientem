@@ -118,6 +118,14 @@ try{
       (p?.[k]??[]).map(x=>x.liturgicalPurpose??"PRINCIPAL"))};
    });
    assert.equal(assembled.date,DAY);
+   assert.equal(assembled.sourcePath,"Sancti/11-09",
+    "Canonical Lateran Dedication source changed");
+   console.log("NOV09_UNIVERSAL_1962_PRAYER_COUNTS "+JSON.stringify({
+    language:lang,counts:assembled.prayerRoles.map(x=>x.length),
+    roles:assembled.prayerRoles,sourcePath:assembled.sourcePath
+   }));
+   assert.deepEqual(assembled.prayerRoles.map(x=>x.length),[2,2,2],
+    "General 1962 Lateran Dedication must retain St Theodore's commemoration in each oration set");
    assert.equal(assembled.sourceOrdoExpectation,null,
     "Source-unverified ICRSP Mass may not acquire a local certification contract");
    for(const roles of assembled.prayerRoles)
