@@ -1,0 +1,70 @@
+name: Divine Office — native entry, Compline and Vespers source-first integration
+on:
+  pull_request:
+    paths:
+      - 'src/office/**'
+      - 'data/office/research/**'
+      - 'docs/DIVINE-OFFICE-**'
+      - 'tests/divine-office-**'
+      - 'tests/fixtures/office/**'
+      - 'src/office/compline-advent-2026-appointments.js'
+      - 'src/office/weekday-compline-psalter-plan.js'
+      - 'src/office/pinned-section-heading-parser.js'
+      - 'src/office/saturday-compline-2026-pilot.js'
+      - 'src/pray/divine-office-readiness-gate.js'
+      - 'src/office/prayer-office-reader.js'
+      - 'src/office/office-route-state.js'
+      - 'src/pray/browser-entry.js'
+      - 'src/pray/lazy-module-registry.js'
+      - 'previews/private-divine-office.html'
+      - 'tools/build-web-preview.mjs'
+      - 'tests/divine-office-native-entry.mjs'
+      - 'tests/divine-office-saturday-compline-pilot.mjs'
+      - 'tests/divine-office-weekday-compline-psalter.mjs'
+      - 'tests/divine-office-advent-i-full-week-compline.mjs'
+      - 'tests/divine-office-prayer-readiness-gate.mjs'
+      - 'tests/fixtures/office/advent-i-*-compline-*.json'
+      - '.github/workflows/office-compline-core.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-private-core:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax and source-first Office acceptance
+        run: |
+          node --check src/office/compline-advent-2026-appointments.js
+          node --check src/office/weekday-compline-psalter-plan.js
+          node --check src/office/pinned-section-heading-parser.js
+          node --check src/office/saturday-compline-2026-pilot.js
+          node --check src/pray/divine-office-readiness-gate.js
+          node --check src/office/prayer-office-reader.js
+          node --check src/office/office-route-state.js
+          node --check src/pray/browser-entry.js
+          node --check src/pray/lazy-module-registry.js
+          node --test tests/divine-office-saturday-compline-pilot.mjs
+          node --test tests/divine-office-weekday-compline-psalter.mjs
+          node --test tests/divine-office-advent-i-full-week-compline.mjs
+          node --test tests/divine-office-prayer-readiness-gate.mjs
+          node --test tests/divine-office-native-entry.mjs
+          node --test tests/divine-office-latin-compline-public-release.mjs
+          node --test tests/divine-office-saturday-printed-diurnale-witness.mjs
+          node --test tests/divine-office-saturday-printed-full-word.mjs
+          node --test tests/divine-office-saturday-fullword-2023-witness.mjs
+          node --test tests/divine-office-private-review.mjs
+          node --test tests/divine-office-latin-only-complete-compline.mjs
+          node --check src/office/compline-recitation-projection.js
+          node --test tests/divine-office-private-preview-gate.mjs
+          node --check src/office/private-office-review-page.js
+          for file in src/office/*.js; do node --check "$file"; done
+          for test in tests/divine-office-advent-first-vespers-*.mjs tests/divine-office-advent-i-collect-ending-1960-research.mjs tests/divine-office-at-reference-resolver.mjs tests/divine-office-reviewed-hour-handoff.mjs; do node --test "$test"; done

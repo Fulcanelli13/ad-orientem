@@ -70,6 +70,28 @@ function stamp(win){
   return node;
 }
 
+
+export function installOfficeShortcut(win){
+  const mount=win?.document?.querySelector?.("#aoPray435930 .aoP435930Mount");
+  if(!mount||mount.querySelector?.("[data-ao-office-door]"))return false;
+  const button=win.document.createElement("button");
+  button.type="button";
+  button.dataset.aoOfficeDoor="true";
+  button.className="aoOfficeDoor";
+  button.style.cssText="display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;min-height:54px;margin:0 0 14px;padding:11px 15px;border:1px solid rgba(201,173,120,.38);border-radius:14px;background:#101821;color:#e9e4d9;text-align:left;font:500 15px/1.35 Georgia,serif";
+  const isFrench=String(win?.document?.documentElement?.lang||"").startsWith("fr")||
+    win?.AO_RUNTIME_V8?.store?.getState?.()?.language==="fr";
+  button.textContent=isFrench?"Office divin · Bréviaire romain":"Divine Office · Roman Breviary";
+  button.setAttribute("aria-label",button.textContent);
+  button.addEventListener("click",()=>{
+    Promise.resolve(win?.AO_MODULES?.open?.("pray.divine_office")).catch(error=>{
+      win?.console?.error?.("Divine Office route unavailable",error);
+    });
+  });
+  mount.prepend(button);
+  return true;
+}
+
 function delay(win,ms){
   return new Promise(resolve=>{
     if(typeof win?.setTimeout==="function")win.setTimeout(resolve,ms);
@@ -150,6 +172,7 @@ export function createPrayOwner(win=globalThis,{pollMs=40,maxPolls=150}={}){
     opened=true;
     if(!opened)return false;
     stamp(win);
+    installOfficeShortcut(win);
     if(receipt&&opened&&root(win)?.querySelector(".aoP435930Mount")?.dataset?.aoPrayView===
       (receipt.novena?"novenas":receipt.navigation?.view))
       restoreScroll(receipt.scroll);

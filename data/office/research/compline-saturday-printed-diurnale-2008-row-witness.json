@@ -1,0 +1,99 @@
+{
+  "schema": "ao.office.printed-saturday-compline-lexical-rows.v1",
+  "document": {
+    "title": "Diurnale Romanum (David Siefker, 2008)",
+    "printedPages": "349–352",
+    "psalmPages": "350–352",
+    "rubricalBasis": "Breviarium Romanum, revised according to 1960 rubrics",
+    "sourceUrl": "https://www.scribd.com/document/761102039/Breviarium-romanum-Breviario-romano-1961-1962",
+    "pagesTextReference": "Sabbato ad Completorium, Psalmus 87, Psalmus 102 i, Psalmus 102 ii",
+    "type": "later printed 1961-pattern witness; NOT the original 1961 Mame psalter"
+  },
+  "limits": {
+    "independentFull1961PrintedLeaf": false,
+    "editionVerbatimCertified": false,
+    "usableForPublicPublicationWithoutFurtherApproval": false,
+    "privateResearchOnly": true
+  },
+  "psalms": [
+    {
+      "number": 87,
+      "printedHeading": "Psalmus 87",
+      "sourceRows": 19,
+      "rows": [
+        "Dómine, Deus salútis meæ",
+        "Intret in conspéctu tuo orátio mea",
+        "Quia repléta est malis ánima mea",
+        "Æstimátus sum cum descendéntibus in lacum",
+        "Sicut vulneráti dormiéntes in sepúlcris",
+        "Posuérunt me in lacu inferióri",
+        "Super me confirmátus est furor tuus",
+        "Longe fecísti notos meos a me",
+        "Tráditus sum, et non egrediébar",
+        "Clamávi ad te, Dómine, tota die",
+        "Numquid mórtuis fácies mirabília",
+        "Numquid narrábit áliquis in sepúlcro misericórdiam tuam",
+        "Numquid cognoscéntur in ténebris mirabília tua",
+        "Et ego ad te, Dómine, clamávi",
+        "Ut quid, Dómine, repéllis oratiónem meam",
+        "Pauper sum ego, et in labóribus a juventúte mea",
+        "In me transiérunt iræ tuæ",
+        "Circumdedérunt me sicut aqua tota die",
+        "Elongásti a me amícum et próximum"
+      ]
+    },
+    {
+      "number": 102,
+      "printedHeading": "Psalmus 102 i / Psalmus 102 ii",
+      "sourceRows": 22,
+      "divisionAfterRow": 12,
+      "rows": [
+        "Bénedic, ánima mea, Dómino",
+        "Bénedic, ánima mea, Dómino",
+        "Qui propitiátur ómnibus iniquitátibus tuis",
+        "Qui rédimit de intéritu vitam tuam",
+        "Qui replet in bonis desidérium tuum",
+        "Fáciens misericórdias Dóminus",
+        "Notas fecit vias suas Móysi",
+        "Miserátor, et miséricors Dóminus",
+        "Non in perpétuum irascétur",
+        "Non secúndum peccáta nostra fecit nobis",
+        "Quóniam secúndum altitúdinem cæli a terra",
+        "Quantum distat ortus ab occidénte",
+        "Quómodo miserétur pater filiórum",
+        "Recordátus est quóniam pulvis sumus",
+        "Quóniam spíritus pertransíbit in illo",
+        "Misericórdia autem Dómini ab ætérno",
+        "Et justítia illíus in fílios filiórum",
+        "Et mémores sunt mandatórum ipsíus",
+        "Dóminus in cælo parávit sedem suam",
+        "Benedícite Dómino, omnes Angeli ejus",
+        "Benedícite Dómino, omnes virtútes ejus",
+        "Benedícite Dómino, ómnia ópera ejus"
+      ]
+    }
+  ],
+  "observedOrthographicDifferences": [
+    {
+      "psalm": 102,
+      "sourceLabel": "102:14",
+      "print": "fœnum",
+      "pinned": "fænum",
+      "status": "orthographic variant; same Latin lexeme, printed edition byte-for-byte identity NOT established"
+    },
+    {
+      "psalm": 102,
+      "sourceLabel": "102:20",
+      "print": "Angeli",
+      "pinned": "Ángeli",
+      "status": "accent typography only"
+    }
+  ],
+  "printedCrossWitness": {
+    "title": "Psalterium Romanum iuxta ritum 1962",
+    "publisher": "Consociatio Christi Regis",
+    "year": 2023,
+    "url": "https://ccregis.org/psalter_lt.pdf",
+    "use": "independent appointment corroboration; retain separate from 1961 Mame original"
+  }
+}

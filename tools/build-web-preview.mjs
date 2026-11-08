@@ -22,6 +22,7 @@ const excludedResearchPaths=[
  "assets/staged",
  "assets/stations/san-polo",
  "data/geography/research",
+ "data/office/research",
  "data/prayer/stations/san-polo-tiepolo-oils-1747",
 ];
 // Historical sprite bundles are retained in GitHub only. The active HTML

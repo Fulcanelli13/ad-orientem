@@ -6,6 +6,7 @@
  */
 const TRADITIONAL=[
   ["pray.morning_evening","Morning & Evening Prayer","daily-prayer"],
+  ["pray.divine_office","Divine Office","daily-prayer"],
   ["pray.sacred_hymns","Sacred Hymns & Canticles","traditional-devotion"],
   ["pray.holy_name_litany","Litany of the Holy Name","traditional-devotion"],
   ["pray.nightly_examen","Nightly Examination","daily-prayer"],
@@ -40,6 +41,17 @@ export function installLazyPrayRegistry(win=globalThis,ensureReader){
       return base.resolve?.(id);
     },
     async open(id,options={}){
+      if(canonical(id)==="pray.divine_office"){
+        try{
+          await ensureReader({win});
+          const {openDivineOfficeReader}=await import("../office/prayer-office-reader.js");
+          const ok=openDivineOfficeReader(win,options);
+          return {ok,canonicalId:"pray.divine_office",type:"module",domain:"pray",error:ok?null:"OFFICE_HOST_UNAVAILABLE"};
+        }catch(error){
+          try{win.console?.error?.("Divine Office reader failed",error)}catch{}
+          return {ok:false,canonicalId:"pray.divine_office",error:"OFFICE_READER_UNAVAILABLE"};
+        }
+      }
       if(!PROVISIONAL[canonical(id)])return base.open?.(id,options);
       try{
         await ensureReader({win});

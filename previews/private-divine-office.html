@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="color-scheme" content="dark">
+<title>Divine Office · source-only private review · Ad Orientem</title>
+<style>
+:root{--a:#c9ad78;--bg:#080c12;--panel:#101821;--text:#e9e4d9;--dim:#aab2b9}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:18px/1.48 Georgia,serif}
+main{width:min(980px,100%);margin:0 auto;padding:24px clamp(14px,4vw,38px) 60px}
+h1{font:400 clamp(35px,6vw,58px)/1.08 Georgia,serif;margin:10px 0 16px}
+h2{font:400 23px/1.15 Georgia,serif;margin:0 0 12px}.eyebrow{color:var(--a);letter-spacing:.16em;font:600 11px/1.3 system-ui;text-transform:uppercase}
+.warning{border-left:2px solid var(--a);padding-left:15px;color:var(--dim);font:14px/1.6 system-ui;max-width:740px}
+.aoOfOptions{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:24px 0 15px;min-width:0;max-width:100%}
+.aoOfOptions>select,.aoOfOptions>input,.aoOfOptions>button{min-width:0;max-width:100%;width:auto}
+@media(max-width:480px){.aoOfOptions>select{width:100%}.aoOfOptions>input{width:100%}}
+button,select,input{font:14px/1.4 system-ui;color:var(--text);background:var(--panel);border:1px solid rgba(201,173,120,.48);border-radius:9px;min-height:46px;padding:9px 13px}
+button{cursor:pointer}button:disabled{opacity:.4;cursor:default}button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--a);outline-offset:2px}
+.aoOfReadiness{font:13px/1.5 system-ui;color:var(--dim);min-height:35px}
+.aoOfFrame{border:1px solid rgba(201,173,120,.25);background:var(--panel);border-radius:15px;min-height:240px;padding:clamp(17px,3vw,30px);margin:12px 0}
+.aoOfFrameTop{display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid rgba(255,255,255,.11);padding-bottom:12px}
+.aoOfEvent{font:20px/1.2 Georgia,serif;color:var(--a);text-transform:capitalize}
+.aoOfOrdinal,.aoOfProvenance{font:12px/1.5 system-ui;color:var(--dim)}.aoOfProvenance{display:block;overflow-wrap:anywhere;word-break:break-word}
+.aoOfColumns{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:24px;margin:22px 0 28px}
+.aoOfLanguage h3{font:600 11px/1.4 system-ui;letter-spacing:.1em;text-transform:uppercase;color:var(--a)}
+.aoOfLanguage p{font:18px/1.58 Georgia,serif;margin:8px 0;white-space:pre-wrap;overflow-wrap:anywhere}
+.aoOfFrameControls{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:15px}
+.aoOfFrameControls span{font:12px/1.3 system-ui;color:var(--dim)}
+.aoOfFootnote{font:12px/1.5 system-ui;color:var(--dim)}
+</style></head><body><main>
+<div class="eyebrow">Ad Orientem / Research review / Breviarium Romanum 1960</div>
+<h1>Divine Office</h1>
+<p class="warning">PRIVATE UNRELEASED SOURCE PREVIEW. These exact pinned source sections are not a liturgically certified, translation-certified or publicly approved Office. No Mass calendar substitution, source guessing or synthetic prayer text.</p>
+<div id="reader"></div>
+</main>
+<script type="module">
+import {mountPrivateOfficeReview} from "../src/office/private-office-review-page.js";
+import {DIVINUM_OFFICIUM_PIN} from "../src/app/source-transport-compat.js";
+mountPrivateOfficeReview(document.getElementById("reader"),{
+ fetchSource:(url,options)=>fetch(url,options),
+ readUniversalWitness:async()=>{
+  const r=await fetch(new URL("../data/office/research/advent-i-2026-universal-commemoration.json",import.meta.url));
+  if(!r.ok)throw Error("PRIVATE_UNIVERSAL_WITNESS_UNAVAILABLE");
+  return r.json();
+ }
+});
+</script></body></html>
