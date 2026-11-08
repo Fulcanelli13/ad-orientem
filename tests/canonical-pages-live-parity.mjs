@@ -21,7 +21,8 @@ const paths=[
  // Source-owned 44-item Home Discovery publication, not private research.
  "src/home/did-you-know-glossary.js",
  "src/home/dyk-published-feed.js",
- "data/did-you-know/weiser-historical-20-publication.v1.json"
+ "data/did-you-know/weiser-historical-20-publication.v1.json",
+ "data/did-you-know/weiser-r50-sixteen-publication.v1.json"
 ];
 // The Pages build deliberately installs its noindex meta into the release
 // artifact without changing checked-in index.html. Compare public bytes with
