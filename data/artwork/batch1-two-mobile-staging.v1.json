@@ -1,0 +1,64 @@
+{
+  "schema": "AO_SACRED_ART_BATCH1_TWO_SOURCE_MOBILE_CONTAIN_STAGING_V1",
+  "scope": "UNPUBLISHED_RESEARCH_STAGING_ONLY",
+  "source_photo_verification": "data/artwork/batch1-two-firstparty-verified-source-photos.v1.json",
+  "source_photo_acquisition_script": "scripts/art/batch1_firstparty_photo_acquire.py",
+  "no_publication": true,
+  "explicit_owner_photo_approval": false,
+  "actual_app_assignments_changed": 0,
+  "derivative_rule": "PRESERVE_FULL_PAINTED_FRAME_WITH_NO_CROP",
+  "target_maximum_dimensions_px": [
+    1024,
+    1400
+  ],
+  "output_folder": "assets/staged/sacred-art-batch1",
+  "protected_main_gallery_registry": "src/art/released-module-paintings.v1.js",
+  "eligible_only_after_signoff": false,
+  "items": [
+    {
+      "id": "artwork-pending:01",
+      "title": "The Crucifixion",
+      "museum": "Cleveland Museum of Art",
+      "inventory": "1916.786",
+      "source_sha256": "022572a6fa03b4ff9e1a04dc6b92345b2239b0c2998468e58705028b1dad073b",
+      "original_dimensions_px": [
+        2673,
+        3400
+      ],
+      "file": "artwork-pending_01-official-original.jpg",
+      "derivative": "01-crucifixion-cma-fullframe.webp",
+      "source_rights": "CMA_SHARE_LICENSE_CC0",
+      "artist_credit": "Follower of Sodoma",
+      "prayer_positions": 9,
+      "user_selected_this_photographic_version": false,
+      "publication_approved": false
+    },
+    {
+      "id": "artwork-pending:02",
+      "title": "Saint Teresa of Avila Interceding for Souls in Purgatory",
+      "museum": "The Metropolitan Museum of Art",
+      "inventory": "17.190.19",
+      "source_sha256": "8d1914deed2b46063f9c4ae89a8471b1ada97fc09f0604b62443280070c4cf0e",
+      "original_dimensions_px": [
+        3094,
+        4000
+      ],
+      "file": "artwork-pending_02-official-original.jpg",
+      "derivative": "02-teresa-met-fullframe.webp",
+      "source_rights": "MET_IS_PUBLIC_DOMAIN_TRUE",
+      "artist_credit": "Workshop of Peter Paul Rubens (institutional attribution subject to final check)",
+      "prayer_positions": 6,
+      "user_selected_this_photographic_version": false,
+      "publication_approved": false
+    }
+  ],
+  "constraints": [
+    "No copying original 8MB/4MB museum JPEGs into app public tree",
+    "No 16:9 cover crop, full painting remains visible",
+    "Research-branch staging directory explicitly excluded from public Pages allowlist",
+    "No gallery registry edit, no Prayer slot edit, no Home art change",
+    "Source full-byte SHA256 mismatch prevents derivative staging",
+    "GitHub Actions push authorized only to same research branch",
+    "Require explicit owner decision on the specific photographic version before main merge"
+  ]
+}
