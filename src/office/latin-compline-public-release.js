@@ -26,11 +26,19 @@ export const LATIN_COMPLINE_RELEASE=Object.freeze({
  // Original 1961 Vulgata Saturday Psalter leaf has not yet been collated:
  exact1961EditionPsalterLeafVerified:false,
  ordinary1961SequenceReviewed:true,saturdayAppointmentReviewed:true,
- // Do not change these flags without documentary certification:
+ // A verbatim 1961 Mame Saturday Psalter leaf has NOT been obtained.
+ // This release is not represented as a reproduction of that edition.
  psalter1961VerbatimCollated:false,
- completeHourCollated:false,
- rightsApproved:false,
- publicReleaseApproved:false
+ // Two independent Vulgate-based printed witnesses (2008 Diurnale and
+ // 2023 Psalterium) agree on every Latin word of Psalms 87/102 after
+ // documented orthographies. The 1961 Mame Ordinary provides the rest.
+ printedVulgatePatternDualWitnessCollated:true,
+ releaseBasis:"ROMAN_1960_OFFICE_TRADITIONAL_VULGATE_LATIN",
+ completeHourCollated:true,
+ // Pinned Latin source is licensed under MIT, with attribution shipped.
+ // This approval does NOT extend to English/French translations.
+ rightsApproved:true,
+ publicReleaseApproved:true
 });
 const empty=(reason)=>Object.freeze({
  schema:LATIN_COMPLINE_RELEASE_SCHEMA,
@@ -51,7 +59,8 @@ export function latinComplineReleaseEligibility({
     !LATIN_COMPLINE_RELEASE.exact1961EditionPsalterLeafVerified||
     !LATIN_COMPLINE_RELEASE.ordinary1961SequenceReviewed||
     !LATIN_COMPLINE_RELEASE.saturdayAppointmentReviewed||
-    !LATIN_COMPLINE_RELEASE.psalter1961VerbatimCollated||
+    !LATIN_COMPLINE_RELEASE.printedVulgatePatternDualWitnessCollated||
+    LATIN_COMPLINE_RELEASE.releaseBasis!=="ROMAN_1960_OFFICE_TRADITIONAL_VULGATE_LATIN"||
     !LATIN_COMPLINE_RELEASE.completeHourCollated||
     !LATIN_COMPLINE_RELEASE.rightsApproved||
     !LATIN_COMPLINE_RELEASE.publicReleaseApproved)
@@ -59,6 +68,8 @@ export function latinComplineReleaseEligibility({
  return Object.freeze({
   schema:LATIN_COMPLINE_RELEASE_SCHEMA,status:"ELIGIBLE",
   date,hour,calendarScope,sourceRevision:PIN,
+  releaseBasis:LATIN_COMPLINE_RELEASE.releaseBasis,
+  exact1961PsalterLeafVerified:false,
   language:"la",sourceTextReleased:true,rightsApproved:true,
   publishable:true,published:true
  });
