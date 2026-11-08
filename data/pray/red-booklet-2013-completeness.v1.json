@@ -1,0 +1,533 @@
+{
+  "schema": "ao.pray.red-booklet-2013-completeness.v1",
+  "source": {
+    "title": "Latin–English Booklet Missal for Praying the Traditional Mass",
+    "publisher": "Coalition in Support of Ecclesia Dei",
+    "edition": "Fourth Edition, Tenth Printing",
+    "date": "May 2013",
+    "userProvidedScan": true,
+    "pdfPages": 71,
+    "printedPageToPdfPageOffset": 1
+  },
+  "scope": {
+    "massOrdinary": "Covered separately by data/research/mass-ordo-red-missal-2013-editorial.v1.json (256 cues); proper texts shown are examples and must not override date-specific 1962 Mass propers",
+    "privatePrayers": "Printed booklet pages 3, 5–7, 50–53, 59–67",
+    "excluded": "Instructions, illustrations, catechetical explanations, examination lists, musical engraving as independently voiced prayer works"
+  },
+  "rules": [
+    "reader_present means an identifiable live source owner and route, NOT exact wording alignment to this booklet",
+    "variant_requires_comparison means a related live work exists but this book's distinct wording or invocation must be compared",
+    "unresolved means no precise source owner has yet been matched; NOT a claim that the prayer is absent from all modules",
+    "Every entry needs separate completion evidence for wording, bilingual source rights, and user-visible discoverability",
+    "No scanned book pages or the full copyrighted 2013 English booklet transcription should be committed from this audit",
+    "The 1962 Missal and existing Mass form/rubric sources remain controlling"
+  ],
+  "works": [
+    {
+      "id": "before_mass",
+      "title": "Prayer Before Mass",
+      "printedPage": 3,
+      "pdfPage": 4,
+      "section": "before_mass",
+      "status": "unresolved",
+      "wordingCollatedAgainst2013": false,
+      "discoverableAsIndividualLibraryWork": false
+    },
+    {
+      "id": "pre_thomas",
+      "title": "St Thomas Aquinas before Communion",
+      "printedPage": 5,
+      "pdfPage": 6,
+      "section": "before_communion",
+      "status": "reader_present",
+      "owner": {
+        "path": "src/pray/traditional-pray-data.js",
+        "symbol": "beforeThomas",
+        "route": "pray.communion_treasury"
+      },
+      "wordingCollatedAgainst2013": false,
+      "discoverableAsIndividualLibraryWork": false
+    },
+    {
+      "id": "pre_ambrose",
+      "title": "St Ambrose before Communion",
+      "printedPage": 6,
+      "pdfPage": 7,
+      "section": "before_communion",
+      "status": "reader_present",
+      "owner": {
+        "path": "src/pray/traditional-pray-data.js",
+        "symbol": "beforeAmbrose",
+        "route": "pray.communion_treasury"
+      },
+      "wordingCollatedAgainst2013": false,
+      "discoverableAsIndividualLibraryWork": false
+    },
+    {
+      "id": "pre_faith",
+      "title": "Act of Faith before Communion",
+      "printedPage": 7,
+      "pdfPage": 8,
+      "section": "before_communion",
+      "status": "reader_present",
+      "owner": {
+        "path": "src/pray/canonical-data.js",
+        "symbol": "foundations_act_of_faith",
+        "route": "pray.library"
+      },
+      "wordingCollatedAgainst2013": false,
+      "discoverableAsIndividualLibraryWork": false
+    },
+    {
+      "id": "pre_hope",
+      "title": "Act of Hope before Communion",
+      "printedPage": 7,
+      "pdfPage": 8,
+      "section": "before_communion",
+      "status": "reader_present",
+      "owner": {
+        "path": "src/pray/canonical-data.js",
+        "symbol": "foundations_act_of_hope",
+        "route": "pray.library"
+      },
+      "wordingCollatedAgainst2013": false,
+      "discoverableAsIndividualLibraryWork": false
+    },
+    {
+      "id": "pre_charity",
+      "title": "Act of Charity before Communion",
+      "printedPage": 7,
+      "pdfPage": 8,
+      "section": "before_communion",
+      "status": "reader_present",
+      "owner": {
+        "path": "src/pray/canonical-data.js",
+        "symbol": "foundations_act_of_love",
+        "route": "pray.library"
+      },
+      "wordingCollatedAgainst2013": false,
+      "discoverableAsIndividualLibraryWork": false
+    },
+    {
+      "id": "pre_contrition",
+      "title": "Act of Contrition before Communion",
+      "printedPage": 7,
+      "pdfPage": 8,
+      "section": "before_communion",
+      "status": "reader_present",
+      "owner": {
+        "path": "src/pray/canonical-data.js",
+        "symbol": "sacrament_act_of_contrition",
+        "route": "pray.library"
+      },
+      "wordingCollatedAgainst2013": false,
+      "discoverableAsIndividualLibraryWork": false
+    },
+    {
+      "id": "leonine",
+      "title": "Prayers after Low Mass (Leonine)",
+      "printedPage": 50,
+      "pdfPage": 51,
+      "section": "after_low_mass",
+      "status": "reader_present",
+      "owner": {
+        "path": "src/pray/canonical-data.js",
+        "symbol": "mass_devotion_leonine",
+        "route": "pray.library"
+      },
+      "wordingCollatedAgainst2013": false,
+      "discoverableAsIndividualLibraryWork": false
+    },
+    {
+      "id": "ben_o_salutaris",
+      "title": "O Salutaris Hostia",
+      "printedPage": 51,
+      "pdfPage": 52,
+      "section": "benediction",
+      "status": "reader_present",
+      "owner": {
+        "path": "src/pray/canonical-data.js",
+        "symbol": "benediction_o_salutaris",
+        "route": "pray.benediction"
+      },
+      "wordingCollatedAgainst2013": false,
+      "discoverableAsIndividualLibraryWork": false
+    },
+    {
+      "id": "ben_tantum",
+      "title": "Tantum Ergo",
+      "printedPage": 52,
+      "pdfPage": 53,
+      "section": "benediction",
+      "status": "reader_present",
+      "owner": {
+        "path": "src/pray/canonical-data.js",
+        "symbol": "benediction_tantum_ergo",
+        "route": "pray.benediction"
+      },
+      "wordingCollatedAgainst2013": false,
+      "discoverableAsIndividualLibraryWork": false
+    },
+    {
+      "id": "ben_panem",
+      "title": "Panem de caelo / Benediction versicles and prayer",
+      "printedPage": 52,
+      "pdfPage": 53,
+      "section": "benediction",
+      "status": "reader_present",
+      "owner": {
+        "path": "src/pray/canonical-data.js",
+        "symbol": "benediction_versicles",
+        "route": "pray.benediction"
+      },
+      "wordingCollatedAgainst2013": false,
+      "discoverableAsIndividualLibraryWork": false
+    },
+    {
+      "id": "ben_praises",
+      "title": "Divine Praises",
+      "printedPage": 53,
+      "pdfPage": 54,
+      "section": "benediction",
+      "status": "reader_present",
+      "owner": {
+        "path": "src/pray/canonical-data.js",
+        "symbol": "benediction_divine_praises",
+        "route": "pray.benediction"
+      },
+      "wordingCollatedAgainst2013": false,
+      "discoverableAsIndividualLibraryWork": false
+    },
+    {
+      "id": "ben_psalm",
+      "title": "Laudate Dominum / Psalm 116",
+      "printedPage": 53,
+      "pdfPage": 54,
+      "section": "benediction",
+      "status": "reader_present",
+      "owner": {
+        "path": "src/pray/canonical-data.js",
+        "symbol": "benediction_adoremus_ps116",
+        "route": "pray.benediction"
+      },
+      "wordingCollatedAgainst2013": false,
+      "discoverableAsIndividualLibraryWork": false
+    },
+    {
+      "id": "ben_gloria",
+      "title": "Gloria Patri at Benediction",
+      "printedPage": 53,
+      "pdfPage": 54,
+      "section": "benediction",
+      "status": "reader_present",
+      "owner": {
+        "path": "src/pray/canonical-data.js",
+        "symbol": "foundations_glory_be",
+        "route": "pray.benediction"
+      },
+      "wordingCollatedAgainst2013": false,
+      "discoverableAsIndividualLibraryWork": false
+    },
+    {
+      "id": "conf_spirit",
+      "title": "Come, Holy Ghost (before Confession)",
+      "printedPage": 59,
+      "pdfPage": 60,
+      "section": "confession",
+      "status": "reader_present",
+      "owner": {
+        "path": "src/pray/canonical-data.js",
+        "symbol": "sacrament_come_holy_spirit",
+        "route": "pray.confession"
+      },
+      "wordingCollatedAgainst2013": false,
+      "discoverableAsIndividualLibraryWork": false
+    },
+    {
+      "id": "conf_mary",
+      "title": "Hail Mary (before Confession)",
+      "printedPage": 59,
+      "pdfPage": 60,
+      "section": "confession",
+      "status": "reader_present",
+      "owner": {
+        "path": "src/pray/canonical-data.js",
+        "symbol": "foundations_hail_mary",
+        "route": "pray.confession"
+      },
+      "wordingCollatedAgainst2013": false,
+      "discoverableAsIndividualLibraryWork": false
+    },
+    {
+      "id": "conf_angel",
+      "title": "Guardian Angel invocation before Confession",
+      "printedPage": 59,
+      "pdfPage": 60,
+      "section": "confession",
+      "status": "variant_requires_comparison",
+      "owner": {
+        "path": "src/pray/canonical-data.js",
+        "symbol": "foundations_guardian_angel",
+        "route": "pray.confession"
+      },
+      "wordingCollatedAgainst2013": false,
+      "discoverableAsIndividualLibraryWork": false
+    },
+    {
+      "id": "conf_contrition",
+      "title": "Act of Contrition in Confession section",
+      "printedPage": 59,
+      "pdfPage": 60,
+      "section": "confession",
+      "status": "reader_present",
+      "owner": {
+        "path": "src/pray/canonical-data.js",
+        "symbol": "sacrament_act_of_contrition",
+        "route": "pray.confession"
+      },
+      "wordingCollatedAgainst2013": false,
+      "discoverableAsIndividualLibraryWork": false
+    },
+    {
+      "id": "conf_exam_prayer",
+      "title": "Prayer after Examination of Conscience",
+      "printedPage": 61,
+      "pdfPage": 62,
+      "section": "confession",
+      "status": "unresolved",
+      "wordingCollatedAgainst2013": false,
+      "discoverableAsIndividualLibraryWork": false
+    },
+    {
+      "id": "conf_thanksgiving",
+      "title": "Thanksgiving After Confessing Sins and Performing Penance",
+      "printedPage": 61,
+      "pdfPage": 62,
+      "section": "confession",
+      "status": "unresolved",
+      "wordingCollatedAgainst2013": false,
+      "discoverableAsIndividualLibraryWork": false
+    },
+    {
+      "id": "conf_joseph",
+      "title": "Prayer to St Joseph for purity",
+      "printedPage": 61,
+      "pdfPage": 62,
+      "section": "confession",
+      "status": "unresolved",
+      "wordingCollatedAgainst2013": false,
+      "discoverableAsIndividualLibraryWork": false
+    },
+    {
+      "id": "communion_thanks",
+      "title": "Thanksgiving After Communion (My good Jesus)",
+      "printedPage": 62,
+      "pdfPage": 63,
+      "section": "after_communion",
+      "status": "unresolved",
+      "wordingCollatedAgainst2013": false,
+      "discoverableAsIndividualLibraryWork": false
+    },
+    {
+      "id": "communion_heart",
+      "title": "My Heart of Jesus in the Most Blessed Sacrament",
+      "printedPage": 62,
+      "pdfPage": 63,
+      "section": "after_communion",
+      "status": "unresolved",
+      "wordingCollatedAgainst2013": false,
+      "discoverableAsIndividualLibraryWork": false
+    },
+    {
+      "id": "ignatius_suscipe",
+      "title": "St Ignatius Loyola — Act of Self-Consecration (Suscipe)",
+      "printedPage": 62,
+      "pdfPage": 63,
+      "section": "after_communion",
+      "status": "reader_present",
+      "wordingCollatedAgainst2013": false,
+      "discoverableAsIndividualLibraryWork": false,
+      "owner": {
+        "path": "src/pray/prayer-acquisition-historical-witnesses.v1.js",
+        "symbol": "ignatius_suscipe_lasance_1908_en",
+        "route": "pray.morning_evening"
+      },
+      "note": "1908 source-owned EN/LA Suscipe is already a selectable Morning Offering; not yet specifically accessible from After Communion, booklet's 2013 English wording remains uncollated, no French prayer claimed"
+    },
+    {
+      "id": "communion_anima",
+      "title": "Anima Christi",
+      "printedPage": 62,
+      "pdfPage": 63,
+      "section": "after_communion",
+      "status": "reader_present",
+      "owner": {
+        "path": "src/pray/canonical-data.js",
+        "symbol": "adoration_anima_christi",
+        "route": "pray.library"
+      },
+      "wordingCollatedAgainst2013": false,
+      "discoverableAsIndividualLibraryWork": false
+    },
+    {
+      "id": "communion_bonaventure",
+      "title": "St Bonaventure After Communion",
+      "printedPage": 63,
+      "pdfPage": 64,
+      "section": "after_communion",
+      "status": "reader_present",
+      "owner": {
+        "path": "src/pray/traditional-pray-data.js",
+        "symbol": "afterBonaventure",
+        "route": "pray.communion_treasury"
+      },
+      "wordingCollatedAgainst2013": false,
+      "discoverableAsIndividualLibraryWork": false
+    },
+    {
+      "id": "communion_thomas",
+      "title": "St Thomas Aquinas After Communion",
+      "printedPage": 64,
+      "pdfPage": 65,
+      "section": "after_communion",
+      "status": "reader_present",
+      "owner": {
+        "path": "src/pray/traditional-pray-data.js",
+        "symbol": "afterThomas",
+        "route": "pray.communion_treasury"
+      },
+      "wordingCollatedAgainst2013": false,
+      "discoverableAsIndividualLibraryWork": false
+    },
+    {
+      "id": "communion_dying",
+      "title": "O Most Merciful Jesus for those dying this day",
+      "printedPage": 64,
+      "pdfPage": 65,
+      "section": "after_communion",
+      "status": "unresolved",
+      "wordingCollatedAgainst2013": false,
+      "discoverableAsIndividualLibraryWork": false
+    },
+    {
+      "id": "communion_heart_intercession",
+      "title": "O Most Sacred Heart of Jesus for the Church, Pope and souls",
+      "printedPage": 64,
+      "pdfPage": 65,
+      "section": "after_communion",
+      "status": "unresolved",
+      "wordingCollatedAgainst2013": false,
+      "discoverableAsIndividualLibraryWork": false
+    },
+    {
+      "id": "communion_heart_aspirations",
+      "title": "Short Sacred Heart aspirations",
+      "printedPage": 64,
+      "pdfPage": 65,
+      "section": "after_communion",
+      "status": "variant_requires_comparison",
+      "owner": {
+        "path": "src/pray/canonical-data.js",
+        "symbol": "sacred_heart_aspiration_trust",
+        "route": "pray.library"
+      },
+      "wordingCollatedAgainst2013": false,
+      "discoverableAsIndividualLibraryWork": false
+    },
+    {
+      "id": "crucifix",
+      "title": "Prayer Before a Crucifix (En ego)",
+      "printedPage": 65,
+      "pdfPage": 66,
+      "section": "devotional",
+      "status": "reader_present",
+      "owner": {
+        "path": "src/pray/traditional-pray-data.js",
+        "symbol": "enEgo",
+        "route": "pray.communion_treasury"
+      },
+      "wordingCollatedAgainst2013": false,
+      "discoverableAsIndividualLibraryWork": false
+    },
+    {
+      "id": "holy_spirit_augustine",
+      "title": "Prayer to the Holy Spirit, attributed to St Augustine",
+      "printedPage": 65,
+      "pdfPage": 66,
+      "section": "devotional",
+      "status": "unresolved",
+      "wordingCollatedAgainst2013": false,
+      "discoverableAsIndividualLibraryWork": false
+    },
+    {
+      "id": "our_lady_65",
+      "title": "A Prayer to Our Lady (O Mary, most holy Virgin Mother)",
+      "printedPage": 65,
+      "pdfPage": 66,
+      "section": "devotional",
+      "status": "unresolved",
+      "wordingCollatedAgainst2013": false,
+      "discoverableAsIndividualLibraryWork": false
+    },
+    {
+      "id": "angelus",
+      "title": "Angelus",
+      "printedPage": 66,
+      "pdfPage": 67,
+      "section": "marian",
+      "status": "reader_present",
+      "owner": {
+        "path": "src/pray/presentation-runtime.js",
+        "symbol": "renderAngelus()",
+        "route": "pray.angelus"
+      },
+      "wordingCollatedAgainst2013": false,
+      "discoverableAsIndividualLibraryWork": false
+    },
+    {
+      "id": "regina",
+      "title": "Regina Coeli",
+      "printedPage": 66,
+      "pdfPage": 67,
+      "section": "marian",
+      "status": "reader_present",
+      "owner": {
+        "path": "src/pray/presentation-runtime.js",
+        "symbol": "regina",
+        "route": "pray.angelus_regina"
+      },
+      "wordingCollatedAgainst2013": false,
+      "discoverableAsIndividualLibraryWork": false
+    },
+    {
+      "id": "rosary",
+      "title": "Holy Rosary, fifteen traditional mysteries and virtues",
+      "printedPage": 67,
+      "pdfPage": 68,
+      "section": "marian",
+      "status": "reader_present",
+      "owner": {
+        "path": "src/pray/presentation-runtime.js",
+        "symbol": "pray.rosary",
+        "route": "pray.rosary"
+      },
+      "wordingCollatedAgainst2013": false,
+      "discoverableAsIndividualLibraryWork": false
+    },
+    {
+      "id": "fatima",
+      "title": "Fatima prayer (O my Jesus)",
+      "printedPage": 67,
+      "pdfPage": 68,
+      "section": "marian",
+      "status": "variant_requires_comparison",
+      "owner": {
+        "path": "src/pray/presentation-runtime.js",
+        "symbol": "rosaryPlan",
+        "route": "pray.rosary"
+      },
+      "wordingCollatedAgainst2013": false,
+      "discoverableAsIndividualLibraryWork": false
+    }
+  ]
+}
