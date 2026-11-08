@@ -116,11 +116,13 @@ export function select1962CommemorationsForMassForm({
   const admissiblePrayerSource=prayerPath===observedPath||inSeasonAlias;
   // A IV-class universal feria is a generic Calendar observance without a
   // physical main.path. Its selected Proper legitimately inherits a Sunday
-  // source. Trust that exact RESOLVED source identity only in the narrow
-  // post-Pentecost ordinary-feria category, never in a saint/votive case.
+  // source, sometimes the original source-qualified -0a or -0r form. Do not
+  // strip arbitrary suffixes: only these specifically attested Pentecost
+  // source variants qualify, with exact separately matched commemoration
+  // owner and complete source oration groups. Never admit saint/votive Masses.
   const inheritedPentecostFeria=main?.path==null&&
     String(main?.id??"")===":feria:4:w"&&Number(main.rank)===4&&
-    /^Tempora\/Pent[0-9]{1,2}-0$/.test(String(data.sourcePath??envelope?.sourcePath??""));
+    /^Tempora\/Pent[0-9]{1,2}-0(?:a|r)?$/.test(String(data.sourcePath??envelope?.sourcePath??""));
   const matchedPrincipalSource=inheritedPentecostFeria||
     canonical(data.sourcePath??envelope?.sourcePath)===canonical(main.path);
   const identified=comms.length===1&&sources.length===1&&
