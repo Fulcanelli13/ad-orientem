@@ -1,4 +1,4 @@
-name: ICRSP 6–7 November 2026 actual Mass vs universal feria
+name: ICRSP 6–8 November 2026 actual Mass vs universal feria
 on:
   pull_request:
     paths:
@@ -9,6 +9,8 @@ on:
       - "tests/icrsp-2026-nov07-phone-e2e.mjs"
       - "src/mass/reader-native-preview.js"
       - "src/mass/icrsp-nov06-pro-papa-orations.js"
+      - "src/mass/icrsp-nov08-sunday-pro-papa.js"
+      - "tests/icrsp-2026-nov08-sunday-phone-e2e.mjs"
       - "src/mass/browser-entry.js"
       - "tests/icrsp-nov06-pro-papa-orations.mjs"
       - "src/home/today-h4-view.js"
@@ -42,3 +44,5 @@ jobs:
         run: node tests/icrsp-2026-november-ordo-phone-e2e.mjs
       - name: Phone Home to actual First Saturday Immaculate Heart source
         run: node tests/icrsp-2026-nov07-phone-e2e.mjs
+      - name: Phone ICRSP Sunday 8 Nov source and second papal Postcommunion NEXT
+        run: node tests/icrsp-2026-nov08-sunday-phone-e2e.mjs
