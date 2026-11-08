@@ -7,8 +7,11 @@ import {readFile,mkdir,writeFile} from "node:fs/promises";
 import {resolve,sep,extname} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
+import {DIVINUM_OFFICIUM_PIN as PIN} from "../src/app/source-transport-compat.js";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
+const latinFixture=JSON.parse(await readFile(resolve(root,"tests/fixtures/office/advent-i-saturday-compline-la.json"),"utf8"));
+const latinSourceBase="https://raw.githubusercontent.com/DivinumOfficium/divinum-officium/"+PIN+"/web/www/horas/Latin/";
 const out=resolve(root,"artifacts/divine-office-native-phone");
 await mkdir(out,{recursive:true});
 const mime={
@@ -81,6 +84,44 @@ try{
   assert.equal(officeSourceRequests.length,sourceBaseline,
    "Status-only Office caused new pinned source requests: "+
     officeSourceRequests.slice(sourceBaseline).join(" | "));
+  // Positive PUBLIC reader: fetch exactly the pinned Latin leaves, never
+  // a fallback translation, and verify that the real reading renders at
+  // both 320px and 390px.
+  const observedLatin=[];
+  await page.route("https://raw.githubusercontent.com/DivinumOfficium/divinum-officium/**",async route=>{
+   const url=route.request().url();
+   if(!url.startsWith(latinSourceBase))return route.continue();
+   observedLatin.push(url);
+   const relative=decodeURIComponent(url.slice(latinSourceBase.length));
+   const match=/^Psalterium\/Psalmorum\/Psalm(87|102|233)\.txt$/u.exec(relative);
+   let body;
+   if(match)body=latinFixture.psalms[Number(match[1])];
+   else if(relative.endsWith(".txt")){
+    const path=relative.slice(0,-4);
+    const items=latinFixture.sections[path];
+    if(items)body=Object.entries(items).map(([name,rows])=>
+     "["+name+"]\n"+rows.join("\n")).join("\n\n")+"\n";
+   }
+   await route.fulfill({status:body?200:404,contentType:"text/plain",
+    headers:{"access-control-allow-origin":"*"},
+    body:body??"UNAPPROVED_LATIN_LEAF"});
+  });
+  await office.locator('[data-office-hour="COMPLINE"]').click();
+  await office.getByRole("button",{name:"Read Latin Compline"}).click();
+  const reading=office.locator(".aoOfPublicLatin");
+  await reading.locator(".aoOfPublishedStatus").getByText(/40 reading moments/).waitFor({timeout:35000});
+  assert.match(await reading.locator(".aoOfFrameControls").innerText(),/1 \/ /);
+  assert.ok(observedLatin.length>=7,"Public Latin text did not fetch pinned original");
+  await reading.getByRole("button",{name:"Next"}).click();
+  assert.match(await reading.locator(".aoOfFrameControls").innerText(),/2 \/ /);
+  const minister=reading.getByRole("combobox",{name:/Presiding minister/});
+  await minister.selectOption("PRIEST");
+  await reading.locator(".aoOfPublishedStatus").getByText(/40 reading moments/).waitFor({timeout:35000});
+  const overflowReading=await page.evaluate(()=>document.documentElement.scrollWidth-document.documentElement.clientWidth);
+  assert.ok(overflowReading<=2,"Public Latin Compline overflow "+width+": "+overflowReading);
+  await office.getByRole("button",{name:"Close Latin Compline"}).click();
+  assert.equal(await office.locator(".aoOfPublishedLatin").count(),0);
+  await office.locator('[data-office-hour="VESPERS"]').click();
   const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-
    document.documentElement.clientWidth);
   assert.ok(overflow<=2,"Office horizontally overflows "+width+": "+overflow);
