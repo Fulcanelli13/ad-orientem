@@ -232,9 +232,12 @@ export function renderTlmChurchProfile(item,language="en",{asOf}={}){
     '<h4>'+E((datedProgramme.timezone==="Europe/Paris"?
       L(language,"Masses explicitly listed for 2026–27","Messes explicitement annoncées pour 2026–27"):
       L(language,"Masses explicitly listed in the 2026 calendar","Messes explicitement datées dans le calendrier 2026")))+'</h4>';
-  if(!dates.length)html+='<p>'+E(L(language,
-    "All dates in this source programme have passed; no future Mass is established.",
-    "Toutes les dates de ce programme ont passé ; aucune messe future n’est établie."))+'</p>';
+  if(!dates.length)html+='<p>'+E(datedProgramme.timezone==="Europe/Paris"?L(language,
+    "All dates in the printed 2026–27 programme have passed; no future Mass is established.",
+    "Toutes les dates du programme 2026–27 sont passées ; aucune messe future n’est établie."):
+    L(language,
+    "All dates in this printed 2026 calendar have passed; no future Mass is established.",
+    "Toutes les dates de ce calendrier imprimé de 2026 sont passées ; aucune messe future n’est établie."))+'</p>';
   for(const e of dates){
    const localDay=new Intl.DateTimeFormat(language==="fr"?"fr-FR":"en-GB",{
      timeZone:"UTC",weekday:"long",day:"numeric",month:"long",year:"numeric"
@@ -244,11 +247,15 @@ export function renderTlmChurchProfile(item,language="en",{asOf}={}){
     '<strong>'+E(e.local_time)+' · '+E(e.mass_type==="SUNG"?L(language,"Sung Mass","Messe chantée"):L(language,"Mass · type unspecified","Messe · type non précisé"))+'</strong>'+
     '<span>'+E(language==="fr"?e.source_programme_name_fr:e.source_programme_name_en)+'</span></div></article>';
   }
-  html+='<p class="aoTlmProfileCaution">'+E(L(language,
+  html+='<p class="aoTlmProfileCaution">'+E(datedProgramme.timezone==="Europe/Paris"?L(language,
    "These dates are individually published in a first-party programme, not live confirmations. Check for changes or cancellations before travelling. No Mass on intervening Sundays is implied.",
-   "Ces dates figurent individuellement dans un programme officiel, sans confirmer une célébration en temps réel. Vérifiez les éventuels changements ou annulations avant de partir ; aucune messe n’est sous-entendue les dimanches intermédiaires."))+'</p>'+
-   '<div class="aoTlmProfileActions">'+link(datedProgramme.dated_bulletin_url,L(language,
-    "Original dated Mass programme","Programme original des messes datées"))+
+   "Ces dates figurent individuellement dans un programme officiel, sans confirmer une célébration en temps réel. Vérifiez les éventuels changements ou annulations avant de partir ; aucune messe n’est sous-entendue les dimanches intermédiaires."):
+   L(language,
+   "These dates appear in an official printed 2026 programme; they are not real-time confirmations. Please check for later changes or cancellation before travelling. No Mass on intervening Sundays is implied.",
+   "Ces dates figurent dans le programme officiel imprimé de 2026 ; elles ne confirment pas une célébration en temps réel. Vérifiez les éventuels changements ou annulations avant de vous déplacer. Aucune messe n’est sous-entendue les dimanches intermédiaires."))+'</p>'+
+   '<div class="aoTlmProfileActions">'+link(datedProgramme.dated_bulletin_url,datedProgramme.timezone==="Europe/Paris"?
+    L(language,"Original dated 2026–27 Mass programme","Programme original des messes datées de 2026–27"):
+    L(language,"Original dated 2026 Mass programme","Programme original des messes datées de 2026"))+
     link(datedProgramme.first_party_site_url,L(language,
     "Current chapel page · check changes","Page actuelle de la chapelle · vérifier les changements"))+
    '</div></div>';
