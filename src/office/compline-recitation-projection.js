@@ -10,7 +10,7 @@
  * PRIVATE REVIEW ONLY: this is not edition/rights certification and
  * never sets any public release flag.
  */
-import {projectSaturdayComplinePsalmFrame}
+import {projectSaturdayComplinePsalmFrame,projectSundayComplinePsalmFrame}
  from "./compline-psalm-display-projection.js";
 export const COMPLINE_CONTEXT=Object.freeze({
  FINAL_PRAYER:"FINAL_PRAYER",OTHER_TIME:"OTHER_TIME"
@@ -208,15 +208,18 @@ export function projectComplineRecitation(review,{
   }
   const clean=projectComplineSourceMarkup(f,languageKeys);
   if(clean===null)return withheld("COMPLINE_SOURCE_MARKUP_CHANGED");
-  const numbered=projectSaturdayComplinePsalmFrame(clean);
-  if(numbered===null)return withheld("COMPLINE_SATURDAY_PSALM_NUMBERING_DRIFT");
-  // Cleaning source markup also creates Confiteor/hymn frames; do not
-  // count those as Psalm display-label projections.
+  const saturdayNumbered=projectSaturdayComplinePsalmFrame(clean);
+  if(saturdayNumbered===null)return withheld("COMPLINE_SATURDAY_PSALM_NUMBERING_DRIFT");
+  const numbered=projectSundayComplinePsalmFrame(saturdayNumbered);
+  if(numbered===null)return withheld("COMPLINE_SUNDAY_PSALM_NUMBERING_DRIFT");
+  // The printed Scripture labels are separate from spoken Latin words.
+  // Confiteor and hymn markup are not Psalm display-label projections.
   if(numbered!==clean)psalmLabelCount++;
   resultFrames.push(numbered);
  }
  const saturday=review.civilDate==="2026-11-28"||review.civilDate==="2026-12-05";
- if(psalmLabelCount!==(saturday?41:0))
+ const sunday=review.civilDate==="2026-11-29"||review.civilDate==="2026-11-30";
+ if(psalmLabelCount!==(saturday?41:sunday?30:0))
   return withheld("COMPLINE_SATURDAY_PSALM_COVERAGE_MISMATCH");
  if(dialogueCount!==2||amenCount!==2||
    replacementCount!==(context===COMPLINE_CONTEXT.FINAL_PRAYER?1:0)||
