@@ -1,6 +1,7 @@
 import { CL2_PHYSICAL_SITE_INDEX_URL,projectCL2PhysicalDirectory } from "./cl2-physical-directory.js";
 import {matchesPublicCL27Facets} from "./cl27-public-facets.js";
 import {CL27_SITE_CONTACT_URL,attachPublishedSiteContactEvidence} from "./tlm-site-contact-evidence.js";
+import {CL27_DATED_MASS_PROGRAMME_URL,attachPublishedDatedMassProgramme} from "./tlm-dated-mass-programme.js";
 import {
   CL27_PUBLIC_CELEBRATION_URL,attachPublishedCelebrationEvidence,tlmCelebrationEvidenceClass,
 } from "./tlm-celebration-evidence.js";
@@ -238,6 +239,21 @@ export async function loadPreliminaryR49({fetchImpl=fetch}={}){
     cache=optionalManifest?.schema==="AO_CL27_EXACT_SITE_CONTACT_RELEASE_V1"
       ?attachPublishedSiteContactEvidence(liturgical,optionalManifest):liturgical;
   }else cache=liturgical;
+  // Dated programme is an optional, independently governed source overlay.
+  // Never synthesize recurrence from 296 historical schedule rows.
+  // An older installed snapshot may return 404 or an unrelated legacy fixture.
+  let programmeResponse=null;
+  try{
+    programmeResponse=await fetchImpl(CL27_DATED_MASS_PROGRAMME_URL,{headers:{accept:"application/json"}});
+  }catch{
+    // Date-specific overlay absent: keep the full worldwide Directory.
+  }
+  if(programmeResponse?.ok){
+    const printed=await programmeResponse.json();
+    if(printed?.schema==="AO_CL27_EXACT_DATED_MASS_PROGRAMME_V1")
+      cache=attachPublishedDatedMassProgramme(cache,printed);
+    // Any tagged but malformed manifest MUST throw from the strict joiner.
+  }
   return cache;
 }
 /**
