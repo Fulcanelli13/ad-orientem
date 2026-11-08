@@ -1,0 +1,57 @@
+{
+  "schema": "AO_SACRED_ART_BATCH1_TWO_MUSEUM_MOBILE_STAGING_RESULT_V1",
+  "source": "data/artwork/batch1-two-mobile-staging.v1.json",
+  "publication_approved": false,
+  "release_count": 0,
+  "paintings": [
+    {
+      "id": "artwork-pending:01",
+      "title": "The Crucifixion",
+      "museum": "Cleveland Museum of Art",
+      "inventory": "1916.786",
+      "source_sha256": "022572a6fa03b4ff9e1a04dc6b92345b2239b0c2998468e58705028b1dad073b",
+      "image_path": "assets/staged/sacred-art-batch1/01-crucifixion-cma-fullframe.webp",
+      "webp_sha256": "ca7cd0c516768c608e3e01db5a5bd05c472557bbd6eed8616a63bc3929434520",
+      "webp_bytes": 383796,
+      "original_size": [
+        2673,
+        3400
+      ],
+      "staged_size": [
+        1024,
+        1303
+      ],
+      "full_frame_preserved": true,
+      "crop_applied": false,
+      "icc_to_srgb": true,
+      "release_approved": false,
+      "owner_photo_selected": false,
+      "status": "STAGED_RESEARCH_BRANCH_ONLY_NOT_APP_OR_PAGES"
+    },
+    {
+      "id": "artwork-pending:02",
+      "title": "Saint Teresa of Avila Interceding for Souls in Purgatory",
+      "museum": "The Metropolitan Museum of Art",
+      "inventory": "17.190.19",
+      "source_sha256": "8d1914deed2b46063f9c4ae89a8471b1ada97fc09f0604b62443280070c4cf0e",
+      "image_path": "assets/staged/sacred-art-batch1/02-teresa-met-fullframe.webp",
+      "webp_sha256": "65f9402889b198d56e8f5038fe76b2561fb56002893de07a79d08169ea852004",
+      "webp_bytes": 181322,
+      "original_size": [
+        3094,
+        4000
+      ],
+      "staged_size": [
+        1024,
+        1324
+      ],
+      "full_frame_preserved": true,
+      "crop_applied": false,
+      "icc_to_srgb": true,
+      "release_approved": false,
+      "owner_photo_selected": false,
+      "status": "STAGED_RESEARCH_BRANCH_ONLY_NOT_APP_OR_PAGES"
+    }
+  ],
+  "scope": "Research-branch media staging excluded from allowlisted GitHub Pages output"
+}
