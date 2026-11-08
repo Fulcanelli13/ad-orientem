@@ -33,7 +33,7 @@ import {isExplicitIcrspNovemberLowMassSelection} from "./icrsp-first-friday-entr
 import {projectIcrspNovemberProPapaOrations} from "./icrsp-nov06-pro-papa-orations.js";
 import {isExplicitIcrspNov08SundaySelection,projectIcrspNov08SundayProPapaOrations}
   from "./icrsp-nov08-sunday-pro-papa.js";
-import {project1962Nov09TheodoreCommemoration}
+import {verify1962Nov09TheodoreSource}
   from "./1962-nov09-theodore-commemoration.js";
 import {requireMassOrdoCompleteness} from "./ordo-mass-completeness.js";
 import {resolve1962AllSoulsSuccession} from "./1962-all-souls-consecutive-rites.js";
@@ -910,10 +910,10 @@ export function createBrowserMassController({rogationPreflight=null,fullMassPref
           throw new Error("LOCAL_ADDITIONAL_ORATIONS_"+result.reason);
         presentedProper=result.proper;
       }
-      // The original 1962 Roman Low Mass on 9 Nov has the *ordinary*
-      // St Theodore commemoration; the institute's separate pro Papa
-      // instruction is not universal and remains on a documented hold.
-      const nov09Theodore=project1962Nov09TheodoreCommemoration({
+      // Source-certified 1962 Roman LOW Mass already includes Theodore
+      // in the original resolver. Independently check its three sets
+      // without inserting any extra prayer. Institute pro Papa remains held.
+      const nov09Theodore=verify1962Nov09TheodoreSource({
         proper:presentedProper,date:resolvedMass.date,
         form:chosen?.form??options.celebrationForm,calendarResolution,
         celebrationId:resolvedMass.celebrationId??"mass_of_day",
