@@ -7,6 +7,8 @@
  * Local calendars, special Offices and proper exceptions remain withheld.
  */
 import {DIVINUM_OFFICIUM_PIN as PIN} from "../app/source-transport-compat.js";
+import {resolveSourceFirstComplineOrdo,researchWitnessForReviewedAdventCompline}
+ from "./office-ordo-compline-resolver.js";
 export const OFFICE_COMPLINE_APPOINTMENTS_SCHEMA="ao.office.2026-advent-i-compline-appointed-week.v1";
 export const ADVENT_I_COMPLINE_APPOINTMENTS=Object.freeze([
  Object.freeze({date:"2026-11-28",weekday:"Sabbato",psalmDay:"Sabbato",
@@ -60,9 +62,28 @@ export function reviewAdventIComplineAppointment(date){
   reason:"CIVIL_DATE_WEEKDAY_MISMATCH",appointment:null,
   publishable:false,published:false
  });
+ // The general Office-only resolver is now a second deterministic gate
+ // over all eight historically reviewed appointments. It MUST agree with
+ // the existing dated certificate before any of these eight dates can
+ // reach the separate public Latin approval gate.
+ const officeOrdo=resolveSourceFirstComplineOrdo({
+  date,record:researchWitnessForReviewedAdventCompline(r)
+ });
+ if(officeOrdo.status!=="OFFICE_PSALTER_APPOINTMENT_RESEARCH_ONLY"||
+    officeOrdo.appointment?.weekday!==r.weekday||
+    officeOrdo.appointment?.psalmDay!==r.psalmDay||
+    officeOrdo.appointment?.marianSection!==r.marianSection||
+    officeOrdo.appointment?.sourceId!==
+     "ao.office.2026-advent-i-dated-review|"+date)
+  return Object.freeze({
+   schema:OFFICE_COMPLINE_APPOINTMENTS_SCHEMA,status:"WITHHELD",
+   reason:"OFFICE_ORDO_RESOLVER_DISAGREES_WITH_DATED_APPOINTMENT",
+   appointment:null,publishable:false,published:false
+  });
  return Object.freeze({
   schema:OFFICE_COMPLINE_APPOINTMENTS_SCHEMA,
   status:"EXPLICIT_ROMAN_1960_APPOINTMENT_RESEARCH",
+  officeOrdoResearch:officeOrdo,
   appointment:r,sourceRevision:PIN,
   officeCompletenessCertified:false,translationsApproved:false,
   rightsApproved:false,publishable:false,published:false
