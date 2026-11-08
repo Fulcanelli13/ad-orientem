@@ -54,7 +54,7 @@ for(let i=0;i<5;i++){
   assert.ok(html.includes(c.public_phone));
   assert.ok(html.includes(c.community_named_by_source));
   assert.ok(html.includes(lang==="fr"?c.note_fr:c.note_en));
-  assert.ok(html.includes(lang==="fr"?"Les horaires":"Mass times"));
+  assert.ok(html.includes(lang==="fr"?"Aucun horaire de messe publiable":"No currently publishable Mass times"));
   assert.ok(!html.includes("09:00")&&!html.includes("18:30"),
    "Contact evidence must not masquerade as an approved Mass timetable");
  }
