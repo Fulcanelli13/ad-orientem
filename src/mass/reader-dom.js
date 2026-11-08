@@ -2332,6 +2332,11 @@ export function buildReaderShellMarkup(prepared = {}) {
       <small>Gregorian notation · Sung and Solemn Mass</small>
       <button class="ao-mass-prefs-more" type="button" data-reader-chant-preview aria-pressed="false">Show source-neume references</button>
       <small data-reader-chant-preview-note>Provisional 1961 reference scores at their exact Mass passages. Not a certified local Schola programme; no audio or automatic timing.</small>
+      <div data-ordo-gospel-tone-setting>
+        <small>Gospel greeting · reference tone</small>
+        <button class="ao-mass-prefs-more" type="button" data-reader-gospel-tone aria-pressed="false">Standard Gospel tone</button>
+        <small>Tap to choose the optional 1961 ad libitum tone. Only the fixed greeting and response are scored; the Gospel proclamation follows its selected text.</small>
+      </div>
     </div>
     <div class="ao-mass-prefs-group ao-customary-controls" role="group" aria-label="Local Mass customs">
       <small>Local participation customs</small>
@@ -2784,6 +2789,8 @@ export function createReaderDomAdapter({
   let current=null;
   let sourceRailTracker=null;
   let mode="LIVE";
+  // A/C source-neume preview only: independent of the Preface rubrical tone.
+  let gospelReferenceTone="GOSPEL_STANDARD";
   let bound=false;
   let rootClickListener=null;
   let rootChangeListener=null;
@@ -2881,6 +2888,15 @@ export function createReaderDomAdapter({
     const group=root.querySelector("[data-ordo-chant-reference-setting]");
     const sung=sungMassForNotation();
     if(group)group.hidden=!sung;
+    const gospelGroup=root.querySelector("[data-ordo-gospel-tone-setting]");
+    const gospelButton=root.querySelector("[data-reader-gospel-tone]");
+    if(gospelGroup)gospelGroup.hidden=!sung;
+    if(gospelButton){
+      gospelButton.disabled=!sung;
+      gospelButton.setAttribute("aria-pressed",String(gospelReferenceTone==="GOSPEL_ALTERNATE_AD_LIBITUM"));
+      gospelButton.textContent=gospelReferenceTone==="GOSPEL_ALTERNATE_AD_LIBITUM"
+        ?"Alternative Gospel tone · ad libitum":"Standard Gospel tone";
+    }
     if(!button)return;
     button.disabled=!sung;
     button.setAttribute("aria-pressed",String(sung&&properNotationPreview.enabled));
@@ -2896,9 +2912,9 @@ export function createReaderDomAdapter({
       form:prepared?.session?.resolvedMass?.form,
       resolvedMass:prepared?.session?.resolvedMass,
       massPlan:prepared?.session?.plan??null,
-      selectedSettings:selectedMassInlineSettings({
+      selectedSettings:{...selectedMassInlineSettings({
         localProgramme:programme,resolvedMass:prepared?.session?.resolvedMass
-      }),
+      }),GOSPEL_TONE:gospelReferenceTone},
       paragraphs:current.paragraphs});
   }
 
@@ -3943,6 +3959,16 @@ export function createReaderDomAdapter({
       const chantPreview=event.target?.closest?.("[data-reader-chant-preview]");
       if(chantPreview){
         if(!chantPreview.disabled)setOrdoNotationReferences(!properNotationPreview.enabled);
+        return;
+      }
+      const gospelToneButton=event.target?.closest?.("[data-reader-gospel-tone]");
+      if(gospelToneButton){
+        if(!gospelToneButton.disabled){
+          gospelReferenceTone=gospelReferenceTone==="GOSPEL_STANDARD"
+            ?"GOSPEL_ALTERNATE_AD_LIBITUM":"GOSPEL_STANDARD";
+          syncOrdoNotationControl();
+          if(properNotationPreview.enabled)renderOrdoNotationReferences();
+        }
         return;
       }
       const parametersButton=event.target?.closest?.("[data-reader-parameters]");
