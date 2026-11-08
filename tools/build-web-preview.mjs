@@ -21,6 +21,7 @@ const activeEntrypointAssets=new Set([...entryHtml.matchAll(/(?:src|href)=["']\.
 const excludedResearchPaths=[
  "assets/staged",
  "data/artwork/sacred-art-category-match-989-267.v1.json",
+ "data/artwork/research-priority-16-source-audit-20261109.v1.json",
  "assets/stations/san-polo",
  "data/geography/research",
  "data/office/research",
