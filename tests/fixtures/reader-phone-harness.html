@@ -30,7 +30,8 @@ const separatelyNamedChants=params.get("sourceChants")==="1";
 // 1962 All Saints Proper, never a synthetic title-to-score lookup.
 const scoredProperKind=String(params.get("scoreProper")??"");
 const epiphanyScoredProper=scoredProperKind==="epiphany";
-const exactScoredProper=scoredProperKind==="all-saints"||epiphanyScoredProper;
+const immaculateScoredProper=scoredProperKind==="immaculate";
+const exactScoredProper=scoredProperKind==="all-saints"||epiphanyScoredProper||immaculateScoredProper;
 const alternateIsTract=params.get("tract")==="1";
 const altKind=alternateIsTract?"TRACT":"ALLELUIA";
 const altSection=alternateIsTract?"Tractus":"Alleluia";
@@ -109,6 +110,24 @@ if(epiphanyScoredProper){
     "Nous avons vu son étoile en Orient et sommes venus avec des présents adorer le Seigneur")
  });
 }
+// 8 December source check: the actual Latin in pinned Sancti/12-08,
+// including the Gradual and Alleluia joined by its 1962 Graduale section.
+// Only the named five Proper chants form part of this reference fixture.
+if(immaculateScoredProper){
+ Object.assign(proper,{
+  sourcePath:"Sancti/12-08",
+  introit:t("Gaudens gaudébo in Dómino, et exsultábit ánima mea in Deo meo: quia índuit me vestiméntis salútis: et induménto justítiæ circúmdedit me, quasi sponsam ornátam monílibus suis.",
+    "I will greatly rejoice in the Lord","Je tressaillirai de joie dans le Seigneur"),
+  gradual:t("Benedícta es tu, Virgo María, a Dómino, Deo excélso, præ ómnibus muliéribus super terram. Tu glória Jerúsalem, tu lætítia Israël, tu honorificéntia pópuli nostri. Allelúja, allelúja. Tota pulchra es, María: et mácula originális non est in te. Allelúja.",
+    "Blessed art thou, O Virgin Mary. Alleluia: Thou art all fair, O Mary.",
+    "Vous êtes bénie, Vierge Marie. Alléluia : Vous êtes toute belle, Marie."),
+  offertory:t("Ave, María, grátia plena; Dóminus tecum: benedícta tu in muliéribus, allelúja.",
+    "Hail Mary, full of grace; the Lord is with thee",
+    "Je vous salue, Marie, pleine de grâce ; le Seigneur est avec vous"),
+  communion:t("Gloriósa dicta sunt de te, María: quia fecit tibi magna qui potens est.",
+    "Glorious things are said of thee, Mary","Des choses glorieuses ont été dites de vous, Marie")
+ });
+}
 const rite=String(params.get("rite")??(params.get("asperges")==="1"?"asperges":"")).toLowerCase();
 const withAsperges=rite==="asperges";
 const withPalm=rite==="palm";
@@ -125,14 +144,15 @@ const followingActions=following==="corpus"?["CORPUS_CHRISTI_PROCESSION"]:
   following==="requiem"?["REQUIEM_ABSOLUTION"]:[];
 const allowedForms=new Set(["MISSA_CANTATA_INCENSE","MISSA_CANTATA_SIMPLE","SOLEMN","LOW"]);
 if(!allowedForms.has(requestedForm))throw new Error("Unsupported test fixture form");
-const fixtureDate=params.get("date")||(epiphanyScoredProper?"2027-01-06":exactScoredProper?"2026-11-01":withGoodFriday?"2026-04-03":withEasterVigil?"2027-03-27":"2026-10-04");
+const fixtureDate=params.get("date")||(immaculateScoredProper?"2026-12-08":epiphanyScoredProper?"2027-01-06":exactScoredProper?"2026-11-01":withGoodFriday?"2026-04-03":withEasterVigil?"2027-03-27":"2026-10-04");
 if(!/^20[0-9]{2}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12][0-9]|3[01])$/.test(fixtureDate))throw new Error("Invalid test fixture date");
 const resolvedMass={
   schema:"ao-resolved-mass-v2",
   date:fixtureDate,
   form:requestedForm,
   presentationMode:mode,
-  actualCelebration:epiphanyScoredProper?{id:"epiphany",type:"CALENDAR",title:"Epiphany of Our Lord"}:
+  actualCelebration:immaculateScoredProper?{id:"immaculata-bmv",type:"CALENDAR",title:"Immaculate Conception"}:
+    epiphanyScoredProper?{id:"epiphany",type:"CALENDAR",title:"Epiphany of Our Lord"}:
     exactScoredProper?{id:"all-saints",type:"CALENDAR",title:"All Saints"}:
     withGoodFriday?{id:"good-friday",type:"CALENDAR",title:"Good Friday"}:
     withEasterVigil?{id:"easter-vigil",type:"CALENDAR",title:"Easter Vigil"}:
@@ -140,7 +160,8 @@ const resolvedMass={
     fixtureRequiem?{id:"requiem",type:"REQUIEM",title:"Requiem"}:
     following==="corpus"?{id:"corpus-christi",type:"CALENDAR",title:"Corpus Christi"}:
     {id:"holy_rosary",type:params.get("print")==="1"?"CALENDAR":"VOTIVE",title:"Holy Rosary"},
-  calendarCelebration:epiphanyScoredProper?{id:"epiphany",type:"CALENDAR",title:"Epiphany of Our Lord"}:
+  calendarCelebration:immaculateScoredProper?{id:"immaculata-bmv",type:"CALENDAR",title:"Immaculate Conception"}:
+    epiphanyScoredProper?{id:"epiphany",type:"CALENDAR",title:"Epiphany of Our Lord"}:
     exactScoredProper?{id:"all-saints",type:"CALENDAR",title:"All Saints"}:
     withGoodFriday?{id:"good-friday",type:"CALENDAR",title:"Good Friday"}:
     withEasterVigil?{id:"easter-vigil",type:"CALENDAR",title:"Easter Vigil"}:
