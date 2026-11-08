@@ -22,6 +22,7 @@ import {createDailySessionTimer,sessionClockLabel} from "./daily-session-timer.j
 import {createPrayerPurposeIndex,prayerPurposeFor,prayerPurposeDefault,normalizePrayerPurposeSelection} from "./prayer-purpose-index.js";
 import {COMMUNION_PRAYER_PURPOSES} from "./communion-prayer-purpose-map.js";
 import {RED_BOOKLET_SUSCIPE_LIBRARY_LINK_V1 as SUSCIPE_LINK} from "./red-booklet-suscipe-library-link.v1.js";
+import {redBookletPrivateHistoricalSource} from "./red-booklet-private-historical-works.v1.js";
 import {GOOD_DEATH_PRAYER_PURPOSES} from "./good-death-purpose-map.js";
 import {buildPersonalDailyPlan,personalDailyOptions,personalDailyDirectPlan,loadPersonalDailyPrefs,savePersonalDailyPrefs,changePersonalDailyPrefs} from "./daily-personal-rule.js";
 import {personalDailyPrayerCard,personalDailyPurposeSection,dailyPersonalSettings,dailyPersonalPrayerCatalog,dailyPersonalList} from "./daily-personal-prayer-view.js";
@@ -658,7 +659,7 @@ const COMMUNION_AFTER=Object.freeze([
 function massFolioPrayerStages(){
   const before=S.route==="mass.prepare";
   const all=before?COMMUNION_BEFORE:COMMUNION_AFTER;
-  if(S.massDepth==="full")return all;
+  if(S.massDepth==="full")return before?[...all,["massFourEndsDeclaration1904","Four Ends of Mass · Declaration","Quatre fins de la Messe · Offrande"]]:all;
   return before?[all[0],all[1],all[4]]:[all[0]];
 }
 function renderMassFolioPrayers(){
@@ -667,8 +668,11 @@ function renderMassFolioPrayers(){
   const step=Math.max(0,Math.min(stages.length-1,Number(S.massStep)||0));
   const [id,titleEn,titleFr]=stages[step];
   const corpus=COMMUNION_TREASURY_V383;
-  const prayer=data().prayers?.[id]
-    ?prayerCard(id,{focusParagraphs:true})
+  const historical=redBookletPrivateHistoricalSource(id);
+  const privateWitness=historical?{en:historical.text,title:historical.en,
+    titleFr:historical.fr,witness:historical.sourceEdition,sourceUrl:historical.sourceUrl}:null;
+  const prayer=historical?sourcedPrayerCard(privateWitness,L(titleEn,titleFr),{focusParagraphs:true})
+    :data().prayers?.[id]?prayerCard(id,{focusParagraphs:true})
     :sourcedPrayerCard(corpus[id],L(corpus[id]?.title||titleEn,corpus[id]?.titleFr||titleFr),{focusParagraphs:true});
   const title=before?L("Preparation before Mass","Préparation avant la messe"):
     L("Thanksgiving after Mass","Action de grâces après la messe");
@@ -677,10 +681,11 @@ function renderMassFolioPrayers(){
       "Priez à votre rythme. Vous pouvez rejoindre à tout moment la messe sélectionnée.")
     :L("These are private prayers of thanksgiving, not part of the Mass rite.",
       "Ces prières personnelles d’action de grâces ne font pas partie du rite de la messe.");
-  const finish=before?'<button type="button" data-tp381-mass-continue>'+
+  const finish=before&&OPEN_OPTS.massPrayer?'<button type="button" data-tp381-back>'+esc(L("Return to Prayer Library","Retour au livre de prières"))+'</button>':
+    before?'<button type="button" data-tp381-mass-continue>'+
     esc(L("Proceed to Mass","Passer à la messe"))+'</button>':
     '<button type="button" data-tp381-mass-finish>'+esc(L("Finish","Terminer"))+'</button>';
-  const secondary=before?'<button type="button" data-tp381-mass-cancel>'+
+  const secondary=before&&!OPEN_OPTS.massPrayer?'<button type="button" data-tp381-mass-cancel>'+
     esc(L("Back to Mass choices","Retour aux choix de la messe"))+'</button>':"";
   const prev=step>0?'<button type="button" data-tp381-mass-step="'+(step-1)+'">'+
     esc(L("Previous prayer","Prière précédente"))+'</button>':"";
@@ -1031,6 +1036,10 @@ function render(){
 }
 function open(route,opts={}){
   if(!ROUTES[route])return false;
+  const sourceMass=route==="mass.prepare"&&opts.massPrayer!==undefined
+    ?redBookletPrivateHistoricalSource(opts.massPrayer):null;
+  if(route==="mass.prepare"&&opts.massPrayer!==undefined&&
+     (!sourceMass||sourceMass.route!=="mass.prepare"))return false;
   const requestedDailySource=route==="pray.morning_evening"&&opts.dailySourcePrayer!==undefined
     ?Object.entries(SUSCIPE_LINK.sourceIds).find(([,id])=>id===opts.dailySourcePrayer):null;
   if(route==="pray.morning_evening"&&opts.dailySourcePrayer!==undefined&&!requestedDailySource)return false;
@@ -1048,7 +1057,7 @@ function open(route,opts={}){
   OPEN_OPTS={...opts};MASS_HANDOFF_BUSY=false;
   S={...S,route,screen:"module",prayerId:null,guidedFromList:false,
     ...(route==="mass.prepare"||route==="mass.thanksgiving"
-      ?{massStep:0,massDepth:opts.depth==="full"?"full":"brief"}:{}),
+      ?{massStep:sourceMass?COMMUNION_BEFORE.length:0,massDepth:sourceMass||opts.depth==="full"?"full":"brief"}:{}),
     ...(route==="pray.morning_evening"?{daypart:directDaily?"morning":S.daypart,
         dailyMode:directDaily?"direct":"guided",
         dailyDirectId:directDaily?.sourceId||null,
