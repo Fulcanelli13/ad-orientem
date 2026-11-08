@@ -8,9 +8,9 @@ import {officeRouteState} from "../src/office/office-route-state.js";
 import {getDivineOfficePrayerReadiness}
  from "../src/pray/divine-office-readiness-gate.js";
 
-test("two Advent Saturdays only: traditional Latin without unverified original 1961 facsimile claim",()=>{
+test("four individually certified Advent Week Latin Compline dates, original 1961 psalter remains unverified",()=>{
  assert.equal(LATIN_COMPLINE_RELEASE.date,"2026-11-28");
- assert.deepEqual(LATIN_COMPLINE_RELEASE.approvedDates,["2026-11-28","2026-12-05"]);
+ assert.deepEqual(LATIN_COMPLINE_RELEASE.approvedDates,["2026-11-28","2026-11-29","2026-11-30","2026-12-05"]);
  assert.equal(LATIN_COMPLINE_RELEASE.language,"la");
  assert.equal(LATIN_COMPLINE_RELEASE.sourcePsalterFamily,"VULGATA_BIBLIORUM");
  assert.equal(LATIN_COMPLINE_RELEASE.target1961Edition,"MAME_1961_VULGATA");
@@ -20,7 +20,10 @@ test("two Advent Saturdays only: traditional Latin without unverified original 1
  assert.equal(LATIN_COMPLINE_RELEASE.saturdayAppointmentReviewed,true);
  assert.equal(LATIN_COMPLINE_RELEASE.psalter1961VerbatimCollated,false);
  assert.equal(latinComplineReleaseEligibility({date:"2026-12-05"}).status,"ELIGIBLE");
+ assert.equal(latinComplineReleaseEligibility({date:"2026-11-29"}).status,"ELIGIBLE");
+ assert.equal(latinComplineReleaseEligibility({date:"2026-11-30"}).status,"ELIGIBLE");
  assert.equal(LATIN_COMPLINE_RELEASE.printedVulgatePatternDualWitnessCollated,true);
+ assert.equal(LATIN_COMPLINE_RELEASE.sundayPrintedVulgate329WordsDualWitnessCollated,true);
  assert.equal(LATIN_COMPLINE_RELEASE.releaseBasis,"ROMAN_1960_OFFICE_TRADITIONAL_VULGATE_LATIN");
  assert.equal(LATIN_COMPLINE_RELEASE.completeHourCollated,true);
  assert.equal(LATIN_COMPLINE_RELEASE.rightsApproved,true);
@@ -35,12 +38,13 @@ test("two Advent Saturdays only: traditional Latin without unverified original 1
   assert.equal(r.sourceTextReleased,true);
   assert.equal(r.exact1961PsalterLeafVerified,false);
   assert.equal(r.language,"la");
+  assert.equal(r.printedPsalmDisplayFrames,["2026-11-29","2026-11-30"].includes(date)?30:41);
  }
 });
 test("no public Office route can fetch unapproved source words",async()=>{
  for(const options of [
   {date:"2026-11-28",hour:"VESPERS"},
-  {date:"2026-11-29",hour:"COMPLINE"},
+  {date:"2026-12-01",hour:"COMPLINE"},
   {date:"2026-12-01",hour:"COMPLINE"},
   {date:"2026-12-06",hour:"COMPLINE"},
   {date:"2026-11-28",hour:"COMPLINE",calendarScope:"LOCAL"},

@@ -1,0 +1,94 @@
+{
+  "schema": "ao.office.sunday-compline-2008-2023-latin-fullword.v1",
+  "sources": [
+    {
+      "id": "SIEFKER_DIURNALE_2008",
+      "publication": "David Siefker, Diurnale Romanum, 2008",
+      "printedPages": "104–106",
+      "section": "Dominica ad Completorium: Psalms 4, 90, 133",
+      "url": "https://www.scribd.com/document/761102039/Breviarium-romanum-Breviario-romano-1961-1962",
+      "sourceExtract": "HTML rendered print witness around lines 15975–16082"
+    },
+    {
+      "id": "CCREGIS_PSALTER_2023",
+      "publication": "Consociatio Christi Regis, Psalterium Romanum iuxta ritum 1962, 2023",
+      "printedPages": "30–31",
+      "section": "Dominica ad Completorium: Psalms 4, 90, 133",
+      "url": "https://ccregis.org/psalter_lt-en.pdf",
+      "sourceExtract": "Indexed original printed Latin text around lines 2981–3126"
+    }
+  ],
+  "textFamily": "TRADITIONAL_CLEMENTINE_VULGATE",
+  "scope": {
+    "psalmDay": "Dominica",
+    "approvedDateCandidates": [
+      "2026-11-29",
+      "2026-11-30"
+    ],
+    "psalmIds": [
+      4,
+      90,
+      133
+    ],
+    "stichs": {
+      "4": 10,
+      "90": 16,
+      "133": 4
+    },
+    "wordCount": 329
+  },
+  "collation": {
+    "basis": "Independent 2008 and 2023 printed Latin Psalm 4, 90, 133 checked against original pinned Vulgate psalm source; line/page wraps rejoined, antiphon and headings excluded.",
+    "normalization": "Case, Latin diacritical accents, æ/œ ligatures, punctuation, verse identifiers, recitation caesura and minor pause markers ignored; word order and count strict. A lexeme containing ǽ counts as one word after canonical Unicode decomposition and æ expansion.",
+    "editionOriginal1961Leaf": false,
+    "claimExact1961PrintedEdition": false,
+    "publicReleaseByThisResearchFile": false,
+    "originalLatinSourceOnly": true,
+    "translationRightsGranted": false,
+    "independentWitnessesChecked": 2,
+    "semanticAlterationsPermitted": 0
+  },
+  "printedLatin": {
+    "4": [
+      "Cum invocárem exaudívit me Deus justítiæ meæ: in tribulatióne dilatásti mihi.",
+      "Miserére mei, et exáudi oratiónem meam.",
+      "Fílii hóminum, úsquequo gravi corde? ut quid dilígitis vanitátem, et quæritis mendácium?",
+      "Et scitóte quóniam mirificávit Dóminus sanctum suum: Dóminus exáudiet me cum clamávero ad eum.",
+      "Irascímini, et nolíte peccáre: quæ dícitis in córdibus vestris, in cubílibus vestris compungímini.",
+      "Sacrificáte sacrifícium justítiæ, et speráte in Dómino. Multi dicunt: Quis osténdit nobis bona?",
+      "Signátum est super nos lumen vultus tui, Dómine: dedísti lætítiam in corde meo.",
+      "A fructu fruménti, vini, et ólei sui multiplicáti sunt.",
+      "In pace in idípsum dórmiam, et requiéscam;",
+      "Quóniam tu, Dómine, singuláriter in spe constituísti me."
+    ],
+    "90": [
+      "Qui hábitat in adjutório Altíssimi, in protectióne Dei cæli commorábitur.",
+      "Dicet Dómino: Suscéptor meus es tu, et refúgium meum: Deus meus sperábo in eum.",
+      "Quóniam ipse liberávit me de láqueo venántium, et a verbo áspero.",
+      "Scápulis suis obumbrábit tibi: et sub pennis ejus sperábis.",
+      "Scuto circúmdabit te véritas ejus: non timébis a timóre noctúrno,",
+      "A sagítta volánte in die, a negótio perambulánte in ténebris: ab incúrsu, et dæmónio meridiáno.",
+      "Cadent a látere tuo mille, et decem míllia a dextris tuis: ad te autem non appropinquábit.",
+      "Verúmtamen óculis tuis considerábis: et retributiónem peccatórum vidébis.",
+      "Quóniam tu es, Dómine, spes mea: Altíssimum posuísti refúgium tuum.",
+      "Non accédet ad te malum: et flagéllum non appropinquábit tabernáculo tuo.",
+      "Quóniam Angelis suis mandávit de te: ut custódiant te in ómnibus viis tuis.",
+      "In mánibus portábunt te: ne forte offéndas ad lápidem pedem tuum.",
+      "Super áspidem, et basilíscum ambulábis: et conculcábis leónem et dracónem.",
+      "Quóniam in me sperávit, liberábo eum: prótegam eum, quóniam cognóvit nomen meum.",
+      "Clamábit ad me, et ego exáudiam eum: cum ipso sum in tribulatióne: erípiam eum et glorificábo eum.",
+      "Longitúdine diérum replébo eum: et osténdam illi salutáre meum."
+    ],
+    "133": [
+      "Ecce nunc benedícite Dóminum, omnes servi Dómini:",
+      "Qui statis in domo Dómini, in átriis domus Dei nostri.",
+      "In nóctibus extóllite manus vestras in sancta, et benedícite Dóminum.",
+      "Benedícat te Dóminus ex Sion, qui fecit cælum et terram."
+    ]
+  },
+  "printedEditionSpellingNotes": [
+    "2008 Diurnale capitalizes Angelis, whereas unaccented 2023 printing uses angelis and the pinned source writes Ángelis; accent/case is not a lexical substitution.",
+    "Printed 2023 text runs some psalm stichs together across line breaks; 2008 reintroduces verse breaks. Both contain the same ancient Vulgate words."
+  ],
+  "sourceRevision": "126a07f91ede04664108abb6fb20ace3f4de14b9"
+}

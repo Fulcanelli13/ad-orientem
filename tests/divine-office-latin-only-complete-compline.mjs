@@ -128,7 +128,8 @@ test("all eight appointed dates assemble 42 complete Latin blocks without readin
    assert.ok(hymn[2].sourceTexts.la[0].startsWith("* Præsta"));
    assert.ok(hymn.every(frame=>frame.texts.la.every(line=>!line.startsWith("* "))));
    const saturday=date==="2026-11-28"||date==="2026-12-05";
-   assert.equal(reading.printedPsalmDisplayFrames,saturday?41:0);
+   const sunday=date==="2026-11-29"||date==="2026-11-30";
+   assert.equal(reading.printedPsalmDisplayFrames,saturday?41:sunday?30:0);
    if(saturday){
     const psalmFrames=reading.frames.filter(x=>x.sourceNumberingNormalized);
     assert.equal(psalmFrames.length,41);
@@ -155,6 +156,22 @@ test("all eight appointed dates assemble 42 complete Latin blocks without readin
     assert.match(p102[13].texts.la[0],/homo, sicut fænum/u);
     assert.ok(psalmFrames.every(x=>
      x.texts.la[0]===x.sourceTexts.la[0].replace(/^\d+:\d+ /u,"")));
+   }
+   if(sunday){
+    const psalmFrames=reading.frames.filter(x=>x.sourceNumberingNormalized);
+    assert.equal(psalmFrames.length,30);
+    assert.deepEqual(psalmFrames.filter(x=>x.sourceId.includes("Psalm4#"))
+      .map(x=>x.printedVerseLabel),
+      ["4:2a","4:2b","4:3","4:4","4:5","4:6","4:7","4:8","4:9","4:10"]);
+    assert.deepEqual(psalmFrames.filter(x=>x.sourceId.includes("Psalm90#"))
+      .map(x=>x.printedVerseLabel),
+      Array.from({length:16},(_,i)=>"90:"+(i+1)));
+    assert.deepEqual(psalmFrames.filter(x=>x.sourceId.includes("Psalm133#"))
+      .map(x=>x.printedVerseLabel),
+      ["133:1a","133:1b","133:2","133:3"]);
+    assert.ok(psalmFrames.every(x=>
+      x.sourceTexts.la[0].startsWith(x.sourceVerseLabel+" ")&&
+      !x.texts.la[0].startsWith(x.sourceVerseLabel)));
    }
    assert.equal(reading.postCanticleKyrieOmitted,true);
    assert.equal(reading.postCanticlePaterOmitted,true);
@@ -266,8 +283,8 @@ test("1961 §147 and Office §56: last-prayer Compline substitutes examen for ON
  assert.equal(projectComplineRecitation(raw,{minister:"UNKNOWN"}).status,"WITHHELD");
 });
 
-test("both published Saturdays load complete 40-moment Latin Compline across both contexts and ministers",async()=>{
- for(const date of ["2026-11-28","2026-12-05"]){
+test("four published Advent Compline dates load 40-moment Latin in both contexts and ministers",async()=>{
+ for(const date of ["2026-11-28","2026-11-29","2026-11-30","2026-12-05"]){
  const permission=latinComplineReleaseEligibility({date});
  assert.equal(permission.status,"ELIGIBLE");
  assert.equal(permission.exact1961PsalterLeafVerified,false);
@@ -289,9 +306,12 @@ test("both published Saturdays load complete 40-moment Latin Compline across bot
    assert.equal(r.ministerDialoguesResolved,2);
    assert.equal(r.visitaShortConclusionPrinted1961,true);
    assert.equal(r.blessingAmensRestoredFromPinnedSource,2);
-   assert.equal(r.printedPsalmDisplayFrames,41);
+   assert.equal(r.printedPsalmDisplayFrames,["2026-11-29","2026-11-30"].includes(date)?30:41);
    assert.deepEqual(r.availableLanguages,["la"]);
-   assert.ok(r.frames.length>80);
+   // Sunday has 30 psalm stich focus steps, Saturday has 41:
+   // do not impose the 41-stich Saturday total on Sunday Compline.
+   assert.ok(r.frames.length>(
+    ["2026-11-29","2026-11-30"].includes(date)?69:80));
    assert.equal(r.presidingMinister,minister);
    assert.equal(r.recitationContext,context);
    assert.ok(r.frames.every(f=>Object.keys(f.texts).every(l=>l==="la")));
@@ -312,7 +332,7 @@ test("both published Saturdays load complete 40-moment Latin Compline across bot
  }
 });
 test("unsupported public Office dates never fetch or invent source words",async()=>{
- for(const date of ["2026-11-27","2026-11-29","2026-11-30","2026-12-01","2026-12-02","2026-12-03","2026-12-04","2026-12-06"]){
+ for(const date of ["2026-11-27","2026-12-01","2026-12-02","2026-12-03","2026-12-04","2026-12-06"]){
   const transport=source();
   const r=await loadPublishedLatinCompline({date,fetchSource:transport.fetchSource});
   assert.equal(r.status,"WITHHELD");

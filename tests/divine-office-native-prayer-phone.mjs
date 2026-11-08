@@ -11,6 +11,7 @@ import {DIVINUM_OFFICIUM_PIN as PIN} from "../src/app/source-transport-compat.js
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const latinFixture=JSON.parse(await readFile(resolve(root,"tests/fixtures/office/advent-i-saturday-compline-la.json"),"utf8"));
+const sundayFixture=JSON.parse(await readFile(resolve(root,"tests/fixtures/office/advent-i-week-compline-la.json"),"utf8"));
 const latinSourceBase="https://raw.githubusercontent.com/DivinumOfficium/divinum-officium/"+PIN+"/web/www/horas/Latin/";
 const out=resolve(root,"artifacts/divine-office-native-phone");
 await mkdir(out,{recursive:true});
@@ -93,9 +94,13 @@ try{
    if(!url.startsWith(latinSourceBase))return route.continue();
    observedLatin.push(url);
    const relative=decodeURIComponent(url.slice(latinSourceBase.length));
-   const match=/^Psalterium\/Psalmorum\/Psalm(87|102|233)\.txt$/u.exec(relative);
+   const match=/^Psalterium\/Psalmorum\/Psalm(4|87|90|102|133|233)\.txt$/u.exec(relative);
    let body;
-   if(match)body=latinFixture.psalms[Number(match[1])];
+   if(match){
+    const number=Number(match[1]);
+    body=[4,90,133].includes(number)?
+     sundayFixture.psalms[number]?.text:latinFixture.psalms[number];
+   }
    else if(relative.endsWith(".txt")){
     const path=relative.slice(0,-4);
     const items=latinFixture.sections[path];
@@ -140,6 +145,33 @@ try{
   assert.ok(secondOverflow<=2,"Second Advent Saturday overflows "+width);
   await office.getByRole("button",{name:"Close Latin Compline"}).click();
   assert.equal(await office.locator(".aoOfPublishedLatin").count(),0);
+  // Sunday 29 Nov and St Andrew (II class) 30 Nov each use the
+  // independently printed 330-word Sunday Psalter, not Saturday.
+  for(const [caption,date,title] of [
+   ["Advent I Sunday · 29 Nov","2026-11-29","Sunday, 29 November 2026"],
+   ["St Andrew · 30 Nov","2026-11-30","St Andrew the Apostle, 30 November 2026"]
+  ]){
+   await office.getByRole("button",{name:caption}).click();
+   assert.match(await office.locator(".aoOfStatus").innerText(),
+    /Latin Compline · available/u);
+   assert.match(await office.locator(".aoOfStatus").innerText(),
+    new RegExp("Office date: "+date,"u"));
+   await office.getByRole("button",{name:"Read Latin Compline"}).click();
+   await page.waitForFunction(expected=>
+    document.querySelector(".aoOfPublishedStatus")?.textContent?.includes(
+     expected+" · 40 reading moments"),date,{timeout:35000});
+   const latin=office.locator(".aoOfPublishedLatin");
+   assert.ok((await latin.innerText()).includes(title));
+   assert.match(await latin.locator(".aoOfFrameControls").innerText(),/1 \/ /u);
+   const narrow=await page.evaluate(()=>
+    document.documentElement.scrollWidth-document.documentElement.clientWidth);
+   assert.ok(narrow<=2,"Sunday-Psalter "+date+" overflow "+width+": "+narrow);
+   await office.getByRole("button",{name:"Close Latin Compline"}).click();
+   assert.equal(await office.locator(".aoOfPublishedLatin").count(),0);
+  }
+  assert.ok(observedLatin.some(url=>/Psalm4\.txt/u.test(url)));
+  assert.ok(observedLatin.some(url=>/Psalm90\.txt/u.test(url)));
+  assert.ok(observedLatin.some(url=>/Psalm133\.txt/u.test(url)));
   await office.locator('[data-office-hour="VESPERS"]').click();
   const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-
    document.documentElement.clientWidth);
