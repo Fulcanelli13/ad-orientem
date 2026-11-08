@@ -180,7 +180,8 @@ let browser;try{
    }));
  }
  for(const date of ["2026-02-23","2026-02-24","2026-03-06",
-   "2026-03-19","2026-03-25","2026-07-16","2026-10-05"]){
+   "2026-03-19","2026-03-25","2026-07-16","2026-10-05",
+   "2026-11-23"]){
    const remaining=aggregate.uncertifiedFormCases.filter(x=>x.date===date);
    assert.deepEqual(remaining,[],date+" original 1962 Mass-form orations are still uncertified");
  }
