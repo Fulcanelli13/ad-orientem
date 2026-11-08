@@ -24,6 +24,8 @@ import { installSourceCueRailTracker } from "./reader-rail-anchors.js";
 import {SCHOLA_OPTIONAL_EVENT_IDS} from "./reader-schola-local-programme.js";
 import {kyrialeChoicesForMovement} from "./reader-kyriale-catalogue.js";
 import {schola1961OriginalFacsimile} from "./reader-schola-original-facsimile.js";
+import {resolveScholaSelectedScoreAccess} from "./reader-schola-score-access.js";
+import {createOfflineChantEngraver} from "./reader-chant-engraver.js";
 
 export const SCHOLA_SPEEDS=Object.freeze([0.25,0.35,0.45,0.60,0.80,1.00]);
 export const DEFAULT_SCHOLA_SPEED=0.45;
@@ -111,6 +113,27 @@ const SHELL_STYLE = `
 .ao-schola-proper-order .ao-schola-proper-latin{font:400 15px/1.65 var(--ao-font-liturgical,Georgia,serif);color:#f3eee2;white-space:pre-wrap;margin:8px 7px}
 .ao-schola-proper-order .ao-schola-proper-translation{white-space:pre-wrap;margin:4px 7px 11px}
 .ao-schola-proper-order button[data-schola-event-select]{margin:8px 6px;width:calc(100% - 12px);border:1px solid rgba(225,207,145,.24)}
+
+.ao-schola-score-status{display:block;margin:8px 7px;color:#b2b9a9;font:500 11px/1.5 var(--ao-font-ui,system-ui,sans-serif)}
+.ao-schola-score-open{display:block;width:calc(100% - 12px);margin:8px 6px 3px;min-height:44px;padding:9px 10px;text-align:left;cursor:pointer;border:1px solid rgba(225,207,145,.28);border-radius:7px;background:rgba(225,207,145,.06);color:var(--ao-mass-accent-text,#e7daba);font:600 12px/1.4 var(--ao-font-ui,system-ui,sans-serif)}
+.ao-schola-score-open:focus-visible,.ao-schola-ordinary-print summary:focus-visible{outline:2px solid var(--ao-mass-accent);outline-offset:2px}
+.ao-schola-ordinary-print{margin:2px 6px 9px;padding:4px 8px;border:1px solid rgba(225,207,145,.20);border-radius:8px}
+.ao-schola-ordinary-print summary{min-height:44px;padding:11px 4px;color:var(--ao-mass-accent-text,#e7daba);cursor:pointer;font:600 11px/1.35 var(--ao-font-ui,system-ui,sans-serif)}
+.ao-schola-ordinary-print figure{margin:7px 0;background:#f9f7f1;color:#1f2520;border-radius:6px;overflow:hidden}
+.ao-schola-ordinary-print figure img{display:block;width:100%;height:auto;max-height:700px;object-fit:contain}
+.ao-schola-ordinary-print figcaption{padding:6px 8px;font:500 10px/1.45 var(--ao-font-ui,system-ui,sans-serif)}
+.ao-schola-ordinary-print a{display:block;padding:10px 4px;color:var(--ao-mass-accent-text,#e7daba);font:500 11px/1.35 var(--ao-font-ui,system-ui,sans-serif)}
+.ao-schola-score-dialog{box-sizing:border-box;width:min(96vw,1050px);max-width:1050px;max-height:96dvh;overflow:hidden;border:1px solid rgba(225,207,145,.35);border-radius:12px;padding:0;background:#101b17;color:#eae4d7;box-shadow:0 20px 65px rgba(0,0,0,.7)}
+.ao-schola-score-dialog::backdrop{background:rgba(0,0,0,.87)}
+.ao-schola-score-dialog header{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 16px;border-bottom:1px solid rgba(225,207,145,.23)}
+.ao-schola-score-dialog header b{font:600 15px/1.45 var(--ao-font-liturgical,Georgia,serif)}
+.ao-schola-score-dialog [data-schola-score-close]{min-width:44px;min-height:44px;border:1px solid rgba(225,207,145,.25);border-radius:7px;background:transparent;color:#fff;cursor:pointer}
+.ao-schola-score-dialog p{margin:7px 16px;color:#b1c0b2;font:500 11px/1.45 var(--ao-font-ui,system-ui,sans-serif)}
+.ao-schola-score-dialog .ao-schola-score-viewport{box-sizing:border-box;max-height:calc(90dvh - 140px);overflow:auto;min-height:180px;width:100%;padding:14px 12px;color:#f0e0c0}
+.ao-schola-score-dialog .ao-schola-score-viewport svg{display:block;max-width:100%;height:auto}
+.ao-schola-score-dialog .ao-schola-score-viewport svg :is(path,polygon,polyline,line,text){fill:currentColor}
+.ao-schola-score-dialog a{display:inline-block;margin:5px 16px 14px;color:#ead8a6;font:500 12px/1.3 var(--ao-font-ui,system-ui,sans-serif)}
+@media(max-width:480px){.ao-schola-score-dialog{width:100vw;max-height:100dvh;height:100dvh;border-radius:0}.ao-schola-score-dialog .ao-schola-score-viewport{max-height:calc(100dvh - 150px)}}
 .ao-schola-events-menu h3{margin:7px 9px 3px;font:600 15px var(--ao-font-ui,system-ui,sans-serif)}
 .ao-schola-events-menu p{margin:0 9px 10px;font:400 11px/1.4 var(--ao-font-ui,system-ui,sans-serif);color:#a7b1a8}
 .ao-schola-events-menu button[data-schola-events-rejoin]{
@@ -2846,6 +2869,8 @@ export function createReaderDomAdapter({
   let mode="LIVE";
   // A/C source-neume preview only: independent of the Preface rubrical tone.
   let gospelReferenceTone="GOSPEL_STANDARD";
+  const scholaSourceScores=new Map();
+  let scholaScoreDialog=null,scholaScoreEngraver=null,scholaScoreReturnFocus=null,scholaScoreRequest=0;
   let bound=false;
   let rootClickListener=null;
   let rootChangeListener=null;
@@ -3589,6 +3614,76 @@ export function createReaderDomAdapter({
     }
   }
 
+  function closeScholaScoreDialog(){
+    ++scholaScoreRequest;
+    const dialog=scholaScoreDialog;
+    scholaScoreDialog=null;
+    if(dialog?.open)dialog.close();
+    scholaScoreEngraver?.destroy();
+    scholaScoreEngraver=null;
+    dialog?.remove();
+    const previous=scholaScoreReturnFocus;
+    scholaScoreReturnFocus=null;
+    if(previous?.isConnected)previous.focus?.();
+  }
+  function openScholaSourceScore(id,trigger){
+    const score=scholaSourceScores.get(id);
+    if(!score?.gabc || score.publicScoreApproved!==false)return false;
+    closeScholaScoreDialog();
+    const doc=root.ownerDocument??globalThis.document;
+    if(!doc?.body?.appendChild)return false;
+    const dialog=doc.createElement("dialog");
+    dialog.className="ao-schola-score-dialog";
+    dialog.dataset.scholaScoreModal=id;
+    dialog.setAttribute("aria-label","Original 1961 Gregorian reference · editorial review pending");
+    const header=doc.createElement("header");
+    const title=doc.createElement("b");
+    title.textContent=(score.incipit??score.sourceName??id)+" · Gregorian notation";
+    const close=doc.createElement("button");
+    close.type="button";close.dataset.scholaScoreClose="";
+    close.textContent="Close";
+    close.setAttribute("aria-label","Close enlarged Gregorian notation");
+    close.addEventListener("click",closeScholaScoreDialog);
+    header.append(title,close);dialog.append(header);
+    const note=doc.createElement("p");
+    note.textContent="1961 source transcription · NOT independently musically approved. Not a claim about this choir's performance.";
+    dialog.append(note);
+    const staff=doc.createElement("div");
+    staff.className="ao-schola-score-viewport";
+    staff.dataset.scholaScoreStaff=id;
+    staff.setAttribute("role","img");
+    staff.setAttribute("aria-label","Provisional Gregorian square notation for "+(score.incipit??id));
+    dialog.append(staff);
+    if(typeof score.sourceUrl==="string"&&score.sourceUrl.startsWith("https://")){
+      const link=doc.createElement("a");
+      link.href=score.sourceUrl;link.target="_blank";link.rel="noopener noreferrer";
+      link.textContent="1961 source transcription and witness";
+      dialog.append(link);
+    }
+    doc.body.append(dialog);
+    scholaScoreDialog=dialog;scholaScoreReturnFocus=trigger;
+    const token=++scholaScoreRequest;
+    dialog.addEventListener("cancel",e=>{e.preventDefault();closeScholaScoreDialog()});
+    dialog.addEventListener("click",e=>{if(e.target===dialog)closeScholaScoreDialog()});
+    dialog.showModal?.();
+    close.focus?.();
+    try{
+      const engraver=createOfflineChantEngraver({viewport:staff,document:doc});
+      scholaScoreEngraver=engraver;
+      engraver.observe?.();
+      void engraver.engrave(score.gabc).then(ok=>{
+        if(token===scholaScoreRequest && scholaScoreDialog===dialog)
+          dialog.dataset.scholaScoreReady=String(ok);
+      }).catch(()=>{
+        if(token===scholaScoreRequest && scholaScoreDialog===dialog)
+          dialog.dataset.scholaScoreReady="false";
+      });
+    }catch{
+      if(token===scholaScoreRequest)dialog.dataset.scholaScoreReady="false";
+    }
+    return true;
+  }
+
   function closeScholaEventMenu(){
     const menu=root.querySelector('[data-role="schola-events-menu"]');
     if(menu)menu.hidden=true;
@@ -3599,6 +3694,7 @@ export function createReaderDomAdapter({
     const menu=root.querySelector('[data-role="schola-events-menu"]');
     if(!menu)return false;
     menu.replaceChildren?.();
+    scholaSourceScores.clear();
     const itinerary=typeof scholaMusicItinerary==="function"
       ?scholaMusicItinerary():scholaMusicItinerary;
     if(mode!=="LIVE" || !itinerary?.supported)return false;
@@ -3628,6 +3724,11 @@ export function createReaderDomAdapter({
       menu.append(rejoin);
     }
     const properProgramme=itinerary.properProgramme??[];
+    const scores=resolveScholaSelectedScoreAccess({itinerary,
+      resolvedMass:prepared?.session?.resolvedMass,
+      form:prepared?.session?.resolvedMass?.form});
+    const scoreByTrack=new Map(scores.proper.map(row=>[row.trackId,row]));
+    const originalByEvent=new Map(scores.ordinary.map(row=>[row.eventId,row]));
     if(properProgramme.length){
       const section=doc.createElement("section");
       section.className="ao-schola-proper-order";
@@ -3660,6 +3761,30 @@ export function createReaderDomAdapter({
             translated.textContent=line.translation;
             details.append(translated);
           }
+        }
+        const scoreAccess=scoreByTrack.get(entry.trackId);
+        if(scoreAccess?.scores.length){
+          const caption=doc.createElement("small");
+          caption.className="ao-schola-score-status";
+          caption.dataset.scholaProperScoreState=scoreAccess.status;
+          caption.textContent="1961 source-bound reference · provisional, not an approved public score";
+          details.append(caption);
+          for(const score of scoreAccess.scores){
+            scholaSourceScores.set(score.id,score);
+            const scoreButton=doc.createElement("button");
+            scoreButton.type="button";
+            scoreButton.className="ao-schola-score-open";
+            scoreButton.dataset.scholaScoreOpen=score.id;
+            scoreButton.textContent="♫ View 1961 reference notation · "+(score.incipit??score.id);
+            scoreButton.setAttribute("aria-label","Open provisional Gregorian notation for "+(score.incipit??entry.label));
+            details.append(scoreButton);
+          }
+        }else{
+          const notice=doc.createElement("small");
+          notice.className="ao-schola-score-status";
+          notice.dataset.scholaProperScoreState="NO_VERIFIED_SCORE_BINDING";
+          notice.textContent="Digital score not source-verified for this selected Mass";
+          details.append(notice);
         }
         const select=doc.createElement("button");
         select.type="button";
@@ -3739,6 +3864,34 @@ export function createReaderDomAdapter({
       if(item.id===current?.scholaEventSelection?.id)
         button.setAttribute("aria-current","true");
       menu.append(button);
+      const original=originalByEvent.get(item.id)?.source;
+      if(original){
+        const print=doc.createElement("details");
+        print.className="ao-schola-ordinary-print";
+        print.dataset.scholaOriginalScore=item.trackId;
+        const summary=doc.createElement("summary");
+        summary.textContent="Original 1961 printed notation · "+original.title;
+        print.append(summary);
+        const warning=doc.createElement("p");
+        warning.textContent="Explicitly selected Kyriale setting · full original printed pages. Other chants may appear on a page. This does not certify a local performance.";
+        print.append(warning);
+        for(let i=0;i<original.printedPages.length;i++){
+          const fig=doc.createElement("figure");
+          const cap=doc.createElement("figcaption");
+          cap.textContent=original.edition+" · p. "+original.printedPages[i];
+          const img=doc.createElement("img");
+          img.loading="lazy";img.decoding="async";
+          img.src=original.originalPageImages[i];
+          img.alt="Unaltered 1961 Solesmes printed page "+original.printedPages[i]+
+            " for explicitly selected "+original.title;
+          fig.append(cap,img);print.append(fig);
+        }
+        const pdf=doc.createElement("a");
+        pdf.href=original.originalEditionPdf;pdf.target="_blank";pdf.rel="noopener noreferrer";
+        pdf.textContent="Open the original printed edition";
+        print.append(pdf);
+        menu.append(print);
+      }
       if(item.performance?.eligible===true){
         const row=doc.createElement("div");
         row.className="ao-schola-performance-actions";
@@ -4123,6 +4276,11 @@ export function createReaderDomAdapter({
           populateScholaEvents();
           if(menu)menu.scrollTop=offset;
         }
+        return;
+      }
+      const scholaScoreOpen=event.target?.closest?.("[data-schola-score-open]");
+      if(scholaScoreOpen){
+        openScholaSourceScore(scholaScoreOpen.dataset.scholaScoreOpen,scholaScoreOpen);
         return;
       }
       const scholaEventSelect=event.target?.closest?.("[data-schola-event-select]");
@@ -5414,6 +5572,8 @@ export function createReaderDomAdapter({
   }
 
   function destroy(){
+    closeScholaScoreDialog();
+    scholaSourceScores.clear();
     inlineChant.destroy();
     properNotationPreview.destroy();
     unbind();
