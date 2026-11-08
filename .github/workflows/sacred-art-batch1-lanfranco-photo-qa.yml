@@ -1,0 +1,45 @@
+name: Sacred Art Batch 1 — NGI.72 Sailko replacement candidate (private QA)
+on:
+  push:
+    branches: [research/sacred-art-batch1-lanfranco-photo-recovery-20261108]
+    paths:
+      - 'data/artwork/batch1-lanfranco-sailko-photo-candidate.v1.json'
+      - 'scripts/art/batch1_lanfranco_sailko_source_compare.py'
+      - 'tests/sacred-art-batch1-lanfranco-sailko-candidate.mjs'
+      - '.github/workflows/sacred-art-batch1-lanfranco-photo-qa.yml'
+  workflow_dispatch: {}
+permissions:
+  contents: read
+concurrency:
+  group: sacred-art-batch1-lanfranco-sailko-private
+  cancel-in-progress: true
+jobs:
+  exact-photo-candidate:
+    name: Source bytes, copyright credit and two-photo contact sheet
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Protect owner selected source and nonpublication gate
+        run: node tests/sacred-art-batch1-lanfranco-sailko-candidate.mjs
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install Pillow for image verification
+        run: python -m pip install --disable-pip-version-check 'Pillow==12.0.0'
+      - name: Validate image acquisition script
+        run: python -m py_compile scripts/art/batch1_lanfranco_sailko_source_compare.py
+      - name: Download selected and alternative photos with rate-limited requests, compare exact bytes
+        run: python scripts/art/batch1_lanfranco_sailko_source_compare.py
+      - name: Retain review originals, contact sheet, complete rights credit and QA report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-ngi72-sailko-versus-selected-research-only
+          path: |
+            artifacts/sacred-art-batch1-lanfranco/*
+          retention-days: 14
+          if-no-files-found: warn
