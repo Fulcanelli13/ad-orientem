@@ -514,6 +514,20 @@ try{
   await page.screenshot({path:resolve(root,"artifacts/pray-contemplative-daily/stabat-full-closing-"+width+".png"),animations:"disabled"});
  }
 
+ // The complete source must also be findable as a standalone Prayer Library
+ // work; users should not need to traverse fourteen Stations to access it.
+ await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.library",{returnContext:null}));
+ await page.locator('#aoPray435930.open [data-p435930-lib-search]').fill("Stabat");
+ const stabatLibrary=page.locator("#aoPray435930.open [data-ao-stabat-library-full]");
+ assert.equal(await stabatLibrary.count(),1,"Full Stabat not discoverable through Prayer Library search");
+ await stabatLibrary.locator(":scope > summary").click();
+ assert.equal(await stabatLibrary.locator(".aoP435930StationStabatCompleteVerse").count(),20,
+  "Standalone Library Stabat must expose all 20 Latin tercets");
+ assert.equal(await stabatLibrary.locator(".aoP435930StationStabatCompleteVerse").nth(17).getAttribute("lang"),null,
+  "Latin work uses one inherited language scope rather than fabricated translations");
+ assert.equal(await stabatLibrary.locator(".aoP435930StationFullStabat").getAttribute("lang"),"la");
+
+
 
  for(const [route,owner,nextTitle] of [
   ["pray.penitential_psalms","penitential","penitential-1"],
