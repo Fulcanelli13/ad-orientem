@@ -5,7 +5,7 @@ import {getDivineOfficePrayerReadiness as gate,DIVINE_OFFICE_PUBLIC_MODULE_ID}
 import {internalPrayerView,supportedDirectPrayerRoute}
  from "../src/pray/internal-route-owner.js";
 
-test("one Latin Compline date is released; seven others stay text-held",()=>{
+test("two Latin Saturday Compline dates released; six other dates text-held",()=>{
  let count=0;
  for(let day=28;day<=30;day++){
   const r=gate({date:"2026-11-"+day});
@@ -23,7 +23,11 @@ test("one Latin Compline date is released; seven others stay text-held",()=>{
   const r=gate({date:"2026-12-0"+day});
   assert.equal(r.researchPreviewEligible,true);
   assert.equal(r.publiclyNavigable,true);
-  assert.equal(r.publishable,false);
+  const released=day===5;
+  assert.equal(r.publishable,released);
+  assert.equal(r.published,released);
+  assert.equal(r.rightsApproved,released);
+  assert.equal(r.sourceTextReleased,released);
   count++;
  }
  assert.equal(count,8);
