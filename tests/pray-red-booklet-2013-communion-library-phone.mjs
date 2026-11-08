@@ -69,6 +69,11 @@ try{
      assert.equal(await reader.locator('[data-tp381-source-language-fallback]').count(),1,
       "No UI warning that the printed prayer is shown in its original English source language");
     }
+    if(SOURCE[link.sourceId].sourceUrl){
+     const printedSource=reader.locator("details.aoTP381Source a");
+     assert.equal(await printedSource.count(),1,"Published historical witness must be linked from the actual reader "+link.id);
+     assert.equal(await printedSource.getAttribute("href"),SOURCE[link.sourceId].sourceUrl);
+    }
     assert.ok(Number.isInteger(state.communionStep));
     checked++;
    }
