@@ -660,9 +660,16 @@ const COMMUNION_AFTER=Object.freeze([
  * Both lengths read existing canonical Prayer corpus and communion-treasury
  * witnesses. The full sequence is simply a longer set of the same texts.
  */
+// The Mass Folio's published after-Mass four-card order is fixed. The
+// independent Communion Treasury can offer additional private source works
+// without implicitly changing the full Mass reader or its progress totals.
+const MASS_THANKSGIVING_SOURCE_IDS=Object.freeze([
+ "adoration_anima_christi","afterThomas","afterBonaventure","enEgo"
+]);
 function massFolioPrayerStages(){
   const before=S.route==="mass.prepare";
-  const all=before?COMMUNION_BEFORE:COMMUNION_AFTER;
+  const all=before?COMMUNION_BEFORE:COMMUNION_AFTER.filter(([id])=>
+    MASS_THANKSGIVING_SOURCE_IDS.includes(id));
   if(S.massDepth==="full")return before?[...all,["massFourEndsDeclaration1904","Four Ends of Mass · Declaration","Quatre fins de la Messe · Offrande"]]:all;
   return before?[all[0],all[1],all[4]]:[all[0]];
 }
