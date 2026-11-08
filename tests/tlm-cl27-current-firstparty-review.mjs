@@ -369,3 +369,73 @@ assert.ok(poitiers.source_role_scope.includes("Transfiguration"));
 const fort=wave4.cases.find(x=>x.cl2_anchor==="RG-84B39A237AAB");
 assert.ok(fort.source_observation.includes("NOT a 07:15 Mass"));
 console.log("PASS CL27 wave4: 167/296 historical source claims reviewed, 129 pending; 8 source-locked church groups, operator geography and service-type disputes held, 0 public Masses or canonical/Una Cum claims");
+
+
+// Wave 5: verify new official-source observations against the same frozen CL2
+// universe. Explicitly prohibit turning schedule-pattern review into public
+// events, made-up canonical standing, ministry-wide rites, or duplicate sites.
+const wave5=JSON.parse(readFileSync(new URL(
+ "../data/directory/research/cl27-current-firstparty-20261104/source-review-wave5.v1.json",
+ import.meta.url),"utf8"));
+assert.equal(wave5.schema,"AO_CL27_CURRENT_SOURCE_WAVE5_V1");
+assert.equal(wave5.publication,"RESEARCH_ONLY_NO_APP_IMPORT");
+assert.equal(wave5.canonical_source.pr,1775);
+assert.equal(wave5.canonical_source.source_blob_sha,d.canonical_source.blob_sha);
+assert.deepEqual(wave5.summary,{
+ previous_reviewed:167,
+ new_original_historical_rows_reviewed:44,
+ new_source_site_groups_reviewed:28,
+ cumulative_reviewed:211,
+ still_unreviewed:85,
+ published_current_events:0,
+ published_source_scoped_classifications:0,
+ collision_groups_source_adjudicated_unchanged:7
+});
+assert.equal(wave5.cases.length,28);
+const wave4IDs=new Set(wave4.cases.flatMap(x=>x.historical_rows));
+assert.equal(wave4IDs.size,28);
+const prevWaves=new Set([...earlierIDs,...wave3IDs,...wave4IDs]);
+assert.equal(prevWaves.size,167);
+const wave5IDs=new Set(),wave5Anchors=new Set();
+for(const c of wave5.cases){
+ assert.match(c.cl2_anchor,/^RG-[A-F0-9]{12}$/);
+ assert.match(c.country,/^[A-Z]{2}$/);
+ assert.ok(c.venue_label&&c.source_observation&&c.remaining_gate&&c.role_scope);
+ assert.ok(!wave5Anchors.has(c.cl2_anchor));
+ wave5Anchors.add(c.cl2_anchor);
+ assert.match(c.current_owner_url,/^https:\/\/[^ ]+$/);
+ assert.equal(c.current_source_class,"CURRENT_FIRST_PARTY_OPERATOR_OR_DISTRICT_PAGE");
+ assert.equal(c.publication_status,"HOLD_RESEARCH_ONLY_NO_CURRENT_EVENTS_OR_CLASSIFICATIONS");
+ assert.ok(c.unknown_without_individual_evidence.includes("una_cum"));
+ assert.ok(c.unknown_without_individual_evidence.includes("canonical_status"));
+ assert.ok(c.unknown_without_individual_evidence.includes("dated_mass_occurrence"));
+ assert.ok(c.unknown_without_individual_evidence.includes("public_access"));
+ assert.equal(c.historical_rows.length,c.historical_claims.length);
+ assert.ok(c.historical_source_urls.length>0);
+ for(let i=0;i<c.historical_claims.length;i++){
+  const x=c.historical_claims[i],id=c.historical_rows[i];
+  assert.ok(Number.isInteger(id));
+  assert.equal(x.historical_row,id);
+  assert.ok(x.source_id&&x.day_pattern&&x.local_time&&x.frequency&&x.source_excerpt);
+  assert.ok(!prevWaves.has(id),"Wave 5 overlaps an earlier source audit row");
+  assert.ok(!wave5IDs.has(id),"Wave 5 repeats historical row");
+  wave5IDs.add(id);
+  const source=byHistorical.get(id);
+  assert.ok(source&&source.anchors.includes(c.cl2_anchor),"CL2 anchor/source mismatch");
+  assert.ok(c.historical_source_urls.includes(source.historical_url));
+ }
+}
+assert.equal(wave5IDs.size,44);
+assert.equal(wave5Anchors.size,28);
+assert.equal(new Set([...prevWaves,...wave5IDs]).size,211);
+assert.equal(296-prevWaves.size-wave5IDs.size,85);
+const fromAnchor=id=>wave5.cases.find(x=>x.cl2_anchor===id);
+assert.ok(fromAnchor("RG-D921C392A56D").source_review_decision.includes("HOURS_NOT_INDEPENDENTLY_CORROBORATED"));
+assert.ok(fromAnchor("RG-6F08FF27F739").source_review_decision.includes("FIRST_SATURDAY_NOT_RECHECKED"));
+assert.ok(fromAnchor("RG-C173C61BB658").source_observation.includes("08:00"));
+assert.ok(fromAnchor("RG-A667A2072167").source_observation.includes("17th"));
+assert.ok(fromAnchor("RG-20F5A383CAAF").source_observation.includes("08:00 or 09:50"));
+assert.ok(fromAnchor("RG-6688A500756B").role_scope.includes("Franciscaines"));
+assert.ok(fromAnchor("RG-4FDBB67357B4").role_scope.includes("Carmelites"));
+assert.ok(fromAnchor("RG-B613AF3ED66D").source_observation.includes("monthly"));
+console.log("PASS CL27 Wave 5: 211/296 unique historical rows reviewed, 85 pending; 28 first-party site groups, 44 new rows, 0 new public Masses or church-wide canonical claims");
