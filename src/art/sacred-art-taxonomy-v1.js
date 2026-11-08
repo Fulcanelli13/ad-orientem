@@ -17,7 +17,10 @@ export const SACRED_ART_CATEGORIES_V1=Object.freeze({
   ANGELS:{en:"Angels",fr:"Anges"},
   MERCY:{en:"Mercy & Penance",fr:"Miséricorde et pénitence"},
   LAST_THINGS:{en:"Last Things & Souls",fr:"Fins dernières et âmes"},
-  TRINITY:{en:"Holy Trinity",fr:"Sainte Trinité"}
+  TRINITY:{en:"Holy Trinity",fr:"Sainte Trinité"},
+  OLD_TESTAMENT:{en:"Old Testament",fr:"Ancien Testament"},
+  CHURCH_LIFE:{en:"Christian Life & Prayer",fr:"Vie chrétienne et prière"},
+  CREATION:{en:"Creation & Nature",fr:"Création et nature"}
 });
 const entry=(id,photoModuleId,title,artist,scene,categories,persons,scripture,placement,notes="")=>Object.freeze({
   id,photoModuleId,title,artist,
