@@ -438,3 +438,68 @@ assert.ok(fromAnchor("RG-6688A500756B").role_scope.includes("Franciscaines"));
 assert.ok(fromAnchor("RG-4FDBB67357B4").role_scope.includes("Carmelites"));
 assert.ok(fromAnchor("RG-B613AF3ED66D").source_observation.includes("monthly"));
 console.log("PASS CL27 Wave 5: 211/296 unique historical rows reviewed, 85 pending; 28 first-party site groups, 44 new rows, 0 new public Masses or church-wide canonical claims");
+
+
+// Wave 6 source dispositions: complete 264 of 296 frozen original claims
+// without silently upgrading official site pages or secondary pages to public
+// event approvals, official 1962 Missal, or ecclesial conclusions.
+const wave6=JSON.parse(readFileSync(new URL(
+ "../data/directory/research/cl27-current-firstparty-20261104/source-review-wave6.v1.json",
+ import.meta.url),"utf8"));
+assert.equal(wave6.schema,"AO_CL27_CURRENT_SOURCE_WAVE6_V1");
+assert.equal(wave6.publication,"RESEARCH_ONLY_NO_LIVE_MASS_OR_CL27_PROMOTION");
+assert.equal(wave6.canonical_source.original_pr,1775);
+assert.equal(wave6.canonical_source.blob_sha,d.canonical_source.blob_sha);
+assert.deepEqual(wave6.summary,{
+ previous_reviewed:211,
+ source_group_count:35,
+ new_original_rows_reviewed:53,
+ cumulative_reviewed:264,
+ remaining_historical_rows:32,
+ approved_live_mass_events:0,
+ approved_cl27_ecclesial_claims:0,
+ approved_coordinate_changes:0
+});
+assert.equal(wave6.records.length,35);
+const earlierW6=new Set([...prevWaves,...wave5IDs]);
+assert.equal(earlierW6.size,211);
+const reviewedW6=new Set(),siteW6=new Set();
+for(const c of wave6.records){
+ assert.match(c.cl2_anchor,/^RG-[0-9A-F]{12}$/);
+ assert.match(c.country,/^[A-Z]{2}$/);
+ assert.ok(!siteW6.has(c.cl2_anchor));siteW6.add(c.cl2_anchor);
+ assert.ok(c.source_venue_name&&c.decision&&c.observation&&c.remaining_gate);
+ assert.match(c.current_evidence_url,/^https:\/\/[^ ]+$/);
+ assert.equal(c.publication_status,"RESEARCH_ONLY_HOLD_UNTIL_EXPLICIT_EVENT_VALIDATION");
+ assert.equal(c.published_current_occurrences,0);
+ for(const field of ["dated_2026_occurrence","exact_1962_books","una_cum","named_pope_in_canon","canonical_status","venue_ownership","visitor_entrance"]){
+  assert.ok(c.not_established.includes(field));
+  assert.ok(!Object.hasOwn(c,field));
+ }
+ assert.equal(c.historical_rows.length,c.historical_claims.length);
+ for(let i=0;i<c.historical_rows.length;i++){
+  const id=c.historical_rows[i],claim=c.historical_claims[i];
+  assert.ok(Number.isInteger(id)&&!earlierW6.has(id)&&!reviewedW6.has(id),"Wave 6 duplicate or overlap");
+  reviewedW6.add(id);
+  assert.equal(claim.row,id);
+  assert.ok(claim.source_id&&claim.day_pattern&&claim.time&&claim.frequency);
+  const legacy=byHistorical.get(id);
+  assert.ok(legacy&&legacy.anchors.includes(c.cl2_anchor));
+  assert.ok(c.historical_source_urls.includes(legacy.historical_url));
+ }
+}
+assert.equal(siteW6.size,35);
+assert.equal(reviewedW6.size,53);
+assert.equal(new Set([...earlierW6,...reviewedW6]).size,264);
+assert.equal(296-earlierW6.size-reviewedW6.size,32);
+const w6ById=new Map(wave6.records.map(x=>[x.cl2_anchor,x]));
+for(const id of ["RG-F61760F13D97","RG-6F16A016F04B","RG-A306B10B763B","RG-9DB299EB9AFB","RG-B0B5E828070F"]){
+ assert.ok(/CONFLICT|UNSUPPORTED|NOT_CONFIRMED/.test(w6ById.get(id).decision),"Do not promote disputed historical clock");
+}
+assert.ok(w6ById.get("RG-EC5A4BA48BF9").decision.includes("NOT_1962_PROOF"));
+assert.ok(w6ById.get("RG-DA2F4D212252").decision.includes("NOT_1962_PROOF"));
+assert.ok(w6ById.get("RG-270DB00DC743").observation.includes("TWO Sundays"));
+assert.ok(w6ById.get("RG-9B5F40D1BDED").observation.includes("following Monday"));
+assert.ok(w6ById.get("RG-7D5AA61CAE06").observation.includes("Transfiguration"));
+assert.ok(w6ById.get("RG-F78E459E839F").decision.includes("NOT_IN_MAIN_PARISH_SCHEDULE"));
+console.log("PASS CL27 Wave 6: 264/296 historical rows source-reviewed, 32 unresolved, 35 named site/source groups, 53 new row IDs, no liturgical or public timetable fabrication");
