@@ -51,7 +51,7 @@ export function openDivineOfficeReader(win=globalThis,{date=todayLocal()}={}){
  const bar=d.createElement("div");bar.className="aoOfBar";
  const label=d.createElement("label");label.textContent="Office date ";
  const input=d.createElement("input");input.type="date";
- input.value=/^\\d{4}-\\d{2}-\\d{2}$/.test(date)?date:todayLocal();
+ input.value=/^\d{4}-\d{2}-\d{2}$/.test(date)?date:todayLocal();
  label.append(input);bar.append(label);
  const example=d.createElement("button");example.type="button";
  example.textContent="Advent pilot · 28 Nov 2026";

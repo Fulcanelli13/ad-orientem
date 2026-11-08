@@ -19,7 +19,7 @@ const IDS=new Set(ROMAN_OFFICE_HOURS.map(row=>row.id));
 export function officeRouteState({date,hour,calendarScope="UNIVERSAL"}={}){
  const withheld=reason=>Object.freeze({date,hour,status:"WITHHELD",reason,
    sourceResearch:false,readingEnabled:false,published:false});
- if(typeof date!=="string"||!/^\\d{4}-\\d{2}-\\d{2}$/.test(date)||
+ if(typeof date!=="string"||!/^\d{4}-\d{2}-\d{2}$/.test(date)||
     Number.isNaN(Date.parse(date+"T12:00:00Z"))||
     new Date(date+"T12:00:00Z").toISOString().slice(0,10)!==date)
    return withheld("INVALID_DATE");
