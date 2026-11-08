@@ -5075,6 +5075,9 @@ export function createReaderDomAdapter({
             renderReaderText(secondary,parallel,{
               readingContext:{sourceBlockId:p.sourceBlockId,kind:p.kind,mode},
             });
+            // Compatibility hook: the shared speaker decorator is idempotent.
+            // The canonical role token must remain explicit in both columns.
+            decorateLiturgicalSpeaker(secondary,parallel);
             node.append(secondary);
           }
           const inlineRubrics=mode==="MISSAL"
