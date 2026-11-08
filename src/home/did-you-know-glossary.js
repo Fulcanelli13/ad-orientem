@@ -32,6 +32,78 @@ export const HOME_DYK_GLOSSARY_FACTS=Object.freeze({
   "G240": {
     "en": "At a Solemn Mass, the liturgical kiss of peace can pass among the ministers in ceremonial order; it is not a general congregational greeting.",
     "fr": "À la messe solennelle, le baiser de paix peut se transmettre entre les ministres selon l’ordre du cérémonial : ce n’est pas une salutation générale de l’assemblée."
+  },
+  "G197": {
+    "en": "In the traditional vesting sequence, even the amice has its own prayer as the priest prepares for Mass.",
+    "fr": "Dans la tradition liturgique, même l’amict possède sa propre prière lorsque le prêtre revêt les ornements pour la Messe."
+  },
+  "G200": {
+    "en": "The priest’s chasuble has two traditional Latin names, planeta and casula, although its cut has changed over the centuries.",
+    "fr": "La chasuble du prêtre porte deux noms latins traditionnels, planeta et casula, même si sa coupe a changé au fil des siècles."
+  },
+  "G203": {
+    "en": "The cope is traditionally used for processions and other ceremonies; strictly speaking, it is not a vestment for celebrating Mass.",
+    "fr": "La chape sert traditionnellement dans les processions et d’autres cérémonies ; au sens strict, ce n’est pas un ornement pour célébrer la Messe."
+  },
+  "G212": {
+    "en": "In the traditional arrangement before Mass, the burse is normally placed above the chalice veil.",
+    "fr": "Dans l’agencement traditionnel avant la Messe, la bourse se place normalement au-dessus du voile de calice."
+  },
+  "G215": {
+    "en": "During the traditional Roman Mass, the Missal and its stand are moved between the Epistle and Gospel sides at appointed moments.",
+    "fr": "Pendant la Messe romaine traditionnelle, le Missel et son pupitre passent d’un côté à l’autre de l’autel, entre l’Épître et l’Évangile, aux moments prescrits."
+  },
+  "G216": {
+    "en": "Where the Offertory includes incensation, the priest washes his hands afterward; at Low Mass the Lavabo follows the offering rites.",
+    "fr": "Lorsque l’offertoire comporte un encensement, le prêtre se lave les mains ensuite ; à la Messe basse, le lavabo suit les rites d’offrande."
+  },
+  "G218": {
+    "en": "The sanctuary lamp indicates that the Blessed Sacrament is reserved; it is not merely decorative lighting.",
+    "fr": "La lampe du sanctuaire indique la présence du Saint-Sacrement en réserve ; elle n’est pas simplement décorative."
+  },
+  "G224": {
+    "en": "In traditional ceremonial, torchbearers have an especially visible role at the elevations and around Communion.",
+    "fr": "Dans le cérémonial traditionnel, les céroféraires ont un rôle particulièrement visible lors des élévations et autour de la Communion."
+  },
+  "G241": {
+    "en": "Saint Pius X assigned Gregorian chant a normative place in sacred music; not every unaccompanied Latin song is Gregorian chant.",
+    "fr": "Saint Pie X a donné au chant grégorien une place normative dans la musique sacrée ; tout chant latin sans accompagnement n’est pas pour autant grégorien."
+  },
+  "G242": {
+    "en": "Gregorian chant belongs to the wider family of plainchant, but not every plainchant melody belongs to the Gregorian repertory.",
+    "fr": "Le chant grégorien appartient à la famille plus large du plain-chant, mais toutes les mélodies de plain-chant ne font pas partie du répertoire grégorien."
+  },
+  "G248": {
+    "en": "Psalm tones are reusable chant formulas; a completely new melody is not composed for each successive verse.",
+    "fr": "Les tons psalmodiques sont des formules de chant réutilisables ; chaque verset ne reçoit pas une mélodie entièrement nouvelle."
+  },
+  "G255": {
+    "en": "The Kyrie retains its Greek words inside the Latin Roman rite.",
+    "fr": "Le Kyrie conserve ses paroles grecques au sein du rite romain latin."
+  },
+  "G259": {
+    "en": "In traditional sung practice, the Benedictus may be sung separately from the Sanctus, although the two are one liturgical text.",
+    "fr": "Dans la pratique chantée traditionnelle, le Benedictus peut être chanté séparément du Sanctus, bien que les deux forment un seul texte liturgique."
+  },
+  "G260": {
+    "en": "The Agnus Dei has a different form in Requiem Masses, where its petitions reflect the prayer for the departed.",
+    "fr": "L’Agnus Dei prend une forme différente dans les Messes de Requiem, où ses demandes reflètent la prière pour les défunts."
+  },
+  "G274": {
+    "en": "A local liturgical calendar can add proper celebrations not found in the universal Roman calendar, changing what is observed on a given date.",
+    "fr": "Un calendrier liturgique particulier peut ajouter des célébrations propres absentes du calendrier romain universel et modifier ce qui est célébré à une date donnée."
+  },
+  "G283": {
+    "en": "The letter N. in a liturgical text stands for nomen, a name to be supplied from context, not a letter to be pronounced aloud.",
+    "fr": "La lettre N. dans un texte liturgique représente nomen, un nom à préciser selon le contexte, et non une lettre à prononcer."
+  },
+  "G290": {
+    "en": "In traditional Mass rubrics, secreto tells the priest how quietly to recite a prayer; it does not mean the prayer is secret doctrine.",
+    "fr": "Dans les rubriques de la Messe traditionnelle, secreto indique la manière discrète de réciter une prière ; cela ne signifie pas qu’elle contient une doctrine secrète."
+  },
+  "G300": {
+    "en": "The rubric osculatur altare directs the celebrant to kiss the altar at a specified moment in the rite.",
+    "fr": "La rubrique osculatur altare prescrit au célébrant de baiser l’autel à un moment précis du rite."
   }
 });
 let glossaryLoad=null;
