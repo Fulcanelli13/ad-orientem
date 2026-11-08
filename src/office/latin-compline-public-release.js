@@ -32,7 +32,7 @@ export const LATIN_COMPLINE_RELEASE=Object.freeze({
  exact1961EditionPsalterLeafVerified:false,
  ordinary1961SequenceReviewed:true,saturdayAppointmentReviewed:true,
  sundayAppointmentReviewed:true,
- sundayPrintedVulgate330WordsDualWitnessCollated:true,
+ sundayPrintedVulgate329WordsDualWitnessCollated:true,
  // A verbatim 1961 Mame Saturday Psalter leaf has NOT been obtained.
  // This release is not represented as a reproduction of that edition.
  psalter1961VerbatimCollated:false,
@@ -103,7 +103,7 @@ export function latinComplineReleaseEligibility({
     !LATIN_COMPLINE_RELEASE.saturdayAppointmentReviewed||
     !LATIN_COMPLINE_RELEASE.printedVulgatePatternDualWitnessCollated||
     !LATIN_COMPLINE_RELEASE.sundayAppointmentReviewed||
-    !LATIN_COMPLINE_RELEASE.sundayPrintedVulgate330WordsDualWitnessCollated||
+    !LATIN_COMPLINE_RELEASE.sundayPrintedVulgate329WordsDualWitnessCollated||
     LATIN_COMPLINE_RELEASE.releaseBasis!=="ROMAN_1960_OFFICE_TRADITIONAL_VULGATE_LATIN"||
     !LATIN_COMPLINE_RELEASE.completeHourCollated||
     !LATIN_COMPLINE_RELEASE.rightsApproved||
