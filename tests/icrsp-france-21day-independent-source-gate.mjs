@@ -58,7 +58,7 @@ for(const e of ledger.entries){
  if(expectedIncipits.has(day))
   assert.equal(e.listedMassIncipit,expectedIncipits.get(day));
  if(firstOrSecondClassDays.includes(day)){
-  assert.ok(e.listedMassClass<=2);
+  assert.ok(e.ordoLiturgicalDayClass<=2);
   assert.ok(e.independentRubricalReview.rubricFlags.some(f=>f.startsWith("RGMR_434_")),
    "Source-attested extra oration conflicts with class-specific 1960 limits: "+e.date);
  }
@@ -110,7 +110,7 @@ for(const e of ledger.entries){
  }).status,"APPLIED","8 Nov projector must not spill into future Sundays");
 }
 assert.deepEqual(observedTriple,tripleDays);
-assert.deepEqual(ledger.entries.filter(x=>x.listedMassClass<=2)
+assert.deepEqual(ledger.entries.filter(x=>x.ordoLiturgicalDayClass<=2)
  .map(x=>Number(x.date.slice(-2))),firstOrSecondClassDays);
 const stub=(id)=>({lat:"Sample Latin for source-check testing only",
  en:"Sample English for source-check testing only",
