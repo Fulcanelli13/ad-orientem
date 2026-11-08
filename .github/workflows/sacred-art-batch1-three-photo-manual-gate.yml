@@ -1,0 +1,41 @@
+name: Sacred Art Batch 1 — three-photo manual publication gate
+on:
+  push:
+    branches:
+      - release/sacred-art-batch1-three-photo-manual-gate-20261108
+    paths:
+      - 'assets/staged/sacred-art-batch1/**'
+      - 'research/sacred-art/batch1-three-photo-manual-release-gate.v1.json'
+      - 'tests/sacred-art-batch1-three-manual-release-gate.mjs'
+      - '.github/workflows/sacred-art-batch1-three-photo-manual-gate.yml'
+  pull_request:
+    paths:
+      - 'assets/staged/sacred-art-batch1/**'
+      - 'research/sacred-art/batch1-three-photo-manual-release-gate.v1.json'
+      - 'tests/sacred-art-batch1-three-manual-release-gate.mjs'
+      - '.github/workflows/sacred-art-batch1-three-photo-manual-gate.yml'
+permissions:
+  contents: read
+jobs:
+  source-photo-gate:
+    name: Hash-verify three sources, retain 18 Prayer positions, prevent public release
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify exact candidate versions, rights and manual approval holds
+        run: node tests/sacred-art-batch1-three-manual-release-gate.mjs
+      - name: Build public preview to test excluded research candidates
+        run: node tools/build-web-preview.mjs
+      - name: Assert none of the staged photo candidates were published in preview
+        run: |
+          set -euo pipefail
+          if test -e dist/web-preview/assets/staged; then
+            echo "Unapproved photos would leak into GitHub Pages"; exit 1
+          fi
+          if test -e dist/web-preview/research/sacred-art; then
+            echo "Research approval metadata would leak into GitHub Pages"; exit 1
+          fi
