@@ -70,8 +70,9 @@ for(const [srcId,tone,kind] of [[4449,"SOLEMN","SUNDAY"],[4450,"FERIAL","FERIA"]
    const paragraphs=partsFor(row,joined),first=paragraphs[0];
    assert.deepEqual(matches(first,paragraphs,resolved(kind)).map(s=>s.id),[row.id],
     "Source-verified "+tone+" cue must appear in actual Ordo "+row.id);
-   assert.equal(matches(first,paragraphs,resolved(kind==="SUNDAY"?"FERIA":"SUNDAY")).length,0,
-    "Never borrow the wrong rubrical family");
+   const other=matches(first,paragraphs,resolved(kind==="SUNDAY"?"FERIA":"SUNDAY"));
+   assert.equal(other.length,1,"The other verified family may show its OWN score");
+   assert.notEqual(other[0].id,row.id,"Never borrow the wrong rubrical family's melody");
    assert.equal(prefaceCelebrantInlineScoresForParagraph({
     paragraph:first,paragraphs,form:"LOW",resolvedMass:resolved(kind)}).length,0,
     "Low Mass never gets Sung dialogue notation");
