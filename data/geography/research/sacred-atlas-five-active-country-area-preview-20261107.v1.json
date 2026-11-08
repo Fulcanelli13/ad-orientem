@@ -1,7 +1,7 @@
 {
   "schema": "AO_SACRED_ATLAS_FIVE_COUNTRY_AREA_PREVIEW_V1",
   "prepared_on": "2026-11-07",
-  "status": "RESEARCH_ONLY_NOT_ADMITTED",
+  "status": "RESEARCH_ONLY_ROUTING_CODE_PREPARED_NOT_ADMITTED",
   "source_manifest": "sacred-atlas-243-proximity-area-decisions-20261107.v1.json",
   "counts": {
     "active_catholic_country_prerequisites": 5,
@@ -9,7 +9,8 @@
     "operational_territory_adapter_hold": 1,
     "heritage_deferred": 4,
     "geo_areas_appended_to_canonical": 0,
-    "candidate_places_admitted": 0
+    "candidate_places_admitted": 0,
+    "operational_territory_adapter_prepared": 1
   },
   "heritage_only_deferred_codes": [
     "AM",
@@ -139,29 +140,31 @@
     {
       "source_country_code": "XK",
       "standard_code_state": "OPERATIONAL_USER_ASSIGNED_NOT_ISO",
-      "canonical_compatibility": "BLOCKED_ROUTING_ADAPTER_REQUIRED",
+      "canonical_compatibility": "ADAPTER_PREPARED_STILL_UNAPPROVED",
       "proposed_geo_area": {
-        "geo_area_id": "geo:country:XK",
+        "geo_area_id": "geo:territory:XK",
         "name": {
           "official": "Kosovo",
           "aliases": [
-            "Kosova",
-            "Kosovo*"
+            "Kosova"
           ]
         },
         "area_system": "CIVIL",
-        "area_type": "country",
+        "area_type": "other",
         "parent_geo_area_ids": [
           "geo:world"
         ],
         "mappable": true,
-        "codes": {}
+        "codes": {
+          "operational_alpha2": "XK"
+        }
       },
       "operational_code_route": {
         "source_country_code": "XK",
         "source_system": "EUROSTAT_EU_PRACTICAL",
         "cannot_write_into_codes_iso_alpha2": true,
-        "requires_explicit_adapter_or_schema_decision": true
+        "requires_explicit_adapter_or_schema_decision": false,
+        "adapter_implemented_in": "src/find/atlas-country-identifiers.js"
       },
       "designation_note": "The label Kosovo is a place label only; it carries no position on disputed status or recognition. For EU displays, apply the institutional status-neutral footnote as appropriate.",
       "required_candidate_ids": [
@@ -172,5 +175,5 @@
       "canonical_area_insert_authorized": false
     }
   ],
-  "policy": "Research definitions have no automatic admission. Kosovo/XK requires an explicit mapping decision because XK is user-assigned rather than an assigned ISO alpha-2 country code; do not smuggle XK into codes.iso_alpha2. First sync the PR with current main, then validate all functional dependent country routing before authorized release."
+  "policy": "Research-only four civil ISO country previews and one Kosovo non-ISO territory preview. Operational XK is not ISO alpha-2. Source-backed runtime routing prepared but no approved Place/area admission. Explicit owner review, app functional checks and upstream-main reconciliation remain prerequisites."
 }
