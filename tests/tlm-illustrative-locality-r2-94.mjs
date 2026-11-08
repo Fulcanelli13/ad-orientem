@@ -77,7 +77,7 @@ assert.equal(sanJose.affiliation_scope,"SOURCE_LABEL_ONLY");
 assert.match(sanJose.status,/MASS UNVERIFIED/);
 assert.ok(sanJose.actions.every(a=>!a.url.includes("/maps/dir/")),
  "No route to approximate school/campus centroid");
-assert.equal(all.length,2582);assert.equal(all.filter(x=>x.map_publishable).length,2568);
-assert.deepEqual(tlmSiteEvidenceCounts(all),{ALL:2582,REVIEWED_PIN:762,SOURCE_PIN:1806,ADDRESS_ONLY:14});
+assert.equal(all.length,2583);assert.equal(all.filter(x=>x.map_publishable).length,2569);
+assert.deepEqual(tlmSiteEvidenceCounts(all),{ALL:2583,REVIEWED_PIN:763,SOURCE_PIN:1806,ADDRESS_ONLY:14});
 assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,14);
-console.log("PASS TLM R2: 93 Excel-approved GeoNames town centroids, frozen IDs, EN/FR cards, 2568 mapped, 14 unpinned, no GPS routing");
+console.log("PASS TLM R2: 93 Excel-approved GeoNames town centroids, frozen IDs, EN/FR cards, 2569 mapped, 14 unpinned, no GPS routing");
