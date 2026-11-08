@@ -80,7 +80,10 @@ for(const row of ledger.scores){
 }
 const publicReader=readFileSync(new URL("../src/mass/reader-dom.js",import.meta.url),"utf8");
 const sw=readFileSync(new URL("../sw.js",import.meta.url),"utf8");
-assert.doesNotMatch(publicReader,/kyriale-1961-collation|data-schola-score-open/);
+// The M22 workbench and unreviewed Kyriale collations remain isolated,
+// while an independently source-bound Proper score may be viewed provisionally.
+assert.doesNotMatch(publicReader,/kyriale-1961-collation|offlineKyrialeResearchScore\(/);
+assert.match(publicReader,/resolveScholaSelectedScoreAccess\(\{itinerary,/);
 assert.doesNotMatch(sw,/kyriale-1961-collation/);
 // M31 records actual visible short-score print comparisons. Do not turn an
 // underlay/contour observation into staff-pitch, rhythm, or editorial approval.
