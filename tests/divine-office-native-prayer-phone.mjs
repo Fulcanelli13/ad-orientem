@@ -109,14 +109,14 @@ try{
   await office.locator('[data-office-hour="COMPLINE"]').click();
   await office.getByRole("button",{name:"Read Latin Compline"}).click();
   const reading=office.locator(".aoOfPublicLatin");
-  await reading.locator(".aoOfPublishedStatus").getByText(/40 reading moments/).waitFor({timeout:35000});
+  await page.waitForFunction(()=>document.querySelector(".aoOfPublishedStatus")?.textContent?.includes("40 reading moments"),null,{timeout:35000});
   assert.match(await reading.locator(".aoOfFrameControls").innerText(),/1 \/ /);
   assert.ok(observedLatin.length>=7,"Public Latin text did not fetch pinned original");
   await reading.getByRole("button",{name:"Next"}).click();
   assert.match(await reading.locator(".aoOfFrameControls").innerText(),/2 \/ /);
   const minister=reading.getByRole("combobox",{name:/Presiding minister/});
   await minister.selectOption("PRIEST");
-  await reading.locator(".aoOfPublishedStatus").getByText(/40 reading moments/).waitFor({timeout:35000});
+  await page.waitForFunction(()=>document.querySelector(".aoOfPublishedStatus")?.textContent?.includes("40 reading moments"),null,{timeout:35000});
   const overflowReading=await page.evaluate(()=>document.documentElement.scrollWidth-document.documentElement.clientWidth);
   assert.ok(overflowReading<=2,"Public Latin Compline overflow "+width+": "+overflowReading);
   await office.getByRole("button",{name:"Close Latin Compline"}).click();
