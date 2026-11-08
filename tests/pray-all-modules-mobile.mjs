@@ -492,7 +492,7 @@ try{
 
  // September 15's full Latin poem has its own 20-tercet folio at the end;
  // it must never change the 13 traditional between-station excerpts.
- await page.locator("#aoPray435930.open .aoP435930StationRail [data-ao-devo-chapter='13']").click();
+ await page.locator('#aoPray435930.open .aoP435930StationRail [data-p435930-station-step="13"]').click();
  assert.equal(await stationProgress.getAttribute("aria-valuenow"),"14","Full Stabat folio requires the final Station");
  const fullStabat=page.locator("#aoPray435930.open [data-ao-stabat-full-september]");
  assert.equal(await fullStabat.count(),1,"Missing complete September Stabat after the Fourteenth Station");
