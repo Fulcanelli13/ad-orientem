@@ -1,0 +1,524 @@
+{
+  "schema": "AO_SACRED_ART_PRIORITY16_SOURCE_AUDIT_V1",
+  "asOf": "2026-11-09",
+  "scope": "NONPUBLISHING_RESEARCH_SOURCE_SIDE_CAR",
+  "sourceFiles": {
+    "lexical989": "data/artwork/research-semantic-candidates-989.v1.json",
+    "priorAliases": "data/artwork/research-prior-duplicate-decisions.v1.json",
+    "prayerEditorial267": "data/prayer/artwork-editorial-20261101/curatorial-master-267-20261101.v1.json"
+  },
+  "purpose": "Hold exact source/object/photograph distinctions while preparing a future reviewed category wave; do not mutate 989 frozen lexical evidence, 267 Prayer slot selection or runtime gallery.",
+  "policies": {
+    "doNotAutoPromoteCommons": true,
+    "pradoImagesExcluded": true,
+    "physicalArtworkIdentityNotProvenByTitle": true,
+    "biblicalEventDistinctFromTypology": true,
+    "keepScopeSpecificOwnerDecisions": true,
+    "leaveProtected65CardMassAndRosaryUnchanged": true,
+    "newPhotoPublication": false
+  },
+  "counts": {
+    "priorityArtworkGroups": 16,
+    "canonical": 11,
+    "prayer": 3,
+    "hero": 2,
+    "originalSourceEntriesWithBlankTitle": 2,
+    "titleBearingEntries": 14,
+    "directCategoryProposals": 12,
+    "thematicGenreEntriesWithoutCategory": 2,
+    "unidentifiedPrayerEntries": 2,
+    "sourceAliasPairsReused": 1,
+    "newVerifiedDepictions": 0,
+    "newPhotoPublications": 0,
+    "newEditorialApprovals": 0
+  },
+  "artworks": [
+    {
+      "workGroupId": "CANONICAL::ART-aravaggio-avid-with-the-ead-of-oliath",
+      "title": "David with the Head of Goliath",
+      "artist": "Caravaggio",
+      "sourceGroupKind": "CANONICAL",
+      "proposal": {
+        "categoryIds": [
+          "OLD_TESTAMENT"
+        ],
+        "classificationContext": "DIRECT_OLD_TESTAMENT_EPISODE",
+        "scriptureReferences": [
+          "1 Kings 17:48-51"
+        ],
+        "namedSubjectFromTitleOrCatalogue": "David with Goliath's head",
+        "evidenceLevel": "MUSEUM_OR_SCHOLARLY_CATALOGUE_REFERENCE_NOT_ARCHIVE_JOINED",
+        "visualSourceVerification": false
+      },
+      "sourceLeads": [
+        {
+          "institution": "Galleria Borghese",
+          "objectId": "inv. 455",
+          "url": "https://www.collezionegalleriaborghese.it/en/opere/david-with-the-head-of-goliath",
+          "role": "POTENTIAL_OBJECT_TO_RECONCILE"
+        }
+      ],
+      "requiredBeforePromotion": "CARAVAGGIO_MULTIPLE_VERSIONS_EXACT_FILE_UNMATCHED",
+      "auditOnly": true,
+      "changeExistingUserApproval": false,
+      "newPhotoPublicationAuthorized": false,
+      "exactOriginalPhotoRightsAndPixelQaCertified": false
+    },
+    {
+      "workGroupId": "CANONICAL::ART-os-de-ibera-acob-s-ream",
+      "title": "Jacob’s Dream",
+      "artist": "José de Ribera",
+      "sourceGroupKind": "CANONICAL",
+      "proposal": {
+        "categoryIds": [
+          "OLD_TESTAMENT"
+        ],
+        "classificationContext": "DIRECT_OLD_TESTAMENT_EPISODE",
+        "scriptureReferences": [
+          "Genesis 28:10-22"
+        ],
+        "namedSubjectFromTitleOrCatalogue": "Jacob's dream",
+        "evidenceLevel": "MUSEUM_OR_SCHOLARLY_CATALOGUE_REFERENCE_NOT_ARCHIVE_JOINED",
+        "visualSourceVerification": false
+      },
+      "sourceLeads": [
+        {
+          "institution": "Instituto Cervantes / Museo del Prado research citation (metadata only)",
+          "objectId": "1117 in archived cited catalogue",
+          "url": "https://cvc.cervantes.es/artes/museoprado/citas_claroscuro/ribera/galeria_ribera.htm",
+          "role": "OBJECT_METADATA_ONLY_NO_PRADO_IMAGE"
+        }
+      ],
+      "requiredBeforePromotion": "EXACT_ORIGINAL_IMAGE_NOT_JOINED_PRADO_IMAGERY_EXCLUDED",
+      "auditOnly": true,
+      "changeExistingUserApproval": false,
+      "newPhotoPublicationAuthorized": false,
+      "exactOriginalPhotoRightsAndPixelQaCertified": false
+    },
+    {
+      "workGroupId": "CANONICAL::ART-ean-uguste-ominique-ngres-oan-of-rc-at-oronation-of-harles",
+      "title": "Joan of Arc at Coronation of Charles VII",
+      "artist": "Jean-Auguste-Dominique Ingres",
+      "sourceGroupKind": "CANONICAL",
+      "proposal": {
+        "categoryIds": [
+          "SAINTS"
+        ],
+        "classificationContext": "HISTORICAL_SAINT_NOT_SCRIPTURAL_EPISODE",
+        "scriptureReferences": [],
+        "namedSubjectFromTitleOrCatalogue": "Joan of Arc present at Charles VII's coronation",
+        "evidenceLevel": "MUSEUM_OR_SCHOLARLY_CATALOGUE_REFERENCE_NOT_ARCHIVE_JOINED",
+        "visualSourceVerification": false
+      },
+      "sourceLeads": [
+        {
+          "institution": "Musée du Louvre",
+          "objectId": "MI 667",
+          "url": "https://collections.louvre.fr/en/ark:/53355/cl010065747",
+          "role": "POTENTIAL_OBJECT_TO_RECONCILE"
+        }
+      ],
+      "requiredBeforePromotion": "ORIGINAL_ARCHIVE_TO_MUSEUM_OBJECT_JOIN_PENDING",
+      "auditOnly": true,
+      "changeExistingUserApproval": false,
+      "newPhotoPublicationAuthorized": false,
+      "exactOriginalPhotoRightsAndPixelQaCertified": false
+    },
+    {
+      "workGroupId": "CANONICAL::ART-acopo-intoretto-udith-and-olofernes",
+      "title": "Judith and Holofernes",
+      "artist": "Jacopo Tintoretto",
+      "sourceGroupKind": "CANONICAL",
+      "proposal": {
+        "categoryIds": [
+          "OLD_TESTAMENT"
+        ],
+        "classificationContext": "DIRECT_DEUTEROCANONICAL_EPISODE",
+        "scriptureReferences": [
+          "Judith 13:1-10"
+        ],
+        "namedSubjectFromTitleOrCatalogue": "Judith and Holofernes",
+        "evidenceLevel": "TITLE_AND_EXISTING_EDITORIAL_ONLY",
+        "visualSourceVerification": false
+      },
+      "sourceLeads": [],
+      "requiredBeforePromotion": "NO_TRUSTWORTHY_EXACT_OBJECT_SOURCE_JOIN_NO_PRADO_IMAGERY",
+      "auditOnly": true,
+      "changeExistingUserApproval": false,
+      "newPhotoPublicationAuthorized": false,
+      "exactOriginalPhotoRightsAndPixelQaCertified": false
+    },
+    {
+      "workGroupId": "CANONICAL::ART-uido-eni-usannah-and-the-lders",
+      "title": "Susannah and the Elders",
+      "artist": "Guido Reni",
+      "sourceGroupKind": "CANONICAL",
+      "proposal": {
+        "categoryIds": [
+          "OLD_TESTAMENT"
+        ],
+        "classificationContext": "DIRECT_DEUTEROCANONICAL_EPISODE",
+        "scriptureReferences": [
+          "Daniel 13:15-23"
+        ],
+        "namedSubjectFromTitleOrCatalogue": "Susannah confronted by elders",
+        "evidenceLevel": "MUSEUM_OR_SCHOLARLY_CATALOGUE_REFERENCE_NOT_ARCHIVE_JOINED",
+        "visualSourceVerification": false
+      },
+      "sourceLeads": [
+        {
+          "institution": "National Gallery, London",
+          "objectId": "NG196",
+          "url": "https://www.nationalgallery.org.uk/paintings/guido-reni-susannah-and-the-elders",
+          "role": "POTENTIAL_OBJECT_TO_RECONCILE"
+        }
+      ],
+      "requiredBeforePromotion": "ORIGINAL_ARCHIVE_TO_MUSEUM_OBJECT_JOIN_PENDING",
+      "auditOnly": true,
+      "changeExistingUserApproval": false,
+      "newPhotoPublicationAuthorized": false,
+      "exactOriginalPhotoRightsAndPixelQaCertified": false
+    },
+    {
+      "workGroupId": "CANONICAL::ART-eter-aul-ubens-he-razen-erpent",
+      "title": "The Brazen Serpent",
+      "artist": "Peter Paul Rubens",
+      "sourceGroupKind": "CANONICAL",
+      "proposal": {
+        "categoryIds": [
+          "OLD_TESTAMENT"
+        ],
+        "classificationContext": "DIRECT_OLD_TESTAMENT_EPISODE",
+        "scriptureReferences": [
+          "Numbers 21:4-9"
+        ],
+        "thematicOnlyScriptureReferences": [
+          "John 3:14-15"
+        ],
+        "namedSubjectFromTitleOrCatalogue": "Moses and the bronze serpent; Passion parallel is typology only",
+        "evidenceLevel": "MUSEUM_OR_SCHOLARLY_CATALOGUE_REFERENCE_NOT_ARCHIVE_JOINED",
+        "visualSourceVerification": false
+      },
+      "sourceLeads": [
+        {
+          "institution": "National Gallery, London",
+          "objectId": "NG59",
+          "url": "https://www.nationalgallery.org.uk/paintings/peter-paul-rubens-the-brazen-serpent",
+          "role": "POTENTIAL_OBJECT_TO_RECONCILE"
+        }
+      ],
+      "requiredBeforePromotion": "RUBENS_VARIANT_OR_STUDIO_OBJECT_ORIGINAL_ARCHIVE_JOIN_PENDING",
+      "auditOnly": true,
+      "changeExistingUserApproval": false,
+      "newPhotoPublicationAuthorized": false,
+      "exactOriginalPhotoRightsAndPixelQaCertified": false
+    },
+    {
+      "workGroupId": "CANONICAL::ART-bastien-ourdon-he-inding-of-oses",
+      "title": "The Finding of Moses",
+      "artist": "Sébastien Bourdon",
+      "sourceGroupKind": "CANONICAL",
+      "proposal": {
+        "categoryIds": [
+          "OLD_TESTAMENT"
+        ],
+        "classificationContext": "DIRECT_OLD_TESTAMENT_EPISODE",
+        "scriptureReferences": [
+          "Exodus 2:1-10"
+        ],
+        "namedSubjectFromTitleOrCatalogue": "Finding of the infant Moses",
+        "evidenceLevel": "MUSEUM_OR_SCHOLARLY_CATALOGUE_REFERENCE_NOT_ARCHIVE_JOINED",
+        "visualSourceVerification": false
+      },
+      "sourceLeads": [
+        {
+          "institution": "National Gallery of Art, Washington",
+          "objectId": "1961.9.65",
+          "url": "https://www.nga.gov/artworks/46164-finding-moses",
+          "role": "POTENTIAL_OBJECT_TO_RECONCILE"
+        }
+      ],
+      "requiredBeforePromotion": "IDENTICAL_SUBJECT_DIFFERENT_MEDIA_ORIGINAL_PAINTING_FILE_JOIN_PENDING",
+      "auditOnly": true,
+      "changeExistingUserApproval": false,
+      "newPhotoPublicationAuthorized": false,
+      "exactOriginalPhotoRightsAndPixelQaCertified": false
+    },
+    {
+      "workGroupId": "CANONICAL::ART-ieter-ruegel-the-lder-ower-of-abel",
+      "title": "Tower of Babel",
+      "artist": "Pieter Bruegel the Elder",
+      "sourceGroupKind": "CANONICAL",
+      "proposal": {
+        "categoryIds": [
+          "OLD_TESTAMENT"
+        ],
+        "classificationContext": "DIRECT_OLD_TESTAMENT_EPISODE",
+        "scriptureReferences": [
+          "Genesis 11:1-9"
+        ],
+        "namedSubjectFromTitleOrCatalogue": "Building of the Tower of Babel",
+        "evidenceLevel": "MUSEUM_OR_SCHOLARLY_CATALOGUE_REFERENCE_NOT_ARCHIVE_JOINED",
+        "visualSourceVerification": false
+      },
+      "sourceLeads": [
+        {
+          "institution": "Kunsthistorisches Museum, Vienna",
+          "objectId": "Picture Gallery inv. 1026 (1563)",
+          "url": "https://bruegel.at/en/the-tower-of-babel/",
+          "role": "COMPETING_PHYSICAL_VERSION"
+        },
+        {
+          "institution": "Museum Boijmans Van Beuningen, Rotterdam",
+          "objectId": "2443 (OK)",
+          "url": "https://www.boijmans.nl/en/collection/artworks/3723/the-tower-of-babel",
+          "role": "COMPETING_PHYSICAL_VERSION"
+        }
+      ],
+      "requiredBeforePromotion": "TWO_DISTINCT_BRUEGEL_PAINTINGS_OBJECT_UNRESOLVED",
+      "auditOnly": true,
+      "changeExistingUserApproval": false,
+      "newPhotoPublicationAuthorized": false,
+      "exactOriginalPhotoRightsAndPixelQaCertified": false
+    },
+    {
+      "workGroupId": "PRAYER::w4-ricci",
+      "title": "",
+      "artist": null,
+      "sourceGroupKind": "PRAYER",
+      "proposal": {
+        "categoryIds": [],
+        "classificationContext": "UNIDENTIFIED_PRAYER_ARCHIVE_ENTRY",
+        "scriptureReferences": [],
+        "namedSubjectFromTitleOrCatalogue": null,
+        "evidenceLevel": "TITLE_AND_EXISTING_EDITORIAL_ONLY",
+        "visualSourceVerification": false
+      },
+      "sourceLeads": [],
+      "relatedEditorialObjectNotAnIdentityMatch": {
+        "slot": "STG-prayer.communion-02",
+        "title": "The Last Communion of Saint Mary of Egypt",
+        "artist": "Sebastiano Ricci",
+        "sourceUrl": "https://www.nga.gov/artworks/127587-last-communion-saint-mary-egypt",
+        "notAnIdentityMatch": true
+      },
+      "protectedOriginalDecisionKeys": [
+        "communion::w4-ricci",
+        "good-death::w4-ricci"
+      ],
+      "requiredBeforePromotion": "BLANK_TITLE_AND_ARTIST_ORIGINAL_IMAGE_SOURCE_NOT_RECOVERED",
+      "auditOnly": true,
+      "changeExistingUserApproval": false,
+      "newPhotoPublicationAuthorized": false,
+      "exactOriginalPhotoRightsAndPixelQaCertified": false
+    },
+    {
+      "workGroupId": "PRAYER::w7-altomonte",
+      "title": "",
+      "artist": null,
+      "sourceGroupKind": "PRAYER",
+      "proposal": {
+        "categoryIds": [],
+        "classificationContext": "UNIDENTIFIED_PRAYER_ARCHIVE_ENTRY",
+        "scriptureReferences": [],
+        "namedSubjectFromTitleOrCatalogue": null,
+        "evidenceLevel": "TITLE_AND_EXISTING_EDITORIAL_ONLY",
+        "visualSourceVerification": false
+      },
+      "sourceLeads": [],
+      "protectedOriginalDecisionKeys": [
+        "good-death::w7-altomonte",
+        "dying::w7-altomonte"
+      ],
+      "requiredBeforePromotion": "BLANK_TITLE_AND_ARTIST_KEEP_BOTH_PLACEMENTS_BETTER_PHOTOGRAPH_REQUIRED",
+      "auditOnly": true,
+      "changeExistingUserApproval": false,
+      "newPhotoPublicationAuthorized": false,
+      "exactOriginalPhotoRightsAndPixelQaCertified": false
+    },
+    {
+      "workGroupId": "HERO::museu-nacional-belas-artes:meirelles-first-mass-brazil-1860",
+      "title": "The First Mass in Brazil",
+      "artist": "Victor Meirelles",
+      "sourceGroupKind": "HERO",
+      "proposal": {
+        "categoryIds": [
+          "CHURCH_LIFE"
+        ],
+        "classificationContext": "CATHOLIC_HISTORICAL_MASS_NOT_1962_RITE_PROOF",
+        "scriptureReferences": [],
+        "namedSubjectFromTitleOrCatalogue": "Historical first Catholic Mass in Brazil",
+        "evidenceLevel": "MUSEUM_OR_SCHOLARLY_CATALOGUE_REFERENCE_NOT_ARCHIVE_JOINED",
+        "visualSourceVerification": false
+      },
+      "sourceLeads": [
+        {
+          "institution": "Museu Nacional de Belas Artes, Rio de Janeiro",
+          "objectId": "entry 901",
+          "url": "https://artsandculture.google.com/asset/first-mass-in-brazil-0128/IQFUWbm_Wu1XaA",
+          "role": "POTENTIAL_OBJECT_TO_RECONCILE"
+        }
+      ],
+      "requiredBeforePromotion": "HISTORICAL_PAINTING_SOURCE_PHOTO_FINAL_QA_NOT_CERTIFIED",
+      "auditOnly": true,
+      "changeExistingUserApproval": false,
+      "newPhotoPublicationAuthorized": false,
+      "exactOriginalPhotoRightsAndPixelQaCertified": false
+    },
+    {
+      "workGroupId": "HERO::new:jules-breton-song-of-the-lark-artic-94841",
+      "title": "The Song of the Lark",
+      "artist": "Jules Breton",
+      "sourceGroupKind": "HERO",
+      "proposal": {
+        "categoryIds": [],
+        "classificationContext": "MORNING_THEMATIC_NON_SCRIPTURAL_GENRE_PAINTING",
+        "scriptureReferences": [],
+        "namedSubjectFromTitleOrCatalogue": "Rural figure at daybreak listening to a lark, not a biblical scene",
+        "evidenceLevel": "MUSEUM_OR_SCHOLARLY_CATALOGUE_REFERENCE_NOT_ARCHIVE_JOINED",
+        "visualSourceVerification": false
+      },
+      "sourceLeads": [
+        {
+          "institution": "Art Institute of Chicago",
+          "objectId": "94841",
+          "url": "https://www.artic.edu/artworks/94841/the-song-of-the-lark",
+          "role": "EXISTING_ARCHIVE_ALIAS_SOURCE"
+        }
+      ],
+      "existingSourceAliasId": "DUP-8de26ac1927601",
+      "requiredBeforePromotion": "PHOTO_REUSE_RIGHTS_AND_PIXEL_QA_PENDING",
+      "auditOnly": true,
+      "changeExistingUserApproval": false,
+      "newPhotoPublicationAuthorized": false,
+      "exactOriginalPhotoRightsAndPixelQaCertified": false
+    },
+    {
+      "workGroupId": "PRAYER::morning--primary",
+      "title": "The Song of the Lark",
+      "artist": "Jules Breton",
+      "sourceGroupKind": "PRAYER",
+      "proposal": {
+        "categoryIds": [],
+        "classificationContext": "MORNING_THEMATIC_NON_SCRIPTURAL_GENRE_PAINTING",
+        "scriptureReferences": [],
+        "namedSubjectFromTitleOrCatalogue": "Rural figure at daybreak listening to a lark, not a biblical scene",
+        "evidenceLevel": "MUSEUM_OR_SCHOLARLY_CATALOGUE_REFERENCE_NOT_ARCHIVE_JOINED",
+        "visualSourceVerification": false
+      },
+      "sourceLeads": [
+        {
+          "institution": "Art Institute of Chicago",
+          "objectId": "94841",
+          "url": "https://www.artic.edu/artworks/94841/the-song-of-the-lark",
+          "role": "EXISTING_ARCHIVE_ALIAS_SOURCE"
+        }
+      ],
+      "protectedOriginalDecisionKeys": [
+        "morning::morning--primary"
+      ],
+      "existingSourceAliasId": "DUP-8de26ac1927601",
+      "requiredBeforePromotion": "EXPLICIT_MORNING_SELECTION_ALREADY_RESTORED_PHOTO_QA_PENDING",
+      "auditOnly": true,
+      "changeExistingUserApproval": false,
+      "newPhotoPublicationAuthorized": false,
+      "exactOriginalPhotoRightsAndPixelQaCertified": false
+    },
+    {
+      "workGroupId": "CANONICAL::ART-uan-ern-ndez-de-avarrete-braham-and-the-hree-ngels",
+      "title": "Abraham and the Three Angels",
+      "artist": "Juan Fernández de Navarrete",
+      "sourceGroupKind": "CANONICAL",
+      "proposal": {
+        "categoryIds": [
+          "OLD_TESTAMENT"
+        ],
+        "classificationContext": "DIRECT_OLD_TESTAMENT_EPISODE",
+        "scriptureReferences": [
+          "Genesis 18:1-15"
+        ],
+        "namedSubjectFromTitleOrCatalogue": "Abraham receives three angelic visitors; Trinity is symbolic reading, not depicted Gospel episode",
+        "evidenceLevel": "MUSEUM_OR_SCHOLARLY_CATALOGUE_REFERENCE_NOT_ARCHIVE_JOINED",
+        "visualSourceVerification": false
+      },
+      "sourceLeads": [
+        {
+          "institution": "National Gallery of Ireland",
+          "objectId": "NGI.1721",
+          "url": "https://onlinecollection.nationalgallery.ie/objects/3180/abraham-and-the-three-angels",
+          "role": "POTENTIAL_OBJECT_TO_RECONCILE"
+        }
+      ],
+      "requiredBeforePromotion": "ORIGINAL_ARCHIVE_TO_OBJECT_JOIN_PENDING_TRINITY_ONLY_TYPOLOGY",
+      "auditOnly": true,
+      "changeExistingUserApproval": false,
+      "newPhotoPublicationAuthorized": false,
+      "exactOriginalPhotoRightsAndPixelQaCertified": false
+    },
+    {
+      "workGroupId": "CANONICAL::ART-ug-ne-elacroix-eliodorus-riven-from-the-emple",
+      "title": "Heliodorus Driven from the Temple",
+      "artist": "Eugène Delacroix",
+      "sourceGroupKind": "CANONICAL",
+      "proposal": {
+        "categoryIds": [
+          "OLD_TESTAMENT"
+        ],
+        "classificationContext": "DIRECT_DEUTEROCANONICAL_EPISODE",
+        "scriptureReferences": [
+          "2 Machabees 3:24-27"
+        ],
+        "namedSubjectFromTitleOrCatalogue": "Heliodorus expelled from Temple",
+        "evidenceLevel": "MUSEUM_OR_SCHOLARLY_CATALOGUE_REFERENCE_NOT_ARCHIVE_JOINED",
+        "visualSourceVerification": false
+      },
+      "sourceLeads": [
+        {
+          "institution": "Aix-Marseille Université Utpictura18 research catalogue",
+          "objectId": "Saint-Sulpice, Paris, Chapel of Holy Angels mural",
+          "url": "https://utpictura18.univ-amu.fr/en/notice/19555-heliodorus-driven-from-the-temple-delacroix",
+          "role": "SITE_BOUND_PAINTING_RESEARCH_SOURCE"
+        }
+      ],
+      "requiredBeforePromotion": "IN_SITU_MURAL_REPRODUCTION_SOURCE_AND_RIGHTS_PENDING",
+      "auditOnly": true,
+      "changeExistingUserApproval": false,
+      "newPhotoPublicationAuthorized": false,
+      "exactOriginalPhotoRightsAndPixelQaCertified": false
+    },
+    {
+      "workGroupId": "CANONICAL::ART-aravaggio-he-acrifice-of-saac",
+      "title": "The Sacrifice of Isaac",
+      "artist": "Caravaggio",
+      "sourceGroupKind": "CANONICAL",
+      "proposal": {
+        "categoryIds": [
+          "OLD_TESTAMENT"
+        ],
+        "classificationContext": "DIRECT_OLD_TESTAMENT_EPISODE",
+        "scriptureReferences": [
+          "Genesis 22:1-13"
+        ],
+        "thematicOnlyScriptureReferences": [
+          "Romans 8:32"
+        ],
+        "namedSubjectFromTitleOrCatalogue": "Abraham halted by the angel before sacrificing Isaac; Passion relation is typology only",
+        "evidenceLevel": "MUSEUM_OR_SCHOLARLY_CATALOGUE_REFERENCE_NOT_ARCHIVE_JOINED",
+        "visualSourceVerification": false
+      },
+      "sourceLeads": [
+        {
+          "institution": "Uffizi Galleries, Florence",
+          "objectId": "1890 no. 4659",
+          "url": "https://www.uffizi.it/en/artworks/sacrifice-of-isaac",
+          "role": "POTENTIAL_OBJECT_TO_RECONCILE"
+        }
+      ],
+      "requiredBeforePromotion": "CARAVAGGIO_VERSION_EXACT_ARCHIVE_TO_UFFIZI_OBJECT_JOIN_PENDING",
+      "auditOnly": true,
+      "changeExistingUserApproval": false,
+      "newPhotoPublicationAuthorized": false,
+      "exactOriginalPhotoRightsAndPixelQaCertified": false
+    }
+  ]
+}
