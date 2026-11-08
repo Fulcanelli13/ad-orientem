@@ -23,10 +23,12 @@ fact.pilot_destination_audit.publishable_deep_link=true;
 fact.pilot_destination_audit.exact_in_app_route_verified=true;
 fact.pilot_source_folio.link_browser_verified=true;
 // Choose an actual upcoming date on which the single test-only R34 approval
-// wins the 45-entry (24 Glossary + 20 Weiser + 1 R34) mixed rotation.
+// wins the 61-entry (24 Glossary + 20 Weiser + 16 Weiser + 1 R34) mixed rotation.
 const historical=JSON.parse(await readFile(resolve(root,
  "data/did-you-know/weiser-historical-20-publication.v1.json"),"utf8"));
-const historicalIds=historical.records.map(x=>x.id);
+const r50=JSON.parse(await readFile(resolve(root,
+ "data/did-you-know/weiser-r50-sixteen-publication.v1.json"),"utf8"));
+const historicalIds=[...historical.records,...r50.records].map(x=>x.id);
 const dayMs=86400000;
 const base=Date.UTC(2026,10,1);
 const testDate=Array.from({length:90},(_,i)=>
@@ -64,8 +66,8 @@ try{
    },{date:testDate});
   const errors=[];page.on("pageerror",e=>errors.push(String(e)));
   try{
-   // The checked-in R34 source has zero approvals. The public 20 Weiser
-   // and 24 Glossary cards are independently permitted on Home.
+   // The checked-in R34 source has zero approvals. The 36 published
+   // historical and 24 Glossary cards are independently permitted on Home.
    await page.goto(origin+"/index.html?aoR17Reader=native",{waitUntil:"domcontentloaded",timeout:60000});
    await page.waitForSelector(".homeScreen.aoH7Screens .aoH7HomeView",{timeout:45000});
    await page.waitForFunction(()=>{
