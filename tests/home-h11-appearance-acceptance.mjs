@@ -422,10 +422,10 @@ try{
         globalThis.AO_GLOSSARY_V1?.status?.()?.open===false,
         null,{timeout:10000});
     }else{
-      assert.match(historicalId,/^DYK-(?:G520-W-0|R50-W-0|R50B-W-0|H100-[PM]-0|H125-[PMX]-0|H150-[PMBC]-0)/);
+      assert.match(historicalId,/^DYK-(?:G520-W-0|R50-W-0|R50B-W-0|H100-[PM]-0|H125-[PMX]-0|H150-[PMBC]-0|H175-[PBM]-0)/);
       const source=h4.locator("[data-dyk-published='"+historicalId+"']");
       await source.waitFor({state:"visible",timeout:30000});
-      if(/^(?:DYK-H125-X-00[1-4]|DYK-H150-B-00[1-7])$/.test(historicalId)){
+      if(/^(?:DYK-H125-X-00[1-4]|DYK-H150-B-00[1-7]|DYK-H175-B-0(?:0[1-9]|1[0-4]))$/.test(historicalId)){
         assert.equal(await source.locator("a[href^='https://']").count()>=1,true,
           "Historical webpage must open its exact original source URL");
       }else{

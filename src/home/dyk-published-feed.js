@@ -419,6 +419,81 @@ export function dyk150Model(data,id,date,language="en"){
    label,sourceId:row.source_id,sourceUrl:s.url,links,published:true});
 }
 
+
+const H175_SOURCE=new URL("../../data/did-you-know/dyk-h175-multisource-25-publication.v1.json",import.meta.url);
+const H175_SCHEMA="AO_DYK_H175_MULTISOURCE25_PUBLICATION_V1";
+const H175_URLS=Object.freeze({
+ PITRE_1900:"https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+ RURAL_LIFE_PRAYERBOOK_1956:"https://www.ewtn.com/catholicism/library/rural-life-prayerbook-11881",
+ ROMAN_MASS_1962:"https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/"
+});
+const H175_RITUS_PAGES=Object.freeze({"VI.2":8,"VI.4":8,"VI.6":9,"VI.7":9,"VI.8":9,"VII.3":10,"VII.6":10});
+let h175Promise=null;
+export function loadDyk175Release(win=globalThis){
+ if(h175Promise)return h175Promise;
+ h175Promise=Promise.resolve().then(()=>win.fetch(H175_SOURCE,{cache:"no-store"})).then(r=>{
+  if(!r?.ok)throw Error("DYK_H175_UNAVAILABLE");return r.json();
+ }).catch(e=>{h175Promise=null;throw e});
+ return h175Promise;
+}
+export function dyk175Candidates(data,date){
+ if(!validDate(date)||data?.schema!==H175_SCHEMA||data.release_stage!=="APPROVED_PARTIAL_LIVE"||
+    data.counts?.pitre!==3||data.counts?.rural!==14||data.counts?.ritus!==8||
+    data.counts?.total!==25||!Array.isArray(data.records)||data.records.length!==25)return [];
+ const ids=new Set(),sources=new Set();
+ return data.records.filter(row=>{
+  const id=row?.id||"",c=row?.pilot_home_copy,s=row?.source;
+  if(!/^DYK-H175-(?:P-00[1-3]|B-0(?:0[1-9]|1[0-4])|M-00[1-8])$/.test(id)||
+     ids.has(id)||sources.has(row?.source_id)||!clean(row?.source_id))return false;
+  ids.add(id);sources.add(row.source_id);
+  const group=id.slice(9,10);
+  const family={P:"PITRE_1900",B:"RURAL_LIFE_PRAYERBOOK_1956",M:"ROMAN_MASS_1962"}[group];
+  const pages=s?.pdf_pages_1based;
+  const pageGate=group==="B"?
+   (s?.type==="html"&&Array.isArray(pages)&&pages.length===0&&
+    clean(s.primary_locator).length>6&&s.original_text_checked===true):
+   (s?.type==="pdf"&&Array.isArray(pages)&&pages.length===1&&Number.isInteger(pages[0])&&
+    pages[0]>0&&pages[0]<700&&s.original_image_checked===true);
+  const familyGate=group==="P"?
+   (row.historical_local_only===true&&row.topic==="SICILIAN_HISTORICAL_FEAST"&&
+    row.publication_kind==="EVERGREEN_HISTORICAL"&&
+    /^PIT1900-/.test(row.source_id)&&clean(s?.original_italian_anchor).length>=4&&
+    Array.isArray(s?.printed_pages)&&s.printed_pages.length===1&&
+    Number.isInteger(s.printed_pages[0])&&s.printed_pages[0]>0&&
+    pages?.[0]>s.printed_pages[0]):
+   group==="B"?
+   (row.historical_local_only===true&&row.topic==="HISTORICAL_CATHOLIC_BLESSING"&&
+    row.publication_kind==="SOURCE_SCOPED_HISTORICAL"&&
+    /^RLP1956[.]H175[.]/.test(row.source_id)&&s?.publication_year===1956):
+   (row.historical_local_only===false&&row.liturgical_rubric_1962===true&&
+    row.topic==="ROMAN_1962_CELEBRANT_DETAIL"&&
+    row.publication_kind==="ROMAN_1962_RUBRIC"&&
+    /^RS1962[.]H175[.]/.test(row.source_id)&&
+    /^Ritus servandus (VI[.]([24678])|VII[.]([36]))$/.test(s?.primary_locator||"")&&
+    H175_RITUS_PAGES[s.primary_locator.slice(16)]===pages?.[0]&&
+    Array.isArray(s.printed_pages)&&s.printed_pages.length===1&&s.printed_pages[0]===pages[0]);
+  return Boolean(pageGate&&familyGate&&row.source_family===family&&s?.url===H175_URLS[family]&&
+    s.source_record_id===row.source_id&&s.deep_link_checked===true&&
+    row.editorial_approval===true&&row.release_authorized===true&&
+    row.semantic_novelty_reviewed===true&&row.published===true&&
+    c?.final_english_signoff===true&&c?.final_french_signoff===true&&
+    clean(c.en).length>30&&clean(c.fr).length>30&&clean(row.region_scope).length>6);
+ });
+}
+export function dyk175Model(data,id,date,language="en"){
+ const row=dyk175Candidates(data,date).find(r=>r.id===id);if(!row)return null;
+ const fr=language==="fr",s=row.source;
+ const label=row.source_family==="PITRE_1900"?
+    (fr?"Pitrè · Fêtes siciliennes":"Pitrè · Sicilian feasts"):
+  row.source_family==="ROMAN_MASS_1962"?
+    (fr?"Messe romaine · Rubriques de 1962":"Roman Mass · 1962 rubrics"):
+    (fr?"Bénédictions · 1956":"Blessings · 1956");
+ const links=s.type==="pdf"?s.pdf_pages_1based.map(page=>({page,url:s.url+"#page="+page})):
+  [{page:null,url:s.url,label:fr?"Lire la bénédiction originale":"Read original blessing"}];
+ return Object.freeze({id:row.id,language:fr?"fr":"en",fact:row.pilot_home_copy[fr?"fr":"en"],
+   label,sourceId:row.source_id,sourceUrl:s.url,links,published:true});
+}
+
 let selectionPromise=null;
 export function loadDykPrioritySelection(win=globalThis){
  if(selectionPromise)return selectionPromise;
@@ -504,14 +579,15 @@ export function dykPublishedMarkup(model){
 }
 export async function openDykPublishedSource(win,{id,date,language="en",trigger}={}){
  if(!win?.document?.createElement||!id||!validDate(date))return false;
- const [data,historical,r50,r50b,mixed,h125,h150]=await Promise.all([
+ const [data,historical,r50,r50b,mixed,h125,h150,h175]=await Promise.all([
    loadDykPrioritySelection(win).catch(()=>null),
    loadDykHistoricalRelease(win).catch(()=>null),
    loadDykWeiser16Release(win).catch(()=>null),
    loadDykWeiserSecond16Release(win).catch(()=>null),
    loadDykMixed24Release(win).catch(()=>null),
    loadDyk125Release(win).catch(()=>null),
-   loadDyk150Release(win).catch(()=>null)
+   loadDyk150Release(win).catch(()=>null),
+   loadDyk175Release(win).catch(()=>null)
  ]);
  const model=dykPublishedModel(data,id,date,language)||
    dykHistoricalModel(historical,id,date,language)||
@@ -519,7 +595,8 @@ export async function openDykPublishedSource(win,{id,date,language="en",trigger}
    dykWeiserSecond16Model(r50b,id,date,language)||
    dykMixed24Model(mixed,id,date,language)||
    dyk125Model(h125,id,date,language)||
-   dyk150Model(h150,id,date,language);
+   dyk150Model(h150,id,date,language)||
+   dyk175Model(h175,id,date,language);
  if(!model)return false;
  const node=win.document.createElement("div");node.innerHTML=dykPublishedMarkup(model);
  const shade=node.querySelector("[data-dyk-published-shade]");
