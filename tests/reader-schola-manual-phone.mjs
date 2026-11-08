@@ -306,6 +306,20 @@ try{
    assert.equal(await musicMenu.isVisible(),true);
    assert.ok(await musicMenu.locator("[data-schola-event-select]").count()>=25,
      "Schola source itinerary did not populate navigable events");
+   const selectedProper=await page.evaluate(()=>
+     window.__AO_PHONE_PREVIEW.getScholaPerformance().properProgramme);
+   assert.ok(selectedProper.length>=4,
+     "Current Mass source chants missing from the Schola Proper presentation");
+   const properCards=await musicMenu.locator("[data-schola-proper-track]").evaluateAll(nodes=>
+     nodes.map(n=>({trackId:n.dataset.scholaProperTrack,
+       preview:n.querySelector("summary")?.textContent,
+       latin:n.querySelector(".ao-schola-proper-latin")?.textContent})));
+   assert.deepEqual(properCards.map(x=>x.trackId),selectedProper.map(x=>x.trackId));
+   for(let i=0;i<properCards.length;i++){
+     assert.equal(properCards[i].latin,selectedProper[i].lines[0].latin,
+       "Menu displayed a different Proper from the selected Mass");
+     assert.equal(selectedProper[i].status,"SOURCE_TEXT_ONLY_NOT_APPROVED_SCORE");
+   }
 
    // Real phone actions must create ONLY the user's observed music states,
    // without moving the priest, the chant syllable clock or a quiet interval.
