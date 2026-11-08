@@ -1,5 +1,5 @@
 /**
- * Discoverability pointers for five complete, previously published Communion
+ * Discoverability pointers for seven source-owned Communion
  * source prayers named in the 2013 Coalition Red Booklet.
  *
  * The 2013 booklet is ONLY an inventory witness here: its English wording
@@ -11,6 +11,8 @@ import {COMMUNION_TREASURY_V383} from "./traditional-pray-data.js";
 const POINTERS=Object.freeze([
   ["pre_thomas","beforeThomas","before",5],
   ["pre_ambrose","beforeAmbrose","before",6],
+  ["communion_thanks","thanksgivingMyGoodJesus","after",62],
+  ["communion_heart","eucharisticHeartAspiration","after",62],
   ["communion_thomas","afterThomas","after",64],
   ["communion_bonaventure","afterBonaventure","after",63],
   ["crucifix","enEgo","after",65]
