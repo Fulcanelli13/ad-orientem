@@ -3,6 +3,7 @@ import { APPROVED_CLASS_I_2026 } from "../calendar/approved-class-i-heroes-2026.
 import { RELEASED_MODULE_PAINTINGS } from "../art/released-module-paintings.v1.js";
 import { SACRED_ART_RELEASED_GALLERY_V1, releasedGalleryAt, releasedGalleryBySource } from "../art/released-gallery-batch1.v1.js";
 import { SACRED_ART_CATEGORIES_V1, sacredArtReleasedPhotoClassification } from "../art/sacred-art-taxonomy-v1.js";
+import { sacredArtCrossModuleLinks } from "../art/sacred-art-crossmodule-links-v1.js";
 import { releasedDateGospelHero2026 } from "./released-date-gospel-heroes-2026.js";
 import {approved2026HomeArtwork} from "./approved-dated-artwork-2026.js";
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -259,6 +260,24 @@ function showReleasedGalleryIndex(dlg,index){
     scene.textContent=taxonomy ? taxonomy.scene+" · "+taxonomy.categoryIds.map(c=>SACRED_ART_CATEGORIES_V1[c]?.en).filter(Boolean).join(" · ") : "";
     scene.hidden=!taxonomy;
   }
+  const connections=dlg.querySelector("[data-c3-art-connections]");
+  if(connections){
+    const links=taxonomy?sacredArtCrossModuleLinks(taxonomy.id):null;
+    const fr=dlg.ownerDocument?.documentElement?.lang?.startsWith("fr")??false;
+    const rosaryNames={joy:"Joyful",sor:"Sorrowful",glo:"Glorious",lum:"Luminous"};
+    const rosaryNamesFr={joy:"joyeux",sor:"douloureux",glo:"glorieux",lum:"lumineux"};
+    const parts=[];
+    if(links?.scripture.length)parts.push((fr?"Écriture : ":"Scripture: ")+links.scripture.map(x=>x.reference).join(", "));
+    if(links?.rosary.length)parts.push((fr?"Rosaire : ":"Rosary: ")+links.rosary.map(x=>{
+      const family=x.id.slice(0,3),n=x.id.slice(3);
+      return fr?"mystère "+(rosaryNamesFr[family]??family)+" "+n:(rosaryNames[family]??family)+" mystery "+n;
+    }).join(", "));
+    if(links?.bibleAtlas.length)parts.push(fr?"Historia Salutis : scène correspondante":"Historia Salutis: corresponding scene");
+    if(links?.mass.length)parts.push(fr?"Messe : lien théologique":"Mass: theological connection");
+    if(links?.calendar.length)parts.push((fr?"Calendrier : ":"Calendar: ")+links.calendar.map(x=>x.date).join(", "));
+    connections.textContent=parts.join(" · ");
+    connections.hidden=!parts.length;
+  }
   const nav=dlg.querySelector("[data-home-c3-gallery-nav]");
   if(nav)nav.hidden=false;
   const launcher=dlg.querySelector("[data-home-c3-gallery-launcher]");
@@ -276,6 +295,8 @@ export function showC3ArtInfo(root,button){
   dlg.__c3GalleryCategory="all";
   const scene=dlg.querySelector("[data-c3-art-scene]");
   if(scene){scene.hidden=true;scene.textContent="";}
+  const connections=dlg.querySelector("[data-c3-art-connections]");
+  if(connections){connections.hidden=true;connections.textContent="";}
   const select=dlg.querySelector("[data-home-c3-gallery-category]");
   if(select)select.value="all";
   const launcher=dlg.querySelector("[data-home-c3-gallery-launcher]");
@@ -326,6 +347,8 @@ export function returnFromC3ReleasedArtGallery(root){
   dlg.__c3GalleryCategory="all";
   const scene=dlg.querySelector("[data-c3-art-scene]");
   if(scene){scene.hidden=true;scene.textContent="";}
+  const connections=dlg.querySelector("[data-c3-art-connections]");
+  if(connections){connections.hidden=true;connections.textContent="";}
   const nav=dlg.querySelector("[data-home-c3-gallery-nav]");
   if(nav)nav.hidden=true;
   const launcher=dlg.querySelector("[data-home-c3-gallery-launcher]");
