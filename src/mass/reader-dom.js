@@ -2328,6 +2328,11 @@ export function buildReaderShellMarkup(prepared = {}) {
   <aside class="ao-mass-prefs" data-role="mass-preferences" data-open="false" aria-label="Mass preferences">
     <div class="ao-mass-prefs-head"><b>Mass preferences</b><button class="ao-mass-prefs-close" type="button" data-reader-preferences-close aria-label="Close preferences">×</button></div>
     <div class="ao-mass-prefs-group"><small>Reader mode</small><nav class="ao-mode-ribbon" aria-label="Reader mode">${["MISSAL","LIVE"].map(m => `<button type="button" data-reader-mode="${m}" aria-pressed="${String(m===mode)}"><span>${m}</span></button>`).join("")}</nav></div>
+    <div class="ao-mass-prefs-group" data-ordo-chant-reference-setting>
+      <small>Gregorian notation · Sung and Solemn Mass</small>
+      <button class="ao-mass-prefs-more" type="button" data-reader-chant-preview aria-pressed="false">Show source-neume references</button>
+      <small data-reader-chant-preview-note>Provisional 1961 reference scores at their exact Mass passages. Not a certified local Schola programme; no audio or automatic timing.</small>
+    </div>
     <div class="ao-mass-prefs-group ao-customary-controls" role="group" aria-label="Local Mass customs">
       <small>Local participation customs</small>
       <label>Posture tradition<select data-reader-customary="postureProfile" aria-label="Posture tradition">
@@ -2866,10 +2871,50 @@ export function createReaderDomAdapter({
     jump?.setAttribute?.("aria-expanded","false");
   }
 
+  function sungMassForNotation(){
+    return ["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]
+      .includes(String(prepared?.session?.resolvedMass?.form??"").toUpperCase());
+  }
+
+  function syncOrdoNotationControl(){
+    const button=root.querySelector("[data-reader-chant-preview]");
+    const group=root.querySelector("[data-ordo-chant-reference-setting]");
+    const sung=sungMassForNotation();
+    if(group)group.hidden=!sung;
+    if(!button)return;
+    button.disabled=!sung;
+    button.setAttribute("aria-pressed",String(sung&&properNotationPreview.enabled));
+    button.textContent=sung&&properNotationPreview.enabled
+      ?"Hide source-neume references":"Show source-neume references";
+  }
+
+  function renderOrdoNotationReferences(){
+    if(!current?.paragraphs)return 0;
+    const programme=typeof scholaLocalProgramme==="function"
+      ?scholaLocalProgramme():scholaLocalProgramme;
+    return properNotationPreview.render({mode,
+      form:prepared?.session?.resolvedMass?.form,
+      resolvedMass:prepared?.session?.resolvedMass,
+      massPlan:prepared?.session?.plan??null,
+      selectedSettings:selectedMassInlineSettings({
+        localProgramme:programme,resolvedMass:prepared?.session?.resolvedMass
+      }),
+      paragraphs:current.paragraphs});
+  }
+
+  function setOrdoNotationReferences(enabled){
+    if(!sungMassForNotation())return false;
+    properNotationPreview.setEnabled(enabled);
+    syncOrdoNotationControl();
+    renderOrdoNotationReferences();
+    return true;
+  }
+
   function setPreferencesOpen(open){
     const panel=root.querySelector('[data-role="mass-preferences"]');
     const button=root.querySelector('[data-reader-preferences]');
     if(panel)panel.dataset.open=String(Boolean(open));
+    syncOrdoNotationControl();
     button?.setAttribute?.("aria-expanded",String(Boolean(open)));
     return Boolean(open);
   }
@@ -3895,6 +3940,11 @@ export function createReaderDomAdapter({
       }
       const preferencesClose=event.target?.closest?.("[data-reader-preferences-close]");
       if(preferencesClose){setPreferencesOpen(false);return;}
+      const chantPreview=event.target?.closest?.("[data-reader-chant-preview]");
+      if(chantPreview){
+        if(!chantPreview.disabled)setOrdoNotationReferences(!properNotationPreview.enabled);
+        return;
+      }
       const parametersButton=event.target?.closest?.("[data-reader-parameters]");
       if(parametersButton){setPreferencesOpen(false);onParameters?.(current,prepared);return;}
       const sectionJump=event.target?.closest?.('[data-role="section-jump"]');
@@ -5157,14 +5207,10 @@ export function createReaderDomAdapter({
         }),
         resolvedMass:prepared?.session?.resolvedMass,
         paragraphs:current.paragraphs});
-      // Opt-in source reference; never changes canonical Mass text or cues.
-      properNotationPreview.render({mode,form:prepared?.session?.resolvedMass?.form,
-        resolvedMass:prepared?.session?.resolvedMass,
-        massPlan:prepared?.session?.plan??null,
-        selectedSettings:selectedMassInlineSettings({
-          localProgramme:chantProgramme,resolvedMass:prepared?.session?.resolvedMass
-        }),
-        paragraphs:current.paragraphs});
+      // Existing source-anchored 1961 reference neumes, directly inside the
+      // current Ordo card when explicitly selected in Mass preferences.
+      // Neither the 65-card structure nor approved chant publication changes.
+      renderOrdoNotationReferences();
       ensureShortCardCueTravel();
       // The fixed-height LIVE stage can settle a frame after renderMoment
       // (rail dimensions, Schola reserve and host shell are projected in
