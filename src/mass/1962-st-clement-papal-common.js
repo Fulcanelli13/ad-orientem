@@ -53,7 +53,7 @@ export function recover1962StClementPapalCommon({
        scope:"EXACT_2026_NOV23_SOURCE_OWNER",
        originalPrincipalSourcePreserved:true,
        felicityCommemorationUnchanged:true,
-       1962PrayerSource:"COMMON_OF_SOVEREIGN_PONTIFFS",
+       prayerSource1962:"COMMON_OF_SOVEREIGN_PONTIFFS",
        correctedFields:Object.freeze(["secrets[0]","postcommunions[0]"]),
        originalPre1942WordingExcluded:true,
        authorities:witness.authority})
