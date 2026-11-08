@@ -3,6 +3,7 @@ import http from "node:http";
 import {readFile} from "node:fs/promises";
 import {resolve,sep,extname} from "node:path";
 import {chromium} from "@playwright/test";
+import {dykHomeRotationSlot,DYK_GLOSSARY_FALLBACK_IDS} from "../src/home/dyk-published-feed.js";
 const root=resolve(".");
 const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",
  ".json":"application/json; charset=utf-8",".mjs":"text/javascript; charset=utf-8",
@@ -21,12 +22,18 @@ fact.priority_lexical_screen.manual_semantic_novelty_approved=true;
 fact.pilot_destination_audit.publishable_deep_link=true;
 fact.pilot_destination_audit.exact_in_app_route_verified=true;
 fact.pilot_source_folio.link_browser_verified=true;
-// Synthetic authorization must include the browser's actual present day.
-// The old hard-coded October dates expired in early November and caused a
-// false failing browser check despite the correct fail-closed production feed.
-// Adjacent UTC dates cover browser timezone offsets without relaxing gates.
-fact.publication_days=[-1,0,1].map(days=>
- new Date(Date.now()+days*86400000).toISOString().slice(0,10));
+// Choose an actual upcoming date on which the single test-only R34 approval
+// wins the 45-entry (24 Glossary + 20 Weiser + 1 R34) mixed rotation.
+const historical=JSON.parse(await readFile(resolve(root,
+ "data/did-you-know/weiser-historical-20-publication.v1.json"),"utf8"));
+const historicalIds=historical.records.map(x=>x.id);
+const dayMs=86400000;
+const base=Date.UTC(2026,10,1);
+const testDate=Array.from({length:90},(_,i)=>
+ new Date(base+i*dayMs).toISOString().slice(0,10))
+ .find(date=>dykHomeRotationSlot(date,[...historicalIds,fact.id],DYK_GLOSSARY_FALLBACK_IDS)===fact.id);
+assert.ok(testDate,"Test-only R34 release must receive one legitimate daily slot");
+fact.publication_days=[testDate];
 const server=http.createServer(async(req,res)=>{
  try{
   const path=decodeURIComponent(new URL(req.url,"http://127.0.0.1").pathname);
@@ -44,17 +51,29 @@ try{
  browser=await chromium.launch({headless:true});
  for(const width of [390,1280]){
   const page=await browser.newPage({viewport:{width,height:844},isMobile:width===390,hasTouch:width===390});
+   // Stub only the clock, not the app or selector. This makes the authorized
+   // source-bounded date stable in Playwright across runner time zones.
+   await page.addInitScript(({date})=>{
+     const NativeDate=Date;
+     const epoch=new NativeDate(date+"T12:00:00Z").getTime();
+     class FixedDate extends NativeDate{
+       constructor(...args){if(args.length)super(...args);else super(epoch)}
+       static now(){return epoch}
+     }
+     window.Date=FixedDate;
+   },{date:testDate});
   const errors=[];page.on("pageerror",e=>errors.push(String(e)));
   try{
-   // Actual checked-in master: zero publication, existing six-fact H7 fallback.
+   // The checked-in R34 source has zero approvals. The public 20 Weiser
+   // and 24 Glossary cards are independently permitted on Home.
    await page.goto(origin+"/index.html?aoR17Reader=native",{waitUntil:"domcontentloaded",timeout:60000});
    await page.waitForSelector(".homeScreen.aoH7Screens .aoH7HomeView",{timeout:45000});
    await page.waitForFunction(()=>{
-    const b=document.querySelector(".homeScreen [data-home-dyk-open]");
-    return Boolean(b&&!b.disabled&&b.dataset.homeDykEntry);
+     const b=document.querySelector(".homeScreen [data-home-dyk-open]");
+     return Boolean(b&&!b.disabled&&(b.dataset.homeDykEntry||b.dataset.homeDykFactId));
    },null,{timeout:45000});
-   assert.equal(await page.locator("[data-home-dyk-fact-id]").count(),0);
-   assert.equal(await page.locator("[data-home-dyk-entry]").count(),1);
+   assert.equal(await page.locator("[data-home-dyk-fact-id='DYK-UM02-014']").count(),0,
+     "Unapproved R34 research cannot appear on the public Home");
    // Synthetic fixture is contained in this test's browser interception. It is
    // never written into R34 or published with the application.
    await page.route("**/dyk-r34-high-signal-24-editorial-selection.v1.json",
@@ -77,7 +96,7 @@ try{
    assert.deepEqual(errors,[],"H7 home runtime errors for "+width);
   }finally{await page.close()}
  }
- console.log("PASS released H7 Discovery real phone: original unpublished master stays on Glossary; synthetic fully authorized fact opens exact in-app source and restores focus");
+ console.log("PASS released H7 Discovery phone: approved historical/Glossary public pool; R34 remains unpublished until a test-only exact-date authorization opens its source");
 }finally{
  await browser?.close().catch(()=>{});
  await new Promise(ok=>server.close(ok));
