@@ -1,0 +1,280 @@
+{
+  "schema": "AO_SACRED_ART_PHASE50_INSTITUTIONAL_OBJECT_PASSPORTS_V1",
+  "asOf": "2026-11-08",
+  "scope": "Official primary or scholarly institutional accession witnesses for some of the 177 handpicked selections that currently lack a reliable 989-group link. Same 177 selections, not newly proposed images.",
+  "constraints": [
+    "Official painting catalogue identity != owner photo approval",
+    "Official museum photo rights separate from public-domain painting",
+    "Do not count linked source groups or runtime presentation from these passports",
+    "Do not auto-admit non-handpicked Commons files",
+    "Preserve the 1,599 explicit source rejections",
+    "Do not claim each selected record is a distinct physical painting"
+  ],
+  "counts": {
+    "officially_or_institutionally_sourced_objects": 15,
+    "selected_rows_covered": 18,
+    "selected_177_to_989_links_added": 0,
+    "images_approved_for_release": 0,
+    "owner_selected_photos_replaced": 0
+  },
+  "passports": [
+    {
+      "selected_ids": [
+        "RECENT575::096"
+      ],
+      "physical_id": "AO-MUSEUM::MUS-E-DES-AUGUSTINS::2004_1_296",
+      "title": "Sainte Cécile",
+      "artist": "Pietro Ricchi",
+      "institution": "Musée des Augustins, Toulouse",
+      "accession": "2004 1 296",
+      "official_catalogue": "https://pop.culture.gouv.fr/notice/joconde/05620000473",
+      "identity_evidence_status": "OFFICIAL_INVENTORY_MATCH",
+      "official_photo_rights_gate": "PHOTO_RIGHTS_NOT_ESTABLISHED",
+      "notes": "Painting formerly attributed to Claude Vignon; museum's current attribution Pietro Ricchi.",
+      "source_photo_changed": false,
+      "release_approved": false,
+      "not_177_to_989_link": true
+    },
+    {
+      "selected_ids": [
+        "RECENT575::221"
+      ],
+      "physical_id": "AO-MUSEUM::MUS-E-DES-AUGUSTINS::2004_1_73",
+      "title": "Mariage mystique de sainte Catherine",
+      "artist": "Francesco Cairo",
+      "institution": "Musée des Augustins, Toulouse",
+      "accession": "2004 1 73",
+      "official_catalogue": "https://pop.culture.gouv.fr/notice/joconde/05620000316",
+      "identity_evidence_status": "OFFICIAL_INVENTORY_MATCH",
+      "official_photo_rights_gate": "PHOTO_RIGHTS_NOT_ESTABLISHED",
+      "notes": "Museum records previous Camillo Procaccini attribution; do not confuse with related depiction.",
+      "source_photo_changed": false,
+      "release_approved": false,
+      "not_177_to_989_link": true
+    },
+    {
+      "selected_ids": [
+        "RECENT575::222"
+      ],
+      "physical_id": "AO-MUSEUM::MUS-E-DES-AUGUSTINS::2004_1_75",
+      "title": "Mariage de la Vierge",
+      "artist": "Jacques Stella",
+      "institution": "Musée des Augustins, Toulouse",
+      "accession": "2004 1 75",
+      "official_catalogue": "https://pop.culture.gouv.fr/notice/joconde/05620000368",
+      "identity_evidence_status": "OFFICIAL_INVENTORY_MATCH",
+      "official_photo_rights_gate": "PHOTO_RIGHTS_NOT_ESTABLISHED",
+      "notes": "Tapestry cartoon for the Life of the Virgin; distinct from other works on that subject.",
+      "source_photo_changed": false,
+      "release_approved": false,
+      "not_177_to_989_link": true
+    },
+    {
+      "selected_ids": [
+        "RECENT575::223"
+      ],
+      "physical_id": "AO-MUSEUM::MUS-E-DES-AUGUSTINS::2004_1_213",
+      "title": "La Purification de la Vierge",
+      "artist": "Gabriel Blanchard",
+      "institution": "Musée des Augustins, Toulouse",
+      "accession": "2004 1 213",
+      "official_catalogue": "https://pop.culture.gouv.fr/notice/joconde/05620000017",
+      "identity_evidence_status": "OFFICIAL_INVENTORY_MATCH",
+      "official_photo_rights_gate": "PHOTO_RIGHTS_NOT_ESTABLISHED",
+      "notes": "Do not conflate Purification of the Virgin with Charles de La Fosse's Presentation of the Virgin (2004 1 237), both formerly in the related chapel cycle.",
+      "source_photo_changed": false,
+      "release_approved": false,
+      "not_177_to_989_link": true
+    },
+    {
+      "selected_ids": [
+        "RECENT575::147",
+        "RECENT575::152"
+      ],
+      "physical_id": "AO-MUSEUM::GROENINGEMUSEUM::0000.GRO0672.I",
+      "title": "Christ Crowned with Thorns / Doornenkroning",
+      "artist": "Jacob van Oost I",
+      "institution": "Groeningemuseum, Bruges",
+      "accession": "0000.GRO0672.I",
+      "official_catalogue": "https://collectie.museabrugge.be/en/collection/work/id/0000_GRO0672_I",
+      "identity_evidence_status": "OFFICIAL_INVENTORY_MATCH",
+      "official_photo_rights_gate": "MUSEUM_SITE_PUBLIC_DOMAIN_OBJECT;PHOTO_EDITION_CHECK_PENDING",
+      "notes": "Musea Brugge offers IIIF manifest https://dam.museabrugge.be/iiif/3/6933/manifest.json; two selected photo records are the same painting, not identical bytes.",
+      "source_photo_changed": false,
+      "release_approved": false,
+      "not_177_to_989_link": true
+    },
+    {
+      "selected_ids": [
+        "RECENT575::153"
+      ],
+      "physical_id": "AO-MUSEUM::GROENINGEMUSEUM::1995.GRO0020.I",
+      "title": "Laatste Avondmaal / Last Supper",
+      "artist": "Pieter Pourbus",
+      "institution": "Groeningemuseum, Bruges",
+      "accession": "1995.GRO0020.I",
+      "official_catalogue": "https://collectie.museabrugge.be/en/collection/work/id/1995_GRO0020_I",
+      "identity_evidence_status": "OFFICIAL_INVENTORY_MATCH",
+      "official_photo_rights_gate": "MUSEUM_SITE_PUBLIC_DOMAIN_OBJECT;PHOTO_EDITION_CHECK_PENDING",
+      "notes": "Museum IIIF https://dam.museabrugge.be/iiif/3/10512/manifest.json; the photographed painting is 46.5x63 cm, 1548, currently displayed at Gruuthusemuseum.",
+      "source_photo_changed": false,
+      "release_approved": false,
+      "not_177_to_989_link": true
+    },
+    {
+      "selected_ids": [
+        "RECENT575::272"
+      ],
+      "physical_id": "AO-MUSEUM::GROENINGEMUSEUM::0000.GRO0110.I",
+      "title": "Laatste Oordeel / Last Judgment",
+      "artist": "Pieter Pourbus",
+      "institution": "Groeningemuseum, Bruges",
+      "accession": "0000.GRO0110.I",
+      "official_catalogue": "https://collectie.museabrugge.be/collection/work/id/0000_GRO0110_I",
+      "identity_evidence_status": "OFFICIAL_INVENTORY_MATCH",
+      "official_photo_rights_gate": "MUSEUM_SITE_PUBLIC_DOMAIN_OBJECT;PHOTO_EDITION_CHECK_PENDING",
+      "notes": "Museum IIIF https://dam.museabrugge.be/iiif/3/410/manifest.json; do not conflate with Jan Provoost's Last Judgment.",
+      "source_photo_changed": false,
+      "release_approved": false,
+      "not_177_to_989_link": true
+    },
+    {
+      "selected_ids": [
+        "RECENT575::362",
+        "RECENT575::363"
+      ],
+      "physical_id": "AO-MUSEUM::MUS-E-DES-BEAUX-ARTS-DE-STRASBOURG::44.2015.1.1",
+      "title": "Le Repos pendant la Fuite en Egypte",
+      "artist": "Reynaud Levieux",
+      "institution": "Musée des Beaux-Arts de Strasbourg",
+      "accession": "44.2015.1.1",
+      "official_catalogue": "https://collections.musees.strasbourg.eu/fr/document/le-repos-pendant-la-fuite-en-egypte/5ee33891461cda28a3a5d52e",
+      "identity_evidence_status": "OFFICIAL_INVENTORY_MATCH",
+      "official_photo_rights_gate": "MUSEUM_PHOTOTHEQUE_CONTACT_REQUIRED_FOR_ITS_IMAGE",
+      "notes": "Two owner-selected photographs depict the same 73.5x99cm painting; different image files preserved.",
+      "source_photo_changed": false,
+      "release_approved": false,
+      "not_177_to_989_link": true
+    },
+    {
+      "selected_ids": [
+        "RECENT575::398",
+        "RECENT575::477"
+      ],
+      "physical_id": "AO-MUSEUM::PALAIS-DES-BEAUX-ARTS::P.820",
+      "title": "L'Ascension des élus / Paradise",
+      "artist": "Dieric Bouts",
+      "institution": "Palais des Beaux-Arts, Lille",
+      "accession": "P.820",
+      "official_catalogue": "https://pba-opacweb.lille.fr/fr/notice/p-820-l-ascension-des-elus-76173856-7ef8-4661-8b99-ac3dd343a80f",
+      "identity_evidence_status": "OFFICIAL_INVENTORY_MATCH",
+      "official_photo_rights_gate": "PHOTO_RIGHTS_NOT_ESTABLISHED",
+      "notes": "Two selected photos depict the same surviving panel. Distinct from Bouts's Chute des damnés/P.1808, its companion panel.",
+      "source_photo_changed": false,
+      "release_approved": false,
+      "not_177_to_989_link": true
+    },
+    {
+      "selected_ids": [
+        "RECENT575::544"
+      ],
+      "physical_id": "AO-MUSEUM::MUS-E-MAGNIN::1938_E_401",
+      "title": "La Conversion de saint Paul",
+      "artist": "Ferraù Fenzoni",
+      "institution": "Musée Magnin, Dijon",
+      "accession": "1938 E 401",
+      "official_catalogue": "https://pop.culture.gouv.fr/notice/joconde/00000069108",
+      "identity_evidence_status": "OFFICIAL_INVENTORY_MATCH",
+      "official_photo_rights_gate": "RMN_PHOTO_REUSE_SUBJECT_TO_AUTHORIZATION",
+      "notes": "Museum calls this a modello/possible study, not automatically the larger finished work.",
+      "source_photo_changed": false,
+      "release_approved": false,
+      "not_177_to_989_link": true
+    },
+    {
+      "selected_ids": [
+        "RECENT575::559"
+      ],
+      "physical_id": "AO-MUSEUM::MUS-E-MAGNIN::1938_F_142",
+      "title": "Saint Paul renversé et lapidé dans la ville de Lystre",
+      "artist": "Jean-Baptiste de Champaigne",
+      "institution": "Musée Magnin, Dijon",
+      "accession": "1938 F 142",
+      "official_catalogue": "https://pop.culture.gouv.fr/notice/joconde/50110000785",
+      "identity_evidence_status": "OFFICIAL_INVENTORY_MATCH",
+      "official_photo_rights_gate": "RMN_PHOTO_REUSE_SUBJECT_TO_AUTHORIZATION",
+      "notes": "Museum describes this as a modello related to the Marseille finished painting and the Elmira modello; do not merge the different physical works.",
+      "source_photo_changed": false,
+      "release_approved": false,
+      "not_177_to_989_link": true
+    },
+    {
+      "selected_ids": [
+        "RECENT575::556"
+      ],
+      "physical_id": "AO-MUSEUM::MUS-E-MAGNIN::1938_E_466",
+      "title": "Moïse et les filles de Jethro",
+      "artist": "Giovanni Francesco Romanelli",
+      "institution": "Musée Magnin, Dijon",
+      "accession": "1938 E 466",
+      "official_catalogue": "https://musee-magnin.fr/collection/objet/giovanni-francesco-romanelli-moise-et-les-filles-de-jethro",
+      "identity_evidence_status": "OFFICIAL_INVENTORY_MATCH",
+      "official_photo_rights_gate": "RMN_PHOTO_REUSE_SUBJECT_TO_AUTHORIZATION",
+      "notes": "Museum original has RMN-Grand Palais / Michel Urtado credit; painting subject Exodus 2:16–17.",
+      "source_photo_changed": false,
+      "release_approved": false,
+      "not_177_to_989_link": true
+    },
+    {
+      "selected_ids": [
+        "RECENT575::563"
+      ],
+      "physical_id": "AO-MUSEUM::MUS-E-MAGNIN::1938_E_393",
+      "title": "Sainte Madeleine au désert visitée par les anges",
+      "artist": "attributed to Sisto Badalocchio",
+      "institution": "Musée Magnin, Dijon",
+      "accession": "1938 E 393",
+      "official_catalogue": "https://musee-magnin.fr/media/document/salle-italienne-oeuvres-juin-2024pdf",
+      "identity_evidence_status": "OFFICIAL_MUSEUM_ROOM_SHEET_MATCH",
+      "official_photo_rights_gate": "PHOTO_RIGHTS_NOT_ESTABLISHED",
+      "notes": "Museum's own room sheet says 'attribué à' Badalocchio and lists inventory 1938 E 393; attribution must remain qualified.",
+      "source_photo_changed": false,
+      "release_approved": false,
+      "not_177_to_989_link": true
+    },
+    {
+      "selected_ids": [
+        "RECENT575::537"
+      ],
+      "physical_id": "AO-MUSEUM::MUS-E-MAGNIN::1938_E_332",
+      "title": "Suzanne et les vieillards / Susanna and the Elders",
+      "artist": "Alessandro Allori",
+      "institution": "Musée Magnin, Dijon",
+      "accession": "1938 E 332",
+      "official_catalogue": "https://musee-magnin.fr/sites/magnin/files/dossier_de_presse_un_ete_venitien.pdf",
+      "identity_evidence_status": "OFFICIAL_MUSEUM_PRESS_SHEET_MATCH",
+      "official_photo_rights_gate": "RMN_PHOTO_REUSE_SUBJECT_TO_AUTHORIZATION",
+      "notes": "Museum press material names Allori, oil on canvas, inventory 1938 E 332 and RMN-Grand Palais photo credit.",
+      "source_photo_changed": false,
+      "release_approved": false,
+      "not_177_to_989_link": true
+    },
+    {
+      "selected_ids": [
+        "RECENT575::560"
+      ],
+      "physical_id": "AO-MUSEUM::MUS-E-MAGNIN::1938_E_520",
+      "title": "Saint Pierre guérissant un paralytique",
+      "artist": "attributed to the circle of Girolamo Marchesi",
+      "institution": "Musée Magnin, Dijon",
+      "accession": "1938 E 520",
+      "official_catalogue": "https://agorha.inha.fr/recherche?terms=notice_liee%3A%20%2230474890-379c-4125-a283-5a3c589f0343%22",
+      "identity_evidence_status": "INHA_INVENTORY_MATCH_ATTRIBUTION_QUALIFIED",
+      "official_photo_rights_gate": "PHOTO_RIGHTS_NOT_ESTABLISHED",
+      "notes": "INHA RETIF gives 'entourage de' Girolamo Marchesi; selected photo's named artist should not silently become firm attribution.",
+      "source_photo_changed": false,
+      "release_approved": false,
+      "not_177_to_989_link": true
+    }
+  ]
+}
