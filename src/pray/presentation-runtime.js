@@ -2644,6 +2644,20 @@ function renderLibrary(){
  const suscipeWorks=LIB.cat==='all'?redBookletSuscipeLibraryLinksForSubject(LIB.subject,q):[];
  const privateHistoricalWorks=LIB.cat==='all'?redBookletPrivateHistoricalWorksForSubject(LIB.subject,q):[];
  const privateCommunionWorks=[...communionWorks,...suscipeWorks];
+ const stabatSeptember=LIB.cat==="all"&&(LIB.subject==="all"||LIB.subject==="V")&&
+  (!q||["stabat mater","stabat","mater dolorosa","seven sorrows","notre-dame des douleurs"].some(term=>term.includes(q)))?
+  completeSeptemberStabatMater(STATION_DATA.stabat):null;
+ // One source-owned, separately discoverable Latin text; not a new 48-text
+ // canonical prayer, not a 21st stanza, and not a replacement for Stations.
+ const stabatLibrarySection=!stabatSeptember?"":
+  '<section class="aoP435930LibraryRelated" data-ao-prayer-stabat-september><h3>'+esc(L("Marian hymns and sequences","Hymnes et séquences mariales"))+"</h3>"+
+  '<details data-ao-stabat-library-full><summary>'+esc(L("Stabat Mater · complete Latin · 20 stanzas","Stabat Mater · latin intégral · 20 strophes"))+"</summary>"+
+  '<p class="aoP435930SourceNote">'+esc(L("September 15 sequence, separately from the shorter Passiontide form. Latin only; 1962 original printed-leaf verification remains open.","Séquence du 15 septembre, distincte de la forme plus brève de la Passion. Latin uniquement ; vérification de la page imprimée originale de 1962 en attente."))+"</p>"+
+  '<a href="'+STABAT_MATER_SEPTEMBER_SOURCE.sourceWitnesses[0]+'" target="_blank" rel="noopener noreferrer">'+
+   esc(L("Source · September 15 Mass sheet","Source · Messe du 15 septembre"))+"</a>"+
+  '<div class="aoP435930StationFullStabat" lang="la">'+stabatSeptember.map((stanza,index)=>
+   '<p class="aoP435930StationStabatCompleteVerse"><small>'+(index+1)+'.</small> '+esc(stanza).replaceAll("\n","<br>")+"</p>").join("")+
+  "</div></details></section>";
  const privateHistoricalSection=!privateHistoricalWorks.length?'':(
   '<section class="aoP435930LibraryRelated" data-ao-red-booklet-historical-library>'+
   '<h3>'+esc(L('Mass and Confession · private historical prayers','Messe et confession · prières privées historiques'))+'</h3>'+
@@ -2707,7 +2721,7 @@ function renderLibrary(){
   PRAYER_SUBJECTS_V1.map(subject=>'<button type="button" data-p435930-lib-subject="'+subject.id+'" aria-pressed="'+String(LIB.subject===subject.id)+'">'+
     esc(isFr()?subject.fr:subject.en)+' <small>'+(subjectCounts.counts[subject.id]+prayerSupplementalLiveWorksForSubject(subject.id).length +prayerSevenSourceWorksForSubject(subject.id).length+redBookletCommunionLibraryLinksForSubject(subject.id).length+redBookletSuscipeLibraryLinksForSubject(subject.id).length+redBookletPrivateHistoricalWorksForSubject(subject.id).length)+'</small></button>').join('')+
   '</div><p class="aoP435930SourceNote">'+esc(L('Only accessible canonical and source-owned reader texts are included. Unverified research works are not shown as readable prayers.','Seuls les textes canoniques et les prières déjà accessibles dans leurs parcours d’origine sont inclus. Les œuvres de recherche non vérifiées ne sont pas présentées comme disponibles.'))+'</p></details>';
- return `${head(L('Prayer Library','Livre de prières'),`${Object.keys(DATA.prayers||{}).length} ${L('prayers','prières')}`)}<main class="aoP435930Body">${libraryOverviewGuide()}<label class="aoP435930Search"><span>${assetIcon('ao-ui-search')}</span><input type="search" data-p435930-lib-search value="${esc(LIB.q)}" placeholder="${esc(L('Search prayers','Rechercher une prière'))}"></label><div class="aoP435930Chips">${cats.map(([id,n])=>`<button type="button" class="${id===LIB.cat?'active':''}" data-p435930-lib-cat="${esc(id)}">${esc(n)}</button>`).join('')}</div>${subjectBrowse}<div class="aoP435930LibraryList" data-ao-prayer-subject-results="${esc(LIB.subject)}">${LIB.cat==="essentials"&&!q?claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_IDS_V1,prayers:DATA.prayers,esc,title:L("Essential Prayers","Prières essentielles"),artFor:releasedPrayerCardArtUrl}):(rows.length||!(historicalWorks.length+sourceDeepWorks.length+privateCommunionWorks.length+privateHistoricalWorks.length)?renderLibraryEntryRows(rows,q):'')}</div>${communionSection}${privateHistoricalSection}${historicalSection}${guidedSection}</main>`;
+ return `${head(L('Prayer Library','Livre de prières'),`${Object.keys(DATA.prayers||{}).length} ${L('prayers','prières')}`)}<main class="aoP435930Body">${libraryOverviewGuide()}<label class="aoP435930Search"><span>${assetIcon('ao-ui-search')}</span><input type="search" data-p435930-lib-search value="${esc(LIB.q)}" placeholder="${esc(L('Search prayers','Rechercher une prière'))}"></label><div class="aoP435930Chips">${cats.map(([id,n])=>`<button type="button" class="${id===LIB.cat?'active':''}" data-p435930-lib-cat="${esc(id)}">${esc(n)}</button>`).join('')}</div>${subjectBrowse}<div class="aoP435930LibraryList" data-ao-prayer-subject-results="${esc(LIB.subject)}">${LIB.cat==="essentials"&&!q?claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_IDS_V1,prayers:DATA.prayers,esc,title:L("Essential Prayers","Prières essentielles"),artFor:releasedPrayerCardArtUrl}):(rows.length||!(historicalWorks.length+sourceDeepWorks.length+privateCommunionWorks.length+privateHistoricalWorks.length+(stabatSeptember?1:0))?renderLibraryEntryRows(rows,q):'')}</div>${communionSection}${privateHistoricalSection}${historicalSection}${stabatLibrarySection}${guidedSection}</main>`;
 }
 function monthIndex(key){const d=dateObj(key);return d?d.getFullYear()*12+d.getMonth():null}
 function consecutive(records,needed){const done=records.filter(x=>x.complete).sort((a,b)=>a.date.localeCompare(b.date));if(!done.length)return 0;let c=1;for(let i=done.length-1;i>0;i--){const a=monthIndex(done[i].date),b=monthIndex(done[i-1].date);if(a-b===1)c++;else break}return Math.min(c,needed)}
