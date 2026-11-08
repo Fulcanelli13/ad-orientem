@@ -201,7 +201,12 @@ for(const [date,feriaPath,saintPath,rank] of [
 // Ordinary retains the Calendar identity; Low alone retains prayers.
 for(const [date,mainPath,saintPath] of [
   ["2026-10-05","Tempora/Pent19-0","Sancti/10-05"],
-  ["2026-07-16","Tempora/Pent07-0","Sancti/07-16"]
+  ["2026-07-16","Tempora/Pent07-0","Sancti/07-16"],
+  // The actual 2026 host source uses these two original Sunday variants.
+  // They are not saint's own Principal Proper, a votive Mass or a new feria.
+  ["2026-06-02","Tempora/Pent01-0a","Sancti/06-02"],
+  ["2026-06-09","Tempora/Pent02-0r","Sancti/06-09"],
+  ["2026-06-15","Tempora/Pent03-0r","Sancti/06-15"]
 ]){
   const source={...base,sourcePath:mainPath,
     calendarCommemorations:[{path:saintPath,prayerSourcePath:saintPath,
@@ -240,6 +245,9 @@ for(const [date,mainPath,saintPath] of [
   assert.equal(select({proper:{...source,sourcePath:"Tempora/Quad1-0"},
     calendarResolution:witness,form:"LOW"}).reason,"RUBRICAL_CLASSIFICATION_PENDING",
     "Unrelated season may not inherit Pentecost source identity");
+  assert.equal(select({proper:{...source,sourcePath:mainPath+"x"},
+    calendarResolution:witness,form:"LOW"}).reason,"RUBRICAL_CLASSIFICATION_PENDING",
+    "Unknown Sunday Proper suffix must not qualify as a certified witness");
   assert.equal(select({proper:{...source,secrets:[one]},
     calendarResolution:witness,form:"LOW"}).reason,"ORATION_SOURCE_INCOMPLETE");
 }
