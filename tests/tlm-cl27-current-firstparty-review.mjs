@@ -392,7 +392,6 @@ assert.deepEqual(wave5.summary,{
  collision_groups_source_adjudicated_unchanged:7
 });
 assert.equal(wave5.cases.length,28);
-const wave4IDs=new Set(wave4.cases.flatMap(x=>x.historical_rows));
 assert.equal(wave4IDs.size,28);
 const prevWaves=new Set([...earlierIDs,...wave3IDs,...wave4IDs]);
 assert.equal(prevWaves.size,167);
