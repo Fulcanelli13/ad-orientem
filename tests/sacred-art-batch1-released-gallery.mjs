@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { readFileSync, statSync } from "node:fs";
 import { RELEASED_MODULE_PAINTINGS } from "../src/art/released-module-paintings.v1.js";
 import { SACRED_ART_RELEASED_GALLERY_V1, releasedGalleryAt, releasedGalleryBySource } from "../src/art/released-gallery-batch1.v1.js";
 import { showC3ArtInfo, openC3ReleasedArtGallery, stepC3ReleasedArtGallery, returnFromC3ReleasedArtGallery, closeC3ArtInfo } from "../src/home/c3-gallery.js";
@@ -47,6 +47,15 @@ for(const a of SACRED_ART_RELEASED_GALLERY_V1){
   assert.equal(a.releaseState,"PREVIOUSLY_RELEASED_EXACT_MODULE_PHOTO");
   assert.equal(a.newEditorialApproval,false);
   assert.equal(a.newPublication,false);
+  // Do not mistake a registered asset name for an actual release file.
+  // Both exact selected source and approved display crop must exist in the
+  // Git checkout as nonempty bytes; no remote photo fetch or promotion.
+  for(const filename of [a.original,a.image]){
+    const disk=new URL("../"+filename,import.meta.url);
+    assert.ok(statSync(disk).isFile(),"Missing released image file: "+filename);
+    assert.ok(statSync(disk).size>0,"Empty released image file: "+filename);
+  }
+
   assert.match(a.image,/^assets\/(prayer|home)\//);
   assert.ok(releasedGalleryBySource(a.source)===a,"Gallery source join must be exact");
 }
