@@ -119,3 +119,29 @@ At the Wave 3 checkpoint the **296** historical-source review programme stood at
 The observations, original source-day-clock excerpts, source IDs, live evidence URLs, individual holds and specific no-promotion constraints are preserved in the Wave 4 JSON. Representative current sources: [Brazil operator](https://fsspx.com.br/pt/priorados-e-capelas-51589), [Brazil February 2026 bulletin](https://fsspx.com.br/sites/default/files/documents/boletim-priorado-fevereiro-2026.pdf), [Poitiers](https://laportelatine.org/lieux/merigny/poitiers), [Saint-Jean-de-la-Ruelle](https://laportelatine.org/lieux/prieure-saint-martin/saint-jean-de-la-ruelle), [Lévis 2026 semainier](https://levis.sspx.ca/fr/semainier-du-25-octobre-au-8-novembre-2026-61654), [Fort-de-France](https://laportelatine.org/lieux/fort-de-france/chapelle-fort-de-france), [Vannes](https://laportelatine.org/lieux/saint-nolff/vannes), [Edmonds SSPX Mass Centers](https://icc.id.sspx.org/en/mass-centers-31326).
 
 All 28 stay **research-only**: **0 new current Mass events, 0 published CL27 ecclesial or Una Cum statements, 0 map-coordinate changes, 0 duplicated canonical venues**. A current first-party pattern is still not approval for a date-specific celebration. The historical collision ledger remains at seven source-adjudicated of 106 groups, 99 still pending. Existing workflow `node tests/tlm-cl27-current-firstparty-review.mjs` now checks the 167-row four-wave unique ID census, precision/source roles, and zero-publication rules. Do not merge the 2026-10-26 CL27 draft stack as a prerequisite to continuing this research.
+
+## Wave 5 — 44 original rows / 28 site groups (8 November 2026)
+
+`source-review-wave5.v1.json` adds **44 unique original CL2 historical rows** from **28 named physical-site groups** to the same source-reviewed queue. Cumulative review reaches **211/296 (71.3%)**, with **85 pending**. This is site/page evidence adjudication, **not 44 newly published Masses or 28 admitted church locations**.
+
+The batch crosschecks named pages from SSPX France, Switzerland, Canada and the United States and the local district pages for convents, sisters' houses and other host communities. It records distinct site and provider identities, service types, calendar exceptions and source-confidence limitations. No map, CL2 source ID, publication schedule, Una Cum or canonical status has changed.
+
+Key corrections and conditions:
+
+- **Sherbrooke:** current Canada SSPX priory page establishes the church's served-site identity, **not** the historical Sunday 10:00 or first-Friday/Saturday times. All three remain time-unverified pending a current bulletin.
+- **Les Rousses:** chapel is physically in France but served from the **SSPX Swiss district**, with Sunday 10:00 and Saturday 18:00 shown by the district; do not conflate geography and serving ministry.
+- **Saint-Walfroy:** Sunday 10:00 changes to 08:45 on Pentecost, Christ the King and in July/August; Saturday 18:00 is only *en principe*. **Saint-Barthélemy, Saint-Chef** likewise has different feast-day Sunday times.
+- **Maligny:** Sunday 09:00 is only *twice monthly, except school holidays*, without specific week numbers. **No fixed monthly recurrence** can be generated.
+- **Lizy-sur-Ourcq, Rennes, Saint-Brieuc:** each chapel is distinguishable from the serving priory; Saint-Brieuc 09:30 confessions do not become another Mass, while Rennes has separate 08:30 Low and 10:00 Sung celebrations.
+- **Pontmain:** 10:30 is on the **17th day of the month**, not a weekday or weekly Sunday. **Noisy-le-Grand:** first-Saturday 18:30 explicitly excludes July and August.
+- **Avrillé monastery:** Sunday source says **08:00 or 09:50, inquire**; historical fixed 08:00 cannot be certified. **Moussy** gives explicit phone-first cautions.
+- **Carmel d'Eynesse, Morlaix Notre-Dame des Fontaines, Montagnac Dominican monastery, Gentilly MJCF oratory, Mérigny/Assais sisters' houses, Morgon Clarisses:** host-community/source relationships are documented without treating a listing in an SSPX directory as SSPX ownership or a Mass-specific liturgical status.
+- **Lacombe, Louisiana:** source corroborates Sunday 11:30; the historical first-Saturday 08:30 remains **unconfirmed** by the newly checked operator page.
+- **Cannes and Grasse:** specific June–August **2025** notices are historical exceptions, not a reusable 2026 calendar.
+- **Fort-de-France (Wave 4) and comparable cases:** no Vespers, Exposition, procession or confessions may be treated as a Mass.
+
+Full source URLs and exact historical row IDs are stored alongside each decision in the Wave 5 JSON. All entries remain `HOLD_RESEARCH_ONLY_NO_CURRENT_EVENTS_OR_CLASSIFICATIONS`.
+
+**Integrity:** 211 unique historical source rows across Waves 1–5 (34 + 36 + 69 + 28 + 44), no overlap; the 106 original collision groups and seven source adjudications remain unchanged. `node tests/tlm-cl27-current-firstparty-review.mjs` enforces the source-ID, CL2 anchor, 211-row total and zero-publication boundaries.
+
+**Next phase:** the remaining **85** rows require current source identity checks, especially older crowd-sourced Asia/Africa entries, location/host ambiguity and the 99 collision groups not yet source-adjudicated. Prioritize credible operator pages before any event-level admission. The current CL27 draft must not be merged wholesale as a substitute for an explicitly authorized live schedule.
