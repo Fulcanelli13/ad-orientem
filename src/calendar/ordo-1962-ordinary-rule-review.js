@@ -69,6 +69,14 @@ export function review1962OrdinaryForCalendarDay(resolution){
   // are not silently promoted into such feasts.
   if(!violet&&!black&&sourceKind(id)==="SANCTORAL"&&klass<=3)
     gloria=result(true,"BR_237_C_AND_RGMR_431_A","SANCTORAL_FEAST_TE_DEUM",BREVIARY_RULES_URL);
+  // BR §237(b): Te Deum is said on every II-class Sunday outside the
+  // pre-Lent exclusions; RGMR §431(a) therefore requires the Gloria.
+  // The original Proper is still authoritative. This typed decision only
+  // certifies the visible general-calendar Ordo and cannot change a votive
+  // or special Mass. Violet/black Masses were handled above.
+  if(!violet&&!black&&sunday&&klass===2&&sourceKind(id)==="TEMPORAL")
+    gloria=result(true,"BR_237_B_AND_RGMR_431_A",
+      "SECOND_CLASS_SUNDAY_TE_DEUM",BREVIARY_RULES_URL);
   // A IV-class green weekday of the Sundays-after-Pentecost cycle is a
   // "feria per annum": Office Te Deum is *omitted* (Breviary 238c).
   // Unlike an ordinary Sunday, it carries neither Gloria nor Credo.
