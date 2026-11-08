@@ -23,7 +23,7 @@ test("four individually certified Advent Week Latin Compline dates, original 196
  assert.equal(latinComplineReleaseEligibility({date:"2026-11-29"}).status,"ELIGIBLE");
  assert.equal(latinComplineReleaseEligibility({date:"2026-11-30"}).status,"ELIGIBLE");
  assert.equal(LATIN_COMPLINE_RELEASE.printedVulgatePatternDualWitnessCollated,true);
- assert.equal(LATIN_COMPLINE_RELEASE.sundayPrintedVulgate330WordsDualWitnessCollated,true);
+ assert.equal(LATIN_COMPLINE_RELEASE.sundayPrintedVulgate329WordsDualWitnessCollated,true);
  assert.equal(LATIN_COMPLINE_RELEASE.releaseBasis,"ROMAN_1960_OFFICE_TRADITIONAL_VULGATE_LATIN");
  assert.equal(LATIN_COMPLINE_RELEASE.completeHourCollated,true);
  assert.equal(LATIN_COMPLINE_RELEASE.rightsApproved,true);
