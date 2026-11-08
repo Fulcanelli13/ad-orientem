@@ -17,6 +17,8 @@ test("First Vespers retains separate civil and Office dates",()=>{
   const r=officeRouteState({date:"2026-11-28",hour:"VESPERS"});
   assert.equal(r.status,"SOURCE_RESEARCH_ONLY");
   assert.match(r.label,/29 November/);
+  assert.equal(r.date,"2026-11-28");
+  assert.equal(r.officeDate,"2026-11-29");
   assert.equal(r.published,false);
 });
 test("Missing dates, variants and unresearched Hours cannot fill from Mass",()=>{

@@ -18,7 +18,7 @@ export const ROMAN_OFFICE_HOURS=Object.freeze([
 const IDS=new Set(ROMAN_OFFICE_HOURS.map(row=>row.id));
 export function officeRouteState({date,hour,calendarScope="UNIVERSAL"}={}){
  const withheld=reason=>Object.freeze({date,hour,status:"WITHHELD",reason,
-   sourceResearch:false,readingEnabled:false,published:false});
+   officeDate:null,sourceResearch:false,readingEnabled:false,published:false});
  if(typeof date!=="string"||!/^\d{4}-\d{2}-\d{2}$/.test(date)||
     Number.isNaN(Date.parse(date+"T12:00:00Z"))||
     new Date(date+"T12:00:00Z").toISOString().slice(0,10)!==date)
@@ -30,7 +30,7 @@ export function officeRouteState({date,hour,calendarScope="UNIVERSAL"}={}){
    if(appointment.status==="EXPLICIT_ROMAN_1960_APPOINTMENT_RESEARCH"){
      return Object.freeze({date,hour,status:"SOURCE_RESEARCH_ONLY",
        reason:"COMPLINE_APPOINTMENT_AND_TRILINGUAL_PARSER_REVIEWED",
-       label:appointment.appointment.label,sourceRevision:appointment.sourceRevision,
+       label:appointment.appointment.label,officeDate:date,sourceRevision:appointment.sourceRevision,
        sourceResearch:true,readingEnabled:false,published:false});
    }
  }
@@ -38,6 +38,7 @@ export function officeRouteState({date,hour,calendarScope="UNIVERSAL"}={}){
    return Object.freeze({date,hour,status:"SOURCE_RESEARCH_ONLY",
      reason:"ADVENT_I_FIRST_VESPERS_PRIVATE_PILOT",
      label:"First Vespers of Advent I (Office date 29 November)",
+     officeDate:"2026-11-29",
      sourceResearch:true,readingEnabled:false,published:false});
  }
  return withheld("INDEPENDENT_OFFICE_APPOINTMENT_NOT_CERTIFIED");

@@ -30,8 +30,8 @@ export function openDivineOfficeReader(win=globalThis,{date=todayLocal()}={}){
  if(opened!==true&&opened?.ok!==true)return false;
  const mount=d.querySelector("#aoPray435930 .aoP435930Mount");
  if(!mount)return false;
- const previous=[...mount.children];
- previous.forEach(node=>{node.hidden=true});
+ const previous=[...mount.children].map(node=>({node,hidden:node.hidden,display:node.style.display}));
+ previous.forEach(({node})=>{node.hidden=true;node.style.display="none"});
  const host=d.createElement("section");
  host.className="aoOfficeReader";
  host.setAttribute("aria-label","Divine Office");
@@ -39,7 +39,7 @@ export function openDivineOfficeReader(win=globalThis,{date=todayLocal()}={}){
  const back=d.createElement("button");back.type="button";
  back.textContent="← Prayer";back.setAttribute("aria-label","Return to Prayer");
  back.addEventListener("click",()=>{
-   host.remove();previous.forEach(node=>{node.hidden=false});
+   host.remove();previous.forEach(({node,hidden,display})=>{node.hidden=hidden;node.style.display=display});
  });
  host.append(back);
  const kicker=d.createElement("p");kicker.className="aoOfKicker";
@@ -49,7 +49,7 @@ export function openDivineOfficeReader(win=globalThis,{date=todayLocal()}={}){
  intro.textContent="Eight daily Hours. Source-first Latin, English and French readings are being integrated independently of the Mass calendar. Only individually certified Hours will become readable.";
  host.append(intro);
  const bar=d.createElement("div");bar.className="aoOfBar";
- const label=d.createElement("label");label.textContent="Office date ";
+ const label=d.createElement("label");label.textContent="Civil date ";
  const input=d.createElement("input");input.type="date";
  input.value=/^\d{4}-\d{2}-\d{2}$/.test(date)?date:todayLocal();
  label.append(input);bar.append(label);
@@ -90,7 +90,7 @@ export function openDivineOfficeReader(win=globalThis,{date=todayLocal()}={}){
      :"The selected date and Hour have not passed independent Office source and rubrical verification.";
    status.append(msg);
    const metadata=d.createElement("small");metadata.textContent=
-      "Status: "+current.reason+" · Reading enabled: no · Published: no";
+      "Office date: "+(current.officeDate||"unresolved")+" · Status: "+current.reason+" · Reading enabled: no · Published: no";
    status.append(metadata);
  }
  input.addEventListener("change",draw);
