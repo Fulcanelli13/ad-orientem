@@ -255,6 +255,56 @@ for(const [date,saint] of [
     form:"LOW",isConventual:true}).reason,"CONVENTUAL_RULES_NOT_VERIFIED");
 }
 
+// 14 February 2026, Sexagesima Saturday: C10c (III BVM Mass) is the
+// *principal* source, and St Valentine's own IV-class prayers are ordinary
+// commemorations only in non-conventual LOW Mass. Confirm exact source,
+// all three original groups, both languages, print and failed-closed scope.
+{
+  const date="2026-02-14", marian="Commune/C10c", saint="Sancti/02-14";
+  const source={...base,sourcePath:marian,calendarCommemorations:[
+    {path:saint,prayerSourcePath:saint,name:"St Valentine"}]};
+  const witness={...day,date,day:{
+    main:{id:"commune:C10c:4:w",rank:4,path:marian,
+      title:"III Mass of the Blessed Virgin Mary"},
+    commemorations:[{id:"sancti:02-14:4:r",rank:4,path:saint,
+      title:"St Valentine, Priest and Martyr"}]},
+    proper:{status:"ready",data:source}};
+  for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+    const result=select({proper:source,calendarResolution:witness,form});
+    assert.equal(result.status,"CERTIFIED",date+"/"+form+": "+result.reason);
+    assert.equal(result.decision.scope,
+      "SATURDAY_BVM_IV_CLASS_ORDINARY_SANCTORAL_COMMEMORATION");
+    const count=form==="LOW"?2:1;
+    assert.equal(result.decision.appliedCount,count-1);
+    for(const group of ["collects","secrets","postcommunions"])
+      assert.equal(result.proper[group].length,count,date+"/"+form+"/"+group);
+    for(const language of ["en","fr"]){
+      const slots=properToReaderSlots(result.proper,{language}).slots;
+      for(const slot of ["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"]){
+        assert.equal(slots[slot].status,"READY");
+        assert.equal(slots[slot].data.paragraphs.length,count);
+      }
+      assert.equal(assessPrintableProper(witness,{language,massForm:form}).ok,true);
+    }
+  }
+  for(const [sourceMutant,dayMutant,expected] of [
+    [source,{...witness,date:"2026-02-07"},"RUBRICAL_CLASSIFICATION_PENDING"],
+    [source,{...witness,day:{...witness.day,main:{...witness.day.main,
+      id:"commune:C10t:4:w"}}},"RUBRICAL_CLASSIFICATION_PENDING"],
+    [{...source,sourcePath:"Commune/C10t"},witness,"RUBRICAL_CLASSIFICATION_PENDING"],
+    [{...source,calendarCommemorations:[{path:saint,
+      prayerSourcePath:"Sancti/02-13"}]},witness,"RUBRICAL_CLASSIFICATION_PENDING"],
+    [{...source,secrets:[one]},witness,"ORATION_SOURCE_INCOMPLETE"]
+  ]){
+    assert.equal(select({proper:sourceMutant,calendarResolution:dayMutant,
+      form:"LOW"}).reason,expected);
+  }
+  assert.equal(select({proper:source,calendarResolution:witness,
+    form:"LOW",isConventual:true}).reason,"CONVENTUAL_RULES_NOT_VERIFIED");
+  assert.equal(select({proper:source,calendarResolution:witness,
+    form:"LOW",celebrationId:"votive"}).reason,"ALTERNATE_FORMULARY");
+}
+
 // Actual 2026 day owners: a IV-class feria using the inherited
 // post-Pentecost Sunday Proper, with an ordinary IV-class saint. The
 // Ordinary retains the Calendar identity; Low alone retains prayers.
