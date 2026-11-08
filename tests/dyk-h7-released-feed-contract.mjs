@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
-import {dykPublishedCandidates,dykPublishedPick,dykPublishedModel,dykPublishedMarkup,dykHistoricalCandidates,dykHistoricalModel,dykWeiser16Candidates,dykWeiser16Model,dykWeiserSecond16Candidates,dykWeiserSecond16Model,dykMixed24Candidates,dykMixed24Model,dyk125Candidates,dyk125Model,dyk150Candidates,dyk150Model,dykHomeRotationSlot,DYK_GLOSSARY_FALLBACK_IDS} from "../src/home/dyk-published-feed.js";
+import {dykPublishedCandidates,dykPublishedPick,dykPublishedModel,dykPublishedMarkup,dykHistoricalCandidates,dykHistoricalModel,dykWeiser16Candidates,dykWeiser16Model,dykWeiserSecond16Candidates,dykWeiserSecond16Model,dykMixed24Candidates,dykMixed24Model,dyk125Candidates,dyk125Model,dyk150Candidates,dyk150Model,dyk175Candidates,dyk175Model,dykHomeRotationSlot,DYK_GLOSSARY_FALLBACK_IDS} from "../src/home/dyk-published-feed.js";
 const original=JSON.parse(readFileSync(
  "data/research/did-you-know/dyk-r34-high-signal-24-editorial-selection.v1.json","utf8"));
 import {HOME_DYK_GLOSSARY_IDS,HOME_DYK_GLOSSARY_FACTS,homeDidYouKnowSelect} from "../src/home/did-you-know-glossary.js";
@@ -271,6 +271,56 @@ assert.equal(dyk150Candidates(badBook,"2026-11-08").length,24);
 const badCalendar=clone(h150);badCalendar.records[23].source.pdf_pages_1based=[90];
 assert.equal(dyk150Candidates(badCalendar,"2026-11-08").length,24);
 
+const h175=JSON.parse(readFileSync(
+ "data/did-you-know/dyk-h175-multisource-25-publication.v1.json","utf8"));
+const h175Rows=dyk175Candidates(h175,"2026-11-08");
+assert.equal(h175Rows.length,25,"Every H175 source and bilingual release gate must pass");
+for(const [family,count] of [
+ ["PITRE_1900",3],["RURAL_LIFE_PRAYERBOOK_1956",14],["ROMAN_MASS_1962",8]]){
+ assert.equal(h175Rows.filter(x=>x.source_family===family).length,count);
+}
+const all175=[...all150,...h175Rows];
+assert.equal(all175.length,151,"175 facts: 24 Glossary and 151 individually released");
+assert.equal(new Set(all175.map(x=>x.id)).size,151);
+assert.equal(new Set(all175.map(x=>x.source_id)).size,151,
+ "Do not reissue a source ID from a prior release");
+for(const row of h175Rows){
+ for(const lang of ["en","fr"]){
+  const model=dyk175Model(h175,row.id,"2026-11-08",lang);
+  assert.equal(model.fact,row.pilot_home_copy[lang]);
+  const html=dykPublishedMarkup(model);
+  assert.ok(html.includes("data-dyk-published"));
+  if(row.source.type==="pdf"){
+   assert.ok(model.links.every(x=>Number.isInteger(x.page)&&x.url.endsWith("#page="+x.page)));
+  }else{
+   assert.equal(model.links[0].page,null);
+   assert.equal(model.links[0].url,row.source.url);
+   assert.ok(html.includes(lang==="fr"?"Lire la bénédiction originale":"Read original blessing"));
+  }
+ }
+ assert.equal(row.source.source_record_id,row.source_id);
+}
+assert.deepEqual(dyk175Candidates({...h175,release_stage:"RESEARCH_ONLY"},"2026-11-08"),[]);
+assert.deepEqual(dyk175Candidates(h175,"2026-11-31"),[]);
+for(const [group,key] of [["row","editorial_approval"],["row","release_authorized"],
+ ["row","semantic_novelty_reviewed"],["row","published"],
+ ["copy","final_english_signoff"],["copy","final_french_signoff"],
+ ["source","deep_link_checked"]]){
+ const broken=clone(h175),row=broken.records[0];
+ if(group==="row")row[key]=false;
+ else if(group==="copy")row.pilot_home_copy[key]=false;
+ else row.source[key]=false;
+ assert.equal(dyk175Candidates(broken,"2026-11-08").length,24,
+  "No unsigned/research item should reach the public Home: "+key);
+}
+const badPitre175=clone(h175);badPitre175.records[0].source.pdf_pages_1based=[1];
+assert.equal(dyk175Candidates(badPitre175,"2026-11-08").length,24);
+const badRural175=clone(h175);badRural175.records[3].source.url="https://example.invalid/blessing";
+assert.equal(dyk175Candidates(badRural175,"2026-11-08").length,24);
+const badRitus175=clone(h175);badRitus175.records[17].source.pdf_pages_1based=[90];
+assert.equal(dyk175Candidates(badRitus175,"2026-11-08").length,24);
+
+
 
 
 
@@ -359,6 +409,7 @@ for(const [published,poolSize] of [
  [releasedAll.map(x=>x.id),100],
  [all125.map(x=>x.id),125],
  [all150.map(x=>x.id),150],
+ [all175.map(x=>x.id),175],
  [["DYK-M04-CANON-021","DYK-M04-CANON-022","DYK-M04-CANON-047","DYK-M04-CANON-058"],DYK_GLOSSARY_FALLBACK_IDS.length+4]
 ]){
  const cycle=alignedDates(poolSize);
@@ -377,4 +428,4 @@ const expanded=clone(data);
 expanded.records.push({id:"DYK-UNRELEASED-PLACEHOLDER",editorial_approval:false,release_authorized:false});
 assert.equal(dykPublishedCandidates(expanded,"2026-11-02").length,1);
 
-console.log("PASS H7 150-fact Discovery: 24 Glossary + 52 Weiser + 32 Pitre + 28 Ritus + 7 rural blessings + 4 other, original R34 held, bilingual original-page links and nonrepeating rotation");
+console.log("PASS H7 175-fact Discovery: 24 Glossary + 52 Weiser + 35 Pitre + 36 Ritus + 21 rural blessings + 7 other, original R34 held, bilingual original-page links and nonrepeating rotation");
