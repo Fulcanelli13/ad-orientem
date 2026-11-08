@@ -1,0 +1,163 @@
+import assert from "node:assert/strict";
+import {existsSync,readFileSync} from "node:fs";
+import {SACRED_ART_CATEGORIES_V1,SACRED_ART_CURATED_WORKS_V1,sacredArtWorkById,sacredArtReleasedPhotoClassification,sacredArtWorksInCategory,sacredArtMatchesForPrayerSlot} from "../src/art/sacred-art-taxonomy-v1.js";
+import {RELEASED_MODULE_PAINTINGS} from "../src/art/released-module-paintings.v1.js";
+import {SACRED_ART_RELEASED_GALLERY_V1} from "../src/art/released-gallery-batch1.v1.js";
+import {SACRED_ART_SAINT_SCOPE_EXCEPTIONS_V1,lexicalSaintScopeException} from "../scripts/art/sacred-art-saint-scope-exceptions-v1.mjs";
+import {SACRED_ART_PLACE_TITLE_EXCEPTIONS_V1,lexicalPlaceTitleException} from "../scripts/art/sacred-art-place-title-exceptions-v1.mjs";
+const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
+const src=read("data/artwork/research-semantic-candidates-989.v1.json");
+const queue=read("data/artwork/sacred-art-batch1-25-release-progress.v1.json");
+assert.equal(src.artworks.length,989);
+assert.equal(SACRED_ART_SAINT_SCOPE_EXCEPTIONS_V1.length,9);
+assert.equal(SACRED_ART_PLACE_TITLE_EXCEPTIONS_V1.length,12);
+assert.equal(new Set(SACRED_ART_PLACE_TITLE_EXCEPTIONS_V1.map(x=>x.workGroupId)).size,12);
+const seenStations=new Set();
+for(const exception of SACRED_ART_PLACE_TITLE_EXCEPTIONS_V1){
+ const original=src.artworks.find(x=>x.workGroupId===exception.workGroupId);
+ assert.ok(original,"Source work absent: "+exception.workGroupId);
+ assert.equal(original.title,exception.title,"Exact title is a source identity guard");
+ assert.equal(original.artist,exception.artist,"Exact attribution is a source identity guard");
+ assert.ok(original.subjectCandidates.some(t=>t.tag===exception.excludedTag),
+  "Frozen title evidence must remain unchanged");
+ assert.equal(lexicalPlaceTitleException(original,"SNT-PATRONS"),exception);
+ assert.equal(lexicalPlaceTitleException({...original,title:"San Polo, different painting"},"SNT-PATRONS"),null);
+ assert.equal(lexicalPlaceTitleException({...original,artist:"Different attribution"},"SNT-PATRONS"),null);
+ assert.equal(lexicalPlaceTitleException(original,"CHR-CROSSBEAR"),null);
+ const station=original.title.match(/Station (\d{2}):/);
+ assert.ok(station,"Only the named station cycle may be corrected");
+ seenStations.add(station[1]);
+}
+assert.deepEqual([...seenStations].sort(),Array.from({length:12},(_,i)=>String(i+1).padStart(2,"0")));
+assert.equal(lexicalPlaceTitleException({workGroupId:"REVIEW::commons:29825829",title:"San Agustín entre Cristo y la Virgen"},"SNT-PATRONS"),null);
+const known={};
+for(const exception of SACRED_ART_SAINT_SCOPE_EXCEPTIONS_V1){
+ const original=src.artworks.find(w=>w.workGroupId===exception.workGroupId);
+ assert.ok(original,"Source work missing "+exception.workGroupId);
+ assert.equal(original.title,exception.title);
+ assert.equal(original.artist,exception.artist);
+ assert.equal(original.subjectCandidates.some(t=>t.tag===exception.excludedTag),true,
+   "Frozen lexical evidence is retained rather than erased");
+ assert.equal(lexicalSaintScopeException(original,exception.excludedTag),exception);
+ assert.equal(lexicalSaintScopeException({...original,title:"Different identity"},exception.excludedTag),null,
+   "Exception cannot match another depiction or attribution");
+ known[exception.workGroupId]=original;
+}
+assert.equal(lexicalSaintScopeException({workGroupId:"not-reviewed"},"CHR-MIRACLE"),null);
+
+assert.equal(SACRED_ART_CURATED_WORKS_V1.length,25);
+assert.equal(SACRED_ART_CURATED_WORKS_V1.filter(w=>w.photoModuleId).length,16);
+assert.equal(SACRED_ART_CURATED_WORKS_V1.filter(w=>!w.photoModuleId).length,9);
+assert.equal(SACRED_ART_RELEASED_GALLERY_V1.length,16);
+assert.equal(new Set(SACRED_ART_CURATED_WORKS_V1.map(w=>w.id)).size,25);
+assert.equal(new Set(Object.keys(SACRED_ART_CATEGORIES_V1)).size,14);
+for(const [id,source] of Object.entries(RELEASED_MODULE_PAINTINGS)){
+ const w=sacredArtReleasedPhotoClassification(id);
+ assert.ok(w,"Released photo must have classified identity: "+id);
+ assert.equal(w.title,source.title);assert.equal(w.artist,source.artist);
+ assert.equal(w.photoReleaseState,"ALREADY_RELEASED_MODULE_PHOTO");
+ assert.equal(w.newPhotoPublication,false);
+ assert.equal(w.existingMatching.releasedModule,id);
+}
+for(const w of SACRED_ART_CURATED_WORKS_V1){
+ assert.equal(sacredArtWorkById(w.id),w);
+ assert.ok(w.categoryIds.length>0);
+ assert.ok(w.depictedPersonsCandidates.length>0);
+ assert.equal(w.newPhotoPublication,false);
+ for(const c of w.categoryIds){
+  assert.ok(SACRED_ART_CATEGORIES_V1[c],"Unknown category "+c);
+  assert.ok(sacredArtWorksInCategory(c).includes(w));
+  if(w.photoModuleId)assert.ok(sacredArtWorksInCategory(c,{releasedOnly:true}).includes(w));
+ }
+}
+const slots=new Set();
+for(const item of queue.nextNineSourcePhotographWorkQueue){
+ const w=sacredArtWorkById(item.id);
+ assert.ok(w);
+ assert.equal(w.photoModuleId,null);
+ assert.deepEqual(w.existingMatching.existingPrayerSlots,item.selectedSlotIds);
+ assert.equal(w.photoReleaseState,"PHOTOGRAPH_NOT_RELEASED");
+ for(const s of item.selectedSlotIds){
+  assert.equal(sacredArtMatchesForPrayerSlot(s).length,1);
+  assert.equal(sacredArtMatchesForPrayerSlot(s)[0].id,item.id);
+  assert.ok(!slots.has(s),"Duplicate Prayer slot "+s);
+  slots.add(s);
+ }
+}
+assert.equal(slots.size,41);
+assert.equal(sacredArtMatchesForPrayerSlot("not-a-real-prayer-slot").length,0);
+const gen="data/artwork/sacred-art-category-match-989-267.v1.json";
+if(existsSync(new URL("../"+gen,import.meta.url))){
+ const master=read(gen);
+ assert.equal(master.schema,"AO_SACRED_ART_CATEGORIES_AND_EXISTING_MATCHES_989_267_V1");
+ assert.equal(master.counts.researchArtworkGroups,989);
+ assert.equal(master.counts.researchGroupsWithTitleBasedCategoryCandidates,657);
+ assert.equal(master.counts.researchGroupsStillWithoutTitleCategory,332);
+ assert.equal(master.counts.exactSaintSubjectScopeCorrections,9);
+ assert.equal(master.counts.exactPlaceNameScopeCorrections,12);
+ assert.equal(master.policies.retainOriginalLexicalTagsAfterPlaceTitleDisambiguation,true);
+ assert.ok(master.generatedFrom.includes("scripts/art/sacred-art-place-title-exceptions-v1.mjs"));
+ for(const exception of SACRED_ART_PLACE_TITLE_EXCEPTIONS_V1){
+  const derived=master.researchGroupsTitleCandidateIndex.find(w=>w.workGroupId===exception.workGroupId);
+  assert.equal(derived?.placeTitleScopeReviewed,true);
+  assert.equal(derived?.saintSubjectTitleScopeReviewed,undefined,
+   "Place-name exception must not be counted as saint-specific scene correction");
+  assert.deepEqual(derived?.categoryCandidates,["PASSION"],
+   "Via Crucis remains about Christ, not a painted saint");
+  assert.ok(derived.existingLexicalSubjectTags.some(t=>
+   t.tag==="SNT-PATRONS"&&t.categoryId===null&&t.subjectScopeExclusion===exception.reason));
+  assert.ok(derived.existingLexicalSubjectTags.some(t=>
+   t.tag==="CHR-CROSSBEAR"&&t.categoryId==="PASSION"),"Christ Passion remains indexed");
+  assert.ok(master.categoryDefinitions.find(c=>c.id==="PASSION")?.proposedResearchGroupIds.includes(exception.workGroupId));
+  assert.ok(!master.categoryDefinitions.find(c=>c.id==="SAINTS")?.proposedResearchGroupIds.includes(exception.workGroupId));
+ }
+ const actualSaint=master.researchGroupsTitleCandidateIndex.find(w=>w.workGroupId==="REVIEW::commons:29825829");
+ assert.ok(actualSaint?.categoryCandidates.includes("SAINTS"),
+  "A genuine Spanish San Agustín subject must not be scrubbed as a place");
+
+ assert.ok(master.policies.retainOriginalLexicalTagsAfterSaintSubjectDisambiguation);
+ assert.ok(master.generatedFrom.includes("scripts/art/sacred-art-saint-scope-exceptions-v1.mjs"));
+ for(const exception of SACRED_ART_SAINT_SCOPE_EXCEPTIONS_V1){
+  const derived=master.researchGroupsTitleCandidateIndex.find(w=>w.workGroupId===exception.workGroupId);
+  assert.ok(derived?.saintSubjectTitleScopeReviewed);
+  assert.ok(derived.categoryCandidates.includes("SAINTS")&&!derived.categoryCandidates.includes("MINISTRY")&&!derived.categoryCandidates.includes("PASSION"),"Saint-specific image must not become a Christ event: "+exception.workGroupId);
+  assert.ok(derived.existingLexicalSubjectTags.some(t=>t.tag===exception.excludedTag&&t.categoryId===null&&
+     t.subjectScopeExclusion===exception.reason));
+  assert.ok(master.categoryDefinitions.find(c=>c.id==="SAINTS")?.proposedResearchGroupIds.includes(exception.workGroupId));
+  assert.equal(master.categoryDefinitions.some(c=>["MINISTRY","PASSION"].includes(c.id)&&c.proposedResearchGroupIds.includes(exception.workGroupId)),false);
+  assert.ok(known[exception.workGroupId].subjectCandidates.some(t=>t.tag===exception.excludedTag),
+    "Original 989 research source must not be rewritten");
+ }
+ // The converse matters: Christ on the Cross with a saint present remains
+ // a Christ Passion image; an indiscriminate "Saint" keyword guard is invalid.
+ for(const mixedId of [
+  "CANONICAL::C34:franciscodezurbaran046jpg",
+  "REVIEW::nga:30"
+ ]){
+  const mixed=master.researchGroupsTitleCandidateIndex.find(w=>w.workGroupId===mixedId);
+  assert.ok(mixed?.categoryCandidates.includes("PASSION"),
+    "Saint appears in a real Christ Passion title: preserve both subjects");
+  assert.equal(mixed.saintSubjectTitleScopeReviewed,undefined);
+ }
+ assert.equal(master.canonicalPrayerSlotCategoryCrosswalk.some(s=>
+   s.researchGroupIds.some(id=>SACRED_ART_SAINT_SCOPE_EXCEPTIONS_V1.some(e=>e.workGroupId===id))),false,
+   "Corrected examples have no linked Prayer assignment requiring recomputation");
+
+ assert.equal(master.counts.canonicalPrayerPositions,267);
+ assert.equal(master.counts.previouslyReleasedPhotoEntries,16);
+ assert.equal(master.counts.manuallyCategorizedCuratedWorks,25);
+ assert.equal(master.counts.pendingWorksWithExistingPrayerMatches,9);
+ assert.equal(master.counts.existingPendingPrayerPlacementLinks,41);
+ assert.equal(master.counts.newPhotoPublications,0);
+ assert.equal(master.counts.newPrayerOverrides,0);
+ assert.equal(master.researchGroupsTitleCandidateIndex.length,989);
+ assert.equal(master.canonicalPrayerSlotCategoryCrosswalk.length,267);
+ assert.equal(master.pendingArtworksWithPreexistingSlots.length,9);
+ assert.equal(master.releasedPhotoCategories.length,16);
+ assert.ok(master.researchGroupsTitleCandidateIndex.every(w=>w.visualSubjectVerification===false));
+ assert.ok(master.researchGroupsTitleCandidateIndex.every(w=>w.userApprovedForNewDate===false));
+ assert.ok(master.canonicalPrayerSlotCategoryCrosswalk.every(w=>w.newArtworkSelection===false&&w.newPhotoRelease===false));
+ assert.ok(master.policies.preserveAllPriorUserApprovalsAndRejections);
+ assert.ok(master.policies.neverPromoteLexicalTagToVerifiedDepiction);
+}
+console.log("PASS: 25 actual published+matched artwork classifications, 41 existing Prayer slots; 989 provisional research groups and 267 existing Prayer positions preserved.");

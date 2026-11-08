@@ -2,6 +2,9 @@
 import { APPROVED_CLASS_I_2026 } from "../calendar/approved-class-i-heroes-2026.js";
 import { RELEASED_MODULE_PAINTINGS } from "../art/released-module-paintings.v1.js";
 import { SACRED_ART_RELEASED_GALLERY_V1, releasedGalleryAt, releasedGalleryBySource } from "../art/released-gallery-batch1.v1.js";
+import { SACRED_ART_CATEGORIES_V1, sacredArtReleasedPhotoClassification } from "../art/sacred-art-taxonomy-v1.js";
+import { sacredArtCrossModuleLinks } from "../art/sacred-art-crossmodule-links-v1.js";
+import { sacredArtGalleryTargets } from "./sacred-art-gallery-targets.js";
 import { releasedDateGospelHero2026 } from "./released-date-gospel-heroes-2026.js";
 import {approved2026HomeArtwork} from "./approved-dated-artwork-2026.js";
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -226,20 +229,82 @@ function paintC3ArtInfoDialog(dlg,artwork){
   return true;
 }
 const releaseGalleryDialog=root=>root?.querySelector?.("[data-home-c3-art-dialog]")??null;
+// Subject categories filter *only* the 16 photographs previously released.
+// Nothing here publishes or infers photo approval for the nine pending works.
+export const C3_RELEASED_ART_CATEGORY_CHOICES=Object.freeze(
+ Object.entries(SACRED_ART_CATEGORIES_V1)
+   .map(([id,label])=>({id,...label,count:SACRED_ART_RELEASED_GALLERY_V1.filter(w=>sacredArtReleasedPhotoClassification(w.moduleId)?.categoryIds.includes(id)).length}))
+   .filter(w=>w.count>0)
+   .map(w=>Object.freeze(w))
+);
+function visibleReleasedGalleryIndices(dialog){
+ const category=dialog?.__c3GalleryCategory??"all";
+ return SACRED_ART_RELEASED_GALLERY_V1.flatMap((photo,index)=>
+   category==="all"||sacredArtReleasedPhotoClassification(photo.moduleId)?.categoryIds.includes(category)
+    ?[index]:[]);
+}
+
 function showReleasedGalleryIndex(dlg,index){
   const entry=releasedGalleryAt(index);
   if(!dlg?.open||!entry)return false;
+  const visible=visibleReleasedGalleryIndices(dlg);
+  const position=visible.indexOf(index);
+  if(position<0)return false;
   if(!paintC3ArtInfoDialog(dlg,{
     title:entry.title,artist:entry.artist,date:"",rights:entry.rights,
     image:entry.image,source:entry.source
   }))return false;
   dlg.__c3GalleryIndex=index;
+  const taxonomy=sacredArtReleasedPhotoClassification(entry.moduleId);
+  dlg.__c3CurrentWorkId=taxonomy?.id??null;
+  const scene=dlg.querySelector("[data-c3-art-scene]");
+  if(scene){
+    scene.textContent=taxonomy ? taxonomy.scene+" · "+taxonomy.categoryIds.map(c=>SACRED_ART_CATEGORIES_V1[c]?.en).filter(Boolean).join(" · ") : "";
+    scene.hidden=!taxonomy;
+  }
+  const connections=dlg.querySelector("[data-c3-art-connections]");
+  if(connections){
+    const links=taxonomy?sacredArtCrossModuleLinks(taxonomy.id):null;
+    const fr=dlg.ownerDocument?.documentElement?.lang?.startsWith("fr")??false;
+    const rosaryNames={joy:"Joyful",sor:"Sorrowful",glo:"Glorious",lum:"Luminous"};
+    const rosaryNamesFr={joy:"joyeux",sor:"douloureux",glo:"glorieux",lum:"lumineux"};
+    const parts=[];
+    if(links?.scripture.length)parts.push((fr?"Écriture : ":"Scripture: ")+links.scripture.map(x=>x.reference).join(", "));
+    if(links?.rosary.length)parts.push((fr?"Rosaire : ":"Rosary: ")+links.rosary.map(x=>{
+      const family=x.id.slice(0,3),n=x.id.slice(3);
+      return fr?"mystère "+(rosaryNamesFr[family]??family)+" "+n:(rosaryNames[family]??family)+" mystery "+n;
+    }).join(", "));
+    if(links?.bibleAtlas.length)parts.push(fr?"Historia Salutis : scène correspondante":"Historia Salutis: corresponding scene");
+    if(links?.mass.length)parts.push(fr?"Messe : lien théologique":"Mass: theological connection");
+    if(links?.calendar.length)parts.push((fr?"Calendrier : ":"Calendar: ")+links.calendar.map(x=>x.date).join(", "));
+    connections.replaceChildren(dlg.ownerDocument.createTextNode(parts.join(" · ")));
+    if(links?.currentlyPublicPhoto){
+      const names={joy:["Joyful","joyeux"],sor:["Sorrowful","douloureux"],glo:["Glorious","glorieux"],lum:["Luminous","lumineux"]};
+      for(const target of sacredArtGalleryTargets(taxonomy.id)){
+        const button=dlg.ownerDocument.createElement("button");
+        button.type="button";
+        button.dataset.c3ArtTargetKind=target.kind;
+        button.dataset.c3ArtTargetId=target.id;
+        let label="";
+        if(target.kind==="scripture")label=(fr?"Lire l'Écriture · ":"Read Scripture · ")+target.id;
+        else if(target.kind==="rosary"){
+          const family=target.id.slice(0,3),number=target.id.slice(3);
+          label=(fr?"Rosaire · ":"Rosary · ")+(fr?names[family]?.[1]:names[family]?.[0])+" "+number;
+        }else if(target.kind==="bibleAtlas")
+          label=fr?"Ouvrir la scène biblique":"Open biblical scene";
+        button.textContent=label;
+        button.className="aoC3ArtRelatedAction";
+        connections.append(button);
+      }
+    }
+    connections.hidden=!parts.length;
+  }
   const nav=dlg.querySelector("[data-home-c3-gallery-nav]");
   if(nav)nav.hidden=false;
   const launcher=dlg.querySelector("[data-home-c3-gallery-launcher]");
   if(launcher)launcher.hidden=true;
   const counter=dlg.querySelector("[data-home-c3-gallery-counter]");
-  if(counter)counter.textContent=(index+1)+" / "+SACRED_ART_RELEASED_GALLERY_V1.length;
+  if(counter)counter.textContent=(position+1)+" / "+visible.length;
   return true;
 }
 export function showC3ArtInfo(root,button){
@@ -248,6 +313,14 @@ export function showC3ArtInfo(root,button){
   if(!paintC3ArtInfoDialog(dlg,a))return false;
   dlg.__c3OriginalArtwork=a;
   dlg.__c3GalleryIndex=null;
+  dlg.__c3GalleryCategory="all";
+  dlg.__c3CurrentWorkId=null;
+  const scene=dlg.querySelector("[data-c3-art-scene]");
+  if(scene){scene.hidden=true;scene.textContent="";}
+  const connections=dlg.querySelector("[data-c3-art-connections]");
+  if(connections){connections.hidden=true;connections.textContent="";}
+  const select=dlg.querySelector("[data-home-c3-gallery-category]");
+  if(select)select.value="all";
   const launcher=dlg.querySelector("[data-home-c3-gallery-launcher]");
   if(launcher)launcher.hidden=SACRED_ART_RELEASED_GALLERY_V1.length===0;
   const nav=dlg.querySelector("[data-home-c3-gallery-nav]");
@@ -261,17 +334,31 @@ export function showC3ArtInfo(root,button){
 export function openC3ReleasedArtGallery(root){
   const dlg=releaseGalleryDialog(root);
   if(!dlg?.open||!dlg.__c3OriginalArtwork||SACRED_ART_RELEASED_GALLERY_V1.length===0)return false;
+  dlg.__c3GalleryCategory="all";
+  const select=dlg.querySelector("[data-home-c3-gallery-category]");
+  if(select)select.value="all";
   const prior=releasedGalleryBySource(dlg.__c3OriginalArtwork.source);
   const index=prior?SACRED_ART_RELEASED_GALLERY_V1.findIndex(entry=>entry.id===prior.id):0;
   return showReleasedGalleryIndex(dlg,index);
+}
+export function filterC3ReleasedArtGallery(root,categoryId){
+  const dlg=releaseGalleryDialog(root);
+  if(!dlg?.open||!Number.isInteger(dlg.__c3GalleryIndex))return false;
+  if(categoryId!=="all"&&!C3_RELEASED_ART_CATEGORY_CHOICES.some(c=>c.id===categoryId))return false;
+  dlg.__c3GalleryCategory=categoryId;
+  const visible=visibleReleasedGalleryIndices(dlg);
+  if(!visible.length)return false;
+  return showReleasedGalleryIndex(dlg,visible.includes(dlg.__c3GalleryIndex)?dlg.__c3GalleryIndex:visible[0]);
 }
 export function stepC3ReleasedArtGallery(root,direction){
   const dlg=releaseGalleryDialog(root);
   if(!dlg?.open||!Number.isInteger(dlg.__c3GalleryIndex)||
      !Number.isInteger(direction)||![1,-1].includes(direction)||
      SACRED_ART_RELEASED_GALLERY_V1.length===0)return false;
-  const next=(dlg.__c3GalleryIndex+direction+SACRED_ART_RELEASED_GALLERY_V1.length)%SACRED_ART_RELEASED_GALLERY_V1.length;
-  return showReleasedGalleryIndex(dlg,next);
+  const visible=visibleReleasedGalleryIndices(dlg);
+  const pos=visible.indexOf(dlg.__c3GalleryIndex);
+  if(pos<0||visible.length===0)return false;
+  return showReleasedGalleryIndex(dlg,visible[(pos+direction+visible.length)%visible.length]);
 }
 export function returnFromC3ReleasedArtGallery(root){
   const dlg=releaseGalleryDialog(root);
@@ -279,6 +366,12 @@ export function returnFromC3ReleasedArtGallery(root){
      !Number.isInteger(dlg.__c3GalleryIndex))return false;
   if(!paintC3ArtInfoDialog(dlg,dlg.__c3OriginalArtwork))return false;
   dlg.__c3GalleryIndex=null;
+  dlg.__c3GalleryCategory="all";
+  dlg.__c3CurrentWorkId=null;
+  const scene=dlg.querySelector("[data-c3-art-scene]");
+  if(scene){scene.hidden=true;scene.textContent="";}
+  const connections=dlg.querySelector("[data-c3-art-connections]");
+  if(connections){connections.hidden=true;connections.textContent="";}
   const nav=dlg.querySelector("[data-home-c3-gallery-nav]");
   if(nav)nav.hidden=true;
   const launcher=dlg.querySelector("[data-home-c3-gallery-launcher]");
@@ -291,5 +384,7 @@ export function closeC3ArtInfo(root){
   dlg.close();
   dlg.__c3OriginalArtwork=null;
   dlg.__c3GalleryIndex=null;
+  dlg.__c3GalleryCategory="all";
+  dlg.__c3CurrentWorkId=null;
   return true;
 }

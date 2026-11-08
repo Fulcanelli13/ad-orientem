@@ -1,0 +1,60 @@
+name: Sacred Art — classify 989 and match 267 existing Prayer positions
+on:
+  push:
+    branches:
+      - feat/sacred-art-category-matching-wave1-20261108
+    paths:
+      - 'src/art/sacred-art-taxonomy-v1.js'
+      - 'scripts/art/build-sacred-art-category-match-v1.mjs'
+      - 'scripts/art/sacred-art-saint-scope-exceptions-v1.mjs'
+      - 'scripts/art/sacred-art-place-title-exceptions-v1.mjs'
+      - 'data/artwork/sacred-art-category-match-989-267.v1.json'
+      - 'tests/sacred-art-category-match-wave1.mjs'
+      - 'src/home/c3-gallery.js'
+      - 'src/home/today-h4-view.js'
+      - 'src/home/browser-entry.js'
+      - 'src/home/c3-styles.js'
+      - 'tests/sacred-art-released-category-navigation.mjs'
+      - 'tools/build-web-preview.mjs'
+      - '.github/workflows/sacred-art-category-match-wave1.yml'
+  workflow_dispatch: {}
+permissions:
+  contents: read
+concurrency:
+  group: sacred-art-category-match-wave1
+  cancel-in-progress: true
+jobs:
+  classify-and-match:
+    name: Build real category and existing Prayer match crosswalk
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check source-scoped classification exception syntax
+        run: |
+          node --check scripts/art/sacred-art-saint-scope-exceptions-v1.mjs
+          node --check scripts/art/sacred-art-place-title-exceptions-v1.mjs
+          node --check scripts/art/build-sacred-art-category-match-v1.mjs
+      - name: Verify classification and old Prayer slot preservation
+        run: node tests/sacred-art-category-match-wave1.mjs
+      - name: Verify gallery subject filter, bilingual labels and original artwork return
+        run: node tests/sacred-art-released-category-navigation.mjs
+      - name: Preserve original 16-photo released gallery navigation
+        run: node tests/sacred-art-batch1-released-gallery.mjs
+      - name: Check edited application JavaScript parses
+        run: node --check src/home/today-h4-view.js && node --check src/home/browser-entry.js && node --check src/home/c3-gallery.js
+      - name: Generate 989 x 267 subject and destination crosswalk
+        run: node scripts/art/build-sacred-art-category-match-v1.mjs
+      - name: Verify generated master counts, categories and all protection gates
+        run: node tests/sacred-art-category-match-wave1.mjs
+      - name: Build public Pages preview with the new taxonomy
+        run: node tools/build-web-preview.mjs
+      - name: Keep full 989-group research mapping out of public Pages
+        run: |
+          test ! -e dist/web-preview/data/artwork/sacred-art-category-match-989-267.v1.json
+          test -f dist/web-preview/src/art/sacred-art-taxonomy-v1.js
+      - name: Verify generated category/placement master is deterministic and committed
+        run: git diff --exit-code -- data/artwork/sacred-art-category-match-989-267.v1.json
