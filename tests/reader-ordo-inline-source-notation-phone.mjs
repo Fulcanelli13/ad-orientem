@@ -108,9 +108,15 @@ try{
     "The original bilingual prayer must remain");
    assert.equal(after.sourceMacros,30,"No change to the original Mass macro source");
    assert.ok(after.width<=after.viewport+1,"No horizontal phone overflow");
+   // Capture the actual Ordo content, not the still-open preferences sheet.
+   await page.click("[data-reader-preferences-close]");
+   assert.equal(await page.locator('[data-role="mass-preferences"]').getAttribute("data-open"),"false");
    await page.screenshot({path:resolve(out,
      "ordo-"+form.toLowerCase()+"-"+mode+"-"+width+"-notation.png"),
     animations:"disabled"});
+   // Reopen preferences: the on/off state must survive closing the sheet.
+   await page.click("[data-reader-preferences]");
+   assert.equal((await state()).pressed,"true");
    await button.click();
    const off=await state();
    assert.equal(off.pressed,"false");
