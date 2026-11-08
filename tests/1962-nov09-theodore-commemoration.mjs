@@ -49,8 +49,12 @@ assert.doesNotMatch(NOV09_THEODORE_SOURCE.prayers.postcommunions.lat,
  "Avoid the duplicated Latin Secret mistakenly printed in the ICRSP article");
 for(const language of ["en","fr"]){
  const p=properToReaderSlots(done.proper.data,{language});
- assert.equal(p.ready,true,JSON.stringify(p.missing));
+ // This pure fixture contains only the three oration sets, not a
+ // complete 10-slot Proper. Check the oration slots, not p.ready,
+ // which correctly remains false until Introit/Readings/etc. exist.
+ assert.equal(p.ready,false,"Partial source fixture must not masquerade as a full Mass");
  for(const [,slot] of GROUPS){
+  assert.equal(p.slots?.[slot]?.status,"READY",language+" "+slot);
   const paragraphs=p.slots?.[slot]?.data?.paragraphs??[];
   assert.deepEqual([...new Set(paragraphs.map(x=>x.orationGroupIndex)
    .filter(Number.isInteger))],[1,2],language+" "+slot);
