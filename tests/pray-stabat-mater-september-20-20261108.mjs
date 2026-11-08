@@ -35,4 +35,6 @@ test("Original Stations between-station reading stays 13 and full Latin is separ
  assert.match(runtime,/data-ao-prayer-stabat-september/);
  assert.match(runtime,/LIB\.subject==="V"/);
  assert.match(runtime,/stabatLibrarySection/);
+ assert.match(runtime,/stabat-mater-september-styles\\.js/);
+
 });

@@ -1,4 +1,5 @@
 import {completeSeptemberStabatMater,STABAT_MATER_SEPTEMBER_SOURCE} from "./stabat-mater-september-1962-source.js";
+import "./stabat-mater-september-styles.js";
 import "./confession-path-styles.js";
 import {renderConfessionContinuousExamination} from "./confession-continuous-examination.js";
 import "./prayer-door-mosaic-execution-styles.js";
