@@ -6,7 +6,8 @@
     "data/artwork/sacred-art-batch1-25-release-progress.v1.json",
     "src/art/released-module-paintings.v1.js",
     "src/art/sacred-art-taxonomy-v1.js",
-    "scripts/art/sacred-art-saint-scope-exceptions-v1.mjs"
+    "scripts/art/sacred-art-saint-scope-exceptions-v1.mjs",
+    "scripts/art/sacred-art-place-title-exceptions-v1.mjs"
   ],
   "state": "CATEGORY_INDEX_AND_EXISTING_PLACEMENT_MATCHES_NOT_NEW_EDITORIAL_APPROVAL",
   "policies": {
@@ -14,6 +15,7 @@
     "photoRightsIndependentFromArtworkSubject": true,
     "neverPromoteLexicalTagToVerifiedDepiction": true,
     "retainOriginalLexicalTagsAfterSaintSubjectDisambiguation": true,
+    "retainOriginalLexicalTagsAfterPlaceTitleDisambiguation": true,
     "preserve267CanonicalSlotAssignments": true,
     "protectOriginalCovers": true,
     "preserveRosaryDecadeArtwork": true,
@@ -26,6 +28,7 @@
     "researchGroupsWithTitleBasedCategoryCandidates": 657,
     "researchGroupsStillWithoutTitleCategory": 332,
     "exactSaintSubjectScopeCorrections": 9,
+    "exactPlaceNameScopeCorrections": 12,
     "canonicalPrayerPositions": 267,
     "previouslyReleasedPhotoEntries": 16,
     "manuallyCategorizedCuratedWorks": 25,
@@ -869,18 +872,6 @@
         "CANONICAL::ART-laudio-oello-aint-ominic-of-uzm-n",
         "CANONICAL::B01-MARK-RENI-BJU",
         "CANONICAL::ART-eter-aul-ubens-aint-atthias-postolate",
-        "CANONICAL::ART-iandomenico-iepolo-an-olo-ia-rucis-tation-01-hrist-ondemned-to-eath",
-        "CANONICAL::ART-iandomenico-iepolo-an-olo-ia-rucis-tation-02-esus-akes-p-the-ross",
-        "CANONICAL::ART-iandomenico-iepolo-an-olo-ia-rucis-tation-03-irst-all",
-        "CANONICAL::ART-iandomenico-iepolo-an-olo-ia-rucis-tation-04-esus-eets-is-other",
-        "CANONICAL::ART-iandomenico-iepolo-an-olo-ia-rucis-tation-05-imon-of-yrene-elps",
-        "CANONICAL::ART-iandomenico-iepolo-an-olo-ia-rucis-tation-06-eronica-ipes-is-ace",
-        "CANONICAL::ART-iandomenico-iepolo-an-olo-ia-rucis-tation-07-econd-all",
-        "CANONICAL::ART-iandomenico-iepolo-an-olo-ia-rucis-tation-08-esus-ddresses-the-omen-of-erusalem",
-        "CANONICAL::ART-iandomenico-iepolo-an-olo-ia-rucis-tation-09-hird-all",
-        "CANONICAL::ART-iandomenico-iepolo-an-olo-ia-rucis-tation-10-tripping-of-is-arments",
-        "CANONICAL::ART-iandomenico-iepolo-an-olo-ia-rucis-tation-11-ailing-to-the-ross",
-        "CANONICAL::ART-iandomenico-iepolo-an-olo-ia-rucis-tation-12-eath-on-the-ross",
         "CANONICAL::C34:visionofstbonaventuradomenicovaccarosanlorenzomaggioremuseum",
         "CANONICAL::nga-129283",
         "CANONICAL::nga-12209",
@@ -20724,8 +20715,7 @@
       "title": "San Polo Via Crucis — Station 01: Christ Condemned to Death",
       "artist": "Giandomenico Tiepolo",
       "categoryCandidates": [
-        "PASSION",
-        "SAINTS"
+        "PASSION"
       ],
       "existingLexicalSubjectTags": [
         {
@@ -20737,10 +20727,12 @@
         {
           "tag": "SNT-PATRONS",
           "confidence": 70,
-          "categoryId": "SAINTS",
-          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE"
+          "categoryId": null,
+          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE",
+          "subjectScopeExclusion": "SAN_POLO_IS_GEOGRAPHIC_SERIES_TITLE_NOT_DEPICTED_SAINT"
         }
       ],
+      "placeTitleScopeReviewed": true,
       "matchEvidence": "TITLE_AND_ARTIST_LEXICAL_CANDIDATES_ONLY",
       "visualSubjectVerification": false,
       "categoryReviewState": "UNVERIFIED_CANDIDATE_TAGGED",
@@ -20752,8 +20744,7 @@
       "title": "San Polo Via Crucis — Station 02: Jesus Takes Up the Cross",
       "artist": "Giandomenico Tiepolo",
       "categoryCandidates": [
-        "PASSION",
-        "SAINTS"
+        "PASSION"
       ],
       "existingLexicalSubjectTags": [
         {
@@ -20765,10 +20756,12 @@
         {
           "tag": "SNT-PATRONS",
           "confidence": 70,
-          "categoryId": "SAINTS",
-          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE"
+          "categoryId": null,
+          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE",
+          "subjectScopeExclusion": "SAN_POLO_IS_GEOGRAPHIC_SERIES_TITLE_NOT_DEPICTED_SAINT"
         }
       ],
+      "placeTitleScopeReviewed": true,
       "matchEvidence": "TITLE_AND_ARTIST_LEXICAL_CANDIDATES_ONLY",
       "visualSubjectVerification": false,
       "categoryReviewState": "UNVERIFIED_CANDIDATE_TAGGED",
@@ -20780,8 +20773,7 @@
       "title": "San Polo Via Crucis — Station 03: First Fall",
       "artist": "Giandomenico Tiepolo",
       "categoryCandidates": [
-        "PASSION",
-        "SAINTS"
+        "PASSION"
       ],
       "existingLexicalSubjectTags": [
         {
@@ -20793,10 +20785,12 @@
         {
           "tag": "SNT-PATRONS",
           "confidence": 70,
-          "categoryId": "SAINTS",
-          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE"
+          "categoryId": null,
+          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE",
+          "subjectScopeExclusion": "SAN_POLO_IS_GEOGRAPHIC_SERIES_TITLE_NOT_DEPICTED_SAINT"
         }
       ],
+      "placeTitleScopeReviewed": true,
       "matchEvidence": "TITLE_AND_ARTIST_LEXICAL_CANDIDATES_ONLY",
       "visualSubjectVerification": false,
       "categoryReviewState": "UNVERIFIED_CANDIDATE_TAGGED",
@@ -20808,8 +20802,7 @@
       "title": "San Polo Via Crucis — Station 04: Jesus Meets His Mother",
       "artist": "Giandomenico Tiepolo",
       "categoryCandidates": [
-        "PASSION",
-        "SAINTS"
+        "PASSION"
       ],
       "existingLexicalSubjectTags": [
         {
@@ -20821,10 +20814,12 @@
         {
           "tag": "SNT-PATRONS",
           "confidence": 70,
-          "categoryId": "SAINTS",
-          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE"
+          "categoryId": null,
+          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE",
+          "subjectScopeExclusion": "SAN_POLO_IS_GEOGRAPHIC_SERIES_TITLE_NOT_DEPICTED_SAINT"
         }
       ],
+      "placeTitleScopeReviewed": true,
       "matchEvidence": "TITLE_AND_ARTIST_LEXICAL_CANDIDATES_ONLY",
       "visualSubjectVerification": false,
       "categoryReviewState": "UNVERIFIED_CANDIDATE_TAGGED",
@@ -20836,8 +20831,7 @@
       "title": "San Polo Via Crucis — Station 05: Simon of Cyrene Helps",
       "artist": "Giandomenico Tiepolo",
       "categoryCandidates": [
-        "PASSION",
-        "SAINTS"
+        "PASSION"
       ],
       "existingLexicalSubjectTags": [
         {
@@ -20849,10 +20843,12 @@
         {
           "tag": "SNT-PATRONS",
           "confidence": 70,
-          "categoryId": "SAINTS",
-          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE"
+          "categoryId": null,
+          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE",
+          "subjectScopeExclusion": "SAN_POLO_IS_GEOGRAPHIC_SERIES_TITLE_NOT_DEPICTED_SAINT"
         }
       ],
+      "placeTitleScopeReviewed": true,
       "matchEvidence": "TITLE_AND_ARTIST_LEXICAL_CANDIDATES_ONLY",
       "visualSubjectVerification": false,
       "categoryReviewState": "UNVERIFIED_CANDIDATE_TAGGED",
@@ -20864,8 +20860,7 @@
       "title": "San Polo Via Crucis — Station 06: Veronica Wipes His Face",
       "artist": "Giandomenico Tiepolo",
       "categoryCandidates": [
-        "PASSION",
-        "SAINTS"
+        "PASSION"
       ],
       "existingLexicalSubjectTags": [
         {
@@ -20877,10 +20872,12 @@
         {
           "tag": "SNT-PATRONS",
           "confidence": 70,
-          "categoryId": "SAINTS",
-          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE"
+          "categoryId": null,
+          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE",
+          "subjectScopeExclusion": "SAN_POLO_IS_GEOGRAPHIC_SERIES_TITLE_NOT_DEPICTED_SAINT"
         }
       ],
+      "placeTitleScopeReviewed": true,
       "matchEvidence": "TITLE_AND_ARTIST_LEXICAL_CANDIDATES_ONLY",
       "visualSubjectVerification": false,
       "categoryReviewState": "UNVERIFIED_CANDIDATE_TAGGED",
@@ -20892,8 +20889,7 @@
       "title": "San Polo Via Crucis — Station 07: Second Fall",
       "artist": "Giandomenico Tiepolo",
       "categoryCandidates": [
-        "PASSION",
-        "SAINTS"
+        "PASSION"
       ],
       "existingLexicalSubjectTags": [
         {
@@ -20905,10 +20901,12 @@
         {
           "tag": "SNT-PATRONS",
           "confidence": 70,
-          "categoryId": "SAINTS",
-          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE"
+          "categoryId": null,
+          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE",
+          "subjectScopeExclusion": "SAN_POLO_IS_GEOGRAPHIC_SERIES_TITLE_NOT_DEPICTED_SAINT"
         }
       ],
+      "placeTitleScopeReviewed": true,
       "matchEvidence": "TITLE_AND_ARTIST_LEXICAL_CANDIDATES_ONLY",
       "visualSubjectVerification": false,
       "categoryReviewState": "UNVERIFIED_CANDIDATE_TAGGED",
@@ -20920,8 +20918,7 @@
       "title": "San Polo Via Crucis — Station 08: Jesus Addresses the Women of Jerusalem",
       "artist": "Giandomenico Tiepolo",
       "categoryCandidates": [
-        "PASSION",
-        "SAINTS"
+        "PASSION"
       ],
       "existingLexicalSubjectTags": [
         {
@@ -20933,10 +20930,12 @@
         {
           "tag": "SNT-PATRONS",
           "confidence": 70,
-          "categoryId": "SAINTS",
-          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE"
+          "categoryId": null,
+          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE",
+          "subjectScopeExclusion": "SAN_POLO_IS_GEOGRAPHIC_SERIES_TITLE_NOT_DEPICTED_SAINT"
         }
       ],
+      "placeTitleScopeReviewed": true,
       "matchEvidence": "TITLE_AND_ARTIST_LEXICAL_CANDIDATES_ONLY",
       "visualSubjectVerification": false,
       "categoryReviewState": "UNVERIFIED_CANDIDATE_TAGGED",
@@ -20948,8 +20947,7 @@
       "title": "San Polo Via Crucis — Station 09: Third Fall",
       "artist": "Giandomenico Tiepolo",
       "categoryCandidates": [
-        "PASSION",
-        "SAINTS"
+        "PASSION"
       ],
       "existingLexicalSubjectTags": [
         {
@@ -20961,10 +20959,12 @@
         {
           "tag": "SNT-PATRONS",
           "confidence": 70,
-          "categoryId": "SAINTS",
-          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE"
+          "categoryId": null,
+          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE",
+          "subjectScopeExclusion": "SAN_POLO_IS_GEOGRAPHIC_SERIES_TITLE_NOT_DEPICTED_SAINT"
         }
       ],
+      "placeTitleScopeReviewed": true,
       "matchEvidence": "TITLE_AND_ARTIST_LEXICAL_CANDIDATES_ONLY",
       "visualSubjectVerification": false,
       "categoryReviewState": "UNVERIFIED_CANDIDATE_TAGGED",
@@ -20976,8 +20976,7 @@
       "title": "San Polo Via Crucis — Station 10: Stripping of His Garments",
       "artist": "Giandomenico Tiepolo",
       "categoryCandidates": [
-        "PASSION",
-        "SAINTS"
+        "PASSION"
       ],
       "existingLexicalSubjectTags": [
         {
@@ -20989,10 +20988,12 @@
         {
           "tag": "SNT-PATRONS",
           "confidence": 70,
-          "categoryId": "SAINTS",
-          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE"
+          "categoryId": null,
+          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE",
+          "subjectScopeExclusion": "SAN_POLO_IS_GEOGRAPHIC_SERIES_TITLE_NOT_DEPICTED_SAINT"
         }
       ],
+      "placeTitleScopeReviewed": true,
       "matchEvidence": "TITLE_AND_ARTIST_LEXICAL_CANDIDATES_ONLY",
       "visualSubjectVerification": false,
       "categoryReviewState": "UNVERIFIED_CANDIDATE_TAGGED",
@@ -21004,8 +21005,7 @@
       "title": "San Polo Via Crucis — Station 11: Nailing to the Cross",
       "artist": "Giandomenico Tiepolo",
       "categoryCandidates": [
-        "PASSION",
-        "SAINTS"
+        "PASSION"
       ],
       "existingLexicalSubjectTags": [
         {
@@ -21017,10 +21017,12 @@
         {
           "tag": "SNT-PATRONS",
           "confidence": 70,
-          "categoryId": "SAINTS",
-          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE"
+          "categoryId": null,
+          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE",
+          "subjectScopeExclusion": "SAN_POLO_IS_GEOGRAPHIC_SERIES_TITLE_NOT_DEPICTED_SAINT"
         }
       ],
+      "placeTitleScopeReviewed": true,
       "matchEvidence": "TITLE_AND_ARTIST_LEXICAL_CANDIDATES_ONLY",
       "visualSubjectVerification": false,
       "categoryReviewState": "UNVERIFIED_CANDIDATE_TAGGED",
@@ -21032,8 +21034,7 @@
       "title": "San Polo Via Crucis — Station 12: Death on the Cross",
       "artist": "Giandomenico Tiepolo",
       "categoryCandidates": [
-        "PASSION",
-        "SAINTS"
+        "PASSION"
       ],
       "existingLexicalSubjectTags": [
         {
@@ -21045,10 +21046,12 @@
         {
           "tag": "SNT-PATRONS",
           "confidence": 70,
-          "categoryId": "SAINTS",
-          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE"
+          "categoryId": null,
+          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE",
+          "subjectScopeExclusion": "SAN_POLO_IS_GEOGRAPHIC_SERIES_TITLE_NOT_DEPICTED_SAINT"
         }
       ],
+      "placeTitleScopeReviewed": true,
       "matchEvidence": "TITLE_AND_ARTIST_LEXICAL_CANDIDATES_ONLY",
       "visualSubjectVerification": false,
       "categoryReviewState": "UNVERIFIED_CANDIDATE_TAGGED",
