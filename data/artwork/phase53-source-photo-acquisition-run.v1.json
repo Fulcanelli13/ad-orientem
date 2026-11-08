@@ -1,0 +1,54 @@
+{
+  "schema": "AO_SACRED_ART_PHASE53_SOURCE_PHOTO_ACQUISITION_STATUS_V1",
+  "observed_at_utc": "2026-11-08T14:45:00Z",
+  "publication_scope": "RESEARCH_ONLY_ZERO_RELEASES",
+  "first_workflow_run": {
+    "url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42489371038",
+    "run_id": 42489371038,
+    "head_sha": "bcf4785bc274d843ea66286a14027d6c2d13eb2f",
+    "completed_at_utc": "2026-11-08T14:25:35Z",
+    "conclusion": "failure",
+    "selected_photographs": [
+      {
+        "selected_id": "RECENT575::222",
+        "painting": "Jacques Stella, Marriage of the Virgin",
+        "original_dimensions_px": [
+          800,
+          629
+        ],
+        "original_sha1": "440853277ff4105b0e099678899925ea1033aa2d",
+        "original_bytes": 202554,
+        "candidate_dimensions_px": [
+          4996,
+          4005
+        ],
+        "candidate_sha1": "c030bdd741bccc8cb25f00e6dbd4c826633f415f",
+        "candidate_bytes": 14725300,
+        "mechanical_status": "DOWNLOADED_HASH_AND_PIXELS_VERIFIED_VISUAL_REVIEW_PENDING",
+        "editorial_approval": false
+      },
+      {
+        "selected_id": "RECENT575::220",
+        "painting": "Sébastien Bourdon, Martyrdom of Saint Andrew",
+        "mechanical_status": "FAILED_CANNOT_CERTIFY",
+        "error": "HTTP 429 from Wikimedia during download; retries after 2 seconds inadequate",
+        "editorial_approval": false
+      }
+    ],
+    "artifact_issue": "Full reviewer artifact used if: success() and was skipped when second download failed. Only diagnostic text ZIP retained (ID 13620074627)."
+  },
+  "corrective_actions": {
+    "rate_limit_backoff": "Respect Wikimedia Retry-After, pace all requests at least 25 seconds, bounded retries with no hammering",
+    "user_agent": "Repository URL in descriptive User-Agent as required by Wikimedia 2026 policy",
+    "targeted_recovery": "Optional --only manifest ID for individual candidate",
+    "reviewer_artifact": "Upload any available completed contact sheets and candidate photos even if another request failed; 1-day retention",
+    "maximum_publication_mutations": 0
+  },
+  "latest_workflow_run_url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42491213226",
+  "latest_workflow_run_id": 42491213226,
+  "latest_workflow_status_at_recording": "pending; no success claimed",
+  "release_approved_photographs": 0,
+  "source_177_to_989_crosswalk_relationships_unchanged": 14,
+  "rejected_research_sources_protected": 1599,
+  "editorial_policy": "Unhandpicked Commons images remain unadmitted despite verified SHA1 and CC BY-SA licence until independently assessed exact-object fidelity, pixel quality and owner editorial approval."
+}
