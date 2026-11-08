@@ -1,7 +1,7 @@
 import { CL2_PHYSICAL_SITE_INDEX_URL,projectCL2PhysicalDirectory } from "./cl2-physical-directory.js";
 import {matchesPublicCL27Facets} from "./cl27-public-facets.js";
 import {CL27_SITE_CONTACT_URL,attachPublishedSiteContactEvidence} from "./tlm-site-contact-evidence.js";
-import {CL27_DATED_MASS_PROGRAMME_URL,attachPublishedDatedMassProgramme} from "./tlm-dated-mass-programme.js";
+import {CL27_DATED_MASS_PROGRAMME_URL,attachPublishedDatedMassProgramme,CL27_TARARE_DATED_MASS_PROGRAMME_URL,attachPublishedTarareDatedMassProgramme} from "./tlm-dated-mass-programme.js";
 import {
   CL27_PUBLIC_CELEBRATION_URL,attachPublishedCelebrationEvidence,tlmCelebrationEvidenceClass,
 } from "./tlm-celebration-evidence.js";
@@ -253,6 +253,19 @@ export async function loadPreliminaryR49({fetchImpl=fetch}={}){
     if(printed?.schema==="AO_CL27_EXACT_DATED_MASS_PROGRAMME_V1")
       cache=attachPublishedDatedMassProgramme(cache,printed);
     // Any tagged but malformed manifest MUST throw from the strict joiner.
+  }
+  // Independent Tarare site programme, only after CL2 identity is admitted.
+  // An older offline installed snapshot may lack this optional source overlay.
+  let tarareResponse=null;
+  try{
+    tarareResponse=await fetchImpl(CL27_TARARE_DATED_MASS_PROGRAMME_URL,{headers:{accept:"application/json"}});
+  }catch{
+    // Keep the existing directory if the optional Tarare manifest is absent.
+  }
+  if(tarareResponse?.ok){
+    const printed=await tarareResponse.json();
+    if(printed?.schema==="AO_CL27_EXACT_DATED_MASS_PROGRAMME_V1")
+      cache=attachPublishedTarareDatedMassProgramme(cache,printed);
   }
   return cache;
 }
