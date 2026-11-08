@@ -1,0 +1,43 @@
+{
+  "schema": "ao.office.1961-ordinary-magnificat-print-lexemes.v1",
+  "witness": {
+    "label": "Breviarium Romanum 1961, editio juxta typicam, Ordinarium Divini Officii, Ad Vesperas, §50, printed page 126",
+    "document": "https://unavocesevilla.com/LIBROSLITURGICOS/BREVIARIUM%20ROMANUM.1961.pdf",
+    "zeroBasedPdfPage": 126,
+    "printedPage": 126,
+    "language": "la",
+    "inspection": "Printed page image inspected manually; 10 complete Luc 1:46-55 verses transcribed as independent witness; typography and punctuation are not certified",
+    "qualification": "An edition reproducing the 1961 Ordinary; not evidence of the complete Advent I Proper or Saturday Psalter"
+  },
+  "source": {
+    "revision": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+    "path": "Psalterium/Psalmorum/Psalm232",
+    "blobSha": "954dd48b23bd1a2da7c8c79dda64e4a50df57f38",
+    "language": "la"
+  },
+  "canonicalization": "ao-latin-v1 accent-insensitive lexical comparison including expanded ligatures and i/j; removes prayer punctuation, separators, pause marks and verse numbers; does not establish typographic, musical or punctuation identity",
+  "verseSha256": [
+    "ee6d51ab990e718832d7cf9e7ddcf7ef3a7c47f637c153e89006f5d9dc6afa7f",
+    "ca95a3826a2e7eefd84ceacc2c64a7505217395e85a17e01a51dfa1f55ca0df4",
+    "9e9d07af899068c64b2a1210fb5c944634cfc424fedeb66e52fa0e0eb1ad9775",
+    "266256901b103d989102273c4f6ffccee1aed96aa595863ba3b0b704bb1c6951",
+    "a561421974ce952713c831bab40777ac33943003fe40d77a9b020a301a68c99b",
+    "a98e907c30122d910ef67faf919ccc6c2fe12efdb873f7eb9a773ebd5aa61d60",
+    "0941066ad9490432d815a73c80e7ae19e49d1f1b892881294a20a9eef83c3aca",
+    "7d45e86ab5aa5559d93f8ad5ff5d868df3eebc0c3cfa2a214a9b80192ea2185c",
+    "ec05622114f4c54118e5961a978276940a6703a21fa644edc23b289209f376ed",
+    "705298052cd76a04ee411b84fc897289f9115277c41e1f629ddb3556731a0ff6"
+  ],
+  "verifiedMeaning": "Printed Magnificat and exact pinned Latin source agree lexically over ten verses under defined normalization; punctuation, chant notation, translations, and all other Hour components remain unverified",
+  "printedVerseLexemesCompared": 10,
+  "printedVerseLexemesMatched": 10,
+  "fullTypographicCollation": false,
+  "psalmodyVerified": false,
+  "properVerified": false,
+  "gloryDoxologyFullPrintedTextCollated": false,
+  "fullHourTextCertified": false,
+  "translationAlignmentVerified": false,
+  "rightsApproved": false,
+  "publishable": false,
+  "published": false
+}

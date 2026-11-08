@@ -1,0 +1,275 @@
+[
+  {
+    "date": "2026-10-31",
+    "officeCalendarEvidence": "INDEPENDENT_OFFICE_CANDIDATES_RESEARCH",
+    "localCalendarStatus": "UNIVERSAL_ONLY",
+    "researchProvenance": {
+      "pinnedOfficeResearchPR": "https://github.com/Fulcanelli13/ad-orientem/pull/1860",
+      "sourceRevision": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "corroboratingCalendarUrl": "https://ordo.fsspx.org/day/2026-10-31?lang=en",
+      "rubricReference": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+      "observationScope": "ALL_HOURS_RESEARCH_ENVELOPE",
+      "observedHourHeadings": [
+        "MATINS",
+        "LAUDS",
+        "PRIME",
+        "TERCE",
+        "SEXT",
+        "NONE",
+        "VESPERS",
+        "COMPLINE"
+      ],
+      "wholeOfficeVerified": false,
+      "translationVerified": false,
+      "sourceRightsApproved": false,
+      "notes": "Saturday BVM Office category research; original source pilot's Vespers was de sequenti All Saints. Published Missal ordo is corroboration, NOT Office precedence certification."
+    },
+    "candidates": [
+      {
+        "id": "saturday-bvm-2026-10-31",
+        "date": "2026-10-31",
+        "kind": "SATURDAY_BVM",
+        "tablePosition": 27,
+        "class": 3,
+        "ruleset": "ROMAN_GENERAL_RUBRICS_1960",
+        "calendarScope": "UNIVERSAL",
+        "witness": {
+          "rubricSource": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+          "sourceId": "PR1860:OFFICE-2026-10-31-SATURDAY-CONTEXT"
+        },
+        "printedOfficeCertified": false,
+        "sourceTextApproved": false,
+        "hasFirstVespers": false,
+        "hasSecondVespers": false
+      }
+    ]
+  },
+  {
+    "date": "2026-11-01",
+    "officeCalendarEvidence": "INDEPENDENT_OFFICE_CANDIDATES_RESEARCH",
+    "localCalendarStatus": "UNIVERSAL_ONLY",
+    "researchProvenance": {
+      "pinnedOfficeResearchPR": "https://github.com/Fulcanelli13/ad-orientem/pull/1860",
+      "sourceRevision": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "corroboratingCalendarUrl": "https://ordo.fsspx.org/day/2026-11-01?lang=en",
+      "rubricReference": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+      "observationScope": "ALL_HOURS_RESEARCH_ENVELOPE",
+      "observedHourHeadings": [
+        "MATINS",
+        "LAUDS",
+        "PRIME",
+        "TERCE",
+        "SEXT",
+        "NONE",
+        "VESPERS",
+        "COMPLINE"
+      ],
+      "wholeOfficeVerified": false,
+      "translationVerified": false,
+      "sourceRightsApproved": false,
+      "notes": "All Saints 1st class occurs with XXIII Sunday after Pentecost 2nd class. Sunday commemoration and its EN/FR correspondence remain unapproved; no whole-Hour clearance."
+    },
+    "candidates": [
+      {
+        "id": "all-saints-2026-11-01",
+        "date": "2026-11-01",
+        "kind": "FEAST",
+        "tablePosition": 11,
+        "class": 1,
+        "ruleset": "ROMAN_GENERAL_RUBRICS_1960",
+        "calendarScope": "UNIVERSAL",
+        "witness": {
+          "rubricSource": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+          "sourceId": "PR1860:OFFICE-2026-11-01-ALL-SAINTS-LATIN-VESPERS"
+        },
+        "printedOfficeCertified": false,
+        "sourceTextApproved": false,
+        "hasFirstVespers": true,
+        "hasSecondVespers": true
+      },
+      {
+        "id": "xxiii-after-pentecost-2026-11-01",
+        "date": "2026-11-01",
+        "kind": "SUNDAY",
+        "tablePosition": 15,
+        "class": 2,
+        "ruleset": "ROMAN_GENERAL_RUBRICS_1960",
+        "calendarScope": "UNIVERSAL",
+        "witness": {
+          "rubricSource": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+          "sourceId": "PR1860:OFFICE-2026-11-01-SUNDAY-COMMEMORATION-RESEARCH"
+        },
+        "printedOfficeCertified": false,
+        "sourceTextApproved": false,
+        "hasFirstVespers": true,
+        "hasSecondVespers": true
+      }
+    ]
+  },
+  {
+    "date": "2026-11-02",
+    "officeCalendarEvidence": "INDEPENDENT_OFFICE_CANDIDATES_RESEARCH",
+    "localCalendarStatus": "UNIVERSAL_ONLY",
+    "researchProvenance": {
+      "pinnedOfficeResearchPR": "https://github.com/Fulcanelli13/ad-orientem/pull/1860",
+      "sourceRevision": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "corroboratingCalendarUrl": "https://ordo.fsspx.org/day/2026-11-02?lang=en",
+      "rubricReference": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+      "observationScope": "SPECIAL_OFFICE_RESEARCH_ENVELOPE",
+      "observedHourHeadings": [
+        "MATINS",
+        "LAUDS",
+        "PRIME",
+        "TERCE",
+        "SEXT",
+        "NONE",
+        "VESPERS",
+        "COMPLINE"
+      ],
+      "wholeOfficeVerified": false,
+      "translationVerified": false,
+      "sourceRightsApproved": false,
+      "notes": "All Souls Office of the Dead requires BR173; no generic RG91 appointment; English Prime and anticipated Martyrology are quarantined."
+    },
+    "candidates": [
+      {
+        "id": "all-souls-2026-11-02",
+        "date": "2026-11-02",
+        "kind": "OFFICE_OF_DEAD",
+        "tablePosition": 8,
+        "class": 1,
+        "ruleset": "ROMAN_GENERAL_RUBRICS_1960",
+        "calendarScope": "UNIVERSAL",
+        "witness": {
+          "rubricSource": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+          "sourceId": "PR1860:ALL-SOULS-2026-11-02-CRITICAL-AUDIT"
+        },
+        "printedOfficeCertified": false,
+        "sourceTextApproved": false,
+        "hasFirstVespers": false,
+        "hasSecondVespers": false
+      }
+    ]
+  },
+  {
+    "date": "2026-11-03",
+    "officeCalendarEvidence": "INDEPENDENT_OFFICE_CANDIDATES_RESEARCH",
+    "localCalendarStatus": "UNIVERSAL_ONLY",
+    "researchProvenance": {
+      "pinnedOfficeResearchPR": "https://github.com/Fulcanelli13/ad-orientem/pull/1860",
+      "sourceRevision": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "corroboratingCalendarUrl": "https://ordo.fsspx.org/day/2026-11-03?lang=en",
+      "rubricReference": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+      "observationScope": "ALL_HOURS_RESEARCH_ENVELOPE",
+      "observedHourHeadings": [
+        "MATINS",
+        "LAUDS",
+        "PRIME",
+        "TERCE",
+        "SEXT",
+        "NONE",
+        "VESPERS",
+        "COMPLINE"
+      ],
+      "wholeOfficeVerified": false,
+      "translationVerified": false,
+      "sourceRightsApproved": false,
+      "notes": "Ordinary feria, source composer 8-hour pilot; contingent local saints and Office translation remain unresolved."
+    },
+    "candidates": [
+      {
+        "id": "feria-2026-11-03",
+        "date": "2026-11-03",
+        "kind": "FERIA",
+        "tablePosition": 28,
+        "class": 4,
+        "ruleset": "ROMAN_GENERAL_RUBRICS_1960",
+        "calendarScope": "UNIVERSAL",
+        "witness": {
+          "rubricSource": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+          "sourceId": "PR1860:OFFICE-2026-11-03-FERIA-COMPOSER"
+        },
+        "printedOfficeCertified": false,
+        "sourceTextApproved": false,
+        "hasFirstVespers": false,
+        "hasSecondVespers": true
+      }
+    ]
+  },
+  {
+    "date": "2026-11-28",
+    "officeCalendarEvidence": "INDEPENDENT_OFFICE_CANDIDATES_RESEARCH",
+    "localCalendarStatus": "UNIVERSAL_ONLY",
+    "researchProvenance": {
+      "pinnedOfficeResearchPR": "https://github.com/Fulcanelli13/ad-orientem/pull/1860",
+      "sourceRevision": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "corroboratingCalendarUrl": "https://ordo.fsspx.org/day/2026-11-28?lang=en",
+      "rubricReference": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+      "observationScope": "VESPERS_RESEARCH_ENVELOPE_ONLY",
+      "observedHourHeadings": [
+        "VESPERS"
+      ],
+      "wholeOfficeVerified": false,
+      "translationVerified": false,
+      "sourceRightsApproved": false,
+      "notes": "Saturday BVM date context from published ordo; only pinned First Vespers source-headline evidence exists for evening. Other Hours not observed in this pilot."
+    },
+    "candidates": [
+      {
+        "id": "saturday-bvm-2026-11-28",
+        "date": "2026-11-28",
+        "kind": "SATURDAY_BVM",
+        "tablePosition": 27,
+        "class": 3,
+        "ruleset": "ROMAN_GENERAL_RUBRICS_1960",
+        "calendarScope": "UNIVERSAL",
+        "witness": {
+          "rubricSource": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+          "sourceId": "PR1860:ADVENT-2026-11-28-FIRST-VESPERS"
+        },
+        "printedOfficeCertified": false,
+        "sourceTextApproved": false,
+        "hasFirstVespers": false,
+        "hasSecondVespers": false
+      }
+    ]
+  },
+  {
+    "date": "2026-11-29",
+    "officeCalendarEvidence": "INDEPENDENT_OFFICE_CANDIDATES_RESEARCH",
+    "localCalendarStatus": "UNIVERSAL_ONLY",
+    "researchProvenance": {
+      "pinnedOfficeResearchPR": "https://github.com/Fulcanelli13/ad-orientem/pull/1860",
+      "sourceRevision": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+      "corroboratingCalendarUrl": "https://ordo.fsspx.org/day/2026-11-29?lang=en",
+      "rubricReference": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+      "observationScope": "VESPERS_RESEARCH_ENVELOPE_ONLY",
+      "observedHourHeadings": [
+        "VESPERS"
+      ],
+      "wholeOfficeVerified": false,
+      "translationVerified": false,
+      "sourceRightsApproved": false,
+      "notes": "First Sunday of Advent is RG91 position 6; pinned research pilot observed Vespers in trilingual output. Other Hours not observed in this pilot."
+    },
+    "candidates": [
+      {
+        "id": "advent-one-2026-11-29",
+        "date": "2026-11-29",
+        "kind": "SUNDAY",
+        "tablePosition": 6,
+        "class": 1,
+        "ruleset": "ROMAN_GENERAL_RUBRICS_1960",
+        "calendarScope": "UNIVERSAL",
+        "witness": {
+          "rubricSource": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+          "sourceId": "PR1860:ADVENT-2026-11-29-SECOND-VESPERS"
+        },
+        "printedOfficeCertified": false,
+        "sourceTextApproved": false,
+        "hasFirstVespers": true,
+        "hasSecondVespers": true
+      }
+    ]
+  }
+]

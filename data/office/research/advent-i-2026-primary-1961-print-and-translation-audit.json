@@ -1,0 +1,110 @@
+{
+  "schema": "ao.office.advent-i-2026-primary-print-translation-review.v1",
+  "date": "2026-11-28",
+  "edition": {
+    "title": "Breviarium Romanum, 1961, Mame",
+    "psalterFamily": "VULGATA_GALLICAN",
+    "bibliographicTitle": "Cum textu Psalmorum e Vulgata Bibliorum editione",
+    "approvalVolumeOne": "1961-02-04",
+    "approvalVolumeTwo": "1961-07-08",
+    "url": "https://unavocesevilla.com/LIBROSLITURGICOS/BREVIARIUM%20ROMANUM.1961.pdf",
+    "printedPagesVisible": [
+      0,
+      1,
+      2,
+      3,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131
+    ],
+    "pagesInAvailableScan": 145,
+    "completePsalmAndAdventProperPrintVisible": false
+  },
+  "primaryPrintedOrdinary": {
+    "opening": {
+      "section": 47,
+      "page": 125,
+      "inspected": true
+    },
+    "magnificat": {
+      "section": 50,
+      "page": 126,
+      "inspected": true
+    },
+    "preces": {
+      "section": 51,
+      "pages": [
+        127,
+        129
+      ],
+      "inspected": true
+    },
+    "beforeCollect": {
+      "section": 52,
+      "page": 130,
+      "inspected": true
+    },
+    "concludingDialogue": {
+      "section": 53,
+      "page": 130,
+      "inspected": true,
+      "soloForm": "DOMINE_EXAUDI",
+      "deaconCommonForm": "DOMINUS_VOBISCUM",
+      "previousResearchOmissionCorrected": true
+    },
+    "benedicamusFidelium": {
+      "section": 53,
+      "page": 131,
+      "inspected": true
+    },
+    "noteOnPinnedSource": "Common/Prayers#Dominus has an ambiguous secunda Domine exaudi omittitur note",
+    "sourceNoteNotAuthorityToSuppressSection53": true
+  },
+  "parallelEdition": {
+    "psalterFamily": "PIUS_XII",
+    "bibliographicRecord": "https://www.alcuinus.org/?action=show_item&display=lit_books&id=77872",
+    "notWordForWordPsalterComparator": true
+  },
+  "secondaryWitness": {
+    "title": "Diurnale Romanum, David Siefker 2009",
+    "url": "https://media.musicasacra.com/books/breviarium5x8.pdf",
+    "scope": "Latin Advent I Proper and Saturday Psalm section boundary corroboration",
+    "notPrimary1961TypicalEdition": true
+  },
+  "translationIssues": [
+    {
+      "language": "en",
+      "source": "Tempora/Adv1-0#Oratio",
+      "issue": "Inherited English includes wrathful judgments not present explicitly in Latin",
+      "additionalIssue": "Two Latin ablative absolutes are loosely paraphrased",
+      "independentAnalysis": "https://catholicism.org/whats-in-that-prayer-the-collect-for-the-first-sunday-of-advent.html",
+      "editorialStatus": "NEEDS_QUALIFIED_REVIEW",
+      "automaticReplacement": false
+    },
+    {
+      "language": "fr",
+      "source": "Psalterium/Common/Prayers#Qui vivis",
+      "issue": "Latin cum Deo Patre has no explicit equivalent in inherited French ending",
+      "traditionalFrenchAlternativeConcept": "avec Dieu le Père",
+      "traditionalSource": "https://www.domgueranger.net/lannee-liturgique-le-temps-de-noel-du-14-janvier-a-la-quinquagesime/?lang=fr",
+      "editorialStatus": "NEEDS_QUALIFIED_REVIEW",
+      "automaticReplacement": false
+    }
+  ],
+  "unverified": [
+    "Full 1961 Gallican Advent Proper and Saturday Psalter printed comparison",
+    "Independent English and French translation approval",
+    "Local calendar exceptions",
+    "Publication and source-reuse rights"
+  ],
+  "originalTranslationsChanged": false,
+  "fullHourCertified": false,
+  "translationsApproved": false,
+  "rightsApproved": false,
+  "publishable": false,
+  "published": false
+}

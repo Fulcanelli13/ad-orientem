@@ -1,0 +1,346 @@
+name: Divine Office annual readiness register — no publication
+on:
+  pull_request:
+    paths:
+      - 'src/office/annual-readiness-register.js'
+      - 'src/office/source-section-resolver.js'
+      - 'src/office/at-reference-resolver.js'
+      - 'tests/divine-office-at-reference-resolver.mjs'
+      - 'src/office/mass-host-source-bridge.js'
+      - 'src/office/structured-hour-draft.js'
+      - 'src/office/precedence-review.js'
+      - 'src/office/reviewed-hour-handoff.js'
+      - 'src/office/annual-research-sweep.js'
+      - 'src/office/universal-source-descriptors.js'
+      - 'src/office/temporal-source-leads.js'
+      - 'src/office/conditional-metadata-parser.js'
+      - 'src/office/source-acceptance-slice.js'
+      - 'src/office/advent-first-vespers-source-sequence.js'
+      - 'src/office/advent-vespers-remainder-research.js'
+      - 'src/office/advent-magnificat-source.js'
+      - 'src/office/advent-vespers-chapter-hymn.js'
+      - 'src/office/advent-first-vespers-assembled-research.js'
+      - 'src/office/advent-first-vespers-rubric-plan.js'
+      - 'src/office/advent-first-vespers-universal-commemoration.js'
+      - 'tests/divine-office-advent-first-vespers-universal-commemoration.mjs'
+      - 'data/office/research/advent-i-2026-universal-commemoration.json'
+      - 'src/office/advent-first-vespers-latin-print-anchors.js'
+      - 'src/office/advent-first-vespers-1961-magnificat-lexical-check.js'
+      - 'src/office/advent-first-vespers-saturday-psalm-integrity.js'
+      - 'src/office/advent-i-2026-proper-printed-latin.js'
+      - 'src/office/advent-i-collect-ending-1960-research.js'
+      - 'src/office/advent-first-vespers-preview-model.js'
+      - 'src/office/reader-beta-catalog.js'
+      - 'src/office/saturday-compline-2026-pilot.js'
+      - 'src/office/weekday-compline-psalter-plan.js'
+      - 'src/office/compline-advent-2026-appointments.js'
+      - 'tests/divine-office-advent-i-full-week-compline.mjs'
+      - 'tests/fixtures/office/advent-i-week-compline-*.json'
+      - 'tests/divine-office-weekday-compline-psalter.mjs'
+      - 'tests/fixtures/office/advent-i-feria-iii-compline-*.json'
+      - 'tests/divine-office-saturday-compline-pilot.mjs'
+      - 'tests/fixtures/office/advent-i-saturday-compline-*.json'
+      - 'src/office/reader-beta-parallel-projection.js'
+      - 'tests/divine-office-reader-beta-parallel-projection.mjs'
+      - 'tests/divine-office-reader-beta-catalog.mjs'
+      - 'src/office/advent-first-vespers-reading-focus.js'
+      - 'src/office/advent-first-vespers-preview-session.js'
+      - 'src/office/advent-first-vespers-bounded-preview-reader.js'
+      - 'tests/divine-office-advent-first-vespers-private-preview.mjs'
+      - 'previews/advent-i-first-vespers-2026-research.html'
+      - 'tests/fixtures/office/advent-i-preview-la.json'
+      - 'tests/fixtures/office/advent-i-preview-en.json'
+      - 'tests/fixtures/office/advent-i-preview-fr.json'
+      - 'tests/fixtures/office/advent-i-preview-ordinary.txt'
+      - 'tests/divine-office-advent-i-collect-ending-1960-research.mjs'
+      - 'tests/fixtures/office/advent-i-2026-collect-dialogue-source-sections.json'
+      - 'tests/divine-office-advent-i-proper-printed-latin.mjs'
+      - 'data/office/research/advent-i-2026-proper-full-2009-print.json'
+      - 'data/office/research/advent-i-2026-primary-1961-print-and-translation-audit.json'
+      - 'tests/divine-office-advent-i-1961-primary-witness.mjs'
+      - 'tests/divine-office-advent-first-vespers-saturday-psalm-integrity.mjs'
+      - 'tests/fixtures/office/pinned-latin-psalm143.txt'
+      - 'tests/fixtures/office/pinned-latin-psalm144.txt'
+      - 'data/office/research/advent-i-2026-saturday-psalm-witness.json'
+      - 'tests/divine-office-advent-first-vespers-1961-magnificat-lexical-check.mjs'
+      - 'data/office/research/advent-i-2026-1961-magnificat-print-hashes.json'
+      - 'tests/divine-office-advent-first-vespers-latin-print-anchors.mjs'
+      - 'data/office/research/advent-i-2026-latin-print-anchors.json'
+      - 'tests/divine-office-advent-first-vespers-rubric-plan.mjs'
+      - 'tests/divine-office-advent-first-vespers-assembled-research.mjs'
+      - 'tests/divine-office-advent-vespers-chapter-hymn.mjs'
+      - 'tests/divine-office-advent-magnificat-source.mjs'
+      - 'tests/divine-office-advent-vespers-remainder-research.mjs'
+      - 'tests/divine-office-advent-first-vespers-source-sequence.mjs'
+      - 'tests/divine-office-source-acceptance-slice.mjs'
+      - 'src/office/conditional-source-reader.js'
+      - 'tests/divine-office-conditional-source-reader.mjs'
+      - 'tests/divine-office-temporal-source-leads.mjs'
+      - 'tests/divine-office-conditional-metadata-parser.mjs'
+      - 'tests/divine-office-expanded-temporal-sweep.mjs'
+      - 'src/office/pinned-filename-index.js'
+      - 'tests/divine-office-pinned-filename-index.mjs'
+      - 'data/office/source-index/roman-1960-pinned-latin-filenames.json'
+      - 'tests/divine-office-universal-source-descriptors.mjs'
+      - 'data/office/research/2026-office-pilot-ordo-roster.json'
+      - 'tests/divine-office-research-roster.mjs'
+      - 'scripts/office/sweep-annual-research.mjs'
+      - 'tests/divine-office-reviewed-hour-handoff.mjs'
+      - 'tests/divine-office-annual-research-sweep.mjs'
+      - 'tests/divine-office-precedence-review.mjs'
+      - 'tests/divine-office-mass-bridge-and-hour-draft.mjs'
+      - 'tests/divine-office-source-section-resolver.mjs'
+      - 'src/office/annual-capture-ledger.js'
+      - 'scripts/office/emit-annual-capture-ledger.mjs'
+      - 'tests/divine-office-annual-capture-ledger.mjs'
+      - 'data/office/source-capture-ledgers/**'
+      - 'scripts/office/build-annual-readiness-register.mjs'
+      - 'tests/divine-office-annual-readiness-register.mjs'
+      - '.github/workflows/office-annual-readiness.yml'
+      - 'docs/DIVINE-OFFICE-ANNUAL-RELEASE-REGISTER.md'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  annual-inventory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Compile-time and completeness contracts
+        run: |
+          node --check src/office/annual-readiness-register.js
+          node --check src/office/source-section-resolver.js
+          node --test tests/divine-office-source-section-resolver.mjs
+          node --check src/office/at-reference-resolver.js
+          node --test tests/divine-office-at-reference-resolver.mjs
+          node --check src/office/mass-host-source-bridge.js
+          node --check src/office/structured-hour-draft.js
+          node --test tests/divine-office-mass-bridge-and-hour-draft.mjs
+          node --check src/office/precedence-review.js
+          node --test tests/divine-office-precedence-review.mjs
+          node --check src/office/reviewed-hour-handoff.js
+          node --test tests/divine-office-reviewed-hour-handoff.mjs
+          node --check src/office/annual-research-sweep.js
+          node --check scripts/office/sweep-annual-research.mjs
+          node --test tests/divine-office-annual-research-sweep.mjs
+          node --check src/office/universal-source-descriptors.js
+          node --test tests/divine-office-universal-source-descriptors.mjs
+          node --check src/office/pinned-filename-index.js
+          node --test tests/divine-office-pinned-filename-index.mjs
+          node --check src/office/temporal-source-leads.js
+          node --test tests/divine-office-temporal-source-leads.mjs
+          node --check src/office/conditional-metadata-parser.js
+          node --test tests/divine-office-conditional-metadata-parser.mjs
+          node --check src/office/source-acceptance-slice.js
+          node --test tests/divine-office-source-acceptance-slice.mjs
+          node --check src/office/advent-first-vespers-source-sequence.js
+          node --test tests/divine-office-advent-first-vespers-source-sequence.mjs
+          node --check src/office/advent-vespers-remainder-research.js
+          node --test tests/divine-office-advent-vespers-remainder-research.mjs
+          node --check src/office/advent-magnificat-source.js
+          node --test tests/divine-office-advent-magnificat-source.mjs
+          node --check src/office/advent-vespers-chapter-hymn.js
+          node --test tests/divine-office-advent-vespers-chapter-hymn.mjs
+          node --check src/office/advent-first-vespers-assembled-research.js
+          node --test tests/divine-office-advent-first-vespers-assembled-research.mjs
+          node --check src/office/advent-first-vespers-rubric-plan.js
+          node --test tests/divine-office-advent-first-vespers-rubric-plan.mjs
+          node --check src/office/advent-first-vespers-universal-commemoration.js
+          node --test tests/divine-office-advent-first-vespers-universal-commemoration.mjs
+          node --check src/office/advent-first-vespers-latin-print-anchors.js
+          node --test tests/divine-office-advent-first-vespers-latin-print-anchors.mjs
+          node --check src/office/advent-first-vespers-1961-magnificat-lexical-check.js
+          node --test tests/divine-office-advent-first-vespers-1961-magnificat-lexical-check.mjs
+          node --check src/office/advent-first-vespers-saturday-psalm-integrity.js
+          node --test tests/divine-office-advent-first-vespers-saturday-psalm-integrity.mjs
+          node --check src/office/advent-i-2026-proper-printed-latin.js
+          node --test tests/divine-office-advent-i-proper-printed-latin.mjs
+          node --check src/office/advent-i-collect-ending-1960-research.js
+          node --test tests/divine-office-advent-i-collect-ending-1960-research.mjs
+          node --test tests/divine-office-advent-i-1961-primary-witness.mjs
+          node --check src/office/advent-first-vespers-preview-model.js
+          node --check src/office/reader-beta-catalog.js
+          node --test tests/divine-office-reader-beta-catalog.mjs
+          node --check src/office/saturday-compline-2026-pilot.js
+          node --test tests/divine-office-saturday-compline-pilot.mjs
+          node --check src/office/weekday-compline-psalter-plan.js
+          node --test tests/divine-office-weekday-compline-psalter.mjs
+          node --check src/office/compline-advent-2026-appointments.js
+          node --test tests/divine-office-advent-i-full-week-compline.mjs
+          node --check src/office/reader-beta-parallel-projection.js
+          node --test tests/divine-office-reader-beta-parallel-projection.mjs
+          node --check src/office/advent-first-vespers-reading-focus.js
+          node --check src/office/advent-first-vespers-preview-session.js
+          node --check src/office/advent-first-vespers-bounded-preview-reader.js
+          node --test tests/divine-office-advent-first-vespers-private-preview.mjs
+          node --check src/office/conditional-source-reader.js
+          node --test tests/divine-office-conditional-source-reader.mjs
+          node --test tests/divine-office-expanded-temporal-sweep.mjs
+          node --test tests/divine-office-research-roster.mjs
+          node --check src/office/annual-capture-ledger.js
+          node --check scripts/office/emit-annual-capture-ledger.mjs
+          node --test tests/divine-office-annual-capture-ledger.mjs
+          node --check scripts/office/build-annual-readiness-register.mjs
+          node --test tests/divine-office-annual-readiness-register.mjs
+      - name: Generate 2026 and leap-year 2028 preflight inventories in ephemeral scratch
+        run: |
+          OUT="$RUNNER_TEMP/office-readiness"
+          node scripts/office/build-annual-readiness-register.mjs --year 2026 --out "$OUT"
+          node scripts/office/build-annual-readiness-register.mjs --year 2028 --out "$OUT"
+          OUTPUT="$OUT" node --input-type=module -e '
+            import {readFileSync} from "node:fs";
+            for(const [year,days] of [[2026,365],[2028,366]]){
+              const d=JSON.parse(readFileSync(process.env.OUTPUT+"/"+year+"-office-annual-readiness.json","utf8"));
+              const s=JSON.parse(readFileSync(process.env.OUTPUT+"/"+year+"-office-annual-exceptions.json","utf8"));
+              if(d.rows.length!==days*24||d.summary.planned!==days*24||
+                 d.summary.civilDays!==days||d.summary.rawCaptured!==0||
+                 d.summary.notGenerated!==days*24||
+                 d.summary.liturgicallyCertified!==0||
+                 d.summary.approved!==0||d.summary.published!==0||
+                 d.release.publicRouteEnabled||d.release.canPublish||
+                 s.exceptions.allYearDiscrepanciesActuallyChecked!==false)
+                   throw Error("OFFICE_ANNUAL_INVENTORY_RELEASE_GATES_NOT_SATISFIED");
+              console.log("OFFICE_ANNUAL_INVENTORY_ASSERTIONS",year,days*24,
+                "planned/none approved/none published");
+            }
+          '
+      - name: Execute no-download annual Office selection sweeps
+        run: |
+          set -euo pipefail
+          node scripts/office/sweep-annual-research.mjs \
+            --year 2026 --out "$RUNNER_TEMP/office-selection-2026.json"
+          node scripts/office/sweep-annual-research.mjs \
+            --year 2028 --out "$RUNNER_TEMP/office-selection-2028.json"
+          node --input-type=module -e '
+            import {readFileSync} from "node:fs";
+            for(const [year,days] of [[2026,365],[2028,366]]){
+              const doc=JSON.parse(readFileSync(process.env.RUNNER_TEMP+
+                "/office-selection-"+year+".json","utf8"));
+              if(doc.summary.days!==days||
+                doc.summary.plannedLocaleSlots!==days*8*3||
+                doc.summary.researchCandidateHours!==0||
+                doc.summary.withheldHours!==days*8||
+                doc.summary.proposedFixedSanctoralPaths!==days||
+                doc.summary.proposedAdventTemporalPaths!==(year===2026?26:22)||
+                doc.summary.totalUnverifiedSourcePathLeads!==(year===2026?391:388)||
+                doc.summary.sourceFilesVerifiedByThisSweep!==0||
+                doc.summary.independentlyCertifiedHours!==0||
+                doc.summary.publishedHours!==0||
+                doc.allYearLiturgicalDiscrepanciesActuallyChecked!==false)
+                throw Error("OFFICE_ANNUAL_SWEEP_FABRICATED_COVERAGE");
+            }
+          '
+      - name: Check all civil dates against pinned Latin filenames only
+        run: |
+          set -euo pipefail
+          INDEX="data/office/source-index/roman-1960-pinned-latin-filenames.json"
+          for year in 2026 2028; do
+            node scripts/office/sweep-annual-research.mjs \
+              --year "$year" --source-index "$INDEX" \
+              --out "$RUNNER_TEMP/office-filename-${year}.json"
+          done
+          node --input-type=module -e '
+            import {readFileSync} from "node:fs";
+            for(const [year,total,listed,notListed] of
+                [[2026,391,311,80],[2028,388,307,81]]){
+              const p=process.env.RUNNER_TEMP+"/office-filename-"+year+".json";
+              const doc=JSON.parse(readFileSync(p,"utf8"));
+              const s=doc.summary;
+              if(s.pinnedDirectoryFilenamesIndexed!==1185||
+                 s.totalUnverifiedSourcePathLeads!==total||
+                 s.proposedPathsWithExactPinnedLatinFilename!==listed||
+                 s.proposedPathsWithoutExactPinnedLatinFilename!==notListed||
+                 s.sourceFilesVerifiedByThisSweep!==0||
+                 s.researchCandidateHours!==0||
+                 s.completeTrilingualHours!==0||
+                 s.publishedHours!==0)
+                throw Error("OFFICE_FILENAME_INDEX_CANNOT_CERTIFY_HOURS");
+            }
+          '
+      # No source file contents fetched: GitHub file-name index only.
+      - name: Expanded all-season Temporal research status, no source content
+        run: |
+          set -euo pipefail
+          INDEX="data/office/source-index/roman-1960-pinned-latin-filenames.json"
+          for year in 2026 2028; do
+            node scripts/office/sweep-annual-research.mjs \
+              --year "$year" --source-index "$INDEX" \
+              --temporal expanded \
+              --out "$RUNNER_TEMP/office-temporal-${year}.json"
+          done
+          node --input-type=module -e '
+            import {readFileSync} from "node:fs";
+            for(const [year,days] of [[2026,365],[2028,366]]){
+              const r=JSON.parse(readFileSync(process.env.RUNNER_TEMP+
+                "/office-temporal-"+year+".json","utf8"));
+              const s=r.summary;
+              if(s.days!==days||s.expandedTemporalProposedPaths<200||
+                 s.expandedTemporalProposedPaths!==
+                   s.expandedTemporalListedFilenames+
+                   s.expandedTemporalNotListedFilenames||
+                 s.expandedTemporalSourceDocumentsRead!==0||
+                 s.researchCandidateHours!==0||
+                 s.completeTrilingualHours!==0||
+                 s.independentlyCertifiedHours!==0||
+                 s.publishedHours!==0||
+                 r.allYearLiturgicalDiscrepanciesActuallyChecked!==false)
+                throw Error("OFFICE_TEMPORAL_METADATA_REPORT_INVALID");
+            }
+          '
+      # No annual Office generation, raw downloaded texts or persistent assets.
+      - name: Verify evidence-scoped six-date Office candidate pilot
+        run: |
+          node scripts/office/sweep-annual-research.mjs \
+            --year 2026 \
+            --office-days data/office/research/2026-office-pilot-ordo-roster.json \
+            --out "$RUNNER_TEMP/office-six-date-research-sweep.json"
+          node --input-type=module -e '
+            import {readFileSync} from "node:fs";
+            const d=JSON.parse(readFileSync(process.env.RUNNER_TEMP+
+              "/office-six-date-research-sweep.json","utf8"));
+            if(d.summary.submittedOfficeResearchDays!==6||
+               d.summary.sourceWitnessDays!==6||
+               d.summary.sourceHeadingsObserved!==34||
+               d.summary.researchCandidateHours!==15||
+               d.summary.withheldHours!==2905||
+               d.summary.completeTrilingualHours!==0||
+               d.summary.independentlyCertifiedHours!==0||
+               d.summary.publishedHours!==0||
+               d.allYearLiturgicalDiscrepanciesActuallyChecked!==false)
+              throw Error("OFFICE_RESEARCH_WITNESS_SCOPE_OR_RELEASE_FABRICATED");
+          '
+      # Outputs remain ephemeral runner scratch. No source or report upload.
+      - name: Rehydrate historical 168 verified source hashes from committed metadata ONLY
+        run: |
+          set -euo pipefail
+          LEDGER="data/office/source-capture-ledgers/2026/2026-capture-45.json"
+          node scripts/office/build-annual-readiness-register.mjs \
+            --year 2026 --out "$RUNNER_TEMP/office-from-committed-ledger" \
+            --ledger-file "$LEDGER"
+          node --input-type=module -e '
+            import {readFileSync} from "node:fs";
+            import {validateAnnualCaptureLedger} from "./src/office/annual-capture-ledger.js";
+            const ledger=JSON.parse(readFileSync("data/office/source-capture-ledgers/2026/2026-capture-45.json","utf8"));
+            validateAnnualCaptureLedger(ledger);
+            const out=process.env.RUNNER_TEMP+"/office-from-committed-ledger";
+            const d=JSON.parse(readFileSync(out+"/2026-office-annual-readiness.json","utf8"));
+            const s=d.summary;
+            if(s.rawCaptured!==168||s.notGenerated!==8592||
+               s.datesWithAnyRawEvidence!==7||
+               s.liturgicallyCertified!==0||s.approved!==0||
+               s.published!==0||d.release.publicRouteEnabled||d.release.canPublish)
+              throw Error("OFFICE_COMMITTED_METADATA_PROVENANCE_IMPORT_INVALID");
+            console.log("OFFICE_COMMITTED_LEDGER_VERIFIED",JSON.stringify({
+              immutableBatch:ledger.batchId,
+              metadataOnlyHashes:ledger.verifiedRawSourceCount,
+              recordsSha256:ledger.recordsSha256,
+              annualCapture:s.rawCaptured,unreviewed:s.notGenerated,
+              approved:s.approved,published:s.published
+            }));
+          '
+      # No artifact upload, no public Office route, no scheduled scraping.
