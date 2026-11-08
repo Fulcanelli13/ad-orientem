@@ -1,0 +1,102 @@
+{
+  "schema": "AO_SACRED_ART_PHASE54_EXACT_BYTES_AND_PHOTO_VISUAL_COMPARISON_V1",
+  "checked_at_utc": "2026-11-08",
+  "verified_run": {
+    "id": 42491213226,
+    "url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42491213226",
+    "conclusion": "success",
+    "artifact_id": 13620889586,
+    "artifact_name": "phase52-toulouse-source-photo-review",
+    "artifact_retention_days": 1
+  },
+  "verification": {
+    "downloaded_image_files": 4,
+    "verified_candidate_images": 2,
+    "candidate_sha1_verified": 2,
+    "candidate_dimensions_verified": 2,
+    "selected_original_sha1_verified": 2,
+    "selected_original_dimensions_verified": 2,
+    "source_archive_zip_crc_pass": true,
+    "comparison_contact_sheets_created": 2,
+    "human_review_of_comparison_contact_sheets": true,
+    "detailed_pixel_level_curatorial_review_complete": false,
+    "museum_color_reference_comparison_complete": false,
+    "photographic_replacements_published": 0,
+    "editorial_approvals": 0
+  },
+  "candidates": [
+    {
+      "selection_id": "RECENT575::222",
+      "painting": "Jacques Stella — The Marriage of the Virgin",
+      "museum_inventory": "2004 1 75",
+      "original": {
+        "width": 800,
+        "height": 629,
+        "sha1": "440853277ff4105b0e099678899925ea1033aa2d",
+        "bytes": 202554
+      },
+      "alternative": {
+        "width": 4996,
+        "height": 4005,
+        "sha1": "c030bdd741bccc8cb25f00e6dbd4c826633f415f",
+        "bytes": 14725300,
+        "photographer": "Didier Descouens",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Augustins_-_Le_Mariage_de_la_Vierge_-_Jacques_Stella_Joconde05620000368.jpg",
+        "user_handpicked": false
+      },
+      "resolution_ratio_short_side": 6.37,
+      "reported_relative_aspect_difference": 0.0192,
+      "visual_review": {
+        "level": "REVIEWED_CONTACT_SHEET_NOT_FINAL_CURATION",
+        "composition": "Main figures and architectural background correspond; very similar overall framing",
+        "palette_difference": "Candidate noticeably darker and cooler/greyer. Original brighter and warmer, especially architecture and yellow robe.",
+        "visible_watermark": "NOT_OBSERVED_AT_CONTACT_SHEET_SCALE",
+        "decision": "HOLD_FOR_COLOR_REFERENCE_AND_OWNER_EDITORIAL_SELECTION"
+      },
+      "source_approval": false,
+      "replacement_approved": false
+    },
+    {
+      "selection_id": "RECENT575::220",
+      "painting": "Sébastien Bourdon — Martyrdom of Saint Andrew",
+      "museum_inventory": "2004 1 52",
+      "original": {
+        "width": 677,
+        "height": 800,
+        "sha1": "eec80b075f87be7b9bd3e77cb2177091292a25a3",
+        "bytes": 211217
+      },
+      "alternative": {
+        "width": 5168,
+        "height": 6037,
+        "sha1": "45ddc99bb7a98ac16fa6b0fb8c936c66c5932c92",
+        "bytes": 25498292,
+        "photographer": "Didier Descouens",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Augustins_-_Le_Martyre_de_Saint_Andr%C3%A9_-_S%C3%A9bastien_Bourdon_2004_1_52.jpg",
+        "user_handpicked": false
+      },
+      "resolution_ratio_short_side": 7.63,
+      "reported_relative_aspect_difference": 0.0116,
+      "visual_review": {
+        "level": "REVIEWED_CONTACT_SHEET_NOT_FINAL_CURATION",
+        "composition": "Both show full central martyrdom scene and surrounding figures; framing close",
+        "palette_difference": "Candidate cool blue-grey sky and shadows; selected original has stronger golden/orange cast.",
+        "visible_watermark": "NOT_OBSERVED_AT_CONTACT_SHEET_SCALE",
+        "decision": "HOLD_FOR_COLOR_REFERENCE_AND_OWNER_EDITORIAL_SELECTION"
+      },
+      "source_approval": false,
+      "replacement_approved": false
+    }
+  ],
+  "source_provenance": "GitHub Actions verified source SHA1/dimensions and exported original & alternative JPEGs. The reviewer independently confirmed ZIP CRC and sha1/dimension/byte parity in current working container; visual comparison uses provided original/candidate contact sheets.",
+  "publication_guards": [
+    "No auto admission of unhandpicked Commons images",
+    "No replacing handpicked selected photo without explicit owner approval",
+    "Photograph identity, source license, photographic quality and editorial placement are distinct",
+    "Preserve all 1,599 rejected research records",
+    "No public Home/Calendar/Prayer assignments changed"
+  ],
+  "next_gate": "Consult official museum color reproduction for fidelity; obtain explicit editorial selection if an unhandpicked Commons candidate is proposed as substitute."
+}
