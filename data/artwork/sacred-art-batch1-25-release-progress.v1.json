@@ -1,0 +1,478 @@
+{
+  "schema": "AO_SACRED_ART_BATCH01_25_RELEASE_PROGRESS_V1",
+  "asOf": "2026-11-08",
+  "purpose": "Operational Batch 1 ledger: 16 already-released module photos plus 9 high-reuse artworks queued for separate lawful source-photo release, NOT 25 newly published artworks.",
+  "actualAppReleaseAuthority": "src/art/released-module-paintings.v1.js",
+  "proposedBatchTarget": 25,
+  "counts": {
+    "previouslyReleasedPhotoEntries": 16,
+    "priorReleasedPaintingIdsNotPhysicalDedupe": 16,
+    "photoCandidatesInNextNine": 9,
+    "totalBatchWorkItems": 25,
+    "newlyReleasedInThisChange": 0,
+    "unreleasedNewWorks": 9,
+    "publishedArtworkUrlCensusNotEstablished": true,
+    "approvedSourcePhotosInSeparateNovember2Review": 25,
+    "approvedSourcePhotosAutoPublished": 0,
+    "nineQueueTotalApprovedPrayerPositions": 41
+  },
+  "baselineProvenance": {
+    "releasedPhotoRegistry": "src/art/released-module-paintings.v1.js",
+    "prayerEditorialMaster": "data/prayer/artwork-editorial-20261101/curatorial-master-267-20261101.v1.json",
+    "prayerSlotArchiveCrosswalk": "data/prayer/artwork-editorial-20261101/gallery-archive-crosswalk-267-20261103.v1.json",
+    "separate60PhotoOwnerDecisions": "data/calendar/sacred-art-2026-batch01-60-exact-photo-owner-decisions-20261102.v1.json"
+  },
+  "constraints": [
+    "Only previously released exact source photos may appear in the new app gallery",
+    "No research 989 group may be treated as a release permission",
+    "The separate 25 source-photo approvals require their own original file QA and app publication clearance",
+    "Never reopen 1,599 rejected sources or five protected Prayer covers",
+    "Existing 1962 date/place locks are unaffected",
+    "No remote Commons unhandpicked image promotion",
+    "Main/Home/Prayer releases still require CI and GitHub Pages verification"
+  ],
+  "productionAlreadyReleased": [
+    {
+      "id": "released-photo:angelus",
+      "moduleId": "angelus",
+      "title": "The Annunciation",
+      "artist": "Philippe de Champaigne",
+      "source": "https://www.metmuseum.org/art/collection/search/438724",
+      "localImage": "assets/home/c3-approved-met/angelus-frameless.webp",
+      "rights": "Met Open Access · public domain (CC0)",
+      "releasePr": 2277,
+      "state": "PREVIOUSLY_RELEASED_PHOTOGRAPH",
+      "publiclyRenderEligibleNow": true,
+      "newPhotoRelease": false
+    },
+    {
+      "id": "released-photo:adoration",
+      "moduleId": "adoration",
+      "title": "The Virgin Adoring the Host",
+      "artist": "Jean Auguste Dominique Ingres",
+      "source": "https://www.metmuseum.org/art/collection/search/438434",
+      "localImage": "assets/home/c3-approved-met/adoration-frameless.webp",
+      "rights": "Met Open Access · public domain (CC0)",
+      "releasePr": 2277,
+      "state": "PREVIOUSLY_RELEASED_PHOTOGRAPH",
+      "publiclyRenderEligibleNow": true,
+      "newPhotoRelease": false
+    },
+    {
+      "id": "released-photo:confession",
+      "moduleId": "confession",
+      "title": "The Return of the Prodigal Son",
+      "artist": "Bartolomé Esteban Murillo",
+      "source": "https://www.nga.gov/artworks/34956-return-prodigal-son",
+      "localImage": "assets/prayer/released/confession-murillo-nga-original.jpg",
+      "rights": "National Gallery of Art Open Access · public domain (CC0)",
+      "releasePr": 2293,
+      "state": "PREVIOUSLY_RELEASED_PHOTOGRAPH",
+      "publiclyRenderEligibleNow": true,
+      "newPhotoRelease": false
+    },
+    {
+      "id": "released-photo:joseph",
+      "moduleId": "joseph",
+      "title": "The Dream of Saint Joseph",
+      "artist": "Philippe de Champaigne",
+      "source": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_(1602-1674)_-_The_Dream_of_Saint_Joseph_-_NG6276_-_National_Gallery.jpg",
+      "localImage": "assets/prayer/released/joseph-whole-original.jpg",
+      "rights": "Wikimedia Commons PD-Art · faithful public-domain reproduction; local jurisdiction may vary",
+      "releasePr": 2296,
+      "state": "PREVIOUSLY_RELEASED_PHOTOGRAPH",
+      "publiclyRenderEligibleNow": true,
+      "newPhotoRelease": false
+    },
+    {
+      "id": "released-photo:regina",
+      "moduleId": "regina",
+      "title": "Resurrection of Christ (central panel)",
+      "artist": "Peter Paul Rubens",
+      "source": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_Resurrection_of_Christ_triptych_(central_panel).jpg",
+      "localImage": "assets/prayer/released/regina-whole-original.jpg",
+      "rights": "Wikimedia Commons PD-Art · faithful public-domain reproduction; local jurisdiction may vary",
+      "releasePr": 2296,
+      "state": "PREVIOUSLY_RELEASED_PHOTOGRAPH",
+      "publiclyRenderEligibleNow": true,
+      "newPhotoRelease": false
+    },
+    {
+      "id": "released-photo:souls",
+      "moduleId": "souls",
+      "title": "Madonna and Child with Souls in Purgatory",
+      "artist": "Luca Giordano",
+      "source": "https://commons.wikimedia.org/wiki/File:Luca_Giordano_-_Madonna_and_Child_with_Souls_in_Purgatory_-_BF.2004.1_-_Museum_of_Fine_Arts.jpg",
+      "localImage": "assets/prayer/released/souls-whole-original.jpg",
+      "rights": "Wikimedia Commons PD-Art · faithful public-domain reproduction; local jurisdiction may vary",
+      "releasePr": 2296,
+      "state": "PREVIOUSLY_RELEASED_PHOTOGRAPH",
+      "publiclyRenderEligibleNow": true,
+      "newPhotoRelease": false
+    },
+    {
+      "id": "released-photo:visit",
+      "moduleId": "visit",
+      "title": "The Adoration of the Shepherds",
+      "artist": "Gerrit van Honthorst",
+      "source": "https://commons.wikimedia.org/wiki/File:Adoration_of_the_shepherds,_by_Gerard_van_Honthorst.jpg",
+      "localImage": "assets/prayer/released/visit-whole-original.jpg",
+      "rights": "Wikimedia Commons PD-Art · faithful public-domain reproduction; local jurisdiction may vary",
+      "releasePr": 2296,
+      "state": "PREVIOUSLY_RELEASED_PHOTOGRAPH",
+      "publiclyRenderEligibleNow": true,
+      "newPhotoRelease": false
+    },
+    {
+      "id": "released-photo:heart-jesus",
+      "moduleId": "heart-jesus",
+      "title": "The Heart of Jesus",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "source": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+      "localImage": "assets/prayer/released/heart-jesus-full-original.jpg",
+      "rights": "Wikimedia Commons PD-Art · faithful public-domain reproduction; local jurisdiction may vary",
+      "releasePr": 2302,
+      "state": "PREVIOUSLY_RELEASED_PHOTOGRAPH",
+      "publiclyRenderEligibleNow": true,
+      "newPhotoRelease": false
+    },
+    {
+      "id": "released-photo:heart-mary",
+      "moduleId": "heart-mary",
+      "title": "The Heart of Mary",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "source": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Mary_-_Google_Art_Project.jpg",
+      "localImage": "assets/prayer/released/heart-mary-full-original.jpg",
+      "rights": "Wikimedia Commons PD-Art · faithful public-domain reproduction; local jurisdiction may vary",
+      "releasePr": 2302,
+      "state": "PREVIOUSLY_RELEASED_PHOTOGRAPH",
+      "publiclyRenderEligibleNow": true,
+      "newPhotoRelease": false
+    },
+    {
+      "id": "released-photo:king",
+      "moduleId": "king",
+      "title": "Salvator Mundi",
+      "artist": "Ambrosius Benson",
+      "source": "https://commons.wikimedia.org/wiki/File:Ambrosius_Benson_-_Salvator_Mundi.jpeg",
+      "localImage": "assets/prayer/released/king-full-original.jpg",
+      "rights": "Wikimedia Commons PD-Art · faithful public-domain reproduction; local jurisdiction may vary",
+      "releasePr": 2302,
+      "state": "PREVIOUSLY_RELEASED_PHOTOGRAPH",
+      "publiclyRenderEligibleNow": true,
+      "newPhotoRelease": false
+    },
+    {
+      "id": "released-photo:bouts",
+      "moduleId": "bouts",
+      "title": "The Annunciation",
+      "artist": "Albert Bouts",
+      "source": "https://clevelandart.org/art/1942.635",
+      "localImage": "assets/prayer/released/bouts-annunciation-original.jpg",
+      "rights": "The Cleveland Museum of Art Open Access · CC0",
+      "releasePr": 2340,
+      "state": "PREVIOUSLY_RELEASED_PHOTOGRAPH",
+      "publiclyRenderEligibleNow": true,
+      "newPhotoRelease": false
+    },
+    {
+      "id": "released-photo:cavallino",
+      "moduleId": "cavallino",
+      "title": "Adoration of the Shepherds",
+      "artist": "Bernardo Cavallino",
+      "source": "https://clevelandart.org/art/1968.100",
+      "localImage": "assets/prayer/released/cavallino-shepherds-original.jpg",
+      "rights": "The Cleveland Museum of Art Open Access · CC0",
+      "releasePr": 2340,
+      "state": "PREVIOUSLY_RELEASED_PHOTOGRAPH",
+      "publiclyRenderEligibleNow": true,
+      "newPhotoRelease": false
+    },
+    {
+      "id": "released-photo:girardin",
+      "moduleId": "girardin",
+      "title": "The Trinity",
+      "artist": "Laurent Girardin",
+      "source": "https://clevelandart.org/art/1960.79",
+      "localImage": "assets/prayer/released/girardin-trinity-original.jpg",
+      "rights": "The Cleveland Museum of Art Open Access · CC0",
+      "releasePr": 2340,
+      "state": "PREVIOUSLY_RELEASED_PHOTOGRAPH",
+      "publiclyRenderEligibleNow": true,
+      "newPhotoRelease": false
+    },
+    {
+      "id": "released-photo:hondius",
+      "moduleId": "hondius",
+      "title": "Christ among the Doctors",
+      "artist": "Abraham Hondius",
+      "source": "https://www.metmuseum.org/art/collection/search/436672",
+      "localImage": "assets/prayer/released/hondius-doctors-original.jpg",
+      "rights": "The Metropolitan Museum of Art Open Access · public domain (CC0)",
+      "releasePr": 2340,
+      "state": "PREVIOUSLY_RELEASED_PHOTOGRAPH",
+      "publiclyRenderEligibleNow": true,
+      "newPhotoRelease": false
+    },
+    {
+      "id": "released-photo:latour",
+      "moduleId": "latour",
+      "title": "The Penitent Magdalen",
+      "artist": "Georges de La Tour",
+      "source": "https://www.metmuseum.org/art/collection/search/436839",
+      "localImage": "assets/prayer/released/latour-penitent-magdalen-frameless.jpg",
+      "rights": "The Metropolitan Museum of Art Open Access · public domain (CC0)",
+      "releasePr": 2354,
+      "state": "PREVIOUSLY_RELEASED_PHOTOGRAPH",
+      "publiclyRenderEligibleNow": true,
+      "newPhotoRelease": false
+    },
+    {
+      "id": "released-photo:giordano-flight",
+      "moduleId": "giordano-flight",
+      "title": "The Flight into Egypt",
+      "artist": "Luca Giordano",
+      "source": "https://www.metmuseum.org/art/collection/search/436503",
+      "localImage": "assets/prayer/released/giordano-flight-egypt-frameless.jpg",
+      "rights": "The Metropolitan Museum of Art Open Access · public domain (CC0)",
+      "releasePr": 2354,
+      "state": "PREVIOUSLY_RELEASED_PHOTOGRAPH",
+      "publiclyRenderEligibleNow": true,
+      "newPhotoRelease": false
+    }
+  ],
+  "nextNineSourcePhotographWorkQueue": [
+    {
+      "queueRank": 1,
+      "id": "artwork-pending:01",
+      "title": "The Crucifixion",
+      "artistAsEditorialMaster": "Sodoma (Italian, 1477–1549)",
+      "sourcePage": "https://clevelandart.org/art/1916.786",
+      "knownSelectedSlotCount": 9,
+      "selectedSlotIds": [
+        "STG-pray.five_wounds-02",
+        "STG-pray.five_wounds-03",
+        "COV-pray.stations",
+        "COV-pray.seven_words",
+        "STG-pray.seven_words-01",
+        "STG-pray.seven_words-02",
+        "STG-pray.seven_words-04",
+        "STG-pray.seven_words-05",
+        "STG-pray.tenebrae-02"
+      ],
+      "priorPhotoArchivePresent": false,
+      "museumAttributionCaution": "INSTITUTIONAL_ATTRIBUTION_DIFFERS_FROM_MASTER",
+      "sourceGroupCandidates": [
+        "CANONICAL::cma-97147"
+      ],
+      "state": "APPROVED_WORK_ASSIGNED_TO_EXISTING_PRAYER_SLOTS_PHOTO_PENDING",
+      "explicitlyNotReleaseApproved": true,
+      "appImage": null,
+      "blockers": [
+        "EXACT_PHOTO_RIGHTS_QA_AND_VISUAL_CHECK_PENDING",
+        "INSTITUTIONAL_ATTRIBUTION_DIFFERS_FROM_MASTER"
+      ]
+    },
+    {
+      "queueRank": 2,
+      "id": "artwork-pending:02",
+      "title": "Saint Teresa of Avila Interceding for Souls in Purgatory",
+      "artistAsEditorialMaster": "Peter Paul Rubens",
+      "sourcePage": "https://www.metmuseum.org/art/collection/search/437542",
+      "knownSelectedSlotCount": 6,
+      "selectedSlotIds": [
+        "COV-novena.holy_souls",
+        "STG-novena.holy_souls-01",
+        "COV-foundations_eternal_rest",
+        "COV-dead_de_profundis",
+        "COV-dead_fidelium_deus",
+        "STG-pray.penitential_psalms-06"
+      ],
+      "priorPhotoArchivePresent": false,
+      "museumAttributionCaution": "INSTITUTIONAL_ATTRIBUTION_DIFFERS_FROM_MASTER",
+      "sourceGroupCandidates": [
+        "CANONICAL::met-437542"
+      ],
+      "state": "APPROVED_WORK_ASSIGNED_TO_EXISTING_PRAYER_SLOTS_PHOTO_PENDING",
+      "explicitlyNotReleaseApproved": true,
+      "appImage": null,
+      "blockers": [
+        "EXACT_PHOTO_RIGHTS_QA_AND_VISUAL_CHECK_PENDING",
+        "INSTITUTIONAL_ATTRIBUTION_DIFFERS_FROM_MASTER"
+      ]
+    },
+    {
+      "queueRank": 3,
+      "id": "artwork-pending:03",
+      "title": "Pentecost",
+      "artistAsEditorialMaster": "Mateo Cerezo",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Mateo_cerezo-la_venida_del_espiritu_santo.JPG",
+      "knownSelectedSlotCount": 5,
+      "selectedSlotIds": [
+        "HERO-14",
+        "COV-sacrament_come_holy_spirit",
+        "STG-pray.rosary-14",
+        "COV-novena.holy_ghost",
+        "STG-novena.holy_ghost-01"
+      ],
+      "priorPhotoArchivePresent": false,
+      "museumAttributionCaution": null,
+      "sourceGroupCandidates": [],
+      "state": "APPROVED_WORK_ASSIGNED_TO_EXISTING_PRAYER_SLOTS_PHOTO_PENDING",
+      "explicitlyNotReleaseApproved": true,
+      "appImage": null,
+      "blockers": [
+        "EXACT_PHOTO_RIGHTS_QA_AND_VISUAL_CHECK_PENDING"
+      ]
+    },
+    {
+      "queueRank": 4,
+      "id": "artwork-pending:04",
+      "title": "Agony in the Garden — Antwerp Rosary cycle",
+      "artistAsEditorialMaster": "David Teniers the Elder",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:David_Teniers_the_Elder_-_The_Agony_in_the_Garden.jpg",
+      "knownSelectedSlotCount": 4,
+      "selectedSlotIds": [
+        "HERO-06",
+        "STG-pray.rosary-07",
+        "STG-pray.precious_blood-02",
+        "STG-pray.tenebrae-01"
+      ],
+      "priorPhotoArchivePresent": false,
+      "museumAttributionCaution": null,
+      "sourceGroupCandidates": [
+        "CANONICAL::ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle"
+      ],
+      "state": "APPROVED_WORK_ASSIGNED_TO_EXISTING_PRAYER_SLOTS_PHOTO_PENDING",
+      "explicitlyNotReleaseApproved": true,
+      "appImage": null,
+      "blockers": [
+        "EXACT_PHOTO_RIGHTS_QA_AND_VISUAL_CHECK_PENDING"
+      ]
+    },
+    {
+      "queueRank": 5,
+      "id": "artwork-pending:05",
+      "title": "Presentation of Jesus at the Temple",
+      "artistAsEditorialMaster": "Philippe de Champaigne",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Philippe%20de%20Champaigne-Pr%C3%A9sentation%20au%20temple.jpg",
+      "knownSelectedSlotCount": 4,
+      "selectedSlotIds": [
+        "HERO-04",
+        "STG-pray.rosary-05",
+        "STG-prayer.seven_sorrows_chaplet-01",
+        "STG-pray.st_joseph_seven_sorrows-04"
+      ],
+      "priorPhotoArchivePresent": false,
+      "museumAttributionCaution": null,
+      "sourceGroupCandidates": [
+        "CANONICAL::ART-hilippe-de-hampaigne-resentation-of-esus-at-the-emple"
+      ],
+      "state": "APPROVED_WORK_ASSIGNED_TO_EXISTING_PRAYER_SLOTS_PHOTO_PENDING",
+      "explicitlyNotReleaseApproved": true,
+      "appImage": null,
+      "blockers": [
+        "EXACT_PHOTO_RIGHTS_QA_AND_VISUAL_CHECK_PENDING"
+      ]
+    },
+    {
+      "queueRank": 6,
+      "id": "artwork-pending:06",
+      "title": "Saint Thomas Aquinas",
+      "artistAsEditorialMaster": "Carlo Crivelli",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Saint_Thomas_Aquinas_(Crivelli%2C_15th-century).jpg",
+      "knownSelectedSlotCount": 4,
+      "selectedSlotIds": [
+        "COV-benediction_o_salutaris",
+        "COV-benediction_tantum_ergo",
+        "STG-pray.benediction-02",
+        "STG-pray.litany_saints-05"
+      ],
+      "priorPhotoArchivePresent": false,
+      "museumAttributionCaution": null,
+      "sourceGroupCandidates": [
+        "CANONICAL::ART-arlo-rivelli-aint-homas-quinas"
+      ],
+      "state": "APPROVED_WORK_ASSIGNED_TO_EXISTING_PRAYER_SLOTS_PHOTO_PENDING",
+      "explicitlyNotReleaseApproved": true,
+      "appImage": null,
+      "blockers": [
+        "EXACT_PHOTO_RIGHTS_QA_AND_VISUAL_CHECK_PENDING"
+      ]
+    },
+    {
+      "queueRank": 7,
+      "id": "artwork-pending:07",
+      "title": "Adoration of the Mystic Lamb",
+      "artistAsEditorialMaster": "Hubert and Jan van Eyck",
+      "sourcePage": null,
+      "knownSelectedSlotCount": 3,
+      "selectedSlotIds": [
+        "STG-pray.benediction-04",
+        "COV-pray.litany_saints",
+        "STG-pray.litany_saints-06"
+      ],
+      "priorPhotoArchivePresent": false,
+      "museumAttributionCaution": null,
+      "sourceGroupCandidates": [
+        "PRAYER::saints--vaneyck"
+      ],
+      "state": "APPROVED_WORK_ASSIGNED_TO_EXISTING_PRAYER_SLOTS_PHOTO_PENDING",
+      "explicitlyNotReleaseApproved": true,
+      "appImage": null,
+      "blockers": [
+        "EXACT_PHOTO_RIGHTS_QA_AND_VISUAL_CHECK_PENDING",
+        "NO_EXACT_SOURCE_PAGE_IN_SLOT"
+      ]
+    },
+    {
+      "queueRank": 8,
+      "id": "artwork-pending:08",
+      "title": "Archangel Michael Defeating Satan",
+      "artistAsEditorialMaster": "Guido Reni",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:GuidoReni_MichaelDefeatsSatan.jpg",
+      "knownSelectedSlotCount": 3,
+      "selectedSlotIds": [
+        "COV-novena.st_michael",
+        "COV-mass_devotion_leonine",
+        "COV-devotion_prayer_st_michael"
+      ],
+      "priorPhotoArchivePresent": true,
+      "museumAttributionCaution": null,
+      "sourceGroupCandidates": [
+        "CANONICAL::ART-uido-eni-rchangel-ichael-efeating-atan"
+      ],
+      "state": "APPROVED_WORK_ASSIGNED_TO_EXISTING_PRAYER_SLOTS_PHOTO_PENDING",
+      "explicitlyNotReleaseApproved": true,
+      "appImage": null,
+      "blockers": [
+        "EXACT_PHOTO_RIGHTS_QA_AND_VISUAL_CHECK_PENDING"
+      ]
+    },
+    {
+      "queueRank": 9,
+      "id": "artwork-pending:09",
+      "title": "Miracle of Loaves and Fishes",
+      "artistAsEditorialMaster": "Giovanni Lanfranco",
+      "sourcePage": "https://commons.wikimedia.org/wiki/File:Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg",
+      "knownSelectedSlotCount": 3,
+      "selectedSlotIds": [
+        "COV-foundations_our_father",
+        "COV-foundations_grace_before_meals",
+        "COV-foundations_grace_after_meals"
+      ],
+      "priorPhotoArchivePresent": false,
+      "museumAttributionCaution": null,
+      "sourceGroupCandidates": [
+        "PRAYER::historic:giovanni lanfranco:miracle of loaves and fishes",
+        "CANONICAL::ART-iovanni-anfranco-iracle-of-oaves-and-ishes"
+      ],
+      "state": "APPROVED_WORK_ASSIGNED_TO_EXISTING_PRAYER_SLOTS_PHOTO_PENDING",
+      "explicitlyNotReleaseApproved": true,
+      "appImage": null,
+      "blockers": [
+        "EXACT_PHOTO_RIGHTS_QA_AND_VISUAL_CHECK_PENDING"
+      ]
+    }
+  ]
+}

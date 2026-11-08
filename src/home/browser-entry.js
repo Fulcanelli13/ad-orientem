@@ -1,7 +1,7 @@
 import { openMassTextsSheet } from "../mass/mass-texts-sheet.js";
 import { ensureLearnModule } from "../learn/lazy-module-registry.js";
 import { verifiedH4WeekColour } from "./today-h4-view.js";
-import { selectC3PrayerSlide,showC3ArtInfo,closeC3ArtInfo } from "./c3-gallery.js";
+import { selectC3PrayerSlide,showC3ArtInfo,closeC3ArtInfo,openC3ReleasedArtGallery,stepC3ReleasedArtGallery,returnFromC3ReleasedArtGallery } from "./c3-gallery.js";
 import { openH4ChoicesSheet,closeH4ChoicesSheet } from "./today-h4-change-sheet.js";
 import { HOME_PRESENTATION_VERSION, renderHome, reconcileTodayHero } from "./presentation.js";
 import { loadSharedSanctoralReadModel } from "../calendar/living-sanctoral-read-model.js";
@@ -395,6 +395,26 @@ export function createHomeOwner(win=globalThis){
       const index=Number(c3Step.dataset.homeC3PrayerStep);
       if(selectC3PrayerSlide(root(win),index))c3PrayerIndex=index;
       return;
+    }
+    const c3GalleryOpen=target?.closest?.("[data-home-c3-gallery-open]");
+    if(c3GalleryOpen){
+      event.preventDefault?.();event.stopImmediatePropagation?.();
+      openC3ReleasedArtGallery(root(win));return;
+    }
+    const c3GalleryPrevious=target?.closest?.("[data-home-c3-gallery-prev]");
+    if(c3GalleryPrevious){
+      event.preventDefault?.();event.stopImmediatePropagation?.();
+      stepC3ReleasedArtGallery(root(win),-1);return;
+    }
+    const c3GalleryNext=target?.closest?.("[data-home-c3-gallery-next]");
+    if(c3GalleryNext){
+      event.preventDefault?.();event.stopImmediatePropagation?.();
+      stepC3ReleasedArtGallery(root(win),1);return;
+    }
+    const c3GalleryBack=target?.closest?.("[data-home-c3-gallery-back]");
+    if(c3GalleryBack){
+      event.preventDefault?.();event.stopImmediatePropagation?.();
+      returnFromC3ReleasedArtGallery(root(win));return;
     }
     const c3Info=target?.closest?.("[data-home-c3-info]");
     if(c3Info){

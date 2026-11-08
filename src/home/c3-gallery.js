@@ -1,6 +1,7 @@
 // C3 Living Gallery. Canonical Home routes and 1962 Calendar remain authoritative.
 import { APPROVED_CLASS_I_2026 } from "../calendar/approved-class-i-heroes-2026.js";
 import { RELEASED_MODULE_PAINTINGS } from "../art/released-module-paintings.v1.js";
+import { SACRED_ART_RELEASED_GALLERY_V1, releasedGalleryAt, releasedGalleryBySource } from "../art/released-gallery-batch1.v1.js";
 import { releasedDateGospelHero2026 } from "./released-date-gospel-heroes-2026.js";
 import {approved2026HomeArtwork} from "./approved-dated-artwork-2026.js";
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -210,17 +211,85 @@ export function hydrateC3Art(root,state,win=globalThis){
   }
   return true;
 }
+function paintC3ArtInfoDialog(dlg,artwork){
+  if(!artwork||!dlg?.querySelector)return false;
+  const title=dlg.querySelector("[data-c3-art-title]");
+  const metadata=dlg.querySelector("[data-c3-art-meta]");
+  const image=dlg.querySelector("[data-c3-art-image]");
+  const source=dlg.querySelector("[data-c3-art-source]");
+  if(!title||!metadata||!image||!source)return false;
+  title.textContent=artwork.title;
+  metadata.textContent=[artwork.artist,artwork.date,artwork.rights].filter(Boolean).join(" · ");
+  image.src=artwork.image;
+  image.alt=artwork.artist+" — "+artwork.title;
+  source.href=artwork.source;
+  return true;
+}
+const releaseGalleryDialog=root=>root?.querySelector?.("[data-home-c3-art-dialog]")??null;
+function showReleasedGalleryIndex(dlg,index){
+  const entry=releasedGalleryAt(index);
+  if(!dlg?.open||!entry)return false;
+  if(!paintC3ArtInfoDialog(dlg,{
+    title:entry.title,artist:entry.artist,date:"",rights:entry.rights,
+    image:entry.image,source:entry.source
+  }))return false;
+  dlg.__c3GalleryIndex=index;
+  const nav=dlg.querySelector("[data-home-c3-gallery-nav]");
+  if(nav)nav.hidden=false;
+  const launcher=dlg.querySelector("[data-home-c3-gallery-launcher]");
+  if(launcher)launcher.hidden=true;
+  const counter=dlg.querySelector("[data-home-c3-gallery-counter]");
+  if(counter)counter.textContent=(index+1)+" / "+SACRED_ART_RELEASED_GALLERY_V1.length;
+  return true;
+}
 export function showC3ArtInfo(root,button){
-  const a=button?.__c3Artwork,dlg=root?.querySelector?.("[data-home-c3-art-dialog]");
+  const a=button?.__c3Artwork,dlg=releaseGalleryDialog(root);
   if(!a||!dlg?.showModal)return false;
-  dlg.querySelector("[data-c3-art-title]").textContent=a.title;
-  dlg.querySelector("[data-c3-art-meta]").textContent=[a.artist,a.date,a.rights].filter(Boolean).join(" · ");
-  const image=dlg.querySelector("[data-c3-art-image]");image.src=a.image;image.alt=a.artist+" — "+a.title;
-  dlg.querySelector("[data-c3-art-source]").href=a.source;
+  if(!paintC3ArtInfoDialog(dlg,a))return false;
+  dlg.__c3OriginalArtwork=a;
+  dlg.__c3GalleryIndex=null;
+  const launcher=dlg.querySelector("[data-home-c3-gallery-launcher]");
+  if(launcher)launcher.hidden=SACRED_ART_RELEASED_GALLERY_V1.length===0;
+  const nav=dlg.querySelector("[data-home-c3-gallery-nav]");
+  if(nav)nav.hidden=true;
   if(!dlg.open)dlg.showModal();
   return true;
 }
+/** Gallery browsing is a deliberate action inside the existing artwork info
+ * dialog. It reuses already-released photograph bytes, never candidate work.
+ */
+export function openC3ReleasedArtGallery(root){
+  const dlg=releaseGalleryDialog(root);
+  if(!dlg?.open||!dlg.__c3OriginalArtwork||SACRED_ART_RELEASED_GALLERY_V1.length===0)return false;
+  const prior=releasedGalleryBySource(dlg.__c3OriginalArtwork.source);
+  const index=prior?SACRED_ART_RELEASED_GALLERY_V1.findIndex(entry=>entry.id===prior.id):0;
+  return showReleasedGalleryIndex(dlg,index);
+}
+export function stepC3ReleasedArtGallery(root,direction){
+  const dlg=releaseGalleryDialog(root);
+  if(!dlg?.open||!Number.isInteger(dlg.__c3GalleryIndex)||
+     !Number.isInteger(direction)||![1,-1].includes(direction)||
+     SACRED_ART_RELEASED_GALLERY_V1.length===0)return false;
+  const next=(dlg.__c3GalleryIndex+direction+SACRED_ART_RELEASED_GALLERY_V1.length)%SACRED_ART_RELEASED_GALLERY_V1.length;
+  return showReleasedGalleryIndex(dlg,next);
+}
+export function returnFromC3ReleasedArtGallery(root){
+  const dlg=releaseGalleryDialog(root);
+  if(!dlg?.open||!dlg.__c3OriginalArtwork||
+     !Number.isInteger(dlg.__c3GalleryIndex))return false;
+  if(!paintC3ArtInfoDialog(dlg,dlg.__c3OriginalArtwork))return false;
+  dlg.__c3GalleryIndex=null;
+  const nav=dlg.querySelector("[data-home-c3-gallery-nav]");
+  if(nav)nav.hidden=true;
+  const launcher=dlg.querySelector("[data-home-c3-gallery-launcher]");
+  if(launcher)launcher.hidden=false;
+  return true;
+}
 export function closeC3ArtInfo(root){
-  const dlg=root?.querySelector?.("[data-home-c3-art-dialog]");
-  if(!dlg?.open)return false;dlg.close();return true;
+  const dlg=releaseGalleryDialog(root);
+  if(!dlg?.open)return false;
+  dlg.close();
+  dlg.__c3OriginalArtwork=null;
+  dlg.__c3GalleryIndex=null;
+  return true;
 }
