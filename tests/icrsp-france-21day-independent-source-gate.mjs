@@ -119,7 +119,7 @@ const stub=(id)=>({lat:"Sample Latin for source-check testing only",
  liturgicalPurpose:id,
  ordoOrationId:id});
 for(const day of [9,10,15,23,29]){
- const e=ledger.entries.find(x=>x.date.endsWith("-"+day)),order=e.sourceClaim.sourceOrder;
+ const e=ledger.entries.find(x=>x.date.endsWith("-"+String(day).padStart(2,"0"))),order=e.sourceClaim.sourceOrder;
  const proper=Object.fromEntries(["collects","secrets","postcommunions"].map(k=>
   [k,order.map(id=>stub(id))]));
  const completeButUnauthorized=assessIndependentOrdoSourceClaim({
