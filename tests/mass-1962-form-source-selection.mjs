@@ -83,6 +83,97 @@ for(const [date,mainPath,mainId,mainRank,commPath,commId,commRank,scope] of priv
   }
 }
 
+// 19 March (St Joseph) and 25 March (Annunciation), 2026: the
+// III-class Lent / Passiontide feria is a privileged commemoration even
+// when the universal I-class Sanctoral feast takes the Mass.
+for(const [date,mainPath,commPath] of [
+  ["2026-03-19","Sancti/03-19","Tempora/Quad4-4"],
+  ["2026-03-25","Sancti/03-25","Tempora/Quad5-3"],
+]){
+  const mainId="sancti:"+mainPath.slice(-5)+":1:w";
+  const commId="tempora:"+commPath.slice("Tempora/".length)+":3:v";
+  const source={...base,sourcePath:mainPath,
+    calendarCommemorations:[{path:commPath,prayerSourcePath:commPath,name:"Lenten feria"}]};
+  const witness={...day,date,day:{
+    main:{id:mainId,rank:1,path:mainPath,title:"I-class feast"},
+    commemorations:[{id:commId,rank:3,path:commPath,title:"III-class Lent feria"}]},
+    proper:{status:"ready",data:source}};
+  for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+    const result=select({proper:source,calendarResolution:witness,form});
+    assert.equal(result.status,"CERTIFIED",date+"/"+form+": "+result.reason);
+    assert.equal(result.decision.scope,"PRIVILEGED_LENT_PASSION_FERIA_UNDER_I_CLASS_SANCTORAL");
+    assert.equal(result.decision.appliedCount,1);
+    for(const field of ["collects","secrets","postcommunions"])
+      assert.equal(result.proper[field].length,2,date+"/"+form+"/"+field);
+    for(const language of ["en","fr"]){
+      const slots=properToReaderSlots(result.proper,{language}).slots;
+      for(const key of ["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"]){
+        assert.equal(slots[key].status,"READY",date+"/"+form+"/"+language+"/"+key);
+        assert.equal(slots[key].data.paragraphs.length,2);
+      }
+    }
+    assert.equal(assessPrintableProper(witness,{language:"fr",massForm:form}).ok,true);
+  }
+  assert.equal(select({proper:{...source,
+    calendarCommemorations:[{path:commPath,prayerSourcePath:"Tempora/Quad2-1"}]},
+    calendarResolution:witness,form:"SOLEMN"}).reason,"RUBRICAL_CLASSIFICATION_PENDING",
+    "Wrong Lenten prayer-source identity must not be silently certified");
+  assert.equal(select({proper:{...source,secrets:[one]},
+    calendarResolution:witness,form:"LOW"}).reason,"ORATION_SOURCE_INCOMPLETE",
+    "Incomplete source Secret cannot be made certifiable by a privileged rank");
+  assert.equal(select({proper:source,
+    calendarResolution:{...witness,day:{...witness.day,main:{...witness.day.main,rank:3}}},
+    form:"SOLEMN"}).reason,"RUBRICAL_CLASSIFICATION_PENDING");
+}
+
+// Actual 2026 day owners: a IV-class feria using the inherited
+// post-Pentecost Sunday Proper, with an ordinary IV-class saint. The
+// Ordinary retains the Calendar identity; Low alone retains prayers.
+for(const [date,mainPath,saintPath] of [
+  ["2026-10-05","Tempora/Pent19-0","Sancti/10-05"],
+  ["2026-07-16","Tempora/Pent07-0","Sancti/07-16"]
+]){
+  const source={...base,sourcePath:mainPath,
+    calendarCommemorations:[{path:saintPath,prayerSourcePath:saintPath,
+      name:"Original calendar commemoration"}]};
+  const witness={...day,date,day:{
+    main:{id:":feria:4:w",rank:4,path:null,title:"Post-Pentecost feria"},
+    commemorations:[{id:"sancti:"+saintPath.slice(-5)+":4:w",
+      rank:4,path:saintPath,title:"Ordinary fourth-class commemoration"}]},
+    proper:{status:"ready",data:source}};
+  for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+    const selected=select({proper:source,calendarResolution:witness,form});
+    assert.equal(selected.status,"CERTIFIED",date+"/"+form+": "+selected.reason);
+    assert.equal(selected.decision.scope,
+      "PENTECOST_SEASON_IV_CLASS_FERIA_ORDINARY_COMMEMORATION");
+    const n=form==="LOW"?2:1;
+    assert.equal(selected.decision.appliedCount,n-1);
+    for(const group of ["collects","secrets","postcommunions"])
+      assert.equal(selected.proper[group].length,n,date+"/"+form+"/"+group);
+    for(const language of ["en","fr"]){
+      const slots=properToReaderSlots(selected.proper,{language}).slots;
+      for(const name of ["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"]){
+        assert.equal(slots[name].status,"READY",date+"/"+form+"/"+language+"/"+name);
+        assert.equal(slots[name].data.paragraphs.length,n);
+      }
+    }
+    assert.equal(assessPrintableProper(witness,{language:"en",massForm:form}).ok,true);
+  }
+  // Refuse unverified principal ranks, unrelated prayer owners, and
+  // different seasons. Do not promote institute-specific substitute Masses.
+  assert.equal(select({proper:source,calendarResolution:{...witness,
+    day:{...witness.day,main:{...witness.day.main,rank:3}}},
+    form:"LOW"}).reason,"RUBRICAL_CLASSIFICATION_PENDING");
+  assert.equal(select({proper:{...source,calendarCommemorations:[
+    {path:saintPath,prayerSourcePath:"Sancti/11-05"}]},
+    calendarResolution:witness,form:"LOW"}).reason,"RUBRICAL_CLASSIFICATION_PENDING");
+  assert.equal(select({proper:{...source,sourcePath:"Tempora/Quad1-0"},
+    calendarResolution:witness,form:"LOW"}).reason,"RUBRICAL_CLASSIFICATION_PENDING",
+    "Unrelated season may not inherit Pentecost source identity");
+  assert.equal(select({proper:{...source,secrets:[one]},
+    calendarResolution:witness,form:"LOW"}).reason,"ORATION_SOURCE_INCOMPLETE");
+}
+
 for(const [change,reason] of [
   [{date:"2026-10-12"},"RUBRICAL_CLASSIFICATION_PENDING"],
   [{day:{main:{...day.day.main,rank:1},commemorations:day.day.commemorations}},"RUBRICAL_CLASSIFICATION_PENDING"],

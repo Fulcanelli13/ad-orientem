@@ -114,9 +114,18 @@ export function select1962CommemorationsForMassForm({
   const inSeasonAlias=/^tempora\/adv[1-4]-[1-6]$/.test(observedPath)&&
     prayerPath===observedPath.replace(/-[1-6]$/,"-0");
   const admissiblePrayerSource=prayerPath===observedPath||inSeasonAlias;
+  // A IV-class universal feria is a generic Calendar observance without a
+  // physical main.path. Its selected Proper legitimately inherits a Sunday
+  // source. Trust that exact RESOLVED source identity only in the narrow
+  // post-Pentecost ordinary-feria category, never in a saint/votive case.
+  const inheritedPentecostFeria=main?.path==null&&
+    String(main?.id??"")===":feria:4:w"&&Number(main.rank)===4&&
+    /^Tempora\/Pent[0-9]{1,2}-0$/.test(String(data.sourcePath??envelope?.sourcePath??""));
+  const matchedPrincipalSource=inheritedPentecostFeria||
+    canonical(data.sourcePath??envelope?.sourcePath)===canonical(main.path);
   const identified=comms.length===1&&sources.length===1&&
     canonical(namedSource.path)===observedPath&&admissiblePrayerSource&&
-    canonical(data.sourcePath??envelope?.sourcePath)===canonical(main.path)&&
+    matchedPrincipalSource&&
     !only.inseparable&&!namedSource.inseparable;
   if(!identified)return untouched(proper,"RUBRICAL_CLASSIFICATION_PENDING");
   const mainId=String(main.id??""),commId=String(only.id??"");
@@ -136,6 +145,16 @@ export function select1962CommemorationsForMassForm({
     [1,2,3].includes(Number(main.rank))&&Number(only.rank)===3&&
     /^tempora:Adv[1-4]-[1-6]:3:/i.test(commId)&&
     /^Tempora\/Adv[1-4]-[1-6]$/i.test(String(only.path??""));
+  // RG 25(a), 108(e), 111(a): the displaced III-class feria of Lent
+  // or Passiontide is privileged beneath an actually selected I-class
+  // sanctoral Mass. This is true in all four non-conventual forms.
+  // Require exact original 1962 principal, feria, rank and prayer ownership:
+  // the calendar commemorative label by itself does not authorize a prayer.
+  const privilegedLentenFeria=!sunday&&Number(main.rank)===1&&
+    Number(only.rank)===3&&
+    /^sancti:[0-9]{2}-[0-9]{2}:1:/i.test(mainId)&&
+    /^tempora:Quad[1-5]-[1-6](?:Feria)?:3:/i.test(commId)&&
+    /^Tempora\/Quad[1-5]-[1-6]$/.test(String(only.path??""));
   // RG 109(c): days in the Octave of Christmas are privileged
   // commemorations in ALL Mass forms, even though the host's synthetic
   // 12-26c/12-28c placeholder carries an incorrect IV-class source rank
@@ -155,6 +174,15 @@ export function select1962CommemorationsForMassForm({
     data.verifiedNativityOctaveCommemoration?.originalChristmasSource==="Sancti/12-25m3"&&
     data.verifiedNativityOctaveCommemoration?.privilege==="RG_108_AND_109_C"&&
     data.verifiedNativityOctaveCommemoration?.orationCount===2;
+  // The host's 12-26c/12-28c placeholders masquerade as ordinary
+  // IV-class sanctoral sources. They are NOT IV-class commemoration prayers.
+  // The source-verified Nativity-octave branch above is the only allowed
+  // way to admit their Christmas Collect, Secret and Postcommunion.
+  // Otherwise fail closed, including when proof metadata was stripped.
+  const nativityOctavePlaceholder=
+    ["2026-12-26","2026-12-28"].includes(String(calendarResolution.date))&&
+    ["Sancti/12-26","Sancti/12-28"].includes(String(main.path??""))&&
+    String(only.path??"")===String(main.path)+"c";
   // General Rubrics §111(c–d), Missal §434(a,c,d): one source-identified
   // ordinary IV-class commemoration is retained in a non-Sunday Low Mass
   // of II/III class but omitted in a non-conventual sung Mass. This is
@@ -166,19 +194,34 @@ export function select1962CommemorationsForMassForm({
   const typedAdventMain=/^tempora:Adv[1-4]-[1-6]:3:/i.test(mainId)&&
     /^Tempora\/Adv[1-4]-[1-6]$/.test(String(main.path??""))&&
     Number(main.rank)===3;
-  const ordinaryFourthClassSaint=!sunday&&!only.privileged&&
+  // Ordinary commemoration on a IV-class feria after Pentecost.
+  // General Rubrics §§108–114: source-identified ordinary commemorations
+  // are retained in the Low Mass but not nonconventual Masses in cantu.
+  // A weekday's inherited Sunday Proper remains the principal source;
+  // neither its inherited Sunday text nor the saint name proves a feast.
+  // Other IV-class contexts (Saturday BVM, Christmas/Epiphany, special
+  // vigils, institute calendars) remain outside this narrow certification.
+  const ordinaryPentecostFeria=inheritedPentecostFeria&&!sunday&&
+    Number(only.rank)===4&&!only.privileged&&
+    /^sancti:[0-9]{2}-[0-9]{2}[a-z]*:4:/i.test(commId)&&
+    /^Sancti\/[0-9]{2}-[0-9]{2}[a-z]*$/.test(String(only.path??""));
+  const ordinaryFourthClassSaint=!nativityOctavePlaceholder&&!sunday&&
+    !only.privileged&&
     Number(only.rank)===4&&/^sancti:[0-9]{2}-[0-9]{2}[a-z]*:4:/i.test(commId)&&
     /^Sancti\/[0-9]{2}-[0-9]{2}[a-z]*$/i.test(String(only.path??""))&&
     (typedSanctoralMain||typedAdventMain);
   const scope=nativityOctaveOwner?"PRIVILEGED_CHRISTMAS_OCTAVE_II_CLASS_MASS":
     privilegedSunday?"PRIVILEGED_SUNDAY_UNDER_I_CLASS_SANCTORAL":
     privilegedAdvent?"PRIVILEGED_ADVENT_FERIA_UNDER_SANCTORAL":
+    privilegedLentenFeria?"PRIVILEGED_LENT_PASSION_FERIA_UNDER_I_CLASS_SANCTORAL":
     ordinarySunday?"II_CLASS_SUNDAY_SINGLE_II_CLASS_SANCTORAL_FEAST_NON_CONVENTUAL":
-    ordinaryFourthClassSaint?"NON_SUNDAY_II_III_CLASS_SINGLE_IV_CLASS_SANCTORAL_COMMEMORATION":null;
+    ordinaryFourthClassSaint?"NON_SUNDAY_II_III_CLASS_SINGLE_IV_CLASS_SANCTORAL_COMMEMORATION":
+    ordinaryPentecostFeria?"PENTECOST_SEASON_IV_CLASS_FERIA_ORDINARY_COMMEMORATION":null;
   if(!scope)return untouched(proper,"RUBRICAL_CLASSIFICATION_PENDING");
   if(!GROUPS.every(key=>array(data[key]).length===2&&data[key].every(sourceText)))
     return untouched(proper,"ORATION_SOURCE_INCOMPLETE");
-  const include=nativityOctaveOwner||privilegedSunday||privilegedAdvent||normalizedForm==="LOW";
+  const include=nativityOctaveOwner||privilegedSunday||privilegedAdvent||
+    privilegedLentenFeria||normalizedForm==="LOW";
   const applied=include?comms:[],omitted=include?[]:comms;
   const decision=Object.freeze({
     status:"CERTIFIED",source:"1962_PROPER_RESOLVER",form:normalizedForm,
@@ -186,8 +229,12 @@ export function select1962CommemorationsForMassForm({
     scope,
     authorities:Object.freeze(nativityOctaveOwner?
       ["1960_GENERAL_RUBRICS_108_109_C_111","1960_MISSAL_RUBRICS_433_434"]:
+      privilegedLentenFeria?
+        ["1960_GENERAL_RUBRICS_25_A_108_E_111_A_113","1960_MISSAL_RUBRICS_433_434"]:
       ordinaryFourthClassSaint?
         ["1960_GENERAL_RUBRICS_111_C_D_112_113","1960_MISSAL_RUBRICS_433_434"]:
+      ordinaryPentecostFeria?
+        ["1960_GENERAL_RUBRICS_108_111_D_112_113_114","1960_MISSAL_RUBRICS_433_434"]:
         ["1960_GENERAL_RUBRICS_108_111_113","1960_MISSAL_RUBRICS_433_434"]),
     mainId,commemorationId:commId
   });
