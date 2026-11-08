@@ -134,6 +134,9 @@ try{
     "Small provenance copy, no oversized review-workbench metadata");
    assert.ok(after.acPresentation.every(x=>x.staffWidth>0&&x.wrapperWidth>0),
     "Source score must occupy the prayer's available reading column");
+   // Capture the actual Ordo content, not the still-open preferences sheet.
+   await page.click("[data-reader-preferences-close]");
+   assert.equal(await page.locator('[data-role="mass-preferences"]').getAttribute("data-open"),"false");
    // The A/C score surface opens a full-size vector rendering.
    await page.locator(".ao-proper-reference-expand").first().click();
    await page.waitForFunction(()=>Boolean(document.querySelector(
@@ -142,9 +145,6 @@ try{
    await page.locator(".ao-proper-reference-zoom header button").click();
    assert.equal(await page.locator(".ao-proper-reference-zoom").count(),0,
      "Closing zoom returns to the same canonical Mass card");
-   // Capture the actual Ordo content, not the still-open preferences sheet.
-   await page.click("[data-reader-preferences-close]");
-   assert.equal(await page.locator('[data-role="mass-preferences"]').getAttribute("data-open"),"false");
    await page.screenshot({path:resolve(out,
      "ordo-"+form.toLowerCase()+"-"+mode+"-"+width+"-notation.png"),
     animations:"disabled"});
