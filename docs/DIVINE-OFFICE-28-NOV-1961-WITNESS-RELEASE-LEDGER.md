@@ -215,3 +215,43 @@ comparison, but **neither edition is an original 1961 Mame Psalterium
 leaf**. The exact-original 1961 verbatim, entire-Hour, rights and
 public-release gates therefore remain **FALSE**. No public Office
 prayer text is enabled.
+
+## 1961 Psalter translation-family distinction — 8 November 2026
+
+**Critical edition constraint.** A book labelled *Breviarium Romanum 1961*
+does **not** by itself establish the Latin Psalter wording. The 1961
+Mame editions exist with two different Psalter families:
+
+- *Cum textu Psalmorum e Vulgata Bibliorum editione* — the target
+  for the current pinned, Clementine/Vulgate Compline text. A 1961 Mame
+  two-volume Vulgate set is bibliographically recorded:
+  https://www.librairie-pierre-brunet.fr/librairie-en-ligne/fm36388-brviaire-breviariumromanum/category_pathway-485.html .
+- *Cum textu Psalmorum e versione Pii Papae XII auctoritate edita* —
+  an alternative 1961 printed text, **not** a valid word-for-word
+  witness for the pinned Vulgate. BnF Mame 1961 record:
+  https://catalogue.bnf.fr/ark:/12148/cb33081006r .
+
+The accessible introductory 1961 Mame scan
+https://unavocesevilla.com/LIBROSLITURGICOS/BREVIARIUM%20ROMANUM.1961.pdf
+explicitly says *e Vulgata* but ends before the actual weekly
+Psalterium. Its title page **cannot** certify Saturday Psalm 87/102
+wording. The 2023 printed full-word comparison and 2008 Diurnale
+remain valid **secondary** checks and do not supply an original
+1961 Psalterium leaf.
+
+The private bibliographic register
+`data/office/research/1961-psalter-edition-families.v1.json`
+records the edition family for each witness. The checked-in public
+release gate in `src/office/latin-compline-public-release.js` now
+requires `sourcePsalterFamily=VULGATA_BIBLIORUM`,
+`target1961Edition=MAME_1961_VULGATA`,
+`target1961PsalterFamily=VULGATA_BIBLIORUM`, and an affirmative
+`exact1961EditionPsalterLeafVerified`, **in addition** to the existing
+original-edition collation, whole-Hour and release/rights approvals.
+The edition-leaf and publication flags remain `false`.
+
+**Next publication evidence:** a complete scanned **1961 Vulgata-family**
+Psalterium containing the Saturday Psalm 87 and Psalm 102 text, followed
+by word-by-word comparison against all 473 pinned words and the
+remaining 1961 Compline Ordinary/seasonal elements. Do not substitute
+a Pius XII Psalter because its date and Roman Office rubrics match.
