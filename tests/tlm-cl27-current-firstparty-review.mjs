@@ -301,3 +301,71 @@ for(const r of collisionReview.records){
    assert.ok(source.recurrence_variants.length>1);
 }
 console.log("PASS CL27 wave3: 139/296 unique original source rows / 19 new site roles; 7 first-party collision dispositions; no Mass event or unsupported ecclesial promotions");
+
+
+// Wave 4: 28 more immutable source-day-clock rows reviewed against named
+// operator pages, including dated 2026 evidence. Never turn the review into
+// a new recurring Mass feed or a second source of CL2 physical identities.
+const wave4=JSON.parse(readFileSync(new URL(
+ "../data/directory/research/cl27-current-firstparty-20261104/source-review-wave4.v1.json",
+ import.meta.url),"utf8"));
+assert.equal(wave4.schema,"AO_CL27_CURRENT_SOURCE_WAVE4_V1");
+assert.equal(wave4.publication,"RESEARCH_ONLY_NO_APP_IMPORT");
+assert.equal(wave4.canonical_source.blob_sha,d.canonical_source.blob_sha);
+assert.equal(wave4.canonical_source.pr,1775);
+assert.equal(wave4.cases.length,8);
+assert.deepEqual(wave4.summary,{
+ new_source_groups_reviewed:8,
+ new_historical_rows_reviewed:28,
+ previous_reviewed:139,
+ cumulative_reviewed:167,
+ still_unreviewed:129,
+ new_current_mass_events_approved:0,
+ new_classifications_approved:0
+});
+const priorToWave4=new Set([...earlierIDs,...wave3IDs]);
+assert.equal(priorToWave4.size,139);
+const wave4IDs=new Set(),wave4Anchors=new Set();
+for(const c of wave4.cases){
+ assert.match(c.cl2_anchor,/^RG-[A-F0-9]{12}$/);
+ assert.match(c.country,/^[A-Z]{2}$/);
+ assert.ok(!wave4Anchors.has(c.cl2_anchor),"Wave 4 duplicate physical site review");
+ wave4Anchors.add(c.cl2_anchor);
+ assert.ok(c.historical_url.startsWith("https://"));
+ assert.ok(c.evidence.length>0&&c.evidence.every(e=>e.url.startsWith("https://")&&e.kind));
+ assert.ok(c.decision&&c.source_observation&&c.identity_and_occurrence_gate&&c.source_role_scope);
+ assert.equal(c.publication_status,"HOLD_RESEARCH_ONLY_NO_CURRENT_MASS_APPROVAL");
+ assert.ok(c.unproven.includes("exact_current_occurrence")&&c.unproven.includes("una_cum")&&
+  c.unproven.includes("pope_named_in_canon")&&c.unproven.includes("canonical_status")&&
+  c.unproven.includes("legal_ownership")&&c.unproven.includes("specific_1962_missal"));
+ assert.equal(c.historical_rows.length,c.historical_claims.length);
+ assert.equal(new Set(c.historical_rows).size,c.historical_rows.length);
+ for(let i=0;i<c.historical_rows.length;i++){
+  const id=c.historical_rows[i],claim=c.historical_claims[i];
+  assert.ok(Number.isInteger(id));
+  assert.equal(claim.historical_row,id);
+  assert.ok(claim.source_id&&claim.day_pattern&&claim.local_time&&claim.frequency);
+  assert.ok(!priorToWave4.has(id),"Wave 4 cannot double-count prior source review");
+  assert.ok(!wave4IDs.has(id),"Wave 4 duplicated source row");
+  wave4IDs.add(id);
+  const source=byHistorical.get(id);
+  assert.ok(source&&source.anchors.includes(c.cl2_anchor),"Wave 4 CL2 anchor mismatch");
+  assert.equal(source.historical_url,c.historical_url);
+ }
+}
+assert.equal(wave4IDs.size,28);
+assert.equal(wave4Anchors.size,8);
+assert.equal(new Set([...priorToWave4,...wave4IDs]).size,167);
+assert.equal(296-priorToWave4.size-wave4IDs.size,129);
+const br=wave4.cases.find(x=>x.cl2_anchor==="RG-CB03C808AE8A");
+assert.equal(br.decision,"CONFLICTING_CURRENT_OPERATOR_VENUE_LOCATION");
+assert.ok(br.source_observation.includes("Indaiatuba"));
+assert.ok(br.identity_and_occurrence_gate.includes("Do not transfer"));
+assert.ok(br.evidence.some(e=>e.url.includes("fevereiro-2026.pdf")));
+const levis=wave4.cases.find(x=>x.cl2_anchor==="RG-22BB6F85DA74");
+assert.ok(levis.evidence.some(e=>e.url.includes("2026")));
+const poitiers=wave4.cases.find(x=>x.cl2_anchor==="RG-9F9858FBD0DA");
+assert.ok(poitiers.source_role_scope.includes("Transfiguration"));
+const fort=wave4.cases.find(x=>x.cl2_anchor==="RG-84B39A237AAB");
+assert.ok(fort.source_observation.includes("NOT a 07:15 Mass"));
+console.log("PASS CL27 wave4: 167/296 historical source claims reviewed, 129 pending; 8 source-locked church groups, operator geography and service-type disputes held, 0 public Masses or canonical/Una Cum claims");
