@@ -1,9 +1,27 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
-import {dykPublishedCandidates,dykPublishedPick,dykPublishedModel,dykPublishedMarkup} from "../src/home/dyk-published-feed.js";
+import {dykPublishedCandidates,dykPublishedPick,dykPublishedModel,dykPublishedMarkup,dykHomeRotationSlot,DYK_GLOSSARY_FALLBACK_IDS} from "../src/home/dyk-published-feed.js";
 const original=JSON.parse(readFileSync(
  "data/research/did-you-know/dyk-r34-high-signal-24-editorial-selection.v1.json","utf8"));
+import {HOME_DYK_GLOSSARY_IDS,HOME_DYK_GLOSSARY_FACTS,homeDidYouKnowSelect} from "../src/home/did-you-know-glossary.js";
 const clone=x=>JSON.parse(JSON.stringify(x));
+// Every new public teaser must resolve to an existing source-backed bilingual
+// Glossary entry and must never silently expose draft research as public copy.
+const gloss=JSON.parse(readFileSync("data/glossary/concepts-151-300.v1.json","utf8"));
+assert.equal(HOME_DYK_GLOSSARY_IDS.length,24);
+assert.equal(new Set(HOME_DYK_GLOSSARY_IDS).size,24);
+assert.deepEqual(new Set(Object.keys(HOME_DYK_GLOSSARY_FACTS)),new Set(HOME_DYK_GLOSSARY_IDS));
+for(const id of HOME_DYK_GLOSSARY_IDS){
+ const source=gloss.entries.find(row=>row.id===id);
+ assert.ok(source,"Missing canonical source "+id);
+ assert.equal(source.status,"SOURCE_OWNER_LOCKED");
+ assert.equal(source.definition_status,"SOURCE_BACKED");
+ assert.ok(source.source_ids.length>0);
+ assert.ok(HOME_DYK_GLOSSARY_FACTS[id].en.length>25);
+ assert.ok(HOME_DYK_GLOSSARY_FACTS[id].fr.length>25);
+ assert.equal(homeDidYouKnowSelect(gloss.entries,"2026-11-08",id)?.id,id);
+}
+
 for(const date of ["2026-11-01","2026-11-02","2026-12-25","2027-04-04"]){
  assert.deepEqual(dykPublishedCandidates(original,date),[],"Unapproved R34 must never publish");
  assert.equal(dykPublishedPick(original,date),null);
@@ -53,4 +71,33 @@ assert.deepEqual(dykPublishedCandidates(tampered,"2026-11-02"),[]);
 const item=clone(original);
 assert.equal(item.records.filter(x=>x.release_authorized===true).length,0,
  "Read-only source master must not be silently promoted by the selector");
+
+// With no new approved facts the fallback itself receives a fair, non-repeating
+// daily shuffle. The mixed pool must rotate once through every entry per cycle.
+function alignedDates(size,cycles=1){
+ const today=Math.floor(Date.UTC(2026,10,8)/86400000);
+ const start=today-(today%size);
+ return Array.from({length:size*cycles},(_,i)=>
+   new Date((start+i)*86400000).toISOString().slice(0,10));
+}
+for(const [published,poolSize] of [
+ [[],DYK_GLOSSARY_FALLBACK_IDS.length],
+ [["DYK-M04-CANON-021","DYK-M04-CANON-022","DYK-M04-CANON-047","DYK-M04-CANON-058"],DYK_GLOSSARY_FALLBACK_IDS.length+4]
+]){
+ const cycle=alignedDates(poolSize);
+ const results=cycle.map(date=>dykHomeRotationSlot(date,published));
+ assert.equal(new Set(results).size,poolSize,"No repeat before all eligible slots shown");
+ assert.deepEqual(new Set(results),new Set([...published,...DYK_GLOSSARY_FALLBACK_IDS]));
+ const nextCycle=alignedDates(poolSize,2).slice(poolSize).map(date=>dykHomeRotationSlot(date,published));
+ assert.equal(new Set(nextCycle).size,poolSize,"Every slot gets one turn in each complete cycle");
+ assert.notEqual(results.at(-1),nextCycle[0],"No immediate cycle-boundary repeat");
+}
+assert.equal(dykHomeRotationSlot("2026-11-31",[]),null);
+assert.equal(dykHomeRotationSlot("2026-11-08",[],[]),null);
+// The compiled 24-item R34 review selection is not a permanent six/24-item
+// release ceiling. Adding staged *unapproved* rows cannot affect publication.
+const expanded=clone(data);
+expanded.records.push({id:"DYK-UNRELEASED-PLACEHOLDER",editorial_approval:false,release_authorized:false});
+assert.equal(dykPublishedCandidates(expanded,"2026-11-02").length,1);
+
 console.log("PASS H7 published-only Discovery: zero live from original, explicit release/date/source gates, bilingual source links and glossary fallback");

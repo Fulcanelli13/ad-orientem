@@ -6,6 +6,40 @@ const safeUrl=value=>typeof value==="string"&&/^https:\/\/[^<>"'\s]+$/.test(valu
 const clean=x=>typeof x==="string"?x.trim():"";
 const esc=x=>String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const validDate=x=>{if(!/^\d{4}-\d{2}-\d{2}$/.test(x||""))return false;const date=new Date(x+"T12:00:00Z");return !Number.isNaN(date.getTime())&&date.toISOString().slice(0,10)===x;};
+// Stable per-day shuffle across the *combined* published and Glossary pool.
+// No browser storage, tracking, paid runtime, or unreviewed research publication.
+export const DYK_GLOSSARY_FALLBACK_IDS=Object.freeze(["G195","G213","G219","G235","G194","G240","G197","G200","G203","G212","G215","G216","G218","G224","G241","G242","G248","G255","G259","G260","G274","G283","G290","G300"]);
+function shuffledHomeIds(ids,cycle){
+ const ordered=[...new Set(ids)].sort();
+ let state=2166136261;
+ for(const ch of cycle+"|"+ordered.join("|")){state=Math.imul(state^ch.charCodeAt(0),16777619)}
+ state=(state>>>0)||1;
+ const random=()=>{
+   state^=state<<13;state^=state>>>17;state^=state<<5;
+   return state>>>0;
+ };
+ for(let i=ordered.length-1;i>0;i--){
+   const j=random()%(i+1);
+   [ordered[i],ordered[j]]=[ordered[j],ordered[i]];
+ }
+ return ordered;
+}
+export function dykHomeRotationSlot(date,publishedIds=[],fallbackIds=DYK_GLOSSARY_FALLBACK_IDS){
+ if(!validDate(date)||!Array.isArray(publishedIds)||!Array.isArray(fallbackIds))return null;
+ const ids=[...new Set([...publishedIds,...fallbackIds].filter(id=>
+   typeof id==="string"&&(/^(?:G\d{3}|DYK-[A-Z0-9-]+)$/).test(id)))];
+ if(!ids.length)return null;
+ const ordinal=Math.floor(Date.parse(date+"T12:00:00Z")/86400000);
+ const cycle=Math.floor(ordinal/ids.length);
+ const order=shuffledHomeIds(ids,cycle);
+ // Avoid an adjacent repeat when the pool shuffles at a cycle boundary.
+ if(order.length>1){
+   const prior=shuffledHomeIds(ids,cycle-1);
+   if(order[0]===prior.at(-1)) [order[0],order[1]]=[order[1],order[0]];
+ }
+ return order[((ordinal%ids.length)+ids.length)%ids.length];
+}
+
 let selectionPromise=null;
 export function loadDykPrioritySelection(win=globalThis){
  if(selectionPromise)return selectionPromise;
@@ -16,7 +50,7 @@ export function loadDykPrioritySelection(win=globalThis){
 }
 export function dykPublishedCandidates(data,date){
  if(data?.schema!==SCHEMA||data.publication_stage!=="APPROVED_PARTIAL_LIVE"||
-    !Array.isArray(data.records)||data.records.length!==24||!validDate(date))return [];
+    !Array.isArray(data.records)||data.records.length<1||data.records.length>1000||!validDate(date))return [];
  const published=data.records.filter(row=>{
    const c=row.pilot_home_copy||row.editorial_review_copy;
    const s=row.pilot_source_folio||row.editorial_source_reference;
@@ -49,9 +83,8 @@ export function dykPublishedCandidates(data,date){
 }
 export function dykPublishedPick(data,date){
  const facts=dykPublishedCandidates(data,date);
- if(!facts.length)return null;
- const day=Math.floor(Date.parse(date+"T12:00:00Z")/86400000);
- return facts[((day%facts.length)+facts.length)%facts.length];
+ const selected=dykHomeRotationSlot(date,facts.map(row=>row.id));
+ return facts.find(row=>row.id===selected)||null;
 }
 export function dykPublishedModel(data,id,date,language="en"){
  const row=dykPublishedCandidates(data,date).find(r=>r.id===id);
