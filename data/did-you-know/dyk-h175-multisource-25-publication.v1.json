@@ -3,21 +3,21 @@
   "created": "2026-11-08",
   "release_stage": "APPROVED_PARTIAL_LIVE",
   "counts": {
-    "pitre": 5,
-    "rural": 12,
+    "pitre": 3,
+    "rural": 14,
     "ritus": 8,
     "total": 25
   },
-  "notes": "Individual original source checks: Pitrè previously image+Italian-anchor verified; Rural Life Prayerbook historic 1956 headings reviewed in original hosted text; Ritus 1962 English translation sections VI and VII and page images inspected. Claims qualified by historical time or rubrical form. Do not infer a universal contemporary custom.",
+  "notes": "Individual original source checks: Pitrè previously image+Italian-anchor verified; Rural Life Prayerbook historic 1956 headings reviewed in original hosted text; Ritus 1962 English translation sections VI and VII and page images inspected. Claims qualified by historical time or rubrical form. Do not infer a universal contemporary custom. The initially selected previously published Pitrè source records were excluded after source-ID crossbank; new Pitrè records and separate original blessing sources retained.",
   "records": [
     {
       "id": "DYK-H175-P-001",
-      "source_id": "PIT1900-IT-024",
+      "source_id": "PIT1900-NEW-045",
       "source_family": "PITRE_1900",
       "topic": "SICILIAN_HISTORICAL_FEAST",
       "pilot_home_copy": {
-        "en": "Pitrè recorded two local dates for Saint Joseph festivities in Canicattini: 19 March and the first Sunday in September.",
-        "fr": "Pitrè a relevé deux dates locales de fêtes de saint Joseph à Canicattini : le 19 mars et le premier dimanche de septembre.",
+        "en": "Pitrè described a group of about fifty fishermen and fishmongers carrying the processional litter of Saints Cosmas and Damian in Palermo.",
+        "fr": "Pitrè décrit une cinquantaine de pêcheurs et de poissonniers portant le brancard de procession des saints Côme et Damien à Palerme.",
         "final_english_signoff": true,
         "final_french_signoff": true
       },
@@ -25,16 +25,16 @@
         "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
         "type": "pdf",
         "pdf_pages_1based": [
-          505
+          141
         ],
         "printed_pages": [
-          447
+          79
         ],
-        "original_italian_anchor": "il 19 Marzo e la prima Domenica di Settembre",
+        "original_italian_anchor": "cinquanta pescatori e pesciauoli",
         "original_image_checked": true,
-        "primary_locator": "Giuseppe Pitrè, Feste patronali in Sicilia, printed p. 447",
+        "primary_locator": "Giuseppe Pitrè, Feste patronali in Sicilia, printed p. 79",
         "evidence_tier": "PRIOR_1900_FACSIMILE_IMAGE_AND_ITALIAN_ANCHOR_CHECKED",
-        "source_record_id": "PIT1900-IT-024",
+        "source_record_id": "PIT1900-NEW-045",
         "deep_link_checked": true
       },
       "region_scope": "Historical Sicilian locality named in Pitrè (1900); not current universal practice",
@@ -45,47 +45,10 @@
       "semantic_novelty_reviewed": true,
       "release_authorized": true,
       "published": true,
-      "research_record_id": "DYK-UM01-030"
+      "research_record_id": "DYK-UM02-034"
     },
     {
       "id": "DYK-H175-P-002",
-      "source_id": "PIT1900-NEW-078",
-      "source_family": "PITRE_1900",
-      "topic": "SICILIAN_HISTORICAL_FEAST",
-      "pilot_home_copy": {
-        "en": "Pitrè reported the statue of Saint James visiting orchards and gardens near Gratteri as well as houses.",
-        "fr": "Pitrè relatait comment la statue de saint Jacques visitait aussi les vergers et les jardins des environs de Gratteri.",
-        "final_english_signoff": true,
-        "final_french_signoff": true
-      },
-      "source": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
-        "type": "pdf",
-        "pdf_pages_1based": [
-          186
-        ],
-        "printed_pages": [
-          124
-        ],
-        "original_italian_anchor": "giardini",
-        "original_image_checked": true,
-        "primary_locator": "Giuseppe Pitrè, Feste patronali in Sicilia, printed p. 124",
-        "evidence_tier": "PRIOR_1900_FACSIMILE_IMAGE_AND_ITALIAN_ANCHOR_CHECKED",
-        "source_record_id": "PIT1900-NEW-078",
-        "deep_link_checked": true
-      },
-      "region_scope": "Historical Sicilian locality named in Pitrè (1900); not current universal practice",
-      "publication_kind": "EVERGREEN_HISTORICAL",
-      "historical_local_only": true,
-      "liturgical_rubric_1962": false,
-      "editorial_approval": true,
-      "semantic_novelty_reviewed": true,
-      "release_authorized": true,
-      "published": true,
-      "research_record_id": "DYK-UM02-043"
-    },
-    {
-      "id": "DYK-H175-P-003",
       "source_id": "PIT1900-NEW-085",
       "source_family": "PITRE_1900",
       "topic": "SICILIAN_HISTORICAL_FEAST",
@@ -122,13 +85,13 @@
       "research_record_id": "DYK-UM02-046"
     },
     {
-      "id": "DYK-H175-P-004",
-      "source_id": "PIT1900-NEW-020",
+      "id": "DYK-H175-P-003",
+      "source_id": "PIT1900-NEW-096",
       "source_family": "PITRE_1900",
       "topic": "SICILIAN_HISTORICAL_FEAST",
       "pilot_home_copy": {
-        "en": "Historical confraternities offered wax publicly for Saint Rosalia's feast in Palermo.",
-        "fr": "Des confréries offraient publiquement de la cire pour la fête de sainte Rosalie à Palerme.",
+        "en": "Older shepherds in a historical Geraci Siculo cavalcade carried bunches of wax tied with ribbons.",
+        "fr": "De vieux bergers portaient des bouquets de cire noués de rubans lors d'une ancienne cavalcade à Geraci Siculo.",
         "final_english_signoff": true,
         "final_french_signoff": true
       },
@@ -136,16 +99,16 @@
         "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
         "type": "pdf",
         "pdf_pages_1based": [
-          95
+          190
         ],
         "printed_pages": [
-          33
+          128
         ],
-        "original_italian_anchor": "offrire la cera di uso",
+        "original_italian_anchor": "cera",
         "original_image_checked": true,
-        "primary_locator": "Giuseppe Pitrè, Feste patronali in Sicilia, printed p. 33",
+        "primary_locator": "Giuseppe Pitrè, Feste patronali in Sicilia, printed p. 128",
         "evidence_tier": "PRIOR_1900_FACSIMILE_IMAGE_AND_ITALIAN_ANCHOR_CHECKED",
-        "source_record_id": "PIT1900-NEW-020",
+        "source_record_id": "PIT1900-NEW-096",
         "deep_link_checked": true
       },
       "region_scope": "Historical Sicilian locality named in Pitrè (1900); not current universal practice",
@@ -156,44 +119,7 @@
       "semantic_novelty_reviewed": true,
       "release_authorized": true,
       "published": true,
-      "research_record_id": "DYK-UM03-028"
-    },
-    {
-      "id": "DYK-H175-P-005",
-      "source_id": "PIT1900-NEW-028",
-      "source_family": "PITRE_1900",
-      "topic": "SICILIAN_HISTORICAL_FEAST",
-      "pilot_home_copy": {
-        "en": "Pitrè distinguished a local prohibition on the public procession of Saints Cosmas and Damian from continued celebrations inside their church.",
-        "fr": "Pitrè distinguait une interdiction locale de procession publique des saints Côme et Damien du maintien de leur fête à l'intérieur de l'église.",
-        "final_english_signoff": true,
-        "final_french_signoff": true
-      },
-      "source": {
-        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
-        "type": "pdf",
-        "pdf_pages_1based": [
-          133
-        ],
-        "printed_pages": [
-          71
-        ],
-        "original_italian_anchor": "la festa si ripete in chiesa",
-        "original_image_checked": true,
-        "primary_locator": "Giuseppe Pitrè, Feste patronali in Sicilia, printed p. 71",
-        "evidence_tier": "PRIOR_1900_FACSIMILE_IMAGE_AND_ITALIAN_ANCHOR_CHECKED",
-        "source_record_id": "PIT1900-NEW-028",
-        "deep_link_checked": true
-      },
-      "region_scope": "Historical Sicilian locality named in Pitrè (1900); not current universal practice",
-      "publication_kind": "EVERGREEN_HISTORICAL",
-      "historical_local_only": true,
-      "liturgical_rubric_1962": false,
-      "editorial_approval": true,
-      "semantic_novelty_reviewed": true,
-      "release_authorized": true,
-      "published": true,
-      "research_record_id": "DYK-UM03-031"
+      "research_record_id": "DYK-UM03-045"
     },
     {
       "id": "DYK-H175-B-001",
@@ -201,8 +127,8 @@
       "source_family": "RURAL_LIFE_PRAYERBOOK_1956",
       "topic": "HISTORICAL_CATHOLIC_BLESSING",
       "pilot_home_copy": {
-        "en": "A 1956 Catholic prayerbook includes a blessing of cheese or butter, asking that those who eat it grow in grace and good works.",
-        "fr": "Un livre de prières catholique de 1956 contient une bénédiction du fromage ou du beurre, demandant pour ceux qui en mangent la grâce et la fécondité des bonnes œuvres.",
+        "en": "The 1956 Rural Life Prayerbook's blessing of cheese or butter specifically thanks God for food made from animal milk, and asks grace for those sharing it.",
+        "fr": "La bénédiction du fromage ou du beurre dans le Rural Life Prayerbook de 1956 remercie Dieu pour cet aliment tiré du lait animal et demande des grâces pour ceux qui le partagent.",
         "final_english_signoff": true,
         "final_french_signoff": true
       },
@@ -263,8 +189,8 @@
       "source_family": "RURAL_LIFE_PRAYERBOOK_1956",
       "topic": "HISTORICAL_CATHOLIC_BLESSING",
       "pilot_home_copy": {
-        "en": "The 1956 Rural Life Prayerbook preserves a blessing for wine intended for the sick, recalling Christ changing water into wine at Cana.",
-        "fr": "Le Rural Life Prayerbook de 1956 conserve une bénédiction du vin destiné aux malades, en rappelant que le Christ changea l'eau en vin à Cana.",
+        "en": "The blessing for wine intended for the sick in the Rural Life Prayerbook invokes the wedding at Cana, rather than the Saint John's Day wine custom.",
+        "fr": "La bénédiction du vin destiné aux malades dans le Rural Life Prayerbook invoque les noces de Cana, et non la coutume du vin de la Saint-Jean.",
         "final_english_signoff": true,
         "final_french_signoff": true
       },
@@ -387,8 +313,8 @@
       "source_family": "RURAL_LIFE_PRAYERBOOK_1956",
       "topic": "HISTORICAL_CATHOLIC_BLESSING",
       "pilot_home_copy": {
-        "en": "A 1956 collection of farm blessings includes a special prayer over salt or feed for animals, asking protection from sickness.",
-        "fr": "Un recueil de bénédictions agricoles de 1956 contient une prière particulière sur le sel ou la nourriture des animaux, demandant leur protection contre les maladies.",
+        "en": "The 1956 Rural Life Prayerbook includes a specific blessing of salt or feed placed before farm animals, distinct from prayers over buildings or harvests.",
+        "fr": "Le Rural Life Prayerbook de 1956 comporte une bénédiction particulière du sel ou du fourrage destinés aux animaux de la ferme, distincte des prières sur les bâtiments ou les récoltes.",
         "final_english_signoff": true,
         "final_french_signoff": true
       },
@@ -556,6 +482,68 @@
         "publication_year": 1956,
         "original_edition": "Alban J. Dachauer, The Rural Life Prayerbook (1956)",
         "source_record_id": "RLP1956.H175.BRIDGE",
+        "deep_link_checked": true
+      },
+      "region_scope": "Historical 1956 Catholic rural blessing, not a current universal Mass obligation",
+      "publication_kind": "SOURCE_SCOPED_HISTORICAL",
+      "historical_local_only": true,
+      "liturgical_rubric_1962": false,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true
+    },
+    {
+      "id": "DYK-H175-B-013",
+      "source_id": "RLP1956.H175.FIRE",
+      "source_family": "RURAL_LIFE_PRAYERBOOK_1956",
+      "topic": "HISTORICAL_CATHOLIC_BLESSING",
+      "pilot_home_copy": {
+        "en": "The 1956 Rural Life Prayerbook prints a blessing of newly kindled fire asking that, beyond worldly darkness, the faithful reach God's unfailing light.",
+        "fr": "Le Rural Life Prayerbook de 1956 imprime une bénédiction d'un feu nouvellement allumé, demandant qu'au-delà des ténèbres du monde les fidèles parviennent à la lumière divine sans déclin.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "html",
+        "url": "https://www.ewtn.com/catholicism/library/rural-life-prayerbook-11881",
+        "pdf_pages_1based": [],
+        "primary_locator": "Blessing of Fire",
+        "original_text_checked": true,
+        "publication_year": 1956,
+        "original_edition": "Alban J. Dachauer, The Rural Life Prayerbook (1956)",
+        "source_record_id": "RLP1956.H175.FIRE",
+        "deep_link_checked": true
+      },
+      "region_scope": "Historical 1956 Catholic rural blessing, not a current universal Mass obligation",
+      "publication_kind": "SOURCE_SCOPED_HISTORICAL",
+      "historical_local_only": true,
+      "liturgical_rubric_1962": false,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true
+    },
+    {
+      "id": "DYK-H175-B-014",
+      "source_id": "RLP1956.H175.TRACTOR",
+      "source_family": "RURAL_LIFE_PRAYERBOOK_1956",
+      "topic": "HISTORICAL_CATHOLIC_BLESSING",
+      "pilot_home_copy": {
+        "en": "The 1956 Rural Life Prayerbook gives a blessing not only for cars and wagons, but also for tractors used in farm work.",
+        "fr": "Le Rural Life Prayerbook de 1956 propose une bénédiction non seulement pour les voitures et les chariots, mais aussi pour les tracteurs agricoles.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "html",
+        "url": "https://www.ewtn.com/catholicism/library/rural-life-prayerbook-11881",
+        "pdf_pages_1based": [],
+        "primary_locator": "Blessing of an Automobile, a Wagon, or Tractor",
+        "original_text_checked": true,
+        "publication_year": 1956,
+        "original_edition": "Alban J. Dachauer, The Rural Life Prayerbook (1956)",
+        "source_record_id": "RLP1956.H175.TRACTOR",
         "deep_link_checked": true
       },
       "region_scope": "Historical 1956 Catholic rural blessing, not a current universal Mass obligation",
