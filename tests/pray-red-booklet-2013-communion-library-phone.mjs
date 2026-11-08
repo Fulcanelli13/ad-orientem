@@ -13,6 +13,7 @@ import {COMMUNION_TREASURY_V383 as SOURCE} from "../src/pray/traditional-pray-da
 import {RED_BOOKLET_COMMUNION_LIBRARY_LINKS_V1 as LINKS} from "../src/pray/red-booklet-communion-library-links.v1.js";
 import {RED_BOOKLET_SUSCIPE_LIBRARY_LINK_V1 as SUSCIPE} from "../src/pray/red-booklet-suscipe-library-link.v1.js";
 import {prayerAcquisitionCandidates} from "../src/pray/prayer-acquisition-historical-witnesses.v1.js";
+import {RED_BOOKLET_PRIVATE_HISTORICAL_WORKS_V1 as PRIVATE} from "../src/pray/red-booklet-private-historical-works.v1.js";
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",".mjs":"text/javascript; charset=utf-8",".json":"application/json",".css":"text/css; charset=utf-8",".svg":"image/svg+xml",".png":"image/png",".jpg":"image/jpeg",".webp":"image/webp",".woff2":"font/woff2"};
 const server=http.createServer(async(req,res)=>{
@@ -107,6 +108,40 @@ try{
    assert.equal(await page.locator(scope+'[data-ao-suscipe-source-note]').count(),1);
    assert.equal(await page.evaluate(()=>globalThis.AO_TRADITIONAL_PRAY_V381.open("pray.morning_evening",{dailySourcePrayer:"bogus"})),false);
    assert.equal((await page.evaluate(()=>globalThis.AO_TRADITIONAL_PRAY_V381.state())).dailyDirectId,SUSCIPE.sourceIds.la);
+   // Four complete original-source private works: Before Mass and three
+   // Confession prayers. Neither route modifies the liturgical or sacramental
+   // sequence; French UI must disclose the English-only source language.
+   for(const work of PRIVATE){
+    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.library",{returnContext:null})),true);
+    await page.locator(scope+'[data-p435930-lib-search]').evaluate((el,text)=>{
+     el.value=text;el.dispatchEvent(new Event("input",{bubbles:true}));
+    },work.en);
+    const link=page.locator(scope+'[data-p435930-red-historical="'+work.id+'"]');
+    assert.equal(await link.count(),1,"Missing historical source prayer in Library search "+work.id);
+    await link.evaluate(el=>el.click());
+    const mass=work.route==="mass.prepare";
+    if(mass)await page.waitForFunction(()=>globalThis.AO_TRADITIONAL_PRAY_V381?.state?.().route==="mass.prepare",null,{timeout:15000});
+    else await page.waitForFunction(()=>globalThis.AO_PRAY_V435930?.state?.().view==="confession",null,{timeout:15000});
+    const reader=mass
+     ?page.locator(scope+'[data-ao-devo-card="mass-before-'+work.sourceId+'"]')
+     :page.locator(scope+'[data-ao-confession-historical-source="'+work.sourceId+'"]');
+    assert.equal(await reader.count(),1,"Private reader must show exact source card: "+work.id);
+    const face=reader.locator('.aoTP381Reader').first();
+    assert.equal(await face.getAttribute("lang"),"en","No French or Latin private witness is attested");
+    assert.equal(normalize(await face.innerText()),normalize(work.text),"Full historical prayer lost or changed "+work.id);
+    const sourceLink=reader.locator('a[href]').first();
+    assert.equal(await sourceLink.count(),1,"Original source link missing "+work.id);
+    assert.equal(await sourceLink.getAttribute("href"),work.sourceUrl);
+    if(ui==="fr"){
+      const fallback=mass?'[data-tp381-source-language-fallback]':'[data-ao-confession-source-language-fallback]';
+      assert.equal(await reader.locator(fallback).count(),1,"French UI must show English-original source notice "+work.id);
+    }
+    checked++;
+   }
+   const priorPrivate=await page.evaluate(()=>globalThis.AO_PRAY_V435930.state());
+   assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.confession",{historicalPrayer:"not-sourced"})),false,"Unverified Confession private deep links must fail closed");
+   assert.deepEqual((await page.evaluate(()=>globalThis.AO_PRAY_V435930.state())).view,priorPrivate.view);
+   assert.equal(await page.evaluate(()=>globalThis.AO_TRADITIONAL_PRAY_V381.open("mass.prepare",{massPrayer:"not-sourced"})),false,"Unverified Before Mass prayer deep links must fail closed");
    // Source-only links must be found by title even without subject selection.
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.library",{returnContext:null})),true);
    await page.locator(scope+'[data-p435930-lib-search]').evaluate(el=>{el.value="Bonaventure";el.dispatchEvent(new Event("input",{bubbles:true}))});
@@ -124,6 +159,6 @@ try{
    console.log("PASS "+width+"px "+ui+": all eleven Communion works open exact source cards; title search and invalid source guard.");
   }finally{await context.close()}
  }
- assert.equal(checked,52,"Eleven Communion plus Suscipe EN and LA in four device/language combinations");
- console.log("PASS 52 source-owned reading-body comparisons, eleven Communion plus EN/LA Suscipe × 320/390 EN/FR; no invented French or exact-2013 collation claims.");
+ assert.equal(checked,68,"Eleven Communion, Suscipe EN/LA and four Mass/Confession prayers in four device/language combinations");
+ console.log("PASS 68 source-owned prayer comparisons: eleven Communion, EN/LA Suscipe and four Mass/Confession works × 320/390 EN/FR; no invented translations or 2013-text claims.");
 }finally{await browser?.close().catch(()=>{});await new Promise(done=>server.close(done))}
