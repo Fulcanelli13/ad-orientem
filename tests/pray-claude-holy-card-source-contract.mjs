@@ -16,7 +16,7 @@ test("F01 default honours approved Holy Card; continuous reading requires explic
   "Normal Prayer entry must not silently replace the approved reversible card");
  assert.match(runtime,/ESSENTIAL_FLOW_ALTERNATIVE_ENABLED\?renderEssentialFlowReader/,
   "Continuous flow is only the opt-in branch");
- assert.match(runtime,/:claudeHolyCard\(\{id,p,face:chosen/,
+ assert.match(runtime,/:claudeHolyCard\(\{id,p:displayRecord,face:chosen/,
   "Default reader must be the original Claude Holy Card");
  assert.match(essentialSource,/get\("aoEssentialFlow"\)==="1"/,
   "Flow alternative must require explicit user URL opt-in, never the general Prayer pilot");
@@ -80,7 +80,7 @@ test("Only the visible Holy Card face is exposed to screen readers",()=>{
 });
 
 test("F01 reader routes use the Claude object, not a flat sheet",()=>{
- assert.match(runtime,/claudeHolyCard\(\{id,p,face:chosen/);
+ assert.match(runtime,/claudeHolyCard\(\{id,p:displayRecord,face:chosen/);
  assert.match(runtime,/claudeHolyCardCase\(\{ids:ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2/);
  assert.match(runtime,/data-p435930-essential-card-turn/);
  assert.match(runtime,/data-p435930-essential-aa/);
