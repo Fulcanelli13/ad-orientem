@@ -121,6 +121,25 @@ try{
   assert.ok(overflowReading<=2,"Public Latin Compline overflow "+width+": "+overflowReading);
   await office.getByRole("button",{name:"Close Latin Compline"}).click();
   assert.equal(await office.locator(".aoOfPublishedLatin").count(),0);
+  // The second Advent Saturday has the same 1960 Saturday Compline
+  // appointment and source-backed Psalm 87/102 as the first.
+  await office.getByRole("button",{name:"Advent II · 5 Dec 2026"}).click();
+  assert.match(await office.locator(".aoOfStatus").innerText(),
+   /Latin Compline · available/u);
+  assert.match(await office.locator(".aoOfStatus").innerText(),
+   /Office date: 2026-12-05/u);
+  await office.getByRole("button",{name:"Read Latin Compline"}).click();
+  await page.waitForFunction(()=>
+   document.querySelector(".aoOfPublishedStatus")?.textContent?.includes(
+    "2026-12-05 · 40 reading moments"),null,{timeout:35000});
+  assert.match(await office.locator(".aoOfPublishedLatin").innerText(),
+   /Saturday, 5 December 2026/u);
+  assert.match(await office.locator(".aoOfFrameControls").innerText(),/1 \/ /u);
+  const secondOverflow=await page.evaluate(()=>
+   document.documentElement.scrollWidth-document.documentElement.clientWidth);
+  assert.ok(secondOverflow<=2,"Second Advent Saturday overflows "+width);
+  await office.getByRole("button",{name:"Close Latin Compline"}).click();
+  assert.equal(await office.locator(".aoOfPublishedLatin").count(),0);
   await office.locator('[data-office-hour="VESPERS"]').click();
   const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-
    document.documentElement.clientWidth);
