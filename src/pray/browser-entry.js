@@ -71,7 +71,7 @@ function stamp(win){
 }
 
 
-function installOfficeShortcut(win){
+export function installOfficeShortcut(win){
   const mount=win?.document?.querySelector?.("#aoPray435930 .aoP435930Mount");
   if(!mount||mount.querySelector?.("[data-ao-office-door]"))return false;
   const button=win.document.createElement("button");

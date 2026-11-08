@@ -5,6 +5,7 @@
  */
 import {ROMAN_OFFICE_HOURS,officeRouteState} from "./office-route-state.js";
 import {officePrivateSourceReviewAllowed} from "./office-private-preview-gate.js";
+import {installOfficeShortcut} from "../pray/browser-entry.js";
 const STYLE=`
 /* The legacy Prayer header is positioned above the mount even with hidden
    set by its donor. Suppress it only while the native Office is in the DOM. */
@@ -92,6 +93,7 @@ export function openDivineOfficeReader(win=globalThis,{date=todayLocal()}={}){
    localReview?.instance?.dispose?.();
    host.remove();
    restoreBackground();
+   installOfficeShortcut(win); // Restore the canonical Prayer entry after donor hub reset.
  });
  host.append(back);
  const kicker=d.createElement("p");kicker.className="aoOfKicker";
