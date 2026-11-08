@@ -4,6 +4,7 @@
  * approved text projection can be enabled. Never borrow a Mass calendar.
  */
 import {reviewAdventIComplineAppointment} from "./compline-advent-2026-appointments.js";
+import {latinComplineReleaseEligibility} from "./latin-compline-public-release.js";
 
 export const ROMAN_OFFICE_HOURS=Object.freeze([
  Object.freeze({id:"MATINS",name:"Matins",latin:"Matutinum"}),
@@ -26,6 +27,14 @@ export function officeRouteState({date,hour,calendarScope="UNIVERSAL"}={}){
  if(!IDS.has(hour))return withheld("UNKNOWN_HOUR");
  if(calendarScope!=="UNIVERSAL")return withheld("LOCAL_OFFICE_NOT_RESOLVED");
  if(hour==="COMPLINE"){
+   const released=latinComplineReleaseEligibility({date,hour,calendarScope});
+   if(released.status==="ELIGIBLE"){
+    return Object.freeze({date,hour,status:"RELEASED",
+      reason:"PRINTED_LATIN_COMPLINE_CERTIFIED",
+      label:"Saturday Compline · 28 November 2026",
+      officeDate:date,sourceRevision:released.sourceRevision,
+      sourceResearch:true,readingEnabled:true,published:true});
+   }
    const appointment=reviewAdventIComplineAppointment(date);
    if(appointment.status==="EXPLICIT_ROMAN_1960_APPOINTMENT_RESEARCH"){
      return Object.freeze({date,hour,status:"SOURCE_RESEARCH_ONLY",
