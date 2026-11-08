@@ -1,4 +1,4 @@
-import {loadDykPrioritySelection,dykPublishedCandidates,loadDykHistoricalRelease,dykHistoricalCandidates,loadDykWeiser16Release,dykWeiser16Candidates,loadDykWeiserSecond16Release,dykWeiserSecond16Candidates,loadDykMixed24Release,dykMixed24Candidates,loadDyk125Release,dyk125Candidates,dykHomeRotationSlot,DYK_GLOSSARY_FALLBACK_IDS} from "./dyk-published-feed.js";
+import {loadDykPrioritySelection,dykPublishedCandidates,loadDykHistoricalRelease,dykHistoricalCandidates,loadDykWeiser16Release,dykWeiser16Candidates,loadDykWeiserSecond16Release,dykWeiserSecond16Candidates,loadDykMixed24Release,dykMixed24Candidates,loadDyk125Release,dyk125Candidates,loadDyk150Release,dyk150Candidates,dykHomeRotationSlot,DYK_GLOSSARY_FALLBACK_IDS} from "./dyk-published-feed.js";
 // Transitional Home "Did you know?" projection from the already published
 // bilingual Glossary. No second fact bank, generated AI claims or unreviewed
 // Weiser/Pitrè research. The canonical Discovery owner replaces this adapter
@@ -161,8 +161,9 @@ export function hydrateHomeDidYouKnow(root,win=globalThis){
     loadDykWeiser16Release(win).catch(()=>null),
     loadDykWeiserSecond16Release(win).catch(()=>null),
     loadDykMixed24Release(win).catch(()=>null),
-    loadDyk125Release(win).catch(()=>null)
-  ]).then(([entries,data,historical,r50,r50b,mixed,h125])=>{
+    loadDyk125Release(win).catch(()=>null),
+    loadDyk150Release(win).catch(()=>null)
+  ]).then(([entries,data,historical,r50,r50b,mixed,h125,h150])=>{
     const screen=button.closest(".homeScreen");
     const selectedDate=win?.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate??
       root?.querySelector?.(".homeScreen [data-home-dyk-date]")?.dataset?.homeDykDate;
@@ -173,7 +174,8 @@ export function hydrateHomeDidYouKnow(root,win=globalThis){
       ...(r50?dykWeiser16Candidates(r50,date):[]),
       ...(r50b?dykWeiserSecond16Candidates(r50b,date):[]),
       ...(mixed?dykMixed24Candidates(mixed,date):[]),
-      ...(h125?dyk125Candidates(h125,date):[])
+      ...(h125?dyk125Candidates(h125,date):[]),
+      ...(h150?dyk150Candidates(h150,date):[])
     ];
     const slot=dykHomeRotationSlot(date,candidates.map(row=>row.id),HOME_DYK_GLOSSARY_IDS);
     const published=candidates.find(row=>row.id===slot);
