@@ -98,7 +98,7 @@ try{
      }else{
       assert.equal(state.dying,work.options.dyingStep);
       assert.ok(await page.locator(shell+'[data-ao-dying-step="'+work.options.dyingStep+'"]').count()>=1,"Wrong bedside stage");
-      const card=page.locator(shell+'[data-ao-dying-step="'+work.options.dyingStep+'"] .aoTP381PrayerCard').last();
+      const card=page.locator(shell+'[data-ao-devo-card="dying-'+work.options.dyingStep+'"] .aoTP381PrayerCard').last();
       assert.equal(await card.count(),1);
       const face=card.locator('[data-face-v],.aoTP381Reader');
       const original=work.id==="good_death_proficiscere"?GOOD_DEATH_DYING_V384.proficiscere:GOOD_DEATH_DYING_V384.aspirations;
