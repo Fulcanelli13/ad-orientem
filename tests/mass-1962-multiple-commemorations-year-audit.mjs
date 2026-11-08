@@ -171,6 +171,12 @@ let browser;try{
    "Actual reader failed to recover the preexisting St Peter and St Paul source");
  assert.equal(aggregate.uncertifiedFormCases.some(x=>x.date==="2026-06-30"),false,
    "Original 1962 apostolic group was incorrectly left uncertified");
+ // The original date-resolved source must reach every Mass form; a
+ // synthetically passing rule fixture alone cannot close the 2026 queue.
+ for(const date of ["2026-03-19","2026-03-25"]){
+   const remaining=aggregate.uncertifiedFormCases.filter(x=>x.date===date);
+   assert.deepEqual(remaining,[],date+" original privileged Lenten feria is still missing");
+ }
  for(const date of ["2026-03-27","2026-12-26","2026-12-28"]){
    const recovered=aggregate.recoveredInseparable.find(x=>x.date===date);
    const status=date==="2026-03-27"?recovered?.passionStatus:
