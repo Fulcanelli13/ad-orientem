@@ -297,7 +297,13 @@ export function createDatedProperNotationPreview({
       viewToggle.setAttribute("aria-label",notation?
         "Show Gregorian notation":"Show text without Gregorian notation");
     });
-    host.append(mark,expand,title,viewToggle);node.append(host);
+    host.append(mark,expand,title,viewToggle);
+    // A/C: LIVE translations follow the sung staff, not precede it.
+    // MISSAL keeps the two bilingual columns in grid row 1 with this
+    // single full-width staff in grid row 2.
+    const translation=node.querySelector(":scope > .ao-line-secondary");
+    if(translation)node.insertBefore(host,translation);
+    else node.append(host);
     const entry={host,score,engraver:null};entries.push(entry);
     try{
      const engraver=engraverFactory({viewport:staff,document:doc});
