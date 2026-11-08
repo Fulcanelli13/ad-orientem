@@ -71,7 +71,7 @@ export function projectComplineRecitation(review,{context="FINAL_PRAYER"}={}){
  const readingEvents=Object.freeze(events.filter((_,i)=>!toOmit.has(i)));
  if(readingEvents.length!==40)return withheld("COMPLINE_1961_READING_COUNT_INVALID");
  const resultFrames=[];
- let replacementCount=0,amenCount=0;
+ let replacementCount=0,amenCount=0,psalmLabelCount=0;
  for(const f of review.frames){
   if(toOmit.has(f.eventIndex))continue;
   if(f.eventIndex===idx&&f.sourceId===OPENING_PATER&&context==="FINAL_PRAYER"){
@@ -95,8 +95,14 @@ export function projectComplineRecitation(review,{context="FINAL_PRAYER"}={}){
     printConformed:true}));
    amenCount++;continue;
   }
-  resultFrames.push(f);
+  const numbered=projectSaturdayComplinePsalmFrame(f);
+  if(numbered===null)return withheld("COMPLINE_SATURDAY_PSALM_NUMBERING_DRIFT");
+  if(numbered!==f)psalmLabelCount++;
+  resultFrames.push(numbered);
  }
+ const saturday=review.civilDate==="2026-11-28"||review.civilDate==="2026-12-05";
+ if(psalmLabelCount!==(saturday?41:0))
+  return withheld("COMPLINE_SATURDAY_PSALM_COVERAGE_MISMATCH");
  if(amenCount!==2||replacementCount!==(context==="FINAL_PRAYER"?1:0)||
    resultFrames.some(f=>f.sourceId===SECOND_PATER||f.sourceId===POST_CANTICLE_KYRIE))
   return withheld("COMPLINE_1961_FRAME_PROJECTION_MISMATCH");
@@ -109,6 +115,8 @@ export function projectComplineRecitation(review,{context="FINAL_PRAYER"}={}){
   postCanticleKyrieOmitted:true,postCanticlePaterOmitted:true,
   blessingAmensRestoredFromPinnedSource:2,
   editorialRubricFrames:replacementCount,
+  printedPsalmDisplayFrames:psalmLabelCount,
+  originalPsalmSourceRowsPreserved:true,
   openingPaterOmitted:context==="FINAL_PRAYER",
   liturgicallyCertified:false,rightsApproved:false,
   publishable:false,published:false,readingPublished:false
