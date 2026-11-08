@@ -60,6 +60,7 @@ import {redBookletCommunionLibraryLink,redBookletCommunionLibraryLinksForSubject
 import {RED_BOOKLET_SUSCIPE_LIBRARY_LINK_V1,redBookletSuscipeLibraryLinksForSubject} from "./red-booklet-suscipe-library-link.v1.js";
 import {RED_BOOKLET_PRIVATE_HISTORICAL_WORKS_V1,redBookletPrivateHistoricalSource,
  redBookletPrivateHistoricalWork,redBookletPrivateHistoricalWorksForSubject} from "./red-booklet-private-historical-works.v1.js";
+import {RED_BOOKLET_2013_VARIANT_WITNESSES_V1 as BOOKLET_VARIANTS} from "./red-booklet-2013-variant-witnesses.v1.js";
 import {FIVE_WOUNDS_SOURCE_V1,FIVE_WOUNDS_WOUNDS_V1,FIVE_WOUNDS_CHAPLET_V1,fiveWoundsStep,fiveWoundsGroupProgress} from "./five-wounds-chaplet.v1.js";
 import {PRECIOUS_BLOOD_HISTORICAL_SOURCE_V1,PRECIOUS_BLOOD_HISTORICAL_PRAYERS_V1,PRECIOUS_BLOOD_MYSTERIES_V1,PRECIOUS_BLOOD_TOTALS_V1,preciousBloodMystery,preciousBloodPrayerAt} from "./precious-blood-chaplet.v1.js";
 import {PRIESTLY_INTERCESSION_PURPOSES_B19,priestlyIntercessionFor} from "./priestly-intercessions-b19.js";
@@ -1967,7 +1968,13 @@ function renderConfession(){
   body=`${guideNow(L('What kind of Confession?','Quelle préparation à la confession ?'),L('Select the situation that fits. The length of time since your last Confession does not automatically mean you need a general Confession.','Choisissez votre situation. Une longue absence ne signifie pas automatiquement qu’une confession générale est nécessaire.'))}
   <div class="aoP435930ConfPathCards" role="group" aria-label="${esc(L('Confession preparation path','Parcours de préparation'))}">${choices}</div>
   ${callout(esc(L('No sins or examination answers are entered or stored in the app.','Aucun péché ni aucune réponse à l’examen ne sont saisis ou conservés dans l’application.')),'privacy')}
-  ${guidePrayers([{id:'sacrament_come_holy_spirit',kicker:L('Prayer for light','Prière pour demander la lumière')}])}`;
+  ${guidePrayers([{id:'sacrament_come_holy_spirit',kicker:L('Prayer for light','Prière pour demander la lumière')}])}
+  <section class="aoP435930ConfHistoricalOptions" data-ao-booklet-guardian-confession>
+   <small>${esc(L('Guardian Angel · short private invocation','Ange gardien · invocation privée courte'))}</small>
+   ${isFr()?'<p data-ao-booklet-original-language>Texte traditionnel anglais, sans traduction française attestée pour cette édition.</p>':''}
+   <p lang="en">${esc(BOOKLET_VARIANTS.guardianAngelConfession.english)}</p>
+   <small>${esc(BOOKLET_VARIANTS.guardianAngelConfession.source)}</small>
+  </section>`;
  }
  if(CONF.stage===1)body=confessionExaminationView(ex);
  if(CONF.stage===2){
