@@ -12,8 +12,15 @@ const kind=item=>{
  if(scope.startsWith("BOOTLE_TOWN_ONLY_"))return "historicalTown";
  return "city";
 };
+export const isIllustrativeLocalityMarker=item=>item?.geo?.precision==="locality"&&item?.geo?.approximate===true;
+export const tlmApproximateMapSource=item=>isR28ApproximateMarker(item)?"r28":
+ isIllustrativeLocalityMarker(item)?"locality":null;
 export function tlmApproximateMapLabel(item,language="en"){
- if(!isR28ApproximateMarker(item))return null;
+ // R28 keeps its more precise editorial warnings. Older locality overlays
+ // must also be labelled in the map rail and cards, not silently treated as
+ // navigation-grade church locations or conflated with an unverified Mass.
+ if(!isR28ApproximateMarker(item))return isIllustrativeLocalityMarker(item)?
+   L(language,"Illustrative locality · entrance unverified","Localité indicative · entrée non vérifiée"):null;
  switch(kind(item)){
   case "schematic":return L(language,"Schematic area · Mass unverified","Zone schématique · messe non vérifiée");
   case "tentativeVillage":return L(language,"Tentative village · Mass unverified","Village incertain · messe non vérifiée");
