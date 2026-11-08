@@ -1,0 +1,82 @@
+{
+  "schema": "ao.office.1961-psalter-edition-family-ledger.v1",
+  "purpose": "Prevent any 1961 Breviarium Romanum with a different Latin Psalter translation being accepted as an exact witness for Ad Orientem's pinned Clementine/Vulgate Saturday Compline.",
+  "target": {
+    "civilDate": "2026-11-28",
+    "hour": "COMPLINE",
+    "sourcePsalterFamily": "VULGATA_BIBLIORUM",
+    "targetEdition": "MAME_1961_VULGATA",
+    "specificPrintedPsalterPagesSeen": false,
+    "fullVerbatimCollationCertified": false
+  },
+  "editionWitnesses": [
+    {
+      "id": "MAME_1961_VULGATA",
+      "psalterFamily": "VULGATA_BIBLIORUM",
+      "publisher": "Mame",
+      "year": 1961,
+      "evidenceType": "Publisher/edition description of complete two-volume Vulgata Psalter edition",
+      "evidenceUrl": "https://www.librairie-pierre-brunet.fr/librairie-en-ligne/fm36388-brviaire-breviariumromanum/category_pathway-485.html",
+      "targetFamilyMatch": true,
+      "verifiedSaturdayPsalmFullPages": false
+    },
+    {
+      "id": "MAME_1961_PIUS_XII",
+      "psalterFamily": "PIUS_XII_NOVA_VULGATA_TRANSLATION",
+      "publisher": "Mame",
+      "year": 1961,
+      "evidenceType": "Bibliothèque nationale de France catalogued 1961 edition with Psalmorum e versione Pii Papae XII",
+      "evidenceUrl": "https://catalogue.bnf.fr/ark:/12148/cb33081006r",
+      "targetFamilyMatch": false,
+      "verifiedSaturdayPsalmFullPages": false
+    },
+    {
+      "id": "DESSAIN_1961_VULGATA",
+      "psalterFamily": "VULGATA_BIBLIORUM",
+      "publisher": "H. Dessain",
+      "year": 1961,
+      "evidenceType": "Pontifical Lateran University library catalogue, 2 vols e Vulgata",
+      "evidenceUrl": "https://pul-vc.atcult.it/pul/resource?dcnr=0&uri=50350&v=l",
+      "targetFamilyMatch": true,
+      "verifiedSaturdayPsalmFullPages": false
+    },
+    {
+      "id": "VATICAN_1961_PIUS_XII",
+      "psalterFamily": "PIUS_XII_NOVA_VULGATA_TRANSLATION",
+      "publisher": "Typis Polyglottis Vaticanis",
+      "year": 1961,
+      "evidenceType": "WorldCat catalogued 1961 typica with textu psalmorum e versione Pii Papae XII",
+      "evidenceUrl": "https://search.worldcat.org/title/Breviarium-Romanum-ex-decreto-SS.-Concilii-Tridentini-restitutum-%3A-summorum-Pontificum-cura-recognitum-cum-textu-psalmorum-e-versione-Pii-Papae-XII-auctoritate-edita/oclc/58542741",
+      "targetFamilyMatch": false,
+      "verifiedSaturdayPsalmFullPages": false
+    }
+  ],
+  "scannedIntro": {
+    "title": "Breviarium Romanum, 1961, e Vulgata",
+    "url": "https://unavocesevilla.com/LIBROSLITURGICOS/BREVIARIUM%20ROMANUM.1961.pdf",
+    "availablePages": "145 pages; title and Ordinarium; does not include Saturday Psalterium",
+    "fullPsalterEvidence": false
+  },
+  "secondarySources": [
+    {
+      "title": "Diurnale Romanum",
+      "year": 2008,
+      "fullWordComparisonPassed": true,
+      "original1961": false
+    },
+    {
+      "title": "Psalterium Romanum iuxta ritum 1962",
+      "year": 2023,
+      "fullWordComparisonPassed": true,
+      "original1961": false
+    }
+  ],
+  "sourceWordsVerifiedSecondaryWitnesses": 473,
+  "releaseFlags": {
+    "psalter1961VerbatimCollated": false,
+    "completeHourCollated": false,
+    "rightsApproved": false,
+    "publicReleaseApproved": false
+  },
+  "notes": "A 1961 date alone or a title page alone cannot establish the text family or a verbatim match for its Psalterium. Require photographed/verified full Saturday psalter leaves of the Vulgata textual family plus an independent edition-specific release decision."
+}
