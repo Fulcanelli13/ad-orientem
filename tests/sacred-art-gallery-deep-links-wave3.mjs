@@ -27,7 +27,7 @@ const win={
  },
  AO_SCRIPTURE_APP_V1:{openContext:reference=>{steps.push(["scripture",reference]);return true;}},
  AO_MODULES:{open:async(id,opts)=>{steps.push(["module",id]);context=opts;return {ok:true};}},
- AO_FIND_APP_V1:{openAtlasEvent:async id=>{steps.push(["atlas",id]);return true;}},
+ AO_FIND_APP_V1:{openAtlasEvent:async (id,options)=>{steps.push(["atlas",id]);context=options;return true;}},
  console:{error:()=>{}}
 };
 assert.equal(await openReleasedSacredArtTarget(win,{
@@ -41,11 +41,13 @@ assert.equal(await openReleasedSacredArtTarget(win,{
 assert.deepEqual(steps,[["surface","pray"],["module","pray.rosary"]]);
 assert.deepEqual(context.sourceObject,{type:"rosary",mysteryId:"joy1"});
 assert.equal(context.returnContext,null);
+assert.equal(typeof context.onCloseReturn,"function","Rosary Back must restore Home");
 steps.length=0;active="home";
 assert.equal(await openReleasedSacredArtTarget(win,{
  workId:"released-photo:angelus",kind:"bibleAtlas",id:"nazareth-e1"
 }),true);
 assert.deepEqual(steps,[["surface","find"],["atlas","biblical:event:nazareth-e1"]]);
+assert.equal(typeof context.onCloseReturn,"function","Atlas Back must restore Home");
 steps.length=0;active="home";
 assert.equal(await openReleasedSacredArtTarget(win,{
  workId:"artwork-pending:04",kind:"rosary",id:"sor1"
