@@ -159,6 +159,44 @@ try{
    sourceReads:seen.size,passed:true});
   await context.close();
  }
+ // Full-app path: the same private trilingual reader mounts INSIDE the
+ // native Prayer Office only with explicit loopback opt-in (never on Pages).
+ {
+  const ctx=await browser.newContext({viewport:{width:390,height:844},
+   isMobile:true,hasTouch:true,deviceScaleFactor:1,serviceWorkers:"block"});
+  const app=await ctx.newPage(),appErrors=[];
+  app.on("pageerror",error=>appErrors.push(String(error?.message??error)));
+  const sourceRequests=await stubSources(app);
+  const appURL=new URL("/index.html?aoOfficeReview=1",url).href;
+  await app.goto(appURL,{waitUntil:"domcontentloaded",timeout:90000});
+  await app.waitForFunction(()=>typeof globalThis.AO_APP_SHELL_V1?.navigate==="function",
+   null,{timeout:45000});
+  const nav=await app.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("pray"));
+  assert.equal(nav?.ok,true);
+  await app.locator("#aoPray435930.open [data-ao-office-door]").click();
+  const office=app.locator("#aoPray435930.open .aoOfficeReader");
+  await office.waitFor({state:"visible",timeout:20000});
+  const review=office.locator(".aoOfPrivateReviewLaunch");
+  await review.waitFor({state:"visible",timeout:10000});
+  await review.click();
+  await office.locator(".aoOfPrivateReview .aoOfOptions").waitFor({state:"visible",timeout:12000});
+  await office.locator(".aoOfPrivateReview .aoOfOptions select").first().selectOption("COMPLINE");
+  await office.locator(".aoOfPrivateReview .aoOfOptions button").click();
+  await waitReady(app);
+  assert.match(await office.locator(".aoOfReadiness").innerText(),/42 source events/);
+  assert.equal(await office.locator(".aoOfLanguage").count(),2);
+  assert.ok(sourceRequests.size>0,"Native Office did not fetch original pinned source");
+  assert.equal(appErrors.length,0,"Native private source browser errors: "+appErrors.join(" | "));
+  await app.screenshot({path:resolve(OUT,"390-native-prayer-compline-private.png"),
+   animations:"disabled",fullPage:false});
+  receipt.screenshots.push("390-native-prayer-compline-private.png");
+  await office.getByRole("button",{name:"Return to Prayer"}).click();
+  assert.equal(await office.count(),0,"Native source preview was not disposed on Back");
+  receipt.scenarios.push({case:"native-prayer-private-Compline",passed:true,
+   originalPinnedSourceRequests:sourceRequests.size,
+   reviewHost:"loopback-only",published:false});
+  await ctx.close();
+ }
  const context=await browser.newContext({viewport:{width:390,height:844}});
  const page=await context.newPage(),hits=await stubSources(page,{dropFrenchPsalm:true});
  await page.goto(url,{waitUntil:"domcontentloaded"});

@@ -58,6 +58,7 @@ jobs:
           node --test tests/divine-office-prayer-readiness-gate.mjs
           node --test tests/divine-office-native-entry.mjs
           node --test tests/divine-office-private-review.mjs
+          node --test tests/divine-office-private-preview-gate.mjs
           node --check src/office/private-office-review-page.js
           for file in src/office/*.js; do node --check "$file"; done
           for test in tests/divine-office-advent-first-vespers-*.mjs tests/divine-office-advent-i-collect-ending-1960-research.mjs tests/divine-office-at-reference-resolver.mjs tests/divine-office-reviewed-hour-handoff.mjs; do node --test "$test"; done
