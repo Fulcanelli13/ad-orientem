@@ -211,6 +211,18 @@ export function select1962CommemorationsForMassForm({
   const typedAdventMain=/^tempora:Adv[1-4]-[1-6]:3:/i.test(mainId)&&
     /^Tempora\/Adv[1-4]-[1-6]$/.test(String(main.path??""))&&
     Number(main.rank)===3;
+  // 21 July 2026: the revised St Lawrence of Brindisi Proper owns
+  // Sancti/07-21r; St Praxedes retains the distinct Sancti/07-21
+  // orations. The canonical 1962 Ordo specifies her ordinary
+  // commemoration in Low but not a nonconventual Mass in cantu.
+  // https://ordo.fsspx.org/en/day/2026-07-21
+  const july21BrindisiSource=calendarResolution.date==="2026-07-21"&&
+    /^sancti:07-21r:3:/i.test(mainId)&&Number(main.rank)===3&&
+    String(main.path)==="Sancti/07-21r"&&
+    String(data.sourcePath)==="Sancti/07-21r"&&
+    Number(only.rank)===4&&!only.privileged&&
+    /^sancti:07-21:4:/i.test(commId)&&
+    String(only.path)==="Sancti/07-21";
   // 1960 General Rubrics §§25(a), 108, 111(a,d), 112-114:
   // a Lent/Passiontide III-class feria is the principal celebration
   // when a III-class sanctoral feast is impeded. An authenticated
@@ -278,7 +290,7 @@ export function select1962CommemorationsForMassForm({
     !only.privileged&&
     Number(only.rank)===4&&/^sancti:[0-9]{2}-[0-9]{2}[a-z]*:4:/i.test(commId)&&
     /^Sancti\/[0-9]{2}-[0-9]{2}[a-z]*$/i.test(String(only.path??""))&&
-    (typedSanctoralMain||typedAdventMain);
+    (typedSanctoralMain||typedAdventMain||july21BrindisiSource);
   const scope=nativityOctaveOwner?"PRIVILEGED_CHRISTMAS_OCTAVE_II_CLASS_MASS":
     privilegedSunday?"PRIVILEGED_SUNDAY_UNDER_I_CLASS_SANCTORAL":
     privilegedAdvent?"PRIVILEGED_ADVENT_FERIA_UNDER_SANCTORAL":
