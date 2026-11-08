@@ -132,6 +132,15 @@ try{
   assert.match(await page.locator(".aoOfLanguage h3").last().innerText(),/français/i);
   await page.locator("#reader .aoOfOptions select").nth(1).selectOption("la");
   assert.equal(await page.locator(".aoOfLanguage").count(),1);
+  // The 1961 §65–66 presider choice is independent of the final-prayer
+  // examen and survives the same responsive native reader.
+  const presider=page.getByRole("combobox",{name:"Compline presiding minister"});
+  await presider.selectOption("PRIEST");
+  await waitReady(page);
+  assert.match(await page.locator(".aoOfReadiness").innerText(),/priest · NOT certified/);
+  await presider.selectOption("NON_PRIEST");
+  await waitReady(page);
+  assert.match(await page.locator(".aoOfReadiness").innerText(),/non priest · NOT certified/);
   await page.screenshot({path:resolve(OUT,width+"-compline-la.png"),
    animations:"disabled",fullPage:false});
   receipt.screenshots.push(width+"-compline-la.png");
@@ -140,6 +149,7 @@ try{
   assert.ok(overflow<=2,"horizontal overflow "+overflow+" at "+width);
   // Exact 28 November civil date is not 29 November Office on First Vespers.
   await page.locator("#reader .aoOfOptions select").first().selectOption("VESPERS");
+  assert.equal(await presider.isDisabled(),true);
   await page.getByRole("button",{name:"Read source preview"}).click();
   await waitReady(page);
   assert.match(await page.locator(".aoOfReadiness").innerText(),
