@@ -33,7 +33,7 @@ export const PRAYER_WITNESSED_VARIANTS=Object.freeze({
   language:"fr",
   source:"Compendium of the Catechism of the Catholic Church, French edition, Appendix A: Acte d’espérance",
   url:"https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html",
-  noteEn:"The Holy See’s published French Acte d’espérance ends « Dans cette foi, puis-je vivre et mourir ». The English and Latin witnesses say hope (spe). This apparent printed anomaly has been retained exactly pending an independently attested correction.",
-  noteFr:"Le texte français du Compendium publié par le Saint-Siège se termine ici par « Dans cette foi, puis-je vivre et mourir ». Les témoins anglais et latin parlent d’espérance (spe). Cette anomalie apparente est conservée telle qu’imprimée, dans l’attente d’une correction attestée."
+  noteEn:"The Holy See’s published French Acte d’espérance ends « Dans cette foi, puis-je vivre et mourir ». The English and Latin witnesses say hope (spe). The printed Vatican witness remains unchanged in the source record; the Prayer card explicitly uses the editorial devotional correction « Dans cette espérance », not a verbatim quotation of that witness.",
+  noteFr:"Le texte français du Compendium publié par le Saint-Siège se termine ici par « Dans cette foi, puis-je vivre et mourir ». Les témoins anglais et latin parlent d’espérance (spe). Le témoin imprimé du Vatican reste inchangé dans la source ; la carte de prière affiche explicitement la correction de lecture « Dans cette espérance », qui n’est pas une citation verbatim du témoin."
  })
 });

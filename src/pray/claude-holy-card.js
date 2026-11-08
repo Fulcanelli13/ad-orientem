@@ -1,4 +1,4 @@
-import {ESSENTIAL_HOLY_CARD_IDS_V1,essentialHolyCardParts} from "./essential-holy-card-parts.js";
+import {ESSENTIAL_HOLY_CARD_IDS_V1,essentialHolyCardDisplayTitle,essentialHolyCardParts} from "./essential-holy-card-parts.js";
 
 export const CLAUDE_HOLY_CARD_FAMILY="ao-claude-holy-card-v1";
 const num=["i","ii","iii","iv","v","vi","vii","viii","ix","x","xi","xii","xiii","xiv","xv"];
@@ -16,7 +16,7 @@ const incipit=p=>{
 const safeImage=artUrl=>typeof artUrl==="string"&&(
  /^https:\/\//.test(artUrl)||/^\/assets\/[a-zA-Z0-9/_-]+\.(?:jpe?g|png|webp)$/i.test(artUrl)
  );
-export function claudeHolyCardCase({ids=ESSENTIAL_HOLY_CARD_IDS_V1,prayers,esc,title,artFor=()=>""}){
+export function claudeHolyCardCase({ids=ESSENTIAL_HOLY_CARD_IDS_V1,prayers,esc,title,locale="en",artFor=()=>""}){
  if(typeof esc!=="function")throw new TypeError("Escape function required");
  const cards=ids.filter(id=>prayers?.[id]);
  // A repeated approved image stays available in its individual prayer reader,
@@ -28,17 +28,19 @@ export function claudeHolyCardCase({ids=ESSENTIAL_HOLY_CARD_IDS_V1,prayers,esc,t
     const p=prayers[id],source=artFor(id);
     const published=safeImage(source)&&!usedImages.has(source);
     if(published)usedImages.add(source);
-    const canonicalTitle=p.title||id,firstWords=incipit(p)||canonicalTitle;
+    const canonicalTitle=essentialHolyCardDisplayTitle(id,p,locale),firstWords=incipit(p)||canonicalTitle;
+    // Narrow three-column collection: abbreviate the *caption*, never the underlying source prayer.
+    const shelfIncipit=firstWords.length>24?firstWords.split(/\s+/).slice(0,3).join(" "):firstWords;
     // The collection is captured immediately on route entry. An approved
     // image may still be decoding, especially below the initial viewport;
     // always preserve a readable source-derived face underneath the photo.
     const typePlate='<span class="aoClaudeHolyTypePlate" aria-hidden="true"><b>'+esc(canonicalTitle)+'</b>'+
-      '<i lang="la">'+esc(firstWords)+'</i></span>';
+      '<i lang="la">'+esc(shelfIncipit)+'</i></span>';
     const plate=published?typePlate+'<img src="'+esc(source)+'" alt="" loading="'+(i<12?'eager':'lazy')+'" decoding="async">':typePlate;
     return '<button type="button" data-p435930-lib-open="'+esc(id)+'" aria-label="'+esc(canonicalTitle)+'">'+
       '<div class="aoClaudeHolyFanIn"><div class="aoClaudeHolyCasePlate'+(published?'':' aoClaudeHolyCasePlateText')+'" aria-hidden="true">'+
        plate+'</div>'+
-      '<small lang="la">'+esc(firstWords)+'</small></div></button>';
+      '<small lang="la">'+esc(shelfIncipit)+'</small></div></button>';
    }).join('')+'</div></section>';
 }
 export function claudeHolyCard({id,p,face="en",vernacular="en",esc,flipped=false,artUrl="",artCredit=null,flipLabel="Turn card"}={}){
@@ -49,7 +51,7 @@ export function claudeHolyCard({id,p,face="en",vernacular="en",esc,flipped=false
  if(!language)return "";
  const beats=essentialHolyCardParts(id,language,p[language])||[];
  const latinBeats=bilingual?essentialHolyCardParts(id,"la",p.la)||[]:[];
- const latinIncipit=incipit(p),title=(language==="fr"||bilingual&&vernacular==="fr")?(p.titleFr||p.title):p.title;
+ const latinIncipit=incipit(p),title=essentialHolyCardDisplayTitle(id,p,vernacular==="fr"?"fr":"en");
  const paragraphs=beats.map((part,i)=>{
   const text=part.text.trim(),initial=i===0&&text?'<span class="aoClaudeHolyInitial">'+esc(text.charAt(0))+'</span>':'';
   const body=i===0?text.slice(1):text;
