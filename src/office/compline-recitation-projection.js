@@ -33,6 +33,12 @@ const CONCLUDING_BLESSING="Psalterium/Common/Prayers#Benedictio Completorium2";
 const AMEN_SOURCE="Psalterium/Common/Prayers#Fidelium animae:R.Amen";
 const CONFITEOR_SOURCE="Psalterium/Common/Prayers#Confiteor_";
 const DIALOGUE_SOURCE="Psalterium/Common/Prayers#Dominus";
+const VISITA_CONCLUSION_SOURCE="Psalterium/Common/Prayers#Per Dominum";
+// The Mame 1961 Ordinary §65, p.139 prints the short "Per Dóminum"
+// and an Amen after Visita, not a full long doxology.
+const VISITA_SHORT=Object.freeze({
+ la:"Per Dóminum.",en:"Through our Lord.",fr:"Par le Seigneur."
+});
 const CONFITEOR_GESTURES=Object.freeze({
  la:Object.freeze({markup:"/:(percutit sibi pectus):/",label:"Percutit sibi pectus"}),
  en:Object.freeze({markup:"/:strikes his breast:/",label:"Strikes his breast"}),
@@ -156,6 +162,21 @@ export function projectComplineRecitation(review,{
    }));
    replacementCount++;continue;
   }
+  if(f.sourceId===VISITA_CONCLUSION_SOURCE){
+   if(f.kind!=="CONCLUSION"||f.subTotal!==1||
+    languageKeys.some(l=>{
+     const rows=f.texts?.[l];
+     return !Array.isArray(rows)||rows.length!==2||
+      !/^r\.\s/u.test(rows[0])||rows[1]!=="R. Amen."||
+      (l==="la"&&!rows[0].startsWith("r. Per Dóminum nostrum "));
+    }))return withheld("COMPLINE_1961_VISITA_SHORT_CONCLUSION_SOURCE_CHANGED");
+   const texts=Object.freeze(Object.fromEntries(languageKeys.map(l=>[
+    l,Object.freeze([VISITA_SHORT[l],f.texts[l][1]])
+   ])));
+   resultFrames.push(Object.freeze({...f,sourceTexts:f.texts,texts,
+    shortConclusionPrinted1961:true,printConformed:true}));
+   continue;
+  }
   if(f.sourceId===DIALOGUE_SOURCE){
    // Two identical source blocks in the Hour: dialogue before the Visita
    // collect and after it. Original four lines remain available.
@@ -200,6 +221,10 @@ export function projectComplineRecitation(review,{
    replacementCount!==(context===COMPLINE_CONTEXT.FINAL_PRAYER?1:0)||
    resultFrames.some(f=>f.sourceId===SECOND_PATER||f.sourceId===POST_CANTICLE_KYRIE))
   return withheld("COMPLINE_1961_FRAME_PROJECTION_MISMATCH");
+ const shortConclusions=resultFrames.filter(f=>f.shortConclusionPrinted1961);
+ if(shortConclusions.length!==1||
+   shortConclusions[0].texts.la[0]!=="Per Dóminum.")
+  return withheld("COMPLINE_1961_VISITA_SHORT_CONCLUSION_MISSING");
  const frames=Object.freeze(resultFrames);
  return Object.freeze({
   ...review,events,readingEvents,readingEventCount:readingEvents.length,
@@ -208,6 +233,7 @@ export function projectComplineRecitation(review,{
   printedOrdinaryWitness:COMPLINE_PRINTED_ORDINARY_SOURCE,
   postCanticleKyrieOmitted:true,postCanticlePaterOmitted:true,
   blessingAmensRestoredFromPinnedSource:2,
+  visitaShortConclusionPrinted1961:true,
   editorialRubricFrames:replacementCount,
   printedPsalmDisplayFrames:psalmLabelCount,
   originalPsalmSourceRowsPreserved:true,
