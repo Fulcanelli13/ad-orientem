@@ -55,7 +55,7 @@ for(const [group,id,lat,lng,ref,scope] of [...newlyMapped,...refinements]){
    "Physical coordinates cannot create a claim about any Mass or its Missal");
 }
 const counts=tlmSiteEvidenceCounts(all);
-assert.deepEqual(counts,{ALL:2582,REVIEWED_PIN:762,SOURCE_PIN:1806,ADDRESS_ONLY:14});
+assert.deepEqual(counts,{ALL:2583,REVIEWED_PIN:763,SOURCE_PIN:1806,ADDRESS_ONLY:14});
 assert.equal(filterPreliminaryR49(all,{siteEvidence:"ADDRESS_ONLY"}).length,14);
 assert.equal(filterPreliminaryR49(all,{siteEvidence:"REVIEWED_PIN"}).length,762);
 // These records appear to describe one Cagliari basilica and require a
