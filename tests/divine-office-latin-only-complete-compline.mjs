@@ -91,7 +91,7 @@ test("all eight appointed dates assemble 42 complete Latin blocks without readin
    const confession=reading.frames.find(frame=>frame.kind==="CONFITEOR");
    assert.ok(confession,"printed 1961 single recitation Confiteor");
    assert.equal(confession.gestureRubrics?.la,"Percutit sibi pectus");
-   assert.match(confession.sourceTexts.la[0],/\/\:\(percutit sibi pectus\)\:\//u);
+    assert.ok(confession.sourceTexts.la[0].includes("/:(percutit sibi pectus):/"),"original source gesture rubric retained");
    assert.ok(!confession.texts.la[0].includes("/:"),"editorial gesture syntax not recited");
    assert.ok(confession.texts.la[0].startsWith("Confíteor Deo"));
    const hymn=reading.frames.filter(frame=>frame.kind==="HYMN");
