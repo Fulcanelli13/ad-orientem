@@ -5,13 +5,15 @@
     "data/prayer/artwork-editorial-20261101/curatorial-master-267-20261101.v1.json",
     "data/artwork/sacred-art-batch1-25-release-progress.v1.json",
     "src/art/released-module-paintings.v1.js",
-    "src/art/sacred-art-taxonomy-v1.js"
+    "src/art/sacred-art-taxonomy-v1.js",
+    "scripts/art/sacred-art-saint-scope-exceptions-v1.mjs"
   ],
   "state": "CATEGORY_INDEX_AND_EXISTING_PLACEMENT_MATCHES_NOT_NEW_EDITORIAL_APPROVAL",
   "policies": {
     "preserveAllPriorUserApprovalsAndRejections": true,
     "photoRightsIndependentFromArtworkSubject": true,
     "neverPromoteLexicalTagToVerifiedDepiction": true,
+    "retainOriginalLexicalTagsAfterSaintSubjectDisambiguation": true,
     "preserve267CanonicalSlotAssignments": true,
     "protectOriginalCovers": true,
     "preserveRosaryDecadeArtwork": true,
@@ -23,6 +25,7 @@
     "researchArtworkGroups": 989,
     "researchGroupsWithTitleBasedCategoryCandidates": 657,
     "researchGroupsStillWithoutTitleCategory": 332,
+    "exactSaintSubjectScopeCorrections": 3,
     "canonicalPrayerPositions": 267,
     "previouslyReleasedPhotoEntries": 16,
     "manuallyCategorizedCuratedWorks": 25,
@@ -175,8 +178,6 @@
         "PRAYER::historic:giovanni lanfranco:miracle of loaves and fishes",
         "CANONICAL::met-436199",
         "CANONICAL::ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
-        "CANONICAL::B01-MARK-TINTORETTO-ACCADEMIA",
-        "CANONICAL::ART-eter-aul-ubens-iracles-of-aint-gnatius-of-oyola",
         "CANONICAL::ART-ean-ouvenet-aising-of-azarus",
         "CANONICAL::met-702752",
         "CANONICAL::met-437403",
@@ -238,7 +239,6 @@
         "PRAYER::regina--jan-janssens",
         "PRAYER::regina--murillo-resurrection",
         "CANONICAL::met-442488",
-        "CANONICAL::cma-148758",
         "CANONICAL::ART-avid-eniers-the-lder-gony-in-the-arden-ntwerp-osary-cycle",
         "CANONICAL::ART-itian-hrist-arrying-the-ross",
         "CANONICAL::ART-iandomenico-iepolo-escent-from-the-ross-rado-assion-series",
@@ -9379,15 +9379,15 @@
       "title": "The Crucifixion of Saint Andrew",
       "artist": "Caravaggio",
       "categoryCandidates": [
-        "PASSION",
         "SAINTS"
       ],
       "existingLexicalSubjectTags": [
         {
           "tag": "CHR-CRUCIFIX",
           "confidence": 97,
-          "categoryId": "PASSION",
-          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE"
+          "categoryId": null,
+          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE",
+          "subjectScopeExclusion": "NAMED_SAINT_MARTYRDOM_NOT_CRUCIFIXION_OF_CHRIST"
         },
         {
           "tag": "SNT-PATRONS",
@@ -9396,6 +9396,7 @@
           "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE"
         }
       ],
+      "saintSubjectTitleScopeReviewed": true,
       "matchEvidence": "TITLE_AND_ARTIST_LEXICAL_CANDIDATES_ONLY",
       "visualSubjectVerification": false,
       "categoryReviewState": "UNVERIFIED_CANDIDATE_TAGGED",
@@ -9986,15 +9987,15 @@
       "title": "Miracle of the Slave (Saint Mark intervenes)",
       "artist": "Jacopo Tintoretto",
       "categoryCandidates": [
-        "MINISTRY",
         "SAINTS"
       ],
       "existingLexicalSubjectTags": [
         {
           "tag": "CHR-MIRACLE",
           "confidence": 83,
-          "categoryId": "MINISTRY",
-          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE"
+          "categoryId": null,
+          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE",
+          "subjectScopeExclusion": "NAMED_SAINT_MIRACLE_NOT_CHRISTS_PUBLIC_MINISTRY"
         },
         {
           "tag": "SNT-PATRONS",
@@ -10003,6 +10004,7 @@
           "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE"
         }
       ],
+      "saintSubjectTitleScopeReviewed": true,
       "matchEvidence": "TITLE_AND_ARTIST_LEXICAL_CANDIDATES_ONLY",
       "visualSubjectVerification": false,
       "categoryReviewState": "UNVERIFIED_CANDIDATE_TAGGED",
@@ -10014,15 +10016,15 @@
       "title": "Miracles of Saint Ignatius of Loyola",
       "artist": "Peter Paul Rubens",
       "categoryCandidates": [
-        "MINISTRY",
         "SAINTS"
       ],
       "existingLexicalSubjectTags": [
         {
           "tag": "CHR-MIRACLE",
           "confidence": 83,
-          "categoryId": "MINISTRY",
-          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE"
+          "categoryId": null,
+          "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE",
+          "subjectScopeExclusion": "NAMED_SAINT_MIRACLES_NOT_CHRISTS_PUBLIC_MINISTRY"
         },
         {
           "tag": "SNT-PATRONS",
@@ -10031,6 +10033,7 @@
           "evidence": "TITLE_LEXICAL_MATCH_UNVERIFIED_IMAGE"
         }
       ],
+      "saintSubjectTitleScopeReviewed": true,
       "matchEvidence": "TITLE_AND_ARTIST_LEXICAL_CANDIDATES_ONLY",
       "visualSubjectVerification": false,
       "categoryReviewState": "UNVERIFIED_CANDIDATE_TAGGED",
