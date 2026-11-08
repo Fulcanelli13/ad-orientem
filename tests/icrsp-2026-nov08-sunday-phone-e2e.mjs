@@ -164,14 +164,17 @@ try{
     "Physical Postcommunion card omits prayer: "+prayer.en.slice(0,50));
   assert.match(shown.text,/Second Postcommunion.*Prayer for the Pope/i);
   assert.match(shown.count,/Two Postcommunions.*Prayer for the Pope/i);
-  const before=await page.evaluate(()=>{
+  const before=await page.evaluate((id)=>{
+   // The source audit inspected all 63 cards and ended on Last Gospel.
+   // Return explicitly to the source-owned Postcommunion before NEXT.
+   globalThis.AO_R17_NATIVE_READER_PREVIEW.showSection(id);
    const root=document.querySelector("#ao-r17-native-reader-preview");
    const body=root.querySelector(".ao-prayer-card");
    const second=body?.querySelector('[data-oration-group-index="2"]');
    const a=body?.getBoundingClientRect(),b=second?.getBoundingClientRect();
    return {id:globalThis.AO_R17_NATIVE_READER_PREVIEW.getCurrentCard()?.sectionId,
     top:b?.top,viewportTop:a?.top,viewportHeight:a?.height,scrollTop:body?.scrollTop};
-  });
+  },physical.cards[0].id);
   assert.ok(before.top>before.viewportTop+Math.min(before.viewportHeight*.5,280),
    "Second Postcommunion must initially be below the phone reading zone");
   await page.locator("#ao-r17-native-reader-preview [data-reader-nav='next']").click();
