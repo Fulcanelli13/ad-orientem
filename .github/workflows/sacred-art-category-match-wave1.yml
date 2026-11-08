@@ -6,6 +6,8 @@ on:
     paths:
       - 'src/art/sacred-art-taxonomy-v1.js'
       - 'scripts/art/build-sacred-art-category-match-v1.mjs'
+      - 'scripts/art/sacred-art-saint-scope-exceptions-v1.mjs'
+      - 'data/artwork/sacred-art-category-match-989-267.v1.json'
       - 'tests/sacred-art-category-match-wave1.mjs'
       - 'src/home/c3-gallery.js'
       - 'src/home/today-h4-view.js'
