@@ -166,8 +166,14 @@ try{
    for(const roles of assembled.prayerRoles)
     assert.ok(!roles.includes("ORATIO_PRO_PAPA"),
      "Papal oration cannot silently appear in a general Roman Mass");
+   await page.evaluate(()=>globalThis.AO_R17_BROWSER_ENTRY.enter());
+   await page.waitForFunction(()=>Boolean(
+    globalThis.AO_R17_NATIVE_READER_PREVIEW?.model?.totalCards===65&&
+    typeof globalThis.AO_R17_NATIVE_READER_PREVIEW?.showSection==="function"&&
+    globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.()?.sectionId&&
+    document.querySelector("#ao-r17-native-reader-preview [data-ao-reader-shell]")
+   ),null,{timeout:65000});
    const reader=await page.evaluate(async(language)=>{
-    await globalThis.AO_R17_BROWSER_ENTRY.enter();
     const preview=globalThis.AO_R17_NATIVE_READER_PREVIEW;
     if(!preview?.showSection||preview?.model?.totalCards!==65)
      throw Error("CANONICAL_NATIVE_READER_NOT_OPEN");
