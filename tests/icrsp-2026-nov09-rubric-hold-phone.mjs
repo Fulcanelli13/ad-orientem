@@ -109,6 +109,18 @@ try{
    assert.equal(await doorWarning.locator('[data-mass-1962-rubric-conflict="RGMR_434_C"]').count(),1);
    assert.equal(await door.locator('[data-home-icrsp-sunday],[data-home-icrsp-votive]').count(),0);
    assert.match(await door.innerText(),uiFr?/Commencer la messe du calendrier général/:/Begin general-calendar Mass/);
+   // The original Home default may be Sung. St Theodore's *ordinary*
+   // nonprivileged commemoration must be restored in a 1962 LOW Mass only.
+   // Select the exact form and reader language through the real H7 sheet.
+   await door.locator("[data-home-h4-change]").first().click();
+   const choice=page.locator(".aoH4ChoiceDialog[open]");
+   await choice.waitFor({state:"visible",timeout:20000});
+   await choice.locator('[data-h4-option="form"]').selectOption("LOW");
+   await choice.locator('[data-h4-option="readerMode"]').selectOption("LIVE");
+   await choice.locator('[data-h4-option="readerLanguage"]').selectOption(lang);
+   await choice.locator('[data-h4-option="beforeMass"]').selectOption("none");
+   await choice.locator("[data-h4-sheet-close]").last().click();
+   await choice.waitFor({state:"detached",timeout:20000});
    const assembled=await page.evaluate(async()=>{
     const r=await globalThis.AO_R17_BROWSER_ENTRY.prepare();
     const mass=r?.session?.resolvedMass,p=mass?.proper?.data??mass?.proper;
@@ -118,10 +130,11 @@ try{
       (p?.[k]??[]).map(x=>x.liturgicalPurpose??"PRINCIPAL"))};
    });
    assert.equal(assembled.date,DAY);
+   assert.equal(assembled.form,"LOW","St Theodore is only admitted in nonconventual LOW Mass");
    assert.equal(assembled.sourcePath,"Sancti/11-09",
     "Canonical Lateran Dedication source changed");
    console.log("NOV09_UNIVERSAL_1962_PRAYER_COUNTS "+JSON.stringify({
-    language:lang,counts:assembled.prayerRoles.map(x=>x.length),
+    language:lang,form:assembled.form,counts:assembled.prayerRoles.map(x=>x.length),
     roles:assembled.prayerRoles,sourcePath:assembled.sourcePath
    }));
    assert.deepEqual(assembled.prayerRoles.map(x=>x.length),[2,2,2],
@@ -131,7 +144,7 @@ try{
    for(const roles of assembled.prayerRoles)
     assert.ok(!roles.includes("ORATIO_PRO_PAPA"),
      "Papal oration cannot silently appear in a general Roman Mass");
-   const reader=await page.evaluate(async()=>{
+   const reader=await page.evaluate(async(language)=>{
     await globalThis.AO_R17_BROWSER_ENTRY.enter();
     const preview=globalThis.AO_R17_NATIVE_READER_PREVIEW;
     if(!preview?.showSection||preview?.model?.totalCards!==65)
@@ -158,13 +171,13 @@ try{
     return {roles,postId:post.sectionId,
      renderedText:body?.innerText??"",
      secondRendered:Boolean(second),
-     textSource:(data?.postcommunions??[]).map(x=>x.en),
+     textSource:(data?.postcommunions??[]).map(x=>x[language]),
      scrollTop:body?.scrollTop??null,
      secondTop:second?.getBoundingClientRect()?.top??null,
      viewportTop:body?.getBoundingClientRect()?.top??null,
      viewportHeight:body?.getBoundingClientRect()?.height??null
     };
-   });
+   },lang);
    for(const key of ["collects","secrets","postcommunions"])
     assert.deepEqual(reader.roles[key].groups,[1,2],
      "Reader must render principal and Theodore as distinct groups: "+key);
@@ -173,7 +186,7 @@ try{
    for(const prayer of reader.textSource)
     assert.ok(reader.renderedText.includes(prayer.slice(0,45)),
      "Source-owned Postcommunion text omitted in live reader");
-   assert.match(reader.renderedText,/Second Postcommunion/);
+   assert.match(reader.renderedText,/Second Postcommunion|Deuxième postcommunion|Seconde postcommunion/i);
    assert.match(reader.renderedText,/Theodore|Théodore|Præsta nobis/i);
    assert.ok(reader.secondTop>reader.viewportTop+Math.min(reader.viewportHeight*.5,280),
     "Additional Postcommunion must begin below the initial reading zone");
