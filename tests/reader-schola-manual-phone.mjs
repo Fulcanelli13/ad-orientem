@@ -323,6 +323,39 @@ try{
 
    // Real phone actions must create ONLY the user's observed music states,
    // without moving the priest, the chant syllable clock or a quiet interval.
+   const sourceStates=await musicMenu.locator("[data-schola-proper-score-state]").evaluateAll(nodes=>
+     nodes.map(n=>n.dataset.scholaProperScoreState));
+   assert.equal(sourceStates.length,selectedProper.length,
+     "Each selected Proper must show honest notation availability");
+   assert.ok(sourceStates.every(s=>s==="NO_VERIFIED_SCORE_BINDING" ||
+     s==="SOURCE_BOUND_PROVISIONAL_1961_NOTATION"));
+   const scoreButtons=musicMenu.locator("[data-schola-score-open]");
+   if(await scoreButtons.count()){
+     // Only source-bound scores open a locally engraved dark reference sheet.
+     // Viewing notation may never move the priest or independent choir.
+     const prior=await page.evaluate(()=>({
+       priest:window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId,
+       cue:window.__AO_PHONE_PREVIEW.getActiveCue(),
+       choir:window.__AO_PHONE_PREVIEW.getScholaState().trackId
+     }));
+     await scoreButtons.first().evaluate(b=>b.closest("details").open=true);
+     await scoreButtons.first().click();
+     const modal=page.locator("[data-schola-score-modal]");
+     await modal.waitFor({state:"visible"});
+     await page.waitForFunction(()=>
+       document.querySelector("[data-schola-score-modal]")?.dataset.scholaScoreReady==="true",
+       null,{timeout:25000});
+     assert.ok(await modal.locator("[data-schola-score-staff] svg").count()>0,
+       "Provisional score did not engrave with local Exsurge");
+     await modal.locator("[data-schola-score-close]").click();
+     assert.equal(await modal.count(),0,"Score viewer remained open");
+     const after=await page.evaluate(()=>({
+       priest:window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId,
+       cue:window.__AO_PHONE_PREVIEW.getActiveCue(),
+       choir:window.__AO_PHONE_PREVIEW.getScholaState().trackId
+     }));
+     assert.deepEqual(after,prior,"Notation viewing changed Mass or Schola time");
+   }
    const originalPerformance=await page.evaluate(()=>{
      const l=window.__AO_PHONE_PREVIEW.getScholaPerformance();
      return {schema:l.performanceSchema,
@@ -650,6 +683,45 @@ try{
      cue:window.__AO_PHONE_PREVIEW.getActiveCue()
    })),profileBefore,"Switching parish profiles moved the priest reader");
 
+   // The default Rosary fixture deliberately has NO Gregorian score mapping.
+   // Reload a real, separately verified All Saints Proper to exercise the
+   // local 1961 engraving with the exact 1962 source, on this same phone.
+   await page.goto("http://127.0.0.1:4297/tests/fixtures/reader-phone-harness.html?production=1&aoLiveCards=65&scoreProper=all-saints",
+     {waitUntil:"networkidle",timeout:55000});
+   await page.waitForFunction(()=>document.documentElement.dataset.harnessReady==="true",
+     null,{timeout:25000});
+   const scoredBefore=await page.evaluate(()=>({
+     priest:window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId,
+     cue:window.__AO_PHONE_PREVIEW.getActiveCue(),
+     choir:window.__AO_PHONE_PREVIEW.getScholaState().trackId
+   }));
+   await page.locator("[data-schola-events-open]").click();
+   const scoreMenu=page.locator('[data-role="schola-events-menu"]');
+   const scored=await scoreMenu.locator("[data-schola-score-open]").evaluateAll(buttons=>
+     buttons.map(b=>b.dataset.scholaScoreOpen));
+   assert.deepEqual(scored,["GREGOBASE-752","GREGOBASE-371","GREGOBASE-835","GREGOBASE-345"],
+     width+"px selected All Saints did not expose all four source-owned Proper score witnesses");
+   assert.equal(await scoreMenu.locator("[data-schola-proper-score-state='NO_VERIFIED_SCORE_BINDING']").count(),0,
+     "All Saints printed Proper source was wrongly treated as entirely unscored");
+   const first=scoreMenu.locator('[data-schola-score-open="GREGOBASE-752"]');
+   await first.evaluate(b=>b.closest("details").open=true);
+   await first.click();
+   const scoreModal=page.locator("[data-schola-score-modal='GREGOBASE-752']");
+   await scoreModal.waitFor({state:"visible"});
+   await page.waitForFunction(()=>
+     document.querySelector("[data-schola-score-modal='GREGOBASE-752']")?.dataset.scholaScoreReady==="true",
+     null,{timeout:25000});
+   assert.ok(await scoreModal.locator("svg").count()>0,
+     "Original Gregorian source failed to engrave on the phone");
+   assert.match(await scoreModal.locator("p").first().textContent(),/NOT independently musically approved/);
+   await page.screenshot({path:resolve(out,"schola-source-score-"+width+".png"),animations:"disabled"});
+   await scoreModal.locator("[data-schola-score-close]").click();
+   assert.equal(await page.locator("[data-schola-score-modal]").count(),0);
+   assert.deepEqual(await page.evaluate(()=>({
+     priest:window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId,
+     cue:window.__AO_PHONE_PREVIEW.getActiveCue(),
+     choir:window.__AO_PHONE_PREVIEW.getScholaState().trackId
+   })),scoredBefore,"Opening notation advanced Mass or Schola");
    const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1);
    assert.equal(overflow,false,"Schola controls overflow narrow phone");
    assert.deepEqual(errors,[],"Runtime page errors");

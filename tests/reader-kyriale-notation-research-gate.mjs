@@ -98,6 +98,10 @@ assert.equal(offlineKyrialeResearchScore("KYRIE","Mass VIII"),null);
 assert.equal(offlineKyrialeResearchScore("CREDO","MASS_08"),null);
 const dom=readFileSync(new URL("../src/mass/reader-dom.js",import.meta.url),"utf8");
 const sw=readFileSync(new URL("../sw.js",import.meta.url),"utf8");
-assert.doesNotMatch(dom,/data-schola-score-open|offlineKyrialeResearchScore\(/);
+// Provisional Proper notation is source-bound and labeled; unverified
+// Kyriale research GABC remains outside the public Schola experience.
+assert.doesNotMatch(dom,/offlineKyrialeResearchScore\(/);
+assert.match(dom,/resolveScholaSelectedScoreAccess\(\{itinerary,/);
+assert.match(dom,/score\.publicScoreApproved!==false/);
 assert.doesNotMatch(sw,/OFFLINE_CRITICAL_CHANT_ENGRAVER|exsurge\.min/);
 console.log("PASS seven original Solesmes 1961 printed score locations; offline Exsurge SVG render at phone widths; publication and Mass UI gates closed");

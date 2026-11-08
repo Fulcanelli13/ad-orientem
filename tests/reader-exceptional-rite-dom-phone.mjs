@@ -109,7 +109,12 @@ try{
       scenario.id+"/"+datum.id+" empty source card");
     assert.ok(datum.domText>0,scenario.id+"/"+datum.id+" source card rendered blank");
     assert.ok(datum.visibleRows>0,scenario.id+"/"+datum.id+" no visible DOM prayer paragraph");
-    assert.equal(datum.organVisible,true,scenario.id+"/"+datum.id+" 1958 norm not presented");
+    // LIVE deliberately suppresses editorial organ-rule text above
+    // the Latin prayer; the resolved 1958 prohibition must nevertheless
+    // remain in the DOM model with an UNKNOWN performance observation.
+    // MISSAL exposes this source reference separately (tested elsewhere).
+    assert.equal(datum.organVisible,false,scenario.id+"/"+datum.id+
+      " LIVE prayer focus leaked editorial organ-rule text");
     assert.equal(datum.organNorm,"SILENT",scenario.id+"/"+datum.id+" violated pre-Gloria Triduum silence");
     assert.equal(datum.organObserved,"UNKNOWN",scenario.id+"/"+datum.id+" invented actual organ performance");
     assert.equal(datum.organLabel,"1958 RULE · ORGAN SILENT");

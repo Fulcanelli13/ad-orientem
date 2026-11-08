@@ -47,7 +47,14 @@ assert.match(dom,/Unaltered 1961 Solesmes printed source page/);
 assert.match(dom,/original full pages may include other chants/);
 assert.match(dom,/not a certified GABC transcription/);
 assert.doesNotMatch(dom,/offlineKyrialeResearchScore\(/);
-assert.doesNotMatch(dom,/createOfflineChantEngraver/);
+// A source-authenticated, provisional Proper reference may reuse the
+// renderer that the inline Ordo already employs. This must never unlock
+// unapproved Kyriale archive GABC from the local programme.
+assert.match(dom,/createOfflineChantEngraver\(\{viewport:staff,document:doc\}\)/);
+assert.match(dom,/score\.publicScoreApproved!==false/);
+const properAccess=readFileSync(new URL("../src/mass/reader-schola-score-access.js",import.meta.url),"utf8");
+assert.match(properAccess,/referenceScoresForParagraph\(/);
+assert.doesNotMatch(properAccess,/offlineKyrialeResearchScore/);
 const material=sourceMusicMaterialGate({eventId:"AGNUS_DEI",kind:"CHANT",
  sourceOwner:"AO.SM.M21",sourceRef:"AO.SM.C0222",sourceReferencePresent:true});
 assert.equal(material.notation,"NO_APPROVED_RUNTIME_SCORE");
