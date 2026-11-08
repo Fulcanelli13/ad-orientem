@@ -254,7 +254,7 @@ export function createDatedProperNotationPreview({
       PROPER_REFERENCE_LABELS[score.key]??"Chant";
     title.textContent=score.sourceContextCertified===false?
       "1961 · NOT source-certified for this Mass":
-      category+" · 1961 reference (provisional)";
+      category+" · 1961 review pending";
     title.title=score.sourceContextCertified===false?
       "A reference transcription, not verified as this Mass's music.":
       "1961 reference transcription awaiting independent editorial musical review.";
