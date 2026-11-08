@@ -112,6 +112,12 @@ const resolvedMass={
   followingActions,
   distinctRite:withGoodFriday?"GOOD_FRIDAY":withEasterVigil?"EASTER_VIGIL":null,
   provenance:{seasonalMode:null,
+    // Test harness only: a supplied, source-verified actual Sunday context.
+    // Never infer a tone in production from the date or feast title.
+    ...(params.get("notation")==="1"?{musicToneContext:{
+      schema:"ao-1962-sourced-tone-context-v1",sourceOwner:"1962_PROPER_RESOLVER",
+      verified:true,celebrationKind:"SUNDAY",liturgicalClass:2
+    }}:{}),
     ...(fixtureGloria!==null?{gloria:fixtureGloria}:{}),
     ...(fixtureCredo!==null?{credo:fixtureCredo}:{}),
     ...(following==="requiem"?{requiemAbsolution:{
