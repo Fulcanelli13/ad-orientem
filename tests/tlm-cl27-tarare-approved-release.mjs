@@ -50,7 +50,7 @@ assert.equal((french.match(/data-cl27-dated-mass="/g)||[]).length,8);
 assert.ok(english.includes("Mass · type unspecified"));
 assert.ok(french.includes("Messe · type non précisé"));
 assert.ok(english.includes("2026–27"));
-assert.ok(english.includes("2026-11-15")===false,"Date should be rendered in humanized form");
+assert.ok(english.includes('data-cl27-dated-mass="2026-11-15"'));
 assert.ok(!english.includes('data-cl27-dated-mass="2026-10-11"'));
 assert.equal((renderTlmChurchProfile(site,"en",{asOf:"2027-06-21"}).match(/data-cl27-dated-mass="/g)||[]).length,0);
 const paita=read("data/directory/cl27-dated-mass-programme-paita-20261108.v1.json");
