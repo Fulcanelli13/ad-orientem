@@ -46,7 +46,14 @@
         "route": "pray.communion_treasury"
       },
       "wordingCollatedAgainst2013": false,
-      "discoverableAsIndividualLibraryWork": false
+      "discoverableAsIndividualLibraryWork": true,
+      "discoverabilityProof": {
+        "index": "src/pray/red-booklet-communion-library-links.v1.js",
+        "route": "pray.communion_treasury",
+        "sourceId": "beforeThomas",
+        "searchSurface": "pray.library",
+        "opensExactSourceCard": true
+      }
     },
     {
       "id": "pre_ambrose",
@@ -61,7 +68,14 @@
         "route": "pray.communion_treasury"
       },
       "wordingCollatedAgainst2013": false,
-      "discoverableAsIndividualLibraryWork": false
+      "discoverableAsIndividualLibraryWork": true,
+      "discoverabilityProof": {
+        "index": "src/pray/red-booklet-communion-library-links.v1.js",
+        "route": "pray.communion_treasury",
+        "sourceId": "beforeAmbrose",
+        "searchSurface": "pray.library",
+        "opensExactSourceCard": true
+      }
     },
     {
       "id": "pre_faith",
@@ -382,7 +396,14 @@
         "route": "pray.communion_treasury"
       },
       "wordingCollatedAgainst2013": false,
-      "discoverableAsIndividualLibraryWork": false
+      "discoverableAsIndividualLibraryWork": true,
+      "discoverabilityProof": {
+        "index": "src/pray/red-booklet-communion-library-links.v1.js",
+        "route": "pray.communion_treasury",
+        "sourceId": "afterBonaventure",
+        "searchSurface": "pray.library",
+        "opensExactSourceCard": true
+      }
     },
     {
       "id": "communion_thomas",
@@ -397,7 +418,14 @@
         "route": "pray.communion_treasury"
       },
       "wordingCollatedAgainst2013": false,
-      "discoverableAsIndividualLibraryWork": false
+      "discoverableAsIndividualLibraryWork": true,
+      "discoverabilityProof": {
+        "index": "src/pray/red-booklet-communion-library-links.v1.js",
+        "route": "pray.communion_treasury",
+        "sourceId": "afterThomas",
+        "searchSurface": "pray.library",
+        "opensExactSourceCard": true
+      }
     },
     {
       "id": "communion_dying",
@@ -447,7 +475,14 @@
         "route": "pray.communion_treasury"
       },
       "wordingCollatedAgainst2013": false,
-      "discoverableAsIndividualLibraryWork": false
+      "discoverableAsIndividualLibraryWork": true,
+      "discoverabilityProof": {
+        "index": "src/pray/red-booklet-communion-library-links.v1.js",
+        "route": "pray.communion_treasury",
+        "sourceId": "enEgo",
+        "searchSurface": "pray.library",
+        "opensExactSourceCard": true
+      }
     },
     {
       "id": "holy_spirit_augustine",
