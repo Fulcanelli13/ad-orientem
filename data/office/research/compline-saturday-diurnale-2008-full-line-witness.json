@@ -1,0 +1,99 @@
+{
+  "schema": "ao.office.printed-saturday-compline-full-lines.v1",
+  "witness": {
+    "title": "Diurnale Romanum, compiled and edited by David Siefker (16 May 2008)",
+    "kind": "2008 typeset 1961 Roman Office pattern, independent secondary witness",
+    "source": "https://www.scribd.com/document/761102039/Breviarium-romanum-Breviario-romano-1961-1962",
+    "printedPages": "349–352",
+    "sourceViewLines": {
+      "Psalm87": "27743–27804",
+      "Psalm102": "27805–27880"
+    },
+    "methodology": "Hand-reconciled full 41 recitation stichs against accessible printed text view, preserving canonical Latin; original has multi-column wrapping and line-break hyphenation. Not an original 1961 photographic page, nor a third-party reuse license.",
+    "sourceLimitation": "Independent verification is against a 2008 edition following the 1961 Office; no claim of original 1961 Mame edition collation or independent rights approval."
+  },
+  "scope": {
+    "date": "2026-11-28",
+    "hour": "COMPLINE",
+    "language": "la",
+    "psalms": [
+      87,
+      102
+    ],
+    "sourceRowCounts": {
+      "Psalm87": 19,
+      "Psalm102": 22
+    },
+    "publicationApproved": false
+  },
+  "normalizationRules": [
+    "ignore source numeric prefix",
+    "ignore editorial recitation caesura * for lexical comparison",
+    "casefold and remove accents",
+    "œ and æ normalized to oe and ae",
+    "ignore punctuation, printed page breaks and line hyphenation"
+  ],
+  "expectedOrthographicDifferences": [
+    {
+      "psalm": 102,
+      "row": 14,
+      "printed": "fœnum",
+      "pinned": "fænum",
+      "classification": "orthographic variant; must not claim byte-for-byte equality"
+    },
+    {
+      "psalm": 102,
+      "row": 20,
+      "printed": "Angeli",
+      "pinned": "Ángeli",
+      "classification": "editorial accent"
+    }
+  ],
+  "lines": {
+    "Psalm87": [
+      "Dómine, Deus salútis meæ: * in die clamávi, et nocte coram te.",
+      "Intret in conspéctu tuo orátio mea: * inclína aurem tuam ad precem meam:",
+      "Quia repléta est malis ánima mea: * et vita mea inférno appropinquávit.",
+      "Æstimátus sum cum descendéntibus in lacum: * factus sum sicut homo sine adjutório, inter mórtuos liber.",
+      "Sicut vulneráti dormiéntes in sepúlcris, quorum non es memor ámplius: * et ipsi de manu tua repúlsi sunt.",
+      "Posuérunt me in lacu inferióri: * in tenebrósis, et in umbra mortis.",
+      "Super me confirmátus est furor tuus: * et omnes fluctus tuos induxísti super me.",
+      "Longe fecísti notos meos a me: * posuérunt me abominatiónem sibi.",
+      "Tráditus sum, et non egrediébar: * óculi mei languérunt præ inópia.",
+      "Clamávi ad te, Dómine, tota die: * expándi ad te manus meas.",
+      "Numquid mórtuis fácies mirabília: * aut médici suscitábunt, et confitebúntur tibi?",
+      "Numquid narrábit áliquis in sepúlcro misericórdiam tuam, * et veritátem tuam in perditióne?",
+      "Numquid cognoscéntur in ténebris mirabília tua, * et justítia tua in terra obliviónis?",
+      "Et ego ad te, Dómine, clamávi: * et mane orátio mea prævéniet te.",
+      "Ut quid, Dómine, repéllis oratiónem meam: * avértis fáciem tuam a me?",
+      "Pauper sum ego, et in labóribus a juventúte mea: * exaltátus autem, humiliátus sum et conturbátus.",
+      "In me transiérunt iræ tuæ: * et terróres tui conturbavérunt me.",
+      "Circumdedérunt me sicut aqua tota die: * circumdedérunt me simul.",
+      "Elongásti a me amícum et próximum: * et notos meos a miséria."
+    ],
+    "Psalm102": [
+      "Bénedic, ánima mea, Dómino: * et ómnia, quæ intra me sunt, nómini sancto ejus.",
+      "Bénedic, ánima mea, Dómino: * et noli oblivísci omnes retributiónes ejus.",
+      "Qui propitiátur ómnibus iniquitátibus tuis: * qui sanat omnes infirmitátes tuas.",
+      "Qui rédimit de intéritu vitam tuam: * qui corónat te in misericórdia et miseratiónibus.",
+      "Qui replet in bonis desidérium tuum: * renovábitur ut áquilæ juvéntus tua:",
+      "Fáciens misericórdias Dóminus: * et judícium ómnibus injúriam patiéntibus.",
+      "Notas fecit vias suas Móysi, * fíliis Israël voluntátes suas.",
+      "Miserátor, et miséricors Dóminus: * longánimis, et multum miséricors.",
+      "Non in perpétuum irascétur: * neque in ætérnum comminábitur.",
+      "Non secúndum peccáta nostra fecit nobis: * neque secúndum iniquitátes nostras retríbuit nobis.",
+      "Quóniam secúndum altitúdinem cæli a terra: * corroborávit misericórdiam suam super timéntes se.",
+      "Quantum distat ortus ab occidénte: * longe fecit a nobis iniquitátes nostras.",
+      "Quómodo miserétur pater filiórum, misértus est Dóminus timéntibus se: * quóniam ipse cognóvit figméntum nostrum.",
+      "Recordátus est quóniam pulvis sumus: * homo, sicut fœnum dies ejus, tamquam flos agri sic efflorébit.",
+      "Quóniam spíritus pertransíbit in illo, et non subsístet: * et non cognóscet ámplius locum suum.",
+      "Misericórdia autem Dómini ab ætérno, * et usque in ætérnum super timéntes eum.",
+      "Et justítia illíus in fílios filiórum, * his qui servant testaméntum ejus:",
+      "Et mémores sunt mandatórum ipsíus, * ad faciéndum ea.",
+      "Dóminus in cælo parávit sedem suam: * et regnum ipsíus ómnibus dominábitur.",
+      "Benedícite Dómino, omnes Angeli ejus: * poténtes virtúte, faciéntes verbum illíus, ad audiéndam vocem sermónum ejus.",
+      "Benedícite Dómino, omnes virtútes ejus: * minístri ejus, qui fácitis voluntátem ejus.",
+      "Benedícite Dómino, ómnia ópera ejus: * in omni loco dominatiónis ejus, bénedic, ánima mea, Dómino."
+    ]
+  }
+}
