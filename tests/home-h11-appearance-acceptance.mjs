@@ -409,7 +409,7 @@ try{
     assert.ok(glossaryId||historicalId,"Home discovery must have an exact source owner");
     await dykCard.click();
     if(glossaryId){
-      assert.match(glossaryId,/^G\\d{3}$/);
+      assert.match(glossaryId,/^G\d{3}$/);
       await h4.waitForFunction(id=>
         globalThis.AO_GLOSSARY_V1?.status?.()?.detailId===id,
         glossaryId,{timeout:30000});
