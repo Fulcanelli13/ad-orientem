@@ -7,6 +7,7 @@ on:
       - 'src/art/sacred-art-taxonomy-v1.js'
       - 'scripts/art/build-sacred-art-category-match-v1.mjs'
       - 'scripts/art/sacred-art-saint-scope-exceptions-v1.mjs'
+      - 'scripts/art/sacred-art-place-title-exceptions-v1.mjs'
       - 'data/artwork/sacred-art-category-match-989-267.v1.json'
       - 'tests/sacred-art-category-match-wave1.mjs'
       - 'src/home/c3-gallery.js'
@@ -32,6 +33,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Check source-scoped classification exception syntax
+        run: |
+          node --check scripts/art/sacred-art-saint-scope-exceptions-v1.mjs
+          node --check scripts/art/sacred-art-place-title-exceptions-v1.mjs
+          node --check scripts/art/build-sacred-art-category-match-v1.mjs
       - name: Verify classification and old Prayer slot preservation
         run: node tests/sacred-art-category-match-wave1.mjs
       - name: Verify gallery subject filter, bilingual labels and original artwork return
