@@ -1,7 +1,7 @@
 import { openMassTextsSheet } from "../mass/mass-texts-sheet.js";
 import { ensureLearnModule } from "../learn/lazy-module-registry.js";
 import { verifiedH4WeekColour } from "./today-h4-view.js";
-import { selectC3PrayerSlide,showC3ArtInfo,closeC3ArtInfo,openC3ReleasedArtGallery,stepC3ReleasedArtGallery,returnFromC3ReleasedArtGallery } from "./c3-gallery.js";
+import { selectC3PrayerSlide,showC3ArtInfo,closeC3ArtInfo,openC3ReleasedArtGallery,stepC3ReleasedArtGallery,filterC3ReleasedArtGallery,returnFromC3ReleasedArtGallery } from "./c3-gallery.js";
 import { openH4ChoicesSheet,closeH4ChoicesSheet } from "./today-h4-change-sheet.js";
 import { HOME_PRESENTATION_VERSION, renderHome, reconcileTodayHero } from "./presentation.js";
 import { loadSharedSanctoralReadModel } from "../calendar/living-sanctoral-read-model.js";
@@ -216,6 +216,7 @@ export function createHomeOwner(win=globalThis){
   function bindEnricherClicks(){
     if(enricherClicksBound||typeof win?.document?.addEventListener!=="function")return;
     win.document.addEventListener("click",onEnricherClick,true);
+    win.document.addEventListener("change",onEnricherChange,true);
     enricherClicksBound=true;
   }
 
@@ -375,6 +376,12 @@ export function createHomeOwner(win=globalThis){
     if(opened!==true){showHomeToday();return false}
     if(date&&/^\d{4}-\d{2}-\d{2}$/.test(date))await api.select?.(date,{closeAfter:false});
     return true;
+  }
+
+  function onEnricherChange(event){
+    const select=event?.target?.closest?.("[data-home-c3-gallery-category]");
+    if(!select)return;
+    if(!filterC3ReleasedArtGallery(root(win),select.value))select.value="all";
   }
 
   function onEnricherClick(event){
@@ -943,6 +950,7 @@ export function createHomeOwner(win=globalThis){
     retryTimer=null;
     if(enricherClicksBound){
       try{win?.document?.removeEventListener?.("click",onEnricherClick,true);}catch{}
+      try{win?.document?.removeEventListener?.("change",onEnricherChange,true);}catch{}
       enricherClicksBound=false;
     }
     try{retiredEnricherObserver?.disconnect?.();}catch{}
