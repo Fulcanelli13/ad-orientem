@@ -73,7 +73,7 @@ def main():
                 raise RuntimeError("New independent photograph dimensions changed")
             if min(width,height)<m["qa_policy"]["short_side_min_px"]:
                 raise RuntimeError("Candidate under minimum resolution")
-        (output/("current-selected" if k=="existing" else "sailko-candidate")+".jpg").write_bytes(data)
+        (output/(("current-selected" if k=="existing" else "sailko-candidate")+".jpg")).write_bytes(data)
         evidence[k]={"file_title":file_title,"download_url":url,"mime":mime,
                      "pixels":[width,height],"sha256":sha256(data),"bytes":len(data)}
         print(k,":",evidence[k],flush=True)
