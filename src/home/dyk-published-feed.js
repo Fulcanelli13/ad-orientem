@@ -27,7 +27,7 @@ function shuffledHomeIds(ids,cycle){
 export function dykHomeRotationSlot(date,publishedIds=[],fallbackIds=DYK_GLOSSARY_FALLBACK_IDS){
  if(!validDate(date)||!Array.isArray(publishedIds)||!Array.isArray(fallbackIds))return null;
  const ids=[...new Set([...publishedIds,...fallbackIds].filter(id=>
-   typeof id==="string"&&(/^(?:G\\d{3}|DYK-[A-Z0-9-]+)$/).test(id)))];
+   typeof id==="string"&&(/^(?:G\d{3}|DYK-[A-Z0-9-]+)$/).test(id)))];
  if(!ids.length)return null;
  const ordinal=Math.floor(Date.parse(date+"T12:00:00Z")/86400000);
  const cycle=Math.floor(ordinal/ids.length);
