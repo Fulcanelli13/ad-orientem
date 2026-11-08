@@ -11,6 +11,7 @@ const freeze=Object.freeze;
 const SUNG=new Set(["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
 const ALL_KINDS=new Set(["CHANT","PRIEST_VOICE","QUIET_INTERVAL","ORGAN_OPTION",
   "LOCAL_OPTION","DISPLAY_REFERENCE"]);
+const PROPER_TRACKS=new Set(["INTROIT","GRADUAL","ALLELUIA_TRACT_SEQUENCE","OFFERTORY","COMMUNION"]);
 const source=(section,block=null)=>freeze({section,block});
 // The event order is editorial, but EACH position must be recovered from
 // the actual resolved 65/66/67-card source model; this catalogue does not
@@ -171,7 +172,7 @@ export function organAuthorityForScholaEvent(event,resolvedMass){
 const asCard=card=>freeze({id:String(card.sectionId),sourceSectionId:sourceId(card),
   title:String(card.title??""),sequence:card.sequence});
 const empty=(reason)=>freeze({schema:"ao-schola-music-itinerary-v1",supported:false,
- reason,events:freeze([]),unresolved:freeze([]),sourceCardCount:0,
+ reason,events:freeze([]),unresolved:freeze([]),properProgramme:freeze([]),sourceCardCount:0,
  actuallySinging:"UNKNOWN",activeClock:"SCHOLA_INDEPENDENT"});
 
 /**
@@ -197,6 +198,8 @@ export function buildScholaMusicItinerary({cards,form,tracks=[],sanctusPerforman
   arr.push({card,index});bySource.set(source,arr);bySection.set(String(card.sectionId),index);
  });
  const available=new Set(tracks.map(t=>typeof t==="string"?t:t?.id).filter(Boolean));
+ const properTracks=new Map(tracks.filter(t=>t&&typeof t==="object"&&
+   t.kind==="PROPER"&&PROPER_TRACKS.has(t.id)).map(t=>[t.id,t]));
  const requiem=isExplicitRequiemMass({session:{resolvedMass}});
  const styles=new Set(["GREGORIAN","POLYPHONIC"]);
  const setting=styles.has(sanctusPerformance)?sanctusPerformance:"UNSPECIFIED";
@@ -261,10 +264,36 @@ export function buildScholaMusicItinerary({cards,form,tracks=[],sanctusPerforman
   }));
  }
  events.sort((a,b)=>a.cardIndex-b.cardIndex||a.ordinal-b.ordinal);
+ // Only authenticated text from this Mass's resolved Schola tracks appears
+ // here. The printed Communion reference is not a second sung performance.
+ // An unavailable track, wrong source or missing Latin is a hold, not a
+ // guessed chant from a feast name or an archival GABC search.
+ const seenProper=new Set();
+ const properProgramme=events.flatMap(event=>{
+  if(event.kind!=="CHANT"||!PROPER_TRACKS.has(event.trackId)||
+     seenProper.has(event.trackId))return [];
+  const track=properTracks.get(event.trackId);
+  if(!track||!Array.isArray(track.segments))return [];
+  const lines=track.segments.filter(segment=>
+   segment?.source==="RESOLVED_PROPER_"+event.trackId &&
+   typeof segment.latin==="string"&&segment.latin.trim()
+  ).map(segment=>freeze({
+   id:String(segment.id??""),latin:segment.latin.trim(),
+   translation:typeof segment.english==="string"?segment.english.trim():"",
+  }));
+  if(!lines.length)return [];
+  seenProper.add(event.trackId);
+  return [freeze({
+   eventId:event.id,trackId:event.trackId,label:event.label,
+   sourceRef:event.sourceRef,source:"THIS_MASS_RESOLVED_1962_PROPER",
+   status:"SOURCE_TEXT_ONLY_NOT_APPROVED_SCORE",
+   actuallySinging:"UNKNOWN",lines:freeze(lines)
+  })];
+ });
  return freeze({
   schema:"ao-schola-music-itinerary-v1",supported:true,reason:null,
   events:freeze(events),unresolved:freeze(unresolved),
-  sourceCardCount:cards.length,cardOrder:freeze(cards.map(c=>String(c.sectionId))),
+  properProgramme:freeze(properProgramme),sourceCardCount:cards.length,cardOrder:freeze(cards.map(c=>String(c.sectionId))),
   actuallySinging:"UNKNOWN",activeClock:"SCHOLA_INDEPENDENT",
   organAuthority:"EXISTING_1958_ORGAN_PERMISSION_CONTEXT_FILTERED_NOT_A_PLAYING_CLAIM",
   specialRiteAuthority:"EXISTING_SEPARATE_RITE_MUSIC_REGISTRY",
