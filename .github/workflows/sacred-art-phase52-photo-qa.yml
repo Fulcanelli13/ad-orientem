@@ -29,24 +29,15 @@ jobs:
         run: python scripts/art/phase52_acquire_photo.py --dry-run --out phase52-review-output
       - name: Acquire two photo originals; verify source SHA1, pixels and dimensions; build side-by-side reviewer sheets
         run: python scripts/art/phase52_acquire_photo.py --out phase52-review-output
-      - name: Upload source-photo reviewer artifact privately for 1 day
-        if: success()
+      - name: Preserve any verified photograph and contact sheet privately even if another download fails
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: phase52-toulouse-source-photo-review
           path: |
             phase52-review-output/*-contact-sheet.jpg
             phase52-review-output/*-candidate.jpg
-            phase52-review-output/run-report.json
-            phase52-review-output/PHOTO-LICENSE-AND-STATUS.txt
-          retention-days: 1
-          if-no-files-found: error
-      - name: Preserve diagnostic metadata on failure
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: phase52-photo-acquisition-diagnostics
-          path: |
+            phase52-review-output/*-owner-original.jpg
             phase52-review-output/run-report.json
             phase52-review-output/PHOTO-LICENSE-AND-STATUS.txt
           retention-days: 1
