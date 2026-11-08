@@ -35,11 +35,11 @@
       "90": 16,
       "133": 4
     },
-    "wordCount": 330
+    "wordCount": 329
   },
   "collation": {
     "basis": "Independent 2008 and 2023 printed Latin Psalm 4, 90, 133 checked against original pinned Vulgate psalm source; line/page wraps rejoined, antiphon and headings excluded.",
-    "normalization": "Case, Latin diacritical accents, æ/œ ligatures, punctuation, verse identifiers, recitation caesura and minor pause markers ignored; word order and count strict.",
+    "normalization": "Case, Latin diacritical accents, æ/œ ligatures, punctuation, verse identifiers, recitation caesura and minor pause markers ignored; word order and count strict. A lexeme containing ǽ counts as one word after canonical Unicode decomposition and æ expansion.",
     "editionOriginal1961Leaf": false,
     "claimExact1961PrintedEdition": false,
     "publicReleaseByThisResearchFile": false,
