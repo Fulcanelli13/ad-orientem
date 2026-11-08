@@ -179,6 +179,12 @@ let browser;try{
      pending:aggregate.uncertifiedFormCases.filter(x=>x.date===date)
    }));
  }
+ for(const date of ["2026-02-03","2026-05-13"]){
+   console.log("MASS_PRELENT_AND_VIGIL_2026_PROBE="+JSON.stringify({
+     date,sourceDay:aggregate.single.find(x=>x.date===date),
+     pending:aggregate.uncertifiedFormCases.filter(x=>x.date===date)
+   }));
+ }
  for(const date of ["2026-07-21"]){
    console.log("MASS_BRINDISI_2026_PROBE="+JSON.stringify({
      date,sourceDay:aggregate.single.find(x=>x.date===date),
@@ -191,7 +197,7 @@ let browser;try{
      pending:aggregate.uncertifiedFormCases.filter(x=>x.date===date)
    }));
  }
- for(const date of ["2026-02-14","2026-02-23","2026-02-24","2026-03-06",
+ for(const date of ["2026-02-03","2026-02-14","2026-02-23","2026-02-24","2026-03-06",
    "2026-04-17","2026-04-23",
    "2026-03-19","2026-03-25","2026-06-02","2026-06-09","2026-06-15",
    "2026-06-20","2026-07-11","2026-07-16","2026-07-21","2026-08-01",
