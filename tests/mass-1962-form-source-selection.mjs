@@ -305,6 +305,58 @@ for(const [date,saint] of [
     form:"LOW",celebrationId:"votive"}).reason,"ALTERNATE_FORMULARY");
 }
 
+// 21 July 2026: III-class St Lawrence of Brindisi uses a revised
+// -r principal Proper; IV-class St Praxedes is separately commemorated
+// in Low Mass, not in the three nonconventual Masses in cantu.
+{
+ const date="2026-07-21",proper="Sancti/07-21r",saint="Sancti/07-21";
+ const source={...base,sourcePath:proper,calendarCommemorations:[
+  {path:saint,prayerSourcePath:saint,name:"St Praxedes, Virgin"}]};
+ const witness={...day,date,day:{
+  main:{id:"sancti:07-21r:3:w",rank:3,path:proper,title:"St Lawrence of Brindisi"},
+  commemorations:[{id:"sancti:07-21:4:r",rank:4,path:saint,title:"St Praxedes"}]},
+  proper:{status:"ready",data:source}};
+ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+  const result=select({proper:source,calendarResolution:witness,form});
+  assert.equal(result.status,"CERTIFIED",date+"/"+form+": "+result.reason);
+  assert.equal(result.decision.scope,
+   "NON_SUNDAY_II_III_CLASS_SINGLE_IV_CLASS_SANCTORAL_COMMEMORATION");
+  const count=form==="LOW"?2:1;
+  assert.equal(result.decision.appliedCount,count-1);
+  for(const group of ["collects","secrets","postcommunions"])
+   assert.equal(result.proper[group].length,count,date+"/"+form+"/"+group);
+  for(const language of ["en","fr"]){
+   const slots=properToReaderSlots(result.proper,{language}).slots;
+   for(const slot of ["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"]){
+    assert.equal(slots[slot].status,"READY",date+"/"+form+"/"+language+"/"+slot);
+    assert.equal(slots[slot].data.paragraphs.length,count);
+   }
+   assert.equal(assessPrintableProper(witness,{language,massForm:form}).ok,true);
+  }
+ }
+ for(const [mutantSource,mutantDay,reason] of [
+  [source,{...witness,date:"2026-07-22"},"RUBRICAL_CLASSIFICATION_PENDING"],
+  [{...source,sourcePath:"Sancti/07-21"},witness,"RUBRICAL_CLASSIFICATION_PENDING"],
+  [{...source,sourcePath:"Sancti/07-21x"},witness,"RUBRICAL_CLASSIFICATION_PENDING"],
+  [{...source,calendarCommemorations:[{path:saint,
+   prayerSourcePath:"Sancti/07-22"}]},witness,"RUBRICAL_CLASSIFICATION_PENDING"],
+  [{...source,secrets:[one]},witness,"ORATION_SOURCE_INCOMPLETE"],
+  [source,{...witness,day:{...witness.day,main:{...witness.day.main,
+   id:"sancti:07-21:3:w"}}},"RUBRICAL_CLASSIFICATION_PENDING"],
+  [source,{...witness,day:{...witness.day,main:{...witness.day.main,
+   rank:2}}},"RUBRICAL_CLASSIFICATION_PENDING"],
+  [source,{...witness,day:{...witness.day,commemorations:[{
+   ...witness.day.commemorations[0],path:"Sancti/07-21c"}]}},"RUBRICAL_CLASSIFICATION_PENDING"]
+ ]){
+  assert.equal(select({proper:mutantSource,calendarResolution:mutantDay,
+   form:"LOW"}).reason,reason);
+ }
+ assert.equal(select({proper:source,calendarResolution:witness,
+  form:"LOW",isConventual:true}).reason,"CONVENTUAL_RULES_NOT_VERIFIED");
+ assert.equal(select({proper:source,calendarResolution:witness,
+  form:"LOW",celebrationId:"votive"}).reason,"ALTERNATE_FORMULARY");
+}
+
 // Exact Eastertide witnesses in the 2026 1962 Ordo: the Easter Sunday
 // Proper is inherited by a IV-class feria, NOT replaced by the saint's
 // Mass. St Anicetus / St George are ordinary commemorations only in Low.
