@@ -43,7 +43,11 @@ try{
   const page=await ctx.newPage(),errors=[],officeSourceRequests=[];
   page.on("pageerror",error=>errors.push(error.message));
   page.on("request",req=>{
-   if(req.url().includes("/web/www/horas/"))officeSourceRequests.push(req.url());
+   // Shared Mass/Prayer startup legitimately fetches Commune leaves.
+   // This Office status shell may NOT fetch the actual piloted Psalter,
+   // Office Ordinary or Advent First Vespers sources.
+   if(/\/web\/www\/horas\/(?:Latin|English|Francais)\/(?:Psalterium\/|Ordinarium\/Vespera\.txt|Tempora\/Adv1-0\.txt)/u.test(req.url()))
+    officeSourceRequests.push(req.url());
   });
   const res=await page.goto(origin+"/index.html",{
    waitUntil:"domcontentloaded",timeout:90000
