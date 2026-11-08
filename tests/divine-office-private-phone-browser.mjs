@@ -124,7 +124,7 @@ try{
   assert.equal(await page.getByRole("button",{name:"Previous"}).isDisabled(),true);
   await page.locator("#reader .aoOfOptions select").nth(1).selectOption("lafr");
   assert.equal(await page.locator(".aoOfLanguage").count(),2);
-  assert.match(await page.locator(".aoOfLanguage h3").last().innerText(),/Français/);
+  assert.match(await page.locator(".aoOfLanguage h3").last().innerText(),/français/i);
   await page.locator("#reader .aoOfOptions select").nth(1).selectOption("la");
   assert.equal(await page.locator(".aoOfLanguage").count(),1);
   await page.screenshot({path:resolve(OUT,width+"-compline-la.png"),
