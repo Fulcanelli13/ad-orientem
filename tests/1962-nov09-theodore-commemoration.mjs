@@ -42,6 +42,16 @@ for(const [key,slot] of GROUPS){
  assert.doesNotMatch(prayer.lat,/f[aá]mulum tuum N\./iu,
   "The separately attested institute pro Papa must not leak into the general Mass");
 }
+// Independent Missal incipits: do not derive these from the projector
+// or from the duplicated ICRSP Latin Postcommunion transcription.
+assert.match(NOV09_THEODORE_SOURCE.prayers.collects.lat,
+ /^Deus, qui nos beáti Theodóri Mártyris tui confessióne gloriósa/);
+assert.match(NOV09_THEODORE_SOURCE.prayers.secrets.lat,
+ /^Súscipe, Dómine, fidélium preces cum oblatiónibus hostiárum/);
+assert.match(NOV09_THEODORE_SOURCE.prayers.secrets.en,
+ /intercession of blessed Theodore/);
+assert.match(NOV09_THEODORE_SOURCE.prayers.secrets.fr,
+ /bienheureux Théodore/);
 assert.match(NOV09_THEODORE_SOURCE.prayers.postcommunions.lat,
  /^Præsta nobis, quǽsumus, Dómine:/);
 assert.doesNotMatch(NOV09_THEODORE_SOURCE.prayers.postcommunions.lat,
