@@ -62,7 +62,7 @@ for(let i=0;i<5;i++){
 function mustReject(items,manifest){
  assert.throws(()=>attachPublishedSiteContactEvidence(items,manifest));
 }
-mustReject(fixtures,data); // No silently publishing a partial geographical group
+mustReject(fixtures.slice(0,4),data); // No silently publishing a partial geographical group
 const malformed=structuredClone(data);
 malformed.records[0].una_cum="YES";
 mustReject([...fixtures,unrelated],malformed);
