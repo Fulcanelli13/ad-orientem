@@ -1,0 +1,138 @@
+{
+  "schema": "AO_SACRED_ART_BATCH1_NINE_SOURCE_READINESS_POST_GHENT_V1",
+  "date": "2026-11-08",
+  "summary": "All nine proposed paintings have at least one source photo; 8/9 meet technical resolution threshold. No newly selected photo has been approved for app publication.",
+  "totals": {
+    "previous_released_registry_entries": 16,
+    "next_nine_artworks": 9,
+    "existing_prayer_positions": 41,
+    "with_at_least_one_verified_photo_source": 9,
+    "with_at_least_one_photo_source_meeting_shortside_1200": 8,
+    "remaining_below_quality_threshold": 1,
+    "new_photo_publications": 0,
+    "ghent_owner_selected_photo": 0
+  },
+  "policy": {
+    "no_automatic_commons_admission": true,
+    "work_editorial_approval_not_photo_approval": true,
+    "older_source_photo_selected_if_applicable_remains_unchanged": true,
+    "declared_photo_license_not_same_as_actual_app_placement_clearance": true,
+    "public_gallery_untouched": true
+  },
+  "related": [
+    "data/artwork/batch1-two-firstparty-verified-source-photos.v1.json",
+    "data/artwork/batch1-seven-original-photo-byte-qa.v1.json",
+    "data/artwork/batch1-ghent-source-photo-qa-results.v1.json",
+    "data/artwork/batch1-lanfranco-sailko-frameless-qa-output.v1.json"
+  ],
+  "work_items": [
+    {
+      "id": "artwork-pending:01",
+      "title": "The Crucifixion",
+      "existing_prayer_positions": 9,
+      "current_approval_state": "ARTWORK_EDITORIALLY_PLACED; NEW_PHOTO_NOT_APPROVED",
+      "photo_source_quality": "PASS",
+      "photo_source_type": "CLEVELAND_OFFICIAL_CC0",
+      "source_details": "CMA 1916.786",
+      "mobile_review_state": "FULL_FRAME_STAGED_UNPUBLISHED",
+      "next_release_gate": "PHOTO_VERSION_SIGNOFF_AND_FOLLOWER_ATTRIBUTION",
+      "public_asset_registered": false
+    },
+    {
+      "id": "artwork-pending:02",
+      "title": "Saint Teresa of Avila Interceding for Souls in Purgatory",
+      "existing_prayer_positions": 6,
+      "current_approval_state": "ARTWORK_EDITORIALLY_PLACED; NEW_PHOTO_NOT_APPROVED",
+      "photo_source_quality": "PASS",
+      "photo_source_type": "MET_OFFICIAL_PUBLIC_DOMAIN",
+      "source_details": "Met 17.190.19",
+      "mobile_review_state": "FULL_FRAME_STAGED_UNPUBLISHED",
+      "next_release_gate": "PHOTO_VERSION_SIGNOFF_AND_WORKSHOP_ATTRIBUTION",
+      "public_asset_registered": false
+    },
+    {
+      "id": "artwork-pending:03",
+      "title": "Pentecost",
+      "existing_prayer_positions": 5,
+      "current_approval_state": "ARTWORK_EDITORIALLY_PLACED; NEW_PHOTO_NOT_APPROVED",
+      "photo_source_quality": "BELOW_TARGET",
+      "photo_source_type": "COMMONS_PREVIOUS_SELECTION",
+      "source_details": "Museo de Huesca 00029 / 567×479",
+      "mobile_review_state": "NONE",
+      "next_release_gate": "INDEPENDENT_HIRES_EXACT_PHOTO_WITH_REUSE_RIGHTS",
+      "public_asset_registered": false
+    },
+    {
+      "id": "artwork-pending:04",
+      "title": "Agony in the Garden — Antwerp Rosary cycle",
+      "existing_prayer_positions": 4,
+      "current_approval_state": "ARTWORK_EDITORIALLY_PLACED; NEW_PHOTO_NOT_APPROVED",
+      "photo_source_quality": "PASS",
+      "photo_source_type": "COMMONS_PREVIOUS_NOMINATION",
+      "source_details": "Antwerp Teniers E6 / 1333×1799",
+      "mobile_review_state": "NONE",
+      "next_release_gate": "PHOTO_SOURCE_PROVENANCE_AND_SPECIFIC_SELECTION_SIGNOFF",
+      "public_asset_registered": false
+    },
+    {
+      "id": "artwork-pending:05",
+      "title": "Presentation of Jesus at the Temple",
+      "existing_prayer_positions": 4,
+      "current_approval_state": "ARTWORK_EDITORIALLY_PLACED; NEW_PHOTO_NOT_APPROVED",
+      "photo_source_quality": "PASS",
+      "photo_source_type": "COMMONS_NOMINATED_CC_BY_SA",
+      "source_details": "Champaigne Brussels 25 / 2994×3906",
+      "mobile_review_state": "NONE",
+      "next_release_gate": "PROVENANCE_LICENSE_AND_SPECIFIC_SELECTION_SIGNOFF",
+      "public_asset_registered": false
+    },
+    {
+      "id": "artwork-pending:06",
+      "title": "Saint Thomas Aquinas",
+      "existing_prayer_positions": 4,
+      "current_approval_state": "ARTWORK_EDITORIALLY_PLACED; NEW_PHOTO_NOT_APPROVED",
+      "photo_source_quality": "PASS",
+      "photo_source_type": "COMMONS_NOMINATED_PD_ART",
+      "source_details": "Crivelli NG788.9 / 2813×4226",
+      "mobile_review_state": "NONE",
+      "next_release_gate": "IMAGE_REUSE_RIGHTS_CONFLICT_AND_SELECTION_SIGNOFF",
+      "public_asset_registered": false
+    },
+    {
+      "id": "artwork-pending:07",
+      "title": "Adoration of the Mystic Lamb",
+      "existing_prayer_positions": 3,
+      "current_approval_state": "ARTWORK_EDITORIALLY_PLACED; NEW_PHOTO_NOT_APPROVED",
+      "photo_source_quality": "PASS",
+      "photo_source_type": "COMMONS_UNHANDPICKED_EXACT_PANEL_OPTIONS",
+      "source_details": "Ghent Altarpiece lower central panel / 3 options 2735x1564 6739x3791 2878x1799",
+      "mobile_review_state": "THREE_SOURCES_PRIVATE_COMPARISON_ONLY",
+      "next_release_gate": "RESTORATION_STATE_IDENTITY_PHOTO_RIGHTS_AND_OWNER_SELECTION",
+      "public_asset_registered": false
+    },
+    {
+      "id": "artwork-pending:08",
+      "title": "Archangel Michael Defeating Satan",
+      "existing_prayer_positions": 3,
+      "current_approval_state": "ARTWORK_EDITORIALLY_PLACED; NEW_PHOTO_NOT_APPROVED",
+      "photo_source_quality": "PASS",
+      "photo_source_type": "COMMONS_NOMINATED_PD_ART",
+      "source_details": "Reni Roman Capuchins / 1657×2441",
+      "mobile_review_state": "NONE",
+      "next_release_gate": "PHOTO_PROVENANCE_AND_SPECIFIC_SELECTION_SIGNOFF",
+      "public_asset_registered": false
+    },
+    {
+      "id": "artwork-pending:09",
+      "title": "Miracle of Loaves and Fishes",
+      "existing_prayer_positions": 3,
+      "current_approval_state": "ARTWORK_EDITORIALLY_PLACED; NEW_PHOTO_NOT_APPROVED",
+      "photo_source_quality": "PASS",
+      "photo_source_type": "SAILKO_CC_BY_3_INDEPENDENT_ALTERNATIVE",
+      "source_details": "Lanfranco NGI.72 / 4914×2802",
+      "mobile_review_state": "FRAME_EXCLUDED_WEBP_STAGED_NOT_PUBLISHED",
+      "next_release_gate": "OWNER_APPROVE_SAILKO_VERSION_AND_FRAMELESS_EDITION",
+      "public_asset_registered": false
+    }
+  ]
+}
