@@ -11,13 +11,14 @@ import {exploreMapFeatures} from "../src/find/map-runtime.js";
 import {CL2_PHYSICAL_SITE_INDEX_URL} from "../src/find/cl2-physical-directory.js";
 import {CL27_PUBLIC_CELEBRATION_URL} from "../src/find/tlm-celebration-evidence.js";
 import {CL27_SITE_CONTACT_URL} from "../src/find/tlm-site-contact-evidence.js";
-import {CL27_DATED_MASS_PROGRAMME_URL} from "../src/find/tlm-dated-mass-programme.js";
+import {CL27_DATED_MASS_PROGRAMME_URL,CL27_TARARE_DATED_MASS_PROGRAMME_URL} from "../src/find/tlm-dated-mass-programme.js";
 const base=JSON.parse(readFileSync(fileURLToPath(PRELIMINARY_R49_URL),"utf8"));
 const release=JSON.parse(readFileSync("data/directory/published-provisional-mass-sites-20261026.v1.json","utf8"));
 const worldwide=JSON.parse(readFileSync("data/directory/generated/cl2-physical-site-index.v1.json","utf8"));
 const publishedWitnesses=JSON.parse(readFileSync(fileURLToPath(CL27_PUBLIC_CELEBRATION_URL),"utf8"));
 const publishedContacts=JSON.parse(readFileSync(fileURLToPath(CL27_SITE_CONTACT_URL),"utf8"));
 const datedProgramme=JSON.parse(readFileSync(fileURLToPath(CL27_DATED_MASS_PROGRAMME_URL),"utf8"));
+const tarareProgramme=JSON.parse(readFileSync(fileURLToPath(CL27_TARARE_DATED_MASS_PROGRAMME_URL),"utf8"));
 const old=projectPreliminaryR49(base);
 assert.equal(old.length,1879);
 assert.equal(release.record_count,PUBLISHED_PROVISIONAL_MASS_SITES_EXPECTED);
@@ -64,11 +65,12 @@ const api=async url=>{
    String(url)===CL27_PUBLIC_CELEBRATION_URL?publishedWitnesses:
    String(url)===CL27_SITE_CONTACT_URL?publishedContacts:
    String(url)===CL27_DATED_MASS_PROGRAMME_URL?datedProgramme:
+   String(url)===CL27_TARARE_DATED_MASS_PROGRAMME_URL?tarareProgramme:
    String(url).includes("published-provisional")?release:base};
 };
 const live=await loadPreliminaryR49({fetchImpl:api});
-assert.equal(live.length,2582,"Complete CL2 worldwide index must load without dropping the three B91 published additions");
-assert.equal(live.filter(x=>x.map_publishable).length,2568);
+assert.equal(live.length,2583,"Complete CL2 worldwide index must load without dropping the three B91 published additions");
+assert.equal(live.filter(x=>x.map_publishable).length,2569);
 assert.equal(live.filter(x=>x.map_state==="ADDRESS_ONLY").length,14);
 assert.ok(added.every(x=>live.some(v=>v.item_id===x.item_id)));
 assert.equal(live.filter(x=>x.celebration_evidence).length,2,
@@ -77,16 +79,23 @@ assert.equal(live.filter(x=>x.site_contact_evidence).length,16,
  "Exactly sixteen source-linked community/contact claims must join canonical CL2 sites");
 assert.ok(live.filter(x=>x.site_contact_evidence).every(x=>!x.site_contact_evidence.mass_times&&!x.site_contact_evidence.una_cum));
 const dated=live.filter(x=>x.dated_mass_programme);
-assert.equal(dated.length,1,"One exact CL2 physical chapel has an explicit 2026 dated programme");
-assert.equal(dated[0].physical_group_id,"RG-51BC2B17C91F");
-assert.deepEqual(dated[0].dated_mass_programme.events.map(e=>e.local_date),["2026-11-22","2026-12-20"]);
-assert.equal(dated[0].dated_mass_programme.events.length,2);
-assert.equal(dated[0].dated_mass_programme.timezone,"Pacific/Noumea");
-assert.equal(live.length,2582,"Printed dates must not mint new church or extra recurring Mass entities");
+assert.equal(dated.length,2,"Two separate exact CL2 chapels have source-listed dated programmes");
+const paita=dated.find(x=>x.physical_group_id==="RG-51BC2B17C91F");
+assert.ok(paita);
+assert.deepEqual(paita.dated_mass_programme.events.map(e=>e.local_date),["2026-11-22","2026-12-20"]);
+assert.equal(paita.dated_mass_programme.events.length,2);
+assert.equal(paita.dated_mass_programme.timezone,"Pacific/Noumea");
+const tarare=dated.find(x=>x.physical_group_id==="RG-874DCE028C98");
+assert.ok(tarare);
+assert.equal(tarare.dated_mass_programme.events.length,9);
+assert.equal(tarare.dated_mass_programme.timezone,"Europe/Paris");
+assert.ok(tarare.dated_mass_programme.events.every(e=>e.local_time==="10:30"&&e.mass_type==="UNKNOWN"));
+assert.equal(live.length,2583,"Printed dates must not mint extra recurring Mass entities");
 assert.deepEqual(calls,[PRELIMINARY_R49_URL,
   new URL("../data/directory/published-provisional-mass-sites-20261026.v1.json",import.meta.url).href,
   CL2_PHYSICAL_SITE_INDEX_URL,
   CL27_PUBLIC_CELEBRATION_URL,
   CL27_SITE_CONTACT_URL,
-  CL27_DATED_MASS_PROGRAMME_URL]);
-console.log("PASS B91 controlled Mass-map release: 3 source-backed provisional additions retained inside 2582-record worldwide directory, 2568 mapped, 14 list-only, 2 source-printed dated Masses (not live-certified), zero recurring schedules");
+  CL27_DATED_MASS_PROGRAMME_URL,
+  CL27_TARARE_DATED_MASS_PROGRAMME_URL]);
+console.log("PASS B91 controlled Mass-map release: 3 source-backed provisional additions retained inside 2583-record worldwide directory, 2569 mapped, 14 list-only, two source programmes with 11 printed dates (not live-certified), zero recurring schedules");

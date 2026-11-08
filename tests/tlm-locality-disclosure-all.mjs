@@ -15,8 +15,8 @@ const preliminary=projectPreliminaryR49(read("data/directory/preliminary-map-r49
 const published=projectPublishedProvisionalMassSites(preliminary,read("data/directory/published-provisional-mass-sites-20261026.v1.json"));
 const world=projectCL2PhysicalDirectory(published,index);
 const byId=new Map(world.map(x=>[x.physical_group_id,x]));
-assert.equal(world.length,2582);
-assert.equal(world.filter(x=>x.map_publishable).length,2568);
+assert.equal(world.length,2583);
+assert.equal(world.filter(x=>x.map_publishable).length,2569);
 const locality=world.filter(isIllustrativeLocalityMarker);
 const older=locality.filter(x=>!isR28ApproximateMarker(x));
 const eight=locality.filter(isR28ApproximateMarker);
