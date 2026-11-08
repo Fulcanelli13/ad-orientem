@@ -5,13 +5,13 @@ import {getDivineOfficePrayerReadiness as gate,DIVINE_OFFICE_PUBLIC_MODULE_ID}
 import {internalPrayerView,supportedDirectPrayerRoute}
  from "../src/pray/internal-route-owner.js";
 
-test("two Latin Saturday Compline dates released; six other dates text-held",()=>{
+test("two Saturday and two Sunday-Psalter Compline dates released, four ferial dates text-held",()=>{
  let count=0;
  for(let day=28;day<=30;day++){
   const r=gate({date:"2026-11-"+day});
   assert.equal(r.researchPreviewEligible,true);
   count++;
-  const released=day===28;
+  const released=[28,29,30].includes(day);
   assert.equal(r.published,released);
   assert.equal(r.publicRouteEnabled,true);
   assert.equal(r.sourceTextReleased,released);
