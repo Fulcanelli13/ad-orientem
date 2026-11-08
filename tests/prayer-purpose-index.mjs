@@ -8,10 +8,15 @@ const before=[
  "sacrament_come_holy_spirit","foundations_act_of_faith","foundations_act_of_hope",
  "foundations_act_of_love","sacrament_act_of_contrition","beforeThomas","beforeAmbrose"
 ];
-const after=["adoration_anima_christi","afterThomas","afterBonaventure","enEgo"];
+const after=[
+ "adoration_anima_christi","thanksgivingMyGoodJesus","eucharisticHeartAspiration",
+ "holySpiritAugustineTraditional","ourLadyAfterCommunionTraditional",
+ "mercifulJesusDying1911","sacredHeartIntercession1910",
+ "afterThomas","afterBonaventure","enEgo"
+];
 const catalog=createPrayerPurposeIndex(COMMUNION_PRAYER_PURPOSES,{before,after});
 assert.equal(catalog.before.length,3);
-assert.equal(catalog.after.length,3);
+assert.equal(catalog.after.length,4,"The independent intercession group must remain distinct");
 assert.deepEqual(catalog.before.flatMap(x=>x.ids),before);
 assert.deepEqual(new Set(catalog.after.flatMap(x=>x.ids)),new Set(after));
 assert.equal(prayerPurposeFor(catalog,"before","beforeThomas").id,"approach");
@@ -22,6 +27,14 @@ for(const id of ["foundations_act_of_faith","foundations_act_of_hope","foundatio
 }
 assert.equal(prayerPurposeFor(catalog,"after","afterBonaventure").id,"union");
 assert.equal(prayerPurposeFor(catalog,"after","afterThomas").id,"thanksgiving");
+assert.equal(prayerPurposeFor(catalog,"after","thanksgivingMyGoodJesus").id,"thanksgiving");
+for(const id of ["holySpiritAugustineTraditional","ourLadyAfterCommunionTraditional",
+ "mercifulJesusDying1911","sacredHeartIntercession1910"]){
+ assert.equal(prayerPurposeFor(catalog,"after",id).id,"intercession");
+ const source=COMMUNION_TREASURY_V383[id];
+ assert.ok(source?.en?.length>50,"Complete historical English source required: "+id);
+ assert.ok(!source.fr&&!source.la,"No unattested French/Latin prayer body: "+id);
+}
 assert.equal(prayerPurposeFor(catalog,"after","enEgo").id,"crucifix");
 assert.equal(prayerPurposeFor(catalog,"before","enEgo"),null);
 assert.equal(prayerPurposeDefault(catalog,"after","union"),"adoration_anima_christi");
@@ -52,4 +65,4 @@ assert.match(rt,/ao\.pray\.communion-purpose\.v1/);
 assert.match(rt,/function renderMassFolioPrayers\(/,"Existing Before/After Mass entry points must not be replaced");
 assert.match(rt,/installSequentialDevotionalReader/);
 assert.ok(!rt.includes("data-ao-communion-direct-picker"),"The source choice should not be buried in a details disclosure");
-console.log("PASS: 11 canonical Communion prayers grouped in 6 accurate purposes; source-IDs persisted; no invented alternatives, no rite rewrites.");
+console.log("PASS: 11 canonical plus six historical Communion source prayers in seven distinct purpose groups; saved source IDs and unchanged Mass Folio.");
