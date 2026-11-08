@@ -4,11 +4,32 @@ import {SACRED_ART_CATEGORIES_V1,SACRED_ART_CURATED_WORKS_V1,sacredArtWorkById,s
 import {RELEASED_MODULE_PAINTINGS} from "../src/art/released-module-paintings.v1.js";
 import {SACRED_ART_RELEASED_GALLERY_V1} from "../src/art/released-gallery-batch1.v1.js";
 import {SACRED_ART_SAINT_SCOPE_EXCEPTIONS_V1,lexicalSaintScopeException} from "../scripts/art/sacred-art-saint-scope-exceptions-v1.mjs";
+import {SACRED_ART_PLACE_TITLE_EXCEPTIONS_V1,lexicalPlaceTitleException} from "../scripts/art/sacred-art-place-title-exceptions-v1.mjs";
 const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
 const src=read("data/artwork/research-semantic-candidates-989.v1.json");
 const queue=read("data/artwork/sacred-art-batch1-25-release-progress.v1.json");
 assert.equal(src.artworks.length,989);
 assert.equal(SACRED_ART_SAINT_SCOPE_EXCEPTIONS_V1.length,9);
+assert.equal(SACRED_ART_PLACE_TITLE_EXCEPTIONS_V1.length,12);
+assert.equal(new Set(SACRED_ART_PLACE_TITLE_EXCEPTIONS_V1.map(x=>x.workGroupId)).size,12);
+const seenStations=new Set();
+for(const exception of SACRED_ART_PLACE_TITLE_EXCEPTIONS_V1){
+ const original=src.artworks.find(x=>x.workGroupId===exception.workGroupId);
+ assert.ok(original,"Source work absent: "+exception.workGroupId);
+ assert.equal(original.title,exception.title,"Exact title is a source identity guard");
+ assert.equal(original.artist,exception.artist,"Exact attribution is a source identity guard");
+ assert.ok(original.subjectCandidates.some(t=>t.tag===exception.excludedTag),
+  "Frozen title evidence must remain unchanged");
+ assert.equal(lexicalPlaceTitleException(original,"SNT-PATRONS"),exception);
+ assert.equal(lexicalPlaceTitleException({...original,title:"San Polo, different painting"},"SNT-PATRONS"),null);
+ assert.equal(lexicalPlaceTitleException({...original,artist:"Different attribution"},"SNT-PATRONS"),null);
+ assert.equal(lexicalPlaceTitleException(original,"CHR-CROSSBEAR"),null);
+ const station=original.title.match(/Station (\d{2}):/);
+ assert.ok(station,"Only the named station cycle may be corrected");
+ seenStations.add(station[1]);
+}
+assert.deepEqual([...seenStations].sort(),Array.from({length:12},(_,i)=>String(i+1).padStart(2,"0")));
+assert.equal(lexicalPlaceTitleException({workGroupId:"REVIEW::commons:29825829",title:"San Agustín entre Cristo y la Virgen"},"SNT-PATRONS"),null);
 const known={};
 for(const exception of SACRED_ART_SAINT_SCOPE_EXCEPTIONS_V1){
  const original=src.artworks.find(w=>w.workGroupId===exception.workGroupId);
@@ -73,6 +94,27 @@ if(existsSync(new URL("../"+gen,import.meta.url))){
  assert.equal(master.counts.researchGroupsWithTitleBasedCategoryCandidates,657);
  assert.equal(master.counts.researchGroupsStillWithoutTitleCategory,332);
  assert.equal(master.counts.exactSaintSubjectScopeCorrections,9);
+ assert.equal(master.counts.exactPlaceNameScopeCorrections,12);
+ assert.equal(master.policies.retainOriginalLexicalTagsAfterPlaceTitleDisambiguation,true);
+ assert.ok(master.generatedFrom.includes("scripts/art/sacred-art-place-title-exceptions-v1.mjs"));
+ for(const exception of SACRED_ART_PLACE_TITLE_EXCEPTIONS_V1){
+  const derived=master.researchGroupsTitleCandidateIndex.find(w=>w.workGroupId===exception.workGroupId);
+  assert.equal(derived?.placeTitleScopeReviewed,true);
+  assert.equal(derived?.saintSubjectTitleScopeReviewed,undefined,
+   "Place-name exception must not be counted as saint-specific scene correction");
+  assert.deepEqual(derived?.categoryCandidates,["PASSION"],
+   "Via Crucis remains about Christ, not a painted saint");
+  assert.ok(derived.existingLexicalSubjectTags.some(t=>
+   t.tag==="SNT-PATRONS"&&t.categoryId===null&&t.subjectScopeExclusion===exception.reason));
+  assert.ok(derived.existingLexicalSubjectTags.some(t=>
+   t.tag==="CHR-CROSSBEAR"&&t.categoryId==="PASSION"),"Christ Passion remains indexed");
+  assert.ok(master.categoryDefinitions.find(c=>c.id==="PASSION")?.proposedResearchGroupIds.includes(exception.workGroupId));
+  assert.ok(!master.categoryDefinitions.find(c=>c.id==="SAINTS")?.proposedResearchGroupIds.includes(exception.workGroupId));
+ }
+ const actualSaint=master.researchGroupsTitleCandidateIndex.find(w=>w.workGroupId==="REVIEW::commons:29825829");
+ assert.ok(actualSaint?.categoryCandidates.includes("SAINTS"),
+  "A genuine Spanish San Agustín subject must not be scrubbed as a place");
+
  assert.ok(master.policies.retainOriginalLexicalTagsAfterSaintSubjectDisambiguation);
  assert.ok(master.generatedFrom.includes("scripts/art/sacred-art-saint-scope-exceptions-v1.mjs"));
  for(const exception of SACRED_ART_SAINT_SCOPE_EXCEPTIONS_V1){
