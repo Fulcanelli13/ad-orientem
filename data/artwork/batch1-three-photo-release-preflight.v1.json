@@ -1,0 +1,133 @@
+{
+  "schema": "AO_SACRED_ART_BATCH1_THREE_PHOTOS_PREPARED_NOT_RELEASED_V1",
+  "as_of": "2026-11-08",
+  "scope": "RESEARCH_BRANCH_ONLY_NO_PUBLICATION",
+  "source_queue": "data/artwork/sacred-art-batch1-25-release-progress.v1.json",
+  "decision_contract": "data/artwork/batch1-photo-release-decision-contract.v1.json",
+  "principle": "Prepare the source-locked, captioned, photo-specific release package for potential approval without choosing on user's behalf.",
+  "release_package_entries": [
+    {
+      "id": "artwork-pending:01",
+      "title": "The Crucifixion",
+      "intended_existing_prayer_positions": [
+        "STG-pray.five_wounds-02",
+        "STG-pray.five_wounds-03",
+        "COV-pray.stations",
+        "COV-pray.seven_words",
+        "STG-pray.seven_words-01",
+        "STG-pray.seven_words-02",
+        "STG-pray.seven_words-04",
+        "STG-pray.seven_words-05",
+        "STG-pray.tenebrae-02"
+      ],
+      "existing_prayer_position_count": 9,
+      "exact_photo_id": "cma-official-fullframe",
+      "source_original_sha256": "022572a6fa03b4ff9e1a04dc6b92345b2239b0c2998468e58705028b1dad073b",
+      "staged_artifact_path": "assets/staged/sacred-art-batch1/01-crucifixion-cma-fullframe.webp",
+      "staged_artifact_sha256": "ca7cd0c516768c608e3e01db5a5bd05c472557bbd6eed8616a63bc3929434520",
+      "staged_artifact_bytes": 383796,
+      "staged_artifact_dimensions_px": [
+        1024,
+        1303
+      ],
+      "source_rights_status": "cleared",
+      "source_credit": "Follower of Sodoma, The Crucifixion. Image: Cleveland Museum of Art, CC0.",
+      "source_photo_selection_approved_by_owner": false,
+      "exact_display_edition_approved_by_owner": false,
+      "publication_qa_authorized_by_owner": false,
+      "target_public_asset_path": null,
+      "public_release_approval": false,
+      "photograph_to_app_assignment": false,
+      "object_fit": "contain",
+      "allow_cover_crop": false
+    },
+    {
+      "id": "artwork-pending:02",
+      "title": "Saint Teresa of Avila Interceding for Souls in Purgatory",
+      "intended_existing_prayer_positions": [
+        "COV-novena.holy_souls",
+        "STG-novena.holy_souls-01",
+        "COV-foundations_eternal_rest",
+        "COV-dead_de_profundis",
+        "COV-dead_fidelium_deus",
+        "STG-pray.penitential_psalms-06"
+      ],
+      "existing_prayer_position_count": 6,
+      "exact_photo_id": "met-official-fullframe",
+      "source_original_sha256": "8d1914deed2b46063f9c4ae89a8471b1ada97fc09f0604b62443280070c4cf0e",
+      "staged_artifact_path": "assets/staged/sacred-art-batch1/02-teresa-met-fullframe.webp",
+      "staged_artifact_sha256": "65f9402889b198d56e8f5038fe76b2561fb56002893de07a79d08169ea852004",
+      "staged_artifact_bytes": 181322,
+      "staged_artifact_dimensions_px": [
+        1024,
+        1324
+      ],
+      "source_rights_status": "cleared",
+      "source_credit": "Workshop of Peter Paul Rubens (institutional attribution subject to final review), Saint Teresa of Avila Interceding for Souls in Purgatory. Image: The Metropolitan Museum of Art, Open Access/Public Domain.",
+      "source_photo_selection_approved_by_owner": false,
+      "exact_display_edition_approved_by_owner": false,
+      "publication_qa_authorized_by_owner": false,
+      "target_public_asset_path": null,
+      "public_release_approval": false,
+      "photograph_to_app_assignment": false,
+      "object_fit": "contain",
+      "allow_cover_crop": false
+    },
+    {
+      "id": "artwork-pending:09",
+      "title": "Miracle of Loaves and Fishes",
+      "intended_existing_prayer_positions": [
+        "COV-foundations_our_father",
+        "COV-foundations_grace_before_meals",
+        "COV-foundations_grace_after_meals"
+      ],
+      "existing_prayer_position_count": 3,
+      "exact_photo_id": "lanfranco-sailko-frameless",
+      "source_original_sha256": "13ceac9a8d54c0468a1414af4ea3331d1312474e487c71119f25d03916cb2654",
+      "staged_artifact_path": "assets/staged/sacred-art-batch1/09-lanfranco-sailko-painting-only-review.webp",
+      "staged_artifact_sha256": "bc70834b049d1c98d61035823bc59f1a4a64e9c752529d37ecebd16aa479e3e5",
+      "staged_artifact_bytes": 237020,
+      "staged_artifact_dimensions_px": [
+        1600,
+        856
+      ],
+      "source_rights_status": "cleared",
+      "source_credit": "Giovanni Lanfranco, The Miracle of the Loaves and Fishes (NGI.72). Photograph: Sailko, CC BY 3.0 Unported, adapted to exclude the photographed frame and resized. https://creativecommons.org/licenses/by/3.0/",
+      "source_photo_selection_approved_by_owner": false,
+      "exact_display_edition_approved_by_owner": false,
+      "publication_qa_authorized_by_owner": false,
+      "target_public_asset_path": null,
+      "public_release_approval": false,
+      "photograph_to_app_assignment": false,
+      "object_fit": "contain",
+      "allow_cover_crop": false
+    }
+  ],
+  "production_release_state": {
+    "photo_replacements_done": 0,
+    "existing_16_gallery_entries_preserved": true,
+    "first_three_candidate_photos_selected_by_owner": 0,
+    "public_pages_changes": 0,
+    "app_registry_changed": false,
+    "requires_exact_photo_signed_owner_record": true,
+    "requires_non_technical_external_licence_review_where_flagged": true
+  },
+  "counts": {
+    "candidate_photos": 3,
+    "existing_prayer_positions": 18,
+    "stage_files_verified_in_existing_workflows": 3,
+    "photographs_authorized": 0,
+    "photographs_published": 0
+  },
+  "approval_requirements": [
+    "Exact photo ID and source SHA256 must match the reviewed work",
+    "The specific approved displayed edition must match its WebP SHA256 and dimension manifest",
+    "Owner must acknowledge displayed artist/museum/photo credit, commercial rights and any edit attribution",
+    "Rights clearance must be verified again prior to production publication",
+    "No mass/ordo/schola/calendar code changes during photographic approval",
+    "New source photo is not the same as the selected old WGA edition; never swap without exact approval",
+    "All 18 existing Prayer positions are destinations, not new prayer content",
+    "Photos go through PR, CI, GitHub Pages and public visual acceptance only after owner approval"
+  ],
+  "release_pr_not_created": true
+}
