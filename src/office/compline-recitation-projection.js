@@ -10,7 +10,7 @@
  * PRIVATE REVIEW ONLY: this is not edition/rights certification and
  * never sets any public release flag.
  */
-import {projectSaturdayComplinePsalmFrame,projectSundayComplinePsalmFrame}
+import {projectSaturdayComplinePsalmFrame,projectSundayComplinePsalmFrame,projectFerialComplinePsalmFrame}
  from "./compline-psalm-display-projection.js";
 export const COMPLINE_CONTEXT=Object.freeze({
  FINAL_PRAYER:"FINAL_PRAYER",OTHER_TIME:"OTHER_TIME"
@@ -210,8 +210,10 @@ export function projectComplineRecitation(review,{
   if(clean===null)return withheld("COMPLINE_SOURCE_MARKUP_CHANGED");
   const saturdayNumbered=projectSaturdayComplinePsalmFrame(clean);
   if(saturdayNumbered===null)return withheld("COMPLINE_SATURDAY_PSALM_NUMBERING_DRIFT");
-  const numbered=projectSundayComplinePsalmFrame(saturdayNumbered);
-  if(numbered===null)return withheld("COMPLINE_SUNDAY_PSALM_NUMBERING_DRIFT");
+  const sundayNumbered=projectSundayComplinePsalmFrame(saturdayNumbered);
+  if(sundayNumbered===null)return withheld("COMPLINE_SUNDAY_PSALM_NUMBERING_DRIFT");
+  const numbered=projectFerialComplinePsalmFrame(sundayNumbered);
+  if(numbered===null)return withheld("COMPLINE_FERIAL_PSALM_NUMBERING_DRIFT");
   // The printed Scripture labels are separate from spoken Latin words.
   // Confiteor and hymn markup are not Psalm display-label projections.
   if(numbered!==clean)psalmLabelCount++;
@@ -219,8 +221,11 @@ export function projectComplineRecitation(review,{
  }
  const saturday=review.civilDate==="2026-11-28"||review.civilDate==="2026-12-05";
  const sunday=review.civilDate==="2026-11-29"||review.civilDate==="2026-11-30";
- if(psalmLabelCount!==(saturday?41:sunday?30:0))
-  return withheld("COMPLINE_SATURDAY_PSALM_COVERAGE_MISMATCH");
+ const weekdayCounts=Object.freeze({"2026-12-01":26,"2026-12-02":30,
+  "2026-12-03":33,"2026-12-04":36});
+ const expected=saturday?41:sunday?30:weekdayCounts[review.civilDate];
+ if(!Number.isInteger(expected)||psalmLabelCount!==expected)
+  return withheld("COMPLINE_APPOINTED_PSALM_COVERAGE_MISMATCH");
  if(dialogueCount!==2||amenCount!==2||
    replacementCount!==(context===COMPLINE_CONTEXT.FINAL_PRAYER?1:0)||
    resultFrames.some(f=>f.sourceId===SECOND_PATER||f.sourceId===POST_CANTICLE_KYRIE))
