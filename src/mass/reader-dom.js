@@ -102,6 +102,15 @@ const SHELL_STYLE = `
   background:#142018;color:#eef1e9;box-shadow:0 16px 42px rgba(0,0,0,.58)
 }
 .ao-schola-events-menu[hidden]{display:none!important}
+.ao-schola-proper-order{margin:10px 4px 15px;padding:7px 7px 10px;border:1px solid rgba(225,207,145,.24);border-radius:10px;background:rgba(225,207,145,.045)}
+.ao-schola-proper-order h3{color:var(--ao-mass-accent-text,#e3d6b8)}
+.ao-schola-proper-order ol{margin:5px 0;padding:0;list-style:none}
+.ao-schola-proper-order li{margin:4px 0;border-top:1px solid rgba(225,207,145,.13)}
+.ao-schola-proper-order details summary{cursor:pointer;padding:10px 6px;min-height:44px;font:600 12px/1.45 var(--ao-font-ui,system-ui,sans-serif);overflow-wrap:anywhere}
+.ao-schola-proper-order details[open] summary{color:var(--ao-mass-accent-text,#e3d6b8)}
+.ao-schola-proper-order .ao-schola-proper-latin{font:400 15px/1.65 var(--ao-font-liturgical,Georgia,serif);color:#f3eee2;white-space:pre-wrap;margin:8px 7px}
+.ao-schola-proper-order .ao-schola-proper-translation{white-space:pre-wrap;margin:4px 7px 11px}
+.ao-schola-proper-order button[data-schola-event-select]{margin:8px 6px;width:calc(100% - 12px);border:1px solid rgba(225,207,145,.24)}
 .ao-schola-events-menu h3{margin:7px 9px 3px;font:600 15px var(--ao-font-ui,system-ui,sans-serif)}
 .ao-schola-events-menu p{margin:0 9px 10px;font:400 11px/1.4 var(--ao-font-ui,system-ui,sans-serif);color:#a7b1a8}
 .ao-schola-events-menu button[data-schola-events-rejoin]{
@@ -3617,6 +3626,52 @@ export function createReaderDomAdapter({
       rejoin.dataset.scholaEventsRejoin="";
       rejoin.textContent="Return to expected music for current Mass position";
       menu.append(rejoin);
+    }
+    const properProgramme=itinerary.properProgramme??[];
+    if(properProgramme.length){
+      const section=doc.createElement("section");
+      section.className="ao-schola-proper-order";
+      section.dataset.scholaProperOrder="";
+      const title=doc.createElement("h3");
+      title.textContent="This Mass · appointed Proper chants";
+      section.append(title);
+      const description=doc.createElement("p");
+      description.textContent="Full Latin from the selected 1962 Mass; optional translation. Source text, not a certified score or a report of singing.";
+      section.append(description);
+      const list=doc.createElement("ol");
+      for(const entry of properProgramme){
+        const item=doc.createElement("li");
+        const details=doc.createElement("details");
+        details.dataset.scholaProperTrack=entry.trackId;
+        const summary=doc.createElement("summary");
+        const opening=entry.lines[0]?.latin?.replace(/\s+/g," ").slice(0,76)??"";
+        summary.textContent=entry.label+(opening?" · "+opening+(entry.lines[0].latin.length>76?"…":""):"");
+        details.append(summary);
+        for(const line of entry.lines){
+          const latin=doc.createElement("p");
+          latin.className="ao-schola-proper-latin";
+          latin.lang="la";
+          latin.textContent=line.latin;
+          details.append(latin);
+          if(line.translation){
+            const translated=doc.createElement("p");
+            translated.className="ao-schola-proper-translation";
+            translated.lang=String(prepared?.readerPreferences?.language??"en").toLowerCase().startsWith("fr")?"fr":"en";
+            translated.textContent=line.translation;
+            details.append(translated);
+          }
+        }
+        const select=doc.createElement("button");
+        select.type="button";
+        select.dataset.scholaEventSelect=entry.eventId;
+        select.textContent="View this chant in Schola";
+        select.setAttribute("aria-label","View "+entry.label+" in Schola (manual selection)");
+        details.append(select);
+        item.append(details);
+        list.append(item);
+      }
+      section.append(list);
+      menu.append(section);
     }
     for(const item of itinerary.events){
       const button=doc.createElement("button");
