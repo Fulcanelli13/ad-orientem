@@ -20,7 +20,9 @@
     "new_selected_links_verified_phase49": 1,
     "selected_links_total": 14,
     "selected_records_with_verified_group": 13,
-    "additional_selected_links_verified_phase49": 3
+    "additional_selected_links_verified_phase49": 3,
+    "known_within_selected_duplicate_object_pairs": 4,
+    "verified_official_institutional_passports_phase50": 15
   },
   "verified_object_links": [
     {
@@ -303,5 +305,23 @@
     "no_gallery_release": true,
     "museum_unlinked_left": 156,
     "identity_holds_unchanged": 8
+  },
+  "phase50_research": {
+    "same_physical_objects_within_selected_photographs": "data/artwork/selected-177-physical-object-aliases-phase50.v1.json",
+    "accession_backed_institutional_passports": "data/artwork/phase50-institutional-object-passports.v1.json",
+    "source_selected_rows": 177,
+    "selected_duplicate_pairs_verified": 4,
+    "selected_rows_in_alias_pairs": 8,
+    "demonstrated_raw_row_overcount": 4,
+    "canonical_distinct_painting_total": "NOT_YET_CERTIFIED",
+    "photo_permissions_granted": 0,
+    "publication_changes": 0,
+    "cross_register_links_unchanged": 14,
+    "cross_register_selected_rows_unchanged": 13,
+    "selected_177_not_linked_to_989_rows_unchanged": 156,
+    "museum_identity_holds_unchanged": 8,
+    "official_source_passports": 15,
+    "source_selected_records_with_passports": 18,
+    "no_rejection_reversal": true
   }
 }
