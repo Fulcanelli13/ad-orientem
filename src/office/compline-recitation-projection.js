@@ -26,6 +26,66 @@ const FINAL_ASSISTANCE="Psalterium/Common/Prayers#Divinum auxilium + Fidelium an
 const INITIAL_BLESSING="Psalterium/Common/Prayers#Benedictio Completorium_";
 const CONCLUDING_BLESSING="Psalterium/Common/Prayers#Benedictio Completorium2";
 const AMEN_SOURCE="Psalterium/Common/Prayers#Fidelium animae:R.Amen";
+const CONFITEOR_SOURCE="Psalterium/Common/Prayers#Confiteor_";
+const CONFITEOR_GESTURES=Object.freeze({
+ la:Object.freeze({markup:"/:(percutit sibi pectus):/",label:"Percutit sibi pectus"}),
+ en:Object.freeze({markup:"/:strikes his breast:/",label:"Strikes his breast"}),
+ fr:Object.freeze({markup:"/:(on se frappe la poitrine):/",label:"On se frappe la poitrine"})
+});
+function projectComplineSourceMarkup(frame,languages){
+ // The original source contains editor-control syntax, not prayer words.
+ // Preserve it in sourceTexts, but never display /:...:/ or the hymn
+ // stanza-selection asterisk as if they were recited Latin.
+ if(frame.sourceId===CONFITEOR_SOURCE){
+  if(frame.subTotal!==1||frame.kind!=="CONFITEOR")return null;
+  const texts={},gestures={};
+  for(const language of languages){
+   const original=frame.texts?.[language];
+   const spec=CONFITEOR_GESTURES[language];
+   if(!spec||!Array.isArray(original)||original.length!==1||
+     !original[0].startsWith("v. ")||
+     original[0].split(spec.markup).length!==2)
+    return null;
+   const clean=original[0].replace(" "+spec.markup+" "," ")
+    .replace(/^v\. /u,"");
+   if(clean===original[0]||clean.includes("/:")||
+     (language==="la"&&!clean.includes("mea culpa")))
+    return null;
+   texts[language]=Object.freeze([clean]);
+   gestures[language]=spec.label;
+  }
+  return Object.freeze({
+   ...frame,sourceTexts:frame.texts,
+   texts:Object.freeze(texts),gestureRubrics:Object.freeze(gestures),
+   originalSourceOnly:false,printConformed:true
+  });
+ }
+ if(frame.kind==="HYMN"&&frame.sourceId.endsWith("#Hymnus Completorium")){
+  const texts={};let changes=0;
+  for(const language of languages){
+   if(!Array.isArray(frame.texts?.[language]))return null;
+   const lines=frame.texts[language].map((line,i)=>{
+    if(i===0&&frame.subIndex===0&&line.startsWith("v. ")){
+     changes++;return line.slice(3);
+    }
+    if(i===0&&frame.subIndex===2&&line.startsWith("* ")){
+     changes++;return line.slice(2);
+    }
+    return line;
+   });
+   if(lines.some(line=>!line||line.startsWith("* ")||line.startsWith("v. ")))
+    return null;
+   texts[language]=Object.freeze(lines);
+  }
+  if((frame.subIndex===0||frame.subIndex===2)&&changes!==languages.length)
+   return null;
+  return Object.freeze({
+   ...frame,sourceTexts:frame.texts,texts:Object.freeze(texts),
+   originalSourceOnly:false,printConformed:true
+  });
+ }
+ return frame;
+}
 const NOTE=Object.freeze({
  la:Object.freeze(["Rubrica (non textus precationis): Pater noster hic omittitur. Examen conscientiae per rationabile tempus fit; deinde Confiteor."]),
  en:Object.freeze(["Rubric (not a prayer text): Omit the opening Our Father. Examine your conscience for a suitable time, then continue with the Confiteor."]),
@@ -95,7 +155,9 @@ export function projectComplineRecitation(review,{context="FINAL_PRAYER"}={}){
     printConformed:true}));
    amenCount++;continue;
   }
-  const numbered=projectSaturdayComplinePsalmFrame(f);
+  const clean=projectComplineSourceMarkup(f,languageKeys);
+  if(clean===null)return withheld("COMPLINE_SOURCE_MARKUP_CHANGED");
+  const numbered=projectSaturdayComplinePsalmFrame(clean);
   if(numbered===null)return withheld("COMPLINE_SATURDAY_PSALM_NUMBERING_DRIFT");
   if(numbered!==f)psalmLabelCount++;
   resultFrames.push(numbered);
