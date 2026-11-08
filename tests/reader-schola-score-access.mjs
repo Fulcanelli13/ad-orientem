@@ -49,6 +49,8 @@ for(const guard of [
 }
 const low=resolveScholaSelectedScoreAccess({itinerary,resolvedMass:saints,form:"LOW"});
 assert.equal(low.proper.every(r=>r.scores.length===0),true);
+assert.equal(low.supported,false);
+assert.deepEqual(low.ordinary,[],"Low Mass cannot inherit Kyriale print references");
 const noLocal=resolveScholaSelectedScoreAccess({
  itinerary:{...itinerary,localOrdinarySelections:{}},
  resolvedMass:saints,form:"SOLEMN"
