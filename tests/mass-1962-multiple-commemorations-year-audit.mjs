@@ -173,6 +173,12 @@ let browser;try{
    "Original 1962 apostolic group was incorrectly left uncertified");
  // The original date-resolved source must reach every Mass form; a
  // synthetically passing rule fixture alone cannot close the 2026 queue.
+ for(const date of ["2026-07-16","2026-10-05"]){
+   console.log("PENTECOST_FERIA_PROBE="+JSON.stringify({
+     date,day:aggregate.single.find(x=>x.date===date),
+     pending:aggregate.uncertifiedFormCases.filter(x=>x.date===date)
+   }));
+ }
  for(const date of ["2026-03-19","2026-03-25","2026-07-16","2026-10-05"]){
    const remaining=aggregate.uncertifiedFormCases.filter(x=>x.date===date);
    assert.deepEqual(remaining,[],date+" original privileged Lenten feria is still missing");
