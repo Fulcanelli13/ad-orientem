@@ -502,7 +502,7 @@ try{
  assert.match(await fullStabat.locator(".aoP435930StationStabatCompleteVerse").nth(17).innerText(),/Flammis ne urar/);
  assert.match(await fullStabat.locator(".aoP435930StationStabatCompleteVerse").nth(18).innerText(),/Christe, cum sit hinc exire/);
  assert.match(await fullStabat.locator(".aoP435930StationStabatCompleteVerse").nth(19).innerText(),/Quando corpus morietur/);
- assert.ok((await fullStabat.locator('a[href*="ordo.fsspx.org"]').count())===1,"Source link missing");
+ assert.ok((await fullStabat.locator('a[href*="extraordinaryform.org/masses/0915SevenSorrowsBVMM20.pdf"]').count())===1,"Source link missing");
  await mkdir(resolve(root,"artifacts/pray-contemplative-daily"),{recursive:true});
  for(const width of [320,390]){
   await page.setViewportSize({width,height:844});
