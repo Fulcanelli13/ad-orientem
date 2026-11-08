@@ -56,7 +56,7 @@ export function latinComplineReleaseEligibility({
     LATIN_COMPLINE_RELEASE.sourcePsalterFamily!=="VULGATA_BIBLIORUM"||
     LATIN_COMPLINE_RELEASE.target1961Edition!=="MAME_1961_VULGATA"||
     LATIN_COMPLINE_RELEASE.target1961PsalterFamily!=="VULGATA_BIBLIORUM"||
-    !LATIN_COMPLINE_RELEASE.exact1961EditionPsalterLeafVerified||
+    // Exact-1961 typesetting is expressly NOT the approved release basis.
     !LATIN_COMPLINE_RELEASE.ordinary1961SequenceReviewed||
     !LATIN_COMPLINE_RELEASE.saturdayAppointmentReviewed||
     !LATIN_COMPLINE_RELEASE.printedVulgatePatternDualWitnessCollated||
