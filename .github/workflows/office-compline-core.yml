@@ -57,6 +57,7 @@ jobs:
           node --test tests/divine-office-advent-i-full-week-compline.mjs
           node --test tests/divine-office-prayer-readiness-gate.mjs
           node --test tests/divine-office-native-entry.mjs
+          node --test tests/divine-office-latin-compline-public-release.mjs
           node --test tests/divine-office-private-review.mjs
           node --test tests/divine-office-latin-only-complete-compline.mjs
           node --check src/office/compline-recitation-projection.js
