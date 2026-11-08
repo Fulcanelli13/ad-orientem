@@ -308,7 +308,10 @@ test("four published Advent Compline dates load 40-moment Latin in both contexts
    assert.equal(r.blessingAmensRestoredFromPinnedSource,2);
    assert.equal(r.printedPsalmDisplayFrames,["2026-11-29","2026-11-30"].includes(date)?30:41);
    assert.deepEqual(r.availableLanguages,["la"]);
-   assert.ok(r.frames.length>80);
+   // Sunday has 30 psalm stich focus steps, Saturday has 41:
+   // do not impose the 41-stich Saturday total on Sunday Compline.
+   assert.ok(r.frames.length>(
+    ["2026-11-29","2026-11-30"].includes(date)?69:80));
    assert.equal(r.presidingMinister,minister);
    assert.equal(r.recitationContext,context);
    assert.ok(r.frames.every(f=>Object.keys(f.texts).every(l=>l==="la")));
