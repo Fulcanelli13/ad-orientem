@@ -23,7 +23,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Verify five source-scoped profiles and adversarial CL2 joins
+      - name: Verify sixteen source-scoped profiles and adversarial CL2 joins
         run: node tests/tlm-cl27-site-contact-evidence.mjs
       - name: Verify curated GitHub Pages includes the contact manifest, not CL27 research files
         run: |

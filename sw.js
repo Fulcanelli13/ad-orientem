@@ -1,3 +1,7 @@
+/* 2026-11-08 CL27 source-contact expansion to 16 named church profiles.
+ * Installed GitHub Pages clients must load the updated exact-CL2 contact manifest;
+ * no new current Mass, Una Cum, ownership or map pin claims.
+ */
 /* 2026-11-08 CL27 five site-contact profile publication on GitHub Pages.
  * Refresh installed clients to discover exact-site contact panels and manifest.
  * No liturgical timetable, GPS, or canonical status changes are introduced.

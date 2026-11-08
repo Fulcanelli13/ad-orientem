@@ -9,7 +9,7 @@ const master=JSON.parse(readFileSync(new URL(
  "../data/directory/generated/cl2-physical-site-index.v1.json",import.meta.url),"utf8"));
 assert.equal(master.schema,"AO_CL2_PHYSICAL_SITE_RUNTIME_INDEX_V1");
 assert.equal(master.counts.effective_physical_sites,2579);
-assert.equal(data.records.length,5);
+assert.equal(data.records.length,16);
 const byAnchor=new Map(master.records.map(row=>[row[0],row]));
 const fixtures=data.records.map(c=>{
  const x=byAnchor.get(c.cl2_anchor);
@@ -32,14 +32,17 @@ const fixtures=data.records.map(c=>{
   geo:null,map_publishable:false,
  });
 });
+assert.equal(data.records.slice(5).length,11);
+assert.ok(data.records.slice(5).every(c=>c.community_named_by_source==="FSSPX District de France"));
+assert.ok(data.records.slice(5).every(c=>c.note_en.includes("distinct")||c.note_en.includes("serv")||c.note_en.includes("separate")||c.note_en.includes("contact")||c.note_en.includes("date-specific")));
 const unrelated=Object.freeze({kind:"TLM_VENUE",source_id:"UNRELATED",
  source_ids:["UNRELATED"],physical_group_id:"RG-000000000000",
  country_code:"FR",title:"Unrelated church",source_links:[]});
 const enriched=attachPublishedSiteContactEvidence([...fixtures,unrelated],data);
-assert.equal(enriched.length,6);
-assert.equal(enriched.filter(x=>x.site_contact_evidence).length,5);
-assert.equal(enriched[5],unrelated);
-for(let i=0;i<5;i++){
+assert.equal(enriched.length,17);
+assert.equal(enriched.filter(x=>x.site_contact_evidence).length,16);
+assert.equal(enriched[16],unrelated);
+for(let i=0;i<16;i++){
  const c=data.records[i],item=enriched[i],original=fixtures[i];
  assert.equal(original.site_contact_evidence,undefined,"Input must not be mutated");
  assert.equal(item.site_contact_evidence.cl2_anchor,c.cl2_anchor);
@@ -62,7 +65,7 @@ for(let i=0;i<5;i++){
 function mustReject(items,manifest){
  assert.throws(()=>attachPublishedSiteContactEvidence(items,manifest));
 }
-mustReject(fixtures.slice(0,4),data); // No silently publishing a partial geographical group
+mustReject(fixtures.slice(0,15),data); // No silently publishing a partial geographical group
 const malformed=structuredClone(data);
 malformed.records[0].una_cum="YES";
 mustReject([...fixtures,unrelated],malformed);
@@ -80,4 +83,4 @@ repeated.records[1].source_id=repeated.records[0].source_id;
 mustReject(fixtures,repeated);
 assert.ok(!renderTlmChurchProfile(unrelated,"en").includes("data-cl27-site-contact"),
  "Other church profiles remain unchanged");
-console.log("PASS CL27 exact-site contact publication: 5/2579 physical CL2 records, EN/FR cards and source links, 0 new Mass, ownership or ecclesial claims");
+console.log("PASS CL27 exact-site contact publication: 16/2579 physical CL2 records, EN/FR cards and source links, 0 new Mass, ownership or ecclesial claims");

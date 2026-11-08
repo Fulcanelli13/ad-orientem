@@ -70,8 +70,8 @@ assert.equal(live.filter(x=>x.map_state==="ADDRESS_ONLY").length,14);
 assert.ok(added.every(x=>live.some(v=>v.item_id===x.item_id)));
 assert.equal(live.filter(x=>x.celebration_evidence).length,2,
  "The source-owned CL27 witness overlay must not alter the B91 physical-site census");
-assert.equal(live.filter(x=>x.site_contact_evidence).length,5,
- "Exactly five source-linked community/contact claims must join canonical CL2 sites");
+assert.equal(live.filter(x=>x.site_contact_evidence).length,16,
+ "Exactly sixteen source-linked community/contact claims must join canonical CL2 sites");
 assert.ok(live.filter(x=>x.site_contact_evidence).every(x=>!x.site_contact_evidence.mass_times&&!x.site_contact_evidence.una_cum));
 assert.deepEqual(calls,[PRELIMINARY_R49_URL,
   new URL("../data/directory/published-provisional-mass-sites-20261026.v1.json",import.meta.url).href,
