@@ -78,6 +78,22 @@ test("real eight-date Compline fixtures render original trilingual 42-block priv
   const result=await assemblePrivateOfficeReview({
    hour:"COMPLINE",date,fetchSource:complineFetch()
   });
+  if(result.status!=="PRIVATE_SOURCE_TEXT_REVIEW"){
+   const {createComplinePinnedReader,assembleDatedComplinePilot}=
+    await import("../src/office/saturday-compline-2026-pilot.js");
+   const reader=createComplinePinnedReader({date,fetchSource:complineFetch()});
+   const pilot=await assembleDatedComplinePilot({date,reader});
+   const invalidFrame=pilot.frames?.findIndex(f=>!f||typeof f.kind!=="string"||
+    !("sourceId" in f)||!["la","en","fr"].every(lang=>
+     Array.isArray(f.texts?.[lang])&&f.texts[lang].length>0&&
+     f.texts[lang].every(t=>typeof t==="string"&&t.length>0&&t.length<20000)));
+   assert.fail(JSON.stringify({date,reason:result.reason,pilotStatus:pilot.status,
+     pilotReason:pilot.reason,sourceRevision:pilot.sourceRevision,
+     blockCount:pilot.blockCount,frameCount:pilot.frames?.length,
+     focusFrameCount:pilot.focusFrameCount,invalidFrame,
+     invalidSource:pilot.frames?.[invalidFrame]?.sourceId,
+     firstFrame:pilot.frames?.[0]&&{kind:pilot.frames[0].kind,sourceId:pilot.frames[0].sourceId}}));
+  }
   assert.equal(result.status,"PRIVATE_SOURCE_TEXT_REVIEW",date+": "+result.reason);
   assert.equal(result.eventCount,42);
   assert.equal(result.hour,"COMPLINE");
