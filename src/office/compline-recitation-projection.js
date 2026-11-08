@@ -15,6 +15,11 @@ import {projectSaturdayComplinePsalmFrame}
 export const COMPLINE_CONTEXT=Object.freeze({
  FINAL_PRAYER:"FINAL_PRAYER",OTHER_TIME:"OTHER_TIME"
 });
+// 1961 Mame Ordinarium §65–66, printed pp. 139–140: where a priest
+// presides use Dominus vobiscum; otherwise Domine exaudi.
+export const COMPLINE_MINISTER=Object.freeze({
+ PRIEST:"PRIEST",NON_PRIEST:"NON_PRIEST"
+});
 export const COMPLINE_EXAMEN_RUBRIC_SOURCE=
  "Breviarium Romanum (1961) Rubricae §147; Ordinarium §56";
 export const COMPLINE_PRINTED_ORDINARY_SOURCE=
@@ -27,6 +32,7 @@ const INITIAL_BLESSING="Psalterium/Common/Prayers#Benedictio Completorium_";
 const CONCLUDING_BLESSING="Psalterium/Common/Prayers#Benedictio Completorium2";
 const AMEN_SOURCE="Psalterium/Common/Prayers#Fidelium animae:R.Amen";
 const CONFITEOR_SOURCE="Psalterium/Common/Prayers#Confiteor_";
+const DIALOGUE_SOURCE="Psalterium/Common/Prayers#Dominus";
 const CONFITEOR_GESTURES=Object.freeze({
  la:Object.freeze({markup:"/:(percutit sibi pectus):/",label:"Percutit sibi pectus"}),
  en:Object.freeze({markup:"/:strikes his breast:/",label:"Strikes his breast"}),
@@ -95,7 +101,12 @@ function withheld(reason){return Object.freeze({
  status:"WITHHELD",reason,events:Object.freeze([]),frames:Object.freeze([]),
  readingEvents:Object.freeze([]),publishable:false,published:false,readingPublished:false
 });}
-export function projectComplineRecitation(review,{context="FINAL_PRAYER"}={}){
+export function projectComplineRecitation(review,{
+ context=COMPLINE_CONTEXT.FINAL_PRAYER,
+ minister=COMPLINE_MINISTER.NON_PRIEST
+}={}){
+ if(!Object.values(COMPLINE_MINISTER).includes(minister))
+  return withheld("COMPLINE_PRESIDING_MINISTER_NOT_REVIEWED");
  if(!Object.values(COMPLINE_CONTEXT).includes(context))
   return withheld("COMPLINE_RECITATION_CONTEXT_UNREVIEWED");
  if(!review||review.status!=="PRIVATE_SOURCE_TEXT_REVIEW"||
@@ -131,7 +142,7 @@ export function projectComplineRecitation(review,{context="FINAL_PRAYER"}={}){
  const readingEvents=Object.freeze(events.filter((_,i)=>!toOmit.has(i)));
  if(readingEvents.length!==40)return withheld("COMPLINE_1961_READING_COUNT_INVALID");
  const resultFrames=[];
- let replacementCount=0,amenCount=0,psalmLabelCount=0;
+ let replacementCount=0,amenCount=0,psalmLabelCount=0,dialogueCount=0;
  for(const f of review.frames){
   if(toOmit.has(f.eventIndex))continue;
   if(f.eventIndex===idx&&f.sourceId===OPENING_PATER&&context==="FINAL_PRAYER"){
@@ -144,6 +155,24 @@ export function projectComplineRecitation(review,{context="FINAL_PRAYER"}={}){
     label:null,texts,originalSourceOnly:false,editorialRubric:true
    }));
    replacementCount++;continue;
+  }
+  if(f.sourceId===DIALOGUE_SOURCE){
+   // Two identical source blocks in the Hour: dialogue before the Visita
+   // collect and after it. Original four lines remain available.
+   if(f.kind!=="DIALOGUE"||f.subTotal!==1||
+     languageKeys.some(l=>{
+      const rows=f.texts?.[l];
+      return !Array.isArray(rows)||rows.length!==4||
+       !/^V\.\s/u.test(rows[0])||!/^R\.\s/u.test(rows[1])||
+       !/^V\.\s/u.test(rows[2])||!/^R\.\s/u.test(rows[3]);
+     }))return withheld("COMPLINE_1961_MINISTER_DIALOGUE_SOURCE_CHANGED");
+   const offset=minister===COMPLINE_MINISTER.PRIEST?0:2;
+   const texts=Object.freeze(Object.fromEntries(languageKeys.map(l=>[
+    l,Object.freeze(f.texts[l].slice(offset,offset+2))
+   ])));
+   resultFrames.push(Object.freeze({...f,sourceTexts:f.texts,
+    texts,presidingMinister:minister,printConformed:true}));
+   dialogueCount++;continue;
   }
   if(f.sourceId===INITIAL_BLESSING||f.sourceId===CONCLUDING_BLESSING){
    if(f.subTotal!==1||languageKeys.some(l=>f.texts?.[l]?.length!==1))
@@ -167,7 +196,8 @@ export function projectComplineRecitation(review,{context="FINAL_PRAYER"}={}){
  const saturday=review.civilDate==="2026-11-28"||review.civilDate==="2026-12-05";
  if(psalmLabelCount!==(saturday?41:0))
   return withheld("COMPLINE_SATURDAY_PSALM_COVERAGE_MISMATCH");
- if(amenCount!==2||replacementCount!==(context==="FINAL_PRAYER"?1:0)||
+ if(dialogueCount!==2||amenCount!==2||
+   replacementCount!==(context===COMPLINE_CONTEXT.FINAL_PRAYER?1:0)||
    resultFrames.some(f=>f.sourceId===SECOND_PATER||f.sourceId===POST_CANTICLE_KYRIE))
   return withheld("COMPLINE_1961_FRAME_PROJECTION_MISMATCH");
  const frames=Object.freeze(resultFrames);
@@ -181,7 +211,8 @@ export function projectComplineRecitation(review,{context="FINAL_PRAYER"}={}){
   editorialRubricFrames:replacementCount,
   printedPsalmDisplayFrames:psalmLabelCount,
   originalPsalmSourceRowsPreserved:true,
-  openingPaterOmitted:context==="FINAL_PRAYER",
+  openingPaterOmitted:context===COMPLINE_CONTEXT.FINAL_PRAYER,
+  presidingMinister:minister,ministerDialoguesResolved:dialogueCount,
   liturgicallyCertified:false,rightsApproved:false,
   publishable:false,published:false,readingPublished:false
  });
