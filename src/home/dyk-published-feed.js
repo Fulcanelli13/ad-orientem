@@ -250,6 +250,88 @@ export function dykMixed24Model(data,id,date,language="en"){
  });
 }
 
+
+const H125_SOURCE=new URL("../../data/did-you-know/dyk-h125-multisource-25-publication.v1.json",import.meta.url);
+const H125_SCHEMA="AO_DYK_H125_MULTISOURCE_25_PUBLICATION_V1";
+const H125_PITRE_URL="https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf";
+const H125_RITUS_URL="https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/";
+const H125_EXTRA_URLS=Object.freeze({
+ HUNGARIAN_ETHNOGRAPHIC_LEXICON:"https://mek.oszk.hu/02100/02115/html/1-713.html",
+ RURAL_LIFE_PRAYERBOOK_1956:"https://www.ewtn.com/catholicism/library/rural-life-prayerbook-11881",
+ DIOCESE_BATON_ROUGE:"https://www.diobr.org/news/st-joseph-cathedral-st-joseph-altar-1",
+ ROMAN_GENERAL_RUBRICS_1962:"https://maternalheart.org/library/1962rubrics.pdf"
+});
+let h125Promise=null;
+export function loadDyk125Release(win=globalThis){
+ if(h125Promise)return h125Promise;
+ h125Promise=Promise.resolve().then(()=>win.fetch(H125_SOURCE,{cache:"no-store"})).then(r=>{
+  if(!r?.ok)throw Error("DYK_H125_UNAVAILABLE");return r.json();
+ }).catch(e=>{h125Promise=null;throw e});
+ return h125Promise;
+}
+export function dyk125Candidates(data,date){
+ if(!validDate(date)||data?.schema!==H125_SCHEMA||data.release_stage!=="APPROVED_PARTIAL_LIVE"||
+    data.counts?.pitre!==12||data.counts?.ritus!==8||data.counts?.other!==5||
+    data.counts?.total!==25||!Array.isArray(data.records)||data.records.length!==25)return [];
+ const ids=new Set(),sources=new Set();
+ return data.records.filter(row=>{
+  const c=row?.pilot_home_copy,s=row?.source,id=row?.id||"";
+  if(!/^DYK-H125-(?:P-0(?:0[1-9]|1[0-2])|M-00[1-8]|X-00[1-5])$/.test(id)||
+    ids.has(id)||!clean(row?.source_id)||sources.has(row.source_id))return false;
+  ids.add(id);sources.add(row.source_id);
+  const pitre=id.includes("-P-"),mass=id.includes("-M-");
+  const url=pitre?H125_PITRE_URL:mass?H125_RITUS_URL:H125_EXTRA_URLS[row.source_family];
+  const family=pitre?"PITRE_1900":mass?"ROMAN_MASS_1962":row.source_family;
+  const pdf=pitre||mass||row.source_family==="ROMAN_GENERAL_RUBRICS_1962";
+  const sourceType=pdf?
+    (s?.type==="pdf"&&Array.isArray(s.pdf_pages_1based)&&
+      s.pdf_pages_1based.length>0&&s.pdf_pages_1based.length<=2&&
+      s.pdf_pages_1based.every(n=>Number.isInteger(n)&&n>0&&n<=700)):
+    (s?.type==="html"&&Array.isArray(s.pdf_pages_1based)&&s.pdf_pages_1based.length===0&&
+      clean(s.primary_locator).length>6);
+  const familyGate=pitre?
+    (row.topic==="historical_customs"&&row.historical_local_only===true&&
+      row.publication_kind==="EVERGREEN_HISTORICAL"&&s.original_image_checked===true&&
+      clean(s.original_italian_anchor).length>4&&s.pdf_pages_1based.length===1&&
+      Array.isArray(s.printed_pages)&&s.printed_pages.length===1&&
+      Number.isInteger(s.printed_pages[0])&&s.printed_pages[0]>0&&
+      s.printed_pages[0]!==s.pdf_pages_1based[0]):
+    mass?
+      (row.topic==="roman_1962_celebrant_rubrics"&&row.liturgical_rubric_1962===true&&
+       row.historical_local_only===false&&row.publication_kind==="ROMAN_1962_RUBRIC"&&
+       /^Ritus servandus [IVX]+[.][0-9]+$/.test(s.primary_locator||"")&&
+       s.original_image_checked===true&&Array.isArray(s.supporting_event_ids)&&
+       s.supporting_event_ids.length>0&&
+       s.supporting_event_ids.every(x=>/^B01-0[0-4][0-9]$/.test(x))&&
+       Array.isArray(s.printed_pages)&&s.printed_pages.length===s.pdf_pages_1based.length&&
+       s.printed_pages.every((p,i)=>p===s.pdf_pages_1based[i])):
+      (Object.hasOwn(H125_EXTRA_URLS,row.source_family)&&
+       s.original_text_checked===true&&
+       row.publication_kind===(row.source_family==="ROMAN_GENERAL_RUBRICS_1962"?
+        "ROMAN_1962_CALENDAR":"SOURCE_SCOPED_HISTORICAL")&&
+       (row.source_family!=="ROMAN_GENERAL_RUBRICS_1962"||
+        (row.liturgical_rubric_1962===true&&s.pdf_pages_1based[0]===15)));
+  return sourceType&&familyGate&&row.source_family===family&&url&&s.url===url&&
+    row.editorial_approval===true&&row.release_authorized===true&&
+    row.semantic_novelty_reviewed===true&&row.published===true&&
+    c?.final_english_signoff===true&&c?.final_french_signoff===true&&
+    clean(c.en).length>30&&clean(c.fr).length>30&&clean(row.region_scope).length>6&&
+    s.deep_link_checked===true&&s.source_record_id===row.source_id;
+ });
+}
+export function dyk125Model(data,id,date,language="en"){
+ const row=dyk125Candidates(data,date).find(r=>r.id===id);if(!row)return null;
+ const fr=language==="fr",s=row.source;
+ const label=row.source_family==="ROMAN_MASS_1962"?(fr?"Messe romaine · Ritus servandus":"Roman Mass · Ritus servandus"):
+  row.source_family==="PITRE_1900"?(fr?"Pitrè · Fêtes siciliennes":"Pitrè · Sicilian feasts"):
+  row.source_family==="ROMAN_GENERAL_RUBRICS_1962"?(fr?"Rubriques romaines · 1962":"Roman rubrics · 1962"):
+  (fr?"Coutumes · Source originale":"Customs · Original source");
+ const links=s.type==="pdf"?s.pdf_pages_1based.map(page=>({page,url:s.url+"#page="+page})):
+  [{page:null,url:s.url,label:fr?"Ouvrir la section citée":"Open cited source section"}];
+ return Object.freeze({id:row.id,language:fr?"fr":"en",fact:row.pilot_home_copy[fr?"fr":"en"],
+   label,sourceId:row.source_id,sourceUrl:s.url,links,published:true});
+}
+
 let selectionPromise=null;
 export function loadDykPrioritySelection(win=globalThis){
  if(selectionPromise)return selectionPromise;
