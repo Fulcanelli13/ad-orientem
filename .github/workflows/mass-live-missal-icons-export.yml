@@ -1,0 +1,31 @@
+name: Mass LIVE and MISSAL icon export
+on:
+  push:
+    branches:
+      - export/mass-live-missal-icons-20261108
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  export-mass-icons:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Export source-approved icon art and full cue register
+        run: node tools/mass/export-live-missal-icons.mjs
+      - name: Package ZIP
+        run: |
+          zip -qr AO_Mass_Live_Missal_Icons_2026-11-08.zip AO_Mass_Live_Missal_Icons_2026-11-08
+          unzip -tq AO_Mass_Live_Missal_Icons_2026-11-08.zip
+          ls -lh AO_Mass_Live_Missal_Icons_2026-11-08.zip
+      - name: Upload ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: AO_Mass_Live_Missal_Icons_2026-11-08
+          path: AO_Mass_Live_Missal_Icons_2026-11-08.zip
+          retention-days: 7
+          if-no-files-found: error
