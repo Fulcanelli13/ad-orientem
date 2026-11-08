@@ -1,0 +1,160 @@
+# Ad Orientem Prayer — Essential Holy Cards V2
+Date: 5 November 2026
+Status: **draft review branch; no alteration to prayer bodies or source-witness metadata**
+
+## Scope and separation of ownership
+
+The Essential Prayers *collection* is curated from 32 to **19 entries**: 16 core devotional prayers, followed by three optional everyday prayers. The 32 original F01 Holy Card reader IDs remain valid, and all 48 canonical Prayer texts in `src/pray/canonical-data.js` remain untouched. The 13 entries removed from the *collection* are not rejected, deleted, rewritten or prevented from opening via other routes.
+
+Content/selection first. Later work will independently implement **tap artwork/front to turn card; tap Latin prayer text to replace with the selected EN/FR vernacular; tap again to restore Latin**, without losing scroll position, actual source languages, or touch/keyboard accessibility. No such interaction is claimed by this PR.
+
+## 16 core cards, ordered
+
+| ID | English heading | French heading |
+| --- | --- | --- |
+| foundations_sign_of_cross | Sign of the Cross | Signe de la Croix |
+| foundations_our_father | Our Father | Notre Père |
+| foundations_hail_mary | Hail Mary | Je vous salue Marie |
+| foundations_glory_be | Glory Be | Gloire au Père |
+| foundations_apostles_creed | Apostles' Creed | Symbole des Apôtres |
+| sacrament_act_of_contrition | Act of Contrition | Acte de contrition |
+| foundations_act_of_faith | Act of Faith | Acte de foi |
+| foundations_act_of_hope | Act of Hope | Acte d'espérance |
+| foundations_act_of_love | **Act of Charity** | Acte de charité |
+| foundations_guardian_angel | Guardian Angel Prayer | Prière à l'ange gardien |
+| foundations_prayer_of_adoration | My Lord and My God | **Mon Seigneur et mon Dieu** |
+| marian_memorare | **Memorare** | Souvenez-vous |
+| sacrament_come_holy_spirit | Come, Holy Spirit | Venez, Esprit-Saint |
+| devotion_prayer_st_michael | Prayer to Saint Michael | Prière à saint Michel Archange |
+| sacred_heart_aspiration_trust | **Aspiration to the Sacred Heart** | Aspiration au Sacré-Cœur |
+| foundations_eternal_rest | **Eternal Rest** | Repos éternel |
+
+## Three daily prayers (same collection, separate group)
+
+| ID | English heading | French heading |
+| --- | --- | --- |
+| foundations_grace_before_meals | Grace Before Meals | Bénédicité |
+| foundations_grace_after_meals | **Thanksgiving After Meals** | Grâces après le repas |
+| foundations_morning_offering | Morning Offering | Offrande du matin |
+
+## The 13 displaced shelf entries
+
+| ID | Appropriate permanent owner |
+| --- | --- |
+| mass_confiteor | Mass / Confiteor |
+| marian_consecration_immaculate_heart | Marian consecrations; historical English-only source |
+| adoration_anima_christi | Eucharistic / Anima Christi |
+| adoration_spiritual_communion | Eucharistic / Spiritual Communion |
+| benediction_versicles | Benediction |
+| adoration_lord_i_am_not_worthy | Mass / Communion |
+| devotion_memorare_st_joseph | Saints / St Joseph |
+| devotion_consecration_christ_king | Devotions / Christ the King |
+| church_prayer_for_pope | Intercessions |
+| sacred_heart_short_prayer | Sacred Heart / Act of Reparation |
+| devotion_ad_te_beate_ioseph | Saints / St Joseph |
+| dead_fidelium_deus | Prayers for the Dead |
+| dead_eternal_rest_singular | Eternal Rest — singular personal-intention variant |
+
+These are placement recommendations, not a claim that every destination's dedicated UI has already been certified.
+
+## Actual trilingual text inventory
+
+- 19/19 selected records possess non-empty `la`, `en` and `fr` fields in current main.
+- October 10 canonical corpus comparison showed that the 19 source texts had not been replaced. Title corrections in this branch are display-only.
+- The displayed Latin text must use ordinary ecclesiastical spelling: `Sicut` and `tuum`, not `Sicvt` and `tvvm`; retain correct consonantal `v` in `Veni` and `vivis`. Do not use a blanket `v` → `u` substitution. `æ`/`œ` and attested accent marks are distinct orthographic choices, not evidence of incorrect `u/v`.
+- Existing actual Latin code points in `Gloria Patri` already read `Sicut erat in principio`. A display that visibly changes this must be investigated in CSS/font rendering; the canonical Latin source does not read `Sicvt`.
+
+## Source/translation audit — important exceptions
+
+1. **Our Father, French:** the selected traditional French `Notre Père, qui êtes aux cieux ... ne nous laissez pas succomber` is **not** the verbatim French wording of the Vatican's 2005 `Compendium`, whose text begins `Notre Père, qui es aux cieux` and has `ne nous soumets pas`. The current record's generic `VERBATIM` source claim is therefore too broad *for that French face*. Keep the familiar traditional prayer; qualify its provenance and locate a historically appropriate original French witness before printing any precise source claim. Its Latin `quotidianum` likewise differs orthographically from this Compendium's `cotidianum`; do not silently change an established traditional Latin witness.
+2. **Act of Hope, French:** the *actual* 2005 French Compendium reads `Dans cette foi, puis-je vivre et mourir` in its Act of Hope, while its accompanying Latin has `In hac spe vivere et mori statuo`, and English has `In this hope I intend to live and die`. Treat this as a documented **printed cross-language inconsistency**. Preserve the archival French source; if a devotional reading `Dans cette espérance` is introduced, mark it explicitly as a corrected/alternate reading rather than attributing the edit verbatim to the original document.
+3. **Act of Faith:** English expands on Trinity, Incarnation and judgment, while the paired Latin/French use shorter confessional formulas. These are legitimate official language-face witnesses but not strict word-by-word translations. Do not promise line-locked parallelism.
+4. **Act of Contrition:** the English/Latin and French traditional formulas differ in the punishment, near-occasion and penance clauses. This is a **variant** question, not a missing translation. Preserve exact sources and identify formula before any tap-toggle presentation.
+5. **Act of Charity:** the published French Compendium's short prayer ends without the Latin/English final sentence and Amen. Do not append either to a text marked verbatim.
+6. **Guardian Angel:** the English `Angel of God, my guardian dear` is a conventional rhyming devotional version, not a literal translation of the Latin/French `Angele Dei` text. This is appropriate as an alternate witness but must be identified as such.
+7. **Morning Offering:** English and Latin preserve recognizable common intent but differ in introductory formulation. Verify actual edition attribution before claiming strict bilingual equivalence.
+
+Remaining selected texts (Sign of Cross, Hail Mary, Glory Be, Apostles' Creed, `Dominus meus`, Memorare, `Veni Sancte Spiritus`, St Michael, Sacred Heart aspiration, Eternal Rest, before/after meals) have their three source fields preserved. This pass has **not** issued a new original-print certificate for each of their 36 vernacular faces. Earlier VERIFIED_PRIMARY flags are inherited; they must not be inflated into fresh evidence.
+
+Primary reference:
+- Vatican English Compendium, common prayers Appendix A: https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html
+- Vatican French Compendium, common prayers Appendix A: https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html
+
+## Release boundaries
+
+Do not merge without required CI, real 320/390px EN/FR gallery screenshots, and explicit review of category membership. This PR does **not** modify the canonical body of any prayer, claim missing translations, replace historical source witnesses, introduce artwork, or change the flip/tap language mechanics. After content/source review, implement text-tap language replacement with a separate visual acceptance gate and original full-width Latin/vernacular typography. GitHub Actions / GitHub Pages only; no Vercel.
+
+
+## Follow-up source resolution — 5 November (18:52 UTC)
+
+A machine-readable source-scope overlay now exists in
+`src/pray/essential-prayer-witness-policy.v1.js`. It indexes **all 19** selected
+source owners without changing the 48 canonical prayer texts or inventing
+back-translations.
+
+### French Our Father — traditional witness identified
+
+The 1906 `Catéchisme illustré des vérités nécessaires`, *Prières*, prints the
+traditional French *vous* formula, including *ne nous laissez pas succomber*.
+See the transcribed historical page:
+https://fr.wikisource.org/wiki/Cat%C3%A9chisme_illustr%C3%A9_des_v%C3%A9rit%C3%A9s_n%C3%A9cessaires/Pri%C3%A8res
+
+The 2005 Vatican French Compendium prints *tu* and *ne nous soumets pas*.
+Therefore the existing Ad Orientem prayer is not mistranslated: its global
+“French Compendium verbatim” attribution is overly broad. Preserve the
+traditional French text and attach the older witness at the **French face**
+level. The source policy also flags *quotidianum* versus the Compendium Latin
+*cotidianum* as an orthographic/edition difference rather than silently
+rewriting the source. Do not claim an original 1906 Latin line collation.
+
+### French Act of Hope — documented editorial correction
+
+The Vatican French Compendium *actually prints* “Dans cette foi, puis-je
+vivre et mourir” under *Acte d’espérance*. Its English reads “In this hope”
+and its Latin “In hac spe”. The policy records both: the canonical 2005
+printed French witness remains byte-for-byte unchanged, while
+`essentialPrayerEditorialReading("foundations_act_of_hope","fr",record)`
+constructs the explicitly **editorial devotional reading** with “Dans cette
+espérance”. It is now **displayed as the French devotional card reading** through a source-preserving projection; the printed original stays in the canonical record, and
+must never be passed off as the Compendium's verbatim printing.
+
+The three official language editions should not be described as strict
+clause-by-clause translations for the Acts of Faith, Charity or Contrition.
+The familiar English Guardian Angel rhyme likewise differs from the Latin
+*Angele Dei*; the USCCB English Morning Offering differs from the sourced
+Latin/French devotional witnesses.
+
+### English Guardian Angel and Morning Offering witnesses
+
+The official English Vatican Compendium prints the rhyming *Angel of God,
+my guardian dear* prayer. It is not an unsourced invention or a mandatory
+literal translation of the official Latin and French forms.
+https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html
+
+The USCCB Morning Offering source ends the papal intention formula with
+**“this month”**; Ad Orientem's existing English text concludes with
+“the intentions of the Holy Father. Amen.” This is a **traditional
+wording/edition variant**, not a proof that the translation is missing. Keep
+the prayer body intact for this text-first reconciliation and withdraw
+any claim that it is *verbatim* from that USCCB page.
+https://www.usccb.org/prayers/morning-offering
+
+Both distinctions are now documented in the read-only 19-prayer witness
+policy, with regression tests. They do **not** amount to newly certified
+original-print trilingual texts.
+
+### Acceptance tiers and next action
+
+- **19/19 populated trilingual records**: verified in canonical data.
+- **19/19 per-record witness classifications**: staged in branch.
+- **Original-page three-language certification of all 19 prayers**: **NOT**
+  achieved; do not use a fabricated percentage or infer it from text presence.
+- **Corrected French Hope reading**: displayed on the card with an explicit source-provenance notice; the exact original printed French form remains in canonical-data.
+- **Reader UI text tap, card-flip separation, font u/v rendering, actual
+  screenshots**: still require a distinct design/functional review.
+- The CI test `tests/pray-essential-witness-policy-v1.mjs` must pass with the
+  prior 19-shelf and 32-source-reader guards.
+
+Source links for independent review:
+- https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_fr.html
+- https://www.vatican.va/archive/compendium_ccc/documents/archive_2005_compendium-ccc_en.html
