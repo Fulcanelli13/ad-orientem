@@ -1,0 +1,903 @@
+{
+  "schema": "AO_DYK_H125_MULTISOURCE_25_PUBLICATION_V1",
+  "created": "2026-11-08",
+  "release_stage": "APPROVED_PARTIAL_LIVE",
+  "release_kind": "SOURCE_LINKED_BILINGUAL_PITRE_RITUS_HISTORICAL",
+  "counts": {
+    "pitre": 12,
+    "ritus": 8,
+    "other": 5,
+    "total": 25
+  },
+  "notes": "Bounded factual paraphrases, region and Mass-form qualifications, verified previous Pitrè image records, English Ritus translation (Latin pending), separately checked published source pages, no private corpus publication. This does not imply contemporary continuation of old customs. Three semantically nearby candidates were replaced after crossbank screen against the 100 published and 612 private previews.",
+  "records": [
+    {
+      "id": "DYK-H125-P-001",
+      "research_record_id": "DYK-UM01-025",
+      "source_id": "PIT1900-IT-011",
+      "source_family": "PITRE_1900",
+      "topic": "historical_customs",
+      "pilot_home_copy": {
+        "en": "Pitrè's historical description of Saint Joseph's feast in Ribera mentions large decorative breads called cudduri hung on house walls.",
+        "fr": "La description historique de Pitrè sur la fête de saint Joseph à Ribera évoque de grands pains décoratifs appelés cudduri suspendus aux murs des maisons.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "pdf_pages_1based": [
+          502
+        ],
+        "printed_pages": [
+          444
+        ],
+        "original_edition": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_id": "PIT1900-IT-011",
+        "original_italian_anchor": "attaccate alle pareti",
+        "original_image_checked": true,
+        "deep_link_checked": true,
+        "original_page_review": "R33 recovered prior 1900 book-page/Italian-anchor confirmation"
+      },
+      "region_scope": "Sicily, particular historical town or feast as named; not current universal practice",
+      "historical_local_only": true,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true,
+      "publication_kind": "EVERGREEN_HISTORICAL"
+    },
+    {
+      "id": "DYK-H125-P-002",
+      "research_record_id": "DYK-UM01-026",
+      "source_id": "PIT1900-IT-017",
+      "source_family": "PITRE_1900",
+      "topic": "historical_customs",
+      "pilot_home_copy": {
+        "en": "A historical Saint Joseph celebration in Ribera included a dramatic scene in which a costumed Holy Family was refused lodging.",
+        "fr": "Une ancienne fête de saint Joseph à Ribera comprenait une scène où la Sainte Famille costumée se voyait refuser l'hospitalité.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "pdf_pages_1based": [
+          503
+        ],
+        "printed_pages": [
+          445
+        ],
+        "original_edition": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_id": "PIT1900-IT-017",
+        "original_italian_anchor": "Giun- gono innanzi un fondaco",
+        "original_image_checked": true,
+        "deep_link_checked": true,
+        "original_page_review": "R33 recovered prior 1900 book-page/Italian-anchor confirmation"
+      },
+      "region_scope": "Sicily, particular historical town or feast as named; not current universal practice",
+      "historical_local_only": true,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true,
+      "publication_kind": "EVERGREEN_HISTORICAL"
+    },
+    {
+      "id": "DYK-H125-P-003",
+      "research_record_id": "DYK-UM02-026",
+      "source_id": "PIT1900-NEW-002",
+      "source_family": "PITRE_1900",
+      "topic": "historical_customs",
+      "pilot_home_copy": {
+        "en": "Pitrè described street singers repeating Saint Rosalia's novena songs at the same Palermo houses for nine days.",
+        "fr": "Pitrè décrivait des chanteurs reprenant les chants de la neuvaine de sainte Rosalie devant les mêmes maisons de Palerme pendant neuf jours.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "pdf_pages_1based": [
+          78
+        ],
+        "printed_pages": [
+          12
+        ],
+        "original_edition": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_id": "PIT1900-NEW-002",
+        "original_italian_anchor": "nove giorni",
+        "original_image_checked": true,
+        "deep_link_checked": true,
+        "original_page_review": "R33 recovered prior 1900 book-page/Italian-anchor confirmation"
+      },
+      "region_scope": "Sicily, particular historical town or feast as named; not current universal practice",
+      "historical_local_only": true,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true,
+      "publication_kind": "EVERGREEN_HISTORICAL"
+    },
+    {
+      "id": "DYK-H125-P-004",
+      "research_record_id": "DYK-UM02-027",
+      "source_id": "PIT1900-NEW-009",
+      "source_family": "PITRE_1900",
+      "topic": "historical_customs",
+      "pilot_home_copy": {
+        "en": "In historical Palermo, the monumental festival cart built for Saint Rosalia over several weeks bore a white-robed, crowned figure of the saint.",
+        "fr": "À Palerme, le grand char préparé pendant plusieurs semaines pour la fête de sainte Rosalie portait une figure de la sainte vêtue de blanc et couronnée.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "pdf_pages_1based": [
+          80
+        ],
+        "printed_pages": [
+          14
+        ],
+        "original_edition": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_id": "PIT1900-NEW-009",
+        "original_italian_anchor": "figura della santa dalle candide vesti",
+        "original_image_checked": true,
+        "deep_link_checked": true,
+        "original_page_review": "R33 recovered prior 1900 book-page/Italian-anchor confirmation"
+      },
+      "region_scope": "Sicily, particular historical town or feast as named; not current universal practice",
+      "historical_local_only": true,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true,
+      "publication_kind": "EVERGREEN_HISTORICAL"
+    },
+    {
+      "id": "DYK-H125-P-005",
+      "research_record_id": "DYK-UM02-031",
+      "source_id": "PIT1900-NEW-030",
+      "source_family": "PITRE_1900",
+      "topic": "historical_customs",
+      "pilot_home_copy": {
+        "en": "Pitrè described votive tablets in a Palermo church of Saints Cosmas and Damian recounting injuries and reported favours.",
+        "fr": "Pitrè décrivait, dans une église palermitaine des saints Côme et Damien, des ex-voto relatant des blessures et des faveurs rapportées.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "pdf_pages_1based": [
+          134
+        ],
+        "printed_pages": [
+          72
+        ],
+        "original_edition": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_id": "PIT1900-NEW-030",
+        "original_italian_anchor": "tabelle votive",
+        "original_image_checked": true,
+        "deep_link_checked": true,
+        "original_page_review": "R33 recovered prior 1900 book-page/Italian-anchor confirmation"
+      },
+      "region_scope": "Sicily, particular historical town or feast as named; not current universal practice",
+      "historical_local_only": true,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true,
+      "publication_kind": "EVERGREEN_HISTORICAL"
+    },
+    {
+      "id": "DYK-H125-P-006",
+      "research_record_id": "DYK-UM03-046",
+      "source_id": "PIT1900-NEW-097",
+      "source_family": "PITRE_1900",
+      "topic": "historical_customs",
+      "pilot_home_copy": {
+        "en": "Pitrè recorded young people reciting verses in honour of the Eucharist as the Geraci Siculo cavalcade passed through town squares.",
+        "fr": "Pitrè relatait comment des jeunes déclamaient des vers en l'honneur de l'Eucharistie lors du passage de la cavalcade de Geraci Siculo sur les places.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "pdf_pages_1based": [
+          191
+        ],
+        "printed_pages": [
+          129
+        ],
+        "original_edition": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_id": "PIT1900-NEW-097",
+        "original_italian_anchor": "poesie d occasione in lode",
+        "original_image_checked": true,
+        "deep_link_checked": true,
+        "original_page_review": "R33 recovered prior 1900 book-page/Italian-anchor confirmation"
+      },
+      "region_scope": "Sicily, particular historical town or feast as named; not current universal practice",
+      "historical_local_only": true,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true,
+      "publication_kind": "EVERGREEN_HISTORICAL"
+    },
+    {
+      "id": "DYK-H125-P-007",
+      "research_record_id": "DYK-UM02-042",
+      "source_id": "PIT1900-NEW-075",
+      "source_family": "PITRE_1900",
+      "topic": "historical_customs",
+      "pilot_home_copy": {
+        "en": "At Gratteri, Pitrè described Saint James's statue being taken to houses to collect offerings that included money, grain, barley and broad beans.",
+        "fr": "À Gratteri, Pitrè décrit la statue de saint Jacques portée de maison en maison pour recueillir notamment de l'argent, du grain, de l'orge et des fèves.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "pdf_pages_1based": [
+          186
+        ],
+        "printed_pages": [
+          124
+        ],
+        "original_edition": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_id": "PIT1900-NEW-075",
+        "original_italian_anchor": "danaro grano orzo fave",
+        "original_image_checked": true,
+        "deep_link_checked": true,
+        "original_page_review": "R33 recovered prior 1900 book-page/Italian-anchor confirmation"
+      },
+      "region_scope": "Sicily, particular historical town or feast as named; not current universal practice",
+      "historical_local_only": true,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true,
+      "publication_kind": "EVERGREEN_HISTORICAL"
+    },
+    {
+      "id": "DYK-H125-P-008",
+      "research_record_id": "DYK-UM02-045",
+      "source_id": "PIT1900-NEW-084",
+      "source_family": "PITRE_1900",
+      "topic": "historical_customs",
+      "pilot_home_copy": {
+        "en": "Pitrè described different occupational groups taking turns sponsoring monthly Blessed Sacrament observances in Geraci Siculo.",
+        "fr": "Pitrè décrivait à Geraci Siculo des groupes professionnels se relayant pour organiser des célébrations mensuelles du Saint-Sacrement.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "pdf_pages_1based": [
+          188
+        ],
+        "printed_pages": [
+          126
+        ],
+        "original_edition": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_id": "PIT1900-NEW-084",
+        "original_italian_anchor": "terza domenica",
+        "original_image_checked": true,
+        "deep_link_checked": true,
+        "original_page_review": "R33 recovered prior 1900 book-page/Italian-anchor confirmation"
+      },
+      "region_scope": "Sicily, particular historical town or feast as named; not current universal practice",
+      "historical_local_only": true,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true,
+      "publication_kind": "EVERGREEN_HISTORICAL"
+    },
+    {
+      "id": "DYK-H125-P-009",
+      "research_record_id": "DYK-UM02-050",
+      "source_id": "PIT1900-NEW-110",
+      "source_family": "PITRE_1900",
+      "topic": "historical_customs",
+      "pilot_home_copy": {
+        "en": "An emigrant community in America once sent a banner for a Saint Cyrus festival in Marineo, Sicily.",
+        "fr": "Une communauté d'émigrés installée en Amérique envoya autrefois une bannière pour la fête de saint Cyr à Marineo, en Sicile.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "pdf_pages_1based": [
+          197
+        ],
+        "printed_pages": [
+          135
+        ],
+        "original_edition": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_id": "PIT1900-NEW-110",
+        "original_italian_anchor": "america",
+        "original_image_checked": true,
+        "deep_link_checked": true,
+        "original_page_review": "R33 recovered prior 1900 book-page/Italian-anchor confirmation"
+      },
+      "region_scope": "Sicily, particular historical town or feast as named; not current universal practice",
+      "historical_local_only": true,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true,
+      "publication_kind": "EVERGREEN_HISTORICAL"
+    },
+    {
+      "id": "DYK-H125-P-010",
+      "research_record_id": "DYK-UM03-039",
+      "source_id": "PIT1900-NEW-067",
+      "source_family": "PITRE_1900",
+      "topic": "historical_customs",
+      "pilot_home_copy": {
+        "en": "Pitrè recounts that nuns once arranged temporary altars as stopping places during celebrations in Piazza Armerina.",
+        "fr": "Pitrè rapporte que des religieuses dressaient autrefois des autels temporaires comme étapes de célébrations à Piazza Armerina.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "pdf_pages_1based": [
+          618
+        ],
+        "printed_pages": [
+          560
+        ],
+        "original_edition": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_id": "PIT1900-NEW-067",
+        "original_italian_anchor": "monache",
+        "original_image_checked": true,
+        "deep_link_checked": true,
+        "original_page_review": "R33 recovered prior 1900 book-page/Italian-anchor confirmation"
+      },
+      "region_scope": "Sicily, particular historical town or feast as named; not current universal practice",
+      "historical_local_only": true,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true,
+      "publication_kind": "EVERGREEN_HISTORICAL"
+    },
+    {
+      "id": "DYK-H125-P-011",
+      "research_record_id": "DYK-UM03-040",
+      "source_id": "PIT1900-NEW-070",
+      "source_family": "PITRE_1900",
+      "topic": "historical_customs",
+      "pilot_home_copy": {
+        "en": "Pitrè describes nine confraternities participating in an old Holy Spirit celebration in Gangi.",
+        "fr": "Pitrè décrit neuf confréries participant à une ancienne fête du Saint-Esprit à Gangi.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "pdf_pages_1based": [
+          182
+        ],
+        "printed_pages": [
+          120
+        ],
+        "original_edition": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_id": "PIT1900-NEW-070",
+        "original_italian_anchor": "confraternite",
+        "original_image_checked": true,
+        "deep_link_checked": true,
+        "original_page_review": "R33 recovered prior 1900 book-page/Italian-anchor confirmation"
+      },
+      "region_scope": "Sicily, particular historical town or feast as named; not current universal practice",
+      "historical_local_only": true,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true,
+      "publication_kind": "EVERGREEN_HISTORICAL"
+    },
+    {
+      "id": "DYK-H125-P-012",
+      "research_record_id": "DYK-UM03-049",
+      "source_id": "PIT1900-NEW-116",
+      "source_family": "PITRE_1900",
+      "topic": "historical_customs",
+      "pilot_home_copy": {
+        "en": "In Marineo, the historical Saint Cyrus street drama, called the Dimostranza, featured townspeople acting as soldiers, hermits, angels and even personified virtues and vices.",
+        "fr": "À Marineo, l'ancienne représentation de rue consacrée à saint Cyr, la Dimostranza, réunissait des habitants jouant des soldats, des ermites, des anges et même des vertus et des vices personnifiés.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "pdf_pages_1based": [
+          198
+        ],
+        "printed_pages": [
+          136
+        ],
+        "original_edition": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+        "source_record_id": "PIT1900-NEW-116",
+        "original_italian_anchor": "sulle pubbliche vie e sulle piazze",
+        "original_image_checked": true,
+        "deep_link_checked": true,
+        "original_page_review": "R33 recovered prior 1900 book-page/Italian-anchor confirmation"
+      },
+      "region_scope": "Sicily, particular historical town or feast as named; not current universal practice",
+      "historical_local_only": true,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true,
+      "publication_kind": "EVERGREEN_HISTORICAL"
+    },
+    {
+      "id": "DYK-H125-M-001",
+      "source_id": "RS1962.H125.GOSPEL_CROSSES",
+      "source_family": "ROMAN_MASS_1962",
+      "topic": "roman_1962_celebrant_rubrics",
+      "pilot_home_copy": {
+        "en": "Before the Gospel, the 1962 Roman celebrant signs the beginning of its text and makes small crosses on his forehead, lips and breast.",
+        "fr": "Avant l'Évangile, le célébrant romain de 1962 signe le début du texte, puis trace de petites croix sur son front, ses lèvres et sa poitrine.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdf_pages_1based": [
+          8
+        ],
+        "printed_pages": [
+          8
+        ],
+        "primary_locator": "Ritus servandus VI.2",
+        "supporting_event_ids": [
+          "B01-009"
+        ],
+        "source_record_id": "RS1962.H125.GOSPEL_CROSSES",
+        "original_edition": "Ritus servandus in celebratione Missae (1962), English translation; Latin crosscheck not independently certified",
+        "original_image_checked": true,
+        "deep_link_checked": true
+      },
+      "region_scope": "Roman 1962 celebrant/minister and applicable Mass form only; not universal directions for faithful",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true,
+      "publication_kind": "ROMAN_1962_RUBRIC"
+    },
+    {
+      "id": "DYK-H125-M-002",
+      "source_id": "RS1962.H125.CREDO_INCARNATUS",
+      "source_family": "ROMAN_MASS_1962",
+      "topic": "roman_1962_celebrant_rubrics",
+      "pilot_home_copy": {
+        "en": "When the Credo is prescribed, the priest genuflects from Et incarnatus est through Et homo factus est, as directed by the 1962 Ritus.",
+        "fr": "Lorsque le Credo est prescrit, le prêtre fait la génuflexion de Et incarnatus est à Et homo factus est, selon le Ritus de 1962.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdf_pages_1based": [
+          8
+        ],
+        "printed_pages": [
+          8
+        ],
+        "primary_locator": "Ritus servandus VI.3",
+        "supporting_event_ids": [
+          "B01-011"
+        ],
+        "source_record_id": "RS1962.H125.CREDO_INCARNATUS",
+        "original_edition": "Ritus servandus in celebratione Missae (1962), English translation; Latin crosscheck not independently certified",
+        "original_image_checked": true,
+        "deep_link_checked": true
+      },
+      "region_scope": "Roman 1962 celebrant/minister and applicable Mass form only; not universal directions for faithful",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true,
+      "publication_kind": "ROMAN_1962_RUBRIC"
+    },
+    {
+      "id": "DYK-H125-M-003",
+      "source_id": "RS1962.H125.REQUIEM_WATER",
+      "source_family": "ROMAN_MASS_1962",
+      "topic": "roman_1962_celebrant_rubrics",
+      "pilot_home_copy": {
+        "en": "At a Requiem Mass, the priest does not bless the water added to the chalice at the Offertory; the 1962 Ritus states this exception explicitly.",
+        "fr": "À une messe de Requiem, le prêtre ne bénit pas l'eau ajoutée au calice à l'offertoire ; le Ritus de 1962 précise cette exception.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdf_pages_1based": [
+          24
+        ],
+        "printed_pages": [
+          24
+        ],
+        "primary_locator": "Ritus servandus XIII.1",
+        "supporting_event_ids": [
+          "B01-015"
+        ],
+        "source_record_id": "RS1962.H125.REQUIEM_WATER",
+        "original_edition": "Ritus servandus in celebratione Missae (1962), English translation; Latin crosscheck not independently certified",
+        "original_image_checked": true,
+        "deep_link_checked": true
+      },
+      "region_scope": "Roman 1962 celebrant/minister and applicable Mass form only; not universal directions for faithful",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true,
+      "publication_kind": "ROMAN_1962_RUBRIC"
+    },
+    {
+      "id": "DYK-H125-M-004",
+      "source_id": "RS1962.H125.REQUIEM_AGNUS",
+      "source_family": "ROMAN_MASS_1962",
+      "topic": "roman_1962_celebrant_rubrics",
+      "pilot_home_copy": {
+        "en": "At the Agnus Dei of the Requiem Mass, the priest does not strike his breast, unlike the gesture ordinarily made at the Agnus Dei.",
+        "fr": "À l'Agnus Dei d'une messe de Requiem, le prêtre ne se frappe pas la poitrine, contrairement au geste habituel de l'Agnus Dei.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdf_pages_1based": [
+          24
+        ],
+        "printed_pages": [
+          24
+        ],
+        "primary_locator": "Ritus servandus XIII.1",
+        "supporting_event_ids": [
+          "B01-035"
+        ],
+        "source_record_id": "RS1962.H125.REQUIEM_AGNUS",
+        "original_edition": "Ritus servandus in celebratione Missae (1962), English translation; Latin crosscheck not independently certified",
+        "original_image_checked": true,
+        "deep_link_checked": true
+      },
+      "region_scope": "Roman 1962 celebrant/minister and applicable Mass form only; not universal directions for faithful",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true,
+      "publication_kind": "ROMAN_1962_RUBRIC"
+    },
+    {
+      "id": "DYK-H125-M-005",
+      "source_id": "RS1962.H125.HANC_IGITUR_HANDS",
+      "source_family": "ROMAN_MASS_1962",
+      "topic": "roman_1962_celebrant_rubrics",
+      "pilot_home_copy": {
+        "en": "At Hanc igitur in the Roman Canon, the priest extends his hands together over the offerings, then rejoins them before continuing the prayer.",
+        "fr": "Au Hanc igitur du Canon romain, le prêtre étend les deux mains ensemble au-dessus des oblats, puis les rejoint avant de poursuivre la prière.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdf_pages_1based": [
+          14
+        ],
+        "printed_pages": [
+          14
+        ],
+        "primary_locator": "Ritus servandus VIII.4",
+        "supporting_event_ids": [
+          "B01-018"
+        ],
+        "source_record_id": "RS1962.H125.HANC_IGITUR_HANDS",
+        "original_edition": "Ritus servandus in celebratione Missae (1962), English translation; Latin crosscheck not independently certified",
+        "original_image_checked": true,
+        "deep_link_checked": true
+      },
+      "region_scope": "Roman 1962 celebrant/minister and applicable Mass form only; not universal directions for faithful",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true,
+      "publication_kind": "ROMAN_1962_RUBRIC"
+    },
+    {
+      "id": "DYK-H125-M-006",
+      "source_id": "RS1962.H125.LAST_GOSPEL_GENUFLECTION",
+      "source_family": "ROMAN_MASS_1962",
+      "topic": "roman_1962_celebrant_rubrics",
+      "pilot_home_copy": {
+        "en": "At the traditional Last Gospel, the priest genuflects at the words Et Verbum caro factum est, provided that Gospel is appointed.",
+        "fr": "Au Dernier Évangile traditionnel, le prêtre fait la génuflexion aux mots Et Verbum caro factum est, lorsque cet Évangile est prescrit.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdf_pages_1based": [
+          23
+        ],
+        "printed_pages": [
+          23
+        ],
+        "primary_locator": "Ritus servandus XII.1",
+        "supporting_event_ids": [
+          "B01-040"
+        ],
+        "source_record_id": "RS1962.H125.LAST_GOSPEL_GENUFLECTION",
+        "original_edition": "Ritus servandus in celebratione Missae (1962), English translation; Latin crosscheck not independently certified",
+        "original_image_checked": true,
+        "deep_link_checked": true
+      },
+      "region_scope": "Roman 1962 celebrant/minister and applicable Mass form only; not universal directions for faithful",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true,
+      "publication_kind": "ROMAN_1962_RUBRIC"
+    },
+    {
+      "id": "DYK-H125-M-007",
+      "source_id": "RS1962.H125.REQUIEM_NO_ENTRANCE_INCENSE",
+      "source_family": "ROMAN_MASS_1962",
+      "topic": "roman_1962_celebrant_rubrics",
+      "pilot_home_copy": {
+        "en": "The 1962 directions for a Solemn Requiem omit the usual initial incensation of the altar; incense may still be used later in its proper places.",
+        "fr": "Les règles de 1962 pour une messe solennelle de Requiem omettent l'encensement initial habituel de l'autel ; l'encens peut encore intervenir aux moments prévus ensuite.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdf_pages_1based": [
+          24
+        ],
+        "printed_pages": [
+          24
+        ],
+        "primary_locator": "Ritus servandus XIII.2",
+        "supporting_event_ids": [
+          "B01-044"
+        ],
+        "source_record_id": "RS1962.H125.REQUIEM_NO_ENTRANCE_INCENSE",
+        "original_edition": "Ritus servandus in celebratione Missae (1962), English translation; Latin crosscheck not independently certified",
+        "original_image_checked": true,
+        "deep_link_checked": true
+      },
+      "region_scope": "Roman 1962 celebrant/minister and applicable Mass form only; not universal directions for faithful",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true,
+      "publication_kind": "ROMAN_1962_RUBRIC"
+    },
+    {
+      "id": "DYK-H125-M-008",
+      "source_id": "RS1962.H125.NOBIS_QUOQUE",
+      "source_family": "ROMAN_MASS_1962",
+      "topic": "roman_1962_celebrant_rubrics",
+      "pilot_home_copy": {
+        "en": "Within the otherwise silent Roman Canon, the priest says Nobis quoque peccatoribus in a somewhat raised voice while striking his breast.",
+        "fr": "Au milieu du Canon romain autrement prononcé à voix basse, le prêtre dit Nobis quoque peccatoribus d'une voix légèrement élevée en se frappant la poitrine.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdf_pages_1based": [
+          17
+        ],
+        "printed_pages": [
+          17
+        ],
+        "primary_locator": "Ritus servandus IX.3",
+        "supporting_event_ids": [
+          "B01-031"
+        ],
+        "source_record_id": "RS1962.H125.NOBIS_QUOQUE",
+        "original_edition": "Ritus servandus in celebratione Missae (1962), English translation; Latin crosscheck not independently certified",
+        "original_image_checked": true,
+        "deep_link_checked": true
+      },
+      "region_scope": "Roman 1962 celebrant/minister and applicable Mass form only; not universal directions for faithful",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true,
+      "publication_kind": "ROMAN_1962_RUBRIC"
+    },
+    {
+      "id": "DYK-H125-X-001",
+      "source_id": "HU-NEPRAJZ-LEXIKON",
+      "source_family": "HUNGARIAN_ETHNOGRAPHIC_LEXICON",
+      "topic": "HUNGARIAN_NATIVITY",
+      "pilot_home_copy": {
+        "en": "In Hungarian Nativity plays, a comic hard-of-hearing shepherd can misunderstand an angel's Latin words; the ethnographic lexicon records both actor and puppet versions.",
+        "fr": "Dans les jeux de la Nativité hongrois, un vieux berger malentendant peut comprendre de travers les paroles latines d'un ange ; le lexique ethnographique décrit des versions avec acteurs ou marionnettes.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "html",
+        "url": "https://mek.oszk.hu/02100/02115/html/1-713.html",
+        "source_record_id": "HU-NEPRAJZ-LEXIKON",
+        "primary_locator": "Magyar Néprajzi Lexikon: betlehemezés",
+        "pdf_pages_1based": [],
+        "original_text_checked": true,
+        "deep_link_checked": true,
+        "verification_basis": "Original source/indexed original primary text confirmed; 1962 rubrics printed page 14, PDF viewer page 15"
+      },
+      "region_scope": "Hungarian Christmas folk theatre; historic variations",
+      "historical_local_only": true,
+      "liturgical_rubric_1962": false,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true,
+      "publication_kind": "SOURCE_SCOPED_HISTORICAL"
+    },
+    {
+      "id": "DYK-H125-X-002",
+      "source_id": "ROMR-BLAISE-1956",
+      "source_family": "RURAL_LIFE_PRAYERBOOK_1956",
+      "topic": "BLAISE_CANDLES",
+      "pilot_home_copy": {
+        "en": "A 1956 Catholic blessing book directs the priest to hold two blessed candles in the form of a cross under a person's chin for Saint Blaise's throat blessing.",
+        "fr": "Un recueil catholique de bénédictions de 1956 demande au prêtre de tenir deux cierges bénits en croix sous le menton d'une personne pour la bénédiction de saint Blaise.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "html",
+        "url": "https://www.ewtn.com/catholicism/library/rural-life-prayerbook-11881",
+        "source_record_id": "ROMR-BLAISE-1956",
+        "primary_locator": "Rural Life Prayerbook: Blessing of Candles on the Feast of Saint Blaise",
+        "pdf_pages_1based": [],
+        "original_text_checked": true,
+        "deep_link_checked": true,
+        "verification_basis": "Original source/indexed original primary text confirmed; 1962 rubrics printed page 14, PDF viewer page 15"
+      },
+      "region_scope": "1956 devotional blessing; separate from the Ordinary of Mass",
+      "historical_local_only": true,
+      "liturgical_rubric_1962": false,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true,
+      "publication_kind": "SOURCE_SCOPED_HISTORICAL"
+    },
+    {
+      "id": "DYK-H125-X-003",
+      "source_id": "RLP1956-BEES",
+      "source_family": "RURAL_LIFE_PRAYERBOOK_1956",
+      "topic": "BEESWAX_HIVES",
+      "pilot_home_copy": {
+        "en": "A 1956 Catholic rural prayerbook even includes a blessing for bees and their hives, mentioning beeswax candles used during the Eucharistic liturgy.",
+        "fr": "Un livre catholique de prières rurales de 1956 contient même une bénédiction des abeilles et des ruches, rappelant les cierges de cire d'abeille employés dans la liturgie eucharistique.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "html",
+        "url": "https://www.ewtn.com/catholicism/library/rural-life-prayerbook-11881",
+        "source_record_id": "RLP1956-BEES",
+        "primary_locator": "Rural Life Prayerbook: A Blessing of Bees",
+        "pdf_pages_1based": [],
+        "original_text_checked": true,
+        "deep_link_checked": true,
+        "verification_basis": "Original source/indexed original primary text confirmed; 1962 rubrics printed page 14, PDF viewer page 15"
+      },
+      "region_scope": "Historically published Catholic blessing; no claim of present universal requirement",
+      "historical_local_only": true,
+      "liturgical_rubric_1962": false,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true,
+      "publication_kind": "SOURCE_SCOPED_HISTORICAL"
+    },
+    {
+      "id": "DYK-H125-X-004",
+      "source_id": "BR-DIOCESE-STJOSEPH-2026",
+      "source_family": "DIOCESE_BATON_ROUGE",
+      "topic": "BATON_ROUGE_JOSEPH",
+      "pilot_home_copy": {
+        "en": "On 19 March 2026, Baton Rouge's Saint Joseph Cathedral blessed a Sicilian-style food altar after noon Mass, then welcomed visitors to a meatless lunch.",
+        "fr": "Le 19 mars 2026, la cathédrale Saint-Joseph de Baton Rouge a fait bénir un autel alimentaire de tradition sicilienne après la messe de midi, avant d'accueillir les visiteurs pour un repas sans viande.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "html",
+        "url": "https://www.diobr.org/news/st-joseph-cathedral-st-joseph-altar-1",
+        "source_record_id": "BR-DIOCESE-STJOSEPH-2026",
+        "primary_locator": "St. Joseph Cathedral St. Joseph Altar · 19 March 2026",
+        "pdf_pages_1based": [],
+        "original_text_checked": true,
+        "deep_link_checked": true,
+        "verification_basis": "Original source/indexed original primary text confirmed; 1962 rubrics printed page 14, PDF viewer page 15"
+      },
+      "region_scope": "Specific cathedral report, Baton Rouge, Louisiana, 19 March 2026",
+      "historical_local_only": true,
+      "liturgical_rubric_1962": false,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true,
+      "publication_kind": "SOURCE_SCOPED_HISTORICAL"
+    },
+    {
+      "id": "DYK-H125-X-005",
+      "source_id": "G094",
+      "source_family": "ROMAN_GENERAL_RUBRICS_1962",
+      "topic": "ROGATION_1962",
+      "pilot_home_copy": {
+        "en": "Under the 1962 rubrics, the Greater Litanies ordinarily fall on 25 April, while the Lesser Litanies fall on the three weekdays before Ascension; specified exceptions and local transfers apply.",
+        "fr": "Selon les rubriques de 1962, les Grandes Litanies ont normalement lieu le 25 avril et les Petites les trois jours ouvrables précédant l'Ascension ; des exceptions et transferts locaux sont prévus.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://maternalheart.org/library/1962rubrics.pdf",
+        "source_record_id": "G094",
+        "primary_locator": "1962 General Rubrics nn. 80 and 87",
+        "pdf_pages_1based": [
+          15
+        ],
+        "original_text_checked": true,
+        "deep_link_checked": true,
+        "verification_basis": "Original source/indexed original primary text confirmed; 1962 rubrics printed page 14, PDF viewer page 15"
+      },
+      "region_scope": "Roman General Rubrics of 1962; liturgical calendar rule",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true,
+      "publication_kind": "ROMAN_1962_CALENDAR"
+    }
+  ]
+}
