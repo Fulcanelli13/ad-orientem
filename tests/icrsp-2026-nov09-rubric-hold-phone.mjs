@@ -166,7 +166,17 @@ try{
    for(const roles of assembled.prayerRoles)
     assert.ok(!roles.includes("ORATIO_PRO_PAPA"),
      "Papal oration cannot silently appear in a general Roman Mass");
-   await page.evaluate(()=>globalThis.AO_R17_BROWSER_ENTRY.enter());
+   // Await native entry exactly as the passing November 8 phone journey
+   // does; failures must surface directly, not as a 65-second mount timeout.
+   const entered=await page.evaluate(async()=>{
+    await globalThis.AO_R17_BROWSER_ENTRY.enter();
+    const preview=globalThis.AO_R17_NATIVE_READER_PREVIEW;
+    return {mounted:Boolean(preview?.root?.isConnected),
+     cards:preview?.model?.totalCards??null};
+   });
+   console.log("NOV09_NATIVE_ENTRY_RESULT "+JSON.stringify(entered));
+   assert.equal(entered.mounted,true,"R17 entry resolved without mounting native reader");
+   assert.equal(entered.cards,65,"Unexpected native Mass card count after R17 entry");
    await page.waitForFunction(()=>Boolean(
     globalThis.AO_R17_NATIVE_READER_PREVIEW?.model?.totalCards===65&&
     typeof globalThis.AO_R17_NATIVE_READER_PREVIEW?.showSection==="function"&&
