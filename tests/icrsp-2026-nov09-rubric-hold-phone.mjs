@@ -131,6 +131,69 @@ try{
    for(const roles of assembled.prayerRoles)
     assert.ok(!roles.includes("ORATIO_PRO_PAPA"),
      "Papal oration cannot silently appear in a general Roman Mass");
+   const reader=await page.evaluate(async()=>{
+    await globalThis.AO_R17_BROWSER_ENTRY.enter();
+    const preview=globalThis.AO_R17_NATIVE_READER_PREVIEW;
+    if(!preview?.showSection||preview?.model?.totalCards!==65)
+     throw Error("CANONICAL_NATIVE_READER_NOT_OPEN");
+    const cards=preview.model.cards??[],roles={};
+    for(const [source,group] of [
+     ["AO.CARD.004","collects"],["AO.CARD.011","secrets"],
+     ["AO.CARD.027","postcommunions"]
+    ]){
+     const related=cards.filter(c=>c.sourceSectionId===source);
+     const groups=[...new Set(related.flatMap(c=>(c.paragraphs??[])
+      .filter(x=>["PRINCIPAL_ORATION","ADDITIONAL_ORATION"].includes(x.prayerRole))
+      .map(x=>x.orationGroupIndex)))];
+     roles[group]={groups,cards:related.length};
+    }
+    const post=cards.find(c=>c.sourceSectionId==="AO.CARD.027");
+    if(!post)throw Error("POSTCOMMUNION_SOURCE_CARD_MISSING");
+    preview.showSection(post.sectionId);
+    const root=document.querySelector("#ao-r17-native-reader-preview");
+    const body=root?.querySelector(".ao-prayer-card");
+    const second=body?.querySelector('[data-oration-group-index="2"]');
+    const p=(await globalThis.AO_R17_BROWSER_ENTRY.prepare())?.session?.resolvedMass?.proper;
+    const data=p?.data??p;
+    return {roles,postId:post.sectionId,
+     renderedText:body?.innerText??"",
+     secondRendered:Boolean(second),
+     textSource:(data?.postcommunions??[]).map(x=>x.en),
+     scrollTop:body?.scrollTop??null,
+     secondTop:second?.getBoundingClientRect()?.top??null,
+     viewportTop:body?.getBoundingClientRect()?.top??null,
+     viewportHeight:body?.getBoundingClientRect()?.height??null
+    };
+   });
+   for(const key of ["collects","secrets","postcommunions"])
+    assert.deepEqual(reader.roles[key].groups,[1,2],
+     "Reader must render principal and Theodore as distinct groups: "+key);
+   assert.equal(reader.secondRendered,true,"Theodore Postcommunion missing in DOM");
+   assert.equal(reader.textSource.length,2);
+   for(const prayer of reader.textSource)
+    assert.ok(reader.renderedText.includes(prayer.slice(0,45)),
+     "Source-owned Postcommunion text omitted in live reader");
+   assert.match(reader.renderedText,/Second Postcommunion/);
+   assert.match(reader.renderedText,/Theodore|Théodore|Præsta nobis/i);
+   assert.ok(reader.secondTop>reader.viewportTop+Math.min(reader.viewportHeight*.5,280),
+    "Additional Postcommunion must begin below the initial reading zone");
+   await page.locator("#ao-r17-native-reader-preview [data-reader-nav='next']").click();
+   const after=await page.evaluate(()=>{
+    const preview=globalThis.AO_R17_NATIVE_READER_PREVIEW;
+    const root=document.querySelector("#ao-r17-native-reader-preview");
+    return {sectionId:preview.getCurrentCard()?.sectionId,
+     scrollTop:root.querySelector(".ao-prayer-card")?.scrollTop,
+     nextOutcome:root.dataset.aoNextOration};
+   });
+   assert.equal(after.sectionId,reader.postId,
+    "NEXT skipped Theodore's additional Postcommunion");
+   assert.ok(after.scrollTop>reader.scrollTop+8,
+    "NEXT failed to reveal Theodore's second Postcommunion");
+   assert.equal(after.nextOutcome,"SECOND_PRAYER_REVEALED");
+   console.log("NOV09_THEODORE_POSTCOMMUNION_REAL_NEXT_PASS "+JSON.stringify({
+    language:lang,groups:reader.roles,sourceTextCounts:reader.textSource.length,
+    beforeScroll:reader.scrollTop,afterScroll:after.scrollTop
+   }));
    assert.deepEqual(errors,[]);
    console.log("ICRSP_NOV09_1962_RUBRIC_HOLD_PHONE_PASS "+JSON.stringify({
     requestedLocale:lang,visibleHomeLanguage:uiLanguage,date:DAY,sourcePath:source.source,prepared:assembled.sourcePath,
