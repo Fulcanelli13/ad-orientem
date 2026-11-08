@@ -55,6 +55,7 @@ import {renderLittleCrownB30} from "./little-crown-presentation-b30.js";
 import {PRAYER_SUBJECTS_V1,prayerSubjectsForLibrary,prayerSubjectCounts} from "./prayer-subject-index.v1.js";
 import {guidedPrayerLinksForSubject} from "./prayer-subject-guided-links.v1.js";
 import {PRAYER_SUPPLEMENTAL_LIVE_WORK_LINKS_V1,prayerSupplementalLiveWork,prayerSupplementalLiveWorksForSubject} from "./prayer-supplemental-live-works.v1.js";
+import {prayerSevenSourceWork,prayerSevenSourceWorksForSubject} from "./prayer-seven-source-work-links.v1.js";
 import {FIVE_WOUNDS_SOURCE_V1,FIVE_WOUNDS_WOUNDS_V1,FIVE_WOUNDS_CHAPLET_V1,fiveWoundsStep,fiveWoundsGroupProgress} from "./five-wounds-chaplet.v1.js";
 import {PRECIOUS_BLOOD_HISTORICAL_SOURCE_V1,PRECIOUS_BLOOD_HISTORICAL_PRAYERS_V1,PRECIOUS_BLOOD_MYSTERIES_V1,PRECIOUS_BLOOD_TOTALS_V1,preciousBloodMystery,preciousBloodPrayerAt} from "./precious-blood-chaplet.v1.js";
 import {PRIESTLY_INTERCESSION_PURPOSES_B19,priestlyIntercessionFor} from "./priestly-intercessions-b19.js";
@@ -333,6 +334,8 @@ function montfortSaveProgress(){
  try{localStorage.setItem(MONTFORT_STORAGE,JSON.stringify({target:MONTFORT.target,completed:MONTFORT.completed}))}catch{}
 }
 let MONTFORT=montfortLoadProgress();
+// Reader-only deep-link focus; never recorded as consecration progress.
+let MONTFORT_HISTORICAL_FOCUS=null;
 // Reader-only preference. The Faber consecration act and unverified historical
 // litanies retain their exact source language; only canonical prayers can flip.
 let MONTFORT_CANONICAL_LATIN=false;
@@ -531,7 +534,7 @@ function open(id,opts={}){
   else if(id==='pray.for_priests'){view='priests';PRIESTS={purpose:'priests',latin:false}}
   else if(id==='pray.occasional_intercessions'){view='occasionals';OCCASIONAL={purpose:'sick',latin:false}}
   else if(id==='pray.st_joseph_seven_sorrows'){view='josephSeven';JOSEPH_SEVEN={step:0,latin:false}}
-  else if(id==='pray.montfort_consecration'){view='montfort';const w=montfortSchedule(MONTFORT.target);MONTFORT.day=w?.dayIndex||1}
+  else if(id==='pray.montfort_consecration'){view='montfort';MONTFORT_HISTORICAL_FOCUS=null;const w=montfortSchedule(MONTFORT.target);MONTFORT.day=w?.dayIndex||1}
   else if(id==='pray.penitential_psalms'){view='penitential';PEN.step=0}
   else if(id==='pray.litany_saints'){view='litany';LIT.step=0}
   else if(id==='pray.seven_words'){view='sevenWords';SEVEN.step=0}
@@ -2423,7 +2426,7 @@ function renderMontfortHistoricalB27(id){
   :'<div lang="en" class="aoMontfortB27Litany">'+rows.map((r,i)=>(Object.hasOwn(chapterAt,i)?'<h4 class="aoMontfortB27Chapter">'+esc(chapterAt[i])+'</h4>':'')+(r.kind==='collect'
    ?'<p class="aoMontfortB27Collect">'+esc(r.leader)+'</p>'
    :'<p class="aoMontfortB27Response" data-ao-montfort-original-row><span>'+esc(r.kind==='versicle'?'℣ '+r.leader:r.leader)+'</span>'+(r.response?'<strong>'+esc(r.kind==='versicle'?'℟ '+r.response:r.response)+'</strong>':'')+'</p>')).join('')+'</div>';
- return '<details class="aoMontfortB26Details aoMontfortB27Prayer" data-ao-montfort-b27-original="'+esc(id)+'"><summary>'+esc(title)+(optional?' · '+esc(L('optional','facultatif')):'')+'</summary><p class="aoMontfortB26Note">'+esc(L('Historical English source, not a verified French translation. Original printed-page collation outstanding.','Témoin historique anglais ; aucune traduction française vérifiée. Collation des pages imprimées encore en attente.'))+'</p><p class="aoMontfortB26Note" data-ao-montfort-witness-caution>'+esc(p.note)+'</p><a href="'+esc(p.witnessUrl)+'" target="_blank" rel="noopener noreferrer">'+esc(L('View the actual digital source','Consulter le véritable témoin numérique'))+'</a>'+texts+'</details>';
+ return '<details class="aoMontfortB26Details aoMontfortB27Prayer" data-ao-montfort-b27-original="'+esc(id)+'"'+(MONTFORT_HISTORICAL_FOCUS===id&&montfortB27RequiredForDay(MONTFORT.day).includes(id)?' open':'')+'><summary>'+esc(title)+(optional?' · '+esc(L('optional','facultatif')):'')+'</summary><p class="aoMontfortB26Note">'+esc(L('Historical English source, not a verified French translation. Original printed-page collation outstanding.','Témoin historique anglais ; aucune traduction française vérifiée. Collation des pages imprimées encore en attente.'))+'</p><p class="aoMontfortB26Note" data-ao-montfort-witness-caution>'+esc(p.note)+'</p><a href="'+esc(p.witnessUrl)+'" target="_blank" rel="noopener noreferrer">'+esc(L('View the actual digital source','Consulter le véritable témoin numérique'))+'</a>'+texts+'</details>';
 }
 
 function renderMontfortB26(){
@@ -3978,6 +3981,10 @@ function routeOwn(id,opts={}){
  if(next==='preciousBlood'){PRECIOUS_BLOOD={phase:0,bead:0,latin:false,showMeditation:false}}
  if(next==='priests'){PRIESTS={purpose:PRIESTLY_INTERCESSION_PURPOSES_B19.includes(opts.purpose)?opts.purpose:(isFr()?'vocations':'priests'),latin:false}}
  if(next==='occasionals'){OCCASIONAL={purpose:OCCASIONAL_PURPOSES_ALL_B21.includes(opts.purpose)?opts.purpose:'sick',latin:false}}
+ if(next==='montfort'){
+  if(Number.isInteger(opts.day)&&opts.day>=1&&opts.day<=34)MONTFORT.day=opts.day;
+  MONTFORT_HISTORICAL_FOCUS=montfortB27RequiredForDay(MONTFORT.day).includes(opts.historicalPrayer)?opts.historicalPrayer:null;
+ }
  if(next==='rosaryMethods')ROSARY_CHOOSER.optionsOpen=false;
  if(id==='pray.visit_blessed_sacrament')ADOR.mode='visit';
  if(id==='pray.de_profundis'||id==='pray.eternal_rest'){
