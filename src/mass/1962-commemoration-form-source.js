@@ -136,6 +136,16 @@ export function select1962CommemorationsForMassForm({
     [1,2,3].includes(Number(main.rank))&&Number(only.rank)===3&&
     /^tempora:Adv[1-4]-[1-6]:3:/i.test(commId)&&
     /^Tempora\/Adv[1-4]-[1-6]$/i.test(String(only.path??""));
+  // RG 25(a), 108(e), 111(a): the displaced III-class feria of Lent
+  // or Passiontide is privileged beneath an actually selected I-class
+  // sanctoral Mass. This is true in all four non-conventual forms.
+  // Require exact original 1962 principal, feria, rank and prayer ownership:
+  // the calendar commemorative label by itself does not authorize a prayer.
+  const privilegedLentenFeria=!sunday&&Number(main.rank)===1&&
+    Number(only.rank)===3&&
+    /^sancti:[0-9]{2}-[0-9]{2}:1:/i.test(mainId)&&
+    /^tempora:Quad[1-5]-[1-6](?:Feria)?:3:/i.test(commId)&&
+    /^Tempora\\/Quad[1-5]-[1-6]$/.test(String(only.path??""));
   // RG 109(c): days in the Octave of Christmas are privileged
   // commemorations in ALL Mass forms, even though the host's synthetic
   // 12-26c/12-28c placeholder carries an incorrect IV-class source rank
@@ -173,12 +183,14 @@ export function select1962CommemorationsForMassForm({
   const scope=nativityOctaveOwner?"PRIVILEGED_CHRISTMAS_OCTAVE_II_CLASS_MASS":
     privilegedSunday?"PRIVILEGED_SUNDAY_UNDER_I_CLASS_SANCTORAL":
     privilegedAdvent?"PRIVILEGED_ADVENT_FERIA_UNDER_SANCTORAL":
+    privilegedLentenFeria?"PRIVILEGED_LENT_PASSION_FERIA_UNDER_I_CLASS_SANCTORAL":
     ordinarySunday?"II_CLASS_SUNDAY_SINGLE_II_CLASS_SANCTORAL_FEAST_NON_CONVENTUAL":
     ordinaryFourthClassSaint?"NON_SUNDAY_II_III_CLASS_SINGLE_IV_CLASS_SANCTORAL_COMMEMORATION":null;
   if(!scope)return untouched(proper,"RUBRICAL_CLASSIFICATION_PENDING");
   if(!GROUPS.every(key=>array(data[key]).length===2&&data[key].every(sourceText)))
     return untouched(proper,"ORATION_SOURCE_INCOMPLETE");
-  const include=nativityOctaveOwner||privilegedSunday||privilegedAdvent||normalizedForm==="LOW";
+  const include=nativityOctaveOwner||privilegedSunday||privilegedAdvent||
+    privilegedLentenFeria||normalizedForm==="LOW";
   const applied=include?comms:[],omitted=include?[]:comms;
   const decision=Object.freeze({
     status:"CERTIFIED",source:"1962_PROPER_RESOLVER",form:normalizedForm,
@@ -186,6 +198,8 @@ export function select1962CommemorationsForMassForm({
     scope,
     authorities:Object.freeze(nativityOctaveOwner?
       ["1960_GENERAL_RUBRICS_108_109_C_111","1960_MISSAL_RUBRICS_433_434"]:
+      privilegedLentenFeria?
+        ["1960_GENERAL_RUBRICS_25_A_108_E_111_A_113","1960_MISSAL_RUBRICS_433_434"]:
       ordinaryFourthClassSaint?
         ["1960_GENERAL_RUBRICS_111_C_D_112_113","1960_MISSAL_RUBRICS_433_434"]:
         ["1960_GENERAL_RUBRICS_108_111_113","1960_MISSAL_RUBRICS_433_434"]),
