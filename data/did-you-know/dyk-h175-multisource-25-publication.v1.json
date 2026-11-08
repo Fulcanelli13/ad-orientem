@@ -1,0 +1,851 @@
+{
+  "schema": "AO_DYK_H175_MULTISOURCE25_PUBLICATION_V1",
+  "created": "2026-11-08",
+  "release_stage": "APPROVED_PARTIAL_LIVE",
+  "counts": {
+    "pitre": 5,
+    "rural": 12,
+    "ritus": 8,
+    "total": 25
+  },
+  "notes": "Individual original source checks: Pitrè previously image+Italian-anchor verified; Rural Life Prayerbook historic 1956 headings reviewed in original hosted text; Ritus 1962 English translation sections VI and VII and page images inspected. Claims qualified by historical time or rubrical form. Do not infer a universal contemporary custom.",
+  "records": [
+    {
+      "id": "DYK-H175-P-001",
+      "source_id": "PIT1900-IT-024",
+      "source_family": "PITRE_1900",
+      "topic": "SICILIAN_HISTORICAL_FEAST",
+      "pilot_home_copy": {
+        "en": "Pitrè recorded two local dates for Saint Joseph festivities in Canicattini: 19 March and the first Sunday in September.",
+        "fr": "Pitrè a relevé deux dates locales de fêtes de saint Joseph à Canicattini : le 19 mars et le premier dimanche de septembre.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "type": "pdf",
+        "pdf_pages_1based": [
+          505
+        ],
+        "printed_pages": [
+          447
+        ],
+        "original_italian_anchor": "il 19 Marzo e la prima Domenica di Settembre",
+        "original_image_checked": true,
+        "primary_locator": "Giuseppe Pitrè, Feste patronali in Sicilia, printed p. 447",
+        "evidence_tier": "PRIOR_1900_FACSIMILE_IMAGE_AND_ITALIAN_ANCHOR_CHECKED",
+        "source_record_id": "PIT1900-IT-024",
+        "deep_link_checked": true
+      },
+      "region_scope": "Historical Sicilian locality named in Pitrè (1900); not current universal practice",
+      "publication_kind": "EVERGREEN_HISTORICAL",
+      "historical_local_only": true,
+      "liturgical_rubric_1962": false,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true,
+      "research_record_id": "DYK-UM01-030"
+    },
+    {
+      "id": "DYK-H175-P-002",
+      "source_id": "PIT1900-NEW-078",
+      "source_family": "PITRE_1900",
+      "topic": "SICILIAN_HISTORICAL_FEAST",
+      "pilot_home_copy": {
+        "en": "Pitrè reported the statue of Saint James visiting orchards and gardens near Gratteri as well as houses.",
+        "fr": "Pitrè relatait comment la statue de saint Jacques visitait aussi les vergers et les jardins des environs de Gratteri.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "type": "pdf",
+        "pdf_pages_1based": [
+          186
+        ],
+        "printed_pages": [
+          124
+        ],
+        "original_italian_anchor": "giardini",
+        "original_image_checked": true,
+        "primary_locator": "Giuseppe Pitrè, Feste patronali in Sicilia, printed p. 124",
+        "evidence_tier": "PRIOR_1900_FACSIMILE_IMAGE_AND_ITALIAN_ANCHOR_CHECKED",
+        "source_record_id": "PIT1900-NEW-078",
+        "deep_link_checked": true
+      },
+      "region_scope": "Historical Sicilian locality named in Pitrè (1900); not current universal practice",
+      "publication_kind": "EVERGREEN_HISTORICAL",
+      "historical_local_only": true,
+      "liturgical_rubric_1962": false,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true,
+      "research_record_id": "DYK-UM02-043"
+    },
+    {
+      "id": "DYK-H175-P-003",
+      "source_id": "PIT1900-NEW-085",
+      "source_family": "PITRE_1900",
+      "topic": "SICILIAN_HISTORICAL_FEAST",
+      "pilot_home_copy": {
+        "en": "Shepherds in Geraci Siculo held a mounted cavalcade for their historical June Blessed Sacrament celebration.",
+        "fr": "Les bergers de Geraci Siculo organisaient une cavalcade lors de leur ancienne célébration de juin en l'honneur du Saint-Sacrement.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "type": "pdf",
+        "pdf_pages_1based": [
+          188
+        ],
+        "printed_pages": [
+          126
+        ],
+        "original_italian_anchor": "la terza domenica di griugno",
+        "original_image_checked": true,
+        "primary_locator": "Giuseppe Pitrè, Feste patronali in Sicilia, printed p. 126",
+        "evidence_tier": "PRIOR_1900_FACSIMILE_IMAGE_AND_ITALIAN_ANCHOR_CHECKED",
+        "source_record_id": "PIT1900-NEW-085",
+        "deep_link_checked": true
+      },
+      "region_scope": "Historical Sicilian locality named in Pitrè (1900); not current universal practice",
+      "publication_kind": "EVERGREEN_HISTORICAL",
+      "historical_local_only": true,
+      "liturgical_rubric_1962": false,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true,
+      "research_record_id": "DYK-UM02-046"
+    },
+    {
+      "id": "DYK-H175-P-004",
+      "source_id": "PIT1900-NEW-020",
+      "source_family": "PITRE_1900",
+      "topic": "SICILIAN_HISTORICAL_FEAST",
+      "pilot_home_copy": {
+        "en": "Historical confraternities offered wax publicly for Saint Rosalia's feast in Palermo.",
+        "fr": "Des confréries offraient publiquement de la cire pour la fête de sainte Rosalie à Palerme.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "type": "pdf",
+        "pdf_pages_1based": [
+          95
+        ],
+        "printed_pages": [
+          33
+        ],
+        "original_italian_anchor": "offrire la cera di uso",
+        "original_image_checked": true,
+        "primary_locator": "Giuseppe Pitrè, Feste patronali in Sicilia, printed p. 33",
+        "evidence_tier": "PRIOR_1900_FACSIMILE_IMAGE_AND_ITALIAN_ANCHOR_CHECKED",
+        "source_record_id": "PIT1900-NEW-020",
+        "deep_link_checked": true
+      },
+      "region_scope": "Historical Sicilian locality named in Pitrè (1900); not current universal practice",
+      "publication_kind": "EVERGREEN_HISTORICAL",
+      "historical_local_only": true,
+      "liturgical_rubric_1962": false,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true,
+      "research_record_id": "DYK-UM03-028"
+    },
+    {
+      "id": "DYK-H175-P-005",
+      "source_id": "PIT1900-NEW-028",
+      "source_family": "PITRE_1900",
+      "topic": "SICILIAN_HISTORICAL_FEAST",
+      "pilot_home_copy": {
+        "en": "Pitrè distinguished a local prohibition on the public procession of Saints Cosmas and Damian from continued celebrations inside their church.",
+        "fr": "Pitrè distinguait une interdiction locale de procession publique des saints Côme et Damien du maintien de leur fête à l'intérieur de l'église.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "type": "pdf",
+        "pdf_pages_1based": [
+          133
+        ],
+        "printed_pages": [
+          71
+        ],
+        "original_italian_anchor": "la festa si ripete in chiesa",
+        "original_image_checked": true,
+        "primary_locator": "Giuseppe Pitrè, Feste patronali in Sicilia, printed p. 71",
+        "evidence_tier": "PRIOR_1900_FACSIMILE_IMAGE_AND_ITALIAN_ANCHOR_CHECKED",
+        "source_record_id": "PIT1900-NEW-028",
+        "deep_link_checked": true
+      },
+      "region_scope": "Historical Sicilian locality named in Pitrè (1900); not current universal practice",
+      "publication_kind": "EVERGREEN_HISTORICAL",
+      "historical_local_only": true,
+      "liturgical_rubric_1962": false,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true,
+      "research_record_id": "DYK-UM03-031"
+    },
+    {
+      "id": "DYK-H175-B-001",
+      "source_id": "RLP1956.H175.CHEESE_BUTTER",
+      "source_family": "RURAL_LIFE_PRAYERBOOK_1956",
+      "topic": "HISTORICAL_CATHOLIC_BLESSING",
+      "pilot_home_copy": {
+        "en": "A 1956 Catholic prayerbook includes a blessing of cheese or butter, asking that those who eat it grow in grace and good works.",
+        "fr": "Un livre de prières catholique de 1956 contient une bénédiction du fromage ou du beurre, demandant pour ceux qui en mangent la grâce et la fécondité des bonnes œuvres.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "html",
+        "url": "https://www.ewtn.com/catholicism/library/rural-life-prayerbook-11881",
+        "pdf_pages_1based": [],
+        "primary_locator": "Blessing of Cheese or Butter",
+        "original_text_checked": true,
+        "publication_year": 1956,
+        "original_edition": "Alban J. Dachauer, The Rural Life Prayerbook (1956)",
+        "source_record_id": "RLP1956.H175.CHEESE_BUTTER",
+        "deep_link_checked": true
+      },
+      "region_scope": "Historical 1956 Catholic rural blessing, not a current universal Mass obligation",
+      "publication_kind": "SOURCE_SCOPED_HISTORICAL",
+      "historical_local_only": true,
+      "liturgical_rubric_1962": false,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true
+    },
+    {
+      "id": "DYK-H175-B-002",
+      "source_id": "RLP1956.H175.GRAPES",
+      "source_family": "RURAL_LIFE_PRAYERBOOK_1956",
+      "topic": "HISTORICAL_CATHOLIC_BLESSING",
+      "pilot_home_copy": {
+        "en": "A traditional blessing for ripe grapes thanks God for dew, rain and mild weather; it appears in the 1956 Rural Life Prayerbook.",
+        "fr": "Une bénédiction traditionnelle des raisins mûrs remercie Dieu pour la rosée, la pluie et le temps clément ; elle figure dans le Rural Life Prayerbook de 1956.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "html",
+        "url": "https://www.ewtn.com/catholicism/library/rural-life-prayerbook-11881",
+        "pdf_pages_1based": [],
+        "primary_locator": "Blessing of Grapes",
+        "original_text_checked": true,
+        "publication_year": 1956,
+        "original_edition": "Alban J. Dachauer, The Rural Life Prayerbook (1956)",
+        "source_record_id": "RLP1956.H175.GRAPES",
+        "deep_link_checked": true
+      },
+      "region_scope": "Historical 1956 Catholic rural blessing, not a current universal Mass obligation",
+      "publication_kind": "SOURCE_SCOPED_HISTORICAL",
+      "historical_local_only": true,
+      "liturgical_rubric_1962": false,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true
+    },
+    {
+      "id": "DYK-H175-B-003",
+      "source_id": "RLP1956.H175.SICK_WINE",
+      "source_family": "RURAL_LIFE_PRAYERBOOK_1956",
+      "topic": "HISTORICAL_CATHOLIC_BLESSING",
+      "pilot_home_copy": {
+        "en": "The 1956 Rural Life Prayerbook preserves a blessing for wine intended for the sick, recalling Christ changing water into wine at Cana.",
+        "fr": "Le Rural Life Prayerbook de 1956 conserve une bénédiction du vin destiné aux malades, en rappelant que le Christ changea l'eau en vin à Cana.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "html",
+        "url": "https://www.ewtn.com/catholicism/library/rural-life-prayerbook-11881",
+        "pdf_pages_1based": [],
+        "primary_locator": "Blessing of Wine for the Sick",
+        "original_text_checked": true,
+        "publication_year": 1956,
+        "original_edition": "Alban J. Dachauer, The Rural Life Prayerbook (1956)",
+        "source_record_id": "RLP1956.H175.SICK_WINE",
+        "deep_link_checked": true
+      },
+      "region_scope": "Historical 1956 Catholic rural blessing, not a current universal Mass obligation",
+      "publication_kind": "SOURCE_SCOPED_HISTORICAL",
+      "historical_local_only": true,
+      "liturgical_rubric_1962": false,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true
+    },
+    {
+      "id": "DYK-H175-B-004",
+      "source_id": "RLP1956.H175.MEDICINE",
+      "source_family": "RURAL_LIFE_PRAYERBOOK_1956",
+      "topic": "HISTORICAL_CATHOLIC_BLESSING",
+      "pilot_home_copy": {
+        "en": "A Catholic blessing of medicine printed in 1956 explicitly acknowledges remedies used against illness and asks for the patient's health of body and mind.",
+        "fr": "Une bénédiction catholique des médicaments publiée en 1956 reconnaît les remèdes employés contre la maladie et demande la santé du corps et de l'esprit du malade.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "html",
+        "url": "https://www.ewtn.com/catholicism/library/rural-life-prayerbook-11881",
+        "pdf_pages_1based": [],
+        "primary_locator": "A Blessing for Any Medicine",
+        "original_text_checked": true,
+        "publication_year": 1956,
+        "original_edition": "Alban J. Dachauer, The Rural Life Prayerbook (1956)",
+        "source_record_id": "RLP1956.H175.MEDICINE",
+        "deep_link_checked": true
+      },
+      "region_scope": "Historical 1956 Catholic rural blessing, not a current universal Mass obligation",
+      "publication_kind": "SOURCE_SCOPED_HISTORICAL",
+      "historical_local_only": true,
+      "liturgical_rubric_1962": false,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true
+    },
+    {
+      "id": "DYK-H175-B-005",
+      "source_id": "RLP1956.H175.HORSES",
+      "source_family": "RURAL_LIFE_PRAYERBOOK_1956",
+      "topic": "HISTORICAL_CATHOLIC_BLESSING",
+      "pilot_home_copy": {
+        "en": "The old blessing of horses or other animals invokes Saint Anthony the Hermit, seeking protection for the animals; it is printed in a 1956 rural prayerbook.",
+        "fr": "L'ancienne bénédiction des chevaux et autres animaux invoque saint Antoine l'Ermite pour leur protection ; elle figure dans un recueil rural de 1956.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "html",
+        "url": "https://www.ewtn.com/catholicism/library/rural-life-prayerbook-11881",
+        "pdf_pages_1based": [],
+        "primary_locator": "A Blessing for Horses or Other Animals",
+        "original_text_checked": true,
+        "publication_year": 1956,
+        "original_edition": "Alban J. Dachauer, The Rural Life Prayerbook (1956)",
+        "source_record_id": "RLP1956.H175.HORSES",
+        "deep_link_checked": true
+      },
+      "region_scope": "Historical 1956 Catholic rural blessing, not a current universal Mass obligation",
+      "publication_kind": "SOURCE_SCOPED_HISTORICAL",
+      "historical_local_only": true,
+      "liturgical_rubric_1962": false,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true
+    },
+    {
+      "id": "DYK-H175-B-006",
+      "source_id": "RLP1956.H175.POULTRY",
+      "source_family": "RURAL_LIFE_PRAYERBOOK_1956",
+      "topic": "HISTORICAL_CATHOLIC_BLESSING",
+      "pilot_home_copy": {
+        "en": "A prayer over poultry in the 1956 Rural Life Prayerbook recalls both the birds of Genesis and Noah's offering after the Flood.",
+        "fr": "Une prière sur les volailles dans le Rural Life Prayerbook de 1956 rappelle à la fois les oiseaux de la Genèse et l'offrande de Noé après le Déluge.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "html",
+        "url": "https://www.ewtn.com/catholicism/library/rural-life-prayerbook-11881",
+        "pdf_pages_1based": [],
+        "primary_locator": "Blessings of Poultry",
+        "original_text_checked": true,
+        "publication_year": 1956,
+        "original_edition": "Alban J. Dachauer, The Rural Life Prayerbook (1956)",
+        "source_record_id": "RLP1956.H175.POULTRY",
+        "deep_link_checked": true
+      },
+      "region_scope": "Historical 1956 Catholic rural blessing, not a current universal Mass obligation",
+      "publication_kind": "SOURCE_SCOPED_HISTORICAL",
+      "historical_local_only": true,
+      "liturgical_rubric_1962": false,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true
+    },
+    {
+      "id": "DYK-H175-B-007",
+      "source_id": "RLP1956.H175.FEED_SALT",
+      "source_family": "RURAL_LIFE_PRAYERBOOK_1956",
+      "topic": "HISTORICAL_CATHOLIC_BLESSING",
+      "pilot_home_copy": {
+        "en": "A 1956 collection of farm blessings includes a special prayer over salt or feed for animals, asking protection from sickness.",
+        "fr": "Un recueil de bénédictions agricoles de 1956 contient une prière particulière sur le sel ou la nourriture des animaux, demandant leur protection contre les maladies.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "html",
+        "url": "https://www.ewtn.com/catholicism/library/rural-life-prayerbook-11881",
+        "pdf_pages_1based": [],
+        "primary_locator": "Blessing of Salt or Feed for Animals",
+        "original_text_checked": true,
+        "publication_year": 1956,
+        "original_edition": "Alban J. Dachauer, The Rural Life Prayerbook (1956)",
+        "source_record_id": "RLP1956.H175.FEED_SALT",
+        "deep_link_checked": true
+      },
+      "region_scope": "Historical 1956 Catholic rural blessing, not a current universal Mass obligation",
+      "publication_kind": "SOURCE_SCOPED_HISTORICAL",
+      "historical_local_only": true,
+      "liturgical_rubric_1962": false,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true
+    },
+    {
+      "id": "DYK-H175-B-008",
+      "source_id": "RLP1956.H175.SPROUTING_SEED",
+      "source_family": "RURAL_LIFE_PRAYERBOOK_1956",
+      "topic": "HISTORICAL_CATHOLIC_BLESSING",
+      "pilot_home_copy": {
+        "en": "The old prayer for sprouting seed asks for soft winds and heavenly dew to help young crops mature, as printed in the 1956 Rural Life Prayerbook.",
+        "fr": "L'ancienne prière pour les semences en germination demande des vents doux et la rosée du ciel pour mener les jeunes cultures à maturité, selon le recueil de 1956.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "html",
+        "url": "https://www.ewtn.com/catholicism/library/rural-life-prayerbook-11881",
+        "pdf_pages_1based": [],
+        "primary_locator": "Blessing of Sprouting Seed",
+        "original_text_checked": true,
+        "publication_year": 1956,
+        "original_edition": "Alban J. Dachauer, The Rural Life Prayerbook (1956)",
+        "source_record_id": "RLP1956.H175.SPROUTING_SEED",
+        "deep_link_checked": true
+      },
+      "region_scope": "Historical 1956 Catholic rural blessing, not a current universal Mass obligation",
+      "publication_kind": "SOURCE_SCOPED_HISTORICAL",
+      "historical_local_only": true,
+      "liturgical_rubric_1962": false,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true
+    },
+    {
+      "id": "DYK-H175-B-009",
+      "source_id": "RLP1956.H175.TREES_VINES",
+      "source_family": "RURAL_LIFE_PRAYERBOOK_1956",
+      "topic": "HISTORICAL_CATHOLIC_BLESSING",
+      "pilot_home_copy": {
+        "en": "A traditional blessing of fruit trees and vines also asks that a fertile harvest feed those who are hungry and give the poor cause to thank God.",
+        "fr": "Une bénédiction traditionnelle des arbres fruitiers et des vignes demande aussi que la récolte nourrisse les affamés et donne aux pauvres motif de remercier Dieu.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "html",
+        "url": "https://www.ewtn.com/catholicism/library/rural-life-prayerbook-11881",
+        "pdf_pages_1based": [],
+        "primary_locator": "Blessing of All Kinds of Fruit Trees and Vines",
+        "original_text_checked": true,
+        "publication_year": 1956,
+        "original_edition": "Alban J. Dachauer, The Rural Life Prayerbook (1956)",
+        "source_record_id": "RLP1956.H175.TREES_VINES",
+        "deep_link_checked": true
+      },
+      "region_scope": "Historical 1956 Catholic rural blessing, not a current universal Mass obligation",
+      "publication_kind": "SOURCE_SCOPED_HISTORICAL",
+      "historical_local_only": true,
+      "liturgical_rubric_1962": false,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true
+    },
+    {
+      "id": "DYK-H175-B-010",
+      "source_id": "RLP1956.H175.MILL",
+      "source_family": "RURAL_LIFE_PRAYERBOOK_1956",
+      "topic": "HISTORICAL_CATHOLIC_BLESSING",
+      "pilot_home_copy": {
+        "en": "A 1956 Catholic blessing of a grain mill asks God to send an angel to protect the building where grain is ground into bread flour.",
+        "fr": "Une bénédiction catholique de 1956 pour un moulin à céréales demande à Dieu d'envoyer un ange protéger le bâtiment où le grain devient farine.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "html",
+        "url": "https://www.ewtn.com/catholicism/library/rural-life-prayerbook-11881",
+        "pdf_pages_1based": [],
+        "primary_locator": "Blessing of a Mill",
+        "original_text_checked": true,
+        "publication_year": 1956,
+        "original_edition": "Alban J. Dachauer, The Rural Life Prayerbook (1956)",
+        "source_record_id": "RLP1956.H175.MILL",
+        "deep_link_checked": true
+      },
+      "region_scope": "Historical 1956 Catholic rural blessing, not a current universal Mass obligation",
+      "publication_kind": "SOURCE_SCOPED_HISTORICAL",
+      "historical_local_only": true,
+      "liturgical_rubric_1962": false,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true
+    },
+    {
+      "id": "DYK-H175-B-011",
+      "source_id": "RLP1956.H175.WELL",
+      "source_family": "RURAL_LIFE_PRAYERBOOK_1956",
+      "topic": "HISTORICAL_CATHOLIC_BLESSING",
+      "pilot_home_copy": {
+        "en": "An older Catholic blessing asks that a spring or well serve the ordinary needs of people who draw or drink its water.",
+        "fr": "Une ancienne bénédiction catholique demande qu'une source ou un puits serve les besoins quotidiens de ceux qui y puisent ou boivent de l'eau.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "html",
+        "url": "https://www.ewtn.com/catholicism/library/rural-life-prayerbook-11881",
+        "pdf_pages_1based": [],
+        "primary_locator": "Blessing of a Spring or Well",
+        "original_text_checked": true,
+        "publication_year": 1956,
+        "original_edition": "Alban J. Dachauer, The Rural Life Prayerbook (1956)",
+        "source_record_id": "RLP1956.H175.WELL",
+        "deep_link_checked": true
+      },
+      "region_scope": "Historical 1956 Catholic rural blessing, not a current universal Mass obligation",
+      "publication_kind": "SOURCE_SCOPED_HISTORICAL",
+      "historical_local_only": true,
+      "liturgical_rubric_1962": false,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true
+    },
+    {
+      "id": "DYK-H175-B-012",
+      "source_id": "RLP1956.H175.BRIDGE",
+      "source_family": "RURAL_LIFE_PRAYERBOOK_1956",
+      "topic": "HISTORICAL_CATHOLIC_BLESSING",
+      "pilot_home_copy": {
+        "en": "The 1956 Rural Life Prayerbook reproduces a blessing of a bridge that asks protection for all who cross it, in success or adversity.",
+        "fr": "Le Rural Life Prayerbook de 1956 reproduit une bénédiction d'un pont demandant la protection de tous ceux qui le traversent, dans la réussite comme dans l'épreuve.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "html",
+        "url": "https://www.ewtn.com/catholicism/library/rural-life-prayerbook-11881",
+        "pdf_pages_1based": [],
+        "primary_locator": "Blessing of a Bridge",
+        "original_text_checked": true,
+        "publication_year": 1956,
+        "original_edition": "Alban J. Dachauer, The Rural Life Prayerbook (1956)",
+        "source_record_id": "RLP1956.H175.BRIDGE",
+        "deep_link_checked": true
+      },
+      "region_scope": "Historical 1956 Catholic rural blessing, not a current universal Mass obligation",
+      "publication_kind": "SOURCE_SCOPED_HISTORICAL",
+      "historical_local_only": true,
+      "liturgical_rubric_1962": false,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true
+    },
+    {
+      "id": "DYK-H175-M-001",
+      "source_id": "RS1962.H175.REQUIEM_GOSPEL",
+      "source_family": "ROMAN_MASS_1962",
+      "topic": "ROMAN_1962_CELEBRANT_DETAIL",
+      "pilot_home_copy": {
+        "en": "At a Requiem Mass, the celebrant does not kiss the Gospel book or say Per evangelica dicta after reading the Gospel.",
+        "fr": "À la messe de Requiem, le célébrant ne baise pas le livre de l'Évangile et ne dit pas Per evangelica dicta après sa lecture.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdf_pages_1based": [
+          8
+        ],
+        "printed_pages": [
+          8
+        ],
+        "original_image_checked": true,
+        "primary_locator": "Ritus servandus VI.2",
+        "original_edition": "Ritus servandus (1962) English translation; page image individually read",
+        "source_record_id": "RS1962.H175.REQUIEM_GOSPEL",
+        "deep_link_checked": true
+      },
+      "region_scope": "Traditional Roman Mass 1962; conditionally applicable celebrant or sacred minister rubric",
+      "publication_kind": "ROMAN_1962_RUBRIC",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true
+    },
+    {
+      "id": "DYK-H175-M-002",
+      "source_id": "RS1962.H175.SOLEMN_EPISTLE",
+      "source_family": "ROMAN_MASS_1962",
+      "topic": "ROMAN_1962_CELEBRANT_DETAIL",
+      "pilot_home_copy": {
+        "en": "At Solemn Mass the subdeacon carries the Epistle book against his breast and sings the Epistle facing the altar while the celebrant listens seated.",
+        "fr": "À la messe solennelle, le sous-diacre porte l'épistolier contre sa poitrine et chante l'Épître face à l'autel pendant que le célébrant l'écoute assis.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdf_pages_1based": [
+          8
+        ],
+        "printed_pages": [
+          8
+        ],
+        "original_image_checked": true,
+        "primary_locator": "Ritus servandus VI.4",
+        "original_edition": "Ritus servandus (1962) English translation; page image individually read",
+        "source_record_id": "RS1962.H175.SOLEMN_EPISTLE",
+        "deep_link_checked": true
+      },
+      "region_scope": "Traditional Roman Mass 1962; conditionally applicable celebrant or sacred minister rubric",
+      "publication_kind": "ROMAN_1962_RUBRIC",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true
+    },
+    {
+      "id": "DYK-H175-M-003",
+      "source_id": "RS1962.H175.REQUIEM_EPISTLE_BLESSING",
+      "source_family": "ROMAN_MASS_1962",
+      "topic": "ROMAN_1962_CELEBRANT_DETAIL",
+      "pilot_home_copy": {
+        "en": "After singing the Epistle at Solemn Mass, the subdeacon normally receives the celebrant's blessing; this blessing is omitted at Requiem Masses.",
+        "fr": "Après avoir chanté l'Épître à la messe solennelle, le sous-diacre reçoit normalement la bénédiction du célébrant ; celle-ci est omise aux messes de Requiem.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdf_pages_1based": [
+          8
+        ],
+        "printed_pages": [
+          8
+        ],
+        "original_image_checked": true,
+        "primary_locator": "Ritus servandus VI.4",
+        "original_edition": "Ritus servandus (1962) English translation; page image individually read",
+        "source_record_id": "RS1962.H175.REQUIEM_EPISTLE_BLESSING",
+        "deep_link_checked": true
+      },
+      "region_scope": "Traditional Roman Mass 1962; conditionally applicable celebrant or sacred minister rubric",
+      "publication_kind": "ROMAN_1962_RUBRIC",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true
+    },
+    {
+      "id": "DYK-H175-M-004",
+      "source_id": "RS1962.H175.HOMILY_BEFORE_CREDO",
+      "source_family": "ROMAN_MASS_1962",
+      "topic": "ROMAN_1962_CELEBRANT_DETAIL",
+      "pilot_home_copy": {
+        "en": "When a sermon is preached at the traditional Roman Mass, the 1962 Ritus places it after the Gospel and before the Credo, or the Offertory when no Credo is said.",
+        "fr": "Lorsqu'une prédication a lieu à la messe romaine traditionnelle, le Ritus de 1962 la place après l'Évangile et avant le Credo, ou l'offertoire si le Credo est omis.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdf_pages_1based": [
+          9
+        ],
+        "printed_pages": [
+          9
+        ],
+        "original_image_checked": true,
+        "primary_locator": "Ritus servandus VI.6",
+        "original_edition": "Ritus servandus (1962) English translation; page image individually read",
+        "source_record_id": "RS1962.H175.HOMILY_BEFORE_CREDO",
+        "deep_link_checked": true
+      },
+      "region_scope": "Traditional Roman Mass 1962; conditionally applicable celebrant or sacred minister rubric",
+      "publication_kind": "ROMAN_1962_RUBRIC",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true
+    },
+    {
+      "id": "DYK-H175-M-005",
+      "source_id": "RS1962.H175.CREDO_CORPORAL",
+      "source_family": "ROMAN_MASS_1962",
+      "topic": "ROMAN_1962_CELEBRANT_DETAIL",
+      "pilot_home_copy": {
+        "en": "At Solemn Mass during the sung Et incarnatus est of the Credo, the deacon brings the burse from the credence table and unfolds the corporal on the altar.",
+        "fr": "À la messe solennelle pendant Et incarnatus est chanté au Credo, le diacre apporte la bourse depuis la crédence et déploie le corporal sur l'autel.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdf_pages_1based": [
+          9
+        ],
+        "printed_pages": [
+          9
+        ],
+        "original_image_checked": true,
+        "primary_locator": "Ritus servandus VI.7",
+        "original_edition": "Ritus servandus (1962) English translation; page image individually read",
+        "source_record_id": "RS1962.H175.CREDO_CORPORAL",
+        "deep_link_checked": true
+      },
+      "region_scope": "Traditional Roman Mass 1962; conditionally applicable celebrant or sacred minister rubric",
+      "publication_kind": "ROMAN_1962_RUBRIC",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true
+    },
+    {
+      "id": "DYK-H175-M-006",
+      "source_id": "RS1962.H175.SUNG_EPISTLE",
+      "source_family": "ROMAN_MASS_1962",
+      "topic": "ROMAN_1962_CELEBRANT_DETAIL",
+      "pilot_home_copy": {
+        "en": "The 1962 Ritus allows the Epistle of a sung Mass to be sung by a minister; otherwise the celebrant may read or sing it.",
+        "fr": "Le Ritus de 1962 permet qu'à la messe chantée l'Épître soit chantée par un ministre ; sinon, le célébrant peut la lire ou la chanter.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdf_pages_1based": [
+          9
+        ],
+        "printed_pages": [
+          9
+        ],
+        "original_image_checked": true,
+        "primary_locator": "Ritus servandus VI.8",
+        "original_edition": "Ritus servandus (1962) English translation; page image individually read",
+        "source_record_id": "RS1962.H175.SUNG_EPISTLE",
+        "deep_link_checked": true
+      },
+      "region_scope": "Traditional Roman Mass 1962; conditionally applicable celebrant or sacred minister rubric",
+      "publication_kind": "ROMAN_1962_RUBRIC",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true
+    },
+    {
+      "id": "DYK-H175-M-007",
+      "source_id": "RS1962.H175.ADDITIONAL_HOSTS",
+      "source_family": "ROMAN_MASS_1962",
+      "topic": "ROMAN_1962_CELEBRANT_DETAIL",
+      "pilot_home_copy": {
+        "en": "At the Offertory, the celebrant's intention of offering and consecrating includes additional Hosts placed in another vessel for the faithful's Communion.",
+        "fr": "À l'offertoire, l'intention du célébrant d'offrir et de consacrer englobe aussi les hosties placées dans un autre récipient pour la communion des fidèles.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdf_pages_1based": [
+          10
+        ],
+        "printed_pages": [
+          10
+        ],
+        "original_image_checked": true,
+        "primary_locator": "Ritus servandus VII.3",
+        "original_edition": "Ritus servandus (1962) English translation; page image individually read",
+        "source_record_id": "RS1962.H175.ADDITIONAL_HOSTS",
+        "deep_link_checked": true
+      },
+      "region_scope": "Traditional Roman Mass 1962; conditionally applicable celebrant or sacred minister rubric",
+      "publication_kind": "ROMAN_1962_RUBRIC",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true
+    },
+    {
+      "id": "DYK-H175-M-008",
+      "source_id": "RS1962.H175.LAVABO_FINGERTIPS",
+      "source_family": "ROMAN_MASS_1962",
+      "topic": "ROMAN_1962_CELEBRANT_DETAIL",
+      "pilot_home_copy": {
+        "en": "The 1962 Ritus describes the Lavabo as washing the ends of the priest's fingers, particularly thumb and forefinger, rather than washing both hands entirely.",
+        "fr": "Le Ritus de 1962 décrit le Lavabo comme un lavage des extrémités des doigts du prêtre, notamment du pouce et de l'index, et non comme un lavage complet des deux mains.",
+        "final_english_signoff": true,
+        "final_french_signoff": true
+      },
+      "source": {
+        "type": "pdf",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdf_pages_1based": [
+          10
+        ],
+        "printed_pages": [
+          10
+        ],
+        "original_image_checked": true,
+        "primary_locator": "Ritus servandus VII.6",
+        "original_edition": "Ritus servandus (1962) English translation; page image individually read",
+        "source_record_id": "RS1962.H175.LAVABO_FINGERTIPS",
+        "deep_link_checked": true
+      },
+      "region_scope": "Traditional Roman Mass 1962; conditionally applicable celebrant or sacred minister rubric",
+      "publication_kind": "ROMAN_1962_RUBRIC",
+      "historical_local_only": false,
+      "liturgical_rubric_1962": true,
+      "editorial_approval": true,
+      "semantic_novelty_reviewed": true,
+      "release_authorized": true,
+      "published": true
+    }
+  ]
+}
