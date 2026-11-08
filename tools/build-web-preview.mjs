@@ -20,6 +20,7 @@ const activeEntrypointAssets=new Set([...entryHtml.matchAll(/(?:src|href)=["']\.
 // A future approval needs a separate PR that explicitly changes these holds.
 const excludedResearchPaths=[
  "assets/staged",
+ "data/artwork/sacred-art-category-match-989-267.v1.json",
  "assets/stations/san-polo",
  "data/geography/research",
  "data/office/research",
