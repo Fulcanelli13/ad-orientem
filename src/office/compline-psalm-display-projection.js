@@ -128,3 +128,53 @@ export function projectSundayComplinePsalmFrame(frame){
   printConformed:true,printedPsalmWitness:SUNDAY_COMPLINE_PRINTED_PSALM_WITNESS
  });
 }
+
+
+/**
+ * Ferial Compline printed-Psalter stich labels. The 1960 Roman Psalter
+ * divides certain biblical verses across recitation stichs, so labels
+ * MUST follow the exact source rows and may legitimately repeat.
+ * E.g. Psalm 69:4 and 69:6 have two recitation stichs, while
+ * Psalm 12 references extend across canonical verse boundaries.
+ *
+ * Exact full Latin words independently compared with the Clementine
+ * Vulgate Project source: nine psalms / 1,536 word tokens, with ten
+ * enumerated orthographic variants, but NOT a facsimile of Mame 1961.
+ * 2008 Diurnale and 2023 Psalterium affirm weekday appointments.
+ */
+const FERIAL_COMPLINE_SOURCE_LABELS=Object.freeze(
+ Object.fromEntries(Object.entries({"Psalterium/Psalmorum/Psalm11#2-9":["11:2","11:3","11:4","11:5","11:6a","11:6b","11:7","11:8","11:9"],"Psalterium/Psalmorum/Psalm12#1-6":["12:1","12:2","12:3","12:4b","12:5b","12:6b"],"Psalterium/Psalmorum/Psalm15#1-11":["15:1","15:3","15:4a","15:4b","15:5","15:6","15:7","15:8","15:9","15:10","15:11"],"Psalterium/Psalmorum/Psalm33#2-11":["33:2","33:3","33:4","33:5","33:6","33:7","33:8","33:9","33:10","33:11"],"Psalterium/Psalmorum/Psalm33#12-23":["33:12","33:13","33:14","33:15","33:16","33:17","33:18","33:19","33:20","33:21","33:22","33:23"],"Psalterium/Psalmorum/Psalm60#2-9":["60:2","60:3","60:4","60:5","60:6","60:7","60:8","60:9"],"Psalterium/Psalmorum/Psalm69#2-6":["69:2","69:3","69:4","69:4","69:5","69:6","69:6"],"Psalterium/Psalmorum/Psalm70#1-12":["70:1","70:2","70:3","70:3","70:4","70:5","70:6","70:7","70:8","70:9","70:10","70:11","70:12"],"Psalterium/Psalmorum/Psalm70#13-24":["70:13","70:14","70:15","70:16","70:17","70:18","70:18","70:19","70:20","70:21","70:22","70:23","70:24"],"Psalterium/Psalmorum/Psalm76#2-13":["76:2","76:3","76:4","76:5","76:6","76:7","76:8","76:9","76:10","76:11","76:12","76:13"],"Psalterium/Psalmorum/Psalm76#14-21":["76:14","76:15","76:17","76:18","76:18","76:19","76:20","76:21"],"Psalterium/Psalmorum/Psalm85#1-17":["85:1","85:2","85:3","85:5","85:6","85:7","85:8","85:9","85:10","85:11","85:12","85:13","85:14","85:15","85:16","85:17"]}).map(([key,labels])=>
+  [key,Object.freeze(labels)]))
+);
+export const FERIAL_COMPLINE_PRINTED_PSALM_WITNESS=
+ "Clementine Vulgate Project full-text witness; 2008 Diurnale and 2023 Psalterium weekday appointment";
+export function projectFerialComplinePsalmFrame(frame){
+ if(frame?.kind!=="PSALM"||
+    !/^Psalterium\/Psalmorum\/Psalm(?:11|12|15|33|60|69|70|76|85)#/u.test(frame.sourceId||""))
+  return frame;
+ const labels=FERIAL_COMPLINE_SOURCE_LABELS[frame.sourceId];
+ const index=frame.subIndex;
+ if(!labels||!Number.isInteger(index)||index<0||index>=labels.length||
+    frame.subTotal!==labels.length||frame.focusType!=="PSALM_VERSE"||
+    !frame.texts?.la)return null;
+ const prefixLabel=labels[index];
+ const rendered={};
+ for(const [language,lines] of Object.entries(frame.texts)){
+  if(!["la","en","fr"].includes(language)||!Array.isArray(lines)||
+     lines.length!==1||typeof lines[0]!=="string")return null;
+  if(!lines[0].startsWith(prefixLabel+" "))return null;
+  const clean=lines[0].slice(prefixLabel.length+1)
+    // Parenthesized 4a/5a/etc are source-numbering cues, never words.
+    .replace(/\s*\(\d+[ab]?\)\s*/gu," ")
+    .replace(/\s{2,}/gu," ").trim();
+  if(!clean||/\(\d+[ab]?\)/u.test(clean))return null;
+  rendered[language]=Object.freeze([clean]);
+ }
+ return Object.freeze({
+  ...frame,label:prefixLabel,texts:Object.freeze(rendered),
+  sourceTexts:frame.texts,sourceVerseLabel:prefixLabel,
+  printedVerseLabel:prefixLabel,sourceNumberingNormalized:true,
+  originalSourceOnly:false,printConformed:true,
+  printedPsalmWitness:FERIAL_COMPLINE_PRINTED_PSALM_WITNESS
+ });
+}
