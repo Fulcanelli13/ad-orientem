@@ -4,6 +4,7 @@
  * advertised as a complete public Hour. Tenebrae retains its existing owner.
  */
 import {ROMAN_OFFICE_HOURS,officeRouteState} from "./office-route-state.js";
+import {officePrivateSourceReviewAllowed} from "./office-private-preview-gate.js";
 const STYLE=`
 /* The legacy Prayer header is positioned above the mount even with hidden
    set by its donor. Suppress it only while the native Office is in the DOM. */
@@ -21,6 +22,18 @@ const STYLE=`
 .aoOfficeReader .aoOfStatus{border:1px solid #5f5547;border-radius:12px;padding:17px;background:#101821}
 .aoOfficeReader .aoOfStatus strong{font:500 20px/1.3 Georgia,serif}
 .aoOfficeReader .aoOfStatus small{display:block;font:12px/1.5 system-ui;color:#bfc5cc;margin-top:12px}
+.aoOfficeReader .aoOfPrivateReview{border:1px solid #5f5547;border-radius:12px;padding:10px;margin:14px 0;min-width:0;overflow-wrap:anywhere}
+.aoOfficeReader .aoOfPrivateReviewNotice{font:12px/1.5 system-ui;color:#c9ad78}
+.aoOfficeReader .aoOfPrivateReview select{min-height:44px;background:#101821;color:#e9e4d9;border:1px solid #5f5547;border-radius:9px;padding:9px 12px}
+.aoOfficeReader .aoOfPrivateReview .aoOfOptions{display:flex;flex-wrap:wrap;gap:8px}
+.aoOfficeReader .aoOfPrivateReview .aoOfFrame{border:1px solid #5f5547;border-radius:12px;padding:15px;margin:12px 0}
+.aoOfficeReader .aoOfPrivateReview .aoOfColumns{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:15px}
+.aoOfficeReader .aoOfPrivateReview .aoOfLanguage{min-width:0;overflow-wrap:anywhere}
+.aoOfficeReader .aoOfPrivateReview .aoOfLanguage p{white-space:pre-wrap;overflow-wrap:anywhere}
+.aoOfficeReader .aoOfPrivateReview .aoOfFrameControls{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.aoOfficeReader .aoOfPrivateReview .aoOfFrameTop{display:flex;justify-content:space-between;gap:8px}
+.aoOfficeReader .aoOfPrivateReview .aoOfProvenance{display:block;font:11px/1.4 system-ui;overflow-wrap:anywhere}
+
 `;
 function todayLocal(){
  const d=new Date();const offset=d.getTimezoneOffset()*60000;
@@ -42,7 +55,9 @@ export function openDivineOfficeReader(win=globalThis,{date=todayLocal()}={}){
  const back=d.createElement("button");back.type="button";
  back.textContent="← Prayer";back.setAttribute("aria-label","Return to Prayer");
  back.addEventListener("click",()=>{
-   host.remove();previous.forEach(({node,hidden,display})=>{node.hidden=hidden;node.style.display=display});
+   localReview?.instance?.dispose?.();
+   host.remove();
+   previous.forEach(({node,hidden,display})=>{node.hidden=hidden;node.style.display=display});
  });
  host.append(back);
  const kicker=d.createElement("p");kicker.className="aoOfKicker";
@@ -70,6 +85,47 @@ export function openDivineOfficeReader(win=globalThis,{date=todayLocal()}={}){
  }
  const status=d.createElement("div");status.className="aoOfStatus";
  status.setAttribute("aria-live","polite");host.append(status);
+ // Only an explicit localhost-only development session may fetch noncertified
+ // Office source text. Never expose this affordance on GitHub Pages.
+ let localReview=null;
+ if(officePrivateSourceReviewAllowed(win.location)){
+   const reviewButton=d.createElement("button");reviewButton.type="button";
+   reviewButton.className="aoOfPrivateReviewLaunch";
+   reviewButton.textContent="Review actual Office source · development only";
+   const reviewNotice=d.createElement("p");
+   reviewNotice.className="aoOfPrivateReviewNotice";
+   reviewNotice.textContent="Source-first research only: not a certified liturgical edition, not published as an Office Hour.";
+   host.append(reviewButton,reviewNotice);
+   reviewButton.addEventListener("click",async()=>{
+     if(localReview){localReview.instance?.dispose?.();localReview.node.remove();localReview=null;
+       reviewButton.textContent="Review actual Office source · development only";return}
+     const node=d.createElement("div");node.className="aoOfPrivateReview";
+     host.insertBefore(node,reviewButton);
+     reviewButton.disabled=true;
+     try{
+       const {mountPrivateOfficeReview}=await import("./private-office-review-page.js");
+       if(!host.isConnected){node.remove();return}
+       const witness=new URL("./data/office/research/advent-i-2026-universal-commemoration.json",
+         win.location.href).href;
+       const instance=mountPrivateOfficeReview(node,{
+         win,fetchSource:win.fetch.bind(win),
+         readUniversalWitness:async()=>{
+           const response=await win.fetch(witness,{
+             credentials:"same-origin",cache:"no-store"
+           });
+           if(!response.ok)throw Error("LOCAL_OFFICE_CALENDAR_WITNESS_UNAVAILABLE");
+           return response.json();
+         },
+         initialDate:input.value,initialHour:hour
+       });
+       localReview={node,instance};
+       reviewButton.textContent="Close private source review";
+     }catch(err){
+       node.remove();
+       reviewNotice.textContent="Private source review unavailable: "+String(err?.message??err);
+     }finally{reviewButton.disabled=false}
+   });
+ }
  const tenebrae=d.createElement("button");tenebrae.type="button";
  tenebrae.textContent="Open the existing Tenebrae reader";
  tenebrae.style.marginTop="18px";

@@ -36,7 +36,7 @@ function renderFrame(d,host,frame,position,total,mode){
  host.append(txt(d,"small",frame.sourceId||"Editorial research note · no original text witness","aoOfProvenance"));
 }
 export function mountPrivateOfficeReview(root,{win=globalThis,fetchSource=win.fetch?.bind(win),
- readUniversalWitness=null}={}){
+ readUniversalWitness=null,initialHour="COMPLINE",initialDate="2026-11-28"}={}){
  if(!root||typeof fetchSource!=="function")throw Error("OFFICE_PRIVATE_PREVIEW_ROOT_REQUIRED");
  const d=root.ownerDocument;
  const chooser=el(d,"div","aoOfOptions");
@@ -44,8 +44,12 @@ export function mountPrivateOfficeReview(root,{win=globalThis,fetchSource=win.fe
  for(const [value,title] of [["COMPLINE","Compline · 28 Nov–5 Dec"],["VESPERS","First Vespers · 28 Nov"]]){
   let o=el(d,"option");o.value=value;o.textContent=title;hours.append(o);
  }
- const date=el(d,"input");date.type="date";date.value="2026-11-28";
+ hours.value=initialHour==="VESPERS"?"VESPERS":"COMPLINE";
+ const date=el(d,"input");date.type="date";
+ date.value=/^2026-(?:11-(?:28|29|30)|12-0[1-5])$/.test(initialDate)?
+  initialDate:"2026-11-28";
  date.min="2026-11-28";date.max="2026-12-05";
+ if(hours.value==="VESPERS")date.value="2026-11-28";
  const mode=el(d,"select");
  for(const [value,title] of [["laen","Latin / English"],["lafr","Latin / Français"],["la","Latin only"]]){
   let o=el(d,"option");o.value=value;o.textContent=title;mode.append(o);
