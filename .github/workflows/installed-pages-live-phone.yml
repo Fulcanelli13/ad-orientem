@@ -34,6 +34,7 @@ jobs:
           node --check tests/canonical-pages-live-parity.mjs
           node --check tests/installed-pages-live-phone.mjs
           node tests/installed-pages-parity-concurrency.mjs
+          node tests/installed-pages-first-boot-retry-contract.mjs
 
   verify-live-installed-path:
     # Only successful publication runs enqueue this job, so failed or skipped
