@@ -1,3 +1,7 @@
+/* 2026-11-08 Païta exact 2026 date-specific Mass programme (22 Nov/20 Dec).
+ * Trigger updated installed GitHub Pages snapshot for canonical CL2 programme UI.
+ * Printed source dates only; no recurrence or live attendance guarantee.
+ */
 /* 2026-11-08 CL27 source-contact expansion to 16 named church profiles.
  * Installed GitHub Pages clients must load the updated exact-CL2 contact manifest;
  * no new current Mass, Una Cum, ownership or map pin claims.
