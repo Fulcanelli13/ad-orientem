@@ -503,3 +503,68 @@ assert.ok(w6ById.get("RG-9B5F40D1BDED").observation.includes("following Monday")
 assert.ok(w6ById.get("RG-7D5AA61CAE06").observation.includes("Transfiguration"));
 assert.ok(w6ById.get("RG-F78E459E839F").decision.includes("NOT_IN_MAIN_PARISH_SCHEDULE"));
 console.log("PASS CL27 Wave 6: 264/296 historical rows source-reviewed, 32 unresolved, 35 named site/source groups, 53 new row IDs, no liturgical or public timetable fabrication");
+
+
+// Wave 7 is a closing *disposition* of source gaps, not 32 further current
+// Mass verifications. Preserve every frozen historical row and explicitly
+// block the false implication that completing a review creates public events.
+const wave7=JSON.parse(readFileSync(new URL(
+ "../data/directory/research/cl27-current-firstparty-20261104/source-review-wave7-source-dispositions.v1.json",
+ import.meta.url),"utf8"));
+assert.equal(wave7.schema,"AO_CL27_FINAL_SOURCE_GAP_DISPOSITIONS_WAVE7_V1");
+assert.equal(wave7.publication,"RESEARCH_ONLY_NO_APP_IMPORT");
+assert.equal(wave7.canonical_source.pr,1775);
+assert.equal(wave7.canonical_source.blob_sha,d.canonical_source.blob_sha);
+assert.deepEqual(wave7.summary,{
+ previously_reviewed:264,
+ new_historical_rows_dispositioned:32,
+ cumulative_historical_rows_accounted_for:296,
+ unassessed_historical_rows:0,
+ current_mass_events_approved:0,
+ canonical_una_cum_claims_approved:0,
+ source_gap_or_time_hold_count:32
+});
+assert.equal(wave7.records.length,25);
+const previouslyDispostioned=new Set([...earlierW6,...reviewedW6]);
+assert.equal(previouslyDispostioned.size,264);
+const wave7IDs=new Set(),wave7Sites=new Set(),secondaryIDs=new Set();
+for(const c of wave7.records){
+ assert.match(c.cl2_anchor,/^RG-[0-9A-F]{12}$/);
+ assert.match(c.country,/^[A-Z]{2}$/);
+ assert.ok(!wave7Sites.has(c.cl2_anchor),"Wave 7 duplicate site assessment");
+ wave7Sites.add(c.cl2_anchor);
+ assert.ok(c.venue_label&&c.assessment&&c.editorial_disposition);
+ assert.match(c.historical_source,/^https?:\/\/[^ ]+$/);
+ assert.match(c.current_evidence_url,/^https:\/\/[^ ]+$/);
+ assert.equal(c.gate,"RESEARCH_ONLY_NO_CURRENT_MASS_EVENT_NO_SOURCE_WIDE_1962_OR_CANONICAL_INFERENCE");
+ for(const field of ["dated_current_occurrence_unverified","una_cum_unverified","canonical_status_unverified","exact_missal_unverified","ministry_and_owner_not_inferred"]){
+  assert.ok(c.source_status.includes(field),"A source disposition must not imply event or ecclesial certification");
+ }
+ assert.equal(c.historical_rows.length,c.original_source_claims.length);
+ for(let i=0;i<c.historical_rows.length;i++){
+  const id=c.historical_rows[i],claim=c.original_source_claims[i];
+  assert.ok(Number.isInteger(id)&&!previouslyDispostioned.has(id)&&!wave7IDs.has(id),"Wave 7 row overlap/duplicate");
+  wave7IDs.add(id);
+  assert.equal(claim.historical_row,id);
+  assert.ok(claim.source_id&&claim.day_pattern&&claim.local_time&&claim.frequency&&claim.original_excerpt);
+  const source=byHistorical.get(id);
+  assert.ok(source&&source.anchors.includes(c.cl2_anchor),"Wave 7 CL2 anchor mismatch");
+  assert.equal(c.historical_source,source.historical_url);
+  if(c.assessment.startsWith("SECONDARY_")||c.assessment.includes("INFERRED"))secondaryIDs.add(id);
+ }
+}
+assert.equal(wave7Sites.size,25);
+assert.equal(wave7IDs.size,32);
+assert.ok(secondaryIDs.size>=20,"Last wave must preserve uncertainty of third-party/ambiguous listings");
+const all296=new Set([...previouslyDispostioned,...wave7IDs]);
+assert.equal(all296.size,296);
+assert.equal(d.source_page_groups.reduce((n,g)=>n+g.rows.length,0),296);
+for(const g of d.source_page_groups){
+ for(const id of g.rows)assert.ok(all296.has(id),"Historical source audit cannot silently discard a row: "+id);
+}
+const wave7ById=new Map(wave7.records.map(c=>[c.cl2_anchor,c]));
+assert.ok(wave7ById.get("RG-DA0AFA244DB4").assessment.includes("INFERRED_SUNDAY"));
+assert.ok(wave7ById.get("RG-DA0AFA244DB4").editorial_disposition.includes("NO weekday"));
+assert.ok(wave7ById.get("RG-9D79E31A64C4").editorial_disposition.includes("Log Church"));
+assert.ok(wave7ById.get("RG-28B6C5B21415").assessment.includes("PROVIDER_UNVERIFIED"));
+console.log("PASS CL27 Waves 1–7: 296/296 frozen historical rows accounted for (264 reviewed + 32 explicit source-gap holds), 25 last-wave groups, no live events, Una Cum, canonical status, ownership or coordinate changes");
