@@ -9,6 +9,8 @@ import {PRAY_CANONICAL_DATA_V435930 as DATA} from "../src/pray/canonical-data.js
 import {COMMUNION_TREASURY_V383} from "../src/pray/traditional-pray-data.js";
 import {prayerAcquisitionCandidates} from "../src/pray/prayer-acquisition-historical-witnesses.v1.js";
 import {RED_BOOKLET_COMMUNION_LIBRARY_LINKS_V1,redBookletCommunionLibraryLinksForSubject,redBookletCommunionLibraryLink} from "../src/pray/red-booklet-communion-library-links.v1.js";
+import {RED_BOOKLET_SUSCIPE_LIBRARY_LINK_V1,redBookletSuscipeLibraryLinksForSubject} from "../src/pray/red-booklet-suscipe-library-link.v1.js";
+import {personalDailyDirectPlan,defaultPersonalDailyPrefs} from "../src/pray/daily-personal-rule.js";
 const read=path=>readFileSync(new URL("../"+path,import.meta.url),"utf8");
 const registry=JSON.parse(read("data/pray/red-booklet-2013-completeness.v1.json"));
 const mass=JSON.parse(read("data/research/mass-ordo-red-missal-2013-editorial.v1.json"));
@@ -24,6 +26,7 @@ assert.equal((mass.ceremonialOutOfEnglishScope||[]).length,15);
 assert.ok(!registry.works.some(x=>["mass_canon","mass_proper","mass_confiteor"].includes(x.id)),"Mass forms belong to existing 1962 source owner, not a second devotional corpus");
 const byStatus={reader_present:[],variant_requires_comparison:[],unresolved:[]};
 const indexedCommunion=new Set(["pre_thomas","pre_ambrose","communion_thomas","communion_bonaventure","crucifix"]);
+const indexedAll=new Set([...indexedCommunion,"ignatius_suscipe"]);
 const requiredGroups=["before_mass","before_communion","after_low_mass","benediction","confession","after_communion","devotional","marian"];
 for(const w of registry.works){
  assert.equal(w.pdfPage,w.printedPage+1,"Wrong PDF page reference "+w.id);
@@ -31,10 +34,10 @@ for(const w of registry.works){
  assert.ok(requiredGroups.includes(w.section),"Unknown booklet group "+w.id);
  assert.ok(w.title.length>5);
  assert.equal(w.wordingCollatedAgainst2013,false,"Exact English collation must be individually evidenced before promotion "+w.id);
- assert.equal(w.discoverableAsIndividualLibraryWork,indexedCommunion.has(w.id),"Only exact, clickable source-owner links may claim Library discoverability: "+w.id);
- if(indexedCommunion.has(w.id)){
-  assert.equal(w.discoverabilityProof?.sourceId,w.owner?.symbol,"Library link must lead to original text identity: "+w.id);
-  assert.equal(w.discoverabilityProof?.route,"pray.communion_treasury");
+ assert.equal(w.discoverableAsIndividualLibraryWork,indexedAll.has(w.id),"Only exact, clickable source-owner links may claim Library discoverability: "+w.id);
+ if(indexedAll.has(w.id)){
+  assert.equal(w.discoverabilityProof?.sourceId,w.owner?.symbol,"Library must lead to the original text identity: "+w.id);
+  assert.equal(w.discoverabilityProof?.route,w.owner.route);
  }
  assert.ok(Object.hasOwn(byStatus,w.status),"Unknown status "+w.id);
  byStatus[w.status].push(w.id);
@@ -76,12 +79,39 @@ for(const link of RED_BOOKLET_COMMUNION_LIBRARY_LINKS_V1){
  assert.deepEqual(link.languages,["en","fr","la"].filter(k=>!!source[k]));
  assert.ok(link.languages.includes("en"),"Source-owned English prayer absent: "+link.id);
 }
+const suscipe=RED_BOOKLET_SUSCIPE_LIBRARY_LINK_V1;
+assert.equal(suscipe.id,"ignatius_suscipe");
+assert.equal(suscipe.printedPage,ignatius.printedPage);
+assert.equal(suscipe.route,ignatius.owner.route);
+assert.equal(suscipe.sourceIds.en,ignatius.owner.symbol);
+assert.deepEqual(suscipe.languages,["en","la"]);
+assert.equal(suscipe.wordingCollatedAgainst2013,false);
+assert.equal(redBookletSuscipeLibraryLinksForSubject("III").length,1);
+assert.equal(redBookletSuscipeLibraryLinksForSubject("all").length,0);
+assert.equal(redBookletSuscipeLibraryLinksForSubject("all","Suscipe").length,1);
+assert.equal(redBookletSuscipeLibraryLinksForSubject("IV","Suscipe").length,0);
+for(const lang of suscipe.languages){
+ const source=prayerAcquisitionCandidates("self_offering",{language:lang}).find(x=>x.id===suscipe.sourceIds[lang]);
+ assert.ok(source&&source.release.exact_print_verified&&source.release.allowed_in_prayer_hub);
+ assert.equal(source.source.page,"227");
+ const prefs={...defaultPersonalDailyPrefs(lang),language:lang};
+ const direct=personalDailyDirectPlan({daypart:"morning",prefs,sourceId:source.id});
+ assert.equal(direct?.rows?.[0]?.text,source.text,"Link must select the exact source-owned complete text");
+ assert.equal(direct?.rows?.[0]?.language,lang);
+}
+assert.equal(personalDailyDirectPlan({daypart:"evening",prefs:defaultPersonalDailyPrefs("en"),sourceId:suscipe.sourceIds.en}),null);
 const ui=read("src/pray/presentation-runtime.js"),treasury=read("src/pray/traditional-pray-runtime.js");
 assert.match(ui,/data-p435930-red-communion/,"Library list must expose source-owned links");
 assert.match(ui,/redBookletCommunionLibraryLinksForSubject\(LIB.subject,q\)/,"Library search must include indexed Communion prayers");
 assert.match(ui,/communionPrayer:work.sourceId/,"Library must hand off the exact source ID");
-assert.match(ui,/redBookletCommunionLibraryLinksForSubject\(subject.id\).length/,"Eucharistic subject count must include these links");
+assert.match(ui,/redBookletCommunionLibraryLinksForSubject\(subject.id\).length/,"Eucharistic subject count must include Communion links");
+assert.match(ui,/redBookletSuscipeLibraryLinksForSubject\(LIB.subject,q\)/,"Source-only Suscipe must be searchable");
+assert.match(ui,/dailySourcePrayer:work.sourceIds.en/,"Library must navigate to Suscipe by its exact cleared source ID");
+assert.match(ui,/redBookletSuscipeLibraryLinksForSubject\(subject.id\).length/,"Eucharistic subject count must include Suscipe");
 assert.match(treasury,/communionDeepLinkTarget\(opts.communionPrayer\)/,"Communion reader must validate deep-link targets");
 assert.match(treasury,/opts.communionPrayer!==undefined&&!communionTarget\)return false/,"Unknown prayer deep links must fail closed");
 assert.match(treasury,/communionStep:communionTarget\?\.index\?\?0/,"Selected work must be its own reader card, not a generic start");
-console.log("PASS booklet scan: 37 source works; five existing Communion prayers directly searchable and opened by source ID; 24 located, 3 variants, 10 holds, separate 256 cues; no 2013 word-for-word or French translation claims");
+assert.match(treasury,/opts.dailySourcePrayer!==undefined&&!requestedDailySource\)return false/,"Suscipe deep link must reject unrecognized source IDs");
+assert.match(treasury,/data-tp381-suscipe-lang/,"Suscipe must offer only the attested EN/LA source-language choices");
+assert.match(treasury,/dailyDirectLanguage:requestedDailySource\?\.\[0\]/,"Source language must not be borrowed from saved preferences");
+console.log("PASS booklet scan: 37 source works; six existing original private prayers searchable and opened by source ID (five Communion, Suscipe EN/LA); 24 located, 3 variants, 10 holds, separate 256 cues; no 2013 word-for-word or French translation claims");
