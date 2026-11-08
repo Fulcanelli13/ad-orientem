@@ -1,0 +1,34 @@
+name: Sacred Art Phase 45 — full corpus census (research only)
+on:
+  push:
+    branches:
+      - research/sacred-art-phase18-iiif-audit-20261106
+    paths:
+      - 'scripts/sacred-art/phase45-full-census-schema-probe.py'
+      - '.github/workflows/sacred-art-phase45-full-census.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-structure:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Enumerate corpus sources and release proof
+        run: |
+          python -m py_compile scripts/sacred-art/phase45-full-census-schema-probe.py
+          python scripts/sacred-art/phase45-full-census-schema-probe.py
+      - name: Archive research-only census schema
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-phase45-full-corpus-schema
+          path: artifacts/sacred-art-phase45-full-census-probe/
+          retention-days: 14
+          if-no-files-found: error
