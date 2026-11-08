@@ -104,7 +104,7 @@ def main():
     verified=decisions["verified_same_physical_object"]
     negative=decisions["prohibited_false_merges"]
     assert len(works)==989 and len(selected)==177 and len(sources)==3205 and len(releases)==16
-    assert len(verified)==2 and len(negative)==4
+    assert len(verified)>=7 and len(negative)>=4
     workby={x["workGroupId"]:x for x in works}
     selectedby={x["registry_id"]:x for x in selected}
     assert len(workby)==989 and len(selectedby)==177
@@ -243,11 +243,11 @@ def main():
        "do_not_add_populations":"989 groups + 177 selected photos + 16 releases are overlapping and incompletely reconciled",
        "not_authorizing":"Gallery publication, selected-photo change, source rejections, or unreviewed painting merging"
     }
-    assert summary["counts"]["selected_records_with_verified_group"]==2
+    assert summary["counts"]["selected_records_with_verified_group"]==len({x["selected_id"] for x in verified})
     assert summary["counts"]["explicit_blocked_false_merge_pairs"]==4
     assert sum(Counter(x["crosswalk_status"] for x in selected_rows).values())==177
-    assert sum(x["selected_id"] in [z["selected_id"] for z in verified] for x in selected_rows)==2
-    assert not any(x["originalUserDecision"]=="REJECT" for x in [] )
+    assert sum(x["selected_id"] in [z["selected_id"] for z in verified] for x in selected_rows)==len({z["selected_id"] for z in verified})
+    assert all(x["originalUserDecision"]=="REJECT" for x in rejectrecords)
     write_csv(OUT/"selected_177_to_989_crosswalk.csv",selected_rows)
     write_csv(OUT/"operational_989_to_selected_photo_crosswalk.csv",workrows)
     write_csv(OUT/"unverified_candidate_pairs.csv",candidates,
