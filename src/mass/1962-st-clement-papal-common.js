@@ -36,7 +36,8 @@ export function recover1962StClementPapalCommon({
      !complete(corrected))return null;
    replacements[key]=Object.freeze([
      Object.freeze({...source[0],lat:corrected.lat,en:corrected.en,fr:corrected.fr,
-       sourcePath:"1962/Commune/SummorumPontificum",
+       sourcePath:witness.principalPath,
+       sourceEdition:"1962_SOVEREIGN_PONTIFF_COMMON",
        sourceSection:key==="secrets"?"Secreta":"Postcommunio",
        sourceCorrectionId:CLEMENT_1962_SOURCE_SCHEMA}),
      source[1]
