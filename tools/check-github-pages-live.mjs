@@ -2,7 +2,7 @@
 // Compare LIVE critical asset bytes and build provenance against this exact run.
 import assert from "node:assert/strict";
 import {
- RELEASE_PROOF_FILENAME,MASS_SCHOLA_CRITICAL_PATHS,NOV6_FIRST_FRIDAY_LEONINE_CRITICAL_PATHS,releaseCommitSha,releaseSha256,verifyReleaseProof
+ RELEASE_PROOF_FILENAME,MASS_SCHOLA_CRITICAL_PATHS,NOV6_FIRST_FRIDAY_LEONINE_CRITICAL_PATHS,DISCOVERY_CRITICAL_PATHS,releaseCommitSha,releaseSha256,verifyReleaseProof
 } from "./github-pages-release-proof.mjs";
 
 const raw=process.env.GITHUB_PAGES_URL;
@@ -77,6 +77,21 @@ const script=[...index.matchAll(/(?:href|src)=["']\.\/(ao-(?:inline|boot|packed)
 if(!stylesheet||!script)throw Error("Missing content-addressed CSS or JavaScript entrypoint");
 await released(stylesheet);await released(script);
 ok("Published CSS and JS exact-byte digests");
+
+
+// Discovery is loaded after the Home shell, so inspect its own live assets.
+// Every approved public manifest and both present loaders must match this exact run.
+for(const path of DISCOVERY_CRITICAL_PATHS)await released(path);
+const discoveryManifests=DISCOVERY_CRITICAL_PATHS.filter(x=>x.startsWith("data/did-you-know/"));
+let discoveryCount=24; // The source-owned Glossary is the 24-fact fallback.
+for(const path of discoveryManifests){
+ const data=JSON.parse((await released(path)).toString("utf8"));
+ assert.equal(data.release_stage,"APPROVED_PARTIAL_LIVE","Unreleased Discovery manifest reached Pages: "+path);
+ assert.ok(Array.isArray(data.records),"Missing published Discovery records: "+path);
+ discoveryCount+=data.records.length;
+}
+assert.equal(discoveryCount,225,"Public H7 Discovery manifest population must total 225");
+ok("Discovery 225 approved EN/FR facts: all manifests and Home/source-dialog loaders exact-byte SHA-256 parity");
 
 // A correct HTML shell can still be paired with stale, CDN-cached reader
 // modules. Verify the precise source-owned Pray code released with this SHA.
