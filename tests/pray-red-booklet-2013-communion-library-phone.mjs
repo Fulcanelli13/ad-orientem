@@ -127,7 +127,19 @@ try{
      :page.locator(scope+'[data-ao-confession-historical-source="'+work.sourceId+'"]');
     // Route state changes before DOM completion: await the actual displayed
     // historical source rather than accepting a transient Confession screen.
-    await reader.waitFor({state:"visible",timeout:15000});
+    try{
+     await reader.waitFor({state:"visible",timeout:15000});
+    }catch(error){
+     const probe=await page.evaluate(()=>({
+      state:globalThis.AO_PRAY_V435930?.state?.(),
+      onScreen:document.querySelector("#aoPray435930.open .aoP435930Mount")?.innerText?.slice(0,800),
+      privateCard:document.querySelector("#aoPray435930.open [data-ao-confession-private-reader]")?.getAttribute("data-ao-confession-private-reader"),
+      historicalIds:[...document.querySelectorAll("#aoPray435930.open [data-ao-confession-historical-source]")]
+       .map(x=>x.getAttribute("data-ao-confession-historical-source")),
+      error:document.querySelector("[data-p435930-internal-route-error]")?.textContent?.slice(0,250)
+     }));
+     throw new Error("Historical private Library link rendered wrong route for "+work.id+"; probe="+JSON.stringify(probe)+"; "+error);
+    }
     assert.equal(await reader.count(),1,"Private reader must show exact source card: "+work.id);
     if(!mass){
       const state=await page.evaluate(()=>globalThis.AO_PRAY_V435930.state());
