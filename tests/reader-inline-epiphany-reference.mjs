@@ -16,8 +16,8 @@ const expected=[
 assert.equal(EPIPHANY_REFERENCE_WITNESS.sourcePath,"Sancti/01-06");
 assert.equal(EPIPHANY_REFERENCE_WITNESS.massSourceRef,"ad8783641455bae38a8eb5782b34241a7b3ff2ef");
 assert.equal(EPIPHANY_REFERENCE_SCORES.length,5);
-assert.equal(PROPER_REFERENCE_REGISTRY_STATUS.scoreCount,13);
-assert.equal(PROPER_REFERENCE_REGISTRY_STATUS.bindingCount,15);
+assert.equal(PROPER_REFERENCE_REGISTRY_STATUS.scoreCount,18);
+assert.equal(PROPER_REFERENCE_REGISTRY_STATUS.bindingCount,21);
 for(let i=0;i<expected.length;i++){
  const e=expected[i],s=EPIPHANY_REFERENCE_SCORES[i];
  assert.deepEqual([s.id,s.key,s.part,s.folio],[e.id,e.key,e.part,e.page]);
@@ -95,4 +95,4 @@ const merged=resolveScholaSelectedScoreAccess({itinerary:mergedItinerary,resolve
 assert.deepEqual(merged.proper[1].scores.map(s=>s.id),["GREGOBASE-205","GREGOBASE-524"]);
 assert.equal(merged.proper[2].scores.length,0,
  "Same source Alleluia may not be shown twice in selected Schola itinerary");
-console.log("EPIPHANY_FIVE_SOURCE_GABC_PASS 13 total archive scores, five 1961 Epiphany roles, identical Latin but distinct Alleluia/Communion melodies, unapproved");
+console.log("EPIPHANY_FIVE_SOURCE_GABC_PASS 18 total archive scores, five 1961 Epiphany roles, identical Latin but distinct Alleluia/Communion melodies, unapproved");
