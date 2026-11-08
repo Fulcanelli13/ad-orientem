@@ -70,5 +70,17 @@ assert.ok(index.every(x=>x.exact1962UseCertified===false&&
  x.printedNoteByNoteChecked===false&&x.editorialApproval===false&&x.publicViewer===false));
 assert.ok(ledger.terminationFamily.contextualRules.some(x=>x.includes("celebrant voice")));
 const dom=readFileSync(new URL("../src/mass/reader-dom.js",import.meta.url),"utf8");
-assert.doesNotMatch(dom,/data-schola-score-open|offlineKyrialeResearchScore\(/);
+// The 1961 Kyriale research GABCs remain unpublished and must not acquire
+// an automatic Schola viewer. The new selected-Mass Proper viewer is a
+// different, source-bound provisional reference surface with a hard no-approval
+// gate. Keep the original Kyriale hold, rather than forbidding all scores.
+assert.doesNotMatch(dom,/offlineKyrialeResearchScore\(/);
+assert.match(dom,/resolveScholaSelectedScoreAccess\(\{itinerary,/);
+assert.match(dom,/score\.publicScoreApproved!==false/);
+assert.match(dom,/NOT independently musically approved/);
+const selectedAccess=readFileSync(
+ new URL("../src/mass/reader-schola-score-access.js",import.meta.url),"utf8");
+assert.match(selectedAccess,/referenceScoresForParagraph\(/);
+assert.match(selectedAccess,/score\.publicScoreApproved!==false/);
+assert.doesNotMatch(selectedAccess,/offlineKyrialeResearchScore|KYRIALE_RESEARCH_GABC/);
 console.log("PASS M19 seven complete printed Kyriale spans, original GABC ending counts, 15 Ite variants, two Benedicamus and one Requiescant; editorial/publication holds closed");
