@@ -212,6 +212,74 @@ try{
     assert.equal(reading.modelCards,30,"No new source macros from chant");
     console.log("PASS actual Ordo Preface celebrant",JSON.stringify({width,mode,tone,...reading}));
    }
+   // Next A/C coverage: exact Gospel greeting, Canon ending and Pax turns.
+   const leaderCases=[
+    ["AO.SM.C0082","AO.REF.LEADER_GOSPEL_4490.0082"],
+    ["AO.SM.C0206","AO.REF.LEADER_CANON_END_7282.0206"],
+    ["AO.SM.C0217","AO.REF.LEADER_PAX_DOMINI_4327.0217"],
+    ["AO.SM.C0219","AO.REF.LEADER_PAX_DOMINI_4327.0219"],
+   ];
+   for(const [cue,scoreId] of leaderCases){
+    const nav=await page.evaluate(id=>{
+     const api=window.__AO_PHONE_PREVIEW;
+     const card=(api.model?.cards??[]).find(c=>JSON.stringify(c).includes(id));
+     if(!card)return {error:"SOURCE_CUE_ABSENT",id};
+     api.showSequence(card.sequence);
+     return {error:null};
+    },cue);
+    assert.equal(nav.error,null,JSON.stringify(nav));
+    await page.waitForFunction(({id,score})=>{
+      const paragraph=document.querySelector('[data-cue-id="'+id+'"]');
+      return !!paragraph?.querySelector('[data-reference-score="'+score+
+        '"][data-reference-ready="true"] .ao-proper-reference-staff svg');
+     },{id:cue,score:scoreId},{timeout:20000});
+    const result=await page.evaluate(({id,score})=>{
+     const paragraph=document.querySelector('[data-cue-id="'+id+'"]');
+     const wrapper=paragraph?.querySelector('[data-reference-score="'+score+'"]');
+     return {text:paragraph?.querySelector(".ao-line-primary")?.textContent?.trim(),
+      score:wrapper?.dataset.referenceScore,approved:wrapper?.dataset.approved,
+      mark:wrapper?.querySelector(".ao-proper-reference-mark")?.textContent??null,
+      svg:!!wrapper?.querySelector(".ao-proper-reference-staff svg"),
+      overflow:document.documentElement.scrollWidth-innerWidth,
+      cards:window.__AO_PHONE_PREVIEW?.sourceModel?.totalCards};
+    },{id:cue,score:scoreId});
+    assert.equal(result.score,scoreId,"Gospel/Canon/Pax source must be placed in its original Ordo paragraph");
+    assert.ok(result.text?.length>8,"Original source-owned Latin must remain");
+    assert.equal(result.approved,"false","New chant still provisional");
+    assert.equal(result.mark,"℣");
+    assert.equal(result.svg,true);
+    assert.ok(result.overflow<=1);
+    assert.equal(result.cards,30);
+    console.log("PASS actual Ordo Gospel/Canon/Pax celebrant",JSON.stringify({width,mode,tone,cue,...result}));
+   }
+   // Switching Gospel tone must alter BOTH the celebrant and its response,
+   // and MUST NOT fabricate a score for the variable Gospel proclamation.
+   await page.evaluate(()=>{
+    const api=window.__AO_PHONE_PREVIEW;
+    const card=api.model.cards.find(c=>JSON.stringify(c).includes("AO.SM.C0082"));
+    api.showSequence(card.sequence);
+   });
+   await page.click("[data-reader-preferences]");
+   const gospelToneButton=page.locator("[data-reader-gospel-tone]");
+   assert.equal(await gospelToneButton.getAttribute("aria-pressed"),"false");
+   await gospelToneButton.click();
+   assert.equal(await gospelToneButton.getAttribute("aria-pressed"),"true");
+   await page.click("[data-reader-preferences-close]");
+   await page.waitForFunction(()=>{
+     const src=document.querySelector('[data-cue-id="AO.SM.C0082"]');
+     const response=document.querySelector('[data-cue-id="AO.SM.C0083"]');
+     const lead=src?.querySelector('[data-reference-score="AO.REF.LEADER_GOSPEL_4491.0082"][data-reference-ready="true"] svg');
+     const reply=response?.querySelector('[data-reference-score="AO.REF.GOSPEL_4491.0083"][data-reference-ready="true"] svg');
+     return !!lead&&!!reply;
+   },null,{timeout:20000});
+   assert.equal(await page.locator('[data-cue-id="AO.SM.C0082"] [data-reference-score="AO.REF.LEADER_GOSPEL_4490.0082"]').count(),0,
+    "Standard Gospel source must leave when ad libitum tone is explicitly chosen");
+   assert.equal(await page.locator('[data-cue-id="AO.SM.C0084"] .ao-proper-reference-notation').count(),0,
+    "Sample Gospel proclamation is dynamic, not automatically copied into the Ordo");
+   await page.screenshot({path:resolve(out,"ordo-gospel-alternate-"+mode+"-"+width+".png"),
+    animations:"disabled"});
+   console.log("PASS actual Ordo Gospel ad-libitum switch",JSON.stringify({width,mode,tone,
+    leader:"AO.REF.LEADER_GOSPEL_4491.0082",response:"AO.REF.GOSPEL_4491.0083"}));
    // Revisit the initial source response for the original on/off regression.
    await page.evaluate(sequence=>window.__AO_PHONE_PREVIEW.showSequence(sequence),
     entry.target.sequence);
