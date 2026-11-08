@@ -125,7 +125,14 @@ try{
     const reader=mass
      ?page.locator(scope+'[data-ao-devo-card="mass-before-'+work.sourceId+'"]')
      :page.locator(scope+'[data-ao-confession-historical-source="'+work.sourceId+'"]');
+    // Route state changes before DOM completion: await the actual displayed
+    // historical source rather than accepting a transient Confession screen.
+    await reader.waitFor({state:"visible",timeout:15000});
     assert.equal(await reader.count(),1,"Private reader must show exact source card: "+work.id);
+    if(!mass){
+      const state=await page.evaluate(()=>globalThis.AO_PRAY_V435930.state());
+      assert.equal(state.confessionStage,work.stage,"Historical private prayer must not enter the wrong Confession stage");
+    }
     const face=reader.locator('.aoTP381Reader').first();
     assert.equal(await face.getAttribute("lang"),"en","No French or Latin private witness is attested");
     assert.equal(normalize(await face.innerText()),normalize(work.text),"Full historical prayer lost or changed "+work.id);
