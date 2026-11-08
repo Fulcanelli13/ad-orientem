@@ -1,4 +1,4 @@
-import {ESSENTIAL_HOLY_CARD_IDS_V1,essentialHolyCardParts} from "./essential-holy-card-parts.js";
+import {ESSENTIAL_HOLY_CARD_IDS_V1,essentialHolyCardDisplayTitle,essentialHolyCardParts} from "./essential-holy-card-parts.js";
 
 export const CLAUDE_HOLY_CARD_FAMILY="ao-claude-holy-card-v1";
 const num=["i","ii","iii","iv","v","vi","vii","viii","ix","x","xi","xii","xiii","xiv","xv"];
@@ -16,7 +16,7 @@ const incipit=p=>{
 const safeImage=artUrl=>typeof artUrl==="string"&&(
  /^https:\/\//.test(artUrl)||/^\/assets\/[a-zA-Z0-9/_-]+\.(?:jpe?g|png|webp)$/i.test(artUrl)
  );
-export function claudeHolyCardCase({ids=ESSENTIAL_HOLY_CARD_IDS_V1,prayers,esc,title,artFor=()=>""}){
+export function claudeHolyCardCase({ids=ESSENTIAL_HOLY_CARD_IDS_V1,prayers,esc,title,locale="en",artFor=()=>""}){
  if(typeof esc!=="function")throw new TypeError("Escape function required");
  const cards=ids.filter(id=>prayers?.[id]);
  // A repeated approved image stays available in its individual prayer reader,
@@ -28,7 +28,7 @@ export function claudeHolyCardCase({ids=ESSENTIAL_HOLY_CARD_IDS_V1,prayers,esc,t
     const p=prayers[id],source=artFor(id);
     const published=safeImage(source)&&!usedImages.has(source);
     if(published)usedImages.add(source);
-    const canonicalTitle=p.title||id,firstWords=incipit(p)||canonicalTitle;
+    const canonicalTitle=essentialHolyCardDisplayTitle(id,p,locale),firstWords=incipit(p)||canonicalTitle;
     // The collection is captured immediately on route entry. An approved
     // image may still be decoding, especially below the initial viewport;
     // always preserve a readable source-derived face underneath the photo.
@@ -49,7 +49,7 @@ export function claudeHolyCard({id,p,face="en",vernacular="en",esc,flipped=false
  if(!language)return "";
  const beats=essentialHolyCardParts(id,language,p[language])||[];
  const latinBeats=bilingual?essentialHolyCardParts(id,"la",p.la)||[]:[];
- const latinIncipit=incipit(p),title=(language==="fr"||bilingual&&vernacular==="fr")?(p.titleFr||p.title):p.title;
+ const latinIncipit=incipit(p),title=essentialHolyCardDisplayTitle(id,p,vernacular==="fr"?"fr":"en");
  const paragraphs=beats.map((part,i)=>{
   const text=part.text.trim(),initial=i===0&&text?'<span class="aoClaudeHolyInitial">'+esc(text.charAt(0))+'</span>':'';
   const body=i===0?text.slice(1):text;
