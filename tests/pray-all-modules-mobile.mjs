@@ -490,6 +490,26 @@ try{
  await page.keyboard.press("ArrowLeft");
  assert.equal(await stationProgress.getAttribute("aria-valuenow"),"1","Keyboard previous station failed");
 
+ // September 15's full Latin poem has its own 20-tercet folio at the end;
+ // it must never change the 13 traditional between-station excerpts.
+ await page.locator("#aoPray435930.open .aoP435930StationRail [data-ao-devo-chapter='13']").click();
+ assert.equal(await stationProgress.getAttribute("aria-valuenow"),"14","Full Stabat folio requires the final Station");
+ const fullStabat=page.locator("#aoPray435930.open [data-ao-stabat-full-september]");
+ assert.equal(await fullStabat.count(),1,"Missing complete September Stabat after the Fourteenth Station");
+ await fullStabat.locator(":scope > summary").click();
+ assert.equal(await fullStabat.locator(".aoP435930StationStabatCompleteVerse").count(),20,
+  "Full September Stabat must have exactly twenty Latin tercets");
+ assert.match(await fullStabat.locator(".aoP435930StationStabatCompleteVerse").nth(17).innerText(),/Flammis ne urar/);
+ assert.match(await fullStabat.locator(".aoP435930StationStabatCompleteVerse").nth(18).innerText(),/Christe, cum sit hinc exire/);
+ assert.match(await fullStabat.locator(".aoP435930StationStabatCompleteVerse").nth(19).innerText(),/Quando corpus morietur/);
+ assert.ok((await fullStabat.locator('a[href*="ordo.fsspx.org"]').count())===1,"Source link missing");
+ for(const width of [320,390]){
+  await page.setViewportSize({width,height:844});
+  const geometry=await page.evaluate(()=>({client:document.documentElement.clientWidth,scroll:document.documentElement.scrollWidth}));
+  assert.ok(geometry.scroll<=geometry.client+2,width+"px complete Stabat folio causes horizontal overflow");
+ }
+
+
  for(const [route,owner,nextTitle] of [
   ["pray.penitential_psalms","penitential","penitential-1"],
   ["pray.forty_hours","fortyHours","forty-1"]
