@@ -4,10 +4,12 @@ import {HOME_DYK_GLOSSARY_IDS,homeDidYouKnowSelect,homeDidYouKnowMarkup,hydrateH
 
 const document=JSON.parse(readFileSync(new URL("../data/glossary/concepts-151-300.v1.json",import.meta.url),"utf8"));
 assert.equal(document.schema,"GLOSSARY_CONCEPTS_SOT_V1");
-assert.equal(HOME_DYK_GLOSSARY_IDS.length,6);
+assert.equal(HOME_DYK_GLOSSARY_IDS.length,24);
 const chosen=new Set();
-for(let day=1;day<=31;day++){
-  const date="2026-10-"+String(day).padStart(2,"0");
+const dayBase=Math.floor(Date.UTC(2026,9,1)/86400000);
+const cycleStart=dayBase-(dayBase%HOME_DYK_GLOSSARY_IDS.length);
+for(let day=0;day<HOME_DYK_GLOSSARY_IDS.length;day++){
+  const date=new Date((cycleStart+day)*86400000).toISOString().slice(0,10);
   const entry=homeDidYouKnowSelect(document.entries,date);
   assert.ok(entry, "source-backed Glossary discovery missing "+date);
   assert.equal(entry.definition_status,"SOURCE_BACKED");
@@ -17,7 +19,7 @@ for(let day=1;day<=31;day++){
   assert.ok(entry.explanation.en&&entry.explanation.fr,"Bilingual observation must exist");
   chosen.add(entry.id);
 }
-assert.equal(chosen.size,6,"Date-based preview should reach all six source-backed Glossary entries");
+assert.equal(chosen.size,24,"A full rotation must reach all 24 source-backed Glossary entries without repeats");
 assert.deepEqual(Object.keys(HOME_DYK_GLOSSARY_FACTS).sort(),[...HOME_DYK_GLOSSARY_IDS].sort(),
   "Every released Home preview needs explicit edited fact copy");
 for(const id of HOME_DYK_GLOSSARY_IDS){
@@ -87,4 +89,4 @@ for(const file of ["today-h4-styles.js","today-v2-styles.js"]){
   assert.ok(css.includes("aoHomeDYK [data-home-dyk-fact]{display:block;font:500 17px"),"Readable fact hierarchy missing in "+file);
   assert.ok(css.includes("color:var(--ao-text-primary"),"Fact must use foreground contrast in "+file);
 }
-console.log("PASS Home Did You Know: six bilingual observations, not definitions, prominent fact, exact Glossary route");
+console.log("PASS Home Did You Know: 24 bilingual source-backed discoveries, complete no-repeat cycle, foreground fact and exact Glossary route");
