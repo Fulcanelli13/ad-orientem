@@ -234,7 +234,7 @@ export function select1962CommemorationsForMassForm({
     String(data.sourcePath)==="Commune/C10t"&&
     Number(only.rank)===4&&!only.privileged&&
     /^sancti:[0-9]{2}-[0-9]{2}[a-z]*:4:/i.test(commId)&&
-    /^Sancti\\/[0-9]{2}-[0-9]{2}[a-z]*$/i.test(String(only.path??""));
+    /^Sancti\/[0-9]{2}-[0-9]{2}[a-z]*$/i.test(String(only.path??""));
   const ordinaryFourthClassSaint=!nativityOctavePlaceholder&&!sunday&&
     !only.privileged&&
     Number(only.rank)===4&&/^sancti:[0-9]{2}-[0-9]{2}[a-z]*:4:/i.test(commId)&&
