@@ -83,15 +83,15 @@ try{
     "Sunday requires precisely one Collect, Secret, Postcommunion");
    assert.ok(source.slots.en.ready&&source.slots.fr.ready,
     "Both reader languages must be sourced");
-   assert.match(source.chants.introit,/dicit\s+domin|dicit\s+dominus/i,
+   assert.match(source.chants.introit,/dicit\s+d[oó]minus/iu,
     "Resumed Sunday must sing the 23rd-after-Pentecost Dicit Dominus Introit");
    assert.match(source.chants.gradual,/liberasti|liber[aá]sti/i,
     "Resumed Sunday must sing the 23rd-after-Pentecost Liberasti gradual");
-   assert.match(source.chants.offertory,/de\s+profundis/i,
+   assert.match(source.chants.offertory,/de\s+prof[uú]ndis/iu,
     "Resumed Sunday must sing the 23rd-after-Pentecost De profundis Offertory");
-   assert.match(source.chants.communion,/amen\s+dico/i,
+   assert.match(source.chants.communion,/amen[,]?\s+dico/iu,
     "Resumed Sunday must sing the 23rd-after-Pentecost Amen dico Communion");
-   assert.match(source.readings.epistle,/indu[ií]te|induite/i,"Col 3:12-17 source missing");
+   assert.match(source.readings.epistle,/ind[uú]ite/iu,"Col 3:12-17 source missing");
    assert.match(source.readings.gospel,/semin[aá]vit|ziz[aá]nia/i,
     "Mt 13:24-30 (wheat and tares) Gospel missing");
    assert.match(source.preface,/trinitat/i,"Sunday Trinity Preface missing");
