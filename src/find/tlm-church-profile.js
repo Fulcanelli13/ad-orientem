@@ -5,6 +5,7 @@
 import {massInstitutionEmblem} from "./institution-emblems.js";
 import {eligibleRenderedDirectoryImage,renderDirectoryGallery,renderDirectoryIdentityFallback} from "./directory-card.js";
 import {tlmApproximateMapNotice} from "./tlm-approximate-map-disclosure.js";
+import {upcomingPrintedMasses} from "./tlm-dated-mass-programme.js";
 const A=v=>Array.isArray(v)?v:[];
 const T=v=>String(v??"").trim();
 const E=v=>T(v).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
@@ -203,7 +204,10 @@ export function renderTlmChurchProfile(item,language="en"){
  }
  html+='</section><section class="aoTlmProfilePanel"><h3>'+E(L(language,"Mass programme","Programme des messes"))+'</h3>';
  const schedules=v.ministries.flatMap(m=>m.schedules.map(s=>({m,s})));
- if(!schedules.length)html+='<p class="aoTlmProfileCaution">'+E(L(language,"No currently publishable Mass times in this record. Consult the original directory or community source.","Aucun horaire de messe publiable dans cette fiche. Consultez la source originale de l’annuaire ou de la communauté."))+'</p>';
+ const datedProgramme=item?.dated_mass_programme??null;
+ if(!schedules.length)html+='<p class="aoTlmProfileCaution">'+E(datedProgramme?
+  L(language,"No verified weekly timetable. Only explicitly printed dates are listed below.","Aucun horaire hebdomadaire vérifié. Seules les dates explicitement imprimées figurent ci-dessous."):
+  L(language,"No currently publishable Mass times in this record. Consult the original directory or community source.","Aucun horaire de messe publiable dans cette fiche. Consultez la source originale de l’annuaire ou de la communauté."))+'</p>';
  for(const {m,s} of schedules){
   const raw=T(s?.payload?.raw);
   const type=T(s?.mass_type)&&T(s.mass_type)!=="UNKNOWN"?human(s.mass_type):L(language,"Mass (type unspecified)","Messe (type non précisé)");
@@ -219,6 +223,33 @@ export function renderTlmChurchProfile(item,language="en"){
    (edition.length?'<span class="aoTlmProfileScheduleEdition">'+E(edition.join(" · "))+' · '+E(L(language,"specific celebration","célébration précise"))+'</span>':'')+
    '<strong>'+E(raw||L(language,"Refer to official timetable","Voir les horaires officiels"))+'</strong></div><span>'+
    E([checked?L(language,"Checked","Vérifié")+" "+checked:null,state?human(state):null].filter(Boolean).join(" · "))+'</span></article>';
+ }
+ // Dated first-party bulletin: display ONLY explicit dates that have not
+ // passed in the CHAPEL's local civil calendar. No RRULE or implied Sundays.
+ if(datedProgramme){
+  const dates=upcomingPrintedMasses(datedProgramme);
+  html+='<div class="aoTlmProfileDatedProgramme" data-cl27-dated-programme="'+E(datedProgramme.cl2_anchor)+'">'+
+    '<h4>'+E(L(language,"Masses explicitly listed in the 2026 calendar","Messes explicitement datées dans le calendrier 2026"))+'</h4>';
+  if(!dates.length)html+='<p>'+E(L(language,
+    "All dates in this printed 2026 calendar have passed; no future Mass is established.",
+    "Toutes les dates de ce calendrier imprimé de 2026 sont passées ; aucune messe future n’est établie."))+'</p>';
+  for(const e of dates){
+   const localDay=new Intl.DateTimeFormat(language==="fr"?"fr-FR":"en-GB",{
+     timeZone:"UTC",weekday:"long",day:"numeric",month:"long",year:"numeric"
+   }).format(new Date(e.local_date+"T00:00:00Z"));
+   html+='<article class="aoTlmProfileSchedule" data-cl27-dated-mass="'+E(e.local_date)+'">'+
+    '<div><small>'+E(localDay)+' · '+E(datedProgramme.timezone)+'</small>'+
+    '<strong>'+E(e.local_time)+' · '+E(L(language,"Sung Mass","Messe chantée"))+'</strong>'+
+    '<span>'+E(language==="fr"?e.source_programme_name_fr:e.source_programme_name_en)+'</span></div></article>';
+  }
+  html+='<p class="aoTlmProfileCaution">'+E(L(language,
+   "These dates appear in an official printed 2026 programme; they are not real-time confirmations. Please check for later changes or cancellation before travelling. No Mass on intervening Sundays is implied.",
+   "Ces dates figurent dans le programme officiel imprimé de 2026 ; elles ne confirment pas une célébration en temps réel. Vérifiez les éventuels changements ou annulations avant de vous déplacer. Aucune messe n’est sous-entendue les dimanches intermédiaires."))+'</p>'+
+   '<div class="aoTlmProfileActions">'+link(datedProgramme.dated_bulletin_url,L(language,
+    "Original dated 2026 Mass programme","Programme original des messes datées de 2026"))+
+    link(datedProgramme.first_party_site_url,L(language,
+    "Current chapel page · check changes","Page actuelle de la chapelle · vérifier les changements"))+
+   '</div></div>';
  }
  html+='<p class="aoTlmProfileCaution">'+E(L(language,"Schedules are source assertions, not live availability. Confirm feast days, exceptions and any changes before travelling.",
     "Les horaires proviennent des sources, ce ne sont pas des disponibilités en temps réel. Vérifiez les fêtes, exceptions et changements avant le déplacement."))+'</p></section>';
@@ -262,6 +293,10 @@ export function renderTlmChurchProfile(item,language="en"){
  return html+'</section></div>';
 }
 export const TLM_CHURCH_PROFILE_STYLE=String.raw`
+.aoTlmProfileDatedProgramme{padding:12px 13px;margin:13px 0 9px;border:1px solid #d0b77a40;border-radius:12px;background:#18272f}
+.aoTlmProfileDatedProgramme h4{margin:0 0 11px;color:#f0dcba;font:600 14px/1.35 var(--ao-font-ui,system-ui,sans-serif)}
+.aoTlmProfileDatedProgramme .aoTlmProfileSchedule{margin:8px 0}
+
 .aoTlmChurchProfile{width:min(100%,780px);max-width:780px;max-height:min(92dvh,960px);overflow-y:auto;overscroll-behavior:contain;padding:16px 18px 28px;background:linear-gradient(150deg,#182633,#0b131d 60%);border:1px solid #d0b77a44;border-radius:19px}
 .aoTlmProfileHeading{display:flex;justify-content:space-between;gap:12px;align-items:start}
 .aoTlmProfileOrderSymbolNote{display:block;margin-top:4px;font:400 11px/1.35 var(--ao-font-ui,system-ui,sans-serif);color:#b0bfc4}
