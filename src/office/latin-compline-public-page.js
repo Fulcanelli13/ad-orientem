@@ -25,6 +25,10 @@ export function mountPublishedLatinCompline(root,{
    "2026-11-28":"Saturday, 28 November 2026",
    "2026-11-29":"Sunday, 29 November 2026",
    "2026-11-30":"St Andrew the Apostle, 30 November 2026",
+   "2026-12-01":"Tuesday, 1 December 2026 · Advent I",
+   "2026-12-02":"St Bibiana, 2 December 2026",
+   "2026-12-03":"St Francis Xavier, 3 December 2026",
+   "2026-12-04":"St Peter Chrysologus, 4 December 2026",
    "2026-12-05":"Saturday, 5 December 2026"
   }[date]??"Date not certified"));
  const contextLabel=create(d,"label",null,"Recitation: ");
