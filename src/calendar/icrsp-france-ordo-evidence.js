@@ -34,6 +34,23 @@ const records=Object.freeze({
   }),
   observances:Object.freeze(["FIRST_SATURDAY"]),
   sourceOrdo:sourceDate("2026-11-07"),sourceTexts:sourceTexts("2026-11-07")
+ }),
+ "2026-11-08":Object.freeze({
+  date:"2026-11-08",scope:SOURCE_SCOPE,status:"SOURCE_ATTESTED",
+  confidence:"DIRECT_INSTITUTE_ORDO",
+  office:Object.freeze({name:{en:"Fifth Sunday after Epiphany (resumed)",
+   fr:"Cinquième dimanche après l’Épiphanie repris"},class:2,colour:"GREEN"}),
+  mass:Object.freeze({
+   kind:"SUNDAY",title:{en:"Resumed Fifth Sunday after Epiphany",
+    fr:"Cinquième dimanche après l’Épiphanie repris"},
+   introit:"Dicit Dominus",class:2,colour:"GREEN",gloria:true,credo:true,
+   prayerForPope:true,preface:{en:"Holy Trinity",fr:"Très Sainte Trinité"},
+   epistle:"Colossians 3:12–17",gospel:"Matthew 13:24–30",
+   selectionPermission:"INSTITUTE_PUBLIC_ORIGINAL_ORDO_ONLY",
+   principalId:"tempora:Epi5-0:2:g",properPath:"Tempora/Epi5-0"
+  }),
+  observances:Object.freeze([]),
+  sourceOrdo:sourceDate("2026-11-08"),sourceTexts:sourceTexts("2026-11-08")
  })
 });
 export function icrspFranceOrdoForDate(date){
@@ -62,8 +79,10 @@ export function renderIcrspFranceHomeOrdo(date,language="en"){
  const office=record.office,mass=record.mass;
  const classLabel=x=>fr?x+"e classe":"Class "+x;
  const items=[
-  t("Mass in white","Messe en blanc")+" · "+classLabel(mass.class),
-  mass.introit, "Gloria",t("No Credo","Sans Credo"),
+  t(mass.colour==="GREEN"?"Mass in green":"Mass in white",
+    mass.colour==="GREEN"?"Messe en vert":"Messe en blanc")+" · "+classLabel(mass.class),
+  mass.introit, mass.gloria?"Gloria":t("No Gloria","Sans Gloria"),
+  mass.credo?"Credo":t("No Credo","Sans Credo"),
   t("Prayer for the Pope","Oraison pour le Pape"),
   t("Preface of the ","Préface du ")+mass.preface[lng]
  ].join(" · ");
@@ -79,6 +98,12 @@ export function renderIcrspFranceHomeOrdo(date,language="en"){
   '<strong>'+esc(mass.title[lng])+'</strong>'+
   '<p>'+esc(notes.join(" · "))+'</p><p>'+esc(items)+'</p>'+readings+
   '<a href="'+esc(record.sourceOrdo)+'" target="_blank" rel="noopener noreferrer">'+esc(t("Official ICRSP ordo","Ordo officiel ICRSP"))+'</a>'+
-  '<button type="button" data-home-icrsp-votive="VOTIVE">'+esc((record.date==="2026-11-06"?t("Use Sacred Heart votive · Low Mass","Choisir la messe votive du Sacré-Cœur · messe basse"):t("Use Immaculate Heart votive · Low Mass","Choisir la messe votive du Cœur Immaculé · messe basse")))+' ›</button>'+
+  (mass.kind==="SUNDAY"
+   ?'<button type="button" data-home-icrsp-sunday="SUNDAY">'+
+     esc(t("Use ICRSP Sunday Mass · Low Mass","Choisir la messe dominicale ICRSP · messe basse"))+' ›</button>'
+   :'<button type="button" data-home-icrsp-votive="VOTIVE">'+
+     esc(record.date==="2026-11-06"?
+      t("Use Sacred Heart votive · Low Mass","Choisir la messe votive du Sacré-Cœur · messe basse"):
+      t("Use Immaculate Heart votive · Low Mass","Choisir la messe votive du Cœur Immaculé · messe basse"))+' ›</button>')+
   '<small>'+esc(t("Institute-specific record. Your actual Mass must be selected before opening the reader.","Ordo propre à l’Institut. Le formulaire réellement célébré doit être sélectionné avant d’ouvrir le lecteur."))+'</small></section>';
 }
