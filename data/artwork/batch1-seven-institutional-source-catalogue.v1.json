@@ -1,0 +1,95 @@
+{
+  "schema": "AO_SACRED_ART_BATCH1_SEVEN_INSTITUTIONAL_SOURCE_CATALOGUE_V1",
+  "curated_on": "2026-11-08",
+  "scope": "Seven selected Prayer paintings, museum identity support independent of photo permission",
+  "previous_manifest": "data/artwork/batch1-seven-photos-acquisition.v1.json",
+  "position_total": 26,
+  "catalogue": [
+    {
+      "id": "artwork-pending:03",
+      "museum": "Museo de Huesca",
+      "institutional_object_id": "00029",
+      "source": "https://ceres.mcu.es/pages/ResultSearch?MuseumsRolSearch=1&MuseumsSearch=&hipertextSearch=1&listaMuseos=null&search=advanced&simpleSearch=0&txtSimpleSearch=Lienzo+%28Material%29",
+      "evidence": "Spanish national museum catalogue lists Museo de Huesca inventory 00029, CEREZO Mateo, La Venida del Espíritu Santo",
+      "attribution_note": "Historic museum catalogue describes original or school of Cerezo; newer database maker 'CEREZO, Mateo', avoid treating attribution as uncontroversial",
+      "source_photo_quality_precheck": "Selected Commons file reported 567x479 pixels",
+      "photo_rights": "NOT_CERTIFIED_FOR_DISTRIBUTION"
+    },
+    {
+      "id": "artwork-pending:04",
+      "museum": "St. Pauluskerk, Antwerp",
+      "institutional_object_id": "DONNET PA.029.E0006 / Sirjacobs E6",
+      "source": "https://spk.kunstgeschiedenis-kerken-antwerpen.be/hestia-front/sint-pauluskerk/rozenkransmysteries/de-doodstrijd/",
+      "supporting_source": "https://www.sintpaulusantwerpen.be/en/art-history/art-collection/15-mysteries/",
+      "evidence": "First Sorrowful Mystery: Agony in the Garden / Gethsemane by David Teniers I. Commons media metadata English label 'The Death of Christ' is a mismatched translation; official church scene identity is Agony",
+      "source_photo_quality_precheck": "Selected Commons original reportedly 1333x1799 pixels",
+      "photo_rights": "PRIVATE_RESEARCH_ONLY"
+    },
+    {
+      "id": "artwork-pending:05",
+      "museum": "Royal Museums of Fine Arts of Belgium, Brussels",
+      "institutional_object_id": "25",
+      "source": "https://fine-arts-museum.be/fr/la-collection/philippe-de-champaigne-la-presentation-au-temple?artist=de-champaigne-philippe&string=Champaigne",
+      "evidence": "1648 Brussels presentation painting, distinct from 1628 Dijon CA104",
+      "false_merge_prohibited": {
+        "museum": "Musée des Beaux-Arts de Dijon",
+        "inventory": "CA 104",
+        "source": "https://musees.dijon.fr/artworks/la-presentation-au-temple/"
+      },
+      "source_photo_quality_precheck": "Selected Commons original reportedly 2994x3906px, Rvalette CC BY-SA 4.0",
+      "photo_rights": "CC_BY_SA_REVIEW_REQUIRED_UNHANDPICKED"
+    },
+    {
+      "id": "artwork-pending:06",
+      "museum": "National Gallery, London",
+      "institutional_object_id": "NG788.9",
+      "source": "https://www.nationalgallery.org.uk/paintings/carlo-crivelli-saint-thomas-aquinas",
+      "evidence": "Demidoff Altarpiece Crivelli Saint Thomas Aquinas, 1476",
+      "institutional_photo_license": "https://www.nationalgallery.org.uk/documentation/ngacuk/licences",
+      "source_photo_quality_precheck": "Commons selected original reportedly 2813x4226px",
+      "photo_rights": "OFFICIAL_MUSEUM_CC_BY_NC_ND_NOT_COMMERCIALLY_OR_DERIVATIVELY_USABLE_UNDER_ITS_TERMS"
+    },
+    {
+      "id": "artwork-pending:07",
+      "museum": "St Bavo Cathedral, Ghent",
+      "institutional_object_id": "Ghent Altarpiece—Adoration panel (no independent panel accession)",
+      "source": "https://www.getty.edu/news/getty-royal-institute-announce-enhancements-to-ghent-altarpiece-website/",
+      "evidence": "Restoration imaging held by KIK-IRPA; no selected file specified in Prayer master",
+      "source_photo_quality_precheck": "NO_PHOTO_SELECTED",
+      "photo_rights": "NO_CLEARED_PHOTO_SOURCE"
+    },
+    {
+      "id": "artwork-pending:08",
+      "museum": "Santa Maria della Concezione dei Cappuccini, Rome",
+      "institutional_object_id": "Original c. 1635/1636, no museum accession established",
+      "source": "https://commons.wikimedia.org/wiki/File:GuidoReni_MichaelDefeatsSatan.jpg",
+      "evidence": "Original Guido Reni location in Roman Capuchin church",
+      "false_merge_prohibited": {
+        "museum": "Nationalmuseum, Stockholm",
+        "inventory": "NMDrh 644",
+        "reason": "Institutional record expressly calls it a copy after Reni",
+        "source": "https://collection.nationalmuseum.se/en/collection/item/158078/"
+      },
+      "source_photo_quality_precheck": "Selected Commons original reportedly 1657x2441px",
+      "photo_rights": "COMMONS_PD_ART_CLAIM_NOT_OWNER_APPROVAL"
+    },
+    {
+      "id": "artwork-pending:09",
+      "museum": "National Gallery of Ireland",
+      "institutional_object_id": "NGI.72",
+      "source": "https://onlinecollection.nationalgallery.ie/objects/10345/the-miracle-of-the-loaves-and-fishes",
+      "evidence": "Giovanni Lanfranco The Miracle of the Loaves and Fishes, 1624–1625, NGI.72",
+      "institutional_license_policy": "https://www.nationalgallery.ie/explore-and-learn/creative-commons-download-artwork",
+      "official_download_link": "https://nationalgalleryimages.ie/asset/?download=true&external_id=NGI.72",
+      "source_photo_quality_precheck": "Selected Commons WGA original 1285x683px fails 1200px short-side target",
+      "photo_rights": "NGI_OFFERS_CC_BY_4_FOR_MARKED_OBJECT_PHOTOS_BUT_THIS_OBJECT_PHOTO_LICENSE_UNCONFIRMED"
+    }
+  ],
+  "constraints": [
+    "Institutional artwork identity never implies a specific photo's commercial rights",
+    "No original/replica substitution",
+    "Do not use image attached to noncommercial National Gallery rights claim in paid app",
+    "Hold unhandpicked Commons photos from automatic admission",
+    "No image publication/asset changes"
+  ]
+}
