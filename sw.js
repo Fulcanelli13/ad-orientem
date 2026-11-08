@@ -1,3 +1,7 @@
+/* 2026-11-08 Atlas CL27 five exact-site contact panels and new optional manifest.
+ * Worker-byte change makes installed GitHub Pages readers discover the next release;
+ * no Mass schedule, map pin or ecclesial assertion is introduced.
+ */
 /* 2026-11-06 source-verified Low Mass release: Sacred Heart votive + Leonine post-Mass prayers.
  * Bump the worker script bytes so an installed GitHub Pages client checks the new release.
  */
