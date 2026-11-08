@@ -40,6 +40,8 @@ on:
       - 'tests/reader-preface-1961-spi-ictus-source-photo-inspection.mjs'
       - 'tests/reader-ordo-inline-source-notation-phone.mjs'
       - 'src/mass/reader-preface-celebrant-inline-reference.js'
+      - 'src/mass/reader-gospel-canon-pax-leader-reference.js'
+      - 'tests/reader-ordo-gospel-canon-pax-five-leaders.mjs'
       - 'tests/reader-ordo-preface-eight-celebrant-reference.mjs'
       - 'tests/fixtures/reader-phone-harness.html'
       - 'data/mass/preface-1961-solemnior-spi-ictus-print-inspection.v1.json'
@@ -145,6 +147,8 @@ jobs:
           node --check tests/reader-preface-1961-spi-ictus-source-photo-inspection.mjs
           node --check tests/reader-ordo-inline-source-notation-phone.mjs
           node --check src/mass/reader-preface-celebrant-inline-reference.js
+          node --check src/mass/reader-gospel-canon-pax-leader-reference.js
+          node --check tests/reader-ordo-gospel-canon-pax-five-leaders.mjs
           node --check tests/reader-ordo-preface-eight-celebrant-reference.mjs
           node --check tests/reader-participation-28-research-inventory.mjs
           node --check tests/reader-participation-28-research-phone.mjs
@@ -204,6 +208,7 @@ jobs:
           node scripts/mass/audit-24-participation-source-phrases.mjs
           node tests/reader-participation-reference-scores.mjs
           node tests/reader-ordo-preface-eight-celebrant-reference.mjs
+          node tests/reader-ordo-gospel-canon-pax-five-leaders.mjs
           node tests/reader-participation-1961-printed-plates.mjs
           node tests/reader-preface-1961-two-book-passage-collation.mjs
           node tests/reader-preface-solemnior-1961-four-reference-scores.mjs
