@@ -79,6 +79,6 @@ export const SACRED_ART_SAINT_SCOPE_EXCEPTIONS_V1=Object.freeze([
 const byId=new Map(SACRED_ART_SAINT_SCOPE_EXCEPTIONS_V1.map(row=>[row.workGroupId,row]));
 export function lexicalSaintScopeException(work,tag){
  const rule=byId.get(work?.workGroupId);
- return rule?.title===work?.title&&rule?.artist===work?.artist&&rule.excludedTag===tag
+ return rule && rule.title===work?.title && rule.artist===work?.artist && rule.excludedTag===tag
   ?rule:null;
 }
