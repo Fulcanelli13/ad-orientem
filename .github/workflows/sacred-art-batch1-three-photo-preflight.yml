@@ -1,0 +1,26 @@
+name: Sacred Art Batch 1 — three photographic release preflight (no publication)
+on:
+  push:
+    branches:
+      - research/sacred-art-batch1-three-photo-release-package-20261108
+    paths:
+      - 'data/artwork/batch1-three-photo-release-preflight.v1.json'
+      - 'tests/sacred-art-batch1-three-photo-release-preflight.mjs'
+      - '.github/workflows/sacred-art-batch1-three-photo-preflight.yml'
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  verified-but-not-approved:
+    name: Verify exact WebP bytes, all 18 Prayer destinations and no public release
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify three protected source-pinned photographs and zero app publication
+        run: node tests/sacred-art-batch1-three-photo-release-preflight.mjs
+      - name: Recheck photo specific owner decision validator
+        run: node tests/sacred-art-batch1-photo-release-decisions.mjs
