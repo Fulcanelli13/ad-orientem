@@ -1,3 +1,7 @@
+/* 2026-11-08 Païta exact first-party 2026 dated Mass programme (22 Nov/20 Dec).
+ * Preserve current Ordo A/C release and refresh installed GitHub Pages clients.
+ * No recurrence, Una Cum, GPS or inferred Missal assertion.
+ */
 /* 2026-11-08 CL27 source-contact expansion to 16 named church profiles.
  * Installed GitHub Pages clients must load the updated exact-CL2 contact manifest;
  * no new current Mass, Una Cum, ownership or map pin claims.
