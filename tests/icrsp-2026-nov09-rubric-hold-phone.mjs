@@ -55,15 +55,29 @@ try{
      document.querySelector(".aoH7HomeView [data-home-icrsp-intake-hold='2026-11-09']");
    },DAY,{timeout:60000});
    const home=page.locator(".homeScreen .aoH7HomeView");
+   const uiLanguage=await page.locator(".homeScreen").getAttribute("data-home-language");
+   const uiFr=uiLanguage==="fr";
+   if(lang==="fr"){
+    // Browser locale alone must not be mistaken for the actual Home
+    // language setting. Verify the real French renderer independently.
+    const french=await page.evaluate(async()=>{
+     const {renderIcrspFranceHomeOrdo}=await import(
+      "/src/calendar/icrsp-france-ordo-evidence.js");
+     return renderIcrspFranceHomeOrdo("2026-11-09","fr");
+    });
+    assert.match(french,/data-mass-1962-rubric-conflict="RGMR_434_C"/);
+    assert.match(french,/une seule oraison supplémentaire distincte/);
+   }
+
    const warning=home.locator('[data-home-icrsp-intake-hold="2026-11-09"]');
    assert.equal(await warning.count(),1);
    assert.equal(await warning.getAttribute("data-mass-source-status"),"UNVERIFIED");
    assert.equal(await warning.locator('[data-mass-1962-rubric-conflict="RGMR_434_C"]').count(),1);
    const words=await warning.innerText();
-   assert.match(words,lang==="en"?/St Theodore|saint Theodore/i:/saint Théodore/i);
-   assert.match(words,lang==="en"?/Prayer for the Pope/:/oraison pour le Pape/i);
-   assert.match(words,lang==="en"?/only one separate additional oration/:/une seule oraison supplémentaire distincte/);
-   assert.match(words,lang==="en"?/not yet verified/:/non encore vérifiée/);
+   assert.match(words,uiFr?/saint Théodore/i:/St Theodore|saint Theodore/i);
+   assert.match(words,uiFr?/oraison pour le Pape/i:/Prayer for the Pope/);
+   assert.match(words,uiFr?/une seule oraison supplémentaire distincte/:/only one separate additional oration/);
+   assert.match(words,uiFr?/non encore vérifiée/:/not yet verified/);
    assert.equal(await home.locator('[data-home-icrsp-sunday],[data-home-icrsp-votive]').count(),0);
    const source=await page.evaluate(async()=>{
     const r=await globalThis.AO_RUNTIME_V8.resolver.resolveDay("2026-11-09");
@@ -94,7 +108,7 @@ try{
    assert.equal(await doorWarning.count(),1);
    assert.equal(await doorWarning.locator('[data-mass-1962-rubric-conflict="RGMR_434_C"]').count(),1);
    assert.equal(await door.locator('[data-home-icrsp-sunday],[data-home-icrsp-votive]').count(),0);
-   assert.match(await door.innerText(),lang==="en"?/Begin general-calendar Mass/:/Commencer la messe du calendrier général/);
+   assert.match(await door.innerText(),uiFr?/Commencer la messe du calendrier général/:/Begin general-calendar Mass/);
    const assembled=await page.evaluate(async()=>{
     const r=await globalThis.AO_R17_BROWSER_ENTRY.prepare();
     const mass=r?.session?.resolvedMass,p=mass?.proper?.data??mass?.proper;
@@ -111,7 +125,7 @@ try{
      "Papal oration cannot silently appear in a general Roman Mass");
    assert.deepEqual(errors,[]);
    console.log("ICRSP_NOV09_1962_RUBRIC_HOLD_PHONE_PASS "+JSON.stringify({
-    language:lang,date:DAY,sourcePath:source.source,prepared:assembled.sourcePath,
+    requestedLocale:lang,visibleHomeLanguage:uiLanguage,date:DAY,sourcePath:source.source,prepared:assembled.sourcePath,
     generalMassReady:true,phoneWarnsBothPlaces:true,
     listedGroups:3,ordinary1962Limit:2,papalNotInvented:true}));
   }finally{await page.close();}
