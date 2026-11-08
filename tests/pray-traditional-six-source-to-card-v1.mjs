@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {PRAY_CANONICAL_DATA_V435930} from "../src/pray/canonical-data.js";
+import {RED_BOOKLET_2013_VARIANT_WITNESSES_V1 as BOOKLET_VARIANTS} from "../src/pray/red-booklet-2013-variant-witnesses.v1.js";
 import {prayerSourceFacesV1} from "../src/pray/prayer-source-faces.v1.js";
 import {SACRED_HEART_DEVOTIONS_V382,COMMUNION_TREASURY_V383,MORNING_PRAYER_SEQUENCE_V381,EVENING_PRAYER_SEQUENCE_V381} from "../src/pray/traditional-pray-data.js";
 import {B01_FULL_GRACE_1888,B01_SHORT_GRACE_CATECHISM,B01_PIUS_X_1905_CONTRITION,B01_FRENCH_HOPE_TRADITION} from "../src/pray/icksp-batch01-public.v1.js";
@@ -39,6 +40,7 @@ const env={
  traditionalContextGuide:()=>"",
  guidedCardFrame:({id,title,body})=>'<section data-guided-card="'+esc(id)+'"><h2>'+esc(title)+'</h2>'+body+'</section>',
  clampPrayerCardStep,NIGHTLY_EXAMEN_CARDS,
+ BOOKLET_VARIANTS,
  B01_FULL_GRACE_1888,B01_SHORT_GRACE_CATECHISM,B01_PIUS_X_1905_CONTRITION,B01_FRENCH_HOPE_TRADITION,
  GOLDEN_ARROW_REPARATION_V1,SACRED_HEART_DEVOTIONS_V382,COMMUNION_TREASURY_V383,
  communionPurposePicker:()=>'<section data-source-purpose-control></section>'
@@ -173,6 +175,15 @@ for(const lang of ["en","fr"]){
    if(lang!==sourceLanguage)assert.ok(html.includes("data-tp381-source-language-fallback"),
     "French UI must disclose unavailable translation for "+id);
    if(rec.la)visible(html,rec.la,"Communion Latin "+id);
+   if(phase==="after"){
+    for(const source of BOOKLET_VARIANTS.heartAspirations.englishLines){
+     visible(html,source,"Booklet Sacred Heart aspiration "+lang);
+    }
+    assert.ok(html.includes("data-ao-booklet-sacred-heart-aspirations"),
+     "Short aspirations must stay supplemental rather than become extra Communion cards");
+    if(lang==="fr")assert.ok(html.includes("data-ao-booklet-original-language"),
+     "French interface must identify the English-only aspirational source");
+   }else assert.ok(!html.includes("data-ao-booklet-sacred-heart-aspirations"));
    checks++;
   }
  }
