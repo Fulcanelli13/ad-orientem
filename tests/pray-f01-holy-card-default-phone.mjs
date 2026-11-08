@@ -4,7 +4,7 @@ import {readFile,mkdir} from "node:fs/promises";
 import {resolve,extname,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
-import {ESSENTIAL_HOLY_CARD_IDS_V1} from "../src/pray/essential-holy-card-parts.js";
+import {ESSENTIAL_HOLY_CARD_IDS_V1,ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2} from "../src/pray/essential-holy-card-parts.js";
 import {libraryVariantFamily} from "../src/pray/library-variant-groups.js";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
@@ -42,13 +42,13 @@ try{
    await f01Door.click();
    const fan=page.locator(base+" [data-ao-pray-essential-landing] .aoClaudeHolyFan");
    await fan.waitFor({state:"visible",timeout:12000});
-   assert.equal(await fan.locator("button").count(),32);
+   assert.equal(await fan.locator("button").count(),ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2.length);
    const collectionPlates=await fan.locator(".aoClaudeHolyCasePlate").evaluateAll(plates=>plates.map(el=>({
      image:!!el.querySelector("img"),
      words:!!el.querySelector(".aoClaudeHolyTypePlate b"),
      background:getComputedStyle(el).backgroundColor
    })));
-   assert.equal(collectionPlates.length,32);
+   assert.equal(collectionPlates.length,ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2.length);
    assert.ok(collectionPlates.every(p=>p.words),
      "Every F01 gallery slot must retain a readable canonical typographic plate, including pending image decode");
    assert.ok(collectionPlates.some(p=>!p.image&&p.words),
@@ -60,7 +60,7 @@ try{
        fallback:getComputedStyle(el.querySelector(".aoClaudeHolyTypePlate")).position,
        visible:getComputedStyle(el.querySelector(".aoClaudeHolyTypePlate")).display
      })));
-   assert.ok(imagePlateFallback.length>0,"At least one released F01 artwork is available");
+   // Cleared artwork may not belong to this smaller editorial shelf; text plates must remain readable.
    assert.ok(imagePlateFallback.every(x=>x.title&&x.image?.startsWith("/")&&x.fallback==="absolute"&&x.visible==="flex"),
      "Published collection photos must expose a nonblack canonical title while decoding: "+JSON.stringify(imagePlateFallback));
 
@@ -76,6 +76,10 @@ try{
    await page.screenshot({path:resolve(output,"collection-"+width+".png"),animations:"disabled"});
    for(const [index,id] of ESSENTIAL_HOLY_CARD_IDS_V1.entries()){
     assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.library",{returnContext:null})),true);
+    if(!ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2.includes(id)){
+     const all=page.locator(base+" [data-p435930-lib-all]");
+     if(await all.count())await all.click(); // every displaced source remains in the full Library
+    }
     const option=page.locator(base+' [data-p435930-lib-open="'+id+'"]');
     assert.equal(await option.count(),1,"Canonical Essential Prayer absent from library: "+id);
     const family=libraryVariantFamily(id);

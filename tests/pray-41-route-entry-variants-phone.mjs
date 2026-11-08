@@ -7,6 +7,7 @@ import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
 import {PRAYER_DOOR_ORDER_V1} from "../src/pray/prayer-design-pilot.js";
 import {internalPrayerView} from "../src/pray/internal-route-owner.js";
+import {ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2} from "../src/pray/essential-holy-card-parts.js";
 
 /**
  * Entry-level evidence only. This tests real nine-door taps at 320/390px in
@@ -226,7 +227,8 @@ try{
     if(row.sourceFamily==="canonical-prayer")
      assert.ok(observed.prayerChars>=10,id+" canonical source card did not render");
     if(id==="pray.library"){
-      assert.equal(observed.libraryList,32,"Essential Prayers discovery entry must show the 32-card case");
+      assert.equal(observed.libraryList,ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2.length,
+        "Essential Prayers discovery must show the curated 19-card case");
       assert.equal(await page.locator('#aoPray435930.open [data-ao-pray-essential-landing]').count(),1);
       await page.locator('#aoPray435930.open [data-p435930-lib-all]').click();
       assert.ok(await page.locator('#aoPray435930.open [data-p435930-lib-open]').count()>=48,
