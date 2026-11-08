@@ -10,6 +10,8 @@
  * PRIVATE REVIEW ONLY: this is not edition/rights certification and
  * never sets any public release flag.
  */
+import {projectSaturdayComplinePsalmFrame}
+ from "./compline-psalm-display-projection.js";
 export const COMPLINE_CONTEXT=Object.freeze({
  FINAL_PRAYER:"FINAL_PRAYER",OTHER_TIME:"OTHER_TIME"
 });
