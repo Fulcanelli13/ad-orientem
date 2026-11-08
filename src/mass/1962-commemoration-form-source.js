@@ -235,6 +235,21 @@ export function select1962CommemorationsForMassForm({
     Number(only.rank)===4&&!only.privileged&&
     /^sancti:[0-9]{2}-[0-9]{2}[a-z]*:4:/i.test(commId)&&
     /^Sancti\/[0-9]{2}-[0-9]{2}[a-z]*$/i.test(String(only.path??""));
+  // 14 February 2026: the Septuagesima-period III Marian Saturday Mass
+  // is the calendar's IV-class principal Proper (C10c). The separate
+  // IV-class St Valentine orations are retained in nonconventual Low
+  // Mass only; the 1962 Ordo explicitly omits them in Masses in cantu.
+  // This narrowly date-locked source identity does NOT generalize to all
+  // pre-Lent Saturdays, institute votives, or a saint's own chosen Mass.
+  // https://ordo.fsspx.org/en/day/2026-02-14
+  const septuagesimaSaturdayBvmOrdinary=
+    String(calendarResolution.date)==="2026-02-14"&&
+    mainId==="commune:C10c:4:w"&&Number(main.rank)===4&&
+    String(main.path)==="Commune/C10c"&&
+    String(data.sourcePath)==="Commune/C10c"&&
+    Number(only.rank)===4&&!only.privileged&&
+    /^sancti:02-14:4:/i.test(commId)&&
+    String(only.path)==="Sancti/02-14";
   const ordinaryFourthClassSaint=!nativityOctavePlaceholder&&!sunday&&
     !only.privileged&&
     Number(only.rank)===4&&/^sancti:[0-9]{2}-[0-9]{2}[a-z]*:4:/i.test(commId)&&
@@ -250,7 +265,8 @@ export function select1962CommemorationsForMassForm({
     ordinaryFourthClassSaint?"NON_SUNDAY_II_III_CLASS_SINGLE_IV_CLASS_SANCTORAL_COMMEMORATION":
     ordinaryPentecostFeria?"PENTECOST_SEASON_IV_CLASS_FERIA_ORDINARY_COMMEMORATION":
     ordinaryLentenFeria?"LENT_PASSION_III_CLASS_FERIA_ORDINARY_COMMEMORATION":
-    saturdayBvmOrdinary?"SATURDAY_BVM_IV_CLASS_ORDINARY_SANCTORAL_COMMEMORATION":null;
+    (saturdayBvmOrdinary||septuagesimaSaturdayBvmOrdinary)?
+      "SATURDAY_BVM_IV_CLASS_ORDINARY_SANCTORAL_COMMEMORATION":null;
   if(!scope)return untouched(proper,"RUBRICAL_CLASSIFICATION_PENDING");
   if(!GROUPS.every(key=>array(data[key]).length===2&&data[key].every(sourceText)))
     return untouched(proper,"ORATION_SOURCE_INCOMPLETE");
@@ -267,7 +283,7 @@ export function select1962CommemorationsForMassForm({
         ["1960_GENERAL_RUBRICS_25_A_108_E_111_A_113","1960_MISSAL_RUBRICS_433_434"]:
       ordinaryLentenFeria?
         ["1960_GENERAL_RUBRICS_25_A_111_A_D_112_113_114","1960_MISSAL_RUBRICS_433_434"]:
-      saturdayBvmOrdinary?
+      (saturdayBvmOrdinary||septuagesimaSaturdayBvmOrdinary)?
         ["1960_GENERAL_RUBRICS_78_79_109_111_A_D_112_113","1960_MISSAL_RUBRICS_389_B_433_434"]:
       ordinaryFourthClassSaint?
         ["1960_GENERAL_RUBRICS_111_C_D_112_113","1960_MISSAL_RUBRICS_433_434"]:
