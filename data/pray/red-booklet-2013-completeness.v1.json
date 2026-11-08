@@ -493,9 +493,33 @@
       "printedPage": 64,
       "pdfPage": 65,
       "section": "after_communion",
-      "status": "unresolved",
+      "status": "reader_present",
       "wordingCollatedAgainst2013": false,
-      "discoverableAsIndividualLibraryWork": false
+      "discoverableAsIndividualLibraryWork": true,
+      "owner": {
+        "path": "src/pray/traditional-pray-data.js",
+        "symbol": "mercifulJesusDying1911",
+        "route": "pray.communion_treasury"
+      },
+      "discoverabilityProof": {
+        "index": "src/pray/red-booklet-communion-library-links.v1.js",
+        "route": "pray.communion_treasury",
+        "sourceId": "mercifulJesusDying1911",
+        "searchSurface": "pray.library",
+        "opensExactSourceCard": true,
+        "languageWitnesses": [
+          "en"
+        ],
+        "independentFrenchSourceAvailable": false,
+        "independentLatinSourceAvailable": false
+      },
+      "sourceWitness": {
+        "edition": 1911,
+        "sourceUrl": "https://novenaregina.com/prayers/prayer-for-the-faithful-in-their-agony",
+        "originalBodyProvidedBy": "traditional-pray-data.js",
+        "wordingCollatedAgainst2013": false
+      },
+      "note": "Lasance 1911 p.819 is a complete verified EN historical witness; its final aspiration is preserved. Not the exact 2013 booklet transcription, and no separate FR/LA witness is asserted."
     },
     {
       "id": "communion_heart_intercession",
@@ -503,9 +527,33 @@
       "printedPage": 64,
       "pdfPage": 65,
       "section": "after_communion",
-      "status": "unresolved",
+      "status": "reader_present",
       "wordingCollatedAgainst2013": false,
-      "discoverableAsIndividualLibraryWork": false
+      "discoverableAsIndividualLibraryWork": true,
+      "owner": {
+        "path": "src/pray/traditional-pray-data.js",
+        "symbol": "sacredHeartIntercession1910",
+        "route": "pray.communion_treasury"
+      },
+      "discoverabilityProof": {
+        "index": "src/pray/red-booklet-communion-library-links.v1.js",
+        "route": "pray.communion_treasury",
+        "sourceId": "sacredHeartIntercession1910",
+        "searchSurface": "pray.library",
+        "opensExactSourceCard": true,
+        "languageWitnesses": [
+          "en"
+        ],
+        "independentFrenchSourceAvailable": false,
+        "independentLatinSourceAvailable": false
+      },
+      "sourceWitness": {
+        "edition": 1910,
+        "sourceUrl": "https://manualistpress.com/prayers/prayer-sacred-heart-for-the-church-raccolta-1910/",
+        "originalBodyProvidedBy": "traditional-pray-data.js",
+        "wordingCollatedAgainst2013": false
+      },
+      "note": "The Raccolta 1910 no.171 p.147 is a complete pre-2013 English witness to this devotion; historical indulgence text is not a current indulgence claim. 2013 booklet wording remains uncollated."
     },
     {
       "id": "communion_heart_aspirations",
