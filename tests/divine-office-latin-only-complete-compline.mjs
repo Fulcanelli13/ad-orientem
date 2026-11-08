@@ -90,6 +90,11 @@ test("all eight appointed dates assemble 42 complete Latin blocks without readin
    assert.equal(reading.blessingAmensRestoredFromPinnedSource,2);
    assert.equal(reading.presidingMinister,COMPLINE_MINISTER.NON_PRIEST);
    assert.equal(reading.ministerDialoguesResolved,2);
+   const visitaConclusion=reading.frames.filter(x=>x.shortConclusionPrinted1961);
+   assert.equal(visitaConclusion.length,1,"printed §65 requires one short Visita ending");
+   assert.deepEqual(visitaConclusion[0].texts.la,["Per Dóminum.","R. Amen."]);
+   assert.match(visitaConclusion[0].sourceTexts.la[0],/^r\. Per Dóminum nostrum Jesum Christum/u);
+   assert.equal(reading.visitaShortConclusionPrinted1961,true);
    const soloDialogues=reading.frames.filter(f=>f.kind==="DIALOGUE");
    assert.equal(soloDialogues.length,2);
    assert.ok(soloDialogues.every(f=>f.texts.la[0]==="V. Dómine, exáudi oratiónem meam."));
