@@ -8,19 +8,6 @@
 // Mode IV Communion (#918): a mere incipit match must never select a score.
 export const EPIPHANY_REFERENCE_SCORES=Object.freeze([
   {
-    "key": "GRADUAL",
-    "id": "GREGOBASE-205",
-    "sourceId": 205,
-    "part": "gr",
-    "incipit": "Omnes de Saba",
-    "mode": "5",
-    "folio": "57",
-    "sha256": "fba651b6b71a4e5881c79185d754e29c6c9edd05ae7d696032c1805eb7023c57",
-    "sourceUrl": "https://gregobase.selapa.net/chant.php?id=205",
-    "archivePath": "data/mass/chant-corpus/gr1961-proper-001.json",
-    "gabc": "(c3) O(d!ewfef//hig'hvFE'ede)mnes(e.) *(;) de(d) Sa(efe)ba(fv.hhh/ijhhvF'Egihhf) vé(f)ni(f_[oh:h]g_[oh:h]f_[oh:h])ent,(f.) (:) au(ijI~H~)rum(ih) et(fh~) thus(h_) de(f)fe(df)rén(eh~)tes,(hig'/hf.) (;) et(f) lau(h)dem(g) Dó(h)mi(f)no(d.) (,) an(df)nun(e!hgh)ti(f)án(de~)tes.(d!ewfef//highf.dfe/fee[ll:1]d.0) (::) \r\n<sp>V/</sp>. Sur(hi~)ge,(ihhf/hiHG.hiFD.1) (,) (f!hhi/hhf/hiHG.hiFD.1) (;) et(d) il(d)lu(d)mi(d)ná(fdfED//fd/ef!hh/ig/hf/hi!kkk_[hl:1]h)re(h.) (;) Je(fh)rú(hih)sa(ffe)lem :(gxef__d_2//f_e/fgF'ED'dfvEDe[ll:1]d..) (:) qui(d)a(d) gló(fdfED')ri(d)a(d.) Dó(fd/ef!hh/i!jwk)mi(ih)ni(hiHF.1) (;) su(gxgg//gg)per(d) te(efe/ffe.) () * or(fhGF')ta(i) est.(hhf.) (,) (gxg_[oh:h]fgvED.fgED.fehv.hhhff//dfe/fee[ll:1]d.0) (::)"
-  },
-  {
     "key": "INTROIT",
     "id": "GREGOBASE-403",
     "sourceId": 403,
@@ -32,6 +19,19 @@ export const EPIPHANY_REFERENCE_SCORES=Object.freeze([
     "sourceUrl": "https://gregobase.selapa.net/chant.php?id=403",
     "archivePath": "data/mass/chant-corpus/gr1961-proper-002.json",
     "gabc": "(f3) EC(ce!fg)CE(f.) *(,) ad(fe~)vé(f!gwh_f)nit(f.) (,) do(e)mi(hh)ná(h)tor(h) Dó(hiHG')mi(hggfg)nus :(gf..) (:) et(eh~) re(h)gnum(hhh) (,) in(fe~) ma(f!hhf/gf)nu(ef) e(fhhfgv_[oh:h]F~E~)jus,(fe..) (:) et(f) pot(hh)é(hi)stas,(f.) (,) et(fh'!iv) im(i)pé(hiHG')ri(hggfg)um.(gf..) (::) <i>Ps.</i> De(e)us,(fe) ju(eh)dí(h)ci(h)um(hg) tu(hi)um(i) Re(hi)gi(h) da :(h.) *(:) et(hf~) ju(fh)stí(h)ti(h)am(h) tu(h)am(h') Fí(i)li(hf)o(h) Re(ge)gis.(fgf.) (::) Gló(e)ri(fe)a(eh) Pa(h)tri.(h) (::) <eu>E(h') u(i) o(hf) u(h) a(ge) e.</eu>(fgf.) (::)"
+  },
+  {
+    "key": "GRADUAL",
+    "id": "GREGOBASE-205",
+    "sourceId": 205,
+    "part": "gr",
+    "incipit": "Omnes de Saba",
+    "mode": "5",
+    "folio": "57",
+    "sha256": "fba651b6b71a4e5881c79185d754e29c6c9edd05ae7d696032c1805eb7023c57",
+    "sourceUrl": "https://gregobase.selapa.net/chant.php?id=205",
+    "archivePath": "data/mass/chant-corpus/gr1961-proper-001.json",
+    "gabc": "(c3) O(d!ewfef//hig'hvFE'ede)mnes(e.) *(;) de(d) Sa(efe)ba(fv.hhh/ijhhvF'Egihhf) vé(f)ni(f_[oh:h]g_[oh:h]f_[oh:h])ent,(f.) (:) au(ijI~H~)rum(ih) et(fh~) thus(h_) de(f)fe(df)rén(eh~)tes,(hig'/hf.) (;) et(f) lau(h)dem(g) Dó(h)mi(f)no(d.) (,) an(df)nun(e!hgh)ti(f)án(de~)tes.(d!ewfef//highf.dfe/fee[ll:1]d.0) (::) \r\n<sp>V/</sp>. Sur(hi~)ge,(ihhf/hiHG.hiFD.1) (,) (f!hhi/hhf/hiHG.hiFD.1) (;) et(d) il(d)lu(d)mi(d)ná(fdfED//fd/ef!hh/ig/hf/hi!kkk_[hl:1]h)re(h.) (;) Je(fh)rú(hih)sa(ffe)lem :(gxef__d_2//f_e/fgF'ED'dfvEDe[ll:1]d..) (:) qui(d)a(d) gló(fdfED')ri(d)a(d.) Dó(fd/ef!hh/i!jwk)mi(ih)ni(hiHF.1) (;) su(gxgg//gg)per(d) te(efe/ffe.) () * or(fhGF')ta(i) est.(hhf.) (,) (gxg_[oh:h]fgvED.fgED.fehv.hhhff//dfe/fee[ll:1]d.0) (::)"
   },
   {
     "key": "ALLELUIA",
