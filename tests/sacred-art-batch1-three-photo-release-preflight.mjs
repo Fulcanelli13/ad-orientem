@@ -29,6 +29,8 @@ for(const entry of packageData.release_package_entries){
  const opt=photoDecisions.work_items.find(w=>w.artwork_id===entry.id).options.find(o=>o.photo_id===entry.exact_photo_id);
  assert.ok(opt?.eligible_for_publication_qa_request);
  assert.equal(opt.rights_state,entry.source_rights_status);
+ assert.equal(opt.source_sha256,entry.source_original_sha256,"Original museum/photographer JPEG SHA must match");
+ assert.equal(opt.display_edition_sha256,entry.staged_artifact_sha256,"Approved displayed WebP SHA must match separately");
  let original;
  if(entry.id==="artwork-pending:09"){
   original=lan;
