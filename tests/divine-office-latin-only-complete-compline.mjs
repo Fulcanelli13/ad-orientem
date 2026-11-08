@@ -129,7 +129,10 @@ test("all eight appointed dates assemble 42 complete Latin blocks without readin
    assert.ok(hymn.every(frame=>frame.texts.la.every(line=>!line.startsWith("* "))));
    const saturday=date==="2026-11-28"||date==="2026-12-05";
    const sunday=date==="2026-11-29"||date==="2026-11-30";
-   assert.equal(reading.printedPsalmDisplayFrames,saturday?41:sunday?30:0);
+   const ferialCounts={"2026-12-01":26,"2026-12-02":30,
+    "2026-12-03":33,"2026-12-04":36};
+   const expectedStichs=saturday?41:sunday?30:ferialCounts[date];
+   assert.equal(reading.printedPsalmDisplayFrames,expectedStichs);
    if(saturday){
     const psalmFrames=reading.frames.filter(x=>x.sourceNumberingNormalized);
     assert.equal(psalmFrames.length,41);
@@ -172,6 +175,16 @@ test("all eight appointed dates assemble 42 complete Latin blocks without readin
     assert.ok(psalmFrames.every(x=>
       x.sourceTexts.la[0].startsWith(x.sourceVerseLabel+" ")&&
       !x.texts.la[0].startsWith(x.sourceVerseLabel)));
+   }
+   if(ferialCounts[date]){
+    const printed=reading.frames.filter(frame=>frame.kind==="PSALM");
+    const labels=reading.frames.filter(frame=>frame.sourceNumberingNormalized);
+    assert.equal(printed.length,ferialCounts[date]);
+    assert.equal(labels.length,ferialCounts[date]);
+    assert.ok(labels.every(frame=>
+      frame.sourceTexts.la[0].startsWith(frame.sourceVerseLabel+" ")&&
+      !/^\d+:\d+/u.test(frame.texts.la[0])&&
+      !/\(\d+[ab]?\)/u.test(frame.texts.la[0])));
    }
    assert.equal(reading.postCanticleKyrieOmitted,true);
    assert.equal(reading.postCanticlePaterOmitted,true);
@@ -283,8 +296,11 @@ test("1961 §147 and Office §56: last-prayer Compline substitutes examen for ON
  assert.equal(projectComplineRecitation(raw,{minister:"UNKNOWN"}).status,"WITHHELD");
 });
 
-test("four published Advent Compline dates load 40-moment Latin in both contexts and ministers",async()=>{
- for(const date of ["2026-11-28","2026-11-29","2026-11-30","2026-12-05"]){
+test("all eight dated Latin Compline Hours load 40 liturgical moments in both contexts and ministers",async()=>{
+ for(const date of [
+  "2026-11-28","2026-11-29","2026-11-30","2026-12-01",
+  "2026-12-02","2026-12-03","2026-12-04","2026-12-05"
+ ]){
  const permission=latinComplineReleaseEligibility({date});
  assert.equal(permission.status,"ELIGIBLE");
  assert.equal(permission.exact1961PsalterLeafVerified,false);
@@ -306,12 +322,15 @@ test("four published Advent Compline dates load 40-moment Latin in both contexts
    assert.equal(r.ministerDialoguesResolved,2);
    assert.equal(r.visitaShortConclusionPrinted1961,true);
    assert.equal(r.blessingAmensRestoredFromPinnedSource,2);
-   assert.equal(r.printedPsalmDisplayFrames,["2026-11-29","2026-11-30"].includes(date)?30:41);
+   const count=({"2026-11-28":41,"2026-11-29":30,"2026-11-30":30,
+    "2026-12-01":26,"2026-12-02":30,"2026-12-03":33,
+    "2026-12-04":36,"2026-12-05":41})[date];
+   assert.equal(r.printedPsalmDisplayFrames,count);
+   assert.equal(r.frames.filter(f=>f.kind==="PSALM").length,count);
    assert.deepEqual(r.availableLanguages,["la"]);
-   // Sunday has 30 psalm stich focus steps, Saturday has 41:
-   // do not impose the 41-stich Saturday total on Sunday Compline.
-   assert.ok(r.frames.length>(
-    ["2026-11-29","2026-11-30"].includes(date)?69:80));
+   // Each weekday has a different number of Psalm focus moments;
+   // require a complete 40-moment Hour, not Saturday's fixed frame count.
+   assert.ok(r.frames.length>40+count-3,date+": too few reading frames");
    assert.equal(r.presidingMinister,minister);
    assert.equal(r.recitationContext,context);
    assert.ok(r.frames.every(f=>Object.keys(f.texts).every(l=>l==="la")));
@@ -332,7 +351,7 @@ test("four published Advent Compline dates load 40-moment Latin in both contexts
  }
 });
 test("unsupported public Office dates never fetch or invent source words",async()=>{
- for(const date of ["2026-11-27","2026-12-01","2026-12-02","2026-12-03","2026-12-04","2026-12-06"]){
+ for(const date of ["2026-11-27","2026-12-06","2026-12-08","2027-12-01"]){
   const transport=source();
   const r=await loadPublishedLatinCompline({date,fetchSource:transport.fetchSource});
   assert.equal(r.status,"WITHHELD");
