@@ -323,6 +323,39 @@ try{
 
    // Real phone actions must create ONLY the user's observed music states,
    // without moving the priest, the chant syllable clock or a quiet interval.
+   const sourceStates=await musicMenu.locator("[data-schola-proper-score-state]").evaluateAll(nodes=>
+     nodes.map(n=>n.dataset.scholaProperScoreState));
+   assert.equal(sourceStates.length,selectedProper.length,
+     "Each selected Proper must show honest notation availability");
+   assert.ok(sourceStates.every(s=>s==="NO_VERIFIED_SCORE_BINDING" ||
+     s==="SOURCE_BOUND_PROVISIONAL_1961_NOTATION"));
+   const scoreButtons=musicMenu.locator("[data-schola-score-open]");
+   if(await scoreButtons.count()){
+     // Only source-bound scores open a locally engraved dark reference sheet.
+     // Viewing notation may never move the priest or independent choir.
+     const prior=await page.evaluate(()=>({
+       priest:window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId,
+       cue:window.__AO_PHONE_PREVIEW.getActiveCue(),
+       choir:window.__AO_PHONE_PREVIEW.getScholaState().trackId
+     }));
+     await scoreButtons.first().evaluate(b=>b.closest("details").open=true);
+     await scoreButtons.first().click();
+     const modal=page.locator("[data-schola-score-modal]");
+     await modal.waitFor({state:"visible"});
+     await page.waitForFunction(()=>
+       document.querySelector("[data-schola-score-modal]")?.dataset.scholaScoreReady==="true",
+       null,{timeout:25000});
+     assert.ok(await modal.locator("[data-schola-score-staff] svg").count()>0,
+       "Provisional score did not engrave with local Exsurge");
+     await modal.locator("[data-schola-score-close]").click();
+     assert.equal(await modal.count(),0,"Score viewer remained open");
+     const after=await page.evaluate(()=>({
+       priest:window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId,
+       cue:window.__AO_PHONE_PREVIEW.getActiveCue(),
+       choir:window.__AO_PHONE_PREVIEW.getScholaState().trackId
+     }));
+     assert.deepEqual(after,prior,"Notation viewing changed Mass or Schola time");
+   }
    const originalPerformance=await page.evaluate(()=>{
      const l=window.__AO_PHONE_PREVIEW.getScholaPerformance();
      return {schema:l.performanceSchema,
