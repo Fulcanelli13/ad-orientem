@@ -254,6 +254,76 @@ async function touchGospelBoundary(page,width,lang){
       JSON.stringify({setup,tail,observed:observed.slice(-40)}));
 }
 
+// Gospel terminal response is a distinct sourced reading turn. Test its
+// actual mobile DOM, not only the geometry-only unit fixture, and ensure
+// that the following C0088 rubric does not swallow "Laus tibi, Christe".
+async function gospelResponseFocus(page,width,lang){
+  const cue="AO.SM.C0087",after="AO.SM.C0088";
+  const focused=await atCue(page,cue);
+  assert.equal(focused.found,true,
+    width+"px "+lang+" source response cannot be focused: "+JSON.stringify(focused));
+  const result=await page.evaluate(async ({cue,after})=>{
+    const api=window.__AO_PHONE_PREVIEW;
+    const scroller=document.querySelector("#ao-r17-native-reader-preview .ao-prayer-card");
+    const find=id=>[...scroller.querySelectorAll(".ao-reader-paragraph[data-cue-id]")]
+      .find(node=>node.dataset.cueId===id);
+    const response=find(cue),closing=find(after),before=find("AO.SM.C0083");
+    if(!response||!closing||!before)return {found:false,reason:"Missing distinct Gospel source paragraph"};
+    const primary=response.querySelector(".ao-line-primary");
+    const source=primary?.textContent?.trim()??"";
+    const raf=()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+    const sample=()=>{
+      const line=primary?.getBoundingClientRect();
+      const view=scroller.getBoundingClientRect();
+      return {
+        cue:api.getActiveCue(),
+        scrollTop:scroller.scrollTop,
+        maxScroll:Math.max(0,scroller.scrollHeight-scroller.clientHeight),
+        reading:response.dataset.readingPosition,
+        visible:Boolean(line&&line.height>0&&line.bottom>view.top+3&&line.top<view.bottom-3),
+      };
+    };
+    const stable=[];
+    for(let i=0;i<9;i++){await raf();stable.push(sample());}
+    const spacer=document.createElement("span");
+    spacer.dataset.gospelResponseLayoutTest="true";
+    spacer.style.cssText="display:block;height:10px;pointer-events:none";
+    before.append(spacer);
+    const reflow=[];
+    for(let i=0;i<5;i++){await raf();reflow.push(sample());}
+    spacer.remove();
+    for(let i=0;i<5;i++){await raf();reflow.push(sample());}
+    // Slow source-monotonic scroll must give C0087 a genuine interval
+    // and ultimately hand off to the exact terminal rubric C0088.
+    const travel= Math.max(0,scroller.scrollHeight-scroller.clientHeight-scroller.scrollTop);
+    const sequence=[];
+    const start=scroller.scrollTop;
+    const max=Math.max(0,scroller.scrollHeight-scroller.clientHeight);
+    for(let target=start;target<=max+10;target+=12){
+      scroller.scrollTop=Math.min(max,target);
+      scroller.dispatchEvent(new Event("scroll",{bubbles:true}));
+      await raf();
+      sequence.push(sample());
+      if(scroller.scrollTop>=max-1)break;
+    }
+    return {found:true,source,stable,reflow,travel,sequence};
+  },{cue,after});
+  assert.equal(result.found,true,width+"px "+lang+" "+JSON.stringify(result));
+  assert.ok(/Laus\s+tibi[,\s]+Christe/i.test(result.source),
+    "The source-owned Gospel response words are missing: "+JSON.stringify(result.source));
+  assert.ok(result.stable.every(s=>s.cue===cue&&s.visible&&s.reading==="current"),
+    width+"px "+lang+" response lost settled focus: "+JSON.stringify(result.stable));
+  assert.ok(result.reflow.every(s=>s.cue===cue&&s.visible&&s.reading==="current"),
+    width+"px "+lang+" Gospel response drifted on delayed layout: "+JSON.stringify(result.reflow));
+  assert.ok(result.travel>=12,
+    width+"px "+lang+" C0087 has no scroll interval before C0088: "+result.travel);
+  assert.ok(result.sequence.some(s=>s.cue===after),
+    width+"px "+lang+" closing C0088 cannot be reached by scroll: "+JSON.stringify(result.sequence));
+  const firstClosing=result.sequence.findIndex(s=>s.cue===after);
+  assert.ok(result.sequence.slice(firstClosing).every(s=>s.cue===after),
+    width+"px "+lang+" C0088 regressed after handoff: "+JSON.stringify(result.sequence));
+}
+
 async function snapshot(page,width,lang,cueId,expected,{reducedMotion=false}={}){
   const moved=await atCue(page,cueId);
   assert.equal(moved.found,true,cueId+": "+JSON.stringify(moved));
@@ -399,6 +469,9 @@ try{
     if((width===390&&lang==="en"&&motion==="no-preference"&&query.includes("48")) ||
        (width===320&&lang==="fr"))
       { await touchGospelFocus(page,width,lang); await touchGospelBoundary(page,width,lang); }
+    // The terminal Gospel response must remain legible independently from
+    // both the small-crosses cinematic and the following C0088 rubric.
+    await gospelResponseFocus(page,width,lang);
     // Changing cards always clears the scene. No stale elevation halo.
     await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSequence(1));
     await page.waitForFunction(()=>
