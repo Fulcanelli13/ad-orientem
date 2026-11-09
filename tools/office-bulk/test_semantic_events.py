@@ -152,6 +152,17 @@ class SemanticProjectionTests(unittest.TestCase):
                            "semantic-2026-01-la-1960.jsonl.gz", "rt") as gz:
                 self.assertEqual(len(gz.readlines()), 8)
 
+    def test_both_years_special_source_layout_holds_are_exactly_sixteen(self):
+        known = semantic.KNOWN_SPECIAL_FORMAT_SOURCE_REVIEWS
+        self.assertEqual(len(known), 16)
+        for year, days in [(2026, ("04-02", "04-03", "04-04")),
+                           (2027, ("03-25", "03-26", "03-27"))]:
+            for day in days:
+                self.assertIn((f"{year}-{day}", "Completorium"), known)
+            for hour in ("Prima", "Tertia", "Sexta", "Nona", "Completorium"):
+                self.assertIn((f"{year}-11-02", hour), known)
+        self.assertNotIn(("2027-01-01", "Completorium"), known)
+
     def test_absence_of_psalm_is_logged_as_uncertified_exception(self):
         record = sample_hour()
         for b in record["blocks"]:
