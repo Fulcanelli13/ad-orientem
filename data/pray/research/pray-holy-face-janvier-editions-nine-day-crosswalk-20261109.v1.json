@@ -1,0 +1,187 @@
+{
+  "schema": "ao.pray.holy-face-janvier-edition-crosswalk.v1",
+  "updated": "2026-11-09",
+  "prayerId": "holy_face_1887",
+  "intent": "Bibliographic provenance and nine-day English thematic structural crosswalk ONLY. This is neither an original printed-page collation nor certification of French day bodies.",
+  "scope": {
+    "appSource": "src/pray/holy-face-janvier-1887-b25.js",
+    "english": "PUBLISHED_UNCHANGED",
+    "french": "NINE_BODIES_MISSING",
+    "latin": "NOT_IMPORTING",
+    "devotionalDayCount": 9,
+    "readerChanges": false,
+    "originalPrintedEnglish1887Collated": false,
+    "originalPrintedFrenchCollated": false,
+    "editorialFrenchTitlesAreNotOriginalHistoricalPrayers": true
+  },
+  "editions": [
+    {
+      "year": 1858,
+      "language": "fr",
+      "work": "Neuvaine en l'honneur de la Sainte Face",
+      "institution": "Bibliothèque nationale de France",
+      "source": "https://catalogue.bnf.fr/rechercher.do?index=AUT3&numNotice=12614654",
+      "recordNote": "Author-linked bibliographic listing; early edition credited to Janvier, edited by P.-C. Balzeau.",
+      "status": "BIBLIOGRAPHIC_ONLY_NO_PAGES_COLLATED"
+    },
+    {
+      "year": 1882,
+      "language": "fr",
+      "work": "Neuvaine en l'honneur de la Sainte Face",
+      "institution": "Bibliothèque nationale de France",
+      "source": "https://catalogue.bnf.fr/rechercher.do?index=AUT3&numNotice=12614654",
+      "status": "BIBLIOGRAPHIC_ONLY_NO_PAGES_COLLATED"
+    },
+    {
+      "year": 1887,
+      "language": "en",
+      "work": "Manual of the Archconfraternity of the Holy Face",
+      "institution": "Oratory of the Holy Face, Tours; historical title page online",
+      "source": "https://holyfacechapel.org/manual-of-the-archconfraternity-of-the-holy-face-title-page/",
+      "status": "ORIGINAL_EDITION_IDENTIFIED_FULL_NOVENA_PRINT_PAGES_UNCOLLATED",
+      "translatedBy": "Mrs A.-R. Bennett"
+    },
+    {
+      "year": 1889,
+      "language": "fr",
+      "work": "Neuvaine en l'honneur de la Sainte Face",
+      "institution": "Archives du Carmel de Lisieux",
+      "source": "https://archives.carmeldelisieux.fr/au-carmel-du-temps-de-therese/le-style-de-vie/la-lecture-spirituelle/la-bibliotheque-communautaire/livres-de-la-bibliotheque/",
+      "pages": 88,
+      "status": "BIBLIOGRAPHIC_ONLY_NO_PAGES_COLLATED"
+    },
+    {
+      "year": 1890,
+      "language": "en",
+      "work": "A Novena in honor of the Holy Face of Our Lord",
+      "institution": "Bibliothèque nationale de France",
+      "source": "https://catalogue.bnf.fr/ark:/12148/cb30646470z",
+      "pages": 102,
+      "translator": "Unspecified by catalogue record",
+      "status": "PRINT_EDITION_IDENTIFIED_NOT_PROVEN_IDENTICAL_TO_1887_ENGLISH"
+    },
+    {
+      "year": 1894,
+      "language": "fr",
+      "work": "Neuvaine en l'honneur de la Sainte-Face",
+      "institution": "Google Books / Google Play Books bibliographic and free ebook listing",
+      "source": "https://play.google.com/store/books/details/Pierre_D%C3%A9sir%C3%A9_Janvier_Neuvaine_en_l_honneur_de_la?id=kuGdoq3cut4C",
+      "pages": 88,
+      "status": "DIGITAL_BOOK_LOCATED_NOT_FULLY_ACCESSED_NOT_COLLATED"
+    }
+  ],
+  "englishReprint": {
+    "publisher": "St. Joseph's Missionaries of the Holy Face",
+    "source": "https://www.ourmothershands.org/_files/ugd/07e9e8_90154106e5a14b68afd82a08af863033.pdf?index=true",
+    "status": "MODERN_REPRINT_NOT_PHOTOGRAPHIC_1887_EDITION",
+    "visualCoverChecked": true,
+    "nineDayHeadingsChecked": true,
+    "sectionKinds": [
+      "opening",
+      "meditation",
+      "act",
+      "virtue",
+      "spiritual bouquet",
+      "petitions",
+      "concluding prayer"
+    ],
+    "warning": "Reprint exhibits normalizations and editorial formatting; matching topics and section kinds do not certify verbatim identity or French translation."
+  },
+  "dayCrosswalk": [
+    {
+      "day": 1,
+      "appEnglishTitle": "The Holy Face at Bethlehem",
+      "modernReprintDayTitle": "The Holy Face at Bethlehem",
+      "appEnglishDayBody": "PRESERVE",
+      "modernEnglishStructuralMatch": "THEME_AND_SECTION_SEQUENCE_ONLY",
+      "frenchHistoricalDayBody": "NOT_TRANSCRIBED",
+      "frenchReaderTitle": "EDITORIAL_LABEL_NOT_HISTORICAL_TRANSLATION"
+    },
+    {
+      "day": 2,
+      "appEnglishTitle": "The Holy Face in the midst of the people of Judea",
+      "modernReprintDayTitle": "Holy Face in the Midst of the People of Judea",
+      "appEnglishDayBody": "PRESERVE",
+      "modernEnglishStructuralMatch": "THEME_AND_SECTION_SEQUENCE_ONLY",
+      "frenchHistoricalDayBody": "NOT_TRANSCRIBED",
+      "frenchReaderTitle": "EDITORIAL_LABEL_NOT_HISTORICAL_TRANSLATION"
+    },
+    {
+      "day": 3,
+      "appEnglishTitle": "The Holy Face on Tabor",
+      "modernReprintDayTitle": "The Holy Face on Tabor",
+      "appEnglishDayBody": "PRESERVE",
+      "modernEnglishStructuralMatch": "THEME_AND_SECTION_SEQUENCE_ONLY",
+      "frenchHistoricalDayBody": "NOT_TRANSCRIBED",
+      "frenchReaderTitle": "EDITORIAL_LABEL_NOT_HISTORICAL_TRANSLATION"
+    },
+    {
+      "day": 4,
+      "appEnglishTitle": "The Holy Face in the Garden of Olives",
+      "modernReprintDayTitle": "The Holy Face in the Garden of Olives",
+      "appEnglishDayBody": "PRESERVE",
+      "modernEnglishStructuralMatch": "THEME_AND_SECTION_SEQUENCE_ONLY",
+      "frenchHistoricalDayBody": "NOT_TRANSCRIBED",
+      "frenchReaderTitle": "EDITORIAL_LABEL_NOT_HISTORICAL_TRANSLATION"
+    },
+    {
+      "day": 5,
+      "appEnglishTitle": "The Holy Face in the House of Caiphas",
+      "modernReprintDayTitle": "The Holy Face in the House of Caiphas",
+      "appEnglishDayBody": "PRESERVE",
+      "modernEnglishStructuralMatch": "THEME_AND_SECTION_SEQUENCE_ONLY",
+      "frenchHistoricalDayBody": "NOT_TRANSCRIBED",
+      "frenchReaderTitle": "EDITORIAL_LABEL_NOT_HISTORICAL_TRANSLATION"
+    },
+    {
+      "day": 6,
+      "appEnglishTitle": "The Holy Face at the Praetorium of Pilate",
+      "modernReprintDayTitle": "Holy Face at the Praetorium of Pilate",
+      "appEnglishDayBody": "PRESERVE",
+      "modernEnglishStructuralMatch": "THEME_AND_SECTION_SEQUENCE_ONLY",
+      "frenchHistoricalDayBody": "NOT_TRANSCRIBED",
+      "frenchReaderTitle": "EDITORIAL_LABEL_NOT_HISTORICAL_TRANSLATION"
+    },
+    {
+      "day": 7,
+      "appEnglishTitle": "The Holy Face on the path to Calvary",
+      "modernReprintDayTitle": "The Holy Face on the path to Calvary",
+      "appEnglishDayBody": "PRESERVE",
+      "modernEnglishStructuralMatch": "THEME_AND_SECTION_SEQUENCE_ONLY",
+      "frenchHistoricalDayBody": "NOT_TRANSCRIBED",
+      "frenchReaderTitle": "EDITORIAL_LABEL_NOT_HISTORICAL_TRANSLATION"
+    },
+    {
+      "day": 8,
+      "appEnglishTitle": "The Holy Face on the Cross",
+      "modernReprintDayTitle": "Holy Face on the Cross",
+      "appEnglishDayBody": "PRESERVE",
+      "modernEnglishStructuralMatch": "THEME_AND_SECTION_SEQUENCE_ONLY",
+      "frenchHistoricalDayBody": "NOT_TRANSCRIBED",
+      "frenchReaderTitle": "EDITORIAL_LABEL_NOT_HISTORICAL_TRANSLATION"
+    },
+    {
+      "day": 9,
+      "appEnglishTitle": "The Holy Face on the day of the Resurrection",
+      "modernReprintDayTitle": "The Holy Face on the day of the Resurrection",
+      "appEnglishDayBody": "PRESERVE",
+      "modernEnglishStructuralMatch": "THEME_AND_SECTION_SEQUENCE_ONLY",
+      "frenchHistoricalDayBody": "NOT_TRANSCRIBED",
+      "frenchReaderTitle": "EDITORIAL_LABEL_NOT_HISTORICAL_TRANSLATION"
+    }
+  ],
+  "releasePolicy": {
+    "noNewFrenchTextsWithout": "FULL_NINE_DAY_FR_PAGE_IMAGE_AND_BEAT_BY_BEAT_EN_EQUIVALENCE_AUDIT",
+    "noEnglishOverwrite": true,
+    "noSourceAttributionUpgrade": true,
+    "noReprintAsPrintFacsimile": true,
+    "noAutoImportFromUncollated1907Or1895Editions": true,
+    "noRosaryOrConfessionChanges": true
+  },
+  "outstanding": [
+    "Access and inspect full French print/page images for a single identified edition, preferably 1889/1894 and earliest source if available",
+    "Compare nine day themes AND complete paragraph/act/virtue/bouquet/aspirations/collect against 1887 published English witness",
+    "Log all differences with exact page references, check edition identity and rights, approve only equivalent FR bodies",
+    "Independently collate English 1887 printed pp. 108-142 against existing digital transcription"
+  ]
+}
