@@ -404,7 +404,7 @@ export async function assembleWeekdayComplinePilot({
     appointedDate==="2026-12-01"?
     "SOURCE_FIRST_FERIAL_TUESDAY_COMPLINE_RESEARCH_NOT_CERTIFIED":
     "SOURCE_FIRST_APPOINTED_COMPLINE_RESEARCH_NOT_CERTIFIED",
-   civilDate:appointment.date,officeDate:appointment.date,hour:"COMPLINE",
+   civilDate:appointment.date,officeDate:appointment.officeDate??appointment.date,hour:"COMPLINE",
    weekday:psalmDay,civilWeekday:appointment.weekday,
    marianSection:appointment.marianSection,officeClass:appointment.officeClass,
    rubricalAppointment:appointedDate==="2026-11-28"?
@@ -416,7 +416,7 @@ export async function assembleWeekdayComplinePilot({
    blocks:Object.freeze(blocks),blockCount:blocks.length,
    frames:Object.freeze(frames),focusFrameCount:frames.length,
    sourceTextAltered:false,sourceDocumentsPerLanguage:4+psalmIds.length,
-   firstVespersConcurrenceHandled:psalmDay==="Sabbato",
+   firstVespersConcurrenceHandled:(appointment.officeDate??appointment.date)!==appointment.date,
    officeCompletenessCertified:false,translationApproved:false,
    rightsApproved:false,publishable:false,published:false
   });
