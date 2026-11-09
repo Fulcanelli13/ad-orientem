@@ -120,7 +120,7 @@ await assert.rejects(loadCanonicalReaderEvents({fetchImpl:async url=>{
     aborted++;throw Object.assign(new Error("cancel"),{name:"AbortError"});
   }
   return eventHttpResponse(200,file);
-}}),/Unable to load canonical Mass events \\(network\\)/);
+}}),/Unable to load canonical Mass events \(network\)/);
 assert.equal(aborted,1,"Aborted navigation must not retry");
 
 let networkCalls=0;
