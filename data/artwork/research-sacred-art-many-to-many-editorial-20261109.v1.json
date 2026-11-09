@@ -108,6 +108,12 @@
       "path": "data/artwork/research/m2m-scene-adjudication-batch3-20261109.v1.json",
       "count": 20,
       "photo_publication": "NOT_AUTHORISED"
+    },
+    {
+      "kind": "SCENE_ADJUDICATION_FINAL_SEVEN_DIRECT_SCENE_BATCH4",
+      "path": "data/artwork/research/m2m-scene-adjudication-batch4-20261109.v1.json",
+      "count": 7,
+      "photo_publication": "NOT_AUTHORISED"
     }
   ],
   "key_rule": "No automatic deduplication of distinct physical works or artworkID aliases; each relationship points to its own source record.",
@@ -121,8 +127,8 @@
     "globally_rejected_original_with_later_preserved_slots": "cma-122338",
     "scene_batch2": "data/artwork/research/m2m-scene-adjudication-batch2-20261109.v1.json",
     "batch2_new_direct_scene_proposals": 15,
-    "cumulative_new_Claude_proposals_source_adjudicated": 45,
-    "remaining_new_Claude_proposals_needing_individual_source_adjudication": 69,
+    "cumulative_new_Claude_proposals_source_adjudicated": 52,
+    "remaining_new_Claude_proposals_needing_individual_source_adjudication": 62,
     "important_batch2_relational_downgrades": [
       "2026-01-13",
       "2026-11-22",
@@ -130,8 +136,14 @@
     ],
     "object_identity_exception": "2026-11-30 Michel II Corneille Rennes INV 801.1.24 distinct from Arras painting; 2026-12-27 autograph Luca Giordano Rennes D.1955.3.1 distinct from school-of painting at Voltaggio; 2026-11-03 Boullogne Rennes original distinct from Paris Museums preparatory sketch.",
     "scene_batch3": "data/artwork/research/m2m-scene-adjudication-batch3-20261109.v1.json",
-    "remaining_new_Claude_direct_scene_proposals_needing_individual_source_adjudication": 7,
+    "remaining_new_Claude_direct_scene_proposals_needing_individual_source_adjudication": 0,
     "batch3_provenance_hold": "2026-03-14: Giandomenico Tiepolo MNR 84, currently held by French state in restitution pool; rights/provenance status not cured by artwork approval",
-    "batch3_object_identity_hold": "2026-01-19 Cana attributed Cornelis de Baellieur: not independently verified against physical accession"
+    "batch3_object_identity_hold": "2026-01-19 Cana attributed Cornelis de Baellieur: not independently verified against physical accession",
+    "scene_batch4": "data/artwork/research/m2m-scene-adjudication-batch4-20261109.v1.json",
+    "direct_scene_batch4_holds": [
+      "2026-04-18 Crucifixion Flémal attribution and exact museum accession unverified",
+      "2026-07-02 Geneva Visitation attributed to Philippe de Champaigne workshop in secondary catalogue, requires institutional credit confirmation",
+      "2026-12-30 Orléans Annibale Carracci Shepherds object referenced in Commons/Wikidata; current institution catalogue not independently verified"
+    ]
   }
 }
