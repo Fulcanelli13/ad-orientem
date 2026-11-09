@@ -43,7 +43,7 @@ def fetch(url: str, minimum: int = 10000) -> bytes:
         raise RuntimeError(f"Source not usable: {url} HTTP={status}, bytes={len(raw)}")
     if url.endswith(".pdf") and not raw.startswith(b"%PDF-"):
         raise RuntimeError("Original primary source is not a PDF; fail closed")
-    if url.endswith(".png") and not raw.startswith(b"\\x89PNG\\r\\n\\x1a\\n"):
+    if url.endswith(".png") and not raw.startswith(bytes.fromhex("89504e470d0a1a0a")):
         raise RuntimeError("Original printed witness is not a PNG; fail closed")
     return raw
 
@@ -124,7 +124,7 @@ def main() -> int:
        "no_print_sign_certification_granted":True,
        "records":records
     }
-    (out/"manifest.json").write_text(json.dumps(manifest,indent=2)+"\\n",encoding="utf-8")
+    (out/"manifest.json").write_text(json.dumps(manifest,indent=2)+chr(10),encoding="utf-8")
     print("M43 evidence: "+json.dumps({"page_pixels":image.size,
         "primary_sha256":sha(pdf_bytes),"files":[{"name":r["id"],"size":(r.get("width_px"),r.get("height_px")),
         "status":r.get("status","CAPTURED")} for r in records]},sort_keys=True))
