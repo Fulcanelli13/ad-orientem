@@ -1,0 +1,214 @@
+{
+  "schema": "ao.office.compline-jan04-10-2027-source-intake.v1",
+  "status": "RESEARCH_ONLY_WITHHELD",
+  "calendarScope": "UNIVERSAL_ROMAN_1960",
+  "lastPublicCivilDate": "2027-01-03",
+  "publicReleaseApproved": false,
+  "completeHourCertified": false,
+  "otherHoursApproved": false,
+  "translationApproved": false,
+  "currentTextPsalter": "TRADITIONAL_CLEMENTINE_VULGATE",
+  "marianLatinGitBlobSha": "bf44a58ba1076b17466b88fa4004c1cab29f96ae",
+  "sources": {
+    "roman1960Rubrics": "https://isidore.co/divinum/www/horas/Help/Rubrics/Breviary%201960.html",
+    "independentlyDatedOrdo": "https://icrspfrance.fr/ordo.php?d=2027-01-03",
+    "epiphanyFirstVespers": "https://ordo.fsspx.org/day/2027-01-05?lang=en&mode=liturgical",
+    "holyFamilyFirstVespers": "https://ordo.fsspx.org/day/2027-01-09?lang=en&mode=liturgical",
+    "holyFamilyDoxologyConflictOrdo": "https://icrspfrance.fr/ordo.php?d=2027-01-03",
+    "holyFamily1962OrdinaryDoxologyWitness": "https://ordorecitandi.blogspot.com/2020/01/",
+    "martinSource1960BR188": "https://isidore.co/divinum/www/horas/Help/Rubrics/Breviary%201960.html"
+  },
+  "liturgicalNote": "5 January Epiphany 1st Vespers overrides Tuesday psalter with Sunday Compline; 9 January II-class Holy Family 1st Vespers overrides Saturday Sunday-Office rule: Sunday Compline, BR 168(d). 1960 BR 188 excludes arbitrary seasonal doxology changes; ICRSP says Jesu tuis for Holy Family, independent textual collation required before approval.",
+  "dates": [
+    {
+      "date": "2027-01-04",
+      "weekday": "Feria II",
+      "principalOffice": "Christmastide Feria, Monday after Holy Name",
+      "officeClass": "IV_FERIA",
+      "officeDate": "2027-01-04",
+      "psalmDay": "Feria II",
+      "rubric": "171(e)",
+      "firstVespers": "NONE",
+      "marianSection": "Nativiti",
+      "psalmIds": [
+        6,
+        7
+      ],
+      "printedPsalmFrames": 28,
+      "commemoration": null,
+      "specialHolds": [
+        "COMPLETE_PINNED_LATIN_COMPLINE_SOURCE_COLLATION",
+        "ALL_SOURCE_AND_PUBLIC_PHONE_GATES_REQUIRED"
+      ],
+      "sourceStage": "INDEPENDENT_2027_ORDO_RUBRIC_RESEARCH_ONLY",
+      "textVerified": false,
+      "rightsApproved": false,
+      "publishable": false,
+      "published": false
+    },
+    {
+      "date": "2027-01-05",
+      "weekday": "Feria III",
+      "principalOffice": "First Compline of Epiphany of Our Lord",
+      "officeClass": "I_FEAST_FIRST_VESPERS",
+      "officeDate": "2027-01-06",
+      "psalmDay": "Dominica",
+      "rubric": "167(b)",
+      "firstVespers": "EPIPHANY_I_VESPERS",
+      "marianSection": "Nativiti",
+      "psalmIds": [
+        4,
+        90,
+        133
+      ],
+      "printedPsalmFrames": 30,
+      "commemoration": "Saint Telesphorus Pope and Martyr (commemorated at Lauds only)",
+      "specialHolds": [
+        "COMPLETE_PINNED_LATIN_COMPLINE_SOURCE_COLLATION",
+        "EPIPHANY_FEAST_HYMN_TONE_CHECK",
+        "ALL_SOURCE_AND_PUBLIC_PHONE_GATES_REQUIRED"
+      ],
+      "sourceStage": "INDEPENDENT_2027_ORDO_RUBRIC_RESEARCH_ONLY",
+      "textVerified": false,
+      "rightsApproved": false,
+      "publishable": false,
+      "published": false
+    },
+    {
+      "date": "2027-01-06",
+      "weekday": "Feria IV",
+      "principalOffice": "Epiphany of Our Lord",
+      "officeClass": "I_FEAST",
+      "officeDate": "2027-01-06",
+      "psalmDay": "Dominica",
+      "rubric": "167(h)",
+      "firstVespers": "NONE_AFTER_EPIPHANY_II_VESPERS",
+      "marianSection": "Nativiti",
+      "psalmIds": [
+        4,
+        90,
+        133
+      ],
+      "printedPsalmFrames": 30,
+      "commemoration": null,
+      "specialHolds": [
+        "COMPLETE_PINNED_LATIN_COMPLINE_SOURCE_COLLATION",
+        "EPIPHANY_FEAST_HYMN_TONE_CHECK",
+        "ALL_SOURCE_AND_PUBLIC_PHONE_GATES_REQUIRED"
+      ],
+      "sourceStage": "INDEPENDENT_2027_ORDO_RUBRIC_RESEARCH_ONLY",
+      "textVerified": false,
+      "rightsApproved": false,
+      "publishable": false,
+      "published": false
+    },
+    {
+      "date": "2027-01-07",
+      "weekday": "Feria V",
+      "principalOffice": "Epiphanytide Feria, Thursday",
+      "officeClass": "IV_FERIA",
+      "officeDate": "2027-01-07",
+      "psalmDay": "Feria V",
+      "rubric": "171(e)",
+      "firstVespers": "NONE",
+      "marianSection": "Nativiti",
+      "psalmIds": [
+        69,
+        70
+      ],
+      "printedPsalmFrames": 33,
+      "commemoration": null,
+      "specialHolds": [
+        "COMPLETE_PINNED_LATIN_COMPLINE_SOURCE_COLLATION",
+        "ALL_SOURCE_AND_PUBLIC_PHONE_GATES_REQUIRED"
+      ],
+      "sourceStage": "INDEPENDENT_2027_ORDO_RUBRIC_RESEARCH_ONLY",
+      "textVerified": false,
+      "rightsApproved": false,
+      "publishable": false,
+      "published": false
+    },
+    {
+      "date": "2027-01-08",
+      "weekday": "Feria VI",
+      "principalOffice": "Epiphanytide Feria, Friday",
+      "officeClass": "IV_FERIA",
+      "officeDate": "2027-01-08",
+      "psalmDay": "Feria VI",
+      "rubric": "171(e)",
+      "firstVespers": "NONE",
+      "marianSection": "Nativiti",
+      "psalmIds": [
+        76,
+        85
+      ],
+      "printedPsalmFrames": 36,
+      "commemoration": null,
+      "specialHolds": [
+        "COMPLETE_PINNED_LATIN_COMPLINE_SOURCE_COLLATION",
+        "ALL_SOURCE_AND_PUBLIC_PHONE_GATES_REQUIRED"
+      ],
+      "sourceStage": "INDEPENDENT_2027_ORDO_RUBRIC_RESEARCH_ONLY",
+      "textVerified": false,
+      "rightsApproved": false,
+      "publishable": false,
+      "published": false
+    },
+    {
+      "date": "2027-01-09",
+      "weekday": "Sabbato",
+      "principalOffice": "First Compline of the Holy Family of Jesus Mary and Joseph",
+      "officeClass": "II_FEAST_FIRST_VESPERS",
+      "officeDate": "2027-01-10",
+      "psalmDay": "Dominica",
+      "rubric": "168(d)",
+      "firstVespers": "HOLY_FAMILY_I_VESPERS",
+      "marianSection": "Nativiti",
+      "psalmIds": [
+        4,
+        90,
+        133
+      ],
+      "printedPsalmFrames": 30,
+      "commemoration": null,
+      "specialHolds": [
+        "COMPLETE_PINNED_LATIN_COMPLINE_SOURCE_COLLATION",
+        "HOLY_FAMILY_DOXOLOGY_SOURCE_CONFLICT_1960_BR_188_VS_ICRSP",
+        "ALL_SOURCE_AND_PUBLIC_PHONE_GATES_REQUIRED"
+      ],
+      "sourceStage": "INDEPENDENT_2027_ORDO_RUBRIC_RESEARCH_ONLY",
+      "textVerified": false,
+      "rightsApproved": false,
+      "publishable": false,
+      "published": false
+    },
+    {
+      "date": "2027-01-10",
+      "weekday": "Dominica",
+      "principalOffice": "Holy Family of Jesus Mary and Joseph",
+      "officeClass": "II_FEAST",
+      "officeDate": "2027-01-10",
+      "psalmDay": "Dominica",
+      "rubric": "168(d)",
+      "firstVespers": "NONE_AFTER_HOLY_FAMILY_II_VESPERS",
+      "marianSection": "Nativiti",
+      "psalmIds": [
+        4,
+        90,
+        133
+      ],
+      "printedPsalmFrames": 30,
+      "commemoration": null,
+      "specialHolds": [
+        "COMPLETE_PINNED_LATIN_COMPLINE_SOURCE_COLLATION",
+        "HOLY_FAMILY_DOXOLOGY_SOURCE_CONFLICT_1960_BR_188_VS_ICRSP",
+        "ALL_SOURCE_AND_PUBLIC_PHONE_GATES_REQUIRED"
+      ],
+      "sourceStage": "INDEPENDENT_2027_ORDO_RUBRIC_RESEARCH_ONLY",
+      "textVerified": false,
+      "rightsApproved": false,
+      "publishable": false,
+      "published": false
+    }
+  ]
+}

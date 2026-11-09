@@ -247,6 +247,28 @@ export function openDivineOfficeReader(win=globalThis,{date=todayLocal()}={}){
   if(newYear.value){input.value=newYear.value;hour="COMPLINE";draw()}
  });
  bar.append(newYear);
+ // Only the five independently text-certified Epiphany dates are selectable.
+ // Holy Family 9–10 January remains source-held and unavailable publicly.
+ const epiphany=d.createElement("select");
+ epiphany.setAttribute("aria-label","Epiphany Compline date");
+ const epiphanyPrompt=d.createElement("option");
+ epiphanyPrompt.value="";
+ epiphanyPrompt.textContent="Epiphany · 4–8 Jan 2027";
+ epiphany.append(epiphanyPrompt);
+ for(const [date,caption] of [
+  ["2027-01-04","4 Jan · Christmas-season feria"],
+  ["2027-01-05","5 Jan · First Compline of Epiphany"],
+  ["2027-01-06","6 Jan · Epiphany of Our Lord"],
+  ["2027-01-07","7 Jan · Epiphanytide Thursday"],
+  ["2027-01-08","8 Jan · Epiphanytide Friday"]
+ ]){
+  const option=d.createElement("option");
+  option.value=date;option.textContent=caption;epiphany.append(option);
+ }
+ epiphany.addEventListener("change",()=>{
+  if(epiphany.value){input.value=epiphany.value;hour="COMPLINE";draw()}
+ });
+ bar.append(epiphany);
  host.append(bar);
  const hours=d.createElement("div");hours.className="aoOfHours";host.append(hours);
  let hour="VESPERS";

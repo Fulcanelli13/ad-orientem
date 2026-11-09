@@ -26,6 +26,9 @@ for(const lang of ["la","en","fr"]){
   vespers:load("advent-i-preview")
  };
 }
+const mondayLatin=JSON.parse(readFileSync(new URL(
+ "../tests/fixtures/office/advent-iii-feria-ii-compline-la.json",
+ import.meta.url),"utf8"));
 const ordinary=readFileSync(new URL(
  "../tests/fixtures/office/advent-i-preview-ordinary.txt",import.meta.url),"utf8");
 const christmasMarian=readFileSync(new URL(
@@ -51,6 +54,7 @@ function sourceFixture(url,{dropFrenchPsalm=false}={}){
    body=f.vespers.leaves[path]||
     (f.vespers.sections[path]&&Object.entries(f.vespers.sections[path])
      .map(([key,lines])=>"["+key+"]\n"+lines.join("\n")).join("\n\n")+"\n");
+  else if((id===6||id===7)&&lang==="la")body=mondayLatin.psalms[id]?.text;
   else if([87,102,233].includes(id))body=f.saturday.psalms[id];
   else if([11,12,15].includes(id))body=f.tuesday.psalms[id]?.text;
   else body=f.week.psalms[id]?.text;
@@ -234,6 +238,45 @@ try{
     animations:"disabled",fullPage:false});
    receipt.screenshots.push(capture);
    receipt.scenarios.push({case:"dec28-jan03-private-Compline",width,
+    civilDate:civil,officeDate,psalmDay,marianSection:"Nativiti",
+    sourceEvents:42,readingEvents:40,publicReleased:false,passed:true});
+  }
+  // Epiphany/First Vespers dates: 14 additional source-driven
+  // 320/390px PRIVATE Latin journeys, not public source authorization.
+  for(const [civil,officeDate,psalmDay] of [
+   ["2027-01-04","2027-01-04","Feria II"],
+   ["2027-01-05","2027-01-06","Dominica"],
+   ["2027-01-06","2027-01-06","Dominica"],
+   ["2027-01-07","2027-01-07","Feria V"],
+   ["2027-01-08","2027-01-08","Feria VI"],
+   ["2027-01-09","2027-01-10","Dominica"],
+   ["2027-01-10","2027-01-10","Dominica"]
+  ]){
+   await page.locator('#reader input[type="date"]').fill(civil);
+   await page.locator('#reader input[type="date"]').dispatchEvent("change");
+   assert.equal(await page.locator("#reader .aoOfOptions select").nth(1).inputValue(),
+    "la","Epiphany source preview must be Latin only");
+   await page.getByRole("button",{name:"Read source preview"}).click();
+   await waitReady(page);
+   const state=await page.locator(".aoOfReadiness").innerText();
+   assert.ok(state.includes("civil "+civil+" · Office "+officeDate),
+    "Wrong first-Vespers Office date "+civil+": "+state);
+   assert.match(state,/40 printed-ordinary moments/u);
+   assert.match(state,/42 source events/u);
+   assert.equal(await page.locator("#reader").getAttribute("data-office-marian-source"),
+    "Psalterium/Mariaant#Nativiti");
+   assert.equal(await page.locator(".aoOfLanguage").count(),1);
+   assert.match(await page.locator(".aoOfFrameControls").innerText(),/Reading step 1 of/u);
+   await page.getByRole("button",{name:"Next"}).click();
+   assert.match(await page.locator(".aoOfFrameControls").innerText(),/Reading step 2 of/u);
+   const over=await page.evaluate(()=>
+    document.documentElement.scrollWidth-document.documentElement.clientWidth);
+   assert.ok(over<=2,"Epiphany private "+civil+" overflows "+width+"px: "+over);
+   const png=width+"-epiphany-"+civil+"-latin-private.png";
+   await page.screenshot({path:resolve(OUT,png),
+    animations:"disabled",fullPage:false});
+   receipt.screenshots.push(png);
+   receipt.scenarios.push({case:"epiphany-private-Compline",width,
     civilDate:civil,officeDate,psalmDay,marianSection:"Nativiti",
     sourceEvents:42,readingEvents:40,publicReleased:false,passed:true});
   }

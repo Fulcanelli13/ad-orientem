@@ -58,7 +58,12 @@ export function mountPublishedLatinCompline(root,{
    "2026-12-31":"First Compline of Circumcision, 31 December 2026",
    "2027-01-01":"Circumcision of Our Lord, 1 January 2027",
    "2027-01-02":"First Compline of the Holy Name, 2 January 2027",
-   "2027-01-03":"Most Holy Name of Jesus, 3 January 2027"
+   "2027-01-03":"Most Holy Name of Jesus, 3 January 2027",
+   "2027-01-04":"Christmas-season feria, 4 January 2027",
+   "2027-01-05":"First Compline of Epiphany, 5 January 2027",
+   "2027-01-06":"Epiphany of Our Lord, 6 January 2027",
+   "2027-01-07":"Epiphanytide feria, 7 January 2027",
+   "2027-01-08":"Epiphanytide feria, 8 January 2027"
   }[date]??"Date not certified"));
  const contextLabel=create(d,"label",null,"Recitation: ");
  const contextSelect=create(d,"select");

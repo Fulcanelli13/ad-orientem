@@ -9,7 +9,9 @@ import {createComplinePinnedReader,assembleDatedComplinePilot,
  createChristmas2026PrivateLatinPinnedReader,
  assembleChristmas2026PrivateLatinComplinePilot,
  createDec28Jan03PrivateLatinPinnedReader,
- assembleDec28Jan03PrivateLatinComplinePilot}
+ assembleDec28Jan03PrivateLatinComplinePilot,
+ createJan04_10PrivateLatinPinnedReader,
+ assembleJan04_10PrivateLatinComplinePilot}
  from "./saturday-compline-2026-pilot.js";
 import {createAdventFirstVespersBoundedPinnedReader} from "./advent-first-vespers-bounded-preview-reader.js";
 import {assembleAdventI2026PrivatePreviewSession} from "./advent-first-vespers-preview-session.js";
@@ -41,7 +43,8 @@ function textsValid(frames,activeLanguages=LANGUAGES){
 }
 export function projectPrivateOfficeReview({
  hour,date,pilot,focus,languageMode="trilingual",
- privateChristmasResearch=false,privateYearBoundaryResearch=false
+ privateChristmasResearch=false,privateYearBoundaryResearch=false,
+ privateEpiphanyResearch=false
 }={}){
  if(!["trilingual","latin"].includes(languageMode))return hold("REVIEW_LANGUAGE_MODE_NOT_SUPPORTED");
  const activeLanguages=languageMode==="latin"?["la"]:LANGUAGES;
@@ -53,7 +56,10 @@ export function projectPrivateOfficeReview({
   const yearBoundaryAllowed=privateYearBoundaryResearch&&languageMode==="latin"&&
    (date>="2026-12-28"&&date<="2026-12-31"||
     date>="2027-01-01"&&date<="2027-01-03");
-  if((!COMPLINE_DATES.has(date)&&!christmasAllowed&&!yearBoundaryAllowed)||!pilot||
+  const epiphanyAllowed=privateEpiphanyResearch&&languageMode==="latin"&&
+   date>="2027-01-04"&&date<="2027-01-10";
+  if((!COMPLINE_DATES.has(date)&&!christmasAllowed&&!yearBoundaryAllowed&&
+      !epiphanyAllowed)||!pilot||
    !/^SOURCE_FIRST_(?:SATURDAY|FERIAL_TUESDAY|APPOINTED)_COMPLINE_RESEARCH_NOT_CERTIFIED$/.test(pilot.status)||
    pilot.sourceRevision!==PIN||pilot.hour!=="COMPLINE"||
    !Array.isArray(pilot.availableLanguages)||
@@ -64,7 +70,9 @@ export function projectPrivateOfficeReview({
     date==="2026-12-19"?"2026-12-20":
     date==="2026-12-24"?"2026-12-25":
     date==="2026-12-31"?"2027-01-01":
-    date==="2027-01-02"?"2027-01-03":date)||
+    date==="2027-01-02"?"2027-01-03":
+    date==="2027-01-05"?"2027-01-06":
+    date==="2027-01-09"?"2027-01-10":date)||
    pilot.blockCount!==42||pilot.blocks?.length!==42||
    pilot.frames?.length!==pilot.focusFrameCount||
    pilot.rightsApproved!==false||pilot.publishable!==false||
@@ -180,5 +188,27 @@ export async function assembleDec28Jan03PrivateOfficeResearchReview({
   });
  }catch(error){
   return hold("YEAR_BOUNDARY_PINNED_SOURCE_FAILURE:"+String(error?.message??error));
+ }
+}
+
+/**
+ * Epiphany/First Vespers source-only review for 4–10 January 2027.
+ * Does not authorize Prayer route, translation, chant or publication.
+ */
+export async function assembleJan04_10PrivateOfficeResearchReview({
+ date,fetchSource
+}={}){
+ if(!(typeof date==="string"&&date>="2027-01-04"&&date<="2027-01-10"))
+  return hold("EPIPHANY_PRIVATE_DATE_OUTSIDE_FINITE_LEDGER");
+ if(typeof fetchSource!=="function")return hold("FETCH_TRANSPORT_REQUIRED");
+ try{
+  const reader=createJan04_10PrivateLatinPinnedReader({date,fetchSource});
+  const pilot=await assembleJan04_10PrivateLatinComplinePilot({reader,date});
+  return projectPrivateOfficeReview({
+   hour:"COMPLINE",date,pilot,languageMode:"latin",
+   privateEpiphanyResearch:true
+  });
+ }catch(error){
+  return hold("EPIPHANY_PRIVATE_SOURCE_FAILURE:"+String(error?.message??error));
  }
 }
