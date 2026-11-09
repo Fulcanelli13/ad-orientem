@@ -65,6 +65,8 @@ jobs:
           node --test tests/divine-office-dec28-jan03-source-intake.mjs
           node --test tests/divine-office-dec28-jan03-private-complete-compline.mjs
           node --test tests/divine-office-dec28-jan03-public-release.mjs
+          node --test tests/divine-office-epiphany-jan04-10-source-intake.mjs
+          node --test tests/divine-office-epiphany-jan04-10-private-complete-compline.mjs
           node --test tests/divine-office-monday-independent-clementine-fullword.mjs
           node --test tests/divine-office-prayer-readiness-gate.mjs
           node --test tests/divine-office-native-entry.mjs
