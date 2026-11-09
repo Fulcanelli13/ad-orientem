@@ -175,6 +175,30 @@ export function openDivineOfficeReader(win=globalThis,{date=todayLocal()}={}){
   if(weekII.value){input.value=weekII.value;hour="COMPLINE";draw()}
  });
  bar.append(weekII);
+ // Privileged ferias and Ember Days: seven reviewed, exact-date
+ // Compline appointments. Keep these accessible without seven more buttons.
+ const weekIII=d.createElement("select");
+ weekIII.setAttribute("aria-label","Advent III Compline date");
+ const first=d.createElement("option");
+ first.value="";first.textContent="Advent III · 14–20 Dec 2026";
+ weekIII.append(first);
+ for(const [date,caption] of [
+  ["2026-12-14","14 Dec · Advent III Monday"],
+  ["2026-12-15","15 Dec · Advent III Tuesday"],
+  ["2026-12-16","16 Dec · Ember Wednesday"],
+  ["2026-12-17","17 Dec · O Sapientia Thursday"],
+  ["2026-12-18","18 Dec · Ember Friday"],
+  ["2026-12-19","19 Dec · Ember Saturday, First Vespers"],
+  ["2026-12-20","20 Dec · Fourth Sunday of Advent"]
+ ]){
+  const option=d.createElement("option");
+  option.value=date;option.textContent=caption;
+  weekIII.append(option);
+ }
+ weekIII.addEventListener("change",()=>{
+  if(weekIII.value){input.value=weekIII.value;hour="COMPLINE";draw()}
+ });
+ bar.append(weekIII);
  host.append(bar);
  const hours=d.createElement("div");hours.className="aoOfHours";host.append(hours);
  let hour="VESPERS";
