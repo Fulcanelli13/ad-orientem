@@ -35,3 +35,21 @@ const rosary=prayer.filter(r=>r.target_id==='STG-pray.rosary-02'&&r.relationship
 assert.ok(rosary.length>=10,'accepted Rosary alternatives were lost');
 assert.equal(prayer.filter(r=>r.relationship_type==='MISROUTED_SCOPE_EVIDENCE_NOT_PLACEMENT_APPROVAL'&&r.target_type==='PRAYER_SLOT').length,0,'misrouted approvals promoted to Prayer slot');
 console.log('PASS: 1,589 source-scoped, nonpublishing links; 640 destinations; 507 owner-accepted options; 103 rejected originals; 114 Claude new proposals held.');
+
+
+const sceneBatch=read('data/artwork/research/m2m-scene-adjudication-batch1-20261109.v1.json');
+assert.equal(sceneBatch.records.length,10);
+assert.equal(sceneBatch.summary.different_pericope,5);
+assert.equal(sceneBatch.summary.correct_episode_with_caveats,2);
+assert.equal(sceneBatch.summary.ambiguous_or_liturgical,3);
+assert.equal(sceneBatch.summary.affected_prayer_slots,4);
+for(const row of sceneBatch.records){
+ assert.equal(row.override_allowed,false,'source QA must not automatically override any owner selection');
+ assert.equal(row.photo_release_authorised,false,'art relevance cannot imply image rights');
+ assert.ok(row.evidence.length>0&&row.artwork_id&&row.destination_id,'scene adjudication requires traceable evidence');
+}
+const episodeErrors=sceneBatch.records.filter(row=>row.grade.startsWith('PROVEN_DIFFERENT_EPISODE'));
+assert.deepEqual(episodeErrors.map(r=>r.destination_id).sort(),['2026-02-15','2026-02-16','2026-02-17','2026-09-27','2026-10-01']);
+assert.equal(sceneBatch.historical_conflicts[0].artwork_id,'cma-122338');
+assert.equal(sceneBatch.historical_conflicts[0].affected_destinations.length,4);
+console.log('PASS: source-scoped batch1 adjudications; 5 pericope conflicts, 2 qualified matches, 3 holds, 4 preserved historical Bouts conflicts.');
