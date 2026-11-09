@@ -106,6 +106,20 @@ export function pickReadingParagraph({
   const firstCenter=Math.max(24,(usable[0].top+usable[0].bottom)/2);
   const offset=Math.min(steadyOffset,Math.max(24,firstCenter+top*.8));
   const focus=top+offset;
+  // The hard last-row guard can swallow a short penultimate response if
+  // the physical scroll box ends before its turn reaches the 39% reading
+  // line. Give that otherwise unreachable paragraph a brief real finger-
+  // scroll interval immediately before the terminal handoff. Do not change
+  // source-event (data-active) ownership, liturgical ordering or row heights.
+  const maxScroll=Math.max(0,extent-viewport);
+  if(usable.length>=2&&maxScroll>=52){
+    const penultimate=usable.at(-2);
+    const endTop=Math.max(3,maxScroll-3);
+    const endOffset=Math.min(steadyOffset,Math.max(24,firstCenter+endTop*.8));
+    const penultimateWouldBeSkipped=endTop+endOffset<penultimate.top;
+    if(penultimateWouldBeSkipped&&top>=Math.max(3,maxScroll-36))
+      return penultimate;
+  }
   let selected=usable[0],bestDistance=Infinity;
   for(const item of usable){
     // A long prayer remains lit while the reading line is within it.
