@@ -40,8 +40,22 @@
     "legacy_local_image": "assets/prayer/released/bouts-annunciation-original.jpg",
     "legacy_release_pr": 2340,
     "blocked_by_research_manifest": true,
-    "evidence_limitation": "Existing released photo registry and file are present; whether the image is presently displayed on a live route was not tested. Research manifest cannot retroactively alter existing deployed code.",
-    "policy": "No new Bouts assignment and independently audit live route exposure before any actual runtime change"
+    "evidence_limitation": "Static code shows Bouts is included in the released-gallery source list and the default 'all' navigation; no deployed Pages browser/viewport test has confirmed live exposure. Do not claim browser verification.",
+    "policy": "No new Bouts assignment and independently audit live route exposure before any actual runtime change",
+    "static_source_reachability": {
+      "evaluation": "C3_HOME_GALLERY_ALL_CATEGORY_STATICALLY_INCLUDES_RELEASED_PHOTO_BOUTS",
+      "source_registry": "src/art/released-module-paintings.v1.js",
+      "source_gallery_builder": "src/art/released-gallery-batch1.v1.js",
+      "source_taxonomy": "src/art/sacred-art-taxonomy-v1.js",
+      "home_gallery_renderer": "src/home/c3-gallery.js",
+      "home_gallery_entrypoint": "src/home/browser-entry.js",
+      "released_photo_id": "released-photo:bouts",
+      "default_filter": "all",
+      "static_code_path_exists": true,
+      "deployed_pages_browser_test_performed": false,
+      "physical_exact_original": "cma-122338",
+      "tracking_issue": "https://github.com/Fulcanelli13/ad-orientem/issues/2761"
+    }
   },
   "rows": [
     {
