@@ -450,6 +450,17 @@ assert.throws(()=>buildEmberInsertionCards({...septBroken,
 assert.throws(()=>buildEmberInsertionCards({...septBase,date:"2026-09-25",
  emberSaturdaySelection:{form:"SHORT",isConventual:false,ordinations:false}},
  {language:"en"}),/SOURCE_DATE_UNSUPPORTED/);
+// The authentic host's affirmative circumstance is independently decisive
+// even if an untrusted selector says both restrictions are false.
+for(const provenance of [
+ {conventualMass:true,ordinationMass:false},
+ {conventualMass:false,ordinationMass:true}
+]){
+ assert.throws(()=>buildEmberInsertionCards({
+  ...septBase,provenance,
+  emberSaturdaySelection:{form:"SHORT",isConventual:false,ordinations:false}
+ },{language:"en"}),/FORBIDDEN_FOR_CONVENTUAL_OR_ORDINATIONS/);
+}
 assert.ok(!SEPTEMBER_EMBER_SHORT_SOURCE_ORDER.includes("LectioL5"));
 
 console.log("Ember lessons: PASS — source-order Proper nodes render before ordinary Epistle; suffix pairing is impossible and unresolved payloads fail closed.");
