@@ -153,7 +153,7 @@ const details=[
  ["RG-6AF996070252","TUESDAY|18:45","Not guaranteed","non garanti"],
 ];
 const required=new Map(details.map(([anchor,line,en,fr])=>[anchor+"|"+line,[en,fr]]));
-const time=t=>/^([01]\\d|2[0-3]):[0-5]\\d$/.test(T(t));
+const time=t=>/^([01]\d|2[0-3]):[0-5]\d$/.test(T(t));
 export function attachPublishedWeeklySupplement(items,manifest){
  if(manifest?.schema!=="AO_CL27_SOURCE_WEEKLY_MASS_SUPPLEMENT_V1"||
     manifest.publication!=="FIRST_PARTY_REPORTED_PATTERN_NOT_LIVE_MASS_OCCURRENCE"||
