@@ -11,7 +11,9 @@ import {createComplinePinnedReader,assembleDatedComplinePilot,
  createDec28Jan03PrivateLatinPinnedReader,
  assembleDec28Jan03PrivateLatinComplinePilot,
  createJan04_10PrivateLatinPinnedReader,
- assembleJan04_10PrivateLatinComplinePilot}
+ assembleJan04_10PrivateLatinComplinePilot,
+ createJan11_17PrivateLatinPinnedReader,
+ assembleJan11_17PrivateLatinComplinePilot}
  from "./saturday-compline-2026-pilot.js";
 import {createAdventFirstVespersBoundedPinnedReader} from "./advent-first-vespers-bounded-preview-reader.js";
 import {assembleAdventI2026PrivatePreviewSession} from "./advent-first-vespers-preview-session.js";
@@ -44,7 +46,7 @@ function textsValid(frames,activeLanguages=LANGUAGES){
 export function projectPrivateOfficeReview({
  hour,date,pilot,focus,languageMode="trilingual",
  privateChristmasResearch=false,privateYearBoundaryResearch=false,
- privateEpiphanyResearch=false
+ privateEpiphanyResearch=false,privatePostEpiphanyResearch=false
 }={}){
  if(!["trilingual","latin"].includes(languageMode))return hold("REVIEW_LANGUAGE_MODE_NOT_SUPPORTED");
  const activeLanguages=languageMode==="latin"?["la"]:LANGUAGES;
@@ -58,8 +60,10 @@ export function projectPrivateOfficeReview({
     date>="2027-01-01"&&date<="2027-01-03");
   const epiphanyAllowed=privateEpiphanyResearch&&languageMode==="latin"&&
    date>="2027-01-04"&&date<="2027-01-10";
+  const postEpiphanyAllowed=privatePostEpiphanyResearch&&languageMode==="latin"&&
+   date>="2027-01-11"&&date<="2027-01-17";
   if((!COMPLINE_DATES.has(date)&&!christmasAllowed&&!yearBoundaryAllowed&&
-      !epiphanyAllowed)||!pilot||
+      !epiphanyAllowed&&!postEpiphanyAllowed)||!pilot||
    !/^SOURCE_FIRST_(?:SATURDAY|FERIAL_TUESDAY|APPOINTED)_COMPLINE_RESEARCH_NOT_CERTIFIED$/.test(pilot.status)||
    pilot.sourceRevision!==PIN||pilot.hour!=="COMPLINE"||
    !Array.isArray(pilot.availableLanguages)||
@@ -72,7 +76,8 @@ export function projectPrivateOfficeReview({
     date==="2026-12-31"?"2027-01-01":
     date==="2027-01-02"?"2027-01-03":
     date==="2027-01-05"?"2027-01-06":
-    date==="2027-01-09"?"2027-01-10":date)||
+    date==="2027-01-09"?"2027-01-10":
+    date==="2027-01-16"?"2027-01-17":date)||
    pilot.blockCount!==42||pilot.blocks?.length!==42||
    pilot.frames?.length!==pilot.focusFrameCount||
    pilot.rightsApproved!==false||pilot.publishable!==false||
@@ -210,5 +215,27 @@ export async function assembleJan04_10PrivateOfficeResearchReview({
   });
  }catch(error){
   return hold("EPIPHANY_PRIVATE_SOURCE_FAILURE:"+String(error?.message??error));
+ }
+}
+
+/**
+ * Finite source-first Roman Office 11–17 January 2027 Compline.
+ * Historical private research, NOT a public permission, no EN/FR rights.
+ */
+export async function assembleJan11_17PrivateOfficeResearchReview({
+ date,fetchSource
+}={}){
+ if(!(typeof date==="string"&&date>="2027-01-11"&&date<="2027-01-17"))
+  return hold("JAN11_17_PRIVATE_DATE_OUTSIDE_FINITE_INTAKE");
+ if(typeof fetchSource!=="function")return hold("FETCH_TRANSPORT_REQUIRED");
+ try{
+  const reader=createJan11_17PrivateLatinPinnedReader({date,fetchSource});
+  const pilot=await assembleJan11_17PrivateLatinComplinePilot({reader,date});
+  return projectPrivateOfficeReview({
+   hour:"COMPLINE",date,pilot,languageMode:"latin",
+   privatePostEpiphanyResearch:true
+  });
+ }catch(error){
+  return hold("JAN11_17_SOURCE_FAILURE:"+String(error?.message??error));
  }
 }
