@@ -280,6 +280,47 @@ try{
     civilDate:civil,officeDate,psalmDay,marianSection:"Nativiti",
     sourceEvents:42,readingEvents:40,publicReleased:false,passed:true});
   }
+  // Source-only Latin Compline, 11–17 January 2027. This is NOT
+  // public reader availability: 7 dates × 320/390px browser journeys.
+  for(const [civil,officeDate,psalmDay] of [
+   ["2027-01-11","2027-01-11","Feria II"],
+   ["2027-01-12","2027-01-12","Feria III"],
+   ["2027-01-13","2027-01-13","Dominica"],
+   ["2027-01-14","2027-01-14","Feria V"],
+   ["2027-01-15","2027-01-15","Feria VI"],
+   ["2027-01-16","2027-01-17","Sabbato"],
+   ["2027-01-17","2027-01-17","Dominica"]
+  ]){
+   await page.locator('#reader input[type="date"]').fill(civil);
+   await page.locator('#reader input[type="date"]').dispatchEvent("change");
+   assert.equal(await page.locator("#reader .aoOfOptions select").nth(1).inputValue(),
+    "la","Post-Epiphany source preview must remain Latin only");
+   await page.getByRole("button",{name:"Read source preview"}).click();
+   await waitReady(page);
+   const state=await page.locator(".aoOfReadiness").innerText();
+   assert.ok(state.includes("civil "+civil+" · Office "+officeDate),
+    "Wrong Baptism/Sunday Office date "+civil+": "+state);
+   assert.match(state,/40 printed-ordinary moments/u);
+   assert.match(state,/42 source events/u);
+   assert.equal(await page.locator("#reader").getAttribute("data-office-marian-source"),
+    "Psalterium/Mariaant#Nativiti");
+   assert.equal(await page.locator(".aoOfLanguage").count(),1);
+   assert.match(await page.locator(".aoOfFrameControls").innerText(),
+    /Reading step 1 of/u);
+   await page.getByRole("button",{name:"Next"}).click();
+   assert.match(await page.locator(".aoOfFrameControls").innerText(),
+    /Reading step 2 of/u);
+   const over=await page.evaluate(()=>
+    document.documentElement.scrollWidth-document.documentElement.clientWidth);
+   assert.ok(over<=2,"Jan11–17 "+civil+" overflows "+width+"px: "+over);
+   const png=width+"-jan11-17-"+civil+"-latin-private.png";
+   await page.screenshot({path:resolve(OUT,png),
+    animations:"disabled",fullPage:false});
+   receipt.screenshots.push(png);
+   receipt.scenarios.push({case:"jan11-17-private-Compline",width,
+    civilDate:civil,officeDate,psalmDay,marianSection:"Nativiti",
+    sourceEvents:42,readingEvents:40,publicReleased:false,passed:true});
+  }
   // Exact 28 November civil date is not 29 November Office on First Vespers.
   await page.locator("#reader .aoOfOptions select").first().selectOption("VESPERS");
   assert.equal(await presider.isDisabled(),true);
