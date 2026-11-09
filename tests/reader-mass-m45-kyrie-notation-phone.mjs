@@ -58,6 +58,12 @@ try{
    const chooser=page.locator('[data-ordinary-reference-chooser="KYRIE"] select');
    await chooser.waitFor({timeout:20000});
    assert.equal(await chooser.count(),1);
+   assert.equal(await paragraph.evaluate(node=>{
+     const select=node.querySelector('[data-ordinary-reference-chooser="KYRIE"]');
+     const latin=node.querySelector(":scope > .ao-line-primary");
+     return Boolean(select&&latin&&
+       (select.compareDocumentPosition(latin)&Node.DOCUMENT_POSITION_FOLLOWING));
+   }),true,"Kyrie notation choice must precede Latin, not hide below prayer");
    assert.equal(await chooser.inputValue(),"",
      "Kyrie research setting cannot be inferred from the calendar or default form");
    assert.equal(await page.locator('[data-reference-score="GREGOBASE-545"]').count(),0);
