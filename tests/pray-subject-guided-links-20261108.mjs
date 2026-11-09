@@ -13,7 +13,7 @@ assert.equal(new Set(PRAYER_SUBJECT_GUIDED_LINKS_V1.map(x=>x.id)).size,7);
 for(const subject of PRAYER_SUBJECTS_V1){
  assert.deepEqual(guidedPrayerLinksForSubject(subject.id).map(x=>x.id),want[subject.id]||[],subject.id+" incorrect guided subjects");
 }
-assert.deepEqual(guidedPrayerLinksForSubject("all"),[]);
+assert.deepEqual(guidedPrayerLinksForSubject("all"),PRAYER_SUBJECT_GUIDED_LINKS_V1);
 for(const entry of PRAYER_SUBJECT_GUIDED_LINKS_V1){
  assert.ok(supportedDirectPrayerRoute(entry.id),entry.id+" not registered in original live route table");
  assert.ok(PRAYER_SUBJECTS_V1.some(s=>s.id===entry.subject));
@@ -23,7 +23,7 @@ for(const entry of PRAYER_SUBJECT_GUIDED_LINKS_V1){
 }
 const presentation=readFileSync(new URL("../src/pray/presentation-runtime.js",import.meta.url),"utf8");
 for(const c of [
- 'guidedPrayerLinksForSubject(LIB.subject)',
+ 'guidedPrayerLinksForSubject(LIB.subject,q)',
  'data-ao-prayer-subject-guided',
  "prayFamilyItem(['own',item.id",
  'data-p435930-own',

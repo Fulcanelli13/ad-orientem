@@ -1,5 +1,8 @@
-/* 2026-11-09 CL27 four source-published church weekly patterns with exceptions.
+/* 2026-11-09 CL27 ten source-published church weekly patterns with exceptions.
  * No inferred future Mass, recurring calendar event or ecclesial classification.
+ */
+/* 2026-11-09 CL27 first-party contact expansion: 26 exact CL2 site profiles.
+ * Refresh installed GitHub Pages clients without adding schedules or classifications.
  */
 /* 2026-11-08 Païta exact first-party 2026 dated Mass programme (22 Nov/20 Dec).
  * Preserve current Ordo A/C release and refresh installed GitHub Pages clients.

@@ -4,7 +4,7 @@ export const CL27_SITE_CONTACT_URL=new URL(
   "../../data/directory/cl27-site-contact-evidence-20261108.v1.json",import.meta.url).href;
 const T=v=>String(v??"").trim();
 const HTTPS=v=>/^https:\/\/[^\s<>"']+$/i.test(T(v));
-const EXACT_COUNT=16;
+const EXACT_COUNT=26;
 
 export function attachPublishedSiteContactEvidence(items,manifest){
  if(manifest?.schema!=="AO_CL27_EXACT_SITE_CONTACT_RELEASE_V1"||

@@ -71,6 +71,6 @@ export function prayerSevenSourceWork(id){return indexed.get(String(id||""))||nu
 export function prayerSevenSourceWorksForSubject(subject,query=""){
  const q=String(query||"").trim().toLocaleLowerCase();
  return PRAYER_SEVEN_SOURCE_WORK_LINKS_V1.filter(w=>
-  (w.subject===subject||(subject==="all"&&!!q))&&
+  (subject==="all"||w.subject===subject)&&
   (!q||[w.id,w.en,w.fr,w.sourceNoteEn,w.sourceNoteFr].some(x=>x.toLocaleLowerCase().includes(q))));
 }

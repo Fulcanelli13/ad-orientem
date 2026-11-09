@@ -34,6 +34,6 @@ const byId=new Map(PRAYER_SUPPLEMENTAL_LIVE_WORK_LINKS_V1.map(w=>[w.id,w]));
 export function prayerSupplementalLiveWork(id){return byId.get(String(id||""))||null}
 export function prayerSupplementalLiveWorksForSubject(subject,query=""){
  const q=String(query||"").trim().toLocaleLowerCase();
- return PRAYER_SUPPLEMENTAL_LIVE_WORK_LINKS_V1.filter(w=>(w.subject===subject||(subject==="all"&&!!q))&&
+ return PRAYER_SUPPLEMENTAL_LIVE_WORK_LINKS_V1.filter(w=>(subject==="all"||w.subject===subject)&&
   (!q||[w.en,w.fr,w.id,w.purpose].some(x=>x.toLocaleLowerCase().includes(q))));
 }
