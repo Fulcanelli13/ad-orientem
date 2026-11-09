@@ -248,6 +248,41 @@ try{
    report.cases[report.cases.length-1].kyrieNotation={
     ...placement,sourceScore:"GREGOBASE-545",originalSourceLinked:true,zoomOpened:true
    };
+
+   // M47 real PUBLIC reader: selecting Mass VIII's Kyrie must not silently
+   // assign the whole Mass. A distinct button is required, and only source-
+   // indexed Ordinary movements get a score; Credo stays independent.
+   await kyrieChooser.selectOption("MASS_08");
+   const suiteAction=page.locator(rootSelector+' [data-ordinary-mass-suite="MASS_08"]');
+   await suiteAction.waitFor({state:"visible",timeout:20000});
+   assert.match(await suiteAction.textContent(),/3 other available Ordinary scores/i);
+   await suiteAction.click();
+   const massSuite=[
+    {title:/Gloria/i,movement:"GLORIA",score:"GREGOBASE-961"},
+    {title:/Sanctus|Benedictus/i,movement:"SANCTUS_BENEDICTUS",score:"GREGOBASE-1384"},
+    {title:/Agnus Dei/i,movement:"AGNUS_DEI",score:"GREGOBASE-2760"}
+   ];
+   for(const part of massSuite){
+    await sectionJump.click();
+    const target=page.locator(rootSelector+' [data-reader-section-all] [data-reader-section]')
+      .filter({hasText:part.title}).first();
+    await target.waitFor({state:"visible",timeout:20000});
+    await target.click();
+    const control=page.locator(rootSelector+
+      ' [data-ordinary-reference-chooser="'+part.movement+'"] select');
+    await control.waitFor({state:"visible",timeout:20000});
+    assert.equal(await control.inputValue(),"MASS_08",
+      label+" explicit suite not applied to "+part.movement);
+    await page.waitForSelector(rootSelector+' [data-reference-score="'+part.score+
+      '"][data-reference-ready="true"] svg',{state:"visible",timeout:45000});
+    assert.equal(await page.locator(rootSelector+' [data-reference-score="'+part.score+'"]')
+      .getAttribute("data-approved"),"false");
+   }
+   await page.screenshot({path:resolve(out,label+"-m47-ordinary-suite-390.png"),fullPage:false});
+   report.cases[report.cases.length-1].ordinarySuite={
+    id:"MASS_08",explicitClick:true,matchingMovements:["KYRIE","GLORIA",
+      "SANCTUS_BENEDICTUS","AGNUS_DEI"],scoresNotMusicallyCertified:true
+   };
    await writeFile(resolve(out,"evidence.json"),JSON.stringify(report,null,2)+"\n");
 
    await context.close();context=null;
