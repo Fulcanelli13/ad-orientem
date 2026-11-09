@@ -28,6 +28,9 @@ for(const lang of ["la","en","fr"]){
 }
 const ordinary=readFileSync(new URL(
  "../tests/fixtures/office/advent-i-preview-ordinary.txt",import.meta.url),"utf8");
+const christmasMarian=readFileSync(new URL(
+ "../data/office/research/christmas-2026-marian-latin-pinned-source.txt",
+ import.meta.url),"utf8");
 const sourceBase="https://raw.githubusercontent.com/DivinumOfficium/divinum-officium/"+
  PIN+"/web/www/horas/";
 const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",
@@ -39,6 +42,8 @@ function sourceFixture(url,{dropFrenchPsalm=false}={}){
  const m=/^(Latin|English|Francais)\/(.+)\.txt$/u.exec(original);
  if(!m)throw Error("UNKNOWN_SOURCE_LOCALE_OR_PATH:"+original);
  const lang=languages[m[1]],path=m[2],f=fixture[lang];
+ if(path==="Psalterium/Mariaant"&&lang==="la")
+  return christmasMarian; // exact pinned Advent + Christmas seasonal source
  if(path.startsWith("Psalterium/Psalmorum/Psalm")){
   const id=Number(path.slice("Psalterium/Psalmorum/Psalm".length));
   let body;
@@ -147,6 +152,47 @@ try{
   const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-
    document.documentElement.clientWidth);
   assert.ok(overflow<=2,"horizontal overflow "+overflow+" at "+width);
+  // Christmas private-only LATIN: 7 dates × 2 physical phone widths.
+  // These test source-fed complete readings, never public availability.
+  for(const [civil,officeDate,psalmDay,season] of [
+   ["2026-12-21","2026-12-21","Dominica","Advent"],
+   ["2026-12-22","2026-12-22","Feria III","Advent"],
+   ["2026-12-23","2026-12-23","Feria IV","Advent"],
+   ["2026-12-24","2026-12-25","Dominica","Nativiti"],
+   ["2026-12-25","2026-12-25","Dominica","Nativiti"],
+   ["2026-12-26","2026-12-26","Dominica","Nativiti"],
+   ["2026-12-27","2026-12-27","Dominica","Nativiti"]
+  ]){
+   await page.locator('#reader input[type="date"]').fill(civil);
+   await page.locator('#reader input[type="date"]').dispatchEvent("change");
+   const sourceMode=page.locator("#reader .aoOfOptions select").nth(1);
+   assert.equal(await sourceMode.inputValue(),"la",
+    "Christmas research preview must default to Latin only");
+   await page.getByRole("button",{name:"Read source preview"}).click();
+   await waitReady(page);
+   const actual=await page.locator(".aoOfReadiness").innerText();
+   assert.ok(actual.includes("civil "+civil+" · Office "+officeDate),
+    "Incorrect civil/Office date "+civil+": "+actual);
+   assert.match(actual,/40 printed-ordinary moments/u);
+   assert.match(actual,/42 source events/u);
+   assert.equal(await page.locator("#reader").getAttribute("data-office-marian-source"),
+    "Psalterium/Mariaant#"+season);
+   assert.equal(await page.locator(".aoOfLanguage").count(),1);
+   assert.match(await page.locator(".aoOfFrameControls").innerText(),/Reading step 1 of/u);
+   await page.getByRole("button",{name:"Next"}).click();
+   assert.match(await page.locator(".aoOfFrameControls").innerText(),/Reading step 2 of/u);
+   const mobileOverflow=await page.evaluate(()=>
+    document.documentElement.scrollWidth-document.documentElement.clientWidth);
+   assert.ok(mobileOverflow<=2,
+    "Private Christmas "+civil+" overflows "+width+"px by "+mobileOverflow);
+   const capture=width+"-christmas-"+civil+"-latin-private.png";
+   await page.screenshot({path:resolve(OUT,capture),
+    animations:"disabled",fullPage:false});
+   receipt.screenshots.push(capture);
+   receipt.scenarios.push({case:"christmas-private-Compline",width,civilDate:civil,
+    officeDate,psalmDay,marianSection:season,sourceEvents:42,
+    readingEvents:40,publicReleased:false,passed:true});
+  }
   // Exact 28 November civil date is not 29 November Office on First Vespers.
   await page.locator("#reader .aoOfOptions select").first().selectOption("VESPERS");
   assert.equal(await presider.isDisabled(),true);

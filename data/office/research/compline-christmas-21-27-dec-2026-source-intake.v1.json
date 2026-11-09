@@ -1,0 +1,182 @@
+{
+  "schema": "ao.office.christmas-21-27-dec-2026-source-intake.v1",
+  "status": "RESEARCH_ONLY_WITHHELD",
+  "calendarScope": "UNIVERSAL_ROMAN_1960",
+  "sourcePolicy": "INDEPENDENT_DATED_OFFICE_ORDO_NOT_MASS_CALENDAR",
+  "createdUtc": "2026-11-09",
+  "lastCertifiedCivilDate": "2026-12-20",
+  "previousReleaseMergeSha": "2a99ce018427e0fc33065a3f94912ebc1634dec0",
+  "previousReleasePagesRun": 42543270249,
+  "publicReleaseApproved": false,
+  "completeHourCertified": false,
+  "newLatinTextCollated": false,
+  "translationsApproved": false,
+  "sourceFacsimileMame1961Certified": false,
+  "policy": "Research hypotheses must not be imported into release whitelist or resolver authorization; keep dates 2026-12-21 onward withheld before fetch",
+  "sources": {
+    "officeOrdo": "https://breviariumgregorianum.com/ordo-2026.php",
+    "rubrics": "https://isidore.co/divinum/www/horas/Help/Rubrics/Breviary%201960.html",
+    "season": "https://1962ordo.today/season/",
+    "occurrenceCrossCheck": "https://latinmasspropers.com/calendar/2026/",
+    "independentVespersWitness": "https://ordo.fsspx.org/day/2026-12-26?lang=en",
+    "independentSundayConcurrenceWitness": "https://ordo.fsspx.org/day/2026-12-27?lang=en",
+    "independentThomasWitness": "https://ordo.fsspx.org/day/2026-12-21?lang=en",
+    "independentVigilVespersWitness": "https://ordo.fsspx.org/en/day/2026-12-24?source=nullius&texts=readings"
+  },
+  "dates": [
+    {
+      "date": "2026-12-21",
+      "principalOffice": "Saint Thomas Apostle",
+      "class": "II_FEAST",
+      "officeDateHypothesis": "2026-12-21",
+      "firstVespersHypothesis": "NONE",
+      "psalterHypothesis": "Dominica",
+      "rubricHypothesis": "168(d)",
+      "marianSectionHypothesis": "Advent",
+      "marianVerseHypothesis": "Angelus Domini",
+      "commemorationHypothesis": "Advent feria",
+      "specialHold": [
+        "FULL_LATIN_OFFICE_AND_COMM_REVIEW"
+      ],
+      "reviewStage": "DATED_ORDO_CALENDAR_RESEARCH_ONLY",
+      "psalterResearchOnly": true,
+      "textVerified": false,
+      "publishable": false,
+      "published": false
+    },
+    {
+      "date": "2026-12-22",
+      "principalOffice": "Tuesday of the Fourth Week of Advent",
+      "class": "II_FERIA",
+      "officeDateHypothesis": "2026-12-22",
+      "firstVespersHypothesis": "NONE",
+      "psalterHypothesis": "Feria III",
+      "rubricHypothesis": "171(e)",
+      "marianSectionHypothesis": "Advent",
+      "marianVerseHypothesis": "Angelus Domini",
+      "commemorationHypothesis": null,
+      "specialHold": [
+        "FULL_LATIN_OFFICE_REVIEW"
+      ],
+      "reviewStage": "DATED_ORDO_CALENDAR_RESEARCH_ONLY",
+      "psalterResearchOnly": true,
+      "textVerified": false,
+      "publishable": false,
+      "published": false
+    },
+    {
+      "date": "2026-12-23",
+      "principalOffice": "Wednesday of the Fourth Week of Advent",
+      "class": "II_FERIA",
+      "officeDateHypothesis": "2026-12-23",
+      "firstVespersHypothesis": "NONE",
+      "psalterHypothesis": "Feria IV",
+      "rubricHypothesis": "171(e)",
+      "marianSectionHypothesis": "Advent",
+      "marianVerseHypothesis": "Angelus Domini",
+      "commemorationHypothesis": null,
+      "specialHold": [
+        "FULL_LATIN_OFFICE_REVIEW"
+      ],
+      "reviewStage": "DATED_ORDO_CALENDAR_RESEARCH_ONLY",
+      "psalterResearchOnly": true,
+      "textVerified": false,
+      "publishable": false,
+      "published": false
+    },
+    {
+      "date": "2026-12-24",
+      "principalOffice": "First Compline of the Nativity after First Vespers",
+      "civilDayOffice": "Vigil of the Nativity I class",
+      "class": "I_FEAST_FIRST_VESPERS",
+      "officeDateHypothesis": "2026-12-25",
+      "firstVespersHypothesis": "NATIVITY_I_VESPERS",
+      "psalterHypothesis": "Dominica",
+      "rubricHypothesis": "167(b); verify 173 exception",
+      "marianSectionHypothesis": "Nativiti",
+      "marianVerseHypothesis": "Post partum",
+      "marianCollectHypothesis": "Deus qui salutis",
+      "commemorationHypothesis": null,
+      "specialHold": [
+        "CHRISTMAS_VIGIL_SPECIAL_ORDER_173",
+        "CIVIL_VS_LITURGICAL_DATE_25_DEC",
+        "FULL_LATIN_FIRST_COMPLINE_REVIEW",
+        "MARIAN_POST_PARTUM_EXACT_TEXT"
+      ],
+      "reviewStage": "DATED_ORDO_CALENDAR_RESEARCH_ONLY",
+      "psalterResearchOnly": true,
+      "textVerified": false,
+      "publishable": false,
+      "published": false
+    },
+    {
+      "date": "2026-12-25",
+      "principalOffice": "Nativity of the Lord",
+      "class": "I_FEAST",
+      "officeDateHypothesis": "2026-12-25",
+      "firstVespersHypothesis": "NONE_AFTER_II_VESPERS",
+      "psalterHypothesis": "Dominica",
+      "rubricHypothesis": "167(h)",
+      "marianSectionHypothesis": "Nativiti",
+      "marianVerseHypothesis": "Post partum",
+      "marianCollectHypothesis": "Deus qui salutis",
+      "commemorationHypothesis": null,
+      "specialHold": [
+        "FULL_LATIN_SECOND_COMPLINE_REVIEW",
+        "MARIAN_POST_PARTUM_EXACT_TEXT"
+      ],
+      "reviewStage": "DATED_ORDO_CALENDAR_RESEARCH_ONLY",
+      "psalterResearchOnly": true,
+      "textVerified": false,
+      "publishable": false,
+      "published": false
+    },
+    {
+      "date": "2026-12-26",
+      "principalOffice": "Saint Stephen Protomartyr",
+      "class": "II_FEAST",
+      "officeDateHypothesis": "2026-12-26",
+      "firstVespersHypothesis": "NONE_ST_STEPHEN_II_VESPERS_SUNDAY_COMM",
+      "psalterHypothesis": "Dominica",
+      "rubricHypothesis": "168(d)",
+      "marianSectionHypothesis": "Nativiti",
+      "marianVerseHypothesis": "Post partum",
+      "marianCollectHypothesis": "Deus qui salutis",
+      "commemorationHypothesis": "Sunday within Christmas Octave",
+      "specialHold": [
+        "SATURDAY_PSALTER_MUST_NOT_LEAK",
+        "FULL_LATIN_OFFICE_REVIEW",
+        "SOURCE_BACKED_SUNDAY_VESPERS_COMM_NOT_SUNDAY_FIRST_VESPERS"
+      ],
+      "reviewStage": "DATED_ORDO_CALENDAR_RESEARCH_ONLY",
+      "psalterResearchOnly": true,
+      "textVerified": false,
+      "publishable": false,
+      "published": false
+    },
+    {
+      "date": "2026-12-27",
+      "principalOffice": "Sunday within Octave of the Nativity",
+      "class": "CHRISTMAS_OCTAVE_SUNDAY",
+      "officeDateHypothesis": "2026-12-27",
+      "firstVespersHypothesis": "NONE_AFTER_II_VESPERS",
+      "psalterHypothesis": "Dominica",
+      "rubricHypothesis": "175(e); 176",
+      "marianSectionHypothesis": "Nativiti",
+      "marianVerseHypothesis": "Post partum",
+      "marianCollectHypothesis": "Deus qui salutis",
+      "commemorationHypothesis": "Saint John Apostle and Evangelist",
+      "specialHold": [
+        "SUNDAY_OCCURRENCE_AND_ST_JOHN_COMM_REVIEW",
+        "FULL_LATIN_OCTAVE_OFFICE_REVIEW",
+        "ST_JOHN_IS_COMM_NOT_PRINCIPAL_OFFICE"
+      ],
+      "reviewStage": "DATED_ORDO_CALENDAR_RESEARCH_ONLY",
+      "psalterResearchOnly": true,
+      "textVerified": false,
+      "publishable": false,
+      "published": false
+    }
+  ],
+  "researchCorroborationNote": "2026-12-26 St Stephen retains II Vespers with Sunday commemoration (not First Vespers of Sunday); 2026-12-27 principal Sunday with St John commemorated; separate 1962 ordo corroboration, not independent textual collation."
+}

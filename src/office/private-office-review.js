@@ -5,7 +5,9 @@
  */
 import {DIVINUM_OFFICIUM_PIN as PIN} from "../app/source-transport-compat.js";
 import {createComplinePinnedReader,assembleDatedComplinePilot,
- createLatinComplinePinnedReader,assembleLatinDatedComplinePilot}
+ createLatinComplinePinnedReader,assembleLatinDatedComplinePilot,
+ createChristmas2026PrivateLatinPinnedReader,
+ assembleChristmas2026PrivateLatinComplinePilot}
  from "./saturday-compline-2026-pilot.js";
 import {createAdventFirstVespersBoundedPinnedReader} from "./advent-first-vespers-bounded-preview-reader.js";
 import {assembleAdventI2026PrivatePreviewSession} from "./advent-first-vespers-preview-session.js";
@@ -35,13 +37,17 @@ function textsValid(frames,activeLanguages=LANGUAGES){
   activeLanguages.every(l=>Array.isArray(f.texts?.[l])&&f.texts[l].length>0&&
    f.texts[l].every(t=>typeof t==="string"&&t.length>0&&t.length<20000)));
 }
-export function projectPrivateOfficeReview({hour,date,pilot,focus,languageMode="trilingual"}={}){
+export function projectPrivateOfficeReview({
+ hour,date,pilot,focus,languageMode="trilingual",privateChristmasResearch=false
+}={}){
  if(!["trilingual","latin"].includes(languageMode))return hold("REVIEW_LANGUAGE_MODE_NOT_SUPPORTED");
  const activeLanguages=languageMode==="latin"?["la"]:LANGUAGES;
  if(!["COMPLINE","VESPERS"].includes(hour)||typeof date!=="string")
   return hold("HOUR_OR_DATE_OUTSIDE_PRIVATE_REVIEW");
  if(hour==="COMPLINE"){
-  if(!COMPLINE_DATES.has(date)||!pilot||
+  const christmasAllowed=privateChristmasResearch&&languageMode==="latin"&&
+   date>="2026-12-21"&&date<="2026-12-27";
+  if((!COMPLINE_DATES.has(date)&&!christmasAllowed)||!pilot||
    !/^SOURCE_FIRST_(?:SATURDAY|FERIAL_TUESDAY|APPOINTED)_COMPLINE_RESEARCH_NOT_CERTIFIED$/.test(pilot.status)||
    pilot.sourceRevision!==PIN||pilot.hour!=="COMPLINE"||
    !Array.isArray(pilot.availableLanguages)||
@@ -49,7 +55,8 @@ export function projectPrivateOfficeReview({hour,date,pilot,focus,languageMode="
    activeLanguages.some(l=>!pilot.availableLanguages.includes(l))||
    pilot.civilDate!==date||pilot.officeDate!==(date==="2026-12-07"?"2026-12-08":
     date==="2026-12-12"?"2026-12-13":
-    date==="2026-12-19"?"2026-12-20":date)||
+    date==="2026-12-19"?"2026-12-20":
+    date==="2026-12-24"?"2026-12-25":date)||
    pilot.blockCount!==42||pilot.blocks?.length!==42||
    pilot.frames?.length!==pilot.focusFrameCount||
    pilot.rightsApproved!==false||pilot.publishable!==false||
@@ -117,4 +124,27 @@ export async function assemblePrivateOfficeReview({
   }catch(error){return hold("FIRST_VESPERS_SOURCE_FAILURE:"+String(error?.message??error))}
  }
  return hold("NOT_A_REVIEWED_HOUR");
+}
+
+/**
+ * Opt-in Christmas private source review only.
+ * The normal private Office API retains the original 23-date scope.
+ * This helper cannot be reached through the public Office route.
+ */
+export async function assembleChristmas2026PrivateOfficeResearchReview({
+ date,fetchSource
+}={}){
+ if(!(typeof date==="string"&&date>="2026-12-21"&&date<="2026-12-27"))
+  return hold("CHRISTMAS_PRIVATE_SOURCE_DATE_NOT_IN_FINITE_LEDGER");
+ if(typeof fetchSource!=="function")return hold("FETCH_TRANSPORT_REQUIRED");
+ try{
+  const reader=createChristmas2026PrivateLatinPinnedReader({date,fetchSource});
+  const pilot=await assembleChristmas2026PrivateLatinComplinePilot({reader,date});
+  return projectPrivateOfficeReview({
+   hour:"COMPLINE",date,pilot,languageMode:"latin",
+   privateChristmasResearch:true
+  });
+ }catch(error){
+  return hold("CHRISTMAS_PRIVATE_SOURCE_FAILURE:"+String(error?.message??error));
+ }
 }

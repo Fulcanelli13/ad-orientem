@@ -126,7 +126,7 @@ test("2026 finite annual research ledger is 23 reviewed and 342 withheld, not au
  assert.equal(coverage.published,0);
  for(const [date] of expected)assert.equal(
   coverage.rows.find(x=>x.date===date).publicReleaseApproved,false);
- for(const date of ["2026-12-21","2026-12-22","2026-12-23","2026-12-24"])
+ for(const date of ["2026-12-28","2026-12-29","2026-12-30","2026-12-31"])
   assert.equal(latinComplineReleaseEligibility({date}).status,"WITHHELD");
 });
 test("all seven new dates load 42 original Latin events and 40 printed moments with 2×2 minister/context choices",async()=>{
@@ -174,7 +174,7 @@ test("all seven new dates load 42 original Latin events and 40 printed moments w
 });
 test("all unreviewed dates, local calendars and other seven Hours remain source-fetch-free",async()=>{
  for(const options of [
-  {date:"2026-12-21"}, {date:"2026-12-22"},
+  {date:"2026-12-28"}, {date:"2026-12-29"},
   {date:"2027-12-14"}, {date:"2026-12-19",calendarScope:"LOCAL"},
   {date:"2026-12-18",hour:"VESPERS"},
   {date:"2026-12-20",hour:"LAUDS"}

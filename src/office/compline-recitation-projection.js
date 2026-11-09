@@ -224,12 +224,16 @@ export function projectComplineRecitation(review,{
  const saturday=["2026-11-28","2026-12-05","2026-12-12",
   "2026-12-19"].includes(review.civilDate);
  const sunday=["2026-11-29","2026-11-30","2026-12-06",
-  "2026-12-07","2026-12-08","2026-12-13","2026-12-20"].includes(review.civilDate);
+  "2026-12-07","2026-12-08","2026-12-13","2026-12-20",
+  // Christmas private research only. Not a public release authorization.
+  "2026-12-21","2026-12-24","2026-12-25",
+  "2026-12-26","2026-12-27"].includes(review.civilDate);
  const weekdayCounts=Object.freeze({"2026-12-01":26,"2026-12-02":30,
   "2026-12-03":33,"2026-12-04":36,"2026-12-09":30,
   "2026-12-10":33,"2026-12-11":36,
   "2026-12-14":28,"2026-12-15":26,"2026-12-16":30,
-  "2026-12-17":33,"2026-12-18":36});
+  "2026-12-17":33,"2026-12-18":36,
+  "2026-12-22":26,"2026-12-23":30});
  const expected=saturday?41:sunday?30:weekdayCounts[review.civilDate];
  if(!Number.isInteger(expected)||psalmLabelCount!==expected)
   return withheld("COMPLINE_APPOINTED_PSALM_COVERAGE_MISMATCH");

@@ -14,6 +14,17 @@ import {planWeeklyComplinePsalter,COMPLINE_MARIAN_SOURCE_SECTIONS}
  from "./weekday-compline-psalter-plan.js";
 import {reviewAdventIComplineAppointment}
  from "./compline-advent-2026-appointments.js";
+import {researchChristmas2026PrivateComplineAppointment}
+ from "./compline-christmas-2026-research-gate.js";
+const PRIVATE_APPOINTMENT_STATUSES=new Set([
+ "EXPLICIT_ROMAN_1960_APPOINTMENT_RESEARCH",
+ "EXPLICIT_CHRISTMAS_2026_PRIVATE_SOURCE_RESEARCH"
+]);
+function privateComplineSourceAppointment(date){
+ const advent=reviewAdventIComplineAppointment(date);
+ return advent.status==="EXPLICIT_ROMAN_1960_APPOINTMENT_RESEARCH"?
+  advent:researchChristmas2026PrivateComplineAppointment(date);
+}
 
 export const SATURDAY_COMPLINE_PILOT_SCHEMA="ao.office.2026-advent-i-saturday-compline-pilot.v1";
 export const FERIAL_COMPLINE_PILOT_SCHEMA="ao.office.2026-advent-i-ferial-compline-pilot.v1";
@@ -62,11 +73,16 @@ function held(reason,weekday="Sabbato"){
   canPreview:false,rightsApproved:false,publishable:false,published:false
  });
 }
-export function createComplinePinnedReader({fetchSource,weekday=null,date=null,languages}={}){
+export function createComplinePinnedReader({
+ fetchSource,weekday=null,date=null,languages,privateChristmasResearch=false
+}={}){
  const active=checkedLanguages(languages);
  if(!active)throw Error("COMPLINE_LANGUAGE_SCOPE_NOT_APPROVED");
- const reviewed=date===null?null:reviewAdventIComplineAppointment(date);
- if(date!==null&&reviewed.status!=="EXPLICIT_ROMAN_1960_APPOINTMENT_RESEARCH")
+ const reviewed=date===null?null:privateChristmasResearch?
+  privateComplineSourceAppointment(date):reviewAdventIComplineAppointment(date);
+ if(date!==null&&!(privateChristmasResearch?
+     PRIVATE_APPOINTMENT_STATUSES.has(reviewed.status):
+     reviewed.status==="EXPLICIT_ROMAN_1960_APPOINTMENT_RESEARCH"))
   throw Error("COMPLINE_UNREVIEWED_DATE_READER_WITHHELD");
  const psalmDay=reviewed?.appointment?.psalmDay??weekday??"Sabbato";
  if(typeof fetchSource!=="function"||
@@ -178,14 +194,17 @@ function stanzas(lines){
  return parts.some(x=>!x.length)?null:parts;
 }
 export async function assembleWeekdayComplinePilot({
- reader,weekday="Sabbato",date=null,languages
+ reader,weekday="Sabbato",date=null,languages,privateChristmasResearch=false
 }={}){
  const active=checkedLanguages(languages);
  if(!active)return held("COMPLINE_LANGUAGE_SCOPE_NOT_APPROVED",weekday);
  const appointedDate=date??(weekday==="Sabbato"?"2026-11-28":
   weekday==="Feria III"?"2026-12-01":null);
- const review=reviewAdventIComplineAppointment(appointedDate);
- if(review.status!=="EXPLICIT_ROMAN_1960_APPOINTMENT_RESEARCH")
+ const review=privateChristmasResearch?
+  privateComplineSourceAppointment(appointedDate):
+  reviewAdventIComplineAppointment(appointedDate);
+ if(!(privateChristmasResearch?PRIVATE_APPOINTMENT_STATUSES.has(review.status):
+     review.status==="EXPLICIT_ROMAN_1960_APPOINTMENT_RESEARCH"))
   return held("OFFICE_DATE_APPOINTMENT_NOT_REVIEWED",weekday);
  const appointment=review.appointment,psalmDay=appointment.psalmDay;
  const psalmIds=PSALMS_TO_READ[psalmDay];
@@ -446,4 +465,26 @@ export function createLatinComplinePinnedReader({fetchSource,date}={}){
 }
 export async function assembleLatinDatedComplinePilot({reader,date}={}){
  return assembleWeekdayComplinePilot({reader,date,languages:LATIN_ONLY});
+}
+
+/**
+ * Strictly private source-driven research, never imported by public Office
+ * routes. Generic pinned readers still reject all Christmas dates.
+ * The production release manifest independently withholds before fetch.
+ */
+export function createChristmas2026PrivateLatinPinnedReader({date,fetchSource}={}){
+ const review=researchChristmas2026PrivateComplineAppointment(date);
+ if(review.status!=="EXPLICIT_CHRISTMAS_2026_PRIVATE_SOURCE_RESEARCH")
+  throw Error("CHRISTMAS_PRIVATE_RESEARCH_DATE_UNREVIEWED");
+ return createComplinePinnedReader({
+  date,fetchSource,languages:LATIN_ONLY,privateChristmasResearch:true
+ });
+}
+export async function assembleChristmas2026PrivateLatinComplinePilot({reader,date}={}){
+ const review=researchChristmas2026PrivateComplineAppointment(date);
+ if(review.status!=="EXPLICIT_CHRISTMAS_2026_PRIVATE_SOURCE_RESEARCH")
+  return held("CHRISTMAS_PRIVATE_RESEARCH_DATE_UNREVIEWED");
+ return assembleWeekdayComplinePilot({
+  reader,date,languages:LATIN_ONLY,privateChristmasResearch:true
+ });
 }

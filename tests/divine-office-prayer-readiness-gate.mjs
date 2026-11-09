@@ -5,7 +5,7 @@ import {getDivineOfficePrayerReadiness as gate,DIVINE_OFFICE_PUBLIC_MODULE_ID}
 import {internalPrayerView,supportedDirectPrayerRoute}
  from "../src/pray/internal-route-owner.js";
 
-test("all eight independently certified Latin Advent Compline dates release; no other dates",()=>{
+test("all 30 individually certified Latin Compline dates release; no other dates",()=>{
  let count=0;
  for(let day=28;day<=30;day++){
   const r=gate({date:"2026-11-"+day});
@@ -46,13 +46,21 @@ test("all eight independently certified Latin Advent Compline dates release; no 
   assert.equal(r.rightsApproved,true,date);
   count++;
  }
- assert.equal(count,23);
+ for(let day=21;day<=27;day++){
+  const date="2026-12-"+day;
+  const r=gate({date});
+  assert.equal(r.published,true,date);
+  assert.equal(r.sourceTextReleased,true,date);
+  assert.equal(r.rightsApproved,true,date);
+  count++;
+ }
+ assert.equal(count,30);
  assert.equal(DIVINE_OFFICE_PUBLIC_MODULE_ID,"pray.divine_office");
  assert.equal(internalPrayerView(DIVINE_OFFICE_PUBLIC_MODULE_ID),null);
  assert.equal(supportedDirectPrayerRoute(DIVINE_OFFICE_PUBLIC_MODULE_ID),false);
 });
 test("unreviewed feasts and arbitrary dates cannot inherit the Compline pilot",()=>{
- for(const date of ["2026-12-21","2026-12-23","2026-12-25",
+ for(const date of ["2026-12-28","2026-12-29","2026-12-31",
   "2027-11-28","2026-11-27","yesterday",undefined]){
   const r=gate({date});
   assert.equal(r.researchPreviewEligible,false);
