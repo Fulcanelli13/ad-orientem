@@ -10,6 +10,23 @@ assert.equal(spec.works.length,4);
 assert.equal(spec.coveredCanonicalSlots,15);
 const used=new Set();
 for(const w of spec.works){
+ if(w.id==="bouts"){
+  // Historical source release remains in staging evidence, but 15 Oct owner
+  // rejection prevents publication of this exact Cleveland physical original.
+  assert.equal(RELEASED_MODULE_PAINTINGS.bouts,undefined);
+  assert.equal(releasedModulePhotoMarkup("bouts"),"");
+  assert.equal(existsSync(new URL("../assets/prayer/released/bouts-annunciation-original.jpg",import.meta.url)),false);
+  for(const slotId of w.slots){
+   assert.ok(!used.has(slotId));used.add(slotId);
+   const row=resolvePrayerEditorialArtwork(slotId);
+   assert.equal(row.state,"APPROVED_EXACT_PHOTO_PENDING",slotId);
+   assert.equal(row.artId,null,slotId);
+   assert.equal(row.photo,null,slotId);
+   assert.equal(prayerEditorialArtworkMarkup(slotId),"",slotId);
+   assert.equal(row.editorial.selected.sourcePage,w.sourcePage);
+  }
+  continue;
+ }
  const photo=RELEASED_MODULE_PAINTINGS[w.id];
  assert.ok(photo,"Release registry missing "+w.id);
  assert.equal(photo.source,w.sourcePage);
@@ -50,4 +67,4 @@ for(const id of ["COV-dead_de_profundis","COV-foundations_eternal_rest","COV-nov
 }
 assert.equal(resolvePrayerEditorialArtwork("HERO-05").state,"PROVISIONAL_NOT_PUBLISHED");
 assert.equal(resolvePrayerEditorialArtwork("HERO-03").state,"SCOPE_HOLD");
-console.log("PASS: four exact museum originals, 15 source-identical approved slots; 43/267 resolver matches and no hold overrides");
+console.log("PASS: three still-eligible museum originals, 11 photo-released slots; four rejected Bouts slots are held, 15 historic slots preserved");
