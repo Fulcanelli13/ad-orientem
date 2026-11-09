@@ -93,27 +93,19 @@ test("all important cross-year/office/psalter/Marian mutations are rejected",()=
   assert.equal(researchDec28Jan03PrivateComplineAppointment(date).status,"WITHHELD");
  }
 });
-test("7 × 2 contexts × 2 ministers remain withheld before public fetch",async()=>{
+test("independent dated source intake remains research-only under separate authorized Latin certificate",()=>{
  assert.equal(LATIN_COMPLINE_RELEASE.approvedDates.length,23);
  assert.equal(CHRISTMAS_2026_COMPLINE_RELEASE.approvedDates.length,7);
  for(const date of DEC28_JAN03_FINITE_DATES){
-  assert.equal(latinComplineReleaseEligibility({date}).status,"WITHHELD");
+  const source=reviewDec28Jan03ComplineResearch({date,record:record(date)});
+  assert.equal(source.status,DEC28_JAN03_COMPLINE_SOURCE_STATUS);
+  assert.equal(source.sourceTextCertified,false);
+  assert.equal(source.calendarSelectionAuthorized,false);
+  assert.equal(source.published,false);
+  const publicPermission=latinComplineReleaseEligibility({date});
+  assert.equal(publicPermission.status,"ELIGIBLE");
+  assert.equal(publicPermission.certificateFamily,"YEAR_BOUNDARY_2027_FINITE_LATIN");
   const route=officeRouteState({date,hour:"COMPLINE"});
-  assert.equal(route.status,"WITHHELD");
-  assert.equal(route.readingEnabled,false);
-  for(const context of Object.values(COMPLINE_CONTEXT)){
-   for(const minister of Object.values(COMPLINE_MINISTER)){
-    let fetches=0;
-    const r=await loadPublishedLatinCompline({
-     date,context,minister,fetchSource:async()=>{
-      fetches++;throw Error("UNAUTHORIZED_FUTURE_OFFICE_SOURCE_FETCH");
-     }
-    });
-    assert.equal(r.status,"WITHHELD");
-    assert.equal(r.published,false);
-    assert.deepEqual(r.frames,[]);
-    assert.equal(fetches,0);
-   }
-  }
+  assert.equal(route.status,"RELEASED");
  }
 });
