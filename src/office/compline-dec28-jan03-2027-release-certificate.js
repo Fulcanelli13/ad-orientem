@@ -6,6 +6,8 @@
  * https://isidore.co/divinum/www/horas/Help/Rubrics/Breviary%201960.html
  * 2027 Holy Name First Vespers on 2 January:
  * https://ordo.fsspx.org/day/2027-01-02?lang=en
+ * First-Vespers Compline of Holy Name II-class is Sunday Compline,
+ * NOT Saturday: https://icrspfrance.fr/ordo.php?d=2027-01-03
  *
  * Reuses already collated Sunday/Saturday VULGATA source words, the
  * independently reviewed Mame 1961 Ordinary, exact pinned Nativiti Marian
@@ -44,8 +46,8 @@ export const DEC28_JAN03_LATIN_RELEASE_PROFILES=Object.freeze([
   rubric:"167(h)",label:"Circumcision of Our Lord · 1 January 2027"}),
  Object.freeze({date:"2027-01-02",weekday:"Sabbato",
   officeClass:"II_FEAST_FIRST_VESPERS_ON_SUNDAY",officeDate:"2027-01-03",
-  psalmDay:"Sabbato",marianSection:"Nativiti",
-  printedPsalmDisplayFrames:41,rubric:"166(b)",
+  psalmDay:"Dominica",marianSection:"Nativiti",
+  printedPsalmDisplayFrames:30,rubric:"168(d)",
   label:"First Compline of the Holy Name · 2 January 2027"}),
  Object.freeze({date:"2027-01-03",weekday:"Dominica",
   officeClass:"II_FEAST_ON_SUNDAY",officeDate:"2027-01-03",
