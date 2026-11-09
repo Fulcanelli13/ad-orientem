@@ -1,0 +1,93 @@
+{
+  "schema": "ao.office.1960.annual-source-extraction-evidence.v1",
+  "status": "ORIGINAL_FIRST_RUN_EXTRACTED_NOT_LITURGICALLY_CERTIFIED",
+  "source": {
+    "repository": "DivinumOfficium/divinum-officium",
+    "revision": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+    "generator": "standalone/tools/epubgen2/epubgen2.sh",
+    "rubrics": "Rubrics 1960 - 1960",
+    "language": "Latin",
+    "license": "upstream MIT, copied verbatim to each artifact"
+  },
+  "workflow": {
+    "id": 42601773798,
+    "url": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42601773798",
+    "conclusion": "success",
+    "first_run_date": "2026-11-09",
+    "status": "VERIFIED_GENERATED_ONLY"
+  },
+  "years": [
+    {
+      "year": 2026,
+      "days": 365,
+      "hours": [
+        "Matutinum",
+        "Laudes",
+        "Prima",
+        "Tertia",
+        "Sexta",
+        "Nona",
+        "Vespera",
+        "Completorium"
+      ],
+      "expected_instances": 2920,
+      "extracted_instances": 2920,
+      "extraction_exceptions": 0,
+      "annual_source_epub_sha256": "2d1b922c9403cb4b20aebff4241335a816fa6a128a75188322932bd2f010bcba",
+      "artifact_id": 13667050531,
+      "evening_office_transition_candidates": 61,
+      "completorium_vespera_title_divergences": 0
+    },
+    {
+      "year": 2027,
+      "days": 365,
+      "hours": [
+        "Matutinum",
+        "Laudes",
+        "Prima",
+        "Tertia",
+        "Sexta",
+        "Nona",
+        "Vespera",
+        "Completorium"
+      ],
+      "expected_instances": 2920,
+      "extracted_instances": 2920,
+      "extraction_exceptions": 0,
+      "annual_source_epub_sha256": "c13fe926d14f47d5232b9bd42984068fa89147fe1524f03eb06874c7610c7520",
+      "artifact_id": 13665874269,
+      "evening_office_transition_candidates": 62,
+      "completorium_vespera_title_divergences": 0
+    }
+  ],
+  "totals": {
+    "days": 730,
+    "expected_instances": 5840,
+    "extracted_instances": 5840,
+    "extraction_exceptions": 0
+  },
+  "guarantees": {
+    "all_eight_hours_present": true,
+    "original_yearly_epub_was_inspected": true,
+    "original_xhtml_reproduction_capable_via_pinned_git": true,
+    "missing_or_invalid_chapters": 0,
+    "provenance_hashes_recorded": true,
+    "independent_1960_rubrical_validation": false,
+    "full_semantic_reading_events_validated": false,
+    "original_mame1961_published_folio_certified": false,
+    "english_french_translations_certified": false,
+    "public_authorization": false
+  },
+  "retention": {
+    "pr_artifacts_expire": "2026-12-09",
+    "future_pipeline_retention_days": 90,
+    "permanent_bytes_archived_to_github_release": false,
+    "reproduction_instructions": "Checkout exact immutable upstream revision, run GitHub workflow .github/workflows/office-annual-bulk-source.yml, validate manifest; generated binary archives are temporary artifacts, not source-of-truth"
+  },
+  "public_reader": {
+    "certified_latin_compline_dates": 44,
+    "first_date": "2026-11-28",
+    "last_date": "2027-01-10",
+    "all_other_hours_held": true
+  }
+}
