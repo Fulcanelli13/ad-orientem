@@ -40,7 +40,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-      - run: npm ci
+      - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
       - name: Test opt-in French original and 1887 English 320/390 native Simple + Guided reader
         run: node tests/pray-holy-face-1895-french-native-reader-preview-phone.mjs
