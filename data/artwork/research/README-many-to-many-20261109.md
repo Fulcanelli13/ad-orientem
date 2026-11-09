@@ -112,3 +112,22 @@ Source crosswalk: `data/artwork/research/m2m-scene-adjudication-batch3-20261109.
 For 18 April, 2 July and 30 December, the object/attribution source is explicitly insufficient for an unqualified gallery metadata release. The others also still need **exact photographic source, image dimensions, licence, phone crop and owner placement authority**.
 
 **Direct-scene research queue complete**: 52/114 Claude new proposals individually source-adjudicated across batches 1–4; **62 remaining proposals** are thematic, liturgical, scriptural or typological and still require their own independent relevance audit. There are now **zero outstanding new DIRECT_SCENE labels**, but not every direct-scene object or photo is fully certified. Base 1,589 relationships and all 507 previously accepted Prayer-option rows remain untouched.
+
+## 9 November thematic / saint-feast audit — batch 5 (14 high-risk relationships)
+
+Detailed source/object evidence: `data/artwork/research/m2m-liturgical-thematic-batch5-20261109.v1.json`.
+
+**Five reuse links to the same Lorenzo Monaco *Christ Giving the Keys to Saint Peter* (NGA 1958.8.105):** This is a **vellum illuminated miniature**, not an oil painting. Papal iconography is broadly relevant but the 1962 Mass Gospel is different on three dates (16 Jan Marcellus Matt 16:24–27, 22 Apr Soter/Caius John 15:5–11, 12 Nov Martin Luke 14:26–33). For 14 Oct Callistus the Keys scene **does** illustrate the actual Matthew 16:13–19 Gospel, although not Callistus himself. **11 Dec Damasus** has unresolved sources: the 2026 FSSPX Ordo gives Matt 24:42–47 while LatinMassPropers gives Matt 16:13–19. Do not silently overwrite the date's reading or claim exact Gospel identity pending rubrical reconciliation.
+
+**Other object and depicted-subject corrections:**
+- Jan31 De Vriendt Christ with children = charitable analogy to Don Bosco, not a Bosco portrait.
+- Feb11 Reni *Immaculate Conception* (Met 59.32) = Lourdes doctrinal title connection, NOT an apparition image.
+- Feb12 Isenbrandt *Seven Sorrows* = Servite spirituality, NOT depiction of seven founders.
+- Feb25 *Shipwreck of Jonah* = legitimate Jonah-sign **typology** from Matt12, NOT the Gospel scene. Current Lille online catalogue says **entourage de Paul Bril**, inventory **976.3.1**, while older official Joconde identifies **Paul Bril**, inventory **P1904**. Exact-object crosswalk not proven, so provenance, attribution and RMN photo remain held.
+- Mar27 Honthorst Christ before High Priest = Passion foreshadowing, NOT the actual John11 council deliberation Gospel.
+- Jun26 Guercino's 1632 *Martyrdom of Sts John and Paul* = painter **Giovanni Francesco Barbieri**, NOT photo uploader Didier Descouens; Toulouse 2004.1.53. Official metadata's 'Paul of Tarsus' subject label conflicts with the feast's Roman martyrs, so precise saint identity must remain a verification gate.
+- Aug5 Cretan Glycophilousa = general Marian iconography, NOT the particular **Salus Populi Romani** image or Santa Maria Maggiore.
+- Oct6 Sellitto *St Bruno* = painter **Carlo Sellitto**, NOT Commons photographer Edelseider; Strasbourg museum inv 432 according to Commons, current institutional attribution unverified.
+- Nov9 Rivalz *Urban II Consecrating Saint-Sernin Toulouse* = painter **Antoine Rivalz**, NOT Commons photographer Didier Descouens; Toulouse inv 2004.1.266. A *different basilica* from the Lateran, and definitely not the day's Zacchaeus Luke19 Gospel.
+
+**Cumulative proposal audit:** 66 of Claude's 114 new date assignments individually source-assessed; **48 remain** (liturgical/thematic/scriptural only). All 52 direct-scene labels were handled in batches 1–4, albeit without any blanket photo or pixel certification. The historical 1,589 relationship edges and 507 accepted Prayer alternatives are unchanged. New findings do not authorize app changes, photo source reuse or owner-preference overrides.
