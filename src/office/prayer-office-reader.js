@@ -16,7 +16,7 @@ const STYLE=`
 .aoOfficeReader h1{font:400 clamp(29px,6vw,46px)/1.12 Georgia,serif;margin:8px 0 12px}
 .aoOfficeReader p{font:400 15px/1.55 Georgia,serif;color:#bfc5cc}
 .aoOfficeReader .aoOfBar{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-.aoOfficeReader button,.aoOfficeReader input{min-height:44px;background:#101821;color:#e9e4d9;border:1px solid #5f5547;border-radius:9px;padding:9px 12px;font:500 14px/1.3 system-ui}
+.aoOfficeReader button,.aoOfficeReader input,.aoOfficeReader .aoOfBar select{min-height:44px;background:#101821;color:#e9e4d9;border:1px solid #5f5547;border-radius:9px;padding:9px 12px;font:500 14px/1.3 system-ui}
 .aoOfficeReader button:focus-visible,.aoOfficeReader input:focus-visible{outline:2px solid #c9ad78;outline-offset:2px}
 .aoOfficeReader .aoOfHours{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:19px 0}
 @media(min-width:680px){.aoOfficeReader .aoOfHours{grid-template-columns:repeat(4,minmax(0,1fr))}}
@@ -150,6 +150,31 @@ export function openDivineOfficeReader(win=globalThis,{date=todayLocal()}={}){
   go.addEventListener("click",()=>{input.value=date;hour="COMPLINE";draw()});
   bar.append(go);
  }
+ // Compact date selector: eight additional stacked buttons would clutter
+ // the 320px phone reader. The civil date field remains available.
+ const weekII=d.createElement("select");
+ weekII.setAttribute("aria-label","Advent II Compline date");
+ const prompt=d.createElement("option");
+ prompt.value="";prompt.textContent="Advent II · 6–13 Dec 2026";
+ weekII.append(prompt);
+ for(const [date,caption] of [
+  ["2026-12-06","6 Dec · Second Sunday of Advent"],
+  ["2026-12-07","7 Dec · First Compline of Immaculate Conception"],
+  ["2026-12-08","8 Dec · Immaculate Conception"],
+  ["2026-12-09","9 Dec · Advent Wednesday"],
+  ["2026-12-10","10 Dec · Advent Thursday"],
+  ["2026-12-11","11 Dec · St Damasus I"],
+  ["2026-12-12","12 Dec · Eve of Gaudete"],
+  ["2026-12-13","13 Dec · Gaudete Sunday"]
+ ]){
+  const option=d.createElement("option");
+  option.value=date;option.textContent=caption;
+  weekII.append(option);
+ }
+ weekII.addEventListener("change",()=>{
+  if(weekII.value){input.value=weekII.value;hour="COMPLINE";draw()}
+ });
+ bar.append(weekII);
  host.append(bar);
  const hours=d.createElement("div");hours.className="aoOfHours";host.append(hours);
  let hour="VESPERS";

@@ -9,6 +9,8 @@
 import {DIVINUM_OFFICIUM_PIN as PIN} from "../app/source-transport-compat.js";
 import {resolveSourceFirstComplineOrdo,researchWitnessForReviewedAdventCompline}
  from "./office-ordo-compline-resolver.js";
+import {ADVENT_II_COMPLINE_APPOINTMENTS,reviewAdventII2026OrdoWitness}
+ from "./compline-advent-ii-2026-appointments.js";
 export const OFFICE_COMPLINE_APPOINTMENTS_SCHEMA="ao.office.2026-advent-i-compline-appointed-week.v1";
 export const ADVENT_I_COMPLINE_APPOINTMENTS=Object.freeze([
  Object.freeze({date:"2026-11-28",weekday:"Sabbato",psalmDay:"Sabbato",
@@ -48,7 +50,8 @@ const set=new Set(ADVENT_I_COMPLINE_APPOINTMENTS.map(x=>x.date));
 if(set.size!==ADVENT_I_COMPLINE_APPOINTMENTS.length)
  throw Error("OFFICE_COMPLINE_DUPLICATE_APPOINTMENT");
 export function reviewAdventIComplineAppointment(date){
- const r=ADVENT_I_COMPLINE_APPOINTMENTS.find(x=>x.date===date);
+ const r=ADVENT_I_COMPLINE_APPOINTMENTS.find(x=>x.date===date)??
+  ADVENT_II_COMPLINE_APPOINTMENTS.find(x=>x.date===date);
  if(!r)return Object.freeze({
   schema:OFFICE_COMPLINE_APPOINTMENTS_SCHEMA,status:"WITHHELD",
   reason:"DATE_OR_RUBRIC_NOT_REVIEWED",appointment:null,
@@ -66,6 +69,15 @@ export function reviewAdventIComplineAppointment(date){
  // over all eight historically reviewed appointments. It MUST agree with
  // the existing dated certificate before any of these eight dates can
  // reach the separate public Latin approval gate.
+ const isSecondWeek=date>="2026-12-06";
+ if(isSecondWeek&&
+    reviewAdventII2026OrdoWitness(r).status!==
+     "INDEPENDENT_DATED_ROMAN_1960_ORDO_REVIEW")
+  return Object.freeze({
+   schema:OFFICE_COMPLINE_APPOINTMENTS_SCHEMA,status:"WITHHELD",
+   reason:"SECOND_WEEK_INDEPENDENT_OFFICE_ORDO_UNRESOLVED",
+   appointment:null,publishable:false,published:false
+  });
  const officeOrdo=resolveSourceFirstComplineOrdo({
   date,record:researchWitnessForReviewedAdventCompline(r)
  });
@@ -74,7 +86,9 @@ export function reviewAdventIComplineAppointment(date){
     officeOrdo.appointment?.psalmDay!==r.psalmDay||
     officeOrdo.appointment?.marianSection!==r.marianSection||
     officeOrdo.appointment?.sourceId!==
-     "ao.office.2026-advent-i-dated-review|"+date)
+     (isSecondWeek?"ao.office.2026-advent-ii-dated-review|":
+      "ao.office.2026-advent-i-dated-review|")+date||
+    (r.officeDate&&officeOrdo.officeDate!==r.officeDate))
   return Object.freeze({
    schema:OFFICE_COMPLINE_APPOINTMENTS_SCHEMA,status:"WITHHELD",
    reason:"OFFICE_ORDO_RESOLVER_DISAGREES_WITH_DATED_APPOINTMENT",

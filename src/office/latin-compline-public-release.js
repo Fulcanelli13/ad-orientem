@@ -21,7 +21,9 @@ export const LATIN_COMPLINE_RELEASE=Object.freeze({
  // Each date is certified independently; never infer an entire Advent week.
  approvedDates:Object.freeze([
   "2026-11-28","2026-11-29","2026-11-30","2026-12-01",
-  "2026-12-02","2026-12-03","2026-12-04","2026-12-05"
+  "2026-12-02","2026-12-03","2026-12-04","2026-12-05",
+  "2026-12-06","2026-12-07","2026-12-08","2026-12-09",
+  "2026-12-10","2026-12-11","2026-12-12","2026-12-13"
  ]),
  hour:"COMPLINE",calendarScope:"UNIVERSAL",
  sourceRevision:PIN,language:"la",
@@ -45,6 +47,8 @@ export const LATIN_COMPLINE_RELEASE=Object.freeze({
  // weekday psalm assignments. We do NOT claim dual full-word collation
  // to the modern printings, nor an original Mame 1961 facsimile.
  weekdayPrintedAppointmentsReviewed:true,
+ adventIIIndependentOfficeOrdoDatedWitnessReviewed:true,
+ adventIILatinPsalterUsesPreviouslyCertifiedNinePlusFourSources:true,
  // A verbatim 1961 Mame Saturday Psalter leaf has NOT been obtained.
  // This release is not represented as a reproduction of that edition.
  psalter1961VerbatimCollated:false,
@@ -105,6 +109,46 @@ const APPROVED_DATE_PROFILES=Object.freeze({
   psalmDay:"Sabbato",weekday:"Sabbato",officeClass:"SUNDAY_FIRST_VESPERS",
   reason:"FIRST_VESPERS_OF_ADVENT_SUNDAY_COMPLINE_SATURDAY_BR166_B",
   printedPsalmDisplayFrames:41
+ }),
+ "2026-12-06":Object.freeze({
+  psalmDay:"Dominica",weekday:"Dominica",officeClass:"I_SUNDAY",
+  reason:"ADVENT_II_SUNDAY_SECOND_VESPERS_BR166_H",
+  printedPsalmDisplayFrames:30,officeDate:"2026-12-06"
+ }),
+ "2026-12-07":Object.freeze({
+  psalmDay:"Dominica",weekday:"Feria II",officeClass:"I_FEAST_FIRST_VESPERS",
+  reason:"IMMACULATE_CONCEPTION_I_CLASS_FIRST_VESPERS_BR167_B",
+  printedPsalmDisplayFrames:30,officeDate:"2026-12-08"
+ }),
+ "2026-12-08":Object.freeze({
+  psalmDay:"Dominica",weekday:"Feria III",officeClass:"I_FEAST",
+  reason:"IMMACULATE_CONCEPTION_I_CLASS_SECOND_VESPERS_BR167_H",
+  printedPsalmDisplayFrames:30,officeDate:"2026-12-08"
+ }),
+ "2026-12-09":Object.freeze({
+  psalmDay:"Feria IV",weekday:"Feria IV",officeClass:"FERIA",
+  reason:"ADVENT_II_FERIA_IV_CURRENT_WEEKDAY_BR171_E",
+  printedPsalmDisplayFrames:30,officeDate:"2026-12-09"
+ }),
+ "2026-12-10":Object.freeze({
+  psalmDay:"Feria V",weekday:"Feria V",officeClass:"FERIA",
+  reason:"ADVENT_II_FERIA_V_CURRENT_WEEKDAY_BR171_E",
+  printedPsalmDisplayFrames:33,officeDate:"2026-12-10"
+ }),
+ "2026-12-11":Object.freeze({
+  psalmDay:"Feria VI",weekday:"Feria VI",officeClass:"III_FEAST",
+  reason:"ST_DAMASUS_III_CLASS_CURRENT_WEEKDAY_BR169_E",
+  printedPsalmDisplayFrames:36,officeDate:"2026-12-11"
+ }),
+ "2026-12-12":Object.freeze({
+  psalmDay:"Sabbato",weekday:"Sabbato",officeClass:"SUNDAY_FIRST_VESPERS",
+  reason:"ADVENT_III_SUNDAY_FIRST_VESPERS_COMPLINE_SATURDAY_BR166_B",
+  printedPsalmDisplayFrames:41,officeDate:"2026-12-13"
+ }),
+ "2026-12-13":Object.freeze({
+  psalmDay:"Dominica",weekday:"Dominica",officeClass:"I_SUNDAY",
+  reason:"GAUDETE_SUNDAY_SECOND_VESPERS_BR166_H",
+  printedPsalmDisplayFrames:30,officeDate:"2026-12-13"
  })
 });
 export function latinComplineReleaseEligibility({
@@ -124,7 +168,8 @@ export function latinComplineReleaseEligibility({
     appointment.appointment?.psalmDay!==profile.psalmDay||
     appointment.appointment?.marianSection!=="Advent"||
     appointment.appointment?.officeClass!==profile.officeClass||
-    appointment.appointment?.rubricalReason!==profile.reason)
+    appointment.appointment?.rubricalReason!==profile.reason||
+    (profile.officeDate&&appointment.officeOrdoResearch?.officeDate!==profile.officeDate))
   return empty("DATED_ADVENT_COMPLINE_APPOINTMENT_CHANGED");
  if(LATIN_COMPLINE_RELEASE.sourceRevision!==PIN||
     LATIN_COMPLINE_RELEASE.sourcePsalterFamily!=="VULGATA_BIBLIORUM"||
@@ -140,6 +185,8 @@ export function latinComplineReleaseEligibility({
     LATIN_COMPLINE_RELEASE.weekdayClementineWitnessRevision!==
       "1f7093a14fa61374b0fe85db1965d9bd45dfdae1"||
     !LATIN_COMPLINE_RELEASE.weekdayPrintedAppointmentsReviewed||
+    !LATIN_COMPLINE_RELEASE.adventIIIndependentOfficeOrdoDatedWitnessReviewed||
+    !LATIN_COMPLINE_RELEASE.adventIILatinPsalterUsesPreviouslyCertifiedNinePlusFourSources||
     LATIN_COMPLINE_RELEASE.releaseBasis!=="ROMAN_1960_OFFICE_TRADITIONAL_VULGATE_LATIN"||
     !LATIN_COMPLINE_RELEASE.completeHourCollated||
     !LATIN_COMPLINE_RELEASE.rightsApproved||

@@ -56,6 +56,7 @@ jobs:
           node --test tests/divine-office-saturday-compline-pilot.mjs
           node --test tests/divine-office-weekday-compline-psalter.mjs
           node --test tests/divine-office-advent-i-full-week-compline.mjs
+          node --test tests/divine-office-advent-ii-complete-compline.mjs
           node --test tests/divine-office-prayer-readiness-gate.mjs
           node --test tests/divine-office-native-entry.mjs
           node --test tests/divine-office-source-first-calendar-resolver.mjs

@@ -219,10 +219,12 @@ export function projectComplineRecitation(review,{
   if(numbered!==clean)psalmLabelCount++;
   resultFrames.push(numbered);
  }
- const saturday=review.civilDate==="2026-11-28"||review.civilDate==="2026-12-05";
- const sunday=review.civilDate==="2026-11-29"||review.civilDate==="2026-11-30";
+ const saturday=["2026-11-28","2026-12-05","2026-12-12"].includes(review.civilDate);
+ const sunday=["2026-11-29","2026-11-30","2026-12-06",
+  "2026-12-07","2026-12-08","2026-12-13"].includes(review.civilDate);
  const weekdayCounts=Object.freeze({"2026-12-01":26,"2026-12-02":30,
-  "2026-12-03":33,"2026-12-04":36});
+  "2026-12-03":33,"2026-12-04":36,"2026-12-09":30,
+  "2026-12-10":33,"2026-12-11":36});
  const expected=saturday?41:sunday?30:weekdayCounts[review.civilDate];
  if(!Number.isInteger(expected)||psalmLabelCount!==expected)
   return withheld("COMPLINE_APPOINTED_PSALM_COVERAGE_MISMATCH");

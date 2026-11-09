@@ -193,6 +193,8 @@ export function resolveSourceFirstComplineOrdo({date,calendarScope="UNIVERSAL",
 export function researchWitnessForReviewedAdventCompline(appointment){
  const profileByClass=Object.freeze({
   SUNDAY_FIRST_VESPERS:"SUNDAY",
+  I_FEAST_FIRST_VESPERS:"I_FEAST",
+  I_FEAST:"I_FEAST",
   I_SUNDAY:"SUNDAY",
   II_FEAST:"II_FEAST",
   III_FEAST:"III_FEAST",
@@ -202,7 +204,9 @@ export function researchWitnessForReviewedAdventCompline(appointment){
     typeof appointment.rubricalReason!=="string"||
     !profileByClass[appointment.officeClass])return null;
  const first=appointment.officeClass==="SUNDAY_FIRST_VESPERS";
- const officeDate=first?following(appointment.date):appointment.date;
+ const feastFirst=appointment.officeClass==="I_FEAST_FIRST_VESPERS";
+ const officeDate=first||feastFirst?following(appointment.date):appointment.date;
+ if(appointment.officeDate&&appointment.officeDate!==officeDate)return null;
  return Object.freeze({
   schema:OFFICE_COMPLINE_ORDO_EVIDENCE_SCHEMA,
   date:appointment.date,weekday:appointment.weekday,
@@ -214,11 +218,14 @@ export function researchWitnessForReviewedAdventCompline(appointment){
   publicReleaseCertified:false,sourceTextCertified:false,
   translationCertified:false,exception:"NONE",properCompline:"NONE",
   assertedPsalmDay:appointment.psalmDay,
-  rubricSection:first?"166(b)":appointment.officeClass==="I_SUNDAY"?
-   "166(h)":appointment.officeClass==="II_FEAST"?"168(d)":
+  rubricSection:first?"166(b)":feastFirst?"167(b)":
+   appointment.officeClass==="I_FEAST"?"167(h)":
+   appointment.officeClass==="I_SUNDAY"?"166(h)":
+   appointment.officeClass==="II_FEAST"?"168(d)":
    appointment.officeClass==="III_FEAST"?"169(e)":"171(e)",
   firstVespers:Object.freeze({
-   kind:first?"SUNDAY_FIRST_VESPERS":"NONE",officeDate,
+   kind:first?"SUNDAY_FIRST_VESPERS":
+    feastFirst?"I_FEAST_FIRST_VESPERS":"NONE",officeDate,
    independentConcurrenceReviewed:true,
    sourceId:"ao.office."+
     appointment.rubricalReason.toLowerCase()
@@ -233,8 +240,12 @@ export function researchWitnessForReviewedAdventCompline(appointment){
   source:Object.freeze({
    sourceKind:"INDEPENDENT_OFFICE_ORDO",
    rubricUrl:OFFICE_COMPLINE_ORDO_RUBRICS,
-   sourceId:"ao.office.2026-advent-i-dated-review|"+appointment.date,
-   officeOrdoUrl:OFFICE_COMPLINE_ORDO_RUBRICS,
+   sourceId:(appointment.date<"2026-12-06"?
+    "ao.office.2026-advent-i-dated-review|":
+    "ao.office.2026-advent-ii-dated-review|")+appointment.date,
+   officeOrdoUrl:appointment.date<"2026-12-06"?
+    OFFICE_COMPLINE_ORDO_RUBRICS:
+    "https://breviariumgregorianum.com/ordo-2026.php",
    psalterLeaf:OFFICE_COMPLINE_PSALTER_SECTION,
    psalterRevision:PIN
   })

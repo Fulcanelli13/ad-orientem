@@ -15,7 +15,9 @@ export const PRIVATE_OFFICE_REVIEW_SCHEMA="ao.office.pinned-private-trilingual-r
 const LANGUAGES=Object.freeze(["la","en","fr"]);
 const COMPLINE_DATES=new Set([
  "2026-11-28","2026-11-29","2026-11-30","2026-12-01",
- "2026-12-02","2026-12-03","2026-12-04","2026-12-05"
+ "2026-12-02","2026-12-03","2026-12-04","2026-12-05",
+ "2026-12-06","2026-12-07","2026-12-08","2026-12-09",
+ "2026-12-10","2026-12-11","2026-12-12","2026-12-13"
 ]);
 function hold(reason){return Object.freeze({
  schema:PRIVATE_OFFICE_REVIEW_SCHEMA,status:"WITHHELD",reason,
@@ -43,7 +45,8 @@ export function projectPrivateOfficeReview({hour,date,pilot,focus,languageMode="
    !Array.isArray(pilot.availableLanguages)||
    pilot.availableLanguages.length!==activeLanguages.length||
    activeLanguages.some(l=>!pilot.availableLanguages.includes(l))||
-   pilot.civilDate!==date||pilot.officeDate!==date||
+   pilot.civilDate!==date||pilot.officeDate!==(date==="2026-12-07"?"2026-12-08":
+    date==="2026-12-12"?"2026-12-13":date)||
    pilot.blockCount!==42||pilot.blocks?.length!==42||
    pilot.frames?.length!==pilot.focusFrameCount||
    pilot.rightsApproved!==false||pilot.publishable!==false||
@@ -53,7 +56,7 @@ export function projectPrivateOfficeReview({hour,date,pilot,focus,languageMode="
    return hold("COMPLINE_EXACT_UNPUBLISHED_SOURCE_PROOF_MISSING");
   return Object.freeze({
    schema:PRIVATE_OFFICE_REVIEW_SCHEMA,status:"PRIVATE_SOURCE_TEXT_REVIEW",
-   civilDate:date,officeDate:date,hour,
+   civilDate:date,officeDate:pilot.officeDate,hour,
    events:pilot.blocks,frames:pilot.frames,sourceRevision:PIN,
    availableLanguages:Object.freeze([...activeLanguages]),
    eventCount:42,frameCount:pilot.frames.length,reviewOnly:true,
