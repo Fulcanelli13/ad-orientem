@@ -93,7 +93,7 @@ export function createMassReaderModel({
       actualForm:resolvedMass.form,
     })
   ));
-  const cards=augmentReaderCardsWithPrayerOverPeople(baseCards,resolvedMass);
+  const cards=augmentReaderCardsWithPrayerOverPeople(baseCards,resolvedMass,{language:vernacularLanguage});
   const byId=new Map(cards.map(card=>[card.sectionId,card]));
 
   function cardBySequence(sequence){
@@ -156,6 +156,6 @@ export function createMassReaderModel({
     mandatumSource:holyThursdayMandatumSource,
     language:vernacularLanguage,
   });
-  projected=projectEmberInsertionModel(projected,resolvedMass);
+  projected=projectEmberInsertionModel(projected,resolvedMass,{language:vernacularLanguage});
   return projectNuptialInsertionModel(projected,resolvedMass,nuptialData);
 }
