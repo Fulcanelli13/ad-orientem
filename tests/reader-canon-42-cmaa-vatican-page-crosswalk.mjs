@@ -69,6 +69,14 @@ function check(witness){
  assert.equal(internal.notProven,
   "EXACT_PHYSICAL_VOLUME_COLATION_AND_INDEPENDENT_LIBRARY_HOLDING_MATCH");
  assert.equal(internal.editionInternalEvidence,"TITLE_PLUS_1962_DECREE_IN_SAME_SOURCE_SERIES");
+ assert.equal(witness.provenance.officialCMAAResourcePage,
+  "https://churchmusicassociation.org/resources/resource-list-complete/");
+ assert.equal(witness.provenance.officialCMAAMissaleRomanum1962PDF,
+  "https://media.churchmusicassociation.org/pdf/missale62.pdf");
+ assert.equal(witness.provenance.officialCMAAMissalePDFReferenced,true);
+ assert.equal(witness.provenance.officialCMAAMissalePDFComparedByteForByteWithGregoBaseScanSeries,false);
+ assert.equal(witness.provenance.officialCMAAPDFDirectPageInspection,
+  "NOT_COMPLETED_FILE_SIZE_82815941_B_EXCEEDS_BROWSER_RETRIEVAL");
  assert.equal(witness.provenance.independentlyCertifiedExactRubricGlyphTranscription,"PENDING");
  assert.equal(witness.provenance.catalogueUrl,
   "https://gregobase.selapa.net/source.php?id=42&images=1&index=2");
@@ -176,6 +184,8 @@ reject(x=>x.provenance.internalEditionEvidence.scannedDecreeImage="https://grego
 reject(x=>x.provenance.internalEditionEvidence.decreePrintedDate="1961");
 reject(x=>x.provenance.originalVolumeColophonInspectedInSameScanSeries=true);
 reject(x=>x.provenance.verifiedSinglePhysicalCopyIdentity=true);
+reject(x=>x.provenance.officialCMAAMissalePDFComparedByteForByteWithGregoBaseScanSeries=true);
+reject(x=>x.provenance.officialCMAAPDFDirectPageInspection="CERTIFIED");
 reject(x=>x.c0190.printedMarkObservedRelativeToLatin="AFTER_CAELESTI");
 reject(x=>x.c0190.independentGestureClockApproval=true);
 reject(x=>x.c0190.livePublicationAllowed=true);
