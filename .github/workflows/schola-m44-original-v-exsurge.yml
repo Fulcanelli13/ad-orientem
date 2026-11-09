@@ -21,9 +21,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-          cache: npm
       - name: Install pinned source renderer dependencies
-        run: npm ci --ignore-scripts
+        run: npm install --no-audit --no-fund --ignore-scripts
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
