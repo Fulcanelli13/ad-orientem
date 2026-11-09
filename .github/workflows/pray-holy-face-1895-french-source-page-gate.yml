@@ -1,0 +1,28 @@
+name: Prayer Janvier 1895 French printed nine-day witness
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/pray/holy-face-janvier-1887-b25.js"
+      - "data/pray/research/pray-holy-face-original-french-1895-printed-9day-page-map.v1.json"
+      - "tests/pray-holy-face-1895-french-print-source-page-gate.mjs"
+      - ".github/workflows/pray-holy-face-1895-french-source-page-gate.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pray-janvier-fr1895-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  printed-source-boundary:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Preserve original printed source page map and all 9 EN-only texts
+        run: node tests/pray-holy-face-1895-french-print-source-page-gate.mjs
+      - name: Preserve prior independent edition ledger
+        run: node tests/pray-holy-face-janvier-edition-crosswalk-source-gate-20261109.mjs
