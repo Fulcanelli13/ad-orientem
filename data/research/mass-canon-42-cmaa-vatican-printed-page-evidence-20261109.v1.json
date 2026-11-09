@@ -12,7 +12,7 @@
     "originalVolumeTitleAndColophonPagesNotInspectedInThisScanSet": false,
     "originalPrintedEditionAuthentication": "PENDING",
     "independentlyCertifiedExactRubricGlyphTranscription": "PENDING",
-    "disclaimer": "GregoBase source 42 includes photographed title page (Editio typica), 23 June 1962 decree identifying Vatican publishing/presses, and Ritus IX.1 on image 64 in the same indexed image series. This directly improves edition-internal provenance over an isolated scan. The exact physical copy, binding/colophon chain and independent library authentication remain unverified; the printed cross's shape at low resolution and real priest action timing remain unapproved. No image is imported or relicensed into the public app.",
+    "disclaimer": "GregoBase source 42 includes photographed title page (Editio typica), 23 June 1962 decree identifying Vatican publishing/presses, and Ritus IX.1 on image 64 in the same indexed image series. This directly improves edition-internal provenance over an isolated scan. The exact physical copy, binding/colophon chain and independent library authentication remain unverified; the printed cross's shape at low resolution and real priest action timing remain unapproved. No image is imported or relicensed into the public app. CMAA itself indexes a Missale Romanum 1962 PDF, but an 82,815,941-byte PDF was not inspected or byte-compared with GregoBase source 42 in this review; they must not be asserted as proven identical.",
     "originalVolumeTitlePageInspectedInSameScanSeries": true,
     "originalVolume1962DecreeInspectedInSameScanSeries": true,
     "originalVolumeColophonInspectedInSameScanSeries": false,
@@ -29,7 +29,12 @@
       "sourceContinuity": "SAME_NUMBERED_GREGOBASE_SCAN_SERIES",
       "notProven": "EXACT_PHYSICAL_VOLUME_COLATION_AND_INDEPENDENT_LIBRARY_HOLDING_MATCH",
       "editionInternalEvidence": "TITLE_PLUS_1962_DECREE_IN_SAME_SOURCE_SERIES"
-    }
+    },
+    "officialCMAAResourcePage": "https://churchmusicassociation.org/resources/resource-list-complete/",
+    "officialCMAAMissaleRomanum1962PDF": "https://media.churchmusicassociation.org/pdf/missale62.pdf",
+    "officialCMAAMissalePDFReferenced": true,
+    "officialCMAAMissalePDFComparedByteForByteWithGregoBaseScanSeries": false,
+    "officialCMAAPDFDirectPageInspection": "NOT_COMPLETED_FILE_SIZE_82815941_B_EXCEEDS_BROWSER_RETRIEVAL"
   },
   "sourceOwners": {
     "first": "data/research/mass-canon-first-pass-19-ritus-source-review-20261013.json",
