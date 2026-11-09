@@ -416,7 +416,8 @@ export async function assembleWeekdayComplinePilot({
    blocks:Object.freeze(blocks),blockCount:blocks.length,
    frames:Object.freeze(frames),focusFrameCount:frames.length,
    sourceTextAltered:false,sourceDocumentsPerLanguage:4+psalmIds.length,
-   firstVespersConcurrenceHandled:(appointment.officeDate??appointment.date)!==appointment.date,
+   firstVespersConcurrenceHandled:psalmDay==="Sabbato"||
+    (appointment.officeDate??appointment.date)!==appointment.date,
    officeCompletenessCertified:false,translationApproved:false,
    rightsApproved:false,publishable:false,published:false
   });
