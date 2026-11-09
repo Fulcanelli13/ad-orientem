@@ -23,12 +23,12 @@
   ],
   "counts": {
     "baselineUnmatchedCalendarTargets": 170,
-    "targetsWithNewResearchLeads": 99,
-    "targetsStillWithoutNamedLeads": 71,
-    "proposedRelationshipEdges": 116,
+    "targetsWithNewResearchLeads": 103,
+    "targetsStillWithoutNamedLeads": 67,
+    "proposedRelationshipEdges": 120,
     "existing989Edges": 25,
-    "newInstitutionalObjectEdges": 82,
-    "secondaryOrCommonsOnlyEdges": 9,
+    "newInstitutionalObjectEdges": 85,
+    "secondaryOrCommonsOnlyEdges": 10,
     "byClass": {
       "II": {
         "unmatchedBaseline": 29,
@@ -37,8 +37,8 @@
       },
       "III": {
         "unmatchedBaseline": 101,
-        "withResearchLeads": 39,
-        "stillWithoutLeads": 62
+        "withResearchLeads": 43,
+        "stillWithoutLeads": 58
       },
       "IV": {
         "unmatchedBaseline": 40,
@@ -2399,9 +2399,25 @@
       "observedPrincipalId": "sancti:08-19:3:w",
       "gospelReferenceFromMatchingIndex": "Luke 12:35–40",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Orne:998.25.30",
+          "title": "Saint Jean Eudes",
+          "artist": "Anonymous, French 18th-century painter",
+          "sourceUrl": "https://musee-art-religieux.orne.fr/artworks/saint-jean-eudes",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas",
+          "remark": "Orne religious-art museum exact object, historical photo © CD61 / Thierry Ollivier; photo reuse NOT authorised",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-08-21",
@@ -2410,9 +2426,25 @@
       "observedPrincipalId": "sancti:08-21:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 13:44–52",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Chambery:M170",
+          "title": "Portrait de sainte Jeanne de Chantal",
+          "artist": "Anonymous, after Philippe de Champaigne",
+          "sourceUrl": "https://pop.culture.gouv.fr/notice/joconde/10480003085",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas",
+          "remark": "17th-century museum copy AFTER Champaigne, not autograph; POP collection notice updated 2026, no source photograph permission sought or granted",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-08-23",
@@ -2577,9 +2609,26 @@
       "observedPrincipalId": "sancti:09-03:3:w",
       "gospelReferenceFromMatchingIndex": "John 21:15–17",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "SECONDARY_OR_COMMONS_RESEARCH_ONLY",
+          "key": "MullerUry:PiusX:1907",
+          "title": "Pius X, Pope (1907)",
+          "artist": "Adolfo Müller-Ury",
+          "sourceUrl": "https://www.muller-ury.com/product/pius-x-pope-1907/",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas",
+          "remark": "Artist catalogue reports North American College, Rome, 1907 original 153 × 100 cm; institutional object's selected photo and current copyright not verified, no automatically curated promotion",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "sourcePolicy": "DO_NOT_CURATE_WITHOUT_PRIMARY_ORIGINAL_AND_PHOTO_EVIDENCE"
+        }
+      ]
     },
     {
       "date": "2026-09-04",
@@ -3582,9 +3631,25 @@
       "observedPrincipalId": "sancti:11-10:3:w",
       "gospelReferenceFromMatchingIndex": "Luke 12:35–40",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Holburne:A17",
+          "title": "The Death of St Andrew Avellino",
+          "artist": "Giambettino Cignaroli",
+          "sourceUrl": "https://holburne.collectionsindex.com/object-a17",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas",
+          "remark": "Holburne A17 c.1749, original study for Crema altarpiece; museum's top heading erroneously says Piazzetta while detailed catalogue identifies Cignaroli, preserve attribution ambiguity for reconciliation",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-11-14",
