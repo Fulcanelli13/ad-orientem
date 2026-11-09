@@ -197,6 +197,59 @@ try{
    assert.equal(pageErrors.filter(x=>/Uncaught|SyntaxError|ReferenceError|TypeError/.test(x)).length,0,
     label+" runtime JS errors "+pageErrors.join(" | "));
 
+   // Actual public homepage → Sung Mass → visible prayer navigation → Kyrie.
+   // Previous M45 checks skipped this user path by calling showSequence()
+   // on a test fixture, so green CI did not establish discoverability.
+   const sectionJump=page.locator(rootSelector+' [data-role="section-jump"]');
+   await sectionJump.click();
+   const kyrieSection=page.locator(
+    rootSelector+' [data-reader-section-all] [data-reader-section]'
+   ).filter({hasText:/Kyrie/i}).first();
+   await kyrieSection.waitFor({state:"visible",timeout:20000});
+   await kyrieSection.click();
+   const kyrieChooser=page.locator(
+    rootSelector+' [data-ordinary-reference-chooser="KYRIE"] select'
+   );
+   await kyrieChooser.waitFor({state:"visible",timeout:20000});
+   const placement=await kyrieChooser.evaluate(el=>{
+    const chooser=el.closest("[data-ordinary-reference-chooser]");
+    const paragraph=chooser?.closest(".ao-reader-paragraph");
+    const latin=paragraph?.querySelector(":scope > .ao-line-primary");
+    const card=paragraph?.closest(".ao-prayer-card");
+    const control=chooser?.getBoundingClientRect(),viewport=card?.getBoundingClientRect();
+    return {
+     sourceCue:paragraph?.dataset.cueId??null,
+     beforeLatin:!!(latin&&chooser&&
+       (chooser.compareDocumentPosition(latin)&Node.DOCUMENT_POSITION_FOLLOWING)),
+     inOpeningViewport:!!(control&&viewport&&
+       control.top>=viewport.top-2&&control.bottom<=viewport.bottom+2),
+     initiallyUnselected:el.value===""
+    };
+   });
+   assert.equal(placement.beforeLatin,true,label+" Kyrie setting below Latin");
+   assert.equal(placement.inOpeningViewport,true,label+" Kyrie setting off first prayer viewport");
+   assert.equal(placement.initiallyUnselected,true,label+" setting automatically assigned");
+   await kyrieChooser.selectOption("MASS_16");
+   const kyrieScore=page.locator(
+    rootSelector+' [data-reference-score="GREGOBASE-545"]'
+   );
+   await page.waitForSelector(
+    rootSelector+' [data-reference-score="GREGOBASE-545"][data-reference-ready="true"] svg',
+    {state:"visible",timeout:45000}
+   );
+   assert.match(await kyrieScore.locator("[data-ordinary-printed-source]")
+    .getAttribute("href"),/kyriale-solesmes\\.pdf#page=56$/);
+   await kyrieScore.locator(".ao-proper-reference-expand").click();
+   const zoom=page.locator("dialog.ao-proper-reference-zoom");
+   await zoom.waitFor({state:"visible",timeout:20000});
+   assert.equal(await zoom.getAttribute("data-reference-zoom-mode"),"fit");
+   await page.screenshot({path:resolve(out,label+"-kyrie-score-390.png"),fullPage:false});
+   await zoom.locator('button[aria-label="Close enlarged Gregorian notation"]').click();
+   report.cases[report.cases.length-1].kyrieNotation={
+    ...placement,sourceScore:"GREGOBASE-545",originalSourceLinked:true,zoomOpened:true
+   };
+   await writeFile(resolve(out,"evidence.json"),JSON.stringify(report,null,2)+"\n");
+
    await context.close();context=null;
    console.log("PAGES_PHONE_MASS_PASS "+JSON.stringify({label,mode,lang,
     totalCards:state.totalCards,preGospelCards:state.preGospelCards.length,sourceCards:state.sourceCards,
