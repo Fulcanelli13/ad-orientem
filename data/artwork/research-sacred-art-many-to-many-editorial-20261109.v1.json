@@ -90,9 +90,22 @@
       "path": "data/artwork/research/m2m-qa-evidence-20261109.v1.json",
       "count": null,
       "bytes": 226709
+    },
+    {
+      "kind": "SCENE_ADJUDICATION_AND_HISTORICAL_CONFLICT_BATCH1",
+      "path": "data/artwork/research/m2m-scene-adjudication-batch1-20261109.v1.json",
+      "count": 10,
+      "photo_publication": "NOT_AUTHORISED"
     }
   ],
   "key_rule": "No automatic deduplication of distinct physical works or artworkID aliases; each relationship points to its own source record.",
   "critical_audit": "See data/artwork/research/m2m-qa-evidence-20261109.v1.json",
-  "deployment": "DO_NOT_IMPORT_OR_PUBLISH"
+  "deployment": "DO_NOT_IMPORT_OR_PUBLISH",
+  "review_evidence": {
+    "scene_batch1": "data/artwork/research/m2m-scene-adjudication-batch1-20261109.v1.json",
+    "confirmed_different_scriptural_episodes": 5,
+    "source_supported_correct_episodes_with_remaining_identity_photo_gates": 2,
+    "liturgical_or_object_uncertainty": 3,
+    "globally_rejected_original_with_later_preserved_slots": "cma-122338"
+  }
 }
