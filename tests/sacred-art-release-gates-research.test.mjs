@@ -148,3 +148,33 @@ for(const r of weak6.records){
 assert.equal(prior.release_gate_evidence.identity_and_metadata_reconciliation_progress.title_artist_only_leads_researched,6);
 assert.equal(prior.release_gate_evidence.identity_and_metadata_reconciliation_progress.remaining_no_internal_lead_destinations,29);
 console.log('PASS: six title/artist leads grounded to three work groups; app IDs and release remain held.');
+
+const remain29 = read('data/artwork/research/m2m-no-internal-lead-29-batch12-20261109.v1.json');
+assert.equal(remain29.rows.length,29);
+assert.equal(new Set(remain29.rows.map(r=>r.target_type+':'+r.target_id)).size,29);
+assert.equal(remain29.summary.categories.AI_DERIVED_LOCAL_ASSET,4);
+assert.equal(remain29.summary.categories.MULTI_IMAGE_SCENE_COMPOSITE,1);
+assert.equal(remain29.summary.categories.IN_SITU_STATION_KNOWN_NO_APP_ID,2);
+assert.equal(remain29.summary.categories.HISTORICAL_PHOTOGRAPH_ASSET,1);
+assert.equal(remain29.summary.categories.PAINTING_WITH_CROSS_BATCH_WORK_LEAD,1);
+assert.equal(remain29.summary.categories.PHYSICAL_ARTWORK_CATALOGUE_AND_ASSET_LOOKUP,20);
+assert.equal(remain29.summary.app_ids_created,0);
+assert.equal(remain29.summary.owner_selection_replacements,0);
+assert.ok(remain29.rows.find(r=>r.target_id==='2026-04-04').identity_gate_hold.includes('TWO_WORKS'));
+assert.ok(remain29.rows.find(r=>r.target_id==='2026-01-01').work_lead_reference==='TINTORETTO_SAN_ROCCO_CIRCUMCISION');
+for(const n of [13,14]){
+ const row=remain29.rows.find(r=>r.target_id==='STG-pray.stations-'+n);
+ assert.equal(row.classification,'IN_SITU_STATION_KNOWN_NO_APP_ID');
+ assert.ok(row.source_evidence_urls.length>0);
+}
+for(const r of remain29.rows){
+ assert.equal(r.canonical_app_id,null);
+ assert.equal(r.selected_photo_verified,false);
+ assert.equal(r.existing_artwork_selection_preserved,true);
+ assert.equal(r.new_assignment_authorised,false);
+}
+const protectedReviewed=new Set([...identity11.records,...weak6.records,...remain29.rows].map(r=>r.target_type+':'+(r.destination_id||r.target_id)));
+assert.equal(protectedReviewed.size,46,'All 46 missing-identity destinations should be distinct across batches 9, 11 and 12');
+assert.equal(prior.release_gate_evidence.identity_and_metadata_reconciliation_progress.all_protected_missing_ids_type_triaged,46);
+assert.equal(prior.release_gate_evidence.identity_and_metadata_reconciliation_progress.fully_assigned_verified_app_canonical_ids,0);
+console.log('PASS: all 46 owner-preserved missing-ID cases source/asset-type triaged, no invented IDs, photo clearances or replacements.');
