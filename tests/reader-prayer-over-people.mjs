@@ -10,6 +10,7 @@ const low=load("../data/presentation/reader-text-low.v1.json");
 const sung=load("../data/presentation/reader-text-sung.v1.json");
 const sectionMap=load("../data/presentation/reader-section-map.v0.13.1.json");
 const canonSourceMap=load("../data/presentation/reader-canon-source-map.v1.json");
+const frenchOrdinary=load("../data/presentation/reader-french-ordinary.v1.json");
 const registry=load("../data/mass/rite-overlay-registry.v1.json");
 const extension=load("../data/mass/special-days-extension.v1.3.json");
 const core=load("../data/mass/special-days-core.v1.1.json");
@@ -158,7 +159,7 @@ for(const form of ["LOW","SOLEMN"]){
  for(const mode of ["LIVE","MISSAL"]){
   const selected={...quad1Friday,form,presentationMode:mode};
   const french=createMassReaderModel({resolvedMass:selected,sectionMap,
-    lowCorpus:low,sungCorpus:sung,canonSourceMap,vernacularLanguage:"fr"});
+    lowCorpus:low,sungCorpus:sung,canonSourceMap,frenchOrdinary,vernacularLanguage:"fr"});
   const english=createMassReaderModel({resolvedMass:selected,sectionMap,
     lowCorpus:low,sungCorpus:sung,canonSourceMap,vernacularLanguage:"en"});
   const pick=m=>m.cards.find(c=>c.sourceSectionId==="AO.CARD.027" ||
