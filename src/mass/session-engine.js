@@ -244,6 +244,8 @@ export function makeResolvedMass(input = {}) {
     precedingRites,
     followingActions,
     distinctRite,
+    // Independently sourced ceremony axis, NEVER inferred from LOW/SOLEMN.
+    emberSaturdaySelection:input.emberSaturdaySelection??null,
     localProfile: input.localProfile ?? null,
     provenance: input.provenance ?? null,
   });
