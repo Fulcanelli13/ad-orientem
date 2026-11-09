@@ -60,3 +60,24 @@ for(const x of dst.targets){
 }
 assert.equal(dst.targets.find(x=>x.target_id==='STG-pray.rosary-02').holds.includes('REFERENCES_EXACT_REJECTED_ORIGINAL'),true);
 console.log('PASS: 1,589 edge and 640 destination gates fail closed; 114 relevance reviews; 507 alternatives and 170 unmatched dates preserved; all 13 Bouts edges across five slots blocked.');
+
+const missingIDs = read('data/artwork/research/m2m-protected-missing-id-46-20261109.v1.json');
+assert.equal(missingIDs.rows.length,46);
+assert.equal(missingIDs.counts.priority_missing_primary_links,46);
+assert.equal(missingIDs.counts.has_same_source_url_evidence,11);
+assert.equal(missingIDs.counts.has_title_artist_candidate,17);
+assert.equal(missingIDs.counts.source_url_evidence_tier,11);
+assert.equal(missingIDs.counts.title_artist_only_tier,6);
+assert.equal(missingIDs.counts.no_internal_candidate_tier,29);
+assert.equal(missingIDs.counts.high_confidence_canonical_link_fully_verified,0);
+assert.equal(new Set(missingIDs.rows.map(r=>r.target_type+':'+r.target_id)).size,46);
+for(const row of missingIDs.rows){
+ assert.equal(row.canonical_artwork_id,null);
+ assert.equal(row.canonical_id_verified,false);
+ assert.equal(row.exact_physical_object_verified,false);
+ assert.equal(row.photographic_rights_verified,false);
+ assert.equal(row.current_selection_preserved,true);
+ assert.equal(row.assignment_change_authorised,false);
+ for(const ref of row.source_candidate_references)assert.ok(['EXACT_SOURCE_URL','TITLE_AND_ARTIST_NORMALIZED_ONLY'].includes(ref.match_basis));
+}
+console.log('PASS: 46 source-ID reconciliation cases held; 11 shared URL leads, 6 name-only leads, 29 no internal match, zero IDs falsely certified.');
