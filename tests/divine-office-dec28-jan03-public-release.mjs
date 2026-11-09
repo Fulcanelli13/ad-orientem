@@ -89,7 +89,7 @@ test("mutated 29/30 Dec octave, 31 Dec/2 Jan Office rollovers and Marian ending 
   ["2026-12-30",{psalmDay:"Feria IV"}],
   ["2026-12-31",{officeDate:"2026-12-31"}],
   ["2027-01-01",{marianSection:"Advent"}],
-  ["2027-01-02",{psalmDay:"Dominica"}],
+  ["2027-01-02",{psalmDay:"Sabbato"}],
   ["2027-01-02",{officeDate:"2027-01-02"}],
   ["2027-01-03",{officeClass:"ORDINARY_SUNDAY"}],
   ["2027-01-03",{rubric:"169(e)"}]
@@ -118,7 +118,7 @@ test("28 PUBLIC Latin full 42→40 readings use exact dates, rubrics and Nativit
     assert.equal(r.readingEventCount,40);
     assert.equal(r.printedPsalmDisplayFrames,p.printedPsalmDisplayFrames);
     assert.equal(r.frames.filter(f=>f.kind==="PSALM").length,p.printedPsalmDisplayFrames);
-    const expected=p.psalmDay==="Sabbato"?[87,102,102]:[4,90,133];
+    const expected=[4,90,133];
     const psalms=r.events.filter(x=>x.kind==="PSALM")
      .map(x=>Number(/^Psalterium\/Psalmorum\/Psalm(\d+)/u.exec(x.sourceId)?.[1]));
     assert.deepEqual(psalms,expected);
