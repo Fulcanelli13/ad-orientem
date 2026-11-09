@@ -1,0 +1,1219 @@
+{
+  "schema": "ao-canon-42-cmaa-vatican-1962-printed-page-crosswalk-v1",
+  "created": "2026-11-09",
+  "status": "FOUR_CMAA_CREDITED_1962_VATICAN_LABELED_SCANS_LOCATED_CRITICAL_GLYPH_AND_TITLE_PROVENANCE_SIGNOFF_OPEN",
+  "purpose": "Upgrade the 42 Canon research actions from noninstitutional photo leads to a CMAA-credited 1962-Vatican-labelled printed page source; preserve independent edition, action glyph and actual priest clock release holds.",
+  "provenance": {
+    "catalogueUrl": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+    "sourceLabel": "1962 - Vatican - Missale Romanum",
+    "scanCredit": "Scans courtesy of the Church Music Association of America",
+    "independentCatalogOfHistoricalVaticanTypica": "https://library.aarome.org/bib/57015",
+    "independentlyIdentifiedExactImagedPhysicalVolume": false,
+    "originalVolumeTitleAndColophonPagesNotInspectedInThisScanSet": true,
+    "originalPrintedEditionAuthentication": "PENDING",
+    "independentlyCertifiedExactRubricGlyphTranscription": "PENDING",
+    "disclaimer": "GregoBase names the source and credits CMAA scans, and photographs show printed Ritus pages. Neither the source label alone nor other catalog descriptions prove that these exact four scans come from a physical 1962 Typis Polyglottis Vaticanis volume. No image is relicensed or imported into the public app."
+  },
+  "sourceOwners": {
+    "first": "data/research/mass-canon-first-pass-19-ritus-source-review-20261013.json",
+    "complex": "data/research/mass-canon-complex-23-ritus-source-review-20261013.json",
+    "promotion": "data/research/mass-canon-42-rubric-promotion-review-20261013.json",
+    "c0190": "data/research/mass-canon-c0190-critical-cross-offset-20261109.v1.json"
+  },
+  "sourcePages": [
+    {
+      "siteImageIndex": 62,
+      "printedRomanPage": "LIX",
+      "imageUrl": "https://gregobase.selapa.net/sources/42/62.png",
+      "sourceCategory": "DIRECT_PRINTED_LATIN_PAGE_IMAGE"
+    },
+    {
+      "siteImageIndex": 63,
+      "printedRomanPage": "LX",
+      "imageUrl": "https://gregobase.selapa.net/sources/42/63.png",
+      "sourceCategory": "DIRECT_PRINTED_LATIN_PAGE_IMAGE"
+    },
+    {
+      "siteImageIndex": 64,
+      "printedRomanPage": "LXI",
+      "imageUrl": "https://gregobase.selapa.net/sources/42/64.png",
+      "sourceCategory": "DIRECT_PRINTED_LATIN_PAGE_IMAGE"
+    },
+    {
+      "siteImageIndex": 65,
+      "printedRomanPage": "LXII",
+      "imageUrl": "https://gregobase.selapa.net/sources/42/65.png",
+      "sourceCategory": "DIRECT_PRINTED_LATIN_PAGE_IMAGE"
+    }
+  ],
+  "counts": {
+    "total": 42,
+    "firstPass": 19,
+    "complex": 23,
+    "sourceSectionImagePageLocated": 42,
+    "distinctImages": 4,
+    "independentOriginalEditionAuth": 0,
+    "independentlyCollatedExactActionGlyphs": 0,
+    "independentFrenchEnglishCopyApprovals": 0,
+    "actualActorClockAcceptances": 0,
+    "newlyPublishedLiveRubrics": 0
+  },
+  "visualFindings": {
+    "LIX": "Ritus VII final paragraph and VIII opening (Canon before consecration) at image 62",
+    "LX": "Ritus VIII Canon before Consecration and Host/Chalice ceremonial sequence at image 63",
+    "LXI": "Ritus VIII conclusion, IX post-consecration, X opening; C0190 clause in IX.1 at image 64",
+    "LXII": "Continuation of Ritus X at image 65"
+  },
+  "c0190": {
+    "cueId": "AO.SM.C0190",
+    "actionId": "AO.CANON.R62.044",
+    "printedRomanPage": "LXI",
+    "siteImageIndex": 64,
+    "documentedSelfSign": true,
+    "visualPrintedGlyphStatus": "LOW_RES_IMAGE_PLUS_INDEPENDENT_LATIN_TRANSCRIPTION_MARKER_CORROBORATION_CRITICAL_GLYPH_STILL_PENDING",
+    "safeguards": "DO_NOT_INSERT_CROSS_IN_FROZEN_DONOR_OR_PROMOTE_UNOBSERVED_PRIEST_ACTION"
+  },
+  "rows": [
+    {
+      "cueId": "AO.SM.C0150",
+      "actionId": "AO.CANON.R62.001",
+      "reviewTrack": "COMPLEX_23",
+      "section": "VIII.1",
+      "issueClass": "ORDERED_SEQUENCE",
+      "existingReviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 62,
+          "printedRomanPage": "LIX",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/62.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        },
+        {
+          "siteImageIndex": 63,
+          "printedRomanPage": "LX",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/63.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0151",
+      "actionId": "AO.CANON.R62.002",
+      "reviewTrack": "FIRST_PASS_19",
+      "section": "VIII.1",
+      "issueClass": null,
+      "existingReviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 62,
+          "printedRomanPage": "LIX",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/62.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        },
+        {
+          "siteImageIndex": 63,
+          "printedRomanPage": "LX",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/63.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0152",
+      "actionId": "AO.CANON.R62.003",
+      "reviewTrack": "COMPLEX_23",
+      "section": "VIII.1",
+      "issueClass": "MULTI_TEXT_MARK",
+      "existingReviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 62,
+          "printedRomanPage": "LIX",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/62.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        },
+        {
+          "siteImageIndex": 63,
+          "printedRomanPage": "LX",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/63.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0153",
+      "actionId": "AO.CANON.R62.004",
+      "reviewTrack": "COMPLEX_23",
+      "section": "VIII.1–2",
+      "issueClass": "CONDITIONAL_WORDS",
+      "existingReviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 62,
+          "printedRomanPage": "LIX",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/62.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        },
+        {
+          "siteImageIndex": 63,
+          "printedRomanPage": "LX",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/63.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0154",
+      "actionId": "AO.CANON.R62.005",
+      "reviewTrack": "FIRST_PASS_19",
+      "section": "VIII.3",
+      "issueClass": null,
+      "existingReviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 63,
+          "printedRomanPage": "LX",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/63.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0156",
+      "actionId": "AO.CANON.R62.007",
+      "reviewTrack": "FIRST_PASS_19",
+      "section": "VIII.4",
+      "issueClass": null,
+      "existingReviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 63,
+          "printedRomanPage": "LX",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/63.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0157",
+      "actionId": "AO.CANON.R62.008",
+      "reviewTrack": "COMPLEX_23",
+      "section": "VIII.4",
+      "issueClass": "CONDITIONAL_WORDS",
+      "existingReviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 63,
+          "printedRomanPage": "LX",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/63.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0160",
+      "actionId": "AO.CANON.R62.010",
+      "reviewTrack": "FIRST_PASS_19",
+      "section": "VIII.4",
+      "issueClass": null,
+      "existingReviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 63,
+          "printedRomanPage": "LX",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/63.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0162",
+      "actionId": "AO.CANON.R62.012",
+      "reviewTrack": "FIRST_PASS_19",
+      "section": "VIII.4",
+      "issueClass": null,
+      "existingReviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 63,
+          "printedRomanPage": "LX",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/63.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0164",
+      "actionId": "AO.CANON.R62.013",
+      "reviewTrack": "COMPLEX_23",
+      "section": "VIII.4",
+      "issueClass": "MULTI_TEXT_MARK",
+      "existingReviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 63,
+          "printedRomanPage": "LX",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/63.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0165",
+      "actionId": "AO.CANON.R62.014",
+      "reviewTrack": "FIRST_PASS_19",
+      "section": "VIII.4",
+      "issueClass": null,
+      "existingReviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 63,
+          "printedRomanPage": "LX",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/63.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0166",
+      "actionId": "AO.CANON.R62.015",
+      "reviewTrack": "FIRST_PASS_19",
+      "section": "VIII.4",
+      "issueClass": null,
+      "existingReviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 63,
+          "printedRomanPage": "LX",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/63.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0168",
+      "actionId": "AO.CANON.R62.017",
+      "reviewTrack": "COMPLEX_23",
+      "section": "VIII.4",
+      "issueClass": "ORDERED_SEQUENCE",
+      "existingReviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 63,
+          "printedRomanPage": "LX",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/63.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0171",
+      "actionId": "AO.CANON.R62.020",
+      "reviewTrack": "FIRST_PASS_19",
+      "section": "VIII.4",
+      "issueClass": null,
+      "existingReviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 63,
+          "printedRomanPage": "LX",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/63.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0172",
+      "actionId": "AO.CANON.R62.021",
+      "reviewTrack": "COMPLEX_23",
+      "section": "VIII.4",
+      "issueClass": "NEGATIVE_EXPLANATORY",
+      "existingReviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 63,
+          "printedRomanPage": "LX",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/63.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0173",
+      "actionId": "AO.CANON.R62.022",
+      "reviewTrack": "COMPLEX_23",
+      "section": "VIII.5",
+      "issueClass": "ORDERED_SEQUENCE",
+      "existingReviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 63,
+          "printedRomanPage": "LX",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/63.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0175",
+      "actionId": "AO.CANON.R62.028",
+      "reviewTrack": "COMPLEX_23",
+      "section": "VIII.7",
+      "issueClass": "CONDITIONAL_MINISTER",
+      "existingReviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 63,
+          "printedRomanPage": "LX",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/63.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        },
+        {
+          "siteImageIndex": 64,
+          "printedRomanPage": "LXI",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/64.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0177",
+      "actionId": "AO.CANON.R62.030",
+      "reviewTrack": "FIRST_PASS_19",
+      "section": "VIII.7",
+      "issueClass": null,
+      "existingReviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 63,
+          "printedRomanPage": "LX",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/63.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        },
+        {
+          "siteImageIndex": 64,
+          "printedRomanPage": "LXI",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/64.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0178",
+      "actionId": "AO.CANON.R62.031",
+      "reviewTrack": "FIRST_PASS_19",
+      "section": "VIII.7",
+      "issueClass": null,
+      "existingReviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 64,
+          "printedRomanPage": "LXI",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/64.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0179",
+      "actionId": "AO.CANON.R62.032",
+      "reviewTrack": "COMPLEX_23",
+      "section": "VIII.7",
+      "issueClass": "ORDERED_SEQUENCE",
+      "existingReviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 64,
+          "printedRomanPage": "LXI",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/64.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0180",
+      "actionId": "AO.CANON.R62.033",
+      "reviewTrack": "COMPLEX_23",
+      "section": "VIII.7",
+      "issueClass": "ORDERED_SEQUENCE",
+      "existingReviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 64,
+          "printedRomanPage": "LXI",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/64.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0182",
+      "actionId": "AO.CANON.R62.036",
+      "reviewTrack": "FIRST_PASS_19",
+      "section": "IX.1",
+      "issueClass": null,
+      "existingReviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 64,
+          "printedRomanPage": "LXI",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/64.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0183",
+      "actionId": "AO.CANON.R62.037",
+      "reviewTrack": "FIRST_PASS_19",
+      "section": "IX.1",
+      "issueClass": null,
+      "existingReviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 64,
+          "printedRomanPage": "LXI",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/64.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0184",
+      "actionId": "AO.CANON.R62.038",
+      "reviewTrack": "COMPLEX_23",
+      "section": "IX.1",
+      "issueClass": "MULTI_TEXT_MARK",
+      "existingReviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 64,
+          "printedRomanPage": "LXI",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/64.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0185",
+      "actionId": "AO.CANON.R62.039",
+      "reviewTrack": "COMPLEX_23",
+      "section": "IX.1",
+      "issueClass": "MULTI_TEXT_MARK",
+      "existingReviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 64,
+          "printedRomanPage": "LXI",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/64.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0186",
+      "actionId": "AO.CANON.R62.040",
+      "reviewTrack": "COMPLEX_23",
+      "section": "IX.1",
+      "issueClass": "CONTINUATION_NOT_ACTION",
+      "existingReviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 64,
+          "printedRomanPage": "LXI",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/64.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0187",
+      "actionId": "AO.CANON.R62.041",
+      "reviewTrack": "FIRST_PASS_19",
+      "section": "IX.1",
+      "issueClass": null,
+      "existingReviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 64,
+          "printedRomanPage": "LXI",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/64.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0188",
+      "actionId": "AO.CANON.R62.042",
+      "reviewTrack": "FIRST_PASS_19",
+      "section": "IX.1",
+      "issueClass": null,
+      "existingReviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 64,
+          "printedRomanPage": "LXI",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/64.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0189",
+      "actionId": "AO.CANON.R62.043",
+      "reviewTrack": "COMPLEX_23",
+      "section": "IX.1",
+      "issueClass": "MULTI_TEXT_MARK",
+      "existingReviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 64,
+          "printedRomanPage": "LXI",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/64.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0190",
+      "actionId": "AO.CANON.R62.044",
+      "reviewTrack": "COMPLEX_23",
+      "section": "IX.1",
+      "issueClass": "CANONICAL_TEXT_VARIANT",
+      "existingReviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 64,
+          "printedRomanPage": "LXI",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/64.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT",
+      "criticalAnchorReference": "data/research/mass-canon-c0190-critical-cross-offset-20261109.v1.json",
+      "printedPageLXI": "https://gregobase.selapa.net/sources/42/64.png",
+      "canonicalDonorToken": "coelésti",
+      "corroboratedWitnessSpelling": "cælesti / caelesti",
+      "donorWordBoundaryBeforeTokenUtf16": 18,
+      "sourceInstructionSignRelativeToTokens": "AFTER_BENEDICTIONE_BEFORE_CAELESTI",
+      "exactPrintedCrossGlyphCertification": "PENDING_HIGH_RES_IMAGE_AND_INDEPENDENT_EDITORIAL_CHECK"
+    },
+    {
+      "cueId": "AO.SM.C0191",
+      "actionId": "AO.CANON.R62.045",
+      "reviewTrack": "FIRST_PASS_19",
+      "section": "IX.1",
+      "issueClass": null,
+      "existingReviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 64,
+          "printedRomanPage": "LXI",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/64.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0192",
+      "actionId": "AO.CANON.R62.046",
+      "reviewTrack": "FIRST_PASS_19",
+      "section": "IX.2",
+      "issueClass": null,
+      "existingReviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 64,
+          "printedRomanPage": "LXI",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/64.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0194",
+      "actionId": "AO.CANON.R62.048",
+      "reviewTrack": "FIRST_PASS_19",
+      "section": "IX.2",
+      "issueClass": null,
+      "existingReviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 64,
+          "printedRomanPage": "LXI",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/64.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0195",
+      "actionId": "AO.CANON.R62.049",
+      "reviewTrack": "FIRST_PASS_19",
+      "section": "IX.2",
+      "issueClass": null,
+      "existingReviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 64,
+          "printedRomanPage": "LXI",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/64.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0196",
+      "actionId": "AO.CANON.R62.050",
+      "reviewTrack": "COMPLEX_23",
+      "section": "IX.3",
+      "issueClass": "AUDIBLE_AND_GESTURE_TRANSITION",
+      "existingReviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 64,
+          "printedRomanPage": "LXI",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/64.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0197",
+      "actionId": "AO.CANON.R62.051",
+      "reviewTrack": "COMPLEX_23",
+      "section": "IX.3",
+      "issueClass": "AUDIBLE_AND_GESTURE_TRANSITION",
+      "existingReviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 64,
+          "printedRomanPage": "LXI",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/64.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0198",
+      "actionId": "AO.CANON.R62.052",
+      "reviewTrack": "FIRST_PASS_19",
+      "section": "IX.3",
+      "issueClass": null,
+      "existingReviewGate": "FIRST_PASS_REVIEW_READY_FOR_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 64,
+          "printedRomanPage": "LXI",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/64.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0199",
+      "actionId": "AO.CANON.R62.053",
+      "reviewTrack": "COMPLEX_23",
+      "section": "IX.3",
+      "issueClass": "CONTINUATION_NOT_ACTION",
+      "existingReviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 64,
+          "printedRomanPage": "LXI",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/64.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0201",
+      "actionId": "AO.CANON.R62.055",
+      "reviewTrack": "COMPLEX_23",
+      "section": "IX.3",
+      "issueClass": "CONDITIONAL_MINISTER",
+      "existingReviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 64,
+          "printedRomanPage": "LXI",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/64.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0204",
+      "actionId": "AO.CANON.R62.058",
+      "reviewTrack": "COMPLEX_23",
+      "section": "IX.3",
+      "issueClass": "ORDERED_SEQUENCE",
+      "existingReviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 64,
+          "printedRomanPage": "LXI",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/64.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0205",
+      "actionId": "AO.CANON.R62.059",
+      "reviewTrack": "COMPLEX_23",
+      "section": "IX.3",
+      "issueClass": "CONDITIONAL_MINISTER",
+      "existingReviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 64,
+          "printedRomanPage": "LXI",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/64.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    },
+    {
+      "cueId": "AO.SM.C0206",
+      "actionId": "AO.CANON.R62.060",
+      "reviewTrack": "COMPLEX_23",
+      "section": "X.1",
+      "issueClass": "AUDIBLE_AND_GESTURE_TRANSITION",
+      "existingReviewGate": "SECOND_PASS_REQUIRED_BEFORE_EDITORIAL_SIGNOFF",
+      "photographedRitusPages": [
+        {
+          "siteImageIndex": 64,
+          "printedRomanPage": "LXI",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/64.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        },
+        {
+          "siteImageIndex": 65,
+          "printedRomanPage": "LXII",
+          "imageUrl": "https://gregobase.selapa.net/sources/42/65.png",
+          "locationLevel": "RITUS_SECTION_IMAGE_PAGE_NOT_INDIVIDUAL_GESTURE_GLYPH_CERTIFIED"
+        }
+      ],
+      "sectionReference": "https://gregobase.selapa.net/source.php?id=42&images=1&index=2",
+      "photoSourceLabel": "1962 - Vatican - Missale Romanum",
+      "scanCredit": "Church Music Association of America (as credited by GregoBase)",
+      "originalVaticanEditionTitleLeafLinkedToTheseExactScans": false,
+      "printEditionAuthenticatedByIndependentColophonReview": false,
+      "actionLevelLatinGlyphComparison": "NOT_COMPLETED",
+      "independentBilingualEditorialApproval": "NOT_GRANTED",
+      "actorAndMinisterClockVerified": false,
+      "canPublish": false,
+      "publication": "SOURCE_RESEARCH_ONLY_NO_LIVE_TEXT"
+    }
+  ]
+}
