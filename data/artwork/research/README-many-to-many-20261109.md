@@ -265,3 +265,37 @@ Chorus Venezia documents both San Polo original Stations XIII and XIV; this is a
 **All 46 owner-preserved missing-ID cases now have a provenance/asset-type triage category (11 + 6 + 29), and 23 historic Prayer metadata discrepancies have separate classification. None has been auto-assigned a canonical app artwork ID.** A named museum accession cannot by itself prove the exact selected digital file, owner release authority, or image reuse. These records are held entirely outside runtime.
 
 New independent tests assert the three-work grouping, 29-case category distribution, unique union of all 46 identities, historical approvals unchanged, and **zero automatic publication, photo clearance or replacement**.
+
+## Protected selected-file recovery — batch 13 (9 November)
+
+**New evidence file:** `data/artwork/research/m2m-protected-asset-provenance-batch13-20261109.v1.json`. This is a separate, **research-only** layer over the 29 protected selections without an internal ID candidate. It does not overwrite the source 46-case queue, owner-selected artwork, runtime photo or accepted alternatives. Known artwork asset directories, explicit provenance manifests and Home preview registries were checked; unlocated does not establish that an image was never uploaded or saved elsewhere.
+
+| Source-asset status | Protected destinations |
+| --- | ---: |
+| Existing local file with linked provenance | **3** |
+| Existing remote Home source preview, not an offline master | **2** |
+| Selected AI derivative, final generated file/hash not in the checked asset records | **4** |
+| Two approved Easter Vigil prophecy scenes needing separate image assets | **1** |
+| Current exact selected image still not located in checked records | **19** |
+| **Total** | **29** |
+
+### Recovered physical files
+
+- **`STG-pray.stations-13`**: `assets/stations/san-polo/station-13.webp`, **818,664 bytes**, repository blob `2f7b01404d4b75d71c4c0d085e46c3607ac93038`, documented SHA-256 `213b617d1a39ae4a07d5d0558f51fb66900cae17d61aa9753988717a170bd3c7`, **1853×2400**.
+- **`STG-pray.stations-14`**: `assets/stations/san-polo/station-14.webp`, **1,134,956 bytes**, repository blob `c1288aefec1e44f3df6873f3b1de4e8b51a39b8b`, documented SHA-256 `74ccdf8a9fc9406b980b4a553cbfea64d0379ac9d5ce400add0e1f41bb9f6da5`, **1920×2146**.
+- Both are byte-identical at the repository Git blob level to `data/prayer/stations/san-polo-tiepolo-oils-1747/images/station-13.webp` and `station-14.webp`. The existing `acquisition-results.v1.json`, `research-stage-bindings.v1.json` and `assets/stations/san-polo/LICENSE-ATTRIBUTION.md` identify the paintings and each Didier Descouens photograph. The **specific fourteen-Stations CC BY-SA 4.0 exception is already authorized**, but attribution, source and change notice, share-alike, native-pixel examination, 320/390px crop QA and explicit release sign-off remain required. The files are archived, **not enabled in the live Stations reader**. The recorded SHA-256 values were read from the source ledger; they were **not independently recalculated from binary bytes** in this pass.
+- **`COV-novena.st_therese`**: `assets/prayer/user-approved/st-therese-lisieux-historical-portrait.webp`, **48,294 bytes**, blob `138e198234ec931ecf8fb1602a919b9249ac47f7`. `assets/prayer/user-approved/source-provenance.v1.json` documents derivative SHA-256 `705cfd23686a8721faaf62ecaa50ccae1be7c227ceccffdde9f1ca09d73e909d`, source portrait 362×498, PD status in France/USA and **`FINAL_PHOTOGRAPH_APPROVED`**. Do not confuse this authentic historical photo with later paintings; its existing approval is not a licence to assign a different image elsewhere.
+
+### Remote images versus absent originals
+
+`src/home/approved-2026-other-date-previews.js` already identifies exact selected remote Commons previews for **22 February, Kramskoi *Christ in the Desert* (Tretyakov 651)** and **1 May, La Tour *Saint Joseph the Carpenter* (Louvre RF 1948 27)**. Both remain uncached previews, with neither a locally archived approved master nor newly cleared mobile crop.
+
+Four selected **AI-derived artworks** (8 March after Cavedone, 22 March after Lucas van Doetechum, 8 April after Tissot, 29 May after Wierix) still lack a traceable final generated file/hash in the checked repository asset records. Brooklyn/Rijksmuseum URLs are original artistic reference works, **not** the final approved AI output. The **4 April Easter Vigil** is two previously selected scriptural pictures (Tissot Genesis and Martin Exodus), not a single painting or hero slot that can be silently collapsed.
+
+The remaining **19** selections still need original selected-file paths, source photos or local-asset evidence; do not substitute a generic Commons scene, different attribution, copy or museum object. The approved date-artwork register `data/artwork/2026-prior-date-artwork-evidence.v1.json` and `data/artwork/home-2026-27-frozen-selected-release-triage.v1.json` remain source-of-truth for selected titles and prior holds.
+
+### Separate P0 legacy release collision
+
+`src/art/released-module-paintings.v1.js` still declares **`bouts`** for Cleveland **1942.635 / `cma-122338`**, with `assets/prayer/released/bouts-annunciation-original.jpg` and PR **#2340** as its previous release source. This is the exact physical painting rejected on 15 October (score 2) and already hard-blocked for **new** placement by the 13-edge/five-destination historical reconciliation. The research manifest **cannot revoke an existing released-photo registry or public asset file**. A separate runtime/public-route audit must determine actual display exposure and appropriate remediation under owner decision precedence. This PR does **not** delete or alter live media.
+
+Run `node tests/sacred-art-release-gates-research.test.mjs` to confirm the batch13 3/2/4/1/19 split, mirror provenance, absence of new releases, and legacy collision flag. No gallery import, owner override, JavaScript runtime adjustment, image upload, CI bypass or deployment is implied.
