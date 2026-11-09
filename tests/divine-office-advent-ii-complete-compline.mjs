@@ -128,7 +128,7 @@ test("all eight Advent II dates load original 42-event/40-moment Latin Compline 
     assert.equal(r.status,"PUBLIC_LATIN_COMPLINE",date+": "+r.reason);
     assert.equal(r.civilDate,date);
     assert.equal(r.officeDate,officeDate);
-    assert.equal(r.weekday,psalmDay);
+    assert.equal(latinComplineReleaseEligibility({date}).psalmDay,psalmDay);
     assert.equal(r.published,true);
     assert.equal(r.sourceEventCount,42);
     assert.equal(r.readingEventCount,40);
