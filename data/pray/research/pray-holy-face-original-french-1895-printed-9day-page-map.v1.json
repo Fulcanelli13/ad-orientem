@@ -1,0 +1,260 @@
+{
+  "schema": "ao.pray.holy-face.1895-original-french-print-witness.v1",
+  "updated": "2026-11-09",
+  "work": "Manuel de l'Archiconfrérie de la Sainte-Face",
+  "edition": {
+    "year": 1895,
+    "editionStatement": "3e édition, revu et corrigé d'après les décrets du Saint-Office",
+    "author": "Abbé Pierre-Désiré Janvier",
+    "place": "Tours",
+    "publisher": "Bureau de l'Oratoire",
+    "digitalCopyTitle": "Manuel de l'Archiconfrérie de la Sainte-Face revue et corrigé d'après les décrets du Saint-Office",
+    "pdfScannedTotalPages": 299
+  },
+  "scan": {
+    "url": "https://pdfs.bibliotheque-catholique.com/pdfs/piete/Abb%C3%A9%20Pierre-D%C3%A9sir%C3%A9%20Janvier%20-%20Manuel%20de%20l%27Archiconfr%C3%A9rie%20de%20la%20Sainte-Face%20revue%20et%20corrig%C3%A9%20d%27apr%C3%A8s%20les%20d%C3%A9crets%20du%20Saint-Office.pdf",
+    "sourcePage": "https://www.bibliotheque-catholique.com/piete/abbe-pierre-desire-janvier/manuel-de-l-archiconfrerie-de-la-sainte-face",
+    "textLayer": "AVAILABLE_WITH_OCR_TRANSCRIPTION_ERRORS",
+    "photoFacsimile": "AVAILABLE",
+    "fileRepublishPermission": "NOT_ASSUMED",
+    "treatment": "Link to scanned source and transcribe public-domain historical wording only after manual page-level proofreading; do not import scanned PDF into GitHub Pages"
+  },
+  "originalFrenchNovena": {
+    "printedStart": 112,
+    "printedEnd": 142,
+    "pdfPageZeroBasedStart": 118,
+    "pdfPageZeroBasedEnd": 148,
+    "heading": "Neuvaine en l'honneur de la Sainte Face — Suite de méditations",
+    "numberOfDays": 9,
+    "dayTextsStatus": "PRINT_SOURCE_LOCATED_TEXT_NOT_YET_VERBATIM_TRANSCRIBED_OR_FULLY_COLLATED",
+    "englishComparand": "src/pray/holy-face-janvier-1887-b25.js",
+    "english1887PrintedEditionCollated": false,
+    "firstDayOpeningMatched": true,
+    "secondDaySpiritualBouquetMatched": true,
+    "eighthAndNinthDayHeadingVisuallyInspected": true,
+    "originalFrenchBodyCountReadyToPublish": 0,
+    "commonOpeningPrintedPage": 112,
+    "commonAspirationsAndCollectPrintedPages": [
+      115,
+      142
+    ],
+    "commonPrayerReuseRule": "Printed in full at 115 and 142; middle days refer back rather than introducing new prayer texts. Reconstruct source sequence without duplicate readings."
+  },
+  "dayMap": [
+    {
+      "day": 1,
+      "headingFr": "La sainte Face à Bethléem",
+      "appEnglishTheme": "The Holy Face at Bethlehem",
+      "printedPages": {
+        "from": 112,
+        "to": 115
+      },
+      "pdfPageZeroBased": {
+        "from": 118,
+        "to": 121
+      },
+      "pdfPageOneBased": {
+        "from": 119,
+        "to": 122
+      },
+      "status": "PRINTED_ORIGINAL_FRENCH_DAY_LOCATED__EXACT_BODY_TRANSCRIPTION_PENDING",
+      "englishMatch": "THEME_AND_CROSS_LANGUAGE_SELECTED_PASSAGES_ONLY",
+      "frenchBodyInReader": "NOT_ADMITTED"
+    },
+    {
+      "day": 2,
+      "headingFr": "La sainte Face au milieu des peuples de Judée",
+      "appEnglishTheme": "The Holy Face in the midst of the people of Judea",
+      "printedPages": {
+        "from": 116,
+        "to": 119
+      },
+      "pdfPageZeroBased": {
+        "from": 122,
+        "to": 125
+      },
+      "pdfPageOneBased": {
+        "from": 123,
+        "to": 126
+      },
+      "status": "PRINTED_ORIGINAL_FRENCH_DAY_LOCATED__EXACT_BODY_TRANSCRIPTION_PENDING",
+      "englishMatch": "THEME_AND_CROSS_LANGUAGE_SELECTED_PASSAGES_ONLY",
+      "frenchBodyInReader": "NOT_ADMITTED"
+    },
+    {
+      "day": 3,
+      "headingFr": "La sainte Face au Thabor",
+      "appEnglishTheme": "The Holy Face on Tabor",
+      "printedPages": {
+        "from": 120,
+        "to": 123
+      },
+      "pdfPageZeroBased": {
+        "from": 126,
+        "to": 129
+      },
+      "pdfPageOneBased": {
+        "from": 127,
+        "to": 130
+      },
+      "status": "PRINTED_ORIGINAL_FRENCH_DAY_LOCATED__EXACT_BODY_TRANSCRIPTION_PENDING",
+      "englishMatch": "THEME_AND_CROSS_LANGUAGE_SELECTED_PASSAGES_ONLY",
+      "frenchBodyInReader": "NOT_ADMITTED"
+    },
+    {
+      "day": 4,
+      "headingFr": "La sainte Face au jardin des Oliviers",
+      "appEnglishTheme": "The Holy Face in the Garden of Olives",
+      "printedPages": {
+        "from": 124,
+        "to": 127
+      },
+      "pdfPageZeroBased": {
+        "from": 130,
+        "to": 133
+      },
+      "pdfPageOneBased": {
+        "from": 131,
+        "to": 134
+      },
+      "status": "PRINTED_ORIGINAL_FRENCH_DAY_LOCATED__EXACT_BODY_TRANSCRIPTION_PENDING",
+      "englishMatch": "THEME_AND_CROSS_LANGUAGE_SELECTED_PASSAGES_ONLY",
+      "frenchBodyInReader": "NOT_ADMITTED"
+    },
+    {
+      "day": 5,
+      "headingFr": "La sainte Face dans la cour de Caïphe",
+      "appEnglishTheme": "The Holy Face in the House of Caiphas",
+      "printedPages": {
+        "from": 127,
+        "to": 130
+      },
+      "pdfPageZeroBased": {
+        "from": 133,
+        "to": 136
+      },
+      "pdfPageOneBased": {
+        "from": 134,
+        "to": 137
+      },
+      "status": "PRINTED_ORIGINAL_FRENCH_DAY_LOCATED__EXACT_BODY_TRANSCRIPTION_PENDING",
+      "englishMatch": "THEME_AND_CROSS_LANGUAGE_SELECTED_PASSAGES_ONLY",
+      "frenchBodyInReader": "NOT_ADMITTED"
+    },
+    {
+      "day": 6,
+      "headingFr": "La sainte Face au prétoire de Pilate",
+      "appEnglishTheme": "The Holy Face at the Praetorium of Pilate",
+      "printedPages": {
+        "from": 130,
+        "to": 133
+      },
+      "pdfPageZeroBased": {
+        "from": 136,
+        "to": 139
+      },
+      "pdfPageOneBased": {
+        "from": 137,
+        "to": 140
+      },
+      "status": "PRINTED_ORIGINAL_FRENCH_DAY_LOCATED__EXACT_BODY_TRANSCRIPTION_PENDING",
+      "englishMatch": "THEME_AND_CROSS_LANGUAGE_SELECTED_PASSAGES_ONLY",
+      "frenchBodyInReader": "NOT_ADMITTED"
+    },
+    {
+      "day": 7,
+      "headingFr": "La sainte Face sur la route du Calvaire",
+      "appEnglishTheme": "The Holy Face on the path to Calvary",
+      "printedPages": {
+        "from": 133,
+        "to": 136
+      },
+      "pdfPageZeroBased": {
+        "from": 139,
+        "to": 142
+      },
+      "pdfPageOneBased": {
+        "from": 140,
+        "to": 143
+      },
+      "status": "PRINTED_ORIGINAL_FRENCH_DAY_LOCATED__EXACT_BODY_TRANSCRIPTION_PENDING",
+      "englishMatch": "THEME_AND_CROSS_LANGUAGE_SELECTED_PASSAGES_ONLY",
+      "frenchBodyInReader": "NOT_ADMITTED"
+    },
+    {
+      "day": 8,
+      "headingFr": "La sainte Face sur la croix",
+      "appEnglishTheme": "The Holy Face on the Cross",
+      "printedPages": {
+        "from": 136,
+        "to": 139
+      },
+      "pdfPageZeroBased": {
+        "from": 142,
+        "to": 145
+      },
+      "pdfPageOneBased": {
+        "from": 143,
+        "to": 146
+      },
+      "status": "PRINTED_ORIGINAL_FRENCH_DAY_LOCATED__EXACT_BODY_TRANSCRIPTION_PENDING",
+      "englishMatch": "THEME_AND_CROSS_LANGUAGE_SELECTED_PASSAGES_ONLY",
+      "frenchBodyInReader": "NOT_ADMITTED"
+    },
+    {
+      "day": 9,
+      "headingFr": "La sainte Face au jour de la Résurrection",
+      "appEnglishTheme": "The Holy Face on the day of the Resurrection",
+      "printedPages": {
+        "from": 139,
+        "to": 142
+      },
+      "pdfPageZeroBased": {
+        "from": 145,
+        "to": 148
+      },
+      "pdfPageOneBased": {
+        "from": 146,
+        "to": 149
+      },
+      "status": "PRINTED_ORIGINAL_FRENCH_DAY_LOCATED__EXACT_BODY_TRANSCRIPTION_PENDING",
+      "englishMatch": "THEME_AND_CROSS_LANGUAGE_SELECTED_PASSAGES_ONLY",
+      "frenchBodyInReader": "NOT_ADMITTED"
+    }
+  ],
+  "sourceQuality": {
+    "facsimileVerifiedPagesZeroBased": [
+      118,
+      121,
+      125,
+      142,
+      145,
+      148
+    ],
+    "printedTitlePageVerified": true,
+    "sourceIsJanvierAuthored": false,
+    "clarification": "Janvier is author; printed 1895 third edition postdates his 1888 death. The source is historical French original-language text, not a new translation of the 1887 English witness.",
+    "proofreadingOpen": true
+  },
+  "competingOnlineForms": [
+    {
+      "url": "https://hozana.org/priere/neuvaine/sainte-face",
+      "status": "EXCLUDE_AS_SOURCE_FOR_THIS_B25_NOVENA",
+      "reason": "Nine thematic headings overlap, but short petitions and later elements such as Fatima prayer differ from complete Janvier meditations; cannot substitute on heading match."
+    },
+    {
+      "url": "https://sainteface.com/devotion/neuvaine.html",
+      "status": "EXCLUDE_AS_SOURCE_FOR_THIS_B25_NOVENA",
+      "reason": "Different nine-day prayer sequence opening with O Dieu notre protecteur and daily short devotions, not the Janvier nine meditations."
+    }
+  ],
+  "releaseGate": {
+    "expectedFrenchPrayersInReader": 0,
+    "preserveExistingEnglishNineDays": true,
+    "neverAutoFillFromHeadings": true,
+    "neverIdentifyModernHozanaAsJanvierPrint": true,
+    "neverReplaceRosaryOrConfession": true,
+    "transcriptionGate": "For each day, full printed page-by-page French transcription, semantic comparison to English, act/virtue/bouquet/aspiration/collect verification, OCR normalization with original image inspection, and 320/390 EN/FR reader QA.",
+    "contactOrPaymentRequired": false
+  }
+}
