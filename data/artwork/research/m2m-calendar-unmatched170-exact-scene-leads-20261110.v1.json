@@ -23,27 +23,27 @@
   ],
   "counts": {
     "baselineUnmatchedCalendarTargets": 170,
-    "targetsWithNewResearchLeads": 42,
-    "targetsStillWithoutNamedLeads": 128,
-    "proposedRelationshipEdges": 50,
+    "targetsWithNewResearchLeads": 55,
+    "targetsStillWithoutNamedLeads": 115,
+    "proposedRelationshipEdges": 65,
     "existing989Edges": 24,
-    "newInstitutionalObjectEdges": 20,
+    "newInstitutionalObjectEdges": 35,
     "secondaryOrCommonsOnlyEdges": 6,
     "byClass": {
       "II": {
         "unmatchedBaseline": 29,
-        "withResearchLeads": 14,
-        "stillWithoutLeads": 15
+        "withResearchLeads": 21,
+        "stillWithoutLeads": 8
       },
       "III": {
         "unmatchedBaseline": 101,
-        "withResearchLeads": 8,
-        "stillWithoutLeads": 93
+        "withResearchLeads": 9,
+        "stillWithoutLeads": 92
       },
       "IV": {
         "unmatchedBaseline": 40,
-        "withResearchLeads": 20,
-        "stillWithoutLeads": 20
+        "withResearchLeads": 25,
+        "stillWithoutLeads": 15
       }
     },
     "newAuthorizedAssignments": 0
@@ -830,9 +830,25 @@
       "observedPrincipalId": "sancti:05-04:3:w",
       "gospelReferenceFromMatchingIndex": "Luke 7:11–16",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "KHM:GG52",
+          "title": "The Raising of the Youth of Nain",
+          "artist": "Paolo Veronese",
+          "sourceUrl": "https://www.khm.at/en/artworks/the-raising-of-the-youth-of-nain-388-1",
+          "relation": "APPOINTED_GOSPEL_NOT_SAINT_PERSON",
+          "scriptureOrIdentityAnchor": "Luke 7:11–16",
+          "medium": "oil on canvas",
+          "remark": "St Monica is NOT depicted. This matches the Mass Gospel only",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-05-05",
@@ -1082,9 +1098,25 @@
       "observedPrincipalId": "tempora:Pent02-0r:2:g",
       "gospelReferenceFromMatchingIndex": "Luke 14:16–24",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Wellcome:45078i",
+          "title": "The Halt and the Blind Summoned to the Great Supper",
+          "artist": "Joost Cornelisz Droochsloot",
+          "sourceUrl": "https://wellcomecollection.org/works/jgxd7rrf",
+          "relation": "GOSPEL_PARABLE",
+          "scriptureOrIdentityAnchor": "Luke 14:16–24",
+          "medium": "oil on canvas",
+          "remark": "Wellcome directly identifies the parable; verify original current photo/licence",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-06-08",
@@ -1273,9 +1305,40 @@
       "observedPrincipalId": "tempora:Pent05-0:2:g",
       "gospelReferenceFromMatchingIndex": "Matthew 5:20–24",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 2,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Getty:84.PC.71",
+          "title": "The Sermon on the Mount",
+          "artist": "Jan Brueghel the Elder",
+          "sourceUrl": "https://www.getty.edu/art/collection/object/103RG2",
+          "relation": "SERMON_CONTEXT_NOT_VERSE_SPECIFIC",
+          "scriptureOrIdentityAnchor": "Matthew 5:20–24",
+          "medium": "oil on copper",
+          "remark": "Depicts Matthew 5 Sermon, not specifically reconciliation at altar",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        },
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Frick:Claude-Sermon1656",
+          "title": "The Sermon on the Mount",
+          "artist": "Claude Lorrain",
+          "sourceUrl": "https://www.frick.org/sites/default/files/2021/frick-madison-guide-art-2021-april.pdf",
+          "relation": "SERMON_CONTEXT_NOT_VERSE_SPECIFIC",
+          "scriptureOrIdentityAnchor": "Matthew 5:20–24",
+          "medium": "oil on canvas",
+          "remark": "The Frick collection guide confirms identity; not the particular saying",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-07-03",
@@ -1882,9 +1945,40 @@
       "observedPrincipalId": "tempora:Pent14-0:2:g",
       "gospelReferenceFromMatchingIndex": "Matthew 6:24–33",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 2,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Getty:84.PC.71",
+          "title": "The Sermon on the Mount",
+          "artist": "Jan Brueghel the Elder",
+          "sourceUrl": "https://www.getty.edu/art/collection/object/103RG2",
+          "relation": "SERMON_CONTEXT_NOT_VERSE_SPECIFIC",
+          "scriptureOrIdentityAnchor": "Matthew 6:24–33",
+          "medium": "oil on copper",
+          "remark": "Broad Sermon motif, not literal birds/lilies admonition",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        },
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Frick:Claude-Sermon1656",
+          "title": "The Sermon on the Mount",
+          "artist": "Claude Lorrain",
+          "sourceUrl": "https://www.frick.org/sites/default/files/2021/frick-madison-guide-art-2021-april.pdf",
+          "relation": "SERMON_CONTEXT_NOT_VERSE_SPECIFIC",
+          "scriptureOrIdentityAnchor": "Matthew 6:24–33",
+          "medium": "oil on canvas",
+          "remark": "Broad Sermon motif; do not falsely label as exact parable",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-08-31",
@@ -1904,9 +1998,25 @@
       "observedPrincipalId": ":feria:4:w",
       "gospelReferenceFromMatchingIndex": "Matthew 6:24–33",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Getty:84.PC.71",
+          "title": "The Sermon on the Mount",
+          "artist": "Jan Brueghel the Elder",
+          "sourceUrl": "https://www.getty.edu/art/collection/object/103RG2",
+          "relation": "SERMON_CONTEXT_NOT_VERSE_SPECIFIC",
+          "scriptureOrIdentityAnchor": "Matthew 6:24–33",
+          "medium": "oil on copper",
+          "remark": "Class IV inherited Proper; contextual only",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-09-02",
@@ -1937,9 +2047,25 @@
       "observedPrincipalId": ":feria:4:w",
       "gospelReferenceFromMatchingIndex": "Matthew 6:24–33",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Getty:84.PC.71",
+          "title": "The Sermon on the Mount",
+          "artist": "Jan Brueghel the Elder",
+          "sourceUrl": "https://www.getty.edu/art/collection/object/103RG2",
+          "relation": "SERMON_CONTEXT_NOT_VERSE_SPECIFIC",
+          "scriptureOrIdentityAnchor": "Matthew 6:24–33",
+          "medium": "oil on copper",
+          "remark": "Class IV inherited Proper; contextual only",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-09-05",
@@ -1959,9 +2085,25 @@
       "observedPrincipalId": "tempora:Pent15-0:2:g",
       "gospelReferenceFromMatchingIndex": "Luke 7:11–16",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "KHM:GG52",
+          "title": "The Raising of the Youth of Nain",
+          "artist": "Paolo Veronese",
+          "sourceUrl": "https://www.khm.at/en/artworks/the-raising-of-the-youth-of-nain-388-1",
+          "relation": "GOSPEL_MIRACLE",
+          "scriptureOrIdentityAnchor": "Luke 7:11–16",
+          "medium": "oil on canvas",
+          "remark": "Museum original GG52, distinct from previously rejected AI rendition of Nain",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-09-07",
@@ -1970,9 +2112,25 @@
       "observedPrincipalId": ":feria:4:w",
       "gospelReferenceFromMatchingIndex": "Luke 7:11–16",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "KHM:GG52",
+          "title": "The Raising of the Youth of Nain",
+          "artist": "Paolo Veronese",
+          "sourceUrl": "https://www.khm.at/en/artworks/the-raising-of-the-youth-of-nain-388-1",
+          "relation": "GOSPEL_MIRACLE",
+          "scriptureOrIdentityAnchor": "Luke 7:11–16",
+          "medium": "oil on canvas",
+          "remark": "",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-09-09",
@@ -1981,9 +2139,25 @@
       "observedPrincipalId": ":feria:4:w",
       "gospelReferenceFromMatchingIndex": "Luke 7:11–16",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "KHM:GG52",
+          "title": "The Raising of the Youth of Nain",
+          "artist": "Paolo Veronese",
+          "sourceUrl": "https://www.khm.at/en/artworks/the-raising-of-the-youth-of-nain-388-1",
+          "relation": "GOSPEL_MIRACLE",
+          "scriptureOrIdentityAnchor": "Luke 7:11–16",
+          "medium": "oil on canvas",
+          "remark": "",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-09-10",
@@ -2003,9 +2177,25 @@
       "observedPrincipalId": ":feria:4:w",
       "gospelReferenceFromMatchingIndex": "Luke 7:11–16",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "KHM:GG52",
+          "title": "The Raising of the Youth of Nain",
+          "artist": "Paolo Veronese",
+          "sourceUrl": "https://www.khm.at/en/artworks/the-raising-of-the-youth-of-nain-388-1",
+          "relation": "GOSPEL_MIRACLE",
+          "scriptureOrIdentityAnchor": "Luke 7:11–16",
+          "medium": "oil on canvas",
+          "remark": "",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-09-13",
@@ -2014,9 +2204,25 @@
       "observedPrincipalId": "tempora:Pent16-0:2:g",
       "gospelReferenceFromMatchingIndex": "Luke 14:1–11",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Rijks:RP-P-BI-2138",
+          "title": "Christ Healing the Man with Dropsy",
+          "artist": "Boëtius Adamsz Bolswert",
+          "sourceUrl": "https://www.rijksmuseum.nl/en/collection/object/Christus-geneest-de-man-met-waterzucht--acd5eb19948197d3deb5a479d9cb0a2f",
+          "relation": "GOSPEL_SCENE_SUBSET",
+          "scriptureOrIdentityAnchor": "Luke 14:1–6 within Luke 14:1–11",
+          "medium": "engraving print",
+          "remark": "Institutional public-domain print; not a painting, format fallback only",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-09-16",
@@ -2091,9 +2297,25 @@
       "observedPrincipalId": "tempora:093-3:2:v",
       "gospelReferenceFromMatchingIndex": "Mark 9:16–28",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Vatican:Pinacoteca:333",
+          "title": "The Transfiguration",
+          "artist": "Raphael",
+          "sourceUrl": "https://www.museivaticani.va/content/museivaticani/en/collezioni/musei/la-pinacoteca/sala-viii---secolo-xvi/raffaello-sanzio--trasfigurazione.html",
+          "relation": "LOWER_REGISTER_GOSPEL_EVENT",
+          "scriptureOrIdentityAnchor": "Mark 9:16–28 (possessed boy)",
+          "medium": "painting on panel",
+          "remark": "User previously selected Raphael for Lent II; this is a separate proposed many-to-many use of its LOWER register, not a date-specific approval",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-09-24",
@@ -2586,9 +2808,25 @@
       "observedPrincipalId": "tempora:Epi6-0:2:g",
       "gospelReferenceFromMatchingIndex": "Matthew 13:31–35",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Emory:Pitts-Jan-Luyken-Mustard",
+          "title": "The Parable of the Mustard Seed",
+          "artist": "Jan Luyken",
+          "sourceUrl": "https://dia.pitts.aws.emory.edu/image_details.cfm?ID=121409",
+          "relation": "GOSPEL_PARABLE_SUBSET",
+          "scriptureOrIdentityAnchor": "Matthew 13:31–32 within Matthew 13:31–35",
+          "medium": "etching print",
+          "remark": "Institutional indexed print; not oil, no high-resolution fees or permission requests",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-11-16",
