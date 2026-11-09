@@ -162,7 +162,13 @@ export function createDatedProperNotationPreview({
  if(!root?.querySelectorAll)throw new TypeError("Mass reader root required");
  const doc=root.ownerDocument;
  const query=String(doc?.defaultView?.location?.search??"");
- let active=enabled===null?new URLSearchParams(query).get("chant_preview")==="1":enabled===true;
+ // Source-bound Gregorian references are visible by default at the actual
+ // 65-card Mass passage in Sung/Solemn celebrations. They retain their
+ // conspicuous provisional labels and never imply musical approval.
+ // ?chant_preview=0 is an explicit text-only override; the in-reader
+ // preferences toggle still supports turning notation off/on at any time.
+ const requestedPreview=new URLSearchParams(query).get("chant_preview");
+ let active=enabled===null?requestedPreview!=="0":enabled===true;
  let entries=[],toneNotes=[],orationAmenHandoffs=[],generation=0,modal=null,modalEngraver=null,returnFocus=null;
  function closeZoom(){
   if(modal?.open)modal.close();
@@ -208,7 +214,8 @@ export function createDatedProperNotationPreview({
  }
  function render({mode="LIVE",form,resolvedMass,massPlan=null,paragraphs=[],selectedSettings={}}={}){
   clear();
-  if(!active||!["LIVE","MISSAL"].includes(mode))return 0;
+  if(!active||!["LIVE","MISSAL"].includes(mode)||
+   !["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"].includes(String(form??"").toUpperCase()))return 0;
   const g=generation;
   // Separate second research opt-in: ?chant_preview=1&greeting_transfer=1961.
   // Does not certify this 1961 oration melody at the two other Mass locations.
