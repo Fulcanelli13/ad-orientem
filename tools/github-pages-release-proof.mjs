@@ -12,6 +12,7 @@ export const RELEASE_PROOF_REPOSITORY="Fulcanelli13/ad-orientem";
 // DEPLOYED CODE PARITY, not original printed notation or score approval.
 export const MASS_SCHOLA_CRITICAL_PATHS=Object.freeze([
  "src/mass/reader-native-preview.js",
+ "src/mass/reader-cue-focus.js",
  "src/mass/reader-model.js",
  "src/mass/reader-mode-switch.js",
  "src/mass/browser-entry.js",
