@@ -89,3 +89,18 @@ See `data/artwork/research/m2m-scene-adjudication-batch2-20261109.v1.json`. All 
 - **Exact-photograph rights are still not certified.** LACMA credits its own reproduction; the French Ministry of Culture explicitly notes permission requirements for the Courtois and Jouvenet/RMN photos. An independently uploaded Commons photograph must be audited on its own merits; its presence does not inherit museum image rights or imply the image was approved for mobile use.
 
 **Progress:** 25/114 new Claude proposals have now received individual external/source adjudications (10 in batch 1, 15 here); 89 remain. The underlying 1,589 many-to-many relationship records, 507 owner-approved Prayer option entries and 301 protected placement decisions are not modified by these research-only findings.
+
+## 9 November institutional direct-scene audit — batch 3 (20 new proposals)
+
+Source crosswalk: `data/artwork/research/m2m-scene-adjudication-batch3-20261109.v1.json`.
+
+**20 Calendar relations**, including two uses of Quantin’s Circumcision triptych (Dijon CA439), Jan Brueghel I’s Magi (KMSKA 922), Cornelis de Vos’s Magi (KMSKA 108) and Samaritan Woman (MSK Ghent 1900-A), Antoon van den Heuvel’s Shepherds (Ghent S-89), Zurbarán’s Shepherds (Grenoble MG1324), Francken’s Cana (Toulouse RO862), Jordaens’s Prodigal Son among swine (Lille work, object number pending), Nancy’s Van Hemessen Temple Cleansing (inv.90), Maerten de Vos’s Doubting Thomas (KMSKA 77 on April 15, April 17, and December 21), Caravaggio’s Thomas (Potsdam GK I5438), Mathieu Le Nain’s Martha and Mary (Rennes object ID pending), Rubens’s Transfiguration (Nancy inv.71 reused on August 6), Cortbemde’s Good Samaritan (KMSKA 370), and Caravaggio’s Annunciation (Nancy).
+
+**Important holds**:
+- 19 January, Cornelis de Baellieur *Cana* is **title-level plausible only**; physical object, attribution, exact source and photo not independently established. It must not be promoted to a verified-object status.
+- 14 March, Giandomenico Tiepolo *Christ and the Woman Taken in Adultery* is the specific Marseille **MNR 84 / D 53-1** object, a wartime recovered artwork still under a restitution regime. Its provenance and RMN photography are distinct holds. Do **not** conflate with Louvre RF 1961 80, RF 1975 1 or LACMA M.2005.119, all with very similar scenes/titles.
+- 7 March Jordaens’s swineherd illustrates *part* of Luke 15, not the whole parable. 18 August Cortbemde’s Samaritan differs from Courtois’s Besançon painting approved for 16 August.
+- KMSKA master images may offer CC0 photographs but its professional-use language and exact file, pixel-quality, crop and owner placement scope still require separate gates.
+- The exact Maerten de Vos altarpiece may map to three dates without implying three paintings or enabling automatic image rotation.
+
+**Census:** 45/114 new Claude proposals individually source-adjudicated after batches 1–3; **69 remain**, including **7 still unaudited direct-scene labels**. The 1,589 base many-to-many edges, 507 owner-accepted Prayer alternatives, all historic locks and global rejection evidence are unmodified. No production or image release authorization is created.
