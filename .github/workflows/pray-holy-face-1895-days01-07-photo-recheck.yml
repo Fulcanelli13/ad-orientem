@@ -1,0 +1,35 @@
+name: Prayer Holy Face 1895 French Days I-VII photo source section gate
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "data/pray/research/pray-holy-face-1895-fr-days01-07-image-assisted-photo-section-recheck.v1.json"
+      - "data/pray/research/pray-holy-face-1895-fr-all-9day-first-pass-index.v1.json"
+      - "tests/pray-holy-face-1895-fr-days01-07-photo-section-recheck-gate.mjs"
+      - ".github/workflows/pray-holy-face-1895-days01-07-photo-recheck.yml"
+      - "src/pray/holy-face-janvier-1887-b25.js"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pray-janvier-days01-07-photo-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  day-one-to-seven-photo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Guard 65 Day I-VII source entries and 25 photographed page anchors
+        run: node tests/pray-holy-face-1895-fr-days01-07-photo-section-recheck-gate.mjs
+      - name: Preserve Day VIII-IX comparison and all nine historical French records
+        run: |
+          node tests/pray-holy-face-1895-fr-days08-09-photo-secondpass-gate.mjs
+          node tests/pray-holy-face-french-1895-all-nine-first-pass-gate.mjs
+      - name: Preserve original source corrections and reader language boundary
+        run: |
+          node tests/pray-holy-face-1895-source-photo-recheck-31pages-gate.mjs
+          node tests/pray-holy-face-1895-french-print-source-page-gate.mjs
