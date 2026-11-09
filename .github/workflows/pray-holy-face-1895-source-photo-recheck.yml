@@ -1,0 +1,36 @@
+name: Prayer Holy Face 1895 photographic audit corrections
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "data/pray/research/pray-holy-face-1895-fr-day08-transcribed-first-pass.v1.json"
+      - "data/pray/research/pray-holy-face-1895-fr-all-9day-first-pass-index.v1.json"
+      - "data/pray/research/pray-holy-face-1895-fr-31page-visual-audit-and-1887-en-scan-lead.v1.json"
+      - "tests/pray-holy-face-french-1895-day8-research-gate.mjs"
+      - "tests/pray-holy-face-french-1895-all-nine-first-pass-gate.mjs"
+      - "tests/pray-holy-face-1895-source-photo-recheck-31pages-gate.mjs"
+      - ".github/workflows/pray-holy-face-1895-source-photo-recheck.yml"
+      - "src/pray/holy-face-janvier-1887-b25.js"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pray-janvier-photo-recheck-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  source-photo-recheck:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check 31-page visual source audit and corrected non-numeral Day VIII heading
+        run: node tests/pray-holy-face-1895-source-photo-recheck-31pages-gate.mjs
+      - name: Recheck dedicated corrected Day VIII research record
+        run: node tests/pray-holy-face-french-1895-day8-research-gate.mjs
+      - name: Recheck all nine research day records and published-language hold
+        run: node tests/pray-holy-face-french-1895-all-nine-first-pass-gate.mjs
+      - name: Recheck original print boundaries and original English/French reader contract
+        run: node tests/pray-holy-face-1895-french-print-source-page-gate.mjs
