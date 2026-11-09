@@ -1,0 +1,216 @@
+{
+  "schema": "ao-mass-music-m35-mass-i-print-first-structural-audit-v1",
+  "auditedAt": "2026-11-09",
+  "edition": "Graduale Romanum (Solesmes, 1961), Kyriale I · Tempore Paschali (Lux et origo)",
+  "printedFacsimilePdf": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+  "method": [
+    "Visually inspected original printed Kyriale facsimile pages 4*, 5*, 6*, and 7* at PDF page positions 6–9 (one-based), distinguishing the surrounding Asperges and Ite missa est music from Mass I Ordinary movements.",
+    "Compared identifiable printed Latin clause boundaries, printed starts/ends, explicit Kyrie repeat markers, Sanctus/Benedictus continuity and Agnus endings to the four unmodified local GregoBase GABC transcriptions.",
+    "Source GABC note-bearing groups are inventory counts from a deterministic parser. They are NOT a count of manually verified printed notes or agreement in pitch.",
+    "No claim of exhaustive printed absolute pitch, neume shape, episemata, rhythmic signs, accidentals, custos, individual syllable underlay or publisher/editorial approval. No unapproved musical source was rewritten."
+  ],
+  "priorAudits": [
+    "data/research/mass-music-m31-five-short-score-print-visual-pass.v1.json",
+    "data/research/mass-music-m34-seasonal-print-first-audit.v1.json"
+  ],
+  "coverage": {
+    "registeredResearchScores": 20,
+    "alreadySurveyedDistinct": 9,
+    "newlySurveyedDistinct": 4,
+    "uniqueStructurallyVisuallySurveyed": 13,
+    "remainingWithoutStructuralVisualSurvey": 7,
+    "fullPrintedMusicalCertificates": 0,
+    "editoriallyApproved": 0
+  },
+  "sourceWitnesses": [
+    {
+      "folio": "4*",
+      "pdfPageOneBased": 6,
+      "image": "https://gregobase.selapa.net/sources/2/881.png",
+      "observed": "Bottom of page: Mass I Kyrie begins; earlier chant on the page is Asperges me, not Kyrie I"
+    },
+    {
+      "folio": "5*",
+      "pdfPageOneBased": 7,
+      "image": "https://gregobase.selapa.net/sources/2/882.png",
+      "observed": "Kyrie I concludes at top and Gloria I begins; Gloria continues onto page 6*"
+    },
+    {
+      "folio": "6*",
+      "pdfPageOneBased": 8,
+      "image": "https://gregobase.selapa.net/sources/2/883.png",
+      "observed": "Gloria I concludes with Amen; Sanctus I starts, including Benedictus qui venit"
+    },
+    {
+      "folio": "7*",
+      "pdfPageOneBased": 9,
+      "image": "https://gregobase.selapa.net/sources/2/884.png",
+      "observed": "Sanctus I completes Benedictus and final Hosanna; complete three-invocation Agnus I follows; dismissal chants beneath Agnus are separate music"
+    }
+  ],
+  "scoreSurveys": [
+    {
+      "scoreId": "GREGOBASE-1143",
+      "sourceId": 1143,
+      "movement": "KYRIE",
+      "setting": "MASS_01",
+      "title": "Kyrie I · Lux et origo",
+      "printedPages": [
+        "4*",
+        "5*"
+      ],
+      "imageFiles": [
+        "881.png",
+        "882.png"
+      ],
+      "sourceFile": "src/mass/reader-kyriale-research-batch3.js",
+      "sourceGabcNoteBearingGroups": 27,
+      "sourceGabcCodeUnitFnv1a32": "1d935709",
+      "sourceTextAndRepetition": "Four notated sections: Kyrie iij., Christe iij., Kyrie ij., terminal Kyrie once (3+3+2+1 invocations)",
+      "observations": [
+        "Kyrie heading and first Kyrie/Christe section visibly begin at bottom of p.4*",
+        "Christe completes at top of p.5*, followed by Kyrie ij. and distinct terminal Kyrie",
+        "Do not flatten the last Kyrie into a repeat of the opening melody"
+      ],
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=1143",
+      "sourceOriginalImages": [
+        "https://gregobase.selapa.net/sources/2/881.png",
+        "https://gregobase.selapa.net/sources/2/882.png"
+      ],
+      "status": "PRINTED_TEXT_AND_PHRASE_STRUCTURE_VISUALLY_INSPECTED_ONLY",
+      "fullPrintedAbsolutePitchParity": "NOT_CERTIFIED",
+      "fullPrintedNeumeParity": "NOT_CERTIFIED",
+      "fullPrintedSyllabicUnderlayParity": "NOT_CERTIFIED",
+      "fullPrintedRhythmicParity": "NOT_CERTIFIED",
+      "editorialScoreApproval": false,
+      "localPerformanceObserved": false
+    },
+    {
+      "scoreId": "GREGOBASE-2980",
+      "sourceId": 2980,
+      "movement": "GLORIA",
+      "setting": "MASS_01",
+      "title": "Gloria I",
+      "printedPages": [
+        "5*",
+        "6*"
+      ],
+      "imageFiles": [
+        "882.png",
+        "883.png"
+      ],
+      "sourceFile": "src/mass/reader-kyriale-research-batch3.js",
+      "sourceGabcNoteBearingGroups": 196,
+      "sourceGabcCodeUnitFnv1a32": "46e8cc3c",
+      "sourceTextAndRepetition": "Continuous Gloria from Gloria in excelsis Deo to concluding Amen",
+      "observations": [
+        "Opening Gloria is printed beneath Kyrie on p.5*",
+        "The line beginning Qui tollis peccata mundi crosses the printed 5*→6* page boundary",
+        "Gloria ends at Amen on p.6*, before the separately headed Sanctus"
+      ],
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=2980",
+      "sourceOriginalImages": [
+        "https://gregobase.selapa.net/sources/2/882.png",
+        "https://gregobase.selapa.net/sources/2/883.png"
+      ],
+      "status": "PRINTED_TEXT_AND_PHRASE_STRUCTURE_VISUALLY_INSPECTED_ONLY",
+      "fullPrintedAbsolutePitchParity": "NOT_CERTIFIED",
+      "fullPrintedNeumeParity": "NOT_CERTIFIED",
+      "fullPrintedSyllabicUnderlayParity": "NOT_CERTIFIED",
+      "fullPrintedRhythmicParity": "NOT_CERTIFIED",
+      "editorialScoreApproval": false,
+      "localPerformanceObserved": false
+    },
+    {
+      "scoreId": "GREGOBASE-300",
+      "sourceId": 300,
+      "movement": "SANCTUS_BENEDICTUS",
+      "setting": "MASS_01",
+      "title": "Sanctus I with Benedictus",
+      "printedPages": [
+        "6*",
+        "7*"
+      ],
+      "imageFiles": [
+        "883.png",
+        "884.png"
+      ],
+      "sourceFile": "src/mass/reader-kyriale-research-batch3.js",
+      "sourceGabcNoteBearingGroups": 55,
+      "sourceGabcCodeUnitFnv1a32": "c1849a80",
+      "sourceTextAndRepetition": "Sanctus ×3, Pleni sunt caeli, Hosanna, Benedictus qui venit, final Hosanna",
+      "observations": [
+        "Sanctus starts on p.6* after Gloria Amen; the Benedictus phrase begins before the page break",
+        "In nomine Domini and the final Hosanna continue on p.7*",
+        "Both Hosanna passages must remain in one Sanctus–Benedictus score and canonical Mass card"
+      ],
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=300",
+      "sourceOriginalImages": [
+        "https://gregobase.selapa.net/sources/2/883.png",
+        "https://gregobase.selapa.net/sources/2/884.png"
+      ],
+      "status": "PRINTED_TEXT_AND_PHRASE_STRUCTURE_VISUALLY_INSPECTED_ONLY",
+      "fullPrintedAbsolutePitchParity": "NOT_CERTIFIED",
+      "fullPrintedNeumeParity": "NOT_CERTIFIED",
+      "fullPrintedSyllabicUnderlayParity": "NOT_CERTIFIED",
+      "fullPrintedRhythmicParity": "NOT_CERTIFIED",
+      "editorialScoreApproval": false,
+      "localPerformanceObserved": false
+    },
+    {
+      "scoreId": "GREGOBASE-2977",
+      "sourceId": 2977,
+      "movement": "AGNUS_DEI",
+      "setting": "MASS_01",
+      "title": "Agnus Dei I",
+      "printedPages": [
+        "7*"
+      ],
+      "imageFiles": [
+        "884.png"
+      ],
+      "sourceFile": "src/mass/reader-kyriale-research-batch3.js",
+      "sourceGabcNoteBearingGroups": 54,
+      "sourceGabcCodeUnitFnv1a32": "b2f6ce02",
+      "sourceTextAndRepetition": "Three complete invocations: miserere nobis twice; third ends dona nobis pacem",
+      "observations": [
+        "Agnus I begins on p.7* below the last Hosanna of Sanctus I",
+        "All three Agnus invocations and the final dona nobis pacem are on p.7*",
+        "The separate Ite missa est/Deo gratias lines beneath do not belong to Agnus I; this Ordinary score is not a Requiem variant"
+      ],
+      "sourceUrl": "https://gregobase.selapa.net/chant.php?id=2977",
+      "sourceOriginalImages": [
+        "https://gregobase.selapa.net/sources/2/884.png"
+      ],
+      "status": "PRINTED_TEXT_AND_PHRASE_STRUCTURE_VISUALLY_INSPECTED_ONLY",
+      "fullPrintedAbsolutePitchParity": "NOT_CERTIFIED",
+      "fullPrintedNeumeParity": "NOT_CERTIFIED",
+      "fullPrintedSyllabicUnderlayParity": "NOT_CERTIFIED",
+      "fullPrintedRhythmicParity": "NOT_CERTIFIED",
+      "editorialScoreApproval": false,
+      "localPerformanceObserved": false
+    }
+  ],
+  "remainingSurveyIds": [
+    "GREGOBASE-272",
+    "GREGOBASE-961",
+    "GREGOBASE-303",
+    "GREGOBASE-749",
+    "GREGOBASE-1106",
+    "GREGOBASE-871",
+    "GREGOBASE-1243"
+  ],
+  "nextRequired": [
+    "Complete the remaining seven structural source surveys, then locate each GABC token by printed page and system.",
+    "Use enlarged original 1961 source images to compare each neume's absolute pitches, clef, rhythm marks and exact underlay independently; log individual differences instead of assuming equality.",
+    "Request per-score editorial sign-off; keep all twenty source GABCs provisional and never silently auto-assign a parish's music."
+  ],
+  "publication": {
+    "changeToMassCards": 0,
+    "sourceGabcRewrites": 0,
+    "scoreCertificatesAdded": 0,
+    "runtimeMusicApprovalsAdded": 0,
+    "calendarInferredChoices": 0,
+    "localScholaProgrammesInferred": 0
+  }
+}
