@@ -298,11 +298,21 @@
         "STG-pray.angelus-06",
         "STG-pray.rosary-02"
       ],
-      "hold_policy": "BLOCK_NEW_RENDER_OR_ROTATION_UNTIL_OWNER_DECISION_CHRONOLOGY_RESOLVED; PRESERVE_EVIDENCE_OF_EXISTING_ASSIGNMENTS",
+      "hold_policy": "BLOCK_NEW_USE_OF_EXACT_REJECTED_PHYSICAL_ARTWORK; AUDIT_EXISTING_RUNTIME_REFERENCES; PRESERVE_HISTORICAL_ASSOCIATIONS_FOR_PROVENANCE; DO_NOT_AUTO_SUBSTITUTE_ANOTHER_PAINTING",
       "museum_reuse_status": "Cleveland Museum of Art Open Access (CC0) for its image; rights status never overrides user's aesthetic rejection.",
       "evidence": [
         "https://www.clevelandart.org/art/1942.635"
-      ]
+      ],
+      "decision_precedence_assessment": "Recorded 15 October exact-original owner-score 2 rejection remains a blocking source until a demonstrably explicit owner reversal of that same physical object is found. The later November 1 Prayer master shows selected/accepted options but does not itself establish such a reversal.",
+      "released_local_asset": {
+        "source": "src/art/released-module-paintings.v1.js",
+        "key": "bouts",
+        "source_object": "https://clevelandart.org/art/1942.635",
+        "local_image": "assets/prayer/released/bouts-annunciation-original.jpg",
+        "release_pr": 2340,
+        "interpretation": "A released file exists in the repository; this is not evidence that the owner reversed the aesthetic rejection or that the asset currently renders in any individual Prayer slot."
+      },
+      "proposed_safe_remediation": "Separate authored rejection and later orphaned gallery/Prayer imports; do not edit runtime until the owner-specific chronology audit is complete. Preserve Rosary and Angelus scene structure; substitute only a separately approved exact-slot work if a runtime correction becomes necessary."
     }
   ]
 }
