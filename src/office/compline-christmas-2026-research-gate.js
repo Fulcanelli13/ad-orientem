@@ -121,3 +121,28 @@ export function reviewChristmas2026ComplineResearch({date,record}={}){
   publishable:false,published:false
  });
 }
+
+/**
+ * Finite private-source appointment for the seven Christmas research dates.
+ * This is deliberately NOT an Office release gate, text certificate or
+ * publication whitelist. The first-Vespers and Marian source hypotheses are
+ * independently cross-checked against the JSON intake in CI.
+ */
+export function researchChristmas2026PrivateComplineAppointment(date){
+ const w=EXPECTED.find(row=>row.date===date);
+ if(!w)return held(date,"CHRISTMAS_PRIVATE_SOURCE_DATE_NOT_IN_LEDGER");
+ return Object.freeze({
+  schema:CHRISTMAS_COMPLINE_RESEARCH_SCHEMA,
+  status:"EXPLICIT_CHRISTMAS_2026_PRIVATE_SOURCE_RESEARCH",
+  appointment:Object.freeze({
+   date:w.date,weekday:w.weekday,psalmDay:w.psalmDay,
+   marianSection:w.marianSection,
+   officeClass:w.officeClass,officeDate:w.officeDate,
+   label:"Private Latin Compline research · "+w.office,
+   rubricalReason:"CHRISTMAS_2026_DATE_SPECIFIC_SOURCE_INTAKE_ONLY"
+  }),
+  sourceTextCertified:false,calendarSelectionAuthorized:false,
+  completeHourCertified:false,rightsApproved:false,
+  publishable:false,published:false
+ });
+}
