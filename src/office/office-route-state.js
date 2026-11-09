@@ -9,6 +9,8 @@ import {reviewChristmas2026LatinComplineCertificate}
  from "./compline-christmas-2026-release-certificate.js";
 import {reviewDec28Jan03LatinComplineCertificate}
  from "./compline-dec28-jan03-2027-release-certificate.js";
+import {reviewEpiphany2027FiveDayLatinCertificate}
+ from "./compline-epiphany-jan04-08-2027-release-certificate.js";
 
 export const ROMAN_OFFICE_HOURS=Object.freeze([
  Object.freeze({id:"MATINS",name:"Matins",latin:"Matutinum"}),
@@ -35,7 +37,10 @@ export function officeRouteState({date,hour,calendarScope="UNIVERSAL"}={}){
    if(released.status==="ELIGIBLE"){
     const christmas=reviewChristmas2026LatinComplineCertificate(date);
     const yearBoundary=reviewDec28Jan03LatinComplineCertificate(date);
-    const appointment=yearBoundary.status==="EXPLICIT_FINITE_YEAR_BOUNDARY_LATIN_CERTIFIED"?
+    const epiphany=reviewEpiphany2027FiveDayLatinCertificate(date);
+    const appointment=epiphany.status==="EXPLICIT_EPIPHANY_JAN04_08_LATIN_TEXT_CERTIFIED"?
+      epiphany.profile:
+      yearBoundary.status==="EXPLICIT_FINITE_YEAR_BOUNDARY_LATIN_CERTIFIED"?
       yearBoundary.profile:
       christmas.status==="EXPLICIT_FINITE_ROMAN_1960_LATIN_TEXT_CERTIFIED"?
       christmas.profile:reviewAdventIComplineAppointment(date).appointment;
