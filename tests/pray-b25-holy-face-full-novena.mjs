@@ -99,7 +99,7 @@ for(const token of [
  "data-n1-proper-source-fallback",
  "data-n1-holy-face-french-1894-original",
  "isFr()&&x.labelFr?x.labelFr:x.label",
- "notice+frenchPrint+novenaParagraphs(face.text)",
+ "notice+frenchPrint+previewNotice+novenaParagraphs(face.text)",
  "data-n1-source-language",
  "data-n1-show-en",
  "p==='SOURCE_REPEAT_ONLY'",
