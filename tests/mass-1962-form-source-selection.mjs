@@ -305,6 +305,84 @@ for(const [date,saint] of [
     form:"LOW",celebrationId:"votive"}).reason,"ALTERNATE_FORMULARY");
 }
 
+// The final eight 2026 dates are source-owned 1962 cases: Jan 5
+// inherited Nativity source, four distinct seasonal Ember dates,
+// the privileged December 21 Advent feria, and two Christmas octave
+// ferias. Test all four nonconventual forms without touching Ember
+// readings, the calendar observance or the canonical 65-card sequence.
+const lastEight=[
+ ["2026-01-05",":feria:4:w",4,null,"Sancti/01-01",
+  "sancti:01-05:4:r",4,"Sancti/01-05",false],
+ ["2026-02-27","tempora:Quad1-5:2:v",2,"Tempora/Quad1-5","Tempora/Quad1-5",
+  "sancti:02-27:3:w",3,"Sancti/02-27",false],
+ ["2026-09-23","tempora:093-3:2:v",2,"Tempora/093-3","Tempora/093-3",
+  "sancti:09-23:3:r",3,"Sancti/09-23",false],
+ ["2026-09-26","tempora:093-6:2:v",2,"Tempora/093-6","Tempora/093-6",
+  "sancti:09-26:4:r",4,"Sancti/09-26",false],
+ ["2026-12-16","tempora:Adv3-3:2:v",2,"Tempora/Adv3-3","Tempora/Adv3-3",
+  "sancti:12-16:3:r",3,"Sancti/12-16",false],
+ ["2026-12-21","sancti:12-21:2:r",2,"Sancti/12-21","Sancti/12-21",
+  "tempora:Adv4-1:2:v",2,"Tempora/Adv4-1",true],
+ ["2026-12-29","tempora:Nat1-1:2:w",2,"Tempora/Nat1-1","Tempora/Nat1-1",
+  "sancti:12-29:4:r",4,"Sancti/12-29",false],
+ ["2026-12-31","tempora:Nat1-1:2:w",2,"Tempora/Nat1-1","Tempora/Nat1-1",
+  "sancti:12-31:4:w",4,"Sancti/12-31",false]
+];
+for(const [date,mainId,mainRank,mainPath,sourcePath,commId,commRank,commPath,privileged] of lastEight){
+ const prayerSourcePath=privileged?"Tempora/Adv4-0":commPath;
+ const source={...base,sourcePath,calendarCommemorations:[{
+  path:commPath,prayerSourcePath,name:"Original 1962 commemoration"}]};
+ const witness={...day,date,day:{
+  main:{id:mainId,rank:mainRank,path:mainPath,title:"Original principal Mass"},
+  commemorations:[{id:commId,rank:commRank,path:commPath,
+   privileged:privileged,title:"Original commemoration"}]},
+  proper:{status:"ready",data:source}};
+ const scope=privileged?
+  "PRIVILEGED_ADVENT_II_CLASS_FERIA_UNDER_ST_THOMAS":
+  "SOURCE_SCOPED_2026_ORDINARY_COMMEMORATION";
+ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+  const r=select({proper:source,calendarResolution:witness,form});
+  assert.equal(r.status,"CERTIFIED",date+"/"+form+": "+r.reason);
+  assert.equal(r.decision.scope,scope,date+"/"+form);
+  const count=(privileged||form==="LOW")?2:1;
+  assert.equal(r.decision.appliedCount,count-1,date+"/"+form);
+  for(const group of ["collects","secrets","postcommunions"])
+   assert.equal(r.proper[group].length,count,date+"/"+form+"/"+group);
+  assert.equal(r.proper.calendarCommemorations.length,1);
+  assert.equal(r.proper.appliedCommemorations.length,count-1);
+  for(const language of ["en","fr"]){
+   const slots=properToReaderSlots(r.proper,{language}).slots;
+   for(const key of ["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"]){
+    assert.equal(slots[key].status,"READY",date+"/"+form+"/"+language+"/"+key);
+    assert.equal(slots[key].data.paragraphs.length,count);
+   }
+   assert.equal(assessPrintableProper(witness,{language,massForm:form}).ok,true);
+  }
+ }
+ for(const [p,d,reason] of [
+  [source,{...witness,date:"2026-10-30"},"RUBRICAL_CLASSIFICATION_PENDING"],
+  [{...source,sourcePath:"Tempora/Unrelated-1"},witness,"RUBRICAL_CLASSIFICATION_PENDING"],
+  [{...source,calendarCommemorations:[{
+   path:commPath,prayerSourcePath:"Sancti/03-17"}]},witness,"RUBRICAL_CLASSIFICATION_PENDING"],
+  [{...source,secrets:[one]},witness,"ORATION_SOURCE_INCOMPLETE"],
+  [source,{...witness,day:{...witness.day,main:{
+   ...witness.day.main,id:"tempora:other:2:v"}}},"RUBRICAL_CLASSIFICATION_PENDING"],
+  [source,{...witness,day:{...witness.day,main:{
+   ...witness.day.main,rank:1}}},"RUBRICAL_CLASSIFICATION_PENDING"],
+  [source,{...witness,day:{...witness.day,commemorations:[{
+   ...witness.day.commemorations[0],rank:1}]}},"RUBRICAL_CLASSIFICATION_PENDING"],
+  [source,{...witness,day:{...witness.day,commemorations:[{
+   ...witness.day.commemorations[0],id:"sancti:wrong:4:r"}]}},"RUBRICAL_CLASSIFICATION_PENDING"]
+ ]){
+  assert.equal(select({proper:p,calendarResolution:d,form:"LOW"}).reason,reason,
+   date+" rejects unrelated source and rank");
+ }
+ assert.equal(select({proper:source,calendarResolution:witness,
+  form:"LOW",isConventual:true}).reason,"CONVENTUAL_RULES_NOT_VERIFIED");
+ assert.equal(select({proper:source,calendarResolution:witness,
+  form:"LOW",celebrationId:"votive"}).reason,"ALTERNATE_FORMULARY");
+}
+
 // 13 May 2026 II-class Ascension Vigil. The authentic ordinary
 // Bellarmine commemoration is separate from the principal Easter
 // feria/Vigil and from the optional Rogation Wednesday Mass.

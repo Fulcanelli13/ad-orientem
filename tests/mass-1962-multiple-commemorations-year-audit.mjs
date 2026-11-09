@@ -216,6 +216,19 @@ let browser;try{
    const remaining=aggregate.uncertifiedFormCases.filter(x=>x.date===date);
    assert.deepEqual(remaining,[],date+" original 1962 Mass-form orations are still uncertified");
  }
+ // Release gate: none of the 448 actual 2026 source-matched
+ // Mass-form oration cases may remain unclassified. This is distinct
+ // from certifying other years, local calendars or physical rites.
+ for(const date of ["2026-01-05","2026-02-27","2026-09-23",
+  "2026-09-26","2026-12-16","2026-12-21","2026-12-29","2026-12-31"]){
+   assert.deepEqual(
+     aggregate.uncertifiedFormCases.filter(x=>x.date===date),[],
+     date+" has an uncertified 1962 Mass-form oration source");
+ }
+ assert.equal(aggregate.uncertifiedFormCases.length,0,
+   "2026 1962 source-matched Mass-form matrix is not fully certified");
+ assert.equal(aggregate.certifiedFormCases,448,
+   "2026 1962 source-matched Mass-form population unexpectedly changed");
  for(const date of ["2026-03-27","2026-12-26","2026-12-28"]){
    const recovered=aggregate.recoveredInseparable.find(x=>x.date===date);
    const status=date==="2026-03-27"?recovered?.passionStatus:
