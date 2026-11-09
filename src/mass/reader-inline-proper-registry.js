@@ -13,6 +13,25 @@ export const PROPER_REFERENCE_BINDINGS=Object.freeze([
  // Epiphany, 6 January. The same "Vidimus stellam" incipit is in
  // DISTINCT Alleluia (1961 p. 58, Mode II) and Communion (p. 59, Mode IV);
  // role + paragraph + 1962 source owner prevents cross-melody borrowing.
+ // Late Advent: every score has one exact 1962 temporal source owner;
+ // no Third/Fourth Sunday source overlap, no Advent IV ambiguous roles.
+ {sourcePath:"Tempora/Adv3-0",role:"INTROIT",paragraphId:"INTROIT.1",
+  scoreId:"GREGOBASE-1225",openings:["gaudete in domino semper iterum dico gaudete"]},
+ {sourcePath:"Tempora/Adv3-0",role:"GRADUAL",paragraphId:"GRADUAL.1",
+  scoreId:"GREGOBASE-1007",openings:["qui sedes domine super cherubim excita potentiam tuam"]},
+ {sourcePath:"Tempora/Adv3-0",role:"ALLELUIA",paragraphId:"ALLELUIA_TRACT_SEQUENCE.1",
+  scoreId:"GREGOBASE-855",openings:["excita domine potentiam tuam et veni ut salvos facias nos"]},
+ {sourcePath:"Tempora/Adv3-0",role:"ALLELUIA",paragraphId:"GRADUAL.1",
+  scoreId:"GREGOBASE-855",afterScoreId:"GREGOBASE-1007",
+  openings:["excita domine potentiam tuam et veni ut salvos facias nos"]},
+ {sourcePath:"Tempora/Adv3-0",role:"OFFERTORY",paragraphId:"OFFERTORY.1",
+  scoreId:"GREGOBASE-113",openings:["benedixisti domine terram tuam avertisti captivitatem"]},
+ {sourcePath:"Tempora/Adv3-0",role:"COMMUNION",paragraphId:"COMMUNION.1",
+  scoreId:"GREGOBASE-218",openings:["dicite pusillanimes confortamini et nolite timere"]},
+ {sourcePath:"Tempora/Adv4-0",role:"INTROIT",paragraphId:"INTROIT.1",
+  scoreId:"GREGOBASE-79",openings:["rorate coeli desuper et nubes pluant justum","rorate caeli desuper et nubes pluant iustum"]},
+ {sourcePath:"Tempora/Adv4-0",role:"GRADUAL",paragraphId:"GRADUAL.1",
+  scoreId:"GREGOBASE-284",openings:["prope est dominus omnibus invocantibus eum"]},
  // First Sundays of Advent, recurring temporal source owners.
  // Source-owned 1962 Graduale separates the Gradual and Alleluia in musical
  // role but may render them in one source paragraph in the Order of Mass.
