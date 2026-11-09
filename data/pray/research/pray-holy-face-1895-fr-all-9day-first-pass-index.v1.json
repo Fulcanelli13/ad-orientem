@@ -1,0 +1,126 @@
+{
+  "schema": "ao.pray.holy-face.french-1895-nine-day-first-pass-index.v1",
+  "canonicalId": "holy_face_1887",
+  "compiled": "2026-11-09",
+  "historicalWitness": "Janvier, Manuel de l’Archiconfrérie de la Sainte-Face, 3e éd., Tours 1895",
+  "printedCoverage": {
+    "from": 112,
+    "to": 142,
+    "pdfZeroBasedFrom": 118,
+    "pdfZeroBasedTo": 148,
+    "days": 9
+  },
+  "sourceUrl": "https://www.bibliotheque-catholique.com/piete/abbe-pierre-desire-janvier/manuel-de-l-archiconfrerie-de-la-sainte-face",
+  "status": "NINE_OF_NINE_FIRST_PASS_TRANSCRIPTS_RECORDED__ZERO_INDEPENDENT_SECOND_PROOF__ZERO_PUBLIC_FRENCH_TEXT",
+  "counts": {
+    "firstPassRecords": 9,
+    "independentlySecondProofed": 0,
+    "publicFrenchReaderDays": 0,
+    "englishReaderDaysPreserved": 9
+  },
+  "entries": [
+    {
+      "day": 1,
+      "researchPath": "data/pray/research/pray-holy-face-1895-fr-day01-transcribed-proofread.v1.json",
+      "firstPassComplete": true,
+      "independentSecondProofComplete": false,
+      "frenchReaderPublished": false,
+      "editorialAdmission": "HOLD"
+    },
+    {
+      "day": 2,
+      "researchPath": "data/pray/research/pray-holy-face-1895-fr-day02-transcribed-first-pass.v1.json",
+      "firstPassComplete": true,
+      "independentSecondProofComplete": false,
+      "frenchReaderPublished": false,
+      "editorialAdmission": "HOLD"
+    },
+    {
+      "day": 3,
+      "researchPath": "data/pray/research/pray-holy-face-1895-fr-day03-transcribed-first-pass.v1.json",
+      "firstPassComplete": true,
+      "independentSecondProofComplete": false,
+      "frenchReaderPublished": false,
+      "editorialAdmission": "HOLD"
+    },
+    {
+      "day": 4,
+      "researchPath": "data/pray/research/pray-holy-face-1895-fr-day04-transcribed-first-pass.v1.json",
+      "firstPassComplete": true,
+      "independentSecondProofComplete": false,
+      "frenchReaderPublished": false,
+      "editorialAdmission": "HOLD"
+    },
+    {
+      "day": 5,
+      "researchPath": "data/pray/research/pray-holy-face-1895-fr-day05-transcribed-first-pass.v1.json",
+      "firstPassComplete": true,
+      "independentSecondProofComplete": false,
+      "frenchReaderPublished": false,
+      "editorialAdmission": "HOLD"
+    },
+    {
+      "day": 6,
+      "researchPath": "data/pray/research/pray-holy-face-1895-fr-day06-transcribed-first-pass.v1.json",
+      "firstPassComplete": true,
+      "independentSecondProofComplete": false,
+      "frenchReaderPublished": false,
+      "editorialAdmission": "HOLD"
+    },
+    {
+      "day": 7,
+      "researchPath": "data/pray/research/pray-holy-face-1895-fr-day07-transcribed-first-pass.v1.json",
+      "firstPassComplete": true,
+      "independentSecondProofComplete": false,
+      "frenchReaderPublished": false,
+      "editorialAdmission": "HOLD"
+    },
+    {
+      "day": 8,
+      "researchPath": "data/pray/research/pray-holy-face-1895-fr-day08-transcribed-first-pass.v1.json",
+      "firstPassComplete": true,
+      "independentSecondProofComplete": false,
+      "frenchReaderPublished": false,
+      "editorialAdmission": "HOLD"
+    },
+    {
+      "day": 9,
+      "researchPath": "data/pray/research/pray-holy-face-1895-fr-day09-transcribed-first-pass.v1.json",
+      "firstPassComplete": true,
+      "independentSecondProofComplete": false,
+      "frenchReaderPublished": false,
+      "editorialAdmission": "HOLD"
+    }
+  ],
+  "knownSpecialCases": [
+    {
+      "day": 1,
+      "subject": "Printed common prayers and collect in full at p.115; source first-pass filename includes 'proofread' but must NOT be taken as independent second-proof certification.",
+      "status": "EDITORIAL_FILENAME_LEGACY_NOT_RELEASE_SIGNAL"
+    },
+    {
+      "day": 8,
+      "subject": "Printed sequence I/III/III and Vœu à pratiquer on p.139 preserved, not silently emended.",
+      "status": "SOURCE_ANOMALY_EDITORIAL_CHECK"
+    },
+    {
+      "day": 9,
+      "subject": "Printed Day IX p.142 includes full final PRIÈRE and ORAISON instead of references; latter says 'sa gloire céleste' vs Day I p.115 'la gloire céleste'.",
+      "status": "MATERIAL_WITHIN_FRENCH_EDITION_VARIANT"
+    },
+    {
+      "day": 9,
+      "subject": "Day IX source discusses Christ appearing to his Mother; retain as historical devotional author's narrative, not a separate scriptural verification claim.",
+      "status": "AUTHORIAL_DEVOTIONAL_STATEMENT"
+    }
+  ],
+  "nextRequiredGates": [
+    "Independent photograph-by-photograph French second proof of all 31 printed pages 112–142 and all 9 research records",
+    "Resolve ambiguous punctuation, typography, printed wording and day-specific variants including Day VIII double III and Day IX collect",
+    "Obtain/inspect 1887 original English printed translation and classify each variant against it, distinguishing edition changes from translator's choices",
+    "Select exact certified historical French reader text and provenance label; separately approve Day IX full reprinted prayers",
+    "Run Prayer UI 320px and 390px EN/FR: Library search, all 9 day cards, navigation, shared prayers, scroll focus, source link, offline/return",
+    "Do not claim French reader completion, publish research directory to GitHub Pages, or alter existing English source content prior to approvals"
+  ],
+  "rights": "Original language historical text staged in source research only; do not mirror Google scanned PDF or publish uncured source review artifacts as part of static Pages build."
+}
