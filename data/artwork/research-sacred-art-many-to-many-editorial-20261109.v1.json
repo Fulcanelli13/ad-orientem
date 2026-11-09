@@ -244,6 +244,13 @@
       "explicit_owner_reversal_not_established": true
     },
     "no_autofill_calendar_destinations": 170,
-    "note": "Manifest exports *no* runtime assignments; the referenced edge and destination queues are editorial and fail closed. Existing live art is not invalidated, replaced or published."
+    "note": "Manifest exports *no* runtime assignments; the referenced edge and destination queues are editorial and fail closed. Existing live art is not invalidated, replaced or published.",
+    "protected_missing_id_queue": "data/artwork/research/m2m-protected-missing-id-46-20261109.v1.json",
+    "protected_missing_id_triage": {
+      "source_url_leads": 11,
+      "title_artist_only_leads": 6,
+      "no_internal_lead": 29,
+      "verified_canonical_id_links": 0
+    }
   }
 }
