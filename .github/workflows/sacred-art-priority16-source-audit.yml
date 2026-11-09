@@ -1,0 +1,37 @@
+name: Sacred Art — 16 priority source identities (non-publishing)
+on:
+  push:
+    branches:
+      - research/sacred-art-priority16-source-ledger-20261109
+    paths:
+      - 'data/artwork/research-priority-16-source-audit-20261109.v1.json'
+      - 'tests/sacred-art-priority-16-source-audit.mjs'
+      - 'tools/build-web-preview.mjs'
+      - '.github/workflows/sacred-art-priority16-source-audit.yml'
+  pull_request:
+    paths:
+      - 'data/artwork/research-priority-16-source-audit-20261109.v1.json'
+      - 'tests/sacred-art-priority-16-source-audit.mjs'
+      - 'tools/build-web-preview.mjs'
+  workflow_dispatch: {}
+permissions:
+  contents: read
+concurrency:
+  group: sacred-art-priority16-source-audit-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  audit:
+    name: Assert 16 non-publishing source holds and Pages exclusion
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate research data syntax and preserve source/owner decisions
+        run: node tests/sacred-art-priority-16-source-audit.mjs
+      - name: Build allowlisted Pages output without altering source files
+        run: node tools/build-web-preview.mjs
+      - name: Verify research file still absent from built public site
+        run: node tests/sacred-art-priority-16-source-audit.mjs
