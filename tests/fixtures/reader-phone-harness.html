@@ -33,8 +33,10 @@ const epiphanyScoredProper=scoredProperKind==="epiphany";
 const immaculateScoredProper=scoredProperKind==="immaculate";
 const adventIProper=scoredProperKind==="advent1";
 const adventIIProper=scoredProperKind==="advent2";
+const adventIIIProper=scoredProperKind==="advent3";
+const adventIVProper=scoredProperKind==="advent4";
 const exactScoredProper=scoredProperKind==="all-saints"||epiphanyScoredProper||
- immaculateScoredProper||adventIProper||adventIIProper;
+ immaculateScoredProper||adventIProper||adventIIProper||adventIIIProper||adventIVProper;
 const alternateIsTract=params.get("tract")==="1";
 const altKind=alternateIsTract?"TRACT":"ALLELUIA";
 const altSection=alternateIsTract?"Tractus":"Alleluia";
@@ -166,6 +168,37 @@ if(adventIIProper){
    "Jerusalem, arise and stand on high","Jérusalem, lève-toi et tiens-toi dans les hauteurs")
  });
 }
+// M49 test-only independent proper source fixtures. No text is changed
+// within the production Mass resolver and no source-scoped hold is bypassed.
+if(adventIIIProper){
+ Object.assign(proper,{
+  sourcePath:"Tempora/Adv3-0",hasGloria:false,showGloria:false,
+  hasCredo:true,showCredo:true,
+  introit:t("Gaudéte in Dómino semper: íterum dico, gaudéte. Modéstia vestra nota sit ómnibus homínibus: Dóminus enim prope est. Nihil sollíciti sitis: sed in omni oratióne petitiónes vestræ innotéscant apud Deum.",
+    "Rejoice in the Lord always","Réjouissez-vous toujours dans le Seigneur"),
+  gradual:t("Qui sedes, Dómine, super Chérubim, éxcita poténtiam tuam, et veni. V. Qui regis Israël, inténde: qui dedúcis, velut ovem, Joseph. Allelúja, allelúja. V. Excita, Dómine, poténtiam tuam, et veni, ut salvos fácias nos. Allelúja.",
+    "Thou who sittest upon the cherubim. Alleluia: Stir up Thy power.",
+    "Vous qui siégez sur les chérubins. Alléluia : éveillez votre puissance."),
+  offertory:t("Benedixísti, Dómine, terram tuam: avertísti captivitátem Jacob: remisísti iniquitátem plebis tuæ.",
+    "Thou hast blessed Thy land, O Lord","Vous avez béni votre terre, Seigneur"),
+  communion:t("Dícite: pusillánimes, confortámini et nolíte timére: ecce, Deus noster véniet et salvábit nos.",
+    "Say to the fainthearted, take courage","Dites aux cœurs défaillants : prenez courage")
+ });
+}
+if(adventIVProper){
+ Object.assign(proper,{
+  sourcePath:"Tempora/Adv4-0",hasGloria:false,showGloria:false,
+  hasCredo:true,showCredo:true,
+  introit:t("Roráte, cœli, désuper, et nubes pluant justum: aperiátur terra, et gérminet Salvatórem.",
+    "Drop down dew, ye heavens","Cieux, répandez votre rosée"),
+  gradual:t("Prope est Dóminus ómnibus invocántibus eum: ómnibus, qui ínvocant eum in veritáte. V. Laudem Dómini loquétur os meum: et benedícat omnis caro nomen sanctum ejus. Allelúja, allelúja. V. Veni, Dómine, et noli tardáre: reláxa facínora plebis tuæ Israël. Allelúja.",
+    "The Lord is near to all who call upon Him","Le Seigneur est proche de ceux qui l'invoquent"),
+  offertory:t("Ave, María, grátia plena; Dóminus tecum: benedícta tu in muliéribus, et benedíctus fructus ventris tui.",
+    "Hail Mary, full of grace","Je vous salue, Marie, pleine de grâce"),
+  communion:t("Ecce, virgo concípiet et páriet fílium, et vocábitur nomen ejus Emmánuel.",
+    "Behold, a virgin shall conceive","Voici qu'une vierge concevra")
+ });
+}
 const rite=String(params.get("rite")??(params.get("asperges")==="1"?"asperges":"")).toLowerCase();
 const withAsperges=rite==="asperges";
 const withPalm=rite==="palm";
@@ -182,7 +215,7 @@ const followingActions=following==="corpus"?["CORPUS_CHRISTI_PROCESSION"]:
   following==="requiem"?["REQUIEM_ABSOLUTION"]:[];
 const allowedForms=new Set(["MISSA_CANTATA_INCENSE","MISSA_CANTATA_SIMPLE","SOLEMN","LOW"]);
 if(!allowedForms.has(requestedForm))throw new Error("Unsupported test fixture form");
-const fixtureDate=params.get("date")||(adventIProper?"2026-11-29":adventIIProper?"2026-12-06":immaculateScoredProper?"2026-12-08":epiphanyScoredProper?"2027-01-06":exactScoredProper?"2026-11-01":withGoodFriday?"2026-04-03":withEasterVigil?"2027-03-27":"2026-10-04");
+const fixtureDate=params.get("date")||(adventIProper?"2026-11-29":adventIIProper?"2026-12-06":adventIIIProper?"2026-12-13":adventIVProper?"2026-12-20":immaculateScoredProper?"2026-12-08":epiphanyScoredProper?"2027-01-06":exactScoredProper?"2026-11-01":withGoodFriday?"2026-04-03":withEasterVigil?"2027-03-27":"2026-10-04");
 if(!/^20[0-9]{2}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12][0-9]|3[01])$/.test(fixtureDate))throw new Error("Invalid test fixture date");
 const resolvedMass={
   schema:"ao-resolved-mass-v2",
@@ -191,6 +224,8 @@ const resolvedMass={
   presentationMode:mode,
   actualCelebration:adventIProper?{id:"Tempora/Adv1-0",type:"CALENDAR",title:"First Sunday of Advent"}:
     adventIIProper?{id:"Tempora/Adv2-0",type:"CALENDAR",title:"Second Sunday of Advent"}:
+    adventIIIProper?{id:"Tempora/Adv3-0",type:"CALENDAR",title:"Third Sunday of Advent"}:
+    adventIVProper?{id:"Tempora/Adv4-0",type:"CALENDAR",title:"Fourth Sunday of Advent"}:
     immaculateScoredProper?{id:"immaculata-bmv",type:"CALENDAR",title:"Immaculate Conception"}:
     epiphanyScoredProper?{id:"epiphany",type:"CALENDAR",title:"Epiphany of Our Lord"}:
     exactScoredProper?{id:"all-saints",type:"CALENDAR",title:"All Saints"}:
@@ -202,6 +237,8 @@ const resolvedMass={
     {id:"holy_rosary",type:params.get("print")==="1"?"CALENDAR":"VOTIVE",title:"Holy Rosary"},
   calendarCelebration:adventIProper?{id:"Tempora/Adv1-0",type:"CALENDAR",title:"First Sunday of Advent"}:
     adventIIProper?{id:"Tempora/Adv2-0",type:"CALENDAR",title:"Second Sunday of Advent"}:
+    adventIIIProper?{id:"Tempora/Adv3-0",type:"CALENDAR",title:"Third Sunday of Advent"}:
+    adventIVProper?{id:"Tempora/Adv4-0",type:"CALENDAR",title:"Fourth Sunday of Advent"}:
     immaculateScoredProper?{id:"immaculata-bmv",type:"CALENDAR",title:"Immaculate Conception"}:
     epiphanyScoredProper?{id:"epiphany",type:"CALENDAR",title:"Epiphany of Our Lord"}:
     exactScoredProper?{id:"all-saints",type:"CALENDAR",title:"All Saints"}:
