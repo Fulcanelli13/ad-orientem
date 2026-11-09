@@ -83,7 +83,7 @@ try{
   await page.waitForFunction(()=>document.querySelector("#witness")
    ?.textContent?.includes("12-31-2026-1-Matutinum.html")||
    document.querySelector("#status")?.textContent?.includes("SOURCE EXTRACTED"));
-  await page.getByRole("button",{name:"Day ›"}).click();
+  await page.getByRole("button",{name:"Next day"}).click();
   await page.waitForFunction(()=>
    document.querySelector("#date")?.value==="2027-01-01"&&
    document.querySelector("#status")?.textContent?.includes("SOURCE EXTRACTED"));
