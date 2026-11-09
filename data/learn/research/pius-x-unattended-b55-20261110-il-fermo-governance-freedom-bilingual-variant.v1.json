@@ -1,0 +1,65 @@
+{
+  "schema": "AO_SPX_B55_CATHOLIC_ACTION_SOURCE_PARITY_V1",
+  "date": "2026-11-10",
+  "status": "RESEARCH_ONLY_READY_FOR_HUMAN_CERTIFICATION_NOT_CERTIFIED",
+  "continuity": {
+    "latestVerified": "B54",
+    "historicalBaseline": "68 contexts,65 improved,130 answer units,64 complete pending certification; not recounted",
+    "existingIds": [
+      "SPX-EXP-026",
+      "SPX-EXP-027"
+    ],
+    "newIds": 0
+  },
+  "records": [
+    {
+      "id": "SPX-EXP-026",
+      "decision": "SUBSTANTIVE_BALANCE_CORRECTION_AND_FRENCH_ANCHOR_RESOLUTION",
+      "issue": "B50 accurately retained episcopal guidance but underemphasized express reasonable freedom and responsibility for temporal/economic/public affairs; EN §22 and FR matching unnumbered paragraphs explicitly distinguish directly pastoral works from temporal initiatives.",
+      "en": "In Il fermo proposito, We require works directly assisting the Church's spiritual ministry to remain subject to ecclesiastical authority. Other Catholic social works must respect the Church's teaching and pastoral guidance, yet should enjoy reasonable freedom of organisation and bear their own responsibility in temporal, economic and public affairs. These instructions were addressed to the bishops of Italy in 1905; they are not an exhaustive statement of present-day association law.",
+      "fr": "Dans Il fermo proposito, Nous demandons que les œuvres directement consacrées au ministère spirituel de l'Église soient soumises à l'autorité ecclésiastique. Les autres œuvres sociales catholiques doivent respecter la doctrine et la direction de l'Église, tout en conservant une juste liberté d'organisation et leur responsabilité propre dans les affaires temporelles, économiques et publiques. Ces directives s'adressent aux évêques d'Italie en 1905 et ne constituent pas un exposé exhaustif du droit actuel des associations.",
+      "loci": {
+        "en": "Il fermo proposito §§20,22 (esp. §22), English Vatican edition",
+        "fr": "French unnumbered paragraphs opening 'Il faudra aussi leur laisser une certaine liberté d’organisation' and 'Il nous reste, Vénérables Frères, à traiter un autre point...' through 'Il est certain que de telles œuvres...' "
+      },
+      "classification": "EDITORIAL_PARAPHRASE_IN_HISTORICAL_PAPAL_VOICE_NOT_VERBATIM",
+      "gate": "READY_FOR_HUMAN_SOURCE_TRANSLATION_AND_PERSONA_REVIEW_NOT_CERTIFIED"
+    },
+    {
+      "id": "SPX-EXP-027",
+      "decision": "DISTINCT_INTENT_NO_DUPLICATE_IMPROVEMENT",
+      "note": "Practical lay participation grounded in EN §§3,7–12,17,20 / French paragraphs on works of mercy, social interests, adaptation and freedom; do not collapse into governance EXP-026.",
+      "gate": "RETAIN_PENDING_HUMAN_REVIEW_NOT_CERTIFIED"
+    },
+    {
+      "id": "SPX-EXP-026",
+      "decision": "TEXTUAL_VARIANT_HOLD",
+      "note": "EN §18 attributes original Italian legislative participation prohibition to Leo XIII, whereas French corresponding passage names Pius IX as establishing the rule and Leo XIII as following it. Do not silently harmonise or use either wording as verified single-language historical chronology without Italian witness comparison.",
+      "loci": {
+        "en": "Il fermo proposito §18",
+        "fr": "French paragraph beginning 'De très graves raisons Nous dissuadent...' "
+      },
+      "gate": "SOURCE_VARIANT_REQUIRES_ITALIAN_COLLATION"
+    }
+  ],
+  "sources": [
+    "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+    "https://www.vatican.va/content/pius-x/fr/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html"
+  ],
+  "holds": {
+    "chanoineOriginalEnglish": "BLOCKED_NO_RECONSTRUCTION",
+    "B39": "UNCHANGED",
+    "CSE142": "UNCHANGED",
+    "CSE143": "UNCHANGED"
+  },
+  "nextQueue": [
+    "Collate Italian Il fermo proposito on Pius IX versus Leo XIII provenance in EN §18/FR parallel passage",
+    "Human review EXP-026 balanced governance/freedom wording; preserve distinct EXP-027",
+    "Deduplicate B43–B55 human certification queue and B41 duplicate contexts",
+    "Skip inaccessible original English Chanoine source"
+  ],
+  "merge": false,
+  "publish": false,
+  "deploy": false,
+  "paidExtras": false
+}
