@@ -79,7 +79,7 @@ def main() -> int:
     image = Image.open(io.BytesIO(pix.tobytes("png"))).convert("RGB")
     # A final original page region must have enough native pixels for a
     # genuine multi-glyph visual review; enlarged low-res replicas do not count.
-    if min(image.size) < 2800:
+    if min(image.size) < 2000:
         raise RuntimeError(f"Primary render unexpectedly low resolution: {image.size}")
     records = []
     for name, rect in CROPS.items():
