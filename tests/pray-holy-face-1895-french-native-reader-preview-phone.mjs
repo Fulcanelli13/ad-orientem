@@ -33,8 +33,6 @@ let browser;
 
 assert.equal(HOLY_FACE_1895_FR_PUBLIC_RELEASE_APPROVED,false,"Preview-only feature may not activate French publication");
 assert.equal(frenchDays.length,9);
-await mkdir(output,{recursive:true});
-let browser;
 const report={schema:"ao.pray.holy-face.1895-fr-native-preview-phone.v1",
  previewOnly:true,publicationApproved:false,states:[],screenshots:[]};
 try{
