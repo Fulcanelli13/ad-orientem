@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
-import {dykPublishedCandidates,dykPublishedPick,dykPublishedModel,dykPublishedMarkup,dykHistoricalCandidates,dykHistoricalModel,dykWeiser16Candidates,dykWeiser16Model,dykWeiserSecond16Candidates,dykWeiserSecond16Model,dykMixed24Candidates,dykMixed24Model,dyk125Candidates,dyk125Model,dyk150Candidates,dyk150Model,dyk175Candidates,dyk175Model,dyk200Candidates,dyk200Model,dyk225Candidates,dyk225Model,dykHomeRotationSlot,DYK_GLOSSARY_FALLBACK_IDS} from "../src/home/dyk-published-feed.js";
+import {dykPublishedCandidates,dykPublishedPick,dykPublishedModel,dykPublishedMarkup,dykHistoricalCandidates,dykHistoricalModel,dykWeiser16Candidates,dykWeiser16Model,dykWeiserSecond16Candidates,dykWeiserSecond16Model,dykMixed24Candidates,dykMixed24Model,dyk125Candidates,dyk125Model,dyk150Candidates,dyk150Model,dyk175Candidates,dyk175Model,dyk200Candidates,dyk200Model,dyk225Candidates,dyk225Model,dyk250Candidates,dyk250Model,dykHomeRotationSlot,DYK_GLOSSARY_FALLBACK_IDS} from "../src/home/dyk-published-feed.js";
 const original=JSON.parse(readFileSync(
  "data/research/did-you-know/dyk-r34-high-signal-24-editorial-selection.v1.json","utf8"));
 import {HOME_DYK_GLOSSARY_IDS,HOME_DYK_GLOSSARY_FACTS,homeDidYouKnowSelect} from "../src/home/did-you-know-glossary.js";
@@ -444,6 +444,70 @@ for(const [field,value] of [["historical_local_only",false],
   "Historic observation cannot be reclassified as a Roman rubric");
 }
 
+// H250: eight UNESCO heritage sites; physical history is not 1962 ceremonial law.
+const h250=JSON.parse(readFileSync(
+ "data/did-you-know/dyk-h250-unesco-sacred-geography-25-publication.v1.json","utf8"));
+const h250Rows=dyk250Candidates(h250,"2026-11-09");
+assert.equal(h250Rows.length,25,"All 25 H250 source, language and site gates");
+for(const [site,count] of [["RAVENNA",4],["CHILOE",4],["ASSISI",3],
+ ["GOA",3],["WIES",3],["SANTIAGO",3],["CONGONHAS",3],["GUARANI",2]])
+ assert.equal(h250Rows.filter(row=>row.site_id===site).length,count);
+const all250=[...all225,...h250Rows];
+assert.equal(all250.length,226,"250 facts = 24 source-owned Glossary + 226 individual releases");
+assert.equal(new Set(all250.map(r=>r.id)).size,226);
+assert.equal(new Set(all250.map(r=>r.source_id)).size,226);
+const previous250Texts=new Set(all225.map(r=>r.pilot_home_copy.en.trim().toLowerCase()));
+for(const row of h250Rows){
+ assert.ok(!previous250Texts.has(row.pilot_home_copy.en.trim().toLowerCase()),
+  "H250 must not repeat an earlier published sentence");
+ assert.equal(row.liturgical_rubric_1962,false);
+ assert.equal(row.source.source_record_id,row.source_id);
+ assert.match(row.source.url,/^https:\/\/whc[.]unesco[.]org\/en\/list\/[0-9]+$/);
+ for(const language of ["en","fr"]){
+  const model=dyk250Model(h250,row.id,"2026-11-09",language);
+  assert.ok(model,"H250 missing source dialog model: "+row.id+"/"+language);
+  assert.equal(model.fact,row.pilot_home_copy[language]);
+  assert.equal(model.links.length,1);
+  assert.equal(model.links[0].url,row.source.url);
+  assert.equal(model.links[0].page,null);
+  const markup=dykPublishedMarkup(model);
+  assert.ok(markup.includes("data-dyk-published"));
+  assert.ok(markup.includes(language==="fr"?
+    "Consulter la source UNESCO":"Read UNESCO heritage source"));
+ }
+}
+assert.deepEqual(dyk250Candidates({...h250,release_stage:"RESEARCH_ONLY"},"2026-11-09"),[]);
+assert.deepEqual(dyk250Candidates(h250,"2026-11-31"),[]);
+for(const [group,key] of [["row","editorial_approval"],["row","semantic_novelty_reviewed"],
+ ["row","published"],["row","release_authorized"],["row","historical_local_only"],
+ ["copy","final_english_signoff"],["copy","final_french_signoff"],
+ ["source","original_text_checked"],["source","deep_link_checked"]]){
+ const bad=clone(h250),row=bad.records[0];
+ if(group==="row")row[key]=false;
+ else if(group==="copy")row.pilot_home_copy[key]=false;
+ else row.source[key]=false;
+ assert.equal(dyk250Candidates(bad,"2026-11-09").length,24,
+  "H250 source approval must fail closed: "+group+"."+key);
+}
+for(const [index,field,value] of [
+ [0,"url","https://invalid.example/unesco"],
+ [1,"primary_locator","UNESCO: wrong property"],
+ [2,"page_identifier","999"],
+ [3,"source_record_id","UNESCO.WHC.788.H250.FORGED"]
+]){
+ const bad=clone(h250);bad.records[index].source[field]=value;
+ assert.equal(dyk250Candidates(bad,"2026-11-09").length,24,
+   "H250 must refuse mismatched institutional evidence: "+field);
+}
+for(const [field,value] of [["liturgical_rubric_1962",true],
+ ["source_family","ROMAN_RUBRICS_1962"],
+ ["approval_scope","UNREVIEWED_OWNER_APPROVAL"],["site_id","UNKNOWN"]]){
+ const bad=clone(h250);bad.records[0][field]=value;
+ assert.equal(dyk250Candidates(bad,"2026-11-09").length,24,
+  "H250 must not silently promote unsourced, misclassified material");
+}
+assert.deepEqual(dyk250Candidates({...h250,counts:{...h250.counts,total:24}},"2026-11-09"),[]);
+
 // Every new public teaser must resolve to an existing source-backed bilingual
 // Glossary entry and must never silently expose draft research as public copy.
 const gloss=JSON.parse(readFileSync("data/glossary/concepts-151-300.v1.json","utf8"));
@@ -530,6 +594,7 @@ for(const [published,poolSize] of [
  [all175.map(x=>x.id),175],
   [all200.map(x=>x.id),200],
  [all225.map(x=>x.id),225],
+  [all250.map(x=>x.id),250],
  [["DYK-M04-CANON-021","DYK-M04-CANON-022","DYK-M04-CANON-047","DYK-M04-CANON-058"],DYK_GLOSSARY_FALLBACK_IDS.length+4]
 ]){
  const cycle=alignedDates(poolSize);
@@ -548,4 +613,4 @@ const expanded=clone(data);
 expanded.records.push({id:"DYK-UNRELEASED-PLACEHOLDER",editorial_approval:false,release_authorized:false});
 assert.equal(dykPublishedCandidates(expanded,"2026-11-02").length,1);
 
-console.log("PASS H7 225-fact Discovery: 24 Glossary plus 201 approved EN/FR historical, cultural and rubrical facts, original R34 held, bilingual original-page links and nonrepeating rotation");
+console.log("PASS H7 250-fact Discovery: 24 Glossary plus 226 approved EN/FR historical, cultural and rubrical facts, original R34 held, bilingual original-page links and nonrepeating rotation");
