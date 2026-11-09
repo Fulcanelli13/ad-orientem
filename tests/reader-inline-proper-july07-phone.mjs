@@ -125,10 +125,24 @@ try{
   await mkdir(resolve(root,".tmp/mass-inline-proper-july07"),{recursive:true});
   await page.locator(".ao-proper-reference-expand").first().click();
   await page.waitForSelector("dialog.ao-proper-reference-zoom[open] .ao-proper-reference-wide svg",{timeout:12000});
-  const zoomSize=await page.locator("dialog.ao-proper-reference-zoom .ao-proper-reference-wide")
+  const zoom=page.locator("dialog.ao-proper-reference-zoom");
+  assert.equal(await zoom.getAttribute("data-reference-zoom-mode"),"fit");
+  const fit=await zoom.evaluate(el=>({
+    wide:el.querySelector(".ao-proper-reference-wide").getBoundingClientRect().width,
+    scroll:el.querySelector(".ao-proper-reference-scroll").getBoundingClientRect().width
+  }));
+  assert.ok(fit.wide<=fit.scroll+1,
+    "Fit mode must not force a wide horizontal scroll on "+width+"px: "+JSON.stringify(fit));
+  const size=zoom.locator("[data-reference-zoom-size]");
+  await size.click();
+  assert.equal(await zoom.getAttribute("data-reference-zoom-mode"),"large");
+  assert.equal(await size.getAttribute("aria-pressed"),"true");
+  const zoomSize=await zoom.locator(".ao-proper-reference-wide")
    .evaluate(node=>node.getBoundingClientRect().width);
-  assert.ok(zoomSize>=840,"Enlarged neumes must preserve readable staff width: "+zoomSize);
+  assert.ok(zoomSize>=840,"User-selected large print must preserve readable staff width: "+zoomSize);
   await page.screenshot({path:resolve(root,".tmp/mass-inline-proper-july07/enlarged-"+width+".png"),fullPage:false});
+  await size.click();
+  assert.equal(await zoom.getAttribute("data-reference-zoom-mode"),"fit");
   await page.locator("dialog.ao-proper-reference-zoom header button").click();
   assert.equal(await page.locator("dialog.ao-proper-reference-zoom").count(),0);
   await page.screenshot({path:resolve(root,".tmp/mass-inline-proper-july07/notation-"+width+".png"),fullPage:true});
