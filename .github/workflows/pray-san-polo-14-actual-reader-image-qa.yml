@@ -1,0 +1,44 @@
+name: Prayer San Polo 14 actual reader image QA (nonpublishing)
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "assets/stations/san-polo/**"
+      - "data/prayer/stations/san-polo-tiepolo-oils-1747/**"
+      - "src/pray/stations-verified-artwork-release.v1.js"
+      - "src/pray/stations-verified-artwork-styles.js"
+      - "src/pray/presentation-runtime.js"
+      - "tests/pray-san-polo-14-actual-stations-phone-qa-20261109.mjs"
+      - ".github/workflows/pray-san-polo-14-actual-reader-image-qa.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pray-san-polo-14-qa-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  source-and-real-phone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-audit --no-fund
+      - name: Verify source hashes and strict release holds
+        run: node tests/prayer-san-polo-license-ready-assets.mjs
+      - name: Verify canonical Stations prayer and optional postures
+        run: node tests/stations-direct-reading-b14.mjs
+      - name: Install Chromium for real reader QA
+        run: npx playwright install --with-deps chromium
+      - name: Inspect all fourteen images at 320/390 pixels in EN and FR
+        run: node tests/pray-san-polo-14-actual-stations-phone-qa-20261109.mjs
+      - name: Preserve uncropped image previews and QA evidence for visual inspection
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: san-polo-14-all-stations-320-390-captures
+          path: artifacts/pray-san-polo-14-native-phone/
+          if-no-files-found: warn
+          retention-days: 21
