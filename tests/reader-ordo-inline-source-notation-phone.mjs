@@ -290,6 +290,7 @@ try{
    // never in Settings, Schola Music Plan or a separate source viewer.
    if(tone==="SOLEMN"){
     const ordinaryCases=mode==="missal" ? [
+      {cue:"AO.SM.C0044",movement:"KYRIE",setting:"MASS_16",score:"GREGOBASE-545"},
       {cue:"AO.SM.C0044",movement:"KYRIE",setting:"MASS_08",score:"GREGOBASE-1184"},
       {cue:"AO.SM.C0053",movement:"GLORIA",setting:"MASS_08",score:"GREGOBASE-961"},
       {cue:"AO.SM.C0089",movement:"CREDO",setting:"CREDO_03",score:"GREGOBASE-749"},
@@ -313,6 +314,7 @@ try{
       {cue:"AO.SM.C0145",movement:"SANCTUS_BENEDICTUS",setting:"MASS_18",score:"GREGOBASE-298"},
       {cue:"AO.SM.C0222",movement:"AGNUS_DEI",setting:"MASS_18",score:"GREGOBASE-2412"}
     ]:[
+      {cue:"AO.SM.C0044",movement:"KYRIE",setting:"MASS_16",score:"GREGOBASE-545"},
       {cue:"AO.SM.C0044",movement:"KYRIE",setting:"MASS_08",score:"GREGOBASE-1184"},
       {cue:"AO.SM.C0044",movement:"KYRIE",setting:"MASS_17",score:"GREGOBASE-272"},
       {cue:"AO.SM.C0044",movement:"KYRIE",setting:"MASS_18",score:"GREGOBASE-2522"},
@@ -353,6 +355,64 @@ try{
      assert.ok(actual.latin?.length>3,"The source Latin must remain in the prayer");
      assert.ok(actual.overflow<=1,"Gregorian staff must not overflow "+width+"px");
      console.log("PASS in-prayer Ordinary source GABC",JSON.stringify({width,mode,...example,...actual}));
+     if(example.setting==="MASS_16"){
+       const ref=page.locator('[data-reference-score="GREGOBASE-545"]');
+       const direct=ref.locator(".ao-ordinary-printed-source");
+       assert.equal(await direct.count(),1,
+         "Selected Kyrie must display direct original 1961 printed folio link");
+       assert.match(await direct.getAttribute("href"),/kyriale-solesmes\.pdf#page=56$/);
+       assert.equal(await direct.getAttribute("target"),"_blank");
+       assert.match(await ref.locator(".ao-proper-reference-label").text(),/research transcription/i);
+       await ref.locator(".ao-proper-reference-expand").click();
+       const dialog=page.locator("dialog.ao-proper-reference-zoom");
+       await dialog.waitFor({state:"visible",timeout:20000});
+       assert.equal(await dialog.getAttribute("data-reference-zoom-mode"),"fit");
+       assert.match(await dialog.locator(".ao-proper-reference-provenance").text(),/not musically certified/i);
+       assert.match(await dialog.locator("[data-reference-zoom-original]").getAttribute("href"),
+         /kyriale-solesmes\.pdf#page=56$/);
+       assert.match(await dialog.locator("[data-reference-zoom-transcription]").getAttribute("href"),
+         /gregobase\.selapa\.net\/chant\.php\?id=545$/);
+       await page.waitForFunction(()=>Boolean(document.querySelector(
+         "dialog.ao-proper-reference-zoom .ao-proper-reference-wide svg"
+       )),null,{timeout:20000});
+       const sizes=()=>page.evaluate(()=>{
+         const dlg=document.querySelector("dialog.ao-proper-reference-zoom");
+         const wide=dlg?.querySelector(".ao-proper-reference-wide");
+         const viewport=dlg?.querySelector(".ao-proper-reference-scroll");
+         return {mode:dlg?.dataset.referenceZoomMode,
+           wide:wide?.clientWidth,viewport:viewport?.clientWidth,
+           svg:!!wide?.querySelector("svg"),open:dlg?.open};
+       });
+       const fitted=await sizes();
+       assert.ok(fitted.svg&&fitted.open&&fitted.wide<=fitted.viewport+1,
+         "Zoom must initially fit within 320/390px dialog without forced horizontal scroll");
+       const sizing=dialog.locator("[data-reference-zoom-size]");
+       assert.equal(await sizing.getAttribute("aria-pressed"),"false");
+       await sizing.click();
+       assert.equal(await dialog.getAttribute("data-reference-zoom-mode"),"large");
+       assert.equal(await sizing.getAttribute("aria-pressed"),"true");
+       const enlarged=await sizes();
+       assert.ok(enlarged.wide>=840 && enlarged.wide>enlarged.viewport,
+         "Large print must offer a scrollable, non-shrunk score");
+       await sizing.click();
+       assert.equal(await dialog.getAttribute("data-reference-zoom-mode"),"fit");
+       assert.equal(await sizing.getAttribute("aria-pressed"),"false");
+       await dialog.locator('button[aria-label="Close enlarged Gregorian notation"]').click();
+       assert.equal(await dialog.count(),0,"Close must dismiss the score without losing the Mass position");
+       assert.equal(await ref.locator(".ao-proper-reference-expand").count(),1);
+       assert.equal(await page.locator('[data-reference-score="GREGOBASE-545"]').count(),1);
+       assert.ok((await page.locator('[data-cue-id="AO.SM.C0044"] .ao-line-primary').textContent())?.length>3,
+         "Closing score must preserve the original Latin");
+       const toggle=ref.locator(".ao-proper-reference-toggle");
+       await toggle.click();
+       assert.equal(await ref.getAttribute("data-reference-view"),"text");
+       await toggle.click();
+       assert.equal(await ref.getAttribute("data-reference-view"),"notation");
+       await page.screenshot({path:resolve(out,"ordo-m45-kyrie16-"+mode+"-"+width+".png"),
+         animations:"disabled"});
+       console.log("PASS M45 Kyrie XVI visible source score, original print, fit/large modal and text toggle",
+         JSON.stringify({mode,width,fitted,enlarged}));
+     }
     }
    }
    // Revisit the initial source response for the original on/off regression.
