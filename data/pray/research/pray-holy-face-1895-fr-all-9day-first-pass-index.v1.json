@@ -26,7 +26,9 @@
       "independentSecondProofComplete": false,
       "frenchReaderPublished": false,
       "editorialAdmission": "HOLD",
-      "imageAssistedNormalizedTextSecondPassComplete": false
+      "imageAssistedNormalizedTextSecondPassComplete": false,
+      "imageAssistedSectionLevelPhotoRecheckComplete": true,
+      "photoSectionReviewEvidencePath": "data/pray/research/pray-holy-face-1895-fr-days01-07-image-assisted-photo-section-recheck.v1.json"
     },
     {
       "day": 2,
@@ -35,7 +37,9 @@
       "independentSecondProofComplete": false,
       "frenchReaderPublished": false,
       "editorialAdmission": "HOLD",
-      "imageAssistedNormalizedTextSecondPassComplete": false
+      "imageAssistedNormalizedTextSecondPassComplete": false,
+      "imageAssistedSectionLevelPhotoRecheckComplete": true,
+      "photoSectionReviewEvidencePath": "data/pray/research/pray-holy-face-1895-fr-days01-07-image-assisted-photo-section-recheck.v1.json"
     },
     {
       "day": 3,
@@ -44,7 +48,9 @@
       "independentSecondProofComplete": false,
       "frenchReaderPublished": false,
       "editorialAdmission": "HOLD",
-      "imageAssistedNormalizedTextSecondPassComplete": false
+      "imageAssistedNormalizedTextSecondPassComplete": false,
+      "imageAssistedSectionLevelPhotoRecheckComplete": true,
+      "photoSectionReviewEvidencePath": "data/pray/research/pray-holy-face-1895-fr-days01-07-image-assisted-photo-section-recheck.v1.json"
     },
     {
       "day": 4,
@@ -53,7 +59,9 @@
       "independentSecondProofComplete": false,
       "frenchReaderPublished": false,
       "editorialAdmission": "HOLD",
-      "imageAssistedNormalizedTextSecondPassComplete": false
+      "imageAssistedNormalizedTextSecondPassComplete": false,
+      "imageAssistedSectionLevelPhotoRecheckComplete": true,
+      "photoSectionReviewEvidencePath": "data/pray/research/pray-holy-face-1895-fr-days01-07-image-assisted-photo-section-recheck.v1.json"
     },
     {
       "day": 5,
@@ -62,7 +70,9 @@
       "independentSecondProofComplete": false,
       "frenchReaderPublished": false,
       "editorialAdmission": "HOLD",
-      "imageAssistedNormalizedTextSecondPassComplete": false
+      "imageAssistedNormalizedTextSecondPassComplete": false,
+      "imageAssistedSectionLevelPhotoRecheckComplete": true,
+      "photoSectionReviewEvidencePath": "data/pray/research/pray-holy-face-1895-fr-days01-07-image-assisted-photo-section-recheck.v1.json"
     },
     {
       "day": 6,
@@ -71,7 +81,9 @@
       "independentSecondProofComplete": false,
       "frenchReaderPublished": false,
       "editorialAdmission": "HOLD",
-      "imageAssistedNormalizedTextSecondPassComplete": false
+      "imageAssistedNormalizedTextSecondPassComplete": false,
+      "imageAssistedSectionLevelPhotoRecheckComplete": true,
+      "photoSectionReviewEvidencePath": "data/pray/research/pray-holy-face-1895-fr-days01-07-image-assisted-photo-section-recheck.v1.json"
     },
     {
       "day": 7,
@@ -80,7 +92,9 @@
       "independentSecondProofComplete": false,
       "frenchReaderPublished": false,
       "editorialAdmission": "HOLD",
-      "imageAssistedNormalizedTextSecondPassComplete": false
+      "imageAssistedNormalizedTextSecondPassComplete": false,
+      "imageAssistedSectionLevelPhotoRecheckComplete": true,
+      "photoSectionReviewEvidencePath": "data/pray/research/pray-holy-face-1895-fr-days01-07-image-assisted-photo-section-recheck.v1.json"
     },
     {
       "day": 8,
@@ -90,7 +104,9 @@
       "frenchReaderPublished": false,
       "editorialAdmission": "HOLD",
       "imageAssistedNormalizedTextSecondPassComplete": true,
-      "sourceReviewEvidencePath": "data/pray/research/pray-holy-face-1895-fr-days08-09-image-assisted-second-pass.v1.json"
+      "sourceReviewEvidencePath": "data/pray/research/pray-holy-face-1895-fr-days08-09-image-assisted-second-pass.v1.json",
+      "imageAssistedSectionLevelPhotoRecheckComplete": true,
+      "photoSectionReviewEvidencePath": "data/pray/research/pray-holy-face-1895-fr-days08-09-image-assisted-second-pass.v1.json"
     },
     {
       "day": 9,
@@ -100,7 +116,9 @@
       "frenchReaderPublished": false,
       "editorialAdmission": "HOLD",
       "imageAssistedNormalizedTextSecondPassComplete": true,
-      "sourceReviewEvidencePath": "data/pray/research/pray-holy-face-1895-fr-days08-09-image-assisted-second-pass.v1.json"
+      "sourceReviewEvidencePath": "data/pray/research/pray-holy-face-1895-fr-days08-09-image-assisted-second-pass.v1.json",
+      "imageAssistedSectionLevelPhotoRecheckComplete": true,
+      "photoSectionReviewEvidencePath": "data/pray/research/pray-holy-face-1895-fr-days08-09-image-assisted-second-pass.v1.json"
     }
   ],
   "knownSpecialCases": [
@@ -126,7 +144,8 @@
     }
   ],
   "nextRequiredGates": [
-    "Complete equivalent detailed photographic normalized-source comparison for Days I–VII; Days VIII–IX have AI-assisted image comparison but still require independent editorial sign-off.",
+    "Compare the original printed 1887 Bennett English book to existing digital English day texts, classify edition/translator variants without changing either witness on inference.",
+    "All nine days now have page-image section-level checks; independently verify the complete character-by-character French printed text and typography before claiming diplomatic certification, especially the overwritten folio at Day II p.116.",
     "Preserve Day VIII corrected source [unnumbered,III,III], never reinstate invented first Roman I.",
     "Resolve ambiguous punctuation, typography, printed wording and day-specific variants including Day VIII double III and Day IX collect",
     "Obtain/inspect 1887 original English printed translation and classify each variant against it, distinguishing edition changes from translator's choices",
@@ -151,6 +170,24 @@
     "externalIndependentEditorialApprovalDays": [],
     "photographicTypographicFacsimileExactDays": [],
     "imageAssistedSecondPassEvidencePath": "data/pray/research/pray-holy-face-1895-fr-days08-09-image-assisted-second-pass.v1.json",
-    "secondPassInterpretation": "Day VIII and IX entire normalized paragraph/section text and printed references were compared against photographed original pages 136–142 in a new AI-assisted pass. This does not establish independent human editorial approval or literal printing-typography certification; public texts stay held."
+    "secondPassInterpretation": "Day VIII and IX entire normalized paragraph/section text and printed references were compared against photographed original pages 136–142 in a new AI-assisted pass. This does not establish independent human editorial approval or literal printing-typography certification; public texts stay held.",
+    "imageAssistedSectionLevelPhotoRecheckDays": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "imageAssistedSectionLevelPhotoRecheckCount": 9,
+    "photoSecondPassReviewTier": "AI_PHOTOGRAPHIC_SECTION_ANCHORS_AND_SALIENT_WORDING_ONLY__NOT_INDEPENDENT_EXHAUSTIVE_LINE_BY_LINE_COLLATION",
+    "dayOneToSevenPhotoRecheckEvidencePath": "data/pray/research/pray-holy-face-1895-fr-days01-07-image-assisted-photo-section-recheck.v1.json",
+    "dayOneToSevenSourceImagesViewed": 25,
+    "dayOneToSevenSourceStructureEntriesChecked": 65,
+    "dayTwoOpeningLegacyPageReference": "HANDWRITTEN_OVERWRITE_EXACT_NUMERAL_UNRESOLVED",
+    "overallPhotoReviewInterpretation": "All nine French days now have section-level photo/wording checks (65 entries for Days I–VII and 19 entries for Days VIII–IX). Stronger normalized-text comparison for Days VIII–IX was separately recorded as 2/9. Neither level establishes full diplomatic orthography nor independent human editorial proof. French public 0/9."
   }
 }
