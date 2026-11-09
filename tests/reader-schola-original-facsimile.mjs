@@ -5,8 +5,8 @@ import {SCHOLA_1961_ORIGINAL_FACSIMILE_COUNT,schola1961OriginalFacsimile}
 import {sourceMusicMaterialGate} from "../src/mass/reader-music-material-gate.js";
 const ledger=JSON.parse(readFileSync(new URL("../data/research/mass-music-m21-seven-print-image-parity-worklist.v1.json",import.meta.url),"utf8"));
 const dom=readFileSync(new URL("../src/mass/reader-dom.js",import.meta.url),"utf8");
-assert.equal(SCHOLA_1961_ORIGINAL_FACSIMILE_COUNT,12,
- "Original seven facsimiles plus five new exact 1961 source spans");
+assert.equal(SCHOLA_1961_ORIGINAL_FACSIMILE_COUNT,20,
+ "Original 7 + Mass XI/seasonal 5 + Mass I/XVII/XVIII 8 printed score spans");
 assert.equal(ledger.scores.length,7);
 for(const row of ledger.scores){
  const printed=schola1961OriginalFacsimile(row.movement,row.catalogueSelection);
@@ -43,10 +43,39 @@ for(const [movement,selection,folio,images] of additions){
  assert.equal(record.observedParishPerformance,false);
 }
 
+// The third batch preserves page spans; first folio alone is insufficient
+// for Kyrie/Gloria/Sanctus I. Source image URLs correspond to actual original
+// Graduale Romanum 1961 scanned pages, not modern PDF renderings.
+const massIAndSeasonal=[
+ ["KYRIE","MASS_01",["4*","5*"],["881.png","882.png"]],
+ ["GLORIA","MASS_01",["5*","6*"],["882.png","883.png"]],
+ ["SANCTUS_BENEDICTUS","MASS_01",["6*","7*"],["883.png","884.png"]],
+ ["AGNUS_DEI","MASS_01",["7*"],["884.png"]],
+ ["SANCTUS_BENEDICTUS","MASS_17",["56*"],["933.png"]],
+ ["AGNUS_DEI","MASS_17",["57*"],["934.png"]],
+ ["SANCTUS_BENEDICTUS","MASS_18",["58*"],["935.png"]],
+ ["AGNUS_DEI","MASS_18",["58*"],["935.png"]]
+];
+for(const [movement,selection,pages,files] of massIAndSeasonal){
+ const witness=schola1961OriginalFacsimile(movement,selection);
+ assert.ok(witness,selection+" missing "+movement);
+ assert.deepEqual(witness.printedPages,pages);
+ assert.deepEqual(witness.originalPageImages.map(s=>s.split("/").at(-1)),files);
+ assert.equal(witness.originalPageImages.length,pages.length);
+ assert.equal(witness.gabcMusicallyCertified,false);
+ assert.equal(witness.observedParishPerformance,false);
+ assert.equal(witness.audioApproved,false);
+ assert.equal(witness.inferredFromCalendar,false);
+}
+assert.equal(schola1961OriginalFacsimile("GLORIA","MASS_18"),null,
+ "Missa XVIII has no Gloria and must never have a fake printed score");
+assert.equal(schola1961OriginalFacsimile("GLORIA","MASS_17"),null,
+ "Missa XVII has no Gloria and must never have a fake printed score");
+
 // No guessed scores from the current date, ordinary family alone, custom
 // titles, unsupported choices, Requiem variants, or unselected local profiles.
 for(const [id,setting] of [["KYRIE",""],["KYRIE","CUSTOM"],
- ["KYRIE","MASS_01"],["GLORIA","MASS_17"],["GLORIA","MASS_16"],
+ ["KYRIE","MASS_02"],["GLORIA","MASS_17"],["GLORIA","MASS_16"],
  ["AGNUS_DEI","MASS_15"],["CREDO","MASS_08"],
  ["CREDO","CUSTOM"],["SANCTUS_BENEDICTUS","MASS_16"],
  ["INTROIT","MASS_08"],["KYRIE","Mass VIII · De Angelis"],
@@ -84,4 +113,4 @@ assert.equal(material.publication,"NOT_PROMOTED");
 assert.equal(material.usableAsScore,false);
 assert.equal(ledger.closedGates.fullyPrintedNoteMatchedCount,0);
 assert.equal(ledger.closedGates.approvedForReaderCount,0);
-console.log("PASS M29 original seven plus five source-linked 1961 facsimiles; seven-entry M21 ledger stays historical, no GABC/audio/public musical certification promoted");
+console.log("PASS M29 historical seven plus thirteen explicit 1961 printed score spans; M21 ledger remains seven and no printed-note/audio approval is invented");
