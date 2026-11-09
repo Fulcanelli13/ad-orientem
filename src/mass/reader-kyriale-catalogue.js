@@ -66,8 +66,8 @@ export function resolveKyrialeChoice(movement,id){
  return item?.availableMovements.includes(movement)?item:null;
 }
 // Source-linked notation leads from the first 1961 score pilot (#1749) and
-// five additional literal GABC sources checked against GregoBase 1961 folios.
-// All twelve IDs are *research references*, not note-by-note
+// thirteen additional literal GABC sources checked against GregoBase 1961 folios.
+// All twenty IDs are *research references*, not note-by-note
 // facsimile-validated scores, liturgical recommendations or actual singing.
 // Never infer a score merely from a typed local title; only explicit catalogue
 // selections are eligible to reveal their matching lead.
@@ -77,13 +77,21 @@ export const KYRIALE_RESEARCH_NOTATION_EXAMPLES=freeze([
  ["KYRIE","MASS_08",1184,"Kyrie VIII","28*"],
  ["KYRIE","MASS_17",272,"Kyrie XVII","55*"],
  ["KYRIE","MASS_18",2522,"Kyrie XVIII","57*"],
+ ["KYRIE","MASS_01",1143,"Kyrie I","4*"],
  ["GLORIA","MASS_08",961,"Gloria VIII","29*"],
  ["GLORIA","MASS_11",303,"Gloria XI","39*"],
+ ["GLORIA","MASS_01",2980,"Gloria I","5*"],
  ["CREDO","CREDO_03",749,"Credo III","64*"],
  ["SANCTUS_BENEDICTUS","MASS_08",1384,"Sanctus VIII · Benedictus","30*"],
  ["SANCTUS_BENEDICTUS","MASS_11",1106,"Sanctus XI · Benedictus","40*"],
+ ["SANCTUS_BENEDICTUS","MASS_01",300,"Sanctus I · Benedictus","6*"],
+ ["SANCTUS_BENEDICTUS","MASS_17",871,"Sanctus XVII · Benedictus","56*"],
+ ["SANCTUS_BENEDICTUS","MASS_18",298,"Sanctus XVIII · Benedictus","58*"],
  ["AGNUS_DEI","MASS_08",2760,"Agnus Dei VIII","31*"],
  ["AGNUS_DEI","MASS_11",1243,"Agnus Dei XI","41*"],
+ ["AGNUS_DEI","MASS_01",2977,"Agnus Dei I","7*"],
+ ["AGNUS_DEI","MASS_17",1137,"Agnus Dei XVII","57*"],
+ ["AGNUS_DEI","MASS_18",2412,"Agnus Dei XVIII","58*"],
 ].map(([movement,catalogueId,sourceId,title,folio])=>freeze({
  movement,catalogueId,scoreId:"GREGOBASE-"+sourceId,title,
  printedWitness:"Graduale Romanum (Solesmes 1961), p. "+folio,

@@ -39,7 +39,28 @@ const catalogue=Object.freeze([
   ["https://gregobase.selapa.net/sources/2/917.png",
    "https://gregobase.selapa.net/sources/2/918.png"],42),
  source("AGNUS_DEI","MASS_11","Agnus Dei XI",["41*"],
-  ["https://gregobase.selapa.net/sources/2/918.png"],43)
+  ["https://gregobase.selapa.net/sources/2/918.png"],43),
+ // Eight new explicit local selections, linked to complete 1961 printed
+ // page spans (not edited, engraved or certified printed note by note).
+ source("KYRIE","MASS_01","Kyrie I · Lux et origo",["4*","5*"],
+  ["https://gregobase.selapa.net/sources/2/881.png",
+   "https://gregobase.selapa.net/sources/2/882.png"],6),
+ source("GLORIA","MASS_01","Gloria I",["5*","6*"],
+  ["https://gregobase.selapa.net/sources/2/882.png",
+   "https://gregobase.selapa.net/sources/2/883.png"],7),
+ source("SANCTUS_BENEDICTUS","MASS_01","Sanctus I · Benedictus",["6*","7*"],
+  ["https://gregobase.selapa.net/sources/2/883.png",
+   "https://gregobase.selapa.net/sources/2/884.png"],8),
+ source("AGNUS_DEI","MASS_01","Agnus Dei I",["7*"],
+  ["https://gregobase.selapa.net/sources/2/884.png"],9),
+ source("SANCTUS_BENEDICTUS","MASS_17","Sanctus XVII · Benedictus",["56*"],
+  ["https://gregobase.selapa.net/sources/2/933.png"],58),
+ source("AGNUS_DEI","MASS_17","Agnus Dei XVII",["57*"],
+  ["https://gregobase.selapa.net/sources/2/934.png"],59),
+ source("SANCTUS_BENEDICTUS","MASS_18","Sanctus XVIII · Benedictus",["58*"],
+  ["https://gregobase.selapa.net/sources/2/935.png"],60),
+ source("AGNUS_DEI","MASS_18","Agnus Dei XVIII",["58*"],
+  ["https://gregobase.selapa.net/sources/2/935.png"],60)
 ]);
 const byKey=new Map(catalogue.map(x=>[x.movement+"|"+x.selection,x]));
 export const SCHOLA_1961_ORIGINAL_FACSIMILE_COUNT=catalogue.length;

@@ -301,12 +301,26 @@ try{
       {cue:"AO.SM.C0145",movement:"SANCTUS_BENEDICTUS",setting:"MASS_11",score:"GREGOBASE-1106"},
       {cue:"AO.SM.C0222",movement:"AGNUS_DEI",setting:"MASS_11",score:"GREGOBASE-1243"},
       {cue:"AO.SM.C0044",movement:"KYRIE",setting:"MASS_17",score:"GREGOBASE-272"},
-      {cue:"AO.SM.C0044",movement:"KYRIE",setting:"MASS_18",score:"GREGOBASE-2522"}
+      {cue:"AO.SM.C0044",movement:"KYRIE",setting:"MASS_18",score:"GREGOBASE-2522"},
+      // Entire selected Ordinary for Easter I, and the remaining source
+      // movements for penitential XVII/XVIII; no Gloria is invented.
+      {cue:"AO.SM.C0044",movement:"KYRIE",setting:"MASS_01",score:"GREGOBASE-1143"},
+      {cue:"AO.SM.C0053",movement:"GLORIA",setting:"MASS_01",score:"GREGOBASE-2980"},
+      {cue:"AO.SM.C0145",movement:"SANCTUS_BENEDICTUS",setting:"MASS_01",score:"GREGOBASE-300"},
+      {cue:"AO.SM.C0222",movement:"AGNUS_DEI",setting:"MASS_01",score:"GREGOBASE-2977"},
+      {cue:"AO.SM.C0145",movement:"SANCTUS_BENEDICTUS",setting:"MASS_17",score:"GREGOBASE-871"},
+      {cue:"AO.SM.C0222",movement:"AGNUS_DEI",setting:"MASS_17",score:"GREGOBASE-1137"},
+      {cue:"AO.SM.C0145",movement:"SANCTUS_BENEDICTUS",setting:"MASS_18",score:"GREGOBASE-298"},
+      {cue:"AO.SM.C0222",movement:"AGNUS_DEI",setting:"MASS_18",score:"GREGOBASE-2412"}
     ]:[
       {cue:"AO.SM.C0044",movement:"KYRIE",setting:"MASS_08",score:"GREGOBASE-1184"},
       {cue:"AO.SM.C0044",movement:"KYRIE",setting:"MASS_17",score:"GREGOBASE-272"},
       {cue:"AO.SM.C0044",movement:"KYRIE",setting:"MASS_18",score:"GREGOBASE-2522"},
-      {cue:"AO.SM.C0222",movement:"AGNUS_DEI",setting:"MASS_11",score:"GREGOBASE-1243"}
+      {cue:"AO.SM.C0222",movement:"AGNUS_DEI",setting:"MASS_11",score:"GREGOBASE-1243"},
+      {cue:"AO.SM.C0044",movement:"KYRIE",setting:"MASS_01",score:"GREGOBASE-1143"},
+      {cue:"AO.SM.C0145",movement:"SANCTUS_BENEDICTUS",setting:"MASS_01",score:"GREGOBASE-300"},
+      {cue:"AO.SM.C0222",movement:"AGNUS_DEI",setting:"MASS_17",score:"GREGOBASE-1137"},
+      {cue:"AO.SM.C0145",movement:"SANCTUS_BENEDICTUS",setting:"MASS_18",score:"GREGOBASE-298"}
     ];
         for(const example of ordinaryCases){
      await page.evaluate(cue=>{
