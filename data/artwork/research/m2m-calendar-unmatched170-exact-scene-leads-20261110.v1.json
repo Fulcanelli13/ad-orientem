@@ -1,0 +1,2751 @@
+{
+  "schema": "AO_SACRED_ART_CALENDAR_170_GAP_RESEARCH_V1",
+  "asOf": "2026-11-10",
+  "status": "RESEARCH_ONLY_NOT_MATCHING_AUTHORITY_NOT_PUBLICATION",
+  "sources": {
+    "baseline": "data/artwork/research/m2m-destinations-640-20261109.v1.json",
+    "calendar": "data/artwork/home-2026-annual-release-census.v1.json",
+    "existingArtworks": "data/artwork/research-operational-989.v1.json @ blob 3fe3f0f1a0acefbb9ecbea702bfc9825b5ed4a96",
+    "userRejects": "data/calendar/sacred-art-w68-effective-global-rejection-blocklist-20261015.v1.json",
+    "additionalMuseumCatalogues": "Exact catalogue links stored per candidate"
+  },
+  "rules": [
+    "All 170 baseline unmatched Calendar dates carried; no baseline assignments changed",
+    "No missing Prayer assignments invented: the 27 NONE slots are protected or intentionally unassigned",
+    "Repeat Gospel may create additional research relationships to a painting, but does not confer a new date-specific approval",
+    "Commons-only imported groups remain research leads, never automatically promoted to curated-image candidate pool",
+    "Source identity, original photograph rights, selected pixel SHA and 320/390 phone QA must pass independently",
+    "No rejected artwork may be revived or replaced by a different crop or mirror",
+    "Each artwork may match multiple dates; each date may retain multiple distinct works; identical artwork photo aliases are not independent artworks",
+    "Never use a different Gospel episode solely because it falls in the same chapter",
+    "Class IV inherited Proper/index Gospel must be reverified against the resolved 1962 principal before release",
+    "This file must never be read by runtime, site build or automatic matching projector"
+  ],
+  "counts": {
+    "baselineUnmatchedCalendarTargets": 170,
+    "targetsWithNewResearchLeads": 42,
+    "targetsStillWithoutNamedLeads": 128,
+    "proposedRelationshipEdges": 50,
+    "existing989Edges": 24,
+    "newInstitutionalObjectEdges": 20,
+    "secondaryOrCommonsOnlyEdges": 6,
+    "byClass": {
+      "II": {
+        "unmatchedBaseline": 29,
+        "withResearchLeads": 14,
+        "stillWithoutLeads": 15
+      },
+      "III": {
+        "unmatchedBaseline": 101,
+        "withResearchLeads": 8,
+        "stillWithoutLeads": 93
+      },
+      "IV": {
+        "unmatchedBaseline": 40,
+        "withResearchLeads": 20,
+        "stillWithoutLeads": 20
+      }
+    },
+    "newAuthorizedAssignments": 0
+  },
+  "records": [
+    {
+      "date": "2026-01-14",
+      "liturgicalClass": "III",
+      "observance": "St. Hilary",
+      "observedPrincipalId": "sancti:01-14:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 5:13–19",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-01-15",
+      "liturgicalClass": "III",
+      "observance": "St. Paul, the First Hermit",
+      "observedPrincipalId": "sancti:01-15:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 11:25–30",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 2,
+      "artworkRelationships": [
+        {
+          "kind": "EXISTING_989_GROUP_RESEARCH_LINK",
+          "key": "REVIEW::cma:144270",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "Paul of Thebes, the first hermit",
+          "remark": "",
+          "title": "Saint Paul the Hermit",
+          "artist": "Mattia Preti (Italian, 1613–1699)",
+          "sourceUrl": "https://clevelandart.org/art/1969.109",
+          "userReviewStates": [
+            "IMPORT"
+          ],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        },
+        {
+          "kind": "EXISTING_989_GROUP_RESEARCH_LINK",
+          "key": "REVIEW::walters:37037",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "Paul of Thebes, the first hermit",
+          "remark": "",
+          "title": "Saint Paul the Hermit",
+          "artist": "Jusepe de Ribera",
+          "sourceUrl": "https://purl.thewalters.org/art/37.278",
+          "userReviewStates": [
+            "IMPORT"
+          ],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-22",
+      "liturgicalClass": "III",
+      "observance": "Sts. Vincent & Anastasius",
+      "observedPrincipalId": "sancti:01-22:3:r",
+      "gospelReferenceFromMatchingIndex": "Luke 21:9–19",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-01-23",
+      "liturgicalClass": "III",
+      "observance": "St. Raymond of Peñafort",
+      "observedPrincipalId": "sancti:01-23:3:w",
+      "gospelReferenceFromMatchingIndex": "Luke 12:35–40",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-01-24",
+      "liturgicalClass": "III",
+      "observance": "St. Timothy",
+      "observedPrincipalId": "sancti:01-24:3:r",
+      "gospelReferenceFromMatchingIndex": "Luke 14:26–33",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-01-25",
+      "liturgicalClass": "II",
+      "observance": "III Sunday after Epiphany",
+      "observedPrincipalId": "tempora:Epi3-0:2:g",
+      "gospelReferenceFromMatchingIndex": "Matthew 8:1–13",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "EXISTING_989_GROUP_RESEARCH_LINK",
+          "key": "REVIEW::rijks:20027184",
+          "relation": "GOSPEL_SCENE_SUBSET",
+          "scriptureOrIdentityAnchor": "Matthew 8:5–13 — centurion, within Matthew 8:1–13",
+          "remark": "",
+          "title": "Christ and the Centurion",
+          "artist": "Adam Camerarius",
+          "sourceUrl": "https://id.rijksmuseum.nl/20027184",
+          "userReviewStates": [
+            "IMPORT"
+          ],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-26",
+      "liturgicalClass": "III",
+      "observance": "St. Polycarp",
+      "observedPrincipalId": "sancti:01-26:3:r",
+      "gospelReferenceFromMatchingIndex": "Matthew 10:26–32",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-01-27",
+      "liturgicalClass": "III",
+      "observance": "St. John Chrysostom",
+      "observedPrincipalId": "sancti:01-27:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 5:13–19",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-01-28",
+      "liturgicalClass": "III",
+      "observance": "St. Peter Nolasco",
+      "observedPrincipalId": "sancti:01-28:3:w",
+      "gospelReferenceFromMatchingIndex": "Luke 12:32–34",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-01-29",
+      "liturgicalClass": "III",
+      "observance": "St. Francis de Sales",
+      "observedPrincipalId": "sancti:01-29:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 5:13–19",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-02-01",
+      "liturgicalClass": "II",
+      "observance": "Septuagesima Sunday",
+      "observedPrincipalId": "tempora:Quadp1-0:2:v",
+      "gospelReferenceFromMatchingIndex": "Matthew 20:1–16",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 2,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Nationalmuseum:NM420",
+          "title": "Parable of the Labourers in the Vineyard",
+          "artist": "Attributed to David III Ryckaert",
+          "sourceUrl": "https://collection.nationalmuseum.se/en/collection/item/17423/",
+          "relation": "GOSPEL_PARABLE",
+          "scriptureOrIdentityAnchor": "Matthew 20:1–16",
+          "medium": "oil on canvas",
+          "remark": "Museum record describes equal wages; its embedded cross-reference to Matthew 21 is inconsistent and must not determine the Proper",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        },
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Nationalmuseum:NM1134",
+          "title": "Parable of the Labourers in the Vineyard",
+          "artist": "Marten de Vos",
+          "sourceUrl": "https://collection.nationalmuseum.se/en/collection/item/18137/",
+          "relation": "GOSPEL_PARABLE",
+          "scriptureOrIdentityAnchor": "Matthew 20:1–16",
+          "medium": "oil on wood",
+          "remark": "",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-03",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 20:1–16",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Nationalmuseum:NM420",
+          "title": "Parable of the Labourers in the Vineyard",
+          "artist": "Attributed to David III Ryckaert",
+          "sourceUrl": "https://collection.nationalmuseum.se/en/collection/item/17423/",
+          "relation": "GOSPEL_PARABLE",
+          "scriptureOrIdentityAnchor": "Matthew 20:1–16",
+          "medium": "oil on canvas",
+          "remark": "Repeat Sunday Proper scene, not date-specific approval",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-04",
+      "liturgicalClass": "III",
+      "observance": "St. Andrew Corsini",
+      "observedPrincipalId": "sancti:02-04:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 25:14–23",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "EXISTING_989_GROUP_RESEARCH_LINK",
+          "key": "REVIEW::commons:52088798",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "St Andrew Corsini",
+          "remark": "Pinacoteca Nazionale di Bologna original inv. 443 corroborated by Fondazione Zeri; Commons photo not authorised",
+          "title": "Guido Reni (1575-1642) - Sint Andreas Corsini (1639) - Bologna Pinacoteca Nazionale - 26-04-2012 9-29-09",
+          "artist": "Guido Reni",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Guido_Reni_(1575-1642)_-_Sint_Andreas_Corsini_(1639)_-_Bologna_Pinacoteca_Nazionale_-_26-04-2012_9-29-09.jpg",
+          "userReviewStates": [
+            "IMPORT"
+          ],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "commonsPolicy": "RESEARCH_ONLY_NOT_AUTO_ADMITTED_TO_CURATED_POOL"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-06",
+      "liturgicalClass": "III",
+      "observance": "St. Titus",
+      "observedPrincipalId": "sancti:02-06:3:w",
+      "gospelReferenceFromMatchingIndex": "Luke 10:1–9",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-02-07",
+      "liturgicalClass": "III",
+      "observance": "St. Romuald",
+      "observedPrincipalId": "sancti:02-07:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 19:27–29",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-02-08",
+      "liturgicalClass": "II",
+      "observance": "Sexagesima Sunday",
+      "observedPrincipalId": "tempora:Quadp2-0:2:v",
+      "gospelReferenceFromMatchingIndex": "Luke 8:4–15",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 2,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Timken:1957:002",
+          "title": "Parable of the Sower",
+          "artist": "Pieter Bruegel the Elder",
+          "sourceUrl": "https://www.timkenmuseum.org/art/parable-of-the-sower",
+          "relation": "GOSPEL_PARABLE",
+          "scriptureOrIdentityAnchor": "Luke 8:4–15",
+          "medium": "oil on wood panel",
+          "remark": "",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        },
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Thyssen:31",
+          "title": "The Parable of the Sower",
+          "artist": "Jacopo Bassano",
+          "sourceUrl": "https://www.museothyssen.org/en/collection/artists/bassano-jacopo/parable-sower",
+          "relation": "GOSPEL_PARABLE",
+          "scriptureOrIdentityAnchor": "Luke 8:4–15",
+          "medium": "oil on canvas",
+          "remark": "",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-09",
+      "liturgicalClass": "III",
+      "observance": "St. Cyril of Alexandria",
+      "observedPrincipalId": "sancti:02-09:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 5:13–19",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-02-10",
+      "liturgicalClass": "III",
+      "observance": "St. Scholastica",
+      "observedPrincipalId": "sancti:02-10:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 25:1–13",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-02-13",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "Luke 8:4–15",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Timken:1957:002",
+          "title": "Parable of the Sower",
+          "artist": "Pieter Bruegel the Elder",
+          "sourceUrl": "https://www.timkenmuseum.org/art/parable-of-the-sower",
+          "relation": "GOSPEL_PARABLE",
+          "scriptureOrIdentityAnchor": "Luke 8:4–15",
+          "medium": "oil on panel",
+          "remark": "Repeat Sunday Proper scene, not date-specific approval",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-19",
+      "liturgicalClass": "III",
+      "observance": "Feria V after Ash Wednesday",
+      "observedPrincipalId": "tempora:Quadp3-4:3:v",
+      "gospelReferenceFromMatchingIndex": "Matthew 8:5–13",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "EXISTING_989_GROUP_RESEARCH_LINK",
+          "key": "REVIEW::rijks:20027184",
+          "relation": "GOSPEL_SCENE",
+          "scriptureOrIdentityAnchor": "Matthew 8:5–13 — centurion",
+          "remark": "",
+          "title": "Christ and the Centurion",
+          "artist": "Adam Camerarius",
+          "sourceUrl": "https://id.rijksmuseum.nl/20027184",
+          "userReviewStates": [
+            "IMPORT"
+          ],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-20",
+      "liturgicalClass": "III",
+      "observance": "Feria VI after Ash Wednesday",
+      "observedPrincipalId": "tempora:Quadp3-5:3:v",
+      "gospelReferenceFromMatchingIndex": null,
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-02-26",
+      "liturgicalClass": "III",
+      "observance": "Feria V after the I Sunday of Lent",
+      "observedPrincipalId": "tempora:Quad1-4:3:v",
+      "gospelReferenceFromMatchingIndex": "Matthew 15:21–28",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 2,
+      "artworkRelationships": [
+        {
+          "kind": "EXISTING_989_GROUP_RESEARCH_LINK",
+          "key": "REVIEW::commons:32806008",
+          "relation": "GOSPEL_SCENE",
+          "scriptureOrIdentityAnchor": "Matthew 15:21–28 — Christ and the Canaanite woman",
+          "remark": "Commons imported work; not automatically admitted",
+          "title": "Christ and Canaanite woman",
+          "artist": "Annibale Carracci",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Annibale_Carracci%2C_Cristo_e_la_Cananea%2C_1595%2C_Parma.jpg",
+          "userReviewStates": [
+            "IMPORT_WITH_CORRECTIONS"
+          ],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "commonsPolicy": "RESEARCH_ONLY_NOT_AUTO_ADMITTED_TO_CURATED_POOL"
+        },
+        {
+          "kind": "EXISTING_989_GROUP_RESEARCH_LINK",
+          "key": "REVIEW::rijks:200111837",
+          "relation": "GOSPEL_SCENE",
+          "scriptureOrIdentityAnchor": "Matthew 15:21–28 — Christ and Woman of Canaan",
+          "remark": "Maker/medium unresolved",
+          "title": "Christ and the Woman of Canaan",
+          "artist": "Attribution not identified",
+          "sourceUrl": "https://id.rijksmuseum.nl/200111837",
+          "userReviewStates": [
+            "IMPORT"
+          ],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-02",
+      "liturgicalClass": "III",
+      "observance": "Feria II after the II Sunday of Lent",
+      "observedPrincipalId": "tempora:Quad2-1:3:v",
+      "gospelReferenceFromMatchingIndex": "John 8:21–29",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-03-05",
+      "liturgicalClass": "III",
+      "observance": "Feria V after the II Sunday of Lent",
+      "observedPrincipalId": "tempora:Quad2-4:3:v",
+      "gospelReferenceFromMatchingIndex": null,
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-03-06",
+      "liturgicalClass": "III",
+      "observance": "Feria VI after the II Sunday of Lent",
+      "observedPrincipalId": "tempora:Quad2-5:3:v",
+      "gospelReferenceFromMatchingIndex": "Matthew 21:33–46",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-03-09",
+      "liturgicalClass": "III",
+      "observance": "Feria II after the III Sunday of Lent",
+      "observedPrincipalId": "tempora:Quad3-1:3:v",
+      "gospelReferenceFromMatchingIndex": "Luke 4:23–30",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-03-10",
+      "liturgicalClass": "III",
+      "observance": "Feria III after the III Sunday of Lent",
+      "observedPrincipalId": "tempora:Quad3-2:3:v",
+      "gospelReferenceFromMatchingIndex": "Matthew 18:15–22",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-03-11",
+      "liturgicalClass": "III",
+      "observance": "Feria IV after the III Sunday of Lent",
+      "observedPrincipalId": "tempora:Quad3-3:3:v",
+      "gospelReferenceFromMatchingIndex": "Matthew 15:1–20",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-03-17",
+      "liturgicalClass": "III",
+      "observance": "Feria III after the IV Sunday of Lent",
+      "observedPrincipalId": "tempora:Quad4-2:3:v",
+      "gospelReferenceFromMatchingIndex": "John 7:14–31",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-03-21",
+      "liturgicalClass": "III",
+      "observance": "Saturday after the IV Sunday of Lent",
+      "observedPrincipalId": "tempora:Quad4-6:3:v",
+      "gospelReferenceFromMatchingIndex": "John 8:12–20",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-03-23",
+      "liturgicalClass": "III",
+      "observance": "Feria II of Passion Week",
+      "observedPrincipalId": "tempora:Quad5-1:3:v",
+      "gospelReferenceFromMatchingIndex": "John 7:32–39",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-03-24",
+      "liturgicalClass": "III",
+      "observance": "Feria III of Passion Week",
+      "observedPrincipalId": "tempora:Quad5-2:3:v",
+      "gospelReferenceFromMatchingIndex": "John 7:1–13",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-04-13",
+      "liturgicalClass": "III",
+      "observance": "St. Hermenegild",
+      "observedPrincipalId": "sancti:04-13:3:r",
+      "gospelReferenceFromMatchingIndex": "Luke 14:26–33",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "EXISTING_989_GROUP_RESEARCH_LINK",
+          "key": "REVIEW::commons:29827881",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "Saint Hermenegild",
+          "remark": "Exact original/photo institution not yet established",
+          "title": "St Hermenegild in Prision",
+          "artist": "Goya y Lucientes, Francisco",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Goya_y_Lucientes%2C_Francisco_-_St_Hermenegild_in_Prision_-_Google_Art_Project.jpg",
+          "userReviewStates": [
+            "IMPORT"
+          ],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "commonsPolicy": "RESEARCH_ONLY_NOT_AUTO_ADMITTED_TO_CURATED_POOL"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-14",
+      "liturgicalClass": "III",
+      "observance": "St. Justin",
+      "observedPrincipalId": "sancti:04-14:3:r",
+      "gospelReferenceFromMatchingIndex": "Luke 12:2–8",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-04-19",
+      "liturgicalClass": "II",
+      "observance": "II Sunday after Easter",
+      "observedPrincipalId": "tempora:Pasc2-0:2:w",
+      "gospelReferenceFromMatchingIndex": "John 10:11–16",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Stadel:Murillo-Good-Shepherd",
+          "title": "The Good Shepherd",
+          "artist": "Bartolomé Esteban Murillo",
+          "sourceUrl": "https://sammlung.staedelmuseum.de/en/work/the-good-shepherd",
+          "relation": "THEOLOGICAL_ICONOGRAPHY_NOT_LITERALEPISODE",
+          "scriptureOrIdentityAnchor": "John 10:11–16",
+          "medium": "oil on canvas",
+          "remark": "Iconographic Good Shepherd, not a depiction of a discrete event narrated in the Gospel",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-20",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "John 10:11–16",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Stadel:Murillo-Good-Shepherd",
+          "title": "The Good Shepherd",
+          "artist": "Bartolomé Esteban Murillo",
+          "sourceUrl": "https://sammlung.staedelmuseum.de/en/work/the-good-shepherd",
+          "relation": "THEOLOGICAL_ICONOGRAPHY_NOT_LITERALEPISODE",
+          "scriptureOrIdentityAnchor": "John 10:11–16",
+          "medium": "oil on canvas",
+          "remark": "",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-21",
+      "liturgicalClass": "III",
+      "observance": "St. Anselm",
+      "observedPrincipalId": "sancti:04-21:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 5:13–19",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-04-23",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "John 10:11–16",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Stadel:Murillo-Good-Shepherd",
+          "title": "The Good Shepherd",
+          "artist": "Bartolomé Esteban Murillo",
+          "sourceUrl": "https://sammlung.staedelmuseum.de/en/work/the-good-shepherd",
+          "relation": "THEOLOGICAL_ICONOGRAPHY_NOT_LITERALEPISODE",
+          "scriptureOrIdentityAnchor": "John 10:11–16",
+          "medium": "oil on canvas",
+          "remark": "",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-24",
+      "liturgicalClass": "III",
+      "observance": "St. Fidelis of Sigmaringen",
+      "observedPrincipalId": "sancti:04-24:3:r",
+      "gospelReferenceFromMatchingIndex": "John 15:1–7",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-04-26",
+      "liturgicalClass": "II",
+      "observance": "III Sunday after Easter",
+      "observedPrincipalId": "tempora:Pasc3-0r:2:w",
+      "gospelReferenceFromMatchingIndex": "John 16:16–22",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-04-27",
+      "liturgicalClass": "III",
+      "observance": "St. Peter Canisius",
+      "observedPrincipalId": "sancti:04-27:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 5:13–19",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-04-28",
+      "liturgicalClass": "III",
+      "observance": "St. Paul of the Cross",
+      "observedPrincipalId": "sancti:04-28:3:w",
+      "gospelReferenceFromMatchingIndex": "Luke 10:1–9",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-04-29",
+      "liturgicalClass": "III",
+      "observance": "St. Peter of Verona",
+      "observedPrincipalId": "sancti:04-29:3:r",
+      "gospelReferenceFromMatchingIndex": "Matthew 10:34–42",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-05-02",
+      "liturgicalClass": "III",
+      "observance": "St. Athanasius",
+      "observedPrincipalId": "sancti:05-02:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 10:23–28",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-05-03",
+      "liturgicalClass": "II",
+      "observance": "IV Sunday after Easter",
+      "observedPrincipalId": "tempora:Pasc4-0:2:w",
+      "gospelReferenceFromMatchingIndex": "John 16:5–14",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-05-04",
+      "liturgicalClass": "III",
+      "observance": "St. Monica",
+      "observedPrincipalId": "sancti:05-04:3:w",
+      "gospelReferenceFromMatchingIndex": "Luke 7:11–16",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-05-05",
+      "liturgicalClass": "III",
+      "observance": "St. Pius V",
+      "observedPrincipalId": "sancti:05-05:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 16:13–19",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-05-06",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "John 16:5–14",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-05-07",
+      "liturgicalClass": "III",
+      "observance": "St. Stanislaus",
+      "observedPrincipalId": "sancti:05-07:3:r",
+      "gospelReferenceFromMatchingIndex": "John 15:1–7",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-05-08",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "John 16:5–14",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-05-09",
+      "liturgicalClass": "III",
+      "observance": "St. Gregory of Nazianzen",
+      "observedPrincipalId": "sancti:05-09:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 5:13–19",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-05-10",
+      "liturgicalClass": "II",
+      "observance": "V Sunday after Easter",
+      "observedPrincipalId": "tempora:Pasc5-0:2:w",
+      "gospelReferenceFromMatchingIndex": "John 16:23–30",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-05-12",
+      "liturgicalClass": "III",
+      "observance": "Sts. Nereus, Achilleus, Domitilla, & Pancras",
+      "observedPrincipalId": "sancti:05-12:3:r",
+      "gospelReferenceFromMatchingIndex": null,
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-05-15",
+      "liturgicalClass": "III",
+      "observance": "St. John Baptist de la Salle",
+      "observedPrincipalId": "sancti:05-15:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 18:1–5",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-05-16",
+      "liturgicalClass": "III",
+      "observance": "St. Ubaldus",
+      "observedPrincipalId": "sancti:05-16:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 25:14–23",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-05-17",
+      "liturgicalClass": "II",
+      "observance": "Sunday after the Ascension",
+      "observedPrincipalId": "tempora:Pasc6-0:2:w",
+      "gospelReferenceFromMatchingIndex": "John 15:26–27; 16:1–4",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-05-18",
+      "liturgicalClass": "III",
+      "observance": "St. Venantius",
+      "observedPrincipalId": "sancti:05-18:3:r",
+      "gospelReferenceFromMatchingIndex": "John 15:1–7",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-05-19",
+      "liturgicalClass": "III",
+      "observance": "St. Peter Celestine",
+      "observedPrincipalId": "sancti:05-19:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 16:13–19",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-05-20",
+      "liturgicalClass": "III",
+      "observance": "St. Bernardine of Siena",
+      "observedPrincipalId": "sancti:05-20:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 19:27–29",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-05-21",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "John 15:26–27; 16:1–4",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-05-22",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "John 15:26–27; 16:1–4",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-06-01",
+      "liturgicalClass": "III",
+      "observance": "St. Angela Merici",
+      "observedPrincipalId": "sancti:06-01:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 25:1–13",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-06-02",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "Luke 6:36–42",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Met:1991.153",
+          "title": "The Parable of the Mote and the Beam",
+          "artist": "Domenico Fetti",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/436301",
+          "relation": "GOSPEL_PARABLE_SUBSET",
+          "scriptureOrIdentityAnchor": "Luke 6:41–42 within Luke 6:36–42",
+          "medium": "oil on wood",
+          "remark": "Museum public-domain source; new date placement still unapproved",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-03",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "Luke 6:36–42",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Met:1991.153",
+          "title": "The Parable of the Mote and the Beam",
+          "artist": "Domenico Fetti",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/436301",
+          "relation": "GOSPEL_PARABLE_SUBSET",
+          "scriptureOrIdentityAnchor": "Luke 6:41–42 within Luke 6:36–42",
+          "medium": "oil on wood",
+          "remark": "",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-05",
+      "liturgicalClass": "III",
+      "observance": "St. Boniface",
+      "observedPrincipalId": "sancti:06-05:3:r",
+      "gospelReferenceFromMatchingIndex": "Matthew 5:1–12",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-06-07",
+      "liturgicalClass": "II",
+      "observance": "II Sunday after Pentecost",
+      "observedPrincipalId": "tempora:Pent02-0r:2:g",
+      "gospelReferenceFromMatchingIndex": "Luke 14:16–24",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-06-08",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "Luke 14:16–24",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-06-09",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "Luke 14:16–24",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-06-10",
+      "liturgicalClass": "III",
+      "observance": "St. Margaret of Scotland",
+      "observedPrincipalId": "sancti:06-10:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 13:44–52",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-06-11",
+      "liturgicalClass": "III",
+      "observance": "St. Barnabas",
+      "observedPrincipalId": "sancti:06-11:3:r",
+      "gospelReferenceFromMatchingIndex": "Matthew 10:16–22",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-06-14",
+      "liturgicalClass": "II",
+      "observance": "III Sunday after Pentecost",
+      "observedPrincipalId": "tempora:Pent03-0r:2:g",
+      "gospelReferenceFromMatchingIndex": "Luke 15:1–10",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "SECONDARY_OR_COMMONS_RESEARCH_ONLY",
+          "key": "Dresden:Fetti-Lost-Drachma",
+          "title": "Parable of the Lost Drachma",
+          "artist": "Domenico Fetti or workshop (version to disambiguate)",
+          "sourceUrl": "https://www.wga.hu/html/f/feti/parable.html",
+          "relation": "GOSPEL_PARABLE",
+          "scriptureOrIdentityAnchor": "Luke 15:8–10",
+          "remark": "Specific Dresden painting/version and full institutional catalogue not yet verified; this is NOT the Prodigal Son",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "sourcePolicy": "DO_NOT_CURATE_WITHOUT_PRIMARY_ORIGINAL_AND_PHOTO_EVIDENCE"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-15",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "Luke 15:1–10",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "SECONDARY_OR_COMMONS_RESEARCH_ONLY",
+          "key": "Dresden:Fetti-Lost-Drachma",
+          "title": "Parable of the Lost Drachma",
+          "artist": "Domenico Fetti or workshop (version to disambiguate)",
+          "sourceUrl": "https://www.wga.hu/html/f/feti/parable.html",
+          "relation": "GOSPEL_PARABLE",
+          "scriptureOrIdentityAnchor": "Luke 15:8–10",
+          "remark": "Repeat Sunday Proper research lead; source version unresolved",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "sourcePolicy": "DO_NOT_CURATE_WITHOUT_PRIMARY_ORIGINAL_AND_PHOTO_EVIDENCE"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-16",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "Luke 15:1–10",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "SECONDARY_OR_COMMONS_RESEARCH_ONLY",
+          "key": "Dresden:Fetti-Lost-Drachma",
+          "title": "Parable of the Lost Drachma",
+          "artist": "Domenico Fetti or workshop (version to disambiguate)",
+          "sourceUrl": "https://www.wga.hu/html/f/feti/parable.html",
+          "relation": "GOSPEL_PARABLE",
+          "scriptureOrIdentityAnchor": "Luke 15:8–10",
+          "remark": "Repeat Sunday Proper research lead; source version unresolved",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "sourcePolicy": "DO_NOT_CURATE_WITHOUT_PRIMARY_ORIGINAL_AND_PHOTO_EVIDENCE"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-17",
+      "liturgicalClass": "III",
+      "observance": "St. Gregory Barbarigo",
+      "observedPrincipalId": "sancti:06-17r:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 25:14–23",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-06-18",
+      "liturgicalClass": "III",
+      "observance": "St. Ephrem of Syria",
+      "observedPrincipalId": "sancti:06-18:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 5:13–19",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-06-19",
+      "liturgicalClass": "III",
+      "observance": "St. Julia of Falconieri",
+      "observedPrincipalId": "sancti:06-19:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 25:1–13",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-06-22",
+      "liturgicalClass": "III",
+      "observance": "St. Paulinus of Nola",
+      "observedPrincipalId": "sancti:06-22:3:w",
+      "gospelReferenceFromMatchingIndex": "Luke 12:32–34",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-06-25",
+      "liturgicalClass": "III",
+      "observance": "St. William",
+      "observedPrincipalId": "sancti:06-25:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 19:27–29",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-06-28",
+      "liturgicalClass": "II",
+      "observance": "V Sunday after Pentecost",
+      "observedPrincipalId": "tempora:Pent05-0:2:g",
+      "gospelReferenceFromMatchingIndex": "Matthew 5:20–24",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-07-03",
+      "liturgicalClass": "III",
+      "observance": "St. Irenaeus",
+      "observedPrincipalId": "sancti:07-03r:3:r",
+      "gospelReferenceFromMatchingIndex": "Matthew 10:28–33",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-07-07",
+      "liturgicalClass": "III",
+      "observance": "Sts. Cyril & Methodius",
+      "observedPrincipalId": "sancti:07-07:3:w",
+      "gospelReferenceFromMatchingIndex": "Luke 10:1–9",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-07-08",
+      "liturgicalClass": "III",
+      "observance": "St. Elizabeth of Portugal",
+      "observedPrincipalId": "sancti:07-08:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 13:44–52",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "EXISTING_989_GROUP_RESEARCH_LINK",
+          "key": "REVIEW::commons:29827917",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "Saint Elizabeth (Isabel) of Portugal",
+          "remark": "Distinguish from St Elizabeth in Holy Family iconography",
+          "title": "Saint Isabel of Portugal Healing the Wounds of a Sick Woman",
+          "artist": "Goya y Lucientes, Francisco",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Goya_y_Lucientes%2C_Francisco_-_Saint_Isabel_of_Portugal_Healing_the_Wounds_of_a_Sick_Woman_-_Google_Art_Project.jpg",
+          "userReviewStates": [
+            "IMPORT"
+          ],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "commonsPolicy": "RESEARCH_ONLY_NOT_AUTO_ADMITTED_TO_CURATED_POOL"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-10",
+      "liturgicalClass": "III",
+      "observance": "Seven Holy Brothers and Sts. Rufina & Secunda",
+      "observedPrincipalId": "sancti:07-10:3:r",
+      "gospelReferenceFromMatchingIndex": "Matthew 12:46–50",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-07-12",
+      "liturgicalClass": "II",
+      "observance": "VII Sunday after Pentecost",
+      "observedPrincipalId": "tempora:Pent07-0:2:g",
+      "gospelReferenceFromMatchingIndex": "Matthew 7:15–21",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-07-13",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 7:15–21",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-07-15",
+      "liturgicalClass": "III",
+      "observance": "St. Henry the Emperor",
+      "observedPrincipalId": "sancti:07-15:3:w",
+      "gospelReferenceFromMatchingIndex": "Luke 12:35–40",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-07-16",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 7:15–21",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-07-17",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 7:15–21",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-07-18",
+      "liturgicalClass": "III",
+      "observance": "Camillus de Lellis",
+      "observedPrincipalId": "sancti:07-18:3:w",
+      "gospelReferenceFromMatchingIndex": "John 15:12–16",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-07-19",
+      "liturgicalClass": "II",
+      "observance": "VIII Sunday after Pentecost",
+      "observedPrincipalId": "tempora:Pent08-0:2:g",
+      "gospelReferenceFromMatchingIndex": "Luke 16:1–9",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "SECONDARY_OR_COMMONS_RESEARCH_ONLY",
+          "key": "Dresden:423",
+          "title": "Parable of the Unjust Steward",
+          "artist": "Domenico Fetti",
+          "sourceUrl": "https://www.christies.com/en/lot/lot-503470",
+          "relation": "GOSPEL_PARABLE",
+          "scriptureOrIdentityAnchor": "Luke 16:1–9",
+          "remark": "Secondary auction catalogue reports Dresden original inv. 423; not the auctioned copy; its Luke XIV reference is erroneous",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "sourcePolicy": "DO_NOT_CURATE_WITHOUT_PRIMARY_ORIGINAL_AND_PHOTO_EVIDENCE"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-20",
+      "liturgicalClass": "III",
+      "observance": "St. Jerome Emiliani",
+      "observedPrincipalId": "sancti:07-20:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 19:13–21",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-07-21",
+      "liturgicalClass": "III",
+      "observance": "St. Laurence of Brindisi",
+      "observedPrincipalId": "sancti:07-21r:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 5:13–19",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-07-23",
+      "liturgicalClass": "III",
+      "observance": "St. Apollinaris",
+      "observedPrincipalId": "sancti:07-23:3:r",
+      "gospelReferenceFromMatchingIndex": "Luke 22:24–30",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-07-24",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "Luke 16:1–9",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "SECONDARY_OR_COMMONS_RESEARCH_ONLY",
+          "key": "Dresden:423",
+          "title": "Parable of the Unjust Steward",
+          "artist": "Domenico Fetti",
+          "sourceUrl": "https://www.christies.com/en/lot/lot-503470",
+          "relation": "GOSPEL_PARABLE",
+          "scriptureOrIdentityAnchor": "Luke 16:1–9",
+          "remark": "Repeat Sunday Proper lead; SKD source needed",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "sourcePolicy": "DO_NOT_CURATE_WITHOUT_PRIMARY_ORIGINAL_AND_PHOTO_EVIDENCE"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-26",
+      "liturgicalClass": "II",
+      "observance": "IX Sunday after Pentecost",
+      "observedPrincipalId": "tempora:Pent09-0:2:g",
+      "gospelReferenceFromMatchingIndex": "Luke 19:41–47",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 3,
+      "artworkRelationships": [
+        {
+          "kind": "EXISTING_989_GROUP_RESEARCH_LINK",
+          "key": "REVIEW::walters:39318",
+          "relation": "GOSPEL_SCENE_SUBSET",
+          "scriptureOrIdentityAnchor": "Luke 19:41–44 — Christ weeps over Jerusalem",
+          "remark": "",
+          "title": "Christ Weeping Over Jerusalem",
+          "artist": "Ary Scheffer",
+          "sourceUrl": "https://purl.thewalters.org/art/37.111",
+          "userReviewStates": [
+            "IMPORT"
+          ],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        },
+        {
+          "kind": "EXISTING_989_GROUP_RESEARCH_LINK",
+          "key": "REVIEW::commons:22177903",
+          "relation": "GOSPEL_SCENE_SUBSET",
+          "scriptureOrIdentityAnchor": "Luke 19:45–46 — Temple cleansing",
+          "remark": "Commons-import research only; seek institutional original/source",
+          "title": "Christ Cleansing the Temple",
+          "artist": "Bernardino Mei",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bernardino_Mei_(Italian_(Sienese)_-_Christ_Cleansing_the_Temple_-_Google_Art_Project.jpg",
+          "userReviewStates": [
+            "IMPORT"
+          ],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "commonsPolicy": "RESEARCH_ONLY_NOT_AUTO_ADMITTED_TO_CURATED_POOL"
+        },
+        {
+          "kind": "EXISTING_989_GROUP_RESEARCH_LINK",
+          "key": "REVIEW::commons:163758319",
+          "relation": "GOSPEL_SCENE_SUBSET",
+          "scriptureOrIdentityAnchor": "Luke 19:45–46 — Temple cleansing",
+          "remark": "Commons-import research only; exact painting and attribution checks",
+          "title": "Christ Driving the Money Changers from the Temple \" \"",
+          "artist": "Dirck van Baburen",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dirck_van_Baburen_-_Christ_Driving_the_Money_Changers_from_the_Temple.jpg",
+          "userReviewStates": [
+            "IMPORT"
+          ],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "commonsPolicy": "RESEARCH_ONLY_NOT_AUTO_ADMITTED_TO_CURATED_POOL"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-27",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "Luke 19:41–47",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "EXISTING_989_GROUP_RESEARCH_LINK",
+          "key": "REVIEW::walters:39318",
+          "relation": "GOSPEL_SCENE_SUBSET",
+          "scriptureOrIdentityAnchor": "Luke 19:41–44 — weeping over Jerusalem",
+          "remark": "",
+          "title": "Christ Weeping Over Jerusalem",
+          "artist": "Ary Scheffer",
+          "sourceUrl": "https://purl.thewalters.org/art/37.111",
+          "userReviewStates": [
+            "IMPORT"
+          ],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-28",
+      "liturgicalClass": "III",
+      "observance": "Sts. Nazarius & Celsus, St. Victor I & St. Innocent I",
+      "observedPrincipalId": "sancti:07-28:3:r",
+      "gospelReferenceFromMatchingIndex": "Luke 21:9–19",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-07-30",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "Luke 19:41–47",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "EXISTING_989_GROUP_RESEARCH_LINK",
+          "key": "REVIEW::walters:39318",
+          "relation": "GOSPEL_SCENE_SUBSET",
+          "scriptureOrIdentityAnchor": "Luke 19:41–44 — weeping over Jerusalem",
+          "remark": "",
+          "title": "Christ Weeping Over Jerusalem",
+          "artist": "Ary Scheffer",
+          "sourceUrl": "https://purl.thewalters.org/art/37.111",
+          "userReviewStates": [
+            "IMPORT"
+          ],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-02",
+      "liturgicalClass": "II",
+      "observance": "X Sunday after Pentecost",
+      "observedPrincipalId": "tempora:Pent10-0:2:g",
+      "gospelReferenceFromMatchingIndex": "Luke 18:9–14",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 2,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "NGA:2006.11.18",
+          "title": "Parable of the Publican and the Pharisee",
+          "artist": "Rembrandt van Rijn",
+          "sourceUrl": "https://www.nga.gov/artworks/75824-parable-publican-and-pharisee",
+          "relation": "GOSPEL_PARABLE",
+          "scriptureOrIdentityAnchor": "Luke 18:9–14",
+          "medium": "drawing on paper",
+          "remark": "Museum public-domain drawing, not an oil painting",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        },
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Aberdeen:ABDAG004397",
+          "title": "Parable — The Pharisee and the Publican",
+          "artist": "Sir John Everett Millais",
+          "sourceUrl": "https://emuseum.aberdeencity.gov.uk/objects/3781/parable--the-pharisee-and-the-publican",
+          "relation": "GOSPEL_PARABLE",
+          "scriptureOrIdentityAnchor": "Luke 18:9–14",
+          "medium": "watercolour on paper",
+          "remark": "Museum CC0 watercolour, not an oil painting",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-03",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "Luke 18:9–14",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "NGA:2006.11.18",
+          "title": "Parable of the Publican and the Pharisee",
+          "artist": "Rembrandt van Rijn",
+          "sourceUrl": "https://www.nga.gov/artworks/75824-parable-publican-and-pharisee",
+          "relation": "GOSPEL_PARABLE",
+          "scriptureOrIdentityAnchor": "Luke 18:9–14",
+          "medium": "drawing on paper",
+          "remark": "Repeat Sunday Proper scene; not an oil painting",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-07",
+      "liturgicalClass": "III",
+      "observance": "St. Cajetan",
+      "observedPrincipalId": "sancti:08-07:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 6:24–33",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-08-08",
+      "liturgicalClass": "III",
+      "observance": "St. John Mary Vianney",
+      "observedPrincipalId": "sancti:08-08:3:w",
+      "gospelReferenceFromMatchingIndex": null,
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-08-09",
+      "liturgicalClass": "II",
+      "observance": "XI Sunday after Pentecost",
+      "observedPrincipalId": "tempora:Pent11-0:2:g",
+      "gospelReferenceFromMatchingIndex": "Mark 7:31–37",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "UMMA:1960/2.93",
+          "title": "Christ Healing the Deaf-Mute",
+          "artist": "Philippe de Champaigne",
+          "sourceUrl": "https://umma.umich.edu/objects/christ-healing-the-deaf-mute-1960-2-93/",
+          "relation": "GOSPEL_SCENE",
+          "scriptureOrIdentityAnchor": "Mark 7:31–37",
+          "medium": "oil on canvas",
+          "remark": "Museum directly identifies Mark 7:32–34; image-reuse terms not cleared, no rights outreach",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-11",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "Mark 7:31–37",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "UMMA:1960/2.93",
+          "title": "Christ Healing the Deaf-Mute",
+          "artist": "Philippe de Champaigne",
+          "sourceUrl": "https://umma.umich.edu/objects/christ-healing-the-deaf-mute-1960-2-93/",
+          "relation": "GOSPEL_SCENE",
+          "scriptureOrIdentityAnchor": "Mark 7:31–37",
+          "medium": "oil on canvas",
+          "remark": "Reuse relation only; no reproduction rights certified",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-12",
+      "liturgicalClass": "III",
+      "observance": "St. Clare",
+      "observedPrincipalId": "sancti:08-12:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 25:1–13",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-08-13",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "Mark 7:31–37",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "UMMA:1960/2.93",
+          "title": "Christ Healing the Deaf-Mute",
+          "artist": "Philippe de Champaigne",
+          "sourceUrl": "https://umma.umich.edu/objects/christ-healing-the-deaf-mute-1960-2-93/",
+          "relation": "GOSPEL_SCENE",
+          "scriptureOrIdentityAnchor": "Mark 7:31–37",
+          "medium": "oil on canvas",
+          "remark": "Reuse relation only; no reproduction rights certified",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-19",
+      "liturgicalClass": "III",
+      "observance": "St. John Eudes",
+      "observedPrincipalId": "sancti:08-19:3:w",
+      "gospelReferenceFromMatchingIndex": "Luke 12:35–40",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-08-21",
+      "liturgicalClass": "III",
+      "observance": "St. Jane Frances de Chantal",
+      "observedPrincipalId": "sancti:08-21:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 13:44–52",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-08-23",
+      "liturgicalClass": "II",
+      "observance": "XIII Sunday after Pentecost",
+      "observedPrincipalId": "tempora:Pent13-0:2:g",
+      "gospelReferenceFromMatchingIndex": "Luke 17:11–19",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "SECONDARY_OR_COMMONS_RESEARCH_ONLY",
+          "key": "Vanderbilt:55729",
+          "title": "Jesus Heals the Ten Lepers",
+          "artist": "Anonymous, seventeenth century",
+          "sourceUrl": "https://act.library.vanderbilt.edu/artworks/55729",
+          "relation": "GOSPEL_SCENE",
+          "scriptureOrIdentityAnchor": "Luke 17:11–19",
+          "remark": "Vanderbilt indexes a Commons derivative, not a vetted institutional image; research only, do not promote to curated candidate pool",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "sourcePolicy": "DO_NOT_CURATE_WITHOUT_PRIMARY_ORIGINAL_AND_PHOTO_EVIDENCE"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-26",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "Luke 17:11–19",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-08-27",
+      "liturgicalClass": "III",
+      "observance": "St. Joseph Calasance",
+      "observedPrincipalId": "sancti:08-27:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 18:1–5",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-08-30",
+      "liturgicalClass": "II",
+      "observance": "XIV Sunday after Pentecost",
+      "observedPrincipalId": "tempora:Pent14-0:2:g",
+      "gospelReferenceFromMatchingIndex": "Matthew 6:24–33",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-08-31",
+      "liturgicalClass": "III",
+      "observance": "St. Raymond Nonnatus",
+      "observedPrincipalId": "sancti:08-31:3:w",
+      "gospelReferenceFromMatchingIndex": "Luke 12:35–40",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-09-01",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 6:24–33",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-09-02",
+      "liturgicalClass": "III",
+      "observance": "St. Stephen of Hungary",
+      "observedPrincipalId": "sancti:09-02:3:w",
+      "gospelReferenceFromMatchingIndex": "Luke 19:12–26",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-09-03",
+      "liturgicalClass": "III",
+      "observance": "St. Pius X",
+      "observedPrincipalId": "sancti:09-03:3:w",
+      "gospelReferenceFromMatchingIndex": "John 21:15–17",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-09-04",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 6:24–33",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-09-05",
+      "liturgicalClass": "III",
+      "observance": "St. Lawrence Justinian",
+      "observedPrincipalId": "sancti:09-05:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 25:14–23",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-09-06",
+      "liturgicalClass": "II",
+      "observance": "XV Sunday after Pentecost",
+      "observedPrincipalId": "tempora:Pent15-0:2:g",
+      "gospelReferenceFromMatchingIndex": "Luke 7:11–16",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-09-07",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "Luke 7:11–16",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-09-09",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "Luke 7:11–16",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-09-10",
+      "liturgicalClass": "III",
+      "observance": "St. Nicholas of Tolentino",
+      "observedPrincipalId": "sancti:09-10:3:w",
+      "gospelReferenceFromMatchingIndex": "Luke 12:32–34",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-09-11",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "Luke 7:11–16",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-09-13",
+      "liturgicalClass": "II",
+      "observance": "XVI Sunday after Pentecost",
+      "observedPrincipalId": "tempora:Pent16-0:2:g",
+      "gospelReferenceFromMatchingIndex": "Luke 14:1–11",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-09-16",
+      "liturgicalClass": "III",
+      "observance": "Sts. Cornelius & Cyprian",
+      "observedPrincipalId": "sancti:09-16:3:r",
+      "gospelReferenceFromMatchingIndex": "Luke 21:9–19",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-09-17",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "Luke 14:1–11",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-09-18",
+      "liturgicalClass": "III",
+      "observance": "St. Joseph of Cupertino",
+      "observedPrincipalId": "sancti:09-18:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 22:1–14",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-09-19",
+      "liturgicalClass": "III",
+      "observance": "St. Januarius & Companions",
+      "observedPrincipalId": "sancti:09-19:3:r",
+      "gospelReferenceFromMatchingIndex": "Matthew 24:3–13",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-09-20",
+      "liturgicalClass": "II",
+      "observance": "XVII Sunday after Pentecost",
+      "observedPrincipalId": "tempora:Pent17-0:2:g",
+      "gospelReferenceFromMatchingIndex": "Matthew 22:34–46",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-09-22",
+      "liturgicalClass": "III",
+      "observance": "St. Thomas of Villanova",
+      "observedPrincipalId": "sancti:09-22:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 25:14–23",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-09-23",
+      "liturgicalClass": "II",
+      "observance": "Ember Wednesday of September",
+      "observedPrincipalId": "tempora:093-3:2:v",
+      "gospelReferenceFromMatchingIndex": "Mark 9:16–28",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-09-24",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 22:34–46",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-09-26",
+      "liturgicalClass": "II",
+      "observance": "Ember Saturday of September",
+      "observedPrincipalId": "tempora:093-6:2:v",
+      "gospelReferenceFromMatchingIndex": "Luke 13:6–17",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-09-28",
+      "liturgicalClass": "III",
+      "observance": "St. Wenceslaus",
+      "observedPrincipalId": "sancti:09-28:3:r",
+      "gospelReferenceFromMatchingIndex": "Matthew 10:34–42",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-10-03",
+      "liturgicalClass": "III",
+      "observance": "St. Theresa of the Infant Jesus",
+      "observedPrincipalId": "sancti:10-03:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 18:1–4",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-10-04",
+      "liturgicalClass": "II",
+      "observance": "XIX Sunday after Pentecost",
+      "observedPrincipalId": "tempora:Pent19-0:2:g",
+      "gospelReferenceFromMatchingIndex": "Matthew 22:1–14",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 2,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Getty:2003.18",
+          "title": "The Parable of the King Who Prepared a Wedding",
+          "artist": "Maerten van Heemskerck",
+          "sourceUrl": "https://www.getty.edu/art/collection/object/1095RG",
+          "relation": "GOSPEL_PARABLE",
+          "scriptureOrIdentityAnchor": "Matthew 22:2–14",
+          "medium": "drawing on paper",
+          "remark": "Direct source drawing; painting preference unmet",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        },
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Princeton:1997-55",
+          "title": "Parable of the Royal Wedding Feast",
+          "artist": "Melchior Michael Steidl",
+          "sourceUrl": "https://artmuseum.princeton.edu/art/collections/objects/10159",
+          "relation": "GOSPEL_PARABLE",
+          "scriptureOrIdentityAnchor": "Matthew 22:2–13",
+          "medium": "drawing on paper",
+          "remark": "Institutional public-domain drawing; not an oil painting",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-05",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 22:1–14",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-10-08",
+      "liturgicalClass": "III",
+      "observance": "St. Bridget of Sweden",
+      "observedPrincipalId": "sancti:10-08:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 13:44–52",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-10-09",
+      "liturgicalClass": "III",
+      "observance": "St. John Leonardi",
+      "observedPrincipalId": "sancti:10-09:3:w",
+      "gospelReferenceFromMatchingIndex": "Luke 10:1–9",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-10-10",
+      "liturgicalClass": "III",
+      "observance": "St. Francis Borgia",
+      "observedPrincipalId": "sancti:10-10:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 19:27–29",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-10-11",
+      "liturgicalClass": "II",
+      "observance": "XX Sunday after Pentecost",
+      "observedPrincipalId": "tempora:Pent20-0:2:g",
+      "gospelReferenceFromMatchingIndex": "John 4:46–53",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-10-12",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "John 4:46–53",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-10-13",
+      "liturgicalClass": "III",
+      "observance": "St. Edward",
+      "observedPrincipalId": "sancti:10-13:3:w",
+      "gospelReferenceFromMatchingIndex": "Luke 12:35–40",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-10-16",
+      "liturgicalClass": "III",
+      "observance": "St. Hedwig",
+      "observedPrincipalId": "sancti:10-16:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 13:44–52",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-10-18",
+      "liturgicalClass": "II",
+      "observance": "XXI Sunday after Pentecost",
+      "observedPrincipalId": "tempora:Pent21-0:2:g",
+      "gospelReferenceFromMatchingIndex": "Matthew 18:23–35",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "EXISTING_989_GROUP_RESEARCH_LINK",
+          "key": "REVIEW::commons:150920",
+          "relation": "GOSPEL_PARABLE",
+          "scriptureOrIdentityAnchor": "Matthew 18:23–35 — unforgiving servant",
+          "remark": "Commons-import research only; establish institutional original",
+          "title": "Parable of the Unforgiving Servant",
+          "artist": "Domenico Fetti",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Domenico_Fetti_001.jpg",
+          "userReviewStates": [
+            "IMPORT"
+          ],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "commonsPolicy": "RESEARCH_ONLY_NOT_AUTO_ADMITTED_TO_CURATED_POOL"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-19",
+      "liturgicalClass": "III",
+      "observance": "St. Peter of Alcantara",
+      "observedPrincipalId": "sancti:10-19:3:w",
+      "gospelReferenceFromMatchingIndex": "Luke 12:32–34",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-10-20",
+      "liturgicalClass": "III",
+      "observance": "St. John Cantius",
+      "observedPrincipalId": "sancti:10-20:3:w",
+      "gospelReferenceFromMatchingIndex": "Luke 12:35–40",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-10-21",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 18:23–35",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "EXISTING_989_GROUP_RESEARCH_LINK",
+          "key": "REVIEW::commons:150920",
+          "relation": "GOSPEL_PARABLE",
+          "scriptureOrIdentityAnchor": "Matthew 18:23–35 — unforgiving servant",
+          "remark": "",
+          "title": "Parable of the Unforgiving Servant",
+          "artist": "Domenico Fetti",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Domenico_Fetti_001.jpg",
+          "userReviewStates": [
+            "IMPORT"
+          ],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "commonsPolicy": "RESEARCH_ONLY_NOT_AUTO_ADMITTED_TO_CURATED_POOL"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-22",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 18:23–35",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "EXISTING_989_GROUP_RESEARCH_LINK",
+          "key": "REVIEW::commons:150920",
+          "relation": "GOSPEL_PARABLE",
+          "scriptureOrIdentityAnchor": "Matthew 18:23–35 — unforgiving servant",
+          "remark": "",
+          "title": "Parable of the Unforgiving Servant",
+          "artist": "Domenico Fetti",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Domenico_Fetti_001.jpg",
+          "userReviewStates": [
+            "IMPORT"
+          ],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "commonsPolicy": "RESEARCH_ONLY_NOT_AUTO_ADMITTED_TO_CURATED_POOL"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-23",
+      "liturgicalClass": "III",
+      "observance": "St. Anthony Mary Claret",
+      "observedPrincipalId": "sancti:10-23r:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 24:42–47",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-10-26",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 22:15–21",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "EXISTING_989_GROUP_RESEARCH_LINK",
+          "key": "REVIEW::walters:32662",
+          "relation": "GOSPEL_SCENE",
+          "scriptureOrIdentityAnchor": "Matthew 22:15–21 — tribute money",
+          "remark": "Attribution 'Domenico Fetti; Titian' requires original catalogue disambiguation",
+          "title": "Christ and the Tribute Money",
+          "artist": "Domenico Fetti; Titian",
+          "sourceUrl": "https://purl.thewalters.org/art/37.582",
+          "userReviewStates": [
+            "IMPORT"
+          ],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-27",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 22:15–21",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "EXISTING_989_GROUP_RESEARCH_LINK",
+          "key": "REVIEW::walters:32662",
+          "relation": "GOSPEL_SCENE",
+          "scriptureOrIdentityAnchor": "Matthew 22:15–21 — tribute money",
+          "remark": "Attribution needs review",
+          "title": "Christ and the Tribute Money",
+          "artist": "Domenico Fetti; Titian",
+          "sourceUrl": "https://purl.thewalters.org/art/37.582",
+          "userReviewStates": [
+            "IMPORT"
+          ],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-29",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 22:15–21",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "EXISTING_989_GROUP_RESEARCH_LINK",
+          "key": "REVIEW::walters:32662",
+          "relation": "GOSPEL_SCENE",
+          "scriptureOrIdentityAnchor": "Matthew 22:15–21 — tribute money",
+          "remark": "Attribution needs review",
+          "title": "Christ and the Tribute Money",
+          "artist": "Domenico Fetti; Titian",
+          "sourceUrl": "https://purl.thewalters.org/art/37.582",
+          "userReviewStates": [
+            "IMPORT"
+          ],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-30",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 22:15–21",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "EXISTING_989_GROUP_RESEARCH_LINK",
+          "key": "REVIEW::walters:32662",
+          "relation": "GOSPEL_SCENE",
+          "scriptureOrIdentityAnchor": "Matthew 22:15–21 — tribute money",
+          "remark": "Attribution needs review",
+          "title": "Christ and the Tribute Money",
+          "artist": "Domenico Fetti; Titian",
+          "sourceUrl": "https://purl.thewalters.org/art/37.582",
+          "userReviewStates": [
+            "IMPORT"
+          ],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-04",
+      "liturgicalClass": "III",
+      "observance": "St. Charles Borromeo",
+      "observedPrincipalId": "sancti:11-04:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 25:14–23",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "EXISTING_989_GROUP_RESEARCH_LINK",
+          "key": "REVIEW::commons:23980786",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "Saint Carlo Borromeo",
+          "remark": "Artist attribution Magnasco/Spera uncertain, original location unverified",
+          "title": "Saint Carlo Borromeo Receiving the Oblates",
+          "artist": "Alessandro Magnasco / Attributed to Clemente Spera",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alessandro_Magnasco_-_Saint_Carlo_Borromeo_Receiving_the_Oblates_-_Google_Art_Project.jpg",
+          "userReviewStates": [
+            "IMPORT"
+          ],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "commonsPolicy": "RESEARCH_ONLY_NOT_AUTO_ADMITTED_TO_CURATED_POOL"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "liturgicalClass": "II",
+      "observance": "V Sunday after Epiphany",
+      "observedPrincipalId": "tempora:Epi5-0:2:g",
+      "gospelReferenceFromMatchingIndex": "Matthew 13:24–30",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Thyssen:1979.62",
+          "title": "The Parable of the Weeds",
+          "artist": "Domenico Fetti",
+          "sourceUrl": "https://www.museothyssen.org/en/collection/artists/fetti-domenico/parable-weeds",
+          "relation": "GOSPEL_PARABLE",
+          "scriptureOrIdentityAnchor": "Matthew 13:24–30",
+          "medium": "oil on panel",
+          "remark": "Museum notes an earlier prototype in Prague; do not merge objects",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-10",
+      "liturgicalClass": "III",
+      "observance": "St. Andrew Avellino",
+      "observedPrincipalId": "sancti:11-10:3:w",
+      "gospelReferenceFromMatchingIndex": "Luke 12:35–40",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-11-14",
+      "liturgicalClass": "III",
+      "observance": "St. Josaphat",
+      "observedPrincipalId": "sancti:11-14:3:r",
+      "gospelReferenceFromMatchingIndex": "John 10:11–16",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-11-15",
+      "liturgicalClass": "II",
+      "observance": "VI Sunday after Epiphany",
+      "observedPrincipalId": "tempora:Epi6-0:2:g",
+      "gospelReferenceFromMatchingIndex": "Matthew 13:31–35",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-11-16",
+      "liturgicalClass": "III",
+      "observance": "St. Gertrude the Great",
+      "observedPrincipalId": "sancti:11-16:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 25:1–13",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "EXISTING_989_GROUP_RESEARCH_LINK",
+          "key": "REVIEW::commons:116859339",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "Saint Gertrude the Great",
+          "remark": "Commons original institution/photograph not verified",
+          "title": "Gregorio Vasquez de Arce y Ceballos - Saint Gertrude the Great",
+          "artist": "Gregorio Vasquez de Arce y Ceballos",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gregorio_Vasquez_de_Arce_y_Ceballos_-_Saint_Gertrude_the_Great.jpg",
+          "userReviewStates": [
+            "IMPORT"
+          ],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "commonsPolicy": "RESEARCH_ONLY_NOT_AUTO_ADMITTED_TO_CURATED_POOL"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-17",
+      "liturgicalClass": "III",
+      "observance": "St. Gregory the Wonderworker",
+      "observedPrincipalId": "sancti:11-17:3:w",
+      "gospelReferenceFromMatchingIndex": "Mark 11:22–24",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-11-20",
+      "liturgicalClass": "III",
+      "observance": "St. Felix of Valois",
+      "observedPrincipalId": "sancti:11-20:3:w",
+      "gospelReferenceFromMatchingIndex": "Luke 12:32–34",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-11-24",
+      "liturgicalClass": "III",
+      "observance": "St. John of the Cross",
+      "observedPrincipalId": "sancti:11-24:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 5:13–19",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-11-26",
+      "liturgicalClass": "III",
+      "observance": "St. Sylvester",
+      "observedPrincipalId": "sancti:11-26:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 19:27–29",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-11-27",
+      "liturgicalClass": "IV",
+      "observance": "Feria",
+      "observedPrincipalId": ":feria:4:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 24:15–35",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-12-01",
+      "liturgicalClass": "III",
+      "observance": "Feria III after I Sunday of Advent",
+      "observedPrincipalId": "tempora:Adv1-2:3:v",
+      "gospelReferenceFromMatchingIndex": "Luke 21:25–33",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-12-02",
+      "liturgicalClass": "III",
+      "observance": "St. Vivian",
+      "observedPrincipalId": "sancti:12-02:3:r",
+      "gospelReferenceFromMatchingIndex": "Matthew 13:44–52",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-12-04",
+      "liturgicalClass": "III",
+      "observance": "St. Peter Chrysologus",
+      "observedPrincipalId": "sancti:12-04:3:w",
+      "gospelReferenceFromMatchingIndex": "Matthew 5:13–19",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-12-05",
+      "liturgicalClass": "III",
+      "observance": "Sabbato after I Sunday of Advent",
+      "observedPrincipalId": "tempora:Adv1-6:3:v",
+      "gospelReferenceFromMatchingIndex": "Luke 21:25–33",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
+      "candidateCount": 0,
+      "artworkRelationships": []
+    },
+    {
+      "date": "2026-12-28",
+      "liturgicalClass": "II",
+      "observance": "Holy Innocents",
+      "observedPrincipalId": "sancti:12-28:2:r",
+      "gospelReferenceFromMatchingIndex": "Matthew 2:13–18",
+      "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "EXISTING_989_GROUP_RESEARCH_LINK",
+          "key": "REVIEW::commons:148537247",
+          "relation": "GOSPEL_SCENE_SUBSET",
+          "scriptureOrIdentityAnchor": "Matthew 2:16–18 — massacre of the Innocents",
+          "remark": "Object verified independently at Alte Pinakothek inv. 572; Commons photo identity/rights still unverified",
+          "title": "Massacre of the Innocents \" \"",
+          "artist": "Peter Paul Rubens",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_-_The_Massacre_of_the_Innocent_(Pinatkothek).jpg",
+          "userReviewStates": [
+            "IMPORT"
+          ],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "commonsPolicy": "RESEARCH_ONLY_NOT_AUTO_ADMITTED_TO_CURATED_POOL"
+        }
+      ]
+    }
+  ]
+}
