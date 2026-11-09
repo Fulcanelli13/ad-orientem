@@ -73,6 +73,12 @@ export const NOVENA_HOLY_FACE_1887_B25=Object.freeze({
       "labelFr": "Volume original français de Janvier (1894 ; non transcrit)",
       "url": "https://play.google.com/store/books/details/Pierre_D%C3%A9sir%C3%A9_Janvier_Neuvaine_en_l_honneur_de_la?id=kuGdoq3cut4C",
       "role": "ORIGINAL_FRENCH_BOOK_1894_UNCOLLATED"
+    },
+    {
+      "label": "Original French nine meditations · Janvier manual, 1895, pp. 112–142 (scanned print; transcription under review)",
+      "labelFr": "Neuf méditations françaises originales · Manuel de Janvier, 1895, p. 112–142 (imprimé numérisé ; transcription en cours de vérification)",
+      "url": "https://pdfs.bibliotheque-catholique.com/pdfs/piete/Abb%C3%A9%20Pierre-D%C3%A9sir%C3%A9%20Janvier%20-%20Manuel%20de%20l%27Archiconfr%C3%A9rie%20de%20la%20Sainte-Face%20revue%20et%20corrig%C3%A9%20d%27apr%C3%A8s%20les%20d%C3%A9crets%20du%20Saint-Office.pdf#page=119",
+      "role": "FRENCH_1895_PRINT_WITNESS_ALL_NINE_DAYS_IDENTIFIED_NOT_VERBATIM_COLLATED"
     }
   ],
   "frenchOriginalEdition": {
