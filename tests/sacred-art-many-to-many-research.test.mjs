@@ -113,3 +113,31 @@ assert.equal(idx.review_evidence.cumulative_new_Claude_proposals_source_adjudica
 assert.equal(idx.review_evidence.remaining_new_Claude_proposals_needing_individual_source_adjudication,62);
 assert.equal(idx.review_evidence.remaining_new_Claude_direct_scene_proposals_needing_individual_source_adjudication,0);
 console.log('PASS: all 52 source-adjudicated new direct-scene associations recorded, 62 other association types remain; no publication rights implied.');
+
+
+const thematicBatch5=read('data/artwork/research/m2m-liturgical-thematic-batch5-20261109.v1.json');
+assert.equal(thematicBatch5.records.length,14);
+assert.equal(thematicBatch5.summary.artwork_ids,10);
+const priorDates5=new Set([...sceneBatch.records,...sceneBatch2.records,...sceneBatch3.records,...sceneBatch4.records].map(x=>x.destination_id));
+assert.equal(new Set(thematicBatch5.records.map(x=>x.destination_id)).size,14);
+for(const x of thematicBatch5.records) {
+ assert.ok(!priorDates5.has(x.destination_id),'Audited date twice');
+ assert.equal(x.owner_selection_changed,false);
+ assert.equal(x.owner_many_to_many_choices_preserved,true);
+ assert.equal(x.exact_photo_release_verified,false);
+ assert.equal(x.independent_pixels_checked,false);
+ assert.equal(x.runtime_selection_authorised,false);
+ assert.ok(x.evidence_urls.length>0&&x.relationship_after_review&&x.object_identity);
+}
+const papal5=thematicBatch5.records.filter(x=>x.artwork_id==='PRAYER20261105::PP-5');
+assert.equal(papal5.length,5);
+assert.equal(papal5.filter(x=>x.relationship_after_review==='EXACT_APPOINTED_GOSPEL_SCENE_NOT_FEAST_SAINT_PORTRAIT').length,1);
+assert.ok(papal5.find(x=>x.destination_id==='2026-12-11').verified_or_disputed_gospel.includes('CONFLICT'));
+const photographerErrors=thematicBatch5.records.filter(x=>/Didier Descouens|Edelseider/.test(x.claude_original_artist_credit));
+assert.equal(photographerErrors.length,3);
+const jonah=thematicBatch5.records.find(x=>x.destination_id==='2026-02-25');
+assert.ok(jonah.photo_release_gate.includes('OBJECT_IDENTITY'));
+assert.ok(thematicBatch5.records.some(x=>x.destination_id==='2026-11-09'&&x.relationship_after_review.includes('DIFFERENT_BUILDING')));
+assert.equal(idx.review_evidence.cumulative_new_Claude_proposals_source_adjudicated,66);
+assert.equal(idx.review_evidence.remaining_new_Claude_proposals_needing_individual_source_adjudication,48);
+console.log('PASS: batch5 14 thematic/saint links; 66/114 adjudicated; original many-to-many approvals and all photo gates retained.');
