@@ -1,0 +1,90 @@
+name: Divine Office — annual Roman calendar crosscheck (research, derived witness)
+
+on:
+  pull_request:
+    paths:
+      - 'tools/office-ordo/**'
+      - '.github/workflows/office-annual-calendar-crosscheck.yml'
+  workflow_dispatch:
+
+# Read-only. The FSSPX independent witness is unavailable from Actions
+# (HTTP 403) and is NOT silently substituted: this separately packaged
+# source derives from Divinum Officium and is NOT independent evidence.
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: office-derived-calendar-crosscheck-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  derived-roman-calendar-crosscheck:
+    name: Compare 730 dated Hours against pinned 1962 derivative data (research)
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    env:
+      SOURCE_RUN_ID: '42615804676'
+      AMBO_COMMIT: 'af4a22a4014e9a46cadafc4c2ede4aa784f5a6f2'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Offline 730-date universal, source-scope and no-publication tests
+        run: |
+          python3 -m unittest discover -s tools/office-ordo -p 'test_*.py' -v
+      - name: Download previously verified 5,840-Hour main-branch research source
+        uses: actions/download-artifact@v4
+        with:
+          run-id: ${{ env.SOURCE_RUN_ID }}
+          github-token: ${{ github.token }}
+          name: office-1960-la-2026-2027-private-reader
+          path: office-private-source/
+      - name: Obtain exactly pinned two-year 1962 derived calendar snapshots
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p calendar-witness
+          for year in 2026 2027; do
+            url="https://raw.githubusercontent.com/igorlaguiar/ambo-liturgical-calendars/${AMBO_COMMIT}/data/v1/1962/general-roman/${year}.json"
+            curl --fail --silent --show-error --location \
+              --retry 2 --retry-delay 3 --connect-timeout 15 --max-time 90 \
+              "$url" -o "calendar-witness/ambo-${year}.json"
+          done
+          test "$(git hash-object calendar-witness/ambo-2026.json)" = \
+            "62eba8c1d0f410eb446c89d1cfb030e07529b3f8"
+          test "$(git hash-object calendar-witness/ambo-2027.json)" = \
+            "923ad8de7f9b09a9746402c9560031ec79b1b565"
+          echo "AO_OFFICE_DERIVED_WITNESS_BLOBS_PINNED 2026=62eba8c 2027=923ad8d"
+      - name: Audit all source ranks, 730 days, 123 evening transitions and exceptions
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 tools/office-ordo/derived_calendar_crosscheck.py \
+            --reader office-private-source \
+            --calendar-2026 calendar-witness/ambo-2026.json \
+            --calendar-2027 calendar-witness/ambo-2027.json \
+            --output office-calendar-review/
+          python3 - <<'PY'
+          import json, pathlib
+          data = json.loads(pathlib.Path(
+              "office-calendar-review/summary.json"
+          ).read_text(encoding="utf8"))
+          assert data["civil_days_checked"] == 730
+          assert data["source_hours_checked"] == 5840
+          assert data["derived_calendar"]["independent"] is False
+          assert data["quality_gate"]["independent_ordo_witness_confirmed"] is False
+          assert data["quality_gate"]["public_reader_authorized"] is False
+          assert data["summary"]["source_evening_office_transitions"] == 123
+          print("AO_OFFICE_SOURCE_DERIVED_730_DAY_CROSSCHECK_RESEARCH_PASS"
+                " no_independent_breviary_certification=true public=false")
+          PY
+      - name: Store source consistency findings, not a public Prayer release
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: office-2026-2027-source-derived-roman-calendar-review
+          path: office-calendar-review/
+          retention-days: 90
+          if-no-files-found: warn
+          compression-level: 6
