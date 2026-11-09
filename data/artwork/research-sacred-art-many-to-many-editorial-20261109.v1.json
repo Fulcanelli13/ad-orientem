@@ -126,6 +126,12 @@
       "path": "data/artwork/research/m2m-liturgical-batch6-20261109.v1.json",
       "count": 12,
       "photo_publication": "NOT_AUTHORISED"
+    },
+    {
+      "kind": "LITURGICAL_FEAST_BATCH7",
+      "path": "data/artwork/research/m2m-liturgical-batch7-20261109.v1.json",
+      "count": 15,
+      "photo_publication": "NOT_AUTHORISED"
     }
   ],
   "key_rule": "No automatic deduplication of distinct physical works or artworkID aliases; each relationship points to its own source record.",
@@ -139,8 +145,8 @@
     "globally_rejected_original_with_later_preserved_slots": "cma-122338",
     "scene_batch2": "data/artwork/research/m2m-scene-adjudication-batch2-20261109.v1.json",
     "batch2_new_direct_scene_proposals": 15,
-    "cumulative_new_Claude_proposals_source_adjudicated": 78,
-    "remaining_new_Claude_proposals_needing_individual_source_adjudication": 36,
+    "cumulative_new_Claude_proposals_source_adjudicated": 93,
+    "remaining_new_Claude_proposals_needing_individual_source_adjudication": 21,
     "important_batch2_relational_downgrades": [
       "2026-01-13",
       "2026-11-22",
@@ -176,6 +182,27 @@
       "2026-06-13": "Murillo Gemäldegalerie 414 is recorded probably destroyed in 1945; surviving work must not be claimed",
       "2026-11-23": "Fungai Strasbourg 453.b; INHA related notice contains erroneous 453.a citation",
       "2026-11-21": "Baugin Granet main painting distinct from Rennes sketch; noncanonical Marian tradition"
-    }
+    },
+    "liturgical_batch7": "data/artwork/research/m2m-liturgical-batch7-20261109.v1.json",
+    "liturgical_batch7_findings": {
+      "2026-02-05": "Zurbarán Saint Agatha is Musée Fabre inv 852.1.3, but Claude URL is detail crop",
+      "2026-06-23": "Moreelse adult John the Baptist iconography does not narrate Zacharias' annunciation in Luke 1",
+      "2026-07-14": "Vaccaro Bonaventure vision supported by secondary Naples guide; exact institutional accession/attribution hold",
+      "2026-07-22": "Guido Reni Walters Art Museum 37.2631; other distinct Reni Magdalenes cannot be collapsed",
+      "2026-08-04": "Coello Saint Dominic confirmed Prado P000662; owner Prado source exclusion binding",
+      "2026-08-10": "Elsheimer NG1014 is preparation for St Lawrence martyrdom; multiple separate copies",
+      "2026-09-08": "Greek-school Marian Nativity icon PPP4898, signed Johannis 1785; traditional feast subject",
+      "2026-09-14": "Bruges 0000.GRO0470.I is anonymous COPY after Edelinck engraving after Le Brun",
+      "2026-10-17": "Giaquinto Sacred Heart saint painting in private collection; WGA reproduction low-res",
+      "2026-10-24": "Le Sueur Grenoble Raphael scene is Tobit 12, not a Gospel miracle",
+      "2026-11-11": "Bourdon 1938 F97 St Martin miracle is reduced replica; older catalogue called it St Gregory Thaumaturgus; RMN photo restricted",
+      "2026-11-13": "Murillo Saint Didacus Toulouse D1846 1 owned Louvre, on long-term loan",
+      "2026-11-18": "Ribera Strasbourg MBA180 depicts Apostles Peter/Paul, not basilica dedication; photo permission required",
+      "2026-11-19": "Pierre attribution Saint Elizabeth Magnin 1938F651 requires primary catalogue confirmation",
+      "2026-11-25": "de Crayer Grenoble 1622 Saint Catherine martyrdom confirmed; independent photograph rights pending"
+    },
+    "remaining_new_Claude_liturgical_proposals_needing_individual_source_adjudication": 0,
+    "remaining_new_Claude_thematic_proposals_needing_individual_source_adjudication": 15,
+    "remaining_new_Claude_scriptural_proposals_needing_individual_source_adjudication": 6
   }
 }
