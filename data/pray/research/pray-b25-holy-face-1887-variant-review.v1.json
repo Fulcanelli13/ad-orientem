@@ -1,6 +1,6 @@
 {
   "schema": "ao.pray.b25-holy-face-variant-review.v1",
-  "asOf": "2026-10-29",
+  "asOf": "2026-11-09",
   "purpose": "Secondary-witness triage only. Preserve the captured League full text and original HTML hash; no automatic or public text substitution.",
   "rawDigitalWitness": {
     "path": "data/pray/research/pray-b25-holy-face-janvier-1887-nine-full-english-days.v1.json",
@@ -14,7 +14,7 @@
     "facsimileLead": "https://holyfacechapel.org/wp-content/uploads/2025/09/ManualoftheArchconfraternityoftheHolyFace.pdf"
   },
   "photographed1887ManualCompared": false,
-  "note": "Holy Face Chapel HTML is presented as a transcription of the 1887 Manual; the St Joseph Missionaries PDF is a modern typeset reprint, not the 1887 page-image. Source witnesses may share textual ancestry and are not guaranteed fully independent.",
+  "note": "Holy Face Chapel HTML is presented as a transcription of the 1887 Manual; the St Joseph Missionaries PDF is a modern typeset reprint, not the 1887 page-image. Source witnesses may share textual ancestry and are not guaranteed fully independent. Editorial update 2026-11-09: B25-V07 introduces one narrowly corroborated display English word correction, decisive → derisive, without altering raw acquisition text or certifying the photographed 1887 English edition.",
   "variants": [
     {
       "id": "B25-V01",
@@ -81,11 +81,28 @@
       "editorialReading": "Virtue to practise",
       "decision": "SPELLING_ONLY_NO_SOURCE_OVERRIDE",
       "reason": "The variant that initially caused the parser failure is a legitimate heading; British/American spelling differences require no correction for completeness."
+    },
+    {
+      "id": "B25-V07",
+      "day": 5,
+      "section": "Opening historical meditation — English ‘judgment’ qualifier",
+      "staged": "after a decisive judgment",
+      "chapel": "after a derisive judgment",
+      "reprint": "after a derisive judgment",
+      "french1895": "après un jugement dérisoire",
+      "editorialReading": "after a derisive judgment",
+      "decision": "PROVISIONAL_ENGLISH_TRANSCRIPTION_TYPO_CORRECTION",
+      "reason": "The original staged raw digital English acquisition says 'decisive', whereas Holy Face Monastery's full 1887-associated transcription and the St Joseph Missionaries' modern PDF both say 'derisive', aligning with the 1895 French original printed 'dérisoire'. Only this one word changes in the displayed Day V English. The actual 1887 English photo scan remains uncollated; secondary reproductions may share a textual parent.",
+      "supportingSourceUrls": [
+        "https://holyfacechapel.org/manual-of-the-archconfraternity-of-the-holy-face-novena-to-the-holy-face/",
+        "https://sjmoftheholyface.org/wp-content/uploads/2024/01/Original-Novena-To-the-Holy-Face.pdf",
+        "https://www.bibliotheque-catholique.com/piete/abbe-pierre-desire-janvier/manuel-de-l-archiconfrerie-de-la-sainte-face"
+      ]
     }
   ],
   "sourceGates": {
     "rawHistoricalDigitalTextUnmodified": true,
-    "variantCount": 6,
+    "variantCount": 7,
     "sourceEditionSelectedForPublication": false,
     "original1887PageImageCollation": false,
     "englishEditionEditoriallyCertified": false,

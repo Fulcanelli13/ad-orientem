@@ -113,7 +113,7 @@
   "sharedPrayerPolicy": "1895 print abbreviates the opening and final prayers by old-page-number references; the scanned copy has corrections to current pp. 112 and 115. Day V references, rather than recomposes, Day I shared invocations, petitions and collect.",
   "comparison": {
     "against": "src/pray/holy-face-janvier-1887-b25.js",
-    "status": "NINE_SECTION_BILINGUAL_FIRST_PASS_ALIGNED__SECOND_PROOF_AND_PRINT_VARIANTS_PENDING",
+    "status": "DAY_V_ENGLISH_DERISIVE_APP_TYPO_CORRECTED_BY_SECONDARY_WITNESSES__ORIGINAL_1887_PRINT_COLLATION_PENDING",
     "englishParagraphIndicesByFrenchSection": {
       "opening_reference": [
         0
@@ -149,9 +149,16 @@
         "frSection": "narrative",
         "printedPage": 127,
         "frReading": "Jésus, après un jugement dérisoire",
-        "en1887DigitalReading": "Jesus, after a decisive judgment",
-        "classification": "HIGH_CONFIDENCE_MISTRANSLATION_OR_TRANSCRIPTION_VARIANT",
-        "action": "Preserve mock/derisory French dérisoire; do not certify English decisive as equivalent without the 1887 English printed witness."
+        "en1887DigitalReading": "Jesus, after a derisive judgment",
+        "classification": "CORRECTED_ENGLISH_APP_TRANSCRIPTION__FRENCH_DERISOIRE_AND_1887_DIGITAL_WITNESSES_AGREE",
+        "action": "The original app raw English acquisition read 'decisive'; the monastery 1887-English HTML transcription and two reprint PDFs all read 'derisive', matching 1895 photographed French dérisoire. One-word canonical English reading corrected to 'derisive'. Original 1887 book print photographic collation still pending; do not count it as physically image-verified.",
+        "priorAppReading": "Jesus, after a decisive judgment",
+        "verificationTier": "TWO_REPRINTS_PLUS_MONASTERY_1887_ENGLISH_TRANSCRIPTION__1887_PHOTOGRAPHIC_SCAN_NOT_COLLATED",
+        "supportingEnglishWitnesses": [
+          "https://holyfacechapel.org/manual-of-the-archconfraternity-of-the-holy-face-novena-to-the-holy-face/",
+          "https://sjmoftheholyface.org/wp-content/uploads/2024/01/Original-Novena-To-the-Holy-Face.pdf",
+          "https://www.divineinfant.on.ca/docs/holyfacenovena_orig.pdf"
+        ]
       },
       {
         "frSection": "narrative",
@@ -200,7 +207,7 @@
   },
   "remaining": [
     "Independent source-image second proofreading of all French Day V sections for accents, punctuation and wording",
-    "Verify 1887 original English printed text (esp. decisive/dérisoire and house/courtyard)",
+    "Verify 1887 original photographic printed English text (app derisive now corroborated by monastery/reprints and French dérisoire; house/courtyard remains an edition or translation variant)",
     "Complete days VI–IX first-pass transcriptions; then consolidate and second-proof all nine before publication",
     "Gate any public French day activation on full source certification and 320/390 EN/FR native reader QA"
   ],

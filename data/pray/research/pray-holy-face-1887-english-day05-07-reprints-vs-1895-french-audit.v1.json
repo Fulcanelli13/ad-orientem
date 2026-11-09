@@ -1,0 +1,141 @@
+{
+  "schema": "ao.pray.holy-face-1887-english-day05-07-transcription-witness-audit.v1",
+  "date": "2026-11-09",
+  "canonicalId": "holy_face_1887",
+  "novenaPagesOriginalEnglishClaimed": [
+    108,
+    142
+  ],
+  "primaryEnglishPhotographicPrintedEdition": {
+    "year": 1887,
+    "publisher": "Oratory of the Holy Face, Tours",
+    "translator": "Mrs A.-R. Bennett",
+    "scanUrl": "https://holyfacechapel.org/wp-content/uploads/2025/09/ManualoftheArchconfraternityoftheHolyFace.pdf",
+    "status": "LOCATED_BUT_NOT_VISUALLY_COLLATED",
+    "sizeApproximation": "~174 MB",
+    "reason": "Available PDF exceeded browsing retrieval capacity; neither this ledger nor the secondary texts can establish the exact photographic 1887 book reading."
+  },
+  "sourceWitnesses": [
+    {
+      "id": "MONASTERY_EN_1887_TRANSCRIPTION",
+      "kind": "INSTITUTIONAL_HTML_TRANSCRIPTION_CLAIMING_1887_PRINT",
+      "url": "https://holyfacechapel.org/manual-of-the-archconfraternity-of-the-holy-face-novena-to-the-holy-face/",
+      "daysReviewed": [
+        5,
+        6,
+        7
+      ],
+      "observations": "All English Novena days on a single page, with transcription/OCR artifacts in other paragraphs; not treated as photographic print."
+    },
+    {
+      "id": "ST_JOSEPHS_EN_REPRINT_2024",
+      "kind": "REFORMATTED_NINE_DAY_PDF",
+      "url": "https://sjmoftheholyface.org/wp-content/uploads/2024/01/Original-Novena-To-the-Holy-Face.pdf",
+      "daysReviewed": [
+        5,
+        6,
+        7
+      ],
+      "pdfZeroBasedPages": {
+        "day5": 5,
+        "day6": 6,
+        "day7": 7
+      },
+      "photoRenderingReviewed": true,
+      "observations": "A digitally typeset reprint, not an image of the 1887 original book. Same phrases as monastery transcript; may share earlier source data."
+    },
+    {
+      "id": "DIVINE_INFANT_EN_REPRINT",
+      "kind": "MIRRORED_DIGITALLY_TYPESET_PDF",
+      "url": "https://www.divineinfant.on.ca/docs/holyfacenovena_orig.pdf",
+      "daysReviewed": [
+        5,
+        6,
+        7
+      ],
+      "photoRenderingReviewed": true,
+      "observations": "Close duplicate of St Joseph's typeset reprint; not counted as a fully independent transcription. Original PDF page 7 was photographed through web screenshot; other content from indexed PDF."
+    },
+    {
+      "id": "JANVIER_FR_1895_ORIGINAL_PRINT",
+      "kind": "DIRECT_PHOTOGRAPHIC_FRENCH_1895_THIRD_EDITION",
+      "url": "https://www.bibliotheque-catholique.com/piete/abbe-pierre-desire-janvier/manuel-de-l-archiconfrerie-de-la-sainte-face",
+      "daysReviewed": [
+        5,
+        6,
+        7
+      ],
+      "photoRenderingReviewed": true,
+      "observations": "1895 French printed pp.127–136; not textually identical to 1887 English translation."
+    }
+  ],
+  "comparisons": [
+    {
+      "day": 5,
+      "englishSection": "narrative",
+      "french1895": "Jésus, après un jugement dérisoire",
+      "oldAppEnglish": "Jesus, after a decisive judgment",
+      "monastery1887Transcription": "Jesus, after a derisive judgment",
+      "reprintEnglish": "Jesus, after a derisive judgment",
+      "finding": "HIGH_CONFIDENCE_APP_ENGLISH_TRANSCRIPTION_ERROR",
+      "action": "CORRECT_APP_ONE_WORD_DECISIVE_TO_DERISIVE",
+      "canonicalEnglishNow": "Jesus, after a derisive judgment",
+      "status": "CORRECTED_BY_TWO_1887_ATTRIBUTED_ENGLISH_TEXT_FAMILIES_AND_FRENCH_PRINT__ORIGINAL_EN_1887_SCAN_NOT_PHOTOCOLLATED"
+    },
+    {
+      "day": 5,
+      "englishSection": "narrative",
+      "french1895": "dans la cour du grand prêtre",
+      "monastery1887Transcription": "to the house of Caiaphas",
+      "reprintEnglish": "to the house of Caiphas",
+      "finding": "PERSISTING_EDITORIAL_OR_TRANSLATION_VARIANT_COURTYARD_VS_HOUSE",
+      "action": "DO_NOT_HARMONIZE_BETWEEN_EDITIONS",
+      "status": "UNRESOLVED_PRINT_EDITION_OR_TRANSLATOR_CHOICE"
+    },
+    {
+      "day": 6,
+      "englishSection": "narrative",
+      "french1895": "Le prétoire de Pilate fut pour Notre-Seigneur le théâtre sanglant de deux supplices également ignominieux et cruels, la flagellation et le couronnement d’épines.",
+      "monastery1887Transcription": "First Day VI body begins directly: I. The sufferings of the Holy Face",
+      "reprintEnglish": "Day VI first reflection begins directly: I. The sufferings of the Holy Face",
+      "finding": "FRENCH_1895_EXTRA_INTRO_NOT_IN_1887_ASSOCIATED_ENGLISH_TRANSCRIPTIONS",
+      "action": "DO_NOT_INSERT_FRENCH_SENTENCE_INTO_1887_ENGLISH_APP",
+      "status": "ENGLISH_SOURCE_ORDER_CORROBORATED__PHOTOGRAPHIC_EN_PRINT_STILL_UNCOLLATED"
+    },
+    {
+      "day": 7,
+      "englishSection": "point1",
+      "french1895": "elle l’essuie et le soulage",
+      "monastery1887Transcription": "she wipes it and raises it",
+      "reprintEnglish": "She wipes it and raises it",
+      "finding": "PERSISTING_TRANSLATOR_OR_EDITION_VERB_DIFFERENCE",
+      "action": "DO_NOT_REWRITE_1887_ASSOCIATED_ENGLISH_FROM_1895_FRENCH",
+      "status": "ENGLISH_SOURCE_PHRASE_CORROBORATED__PHOTOGRAPHIC_EN_PRINT_STILL_UNCOLLATED"
+    }
+  ],
+  "sourceReliability": {
+    "secondaryWitnessesNotAssumedIndependent": true,
+    "claimAboutOriginal1887Print": "UNVERIFIED",
+    "languageMixingProhibited": true,
+    "appChangeWordCount": 1,
+    "rawAcquiredEnglishResearchRecordLeftUnchanged": true,
+    "readerEnglishDaysChanged": [
+      5
+    ],
+    "readerFrenchDaysChanged": [],
+    "readerHolyFaceStructureChanged": false
+  },
+  "unresolved": [
+    "Read original photographed 1887 book, printed pp.108–142 for definitive English print-word certification",
+    "Check whether monastery HTML and 2024 reprint descend from same electronic transcription (agreement alone not independent print proof)",
+    "Classify Day V courtyard/house and Day VII soulage/raises against original 1887 photographed wording",
+    "Independent French normalized-text/full print line collation Days I–VII, human editorial signoff before FR body activation"
+  ],
+  "metadata": {
+    "sourceClassification": "TEXTUAL_SOURCE_QUALITY_REVIEW",
+    "legacyRawSourceReading": "decisive judgment",
+    "legacyRawDataPreservedAt": "data/pray/research/pray-b25-holy-face-janvier-1887-nine-full-english-days.v1.json",
+    "publicEnglishReadingAfterCorrection": "derisive judgment",
+    "releaseConstraint": "Correct English only on evidence, do not claim original 1887 print-image verification, do not release French."
+  }
+}
