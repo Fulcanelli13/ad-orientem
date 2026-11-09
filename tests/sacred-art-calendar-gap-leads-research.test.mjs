@@ -19,16 +19,16 @@ assert.equal(openPrayerStatuses.filter(x=>x==='SUPPLEMENTARY_NOT_ASSIGNED').leng
 assert.equal(openPrayerStatuses.filter(x=>x==='HOLD_RESPECTED').length,14);
 
 const linked=audit.records.filter(x=>x.candidateCount>0);
-assert.equal(linked.length,99);
-assert.equal(audit.records.filter(x=>!x.candidateCount).length,71);
+assert.equal(linked.length,103);
+assert.equal(audit.records.filter(x=>!x.candidateCount).length,67);
 assert.deepEqual(Object.entries(audit.counts.byClass).map(([rank,x])=>[rank,x.unmatchedBaseline,x.withResearchLeads,x.stillWithoutLeads]),[
- ['II',29,25,4],['III',101,39,62],['IV',40,35,5]
+ ['II',29,25,4],['III',101,43,58],['IV',40,35,5]
 ]);
 const edges=audit.records.flatMap(x=>x.artworkRelationships);
-assert.equal(edges.length,116);
+assert.equal(edges.length,120);
 assert.equal(edges.filter(x=>x.kind==='EXISTING_989_GROUP_RESEARCH_LINK').length,25);
-assert.equal(edges.filter(x=>x.kind==='NEW_INSTITUTIONAL_OBJECT_LEAD').length,82);
-assert.equal(edges.filter(x=>x.kind==='SECONDARY_OR_COMMONS_RESEARCH_ONLY').length,9);
+assert.equal(edges.filter(x=>x.kind==='NEW_INSTITUTIONAL_OBJECT_LEAD').length,85);
+assert.equal(edges.filter(x=>x.kind==='SECONDARY_OR_COMMONS_RESEARCH_ONLY').length,10);
 assert.equal(audit.counts.newAuthorizedAssignments,0);
 const groups=new Map(original.map(x=>[x.workGroupId,x]));
 const rejectedIDs=new Set(rejected.map(x=>String(x.id||'').toLowerCase()));
@@ -70,8 +70,13 @@ assert.ok(audit.records.find(x=>x.date==='2026-09-18').artworkRelationships.some
 assert.ok(audit.records.find(x=>x.date==='2026-09-22').artworkRelationships.some(x=>x.key==='Louvre:MI888'),'Cerezo original Thomas of Villanova');
 assert.ok(audit.records.find(x=>x.date==='2026-10-03').artworkRelationships.every(x=>x.newPlacementAuthority==='NOT_GRANTED'),'protected Thérèse cover stays');
 assert.equal(audit.records.find(x=>x.date==='2026-01-22').artworkRelationships[0].relation,'MULTI_SAINT_FEAST_PARTIAL');
+assert.ok(audit.records.find(x=>x.date==='2026-08-19').artworkRelationships.some(x=>x.key==='Orne:998.25.30'));
+assert.ok(audit.records.find(x=>x.date==='2026-08-21').artworkRelationships.some(x=>x.key==='Chambery:M170'&&x.remark.includes('AFTER Champaigne')));
+assert.ok(audit.records.find(x=>x.date==='2026-09-03').artworkRelationships.some(x=>x.key==='MullerUry:PiusX:1907'&&x.kind==='SECONDARY_OR_COMMONS_RESEARCH_ONLY'));
+assert.ok(audit.records.find(x=>x.date==='2026-11-10').artworkRelationships.some(x=>x.key==='Holburne:A17'&&x.remark.includes('Piazzetta')));
+
 
 
 assert.ok(audit.records.find(x=>x.date==='2026-11-08').artworkRelationships.some(x=>x.key==='Thyssen:1979.62'));
 assert.ok(audit.records.find(x=>x.date==='2026-10-18').artworkRelationships.some(x=>x.key==='REVIEW::commons:150920'));
-console.log('PASS: 170 unchanged Calendar holds, 27 protected Prayer holds, 99 dated research leads / 116 edges, no rejected originals or publication authority.');
+console.log('PASS: 170 unchanged Calendar holds, 27 protected Prayer holds, 103 dated research leads / 120 edges, no rejected originals or publication authority.');
