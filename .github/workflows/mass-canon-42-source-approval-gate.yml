@@ -7,6 +7,8 @@ on:
       - "tests/reader-canon-19-english-page-evidence.mjs"
       - "tests/reader-canon-23-latin-page-image-evidence.mjs"
       - "tests/reader-canon-c0190-critical-cross-collation.mjs"
+      - "tests/reader-canon-42-cmaa-vatican-page-crosswalk.mjs"
+      - "data/research/mass-canon-42-cmaa-vatican-printed-page-evidence-20261109.v1.json"
       - "data/research/mass-canon-c0190-critical-cross-offset-20261109.v1.json"
       - "data/research/mass-canon-23-latin-page-image-evidence-20261109.v1.json"
       - "data/research/mass-canon-19-english-booklet-page-evidence-20261109.v1.json"
@@ -24,6 +26,8 @@ on:
       - "tests/reader-canon-19-english-page-evidence.mjs"
       - "tests/reader-canon-23-latin-page-image-evidence.mjs"
       - "tests/reader-canon-c0190-critical-cross-collation.mjs"
+      - "tests/reader-canon-42-cmaa-vatican-page-crosswalk.mjs"
+      - "data/research/mass-canon-42-cmaa-vatican-printed-page-evidence-20261109.v1.json"
       - "data/research/mass-canon-c0190-critical-cross-offset-20261109.v1.json"
       - "data/research/mass-canon-23-latin-page-image-evidence-20261109.v1.json"
       - "data/research/mass-canon-19-english-booklet-page-evidence-20261109.v1.json"
@@ -51,6 +55,7 @@ jobs:
           node --check tests/reader-canon-19-english-page-evidence.mjs
           node --check tests/reader-canon-23-latin-page-image-evidence.mjs
           node --check tests/reader-canon-c0190-critical-cross-collation.mjs
+          node --check tests/reader-canon-42-cmaa-vatican-page-crosswalk.mjs
       - name: Require all 42 exact 1962 source cues, 19/23 split, 29 source holds and no LIVE publication
         run: node tests/reader-canon-42-approval-queue.mjs
       - name: Crosscheck 19 English translation printed pages without claiming original Latin facsimile or editorial signoff
@@ -59,6 +64,8 @@ jobs:
         run: node tests/reader-canon-23-latin-page-image-evidence.mjs
       - name: Critically collate C0190 cross before coelésti without publishing a gesture
         run: node tests/reader-canon-c0190-critical-cross-collation.mjs
+      - name: Check all 42 CMAA-credited Vatican-1962 printed-page leads without granting copy or gesture approval
+        run: node tests/reader-canon-42-cmaa-vatican-page-crosswalk.mjs
       - name: Preserve existing 42 source anchors in 4 forms and zero LIVE French drafts
         run: |
           node tests/reader-canon-detailed-rubric-backfill.mjs
