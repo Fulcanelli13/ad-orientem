@@ -6,9 +6,9 @@
   "target": 400,
   "actual": 400,
   "composition": {
-    "canonical_published_customs": 36,
-    "historical_weiser": 192,
-    "historical_pitre": 172
+    "canonical_published_customs": 35,
+    "historical_weiser": 190,
+    "historical_pitre": 175
   },
   "eligibility": "Pre-existing source-linked EN/FR customs copy; not invented from Glossary definitions or headings.",
   "method": {
@@ -366,14 +366,10 @@
       "DYK-UM03-049"
     ],
     "held_replacements_added": 50,
-    "remaining_source_candidate_reserve": 8,
+    "remaining_source_candidate_reserve": 5,
     "remaining_source_candidate_reserve_ids": [
       {
         "id": "DYK-UM03-027",
-        "reason": "EXTRA_RESERVE"
-      },
-      {
-        "id": "DYK-UM03-030",
         "reason": "EXTRA_RESERVE"
       },
       {
@@ -381,15 +377,7 @@
         "reason": "EXTRA_RESERVE"
       },
       {
-        "id": "DYK-UM03-036",
-        "reason": "EXTRA_RESERVE"
-      },
-      {
         "id": "DYK-UM03-041",
-        "reason": "EXTRA_RESERVE"
-      },
-      {
-        "id": "DYK-UM03-042",
         "reason": "EXTRA_RESERVE"
       },
       {
@@ -404,7 +392,38 @@
     ],
     "selection_note": "400 manuscript EN/FR customs records have no exact English sentence duplication against 201 currently published Did You Know manifest records (H225). This is not a full semantic dedupe or a publication signoff.",
     "additional_semantic_publication_overlap_removed": "DYK-H04-W-B-089",
-    "additional_source_checked_reserve_promoted": "DYK-UM03-035"
+    "additional_source_checked_reserve_promoted": "DYK-UM03-035",
+    "editorial_priority_replacements_20261110": [
+      {
+        "id": "DYK-CUSTOMS-CANON-DEV-006",
+        "copy": {
+          "en": "Pilgrimage is a legitimate personal or collective act of Catholic piety. It is commendable and optional, not a universal obligation.",
+          "fr": "Le pèlerinage, individuel ou collectif, est un acte légitime de piété catholique, recommandé mais facultatif. Il ne constitue pas une obligation universelle."
+        },
+        "reason": "GENERIC_PILGRIMAGE_DEFINITION_NOT_DISCOVERY"
+      },
+      {
+        "id": "DYK-H04-W-A-046",
+        "copy": {
+          "en": "The Moravian Christmas putz in Bethlehem, Pennsylvania, could surround a Nativity scene with miniature houses, waterfalls, bridges and landscapes.",
+          "fr": "À Bethlehem, en Pennsylvanie, le putz de Noël morave pouvait entourer la crèche de maisons miniatures, de cascades, de ponts et de paysages."
+        },
+        "reason": "MORAVIAN_TRADITION_NOT_CANONICAL_CATHOLIC_CUSTOMS_PRIORITY"
+      },
+      {
+        "id": "DYK-UM02-009",
+        "copy": {
+          "en": "Did you know that the traditional Latin Easter greeting Surrexit Dominus vere means 'The Lord has truly risen'?",
+          "fr": "Saviez-vous que la salutation pascale traditionnelle Surrexit Dominus vere signifie « Le Seigneur est vraiment ressuscité » ?"
+        },
+        "reason": "LATIN_TRANSLATION_GLOSSARY_NOT_CUSTOM_ACTION"
+      }
+    ],
+    "promoted_reserve_ids": [
+      "DYK-UM03-036",
+      "DYK-UM03-042",
+      "DYK-UM03-030"
+    ]
   },
   "publication_gate": {
     "all_records_authorized_for_new_home_publication": false,
@@ -621,122 +640,6 @@
         "period": "Early modern → present",
         "custom_class": "FRENCH_CATHOLIC_CUSTOM",
         "guardrail": "Calendar points to the practice; devotional modules own prayer content.",
-        "publication_state": "PUBLISHED"
-      },
-      "provenance": {
-        "repository": "Fulcanelli13/ad-orientem",
-        "branch": "main",
-        "records": [
-          "data/customs/customs-atlas-seed.v1.json",
-          "data/customs/customs-fr-canonical-copy.v1.json",
-          "data/customs/customs-p0-guidance-en-fr.v1.json",
-          "data/customs/customs-p1-guidance-en-fr.v1.json",
-          "data/customs/source-registry.v1.json"
-        ]
-      },
-      "review": {
-        "text_reused_from_published_customs": true,
-        "new_discovery_editorial_signoff": false,
-        "source_independently_recertified_in_this_batch": false
-      },
-      "discovery_publication_authorized": false
-    },
-    {
-      "id": "DYK-CUSTOMS-CANON-DEV-006",
-      "kind": "CANONICAL_CUSTOM",
-      "family": "CANONICAL_CUSTOMS",
-      "title": "Pilgrimage to a shrine or holy place",
-      "statement": {
-        "en": "Pilgrimage is a legitimate personal or collective act of Catholic piety. It is commendable and optional, not a universal obligation.",
-        "fr": "Le pèlerinage, individuel ou collectif, est un acte légitime de piété catholique, recommandé mais facultatif. Il ne constitue pas une obligation universelle."
-      },
-      "source_ids": [
-        "DPP-2001",
-        "ECF-PILGRIMAGE",
-        "BEAURAING-PILGRIMAGE-CUSTOM",
-        "NEUMANN-PILGRIMAGE-CUSTOM",
-        "CZESTOCHOWA-US-WALK-CUSTOM",
-        "SETON-SEA-SERVICES-CUSTOM",
-        "BERMONT-PILGRIMAGE-CUSTOM",
-        "PELLEVOISIN-ANNUAL-CUSTOM",
-        "RUE-DU-BAC-PILGRIMAGE-CUSTOM",
-        "WIGRATZBAD-PILGRIMAGE-CUSTOM",
-        "BETTBRUNN-PILGRIMAGE-CUSTOM",
-        "AURIESVILLE-RESTORATION-CUSTOM",
-        "LITCHFIELD-LOURDES-PILGRIMAGE-CUSTOM"
-      ],
-      "source_links": [
-        {
-          "source_id": "DPP-2001",
-          "url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
-          "title": "Directory on Popular Piety and the Liturgy"
-        },
-        {
-          "source_id": "ECF-PILGRIMAGE",
-          "url": "https://eglise.catholique.fr/approfondir-sa-foi/la-celebration-de-la-foi/les-pelerinages/372388-pelerinages-et-sanctuaires-en-questions/",
-          "title": "Pèlerinages et sanctuaires en questions"
-        },
-        {
-          "source_id": "BEAURAING-PILGRIMAGE-CUSTOM",
-          "url": "https://sanctuairedebeauraing.be/",
-          "title": "Sanctuaire Notre-Dame de Beauraing"
-        },
-        {
-          "source_id": "NEUMANN-PILGRIMAGE-CUSTOM",
-          "url": "https://www.stjohnneumann.org/pilgrimagesandretreats",
-          "title": "Pilgrimages and Retreats — National Shrine of St. John Neumann"
-        },
-        {
-          "source_id": "CZESTOCHOWA-US-WALK-CUSTOM",
-          "url": "https://czestochowa.us/en/ministries/6-pilgrimage",
-          "title": "Pilgrimage — American Czestochowa"
-        },
-        {
-          "source_id": "SETON-SEA-SERVICES-CUSTOM",
-          "url": "https://setonshrine.org/press-release-the-national-shrine-of-saint-elizabeth-ann-seton-hosts-annual-pilgrimage-and-mass-for-the-sea-services/",
-          "title": "Annual Pilgrimage and Mass for the Sea Services"
-        },
-        {
-          "source_id": "BERMONT-PILGRIMAGE-CUSTOM",
-          "url": "https://www.nd-bermont.fr/",
-          "title": "Chapelle Notre-Dame de Bermont"
-        },
-        {
-          "source_id": "PELLEVOISIN-ANNUAL-CUSTOM",
-          "url": "https://www.pellevoisin.net/activites-du-sanctuaire-2/le-pelerinage-annuel/",
-          "title": "Le pèlerinage annuel"
-        },
-        {
-          "source_id": "RUE-DU-BAC-PILGRIMAGE-CUSTOM",
-          "url": "https://www.chapellenotredamedelamedaillemiraculeuse.com/faire-pelerinage/contact/",
-          "title": "Organiser un pèlerinage à la rue du Bac"
-        },
-        {
-          "source_id": "WIGRATZBAD-PILGRIMAGE-CUSTOM",
-          "url": "https://www.gebetsstaette.de/",
-          "title": "Gebetsstätte Maria vom Sieg Wigratzbad"
-        },
-        {
-          "source_id": "BETTBRUNN-PILGRIMAGE-CUSTOM",
-          "url": "https://bistum-regensburg.de/news/die-hostienwallfahrt-von-bettbrunn",
-          "title": "Die Hostienwallfahrt von Bettbrunn"
-        },
-        {
-          "source_id": "AURIESVILLE-RESTORATION-CUSTOM",
-          "url": "https://pilgrimage-for-restoration.org/",
-          "title": "Pilgrimage for Restoration"
-        },
-        {
-          "source_id": "LITCHFIELD-LOURDES-PILGRIMAGE-CUSTOM",
-          "url": "https://www.shrinect.org/",
-          "title": "Lourdes in Litchfield"
-        }
-      ],
-      "scope": {
-        "family": "Pilgrimage",
-        "period": "Ancient → present",
-        "custom_class": "DEVOTIONAL_OPTION",
-        "guardrail": "Do not turn local pilgrimage calendars into universal app law.",
         "publication_state": "PUBLISHED"
       },
       "provenance": {
@@ -9297,59 +9200,6 @@
         "branch": "research/dyk-source-first-batch01-20261030",
         "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
         "original_record_id": "DYK-H04-W-A-039",
-        "original_category": "WEISER_1958",
-        "original_source_owner": null
-      },
-      "review": {
-        "prior_original_page_image": true,
-        "original_page_freshly_checked_here": false,
-        "original_text_anchor": false,
-        "original_page_pointer_only": false,
-        "original_english_editorial_approved": false,
-        "original_french_editorial_approved": false,
-        "final_semantic_review": false,
-        "independent_historical_corrob_in_this_batch": false,
-        "en_fr_final_signoff_in_this_batch": false,
-        "publication_authorized": false
-      },
-      "discovery_publication_authorized": false
-    },
-    {
-      "id": "DYK-H04-W-A-046",
-      "kind": "HISTORICAL_CUSTOM_OBSERVATION",
-      "family": "WEISER_1958",
-      "title": null,
-      "statement": {
-        "en": "The Moravian Christmas putz in Bethlehem, Pennsylvania, could surround a Nativity scene with miniature houses, waterfalls, bridges and landscapes.",
-        "fr": "À Bethlehem, en Pennsylvanie, le putz de Noël morave pouvait entourer la crèche de maisons miniatures, de cascades, de ponts et de paysages."
-      },
-      "source_ids": [
-        "WEI58-08-003"
-      ],
-      "source_links": [
-        {
-          "source_id": "WEI58-08-003",
-          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
-          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
-          "locator": {
-            "printed_pages": [
-              96
-            ],
-            "scan_pdf_page_1based": null,
-            "italian_anchor": null
-          }
-        }
-      ],
-      "scope": {
-        "historical_observation_only": true,
-        "not_a_universal_1962_rite": true,
-        "current_local_practice_not_inferred": true
-      },
-      "provenance": {
-        "repository": "Fulcanelli13/ad-orientem",
-        "branch": "research/dyk-source-first-batch01-20261030",
-        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
-        "original_record_id": "DYK-H04-W-A-046",
         "original_category": "WEISER_1958",
         "original_source_owner": null
       },
@@ -22585,76 +22435,6 @@
       "discovery_publication_authorized": false
     },
     {
-      "id": "DYK-UM02-009",
-      "kind": "HISTORICAL_CUSTOM_OBSERVATION",
-      "family": "WEISER_1958",
-      "title": null,
-      "statement": {
-        "en": "Did you know that the traditional Latin Easter greeting Surrexit Dominus vere means 'The Lord has truly risen'?",
-        "fr": "Saviez-vous que la salutation pascale traditionnelle Surrexit Dominus vere signifie « Le Seigneur est vraiment ressuscité » ?"
-      },
-      "source_ids": [
-        "WEI58-16-005"
-      ],
-      "source_links": [
-        {
-          "source_id": "WEI58-16-005",
-          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
-          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
-          "locator": {
-            "printed_pages": [
-              212
-            ],
-            "scan_pdf_page_1based": null,
-            "italian_anchor": null
-          }
-        }
-      ],
-      "scope": {
-        "mode": "HISTORICAL_SOURCE_BOUNDED",
-        "historical_only": true,
-        "not_universal_liturgical_law": true,
-        "current_observance_not_inferred": true,
-        "geographical_context": [
-          "Early Latin Christian practice"
-        ],
-        "original_scope_metadata_preserved": true,
-        "original_scope_object": {
-          "geography": [
-            "Early Latin Christian practice"
-          ],
-          "preliminary_scope": "HISTORICAL_GREETING_CANDIDATE",
-          "note": "Historical liturgical/devotional phrase",
-          "historical_only": true,
-          "not_universal_law": true
-        },
-        "historical_observation_only": true,
-        "not_a_universal_1962_rite": true,
-        "current_local_practice_not_inferred": true
-      },
-      "provenance": {
-        "repository": "Fulcanelli13/ad-orientem",
-        "branch": "production/dyk-500-growth-364-20261031",
-        "path": "data/research/did-you-know/dyk-production-growth-190-310-bilingual-drafts.v1.json",
-        "original_record_id": "DYK-UM02-009",
-        "original_category": "WEISER_1958",
-        "original_source_owner": "data/research/did-you-know/dyk-ultramaster-batch02a-weiser.v1.json"
-      },
-      "review": {
-        "prior_original_page_image": false,
-        "original_page_freshly_checked_here": false,
-        "original_text_anchor": false,
-        "original_page_pointer_only": false,
-        "original_english_editorial_approved": false,
-        "original_french_editorial_approved": false,
-        "final_semantic_review": false,
-        "independent_historical_corrob_in_this_batch": false,
-        "en_fr_final_signoff_in_this_batch": false,
-        "publication_authorized": false
-      },
-      "discovery_publication_authorized": false
-    },
-    {
       "id": "DYK-UM02-010",
       "kind": "HISTORICAL_CUSTOM_OBSERVATION",
       "family": "WEISER_1958",
@@ -23541,6 +23321,168 @@
         "prior_original_page_image": false,
         "original_page_freshly_checked_here": false,
         "original_text_anchor": false,
+        "original_page_pointer_only": false,
+        "original_english_editorial_approved": false,
+        "original_french_editorial_approved": false,
+        "final_semantic_review": false,
+        "independent_historical_corrob_in_this_batch": false,
+        "en_fr_final_signoff_in_this_batch": false,
+        "publication_authorized": false
+      },
+      "discovery_publication_authorized": false
+    },
+    {
+      "id": "DYK-UM03-036",
+      "kind": "HISTORICAL_CUSTOM_OBSERVATION",
+      "family": "PITRE_1900",
+      "title": null,
+      "statement": {
+        "en": "Pitrè described the statues of Saints Cosmas and Damian returning to their Palermo church around midnight, to the sound of bells.",
+        "fr": "Pitrè décrivait le retour des statues des saints Côme et Damien dans leur église de Palerme vers minuit, au son des cloches."
+      },
+      "source_ids": [
+        "PIT1900-NEW-056"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-NEW-056",
+          "url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              86
+            ],
+            "scan_pdf_page_1based": 148,
+            "italian_anchor": "mezzanotte"
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "regional_scope": "Sicily, Pitrè 1900",
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r22-21-added-review-cards.v1.json",
+        "original_record_id": "DYK-UM03-036",
+        "original_category": "customs",
+        "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
+      },
+      "review": {
+        "prior_original_page_image": true,
+        "original_page_freshly_checked_here": false,
+        "original_text_anchor": true,
+        "original_page_pointer_only": false,
+        "original_english_editorial_approved": false,
+        "original_french_editorial_approved": false,
+        "final_semantic_review": false,
+        "independent_historical_corrob_in_this_batch": false,
+        "en_fr_final_signoff_in_this_batch": false,
+        "publication_authorized": false
+      },
+      "discovery_publication_authorized": false
+    },
+    {
+      "id": "DYK-UM03-042",
+      "kind": "HISTORICAL_CUSTOM_OBSERVATION",
+      "family": "PITRE_1900",
+      "title": null,
+      "statement": {
+        "en": "In Gratteri, Pitrè describes Saint James's statue being rushed across the square of the Franciscan convent and brought to the church door to 'visit' Saint Francis.",
+        "fr": "À Gratteri, Pitrè décrit la statue de saint Jacques traversant au pas de course la place du couvent franciscain, puis conduite à la porte de l'église pour « rendre visite » à saint François."
+      },
+      "source_ids": [
+        "PIT1900-NEW-082"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-NEW-082",
+          "url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              125
+            ],
+            "scan_pdf_page_1based": 187,
+            "italian_anchor": "convento"
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "regional_scope": "Sicily, Pitrè 1900",
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r22-21-added-review-cards.v1.json",
+        "original_record_id": "DYK-UM03-042",
+        "original_category": "customs",
+        "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
+      },
+      "review": {
+        "prior_original_page_image": true,
+        "original_page_freshly_checked_here": false,
+        "original_text_anchor": true,
+        "original_page_pointer_only": false,
+        "original_english_editorial_approved": false,
+        "original_french_editorial_approved": false,
+        "final_semantic_review": false,
+        "independent_historical_corrob_in_this_batch": false,
+        "en_fr_final_signoff_in_this_batch": false,
+        "publication_authorized": false
+      },
+      "discovery_publication_authorized": false
+    },
+    {
+      "id": "DYK-UM03-030",
+      "kind": "HISTORICAL_CUSTOM_OBSERVATION",
+      "family": "PITRE_1900",
+      "title": null,
+      "statement": {
+        "en": "In old Palermo, Saint Rosalia's relic procession followed the Capo–San Pietro quarters one year and the Albergheria–Kalsa quarters the next.",
+        "fr": "Dans l'ancien Palerme, la procession des reliques de sainte Rosalie passait une année par les quartiers du Capo et de San Pietro, puis l'année suivante par l'Albergheria et la Kalsa."
+      },
+      "source_ids": [
+        "PIT1900-NEW-024"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-NEW-024",
+          "url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              36
+            ],
+            "scan_pdf_page_1based": 98,
+            "italian_anchor": "quartieri dell albergarla e della kalsa"
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "regional_scope": "Sicily, Pitrè 1900",
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r22-21-added-review-cards.v1.json",
+        "original_record_id": "DYK-UM03-030",
+        "original_category": "customs",
+        "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
+      },
+      "review": {
+        "prior_original_page_image": true,
+        "original_page_freshly_checked_here": false,
+        "original_text_anchor": true,
         "original_page_pointer_only": false,
         "original_english_editorial_approved": false,
         "original_french_editorial_approved": false,
