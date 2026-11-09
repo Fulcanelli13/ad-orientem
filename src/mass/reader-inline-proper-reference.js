@@ -8,6 +8,7 @@ import {schola1961OriginalFacsimile} from "./reader-schola-original-facsimile.js
 import {ALL_SAINTS_REFERENCE_SCORES} from "./reader-inline-all-saints-reference.js";
 import {EPIPHANY_REFERENCE_SCORES} from "./reader-inline-epiphany-reference.js";
 import {IMMACULATE_CONCEPTION_REFERENCE_SCORES} from "./reader-inline-immaculate-reference.js";
+import {ADVENT_SUNDAY_REFERENCE_SCORES} from "./reader-inline-advent-sundays-reference.js";
 import {createProperReferenceRegistry,PROPER_REFERENCE_LABELS} from "./reader-inline-proper-registry.js";
 import {participationReferenceScoresForParagraph} from "./reader-participation-reference-scores.js";
 import {prefaceCelebrantInlineScoresForParagraph} from "./reader-preface-celebrant-inline-reference.js";
@@ -47,7 +48,7 @@ export const JULY07_REFERENCE_GABC=Object.freeze([{"key":"INTROIT","id":"GREGOBA
 // Scores are immutable archive transcriptions. The source-owned registry is
 // data-driven and can select any future verified Proper-to-score binding.
 const properReferenceRegistry=createProperReferenceRegistry({
- scores:[...JULY07_REFERENCE_GABC,...ALL_SAINTS_REFERENCE_SCORES,...EPIPHANY_REFERENCE_SCORES,...IMMACULATE_CONCEPTION_REFERENCE_SCORES]
+ scores:[...JULY07_REFERENCE_GABC,...ALL_SAINTS_REFERENCE_SCORES,...EPIPHANY_REFERENCE_SCORES,...IMMACULATE_CONCEPTION_REFERENCE_SCORES,...ADVENT_SUNDAY_REFERENCE_SCORES]
 });
 export const PROPER_REFERENCE_REGISTRY_STATUS=Object.freeze({
  schema:properReferenceRegistry.schema,
@@ -137,8 +138,11 @@ export const JULY07_REFERENCE_CSS=String.raw`
  font:500 10px/1.4 var(--ao-font-ui,system-ui,sans-serif);
  color:var(--ao-muted,#aaa79f);overflow-wrap:anywhere
 }
+/* MISSAL language columns remain pinned to row 1. Each source-owned
+   chant must flow into a separate following row. The old fixed row 2
+   superimposed Gradual and Alleluia and blocked score enlargement. */
 .ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph>.ao-proper-reference-notation{
- grid-column:1 / -1;grid-row:2
+ grid-column:1 / -1;grid-row:auto
 }
 .ao-reader-shell[data-mode="MISSAL"] .ao-proper-reference-staff{
  color:var(--ao-text-primary,#e9e4d9)

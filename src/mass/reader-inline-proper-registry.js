@@ -13,6 +13,33 @@ export const PROPER_REFERENCE_BINDINGS=Object.freeze([
  // Epiphany, 6 January. The same "Vidimus stellam" incipit is in
  // DISTINCT Alleluia (1961 p. 58, Mode II) and Communion (p. 59, Mode IV);
  // role + paragraph + 1962 source owner prevents cross-melody borrowing.
+ // First Sundays of Advent, recurring temporal source owners.
+ // Source-owned 1962 Graduale separates the Gradual and Alleluia in musical
+ // role but may render them in one source paragraph in the Order of Mass.
+ // Keep both originals bound to their own distinct score identities.
+ // 1961/1962 Offertory wording differs: deliberately NO Offertory binding.
+ {sourcePath:"Tempora/Adv1-0",role:"INTROIT",paragraphId:"INTROIT.1",
+  scoreId:"GREGOBASE-132",openings:["ad te levavi animam meam deus meus in te confido"]},
+ {sourcePath:"Tempora/Adv1-0",role:"GRADUAL",paragraphId:"GRADUAL.1",
+  scoreId:"GREGOBASE-1169",openings:["universi qui te exspectant non confundentur domine"]},
+ {sourcePath:"Tempora/Adv1-0",role:"ALLELUIA",paragraphId:"ALLELUIA_TRACT_SEQUENCE.1",
+  scoreId:"GREGOBASE-1115",openings:["ostende nobis domine misericordiam tuam et salutare tuum da nobis"]},
+ {sourcePath:"Tempora/Adv1-0",role:"ALLELUIA",paragraphId:"GRADUAL.1",
+  scoreId:"GREGOBASE-1115",afterScoreId:"GREGOBASE-1169",
+  openings:["ostende nobis domine misericordiam tuam et salutare tuum da nobis"]},
+ {sourcePath:"Tempora/Adv1-0",role:"COMMUNION",paragraphId:"COMMUNION.1",
+  scoreId:"GREGOBASE-1036",openings:["dominus dabit benignitatem et terra nostra dabit fructum suum"]},
+ {sourcePath:"Tempora/Adv2-0",role:"INTROIT",paragraphId:"INTROIT.1",
+  scoreId:"GREGOBASE-356",openings:["populus sion ecce dominus veniet ad salvandas gentes"]},
+ {sourcePath:"Tempora/Adv2-0",role:"GRADUAL",paragraphId:"GRADUAL.1",
+  scoreId:"GREGOBASE-1268",openings:["ex sion species decoris eius deus manifeste veniet"]},
+ {sourcePath:"Tempora/Adv2-0",role:"ALLELUIA",paragraphId:"ALLELUIA_TRACT_SEQUENCE.1",
+  scoreId:"GREGOBASE-292",openings:["laetatus sum in his quae dicta sunt mihi in domum domini ibimus"]},
+ {sourcePath:"Tempora/Adv2-0",role:"ALLELUIA",paragraphId:"GRADUAL.1",
+  scoreId:"GREGOBASE-292",afterScoreId:"GREGOBASE-1268",
+  openings:["laetatus sum in his quae dicta sunt mihi in domum domini ibimus"]},
+ {sourcePath:"Tempora/Adv2-0",role:"COMMUNION",paragraphId:"COMMUNION.1",
+  scoreId:"GREGOBASE-966",openings:["ierusalem surge et sta in excelso et vide iucunditatem"]},
  // Immaculate Conception (8 December), p. 400–404 in GR 1961.
  // Source role, printed page, full Latin opening and Mass appointment are
  // simultaneous guards; the common incipits are insufficient on their own.

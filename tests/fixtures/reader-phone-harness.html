@@ -31,7 +31,10 @@ const separatelyNamedChants=params.get("sourceChants")==="1";
 const scoredProperKind=String(params.get("scoreProper")??"");
 const epiphanyScoredProper=scoredProperKind==="epiphany";
 const immaculateScoredProper=scoredProperKind==="immaculate";
-const exactScoredProper=scoredProperKind==="all-saints"||epiphanyScoredProper||immaculateScoredProper;
+const adventIProper=scoredProperKind==="advent1";
+const adventIIProper=scoredProperKind==="advent2";
+const exactScoredProper=scoredProperKind==="all-saints"||epiphanyScoredProper||
+ immaculateScoredProper||adventIProper||adventIIProper;
 const alternateIsTract=params.get("tract")==="1";
 const altKind=alternateIsTract?"TRACT":"ALLELUIA";
 const altSection=alternateIsTract?"Tractus":"Alleluia";
@@ -128,6 +131,41 @@ if(immaculateScoredProper){
     "Glorious things are said of thee, Mary","Des choses glorieuses ont été dites de vous, Marie")
  });
 }
+// Source-owner exact first two 1962 Advent Sundays: only four 1961
+// reference scores per Sunday. The Offertory is deliberately UNBOUND:
+ // Advent I adds "Domine" in the 1961 score; Advent II has
+ // "conversus" in the 1962 Latin vs "convertens" in the GABC.
+if(adventIProper){
+ Object.assign(proper,{
+  sourcePath:"Tempora/Adv1-0",hasGloria:false,showGloria:false,
+  hasCredo:true,showCredo:true,
+  introit:t("Ad te levávi ánimam meam: Deus meus, in te confído, non erubéscam: neque irrídeant me inimíci mei: étenim univérsi, qui te exspéctant, non confundéntur.",
+   "To Thee have I lifted up my soul","Vers Vous j'élève mon âme"),
+  gradual:t("Univérsi, qui te exspéctant, non confundéntur, Dómine. V. Vias tuas, Dómine, notas fac mihi: et sémitas tuas édoce me. Allelúja, allelúja. V. Osténde nobis, Dómine, misericórdiam tuam: et salutáre tuum da nobis. Allelúja.",
+   "All who await Thee shall not be confounded. Alleluia: Show us Thy mercy.",
+   "Tous ceux qui Vous attendent ne seront pas confondus. Alléluia : montrez-nous Votre miséricorde."),
+  offertory:t("Ad te levávi ánimam meam: Deus meus, in te confído, non erubéscam: neque irrídeant me inimíci mei.",
+   "To Thee I lift my soul","Vers Vous j'élève mon âme"),
+  communion:t("Dóminus dabit benignitátem: et terra nostra dabit fructum suum.",
+   "The Lord shall give kindness","Le Seigneur donnera sa bonté")
+ });
+}
+if(adventIIProper){
+ Object.assign(proper,{
+  sourcePath:"Tempora/Adv2-0",hasGloria:false,showGloria:false,
+  hasCredo:true,showCredo:true,
+  introit:t("Pópulus Sion, ecce, Dóminus véniet ad salvándas gentes: et audítam fáciet Dóminus glóriam vocis suæ in lætítia cordis vestri.",
+   "People of Sion, behold, the Lord shall come","Peuple de Sion, voici que le Seigneur viendra"),
+  gradual:t("Ex Sion species decóris ejus: Deus maniféste véniet. V. Congregáte illi sanctos ejus, qui ordinavérunt testaméntum ejus super sacrifícia. Allelúja, allelúja. V. Lætátus sum in his, quæ dicta sunt mihi: in domum Dómini íbimus. Allelúja.",
+   "Out of Sion the beauty of His comeliness. Alleluia: I rejoiced.",
+   "De Sion vient l'éclat de sa beauté. Alléluia : je me suis réjoui."),
+  offertory:t("Deus, tu convérsus vivificábis nos, et plebs tua lætábitur in te: osténde nobis, Dómine, misericórdiam tuam.",
+   "O God, turning again, Thou wilt give us life",
+   "Ô Dieu, en revenant vers nous, Vous nous ferez vivre"),
+  communion:t("Jerúsalem, surge et sta in excélso, et vide jucunditátem, quæ véniet tibi a Deo tuo.",
+   "Jerusalem, arise and stand on high","Jérusalem, lève-toi et tiens-toi dans les hauteurs")
+ });
+}
 const rite=String(params.get("rite")??(params.get("asperges")==="1"?"asperges":"")).toLowerCase();
 const withAsperges=rite==="asperges";
 const withPalm=rite==="palm";
@@ -144,14 +182,16 @@ const followingActions=following==="corpus"?["CORPUS_CHRISTI_PROCESSION"]:
   following==="requiem"?["REQUIEM_ABSOLUTION"]:[];
 const allowedForms=new Set(["MISSA_CANTATA_INCENSE","MISSA_CANTATA_SIMPLE","SOLEMN","LOW"]);
 if(!allowedForms.has(requestedForm))throw new Error("Unsupported test fixture form");
-const fixtureDate=params.get("date")||(immaculateScoredProper?"2026-12-08":epiphanyScoredProper?"2027-01-06":exactScoredProper?"2026-11-01":withGoodFriday?"2026-04-03":withEasterVigil?"2027-03-27":"2026-10-04");
+const fixtureDate=params.get("date")||(adventIProper?"2026-11-29":adventIIProper?"2026-12-06":immaculateScoredProper?"2026-12-08":epiphanyScoredProper?"2027-01-06":exactScoredProper?"2026-11-01":withGoodFriday?"2026-04-03":withEasterVigil?"2027-03-27":"2026-10-04");
 if(!/^20[0-9]{2}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[12][0-9]|3[01])$/.test(fixtureDate))throw new Error("Invalid test fixture date");
 const resolvedMass={
   schema:"ao-resolved-mass-v2",
   date:fixtureDate,
   form:requestedForm,
   presentationMode:mode,
-  actualCelebration:immaculateScoredProper?{id:"immaculata-bmv",type:"CALENDAR",title:"Immaculate Conception"}:
+  actualCelebration:adventIProper?{id:"Tempora/Adv1-0",type:"CALENDAR",title:"First Sunday of Advent"}:
+    adventIIProper?{id:"Tempora/Adv2-0",type:"CALENDAR",title:"Second Sunday of Advent"}:
+    immaculateScoredProper?{id:"immaculata-bmv",type:"CALENDAR",title:"Immaculate Conception"}:
     epiphanyScoredProper?{id:"epiphany",type:"CALENDAR",title:"Epiphany of Our Lord"}:
     exactScoredProper?{id:"all-saints",type:"CALENDAR",title:"All Saints"}:
     withGoodFriday?{id:"good-friday",type:"CALENDAR",title:"Good Friday"}:
@@ -160,7 +200,9 @@ const resolvedMass={
     fixtureRequiem?{id:"requiem",type:"REQUIEM",title:"Requiem"}:
     following==="corpus"?{id:"corpus-christi",type:"CALENDAR",title:"Corpus Christi"}:
     {id:"holy_rosary",type:params.get("print")==="1"?"CALENDAR":"VOTIVE",title:"Holy Rosary"},
-  calendarCelebration:immaculateScoredProper?{id:"immaculata-bmv",type:"CALENDAR",title:"Immaculate Conception"}:
+  calendarCelebration:adventIProper?{id:"Tempora/Adv1-0",type:"CALENDAR",title:"First Sunday of Advent"}:
+    adventIIProper?{id:"Tempora/Adv2-0",type:"CALENDAR",title:"Second Sunday of Advent"}:
+    immaculateScoredProper?{id:"immaculata-bmv",type:"CALENDAR",title:"Immaculate Conception"}:
     epiphanyScoredProper?{id:"epiphany",type:"CALENDAR",title:"Epiphany of Our Lord"}:
     exactScoredProper?{id:"all-saints",type:"CALENDAR",title:"All Saints"}:
     withGoodFriday?{id:"good-friday",type:"CALENDAR",title:"Good Friday"}:

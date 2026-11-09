@@ -1,0 +1,40 @@
+name: Mass M48 two Advent Sundays — exact Proper notation on 65-card phones
+on:
+  pull_request:
+    paths:
+      - "src/mass/reader-inline-advent-sundays-reference.js"
+      - "src/mass/reader-inline-proper-reference.js"
+      - "src/mass/reader-inline-proper-registry.js"
+      - "tests/reader-inline-advent-sundays-reference.mjs"
+      - "tests/reader-m48-advent-proper-native-phone.mjs"
+      - "tests/fixtures/reader-phone-harness.html"
+      - ".github/workflows/mass-m48-advent-proper-phone.yml"
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  source-first-advent-proper:
+    name: M48 1962 source guards, 8 exact 1961 GABCs, 2 held Offertories
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Independently verify source and archive checksums
+        run: node tests/reader-inline-advent-sundays-reference.mjs && node tests/reader-inline-proper-registry.mjs
+      - name: Install minimal native phone dependencies
+        run: npm install --no-audit --no-fund --ignore-scripts
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Actual 65-card reader Advent I/II EN FR LIVE Missal 320 390
+        run: node tests/reader-m48-advent-proper-native-phone.mjs
+      - name: Preserve real 65-card Advent staff and source-bound screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: m48-advent-proper-source-65card-phone
+          path: .tmp/m48-advent-proper/
+          if-no-files-found: ignore
+          retention-days: 7
