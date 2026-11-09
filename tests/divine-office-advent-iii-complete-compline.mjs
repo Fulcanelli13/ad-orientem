@@ -105,6 +105,9 @@ test("Ember Days remain ferial Compline even though II-class, and O Antiphon rem
  }
  const dec17=ADVENT_III_2026_ORDO_WITNESSES.find(x=>x.date==="2026-12-17");
  assert.match(dec17.vespersNote,/Vespers; not the Compline Marian antiphon/u);
+ const comm=researchWitnessForReviewedAdventCompline(
+  ADVENT_III_COMPLINE_APPOINTMENTS.find(x=>x.date==="2026-12-16"));
+ assert.equal(comm.commemorationDisposition,"ADJUDICATED_WITH_COMM_REQUIRED");
  assert.equal(ADVENT_III_COMPLINE_APPOINTMENTS.find(x=>x.date==="2026-12-19").officeDate,"2026-12-20");
  assert.equal(latinComplineReleaseEligibility({date:"2026-12-19"}).psalmDay,"Sabbato");
  assert.equal(latinComplineReleaseEligibility({date:"2026-12-20"}).psalmDay,"Dominica");
