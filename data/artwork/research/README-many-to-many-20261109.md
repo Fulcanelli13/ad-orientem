@@ -176,3 +176,28 @@ This PR must remain draft. **No source image, exact photo licence, crop, visual 
 Physical-object and accession exceptions (including Bonn/Vaccaro and Magnin Elizabeth/Pierre), work/copy/workshop distinctions, incompatible or uncertain photographic rights, original-photo quality and mobile cropping, historical global rejection precedence (**Bouts `cma-122338`**), owner source exclusions (Prado), historical artist/title/ID reconciliation, missing canonical artwork IDs, and the 170 unmatched Calendar targets remain separate tasks. They are **not** covered by the 114/114 relevance-review metric.
 
 The crosswalk and regression tests must stay research-only and the PR must remain **draft and unmerged** until conflicts and runtime-safe import criteria are separately resolved.
+
+## Fail-closed release-gate crosswalk (9 November)
+
+The **editorial** relevance audit is complete (114/114 Claude new proposals). The subsequent release-readiness check is **not** complete. Two new research manifests explicitly prohibit new assignment/import:
+
+- `data/artwork/research/m2m-new-assignment-gate-edges-20261109.v1.json`: **1,589 distinct edges** with relationship-level evidence, owner-decision class, exact rejected-original checks, unverified image rights and crop flags, and `new_assignment_authorised: false` for every edge. All 507 previously user-accepted Prayer alternatives remain distinct scoped options, not auto-selected displays.
+- `data/artwork/research/m2m-destination-release-gates-640-20261109.v1.json`: **640 destination gates** (365 Calendar, 275 Prayer). Working categories: **298 preserve historical display**, **145 proposal/QA holds**, **170 unmatched/no autofill**, **27 protected/no assignment**. All have `new_assignment_authorised: false`. These are editorial categories, not claims about whether an image is already visible or was deployed earlier.
+
+Source evidence in this crosswalk includes **46 preserved primary destinations with missing canonical identity links**; separately, **197 edges across all 1,589** have a null artwork ID, including historical contextual and alternative relationships. Do not confuse the 197 edge occurrences with 197 distinct missing works. There are **five Prado destination source holds**, **two historical Prayer scope holds**, and one further Prayer editorial hold; these statuses overlap other groups.
+
+### New global rejection discovery — Bouts, Cleveland `cma-122338`
+
+The 15 October global exact-original rejection (score 2) covers Albert Bouts's *Annunciation* (Cleveland 1942.635). The later 1 November Prayer master preserves mentions of that same rejected original; however, it does not establish an explicit later owner reversal. The earlier four implicated Angelus/Rosary destinations omitted a **fifth**: `STG-novena.christmas-01`, where the painting is an *accepted alternative*, not the current primary.
+
+The combined historical Prayer and Claude preservation data contain **13 distinct edge records referring to the rejected exact original across five destinations**. All 13 are retained as historical evidence and hard-blocked from new assignment by exact ID or the Cleveland object URL. The Angelus 25 March historical current entry has a null crosswalk ID but its exact museum URL independently identifies the same prohibited work, so null ID must not bypass the hold.
+
+**No replacement is inferred.** The user may explicitly resolve the chronological choice later; until then, the global original rejection controls release eligibility for that physical work, not unrelated *Annunciation* paintings.
+
+### Import contract and checks
+
+Only the source research layers and the two gate manifests are changed here; no actual import payload has been created. Zero candidates satisfy all required proof categories in these records: explicit scope-specific owner placement authority, verified physical object, eligible exact photo reuse, actual bytes/attribution, mobile crop and approval, and global rejection clearance.
+
+Run `node tests/sacred-art-release-gates-research.test.mjs` together with `node tests/sacred-art-many-to-many-research.test.mjs`. The former asserts the 1,589-edge and 640-target totals, the 507 accepted options, 114 reviewed new proposals, all 13 Bouts references, 170 unmatched Calendar targets, 46 missing primary links and that **both manifests publish no assignments**. These tests are committed but require CI execution before reporting a green gate.
+
+Next research work should target (1) 46 primary identity links without inventing artworks; (2) the 23 metadata differences and five Prado source holds with source/copy attribution; (3) photograph provenance and mobile QA as distinct approvals; (4) original owner chronology for the Bouts dispute. Do not merge, import, rotate Prayer covers, or deploy from these research manifests.
