@@ -27,6 +27,10 @@ import {reviewDec28Jan03LatinComplineCertificate,
 import {reviewEpiphany2027FiveDayLatinCertificate,
  EPIPHANY_2027_FIVE_DATE_PROFILES}
  from "./compline-epiphany-jan04-08-2027-release-certificate.js";
+import {reviewHolyFamily2027LatinComplineCertificate,
+ HOLY_FAMILY_2027_RELEASE_PROFILES,
+ HOLY_FAMILY_2027_ORDINARY_HYMN_BLOB_SHA}
+ from "./compline-holy-family-jan09-10-2027-release-certificate.js";
 
 export const LATIN_COMPLINE_RELEASE_SCHEMA="ao.office.latin-compline-release.v1";
 export const LATIN_COMPLINE_RELEASE=Object.freeze({
@@ -110,6 +114,16 @@ export const EPIPHANY_JAN04_08_LATIN_COMPLINE_RELEASE=Object.freeze({
  rightsApproved:true,publicReleaseApproved:true,
  holyFamilyJan09_10Released:false,
  printed1961MamePsalterFacsimileVerified:false
+});
+/** Holy Family II class, two dates only. BR §§186/188 protect Te lucis. */
+export const HOLY_FAMILY_2027_LATIN_COMPLINE_RELEASE=Object.freeze({
+ approvedDates:Object.freeze(HOLY_FAMILY_2027_RELEASE_PROFILES.map(p=>p.date)),
+ hour:"COMPLINE",calendarScope:"UNIVERSAL",language:"la",
+ sourceRevision:PIN,sourceMarianBlobSha:CHRISTMAS_2026_MARIAN_PINNED_BLOB_SHA,
+ sourceOrdinaryTeLucisBlobSha:HOLY_FAMILY_2027_ORDINARY_HYMN_BLOB_SHA,
+ rightsApproved:true,publicReleaseApproved:true,
+ exact1961MamePsalterFacsimileVerified:false,
+ chantToneCertified:false
 });
 const empty=(reason)=>Object.freeze({
  schema:LATIN_COMPLINE_RELEASE_SCHEMA,
@@ -240,9 +254,10 @@ export function latinComplineReleaseEligibility({
  const christmas=CHRISTMAS_2026_COMPLINE_RELEASE.approvedDates.includes(date);
  const yearBoundary=DEC28_JAN03_LATIN_COMPLINE_RELEASE.approvedDates.includes(date);
  const epiphany=EPIPHANY_JAN04_08_LATIN_COMPLINE_RELEASE.approvedDates.includes(date);
+ const holyFamily=HOLY_FAMILY_2027_LATIN_COMPLINE_RELEASE.approvedDates.includes(date);
  if(hour!=="COMPLINE"||
     !(LATIN_COMPLINE_RELEASE.approvedDates.includes(date)||christmas||
-      yearBoundary||epiphany)||
+      yearBoundary||epiphany||holyFamily)||
     calendarScope!==LATIN_COMPLINE_RELEASE.calendarScope)
   return empty("HOUR_DATE_OR_CALENDAR_OUTSIDE_LATIN_RELEASE");
  const christmasCertificate=christmas?
@@ -251,15 +266,32 @@ export function latinComplineReleaseEligibility({
   reviewDec28Jan03LatinComplineCertificate(date):null;
  const epiphanyCertificate=epiphany?
   reviewEpiphany2027FiveDayLatinCertificate(date):null;
- const appointment=christmas||yearBoundary||epiphany?
+ const holyFamilyCertificate=holyFamily?
+  reviewHolyFamily2027LatinComplineCertificate(date):null;
+ const appointment=christmas||yearBoundary||epiphany||holyFamily?
   null:reviewAdventIComplineAppointment(date);
  // Every dated appointment has its own immutable rubrical certificate.
  // Sunday and St Andrew use Sunday psalms; the two Saturdays still use
  // Saturday psalms. Never equate a Sunday with the previous Saturday.
- const profile=epiphany?epiphanyCertificate?.profile:
+ const profile=holyFamily?holyFamilyCertificate?.profile:
+  epiphany?epiphanyCertificate?.profile:
   yearBoundary?yearBoundaryCertificate?.profile:
   christmas?christmasCertificate?.profile:APPROVED_DATE_PROFILES[date];
- if(epiphany){
+ if(holyFamily){
+  if(holyFamilyCertificate?.status!=="EXPLICIT_HOLY_FAMILY_2027_LATIN_COMPLINE_CERTIFIED"||
+     !profile||
+     HOLY_FAMILY_2027_LATIN_COMPLINE_RELEASE.sourceRevision!==PIN||
+     HOLY_FAMILY_2027_LATIN_COMPLINE_RELEASE.sourceMarianBlobSha!==
+       CHRISTMAS_2026_MARIAN_PINNED_BLOB_SHA||
+     HOLY_FAMILY_2027_LATIN_COMPLINE_RELEASE.sourceOrdinaryTeLucisBlobSha!==
+       HOLY_FAMILY_2027_ORDINARY_HYMN_BLOB_SHA||
+     HOLY_FAMILY_2027_LATIN_COMPLINE_RELEASE.calendarScope!=="UNIVERSAL"||
+     HOLY_FAMILY_2027_LATIN_COMPLINE_RELEASE.language!=="la"||
+     !HOLY_FAMILY_2027_LATIN_COMPLINE_RELEASE.rightsApproved||
+     !HOLY_FAMILY_2027_LATIN_COMPLINE_RELEASE.publicReleaseApproved||
+     HOLY_FAMILY_2027_LATIN_COMPLINE_RELEASE.chantToneCertified!==false)
+   return empty("HOLY_FAMILY_1960_SOURCE_OR_RELEASE_CERTIFICATE_UNRESOLVED");
+ }else if(epiphany){
   if(epiphanyCertificate?.status!=="EXPLICIT_EPIPHANY_JAN04_08_LATIN_TEXT_CERTIFIED"||
      !profile||
      EPIPHANY_JAN04_08_LATIN_COMPLINE_RELEASE.sourceRevision!==PIN||
@@ -334,8 +366,10 @@ export function latinComplineReleaseEligibility({
   exact1961PsalterLeafVerified:false,
   psalmDay:profile.psalmDay,printedPsalmDisplayFrames:profile.printedPsalmDisplayFrames,
   officeDate:profile.officeDate??date,
-  marianSection:christmas||yearBoundary||epiphany?profile.marianSection:"Advent",
-  certificateFamily:epiphany?"EPIPHANY_JAN04_08_FINITE_LATIN":
+  marianSection:christmas||yearBoundary||epiphany||holyFamily?
+    profile.marianSection:"Advent",
+  certificateFamily:holyFamily?"HOLY_FAMILY_JAN09_10_FINITE_LATIN":
+   epiphany?"EPIPHANY_JAN04_08_FINITE_LATIN":
    yearBoundary?"YEAR_BOUNDARY_2027_FINITE_LATIN":
    christmas?"CHRISTMAS_2026_FINITE_LATIN":"ADVENT_2026_FINITE_LATIN",
   language:"la",sourceTextReleased:true,rightsApproved:true,
@@ -358,7 +392,9 @@ export async function loadPublishedLatinCompline({
  if(!Object.values(COMPLINE_MINISTER).includes(minister))
   return empty("UNAPPROVED_PRESIDING_MINISTER");
  if(typeof fetchSource!=="function")return empty("SOURCE_TRANSPORT_REQUIRED");
- const original=permission.certificateFamily==="EPIPHANY_JAN04_08_FINITE_LATIN"?
+ const original=permission.certificateFamily==="HOLY_FAMILY_JAN09_10_FINITE_LATIN"?
+  await assembleJan04_10PrivateOfficeResearchReview({date,fetchSource}):
+  permission.certificateFamily==="EPIPHANY_JAN04_08_FINITE_LATIN"?
   await assembleJan04_10PrivateOfficeResearchReview({date,fetchSource}):
   permission.certificateFamily==="YEAR_BOUNDARY_2027_FINITE_LATIN"?
   await assembleDec28Jan03PrivateOfficeResearchReview({date,fetchSource}):
@@ -370,6 +406,21 @@ export async function loadPublishedLatinCompline({
  if(original.status!=="PRIVATE_SOURCE_TEXT_REVIEW")
   return empty("PINNED_LATIN_SOURCE_UNAVAILABLE");
  const projected=projectComplineRecitation(original,{context,minister});
+ // Holy Family has an unrelated proper Vespers doxology ("Jesu, tuis").
+ // 1960 BR §§186–188 require the *existing* Ordinary Te lucis conclusion.
+ // Fail closed if any loader or renderer silently imports the proper.
+ if(permission.certificateFamily==="HOLY_FAMILY_JAN09_10_FINITE_LATIN"){
+  const hymn=projected.frames?.filter(f=>f.kind==="HYMN")??[];
+  const hymnText=hymn.flatMap(f=>f.texts?.la??[]).join(" ");
+  if(hymn.length!==3||
+     !hymn.some(f=>f.sourceId==="Psalterium/Special/Minor Special#Hymnus Completorium")||
+     !hymnText.includes("Te lucis ante términum")||
+     !hymnText.includes("Præsta, Pater piíssime")||
+     !hymnText.includes("Regnans per omne sǽculum")||
+     hymnText.includes("Jesu, tuis")||
+     hymnText.includes("Jesu, tuis obédiens"))
+   return empty("HOLY_FAMILY_BR186_188_COMPLINE_HYMN_OR_DOXOLOGY_CHANGED");
+ }
  if(projected.status!=="PRIVATE_SOURCE_TEXT_REVIEW"||
     projected.readingEventCount!==40||
     projected.sourceEventCount!==42||
