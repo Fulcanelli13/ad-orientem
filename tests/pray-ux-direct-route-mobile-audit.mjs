@@ -83,11 +83,15 @@ try{
      const editionPanel=page.locator("#aoPray435930.open .aoPrivateLitanyEditionChooser");
      if(await editionPanel.count() && !(await editionPanel.evaluate(el=>el.open)))
       await editionPanel.locator(":scope > summary").tap();
+     await page.waitForTimeout(200); // Measure after expanding the disclosure.
      const selector=await page.evaluate(()=>{
       const buttons=[...document.querySelectorAll("#aoPray435930.open .aoBatch03LitanyUses button")];
       return buttons.map(b=>({height:b.getBoundingClientRect().height,
+       minHeight:getComputedStyle(b).minHeight,display:getComputedStyle(b).display,
+       visibility:getComputedStyle(b).visibility,detailsOpen:b.closest("details")?.open??null,
        background:getComputedStyle(b).backgroundColor,color:getComputedStyle(b).color}));
      });
+     console.log("LITANY_EDITIONS_ACTUAL_MOBILE_GEOMETRY="+JSON.stringify({width,selector}));
      assert.equal(selector.length,4,"Keep four distinct private/public Litany editions");
      assert.ok(selector.every(x=>x.height>=60),"Litany edition choices need 60px accessible mobile controls");
      assert.ok(selector.every(x=>!/rgb\\(2(?:3\\d|4\\d|5\\d),\\s*2(?:3\\d|4\\d|5\\d),\\s*2(?:3\\d|4\\d|5\\d)\\)/.test(x.background)),
