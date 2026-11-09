@@ -6,6 +6,7 @@ import "./lent-weekday-scripture-source.mjs";
 import { readFileSync } from "node:fs";
 import { createMassReaderModel } from "../src/mass/reader-model.js";
 import { buildEmberInsertionCards } from "../src/mass/reader-ember-lessons.js";
+import { SEPTEMBER_EMBER_LONG_SOURCE_ORDER, SEPTEMBER_EMBER_SHORT_SOURCE_ORDER, select1962SeptemberEmberSaturdayVariant } from "../src/mass/ember-saturday-variant.js";
 import { projectCuratedOrdinaryLiveCards } from "../src/mass/reader-live-curated-cards.js";
 import { prepareNativeReaderPreview } from "../src/mass/reader-native-preview.js";
 import { buildReaderModeModels, captureReaderModeAnchor, findReaderModeAnchorCard } from "../src/mass/reader-mode-switch.js";
@@ -327,5 +328,139 @@ assert.throws(()=>buildEmberInsertionCards(missingFrPayload,{language:"fr"}),
   /requires Latin and vernacular text/,
   "An English-only source must not be shown as French Ember lesson");
 assert.equal(buildEmberInsertionCards(missingFrPayload,{language:"en"}).length,5);
+
+
+// Original 1962 26 September long-source order is fixed to
+// DivinumOfficium/Latin/Tempora/093-6. All paragraph text below is
+// explicitly synthetic: this tests reader variant semantics and language
+// routing, NOT unreconciled printed/source translations.
+const septOriginalNodes=SEPTEMBER_EMBER_LONG_SOURCE_ORDER.map((key,index)=>({
+  id:"PRE_GOSPEL."+String(index+1).padStart(2,"0")+"."+key,
+  type:key.startsWith("Lectio")?"LESSON":
+    key.startsWith("Graduale")?"GRADUAL":"ORATION",
+  sourceSectionId:key,sourceOrderIndex:index,orderAuthority:"SOURCE_ORDER",
+  sourceRef:"Tempora/093-6:"+key,payloadRef:key,
+}));
+const septPayloads=Object.fromEntries(SEPTEMBER_EMBER_LONG_SOURCE_ORDER.map(key=>
+  [key,{textLat:"LATIN SOURCE-TEST "+key,
+    textEn:"ENGLISH SOURCE-TEST "+key,textFr:"FRANÇAIS SOURCE-TEST "+key}]));
+const septProper={...frBaseProper,
+  sourcePath:"Tempora/093-6",
+  preGospelSequence:septOriginalNodes,
+  preGospelPayloads:septPayloads,
+  preGospelSequenceProvenance:{
+    schema:"ao-pre-gospel-source-order-v1",
+    orderAuthority:"SOURCE_ORDER",structuralLanguage:"la",
+    sourcePath:"Tempora/093-6",
+    sourceOrder:SEPTEMBER_EMBER_LONG_SOURCE_ORDER,
+  },
+};
+const septBase={...frResolved,date:"2026-09-26",proper:septProper};
+const septLongSource=select1962SeptemberEmberSaturdayVariant({
+  ...septBase,emberSaturdaySelection:{form:"LONG"}
+},septOriginalNodes);
+assert.equal(septLongSource.form,"LONG");
+assert.equal(septLongSource.sequence.length,14);
+const septUnselected=select1962SeptemberEmberSaturdayVariant(septBase,septOriginalNodes);
+assert.equal(septUnselected.form,"LONG");
+assert.equal(septUnselected.authority,"SAFE_SOURCE_LONG_DEFAULT",
+  "Without verified context, do not silently presume the short form");
+const septShortSource=select1962SeptemberEmberSaturdayVariant({
+  ...septBase,emberSaturdaySelection:{form:"SHORT",isConventual:false,ordinations:false}
+},septOriginalNodes);
+assert.deepEqual(septShortSource.sequence.map(x=>x.sourceSectionId),
+  SEPTEMBER_EMBER_SHORT_SOURCE_ORDER);
+assert.equal(septShortSource.sequence.filter(x=>x.type==="LESSON").length,1,
+  "Forma brevior contains ONE supplementary prophecy, not Daniel LectioL5");
+assert.equal(septShortSource.sequence[2].sourceSectionId,"OratioL1");
+assert.deepEqual(septShortSource.sequence.map(x=>x.id),
+  septOriginalNodes.slice(0,3).map(x=>x.id),
+  "Variant projection must retain authoritative canonical source node IDs");
+
+for(const form of ["LOW","SOLEMN"]){
+ for(const mode of ["LIVE","MISSAL"]){
+  for(const language of ["en","fr"]){
+   const base={...septBase,form,presentationMode:mode};
+   const long={...base,emberSaturdaySelection:{form:"LONG",
+     isConventual:true,ordinations:false}};
+   const short={...base,emberSaturdaySelection:{form:"SHORT",
+     isConventual:false,ordinations:false}};
+   const actualMass=makeResolvedMass({date:base.date,form,presentationMode:mode,
+     calendarCelebration:base.calendarCelebration,
+     proper:base.proper,overlays:["EMBER_LESSONS"],
+     emberSaturdaySelection:short.emberSaturdaySelection});
+   assert.deepEqual(actualMass.emberSaturdaySelection,short.emberSaturdaySelection,
+     "Session lost the independently selected Ember Saturday variant");
+   for(const [variant,mass,expected] of [
+     ["LONG",long,SEPTEMBER_EMBER_LONG_SOURCE_ORDER],
+     ["SHORT",short,SEPTEMBER_EMBER_SHORT_SOURCE_ORDER]
+   ]){
+    const prepared={session:{resolvedMass:mass,plan:{
+      kind:"MASS",overlayGraphs:["EMBER_LESSONS"],
+      precedingGraphs:[],followingGraphs:[]}},
+      readerPreferences:{mode,language}};
+    const models=buildReaderModeModels({prepared,data:emberData,mode});
+    const insertionCards=models.presentationModel.cards.filter(c=>c.emberInsertion);
+    assert.deepEqual(insertionCards.map(c=>c.sourceSectionKey),expected,
+      form+" "+mode+" "+language+" "+variant+" original source ordering");
+    assert.equal(insertionCards.filter(c=>c.emberNodeType==="LESSON").length,
+      variant==="LONG"?5:1,
+      "Incorrect number of additional prophecies in "+variant);
+    assert.ok(insertionCards.every(c=>c.paragraphs.every(p=>
+      p.primary.startsWith(language==="fr"?"FRANÇAIS SOURCE-TEST":"ENGLISH SOURCE-TEST"))));
+    assert.ok(insertionCards.every(c=>c.paragraphs.every(p=>
+      p.alternate.startsWith("LATIN SOURCE-TEST"))));
+    const sourceEpistleIndex=models.sourceModel.cards.findIndex(c=>
+      c.sourceSectionId==="AO.CARD.005"||c.sectionId==="AO.CARD.005");
+    assert.equal(models.sourceModel.cards[sourceEpistleIndex-1].sourceSectionKey,
+      expected.at(-1),"Ordinary Epistle must follow final source-ordered insertion");
+    assert.equal(models.sourceModel.cards.filter(c=>c.sourceSectionId==="AO.CARD.005" ||
+      c.sectionId==="AO.CARD.005").length,1,"Epistle duplicated by variant");
+    assert.equal(models.sourceModel.emberSaturdayForm,variant);
+    // The other selection axis (LOW/SOLEMN) cannot change this source order.
+    if(mode==="LIVE"){
+     const direct=buildReaderModeModels({prepared,data:emberData,mode,
+       directSourceCurated:true});
+     assert.deepEqual(direct.presentationModel.cards.filter(c=>c.emberInsertion)
+       .map(c=>c.sourceSectionKey),expected,
+       "Direct LIVE source model lost the selected Ember form");
+    }
+   }
+  }
+ }
+}
+for(const [context,message] of [
+ [{isConventual:true,ordinations:false},/FORBIDDEN_FOR_CONVENTUAL_OR_ORDINATIONS/],
+ [{isConventual:false,ordinations:true},/FORBIDDEN_FOR_CONVENTUAL_OR_ORDINATIONS/],
+ [{isConventual:null,ordinations:false},/REQUIRES_EXPLICIT_CONVENTUAL_AND_ORDINATION/],
+ [{isConventual:false,ordinations:null},/REQUIRES_EXPLICIT_CONVENTUAL_AND_ORDINATION/]
+]){
+ assert.throws(()=>buildEmberInsertionCards({...septBase,
+  emberSaturdaySelection:{form:"SHORT",...context}},{language:"en"}),message);
+}
+assert.throws(()=>buildEmberInsertionCards({...septBase,
+  emberSaturdaySelection:{form:"INVALID"}},{language:"en"}),
+  /EXPLICIT_LONG_OR_SHORT_REQUIRED/);
+const septBroken=structuredClone(septBase);
+septBroken.proper.preGospelSequence.splice(4,1);
+assert.throws(()=>buildEmberInsertionCards({...septBroken,
+  emberSaturdaySelection:{form:"SHORT",isConventual:false,ordinations:false}},
+ {language:"en"}),/source-order denominator mismatch|LONG_SOURCE_ORDER_UNCERTIFIED/,
+ "An incomplete long source must never be shortened by guessing");
+assert.throws(()=>buildEmberInsertionCards({...septBase,date:"2026-09-25",
+ emberSaturdaySelection:{form:"SHORT",isConventual:false,ordinations:false}},
+ {language:"en"}),/SOURCE_DATE_UNSUPPORTED/);
+// The authentic host's affirmative circumstance is independently decisive
+// even if an untrusted selector says both restrictions are false.
+for(const provenance of [
+ {conventualMass:true,ordinationMass:false},
+ {conventualMass:false,ordinationMass:true}
+]){
+ assert.throws(()=>buildEmberInsertionCards({
+  ...septBase,provenance,
+  emberSaturdaySelection:{form:"SHORT",isConventual:false,ordinations:false}
+ },{language:"en"}),/FORBIDDEN_FOR_CONVENTUAL_OR_ORDINATIONS/);
+}
+assert.ok(!SEPTEMBER_EMBER_SHORT_SOURCE_ORDER.includes("LectioL5"));
 
 console.log("Ember lessons: PASS — source-order Proper nodes render before ordinary Epistle; suffix pairing is impossible and unresolved payloads fail closed.");
