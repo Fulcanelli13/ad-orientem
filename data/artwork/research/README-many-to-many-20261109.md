@@ -335,3 +335,25 @@ The complete cross-source **29-case accounting** is now: **three existing GitHub
 The new source-side record is `data/artwork/research/m2m-ai-original-files-batch15-20261109.v1.json`, with standalone hashes, dimensions, artist distinctions and date-selection controls. Neither PNG was uploaded to GitHub or linked into the Calendar runtime. The file does not carry private Library IDs.
 
 The public deployment verification for the separately identified Bouts source-level C3 gallery risk remains incomplete; [issue #2761](https://github.com/Fulcanelli13/ad-orientem/issues/2761) distinguishes statically reachable source code from a browser-confirmed GitHub Pages publication.
+
+## Exact physical-artwork provenance for ten of nineteen held selections (batch 16)
+
+The ten targeted destinations below are recorded in `data/artwork/research/m2m-original19-institutional-batch16-20261109.v1.json`. Official museum collection pages or the institutional Fondazione Zeri catalogue support their physical object research; **they do not certify that the exact previously approved photographic reproduction has been found**. All original date/Prayer approvals remain unchanged.
+
+| Destination | Work and verified provenance | Open decision or image gate |
+| --- | --- | --- |
+| 1 Mar | Raphael, *Transfiguration*, Vatican Pinacoteca Room VIII | Exact earlier user-chosen file, museum photo rights/crop |
+| 6 Apr | Caravaggio, *Supper at Emmaus*: **London National Gallery NG172 (1601)** versus **Milan Brera 2296 (1606)** | **Two different autograph paintings**; source selection says only artist/title—cannot select one without original approval/file evidence |
+| 9 Apr | Rembrandt, *Christ and St Mary Magdalen at the Tomb*, Royal Collection **RCIN 404816** | Royal Collection photographic file and rights/crop |
+| 10 Apr | Tommaso Minardi, *Missione degli apostoli*, signed **1864 fresco** at Palazzo del Quirinale, Fondazione Zeri record 99995 | Previous title only; do not call this a portable oil canvas or reuse an archival photograph by default |
+| 11 Apr | Eugène Burnand, *Peter and John Running to the Sepulchre*, Musée d'Orsay **RF 1153**, 1898 | Museum page credits RMN-Grand Palais photographs; media reuse not certified |
+| 25 May | Henry Ossawa Tanner, *Nicodemus*, PAFA **1900.1**, 1899 | PAFA artwork no-known-copyright note does not independently select an approved photo |
+| 26 May | *Parable of the Good Shepherd*, Figge Art Museum **25.0032** | Figge headline attributes Bruegel Elder, but description explicitly allows son/contemporary copyist; retain dispute |
+| 2 St Anthony Prayer slots | Antonio del Castillo, *Aparición del Niño a San Antonio*, Córdoba **DJ0033P**, ca. 1650 | Two distinct Prayer placements for one physical canvas; original Commons photographic identity and crop not checked |
+| Confession third Prayer card | Giuseppe Molteni, *La confessione*, 1838, Fondazione Cariplo, Gallerie d'Italia Milan | Museum institution established; selected Commons file exact pixel/rights not reviewed |
+
+The latter 3 Prayer slots plus seven date slots make **ten destination relationships**. The destination classification is **10 institutional research cases reviewed; 9 remaining**, *not* 10 newly approved works or photographs. Multiple museum objects may be alternatives for a single selected title (Emmaus), and multiple destinations may deliberately reference one real artwork (St Anthony).
+
+The next nine physical-source lookups are: 1 January Tintoretto/workshop *Circumcision*; 30 March Rubens/van Dyck *Anointing at Bethany*; 7 April van Dyck *Appearance of Christ to His Disciples*; 28 May *Sending of the Twelve*; 30 May John Bridges *Peter's Mother-in-Law*; 24 June Andrea Sacchi *Birth of John the Baptist*; 6 December Michael Willmann *Family of Christ*; 13 December Bernardo Strozzi *Baptist Interrogated*; 20 December Gaulli *Preaching of St John*. Existing selections must be reconciled against the precise physical works and source photographs; do not convert general pictorial resemblance into approval.
+
+The 9 November batch 15 recovers all **four source-image files** for user Calendar-linked AI works, but no new publication; Cavedone is hash-bound to a 19 October editorial approval, while 22 March AI-vs-engraving preference is held pending final chronology. [P0 #2761](https://github.com/Fulcanelli13/ad-orientem/issues/2761) independently tracks the statically reachable rejected Bouts gallery photograph; public Pages browser confirmation is still absent.
