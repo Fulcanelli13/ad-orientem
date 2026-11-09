@@ -43,8 +43,10 @@ try{
    paragraphs:body?.querySelectorAll(".aoDevoParagraph").length||0,
    lit:body?.querySelectorAll(".aoDevoParagraph[data-ao-devo-active='true']").length||0,
    overflow:body?getComputedStyle(body).overflowY:null,
-   nav:reader?.querySelector(".aoP435930GuideNav")?
-    getComputedStyle(reader.querySelector(".aoP435930GuideNav")).display:null};
+   // The private Litany keeps its historical edition chooser and final exit.
+   // Neither is a duplicate Previous/Next navigation control.
+   nav:reader?.querySelector(".aoP435930GuideNav:not(.aoBatch03LitanyUses):not(.aoP435930FinalExit)")?
+    getComputedStyle(reader.querySelector(".aoP435930GuideNav:not(.aoBatch03LitanyUses):not(.aoP435930FinalExit)")).display:null};
  });
  const swipe=async(dx,dy)=>page.locator(rootSel+" .aoDevoCardScroll").evaluate((node,{dx,dy})=>{
   const t=(x,y)=>new Touch({identifier:16,target:node,clientX:x,clientY:y});
