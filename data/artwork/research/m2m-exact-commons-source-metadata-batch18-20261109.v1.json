@@ -1,0 +1,125 @@
+{
+  "schema": "AO_SACRED_ART_EXACT_HISTORICAL_COMMONS_SOURCE_BATCH18_V1",
+  "as_of": "2026-11-09",
+  "state": "RESEARCH_ONLY_SOURCE_FILE_METADATA_NOT_BINARY_RELEASE",
+  "upstream": "data/artwork/research/m2m-prayer-852-20261109.v1.json",
+  "museum_upstream": "data/artwork/research/m2m-original19-institutional-batch16-20261109.v1.json",
+  "basis": "Frozen historical Prayer CURRENT source URLs cross-checked against contemporary Commons file page metadata; unlike source photograph upload, the listed dimensions/byte-size/SHA1 are page reports and were not independently recalculated from downloaded binary.",
+  "summary": {
+    "historical_current_destination_edges": 3,
+    "distinct_work_groups": 2,
+    "known_source_file_page_links": 2,
+    "metadata_width_height_recorded": 2,
+    "actual_selected_image_bytes_downloaded": 0,
+    "exact_file_hash_recomputed": 0,
+    "rights_photo_qa_certified": 0,
+    "public_image_imports": 0
+  },
+  "holds": [
+    "Museum object and digital Commons source URL established, but no independent provenance/reuse clearance for actual photograph",
+    "Commons permission labels are not a substitute for cross-jurisdictional photo rights assessment",
+    "Phone crop, frame removal, actual image bytes and final owner sign-off remain held",
+    "Preserve the two different St Anthony destinations pointing to one physical object and do not collapse edges"
+  ],
+  "works": {
+    "castillo-cordoba-dj0033p": {
+      "creator": "Antonio del Castillo y Saavedra",
+      "title": "Aparición del Niño a San Antonio",
+      "museum": "Museo de Bellas Artes de Córdoba",
+      "physical_inventory": "DJ0033P",
+      "original_historical_source_url": "https://commons.wikimedia.org/wiki/File:Aparici%C3%B3n_del_Ni%C3%B1o_a_San_Antonio_-_Antonio_del_Castillo_Saavedra.jpg",
+      "commons_current_dimensions": {
+        "width": 3400,
+        "height": 4477
+      },
+      "commons_reported_bytes": 5093782,
+      "commons_reported_sha1": "7f8376ce631594a53ffc918185a9c47ebcd2ae50",
+      "commons_latest_upload_date": "2017-06-04",
+      "source_evidence_urls": [
+        "https://commons.wikimedia.org/wiki/File:Aparici%C3%B3n_del_Ni%C3%B1o_a_San_Antonio_-_Antonio_del_Castillo_Saavedra.jpg",
+        "https://ceres.mcu.es/pages/Main?idt=121796&inventary=DJ0033P&museum=MBACO&table=FMUS"
+      ],
+      "rights_description": "Commons PD-Art/public-domain reproduction claim; underlying upload credits an institutional social-media photo URL. Exact file reuse in Mauritius/other relevant jurisdictions and photograph origin have not been independently cleared.",
+      "distinct_version_warning": "Do not substitute a 125×103cm Castillo painting offered by Setdart; museum object here is 142×110cm Córdoba DJ0033P",
+      "pixel_content_quality": "ORIGINAL_3400x4477_LISTED_ON_COMMONS_BUT_ACTUAL_BINARY_NOT_ACQUIRED_OR_HASHED"
+    },
+    "molteni-cariplo-confessione": {
+      "creator": "Giuseppe Molteni",
+      "title": "La confessione",
+      "museum": "Gallerie d'Italia, Milan / Fondazione Cariplo",
+      "physical_inventory": "GALLERIE_D_ITALIA_MOLTENI_LA_CONFESSIONE_1838",
+      "original_historical_source_url": "https://commons.wikimedia.org/wiki/File:Artgate_Fondazione_Cariplo_-_Molteni_Giuseppe%2C_La_confessione.jpg",
+      "commons_current_dimensions": {
+        "width": 1295,
+        "height": 1600
+      },
+      "commons_reported_bytes": 507136,
+      "commons_reported_sha1": "45965d76426de27b6a810eadd92c23bcf8e0ac7b",
+      "commons_latest_upload_date": "2012-06-06",
+      "source_evidence_urls": [
+        "https://commons.wikimedia.org/wiki/File:Artgate_Fondazione_Cariplo_-_Molteni_Giuseppe,_La_confessione.jpg",
+        "https://www.gallerieditalia.com/en/online-museums/artworks/the_confession-18920/"
+      ],
+      "rights_description": "Commons page's PD-Art reproduction reasoning coexists with a structured-data CC BY-SA 3.0 credit record. Do not interpret page badges alone as independent exact photographer rights clearance.",
+      "distinct_version_warning": "Do not substitute Giuseppe Maria Crespi's separate 1712 Dresden Confession, cited as an influence",
+      "pixel_content_quality": "ORIGINAL_1295x1600_LISTED_ON_COMMONS_BUT_ACTUAL_BINARY_NOT_ACQUIRED_OR_HASHED"
+    }
+  },
+  "records": [
+    {
+      "destination_id": "COV-novena.st_anthony_nine_tuesdays",
+      "target_type": "PRAYER_SLOT",
+      "historical_edge_id": "PRAY267:COV-novena.st_anthony_nine_tuesdays:CURRENT",
+      "work_key": "castillo-cordoba-dj0033p",
+      "historical_source_url": "https://commons.wikimedia.org/wiki/File:Aparici%C3%B3n_del_Ni%C3%B1o_a_San_Antonio_-_Antonio_del_Castillo_Saavedra.jpg",
+      "source_url_identical_to_frozen_current_record": true,
+      "work_identity_from_catalogue": "EXPLICIT_INSTITUTIONAL_WORK_CATALOGUE_LEAD",
+      "digital_commons_filename_exactly_documented": true,
+      "original_current_binary_independently_fetched": false,
+      "image_binary_sha256": null,
+      "source_claims_photo_rights_not_independently_certified": true,
+      "photograph_mobile_320_390_QA_passed": false,
+      "canonical_app_work_id": null,
+      "owner_current_selection_preserved": true,
+      "existing_accepted_alternatives_preserved": true,
+      "new_assignment_authorised": false
+    },
+    {
+      "destination_id": "COV-devotion_st_anthony_lost_items",
+      "target_type": "PRAYER_SLOT",
+      "historical_edge_id": "PRAY267:COV-devotion_st_anthony_lost_items:CURRENT",
+      "work_key": "castillo-cordoba-dj0033p",
+      "historical_source_url": "https://commons.wikimedia.org/wiki/File:Aparici%C3%B3n_del_Ni%C3%B1o_a_San_Antonio_-_Antonio_del_Castillo_Saavedra.jpg",
+      "source_url_identical_to_frozen_current_record": true,
+      "work_identity_from_catalogue": "EXPLICIT_INSTITUTIONAL_WORK_CATALOGUE_LEAD",
+      "digital_commons_filename_exactly_documented": true,
+      "original_current_binary_independently_fetched": false,
+      "image_binary_sha256": null,
+      "source_claims_photo_rights_not_independently_certified": true,
+      "photograph_mobile_320_390_QA_passed": false,
+      "canonical_app_work_id": null,
+      "owner_current_selection_preserved": true,
+      "existing_accepted_alternatives_preserved": true,
+      "new_assignment_authorised": false
+    },
+    {
+      "destination_id": "STG-pray.confession-03",
+      "target_type": "PRAYER_SLOT",
+      "historical_edge_id": "PRAY267:STG-pray.confession-03:CURRENT",
+      "work_key": "molteni-cariplo-confessione",
+      "historical_source_url": "https://commons.wikimedia.org/wiki/File:Artgate_Fondazione_Cariplo_-_Molteni_Giuseppe%2C_La_confessione.jpg",
+      "source_url_identical_to_frozen_current_record": true,
+      "work_identity_from_catalogue": "EXPLICIT_INSTITUTIONAL_WORK_CATALOGUE_LEAD",
+      "digital_commons_filename_exactly_documented": true,
+      "original_current_binary_independently_fetched": false,
+      "image_binary_sha256": null,
+      "source_claims_photo_rights_not_independently_certified": true,
+      "photograph_mobile_320_390_QA_passed": false,
+      "canonical_app_work_id": null,
+      "owner_current_selection_preserved": true,
+      "existing_accepted_alternatives_preserved": true,
+      "new_assignment_authorised": false
+    }
+  ],
+  "approved_runtime_assignments": []
+}
