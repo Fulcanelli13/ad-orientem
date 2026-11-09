@@ -24,5 +24,9 @@ jobs:
           node-version: "22"
       - name: Certify published English variant and fail-closed Latin/French
         run: node tests/pray-immaculate-heart-exact-form-source-hold-20261109.mjs
+      - name: Install existing phone test dependencies
+        run: npm install --no-audit --no-fund
+      - name: Prepare browser for full canonical Prayer source-face regression
+        run: npx playwright install --with-deps chromium
       - name: Protect existing all-canonical 48 prayer source faces
         run: node tests/pray-canonical-48-source-certification-phone.mjs
