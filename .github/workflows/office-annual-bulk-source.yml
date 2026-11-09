@@ -87,6 +87,8 @@ jobs:
           test -s "$out/breviarium${YEAR}.epub"
           cp "$out/breviarium${YEAR}.epub" \
             "$GITHUB_WORKSPACE/office-annual-artifacts/$YEAR/source-breviarium${YEAR}.epub"
+          cp "$RUNNER_TEMP/divinum/LICENSE" \
+            "$GITHUB_WORKSPACE/office-annual-artifacts/$YEAR/SOURCE-LICENSE-DIVINUM-OFFICIUM.txt"
       - name: Parse all XHTML chapters; independently audit every civil date × eight Hours
         shell: bash
         run: |
@@ -206,7 +208,7 @@ jobs:
             (
               cd "office-annual-artifacts/$year"
               zip -qr "$GITHUB_WORKSPACE/office-source-release/office-${year}-latin-1960-structured.zip" \
-                parsed generator.log
+                parsed generator.log SOURCE-LICENSE-DIVINUM-OFFICIUM.txt
             )
           done
           cat > office-source-release/README-RESEARCH.txt <<'EOF'
