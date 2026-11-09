@@ -52,6 +52,7 @@ export const DISCOVERY_CRITICAL_PATHS=Object.freeze([
  "src/home/dyk-published-feed.js",
  "src/home/dyk-h200-release.js",
  "src/home/dyk-h225-release.js",
+ "src/home/dyk-h250-release.js",
  "data/did-you-know/weiser-historical-20-publication.v1.json",
  "data/did-you-know/weiser-r50-sixteen-publication.v1.json",
  "data/did-you-know/weiser-r50-second-sixteen-publication.v1.json",
@@ -60,7 +61,8 @@ export const DISCOVERY_CRITICAL_PATHS=Object.freeze([
  "data/did-you-know/dyk-h150-originals-25-publication.v1.json",
  "data/did-you-know/dyk-h175-multisource-25-publication.v1.json",
  "data/did-you-know/dyk-h200-three-sources-25-publication.v1.json",
- "data/did-you-know/dyk-h225-world-liturgies-25-publication.v1.json"
+ "data/did-you-know/dyk-h225-world-liturgies-25-publication.v1.json",
+ "data/did-you-know/dyk-h250-unesco-sacred-geography-25-publication.v1.json"
 ]);
 
 // Source-owned optional fourteen-photo release: all adapted images, attribution
