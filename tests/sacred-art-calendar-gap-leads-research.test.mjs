@@ -19,16 +19,16 @@ assert.equal(openPrayerStatuses.filter(x=>x==='SUPPLEMENTARY_NOT_ASSIGNED').leng
 assert.equal(openPrayerStatuses.filter(x=>x==='HOLD_RESPECTED').length,14);
 
 const linked=audit.records.filter(x=>x.candidateCount>0);
-assert.equal(linked.length,55);
-assert.equal(audit.records.filter(x=>!x.candidateCount).length,115);
+assert.equal(linked.length,69);
+assert.equal(audit.records.filter(x=>!x.candidateCount).length,101);
 assert.deepEqual(Object.entries(audit.counts.byClass).map(([rank,x])=>[rank,x.unmatchedBaseline,x.withResearchLeads,x.stillWithoutLeads]),[
- ['II',29,21,8],['III',101,9,92],['IV',40,25,15]
+ ['II',29,25,4],['III',101,9,92],['IV',40,35,5]
 ]);
 const edges=audit.records.flatMap(x=>x.artworkRelationships);
-assert.equal(edges.length,65);
+assert.equal(edges.length,79);
 assert.equal(edges.filter(x=>x.kind==='EXISTING_989_GROUP_RESEARCH_LINK').length,24);
-assert.equal(edges.filter(x=>x.kind==='NEW_INSTITUTIONAL_OBJECT_LEAD').length,35);
-assert.equal(edges.filter(x=>x.kind==='SECONDARY_OR_COMMONS_RESEARCH_ONLY').length,6);
+assert.equal(edges.filter(x=>x.kind==='NEW_INSTITUTIONAL_OBJECT_LEAD').length,46);
+assert.equal(edges.filter(x=>x.kind==='SECONDARY_OR_COMMONS_RESEARCH_ONLY').length,9);
 assert.equal(audit.counts.newAuthorizedAssignments,0);
 const groups=new Map(original.map(x=>[x.workGroupId,x]));
 const rejectedIDs=new Set(rejected.map(x=>String(x.id||'').toLowerCase()));
@@ -59,6 +59,11 @@ assert.ok(audit.records.find(x=>x.date==='2026-08-09').artworkRelationships.some
 assert.ok(audit.records.find(x=>x.date==='2026-09-06').artworkRelationships.some(x=>x.key==='KHM:GG52'));
 assert.ok(audit.records.find(x=>x.date==='2026-09-23').artworkRelationships.some(x=>x.key==='Vatican:Pinacoteca:333'));
 assert.ok(audit.records.find(x=>x.date==='2026-06-07').artworkRelationships.some(x=>x.key==='Wellcome:45078i'));
+assert.ok(audit.records.find(x=>x.date==='2026-07-12').artworkRelationships.some(x=>x.key==='Rijks:200392356'));
+assert.ok(audit.records.find(x=>x.date==='2026-10-11').artworkRelationships.some(x=>x.key==='Brooklyn:Tissot-Officers-Son-UNRESOLVED'));
+assert.ok(audit.records.find(x=>x.date==='2026-09-26').artworkRelationships.some(x=>x.key==='Rijks:200267736'));
+assert.ok(audit.records.find(x=>x.date==='2026-10-12').artworkRelationships.some(x=>x.key==='Brooklyn:Tissot-Officers-Son-UNRESOLVED'));
+
 assert.ok(audit.records.find(x=>x.date==='2026-11-08').artworkRelationships.some(x=>x.key==='Thyssen:1979.62'));
 assert.ok(audit.records.find(x=>x.date==='2026-10-18').artworkRelationships.some(x=>x.key==='REVIEW::commons:150920'));
-console.log('PASS: 170 unchanged Calendar holds, 27 protected Prayer holds, 55 dated research leads / 65 edges, no rejected originals or publication authority.');
+console.log('PASS: 170 unchanged Calendar holds, 27 protected Prayer holds, 69 dated research leads / 79 edges, no rejected originals or publication authority.');
