@@ -2,7 +2,10 @@
  * Complete 20-tercet Latin Stabat Mater for the September 15 Seven Sorrows
  * sequence. Do not substitute this for Passion Friday's shorter liturgical
  * sequence or the 13 between-Station excerpts in the approved Stations reader.
- * Independent 1961/1962 printed-leaf facsimile collation remains open.
+ * The September 15 sequence and disputed stanza 18 have been visually
+ * compared to a 1962 printed Missale Romanum, p. 671 (scan 0748).
+ * Exact Benziger edition identity, 1961 comparison, and exhaustive
+ * orthographic collation are not independently certified.
  * No English/French translation is claimed.
  */
 export const STABAT_MATER_SEPTEMBER_SOURCE=Object.freeze({
@@ -12,7 +15,10 @@ export const STABAT_MATER_SEPTEMBER_SOURCE=Object.freeze({
   sourceWitnesses:Object.freeze([
     "https://extraordinaryform.org/masses/0915SevenSorrowsBVMM20.pdf"
   ]),
-  printed1962ImageIndependentlyCollated:false,
+  printed1962ImageIndependentlyCollated:true,
+  printed1962ImageCollationScope:"SEPTEMBER_15_STANZAS_18_TO_20_AND_20_TERCET_COUNT",
+  originalBenzigerEditionIdentityCertified:false,
+  original1961EditionCollationCertified:false,
   stanzaCount:20,
   variant19:"CHRISTE_CUM_SIT_HINC_EXIRE",
   translationStatus:"LATIN_ONLY",
