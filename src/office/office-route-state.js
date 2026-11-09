@@ -5,6 +5,8 @@
  */
 import {reviewAdventIComplineAppointment} from "./compline-advent-2026-appointments.js";
 import {latinComplineReleaseEligibility} from "./latin-compline-public-release.js";
+import {reviewChristmas2026LatinComplineCertificate}
+ from "./compline-christmas-2026-release-certificate.js";
 
 export const ROMAN_OFFICE_HOURS=Object.freeze([
  Object.freeze({id:"MATINS",name:"Matins",latin:"Matutinum"}),
@@ -29,11 +31,14 @@ export function officeRouteState({date,hour,calendarScope="UNIVERSAL"}={}){
  if(hour==="COMPLINE"){
    const released=latinComplineReleaseEligibility({date,hour,calendarScope});
    if(released.status==="ELIGIBLE"){
-    const appointment=reviewAdventIComplineAppointment(date);
+    const christmas=reviewChristmas2026LatinComplineCertificate(date);
+    const appointment=christmas.status==="EXPLICIT_FINITE_ROMAN_1960_LATIN_TEXT_CERTIFIED"?
+      christmas.profile:reviewAdventIComplineAppointment(date).appointment;
+    if(!appointment)return withheld("SOURCE_CERTIFICATE_PROFILE_MISSING");
     return Object.freeze({date,hour,status:"RELEASED",
       reason:"PRINTED_LATIN_COMPLINE_CERTIFIED",
-      label:appointment.appointment.label,
-      officeDate:appointment.appointment?.officeDate??date,
+      label:appointment.label,
+      officeDate:appointment.officeDate??date,
       sourceRevision:released.sourceRevision,
       sourceResearch:true,readingEnabled:true,published:true});
    }
