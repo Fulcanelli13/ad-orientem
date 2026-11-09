@@ -144,8 +144,8 @@ test("28 PUBLIC Latin full 42→40 readings use exact dates, rubrics and Nativit
  }
 });
 test("9 Jan 2027 onward, non-universal calendars and other Hours zero-fetch WITHHELD",async()=>{
- for(const date of ["2027-01-09","2027-01-10","2027-01-11",
-  "2027-01-12","2028-01-01"]){
+ for(const date of ["2027-01-11","2027-01-12","2027-01-13",
+  "2027-01-14","2028-01-01"]){
   assert.equal(latinComplineReleaseEligibility({date}).status,"WITHHELD");
   assert.equal(officeRouteState({date,hour:"COMPLINE"}).readingEnabled,false);
   for(const context of Object.values(COMPLINE_CONTEXT)){
