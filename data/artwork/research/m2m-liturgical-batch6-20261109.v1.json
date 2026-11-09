@@ -1,0 +1,287 @@
+{
+  "schema": "AO_SACRED_ART_LITURGICAL_BATCH6_20261109_V1",
+  "date": "2026-11-09",
+  "state": "EDITORIAL_ADJUDICATION_ONLY_DO_NOT_IMPORT",
+  "method": "Exact saint/episode identity checked against institutional records where available; inventory conflicts and image rights held separately, no physical pixel/image QA",
+  "summary": {
+    "reviewed": 12,
+    "cumulative_new_proposals_reviewed": 78,
+    "total_new_proposals": 114,
+    "remaining_new_proposals": 36,
+    "original_relationship_edges_untouched": 1589,
+    "owner_accepted_prayer_alternatives_untouched": 507,
+    "methodological_caveat": "Institutional source may establish work identity while exact uploaded digital asset and image reuse remain unchecked"
+  },
+  "rules": [
+    "No replacement of historical owner choices or accepted alternatives",
+    "No source-catalogue endorsement of the precise photographic file unless checked",
+    "Museum/current-collection identity and lost artwork survival status are separate claims",
+    "Depicted saint or tradition is not necessarily the appointed Gospel"
+  ],
+  "records": [
+    {
+      "destination_id": "2026-01-17",
+      "target_type": "CALENDAR_DATE",
+      "observance": "St. Anthony",
+      "artwork_id": "RECENT575::001",
+      "artwork_title": "The Temptation of Saint Anthony the Great",
+      "claude_original_basis": "LITURGICAL",
+      "claude_original_confidence": "HIGH",
+      "relationship_after_review": "SAINT_LIFE_EPISODE_EXACT_FEAST_SUBJECT",
+      "physical_work_identity": "KMSKA Antwerp 103, Maerten de Vos, 1594, oil on panel",
+      "findings": "KMSKA identifies the desert father Anthony the Great, his temptation and associated demons. This is a saint-life subject matching the feast, not a depicted Mass Gospel.",
+      "evidence_urls": [
+        "https://vlaamsekunstcollectie.be/en/collection/103",
+        "https://commons.wikimedia.org/wiki/File:Maerten_de_Vos_-_The_Temptation_of_Saint_Anthony_the_Great.jpg"
+      ],
+      "photo_publication_gate": "INSTITUTIONAL_CC0_LISTING_BUT_EXACT_MEDIA_UNINSPECTED",
+      "owner_selection_changed": false,
+      "owner_many_to_many_choices_preserved": true,
+      "exact_photo_release_verified": false,
+      "independent_pixels_checked": false,
+      "runtime_selection_authorised": false
+    },
+    {
+      "destination_id": "2026-01-20",
+      "target_type": "CALENDAR_DATE",
+      "observance": "Sts. Fabian & Sebastian",
+      "artwork_id": "RECENT575::430",
+      "artwork_title": "The Martyrdom of St Sebastian",
+      "claude_original_basis": "LITURGICAL",
+      "claude_original_confidence": "HIGH",
+      "relationship_after_review": "SAINT_MARTYRDOM_CORRECT_FEAST_SUBJECT_CATALOGUE_ATTRIBUTION_CAUTION",
+      "physical_work_identity": "Musée des Beaux-Arts de Dijon, martyrdom of Sebastian; Jacopo Bassano per museum educational PDF, historical 19th-century catalogue labels Leandro Bassano",
+      "findings": "Dijon identifies a Martyrdom of St Sebastian by Jacopo Bassano. An older catalogue labels a St Sebastian martyrdom under Leandro Bassano; verify artwork inventory/object before treating the historical label as an alternative attribution for this exact painting.",
+      "evidence_urls": [
+        "https://beaux-arts.dijon.fr/data/pdf/FicheVieDesOeuvres.pdf",
+        "https://commons.wikimedia.org/wiki/File:Jacopo_Bassano_-_The_Martyrdom_of_St_Sebastian.jpg"
+      ],
+      "photo_publication_gate": "EXACT_ACCESSION_AND_ATTRIBUTION_HISTORY_UNCONFIRMED",
+      "owner_selection_changed": false,
+      "owner_many_to_many_choices_preserved": true,
+      "exact_photo_release_verified": false,
+      "independent_pixels_checked": false,
+      "runtime_selection_authorised": false
+    },
+    {
+      "destination_id": "2026-01-21",
+      "target_type": "CALENDAR_DATE",
+      "observance": "St. Agnes",
+      "artwork_id": "RECENT575::266",
+      "artwork_title": "Two Girls as Saint Agnes and Saint Dorothea",
+      "claude_original_basis": "LITURGICAL",
+      "claude_original_confidence": "LOW",
+      "relationship_after_review": "PORTRAIT_HISTORIE_AS_SAINT_AGNES_NOT_NARRATIVE_SAINT_LIFE",
+      "physical_work_identity": "KMSKA Antwerp 599, Michaelina Wautier, historiated double portrait",
+      "findings": "Museum explicitly says two unidentified real girls pose as Agnes (lamb) and Dorothea (flowers/fruit). Keep feast iconographic relation, but not a biographical or martyrdom scene.",
+      "evidence_urls": [
+        "https://vip.kmska.be/en/masterpiece/two-girls-as-saint-agnes-and-saint-dorothy",
+        "https://commons.wikimedia.org/wiki/File:Michaelina_Wautier_-_Twee_meisjes_als_de_heiligen_Agnes_en_Dorothea_-_599_-_Royal_Museum_of_Fine_Arts_Antwerp.tiff"
+      ],
+      "photo_publication_gate": "ART_IN_FLANDERS_PD_PHOTO_EXACT_FILE_MOBILE_UNCHECKED",
+      "owner_selection_changed": false,
+      "owner_many_to_many_choices_preserved": true,
+      "exact_photo_release_verified": false,
+      "independent_pixels_checked": false,
+      "runtime_selection_authorised": false
+    },
+    {
+      "destination_id": "2026-01-30",
+      "target_type": "CALENDAR_DATE",
+      "observance": "St. Martina",
+      "artwork_id": "RECENT575::462",
+      "artwork_title": "Sainte Martine refusant d'adorer les idoles 02",
+      "claude_original_basis": "LITURGICAL",
+      "claude_original_confidence": "HIGH",
+      "relationship_after_review": "SAINT_MARTINA_FEAST_SCENE_CORRECT_BUT_DISTINCT_OBJECTS",
+      "physical_work_identity": "Musée Granet Aix-en-Provence, state INV 107 / MR 413, Pietro da Cortona, oil on copper, 49.8×34.8cm",
+      "findings": "The exact Commons title and photo describe the Granet oil-on-copper object. Do not conflate with Princeton 1998-38 oil-on-canvas, the Pitti version, or copies catalogued by Zeri. Granet photo licensing/Italy-France use context is separate.",
+      "evidence_urls": [
+        "https://eadm.mairie-aixenprovence.fr/delibinternet/delib-18199-TRANSFERT-DE-PROPRIETE-DES-UVRES-DE-LETAT-EN-FAVEUR-DE-LA-VILLE-DAIX-EN-PROVENCE-ET-INSCRIPTION-A-LINVENTAIRE-REGLEMENTAIRE-DES-COLLECTIONS-DU-MUSEE-GRANET.pdf",
+        "https://commons.wikimedia.org/wiki/File:Pietro_da_Cortona_-_Sainte_Martine_refusant_d%27adorer_les_idoles_02.jpg"
+      ],
+      "photo_publication_gate": "GRANET_COMMONS_UPLOADER_PHOTO_NOT_INDEPENDENTLY_RELEASED",
+      "owner_selection_changed": false,
+      "owner_many_to_many_choices_preserved": true,
+      "exact_photo_release_verified": false,
+      "independent_pixels_checked": false,
+      "runtime_selection_authorised": false
+    },
+    {
+      "destination_id": "2026-06-06",
+      "target_type": "CALENDAR_DATE",
+      "observance": "St. Norbert",
+      "artwork_id": "RECENT575::041",
+      "artwork_title": "The Citizens of Antwerp Return Sacred Vessels to Saint Norbert",
+      "claude_original_basis": "LITURGICAL",
+      "claude_original_confidence": "HIGH",
+      "relationship_after_review": "EXACT_SAINT_NORBERT_LIFE_SCENE_NOT_APPOINTED_GOSPEL",
+      "physical_work_identity": "KMSKA Antwerp 107, Cornelis de Vos, 1630, 153×249cm",
+      "findings": "Institutional iconography explicitly names St Norbert, Antwerp citizens, returned monstrance and sacred vessels hidden from Tankelin. Good saint-life association, not a Gospel illustration.",
+      "evidence_urls": [
+        "https://vlaamsekunstcollectie.be/en/collection/107",
+        "https://commons.wikimedia.org/wiki/File:Cornelis_de_Vos_-_The_Citizens_of_Antwerp_bring_back_to_Saint_Norbert_the_Monstrance_and_other_Sacred_Vessels_that_they_had_hidden_from_Tankelin.jpg"
+      ],
+      "photo_publication_gate": "KMSKA_CC0_OBJECT_IMAGE_EXACT_ASSET_NOT_CHECKED",
+      "owner_selection_changed": false,
+      "owner_many_to_many_choices_preserved": true,
+      "exact_photo_release_verified": false,
+      "independent_pixels_checked": false,
+      "runtime_selection_authorised": false
+    },
+    {
+      "destination_id": "2026-06-13",
+      "target_type": "CALENDAR_DATE",
+      "observance": "St. Anthony of Padua",
+      "artwork_id": "PRAYER20261105::SA-1",
+      "artwork_title": "Saint Anthony of Padua with the Christ Child",
+      "claude_original_basis": "LITURGICAL",
+      "claude_original_confidence": "HIGH",
+      "relationship_after_review": "SAINT_SUBJECT_CONFIRMED_HISTORICAL_OBJECT_PROBABLY_DESTROYED",
+      "physical_work_identity": "Staatliche Museen zu Berlin Gemäldegalerie inventory 414 (obj:862397), Murillo 1670–1680, recorded likely destroyed May 1945",
+      "findings": "The Berlin museum says this particular inventory 414 was probably destroyed in the Friedrichshain flak bunker in May 1945. A Commons image sourced from the catalogue is not proof of a surviving object or current museum holding. Other versions and copies exist; do not silently substitute one.",
+      "evidence_urls": [
+        "https://search.smb.museum/object/obj-862397",
+        "https://commons.wikimedia.org/wiki/File:Bartolom%C3%A9_Esteban_Murillo_(1617_-_1682)_-_Saint_Anthony_of_Padua_with_Christ_as_a_child_-_414_-_Gem%C3%A4ldegalerie.jpg"
+      ],
+      "photo_publication_gate": "HISTORICAL_PHOTOGRAPH_PROVENANCE_AND_SURVIVAL_LABEL_HOLD",
+      "owner_selection_changed": false,
+      "owner_many_to_many_choices_preserved": true,
+      "exact_photo_release_verified": false,
+      "independent_pixels_checked": false,
+      "runtime_selection_authorised": false
+    },
+    {
+      "destination_id": "2026-08-14",
+      "target_type": "CALENDAR_DATE",
+      "observance": "Vigil of the Assumption",
+      "artwork_id": "RECENT575::268",
+      "artwork_title": "Death of the Virgin",
+      "claude_original_basis": "LITURGICAL",
+      "claude_original_confidence": "MEDIUM",
+      "relationship_after_review": "DORMITION_TRADITION_LITURGICALLY_RELEVANT_NOT_NARRATED_GOSPEL",
+      "physical_work_identity": "Musea Brugge Groeningemuseum 0000.GRO0204.I, Hugo van der Goes, c.1475–1482",
+      "findings": "Institution describes the death/dormition of the Virgin with apostles and Christ above. Appropriate anticipation of the Assumption vigil; not the appointed Gospel episode or a literal painting of bodily assumption.",
+      "evidence_urls": [
+        "https://collectie.museabrugge.be/en/collection/work/id/0000_gro0204_i",
+        "https://commons.wikimedia.org/wiki/File:Hugo_van_der_Goes_-_Death_of_the_Virgin_(c._1475-1482).jpg"
+      ],
+      "photo_publication_gate": "MUSEA_BRUGGE_ART_IN_FLANDERS_CC0_ALTERNATIVE_FILE_CHECK_PENDING",
+      "owner_selection_changed": false,
+      "owner_many_to_many_choices_preserved": true,
+      "exact_photo_release_verified": false,
+      "independent_pixels_checked": false,
+      "runtime_selection_authorised": false
+    },
+    {
+      "destination_id": "2026-08-17",
+      "target_type": "CALENDAR_DATE",
+      "observance": "St. Hyacinth",
+      "artwork_id": "PRAYER20261105::MC-3",
+      "artwork_title": "The Virgin and Child Appearing to Saint Hyacinth",
+      "claude_original_basis": "LITURGICAL",
+      "claude_original_confidence": "HIGH",
+      "relationship_after_review": "EXACT_ST_HYACINTH_VISION_SAINT_LIFE_NOT_GOSPEL",
+      "physical_work_identity": "Louvre INV 186 / MR 140, Ludovico Carracci 1594, oil on canvas 3.75×2.23m",
+      "findings": "The Louvre authenticates the painting and a related preparatory drawing. Vision is hagiographic (according to Louvre commentary associated with Assumption Day 1224), not a Mass Gospel episode. Do not confuse painting INV186 with drawing RFML.AG.2019.47.1.",
+      "evidence_urls": [
+        "https://collections.louvre.fr/ark:/53355/cl010064443",
+        "https://commons.wikimedia.org/wiki/File:Carracci_Saint_Hyacinth.jpg"
+      ],
+      "photo_publication_gate": "LOUVRE_EXACT_REPRODUCTION_RIGHTS_AND_MOBILE_UNCHECKED",
+      "owner_selection_changed": false,
+      "owner_many_to_many_choices_preserved": true,
+      "exact_photo_release_verified": false,
+      "independent_pixels_checked": false,
+      "runtime_selection_authorised": false
+    },
+    {
+      "destination_id": "2026-08-25",
+      "target_type": "CALENDAR_DATE",
+      "observance": "St. Louis IX",
+      "artwork_id": "RECENT575::447",
+      "artwork_title": "The Glorification of St. Louis",
+      "claude_original_basis": "LITURGICAL",
+      "claude_original_confidence": "MEDIUM",
+      "relationship_after_review": "ST_LOUIS_FEAST_HAGIOGRAPHIC_GLORIFICATION",
+      "physical_work_identity": "Versailles accession MV 7669; on deposit at Musée Fabre Montpellier (Versailles institution press record)",
+      "findings": "The painting honors Louis IX, not an episode in the Mass Gospel. A Versailles press record distinguishes Versailles ownership/deposit at Montpellier; Commons collection names may conceal this distinction.",
+      "evidence_urls": [
+        "https://www.chateauversailles.fr/resources/pdf/fr/presse/dp_versailles_web.pdf",
+        "https://commons.wikimedia.org/wiki/File:Alexandre_Cabanel_-_The_Glorification_of_St._Louis.jpg"
+      ],
+      "photo_publication_gate": "VERSAILLES_MUSEE_FABRE_EXACT_OBJECT_PHOTO_AND_CROP_CHECK_PENDING",
+      "owner_selection_changed": false,
+      "owner_many_to_many_choices_preserved": true,
+      "exact_photo_release_verified": false,
+      "independent_pixels_checked": false,
+      "runtime_selection_authorised": false
+    },
+    {
+      "destination_id": "2026-10-15",
+      "target_type": "CALENDAR_DATE",
+      "observance": "St. Teresa of Avila",
+      "artwork_id": "RECENT575::002",
+      "artwork_title": "Ecstasy of Saint Teresa",
+      "claude_original_basis": "LITURGICAL",
+      "claude_original_confidence": "HIGH",
+      "relationship_after_review": "ST_TERESA_TRANSVERBERATION_SAINT_LIFE_NOT_GOSPEL",
+      "physical_work_identity": "KMSKA Antwerp 509, Gerard Seghers, 17th century",
+      "findings": "Institution confirms the mystic St Teresa of Ávila in ecstasy/transverberation with angel and pierced-heart iconography. The proposed Commons jpeg is only 706×939, so verify superior institutional CC0 reproduction and mobile legibility.",
+      "evidence_urls": [
+        "https://vlaamsekunstcollectie.be/collectie/509",
+        "https://commons.wikimedia.org/wiki/File:Gerard_Seghers_-_Ecstasy_of_Saint_Teresa.jpg"
+      ],
+      "photo_publication_gate": "COMMONS_LOW_RES_INSTITUTIONAL_HIGH_RES_OPTION_TO_EVALUATE",
+      "owner_selection_changed": false,
+      "owner_many_to_many_choices_preserved": true,
+      "exact_photo_release_verified": false,
+      "independent_pixels_checked": false,
+      "runtime_selection_authorised": false
+    },
+    {
+      "destination_id": "2026-11-21",
+      "target_type": "CALENDAR_DATE",
+      "observance": "Presentation of the Blessed Virgin Mary",
+      "artwork_id": "RECENT575::481",
+      "artwork_title": "Presentation of the Virgin in the Temple",
+      "claude_original_basis": "LITURGICAL",
+      "claude_original_confidence": "HIGH",
+      "relationship_after_review": "MARIAN_TRADITION_EXACT_LITURGICAL_FEAST_NOT_GOSPEL",
+      "physical_work_identity": "Musée Granet Aix-en-Provence 860.1.408, Lubin Baugin 1647; note separate Rennes preparatory sketch",
+      "findings": "The depicted event is the traditional Presentation of Mary, not a narrated canonical Gospel pericope. Distinguish Granet painting from the smaller Rennes sketch; original Claude Commons file is only 1024×814 and is not itself a photo release gate.",
+      "evidence_urls": [
+        "https://commons.wikimedia.org/wiki/Category:Pr%C3%A9sentation_de_la_Vierge_au_temple_by_Lubin_Baugin",
+        "https://commons.wikimedia.org/wiki/File:Lubin_Baugin_Pr%C3%A9sentation_de_la_Vierge_au_Temple_mus%C3%A9e_Granet.jpg"
+      ],
+      "photo_publication_gate": "INSTITUTIONAL_ACCESSION_VIA_SECONDARY_CATALOGUE_PHOTO_NOT_CLEARED",
+      "owner_selection_changed": false,
+      "owner_many_to_many_choices_preserved": true,
+      "exact_photo_release_verified": false,
+      "independent_pixels_checked": false,
+      "runtime_selection_authorised": false
+    },
+    {
+      "destination_id": "2026-11-23",
+      "target_type": "CALENDAR_DATE",
+      "observance": "St. Clement I",
+      "artwork_id": "RECENT575::285",
+      "artwork_title": "Saint Clement Finding His Family",
+      "claude_original_basis": "LITURGICAL",
+      "claude_original_confidence": "MEDIUM",
+      "relationship_after_review": "LEGEND_OF_CLEMENT_I_FEAST_ICONOGRAPHY_NOT_LITURGICAL_GOSPEL",
+      "physical_work_identity": "Strasbourg Musée des Beaux-Arts 453.b, Bernardino Fungai c.1500, predella panel",
+      "findings": "INHA RETIF identifies Saint Clement reunited with his family as a panel of the St Clement cycle. A related INHA 'Conversion of Saint Clement' entry misstates the reunification panel as 453.a; independent related-results table says 453.b. Hold cross-reference consistency rather than mixing two predella paintings.",
+      "evidence_urls": [
+        "https://agorha.inha.fr/recherche?affichage=cartouche&facets=eyJCYXNlcyBkZSBkb25uw6llcyI6eyJmaWx0ZXJzIjpbIlLDqXBlcnRvaXJlIGRlcyB0YWJsZWF1eCBpdGFsaWVucyBkYW5zIGxlcyBjb2xsZWN0aW9ucyBwdWJsaXF1ZXMgZnJhbsOnYWlzZXMgKFhJSUllLVhJWGUgc2nDqGNsZXMpLCBSRVRJRiJdfX0%3D&fieldSort=&filters=&noticeType=&page=358&pageSize=20&selectionId=&sort=&terms=&type=simple&withAttachment=false",
+        "https://commons.wikimedia.org/wiki/File:Bernardino_Fungai-Saint_Cl%C3%A9ment_retrouvant_sa_famille.jpg"
+      ],
+      "photo_publication_gate": "INHA_CROSS_REFERENCE_453A_453B_DISCREPANCY_PHOTO_HOLD",
+      "owner_selection_changed": false,
+      "owner_many_to_many_choices_preserved": true,
+      "exact_photo_release_verified": false,
+      "independent_pixels_checked": false,
+      "runtime_selection_authorised": false
+    }
+  ]
+}
