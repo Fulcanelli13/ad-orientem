@@ -61,7 +61,7 @@ try{
    page.on("response",response=>{
     const status=response.status(),url=response.url();
     if(status>=400||(url.startsWith(base.href)&&
-      /(?:\\.js|\\.css)(?:[?#]|$)/i.test(url)))
+      [".js",".css"].some(ext=>url.includes(ext))))
      note("response",{status,url});
    });
    page.on("domcontentloaded",()=>note("domcontentloaded",page.url()));
@@ -229,7 +229,7 @@ try{
           loadEnd:nav.loadEventEnd,transferSize:nav.transferSize}:null,
         scripts:[...document.scripts].map(x=>x.src).filter(Boolean).slice(-24),
         criticalResources:performance.getEntriesByType("resource")
-         .filter(x=>/(?:\\.js|\\.css|release-proof\\.json)(?:[?#]|$)/i.test(x.name))
+         .filter(x=>[".js",".css","release-proof.json"].some(ext=>x.name.includes(ext)))
          .slice(-35).map(x=>({url:x.name,duration:Math.round(x.duration),
           transferSize:x.transferSize,responseStatus:x.responseStatus??null})),
         readerStatus:reader&&typeof reader==="object"?
