@@ -17,29 +17,36 @@ function manifestFromResolvedMass(resolvedMass){
   return proper?.schema==="ao-proper-manifest-v2" ? proper : null;
 }
 
-function english(value,...keys){
+function sourcedLanguage(value,language,englishKeys,frenchKeys){
+  const keys=language==="fr"?frenchKeys:englishKeys;
   for(const key of keys){
     const hit=value?.[key];
     if(typeof hit==="string"&&hit.trim())return hit.trim();
   }
+  // A missing French translation must never be substituted with English.
+  // The paired paragraph remains visibly Latin until French is sourced.
   return null;
+}
+function readerLanguage(value){
+  return String(value??"en").toLowerCase().startsWith("fr")?"fr":"en";
 }
 
 function textParagraph({id,latin,vernacular=null,kind="TEXT"}){
-  const hasEnglish=Boolean(vernacular);
+  const hasTranslation=Boolean(vernacular);
   return freeze({
     id,
     kind,
-    primary:hasEnglish ? String(vernacular) : String(latin),
+    primary:hasTranslation ? String(vernacular) : String(latin),
     secondary:null,
-    alternate:hasEnglish ? String(latin) : null,
-    replaceOnToggle:hasEnglish,
+    alternate:hasTranslation ? String(latin) : null,
+    replaceOnToggle:hasTranslation,
     active:false,
     sourceCueIds:freeze([]),
   });
 }
 
-export function resolvePrayerOverPeopleInsertion(resolvedMass){
+export function resolvePrayerOverPeopleInsertion(resolvedMass,{language="en"}={}){
+  const locale=readerLanguage(language);
   const manifest=manifestFromResolvedMass(resolvedMass);
   const raw=manifest?.orations?.prayerOverPeople??null;
   if(!raw)return null;
@@ -49,23 +56,30 @@ export function resolvePrayerOverPeopleInsertion(resolvedMass){
     compilePostcommunionExitDelta({prayerOverPeoplePresent:true})
   );
 
-  const bodyEn=english(oration,"bodyEn","bodyEnglish","translation","translationEn","en");
-  const conclusionEn=english(oration,"conclusionEn","conclusionEnglish");
+  const body=sourcedLanguage(oration,locale,
+    ["bodyEn","bodyEnglish","translation","translationEn","en"],
+    ["bodyFr","bodyFrench","translationFr","fr"]);
+  const conclusion=sourcedLanguage(oration,locale,
+    ["conclusionEn","conclusionEnglish"],
+    ["conclusionFr","conclusionFrench"]);
   const paragraphs=freeze([
     textParagraph({
       id:"R17.POP.010.INVITATION",
       latin:"Orémus. Humiliáte cápita vestra Deo.",
-      vernacular:"Let us pray. Bow your heads to God.",
+      // French formula verified against the original Francais/Tempora/Quad1-5
+      // [Super populum] source. No machine-authored wording.
+      vernacular:locale==="fr"?"Prions. Humiliez vos têtes devant Dieu.":
+        "Let us pray. Bow your heads to God.",
     }),
     textParagraph({
       id:"R17.POP.010.BODY",
       latin:oration.bodyLat,
-      vernacular:bodyEn,
+      vernacular:body,
     }),
     textParagraph({
       id:"R17.POP.010.CONCLUSION",
       latin:oration.conclusionLat,
-      vernacular:conclusionEn,
+      vernacular:conclusion,
     }),
     textParagraph({
       id:"R17.POP.010.AMEN",
@@ -91,9 +105,9 @@ export function resolvePrayerOverPeopleInsertion(resolvedMass){
   });
 }
 
-export function augmentReaderCardsWithPrayerOverPeople(cards,resolvedMass){
+export function augmentReaderCardsWithPrayerOverPeople(cards,resolvedMass,{language="en"}={}){
   if(!Array.isArray(cards))throw new TypeError("Reader cards required");
-  const insertion=resolvePrayerOverPeopleInsertion(resolvedMass);
+  const insertion=resolvePrayerOverPeopleInsertion(resolvedMass,{language});
   if(!insertion)return freeze([...cards]);
 
   const index=cards.findIndex(card=>Number(card?.sequence)===27);

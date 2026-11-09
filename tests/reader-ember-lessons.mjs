@@ -17,6 +17,7 @@ const low=load("../data/presentation/reader-text-low.v1.json");
 const sung=load("../data/presentation/reader-text-sung.v1.json");
 const sectionMap=load("../data/presentation/reader-section-map.v0.13.1.json");
 const canonSourceMap=load("../data/presentation/reader-canon-source-map.v1.json");
+const frenchOrdinary=load("../data/presentation/reader-french-ordinary.v1.json");
 const registry=load("../data/mass/rite-overlay-registry.v1.json");
 const extension=load("../data/mass/special-days-extension.v1.3.json");
 const core=load("../data/mass/special-days-core.v1.1.json");
@@ -151,7 +152,7 @@ const emberPrepared={session:{resolvedMass:resolved,
   plan:{kind:"MASS",overlayGraphs:["EMBER_LESSONS"],
     precedingGraphs:[],followingGraphs:[]}},
   readerPreferences:{mode:"LIVE",language:"en"}};
-const emberData={sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap};
+const emberData={sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap,frenchOrdinary};
 const emberMode=buildReaderModeModels({prepared:emberPrepared,data:emberData,mode:"LIVE"});
 assert.equal(emberMode.sourceModel.totalCards,44);
 assert.equal(emberMode.presentationModel.totalCards,70);
@@ -269,5 +270,62 @@ await assert.rejects(()=>prepareNativeReaderPreview({...productionOptions,
     plan:{...plan,overlayGraphs:[]}}}}),
   /LIVE_65_CARD_PRESENTATION_REQUIRED/,
   "Unowned Ember insertion must not silently display 44 raw source cards");
+
+
+// R31 source-choice language axis. These translations are *synthetic test
+// witnesses*, not claimed as the September 1962 source text. The verifier
+// must select only explicit French fields and keep the identical Latin
+// source, node order, word-level formula boundaries and four Mass forms.
+const frenchPayloads={
+  PAYLOAD_OratioL2:{...payloads.PAYLOAD_OratioL2,
+    bodyFr:"Prions. Fléchissons les genoux. Deuxième oraison. Levez-vous.",
+    conclusionFr:"CONCLUSION_FR_SOURCE_TEST_2"},
+  PAYLOAD_LectioL1:{...payloads.PAYLOAD_LectioL1,textFr:"Première leçon."},
+  PAYLOAD_GradualeL1:{...payloads.PAYLOAD_GradualeL1,textFr:"Premier graduel."},
+  PAYLOAD_OratioL1:{...payloads.PAYLOAD_OratioL1,
+    bodyFr:"Prions. Première oraison.",conclusionFr:"CONCLUSION_FR_SOURCE_TEST_1"},
+  PAYLOAD_LectioL2:{...payloads.PAYLOAD_LectioL2,textFr:"Deuxième leçon."},
+};
+const sourceFr=value=>({...value,fr:"FR_SOURCE_TEST: "+value.lat});
+const frBaseProper={...proper,preGospelPayloads:frenchPayloads};
+for(const key of ["introit","epistle","gradual","gospel","offertory","preface","communion"])
+ frBaseProper[key]=sourceFr(proper[key]);
+for(const key of ["collects","secrets","postcommunions"])
+ frBaseProper[key]=proper[key].map(sourceFr);
+const frResolved={...resolved,proper:frBaseProper};
+const frenchInserts=buildEmberInsertionCards(frResolved,{language:"fr"});
+assert.equal(frenchInserts.length,inserts.length);
+assert.deepEqual(frenchInserts.map(c=>c.sourceSectionKey),order);
+assert.equal(frenchInserts[0].paragraphs[0].primary,
+  frenchPayloads.PAYLOAD_OratioL2.bodyFr);
+assert.equal(frenchInserts[0].paragraphs[0].alternate,
+  frenchPayloads.PAYLOAD_OratioL2.bodyLat);
+assert.equal(frenchInserts[1].paragraphs[0].primary,"Première leçon.");
+assert.deepEqual(frenchInserts[0].formulaStates.map(s=>s.formula),
+  ["FLECTAMUS_GENUA","LEVATE"]);
+assert.ok(frenchInserts.every(c=>c.paragraphs.every(p=>
+  !p.primary.includes("First ")&&!p.primary.includes("Let us pray"))));
+for(const form of ["LOW","SOLEMN"]){
+ for(const mode of ["LIVE","MISSAL"]){
+  const prepared={session:{resolvedMass:{...frResolved,form,
+    presentationMode:mode},plan:{kind:"MASS",overlayGraphs:["EMBER_LESSONS"],
+    precedingGraphs:[],followingGraphs:[]}},
+    readerPreferences:{mode,language:"fr"}};
+  const built=buildReaderModeModels({prepared,data:emberData,mode});
+  const cards=built.presentationModel.cards.filter(c=>c.emberInsertion);
+  assert.deepEqual(cards.map(c=>c.sourceSectionKey),order);
+  assert.equal(cards[0].paragraphs[0].primary,
+    frenchPayloads.PAYLOAD_OratioL2.bodyFr);
+  assert.equal(cards[0].paragraphs[0].alternate,
+    frenchPayloads.PAYLOAD_OratioL2.bodyLat);
+  assert.ok(cards.every(c=>c.posture==="FOLLOW_CONGREGATION_OBSERVATIONAL"));
+ }
+}
+const missingFrPayload=structuredClone(frResolved);
+delete missingFrPayload.proper.preGospelPayloads.PAYLOAD_LectioL2.textFr;
+assert.throws(()=>buildEmberInsertionCards(missingFrPayload,{language:"fr"}),
+  /requires Latin and vernacular text/,
+  "An English-only source must not be shown as French Ember lesson");
+assert.equal(buildEmberInsertionCards(missingFrPayload,{language:"en"}).length,5);
 
 console.log("Ember lessons: PASS — source-order Proper nodes render before ordinary Epistle; suffix pairing is impossible and unresolved payloads fail closed.");

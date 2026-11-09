@@ -30,32 +30,54 @@ function lookupPayload(m,node){
   return null;
 }
 
-function normalizedParagraphs(node,payload){
+function localized(value,language,englishKeys,frenchKeys){
+  // Resolve only explicitly sourced target-language fields. Generic
+  // "vernacular" is English in the older research import and cannot
+  // silently masquerade as French.
+  const keys=language==="fr"?frenchKeys:englishKeys;
+  for(const key of keys){
+    const hit=clean(value?.[key]);
+    if(hit)return hit;
+  }
+  return null;
+}
+function readerLanguage(value){
+  return String(value??"en").toLowerCase().startsWith("fr")?"fr":"en";
+}
+function normalizedParagraphs(node,payload,language){
   if(Array.isArray(payload?.paragraphs) && payload.paragraphs.length){
     return payload.paragraphs.map((p,index)=>({
       id:p.id??node.id+"."+String(index+1).padStart(2,"0"),
       kind:p.kind??"TEXT",
       latin:p.latin??p.lat??p.textLat??null,
-      vernacular:p.vernacular??p.english??p.en??p.textEn??null,
+      vernacular:localized(p,language,
+        ["vernacular","english","en","textEn"],
+        ["french","fr","textFr","bodyFr"]),
       sourceCueIds:[],
     }));
   }
   const rows=[];
-  const bodyLat=clean(payload?.bodyLat), bodyEn=clean(payload?.bodyEn??payload?.bodyEnglish);
-  if(bodyLat)rows.push({id:node.id+".BODY",kind:"TEXT",latin:bodyLat,vernacular:bodyEn,sourceCueIds:[]});
-  const conclusionLat=clean(payload?.conclusionLat), conclusionEn=clean(payload?.conclusionEn??payload?.conclusionEnglish);
-  if(conclusionLat)rows.push({id:node.id+".CONCLUSION",kind:"TEXT",latin:conclusionLat,vernacular:conclusionEn,sourceCueIds:[]});
+  const bodyLat=clean(payload?.bodyLat);
+  const body=localized(payload,language,
+    ["bodyEn","bodyEnglish"],["bodyFr","bodyFrench"]);
+  if(bodyLat)rows.push({id:node.id+".BODY",kind:"TEXT",latin:bodyLat,vernacular:body,sourceCueIds:[]});
+  const conclusionLat=clean(payload?.conclusionLat);
+  const conclusion=localized(payload,language,
+    ["conclusionEn","conclusionEnglish"],["conclusionFr","conclusionFrench"]);
+  if(conclusionLat)rows.push({id:node.id+".CONCLUSION",kind:"TEXT",latin:conclusionLat,vernacular:conclusion,sourceCueIds:[]});
   if(rows.length)return rows;
   const latin=clean(payload?.textLat??payload?.latin??payload?.lat);
-  const vernacular=clean(payload?.textEn??payload?.english??payload?.en??payload?.vernacular);
+  const vernacular=localized(payload,language,
+    ["textEn","english","en","vernacular"],
+    ["textFr","french","fr"]);
   if(latin)return [{id:node.id+".TEXT",kind:"TEXT",latin,vernacular,sourceCueIds:[]}];
   return [];
 }
 
-function resolveNodeParagraphs(node,m){
+function resolveNodeParagraphs(node,m,language){
   const payload=lookupPayload(m,node);
   if(!payload)throw new Error(node.id+": pre-Gospel payloadRef is unresolved");
-  const rows=normalizedParagraphs(node,payload);
+  const rows=normalizedParagraphs(node,payload,language);
   if(!rows.length)throw new Error(node.id+": pre-Gospel payload contains no renderable text");
   // The reader's standing language contract is vernacular-primary / Latin-toggle
   // for non-response text, so production Ember payloads must be bilingual.
@@ -114,14 +136,15 @@ function nodePosture(node){
   return "FOLLOW_CONGREGATION_OBSERVATIONAL";
 }
 
-export function buildEmberInsertionCards(resolvedMass){
+export function buildEmberInsertionCards(resolvedMass,{language="en"}={}){
+  const locale=readerLanguage(language);
   const m=manifest(resolvedMass);
   if(!m)return freeze([]);
   const sequence=m.preGospelSequence??m.interlectionSequence??null;
   if(!sequence?.length)return freeze([]);
   assertPreGospelSourceOrderProof(sequence,m.preGospelSequenceProvenance);
   return freeze(sequence.map((node,index)=>{
-    const paragraphs=resolveNodeParagraphs(node,m);
+    const paragraphs=resolveNodeParagraphs(node,m,locale);
     return freeze({
       schema:"ao-r31-ember-insertion-card-v1",
       sectionId:"AO.EMBER."+String(index+1).padStart(2,"0"),
@@ -149,12 +172,12 @@ export function buildEmberInsertionCards(resolvedMass){
   }));
 }
 
-export function projectEmberInsertionModel(model,resolvedMass){
+export function projectEmberInsertionModel(model,resolvedMass,{language="en"}={}){
   if(!model?.cards || !Array.isArray(model.cards))throw new TypeError("Reader model required");
   const m=manifest(resolvedMass);
   const required=Boolean(resolvedMass?.overlays?.includes("EMBER_LESSONS"));
   if(!required)return model;
-  const inserts=buildEmberInsertionCards(resolvedMass);
+  const inserts=buildEmberInsertionCards(resolvedMass,{language});
   if(inserts.length===0)throw new Error("EMBER_LESSONS requires a resolved source-ordered preGospelSequence");
 
   const epistleIndex=model.cards.findIndex(card=>
