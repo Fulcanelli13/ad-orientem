@@ -275,7 +275,15 @@ try{
  // Open the real Rosary through its production Prayer owner before staging the next release.
  // A staged update must never navigate away or move a bead without user consent.
  await page.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:20000});
- assert.equal(await page.evaluate(async()=>globalThis.AO_PRAY_APP_V1.open()),true,"Prayer owner unavailable in installed-style PWA");
+ const reopenedPrayer=await page.evaluate(async()=>{
+  const opened=await globalThis.AO_PRAY_APP_V1.open();
+  return {opened,status:globalThis.AO_PRAY_APP_V1?.status?.(),
+   app:globalThis.AO_APP_SHELL_V1?.status?.(),offline:globalThis.AO_OFFLINE_APP_V1?.status,
+   documentReady:document.readyState,routeOwner:document.documentElement.dataset.aoPrayRouteOwner};
+ });
+ if(!reopenedPrayer.opened)
+  console.error("ONLINE_PRAY_REOPEN_DIAGNOSTIC="+JSON.stringify({reopenedPrayer,pageErrors:errs.slice(-15),served,transient408Hits}));
+ assert.equal(reopenedPrayer.opened,true,"Prayer owner unavailable in installed-style PWA");
  await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:25000});
  assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.rosary_methods",{returnContext:null})),true);
  const chooser=page.locator("#aoPray435930.open [data-ao-rosary-chooser]");
