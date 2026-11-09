@@ -48,7 +48,7 @@ assert.deepEqual(ledger.remainingSurveyIds.slice().sort(),
  allIds.filter(id=>!comparedIds.includes(id)).sort());
 const cases=[
  ["GREGOBASE-1143","KYRIE","MASS_01",27,"1d935709",["4*","5*"],["881.png","882.png"],"AO.SM.C0044","AO.SM.B015"],
- ["GREGOBASE-2980","GLORIA","MASS_01",196,"46e8cc3c",["5*","6*"],["882.png","883.png"],"AO.SM.C0051","AO.SM.B018"],
+ ["GREGOBASE-2980","GLORIA","MASS_01",196,"46e8cc3c",["5*","6*"],["882.png","883.png"],"AO.SM.C0053","AO.SM.B016"],
  ["GREGOBASE-300","SANCTUS_BENEDICTUS","MASS_01",55,"c1849a80",["6*","7*"],["883.png","884.png"],"AO.SM.C0145","AO.SM.B046"],
  ["GREGOBASE-2977","AGNUS_DEI","MASS_01",54,"b2f6ce02",["7*"],["884.png"],"AO.SM.C0222","AO.SM.B068"]
 ];
