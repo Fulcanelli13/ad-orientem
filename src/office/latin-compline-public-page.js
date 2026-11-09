@@ -44,7 +44,14 @@ export function mountPublishedLatinCompline(root,{
    "2026-12-17":"Advent III · Thursday, 17 December 2026",
    "2026-12-18":"Advent Ember Friday, 18 December 2026",
    "2026-12-19":"Eve of Advent IV · Ember Saturday, 19 December 2026",
-   "2026-12-20":"Fourth Sunday of Advent, 20 December 2026"
+   "2026-12-20":"Fourth Sunday of Advent, 20 December 2026",
+   "2026-12-21":"St Thomas the Apostle, 21 December 2026",
+   "2026-12-22":"Advent IV · Tuesday, 22 December 2026",
+   "2026-12-23":"Advent IV · Wednesday, 23 December 2026",
+   "2026-12-24":"First Compline of Christmas · 24 December 2026",
+   "2026-12-25":"Nativity of Our Lord, 25 December 2026",
+   "2026-12-26":"St Stephen the Protomartyr, 26 December 2026",
+   "2026-12-27":"Sunday within the Octave of Christmas, 27 December 2026"
   }[date]??"Date not certified"));
  const contextLabel=create(d,"label",null,"Recitation: ");
  const contextSelect=create(d,"select");
