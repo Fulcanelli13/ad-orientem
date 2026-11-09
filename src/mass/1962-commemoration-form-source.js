@@ -138,7 +138,19 @@ export function select1962CommemorationsForMassForm({
     String(main?.id??"")===":feria:4:w"&&Number(main.rank)===4&&
     easterFeriaWitness!==null&&
     String(data.sourcePath??envelope?.sourcePath??"")===easterFeriaWitness.proper;
-  const matchedPrincipalSource=inheritedPentecostFeria||inheritedEasterFeria||
+  // 3 February 2026, Feria III after Septuagesima. The source-owned
+  // IV-class feria inherits the Septuagesima Sunday Proper, while
+  // St Blaise's IV-class orations belong only to the distinct ordinary
+  // commemoration. Never generalize this to another pre-Lent day or
+  // overwrite a selected saint/votive Mass.
+  // https://ordo.fsspx.org/fr/day/2026-02-03?lang=en&mode=liturgical
+  const feb03SeptuagesimaFeria=
+    calendarResolution.date==="2026-02-03"&&!sunday&&
+    main?.path==null&&String(main?.id??"")===":feria:4:w"&&
+    Number(main.rank)===4&&
+    String(data.sourcePath??envelope?.sourcePath??"")==="Tempora/Quadp1-0";
+  const matchedPrincipalSource=inheritedPentecostFeria||
+    inheritedEasterFeria||feb03SeptuagesimaFeria||
     canonical(data.sourcePath??envelope?.sourcePath)===canonical(main.path);
   const identified=comms.length===1&&sources.length===1&&
     canonical(namedSource.path)===observedPath&&admissiblePrayerSource&&
@@ -286,6 +298,12 @@ export function select1962CommemorationsForMassForm({
     String(only.path)===easterFeriaWitness.saint&&
     String(commId).toLowerCase().startsWith(
       "sancti:"+easterFeriaWitness.saint.slice("Sancti/".length).toLowerCase()+":4:");
+  // The 3 February original saint must be an ordinary source-matched
+  // IV-class St Blaise, not a local Mass override.
+  const ordinarySeptuagesimaFeria=feb03SeptuagesimaFeria&&
+    Number(only.rank)===4&&!only.privileged&&
+    /^sancti:02-03:4:/i.test(commId)&&
+    String(only.path)==="Sancti/02-03";
   const ordinaryFourthClassSaint=!nativityOctavePlaceholder&&!sunday&&
     !only.privileged&&
     Number(only.rank)===4&&/^sancti:[0-9]{2}-[0-9]{2}[a-z]*:4:/i.test(commId)&&
@@ -301,6 +319,7 @@ export function select1962CommemorationsForMassForm({
     ordinaryFourthClassSaint?"NON_SUNDAY_II_III_CLASS_SINGLE_IV_CLASS_SANCTORAL_COMMEMORATION":
     ordinaryPentecostFeria?"PENTECOST_SEASON_IV_CLASS_FERIA_ORDINARY_COMMEMORATION":
     ordinaryEasterFeria?"EASTER_SEASON_IV_CLASS_FERIA_ORDINARY_COMMEMORATION":
+    ordinarySeptuagesimaFeria?"SEPTUAGESIMA_IV_CLASS_FERIA_ORDINARY_COMMEMORATION":
     ordinaryLentenFeria?"LENT_PASSION_III_CLASS_FERIA_ORDINARY_COMMEMORATION":
     (saturdayBvmOrdinary||septuagesimaSaturdayBvmOrdinary)?
       "SATURDAY_BVM_IV_CLASS_ORDINARY_SANCTORAL_COMMEMORATION":null;
@@ -328,6 +347,8 @@ export function select1962CommemorationsForMassForm({
         ["1960_GENERAL_RUBRICS_108_111_D_112_113_114","1960_MISSAL_RUBRICS_433_434"]:
       ordinaryEasterFeria?
         ["1960_GENERAL_RUBRICS_26_107_111_A_D_112_113_114","1960_MISSAL_RUBRICS_433_434"]:
+      ordinarySeptuagesimaFeria?
+        ["1960_GENERAL_RUBRICS_107_108_111_D_112_113_114","1960_MISSAL_RUBRICS_433_434"]:
         ["1960_GENERAL_RUBRICS_108_111_113","1960_MISSAL_RUBRICS_433_434"]),
     mainId,commemorationId:commId
   });
