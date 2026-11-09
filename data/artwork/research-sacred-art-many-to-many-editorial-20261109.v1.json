@@ -305,13 +305,37 @@
       ],
       "final_production_certified_ai_images": 0,
       "source_boundary_note": "Prior batch14 count of 2 is correct as a 9 Nov interim snapshot, superseded by batch15 after exact-file recovery and fresh SHA-256 computation.",
-      "institutional_source_object_destinations_reviewed_from_other19": 10,
-      "other_original_source_destinations_still_needing_institutional_review": 9,
+      "institutional_source_object_destinations_reviewed_from_other19": 19,
+      "other_original_source_destinations_still_needing_institutional_review": 0,
       "owner_selected_exact_photo_master_additionally_certified": 0,
-      "version_conflict_2026_04_06": "Caravaggio Supper at Emmaus London NG172 versus Milan Brera 2296; user-picked exact photo source unresolved"
+      "version_conflict_2026_04_06": "Caravaggio Supper at Emmaus London NG172 versus Milan Brera 2296; user-picked exact photo source unresolved",
+      "other_original_exact_user_selected_photographs_still_unverified": 19,
+      "artwork_identity_potential_suspect_cases": [
+        {
+          "target": "2026-04-06",
+          "type": "TWO_CARAVAGGIO_AUTOGRAPH_EMMAUS_VERSIONS"
+        },
+        {
+          "target": "2026-06-24",
+          "type": "PRADO_REPRODUCTION_SOURCE_PROHIBITED"
+        },
+        {
+          "target": "2026-03-30",
+          "type": "HERMITAGE_SECONDARY_ONLY"
+        },
+        {
+          "target": "2026-04-07",
+          "type": "HERMITAGE_SECONDARY_ONLY"
+        },
+        {
+          "target": "2026-05-30",
+          "type": "COMMONS_DATE_VS_BIRMINGHAM_DATE_CONFLICT"
+        }
+      ]
     },
     "user_library_derivative_batch14": "data/artwork/research/m2m-recovered-user-library-derivatives-batch14-20261109.v1.json",
     "ai_source_original_batch15": "data/artwork/research/m2m-ai-original-files-batch15-20261109.v1.json",
-    "original19_institutional_batch16": "data/artwork/research/m2m-original19-institutional-batch16-20261109.v1.json"
+    "original19_institutional_batch16": "data/artwork/research/m2m-original19-institutional-batch16-20261109.v1.json",
+    "original19_institutional_batch17": "data/artwork/research/m2m-original19-institutional-batch17-20261109.v1.json"
   }
 }
