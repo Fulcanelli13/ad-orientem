@@ -269,3 +269,37 @@ assert.equal(legacyAudit.deployed_pages_browser_test_performed,false);
 assert.equal(legacyAudit.released_photo_id,'released-photo:bouts');
 assert.equal(legacyAudit.tracking_issue,'https://github.com/Fulcanelli13/ad-orientem/issues/2761');
 console.log('PASS: two approved AI visual drafts recovered from user Library with manifest hashes; no repo uploads, final release, or rejected Bouts reintroduction.');
+
+const ai15 = read('data/artwork/research/m2m-ai-original-files-batch15-20261109.v1.json');
+assert.equal(ai15.records.length,2);
+assert.equal(ai15.summary.remaining_ai_original_files_unlocated,0);
+assert.equal(ai15.summary.user_library_original_generated_files,4);
+assert.equal(ai15.summary.passion_originals_with_unreconciled_later_editorial_preference,1);
+assert.equal(ai15.summary.repo_local_existing_provenance+ai15.summary.user_library_original_generated_files+
+ ai15.summary.remote_home_preview_only+ai15.summary.dual_scene_easter_vigil+
+ ai15.summary.other_original_assets_unlocated,29);
+const cave=ai15.records.find(x=>x.target_id==='2026-03-08');
+const passion=ai15.records.find(x=>x.target_id==='2026-03-22');
+assert.equal(cave.saved_filename,'Christ Commands the Shadows.png');
+assert.equal(cave.sha256,'a7a7a1972f7e7954576cc7580c8f42bfc68b6628be2b51df36de032031db6016');
+assert.deepEqual(cave.pixel_size,[1086,1448]);
+assert.equal(cave.file_size_bytes,2287238);
+assert.equal(cave.editorial_evidence.prior_approval_status,'EDITORIAL_APPROVED');
+assert.equal(cave.historical_source.accession,'1981.142');
+assert.equal(passion.saved_filename,'Christ Retreats from the Angry Crowd.png');
+assert.equal(passion.sha256,'6f25e25484a78737e87cb4ef007e083b8598938d8ed014163404f6194e768c6b');
+assert.deepEqual(passion.pixel_size,[1536,1024]);
+assert.equal(passion.file_size_bytes,2517813);
+assert.equal(passion.editorial_evidence.approval_conflict,'AI_IMAGE_SELECTED_AS_DATE_PROGRAMME_VS_LATER_UNRESOLVED_PHOTOGRAPH_AND_ORIGINAL_ENGRAVING_PREFERENCE');
+for(const r of ai15.records){
+ assert.equal(r.raw_image_bytes_committed_to_repo,false);
+ assert.equal(r.runtime_new_image_authorised,false);
+ assert.equal(r.photo_publication_authorised,false);
+ assert.equal(r.owner_other_choices_unchanged,true);
+ assert.equal(r.canonical_app_id,null);
+ assert.equal(r.generated_work_must_not_be_misattributed_as_historical_original,true);
+}
+assert.deepEqual(ai15.public_repo_image_uploads,[]);
+assert.equal(ai15.new_assignments_authorised,0);
+assert.ok(!JSON.stringify(ai15).includes('file_00000000'),'Never commit private user-library identifiers');
+console.log('PASS: all 4 approved-date AI draft files recovered across batches 14–15, two new hashes checked, Passion approval held, zero releases.');
