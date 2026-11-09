@@ -68,7 +68,6 @@ for(const rec of sceneBatch2.records){
  assert.equal(rec.actual_pixel_visual_review_completed,false);
  assert.ok(rec.physical_object_identity&&rec.source_urls?.length>0&&rec.calendar_gospel_reference);
 }
-assert.equal(idx.review_evidence.remaining_new_Claude_proposals_needing_individual_source_adjudication,89);
 
 
 const sceneBatch3=read('data/artwork/research/m2m-scene-adjudication-batch3-20261109.v1.json');
@@ -91,8 +90,6 @@ const mnr=sceneBatch3.records.find(r=>r.destination_id==='2026-03-14');
 assert.ok(mnr.photo_publication_gate.includes('MNR_RESTITUTION'));
 const uncertain=sceneBatch3.records.find(r=>r.destination_id==='2026-01-19');
 assert.ok(uncertain.adjudication_status.includes('UNRESOLVED'));
-assert.equal(idx.review_evidence.cumulative_new_Claude_proposals_source_adjudicated,45);
-assert.equal(idx.review_evidence.remaining_new_Claude_proposals_needing_individual_source_adjudication,69);
 console.log('PASS: batch3 20 source checks; 45/114 total; 7 unaudited direct-scene; all release gates closed.');
 
 
@@ -109,8 +106,6 @@ for(const x of sceneBatch4.records){
 }
 assert.equal(sceneBatch4.records.find(x=>x.destination_id==='2026-04-18').adjudication_status,'EXACT_SUBJECT_BUT_ATTRIBUTION_UNRESOLVED');
 assert.equal(sceneBatch4.records.find(x=>x.destination_id==='2026-12-30').adjudication_status,'KNOWN_COLLECTION_OBJECT_NO_INDEPENDENT_CURRENT_MUSEUM_CONFIRMATION');
-assert.equal(idx.review_evidence.cumulative_new_Claude_proposals_source_adjudicated,52);
-assert.equal(idx.review_evidence.remaining_new_Claude_proposals_needing_individual_source_adjudication,62);
 assert.equal(idx.review_evidence.remaining_new_Claude_direct_scene_proposals_needing_individual_source_adjudication,0);
 console.log('PASS: all 52 source-adjudicated new direct-scene associations recorded, 62 other association types remain; no publication rights implied.');
 
@@ -138,6 +133,32 @@ assert.equal(photographerErrors.length,3);
 const jonah=thematicBatch5.records.find(x=>x.destination_id==='2026-02-25');
 assert.ok(jonah.photo_release_gate.includes('OBJECT_IDENTITY'));
 assert.ok(thematicBatch5.records.some(x=>x.destination_id==='2026-11-09'&&x.relationship_after_review.includes('DIFFERENT_BUILDING')));
-assert.equal(idx.review_evidence.cumulative_new_Claude_proposals_source_adjudicated,66);
-assert.equal(idx.review_evidence.remaining_new_Claude_proposals_needing_individual_source_adjudication,48);
 console.log('PASS: batch5 14 thematic/saint links; 66/114 adjudicated; original many-to-many approvals and all photo gates retained.');
+
+const liturgicalBatch6=read('data/artwork/research/m2m-liturgical-batch6-20261109.v1.json');
+assert.equal(liturgicalBatch6.records.length,12);
+assert.equal(liturgicalBatch6.summary.cumulative_new_proposals_reviewed,78);
+assert.equal(liturgicalBatch6.summary.remaining_new_proposals,36);
+const batches=[sceneBatch.records,sceneBatch2.records,sceneBatch3.records,sceneBatch4.records,thematicBatch5.records,liturgicalBatch6.records];
+const audited=batches.flat();
+assert.equal(audited.length,78,'A cumulative count should come from reviewed records, not a stale intermediate index');
+assert.equal(new Set(audited.map(r=>r.destination_id+'|'+r.artwork_id)).size,audited.length,'No proposed relationship can be counted twice');
+const newProposals=claude.filter(r=>r.display_priority==='NEW_PROPOSAL');
+assert.equal(newProposals.length,114);
+for (const r of audited) assert.ok(newProposals.some(c=>c.target_id===r.destination_id&&c.artwork_id===r.artwork_id),'Adjudication is not connected to an actual Claude proposal '+r.destination_id);
+for (const r of liturgicalBatch6.records) {
+ assert.equal(r.owner_selection_changed,false);
+ assert.equal(r.owner_many_to_many_choices_preserved,true);
+ assert.equal(r.exact_photo_release_verified,false);
+ assert.equal(r.independent_pixels_checked,false);
+ assert.equal(r.runtime_selection_authorised,false);
+ assert.ok(r.evidence_urls.length&&r.physical_work_identity&&r.relationship_after_review);
+}
+assert.ok(liturgicalBatch6.records.find(r=>r.destination_id==='2026-01-21').relationship_after_review.includes('PORTRAIT_HISTORIE'));
+assert.ok(liturgicalBatch6.records.find(r=>r.destination_id==='2026-01-30').physical_work_identity.includes('INV 107'));
+assert.ok(liturgicalBatch6.records.find(r=>r.destination_id==='2026-06-13').physical_work_identity.includes('862397'));
+assert.ok(liturgicalBatch6.records.find(r=>r.destination_id==='2026-11-23').photo_publication_gate.includes('453A_453B'));
+assert.equal(idx.review_evidence.cumulative_new_Claude_proposals_source_adjudicated,audited.length);
+assert.equal(idx.review_evidence.remaining_new_Claude_proposals_needing_individual_source_adjudication,newProposals.length-audited.length);
+assert.equal(idx.counts.relationship_edges,1589);
+console.log('PASS: batch6 12 liturgical records; 78/114 cumulative, 36 unresolved; owner approvals and publication holds preserved.');
