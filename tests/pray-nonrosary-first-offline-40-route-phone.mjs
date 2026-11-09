@@ -222,8 +222,15 @@ try{
      const statuses=await page.locator(
       "#aoPray435930.open [data-ao-scripture-source][data-ao-scripture-content]"
      ).evaluateAll(nodes=>nodes.map(x=>x.dataset.aoScriptureContent));
-     assert.ok(statuses.length>0&&statuses.every(x=>["ready","unavailable","loading"].includes(x)),
-      id+" lacks a truthful asynchronous source status: "+JSON.stringify(statuses));
+     assert.ok(statuses.length>0&&statuses.every(x=>["ready","unavailable","loading",
+      ...(id==="pray.penitential_psalms"?["local-witness"]:[])].includes(x)),
+      id+" lacks a truthful asynchronous/local source status: "+JSON.stringify(statuses));
+     if(id==="pray.penitential_psalms"&&statuses.includes("local-witness")){
+      assert.equal(await page.locator("#aoPray435930.open [data-ao-penitential-source-status='UNCOLLATED_SOURCE_WITNESS']").count(),1,
+       "Locally bundled Psalm must retain truthful original-witness disclosure");
+      assert.ok(await page.locator("#aoPray435930.open [data-p435930-pen-scripture] .aoP435930ScriptureVerse").count()>=8,
+       "Local witness must supply full original verses, not a false offline-ready status");
+     }
     }
     report.cases.push({width,language,door:door||"library-or-search",...state});
     console.log("PASS OFFLINE_FIRST_USE "+width+" "+language+" "+id+" -> "+expected);
