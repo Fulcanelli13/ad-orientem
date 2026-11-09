@@ -62,6 +62,32 @@ rubrical scope. Neither source extraction nor source-marker typing
 asserts independent Office precedence, exact 1961 Mame printed
 collation, Gregorian notation or approved vernacular translation.
 
+## Precisely scoped source-format exceptions
+
+A direct audit of all **5,840 real generated source records** found that
+every Hour contains source Psalm headings, but **16 Hour records**
+lack the normal *explicit bold Psalmi section title*:
+
+| Year | Dates and Hours | Count |
+| --- | --- | ---: |
+| 2026 | 2–4 April, Compline (Triduum); 2 November, Prime, Terce, Sext, None and Compline | 8 |
+| 2027 | 25–27 March, Compline (Triduum); 2 November, Prime, Terce, Sext, None and Compline | 8 |
+
+These are **source-layout exceptions**, not missing Latin psalms.
+The original `Psalmus` titles and verse text are still present.
+They are retained in `semantic-audit.json` as
+`special_format_source_review:true`, with their exact civil dates
+and Hours; they are **not marked liturgically certified**. The
+CI enforces exactly eight *expected source-format review cases*
+per year and **zero unexpected** source-marker defects. Any new
+unlabelled source psalmody group fails the semantic release gate
+rather than quietly passing.
+
+Their precise 1960 Triduum and All Souls arrangement requires
+separate printed-rubric collation. This focused 16-record queue
+is materially different from manually reviewing 5,840 ordinary
+source records.
+
 ## One private reader for both years
 
 `tools/office-bulk/research-reader.html` implements a responsive
