@@ -1558,6 +1558,19 @@ button.ao-schola-control{cursor:pointer}
   padding-bottom:calc(56px + var(--ao-short-cue-tail,0px))
 }
 
+/* The Gospel card has an independently audited short conclusion between the
+   proclamation and its terminal ceremonial cue. On the actual 390px reader
+   C0087 reaches the 39%-height focus line at about 640px scroll, while
+   the old card stopped at 626px and jumped straight to C0088. Reserve a
+   source-owned, non-text runway even when Gregorian staff or font layout
+   settles after the first double-RAF measurement. Do not change the prayer
+   height, source order, source cue focus algorithm or 65-card boundaries. */
+#ao-r17-native-reader-preview[data-r17-curated-review="true"]
+  .ao-reader-shell[data-mode="LIVE"] .ao-prayer-card:has(
+    .ao-reader-paragraph[data-cue-id="AO.SM.C0087"]){
+  padding-bottom:calc(184px + var(--ao-short-cue-tail,0px))
+}
+
 /* Dynamic Schola dock is independent of the reader. Reserve an
    actually shorter scrolling viewport while its separate panel is open;
    padding alone does not constrain the scroller's outer rectangle. */
