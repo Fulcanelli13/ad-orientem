@@ -1,0 +1,1441 @@
+{
+  "schema": "ao-schola-m38-kyrie-xvi-40-source-note-position-audit-v1",
+  "auditedDate": "2026-11-09",
+  "scoreId": "GREGOBASE-545",
+  "sourceGabcFingerprintUtf16Fnv1a32": "acef0d62",
+  "edition": "Graduale Romanum, Solesmes, 1961",
+  "printedFolio": "54*",
+  "printedPng": "https://gregobase.selapa.net/sources/2/931.png",
+  "originalPdf": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf#page=56",
+  "printedWitnesses": [
+    {
+      "edition": "Graduale Romanum",
+      "year": 1961,
+      "printedPage": "54*",
+      "scanUrl": "https://gregobase.selapa.net/sources/2/931.png",
+      "role": "PRIMARY_1961_PRINTED_EDITION"
+    },
+    {
+      "edition": "The Liber Usualis",
+      "year": 1961,
+      "printedPage": "59",
+      "scanUrl": "https://gregobase.selapa.net/sources/3/170.png",
+      "role": "CORROBORATING_SOLESMES_1961_PRINT"
+    },
+    {
+      "edition": "Chants of the Church",
+      "year": 1956,
+      "printedPage": "40",
+      "scanUrl": "https://gregobase.selapa.net/sources/5/55.png",
+      "role": "CORROBORATING_SOLESMES_1956_PRINT"
+    }
+  ],
+  "sourceNotationInterpretation": {
+    "basis": "Gregorio GABC notation, https://gregorio-project.github.io/gabc/ and https://gregorio-project.github.io/gabc/details.html",
+    "clef": "c4",
+    "pitchLetters": "Lower/upper a..m indicate staff positions; d is bottom line and j is top line; uppercase G,F,E represent inclined-note shapes, not transposition.",
+    "sourceVirgaMarker": "v after a pitch indicates a virga shape, NOT an extra pitch letter",
+    "sourceHorizontalEpisemaMarker": "_",
+    "sourcePunctumMoraMarker": ".",
+    "sourceRepeatMarkers": "iij. / iij. / ij. / independently written final Kyrie",
+    "certifiedAsMusicalApproval": false
+  },
+  "method": [
+    "Directly reinspected the two Kyrie XVI staff systems on the 1961 printed p.54* facsimile (PDF zero-index page 55), distinguishing the subsequent Sanctus XVI material from the end of Kyrie XVI.",
+    "Reconciled the M37 7-group first phrase with all twenty remaining groups already structurally witnessed in M31/M32; catalogued every source pitch letter, staff position, shape letter and source-side sign at each one of the 27 groups and all 40 source noteheads.",
+    "Recorded contextual printed observations for 20 additional groups; visual scan-scale contours appear broadly consistent but DO NOT constitute independent exact pitch parity, exact notehead count from print, neume glyph shape, episema/mora, clef transposition, engraving or syllable underlay certification.",
+    "Retained open issue-level holds for three source horizontal episema signs, four source mora signs, system boundary and six-note final Kyrie cadence; no unsanctioned changes to GABC, Mass reader, canonical text, or local programme."
+  ],
+  "scope": {
+    "storedSourceScoreCount": 20,
+    "structurallyPrintSurveyedScores": 20,
+    "sourceGroupsIndexed": 27,
+    "sourceNoteheadsIndexed": 40,
+    "groupsWithScanLevelContourObservations": 27,
+    "newGroupsWithM38PrintedContextObservations": 20,
+    "previousM37Groups": 7,
+    "groupLevelDetailedPrintNotePitchParityCertified": 0,
+    "originalPrintedNoteheadsIndependentlyCounted": false,
+    "neumeShapeApproved": false,
+    "episemaMoraApproved": false,
+    "editoriallyApprovedScores": 0,
+    "productionCodeChanged": false
+  },
+  "staffSystemBoundaries": {
+    "printedSystem1GroupOrdinals": [
+      1,
+      14
+    ],
+    "printedSystem2GroupOrdinals": [
+      15,
+      27
+    ],
+    "criticalCarryover": "Third Kyrie first syllable Ký is on staff 1, ri and later are on staff 2; do not treat printed line wrap as a new chant."
+  },
+  "sourceSyllableGroupIndex": [
+    {
+      "ordinal": 1,
+      "sourceSyllable": "KY",
+      "printedSystem": 1,
+      "printedFolio": "54*",
+      "sourceOriginalNeume": "g",
+      "sourceNoteLetters": [
+        "g"
+      ],
+      "sourcePitchPositionsFromC4": [
+        "space2"
+      ],
+      "sourceNoteShapeCues": {
+        "squareNoteLetters": 1,
+        "inclinedNoteLetters": 0,
+        "horizontalEpisemaTokens": 0,
+        "moraTokens": 0,
+        "virgaTokens": 0
+      },
+      "printedScanContourSurvey": {
+        "verdict": "COARSELY_CONSISTENT_WITH_ORIGINAL_PRINT_AT_SCAN_RESOLUTION",
+        "source": "M37_FIRST_PHRASE_READ",
+        "scope": "SYLLABLE_GROUP_CONTOUR_AND_APPROXIMATE_HEIGHT_NOT_EVERY_NOTES_GLYPH",
+        "observation": "First Kyrie staff line/space observation already documented in M37; rechecked against 1961 printed page.",
+        "printedAbsolutePitchesIndividuallyMatched": false,
+        "printedNeumeShapesIndividuallyMatched": false,
+        "printedMoraAndEpisemaIndividuallyMatched": false
+      },
+      "sourceNoteheads": [
+        {
+          "sourceNoteOrdinal": 1,
+          "pitchLetter": "g",
+          "staffLineSpace": "space2",
+          "isPunctumInclinatumLetter": false,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 1
+        }
+      ],
+      "printedPitchesCertified": false,
+      "editoriallyApproved": false
+    },
+    {
+      "ordinal": 2,
+      "sourceSyllable": "ri",
+      "printedSystem": 1,
+      "printedFolio": "54*",
+      "sourceOriginalNeume": "hi",
+      "sourceNoteLetters": [
+        "h",
+        "i"
+      ],
+      "sourcePitchPositionsFromC4": [
+        "line3",
+        "space3"
+      ],
+      "sourceNoteShapeCues": {
+        "squareNoteLetters": 2,
+        "inclinedNoteLetters": 0,
+        "horizontalEpisemaTokens": 0,
+        "moraTokens": 0,
+        "virgaTokens": 0
+      },
+      "printedScanContourSurvey": {
+        "verdict": "COARSELY_CONSISTENT_WITH_ORIGINAL_PRINT_AT_SCAN_RESOLUTION",
+        "source": "M37_FIRST_PHRASE_READ",
+        "scope": "SYLLABLE_GROUP_CONTOUR_AND_APPROXIMATE_HEIGHT_NOT_EVERY_NOTES_GLYPH",
+        "observation": "First Kyrie staff line/space observation already documented in M37; rechecked against 1961 printed page.",
+        "printedAbsolutePitchesIndividuallyMatched": false,
+        "printedNeumeShapesIndividuallyMatched": false,
+        "printedMoraAndEpisemaIndividuallyMatched": false
+      },
+      "sourceNoteheads": [
+        {
+          "sourceNoteOrdinal": 1,
+          "pitchLetter": "h",
+          "staffLineSpace": "line3",
+          "isPunctumInclinatumLetter": false,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 2
+        },
+        {
+          "sourceNoteOrdinal": 2,
+          "pitchLetter": "i",
+          "staffLineSpace": "space3",
+          "isPunctumInclinatumLetter": false,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 3
+        }
+      ],
+      "printedPitchesCertified": false,
+      "editoriallyApproved": false
+    },
+    {
+      "ordinal": 3,
+      "sourceSyllable": "e",
+      "printedSystem": 1,
+      "printedFolio": "54*",
+      "sourceOriginalNeume": "ii",
+      "sourceNoteLetters": [
+        "i",
+        "i"
+      ],
+      "sourcePitchPositionsFromC4": [
+        "space3",
+        "space3"
+      ],
+      "sourceNoteShapeCues": {
+        "squareNoteLetters": 2,
+        "inclinedNoteLetters": 0,
+        "horizontalEpisemaTokens": 0,
+        "moraTokens": 0,
+        "virgaTokens": 0
+      },
+      "printedScanContourSurvey": {
+        "verdict": "COARSELY_CONSISTENT_WITH_ORIGINAL_PRINT_AT_SCAN_RESOLUTION",
+        "source": "M37_FIRST_PHRASE_READ",
+        "scope": "SYLLABLE_GROUP_CONTOUR_AND_APPROXIMATE_HEIGHT_NOT_EVERY_NOTES_GLYPH",
+        "observation": "First Kyrie staff line/space observation already documented in M37; rechecked against 1961 printed page.",
+        "printedAbsolutePitchesIndividuallyMatched": false,
+        "printedNeumeShapesIndividuallyMatched": false,
+        "printedMoraAndEpisemaIndividuallyMatched": false
+      },
+      "sourceNoteheads": [
+        {
+          "sourceNoteOrdinal": 1,
+          "pitchLetter": "i",
+          "staffLineSpace": "space3",
+          "isPunctumInclinatumLetter": false,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 4
+        },
+        {
+          "sourceNoteOrdinal": 2,
+          "pitchLetter": "i",
+          "staffLineSpace": "space3",
+          "isPunctumInclinatumLetter": false,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 5
+        }
+      ],
+      "printedPitchesCertified": false,
+      "editoriallyApproved": false
+    },
+    {
+      "ordinal": 4,
+      "sourceSyllable": "e",
+      "printedSystem": 1,
+      "printedFolio": "54*",
+      "sourceOriginalNeume": "g",
+      "sourceNoteLetters": [
+        "g"
+      ],
+      "sourcePitchPositionsFromC4": [
+        "space2"
+      ],
+      "sourceNoteShapeCues": {
+        "squareNoteLetters": 1,
+        "inclinedNoteLetters": 0,
+        "horizontalEpisemaTokens": 0,
+        "moraTokens": 0,
+        "virgaTokens": 0
+      },
+      "printedScanContourSurvey": {
+        "verdict": "COARSELY_CONSISTENT_WITH_ORIGINAL_PRINT_AT_SCAN_RESOLUTION",
+        "source": "M37_FIRST_PHRASE_READ",
+        "scope": "SYLLABLE_GROUP_CONTOUR_AND_APPROXIMATE_HEIGHT_NOT_EVERY_NOTES_GLYPH",
+        "observation": "First Kyrie staff line/space observation already documented in M37; rechecked against 1961 printed page.",
+        "printedAbsolutePitchesIndividuallyMatched": false,
+        "printedNeumeShapesIndividuallyMatched": false,
+        "printedMoraAndEpisemaIndividuallyMatched": false
+      },
+      "sourceNoteheads": [
+        {
+          "sourceNoteOrdinal": 1,
+          "pitchLetter": "g",
+          "staffLineSpace": "space2",
+          "isPunctumInclinatumLetter": false,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 6
+        }
+      ],
+      "printedPitchesCertified": false,
+      "editoriallyApproved": false
+    },
+    {
+      "ordinal": 5,
+      "sourceSyllable": "lé",
+      "printedSystem": 1,
+      "printedFolio": "54*",
+      "sourceOriginalNeume": "h_",
+      "sourceNoteLetters": [
+        "h"
+      ],
+      "sourcePitchPositionsFromC4": [
+        "line3"
+      ],
+      "sourceNoteShapeCues": {
+        "squareNoteLetters": 1,
+        "inclinedNoteLetters": 0,
+        "horizontalEpisemaTokens": 1,
+        "moraTokens": 0,
+        "virgaTokens": 0
+      },
+      "printedScanContourSurvey": {
+        "verdict": "COARSELY_CONSISTENT_WITH_ORIGINAL_PRINT_AT_SCAN_RESOLUTION",
+        "source": "M37_FIRST_PHRASE_READ",
+        "scope": "SYLLABLE_GROUP_CONTOUR_AND_APPROXIMATE_HEIGHT_NOT_EVERY_NOTES_GLYPH",
+        "observation": "First Kyrie staff line/space observation already documented in M37; rechecked against 1961 printed page.",
+        "printedAbsolutePitchesIndividuallyMatched": false,
+        "printedNeumeShapesIndividuallyMatched": false,
+        "printedMoraAndEpisemaIndividuallyMatched": false
+      },
+      "sourceNoteheads": [
+        {
+          "sourceNoteOrdinal": 1,
+          "pitchLetter": "h",
+          "staffLineSpace": "line3",
+          "isPunctumInclinatumLetter": false,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 7
+        }
+      ],
+      "printedPitchesCertified": false,
+      "editoriallyApproved": false
+    },
+    {
+      "ordinal": 6,
+      "sourceSyllable": "i",
+      "printedSystem": 1,
+      "printedFolio": "54*",
+      "sourceOriginalNeume": "i",
+      "sourceNoteLetters": [
+        "i"
+      ],
+      "sourcePitchPositionsFromC4": [
+        "space3"
+      ],
+      "sourceNoteShapeCues": {
+        "squareNoteLetters": 1,
+        "inclinedNoteLetters": 0,
+        "horizontalEpisemaTokens": 0,
+        "moraTokens": 0,
+        "virgaTokens": 0
+      },
+      "printedScanContourSurvey": {
+        "verdict": "COARSELY_CONSISTENT_WITH_ORIGINAL_PRINT_AT_SCAN_RESOLUTION",
+        "source": "M37_FIRST_PHRASE_READ",
+        "scope": "SYLLABLE_GROUP_CONTOUR_AND_APPROXIMATE_HEIGHT_NOT_EVERY_NOTES_GLYPH",
+        "observation": "First Kyrie staff line/space observation already documented in M37; rechecked against 1961 printed page.",
+        "printedAbsolutePitchesIndividuallyMatched": false,
+        "printedNeumeShapesIndividuallyMatched": false,
+        "printedMoraAndEpisemaIndividuallyMatched": false
+      },
+      "sourceNoteheads": [
+        {
+          "sourceNoteOrdinal": 1,
+          "pitchLetter": "i",
+          "staffLineSpace": "space3",
+          "isPunctumInclinatumLetter": false,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 8
+        }
+      ],
+      "printedPitchesCertified": false,
+      "editoriallyApproved": false
+    },
+    {
+      "ordinal": 7,
+      "sourceSyllable": "son.",
+      "printedSystem": 1,
+      "printedFolio": "54*",
+      "sourceOriginalNeume": "i.",
+      "sourceNoteLetters": [
+        "i"
+      ],
+      "sourcePitchPositionsFromC4": [
+        "space3"
+      ],
+      "sourceNoteShapeCues": {
+        "squareNoteLetters": 1,
+        "inclinedNoteLetters": 0,
+        "horizontalEpisemaTokens": 0,
+        "moraTokens": 1,
+        "virgaTokens": 0
+      },
+      "printedScanContourSurvey": {
+        "verdict": "COARSELY_CONSISTENT_WITH_ORIGINAL_PRINT_AT_SCAN_RESOLUTION",
+        "source": "M37_FIRST_PHRASE_READ",
+        "scope": "SYLLABLE_GROUP_CONTOUR_AND_APPROXIMATE_HEIGHT_NOT_EVERY_NOTES_GLYPH",
+        "observation": "First Kyrie staff line/space observation already documented in M37; rechecked against 1961 printed page.",
+        "printedAbsolutePitchesIndividuallyMatched": false,
+        "printedNeumeShapesIndividuallyMatched": false,
+        "printedMoraAndEpisemaIndividuallyMatched": false
+      },
+      "sourceNoteheads": [
+        {
+          "sourceNoteOrdinal": 1,
+          "pitchLetter": "i",
+          "staffLineSpace": "space3",
+          "isPunctumInclinatumLetter": false,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 9
+        }
+      ],
+      "printedPitchesCertified": false,
+      "editoriallyApproved": false
+    },
+    {
+      "ordinal": 8,
+      "sourceSyllable": "Chri",
+      "printedSystem": 1,
+      "printedFolio": "54*",
+      "sourceOriginalNeume": "k",
+      "sourceNoteLetters": [
+        "k"
+      ],
+      "sourcePitchPositionsFromC4": [
+        "spaceAbove4"
+      ],
+      "sourceNoteShapeCues": {
+        "squareNoteLetters": 1,
+        "inclinedNoteLetters": 0,
+        "horizontalEpisemaTokens": 0,
+        "moraTokens": 0,
+        "virgaTokens": 0
+      },
+      "printedScanContourSurvey": {
+        "verdict": "COARSELY_CONSISTENT_WITH_ORIGINAL_PRINT_AT_SCAN_RESOLUTION",
+        "source": "M38_SYSTEM_BY_SYSTEM_PRINT_VISUAL_RECHECK",
+        "scope": "SYLLABLE_GROUP_CONTOUR_AND_APPROXIMATE_HEIGHT_NOT_EVERY_NOTES_GLYPH",
+        "observation": "Original Christe entry higher than the preceding Kyrie ending; exact pitch-to-square-note parity requires a larger original.",
+        "printedAbsolutePitchesIndividuallyMatched": false,
+        "printedNeumeShapesIndividuallyMatched": false,
+        "printedMoraAndEpisemaIndividuallyMatched": false
+      },
+      "sourceNoteheads": [
+        {
+          "sourceNoteOrdinal": 1,
+          "pitchLetter": "k",
+          "staffLineSpace": "spaceAbove4",
+          "isPunctumInclinatumLetter": false,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 10
+        }
+      ],
+      "printedPitchesCertified": false,
+      "editoriallyApproved": false
+    },
+    {
+      "ordinal": 9,
+      "sourceSyllable": "ste",
+      "printedSystem": 1,
+      "printedFolio": "54*",
+      "sourceOriginalNeume": "ij",
+      "sourceNoteLetters": [
+        "i",
+        "j"
+      ],
+      "sourcePitchPositionsFromC4": [
+        "space3",
+        "line4"
+      ],
+      "sourceNoteShapeCues": {
+        "squareNoteLetters": 2,
+        "inclinedNoteLetters": 0,
+        "horizontalEpisemaTokens": 0,
+        "moraTokens": 0,
+        "virgaTokens": 0
+      },
+      "printedScanContourSurvey": {
+        "verdict": "COARSELY_CONSISTENT_WITH_ORIGINAL_PRINT_AT_SCAN_RESOLUTION",
+        "source": "M38_SYSTEM_BY_SYSTEM_PRINT_VISUAL_RECHECK",
+        "scope": "SYLLABLE_GROUP_CONTOUR_AND_APPROXIMATE_HEIGHT_NOT_EVERY_NOTES_GLYPH",
+        "observation": "Printed Christe second syllable rises between two adjacent staff positions; the connector/join requires separate comparison.",
+        "printedAbsolutePitchesIndividuallyMatched": false,
+        "printedNeumeShapesIndividuallyMatched": false,
+        "printedMoraAndEpisemaIndividuallyMatched": false
+      },
+      "sourceNoteheads": [
+        {
+          "sourceNoteOrdinal": 1,
+          "pitchLetter": "i",
+          "staffLineSpace": "space3",
+          "isPunctumInclinatumLetter": false,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 11
+        },
+        {
+          "sourceNoteOrdinal": 2,
+          "pitchLetter": "j",
+          "staffLineSpace": "line4",
+          "isPunctumInclinatumLetter": false,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 12
+        }
+      ],
+      "printedPitchesCertified": false,
+      "editoriallyApproved": false
+    },
+    {
+      "ordinal": 10,
+      "sourceSyllable": "e",
+      "printedSystem": 1,
+      "printedFolio": "54*",
+      "sourceOriginalNeume": "h",
+      "sourceNoteLetters": [
+        "h"
+      ],
+      "sourcePitchPositionsFromC4": [
+        "line3"
+      ],
+      "sourceNoteShapeCues": {
+        "squareNoteLetters": 1,
+        "inclinedNoteLetters": 0,
+        "horizontalEpisemaTokens": 0,
+        "moraTokens": 0,
+        "virgaTokens": 0
+      },
+      "printedScanContourSurvey": {
+        "verdict": "COARSELY_CONSISTENT_WITH_ORIGINAL_PRINT_AT_SCAN_RESOLUTION",
+        "source": "M38_SYSTEM_BY_SYSTEM_PRINT_VISUAL_RECHECK",
+        "scope": "SYLLABLE_GROUP_CONTOUR_AND_APPROXIMATE_HEIGHT_NOT_EVERY_NOTES_GLYPH",
+        "observation": "The subsequent eleison begins at a lower printed staff height; source h retained.",
+        "printedAbsolutePitchesIndividuallyMatched": false,
+        "printedNeumeShapesIndividuallyMatched": false,
+        "printedMoraAndEpisemaIndividuallyMatched": false
+      },
+      "sourceNoteheads": [
+        {
+          "sourceNoteOrdinal": 1,
+          "pitchLetter": "h",
+          "staffLineSpace": "line3",
+          "isPunctumInclinatumLetter": false,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 13
+        }
+      ],
+      "printedPitchesCertified": false,
+      "editoriallyApproved": false
+    },
+    {
+      "ordinal": 11,
+      "sourceSyllable": "lé",
+      "printedSystem": 1,
+      "printedFolio": "54*",
+      "sourceOriginalNeume": "h_",
+      "sourceNoteLetters": [
+        "h"
+      ],
+      "sourcePitchPositionsFromC4": [
+        "line3"
+      ],
+      "sourceNoteShapeCues": {
+        "squareNoteLetters": 1,
+        "inclinedNoteLetters": 0,
+        "horizontalEpisemaTokens": 1,
+        "moraTokens": 0,
+        "virgaTokens": 0
+      },
+      "printedScanContourSurvey": {
+        "verdict": "COARSELY_CONSISTENT_WITH_ORIGINAL_PRINT_AT_SCAN_RESOLUTION",
+        "source": "M38_SYSTEM_BY_SYSTEM_PRINT_VISUAL_RECHECK",
+        "scope": "SYLLABLE_GROUP_CONTOUR_AND_APPROXIMATE_HEIGHT_NOT_EVERY_NOTES_GLYPH",
+        "observation": "The Christe eleison accent group contains source underscore; exact horizontal episema must be independently read.",
+        "printedAbsolutePitchesIndividuallyMatched": false,
+        "printedNeumeShapesIndividuallyMatched": false,
+        "printedMoraAndEpisemaIndividuallyMatched": false
+      },
+      "sourceNoteheads": [
+        {
+          "sourceNoteOrdinal": 1,
+          "pitchLetter": "h",
+          "staffLineSpace": "line3",
+          "isPunctumInclinatumLetter": false,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 14
+        }
+      ],
+      "printedPitchesCertified": false,
+      "editoriallyApproved": false
+    },
+    {
+      "ordinal": 12,
+      "sourceSyllable": "i",
+      "printedSystem": 1,
+      "printedFolio": "54*",
+      "sourceOriginalNeume": "i",
+      "sourceNoteLetters": [
+        "i"
+      ],
+      "sourcePitchPositionsFromC4": [
+        "space3"
+      ],
+      "sourceNoteShapeCues": {
+        "squareNoteLetters": 1,
+        "inclinedNoteLetters": 0,
+        "horizontalEpisemaTokens": 0,
+        "moraTokens": 0,
+        "virgaTokens": 0
+      },
+      "printedScanContourSurvey": {
+        "verdict": "COARSELY_CONSISTENT_WITH_ORIGINAL_PRINT_AT_SCAN_RESOLUTION",
+        "source": "M38_SYSTEM_BY_SYSTEM_PRINT_VISUAL_RECHECK",
+        "scope": "SYLLABLE_GROUP_CONTOUR_AND_APPROXIMATE_HEIGHT_NOT_EVERY_NOTES_GLYPH",
+        "observation": "The Christe eleison later syllable rises to source i; no line-shift claim.",
+        "printedAbsolutePitchesIndividuallyMatched": false,
+        "printedNeumeShapesIndividuallyMatched": false,
+        "printedMoraAndEpisemaIndividuallyMatched": false
+      },
+      "sourceNoteheads": [
+        {
+          "sourceNoteOrdinal": 1,
+          "pitchLetter": "i",
+          "staffLineSpace": "space3",
+          "isPunctumInclinatumLetter": false,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 15
+        }
+      ],
+      "printedPitchesCertified": false,
+      "editoriallyApproved": false
+    },
+    {
+      "ordinal": 13,
+      "sourceSyllable": "son.",
+      "printedSystem": 1,
+      "printedFolio": "54*",
+      "sourceOriginalNeume": "i.",
+      "sourceNoteLetters": [
+        "i"
+      ],
+      "sourcePitchPositionsFromC4": [
+        "space3"
+      ],
+      "sourceNoteShapeCues": {
+        "squareNoteLetters": 1,
+        "inclinedNoteLetters": 0,
+        "horizontalEpisemaTokens": 0,
+        "moraTokens": 1,
+        "virgaTokens": 0
+      },
+      "printedScanContourSurvey": {
+        "verdict": "COARSELY_CONSISTENT_WITH_ORIGINAL_PRINT_AT_SCAN_RESOLUTION",
+        "source": "M38_SYSTEM_BY_SYSTEM_PRINT_VISUAL_RECHECK",
+        "scope": "SYLLABLE_GROUP_CONTOUR_AND_APPROXIMATE_HEIGHT_NOT_EVERY_NOTES_GLYPH",
+        "observation": "The Christe cadence has a source mora; print dot remains not individually certified.",
+        "printedAbsolutePitchesIndividuallyMatched": false,
+        "printedNeumeShapesIndividuallyMatched": false,
+        "printedMoraAndEpisemaIndividuallyMatched": false
+      },
+      "sourceNoteheads": [
+        {
+          "sourceNoteOrdinal": 1,
+          "pitchLetter": "i",
+          "staffLineSpace": "space3",
+          "isPunctumInclinatumLetter": false,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 16
+        }
+      ],
+      "printedPitchesCertified": false,
+      "editoriallyApproved": false
+    },
+    {
+      "ordinal": 14,
+      "sourceSyllable": "Ký",
+      "printedSystem": 1,
+      "printedFolio": "54*",
+      "sourceOriginalNeume": "g",
+      "sourceNoteLetters": [
+        "g"
+      ],
+      "sourcePitchPositionsFromC4": [
+        "space2"
+      ],
+      "sourceNoteShapeCues": {
+        "squareNoteLetters": 1,
+        "inclinedNoteLetters": 0,
+        "horizontalEpisemaTokens": 0,
+        "moraTokens": 0,
+        "virgaTokens": 0
+      },
+      "printedScanContourSurvey": {
+        "verdict": "COARSELY_CONSISTENT_WITH_ORIGINAL_PRINT_AT_SCAN_RESOLUTION",
+        "source": "M38_SYSTEM_BY_SYSTEM_PRINT_VISUAL_RECHECK",
+        "scope": "SYLLABLE_GROUP_CONTOUR_AND_APPROXIMATE_HEIGHT_NOT_EVERY_NOTES_GLYPH",
+        "observation": "The third Kyrie initial appears at the right edge of the first 1961 printed staff system.",
+        "printedAbsolutePitchesIndividuallyMatched": false,
+        "printedNeumeShapesIndividuallyMatched": false,
+        "printedMoraAndEpisemaIndividuallyMatched": false
+      },
+      "sourceNoteheads": [
+        {
+          "sourceNoteOrdinal": 1,
+          "pitchLetter": "g",
+          "staffLineSpace": "space2",
+          "isPunctumInclinatumLetter": false,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 17
+        }
+      ],
+      "printedPitchesCertified": false,
+      "editoriallyApproved": false
+    },
+    {
+      "ordinal": 15,
+      "sourceSyllable": "ri",
+      "printedSystem": 2,
+      "printedFolio": "54*",
+      "sourceOriginalNeume": "hi",
+      "sourceNoteLetters": [
+        "h",
+        "i"
+      ],
+      "sourcePitchPositionsFromC4": [
+        "line3",
+        "space3"
+      ],
+      "sourceNoteShapeCues": {
+        "squareNoteLetters": 2,
+        "inclinedNoteLetters": 0,
+        "horizontalEpisemaTokens": 0,
+        "moraTokens": 0,
+        "virgaTokens": 0
+      },
+      "printedScanContourSurvey": {
+        "verdict": "COARSELY_CONSISTENT_WITH_ORIGINAL_PRINT_AT_SCAN_RESOLUTION",
+        "source": "M38_SYSTEM_BY_SYSTEM_PRINT_VISUAL_RECHECK",
+        "scope": "SYLLABLE_GROUP_CONTOUR_AND_APPROXIMATE_HEIGHT_NOT_EVERY_NOTES_GLYPH",
+        "observation": "The third Kyrie continues onto system two: source hi must not be moved into a fabricated extra score.",
+        "printedAbsolutePitchesIndividuallyMatched": false,
+        "printedNeumeShapesIndividuallyMatched": false,
+        "printedMoraAndEpisemaIndividuallyMatched": false
+      },
+      "sourceNoteheads": [
+        {
+          "sourceNoteOrdinal": 1,
+          "pitchLetter": "h",
+          "staffLineSpace": "line3",
+          "isPunctumInclinatumLetter": false,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 18
+        },
+        {
+          "sourceNoteOrdinal": 2,
+          "pitchLetter": "i",
+          "staffLineSpace": "space3",
+          "isPunctumInclinatumLetter": false,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 19
+        }
+      ],
+      "printedPitchesCertified": false,
+      "editoriallyApproved": false
+    },
+    {
+      "ordinal": 16,
+      "sourceSyllable": "e",
+      "printedSystem": 2,
+      "printedFolio": "54*",
+      "sourceOriginalNeume": "ii",
+      "sourceNoteLetters": [
+        "i",
+        "i"
+      ],
+      "sourcePitchPositionsFromC4": [
+        "space3",
+        "space3"
+      ],
+      "sourceNoteShapeCues": {
+        "squareNoteLetters": 2,
+        "inclinedNoteLetters": 0,
+        "horizontalEpisemaTokens": 0,
+        "moraTokens": 0,
+        "virgaTokens": 0
+      },
+      "printedScanContourSurvey": {
+        "verdict": "COARSELY_CONSISTENT_WITH_ORIGINAL_PRINT_AT_SCAN_RESOLUTION",
+        "source": "M38_SYSTEM_BY_SYSTEM_PRINT_VISUAL_RECHECK",
+        "scope": "SYLLABLE_GROUP_CONTOUR_AND_APPROXIMATE_HEIGHT_NOT_EVERY_NOTES_GLYPH",
+        "observation": "The middle Kyrie repeated unison group ii is on the continuation system.",
+        "printedAbsolutePitchesIndividuallyMatched": false,
+        "printedNeumeShapesIndividuallyMatched": false,
+        "printedMoraAndEpisemaIndividuallyMatched": false
+      },
+      "sourceNoteheads": [
+        {
+          "sourceNoteOrdinal": 1,
+          "pitchLetter": "i",
+          "staffLineSpace": "space3",
+          "isPunctumInclinatumLetter": false,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 20
+        },
+        {
+          "sourceNoteOrdinal": 2,
+          "pitchLetter": "i",
+          "staffLineSpace": "space3",
+          "isPunctumInclinatumLetter": false,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 21
+        }
+      ],
+      "printedPitchesCertified": false,
+      "editoriallyApproved": false
+    },
+    {
+      "ordinal": 17,
+      "sourceSyllable": "e",
+      "printedSystem": 2,
+      "printedFolio": "54*",
+      "sourceOriginalNeume": "g",
+      "sourceNoteLetters": [
+        "g"
+      ],
+      "sourcePitchPositionsFromC4": [
+        "space2"
+      ],
+      "sourceNoteShapeCues": {
+        "squareNoteLetters": 1,
+        "inclinedNoteLetters": 0,
+        "horizontalEpisemaTokens": 0,
+        "moraTokens": 0,
+        "virgaTokens": 0
+      },
+      "printedScanContourSurvey": {
+        "verdict": "COARSELY_CONSISTENT_WITH_ORIGINAL_PRINT_AT_SCAN_RESOLUTION",
+        "source": "M38_SYSTEM_BY_SYSTEM_PRINT_VISUAL_RECHECK",
+        "scope": "SYLLABLE_GROUP_CONTOUR_AND_APPROXIMATE_HEIGHT_NOT_EVERY_NOTES_GLYPH",
+        "observation": "The third Kyrie eleison begins on the lower g position, with its own source syllabic accent.",
+        "printedAbsolutePitchesIndividuallyMatched": false,
+        "printedNeumeShapesIndividuallyMatched": false,
+        "printedMoraAndEpisemaIndividuallyMatched": false
+      },
+      "sourceNoteheads": [
+        {
+          "sourceNoteOrdinal": 1,
+          "pitchLetter": "g",
+          "staffLineSpace": "space2",
+          "isPunctumInclinatumLetter": false,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 22
+        }
+      ],
+      "printedPitchesCertified": false,
+      "editoriallyApproved": false
+    },
+    {
+      "ordinal": 18,
+      "sourceSyllable": "lé",
+      "printedSystem": 2,
+      "printedFolio": "54*",
+      "sourceOriginalNeume": "h_",
+      "sourceNoteLetters": [
+        "h"
+      ],
+      "sourcePitchPositionsFromC4": [
+        "line3"
+      ],
+      "sourceNoteShapeCues": {
+        "squareNoteLetters": 1,
+        "inclinedNoteLetters": 0,
+        "horizontalEpisemaTokens": 1,
+        "moraTokens": 0,
+        "virgaTokens": 0
+      },
+      "printedScanContourSurvey": {
+        "verdict": "COARSELY_CONSISTENT_WITH_ORIGINAL_PRINT_AT_SCAN_RESOLUTION",
+        "source": "M38_SYSTEM_BY_SYSTEM_PRINT_VISUAL_RECHECK",
+        "scope": "SYLLABLE_GROUP_CONTOUR_AND_APPROXIMATE_HEIGHT_NOT_EVERY_NOTES_GLYPH",
+        "observation": "The third Kyrie accented lé uses underscore; compare episema above/below as a separate question.",
+        "printedAbsolutePitchesIndividuallyMatched": false,
+        "printedNeumeShapesIndividuallyMatched": false,
+        "printedMoraAndEpisemaIndividuallyMatched": false
+      },
+      "sourceNoteheads": [
+        {
+          "sourceNoteOrdinal": 1,
+          "pitchLetter": "h",
+          "staffLineSpace": "line3",
+          "isPunctumInclinatumLetter": false,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 23
+        }
+      ],
+      "printedPitchesCertified": false,
+      "editoriallyApproved": false
+    },
+    {
+      "ordinal": 19,
+      "sourceSyllable": "i",
+      "printedSystem": 2,
+      "printedFolio": "54*",
+      "sourceOriginalNeume": "i",
+      "sourceNoteLetters": [
+        "i"
+      ],
+      "sourcePitchPositionsFromC4": [
+        "space3"
+      ],
+      "sourceNoteShapeCues": {
+        "squareNoteLetters": 1,
+        "inclinedNoteLetters": 0,
+        "horizontalEpisemaTokens": 0,
+        "moraTokens": 0,
+        "virgaTokens": 0
+      },
+      "printedScanContourSurvey": {
+        "verdict": "COARSELY_CONSISTENT_WITH_ORIGINAL_PRINT_AT_SCAN_RESOLUTION",
+        "source": "M38_SYSTEM_BY_SYSTEM_PRINT_VISUAL_RECHECK",
+        "scope": "SYLLABLE_GROUP_CONTOUR_AND_APPROXIMATE_HEIGHT_NOT_EVERY_NOTES_GLYPH",
+        "observation": "The third Kyrie i neume follows lé on system two.",
+        "printedAbsolutePitchesIndividuallyMatched": false,
+        "printedNeumeShapesIndividuallyMatched": false,
+        "printedMoraAndEpisemaIndividuallyMatched": false
+      },
+      "sourceNoteheads": [
+        {
+          "sourceNoteOrdinal": 1,
+          "pitchLetter": "i",
+          "staffLineSpace": "space3",
+          "isPunctumInclinatumLetter": false,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 24
+        }
+      ],
+      "printedPitchesCertified": false,
+      "editoriallyApproved": false
+    },
+    {
+      "ordinal": 20,
+      "sourceSyllable": "son.",
+      "printedSystem": 2,
+      "printedFolio": "54*",
+      "sourceOriginalNeume": "i.",
+      "sourceNoteLetters": [
+        "i"
+      ],
+      "sourcePitchPositionsFromC4": [
+        "space3"
+      ],
+      "sourceNoteShapeCues": {
+        "squareNoteLetters": 1,
+        "inclinedNoteLetters": 0,
+        "horizontalEpisemaTokens": 0,
+        "moraTokens": 1,
+        "virgaTokens": 0
+      },
+      "printedScanContourSurvey": {
+        "verdict": "COARSELY_CONSISTENT_WITH_ORIGINAL_PRINT_AT_SCAN_RESOLUTION",
+        "source": "M38_SYSTEM_BY_SYSTEM_PRINT_VISUAL_RECHECK",
+        "scope": "SYLLABLE_GROUP_CONTOUR_AND_APPROXIMATE_HEIGHT_NOT_EVERY_NOTES_GLYPH",
+        "observation": "The third Kyrie last son includes a source mora; printed dot remains a sign-level hold.",
+        "printedAbsolutePitchesIndividuallyMatched": false,
+        "printedNeumeShapesIndividuallyMatched": false,
+        "printedMoraAndEpisemaIndividuallyMatched": false
+      },
+      "sourceNoteheads": [
+        {
+          "sourceNoteOrdinal": 1,
+          "pitchLetter": "i",
+          "staffLineSpace": "space3",
+          "isPunctumInclinatumLetter": false,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 25
+        }
+      ],
+      "printedPitchesCertified": false,
+      "editoriallyApproved": false
+    },
+    {
+      "ordinal": 21,
+      "sourceSyllable": "Ký",
+      "printedSystem": 2,
+      "printedFolio": "54*",
+      "sourceOriginalNeume": "g",
+      "sourceNoteLetters": [
+        "g"
+      ],
+      "sourcePitchPositionsFromC4": [
+        "space2"
+      ],
+      "sourceNoteShapeCues": {
+        "squareNoteLetters": 1,
+        "inclinedNoteLetters": 0,
+        "horizontalEpisemaTokens": 0,
+        "moraTokens": 0,
+        "virgaTokens": 0
+      },
+      "printedScanContourSurvey": {
+        "verdict": "COARSELY_CONSISTENT_WITH_ORIGINAL_PRINT_AT_SCAN_RESOLUTION",
+        "source": "M38_SYSTEM_BY_SYSTEM_PRINT_VISUAL_RECHECK",
+        "scope": "SYLLABLE_GROUP_CONTOUR_AND_APPROXIMATE_HEIGHT_NOT_EVERY_NOTES_GLYPH",
+        "observation": "The distinct final Kyrie begins after printed ij.; not a repeat of the earlier final fragment.",
+        "printedAbsolutePitchesIndividuallyMatched": false,
+        "printedNeumeShapesIndividuallyMatched": false,
+        "printedMoraAndEpisemaIndividuallyMatched": false
+      },
+      "sourceNoteheads": [
+        {
+          "sourceNoteOrdinal": 1,
+          "pitchLetter": "g",
+          "staffLineSpace": "space2",
+          "isPunctumInclinatumLetter": false,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 26
+        }
+      ],
+      "printedPitchesCertified": false,
+      "editoriallyApproved": false
+    },
+    {
+      "ordinal": 22,
+      "sourceSyllable": "ri",
+      "printedSystem": 2,
+      "printedFolio": "54*",
+      "sourceOriginalNeume": "hi",
+      "sourceNoteLetters": [
+        "h",
+        "i"
+      ],
+      "sourcePitchPositionsFromC4": [
+        "line3",
+        "space3"
+      ],
+      "sourceNoteShapeCues": {
+        "squareNoteLetters": 2,
+        "inclinedNoteLetters": 0,
+        "horizontalEpisemaTokens": 0,
+        "moraTokens": 0,
+        "virgaTokens": 0
+      },
+      "printedScanContourSurvey": {
+        "verdict": "COARSELY_CONSISTENT_WITH_ORIGINAL_PRINT_AT_SCAN_RESOLUTION",
+        "source": "M38_SYSTEM_BY_SYSTEM_PRINT_VISUAL_RECHECK",
+        "scope": "SYLLABLE_GROUP_CONTOUR_AND_APPROXIMATE_HEIGHT_NOT_EVERY_NOTES_GLYPH",
+        "observation": "The final Kyrie ri rises from h to i, continuing on printed system two.",
+        "printedAbsolutePitchesIndividuallyMatched": false,
+        "printedNeumeShapesIndividuallyMatched": false,
+        "printedMoraAndEpisemaIndividuallyMatched": false
+      },
+      "sourceNoteheads": [
+        {
+          "sourceNoteOrdinal": 1,
+          "pitchLetter": "h",
+          "staffLineSpace": "line3",
+          "isPunctumInclinatumLetter": false,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 27
+        },
+        {
+          "sourceNoteOrdinal": 2,
+          "pitchLetter": "i",
+          "staffLineSpace": "space3",
+          "isPunctumInclinatumLetter": false,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 28
+        }
+      ],
+      "printedPitchesCertified": false,
+      "editoriallyApproved": false
+    },
+    {
+      "ordinal": 23,
+      "sourceSyllable": "e",
+      "printedSystem": 2,
+      "printedFolio": "54*",
+      "sourceOriginalNeume": "ii",
+      "sourceNoteLetters": [
+        "i",
+        "i"
+      ],
+      "sourcePitchPositionsFromC4": [
+        "space3",
+        "space3"
+      ],
+      "sourceNoteShapeCues": {
+        "squareNoteLetters": 2,
+        "inclinedNoteLetters": 0,
+        "horizontalEpisemaTokens": 0,
+        "moraTokens": 0,
+        "virgaTokens": 0
+      },
+      "printedScanContourSurvey": {
+        "verdict": "COARSELY_CONSISTENT_WITH_ORIGINAL_PRINT_AT_SCAN_RESOLUTION",
+        "source": "M38_SYSTEM_BY_SYSTEM_PRINT_VISUAL_RECHECK",
+        "scope": "SYLLABLE_GROUP_CONTOUR_AND_APPROXIMATE_HEIGHT_NOT_EVERY_NOTES_GLYPH",
+        "observation": "The final Kyrie e has two source i positions; neume shape differs from a single pitch.",
+        "printedAbsolutePitchesIndividuallyMatched": false,
+        "printedNeumeShapesIndividuallyMatched": false,
+        "printedMoraAndEpisemaIndividuallyMatched": false
+      },
+      "sourceNoteheads": [
+        {
+          "sourceNoteOrdinal": 1,
+          "pitchLetter": "i",
+          "staffLineSpace": "space3",
+          "isPunctumInclinatumLetter": false,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 29
+        },
+        {
+          "sourceNoteOrdinal": 2,
+          "pitchLetter": "i",
+          "staffLineSpace": "space3",
+          "isPunctumInclinatumLetter": false,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 30
+        }
+      ],
+      "printedPitchesCertified": false,
+      "editoriallyApproved": false
+    },
+    {
+      "ordinal": 24,
+      "sourceSyllable": "e",
+      "printedSystem": 2,
+      "printedFolio": "54*",
+      "sourceOriginalNeume": "g",
+      "sourceNoteLetters": [
+        "g"
+      ],
+      "sourcePitchPositionsFromC4": [
+        "space2"
+      ],
+      "sourceNoteShapeCues": {
+        "squareNoteLetters": 1,
+        "inclinedNoteLetters": 0,
+        "horizontalEpisemaTokens": 0,
+        "moraTokens": 0,
+        "virgaTokens": 0
+      },
+      "printedScanContourSurvey": {
+        "verdict": "COARSELY_CONSISTENT_WITH_ORIGINAL_PRINT_AT_SCAN_RESOLUTION",
+        "source": "M38_SYSTEM_BY_SYSTEM_PRINT_VISUAL_RECHECK",
+        "scope": "SYLLABLE_GROUP_CONTOUR_AND_APPROXIMATE_HEIGHT_NOT_EVERY_NOTES_GLYPH",
+        "observation": "The final Kyrie eleison pre-cadence falls back to source g.",
+        "printedAbsolutePitchesIndividuallyMatched": false,
+        "printedNeumeShapesIndividuallyMatched": false,
+        "printedMoraAndEpisemaIndividuallyMatched": false
+      },
+      "sourceNoteheads": [
+        {
+          "sourceNoteOrdinal": 1,
+          "pitchLetter": "g",
+          "staffLineSpace": "space2",
+          "isPunctumInclinatumLetter": false,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 31
+        }
+      ],
+      "printedPitchesCertified": false,
+      "editoriallyApproved": false
+    },
+    {
+      "ordinal": 25,
+      "sourceSyllable": "lé",
+      "printedSystem": 2,
+      "printedFolio": "54*",
+      "sourceOriginalNeume": "hj",
+      "sourceNoteLetters": [
+        "h",
+        "j"
+      ],
+      "sourcePitchPositionsFromC4": [
+        "line3",
+        "line4"
+      ],
+      "sourceNoteShapeCues": {
+        "squareNoteLetters": 2,
+        "inclinedNoteLetters": 0,
+        "horizontalEpisemaTokens": 0,
+        "moraTokens": 0,
+        "virgaTokens": 0
+      },
+      "printedScanContourSurvey": {
+        "verdict": "COARSELY_CONSISTENT_WITH_ORIGINAL_PRINT_AT_SCAN_RESOLUTION",
+        "source": "M38_SYSTEM_BY_SYSTEM_PRINT_VISUAL_RECHECK",
+        "scope": "SYLLABLE_GROUP_CONTOUR_AND_APPROXIMATE_HEIGHT_NOT_EVERY_NOTES_GLYPH",
+        "observation": "The final Kyrie accented lé is a two-pitch hj ascent; must not be mistaken for an underscored repeated lé.",
+        "printedAbsolutePitchesIndividuallyMatched": false,
+        "printedNeumeShapesIndividuallyMatched": false,
+        "printedMoraAndEpisemaIndividuallyMatched": false
+      },
+      "sourceNoteheads": [
+        {
+          "sourceNoteOrdinal": 1,
+          "pitchLetter": "h",
+          "staffLineSpace": "line3",
+          "isPunctumInclinatumLetter": false,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 32
+        },
+        {
+          "sourceNoteOrdinal": 2,
+          "pitchLetter": "j",
+          "staffLineSpace": "line4",
+          "isPunctumInclinatumLetter": false,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 33
+        }
+      ],
+      "printedPitchesCertified": false,
+      "editoriallyApproved": false
+    },
+    {
+      "ordinal": 26,
+      "sourceSyllable": "i",
+      "printedSystem": 2,
+      "printedFolio": "54*",
+      "sourceOriginalNeume": "h",
+      "sourceNoteLetters": [
+        "h"
+      ],
+      "sourcePitchPositionsFromC4": [
+        "line3"
+      ],
+      "sourceNoteShapeCues": {
+        "squareNoteLetters": 1,
+        "inclinedNoteLetters": 0,
+        "horizontalEpisemaTokens": 0,
+        "moraTokens": 0,
+        "virgaTokens": 0
+      },
+      "printedScanContourSurvey": {
+        "verdict": "COARSELY_CONSISTENT_WITH_ORIGINAL_PRINT_AT_SCAN_RESOLUTION",
+        "source": "M38_SYSTEM_BY_SYSTEM_PRINT_VISUAL_RECHECK",
+        "scope": "SYLLABLE_GROUP_CONTOUR_AND_APPROXIMATE_HEIGHT_NOT_EVERY_NOTES_GLYPH",
+        "observation": "The next syllable i is source h rather than the previous i.",
+        "printedAbsolutePitchesIndividuallyMatched": false,
+        "printedNeumeShapesIndividuallyMatched": false,
+        "printedMoraAndEpisemaIndividuallyMatched": false
+      },
+      "sourceNoteheads": [
+        {
+          "sourceNoteOrdinal": 1,
+          "pitchLetter": "h",
+          "staffLineSpace": "line3",
+          "isPunctumInclinatumLetter": false,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 34
+        }
+      ],
+      "printedPitchesCertified": false,
+      "editoriallyApproved": false
+    },
+    {
+      "ordinal": 27,
+      "sourceSyllable": "son.",
+      "printedSystem": 2,
+      "printedFolio": "54*",
+      "sourceOriginalNeume": "ighvGFE.",
+      "sourceNoteLetters": [
+        "i",
+        "g",
+        "h",
+        "G",
+        "F",
+        "E"
+      ],
+      "sourcePitchPositionsFromC4": [
+        "space3",
+        "space2",
+        "line3",
+        "space2",
+        "line2",
+        "space1"
+      ],
+      "sourceNoteShapeCues": {
+        "squareNoteLetters": 3,
+        "inclinedNoteLetters": 3,
+        "horizontalEpisemaTokens": 0,
+        "moraTokens": 1,
+        "virgaTokens": 1
+      },
+      "printedScanContourSurvey": {
+        "verdict": "COARSELY_CONSISTENT_WITH_ORIGINAL_PRINT_AT_SCAN_RESOLUTION",
+        "source": "M38_SYSTEM_BY_SYSTEM_PRINT_VISUAL_RECHECK",
+        "scope": "SYLLABLE_GROUP_CONTOUR_AND_APPROXIMATE_HEIGHT_NOT_EVERY_NOTES_GLYPH",
+        "observation": "The terminal son comprises source i-g-h(virga)-G-F-E followed by mora: read each exact printed diamond, virga, staff position, and dot before approval.",
+        "printedAbsolutePitchesIndividuallyMatched": false,
+        "printedNeumeShapesIndividuallyMatched": false,
+        "printedMoraAndEpisemaIndividuallyMatched": false
+      },
+      "sourceNoteheads": [
+        {
+          "sourceNoteOrdinal": 1,
+          "pitchLetter": "i",
+          "staffLineSpace": "space3",
+          "isPunctumInclinatumLetter": false,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 35
+        },
+        {
+          "sourceNoteOrdinal": 2,
+          "pitchLetter": "g",
+          "staffLineSpace": "space2",
+          "isPunctumInclinatumLetter": false,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 36
+        },
+        {
+          "sourceNoteOrdinal": 3,
+          "pitchLetter": "h",
+          "staffLineSpace": "line3",
+          "isPunctumInclinatumLetter": false,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 37
+        },
+        {
+          "sourceNoteOrdinal": 4,
+          "pitchLetter": "G",
+          "staffLineSpace": "space2",
+          "isPunctumInclinatumLetter": true,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 38
+        },
+        {
+          "sourceNoteOrdinal": 5,
+          "pitchLetter": "F",
+          "staffLineSpace": "line2",
+          "isPunctumInclinatumLetter": true,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 39
+        },
+        {
+          "sourceNoteOrdinal": 6,
+          "pitchLetter": "E",
+          "staffLineSpace": "space1",
+          "isPunctumInclinatumLetter": true,
+          "printedPitchIndependentlyCertified": false,
+          "printedGlyphShapeCertified": false,
+          "sourceGlobalOrdinal": 40
+        }
+      ],
+      "printedPitchesCertified": false,
+      "editoriallyApproved": false
+    }
+  ],
+  "openCriticalPrintCollation": [
+    {
+      "severity": "P0_EDITORIAL_HOLD",
+      "groups": [
+        27
+      ],
+      "category": "FINAL_CADENCE_PUNCTA_INCLINATA",
+      "exactSource": "ighvGFE.",
+      "originalPrintedFolio": "54*",
+      "originalPrintedSystem": 2,
+      "question": "Original shows descending inclinata at the final cadence. Resolve whether source G,F,E are indeed three inclined squares, verify source i→g→h virga transitions, every staff height, and final dot on original page.",
+      "printedAtScan": "DISTINCT_DESCENDING_CADENCE_VISIBLE_BUT_FINE_SHAPES_NOT_CERTIFIED",
+      "proposedSourceCorrection": null,
+      "certificationBlocked": true
+    },
+    {
+      "severity": "P0_EDITORIAL_HOLD",
+      "groups": [
+        5,
+        11,
+        18
+      ],
+      "category": "HORIZONTAL_EPISEMATA",
+      "exactSource": "h_",
+      "originalPrintedFolio": "54*",
+      "question": "Check whether each underscore is present at the exact notehead, alignment and length in both 1961 Solesmes witnesses; scan-scale stroke can be confused with a staff line.",
+      "proposedSourceCorrection": null,
+      "certificationBlocked": true
+    },
+    {
+      "severity": "P0_EDITORIAL_HOLD",
+      "groups": [
+        7,
+        13,
+        20,
+        27
+      ],
+      "category": "PUNCTUM_MORA",
+      "originalPrintedFolio": "54*",
+      "question": "At original print magnification independently count dot placements and compare positions relative to notes, including the final descender.",
+      "proposedSourceCorrection": null,
+      "certificationBlocked": true
+    },
+    {
+      "severity": "P1_EDITORIAL_HOLD",
+      "groups": [
+        14,
+        15
+      ],
+      "category": "PRINTED_SYSTEM_BREAK",
+      "originalPrintedFolio": "54*",
+      "originalPrintedSystems": [
+        1,
+        2
+      ],
+      "question": "Third Kyrie starts at the end of system one; group 15 continues on system two. Independently verify custos and underlay across this boundary.",
+      "proposedSourceCorrection": null,
+      "certificationBlocked": true
+    },
+    {
+      "severity": "P1_EDITORIAL_HOLD",
+      "groups": [
+        25,
+        26,
+        27
+      ],
+      "category": "FINAL_KYRIE_UNDERLAY",
+      "originalPrintedFolio": "54*",
+      "originalPrintedSystem": 2,
+      "question": "Distinguish the source final syllable's six encoded noteheads and their positions from the final Kyrie melody; verify the extra source i/h staff positions and every printed neume join.",
+      "proposedSourceCorrection": null,
+      "certificationBlocked": true
+    }
+  ],
+  "sourcePreservation": {
+    "originalGabcRewritten": false,
+    "canonical65CardsChanged": false,
+    "readerNotationAssignmentChanged": false,
+    "fullMusicCertificationGranted": false,
+    "requirementsBeforeApproval": [
+      "independently count all printed noteheads with high-resolution original PDF",
+      "mark exact pitches and shapes per print system",
+      "compare source and print each horizontal episema and punctum mora",
+      "record printed spacing joins, kustodes and underlay",
+      "obtain independent chant-editor approval and provenance"
+    ]
+  }
+}
