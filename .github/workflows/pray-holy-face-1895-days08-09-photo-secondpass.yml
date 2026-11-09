@@ -1,0 +1,32 @@
+name: Prayer Holy Face 1895 French Days VIII-IX photo second-pass source hold
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "data/pray/research/pray-holy-face-1895-fr-days08-09-image-assisted-second-pass.v1.json"
+      - "data/pray/research/pray-holy-face-1895-fr-all-9day-first-pass-index.v1.json"
+      - "tests/pray-holy-face-1895-fr-days08-09-photo-secondpass-gate.mjs"
+      - ".github/workflows/pray-holy-face-1895-days08-09-photo-secondpass.yml"
+      - "src/pray/holy-face-janvier-1887-b25.js"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pray-janvier-days08-09-photo-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  source-second-pass:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify 19 French sections against page-read anchors plus Day I collect
+        run: node tests/pray-holy-face-1895-fr-days08-09-photo-secondpass-gate.mjs
+      - name: Preserve source photo first-correction and full nine-day research boundary
+        run: |
+          node tests/pray-holy-face-1895-source-photo-recheck-31pages-gate.mjs
+          node tests/pray-holy-face-french-1895-day8-research-gate.mjs
+          node tests/pray-holy-face-french-1895-all-nine-first-pass-gate.mjs
