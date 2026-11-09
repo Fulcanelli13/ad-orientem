@@ -151,3 +151,28 @@ Key corrections and qualifications:
 The other confirmed feast subjects in this batch are de Vos's *Temptation of St Anthony* (KMSKA 103), de Vos's *Restitution to St Norbert* (KMSKA 107), and Jacopo Bassano's Dijon *Martyrdom of St Sebastian* (older museum catalogue gives a different Bassano attribution; object inventory reconciliation still necessary).
 
 This PR must remain draft. **No source image, exact photo licence, crop, visual pixels, original owner selection, or live app assignment was cleared or modified.** The regression suite now verifies unique proposal coverage and derives cumulative totals instead of asserting contradictory historical intermediate totals against the current index.
+
+## Complete Claude new-proposal editorial assessment — batches 7 and 8
+
+**Source-assessed: 114/114 Claude `NEW_PROPOSAL` relationships, as editorial evidence only.** This closes the *counted review queue*, **not** the independent object-identity, rights, exact-photo, owner approval, crop, access or release gates. The unchanged 1,589 relationship edges and 507 owner-accepted Prayer alternatives remain the authoritative historical crosswalk. No display assignment, public image or canonical asset file has been modified.
+
+- **Batch 7, 15 liturgical/feast proposals**: `data/artwork/research/m2m-liturgical-batch7-20261109.v1.json`. Every remaining saint/feast painting was reviewed, with explicit catalogued-object, episode, artist-credit and image-source limits.
+- **Batch 8, 21 thematic/scriptural relationships**: `data/artwork/research/m2m-thematic-scriptural-batch8-20261109.v1.json`. Fifteen are thematic and six are scriptural. The same nine proposed paintings can legitimately connect to several dates without duplicating any physical painting or claiming exact passages by mere subject resemblance.
+
+### Particularly important corrections
+
+1. **14 September (Le Brun)**: Musea Brugge object `0000.GRO0470.I` is a **copy after Edelinck's print after Le Brun**, not an autograph Le Brun. It remains Exaltation-of-the-Cross iconography.
+2. **11 November (Bourdon)**: Musée Magnin `1938 F 97` is the reduced replica of Bourdon's earlier destroyed *Miracle of Saint Martin* for Cologne. Its old St Gregory Thaumaturgus title was superseded by the current scholarly identification. RMN photo rights remain held.
+3. **4 August (Coello)**: Prado `P000662` is indeed Coello's St Dominic. Preserve earlier approval records, but **never introduce a Prado photograph contrary to owner's source restriction**.
+4. **3 March (Jordaens)**: Lille `P103` portrays Christ teaching the Pharisees, with a cartouche indicating Matthew 5:20; Claude's claim of literal Matthew 23:1–12 is not established.
+5. **28 March (Rubens)**: Dijon museum identifies the *Entry into Jerusalem* as a predella panel depicting John 12:12–19, within the day's larger John 12:10–36. Claude's artist field is the Commons photo author, not Rubens; exact painter/workshop balance is qualified in Dijon literature.
+6. **4 July and 7 November (Allori)**: KMSKA `896` is catalogued under Alessandro Allori, while KMSKA's **2008 annual report** calls the same object *copy after Alessandro Allori*. Retain this internal institutional attribution conflict rather than silently choosing one.
+7. **9, 12, 15, 19, 23 December (Brueghel)**: Bruges `0000.GRO1561.I` is a **workshop copy** after Pieter Bruegel I's 1566 Budapest original. Matthew 11:2–10 and John 1:19–28 concern different interactions from a general preaching scene; Luke 3:1–6 describes John preaching, but the exact depicted verse cannot be proven solely by the canvas.
+8. **10, 14, 17, 22 December (Moreelse)**: Adult portrait of the Baptist is a thematic saint match, not John in prison, the Jerusalem delegation's interrogation or literal preaching to the crowd.
+9. **Recurring Marian themes**: Nicolas Mignard's Marseille *Virgin and Child*, Sassoferrato's Strasbourg `44.2019.2.11`, Jan van Eyck's Bruges `0000.GRO0161.I`, KMSKA's Allori-associated `896`, and Petit Palais's Glycophilousa `PPP4869` may all have distinct Marian-calendar links. **None illustrates the Luke 11:27–28 woman's exclamation as a literal narrative**. The Glycophilousa child's scroll instead references Luke 4:18.
+
+### Still outstanding after relationship review
+
+Physical-object and accession exceptions (including Bonn/Vaccaro and Magnin Elizabeth/Pierre), work/copy/workshop distinctions, incompatible or uncertain photographic rights, original-photo quality and mobile cropping, historical global rejection precedence (**Bouts `cma-122338`**), owner source exclusions (Prado), historical artist/title/ID reconciliation, missing canonical artwork IDs, and the 170 unmatched Calendar targets remain separate tasks. They are **not** covered by the 114/114 relevance-review metric.
+
+The crosswalk and regression tests must stay research-only and the PR must remain **draft and unmerged** until conflicts and runtime-safe import criteria are separately resolved.
