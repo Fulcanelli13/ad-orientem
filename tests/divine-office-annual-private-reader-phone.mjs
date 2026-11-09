@@ -81,7 +81,7 @@ try{
   await page.locator("#date").fill("2026-12-31");
   await page.locator("#date").dispatchEvent("change");
   await page.waitForFunction(()=>document.querySelector("#witness")
-   ?.textContent?.includes("12-31-2026-1-Matutinum.html")||
+   ?.textContent?.includes("12-31-2026-8-Completorium.html")&&
    document.querySelector("#status")?.textContent?.includes("SOURCE EXTRACTED"));
   await page.getByRole("button",{name:"Next day"}).click();
   await page.waitForFunction(()=>
