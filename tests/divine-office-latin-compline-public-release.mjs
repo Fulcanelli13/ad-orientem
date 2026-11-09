@@ -8,13 +8,15 @@ import {officeRouteState} from "../src/office/office-route-state.js";
 import {getDivineOfficePrayerReadiness}
  from "../src/pray/divine-office-readiness-gate.js";
 
-test("sixteen separately source-certified Advent Latin Compline dates; no Mame 1961 facsimile",()=>{
+test("twenty-three separately certified Latin Advent Compline dates; no Mame 1961 facsimile",()=>{
  assert.equal(LATIN_COMPLINE_RELEASE.date,"2026-11-28");
  assert.deepEqual(LATIN_COMPLINE_RELEASE.approvedDates,[
   "2026-11-28","2026-11-29","2026-11-30","2026-12-01",
   "2026-12-02","2026-12-03","2026-12-04","2026-12-05",
   "2026-12-06","2026-12-07","2026-12-08","2026-12-09",
-  "2026-12-10","2026-12-11","2026-12-12","2026-12-13"]);
+  "2026-12-10","2026-12-11","2026-12-12","2026-12-13",
+  "2026-12-14","2026-12-15","2026-12-16","2026-12-17",
+  "2026-12-18","2026-12-19","2026-12-20"]);
  assert.equal(LATIN_COMPLINE_RELEASE.language,"la");
  assert.equal(LATIN_COMPLINE_RELEASE.sourcePsalterFamily,"VULGATA_BIBLIORUM");
  assert.equal(LATIN_COMPLINE_RELEASE.target1961Edition,"MAME_1961_VULGATA");
@@ -34,6 +36,8 @@ test("sixteen separately source-certified Advent Latin Compline dates; no Mame 1
  assert.equal(LATIN_COMPLINE_RELEASE.weekdayPrintedAppointmentsReviewed,true);
  assert.equal(LATIN_COMPLINE_RELEASE.adventIIIndependentOfficeOrdoDatedWitnessReviewed,true);
  assert.equal(LATIN_COMPLINE_RELEASE.adventIILatinPsalterUsesPreviouslyCertifiedNinePlusFourSources,true);
+ assert.equal(LATIN_COMPLINE_RELEASE.adventIIIIndependentEmberOrdoDatedWitnessReviewed,true);
+ assert.equal(LATIN_COMPLINE_RELEASE.monday337WordsIndependentClementineExact,true);
  assert.equal(LATIN_COMPLINE_RELEASE.releaseBasis,"ROMAN_1960_OFFICE_TRADITIONAL_VULGATE_LATIN");
  assert.equal(LATIN_COMPLINE_RELEASE.completeHourCollated,true);
  assert.equal(LATIN_COMPLINE_RELEASE.rightsApproved,true);
@@ -54,16 +58,18 @@ test("sixteen separately source-certified Advent Latin Compline dates; no Mame 1
    "2026-12-04":36,"2026-12-05":41,"2026-12-06":30,
    "2026-12-07":30,"2026-12-08":30,"2026-12-09":30,
    "2026-12-10":33,"2026-12-11":36,"2026-12-12":41,
-   "2026-12-13":30
+   "2026-12-13":30,"2026-12-14":28,"2026-12-15":26,
+   "2026-12-16":30,"2026-12-17":33,"2026-12-18":36,
+   "2026-12-19":41,"2026-12-20":30
   })[date]);
  }
 });
 test("no public Office route can fetch unapproved source words",async()=>{
  for(const options of [
   {date:"2026-11-28",hour:"VESPERS"},
-  {date:"2026-12-14",hour:"COMPLINE"},
-  {date:"2026-12-15",hour:"COMPLINE"},
-  {date:"2026-12-16",hour:"COMPLINE"},
+  {date:"2026-12-21",hour:"COMPLINE"},
+  {date:"2026-12-22",hour:"COMPLINE"},
+  {date:"2026-12-23",hour:"COMPLINE"},
   {date:"2026-11-28",hour:"COMPLINE",calendarScope:"LOCAL"},
   {date:"2027-11-28",hour:"COMPLINE"},
   {date:"2026-11-28",hour:"MATINS"}

@@ -178,3 +178,43 @@ export function projectFerialComplinePsalmFrame(frame){
   printedPsalmWitness:FERIAL_COMPLINE_PRINTED_PSALM_WITNESS
  });
 }
+
+
+/** Original psalter Psalm 6/7 recitation stichs, independently compared
+ * against the complete separate Clementine Vulgate transcription:
+ * 337 normalized words, zero spelling or lexical discrepancies.
+ * This does NOT certify 1961 Mame Psalter facsimile typography. */
+const MONDAY_COMPLINE_SOURCE_LABELS=Object.freeze({
+ "Psalterium/Psalmorum/Psalm6#2-11":Object.freeze([
+  "6:2","6:3","6:4","6:5","6:6","6:7","6:8","6:9","6:10","6:11"]),
+ "Psalterium/Psalmorum/Psalm7#2-10":Object.freeze([
+  "7:2","7:3","7:4","7:5","7:6","7:7a","7:7b","7:8b","7:9b","7:10"]),
+ "Psalterium/Psalmorum/Psalm7#11-18":Object.freeze([
+  "7:11","7:12","7:13","7:14","7:15","7:16","7:17","7:18"])
+});
+export const MONDAY_COMPLINE_LATIN_WITNESS=
+ "Pinned Divinum Officium Psalm 6/7; independent Clementine Vulgate Project, 337 exact words";
+export function projectMondayComplinePsalmFrame(frame){
+ if(frame?.kind!=="PSALM"||
+    !/^Psalterium\/Psalmorum\/Psalm(?:6|7)#/u.test(frame.sourceId||""))
+  return frame;
+ const labels=MONDAY_COMPLINE_SOURCE_LABELS[frame.sourceId];
+ const index=frame.subIndex;
+ if(!labels||!Number.isInteger(index)||index<0||index>=labels.length||
+    frame.subTotal!==labels.length||frame.focusType!=="PSALM_VERSE"||
+    !frame.texts?.la)return null;
+ const label=labels[index],texts={};
+ for(const [language,rows] of Object.entries(frame.texts)){
+  if(!["la","en","fr"].includes(language)||!Array.isArray(rows)||
+     rows.length!==1||typeof rows[0]!=="string"||
+     !rows[0].startsWith(label+" "))return null;
+  const clear=rows[0].slice(label.length+1)
+    .replace(/\s*\(\d+[ab]?\)\s*/gu," ").replace(/\s{2,}/gu," ").trim();
+  if(!clear||/\(\d+[ab]?\)/u.test(clear))return null;
+  texts[language]=Object.freeze([clear]);
+ }
+ return Object.freeze({...frame,label,texts:Object.freeze(texts),
+  sourceTexts:frame.texts,sourceVerseLabel:label,printedVerseLabel:label,
+  sourceNumberingNormalized:true,originalSourceOnly:false,
+  printConformed:true,printedPsalmWitness:MONDAY_COMPLINE_LATIN_WITNESS});
+}
