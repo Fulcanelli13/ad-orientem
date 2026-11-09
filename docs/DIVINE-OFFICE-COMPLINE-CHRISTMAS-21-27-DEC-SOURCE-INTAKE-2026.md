@@ -20,12 +20,12 @@ own complete Office, Latin, UI and release tests are approved.
    *special order*, § 175(e) for Christmas-octave Sunday Compline,
    and § 176 for the Sunday within the Octave:
    https://isidore.co/divinum/www/horas/Help/Rubrics/Breviary%201960.html
-3. Seasonal independent guidance for **Alma Redemptoris Mater**:
+3. Independent traditional 2026 Vespers / concurrence corroboration:\n   - [St Thomas 21 Dec](https://ordo.fsspx.org/day/2026-12-21?lang=en): II-class feast and feria commemorated.\n   - [Vigil 24 Dec](https://ordo.fsspx.org/en/day/2026-12-24?source=nullius&texts=readings): First Vespers of the Nativity on civil Christmas Eve.\n   - [St Stephen 26 Dec](https://ordo.fsspx.org/day/2026-12-26?lang=en): **Vespers of St Stephen**, with the Sunday within the Christmas Octave commemorated, **not First Vespers of Sunday**.\n   - [Sunday 27 Dec](https://ordo.fsspx.org/day/2026-12-27?lang=en): Sunday Office, with St John commemorated.\n4. Seasonal independent guidance for **Alma Redemptoris Mater**:
    on 21–23 December the Advent `Angelus Domini` versicle/collect;
    *at Compline on 24 December* it changes to **Post partum**
    and **Deus, qui salutis**, remaining so during Christmastide:
    https://1962ordo.today/season/
-4. 2026 universal calendar and concurrence cross-check:
+5. 2026 universal calendar and concurrence cross-check:
    https://latinmasspropers.com/calendar/2026/
    Mass calendar supports *rank / saint commemoration only*; it does NOT
    authorize Compline psalm or text assignments.
@@ -39,7 +39,7 @@ own complete Office, Latin, UI and release tests are approved.
 | Wed 23 Dec | II-class Advent feria | **Wednesday** (§171(e)); earlier source Psalm 33/60 candidates | Advent | WITHHELD |
 | Thu 24 Dec | Christmas Vigil I class by day; **Christmas I Vespers in evening** | **Sunday**, first festive Compline §167(b), but verify §173 exception and complete source text | **Christmas `Post partum` + `Deus, qui salutis`** | WITHHELD |
 | Fri 25 Dec | Nativity of the Lord I class, after II Vespers | **Sunday** (§167(h)); full Christmas source collation needed | Christmas | WITHHELD |
-| Sat 26 Dec | St Stephen Protomartyr II class, within Christmas Octave | **Sunday**, not Saturday; §168(d), with Christmas octave source review | Christmas | WITHHELD |
+| Sat 26 Dec | St Stephen Protomartyr II class; **his own II Vespers**, Sunday commemorated | **Sunday**, not Saturday; §168(d) | Christmas | WITHHELD |
 | Sun 27 Dec | **Sunday within Christmas Octave**, II class; St John commemorated | **Sunday**, §175(e), §176; not a 27 Dec St John II-class Office | Christmas | WITHHELD |
 
 These are source-informed **research hypotheses**, not executable Office
@@ -62,7 +62,7 @@ particular:
 - **No fabricated Mame 1961 facsimile certificate**: compare the complete
   pinned Latin text and state what independent witness was actually used.
 
-## Required implementation gates (do not merge based on this ledger)
+## Executable source-intake guard (draft PR #2702)\n\nThe draft now includes `src/office/compline-christmas-2026-research-gate.js`\nand `tests/divine-office-christmas-source-intake.mjs`, wired to the dedicated\nOffice integration workflow. These compare all seven fixed Office, weekday,\npsalter, Marian-ending and concurrence research assertions with the external\nJSON intake ledger. Deliberate mutations of 24/26/27 December and all\n7 dates × 2 recitation contexts × 2 ministers are tested **to remain\nWITHHELD with zero network fetches**. These are **28 negative safety checks**,\nnot 28 certified complete Office recitations. Full Latin source collation\nand phone acceptance for newly released dates are still required.\n\nThe production reader, public date whitelist, general Office resolver and\nexisting 23 certified Advent dates are unchanged by this research PR.\n\n## Required implementation gates (do not merge based on this ledger)
 
 1. Independently archive exact-date Office witnesses and independently
    compare *every new Latin string* to a suitable second Latin witness.
