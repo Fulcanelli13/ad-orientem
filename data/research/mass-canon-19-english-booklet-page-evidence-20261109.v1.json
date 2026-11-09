@@ -1,0 +1,643 @@
+{
+  "schema": "ao-canon-19-english-ritus-booklet-page-evidence-v1",
+  "version": "2026-11-09",
+  "status": "ENGLISH_TRANSLATION_PAGES_LOCATED_PRIMARY_LATIN_FACSIMILE_AND_SIGNOFF_OPEN",
+  "purpose": "Narrow the 19 source-reviewed Canon candidates to exact English witness pages without granting liturgical, French editorial or LIVE approval.",
+  "sourceOwner": "data/research/mass-canon-first-pass-19-ritus-source-review-20261013.json",
+  "sourceEditionCaveat": "The inspected source is an English translation labeled 1962 Ritus servandus; its pages 13-17 were visually inspected. It is NOT independent inspection of an original printed 1962 Latin facsimile.",
+  "counts": {
+    "cases": 19,
+    "englishTranslationPagesLocated": 19,
+    "sourceAlignedFrenchDrafts": 18,
+    "precisionCopyHold": 1,
+    "primaryLatinPrintedFacsimileSignoffs": 0,
+    "bilingualCopySignoffs": 0,
+    "actorClockSignoffs": 0,
+    "livePublished": 0
+  },
+  "evidencePages": [
+    {
+      "pdfPageNumber": 13,
+      "zeroBasedPageIndex": 12,
+      "deepLink": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=13"
+    },
+    {
+      "pdfPageNumber": 14,
+      "zeroBasedPageIndex": 13,
+      "deepLink": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=14"
+    },
+    {
+      "pdfPageNumber": 15,
+      "zeroBasedPageIndex": 14,
+      "deepLink": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=15"
+    },
+    {
+      "pdfPageNumber": 16,
+      "zeroBasedPageIndex": 15,
+      "deepLink": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=16"
+    },
+    {
+      "pdfPageNumber": 17,
+      "zeroBasedPageIndex": 16,
+      "deepLink": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=17"
+    }
+  ],
+  "invariants": {
+    "noOriginalLatinFacsimileApproval": true,
+    "readerClockSeparateFromPriestAction": true,
+    "noAutomaticFrenchPublication": true,
+    "existingCanonicalCueAndActionIdsUnchanged": true,
+    "originalFrenchDraftNotOverwritten": true
+  },
+  "records": [
+    {
+      "cueId": "AO.SM.C0151",
+      "actionId": "AO.CANON.R62.002",
+      "sourceRitus": "VIII.1",
+      "latinTrigger": "uti accepta habeas",
+      "englishEvidenceNote": "The celebrant kisses the altar, straightens, and joins his hands before the breast at the conclusion of Te igitur's petition.",
+      "printedEnglishTranslationWitness": {
+        "editionLabel": "ENGLISH_TRANSLATION_OF_1962_RITUS_SERVANDUS",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumber": 13,
+        "zeroBasedPageIndex": 12,
+        "deepLink": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=13",
+        "passageLocation": "PRINTED_PAGE_VISUALLY_LOCATED_EN_TRANSLATION_ONLY",
+        "primary1962LatinPrintedFacsimileVerified": false
+      },
+      "parallelLatinTextWitness": {
+        "status": "EXISTING_INTRATEXT_TRANSCRIPTION_REFERENCE_NOT_ORIGINAL_PRINT_CERTIFICATION",
+        "section": "VIII.1",
+        "sourceUrls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://1962ordo.today/1962-rubrics/"
+        ]
+      },
+      "frenchReviewStatus": "SOURCE_ALIGNED_DRAFT_EDITOR_SIGNOFF_PENDING",
+      "editorialQualification": "Original source action crosschecked at the cited printed English translation location; independent French copy and liturgical/editorial approval remain outstanding.",
+      "independentLatinFacsimileApproval": "NOT_GRANTED",
+      "independentBilingualCopyApproval": "NOT_GRANTED",
+      "readerActualActorClockApproval": "NOT_GRANTED",
+      "livePublication": "BLOCKED_SOURCE_EVIDENCE_ONLY",
+      "publicationReady": false
+    },
+    {
+      "cueId": "AO.SM.C0154",
+      "actionId": "AO.CANON.R62.005",
+      "sourceRitus": "VIII.3",
+      "latinTrigger": "Memento",
+      "englishEvidenceNote": "At Memento for the living, the priest joins and raises the hands, with a short recollection and slight head incline.",
+      "printedEnglishTranslationWitness": {
+        "editionLabel": "ENGLISH_TRANSLATION_OF_1962_RITUS_SERVANDUS",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumber": 13,
+        "zeroBasedPageIndex": 12,
+        "deepLink": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=13",
+        "passageLocation": "PRINTED_PAGE_VISUALLY_LOCATED_EN_TRANSLATION_ONLY",
+        "primary1962LatinPrintedFacsimileVerified": false
+      },
+      "parallelLatinTextWitness": {
+        "status": "EXISTING_INTRATEXT_TRANSCRIPTION_REFERENCE_NOT_ORIGINAL_PRINT_CERTIFICATION",
+        "section": "VIII.3",
+        "sourceUrls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://1962ordo.today/1962-rubrics/"
+        ]
+      },
+      "frenchReviewStatus": "SOURCE_ALIGNED_DRAFT_EDITOR_SIGNOFF_PENDING",
+      "editorialQualification": "Original source action crosschecked at the cited printed English translation location; independent French copy and liturgical/editorial approval remain outstanding.",
+      "independentLatinFacsimileApproval": "NOT_GRANTED",
+      "independentBilingualCopyApproval": "NOT_GRANTED",
+      "readerActualActorClockApproval": "NOT_GRANTED",
+      "livePublication": "BLOCKED_SOURCE_EVIDENCE_ONLY",
+      "publicationReady": false
+    },
+    {
+      "cueId": "AO.SM.C0156",
+      "actionId": "AO.CANON.R62.007",
+      "sourceRitus": "VIII.4",
+      "latinTrigger": "et omnium circumstantium",
+      "englishEvidenceNote": "After the commemoration of the living, the priest extends the hands again to continue the Canon.",
+      "printedEnglishTranslationWitness": {
+        "editionLabel": "ENGLISH_TRANSLATION_OF_1962_RITUS_SERVANDUS",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumber": 14,
+        "zeroBasedPageIndex": 13,
+        "deepLink": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=14",
+        "passageLocation": "PRINTED_PAGE_VISUALLY_LOCATED_EN_TRANSLATION_ONLY",
+        "primary1962LatinPrintedFacsimileVerified": false
+      },
+      "parallelLatinTextWitness": {
+        "status": "EXISTING_INTRATEXT_TRANSCRIPTION_REFERENCE_NOT_ORIGINAL_PRINT_CERTIFICATION",
+        "section": "VIII.4",
+        "sourceUrls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://1962ordo.today/1962-rubrics/"
+        ]
+      },
+      "frenchReviewStatus": "SOURCE_ALIGNED_DRAFT_EDITOR_SIGNOFF_PENDING",
+      "editorialQualification": "Original source action crosschecked at the cited printed English translation location; independent French copy and liturgical/editorial approval remain outstanding.",
+      "independentLatinFacsimileApproval": "NOT_GRANTED",
+      "independentBilingualCopyApproval": "NOT_GRANTED",
+      "readerActualActorClockApproval": "NOT_GRANTED",
+      "livePublication": "BLOCKED_SOURCE_EVIDENCE_ONLY",
+      "publicationReady": false
+    },
+    {
+      "cueId": "AO.SM.C0160",
+      "actionId": "AO.CANON.R62.010",
+      "sourceRitus": "VIII.4",
+      "latinTrigger": "Per eundem",
+      "englishEvidenceNote": "At the Per eundem conclusion of Communicantes, the priest joins his hands.",
+      "printedEnglishTranslationWitness": {
+        "editionLabel": "ENGLISH_TRANSLATION_OF_1962_RITUS_SERVANDUS",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumber": 14,
+        "zeroBasedPageIndex": 13,
+        "deepLink": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=14",
+        "passageLocation": "PRINTED_PAGE_VISUALLY_LOCATED_EN_TRANSLATION_ONLY",
+        "primary1962LatinPrintedFacsimileVerified": false
+      },
+      "parallelLatinTextWitness": {
+        "status": "EXISTING_INTRATEXT_TRANSCRIPTION_REFERENCE_NOT_ORIGINAL_PRINT_CERTIFICATION",
+        "section": "VIII.4",
+        "sourceUrls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://1962ordo.today/1962-rubrics/"
+        ]
+      },
+      "frenchReviewStatus": "SOURCE_ALIGNED_DRAFT_EDITOR_SIGNOFF_PENDING",
+      "editorialQualification": "Original source action crosschecked at the cited printed English translation location; independent French copy and liturgical/editorial approval remain outstanding.",
+      "independentLatinFacsimileApproval": "NOT_GRANTED",
+      "independentBilingualCopyApproval": "NOT_GRANTED",
+      "readerActualActorClockApproval": "NOT_GRANTED",
+      "livePublication": "BLOCKED_SOURCE_EVIDENCE_ONLY",
+      "publicationReady": false
+    },
+    {
+      "cueId": "AO.SM.C0162",
+      "actionId": "AO.CANON.R62.012",
+      "sourceRitus": "VIII.4",
+      "latinTrigger": "Per Christum Dominum nostrum",
+      "englishEvidenceNote": "The joined-hands transition follows the end of Hanc igitur before Quam oblationem.",
+      "printedEnglishTranslationWitness": {
+        "editionLabel": "ENGLISH_TRANSLATION_OF_1962_RITUS_SERVANDUS",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumber": 14,
+        "zeroBasedPageIndex": 13,
+        "deepLink": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=14",
+        "passageLocation": "PRINTED_PAGE_VISUALLY_LOCATED_EN_TRANSLATION_ONLY",
+        "primary1962LatinPrintedFacsimileVerified": false
+      },
+      "parallelLatinTextWitness": {
+        "status": "EXISTING_INTRATEXT_TRANSCRIPTION_REFERENCE_NOT_ORIGINAL_PRINT_CERTIFICATION",
+        "section": "VIII.4",
+        "sourceUrls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://1962ordo.today/1962-rubrics/"
+        ]
+      },
+      "frenchReviewStatus": "SOURCE_ALIGNED_DRAFT_EDITOR_SIGNOFF_PENDING",
+      "editorialQualification": "Original source action crosschecked at the cited printed English translation location; independent French copy and liturgical/editorial approval remain outstanding.",
+      "independentLatinFacsimileApproval": "NOT_GRANTED",
+      "independentBilingualCopyApproval": "NOT_GRANTED",
+      "readerActualActorClockApproval": "NOT_GRANTED",
+      "livePublication": "BLOCKED_SOURCE_EVIDENCE_ONLY",
+      "publicationReady": false
+    },
+    {
+      "cueId": "AO.SM.C0165",
+      "actionId": "AO.CANON.R62.014",
+      "sourceRitus": "VIII.4",
+      "latinTrigger": "Corpus",
+      "englishEvidenceNote": "At Corpus in Quam oblationem, a single cross is traced over the Host only.",
+      "printedEnglishTranslationWitness": {
+        "editionLabel": "ENGLISH_TRANSLATION_OF_1962_RITUS_SERVANDUS",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumber": 14,
+        "zeroBasedPageIndex": 13,
+        "deepLink": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=14",
+        "passageLocation": "PRINTED_PAGE_VISUALLY_LOCATED_EN_TRANSLATION_ONLY",
+        "primary1962LatinPrintedFacsimileVerified": false
+      },
+      "parallelLatinTextWitness": {
+        "status": "EXISTING_INTRATEXT_TRANSCRIPTION_REFERENCE_NOT_ORIGINAL_PRINT_CERTIFICATION",
+        "section": "VIII.4",
+        "sourceUrls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://1962ordo.today/1962-rubrics/"
+        ]
+      },
+      "frenchReviewStatus": "SOURCE_ALIGNED_DRAFT_EDITOR_SIGNOFF_PENDING",
+      "editorialQualification": "Original source action crosschecked at the cited printed English translation location; independent French copy and liturgical/editorial approval remain outstanding.",
+      "independentLatinFacsimileApproval": "NOT_GRANTED",
+      "independentBilingualCopyApproval": "NOT_GRANTED",
+      "readerActualActorClockApproval": "NOT_GRANTED",
+      "livePublication": "BLOCKED_SOURCE_EVIDENCE_ONLY",
+      "publicationReady": false
+    },
+    {
+      "cueId": "AO.SM.C0166",
+      "actionId": "AO.CANON.R62.015",
+      "sourceRitus": "VIII.4",
+      "latinTrigger": "Sanguis",
+      "englishEvidenceNote": "At Sanguis in Quam oblationem, a single cross is traced over the Chalice only.",
+      "printedEnglishTranslationWitness": {
+        "editionLabel": "ENGLISH_TRANSLATION_OF_1962_RITUS_SERVANDUS",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumber": 14,
+        "zeroBasedPageIndex": 13,
+        "deepLink": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=14",
+        "passageLocation": "PRINTED_PAGE_VISUALLY_LOCATED_EN_TRANSLATION_ONLY",
+        "primary1962LatinPrintedFacsimileVerified": false
+      },
+      "parallelLatinTextWitness": {
+        "status": "EXISTING_INTRATEXT_TRANSCRIPTION_REFERENCE_NOT_ORIGINAL_PRINT_CERTIFICATION",
+        "section": "VIII.4",
+        "sourceUrls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://1962ordo.today/1962-rubrics/"
+        ]
+      },
+      "frenchReviewStatus": "SOURCE_ALIGNED_DRAFT_EDITOR_SIGNOFF_PENDING",
+      "editorialQualification": "Original source action crosschecked at the cited printed English translation location; independent French copy and liturgical/editorial approval remain outstanding.",
+      "independentLatinFacsimileApproval": "NOT_GRANTED",
+      "independentBilingualCopyApproval": "NOT_GRANTED",
+      "readerActualActorClockApproval": "NOT_GRANTED",
+      "livePublication": "BLOCKED_SOURCE_EVIDENCE_ONLY",
+      "publicationReady": false
+    },
+    {
+      "cueId": "AO.SM.C0171",
+      "actionId": "AO.CANON.R62.020",
+      "sourceRitus": "VIII.4",
+      "latinTrigger": "benedixit",
+      "englishEvidenceNote": "At benedixit in the Host institution narrative, the left fingers hold the Host while the right hand signs it.",
+      "printedEnglishTranslationWitness": {
+        "editionLabel": "ENGLISH_TRANSLATION_OF_1962_RITUS_SERVANDUS",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumber": 15,
+        "zeroBasedPageIndex": 14,
+        "deepLink": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=15",
+        "passageLocation": "PRINTED_PAGE_VISUALLY_LOCATED_EN_TRANSLATION_ONLY",
+        "primary1962LatinPrintedFacsimileVerified": false
+      },
+      "parallelLatinTextWitness": {
+        "status": "EXISTING_INTRATEXT_TRANSCRIPTION_REFERENCE_NOT_ORIGINAL_PRINT_CERTIFICATION",
+        "section": "VIII.4",
+        "sourceUrls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://1962ordo.today/1962-rubrics/"
+        ]
+      },
+      "frenchReviewStatus": "SOURCE_ALIGNED_DRAFT_EDITOR_SIGNOFF_PENDING",
+      "editorialQualification": "Original source action crosschecked at the cited printed English translation location; independent French copy and liturgical/editorial approval remain outstanding.",
+      "independentLatinFacsimileApproval": "NOT_GRANTED",
+      "independentBilingualCopyApproval": "NOT_GRANTED",
+      "readerActualActorClockApproval": "NOT_GRANTED",
+      "livePublication": "BLOCKED_SOURCE_EVIDENCE_ONLY",
+      "publicationReady": false
+    },
+    {
+      "cueId": "AO.SM.C0177",
+      "actionId": "AO.CANON.R62.030",
+      "sourceRitus": "VIII.7",
+      "latinTrigger": "benedixit",
+      "englishEvidenceNote": "At benedixit in the Chalice narrative, the left hand holds the Chalice below the cup and the right hand signs it.",
+      "printedEnglishTranslationWitness": {
+        "editionLabel": "ENGLISH_TRANSLATION_OF_1962_RITUS_SERVANDUS",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumber": 15,
+        "zeroBasedPageIndex": 14,
+        "deepLink": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=15",
+        "passageLocation": "PRINTED_PAGE_VISUALLY_LOCATED_EN_TRANSLATION_ONLY",
+        "primary1962LatinPrintedFacsimileVerified": false
+      },
+      "parallelLatinTextWitness": {
+        "status": "EXISTING_INTRATEXT_TRANSCRIPTION_REFERENCE_NOT_ORIGINAL_PRINT_CERTIFICATION",
+        "section": "VIII.7",
+        "sourceUrls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://1962ordo.today/1962-rubrics/"
+        ]
+      },
+      "frenchReviewStatus": "SOURCE_ALIGNED_DRAFT_EDITOR_SIGNOFF_PENDING",
+      "editorialQualification": "Original source action crosschecked at the cited printed English translation location; independent French copy and liturgical/editorial approval remain outstanding.",
+      "independentLatinFacsimileApproval": "NOT_GRANTED",
+      "independentBilingualCopyApproval": "NOT_GRANTED",
+      "readerActualActorClockApproval": "NOT_GRANTED",
+      "livePublication": "BLOCKED_SOURCE_EVIDENCE_ONLY",
+      "publicationReady": false
+    },
+    {
+      "cueId": "AO.SM.C0178",
+      "actionId": "AO.CANON.R62.031",
+      "sourceRitus": "VIII.7",
+      "latinTrigger": "Accipite et bibite",
+      "englishEvidenceNote": "Before the Chalice consecration formula, the left hand supports the foot and the right holds the node beneath the cup; do not attach the consecration itself to Accipite.",
+      "printedEnglishTranslationWitness": {
+        "editionLabel": "ENGLISH_TRANSLATION_OF_1962_RITUS_SERVANDUS",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumber": 15,
+        "zeroBasedPageIndex": 14,
+        "deepLink": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=15",
+        "passageLocation": "PRINTED_PAGE_VISUALLY_LOCATED_EN_TRANSLATION_ONLY",
+        "primary1962LatinPrintedFacsimileVerified": false
+      },
+      "parallelLatinTextWitness": {
+        "status": "EXISTING_INTRATEXT_TRANSCRIPTION_REFERENCE_NOT_ORIGINAL_PRINT_CERTIFICATION",
+        "section": "VIII.7",
+        "sourceUrls": [
+          "https://www.intratext.com/IXT/LAT0820/_PJ.HTM",
+          "https://1962ordo.today/1962-rubrics/"
+        ]
+      },
+      "frenchReviewStatus": "SOURCE_ALIGNED_DRAFT_EDITOR_SIGNOFF_PENDING",
+      "editorialQualification": "Original source action crosschecked at the cited printed English translation location; independent French copy and liturgical/editorial approval remain outstanding.",
+      "independentLatinFacsimileApproval": "NOT_GRANTED",
+      "independentBilingualCopyApproval": "NOT_GRANTED",
+      "readerActualActorClockApproval": "NOT_GRANTED",
+      "livePublication": "BLOCKED_SOURCE_EVIDENCE_ONLY",
+      "publicationReady": false
+    },
+    {
+      "cueId": "AO.SM.C0182",
+      "actionId": "AO.CANON.R62.036",
+      "sourceRitus": "IX.1",
+      "latinTrigger": "Unde et memores",
+      "englishEvidenceNote": "Once the Chalice has been replaced and adored, the celebrant continues Unde et memores with hands extended and secret voice.",
+      "printedEnglishTranslationWitness": {
+        "editionLabel": "ENGLISH_TRANSLATION_OF_1962_RITUS_SERVANDUS",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumber": 16,
+        "zeroBasedPageIndex": 15,
+        "deepLink": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=16",
+        "passageLocation": "PRINTED_PAGE_VISUALLY_LOCATED_EN_TRANSLATION_ONLY",
+        "primary1962LatinPrintedFacsimileVerified": false
+      },
+      "parallelLatinTextWitness": {
+        "status": "EXISTING_INTRATEXT_TRANSCRIPTION_REFERENCE_NOT_ORIGINAL_PRINT_CERTIFICATION",
+        "section": "IX.1",
+        "sourceUrls": [
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://1962ordo.today/1962-rubrics/"
+        ]
+      },
+      "frenchReviewStatus": "SOURCE_ALIGNED_DRAFT_EDITOR_SIGNOFF_PENDING",
+      "editorialQualification": "Original source action crosschecked at the cited printed English translation location; independent French copy and liturgical/editorial approval remain outstanding.",
+      "independentLatinFacsimileApproval": "NOT_GRANTED",
+      "independentBilingualCopyApproval": "NOT_GRANTED",
+      "readerActualActorClockApproval": "NOT_GRANTED",
+      "livePublication": "BLOCKED_SOURCE_EVIDENCE_ONLY",
+      "publicationReady": false
+    },
+    {
+      "cueId": "AO.SM.C0183",
+      "actionId": "AO.CANON.R62.037",
+      "sourceRitus": "IX.1",
+      "latinTrigger": "de tuis donis ac datis",
+      "englishEvidenceNote": "At de tuis donis ac datis the priest joins his hands before the breast.",
+      "printedEnglishTranslationWitness": {
+        "editionLabel": "ENGLISH_TRANSLATION_OF_1962_RITUS_SERVANDUS",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumber": 16,
+        "zeroBasedPageIndex": 15,
+        "deepLink": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=16",
+        "passageLocation": "PRINTED_PAGE_VISUALLY_LOCATED_EN_TRANSLATION_ONLY",
+        "primary1962LatinPrintedFacsimileVerified": false
+      },
+      "parallelLatinTextWitness": {
+        "status": "EXISTING_INTRATEXT_TRANSCRIPTION_REFERENCE_NOT_ORIGINAL_PRINT_CERTIFICATION",
+        "section": "IX.1",
+        "sourceUrls": [
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://1962ordo.today/1962-rubrics/"
+        ]
+      },
+      "frenchReviewStatus": "SOURCE_ALIGNED_DRAFT_EDITOR_SIGNOFF_PENDING",
+      "editorialQualification": "Original source action crosschecked at the cited printed English translation location; independent French copy and liturgical/editorial approval remain outstanding.",
+      "independentLatinFacsimileApproval": "NOT_GRANTED",
+      "independentBilingualCopyApproval": "NOT_GRANTED",
+      "readerActualActorClockApproval": "NOT_GRANTED",
+      "livePublication": "BLOCKED_SOURCE_EVIDENCE_ONLY",
+      "publicationReady": false
+    },
+    {
+      "cueId": "AO.SM.C0187",
+      "actionId": "AO.CANON.R62.041",
+      "sourceRitus": "IX.1",
+      "latinTrigger": "Supplices te rogamus",
+      "englishEvidenceNote": "At Supplices te rogamus the priest bows at the middle of the altar with joined hands placed on it; the quoted Ritus paragraph does not expressly assign a degree of bow.",
+      "printedEnglishTranslationWitness": {
+        "editionLabel": "ENGLISH_TRANSLATION_OF_1962_RITUS_SERVANDUS",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumber": 16,
+        "zeroBasedPageIndex": 15,
+        "deepLink": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=16",
+        "passageLocation": "PRINTED_PAGE_VISUALLY_LOCATED_EN_TRANSLATION_ONLY",
+        "primary1962LatinPrintedFacsimileVerified": false
+      },
+      "parallelLatinTextWitness": {
+        "status": "EXISTING_INTRATEXT_TRANSCRIPTION_REFERENCE_NOT_ORIGINAL_PRINT_CERTIFICATION",
+        "section": "IX.1",
+        "sourceUrls": [
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://1962ordo.today/1962-rubrics/"
+        ]
+      },
+      "frenchReviewStatus": "PRECISE_SOURCE_WORDING_HOLD",
+      "editorialQualification": "Ritus IX.1 says inclinat se; the source does not explicitly qualify this particular bow as profound. Replace the legacy draft's degré assertion with the already-staged neutral French revision.",
+      "independentLatinFacsimileApproval": "NOT_GRANTED",
+      "independentBilingualCopyApproval": "NOT_GRANTED",
+      "readerActualActorClockApproval": "NOT_GRANTED",
+      "livePublication": "BLOCKED_SOURCE_EVIDENCE_ONLY",
+      "publicationReady": false
+    },
+    {
+      "cueId": "AO.SM.C0188",
+      "actionId": "AO.CANON.R62.042",
+      "sourceRitus": "IX.1",
+      "latinTrigger": "ex hac altaris participatione",
+      "englishEvidenceNote": "At ex hac altaris participatione the priest kisses the altar, placing the hands on the corporal.",
+      "printedEnglishTranslationWitness": {
+        "editionLabel": "ENGLISH_TRANSLATION_OF_1962_RITUS_SERVANDUS",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumber": 16,
+        "zeroBasedPageIndex": 15,
+        "deepLink": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=16",
+        "passageLocation": "PRINTED_PAGE_VISUALLY_LOCATED_EN_TRANSLATION_ONLY",
+        "primary1962LatinPrintedFacsimileVerified": false
+      },
+      "parallelLatinTextWitness": {
+        "status": "EXISTING_INTRATEXT_TRANSCRIPTION_REFERENCE_NOT_ORIGINAL_PRINT_CERTIFICATION",
+        "section": "IX.1",
+        "sourceUrls": [
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://1962ordo.today/1962-rubrics/"
+        ]
+      },
+      "frenchReviewStatus": "SOURCE_ALIGNED_DRAFT_EDITOR_SIGNOFF_PENDING",
+      "editorialQualification": "Original source action crosschecked at the cited printed English translation location; independent French copy and liturgical/editorial approval remain outstanding.",
+      "independentLatinFacsimileApproval": "NOT_GRANTED",
+      "independentBilingualCopyApproval": "NOT_GRANTED",
+      "readerActualActorClockApproval": "NOT_GRANTED",
+      "livePublication": "BLOCKED_SOURCE_EVIDENCE_ONLY",
+      "publicationReady": false
+    },
+    {
+      "cueId": "AO.SM.C0191",
+      "actionId": "AO.CANON.R62.045",
+      "sourceRitus": "IX.1",
+      "latinTrigger": "Per eundem",
+      "englishEvidenceNote": "At the Per eundem conclusion of Supplices te rogamus the priest joins his hands.",
+      "printedEnglishTranslationWitness": {
+        "editionLabel": "ENGLISH_TRANSLATION_OF_1962_RITUS_SERVANDUS",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumber": 16,
+        "zeroBasedPageIndex": 15,
+        "deepLink": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=16",
+        "passageLocation": "PRINTED_PAGE_VISUALLY_LOCATED_EN_TRANSLATION_ONLY",
+        "primary1962LatinPrintedFacsimileVerified": false
+      },
+      "parallelLatinTextWitness": {
+        "status": "EXISTING_INTRATEXT_TRANSCRIPTION_REFERENCE_NOT_ORIGINAL_PRINT_CERTIFICATION",
+        "section": "IX.1",
+        "sourceUrls": [
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://1962ordo.today/1962-rubrics/"
+        ]
+      },
+      "frenchReviewStatus": "SOURCE_ALIGNED_DRAFT_EDITOR_SIGNOFF_PENDING",
+      "editorialQualification": "Original source action crosschecked at the cited printed English translation location; independent French copy and liturgical/editorial approval remain outstanding.",
+      "independentLatinFacsimileApproval": "NOT_GRANTED",
+      "independentBilingualCopyApproval": "NOT_GRANTED",
+      "readerActualActorClockApproval": "NOT_GRANTED",
+      "livePublication": "BLOCKED_SOURCE_EVIDENCE_ONLY",
+      "publicationReady": false
+    },
+    {
+      "cueId": "AO.SM.C0192",
+      "actionId": "AO.CANON.R62.046",
+      "sourceRitus": "IX.2",
+      "latinTrigger": "Memento etiam",
+      "englishEvidenceNote": "At Memento etiam the hands are joined and raised toward the face, with the eyes turned toward the Sacrament for the dead.",
+      "printedEnglishTranslationWitness": {
+        "editionLabel": "ENGLISH_TRANSLATION_OF_1962_RITUS_SERVANDUS",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumber": 16,
+        "zeroBasedPageIndex": 15,
+        "deepLink": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=16",
+        "passageLocation": "PRINTED_PAGE_VISUALLY_LOCATED_EN_TRANSLATION_ONLY",
+        "primary1962LatinPrintedFacsimileVerified": false
+      },
+      "parallelLatinTextWitness": {
+        "status": "EXISTING_INTRATEXT_TRANSCRIPTION_REFERENCE_NOT_ORIGINAL_PRINT_CERTIFICATION",
+        "section": "IX.2",
+        "sourceUrls": [
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://1962ordo.today/1962-rubrics/"
+        ]
+      },
+      "frenchReviewStatus": "SOURCE_ALIGNED_DRAFT_EDITOR_SIGNOFF_PENDING",
+      "editorialQualification": "Original source action crosschecked at the cited printed English translation location; independent French copy and liturgical/editorial approval remain outstanding.",
+      "independentLatinFacsimileApproval": "NOT_GRANTED",
+      "independentBilingualCopyApproval": "NOT_GRANTED",
+      "readerActualActorClockApproval": "NOT_GRANTED",
+      "livePublication": "BLOCKED_SOURCE_EVIDENCE_ONLY",
+      "publicationReady": false
+    },
+    {
+      "cueId": "AO.SM.C0194",
+      "actionId": "AO.CANON.R62.048",
+      "sourceRitus": "IX.2",
+      "latinTrigger": "Ipsis Domine",
+      "englishEvidenceNote": "After the commemoration of the departed, the priest continues Ipsis Domine with extended hands.",
+      "printedEnglishTranslationWitness": {
+        "editionLabel": "ENGLISH_TRANSLATION_OF_1962_RITUS_SERVANDUS",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumber": 16,
+        "zeroBasedPageIndex": 15,
+        "deepLink": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=16",
+        "passageLocation": "PRINTED_PAGE_VISUALLY_LOCATED_EN_TRANSLATION_ONLY",
+        "primary1962LatinPrintedFacsimileVerified": false
+      },
+      "parallelLatinTextWitness": {
+        "status": "EXISTING_INTRATEXT_TRANSCRIPTION_REFERENCE_NOT_ORIGINAL_PRINT_CERTIFICATION",
+        "section": "IX.2",
+        "sourceUrls": [
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://1962ordo.today/1962-rubrics/"
+        ]
+      },
+      "frenchReviewStatus": "SOURCE_ALIGNED_DRAFT_EDITOR_SIGNOFF_PENDING",
+      "editorialQualification": "Original source action crosschecked at the cited printed English translation location; independent French copy and liturgical/editorial approval remain outstanding.",
+      "independentLatinFacsimileApproval": "NOT_GRANTED",
+      "independentBilingualCopyApproval": "NOT_GRANTED",
+      "readerActualActorClockApproval": "NOT_GRANTED",
+      "livePublication": "BLOCKED_SOURCE_EVIDENCE_ONLY",
+      "publicationReady": false
+    },
+    {
+      "cueId": "AO.SM.C0195",
+      "actionId": "AO.CANON.R62.049",
+      "sourceRitus": "IX.2",
+      "latinTrigger": "Per eundem",
+      "englishEvidenceNote": "At the Per eundem conclusion after the deceased Memento, the priest joins the hands and inclines the head.",
+      "printedEnglishTranslationWitness": {
+        "editionLabel": "ENGLISH_TRANSLATION_OF_1962_RITUS_SERVANDUS",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumber": 17,
+        "zeroBasedPageIndex": 16,
+        "deepLink": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=17",
+        "passageLocation": "PRINTED_PAGE_VISUALLY_LOCATED_EN_TRANSLATION_ONLY",
+        "primary1962LatinPrintedFacsimileVerified": false
+      },
+      "parallelLatinTextWitness": {
+        "status": "EXISTING_INTRATEXT_TRANSCRIPTION_REFERENCE_NOT_ORIGINAL_PRINT_CERTIFICATION",
+        "section": "IX.2",
+        "sourceUrls": [
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://1962ordo.today/1962-rubrics/"
+        ]
+      },
+      "frenchReviewStatus": "SOURCE_ALIGNED_DRAFT_EDITOR_SIGNOFF_PENDING",
+      "editorialQualification": "Original source action crosschecked at the cited printed English translation location; independent French copy and liturgical/editorial approval remain outstanding.",
+      "independentLatinFacsimileApproval": "NOT_GRANTED",
+      "independentBilingualCopyApproval": "NOT_GRANTED",
+      "readerActualActorClockApproval": "NOT_GRANTED",
+      "livePublication": "BLOCKED_SOURCE_EVIDENCE_ONLY",
+      "publicationReady": false
+    },
+    {
+      "cueId": "AO.SM.C0198",
+      "actionId": "AO.CANON.R62.052",
+      "sourceRitus": "IX.3",
+      "latinTrigger": "Per Christum",
+      "englishEvidenceNote": "At Per Christum Dominum nostrum before Per quem the priest joins his hands before the breast.",
+      "printedEnglishTranslationWitness": {
+        "editionLabel": "ENGLISH_TRANSLATION_OF_1962_RITUS_SERVANDUS",
+        "url": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/",
+        "pdfPageNumber": 17,
+        "zeroBasedPageIndex": 16,
+        "deepLink": "https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/#page=17",
+        "passageLocation": "PRINTED_PAGE_VISUALLY_LOCATED_EN_TRANSLATION_ONLY",
+        "primary1962LatinPrintedFacsimileVerified": false
+      },
+      "parallelLatinTextWitness": {
+        "status": "EXISTING_INTRATEXT_TRANSCRIPTION_REFERENCE_NOT_ORIGINAL_PRINT_CERTIFICATION",
+        "section": "IX.3",
+        "sourceUrls": [
+          "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+          "https://1962ordo.today/1962-rubrics/"
+        ]
+      },
+      "frenchReviewStatus": "SOURCE_ALIGNED_DRAFT_EDITOR_SIGNOFF_PENDING",
+      "editorialQualification": "Original source action crosschecked at the cited printed English translation location; independent French copy and liturgical/editorial approval remain outstanding.",
+      "independentLatinFacsimileApproval": "NOT_GRANTED",
+      "independentBilingualCopyApproval": "NOT_GRANTED",
+      "readerActualActorClockApproval": "NOT_GRANTED",
+      "livePublication": "BLOCKED_SOURCE_EVIDENCE_ONLY",
+      "publicationReady": false
+    }
+  ]
+}
