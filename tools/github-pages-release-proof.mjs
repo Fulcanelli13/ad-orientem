@@ -79,6 +79,8 @@ const FIXED_CRITICAL_PATHS=[
  "data/geography/approved-place-media.v1.json",
  // Published, source-owned Prayer modules must match the same release as the shell.
  "src/pray/novena-runtime.js",
+ "src/pray/holy-face-janvier-1887-b25.js",
+ "src/pray/holy-face-janvier-1895-fr-reader-candidate.v1.js",
  "src/pray/prayer-design-pilot.js",
  "src/pray/presentation-runtime.js",
  ...SAN_POLO_CYCLE_CRITICAL_PATHS,
