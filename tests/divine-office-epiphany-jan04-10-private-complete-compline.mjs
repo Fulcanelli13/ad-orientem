@@ -75,7 +75,7 @@ test("7 dated Jan 2027 source profiles and source-read rights are research only"
   assert.equal(reviewed.sourceTextCertified,false);
   assert.equal(reviewed.published,false);
   assert.equal(latinComplineReleaseEligibility({date}).status,
-   date<="2027-01-08"?"ELIGIBLE":"WITHHELD");
+   "ELIGIBLE");
  }
 });
 test("28 private source-backed Latin Compline recitations cover Epiphany and Holy Family",async()=>{
@@ -145,18 +145,16 @@ test("generic and former private adapters stay restricted to earlier dates",asyn
   date:"2027-01-11",fetchSource:async()=>{}
  }),/EPIPHANY_PRIVATE_DATE_NOT_REVIEWED/);
 });
-test("8 Holy Family public minister/context variations withhold before fetch",async()=>{
- for(const date of ["2027-01-09","2027-01-10"])
-  for(const context of Object.values(COMPLINE_CONTEXT))
-   for(const minister of Object.values(COMPLINE_MINISTER)){
-    let calls=0;
-    const r=await loadPublishedLatinCompline({
-     date,context,minister,fetchSource:async()=>{
-      calls++;throw Error("NO_PUBLIC_RESEARCH_READ")
-     }
-    });
-    assert.equal(r.status,"WITHHELD");
-    assert.equal(r.published,false);
-    assert.equal(calls,0);
-   }
+test("private source-research status remains unchanged despite separate Holy Family release",async()=>{
+ for(const date of ["2027-01-09","2027-01-10"]){
+  const t=source();
+  const r=await assembleJan04_10PrivateOfficeResearchReview({
+   date,fetchSource:t.fetchSource
+  });
+  assert.equal(r.status,"PRIVATE_SOURCE_TEXT_REVIEW");
+  assert.equal(r.liturgicallyCertified,false);
+  assert.equal(r.published,false);
+  assert.equal(r.rightsApproved,false);
+  assert.equal(latinComplineReleaseEligibility({date}).status,"ELIGIBLE");
+ }
 });

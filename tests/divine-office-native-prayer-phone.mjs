@@ -406,15 +406,52 @@ try{
    receipt.scenarios.push({case:"epiphany-five-public-Compline",
     width,date,officeDate,psalms,readingEvents:40,passed:true});
   }
-  // Holy Family 9/10 Jan remain UNRELEASED under unresolved
-  // doxology/text source evidence. No source may be fetched.
+  // Two independently certified Holy Family dates, 9/10 January.
+  // Both Compline appointments use Sunday Psalms (BR §168(d)) and
+  // preserve Te lucis Ordinary conclusion (BR §§186/188).
+  const holyFamily=office.getByRole("combobox",{name:"Holy Family Compline date"});
+  assert.equal(await holyFamily.count(),1);
+  for(const [date,officeDate,title] of [
+   ["2027-01-09","2027-01-10","First Compline of the Holy Family, 9 January 2027"],
+   ["2027-01-10","2027-01-10","Holy Family of Jesus, Mary and Joseph, 10 January 2027"]
+  ]){
+   await holyFamily.selectOption(date);
+   assert.match(await office.locator(".aoOfStatus").innerText(),
+    /Latin Compline · available/u);
+   assert.match(await office.locator(".aoOfStatus").innerText(),
+    new RegExp("Office date: "+officeDate,"u"));
+   const initial=observedLatin.length;
+   await office.getByRole("button",{name:"Read Latin Compline"}).click();
+   await page.waitForFunction(expected=>
+    document.querySelector(".aoOfPublishedStatus")?.textContent?.includes(
+     expected+" · 40 reading moments"),date,{timeout:35000});
+   const latin=office.locator(".aoOfPublishedLatin");
+   assert.ok((await latin.innerText()).includes(title),date+" heading");
+   const fetched=observedLatin.slice(initial);
+   for(const number of [4,90,133])
+    assert.ok(fetched.some(url=>url.endsWith("/Psalm"+number+".txt")),
+     "Missing Holy Family Sunday source Psalm "+number+" for "+date);
+   assert.ok(!fetched.some(url=>/Psalm(87|102)\.txt$/u.test(url)),
+    "Holy Family II-class First Vespers must not use Saturday Compline");
+   await latin.getByRole("button",{name:"Next"}).click();
+   assert.match(await latin.locator(".aoOfFrameControls").innerText(),/2 \/ /u);
+   const over=await page.evaluate(()=>
+    document.documentElement.scrollWidth-document.documentElement.clientWidth);
+   assert.ok(over<=2,"Holy Family "+date+" overflows "+width+": "+over);
+   await office.getByRole("button",{name:"Close Latin Compline"}).click();
+   assert.equal(await office.locator(".aoOfPublishedLatin").count(),0);
+   receipt.scenarios.push({case:"holy-family-public-compline",
+    width,date,officeDate,psalms:[4,90,133],readingEvents:40,
+    ordinaryTeLucisDoxologyRequired:true,passed:true});
+  }
+  // First unapproved date is 11 January. Withhold before any source fetch.
   const latinBaseline=observedLatin.length;
-  await office.locator('input[type="date"]').fill("2027-01-09");
+  await office.locator('input[type="date"]').fill("2027-01-11");
   await office.locator('input[type="date"]').dispatchEvent("change");
   await office.locator('[data-office-hour="COMPLINE"]').click();
   assert.equal(await office.getByRole("button",{name:"Read Latin Compline"}).count(),0);
   assert.equal(observedLatin.length,latinBaseline,
-   "9 Jan Holy Family must not acquire any uncertified Latin source");
+   "11 Jan must not acquire any uncertified Latin source");
   await office.locator('[data-office-hour="VESPERS"]').click();
   const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-
    document.documentElement.clientWidth);

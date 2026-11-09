@@ -351,7 +351,7 @@ test("all eight dated Latin Compline Hours load 40 liturgical moments in both co
  }
 });
 test("unsupported public Office dates never fetch or invent source words",async()=>{
- for(const date of ["2026-11-27","2027-01-09","2027-01-10","2027-12-01"]){
+ for(const date of ["2026-11-27","2027-01-11","2027-01-12","2027-12-01"]){
   const transport=source();
   const r=await loadPublishedLatinCompline({date,fetchSource:transport.fetchSource});
   assert.equal(r.status,"WITHHELD");
