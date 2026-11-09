@@ -61,7 +61,7 @@ test("all eight Advent I Compline dates have an explicit rubric, real civil week
  assert.equal(monday.weekday,"Feria II");
  assert.equal(monday.psalmDay,"Dominica","St Andrew II class requires Sunday Compline");
  assert.equal(monday.officeClass,"II_FEAST");
- for(const date of ["2026-12-14","2026-12-15","2026-12-16","2027-11-29"]){
+ for(const date of ["2026-12-21","2026-12-22","2026-12-23","2027-11-29"]){
   const r=reviewAdventIComplineAppointment(date);
   assert.equal(r.status,"WITHHELD");
   assert.equal(r.appointment,null);
@@ -112,7 +112,7 @@ test("date mismatches and unknown dates cannot borrow an existing Office",async(
  });
  assert.equal(wrong.status,"WITHHELD");
  assert.equal(wrong.blocks.length,0);
- for(const date of ["2026-12-14","2026-12-16"]){
+ for(const date of ["2026-12-21","2026-12-23"]){
   const held=await assembleDatedComplinePilot({
    reader:reader("2026-12-02"),date
   });
