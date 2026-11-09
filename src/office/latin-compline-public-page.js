@@ -29,7 +29,15 @@ export function mountPublishedLatinCompline(root,{
    "2026-12-02":"St Bibiana, 2 December 2026",
    "2026-12-03":"St Francis Xavier, 3 December 2026",
    "2026-12-04":"St Peter Chrysologus, 4 December 2026",
-   "2026-12-05":"Saturday, 5 December 2026"
+   "2026-12-05":"Saturday, 5 December 2026",
+   "2026-12-06":"Second Sunday of Advent, 6 December 2026",
+   "2026-12-07":"First Compline of the Immaculate Conception · 7 December 2026",
+   "2026-12-08":"Immaculate Conception, 8 December 2026",
+   "2026-12-09":"Advent II · Wednesday, 9 December 2026",
+   "2026-12-10":"Advent II · Thursday, 10 December 2026",
+   "2026-12-11":"St Damasus I, 11 December 2026",
+   "2026-12-12":"Eve of Gaudete · Saturday, 12 December 2026",
+   "2026-12-13":"Gaudete Sunday, 13 December 2026"
   }[date]??"Date not certified"));
  const contextLabel=create(d,"label",null,"Recitation: ");
  const contextSelect=create(d,"select");
