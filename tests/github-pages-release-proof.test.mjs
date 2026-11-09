@@ -11,13 +11,13 @@ const html='<!doctype html><html><head><link href="./ao-inline-a1.css" rel="styl
 const assets=()=>Object.fromEntries(criticalReleasePaths(html).map(p=>[p,releaseSha256(Buffer.from("critical:"+p))]));
 const proof=()=>createReleaseProof({sha:shaA,runId:"1234567",indexHtml:html,assetSha256:assets()});
 
-test("build provenance identifies source commit, run and 49 critical deployed files",()=>{
+test("build provenance identifies source commit, run and 51 critical deployed files",()=>{
  const p=proof();
  assert.equal(p.schema,RELEASE_PROOF_SCHEMA);
  assert.equal(p.source_sha,shaA);
  assert.equal(p.workflow_run_id,"1234567");
  assert.equal(MASS_SCHOLA_CRITICAL_PATHS.length,17);
- assert.equal(Object.keys(p.critical_sha256).length,49);
+ assert.equal(Object.keys(p.critical_sha256).length,51);
  for(const file of MASS_SCHOLA_CRITICAL_PATHS){
   assert.ok(file.startsWith("src/mass/"));
   assert.ok(Object.hasOwn(p.critical_sha256,file),"Missing live Mass/Schola reader proof: "+file);
@@ -25,7 +25,7 @@ test("build provenance identifies source commit, run and 49 critical deployed fi
  for(const file of ["src/pray/novena-runtime.js","src/pray/prayer-design-pilot.js","src/pray/presentation-runtime.js"]){
   assert.ok(Object.hasOwn(p.critical_sha256,file),"Missing live Pray reader proof: "+file);
  }
- assert.equal(DISCOVERY_CRITICAL_PATHS.length,13);
+ assert.equal(DISCOVERY_CRITICAL_PATHS.length,15);
  for(const path of DISCOVERY_CRITICAL_PATHS)assert.ok(Object.hasOwn(p.critical_sha256,path),"Missing Discovery proof: "+path);
  assert.equal(NOV6_FIRST_FRIDAY_LEONINE_CRITICAL_PATHS.length,9);
  for(const file of NOV6_FIRST_FRIDAY_LEONINE_CRITICAL_PATHS)
@@ -63,7 +63,7 @@ test("missing, malformed or substituted critical bytes do not certify the deploy
  delete staleLeonine.critical_sha256["src/pray/horarium-leonine-source-blocks.js"];
  assert.throws(()=>verifyReleaseProof(staleLeonine,{expectedSha:shaA,expectedRunId:"1234567",indexHtml:html}),/Missing critical release digest/);
  const staleDiscovery={...p,critical_sha256:{...p.critical_sha256}};
- delete staleDiscovery.critical_sha256['data/did-you-know/dyk-h225-world-liturgies-25-publication.v1.json'];
+ delete staleDiscovery.critical_sha256['data/did-you-know/dyk-h250-unesco-sacred-geography-25-publication.v1.json'];
  assert.throws(()=>verifyReleaseProof(staleDiscovery,{expectedSha:shaA,expectedRunId:'1234567',indexHtml:html}),/Missing critical release digest/);
  const staleSchola={...p,critical_sha256:{...p.critical_sha256}};
  delete staleSchola.critical_sha256["src/mass/reader-schola.js"];
