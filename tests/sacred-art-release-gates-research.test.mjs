@@ -124,3 +124,27 @@ for(const r of metadata23.records){
 assert.equal(prior.release_gate_evidence.identity_and_metadata_reconciliation_progress.metadata_disagreement_flags_adjudicated,23);
 assert.equal(prior.release_gate_evidence.identity_and_metadata_reconciliation_progress.fully_assigned_verified_app_canonical_ids,0);
 console.log('PASS: five underlying works for 11 URL leads; 23 metadata flags adjudicated; no photo, object swap, or canonical ID imported.');
+
+const weak6 = read('data/artwork/research/m2m-title-artist-leads-6-batch11-20261109.v1.json');
+assert.equal(weak6.records.length,6);
+assert.equal(weak6.works.length,3);
+assert.equal(new Set(weak6.records.map(r=>r.target_id)).size,6);
+assert.equal(weak6.summary.museum_accessions_supported,2);
+assert.equal(weak6.summary.secondary_vatican_work_accession_unconfirmed,1);
+assert.equal(weak6.summary.app_canonical_ids_created,0);
+assert.equal(weak6.summary.new_assignments_authorised,0);
+assert.equal(weak6.summary.remaining_no_internal_candidate_destinations,29);
+assert.deepEqual(Object.values(Object.fromEntries(weak6.works.map(w=>[w.work_key,weak6.records.filter(r=>r.work_key===w.work_key).length]))).sort(),[2,2,2]);
+assert.ok(weak6.works.find(w=>w.work_key==='VAN_DYCK_INDIANAPOLIS_ENTRY').accession==='58.3');
+assert.ok(weak6.works.find(w=>w.work_key==='JOHN_MARTIN_TATE_WRATH').accession==='N05613');
+assert.equal(weak6.works.find(w=>w.work_key==='CARRACCI_VATICAN_PURGATORY').accession,null);
+for(const r of weak6.records){
+ assert.equal(r.canonical_app_artwork_id,null);
+ assert.equal(r.canonical_app_id_resolved,false);
+ assert.equal(r.current_owner_selection_preserved,true);
+ assert.equal(r.new_assignment_authorised,false);
+ assert.ok(r.evidence_urls.length);
+}
+assert.equal(prior.release_gate_evidence.identity_and_metadata_reconciliation_progress.title_artist_only_leads_researched,6);
+assert.equal(prior.release_gate_evidence.identity_and_metadata_reconciliation_progress.remaining_no_internal_lead_destinations,29);
+console.log('PASS: six title/artist leads grounded to three work groups; app IDs and release remain held.');
