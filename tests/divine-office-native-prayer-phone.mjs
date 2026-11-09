@@ -434,7 +434,7 @@ try{
    assert.ok(!fetched.some(url=>/Psalm(87|102)\.txt$/u.test(url)),
     "Holy Family II-class First Vespers must not use Saturday Compline");
    await latin.getByRole("button",{name:"Next"}).click();
-   assert.match(await latin.locator(".aoOfFrameControls").innerText(),/2 \\/ /u);
+   assert.match(await latin.locator(".aoOfFrameControls").innerText(),/2 \/ /u);
    const over=await page.evaluate(()=>
     document.documentElement.scrollWidth-document.documentElement.clientWidth);
    assert.ok(over<=2,"Holy Family "+date+" overflows "+width+": "+over);
