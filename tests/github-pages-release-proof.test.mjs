@@ -120,8 +120,8 @@ test("release scripts consume the shared proof and audit the actual published by
 test("public phone boot timeout retains first-attempt diagnostics without weakening the 65-second gate",async()=>{
  const smoke=await readFile(new URL("./github-pages-phone-live-acceptance.mjs",import.meta.url),"utf8");
  assert.match(smoke,/PAGES_PHONE_BOOT_DIAGNOSTICS/);
- assert.match(smoke,/startup-diagnostics\\.json/);
- assert.match(smoke,/startup-failure-390\\.png/);
+ assert.ok(smoke.includes("startup-diagnostics.json"));
+ assert.ok(smoke.includes("startup-failure-390.png"));
  assert.match(smoke,/requestfailed/);
  assert.match(smoke,/pageerror/);
  assert.match(smoke,/criticalResources/);
@@ -129,7 +129,7 @@ test("public phone boot timeout retains first-attempt diagnostics without weaken
  assert.match(smoke,/AO_APP_SHELL_V1/);
  assert.match(smoke,/AO_R17_BROWSER_ENTRY/);
  assert.match(smoke,/timeout:65000/);
- assert.match(smoke,/addFailure\\(label,e\\)/,
+ assert.ok(smoke.includes("addFailure(label,e)"),
   "The first-attempt timeout must still fail the release job");
 });
 
