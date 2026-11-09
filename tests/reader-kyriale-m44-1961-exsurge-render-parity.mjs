@@ -15,6 +15,9 @@ const printed=JSON.parse(readFileSync(new URL(
  "../data/research/mass-music-m43-kyrie-xvi-original-printed-noteheads.v1.json",
  import.meta.url),"utf8"));
 const originalGabc=offlineKyrialeResearchScore("KYRIE","MASS_16");
+const editorial=JSON.parse(readFileSync(new URL(
+ "../data/research/mass-music-m44-kyrie-xvi-exsurge-original-print-render-parity.v1.json",
+ import.meta.url),"utf8"));
 assert.equal(originalGabc?.scoreId,"GREGOBASE-545");
 assert.equal(originalGabc.scoreApproved,false);
 const originalPrintCounts=printed.originalPrintedGroupCountsReadFromFacsimile
@@ -73,6 +76,28 @@ assert.deepEqual(Array.from(semanticNoteRecords.slice(-6),x=>x.isVirga),
 assert.deepEqual(Array.from(semanticNoteRecords.slice(-6),x=>x.isInclined),
  [false,false,false,true,true,true]);
 assert.equal(semanticNoteRecords.at(-1).moraCount,1,"Terminal dot must attach to final diamond");
+const originalNotes=sourceSigns.noteheads;
+assert.equal(originalNotes.length,40);
+for(let i=0;i<40;i++){
+  const expected=originalNotes[i].sourcePitchLetter.toLowerCase().charCodeAt(0)-"c".charCodeAt(0);
+  assert.equal(notes[i].staffPosition,expected,
+    "Exsurge must preserve original source letter staff position at physical printed-note ordinal "+(i+1));
+}
+const markedOrdinals=(key)=>Array.from(notes, (n,i)=>n[key]?.length?i+1:null).filter(Number.isInteger);
+assert.deepEqual(markedOrdinals("morae"),[9,16,25,40]);
+assert.deepEqual(markedOrdinals("episemata"),[7,14,23]);
+assert.deepEqual(Array.from(notes,(n,i)=>n.shape===api.NoteShape.Virga?i+1:null).filter(Number.isInteger),[37]);
+assert.deepEqual(Array.from(notes,(n,i)=>n.shape===api.NoteShape.Inclinatum?i+1:null).filter(Number.isInteger),[38,39,40]);
+assert.equal(editorial.original1961PrintedEvidence.originalPrintNoteheadsIndependentlyCounted,40);
+assert.equal(editorial.original1961PrintedEvidence.originalPdfSha256,printed.original1961PrintedWitness.originalPdfSha256);
+assert.deepEqual(editorial.exactRenderer.sourceNoteOrdinals,{
+ horizontalEpisemata:[7,14,23],punctumMora:[9,16,25,40],virga:[37],inclinata:[38,39,40]
+});
+assert.equal(editorial.exactRenderer.noPublicScoreApproval,true);
+assert.equal(editorial.reviewStatus.currentFullyCertifiedScoresOf20,0);
+assert.equal(editorial.reviewStatus.qualifiedHumanChantEditorCertificate,false);
+assert.equal(editorial.reviewStatus.originalEpisemaMoraMetricEngravingParityCertified,false);
+assert.equal(editorial.reviewStatus.canonical65ReaderUntouched,true);
 const layoutReports=[];
 const widths=[304,374,720];
 const outputs=[];
@@ -84,6 +109,10 @@ for(const width of widths){
  const tree=score.createSvgTree(context);
  assert.ok(svg.startsWith("<svg"),"Exsurge emitted no SVG root at "+width);
  assert.ok(svg.includes("staffLine"),"Exsurge emitted no staff grid at "+width);
+ assert.equal((svg.match(/class="horizontalEpisema"/g)||[]).length,3,
+   "SVG, not just the semantic model, must draw three source episemata");
+ assert.ok(svg.includes("PunctumInclinatumDescendens"),
+   "SVG must contain the descending inclined glyph definition");
  assert.equal(tree.name,"svg");
  assert.ok(tree.children.length>0);
  assert.ok(score.lines.length>=1);
