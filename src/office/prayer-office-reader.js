@@ -199,6 +199,30 @@ export function openDivineOfficeReader(win=globalThis,{date=todayLocal()}={}){
   if(weekIII.value){input.value=weekIII.value;hour="COMPLINE";draw()}
  });
  bar.append(weekIII);
+ // Christmas 21–27 December: compact, source-certified dates, not seven
+ // additional mobile buttons.
+ const christmas=d.createElement("select");
+ christmas.setAttribute("aria-label","Christmas Compline date");
+ const christmasPrompt=d.createElement("option");
+ christmasPrompt.value="";
+ christmasPrompt.textContent="Christmas · 21–27 Dec 2026";
+ christmas.append(christmasPrompt);
+ for(const [date,caption] of [
+  ["2026-12-21","21 Dec · St Thomas Apostle"],
+  ["2026-12-22","22 Dec · Advent IV Tuesday"],
+  ["2026-12-23","23 Dec · Advent IV Wednesday"],
+  ["2026-12-24","24 Dec · First Compline of Christmas"],
+  ["2026-12-25","25 Dec · Nativity of Our Lord"],
+  ["2026-12-26","26 Dec · St Stephen Protomartyr"],
+  ["2026-12-27","27 Dec · Sunday within Christmas Octave"]
+ ]){
+  const option=d.createElement("option");
+  option.value=date;option.textContent=caption;christmas.append(option);
+ }
+ christmas.addEventListener("change",()=>{
+  if(christmas.value){input.value=christmas.value;hour="COMPLINE";draw()}
+ });
+ bar.append(christmas);
  host.append(bar);
  const hours=d.createElement("div");hours.className="aoOfHours";host.append(hours);
  let hour="VESPERS";
