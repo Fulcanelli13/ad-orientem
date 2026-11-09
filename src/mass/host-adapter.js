@@ -213,6 +213,7 @@ export function adaptV346ResolvedMass(legacy, options={}) {
     precedingRites,
     followingActions:options.followingActions??[],
     distinctRite,
+    emberSaturdaySelection:options.emberSaturdaySelection??null,
     localProfile:options.localProfile??null,
     provenance:{
       adapter:"V346_RESOLVED_MASS",
