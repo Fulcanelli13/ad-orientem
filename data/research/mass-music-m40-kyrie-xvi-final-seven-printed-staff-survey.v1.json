@@ -1,0 +1,386 @@
+{
+  "schema": "ao-mass-music-m40-kyrie-xvi-final-seven-original-1961-staff-survey-v1",
+  "date": "2026-11-09",
+  "scoreId": "GREGOBASE-545",
+  "setting": "MASS_16",
+  "title": "Kyrie XVI – In feriis per annum",
+  "originalGabcFingerprintUtf16Fnv1a32": "acef0d62",
+  "originalScoreSource": "src/mass/reader-kyriale-research-gabc.js",
+  "original1961Edition": {
+    "title": "Graduale Romanum (Solesmes, 1961)",
+    "printedFolio": "54*",
+    "pdfPageOneBased": 56,
+    "pdf": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+    "scan": "https://gregobase.selapa.net/sources/2/931.png"
+  },
+  "independentCorroboration": [
+    {
+      "edition": "Liber Usualis, Solesmes, 1961",
+      "printedFolio": "59",
+      "image": "https://gregobase.selapa.net/sources/3/170.png"
+    },
+    {
+      "edition": "Chants of the Church, Solesmes, 1956",
+      "printedFolio": "40",
+      "image": "https://gregobase.selapa.net/sources/5/55.png"
+    }
+  ],
+  "method": [
+    "Inspect original engraved four-line staff at the lower of the two Kyrie XVI music systems on the 1961 printed p.54*, comparing seven closing syllables against the separate Liber Usualis (1961, p.59) and Chants of the Church (1956, p.40) witnesses.",
+    "Record each visible line/space height in groups 21–27 as manually read printed-position observations, distinguishing them from the independently extracted source-GABC positions. These appear consistent at scan resolution; this is not a fully qualified original printed pitch/neume certification.",
+    "Treat the printed ij. repeat after the third Kyrie as a structural separator followed by a fully written fourth/final Kyrie; do not multiply neume counts automatically from iij./ij. rubric labels.",
+    "Preserve M37 first-Kyrie comparison (7 groups/9 positions) and M39 Christe + repeated Kyrie comparison (13 groups/16 positions); seven newly reviewed groups/15 source positions complete the 27/27 and 40/40 structural staff-position ledger without granting musical editorial approval.",
+    "Inspect the distinct final cadence primarily for contour and group ownership. Higher-resolution image and human chant-editor scrutiny remain required to certify square neume joins, virga, three inclined squares and the terminal punctum mora."
+  ],
+  "originalPrintedObservations": [
+    {
+      "sourceGroupOrdinal": 21,
+      "originalLatinSyllable": "Ký",
+      "printedSystem": 2,
+      "printedFolio": "54*",
+      "printedStaffPlacementsAsRead": [
+        "space2"
+      ],
+      "sourceGabcNeume": "g",
+      "sourceGabcStaffPlacementsForComparison": [
+        "space2"
+      ],
+      "sourceGlobalNoteheadOrdinals": [
+        26
+      ],
+      "scanLevelStaffHeightAgreement": "VISUALLY_CONSISTENT_AT_SCAN_RESOLUTION",
+      "observation": "The independent closing Kyrie begins at second-space height, following the ij. repeat marker. It is a new terminal melodic phrase, not an implicit repeat.",
+      "independentPrintedTotalNoteCountCertified": false,
+      "exactPrintedNotePitchesCertified": false,
+      "printedNeumeJoiningAndShapesCertified": false,
+      "printedRhythmicMarksCertified": false,
+      "printedSyllabicUnderlayCertified": false,
+      "editorApproved": false
+    },
+    {
+      "sourceGroupOrdinal": 22,
+      "originalLatinSyllable": "ri",
+      "printedSystem": 2,
+      "printedFolio": "54*",
+      "printedStaffPlacementsAsRead": [
+        "line3",
+        "space3"
+      ],
+      "sourceGabcNeume": "hi",
+      "sourceGabcStaffPlacementsForComparison": [
+        "line3",
+        "space3"
+      ],
+      "sourceGlobalNoteheadOrdinals": [
+        27,
+        28
+      ],
+      "scanLevelStaffHeightAgreement": "VISUALLY_CONSISTENT_AT_SCAN_RESOLUTION",
+      "observation": "The closing Kyrie ri shows an ascending two-square figure, third line into third space.",
+      "independentPrintedTotalNoteCountCertified": false,
+      "exactPrintedNotePitchesCertified": false,
+      "printedNeumeJoiningAndShapesCertified": false,
+      "printedRhythmicMarksCertified": false,
+      "printedSyllabicUnderlayCertified": false,
+      "editorApproved": false
+    },
+    {
+      "sourceGroupOrdinal": 23,
+      "originalLatinSyllable": "e",
+      "printedSystem": 2,
+      "printedFolio": "54*",
+      "printedStaffPlacementsAsRead": [
+        "space3",
+        "space3"
+      ],
+      "sourceGabcNeume": "ii",
+      "sourceGabcStaffPlacementsForComparison": [
+        "space3",
+        "space3"
+      ],
+      "sourceGlobalNoteheadOrdinals": [
+        29,
+        30
+      ],
+      "scanLevelStaffHeightAgreement": "VISUALLY_CONSISTENT_AT_SCAN_RESOLUTION",
+      "observation": "Two successive printed squares at third-space height under the syllable e.",
+      "independentPrintedTotalNoteCountCertified": false,
+      "exactPrintedNotePitchesCertified": false,
+      "printedNeumeJoiningAndShapesCertified": false,
+      "printedRhythmicMarksCertified": false,
+      "printedSyllabicUnderlayCertified": false,
+      "editorApproved": false
+    },
+    {
+      "sourceGroupOrdinal": 24,
+      "originalLatinSyllable": "e",
+      "printedSystem": 2,
+      "printedFolio": "54*",
+      "printedStaffPlacementsAsRead": [
+        "space2"
+      ],
+      "sourceGabcNeume": "g",
+      "sourceGabcStaffPlacementsForComparison": [
+        "space2"
+      ],
+      "sourceGlobalNoteheadOrdinals": [
+        31
+      ],
+      "scanLevelStaffHeightAgreement": "VISUALLY_CONSISTENT_AT_SCAN_RESOLUTION",
+      "observation": "The penultimate eleison opening falls to second-space height.",
+      "independentPrintedTotalNoteCountCertified": false,
+      "exactPrintedNotePitchesCertified": false,
+      "printedNeumeJoiningAndShapesCertified": false,
+      "printedRhythmicMarksCertified": false,
+      "printedSyllabicUnderlayCertified": false,
+      "editorApproved": false
+    },
+    {
+      "sourceGroupOrdinal": 25,
+      "originalLatinSyllable": "lé",
+      "printedSystem": 2,
+      "printedFolio": "54*",
+      "printedStaffPlacementsAsRead": [
+        "line3",
+        "line4"
+      ],
+      "sourceGabcNeume": "hj",
+      "sourceGabcStaffPlacementsForComparison": [
+        "line3",
+        "line4"
+      ],
+      "sourceGlobalNoteheadOrdinals": [
+        32,
+        33
+      ],
+      "scanLevelStaffHeightAgreement": "VISUALLY_CONSISTENT_AT_SCAN_RESOLUTION",
+      "observation": "The last accented lé has an ascending two-note printed figure reaching the top staff line. It is distinct from earlier lé's underscored single pitch.",
+      "independentPrintedTotalNoteCountCertified": false,
+      "exactPrintedNotePitchesCertified": false,
+      "printedNeumeJoiningAndShapesCertified": false,
+      "printedRhythmicMarksCertified": false,
+      "printedSyllabicUnderlayCertified": false,
+      "editorApproved": false
+    },
+    {
+      "sourceGroupOrdinal": 26,
+      "originalLatinSyllable": "i",
+      "printedSystem": 2,
+      "printedFolio": "54*",
+      "printedStaffPlacementsAsRead": [
+        "line3"
+      ],
+      "sourceGabcNeume": "h",
+      "sourceGabcStaffPlacementsForComparison": [
+        "line3"
+      ],
+      "sourceGlobalNoteheadOrdinals": [
+        34
+      ],
+      "scanLevelStaffHeightAgreement": "VISUALLY_CONSISTENT_AT_SCAN_RESOLUTION",
+      "observation": "The immediately following i syllable returns to third-line height.",
+      "independentPrintedTotalNoteCountCertified": false,
+      "exactPrintedNotePitchesCertified": false,
+      "printedNeumeJoiningAndShapesCertified": false,
+      "printedRhythmicMarksCertified": false,
+      "printedSyllabicUnderlayCertified": false,
+      "editorApproved": false
+    },
+    {
+      "sourceGroupOrdinal": 27,
+      "originalLatinSyllable": "son.",
+      "printedSystem": 2,
+      "printedFolio": "54*",
+      "printedStaffPlacementsAsRead": [
+        "space3",
+        "space2",
+        "line3",
+        "space2",
+        "line2",
+        "space1"
+      ],
+      "sourceGabcNeume": "ighvGFE.",
+      "sourceGabcStaffPlacementsForComparison": [
+        "space3",
+        "space2",
+        "line3",
+        "space2",
+        "line2",
+        "space1"
+      ],
+      "sourceGlobalNoteheadOrdinals": [
+        35,
+        36,
+        37,
+        38,
+        39,
+        40
+      ],
+      "scanLevelStaffHeightAgreement": "VISUALLY_CONSISTENT_AT_SCAN_RESOLUTION",
+      "observation": "The distinct terminal son. has a visibly descending final tail of inclined squares; GABC indexes six source pitches (i,g,h,G,F,E). Fine-square joins, whether h bears the correct virga and exact mora placement remain unapproved.",
+      "independentPrintedTotalNoteCountCertified": false,
+      "exactPrintedNotePitchesCertified": false,
+      "printedNeumeJoiningAndShapesCertified": false,
+      "printedRhythmicMarksCertified": false,
+      "printedSyllabicUnderlayCertified": false,
+      "editorApproved": false
+    }
+  ],
+  "sourceCoverageSummary": {
+    "sourceScoresStored": 20,
+    "sourceScoresStructurallySurveyed": 20,
+    "sourceScoresFullyMusicallyCertified": 0,
+    "sourceScoresEditorApproved": 0,
+    "m37Groups": 7,
+    "m37SourceNotePositions": 9,
+    "m39Groups": 13,
+    "m39SourceNotePositions": 16,
+    "m40Groups": 7,
+    "m40SourceNotePositions": 15,
+    "cumulativeGroupsWithVisualStaffHeightSurvey": 27,
+    "cumulativeSourceNotePositionsWithVisualStaffHeightSurvey": 40,
+    "remainingGroupsForScanLevelStaffHeightSurvey": 0,
+    "remainingSourceNotePositionsForScanLevelStaffHeightSurvey": 0,
+    "independentlyCountedPrintedNoteheads": 0,
+    "exactPrintedNeumeAndSignParityCertified": 0
+  },
+  "distinctFinalCadence": {
+    "groups": [
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "sourceLastGroupGabc": "ighvGFE.",
+    "sourceLastGroupLetters": [
+      "i",
+      "g",
+      "h",
+      "G",
+      "F",
+      "E"
+    ],
+    "sourceLastGroupStaffHeights": [
+      "space3",
+      "space2",
+      "line3",
+      "space2",
+      "line2",
+      "space1"
+    ],
+    "sourceVirgaMarkerPosition": "after h, before G",
+    "sourceThreeInclinedPitches": [
+      "G",
+      "F",
+      "E"
+    ],
+    "sourceTerminalMora": true,
+    "printedContour": "VISIBLE_DESCENDING_ENDING_WITH_DISTINCT_TERMINAL_PHRASE",
+    "sourceNoteheadsIndependentlyMatchedToPrint": false,
+    "sourceSpecificNeumeShapesAndMarksMatchedToPrint": false,
+    "reviewerApproved": false
+  },
+  "blockingPrintedSignAndEditorialGates": [
+    {
+      "issue": "MORA_DOTS",
+      "sourceGroups": [
+        7,
+        13,
+        20,
+        27
+      ],
+      "printStatus": "UNRESOLVED_AT_AVAILABLE_SCAN_RESOLUTION",
+      "action": "Compare all four source punctum-mora marks against magnified original engraved dots. Establish exact target pitch and orientation in both 1961 witnesses."
+    },
+    {
+      "issue": "HORIZONTAL_EPISEMATA",
+      "sourceGroups": [
+        5,
+        11,
+        18
+      ],
+      "printStatus": "UNRESOLVED_AT_AVAILABLE_SCAN_RESOLUTION",
+      "action": "Independently validate all three underscored h_ figures and each episema's beginning/end; do not conflate staff ruling with tiny rhythmic stroke."
+    },
+    {
+      "issue": "VIRGA_AND_PUNCTA_INCLINATA",
+      "sourceGroups": [
+        27
+      ],
+      "printStatus": "UNRESOLVED_AT_AVAILABLE_SCAN_RESOLUTION",
+      "action": "Compare source h v and uppercase GFE to each distinct printed virga and inclined notehead in the final Kyrie."
+    },
+    {
+      "issue": "PRINTED_SYSTEM_BREAK_AND_CUSTOS",
+      "sourceGroups": [
+        14,
+        15
+      ],
+      "printStatus": "UNRESOLVED_AT_AVAILABLE_SCAN_RESOLUTION",
+      "action": "Verify the printer's custos at the first-to-second-system break and exact carryover from Ký to ri."
+    },
+    {
+      "issue": "PRINTED_SYLLABLE_UNDERLAY_AND_NEUME_JOINS",
+      "sourceGroups": [
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "printStatus": "UNRESOLVED_AT_AVAILABLE_SCAN_RESOLUTION",
+      "action": "Check horizontal syllabic placement, joins, distinct lé hj ascent, virga and six-note son. at original engraving scale."
+    },
+    {
+      "issue": "INDEPENDENT_EDITORIAL_CERTIFICATION",
+      "sourceGroups": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "printStatus": "NOT_AUTHORIZED",
+      "action": "Independent qualified chant editor signs off each printed pitch, glyph, rhythmic sign and underlay before any certification or GABC correction."
+    }
+  ],
+  "publicationBoundary": {
+    "researchOnly": true,
+    "noSourceGabcChanges": true,
+    "noMassReaderRuntimeChanges": true,
+    "noCanonical65CardChanges": true,
+    "noAutomaticMassSettingChoice": true,
+    "noSourcePrayerChanges": true,
+    "noRequiemScoreSubstitution": true,
+    "noMusicalApproval": true,
+    "noAudioApproval": true,
+    "noVercelDeployment": true
+  }
+}
