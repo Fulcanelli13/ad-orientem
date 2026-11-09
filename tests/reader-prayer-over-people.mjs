@@ -106,6 +106,13 @@ assert.equal(projection.releaseSupport,true);
 const quad1Friday=structuredClone(resolved);
 quad1Friday.date="2026-02-27";
 quad1Friday.proper.sourcePath="Tempora/Quad1-5";
+// Synthetic *ordinary* test values are bilingual so the existing
+// Proper reader gate can verify R30's separate original French oration.
+const sourceFr=value=>({...value,fr:"FR_SOURCE_TEST: "+value.lat});
+for(const key of ["introit","epistle","gradual","gospel","offertory","preface","communion"])
+ quad1Friday.proper[key]=sourceFr(quad1Friday.proper[key]);
+for(const key of ["collects","secrets","postcommunions"])
+ quad1Friday.proper[key]=quad1Friday.proper[key].map(sourceFr);
 quad1Friday.proper.orations.prayerOverPeople={
   id:"TEMPORA-QUAD1-5-SUPER-POPULUM",
   bodyLat:"Exáudi nos, miséricors Deus: et méntibus nostris grátiæ tuæ lumen osténde.",
