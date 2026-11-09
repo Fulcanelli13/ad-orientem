@@ -133,21 +133,17 @@ test("28 complete *PRIVATE* Latin source projections: 7 civil dates × 2 context
  }
 });
 
-test("all 7 fully projected private texts remain withheld publicly BEFORE FETCH",async()=>{
+test("private Christmas source projections stay uncertified research objects despite separate public certificate",async()=>{
  for(const [date] of expected){
-  for(const context of Object.values(COMPLINE_CONTEXT)){
-   for(const minister of Object.values(COMPLINE_MINISTER)){
-    let calls=0;
-    const r=await loadPublishedLatinCompline({
-     date,context,minister,fetchSource:async()=>{
-      calls++;throw Error("PRIVATE_RESEARCH_MUST_NOT_REACH_PUBLIC_FETCH");
-     }
-    });
-    assert.equal(r.status,"WITHHELD",date);
-    assert.equal(r.published,false);
-    assert.equal(r.frames.length,0);
-    assert.equal(calls,0);
-   }
-  }
+  const source=latinPinnedTransport();
+  const r=await assembleChristmas2026PrivateOfficeResearchReview({
+   date,fetchSource:source.fetchSource
+  });
+  assert.equal(r.status,"PRIVATE_SOURCE_TEXT_REVIEW");
+  assert.equal(r.published,false);
+  assert.equal(r.liturgicallyCertified,false);
+  assert.equal(r.rightsApproved,false);
+  assert.equal(latinComplineReleaseEligibility({date}).status,"ELIGIBLE");
+  assert.equal(officeRouteState({date,hour:"COMPLINE"}).published,true);
  }
 });
