@@ -70,9 +70,9 @@ try{
     if(frame===page.mainFrame())note("navigated",frame.url());
    });
    const url=new URL(base);
-   url.searchParams.set("aoR17Reader","native");
-   url.searchParams.set("aoPrayerPilot","0");
-   url.searchParams.set("ao_page_phone",label+"-"+expectedRunId);
+   // Use the ordinary public entry URL, without any native-reader or
+   // Prayer-pilot override. A green test must describe the same first
+   // launch path the user sees, not a test-forced app configuration.
    phase="navigation";
    const response=await page.goto(url.href,{waitUntil:"domcontentloaded",timeout:90000});
    note("main-response",{status:response?.status(),url:response?.url()});
