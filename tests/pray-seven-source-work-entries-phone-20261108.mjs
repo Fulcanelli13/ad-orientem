@@ -6,6 +6,7 @@ import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
 import {PRAYER_SEVEN_SOURCE_WORK_LINKS_V1 as WORKS} from "../src/pray/prayer-seven-source-work-links.v1.js";
 import {NOVENA_HOLY_FACE_1887_B25} from "../src/pray/holy-face-janvier-1887-b25.js";
+import {HOLY_FACE_1895_FR_READER_DAYS,HOLY_FACE_1895_FR_PUBLIC_RELEASE_APPROVED} from "../src/pray/holy-face-janvier-1895-fr-reader-candidate.v1.js";
 import {GOLDEN_ARROW_REPARATION_V1} from "../src/pray/icksp-golden-arrow-reparation.v1.js";
 import {MONTFORT_B26_CONSECRATION_ACT_EN} from "../src/pray/montfort-consecration-b26.js";
 import {montfortHistoricalPrayerRows} from "../src/pray/montfort-original-prayers-b27.js";
@@ -82,9 +83,17 @@ try{
      const current=page.locator(shell+"[data-ao-novena-deck]");
      assert.equal(await current.count(),1);
      await page.locator(shell+'[data-n1-mode="simple"]').evaluate(el=>el.click());
-     const english=await page.locator(shell+'[data-n1-source-language="en"]').allInnerTexts().then(x=>x.join(" "));
-     const first=NOVENA_HOLY_FACE_1887_B25.days[0].text.en;
-     containsSource(english,first,work.id+" original day one");
+     const lang=ui==="fr"?"fr":"en";
+     const visible=await page.locator(shell+'[data-n1-source-language="'+lang+'"]').allInnerTexts().then(x=>x.join(" "));
+     const expected=lang==="fr"?HOLY_FACE_1895_FR_READER_DAYS[0].text:NOVENA_HOLY_FACE_1887_B25.days[0].text.en;
+     containsSource(visible,expected,work.id+" original day one "+lang);
+     if(lang==="fr"){
+      assert.equal(HOLY_FACE_1895_FR_PUBLIC_RELEASE_APPROVED,true);
+      assert.ok(await page.locator(shell+"[data-n1-holy-face-1895-source-notice]").count()>0);
+      await page.locator(shell+"[data-n1-show-en]").click();
+      const english=await page.locator(shell+'[data-n1-source-language="en"]').innerText();
+      containsSource(english,NOVENA_HOLY_FACE_1887_B25.days[0].text.en,work.id+" distinct 1887 English witness");
+     }
      assert.equal(NOVENA_HOLY_FACE_1887_B25.days.length,9);
     }else{
      await page.waitForFunction(route=>globalThis.AO_TRADITIONAL_PRAY_V381?.state?.().route===route,work.route,{timeout:15000});
