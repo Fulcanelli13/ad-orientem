@@ -314,14 +314,61 @@ try{
    await office.getByRole("button",{name:"Close Latin Compline"}).click();
    assert.equal(await office.locator(".aoOfPublishedLatin").count(),0);
   }
-  // Refuse the first unreviewed post-Christmas-Octave date without a fetch.
+  // Seven dated 1960 Office assignments across the 2026–27 boundary,
+  // exercised as 14 true PUBLIC mobile reader journeys.
+  const newYear=office.getByRole("combobox",{name:"New Year Compline date"});
+  assert.equal(await newYear.count(),1);
+  for(const [date,officeDate,title,psalms] of [
+   ["2026-12-28","2026-12-28","Holy Innocents, 28 December 2026",[4,90,133]],
+   ["2026-12-29","2026-12-29","Fifth day of Christmas Octave, 29 December 2026",[4,90,133]],
+   ["2026-12-30","2026-12-30","Sixth day of Christmas Octave, 30 December 2026",[4,90,133]],
+   ["2026-12-31","2027-01-01","First Compline of Circumcision, 31 December 2026",[4,90,133]],
+   ["2027-01-01","2027-01-01","Circumcision of Our Lord, 1 January 2027",[4,90,133]],
+   ["2027-01-02","2027-01-03","First Compline of the Holy Name, 2 January 2027",[87,102]],
+   ["2027-01-03","2027-01-03","Most Holy Name of Jesus, 3 January 2027",[4,90,133]]
+  ]){
+   await newYear.selectOption(date);
+   assert.match(await office.locator(".aoOfStatus").innerText(),
+    /Latin Compline · available/u);
+   assert.match(await office.locator(".aoOfStatus").innerText(),
+    new RegExp("Office date: "+officeDate,"u"));
+   const start=observedLatin.length;
+   await office.getByRole("button",{name:"Read Latin Compline"}).click();
+   await page.waitForFunction(expected=>
+    document.querySelector(".aoOfPublishedStatus")?.textContent?.includes(
+     expected+" · 40 reading moments"),date,{timeout:35000});
+   const latin=office.locator(".aoOfPublishedLatin");
+   assert.ok((await latin.innerText()).includes(title),date+" wrong heading");
+   const newSourceURLs=observedLatin.slice(start);
+   for(const n of psalms)assert.ok(newSourceURLs.some(
+    url=>url.endsWith("/Psalm"+n+".txt")),
+    "Wrong psalm family or missing Latin source "+n+" for "+date);
+   if(date==="2026-12-29"||date==="2026-12-30")
+    assert.ok(!newSourceURLs.some(url=>
+     /Psalm(11|12|15|33|60)\.txt$/u.test(url)),
+     "Christmas Octave BR 175(e) must not fetch weekday psalms");
+   if(date==="2027-01-02")
+    assert.ok(!newSourceURLs.some(url=>
+     /Psalm(4|90|133)\.txt$/u.test(url)),
+     "Saturday first Compline of Holy Name must not fetch Sunday psalms");
+   await latin.getByRole("button",{name:"Next"}).click();
+   assert.match(await latin.locator(".aoOfFrameControls").innerText(),/2 \/ /u);
+   const overflowDay=await page.evaluate(()=>
+    document.documentElement.scrollWidth-document.documentElement.clientWidth);
+   assert.ok(overflowDay<=2,"Year-boundary "+date+" overflows "+width+": "+overflowDay);
+   await office.getByRole("button",{name:"Close Latin Compline"}).click();
+   assert.equal(await office.locator(".aoOfPublishedLatin").count(),0);
+   receipt.scenarios.push({case:"year-boundary-public-Compline",
+    width,date,officeDate,psalms,readingEvents:40,passed:true});
+  }
+  // First unreviewed 2027 date must be withheld, without any network fetch.
   const latinBaseline=observedLatin.length;
-  await office.locator('input[type="date"]').fill("2026-12-28");
+  await office.locator('input[type="date"]').fill("2027-01-04");
   await office.locator('input[type="date"]').dispatchEvent("change");
   await office.locator('[data-office-hour="COMPLINE"]').click();
   assert.equal(await office.getByRole("button",{name:"Read Latin Compline"}).count(),0);
   assert.equal(observedLatin.length,latinBaseline,
-   "28 Dec must not acquire a Compline Latin source");
+   "4 Jan must not acquire an uncertified Latin source");
   await office.locator('[data-office-hour="VESPERS"]').click();
   const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-
    document.documentElement.clientWidth);
