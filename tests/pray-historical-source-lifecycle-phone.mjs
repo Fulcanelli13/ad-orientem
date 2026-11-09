@@ -96,14 +96,19 @@ try{
   globalThis.__TEST_originalScriptureLoad=svc.load;
   // Deliberately invalid response: no chapter text. The app must refuse to
   // label it as a real loaded Catholic Bible reading.
-  svc.load=async()=>({reference:"Psalms 6:1",englishChapter:[],frenchChapter:[],latinChapter:[]});
+  svc.load=async()=>{globalThis.__TEST_invalidPsalmLoads=(globalThis.__TEST_invalidPsalmLoads||0)+1;return {reference:"Psalms 6:1",englishChapter:[],frenchChapter:[],latinChapter:[]}};
  });
  assert.equal(await open("pray.penitential_psalms"),true);
- await page.waitForSelector(reader+" [data-ao-scripture-content='unavailable']",{timeout:15000});
- assert.match(await page.locator(settle).innerText(),/not be loaded|n’a pas pu être chargé/);
+ await page.waitForFunction(()=>globalThis.__TEST_invalidPsalmLoads>=1,null,{timeout:15000});
+ await page.waitForSelector(reader+" [data-ao-scripture-content='local-witness']",{timeout:15000});
+ assert.equal(await page.locator(reader+" [data-ao-penitential-local-witness='dr-challoner']").count(),1,
+  "An empty service result must leave the complete historically sourced offline Psalm readable");
+ assert.equal(await page.locator(reader+" [data-ao-penitential-source-status='UNCOLLATED_SOURCE_WITNESS']").count(),1);
  assert.equal(await page.locator(reader+" [data-p435930-scripture-retry='psalm']").count(),1);
- assert.equal(await page.locator(reader+" .aoP435930ScriptureVerse").count(),0);
- await page.screenshot({path:resolve(artifact,"psalm-source-unavailable-390.png"),animations:"disabled"});
+ assert.equal(await page.locator(reader+" .aoP435930ScriptureVerse").count(),11,
+  "Psalm 6 complete Douay–Rheims local witness must survive an invalid remote response");
+ assert.doesNotMatch(await page.locator(settle).innerText(),/VERIFIED_FORMAT_TEST_ONLY|FORMAT_FR_TEST/);
+ await page.screenshot({path:resolve(artifact,"psalm-source-local-fallback-390.png"),animations:"disabled"});
  await page.evaluate(()=>{
   const svc=globalThis.AO_RUNTIME_V8.scriptureService;
   svc.load=async()=>({
