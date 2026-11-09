@@ -1,0 +1,211 @@
+{
+  "schema": "ao-mass-music-m34-print-first-seasonal-score-visual-audit-v1",
+  "auditedAt": "2026-11-09",
+  "sourceEdition": "Graduale Romanum (Solesmes, 1961), separate Kyriale facsimile",
+  "sourceEditionPdf": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+  "sourceCollection": "https://gregobase.selapa.net/source.php?id=2",
+  "method": [
+    "Directly opened the original 1961 Kyriale PDF page images 57*, 58*, and 101* and the corresponding original GregoBase source-image witnesses.",
+    "Opened all four source GABC downloads: 2522, 1137, 298 and 2412. Reviewed the complete GABC text and structural underlay against what is visibly printed.",
+    "Counted note-bearing GABC syllable/melisma tokens using the repository's original source-token parser; these are NOT counts of visually verified printed notes.",
+    "No automatic OCR or inferred printed pitches. No claim of complete neume glyph, absolute-pitch, rhythymic mark, episema, accidental or page-by-page underlay parity."
+  ],
+  "previousWork": {
+    "reference": "data/research/mass-music-m31-five-short-score-print-visual-pass.v1.json",
+    "m31VisualShortScoreIds": [
+      545,
+      2982,
+      1184,
+      1384,
+      2760
+    ],
+    "historicalM31NoteByNoteCertificates": 0
+  },
+  "registryCoverage": {
+    "currentlyStoredSourceGabcScores": 20,
+    "previouslyM31ShortScoresVisuallySurveyed": 5,
+    "newlyM34DistinctScoresVisuallySurveyed": 4,
+    "totalUniqueShortScoresWithStructuralVisualSurvey": 9,
+    "printedNoteByNoteCertifiedScores": 0,
+    "newlyApprovedPublicScores": 0
+  },
+  "sourceWitnesses": [
+    {
+      "printedPage": "57*",
+      "pdfPageOneBased": 59,
+      "sourceImage": "https://gregobase.selapa.net/sources/2/934.png",
+      "observed": "Agnus XVII begins and ends on this page; Kyrie XVIII is printed below it"
+    },
+    {
+      "printedPage": "58*",
+      "pdfPageOneBased": 60,
+      "sourceImage": "https://gregobase.selapa.net/sources/2/935.png",
+      "observed": "Sanctus XVIII (including both Hosanna phrases and Benedictus) and the three-invocation ordinary Agnus XVIII"
+    },
+    {
+      "printedPage": "101*",
+      "pdfPageOneBased": 103,
+      "sourceImage": "https://gregobase.selapa.net/sources/2/978.png",
+      "observed": "The Requiem repeats the Sanctus XVIII musical family, but has a text-distinct Agnus with dona eis requiem and final sempiternam"
+    }
+  ],
+  "scoreSurveys": [
+    {
+      "gregobaseId": 2522,
+      "scoreId": "GREGOBASE-2522",
+      "movement": "KYRIE",
+      "selection": "MASS_18",
+      "title": "Kyrie XVIII",
+      "printedPages": [
+        "57*"
+      ],
+      "sourceOriginalImages": [
+        "https://gregobase.selapa.net/sources/2/934.png"
+      ],
+      "originalPdfPageOneBased": [
+        59
+      ],
+      "sourceGabcUrl": "https://gregobase.selapa.net/download.php?format=gabc&id=2522",
+      "repositoryGabcFile": "src/mass/reader-kyriale-research-batch2.js",
+      "sourceGabcNoteBearingGroups": 27,
+      "sourceGabcCodeUnitFnv1a32": "db6e8276",
+      "sourceTextAndRepetition": "Four notated phrases: Kyrie ×3, Christe ×3, Kyrie ×2, final Kyrie ×1",
+      "visuallyObserved": [
+        "Original print on 57* has four distinct phrase spans with iij., iij., ij. and the unrepeated final variant",
+        "The last Kyrie is not the same literal notated source phrase as the first; do not replace it by an automatic repeat",
+        "Roman number XVIII begins after the preceding XVII Agnus on the same physical page"
+      ],
+      "status": "PRINTED_TEXT_AND_PHRASE_STRUCTURE_VISUALLY_INSPECTED_ONLY",
+      "fullPrintedAbsolutePitchParity": "NOT_CERTIFIED",
+      "fullPrintedNeumeParity": "NOT_CERTIFIED",
+      "fullPrintedSyllabicUnderlayParity": "NOT_CERTIFIED",
+      "fullPrintedRhythmicParity": "NOT_CERTIFIED",
+      "editorialScoreApproval": false
+    },
+    {
+      "gregobaseId": 1137,
+      "scoreId": "GREGOBASE-1137",
+      "movement": "AGNUS_DEI",
+      "selection": "MASS_17",
+      "title": "Agnus Dei XVII",
+      "printedPages": [
+        "57*"
+      ],
+      "sourceOriginalImages": [
+        "https://gregobase.selapa.net/sources/2/934.png"
+      ],
+      "originalPdfPageOneBased": [
+        59
+      ],
+      "sourceGabcUrl": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=1137",
+      "repositoryGabcFile": "src/mass/reader-kyriale-research-batch3.js",
+      "sourceGabcNoteBearingGroups": 54,
+      "sourceGabcCodeUnitFnv1a32": "3de26a94",
+      "sourceTextAndRepetition": "Three 18-group source underlay invocations; two misericordia endings and final dona nobis pacem",
+      "visuallyObserved": [
+        "Agnus XVII appears above Kyrie XVIII at original printed p.57*, with all three invocations",
+        "Printed first two invocations end miserere nobis; the third ends dona nobis pacem",
+        "The first two GABC phrase openings differ; do not deduplicate them merely because the Latin ending is repeated"
+      ],
+      "status": "PRINTED_TEXT_AND_PHRASE_STRUCTURE_VISUALLY_INSPECTED_ONLY",
+      "fullPrintedAbsolutePitchParity": "NOT_CERTIFIED",
+      "fullPrintedNeumeParity": "NOT_CERTIFIED",
+      "fullPrintedSyllabicUnderlayParity": "NOT_CERTIFIED",
+      "fullPrintedRhythmicParity": "NOT_CERTIFIED",
+      "editorialScoreApproval": false
+    },
+    {
+      "gregobaseId": 298,
+      "scoreId": "GREGOBASE-298",
+      "movement": "SANCTUS_BENEDICTUS",
+      "selection": "MASS_18",
+      "title": "Sanctus XVIII, including Benedictus",
+      "printedPages": [
+        "58*"
+      ],
+      "sourceOriginalImages": [
+        "https://gregobase.selapa.net/sources/2/935.png"
+      ],
+      "corroboratingRequiemPrintedWitness": {
+        "printedPage": "101*",
+        "sourceOriginalImage": "https://gregobase.selapa.net/sources/2/978.png",
+        "pdfPageOneBased": 103
+      },
+      "originalPdfPageOneBased": [
+        60
+      ],
+      "sourceGabcUrl": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=298",
+      "repositoryGabcFile": "src/mass/reader-kyriale-research-batch3.js",
+      "sourceGabcNoteBearingGroups": 55,
+      "sourceGabcCodeUnitFnv1a32": "a4e11282",
+      "sourceTextAndRepetition": "Sanctus ×3; Pleni sunt caeli; first Hosanna; Benedictus qui venit; second Hosanna",
+      "visuallyObserved": [
+        "All Sanctus and Benedictus words appear on printed p.58*, and the Sanctus appears again on the Requiem p.101*",
+        "The first and second Hosanna are distinct melodic passages in the source transcription; the printed final Hosanna also visibly differs in contour from the initial one",
+        "Never split this canonical Sanctus–Benedictus score into two Mass cards merely because a choir might pause between them"
+      ],
+      "status": "PRINTED_TEXT_AND_PHRASE_STRUCTURE_VISUALLY_INSPECTED_ONLY",
+      "fullPrintedAbsolutePitchParity": "NOT_CERTIFIED",
+      "fullPrintedNeumeParity": "NOT_CERTIFIED",
+      "fullPrintedSyllabicUnderlayParity": "NOT_CERTIFIED",
+      "fullPrintedRhythmicParity": "NOT_CERTIFIED",
+      "editorialScoreApproval": false
+    },
+    {
+      "gregobaseId": 2412,
+      "scoreId": "GREGOBASE-2412",
+      "movement": "AGNUS_DEI",
+      "selection": "MASS_18",
+      "title": "Agnus Dei XVIII (ordinary, not Requiem)",
+      "printedPages": [
+        "58*"
+      ],
+      "sourceOriginalImages": [
+        "https://gregobase.selapa.net/sources/2/935.png"
+      ],
+      "originalPdfPageOneBased": [
+        60
+      ],
+      "sourceGabcUrl": "https://gregobase.selapa.net/download.php?elem=1&format=gabc&id=2412",
+      "repositoryGabcFile": "src/mass/reader-kyriale-research-batch3.js",
+      "sourceGabcNoteBearingGroups": 54,
+      "sourceGabcCodeUnitFnv1a32": "17425e51",
+      "sourceTextAndRepetition": "Three 18-group source underlay invocations; two miserere nobis and one dona nobis pacem",
+      "visuallyObserved": [
+        "Printed p.58* contains the complete threefold ordinary Agnus XVIII with two miserere nobis endings and the final dona nobis pacem",
+        "Printed Requiem p.101* instead uses dona eis requiem twice and an expanded third formula with sempiternam",
+        "The current GREGOBASE-2412 GABC is the ordinary form, not the alternate Requiem underlay. It cannot accompany Requiem Agnus text."
+      ],
+      "requiemTextCrossWitness": {
+        "printedPage": "101*",
+        "originalScan": "https://gregobase.selapa.net/sources/2/978.png",
+        "form": "REQUIEM_DIFFERENT_UNDERLAY_AND_FINAL_VERSE",
+        "initialTwoEndings": "dona eis requiem",
+        "thirdEnding": "dona eis requiem sempiternam",
+        "ordinaryScoreIsRequiemSafe": false,
+        "allowAutoAssignmentToRequiem": false
+      },
+      "status": "PRINTED_TEXT_AND_PHRASE_STRUCTURE_VISUALLY_INSPECTED_ONLY",
+      "fullPrintedAbsolutePitchParity": "NOT_CERTIFIED",
+      "fullPrintedNeumeParity": "NOT_CERTIFIED",
+      "fullPrintedSyllabicUnderlayParity": "NOT_CERTIFIED",
+      "fullPrintedRhythmicParity": "NOT_CERTIFIED",
+      "editorialScoreApproval": false
+    }
+  ],
+  "nextRequiredPerScore": [
+    "At enlarged source resolution, map each printed notehead's absolute staff pitch using the original printed clef and compare the encoded GABC pitch, without rewriting the source automatically.",
+    "Compare every neume shape, mora, episema, interval, accidental, custodian/bar division, repeat direction and syllable underlay against the exact printed system.",
+    "Adjudicate disagreements in an independent discrepancy ledger with image page/system/pitch references, then obtain editorial approval for each score separately.",
+    "Do not infer a Requiem GABC from the non-Requiem Agnus XVIII; a separate printed 101* source transcription is required for its extra words and terminal formula."
+  ],
+  "publication": {
+    "doNotApproveSourceGabcAsFacsimile": true,
+    "doNotPromoteAsCertifiedNotation": true,
+    "doNotInferParishPerformance": true,
+    "publicReaderScoreApprovalCountAdded": 0,
+    "sourceRecordsRewritten": 0,
+    "massCardCountAltered": 0,
+    "verifiedFullPrintedPitchParityCount": 0
+  }
+}
