@@ -40,7 +40,7 @@ const semanticNoteRecords=notes.map((n,i)=>({
  staffPosition:n.staffPosition,
  noteShape:String(n.shape),
  neumeType:n.neume?.constructor?.name??"UNKNOWN",
- isVirga:Boolean(n.neume && n.neume instanceof api.Virga),
+ isVirga:Boolean(n.shape===api.NoteShape.Virga),
  isInclined:Boolean(n.shape===api.NoteShape.Inclinatum),
  hasMora:Boolean(n.morae?.length),
  moraCount:n.morae?.length??0,
@@ -52,7 +52,7 @@ const rendererSemantics={
   actualExsurgeNoteCount:notes.length,
   actualExsurgeMoraCount:notes.reduce((n,x)=>n+(x.morae?.length??0),0),
   actualExsurgeEpisemaCount:notes.reduce((n,x)=>n+(x.episemata?.length??0),0),
-  actualExsurgeVirgaCount:notes.filter(n=>n.neume instanceof api.Virga).length,
+  actualExsurgeVirgaCount:notes.filter(n=>n.shape===api.NoteShape.Virga).length,
   actualExsurgeInclinedNoteCount:notes.filter(n=>n.shape===api.NoteShape.Inclinatum).length,
   sourceGabcSignCount:sourceSigns.signOccurrences.length,
   expectedPrintedCount:printed.sourceVersusOriginalPrintCountCheck.printedNoteheadsIndependentlyCounted,
@@ -64,6 +64,15 @@ assert.equal(rendererSemantics.actualExsurgeNoteCount,rendererSemantics.expected
  "Exsurge rendered note count must match 40 independently identified printed notes");
 assert.equal(rendererSemantics.sourceGabcSignCount,11);
 assert.equal(notes.length,40);
+assert.equal(rendererSemantics.actualExsurgeMoraCount,4,"Original print has four mora dots");
+assert.equal(rendererSemantics.actualExsurgeEpisemaCount,3,"Original print has three horizontal episemata");
+assert.equal(rendererSemantics.actualExsurgeVirgaCount,1,"Original print has one Virga-shaped terminal note");
+assert.equal(rendererSemantics.actualExsurgeInclinedNoteCount,3,"Original print has three terminal diamonds");
+assert.deepEqual(semanticNoteRecords.slice(-6).map(x=>x.isVirga),
+ [false,false,true,false,false,false]);
+assert.deepEqual(semanticNoteRecords.slice(-6).map(x=>x.isInclined),
+ [false,false,false,true,true,true]);
+assert.equal(semanticNoteRecords.at(-1).moraCount,1,"Terminal dot must attach to final diamond");
 const layoutReports=[];
 const widths=[304,374,720];
 const outputs=[];
