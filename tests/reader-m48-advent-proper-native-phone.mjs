@@ -105,19 +105,36 @@ try{
      "Rendered score overflow at "+width+"px "+JSON.stringify(geometry));
     assert.ok(geometry.staffWidths.every(w=>w>90&&w<=width));
     if(role==="GRADUAL"){
+     // MISSAL keeps Latin + vernacular in grid row one. Source-owned
+     // Gradual and Alleluia scores must occupy separate following rows.
+     const scoreRects=await passage.locator(".ao-proper-reference-notation")
+      .evaluateAll(nodes=>nodes.map(node=>{
+       const rect=node.getBoundingClientRect();
+       return {top:rect.top,bottom:rect.bottom,height:rect.height,
+        scoreId:node.dataset.referenceScore};
+      }));
+     assert.equal(scoreRects.length,2,"Both score roles must remain accessible");
+     assert.ok(scoreRects.every(r=>r.height>0) &&
+      scoreRects[0].bottom<=scoreRects[1].top+1,
+      "Overlapping Gradual and Alleluia at "+mode+" "+width+"px: "+
+      JSON.stringify(scoreRects));
      await page.screenshot({path:resolve(out,fixture.id+"-"+mode+"-"+lang+"-"+width+"-gradual-alleluia.png"),animations:"disabled"});
-     await passage.locator(".ao-proper-reference-expand").first().click();
-     const zoom=page.locator("dialog.ao-proper-reference-zoom");
-     await zoom.waitFor({state:"visible",timeout:20000});
-     assert.equal(await zoom.getAttribute("data-reference-zoom-mode"),"fit");
-     assert.ok(await zoom.locator(".ao-proper-reference-wide svg").count()>=1);
-     assert.equal(await zoom.locator('[data-reference-zoom-transcription]').getAttribute("href"),
+     for(const [index,scoreId] of fixture.scores.GRADUAL.entries()){
+      // Real tap: never use force/evaluate to bypass obstructed controls.
+      await passage.locator(".ao-proper-reference-expand").nth(index)
+       .click({timeout:10000});
+      const zoom=page.locator("dialog.ao-proper-reference-zoom");
+      await zoom.waitFor({state:"visible",timeout:20000});
+      assert.equal(await zoom.getAttribute("data-reference-zoom-mode"),"fit");
+      assert.ok(await zoom.locator(".ao-proper-reference-wide svg").count()>=1);
+      assert.equal(await zoom.locator('[data-reference-zoom-transcription]').getAttribute("href"),
        "https://gregobase.selapa.net/chant.php?id="+
-         fixture.scores.GRADUAL[0].slice("GREGOBASE-".length),
-       "The rendered Gradual must provide its exact archived transcription source");
-     assert.match(await zoom.locator(".ao-proper-reference-provenance").textContent(),
+        scoreId.slice("GREGOBASE-".length),
+       "Score zoom must link to the correct original transcription");
+      assert.match(await zoom.locator(".ao-proper-reference-provenance").textContent(),
        /not musically certified/i);
-     await zoom.locator('button[aria-label="Close enlarged Gregorian notation"]').click();
+      await zoom.locator('button[aria-label="Close enlarged Gregorian notation"]').click();
+     }
     }
    }
    assert.equal(actual.length,4);
