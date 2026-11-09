@@ -62,7 +62,49 @@ particular:
 - **No fabricated Mame 1961 facsimile certificate**: compare the complete
   pinned Latin text and state what independent witness was actually used.
 
-## Executable source-intake guard (draft PR #2702)\n\nThe draft now includes `src/office/compline-christmas-2026-research-gate.js`\nand `tests/divine-office-christmas-source-intake.mjs`, wired to the dedicated\nOffice integration workflow. These compare all seven fixed Office, weekday,\npsalter, Marian-ending and concurrence research assertions with the external\nJSON intake ledger. Deliberate mutations of 24/26/27 December and all\n7 dates × 2 recitation contexts × 2 ministers are tested **to remain\nWITHHELD with zero network fetches**. These are **28 negative safety checks**,\nnot 28 certified complete Office recitations. Full Latin source collation\nand phone acceptance for newly released dates are still required.\n\n### Pinned Marian Latin source-byte witness\n\nThe upstream `DivinumOfficium/divinum-officium` `web/www/horas/Latin/Psalterium/Mariaant.txt` at fixed revision `126a07f91ede04664108abb6fb20ace3f4de14b9` is snapshotted unmodified at `data/office/research/christmas-2026-marian-latin-pinned-source.txt`. Its Git blob SHA-1 is `bf44a58ba1076b17466b88fa4004c1cab29f96ae`. The blocking test `tests/divine-office-christmas-marian-source.mjs` hashes the exact byte stream with the canonical Git blob header. It contrasts Latin `[Advent]` (Angelus Domini / Gratiam tuam) against `[Nativiti]` (Post partum / Deus, qui salutis), requires Christmas starting the **24 December evening**, and leaves the entire reader authorization unchanged. This is an *exact pinned-source snapshot*, **not** a word-for-word independent 1961 Mame leaf comparison or a complete Christmas Compline source certificate. Existing Divinum Officium MIT attribution remains shipped.\n\nThe production reader, public date whitelist, general Office resolver and\nexisting 23 certified Advent dates are unchanged by this research PR.\n\n## Required implementation gates (do not merge based on this ledger)
+## Executable source-intake guard (draft PR #2702)\n\nThe draft now includes `src/office/compline-christmas-2026-research-gate.js`\nand `tests/divine-office-christmas-source-intake.mjs`, wired to the dedicated\nOffice integration workflow. These compare all seven fixed Office, weekday,\npsalter, Marian-ending and concurrence research assertions with the external\nJSON intake ledger. Deliberate mutations of 24/26/27 December and all\n7 dates × 2 recitation contexts × 2 ministers are tested **to remain\nWITHHELD with zero network fetches**. These are **28 negative safety checks**,\nnot 28 certified complete Office recitations. Full Latin source collation\nand phone acceptance for newly released dates are still required.\n\n### Pinned Marian Latin source-byte witness\n\nThe upstream `DivinumOfficium/divinum-officium` `web/www/horas/Latin/Psalterium/Mariaant.txt` at fixed revision `126a07f91ede04664108abb6fb20ace3f4de14b9` is snapshotted unmodified at `data/office/research/christmas-2026-marian-latin-pinned-source.txt`. Its Git blob SHA-1 is `bf44a58ba1076b17466b88fa4004c1cab29f96ae`. The blocking test `tests/divine-office-christmas-marian-source.mjs` hashes the exact byte stream with the canonical Git blob header. It contrasts Latin `[Advent]` (Angelus Domini / Gratiam tuam) against `[Nativiti]` (Post partum / Deus, qui salutis), requires Christmas starting the **24 December evening**, and leaves the entire reader authorization unchanged. This is an *exact pinned-source snapshot*, **not** a word-for-word independent 1961 Mame leaf comparison or a complete Christmas Compline source certificate. Existing Divinum Officium MIT attribution remains shipped.\n\nThe production reader, public date whitelist, general Office resolver and\nexisting 23 certified Advent dates are unchanged by this research PR.\n\n## Source-fed private Latin reading proof (9 November 2026)
+
+This draft now has a **separate, opt-in private Christmas research entry**
+(`assembleChristmas2026PrivateOfficeResearchReview`), while the original
+private reader and the public `LATIN_COMPLINE_RELEASE` whitelist remain
+restricted to the preceding **23 certified dates** (ending 20 December).
+
+The isolated research adapter reads exactly the pinned Latin Psalter,
+Ordinary, short lesson, hymn, Compline psalms, and Marian text from the
+existing proven source family, using each of the **seven fixed research
+appointments**. `tests/divine-office-christmas-private-complete-compline.mjs`
+checks 7 dates × 2 recitation contexts × 2 minister choices = **28
+*positive, complete PRIVATE source recitation projections***. Each returns
+42 original source events and 40 post-projection printed-ordinary events,
+the appropriate 30/26/30/30/30/30/30 psalm focus rows, proper Office dates,
+two blessing Amens and the precise `[Advent]` or `[Nativiti]` Latin
+Marian source. No English/French text is asserted. These are not independently
+certified public Christmas Offices; Christmas Vigil §173 / first festive
+Compline textual exceptions require independent printed/source adjudication.
+
+The private-only preview at `previews/private-divine-office.html` includes
+these dates in **Latin-only** source mode. Its phone-browser suite now performs
+**14 source-driven private reader journeys**, seven at 320px and seven at
+390px, asserting 42/40 source/reading moments, civil versus liturgical
+Office date, the exact Marian section, source-backed navigation, one-column
+Latin layout and absence of horizontal overflow. The existing public Prayer
+reader still refuses all 21–27 December dates *before fetch* in all 28
+context/minister combinations.
+
+The four exact-head workflows on source-and-phone commit
+`718cb715a937fac7bac3438ac1a81a1b26fd0766` all PASSED:
+
+- [Required main gate #42580879102](https://github.com/Fulcanelli13/ad-orientem/actions/runs/42580879102)
+- [Office source-first integration #42580878953](https://github.com/Fulcanelli13/ad-orientem/actions/runs/42580878953)
+- [320/390 private browser and native Prayer return #42580879044](https://github.com/Fulcanelli13/ad-orientem/actions/runs/42580879044)
+- [Mass Preface source gate #42580879085](https://github.com/Fulcanelli13/ad-orientem/actions/runs/42580879085)
+
+This CI evidence is **private-reader quality assurance only**, not proof
+of publication-level liturgical correctness. Do not merge as a public
+release and do not add dates to any published date/Hour whitelist before
+all remaining source approvals.
+
+## Required implementation gates (do not merge based on this ledger)
 
 1. Independently archive exact-date Office witnesses and independently
    compare *every new Latin string* to a suitable second Latin witness.
