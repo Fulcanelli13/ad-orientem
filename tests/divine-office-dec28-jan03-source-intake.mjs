@@ -43,7 +43,7 @@ test("seven finite dated year-boundary source appointments never authorize publi
   assert.equal(privateResearch.appointment.officeDate,r.officeDate);
  }
 });
-test("date rollover, octave and Holy Name Saturday psalter are independently fixed",()=>{
+test("date rollover, octave and Holy Name II-class Sunday Compline are independently fixed",()=>{
  const tuesday=record("2026-12-29"),wednesday=record("2026-12-30");
  assert.equal(tuesday.psalmDay,"Dominica");assert.equal(tuesday.rule,"175(e)");
  assert.equal(wednesday.psalmDay,"Dominica");assert.equal(wednesday.rule,"175(e)");
@@ -55,9 +55,9 @@ test("date rollover, octave and Holy Name Saturday psalter are independently fix
  const saturday=record("2027-01-02");
  assert.equal(saturday.firstVespers,"HOLY_NAME_I_VESPERS");
  assert.equal(saturday.officeDate,"2027-01-03");
- assert.equal(saturday.psalmDay,"Sabbato");
- assert.deepEqual(saturday.psalmIds,[87,102]);
- assert.equal(saturday.printedPsalmFrames,41);
+ assert.equal(saturday.psalmDay,"Dominica");
+ assert.deepEqual(saturday.psalmIds,[4,90,133]);
+ assert.equal(saturday.printedPsalmFrames,30);
  assert.equal(record("2027-01-03").psalmDay,"Dominica");
  assert.equal(record("2027-01-03").officeClass,"II_FEAST_ON_SUNDAY");
 });
@@ -70,8 +70,8 @@ test("all important cross-year/office/psalter/Marian mutations are rejected",()=
   ["2026-12-31",{officeDate:"2026-12-31"}],
   ["2026-12-31",{firstVespers:"NONE"}],
   ["2027-01-01",{psalmDay:"Feria VI"}],
-  ["2027-01-02",{psalmDay:"Dominica"}],
-  ["2027-01-02",{printedPsalmFrames:30}],
+  ["2027-01-02",{psalmDay:"Sabbato"}],
+  ["2027-01-02",{printedPsalmFrames:41}],
   ["2027-01-02",{officeDate:"2027-01-02"}],
   ["2027-01-03",{officeClass:"ORDINARY_SUNDAY"}],
   ["2027-01-03",{marianSection:"Advent"}],
