@@ -1,0 +1,151 @@
+{
+  "schema": "AO_DYK_CUSTOMS_400_COPY_EDIT_WAVE_04_V1",
+  "date": "2026-11-10",
+  "status": "EDITORIAL_DRAFT_ONLY_NOT_LIVE",
+  "record_count": 3,
+  "source_corpus": "data/research/did-you-know/dyk-customs-first-400-bilingual-review-20261110.v1.json",
+  "policy": [
+    "Original source-record EN/FR copy retained; these are reader-facing proposals only.",
+    "Author attribution remains available via the source view.",
+    "Pitrè 1900 describes historical local custom, not universal Roman 1962 practice or modern continuity.",
+    "Inherited source image-review flags do not count as a new original-page certification.",
+    "No public Home release authorized."
+  ],
+  "records": [
+    {
+      "id": "DYK-UM03-036",
+      "editorial_issue": "MIDNIGHT_PROCESSION",
+      "original_copy": {
+        "en": "Pitrè described the statues of Saints Cosmas and Damian returning to their Palermo church around midnight, to the sound of bells.",
+        "fr": "Pitrè décrivait le retour des statues des saints Côme et Damien dans leur église de Palerme vers minuit, au son des cloches."
+      },
+      "reader_copy": {
+        "en": "In an older Palermo procession for Saints Cosmas and Damian, the saints' statues returned to their church around midnight to the sound of bells.",
+        "fr": "Dans une ancienne procession des saints Côme et Damien à Palerme, les statues des saints rentraient dans leur église vers minuit, au son des cloches."
+      },
+      "source_ids": [
+        "PIT1900-NEW-056"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-NEW-056",
+          "url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              86
+            ],
+            "scan_pdf_page_1based": 148,
+            "italian_anchor": "mezzanotte"
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "regional_scope": "Sicily, Pitrè 1900",
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r22-21-added-review-cards.v1.json",
+        "original_record_id": "DYK-UM03-036",
+        "original_category": "customs",
+        "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM03-042",
+      "editorial_issue": "SPECIFY_SYMBOLIC_VISIT",
+      "original_copy": {
+        "en": "In Gratteri, Pitrè describes Saint James's statue being rushed across the square of the Franciscan convent and brought to the church door to 'visit' Saint Francis.",
+        "fr": "À Gratteri, Pitrè décrit la statue de saint Jacques traversant au pas de course la place du couvent franciscain, puis conduite à la porte de l'église pour « rendre visite » à saint François."
+      },
+      "reader_copy": {
+        "en": "At Gratteri in Sicily, bearers of Saint James's statue rushed across the Franciscan convent square and brought it to the church door as a symbolic « visit » to Saint Francis.",
+        "fr": "À Gratteri, en Sicile, les porteurs de la statue de saint Jacques traversaient en courant la place du couvent franciscain et la conduisaient jusqu'à la porte de l'église pour une « visite » symbolique à saint François."
+      },
+      "source_ids": [
+        "PIT1900-NEW-082"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-NEW-082",
+          "url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              125
+            ],
+            "scan_pdf_page_1based": 187,
+            "italian_anchor": "convento"
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "regional_scope": "Sicily, Pitrè 1900",
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r22-21-added-review-cards.v1.json",
+        "original_record_id": "DYK-UM03-042",
+        "original_category": "customs",
+        "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM03-030",
+      "editorial_issue": "ALTERNATING_ROUTE",
+      "original_copy": {
+        "en": "In old Palermo, Saint Rosalia's relic procession followed the Capo–San Pietro quarters one year and the Albergheria–Kalsa quarters the next.",
+        "fr": "Dans l'ancien Palerme, la procession des reliques de sainte Rosalie passait une année par les quartiers du Capo et de San Pietro, puis l'année suivante par l'Albergheria et la Kalsa."
+      },
+      "reader_copy": {
+        "en": "In an older Palermo procession for Saint Rosalia, the saint's relics passed through the Capo and San Pietro districts one year and through the Albergheria and Kalsa districts the next.",
+        "fr": "Dans une ancienne procession de sainte Rosalie à Palerme, les reliques de la sainte traversaient une année les quartiers du Capo et de San Pietro, et l'année suivante ceux de l'Albergheria et de la Kalsa."
+      },
+      "source_ids": [
+        "PIT1900-NEW-024"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-NEW-024",
+          "url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              36
+            ],
+            "scan_pdf_page_1based": 98,
+            "italian_anchor": "quartieri dell albergarla e della kalsa"
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "regional_scope": "Sicily, Pitrè 1900",
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r22-21-added-review-cards.v1.json",
+        "original_record_id": "DYK-UM03-030",
+        "original_category": "customs",
+        "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    }
+  ]
+}
