@@ -304,6 +304,19 @@ export function select1962CommemorationsForMassForm({
     Number(only.rank)===4&&!only.privileged&&
     /^sancti:02-03:4:/i.test(commId)&&
     String(only.path)==="Sancti/02-03";
+  // 13 May 2026: II-class Vigil of the Ascension, with an ordinary
+  // commemoration of III-class St Robert Bellarmine. The year's chosen
+  // principal Mass is the Vigil, not an independently selected Rogation
+  // votive Mass (or a local Marian celebration). RG 111 and RM 434:
+  // this ordinary commemoration belongs to Low Mass only.
+  // https://ordo.fsspx.org/fr/day/2026-05-13?lang=en&mode=liturgical
+  const may13AscensionVigilOrdinary=
+    calendarResolution.date==="2026-05-13"&&!sunday&&
+    mainId==="tempora:Pasc5-3:2:w"&&Number(main.rank)===2&&
+    String(main.path)==="Tempora/Pasc5-3"&&
+    String(data.sourcePath)==="Tempora/Pasc5-3"&&
+    /^sancti:05-13:3:/i.test(commId)&&Number(only.rank)===3&&
+    String(only.path)==="Sancti/05-13"&&!only.privileged;
   const ordinaryFourthClassSaint=!nativityOctavePlaceholder&&!sunday&&
     !only.privileged&&
     Number(only.rank)===4&&/^sancti:[0-9]{2}-[0-9]{2}[a-z]*:4:/i.test(commId)&&
@@ -320,6 +333,7 @@ export function select1962CommemorationsForMassForm({
     ordinaryPentecostFeria?"PENTECOST_SEASON_IV_CLASS_FERIA_ORDINARY_COMMEMORATION":
     ordinaryEasterFeria?"EASTER_SEASON_IV_CLASS_FERIA_ORDINARY_COMMEMORATION":
     ordinarySeptuagesimaFeria?"SEPTUAGESIMA_IV_CLASS_FERIA_ORDINARY_COMMEMORATION":
+    may13AscensionVigilOrdinary?"ASCENSION_VIGIL_II_CLASS_ORDINARY_BELLARMINE_COMMEMORATION":
     ordinaryLentenFeria?"LENT_PASSION_III_CLASS_FERIA_ORDINARY_COMMEMORATION":
     (saturdayBvmOrdinary||septuagesimaSaturdayBvmOrdinary)?
       "SATURDAY_BVM_IV_CLASS_ORDINARY_SANCTORAL_COMMEMORATION":null;
@@ -349,6 +363,8 @@ export function select1962CommemorationsForMassForm({
         ["1960_GENERAL_RUBRICS_26_107_111_A_D_112_113_114","1960_MISSAL_RUBRICS_433_434"]:
       ordinarySeptuagesimaFeria?
         ["1960_GENERAL_RUBRICS_107_108_111_D_112_113_114","1960_MISSAL_RUBRICS_433_434"]:
+      may13AscensionVigilOrdinary?
+        ["1960_GENERAL_RUBRICS_107_111_C_D_112_113","1960_MISSAL_RUBRICS_433_434"]:
         ["1960_GENERAL_RUBRICS_108_111_113","1960_MISSAL_RUBRICS_433_434"]),
     mainId,commemorationId:commId
   });
