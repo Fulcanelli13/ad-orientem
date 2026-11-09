@@ -48,17 +48,50 @@ async function atCue(page,cueId){
     const center=r.top-c.top+scroller.scrollTop+r.height/2;
     const maxScroll=Math.max(0,scroller.scrollHeight-scroller.clientHeight);
     const ideal=center-scroller.clientHeight*.39;
+    // The Gospel crosses occupy a short cue near a long reading. Testing
+    // the first transient matching frame can select the exact scroll boundary,
+    // where a later layout/scene refresh legitimately reveals the previous
+    // source cue. Require a stationary, multi-frame focus interval, with
+    // the same exact cue and cinematic scene. Do NOT accept C0083 as C0084
+    // or alter the production source tracker to make the test green.
+    const gospel=cue==="AO.SM.C0084";
     const candidates=[0,maxScroll];
     for(let y=Math.max(0,Math.floor((ideal-160)/12)*12);
       y<=Math.min(maxScroll,ideal+180);y+=12)candidates.push(y);
-    for(const y of [...new Set(candidates)]){
+    const positions=[...new Set(candidates)].sort((a,b)=>
+      Math.abs(a-ideal)-Math.abs(b-ideal));
+    const diagnostics=[];
+    for(const y of positions){
       scroller.scrollTop=Math.max(0,Math.min(maxScroll,y));
       scroller.dispatchEvent(new Event("scroll",{bubbles:true}));
       await frame();
-      if(api.getActiveCue()===cue)return {found:true,cue:api.getActiveCue(),section:card.sectionId};
+      if(api.getActiveCue()!==cue){
+        if(gospel&&diagnostics.length<12)diagnostics.push({
+          scrollTop:scroller.scrollTop,maxScroll:Math.max(0,scroller.scrollHeight-scroller.clientHeight),
+          firstCue:api.getActiveCue(),scene:document.querySelector("[data-ao-reader-shell]")?.dataset.cinematicScene
+        });
+        continue;
+      }
+      if(!gospel)return {found:true,cue:api.getActiveCue(),section:card.sectionId};
+      const frames=[];
+      for(let sample=0;sample<8;sample++){
+        await frame();
+        const shell=document.querySelector("[data-ao-reader-shell]");
+        frames.push({
+          cue:api.getActiveCue(),scene:shell?.dataset.cinematicScene,
+          scrollTop:scroller.scrollTop,
+          maxScroll:Math.max(0,scroller.scrollHeight-scroller.clientHeight)
+        });
+      }
+      if(frames.every(x=>x.cue===cue&&x.scene==="GOSPEL_CROSSES"))
+        return {found:true,cue:api.getActiveCue(),section:card.sectionId,
+          stableFrames:frames.length,settledScrollTop:scroller.scrollTop,
+          settledMaxScroll:frames.at(-1).maxScroll};
+      if(diagnostics.length<12)diagnostics.push({selectedScrollTop:y,frames});
     }
-    return {found:false,reason:"cue not focusable",active:api.getActiveCue(),
-      section:card.sectionId,maxScroll,center,ideal};
+    return {found:false,reason:gospel?"Gospel cue has no stable 8-frame cinematic focus interval":
+      "cue not focusable",active:api.getActiveCue(),
+      section:card.sectionId,maxScroll,center,ideal,diagnostics};
   },cueId);
 }
 async function snapshot(page,width,lang,cueId,expected,{reducedMotion=false}={}){
