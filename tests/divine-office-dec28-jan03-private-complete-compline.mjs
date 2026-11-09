@@ -77,8 +77,13 @@ test("source-fed complete 28 PRIVATE Latin variants cover seven fixed dates, two
     assert.equal(r.sourceEventCount,42);
     assert.equal(r.printedPsalmDisplayFrames,record.printedPsalmFrames);
     assert.equal(r.frames.filter(x=>x.kind==="PSALM").length,record.printedPsalmFrames);
-    assert.deepEqual(r.events.filter(x=>x.kind==="PSALM")
-     .map(e=>Number(/^Psalterium\/Psalmorum\/Psalm(\d+)/u.exec(e.sourceId)?.[1])),expected);
+    const sourcePsalmEvents=r.events.filter(x=>x.kind==="PSALM")
+     .map(e=>Number(/^Psalterium\/Psalmorum\/Psalm(\d+)/u.exec(e.sourceId)?.[1]));
+    assert.deepEqual([...new Set(sourcePsalmEvents)],expected,
+     "Saturday Psalm 102 is intentionally split into two source events");
+    if(record.date==="2027-01-02")
+     assert.deepEqual(sourcePsalmEvents,[87,102,102],
+      "Saturday Compline splits Psalm 102 while retaining Psalms 87 and 102");
     assert.equal(r.blessingAmensRestoredFromPinnedSource,2);
     assert.equal(r.presidingMinister,minister);
     assert.equal(r.openingPaterOmitted,context===COMPLINE_CONTEXT.FINAL_PRAYER);
