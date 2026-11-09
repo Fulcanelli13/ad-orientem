@@ -214,7 +214,8 @@ export function researchWitnessForReviewedAdventCompline(appointment){
   officeKind:profileByClass[appointment.officeClass],
   reviewStage:"DATE_SPECIFIC_OFFICE_RESEARCH_REVIEWED",
   occurrenceDisposition:"INDEPENDENT_OFFICE_PRECEDENCE_REVIEWED",
-  commemorationDisposition:"NO_COMPETITION",
+  commemorationDisposition:appointment.commemoration?
+   "ADJUDICATED_WITH_COMM_REQUIRED":"NO_COMPETITION",
   publicReleaseCertified:false,sourceTextCertified:false,
   translationCertified:false,exception:"NONE",properCompline:"NONE",
   assertedPsalmDay:appointment.psalmDay,
@@ -242,7 +243,9 @@ export function researchWitnessForReviewedAdventCompline(appointment){
    rubricUrl:OFFICE_COMPLINE_ORDO_RUBRICS,
    sourceId:(appointment.date<"2026-12-06"?
     "ao.office.2026-advent-i-dated-review|":
-    "ao.office.2026-advent-ii-dated-review|")+appointment.date,
+    appointment.date<"2026-12-14"?
+    "ao.office.2026-advent-ii-dated-review|":
+    "ao.office.2026-advent-iii-dated-review|")+appointment.date,
    officeOrdoUrl:appointment.date<"2026-12-06"?
     OFFICE_COMPLINE_ORDO_RUBRICS:
     "https://breviariumgregorianum.com/ordo-2026.php",

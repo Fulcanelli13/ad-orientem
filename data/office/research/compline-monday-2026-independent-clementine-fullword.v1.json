@@ -1,0 +1,46 @@
+{
+  "schema": "ao.office.advent-iii-monday-clementine-fullword-witness.v1",
+  "date": "2026-12-14",
+  "pinned": {
+    "repository": "DivinumOfficium/divinum-officium",
+    "revision": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+    "sourcePaths": {
+      "6": {
+        "sha": "5b4988836f690268e2a029f7ef8c27eb0ecfd814",
+        "path": "Psalterium/Psalmorum/Psalm6.txt"
+      },
+      "7": {
+        "sha": "2b6d1a429ff50523279a6f794a44067e00ff76ea",
+        "path": "Psalterium/Psalmorum/Psalm7.txt"
+      }
+    }
+  },
+  "independent": {
+    "repository": "jrichter/ClementineVulgateConverter",
+    "revision": "1f7093a14fa61374b0fe85db1965d9bd45dfdae1",
+    "path": "latin/Ps.lat",
+    "url": "https://github.com/jrichter/ClementineVulgateConverter/blob/1f7093a14fa61374b0fe85db1965d9bd45dfdae1/latin/Ps.lat"
+  },
+  "psalms": {
+    "6": {
+      "latin": "Domine, ne in furore tuo arguas me, neque in ira tua corripias me. Miserere mei, Domine, quoniam infirmus sum ; sana me, Domine, quoniam conturbata sunt ossa mea. Et anima mea turbata est valde ; sed tu, Domine, usquequo ? Convertere, Domine, et eripe animam meam ; salvum me fac propter misericordiam tuam. Quoniam non est in morte qui memor sit tui ; in inferno autem quis confitebitur tibi ? Laboravi in gemitu meo ; lavabo per singulas noctes lectum meum : lacrimis meis stratum meum rigabo. Turbatus est a furore oculus meus ; inveteravi inter omnes inimicos meos. Discedite a me omnes qui operamini iniquitatem, quoniam exaudivit Dominus vocem fletus mei. Exaudivit Dominus deprecationem meam ; Dominus orationem meam suscepit. Erubescant, et conturbentur vehementer, omnes inimici mei ; convertantur, et erubescant valde velociter.",
+      "pinnedWords": 123,
+      "independentWords": 123,
+      "recitationStichs": 10
+    },
+    "7": {
+      "latin": "Domine Deus meus, in te speravi ; salvum me fac ex omnibus persequentibus me, et libera me : nequando rapiat ut leo animam meam, dum non est qui redimat, neque qui salvum faciat. Domine Deus meus, si feci istud, si est iniquitas in manibus meis, si reddidi retribuentibus mihi mala, decidam merito ab inimicis meis inanis. Persequatur inimicus animam meam, et comprehendat ; et conculcet in terra vitam meam, et gloriam meam in pulverem deducat. Exsurge, Domine, in ira tua, et exaltare in finibus inimicorum meorum : et exsurge, Domine Deus meus, in præcepto quod mandasti, et synagoga populorum circumdabit te : et propter hanc in altum regredere : Dominus judicat populos. Judica me, Domine, secundum justitiam meam, et secundum innocentiam meam super me. Consumetur nequitia peccatorum, et diriges justum, scrutans corda et renes, Deus. Justum adjutorium meum a Domino, qui salvos facit rectos corde. Deus judex justus, fortis, et patiens ; numquid irascitur per singulos dies ? Nisi conversi fueritis, gladium suum vibrabit ; arcum suum tetendit, et paravit illum. Et in eo paravit vasa mortis, sagittas suas ardentibus effecit. Ecce parturiit injustitiam ; concepit dolorem, et peperit iniquitatem. Lacum aperuit, et effodit eum ; et incidit in foveam quam fecit. Convertetur dolor ejus in caput ejus, et in verticem ipsius iniquitas ejus descendet. Confitebor Domino secundum justitiam ejus, et psallam nomini Domini altissimi.",
+      "pinnedWords": 214,
+      "independentWords": 214,
+      "recitationStichs": 18
+    }
+  },
+  "fullLatinWords": 337,
+  "recitationStichs": 28,
+  "orthographicExceptions": [],
+  "substantiveDifferences": 0,
+  "missingWords": 0,
+  "appointmentSource": "https://breviariumgregorianum.com/ordo-2026.php",
+  "rights": "Original pinned Latin source under upstream MIT; no translations included",
+  "originalMame1961PsalterLeafCollated": false
+}

@@ -16,6 +16,10 @@ import {sourceBoundFestiveOrationAmenScores} from "./reader-oration-festive-amen
 import {sourceBoundOldSolemnOrationAmenScores} from "./reader-oration-old-solemn-amen-reference.js";
 import {resolveOrationAmenTonePolicy} from "./reader-oration-amen-tone-policy.js";
 import {twoGreetingTransferCandidates,GREETING_TRANSFER_EXPLICIT_SELECTION} from "./reader-two-greeting-transfer-candidates.js";
+import {
+  sourceBoundOrdinaryReferenceScores,ordinaryMovementAtSourceParagraph,
+  offlineOrdinarySettingChoices
+} from "./reader-inline-ordinary-reference.js";
 
 export const JULY07_REFERENCE_NOTATION_SCHEMA="ao-reader-july07-reference-notation-v1";
 // The original printed Introit GABC includes a distinct conditional "T. P."
@@ -148,6 +152,24 @@ export const JULY07_REFERENCE_CSS=String.raw`
  }
  .ao-proper-reference-mark{font-size:20px}
 }
+/* Source-bound Kyriale setting choice is next to the prayer, never buried in
+   the Schola dock. No melody is silently assigned to a local celebration. */
+.ao-ordinary-inline-choice{
+ display:flex;flex-direction:column;gap:4px;min-width:0;width:100%;
+ margin:7px 0 12px;padding:8px 0;border-top:1px solid rgba(206,190,220,.11);
+ font:500 11px/1.4 var(--ao-font-ui,system-ui,sans-serif);
+ color:var(--ao-muted,#aaa79f)
+}
+.ao-ordinary-inline-choice select{
+ box-sizing:border-box;display:block;min-width:0;width:100%;
+ max-width:100%;min-height:40px;padding:8px 22px 8px 8px;
+ background:transparent;color:var(--ao-text,#ece6d9);
+ border:1px solid rgba(206,190,220,.25);border-radius:5px;
+ font:500 12px/1.4 var(--ao-font-ui,system-ui,sans-serif)
+}
+.ao-ordinary-inline-choice select option{background:#171e29;color:#eee}
+.ao-ordinary-inline-choice select:focus-visible{outline:2px solid var(--ao-mass-accent)}
+.ao-reader-shell[data-mode="MISSAL"] .ao-ordinary-inline-choice{grid-column:1/-1}
 `;
 
 // The selected 1962 Proper and its exact source-owned paragraph authorize
@@ -157,7 +179,8 @@ export function referenceScoresForParagraph(input={}){
 }
 
 export function createDatedProperNotationPreview({
- root,enabled=null,engraverFactory=createOfflineChantEngraver
+ root,enabled=null,engraverFactory=createOfflineChantEngraver,
+ onOrdinarySelection=null
 }={}){
  if(!root?.querySelectorAll)throw new TypeError("Mass reader root required");
  const doc=root.ownerDocument;
@@ -169,7 +192,7 @@ export function createDatedProperNotationPreview({
  // preferences toggle still supports turning notation off/on at any time.
  const requestedPreview=new URLSearchParams(query).get("chant_preview");
  let active=enabled===null?requestedPreview!=="0":enabled===true;
- let entries=[],toneNotes=[],orationAmenHandoffs=[],generation=0,modal=null,modalEngraver=null,returnFocus=null;
+ let entries=[],toneNotes=[],ordinaryChoosers=[],orationAmenHandoffs=[],generation=0,modal=null,modalEngraver=null,returnFocus=null;
  function closeZoom(){
   if(modal?.open)modal.close();
   modalEngraver?.destroy();modalEngraver=null;
@@ -210,7 +233,8 @@ export function createDatedProperNotationPreview({
   closeZoom();
   for(const e of entries){e.engraver?.destroy();e.host.remove()}
   for(const n of toneNotes)n.remove();
-  entries=[];toneNotes=[];orationAmenHandoffs=[];
+  for(const c of ordinaryChoosers)c.remove();
+  entries=[];toneNotes=[];ordinaryChoosers=[];orationAmenHandoffs=[];
  }
  function render({mode="LIVE",form,resolvedMass,massPlan=null,paragraphs=[],selectedSettings={}}={}){
   clear();
@@ -248,7 +272,46 @@ export function createDatedProperNotationPreview({
      tone.note.fr:tone.note.en;
     node.append(note);toneNotes.push(note);
    }
+   const anchor=ordinaryMovementAtSourceParagraph({paragraph:p,form,resolvedMass});
+   if(anchor && typeof onOrdinarySelection==="function"){
+     const movement=anchor.movement;
+     const choices=offlineOrdinarySettingChoices(movement);
+     if(choices.length){
+       const chooser=doc.createElement("label");
+       chooser.className="ao-ordinary-inline-choice";
+       chooser.dataset.ordinaryReferenceChooser=movement;
+       const hint=doc.createElement("span");
+       hint.textContent="Gregorian notation · choose your local "+movement.replaceAll("_"," ").toLowerCase()+" setting";
+       const select=doc.createElement("select");
+       select.setAttribute("aria-label","Select source-indexed "+movement.replaceAll("_"," ")+" Gregorian melody");
+       const empty=doc.createElement("option");
+       empty.value="";empty.textContent="No setting selected · printed Latin only";
+       select.append(empty);
+       for(const choice of choices){
+         const option=doc.createElement("option");
+         option.value=choice.id;
+         option.textContent=choice.title+" · research transcription";
+         select.append(option);
+       }
+       const chosen=String(selectedSettings?.[movement]??"");
+       if(chosen && !choices.some(c=>c.id===chosen)){
+         const unavailable=doc.createElement("option");
+         unavailable.value=chosen;
+         unavailable.textContent="Other local setting · score not yet available";
+         select.append(unavailable);
+       }
+       select.value=chosen;
+       select.addEventListener("change",()=>{
+         onOrdinarySelection({movement,settingId:select.value});
+       });
+       chooser.append(hint,select);
+       node.append(chooser);ordinaryChoosers.push(chooser);
+     }
+   }
    const scores=referenceScoresForParagraph({paragraph:p,resolvedMass,form});
+   const ordinary=sourceBoundOrdinaryReferenceScores({
+    paragraph:p,form,resolvedMass,selectedSettings
+   });
    const participatory=participationReferenceScoresForParagraph({
     paragraph:p,paragraphs,form,resolvedMass,massPlan,selectedSettings
    });
@@ -267,20 +330,28 @@ export function createDatedProperNotationPreview({
    const greetingCandidates=twoGreetingTransferCandidates({
     paragraph:p,paragraphs,form,resolvedMass,selectedSettings:researchSettings
    });
-   for(const score of [...scores,...participatory,...celebrantPreface,...otherCelebrant,...orationScores,...oldSolemnScores,...greetingCandidates]){
+   for(const score of [...scores,...ordinary,...participatory,...celebrantPreface,...otherCelebrant,...orationScores,...oldSolemnScores,...greetingCandidates]){
     const host=doc.createElement("span");host.className="ao-proper-reference-notation";
     host.dataset.referenceScore=score.id;
     host.dataset.approved="false";
+    if(score.kind==="ORDINARY_RESEARCH"){
+      host.dataset.referenceOrdinaryMovement=score.movement;
+      host.dataset.referenceOrdinarySetting=score.settingId;
+    }
     const title=doc.createElement("small");title.className="ao-proper-reference-label";
     const category=score.sourceCueIds?.length?
       (score.kind==="CELEBRANT_INTONATION"?"Intonation":"Response"):
       PROPER_REFERENCE_LABELS[score.key]??"Chant";
-    title.textContent=score.sourceContextCertified===false?
-      "1961 · NOT source-certified for this Mass":
-      category+" · 1961 review pending";
-    title.title=score.sourceContextCertified===false?
-      "A reference transcription, not verified as this Mass's music.":
-      "1961 reference transcription awaiting independent editorial musical review.";
+    title.textContent=score.kind==="ORDINARY_RESEARCH"
+      ?score.title+" · local setting · research transcription, 1961 review pending"
+      :score.sourceContextCertified===false
+        ?"1961 · NOT source-certified for this Mass"
+        :category+" · 1961 review pending";
+    title.title=score.kind==="ORDINARY_RESEARCH"
+      ?"Locally selected Kyriale example, not certified as the melody sung at this Mass. No approval of notes, neumes, rhythm or underlay."
+      :score.sourceContextCertified===false
+        ?"A reference transcription, not verified as this Mass's music."
+        :"1961 reference transcription awaiting independent editorial musical review.";
     const staff=doc.createElement("span");staff.className="ao-proper-reference-staff";
     staff.setAttribute("role","img");
     staff.setAttribute("aria-label",(score.incipit??score.sourceName)+

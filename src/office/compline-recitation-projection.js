@@ -10,7 +10,7 @@
  * PRIVATE REVIEW ONLY: this is not edition/rights certification and
  * never sets any public release flag.
  */
-import {projectSaturdayComplinePsalmFrame,projectSundayComplinePsalmFrame,projectFerialComplinePsalmFrame}
+import {projectSaturdayComplinePsalmFrame,projectSundayComplinePsalmFrame,projectFerialComplinePsalmFrame,projectMondayComplinePsalmFrame}
  from "./compline-psalm-display-projection.js";
 export const COMPLINE_CONTEXT=Object.freeze({
  FINAL_PRAYER:"FINAL_PRAYER",OTHER_TIME:"OTHER_TIME"
@@ -212,19 +212,24 @@ export function projectComplineRecitation(review,{
   if(saturdayNumbered===null)return withheld("COMPLINE_SATURDAY_PSALM_NUMBERING_DRIFT");
   const sundayNumbered=projectSundayComplinePsalmFrame(saturdayNumbered);
   if(sundayNumbered===null)return withheld("COMPLINE_SUNDAY_PSALM_NUMBERING_DRIFT");
-  const numbered=projectFerialComplinePsalmFrame(sundayNumbered);
-  if(numbered===null)return withheld("COMPLINE_FERIAL_PSALM_NUMBERING_DRIFT");
+  const ferialNumbered=projectFerialComplinePsalmFrame(sundayNumbered);
+  if(ferialNumbered===null)return withheld("COMPLINE_FERIAL_PSALM_NUMBERING_DRIFT");
+  const numbered=projectMondayComplinePsalmFrame(ferialNumbered);
+  if(numbered===null)return withheld("COMPLINE_MONDAY_PSALM_NUMBERING_DRIFT");
   // The printed Scripture labels are separate from spoken Latin words.
   // Confiteor and hymn markup are not Psalm display-label projections.
   if(numbered!==clean)psalmLabelCount++;
   resultFrames.push(numbered);
  }
- const saturday=["2026-11-28","2026-12-05","2026-12-12"].includes(review.civilDate);
+ const saturday=["2026-11-28","2026-12-05","2026-12-12",
+  "2026-12-19"].includes(review.civilDate);
  const sunday=["2026-11-29","2026-11-30","2026-12-06",
-  "2026-12-07","2026-12-08","2026-12-13"].includes(review.civilDate);
+  "2026-12-07","2026-12-08","2026-12-13","2026-12-20"].includes(review.civilDate);
  const weekdayCounts=Object.freeze({"2026-12-01":26,"2026-12-02":30,
   "2026-12-03":33,"2026-12-04":36,"2026-12-09":30,
-  "2026-12-10":33,"2026-12-11":36});
+  "2026-12-10":33,"2026-12-11":36,
+  "2026-12-14":28,"2026-12-15":26,"2026-12-16":30,
+  "2026-12-17":33,"2026-12-18":36});
  const expected=saturday?41:sunday?30:weekdayCounts[review.civilDate];
  if(!Number.isInteger(expected)||psalmLabelCount!==expected)
   return withheld("COMPLINE_APPOINTED_PSALM_COVERAGE_MISMATCH");

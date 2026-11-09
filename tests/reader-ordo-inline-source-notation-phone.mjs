@@ -286,6 +286,52 @@ try{
     animations:"disabled"});
    console.log("PASS actual Ordo Gospel ad-libitum switch",JSON.stringify({width,mode,tone,
     leader:"AO.REF.LEADER_GOSPEL_4491.0082",response:"AO.REF.GOSPEL_4491.0083"}));
+   // New Ordinary acceptance: choose the historical setting AT the prayer,
+   // never in Settings, Schola Music Plan or a separate source viewer.
+   if(tone==="SOLEMN"){
+    const ordinaryCases=mode==="missal" ? [
+      {cue:"AO.SM.C0044",movement:"KYRIE",setting:"MASS_08",score:"GREGOBASE-1184"},
+      {cue:"AO.SM.C0053",movement:"GLORIA",setting:"MASS_08",score:"GREGOBASE-961"},
+      {cue:"AO.SM.C0089",movement:"CREDO",setting:"CREDO_03",score:"GREGOBASE-749"},
+      {cue:"AO.SM.C0145",movement:"SANCTUS_BENEDICTUS",setting:"MASS_08",score:"GREGOBASE-1384"},
+      {cue:"AO.SM.C0222",movement:"AGNUS_DEI",setting:"MASS_08",score:"GREGOBASE-2760"}
+    ]:[
+      {cue:"AO.SM.C0044",movement:"KYRIE",setting:"MASS_08",score:"GREGOBASE-1184"},
+      {cue:"AO.SM.C0222",movement:"AGNUS_DEI",setting:"MASS_08",score:"GREGOBASE-2760"}
+    ];
+    for(const example of ordinaryCases){
+     await page.evaluate(cue=>{
+      const api=window.__AO_PHONE_PREVIEW;
+      const card=api.model.cards.find(c=>JSON.stringify(c).includes(cue));
+      if(!card)throw new Error("No 65-card Ordinary source cue "+cue);
+      api.showSequence(card.sequence);
+     },example.cue);
+     const chooser=page.locator('[data-ordinary-reference-chooser="'+example.movement+'"] select');
+     await chooser.waitFor({timeout:20000});
+     assert.equal(await chooser.count(),1,"Exactly one source-owned inline setting choice");
+     assert.equal(await page.locator('[data-reference-score="'+example.score+'"]').count(),0,
+       "Unselected Kyriale example must not be assigned as the parish melody");
+     await chooser.selectOption(example.setting);
+     await page.waitForFunction(({score})=>!!document.querySelector(
+       '[data-reference-score="'+score+'"][data-reference-ready="true"] .ao-proper-reference-staff svg'
+     ),{score:example.score},{timeout:35000});
+     const actual=await page.evaluate(({movement,setting,score})=>{
+      const staff=document.querySelector('[data-reference-score="'+score+'"]');
+      return {count:document.querySelectorAll('[data-reference-score="'+score+'"]').length,
+       movement:staff?.dataset.referenceOrdinaryMovement,setting:staff?.dataset.referenceOrdinarySetting,
+       approved:staff?.dataset.approved,firstCue:staff?.closest('[data-cue-id]')?.dataset.cueId,
+       latin:staff?.closest(".ao-reader-paragraph")?.querySelector(".ao-line-primary")?.textContent,
+       overflow:document.documentElement.scrollWidth-innerWidth};
+     },example);
+     assert.equal(actual.count,1,"No repeated full GABC at a later ordinary cue");
+     assert.equal(actual.movement,example.movement);
+     assert.equal(actual.setting,example.setting);
+     assert.equal(actual.approved,"false","Unreviewed 1961 transcription stays provisional");
+     assert.ok(actual.latin?.length>3,"The source Latin must remain in the prayer");
+     assert.ok(actual.overflow<=1,"Gregorian staff must not overflow "+width+"px");
+     console.log("PASS in-prayer Ordinary source GABC",JSON.stringify({width,mode,...example,...actual}));
+    }
+   }
    // Revisit the initial source response for the original on/off regression.
    await page.evaluate(sequence=>window.__AO_PHONE_PREVIEW.showSequence(sequence),
     entry.target.sequence);

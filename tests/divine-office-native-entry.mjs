@@ -23,6 +23,15 @@ test("Immaculate Conception first Vespers has 8 December Office date on civil 7 
  assert.equal(saturday.officeDate,"2026-12-13");
  assert.equal(saturday.published,true);
 });
+test("Ember Saturday first Vespers retains Advent IV Office date while praying Saturday Compline",()=>{
+ const r=officeRouteState({date:"2026-12-19",hour:"COMPLINE"});
+ assert.equal(r.status,"RELEASED");
+ assert.equal(r.officeDate,"2026-12-20");
+ assert.equal(r.published,true);
+ const sunday=officeRouteState({date:"2026-12-20",hour:"COMPLINE"});
+ assert.equal(sunday.officeDate,"2026-12-20");
+ assert.equal(sunday.published,true);
+});
 test("First Vespers retains separate civil and Office dates",()=>{
   const r=officeRouteState({date:"2026-11-28",hour:"VESPERS"});
   assert.equal(r.status,"SOURCE_RESEARCH_ONLY");
@@ -34,7 +43,7 @@ test("First Vespers retains separate civil and Office dates",()=>{
 test("Missing dates, variants and unresearched Hours cannot fill from Mass",()=>{
   for(const args of [
     {date:"2026-11-08",hour:"COMPLINE"},
-    {date:"2026-12-14",hour:"COMPLINE"},
+    {date:"2026-12-21",hour:"COMPLINE"},
     {date:"2026-11-28",hour:"MATINS"},
     {date:"2026-11-28",hour:"COMPLINE",calendarScope:"LOCAL"},
     {date:"2026-02-30",hour:"VESPERS"},
