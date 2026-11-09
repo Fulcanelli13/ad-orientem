@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { pickActiveCue, pickReadingParagraph, markActiveCue, markUncuedReadingFocus } from "../src/mass/reader-cue-focus.js";
+import { pickActiveCue, pickReadingParagraph, markActiveCue, markUncuedReadingFocus, cueItemsFromScrollContainer } from "../src/mass/reader-cue-focus.js";
 
 const items=[
   {cueId:"AO.SM.C0001",top:0,bottom:34},
