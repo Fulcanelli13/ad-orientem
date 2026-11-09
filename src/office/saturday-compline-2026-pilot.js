@@ -216,7 +216,7 @@ function stanzas(lines){
 export async function assembleWeekdayComplinePilot({
  reader,weekday="Sabbato",date=null,languages,
  privateChristmasResearch=false,privateYearBoundaryResearch=false,
- privateEpiphanyResearch=false
+ privateEpiphanyResearch=false,privatePostEpiphanyResearch=false
 }={}){
  const active=checkedLanguages(languages);
  if(!active)return held("COMPLINE_LANGUAGE_SCOPE_NOT_APPROVED",weekday);
