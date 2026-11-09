@@ -16,6 +16,8 @@ import {reviewAdventIComplineAppointment}
  from "./compline-advent-2026-appointments.js";
 import {researchChristmas2026PrivateComplineAppointment}
  from "./compline-christmas-2026-research-gate.js";
+import {researchDec28Jan03PrivateComplineAppointment}
+ from "./compline-dec28-jan03-2027-source-gate.js";
 const PRIVATE_APPOINTMENT_STATUSES=new Set([
  "EXPLICIT_ROMAN_1960_APPOINTMENT_RESEARCH",
  "EXPLICIT_CHRISTMAS_2026_PRIVATE_SOURCE_RESEARCH"
@@ -74,13 +76,18 @@ function held(reason,weekday="Sabbato"){
  });
 }
 export function createComplinePinnedReader({
- fetchSource,weekday=null,date=null,languages,privateChristmasResearch=false
+ fetchSource,weekday=null,date=null,languages,
+ privateChristmasResearch=false,privateYearBoundaryResearch=false
 }={}){
  const active=checkedLanguages(languages);
  if(!active)throw Error("COMPLINE_LANGUAGE_SCOPE_NOT_APPROVED");
- const reviewed=date===null?null:privateChristmasResearch?
-  privateComplineSourceAppointment(date):reviewAdventIComplineAppointment(date);
- if(date!==null&&!(privateChristmasResearch?
+ const reviewed=date===null?null:privateYearBoundaryResearch?
+  researchDec28Jan03PrivateComplineAppointment(date):
+  privateChristmasResearch?privateComplineSourceAppointment(date):
+  reviewAdventIComplineAppointment(date);
+ if(date!==null&&!(privateYearBoundaryResearch?
+     reviewed.status==="EXPLICIT_DEC28_JAN03_PRIVATE_SOURCE_RESEARCH":
+     privateChristmasResearch?
      PRIVATE_APPOINTMENT_STATUSES.has(reviewed.status):
      reviewed.status==="EXPLICIT_ROMAN_1960_APPOINTMENT_RESEARCH"))
   throw Error("COMPLINE_UNREVIEWED_DATE_READER_WITHHELD");
@@ -194,16 +201,20 @@ function stanzas(lines){
  return parts.some(x=>!x.length)?null:parts;
 }
 export async function assembleWeekdayComplinePilot({
- reader,weekday="Sabbato",date=null,languages,privateChristmasResearch=false
+ reader,weekday="Sabbato",date=null,languages,
+ privateChristmasResearch=false,privateYearBoundaryResearch=false
 }={}){
  const active=checkedLanguages(languages);
  if(!active)return held("COMPLINE_LANGUAGE_SCOPE_NOT_APPROVED",weekday);
  const appointedDate=date??(weekday==="Sabbato"?"2026-11-28":
   weekday==="Feria III"?"2026-12-01":null);
- const review=privateChristmasResearch?
-  privateComplineSourceAppointment(appointedDate):
+ const review=privateYearBoundaryResearch?
+  researchDec28Jan03PrivateComplineAppointment(appointedDate):
+  privateChristmasResearch?privateComplineSourceAppointment(appointedDate):
   reviewAdventIComplineAppointment(appointedDate);
- if(!(privateChristmasResearch?PRIVATE_APPOINTMENT_STATUSES.has(review.status):
+ if(!(privateYearBoundaryResearch?
+     review.status==="EXPLICIT_DEC28_JAN03_PRIVATE_SOURCE_RESEARCH":
+     privateChristmasResearch?PRIVATE_APPOINTMENT_STATUSES.has(review.status):
      review.status==="EXPLICIT_ROMAN_1960_APPOINTMENT_RESEARCH"))
   return held("OFFICE_DATE_APPOINTMENT_NOT_REVIEWED",weekday);
  const appointment=review.appointment,psalmDay=appointment.psalmDay;
@@ -486,5 +497,27 @@ export async function assembleChristmas2026PrivateLatinComplinePilot({reader,dat
   return held("CHRISTMAS_PRIVATE_RESEARCH_DATE_UNREVIEWED");
  return assembleWeekdayComplinePilot({
   reader,date,languages:LATIN_ONLY,privateChristmasResearch:true
+ });
+}
+
+/**
+ * YEAR-BOUNDARY PRIVATE RESEARCH ONLY. Intentionally separate from both
+ * generic and earlier Christmas (21–27 December) reader constructors.
+ * Nothing here changes public Office dates or marks a liturgy certified.
+ */
+export function createDec28Jan03PrivateLatinPinnedReader({date,fetchSource}={}){
+ const review=researchDec28Jan03PrivateComplineAppointment(date);
+ if(review.status!=="EXPLICIT_DEC28_JAN03_PRIVATE_SOURCE_RESEARCH")
+  throw Error("YEAR_BOUNDARY_PRIVATE_COMPLINE_DATE_NOT_REVIEWED");
+ return createComplinePinnedReader({
+  date,fetchSource,languages:LATIN_ONLY,privateYearBoundaryResearch:true
+ });
+}
+export async function assembleDec28Jan03PrivateLatinComplinePilot({reader,date}={}){
+ const review=researchDec28Jan03PrivateComplineAppointment(date);
+ if(review.status!=="EXPLICIT_DEC28_JAN03_PRIVATE_SOURCE_RESEARCH")
+  return held("YEAR_BOUNDARY_PRIVATE_COMPLINE_DATE_NOT_REVIEWED");
+ return assembleWeekdayComplinePilot({
+  reader,date,languages:LATIN_ONLY,privateYearBoundaryResearch:true
  });
 }
