@@ -1,0 +1,300 @@
+{
+  "schema": "ao-mass-music-m36-final-seven-1961-print-structural-survey-v1",
+  "auditedAt": "2026-11-09",
+  "originalEdition": "Graduale Romanum (Solesmes, 1961), Kyriale",
+  "printedFacsimilePdf": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+  "method": [
+    "Directly inspected the original 1961 print page images 29*, 30*, 39*, 40*, 41*, 55*, 56*, 64*, 65* and 66* in the source PDF; observed printed opening/closing headings, page continuation, Latin clause placement and repeat markers.",
+    "Cross-referenced the seven unmodified locally stored GregoBase GABC source strings, exact selection IDs and source folio spans. Note-bearing source groups and original-string fingerprints come from the repository source-token procedure, not visually counted printed notes.",
+    "Structural visual comparison does not certify each pitch, neume, episema/mora, accidentals, text underlay, engraving accuracy, printed repeat rule or human editorial approval. No new score or video/audio programme is approved."
+  ],
+  "cumulativeCoverage": {
+    "storedResearchTranscriptions": 20,
+    "previouslyM31StructurallySurveyed": 5,
+    "previouslyM34StructurallySurveyed": 4,
+    "previouslyM35StructurallySurveyed": 4,
+    "newM36StructurallySurveyed": 7,
+    "totalDistinctStructurallySurveyed": 20,
+    "remainingWithoutStructuralSurvey": 0,
+    "printedNoteByNoteCertifiedScores": 0,
+    "editoriallyApprovedScores": 0,
+    "provenLocalChoirPerformances": 0
+  },
+  "otherPrintedAlternativeHeld": {
+    "kind": "KYRIE_XVII_ALTERNATIVE",
+    "printedFolio": "56*",
+    "originalPrintedImage": "https://gregobase.selapa.net/sources/2/933.png",
+    "heading": "Vel, ubi moris est",
+    "status": "DISTINCT_OPTIONAL_PRINTED_VARIANT_NOT_SAME_AS_GREGOBASE_272",
+    "mustNotAutoSubstitute": true,
+    "newScoreAdded": false
+  },
+  "scoreSurveys": [
+    {
+      "gregobaseId": 272,
+      "scoreId": "GREGOBASE-272",
+      "movement": "KYRIE",
+      "selection": "MASS_17",
+      "title": "Kyrie XVII",
+      "printedPages": [
+        "55*"
+      ],
+      "pdfPagesOneBased": [
+        57
+      ],
+      "originalPageImages": [
+        "https://gregobase.selapa.net/sources/2/932.png"
+      ],
+      "sourceGabcFile": "src/mass/reader-kyriale-research-batch2.js",
+      "gregobaseSourceUrl": "https://gregobase.selapa.net/chant.php?id=272",
+      "sourceGabcNoteBearingGroups": 27,
+      "sourceGabcCodeUnitFnv1a32": "eebb7a65",
+      "visuallyObserved": [
+        "The ordinary Kyrie XVII is printed in full beneath the XVII heading at the bottom of p.55*.",
+        "The source preserves Kyrie iij., Christe iij., Kyrie ij., and a distinctive final Kyrie with marked starred divisions; its terminal phrase must not be collapsed into a first-phrase repeat.",
+        "The italic 'Vel, ubi moris est' Kyrie on p.56* is a different optional printed variant; it is not the source selected by GREGOBASE-272."
+      ],
+      "holds": [
+        "Do not assign the printed 56* alternative to GREGOBASE-272 or infer its use from Advent/Lent."
+      ],
+      "status": "PRINTED_TEXT_AND_PHRASE_STRUCTURE_VISUALLY_INSPECTED_ONLY",
+      "fullPrintedAbsolutePitchParity": "NOT_CERTIFIED",
+      "fullPrintedNeumeParity": "NOT_CERTIFIED",
+      "fullPrintedSyllabicUnderlayParity": "NOT_CERTIFIED",
+      "fullPrintedRhythmicParity": "NOT_CERTIFIED",
+      "editorialScoreApproval": false,
+      "observedCommunityPerformance": false
+    },
+    {
+      "gregobaseId": 961,
+      "scoreId": "GREGOBASE-961",
+      "movement": "GLORIA",
+      "selection": "MASS_08",
+      "title": "Gloria VIII · De Angelis",
+      "printedPages": [
+        "29*",
+        "30*"
+      ],
+      "pdfPagesOneBased": [
+        31,
+        32
+      ],
+      "originalPageImages": [
+        "https://gregobase.selapa.net/sources/2/906.png",
+        "https://gregobase.selapa.net/sources/2/907.png"
+      ],
+      "sourceGabcFile": "src/mass/reader-ordinary-scores-1961.js",
+      "gregobaseSourceUrl": "https://gregobase.selapa.net/chant.php?id=961",
+      "sourceGabcNoteBearingGroups": 196,
+      "sourceGabcCodeUnitFnv1a32": "a5986d2a",
+      "visuallyObserved": [
+        "Gloria VIII begins on p.29*, following the end of Kyrie VIII.",
+        "The clause Qui tollis peccata mundi begins toward the foot of p.29* and continues onto p.30*.",
+        "The conclusion Cum Sancto Spiritu ... Amen appears on p.30* before the distinct Sanctus VIII heading."
+      ],
+      "holds": [],
+      "status": "PRINTED_TEXT_AND_PHRASE_STRUCTURE_VISUALLY_INSPECTED_ONLY",
+      "fullPrintedAbsolutePitchParity": "NOT_CERTIFIED",
+      "fullPrintedNeumeParity": "NOT_CERTIFIED",
+      "fullPrintedSyllabicUnderlayParity": "NOT_CERTIFIED",
+      "fullPrintedRhythmicParity": "NOT_CERTIFIED",
+      "editorialScoreApproval": false,
+      "observedCommunityPerformance": false
+    },
+    {
+      "gregobaseId": 303,
+      "scoreId": "GREGOBASE-303",
+      "movement": "GLORIA",
+      "selection": "MASS_11",
+      "title": "Gloria XI · Orbis factor",
+      "printedPages": [
+        "39*",
+        "40*"
+      ],
+      "pdfPagesOneBased": [
+        41,
+        42
+      ],
+      "originalPageImages": [
+        "https://gregobase.selapa.net/sources/2/916.png",
+        "https://gregobase.selapa.net/sources/2/917.png"
+      ],
+      "sourceGabcFile": "src/mass/reader-kyriale-research-batch2.js",
+      "gregobaseSourceUrl": "https://gregobase.selapa.net/chant.php?id=303",
+      "sourceGabcNoteBearingGroups": 196,
+      "sourceGabcCodeUnitFnv1a32": "918bfef2",
+      "visuallyObserved": [
+        "Gloria XI begins after Kyrie XI at p.39*; opening 'Gloria in excelsis Deo' is present.",
+        "The Qui tollis peccata mundi clause begins at the bottom of p.39* and continues across the 39* to 40* page boundary.",
+        "The Gloria concludes with Amen on p.40*, preceding a separately headed Sanctus XI."
+      ],
+      "holds": [],
+      "status": "PRINTED_TEXT_AND_PHRASE_STRUCTURE_VISUALLY_INSPECTED_ONLY",
+      "fullPrintedAbsolutePitchParity": "NOT_CERTIFIED",
+      "fullPrintedNeumeParity": "NOT_CERTIFIED",
+      "fullPrintedSyllabicUnderlayParity": "NOT_CERTIFIED",
+      "fullPrintedRhythmicParity": "NOT_CERTIFIED",
+      "editorialScoreApproval": false,
+      "observedCommunityPerformance": false
+    },
+    {
+      "gregobaseId": 749,
+      "scoreId": "GREGOBASE-749",
+      "movement": "CREDO",
+      "selection": "CREDO_03",
+      "title": "Credo III",
+      "printedPages": [
+        "64*",
+        "65*",
+        "66*"
+      ],
+      "pdfPagesOneBased": [
+        66,
+        67,
+        68
+      ],
+      "originalPageImages": [
+        "https://gregobase.selapa.net/sources/2/941.png",
+        "https://gregobase.selapa.net/sources/2/942.png",
+        "https://gregobase.selapa.net/sources/2/943.png"
+      ],
+      "sourceGabcFile": "src/mass/reader-ordinary-scores-1961.js",
+      "gregobaseSourceUrl": "https://gregobase.selapa.net/chant.php?id=749",
+      "sourceGabcNoteBearingGroups": 366,
+      "sourceGabcCodeUnitFnv1a32": "78ccb2e5",
+      "visuallyObserved": [
+        "Credo III starts beneath the terminal lines of Credo II on p.64*; the first heading at the top of that page alone is not Credo III.",
+        "The source follows Credo in unum Deum through the Incarnatus, Crucifixus and Et resurrexit clauses across pages 64*–65*.",
+        "The creed concludes at the Amen on p.66*; neither preceding Credo II text nor the next heading belongs to this score."
+      ],
+      "holds": [
+        "Credo III is a distinct independent CREDO_03 selection, never inherited automatically from Mass I, VIII, XI or XVII."
+      ],
+      "status": "PRINTED_TEXT_AND_PHRASE_STRUCTURE_VISUALLY_INSPECTED_ONLY",
+      "fullPrintedAbsolutePitchParity": "NOT_CERTIFIED",
+      "fullPrintedNeumeParity": "NOT_CERTIFIED",
+      "fullPrintedSyllabicUnderlayParity": "NOT_CERTIFIED",
+      "fullPrintedRhythmicParity": "NOT_CERTIFIED",
+      "editorialScoreApproval": false,
+      "observedCommunityPerformance": false
+    },
+    {
+      "gregobaseId": 1106,
+      "scoreId": "GREGOBASE-1106",
+      "movement": "SANCTUS_BENEDICTUS",
+      "selection": "MASS_11",
+      "title": "Sanctus XI · Benedictus",
+      "printedPages": [
+        "40*",
+        "41*"
+      ],
+      "pdfPagesOneBased": [
+        42,
+        43
+      ],
+      "originalPageImages": [
+        "https://gregobase.selapa.net/sources/2/917.png",
+        "https://gregobase.selapa.net/sources/2/918.png"
+      ],
+      "sourceGabcFile": "src/mass/reader-kyriale-research-batch2.js",
+      "gregobaseSourceUrl": "https://gregobase.selapa.net/chant.php?id=1106",
+      "sourceGabcNoteBearingGroups": 55,
+      "sourceGabcCodeUnitFnv1a32": "fcb745c8",
+      "visuallyObserved": [
+        "Sanctus XI begins on p.40* directly after the Gloria XI Amen.",
+        "The first Hosanna appears on p.40*, followed by 'Benedictus qui' at the bottom of the page.",
+        "The continuation 'venit in nomine Domini' and final Hosanna appear at the top of p.41*; both parts remain a single canonical score/card."
+      ],
+      "holds": [],
+      "status": "PRINTED_TEXT_AND_PHRASE_STRUCTURE_VISUALLY_INSPECTED_ONLY",
+      "fullPrintedAbsolutePitchParity": "NOT_CERTIFIED",
+      "fullPrintedNeumeParity": "NOT_CERTIFIED",
+      "fullPrintedSyllabicUnderlayParity": "NOT_CERTIFIED",
+      "fullPrintedRhythmicParity": "NOT_CERTIFIED",
+      "editorialScoreApproval": false,
+      "observedCommunityPerformance": false
+    },
+    {
+      "gregobaseId": 871,
+      "scoreId": "GREGOBASE-871",
+      "movement": "SANCTUS_BENEDICTUS",
+      "selection": "MASS_17",
+      "title": "Sanctus XVII · Benedictus",
+      "printedPages": [
+        "56*"
+      ],
+      "pdfPagesOneBased": [
+        58
+      ],
+      "originalPageImages": [
+        "https://gregobase.selapa.net/sources/2/933.png"
+      ],
+      "sourceGabcFile": "src/mass/reader-kyriale-research-batch3.js",
+      "gregobaseSourceUrl": "https://gregobase.selapa.net/chant.php?id=871",
+      "sourceGabcNoteBearingGroups": 55,
+      "sourceGabcCodeUnitFnv1a32": "e73e09be",
+      "visuallyObserved": [
+        "The Sanctus XVII begins on p.56* below the separately titled alternative Kyrie introduced with 'Vel, ubi moris est'.",
+        "All three Sanctus acclamations, Pleni sunt caeli, initial Hosanna, Benedictus qui venit and closing Hosanna fit on p.56*.",
+        "Do not misidentify the alternative Kyrie above the Sanctus as the Sanctus score; no canonical split into extra cards is warranted."
+      ],
+      "holds": [],
+      "status": "PRINTED_TEXT_AND_PHRASE_STRUCTURE_VISUALLY_INSPECTED_ONLY",
+      "fullPrintedAbsolutePitchParity": "NOT_CERTIFIED",
+      "fullPrintedNeumeParity": "NOT_CERTIFIED",
+      "fullPrintedSyllabicUnderlayParity": "NOT_CERTIFIED",
+      "fullPrintedRhythmicParity": "NOT_CERTIFIED",
+      "editorialScoreApproval": false,
+      "observedCommunityPerformance": false
+    },
+    {
+      "gregobaseId": 1243,
+      "scoreId": "GREGOBASE-1243",
+      "movement": "AGNUS_DEI",
+      "selection": "MASS_11",
+      "title": "Agnus Dei XI",
+      "printedPages": [
+        "41*"
+      ],
+      "pdfPagesOneBased": [
+        43
+      ],
+      "originalPageImages": [
+        "https://gregobase.selapa.net/sources/2/918.png"
+      ],
+      "sourceGabcFile": "src/mass/reader-kyriale-research-batch2.js",
+      "gregobaseSourceUrl": "https://gregobase.selapa.net/chant.php?id=1243",
+      "sourceGabcNoteBearingGroups": 54,
+      "sourceGabcCodeUnitFnv1a32": "af979bfa",
+      "visuallyObserved": [
+        "Agnus Dei XI begins on p.41* below the concluding Hosanna of Sanctus XI.",
+        "Three distinct musical Agnus invocations are present, the first two ending 'miserere nobis' and the third ending 'dona nobis pacem'.",
+        "The printed Ite missa est / Deo gratias beneath Agnus XI are a separate dismissal score and must not be captured as the Agnus conclusion."
+      ],
+      "holds": [
+        "Do not substitute this ordinary Agnus text into a Requiem Mass or infer it was sung at a local community."
+      ],
+      "status": "PRINTED_TEXT_AND_PHRASE_STRUCTURE_VISUALLY_INSPECTED_ONLY",
+      "fullPrintedAbsolutePitchParity": "NOT_CERTIFIED",
+      "fullPrintedNeumeParity": "NOT_CERTIFIED",
+      "fullPrintedSyllabicUnderlayParity": "NOT_CERTIFIED",
+      "fullPrintedRhythmicParity": "NOT_CERTIFIED",
+      "editorialScoreApproval": false,
+      "observedCommunityPerformance": false
+    }
+  ],
+  "remainingCriticalGates": [
+    "Map every original printed 1961 note head to staff pitch using the printed clef and compare each GABC pitch; do not infer from a rendered digital version.",
+    "Compare all neume shapes and joins, mora/episema, accidentals, divisions, custodes, repeat symbols and syllable underlay at the printed-system level.",
+    "Record every discrepancy by score ID, folio, printed system and source-neume reference. Require independent musical-editor adjudication per score before any certification.",
+    "Keep all 20 source GABCs marked provisional. No local Schola programme, Requiem variant, or calendar-based choice may be inferred."
+  ],
+  "publication": {
+    "sourceTranscriptionsRewritten": 0,
+    "readerCardsModified": 0,
+    "newlyCertifiedScores": 0,
+    "editoriallyApprovedScoresAdded": 0,
+    "localProgrammeAutoAssignments": 0,
+    "noVercelDeployment": true
+  }
+}
