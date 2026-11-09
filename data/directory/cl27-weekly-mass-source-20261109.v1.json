@@ -1,0 +1,178 @@
+{
+  "schema": "AO_CL27_SOURCE_WEEKLY_MASS_PROGRAMME_V1",
+  "publication": "FIRST_PARTY_REPORTED_PATTERN_NOT_LIVE_MASS_OCCURRENCE",
+  "reviewed_on": "2026-11-09",
+  "policy": [
+    "Only source-published weekly patterns for the named CL2 site; not a real-time schedule, recurring Calendar event, or future Mass occurrence",
+    "Any feast, holiday, seasonal, local or bulletin exceptions prevail; users must confirm with the primary source before travel",
+    "An unspecified 'Messe en Semaine' does not prove a Mass every weekday",
+    "No inference of Una Cum, liturgical books, canonical status, building ownership, celebrant identity, or verified entrance",
+    "Keep named site IDs and source URLs unchanged; no new physical location or map marker"
+  ],
+  "sites": [
+    {
+      "cl2_anchor": "RG-005CCA55D4DF",
+      "source_id": "SSPXMAP:OPE-002148",
+      "canonical_name": "Chapelle Saint-Eloi",
+      "country": "FR",
+      "physical_description": "20 rue de Saint-Éloi, 50760 Réville, France",
+      "existing_source_url": "https://map.fsspx.org/en/places/chapelle-saint-eloi",
+      "source_page_url": "https://laportelatine.org/lieux/gavrus/reville",
+      "source_publisher": "FSSPX District de France · La Porte Latine",
+      "checked_on": "2026-11-09",
+      "subject_scope": "ONE_NAMED_CL2_SITE_NOT_DISTRICT",
+      "entries": [
+        {
+          "scope": "SUNDAYS_AND_FEASTS",
+          "time": "18:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "Sundays and feast days (source listing)",
+          "label_fr": "Dimanches et fêtes (selon la source)",
+          "exception_en": "",
+          "exception_fr": ""
+        }
+      ]
+    },
+    {
+      "cl2_anchor": "RG-158B6DF9C6A3",
+      "source_id": "SSPXMAP:OPE-001582",
+      "canonical_name": "Prieuré Saint-Louis – Église Saint Émilien",
+      "country": "FR",
+      "physical_description": "25 rue François Bruneau, 44000 Nantes, France",
+      "existing_source_url": "https://map.fsspx.org/en/places/prieure-saint-louis",
+      "source_page_url": "https://laportelatine.org/lieux/nantes",
+      "source_publisher": "FSSPX District de France · La Porte Latine",
+      "checked_on": "2026-11-09",
+      "subject_scope": "ONE_NAMED_CL2_SITE_NOT_DISTRICT",
+      "entries": [
+        {
+          "scope": "SUNDAYS_AND_FEASTS",
+          "time": "08:30",
+          "mass_type": "UNKNOWN",
+          "label_en": "Sundays and feast days (source listing)",
+          "label_fr": "Dimanches et fêtes (selon la source)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "SUNDAYS_AND_FEASTS",
+          "time": "10:30",
+          "mass_type": "UNKNOWN",
+          "label_en": "Sundays and feast days (source listing)",
+          "label_fr": "Dimanches et fêtes (selon la source)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "SUNDAYS_AND_FEASTS",
+          "time": "18:30",
+          "mass_type": "UNKNOWN",
+          "label_en": "Sundays and feast days (source listing)",
+          "label_fr": "Dimanches et fêtes (selon la source)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "WEEKDAY_UNSPECIFIED",
+          "time": "07:15",
+          "mass_type": "UNKNOWN",
+          "label_en": "Weekday Mass — specific weekdays not stated",
+          "label_fr": "Messe en semaine — jours précis non indiqués",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "WEEKDAY_UNSPECIFIED",
+          "time": "18:30",
+          "mass_type": "UNKNOWN",
+          "label_en": "Weekday Mass — specific weekdays not stated",
+          "label_fr": "Messe en semaine — jours précis non indiqués",
+          "exception_en": "",
+          "exception_fr": ""
+        }
+      ]
+    },
+    {
+      "cl2_anchor": "RG-0A4EC539F260",
+      "source_id": "SSPXMAP:OPE-002186",
+      "canonical_name": "Église Sainte-Philomène",
+      "country": "FR",
+      "physical_description": "125, boulevard Grignan, Quartier du Mourillon, 83000 Toulon, France",
+      "existing_source_url": "https://map.fsspx.org/en/places/eglise-sainte-philomene",
+      "source_page_url": "https://laportelatine.org/lieux/marseille/eglise-toulon",
+      "source_publisher": "FSSPX District de France · La Porte Latine",
+      "checked_on": "2026-11-09",
+      "subject_scope": "ONE_NAMED_CL2_SITE_NOT_DISTRICT",
+      "entries": [
+        {
+          "scope": "SUNDAYS_AND_FEASTS",
+          "time": "09:30",
+          "mass_type": "SUNG",
+          "label_en": "Sundays and feast days (source listing)",
+          "label_fr": "Dimanches et fêtes (selon la source)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "SUNDAYS_AND_FEASTS",
+          "time": "18:30",
+          "mass_type": "LOW",
+          "label_en": "Sundays and feast days (source listing)",
+          "label_fr": "Dimanches et fêtes (selon la source)",
+          "exception_en": "Not held on Christmas, Easter or Pentecost, or during July–August. Confirm Assumption arrangements locally.",
+          "exception_fr": "Pas de messe à Noël, Pâques, Pentecôte, ni en juillet-août. Se renseigner pour l'Assomption."
+        },
+        {
+          "scope": "WEDNESDAY_FRIDAY_SATURDAY",
+          "time": "18:30",
+          "mass_type": "UNKNOWN",
+          "label_en": "Wednesday, Friday and Saturday",
+          "label_fr": "Mercredi, vendredi et samedi",
+          "exception_en": "",
+          "exception_fr": ""
+        }
+      ]
+    },
+    {
+      "cl2_anchor": "RG-96C9520D0C32",
+      "source_id": "SSPXMAP:OPE-001609",
+      "canonical_name": "Chapelle Notre-Dame du Rosaire",
+      "country": "FR",
+      "physical_description": "56, avenue Émile Zola, 59800 Lille, France",
+      "existing_source_url": "https://map.fsspx.org/en/places/chapelle-notre-dame-du-rosaire-lille",
+      "source_page_url": "https://laportelatine.org/lieux/croix/lille",
+      "source_publisher": "FSSPX District de France · La Porte Latine",
+      "checked_on": "2026-11-09",
+      "subject_scope": "ONE_NAMED_CL2_SITE_NOT_DISTRICT",
+      "entries": [
+        {
+          "scope": "SUNDAYS_AND_FEASTS",
+          "time": "10:30",
+          "mass_type": "UNKNOWN",
+          "label_en": "Sundays and feast days (source listing)",
+          "label_fr": "Dimanches et fêtes (selon la source)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "SUNDAYS_AND_FEASTS",
+          "time": "18:30",
+          "mass_type": "UNKNOWN",
+          "label_en": "Sundays and feast days (source listing)",
+          "label_fr": "Dimanches et fêtes (selon la source)",
+          "exception_en": "No 18:30 Mass at Christmas or Easter, or in July–August.",
+          "exception_fr": "Pas de messe à 18h30 à Noël, à Pâques ni en juillet-août."
+        },
+        {
+          "scope": "WEEKDAY_UNSPECIFIED",
+          "time": "18:30",
+          "mass_type": "UNKNOWN",
+          "label_en": "Weekday Mass — specific weekdays not stated",
+          "label_fr": "Messe en semaine — jours précis non indiqués",
+          "exception_en": "",
+          "exception_fr": ""
+        }
+      ]
+    }
+  ]
+}
