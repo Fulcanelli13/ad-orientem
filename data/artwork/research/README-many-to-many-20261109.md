@@ -239,3 +239,29 @@ The original **23 Prayer metadata differences** now have source-scoped adjudicat
 All 23 original discrepancy flags are retained as historic QA evidence; the new classifications are added as a separate layer. **Nothing has been replaced, automatically selected, licensed or deployed**. The research tests check all 11, 23, five underlying work groups, the two Princeton/Geneva object conflicts, and the zero-new-assignment requirement.
 
 Next: resolve the six weak title/artist-only candidates and 29 unmatched protected selections from independent source records and local asset hashes. Keep AI-derived owner artwork and multi-scene Easter Vigil selections as distinct asset classes, not museum paintings.
+
+## Final protected identity queue triage (batches 11–12)
+
+The **remaining six title/artist-only source leads** are independently assessed in `m2m-title-artist-leads-6-batch11-20261109.v1.json`. These represent three works reused across two destinations each:
+
+- **Van Dyck** *Entry of Christ into Jerusalem* — Indianapolis Museum of Art at Newfields **58.3**, circa 1617; already selected for 29 March and its Palm Sunday Prayer hero. No change to the earlier source or crop.
+- **John Martin** *The Great Day of His Wrath* — Tate **N05613**, 1851–53; same selected artwork for Advent I (29 November) and Advent hero. Tate object-page retrieval was denied, so the accession was corroborated through Tate-linked collection references and museum-associated reproductions, not independently by that page.
+- **Ludovico Carracci** *An Angel Frees the Souls of Purgatory* — a small work cited at the Vatican Pinacoteca by WGA, possibly a sketch with workshop involvement, but **no primary institutional accession established**. Preserve the two All Souls/Prayer-hero relationships without upgrading its attribution.
+
+The **29 protected selections without an internal match** are triaged in `m2m-no-internal-lead-29-batch12-20261109.v1.json` by source and asset type, as follows:
+
+| Source/asset category | Protected destinations |
+| --- | ---: |
+| Ordinary physical-artwork catalogue or local-asset lookup | 20 |
+| AI-derived local artwork requiring original generated-file/hash crosswalk | 4 |
+| Multiple event-specific works within one Easter Vigil editorial selection | 1 |
+| Historical photographic portrait rather than oil painting | 1 |
+| San Polo Stations XIII and XIV (same Giandomenico Tiepolo cycle; photographic/app-ID link missing) | 2 |
+| Possible exact-work cross-reference to batch9 Tintoretto/San Rocco Circumcision | 1 |
+| **Total** | **29** |
+
+Chorus Venezia documents both San Polo original Stations XIII and XIV; this is an *in-situ subject identification*, not photographic release or an invented accession. The selected 1 January *Circumcision* is a high-priority possible cross-reference to the San Rocco Tintoretto/workshop object identified for Prayer, but the actual current user asset and pixels must be checked first.
+
+**All 46 owner-preserved missing-ID cases now have a provenance/asset-type triage category (11 + 6 + 29), and 23 historic Prayer metadata discrepancies have separate classification. None has been auto-assigned a canonical app artwork ID.** A named museum accession cannot by itself prove the exact selected digital file, owner release authority, or image reuse. These records are held entirely outside runtime.
+
+New independent tests assert the three-work grouping, 29-case category distribution, unique union of all 46 identities, historical approvals unchanged, and **zero automatic publication, photo clearance or replacement**.
