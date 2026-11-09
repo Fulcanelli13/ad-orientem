@@ -1,0 +1,119 @@
+name: Divine Office — 1960 Latin annual eight-Hour source extraction (research)
+
+on:
+  pull_request:
+    paths:
+      - 'tools/office-bulk/**'
+      - '.github/workflows/office-annual-bulk-source.yml'
+  workflow_dispatch:
+
+# These jobs extract source evidence only. Nothing is committed to the
+# published application, GitHub Pages, or its service worker.
+permissions:
+  contents: read
+
+concurrency:
+  group: office-annual-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test-importer:
+    name: Importer unit tests (no network)
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Test strict completeness and source provenance
+        run: python3 -m unittest discover -s tools/office-bulk -p 'test_*.py' -v
+
+  generate:
+    name: Latin 1960 ${{ matrix.year }} — all eight Hours / full year
+    needs: test-importer
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    strategy:
+      fail-fast: false
+      matrix:
+        year: [2026, 2027]
+    env:
+      # Immutable reviewed upstream commit, not master and not date-dependent.
+      DIVINUM_OFFICIUM_SHA: 126a07f91ede04664108abb6fb20ace3f4de14b9
+      YEAR: ${{ matrix.year }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install the upstream stand-alone generator prerequisites
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq \
+            libcgi-session-perl bsdmainutils zip libwww-perl
+      - name: Sparse-checkout exact Divinum Officium revision
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/divinum"
+          git -C "$RUNNER_TEMP/divinum" init -q
+          git -C "$RUNNER_TEMP/divinum" remote add origin https://github.com/DivinumOfficium/divinum-officium.git
+          git -C "$RUNNER_TEMP/divinum" sparse-checkout init --cone
+          git -C "$RUNNER_TEMP/divinum" sparse-checkout set web standalone/tools/epubgen2
+          git -C "$RUNNER_TEMP/divinum" fetch --depth 1 origin "$DIVINUM_OFFICIUM_SHA"
+          git -C "$RUNNER_TEMP/divinum" checkout -q --detach FETCH_HEAD
+          test "$(git -C "$RUNNER_TEMP/divinum" rev-parse HEAD)" = "$DIVINUM_OFFICIUM_SHA"
+          test -f "$RUNNER_TEMP/divinum/standalone/tools/epubgen2/epubgen2.sh"
+          test -f "$RUNNER_TEMP/divinum/web/cgi-bin/horas/officium.pl"
+          test -f "$RUNNER_TEMP/divinum/LICENSE"
+      - name: Generate all 8 Latin 1960 Hours for every day of ${{ matrix.year }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          out="$RUNNER_TEMP/annual-raw/$YEAR"
+          mkdir -p "$out" "$GITHUB_WORKSPACE/office-annual-artifacts/$YEAR"
+          cd "$RUNNER_TEMP/divinum/standalone/tools/epubgen2"
+          # The upstream tool generates eight XHTML Hours for every civil date,
+          # and bundles them into monthly/yearly EPUBs. We consume the yearly EPUB.
+          if ! bash ./epubgen2.sh -y "$YEAR" -t "$YEAR" -r 1960 -o "$out" \
+            >"$GITHUB_WORKSPACE/office-annual-artifacts/$YEAR/generator.log" 2>&1; then
+            tail -120 "$GITHUB_WORKSPACE/office-annual-artifacts/$YEAR/generator.log"
+            exit 1
+          fi
+          test -s "$out/breviarium${YEAR}.epub"
+          cp "$out/breviarium${YEAR}.epub" \
+            "$GITHUB_WORKSPACE/office-annual-artifacts/$YEAR/source-breviarium${YEAR}.epub"
+      - name: Parse all XHTML chapters; independently audit every civil date × eight Hours
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 tools/office-bulk/import_epub.py \
+            --epub "office-annual-artifacts/$YEAR/source-breviarium${YEAR}.epub" \
+            --year "$YEAR" \
+            --revision "$DIVINUM_OFFICIUM_SHA" \
+            --output "office-annual-artifacts/$YEAR/parsed"
+          python3 - "$YEAR" <<'PY'
+          import json, pathlib, sys
+          year = int(sys.argv[1])
+          manifest = json.loads(pathlib.Path(
+              f"office-annual-artifacts/{year}/parsed/manifest.json"
+          ).read_text(encoding="utf8"))
+          c = manifest["coverage"]
+          assert c["full_year"] and c["complete"]
+          assert c["expected_hour_instances"] == c["extracted_hour_instances"]
+          assert c["expected_hour_instances"] == 8 * (366 if year % 4 == 0 and (year % 100 or year % 400 == 0) else 365)
+          assert len(c["hour_counts"]) == 8
+          assert all(n == c["days"] for n in c["hour_counts"].values())
+          assert manifest["quality_gate"]["approved_for_public_reader"] is False
+          print(f"AO_OFFICE_ALL_EIGHT_HOURS_EXTRACTED year={year} "
+                f"dates={c['days']} chapters={c['extracted_hour_instances']} "
+                f"exceptions={manifest['issue_count']} certified=false published=false")
+          PY
+      - name: Upload immutable source, structured text and exception ledger (NOT Pages)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: office-1960-la-${{ matrix.year }}-research
+          path: office-annual-artifacts/${{ matrix.year }}/
+          retention-days: 30
+          if-no-files-found: warn
+          compression-level: 6
