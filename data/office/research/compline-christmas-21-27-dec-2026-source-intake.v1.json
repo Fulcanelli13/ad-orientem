@@ -17,7 +17,11 @@
     "officeOrdo": "https://breviariumgregorianum.com/ordo-2026.php",
     "rubrics": "https://isidore.co/divinum/www/horas/Help/Rubrics/Breviary%201960.html",
     "season": "https://1962ordo.today/season/",
-    "occurrenceCrossCheck": "https://latinmasspropers.com/calendar/2026/"
+    "occurrenceCrossCheck": "https://latinmasspropers.com/calendar/2026/",
+    "independentVespersWitness": "https://ordo.fsspx.org/day/2026-12-26?lang=en",
+    "independentSundayConcurrenceWitness": "https://ordo.fsspx.org/day/2026-12-27?lang=en",
+    "independentThomasWitness": "https://ordo.fsspx.org/day/2026-12-21?lang=en",
+    "independentVigilVespersWitness": "https://ordo.fsspx.org/en/day/2026-12-24?source=nullius&texts=readings"
   },
   "dates": [
     {
@@ -132,17 +136,17 @@
       "principalOffice": "Saint Stephen Protomartyr",
       "class": "II_FEAST",
       "officeDateHypothesis": "2026-12-26",
-      "firstVespersHypothesis": "INDEPENDENT_CONCURRENCE_REVIEW_REQUIRED",
+      "firstVespersHypothesis": "NONE_ST_STEPHEN_II_VESPERS_SUNDAY_COMM",
       "psalterHypothesis": "Dominica",
-      "rubricHypothesis": "168(d); Christmas octave cross-check 175(e)",
+      "rubricHypothesis": "168(d)",
       "marianSectionHypothesis": "Nativiti",
       "marianVerseHypothesis": "Post partum",
       "marianCollectHypothesis": "Deus qui salutis",
-      "commemorationHypothesis": "Christmas octave",
+      "commemorationHypothesis": "Sunday within Christmas Octave",
       "specialHold": [
         "SATURDAY_PSALTER_MUST_NOT_LEAK",
-        "SUNDAY_WITHIN_OCTAVE_CONCURRENCE_REVIEW",
-        "FULL_LATIN_OFFICE_REVIEW"
+        "FULL_LATIN_OFFICE_REVIEW",
+        "SOURCE_BACKED_SUNDAY_VESPERS_COMM_NOT_SUNDAY_FIRST_VESPERS"
       ],
       "reviewStage": "DATED_ORDO_CALENDAR_RESEARCH_ONLY",
       "psalterResearchOnly": true,
@@ -164,7 +168,8 @@
       "commemorationHypothesis": "Saint John Apostle and Evangelist",
       "specialHold": [
         "SUNDAY_OCCURRENCE_AND_ST_JOHN_COMM_REVIEW",
-        "FULL_LATIN_OCTAVE_OFFICE_REVIEW"
+        "FULL_LATIN_OCTAVE_OFFICE_REVIEW",
+        "ST_JOHN_IS_COMM_NOT_PRINCIPAL_OFFICE"
       ],
       "reviewStage": "DATED_ORDO_CALENDAR_RESEARCH_ONLY",
       "psalterResearchOnly": true,
@@ -172,5 +177,6 @@
       "publishable": false,
       "published": false
     }
-  ]
+  ],
+  "researchCorroborationNote": "2026-12-26 St Stephen retains II Vespers with Sunday commemoration (not First Vespers of Sunday); 2026-12-27 principal Sunday with St John commemorated; separate 1962 ordo corroboration, not independent textual collation."
 }
