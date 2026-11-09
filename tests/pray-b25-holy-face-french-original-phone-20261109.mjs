@@ -6,6 +6,7 @@ import {extname,resolve,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
 import {NOVENA_HOLY_FACE_1887_B25 as holy} from "../src/pray/holy-face-janvier-1887-b25.js";
+import {HOLY_FACE_1895_FR_READER_DAYS,HOLY_FACE_1895_FR_ORIGINAL_SOURCE_URL,HOLY_FACE_1895_FR_PUBLIC_RELEASE_APPROVED} from "../src/pray/holy-face-janvier-1895-fr-reader-candidate.v1.js";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const output=resolve(root,"artifacts/pray-b25-holyface-original-fr");
@@ -29,8 +30,9 @@ const server=http.createServer(async(req,res)=>{
 await new Promise((yes,no)=>{server.once("error",no);server.listen(0,"127.0.0.1",yes)});
 await mkdir(output,{recursive:true});
 let browser;
-const report={schema:"ao.pray.b25-holyface-fr-volume-real-phone.v1",base:"SOURCE_READER_UNCHANGED",
- frenchPrayerBodiesCertified:0,printed1887PhotoCollated:false,states:[],screenshots:[]};
+const report={schema:"ao.pray.b25-holyface-fr-default-real-phone.v2",base:"FRENCH_1895_NORMALIZED_ORIGINAL_AVAILABLE",
+ frenchPrayerBodiesPublished:9,independentFrenchProof:0,printed1887PhotoCollated:false,states:[],screenshots:[]};
+assert.equal(HOLY_FACE_1895_FR_PUBLIC_RELEASE_APPROVED,true);
 try{
  browser=await chromium.launch({headless:true});
  for(const width of [320,390])for(const language of ["en","fr"]){
@@ -64,40 +66,38 @@ try{
    await page.waitForSelector(sel+" .aoN1Reader[data-ao-novena-deck='simple']",{
     timeout:20000});
    for(let day=1;day<=9;day++){
-    const reading=page.locator(sel+" .aoN1Reader .aoN1SourceText[data-n1-source-language='en']");
+    const reading=page.locator(sel+" .aoN1Reader .aoN1SourceText[data-n1-source-language='"+language+"']");
     await reading.waitFor({state:"attached",timeout:15000});
-    const state=await page.evaluate(()=>{
+    const state=await page.evaluate(lang=>{
      const root=document.querySelector("#aoPray435930.open");
-     const witness=root?.querySelector(".aoN1Reader .aoN1SourceText[data-n1-source-language='en']");
+     const witness=root?.querySelector(".aoN1Reader .aoN1SourceText[data-n1-source-language='"+lang+"']");
      const link=witness?.querySelector("[data-n1-holy-face-french-1894-original] a");
-     const callout=witness?.querySelector("[data-n1-holy-face-french-1894-original]");
+     const callout=witness?.querySelector("[data-n1-holy-face-1895-source-notice]");
      return {text:witness?.innerText?.slice(-180),textLength:witness?.innerText?.length,
       language:witness?.getAttribute("lang"),link:link?.getAttribute("href")||"",
       linkText:link?.innerText||"",linkTarget:link?.getAttribute("target")||"",
-      linkRel:link?.getAttribute("rel")||"",notice:callout?.innerText||"",
+      linkRel:link?.getAttribute("rel")||"",notice:callout?.innerText||"",source:root?.querySelector(".aoN1SourceDetails .aoN1SourcePrimary")?.getAttribute("href")||"",
       alternateCount:root?.querySelectorAll(".aoN1Reader .aoN1SourceText[data-n1-source-language='fr']").length,
       horizontalOverflow:Math.max(0,document.documentElement.scrollWidth-innerWidth)};
-    });
-    assert.equal(state.language,"en");
-    assert.equal(state.alternateCount,0,"No unverified French prayer body can appear");
-    assert.ok(state.textLength>3000,"Full English prayer source changed");
+    },language);
+    assert.equal(state.language,language);
+    assert.equal(state.alternateCount,language==="fr"?1:0,"French original must appear only for French UI");
+    assert.ok(state.textLength>3000,"Full source text missing");
     assert.ok(state.horizontalOverflow<=2,"French source access overflows phone");
     if(language==="fr"){
-     assert.equal(state.link,original);
-     assert.equal(state.linkTarget,"_blank");
-     assert.match(state.linkRel,/noopener/);
-     assert.match(state.linkRel,/noreferrer/);
-     assert.match(state.linkText,/Consulter le volume français/);
-     assert.match(state.notice,/n’a pas encore été transcrit ni collationné/);
-     assert.match(await page.locator(sel+" .aoN1Reader [data-n1-proper-source-fallback]").first().innerText(),
-      /Texte source anglais affiché/);
+     assert.equal(state.link,"","No old 1894 English fallback link in French 1895 original text");
+     assert.match(state.notice,/transcription normalisée/);
+     assert.match(state.notice,/relecture indépendante intégrale/);
+     assert.equal(state.source,HOLY_FACE_1895_FR_ORIGINAL_SOURCE_URL);
+     if(day===8)assert.match(await reading.innerText(),/I\. Le pardon accordé/);
+     if(day===9)assert.match(await reading.innerText(),/dans l’éclat de sa gloire céleste/);
     }else{
-     assert.equal(state.link,"","Original French book shortcut only in French fallback");
+     assert.equal(state.link,"","English reader must not claim French-original fallback");
     }
-    report.states.push({width,language,day,englishOriginalStillVisible:true,
-     frenchHistoricallyVerified:false,frenchBookAccess:language==="fr"});
+    report.states.push({width,language,day,englishOriginalStillVisible:language==="en",
+     frenchHistorical1895Available:language==="fr",frenchIndependentlyProofed:false});
     if(day===1&&language==="fr"){
-     const name="holy-face-fr-book-access-"+width+".png";
+     const name="holy-face-fr-default-"+width+".png";
      await page.screenshot({path:resolve(output,name),animations:"disabled"});
      report.screenshots.push(name);
     }
@@ -107,10 +107,11 @@ try{
   }finally{await ctx.close()}
  }
  assert.equal(report.states.length,36,"9 days x 2 languages x 2 phone widths");
- assert.equal(holy.days.filter(day=>!!day.text.fr).length,0);
- console.log("PASS Holy Face French original-book access: 36 320/390 EN/FR states, 0 fabricated French day bodies");
+ assert.equal(holy.days.filter(day=>!!day.text.fr).length,0,"1887 English source donor remains untouched");
+  assert.equal(HOLY_FACE_1895_FR_READER_DAYS.length,9);
+ console.log("PASS Holy Face 1895 normalized French displayed by default: 36 320/390 EN/FR states, editorial proof pending, English donor unchanged");
 }finally{
- await writeFile(resolve(output,"holy-face-french-volume-access.json"),JSON.stringify(report,null,2)+"\n");
+ await writeFile(resolve(output,"holy-face-french-default-access.json"),JSON.stringify(report,null,2)+"\n");
  await browser?.close().catch(()=>{});
  await new Promise(done=>server.close(done));
 }
