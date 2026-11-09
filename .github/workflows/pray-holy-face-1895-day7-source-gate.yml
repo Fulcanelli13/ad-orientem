@@ -1,0 +1,33 @@
+name: Prayer Holy Face 1895 French day-seven source hold
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "data/pray/research/pray-holy-face-1895-fr-day07-transcribed-first-pass.v1.json"
+      - "tests/pray-holy-face-french-1895-day7-research-gate.mjs"
+      - ".github/workflows/pray-holy-face-1895-day7-source-gate.yml"
+      - "src/pray/holy-face-janvier-1887-b25.js"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pray-janvier-day07-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  day-seven-source-truth:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify photographed Janvier Day VII Veronica and source-language distinctions
+        run: node tests/pray-holy-face-french-1895-day7-research-gate.mjs
+      - name: Preserve all earlier French days I-VI under their source gates
+        run: |
+          for i in 1 2 3 4 5 6; do
+            node "tests/pray-holy-face-french-1895-day${i}-research-gate.mjs"
+          done
+      - name: Preserve nine-day 1895 printed map and EN/FR publication boundary
+        run: node tests/pray-holy-face-1895-french-print-source-page-gate.mjs
