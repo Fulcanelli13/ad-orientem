@@ -143,9 +143,14 @@ const liturgicalBatch7=read('data/artwork/research/m2m-liturgical-batch7-2026110
 assert.equal(liturgicalBatch7.records.length,15);
 assert.equal(liturgicalBatch7.summary.cumulative_new_proposals_reviewed,93);
 assert.equal(liturgicalBatch7.summary.remaining_new_proposals,21);
-const batches=[sceneBatch.records,sceneBatch2.records,sceneBatch3.records,sceneBatch4.records,thematicBatch5.records,liturgicalBatch6.records,liturgicalBatch7.records];
+const thematicScripturalBatch8=read('data/artwork/research/m2m-thematic-scriptural-batch8-20261109.v1.json');
+assert.equal(thematicScripturalBatch8.records.length,21);
+assert.equal(thematicScripturalBatch8.summary.unique_proposed_artwork_ids,9);
+assert.equal(thematicScripturalBatch8.summary.cumulative_new_proposals_reviewed,114);
+assert.equal(thematicScripturalBatch8.summary.remaining_new_proposals,0);
+const batches=[sceneBatch.records,sceneBatch2.records,sceneBatch3.records,sceneBatch4.records,thematicBatch5.records,liturgicalBatch6.records,liturgicalBatch7.records,thematicScripturalBatch8.records];
 const audited=batches.flat();
-assert.equal(audited.length,93,'A cumulative count should come from reviewed records, not a stale intermediate index');
+assert.equal(audited.length,114,'A cumulative count should come from reviewed records, not a stale intermediate index');
 assert.equal(new Set(audited.map(r=>r.destination_id+'|'+r.artwork_id)).size,audited.length,'No proposed relationship can be counted twice');
 const newProposals=claude.filter(r=>r.display_priority==='NEW_PROPOSAL');
 assert.equal(newProposals.length,114);
@@ -185,3 +190,28 @@ assert.equal(liturgicalBatch7.summary.remaining_qualifying_categories.THEMATIC,1
 assert.equal(liturgicalBatch7.summary.remaining_qualifying_categories.SCRIPTURAL,6);
 assert.equal(idx.counts.historical_accepted_option_rows,507);
 console.log('PASS: all 27 outstanding liturgical assessments completed across batches6/7; 93/114 source-reviewed with 21 thematic/scriptural still held.');
+
+assert.equal(thematicScripturalBatch8.records.filter(r=>r.claude_scope==='THEMATIC').length,15);
+assert.equal(thematicScripturalBatch8.records.filter(r=>r.claude_scope==='SCRIPTURAL').length,6);
+assert.equal(new Set(thematicScripturalBatch8.records.map(r=>r.artwork_id)).size,9);
+for(const r of thematicScripturalBatch8.records){
+ assert.equal(r.owner_selection_changed,false);
+ assert.equal(r.owner_many_to_many_choices_preserved,true);
+ assert.equal(r.exact_photo_release_verified,false);
+ assert.equal(r.independent_pixels_checked,false);
+ assert.equal(r.runtime_selection_authorised,false);
+ assert.ok(r.source_urls.length&&r.physical_work_identity&&r.relationship_after_review);
+}
+const brueghelBatch8=thematicScripturalBatch8.records.filter(r=>r.artwork_id==='RECENT575::273');
+assert.equal(brueghelBatch8.length,5);
+assert.ok(brueghelBatch8.every(r=>r.physical_work_identity.includes('0000.GRO1561.I')),'five relationships to same Bruges workshop copy must not invent new paintings');
+assert.ok(brueghelBatch8.filter(r=>r.destination_id==='2026-12-09'||r.destination_id==='2026-12-12').every(r=>r.relationship_after_review.includes('NOT_MATTHEW11')));
+assert.ok(brueghelBatch8.find(r=>r.destination_id==='2026-12-15').relationship_after_review.includes('NOT_JOHN1'));
+assert.ok(thematicScripturalBatch8.records.find(r=>r.destination_id==='2026-03-03').findings.includes('Matt. 5.20'));
+assert.ok(thematicScripturalBatch8.records.find(r=>r.destination_id==='2026-03-28').relationship_after_review.includes('EXACT_GOSPEL_SUBSCENE'));
+assert.ok(thematicScripturalBatch8.records.find(r=>r.destination_id==='2026-07-04').photo_publication_gate.includes('ATTRIBUTION_CONFLICT'));
+assert.equal(idx.review_evidence.remaining_new_Claude_proposals_needing_individual_source_adjudication,0);
+assert.equal(idx.review_evidence.remaining_new_Claude_liturgical_proposals_needing_individual_source_adjudication,0);
+assert.equal(idx.review_evidence.remaining_new_Claude_thematic_proposals_needing_individual_source_adjudication,0);
+assert.equal(idx.review_evidence.remaining_new_Claude_scriptural_proposals_needing_individual_source_adjudication,0);
+console.log('PASS: 114/114 Claude NEW_PROPOSAL editorial edges source-reviewed; no artwork publication or owner overrides.');
