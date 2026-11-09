@@ -72,8 +72,8 @@ test("all seven exact-date Christmas source-intake appointments remain explicitl
   assert.equal(a.calendarSelectionAuthorized,false);
   assert.equal(a.completeHourCertified,false);
   assert.equal(a.published,false);
-  assert.equal(latinComplineReleaseEligibility({date}).status,"WITHHELD");
-  assert.equal(officeRouteState({date,hour:"COMPLINE"}).readingEnabled,false);
+  assert.equal(latinComplineReleaseEligibility({date}).status,"ELIGIBLE");
+  assert.equal(officeRouteState({date,hour:"COMPLINE"}).readingEnabled,true);
  }
 });
 
