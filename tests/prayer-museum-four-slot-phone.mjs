@@ -2,7 +2,7 @@
  * Browser acceptance for exact original photos at 320/390 EN/FR.
  * Renders the real published slot adapter in the actual Prayer root and
  * exercises the real Prayer library route for Sign of the Cross.
- * The 16 isolated slot screenshots are route-independent QA witnesses; they
+ * The 12 eligible original-photo screenshots plus four denied-photo checks are QA witnesses; they
  * DO NOT replace all route-specific navigation tests.
  */
 import assert from "node:assert/strict";
@@ -27,7 +27,6 @@ const server=http.createServer(async(req,res)=>{
 });
 await new Promise((ok,fail)=>{server.once("error",fail);server.listen(0,"127.0.0.1",ok)});
 const works=[
- {id:"bouts",slot:"STG-pray.angelus-04",filename:"bouts-annunciation-original.jpg",minHeight:3000},
  {id:"cavallino",slot:"COV-pray.little_crown",filename:"cavallino-shepherds-original.jpg",minHeight:2800},
  {id:"girardin",slot:"COV-foundations_sign_of_cross",filename:"girardin-trinity-original.jpg",minHeight:3000},
  {id:"hondius",slot:"STG-pray.rosary-06",filename:"hondius-doctors-original.jpg",minHeight:2900}
@@ -56,6 +55,25 @@ try{
      if((await toggle.textContent()).trim()==="EN")await toggle.click();
      assert.equal((await page.locator(rootSelector+" [data-p435930-session-language]").textContent()).trim(),"FR");
      await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.library",{returnContext:null}));
+    }
+    // Assert the four formerly released, now explicitly rejected CMA
+    // originals are absent in the *actual* 320/390 EN/FR browser runtime.
+    const rejected=await page.evaluate(async()=>{
+      const mod=await import("/src/pray/art-slot-map.v1.js");
+      const slots=["STG-pray.angelus-04","STG-pray.angelus-05",
+        "STG-pray.angelus-06","STG-pray.rosary-02"];
+      return slots.map(slotId=>{
+        const x=mod.resolvePrayerEditorialArtwork(slotId);
+        return {slotId,state:x.state,artId:x.artId,photo:x.photo,
+          html:mod.prayerEditorialArtworkMarkup(slotId)};
+      });
+    });
+    assert.equal(rejected.length,4);
+    for(const x of rejected){
+      assert.equal(x.state,"APPROVED_EXACT_PHOTO_PENDING",x.slotId);
+      assert.equal(x.artId,null,x.slotId);
+      assert.equal(x.photo,null,x.slotId);
+      assert.equal(x.html,"",x.slotId);
     }
     const checked=[];
     for(const work of works){
