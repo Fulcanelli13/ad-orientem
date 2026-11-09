@@ -132,6 +132,12 @@
       "path": "data/artwork/research/m2m-liturgical-batch7-20261109.v1.json",
       "count": 15,
       "photo_publication": "NOT_AUTHORISED"
+    },
+    {
+      "kind": "THEMATIC_SCRIPTURAL_BATCH8",
+      "path": "data/artwork/research/m2m-thematic-scriptural-batch8-20261109.v1.json",
+      "count": 21,
+      "photo_publication": "NOT_AUTHORISED"
     }
   ],
   "key_rule": "No automatic deduplication of distinct physical works or artworkID aliases; each relationship points to its own source record.",
@@ -145,8 +151,8 @@
     "globally_rejected_original_with_later_preserved_slots": "cma-122338",
     "scene_batch2": "data/artwork/research/m2m-scene-adjudication-batch2-20261109.v1.json",
     "batch2_new_direct_scene_proposals": 15,
-    "cumulative_new_Claude_proposals_source_adjudicated": 93,
-    "remaining_new_Claude_proposals_needing_individual_source_adjudication": 21,
+    "cumulative_new_Claude_proposals_source_adjudicated": 114,
+    "remaining_new_Claude_proposals_needing_individual_source_adjudication": 0,
     "important_batch2_relational_downgrades": [
       "2026-01-13",
       "2026-11-22",
@@ -202,7 +208,20 @@
       "2026-11-25": "de Crayer Grenoble 1622 Saint Catherine martyrdom confirmed; independent photograph rights pending"
     },
     "remaining_new_Claude_liturgical_proposals_needing_individual_source_adjudication": 0,
-    "remaining_new_Claude_thematic_proposals_needing_individual_source_adjudication": 15,
-    "remaining_new_Claude_scriptural_proposals_needing_individual_source_adjudication": 6
+    "remaining_new_Claude_thematic_proposals_needing_individual_source_adjudication": 0,
+    "remaining_new_Claude_scriptural_proposals_needing_individual_source_adjudication": 0,
+    "thematic_scriptural_batch8": "data/artwork/research/m2m-thematic-scriptural-batch8-20261109.v1.json",
+    "thematic_scriptural_batch8_findings": {
+      "2026-03-03": "Lille Jordaens P103 Pharisees includes Matthew5:20 inscription; not certifiable Matthew23 Gospel exact",
+      "2026-03-28": "Rubens Dijon entry scene John12:12–19 within larger appointed reading; Commons photographer not painter",
+      "2026-07-04,2026-11-07": "KMSKA Allori 896 current catalogue gives Alessandro; institutional 2008 annual report says copy after Allori",
+      "2026-07-11,2026-11-28": "Petit Palais Glycophilousa PPP4869 icon contains Luke4:18 scroll, not Luke11:27–28",
+      "2026-06-20,2026-10-31": "Strasbourg Sassoferrato Virgin in Prayer 44.2019.2.11; photo reuse requires phototheque",
+      "2026-12-09,12,15,19,23": "Bruges St John preaching GRO1561 workshop copy after Pieter Elder; Matthew11 and John1 are different episodes; Luke3 topical preaching yes without precise exact-passaged claim",
+      "2026-12-10,14,17,22": "Moreelse John Baptist adult portrait relevant thematically, never exact events from Matthew11/John1/Luke3",
+      "2026-06-27": "van Eyck Madonna with Canon van der Paele GRO0161 donor portrait with Donatian/George, not Luke11 Gospel",
+      "2026-02-14,08-01,09-12": "Nicolas Mignard Virgin Child Marseille WGA attribution; current exact museum accession unverified"
+    },
+    "new_proposals_review_methodology": "All 114 Claude NEW_PROPOSAL edges now have individual editorial source-and-context assessments. This is NOT full certification of artist identity, exact underlying physical object, source photograph, license, mobile crop, or runtime assignment; unresolved holds remain explicit."
   }
 }
