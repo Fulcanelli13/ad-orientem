@@ -16,6 +16,7 @@ import {sourceBoundFestiveOrationAmenScores} from "./reader-oration-festive-amen
 import {sourceBoundOldSolemnOrationAmenScores} from "./reader-oration-old-solemn-amen-reference.js";
 import {resolveOrationAmenTonePolicy} from "./reader-oration-amen-tone-policy.js";
 import {twoGreetingTransferCandidates,GREETING_TRANSFER_EXPLICIT_SELECTION} from "./reader-two-greeting-transfer-candidates.js";
+import {sourceBoundOrdinaryReferenceScores} from "./reader-inline-ordinary-reference.js";
 
 export const JULY07_REFERENCE_NOTATION_SCHEMA="ao-reader-july07-reference-notation-v1";
 // The original printed Introit GABC includes a distinct conditional "T. P."
@@ -249,6 +250,9 @@ export function createDatedProperNotationPreview({
     node.append(note);toneNotes.push(note);
    }
    const scores=referenceScoresForParagraph({paragraph:p,resolvedMass,form});
+   const ordinary=sourceBoundOrdinaryReferenceScores({
+    paragraph:p,form,resolvedMass,selectedSettings
+   });
    const participatory=participationReferenceScoresForParagraph({
     paragraph:p,paragraphs,form,resolvedMass,massPlan,selectedSettings
    });
@@ -267,20 +271,28 @@ export function createDatedProperNotationPreview({
    const greetingCandidates=twoGreetingTransferCandidates({
     paragraph:p,paragraphs,form,resolvedMass,selectedSettings:researchSettings
    });
-   for(const score of [...scores,...participatory,...celebrantPreface,...otherCelebrant,...orationScores,...oldSolemnScores,...greetingCandidates]){
+   for(const score of [...scores,...ordinary,...participatory,...celebrantPreface,...otherCelebrant,...orationScores,...oldSolemnScores,...greetingCandidates]){
     const host=doc.createElement("span");host.className="ao-proper-reference-notation";
     host.dataset.referenceScore=score.id;
     host.dataset.approved="false";
+    if(score.kind==="ORDINARY_RESEARCH"){
+      host.dataset.referenceOrdinaryMovement=score.movement;
+      host.dataset.referenceOrdinarySetting=score.settingId;
+    }
     const title=doc.createElement("small");title.className="ao-proper-reference-label";
     const category=score.sourceCueIds?.length?
       (score.kind==="CELEBRANT_INTONATION"?"Intonation":"Response"):
       PROPER_REFERENCE_LABELS[score.key]??"Chant";
-    title.textContent=score.sourceContextCertified===false?
-      "1961 · NOT source-certified for this Mass":
-      category+" · 1961 review pending";
-    title.title=score.sourceContextCertified===false?
-      "A reference transcription, not verified as this Mass's music.":
-      "1961 reference transcription awaiting independent editorial musical review.";
+    title.textContent=score.kind==="ORDINARY_RESEARCH"
+      ?score.title+" · local setting · research transcription, 1961 review pending"
+      :score.sourceContextCertified===false
+        ?"1961 · NOT source-certified for this Mass"
+        :category+" · 1961 review pending";
+    title.title=score.kind==="ORDINARY_RESEARCH"
+      ?"Locally selected Kyriale example, not certified as the melody sung at this Mass. No approval of notes, neumes, rhythm or underlay."
+      :score.sourceContextCertified===false
+        ?"A reference transcription, not verified as this Mass's music."
+        :"1961 reference transcription awaiting independent editorial musical review.";
     const staff=doc.createElement("span");staff.className="ao-proper-reference-staff";
     staff.setAttribute("role","img");
     staff.setAttribute("aria-label",(score.incipit??score.sourceName)+
