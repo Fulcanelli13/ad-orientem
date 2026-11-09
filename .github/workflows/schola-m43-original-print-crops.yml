@@ -1,0 +1,45 @@
+name: Schola M43 original printed facsimile crops (research only)
+on:
+  pull_request:
+    paths:
+      - "tools/schola/m43-original-engraving-crops.py"
+      - ".github/workflows/schola-m43-original-print-crops.yml"
+  push:
+    branches:
+      - "research/schola-m43-original-engraving-crops-20261109"
+    paths:
+      - "tools/schola/m43-original-engraving-crops.py"
+      - ".github/workflows/schola-m43-original-print-crops.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: m43-original-engraving-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  capture-original-printed-score:
+    name: Capture original 1961 engraving (ephemeral editorial evidence)
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install pinned PDF image extractor
+        run: |
+          python -m pip install --disable-pip-version-check "PyMuPDF==1.26.6" "Pillow==11.3.0"
+      - name: Fetch original PDF and crop p54* at 420dpi
+        run: |
+          python tools/schola/m43-original-engraving-crops.py --output artifacts/schola-m43-original-source
+      - name: Attach evidence for editorial review only (not deployed)
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kyrie-xvi-1961-facsimile-original-crops
+          path: artifacts/schola-m43-original-source/
+          if-no-files-found: error
+          retention-days: 7
