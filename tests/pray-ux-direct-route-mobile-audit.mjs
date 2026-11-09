@@ -80,6 +80,9 @@ try{
     assert.ok(row.bodyOverflow<=1,route+" clips the phone document by "+row.bodyOverflow+"px at "+width);
     assert.ok(row.singleOwner<=1,route+" has multiple competing devotional owners");
     if(route==="pray.litany_saints"){
+     const editionPanel=page.locator("#aoPray435930.open .aoPrivateLitanyEditionChooser");
+     if(await editionPanel.count() && !(await editionPanel.evaluate(el=>el.open)))
+      await editionPanel.locator(":scope > summary").tap();
      const selector=await page.evaluate(()=>{
       const buttons=[...document.querySelectorAll("#aoPray435930.open .aoBatch03LitanyUses button")];
       return buttons.map(b=>({height:b.getBoundingClientRect().height,
