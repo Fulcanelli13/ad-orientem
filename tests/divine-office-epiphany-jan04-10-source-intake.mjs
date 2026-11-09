@@ -108,22 +108,17 @@ test("mutating Sunday/ferial Compline, Epiphany or Holy Family rollover fails cl
   assert.equal(researchJan04_10PrivateComplineAppointment(date).status,"WITHHELD");
  }
 });
-test("9–10 Jan Holy Family stays public WITHHELD before fetching (8 combinations)",async()=>{
+test("dated Holy Family intake remains private research; independent public certificate authorizes its dates",()=>{
  for(const date of ["2027-01-09","2027-01-10"]){
-  assert.equal(latinComplineReleaseEligibility({date}).status,"WITHHELD");
-  assert.equal(officeRouteState({date,hour:"COMPLINE"}).readingEnabled,false);
-  for(const context of Object.values(COMPLINE_CONTEXT)){
-   for(const minister of Object.values(COMPLINE_MINISTER)){
-    let requests=0;
-    const res=await loadPublishedLatinCompline({
-     date,context,minister,
-     fetchSource:async()=>{requests++;throw Error("ILLEGAL_FUTURE_FETCH")}
-    });
-    assert.equal(res.status,"WITHHELD");
-    assert.equal(res.published,false);
-    assert.deepEqual(res.frames,[]);
-    assert.equal(requests,0);
-   }
-  }
+  const research=reviewJan04_10ComplineSource({date,record:record(date)});
+  assert.equal(research.status,JAN04_10_RESEARCH_STATUS);
+  assert.equal(research.completeHourTextCertified,false);
+  assert.equal(research.published,false);
+  const permission=latinComplineReleaseEligibility({date});
+  assert.equal(permission.status,"ELIGIBLE");
+  assert.equal(permission.certificateFamily,"HOLY_FAMILY_JAN09_10_FINITE_LATIN");
+  const route=officeRouteState({date,hour:"COMPLINE"});
+  assert.equal(route.status,"RELEASED");
+  assert.equal(route.officeDate,"2027-01-10");
  }
 });
