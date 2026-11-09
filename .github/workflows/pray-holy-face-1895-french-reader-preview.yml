@@ -6,7 +6,7 @@ on:
       - "src/pray/holy-face-janvier-1895-fr-reader-candidate.v1.js"
       - "src/pray/novena-runtime.js"
       - "tests/pray-holy-face-1895-french-native-reader-integration.mjs"
-      - "tests/pray-holy-face-1895-french-public-reader-phone.mjs"
+      - "tests/pray-holy-face-1895-french-native-reader-preview-phone.mjs"
       - "tests/pray-b25-holy-face-full-novena.mjs"
       - ".github/workflows/pray-holy-face-1895-french-reader-preview.yml"
   workflow_dispatch:
@@ -43,7 +43,7 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
       - name: Test full original French 1895 default and 1887 English 320/390 native Simple + Guided reader
-        run: node tests/pray-holy-face-1895-french-public-reader-phone.mjs
+        run: node tests/pray-holy-face-1895-french-native-reader-preview-phone.mjs
       - name: Confirm ordinary French visits show 1895 French original and English switch (no preview query)
         run: node tests/pray-b25-holy-face-french-original-phone-20261109.mjs
       - uses: actions/upload-artifact@v4
