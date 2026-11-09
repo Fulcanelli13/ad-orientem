@@ -69,6 +69,8 @@ jobs:
           node --test tests/divine-office-epiphany-jan04-10-private-complete-compline.mjs
           node --test tests/divine-office-epiphany-jan04-08-public-release.mjs
           node --test tests/divine-office-holy-family-jan09-10-public-release.mjs
+          node --test tests/divine-office-jan11-17-source-intake.mjs
+          node --test tests/divine-office-jan11-17-private-complete-compline.mjs
           node --test tests/divine-office-monday-independent-clementine-fullword.mjs
           node --test tests/divine-office-prayer-readiness-gate.mjs
           node --test tests/divine-office-native-entry.mjs
