@@ -1,6 +1,7 @@
 import { CL2_PHYSICAL_SITE_INDEX_URL,projectCL2PhysicalDirectory } from "./cl2-physical-directory.js";
 import {matchesPublicCL27Facets} from "./cl27-public-facets.js";
 import {CL27_SITE_CONTACT_URL,attachPublishedSiteContactEvidence} from "./tlm-site-contact-evidence.js";
+import {CL27_WEEKLY_SOURCE_PROGRAMME_URL,attachPublishedWeeklySourceProgrammes} from "./tlm-source-weekly-mass-programme.js";
 import {CL27_DATED_MASS_PROGRAMME_URL,attachPublishedDatedMassProgramme,CL27_TARARE_DATED_MASS_PROGRAMME_URL,attachPublishedTarareDatedMassProgramme} from "./tlm-dated-mass-programme.js";
 import {
   CL27_PUBLIC_CELEBRATION_URL,attachPublishedCelebrationEvidence,tlmCelebrationEvidenceClass,
@@ -266,6 +267,20 @@ export async function loadPreliminaryR49({fetchImpl=fetch}={}){
     const printed=await tarareResponse.json();
     if(printed?.schema==="AO_CL27_EXACT_DATED_MASS_PROGRAMME_V1")
       cache=attachPublishedTarareDatedMassProgramme(cache,printed);
+  }
+  // Source-stated recurring patterns, never a promised Mass occurrence.
+  // The full Directory remains usable when an older offline snapshot lacks
+  // this optional evidence. Tagged malformed releases always fail closed.
+  let weekly=null;
+  try{
+    weekly=await fetchImpl(CL27_WEEKLY_SOURCE_PROGRAMME_URL,{headers:{accept:"application/json"}});
+  }catch{
+    // Optional release absent in an older installed client.
+  }
+  if(weekly?.ok){
+    const evidence=await weekly.json();
+    if(evidence?.schema==="AO_CL27_SOURCE_WEEKLY_MASS_PROGRAMME_V1")
+      cache=attachPublishedWeeklySourceProgrammes(cache,evidence);
   }
   return cache;
 }
