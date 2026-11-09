@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {DIVINUM_OFFICIUM_PIN as PIN}
  from "../src/app/source-transport-compat.js";
-import {assemblePrivateOfficeReview}
+import {assembleChristmas2026PrivateOfficeResearchReview}
  from "../src/office/private-office-review.js";
 import {projectComplineRecitation,COMPLINE_CONTEXT,COMPLINE_MINISTER}
  from "../src/office/compline-recitation-projection.js";
@@ -82,8 +82,8 @@ test("28 complete *PRIVATE* Latin source projections: 7 civil dates × 2 context
   for(const context of Object.values(COMPLINE_CONTEXT)){
    for(const minister of Object.values(COMPLINE_MINISTER)){
     const source=latinPinnedTransport();
-    const privateReview=await assemblePrivateOfficeReview({
-     hour:"COMPLINE",date,fetchSource:source.fetchSource,languageMode:"latin"
+    const privateReview=await assembleChristmas2026PrivateOfficeResearchReview({
+     date,fetchSource:source.fetchSource
     });
     assert.equal(privateReview.status,"PRIVATE_SOURCE_TEXT_REVIEW",
      date+" "+context+" "+minister+" "+privateReview.reason);
