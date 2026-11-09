@@ -71,6 +71,41 @@ class ImporterTests(unittest.TestCase):
             self.assertEqual(json.loads((root / "parsed" / "exceptions.json")
                                         .read_text())["issues"], [])
 
+    def test_upstream_explicit_source_heading_and_line_breaks(self):
+        parser = importer.OfficeTextParser()
+        parser.feed('''<html><body>
+          <H2 ID="Completoriumtop">Ad Completorium</H2>
+          <TR><TD ID="Completorium6"><p><b>Hymnus</b>
+          <br/>Te lucis ante terminum,<br/>Præsta, Pater piissime,<br/>
+          Regnans per omne sæculum.<br/>Amen.</p></TD></TR>
+          <TR><TD ID="Completorium7"><p><span class="ri">Ant.</span>
+          Miserere mihi, Domine.<br/>Psalmus 4<br/>4:2 Cum invocarem.</p></TD></TR>
+          </body></html>''')
+        blocks, _ = parser.finish()
+        self.assertEqual(len(blocks), 3)
+        hymn = blocks[1]
+        self.assertEqual(hymn["kind"], "explicit_source_section")
+        self.assertEqual(hymn["source_section_label"], "Hymnus")
+        self.assertEqual(hymn["attrs"]["id"], "Completorium6")
+        self.assertEqual(hymn["lines"][0], "Hymnus")
+        self.assertIn("Præsta, Pater piissime,", hymn["lines"])
+        self.assertEqual(blocks[2]["kind"], "source_block")
+        self.assertIsNone(blocks[2]["source_section_label"])
+        self.assertEqual([x["ordinal"] for x in blocks], [0, 1, 2])
+
+    def test_no_liturgical_inference_from_unmarked_source_text(self):
+        parser = importer.OfficeTextParser()
+        parser.feed('''<html><body><TR><TD ID="Tertia5"><p>
+          <span class="ri">Ant.</span> Rex pacificus.
+          <br/>Psalmus 118 [2]<br/>118:1 Beati immaculati in via.
+          </p></TD></TR></body></html>''')
+        blocks, _ = parser.finish()
+        self.assertEqual(len(blocks), 1)
+        self.assertIsNone(blocks[0]["source_section_label"])
+        self.assertEqual(blocks[0]["kind"], "source_block")
+        self.assertEqual(blocks[0]["attrs"]["id"], "Tertia5")
+        self.assertEqual(len(blocks[0]["lines"]), 3)
+
     def test_missing_hour_creates_explicit_exception_not_a_fake_success(self):
         with tempfile.TemporaryDirectory() as scratch:
             root = Path(scratch)
