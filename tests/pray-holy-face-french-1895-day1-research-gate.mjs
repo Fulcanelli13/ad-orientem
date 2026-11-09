@@ -21,5 +21,7 @@ assert.equal(r.release,"RESEARCH_ONLY_NOT_BOUND_TO_PUBLIC_READER");
 assert.equal(r.frenchBodyInCanonicalReader,"EMPTY");
 assert.ok(NOVENA_HOLY_FACE_1887_B25.days.every((d,i)=>d.originalSourceDay===i+1&&d.text.fr===""));
 assert.ok(NOVENA_HOLY_FACE_1887_B25.days.every(d=>d.text.en.length>3000));
-assert.equal(r.comparison.status,"TEN_PART_STRUCTURE_CORRESPONDS__FINAL_FULL_ENGLISH_PARAGRAPH_COLLATION_PENDING");
+assert.equal(r.comparison.status,"TEN_SECTION_BILINGUAL_FIRST_PASS_ALIGNED__SECOND_PROOF_AND_PRINT_VARIANTS_PENDING");
+assert.equal(r.comparison.variants.length,2);
+assert.deepEqual(r.comparison.englishParagraphIndicesByFrenchSection.narrative,[1,2]);
 console.log("PASS day-1 1895 original-language French 10-section research transcript; canonical 9-day EN preserved and FR still held");
