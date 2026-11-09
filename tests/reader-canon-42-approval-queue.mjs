@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
-import {buildCanon42ApprovalQueue} from "../src/mass/reader-canon-42-approval-queue.js";
+import {buildCanon42ApprovalQueue} from "../tools/mass-canon-42-approval-queue.mjs";
 
 const load=path=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
 const witnesses={
