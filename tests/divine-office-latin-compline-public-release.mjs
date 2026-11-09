@@ -69,7 +69,7 @@ test("no public Office route can fetch unapproved source words",async()=>{
   {date:"2026-11-28",hour:"VESPERS"},
   {date:"2027-01-11",hour:"COMPLINE"},
   {date:"2027-01-12",hour:"COMPLINE"},
-  {date:"2027-01-11",hour:"COMPLINE"},
+  {date:"2027-01-13",hour:"COMPLINE"},
   {date:"2026-11-28",hour:"COMPLINE",calendarScope:"LOCAL"},
   {date:"2027-11-28",hour:"COMPLINE"},
   {date:"2026-11-28",hour:"MATINS"}
