@@ -33,7 +33,8 @@ export function officeRouteState({date,hour,calendarScope="UNIVERSAL"}={}){
     return Object.freeze({date,hour,status:"RELEASED",
       reason:"PRINTED_LATIN_COMPLINE_CERTIFIED",
       label:appointment.appointment.label,
-      officeDate:date,sourceRevision:released.sourceRevision,
+      officeDate:appointment.officeOrdoResearch?.officeDate??date,
+      sourceRevision:released.sourceRevision,
       sourceResearch:true,readingEnabled:true,published:true});
    }
    const appointment=reviewAdventIComplineAppointment(date);
