@@ -146,7 +146,8 @@ try{
   "Benediction public-rite handoff missing");
  await page.locator(timeline+" [data-ao-devo-chapter='5']").tap();
  assert.equal((await snapshot()).final,"true");
- assert.ok((await snapshot()).nav&&((await snapshot()).nav!=="none"),"Forty Hours final manual return missing");
+ assert.equal(await page.locator(rootSel+" [data-p435930-forty-done]").count(),1,
+  "Forty Hours final manual return missing");
  await page.setViewportSize({width:320,height:720});
  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)<=1,
   "Small phone prayer reader overflows");
