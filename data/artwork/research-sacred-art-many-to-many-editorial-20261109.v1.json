@@ -296,10 +296,17 @@
       "new_assignments_authorised": 0,
       "bouts_legacy_released_registry_conflict": "Bouts cma-122338 is still in src/art/released-module-paintings.v1.js via PR2340; active runtime exposure not tested",
       "user_library_ai_visual_draft_files_recovered": 2,
-      "approved_ai_derived_originals_remaining_unlocated_across_searched_sources": 2,
+      "approved_ai_derived_originals_remaining_unlocated_across_searched_sources": 0,
       "library_recovery_does_not_override_prior_repo_only_unlocated_count": true,
-      "bouts_static_gallery_exposure_issue": "https://github.com/Fulcanelli13/ad-orientem/issues/2761"
+      "bouts_static_gallery_exposure_issue": "https://github.com/Fulcanelli13/ad-orientem/issues/2761",
+      "user_library_ai_original_image_files_located_total": 4,
+      "editorial_preference_conflict_requiring_resolution_dates": [
+        "2026-03-22"
+      ],
+      "final_production_certified_ai_images": 0,
+      "source_boundary_note": "Prior batch14 count of 2 is correct as a 9 Nov interim snapshot, superseded by batch15 after exact-file recovery and fresh SHA-256 computation."
     },
-    "user_library_derivative_batch14": "data/artwork/research/m2m-recovered-user-library-derivatives-batch14-20261109.v1.json"
+    "user_library_derivative_batch14": "data/artwork/research/m2m-recovered-user-library-derivatives-batch14-20261109.v1.json",
+    "ai_source_original_batch15": "data/artwork/research/m2m-ai-original-files-batch15-20261109.v1.json"
   }
 }
