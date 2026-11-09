@@ -19,15 +19,15 @@ assert.equal(openPrayerStatuses.filter(x=>x==='SUPPLEMENTARY_NOT_ASSIGNED').leng
 assert.equal(openPrayerStatuses.filter(x=>x==='HOLD_RESPECTED').length,14);
 
 const linked=audit.records.filter(x=>x.candidateCount>0);
-assert.equal(linked.length,123);
-assert.equal(audit.records.filter(x=>!x.candidateCount).length,47);
+assert.equal(linked.length,136);
+assert.equal(audit.records.filter(x=>!x.candidateCount).length,34);
 assert.deepEqual(Object.entries(audit.counts.byClass).map(([rank,x])=>[rank,x.unmatchedBaseline,x.withResearchLeads,x.stillWithoutLeads]),[
- ['II',29,25,4],['III',101,63,38],['IV',40,35,5]
+ ['II',29,25,4],['III',101,76,25],['IV',40,35,5]
 ]);
 const edges=audit.records.flatMap(x=>x.artworkRelationships);
-assert.equal(edges.length,147);
+assert.equal(edges.length,161);
 assert.equal(edges.filter(x=>x.kind==='EXISTING_989_GROUP_RESEARCH_LINK').length,25);
-assert.equal(edges.filter(x=>x.kind==='NEW_INSTITUTIONAL_OBJECT_LEAD').length,112);
+assert.equal(edges.filter(x=>x.kind==='NEW_INSTITUTIONAL_OBJECT_LEAD').length,126);
 assert.equal(edges.filter(x=>x.kind==='SECONDARY_OR_COMMONS_RESEARCH_ONLY').length,10);
 assert.equal(audit.counts.newAuthorizedAssignments,0);
 const groups=new Map(original.map(x=>[x.workGroupId,x]));
@@ -79,6 +79,15 @@ assert.ok(audit.records.find(x=>x.date==='2026-11-17').artworkRelationships.some
 assert.ok(audit.records.find(x=>x.date==='2026-11-26').artworkRelationships.every(x=>!x.title.includes('Pope')&&x.remark.includes('Gozzolini')),'November 26 must be abbot Sylvester Gozzolini, not Pope Sylvester I');
 assert.deepEqual(audit.records.find(x=>x.date==='2026-11-26').artworkRelationships.map(x=>x.key).sort(),['ICCD:1100255012','ICCD:1200199733-5']);
 assert.ok(!audit.records.some(row=>row.artworkRelationships.some(x=>x.key==='ICCD:1200239580')),'Pope Sylvester I Lanfranco must not be bound to Nov 26');
+assert.ok(audit.records.find(x=>x.date==='2026-06-10').artworkRelationships.some(x=>x.key==='NationalTrust:998409'&&x.title.includes('Margaret of Scotland')),'do not confuse St Margaret of Scotland with other Margarets');
+assert.ok(audit.records.find(x=>x.date==='2026-09-02').artworkRelationships.some(x=>x.key==='HungarianNationalGallery:55.967.1'&&x.remark.includes('copyrighted')),'King St Stephen is not protomartyr and photo still rights-held');
+assert.ok(audit.records.find(x=>x.date==='2026-10-13').artworkRelationships.some(x=>x.key==='NationalGallery:NG4451'&&x.remark.includes('Edward the Confessor')),'Wilton group motif must identify the correct Edward');
+assert.ok(audit.records.find(x=>x.date==='2026-10-16').artworkRelationships.some(x=>x.key==='LvivNationalGallery:Ж-1791'&&x.remark.includes('Silesian')),'Hedwig of Silesia not Jadwiga');
+assert.equal(audit.records.find(x=>x.date==='2026-10-19').artworkRelationships.length,2,'preserve both exact St Peter of Alcantara paintings');
+assert.ok(audit.records.find(x=>x.date==='2026-10-19').artworkRelationships.every(x=>x.remark.includes('Peter of Alcántara')||x.title.includes('Peter of Alcántara')),'St Peter of Alcantara not apostle');
+assert.ok(audit.records.find(x=>x.date==='2026-04-27').artworkRelationships.every(x=>x.medium.includes('engraving')),'Canisius print remains labelled non-oil');
+assert.ok(audit.records.find(x=>x.date==='2026-08-08').artworkRelationships.every(x=>x.medium.includes('charcoal')),'Curé Ars remains a drawing research lead');
+
 assert.ok(audit.records.find(x=>x.date==='2026-01-24').artworkRelationships.some(x=>x.medium.includes('parchment')));
 assert.ok(audit.records.find(x=>x.date==='2026-03-06').artworkRelationships.every(x=>x.medium.includes('manuscript')||x.medium.includes('woodcut')),'Wicked husbandmen art is non-oil fallback');
 assert.ok(audit.records.find(x=>x.date==='2026-06-01').artworkRelationships.some(x=>x.remark.includes('copyright-restricted')));
@@ -88,4 +97,4 @@ assert.ok(audit.records.find(x=>x.date==='2026-06-01').artworkRelationships.some
 
 assert.ok(audit.records.find(x=>x.date==='2026-11-08').artworkRelationships.some(x=>x.key==='Thyssen:1979.62'));
 assert.ok(audit.records.find(x=>x.date==='2026-10-18').artworkRelationships.some(x=>x.key==='REVIEW::commons:150920'));
-console.log('PASS: 170 unchanged Calendar holds, 27 protected Prayer holds, 123 dated research leads / 147 edges, no rejected originals or publication authority.');
+console.log('PASS: 170 unchanged Calendar holds, 27 protected Prayer holds, 136 dated research leads / 161 edges, no rejected originals or publication authority.');
