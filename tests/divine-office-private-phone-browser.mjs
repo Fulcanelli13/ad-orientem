@@ -193,6 +193,50 @@ try{
     officeDate,psalmDay,marianSection:season,sourceEvents:42,
     readingEvents:40,publicReleased:false,passed:true});
   }
+  // Year-boundary private LATIN source acceptance: seven further exact
+  // dates × 320/390px. Dates remain withheld on the public Prayer route.
+  for(const [civil,officeDate,psalmDay] of [
+   ["2026-12-28","2026-12-28","Dominica"],
+   ["2026-12-29","2026-12-29","Dominica"],
+   ["2026-12-30","2026-12-30","Dominica"],
+   ["2026-12-31","2027-01-01","Dominica"],
+   ["2027-01-01","2027-01-01","Dominica"],
+   ["2027-01-02","2027-01-03","Sabbato"],
+   ["2027-01-03","2027-01-03","Dominica"]
+  ]){
+   await page.locator('#reader input[type="date"]').fill(civil);
+   await page.locator('#reader input[type="date"]').dispatchEvent("change");
+   const sourceMode=page.locator("#reader .aoOfOptions select").nth(1);
+   assert.equal(await sourceMode.inputValue(),"la",
+    "New source-only Christmas octave must remain Latin only");
+   await page.getByRole("button",{name:"Read source preview"}).click();
+   await waitReady(page);
+   const actual=await page.locator(".aoOfReadiness").innerText();
+   assert.ok(actual.includes("civil "+civil+" · Office "+officeDate),
+    "Incorrect private civil/Office date "+civil+": "+actual);
+   assert.match(actual,/40 printed-ordinary moments/u);
+   assert.match(actual,/42 source events/u);
+   assert.equal(await page.locator("#reader").getAttribute("data-office-marian-source"),
+    "Psalterium/Mariaant#Nativiti",
+    "Do not reset to Advent ending on civil 1 January");
+   assert.equal(await page.locator(".aoOfLanguage").count(),1);
+   assert.match(await page.locator(".aoOfFrameControls").innerText(),
+    /Reading step 1 of/u);
+   await page.getByRole("button",{name:"Next"}).click();
+   assert.match(await page.locator(".aoOfFrameControls").innerText(),
+    /Reading step 2 of/u);
+   const overflow=await page.evaluate(()=>
+    document.documentElement.scrollWidth-document.documentElement.clientWidth);
+   assert.ok(overflow<=2,
+    "Private year-boundary "+civil+" overflows "+width+"px by "+overflow);
+   const capture=width+"-dec28-jan03-"+civil+"-latin-private.png";
+   await page.screenshot({path:resolve(OUT,capture),
+    animations:"disabled",fullPage:false});
+   receipt.screenshots.push(capture);
+   receipt.scenarios.push({case:"dec28-jan03-private-Compline",width,
+    civilDate:civil,officeDate,psalmDay,marianSection:"Nativiti",
+    sourceEvents:42,readingEvents:40,publicReleased:false,passed:true});
+  }
   // Exact 28 November civil date is not 29 November Office on First Vespers.
   await page.locator("#reader .aoOfOptions select").first().selectOption("VESPERS");
   assert.equal(await presider.isDisabled(),true);
