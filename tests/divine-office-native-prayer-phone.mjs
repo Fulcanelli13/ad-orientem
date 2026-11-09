@@ -14,6 +14,8 @@ const latinFixture=JSON.parse(await readFile(resolve(root,"tests/fixtures/office
 const sundayFixture=JSON.parse(await readFile(resolve(root,"tests/fixtures/office/advent-i-week-compline-la.json"),"utf8"));
 const tuesdayFixture=JSON.parse(await readFile(resolve(root,"tests/fixtures/office/advent-i-feria-iii-compline-la.json"),"utf8"));
 const mondayFixture=JSON.parse(await readFile(resolve(root,"tests/fixtures/office/advent-iii-feria-ii-compline-la.json"),"utf8"));
+const christmasMarianLatin=await readFile(resolve(root,
+ "data/office/research/christmas-2026-marian-latin-pinned-source.txt"),"utf8");
 const latinSourceBase="https://raw.githubusercontent.com/DivinumOfficium/divinum-officium/"+PIN+"/web/www/horas/Latin/";
 const out=resolve(root,"artifacts/divine-office-native-phone");
 await mkdir(out,{recursive:true});
@@ -109,8 +111,9 @@ try{
    }
    else if(relative.endsWith(".txt")){
     const path=relative.slice(0,-4);
+    if(path==="Psalterium/Mariaant")body=christmasMarianLatin;
     const items=latinFixture.sections[path];
-    if(items)body=Object.entries(items).map(([name,rows])=>
+    if(items&&path!=="Psalterium/Mariaant")body=Object.entries(items).map(([name,rows])=>
      "["+name+"]\n"+rows.join("\n")).join("\n\n")+"\n";
    }
    await route.fulfill({status:body?200:404,contentType:"text/plain",
@@ -276,6 +279,49 @@ try{
    await office.getByRole("button",{name:"Close Latin Compline"}).click();
    assert.equal(await office.locator(".aoOfPublishedLatin").count(),0);
   }
+  // Seven independent Christmas Latin release appointments at each phone
+  // width: 14 complete native PUBLIC journeys with source-fed texts.
+  const christmas=office.getByRole("combobox",{name:"Christmas Compline date"});
+  assert.equal(await christmas.count(),1);
+  for(const [date,officeDate,title,psalms] of [
+   ["2026-12-21","2026-12-21","St Thomas the Apostle, 21 December 2026",[4,90,133]],
+   ["2026-12-22","2026-12-22","Advent IV · Tuesday, 22 December 2026",[11,12,15]],
+   ["2026-12-23","2026-12-23","Advent IV · Wednesday, 23 December 2026",[33,60]],
+   ["2026-12-24","2026-12-25","First Compline of Christmas · 24 December 2026",[4,90,133]],
+   ["2026-12-25","2026-12-25","Nativity of Our Lord, 25 December 2026",[4,90,133]],
+   ["2026-12-26","2026-12-26","St Stephen the Protomartyr, 26 December 2026",[4,90,133]],
+   ["2026-12-27","2026-12-27","Sunday within the Octave of Christmas, 27 December 2026",[4,90,133]]
+  ]){
+   await christmas.selectOption(date);
+   assert.match(await office.locator(".aoOfStatus").innerText(),
+    /Latin Compline · available/u);
+   assert.match(await office.locator(".aoOfStatus").innerText(),
+    new RegExp("Office date: "+officeDate,"u"));
+   await office.getByRole("button",{name:"Read Latin Compline"}).click();
+   await page.waitForFunction(expected=>
+    document.querySelector(".aoOfPublishedStatus")?.textContent?.includes(
+     expected+" · 40 reading moments"),date,{timeout:35000});
+   const latin=office.locator(".aoOfPublishedLatin");
+   assert.ok((await latin.innerText()).includes(title),date+" wrong reader heading");
+   for(const n of psalms)assert.ok(observedLatin.some(
+    url=>url.endsWith("/Psalm"+n+".txt")),
+    "Missing original Latin Psalm "+n+" for "+date);
+   await latin.getByRole("button",{name:"Next"}).click();
+   assert.match(await latin.locator(".aoOfFrameControls").innerText(),/2 \/ /u);
+   const overflowDay=await page.evaluate(()=>
+    document.documentElement.scrollWidth-document.documentElement.clientWidth);
+   assert.ok(overflowDay<=2,"Christmas "+date+" overflows "+width+": "+overflowDay);
+   await office.getByRole("button",{name:"Close Latin Compline"}).click();
+   assert.equal(await office.locator(".aoOfPublishedLatin").count(),0);
+  }
+  // Refuse the first unreviewed post-Christmas-Octave date without a fetch.
+  const latinBaseline=observedLatin.length;
+  await office.locator('input[type="date"]').fill("2026-12-28");
+  await office.locator('input[type="date"]').dispatchEvent("change");
+  await office.locator('[data-office-hour="COMPLINE"]').click();
+  assert.equal(await office.getByRole("button",{name:"Read Latin Compline"}).count(),0);
+  assert.equal(observedLatin.length,latinBaseline,
+   "28 Dec must not acquire a Compline Latin source");
   await office.locator('[data-office-hour="VESPERS"]').click();
   const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-
    document.documentElement.clientWidth);
