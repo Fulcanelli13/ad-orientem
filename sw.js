@@ -54,6 +54,11 @@ const liveClients=new Map();
 const OFFLINE_CRITICAL_LAZY_OWNER=new URL("src/pray/browser-entry.js",BASE).href;
 // The first-use Angelus cinematic is a local, approved work, not a network image.
 const OFFLINE_CRITICAL_ANGELUS_ART=new URL("assets/pray/angelus/tanner-annunciation-1898.webp",BASE).href;
+// Include the two complete original private Litanies in each committed installed snapshot.
+const OFFLINE_CRITICAL_PRIVATE_LITANY=[
+ new URL("data/pray/private-litany-of-saints-1883-en.v1.json",BASE).href,
+ new URL("data/pray/private-litany-of-saints-1862-fr.v1.json",BASE).href
+];
 
 const scoped=url=>{
  try{const u=new URL(url,BASE);return u.origin===BASE.origin&&u.pathname.startsWith(BASE.pathname)&&!u.search&&!u.hash?u.href:null}
@@ -153,7 +158,7 @@ async function stageSnapshot(){
   // A resource is charged against the hard item limit only once, even if
   // both the HTML and an ESM/CSS import refer to it. Keep queue identity
   // distinct from actual certified resources (which are still hashed).
-  const queue=[...new Set([ROOT,...urlsInHtml(html),OFFLINE_CRITICAL_ANGELUS_ART])];
+  const queue=[...new Set([ROOT,...urlsInHtml(html),OFFLINE_CRITICAL_ANGELUS_ART,...OFFLINE_CRITICAL_PRIVATE_LITANY])];
   const processed=new Set(),digests=[];
   let bytes=0;
   try{
