@@ -238,7 +238,7 @@ try{
     {state:"visible",timeout:45000}
    );
    assert.match(await kyrieScore.locator("[data-ordinary-printed-source]")
-    .getAttribute("href"),/kyriale-solesmes\\.pdf#page=56$/);
+    .getAttribute("href"),/kyriale-solesmes\.pdf#page=56$/);
    await kyrieScore.locator(".ao-proper-reference-expand").click();
    const zoom=page.locator("dialog.ao-proper-reference-zoom");
    await zoom.waitFor({state:"visible",timeout:20000});
