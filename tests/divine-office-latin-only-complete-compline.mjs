@@ -244,7 +244,7 @@ test("language scopes and unreviewed dates never silently default to other witne
  });
  assert.equal(bad.status,"WITHHELD");
  assert.equal(transport.calls.length,0);
- for(const d of ["2026-11-27","2026-12-06"]){
+ for(const d of ["2026-11-27","2026-12-14"]){
   const x=await assemblePrivateOfficeReview({
    hour:"COMPLINE",date:d,fetchSource:transport.fetchSource,languageMode:"latin"
   });
