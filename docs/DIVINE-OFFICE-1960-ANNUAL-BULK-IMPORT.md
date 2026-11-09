@@ -31,8 +31,8 @@ generation completed for both requested years.
   SHA-256, the exact upstream revision and original EPUB member name.
 - [2026 source artifact](https://github.com/Fulcanelli13/ad-orientem/actions/runs/42601773798/artifacts/13667050531),
   [2027 source artifact](https://github.com/Fulcanelli13/ad-orientem/actions/runs/42601773798/artifacts/13665874269).
-  These are automatically purged **9 December 2026** unless durable
-  archival is completed.
+  These original-run artifacts expire **9 December 2026**; regeneration
+  from the pinned revision is possible when needed.
 
 I independently inspected actual generated chapter markup from the
 artifacts, not just CI summary counters: on 1 January 2026 the
@@ -109,20 +109,26 @@ For each original XHTML Hour it records:
 
 The **two full-year generation jobs** run in parallel via a GitHub
 Actions matrix. The results are research CI artifacts, **not**
-automatically included in the GitHub Pages static website. The initial artifacts expire after **30 days**. A separate,
-permission-scoped `archive-source-research` job now runs **only on
-main-branch pushes of this reviewed pipeline**. After verifying the two
-yearly manifests, original EPUB SHA-256 hashes, complete eight-Hour
-coverage, section/First-Vespers audits, exceptions and research-only
-flags, it creates an **immutable prerelease** with both EPUBs,
-structured monthly data, source logs and the upstream MIT licence.
-Its tag is
-`office-source-latin-1960-2026-2027-do126a07f-ao-v1`.
-It refuses to overwrite any previous archive.
+automatically included in the GitHub Pages static website. The first-run artifacts expire after 30 days. New runs retain
+generated research artifacts for **90 days**, subject to repository
+retention policy. The original 2026 and 2027 manifests, source
+fingerprints and the verified 5,840-Hour first-run evidence are
+committed permanently as
+`data/office/research/annual-office-1960-la-2026-2027-source-extraction.v1.json`.
 
-**Durable GitHub archival is not yet complete until this PR is merged
-and the main-branch archive job succeeds.** Source research releases
-never deploy to GitHub Pages or unlock additional public Hours.
+The repository's `production-tree-hygiene` security invariant
+**prohibits workflow `contents: write` outside narrowly scoped,
+preexisting workflows**. We found this in the Required main gate,
+and removed the attempted research-release writer. We will **not**
+weaken those protections to archive data. The pinned upstream
+Git revision + committed generation code + source hashes make both
+full-year archives **reproducible on demand**, but the ZIP/EPUB binaries
+are currently **ephemeral** and must not be described as durably
+stored. A future manual or separately approved archive mechanism
+could persist them without weakening the application release policy.
+
+The publication pathway stays GitHub Actions + GitHub Pages only;
+the source extractor and artifacts do not enter the public site.
 
 ## Three genuinely different readiness states
 
