@@ -33,25 +33,58 @@ try{
 
  for(const lang of ["en","fr"])for(const mode of ["LIVE","MISSAL"]){
   const label=lang+"-"+mode.toLowerCase();
-  let context;
+  let context,page=null,phase="context";
+  const startedAt=Date.now(),startupEvents=[];
+  const note=(kind,detail)=>{
+   startupEvents.push({t_ms:Date.now()-startedAt,kind,detail});
+   if(startupEvents.length>120)startupEvents.shift();
+  };
   try{
    context=await browser.newContext({viewport:{width:390,height:844},deviceScaleFactor:2,
     isMobile:true,hasTouch:true,locale:lang==="fr"?"fr-FR":"en-GB",
     serviceWorkers:"allow"});
-   const page=await context.newPage();
+   page=await context.newPage();
    page.setDefaultTimeout(25000);
    const pageErrors=[];
-   page.on("pageerror",e=>pageErrors.push(String(e?.message??e)));
+   page.on("pageerror",e=>{
+    const message=String(e?.message??e);
+    pageErrors.push(message);
+    note("pageerror",message.slice(0,1200));
+   });
+   page.on("console",message=>{
+    if(["error","warning"].includes(message.type()))
+     note("console-"+message.type(),message.text().slice(0,1200));
+   });
+   page.on("requestfailed",request=>note("requestfailed",{
+    url:request.url(),type:request.resourceType(),error:request.failure()?.errorText??null
+   }));
+   page.on("response",response=>{
+    const status=response.status(),url=response.url();
+    if(status>=400||(url.startsWith(base.href)&&
+      /(?:\\.js|\\.css)(?:[?#]|$)/i.test(url)))
+     note("response",{status,url});
+   });
+   page.on("domcontentloaded",()=>note("domcontentloaded",page.url()));
+   page.on("load",()=>note("load",page.url()));
+   page.on("framenavigated",frame=>{
+    if(frame===page.mainFrame())note("navigated",frame.url());
+   });
    const url=new URL(base);
    url.searchParams.set("aoR17Reader","native");
    url.searchParams.set("aoPrayerPilot","0");
    url.searchParams.set("ao_page_phone",label+"-"+expectedRunId);
+   phase="navigation";
    const response=await page.goto(url.href,{waitUntil:"domcontentloaded",timeout:90000});
+   note("main-response",{status:response?.status(),url:response?.url()});
    assert.equal(response?.status(),200,"Public phone entry returned non-200");
+   phase="native-owners";
+   // Never relax the 65s readiness contract. On a first-attempt failure,
+   // preserve the real browser's console, network, SW and owner state.
    await page.waitForFunction(()=>Boolean(
     globalThis.AO_APP_SHELL_V1?.status?.()?.visibleOwner&&
     globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.installed
    ),null,{timeout:65000});
+   phase="home-navigation";
    await page.waitForSelector(".homeScreen",{state:"visible",timeout:45000});
    await page.waitForSelector(".aoH7HomeView [data-home-h7-enter]",{state:"visible",timeout:20000});
    await page.locator(".aoH7HomeView [data-home-h7-enter]").click();
@@ -169,8 +202,58 @@ try{
     totalCards:state.totalCards,preGospelCards:state.preGospelCards.length,sourceCards:state.sourceCards,
     schola:state.scholaPresent,overflow:state.hasHorizontalOverflow}));
   }catch(e){
-   await writeFile(resolve(out,"evidence.json"),
-    JSON.stringify({...report,failedCase:label,error:String(e?.stack??e)},null,2)+"\n");
+   // #2733: an isolated rerun can pass after a 65s first-attempt failure.
+   // Keep original failure fatal, but retain what actually loaded instead of
+   // changing timeouts, making a fresh context, or fabricating owner state.
+   let browserState=null,captureError=null;
+   if(page&&!page.isClosed()){
+    try{
+     browserState=await Promise.race([
+      page.evaluate(()=>{
+       const safe=fn=>{try{return fn()}catch(e){return "ERROR: "+String(e)}};
+       const shell=safe(()=>globalThis.AO_APP_SHELL_V1?.status?.()??null);
+       const reader=safe(()=>globalThis.AO_R17_BROWSER_ENTRY?.status?.()??null);
+       const nav=performance.getEntriesByType("navigation")[0];
+       return {
+        href:location.href,readyState:document.readyState,
+        title:document.title,visibility:document.visibilityState,
+        shellGlobal:typeof globalThis.AO_APP_SHELL_V1,
+        shellVisibleOwner:typeof shell==="object"&&shell!==null?shell.visibleOwner??null:null,
+        readerGlobal:typeof globalThis.AO_R17_BROWSER_ENTRY,
+        readerInstalled:typeof reader==="object"&&reader!==null?reader.installed??null:null,
+        bootExists:Boolean(document.querySelector("#ao-cinema-boot")),
+        bootVisible:Boolean(document.querySelector("#ao-cinema-boot")?.getClientRects().length),
+        homeVisible:Boolean(document.querySelector(".homeScreen")?.getClientRects().length),
+        swController:navigator.serviceWorker?.controller?.scriptURL??null,
+        navTiming:nav?{domContentLoaded:nav.domContentLoadedEventEnd,
+          loadEnd:nav.loadEventEnd,transferSize:nav.transferSize}:null,
+        scripts:[...document.scripts].map(x=>x.src).filter(Boolean).slice(-24),
+        criticalResources:performance.getEntriesByType("resource")
+         .filter(x=>/(?:\\.js|\\.css|release-proof\\.json)(?:[?#]|$)/i.test(x.name))
+         .slice(-35).map(x=>({url:x.name,duration:Math.round(x.duration),
+          transferSize:x.transferSize,responseStatus:x.responseStatus??null})),
+        readerStatus:reader&&typeof reader==="object"?
+         {installed:reader.installed??null,uiOwner:reader.uiOwner??null}:null,
+       };
+      }),
+      new Promise((_,reject)=>setTimeout(()=>reject(Error("diagnostic evaluation exceeded 8s")),8000))
+     ]);
+    }catch(error){captureError="state: "+String(error)}
+    try{
+     await page.screenshot({path:resolve(out,label+"-startup-failure-390.png"),
+      fullPage:false,timeout:8000});
+    }catch(error){captureError=(captureError??"")+" screenshot: "+String(error)}
+   }
+   const failure={case:label,phase,elapsedMs:Date.now()-startedAt,
+    source_sha:expectedSha,run_id:expectedRunId,
+    error:String(e?.stack??e),pageErrors:startupEvents.filter(x=>x.kind==="pageerror").map(x=>x.detail),
+    browserState,captureError,startupEvents};
+   report.failedCase=label;
+   report.startupFailure=failure;
+   await writeFile(resolve(out,label+"-startup-diagnostics.json"),
+    JSON.stringify(failure,null,2)+"\n");
+   await writeFile(resolve(out,"evidence.json"),JSON.stringify(report,null,2)+"\n");
+   console.error("PAGES_PHONE_BOOT_DIAGNOSTICS "+JSON.stringify(failure));
    if(context)await context.close();
    addFailure(label,e);
   }
