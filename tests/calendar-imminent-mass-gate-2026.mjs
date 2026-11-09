@@ -155,8 +155,8 @@ try{
          calendarResolution:resolved});
        const plan=compileMassPlan(prepared);
        const selected=prepared?.proper?.data??prepared?.proper;
-       const languages={};
        const sourceHeading=String(selected?.preface?.la??selected?.preface?.lat??"").slice(0,75);
+       const languages={};
        for(const language of ["en","fr"]){
          const slots=properToReaderSlots(selected,{language}).slots;
          languages[language]={
