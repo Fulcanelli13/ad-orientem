@@ -7,6 +7,7 @@ import {novenaStatusFor,novenaWindowFor} from "../src/calendar/intelligence.js";
 const read=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
 const original=read("../data/pray/research/pray-b25-holy-face-janvier-1887-nine-full-english-days.v1.json");
 const admission=read("../data/pray/pray-b25-holy-face-1887-admission.v1.json");
+const frenchOriginal=read("../data/pray/pray-b25-holy-face-french-original-volume-1894.v1.json");
 const variants=read("../data/pray/research/pray-b25-holy-face-1887-variant-review.v1.json");
 const approvedDisplayEmendationIds=new Set(["B25-V01","B25-V03","B25-V04","B25-V05"]);
 assert.equal(variants.photographed1887ManualCompared,false,"Do not imply 1887 photograph collation");
@@ -66,7 +67,27 @@ assert.equal(novenaStatusFor(n,"2027-02-08").day,9);
 assert.equal(novenaStatusFor(n,"2027-02-03").kind,"active");
 assert.equal(n.source.status,"HISTORICAL_EN_DIGITAL_TRANSCRIPTION_PRINT_IMAGE_UNCOLLATED");
 assert.match(n.source.adaptation,/not independently collated/i);
-assert.equal(n.frenchTextStatus,"HISTORICAL_ENGLISH_ONLY_NO_FRENCH_WITNESS");
+assert.equal(n.frenchTextStatus,"HISTORICAL_ENGLISH_ONLY_FRENCH_1894_VOLUME_LOCATED_TEXT_UNCOLLATED");
+assert.equal(gate.frenchHistoricalVolumeLocated,true);
+assert.equal(gate.frenchHistoricalVolumeTextTranscribed,false);
+assert.equal(gate.frenchHistoricalVolumeYear,1894);
+assert.equal(frenchOriginal.workId,n.id);
+assert.equal(frenchOriginal.status,"FRENCH_ORIGINAL_VOLUME_BIBLIOGRAPHY_LOCATED_TEXT_NOT_COLLATED");
+assert.equal(frenchOriginal.frenchHistoricalVolume.publicationYear,1894);
+assert.equal(frenchOriginal.frenchHistoricalVolume.pageCount,88);
+assert.equal(frenchOriginal.englishReader.fullEnglishDayTexts,9);
+assert.equal(frenchOriginal.admission.frenchPrayerBodies,0);
+assert.equal(frenchOriginal.admission.latinPrayerBodies,0);
+assert.equal(frenchOriginal.admission.noAIGeneratedPrayerTranslation,true);
+assert.equal(frenchOriginal.admission.frenchOriginalBookComparativeCollation,false);
+assert.equal(n.frenchOriginalEdition.status,"BOOK_LOCATED_BIBLIOGRAPHIC_ONLY_NO_NINE_FRENCH_DAY_BODIES");
+assert.equal(n.frenchOriginalEdition.textAlignedWith1887English,false);
+assert.equal(n.frenchOriginalEdition.url,frenchOriginal.frenchHistoricalVolume.freeDigitalBook);
+const frenchLink=n.historySources.find(x=>x.role==="ORIGINAL_FRENCH_BOOK_1894_UNCOLLATED");
+assert.ok(frenchLink);
+assert.equal(frenchLink.url,frenchOriginal.frenchHistoricalVolume.freeDigitalBook);
+assert.match(frenchLink.labelFr,/non transcrit/i);
+assert.match(frenchLink.label,/not transcribed/i);
 const runtime=readFileSync(new URL("../src/pray/novena-runtime.js",import.meta.url),"utf8");
 for(const token of [
  'import { NOVENA_HOLY_FACE_1887_B25 }',
@@ -76,10 +97,13 @@ for(const token of [
  "function sourceWitness(text,label)",
  "novenaSourceWitnessFaceV1(text,isFr()?'fr':'en',N.showEnglish)",
  "data-n1-proper-source-fallback",
+ "data-n1-holy-face-french-1894-original",
+ "isFr()&&x.labelFr?x.labelFr:x.label",
+ "notice+frenchPrint+novenaParagraphs(face.text)",
  "data-n1-source-language",
  "data-n1-show-en",
  "p==='SOURCE_REPEAT_ONLY'",
  "novenaStatusFor(n,key,{fr:isFr()})"
 ])assert.ok(runtime.includes(token),"Missing existing Novena integration: "+token);
 assert.ok(!runtime.includes("fullDailyReadingEnglish"),"Do not fetch or assemble external source at runtime");
-console.log("PASS B25 Holy Face: nine complete Janvier digital English days, originals exact, no appended modern texts, Shrove-Tuesday movable dates, French display uses labelled historic English without invented FR, original 16 preserved");
+console.log("PASS B25 Holy Face: authenticated French 1894 book-access lead (no French bodies), nine complete Janvier digital English days, originals exact, no appended modern texts, Shrove-Tuesday movable dates, French display uses labelled historic English without invented FR, original 16 preserved");
