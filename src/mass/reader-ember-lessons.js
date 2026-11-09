@@ -4,6 +4,7 @@
 
 import { assertPreGospelSourceOrderProof } from "./pre-gospel-sequence.js";
 import { projectResolvedReaderText } from "./reader-projection.js";
+import { select1962SeptemberEmberSaturdayVariant } from "./ember-saturday-variant.js";
 
 function freeze(value){return Object.freeze(value)}
 function clean(value){const s=String(value??"").trim();return s||null}
@@ -143,7 +144,10 @@ export function buildEmberInsertionCards(resolvedMass,{language="en"}={}){
   const sequence=m.preGospelSequence??m.interlectionSequence??null;
   if(!sequence?.length)return freeze([]);
   assertPreGospelSourceOrderProof(sequence,m.preGospelSequenceProvenance);
-  return freeze(sequence.map((node,index)=>{
+  // Choose the rubric's short or long source projection only after
+  // validating the original complete source and its fixed node order.
+  const variant=select1962SeptemberEmberSaturdayVariant(resolvedMass,sequence);
+  return freeze(variant.sequence.map((node,index)=>{
     const paragraphs=resolveNodeParagraphs(node,m,locale);
     return freeze({
       schema:"ao-r31-ember-insertion-card-v1",
@@ -179,6 +183,8 @@ export function projectEmberInsertionModel(model,resolvedMass,{language="en"}={}
   if(!required)return model;
   const inserts=buildEmberInsertionCards(resolvedMass,{language});
   if(inserts.length===0)throw new Error("EMBER_LESSONS requires a resolved source-ordered preGospelSequence");
+  const variant=select1962SeptemberEmberSaturdayVariant(resolvedMass,
+    m.preGospelSequence??m.interlectionSequence??[]);
 
   const epistleIndex=model.cards.findIndex(card=>
     card.sectionId==="AO.CARD.005" || card.sourceSectionId==="AO.CARD.005"
@@ -223,6 +229,8 @@ export function projectEmberInsertionModel(model,resolvedMass,{language="en"}={}
     totalCards:cards.length,
     emberInsertionCount:inserts.length,
     emberSourceOrder:freeze(inserts.map(x=>x.sourceSectionKey)),
+    emberSaturdayForm:variant.form,
+    emberSaturdayFormAuthority:variant.authority,
     cardBySequence,
     cardForEvent,
     previousCard:sectionId=>neighbor(sectionId,"previous"),
