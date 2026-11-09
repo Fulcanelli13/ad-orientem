@@ -133,29 +133,18 @@ test("mutated officeDate, psalms, feast, Marian terminus or concurrence can neve
  }
 });
 
-test("all 7 Christmas research dates remain *unreleased*, with zero network fetches for both contexts and ministers",async()=>{
+test("Christmas intake remains research-only; public release uses a separate pinned certificate",()=>{
  assert.equal(LATIN_COMPLINE_RELEASE.approvedDates.length,23);
  assert.equal(LATIN_COMPLINE_RELEASE.approvedDates.at(-1),"2026-12-20");
  for(const {date} of records){
-  assert.equal(latinComplineReleaseEligibility({date}).status,"WITHHELD");
+  const source=reviewChristmas2026ComplineResearch({date,record:byDate(date)});
+  assert.equal(source.status,"DATED_ORDO_RESEARCH_ONLY_COMPLETE_HOUR_WITHHELD");
+  assert.equal(source.published,false);
+  assert.equal(source.calendarSelectionAuthorized,false);
   assert.equal(reviewAdventIComplineAppointment(date).status,"WITHHELD");
+  assert.equal(latinComplineReleaseEligibility({date}).status,"ELIGIBLE");
   const route=officeRouteState({date,hour:"COMPLINE"});
-  assert.equal(route.status,"WITHHELD");
-  assert.equal(route.readingEnabled,false);
-  for(const context of Object.values(COMPLINE_CONTEXT)){
-   for(const minister of Object.values(COMPLINE_MINISTER)){
-    let requests=0;
-    const result=await loadPublishedLatinCompline({
-     date,context,minister,fetchSource:async()=>{
-      requests++;throw Error("UNAUTHORIZED_OFFICE_SOURCE_FETCH");
-     }
-    });
-    assert.equal(result.status,"WITHHELD",date);
-    assert.equal(result.published,false);
-    assert.equal(result.sourceTextReleased,false);
-    assert.deepEqual(result.frames,[]);
-    assert.equal(requests,0,date+" "+context+" "+minister);
-   }
-  }
+  assert.equal(route.status,"RELEASED");
+  assert.equal(route.published,true);
  }
 });
