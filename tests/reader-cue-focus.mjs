@@ -125,6 +125,42 @@ assert.equal(pickReadingParagraph({
   scrollTop:178,clientHeight:100,scrollHeight:600,items:gapRows
 })?.id,"short-response","short response never acquired its nearest-edge reading territory");
 
+// Regression from measured EN 390px Gospel: the scroll box can stop at 626px
+// with C0087 (Laus tibi, Christe) still below its 39% focus line. There must
+// be a real interval for both the uncued Gospel and short concluding response.
+const gospelMeasured=[
+ {id:"AO.SM.C0082",top:22,bottom:246},
+ {id:"AO.SM.C0083",top:252,bottom:477},
+ {id:"AO.SM.C0084",top:501,bottom:590},
+ {id:"AO.SM.C0085",top:596,bottom:821},
+ {id:"uncued Gospel",top:845,bottom:896},
+ {id:"AO.SM.C0087",top:902,bottom:976},
+ {id:"AO.SM.C0088",top:982,bottom:1062}
+];
+const gospelReached=[],gospelHandoffs=[];
+let gospelPrior=-1;
+for(let y=0;y<=626;y++){
+ const selected=pickReadingParagraph({scrollTop:y,clientHeight:668,scrollHeight:1294,items:gospelMeasured});
+ const idx=gospelMeasured.indexOf(selected);
+ assert.ok(idx>=gospelPrior&&idx<=gospelPrior+1,
+  "Gospel LIVE focus jumped over/backward past a readable row at scroll "+y);
+ if(idx!==gospelPrior){gospelReached.push(selected.id);gospelHandoffs.push(y)}
+ gospelPrior=idx;
+}
+assert.deepEqual(gospelReached,gospelMeasured.map(row=>row.id),
+ "Gospel reading must illuminate C0087 between the uncued text and final C0088");
+assert.ok(gospelHandoffs.at(-1)-gospelHandoffs.at(-2)>=12,
+ "Short Gospel response must own more than a single-frame focus interval");
+// A naturally sufficient scroll runway must retain the unmodified 39% line.
+const naturalPenultimate=[
+ {id:"opening",top:20,bottom:100},
+ {id:"short-response",top:500,bottom:545},
+ {id:"last",top:560,bottom:650}
+];
+assert.equal(pickReadingParagraph({
+ scrollTop:450,clientHeight:150,scrollHeight:1100,items:naturalPenultimate
+})?.id,"short-response","Natural penultimate focus must not be forced to the edge");
+
 // An omitted or hidden paragraph cannot steal illumination from actual text.
 const emptyRow={...makeRow(48,null),textContent:"",closest:()=>null};
 const hiddenRow={...makeRow(64,null),textContent:"Hidden",closest:()=>({hidden:true})};
