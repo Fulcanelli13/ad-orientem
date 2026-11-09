@@ -1,0 +1,275 @@
+{
+  "schema": "AO_DYK_CUSTOMS_400_EDITORIAL_QA_20261110_V1",
+  "as_of": "2026-11-10",
+  "state": "SOURCE_BOUNDED_EDITORIAL_REVIEW_NOT_RELEASE",
+  "corpus": "data/research/did-you-know/dyk-customs-first-400-bilingual-review-20261110.v1.json",
+  "overlays": [
+    "data/research/did-you-know/dyk-customs-first-400-editorial-wave01-20261110.v1.json",
+    "data/research/did-you-know/dyk-customs-first-400-editorial-wave02-20261110.v1.json",
+    "data/research/did-you-know/dyk-customs-first-400-editorial-wave03-20261110.v1.json",
+    "data/research/did-you-know/dyk-customs-first-400-editorial-wave04-20261110.v1.json"
+  ],
+  "counts": {
+    "total": 400,
+    "families": {
+      "CANONICAL_CUSTOMS": 35,
+      "PITRE_1900": 175,
+      "WEISER_1958": 190
+    },
+    "paired_EN_FR_editorial_rewrites": 145,
+    "unchanged_pending_copy_review": 255,
+    "original_text_preserved_in_every_overlay": true,
+    "all_research_records_have_https_sources": true,
+    "reader_author_attributions_remaining": 0,
+    "reader_redundant_intros_remaining": 0,
+    "invalid_revised_ids": 0,
+    "duplicate_effective_en": 0,
+    "duplicate_effective_fr": 0,
+    "duplicate_effective_ids": 0,
+    "published_H225_rows_covered_by_exact_comparison": 201,
+    "exact_effective_en_matches_with_H225": 0,
+    "high_lexical_overlap_with_H225_072": 0,
+    "historical_records_lacking_printed_page_locator": 68,
+    "newly_visually_rechecked_original_folio_in_this_pass": 1,
+    "institutional_fact_sheet_verifications_in_this_pass": 1,
+    "possible_generic_or_geographically_underspecified_unedited_queue": 35,
+    "distinct_source_urls_in_bank": 56,
+    "publications_authorized": 0
+  },
+  "source_audit_claims": [
+    {
+      "id": "DYK-H04-W-A-051",
+      "source": "1958 original facsimile, printed p99, zero-based scan 116",
+      "result": "Paradise play is medieval religious theatrical mystery; fir tree with apples on stage; origin of modern tree framed as historical association rather than exclusive proven causation"
+    },
+    {
+      "id": "DYK-CUSTOMS-CANON-DEV-009",
+      "source": "Sanctuaire Notre-Dame de Laghet official ex-votos page",
+      "result": "Institutional list includes crutches, wedding bouquets and car steering wheels; does not certify alleged miracles"
+    }
+  ],
+  "editorial_policy": [
+    "User-facing display text contains no source author names or redundant Did You Know preface.",
+    "All 143+ revised pairs are proposals, not claim certification; remaining original text is not deemed finally accepted.",
+    "No auto-publication of H7 from this corpus; explicit source-level and bilingual signoff required.",
+    "The three removed off-scope/generic records are archived in the main corpus method field; replacements are historical Catholic processions.",
+    "Printed-page pointers absent in 68 records must be located or records held.",
+    "Human semantic, cultural attribution, French nuance and source image QA still pending."
+  ],
+  "review_queue": {
+    "unverified_printed_page_ids": [
+      "DYK-H04-W-A-013",
+      "DYK-H04-W-A-023",
+      "DYK-H04-W-A-039",
+      "DYK-H04-W-A-058",
+      "DYK-H04-W-A-063",
+      "DYK-H04-W-A-068",
+      "DYK-H04-W-A-076",
+      "DYK-H04-W-A-077",
+      "DYK-H04-W-A-080",
+      "DYK-H04-W-A-081",
+      "DYK-H04-W-A-082",
+      "DYK-H04-W-A-093",
+      "DYK-H04-W-A-094",
+      "DYK-H04-W-A-096",
+      "DYK-H04-W-A-102",
+      "DYK-H04-W-B-004",
+      "DYK-H04-W-B-006",
+      "DYK-H04-W-B-007",
+      "DYK-H04-W-B-010",
+      "DYK-H04-W-B-018",
+      "DYK-H04-W-B-033",
+      "DYK-H04-W-B-037",
+      "DYK-H04-W-B-042",
+      "DYK-H04-W-B-059",
+      "DYK-H04-W-B-060",
+      "DYK-H04-W-B-061",
+      "DYK-H04-W-B-096",
+      "DYK-H04-W-B-105",
+      "DYK-H04-W-B-116",
+      "DYK-H04-W-B-125",
+      "DYK-H04-W-B-149",
+      "DYK-H04-W-B-156",
+      "DYK-H04-W-B-165",
+      "DYK-H04-W-B-172",
+      "DYK-H04-W-B-179",
+      "DYK-UM02-001",
+      "DYK-UM02-004",
+      "DYK-UM02-007",
+      "DYK-UM02-008",
+      "DYK-UM02-012",
+      "DYK-UM02-013",
+      "DYK-UM02-014",
+      "DYK-UM02-015",
+      "DYK-UM02-016",
+      "DYK-UM02-034",
+      "DYK-UM02-035",
+      "DYK-UM02-046",
+      "DYK-UM03-003",
+      "DYK-UM03-014",
+      "DYK-UM03-023",
+      "DYK-UM03-025",
+      "DYK-UM03-033",
+      "DYK-UM03-037",
+      "DYK-H04-P-015",
+      "DYK-H04-P-017",
+      "DYK-H04-P-025",
+      "DYK-H04-P-029",
+      "DYK-H04-P-037",
+      "DYK-H04-P-054",
+      "DYK-H04-P-061",
+      "DYK-H04-P-072",
+      "DYK-H04-P-085",
+      "DYK-H04-P-098",
+      "DYK-H04-P-111",
+      "DYK-H04-P-122",
+      "DYK-H04-P-129",
+      "DYK-H04-P-152",
+      "DYK-H04-W-B-160"
+    ],
+    "representative_generic_reader_candidates": [
+      {
+        "id": "DYK-CUSTOMS-CANON-DOM-013",
+        "en": "The faithful traditionally take blessed Palm Sunday branches home, including to adorn domestic crucifixes as a sign of trust in Christ crucified. This follows, rather than replaces, participation in the Palm Sunday liturgy."
+      },
+      {
+        "id": "DYK-CUSTOMS-CANON-NDAY-001",
+        "en": "Families may commemorate a person's baptismal patron on that saint's feast with prayer, the saint's life and a modest family meal, optionally attending Mass; this is a voluntary domestic celebration, not an additional liturgical feast."
+      },
+      {
+        "id": "DYK-CUSTOMS-CANON-PATR-001",
+        "en": "A French local church or village may observe its own patronal feast with Mass, procession and communal festivities; the particular date and form belong to the local place and are not universally scheduled."
+      },
+      {
+        "id": "DYK-CUSTOMS-CANON-SANT-001",
+        "en": "The Franciscan charitable practice of St Anthony's Bread supports people in need; its French revival is associated with Louise Bouffier of Toulon in 1890. Families may honour the saint with voluntary almsgiving."
+      },
+      {
+        "id": "DYK-CUSTOMS-CANON-SCHR-001",
+        "en": "Some French parishes celebrate St Christopher and arrange a ministerial blessing of drivers, travellers and vehicles near 25 July; one 2026 parish example took place on 19 July."
+      },
+      {
+        "id": "DYK-CUSTOMS-CANON-ADVT-001",
+        "en": "The family Advent wreath, commonly made with four candles, accompanies prayer and Scripture during Advent; additional candles are traditionally lit on successive Sundays as the Nativity approaches."
+      },
+      {
+        "id": "DYK-CUSTOMS-CANON-ADVT-003",
+        "en": "In Las Posadas, neighbours and families recall Mary and Joseph's search for lodging through songs and symbolic visits between houses, traditionally beginning on 16 December in Mexico and other Latin American Catholic communities."
+      },
+      {
+        "id": "DYK-CUSTOMS-CANON-XMAS-001",
+        "en": "Polish Catholic families may share thin unconsecrated opłatek wafers before Christmas Eve supper, exchanging wishes for peace and reconciliation. An optional blessing of the wafers by a priest is separate from the family sharing."
+      },
+      {
+        "id": "DYK-CUSTOMS-CANON-ROGA-001",
+        "en": "A family may mark the Rogation days with a private prayerful walk, asking God to bless the work of farmers and the fruits of the earth, distinct from any priest-led Rogation procession or ministerial blessing."
+      },
+      {
+        "id": "DYK-CUSTOMS-CANON-EPIP-002",
+        "en": "French Catholic households share a galette or King Cake with a fève; some traditional forms reserve an extra portion for someone poor or a guest."
+      },
+      {
+        "id": "DYK-CUSTOMS-CANON-MARI-002",
+        "en": "A Catholic home may keep a small Mary garden or planters with flowers and herbs that recall Our Lady and invite prayer; individual plant legends require historical verification."
+      },
+      {
+        "id": "DYK-G600-P-027",
+        "en": "At Melilli, some women walked the route of Saint Sebastian's procession every evening during May, sometimes barefoot."
+      },
+      {
+        "id": "DYK-H04-W-A-076",
+        "en": "In central Europe, wine blessed on Saint John the Evangelist's feast, 27 December, was shared at meals, weddings and departures; some families kept it for the sick and dying."
+      },
+      {
+        "id": "DYK-H04-W-A-080",
+        "en": "In rural central Europe, some families greeted the New Year by praying the Rosary or other prayers around midnight."
+      },
+      {
+        "id": "DYK-H04-W-B-007",
+        "en": "In some Latin European and South American countries, the Holy Thursday repository was called a monumento and could be elaborately decorated and visited by the faithful."
+      },
+      {
+        "id": "DYK-H04-W-B-010",
+        "en": "In central European Green Thursday customs, the meal could begin with green-herb soup followed by spinach and eggs."
+      },
+      {
+        "id": "DYK-H04-W-B-033",
+        "en": "In French Canada, an Easter Monday ‘Emmaus walk’ could take the form of children visiting their grandparents, recalling the Gospel journey to Emmaus."
+      },
+      {
+        "id": "DYK-H04-W-B-037",
+        "en": "Across parts of eastern Europe, a small Easter lamb made of butter, pastry or sugar could decorate the family table as a symbol of Christ."
+      },
+      {
+        "id": "DYK-H04-W-B-048",
+        "en": "In some German and central European Ascension customs, a semi-liturgical procession after High Mass led the faithful through fields and pastures, where the priest blessed the land."
+      },
+      {
+        "id": "DYK-H04-W-B-075",
+        "en": "At some Corpus Christi processions, families knelt outside their own homes along the route to adore the Blessed Sacrament as it passed."
+      },
+      {
+        "id": "DYK-H04-W-B-076",
+        "en": "For Corpus Christi processions, houses along the route could be decorated with birch trees and green branches, with candles and sacred pictures in their windows."
+      },
+      {
+        "id": "DYK-H04-W-B-083",
+        "en": "In Seville Cathedral, a dance performed by choirboys before the altar became a distinctive Corpus Christi custom, also observed on certain other feasts."
+      },
+      {
+        "id": "DYK-H04-W-B-096",
+        "en": "For a traditional Catholic name day, a person could attend Mass with the family and then be excused from everyday domestic or farm chores for the rest of the day."
+      },
+      {
+        "id": "DYK-H04-W-B-133",
+        "en": "In central European All Souls customs, families could set a candle saved from Candlemas on the table and pray together when the church bells rang at dusk."
+      },
+      {
+        "id": "DYK-H04-W-B-147",
+        "en": "In Hungary, some families invited orphaned children to meals on All Saints' and All Souls' Days, and offered them clothes and toys."
+      },
+      {
+        "id": "DYK-UM01-004",
+        "en": "In the German Advent play Herbergsuchen, Mary and Joseph knocked at doors seeking shelter; the often-sung scene ended at a stable."
+      },
+      {
+        "id": "DYK-UM01-005",
+        "en": "In some European Christmas Eve customs, a little bell signalled that children could enter the room where the Christ Child was believed to have left gifts."
+      },
+      {
+        "id": "DYK-H04-P-023",
+        "en": "Some pilgrims reached Monreale's Holy Crucifix barefoot and knelt at the church entrance after their journey."
+      },
+      {
+        "id": "DYK-H04-P-119",
+        "en": "The Madonna del Monte feast at Racalmuto historically fell on the second Sunday of May."
+      },
+      {
+        "id": "DYK-G365-W-A-024",
+        "en": "In some places, children wrote letters to the Christ Child on Saint Nicholas Eve."
+      },
+      {
+        "id": "DYK-G365-W-B-025",
+        "en": "In some Central European communities, families took home fire blessed at the Easter Vigil in lanterns."
+      },
+      {
+        "id": "DYK-G365-W-B-062",
+        "en": "Some European Pentecost customs included climbing a hill at dawn to pray."
+      },
+      {
+        "id": "DYK-G365-W-B-091",
+        "en": "In historical Hungarian and Polish celebrations near the Assumption, processions could include the produce of the harvest."
+      },
+      {
+        "id": "DYK-G365-W-B-113",
+        "en": "In some Eastern and Central European communities, people decorated candles before bringing them for the Candlemas blessing."
+      },
+      {
+        "id": "DYK-H04-W-A-003",
+        "en": "Some families once reserved new clothes or shoes for their first wearing at Sunday Mass."
+      }
+    ]
+  },
+  "external_publication_overlap": [],
+  "exceptions": []
+}
