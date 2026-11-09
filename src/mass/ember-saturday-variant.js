@@ -56,7 +56,12 @@ export function select1962SeptemberEmberSaturdayVariant(resolvedMass,sequence){
     if(typeof selection.isConventual!=="boolean"||
        typeof selection.ordinations!=="boolean")
       throw new Error("EMBER_SHORT_REQUIRES_EXPLICIT_CONVENTUAL_AND_ORDINATION_CONTEXT");
-    if(selection.isConventual||selection.ordinations)
+    // Independently recorded host/celebration facts cannot be overridden
+    // by self-declared false flags in the option payload.
+    const conventualHost=resolvedMass?.provenance?.conventualMass===true;
+    const ordinationHost=resolvedMass?.provenance?.ordinationMass===true;
+    if(selection.isConventual||selection.ordinations||
+      conventualHost||ordinationHost)
       throw new Error("EMBER_SHORT_FORBIDDEN_FOR_CONVENTUAL_OR_ORDINATIONS");
   }
   const kept=selection.form==="SHORT"
