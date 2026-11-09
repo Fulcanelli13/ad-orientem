@@ -17,6 +17,7 @@ const low=load("../data/presentation/reader-text-low.v1.json");
 const sung=load("../data/presentation/reader-text-sung.v1.json");
 const sectionMap=load("../data/presentation/reader-section-map.v0.13.1.json");
 const canonSourceMap=load("../data/presentation/reader-canon-source-map.v1.json");
+const frenchOrdinary=load("../data/presentation/reader-french-ordinary.v1.json");
 const registry=load("../data/mass/rite-overlay-registry.v1.json");
 const extension=load("../data/mass/special-days-extension.v1.3.json");
 const core=load("../data/mass/special-days-core.v1.1.json");
@@ -151,7 +152,7 @@ const emberPrepared={session:{resolvedMass:resolved,
   plan:{kind:"MASS",overlayGraphs:["EMBER_LESSONS"],
     precedingGraphs:[],followingGraphs:[]}},
   readerPreferences:{mode:"LIVE",language:"en"}};
-const emberData={sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap};
+const emberData={sectionMap,lowCorpus:low,sungCorpus:sung,canonSourceMap,frenchOrdinary};
 const emberMode=buildReaderModeModels({prepared:emberPrepared,data:emberData,mode:"LIVE"});
 assert.equal(emberMode.sourceModel.totalCards,44);
 assert.equal(emberMode.presentationModel.totalCards,70);
