@@ -110,6 +110,20 @@ assert.equal(altomonte.title,"");
 assert.equal(ricci.title,"");
 assert.deepEqual(altomonte.proposal.categoryIds,[]);
 assert.deepEqual(ricci.proposal.categoryIds,[]);
+assert.equal(altomonte.sourceLeads.length,0,
+ "Neither known Altomonte Death of St Joseph work is yet linked to original w7 image");
+assert.equal(altomonte.relatedAltomonteObjectLeadsNotIdentityMatches.length,2);
+for(const lead of altomonte.relatedAltomonteObjectLeadsNotIdentityMatches){
+ assert.equal(lead.notAnIdentityMatch,true);
+ assert.equal(lead.notAnImageSourceApproval,true);
+ assert.match(lead.sourceUrl,/^https:\/\//);
+ assert.equal(lead.artist,"Martino Altomonte");
+}
+assert.notEqual(
+ altomonte.relatedAltomonteObjectLeadsNotIdentityMatches[0].object,
+ altomonte.relatedAltomonteObjectLeadsNotIdentityMatches[1].object,
+ "1731 Heiligenkreuz altarpiece and 2021 signed auction painting are different object records"
+);
 assert.equal(ricci.relatedEditorialObjectNotAnIdentityMatch.notAnIdentityMatch,true);
 const decisionFor=key=>prayer.original28OctUnmodifiedDecisions.find(d=>d.key===key);
 assert.equal(decisionFor("communion::w4-ricci")?.action,"keep");
