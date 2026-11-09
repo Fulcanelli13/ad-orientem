@@ -1,0 +1,26 @@
+name: Prayer Holy Face Janvier edition and nine-day source hold
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "data/pray/research/pray-holy-face-janvier-editions-nine-day-crosswalk-20261109.v1.json"
+      - "tests/pray-holy-face-janvier-edition-crosswalk-source-gate-20261109.mjs"
+      - "src/pray/holy-face-janvier-1887-b25.js"
+      - ".github/workflows/pray-holy-face-janvier-edition-crosswalk-20261109.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pray-janvier-source-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  exact-source-hold:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Protect all nine English bodies and prevent false French admission
+        run: node tests/pray-holy-face-janvier-edition-crosswalk-source-gate-20261109.mjs
