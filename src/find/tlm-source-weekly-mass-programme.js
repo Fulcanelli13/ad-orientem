@@ -1,26 +1,69 @@
-// Source-published *weekly patterns* for four exact CL2 venues. Never generate
+// Source-published *weekly patterns* for ten exact CL2 venues. Never generate
 // calendar occurrences, infer feast precedence, or claim real-time availability.
 export const CL27_WEEKLY_SOURCE_PROGRAMME_URL=new URL(
  "../../data/directory/cl27-weekly-mass-source-20261109.v1.json",import.meta.url).href;
 const T=v=>String(v??"").trim();
 const HTTPS=v=>/^https:\/\/[^\s<>"']+$/i.test(T(v));
 const EXPECTED=Object.freeze({
- "RG-005CCA55D4DF":"https://laportelatine.org/lieux/gavrus/reville",
- "RG-158B6DF9C6A3":"https://laportelatine.org/lieux/nantes",
- "RG-0A4EC539F260":"https://laportelatine.org/lieux/marseille/eglise-toulon",
- "RG-96C9520D0C32":"https://laportelatine.org/lieux/croix/lille"
+  "RG-005CCA55D4DF": "https://laportelatine.org/lieux/gavrus/reville",
+  "RG-158B6DF9C6A3": "https://laportelatine.org/lieux/nantes",
+  "RG-0A4EC539F260": "https://laportelatine.org/lieux/marseille/eglise-toulon",
+  "RG-96C9520D0C32": "https://laportelatine.org/lieux/croix/lille",
+  "RG-250DB3E4D38C": "https://laportelatine.org/lieux/plauzat/clermont-ferrand",
+  "RG-59852CB2D7DC": "https://laportelatine.org/lieux/gavrus/caen",
+  "RG-46D2128B7F14": "https://laportelatine.org/lieux/urmatt/strasbourg",
+  "RG-87CE879054F4": "https://laportelatine.org/lieux/valdevesle/troyes",
+  "RG-52D51472A0A6": "https://laportelatine.org/lieux/meylan/annecy",
+  "RG-09C21A51FF9C": "https://laportelatine.org/lieux/suresnes/samoreau"
 });
-const SCOPES=new Set(["SUNDAYS_AND_FEASTS","WEEKDAY_UNSPECIFIED","WEDNESDAY_FRIDAY_SATURDAY"]);
+const SCOPES=new Set(["SUNDAYS_AND_FEASTS","WEEKDAY_UNSPECIFIED","WEDNESDAY_FRIDAY_SATURDAY","WEEKDAY_EXCEPT_SATURDAY","MONDAY_WEDNESDAY_FRIDAY","TUESDAY_THURSDAY","FRIDAY","SATURDAY"]);
 const TYPES=new Set(["UNKNOWN","LOW","SUNG"]);
 const EXPECTED_LINES=Object.freeze({
- "RG-005CCA55D4DF":["SUNDAYS_AND_FEASTS|18:00|UNKNOWN"],
- "RG-158B6DF9C6A3":["SUNDAYS_AND_FEASTS|08:30|UNKNOWN",
-  "SUNDAYS_AND_FEASTS|10:30|UNKNOWN","SUNDAYS_AND_FEASTS|18:30|UNKNOWN",
-  "WEEKDAY_UNSPECIFIED|07:15|UNKNOWN","WEEKDAY_UNSPECIFIED|18:30|UNKNOWN"],
- "RG-0A4EC539F260":["SUNDAYS_AND_FEASTS|09:30|SUNG",
-  "SUNDAYS_AND_FEASTS|18:30|LOW","WEDNESDAY_FRIDAY_SATURDAY|18:30|UNKNOWN"],
- "RG-96C9520D0C32":["SUNDAYS_AND_FEASTS|10:30|UNKNOWN",
-  "SUNDAYS_AND_FEASTS|18:30|UNKNOWN","WEEKDAY_UNSPECIFIED|18:30|UNKNOWN"]
+  "RG-005CCA55D4DF": [
+    "SUNDAYS_AND_FEASTS|18:00|UNKNOWN"
+  ],
+  "RG-158B6DF9C6A3": [
+    "SUNDAYS_AND_FEASTS|08:30|UNKNOWN",
+    "SUNDAYS_AND_FEASTS|10:30|UNKNOWN",
+    "SUNDAYS_AND_FEASTS|18:30|UNKNOWN",
+    "WEEKDAY_UNSPECIFIED|07:15|UNKNOWN",
+    "WEEKDAY_UNSPECIFIED|18:30|UNKNOWN"
+  ],
+  "RG-0A4EC539F260": [
+    "SUNDAYS_AND_FEASTS|09:30|SUNG",
+    "SUNDAYS_AND_FEASTS|18:30|LOW",
+    "WEDNESDAY_FRIDAY_SATURDAY|18:30|UNKNOWN"
+  ],
+  "RG-96C9520D0C32": [
+    "SUNDAYS_AND_FEASTS|10:30|UNKNOWN",
+    "SUNDAYS_AND_FEASTS|18:30|UNKNOWN",
+    "WEEKDAY_UNSPECIFIED|18:30|UNKNOWN"
+  ],
+  "RG-250DB3E4D38C": [
+    "SUNDAYS_AND_FEASTS|10:30|UNKNOWN"
+  ],
+  "RG-59852CB2D7DC": [
+    "SUNDAYS_AND_FEASTS|09:00|LOW",
+    "SUNDAYS_AND_FEASTS|10:30|SUNG",
+    "WEEKDAY_EXCEPT_SATURDAY|18:30|UNKNOWN"
+  ],
+  "RG-46D2128B7F14": [
+    "SUNDAYS_AND_FEASTS|10:15|UNKNOWN",
+    "MONDAY_WEDNESDAY_FRIDAY|18:30|UNKNOWN",
+    "TUESDAY_THURSDAY|07:15|UNKNOWN",
+    "SATURDAY|11:00|UNKNOWN"
+  ],
+  "RG-87CE879054F4": [
+    "SUNDAYS_AND_FEASTS|18:00|UNKNOWN"
+  ],
+  "RG-52D51472A0A6": [
+    "SUNDAYS_AND_FEASTS|09:00|UNKNOWN",
+    "FRIDAY|18:30|UNKNOWN",
+    "SATURDAY|18:00|UNKNOWN"
+  ],
+  "RG-09C21A51FF9C": [
+    "SUNDAYS_AND_FEASTS|10:00|UNKNOWN"
+  ]
 });
 
 const FORBIDDEN=["rrule","recurrence","next_mass","event_date","occurrences","calendar_events",
@@ -32,7 +75,7 @@ export function attachPublishedWeeklySourceProgrammes(items,manifest){
  if(manifest?.schema!=="AO_CL27_SOURCE_WEEKLY_MASS_PROGRAMME_V1"||
     manifest.publication!=="FIRST_PARTY_REPORTED_PATTERN_NOT_LIVE_MASS_OCCURRENCE"||
     manifest.reviewed_on!=="2026-11-09"||!Array.isArray(manifest.sites)||
-    manifest.sites.length!==4||forbidden(manifest))
+    manifest.sites.length!==10||forbidden(manifest))
   throw new Error("Invalid CL27 source-weekly programme manifest");
  const byAnchor=new Map();
  for(const p of manifest.sites){
@@ -59,6 +102,16 @@ export function attachPublishedWeeklySourceProgrammes(items,manifest){
       (!["Christmas","Easter","July"].every(x=>e.exception_en.includes(x))||
        !["Noël","Pâques","juillet"].every(x=>e.exception_fr.includes(x))))
       throw new Error("Lille evening Mass exceptions missing");
+   if(p.cl2_anchor==="RG-87CE879054F4"&&e.time==="18:00"&&
+      (!["Christmas","Easter"].every(x=>e.exception_en.includes(x))||
+       !["Noël","Pâques"].every(x=>e.exception_fr.includes(x))))
+      throw new Error("Troyes Christmas/Easter exception missing");
+   if(p.cl2_anchor==="RG-59852CB2D7DC"&&e.scope==="WEEKDAY_EXCEPT_SATURDAY"&&
+      (!e.exception_en.includes("Saturday")||!e.exception_fr.includes("Samedi")))
+      throw new Error("Caen Saturday exception missing");
+   if(p.cl2_anchor==="RG-09C21A51FF9C"&&
+      (!e.exception_en.includes("Saturday")||!e.exception_fr.includes("samedi")))
+      throw new Error("Samoreau dated Saturday exception missing");
   }
   if(JSON.stringify(p.entries.map(e=>e.scope+"|"+e.time+"|"+e.mass_type))!==
      JSON.stringify(EXPECTED_LINES[p.cl2_anchor]))
