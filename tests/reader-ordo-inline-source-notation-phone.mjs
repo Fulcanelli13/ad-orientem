@@ -362,12 +362,12 @@ try{
          "Selected Kyrie must display direct original 1961 printed folio link");
        assert.match(await direct.getAttribute("href"),/kyriale-solesmes\.pdf#page=56$/);
        assert.equal(await direct.getAttribute("target"),"_blank");
-       assert.match(await ref.locator(".ao-proper-reference-label").text(),/research transcription/i);
+       assert.match(await ref.locator(".ao-proper-reference-label").textContent(),/research transcription/i);
        await ref.locator(".ao-proper-reference-expand").click();
        const dialog=page.locator("dialog.ao-proper-reference-zoom");
        await dialog.waitFor({state:"visible",timeout:20000});
        assert.equal(await dialog.getAttribute("data-reference-zoom-mode"),"fit");
-       assert.match(await dialog.locator(".ao-proper-reference-provenance").text(),/not musically certified/i);
+       assert.match(await dialog.locator(".ao-proper-reference-provenance").textContent(),/not musically certified/i);
        assert.match(await dialog.locator("[data-reference-zoom-original]").getAttribute("href"),
          /kyriale-solesmes\.pdf#page=56$/);
        assert.match(await dialog.locator("[data-reference-zoom-transcription]").getAttribute("href"),
