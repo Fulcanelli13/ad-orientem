@@ -6,7 +6,7 @@ const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
 const data=read("data/directory/cl27-weekly-mass-source-20261109.v1.json");
 const master=read("data/directory/generated/cl2-physical-site-index.v1.json");
 const by=new Map(master.records.map(row=>[row[0],row]));
-assert.equal(data.sites.length,4);
+assert.equal(data.sites.length,10);
 const fixtures=data.sites.map(c=>{
  const r=by.get(c.cl2_anchor);
  assert.ok(r,"Cannot mint a new CL2 church");
@@ -29,19 +29,28 @@ const fixtures=data.sites.map(c=>{
 });
 const unmodified=Object.freeze({source_id:"OTHER",physical_group_id:"RG-NO-MATCH"});
 const result=attachPublishedWeeklySourceProgrammes([...fixtures,unmodified],data);
-assert.equal(result.length,5);
-assert.equal(result.filter(x=>x.weekly_source_programme).length,4);
-assert.equal(result[4],unmodified);
+assert.equal(result.length,11);
+assert.equal(result.filter(x=>x.weekly_source_programme).length,10);
+assert.equal(result[10],unmodified);
 assert.ok(fixtures.every(x=>!x.weekly_source_programme));
-assert.deepEqual(data.sites.map(x=>x.entries.length),[1,5,3,3]);
+assert.deepEqual(data.sites.map(x=>x.entries.length),[1,5,3,3,1,3,4,1,3,1]);
 const toulon=result.find(x=>x.physical_group_id==="RG-0A4EC539F260");
 assert.ok(toulon.weekly_source_programme.entries.some(e=>e.mass_type==="SUNG"&&e.time==="09:30"));
 assert.ok(toulon.weekly_source_programme.entries.some(e=>e.mass_type==="LOW"&&
  e.exception_en.includes("July")&&e.exception_fr.includes("juillet")));
+const strasbourg=result.find(x=>x.physical_group_id==="RG-46D2128B7F14");
+assert.deepEqual(strasbourg.weekly_source_programme.entries.map(e=>e.time),
+ ["10:15","18:30","07:15","11:00"]);
+const caen=result.find(x=>x.physical_group_id==="RG-59852CB2D7DC");
+assert.ok(caen.weekly_source_programme.entries.some(e=>e.mass_type==="LOW"&&e.time==="09:00"));
+assert.ok(caen.weekly_source_programme.entries.some(e=>e.mass_type==="SUNG"&&e.time==="10:30"));
+const samoreau=result.find(x=>x.physical_group_id==="RG-09C21A51FF9C");
+assert.equal(samoreau.weekly_source_programme.entries.length,1,
+ "October-November Saturday exceptions must not generate weekly Masses");
 const lille=result.find(x=>x.physical_group_id==="RG-96C9520D0C32");
 assert.ok(lille.weekly_source_programme.entries.some(e=>e.time==="18:30"&&
  e.exception_en.includes("July")));
-for(const item of result.slice(0,4)){
+for(const item of result.slice(0,10)){
  for(const lang of ["en","fr"]){
   const html=renderTlmChurchProfile(item,lang);
   assert.ok(html.includes('data-cl27-weekly-source="'+item.physical_group_id+'"'));
@@ -70,4 +79,4 @@ const bad5=structuredClone(data);bad5.sites[1].entries[3].scope="MONDAY_TO_FRIDA
 const wrongSite=[...fixtures];wrongSite[0]={...wrongSite[0],physical_group_id:"RG-OTHER"};
 assert.throws(()=>attachPublishedWeeklySourceProgrammes(wrongSite,data));
 assert.ok(!renderTlmChurchProfile(unmodified,"en").includes("data-cl27-weekly-source"));
-console.log("PASS CL27 weekly first-party pattern: 4/4 exact sites; EN/FR exceptions; 0 derived Mass occurrences, Una Cum or canonical claims");
+console.log("PASS CL27 weekly first-party pattern: 10/10 exact sites; EN/FR exceptions; 0 derived Mass occurrences, Una Cum or canonical claims");
