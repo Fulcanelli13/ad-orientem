@@ -431,7 +431,7 @@ try{
    for(const number of [4,90,133])
     assert.ok(fetched.some(url=>url.endsWith("/Psalm"+number+".txt")),
      "Missing Holy Family Sunday source Psalm "+number+" for "+date);
-   assert.ok(!fetched.some(url=>/Psalm(87|102)\\.txt$/u.test(url)),
+   assert.ok(!fetched.some(url=>/Psalm(87|102)\.txt$/u.test(url)),
     "Holy Family II-class First Vespers must not use Saturday Compline");
    await latin.getByRole("button",{name:"Next"}).click();
    assert.match(await latin.locator(".aoOfFrameControls").innerText(),/2 \\/ /u);
