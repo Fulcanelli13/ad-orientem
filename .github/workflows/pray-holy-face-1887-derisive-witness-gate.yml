@@ -1,0 +1,38 @@
+name: Prayer Holy Face 1887 English Day V derisive witness correction
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/pray/holy-face-janvier-1887-b25.js"
+      - "data/pray/research/pray-holy-face-1895-fr-day05-transcribed-first-pass.v1.json"
+      - "data/pray/research/pray-holy-face-1887-english-day05-07-reprints-vs-1895-french-audit.v1.json"
+      - "data/pray/research/pray-holy-face-1895-fr-days01-07-image-assisted-photo-section-recheck.v1.json"
+      - "tests/pray-holy-face-1887-day05-07-secondary-witness-audit-gate.mjs"
+      - "tests/pray-holy-face-french-1895-day5-research-gate.mjs"
+      - ".github/workflows/pray-holy-face-1887-derisive-witness-gate.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pray-janvier-1887-derisive-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  evidence-based-english-word-correction:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify source-supported Day V derisive and avoid unsupported Day VI/VII rewrites
+        run: node tests/pray-holy-face-1887-day05-07-secondary-witness-audit-gate.mjs
+      - name: Recheck 1895 French Day V preserved transcription and bilingual difference record
+        run: node tests/pray-holy-face-french-1895-day5-research-gate.mjs
+      - name: Preserve nine-day original French printed source and photo audit
+        run: |
+          node tests/pray-holy-face-1895-fr-days01-07-photo-section-recheck-gate.mjs
+          node tests/pray-holy-face-french-1895-all-nine-first-pass-gate.mjs
+          node tests/pray-holy-face-1895-source-photo-recheck-31pages-gate.mjs
+      - name: Preserve full original English source and zero public French research bodies
+        run: node tests/pray-holy-face-1895-french-print-source-page-gate.mjs
