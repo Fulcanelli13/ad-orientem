@@ -76,52 +76,60 @@ assert.equal(extractCanonicalEventId({random:"MC-OFF-170"}),null);
 
 console.log("reader event state: PASS");
 
-// GitHub Pages occasionally emits a transient HTTP 503 for ONE required
-// canonical MC-event chunk. A subsequent valid response may recover, but
-// persistent 503/404, missing or corrupted JSON must still fail closed.
-const canonicalFixture=name=>({events:[{id:"MC-TST-"+
-  String(READER_EVENT_FILES.indexOf(name)+1).padStart(3,"0"),
-  actor:"PRIEST",title:"Source-owned test event"}]});
-const fakeHttpResponse=(status,name)=>({ok:status===200,status,
+// Actual six-source loader contract: recover one transient CDN 503 without
+// changing the required chunk count or retrying healthy event files.
+const canonicalFixture=name=>({events:[{
+  id:"MC-TST-"+String(READER_EVENT_FILES.indexOf(name)+1).padStart(3,"0"),
+  actor:"PRIEST",title:"Source-owned test event"
+}]});
+const response=(status,name)=>({ok:status===200,status,
   json:async()=>canonicalFixture(name)});
-const visits=new Map();
-const recovered=await loadCanonicalReaderEvents({
-  fetchImpl:async url=>{
-    const name=String(url).split("/").pop();
-    const n=(visits.get(name)??0)+1;visits.set(name,n);
-    return fakeHttpResponse(name==="mc-events-06.v1.json"&&n===1?503:200,name);
-  }
-});
-assert.equal(recovered.length,6,"Reader must have all six event chunks");
-assert.equal(visits.get("mc-events-06.v1.json"),2,
-  "503 retries only the transiently failed event chunk");
-assert.equal(visits.get("mc-events-05.v1.json"),1,
-  "Healthy event files must not be refetched");
-for(const status of [404,503]){
-  let requests=0;
+const requests=new Map();
+const restored=await loadCanonicalReaderEvents({fetchImpl:async url=>{
+  const file=String(url).split("/").pop();
+  const n=(requests.get(file)??0)+1;requests.set(file,n);
+  return response(file==="mc-events-06.v1.json"&&n===1?503:200,file);
+}});
+assert.equal(restored.length,6,"All six canonical MC source chunks remain required");
+assert.equal(requests.get("mc-events-06.v1.json"),2,
+  "Only the transiently failed chunk is retried");
+for(const file of READER_EVENT_FILES.slice(0,5))
+  assert.equal(requests.get(file),1,"Healthy chunks remain single-fetch");
+for(const status of [404,500,503,504]){
+  let attempts=0;
   await assert.rejects(loadCanonicalReaderEvents({fetchImpl:async url=>{
-    const name=String(url).split("/").pop();
-    if(name==="mc-events-06.v1.json"){requests++;return fakeHttpResponse(status,name)}
-    return fakeHttpResponse(200,name);
+    const file=String(url).split("/").pop();
+    if(file==="mc-events-06.v1.json"){
+      attempts++;return response(status,file);
+    }
+    return response(200,file);
   }}),new RegExp("Unable to load canonical Mass events \\("+status+"\\)"));
-  assert.equal(requests,status===503?3:1,
-    "Permanent 404 must fail immediately; 503 must fail after finite retries");
+  assert.equal(attempts,status===404?1:3,
+    "Permanent errors fail immediately; transient retries are bounded");
 }
-await assert.rejects(loadCanonicalReaderEvents({
- fetchImpl:async url=>{
-   const name=String(url).split("/").pop();
-   if(name==="mc-events-06.v1.json")return {ok:true,status:200,
-     json:async()=>{throw new SyntaxError("Bad event JSON")}};
-   return fakeHttpResponse(200,name);
- }
-}),/Bad event JSON/,
-"Malformed canonical event source cannot be suppressed by retry");
-let canceled=0;
 await assert.rejects(loadCanonicalReaderEvents({fetchImpl:async url=>{
- const name=String(url).split("/").pop();
- if(name==="mc-events-06.v1.json"){canceled++;
-   throw Object.assign(new Error("cancel"),{name:"AbortError"})}
- return fakeHttpResponse(200,name);
-}}),/Unable to load canonical Mass events \(network\)/);
-assert.equal(canceled,1,"Aborted load must not continue after navigation");
-console.log("reader canonical event loader: transient 503 recovered; persistent 503, 404, malformed source and abort fail closed");
+  const file=String(url).split("/").pop();
+  return file==="mc-events-06.v1.json"
+    ? {ok:true,status:200,json:async()=>{throw new SyntaxError("Bad event JSON")}}
+    : response(200,file);
+}}),/Bad event JSON/,"Corrupt source JSON must not be retried or hidden");
+let aborted=0;
+await assert.rejects(loadCanonicalReaderEvents({fetchImpl:async url=>{
+  const file=String(url).split("/").pop();
+  if(file==="mc-events-06.v1.json"){
+    aborted++;throw Object.assign(new Error("cancel"),{name:"AbortError"});
+  }
+  return response(200,file);
+}}),/Unable to load canonical Mass events \\(network\\)/);
+assert.equal(aborted,1,"Aborted navigation must not retry");
+
+let networkCalls=0;
+const recoveredNetwork=await loadCanonicalReaderEvents({fetchImpl:async url=>{
+  const file=String(url).split("/").pop();
+  if(file==="mc-events-06.v1.json"&&++networkCalls===1)
+    throw new TypeError("Network down");
+  return response(200,file);
+}});
+assert.equal(recoveredNetwork.length,6);
+assert.equal(networkCalls,2);
+console.log("reader source loader: all six chunks required; short-lived CDN/network errors recovered; source corruption and abort fail closed");
