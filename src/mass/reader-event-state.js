@@ -17,10 +17,9 @@ function eventUrl(file,baseUrl){
   return new URL("../../data/mass/"+file,baseUrl);
 }
 
-// A single short-lived GitHub Pages/CDN 503 must not blank an otherwise
-// complete Mass. Retry only transport failures and explicit transient HTTP
-// responses; all six original MC-event JSON files are still mandatory,
-// validated and used without fallback, synthetic events or stale data.
+// GitHub Pages can transiently serve one of the six mandatory event chunks
+// as 503. Retry ONLY that failed HTTP transport: no fallback event source,
+// fabricated timeline or replacement of original source identities.
 const RETRYABLE_EVENT_STATUSES=new Set([429,500,502,503,504]);
 const EVENT_MAX_ATTEMPTS=3;
 async function readJson(fetchImpl,url){
@@ -29,15 +28,15 @@ async function readJson(fetchImpl,url){
     try{
       response=await fetchImpl(url);
     }catch(error){
-      // User/navigation cancellation is not a connection fault to retry.
+      // An aborted navigation is not an error to recover on a later attempt.
       if(error?.name==="AbortError"||attempt===EVENT_MAX_ATTEMPTS)
         throw new Error("Unable to load canonical Mass events (network)",{cause:error});
       await new Promise(resolve=>setTimeout(resolve,attempt*200));
       continue;
     }
     if(response?.ok){
-      // Malformed JSON is source corruption, not a transient HTTP error:
-      // never retry it into a quiet substitute or a false-certified reader.
+      // A successful response with corrupt JSON is a SOURCE error.
+      // Never suppress this failure or refetch until it looks valid.
       return response.json();
     }
     const status=response?.status??"network";
