@@ -19,15 +19,15 @@ assert.equal(openPrayerStatuses.filter(x=>x==='SUPPLEMENTARY_NOT_ASSIGNED').leng
 assert.equal(openPrayerStatuses.filter(x=>x==='HOLD_RESPECTED').length,14);
 
 const linked=audit.records.filter(x=>x.candidateCount>0);
-assert.equal(linked.length,42);
-assert.equal(audit.records.filter(x=>!x.candidateCount).length,128);
+assert.equal(linked.length,55);
+assert.equal(audit.records.filter(x=>!x.candidateCount).length,115);
 assert.deepEqual(Object.entries(audit.counts.byClass).map(([rank,x])=>[rank,x.unmatchedBaseline,x.withResearchLeads,x.stillWithoutLeads]),[
- ['II',29,14,15],['III',101,8,93],['IV',40,20,20]
+ ['II',29,21,8],['III',101,9,92],['IV',40,25,15]
 ]);
 const edges=audit.records.flatMap(x=>x.artworkRelationships);
-assert.equal(edges.length,50);
+assert.equal(edges.length,65);
 assert.equal(edges.filter(x=>x.kind==='EXISTING_989_GROUP_RESEARCH_LINK').length,24);
-assert.equal(edges.filter(x=>x.kind==='NEW_INSTITUTIONAL_OBJECT_LEAD').length,20);
+assert.equal(edges.filter(x=>x.kind==='NEW_INSTITUTIONAL_OBJECT_LEAD').length,35);
 assert.equal(edges.filter(x=>x.kind==='SECONDARY_OR_COMMONS_RESEARCH_ONLY').length,6);
 assert.equal(audit.counts.newAuthorizedAssignments,0);
 const groups=new Map(original.map(x=>[x.workGroupId,x]));
@@ -56,6 +56,9 @@ for (const item of audit.records){
 assert.ok(audit.records.find(x=>x.date==='2026-02-01').artworkRelationships.some(x=>x.key==='Nationalmuseum:NM420'));
 assert.ok(audit.records.find(x=>x.date==='2026-02-08').artworkRelationships.some(x=>x.key==='Timken:1957:002'));
 assert.ok(audit.records.find(x=>x.date==='2026-08-09').artworkRelationships.some(x=>x.key==='UMMA:1960/2.93'));
+assert.ok(audit.records.find(x=>x.date==='2026-09-06').artworkRelationships.some(x=>x.key==='KHM:GG52'));
+assert.ok(audit.records.find(x=>x.date==='2026-09-23').artworkRelationships.some(x=>x.key==='Vatican:Pinacoteca:333'));
+assert.ok(audit.records.find(x=>x.date==='2026-06-07').artworkRelationships.some(x=>x.key==='Wellcome:45078i'));
 assert.ok(audit.records.find(x=>x.date==='2026-11-08').artworkRelationships.some(x=>x.key==='Thyssen:1979.62'));
 assert.ok(audit.records.find(x=>x.date==='2026-10-18').artworkRelationships.some(x=>x.key==='REVIEW::commons:150920'));
-console.log('PASS: 170 unchanged Calendar holds, 27 protected Prayer holds, 42 dated research leads / 50 edges, no rejected originals or publication authority.');
+console.log('PASS: 170 unchanged Calendar holds, 27 protected Prayer holds, 55 dated research leads / 65 edges, no rejected originals or publication authority.');
