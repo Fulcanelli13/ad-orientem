@@ -18,6 +18,8 @@ import {researchChristmas2026PrivateComplineAppointment}
  from "./compline-christmas-2026-research-gate.js";
 import {researchDec28Jan03PrivateComplineAppointment}
  from "./compline-dec28-jan03-2027-source-gate.js";
+import {researchJan04_10PrivateComplineAppointment}
+ from "./compline-epiphany-jan04-10-2027-source-gate.js";
 const PRIVATE_APPOINTMENT_STATUSES=new Set([
  "EXPLICIT_ROMAN_1960_APPOINTMENT_RESEARCH",
  "EXPLICIT_CHRISTMAS_2026_PRIVATE_SOURCE_RESEARCH"
@@ -77,15 +79,20 @@ function held(reason,weekday="Sabbato"){
 }
 export function createComplinePinnedReader({
  fetchSource,weekday=null,date=null,languages,
- privateChristmasResearch=false,privateYearBoundaryResearch=false
+ privateChristmasResearch=false,privateYearBoundaryResearch=false,
+ privateEpiphanyResearch=false
 }={}){
  const active=checkedLanguages(languages);
  if(!active)throw Error("COMPLINE_LANGUAGE_SCOPE_NOT_APPROVED");
- const reviewed=date===null?null:privateYearBoundaryResearch?
+ const reviewed=date===null?null:privateEpiphanyResearch?
+  researchJan04_10PrivateComplineAppointment(date):
+  privateYearBoundaryResearch?
   researchDec28Jan03PrivateComplineAppointment(date):
   privateChristmasResearch?privateComplineSourceAppointment(date):
   reviewAdventIComplineAppointment(date);
- if(date!==null&&!(privateYearBoundaryResearch?
+ if(date!==null&&!(privateEpiphanyResearch?
+     reviewed.status==="EXPLICIT_EPIPHANY_2027_PRIVATE_SOURCE_RESEARCH":
+     privateYearBoundaryResearch?
      reviewed.status==="EXPLICIT_DEC28_JAN03_PRIVATE_SOURCE_RESEARCH":
      privateChristmasResearch?
      PRIVATE_APPOINTMENT_STATUSES.has(reviewed.status):
@@ -202,17 +209,22 @@ function stanzas(lines){
 }
 export async function assembleWeekdayComplinePilot({
  reader,weekday="Sabbato",date=null,languages,
- privateChristmasResearch=false,privateYearBoundaryResearch=false
+ privateChristmasResearch=false,privateYearBoundaryResearch=false,
+ privateEpiphanyResearch=false
 }={}){
  const active=checkedLanguages(languages);
  if(!active)return held("COMPLINE_LANGUAGE_SCOPE_NOT_APPROVED",weekday);
  const appointedDate=date??(weekday==="Sabbato"?"2026-11-28":
   weekday==="Feria III"?"2026-12-01":null);
- const review=privateYearBoundaryResearch?
+ const review=privateEpiphanyResearch?
+  researchJan04_10PrivateComplineAppointment(appointedDate):
+  privateYearBoundaryResearch?
   researchDec28Jan03PrivateComplineAppointment(appointedDate):
   privateChristmasResearch?privateComplineSourceAppointment(appointedDate):
   reviewAdventIComplineAppointment(appointedDate);
- if(!(privateYearBoundaryResearch?
+ if(!(privateEpiphanyResearch?
+     review.status==="EXPLICIT_EPIPHANY_2027_PRIVATE_SOURCE_RESEARCH":
+     privateYearBoundaryResearch?
      review.status==="EXPLICIT_DEC28_JAN03_PRIVATE_SOURCE_RESEARCH":
      privateChristmasResearch?PRIVATE_APPOINTMENT_STATUSES.has(review.status):
      review.status==="EXPLICIT_ROMAN_1960_APPOINTMENT_RESEARCH"))
@@ -519,5 +531,27 @@ export async function assembleDec28Jan03PrivateLatinComplinePilot({reader,date}=
   return held("YEAR_BOUNDARY_PRIVATE_COMPLINE_DATE_NOT_REVIEWED");
  return assembleWeekdayComplinePilot({
   reader,date,languages:LATIN_ONLY,privateYearBoundaryResearch:true
+ });
+}
+
+/**
+ * Strictly opt-in Latin original Epiphany week source research, 4–10 Jan.
+ * Not a public Office release, not a general year calendar resolver.
+ * Chant tone and Holy Family doxology are still independent source holds.
+ */
+export function createJan04_10PrivateLatinPinnedReader({date,fetchSource}={}){
+ const review=researchJan04_10PrivateComplineAppointment(date);
+ if(review.status!=="EXPLICIT_EPIPHANY_2027_PRIVATE_SOURCE_RESEARCH")
+  throw Error("EPIPHANY_PRIVATE_DATE_NOT_REVIEWED");
+ return createComplinePinnedReader({
+  date,fetchSource,languages:LATIN_ONLY,privateEpiphanyResearch:true
+ });
+}
+export async function assembleJan04_10PrivateLatinComplinePilot({reader,date}={}){
+ const review=researchJan04_10PrivateComplineAppointment(date);
+ if(review.status!=="EXPLICIT_EPIPHANY_2027_PRIVATE_SOURCE_RESEARCH")
+  return held("EPIPHANY_PRIVATE_DATE_NOT_REVIEWED");
+ return assembleWeekdayComplinePilot({
+  reader,date,languages:LATIN_ONLY,privateEpiphanyResearch:true
  });
 }
