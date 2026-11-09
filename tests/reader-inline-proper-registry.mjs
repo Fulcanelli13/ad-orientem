@@ -4,13 +4,14 @@ import {JULY07_REFERENCE_GABC,referenceScoresForParagraph,PROPER_REFERENCE_REGIS
 import {ALL_SAINTS_REFERENCE_SCORES} from "../src/mass/reader-inline-all-saints-reference.js";
 import {EPIPHANY_REFERENCE_SCORES} from "../src/mass/reader-inline-epiphany-reference.js";
 import {IMMACULATE_CONCEPTION_REFERENCE_SCORES} from "../src/mass/reader-inline-immaculate-reference.js";
+import {ADVENT_SUNDAY_REFERENCE_SCORES} from "../src/mass/reader-inline-advent-sundays-reference.js";
 import {PROPER_REFERENCE_BINDINGS,PROPER_REFERENCE_LABELS,PROPER_REFERENCE_REGISTRY_SCHEMA,
  createProperReferenceRegistry} from "../src/mass/reader-inline-proper-registry.js";
 
 assert.equal(PROPER_REFERENCE_REGISTRY_STATUS.schema,PROPER_REFERENCE_REGISTRY_SCHEMA);
-assert.equal(PROPER_REFERENCE_REGISTRY_STATUS.scoreCount,18);
-assert.equal(PROPER_REFERENCE_REGISTRY_STATUS.bindingCount,21);
-assert.equal(PROPER_REFERENCE_BINDINGS.length,21);
+assert.equal(PROPER_REFERENCE_REGISTRY_STATUS.scoreCount,26);
+assert.equal(PROPER_REFERENCE_REGISTRY_STATUS.bindingCount,31);
+assert.equal(PROPER_REFERENCE_BINDINGS.length,31);
 assert.equal(PROPER_REFERENCE_LABELS.OFFERTORY,"Offertory");
 assert.equal(PROPER_REFERENCE_LABELS.COMMUNION,"Communion");
 
@@ -45,7 +46,7 @@ assert.deepEqual(julyText.map(p=>selected(p,{...july,date:"2027-07-07"})),
  julyText.map(p=>selected(p,july)));
 // A Common or other independently verified Proper can reference the SAME
 // archived GABC from any appointed date, with no additional engraving code.
-const reusable=[...JULY07_REFERENCE_GABC,...ALL_SAINTS_REFERENCE_SCORES,...EPIPHANY_REFERENCE_SCORES,...IMMACULATE_CONCEPTION_REFERENCE_SCORES];
+const reusable=[...JULY07_REFERENCE_GABC,...ALL_SAINTS_REFERENCE_SCORES,...EPIPHANY_REFERENCE_SCORES,...IMMACULATE_CONCEPTION_REFERENCE_SCORES,...ADVENT_SUNDAY_REFERENCE_SCORES];
 const commonBinding={...PROPER_REFERENCE_BINDINGS.find(x=>x.scoreId==="GREGOBASE-345"),
  sourcePath:"Commune/VerifiedCommon",monthDay:null};
 const common=createProperReferenceRegistry({scores:reusable,
@@ -80,4 +81,4 @@ assert.throws(()=>createProperReferenceRegistry({scores:reusable,
  bindings:[{...commonBinding,scoreId:"GREGOBASE-XYZ"}]}),
  /INVALID_REFERENCE_SOURCE_BINDING/);
 console.log("PROPER_SOURCE_REFERENCE_REGISTRY_PASS "+
- JSON.stringify({catalog:18,bindings:21,allSaints:5,july:3,epiphany:5,immaculate:5,commonReuse:true}));
+ JSON.stringify({catalog:26,bindings:31,allSaints:5,july:3,epiphany:5,immaculate:5,advent:8,heldOffertories:2,commonReuse:true}));
