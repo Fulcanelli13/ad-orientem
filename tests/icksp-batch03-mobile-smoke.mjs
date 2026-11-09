@@ -32,6 +32,9 @@ try{
  };
  await open("pray.litany_saints");
  assert.equal(await page.locator("[data-p435930-lit-use]").count(),4);
+ const editionChooser=page.locator(".aoPrivateLitanyEditionChooser");
+ if(await editionChooser.count() && !(await editionChooser.evaluate(el=>el.open)))
+  await editionChooser.locator(":scope > summary").tap();
  await page.locator("[data-p435930-lit-use='major']").tap();
  assert.equal(await page.locator("[data-ao-litany-use='major']").count(),1);
  assert.equal(await page.locator("[data-ao-icrsp-major-sequence] li").count(),5);
