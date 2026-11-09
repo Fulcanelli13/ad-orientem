@@ -20,7 +20,7 @@ const ledger=JSON.parse(readFileSync(new URL(
  import.meta.url),"utf8"));
 
 test("exact pinned upstream Latin Marian source byte snapshot, not fabricated 1961 printed collation",()=>{
- const gitBlob=createHash("sha1").update("blob "+Buffer.byteLength(raw,"utf8")+"\\0")
+ const gitBlob=createHash("sha1").update("blob "+Buffer.byteLength(raw,"utf8")+"\0")
   .update(raw,"utf8").digest("hex");
  assert.equal(PIN,ORIGINAL_PIN);
  assert.equal(gitBlob,UPSTREAM_GIT_BLOB_SHA,
