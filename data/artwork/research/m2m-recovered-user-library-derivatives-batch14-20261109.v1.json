@@ -1,0 +1,98 @@
+{
+  "schema": "AO_SACRED_ART_LIBRARY_DERIVATIVE_RECOVERY_BATCH14_V1",
+  "as_of": "2026-11-09",
+  "status": "RESEARCH_ONLY_APPROVED_VISUAL_DRAFT_PROVENANCE_NOT_PUBLICATION",
+  "source_manifest_filename": "AO_Easter_2026_Tissot_Wierix_Visual_Drafts_Manifest_2026-10-20.json",
+  "source_manifest_status": "AD_ORIENTEM_SACRED_ART_DERIVATIVE_APPROVAL_NOTE_V1",
+  "source_manifest_date": "2026-10-20",
+  "source_collection_label": "Ad Orientem / Visual Reference Bank / Sacred Art — Approved",
+  "source_file_access": "Files Library read confirmed two original PNGs and their dimensions/bytes; no Library file IDs or access handles recorded here",
+  "prior_repo_asset_research": "data/artwork/research/m2m-protected-asset-provenance-batch13-20261109.v1.json",
+  "counting_boundary": "Batch13 found zero of four AI originals in checked GITHUB assets. This batch adds two located USER LIBRARY originals; neither is imported into GitHub.",
+  "updated_counts_across_29": {
+    "repo_local_with_provenance": 3,
+    "user_library_original_accepted_ai_visual_draft": 2,
+    "remote_only_previews": 2,
+    "remaining_unlocated_approved_ai_generated_files": 2,
+    "composite_easter_vigil": 1,
+    "other_unlocated_current_selected_assets": 19,
+    "total": 29
+  },
+  "preservation_rules": [
+    "Do not mislabel newly generated Tissot/Wierix scenes as authentic historical works, old master originals, or faithful recolourings",
+    "User acceptance is for visual drafts only; neither original is a release-certified master",
+    "Don't publish or move private Library media into public repository without a separate explicit release action and rights/image QA",
+    "Do not invent a replacement for missing Cavedone/van Doetechum outputs",
+    "No existing Calendar/Prayer art assignment or owner-approved alternative is changed"
+  ],
+  "recovered_drafts": [
+    {
+      "date": "2026-04-08",
+      "status": "USER_ACCEPTED_AI_DERIVATIVE_VISUAL_DRAFT",
+      "id": "AO-DERIVATIVE-20261020-EASTER-WED-TISSOT",
+      "filename": "AO_Easter_Wednesday_John21_Tissot_AI_Visual_Approved_Draft_2026-10-20.png",
+      "size_bytes": 2484404,
+      "width": 1586,
+      "height": 992,
+      "sha256": "69eba31523b5fb15c781475e186f02bba193cab15e2d596e17b724cde128e3b2",
+      "source_artist": "James Tissot",
+      "source_work": "The Second Miraculous Draught of Fishes",
+      "source_collection": "Brooklyn Museum",
+      "source_accession": "00.159.345",
+      "scripture": "John 21:1–14",
+      "generated_image_gen_id": "0f7c7e31-5d86-434d-8574-ad4a827e3e8a",
+      "proof": "Original user-owned file independently located by exact title; Library image metadata confirms pixel dimensions and byte size. SHA-256 comes from the saved 20 October manifest and was not rehashed in this review.",
+      "stored_location_class": "USER_OWNED_LIBRARY_VISUAL_REFERENCE_BANK_NOT_GITHUB_ASSET",
+      "original_master_faithful_recolour": false,
+      "original_file_in_repo": false,
+      "original_approved_draft_found": true,
+      "final_publication_ready": false,
+      "new_runtime_assignment_authorised": false
+    },
+    {
+      "date": "2026-05-29",
+      "status": "USER_ACCEPTED_AI_DERIVATIVE_VISUAL_DRAFT",
+      "id": "AO-DERIVATIVE-20261020-EMBERFRI-WIERIX",
+      "filename": "AO_Pentecost_Ember_Friday_Luke5_Wierix_AI_Visual_Approved_Draft_2026-10-20.png",
+      "size_bytes": 2289365,
+      "width": 1402,
+      "height": 1122,
+      "sha256": "b116bcac8883b6d4559d1dc54fad7336f4365940d8996cc2eb22c075a20cad5a",
+      "source_artist": "Johannes Wierix",
+      "source_work": "Christ Healing a Paralytic Lowered through the Roof",
+      "source_collection": "Rijksmuseum",
+      "source_accession": "RP-P-OB-9347",
+      "scripture": "Luke 5:17–26",
+      "generated_image_gen_id": "af245c50-ca9d-43dd-a429-569ef0654aa5",
+      "proof": "Original user-owned file independently located by exact title; Library image metadata confirms pixel dimensions and byte size. SHA-256 comes from the saved 20 October manifest and was not rehashed in this review.",
+      "stored_location_class": "USER_OWNED_LIBRARY_VISUAL_REFERENCE_BANK_NOT_GITHUB_ASSET",
+      "original_master_faithful_recolour": false,
+      "original_file_in_repo": false,
+      "original_approved_draft_found": true,
+      "final_publication_ready": false,
+      "new_runtime_assignment_authorised": false
+    }
+  ],
+  "still_unlocated": [
+    {
+      "date": "2026-03-08",
+      "selection": "Christ Exorcising Devils from a Man — AI reinterpretation after Giacomo Cavedone",
+      "search_status": "NO_EXACT_SAVED_IMAGE_FILE_YET_LOCATED_IN_REPOSITORY_OR_SEARCHED_USER_LIBRARY",
+      "photo_state": "HISTORICAL_ART_REFERENCE_NOT_AI_OUTPUT",
+      "actual_asset_hash": null,
+      "original_owner_selection_preserved": true,
+      "new_runtime_assignment_authorised": false
+    },
+    {
+      "date": "2026-03-22",
+      "selection": "Christ Escapes the Stoning — AI reinterpretation after Lucas van Doetechum",
+      "search_status": "NO_EXACT_SAVED_IMAGE_FILE_YET_LOCATED_IN_REPOSITORY_OR_SEARCHED_USER_LIBRARY",
+      "photo_state": "HISTORICAL_ART_REFERENCE_NOT_AI_OUTPUT",
+      "actual_asset_hash": null,
+      "original_owner_selection_preserved": true,
+      "new_runtime_assignment_authorised": false
+    }
+  ],
+  "import_manifest": [],
+  "new_publications_authorised": 0
+}
