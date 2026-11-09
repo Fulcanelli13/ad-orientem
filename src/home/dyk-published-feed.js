@@ -1,3 +1,5 @@
+import {loadDyk225Release,dyk225Model} from "./dyk-h225-release.js";
+export {loadDyk225Release,dyk225Candidates,dyk225Model} from "./dyk-h225-release.js";
 import {loadDyk200Release,dyk200Model} from "./dyk-h200-release.js";
 export {loadDyk200Release,dyk200Candidates,dyk200Model} from "./dyk-h200-release.js";
 // One canonical R34 source owner for H7 Home's future released discoveries.
@@ -581,7 +583,7 @@ export function dykPublishedMarkup(model){
 }
 export async function openDykPublishedSource(win,{id,date,language="en",trigger}={}){
  if(!win?.document?.createElement||!id||!validDate(date))return false;
- const [data,historical,r50,r50b,mixed,h125,h150,h175,h200]=await Promise.all([
+ const [data,historical,r50,r50b,mixed,h125,h150,h175,h200,h225]=await Promise.all([
    loadDykPrioritySelection(win).catch(()=>null),
    loadDykHistoricalRelease(win).catch(()=>null),
    loadDykWeiser16Release(win).catch(()=>null),
@@ -590,7 +592,8 @@ export async function openDykPublishedSource(win,{id,date,language="en",trigger}
    loadDyk125Release(win).catch(()=>null),
    loadDyk150Release(win).catch(()=>null),
    loadDyk175Release(win).catch(()=>null),
-   loadDyk200Release(win).catch(()=>null)
+   loadDyk200Release(win).catch(()=>null),
+   loadDyk225Release(win).catch(()=>null)
  ]);
  const model=dykPublishedModel(data,id,date,language)||
    dykHistoricalModel(historical,id,date,language)||
@@ -600,7 +603,8 @@ export async function openDykPublishedSource(win,{id,date,language="en",trigger}
    dyk125Model(h125,id,date,language)||
    dyk150Model(h150,id,date,language)||
    dyk175Model(h175,id,date,language)||
-   dyk200Model(h200,id,date,language);
+   dyk200Model(h200,id,date,language)||
+   dyk225Model(h225,id,date,language);
  if(!model)return false;
  const node=win.document.createElement("div");node.innerHTML=dykPublishedMarkup(model);
  const shade=node.querySelector("[data-dyk-published-shade]");

@@ -175,6 +175,8 @@ jobs:
       # Run compact four-width release routing first: catch outdated surfaces
       # before incurring the full cross-module phone acceptance matrix.
       - run: npm run test:rc-field-qa
+      # H225: verify actual 320/390 Home source dialog before the full cross-module phone suite.
+      - run: node tests/dyk-h7-released-feed-phone.mjs
       - run: node tests/per-icon-svg-e2e.mjs
       - run: node tests/external-svg-sprite-e2e.mjs
       - run: node tests/route-lazy-browser-e2e.mjs

@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
-import {dykPublishedCandidates,dykPublishedPick,dykPublishedModel,dykPublishedMarkup,dykHistoricalCandidates,dykHistoricalModel,dykWeiser16Candidates,dykWeiser16Model,dykWeiserSecond16Candidates,dykWeiserSecond16Model,dykMixed24Candidates,dykMixed24Model,dyk125Candidates,dyk125Model,dyk150Candidates,dyk150Model,dyk175Candidates,dyk175Model,dyk200Candidates,dyk200Model,dykHomeRotationSlot,DYK_GLOSSARY_FALLBACK_IDS} from "../src/home/dyk-published-feed.js";
+import {dykPublishedCandidates,dykPublishedPick,dykPublishedModel,dykPublishedMarkup,dykHistoricalCandidates,dykHistoricalModel,dykWeiser16Candidates,dykWeiser16Model,dykWeiserSecond16Candidates,dykWeiserSecond16Model,dykMixed24Candidates,dykMixed24Model,dyk125Candidates,dyk125Model,dyk150Candidates,dyk150Model,dyk175Candidates,dyk175Model,dyk200Candidates,dyk200Model,dyk225Candidates,dyk225Model,dykHomeRotationSlot,DYK_GLOSSARY_FALLBACK_IDS} from "../src/home/dyk-published-feed.js";
 const original=JSON.parse(readFileSync(
  "data/research/did-you-know/dyk-r34-high-signal-24-editorial-selection.v1.json","utf8"));
 import {HOME_DYK_GLOSSARY_IDS,HOME_DYK_GLOSSARY_FACTS,homeDidYouKnowSelect} from "../src/home/did-you-know-glossary.js";
@@ -382,6 +382,68 @@ for(const [index,key,value] of [
 }
 
 
+// H225: historical local rites across eight geographically distinct traditions.
+// No contemporary Roman-1962 rubric can be inferred from these period descriptions.
+const h225=JSON.parse(readFileSync(
+ "data/did-you-know/dyk-h225-world-liturgies-25-publication.v1.json","utf8"));
+const h225Rows=dyk225Candidates(h225,"2026-11-09");
+assert.equal(h225Rows.length,25,"H225 25 historical source/locale approval gates");
+for(const [tradition,count] of [["AMBROSIAN",4],["MOZARABIC",4],
+ ["DOMINICAN",4],["CARTHUSIAN",3],["MARONITE",3],
+ ["EAST_SYRIAN",2],["ARMENIAN",3],["CELTIC",2]]){
+ assert.equal(h225Rows.filter(r=>r.tradition===tradition).length,count);
+}
+const all225=[...all200,...h225Rows];
+assert.equal(all225.length,201,"225 facts = 24 source-owned Glossary + 201 individual releases");
+assert.equal(new Set(all225.map(r=>r.id)).size,201);
+assert.equal(new Set(all225.map(r=>r.source_id)).size,201);
+const oldFactTexts=new Set(all200.map(r=>r.pilot_home_copy.en.trim().toLowerCase()));
+for(const row of h225Rows){
+ assert.ok(!oldFactTexts.has(row.pilot_home_copy.en.trim().toLowerCase()),"Duplicate published copy");
+ assert.equal(row.liturgical_rubric_1962,false);
+ assert.equal(row.source.source_record_id,row.source_id);
+ assert.match(row.region_scope,/1962/);
+ for(const language of ["en","fr"]){
+  const model=dyk225Model(h225,row.id,"2026-11-09",language);
+  assert.equal(model.fact,row.pilot_home_copy[language]);
+  assert.equal(model.links.length,1);
+  assert.equal(model.links[0].page,null);
+  assert.equal(model.links[0].url,row.source.url);
+  assert.ok(dykPublishedMarkup(model).includes("data-dyk-published"));
+  assert.ok(dykPublishedMarkup(model).includes(language==="fr"?
+   "Consulter l&#39;article historique":"Read historical source article"));
+ }
+}
+assert.deepEqual(dyk225Candidates({...h225,release_stage:"RESEARCH_ONLY"},"2026-11-09"),[]);
+assert.deepEqual(dyk225Candidates(h225,"2026-11-31"),[]);
+assert.deepEqual(dyk225Candidates(h225,"2026-99-99"),[]);
+for(const [category,key] of [["row","editorial_approval"],["row","release_authorized"],
+ ["row","semantic_novelty_reviewed"],["row","published"],
+ ["copy","final_english_signoff"],["copy","final_french_signoff"],
+ ["source","original_text_checked"],["source","deep_link_checked"]]){
+ const bad=clone(h225),row=bad.records[0];
+ if(category==="row")row[key]=false;
+ else if(category==="copy")row.pilot_home_copy[key]=false;
+ else row.source[key]=false;
+ assert.equal(dyk225Candidates(bad,"2026-11-09").length,24,
+  "Unapproved or unsupported H225 record must fail closed: "+category+"."+key);
+}
+for(const [index,field,value] of [
+ [0,"url","https://invalid.example/fake"],
+ [5,"primary_locator","Catholic Encyclopedia: Wrong history"],
+ [8,"source_record_id","CE1912.H225.TAMPERED"],
+ [24,"pdf_pages_1based",[2]]
+]){
+ const bad=clone(h225);bad.records[index].source[field]=value;
+ assert.equal(dyk225Candidates(bad,"2026-11-09").length,24,"H225 source falsification blocked");
+}
+for(const [field,value] of [["historical_local_only",false],
+ ["liturgical_rubric_1962",true],["source_family","ROMAN_MASS_1962"]]){
+ const bad=clone(h225);bad.records[0][field]=value;
+ assert.equal(dyk225Candidates(bad,"2026-11-09").length,24,
+  "Historic observation cannot be reclassified as a Roman rubric");
+}
+
 // Every new public teaser must resolve to an existing source-backed bilingual
 // Glossary entry and must never silently expose draft research as public copy.
 const gloss=JSON.parse(readFileSync("data/glossary/concepts-151-300.v1.json","utf8"));
@@ -467,6 +529,7 @@ for(const [published,poolSize] of [
  [all150.map(x=>x.id),150],
  [all175.map(x=>x.id),175],
   [all200.map(x=>x.id),200],
+ [all225.map(x=>x.id),225],
  [["DYK-M04-CANON-021","DYK-M04-CANON-022","DYK-M04-CANON-047","DYK-M04-CANON-058"],DYK_GLOSSARY_FALLBACK_IDS.length+4]
 ]){
  const cycle=alignedDates(poolSize);
@@ -485,4 +548,4 @@ const expanded=clone(data);
 expanded.records.push({id:"DYK-UNRELEASED-PLACEHOLDER",editorial_approval:false,release_authorized:false});
 assert.equal(dykPublishedCandidates(expanded,"2026-11-02").length,1);
 
-console.log("PASS H7 200-fact Discovery: 24 Glossary plus 176 approved EN/FR historical, cultural and rubrical facts, original R34 held, bilingual original-page links and nonrepeating rotation");
+console.log("PASS H7 225-fact Discovery: 24 Glossary plus 201 approved EN/FR historical, cultural and rubrical facts, original R34 held, bilingual original-page links and nonrepeating rotation");
