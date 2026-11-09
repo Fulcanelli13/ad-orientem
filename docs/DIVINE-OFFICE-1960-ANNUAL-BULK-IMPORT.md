@@ -17,6 +17,43 @@ source/structure report** and **an exception queue**. Human liturgical
 review should be reserved for disputed placements/editions, not for
 granting extraction permission to every routine day.
 
+## First real annual run — verified 9 November 2026
+
+[GitHub Actions run #42601773798](https://github.com/Fulcanelli13/ad-orientem/actions/runs/42601773798)
+has finished **SUCCESS**, with all three jobs green and actual source
+generation completed for both requested years.
+
+- **2026: 2,920/2,920** original Latin XHTML Hours, 365 civil days,
+  8 canonical Hours each, **0 missing/invalid source exceptions**.
+- **2027: 2,920/2,920** original Latin XHTML Hours, 365 civil days,
+  8 Hours each, **0 missing/invalid source exceptions**.
+- **Total: 5,840 complete generated source chapters**; all have
+  SHA-256, the exact upstream revision and original EPUB member name.
+- [2026 source artifact](https://github.com/Fulcanelli13/ad-orientem/actions/runs/42601773798/artifacts/13667050531),
+  [2027 source artifact](https://github.com/Fulcanelli13/ad-orientem/actions/runs/42601773798/artifacts/13665874269).
+  These are automatically purged **9 December 2026** unless durable
+  archival is completed.
+
+I independently inspected actual generated chapter markup from the
+artifacts, not just CI summary counters: on 1 January 2026 the
+eight complete Hours contain real Latin psalms, hymn texts,
+readings and prayers. The original XHTML contains explicit
+`<td id="MatutinumN">` source anchors, `<b>Hymnus</b>` / `<b>Oratio</b>`
+and other genuine source-section labels and verse line breaks.
+Those anchors and lines are now preserved in the structured importer;
+we do not fabricate missing section names.
+
+Preliminary cross-Hour scan of the actual first-run archive found
+**61 dated evening-office transitions in 2026 and 62 in 2027**
+(where Vespers' principal Office differs from Matins), with the
+Compline title matching Vespers on every date in both years. The
+new `audit_annual.py` turns this observation into an automated,
+source-referenced annual precedence report. It is not itself an
+independent rubrical review.
+
+**Extraction COMPLETE, independent textual/liturgical certification
+NOT COMPLETE, public release unchanged at 44 Compline dates.**
+
 ## Repeatable 2026/2027 extraction
 
 Workflow: `.github/workflows/office-annual-bulk-source.yml`
@@ -72,12 +109,20 @@ For each original XHTML Hour it records:
 
 The **two full-year generation jobs** run in parallel via a GitHub
 Actions matrix. The results are research CI artifacts, **not**
-automatically included in the GitHub Pages static website. The
-artifact retention is 30 days, so successful archives must be
-promoted to a durable, explicit source-data storage mechanism
-before expiry (e.g., a controlled GitHub release or a reviewed
-source-data PR). Do not describe ephemeral CI artifacts as
-permanently stored.
+automatically included in the GitHub Pages static website. The initial artifacts expire after **30 days**. A separate,
+permission-scoped `archive-source-research` job now runs **only on
+main-branch pushes of this reviewed pipeline**. After verifying the two
+yearly manifests, original EPUB SHA-256 hashes, complete eight-Hour
+coverage, section/First-Vespers audits, exceptions and research-only
+flags, it creates an **immutable prerelease** with both EPUBs,
+structured monthly data, source logs and the upstream MIT licence.
+Its tag is
+`office-source-latin-1960-2026-2027-do126a07f-ao-v1`.
+It refuses to overwrite any previous archive.
+
+**Durable GitHub archival is not yet complete until this PR is merged
+and the main-branch archive job succeeds.** Source research releases
+never deploy to GitHub Pages or unlock additional public Hours.
 
 ## Three genuinely different readiness states
 
