@@ -242,7 +242,9 @@ export function researchWitnessForReviewedAdventCompline(appointment){
    rubricUrl:OFFICE_COMPLINE_ORDO_RUBRICS,
    sourceId:(appointment.date<"2026-12-06"?
     "ao.office.2026-advent-i-dated-review|":
-    "ao.office.2026-advent-ii-dated-review|")+appointment.date,
+    appointment.date<"2026-12-14"?
+    "ao.office.2026-advent-ii-dated-review|":
+    "ao.office.2026-advent-iii-dated-review|")+appointment.date,
    officeOrdoUrl:appointment.date<"2026-12-06"?
     OFFICE_COMPLINE_ORDO_RUBRICS:
     "https://breviariumgregorianum.com/ordo-2026.php",
