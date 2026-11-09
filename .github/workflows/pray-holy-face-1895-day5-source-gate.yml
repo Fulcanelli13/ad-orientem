@@ -1,0 +1,34 @@
+name: Prayer Holy Face 1895 French day-five source hold
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "data/pray/research/pray-holy-face-1895-fr-day05-transcribed-first-pass.v1.json"
+      - "tests/pray-holy-face-french-1895-day5-research-gate.mjs"
+      - ".github/workflows/pray-holy-face-1895-day5-source-gate.yml"
+      - "src/pray/holy-face-janvier-1887-b25.js"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pray-janvier-day05-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  day-five-source-truth:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify Day V 1895 photographed-source French, variants and language hold
+        run: node tests/pray-holy-face-french-1895-day5-research-gate.mjs
+      - name: Recheck all four earlier French research days
+        run: |
+          node tests/pray-holy-face-french-1895-day1-research-gate.mjs
+          node tests/pray-holy-face-french-1895-day2-research-gate.mjs
+          node tests/pray-holy-face-french-1895-day3-research-gate.mjs
+          node tests/pray-holy-face-french-1895-day4-research-gate.mjs
+      - name: Recheck printed nine-day original-source boundaries
+        run: node tests/pray-holy-face-1895-french-print-source-page-gate.mjs
