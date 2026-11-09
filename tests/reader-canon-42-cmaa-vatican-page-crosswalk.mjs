@@ -41,13 +41,42 @@ function check(witness){
   total:42,firstPass:19,complex:23,sourceSectionImagePageLocated:42,
   distinctImages:4,independentOriginalEditionAuth:0,
   independentlyCollatedExactActionGlyphs:0,independentFrenchEnglishCopyApprovals:0,
-  actualActorClockAcceptances:0,newlyPublishedLiveRubrics:0
+  actualActorClockAcceptances:0,newlyPublishedLiveRubrics:0,
+  editionInternalTitlePagesInspected:1,editionInternalDatedDecreesInspected:1,
+  independentPhysicalVolumeAuthentications:0,gestureClockApprovals:0
  });
  assert.equal(witness.provenance.sourceLabel,"1962 - Vatican - Missale Romanum");
  assert.equal(witness.provenance.scanCredit,"Scans courtesy of the Church Music Association of America");
  assert.equal(witness.provenance.originalPrintedEditionAuthentication,"PENDING");
  assert.equal(witness.provenance.independentlyIdentifiedExactImagedPhysicalVolume,false);
- assert.equal(witness.provenance.originalVolumeTitleAndColophonPagesNotInspectedInThisScanSet,true);
+
+ assert.equal(witness.provenance.originalVolumeTitleAndColophonPagesNotInspectedInThisScanSet,false);
+ assert.equal(witness.provenance.originalVolumeTitlePageInspectedInSameScanSeries,true);
+ assert.equal(witness.provenance.originalVolume1962DecreeInspectedInSameScanSeries,true);
+ assert.equal(witness.provenance.originalVolumeColophonInspectedInSameScanSeries,false);
+ assert.equal(witness.provenance.verifiedSinglePhysicalCopyIdentity,false);
+ const internal=witness.provenance.internalEditionEvidence;
+ assert.equal(internal.scannedTitleImage,"https://gregobase.selapa.net/sources/42/0.png");
+ assert.equal(internal.titlePrinted,"MISSALE ROMANUM — EDITIO TYPICA");
+ assert.equal(internal.scannedDecreeImage,"https://gregobase.selapa.net/sources/42/2.png");
+ assert.equal(internal.decreeHead,"DECRETUM");
+ assert.equal(internal.decreePrintedDate,"ROMAE_DIE_23_IUNII_1962");
+ assert.equal(internal.decreePublishingAndPrintingStatement,
+  "VATICANA_EDITORIALIS_DOMUS_TYPIS_ITIDEM_VATICANIS");
+ assert.equal(internal.sameGregoBaseSourceId,42);
+ assert.equal(internal.directCanonSourceImage,"https://gregobase.selapa.net/sources/42/64.png");
+ assert.equal(internal.sourceContinuity,"SAME_NUMBERED_GREGOBASE_SCAN_SERIES");
+ assert.equal(internal.notProven,
+  "EXACT_PHYSICAL_VOLUME_COLATION_AND_INDEPENDENT_LIBRARY_HOLDING_MATCH");
+ assert.equal(internal.editionInternalEvidence,"TITLE_PLUS_1962_DECREE_IN_SAME_SOURCE_SERIES");
+ assert.equal(witness.provenance.officialCMAAResourcePage,
+  "https://churchmusicassociation.org/resources/resource-list-complete/");
+ assert.equal(witness.provenance.officialCMAAMissaleRomanum1962PDF,
+  "https://media.churchmusicassociation.org/pdf/missale62.pdf");
+ assert.equal(witness.provenance.officialCMAAMissalePDFReferenced,true);
+ assert.equal(witness.provenance.officialCMAAMissalePDFComparedByteForByteWithGregoBaseScanSeries,false);
+ assert.equal(witness.provenance.officialCMAAPDFDirectPageInspection,
+  "NOT_COMPLETED_FILE_SIZE_82815941_B_EXCEEDS_BROWSER_RETRIEVAL");
  assert.equal(witness.provenance.independentlyCertifiedExactRubricGlyphTranscription,"PENDING");
  assert.equal(witness.provenance.catalogueUrl,
   "https://gregobase.selapa.net/source.php?id=42&images=1&index=2");
@@ -118,6 +147,16 @@ function check(witness){
  assert.equal(witness.c0190.siteImageIndex,64);
  assert.equal(witness.c0190.documentedSelfSign,true);
  assert.match(witness.c0190.visualPrintedGlyphStatus,/CRITICAL_GLYPH_STILL_PENDING/);
+ assert.equal(witness.c0190.printedMarkObservedRelativeToLatin,
+  "BETWEEN_BENEDICTIONE_AND_CAELESTI_IN_IX1_PAGE_LXI");
+ assert.equal(witness.c0190.printedSelfSignDescriptionObserved,
+  "SEIPSUM_SIGNAT_A_FRONTE_AD_PECTUS_SINISTRA_INFRA_PECTUS");
+ assert.equal(witness.c0190.printedMarkShapeAtCurrentResolution,
+  "EXACT_TYPOGRAPHICAL_GLYPH_SHAPE_NOT_INDEPENDENTLY_CERTIFIED");
+ assert.equal(witness.c0190.originalPrintedEditionAuthentication,
+  "IN_SERIES_TITLE_AND_DECREE_INSPECTED_INDEPENDENT_VOLUME_AUTHENTICATION_OPEN");
+ assert.equal(witness.c0190.independentGestureClockApproval,false);
+ assert.equal(witness.c0190.livePublicationAllowed,false);
  for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
   const q=buildCanon42ApprovalQueue({...original,form,editorialPreview:true});
   assert.equal(q.counts.total,42);
@@ -141,10 +180,19 @@ reject(x=>x.rows[0].photographedRitusPages[0].siteImageIndex=90);
 reject(x=>x.rows[0].printEditionAuthenticatedByIndependentColophonReview=true);
 reject(x=>x.rows[0].actionLevelLatinGlyphComparison="COMPLETE");
 reject(x=>x.provenance.originalPrintedEditionAuthentication="CERTIFIED");
+reject(x=>x.provenance.internalEditionEvidence.scannedDecreeImage="https://gregobase.selapa.net/sources/42/3.png");
+reject(x=>x.provenance.internalEditionEvidence.decreePrintedDate="1961");
+reject(x=>x.provenance.originalVolumeColophonInspectedInSameScanSeries=true);
+reject(x=>x.provenance.verifiedSinglePhysicalCopyIdentity=true);
+reject(x=>x.provenance.officialCMAAMissalePDFComparedByteForByteWithGregoBaseScanSeries=true);
+reject(x=>x.provenance.officialCMAAPDFDirectPageInspection="CERTIFIED");
+reject(x=>x.c0190.printedMarkObservedRelativeToLatin="AFTER_CAELESTI");
+reject(x=>x.c0190.independentGestureClockApproval=true);
+reject(x=>x.c0190.livePublicationAllowed=true);
 reject(x=>x.provenance.independentlyIdentifiedExactImagedPhysicalVolume=true);
 reject(x=>x.rows[0].actorAndMinisterClockVerified=true);
 reject(x=>x.rows[0].canPublish=true);
 reject(x=>x.rows.find(a=>a.cueId==="AO.SM.C0190").donorWordBoundaryBeforeTokenUtf16=17);
 reject(x=>x.rows.find(a=>a.cueId==="AO.SM.C0190").exactPrintedCrossGlyphCertification="GRANTED");
 console.log("MASS_CANON_CMAA_SOURCE_PAGE_CROSSWALK="+JSON.stringify(result));
-console.log("PASS: 42/42 original Canon owners mapped to 1962-Vatican-labelled CMAA scans LIX–LXII; provenance, glyph and clock signoffs still required; 0 LIVE publication.");
+console.log("PASS: 42/42 Canon owners mapped; same GregoBase series photographed Editio typica title, decree dated 23 June 1962 and Ritus IX.1 LXI; original physical copy/critical glyph, copy and action clock signoffs withheld; 0 LIVE publication.");

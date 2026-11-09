@@ -9,10 +9,32 @@
     "scanCredit": "Scans courtesy of the Church Music Association of America",
     "independentCatalogOfHistoricalVaticanTypica": "https://library.aarome.org/bib/57015",
     "independentlyIdentifiedExactImagedPhysicalVolume": false,
-    "originalVolumeTitleAndColophonPagesNotInspectedInThisScanSet": true,
+    "originalVolumeTitleAndColophonPagesNotInspectedInThisScanSet": false,
     "originalPrintedEditionAuthentication": "PENDING",
     "independentlyCertifiedExactRubricGlyphTranscription": "PENDING",
-    "disclaimer": "GregoBase names the source and credits CMAA scans, and photographs show printed Ritus pages. Neither the source label alone nor other catalog descriptions prove that these exact four scans come from a physical 1962 Typis Polyglottis Vaticanis volume. No image is relicensed or imported into the public app."
+    "disclaimer": "GregoBase source 42 includes photographed title page (Editio typica), 23 June 1962 decree identifying Vatican publishing/presses, and Ritus IX.1 on image 64 in the same indexed image series. This directly improves edition-internal provenance over an isolated scan. The exact physical copy, binding/colophon chain and independent library authentication remain unverified; the printed cross's shape at low resolution and real priest action timing remain unapproved. No image is imported or relicensed into the public app. CMAA itself indexes a Missale Romanum 1962 PDF, but an 82,815,941-byte PDF was not inspected or byte-compared with GregoBase source 42 in this review; they must not be asserted as proven identical.",
+    "originalVolumeTitlePageInspectedInSameScanSeries": true,
+    "originalVolume1962DecreeInspectedInSameScanSeries": true,
+    "originalVolumeColophonInspectedInSameScanSeries": false,
+    "verifiedSinglePhysicalCopyIdentity": false,
+    "internalEditionEvidence": {
+      "scannedTitleImage": "https://gregobase.selapa.net/sources/42/0.png",
+      "titlePrinted": "MISSALE ROMANUM — EDITIO TYPICA",
+      "scannedDecreeImage": "https://gregobase.selapa.net/sources/42/2.png",
+      "decreeHead": "DECRETUM",
+      "decreePrintedDate": "ROMAE_DIE_23_IUNII_1962",
+      "decreePublishingAndPrintingStatement": "VATICANA_EDITORIALIS_DOMUS_TYPIS_ITIDEM_VATICANIS",
+      "sameGregoBaseSourceId": 42,
+      "directCanonSourceImage": "https://gregobase.selapa.net/sources/42/64.png",
+      "sourceContinuity": "SAME_NUMBERED_GREGOBASE_SCAN_SERIES",
+      "notProven": "EXACT_PHYSICAL_VOLUME_COLATION_AND_INDEPENDENT_LIBRARY_HOLDING_MATCH",
+      "editionInternalEvidence": "TITLE_PLUS_1962_DECREE_IN_SAME_SOURCE_SERIES"
+    },
+    "officialCMAAResourcePage": "https://churchmusicassociation.org/resources/resource-list-complete/",
+    "officialCMAAMissaleRomanum1962PDF": "https://media.churchmusicassociation.org/pdf/missale62.pdf",
+    "officialCMAAMissalePDFReferenced": true,
+    "officialCMAAMissalePDFComparedByteForByteWithGregoBaseScanSeries": false,
+    "officialCMAAPDFDirectPageInspection": "NOT_COMPLETED_FILE_SIZE_82815941_B_EXCEEDS_BROWSER_RETRIEVAL"
   },
   "sourceOwners": {
     "first": "data/research/mass-canon-first-pass-19-ritus-source-review-20261013.json",
@@ -56,7 +78,11 @@
     "independentlyCollatedExactActionGlyphs": 0,
     "independentFrenchEnglishCopyApprovals": 0,
     "actualActorClockAcceptances": 0,
-    "newlyPublishedLiveRubrics": 0
+    "newlyPublishedLiveRubrics": 0,
+    "editionInternalTitlePagesInspected": 1,
+    "editionInternalDatedDecreesInspected": 1,
+    "independentPhysicalVolumeAuthentications": 0,
+    "gestureClockApprovals": 0
   },
   "visualFindings": {
     "LIX": "Ritus VII final paragraph and VIII opening (Canon before consecration) at image 62",
@@ -71,7 +97,13 @@
     "siteImageIndex": 64,
     "documentedSelfSign": true,
     "visualPrintedGlyphStatus": "LOW_RES_IMAGE_PLUS_INDEPENDENT_LATIN_TRANSCRIPTION_MARKER_CORROBORATION_CRITICAL_GLYPH_STILL_PENDING",
-    "safeguards": "DO_NOT_INSERT_CROSS_IN_FROZEN_DONOR_OR_PROMOTE_UNOBSERVED_PRIEST_ACTION"
+    "safeguards": "DO_NOT_INSERT_CROSS_IN_FROZEN_DONOR_OR_PROMOTE_UNOBSERVED_PRIEST_ACTION",
+    "printedMarkObservedRelativeToLatin": "BETWEEN_BENEDICTIONE_AND_CAELESTI_IN_IX1_PAGE_LXI",
+    "printedSelfSignDescriptionObserved": "SEIPSUM_SIGNAT_A_FRONTE_AD_PECTUS_SINISTRA_INFRA_PECTUS",
+    "printedMarkShapeAtCurrentResolution": "EXACT_TYPOGRAPHICAL_GLYPH_SHAPE_NOT_INDEPENDENTLY_CERTIFIED",
+    "originalPrintedEditionAuthentication": "IN_SERIES_TITLE_AND_DECREE_INSPECTED_INDEPENDENT_VOLUME_AUTHENTICATION_OPEN",
+    "independentGestureClockApproval": false,
+    "livePublicationAllowed": false
   },
   "rows": [
     {
