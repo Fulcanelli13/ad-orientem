@@ -81,3 +81,46 @@ for(const row of missingIDs.rows){
  for(const ref of row.source_candidate_references)assert.ok(['EXACT_SOURCE_URL','TITLE_AND_ARTIST_NORMALIZED_ONLY'].includes(ref.match_basis));
 }
 console.log('PASS: 46 source-ID reconciliation cases held; 11 shared URL leads, 6 name-only leads, 29 no internal match, zero IDs falsely certified.');
+
+const identity11 = read('data/artwork/research/m2m-exact-url-identity-batch9-20261109.v1.json');
+const metadata23 = read('data/artwork/research/m2m-prayer-metadata-23-batch10-20261109.v1.json');
+assert.equal(identity11.records.length,11);
+assert.equal(identity11.works.length,5);
+assert.equal(new Set(identity11.records.map(x=>x.destination_id)).size,11);
+assert.equal(identity11.summary.exact_app_canonical_ids_fully_reconciled,0);
+assert.equal(identity11.summary.photo_release_authorisations,0);
+assert.equal(identity11.summary.existing_selection_replacements,0);
+for(const rec of identity11.records){
+ assert.equal(rec.source_match,'EXACT_SOURCE_URL_TO_PREVIOUS_EDITORIAL_ENTRY');
+ assert.ok(identity11.works.some(w=>w.work_key===rec.work_key&&w.targets.includes(rec.destination_id)));
+ assert.equal(rec.app_canonical_work_id,null,'museum accession or editorial pointer must not be assigned as app ID');
+ assert.equal(rec.app_canonical_id_verified,false);
+ assert.equal(rec.new_assignment_authorised,false);
+ assert.equal(rec.owner_selection_preserved,true);
+ assert.equal(rec.photographic_release_authorised,false);
+}
+const groupCounts=Object.fromEntries(identity11.works.map(w=>[w.work_key,identity11.records.filter(x=>x.work_key===w.work_key).length]));
+assert.deepEqual(Object.values(groupCounts).sort((a,b)=>a-b),[1,1,2,2,5]);
+assert.equal(identity11.works.find(w=>w.work_key==='CEREZO_HUESCA_00029').object_id,'00029');
+assert.ok(identity11.works.find(w=>w.work_key==='MAINO_PRADO_PENTECOST').photo_gate.includes('PRADO'));
+assert.equal(metadata23.records.length,23);
+assert.equal(new Set(metadata23.records.map(x=>x.target_id)).size,23);
+assert.equal(metadata23.summary.classification_counts.STATION_NUMBER_AND_SERIES_TITLE_ALIAS,12);
+assert.equal(metadata23.summary.classification_counts.PROPOSED_DIFFERENT_PHYSICAL_VISITATION_OBJECT,2);
+const differentVisitation=metadata23.records.filter(x=>x.classification==='PROPOSED_DIFFERENT_PHYSICAL_VISITATION_OBJECT');
+assert.deepEqual(differentVisitation.map(x=>x.target_id).sort(),['COV-weekday_magnificat','STG-pray.rosary-03']);
+assert.ok(differentVisitation.every(x=>x.original_physical_object_identity.includes('Princeton')&&x.claude_proposed_physical_object_identity.includes('Geneva')));
+assert.equal(metadata23.records.find(x=>x.target_id==='HERO-10').classification,'SAME_CLEVELAND_OBJECT_CORRECT_ARTIST_TO_FOLLOWER_OF_SODOMA');
+assert.ok(metadata23.records.find(x=>x.target_id==='HERO-11').original_physical_object_identity.includes('MBA 235'));
+assert.equal(metadata23.records.find(x=>x.target_id==='COV-prayer.hymns').classification,'RUBENS_ASSUMPTION_MULTIPLE_PHYSICAL_WORKS_UNRESOLVED');
+assert.equal(metadata23.summary.physical_object_replacements_authorised,0);
+for(const r of metadata23.records){
+ assert.equal(r.accepted_options_preserved,true);
+ assert.equal(r.owner_original_selection_preserved,true);
+ assert.equal(r.photo_publication_authorised,false);
+ assert.equal(r.new_assignment_authorised,false);
+ assert.ok(r.source_evidence_urls.length>0);
+}
+assert.equal(prior.release_gate_evidence.identity_and_metadata_reconciliation_progress.metadata_disagreement_flags_adjudicated,23);
+assert.equal(prior.release_gate_evidence.identity_and_metadata_reconciliation_progress.fully_assigned_verified_app_canonical_ids,0);
+console.log('PASS: five underlying works for 11 URL leads; 23 metadata flags adjudicated; no photo, object swap, or canonical ID imported.');
