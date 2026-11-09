@@ -2862,7 +2862,15 @@ export function createReaderDomAdapter({
   if(!root || typeof root.querySelector !== "function") throw new TypeError("Reader root element required");
 
   const inlineChant=createInlineChantController({root});
-  const properNotationPreview=createDatedProperNotationPreview({root});
+  const properNotationPreview=createDatedProperNotationPreview({root,
+    onOrdinarySelection:({movement,settingId})=>{
+      onScholaLocalProgrammeChange?.({kind:"ordinarySelection",
+        eventId:movement,value:settingId});
+      // An inline prayer-level choice must immediately display its actual
+      // archived GABC in the same card, without the Schola Music Plan.
+      renderOrdoNotationReferences({movement,settingId});
+    }
+  });
   let prepared=null;
   let current=null;
   let sourceRailTracker=null;
