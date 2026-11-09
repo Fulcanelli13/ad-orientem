@@ -42,6 +42,10 @@ try{
    assert.equal(await browse.evaluate(el=>el.open),true);
    const rows=()=>page.locator(scope+"[data-p435930-lib-open]").count();
    assert.equal(await rows(),48,"Initial Library retains all original 48 canonical prayer cards");
+   // The full Library must expose source-owned works without requiring a hidden subject filter or search.
+   assert.equal(await page.locator(scope+"[data-p435930-subject-work]").count(),8,"Eight historical source works must be visible by default");
+   assert.equal(await page.locator(scope+"[data-p435930-source-work]").count(),7,"Seven source-owned historical works must be visible by default");
+   assert.equal(await page.locator(scope+"[data-ao-pray-contextual]").count(),7,"Seven existing guided readers must be visible by default");
    for(const id of ["I","II","III","IV","V","VI","VII","VIII","IX"]){
     await page.locator(scope+'[data-p435930-lib-subject="'+id+'"]').evaluate(el=>el.click());
     assert.equal(await page.locator(scope+"[data-ao-prayer-subject-results]").getAttribute("data-ao-prayer-subject-results"),id);
@@ -57,6 +61,12 @@ try{
    assert.equal(await rows(),1,"All subjects preserves active text search");
    await page.locator(scope+"[data-p435930-lib-search]").evaluate(el=>{el.value="";el.dispatchEvent(new Event("input",{bubbles:true}))});
    assert.equal(await rows(),48,"Clear search restores existing whole Library");
+   assert.equal(await page.locator(scope+"[data-p435930-subject-work]").count(),8);
+   assert.equal(await page.locator(scope+"[data-p435930-source-work]").count(),7);
+   assert.equal(await page.locator(scope+"[data-ao-pray-contextual]").count(),7);
+   await page.locator(scope+"[data-p435930-lib-search]").evaluate(el=>{el.value="Precious Blood";el.dispatchEvent(new Event("input",{bubbles:true}))});
+   assert.equal(await page.locator(scope+'[data-p435930-own="pray.precious_blood"]').count(),1,"Source-owned guided devotional must be searchable from All");
+   await page.locator(scope+"[data-p435930-lib-search]").evaluate(el=>{el.value="";el.dispatchEvent(new Event("input",{bubbles:true}))});
    // Read the original canonical prayer through the original Library reader.
    await page.locator(scope+'[data-p435930-lib-subject="IV"]').evaluate(el=>el.click());
    await page.locator(scope+'[data-p435930-lib-open="sacrament_come_holy_spirit"]').evaluate(el=>el.click());

@@ -27,7 +27,7 @@ for(const w of WORKS){
   if(w.options.historicalPrayer)assert.ok(montfortB27RequiredForDay(w.options.day).includes(w.options.historicalPrayer));
  }else assert.ok(["pray.sacred_heart","pray.novenas","pray.dying_companion"].includes(w.route));
 }
-assert.deepEqual(prayerSevenSourceWorksForSubject("all"),[]);
+assert.deepEqual(prayerSevenSourceWorksForSubject("all"),WORKS);
 assert.deepEqual(prayerSevenSourceWorksForSubject("all","Proficiscere").map(x=>x.id),["good_death_proficiscere"]);
 assert.deepEqual(prayerSevenSourceWorksForSubject("all","Montfort").map(x=>x.id).sort(),["montfort_augustine_prayer","montfort_consecration_act_1863"].sort());
 assert.equal(GOLDEN_ARROW_REPARATION_V1.en.length>100,true);

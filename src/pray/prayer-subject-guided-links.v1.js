@@ -15,6 +15,9 @@ export const PRAYER_SUBJECT_GUIDED_LINKS_V1=Object.freeze([
  Object.freeze({id:"pray.for_priests",subject:"VII",en:"Prayers for Priests and Vocations",fr:"Prières pour les prêtres et les vocations",descriptionEn:"Original sourced prayers for clergy and vocations.",descriptionFr:"Prières sourcées pour les prêtres et les vocations."}),
  Object.freeze({id:"pray.occasional_intercessions",subject:"VII",en:"Prayers for Particular Needs",fr:"Prières pour les besoins particuliers",descriptionEn:"Sickness, family, peace, travel and discernment.",descriptionFr:"Maladie, famille, paix, voyage et discernement."})
 ]);
-export function guidedPrayerLinksForSubject(subject){
- return PRAYER_SUBJECT_GUIDED_LINKS_V1.filter(x=>x.subject===subject);
+export function guidedPrayerLinksForSubject(subject,query=""){
+ const q=String(query||"").trim().toLocaleLowerCase();
+ return PRAYER_SUBJECT_GUIDED_LINKS_V1.filter(x=>
+  (subject==="all"||x.subject===subject)&&
+  (!q||[x.id,x.en,x.fr,x.descriptionEn,x.descriptionFr].some(value=>value.toLocaleLowerCase().includes(q))));
 }
