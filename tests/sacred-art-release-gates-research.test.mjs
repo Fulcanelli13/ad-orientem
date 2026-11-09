@@ -302,4 +302,40 @@ for(const r of ai15.records){
 assert.deepEqual(ai15.public_repo_image_uploads,[]);
 assert.equal(ai15.new_assignments_authorised,0);
 assert.ok(!JSON.stringify(ai15).includes('file_00000000'),'Never commit private user-library identifiers');
-console.log('PASS: all 4 approved-date AI draft files recovered across batches 14–15, two new hashes checked, Passion approval held, zero releases.');
+console.log('PASS: all 4 Calendar-linked AI generated originals located; approval/release gates remain separate across batches 14–15, two new hashes checked, Passion approval held, zero releases.');
+
+const museum16 = read('data/artwork/research/m2m-original19-institutional-batch16-20261109.v1.json');
+assert.equal(museum16.records.length,10);
+assert.equal(new Set(museum16.records.map(r=>r.target_type+':'+r.target_id)).size,10);
+assert.equal(museum16.counts.destinations_in_this_primary_source_review,10);
+assert.equal(museum16.counts.destinations_not_yet_primary_source_reviewed,9);
+assert.equal(museum16.counts.new_canonical_app_ids_assigned,0);
+assert.equal(museum16.counts.exact_selected_photo_masters_validated,0);
+const emmaus=museum16.records.find(x=>x.target_id==='2026-04-06');
+assert.equal(emmaus.identity_state,'PHYSICAL_VERSION_SELECTION_CONFLICT_TWO_AUTOGRAPH_WORKS');
+assert.deepEqual(emmaus.physical_objects.map(x=>x.museum_id),['NG172','2296']);
+const tanner=museum16.records.find(x=>x.target_id==='2026-05-25');
+assert.equal(tanner.physical_objects[0].museum_id,'1900.1');
+const rembrandt=museum16.records.find(x=>x.target_id==='2026-04-09');
+assert.equal(rembrandt.physical_objects[0].museum_id,'RCIN 404816');
+const burnand=museum16.records.find(x=>x.target_id==='2026-04-11');
+assert.equal(burnand.physical_objects[0].museum_id,'RF 1153');
+const figge=museum16.records.find(x=>x.target_id==='2026-05-26');
+assert.ok(figge.source_finding.includes('copyist'));
+const minardi=museum16.records.find(x=>x.target_id==='2026-04-10');
+assert.ok(minardi.source_finding.includes('mural fresco'));
+const twoCastillo=museum16.records.filter(x=>x.physical_objects.some(o=>o.museum_id==='DJ0033P'));
+assert.equal(twoCastillo.length,2);
+assert.deepEqual(twoCastillo.map(x=>x.target_id).sort(),['COV-devotion_st_anthony_lost_items','COV-novena.st_anthony_nine_tuesdays']);
+for(const r of museum16.records){
+ assert.equal(r.app_canonical_id,null);
+ assert.equal(r.exact_selected_photo_identified,false);
+ assert.equal(r.selected_photo_rights_certified,false);
+ assert.equal(r.new_assignment_authorised,false);
+ assert.equal(r.owner_selection_preserved,true);
+ assert.equal(r.reviewer_does_not_assert_exact_owner_photo_match,true);
+ assert.ok(r.physical_objects.every(x=>x.artwork_url.startsWith('https://')));
+}
+assert.deepEqual(museum16.production_imports,[]);
+assert.equal(prior.release_gate_evidence.asset_recovery_29.institutional_source_object_destinations_reviewed_from_other19,10);
+console.log('PASS: ten selected-source destinations assigned institutional artwork leads; exact prior photo identities and releases remain blocked.');
