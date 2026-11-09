@@ -1,0 +1,35 @@
+name: CL27 supplemental fourteen-site Mass source gate
+on:
+  pull_request:
+    paths:
+      - 'data/directory/cl27-weekly-mass-supplement-20261110.v1.json'
+      - 'src/find/tlm-weekly-source-supplement.js'
+      - 'src/find/preliminary-directory-r49.js'
+      - 'tests/tlm-cl27-weekly-source-supplement.mjs'
+      - 'tests/directory-b91-three-published-provisional-sites.mjs'
+      - '.github/workflows/directory-cl27-weekly-supplement.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  weekly-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate CL2 identity, source exceptions and EN/FR output
+        run: node tests/tlm-cl27-weekly-source-supplement.mjs
+      - name: Worldwide directory integration and original ten programmes
+        run: |
+          node tests/tlm-cl27-weekly-source-programme.mjs
+          node tests/directory-b91-three-published-provisional-sites.mjs
+      - name: Verify curated GitHub Pages contents
+        run: |
+          node tools/build-web-preview.mjs
+          test -f dist/web-preview/data/directory/cl27-weekly-mass-supplement-20261110.v1.json
+          test -f dist/web-preview/src/find/tlm-weekly-source-supplement.js
+          test -f dist/web-preview/data/directory/research/canonical-g0-site-admissions-b84-b90-20261026.v1.json
+          test ! -d dist/web-preview/data/directory/research/cl27-current-firstparty-20261104
