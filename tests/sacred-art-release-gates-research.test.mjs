@@ -425,3 +425,32 @@ assert.equal(prior.release_gate_evidence.asset_recovery_29.institutional_object_
 assert.equal(prior.release_gate_evidence.asset_recovery_29.institutional_object_leads_for_other_nineteen.supplemental_corroboration_rows,9);
 assert.equal(prior.release_gate_evidence.asset_recovery_29.latest_selected_ai_asset_file_recovery.verified_sha256,4);
 console.log('PASS: supplemental four-AI-file SHA256 ledger matches original two-image work and nine candidate object records are a subset of 19/19, with no publication.');
+
+const commons18 = read('data/artwork/research/m2m-exact-commons-source-metadata-batch18-20261109.v1.json');
+assert.equal(commons18.records.length,3);
+assert.equal(Object.keys(commons18.works).length,2);
+assert.equal(commons18.summary.historical_current_destination_edges,3);
+assert.equal(commons18.summary.distinct_work_groups,2);
+assert.equal(commons18.summary.actual_selected_image_bytes_downloaded,0);
+assert.equal(commons18.summary.rights_photo_qa_certified,0);
+assert.equal(commons18.summary.public_image_imports,0);
+assert.deepEqual(commons18.records.filter(r=>r.work_key==='castillo-cordoba-dj0033p').map(r=>r.destination_id).sort(),['COV-devotion_st_anthony_lost_items','COV-novena.st_anthony_nine_tuesdays']);
+const cordoba=commons18.works['castillo-cordoba-dj0033p'];
+assert.equal(cordoba.physical_inventory,'DJ0033P');
+assert.deepEqual(cordoba.commons_current_dimensions,{width:3400,height:4477});
+assert.equal(cordoba.commons_reported_sha1,'7f8376ce631594a53ffc918185a9c47ebcd2ae50');
+const cariplo=commons18.works['molteni-cariplo-confessione'];
+assert.deepEqual(cariplo.commons_current_dimensions,{width:1295,height:1600});
+assert.equal(cariplo.commons_reported_sha1,'45965d76426de27b6a810eadd92c23bcf8e0ac7b');
+for(const rec of commons18.records){
+ assert.equal(rec.source_url_identical_to_frozen_current_record,true);
+ assert.equal(rec.original_current_binary_independently_fetched,false);
+ assert.equal(rec.image_binary_sha256,null);
+ assert.equal(rec.photograph_mobile_320_390_QA_passed,false);
+ assert.equal(rec.canonical_app_work_id,null);
+ assert.equal(rec.owner_current_selection_preserved,true);
+ assert.equal(rec.existing_accepted_alternatives_preserved,true);
+ assert.equal(rec.new_assignment_authorised,false);
+}
+assert.equal(prior.release_gate_evidence.asset_recovery_29.exact_historical_prayer_commons_links.source_confirmed_current_prayer_edges,3);
+console.log('PASS: three frozen Prayer source-page edges verified across two separate exact Commons filenames; neither photo certified or newly imported.');
