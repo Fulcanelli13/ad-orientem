@@ -88,7 +88,7 @@ export function reviewAdventIComplineAppointment(date){
     officeOrdo.appointment?.sourceId!==
      (isSecondWeek?"ao.office.2026-advent-ii-dated-review|":
       "ao.office.2026-advent-i-dated-review|")+date||
-    officeOrdo.officeDate!==(r.officeDate??date))
+    (r.officeDate&&officeOrdo.officeDate!==r.officeDate))
   return Object.freeze({
    schema:OFFICE_COMPLINE_APPOINTMENTS_SCHEMA,status:"WITHHELD",
    reason:"OFFICE_ORDO_RESOLVER_DISAGREES_WITH_DATED_APPOINTMENT",
