@@ -369,7 +369,13 @@ export function createDatedProperNotationPreview({
          onOrdinarySelection({movement,settingId:select.value});
        });
        chooser.append(hint,select);
-       node.append(chooser);ordinaryChoosers.push(chooser);
+       // Make the setting discoverable before the Latin opening cue.
+       // Appending it after the whole bilingual paragraph hid it below
+       // the initial viewport, a path the programmatic M45 test bypassed.
+       const openingText=node.querySelector(":scope > .ao-line-primary");
+       if(openingText)node.insertBefore(chooser,openingText);
+       else node.prepend(chooser);
+       ordinaryChoosers.push(chooser);
      }
    }
    const scores=referenceScoresForParagraph({paragraph:p,resolvedMass,form});
