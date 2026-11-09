@@ -186,7 +186,7 @@ export function openDivineOfficeReader(win=globalThis,{date=todayLocal()}={}){
   ["2026-12-14","14 Dec · Advent III Monday"],
   ["2026-12-15","15 Dec · Advent III Tuesday"],
   ["2026-12-16","16 Dec · Ember Wednesday"],
-  ["2026-12-17","17 Dec · O Sapientia Thursday"],
+  ["2026-12-17","17 Dec · Advent III Thursday"],
   ["2026-12-18","18 Dec · Ember Friday"],
   ["2026-12-19","19 Dec · Ember Saturday, First Vespers"],
   ["2026-12-20","20 Dec · Fourth Sunday of Advent"]
