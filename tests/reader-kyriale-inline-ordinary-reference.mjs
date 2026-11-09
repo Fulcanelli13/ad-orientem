@@ -115,7 +115,7 @@ for(const [id,movement,setting,folio,begin,end] of newSources){
  assert.ok(source.gabc.startsWith("name:"));
  assert.ok(source.gabc.includes("Graduale Romanum, 1961, p. "+folio));
  assert.ok(source.gabc.includes("transcriber:Andrew Hinkley;"));
- assert.ok(source.gabc.includes("%%\\n"));
+ assert.ok(source.gabc.includes("%%\n"));
  assert.ok(source.gabc.includes(begin),id+" opening neume modified");
  assert.ok(source.gabc.includes(end),id+" complete ending absent");
  assert.ok(source.gabc.trim().endsWith("(::)"),id+" final double bar missing");
