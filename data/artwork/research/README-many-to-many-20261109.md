@@ -375,3 +375,20 @@ After the batch16 ten-destination institutional survey, the remaining **nine exa
 **Result of batches 16 + 17:** all **19/19** previously unlinked selected artwork destinations have an explicit physical-work research disposition, but **none** of the user's **19 exact selected digital photographs** has been certified or newly published. Two Hermitage cases remain secondary-only, the Sacchi Prado work identity depends on catalogue-linked secondary corroboration while museum page fetch was inaccessible, and the Caravaggio Emmaus selected version remains ambiguous (London versus Brera). The next phase is selected image/file reconstruction and independent licence, pixel fidelity, attribution, frame removal, mobile crop and owner sign-off—not reselecting paintings from generic title matches.
 
 All previous source decisions, the Bouts exact-global rejection, the narrow San Polo CC BY-SA exception, the separate Prado ban, 1,589 relationship edges and 507 accepted options are unchanged.
+
+## Byte-level four-derivative supplemental cross-check
+
+A supplemental independent file-integrity pass on the four user Library originals is recorded in `m2m-ai-derivative-four-file-hash-audit-batch15-20261109.v1.json`. It complements—not supersedes—the earlier `m2m-ai-original-files-batch15-20261109.v1.json` and the 20 October Tissot/Wierix saved-draft manifest.
+
+| Calendar date | Exact saved image | Recomputed SHA-256 | Dimensions |
+| --- | --- | --- | --- |
+| 8 March | `Christ Commands the Shadows.png` | `a7a7a1972f7e7954576cc7580c8f42bfc68b6628be2b51df36de032031db6016` | 1086 × 1448 |
+| 22 March | `Christ Retreats from the Angry Crowd.png` | `6f25e25484a78737e87cb4ef007e083b8598938d8ed014163404f6194e768c6b` | 1536 × 1024 |
+| 8 April | `AO_Easter_Wednesday_John21_Tissot_AI_Visual_Approved_Draft_2026-10-20.png` | `69eba31523b5fb15c781475e186f02bba193cab15e2d596e17b724cde128e3b2` | 1586 × 992 |
+| 29 May | `AO_Pentecost_Ember_Friday_Luke5_Wierix_AI_Visual_Approved_Draft_2026-10-20.png` | `b116bcac8883b6d4559d1dc54fad7336f4365940d8996cc2eb22c075a20cad5a` | 1402 × 1122 |
+
+All four SHA-256 hashes were **recomputed from raw Library PNG bytes**, not merely copied from text manifests. Three match existing independent provenance notes; the 22 March image gains a stable hash where no prior image-specific hash was recovered. A saved image, its liturgical scene relevance, its final owner-selected placement and its photo-publication permission remain **four separate assertions**. The October 21 proposal to use the historical engraving instead of the AI interpretation for 22 March is labelled *undecided*; it cannot silently supersede earlier user selection. In particular, `Christ Retreats from the Angry Crowd.png` cannot be promoted as final without resolving its image-specific selection provenance.
+
+The additional `m2m-nine-institutional-object-leads-batch16-20261109.v1.json` is a **nine-destination corroboration subset** of the already committed authoritative **19/19** source-study pair `m2m-original19-institutional-batch16-20261109.v1.json` and `m2m-original19-institutional-batch17-20261109.v1.json`. **Do not add nine to nineteen.** The total 19 separate destination paintings have source-work research dispositions; none of those 19 exact owner-selected digital photograph masters has been independently identified and certified. The additional nine are not new production assignments or physical-art acquisition decisions.
+
+The public GitHub Pages page and image URL could not be accessed by the available web reader; local browser access was also unavailable in this session. The **Bouts P0 remains a statically established UI reachability path**, not an independently witnessed live browser rendering. See [issue #2761](https://github.com/Fulcanelli13/ad-orientem/issues/2761) for production verification and a separate corrective PR if required. No change to source-gallery code or GitHub Pages occurred in this research pass.
