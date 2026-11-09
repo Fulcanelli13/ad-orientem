@@ -25,7 +25,21 @@ const catalogue=Object.freeze([
  source("SANCTUS_BENEDICTUS","MASS_08","Sanctus VIII · Benedictus",["30*","31*"],
   ["https://gregobase.selapa.net/sources/2/907.png","https://gregobase.selapa.net/sources/2/908.png"],32),
  source("AGNUS_DEI","MASS_08","Agnus Dei VIII",["31*"],
-  ["https://gregobase.selapa.net/sources/2/908.png"],33)
+  ["https://gregobase.selapa.net/sources/2/908.png"],33),
+ // Additional GABC research references: source scans are historical printed
+ // Solesmes 1961 folios, not approval of the corresponding transcription.
+ source("KYRIE","MASS_17","Kyrie XVII",["55*"],
+  ["https://gregobase.selapa.net/sources/2/932.png"],57),
+ source("KYRIE","MASS_18","Kyrie XVIII",["57*"],
+  ["https://gregobase.selapa.net/sources/2/934.png"],59),
+ source("GLORIA","MASS_11","Gloria XI",["39*","40*"],
+  ["https://gregobase.selapa.net/sources/2/916.png",
+   "https://gregobase.selapa.net/sources/2/917.png"],41),
+ source("SANCTUS_BENEDICTUS","MASS_11","Sanctus XI · Benedictus",["40*","41*"],
+  ["https://gregobase.selapa.net/sources/2/917.png",
+   "https://gregobase.selapa.net/sources/2/918.png"],42),
+ source("AGNUS_DEI","MASS_11","Agnus Dei XI",["41*"],
+  ["https://gregobase.selapa.net/sources/2/918.png"],43)
 ]);
 const byKey=new Map(catalogue.map(x=>[x.movement+"|"+x.selection,x]));
 export const SCHOLA_1961_ORIGINAL_FACSIMILE_COUNT=catalogue.length;
