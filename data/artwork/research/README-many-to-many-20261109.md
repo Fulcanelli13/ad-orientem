@@ -299,3 +299,26 @@ The remaining **19** selections still need original selected-file paths, source 
 `src/art/released-module-paintings.v1.js` still declares **`bouts`** for Cleveland **1942.635 / `cma-122338`**, with `assets/prayer/released/bouts-annunciation-original.jpg` and PR **#2340** as its previous release source. This is the exact physical painting rejected on 15 October (score 2) and already hard-blocked for **new** placement by the 13-edge/five-destination historical reconciliation. The research manifest **cannot revoke an existing released-photo registry or public asset file**. A separate runtime/public-route audit must determine actual display exposure and appropriate remediation under owner decision precedence. This PR does **not** delete or alter live media.
 
 Run `node tests/sacred-art-release-gates-research.test.mjs` to confirm the batch13 3/2/4/1/19 split, mirror provenance, absence of new releases, and legacy collision flag. No gallery import, owner override, JavaScript runtime adjustment, image upload, CI bypass or deployment is implied.
+
+## Approved AI drafts found in user-owned Library — batch 14
+
+A search beyond the checked GitHub asset directories recovered **two original user-accepted generated PNGs** from earlier saved reference files. These were not missing from the user's earlier visual review: they were saved in the user's Library reference bank, not checked into the app repository.
+
+The 20 October `AO_Easter_2026_Tissot_Wierix_Visual_Drafts_Manifest_2026-10-20.json` contains two explicit `USER_ACCEPTED_AI_DERIVATIVE_VISUAL_DRAFT` entries. The corresponding **image files themselves** were located and their byte lengths and image dimensions read from the user's Library. The source manifest's SHA-256 values have **not** been independently recalculated:
+
+| 2026 date | Exact saved original PNG | Dimensions | Size | SHA-256 (source manifest) |
+| --- | --- | --- | ---: | --- |
+| 8 Apr, Easter Wed John 21 | `AO_Easter_Wednesday_John21_Tissot_AI_Visual_Approved_Draft_2026-10-20.png` | 1586 × 992 | 2,484,404 bytes | `69eba31523b5fb15c781475e186f02bba193cab15e2d596e17b724cde128e3b2` |
+| 29 May, Pentecost Ember Friday Luke 5 | `AO_Pentecost_Ember_Friday_Luke5_Wierix_AI_Visual_Approved_Draft_2026-10-20.png` | 1402 × 1122 | 2,289,365 bytes | `b116bcac8883b6d4559d1dc54fad7336f4365940d8996cc2eb22c075a20cad5a` |
+
+The historical models remain distinct: Tissot, Brooklyn Museum **00.159.345** and Wierix, Rijksmuseum **RP-P-OB-9347**. **The recovered images are generated interpretations, not faithful recolourings or photographic editions of those originals.** The user accepted these *visual drafts*, not final production masters; source and crop QA and final release remain pending.
+
+There are therefore **two, not four, approved AI-derived visual drafts still unlocated across the checked repository and Library**: 8 March after Giacomo Cavedone and 22 March after Lucas van Doetechum. Lack of a saved-file match must not be treated as rejection of the images or authorization to regenerate substitutes.
+
+The complete cross-source 29-case inventory becomes **3 local GitHub files + 2 user Library draft originals + 2 remotely linked Home previews + 2 AI originals still unlocated + 1 two-scene Vigil + 19 other exact-source gaps = 29**. The original repository-only snapshot in batch 13 remains valid in its narrower scope.
+
+The nonpublishing provenance supplement is `m2m-recovered-user-library-derivatives-batch14-20261109.v1.json`. It deliberately omits private Library file handles, stores only reproducible filenames and public-project artwork metadata, and grants no new app assignment, upload, permissions or publication.
+
+### P0 follow-up to rejection conflict
+
+Repository code confirms **static Home C3 gallery reachability** for the previously released `released-photo:bouts` (Cleveland rejected original `cma-122338`): `src/art/released-gallery-batch1.v1.js` builds its list from all `RELEASED_MODULE_PAINTINGS` entries; `src/art/sacred-art-taxonomy-v1.js` includes the Bouts entry; `src/home/c3-gallery.js` exposes it under the default `all` category and `src/home/browser-entry.js` binds that gallery action. This is **not a public Pages browser verification**, and it does not establish exactly when or where an end user saw the photograph. A standalone P0 remediation issue [#2761](https://github.com/Fulcanelli13/ad-orientem/issues/2761) now tracks the exposure test and a separate regression-gated code correction. Draft PR #2726 remains research-only and does not modify runtime.
