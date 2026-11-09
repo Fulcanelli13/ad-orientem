@@ -117,6 +117,22 @@ test("release scripts consume the shared proof and audit the actual published by
  assert.match(live,/if\(i<5\)await new Promise/);
 });
 
+test("public phone boot timeout retains first-attempt diagnostics without weakening the 65-second gate",async()=>{
+ const smoke=await readFile(new URL("./github-pages-phone-live-acceptance.mjs",import.meta.url),"utf8");
+ assert.match(smoke,/PAGES_PHONE_BOOT_DIAGNOSTICS/);
+ assert.match(smoke,/startup-diagnostics\\.json/);
+ assert.match(smoke,/startup-failure-390\\.png/);
+ assert.match(smoke,/requestfailed/);
+ assert.match(smoke,/pageerror/);
+ assert.match(smoke,/criticalResources/);
+ assert.match(smoke,/swController/);
+ assert.match(smoke,/AO_APP_SHELL_V1/);
+ assert.match(smoke,/AO_R17_BROWSER_ENTRY/);
+ assert.match(smoke,/timeout:65000/);
+ assert.match(smoke,/addFailure\\(label,e\\)/,
+  "The first-attempt timeout must still fail the release job");
+});
+
 test("all 18 pinned Mass and Schola release witnesses are real, nonempty published-source modules",async()=>{
  const seen=new Set();
  for(const path of MASS_SCHOLA_CRITICAL_PATHS){
