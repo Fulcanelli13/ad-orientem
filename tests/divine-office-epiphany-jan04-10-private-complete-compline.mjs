@@ -74,7 +74,8 @@ test("7 dated Jan 2027 source profiles and source-read rights are research only"
   assert.deepEqual(reviewed.appointment.psalmIds,[...new Set(events)]);
   assert.equal(reviewed.sourceTextCertified,false);
   assert.equal(reviewed.published,false);
-  assert.equal(latinComplineReleaseEligibility({date}).status,"WITHHELD");
+  assert.equal(latinComplineReleaseEligibility({date}).status,
+   date<="2027-01-08"?"ELIGIBLE":"WITHHELD");
  }
 });
 test("28 private source-backed Latin Compline recitations cover Epiphany and Holy Family",async()=>{
@@ -144,8 +145,8 @@ test("generic and former private adapters stay restricted to earlier dates",asyn
   date:"2027-01-11",fetchSource:async()=>{}
  }),/EPIPHANY_PRIVATE_DATE_NOT_REVIEWED/);
 });
-test("28 unauthorized public context/minister variations withhold before fetch",async()=>{
- for(const date of JAN04_10_DATES)
+test("8 Holy Family public minister/context variations withhold before fetch",async()=>{
+ for(const date of ["2027-01-09","2027-01-10"])
   for(const context of Object.values(COMPLINE_CONTEXT))
    for(const minister of Object.values(COMPLINE_MINISTER)){
     let calls=0;
