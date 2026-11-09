@@ -51,7 +51,14 @@ export function mountPublishedLatinCompline(root,{
    "2026-12-24":"First Compline of Christmas · 24 December 2026",
    "2026-12-25":"Nativity of Our Lord, 25 December 2026",
    "2026-12-26":"St Stephen the Protomartyr, 26 December 2026",
-   "2026-12-27":"Sunday within the Octave of Christmas, 27 December 2026"
+   "2026-12-27":"Sunday within the Octave of Christmas, 27 December 2026",
+   "2026-12-28":"Holy Innocents, 28 December 2026",
+   "2026-12-29":"Fifth day of Christmas Octave, 29 December 2026",
+   "2026-12-30":"Sixth day of Christmas Octave, 30 December 2026",
+   "2026-12-31":"First Compline of Circumcision, 31 December 2026",
+   "2027-01-01":"Circumcision of Our Lord, 1 January 2027",
+   "2027-01-02":"First Compline of the Holy Name, 2 January 2027",
+   "2027-01-03":"Most Holy Name of Jesus, 3 January 2027"
   }[date]??"Date not certified"));
  const contextLabel=create(d,"label",null,"Recitation: ");
  const contextSelect=create(d,"select");

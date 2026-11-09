@@ -7,7 +7,9 @@ import {DIVINUM_OFFICIUM_PIN as PIN} from "../app/source-transport-compat.js";
 import {createComplinePinnedReader,assembleDatedComplinePilot,
  createLatinComplinePinnedReader,assembleLatinDatedComplinePilot,
  createChristmas2026PrivateLatinPinnedReader,
- assembleChristmas2026PrivateLatinComplinePilot}
+ assembleChristmas2026PrivateLatinComplinePilot,
+ createDec28Jan03PrivateLatinPinnedReader,
+ assembleDec28Jan03PrivateLatinComplinePilot}
  from "./saturday-compline-2026-pilot.js";
 import {createAdventFirstVespersBoundedPinnedReader} from "./advent-first-vespers-bounded-preview-reader.js";
 import {assembleAdventI2026PrivatePreviewSession} from "./advent-first-vespers-preview-session.js";
@@ -38,7 +40,8 @@ function textsValid(frames,activeLanguages=LANGUAGES){
    f.texts[l].every(t=>typeof t==="string"&&t.length>0&&t.length<20000)));
 }
 export function projectPrivateOfficeReview({
- hour,date,pilot,focus,languageMode="trilingual",privateChristmasResearch=false
+ hour,date,pilot,focus,languageMode="trilingual",
+ privateChristmasResearch=false,privateYearBoundaryResearch=false
 }={}){
  if(!["trilingual","latin"].includes(languageMode))return hold("REVIEW_LANGUAGE_MODE_NOT_SUPPORTED");
  const activeLanguages=languageMode==="latin"?["la"]:LANGUAGES;
@@ -47,7 +50,10 @@ export function projectPrivateOfficeReview({
  if(hour==="COMPLINE"){
   const christmasAllowed=privateChristmasResearch&&languageMode==="latin"&&
    date>="2026-12-21"&&date<="2026-12-27";
-  if((!COMPLINE_DATES.has(date)&&!christmasAllowed)||!pilot||
+  const yearBoundaryAllowed=privateYearBoundaryResearch&&languageMode==="latin"&&
+   (date>="2026-12-28"&&date<="2026-12-31"||
+    date>="2027-01-01"&&date<="2027-01-03");
+  if((!COMPLINE_DATES.has(date)&&!christmasAllowed&&!yearBoundaryAllowed)||!pilot||
    !/^SOURCE_FIRST_(?:SATURDAY|FERIAL_TUESDAY|APPOINTED)_COMPLINE_RESEARCH_NOT_CERTIFIED$/.test(pilot.status)||
    pilot.sourceRevision!==PIN||pilot.hour!=="COMPLINE"||
    !Array.isArray(pilot.availableLanguages)||
@@ -56,7 +62,9 @@ export function projectPrivateOfficeReview({
    pilot.civilDate!==date||pilot.officeDate!==(date==="2026-12-07"?"2026-12-08":
     date==="2026-12-12"?"2026-12-13":
     date==="2026-12-19"?"2026-12-20":
-    date==="2026-12-24"?"2026-12-25":date)||
+    date==="2026-12-24"?"2026-12-25":
+    date==="2026-12-31"?"2027-01-01":
+    date==="2027-01-02"?"2027-01-03":date)||
    pilot.blockCount!==42||pilot.blocks?.length!==42||
    pilot.frames?.length!==pilot.focusFrameCount||
    pilot.rightsApproved!==false||pilot.publishable!==false||
@@ -146,5 +154,31 @@ export async function assembleChristmas2026PrivateOfficeResearchReview({
   });
  }catch(error){
   return hold("CHRISTMAS_PRIVATE_SOURCE_FAILURE:"+String(error?.message??error));
+ }
+}
+
+/**
+ * Isolated source-driven 28 Dec 2026–3 Jan 2027 Latin Compline research.
+ * No public routes call this; generic private and 21–27 Dec APIs unchanged.
+ * A valid private text does NOT authorize publication.
+ */
+export async function assembleDec28Jan03PrivateOfficeResearchReview({
+ date,fetchSource
+}={}){
+ const eligible=typeof date==="string"&&(
+  date>="2026-12-28"&&date<="2026-12-31"||
+  date>="2027-01-01"&&date<="2027-01-03"
+ );
+ if(!eligible)return hold("YEAR_BOUNDARY_DATE_OUTSIDE_FINITE_PRIVATE_RESEARCH");
+ if(typeof fetchSource!=="function")return hold("FETCH_TRANSPORT_REQUIRED");
+ try{
+  const reader=createDec28Jan03PrivateLatinPinnedReader({date,fetchSource});
+  const pilot=await assembleDec28Jan03PrivateLatinComplinePilot({reader,date});
+  return projectPrivateOfficeReview({
+   hour:"COMPLINE",date,pilot,languageMode:"latin",
+   privateYearBoundaryResearch:true
+  });
+ }catch(error){
+  return hold("YEAR_BOUNDARY_PINNED_SOURCE_FAILURE:"+String(error?.message??error));
  }
 }

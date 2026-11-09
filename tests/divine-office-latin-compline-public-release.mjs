@@ -67,9 +67,9 @@ test("twenty-three separately certified Latin Advent Compline dates; no Mame 196
 test("no public Office route can fetch unapproved source words",async()=>{
  for(const options of [
   {date:"2026-11-28",hour:"VESPERS"},
-  {date:"2026-12-28",hour:"COMPLINE"},
-  {date:"2026-12-29",hour:"COMPLINE"},
-  {date:"2026-12-30",hour:"COMPLINE"},
+  {date:"2027-01-04",hour:"COMPLINE"},
+  {date:"2027-01-05",hour:"COMPLINE"},
+  {date:"2027-01-06",hour:"COMPLINE"},
   {date:"2026-11-28",hour:"COMPLINE",calendarScope:"LOCAL"},
   {date:"2027-11-28",hour:"COMPLINE"},
   {date:"2026-11-28",hour:"MATINS"}

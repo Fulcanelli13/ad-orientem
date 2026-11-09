@@ -1,0 +1,213 @@
+{
+  "schema": "ao.office.compline-2026-12-28-through-2027-01-03-source-intake.v1",
+  "status": "RESEARCH_ONLY_WITHHELD",
+  "calendarScope": "UNIVERSAL_ROMAN_1960",
+  "releaseGate": "NO_PUBLIC_WHITELIST_MUTATION",
+  "published": false,
+  "lastPublicCivilDate": "2026-12-27",
+  "publicReleaseApproved": false,
+  "completeHourCertified": false,
+  "printed1961MamePsalterLeafCollated": false,
+  "translationsApproved": false,
+  "sourceLatinRevision": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+  "sourceLatinMarianGitBlob": "bf44a58ba1076b17466b88fa4004c1cab29f96ae",
+  "sources": {
+    "officeOrdo2026": "https://breviariumgregorianum.com/ordo-2026.php",
+    "roman1960Rubrics": "https://isidore.co/divinum/www/horas/Help/Rubrics/Breviary%201960.html",
+    "datedChristmasOctave": "https://ordo.fsspx.org/en/calendar/2027/1",
+    "january2027HolyName": "https://ordo.fsspx.org/day/2027-01-02?lang=en",
+    "christmasMarianPin": "https://github.com/DivinumOfficium/divinum-officium/blob/126a07f91ede04664108abb6fb20ace3f4de14b9/web/www/horas/Latin/Psalterium/Mariaant.txt"
+  },
+  "dates": [
+    {
+      "date": "2026-12-28",
+      "weekday": "Feria II",
+      "principalOffice": "Holy Innocents, Martyrs",
+      "officeClass": "II_FEAST",
+      "officeDate": "2026-12-28",
+      "psalmDay": "Dominica",
+      "rule": "168(d)",
+      "firstVespers": "NONE_HOLY_INNOCENTS_II_VESPERS",
+      "commemoration": null,
+      "marianSection": "Nativiti",
+      "psalmIds": [
+        4,
+        90,
+        133
+      ],
+      "printedPsalmFrames": 30,
+      "hold": "INNOCENTS_FESTIVE_LATIN_SOURCE_PROOF",
+      "specialHolds": [
+        "INNOCENTS_FESTIVE_LATIN_SOURCE_PROOF",
+        "INDEPENDENT_COMPLETE_HOUR_TEXT_AND_PUBLIC_PHONE_ACCEPTANCE_REQUIRED"
+      ],
+      "sourceStage": "DATED_OFFICE_ORDO_AND_RUBRIC_RESEARCH",
+      "textVerified": false,
+      "publishable": false,
+      "published": false
+    },
+    {
+      "date": "2026-12-29",
+      "weekday": "Feria III",
+      "principalOffice": "Fifth Day within the Octave of the Nativity",
+      "officeClass": "II_OCTAVE_DAY",
+      "officeDate": "2026-12-29",
+      "psalmDay": "Dominica",
+      "rule": "175(e)",
+      "firstVespers": "NONE_CHRISTMAS_OCTAVE_VESPERS",
+      "commemoration": "Saint Thomas Becket, Bishop and Martyr",
+      "marianSection": "Nativiti",
+      "psalmIds": [
+        4,
+        90,
+        133
+      ],
+      "printedPsalmFrames": 30,
+      "hold": "OCTAVE_175E_NOT_WEEKDAY_TUESDAY",
+      "specialHolds": [
+        "OCTAVE_175E_NOT_WEEKDAY_TUESDAY",
+        "INDEPENDENT_COMPLETE_HOUR_TEXT_AND_PUBLIC_PHONE_ACCEPTANCE_REQUIRED"
+      ],
+      "sourceStage": "DATED_OFFICE_ORDO_AND_RUBRIC_RESEARCH",
+      "textVerified": false,
+      "publishable": false,
+      "published": false
+    },
+    {
+      "date": "2026-12-30",
+      "weekday": "Feria IV",
+      "principalOffice": "Sixth Day within the Octave of the Nativity",
+      "officeClass": "II_OCTAVE_DAY",
+      "officeDate": "2026-12-30",
+      "psalmDay": "Dominica",
+      "rule": "175(e)",
+      "firstVespers": "NONE_CHRISTMAS_OCTAVE_VESPERS",
+      "commemoration": null,
+      "marianSection": "Nativiti",
+      "psalmIds": [
+        4,
+        90,
+        133
+      ],
+      "printedPsalmFrames": 30,
+      "hold": "OCTAVE_175E_NOT_WEEKDAY_WEDNESDAY",
+      "specialHolds": [
+        "OCTAVE_175E_NOT_WEEKDAY_WEDNESDAY",
+        "INDEPENDENT_COMPLETE_HOUR_TEXT_AND_PUBLIC_PHONE_ACCEPTANCE_REQUIRED"
+      ],
+      "sourceStage": "DATED_OFFICE_ORDO_AND_RUBRIC_RESEARCH",
+      "textVerified": false,
+      "publishable": false,
+      "published": false
+    },
+    {
+      "date": "2026-12-31",
+      "weekday": "Feria V",
+      "principalOffice": "First Compline of the Circumcision of Our Lord",
+      "civilOffice": "Seventh Day within the Octave of the Nativity; Saint Sylvester commemorated by day",
+      "officeClass": "I_FEAST_FIRST_VESPERS",
+      "officeDate": "2027-01-01",
+      "psalmDay": "Dominica",
+      "rule": "167(b);175(d)",
+      "firstVespers": "CIRCUMCISION_I_VESPERS",
+      "commemoration": null,
+      "marianSection": "Nativiti",
+      "psalmIds": [
+        4,
+        90,
+        133
+      ],
+      "printedPsalmFrames": 30,
+      "hold": "CIVIL_OFFICE_2027_YEAR_ROLLOVER",
+      "specialHolds": [
+        "CIVIL_OFFICE_2027_YEAR_ROLLOVER",
+        "INDEPENDENT_COMPLETE_HOUR_TEXT_AND_PUBLIC_PHONE_ACCEPTANCE_REQUIRED"
+      ],
+      "sourceStage": "DATED_OFFICE_ORDO_AND_RUBRIC_RESEARCH",
+      "textVerified": false,
+      "publishable": false,
+      "published": false
+    },
+    {
+      "date": "2027-01-01",
+      "weekday": "Feria VI",
+      "principalOffice": "Circumcision of Our Lord, Octave Day of the Nativity",
+      "officeClass": "I_FEAST",
+      "officeDate": "2027-01-01",
+      "psalmDay": "Dominica",
+      "rule": "167(h)",
+      "firstVespers": "NONE_CIRCUMCISION_II_VESPERS",
+      "commemoration": null,
+      "marianSection": "Nativiti",
+      "psalmIds": [
+        4,
+        90,
+        133
+      ],
+      "printedPsalmFrames": 30,
+      "hold": "JANUARY1_PROPER_FESTIVE_COMPLINE",
+      "specialHolds": [
+        "JANUARY1_PROPER_FESTIVE_COMPLINE",
+        "INDEPENDENT_COMPLETE_HOUR_TEXT_AND_PUBLIC_PHONE_ACCEPTANCE_REQUIRED"
+      ],
+      "sourceStage": "DATED_OFFICE_ORDO_AND_RUBRIC_RESEARCH",
+      "textVerified": false,
+      "publishable": false,
+      "published": false
+    },
+    {
+      "date": "2027-01-02",
+      "weekday": "Sabbato",
+      "principalOffice": "First Compline of the Most Holy Name of Jesus",
+      "civilOffice": "January 2, fourth-class feria; First Vespers of the Holy Name",
+      "officeClass": "II_FEAST_FIRST_VESPERS_ON_SUNDAY",
+      "officeDate": "2027-01-03",
+      "psalmDay": "Sabbato",
+      "rule": "166(b)",
+      "firstVespers": "HOLY_NAME_I_VESPERS",
+      "commemoration": null,
+      "marianSection": "Nativiti",
+      "psalmIds": [
+        87,
+        102
+      ],
+      "printedPsalmFrames": 41,
+      "hold": "SATURDAY_FIRST_COMPLINE_NOT_SUNDAY_PSALTER",
+      "specialHolds": [
+        "SATURDAY_FIRST_COMPLINE_NOT_SUNDAY_PSALTER",
+        "INDEPENDENT_COMPLETE_HOUR_TEXT_AND_PUBLIC_PHONE_ACCEPTANCE_REQUIRED"
+      ],
+      "sourceStage": "DATED_OFFICE_ORDO_AND_RUBRIC_RESEARCH",
+      "textVerified": false,
+      "publishable": false,
+      "published": false
+    },
+    {
+      "date": "2027-01-03",
+      "weekday": "Dominica",
+      "principalOffice": "Most Holy Name of Jesus",
+      "officeClass": "II_FEAST_ON_SUNDAY",
+      "officeDate": "2027-01-03",
+      "psalmDay": "Dominica",
+      "rule": "168(d)",
+      "firstVespers": "NONE_HOLY_NAME_II_VESPERS",
+      "commemoration": null,
+      "marianSection": "Nativiti",
+      "psalmIds": [
+        4,
+        90,
+        133
+      ],
+      "printedPsalmFrames": 30,
+      "hold": "HOLY_NAME_FEAST_NOT_ORDINARY_FERIA",
+      "specialHolds": [
+        "HOLY_NAME_FEAST_NOT_ORDINARY_FERIA",
+        "INDEPENDENT_COMPLETE_HOUR_TEXT_AND_PUBLIC_PHONE_ACCEPTANCE_REQUIRED"
+      ],
+      "sourceStage": "DATED_OFFICE_ORDO_AND_RUBRIC_RESEARCH",
+      "textVerified": false,
+      "publishable": false,
+      "published": false
+    }
+  ]
+}

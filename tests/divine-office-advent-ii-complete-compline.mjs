@@ -114,8 +114,8 @@ test("16-date 2026 annual source-intake research has 349 nonreviewed dates, not 
  assert.equal(coverage.published,0);
  for(const [date] of expected)assert.equal(
   coverage.rows.find(row=>row.date===date).publicReleaseApproved,false);
- assert.equal(latinComplineReleaseEligibility({date:"2026-12-28"}).status,"WITHHELD");
- assert.equal(officeRouteState({date:"2026-12-28",hour:"COMPLINE"}).published,false);
+ assert.equal(latinComplineReleaseEligibility({date:"2027-01-04"}).status,"WITHHELD");
+ assert.equal(officeRouteState({date:"2027-01-04",hour:"COMPLINE"}).published,false);
 });
 test("all eight Advent II dates load original 42-event/40-moment Latin Compline in both minister and recitation contexts",async()=>{
  for(const [date,psalmDay,officeDate,count,psalms] of expected){
@@ -152,7 +152,7 @@ test("all eight Advent II dates load original 42-event/40-moment Latin Compline 
 });
 test("unreviewed future date, local overlays and other seven Hours cannot fetch Latin text",async()=>{
  for(const option of [
-  {date:"2026-12-28"}, {date:"2026-12-29"},
+  {date:"2027-01-04"}, {date:"2027-01-05"},
   {date:"2027-12-07"}, {date:"2026-12-07",calendarScope:"LOCAL"},
   {date:"2026-12-08",hour:"VESPERS"},
   {date:"2026-12-13",hour:"MATINS"}

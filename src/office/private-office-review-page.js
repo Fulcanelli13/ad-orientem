@@ -3,7 +3,8 @@
  * No innerHTML from source, no printed-edition or public Hour claim.
  * This is used solely by previews/private-divine-office.html.
  */
-import {assemblePrivateOfficeReview,assembleChristmas2026PrivateOfficeResearchReview}
+import {assemblePrivateOfficeReview,assembleChristmas2026PrivateOfficeResearchReview,
+ assembleDec28Jan03PrivateOfficeResearchReview}
  from "./private-office-review.js";
 import {COMPLINE_CONTEXT,COMPLINE_MINISTER,projectComplineRecitation}
  from "./compline-recitation-projection.js";
@@ -47,14 +48,14 @@ export function mountPrivateOfficeReview(root,{win=globalThis,fetchSource=win.fe
  const d=root.ownerDocument;
  const chooser=el(d,"div","aoOfOptions");
  const hours=el(d,"select");
- for(const [value,title] of [["COMPLINE","Compline · 28 Nov–27 Dec (private research)"],["VESPERS","First Vespers · 28 Nov"]]){
+ for(const [value,title] of [["COMPLINE","Compline · 28 Nov–3 Jan (private research)"],["VESPERS","First Vespers · 28 Nov"]]){
   let o=el(d,"option");o.value=value;o.textContent=title;hours.append(o);
  }
  hours.value=initialHour==="VESPERS"?"VESPERS":"COMPLINE";
  const date=el(d,"input");date.type="date";
- date.value=/^2026-(?:11-(?:28|29|30)|12-(?:0[1-9]|1[0-9]|2[0-7]))$/.test(initialDate)?
+ date.value=/^(?:2026-(?:11-(?:28|29|30)|12-(?:0[1-9]|[12][0-9]|3[01]))|2027-01-0[1-3])$/.test(initialDate)?
   initialDate:"2026-11-28";
- date.min="2026-11-28";date.max="2026-12-27";
+ date.min="2026-11-28";date.max="2027-01-03";
  if(hours.value==="VESPERS")date.value="2026-11-28";
  const mode=el(d,"select");
  for(const [value,title] of [["laen","Latin / English"],["lafr","Latin / Français"],["la","Latin only"]]){
@@ -113,11 +114,17 @@ export function mountPrivateOfficeReview(root,{win=globalThis,fetchSource=win.fe
     ?await readUniversalWitness?.():null;
    const christmasPrivate=hours.value==="COMPLINE"&&
     date.value>="2026-12-21"&&date.value<="2026-12-27";
-   if(christmasPrivate&&mode.value!=="la"){
-    state.textContent="Christmas private source preview is Latin only.";
+   const yearBoundaryPrivate=hours.value==="COMPLINE"&&
+    date.value>="2026-12-28"&&date.value<="2027-01-03";
+   if((christmasPrivate||yearBoundaryPrivate)&&mode.value!=="la"){
+    state.textContent="Christmas octave private source preview is Latin only.";
     return;
    }
-   const source=christmasPrivate?
+   const source=yearBoundaryPrivate?
+    await assembleDec28Jan03PrivateOfficeResearchReview({
+     date:date.value,fetchSource
+    }):
+    christmasPrivate?
     await assembleChristmas2026PrivateOfficeResearchReview({
      date:date.value,fetchSource
     }):
@@ -157,7 +164,7 @@ export function mountPrivateOfficeReview(root,{win=globalThis,fetchSource=win.fe
  });
  date.addEventListener("change",()=>{
   invalidate();
-  if(date.value>="2026-12-21"&&date.value<="2026-12-27")mode.value="la";
+  if(date.value>="2026-12-21"&&date.value<="2027-01-03")mode.value="la";
   state.textContent="Load the selected private source preview";
  });
  recitation.addEventListener("change",()=>{if(active?.hour==="COMPLINE")void loadPreview()});
