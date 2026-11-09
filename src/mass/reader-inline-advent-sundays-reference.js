@@ -138,3 +138,19 @@ export const ADVENT_SUNDAY_SOURCE_HOLDS=Object.freeze([
   reason:"1962 source and 1961 printed-score textual variants differ",
   publication:"HOLD_NO_SCORE"})
 ]);
+
+export const ADVENT_SUNDAY_1962_MASS_WITNESSES=Object.freeze([
+ Object.freeze({sourcePath:"Tempora/Adv1-0",
+  url:"https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv1-0.txt",
+  exactSourceBlobSha:"75b533254548cf9f93636ea3d44dca059c6896d1",
+  introit:"Ad te levavi animam meam",gradual:"Universi qui te exspectant",
+  alleluia:"Ostende nobis Domine misericordiam tuam",
+  communion:"Dominus dabit benignitatem"}),
+ Object.freeze({sourcePath:"Tempora/Adv2-0",
+  url:"https://github.com/DivinumOfficium/divinum-officium/blob/master/web/www/missa/Latin/Tempora/Adv2-0.txt",
+  exactSourceBlobSha:"97130ff3f8e9e8471bc0b51f74558e49b93facf4",
+  introit:"Populus Sion ecce Dominus veniet",
+  gradual:"Ex Sion species decoris eius",
+  alleluia:"Laetatus sum in his quae dicta sunt mihi",
+  communion:"Jerusalem surge et sta in excelso"})
+]);
