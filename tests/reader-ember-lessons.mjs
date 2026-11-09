@@ -285,7 +285,13 @@ const frenchPayloads={
     bodyFr:"Prions. Première oraison.",conclusionFr:"CONCLUSION_FR_SOURCE_TEST_1"},
   PAYLOAD_LectioL2:{...payloads.PAYLOAD_LectioL2,textFr:"Deuxième leçon."},
 };
-const frResolved={...resolved,proper:{...proper,preGospelPayloads:frenchPayloads}};
+const sourceFr=value=>({...value,fr:"FR_SOURCE_TEST: "+value.lat});
+const frBaseProper={...proper,preGospelPayloads:frenchPayloads};
+for(const key of ["introit","epistle","gradual","gospel","offertory","preface","communion"])
+ frBaseProper[key]=sourceFr(proper[key]);
+for(const key of ["collects","secrets","postcommunions"])
+ frBaseProper[key]=proper[key].map(sourceFr);
+const frResolved={...resolved,proper:frBaseProper};
 const frenchInserts=buildEmberInsertionCards(frResolved,{language:"fr"});
 assert.equal(frenchInserts.length,inserts.length);
 assert.deepEqual(frenchInserts.map(c=>c.sourceSectionKey),order);
