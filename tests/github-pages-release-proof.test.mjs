@@ -16,9 +16,9 @@ test("build provenance includes fourteen San Polo photographs, attribution and a
  assert.equal(p.schema,RELEASE_PROOF_SCHEMA);
  assert.equal(p.source_sha,shaA);
  assert.equal(p.workflow_run_id,"1234567");
- assert.equal(MASS_SCHOLA_CRITICAL_PATHS.length,17);
+ assert.equal(MASS_SCHOLA_CRITICAL_PATHS.length,18);
  assert.equal(SAN_POLO_CYCLE_CRITICAL_PATHS.length,17);
- assert.equal(Object.keys(p.critical_sha256).length,49+SAN_POLO_CYCLE_CRITICAL_PATHS.length);
+ assert.equal(Object.keys(p.critical_sha256).length,50+SAN_POLO_CYCLE_CRITICAL_PATHS.length);
  for(const path of SAN_POLO_CYCLE_CRITICAL_PATHS)
   assert.ok(Object.hasOwn(p.critical_sha256,path),"Missing optional San Polo exact release proof: "+path);
  for(const file of MASS_SCHOLA_CRITICAL_PATHS){
@@ -53,6 +53,9 @@ test("missing, malformed or substituted critical bytes do not certify the deploy
  const staleMass={...p,critical_sha256:{...p.critical_sha256}};
  delete staleMass.critical_sha256["src/mass/reader-native-preview.js"];
  assert.throws(()=>verifyReleaseProof(staleMass,{expectedSha:shaA,expectedRunId:"1234567",indexHtml:html}),/Missing critical release digest/);
+ const staleCueFocus={...p,critical_sha256:{...p.critical_sha256}};
+ delete staleCueFocus.critical_sha256["src/mass/reader-cue-focus.js"];
+ assert.throws(()=>verifyReleaseProof(staleCueFocus,{expectedSha:shaA,expectedRunId:"1234567",indexHtml:html}),/Missing critical release digest/);
  const staleSacredHeart={...p,critical_sha256:{...p.critical_sha256}};
  delete staleSacredHeart.critical_sha256["src/mass/icrsp-first-friday-entry.js"];
  assert.throws(()=>verifyReleaseProof(staleSacredHeart,{expectedSha:shaA,expectedRunId:"1234567",indexHtml:html}),/Missing critical release digest/);
@@ -114,7 +117,7 @@ test("release scripts consume the shared proof and audit the actual published by
  assert.match(live,/if\(i<5\)await new Promise/);
 });
 
-test("all 16 pinned Mass and Schola release witnesses are real, nonempty published-source modules",async()=>{
+test("all 18 pinned Mass and Schola release witnesses are real, nonempty published-source modules",async()=>{
  const seen=new Set();
  for(const path of MASS_SCHOLA_CRITICAL_PATHS){
   assert.ok(!seen.has(path),"duplicate critical Mass module: "+path);seen.add(path);
