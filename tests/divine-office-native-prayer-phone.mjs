@@ -207,6 +207,40 @@ try{
    await office.getByRole("button",{name:"Close Latin Compline"}).click();
    assert.equal(await office.locator(".aoOfPublishedLatin").count(),0);
   }
+  // Eight real Advent II Latin reader journeys on 320px and 390px.
+  // Compact date selection, not eight extra mobile shortcut buttons.
+  const weekII=office.getByRole("combobox",{name:"Advent II Compline date"});
+  assert.equal(await weekII.count(),1);
+  for(const [date,officeDate,title,psalms] of [
+   ["2026-12-06","2026-12-06","Second Sunday of Advent, 6 December 2026",[4,90,133]],
+   ["2026-12-07","2026-12-08","First Compline of the Immaculate Conception",[4,90,133]],
+   ["2026-12-08","2026-12-08","Immaculate Conception, 8 December 2026",[4,90,133]],
+   ["2026-12-09","2026-12-09","Advent II · Wednesday, 9 December 2026",[33,60]],
+   ["2026-12-10","2026-12-10","Advent II · Thursday, 10 December 2026",[69,70]],
+   ["2026-12-11","2026-12-11","St Damasus I, 11 December 2026",[76,85]],
+   ["2026-12-12","2026-12-13","Eve of Gaudete · Saturday, 12 December 2026",[87,102]],
+   ["2026-12-13","2026-12-13","Gaudete Sunday, 13 December 2026",[4,90,133]]
+  ]){
+   await weekII.selectOption(date);
+   assert.match(await office.locator(".aoOfStatus").innerText(),
+    /Latin Compline · available/u);
+   assert.match(await office.locator(".aoOfStatus").innerText(),
+    new RegExp("Office date: "+officeDate,"u"));
+   await office.getByRole("button",{name:"Read Latin Compline"}).click();
+   await page.waitForFunction(expected=>
+    document.querySelector(".aoOfPublishedStatus")?.textContent?.includes(
+     expected+" · 40 reading moments"),date,{timeout:35000});
+   const latin=office.locator(".aoOfPublishedLatin");
+   assert.ok((await latin.innerText()).includes(title),date+" incorrect Office heading");
+   for(const number of psalms)assert.ok(observedLatin.some(
+    url=>url.endsWith("/Psalm"+number+".txt")),
+    "Missing Latin psalm "+number+" in "+date);
+   const overflow=await page.evaluate(()=>
+    document.documentElement.scrollWidth-document.documentElement.clientWidth);
+   assert.ok(overflow<=2,"Advent II "+date+" overflows "+width+": "+overflow);
+   await office.getByRole("button",{name:"Close Latin Compline"}).click();
+   assert.equal(await office.locator(".aoOfPublishedLatin").count(),0);
+  }
   await office.locator('[data-office-hour="VESPERS"]').click();
   const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-
    document.documentElement.clientWidth);
