@@ -7,7 +7,7 @@
  * the traditional Vulgate devotional order and map 31->32, 37->38, etc.
  * No Latin or alternate translation has been fabricated.
  */
-export const PENITENTIAL_LOCAL_VULGATE_TO_CRAM PON_V1=Object.freeze({"6":6,"31":32,"37":38,"50":51,"101":102,"129":130,"142":143});
+export const PENITENTIAL_LOCAL_VULGATE_TO_CRAMPON_V1=Object.freeze({"6":6,"31":32,"37":38,"50":51,"101":102,"129":130,"142":143});
 export const PENITENTIAL_LOCAL_SOURCE_METADATA_V1=Object.freeze({
   "dr-challoner": {
     "sourceRepository": "AlvaroBalbin/catena",
@@ -38,9 +38,9 @@ const CHAPTERS={"dr-challoner":{"6":[[1,"Unto the end, in verses, a psalm for Da
 export const PENITENTIAL_LOCAL_SOURCE_STATUS="UNCOLLATED_SOURCE_WITNESS";
 export function localPenitentialPsalmWitness(traditionalNumber,language="en",englishEdition="dr-challoner"){
  const trad=Number(traditionalNumber);
- if(!Object.hasOwn(PENITENTIAL_LOCAL_VULGATE_TO_CRAM PON_V1,trad))return null;
+ if(!Object.hasOwn(PENITENTIAL_LOCAL_VULGATE_TO_CRAMPON_V1,trad))return null;
  const fr=language==="fr",editionId=fr?"crampon-1923":englishEdition==="cpdv-2009"?"cpdv-2009":"dr-challoner";
- const sourceChapter=fr?PENITENTIAL_LOCAL_VULGATE_TO_CRAM PON_V1[trad]:trad;
+ const sourceChapter=fr?PENITENTIAL_LOCAL_VULGATE_TO_CRAMPON_V1[trad]:trad;
  const pairs=CHAPTERS[editionId]?.[trad];
  if(!pairs?.length)return null;
  return Object.freeze({editionId,language:fr?"fr":"en",sourceChapter,traditionalChapter:trad,
