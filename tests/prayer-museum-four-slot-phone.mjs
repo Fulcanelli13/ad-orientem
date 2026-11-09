@@ -157,5 +157,5 @@ try{
  await new Promise(ok=>server.close(ok));
 }
 assert.equal(cases.length,4);
-await writeFile(resolve(folder,"report.json"),JSON.stringify({cases,images:4,canonicalPositions:15,actualRouteSamples:4},null,2)+"\n");
-console.log("PASS: four selected museum source images decoded uncropped and no overflow at 320/390 EN/FR; exact Sign of the Cross live-route sampled");
+await writeFile(resolve(folder,"report.json"),JSON.stringify({cases,images:3,revokedOriginals:1,rejectedHistoricalSlots:4,canonicalPositions:15,actualRouteSamples:4},null,2)+"\n");
+console.log("PASS: three eligible museum images decoded uncropped at 320/390 EN/FR; four historical Bouts slots held, and exact Sign of the Cross live route sampled");
