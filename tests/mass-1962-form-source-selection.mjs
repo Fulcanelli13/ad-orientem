@@ -305,6 +305,58 @@ for(const [date,saint] of [
     form:"LOW",celebrationId:"votive"}).reason,"ALTERNATE_FORMULARY");
 }
 
+// 13 May 2026 II-class Ascension Vigil. The authentic ordinary
+// Bellarmine commemoration is separate from the principal Easter
+// feria/Vigil and from the optional Rogation Wednesday Mass.
+{
+ const date="2026-05-13",proper="Tempora/Pasc5-3",saint="Sancti/05-13";
+ const source={...base,sourcePath:proper,calendarCommemorations:[{
+  path:saint,prayerSourcePath:saint,name:"St Robert Bellarmine"}]};
+ const witness={...day,date,day:{
+  main:{id:"tempora:Pasc5-3:2:w",rank:2,path:proper,title:"Vigil of Ascension"},
+  commemorations:[{id:"sancti:05-13:3:w",rank:3,path:saint,
+   title:"St Robert Bellarmine"}]},
+  proper:{status:"ready",data:source}};
+ for(const form of ["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]){
+  const r=select({proper:source,calendarResolution:witness,form});
+  assert.equal(r.status,"CERTIFIED",date+"/"+form+": "+r.reason);
+  assert.equal(r.decision.scope,
+   "ASCENSION_VIGIL_II_CLASS_ORDINARY_BELLARMINE_COMMEMORATION");
+  const count=form==="LOW"?2:1;
+  assert.equal(r.decision.appliedCount,count-1);
+  for(const group of ["collects","secrets","postcommunions"])
+   assert.equal(r.proper[group].length,count,date+"/"+form+"/"+group);
+  for(const language of ["en","fr"]){
+   const slots=properToReaderSlots(r.proper,{language}).slots;
+   for(const key of ["COLLECT_SET","SECRET_SET","POSTCOMMUNION_SET"]){
+    assert.equal(slots[key].status,"READY",date+"/"+form+"/"+language+"/"+key);
+    assert.equal(slots[key].data.paragraphs.length,count);
+   }
+   assert.equal(assessPrintableProper(witness,{language,massForm:form}).ok,true);
+  }
+ }
+ for(const [p,d,reason] of [
+  [source,{...witness,date:"2026-05-12"},"RUBRICAL_CLASSIFICATION_PENDING"],
+  [{...source,sourcePath:"Tempora/Pasc5-2"},witness,"RUBRICAL_CLASSIFICATION_PENDING"],
+  [{...source,sourcePath:"Sancti/05-13"},witness,"RUBRICAL_CLASSIFICATION_PENDING"],
+  [{...source,calendarCommemorations:[{path:saint,
+   prayerSourcePath:"Sancti/05-14"}]},witness,"RUBRICAL_CLASSIFICATION_PENDING"],
+  [{...source,secrets:[one]},witness,"ORATION_SOURCE_INCOMPLETE"],
+  [source,{...witness,day:{...witness.day,main:{...witness.day.main,
+   id:"tempora:Pasc5-2:2:w"}}},"RUBRICAL_CLASSIFICATION_PENDING"],
+  [source,{...witness,day:{...witness.day,main:{...witness.day.main,
+   rank:3}}},"RUBRICAL_CLASSIFICATION_PENDING"],
+  [source,{...witness,day:{...witness.day,commemorations:[{
+   ...witness.day.commemorations[0],rank:4}]}},"RUBRICAL_CLASSIFICATION_PENDING"]
+ ]){
+  assert.equal(select({proper:p,calendarResolution:d,form:"LOW"}).reason,reason);
+ }
+ assert.equal(select({proper:source,calendarResolution:witness,form:"LOW",
+  celebrationId:"RogationWednesday"}).reason,"ALTERNATE_FORMULARY");
+ assert.equal(select({proper:source,calendarResolution:witness,form:"LOW",
+  isConventual:true}).reason,"CONVENTUAL_RULES_NOT_VERIFIED");
+}
+
 // 3 February 2026: ordinary St Blaise commemoration on the IV-class
 // feria after Septuagesima, inheriting Quadp1-0. Do not misidentify
 // the inherited Sunday text as the selected Sunday Mass.

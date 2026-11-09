@@ -179,6 +179,17 @@ let browser;try{
      pending:aggregate.uncertifiedFormCases.filter(x=>x.date===date)
    }));
  }
+ // Evidence only: capture every still-pending original 2026 principal and
+ // commemoration identity. Do not promote classifications from this trace.
+ for(const date of ["2026-01-05","2026-02-27","2026-05-13",
+  "2026-09-23","2026-09-26","2026-12-16","2026-12-21",
+  "2026-12-29","2026-12-31"]){
+   console.log("MASS_FINAL_NINE_SOURCE_PROBE="+JSON.stringify({
+     date,sourceDay:aggregate.single.find(x=>x.date===date)??null,
+     multi:aggregate.multi.find(x=>x.date===date)??null,
+     pending:aggregate.uncertifiedFormCases.filter(x=>x.date===date)
+   }));
+ }
  for(const date of ["2026-02-03","2026-05-13"]){
    console.log("MASS_PRELENT_AND_VIGIL_2026_PROBE="+JSON.stringify({
      date,sourceDay:aggregate.single.find(x=>x.date===date),
@@ -201,7 +212,7 @@ let browser;try{
    "2026-04-17","2026-04-23",
    "2026-03-19","2026-03-25","2026-06-02","2026-06-09","2026-06-15",
    "2026-06-20","2026-07-11","2026-07-16","2026-07-21","2026-08-01",
-   "2026-10-05","2026-11-23"]){
+   "2026-10-05","2026-11-23","2026-05-13"]){
    const remaining=aggregate.uncertifiedFormCases.filter(x=>x.date===date);
    assert.deepEqual(remaining,[],date+" original 1962 Mass-form orations are still uncertified");
  }
