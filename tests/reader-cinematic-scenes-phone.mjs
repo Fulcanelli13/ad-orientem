@@ -61,12 +61,51 @@ async function atCue(page,cueId){
       section:card.sectionId,maxScroll,center,ideal};
   },cueId);
 }
+// A single animation frame is insufficient if the reader's fixed-height
+// runway or Schola dock settles after programmatic navigation. Check that the
+// SOURCE cue remains the same through later frames, not merely that its
+// decorative scene appeared transiently. Report scroll geometry on failure.
+async function stableGospelFocus(page,cueId){
+  const trace=await page.evaluate(async wanted=>{
+    const view=()=>document.querySelector("#ao-r17-native-reader-preview .ao-prayer-card");
+    const capture=phase=>{
+      const card=view();
+      const shell=document.querySelector("[data-ao-reader-shell]");
+      const rows=[...card.querySelectorAll(".ao-reader-paragraph[data-cue-id]")]
+        .filter(node=>["AO.SM.C0083","AO.SM.C0084"].includes(node.dataset.cueId))
+        .map(node=>{
+          const rect=node.getBoundingClientRect(),cr=card.getBoundingClientRect();
+          return {id:node.dataset.cueId,top:Math.round(rect.top-cr.top+card.scrollTop),
+            bottom:Math.round(rect.bottom-cr.top+card.scrollTop)};
+        });
+      return {phase,cue:window.__AO_PHONE_PREVIEW.getActiveCue(),
+        scene:shell?.dataset.cinematicScene,scrollTop:Math.round(card.scrollTop),
+        maxScroll:Math.round(card.scrollHeight-card.clientHeight),
+        viewport:Math.round(card.clientHeight),
+        cueTail:card.style.getPropertyValue("--ao-short-cue-tail"),
+        runway:card.querySelector('[data-role="paragraphs"]')?.style.getPropertyValue("--ao-min-reading-travel"),
+        rows};
+    };
+    const nextFrame=()=>new Promise(done=>requestAnimationFrame(done));
+    const trace=[capture("scene-ready")];
+    await nextFrame();await nextFrame();trace.push(capture("two-frames"));
+    for(let i=0;i<7;i++)await nextFrame();
+    trace.push(capture("nine-frames"));
+    await new Promise(done=>setTimeout(done,160));
+    trace.push(capture("settled"));
+    return trace;
+  },cueId);
+  assert.ok(trace.every(x=>x.cue===cueId && x.scene==="GOSPEL_CROSSES"),
+    "C0084 lost exact cinematic focus after layout settled: "+JSON.stringify(trace));
+  return trace;
+}
 async function snapshot(page,width,lang,cueId,expected,{reducedMotion=false}={}){
   const moved=await atCue(page,cueId);
   assert.equal(moved.found,true,cueId+": "+JSON.stringify(moved));
   await page.waitForFunction(x=>
     document.querySelector("[data-ao-reader-shell]")?.dataset.cinematicScene===x,
     expected,{timeout:3500});
+  if(cueId==="AO.SM.C0084")await stableGospelFocus(page,cueId);
   const actual=await page.evaluate(()=>{
     const shell=document.querySelector("[data-ao-reader-shell]");
     const cinema=shell.querySelector('[data-role="cinematic"]');
