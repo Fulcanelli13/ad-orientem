@@ -9,7 +9,7 @@ import {ADVENT_II_2026_ORDO_WITNESSES,
  ADVENT_II_2026_ORDO_SOURCE,
  ADVENT_II_2026_VESPERS_SECOND_WITNESS}
  from "../src/office/compline-advent-ii-2026-ordo-witness.js";
-import {reviewAdventIComplineAppointment}
+import {ADVENT_I_COMPLINE_APPOINTMENTS,reviewAdventIComplineAppointment}
  from "../src/office/compline-advent-2026-appointments.js";
 import {resolveSourceFirstComplineOrdo,researchWitnessForReviewedAdventCompline,
  summarizeSourceFirstComplineCoverage}
@@ -104,13 +104,13 @@ test("7 December after Ambrose III-class is First Compline of I-class Immaculate
 });
 test("16-date 2026 annual source-intake research has 349 nonreviewed dates, not 365 automatically published",()=>{
  const allRecords=[
-  ...ADVENT_II_COMPLINE_APPOINTMENTS
+  ...ADVENT_I_COMPLINE_APPOINTMENTS,...ADVENT_II_COMPLINE_APPOINTMENTS
  ].map(researchWitnessForReviewedAdventCompline);
- assert.equal(allRecords.length,8);
+ assert.equal(allRecords.length,16);
  const coverage=summarizeSourceFirstComplineCoverage({year:2026,records:allRecords});
  assert.equal(coverage.days,365);
- assert.equal(coverage.sourceReviewed,8);
- assert.equal(coverage.withheld,357);
+ assert.equal(coverage.sourceReviewed,16);
+ assert.equal(coverage.withheld,349);
  assert.equal(coverage.published,0);
  for(const [date] of expected)assert.equal(
   coverage.rows.find(row=>row.date===date).publicReleaseApproved,false);
