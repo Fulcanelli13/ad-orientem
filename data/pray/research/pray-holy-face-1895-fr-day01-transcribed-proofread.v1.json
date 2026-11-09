@@ -109,7 +109,7 @@
   ],
   "comparison": {
     "against": "src/pray/holy-face-janvier-1887-b25.js",
-    "status": "TEN_PART_STRUCTURE_CORRESPONDS__FINAL_FULL_ENGLISH_PARAGRAPH_COLLATION_PENDING",
+    "status": "TEN_SECTION_BILINGUAL_FIRST_PASS_ALIGNED__SECOND_PROOF_AND_PRINT_VARIANTS_PENDING",
     "note": "English witness is associated with the 1887 Bennett translation, while French base is a later 1895 third edition. Do not certify identical editions or eliminate variant readings.",
     "components": [
       {
@@ -161,6 +161,58 @@
         "key": "collect",
         "frRecorded": true,
         "enEquivalent": "STRUCTURAL_MATCH_NOT_EXACT_BILINGUAL_CERTIFICATION"
+      }
+    ],
+    "englishParagraphIndicesByFrenchSection": {
+      "opening": [
+        0
+      ],
+      "narrative": [
+        1,
+        2
+      ],
+      "point1": [
+        3
+      ],
+      "point2": [
+        4
+      ],
+      "point3": [
+        5
+      ],
+      "act": [
+        6
+      ],
+      "virtue": [
+        7
+      ],
+      "bouquet": [
+        8
+      ],
+      "prayers": [
+        9
+      ],
+      "collect": [
+        10
+      ]
+    },
+    "firstPass": "TEN_SECTION_BILINGUAL_SEMANTIC_ALIGNMENT_COMPLETED_VARIANTS_LOGGED",
+    "variants": [
+      {
+        "frSection": "point2",
+        "printedPage": 114,
+        "frReading": "celle du grand Réparateur, victime de justice et d’expiation",
+        "en1887DigitalReading": "the victim of reparation, of justice, and of expiation",
+        "classification": "POSSIBLE_TRANSLATOR_PARAPHRASE_OR_EDITION_VARIANT",
+        "action": "Preserve both readings; check original 1887 English print before equating wording."
+      },
+      {
+        "frSection": "prayers",
+        "printedPage": 115,
+        "frReading": "J’ai supplié votre Face ... selon votre promesse",
+        "en1887DigitalReading": "I have called upon thy Face ... according to Thy promises",
+        "classification": "TRANSLATION_LEXICAL_NUMBER_DIFFERENCE",
+        "action": "Historical French witness governs the French face; retain English form as independently supplied."
       }
     ]
   },
