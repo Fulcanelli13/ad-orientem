@@ -94,3 +94,22 @@ assert.ok(uncertain.adjudication_status.includes('UNRESOLVED'));
 assert.equal(idx.review_evidence.cumulative_new_Claude_proposals_source_adjudicated,45);
 assert.equal(idx.review_evidence.remaining_new_Claude_proposals_needing_individual_source_adjudication,69);
 console.log('PASS: batch3 20 source checks; 45/114 total; 7 unaudited direct-scene; all release gates closed.');
+
+
+const sceneBatch4=read('data/artwork/research/m2m-scene-adjudication-batch4-20261109.v1.json');
+assert.equal(sceneBatch4.records.length,7);
+const alreadySeen=new Set([...sceneBatch.records,...sceneBatch2.records,...sceneBatch3.records].map(x=>x.destination_id));
+for(const x of sceneBatch4.records){
+ assert.ok(!alreadySeen.has(x.destination_id),'Batch4 overlaps previous batches');
+ assert.equal(x.owner_approvals_untouched,true);
+ assert.equal(x.display_change_authorised,false);
+ assert.equal(x.photograph_publication_authorised,false);
+ assert.equal(x.pixel_visual_qa_complete,false);
+ assert.ok(x.source_urls.length>0&&x.appointed_gospel&&x.object_identity);
+}
+assert.equal(sceneBatch4.records.find(x=>x.destination_id==='2026-04-18').adjudication_status,'EXACT_SUBJECT_BUT_ATTRIBUTION_UNRESOLVED');
+assert.equal(sceneBatch4.records.find(x=>x.destination_id==='2026-12-30').adjudication_status,'KNOWN_COLLECTION_OBJECT_NO_INDEPENDENT_CURRENT_MUSEUM_CONFIRMATION');
+assert.equal(idx.review_evidence.cumulative_new_Claude_proposals_source_adjudicated,52);
+assert.equal(idx.review_evidence.remaining_new_Claude_proposals_needing_individual_source_adjudication,62);
+assert.equal(idx.review_evidence.remaining_new_Claude_direct_scene_proposals_needing_individual_source_adjudication,0);
+console.log('PASS: all 52 source-adjudicated new direct-scene associations recorded, 62 other association types remain; no publication rights implied.');
