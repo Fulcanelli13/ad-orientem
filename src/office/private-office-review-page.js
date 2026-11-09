@@ -3,7 +3,8 @@
  * No innerHTML from source, no printed-edition or public Hour claim.
  * This is used solely by previews/private-divine-office.html.
  */
-import {assemblePrivateOfficeReview} from "./private-office-review.js";
+import {assemblePrivateOfficeReview,assembleChristmas2026PrivateOfficeResearchReview}
+ from "./private-office-review.js";
 import {COMPLINE_CONTEXT,COMPLINE_MINISTER,projectComplineRecitation}
  from "./compline-recitation-projection.js";
 const TITLES={la:"Latine",en:"English",fr:"Français"};
@@ -46,14 +47,14 @@ export function mountPrivateOfficeReview(root,{win=globalThis,fetchSource=win.fe
  const d=root.ownerDocument;
  const chooser=el(d,"div","aoOfOptions");
  const hours=el(d,"select");
- for(const [value,title] of [["COMPLINE","Compline · 28 Nov–5 Dec"],["VESPERS","First Vespers · 28 Nov"]]){
+ for(const [value,title] of [["COMPLINE","Compline · 28 Nov–27 Dec (private research)"],["VESPERS","First Vespers · 28 Nov"]]){
   let o=el(d,"option");o.value=value;o.textContent=title;hours.append(o);
  }
  hours.value=initialHour==="VESPERS"?"VESPERS":"COMPLINE";
  const date=el(d,"input");date.type="date";
- date.value=/^2026-(?:11-(?:28|29|30)|12-0[1-5])$/.test(initialDate)?
+ date.value=/^2026-(?:11-(?:28|29|30)|12-(?:0[1-9]|1[0-9]|2[0-7]))$/.test(initialDate)?
   initialDate:"2026-11-28";
- date.min="2026-11-28";date.max="2026-12-05";
+ date.min="2026-11-28";date.max="2026-12-27";
  if(hours.value==="VESPERS")date.value="2026-11-28";
  const mode=el(d,"select");
  for(const [value,title] of [["laen","Latin / English"],["lafr","Latin / Français"],["la","Latin only"]]){
@@ -101,6 +102,7 @@ export function mountPrivateOfficeReview(root,{win=globalThis,fetchSource=win.fe
  }
  function invalidate(){
   serial++;active=null;section.replaceChildren();previous.disabled=next.disabled=true;
+  root.removeAttribute("data-office-marian-source");
   load.disabled=false;
  }
  async function loadPreview(){
@@ -109,10 +111,20 @@ export function mountPrivateOfficeReview(root,{win=globalThis,fetchSource=win.fe
   try{
    const universalWitness=hours.value==="VESPERS"
     ?await readUniversalWitness?.():null;
-   const source=await assemblePrivateOfficeReview({
-    hour:hours.value,date:date.value,fetchSource,universalWitness,
-    languageMode:hours.value==="COMPLINE"&&mode.value==="la"?"latin":"trilingual"
-   });
+   const christmasPrivate=hours.value==="COMPLINE"&&
+    date.value>="2026-12-21"&&date.value<="2026-12-27";
+   if(christmasPrivate&&mode.value!=="la"){
+    state.textContent="Christmas private source preview is Latin only.";
+    return;
+   }
+   const source=christmasPrivate?
+    await assembleChristmas2026PrivateOfficeResearchReview({
+     date:date.value,fetchSource
+    }):
+    await assemblePrivateOfficeReview({
+     hour:hours.value,date:date.value,fetchSource,universalWitness,
+     languageMode:hours.value==="COMPLINE"&&mode.value==="la"?"latin":"trilingual"
+    });
    if(token!==serial)return;
    const result=source.hour==="COMPLINE"&&source.status==="PRIVATE_SOURCE_TEXT_REVIEW"?
     projectComplineRecitation(source,{
@@ -123,6 +135,8 @@ export function mountPrivateOfficeReview(root,{win=globalThis,fetchSource=win.fe
     return;
    }
    active=result;index=0;
+   root.setAttribute("data-office-marian-source",
+    result.events.find(e=>e.kind==="MARIAN_ANTIPHON")?.sourceId??"");
    state.textContent=result.hour+" · civil "+result.civilDate+
     " · Office "+result.officeDate+" · "+
     (result.readingEventCount?result.readingEventCount+" printed-ordinary moments · ":"")+
@@ -141,7 +155,11 @@ export function mountPrivateOfficeReview(root,{win=globalThis,fetchSource=win.fe
   if(hours.value==="VESPERS")date.value="2026-11-28";
   state.textContent="Load the selected private source preview";
  });
- date.addEventListener("change",()=>{invalidate();state.textContent="Load the selected private source preview"});
+ date.addEventListener("change",()=>{
+  invalidate();
+  if(date.value>="2026-12-21"&&date.value<="2026-12-27")mode.value="la";
+  state.textContent="Load the selected private source preview";
+ });
  recitation.addEventListener("change",()=>{if(active?.hour==="COMPLINE")void loadPreview()});
  presider.addEventListener("change",()=>{if(active?.hour==="COMPLINE")void loadPreview()});
  mode.addEventListener("change",()=>{
