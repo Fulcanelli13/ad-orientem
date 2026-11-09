@@ -23,11 +23,11 @@
   ],
   "counts": {
     "baselineUnmatchedCalendarTargets": 170,
-    "targetsWithNewResearchLeads": 69,
-    "targetsStillWithoutNamedLeads": 101,
-    "proposedRelationshipEdges": 79,
-    "existing989Edges": 24,
-    "newInstitutionalObjectEdges": 46,
+    "targetsWithNewResearchLeads": 91,
+    "targetsStillWithoutNamedLeads": 79,
+    "proposedRelationshipEdges": 107,
+    "existing989Edges": 25,
+    "newInstitutionalObjectEdges": 73,
     "secondaryOrCommonsOnlyEdges": 9,
     "byClass": {
       "II": {
@@ -37,8 +37,8 @@
       },
       "III": {
         "unmatchedBaseline": 101,
-        "withResearchLeads": 9,
-        "stillWithoutLeads": 92
+        "withResearchLeads": 31,
+        "stillWithoutLeads": 70
       },
       "IV": {
         "unmatchedBaseline": 40,
@@ -122,9 +122,25 @@
       "observedPrincipalId": "sancti:01-23:3:w",
       "gospelReferenceFromMatchingIndex": "Luke 12:35–40",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "MSKGent:S-43",
+          "title": "Saint Raymund of Pennafort Venerating the Child",
+          "artist": "Luigi Primo",
+          "sourceUrl": "https://www.mskgent.be/en/collection/s-43",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas",
+          "remark": "MSK Ghent S-43; saint expressly named; subject text improperly merges Mercedarian founder with Raymund, do not inherit that claim",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-01-24",
@@ -172,9 +188,25 @@
       "observedPrincipalId": "sancti:01-26:3:r",
       "gospelReferenceFromMatchingIndex": "Matthew 10:26–32",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Louvre:INV19088",
+          "title": "Les saints Polycarpe, Alaverne et Basile",
+          "artist": "Manner of Antonio Maria Viviani",
+          "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl020109150",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "gray wash on paper",
+          "remark": "Group depiction; which Polycarp and exact identification must be independently clarified before curation",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-01-27",
@@ -183,9 +215,25 @@
       "observedPrincipalId": "sancti:01-27:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 5:13–19",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Louvre:RFML.ABCO.2025.1.106",
+          "title": "Saint Jean Chrysostome",
+          "artist": "Anonymous Moscow school",
+          "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010529981",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "tempera with gold on wood, icon",
+          "remark": "Explicit named John Chrysostom; image style differs from preferred Baroque oil",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-01-28",
@@ -194,9 +242,25 @@
       "observedPrincipalId": "sancti:01-28:3:w",
       "gospelReferenceFromMatchingIndex": "Luke 12:32–34",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Cincinnati:1917.58",
+          "title": "Saint Peter Nolasco Recovering the Image of the Virgin of El Puig",
+          "artist": "Francisco de Zurbarán",
+          "sourceUrl": "https://collection.cincinnatiartmuseum.org/objects/70189/saint-peter-nolasco-recovering-the-image-of-the-virgin-of-el",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas",
+          "remark": "Cincinnati original 1917.58, not Prado canvas; Baroque chiaroscuro subject exactly St Peter Nolasco",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-01-29",
@@ -205,9 +269,25 @@
       "observedPrincipalId": "sancti:01-29:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 5:13–19",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "MKS-Sticna:SLU36",
+          "title": "St. Francis de Sales",
+          "artist": "Anonymous",
+          "sourceUrl": "https://www.mks-sticna.si/eng/collections/digital-collections/slike-eng",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas",
+          "remark": "Slovenian Museum of Christianity register ŠLU 36, first half 19th century; later devotional portrait rather than Baroque original",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-02-01",
@@ -325,9 +405,40 @@
       "observedPrincipalId": "sancti:02-07:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 19:27–29",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 2,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Kress:K1047",
+          "title": "Saint Romuald",
+          "artist": "Lorenzo Monaco",
+          "sourceUrl": "https://www.kressfoundation.org/kress-collection/artwork/502105ca223a803fbaacb1e1634cc9917b6bdcc4d85e09e8293a6650be52bdce",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "tempera on fruitwood panel",
+          "remark": "Kress public-domain artwork; original Philbrook Museum 1961.9.18",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        },
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "NationalGalleryLondon:NG580.3",
+          "title": "Saints Peter, Romuald, Catherine and Jerome",
+          "artist": "Giovanni dal Ponte",
+          "sourceUrl": "https://www.nationalgallery.org.uk/paintings/giovanni-dal-ponte-saints-peter-romuald-catherine-and-jerome",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "panel painting",
+          "remark": "Specific identifiable saint Romuald within group; not isolated portrait",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-02-08",
@@ -378,9 +489,25 @@
       "observedPrincipalId": "sancti:02-09:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 5:13–19",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Walters:37.1200",
+          "title": "St. John the Almsgiver and St. Cyril of Alexandria",
+          "artist": "Russian artist unidentified",
+          "sourceUrl": "https://art.thewalters.org/object/37.1200/",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "tempera on panel, Byzantine icon",
+          "remark": "Exact Cyril of Alexandria, other sitter John the Almsgiver; less suited to preferred dark Baroque paintings",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-02-10",
@@ -389,9 +516,40 @@
       "observedPrincipalId": "sancti:02-10:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 25:1–13",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 2,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Louvre:A59",
+          "title": "Ex-voto à la Vierge: Saint Benoît et sainte Scholastique",
+          "artist": "Attributed to Noël Coypel",
+          "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010058943",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "painting on canvas",
+          "remark": "Attribution revised in 2023; on loan to Lyon Primatiale; Saint Scholastica present with Benedict",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        },
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "NGA:2018.165.1",
+          "title": "Madonna and Child with Angels, Saint Benedict, and Saint Scholastica",
+          "artist": "Giulio Benso",
+          "sourceUrl": "https://www.nga.gov/artworks/217391-madonna-and-child-angels-saint-benedict-and-saint-scholastica",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "pen and brown ink drawing",
+          "remark": "Drawing fallback, not oil; exact named saint",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-02-13",
@@ -797,9 +955,28 @@
       "observedPrincipalId": "sancti:04-29:3:r",
       "gospelReferenceFromMatchingIndex": "Matthew 10:34–42",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "EXISTING_989_GROUP_RESEARCH_LINK",
+          "key": "REVIEW::commons:9734560",
+          "title": "Saint Peter Martyr with Saints Nicholas and Benedict",
+          "artist": "Giovanni Battista Cima da Conegliano",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cima_da_conegliano%2C_san_pietro_martire_e_santi_01.jpg",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "panel painting",
+          "remark": "Saint Peter Martyr means Peter of Verona, not Apostle Peter; inherited Commons-import remains research only; institution source required",
+          "userReviewStates": [
+            "IMPORT"
+          ],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "commonsPolicy": "RESEARCH_ONLY_NOT_AUTO_ADMITTED_TO_CURATED_POOL"
+        }
+      ]
     },
     {
       "date": "2026-05-02",
@@ -808,9 +985,40 @@
       "observedPrincipalId": "sancti:05-02:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 10:23–28",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 2,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Thoma:AthanasiusOfAlexandria",
+          "title": "Saint Athanasius of Alexandria",
+          "artist": "Unidentified Cuzco/Peruvian painter",
+          "sourceUrl": "https://thomafoundation.org/saint-athanasius-of-alexandria/",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas",
+          "remark": "18th-century Peruvian school; exact portrait, independently curated institution",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        },
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Menil:1985-057.37DJ",
+          "title": "Saint Athanasius",
+          "artist": "Workshop or follower of Dionisiĭ",
+          "sourceUrl": "https://www.menil.org/index.php/collection/objects/6497-saint-athanasius",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "tempera on wood, icon",
+          "remark": "Alternative icon, not Baroque oil; visual quality/crop and photo rights held",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-05-03",
@@ -989,9 +1197,40 @@
       "observedPrincipalId": "sancti:05-20:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 19:27–29",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 2,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Louvre:RF1966.1",
+          "title": "The Preaching of Saint Bernardine of Siena",
+          "artist": "Domenico Beccafumi",
+          "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010064996",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on poplar wood",
+          "remark": "Exact historical event, 1537 predella; identity secured; Louvre 1933-45 provenance gap does not change object subject",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        },
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Louvre:RF1983.56",
+          "title": "The Glorification of Saint Bernardine of Siena",
+          "artist": "Donato Creti",
+          "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010063913",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas",
+          "remark": "Baroque devotional painting; original non-public image reuse not established",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-05-21",
@@ -1087,9 +1326,25 @@
       "observedPrincipalId": "sancti:06-05:3:r",
       "gospelReferenceFromMatchingIndex": "Matthew 5:1–12",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Rijksmuseum:200159748",
+          "title": "De heilige Bonifatius",
+          "artist": "Cornelis Bloemaert II after Abraham Bloemaert",
+          "sourceUrl": "https://www.rijksmuseum.nl/en/collection/object/De-heilige-Bonifatius--d90f560186696f98746b6f827a0c71f3",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "engraving on paper",
+          "remark": "Saint Boniface the martyr/Apostle of Germany explicitly indexed; print fallback, not oil",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-06-07",
@@ -1190,9 +1445,40 @@
       "observedPrincipalId": "sancti:06-11:3:r",
       "gospelReferenceFromMatchingIndex": "Matthew 10:16–22",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 2,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Louvre:INV24978",
+          "title": "Saint Barnabé",
+          "artist": "Louis de Boullogne II",
+          "sourceUrl": "https://collections.louvre.fr/en/ark:/53355/cl020010976",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "black chalk drawing with white highlights",
+          "remark": "Original study for Versailles chapel decoration; exact named saint, not oil",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        },
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Louvre:INV24837",
+          "title": "Saint Paul et saint Barnabé à Paphos",
+          "artist": "Louis de Boullogne II",
+          "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl020010835",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "black chalk drawing",
+          "remark": "Both apostles present; source is study, not the absent full oil painting",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-06-14",
@@ -1379,9 +1665,25 @@
       "observedPrincipalId": "sancti:07-03r:3:r",
       "gospelReferenceFromMatchingIndex": "Matthew 10:28–33",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Louvre:INV20573",
+          "title": "Saint Irénée",
+          "artist": "Sébastien Cornu",
+          "sourceUrl": "https://collections.louvre.fr/en/ark:/53355/cl010066823",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas",
+          "remark": "1864 Elysée chapel founder-of-Gallic-Christianity suite; exact Irenaeus",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-07-07",
@@ -1495,9 +1797,25 @@
       "observedPrincipalId": "sancti:07-15:3:w",
       "gospelReferenceFromMatchingIndex": "Luke 12:35–40",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Met:372199",
+          "title": "Saint Henry (Emperor Henry II)",
+          "artist": "Joseph von Führich",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/372199",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "pen ink and wash drawing",
+          "remark": "Exact ruler Henry II, not other St Henry; drawing, not oil",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-07-16",
@@ -1932,9 +2250,40 @@
       "observedPrincipalId": "sancti:08-12:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 25:1–13",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 2,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Met:435901",
+          "title": "Madonna and Child with Saints Francis and Clare",
+          "artist": "Cima da Conegliano",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/435901",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on wood",
+          "remark": "St Clare of Assisi identified by Met, distinct from other saints named Clare",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        },
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Met:469892",
+          "title": "The Bishop of Assisi Giving a Palm to Saint Clare",
+          "artist": "German workshop",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/469892",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil, gold and silver on wood",
+          "remark": "Life-of-Clare panel, 1360; original from Poor Clares altarpiece",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-08-13",
@@ -2278,9 +2627,25 @@
       "observedPrincipalId": "sancti:09-10:3:w",
       "gospelReferenceFromMatchingIndex": "Luke 12:32–34",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Louvre:INV20182",
+          "title": "Saint Nicolas de Tolentino",
+          "artist": "Luca di Paolo",
+          "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010053566",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "painted poplar wood panel",
+          "remark": "15th-century original, Louvre-held and deposited in Avignon, separate from St Nicholas of Bari",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-09-11",
@@ -2381,9 +2746,25 @@
       "observedPrincipalId": "sancti:09-18:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 22:1–14",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Met:724811",
+          "title": "A Miracle of Saint Joseph of Cupertino",
+          "artist": "Placido Costanzi",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/724811",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas",
+          "remark": "1750 exact saint, levitating while healing demoniac youth; Met 2016.394, object distinguishes from the saint's own feast Gospel",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-09-19",
@@ -2392,9 +2773,25 @@
       "observedPrincipalId": "sancti:09-19:3:r",
       "gospelReferenceFromMatchingIndex": "Matthew 24:3–13",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Louvre:RF1985.63",
+          "title": "The Martyrdom of Saint Januarius",
+          "artist": "After Luca Giordano",
+          "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010056484",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "painting on canvas",
+          "remark": "Exact St Januarius, copy after Giordano, not autograph original; Louvre at Gray",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-09-20",
@@ -2613,9 +3010,25 @@
       "observedPrincipalId": "sancti:10-08:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 13:44–52",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Met:669257",
+          "title": "Saint Bridget of Sweden from the Nine Worthies, Female",
+          "artist": "Nicolaes de Bruyn",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/669257",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "engraving on paper",
+          "remark": "Exact Bridget of Sweden; Met record currently says no image available; search more visually usable oil originals",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-10-09",
@@ -2635,9 +3048,25 @@
       "observedPrincipalId": "sancti:10-10:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 19:27–29",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Louvre:RF40971",
+          "title": "The Vocation of Saint Francis Borgia",
+          "artist": "Pietro della Vecchia",
+          "sourceUrl": "https://collections.louvre.fr/en/ark:/53355/cl020230138",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "pen, ink, wash and graphite on paper",
+          "remark": "Preparatory study; Louvre explicitly ties to large oil painting at Musée de Brest; do not conflate with St Francis Xavier",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-10-11",
@@ -3110,9 +3539,25 @@
       "observedPrincipalId": "sancti:11-24:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 5:13–19",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Met:337511",
+          "title": "The Vision of St John of the Cross",
+          "artist": "Charles de La Fosse",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/337511",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "black chalk and white heightening on paper",
+          "remark": "Exact saint; old attribution to Pereda rejected, drawing not oil",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-11-26",
