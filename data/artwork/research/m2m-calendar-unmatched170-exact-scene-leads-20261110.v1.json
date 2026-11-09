@@ -23,11 +23,11 @@
   ],
   "counts": {
     "baselineUnmatchedCalendarTargets": 170,
-    "targetsWithNewResearchLeads": 91,
-    "targetsStillWithoutNamedLeads": 79,
-    "proposedRelationshipEdges": 107,
+    "targetsWithNewResearchLeads": 99,
+    "targetsStillWithoutNamedLeads": 71,
+    "proposedRelationshipEdges": 116,
     "existing989Edges": 25,
-    "newInstitutionalObjectEdges": 73,
+    "newInstitutionalObjectEdges": 82,
     "secondaryOrCommonsOnlyEdges": 9,
     "byClass": {
       "II": {
@@ -37,8 +37,8 @@
       },
       "III": {
         "unmatchedBaseline": 101,
-        "withResearchLeads": 31,
-        "stillWithoutLeads": 70
+        "withResearchLeads": 39,
+        "stillWithoutLeads": 62
       },
       "IV": {
         "unmatchedBaseline": 40,
@@ -111,9 +111,25 @@
       "observedPrincipalId": "sancti:01-22:3:r",
       "gospelReferenceFromMatchingIndex": "Luke 21:9–19",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Louvre:INV8417",
+          "title": "Saint Vincent of Saragossa and Saint Germain Receiving the Crowns of Martyrdom",
+          "artist": "Joseph-Marie Vien",
+          "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010052757",
+          "relation": "MULTI_SAINT_FEAST_PARTIAL",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "painting on canvas",
+          "remark": "Vincent of Zaragoza is exact co-titular; Saint Anastasius is NOT depicted, so multi-saint feast is only partially covered",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-01-23",
@@ -394,9 +410,25 @@
       "observedPrincipalId": "sancti:02-06:3:w",
       "gospelReferenceFromMatchingIndex": "Luke 10:1–9",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Vatican:IconRoom:11",
+          "title": "Saint Titus Bishop",
+          "artist": "Georgios Klontzas",
+          "sourceUrl": "https://www.museivaticani.va/content/dam/museivaticani/pdf/collezioni/musei/pinacoteca/sala_icone_en.pdf",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "painted icon panel",
+          "remark": "Vatican Museums Room XVIII numbered icon 11; saint in Latin cope/mitre, exact Titus of Crete, as museum notes; original selected pixel licence not cleared",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-02-07",
@@ -873,9 +905,25 @@
       "observedPrincipalId": "sancti:04-21:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 5:13–19",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Louvre:INV259",
+          "title": "The Immaculate Conception with St Anselm and St Martin",
+          "artist": "Giuseppe Maria Crespi",
+          "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010064462",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas",
+          "remark": "Exact Anselm in 1730s Baroque painting, saints' individual identification from Louvre; contextual group",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-04-23",
@@ -1109,9 +1157,25 @@
       "observedPrincipalId": "sancti:05-09:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 5:13–19",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Louvre:L42LR342",
+          "title": "Saint Gregory of Nazianzus (one of four saints)",
+          "artist": "Jacques Callot",
+          "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl020568730",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "etching on paper",
+          "remark": "Louvre labels group St Gregory Nazianzen plus Stanislaus and St Nicholas; needs panel-level crop/check; not a single painting",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-05-10",
@@ -1579,9 +1643,25 @@
       "observedPrincipalId": "sancti:06-18:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 5:13–19",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Vatican:IconRoom:9",
+          "title": "Death of Saint Ephrem the Syrian",
+          "artist": "Emmanuel Zanfurnari",
+          "sourceUrl": "https://www.museivaticani.va/content/dam/museivaticani/pdf/collezioni/musei/pinacoteca/sala_icone_en.pdf",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "painted icon panel",
+          "remark": "Vatican Museums Room XVIII numbered panel 9; exact Saint Ephrem's funeral, not the unrelated later Syriac St Ephrem; non-oil medium",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-06-19",
@@ -2827,9 +2907,40 @@
       "observedPrincipalId": "sancti:09-22:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 25:14–23",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 2,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Louvre:MI888",
+          "title": "Saint Thomas of Villanova Distributing Alms",
+          "artist": "Mateo Cerezo",
+          "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010059517",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas",
+          "remark": "Louvre 1660–1665 Spanish Baroque original; historically miscatalogued as Ambrose, current saint Thomas of Villanova identity established",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        },
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Louvre:INV20459",
+          "title": "Saint Thomas of Villanova Giving Alms",
+          "artist": "After Carlo Maratti",
+          "sourceUrl": "https://collections.louvre.fr/ark:/53355/cl010062033",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas",
+          "remark": "Copy after Carlo Maratti, not the autograph original; secondary alternative",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-09-23",
@@ -2919,9 +3030,25 @@
       "observedPrincipalId": "sancti:09-28:3:r",
       "gospelReferenceFromMatchingIndex": "Matthew 10:34–42",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Olomouc:Skreta-WenceslasCycle",
+          "title": "Saint Wenceslas Hoeing a Vineyard, Pressing Wine and Baking Hosts",
+          "artist": "Karel Škréta and workshop",
+          "sourceUrl": "https://muo.cz/en/vystavy/st-wenceslas-christian-prince-and-martyr/",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil paintings from Saint Wenceslas cycle",
+          "remark": "Museum exhibition corroborates original Wenceslas story paintings; individual object accession/canvas identity from two works still pending",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-10-03",
@@ -2930,9 +3057,25 @@
       "observedPrincipalId": "sancti:10-03:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 18:1–4",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "CarmelLisieux:CelinePortrait1899",
+          "title": "Portrait of St Thérèse (oval), after photographs",
+          "artist": "Céline Martin (Sister Geneviève)",
+          "sourceUrl": "https://archives.carmeldelisieux.fr/en/naissance-dune-sainte/iconographie-theresienne/fusains-et-lavis-representant-therese/",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "charcoal drawing",
+          "remark": "Research alternative only; user's protected authentic Thérèse original-photograph cover must not be replaced or demoted",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-10-04",
