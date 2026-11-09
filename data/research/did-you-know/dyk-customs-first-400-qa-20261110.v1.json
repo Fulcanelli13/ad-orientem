@@ -1,41 +1,28 @@
 {
   "schema": "AO_DYK_CUSTOMS_400_QA_HANDOFF_V1",
   "date": "2026-11-10",
-  "source_manifest": "data/research/did-you-know/dyk-customs-first-400-bilingual-review-20261110.v1.json",
-  "stage": "RESEARCH_QA_NOT_PUBLICATION",
-  "counts": {
+  "state": "SUPERSEDED_BY_EDITORIAL_QA_20261110",
+  "replaced_by": "data/research/did-you-know/dyk-customs-first-400-editorial-qa-20261110.v1.json",
+  "reason": "Editorial replacement removed a non-Catholic Moravian custom, a generic pilgrimage definition and a Latin-translation glossary entry; four bilingual copy-edit waves now form the effective reader review view.",
+  "initial_snapshot": {
     "total": 400,
     "by_family": {
       "CANONICAL_CUSTOMS": 36,
       "PITRE_1900": 172,
       "WEISER_1958": 192
+    }
+  },
+  "current_snapshot": {
+    "total": 400,
+    "by_family": {
+      "CANONICAL_CUSTOMS": 35,
+      "WEISER_1958": 190,
+      "PITRE_1900": 175
     },
-    "canonical_customs_source_text_reused": 36,
-    "customs_research_observations": 364,
-    "existing_live_DYK_fact_manifest_rows_checked": 201,
-    "exact_english_sentences_already_in_H225": 0,
-    "unique_record_ids": 400,
-    "unique_english_texts": 400,
-    "unique_french_texts": 400,
-    "unique_source_ids": 430,
-    "records_with_https_source": 400,
-    "records_marked_new_discovery_publication_approved": 0,
-    "records_with_inherited_prior_source_page_review": 219,
-    "primary_pages_newly_certified_in_this_pass": 0,
-    "possible_high_overlap_with_H225_at_token_jaccard_gte_072": 0,
-    "unique_exceptions_held": 8,
-    "invalid": 0
+    "editorial_rewrites": 145,
+    "not_yet_rewritten": 255,
+    "source_page_holds": 68,
+    "publications_authorized": 0
   },
-  "high_lexical_overlap_examples": [],
-  "quality_status": {
-    "source_url_syntax": "CHECKED_not_HTTP_link_retrieval",
-    "source_deep_links": "PENDING",
-    "original_page_source_claim_validation": "INHERITED_PARTIAL_NOT_NEWLY_CERTIFIED",
-    "english_copy": "EDITORIAL_SIGNOFF_PENDING",
-    "french_copy": "EDITORIAL_SIGNOFF_PENDING",
-    "semantic_de_duplication": "EXACT_AND_HEURISTIC_COMPLETE_FULL_MANUAL_PENDING",
-    "current_local_practice": "NOT_INFERRED",
-    "home_publication": "BLOCKED"
-  },
-  "release_policy": "Do not change existing Home rotation or imply 400 published; after original claims and native French signoff, separately approve a release subset and verify 320/390px + GitHub Pages exact-byte SHA-256. H250 UNESCO stays on editorial hold."
+  "publication_gate": "REVIEW_ONLY_NOT_RELEASE"
 }
