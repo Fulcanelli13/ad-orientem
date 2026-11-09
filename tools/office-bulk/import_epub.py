@@ -33,6 +33,19 @@ NAVIGATION = frozenset(HOURS)
 SOURCE = "DivinumOfficium/divinum-officium"
 MAX_ENTRY_BYTES = 4 * 1024 * 1024
 MAX_TOTAL_BYTES = 1024 * 1024 * 1024
+# Verbatim first-bold source headings only, never inferred from word content.
+# A composite label (e.g. Capitulum Responsorium Versus) is one source
+# block, not three fictitious independently checked rubrical events.
+SOURCE_SECTION_LABELS = frozenset((
+    "Incipit", "Invitatorium", "Hymnus", "Psalmi",
+    "Psalmi cum lectionibus", "Lectio brevis",
+    "Capitulum Responsorium Versus", "Capitulum Hymnus Versus",
+    "Canticum: Benedictus", "Canticum: Magnificat",
+    "Canticum: Nunc dimittis", "Oratio", "Conclusio",
+    "Martyrologium", "De Officio Capituli", "Preces Feriales",
+    "Antiphona finalis B.M.V.", "Versus (In loco Capituli)",
+    "Litaniæ",
+))
 
 
 def normalize(value: str) -> str:
@@ -65,9 +78,18 @@ class OfficeTextParser(HTMLParser):
             return
         if tag in BLOCK_TAGS and self.active is None:
             attr = {k: v for k, v in attrs if k in ("class", "id", "align")}
-            self.active = {"tag": tag, "attrs": attr, "parts": []}
+            self.active = {
+                "tag": tag, "attrs": attr, "parts": [], "line_parts": [],
+                "first_bold_parts": [], "first_bold_done": False,
+                "capture_first_bold": False,
+            }
+        elif self.active is not None and tag in ("b", "strong"):
+            if not self.active["first_bold_done"]:
+                self.active["capture_first_bold"] = True
+                self.active["first_bold_done"] = True
         elif tag in ("br", "hr") and self.active is not None:
             self.active["parts"].append(" ")
+            self.active["line_parts"].append("\n")
 
     def handle_endtag(self, tag: str) -> None:
         tag = tag.lower()
@@ -76,17 +98,15 @@ class OfficeTextParser(HTMLParser):
             return
         if self.suppressed:
             return
+        if self.active is not None and tag in ("b", "strong"):
+            self.active["capture_first_bold"] = False
         if self.active is not None and tag == self.active["tag"]:
             candidate = self.active
             value = normalize("".join(candidate["parts"]))
             if value and not self._is_navigation(value):
-                self.blocks.append({
-                    "ordinal": len(self.blocks),
-                    "tag": candidate["tag"],
-                    "kind": "heading" if candidate["tag"].startswith("h") else "source_block",
-                    "attrs": candidate["attrs"],
-                    "text": value,
-                })
+                record = self._block(candidate, value)
+                record["ordinal"] = len(self.blocks)
+                self.blocks.append(record)
             self.active = None
         if tag == "body":
             self.in_body = False
@@ -96,6 +116,29 @@ class OfficeTextParser(HTMLParser):
             self.body_parts.append(data)
             if self.active is not None:
                 self.active["parts"].append(data)
+                self.active["line_parts"].append(data)
+                if self.active["capture_first_bold"]:
+                    self.active["first_bold_parts"].append(data)
+
+    @staticmethod
+    def _block(candidate: dict, text: str) -> dict:
+        # Read the actual bold heading emitted by the upstream generator.
+        # Do not guess scripture, typology or rubrics from plain text.
+        first_bold = normalize("".join(candidate["first_bold_parts"]))
+        label = (first_bold if first_bold in SOURCE_SECTION_LABELS
+                 or re.fullmatch(r"Lectio [1-9]", first_bold) else None)
+        lines = [line for part in "".join(candidate["line_parts"]).split("\n")
+                 if (line := normalize(part))]
+        return {
+            "ordinal": -1,  # The caller gives it its final source order.
+            "tag": candidate["tag"],
+            "kind": ("heading" if candidate["tag"].startswith("h")
+                     else "explicit_source_section" if label else "source_block"),
+            "attrs": candidate["attrs"],
+            "source_section_label": label,
+            "lines": lines,
+            "text": text,
+        }
 
     @staticmethod
     def _is_navigation(text: str) -> bool:
@@ -107,13 +150,9 @@ class OfficeTextParser(HTMLParser):
         if self.active is not None:
             value = normalize("".join(self.active["parts"]))
             if value and not self._is_navigation(value):
-                self.blocks.append({
-                    "ordinal": len(self.blocks),
-                    "tag": self.active["tag"],
-                    "kind": "source_block",
-                    "attrs": self.active["attrs"],
-                    "text": value,
-                })
+                record = self._block(self.active, value)
+                record["ordinal"] = len(self.blocks)
+                self.blocks.append(record)
         return self.blocks, normalize(" ".join(self.body_parts))
 
 
