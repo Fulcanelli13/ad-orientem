@@ -113,6 +113,7 @@ import { DEVOTIONAL_UX_CONTRACT_VERSION, devotionalUxContract } from "./devotion
 import { LITANY_SOURCE_WITNESSES, LITANY_WITNESS_REVIEW_V1, reviewLitanyTranscription, extractLitanyProper, paginateLitanyProper } from "./litany-source.js";
 import {BATCH03_LITANY_EDITION_POLICY,BATCH03_ICRSP_MAJOR_PROCESSION_STEPS,BATCH03_LITANY_SOURCE_STATUS,batch03LitanyUse} from "./litany-1962-use-policy.js";
 import {PENITENTIAL_PSALMS_VULGATE,penitentialPsalmReference,auditPenitentialPsalmResponse,PENITENTIAL_PSALMS_TEXT_STATUS} from "./penitential-psalms-source.js";
+import {localPenitentialPsalmWitness} from "./penitential-psalms-local-witnesses.v1.js";
 import {prayerScriptureStageFacesV1} from "./scripture-stage-faces.v1.js";
 import { DEVOTIONAL_WITNESSES, PRAYER_WITNESSED_VARIANTS } from "./devotional-witness-links.v1.js";
 import { parseSevenWordsHistoricalWitness } from "./seven-words-witness.v1.js";
@@ -3006,6 +3007,13 @@ function devotionalSource(title,detail='',witnessId=''){
  return `<details class="aoP435930Source"><summary>${esc(L('Source / provenance','Source / provenance'))}</summary><p><b>${esc(title)}</b></p>${detail?`<p>${esc(detail)}</p>`:''}${links}${hold}</details>`
 }
 function scriptureVerseHtml(rows){return rows.length?rows.map(v=>`<span class="aoP435930ScriptureVerse"><sup>${esc(v.verse)}</sup>${esc(v.text||v.value||'')}</span>`).join(' '):`<span>${esc(L('Text unavailable.','Texte indisponible.'))}</span>`}
+function penitentialLocalWitnessMarkup(traditionalChapter){
+ const witness=localPenitentialPsalmWitness(traditionalChapter,lang());
+ if(!witness)return callout(esc(L("Historical Psalm transcription unavailable.","Transcription historique du psaume indisponible.")),"warn");
+ const title=witness.language==="fr"?"Crampon 1923 · Ps. "+witness.sourceChapter+" (Vulg. "+traditionalChapter+")":"Douay–Rheims · Ps. "+traditionalChapter;
+ return '<section class="aoP435930ScriptureSingle" data-ao-penitential-local-witness="' +esc(witness.editionId)+'" lang="'+witness.language+'"><p class="aoP435930SourceNote" data-ao-penitential-source-status="UNCOLLATED_SOURCE_WITNESS">'+esc(title+" · "+L("locally included historical transcription; not independently collated with print.","transcription historique incluse ; non collationnée indépendamment sur l’imprimé."))+'</p><div class="aoP435930ScriptureVerses">'+scriptureVerseHtml(witness.rows)+'</div></section>';
+}
+function penitentialScriptureReferences(p){return {en:"Psalms "+p.trad+":1",fr:"Psalms "+p.modern+":1",lat:"Psalms "+p.trad+":1"}}
 function scriptureFlip(d,full=false){
  const witness=prayerScriptureStageFacesV1(d,lang(),full);
  if(witness.unavailable)return '';
@@ -3025,7 +3033,7 @@ async function loadScriptureInto(selector,kind,ref,full,guard){
   // "Loading…" indefinitely. The deadline changes UI state, not the source
   // or edition; late responses are ignored rather than installed.
   const d=await Promise.race([
-   Promise.resolve().then(()=>svc.load(kind,{en:ref,fr:ref,lat:ref},{contextOnly:true})),
+   Promise.resolve().then(()=>svc.load(kind,typeof ref==="string"?{en:ref,fr:ref,lat:ref}:ref,{contextOnly:true})),
    new Promise((_,reject)=>{deadline=setTimeout(
     ()=>reject(new Error('Canonical Scripture source request timed out')),12000)})
   ]);
@@ -3043,6 +3051,11 @@ async function loadScriptureInto(selector,kind,ref,full,guard){
   if(token!==guard())return;
   const box=document.querySelector(selector);
   if(!box)return;
+  if(kind==="psalm"&&box.dataset.aoScriptureContent==="local-witness"&&box.querySelector("[data-ao-penitential-local-witness]")){
+   // Preserve the full, historically sourced offline text when the remote Scripture service fails.
+   box.dataset.aoScriptureSource="local-witness";
+   return;
+  }
   box.dataset.aoScriptureContent='unavailable';
   box.dataset.aoScriptureSource=kind;
   box.innerHTML=callout(esc(L('Scripture text could not be loaded. This passage has not been replaced by a paraphrase.','Le texte de l’Écriture n’a pas pu être chargé. Aucun texte de remplacement n’a été inventé.')),'warn')+
@@ -3173,11 +3186,11 @@ function penitentialOfflineControls(){
 }
 function renderPenitential(){
  const i=Math.max(0,Math.min(6,PEN.step)),p=PEN_PSALMS[i],ref=`Psalms ${p.trad}:1`,modern=p.modern!==p.trad?` (${p.modern})`:'';
- setTimeout(()=>{const t=++PEN.token;loadScriptureInto('[data-p435930-pen-scripture]','psalm',ref,true,()=>PEN.token)},0);
+ setTimeout(()=>{const t=++PEN.token;loadScriptureInto('[data-p435930-pen-scripture]','psalm',penitentialScriptureReferences(p),true,()=>PEN.token)},0);
  const title=`Psalm ${p.trad}${modern}`,final=i===6;
  const body=`${scriptureContextCapsule(ref,{french:isFr()})}
   ${guideNow(title,L('Pray this Psalm slowly. Let the words themselves carry the act of repentance; do not rush to the next Psalm when you reach the final verse.','Priez lentement ce Psaume. Laissez les paroles elles-mêmes porter l’acte de pénitence ; ne passez pas immédiatement au Psaume suivant après le dernier verset.'))}
-  <div class="aoP435930GuidedScripture" data-p435930-pen-scripture><p class="aoP435930Loading">${esc(L('Loading Scripture…','Chargement de l’Écriture…'))}</p></div>
+  <div class="aoP435930GuidedScripture" data-p435930-pen-scripture data-ao-scripture-content="local-witness" data-ao-scripture-source="local-witness">${penitentialLocalWitnessMarkup(p.trad)}</div>
   ${guideCue(L('PAUSE','PAUSE'),L('Remain briefly in silence after the doxology or final verse, then continue when ready.','Demeurez brièvement en silence après la doxologie ou le dernier verset, puis continuez lorsque vous êtes prêt.'))}`;
  const chapter=sourcedDevotionalCard({kind:'penitential',id:'penitential-'+i,title,index:i,total:PEN_PSALMS.length,body});
  return `${head(L('Seven Penitential Psalms','Sept psaumes pénitentiels'),L('Traditional penitential psalmody · guided sequence','Psalmodie pénitentielle traditionnelle · séquence guidée'))}
@@ -4891,8 +4904,8 @@ function onClick(e){
   // Retry only the exact currently displayed source identity, never switch
   // translation or fetch an alternative unsourced prayer text silently.
   if(view==='penitential'&&b.dataset.p435930ScriptureRetry==='psalm'){
-   const ref='Psalms '+PEN_PSALMS[Math.max(0,Math.min(6,PEN.step))].trad+':1';
-   ++PEN.token;loadScriptureInto('[data-p435930-pen-scripture]','psalm',ref,true,()=>PEN.token);
+   const p=PEN_PSALMS[Math.max(0,Math.min(6,PEN.step))];
+   ++PEN.token;loadScriptureInto('[data-p435930-pen-scripture]','psalm',penitentialScriptureReferences(p),true,()=>PEN.token);
   }else if(view==='sevenWords'&&b.dataset.p435930ScriptureRetry==='gospel'){
    const ref=WORD_REFS[Math.max(0,Math.min(6,SEVEN.step))];
    ++SEVEN.scriptToken;loadScriptureInto('[data-p435930-word-scripture]','gospel',ref,false,()=>SEVEN.scriptToken);
