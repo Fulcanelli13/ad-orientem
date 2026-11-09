@@ -148,8 +148,8 @@ test("28 full PUBLIC Latin reader variants, exact Christmas first-Vespers and se
  }
 });
 test("dates 28 Dec onward and all EN/FR/local/other-hour requests remain withheld BEFORE any fetch",async()=>{
- for(const date of ["2027-01-09","2027-01-10","2027-01-11",
-  "2027-01-12","2027-01-13"]){
+ for(const date of ["2027-01-11","2027-01-12","2027-01-13",
+  "2027-01-14","2027-01-15"]){
   assert.equal(officeRouteState({date,hour:"COMPLINE"}).readingEnabled,false);
   for(const context of Object.values(COMPLINE_CONTEXT)){
    for(const minister of Object.values(COMPLINE_MINISTER)){
