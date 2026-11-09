@@ -120,6 +120,12 @@
       "path": "data/artwork/research/m2m-liturgical-thematic-batch5-20261109.v1.json",
       "count": 14,
       "photo_publication": "NOT_AUTHORISED"
+    },
+    {
+      "kind": "LITURGICAL_FEAST_BATCH6",
+      "path": "data/artwork/research/m2m-liturgical-batch6-20261109.v1.json",
+      "count": 12,
+      "photo_publication": "NOT_AUTHORISED"
     }
   ],
   "key_rule": "No automatic deduplication of distinct physical works or artworkID aliases; each relationship points to its own source record.",
@@ -133,8 +139,8 @@
     "globally_rejected_original_with_later_preserved_slots": "cma-122338",
     "scene_batch2": "data/artwork/research/m2m-scene-adjudication-batch2-20261109.v1.json",
     "batch2_new_direct_scene_proposals": 15,
-    "cumulative_new_Claude_proposals_source_adjudicated": 66,
-    "remaining_new_Claude_proposals_needing_individual_source_adjudication": 48,
+    "cumulative_new_Claude_proposals_source_adjudicated": 78,
+    "remaining_new_Claude_proposals_needing_individual_source_adjudication": 36,
     "important_batch2_relational_downgrades": [
       "2026-01-13",
       "2026-11-22",
@@ -162,6 +168,14 @@
       "jonah_duplicate_catalogue_id_hold": "Lille webpage 976.3.1 circle Bril vs older French Joconde P1904 Paul Bril. Cannot assert same physical work from current evidence.",
       "guercino_saint_identity_metadata_hold": "French Joconde explicitly labels Paul de Tarse, while work title is martyrs Saints Jean et Paul; exact feast saints identification must be checked.",
       "another_basilica": "Saint-Sernin Toulouse, not Lateran Rome"
+    },
+    "liturgical_batch6": "data/artwork/research/m2m-liturgical-batch6-20261109.v1.json",
+    "liturgical_batch6_findings": {
+      "2026-01-21": "Wautier KMSKA 599 is a historiated portrait of girls AS Agnes and Dorothea, not saint biography",
+      "2026-01-30": "Granet Cortona oil-on-copper INV107 is not Princeton or Palatina canvas variant",
+      "2026-06-13": "Murillo Gemäldegalerie 414 is recorded probably destroyed in 1945; surviving work must not be claimed",
+      "2026-11-23": "Fungai Strasbourg 453.b; INHA related notice contains erroneous 453.a citation",
+      "2026-11-21": "Baugin Granet main painting distinct from Rennes sketch; noncanonical Marian tradition"
     }
   }
 }
