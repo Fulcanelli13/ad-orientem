@@ -17,7 +17,7 @@ export const ADVENT_III_COMPLINE_APPOINTMENTS=Object.freeze([
  Object.freeze({date:"2026-12-16",weekday:"Feria IV",psalmDay:"Feria IV",
   marianSection:"Advent",label:"Compline · Advent Ember Wednesday",
   officeClass:"FERIA",rank:"II",officeDate:"2026-12-16",
-  commemoration:"St Eusebius, Bishop and Martyr",
+  commemoration:"Saint Eusebius, Bishop and Martyr",
   rubricalReason:"ADVENT_EMBER_WEDNESDAY_II_CLASS_FERIA_BR171_E"}),
  Object.freeze({date:"2026-12-17",weekday:"Feria V",psalmDay:"Feria V",
   marianSection:"Advent",label:"Thursday Compline · Advent III",
