@@ -70,13 +70,21 @@ test("all 30 individually certified Latin Compline dates release; no other dates
   assert.equal(r.rightsApproved,true,date);
   count++;
  }
- assert.equal(count,37);
+ for(let day=4;day<=8;day++){
+  const date="2027-01-0"+day;
+  const r=gate({date});
+  assert.equal(r.published,true,date);
+  assert.equal(r.sourceTextReleased,true,date);
+  assert.equal(r.rightsApproved,true,date);
+  count++;
+ }
+ assert.equal(count,42);
  assert.equal(DIVINE_OFFICE_PUBLIC_MODULE_ID,"pray.divine_office");
  assert.equal(internalPrayerView(DIVINE_OFFICE_PUBLIC_MODULE_ID),null);
  assert.equal(supportedDirectPrayerRoute(DIVINE_OFFICE_PUBLIC_MODULE_ID),false);
 });
 test("unreviewed feasts and arbitrary dates cannot inherit the Compline pilot",()=>{
- for(const date of ["2027-01-04","2027-01-05","2027-01-06",
+ for(const date of ["2027-01-09","2027-01-10","2027-01-11",
   "2027-11-28","2026-11-27","yesterday",undefined]){
   const r=gate({date});
   assert.equal(r.researchPreviewEligible,false);
