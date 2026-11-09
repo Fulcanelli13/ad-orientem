@@ -155,7 +155,7 @@ export function projectDirectSpecialCuratedLiveCards({
   let composed=projectHolyThursdayMass(direct,resolvedMass,{
     mandatumPresent,mandatumSource:holyThursdayMandatumSource,language,
   });
-  composed=projectEmberInsertionModel(composed,resolvedMass);
+  composed=projectEmberInsertionModel(composed,resolvedMass,{language});
   composed=projectNuptialInsertionModel(composed,resolvedMass,nuptialData);
 
   // Optional Mandatum follows source section AO.CARD.008 (Homily), not
