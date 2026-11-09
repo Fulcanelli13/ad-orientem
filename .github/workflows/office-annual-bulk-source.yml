@@ -136,6 +136,31 @@ jobs:
                 f"first_vespers_candidates={audit['evening_office_transition_count']} "
                 f"unmatched_compline=0 published=false")
           PY
+      - name: Project all eight Hours into source-anchored semantic units
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 tools/office-bulk/semantic_events.py \
+            --parsed "office-annual-artifacts/$YEAR/parsed" \
+            --output "office-annual-artifacts/$YEAR/semantic"
+          python3 - "$YEAR" <<'PY'
+          import json, pathlib, sys
+          year = int(sys.argv[1])
+          semantic = json.loads(pathlib.Path(
+              f"office-annual-artifacts/{year}/semantic/semantic-audit.json"
+          ).read_text(encoding="utf8"))
+          assert semantic["hours_projected"] == 2920
+          assert semantic["days_projected"] == 365
+          assert all(n == 365 for n in semantic["canonical_hour_counts"].values())
+          assert semantic["source_line_token_counts"]["psalm_heading"] >= 8000
+          assert semantic["quality_gate"]["source_line_traceability"]
+          assert semantic["quality_gate"]["source_projection_complete"]
+          assert not semantic["quality_gate"]["public_reader_authorized"]
+          print(f"AO_OFFICE_ALL_HOURS_SEMANTIC_COMPLETE year={year} "
+                f"hours={semantic['hours_projected']} "
+                f"psalms={semantic['source_line_token_counts']['psalm_heading']} "
+                f"issues={semantic['source_issues_count']} published=false")
+          PY
       - name: Upload immutable source, structured text and exception ledger (NOT Pages)
         if: always()
         uses: actions/upload-artifact@v4
@@ -147,3 +172,88 @@ jobs:
           compression-level: 6
 
 
+
+
+  combine-private-reader:
+    name: Unified private 2026–2027 eight-Hour mobile reader (NOT Pages)
+    needs: generate
+    runs-on: ubuntu-latest
+    timeout-minutes: 24
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: office-1960-la-2026-research
+          path: annual/2026
+      - uses: actions/download-artifact@v4
+        with:
+          name: office-1960-la-2027-research
+          path: annual/2027
+      - name: Assemble private two-year source reader and strict 730-day coverage
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p private-reader
+          cp tools/office-bulk/research-reader.html private-reader/index.html
+          cp -R annual/2026/semantic/reader/2026 private-reader/
+          cp -R annual/2027/semantic/reader/2027 private-reader/
+          python3 - <<'PY'
+          import json, pathlib
+          root = pathlib.Path("private-reader")
+          years = {}
+          for year in (2026, 2027):
+              audit = json.loads(pathlib.Path(
+                  f"annual/{year}/semantic/semantic-audit.json"
+              ).read_text(encoding="utf8"))
+              assert audit["hours_projected"] == 2920
+              assert audit["days_projected"] == 365
+              assert audit["quality_gate"]["source_projection_complete"]
+              files = sorted((root/str(year)).glob("*/*.json"))
+              assert len(files) == 365, (year, len(files))
+              for path in files:
+                  day = json.loads(path.read_text(encoding="utf8"))
+                  assert day["private_research_only"]
+                  assert day["public_reader_authorized"] is False
+                  assert len(day["hours"]) == 8
+                  assert all(not hour["quality_gate"]["public_reader_authorized"]
+                             for hour in day["hours"].values())
+              years[str(year)] = {
+                  "days": len(files),
+                  "hours": audit["hours_projected"],
+                  "source_issues": audit["source_issues_count"],
+              }
+          config = {
+              "schema": "ao.office.1960.private-reader-index.v1",
+              "first": "2026-01-01", "last": "2027-12-31",
+              "rubrics": "Rubrics 1960 - 1960", "language": "la",
+              "source_revision": "126a07f91ede04664108abb6fb20ace3f4de14b9",
+              "years": years, "total_days": 730, "total_hours": 5840,
+              "private_research_only": True, "public_reader_authorized": False,
+          }
+          (root/"config.json").write_text(
+              json.dumps(config, indent=2, sort_keys=True)+"\n",encoding="utf8")
+          print("AO_OFFICE_PRIVATE_TWO_YEAR_READER_BUNDLE days=730 "
+                "hours=5840 languages=la public=false")
+          PY
+      - name: Install test runner and Chromium for actual phone acceptance
+        run: |
+          npm ci --ignore-scripts --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Test unified internal reader at 320px/390px, both years and eight Hours
+        env:
+          OFFICE_RESEARCH_READER_ROOT: private-reader
+        run: node tests/divine-office-annual-private-reader-phone.mjs
+      - name: Upload research-only offline HTML reader (NEVER GitHub Pages)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: office-1960-la-2026-2027-private-reader
+          path: private-reader/
+          retention-days: 90
+          if-no-files-found: warn
+          compression-level: 6
