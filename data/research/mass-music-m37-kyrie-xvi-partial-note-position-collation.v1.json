@@ -1,0 +1,850 @@
+{
+  "schema": "ao-mass-music-m37-kyrie-xvi-partial-note-position-collation-v1",
+  "observedAt": "2026-11-09",
+  "scoreId": "GREGOBASE-545",
+  "selection": "MASS_16",
+  "movement": "KYRIE",
+  "printedEdition": "Graduale Romanum (Solesmes, 1961), Kyriale p. 54*",
+  "printedPageImage": "https://gregobase.selapa.net/sources/2/931.png",
+  "printedPDF": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf#page=56",
+  "sourceGabcFile": "src/mass/reader-kyriale-research-gabc.js",
+  "sourceGabcFingerprintUtf16Fnv1a32": "acef0d62",
+  "sourceGabcClef": "c4",
+  "staffConvention": "On a four-line staff, GABC d=line1 (bottom), f=line2, h=line3, j=line4 (top). The original c4 clef places do on the top line; source letters encode typographic staff positions, not fixed MIDI octaves.",
+  "method": [
+    "Reused the existing M31 complete 27-group source-vs-print syllable/system ledger; compared the first Kyrie phrase directly with the original Solesmes p.54* printed system (PDF page 56, GregoBase source scan 931).",
+    "Read the first seven successive note-bearing source groups (nine encoded notehead positions) against visually identifiable printed staff line/space placements; the available source image supports these staff-height observations, not full symbol parity.",
+    "The remaining 20 groups are still restricted to the M31 structural/contour-screened status; no exact printed-note approval has been transferred from their earlier visual survey.",
+    "Token count 40 is the number of note-position letters in this unmodified GABC source after excluding directives. It is not a manually counted print note total or evidence of 40 verified notes.",
+    "No image-derived pitch inference was written to the original source, and no alteration to canonical Mass text, reader card count or local Schola programme is authorized."
+  ],
+  "coverage": {
+    "publishedKyrialeResearchScores": 20,
+    "thisScoreSourceGroups": 27,
+    "thisScoreGabcNotePositionLetters": 40,
+    "groupsWithAdditionalManualPrintedStaffHeightComparison": 7,
+    "notePositionsInThoseGroups": 9,
+    "remainingGroupsAwaitingDetailedPrintedStaffComparison": 20,
+    "notePositionsInRemainingGroups": 31,
+    "printedFullPitchAndNeumeCertifiedGroups": 0,
+    "printedCertifiedScores": 0,
+    "approvedAudioRecordings": 0
+  },
+  "firstPhraseObservedSequence": {
+    "groupOrdinals": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "sourcePitchLetters": [
+      "g",
+      "hi",
+      "ii",
+      "g",
+      "h",
+      "i",
+      "i"
+    ],
+    "sourceStaffHeights": [
+      [
+        "space2"
+      ],
+      [
+        "line3",
+        "space3"
+      ],
+      [
+        "space3",
+        "space3"
+      ],
+      [
+        "space2"
+      ],
+      [
+        "line3"
+      ],
+      [
+        "space3"
+      ],
+      [
+        "space3"
+      ]
+    ],
+    "printedPage": "54*",
+    "printedSystem": 1,
+    "status": "VISUALLY_CONSISTENT_AT_SCAN_RESOLUTION_NOT_EDITORIALLY_CERTIFIED",
+    "criticalUnverifiedMarks": [
+      "Horizontal episema on lé (group 5)",
+      "Mora dot on son (group 7)"
+    ]
+  },
+  "sourceGroupRecords": [
+    {
+      "ordinal": 1,
+      "phrase": 1,
+      "printedSystem": 1,
+      "printedFolio": "54*",
+      "syllable": "KY",
+      "sourceGabcNeume": "g",
+      "sourcePitchLetters": [
+        "g"
+      ],
+      "sourceStaffSlotsFromBottomLine": [
+        3
+      ],
+      "sourceStaffPlacements": [
+        "space2"
+      ],
+      "printEvidenceStatus": "MANUAL_STAFF_POSITION_CONSISTENT_AT_AVAILABLE_SCAN_RESOLUTION",
+      "observedPrintedStaffPlacements": [
+        "space2"
+      ],
+      "visualPitchPositionAgrees": true,
+      "sourceVsPrintNeumeShape": "NOT_CERTIFIED",
+      "sourceVsPrintEpisemaMora": "NOT_CERTIFIED",
+      "sourceVsPrintAccidentals": "NOT_CERTIFIED",
+      "sourceVsPrintSyllableUnderlay": "NOT_CERTIFIED",
+      "allPrintedPitchesCertified": false,
+      "editorialApproval": false
+    },
+    {
+      "ordinal": 2,
+      "phrase": 1,
+      "printedSystem": 1,
+      "printedFolio": "54*",
+      "syllable": "ri",
+      "sourceGabcNeume": "hi",
+      "sourcePitchLetters": [
+        "h",
+        "i"
+      ],
+      "sourceStaffSlotsFromBottomLine": [
+        4,
+        5
+      ],
+      "sourceStaffPlacements": [
+        "line3",
+        "space3"
+      ],
+      "printEvidenceStatus": "MANUAL_STAFF_POSITION_CONSISTENT_AT_AVAILABLE_SCAN_RESOLUTION",
+      "observedPrintedStaffPlacements": [
+        "line3",
+        "space3"
+      ],
+      "visualPitchPositionAgrees": true,
+      "sourceVsPrintNeumeShape": "NOT_CERTIFIED",
+      "sourceVsPrintEpisemaMora": "NOT_CERTIFIED",
+      "sourceVsPrintAccidentals": "NOT_CERTIFIED",
+      "sourceVsPrintSyllableUnderlay": "NOT_CERTIFIED",
+      "allPrintedPitchesCertified": false,
+      "editorialApproval": false
+    },
+    {
+      "ordinal": 3,
+      "phrase": 1,
+      "printedSystem": 1,
+      "printedFolio": "54*",
+      "syllable": "e",
+      "sourceGabcNeume": "ii",
+      "sourcePitchLetters": [
+        "i",
+        "i"
+      ],
+      "sourceStaffSlotsFromBottomLine": [
+        5,
+        5
+      ],
+      "sourceStaffPlacements": [
+        "space3",
+        "space3"
+      ],
+      "printEvidenceStatus": "MANUAL_STAFF_POSITION_CONSISTENT_AT_AVAILABLE_SCAN_RESOLUTION",
+      "observedPrintedStaffPlacements": [
+        "space3",
+        "space3"
+      ],
+      "visualPitchPositionAgrees": true,
+      "sourceVsPrintNeumeShape": "NOT_CERTIFIED",
+      "sourceVsPrintEpisemaMora": "NOT_CERTIFIED",
+      "sourceVsPrintAccidentals": "NOT_CERTIFIED",
+      "sourceVsPrintSyllableUnderlay": "NOT_CERTIFIED",
+      "allPrintedPitchesCertified": false,
+      "editorialApproval": false
+    },
+    {
+      "ordinal": 4,
+      "phrase": 1,
+      "printedSystem": 1,
+      "printedFolio": "54*",
+      "syllable": "e",
+      "sourceGabcNeume": "g",
+      "sourcePitchLetters": [
+        "g"
+      ],
+      "sourceStaffSlotsFromBottomLine": [
+        3
+      ],
+      "sourceStaffPlacements": [
+        "space2"
+      ],
+      "printEvidenceStatus": "MANUAL_STAFF_POSITION_CONSISTENT_AT_AVAILABLE_SCAN_RESOLUTION",
+      "observedPrintedStaffPlacements": [
+        "space2"
+      ],
+      "visualPitchPositionAgrees": true,
+      "sourceVsPrintNeumeShape": "NOT_CERTIFIED",
+      "sourceVsPrintEpisemaMora": "NOT_CERTIFIED",
+      "sourceVsPrintAccidentals": "NOT_CERTIFIED",
+      "sourceVsPrintSyllableUnderlay": "NOT_CERTIFIED",
+      "allPrintedPitchesCertified": false,
+      "editorialApproval": false
+    },
+    {
+      "ordinal": 5,
+      "phrase": 1,
+      "printedSystem": 1,
+      "printedFolio": "54*",
+      "syllable": "lé",
+      "sourceGabcNeume": "h_",
+      "sourcePitchLetters": [
+        "h"
+      ],
+      "sourceStaffSlotsFromBottomLine": [
+        4
+      ],
+      "sourceStaffPlacements": [
+        "line3"
+      ],
+      "printEvidenceStatus": "MANUAL_STAFF_POSITION_CONSISTENT_AT_AVAILABLE_SCAN_RESOLUTION",
+      "observedPrintedStaffPlacements": [
+        "line3"
+      ],
+      "visualPitchPositionAgrees": true,
+      "sourceVsPrintNeumeShape": "NOT_CERTIFIED",
+      "sourceVsPrintEpisemaMora": "NOT_CERTIFIED",
+      "sourceVsPrintAccidentals": "NOT_CERTIFIED",
+      "sourceVsPrintSyllableUnderlay": "NOT_CERTIFIED",
+      "allPrintedPitchesCertified": false,
+      "editorialApproval": false
+    },
+    {
+      "ordinal": 6,
+      "phrase": 1,
+      "printedSystem": 1,
+      "printedFolio": "54*",
+      "syllable": "i",
+      "sourceGabcNeume": "i",
+      "sourcePitchLetters": [
+        "i"
+      ],
+      "sourceStaffSlotsFromBottomLine": [
+        5
+      ],
+      "sourceStaffPlacements": [
+        "space3"
+      ],
+      "printEvidenceStatus": "MANUAL_STAFF_POSITION_CONSISTENT_AT_AVAILABLE_SCAN_RESOLUTION",
+      "observedPrintedStaffPlacements": [
+        "space3"
+      ],
+      "visualPitchPositionAgrees": true,
+      "sourceVsPrintNeumeShape": "NOT_CERTIFIED",
+      "sourceVsPrintEpisemaMora": "NOT_CERTIFIED",
+      "sourceVsPrintAccidentals": "NOT_CERTIFIED",
+      "sourceVsPrintSyllableUnderlay": "NOT_CERTIFIED",
+      "allPrintedPitchesCertified": false,
+      "editorialApproval": false
+    },
+    {
+      "ordinal": 7,
+      "phrase": 1,
+      "printedSystem": 1,
+      "printedFolio": "54*",
+      "syllable": "son.",
+      "sourceGabcNeume": "i.",
+      "sourcePitchLetters": [
+        "i"
+      ],
+      "sourceStaffSlotsFromBottomLine": [
+        5
+      ],
+      "sourceStaffPlacements": [
+        "space3"
+      ],
+      "printEvidenceStatus": "MANUAL_STAFF_POSITION_CONSISTENT_AT_AVAILABLE_SCAN_RESOLUTION",
+      "observedPrintedStaffPlacements": [
+        "space3"
+      ],
+      "visualPitchPositionAgrees": true,
+      "sourceVsPrintNeumeShape": "NOT_CERTIFIED",
+      "sourceVsPrintEpisemaMora": "NOT_CERTIFIED",
+      "sourceVsPrintAccidentals": "NOT_CERTIFIED",
+      "sourceVsPrintSyllableUnderlay": "NOT_CERTIFIED",
+      "allPrintedPitchesCertified": false,
+      "editorialApproval": false
+    },
+    {
+      "ordinal": 8,
+      "phrase": 2,
+      "printedSystem": 1,
+      "printedFolio": "54*",
+      "syllable": "Chri",
+      "sourceGabcNeume": "k",
+      "sourcePitchLetters": [
+        "k"
+      ],
+      "sourceStaffSlotsFromBottomLine": [
+        7
+      ],
+      "sourceStaffPlacements": [
+        "spaceAbove4"
+      ],
+      "printEvidenceStatus": "DETAILED_PRINTED_NOTE_COMPARISON_PENDING",
+      "sourceVsPrintNeumeShape": "NOT_CERTIFIED",
+      "sourceVsPrintEpisemaMora": "NOT_CERTIFIED",
+      "sourceVsPrintAccidentals": "NOT_CERTIFIED",
+      "sourceVsPrintSyllableUnderlay": "NOT_CERTIFIED",
+      "allPrintedPitchesCertified": false,
+      "editorialApproval": false
+    },
+    {
+      "ordinal": 9,
+      "phrase": 2,
+      "printedSystem": 1,
+      "printedFolio": "54*",
+      "syllable": "ste",
+      "sourceGabcNeume": "ij",
+      "sourcePitchLetters": [
+        "i",
+        "j"
+      ],
+      "sourceStaffSlotsFromBottomLine": [
+        5,
+        6
+      ],
+      "sourceStaffPlacements": [
+        "space3",
+        "line4"
+      ],
+      "printEvidenceStatus": "DETAILED_PRINTED_NOTE_COMPARISON_PENDING",
+      "sourceVsPrintNeumeShape": "NOT_CERTIFIED",
+      "sourceVsPrintEpisemaMora": "NOT_CERTIFIED",
+      "sourceVsPrintAccidentals": "NOT_CERTIFIED",
+      "sourceVsPrintSyllableUnderlay": "NOT_CERTIFIED",
+      "allPrintedPitchesCertified": false,
+      "editorialApproval": false
+    },
+    {
+      "ordinal": 10,
+      "phrase": 2,
+      "printedSystem": 1,
+      "printedFolio": "54*",
+      "syllable": "e",
+      "sourceGabcNeume": "h",
+      "sourcePitchLetters": [
+        "h"
+      ],
+      "sourceStaffSlotsFromBottomLine": [
+        4
+      ],
+      "sourceStaffPlacements": [
+        "line3"
+      ],
+      "printEvidenceStatus": "DETAILED_PRINTED_NOTE_COMPARISON_PENDING",
+      "sourceVsPrintNeumeShape": "NOT_CERTIFIED",
+      "sourceVsPrintEpisemaMora": "NOT_CERTIFIED",
+      "sourceVsPrintAccidentals": "NOT_CERTIFIED",
+      "sourceVsPrintSyllableUnderlay": "NOT_CERTIFIED",
+      "allPrintedPitchesCertified": false,
+      "editorialApproval": false
+    },
+    {
+      "ordinal": 11,
+      "phrase": 2,
+      "printedSystem": 1,
+      "printedFolio": "54*",
+      "syllable": "lé",
+      "sourceGabcNeume": "h_",
+      "sourcePitchLetters": [
+        "h"
+      ],
+      "sourceStaffSlotsFromBottomLine": [
+        4
+      ],
+      "sourceStaffPlacements": [
+        "line3"
+      ],
+      "printEvidenceStatus": "DETAILED_PRINTED_NOTE_COMPARISON_PENDING",
+      "sourceVsPrintNeumeShape": "NOT_CERTIFIED",
+      "sourceVsPrintEpisemaMora": "NOT_CERTIFIED",
+      "sourceVsPrintAccidentals": "NOT_CERTIFIED",
+      "sourceVsPrintSyllableUnderlay": "NOT_CERTIFIED",
+      "allPrintedPitchesCertified": false,
+      "editorialApproval": false
+    },
+    {
+      "ordinal": 12,
+      "phrase": 2,
+      "printedSystem": 1,
+      "printedFolio": "54*",
+      "syllable": "i",
+      "sourceGabcNeume": "i",
+      "sourcePitchLetters": [
+        "i"
+      ],
+      "sourceStaffSlotsFromBottomLine": [
+        5
+      ],
+      "sourceStaffPlacements": [
+        "space3"
+      ],
+      "printEvidenceStatus": "DETAILED_PRINTED_NOTE_COMPARISON_PENDING",
+      "sourceVsPrintNeumeShape": "NOT_CERTIFIED",
+      "sourceVsPrintEpisemaMora": "NOT_CERTIFIED",
+      "sourceVsPrintAccidentals": "NOT_CERTIFIED",
+      "sourceVsPrintSyllableUnderlay": "NOT_CERTIFIED",
+      "allPrintedPitchesCertified": false,
+      "editorialApproval": false
+    },
+    {
+      "ordinal": 13,
+      "phrase": 2,
+      "printedSystem": 1,
+      "printedFolio": "54*",
+      "syllable": "son.",
+      "sourceGabcNeume": "i.",
+      "sourcePitchLetters": [
+        "i"
+      ],
+      "sourceStaffSlotsFromBottomLine": [
+        5
+      ],
+      "sourceStaffPlacements": [
+        "space3"
+      ],
+      "printEvidenceStatus": "DETAILED_PRINTED_NOTE_COMPARISON_PENDING",
+      "sourceVsPrintNeumeShape": "NOT_CERTIFIED",
+      "sourceVsPrintEpisemaMora": "NOT_CERTIFIED",
+      "sourceVsPrintAccidentals": "NOT_CERTIFIED",
+      "sourceVsPrintSyllableUnderlay": "NOT_CERTIFIED",
+      "allPrintedPitchesCertified": false,
+      "editorialApproval": false
+    },
+    {
+      "ordinal": 14,
+      "phrase": 3,
+      "printedSystem": 1,
+      "printedFolio": "54*",
+      "syllable": "Ký",
+      "sourceGabcNeume": "g",
+      "sourcePitchLetters": [
+        "g"
+      ],
+      "sourceStaffSlotsFromBottomLine": [
+        3
+      ],
+      "sourceStaffPlacements": [
+        "space2"
+      ],
+      "printEvidenceStatus": "DETAILED_PRINTED_NOTE_COMPARISON_PENDING",
+      "sourceVsPrintNeumeShape": "NOT_CERTIFIED",
+      "sourceVsPrintEpisemaMora": "NOT_CERTIFIED",
+      "sourceVsPrintAccidentals": "NOT_CERTIFIED",
+      "sourceVsPrintSyllableUnderlay": "NOT_CERTIFIED",
+      "allPrintedPitchesCertified": false,
+      "editorialApproval": false
+    },
+    {
+      "ordinal": 15,
+      "phrase": 3,
+      "printedSystem": 2,
+      "printedFolio": "54*",
+      "syllable": "ri",
+      "sourceGabcNeume": "hi",
+      "sourcePitchLetters": [
+        "h",
+        "i"
+      ],
+      "sourceStaffSlotsFromBottomLine": [
+        4,
+        5
+      ],
+      "sourceStaffPlacements": [
+        "line3",
+        "space3"
+      ],
+      "printEvidenceStatus": "DETAILED_PRINTED_NOTE_COMPARISON_PENDING",
+      "sourceVsPrintNeumeShape": "NOT_CERTIFIED",
+      "sourceVsPrintEpisemaMora": "NOT_CERTIFIED",
+      "sourceVsPrintAccidentals": "NOT_CERTIFIED",
+      "sourceVsPrintSyllableUnderlay": "NOT_CERTIFIED",
+      "allPrintedPitchesCertified": false,
+      "editorialApproval": false
+    },
+    {
+      "ordinal": 16,
+      "phrase": 3,
+      "printedSystem": 2,
+      "printedFolio": "54*",
+      "syllable": "e",
+      "sourceGabcNeume": "ii",
+      "sourcePitchLetters": [
+        "i",
+        "i"
+      ],
+      "sourceStaffSlotsFromBottomLine": [
+        5,
+        5
+      ],
+      "sourceStaffPlacements": [
+        "space3",
+        "space3"
+      ],
+      "printEvidenceStatus": "DETAILED_PRINTED_NOTE_COMPARISON_PENDING",
+      "sourceVsPrintNeumeShape": "NOT_CERTIFIED",
+      "sourceVsPrintEpisemaMora": "NOT_CERTIFIED",
+      "sourceVsPrintAccidentals": "NOT_CERTIFIED",
+      "sourceVsPrintSyllableUnderlay": "NOT_CERTIFIED",
+      "allPrintedPitchesCertified": false,
+      "editorialApproval": false
+    },
+    {
+      "ordinal": 17,
+      "phrase": 3,
+      "printedSystem": 2,
+      "printedFolio": "54*",
+      "syllable": "e",
+      "sourceGabcNeume": "g",
+      "sourcePitchLetters": [
+        "g"
+      ],
+      "sourceStaffSlotsFromBottomLine": [
+        3
+      ],
+      "sourceStaffPlacements": [
+        "space2"
+      ],
+      "printEvidenceStatus": "DETAILED_PRINTED_NOTE_COMPARISON_PENDING",
+      "sourceVsPrintNeumeShape": "NOT_CERTIFIED",
+      "sourceVsPrintEpisemaMora": "NOT_CERTIFIED",
+      "sourceVsPrintAccidentals": "NOT_CERTIFIED",
+      "sourceVsPrintSyllableUnderlay": "NOT_CERTIFIED",
+      "allPrintedPitchesCertified": false,
+      "editorialApproval": false
+    },
+    {
+      "ordinal": 18,
+      "phrase": 3,
+      "printedSystem": 2,
+      "printedFolio": "54*",
+      "syllable": "lé",
+      "sourceGabcNeume": "h_",
+      "sourcePitchLetters": [
+        "h"
+      ],
+      "sourceStaffSlotsFromBottomLine": [
+        4
+      ],
+      "sourceStaffPlacements": [
+        "line3"
+      ],
+      "printEvidenceStatus": "DETAILED_PRINTED_NOTE_COMPARISON_PENDING",
+      "sourceVsPrintNeumeShape": "NOT_CERTIFIED",
+      "sourceVsPrintEpisemaMora": "NOT_CERTIFIED",
+      "sourceVsPrintAccidentals": "NOT_CERTIFIED",
+      "sourceVsPrintSyllableUnderlay": "NOT_CERTIFIED",
+      "allPrintedPitchesCertified": false,
+      "editorialApproval": false
+    },
+    {
+      "ordinal": 19,
+      "phrase": 3,
+      "printedSystem": 2,
+      "printedFolio": "54*",
+      "syllable": "i",
+      "sourceGabcNeume": "i",
+      "sourcePitchLetters": [
+        "i"
+      ],
+      "sourceStaffSlotsFromBottomLine": [
+        5
+      ],
+      "sourceStaffPlacements": [
+        "space3"
+      ],
+      "printEvidenceStatus": "DETAILED_PRINTED_NOTE_COMPARISON_PENDING",
+      "sourceVsPrintNeumeShape": "NOT_CERTIFIED",
+      "sourceVsPrintEpisemaMora": "NOT_CERTIFIED",
+      "sourceVsPrintAccidentals": "NOT_CERTIFIED",
+      "sourceVsPrintSyllableUnderlay": "NOT_CERTIFIED",
+      "allPrintedPitchesCertified": false,
+      "editorialApproval": false
+    },
+    {
+      "ordinal": 20,
+      "phrase": 3,
+      "printedSystem": 2,
+      "printedFolio": "54*",
+      "syllable": "son.",
+      "sourceGabcNeume": "i.",
+      "sourcePitchLetters": [
+        "i"
+      ],
+      "sourceStaffSlotsFromBottomLine": [
+        5
+      ],
+      "sourceStaffPlacements": [
+        "space3"
+      ],
+      "printEvidenceStatus": "DETAILED_PRINTED_NOTE_COMPARISON_PENDING",
+      "sourceVsPrintNeumeShape": "NOT_CERTIFIED",
+      "sourceVsPrintEpisemaMora": "NOT_CERTIFIED",
+      "sourceVsPrintAccidentals": "NOT_CERTIFIED",
+      "sourceVsPrintSyllableUnderlay": "NOT_CERTIFIED",
+      "allPrintedPitchesCertified": false,
+      "editorialApproval": false
+    },
+    {
+      "ordinal": 21,
+      "phrase": 4,
+      "printedSystem": 2,
+      "printedFolio": "54*",
+      "syllable": "Ký",
+      "sourceGabcNeume": "g",
+      "sourcePitchLetters": [
+        "g"
+      ],
+      "sourceStaffSlotsFromBottomLine": [
+        3
+      ],
+      "sourceStaffPlacements": [
+        "space2"
+      ],
+      "printEvidenceStatus": "DETAILED_PRINTED_NOTE_COMPARISON_PENDING",
+      "sourceVsPrintNeumeShape": "NOT_CERTIFIED",
+      "sourceVsPrintEpisemaMora": "NOT_CERTIFIED",
+      "sourceVsPrintAccidentals": "NOT_CERTIFIED",
+      "sourceVsPrintSyllableUnderlay": "NOT_CERTIFIED",
+      "allPrintedPitchesCertified": false,
+      "editorialApproval": false
+    },
+    {
+      "ordinal": 22,
+      "phrase": 4,
+      "printedSystem": 2,
+      "printedFolio": "54*",
+      "syllable": "ri",
+      "sourceGabcNeume": "hi",
+      "sourcePitchLetters": [
+        "h",
+        "i"
+      ],
+      "sourceStaffSlotsFromBottomLine": [
+        4,
+        5
+      ],
+      "sourceStaffPlacements": [
+        "line3",
+        "space3"
+      ],
+      "printEvidenceStatus": "DETAILED_PRINTED_NOTE_COMPARISON_PENDING",
+      "sourceVsPrintNeumeShape": "NOT_CERTIFIED",
+      "sourceVsPrintEpisemaMora": "NOT_CERTIFIED",
+      "sourceVsPrintAccidentals": "NOT_CERTIFIED",
+      "sourceVsPrintSyllableUnderlay": "NOT_CERTIFIED",
+      "allPrintedPitchesCertified": false,
+      "editorialApproval": false
+    },
+    {
+      "ordinal": 23,
+      "phrase": 4,
+      "printedSystem": 2,
+      "printedFolio": "54*",
+      "syllable": "e",
+      "sourceGabcNeume": "ii",
+      "sourcePitchLetters": [
+        "i",
+        "i"
+      ],
+      "sourceStaffSlotsFromBottomLine": [
+        5,
+        5
+      ],
+      "sourceStaffPlacements": [
+        "space3",
+        "space3"
+      ],
+      "printEvidenceStatus": "DETAILED_PRINTED_NOTE_COMPARISON_PENDING",
+      "sourceVsPrintNeumeShape": "NOT_CERTIFIED",
+      "sourceVsPrintEpisemaMora": "NOT_CERTIFIED",
+      "sourceVsPrintAccidentals": "NOT_CERTIFIED",
+      "sourceVsPrintSyllableUnderlay": "NOT_CERTIFIED",
+      "allPrintedPitchesCertified": false,
+      "editorialApproval": false
+    },
+    {
+      "ordinal": 24,
+      "phrase": 4,
+      "printedSystem": 2,
+      "printedFolio": "54*",
+      "syllable": "e",
+      "sourceGabcNeume": "g",
+      "sourcePitchLetters": [
+        "g"
+      ],
+      "sourceStaffSlotsFromBottomLine": [
+        3
+      ],
+      "sourceStaffPlacements": [
+        "space2"
+      ],
+      "printEvidenceStatus": "DETAILED_PRINTED_NOTE_COMPARISON_PENDING",
+      "sourceVsPrintNeumeShape": "NOT_CERTIFIED",
+      "sourceVsPrintEpisemaMora": "NOT_CERTIFIED",
+      "sourceVsPrintAccidentals": "NOT_CERTIFIED",
+      "sourceVsPrintSyllableUnderlay": "NOT_CERTIFIED",
+      "allPrintedPitchesCertified": false,
+      "editorialApproval": false
+    },
+    {
+      "ordinal": 25,
+      "phrase": 4,
+      "printedSystem": 2,
+      "printedFolio": "54*",
+      "syllable": "lé",
+      "sourceGabcNeume": "hj",
+      "sourcePitchLetters": [
+        "h",
+        "j"
+      ],
+      "sourceStaffSlotsFromBottomLine": [
+        4,
+        6
+      ],
+      "sourceStaffPlacements": [
+        "line3",
+        "line4"
+      ],
+      "printEvidenceStatus": "DETAILED_PRINTED_NOTE_COMPARISON_PENDING",
+      "sourceVsPrintNeumeShape": "NOT_CERTIFIED",
+      "sourceVsPrintEpisemaMora": "NOT_CERTIFIED",
+      "sourceVsPrintAccidentals": "NOT_CERTIFIED",
+      "sourceVsPrintSyllableUnderlay": "NOT_CERTIFIED",
+      "allPrintedPitchesCertified": false,
+      "editorialApproval": false
+    },
+    {
+      "ordinal": 26,
+      "phrase": 4,
+      "printedSystem": 2,
+      "printedFolio": "54*",
+      "syllable": "i",
+      "sourceGabcNeume": "h",
+      "sourcePitchLetters": [
+        "h"
+      ],
+      "sourceStaffSlotsFromBottomLine": [
+        4
+      ],
+      "sourceStaffPlacements": [
+        "line3"
+      ],
+      "printEvidenceStatus": "DETAILED_PRINTED_NOTE_COMPARISON_PENDING",
+      "sourceVsPrintNeumeShape": "NOT_CERTIFIED",
+      "sourceVsPrintEpisemaMora": "NOT_CERTIFIED",
+      "sourceVsPrintAccidentals": "NOT_CERTIFIED",
+      "sourceVsPrintSyllableUnderlay": "NOT_CERTIFIED",
+      "allPrintedPitchesCertified": false,
+      "editorialApproval": false
+    },
+    {
+      "ordinal": 27,
+      "phrase": 4,
+      "printedSystem": 2,
+      "printedFolio": "54*",
+      "syllable": "son.",
+      "sourceGabcNeume": "ighvGFE.",
+      "sourcePitchLetters": [
+        "i",
+        "g",
+        "h",
+        "G",
+        "F",
+        "E"
+      ],
+      "sourceStaffSlotsFromBottomLine": [
+        5,
+        3,
+        4,
+        3,
+        2,
+        1
+      ],
+      "sourceStaffPlacements": [
+        "space3",
+        "space2",
+        "line3",
+        "space2",
+        "line2",
+        "space1"
+      ],
+      "printEvidenceStatus": "DETAILED_PRINTED_NOTE_COMPARISON_PENDING",
+      "sourceVsPrintNeumeShape": "NOT_CERTIFIED",
+      "sourceVsPrintEpisemaMora": "NOT_CERTIFIED",
+      "sourceVsPrintAccidentals": "NOT_CERTIFIED",
+      "sourceVsPrintSyllableUnderlay": "NOT_CERTIFIED",
+      "allPrintedPitchesCertified": false,
+      "editorialApproval": false
+    }
+  ],
+  "priorityDiscrepancyQueue": [
+    {
+      "groups": [
+        5,
+        11,
+        18
+      ],
+      "question": "Source h_ horizontal episema sign must be compared against each printed system at high resolution",
+      "status": "OPEN"
+    },
+    {
+      "groups": [
+        7,
+        13,
+        20,
+        27
+      ],
+      "question": "Inspect printed mora dots and terminal cadence spacing, especially final Kyrie",
+      "status": "OPEN"
+    },
+    {
+      "groups": [
+        14,
+        15
+      ],
+      "question": "Verify printed phrase split across system 1→2 and exact syllabic neume underlay",
+      "status": "OPEN"
+    },
+    {
+      "groups": [
+        25,
+        26,
+        27
+      ],
+      "question": "Compare final Kyrie distinct neumes, source note letter-case (inclined notes), ledger pitch and rhythm against original print",
+      "status": "OPEN"
+    }
+  ],
+  "publication": {
+    "researchOnly": true,
+    "canonical65CardsChanged": false,
+    "sourceGabcRewritten": false,
+    "printedScoreCertified": false,
+    "localProgrammeAssigned": false,
+    "licenseForAudioClaimed": false
+  }
+}
