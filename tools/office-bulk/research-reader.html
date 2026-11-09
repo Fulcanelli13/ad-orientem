@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Ad Orientem · Divine Office Research Reader</title>
+<style>
+:root{color-scheme:dark;--bg:#10151b;--panel:#1b222b;--panel2:#222c36;--ink:#ece8df;--muted:#acb8c2;--line:#34414d;--accent:#d0b78e;--size:17px}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:var(--size)/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--accent)}button,input,select{font:inherit;color:inherit}button{cursor:pointer;border:1px solid var(--line);border-radius:10px;padding:8px 12px;background:var(--panel)}
+button[aria-pressed=true]{border-color:var(--accent);background:#39404a;color:#fff}button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+header{padding:14px 16px 12px;border-bottom:1px solid var(--line);background:#161d24}
+.shell{max-width:1090px;margin:0 auto}
+.kicker{text-transform:uppercase;letter-spacing:.13em;color:var(--accent);font-size:.68rem;font-weight:700}
+h1{font-family:Georgia,serif;font-size:1.55rem;font-weight:500;margin:5px 0 1px}
+.description{font-size:.82rem;line-height:1.4;color:var(--muted)}
+.controls{display:flex;gap:9px;align-items:center;flex-wrap:wrap;padding:12px 0}
+.controls label{font-size:.77rem;color:var(--muted)}.controls input{background:var(--panel);padding:8px 10px;border:1px solid var(--line);border-radius:9px}
+.hourrail{display:flex;gap:7px;overflow-x:auto;scrollbar-width:thin;padding:0 0 11px}
+.hourrail button{flex-shrink:0;white-space:nowrap;font-size:.81rem}
+main{max-width:1090px;margin:0 auto;padding:15px 16px 60px}
+.witness{color:var(--muted);font-size:.72rem;overflow-wrap:anywhere;margin:6px 0 15px}
+.hourTitle{font:normal 1.55rem/1.35 Georgia,serif;margin:15px 0 3px}
+.dayTitle{color:var(--accent);font-family:Georgia,serif;font-size:1.03rem}
+.navsec{display:flex;gap:7px;overflow-x:auto;scrollbar-width:thin;margin:12px 0 18px;padding-bottom:6px}
+.navsec button{font-size:.7rem;white-space:nowrap}
+.sections{display:grid;gap:13px}.section{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:18px 17px}
+.section h2{font:normal 1.21rem/1.3 Georgia,serif;color:var(--accent);margin:0 0 13px}
+.section h2 .sourceRef{font:normal .65rem system-ui,sans-serif;color:var(--muted)}
+.sourceBlock+.sourceBlock{border-top:1px solid #2c3540;padding-top:12px;margin-top:12px}
+.sourceLine{margin:.30em 0;overflow-wrap:anywhere;white-space:pre-wrap;font-family:Georgia,"Times New Roman",serif;font-size:1.07em;line-height:1.56}
+.sourceLine[data-role="section_title"],.sourceLine[data-role="psalm_heading"],.sourceLine[data-role="canticle_heading"],.sourceLine[data-role="lesson_heading"],.sourceLine[data-role="nocturn_heading"]{font:600 .83em/1.4 system-ui,sans-serif;color:var(--accent);margin-top:1.05em}
+.sourceLine[data-role="source_rubric_marker"]{font-size:.85em;color:var(--muted);font-style:italic}
+.sourceLine[data-role="numbered_scripture_line"]{padding-left:12px;border-left:2px solid #3f4d59}
+.sourceLine[data-role="versicle_line"],.sourceLine[data-role="response_line"]{padding-left:4px}
+.sourceLine[data-role="antiphon_line"]{color:#e6d1b2}
+.sourceLine .verseNo{color:var(--muted);font:normal .75em system-ui,sans-serif;padding-right:6px}
+.status{padding:11px 13px;border-radius:9px;background:var(--panel2);font-size:.82rem;color:var(--muted)}
+.error{border-left:3px solid #c17878}
+.empty{margin:30px 0;color:var(--muted)}
+footer{font-size:.72rem;color:var(--muted);padding:30px 0}
+@media(min-width:840px){.sections{grid-template-columns:1fr}header{position:sticky;top:0;z-index:5}h1{font-size:1.8rem}
+.section{padding:26px 30px}.hourTitle{font-size:2rem}.sourceLine{font-size:1.14em}}
+@media(max-width:360px){main{padding:12px 10px 40px}header{padding:12px 10px}
+.section{padding:13px 12px}.controls{gap:5px}.hourrail button{padding:7px 9px}}
+</style>
+</head>
+<body>
+<header><div class="shell">
+<div class="kicker">Ad Orientem · Source laboratory</div>
+<h1>Divine Office <span style="font-size:.55em;color:var(--muted)">1960 · Latin</span></h1>
+<div class="description">Private source inspection only. Complete extracted text is not independently liturgically certified or authorized for publication.</div>
+<div class="controls">
+<button type="button" id="previous" aria-label="Previous day">‹ Day</button>
+<label for="date">Civil date</label><input type="date" id="date" aria-label="Civil date">
+<button type="button" id="next" aria-label="Next day">Day ›</button>
+<button type="button" id="smaller" aria-label="Decrease text size">A−</button>
+<button type="button" id="larger" aria-label="Increase text size">A+</button>
+</div>
+<nav class="hourrail" aria-label="Canonical Hours" id="hours"></nav>
+</div></header>
+<main>
+<div id="status" role="status" class="status">Loading source index…</div>
+<div id="daytitle" class="dayTitle"></div>
+<h2 id="hourtitle" class="hourTitle"></h2>
+<div id="witness" class="witness"></div>
+<nav class="navsec" aria-label="Source sections" id="sectionsnav"></nav>
+<div class="sections" id="sections"></div>
+<footer>Source: pinned Divinum Officium, Rubrics 1960, Latin original. Each line preserves its original XHTML block and line provenance. This research reader does not assert that calendar precedence, musical tones or textual variants have been independently collated.</footer>
+</main>
+<script type="module">
+const HOURS=["Matutinum","Laudes","Prima","Tertia","Sexta","Nona","Vespera","Completorium"];
+const LABELS=["Matins","Lauds","Prime","Terce","Sext","None","Vespers","Compline"];
+const $=id=>document.getElementById(id);
+const state={config:null,date:"",hour:"Completorium",data:null,textSize:17,seq:0};
+function status(message,isError=false){$("status").textContent=message;$("status").classList.toggle("error",isError)}
+function node(tag,text,cls){const item=document.createElement(tag);if(text!==undefined)item.textContent=text;if(cls)item.className=cls;return item}
+function iso(date){return [date.getUTCFullYear(),String(date.getUTCMonth()+1).padStart(2,"0"),String(date.getUTCDate()).padStart(2,"0")].join("-")}
+function offset(date,days){const d=new Date(date+"T12:00:00Z");d.setUTCDate(d.getUTCDate()+days);return iso(d)}
+function pathFor(date){const [year,month,day]=date.split("-");return "./"+year+"/"+month+"/"+day+".json"}
+function addButtons(){for(let i=0;i<HOURS.length;i++){
+ const b=node("button",LABELS[i]);b.type="button";b.dataset.hour=HOURS[i];
+ b.setAttribute("aria-pressed",String(state.hour===HOURS[i]));
+ b.addEventListener("click",()=>{state.hour=HOURS[i];render()});
+ $("hours").append(b)
+}}
+function render(){
+ const value=state.data;
+ $("sections").replaceChildren();$("sectionsnav").replaceChildren();
+ for(const b of $("hours").querySelectorAll("button"))b.setAttribute("aria-pressed",String(b.dataset.hour===state.hour));
+ if(!value||!value.hours||!value.hours[state.hour]){
+  status("No source record for this date and Hour",true);return
+ }
+ const record=value.hours[state.hour];
+ const sections=record.sections||[];
+ $("daytitle").textContent=record.title+" · "+record.date;
+ $("hourtitle").textContent=LABELS[HOURS.indexOf(state.hour)];
+ $("witness").textContent="Source XHTML: "+record.source.epub_entry+
+  " · SHA-256: "+record.source.xhtml_sha256+
+  " · "+sections.length+" source sections · "+record.source_line_count+" original lines";
+ status("SOURCE EXTRACTED · NOT LITURGICALLY CERTIFIED · NOT PUBLIC");
+ for(const section of sections){
+  const key="section-"+section.index;
+  const nav=node("button",section.label||section.kind);nav.type="button";
+  nav.addEventListener("click",()=>document.getElementById(key)?.scrollIntoView({block:"start",behavior:"smooth"}));
+  $("sectionsnav").append(nav);
+  const card=node("section",undefined,"section");card.id=key;
+  card.setAttribute("aria-label",section.label||section.kind);
+  const heading=node("h2",section.label||section.kind.replaceAll("_"," "));
+  const ref=node("span","  · original source", "sourceRef");heading.append(ref);card.append(heading);
+  for(const block of section.source_blocks){
+   const holder=node("div",undefined,"sourceBlock");
+   holder.dataset.ordinal=String(block.ordinal);
+   if(block.source_attrs?.id)holder.dataset.sourceId=block.source_attrs.id;
+   for(const line of block.lines){
+    const p=node("p",undefined,"sourceLine");p.dataset.role=line.type;
+    p.dataset.sourceBlock=String(line.source_block);
+    p.dataset.sourceLine=String(line.source_line);
+    // Never render original XHTML: use textContent so prayer content
+    // cannot inject script or rewrite the private reader.
+    if(line.type==="numbered_scripture_line"&&/^\d+:\d+/.test(line.text)){
+     const m=/^(\d+:\d+(?:-\d+)?)(.*)$/u.exec(line.text);
+     p.append(node("span",m[1],"verseNo"),document.createTextNode(m[2]));
+    }else p.textContent=line.text;
+    holder.append(p)
+   }
+   card.append(holder)
+  }
+  $("sections").append(card)
+ }
+}
+async function load(date){
+ const seq=++state.seq;
+ state.date=date;$("date").value=date;status("Loading exact Latin source for "+date+"…");
+ $("sections").replaceChildren();$("sectionsnav").replaceChildren();
+ try{
+  if(date<state.config.first||date>state.config.last)throw Error("Date outside the two source years");
+  const response=await fetch(pathFor(date),{cache:"force-cache"});
+  if(!response.ok)throw Error("No source day available ("+response.status+")");
+  const record=await response.json();
+  if(record.date!==date||record.private_research_only!==true||record.public_reader_authorized!==false)
+   throw Error("Source research status or date mismatch");
+  if(seq!==state.seq)return;
+  state.data=record;render();
+ }catch(error){if(seq!==state.seq)return;
+  state.data=null;$("sections").replaceChildren();$("sectionsnav").replaceChildren();
+  $("daytitle").textContent=date;$("hourtitle").textContent="";
+  $("witness").textContent="";status(String(error.message||error),true);
+ }
+}
+$("date").addEventListener("change",()=>{if($("date").value)load($("date").value)});
+for(const [id,days] of [["previous",-1],["next",1]])$(id).addEventListener("click",()=>{
+ const target=offset(state.date,days);
+ if(target>=state.config.first&&target<=state.config.last)load(target)
+});
+for(const [id,delta] of [["smaller",-1],["larger",1]])$(id).addEventListener("click",()=>{
+ state.textSize=Math.max(14,Math.min(24,state.textSize+delta));
+ document.documentElement.style.setProperty("--size",state.textSize+"px")
+});
+addButtons();
+(async()=>{
+ try{
+  const response=await fetch("./config.json",{cache:"force-cache"});
+  if(!response.ok)throw Error("Private research index missing");
+  const config=await response.json();
+  if(config.schema!=="ao.office.1960.private-reader-index.v1"||
+     config.public_reader_authorized!==false||config.first!=="2026-01-01"||
+     config.last!=="2027-12-31")throw Error("Untrusted source index");
+  state.config=config;$("date").min=config.first;$("date").max=config.last;
+  const query=new URL(location.href).searchParams;
+  const date=query.get("date");
+  await load(date&&date>=config.first&&date<=config.last?date:config.first)
+ }catch(error){status(String(error.message||error),true)}
+})();
+</script>
+</body>
+</html>
