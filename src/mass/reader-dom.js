@@ -2634,10 +2634,23 @@ function syncRailIconSurfaces(root){
   syncRailVisibility(root);
 }
 function syncIconlessSourceRubric(root,current,mode,iconResolver,form,language){
-  for(const old of root.querySelectorAll?.("[data-ao-iconless-rubric]")??[])
-    old.remove();
-  if(mode!=="LIVE")return;
   const cueId=current?.nativeCueId??null;
+  // A source-owned rubric belongs to its PARAGRAPH, not the momentary focus.
+  // C0084's three-small-crosses caption previously appeared when C0084 became
+  // active and vanished on C0083. Its 67px height change shifted the focus
+  // geometry at a fixed scrollTop and caused endless C0083/C0084 reversion.
+  // Retain that already-projected source caption within the same Gospel card
+  // until the card DOM is replaced; never leave it in the icon rail or imply
+  // that the priest's gesture was observed. Other stale cues still clear.
+  for(const old of root.querySelectorAll?.("[data-ao-iconless-rubric]")??[]){
+    const owner=old.closest?.(".ao-reader-paragraph");
+    const persistentGospel=mode==="LIVE" &&
+      old.dataset.sourceCueId==="AO.SM.C0084" &&
+      owner?.dataset.cueId==="AO.SM.C0084";
+    if(persistentGospel)continue;
+    if(mode!=="LIVE" || old.dataset.sourceCueId!==cueId)old.remove();
+  }
+  if(mode!=="LIVE")return;
   if(!/^AO\.SM\.C\d{4}$/.test(String(cueId??"")))return;
   const action=current?.priestAction;
   const sourceCueId=action?.cueId??null;
@@ -2680,13 +2693,27 @@ function syncIconlessSourceRubric(root,current,mode,iconResolver,form,language){
       style?.display!=="none" && style?.visibility!=="hidden" &&
       Number(style?.opacity??1)>0;
   });
+  const existing=owner.querySelector?.(
+    '.ao-iconless-source-rubric[data-source-cue-id="'+cueId+'"]'
+  );
   if(decision!==CUE_SURFACE.INLINE_RUBRIC &&
-     !(elevationRailFallback&&!visibleExactRubric))return;
+     !(elevationRailFallback&&!visibleExactRubric)){
+    // If the exact approved pictogram is available, no duplicate rubric.
+    existing?.remove?.();
+    return;
+  }
   // The cue may use the native reader's plain-string action shape;
   // textValue also covers the sourced {text} shape without inventing copy.
   const label=sourceActionRubricLabel(
     action?.label??action?.action??action?.value??textValue(action),language);
   if(!label)return;
+  // A cue-only refresh must never tear down/recreate the same 67px inline
+  // source paragraph: keep the exact approved text in place across frames.
+  if(existing){
+    if(existing.textContent!==label)existing.textContent=label;
+    if(existing.dataset.sourceMeaning!==meaning)existing.dataset.sourceMeaning=meaning;
+    return;
+  }
   const doc=owner.ownerDocument??globalThis.document;
   const note=doc.createElement("span");
   note.className="ao-iconless-source-rubric";
@@ -4584,104 +4611,69 @@ export function createReaderDomAdapter({
     const body=root.querySelector?.('[data-role="paragraphs"]');
     if(!card?.getBoundingClientRect || !body?.getBoundingClientRect ||
        !card?.style?.setProperty || !card?.ownerDocument?.defaultView?.getComputedStyle)return;
-    // Recompute from the original fixed layout every time, not from the
-    // previously extended size. This also handles Schola collapse/expansion.
-    card.style.setProperty("--ao-short-cue-tail","0px");
-    const cueCount=body.querySelectorAll?.(".ao-reader-paragraph[data-cue-id]")?.length??0;
+    // Preserve existing scroll travel until its replacement is ready. The
+    // previous reset-to-zero collapsed scrollTop near short Gospel cues while
+    // a late layout/Schola ResizeObserver was settling, moving C0084 back
+    // to C0083 without a user gesture. Calculate against the original
+    // padding analytically and commit the next tail only once.
+    const previousTail=Math.max(0,Number.parseFloat(
+      card.style.getPropertyValue("--ao-short-cue-tail"))||0);
+    const cues=[...(body.querySelectorAll?.(".ao-reader-paragraph[data-cue-id]")??[])];
     const readingCount=body.querySelectorAll?.('.ao-reader-paragraph:not([data-kind="RUBRIC"])')?.length??0;
-    const focusCount=Math.max(cueCount,readingCount);
+    const focusCount=Math.max(cues.length,readingCount);
     if(focusCount<2){
       delete body.dataset.aoReadingRunway;
       body.style.removeProperty("--ao-min-reading-travel");
+      if(previousTail)card.style.setProperty("--ao-short-cue-tail","0px");
       return;
     }
-    // Let CSS enforce a scrollable reading region independent of a transient
-    // JS layout measurement. This does not enlarge any paragraph itself.
-    body.dataset.aoReadingRunway="true";
-    body.style.setProperty("--ao-min-reading-travel",
-      Math.min(640,Math.max(72,(focusCount-1)*58))+"px");
     const viewport=Math.max(0,card.clientHeight||0);
     if(!viewport)return;
     const win=card.ownerDocument.defaultView;
-    const basePadding=Number.parseFloat(win.getComputedStyle(card).paddingBottom)||0;
-    const contentBottom=body.getBoundingClientRect().bottom-card.getBoundingClientRect().top+
-      (Number(card.scrollTop)||0);
-    // Allow at least one meaningful scroll interval per distinct cue, capped
-    // at 240px on longer devices. Never modify individual prayer line heights.
-    // Gloria and Credo end with two distinct word-owned events:
-    // rise at Cum Sancto Spiritu / Et vitam, then the concluding Amen.
-    // The last-cue edge guard must not swallow the penultimate cue.
-    // Give those dense Ordinary cards extra end scroll *territory*,
-    // without stretching prayer paragraphs or moving their text anchors.
+    const baseline=Math.min(640,Math.max(72,(focusCount-1)*58));
     const closingOrdinary=/\b(?:Gloria|Credo)\b/i.test(current?.sectionTitle??"");
     const travel=Math.min(closingOrdinary?340:240,Math.max(68,(focusCount-1)*56));
-    const extra=Math.max(0,Math.ceil(viewport+travel-contentBottom-basePadding));
-    // On naturally long Ordinary cards, extra can be zero even though the
-    // source-backed penultimate doxology is swallowed by the hard last-cue
-    // scroll edge. Reserve precisely enough additional scroll to place
-    // that cue on the 39% focus line *before* the final-cue edge zone.
-    let closingExtra=0;
-    // The penultimate cue must have reading territory BEFORE the hard
-    // final-cue edge guard. This applies to the Confiteor, altar ascent,
-    // responses and Offertory as well as the Gloria/Credo doxologies.
-    // Only the source cue's geometric position determines the tail.
-    const cues=[...(body.querySelectorAll?.(".ao-reader-paragraph[data-cue-id]")??[])];
+    let guaranteed=baseline,requiredScroll=null;
     const penultimate=cues.at(-2);
     if(penultimate){
       const cr=card.getBoundingClientRect(),pr=penultimate.getBoundingClientRect();
       const center=pr.top-cr.top+card.scrollTop+pr.height/2;
-      const requiredScroll=center-viewport*.39+24;
-      // CSS min-height provides real scroll travel relative to the settled
-      // viewport. Make that travel large enough to center the penultimate
-      // event, not merely proportional to the number of paragraphs; a
-      // one-line response near the bottom otherwise loses its entire turn.
-      const baseline=Math.min(640,Math.max(72,(focusCount-1)*58));
+      requiredScroll=center-viewport*.39+24;
       const first=cues[0]?.getBoundingClientRect?.();
       const firstCenter=first
         ? Math.max(24,first.top-cr.top+card.scrollTop+first.height/2)
         :24;
-      // The cue-focus owner ramps its reading line from the opening cue
-      // using an offset of firstCenter + .8*scrollTop, so its early focus
-      // coordinate advances at 1.8x scroll. Short concluding responses
-      // can otherwise be bypassed by the terminal-cue edge rule before
-      // the focus line ever reaches them (Pater noster C0210).
       const openingTravel=Math.max(0,(center-firstCenter)/1.8)+64;
-      // Long composite source cards can place the penultimate cue beyond
-      // 1800px; the former cap made C0199 (Per quem) unreachable.
-      // The 390px production Gospel card includes the distinct C0087
-      // "Laus tibi, Christe" response immediately before terminal C0088.
-      // Its 39% reading-line handoff needs more than the original 626px
-      // scroll capacity after the source-neume SVGs finish laying out.
-      // Increasing padding alone does NOT create travel: the CSS prayer
-      // body min-height compensates for the extra parent padding.
-      // Increase the body's genuine minimum reading travel instead.
-      // Exact source ownership only; no extra paragraph, fabricated cue,
-      // altered prayer text or global scroll change.
+      // C0087 "Laus tibi, Christe" must have a real interval before C0088.
       const gospelResponseReserve=cues.some(node=>
         node.dataset.cueId==="AO.SM.C0087") &&
         cues.at(-1)?.dataset.cueId==="AO.SM.C0088" ?128:0;
-      const guaranteed=Math.min(3600,Math.max(baseline,
+      guaranteed=Math.min(3600,Math.max(baseline,
         Math.ceil(requiredScroll+28),Math.ceil(openingTravel))
         +gospelResponseReserve);
-      body.style.setProperty("--ao-min-reading-travel",guaranteed+"px");
-      const availableScroll=Math.max(0,card.scrollHeight-viewport);
-      closingExtra=Math.max(0,Math.ceil(requiredScroll-availableScroll));
     }
+    // Set one final runway rather than shrinking it to baseline and then
+    // expanding it again; both intermediate writes could clamp scrollTop.
+    body.dataset.aoReadingRunway="true";
+    if(body.style.getPropertyValue("--ao-min-reading-travel")!==guaranteed+"px")
+      body.style.setProperty("--ao-min-reading-travel",guaranteed+"px");
+    const style=win.getComputedStyle(card);
+    const basePadding=Math.max(0,(Number.parseFloat(style.paddingBottom)||0)-previousTail);
+    const contentBottom=body.getBoundingClientRect().bottom-card.getBoundingClientRect().top+
+      (Number(card.scrollTop)||0);
+    const extra=Math.max(0,Math.ceil(viewport+travel-contentBottom-basePadding));
+    // scrollHeight still includes the PREVIOUS tail. Subtract it instead of
+    // temporarily clearing CSS (which destroys the reader's scroll location).
+    const baseAvailableScroll=Math.max(0,card.scrollHeight-viewport-previousTail);
+    const closingExtra=requiredScroll==null?0:
+      Math.max(0,Math.ceil(requiredScroll-baseAvailableScroll));
     let tail=Math.max(extra,closingExtra);
-    if(tail)card.style.setProperty("--ao-short-cue-tail",tail+"px");
-    // Verify actual scroll travel, rather than deriving it from content
-    // bottom/padding (which can be wrong in the curated fixed-height stage).
-    // Dense short cards such as Kyrie, Gloria doxology, Credo and Agnus Dei
-    // previously had 0-38px of movement for 3-9 distinct source cues.
-    // Allocate a bounded reading runway WITHOUT stretching prayer rows.
+    if(previousTail!==tail)card.style.setProperty("--ao-short-cue-tail",tail+"px");
+    // A short prayer's content can be smaller than the fixed viewport; its
+    // unused empty-space deficit must be counted in addition to min travel.
     const actualMax=Math.max(0,card.scrollHeight-card.clientHeight);
-    const minimumTravel=Math.min(640,Math.max(72,(focusCount-1)*58));
+    const minimumTravel=baseline;
     if(actualMax+1<minimumTravel){
-      // scrollHeight is clamped to clientHeight when content is shorter than
-      // the viewport. Adding only (minimumTravel - actualMax) misses the
-      // invisible *empty-space deficit*: a 120px prayer inside a 450px
-      // viewport can absorb 300px of tail without scrolling at all.
-      // Measure the true last content edge plus the CURRENT CSS padding.
       const cardRect=card.getBoundingClientRect();
       const bodyRect=body.getBoundingClientRect();
       const padding=Number.parseFloat(win.getComputedStyle(card).paddingBottom)||0;
