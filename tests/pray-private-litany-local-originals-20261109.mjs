@@ -52,7 +52,7 @@ for(const contract of [
  'const bundle=await loadPrivateLitanyLocal(language)',
  'LIT.sourceMode=\'self-hosted-private-historical-witness\'',
  'data-ao-private-litany-bundled',
- 'const raw=await guidedWsText(witness.title,witness.cacheKey,language)',
+ 'raw=await guidedWsText(witness.title,witness.cacheKey,language)',
  'renderBatch03PublicLitanyReference()'
 ])assert.ok(presentation.includes(contract),"Lost historical reader/fallback contract: "+contract);
 for(const file of ["private-litany-of-saints-1883-en.v1.json","private-litany-of-saints-1862-fr.v1.json"])
