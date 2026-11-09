@@ -183,6 +183,36 @@ try{
       });
       assert.equal(probe.duplicates,0,
         "More than one visual paragraph simultaneously active: "+item.title);
+      if(probe.unreachableTotal&&item.title==="Proclamation of the Holy Gospel"){
+        const diagnostic=await page.evaluate(async ()=>{
+          const root=document.querySelector("#ao-r17-native-reader-preview");
+          const card=root.querySelector(".ao-prayer-card");
+          const body=card.querySelector('[data-role="paragraphs"]');
+          const box=card.getBoundingClientRect();
+          const rows=[...body.querySelectorAll(".ao-reader-paragraph")]
+           .filter(x=>x.dataset.kind!=="RUBRIC"&&x.getClientRects().length);
+          const items=rows.map(x=>{const r=x.getBoundingClientRect();return {
+            cue:x.dataset.cueId,kind:x.dataset.kind,reading:x.dataset.readingActive,
+            position:x.dataset.readingPosition,top:Math.round(r.top-box.top+card.scrollTop),
+            bottom:Math.round(r.bottom-box.top+card.scrollTop),
+            text:(x.textContent||"").trim().replace(/\\s+/g," ").slice(0,65)
+          }});
+          const max=card.scrollHeight-card.clientHeight;
+          const transitions=[], seen=new Set();
+          for(let y=0;y<=max+4;y+=4){
+            card.scrollTop=Math.min(y,max);card.dispatchEvent(new Event("scroll",{bubbles:true}));
+            await new Promise(ok=>requestAnimationFrame(()=>requestAnimationFrame(ok)));
+            const active=rows.filter(x=>x.dataset.readingActive==="true");
+            const key=active.map(x=>x.dataset.cueId).join(",");
+            if(!seen.has(key)){transitions.push({at:Math.round(card.scrollTop),active:key});seen.add(key);}
+          }
+          return {max,clientHeight:card.clientHeight,scrollHeight:card.scrollHeight,items,
+            transitions,bodyHeight:body.getBoundingClientRect().height,
+            shortTail:card.style.getPropertyValue("--ao-short-cue-tail"),
+            minTravel:body.style.getPropertyValue("--ao-min-reading-travel")};
+        });
+        console.log("GOSPEL_C0087_DIAGNOSTIC="+JSON.stringify(diagnostic));
+      }
       assert.equal(probe.unreachableTotal,0,
         "Visually skipped LIVE paragraphs in "+item.title+": "+
           JSON.stringify(probe.unreachable));
