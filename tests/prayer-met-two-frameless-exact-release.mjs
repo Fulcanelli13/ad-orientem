@@ -43,8 +43,8 @@ for(const w of master.works){
 }
 assert.equal(count,8);
 const states=prayerEditorialPublicationSummary().states;
-assert.equal(states.PUBLISHED_EXACT_PHOTO,51);
-assert.equal(states.APPROVED_EXACT_PHOTO_PENDING,138);
+assert.equal(states.PUBLISHED_EXACT_PHOTO,47,"Four Bouts photo slots must not publish after owner rejection");
+assert.equal(states.APPROVED_EXACT_PHOTO_PENDING,142,"Four rejected Bouts photo slots return to pending");
 for(const id of ["COV-pray.rosary","COV-prayer.seven_sorrows_chaplet","COV-pray.confession","COV-novena.st_therese"]){
  assert.equal(resolvePrayerEditorialArtwork(id).state,"PROTECTED_EXISTING_COVER",id);
 }
@@ -60,4 +60,4 @@ for(const id of ["COV-pray.stations","STG-pray.seven_words-01"]){
 }
 assert.equal(resolvePrayerEditorialArtwork("HERO-05").state,"PROVISIONAL_NOT_PUBLISHED");
 assert.equal(resolvePrayerEditorialArtwork("HERO-03").state,"SCOPE_HOLD");
-console.log("PASS two original Met JPEG SHA256, two frame-only derivatives, eight approved exact slots, 51 total photos, 15 attribution-held slots remain unavailable");
+console.log("PASS two original Met JPEG SHA256, two frame-only derivatives, eight approved exact slots, 47 eligible photos, four Bouts image sources withdrawn and original slot selections preserved");
