@@ -18,11 +18,14 @@ test("Full September sequence is 20 Latin tercets, preserving original 13 Statio
  assert.ok(!full.some(x=>x.startsWith("Fac me cruce custodiri")));
  assert.equal(completeSeptemberStabatMater(full),null);
 });
-test("September 20 is a Latin-only separately sourced work, not a 1962 facsimile certificate",()=>{
+test("September 20 is Latin-only; 1962 printed p. 671 confirms key lines, not all editions",()=>{
  assert.equal(STABAT_MATER_SEPTEMBER_SOURCE.stanzaCount,20);
  assert.equal(STABAT_MATER_SEPTEMBER_SOURCE.stationExtractCount,13);
  assert.equal(STABAT_MATER_SEPTEMBER_SOURCE.language,"la");
- assert.equal(STABAT_MATER_SEPTEMBER_SOURCE.printed1962ImageIndependentlyCollated,false);
+ assert.equal(STABAT_MATER_SEPTEMBER_SOURCE.printed1962ImageIndependentlyCollated,true);
+ assert.equal(STABAT_MATER_SEPTEMBER_SOURCE.printed1962ImageCollationScope,"SEPTEMBER_15_STANZAS_18_TO_20_AND_20_TERCET_COUNT");
+ assert.equal(STABAT_MATER_SEPTEMBER_SOURCE.originalBenzigerEditionIdentityCertified,false);
+ assert.equal(STABAT_MATER_SEPTEMBER_SOURCE.original1961EditionCollationCertified,false);
  assert.equal(STABAT_MATER_SEPTEMBER_SOURCE.variant19,"CHRISTE_CUM_SIT_HINC_EXIRE");
  assert.equal(STABAT_MATER_SEPTEMBER_SOURCE.translationStatus,"LATIN_ONLY");
 });
@@ -37,4 +40,22 @@ test("Original Stations between-station reading stays 13 and full Latin is separ
  assert.match(runtime,/stabatLibrarySection/);
  assert.match(runtime,/stabat-mater-september-styles\.js/);
 
+});
+
+test("1962 photographed printed folio independently reads ne urar, not missing-ne OCR",()=>{
+ const evidence=JSON.parse(readFileSync("data/pray/stabat-september-1962-printed-p671-collation-20261109.v1.json","utf8"));
+ assert.equal(evidence.printedFolio,"Festa septembris (15), p. 671");
+ assert.equal(evidence.scanNumber,748);
+ assert.equal(evidence.imageIsDirectPhotograph,true);
+ assert.equal(evidence.selectedReading18,"Flammis ne urar succensus");
+ assert.equal(evidence.printedReading19,"Christe, cum sit hinc exire");
+ assert.equal(evidence.printedReading20,"Quando corpus morietur");
+ assert.equal(evidence.sequenceTercets,20);
+ assert.equal(evidence.exactBenzigerEditionCertification,false);
+ assert.equal(evidence.completeOrthographicCollation,false);
+ assert.equal(evidence.liturgicalPostlude,"Amen. Alleluia.");
+ assert.ok(evidence.imageURL.endsWith("/Missale-Romanum-1962-Roman-Missal-color-0748.jpg"));
+ assert.ok(STABAT_MATER_SEPTEMBER_FINAL_SEVEN[4].startsWith(evidence.selectedReading18));
+ assert.ok(STABAT_MATER_SEPTEMBER_FINAL_SEVEN[5].startsWith(evidence.printedReading19));
+ assert.ok(STABAT_MATER_SEPTEMBER_FINAL_SEVEN[6].startsWith(evidence.printedReading20));
 });
