@@ -19,15 +19,15 @@ assert.equal(openPrayerStatuses.filter(x=>x==='SUPPLEMENTARY_NOT_ASSIGNED').leng
 assert.equal(openPrayerStatuses.filter(x=>x==='HOLD_RESPECTED').length,14);
 
 const linked=audit.records.filter(x=>x.candidateCount>0);
-assert.equal(linked.length,69);
-assert.equal(audit.records.filter(x=>!x.candidateCount).length,101);
+assert.equal(linked.length,99);
+assert.equal(audit.records.filter(x=>!x.candidateCount).length,71);
 assert.deepEqual(Object.entries(audit.counts.byClass).map(([rank,x])=>[rank,x.unmatchedBaseline,x.withResearchLeads,x.stillWithoutLeads]),[
- ['II',29,25,4],['III',101,9,92],['IV',40,35,5]
+ ['II',29,25,4],['III',101,39,62],['IV',40,35,5]
 ]);
 const edges=audit.records.flatMap(x=>x.artworkRelationships);
-assert.equal(edges.length,79);
-assert.equal(edges.filter(x=>x.kind==='EXISTING_989_GROUP_RESEARCH_LINK').length,24);
-assert.equal(edges.filter(x=>x.kind==='NEW_INSTITUTIONAL_OBJECT_LEAD').length,46);
+assert.equal(edges.length,116);
+assert.equal(edges.filter(x=>x.kind==='EXISTING_989_GROUP_RESEARCH_LINK').length,25);
+assert.equal(edges.filter(x=>x.kind==='NEW_INSTITUTIONAL_OBJECT_LEAD').length,82);
 assert.equal(edges.filter(x=>x.kind==='SECONDARY_OR_COMMONS_RESEARCH_ONLY').length,9);
 assert.equal(audit.counts.newAuthorizedAssignments,0);
 const groups=new Map(original.map(x=>[x.workGroupId,x]));
@@ -63,7 +63,15 @@ assert.ok(audit.records.find(x=>x.date==='2026-07-12').artworkRelationships.some
 assert.ok(audit.records.find(x=>x.date==='2026-10-11').artworkRelationships.some(x=>x.key==='Brooklyn:Tissot-Officers-Son-UNRESOLVED'));
 assert.ok(audit.records.find(x=>x.date==='2026-09-26').artworkRelationships.some(x=>x.key==='Rijks:200267736'));
 assert.ok(audit.records.find(x=>x.date==='2026-10-12').artworkRelationships.some(x=>x.key==='Brooklyn:Tissot-Officers-Son-UNRESOLVED'));
+assert.ok(audit.records.find(x=>x.date==='2026-01-28').artworkRelationships.some(x=>x.key==='Cincinnati:1917.58'),'saint Peter Nolasco museum original');
+assert.ok(audit.records.find(x=>x.date==='2026-02-07').artworkRelationships.some(x=>x.key==='Kress:K1047'),'Romuald original');
+assert.ok(audit.records.find(x=>x.date==='2026-06-18').artworkRelationships.some(x=>x.key==='Vatican:IconRoom:9'),'Ephrem icon');
+assert.ok(audit.records.find(x=>x.date==='2026-09-18').artworkRelationships.some(x=>x.key==='Met:724811'),'Costanzi Joseph of Cupertino');
+assert.ok(audit.records.find(x=>x.date==='2026-09-22').artworkRelationships.some(x=>x.key==='Louvre:MI888'),'Cerezo original Thomas of Villanova');
+assert.ok(audit.records.find(x=>x.date==='2026-10-03').artworkRelationships.every(x=>x.newPlacementAuthority==='NOT_GRANTED'),'protected Thérèse cover stays');
+assert.equal(audit.records.find(x=>x.date==='2026-01-22').artworkRelationships[0].relation,'MULTI_SAINT_FEAST_PARTIAL');
+
 
 assert.ok(audit.records.find(x=>x.date==='2026-11-08').artworkRelationships.some(x=>x.key==='Thyssen:1979.62'));
 assert.ok(audit.records.find(x=>x.date==='2026-10-18').artworkRelationships.some(x=>x.key==='REVIEW::commons:150920'));
-console.log('PASS: 170 unchanged Calendar holds, 27 protected Prayer holds, 69 dated research leads / 79 edges, no rejected originals or publication authority.');
+console.log('PASS: 170 unchanged Calendar holds, 27 protected Prayer holds, 99 dated research leads / 116 edges, no rejected originals or publication authority.');
