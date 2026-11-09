@@ -1,0 +1,587 @@
+{
+  "schema": "AO_SACRED_ART_NO_INTERNAL_LEADS_29_BATCH12_V1",
+  "as_of": "2026-11-09",
+  "state": "SOURCE_TYPE_AND_NEXT_ACTION_ONLY_NO_CANONICAL_ID_CHANGES",
+  "origin": "data/artwork/research/m2m-protected-missing-id-46-20261109.v1.json",
+  "rules": [
+    "No unindexed selected image is replaced with an unrelated painting",
+    "AI-generated derivative work is not the same file/object as its underlying old master or engraving",
+    "Multi-image Easter Vigil illustrations must stay event-separated, not merged into one image work",
+    "A historic portrait photograph is a photographic asset, not a historical oil painting",
+    "Chorus San Polo church series may verify station subject even while exact source photo is held",
+    "Source or gallery reference does not imply image licence, photo bytes, mobile QA or app canonical artwork ID"
+  ],
+  "summary": {
+    "triaged": 29,
+    "categories": {
+      "PAINTING_WITH_CROSS_BATCH_WORK_LEAD": 1,
+      "PHYSICAL_ARTWORK_CATALOGUE_AND_ASSET_LOOKUP": 20,
+      "AI_DERIVED_LOCAL_ASSET": 4,
+      "MULTI_IMAGE_SCENE_COMPOSITE": 1,
+      "HISTORICAL_PHOTOGRAPH_ASSET": 1,
+      "IN_SITU_STATION_KNOWN_NO_APP_ID": 2
+    },
+    "app_ids_created": 0,
+    "owner_selection_replacements": 0,
+    "known_same_series_san_polo_stations_13_14": 2
+  },
+  "rows": [
+    {
+      "target_type": "CALENDAR_DATE",
+      "target_id": "2026-01-01",
+      "historical_selection": {
+        "title": "The Circumcision",
+        "artist": "Tintoretto and workshop",
+        "source_url": null
+      },
+      "source_weak_candidate_count": 0,
+      "classification": "PAINTING_WITH_CROSS_BATCH_WORK_LEAD",
+      "work_lead_reference": "TINTORETTO_SAN_ROCCO_CIRCUMCISION",
+      "source_evidence_urls": [
+        "https://www.scuolagrandesanrocco.org/en/tintoretto/ground-floor-hall/"
+      ],
+      "required_next_action": "Compare the owner-approved Calendar Circumcision and batch9 in-situ San Rocco Circumcision. High subject/creator overlap is not proof the source pixels are the same; preserve selected Tintoretto/workshop credit.",
+      "identity_gate_hold": "PAINTING_ID_AND_EXACT_IMAGE_NOT_LINKED",
+      "canonical_app_id": null,
+      "selected_photo_verified": false,
+      "existing_artwork_selection_preserved": true,
+      "new_assignment_authorised": false
+    },
+    {
+      "target_type": "CALENDAR_DATE",
+      "target_id": "2026-02-22",
+      "historical_selection": {
+        "title": "Christ in the Desert",
+        "artist": "Ivan Kramskoi",
+        "source_url": null
+      },
+      "source_weak_candidate_count": 0,
+      "classification": "PHYSICAL_ARTWORK_CATALOGUE_AND_ASSET_LOOKUP",
+      "work_lead_reference": null,
+      "source_evidence_urls": [],
+      "required_next_action": "Search institutional physical-object record and prior owner-approved asset by exact title, artist and source URL or image hash; preserve selected painting.",
+      "identity_gate_hold": "EXACT_OBJECT_CATALOGUE_OR_LOCAL_ASSET_PROOF_MISSING",
+      "canonical_app_id": null,
+      "selected_photo_verified": false,
+      "existing_artwork_selection_preserved": true,
+      "new_assignment_authorised": false
+    },
+    {
+      "target_type": "CALENDAR_DATE",
+      "target_id": "2026-03-01",
+      "historical_selection": {
+        "title": "The Transfiguration",
+        "artist": "Raphael",
+        "source_url": null
+      },
+      "source_weak_candidate_count": 0,
+      "classification": "PHYSICAL_ARTWORK_CATALOGUE_AND_ASSET_LOOKUP",
+      "work_lead_reference": null,
+      "source_evidence_urls": [],
+      "required_next_action": "Search institutional physical-object record and prior owner-approved asset by exact title, artist and source URL or image hash; preserve selected painting.",
+      "identity_gate_hold": "EXACT_OBJECT_CATALOGUE_OR_LOCAL_ASSET_PROOF_MISSING",
+      "canonical_app_id": null,
+      "selected_photo_verified": false,
+      "existing_artwork_selection_preserved": true,
+      "new_assignment_authorised": false
+    },
+    {
+      "target_type": "CALENDAR_DATE",
+      "target_id": "2026-03-08",
+      "historical_selection": {
+        "title": "Christ Exorcising Devils from a Man — AI reinterpretation after Giacomo Cavedone",
+        "artist": "AI-derived after Giacomo Cavedone",
+        "source_url": null
+      },
+      "source_weak_candidate_count": 0,
+      "classification": "AI_DERIVED_LOCAL_ASSET",
+      "work_lead_reference": null,
+      "source_evidence_urls": [],
+      "required_next_action": "Locate original user-approved locally generated image by hash/asset manifest and maintain source-art dependency without substituting the historical museum painting.",
+      "identity_gate_hold": "LOCAL_AI_IMAGE_FILE_HASH_ORIGINAL_ASSET_NOT_LINKED",
+      "canonical_app_id": null,
+      "selected_photo_verified": false,
+      "existing_artwork_selection_preserved": true,
+      "new_assignment_authorised": false
+    },
+    {
+      "target_type": "CALENDAR_DATE",
+      "target_id": "2026-03-22",
+      "historical_selection": {
+        "title": "Christ Escapes the Stoning — AI reinterpretation after Lucas van Doetechum",
+        "artist": "AI-derived after Lucas van Doetechum",
+        "source_url": null
+      },
+      "source_weak_candidate_count": 0,
+      "classification": "AI_DERIVED_LOCAL_ASSET",
+      "work_lead_reference": null,
+      "source_evidence_urls": [],
+      "required_next_action": "Locate original user-approved locally generated image by hash/asset manifest and maintain source-art dependency without substituting the historical museum painting.",
+      "identity_gate_hold": "LOCAL_AI_IMAGE_FILE_HASH_ORIGINAL_ASSET_NOT_LINKED",
+      "canonical_app_id": null,
+      "selected_photo_verified": false,
+      "existing_artwork_selection_preserved": true,
+      "new_assignment_authorised": false
+    },
+    {
+      "target_type": "CALENDAR_DATE",
+      "target_id": "2026-03-30",
+      "historical_selection": {
+        "title": "The Anointing at Bethany",
+        "artist": "Peter Paul Rubens and Anthony van Dyck",
+        "source_url": null
+      },
+      "source_weak_candidate_count": 0,
+      "classification": "PHYSICAL_ARTWORK_CATALOGUE_AND_ASSET_LOOKUP",
+      "work_lead_reference": null,
+      "source_evidence_urls": [],
+      "required_next_action": "Search institutional physical-object record and prior owner-approved asset by exact title, artist and source URL or image hash; preserve selected painting.",
+      "identity_gate_hold": "EXACT_OBJECT_CATALOGUE_OR_LOCAL_ASSET_PROOF_MISSING",
+      "canonical_app_id": null,
+      "selected_photo_verified": false,
+      "existing_artwork_selection_preserved": true,
+      "new_assignment_authorised": false
+    },
+    {
+      "target_type": "CALENDAR_DATE",
+      "target_id": "2026-04-04",
+      "historical_selection": {
+        "title": "Easter Vigil prophecy illustrations: God Creating the World; The Destruction of Pharaoh’s Host",
+        "artist": "James Tissot; John Martin",
+        "source_url": null
+      },
+      "source_weak_candidate_count": 0,
+      "classification": "MULTI_IMAGE_SCENE_COMPOSITE",
+      "work_lead_reference": null,
+      "source_evidence_urls": [],
+      "required_next_action": "Treat Easter Vigil Genesis and Exodus images as two approved event-specific works, not one canonical object; verify their individual artwork/asset references.",
+      "identity_gate_hold": "TWO_WORKS_ONE_EDITORIAL_DESTINATION_DO_NOT_COLLAPSE",
+      "canonical_app_id": null,
+      "selected_photo_verified": false,
+      "existing_artwork_selection_preserved": true,
+      "new_assignment_authorised": false
+    },
+    {
+      "target_type": "CALENDAR_DATE",
+      "target_id": "2026-04-06",
+      "historical_selection": {
+        "title": "The Supper at Emmaus",
+        "artist": "Caravaggio",
+        "source_url": null
+      },
+      "source_weak_candidate_count": 0,
+      "classification": "PHYSICAL_ARTWORK_CATALOGUE_AND_ASSET_LOOKUP",
+      "work_lead_reference": null,
+      "source_evidence_urls": [],
+      "required_next_action": "Search institutional physical-object record and prior owner-approved asset by exact title, artist and source URL or image hash; preserve selected painting.",
+      "identity_gate_hold": "EXACT_OBJECT_CATALOGUE_OR_LOCAL_ASSET_PROOF_MISSING",
+      "canonical_app_id": null,
+      "selected_photo_verified": false,
+      "existing_artwork_selection_preserved": true,
+      "new_assignment_authorised": false
+    },
+    {
+      "target_type": "CALENDAR_DATE",
+      "target_id": "2026-04-07",
+      "historical_selection": {
+        "title": "Appearance of Christ to His Disciples",
+        "artist": "Anthony van Dyck",
+        "source_url": null
+      },
+      "source_weak_candidate_count": 0,
+      "classification": "PHYSICAL_ARTWORK_CATALOGUE_AND_ASSET_LOOKUP",
+      "work_lead_reference": null,
+      "source_evidence_urls": [],
+      "required_next_action": "Search institutional physical-object record and prior owner-approved asset by exact title, artist and source URL or image hash; preserve selected painting.",
+      "identity_gate_hold": "EXACT_OBJECT_CATALOGUE_OR_LOCAL_ASSET_PROOF_MISSING",
+      "canonical_app_id": null,
+      "selected_photo_verified": false,
+      "existing_artwork_selection_preserved": true,
+      "new_assignment_authorised": false
+    },
+    {
+      "target_type": "CALENDAR_DATE",
+      "target_id": "2026-04-08",
+      "historical_selection": {
+        "title": "The Second Miraculous Draught of Fishes — AI visual draft after James Tissot",
+        "artist": "AI-derived after James Tissot",
+        "source_url": "https://opencollection.brooklynmuseum.org/objects/4616"
+      },
+      "source_weak_candidate_count": 0,
+      "classification": "AI_DERIVED_LOCAL_ASSET",
+      "work_lead_reference": null,
+      "source_evidence_urls": [],
+      "required_next_action": "Locate original user-approved locally generated image by hash/asset manifest and maintain source-art dependency without substituting the historical museum painting.",
+      "identity_gate_hold": "LOCAL_AI_IMAGE_FILE_HASH_ORIGINAL_ASSET_NOT_LINKED",
+      "canonical_app_id": null,
+      "selected_photo_verified": false,
+      "existing_artwork_selection_preserved": true,
+      "new_assignment_authorised": false
+    },
+    {
+      "target_type": "CALENDAR_DATE",
+      "target_id": "2026-04-09",
+      "historical_selection": {
+        "title": "Christ and St Mary Magdalen at the Tomb",
+        "artist": "Rembrandt",
+        "source_url": null
+      },
+      "source_weak_candidate_count": 0,
+      "classification": "PHYSICAL_ARTWORK_CATALOGUE_AND_ASSET_LOOKUP",
+      "work_lead_reference": null,
+      "source_evidence_urls": [],
+      "required_next_action": "Search institutional physical-object record and prior owner-approved asset by exact title, artist and source URL or image hash; preserve selected painting.",
+      "identity_gate_hold": "EXACT_OBJECT_CATALOGUE_OR_LOCAL_ASSET_PROOF_MISSING",
+      "canonical_app_id": null,
+      "selected_photo_verified": false,
+      "existing_artwork_selection_preserved": true,
+      "new_assignment_authorised": false
+    },
+    {
+      "target_type": "CALENDAR_DATE",
+      "target_id": "2026-04-10",
+      "historical_selection": {
+        "title": "Missione degli Apostoli",
+        "artist": "Tommaso Minardi (with workshop/Fontana association)",
+        "source_url": "https://catalogo.fondazionezeri.unibo.it/scheda/opera/99995/Minardi%20Tommaso%2C%20Missione%20degli%20apostoli"
+      },
+      "source_weak_candidate_count": 0,
+      "classification": "PHYSICAL_ARTWORK_CATALOGUE_AND_ASSET_LOOKUP",
+      "work_lead_reference": null,
+      "source_evidence_urls": [],
+      "required_next_action": "Search institutional physical-object record and prior owner-approved asset by exact title, artist and source URL or image hash; preserve selected painting.",
+      "identity_gate_hold": "EXACT_OBJECT_CATALOGUE_OR_LOCAL_ASSET_PROOF_MISSING",
+      "canonical_app_id": null,
+      "selected_photo_verified": false,
+      "existing_artwork_selection_preserved": true,
+      "new_assignment_authorised": false
+    },
+    {
+      "target_type": "CALENDAR_DATE",
+      "target_id": "2026-04-11",
+      "historical_selection": {
+        "title": "Peter and John Running to the Sepulchre",
+        "artist": "Eugène Burnand",
+        "source_url": null
+      },
+      "source_weak_candidate_count": 0,
+      "classification": "PHYSICAL_ARTWORK_CATALOGUE_AND_ASSET_LOOKUP",
+      "work_lead_reference": null,
+      "source_evidence_urls": [],
+      "required_next_action": "Search institutional physical-object record and prior owner-approved asset by exact title, artist and source URL or image hash; preserve selected painting.",
+      "identity_gate_hold": "EXACT_OBJECT_CATALOGUE_OR_LOCAL_ASSET_PROOF_MISSING",
+      "canonical_app_id": null,
+      "selected_photo_verified": false,
+      "existing_artwork_selection_preserved": true,
+      "new_assignment_authorised": false
+    },
+    {
+      "target_type": "CALENDAR_DATE",
+      "target_id": "2026-05-01",
+      "historical_selection": {
+        "title": "Saint Joseph the Carpenter",
+        "artist": "Georges de La Tour",
+        "source_url": null
+      },
+      "source_weak_candidate_count": 0,
+      "classification": "PHYSICAL_ARTWORK_CATALOGUE_AND_ASSET_LOOKUP",
+      "work_lead_reference": null,
+      "source_evidence_urls": [],
+      "required_next_action": "Search institutional physical-object record and prior owner-approved asset by exact title, artist and source URL or image hash; preserve selected painting.",
+      "identity_gate_hold": "EXACT_OBJECT_CATALOGUE_OR_LOCAL_ASSET_PROOF_MISSING",
+      "canonical_app_id": null,
+      "selected_photo_verified": false,
+      "existing_artwork_selection_preserved": true,
+      "new_assignment_authorised": false
+    },
+    {
+      "target_type": "CALENDAR_DATE",
+      "target_id": "2026-05-25",
+      "historical_selection": {
+        "title": "Nicodemus",
+        "artist": "Henry Ossawa Tanner",
+        "source_url": null
+      },
+      "source_weak_candidate_count": 0,
+      "classification": "PHYSICAL_ARTWORK_CATALOGUE_AND_ASSET_LOOKUP",
+      "work_lead_reference": null,
+      "source_evidence_urls": [],
+      "required_next_action": "Search institutional physical-object record and prior owner-approved asset by exact title, artist and source URL or image hash; preserve selected painting.",
+      "identity_gate_hold": "EXACT_OBJECT_CATALOGUE_OR_LOCAL_ASSET_PROOF_MISSING",
+      "canonical_app_id": null,
+      "selected_photo_verified": false,
+      "existing_artwork_selection_preserved": true,
+      "new_assignment_authorised": false
+    },
+    {
+      "target_type": "CALENDAR_DATE",
+      "target_id": "2026-05-26",
+      "historical_selection": {
+        "title": "The Parable of the Good Shepherd",
+        "artist": "16th-century Netherlandish; attribution to Pieter Bruegel disputed",
+        "source_url": "https://figgeartmuseum.org/art/collections/item/the-parable-of-the-good-shepherd-250032/922"
+      },
+      "source_weak_candidate_count": 0,
+      "classification": "PHYSICAL_ARTWORK_CATALOGUE_AND_ASSET_LOOKUP",
+      "work_lead_reference": null,
+      "source_evidence_urls": [],
+      "required_next_action": "Search institutional physical-object record and prior owner-approved asset by exact title, artist and source URL or image hash; preserve selected painting.",
+      "identity_gate_hold": "EXACT_OBJECT_CATALOGUE_OR_LOCAL_ASSET_PROOF_MISSING",
+      "canonical_app_id": null,
+      "selected_photo_verified": false,
+      "existing_artwork_selection_preserved": true,
+      "new_assignment_authorised": false
+    },
+    {
+      "target_type": "CALENDAR_DATE",
+      "target_id": "2026-05-28",
+      "historical_selection": {
+        "title": "The Sending Out of the Twelve Disciples",
+        "artist": "Anonymous North Netherlandish",
+        "source_url": null
+      },
+      "source_weak_candidate_count": 0,
+      "classification": "PHYSICAL_ARTWORK_CATALOGUE_AND_ASSET_LOOKUP",
+      "work_lead_reference": null,
+      "source_evidence_urls": [],
+      "required_next_action": "Search institutional physical-object record and prior owner-approved asset by exact title, artist and source URL or image hash; preserve selected painting.",
+      "identity_gate_hold": "EXACT_OBJECT_CATALOGUE_OR_LOCAL_ASSET_PROOF_MISSING",
+      "canonical_app_id": null,
+      "selected_photo_verified": false,
+      "existing_artwork_selection_preserved": true,
+      "new_assignment_authorised": false
+    },
+    {
+      "target_type": "CALENDAR_DATE",
+      "target_id": "2026-05-29",
+      "historical_selection": {
+        "title": "Christ Healing the Paralytic — AI visual draft after Johannes Wierix",
+        "artist": "AI-derived after Johannes Wierix",
+        "source_url": "https://www.rijksmuseum.nl/nl/collectie/object/Christus%2Bgeneest%2Been%2Bverlamde%2Bman%2Bdie%2Bdoor%2Bhet%2Bdak%2Bwerd%2Bneergelaten--384b55d5788d431ef93b4787b63ecdd8"
+      },
+      "source_weak_candidate_count": 0,
+      "classification": "AI_DERIVED_LOCAL_ASSET",
+      "work_lead_reference": null,
+      "source_evidence_urls": [],
+      "required_next_action": "Locate original user-approved locally generated image by hash/asset manifest and maintain source-art dependency without substituting the historical museum painting.",
+      "identity_gate_hold": "LOCAL_AI_IMAGE_FILE_HASH_ORIGINAL_ASSET_NOT_LINKED",
+      "canonical_app_id": null,
+      "selected_photo_verified": false,
+      "existing_artwork_selection_preserved": true,
+      "new_assignment_authorised": false
+    },
+    {
+      "target_type": "CALENDAR_DATE",
+      "target_id": "2026-05-30",
+      "historical_selection": {
+        "title": "Jesus Restoring to Health Peter's Wife's Mother",
+        "artist": "John Bridges",
+        "source_url": null
+      },
+      "source_weak_candidate_count": 0,
+      "classification": "PHYSICAL_ARTWORK_CATALOGUE_AND_ASSET_LOOKUP",
+      "work_lead_reference": null,
+      "source_evidence_urls": [],
+      "required_next_action": "Search institutional physical-object record and prior owner-approved asset by exact title, artist and source URL or image hash; preserve selected painting.",
+      "identity_gate_hold": "EXACT_OBJECT_CATALOGUE_OR_LOCAL_ASSET_PROOF_MISSING",
+      "canonical_app_id": null,
+      "selected_photo_verified": false,
+      "existing_artwork_selection_preserved": true,
+      "new_assignment_authorised": false
+    },
+    {
+      "target_type": "CALENDAR_DATE",
+      "target_id": "2026-06-24",
+      "historical_selection": {
+        "title": "The Birth of Saint John the Baptist",
+        "artist": "Andrea Sacchi",
+        "source_url": null
+      },
+      "source_weak_candidate_count": 0,
+      "classification": "PHYSICAL_ARTWORK_CATALOGUE_AND_ASSET_LOOKUP",
+      "work_lead_reference": null,
+      "source_evidence_urls": [],
+      "required_next_action": "Search institutional physical-object record and prior owner-approved asset by exact title, artist and source URL or image hash; preserve selected painting.",
+      "identity_gate_hold": "EXACT_OBJECT_CATALOGUE_OR_LOCAL_ASSET_PROOF_MISSING",
+      "canonical_app_id": null,
+      "selected_photo_verified": false,
+      "existing_artwork_selection_preserved": true,
+      "new_assignment_authorised": false
+    },
+    {
+      "target_type": "CALENDAR_DATE",
+      "target_id": "2026-12-06",
+      "historical_selection": {
+        "title": "The Family of Christ",
+        "artist": "Michael Willmann",
+        "source_url": null
+      },
+      "source_weak_candidate_count": 0,
+      "classification": "PHYSICAL_ARTWORK_CATALOGUE_AND_ASSET_LOOKUP",
+      "work_lead_reference": null,
+      "source_evidence_urls": [],
+      "required_next_action": "Search institutional physical-object record and prior owner-approved asset by exact title, artist and source URL or image hash; preserve selected painting.",
+      "identity_gate_hold": "EXACT_OBJECT_CATALOGUE_OR_LOCAL_ASSET_PROOF_MISSING",
+      "canonical_app_id": null,
+      "selected_photo_verified": false,
+      "existing_artwork_selection_preserved": true,
+      "new_assignment_authorised": false
+    },
+    {
+      "target_type": "CALENDAR_DATE",
+      "target_id": "2026-12-13",
+      "historical_selection": {
+        "title": "Saint John the Baptist Interrogated about Christ",
+        "artist": "Bernardo Strozzi",
+        "source_url": null
+      },
+      "source_weak_candidate_count": 0,
+      "classification": "PHYSICAL_ARTWORK_CATALOGUE_AND_ASSET_LOOKUP",
+      "work_lead_reference": null,
+      "source_evidence_urls": [],
+      "required_next_action": "Search institutional physical-object record and prior owner-approved asset by exact title, artist and source URL or image hash; preserve selected painting.",
+      "identity_gate_hold": "EXACT_OBJECT_CATALOGUE_OR_LOCAL_ASSET_PROOF_MISSING",
+      "canonical_app_id": null,
+      "selected_photo_verified": false,
+      "existing_artwork_selection_preserved": true,
+      "new_assignment_authorised": false
+    },
+    {
+      "target_type": "CALENDAR_DATE",
+      "target_id": "2026-12-20",
+      "historical_selection": {
+        "title": "La Prédication de saint Jean Baptiste",
+        "artist": "Giovanni Battista Gaulli",
+        "source_url": null
+      },
+      "source_weak_candidate_count": 0,
+      "classification": "PHYSICAL_ARTWORK_CATALOGUE_AND_ASSET_LOOKUP",
+      "work_lead_reference": null,
+      "source_evidence_urls": [],
+      "required_next_action": "Search institutional physical-object record and prior owner-approved asset by exact title, artist and source URL or image hash; preserve selected painting.",
+      "identity_gate_hold": "EXACT_OBJECT_CATALOGUE_OR_LOCAL_ASSET_PROOF_MISSING",
+      "canonical_app_id": null,
+      "selected_photo_verified": false,
+      "existing_artwork_selection_preserved": true,
+      "new_assignment_authorised": false
+    },
+    {
+      "target_type": "PRAYER_SLOT",
+      "target_id": "COV-novena.st_therese",
+      "historical_selection": {
+        "title": "Therese_lisieux_portrait.jpg",
+        "artist": "Historical photograph of St Thérèse",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Therese_lisieux_portrait.jpg"
+      },
+      "source_weak_candidate_count": 0,
+      "classification": "HISTORICAL_PHOTOGRAPH_ASSET",
+      "work_lead_reference": null,
+      "source_evidence_urls": [],
+      "required_next_action": "Verify the historical portrait's Commons source, photographer/rights and original image file; do not force it into the painting object namespace.",
+      "identity_gate_hold": "HISTORICAL_PHOTO_PROVENANCE_CROP_NOT_VERIFIED",
+      "canonical_app_id": null,
+      "selected_photo_verified": false,
+      "existing_artwork_selection_preserved": true,
+      "new_assignment_authorised": false
+    },
+    {
+      "target_type": "PRAYER_SLOT",
+      "target_id": "COV-novena.st_anthony_nine_tuesdays",
+      "historical_selection": {
+        "title": "The Apparition of the Christ Child to Saint Anthony of Padua",
+        "artist": "Antonio del Castillo y Saavedra",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Aparici%C3%B3n_del_Ni%C3%B1o_a_San_Antonio_-_Antonio_del_Castillo_Saavedra.jpg"
+      },
+      "source_weak_candidate_count": 0,
+      "classification": "PHYSICAL_ARTWORK_CATALOGUE_AND_ASSET_LOOKUP",
+      "work_lead_reference": null,
+      "source_evidence_urls": [],
+      "required_next_action": "Search institutional physical-object record and prior owner-approved asset by exact title, artist and source URL or image hash; preserve selected painting.",
+      "identity_gate_hold": "EXACT_OBJECT_CATALOGUE_OR_LOCAL_ASSET_PROOF_MISSING",
+      "canonical_app_id": null,
+      "selected_photo_verified": false,
+      "existing_artwork_selection_preserved": true,
+      "new_assignment_authorised": false
+    },
+    {
+      "target_type": "PRAYER_SLOT",
+      "target_id": "STG-pray.stations-13",
+      "historical_selection": {
+        "title": "Via Crucis 13, Giandomenico Tiepolo (San Polo original oils)",
+        "artist": "Giandomenico Tiepolo",
+        "source_url": null
+      },
+      "source_weak_candidate_count": 0,
+      "classification": "IN_SITU_STATION_KNOWN_NO_APP_ID",
+      "work_lead_reference": null,
+      "source_evidence_urls": [
+        "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/"
+      ],
+      "required_next_action": "Use same Giandomenico Tiepolo San Polo 14-panel cycle; establish correct station 13 Commons/photograph identity and crosswalk to canonical app art registry without creating an invented accession.",
+      "identity_gate_hold": "STATION_SEQUENCE_KNOWN_FILE_AND_APP_ID_STILL_UNVERIFIED",
+      "canonical_app_id": null,
+      "selected_photo_verified": false,
+      "existing_artwork_selection_preserved": true,
+      "new_assignment_authorised": false
+    },
+    {
+      "target_type": "PRAYER_SLOT",
+      "target_id": "STG-pray.stations-14",
+      "historical_selection": {
+        "title": "Via Crucis 14, Giandomenico Tiepolo (San Polo original oils)",
+        "artist": "Giandomenico Tiepolo",
+        "source_url": null
+      },
+      "source_weak_candidate_count": 0,
+      "classification": "IN_SITU_STATION_KNOWN_NO_APP_ID",
+      "work_lead_reference": null,
+      "source_evidence_urls": [
+        "https://chorusvenezia.org/en/visita/via-crucis-jesus-put-on-the-sepulchre/"
+      ],
+      "required_next_action": "Use same Giandomenico Tiepolo San Polo 14-panel cycle; establish correct station 14 Commons/photograph identity and crosswalk to canonical app art registry without creating an invented accession.",
+      "identity_gate_hold": "STATION_SEQUENCE_KNOWN_FILE_AND_APP_ID_STILL_UNVERIFIED",
+      "canonical_app_id": null,
+      "selected_photo_verified": false,
+      "existing_artwork_selection_preserved": true,
+      "new_assignment_authorised": false
+    },
+    {
+      "target_type": "PRAYER_SLOT",
+      "target_id": "COV-devotion_st_anthony_lost_items",
+      "historical_selection": {
+        "title": "The Apparition of the Christ Child to Saint Anthony of Padua",
+        "artist": "Antonio del Castillo y Saavedra",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Aparici%C3%B3n_del_Ni%C3%B1o_a_San_Antonio_-_Antonio_del_Castillo_Saavedra.jpg"
+      },
+      "source_weak_candidate_count": 0,
+      "classification": "PHYSICAL_ARTWORK_CATALOGUE_AND_ASSET_LOOKUP",
+      "work_lead_reference": null,
+      "source_evidence_urls": [],
+      "required_next_action": "Search institutional physical-object record and prior owner-approved asset by exact title, artist and source URL or image hash; preserve selected painting.",
+      "identity_gate_hold": "EXACT_OBJECT_CATALOGUE_OR_LOCAL_ASSET_PROOF_MISSING",
+      "canonical_app_id": null,
+      "selected_photo_verified": false,
+      "existing_artwork_selection_preserved": true,
+      "new_assignment_authorised": false
+    },
+    {
+      "target_type": "PRAYER_SLOT",
+      "target_id": "STG-pray.confession-03",
+      "historical_selection": {
+        "title": "La Confessione (The Confession)",
+        "artist": "Giuseppe Molteni",
+        "source_url": "https://commons.wikimedia.org/wiki/File:Artgate_Fondazione_Cariplo_-_Molteni_Giuseppe%2C_La_confessione.jpg"
+      },
+      "source_weak_candidate_count": 0,
+      "classification": "PHYSICAL_ARTWORK_CATALOGUE_AND_ASSET_LOOKUP",
+      "work_lead_reference": null,
+      "source_evidence_urls": [],
+      "required_next_action": "Search institutional physical-object record and prior owner-approved asset by exact title, artist and source URL or image hash; preserve selected painting.",
+      "identity_gate_hold": "EXACT_OBJECT_CATALOGUE_OR_LOCAL_ASSET_PROOF_MISSING",
+      "canonical_app_id": null,
+      "selected_photo_verified": false,
+      "existing_artwork_selection_preserved": true,
+      "new_assignment_authorised": false
+    }
+  ]
+}
