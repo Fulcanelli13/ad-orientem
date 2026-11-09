@@ -1,0 +1,45 @@
+name: Prayer private Litany — one-time pinned historical text acquisition
+on:
+  push:
+    branches:
+      - feat/pray-private-litany-local-1883-1862-20261109
+    paths:
+      - 'tools/pray/acquire-private-litany-pinned-witnesses.mjs'
+      - '.github/workflows/pray-private-litany-one-time-acquisition.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: private-litany-once-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  acquire-originals:
+    name: Acquire original 1883 English and 1862 French private Litany bodies
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Parse pinned source revisions and reject incomplete Litany bodies
+        run: node tools/pray/acquire-private-litany-pinned-witnesses.mjs
+      - name: Commit original source witnesses only to the research implementation branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/pray/private-litany-of-saints-1883-en.v1.json data/pray/private-litany-of-saints-1862-fr.v1.json
+          git diff --cached --check
+          if git diff --cached --quiet; then
+            echo 'Exact source files already committed; no change.'
+          else
+            git commit -m "Prayer: store complete pinned EN 1883 and FR 1862 private Litany sources"
+            git push origin HEAD:feat/pray-private-litany-local-1883-1862-20261109
+          fi
