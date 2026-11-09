@@ -9,6 +9,7 @@ import {NOVENA_CORPUS_V4} from "../src/pray/novena-corpus-v4.js";
 import {ICKSP_DIVINE_INFANT_KING_NOVENA_V1} from "../src/pray/icksp-divine-infant-king-novena.v1.js";
 import {ICKSP_IMMACULATE_CONCEPTION_NOVENA_V1} from "../src/pray/icksp-immaculate-conception-novena.v1.js";
 import {NOVENA_HOLY_FACE_1887_B25} from "../src/pray/holy-face-janvier-1887-b25.js";
+import {holyFace1895FrenchReaderCandidate,HOLY_FACE_1895_FR_PUBLIC_RELEASE_APPROVED} from "../src/pray/holy-face-janvier-1895-fr-reader-candidate.v1.js";
 import {novenaSourceWitnessFaceV1} from "../src/pray/novena-source-witness-face.v1.js";
 import {novenaStageChapters} from "../src/pray/devotional-sequence-adapter.js";
 import {PRAY_CANONICAL_DATA_V435930 as CANONICAL} from "../src/pray/canonical-data.js";
@@ -21,7 +22,7 @@ assert.equal(ledger.counts.fullRouteVariantCertificates,0,"Don't certify all Pra
 const programmes={...NOVENA_CORPUS_V4,
  [ICKSP_DIVINE_INFANT_KING_NOVENA_V1.id]:ICKSP_DIVINE_INFANT_KING_NOVENA_V1,
  [ICKSP_IMMACULATE_CONCEPTION_NOVENA_V1.id]:ICKSP_IMMACULATE_CONCEPTION_NOVENA_V1,
- [NOVENA_HOLY_FACE_1887_B25.id]:NOVENA_HOLY_FACE_1887_B25};
+ [NOVENA_HOLY_FACE_1887_B25.id]:holyFace1895FrenchReaderCandidate(NOVENA_HOLY_FACE_1887_B25)};
 assert.equal(Object.keys(NOVENA_CORPUS_V4).length,16);
 assert.equal(Object.keys(programmes).length,19);
 const normalized=x=>String(x??"").normalize("NFC").replace(/\s/g,"");
@@ -50,7 +51,8 @@ for(const n of Object.values(programmes)){
   trueEnglish+=Number(en.language==="en");trueFrench+=Number(fr.language==="fr");
  }
 }
-assert.equal(trueEnglish,171);assert.equal(trueFrench,162);
+assert.equal(trueEnglish,171);assert.equal(trueFrench,171);
+assert.equal(HOLY_FACE_1895_FR_PUBLIC_RELEASE_APPROVED,true);
 const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",
  ".mjs":"text/javascript; charset=utf-8",".json":"application/json; charset=utf-8",
  ".css":"text/css; charset=utf-8",".svg":"image/svg+xml",".png":"image/png",
@@ -317,9 +319,9 @@ try{
  assert.equal(counters.guidedStageVariants,2736,"684 historical guided cards x four phone/language variants");
  assert.equal(counters.dayModeVariants,684,"171 source-owned simple days x four phone/language variants");
  assert.equal(counters.properDayExact,684,"171 correct historical day prayer witnesses x four variants");
- assert.equal(counters.frenchSourceDayPresent,324,"162 French proper days x two widths");
- assert.equal(counters.englishOnlySourceHeld,18,"9 original-English-only Holy Face proper days x two widths");
- assert.equal(counters.frenchToEnglishWitnessRoundTrips,324,"162 bilingual day-source switches x two widths");
+ assert.equal(counters.frenchSourceDayPresent,342,"171 French proper days x two widths");
+ assert.equal(counters.englishOnlySourceHeld,0,"French source now available for all 19 Novenas");
+ assert.equal(counters.frenchToEnglishWitnessRoundTrips,342,"171 bilingual source switches x two widths");
  console.log("PASS Novenas 19/19 programmes; 171/171 proper days; 2736/2736 guided card variants; "+
   "684/684 Simple day variants; 324 French/English witness toggles; historical Holy Face English-only holds preserved.");
 }finally{

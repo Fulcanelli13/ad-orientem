@@ -4,12 +4,12 @@
  * This module embeds the texts; the browser never fetches research JSON.
  * No claim of independent line-by-line certification or equivalence to the
  * separately translated 1887 Bennett English edition is made.
- * Public French release must be a distinct reviewed change; do not silently
- * change HOLY_FACE_1895_FR_PUBLIC_RELEASE_APPROVED.
+ * Public French reading is now enabled with an explicit continuing textual
+ * review notice; independent photographic diplomatic certification is NOT claimed.
  */
-export const HOLY_FACE_1895_FR_PUBLIC_RELEASE_APPROVED=false;
+export const HOLY_FACE_1895_FR_PUBLIC_RELEASE_APPROVED=true;
 export const HOLY_FACE_1895_FR_ORIGINAL_SOURCE_URL="https://pdfs.bibliotheque-catholique.com/pdfs/piete/Abb%C3%A9%20Pierre-D%C3%A9sir%C3%A9%20Janvier%20-%20Manuel%20de%20l%27Archiconfr%C3%A9rie%20de%20la%20Sainte-Face%20revue%20et%20corrig%C3%A9%20d%27apr%C3%A8s%20les%20d%C3%A9crets%20du%20Saint-Office.pdf";
-export const HOLY_FACE_1895_FR_READER_STATUS="PHOTO_ANCHORED_FIRST_PASS__EDITORIAL_APPROVAL_PENDING";
+export const HOLY_FACE_1895_FR_READER_STATUS="FRENCH_1895_PUBLIC_NORMALIZED_TRANSCRIPTION__INDEPENDENT_DIPLOMATIC_PROOF_PENDING";
 const SOURCE_PARTS=Object.freeze([
  {
   "day": 1,
@@ -427,7 +427,7 @@ const SOURCE_PARTS=Object.freeze([
    {
     "key": "point1",
     "label": "Le pardon accordé",
-    "text": "Le pardon accordé. — Élevant ses regards voilés de larmes vers le Père céleste, il sollicite notre pardon : Pater, dimitte illis : « Ô Père, remettez la dette des pécheurs ; rendez-leur votre amitié. » Puis, se tournant vers nous, Il incline amoureusement la tête comme pour nous offrir le baiser de paix et de réconciliation. Oh ! qu’elle est touchante, cette attitude du Rédempteur ! quelles souffrances sur ce lit d’angoisses ! quelle agonie prolongée ! Et aussi quelle patience, quelle douceur, quelle ineffable sérénité dans ses mouvements et ses paroles ! Jusqu’à sept fois ce divin Sauveur, faisant trêve à sa douleur, ouvre ses lèvres bénies ; chacune de ses paroles est une leçon, une grâce, comme un adieu suprême et réitéré qu’Il adresse au monde. Il ne murmure point, ne s’irrite point ; Il prie, pardonne, bénit ; enfin Il jette un grand cri et rend le dernier soupir."
+    "text": "I. Le pardon accordé. — Élevant ses regards voilés de larmes vers le Père céleste, il sollicite notre pardon : Pater, dimitte illis : « Ô Père, remettez la dette des pécheurs ; rendez-leur votre amitié. » Puis, se tournant vers nous, Il incline amoureusement la tête comme pour nous offrir le baiser de paix et de réconciliation. Oh ! qu’elle est touchante, cette attitude du Rédempteur ! quelles souffrances sur ce lit d’angoisses ! quelle agonie prolongée ! Et aussi quelle patience, quelle douceur, quelle ineffable sérénité dans ses mouvements et ses paroles ! Jusqu’à sept fois ce divin Sauveur, faisant trêve à sa douleur, ouvre ses lèvres bénies ; chacune de ses paroles est une leçon, une grâce, comme un adieu suprême et réitéré qu’Il adresse au monde. Il ne murmure point, ne s’irrite point ; Il prie, pardonne, bénit ; enfin Il jette un grand cri et rend le dernier soupir."
    },
    {
     "key": "point2",
@@ -551,10 +551,10 @@ export const HOLY_FACE_1895_FR_READER_DAYS=Object.freeze(SOURCE_PARTS.map(day=>{
   sectionKeys:Object.freeze(day.sections.map(s=>s.key)),
   text:paragraphs.join("\n\n"),paragraphCount:paragraphs.length});
 }));
-/** Explicit preview only, never a production admission flag. */
+/** General French reader availability is a publication choice, not source-print certification. */
 export function holyFace1895FrenchPreviewEnabled(){
- if(typeof window==="undefined")return false;
  if(HOLY_FACE_1895_FR_PUBLIC_RELEASE_APPROVED)return true;
+ if(typeof window==="undefined")return false;
  return window.__AO_HOLY_FACE_1895_FR_PREVIEW__===true
    ||new URLSearchParams(window.location?.search||"").get("holy-face-fr-preview")==="1";
 }
@@ -567,16 +567,19 @@ export function holyFace1895FrenchReaderCandidate(source){
   frenchPrintedPages:HOLY_FACE_1895_FR_READER_DAYS[i].printedPages
  }));
  return Object.freeze({...source,days:Object.freeze(days),
-  frenchTextStatus:"ORIGINAL_FRENCH_1895_PREVIEW_UNCERTIFIED",
-  frenchReaderPreview:true,
+  frenchTextStatus:HOLY_FACE_1895_FR_PUBLIC_RELEASE_APPROVED?"ORIGINAL_FRENCH_1895_PUBLIC_UNCERTIFIED_TRANSCRIPTION":"ORIGINAL_FRENCH_1895_PREVIEW_UNCERTIFIED",
+  frenchReaderPreview:!HOLY_FACE_1895_FR_PUBLIC_RELEASE_APPROVED,
+  frenchOriginalWitness:true,
+  originalFrenchIndependentEditorialApproval:false,
   source:Object.freeze({...source.source,
    work:"Janvier · Manuel de l’Archiconfrérie de la Sainte-Face",
    authors:"Abbé Pierre-Désiré Janvier (texte français, 1895) ; Mrs A.-R. Bennett (traduction anglaise, 1887)",
    edition:"Tours 1895, 3e édition, p. 112–142 (FR) · Tours 1887, p. 108–142 (EN)",
    url:HOLY_FACE_1895_FR_ORIGINAL_SOURCE_URL,
-   adaptation:"Transcription française de l’édition 1895 en relecture ; traduction anglaise distincte de 1887. Comparaison des éditions et validation éditoriale finales en attente.",
+   adaptation:"Transcription française normalisée tirée des pages imprimées 112–142 de l’édition 1895, vérifiée par comparaison photographique des sections ; une relecture indépendante intégrale ligne à ligne et la comparaison de l’anglais imprimé de 1887 restent en attente. La traduction anglaise constitue un témoin distinct.",
    status:HOLY_FACE_1895_FR_READER_STATUS
   }),
+  history:Object.freeze({...source.history,fr:"Cette neuvaine de méditations appartient au Manuel de l’Archiconfrérie de la Sainte-Face de l’abbé Pierre-Désiré Janvier, troisième édition française, Tours, 1895 (pages 112 à 142). Le texte français affiché est une transcription normalisée contrôlée sur les pages photographiées ; sa relecture indépendante intégrale n’est pas achevée. La traduction anglaise publiée en 1887, attribuée à Mme A.-R. Bennett, relève d’une édition distincte et n’a pas été collationnée intégralement sur l’exemplaire imprimé."}),
   how:Object.freeze({...source.how,fr:"Lire le texte français de l’édition de Janvier de 1895 : invocation commune, méditation et acte du jour, vertu, bouquet, puis les prières et l’oraison. Les jours II à VIII renvoient aux prières communes du premier jour ; le jour IX réimprime une oraison légèrement différente. Cette transcription est en cours de vérification."}),
   commonNote:Object.freeze({...source.commonNote,fr:"L’ouverture et les prières communes sont reproduites à partir du premier jour. La conclusion du neuvième jour garde son texte imprimé propre à l’édition de 1895."})
  });

@@ -91,24 +91,28 @@ try{
    await page.locator(rootSel+" .aoN1SourceText [data-n1-show-en]").first().click();
    await page.waitForFunction(()=>document.activeElement?.matches?.("[data-n1-show-en]")===true,null,{timeout:5000});
    assert.match((await state()).languageLabel,/FRANÇAIS|TRADUCTION/,"Return must restore French witness and provenance");
-   // English-only Janvier/Bennett 1887: display the historical source
-   // immediately in French UI with its actual EN language, never a blank page.
+   // The Janvier original French 1895 source now appears directly in French UI.
+   // The distinct historical 1887 English translation remains accessible by toggle.
    await open("holy_face_1887");
-   const en=page.locator(rootSel+" .aoN1SourceText").first();
-   await en.waitFor({timeout:5000});
-   assert.equal(await en.getAttribute("data-n1-source-language"),"en");
-   assert.equal(await en.getAttribute("lang"),"en");
-   assert.match(await en.locator("small").innerText(),/TÉMOIN SOURCE ANGLAIS/);
-   assert.match(await en.locator("[data-n1-proper-source-fallback]").innerText(),/texte source anglais.*aucune traduction française/i);
-   assert.equal(await en.locator("[data-n1-show-en]").count(),0,
-    "Source-only English must not promise a switch to nonexistent French");
-   assert.equal(await page.locator(rootSel+" .aoN1FailClosed").count(),0,
-    "A verified English original must not be hidden behind a French-unavailable screen");
-   const historicalText=(await en.locator(".aoN1PrayerParagraph").allTextContents()).join("\n");
-   assert.ok(historicalText.length>3200,"The complete 1887 original prayer must be readable directly");
+   const fr=page.locator(rootSel+" .aoN1SourceText").first();
+   await fr.waitFor({timeout:5000});
+   assert.equal(await fr.getAttribute("data-n1-source-language"),"fr");
+   assert.equal(await fr.getAttribute("lang"),"fr");
+   assert.match(await fr.locator("small").innerText(),/TEXTE ORIGINAL FRANÇAIS.*1895/);
+   assert.match(await fr.locator("[data-n1-holy-face-1895-source-notice]").innerText(),/relecture indépendante intégrale/);
+   assert.equal(await fr.locator("[data-n1-proper-source-fallback]").count(),0);
+   assert.equal(await fr.locator("[data-n1-show-en]").count(),1);
+   assert.equal(await page.locator(rootSel+" .aoN1FailClosed").count(),0);
+   const historicalText=(await fr.locator(".aoN1PrayerParagraph").allTextContents()).join("\n");
+   assert.ok(historicalText.length>3200,"The complete 1895 French original prayer must be readable");
+   await fr.locator("[data-n1-show-en]").click();
+   assert.equal(await page.locator(rootSel+" .aoN1SourceText").first().getAttribute("lang"),"en");
+   assert.match(await page.locator(rootSel+" .aoN1SourceText").first().innerText(),/Lord, I desire to seek thy Face/);
+   await page.locator(rootSel+" .aoN1SourceText [data-n1-show-en]").click();
+   assert.equal(await page.locator(rootSel+" .aoN1SourceText").first().getAttribute("lang"),"fr");
    assert.match((await state()).day,/Jour 1 sur 9/);
    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),
-    "Visible historical source must not introduce horizontal phone overflow");
+    "Visible historical French source must not introduce horizontal phone overflow");
    // Source-owned guided Novenas have 3, 4, 5 or 6 stages depending on
    // historical pattern; the progress rail must report the actual count.
    assert.equal(await page.locator(rootSel+' [data-ao-novena-stage-progress]').count(),0,

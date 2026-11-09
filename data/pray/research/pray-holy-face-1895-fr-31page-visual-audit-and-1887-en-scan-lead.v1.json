@@ -9,9 +9,10 @@
     "totalPrintedNovenaPages": 31,
     "dayRecordsFirstPass": 9,
     "dayRecordsIndependentlySecondProofed": 0,
-    "dayBodiesPublishedInFrench": 0,
+    "dayBodiesPublishedInFrench": 9,
     "firstPassMaterialCorrections": 1,
-    "knownCriticalSpotChecks": 11
+    "knownCriticalSpotChecks": 11,
+    "originalFrenchDaysIndependentlyProofread": 0
   },
   "pages": [
     {
@@ -327,9 +328,9 @@
     {
       "printedPage": 136,
       "section": "Day VIII first reflection",
-      "observed": "Heading Le pardon accordé has NO preceding I or any printed numeral",
-      "previousRecord": "I. Le pardon accordé; printedOrdinal: I",
-      "disposition": "SOURCE_TRANSCRIPTION_FIXED_TO_UNNUMBERED"
+      "observed": "Printed 1895 p.136 unmistakably starts 'I. Le pardon accordé' (not unnumbered).",
+      "previousRecord": "PR #2756 wrongly removed this genuine printed I based on flawed photo interpretation.",
+      "disposition": "RESTORE_PRINTED_I_AFTER_RERECHECK__KEEP_III_III"
     },
     {
       "printedPage": 137,
@@ -371,12 +372,12 @@
   "firstPassCorrection": {
     "day": 8,
     "printedPage": 136,
-    "oldText": "I. Le pardon accordé",
-    "correctedText": "Le pardon accordé",
+    "oldText": "Le pardon accordé",
+    "correctedText": "I. Le pardon accordé",
     "oldPrintedOrdinal": "I",
     "correctedPrintedOrdinal": null,
     "originalSequence": [
-      null,
+      "I",
       "III",
       "III"
     ],
@@ -386,7 +387,15 @@
       3
     ],
     "sourceImageZeroBased": 142,
-    "policy": "Never infer Roman I in the research transcription; leave logical index independently labelled for reader future."
+    "policy": "Restore exactly printed I on Day VIII p.136; second and third printed headings still both III on pp.137–138.",
+    "priorCorrectionIsWrong": true,
+    "status": "RERECHECK_REVERSED_PRIOR_FALSE_UNNUMBERED_CLAIM",
+    "originallyErroneousPastAuditSequence": [
+      null,
+      "III",
+      "III"
+    ],
+    "photoRecheckMethod": "Direct visual inspection of original scanned printed p.136 / PDF p.142, 2026-11-09; first Roman numeral I clearly visible"
   },
   "english1887": {
     "status": "ORIGINAL_PRINT_SCAN_LOCATED_BUT_UNINSPECTED",
@@ -402,13 +411,15 @@
     "english1887PrintCollated": false,
     "day8PrintedCorrectionsVisible": true,
     "day9FinalPrayerReprintPreserved": true,
-    "publicReaderFrenchDays": 0,
-    "englishReaderBodyChanges": 0
+    "publicReaderFrenchDays": 9,
+    "englishReaderBodyChanges": 0,
+    "publicOriginalFrenchTextIsIndependentVerified": false,
+    "publicOriginalFrenchTextStatus": "1895_NORMALIZED_SOURCE_TRANSCRIPTION__INDEPENDENT_DIPLOMATIC_PROOF_PENDING"
   },
   "nextTasks": [
     "Perform true detailed independent line-by-line collation from 1895 page images and record character-level differences per source section",
     "Inspect the 1887 printed English PDF at a practical reduced/page extract rather than inferring from current digital English",
-    "Resolve source-specific variants, e.g. 1895 French Day VIII missing first numeral, duplicate subsequent III, Vœu heading, and Day IX final collect",
+    "Resolve source-specific variants, e.g. 1895 French Day VIII genuine first numeral I, duplicate subsequent III, Vœu heading, and Day IX final collect",
     "Submit bilingual French source for editorial approval and native 320/390 phone acceptance before any public French reader activation"
   ]
 }

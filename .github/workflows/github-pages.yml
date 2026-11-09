@@ -37,6 +37,7 @@ on:
       - 'src/home/today-h4-view.js'
       - 'data/research/icrsp-france-ordo-2026-11-09-29-independent.v1.json'
       - 'tests/github-pages-phone-live-acceptance.mjs'
+      - 'tests/pray-holy-face-1895-french-live-pages-phone.mjs'
       - 'tests/installed-pages-live-phone.mjs'
       - '.github/workflows/github-pages.yml'
   pull_request:
@@ -49,6 +50,7 @@ on:
       - 'tools/github-pages-release-proof.mjs'
       - 'tests/github-pages-release-proof.test.mjs'
       - 'tests/github-pages-phone-live-acceptance.mjs'
+      - 'tests/pray-holy-face-1895-french-live-pages-phone.mjs'
       - 'tests/installed-pages-live-phone.mjs'
       - 'tools/build-web-preview.mjs'
       - 'tests/prayer-stations-curated-release-hold.mjs'
@@ -87,7 +89,7 @@ jobs:
       - name: Fail release for missing 9 Nov St Theodore 1962 Low Mass oration source
         run: node tests/1962-nov09-theodore-commemoration.mjs
       - name: Validate public 390px LIVE/Missal and returning-user phone smoke code
-        run: node --check tests/github-pages-phone-live-acceptance.mjs
+        run: node --check tests/github-pages-phone-live-acceptance.mjs && node --check tests/pray-holy-face-1895-french-live-pages-phone.mjs
       - name: Validate public committed offline snapshot and consent test code
         run: node --check tests/installed-pages-live-phone.mjs && node --check tests/offline-snapshot-e2e.mjs && node tests/installed-pages-first-boot-retry-contract.mjs
       - name: Build allowlisted static release
@@ -148,6 +150,10 @@ jobs:
         env:
           AO_PAGES_URL: https://fulcanelli13.github.io/ad-orientem/
         run: node tests/github-pages-phone-live-acceptance.mjs
+      - name: Verify original French 1895 Holy Face Novena all nine days live on 320/390 EN/FR phones
+        env:
+          AO_PAGES_URL: https://fulcanelli13.github.io/ad-orientem/
+        run: node tests/pray-holy-face-1895-french-live-pages-phone.mjs
       - name: Preserve public deployment phone screenshots and read-only evidence
         if: always()
         uses: actions/upload-artifact@v4

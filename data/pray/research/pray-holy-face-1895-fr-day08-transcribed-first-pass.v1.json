@@ -18,7 +18,7 @@
     145
   ],
   "dayHeading": "La sainte Face sur la croix",
-  "sourceProcess": "First-pass source-led transcription based on all four photographic pages (136-139, PDF zero-index 142-145) and PDF text extraction cross-check. Preserve original anomaly with duplicate printed 'III' numerals; no independent second pass and no claim of fully diplomatic punctuation equivalence. Editorial source-image correction 2026-11-09: first point p.136 has NO printed numeral; earlier first-pass 'I.' was editor-supplied, now removed.",
+  "sourceProcess": "First-pass source-led transcription based on all four photographic pages (136-139, PDF zero-index 142-145) and PDF text extraction cross-check. Preserve original anomaly with duplicate printed 'III' numerals; no independent second pass and no claim of fully diplomatic punctuation equivalence. Editorial source-image correction 2026-11-09: first point p.136 has NO printed numeral; earlier first-pass 'I.' was editor-supplied, now removed. Reopened photographic reading of p.136 corrected an earlier false claim of an printed first reflection I first reflection: I. is visible.",
   "normalizationPolicy": "Normalize typographic apostrophes, guillemets, soft line-wrap hyphenation and spacing without changing historical lexemes, referents or semantic order. Printed Roman numeral anomaly is recorded explicitly as source, not silently emended.",
   "release": "RESEARCH_ONLY_NOT_BOUND_TO_PUBLIC_READER",
   "frenchBodyInCanonicalReader": "EMPTY",
@@ -47,14 +47,14 @@
     {
       "key": "point1",
       "label": "Le pardon accordé",
-      "printedOrdinal": null,
+      "printedOrdinal": "I",
       "logicalOrdinal": 1,
       "pages": [
         136,
         137
       ],
-      "text": "Le pardon accordé. — Élevant ses regards voilés de larmes vers le Père céleste, il sollicite notre pardon : Pater, dimitte illis : « Ô Père, remettez la dette des pécheurs ; rendez-leur votre amitié. » Puis, se tournant vers nous, Il incline amoureusement la tête comme pour nous offrir le baiser de paix et de réconciliation. Oh ! qu’elle est touchante, cette attitude du Rédempteur ! quelles souffrances sur ce lit d’angoisses ! quelle agonie prolongée ! Et aussi quelle patience, quelle douceur, quelle ineffable sérénité dans ses mouvements et ses paroles ! Jusqu’à sept fois ce divin Sauveur, faisant trêve à sa douleur, ouvre ses lèvres bénies ; chacune de ses paroles est une leçon, une grâce, comme un adieu suprême et réitéré qu’Il adresse au monde. Il ne murmure point, ne s’irrite point ; Il prie, pardonne, bénit ; enfin Il jette un grand cri et rend le dernier soupir.",
-      "firstReflectionPrintedWithoutNumeral": true
+      "text": "I. Le pardon accordé. — Élevant ses regards voilés de larmes vers le Père céleste, il sollicite notre pardon : Pater, dimitte illis : « Ô Père, remettez la dette des pécheurs ; rendez-leur votre amitié. » Puis, se tournant vers nous, Il incline amoureusement la tête comme pour nous offrir le baiser de paix et de réconciliation. Oh ! qu’elle est touchante, cette attitude du Rédempteur ! quelles souffrances sur ce lit d’angoisses ! quelle agonie prolongée ! Et aussi quelle patience, quelle douceur, quelle ineffable sérénité dans ses mouvements et ses paroles ! Jusqu’à sept fois ce divin Sauveur, faisant trêve à sa douleur, ouvre ses lèvres bénies ; chacune de ses paroles est une leçon, une grâce, comme un adieu suprême et réitéré qu’Il adresse au monde. Il ne murmure point, ne s’irrite point ; Il prie, pardonne, bénit ; enfin Il jette un grand cri et rend le dernier soupir.",
+      "firstReflectionPrintedWithoutNumeral": false
     },
     {
       "key": "point2",
@@ -121,7 +121,7 @@
   "sharedPrayerPolicy": "1895 print Day VIII has brief references to the first-day opening (old p.9; modern printed p.112) and common concluding prayers/collect (old p.12; modern p.115), not separate new Day VIII formulations.",
   "printedOrdinalAnomaly": {
     "printedSequence": [
-      null,
+      "I",
       "III",
       "III"
     ],
@@ -132,10 +132,11 @@
     ],
     "secondReflectionSourcePrintedOrdinal": "III",
     "thirdReflectionSourcePrintedOrdinal": "III",
-    "status": "PHOTO_RECHECK_CONFIRMED_UNNUMBERED_III_III",
-    "editorialPolicy": "Photographic 1895 p.136 begins first reflection 'Le pardon accordé' without Roman numeral; p.137 second and p.138 third both read 'III'. Store printed [null,III,III] distinctly from logical [1,2,3]. No inferred numeral in source transcription.",
-    "firstReflectionPrintedOrdinal": null,
-    "firstReflectionSourcePrintedHeading": "Le pardon accordé"
+    "status": "2026_11_09_DIRECT_PHOTO_RERECHECK_CONFIRMS_I_III_III",
+    "editorialPolicy": "The 1895 photo at printed p.136 (PDF zero index 142) visibly shows 'I. Le pardon accordé', contrary to prior repeated AI audit claims. The second and third reflections still both print 'III' on pp.137 and 138, respectively. Preserve actual printed I / III / III without silently repairing the anomalous second ordinal.",
+    "firstReflectionPrintedOrdinal": "I",
+    "firstReflectionSourcePrintedHeading": "I. Le pardon accordé",
+    "priorIncorrectAudit": "Previous PRs #2756, #2759 and subsequent work incorrectly deleted the printed first Roman I; corrected after renewed original-page visual inspection."
   },
   "comparison": {
     "against": "src/pray/holy-face-janvier-1887-b25.js",
@@ -174,10 +175,10 @@
       {
         "frSection": "point1",
         "printedPage": 136,
-        "frReading": "Le pardon accordé (without any printed numeral)",
+        "frReading": "I. Le pardon accordé (printed p.136)",
         "en1887DigitalReading": "I. The pardon of the Holy Face",
-        "classification": "FIRST_REFLECTION_UNNUMBERED_IN_1895_PRINT",
-        "action": "Do not insert I. into source text. Logical position 1 is separate from the printed heading, which lacks a numeral. Confirmed visually on PDF zero-index 142."
+        "classification": "PRINTED_FIRST_ROMAN_I_CONFIRMED_AFTER_RECHECK",
+        "action": "Direct photo of 1895 p.136 clearly prints 'I. Le pardon accordé'; restore the numeral that earlier PR #2756 wrongly removed. Keep the separate double III anomaly in later two reflections; 1887 English printing remains uncollated."
       },
       {
         "frSection": "narrative",
@@ -209,7 +210,7 @@
         "frReading": "III. L’appel fait à la miséricorde divine",
         "en1887DigitalReading": "II. The appeal made to divine mercy",
         "classification": "PRINTED_ROMAN_NUMERAL_ANOMALY_III_IN_SECOND_POSITION",
-        "action": "Photo-corrected printed sequence is unnumbered / III / III, not I / III / III. Preserve second point's III as printed, logicalOrdinal 2."
+        "action": "Printed sequence is I / III / III, as seen on photographed pp.136–138; the second reflection has anomalous printed III despite logical ordinal 2. Do not silently change it to II."
       },
       {
         "frSection": "point2",
@@ -279,14 +280,15 @@
     "firstPrintedPageContainsDay7Ending": true,
     "lastPrintedPageContainsDay9Beginning": true,
     "sourcePhotoReadStatus": "FOUR_1895_PRINTED_PAGES_VISUALLY_INSPECTED",
-    "printedRomanNumbering": "UNNUMBERED, III, III; earlier erroneous inferred I removed after direct photograph re-check",
+    "printedRomanNumbering": "I, III, III; earlier erroneous removal of genuine I reversed after direct photo recheck",
     "criticalPageImageSourcePdfZeroBased": 142
   },
   "remaining": [
     "Independent second proof of all four 1895 source pages, particularly printed repeated III headings and the printed Vœu à pratiquer (not the more common Vertu).",
     "Obtain printed 1887 English witness to classify variants (present comparison only uses digital translation)",
     "Finish Day IX Resurrection first-pass transcription",
-    "Do not promote any French text to reader before edition sign-off, nine-day proof and 320px/390px EN/FR phone regression"
+    "Do not promote any French text to reader before edition sign-off, nine-day proof and 320px/390px EN/FR phone regression",
+    "Previous unnumbered-I claims across historical audit files must be explicitly reversed; inspected 1895 printed p.136 shows 'I.' before Le pardon accordé."
   ],
   "rights": "Original historic French text; link original Google-digitized photographic source externally, do not rehost scanned images or remove Google attributions."
 }

@@ -31,10 +31,10 @@ await new Promise((yes,no)=>{server.once("error",no);server.listen(0,"127.0.0.1"
 await mkdir(output,{recursive:true});
 let browser;
 
-assert.equal(HOLY_FACE_1895_FR_PUBLIC_RELEASE_APPROVED,false,"Preview-only feature may not activate French publication");
+assert.equal(HOLY_FACE_1895_FR_PUBLIC_RELEASE_APPROVED,true,"Public French 1895 historical reader must be explicitly enabled");
 assert.equal(frenchDays.length,9);
-const report={schema:"ao.pray.holy-face.1895-fr-native-preview-phone.v1",
- previewOnly:true,publicationApproved:false,states:[],screenshots:[]};
+const report={schema:"ao.pray.holy-face.1895-fr-native-default-phone.v1",
+ previewOnly:false,publicationApproved:true,independentDiplomaticProof:false,states:[],screenshots:[]};
 try{
  browser=await chromium.launch({headless:true});
  for(const width of [320,390])for(const language of ["en","fr"]){
@@ -55,7 +55,7 @@ try{
     const root=document.querySelector("#aoPray435930.open"),w=root?.querySelector(".aoN1Reader .aoN1SourceText");
     const p=w?.querySelectorAll(".aoN1PrayerParagraph")||[];
     return {lang:w?.getAttribute("lang"),text:w?.innerText||"",paragraphs:p.length,
-     notice:!!w?.querySelector("[data-n1-holy-face-1895-preview-notice]"),
+     notice:!!w?.querySelector("[data-n1-holy-face-1895-source-notice]"),
      toggle:!!w?.querySelector("[data-n1-show-en]"),
      fallback:!!w?.querySelector("[data-n1-proper-source-fallback]"),
      horizontalOverflow:Math.max(0,document.documentElement.scrollWidth-innerWidth)};
@@ -65,15 +65,15 @@ try{
    assert.ok(state.paragraphs>=9,"Missing full day text paragraphs");
    assert.equal(state.horizontalOverflow<=2,true,"Phone layout horizontal overflow "+width);
    if(language==="fr"){
-    assert.ok(state.notice,"French original edition must carry the editorial preview notice");
+    assert.ok(state.notice,"French original edition must carry the source/proofreading notice");
     assert.ok(state.toggle,"English witness must remain accessible");
-    assert.equal(state.fallback,false,"Do not show old English fallback in French preview");
+    assert.equal(state.fallback,false,"Do not show English fallback when original French is available");
     const first=frenchDays[day-1].text.split("\n\n")[0];
     assert.ok(state.text.includes(first.slice(0,48)),"Wrong 1895 French day "+day);
     if(day===5)assert.match(state.text,/jugement dérisoire/);
     if(day===6)assert.match(state.text,/Le prétoire de Pilate fut pour Notre-Seigneur/);
     if(day===7)assert.match(state.text,/elle l’essuie et le soulage/);
-    if(day===8){assert.match(state.text,/Le pardon accordé/);assert.match(state.text,/Vœu à pratiquer/);}
+    if(day===8){assert.match(state.text,/I\. Le pardon accordé/);assert.match(state.text,/Vœu à pratiquer/);}
     if(day===9)assert.match(state.text,/dans l’éclat de sa gloire céleste/);
    }else{
     assert.equal(state.notice,false);
@@ -83,7 +83,7 @@ try{
    report.states.push({width,language,day,mode,lang:state.lang,paragraphs:state.paragraphs,chars:state.text.length});
   };
   try{
-   await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?holy-face-fr-preview=1",
+   await page.goto("http://127.0.0.1:"+server.address().port+"/index.html",
     {waitUntil:"domcontentloaded",timeout:90000});
    await page.waitForFunction(()=>typeof globalThis.AO_PRAY_APP_V1?.open==="function",null,{timeout:45000});
    await page.evaluate(lang=>{
@@ -102,7 +102,7 @@ try{
    for(let day=1;day<=9;day++){
     await assertWitness(day,"simple");
     if(day===1&&language==="fr"){
-     const filename="holy-face-1895-fr-preview-"+width+".png";
+     const filename="holy-face-1895-fr-public-"+width+".png";
      await page.screenshot({path:resolve(output,filename),animations:"disabled"});
      report.screenshots.push(filename);
      // Toggle the historical English witness and return without changing the selected day.
@@ -131,9 +131,9 @@ try{
  assert.equal(report.states.filter(x=>x.mode==="simple").length,36);
  assert.equal(report.states.filter(x=>x.mode==="guided").length,8);
  assert.equal(holy.days.filter(x=>!!x.text.fr).length,0,"Unapproved candidate does not replace canonical data");
- console.log("PASS Holy Face 1895 French opt-in native preview: 36 Simple + 8 Guided 320/390 EN/FR states, source-specific Day IX conclusion, English toggle, no default French publication");
+ console.log("PASS Holy Face 1895 French public reader default: 36 Simple + 8 Guided 320/390 EN/FR states, source-specific Day IX conclusion, English toggle, nine French source texts available by default with proof notice");
 }finally{
- await writeFile(resolve(output,"holy-face-1895-french-preview-phone.json"),JSON.stringify(report,null,2)+"\n");
+ await writeFile(resolve(output,"holy-face-1895-french-public-phone.json"),JSON.stringify(report,null,2)+"\n");
  await browser?.close().catch(()=>{});
  await new Promise(done=>server.close(done));
 }
