@@ -60,6 +60,18 @@ RESPONSE = re.compile(r"^℟(?:\.|br\.)\s*")
 GLOSSARY = re.compile(r"^Glória Patri,")
 BARE_SOURCE = re.compile(r"^Preces Feriales(?:\{.*\})?$")
 
+# Source-only anomalies confirmed in the actual 5,840 generated Hours.
+# Missing `Psalmi` bold labels ≠ missing Psalms (all still contain
+# original `Psalmus` headings). They remain liturgical review cases,
+# NOT independently accepted or automatically public.
+KNOWN_SPECIAL_FORMAT_SOURCE_REVIEWS = frozenset(
+    [(d, "Completorium") for d in
+     ("2026-04-02", "2026-04-03", "2026-04-04",
+      "2027-03-25", "2027-03-26", "2027-03-27")]
+    + [(f"{year}-11-02", h) for year in (2026, 2027)
+       for h in ("Prima", "Tertia", "Sexta", "Nona", "Completorium")]
+)
+
 def line_role(line: str, section_label: str | None) -> tuple[str, dict]:
     """Evidence from exact rendered Latin source prefixes, not liturgical guesses."""
     if section_label and line == section_label:
@@ -226,8 +238,13 @@ def import_year(source_dir: Path, output_dir: Path) -> dict:
                                               "code": "DUPLICATED_DAY_HOUR"})
                     days[date][hour] = projected
                     if projected["token_counts"].get("missing_explicit_psalmody_section"):
-                        source_issues.append({"date": date, "hour": hour,
-                                              "code": "SOURCE_PSALMODY_LABEL_ABSENT"})
+                        special=(date, hour) in KNOWN_SPECIAL_FORMAT_SOURCE_REVIEWS
+                        source_issues.append({
+                            "date": date, "hour": hour,
+                            "code": "SOURCE_PSALMODY_LABEL_ABSENT",
+                            "special_format_source_review": special,
+                            "liturgically_certified": False,
+                        })
                     if projected["token_counts"].get("missing_source_psalm_headings"):
                         source_issues.append({"date": date, "hour": hour,
                                               "code": "SOURCE_PSALM_HEADING_ABSENT"})
@@ -256,6 +273,12 @@ def import_year(source_dir: Path, output_dir: Path) -> dict:
         source_issues.append({"code": "ANNUAL_SEMANTIC_COVERAGE_MISMATCH",
                               "expected": c["expected_hour_instances"],
                               "actual": count, "counts": dict(yearly)})
+    expected_source_reviews = [
+        x for x in source_issues if x.get("special_format_source_review") is True
+    ]
+    unexpected_source_issues = [
+        x for x in source_issues if x.get("special_format_source_review") is not True
+    ]
     report = {
         "schema": "ao.office.1960.annual-semantic-source-audit.v1",
         "year": year, "rubrics": "Rubrics 1960 - 1960",
@@ -269,6 +292,10 @@ def import_year(source_dir: Path, output_dir: Path) -> dict:
         "source_line_token_counts": dict(sorted(role_counts.items())),
         "source_issues": source_issues,
         "source_issues_count": len(source_issues),
+        "expected_special_format_source_reviews": expected_source_reviews,
+        "expected_special_format_source_count": len(expected_source_reviews),
+        "unexpected_source_issues": unexpected_source_issues,
+        "unexpected_source_issues_count": len(unexpected_source_issues),
         "quality_gate": {
             "source_projection_complete": count == c["expected_hour_instances"]
             and len(days) == c["days"],
@@ -298,9 +325,12 @@ def main() -> int:
         f"typed_sections={sum(report['explicit_section_type_counts'].values())} "
         f"psalm_headings={report['source_line_token_counts'].get('psalm_heading', 0)} "
         f"source_issues={report['source_issues_count']} "
+        f"expected_special_format={report['expected_special_format_source_count']} "
+        f"unexpected_source_issues={report['unexpected_source_issues_count']} "
         f"complete={q['source_projection_complete']} certified=false published=false"
     )
-    return 0 if q["source_projection_complete"] else 2
+    return 0 if (q["source_projection_complete"]
+                 and report["unexpected_source_issues_count"] == 0) else 2
 
 
 if __name__ == "__main__":
