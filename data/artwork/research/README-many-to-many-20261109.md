@@ -212,3 +212,30 @@ A further evidence-only queue is stored in `data/artwork/research/m2m-protected-
 - **0** canonical artwork IDs have been certified or assigned. In particular, editorial identifiers such as `primary:2026-05-23` and `APPROVED_REVIEW::...` must not be mistaken for canonical artwork IDs.
 
 This queue guides the next exact-source inventory search without discarding approved paintings, inventing object identities, or implicitly clearing media rights. The regression test checks the 11/6/29 split and the zero-automatic-link rule.
+
+## Source-URL leads and Prayer metadata adjudication (batches 9–10)
+
+The 46 missing protected-primary-ID queue is still **unresolved** at the app-canonical-ID level; the latest pass has done source and work grouping without altering approvals. Its **11 exact-source-URL leads correspond to five different work groups**, with each destination retained separately in `m2m-exact-url-identity-batch9-20261109.v1.json`:
+
+| Physical work | Destination references | Evidence/hold |
+| --- | ---: | --- |
+| Maíno *Pentecost* — Museo del Prado institution object URL 49c1d551… | 1 | Original selection retained; Prado photo-source prohibition applies |
+| David Teniers II *Ascension* after Leandro Bassano — Wallace Collection P635 | 2 | A small 1650s copied panel, not autograph Leandro; Commons JPEG 553×800 and Wallace/Art UK credit, untested photo release |
+| Mateo Cerezo *Descent of the Holy Spirit* — Museo de Huesca 00029 | 5 | Confirmed in Spain's CER.es inventory under Cerezo; older Huesca guide says original *or school*; existing Commons JPEG 567×479 is too modest for blind high-quality promotion |
+| Tintoretto's *Circumcision* — Scuola Grande di San Rocco, Sala Terrena 1587 | 2 | In-situ official institution establishes canvas; substantial workshop participation (especially Domenico) must be retained |
+| Solesmes, Église St-Martin, fourth Station of the Cross | 1 | Commons user's CC0 photo establishes church/scene. 'Delacroix' work attribution from filename/category remains insufficient for an autograph identification |
+
+These five groups account for **11 target relationships** but are not *11 newly certifiable app canonical works*. No object/ID promotion, photograph licence/byte QA, crop certification or new gallery import is authorised. In particular, historical `primary:...` and `APPROVED_REVIEW::...` references remain editorial, not physical-object IDs. In the 46-case triage, the other **six title/artist-only** leads and **29 no-internal-lead** cases remain open.
+
+The original **23 Prayer metadata differences** now have source-scoped adjudication in `m2m-prayer-metadata-23-batch10-20261109.v1.json`:
+
+- **12 San Polo Via Crucis** labels differ by title and station number, but are the same Giandomenico Tiepolo cycle, per Chorus Venezia. Each individual numbered panel must remain distinguishable.
+- **2 distinct-object conflicts**: `STG-pray.rosary-03` and `COV-weekday_magnificat` have a historical Princeton *Visitation* (`y1994-17`, 1643–48, Philippe de Champaigne) but Claude nominated a different Geneva `1942-0009` painting (workshop attribution indicated in external catalogues). Preserve Princeton as the current selection; Geneva is not a mere title alias. Provenance of any later explicit owner approval must be established independently.
+- **2 Sodoma-related artist cases**: Cleveland `1916.786` is currently catalogued as by a **follower of Sodoma**, not decisively autograph Sodoma. The `HERO-10` current source URL is that exact Cleveland object; `STG-pray.seven_words-06` has a generic current name/artist without original URL and must not be assumed to be the same painting solely from its title.
+- **1 photographer-as-artist correction**: `HERO-11` Rubens, *Christ Triumphant over Death and Sin*, is Strasbourg `MBA 235`, not the photographer/uploader DCHNwam. The Strasbourg photographic source explicitly calls for contacting its photothèque.
+- **1 unresolved Rubens *Assumption* identity**: `COV-prayer.hymns` has two different editorial IDs and no source URL; several distinct Rubens versions, modelli and copies share the title, so no physical canvas has been fixed.
+- The other **5 flags** comprise two Ghent Altarpiece credit/title order variants, one MNAC *Virgin of Seven Sorrows* article variant (`008327-000`), one Domenichino artist-string truncation with an unchanged source file, and one Baclaran Perpetual Succour poster-source description truncation with an unchanged file. The poster scan must not be presented as the original Roman icon.
+
+All 23 original discrepancy flags are retained as historic QA evidence; the new classifications are added as a separate layer. **Nothing has been replaced, automatically selected, licensed or deployed**. The research tests check all 11, 23, five underlying work groups, the two Princeton/Geneva object conflicts, and the zero-new-assignment requirement.
+
+Next: resolve the six weak title/artist-only candidates and 29 unmatched protected selections from independent source records and local asset hashes. Keep AI-derived owner artwork and multi-scene Easter Vigil selections as distinct asset classes, not museum paintings.
