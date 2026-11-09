@@ -131,3 +131,23 @@ Detailed source/object evidence: `data/artwork/research/m2m-liturgical-thematic-
 - Nov9 Rivalz *Urban II Consecrating Saint-Sernin Toulouse* = painter **Antoine Rivalz**, NOT Commons photographer Didier Descouens; Toulouse inv 2004.1.266. A *different basilica* from the Lateran, and definitely not the day's Zacchaeus Luke19 Gospel.
 
 **Cumulative proposal audit:** 66 of Claude's 114 new date assignments individually source-assessed; **48 remain** (liturgical/thematic/scriptural only). All 52 direct-scene labels were handled in batches 1–4, albeit without any blanket photo or pixel certification. The historical 1,589 relationship edges and 507 accepted Prayer alternatives are unchanged. New findings do not authorize app changes, photo source reuse or owner-preference overrides.
+
+## Liturgical feast audit — batch 6 (12 relationships)
+
+Source-backed editorial classifications, **not assignments**, are recorded in `m2m-liturgical-batch6-20261109.v1.json`. Total **78/114** Claude NEW_PROPOSAL links individually reviewed; **36 remain** (**15 liturgical, 15 thematic, 6 scriptural**). The source 1,589-edge graph and all 507 user-accepted Prayer alternatives have not been modified.
+
+Key corrections and qualifications:
+
+- 21 January: Wautier's KMSKA 599 portrays unidentified girls **as** St Agnes and St Dorothea, not biographical scenes from their lives. Saint association remains, classified `PORTRAIT_HISTORIE`.
+- 30 January: Cortona's *St Martina Refuses to Worship Idols* proposed Commons photograph points to the **Granet oil-on-copper INV107/MR413**, not Princeton 1998-38 or Pitti versions. The painting is relevant, but variants must not be collapsed.
+- 13 June: Murillo's Berlin *Saint Anthony of Padua with Christ Child*, Gemäldegalerie **414 / obj:862397**, is catalogued by the institution as **probably destroyed in May 1945**. It cannot be represented as an extant work in the gallery; historical-photo identity and reproduction gate remain open.
+- 14 August: Van der Goes's *Death of the Virgin* (Musea Brugge 0000.GRO0204.I) depicts a **Dormition tradition** for the Assumption vigil, not the appointed Gospel or corporeal Assumption.
+- 17 August: Carracci's *Virgin and Child Appearing to St Hyacinth*, Louvre **INV186**, is a saint's visionary event, distinct from a Louvre preparatory drawing.
+- 25 August: Cabanel's *Glorification of St Louis* has Versailles ownership **MV7669**, on deposit at Montpellier, not an unqualified permanent Musée Fabre object.
+- 15 October: Seghers's *Ecstasy of St Teresa*, KMSKA **509**, is institutionally documented; the Claude-proposed Commons JPEG is low resolution and is not automatically the best reproduction.
+- 21 November: Baugin's *Presentation of the Virgin* (Granet **860.1.408**) is traditional noncanonical Marian subject matter; preserve as liturgical iconography, not a Gospel event or the separate Rennes sketch.
+- 23 November: Fungai's *St Clement Finding His Family*, Strasbourg **453.b**, has an INHA cross-reference that mistakenly calls the associated panel 453.a; hold cross-reference harmonisation before publication.
+
+The other confirmed feast subjects in this batch are de Vos's *Temptation of St Anthony* (KMSKA 103), de Vos's *Restitution to St Norbert* (KMSKA 107), and Jacopo Bassano's Dijon *Martyrdom of St Sebastian* (older museum catalogue gives a different Bassano attribution; object inventory reconciliation still necessary).
+
+This PR must remain draft. **No source image, exact photo licence, crop, visual pixels, original owner selection, or live app assignment was cleared or modified.** The regression suite now verifies unique proposal coverage and derives cumulative totals instead of asserting contradictory historical intermediate totals against the current index.
