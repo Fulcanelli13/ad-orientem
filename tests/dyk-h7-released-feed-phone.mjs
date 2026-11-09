@@ -24,7 +24,7 @@ fact.pilot_destination_audit.exact_in_app_route_verified=true;
 fact.pilot_source_folio.link_browser_verified=true;
 // Choose an actual upcoming date on which the single test-only R34 approval
 // wins the 226-entry (225 public + 1 test-only R34) mixed rotation.
-// Inspect 365 days: any interval of at least 2*N-1 days contains a full
+// Inspect 500 days: any interval of at least 2*N-1 days contains a full
 // 226-day aligned cycle, so a valid test-only candidate must appear.
 const historical=JSON.parse(await readFile(resolve(root,
  "data/did-you-know/weiser-historical-20-publication.v1.json"),"utf8"));
@@ -51,6 +51,10 @@ const testDate=Array.from({length:500},(_,i)=>
  new Date(base+i*dayMs).toISOString().slice(0,10))
  .find(date=>dykHomeRotationSlot(date,[...historicalIds,fact.id],DYK_GLOSSARY_FALLBACK_IDS)===fact.id);
 assert.ok(testDate,"Test-only R34 release must receive one legitimate daily slot");
+const h225Date=Array.from({length:500},(_,i)=>
+ new Date(base+i*dayMs).toISOString().slice(0,10))
+ .find(date=>dykHomeRotationSlot(date,historicalIds,DYK_GLOSSARY_FALLBACK_IDS)==="DYK-H225-R-001");
+assert.ok(h225Date,"The first H225 fact must have a public date in the 225-day cycle");
 fact.publication_days=[testDate];
 const server=http.createServer(async(req,res)=>{
  try{
@@ -114,7 +118,39 @@ try{
    assert.deepEqual(errors,[],"H7 home runtime errors for "+width);
   }finally{await page.close()}
  }
- console.log("PASS released H7 Discovery phone: approved historical/Glossary public pool; R34 remains unpublished until a test-only exact-date authorization opens its source");
+
+ // Verify the actual H225 original-source journey at both compact phone widths.
+ // This does not override any publication gate or intercept an approved manifest.
+ for(const width of [320,390]){
+  const page=await browser.newPage({viewport:{width,height:844},isMobile:true,hasTouch:true});
+  await page.addInitScript(({date})=>{
+   const NativeDate=Date,epoch=new NativeDate(date+"T12:00:00Z").getTime();
+   class FixedDate extends NativeDate{
+    constructor(...args){if(args.length)super(...args);else super(epoch)}
+    static now(){return epoch}
+   }
+   window.Date=FixedDate;
+  },{date:h225Date});
+  const errors=[];page.on("pageerror",error=>errors.push(String(error)));
+  try{
+   await page.goto(origin+"/index.html?aoR17Reader=native",{waitUntil:"domcontentloaded",timeout:60000});
+   const published=page.locator("[data-home-dyk-fact-id='DYK-H225-R-001']");
+   await published.waitFor({state:"visible",timeout:45000});
+   assert.ok((await published.locator("[data-home-dyk-fact]").innerText()).includes("Ambrosian"));
+   await published.click();
+   const modal=page.locator("[data-dyk-published='DYK-H225-R-001']");
+   await modal.waitFor({state:"visible",timeout:30000});
+   assert.equal(await modal.getAttribute("role"),"dialog");
+   assert.equal(await modal.locator("a[href='https://www.newadvent.org/cathen/01394a.htm']").count(),1);
+   assert.ok((await modal.innerText()).includes("Read historical source article"));
+   await page.keyboard.press("Escape");
+   assert.equal(await page.locator("[data-dyk-published]").count(),0);
+   assert.equal(await published.evaluate(el=>document.activeElement===el),true);
+   assert.deepEqual(errors,[],"H225 source phone errors at "+width);
+  }finally{await page.close()}
+ }
+
+ console.log("PASS released H7 Discovery phone: 225 approved historical/Glossary public pool, actual H225 320/390 source journey; R34 remains unpublished until a test-only exact-date authorization opens its source");
 }finally{
  await browser?.close().catch(()=>{});
  await new Promise(ok=>server.close(ok));
