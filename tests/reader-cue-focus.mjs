@@ -176,4 +176,43 @@ assert.equal(hiddenRow.dataset.readingActive,"false");
 
 assert.equal(pickReadingParagraph({items:[]}),null);
 
+// Real phone regression #2714: at scrollTop 204, C0084 source text occupies
+// y=487–606; adding the exact 67px Gospel three-crosses source rubric extends
+// its visible paragraph to y=684. The auxiliary rubric must not move the
+// ceremonial focus back to C0083 (whose y=249–463 stays identical).
+function geometry(withCaption){
+  const scrollTop=204,cr={top:0};
+  const pair=[
+    {cueId:"AO.SM.C0082",rect:{top:70,bottom:224}},
+    {cueId:"AO.SM.C0083",rect:{top:249-scrollTop,bottom:463-scrollTop}},
+    {cueId:"AO.SM.C0084",rect:{top:487-scrollTop,
+      bottom:(withCaption?684:606)-scrollTop}},
+    {cueId:"AO.SM.C0085",rect:{top:720-scrollTop,bottom:855-scrollTop}},
+  ];
+  const container={
+    scrollTop,scrollHeight:1481,clientHeight:668,
+    getBoundingClientRect:()=>cr,
+    querySelectorAll:()=>pair.map(p=>({
+      dataset:{cueId:p.cueId},
+      getBoundingClientRect:()=>p.rect,
+      querySelector:()=>withCaption&&p.cueId==="AO.SM.C0084"
+        ? {getBoundingClientRect:()=>({top:608-scrollTop})}
+        :null,
+    }))
+  };
+  const cues=cueItemsFromScrollContainer(container);
+  return {cues,active:pickActiveCue({scrollTop,scrollHeight:1481,
+    clientHeight:668,items:cues})};
+}
+const withoutNote=geometry(false),withNote=geometry(true);
+assert.equal(withoutNote.active,"AO.SM.C0084");
+assert.equal(withNote.active,"AO.SM.C0084",
+  "Adding the already sourced Gospel gesture annotation must not reverse active C0084");
+assert.equal(withNote.cues.find(x=>x.cueId==="AO.SM.C0084").bottom,608);
+assert.equal(withoutNote.cues.find(x=>x.cueId==="AO.SM.C0084").bottom,606);
+assert.ok(withNote.cues.every(c=>c.cueId!=="AO.SM.C0084" ||
+  c.bottom<c.top+200),"Invisible additional cue ownership was inferred");
+assert.equal(withNote.cues.find(x=>x.cueId==="AO.SM.C0083").bottom,
+  withoutNote.cues.find(x=>x.cueId==="AO.SM.C0083").bottom);
+
 console.log("reader cue focus: PASS — 39% focus zone and no redundant DOM mutations.");
