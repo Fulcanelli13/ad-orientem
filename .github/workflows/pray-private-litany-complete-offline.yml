@@ -1,0 +1,46 @@
+name: Prayer — complete local private Litany 1883 EN and 1862 FR
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/pray/litany-private-local-loader.v1.js'
+      - 'src/pray/presentation-runtime.js'
+      - 'src/pray/litany-source.js'
+      - 'data/pray/private-litany-of-saints-1883-en.v1.json'
+      - 'data/pray/private-litany-of-saints-1862-fr.v1.json'
+      - 'sw.js'
+      - 'tests/pray-private-litany-local-originals-20261109.mjs'
+      - 'tests/pray-private-litany-local-phone-20261109.mjs'
+      - '.github/workflows/pray-private-litany-complete-offline.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pray-litany-local-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - name: Verify both complete pinned Litany original bodies and digests
+        run: node tests/pray-private-litany-local-originals-20261109.mjs
+      - name: Protect existing private/public liturgical editions and Psalm source boundaries
+        run: node tests/pray-penitential-litany-tenebrae-source-faces-v1.mjs
+  phone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Read all historical Litany pages offline on 320/390 EN/FR phones
+        run: node tests/pray-private-litany-local-phone-20261109.mjs
