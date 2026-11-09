@@ -23,11 +23,11 @@
   ],
   "counts": {
     "baselineUnmatchedCalendarTargets": 170,
-    "targetsWithNewResearchLeads": 103,
-    "targetsStillWithoutNamedLeads": 67,
-    "proposedRelationshipEdges": 120,
+    "targetsWithNewResearchLeads": 123,
+    "targetsStillWithoutNamedLeads": 47,
+    "proposedRelationshipEdges": 146,
     "existing989Edges": 25,
-    "newInstitutionalObjectEdges": 85,
+    "newInstitutionalObjectEdges": 111,
     "secondaryOrCommonsOnlyEdges": 10,
     "byClass": {
       "II": {
@@ -37,8 +37,8 @@
       },
       "III": {
         "unmatchedBaseline": 101,
-        "withResearchLeads": 43,
-        "stillWithoutLeads": 58
+        "withResearchLeads": 63,
+        "stillWithoutLeads": 38
       },
       "IV": {
         "unmatchedBaseline": 40,
@@ -56,9 +56,26 @@
       "observedPrincipalId": "sancti:01-14:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 5:13–19",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "ICCD:0800404274",
+          "title": "The Coronation of the Virgin with Saints, including Hilary of Poitiers",
+          "artist": "Giovanni Battista Merano",
+          "sourceUrl": "https://www.catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0800404274",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas",
+          "remark": "Galleria Nazionale Parma inv.1191; St Hilary explicitly described alongside five other saints; not a solo portrait",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        }
+      ]
     },
     {
       "date": "2026-01-15",
@@ -165,9 +182,26 @@
       "observedPrincipalId": "sancti:01-24:3:r",
       "gospelReferenceFromMatchingIndex": "Luke 14:26–33",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Walters:W.521.203V",
+          "title": "The Martyrdom of Saint Timothy",
+          "artist": "Byzantine manuscript illuminator, unidentified",
+          "sourceUrl": "https://art.thewalters.org/object/W.521.203V/",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "ink and pigments on parchment, 1025–1050",
+          "remark": "Identifies Timothy bishop of Ephesus, death and translation of relics; manuscript miniature, not an oil painting; exact scene provenance Walters",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        }
+      ]
     },
     {
       "date": "2026-01-25",
@@ -723,9 +757,42 @@
       "observedPrincipalId": "tempora:Quad2-5:3:v",
       "gospelReferenceFromMatchingIndex": "Matthew 21:33–46",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 2,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Walters:W.535.134V",
+          "title": "Parable of the Wicked Husbandmen",
+          "artist": "Anonymous artists for Lukas of Cyprus Gospel Lectionary",
+          "sourceUrl": "https://art.thewalters.org/object/W.535.134V/",
+          "relation": "APPOINTED_GOSPEL_PARABLE_EXACT",
+          "scriptureOrIdentityAnchor": "Matthew 21:33–46",
+          "medium": "ink and paint on paper, manuscript miniature 1594–1596",
+          "remark": "Exact Matthew 21:33–46 parable; Walters accession W.535.134V; not a Baroque painting; fallback format only",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SCENE_NON_OIL_FALLBACK"
+        },
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Louvre:L55LR84",
+          "title": "Parabole des vignerons homicides",
+          "artist": "Late fifteenth-century German woodcutter; Anton Sorg publisher",
+          "sourceUrl": "https://collections.louvre.fr/en/ark:/53355/cl020586835",
+          "relation": "APPOINTED_GOSPEL_PARABLE_EXACT",
+          "scriptureOrIdentityAnchor": "Matthew 21:33–46",
+          "medium": "woodcut in 1478–1482 printed book",
+          "remark": "Exact parable print, not an oil painting, Louvre fol.56; do not substitute with unrelated vineyard labours",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SCENE_NON_OIL_FALLBACK"
+        }
+      ]
     },
     {
       "date": "2026-03-09",
@@ -992,9 +1059,26 @@
       "observedPrincipalId": "sancti:04-28:3:w",
       "gospelReferenceFromMatchingIndex": "Luke 10:1–9",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "ICCD:1201202757",
+          "title": "San Paolo della Croce",
+          "artist": "Roman school, unknown painter",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1201202757",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas, nineteenth century",
+          "remark": "Founder of the Passionists, explicitly documented; photo and restoration unknown; distinguish from St Paul Apostle",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        }
+      ]
     },
     {
       "date": "2026-04-29",
@@ -1113,9 +1197,42 @@
       "observedPrincipalId": "sancti:05-05:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 16:13–19",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 2,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Walters:37.453",
+          "title": "Portrait of Pope Pius V",
+          "artist": "Bartolomeo Passarotti and workshop",
+          "sourceUrl": "https://art.thewalters.org/object/37.453/",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas, circa 1566",
+          "remark": "Exact pontiff, Walters 37.453; probably workshop replica of lost original; museum offers CC0 image metadata, but exact selected bytes/crop not yet reviewed",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        },
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "ICCD:0100088399",
+          "title": "Pope Pius V Praying for Victory at Lepanto",
+          "artist": "Italian school, artist to confirm",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0100088399",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil painting, circa 1590–1610",
+          "remark": "Alternative exact pontiff in Marian/Lepanto context; original and exact photo rights separate",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        }
+      ]
     },
     {
       "date": "2026-05-06",
@@ -1239,9 +1356,26 @@
       "observedPrincipalId": "sancti:05-18:3:r",
       "gospelReferenceFromMatchingIndex": "John 15:1–7",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "ICCD:0800193038",
+          "title": "San Venanzio martire",
+          "artist": "Carlo Rizzi (also indexed as Carlo Ricci)",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0800193038",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas, 1748",
+          "remark": "Depicts Venantius of Camerino in armour with palm and civic banner; dated from original inscription; this is the May 18 martyr",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        }
+      ]
     },
     {
       "date": "2026-05-19",
@@ -1250,9 +1384,26 @@
       "observedPrincipalId": "sancti:05-19:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 16:13–19",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "ICCD:1300033061",
+          "title": "San Pietro Celestino",
+          "artist": "School of Giulio Cesare Bedeschini",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1300033061",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas, circa 1610–1620",
+          "remark": "Pope Celestine V, mitre/tiara and city model; national catalogue notes deteriorated paint, visual quality hold",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        }
+      ]
     },
     {
       "date": "2026-05-20",
@@ -1325,9 +1476,42 @@
       "observedPrincipalId": "sancti:06-01:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 25:1–13",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 2,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "ICCD:0500404703",
+          "title": "Vision of Saint Angela Merici",
+          "artist": "Agostino Pegrassi",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0500404703",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas, 1931",
+          "remark": "Exact Saint Angela, but 1931 painting can be copyright-restricted; research metadata only, not automatically eligible for release",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        },
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "ICCD:0500404726",
+          "title": "Vision of Saint Angela Merici",
+          "artist": "Giovanni Paolo Pellesina",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0500404726",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "nineteenth-century painting",
+          "remark": "Earlier original exact Saint Angela; medium catalogued as canvas painting; museum/owner photo still not cleared",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        }
+      ]
     },
     {
       "date": "2026-06-02",
@@ -1958,9 +2142,26 @@
       "observedPrincipalId": "sancti:07-18:3:w",
       "gospelReferenceFromMatchingIndex": "John 15:12–16",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "ICCD:0800030522",
+          "title": "Saint Camillus de Lellis in Glory",
+          "artist": "Attributed to Giovanni Battista Pittoni",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0800030522",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas, circa 1746–1760",
+          "remark": "Caution: Pittoni attribution described as proposed, NOT established autograph; 1746 canonisation is terminus post quem",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        }
+      ]
     },
     {
       "date": "2026-07-19",
@@ -1996,9 +2197,26 @@
       "observedPrincipalId": "sancti:07-20:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 19:13–21",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "ICCD:0700057137A-8",
+          "title": "Saint Jerome Emiliani",
+          "artist": "Attributed to Sebastiano Galeotti; also attributed to Francesco Maria Costa",
+          "sourceUrl": "https://www.catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0700057137A-8",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "fresco on plaster, 1720–1734",
+          "remark": "Exact Jerome Emiliani (Miani), NOT Saint Jerome the Doctor; fresco fragment, no independent cropping/pixel QA",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        }
+      ]
     },
     {
       "date": "2026-07-21",
@@ -2007,9 +2225,42 @@
       "observedPrincipalId": "sancti:07-21r:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 5:13–19",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 2,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "ICCD:0700031704",
+          "title": "Saint Lawrence of Brindisi",
+          "artist": "Angelo Giacinto Banchero",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0700031704",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas, second half eighteenth century",
+          "remark": "Exact Capuchin Doctor of Church Lawrence of Brindisi; Genovese Baroque portrait",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        },
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "ICCD:2000043587",
+          "title": "Saint Lawrence of Brindisi Receiving a Vision of the Infant Christ",
+          "artist": "Sardinian school, unidentified painter",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/2000043587",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas, first half seventeenth century",
+          "remark": "Original inscription explicitly identifies Laurent of Brindisi; not St Lawrence the Deacon",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        }
+      ]
     },
     {
       "date": "2026-07-23",
@@ -2018,9 +2269,26 @@
       "observedPrincipalId": "sancti:07-23:3:r",
       "gospelReferenceFromMatchingIndex": "Luke 22:24–30",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "ICCD:0800034953",
+          "title": "Saint Apollinaris Blessing the City of Ravenna",
+          "artist": "Filippo Pasquali",
+          "sourceUrl": "https://www.catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0800034953",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas, circa 1678–1690",
+          "remark": "Exact bishop and martyr Apollinaris of Ravenna; original Ravenna altarpiece",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        }
+      ]
     },
     {
       "date": "2026-07-24",
@@ -2254,9 +2522,42 @@
       "observedPrincipalId": "sancti:08-07:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 6:24–33",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 2,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "ICCD:1200962402",
+          "title": "Saint Cajetan of Thiene Writing the Rule of the Theatines",
+          "artist": "Lazzaro Baldi",
+          "sourceUrl": "https://www.catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1200962402",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas, 1690–1698",
+          "remark": "Galleria Spada inv.42, signed/attributed to Lazzaro Baldi; exact saint and authentic historical scene",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        },
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "ICCD:1100042006",
+          "title": "Saint Cajetan of Thiene with the Christ Child",
+          "artist": "Giovanni Anastasi",
+          "sourceUrl": "https://www.catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1100042006",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas, 1691",
+          "remark": "Baroque alternative with Saint Cajetan shown with Child, open book and lily; rights/source photo held",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        }
+      ]
     },
     {
       "date": "2026-08-08",
@@ -2507,9 +2808,26 @@
       "observedPrincipalId": "sancti:08-27:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 18:1–5",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "ICCD:1200008410",
+          "title": "Saint Joseph Calasanz",
+          "artist": "Lazio school, unknown artist",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1200008410",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas, circa 1690–1710",
+          "remark": "Founder of Piarists Calasanz, NOT Joseph the spouse of Mary, Rieti church object",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        }
+      ]
     },
     {
       "date": "2026-08-30",
@@ -2560,9 +2878,26 @@
       "observedPrincipalId": "sancti:08-31:3:w",
       "gospelReferenceFromMatchingIndex": "Luke 12:35–40",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "ICCD:2000050761",
+          "title": "Saint Raymond Nonnatus Receiving Communion",
+          "artist": "Attributed to Domenico Conti",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/2000050761",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas, second half seventeenth century",
+          "remark": "National inventory narrative identifies Raymond Nonnatus (the Mercedarian) and his miraculous Viaticum; Conti attribution uncertain, candlelit dark composition",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        }
+      ]
     },
     {
       "date": "2026-09-01",
@@ -2664,9 +2999,42 @@
       "observedPrincipalId": "sancti:09-05:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 25:14–23",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 2,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "ICCD:0500219384",
+          "title": "Saint Lawrence Justinian Distributing Alms",
+          "artist": "Gregorio Lazzarini",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0500219384",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas, 1691",
+          "remark": "Exact first patriarch of Venice, six-by-ten-metre canvas; distinct from Laurence of Brindisi and Laurence martyr",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        },
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "ICCD:L0060-00118_R03",
+          "title": "Portrait of Saint Lawrence Justinian",
+          "artist": "Giuseppe Franchi",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/Lombardia/HistoricOrArtisticProperty/L0060-00118_R03",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas, circa 1608–1610",
+          "remark": "Pinacoteca Ambrosiana exact saint; smaller portrait alternative",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        }
+      ]
     },
     {
       "date": "2026-09-06",
@@ -3725,9 +4093,26 @@
       "observedPrincipalId": "sancti:11-17:3:w",
       "gospelReferenceFromMatchingIndex": "Mark 11:22–24",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "ICCD:0800232370",
+          "title": "The Virgin in Glory with St John the Evangelist and St Gregory Thaumaturgus",
+          "artist": "Giovanni Francesco Barbieri (Guercino)",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0800232370",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas, 1629–1630",
+          "remark": "Commission and dated installation documented for 17 November 1630; subject St Gregory Wonderworker, NOT Gregory the Great; original in Modena",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        }
+      ]
     },
     {
       "date": "2026-11-20",
@@ -3736,9 +4121,26 @@
       "observedPrincipalId": "sancti:11-20:3:w",
       "gospelReferenceFromMatchingIndex": "Luke 12:32–34",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "ICCD:0100130693",
+          "title": "Saint Felix of Valois in Glory",
+          "artist": "Workshop of Paolo Amedeo Botta",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0100130693",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas, 1796",
+          "remark": "Exact Trinitarian founder Felix of Valois, not Felix of Cantalice; guild attribution and 1796 date as catalogue",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        }
+      ]
     },
     {
       "date": "2026-11-24",
@@ -3774,9 +4176,26 @@
       "observedPrincipalId": "sancti:11-26:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 19:27–29",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "ICCD:1200239580",
+          "title": "Saint Sylvester Subdues the Dragon",
+          "artist": "Giovanni Lanfranco",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1200239580",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas, 1627–1628",
+          "remark": "Exact Pope Sylvester I, original Lanfranco work; not Sylvester Gozzolini or another saint",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        }
+      ]
     },
     {
       "date": "2026-11-27",
@@ -3807,9 +4226,26 @@
       "observedPrincipalId": "sancti:12-02:3:r",
       "gospelReferenceFromMatchingIndex": "Matthew 13:44–52",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "ICCD:1200239809-0",
+          "title": "Santa Bibiana (St Viviana), from the Sixteen Holy Martyrs cycle",
+          "artist": "Domenico Tojetti, Bozzi and Giuseppe Sereni",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1200239809-0",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "fresco on plaster, 1856",
+          "remark": "The individual Santa Bibiana is part of an identified sixteen-saint fresco series; exact individual panel accession and selected image still to isolate; St Vivian is Bibiana/Viviana",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        }
+      ]
     },
     {
       "date": "2026-12-04",
