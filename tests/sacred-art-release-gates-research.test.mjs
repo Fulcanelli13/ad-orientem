@@ -339,3 +339,42 @@ for(const r of museum16.records){
 assert.deepEqual(museum16.production_imports,[]);
 assert.equal(prior.release_gate_evidence.asset_recovery_29.institutional_source_object_destinations_reviewed_from_other19,10);
 console.log('PASS: ten selected-source destinations assigned institutional artwork leads; exact prior photo identities and releases remain blocked.');
+
+const museum17 = read('data/artwork/research/m2m-original19-institutional-batch17-20261109.v1.json');
+assert.equal(museum17.records.length,9);
+assert.equal(museum17.counts.source_object_research_rows_total_across_batches16_17,19);
+assert.equal(museum17.counts.primary_or_institutional_object_confidence_rows,6);
+assert.equal(museum17.counts.secondary_or_unfetched_museum_photo_record_rows,3);
+const museumReviewed=[...museum16.records,...museum17.records];
+assert.equal(museumReviewed.length,19);
+assert.equal(new Set(museumReviewed.map(x=>x.target_type+':'+x.target_id)).size,19);
+const batch13Unlocated=new Set(recovered29.rows.filter(x=>x.evidence_grade==='ORIGINAL_SELECTED_IMAGE_FILE_NOT_ESTABLISHED_IN_AUDITED_ASSET_RECORDS').map(x=>x.target_type+':'+x.target_id));
+assert.equal(batch13Unlocated.size,19);
+assert.deepEqual(new Set(museumReviewed.map(x=>x.target_type+':'+x.target_id)),batch13Unlocated);
+const bridges=museum17.records.find(x=>x.target_id==='2026-05-30');
+assert.equal(bridges.object_id,'1978.29');
+assert.ok(bridges.finding.includes('1833'));
+assert.ok(bridges.finding.includes('1839'));
+const strozzi=museum17.records.find(x=>x.target_id==='2026-12-13');
+assert.equal(strozzi.object_id,'NT 108873');
+assert.ok(strozzi.finding.includes('Incredulity'));
+const gaulli=museum17.records.find(x=>x.target_id==='2026-12-20');
+assert.equal(gaulli.object_id,'INV 20298');
+const sacchi=museum17.records.find(x=>x.target_id==='2026-06-24');
+assert.equal(sacchi.object_id,'P000003');
+assert.equal(sacchi.photo_hold,'NO_PRADO_SOURCE_REPRODUCTION_EVEN_VIA_COMMONS_REUPLOAD');
+assert.ok(museum17.records.find(x=>x.target_id==='2026-03-30').physical_identity.includes('SECONDARY'));
+assert.ok(museum17.records.find(x=>x.target_id==='2026-04-07').physical_identity.includes('SECONDARY'));
+for(const r of museum17.records){
+ assert.equal(r.canonical_app_artwork_id,null);
+ assert.equal(r.selected_exact_image_file_sha256,null);
+ assert.equal(r.selected_photo_reuse_licensed,false);
+ assert.equal(r.photograph_mobile_QA_passed,false);
+ assert.equal(r.new_assignment_authorised,false);
+ assert.equal(r.owner_selection_preserved,true);
+ assert.ok(r.sources.length>0);
+}
+assert.deepEqual(museum17.production_assignments,[]);
+assert.equal(prior.release_gate_evidence.asset_recovery_29.institutional_source_object_destinations_reviewed_from_other19,19);
+assert.equal(prior.release_gate_evidence.asset_recovery_29.other_original_exact_user_selected_photographs_still_unverified,19);
+console.log('PASS: all 19 previously unlinked artwork destinations now have primary/secondary physical-object source research; 19 exact selected photos remain unverified.');
