@@ -97,7 +97,7 @@ function sourceDetails(n){
   ?`<p data-n1-novena-original-scan><a href="${esc(facsimile.url)}" target="_blank" rel="noopener noreferrer">${esc(L("Original printed-volume scan · printed pp. ","Fac-similé de l’édition imprimée · p. ")+facsimile.printedPages)} ↗</a><br><small>${esc(L("Scan located; individual prayer lines have not been independently certified.","Fac-similé identifié ; les lignes de chaque prière restent à collationner."))}</small></p>`:"";
  const printStatus=novenaPrintQualification(n.id,{french:isFr()});
  const printNotice=printStatus?`<p class="aoN1Fine" data-n1-novena-print-audit="${esc(printStatus.status)}">${esc(printStatus.text)}</p>`:'';
- const links=(n.historySources||[]).filter(x=>/^https:\/\//i.test(x.url||'')).map(x=>`<li><a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">${esc(x.label)} ↗</a></li>`).join('');
+ const links=(n.historySources||[]).filter(x=>/^https:\/\//i.test(x.url||'')).map(x=>`<li><a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">${esc(isFr()&&x.labelFr?x.labelFr:x.label)} ↗</a></li>`).join('');
  return `<details class="aoN1Details aoN1SourceDetails"><summary>${esc(L('Sources & edition','Sources et édition'))}</summary><p><b>${esc(s.work||n.id)}</b><br>${esc(s.authors||'')}<br>${esc(s.edition||'')}<br>${esc(s.approval||'')}</p>${direct}${note}${facsimileLink}${printNotice}${s.adaptation?`<p>${esc(s.adaptation)}</p>`:''}${links?`<ul>${links}</ul>`:''}<p class="aoN1Fine">${esc(L('An identified source or translation is not in itself proof of complete word-for-word collation.', 'Un texte source identifié ou une traduction ne constitue pas, à lui seul, une vérification intégrale mot à mot.'))}</p></details>`;
 }
 function contextSource(id){return (NOVENA_CONTEXT_V1.sourceRegistry||[]).find(x=>x.id===id)||null}
@@ -181,10 +181,19 @@ function sourceWitness(text,label){
     ?L('French source witness shown; no English version is attached to this prayer.','Témoin français affiché ; aucune version anglaise n’est attachée à cette prière.')
     :L('Original Latin witness shown; no verified vernacular text is attached.','Texte source latin affiché ; aucune version vernaculaire vérifiée n’est attachée.'))+'</p>'
   :'';
+ // The French reader may point to an identified original French volume,
+ // but must not label the available English Bennett translation as its text.
+ const frenchPrint=n?.id==='holy_face_1887'&&isFr()&&face.requestedUnavailable&&face.language==='en'&&
+  n.frenchOriginalEdition?.status==='BOOK_LOCATED_BIBLIOGRAPHIC_ONLY_NO_NINE_FRENCH_DAY_BODIES'&&
+  /^https:\/\//.test(n.frenchOriginalEdition.url||'')
+  ?'<p class="aoN1SourceLanguageNotice" data-n1-holy-face-french-1894-original lang="fr">'+
+   'Édition originale française de Janvier (1894), 88 pages : '+
+   '<a href="'+esc(n.frenchOriginalEdition.url)+'" target="_blank" rel="noopener noreferrer">Consulter le volume français ↗</a>. '+
+   'Le texte des neuf jours n’a pas encore été transcrit ni collationné avec la traduction anglaise de 1887.</p>':'';
  const toggle=face.canToggleEnglish?'<button type="button" class="aoP435930Secondary" data-n1-show-en>'+
   esc(N.showEnglish?'Revenir au français':'Voir le témoin anglais')+'</button>':'';
  return '<article class="aoN1SourceText" data-n1-source-language="'+face.language+'" lang="'+face.language+'"><small>'+esc(witnessLabel)+'</small>'+
-  notice+novenaParagraphs(face.text)+toggle+'</article>';
+  notice+frenchPrint+novenaParagraphs(face.text)+toggle+'</article>';
 }
 function canonicalPrayer(id,count=1){
  const p=prayerData()[id];

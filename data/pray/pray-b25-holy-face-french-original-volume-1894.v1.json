@@ -1,0 +1,59 @@
+{
+  "schema": "ao.pray.b25-holyface-1894-french-print-volume-access.v1",
+  "workId": "holy_face_1887",
+  "established": "2026-11-09",
+  "status": "FRENCH_ORIGINAL_VOLUME_BIBLIOGRAPHY_LOCATED_TEXT_NOT_COLLATED",
+  "frenchHistoricalVolume": {
+    "title": "Neuvaine en l'honneur de la Sainte-Face",
+    "author": "Abbé Pierre-Désiré Janvier",
+    "place": "Tours",
+    "publisher": "Oratoire de la Sainte-Face",
+    "publicationYear": 1894,
+    "pageCount": 88,
+    "freeDigitalBook": "https://play.google.com/store/books/details/Pierre_D%C3%A9sir%C3%A9_Janvier_Neuvaine_en_l_honneur_de_la?id=kuGdoq3cut4C",
+    "accessCaveat": "Google Play lists the book as free; access may require a Google account. Book contents not reproduced or independently collated in this release.",
+    "bookVersus1887English": "Later original-language French printing; textual equivalence to the Bennett 1887 English translation has not been verified.",
+    "originalFrenchAuthor": "Abbé Pierre-Désiré Janvier"
+  },
+  "corroboration": [
+    {
+      "catalogue": "Carmel de Lisieux community library holdings",
+      "edition": "Janvier, Neuvaine en l'honneur de la Sainte Face, Tours: Oratoire de la Sainte Face (Mame), 1889, 88 p.",
+      "url": "https://archives.carmeldelisieux.fr/au-carmel-du-temps-de-therese/le-style-de-vie/la-lecture-spirituelle/la-bibliotheque-communautaire/livres-de-la-bibliotheque/",
+      "role": "BIBLIOGRAPHIC_CORROBORATION_NOT_1894_FULL_TEXT"
+    },
+    {
+      "catalogue": "Bibliothèque nationale de France author catalogue",
+      "edition": "Janvier, Neuvaine en l'honneur de la Sainte Face: 1882, 1907 and other identified historical print editions.",
+      "url": "https://catalogue.bnf.fr/rechercher.do?index=AUT3&numNotice=12614654",
+      "role": "BIBLIOGRAPHIC_CORROBORATION_NOT_PRINT_LINE_COLLATION"
+    }
+  ],
+  "englishReader": {
+    "existingModule": "src/pray/holy-face-janvier-1887-b25.js",
+    "witness": "Bennett translation in Manual of the Archconfraternity of the Holy Face (Tours, 1887), pp.108–142",
+    "sourceUrl": "https://www.martinians.org/novena-to-the-holy-face",
+    "fullEnglishDayTexts": 9,
+    "englishDigitalTextUnchanged": true,
+    "original1887PrintPhotographicallyCollated": false
+  },
+  "admission": {
+    "frenchPrayerBodies": 0,
+    "latinPrayerBodies": 0,
+    "frenchBookBibliographicallyIdentified": true,
+    "frenchOriginalNineDayTextTranscribed": false,
+    "frenchOriginalBookComparativeCollation": false,
+    "noAIGeneratedPrayerTranslation": true,
+    "noReplacementOfCanonicalSixteenNovenas": true,
+    "frenchReaderFallback": "MARK_ENGLISH_BODY_AS_ENGLISH_AND_OFFER_FRENCH_VOLUME_LINK",
+    "historicalClaimsAreEditionScoped": true
+  },
+  "forbidden": [
+    "Treat bibliographic discovery as completed French transcription",
+    "Claim text or direct download has been independently compared to scanned pages",
+    "Substitute a different modern Holy Face novena",
+    "Translate English Janvier prayer as if it were 1894 French original",
+    "Replace the already released nine complete Bennett digital English readings",
+    "Conflate French 1894 printing with original English 1887 edition or 1882 printing"
+  ]
+}
