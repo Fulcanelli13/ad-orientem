@@ -244,7 +244,9 @@ jobs:
           PY
       - name: Install test runner and Chromium for actual phone acceptance
         run: |
-          npm ci --ignore-scripts --no-audit --no-fund
+          # This repository pins @playwright/test in package.json but
+          # does not maintain package-lock.json; npm ci cannot be used.
+          npm install --no-save --package-lock=false --ignore-scripts --no-audit --no-fund
           npx playwright install --with-deps chromium
       - name: Test unified internal reader at 320px/390px, both years and eight Hours
         env:
