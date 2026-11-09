@@ -4654,6 +4654,34 @@ export function createReaderDomAdapter({
       tail+=Math.max(deficit,Math.ceil(minimumTravel-actualMax));
       card.style.setProperty("--ao-short-cue-tail",tail+"px");
     }
+    // A cued Gospel response can be followed by an uncued readable row.
+    // The source-cue penultimate calculation above then protects the wrong
+    // edge: the actual reading tracker has more eligible paragraphs than
+    // the ceremonial cue list. Give EVERY non-final readable row a genuine
+    // chance to reach the 39% focus line before the final-row edge guard.
+    // Extend only scroll territory; never stretch or move liturgical text.
+    const readable=[...body.querySelectorAll(".ao-reader-paragraph")]
+      .filter(node=>node.dataset.kind!=="RUBRIC"&&node.getClientRects().length&&
+        !node.closest("[hidden],[aria-hidden=true]")&&(node.textContent||"").trim());
+    if(readable.length>1){
+      const containerRect=card.getBoundingClientRect();
+      const firstRect=readable[0].getBoundingClientRect();
+      const firstCenter=Math.max(24,firstRect.top-containerRect.top+
+        card.scrollTop+firstRect.height/2);
+      let needed=0;
+      for(const node of readable.slice(0,-1)){
+        const rect=node.getBoundingClientRect();
+        const center=rect.top-containerRect.top+card.scrollTop+rect.height/2;
+        const lineAtSteady=center-viewport*.39+36;
+        const lineDuringOpening=(center-firstCenter)/1.8+72;
+        needed=Math.max(needed,lineAtSteady,lineDuringOpening);
+      }
+      const maxAvailable=Math.max(0,card.scrollHeight-card.clientHeight);
+      if(needed>maxAvailable){
+        tail+=Math.ceil(needed-maxAvailable)+4;
+        card.style.setProperty("--ao-short-cue-tail",tail+"px");
+      }
+    }
   }
 
   function closeFaithfulPicker(){
