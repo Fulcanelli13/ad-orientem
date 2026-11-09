@@ -75,8 +75,18 @@ async function stableGospelFocus(page,cueId){
         .filter(node=>["AO.SM.C0083","AO.SM.C0084"].includes(node.dataset.cueId))
         .map(node=>{
           const rect=node.getBoundingClientRect(),cr=card.getBoundingClientRect();
+          const children=[...node.children].map(child=>{
+            const r=child.getBoundingClientRect(),style=getComputedStyle(child);
+            return {className:String(child.className),height:Math.round(r.height),
+              width:Math.round(r.width),display:style.display,
+              textChars:child.textContent?.trim()?.length??0};
+          });
+          const style=getComputedStyle(node);
           return {id:node.dataset.cueId,top:Math.round(rect.top-cr.top+card.scrollTop),
-            bottom:Math.round(rect.bottom-cr.top+card.scrollTop)};
+            bottom:Math.round(rect.bottom-cr.top+card.scrollTop),
+            width:Math.round(rect.width),display:style.display,font:style.font,
+            active:node.dataset.active,reading:node.dataset.readingPosition,
+            children};
         });
       return {phase,cue:window.__AO_PHONE_PREVIEW.getActiveCue(),
         scene:shell?.dataset.cinematicScene,scrollTop:Math.round(card.scrollTop),
