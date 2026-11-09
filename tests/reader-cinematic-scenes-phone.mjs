@@ -94,6 +94,73 @@ async function atCue(page,cueId){
       section:card.sectionId,maxScroll,center,ideal,diagnostics};
   },cueId);
 }
+// Issue #2714: exercise native touch scrolling as well as the deterministic
+// programmatic cue targeting above. This is an acceptance probe, not a cue
+// override: the production tracker must continue to own all state changes.
+async function touchGospelFocus(page,width,lang){
+  const cue="AO.SM.C0084", scene="GOSPEL_CROSSES";
+  const settled=await atCue(page,cue);
+  assert.equal(settled.found,true,"No pre-touch Gospel focus interval: "+JSON.stringify(settled));
+  const start=await page.evaluate(scrollTarget=>{
+    const scroller=document.querySelector("#ao-r17-native-reader-preview .ao-prayer-card");
+    scroller.scrollTop=Math.max(0,scrollTarget-12);
+    scroller.dispatchEvent(new Event("scroll",{bubbles:true}));
+    const rect=scroller.getBoundingClientRect();
+    window.__aoGospelTouchScroll=[];
+    scroller.addEventListener("scroll",()=>{
+      window.__aoGospelTouchScroll.push({
+        time:performance.now(),scrollTop:scroller.scrollTop,
+        cue:window.__AO_PHONE_PREVIEW.getActiveCue(),
+        scene:document.querySelector("[data-ao-reader-shell]")?.dataset.cinematicScene
+      });
+    },{passive:true});
+    return {
+      x:rect.left+rect.width/2,
+      y:Math.min(rect.bottom-34,Math.max(rect.top+34,rect.top+rect.height*.65)),
+      scrollTop:scroller.scrollTop,maxScroll:scroller.scrollHeight-scroller.clientHeight
+    };
+  },settled.settledScrollTop);
+  assert.ok(start.maxScroll-start.scrollTop>=26,
+    "C0084 lacks travel for the actual touch gesture: "+JSON.stringify(start));
+  const session=await page.context().newCDPSession(page);
+  try{
+    const touchPoint=(y)=>[{x:start.x,y}];
+    await session.send("Input.dispatchTouchEvent",{
+      type:"touchStart",touchPoints:touchPoint(start.y)
+    });
+    for(let step=1;step<=6;step++){
+      await session.send("Input.dispatchTouchEvent",{
+        type:"touchMove",touchPoints:touchPoint(start.y-4*step)
+      });
+      await page.waitForTimeout(65);
+    }
+    await session.send("Input.dispatchTouchEvent",{
+      type:"touchEnd",touchPoints:[]
+    });
+  }finally{
+    await session.detach();
+  }
+  // Sample both the compositor's settling interval and a delayed content
+  // layout pass; never accept a one-frame C0084 flash as a success.
+  const frames=[];
+  for(let sample=0;sample<10;sample++){
+    await page.waitForTimeout(55);
+    frames.push(await page.evaluate(()=>{
+      const scroller=document.querySelector("#ao-r17-native-reader-preview .ao-prayer-card");
+      return {scrollTop:scroller.scrollTop,
+        maxScroll:scroller.scrollHeight-scroller.clientHeight,
+        cue:window.__AO_PHONE_PREVIEW.getActiveCue(),
+        scene:document.querySelector("[data-ao-reader-shell]")?.dataset.cinematicScene};
+    }));
+  }
+  const trace=await page.evaluate(()=>window.__aoGospelTouchScroll??[]);
+  assert.ok(trace.length>0 &&
+    Math.max(...trace.map(x=>x.scrollTop))>=start.scrollTop+4,
+    width+"px "+lang+" did not perform a native touch scroll: "+JSON.stringify({start,trace}));
+  assert.ok(frames.every(x=>x.cue===cue&&x.scene===scene),
+    width+"px "+lang+" Gospel touch/reflow focus drift: "+JSON.stringify({start,trace,frames}));
+}
+
 async function snapshot(page,width,lang,cueId,expected,{reducedMotion=false}={}){
   const moved=await atCue(page,cueId);
   assert.equal(moved.found,true,cueId+": "+JSON.stringify(moved));
@@ -234,6 +301,11 @@ try{
     for(const [cue,scene] of selected){
       await snapshot(page,width,lang,cue,scene,{reducedMotion:motion==="reduce"});
     }
+    // Native finger input and delayed settling, not only scrollTop injection.
+    // Run on both small-phone localizations; preserve all other scene checks.
+    if((width===390&&lang==="en"&&motion==="no-preference"&&query.includes("48")) ||
+       (width===320&&lang==="fr"))
+      await touchGospelFocus(page,width,lang);
     // Changing cards always clears the scene. No stale elevation halo.
     await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSequence(1));
     await page.waitForFunction(()=>
