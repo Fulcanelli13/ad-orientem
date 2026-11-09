@@ -23,11 +23,11 @@
   ],
   "counts": {
     "baselineUnmatchedCalendarTargets": 170,
-    "targetsWithNewResearchLeads": 123,
-    "targetsStillWithoutNamedLeads": 47,
-    "proposedRelationshipEdges": 147,
+    "targetsWithNewResearchLeads": 136,
+    "targetsStillWithoutNamedLeads": 34,
+    "proposedRelationshipEdges": 161,
     "existing989Edges": 25,
-    "newInstitutionalObjectEdges": 112,
+    "newInstitutionalObjectEdges": 126,
     "secondaryOrCommonsOnlyEdges": 10,
     "byClass": {
       "II": {
@@ -37,8 +37,8 @@
       },
       "III": {
         "unmatchedBaseline": 101,
-        "withResearchLeads": 63,
-        "stillWithoutLeads": 38
+        "withResearchLeads": 76,
+        "stillWithoutLeads": 25
       },
       "IV": {
         "unmatchedBaseline": 40,
@@ -1026,9 +1026,26 @@
       "observedPrincipalId": "sancti:04-24:3:r",
       "gospelReferenceFromMatchingIndex": "John 15:1–7",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "BStGS:15372",
+          "title": "Martyrdom of Saint Fidelis of Sigmaringen",
+          "artist": "German painter, unidentified",
+          "sourceUrl": "https://www.sammlung.pinakothek.de/en/artwork/A9xlZnkGWv/deutsch/martyrium-eines-heiligen-hl-fidelis-von-sigmaringen-15372",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "painting on canvas, eighteenth century",
+          "remark": "Alte Pinakothek catalogue explicitly identifies this martyr, accession 15372; not on display; painter unidentified and image rights unverified",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        }
+      ]
     },
     {
       "date": "2026-04-26",
@@ -1048,9 +1065,26 @@
       "observedPrincipalId": "sancti:04-27:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 5:13–19",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Rijks:RP-P-1906-2436",
+          "title": "Portrait of Petrus Canisius",
+          "artist": "Attributed to workshop of Philips Galle",
+          "sourceUrl": "https://www.rijksmuseum.nl/en/collection/object/Portret-van-Petrus-Canisius--7dbe862cded9fd1f37eb840716461e96",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "engraving on paper, portrait in 1739 publication after earlier plate",
+          "remark": "Exact Jesuit theologian Canisius, NOT apostle Peter; period engraving, non-oil fallback; date range in catalogue mixed 1604/1739",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        }
+      ]
     },
     {
       "date": "2026-04-28",
@@ -1252,9 +1286,26 @@
       "observedPrincipalId": "sancti:05-07:3:r",
       "gospelReferenceFromMatchingIndex": "John 15:1–7",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "MNK:II-a-9",
+          "title": "Saint Stanislaus of Szczepanów Cursing King Bolesław the Bold",
+          "artist": "Juliusz Knoor",
+          "sourceUrl": "https://zbiory.mnk.pl/pl/katalog/271512",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas, ca. 1840",
+          "remark": "National Museum in Krakow exact Bishop Stanislaus martyr and King Boleslaw; MNK source is a JavaScript catalogue and requires image/photo verification; not Stanislaus Kostka",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        }
+      ]
     },
     {
       "date": "2026-05-08",
@@ -1323,9 +1374,26 @@
       "observedPrincipalId": "sancti:05-15:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 18:1–5",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "POP:PM51000939",
+          "title": "Saint John Baptist de la Salle",
+          "artist": "Touzet",
+          "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/PM51000939",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas, first quarter nineteenth century",
+          "remark": "French Ministry of Culture Reims protected historic object; a replica or copy after now-lost early eighteenth-century original, not an autograph Baroque oil",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        }
+      ]
     },
     {
       "date": "2026-05-16",
@@ -1682,9 +1750,26 @@
       "observedPrincipalId": "sancti:06-10:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 13:44–52",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "NationalTrust:998409",
+          "title": "Queen Saint Margaret of Scotland",
+          "artist": "Nicolas de Largillière",
+          "sourceUrl": "https://www.nationaltrustcollections.org.uk/object/998409",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas, signed c.1692",
+          "remark": "Exact titular queen, National Trust Sizergh Castle, NT 998409; indexed catalogue details are available but main National Trust collections portal currently undergoing migration, selected image rights remain withheld",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        }
+      ]
     },
     {
       "date": "2026-06-11",
@@ -1816,9 +1901,26 @@
       "observedPrincipalId": "sancti:06-17r:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 25:14–23",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Lombardia:C0150-00107",
+          "title": "Portrait of Saint Gregory Barbarigo",
+          "artist": "Vincenzo Angelo Orelli",
+          "sourceUrl": "https://www.lombardiabeniculturali.it/opere-arte/schede/C0150-00107/",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas, late eighteenth century",
+          "remark": "Lombardia Beni Culturali named original in Bergamo; source website timed out on independent revisit, so work identity and attribution must be rechecked before curation",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        }
+      ]
     },
     {
       "date": "2026-06-18",
@@ -1956,9 +2058,26 @@
       "observedPrincipalId": "sancti:07-07:3:w",
       "gospelReferenceFromMatchingIndex": "Luke 10:1–9",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "MSKSticna:4013",
+          "title": "Saints Cyril and Methodius",
+          "artist": "Anselm Wissiak",
+          "sourceUrl": "https://www.mks-sticna.si/eng/collections/digital-collections/slike-eng",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas, 1863",
+          "remark": "Slovenian Museum of Christianity collection indexed artwork; institution timed out on follow-up, verify inventory and that these are brothers the missionaries, not Cyril of Alexandria",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        }
+      ]
     },
     {
       "date": "2026-07-08",
@@ -2566,9 +2685,26 @@
       "observedPrincipalId": "sancti:08-08:3:w",
       "gospelReferenceFromMatchingIndex": null,
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "POP:PM01002772",
+          "title": "Portrait of Saint Jean-Marie Vianney, Curé d'Ars",
+          "artist": "Wliebergk",
+          "sourceUrl": "https://pop.culture.gouv.fr/notice/palissy/PM01002772",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "charcoal and pastel on canvas, 1858",
+          "remark": "Protected French drawing in Ars presbytery, exact Cura of Ars, not an oil painting; photographic reproducibility unknown",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        }
+      ]
     },
     {
       "date": "2026-08-09",
@@ -2933,9 +3069,26 @@
       "observedPrincipalId": "sancti:09-02:3:w",
       "gospelReferenceFromMatchingIndex": "Luke 19:12–26",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "HungarianNationalGallery:55.967.1",
+          "title": "King Saint Stephen",
+          "artist": "Hungarian painter, unidentified",
+          "sourceUrl": "https://en.mng.hu/artworks/34352/",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on lindenwood, 1637–1656",
+          "remark": "Exact Stephen I of Hungary, not St Stephen protomartyr; Hungarian National Gallery lists its photograph as copyrighted and no free display permissions granted",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        }
+      ]
     },
     {
       "date": "2026-09-03",
@@ -3689,9 +3842,26 @@
       "observedPrincipalId": "sancti:10-13:3:w",
       "gospelReferenceFromMatchingIndex": "Luke 12:35–40",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "NationalGallery:NG4451",
+          "title": "The Wilton Diptych (left panel including Saint Edward the Confessor)",
+          "artist": "Unknown French/English court painter",
+          "sourceUrl": "https://www.nationalgallery.org.uk/paintings/catalogues/national-gallery-2024/the-wilton-diptych",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "egg tempera on oak panel, c.1395",
+          "remark": "National Gallery curatorial entry explicitly identifies Edward the Confessor holding ring beside John Baptist and Saint Edmund; group scene, not individual portrait or Baroque oil",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        }
+      ]
     },
     {
       "date": "2026-10-16",
@@ -3700,9 +3870,26 @@
       "observedPrincipalId": "sancti:10-16:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 13:44–52",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "LvivNationalGallery:Ж-1791",
+          "title": "Saint Hedwig of Silesia Reconciles Konrad of Masovia with Her Husband Henry the Bearded",
+          "artist": "Aleksander Lesser",
+          "sourceUrl": "https://collection-lvivgallery.org.ua/en/works/3812-sviata-iadviha-myryt-konrada-mazovetskoho-zi-svoijm-cholovikom-henrykom-borodatym",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas, 1848–1850",
+          "remark": "Exact Silesian patroness Hedwig, not unrelated St Hedwig Jadwiga of Poland; Lviv National Art Gallery original",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        }
+      ]
     },
     {
       "date": "2026-10-18",
@@ -3740,9 +3927,42 @@
       "observedPrincipalId": "sancti:10-19:3:w",
       "gospelReferenceFromMatchingIndex": "Luke 12:32–34",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 2,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "NationalGalleriesScotland:NG2238",
+          "title": "The Apotheosis of Saint Jerome with Saint Peter of Alcántara and an Unidentified Franciscan",
+          "artist": "Giovanni Battista Pittoni",
+          "sourceUrl": "https://www.nationalgalleries.org/art-and-artists/5285/apotheosis-saint-jerome-saint-peter-alc%C3%A1ntara-and-unidentified-franciscan-about-1725",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas, c.1725",
+          "remark": "Exact Saint Peter of Alcántara in foreground, NOT St Peter apostle; National Galleries Scotland photo is only licensed for defined noncommercial uses, no commercial promotional clearance for Ad Orientem",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        },
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Walters:37.1146",
+          "title": "A Miracle of Saint Peter of Alcántara",
+          "artist": "Pier Leone Ghezzi (attributed in museum catalogue)",
+          "sourceUrl": "https://art.thewalters.org/object/37.1146/",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas, 1725–1730",
+          "remark": "Walters Art Museum 37.1146; catalogue credits Pier Leone Ghezzi; preserve attribution nuances and independent rights approval for precise artwork bytes",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        }
+      ]
     },
     {
       "date": "2026-10-20",
@@ -3751,9 +3971,26 @@
       "observedPrincipalId": "sancti:10-20:3:w",
       "gospelReferenceFromMatchingIndex": "Luke 12:35–40",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "MNK:II-a-448",
+          "title": "The Miracle of Saint John Cantius",
+          "artist": "Tadeusz Kuntze-Konicz",
+          "sourceUrl": "https://zbiory.mnk.pl/en/search-result/catalog/377412?phrase=jan%2520kanty",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "DATE_TITULAR_SAINT_NOT_APPOINTED_GOSPEL",
+          "medium": "oil on canvas, c.1767",
+          "remark": "National Museum in Krakow digital catalogue record, exact John Cantius/Jan Kanty; object ID from indexed record, official site JavaScript-only so in-person museum details/photo verify before promotion",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EXACT_SAINT_METADATA"
+        }
+      ]
     },
     {
       "date": "2026-10-21",
