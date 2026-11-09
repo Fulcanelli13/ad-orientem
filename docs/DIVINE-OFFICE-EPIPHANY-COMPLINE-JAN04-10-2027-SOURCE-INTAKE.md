@@ -1,12 +1,15 @@
 # Ad Orientem · Epiphany and Holy Family Compline · 4–10 January 2027
 
-**PRIVATE SOURCE RESEARCH ONLY — DO NOT MERGE AS A PUBLIC RELEASE.**
+**The seven-date SOURCE INTAKE remains private research only.** A separate
+finite certificate on this PR authorizes **4–8 January 2027** as a
+Latin-only public release candidate; **9–10 January remain withheld**.
 
-The existing public 37-date universal Roman 1960 **Latin-only**
-Compline release ends on **3 January 2027**. This research batch covers
-the next **seven civil dates** without modifying any public date
-whitelist, Church calendar, Office translation, published Ordinary or
-Mass reader. The 2 January 2027 Holy Name first-Compline psalter error
+The baseline public 37-date universal Roman 1960 **Latin-only**
+Compline release ends on **3 January 2027**. This intake describes
+**seven civil dates**, but only the five separately certified dates
+4–8 January are eligible for the later public release. The Holy Family
+dates 9–10 January remain source-held; no Mass calendar, Office
+translation, Ordinary or other Hour is modified. The 2 January 2027 Holy Name first-Compline psalter error
 was corrected independently by [PR #2720](https://github.com/Fulcanelli13/ad-orientem/pull/2720)
 before this branch was taken.
 
@@ -102,12 +105,14 @@ The branch includes:
   **14 additional 320px/390px private phone journeys** with Marian
   provenance, Latin-only display and no horizontal overflow.
 
-**Mandatory next release gate:** exact-head research CI first; then
-independently adjudicate the above **Holy Family hymn/doxology**
-against original 1961/1962 Compline text witness. Do not create any
-public certificate, whitelist, selector or merge as a public release
-until this hold is closed. Re-run complete source-driven Latin tests and
-new public phone regressions. After any future merge, verify the
+**Release split and mandatory gates:** the separately source-reviewed
+five-day 4–8 January certificate can be shipped without adjudicating
+9–10 January, because those two dates remain withheld in every public
+gate **before fetch**. The five-day public candidate must pass source-
+driven Latin and native 320/390px tests. Independently adjudicate the
+**Holy Family hymn/doxology** against the original 1961/1962
+Compline text witness before any subsequent 9–10 January release.
+Do not infer approval for 9–10 January from the five-day certificate. After any future merge, verify the
 **exact commit** GitHub Pages static build, site deployment, public
 offline/snapshot and 390px EN/FR LIVE–Missal/Schola regressions.
 GitHub Actions + GitHub Pages exclusively, **no Vercel**.
