@@ -65,7 +65,8 @@ try{
  await swipe(-170,3);assert.equal((await snapshot()).index,1,"Psalm swipe must advance one chapter");
  await page.locator(timeline+" [data-ao-devo-chapter='6']").tap();
  s=await snapshot();assert.equal(s.index,6);assert.equal(s.final,"true");
- assert.ok(s.nav&&s.nav!=="none","Original final Litany handoff is missing");
+ assert.equal(await page.locator(rootSel+" [data-p435930-pen-litany]").count(),1,
+  "Original final Litany handoff is missing");
  assert.equal(await page.locator(rootSel+" [data-p435930-pen-litany]").count(),1);
  await page.locator(rootSel+" [data-p435930-pen-litany]").tap();
  await page.waitForFunction(()=>document.querySelector("#aoPray435930.open .aoP435930Mount")?.dataset.aoPrayView==="litany");
