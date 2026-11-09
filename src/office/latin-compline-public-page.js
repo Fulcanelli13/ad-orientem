@@ -41,7 +41,7 @@ export function mountPublishedLatinCompline(root,{
    "2026-12-14":"Advent III · Monday, 14 December 2026",
    "2026-12-15":"Advent III · Tuesday, 15 December 2026",
    "2026-12-16":"Advent Ember Wednesday, 16 December 2026",
-   "2026-12-17":"Advent III · O Sapientia · Thursday, 17 December 2026",
+   "2026-12-17":"Advent III · Thursday, 17 December 2026",
    "2026-12-18":"Advent Ember Friday, 18 December 2026",
    "2026-12-19":"Eve of Advent IV · Ember Saturday, 19 December 2026",
    "2026-12-20":"Fourth Sunday of Advent, 20 December 2026"
