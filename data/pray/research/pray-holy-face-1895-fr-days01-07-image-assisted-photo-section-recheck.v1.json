@@ -190,12 +190,13 @@
       "printedPage": 116,
       "pdfZeroBasedPage": 122,
       "photoVerifiedAnchor": null,
-      "printedReferenceCue": "Seigneur, je veux, etc. (Voir p. 12.) with hand correction to 112 in photographed copy",
+      "printedReferenceCue": "Seigneur, je veux, etc. (Voir p. [overwritten legacy printed folio]); handwritten correction points back to Day I opening, but the underlying printed digits and handwritten numerator remain uncertain at available scan resolution",
       "storedResearchPath": "data/pray/research/pray-holy-face-1895-fr-day02-transcribed-first-pass.v1.json",
       "sourceSectionPageSpan": [
         116
       ],
-      "review": "PHOTOGRAPHIC_SECTION_HEADING_AND_SOURCE_WORDING_ANCHOR_CHECKED__NOT_VERBATIM_LINE_PROOF"
+      "review": "PHOTOGRAPHIC_SECTION_HEADING_AND_SOURCE_WORDING_ANCHOR_CHECKED__NOT_VERBATIM_LINE_PROOF",
+      "folioPhotoReadStatus": "LEGACY_FOLIO_NUMERAL_OVERWRITTEN__EXACT_READ_UNCERTAIN"
     },
     {
       "day": 2,
@@ -932,8 +933,8 @@
       "day": 2,
       "printedPage": 116,
       "kind": "PRINTED_OPENING_FOLIO_ANNOTATION",
-      "reading": "Printed legacy p.12 for invocation appears hand-corrected to p.112; distinguish from the usual legacy p.9",
-      "status": "PHOTO_REVIEW_CHALLENGES_GENERIC_LEGACY_REFERENCE"
+      "reading": "The Day II opening shows an overwritten numeric legacy 'Voir p.' reference; manuscript annotation appears to redirect toward the present Day I opening at p.112, but underlying digits should NOT be certified without a clearer photograph.",
+      "status": "PAGE_REFERENCE_NUMERALS_UNRESOLVED__IDENTITY_OF_OPENING_BY_TEXT_CONFIRMED"
     },
     {
       "day": 2,
@@ -994,6 +995,7 @@
   ],
   "status": "DAYS_I_TO_VII_PAGE_IMAGE_SECTION_RECHECK_65_OF_65__INDEPENDENT_CHARACTER_PROOF_AND_EDITORIAL_APPROVAL_PENDING",
   "unresolved": [
+    "Day II p.116 overwritten printed opening-reference folio digits need a larger/higher resolution scan before a diplomatic edition claims a specific printed numeral.",
     "French Days I–VII full diplomatic line-by-line printed-word punctuation and casing collation still needed if exact facsimile fidelity is a release requirement",
     "Original 1887 Bennett printed English edition has not been photographically compared to current English digital witness",
     "Historical Janvier 1895 edition variants must not be silently conflated with English 1887 wording",
