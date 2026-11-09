@@ -173,7 +173,7 @@ for(const r of remain29.rows){
  assert.equal(r.existing_artwork_selection_preserved,true);
  assert.equal(r.new_assignment_authorised,false);
 }
-const protectedReviewed=new Set([...identity11.records,...weak6.records,...remain29.rows].map(r=>r.target_type+':'+(r.destination_id||r.target_id)));
+const protectedReviewed=new Set([...identity11.records,...weak6.records,...remain29.rows].map(r=>(r.target_type||r.destination_type)+':'+(r.destination_id||r.target_id)));
 assert.equal(protectedReviewed.size,46,'All 46 missing-identity destinations should be distinct across batches 9, 11 and 12');
 assert.equal(prior.release_gate_evidence.identity_and_metadata_reconciliation_progress.all_protected_missing_ids_type_triaged,46);
 assert.equal(prior.release_gate_evidence.identity_and_metadata_reconciliation_progress.fully_assigned_verified_app_canonical_ids,0);
