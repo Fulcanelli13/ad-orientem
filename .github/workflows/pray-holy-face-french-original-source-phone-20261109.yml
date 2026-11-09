@@ -1,0 +1,43 @@
+name: Prayer Holy Face French original volume and 36-state phone acceptance
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "data/pray/pray-b25-holy-face-french-original-volume-1894.v1.json"
+      - "src/pray/holy-face-janvier-1887-b25.js"
+      - "src/pray/novena-runtime.js"
+      - "tests/pray-b25-holy-face-full-novena.mjs"
+      - "tests/pray-b25-holy-face-french-original-phone-20261109.mjs"
+      - ".github/workflows/pray-holy-face-french-original-source-phone-20261109.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pray-holy-face-fr-source-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  french-original-source-and-real-phone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-audit --no-fund
+      - name: Source-certify 9 existing English readings and French text holds
+        run: |
+          node tests/pray-b25-holy-face-full-novena.mjs
+          node tests/pray-novena-witness-contract.mjs
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Verify French original-volume link across all nine days, two widths and two UI languages
+        run: node tests/pray-b25-holy-face-french-original-phone-20261109.mjs
+      - name: Preserve phone screenshots and edition-bound QA report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pray-holy-face-1894-french-volume-phone
+          path: artifacts/pray-b25-holyface-original-fr/
+          if-no-files-found: warn
+          retention-days: 21
