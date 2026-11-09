@@ -222,7 +222,9 @@ export function projectComplineRecitation(review,{
   resultFrames.push(numbered);
  }
  const saturday=["2026-11-28","2026-12-05","2026-12-12",
-  "2026-12-19"].includes(review.civilDate);
+  "2026-12-19",
+  // Jan16 First Vespers of ordinary II Sunday: BR 166(b), not festive 168(d).
+  "2027-01-16"].includes(review.civilDate);
  const sunday=["2026-11-29","2026-11-30","2026-12-06",
   "2026-12-07","2026-12-08","2026-12-13","2026-12-20",
   // Christmas private research only. Not a public release authorization.
@@ -233,7 +235,10 @@ export function projectComplineRecitation(review,{
   "2026-12-28","2026-12-29","2026-12-30","2026-12-31",
   "2027-01-01","2027-01-02","2027-01-03",
   // Private Epiphany I-class 5/6 Jan and Holy Family II-class 9/10 Jan.
-  "2027-01-05","2027-01-06","2027-01-09","2027-01-10"
+  "2027-01-05","2027-01-06","2027-01-09","2027-01-10",
+  // Baptism of Our Lord II class (1960 Variationes 24); II Sunday after
+  // Epiphany on Jan17. Jan16 is SATURDAY Psalter after I Vespers.
+  "2027-01-13","2027-01-17"
  ].includes(review.civilDate);
  const weekdayCounts=Object.freeze({"2026-12-01":26,"2026-12-02":30,
   "2026-12-03":33,"2026-12-04":36,"2026-12-09":30,
@@ -241,7 +246,8 @@ export function projectComplineRecitation(review,{
   "2026-12-14":28,"2026-12-15":26,"2026-12-16":30,
   "2026-12-17":33,"2026-12-18":36,
   "2026-12-22":26,"2026-12-23":30,
-  "2027-01-04":28,"2027-01-07":33,"2027-01-08":36});
+  "2027-01-04":28,"2027-01-07":33,"2027-01-08":36,
+  "2027-01-11":28,"2027-01-12":26,"2027-01-14":33,"2027-01-15":36});
  const expected=saturday?41:sunday?30:weekdayCounts[review.civilDate];
  if(!Number.isInteger(expected)||psalmLabelCount!==expected)
   return withheld("COMPLINE_APPOINTED_PSALM_COVERAGE_MISMATCH");
