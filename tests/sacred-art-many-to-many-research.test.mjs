@@ -139,9 +139,13 @@ const liturgicalBatch6=read('data/artwork/research/m2m-liturgical-batch6-2026110
 assert.equal(liturgicalBatch6.records.length,12);
 assert.equal(liturgicalBatch6.summary.cumulative_new_proposals_reviewed,78);
 assert.equal(liturgicalBatch6.summary.remaining_new_proposals,36);
-const batches=[sceneBatch.records,sceneBatch2.records,sceneBatch3.records,sceneBatch4.records,thematicBatch5.records,liturgicalBatch6.records];
+const liturgicalBatch7=read('data/artwork/research/m2m-liturgical-batch7-20261109.v1.json');
+assert.equal(liturgicalBatch7.records.length,15);
+assert.equal(liturgicalBatch7.summary.cumulative_new_proposals_reviewed,93);
+assert.equal(liturgicalBatch7.summary.remaining_new_proposals,21);
+const batches=[sceneBatch.records,sceneBatch2.records,sceneBatch3.records,sceneBatch4.records,thematicBatch5.records,liturgicalBatch6.records,liturgicalBatch7.records];
 const audited=batches.flat();
-assert.equal(audited.length,78,'A cumulative count should come from reviewed records, not a stale intermediate index');
+assert.equal(audited.length,93,'A cumulative count should come from reviewed records, not a stale intermediate index');
 assert.equal(new Set(audited.map(r=>r.destination_id+'|'+r.artwork_id)).size,audited.length,'No proposed relationship can be counted twice');
 const newProposals=claude.filter(r=>r.display_priority==='NEW_PROPOSAL');
 assert.equal(newProposals.length,114);
@@ -162,3 +166,22 @@ assert.equal(idx.review_evidence.cumulative_new_Claude_proposals_source_adjudica
 assert.equal(idx.review_evidence.remaining_new_Claude_proposals_needing_individual_source_adjudication,newProposals.length-audited.length);
 assert.equal(idx.counts.relationship_edges,1589);
 console.log('PASS: batch6 12 liturgical records; 78/114 cumulative, 36 unresolved; owner approvals and publication holds preserved.');
+
+for(const r of liturgicalBatch7.records){
+ assert.equal(r.claude_scope,'LITURGICAL');
+ assert.equal(r.owner_selection_changed,false);
+ assert.equal(r.owner_many_to_many_choices_preserved,true);
+ assert.equal(r.exact_photo_release_verified,false);
+ assert.equal(r.independent_pixels_checked,false);
+ assert.equal(r.runtime_selection_authorised,false);
+ assert.ok(r.source_urls.length&&r.physical_work_identity&&r.relationship_after_review);
+}
+assert.ok(liturgicalBatch7.records.find(r=>r.destination_id==='2026-09-14').relationship_after_review.includes('COPY_AFTER_EDELINCK_AFTER_LE_BRUN'));
+assert.ok(liturgicalBatch7.records.find(r=>r.destination_id==='2026-11-11').relationship_after_review.includes('REPLICA'));
+assert.ok(liturgicalBatch7.records.find(r=>r.destination_id==='2026-08-04').photo_publication_gate.includes('PRADO'));
+assert.ok(liturgicalBatch7.records.find(r=>r.destination_id==='2026-11-19').photo_publication_gate.includes('ATTRIBUTION'));
+assert.equal(liturgicalBatch7.summary.remaining_qualifying_categories.LITURGICAL,0);
+assert.equal(liturgicalBatch7.summary.remaining_qualifying_categories.THEMATIC,15);
+assert.equal(liturgicalBatch7.summary.remaining_qualifying_categories.SCRIPTURAL,6);
+assert.equal(idx.counts.historical_accepted_option_rows,507);
+console.log('PASS: all 27 outstanding liturgical assessments completed across batches6/7; 93/114 source-reviewed with 21 thematic/scriptural still held.');
