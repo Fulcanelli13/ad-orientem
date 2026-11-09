@@ -131,21 +131,16 @@ test("new finite private entry cannot leak into generic or earlier Christmas pri
   date:"2027-01-04",fetchSource:async()=>{}
  }),/YEAR_BOUNDARY_PRIVATE_COMPLINE_DATE_NOT_REVIEWED/);
 });
-test("all seven private successful source projections still public WITHHELD before fetch",async()=>{
+test("private Latin review keeps source/publishing flags false despite separate public authorization",async()=>{
  for(const date of DEC28_JAN03_FINITE_DATES){
-  assert.equal(latinComplineReleaseEligibility({date}).status,"WITHHELD");
-  for(const context of Object.values(COMPLINE_CONTEXT)){
-   for(const minister of Object.values(COMPLINE_MINISTER)){
-    let calls=0;
-    const result=await loadPublishedLatinCompline({
-     date,context,minister,fetchSource:async()=>{
-      calls++;throw Error("PRIVATE_RESEARCH_FETCH_FORBIDDEN_IN_PUBLIC")
-     }
-    });
-    assert.equal(result.status,"WITHHELD");
-    assert.equal(result.published,false);
-    assert.equal(calls,0);
-   }
-  }
+  const t=source();
+  const r=await assembleDec28Jan03PrivateOfficeResearchReview({
+   date,fetchSource:t.fetchSource
+  });
+  assert.equal(r.status,"PRIVATE_SOURCE_TEXT_REVIEW");
+  assert.equal(r.published,false);
+  assert.equal(r.liturgicallyCertified,false);
+  assert.equal(r.rightsApproved,false);
+  assert.equal(latinComplineReleaseEligibility({date}).status,"ELIGIBLE");
  }
 });
