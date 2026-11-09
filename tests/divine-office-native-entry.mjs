@@ -43,7 +43,7 @@ test("First Vespers retains separate civil and Office dates",()=>{
 test("Missing dates, variants and unresearched Hours cannot fill from Mass",()=>{
   for(const args of [
     {date:"2026-11-08",hour:"COMPLINE"},
-    {date:"2027-01-04",hour:"COMPLINE"},
+    {date:"2027-01-09",hour:"COMPLINE"},
     {date:"2026-11-28",hour:"MATINS"},
     {date:"2026-11-28",hour:"COMPLINE",calendarScope:"LOCAL"},
     {date:"2026-02-30",hour:"VESPERS"},
