@@ -1,0 +1,410 @@
+{
+  "schema": "ao-schola-m39-kyrie-xvi-christe-and-third-kyrie-print-staff-position-review-v1",
+  "reviewedAt": "2026-11-09",
+  "scoreId": "GREGOBASE-545",
+  "edition": "Graduale Romanum (Solesmes, 1961)",
+  "sourceGabcFingerprintUtf16Fnv1a32": "acef0d62",
+  "primaryOriginalWitness": {
+    "folio": "54*",
+    "pdf": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf#page=56",
+    "scan": "https://gregobase.selapa.net/sources/2/931.png",
+    "printedPdfZeroBasedPage": 55
+  },
+  "corroboratingOriginalWitnesses": [
+    {
+      "title": "The Liber Usualis (Solesmes, 1961)",
+      "folio": "59",
+      "image": "https://gregobase.selapa.net/sources/3/170.png"
+    },
+    {
+      "title": "Chants of the Church (Solesmes, 1956)",
+      "folio": "40",
+      "image": "https://gregobase.selapa.net/sources/5/55.png"
+    }
+  ],
+  "independentObservationMethod": [
+    "Visually read the original printed Kyrie XVI square-note staff at Solesmes 1961 p.54* rather than deriving the observed column from a rendered GABC transcription. Compare the Christe and the third Kyrie to the unchanged original source staff-position letters.",
+    "Corroborate the four-phrase shape and the third Kyrie staff wrap with the contemporary printed Liber Usualis p.59 and the 1956 Chants of the Church p.40. These alternative printed witnesses are supporting checks, not musical approval.",
+    "For the 13 newly inspected syllable groups 8–20, transcribe printed notehead *staff-line or space positions* only; do not claim exact shape, rhythmic marks, joins, episode signs or a published performing version.",
+    "Preserve M37's earlier group 1–7 first-Kyrie print review and M38's all-40-source-note inventory. In the fourth and distinct final Kyrie, groups 21–27 remain source-indexed but NOT directly staff-position certified."
+  ],
+  "newlyComparedGroups": {
+    "first": 8,
+    "last": 20,
+    "count": 13,
+    "sourcePitchPositions": 16,
+    "sourceGroupIds": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ]
+  },
+  "cumulativeDetailedPrintedStaffPositionReview": {
+    "groupCount": 20,
+    "sourceNotePositions": 25,
+    "groups": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "remainingGroups": [
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "remainingSourceNotePositions": 15,
+    "fullyPrintedPitchAndNeumeCertifiedGroups": 0,
+    "approvedScores": 0
+  },
+  "importantPrintedPhraseBoundary": {
+    "groupBeforeBreak": 14,
+    "groupAfterBreak": 15,
+    "folio": "54*",
+    "fromPrintedSystem": 1,
+    "toPrintedSystem": 2,
+    "latin": "Ký-ri-e",
+    "printedCustosExactParity": "UNRESOLVED",
+    "mustNotCreateNewMusicalScore": true,
+    "mustNotRepeatFirstPhraseByAssumption": true
+  },
+  "newPrintedPositionObservations": [
+    {
+      "n": 8,
+      "syllable": "Chri",
+      "system": 1,
+      "printPositions": [
+        "spaceAbove4"
+      ],
+      "evidence": "The printed Christe entry is a single high square above the top line of the four-line staff; it follows the prior Kyrie cadence, not a new clef.",
+      "reviewType": "MANUAL_ORIGINAL_PRINT_LINE_SPACE_AT_AVAILABLE_SCAN_RESOLUTION",
+      "sourceNeume": "k",
+      "sourcePositions": [
+        "spaceAbove4"
+      ],
+      "visualPositionAgreement": "CONSISTENT_AT_AVAILABLE_SCAN_RESOLUTION",
+      "originalPrintedAbsolutePitchAndOctaveCertification": "NOT_CERTIFIED",
+      "originalPrintedNeumeJoins": "NOT_CERTIFIED",
+      "originalPrintedRhythmMarks": "NOT_CERTIFIED",
+      "independentEditorialSignoff": false
+    },
+    {
+      "n": 9,
+      "syllable": "ste",
+      "system": 1,
+      "printPositions": [
+        "space3",
+        "line4"
+      ],
+      "evidence": "The two-note printed Christe continuation rises from the third space onto the upper staff line; exact podatus joining is not approved.",
+      "reviewType": "MANUAL_ORIGINAL_PRINT_LINE_SPACE_AT_AVAILABLE_SCAN_RESOLUTION",
+      "sourceNeume": "ij",
+      "sourcePositions": [
+        "space3",
+        "line4"
+      ],
+      "visualPositionAgreement": "CONSISTENT_AT_AVAILABLE_SCAN_RESOLUTION",
+      "originalPrintedAbsolutePitchAndOctaveCertification": "NOT_CERTIFIED",
+      "originalPrintedNeumeJoins": "NOT_CERTIFIED",
+      "originalPrintedRhythmMarks": "NOT_CERTIFIED",
+      "independentEditorialSignoff": false
+    },
+    {
+      "n": 10,
+      "syllable": "e",
+      "system": 1,
+      "printPositions": [
+        "line3"
+      ],
+      "evidence": "The next printed eleison onset is the square on staff line three.",
+      "reviewType": "MANUAL_ORIGINAL_PRINT_LINE_SPACE_AT_AVAILABLE_SCAN_RESOLUTION",
+      "sourceNeume": "h",
+      "sourcePositions": [
+        "line3"
+      ],
+      "visualPositionAgreement": "CONSISTENT_AT_AVAILABLE_SCAN_RESOLUTION",
+      "originalPrintedAbsolutePitchAndOctaveCertification": "NOT_CERTIFIED",
+      "originalPrintedNeumeJoins": "NOT_CERTIFIED",
+      "originalPrintedRhythmMarks": "NOT_CERTIFIED",
+      "independentEditorialSignoff": false
+    },
+    {
+      "n": 11,
+      "syllable": "lé",
+      "system": 1,
+      "printPositions": [
+        "line3"
+      ],
+      "evidence": "The next printed square remains at the third-line height; the tiny horizontal episema remains unresolved in the engraving.",
+      "reviewType": "MANUAL_ORIGINAL_PRINT_LINE_SPACE_AT_AVAILABLE_SCAN_RESOLUTION",
+      "sourceNeume": "h_",
+      "sourcePositions": [
+        "line3"
+      ],
+      "visualPositionAgreement": "CONSISTENT_AT_AVAILABLE_SCAN_RESOLUTION",
+      "originalPrintedAbsolutePitchAndOctaveCertification": "NOT_CERTIFIED",
+      "originalPrintedNeumeJoins": "NOT_CERTIFIED",
+      "originalPrintedRhythmMarks": "NOT_CERTIFIED",
+      "independentEditorialSignoff": false
+    },
+    {
+      "n": 12,
+      "syllable": "i",
+      "system": 1,
+      "printPositions": [
+        "space3"
+      ],
+      "evidence": "The following printed i syllable rises to the third space.",
+      "reviewType": "MANUAL_ORIGINAL_PRINT_LINE_SPACE_AT_AVAILABLE_SCAN_RESOLUTION",
+      "sourceNeume": "i",
+      "sourcePositions": [
+        "space3"
+      ],
+      "visualPositionAgreement": "CONSISTENT_AT_AVAILABLE_SCAN_RESOLUTION",
+      "originalPrintedAbsolutePitchAndOctaveCertification": "NOT_CERTIFIED",
+      "originalPrintedNeumeJoins": "NOT_CERTIFIED",
+      "originalPrintedRhythmMarks": "NOT_CERTIFIED",
+      "independentEditorialSignoff": false
+    },
+    {
+      "n": 13,
+      "syllable": "son.",
+      "system": 1,
+      "printPositions": [
+        "space3"
+      ],
+      "evidence": "The concluding Christe son remains in the third space; exact printed mora position requires a higher-resolution glyph check.",
+      "reviewType": "MANUAL_ORIGINAL_PRINT_LINE_SPACE_AT_AVAILABLE_SCAN_RESOLUTION",
+      "sourceNeume": "i.",
+      "sourcePositions": [
+        "space3"
+      ],
+      "visualPositionAgreement": "CONSISTENT_AT_AVAILABLE_SCAN_RESOLUTION",
+      "originalPrintedAbsolutePitchAndOctaveCertification": "NOT_CERTIFIED",
+      "originalPrintedNeumeJoins": "NOT_CERTIFIED",
+      "originalPrintedRhythmMarks": "NOT_CERTIFIED",
+      "independentEditorialSignoff": false
+    },
+    {
+      "n": 14,
+      "syllable": "Ký",
+      "system": 1,
+      "printPositions": [
+        "space2"
+      ],
+      "evidence": "The third Kyrie starts at the extreme right edge of the first staff system; the first square is in staff space two.",
+      "reviewType": "MANUAL_ORIGINAL_PRINT_LINE_SPACE_AT_AVAILABLE_SCAN_RESOLUTION",
+      "sourceNeume": "g",
+      "sourcePositions": [
+        "space2"
+      ],
+      "visualPositionAgreement": "CONSISTENT_AT_AVAILABLE_SCAN_RESOLUTION",
+      "originalPrintedAbsolutePitchAndOctaveCertification": "NOT_CERTIFIED",
+      "originalPrintedNeumeJoins": "NOT_CERTIFIED",
+      "originalPrintedRhythmMarks": "NOT_CERTIFIED",
+      "independentEditorialSignoff": false
+    },
+    {
+      "n": 15,
+      "syllable": "ri",
+      "system": 2,
+      "printPositions": [
+        "line3",
+        "space3"
+      ],
+      "evidence": "At the left edge of the second printed staff system, ri continues the preceding syllable's Kyrie phrase and rises from line three to third space.",
+      "reviewType": "MANUAL_ORIGINAL_PRINT_LINE_SPACE_AT_AVAILABLE_SCAN_RESOLUTION",
+      "sourceNeume": "hi",
+      "sourcePositions": [
+        "line3",
+        "space3"
+      ],
+      "visualPositionAgreement": "CONSISTENT_AT_AVAILABLE_SCAN_RESOLUTION",
+      "originalPrintedAbsolutePitchAndOctaveCertification": "NOT_CERTIFIED",
+      "originalPrintedNeumeJoins": "NOT_CERTIFIED",
+      "originalPrintedRhythmMarks": "NOT_CERTIFIED",
+      "independentEditorialSignoff": false
+    },
+    {
+      "n": 16,
+      "syllable": "e",
+      "system": 2,
+      "printPositions": [
+        "space3",
+        "space3"
+      ],
+      "evidence": "The next printed e carries two adjacent same-height notes in space three.",
+      "reviewType": "MANUAL_ORIGINAL_PRINT_LINE_SPACE_AT_AVAILABLE_SCAN_RESOLUTION",
+      "sourceNeume": "ii",
+      "sourcePositions": [
+        "space3",
+        "space3"
+      ],
+      "visualPositionAgreement": "CONSISTENT_AT_AVAILABLE_SCAN_RESOLUTION",
+      "originalPrintedAbsolutePitchAndOctaveCertification": "NOT_CERTIFIED",
+      "originalPrintedNeumeJoins": "NOT_CERTIFIED",
+      "originalPrintedRhythmMarks": "NOT_CERTIFIED",
+      "independentEditorialSignoff": false
+    },
+    {
+      "n": 17,
+      "syllable": "e",
+      "system": 2,
+      "printPositions": [
+        "space2"
+      ],
+      "evidence": "The repeated printed eleison onset descends to space two.",
+      "reviewType": "MANUAL_ORIGINAL_PRINT_LINE_SPACE_AT_AVAILABLE_SCAN_RESOLUTION",
+      "sourceNeume": "g",
+      "sourcePositions": [
+        "space2"
+      ],
+      "visualPositionAgreement": "CONSISTENT_AT_AVAILABLE_SCAN_RESOLUTION",
+      "originalPrintedAbsolutePitchAndOctaveCertification": "NOT_CERTIFIED",
+      "originalPrintedNeumeJoins": "NOT_CERTIFIED",
+      "originalPrintedRhythmMarks": "NOT_CERTIFIED",
+      "independentEditorialSignoff": false
+    },
+    {
+      "n": 18,
+      "syllable": "lé",
+      "system": 2,
+      "printPositions": [
+        "line3"
+      ],
+      "evidence": "The accented lé returns to line three; its exact short horizontal episema remains a sign-level hold.",
+      "reviewType": "MANUAL_ORIGINAL_PRINT_LINE_SPACE_AT_AVAILABLE_SCAN_RESOLUTION",
+      "sourceNeume": "h_",
+      "sourcePositions": [
+        "line3"
+      ],
+      "visualPositionAgreement": "CONSISTENT_AT_AVAILABLE_SCAN_RESOLUTION",
+      "originalPrintedAbsolutePitchAndOctaveCertification": "NOT_CERTIFIED",
+      "originalPrintedNeumeJoins": "NOT_CERTIFIED",
+      "originalPrintedRhythmMarks": "NOT_CERTIFIED",
+      "independentEditorialSignoff": false
+    },
+    {
+      "n": 19,
+      "syllable": "i",
+      "system": 2,
+      "printPositions": [
+        "space3"
+      ],
+      "evidence": "The printed third-Kyrie i syllable appears at third-space height.",
+      "reviewType": "MANUAL_ORIGINAL_PRINT_LINE_SPACE_AT_AVAILABLE_SCAN_RESOLUTION",
+      "sourceNeume": "i",
+      "sourcePositions": [
+        "space3"
+      ],
+      "visualPositionAgreement": "CONSISTENT_AT_AVAILABLE_SCAN_RESOLUTION",
+      "originalPrintedAbsolutePitchAndOctaveCertification": "NOT_CERTIFIED",
+      "originalPrintedNeumeJoins": "NOT_CERTIFIED",
+      "originalPrintedRhythmMarks": "NOT_CERTIFIED",
+      "independentEditorialSignoff": false
+    },
+    {
+      "n": 20,
+      "syllable": "son.",
+      "system": 2,
+      "printPositions": [
+        "space3"
+      ],
+      "evidence": "The third Kyrie finishes in space three before the printed ij. repetition mark; the exact mora remains unapproved.",
+      "reviewType": "MANUAL_ORIGINAL_PRINT_LINE_SPACE_AT_AVAILABLE_SCAN_RESOLUTION",
+      "sourceNeume": "i.",
+      "sourcePositions": [
+        "space3"
+      ],
+      "visualPositionAgreement": "CONSISTENT_AT_AVAILABLE_SCAN_RESOLUTION",
+      "originalPrintedAbsolutePitchAndOctaveCertification": "NOT_CERTIFIED",
+      "originalPrintedNeumeJoins": "NOT_CERTIFIED",
+      "originalPrintedRhythmMarks": "NOT_CERTIFIED",
+      "independentEditorialSignoff": false
+    }
+  ],
+  "openPrintedEngravingHolds": [
+    {
+      "category": "CHRiste-horizontal-episema",
+      "groups": [
+        11,
+        18
+      ],
+      "question": "Compare both underscores h_ against individually readable 1961 original episemata; avoid mistaking staff lines for small marks.",
+      "status": "OPEN"
+    },
+    {
+      "category": "Christe-and-third-Kyrie-mora",
+      "groups": [
+        13,
+        20
+      ],
+      "question": "Identify exact dotted note and mora position in two printed phrases independently of the GABC period character.",
+      "status": "OPEN"
+    },
+    {
+      "category": "Kyrie-third-system-break-custos",
+      "groups": [
+        14,
+        15
+      ],
+      "question": "Inspect exact printed custos and line-break carryover; no source note may be added or lost.",
+      "status": "OPEN"
+    },
+    {
+      "category": "distinct-final-Kyrie-notes-and-signs",
+      "groups": [
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "question": "Independently compare printed fourth-Kyrie noteheads, joins, accent, mora and six-note final inclinata/virga sequence; all 15 source notes remain awaiting detailed staff review.",
+      "status": "OPEN"
+    }
+  ],
+  "editorialBoundary": {
+    "sourceGabcRewritten": false,
+    "canonical65ReaderChanged": false,
+    "sourceOwnedTextChanged": false,
+    "localChoirSettingInferred": false,
+    "recordingApproved": false,
+    "sourceNotePositionsIndexed": 40,
+    "originalPrintedNoteheadsIndependentlyCounted": false,
+    "printNoteByNoteCertificationGranted": false,
+    "all20ScoresStillProvisional": true
+  }
+}
