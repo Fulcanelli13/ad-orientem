@@ -111,6 +111,7 @@ import { formatDisplayDate, parseDisplayDate } from "../app/date-format.js";
 import { isFirstWeekday as calendarIsFirstWeekday } from "../calendar/intelligence.js";
 import { DEVOTIONAL_UX_CONTRACT_VERSION, devotionalUxContract } from "./devotional-ux-contract.js";
 import { LITANY_SOURCE_WITNESSES, LITANY_WITNESS_REVIEW_V1, reviewLitanyTranscription, extractLitanyProper, paginateLitanyProper } from "./litany-source.js";
+import {loadPrivateLitanyLocal} from "./litany-private-local-loader.v1.js";
 import {BATCH03_LITANY_EDITION_POLICY,BATCH03_ICRSP_MAJOR_PROCESSION_STEPS,BATCH03_LITANY_SOURCE_STATUS,batch03LitanyUse} from "./litany-1962-use-policy.js";
 import {PENITENTIAL_PSALMS_VULGATE,penitentialPsalmReference,auditPenitentialPsalmResponse,PENITENTIAL_PSALMS_TEXT_STATUS} from "./penitential-psalms-source.js";
 import {prayerScriptureStageFacesV1} from "./scripture-stage-faces.v1.js";
@@ -379,7 +380,7 @@ let FF={step:0,intention:false,communion:false};
 let FS={step:0,intention:false,communion:false,rosary:false,meditation:false,confessionDate:'',medSet:'joyful',medMystery:0};
 let PEN={step:0,token:0};
 let PEN_CACHE={busy:false,complete:false,checked:0,failed:[],audit:[],message:''};
-let LIT={step:0,sections:null,loading:false,error:'',token:0,language:null,use:'private'};
+let LIT={step:0,sections:null,loading:false,error:'',token:0,language:null,use:'private',sourceMode:null};
 let SEVEN={step:0,sections:null,opening:'',appendix:'',loading:false,error:'',srcToken:0,scriptToken:0,scriptureOnly:false};
 let FORTY={mode:'choose',step:0,solemnStep:0};
 let STATIONS={step:0,optionsOpen:false,publicPosture:false,simpleResponses:false,sanPolo:false};
@@ -3200,11 +3201,27 @@ async function ensureLitany(){
  const witness=LITANY_SOURCE_WITNESSES[lang()]||LITANY_SOURCE_WITNESSES.en;
  try{
   const language=lang();
-  const raw=await guidedWsText(witness.title,witness.cacheKey,language);
+  let raw=null,proper=null;
+  // Preserve any prior original-source warm cache. A new installation reads
+  // the pinned, locally included historical witness with no Wikisource request.
+  const savedKey='ao2:v435930:ws:'+language+':'+witness.cacheKey;
+  try{raw=localStorage.getItem(savedKey)||null}catch{}
+  if(raw)LIT.sourceMode='prior-original-witness-cache';
+  else{
+   try{
+    const bundle=await loadPrivateLitanyLocal(language);
+    proper=bundle.text;
+    LIT.sourceMode='self-hosted-private-historical-witness';
+   }catch(localError){
+    // Older/unupdated installations can still fetch exactly the named
+    // historic witness, never invent or harmonize a replacement text.
+    raw=await guidedWsText(witness.title,witness.cacheKey,language);
+    LIT.sourceMode='historical-wikisource-fallback';
+   }
+  }
   if(token!==LIT.token)return;
-  let proper;
   try{
-   proper=extractLitanyProper(raw,language);
+   if(proper===null)proper=extractLitanyProper(raw,language);
    LIT.sections=paginateLitanyProper(proper,language);
    LIT.review=reviewLitanyTranscription(proper,language);
   }catch(error){
@@ -3228,7 +3245,7 @@ function litanySourceDisclosure(){
  return `<details class="aoP435930Source"><summary>${esc(L('Historical text and edition','Texte historique et édition'))}</summary>
  <p><a href="${esc(witness.url)}" target="_blank" rel="noopener noreferrer">${esc(witness.label)} ↗</a></p>
  <p><a href="${esc(audit.transcriptionRevision)}" target="_blank" rel="noopener noreferrer">${esc(L('Reviewed transcription revision','Révision du texte consultée'))} ↗</a>${audit.printFacsimile?` · <a href="${esc(audit.printFacsimile)}" target="_blank" rel="noopener noreferrer">${esc(L('1862 printed facsimile','Fac-similé imprimé de 1862'))} ↗</a>`:''}</p>
- <p>${esc(L('Distinct historical witness; not a certified 1962 liturgical edition. Only the Litany proper is displayed, excluding the appended psalm and collects.','Témoin historique distinct ; il ne s’agit pas d’une édition liturgique de 1962 certifiée. Seules les litanies sont affichées, sans le psaume ni les oraisons qui suivent.'))}</p>
+ <p>${esc(L('Distinct historical witness; not a certified 1962 liturgical edition. Only the Litany proper is displayed, excluding the appended psalm and collects.','Témoin historique distinct ; il ne s’agit pas d’une édition liturgique de 1962 certifiée. Seules les litanies sont affichées, sans le psaume ni les oraisons qui suivent.'))}</p>${LIT.sourceMode==='self-hosted-private-historical-witness'?`<p data-ao-private-litany-bundled="true">${esc(L('Complete historical private Litany included locally for offline reading; independent print collation remains pending.','Litanies privées historiques complètes incluses localement pour la lecture hors ligne ; collation indépendante de l’imprimé en attente.'))}</p>`:''}
  ${note}</details>`;
 }
 function batch03LitanyUseOptions(){
@@ -3259,7 +3276,7 @@ function renderLitany(){
  if(LIT.use!=='private')return renderBatch03PublicLitanyReference();
  // A preference change must not retain the other language's historical edition.
  if(LIT.language!==lang()){
-  LIT.language=lang();LIT.token++;LIT.sections=null;LIT.review=null;LIT.loading=false;LIT.error='';LIT.step=0;
+  LIT.language=lang();LIT.token++;LIT.sections=null;LIT.review=null;LIT.loading=false;LIT.error='';LIT.step=0;LIT.sourceMode=null;
  }
  if(!LIT.sections&&!LIT.loading&&!LIT.error)setTimeout(ensureLitany,0);
  if(LIT.error)return `${head(L('Litany of the Saints','Litanies des saints'),L('Traditional litany','Litanies traditionnelles'))}<main class="aoP435930Body">${batch03LitanyUseOptions()}${callout(esc(L('The historical text could not be verified or loaded. No substitute is displayed.','Le texte historique n’a pas pu être chargé ou vérifié. Aucun remplacement n’est affiché.')),'warn')}<button type="button" class="aoP435930Secondary" data-p435930-lit-retry>${esc(L('Try again','Réessayer'))}</button>${litanySourceDisclosure()}</main>`;
