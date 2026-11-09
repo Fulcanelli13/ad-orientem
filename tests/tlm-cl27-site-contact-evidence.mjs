@@ -56,7 +56,10 @@ for(let i=0;i<26;i++){
   assert.ok(html.includes(c.review_source_url.replaceAll("&","&amp;")));
   assert.ok(html.includes(c.public_phone));
   assert.ok(html.includes(c.community_named_by_source));
-  assert.ok(html.includes(lang==="fr"?c.note_fr:c.note_en));
+  const escapedNote=(lang==="fr"?c.note_fr:c.note_en).replace(/[&<>"']/g,ch=>({
+   "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+  })[ch]);
+  assert.ok(html.includes(escapedNote),"Published note must be rendered with HTML escaping");
   assert.ok(html.includes(lang==="fr"?"Aucun horaire de messe publiable":"No currently publishable Mass times"));
   assert.ok(!html.includes("09:00")&&!html.includes("18:30"),
    "Contact evidence must not masquerade as an approved Mass timetable");
