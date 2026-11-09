@@ -378,3 +378,50 @@ assert.deepEqual(museum17.production_assignments,[]);
 assert.equal(prior.release_gate_evidence.asset_recovery_29.institutional_source_object_destinations_reviewed_from_other19,19);
 assert.equal(prior.release_gate_evidence.asset_recovery_29.other_original_exact_user_selected_photographs_still_unverified,19);
 console.log('PASS: all 19 previously unlinked artwork destinations now have primary/secondary physical-object source research; 19 exact selected photos remain unverified.');
+
+const hashSupplement15 = read('data/artwork/research/m2m-ai-derivative-four-file-hash-audit-batch15-20261109.v1.json');
+assert.equal(hashSupplement15.records.length,4);
+assert.equal(hashSupplement15.counts.actual_files_located,4);
+assert.equal(hashSupplement15.counts.sha256_independently_recomputed,4);
+assert.equal(hashSupplement15.counts.prior_manifest_sha_matches,3);
+assert.equal(hashSupplement15.counts.exact_file_editorial_approval_pending,1);
+assert.equal(hashSupplement15.counts.repository_files_imported,0);
+assert.equal(hashSupplement15.counts.release_certified,0);
+const expectedHashes={
+ '2026-03-08':'a7a7a1972f7e7954576cc7580c8f42bfc68b6628be2b51df36de032031db6016',
+ '2026-03-22':'6f25e25484a78737e87cb4ef007e083b8598938d8ed014163404f6194e768c6b',
+ '2026-04-08':'69eba31523b5fb15c781475e186f02bba193cab15e2d596e17b724cde128e3b2',
+ '2026-05-29':'b116bcac8883b6d4559d1dc54fad7336f4365940d8996cc2eb22c075a20cad5a'
+};
+assert.deepEqual(new Set(hashSupplement15.records.map(r=>r.date)),new Set(Object.keys(expectedHashes)));
+for(const r of hashSupplement15.records){
+ assert.equal(r.sha256_calculated,expectedHashes[r.date]);
+ assert.equal(r.exact_file_in_public_repo,false);
+ assert.equal(r.new_runtime_assignment_authorised,false);
+ assert.equal(r.owner_prior_selection_preserved,true);
+ assert.equal(r.publication_authorised,false);
+ assert.ok(r.bytes_verified>0&&r.pixels_verified.width>0&&r.pixels_verified.height>0);
+}
+for(const r of ai15.records){
+ const match=hashSupplement15.records.find(x=>x.date===r.target_id);
+ assert.ok(match,'Earlier two-image batch15 must map to supplemental four-image record');
+ assert.equal(match.sha256_calculated,r.sha256);
+ assert.equal(match.bytes_verified,r.file_size_bytes);
+ assert.deepEqual([match.pixels_verified.width,match.pixels_verified.height],r.pixel_size);
+}
+assert.equal(hashSupplement15.records.find(x=>x.date==='2026-03-22').prior_sha256,null);
+const nineSourceCrossCheck = read('data/artwork/research/m2m-nine-institutional-object-leads-batch16-20261109.v1.json');
+assert.equal(nineSourceCrossCheck.records.length,9);
+const canonical19=new Set([...museum16.records,...museum17.records].map(x=>x.target_id));
+assert.equal(canonical19.size,19);
+for(const r of nineSourceCrossCheck.records){
+ assert.ok(canonical19.has(r.target_id),'Supplemental research must remain subset of earlier 19/19 physical-work review');
+ assert.equal(r.selected_exact_image_file_found,false);
+ assert.equal(r.canonical_app_id_resolved,false);
+ assert.equal(r.existing_selection_replaced,false);
+ assert.equal(r.publication_authorised,false);
+}
+assert.equal(prior.release_gate_evidence.asset_recovery_29.institutional_object_leads_for_other_nineteen.total_distinct_destination_records_with_object_leads_or_explicit_source_holds,19);
+assert.equal(prior.release_gate_evidence.asset_recovery_29.institutional_object_leads_for_other_nineteen.supplemental_corroboration_rows,9);
+assert.equal(prior.release_gate_evidence.asset_recovery_29.latest_selected_ai_asset_file_recovery.verified_sha256,4);
+console.log('PASS: supplemental four-AI-file SHA256 ledger matches original two-image work and nine candidate object records are a subset of 19/19, with no publication.');
