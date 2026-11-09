@@ -3190,7 +3190,7 @@ function renderPenitential(){
  const i=Math.max(0,Math.min(6,PEN.step)),p=PEN_PSALMS[i],ref=`Psalms ${p.trad}:1`,modern=p.modern!==p.trad?` (${p.modern})`:'';
  setTimeout(()=>{const t=++PEN.token;loadScriptureInto('[data-p435930-pen-scripture]','psalm',penitentialScriptureReferences(p),true,()=>PEN.token)},0);
  const title=`Psalm ${p.trad}${modern}`,final=i===6;
- const body=`${scriptureContextCapsule(ref,{french:isFr()})}
+ const body=`${scriptureContextCapsule(isFr()?`Psalms ${p.modern}:1`:ref,{french:isFr()})}
   ${guideNow(title,L('Pray this Psalm slowly. Let the words themselves carry the act of repentance; do not rush to the next Psalm when you reach the final verse.','Priez lentement ce Psaume. Laissez les paroles elles-mêmes porter l’acte de pénitence ; ne passez pas immédiatement au Psaume suivant après le dernier verset.'))}
   <div class="aoP435930GuidedScripture" data-p435930-pen-scripture data-ao-scripture-content="local-witness" data-ao-scripture-source="local-witness">${penitentialLocalWitnessMarkup(p.trad)}</div>
   ${guideCue(L('PAUSE','PAUSE'),L('Remain briefly in silence after the doxology or final verse, then continue when ready.','Demeurez brièvement en silence après la doxologie ou le dernier verset, puis continuez lorsque vous êtes prêt.'))}`;
