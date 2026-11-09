@@ -247,8 +247,8 @@ export function openDivineOfficeReader(win=globalThis,{date=todayLocal()}={}){
   if(newYear.value){input.value=newYear.value;hour="COMPLINE";draw()}
  });
  bar.append(newYear);
- // Only the five independently text-certified Epiphany dates are selectable.
- // Holy Family 9–10 January remains source-held and unavailable publicly.
+ // The five previously certified Epiphany dates remain independent.
+ // Two Holy Family dates have a separate §186/188 Ordinary hymn certificate.
  const epiphany=d.createElement("select");
  epiphany.setAttribute("aria-label","Epiphany Compline date");
  const epiphanyPrompt=d.createElement("option");
@@ -269,6 +269,22 @@ export function openDivineOfficeReader(win=globalThis,{date=todayLocal()}={}){
   if(epiphany.value){input.value=epiphany.value;hour="COMPLINE";draw()}
  });
  bar.append(epiphany);
+ const holyFamily=d.createElement("select");
+ holyFamily.setAttribute("aria-label","Holy Family Compline date");
+ const holyPrompt=d.createElement("option");
+ holyPrompt.value="";holyPrompt.textContent="Holy Family · 9–10 Jan 2027";
+ holyFamily.append(holyPrompt);
+ for(const [date,caption] of [
+  ["2027-01-09","9 Jan · First Compline of the Holy Family"],
+  ["2027-01-10","10 Jan · Holy Family of Jesus, Mary and Joseph"]
+ ]){
+  const option=d.createElement("option");
+  option.value=date;option.textContent=caption;holyFamily.append(option);
+ }
+ holyFamily.addEventListener("change",()=>{
+  if(holyFamily.value){input.value=holyFamily.value;hour="COMPLINE";draw()}
+ });
+ bar.append(holyFamily);
  host.append(bar);
  const hours=d.createElement("div");hours.className="aoOfHours";host.append(hours);
  let hour="VESPERS";
