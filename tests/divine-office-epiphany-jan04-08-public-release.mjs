@@ -54,7 +54,7 @@ function transport(){
  };
  return {calls,fetchSource};
 }
-test("five additional source-certified Latin dates make exactly 42, Holy Family remains withheld",()=>{
+test("five-date independent Epiphany cohort remains exactly 42 before the Holy Family addition",()=>{
  assert.equal(LATIN_COMPLINE_RELEASE.approvedDates.length,23);
  assert.equal(CHRISTMAS_2026_COMPLINE_RELEASE.approvedDates.length,7);
  assert.equal(DEC28_JAN03_LATIN_COMPLINE_RELEASE.approvedDates.length,7);
@@ -148,9 +148,9 @@ test("20 positive full PUBLIC Latin Compline variants, with source-backed Epipha
   }
  }
 });
-test("9/10 Jan Holy Family, all other Hours/local calendars stay zero-fetch withheld",async()=>{
- for(const date of ["2027-01-09","2027-01-10","2027-01-11",
-  "2027-01-12","2028-01-06"]){
+test("11 Jan onward, other Hours/local calendars stay zero-fetch withheld",async()=>{
+ for(const date of ["2027-01-11","2027-01-12","2027-01-13",
+  "2027-01-14","2028-01-06"]){
   assert.equal(latinComplineReleaseEligibility({date}).status,"WITHHELD");
   assert.equal(officeRouteState({date,hour:"COMPLINE"}).readingEnabled,false);
   for(const context of Object.values(COMPLINE_CONTEXT)){
