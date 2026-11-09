@@ -12,6 +12,17 @@ const EXPECTED=Object.freeze({
 });
 const SCOPES=new Set(["SUNDAYS_AND_FEASTS","WEEKDAY_UNSPECIFIED","WEDNESDAY_FRIDAY_SATURDAY"]);
 const TYPES=new Set(["UNKNOWN","LOW","SUNG"]);
+const EXPECTED_LINES=Object.freeze({
+ "RG-005CCA55D4DF":["SUNDAYS_AND_FEASTS|18:00|UNKNOWN"],
+ "RG-158B6DF9C6A3":["SUNDAYS_AND_FEASTS|08:30|UNKNOWN",
+  "SUNDAYS_AND_FEASTS|10:30|UNKNOWN","SUNDAYS_AND_FEASTS|18:30|UNKNOWN",
+  "WEEKDAY_UNSPECIFIED|07:15|UNKNOWN","WEEKDAY_UNSPECIFIED|18:30|UNKNOWN"],
+ "RG-0A4EC539F260":["SUNDAYS_AND_FEASTS|09:30|SUNG",
+  "SUNDAYS_AND_FEASTS|18:30|LOW","WEDNESDAY_FRIDAY_SATURDAY|18:30|UNKNOWN"],
+ "RG-96C9520D0C32":["SUNDAYS_AND_FEASTS|10:30|UNKNOWN",
+  "SUNDAYS_AND_FEASTS|18:30|UNKNOWN","WEEKDAY_UNSPECIFIED|18:30|UNKNOWN"]
+});
+
 const FORBIDDEN=["rrule","recurrence","next_mass","event_date","occurrences","calendar_events",
  "una_cum","canonical_status","pope_named_in_canon","missal","missal_edition",
  "rubrical_basis","rite","celebrant","venue_owner","ownership","gps","latitude","longitude"];
@@ -40,7 +51,18 @@ export function attachPublishedWeeklySourceProgrammes(items,manifest){
      typeof e.exception_fr!=="string"||forbidden(e)||seen.has(e.scope+":"+e.time))
      throw new Error("Invalid or duplicate source-weekly Mass line "+T(p.cl2_anchor));
    seen.add(e.scope+":"+e.time);
+   if(p.cl2_anchor==="RG-0A4EC539F260"&&e.scope==="SUNDAYS_AND_FEASTS"&&e.time==="18:30"&&
+      (!["Christmas","Easter","Pentecost","July"].every(x=>e.exception_en.includes(x))||
+       !["Noël","Pâques","Pentecôte","juillet"].every(x=>e.exception_fr.includes(x))))
+      throw new Error("Toulon evening Mass exceptions missing");
+   if(p.cl2_anchor==="RG-96C9520D0C32"&&e.scope==="SUNDAYS_AND_FEASTS"&&e.time==="18:30"&&
+      (!["Christmas","Easter","July"].every(x=>e.exception_en.includes(x))||
+       !["Noël","Pâques","juillet"].every(x=>e.exception_fr.includes(x))))
+      throw new Error("Lille evening Mass exceptions missing");
   }
+  if(JSON.stringify(p.entries.map(e=>e.scope+"|"+e.time+"|"+e.mass_type))!==
+     JSON.stringify(EXPECTED_LINES[p.cl2_anchor]))
+    throw new Error("Unapproved source-weekly pattern change "+p.cl2_anchor);
   byAnchor.set(p.cl2_anchor,p);
  }
  if(byAnchor.size!==Object.keys(EXPECTED).length)throw new Error("Missing source-weekly site");
