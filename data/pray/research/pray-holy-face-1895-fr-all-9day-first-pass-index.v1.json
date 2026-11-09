@@ -100,8 +100,8 @@
     },
     {
       "day": 8,
-      "subject": "Printed sequence I/III/III and Vœu à pratiquer on p.139 preserved, not silently emended.",
-      "status": "SOURCE_ANOMALY_EDITORIAL_CHECK"
+      "subject": "Printed first reflection p.136 is unnumbered; subsequent p.137 and p.138 reflections both III, i.e. printed sequence [none, III, III]. Vœu à pratiquer on p.139 also printed; source transcription corrected after photographic recheck.",
+      "status": "SOURCE_PHOTOGRAPH_RECHECK_CORRECTED__FULL_INDEPENDENT_PROOF_PENDING"
     },
     {
       "day": 9,
@@ -115,6 +115,7 @@
     }
   ],
   "nextRequiredGates": [
+    "Preserve Day VIII corrected source [unnumbered,III,III], never reinstate invented first Roman I.",
     "Independent photograph-by-photograph French second proof of all 31 printed pages 112–142 and all 9 research records",
     "Resolve ambiguous punctuation, typography, printed wording and day-specific variants including Day VIII double III and Day IX collect",
     "Obtain/inspect 1887 original English printed translation and classify each variant against it, distinguishing edition changes from translator's choices",
@@ -122,5 +123,14 @@
     "Run Prayer UI 320px and 390px EN/FR: Library search, all 9 day cards, navigation, shared prayers, scroll focus, source link, offline/return",
     "Do not claim French reader completion, publish research directory to GitHub Pages, or alter existing English source content prior to approvals"
   ],
-  "rights": "Original language historical text staged in source research only; do not mirror Google scanned PDF or publish uncured source review artifacts as part of static Pages build."
+  "rights": "Original language historical text staged in source research only; do not mirror Google scanned PDF or publish uncured source review artifacts as part of static Pages build.",
+  "qualityControl": {
+    "photoVisualRecheck": "ALL_31_PRINTED_PAGES_112_TO_142_VIEWED__NOT_FULL_LINE_BY_LINE_INDEPENDENT_COLLATION",
+    "independentSecondProofDays": 0,
+    "criticalCorrection": "Earlier first-pass Day VIII p.136 Roman I was inserted and has now been removed following direct image check.",
+    "englishPrinted1887Scan": "FOUND_LINKED_NOT_READ_OR_COLLATED",
+    "english1887SourceUrl": "https://holyfacechapel.org/wp-content/uploads/2025/09/ManualoftheArchconfraternityoftheHolyFace.pdf",
+    "englishSourceAccessNote": "1887 original English Bennett edition photographic PDF is linked by monastery; approximately 174 MB; PDF download was too large for browsing. The English textual witness remains unverified against printed images, not certified.",
+    "sourceImageSourceUrl": "https://www.bibliotheque-catholique.com/piete/abbe-pierre-desire-janvier/manuel-de-l-archiconfrerie-de-la-sainte-face"
+  }
 }

@@ -50,6 +50,14 @@ for(let i=0;i<9;i++){
 assert.equal(coverage.size,31);
 for(let p=112;p<=142;p++) assert.ok(coverage.has(p));
 const first=days[0],last=days[8];
+const eighth=days[7];
+assert.deepEqual(eighth.printedOrdinalAnomaly.printedSequence,[null,"III","III"]);
+assert.deepEqual(eighth.printedOrdinalAnomaly.logicalSequence,[1,2,3]);
+assert.equal(eighth.dayComponents.find(x=>x.key==="point1").printedOrdinal,null);
+assert.match(eighth.dayComponents.find(x=>x.key==="point1").text,/^Le pardon accordé\. —/);
+assert.doesNotMatch(eighth.dayComponents.find(x=>x.key==="point1").text,/^I\./);
+assert.equal(index.qualityControl.independentSecondProofDays,0);
+assert.equal(index.qualityControl.englishPrinted1887Scan,"FOUND_LINKED_NOT_READ_OR_COLLATED");
 assert.deepEqual(first.dayComponents.map(x=>x.key),["opening","narrative","point1","point2","point3","act","virtue","bouquet","prayers","collect"]);
 for(let i=1;i<8;i++){
   assert.equal(days[i].dayComponents[0].key,"opening_reference");
