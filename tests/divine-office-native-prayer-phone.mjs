@@ -324,7 +324,7 @@ try{
    ["2026-12-30","2026-12-30","Sixth day of Christmas Octave, 30 December 2026",[4,90,133]],
    ["2026-12-31","2027-01-01","First Compline of Circumcision, 31 December 2026",[4,90,133]],
    ["2027-01-01","2027-01-01","Circumcision of Our Lord, 1 January 2027",[4,90,133]],
-   ["2027-01-02","2027-01-03","First Compline of the Holy Name, 2 January 2027",[87,102]],
+   ["2027-01-02","2027-01-03","First Compline of the Holy Name, 2 January 2027",[4,90,133]],
    ["2027-01-03","2027-01-03","Most Holy Name of Jesus, 3 January 2027",[4,90,133]]
   ]){
    await newYear.selectOption(date);
@@ -349,8 +349,8 @@ try{
      "Christmas Octave BR 175(e) must not fetch weekday psalms");
    if(date==="2027-01-02")
     assert.ok(!newSourceURLs.some(url=>
-     /Psalm(4|90|133)\.txt$/u.test(url)),
-     "Saturday first Compline of Holy Name must not fetch Sunday psalms");
+     /Psalm(87|102)\.txt$/u.test(url)),
+     "Holy Name II-class First Compline must not fetch Saturday psalms");
    await latin.getByRole("button",{name:"Next"}).click();
    assert.match(await latin.locator(".aoOfFrameControls").innerText(),/2 \/ /u);
    const overflowDay=await page.evaluate(()=>
