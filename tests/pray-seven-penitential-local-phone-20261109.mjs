@@ -33,10 +33,11 @@ try{
    await page.waitForFunction(x=>document.documentElement.lang===x,ui,{timeout:10000});
    assert.equal((await page.evaluate(()=>globalThis.AO_APP_SHELL_V1.navigate("pray")))?.ok,true);
    await page.waitForFunction(()=>typeof globalThis.AO_PRAY_V435930?.open==="function",null,{timeout:30000});
+   // The Prayer reader bundle is now loaded, but the Scripture service cannot fetch anything.
+   // Verify that entering each Psalm while offline still renders complete local source text.
+   await ctx.setOffline(true);
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.penitential_psalms",{returnContext:null})),true);
    await page.locator("#aoPray435930.open [data-ao-devo-chapter='0']").waitFor({state:"attached",timeout:15000});
-   // Simulate a lost connection while the reader is open: source bodies must remain available.
-   await ctx.setOffline(true);
    const scope="#aoPray435930.open ";
    for(let i=0;i<7;i++){
     if(i>0)await page.locator(scope+'[data-ao-devo-chapter="'+i+'"]').evaluate(el=>el.click());
