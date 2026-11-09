@@ -50,10 +50,27 @@ export function cueItemsFromScrollContainer(container){
     if(!CUE_RE.test(String(cueId??"")))continue;
     const nr=node.getBoundingClientRect?.();
     if(!nr)continue;
+    // Gospel C0084 contains a source-owned iconless three-crosses rubric.
+    // Its inline note is *not* another ceremonial cue and can add 67px to
+    // the prayer row after the exact source cue first becomes active. If
+    // that supplemental note expands the cue's selection geometry, the
+    // C0084 focus line can move back to C0083 with no user scroll at all.
+    // Select the cue using its original spoken Latin/vernacular portion;
+    // keep the visible rubric in the same paragraph, unmodified. This is
+    // deliberately limited to the measured Gospel heading, rather than
+    // changing the geometry of every source event or reading paragraph.
+    const gospelNote=cueId==="AO.SM.C0084"
+      ? node.querySelector?.('.ao-iconless-source-rubric[data-source-cue-id="AO.SM.C0084"]')
+      : null;
+    const noteRect=gospelNote?.getBoundingClientRect?.();
+    const sourceBottom=noteRect&&Number.isFinite(noteRect.top) &&
+      noteRect.top>nr.top && noteRect.top<=nr.bottom
+      ? Math.min(nr.bottom,noteRect.top)
+      : nr.bottom;
     items.push(Object.freeze({
       cueId,
       top:nr.top-cr.top+scrollTop,
-      bottom:nr.bottom-cr.top+scrollTop,
+      bottom:sourceBottom-cr.top+scrollTop,
     }));
   }
   return items;
