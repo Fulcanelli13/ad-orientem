@@ -60,6 +60,7 @@ jobs:
           node --test tests/divine-office-advent-iii-complete-compline.mjs
           node --test tests/divine-office-christmas-source-intake.mjs
           node --test tests/divine-office-christmas-marian-source.mjs
+          node --test tests/divine-office-christmas-private-complete-compline.mjs
           node --test tests/divine-office-monday-independent-clementine-fullword.mjs
           node --test tests/divine-office-prayer-readiness-gate.mjs
           node --test tests/divine-office-native-entry.mjs
