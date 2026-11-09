@@ -2896,6 +2896,13 @@ export function createReaderDomAdapter({
       // An inline prayer-level choice must immediately display its actual
       // archived GABC in the same card, without the Schola Music Plan.
       renderOrdoNotationReferences({movement,settingId});
+    },
+    onOrdinaryMassSelection:({settingId})=>{
+      // An explicit second action after a source setting was selected.
+      // Update all available archived movements in the active personal
+      // programme, without inferring what a local choir actually sings.
+      onScholaLocalProgrammeChange?.({kind:"ordinaryMassSelection",value:settingId});
+      renderOrdoNotationReferences();
     }
   });
   let prepared=null;
