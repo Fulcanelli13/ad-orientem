@@ -108,7 +108,9 @@ try{
    for(const ui of ["en","fr"]){
     if(ui==="fr"){
      await langButton.click();
-     await page.waitForFunction(()=>document.documentElement.lang==="fr",null,{timeout:10000});
+     await page.waitForFunction(()=>document.querySelector("#aoPray435930.open .aoP435930SessionLanguage")?.textContent?.trim()==="FR",null,{timeout:10000});
+     assert.match(await page.locator(rootSel).innerText(),/Chemin de Croix/i,
+      "The actual Stations reader must display French, not only a switched control");
     }
     for(const row of manifest.entries){
      const number=row.station;
@@ -165,6 +167,8 @@ try{
      assert.ok(evidence.documentOverflow<=2&&evidence.figureOverflow<=2,
       "Photo overflows actual reader "+width+"/"+ui+"/Station "+number);
      assert.equal(evidence.objectFit,"contain","Must show full artwork, not automatically crop");
+     assert.match(evidence.alt,ui==="fr"?/^Chemin de Croix, station /:/^Stations of the Cross, Station /,
+      "The artwork alt label must follow the reader language");
      assert.deepEqual(evidence.sourceLinks,[row.sourceFilePage,row.photoLicenseURL]);
      assert.match(evidence.caption,/Didier Descouens/);
      assert.match(evidence.caption,/CC BY-SA 4\.0/);
