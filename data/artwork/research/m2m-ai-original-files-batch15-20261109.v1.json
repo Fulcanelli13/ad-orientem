@@ -1,0 +1,110 @@
+{
+  "schema": "AO_SACRED_ART_TWO_AI_ASSETS_RECOVERED_FROM_LIBRARY_BATCH15_V1",
+  "as_of": "2026-11-09",
+  "state": "RESEARCH_ONLY_ORIGINAL_FILES_LOCATED_WITH_DISTINCT_APPROVAL_GATES",
+  "prior": "data/artwork/research/m2m-recovered-user-library-derivatives-batch14-20261109.v1.json",
+  "provenance_scope": "Files Library named objects inspected directly and SHA256 computed from recovered image bytes; image data kept in private Library, not GitHub.",
+  "summary": {
+    "previously_unlocated_ai_generated_outputs": 2,
+    "original_pngs_located_and_hashed": 2,
+    "recovered_cavedone_hash_confirmed_against_prior_manifest": 1,
+    "passion_originals_with_unreconciled_later_editorial_preference": 1,
+    "remaining_ai_original_files_unlocated": 0,
+    "production_approved_new_files": 0,
+    "total_protected_no_internal_leads": 29,
+    "repo_local_existing_provenance": 3,
+    "user_library_original_generated_files": 4,
+    "remote_home_preview_only": 2,
+    "dual_scene_easter_vigil": 1,
+    "other_original_assets_unlocated": 19
+  },
+  "requirements": [
+    "Do not treat a saved generated image as a museum photograph or a faithful recolour",
+    "Approve no new date painting from a matching subject or filename alone",
+    "Resolve potential 19-to-21 October Passion Sunday approval chronology before image release",
+    "The Cavedone approval is editorial/date-specific and not a rights or crop certification",
+    "Save exact filenames and computed checksums as research evidence without publishing private Library file handles or bytes",
+    "No change to global original-artwork blocklist, accepted Prayer alternatives, editorial selections, canonical IDs or runtime"
+  ],
+  "records": [
+    {
+      "target_id": "2026-03-08",
+      "selection_title": "Christ Exorcising Devils from a Man — AI reinterpretation after Giacomo Cavedone",
+      "saved_filename": "Christ Commands the Shadows.png",
+      "source_type": "USER_LIBRARY_ORIGINAL_GENERATED_PNG",
+      "file_size_bytes": 2287238,
+      "pixel_size": [
+        1086,
+        1448
+      ],
+      "sha256": "a7a7a1972f7e7954576cc7580c8f42bfc68b6628be2b51df36de032031db6016",
+      "hash_evidence": "SHA256_RECOMPUTED_FROM_SAVED_LIBRARY_IMAGE_MATCHES_2026_10_19_PROVENANCE_JSON",
+      "historical_source": {
+        "artist": "Giacomo Cavedone",
+        "title": "Christ Exorcising Devils from a Man",
+        "medium": "black ink and brown wash drawing",
+        "institution": "Birmingham Museum of Art",
+        "accession": "1981.142",
+        "url": "https://www.artsbma.org/collection/christ-exorcising-devils-from-a-lame-man/"
+      },
+      "editorial_evidence": {
+        "record_filename": "Christ Commands the Shadows — provenance.json",
+        "record_date": "2026-10-19",
+        "prior_approval_status": "EDITORIAL_APPROVED",
+        "approval_scope": "2026-03-08 Third Sunday of Lent, Luke 11:14–28",
+        "later_date_selection_research": "data/artwork/2026-prior-date-artwork-evidence.v1.json"
+      },
+      "owner_selected_asset_link_strength": "EXACT_IMAGE_NAME_AND_MATCHING_FILE_HASH_TO_USER_APPROVAL_RECORD",
+      "publication_hold": "NO_RIGHTS_SOURCE_QA_CROP_OR_RUNTIME_RELEASE_CERTIFICATION",
+      "generated_work_must_not_be_misattributed_as_historical_original": true,
+      "source_engraving_not_the_ai_output": true,
+      "original_image_file_located": true,
+      "raw_image_bytes_committed_to_repo": false,
+      "canonical_app_id": null,
+      "runtime_new_image_authorised": false,
+      "photo_publication_authorised": false,
+      "owner_other_choices_unchanged": true
+    },
+    {
+      "target_id": "2026-03-22",
+      "selection_title": "Christ Escapes the Stoning — AI reinterpretation after Lucas van Doetechum",
+      "saved_filename": "Christ Retreats from the Angry Crowd.png",
+      "source_type": "USER_LIBRARY_ORIGINAL_GENERATED_PNG",
+      "file_size_bytes": 2517813,
+      "pixel_size": [
+        1536,
+        1024
+      ],
+      "sha256": "6f25e25484a78737e87cb4ef007e083b8598938d8ed014163404f6194e768c6b",
+      "hash_evidence": "SHA256_RECOMPUTED_FROM_SAVED_LIBRARY_IMAGE_NO_SEPARATE_EXACT_ASSET_APPROVAL_HASH_RECORD_FOUND",
+      "historical_source": {
+        "artist": "Lucas van Doetechum",
+        "title": "Attempts to Stone Christ",
+        "medium": "engravings; historical source work, not generated image",
+        "institution": null,
+        "accession": null,
+        "url": null
+      },
+      "editorial_evidence": {
+        "saved_file_created": "2026-10-19",
+        "date_selection_source": "data/artwork/2026-prior-date-artwork-evidence.v1.json",
+        "selection_scope": "2026-03-22 Passion Sunday, John 8:46–59",
+        "earlier_ai_reinterpretation_user_approval_reported": true,
+        "later_2026_10_21_review": "Some follow-up visual-review materials treat exact Passion Sunday artwork preference as undecided / historical engraving favored; original saved-image-to-final-choice proof not found",
+        "approval_conflict": "AI_IMAGE_SELECTED_AS_DATE_PROGRAMME_VS_LATER_UNRESOLVED_PHOTOGRAPH_AND_ORIGINAL_ENGRAVING_PREFERENCE"
+      },
+      "owner_selected_asset_link_strength": "SCENE_AND_CREATION_DATE_MATCH_NO_EXACT_HASH_TIED_TO_FINAL_OWNER_DECISION",
+      "publication_hold": "EDITORIAL_CHRONOLOGY_CONFLICT_AND_NO_RIGHTS_CROP_OR_RUNTIME_CERTIFICATION",
+      "generated_work_must_not_be_misattributed_as_historical_original": true,
+      "source_engraving_not_the_ai_output": true,
+      "original_image_file_located": true,
+      "raw_image_bytes_committed_to_repo": false,
+      "canonical_app_id": null,
+      "runtime_new_image_authorised": false,
+      "photo_publication_authorised": false,
+      "owner_other_choices_unchanged": true
+    }
+  ],
+  "public_repo_image_uploads": [],
+  "new_assignments_authorised": 0
+}
