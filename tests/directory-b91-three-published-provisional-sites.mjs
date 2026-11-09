@@ -78,8 +78,8 @@ assert.equal(live.filter(x=>x.map_state==="ADDRESS_ONLY").length,14);
 assert.ok(added.every(x=>live.some(v=>v.item_id===x.item_id)));
 assert.equal(live.filter(x=>x.celebration_evidence).length,2,
  "The source-owned CL27 witness overlay must not alter the B91 physical-site census");
-assert.equal(live.filter(x=>x.site_contact_evidence).length,16,
- "Exactly sixteen source-linked community/contact claims must join canonical CL2 sites");
+assert.equal(live.filter(x=>x.site_contact_evidence).length,publishedContacts.records.length,
+ "Contact overlay count must match its validated source manifest after concurrent CL27 releases");
 assert.ok(live.filter(x=>x.site_contact_evidence).every(x=>!x.site_contact_evidence.mass_times&&!x.site_contact_evidence.una_cum));
 const weekly=live.filter(x=>x.weekly_source_programme);
 assert.equal(weekly.length,10,"Exactly ten first-party source-weekly venues; no generated events");
