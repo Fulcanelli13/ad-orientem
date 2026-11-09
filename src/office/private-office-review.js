@@ -5,7 +5,9 @@
  */
 import {DIVINUM_OFFICIUM_PIN as PIN} from "../app/source-transport-compat.js";
 import {createComplinePinnedReader,assembleDatedComplinePilot,
- createLatinComplinePinnedReader,assembleLatinDatedComplinePilot}
+ createLatinComplinePinnedReader,assembleLatinDatedComplinePilot,
+ createChristmas2026PrivateLatinPinnedReader,
+ assembleChristmas2026PrivateLatinComplinePilot}
  from "./saturday-compline-2026-pilot.js";
 import {createAdventFirstVespersBoundedPinnedReader} from "./advent-first-vespers-bounded-preview-reader.js";
 import {assembleAdventI2026PrivatePreviewSession} from "./advent-first-vespers-preview-session.js";
@@ -102,9 +104,16 @@ export async function assemblePrivateOfficeReview({
   if(!COMPLINE_DATES.has(date))return hold("COMPLINE_DATE_NOT_REVIEWED");
   try{
    const latin=languageMode==="latin";
-   const reader=latin?createLatinComplinePinnedReader({date,fetchSource}):
+   const christmasResearch=date>="2026-12-21"&&date<="2026-12-27";
+   if(christmasResearch&&!latin)
+    return hold("CHRISTMAS_PRIVATE_RESEARCH_LATIN_ONLY");
+   const reader=christmasResearch?
+    createChristmas2026PrivateLatinPinnedReader({date,fetchSource}):
+    latin?createLatinComplinePinnedReader({date,fetchSource}):
     createComplinePinnedReader({date,fetchSource});
-   const pilot=latin?await assembleLatinDatedComplinePilot({reader,date}):
+   const pilot=christmasResearch?
+    await assembleChristmas2026PrivateLatinComplinePilot({reader,date}):
+    latin?await assembleLatinDatedComplinePilot({reader,date}):
     await assembleDatedComplinePilot({reader,date});
    return projectPrivateOfficeReview({hour,date,pilot,languageMode});
   }catch(error){return hold("COMPLINE_SOURCE_FAILURE:"+String(error?.message??error))}
