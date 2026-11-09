@@ -73,7 +73,7 @@ try{
    assert.equal(await paragraph.locator('[data-reference-score="GREGOBASE-545"]').count(),1,
      "One selected complete score at its canonical source cue, not another Mass card");
    assert.ok((await paragraph.locator(".ao-line-primary").textContent())?.length>3);
-   assert.match(await ref.locator(".ao-proper-reference-label").text(),/research transcription/i);
+   assert.match(await ref.locator(".ao-proper-reference-label").textContent(),/research transcription/i);
    const original=ref.locator("[data-ordinary-printed-source]");
    assert.equal(await original.count(),1);
    assert.equal(await original.getAttribute("target"),"_blank");
@@ -82,7 +82,7 @@ try{
    const dlg=page.locator("dialog.ao-proper-reference-zoom");
    await dlg.waitFor({state:"visible",timeout:20000});
    assert.equal(await dlg.getAttribute("data-reference-zoom-mode"),"fit");
-   assert.match(await dlg.locator(".ao-proper-reference-provenance").text(),/not musically certified/i);
+   assert.match(await dlg.locator(".ao-proper-reference-provenance").textContent(),/not musically certified/i);
    assert.match(await dlg.locator("[data-reference-zoom-original]").getAttribute("href"),
      /kyriale-solesmes\.pdf#page=56$/);
    assert.match(await dlg.locator("[data-reference-zoom-transcription]").getAttribute("href"),
