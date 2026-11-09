@@ -107,6 +107,20 @@ async function stableGospelFocus(page,cueId){
   },cueId);
   assert.ok(trace.every(x=>x.cue===cueId && x.scene==="GOSPEL_CROSSES"),
     "C0084 lost exact cinematic focus after layout settled: "+JSON.stringify(trace));
+  const sourceRows=trace.map(x=>x.rows.find(row=>row.id===cueId));
+  // A source action caption must be at most one exact-cue inline witness and
+  // must not disappear as cue ownership settles; otherwise the 67px
+  // insertion/removal changes the very geometry used to select C0084.
+  const captionCount=row=>row.children.filter(child=>
+    child.className==="ao-iconless-source-rubric").length;
+  const firstCaption=captionCount(sourceRows[0]);
+  if(firstCaption){
+    assert.equal(firstCaption,1);
+    assert.ok(sourceRows.every(row=>captionCount(row)===1),
+      "Gospel source caption blinked on focus handoff: "+JSON.stringify(trace));
+    assert.equal(new Set(sourceRows.map(row=>row.bottom-row.top)).size,1,
+      "Gospel source paragraph reflowed as cue focus settled: "+JSON.stringify(trace));
+  }
   return trace;
 }
 async function snapshot(page,width,lang,cueId,expected,{reducedMotion=false}={}){
