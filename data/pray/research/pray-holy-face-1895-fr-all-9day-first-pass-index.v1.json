@@ -25,7 +25,8 @@
       "firstPassComplete": true,
       "independentSecondProofComplete": false,
       "frenchReaderPublished": false,
-      "editorialAdmission": "HOLD"
+      "editorialAdmission": "HOLD",
+      "imageAssistedNormalizedTextSecondPassComplete": false
     },
     {
       "day": 2,
@@ -33,7 +34,8 @@
       "firstPassComplete": true,
       "independentSecondProofComplete": false,
       "frenchReaderPublished": false,
-      "editorialAdmission": "HOLD"
+      "editorialAdmission": "HOLD",
+      "imageAssistedNormalizedTextSecondPassComplete": false
     },
     {
       "day": 3,
@@ -41,7 +43,8 @@
       "firstPassComplete": true,
       "independentSecondProofComplete": false,
       "frenchReaderPublished": false,
-      "editorialAdmission": "HOLD"
+      "editorialAdmission": "HOLD",
+      "imageAssistedNormalizedTextSecondPassComplete": false
     },
     {
       "day": 4,
@@ -49,7 +52,8 @@
       "firstPassComplete": true,
       "independentSecondProofComplete": false,
       "frenchReaderPublished": false,
-      "editorialAdmission": "HOLD"
+      "editorialAdmission": "HOLD",
+      "imageAssistedNormalizedTextSecondPassComplete": false
     },
     {
       "day": 5,
@@ -57,7 +61,8 @@
       "firstPassComplete": true,
       "independentSecondProofComplete": false,
       "frenchReaderPublished": false,
-      "editorialAdmission": "HOLD"
+      "editorialAdmission": "HOLD",
+      "imageAssistedNormalizedTextSecondPassComplete": false
     },
     {
       "day": 6,
@@ -65,7 +70,8 @@
       "firstPassComplete": true,
       "independentSecondProofComplete": false,
       "frenchReaderPublished": false,
-      "editorialAdmission": "HOLD"
+      "editorialAdmission": "HOLD",
+      "imageAssistedNormalizedTextSecondPassComplete": false
     },
     {
       "day": 7,
@@ -73,7 +79,8 @@
       "firstPassComplete": true,
       "independentSecondProofComplete": false,
       "frenchReaderPublished": false,
-      "editorialAdmission": "HOLD"
+      "editorialAdmission": "HOLD",
+      "imageAssistedNormalizedTextSecondPassComplete": false
     },
     {
       "day": 8,
@@ -81,7 +88,9 @@
       "firstPassComplete": true,
       "independentSecondProofComplete": false,
       "frenchReaderPublished": false,
-      "editorialAdmission": "HOLD"
+      "editorialAdmission": "HOLD",
+      "imageAssistedNormalizedTextSecondPassComplete": true,
+      "sourceReviewEvidencePath": "data/pray/research/pray-holy-face-1895-fr-days08-09-image-assisted-second-pass.v1.json"
     },
     {
       "day": 9,
@@ -89,7 +98,9 @@
       "firstPassComplete": true,
       "independentSecondProofComplete": false,
       "frenchReaderPublished": false,
-      "editorialAdmission": "HOLD"
+      "editorialAdmission": "HOLD",
+      "imageAssistedNormalizedTextSecondPassComplete": true,
+      "sourceReviewEvidencePath": "data/pray/research/pray-holy-face-1895-fr-days08-09-image-assisted-second-pass.v1.json"
     }
   ],
   "knownSpecialCases": [
@@ -115,8 +126,8 @@
     }
   ],
   "nextRequiredGates": [
+    "Complete equivalent detailed photographic normalized-source comparison for Days I–VII; Days VIII–IX have AI-assisted image comparison but still require independent editorial sign-off.",
     "Preserve Day VIII corrected source [unnumbered,III,III], never reinstate invented first Roman I.",
-    "Independent photograph-by-photograph French second proof of all 31 printed pages 112–142 and all 9 research records",
     "Resolve ambiguous punctuation, typography, printed wording and day-specific variants including Day VIII double III and Day IX collect",
     "Obtain/inspect 1887 original English printed translation and classify each variant against it, distinguishing edition changes from translator's choices",
     "Select exact certified historical French reader text and provenance label; separately approve Day IX full reprinted prayers",
@@ -131,6 +142,15 @@
     "englishPrinted1887Scan": "FOUND_LINKED_NOT_READ_OR_COLLATED",
     "english1887SourceUrl": "https://holyfacechapel.org/wp-content/uploads/2025/09/ManualoftheArchconfraternityoftheHolyFace.pdf",
     "englishSourceAccessNote": "1887 original English Bennett edition photographic PDF is linked by monastery; approximately 174 MB; PDF download was too large for browsing. The English textual witness remains unverified against printed images, not certified.",
-    "sourceImageSourceUrl": "https://www.bibliotheque-catholique.com/piete/abbe-pierre-desire-janvier/manuel-de-l-archiconfrerie-de-la-sainte-face"
+    "sourceImageSourceUrl": "https://www.bibliotheque-catholique.com/piete/abbe-pierre-desire-janvier/manuel-de-l-archiconfrerie-de-la-sainte-face",
+    "imageAssistedNormalizedTextSecondPassDays": [
+      8,
+      9
+    ],
+    "imageAssistedNormalizedTextSecondPassCount": 2,
+    "externalIndependentEditorialApprovalDays": [],
+    "photographicTypographicFacsimileExactDays": [],
+    "imageAssistedSecondPassEvidencePath": "data/pray/research/pray-holy-face-1895-fr-days08-09-image-assisted-second-pass.v1.json",
+    "secondPassInterpretation": "Day VIII and IX entire normalized paragraph/section text and printed references were compared against photographed original pages 136–142 in a new AI-assisted pass. This does not establish independent human editorial approval or literal printing-typography certification; public texts stay held."
   }
 }
