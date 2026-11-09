@@ -1,0 +1,253 @@
+{
+  "schema": "ao-schola-m44-original1961-v-real-exsurge-visual-parity-v1",
+  "observedAt": "2026-11-09",
+  "scoreId": "GREGOBASE-545",
+  "movement": "KYRIE",
+  "explicitLocalSetting": "MASS_16",
+  "original1961PrintedEvidence": {
+    "edition": "Graduale Romanum Solesmes 1961",
+    "folio": "54*",
+    "pdfPage1Based": 56,
+    "originalPdf": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+    "originalPdfSha256": "119b084b5c0689fc3e87541143731f6526c404a018bc97d18e8c98a7635ce2bd",
+    "originalPrintNoteheadsIndependentlyCounted": 40,
+    "originalPrintedGroupCount": 27,
+    "originalPrintedTwoStaffSystems": [
+      {
+        "system": 1,
+        "sourceGroups": [
+          1,
+          14
+        ],
+        "noteheads": 17
+      },
+      {
+        "system": 2,
+        "sourceGroups": [
+          15,
+          27
+        ],
+        "noteheads": 23
+      }
+    ],
+    "originalPrintedSignCounts": {
+      "horizontalEpisemata": 3,
+      "punctumMora": 4,
+      "virgaShapedHead": 1,
+      "punctaInclinata": 3
+    },
+    "terminalPrintedNoteStaffSlots": [
+      "space3",
+      "space2",
+      "line3",
+      "space2",
+      "line2",
+      "space1"
+    ],
+    "sourceEvidenceLedger": "data/research/mass-music-m43-kyrie-xvi-original-printed-noteheads.v1.json",
+    "noCurrentPermissionToPublishOriginalScans": true
+  },
+  "exactRenderer": {
+    "engine": "vendored MIT-licensed Exsurge",
+    "libraryPath": "assets/vendor/exsurge/exsurge.min.js",
+    "originalGabcPath": "src/mass/reader-kyriale-research-gabc.js",
+    "originalGabcFingerprintUtf16Fnv1a32": "acef0d62",
+    "renderCodePath": "src/mass/reader-chant-engraver.js",
+    "auditCodePath": "tests/reader-kyriale-m44-1961-exsurge-render-parity.mjs",
+    "realSvgGeneratedWith": "new exsurge.ChantScore(context,exsurge.Gabc.createMappingsFromSource(context,gabc),true).createSvg(context)",
+    "browserPaintEngine": "Playwright Chromium via actual emitted local SVG source",
+    "outputs": [
+      {
+        "viewportWidthPx": 320,
+        "engraverWidthPx": 304,
+        "renderedStaffSystems": 2,
+        "svgRenderHeight": 163.555,
+        "svgLengthSourceTest": 22701
+      },
+      {
+        "viewportWidthPx": 390,
+        "engraverWidthPx": 374,
+        "renderedStaffSystems": 2,
+        "svgRenderHeight": 163.555,
+        "svgLengthSourceTest": 22783
+      },
+      {
+        "viewportWidthPx": 736,
+        "engraverWidthPx": 720,
+        "renderedStaffSystems": 1,
+        "svgRenderHeight": 77.09,
+        "svgLengthSourceTest": 21659
+      }
+    ],
+    "noteheadsByRenderer": 40,
+    "signCountByActualSemanticModel": {
+      "horizontalEpisemata": 3,
+      "punctumMora": 4,
+      "virgaShapedHead": 1,
+      "punctaInclinata": 3
+    },
+    "sourceNoteOrdinals": {
+      "horizontalEpisemata": [
+        7,
+        14,
+        23
+      ],
+      "punctumMora": [
+        9,
+        16,
+        25,
+        40
+      ],
+      "virga": [
+        37
+      ],
+      "inclinata": [
+        38,
+        39,
+        40
+      ]
+    },
+    "finalSixNotes": [
+      {
+        "globalNote": 35,
+        "sourceLetter": "i",
+        "renderedStaffPos": 6,
+        "renderedNeume": "Clivis",
+        "printedStaffSlot": "space3",
+        "rhythm": []
+      },
+      {
+        "globalNote": 36,
+        "sourceLetter": "g",
+        "renderedStaffPos": 4,
+        "renderedNeume": "Clivis",
+        "printedStaffSlot": "space2",
+        "rhythm": []
+      },
+      {
+        "globalNote": 37,
+        "sourceLetter": "h",
+        "renderedStaffPos": 5,
+        "renderedNeume": "Climacus",
+        "noteShape": "Virga",
+        "printedStaffSlot": "line3",
+        "rhythm": [
+          "VIRGA_SHAPE"
+        ]
+      },
+      {
+        "globalNote": 38,
+        "sourceLetter": "G",
+        "renderedStaffPos": 4,
+        "renderedNeume": "Climacus",
+        "noteShape": "Inclinatum",
+        "printedStaffSlot": "space2",
+        "rhythm": []
+      },
+      {
+        "globalNote": 39,
+        "sourceLetter": "F",
+        "renderedStaffPos": 3,
+        "renderedNeume": "Climacus",
+        "noteShape": "Inclinatum",
+        "printedStaffSlot": "line2",
+        "rhythm": []
+      },
+      {
+        "globalNote": 40,
+        "sourceLetter": "E",
+        "renderedStaffPos": 2,
+        "renderedNeume": "Climacus",
+        "noteShape": "Inclinatum",
+        "printedStaffSlot": "space1",
+        "rhythm": [
+          "PUNCTUM_MORA"
+        ]
+      }
+    ],
+    "noCoreMassRuntimeChange": true,
+    "noPublicScoreApproval": true
+  },
+  "actualImageEvidence": {
+    "githubWorkflowRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/42614444619",
+    "artifactId": 13670879403,
+    "artifactName": "m44-1961-original-versus-exsurge-renderer",
+    "retentionDays": 7,
+    "originalAndSvgImagesLabelledSeparately": true,
+    "originalMontageSha256": "ca4d67fca49b672268c5a15f5805d8a89bb4ed4a98a3638c09ddfb7d591cb2c6",
+    "terminalMontageSha256": "88396e688a8bbdb672a63aeb25d413c23acdbf9a3d2bd4c039852058e85cf57c",
+    "actualPhone304SvgSha256": "4f9c495ba3e80b85187bc5f2d5c852128297c9fceb0a58ba8397f1d3d23dc629",
+    "actualPhone374SvgSha256": "928606143ff569c4418df3fe65a6c62c06533135904bb0f5491520a8d3e23b71",
+    "actualWide720SvgSha256": "a151fdbc6ff3ab0bd681aaf8f8aa60bcc87023c1a71e86959486286d1e7b9529",
+    "originalPageScanNotCommittedNorPubliclyDeployed": true
+  },
+  "sourceVRendererFindings": [
+    {
+      "feature": "TOTAL_NOTEHEADS",
+      "originalPrinted": "40 physically counted",
+      "actualExsurge": "40 Note model objects and drawn SVG glyphs",
+      "status": "STRUCTURAL_COUNT_MATCH"
+    },
+    {
+      "feature": "HORIZONTAL_EPISEMATA",
+      "originalPrinted": "Three visibly marked original notes",
+      "actualExsurge": "Three attached horizontal episema model objects",
+      "status": "SIGN_COUNT_AND_NOTE_OWNER_MATCH"
+    },
+    {
+      "feature": "PUNCTA_MORA",
+      "originalPrinted": "Four original terminal dots",
+      "actualExsurge": "Four mora model objects, target notes 9/16/25/40",
+      "status": "SIGN_COUNT_AND_NOTE_OWNER_MATCH"
+    },
+    {
+      "feature": "FINAL_VIRGA",
+      "originalPrinted": "One tall stemmed source note before three inclinata",
+      "actualExsurge": "Note 37 has NoteShape.Virga in a four-note Climacus neume, not a standalone Virga neume class",
+      "status": "GLYPH_FAMILY_AND_NOTE_OWNER_MATCH"
+    },
+    {
+      "feature": "FINAL_INCLINATA",
+      "originalPrinted": "Three descending diamond-like notes",
+      "actualExsurge": "Notes 38/39/40 are NoteShape.Inclinatum, PunctumInclinatumDescendens glyphs",
+      "status": "GLYPH_FAMILY_AND_NOTE_OWNER_MATCH"
+    },
+    {
+      "feature": "CLOSING_CLIVIS",
+      "originalPrinted": "Two-note descending linked figure",
+      "actualExsurge": "Notes 35/36 have Clivis neume parent with 6→4 pitch-position descent",
+      "status": "GROUP_AND_DIRECTION_MATCH"
+    },
+    {
+      "feature": "PRINTED_SYSTEM_BREAK",
+      "originalPrinted": "Two physical staff systems; source groups 14→15 cross the break",
+      "actualExsurge": "Two systems at 304/374 px; a single system at 720 px; mobile wrap occurs at different syllable",
+      "status": "EXPECTED_RESPONSIVE_LAYOUT_DIFFERENCE_NOT_SOURCE_NOTE_ERROR"
+    },
+    {
+      "feature": "PUBLISHED_1961_TYPOGRAPHY",
+      "originalPrinted": "Historical lettering, separation of iij./ij., glyph dimensions and engraving",
+      "actualExsurge": "Modern font and tighter compact layout at phone widths; not photographic facsimile",
+      "status": "NOT_VISUALLY_IDENTICAL_NO_TYPOGRAPHY_CERTIFICATION"
+    }
+  ],
+  "unresolvedApprovalGates": [
+    "Independent chant editor must still examine note-by-note pitch, custos, underlay, exact horizontal episema lengths/placement and punctum-mora offsets at original print scale",
+    "Phone reader should be tested in its actual local explicit-selection interaction, not inferred from this research-only standalone Exsurge capture",
+    "No claim that physical page reproduction rights authorize placing original 1961 facsimile crops in a public app",
+    "No score, music audio, or a specific community's chant programme is approved automatically from this audit"
+  ],
+  "reviewStatus": {
+    "exsurgeGabcStructuralParityWithOriginalPrintedCounts": true,
+    "finalNeumeFamiliesAndSourceSignOwnersAgree": true,
+    "responsiveSvgGeneratedAndBrowserRendered": true,
+    "noUnapprovedGabcCorrections": true,
+    "sourceContextCertified": false,
+    "publishedMusicScoreApproved": false,
+    "qualifiedHumanChantEditorCertificate": false,
+    "originalEpisemaMoraMetricEngravingParityCertified": false,
+    "currentFullyCertifiedScoresOf20": 0,
+    "canonical65ReaderUntouched": true,
+    "publicAppNoNewSettingAutoAssigned": true
+  }
+}
