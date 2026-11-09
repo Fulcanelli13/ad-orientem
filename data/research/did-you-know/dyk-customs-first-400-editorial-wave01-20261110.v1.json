@@ -100,7 +100,18 @@
         ]
       },
       "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "independent_source_audit": {
+        "status": "INSTITUTIONAL_CLAIM_PAGE_VERIFIED",
+        "source_url": "https://sanctuaire-laghet.fr/ex-votos/",
+        "authority": "Sanctuaire Notre-Dame de Laghet",
+        "claim_scope_verified": [
+          "More than 4000 ex-voto items in the sanctuary collection",
+          "Offerings include crutches, car steering wheels and wedding bouquets"
+        ],
+        "caveat": "Institutional descriptions of the collection, not independent historical assessment of individual miracle claims.",
+        "verified_date": "2026-11-10"
+      }
     },
     {
       "id": "DYK-H04-W-A-035",
@@ -276,7 +287,21 @@
         "original_source_owner": null
       },
       "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "independent_source_audit": {
+        "status": "ORIGINAL_SOURCE_PAGE_VISUALLY_INSPECTED",
+        "source_url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "printed_page": 99,
+        "pdf_zero_based_page": 116,
+        "claim_scope_verified": [
+          "Paradise play was a medieval religious mystery play about Adam and Eve in Eden, associated with Advent",
+          "Stage represented Eden by a fir tree decorated with apples",
+          "Later households displayed a Paradise tree on December 24 according to the original source"
+        ],
+        "caveat": "The source makes a stronger single-origin account of the modern Christmas tree; reader copy deliberately frames it as one historical influence rather than a uniquely proven origin.",
+        "author_name_to_display": false,
+        "verified_date": "2026-11-10"
+      }
     },
     {
       "id": "DYK-G600-P-002",
