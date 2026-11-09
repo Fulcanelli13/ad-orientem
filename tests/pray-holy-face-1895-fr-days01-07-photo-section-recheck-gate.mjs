@@ -20,7 +20,7 @@ assert.equal(ledger.method.sourceCrossReferences,12);
 assert.equal(ledger.method.materialNewTextCorrectionsMade,0);
 assert.equal(ledger.method.independentExternalEditorialApproval,false);
 assert.equal(ledger.method.english1887OriginalPrintedPagesCollated,false);
-assert.equal(ledger.method.publishedFrenchReaderDays,0);
+assert.equal(ledger.method.publishedFrenchReaderDays,9);
 assert.equal(ledger.assurances.independentHumanProofApprovedDays,0);
 assert.equal(ledger.assurances.frenchDayBodiesPublished,0);
 const perDay={};
