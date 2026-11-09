@@ -13,6 +13,7 @@ const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const latinFixture=JSON.parse(await readFile(resolve(root,"tests/fixtures/office/advent-i-saturday-compline-la.json"),"utf8"));
 const sundayFixture=JSON.parse(await readFile(resolve(root,"tests/fixtures/office/advent-i-week-compline-la.json"),"utf8"));
 const tuesdayFixture=JSON.parse(await readFile(resolve(root,"tests/fixtures/office/advent-i-feria-iii-compline-la.json"),"utf8"));
+const mondayFixture=JSON.parse(await readFile(resolve(root,"tests/fixtures/office/advent-iii-feria-ii-compline-la.json"),"utf8"));
 const latinSourceBase="https://raw.githubusercontent.com/DivinumOfficium/divinum-officium/"+PIN+"/web/www/horas/Latin/";
 const out=resolve(root,"artifacts/divine-office-native-phone");
 await mkdir(out,{recursive:true});
@@ -95,11 +96,13 @@ try{
    if(!url.startsWith(latinSourceBase))return route.continue();
    observedLatin.push(url);
    const relative=decodeURIComponent(url.slice(latinSourceBase.length));
-   const match=/^Psalterium\/Psalmorum\/Psalm(4|11|12|15|33|60|69|70|76|85|87|90|102|133|233)\.txt$/u.exec(relative);
+   const match=/^Psalterium\/Psalmorum\/Psalm(4|6|7|11|12|15|33|60|69|70|76|85|87|90|102|133|233)\.txt$/u.exec(relative);
    let body;
    if(match){
     const number=Number(match[1]);
-    body=[11,12,15].includes(number)?
+    body=[6,7].includes(number)?
+     mondayFixture.psalms[number]?.text:
+     [11,12,15].includes(number)?
      tuesdayFixture.psalms[number]?.text:
      [4,33,60,69,70,76,85,90,133].includes(number)?
      sundayFixture.psalms[number]?.text:latinFixture.psalms[number];
@@ -238,6 +241,38 @@ try{
    const overflow=await page.evaluate(()=>
     document.documentElement.scrollWidth-document.documentElement.clientWidth);
    assert.ok(overflow<=2,"Advent II "+date+" overflows "+width+": "+overflow);
+   await office.getByRole("button",{name:"Close Latin Compline"}).click();
+   assert.equal(await office.locator(".aoOfPublishedLatin").count(),0);
+  }
+  // Advent III Ember days, including Latin Psalm 6/7, at both phone widths.
+  const weekIII=office.getByRole("combobox",{name:"Advent III Compline date"});
+  assert.equal(await weekIII.count(),1);
+  for(const [date,officeDate,title,psalms] of [
+   ["2026-12-14","2026-12-14","Advent III · Monday, 14 December 2026",[6,7]],
+   ["2026-12-15","2026-12-15","Advent III · Tuesday, 15 December 2026",[11,12,15]],
+   ["2026-12-16","2026-12-16","Advent Ember Wednesday, 16 December 2026",[33,60]],
+   ["2026-12-17","2026-12-17","Advent III · O Sapientia · Thursday, 17 December 2026",[69,70]],
+   ["2026-12-18","2026-12-18","Advent Ember Friday, 18 December 2026",[76,85]],
+   ["2026-12-19","2026-12-20","Eve of Advent IV · Ember Saturday, 19 December 2026",[87,102]],
+   ["2026-12-20","2026-12-20","Fourth Sunday of Advent, 20 December 2026",[4,90,133]]
+  ]){
+   await weekIII.selectOption(date);
+   assert.match(await office.locator(".aoOfStatus").innerText(),
+    /Latin Compline · available/u);
+   assert.match(await office.locator(".aoOfStatus").innerText(),
+    new RegExp("Office date: "+officeDate,"u"));
+   await office.getByRole("button",{name:"Read Latin Compline"}).click();
+   await page.waitForFunction(expected=>
+    document.querySelector(".aoOfPublishedStatus")?.textContent?.includes(
+     expected+" · 40 reading moments"),date,{timeout:35000});
+   const latin=office.locator(".aoOfPublishedLatin");
+   assert.ok((await latin.innerText()).includes(title),date+" wrong Latin reader heading");
+   for(const number of psalms)assert.ok(observedLatin.some(
+    url=>url.endsWith("/Psalm"+number+".txt")),
+    "Missing independently certified original Latin Psalm "+number+" for "+date);
+   const extra=await page.evaluate(()=>
+    document.documentElement.scrollWidth-document.documentElement.clientWidth);
+   assert.ok(extra<=2,"Advent III "+date+" overflows "+width+": "+extra);
    await office.getByRole("button",{name:"Close Latin Compline"}).click();
    assert.equal(await office.locator(".aoOfPublishedLatin").count(),0);
   }
