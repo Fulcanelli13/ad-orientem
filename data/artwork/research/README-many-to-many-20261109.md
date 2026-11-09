@@ -64,3 +64,17 @@ Check the shards with:
 ```bash
 node tests/sacred-art-many-to-many-research.test.mjs
 ```
+
+## 9 November source-backed scene adjudication — batch 1
+
+The first targeted verification is in `data/artwork/research/m2m-scene-adjudication-batch1-20261109.v1.json` and is linked from the index. Of ten Calendar relations inspected against published institutional/object records:
+
+- **Five** are documented as a **different Gospel episode** than the date's reading. Ricci *Christ Healing the Blind Man* on 15 and 17 February, and Le Sueur's same-title work on 16 February, depict **John 9** rather than Luke 18 (Jericho). Van Dyck's *Healing of the Paralytic* on 27 September and 1 October depicts **Bethesda, John 5** rather than Matthew 9 (Capernaum).
+- **Two** have the **correct Gospel episode supported by catalogue records, but still lack exact photo release gates**: Van Dyck at Bethesda on 27 February (John 5), Le Sueur's blind-from-birth scene on 18 March (John 9). Le Sueur is supported by an object-catalogued engraving **after** the original, so the precise painting object still needs independent confirmation.
+- **Three** remain qualified: Aivazovsky's 1888 water-walking scene (Peter detail unverified), Perugino's Ascension painting for the 13 May Vigil (feast anticipation, not the actual John 17:1–11 Gospel), and de Crayer's Lille miraculous catch (museum documents the general scene, not which Gospel account).
+
+**Source/rights caveat:** the National Galleries of Scotland official photograph of Ricci is supplied under a personal/non-commercial use agreement, not a blanket commercial app licence; the Louvre/Lille photographic credits and Commons mirrors must not be read as independent photo-release permission. No image was fetched or released in this PR.
+
+**Historical warning:** the exact rejected Bouts Cleveland object `cma-122338` is still preserved as a later Prayer-slot selection; this conflict is held, not resolved by an assumption that every later import was a deliberate owner's override.
+
+The original 1,589 relationship edges and 507 accepted options remain unchanged. Adjudication is a **separate evidence layer**, not an automatic mutation of the source selections.
