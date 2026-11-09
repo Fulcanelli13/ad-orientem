@@ -1,0 +1,36 @@
+name: Mass M45 in-Order Gregorian score acceptance
+on:
+  pull_request:
+    paths:
+      - "src/mass/reader-inline-proper-reference.js"
+      - "tests/reader-mass-m45-kyrie-notation-phone.mjs"
+      - ".github/workflows/mass-m45-inline-notation-phone.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  inline-kyrie-320-390:
+    name: 65-card M45 Kyrie XVI live/missal actual phone
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install repository browser-test dependencies
+        run: npm install --no-audit --no-fund --ignore-scripts
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Exercise real 65-card Ordo Kyrie XVI, zoom and source links
+        run: node tests/reader-mass-m45-kyrie-notation-phone.mjs
+      - name: Save actual source-selected phone screenshots only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: m45-kyrie-xvi-mass-reader-phone
+          path: .tmp/m45-kyrie-inline-notation/
+          if-no-files-found: ignore
+          retention-days: 7
