@@ -7,8 +7,8 @@
   "actual": 400,
   "composition": {
     "canonical_published_customs": 36,
-    "historical_weiser": 193,
-    "historical_pitre": 171
+    "historical_weiser": 192,
+    "historical_pitre": 172
   },
   "eligibility": "Pre-existing source-linked EN/FR customs copy; not invented from Glossary definitions or headings.",
   "method": {
@@ -381,10 +381,6 @@
         "reason": "EXTRA_RESERVE"
       },
       {
-        "id": "DYK-UM03-035",
-        "reason": "EXTRA_RESERVE"
-      },
-      {
         "id": "DYK-UM03-036",
         "reason": "EXTRA_RESERVE"
       },
@@ -399,9 +395,16 @@
       {
         "id": "DYK-UM03-047",
         "reason": "EXTRA_RESERVE"
+      },
+      {
+        "id": "DYK-H04-W-B-089",
+        "reason": "POTENTIAL_PUBLIC_NEAR_DUPLICATE",
+        "near_id": "DYK-R50-W-011"
       }
     ],
-    "selection_note": "400 manuscript EN/FR customs records have no exact English sentence duplication against 201 currently published Did You Know manifest records (H225). This is not a full semantic dedupe or a publication signoff."
+    "selection_note": "400 manuscript EN/FR customs records have no exact English sentence duplication against 201 currently published Did You Know manifest records (H225). This is not a full semantic dedupe or a publication signoff.",
+    "additional_semantic_publication_overlap_removed": "DYK-H04-W-B-089",
+    "additional_source_checked_reserve_promoted": "DYK-UM03-035"
   },
   "publication_gate": {
     "all_records_authorized_for_new_home_publication": false,
@@ -11227,48 +11230,49 @@
       "discovery_publication_authorized": false
     },
     {
-      "id": "DYK-H04-W-B-089",
+      "id": "DYK-UM03-035",
       "kind": "HISTORICAL_CUSTOM_OBSERVATION",
-      "family": "WEISER_1958",
+      "family": "PITRE_1900",
       "title": null,
       "statement": {
-        "en": "In southern France, the last grain sheaf could be shaped into a cross, decorated with flowers and ribbons, and displayed in the best room of the house.",
-        "fr": "Dans le sud de la France, la dernière gerbe de céréales pouvait être nouée en croix, ornée de fleurs et de rubans, puis placée dans la plus belle pièce de la maison."
+        "en": "At an old Palermo festival for Saints Cosmas and Damian, statue bearers wore white, with a red sash and yellow headscarf.",
+        "fr": "À une ancienne fête des saints Côme et Damien à Palerme, les porteurs des statues étaient vêtus de blanc, avec une ceinture rouge et un foulard jaune."
       },
       "source_ids": [
-        "WEI58-22-005"
+        "PIT1900-NEW-046"
       ],
       "source_links": [
         {
-          "source_id": "WEI58-22-005",
-          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
-          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "source_id": "PIT1900-NEW-046",
+          "url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
           "locator": {
             "printed_pages": [
-              269
+              80
             ],
-            "scan_pdf_page_1based": null,
-            "italian_anchor": null
+            "scan_pdf_page_1based": 142,
+            "italian_anchor": "bianch"
           }
         }
       ],
       "scope": {
         "historical_observation_only": true,
+        "regional_scope": "Palermo, Sicily, Pitrè 1900",
         "not_a_universal_1962_rite": true,
         "current_local_practice_not_inferred": true
       },
       "provenance": {
         "repository": "Fulcanelli13/ad-orientem",
         "branch": "research/dyk-source-first-batch01-20261030",
-        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
-        "original_record_id": "DYK-H04-W-B-089",
-        "original_category": "WEISER_1958",
-        "original_source_owner": null
+        "path": "data/research/did-you-know/dyk-r22-21-added-review-cards.v1.json",
+        "original_record_id": "DYK-UM03-035",
+        "original_category": "customs",
+        "original_source_owner": "data/customs/master/pitre-1900-uploaded-facsimile-121-stage01-stage02-new-original-page-verifications.v1.json"
       },
       "review": {
         "prior_original_page_image": true,
         "original_page_freshly_checked_here": false,
-        "original_text_anchor": false,
+        "original_text_anchor": true,
         "original_page_pointer_only": false,
         "original_english_editorial_approved": false,
         "original_french_editorial_approved": false,
