@@ -12,6 +12,9 @@
  * 29–30 December: do NOT substitute Tuesday/Wednesday psalms: BR 175(e)
  * explicitly assigns Sunday Compline to days within Christmas octave.
  * 31 December and 2 January have CIVIL / OFFICE year/feast rollovers.
+ * Independent ICRSP ordo assigns Sunday Compline to 2 January after
+ * I Vespers of Holy Name (II-class semifestive, BR 168(d)), NOT Saturday
+ * BR 166(b) ordinary Sunday Office: https://icrspfrance.fr/ordo.php?d=2027-01-03
  */
 export const DEC28_JAN03_COMPLINE_SOURCE_SCHEMA=
  "ao.office.compline-2026-12-28-through-2027-01-03-source-intake.v1";
@@ -55,9 +58,9 @@ const EXPECTED=Object.freeze([
  Object.freeze({date:"2027-01-02",weekday:"Sabbato",
   principalOffice:"First Compline of the Most Holy Name of Jesus",
   officeClass:"II_FEAST_FIRST_VESPERS_ON_SUNDAY",
-  officeDate:"2027-01-03",psalmDay:"Sabbato",rule:"166(b)",
+  officeDate:"2027-01-03",psalmDay:"Dominica",rule:"168(d)",
   firstVespers:"HOLY_NAME_I_VESPERS",commemoration:null,
-  marianSection:"Nativiti",psalmIds:[87,102],printedPsalmFrames:41}),
+  marianSection:"Nativiti",psalmIds:[4,90,133],printedPsalmFrames:30}),
  Object.freeze({date:"2027-01-03",weekday:"Dominica",
   principalOffice:"Most Holy Name of Jesus",
   officeClass:"II_FEAST_ON_SUNDAY",officeDate:"2027-01-03",

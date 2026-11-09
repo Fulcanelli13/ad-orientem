@@ -16,7 +16,8 @@
     "roman1960Rubrics": "https://isidore.co/divinum/www/horas/Help/Rubrics/Breviary%201960.html",
     "datedChristmasOctave": "https://ordo.fsspx.org/en/calendar/2027/1",
     "january2027HolyName": "https://ordo.fsspx.org/day/2027-01-02?lang=en",
-    "christmasMarianPin": "https://github.com/DivinumOfficium/divinum-officium/blob/126a07f91ede04664108abb6fb20ace3f4de14b9/web/www/horas/Latin/Psalterium/Mariaant.txt"
+    "christmasMarianPin": "https://github.com/DivinumOfficium/divinum-officium/blob/126a07f91ede04664108abb6fb20ace3f4de14b9/web/www/horas/Latin/Psalterium/Mariaant.txt",
+    "independentHolyNameComplineWitness": "https://icrspfrance.fr/ordo.php?d=2027-01-03"
   },
   "dates": [
     {
@@ -162,19 +163,20 @@
       "civilOffice": "January 2, fourth-class feria; First Vespers of the Holy Name",
       "officeClass": "II_FEAST_FIRST_VESPERS_ON_SUNDAY",
       "officeDate": "2027-01-03",
-      "psalmDay": "Sabbato",
-      "rule": "166(b)",
+      "psalmDay": "Dominica",
+      "rule": "168(d)",
       "firstVespers": "HOLY_NAME_I_VESPERS",
       "commemoration": null,
       "marianSection": "Nativiti",
       "psalmIds": [
-        87,
-        102
+        4,
+        90,
+        133
       ],
-      "printedPsalmFrames": 41,
+      "printedPsalmFrames": 30,
       "hold": "SATURDAY_FIRST_COMPLINE_NOT_SUNDAY_PSALTER",
       "specialHolds": [
-        "SATURDAY_FIRST_COMPLINE_NOT_SUNDAY_PSALTER",
+        "SECOND_CLASS_FEAST_FIRST_VESPERS_REQUIRES_SUNDAY_PSALTER",
         "INDEPENDENT_COMPLETE_HOUR_TEXT_AND_PUBLIC_PHONE_ACCEPTANCE_REQUIRED"
       ],
       "sourceStage": "DATED_OFFICE_ORDO_AND_RUBRIC_RESEARCH",
@@ -209,5 +211,6 @@
       "publishable": false,
       "published": false
     }
-  ]
+  ],
+  "correction20261109": "Independent ICRSP 1962 ordo: First Vespers of Holy Name Jan 2; Compline du dimanche. BR 168(d) semifestive II-class overrides BR 166(b) ordinary Sunday First Compline. Previous Saturday psalter assertion was incorrect."
 }

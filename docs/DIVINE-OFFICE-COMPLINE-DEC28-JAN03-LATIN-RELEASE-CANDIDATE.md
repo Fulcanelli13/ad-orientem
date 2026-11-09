@@ -27,7 +27,7 @@ immutable, auditable and unchanged.
 | 30 Dec | Christmas octave, sixth day II | 30 Dec | **Sun 4/90/133**, not Wednesday | 175(e) |
 | 31 Dec | First Compline of the Circumcision | **1 Jan 2027** | Sun 4/90/133 | 175(d),167(b) |
 | 1 Jan 2027 | Circumcision I, octave day of Christmas | 1 Jan | Sun 4/90/133 | 167(h) |
-| 2 Jan | First Compline of the Most Holy Name | **3 Jan 2027** | **Sat 87/102**, not Sunday | 166(b) |
+| 2 Jan | First Compline of the Most Holy Name | **3 Jan 2027** | **Sun 4/90/133**, not Saturday | 168(d) |
 | 3 Jan | Most Holy Name of Jesus II | 3 Jan | Sun 4/90/133 | 168(d) |
 
 No 2027 general-calendar or Mass fallback is permitted. 31 Dec/2 Jan
@@ -53,14 +53,15 @@ return to the Advent Marian variant.
 - `tests/divine-office-dec28-jan03-public-release.mjs` asserts **28
   full public Latin readings** (7 dates × final-prayer/other-time ×
   priest/lay-led), preserving 42 original source blocks, 40 reading
-  moments, 30/41 focus rows, two minister dialogues and two sourced
-  blessing Amens. For 2 January Psalm 102 has **two source parts**
-  ([87,102,102]) while remaining one scriptural Psalm, not a duplicate
-  recitation invented by the app.
+  moments, 30 focus rows, two minister dialogues and two sourced
+  blessing Amens. For 2 January, the **II-class Holy Name** after First Vespers uses
+  **Sunday psalms** ([4,90,133]); it must not inherit the ordinary Sunday
+  First-Compline Saturday rule. The pinned source and 30 reading focus
+  frames are independently asserted.
 - `tests/divine-office-native-prayer-phone.mjs` now exercises **14
   additional actual native public phone journeys**: 7 exact dates on
   320px and 390px. Test catches incorrect weekday psalms on octave
-  dates, the 31 Dec / 2 Jan Office rollover, missing pinned Latin
+  dates, the 31 Dec / 2 Jan Office rollover and Holy Name II-class psalter, missing pinned Latin
   source, reading focus/back failures and horizontal overflow.
 - Negative gates forbid date **4 January 2027 onward**, every other
   canonical Hour, local calendars, and any unauthorized source fetch.
@@ -90,3 +91,14 @@ Source-first research and negative-hold history remains intact in
 `docs/DIVINE-OFFICE-COMPLINE-2026-DEC28-2027-JAN03-SOURCE-REVIEW.md`
 and `data/office/research/compline-dec28-jan03-2027-source-intake.v1.json`.
 Those research records deliberately retain `published:false`.
+
+## 9 November corrective source reconciliation
+
+The original initial release-candidate note incorrectly assigned
+**Saturday psalms to 2 January** by applying ordinary Sunday BR §166(b).
+The source-first ICRSP 1962 dated Office ordo instead explicitly says
+[First Vespers of the Most Holy Name, *Complies du dimanche*](https://icrspfrance.fr/ordo.php?d=2027-01-03).
+This is the **II-class semifestive Office, BR §168(d)**; the corrected
+public certificate, source intake, phone tests and Psalm-focus calculation
+now all enforce **Sunday Psalms 4,90,133 (30 focus frames)**.
+The liturgical Office date remains **3 January 2027**.

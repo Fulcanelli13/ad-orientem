@@ -222,9 +222,7 @@ export function projectComplineRecitation(review,{
   resultFrames.push(numbered);
  }
  const saturday=["2026-11-28","2026-12-05","2026-12-12",
-  "2026-12-19",
-  // PRIVATE finite 2027 Holy Name I Vespers, BR 166(b).
-  "2027-01-02"].includes(review.civilDate);
+  "2026-12-19"].includes(review.civilDate);
  const sunday=["2026-11-29","2026-11-30","2026-12-06",
   "2026-12-07","2026-12-08","2026-12-13","2026-12-20",
   // Christmas private research only. Not a public release authorization.
@@ -233,7 +231,7 @@ export function projectComplineRecitation(review,{
   // PRIVATE Christmas octave BR 175(e), Holy Innocents BR 168(d),
   // Circumcision BR 167(b/h), Holy Name BR 168(d).
   "2026-12-28","2026-12-29","2026-12-30","2026-12-31",
-  "2027-01-01","2027-01-03"].includes(review.civilDate);
+  "2027-01-01","2027-01-02","2027-01-03"].includes(review.civilDate);
  const weekdayCounts=Object.freeze({"2026-12-01":26,"2026-12-02":30,
   "2026-12-03":33,"2026-12-04":36,"2026-12-09":30,
   "2026-12-10":33,"2026-12-11":36,
