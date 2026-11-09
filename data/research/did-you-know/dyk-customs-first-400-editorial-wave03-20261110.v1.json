@@ -1,0 +1,2490 @@
+{
+  "schema": "AO_DYK_CUSTOMS_400_COPY_EDIT_WAVE_03_V1",
+  "date": "2026-11-10",
+  "status": "EDITORIAL_DRAFT_ONLY_NOT_LIVE",
+  "record_count": 48,
+  "source_corpus": "data/research/did-you-know/dyk-customs-first-400-bilingual-review-20261110.v1.json",
+  "policy": [
+    "Original EN/FR source copy retained verbatim; these are proposed reader-facing revisions, not live publication.",
+    "Author names remain in provenance and bibliography, never on reader-facing cards.",
+    "Keep historical scope, location, date and practice; no universal liturgical claims.",
+    "No claim-level image certification implied from editing source summaries.",
+    "No change to H7 production or publish manifest."
+  ],
+  "records": [
+    {
+      "id": "DYK-H04-W-B-165",
+      "editorial_issue": "HISTORICAL_REPORTED_CUSTOM",
+      "original_copy": {
+        "en": "For Saint John the Baptist's feast, fishermen from Brittany are said to have raised a barrel of old clothes to a ship's mast and set it alight; crews then prayed and sang around the mast.",
+        "fr": "Pour la fête de saint Jean-Baptiste, des pêcheurs bretons hissaient, selon Weiser, un tonneau de vieux vêtements au mât d'un bateau avant d'y mettre le feu ; les équipages priaient et chantaient ensuite autour du mât."
+      },
+      "reader_copy": {
+        "en": "In an older Breton custom for Saint John the Baptist's feast, fishermen were said to hoist a barrel of old clothes on a boat's mast and set it alight, then pray and sing around the mast.",
+        "fr": "Selon une ancienne coutume bretonne de la Saint-Jean-Baptiste, des pêcheurs auraient hissé sur le mât d'un bateau un tonneau rempli de vieux vêtements avant d'y mettre le feu, puis prié et chanté autour du mât."
+      },
+      "source_ids": [
+        "WEI58-27-031"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-27-031",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-H04-W-B-165",
+        "original_category": "WEISER_1958",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-010",
+      "editorial_issue": "LOCAL_GREENERY",
+      "original_copy": {
+        "en": "Weiser records that in Poland and Ukraine Pentecost was called the ‘Green Holyday’, associated with decorating homes and churches with flowers and branches.",
+        "fr": "Weiser rapporte qu'en Pologne et en Ukraine la Pentecôte était appelée la « fête verte », en lien avec la décoration des maisons et des églises de fleurs et de branches."
+      },
+      "reader_copy": {
+        "en": "In older Pentecost customs in Poland and Ukraine, families decorated homes and churches with flowers and leafy branches; the feast was sometimes called the « Green Holyday ».",
+        "fr": "Dans d'anciennes coutumes de Pentecôte en Pologne et en Ukraine, des familles ornaient les maisons et les églises de fleurs et de branches feuillues ; la fête était parfois appelée « fête verte »."
+      },
+      "source_ids": [
+        "WEI58-19-003"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-19-003",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              248
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-UM01-010",
+        "original_category": "WEISER_1958",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-012",
+      "editorial_issue": "FAMILY_BREAD_GESTURE",
+      "original_copy": {
+        "en": "Weiser describes a Sunday household custom in which the sign of the cross was made three times over a fresh loaf before it was cut.",
+        "fr": "Weiser décrit une coutume dominicale consistant à tracer trois fois le signe de croix sur un pain frais avant de le couper."
+      },
+      "reader_copy": {
+        "en": "In an older Sunday household custom, a family traced the Sign of the Cross three times over a fresh loaf of bread before cutting it.",
+        "fr": "Dans un ancien usage familial du dimanche, on traçait trois fois le signe de croix au-dessus d'un pain frais avant de le couper."
+      },
+      "source_ids": [
+        "WEI58-01-007"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-01-007",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              16
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-UM01-012",
+        "original_category": "WEISER_1958",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-013",
+      "editorial_issue": "NOVENA_AND_LOCALITY_UNSPECIFIED",
+      "original_copy": {
+        "en": "In a Christmas novena custom described by Weiser, schoolboys carried a statue of Saint Joseph between homes for nine nights, then took it to church on Christmas Eve.",
+        "fr": "Dans une coutume de neuvaine de Noël décrite par Weiser, des écoliers portaient une statue de saint Joseph de maison en maison pendant neuf nuits, puis à l'église le soir de Noël."
+      },
+      "reader_copy": {
+        "en": "During a traditional Christmas novena, schoolboys in some communities carried a statue of Saint Joseph from house to house for nine nights, bringing it to church on Christmas Eve.",
+        "fr": "Au cours d'une neuvaine traditionnelle de Noël, des écoliers portaient dans certaines communautés une statue de saint Joseph de maison en maison pendant neuf nuits, puis à l'église la veille de Noël."
+      },
+      "source_ids": [
+        "WEI58-05-009"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-05-009",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              57
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-UM01-013",
+        "original_category": "WEISER_1958",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-014",
+      "editorial_issue": "LENT_AND_CHARITY",
+      "original_copy": {
+        "en": "Weiser reports that in towns of central Europe pretzels were distributed to poor people on many days during Lent.",
+        "fr": "Weiser rapporte que, dans des villes d'Europe centrale, des bretzels étaient distribués aux pauvres pendant de nombreux jours du Carême."
+      },
+      "reader_copy": {
+        "en": "In some Central European towns, a Lenten charitable custom involved distributing pretzels to people in need on several days during the season.",
+        "fr": "Dans certaines villes d'Europe centrale, une coutume charitable du Carême consistait à distribuer des bretzels aux personnes démunies plusieurs jours pendant cette période."
+      },
+      "source_ids": [
+        "WEI58-14-023"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-14-023",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              184
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-UM01-014",
+        "original_category": "WEISER_1958",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-018",
+      "editorial_issue": "NAMED_LOCAL_FOODS",
+      "original_copy": {
+        "en": "For All Souls' Day, Weiser describes huesos de santo pastries in northern Spain and Madrid, and panellets in Catalonia.",
+        "fr": "Pour le jour des Défunts, Weiser décrit les pâtisseries huesos de santo dans le nord de l'Espagne et à Madrid, et les panellets en Catalogne."
+      },
+      "reader_copy": {
+        "en": "For All Souls' Day, some regions of Spain prepared particular pastries: huesos de santo around Madrid and northern Spain, and panellets in Catalonia.",
+        "fr": "Pour la Commémoration des défunts, certaines régions d'Espagne préparaient des pâtisseries particulières : les huesos de santo vers Madrid et dans le nord du pays, et les panellets en Catalogne."
+      },
+      "source_ids": [
+        "WEI58-26-027"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-26-027",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              313
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-UM01-018",
+        "original_category": "WEISER_1958",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM02-008",
+      "editorial_issue": "FOLK_BELIEF_BOUNDARY",
+      "original_copy": {
+        "en": "Weiser records that cross-marked buns became a Good Friday tradition in England and Ireland; the old belief that keeping them could ward off danger was folklore, not Catholic doctrine.",
+        "fr": "Weiser rapporte que les petits pains marqués d'une croix devinrent une tradition du Vendredi saint en Angleterre et en Irlande ; la croyance ancienne selon laquelle les conserver écartait le danger relevait du folklore, non de la doctrine catholique."
+      },
+      "reader_copy": {
+        "en": "In older Good Friday customs in England and Ireland, families made buns marked with a cross. Beliefs that keeping such buns could ward off danger belonged to folklore, not Catholic doctrine.",
+        "fr": "Dans d'anciennes coutumes du Vendredi saint en Angleterre et en Irlande, les familles préparaient des petits pains marqués d'une croix. La croyance selon laquelle les conserver écartait le danger relevait du folklore, non de la doctrine catholique."
+      },
+      "source_ids": [
+        "BULK150-025"
+      ],
+      "source_links": [
+        {
+          "source_id": "BULK150-025",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-UM02-008",
+        "original_category": "WEISER_1958",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM02-012",
+      "editorial_issue": "EXPLAIN_SYMBOLIC_PHRASE",
+      "original_copy": {
+        "en": "In parts of Europe, people once climbed hills and mountains at dawn on Pentecost to pray; Weiser calls this custom 'catching the Holy Ghost' in symbolic language.",
+        "fr": "Dans certaines régions d'Europe, des fidèles montaient autrefois sur les collines et les montagnes à l'aube de la Pentecôte pour prier ; Weiser relève pour cet usage l'expression symbolique « saisir le Saint-Esprit »."
+      },
+      "reader_copy": {
+        "en": "In some older European Pentecost customs, people climbed hills or mountains to pray at dawn. A symbolic expression for this practice was « catching the Holy Ghost ».",
+        "fr": "Dans certaines anciennes coutumes européennes de Pentecôte, on montait sur les collines ou les montagnes pour prier à l'aube. Une expression symbolique pour cet usage était « saisir le Saint-Esprit »."
+      },
+      "source_ids": [
+        "BULK150-029"
+      ],
+      "source_links": [
+        {
+          "source_id": "BULK150-029",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-UM02-012",
+        "original_category": "WEISER_1958",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM02-013",
+      "editorial_issue": "CANDLE_DECORATION",
+      "original_copy": {
+        "en": "For Candlemas, Weiser describes people in central and eastern Europe bringing candles decorated with flowers, sacred images and liturgical symbols to be blessed, then keeping them at home.",
+        "fr": "Pour la Chandeleur, Weiser décrit, en Europe centrale et orientale, des fidèles apportant à la bénédiction des cierges décorés de fleurs, d'images saintes et de symboles liturgiques, puis les conservant à la maison."
+      },
+      "reader_copy": {
+        "en": "At Candlemas in parts of Central and Eastern Europe, people brought candles decorated with flowers, sacred images or religious symbols to be blessed, then kept them at home.",
+        "fr": "À la Chandeleur, dans certaines régions d'Europe centrale et orientale, des fidèles faisaient bénir des cierges ornés de fleurs, d'images saintes ou de symboles religieux, puis les conservaient chez eux."
+      },
+      "source_ids": [
+        "BULK150-031"
+      ],
+      "source_links": [
+        {
+          "source_id": "BULK150-031",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-UM02-013",
+        "original_category": "WEISER_1958",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM02-014",
+      "editorial_issue": "TABLE_AND_CHARITY",
+      "original_copy": {
+        "en": "For All Souls' Day in Poland, Weiser describes family tables with empty places for deceased relatives; portions of the meal were later given to the poor.",
+        "fr": "En Pologne, pour le jour des Défunts, Weiser décrit des places laissées vides à la table familiale pour les proches décédés ; des portions du repas étaient ensuite données aux pauvres."
+      },
+      "reader_copy": {
+        "en": "In an older Polish custom for All Souls' Day, families left places at their table for deceased relatives. Portions of the meal were later given to people in need.",
+        "fr": "Dans un ancien usage polonais de la Commémoration des défunts, les familles laissaient des places à table pour leurs proches décédés. Des portions du repas étaient ensuite données aux personnes démunies."
+      },
+      "source_ids": [
+        "BULK150-032"
+      ],
+      "source_links": [
+        {
+          "source_id": "BULK150-032",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-UM02-014",
+        "original_category": "WEISER_1958",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM02-017",
+      "editorial_issue": "CULTURAL_TERM",
+      "original_copy": {
+        "en": "Weiser records the Polish name Święte Wieczory (‘Holy Evenings’) for the twelve nights between Christmas and Epiphany.",
+        "fr": "Weiser relève le nom polonais Święte Wieczory (« Saintes Soirées ») pour les douze nuits entre Noël et l'Épiphanie."
+      },
+      "reader_copy": {
+        "en": "An older Polish name for the twelve nights between Christmas and Epiphany was Święte Wieczory, meaning « Holy Evenings ».",
+        "fr": "Un ancien nom polonais pour les douze nuits entre Noël et l'Épiphanie était Święte Wieczory, c'est-à-dire « Saintes Soirées »."
+      },
+      "source_ids": [
+        "BULK150-038"
+      ],
+      "source_links": [
+        {
+          "source_id": "BULK150-038",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              124
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-UM02-017",
+        "original_category": "WEISER_1958",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM02-020",
+      "editorial_issue": "DAY_AND_DEVOTION",
+      "original_copy": {
+        "en": "Weiser links the custom of honoring Saint Joseph on Wednesdays to the spread of his devotion in the sixteenth and seventeenth centuries.",
+        "fr": "Weiser rattache la coutume d'honorer saint Joseph le mercredi à l'essor de sa dévotion aux XVIe et XVIIe siècles."
+      },
+      "reader_copy": {
+        "en": "In some Catholic devotional schedules, Wednesday became a day particularly associated with Saint Joseph, a custom that spread with devotion to him in the sixteenth and seventeenth centuries.",
+        "fr": "Dans certains usages de dévotion catholique, le mercredi devint un jour particulièrement consacré à saint Joseph, une coutume qui se diffusa avec sa dévotion aux XVIe et XVIIe siècles."
+      },
+      "source_ids": [
+        "BULK150-043"
+      ],
+      "source_links": [
+        {
+          "source_id": "BULK150-043",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              28
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-UM02-020",
+        "original_category": "WEISER_1958",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM03-008",
+      "editorial_issue": "HISTORICAL_ACCOUNT_QUALIFIER",
+      "original_copy": {
+        "en": "Weiser recounts a historical Roman Annunciation celebration in which the pope distributed fifty gold pieces each to three hundred poor girls to help them marry.",
+        "fr": "Weiser relate une ancienne célébration romaine de l'Annonciation où le pape distribuait cinquante pièces d'or à chacune de trois cents jeunes filles pauvres pour faciliter leur mariage."
+      },
+      "reader_copy": {
+        "en": "In a historical Roman celebration of the Annunciation, the pope was said to provide 300 poor young women with fifty gold coins each as assistance toward marriage.",
+        "fr": "Lors d'une ancienne célébration romaine de l'Annonciation, le pape aurait remis à trois cents jeunes filles pauvres cinquante pièces d'or chacune pour les aider à se marier."
+      },
+      "source_ids": [
+        "WEI58-25-018"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-25-018",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              303
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-UM03-008",
+        "original_category": "WEISER_1958",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM03-009",
+      "editorial_issue": "DISTINGUISH_LITURGICAL_OCTAVE",
+      "original_copy": {
+        "en": "Weiser describes a popular central European observance of eight 'Soul Nights' after All Souls, with family rosaries, charity and prayers; it was not an official liturgical octave.",
+        "fr": "Weiser décrit dans l'Europe centrale une pratique populaire de huit « soirées des âmes » après la Commémoration des défunts, avec rosaire familial, charité et prières ; ce n'était pas une octave liturgique officielle."
+      },
+      "reader_copy": {
+        "en": "In an older Central European custom, eight evenings after All Souls' Day were dedicated to family Rosaries, prayers and charity for the departed. These « Soul Nights » were a popular devotion, not a formal liturgical octave.",
+        "fr": "Dans un ancien usage d'Europe centrale, huit soirées après la Commémoration des défunts étaient consacrées au rosaire familial, à la prière et à la charité pour les morts. Ces « soirées des âmes » relevaient de la piété populaire, non d'une octave liturgique."
+      },
+      "source_ids": [
+        "WEI58-26-020"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-26-020",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              312
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-UM03-009",
+        "original_category": "WEISER_1958",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM03-014",
+      "editorial_issue": "DATE_AND_PRIVATE_PRAYER",
+      "original_copy": {
+        "en": "In parts of the Alps, Weiser describes villagers kneeling under trees in their gardens for the morning Angelus on 29 June, feast of Saints Peter and Paul, then bowing and making the Sign of the Cross.",
+        "fr": "Dans certaines régions alpines, Weiser décrit des villageois s'agenouillant sous les arbres de leurs jardins pour l'Angélus du matin, le 29 juin, fête des saints Pierre et Paul, puis s'inclinant et faisant le signe de croix."
+      },
+      "reader_copy": {
+        "en": "In some Alpine villages, on 29 June, the feast of Saints Peter and Paul, people knelt beneath trees in their gardens for the morning Angelus before bowing and making the Sign of the Cross.",
+        "fr": "Dans certains villages alpins, le 29 juin, fête des saints Pierre et Paul, des habitants s'agenouillaient sous les arbres de leurs jardins pour l'Angélus du matin, puis s'inclinaient et faisaient le signe de croix."
+      },
+      "source_ids": [
+        "WEI58-28-007"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-28-007",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-UM03-014",
+        "original_category": "WEISER_1958",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM03-017",
+      "editorial_issue": "YEAR_1962_RANK_NOT_INFERRED",
+      "original_copy": {
+        "en": "Around Saint Thomas's Day on 21 December, Weiser describes central European farmers carrying holy water and incense around their buildings while the household prayed the Rosary.",
+        "fr": "Autour de la Saint-Thomas, le 21 décembre, Weiser décrit des paysans d'Europe centrale parcourant leurs bâtiments avec eau bénite et encens, tandis que la maisonnée récitait le rosaire."
+      },
+      "reader_copy": {
+        "en": "Around the traditional feast of Saint Thomas on 21 December, some Central European farm families carried holy water and incense around farm buildings while praying the Rosary.",
+        "fr": "Autour de l'ancienne fête de saint Thomas, le 21 décembre, certaines familles paysannes d'Europe centrale parcouraient les bâtiments de leur ferme avec de l'eau bénite et de l'encens en récitant le rosaire."
+      },
+      "source_ids": [
+        "WEI58-DETAIL-D-023"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-DETAIL-D-023",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              58
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-UM03-017",
+        "original_category": "WEISER_1958",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM03-019",
+      "editorial_issue": "HISTORICAL_FOOD_SCOPE",
+      "original_copy": {
+        "en": "In Scandinavian Christmas food customs, pastries shaped like boars or goats were served at Christmas but, according to Weiser, not eaten until 19 January, Saint Canute's feast.",
+        "fr": "Dans des coutumes culinaires scandinaves de Noël, des pâtisseries en forme de sangliers ou de boucs étaient présentées à Noël, mais, selon Weiser, on ne les mangeait que le 19 janvier, fête de saint Knut."
+      },
+      "reader_copy": {
+        "en": "In an older Scandinavian Christmas food custom, pastries shaped like boars or goats were displayed at Christmas but, in one historical account, were not eaten until Saint Canute's feast on 19 January.",
+        "fr": "Dans une ancienne coutume alimentaire scandinave de Noël, des pâtisseries en forme de sangliers ou de boucs étaient exposées à Noël mais, selon un témoignage ancien, n'étaient mangées qu'à la Saint-Knut, le 19 janvier."
+      },
+      "source_ids": [
+        "WEI58-DETAIL-D-114"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-DETAIL-D-114",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              118
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-UM03-019",
+        "original_category": "WEISER_1958",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM03-022",
+      "editorial_issue": "ROSE_CEREMONY",
+      "original_copy": {
+        "en": "Weiser recounts that, on the Sunday after the Ascension, the popes once preached at Rome's Pantheon and a shower of roses fell through its roof opening immediately after the sermon.",
+        "fr": "Weiser raconte que, le dimanche après l'Ascension, les papes prêchaient autrefois au Panthéon de Rome et qu'une pluie de roses tombait de son ouverture dans le toit aussitôt après le sermon."
+      },
+      "reader_copy": {
+        "en": "In a historical Roman custom, the Sunday after the Ascension saw preaching at the Pantheon followed by rose petals falling through the great opening in its roof.",
+        "fr": "Dans un ancien usage romain, le dimanche après l'Ascension, une prédication au Panthéon était suivie d'une pluie de pétales de roses tombant par la grande ouverture de son toit."
+      },
+      "source_ids": [
+        "WEI58-18-006"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-18-006",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              242
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-UM03-022",
+        "original_category": "WEISER_1958",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM03-025",
+      "editorial_issue": "PLACE_AND_ACTION",
+      "original_copy": {
+        "en": "At Bethlehem's Church of the Nativity, Weiser describes a figure of the Christ Child carried to the grotto after the first Christmas Mass; some central European churches likewise placed it in the crib after Mass.",
+        "fr": "À l'église de la Nativité de Bethléem, Weiser décrit une figurine de l'Enfant Jésus portée à la grotte après la première messe de Noël ; certaines églises d'Europe centrale la plaçaient également dans la crèche après la messe."
+      },
+      "reader_copy": {
+        "en": "At the Church of the Nativity in Bethlehem, a historical Christmas custom involved carrying an image of the Christ Child to the grotto after Mass. Some Central European churches likewise placed such an image in the crib after Mass.",
+        "fr": "À l'église de la Nativité de Bethléem, un ancien usage de Noël consistait à porter une image de l'Enfant Jésus à la grotte après la messe. Dans certaines églises d'Europe centrale, on plaçait de même une image de l'Enfant dans la crèche après la messe."
+      },
+      "source_ids": [
+        "WEI58-06-014"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-06-014",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r21-168-integrated-bilingual-review.v1.json",
+        "original_record_id": "DYK-UM03-025",
+        "original_category": "WEISER_1958",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-022",
+      "editorial_issue": "EXPLAIN_HOLY_FAMILY",
+      "original_copy": {
+        "en": "Did you know that a historical Saint Joseph bread-table custom in Canicattini seated an older man, a woman and a child as figures of the Holy Family?",
+        "fr": "Saviez-vous qu'une ancienne coutume de la table de saint Joseph à Canicattini faisait asseoir un homme âgé, une femme et un enfant pour représenter la Sainte Famille ?"
+      },
+      "reader_copy": {
+        "en": "At Canicattini in Sicily, an older Saint Joseph bread-table custom seated an elderly man, a woman and a child as ceremonial figures of Jesus, Mary and Joseph.",
+        "fr": "À Canicattini, en Sicile, une ancienne coutume de la table de saint Joseph installait un homme âgé, une femme et un enfant comme figures de Jésus, Marie et Joseph."
+      },
+      "source_ids": [
+        "PIT1900-IT-026"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-IT-026",
+          "url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              448
+            ],
+            "scan_pdf_page_1based": 506,
+            "italian_anchor": "una donna ed un bambino"
+          }
+        }
+      ],
+      "scope": {
+        "mode": "HISTORICAL_SOURCE_BOUNDED",
+        "historical_only": true,
+        "not_universal_liturgical_law": true,
+        "current_observance_not_inferred": true,
+        "geographical_context": [
+          "Canicattini (Syracuse), Sicily"
+        ],
+        "original_scope_metadata_preserved": true,
+        "original_scope_object": {
+          "preliminary_scope": "HISTORICAL_SICILIAN_LOCAL_REPORTED_ACTION",
+          "universal_catholic_obligation": false,
+          "calendar_entry_authorized": false,
+          "current_observance_not_inferred": true
+        },
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-production-growth-190-310-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-UM01-022",
+        "original_category": "PITRE_1900",
+        "original_source_owner": "data/research/did-you-know/dyk-ultramaster-batch01.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM02-029",
+      "editorial_issue": "PROCESSION_PARTICIPANTS",
+      "original_copy": {
+        "en": "Did you know that an old Saint Rosalia procession in Palermo brought together her relics, confraternities, clergy and civic representatives?",
+        "fr": "Saviez-vous qu'une ancienne procession de sainte Rosalie à Palerme réunissait ses reliques, les confréries, le clergé et des représentants de la cité ?"
+      },
+      "reader_copy": {
+        "en": "In an older Saint Rosalia procession in Palermo, the saint's relics were accompanied by confraternities, clergy and representatives of the city.",
+        "fr": "Dans une ancienne procession de sainte Rosalie à Palerme, les reliques de la sainte étaient accompagnées de confréries, de membres du clergé et de représentants de la ville."
+      },
+      "source_ids": [
+        "PIT1900-NEW-021"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-NEW-021",
+          "url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              33
+            ],
+            "scan_pdf_page_1based": 95,
+            "italian_anchor": "la processione delle reliquie"
+          }
+        }
+      ],
+      "scope": {
+        "mode": "HISTORICAL_SOURCE_BOUNDED",
+        "historical_only": true,
+        "not_universal_liturgical_law": true,
+        "current_observance_not_inferred": true,
+        "geographical_context": [
+          "Palermo, Sicily"
+        ],
+        "original_scope_metadata_preserved": true,
+        "original_scope_object": {
+          "geography": [
+            "Palermo, Sicily"
+          ],
+          "section": "ROSALIA_PALERMO",
+          "reported_historical_only": true,
+          "not_current_calendar_event": true,
+          "not_universal_law": true
+        },
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-production-growth-190-310-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-UM02-029",
+        "original_category": "PITRE_1900",
+        "original_source_owner": "data/research/did-you-know/dyk-ultramaster-batch02b-pitre.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM02-030",
+      "editorial_issue": "PROCESSION_BELL",
+      "original_copy": {
+        "en": "Did you know that a bell once signalled when bearers of Saint Rosalia's reliquary should halt in Palermo's procession?",
+        "fr": "Saviez-vous qu'une cloche signalait autrefois les haltes des porteurs de la châsse de sainte Rosalie lors de la procession de Palerme ?"
+      },
+      "reader_copy": {
+        "en": "During an older Saint Rosalia procession in Palermo, a bell signalled when the bearers of the saint's reliquary were to halt.",
+        "fr": "Lors d'une ancienne procession de sainte Rosalie à Palerme, une cloche indiquait aux porteurs de la châsse de la sainte le moment de s'arrêter."
+      },
+      "source_ids": [
+        "PIT1900-NEW-026"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-NEW-026",
+          "url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              36
+            ],
+            "scan_pdf_page_1based": 98,
+            "italian_anchor": "capo maestro muratore"
+          }
+        }
+      ],
+      "scope": {
+        "mode": "HISTORICAL_SOURCE_BOUNDED",
+        "historical_only": true,
+        "not_universal_liturgical_law": true,
+        "current_observance_not_inferred": true,
+        "geographical_context": [
+          "Palermo, Sicily"
+        ],
+        "original_scope_metadata_preserved": true,
+        "original_scope_object": {
+          "geography": [
+            "Palermo, Sicily"
+          ],
+          "section": "ROSALIA_PALERMO",
+          "reported_historical_only": true,
+          "not_current_calendar_event": true,
+          "not_universal_law": true
+        },
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-production-growth-190-310-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-UM02-030",
+        "original_category": "PITRE_1900",
+        "original_source_owner": "data/research/did-you-know/dyk-ultramaster-batch02b-pitre.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM02-033",
+      "editorial_issue": "PROCESSION_BELL",
+      "original_copy": {
+        "en": "Did you know that bells announced the exit of statues of Saints Cosmas and Damian during an old Palermo procession?",
+        "fr": "Saviez-vous que les cloches annonçaient la sortie des statues des saints Côme et Damien pendant une ancienne procession de Palerme ?"
+      },
+      "reader_copy": {
+        "en": "At an older Palermo festival of Saints Cosmas and Damian, the sound of bells announced when the saints' statues were brought out for the procession.",
+        "fr": "Lors d'une ancienne fête des saints Côme et Damien à Palerme, les cloches annonçaient la sortie des statues des saints pour la procession."
+      },
+      "source_ids": [
+        "PIT1900-NEW-041"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-NEW-041",
+          "url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              77
+            ],
+            "scan_pdf_page_1based": 139,
+            "italian_anchor": "campane sorelle"
+          }
+        }
+      ],
+      "scope": {
+        "mode": "HISTORICAL_SOURCE_BOUNDED",
+        "historical_only": true,
+        "not_universal_liturgical_law": true,
+        "current_observance_not_inferred": true,
+        "geographical_context": [
+          "Palermo, Sicily"
+        ],
+        "original_scope_metadata_preserved": true,
+        "original_scope_object": {
+          "geography": [
+            "Palermo, Sicily"
+          ],
+          "section": "COSMAS_DAMIAN_PALERMO",
+          "reported_historical_only": true,
+          "not_current_calendar_event": true,
+          "not_universal_law": true
+        },
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-production-growth-190-310-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-UM02-033",
+        "original_category": "PITRE_1900",
+        "original_source_owner": "data/research/did-you-know/dyk-ultramaster-batch02b-pitre.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G365-CAL-013",
+      "editorial_issue": "PATRONAL_VERSUS_DEDICATION",
+      "original_copy": {
+        "en": "Weiser describes local patronal feasts in several European countries, with church celebrations and, in some places, processions and civic festivities. The feast of the patron and a church dedication must not be assumed identical.",
+        "fr": "Weiser décrit des fêtes patronales locales dans plusieurs pays d’Europe, avec célébrations religieuses et, selon les lieux, processions et réjouissances civiles. La fête du patron et l’anniversaire de la dédicace d’une église ne sont pas nécessairement identiques."
+      },
+      "reader_copy": {
+        "en": "In several older European patronal feasts, a town or parish honoured its patron with church services and sometimes processions and civic festivities. The feast of a patron and a church's dedication anniversary were separate occasions.",
+        "fr": "Lors de plusieurs anciennes fêtes patronales européennes, une ville ou une paroisse honorait son saint patron par des offices et parfois des processions et des réjouissances civiles. La fête du patron et l'anniversaire de la dédicace d'une église étaient deux occasions distinctes."
+      },
+      "source_ids": [
+        "WEI58-23-007"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-23-007",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              279
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_or_regional": true,
+        "region": "Germany, Hungary, Slovakia, Ukraine, Spain",
+        "calendar_hint": "LOCAL_PATRONAL_DATE_ONLY",
+        "never_universal_1962_rubric": true,
+        "no_modern_continuity_inferred": true,
+        "existing_custom_owner": "PATR-001",
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-production-growth-311-364-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-G365-CAL-013",
+        "original_category": "customs-historical-variant",
+        "original_source_owner": "data/customs/master/customs-calendar-bilingual-content-40-20261029.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G365-W-A-034",
+      "editorial_issue": "HOUSEHOLD_PREPARATION",
+      "original_copy": {
+        "en": "Weiser records Christmas Eve households settling quarrels and finishing their tasks before the celebration.",
+        "fr": "Weiser rapporte que des familles réglaient leurs différends et terminaient leurs travaux avant la célébration de la veille de Noël."
+      },
+      "reader_copy": {
+        "en": "In some older Christmas Eve household customs, families settled quarrels and completed outstanding work before beginning their celebration.",
+        "fr": "Dans certains anciens usages familiaux de la veille de Noël, on cherchait à régler les querelles et à achever les tâches en cours avant la fête."
+      },
+      "source_ids": [
+        "WEI58-06-011"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-06-011",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              74
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_or_regional": true,
+        "region": "European households",
+        "never_universal_1962_rubric": true,
+        "no_modern_continuity_inferred": true,
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-production-growth-311-364-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-G365-W-A-034",
+        "original_category": "weiser-1958-direct-folio",
+        "original_source_owner": "data/customs/master/customs-408-unified-relationship-gates-20261026.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-G365-W-B-123",
+      "editorial_issue": "DATE_AND_BLESSING",
+      "original_copy": {
+        "en": "Weiser records the blessing of seeds around the Nativity of the Blessed Virgin in some Northern and Central European churches.",
+        "fr": "Weiser signale la bénédiction de semences autour de la Nativité de la Vierge dans certaines églises d'Europe centrale et septentrionale."
+      },
+      "reader_copy": {
+        "en": "Around the feast of the Nativity of the Virgin Mary, 8 September, some churches in Northern and Central Europe had a custom of blessing seeds.",
+        "fr": "Autour de la Nativité de la Vierge Marie, le 8 septembre, certaines églises d'Europe centrale et septentrionale pratiquaient la bénédiction des semences."
+      },
+      "source_ids": [
+        "WEI58-25-023"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-25-023",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              305
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_or_regional": true,
+        "region": "Northern and Central European churches",
+        "never_universal_1962_rubric": true,
+        "no_modern_continuity_inferred": true,
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-production-growth-311-364-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-G365-W-B-123",
+        "original_category": "weiser-1958-direct-folio",
+        "original_source_owner": "data/customs/master/customs-408-unified-relationship-gates-20261026.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-B-038",
+      "editorial_issue": "ROYAL_HISTORICAL_ACCOUNT",
+      "original_copy": {
+        "en": "According to an account cited by Weiser, Edward I of England had 450 Easter eggs dyed or gilded for members of his royal household.",
+        "fr": "Selon un récit repris par Weiser, Édouard Ier d'Angleterre fit teindre ou dorer 450 œufs de Pâques destinés aux membres de sa maison royale."
+      },
+      "reader_copy": {
+        "en": "A historical account of the English royal household says that Edward I had 450 Easter eggs dyed or gilded as gifts for members of his court.",
+        "fr": "Selon un témoignage ancien concernant la cour d'Angleterre, Édouard Ier fit teindre ou dorer 450 œufs de Pâques destinés aux membres de sa maison."
+      },
+      "source_ids": [
+        "WEI58-17-012"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-17-012",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              234
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r22-21-added-review-cards.v1.json",
+        "original_record_id": "DYK-H04-W-B-038",
+        "original_category": "customs",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-B-044",
+      "editorial_issue": "NAMED_EASTER_FOOD",
+      "original_copy": {
+        "en": "Weiser describes a Russian Easter preparation called paska, moulded with a cross on each side and the initials of Jesus Christ.",
+        "fr": "Weiser décrit une préparation pascale russe appelée paska, moulée avec une croix sur chaque côté et les initiales de Jésus-Christ."
+      },
+      "reader_copy": {
+        "en": "A historical Russian Easter preparation called paska was moulded with crosses on its sides and the initials of Jesus Christ.",
+        "fr": "Une ancienne préparation pascale russe appelée paska était moulée avec des croix sur les côtés et les initiales de Jésus-Christ."
+      },
+      "source_ids": [
+        "WEI58-17-023"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-17-023",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              238
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r22-21-added-review-cards.v1.json",
+        "original_record_id": "DYK-H04-W-B-044",
+        "original_category": "customs",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM02-047",
+      "editorial_issue": "CHILDREN_FESTIVAL_FOOD",
+      "original_copy": {
+        "en": "Did you know that a historical Geraci Siculo feast included modelling a dairy preparation into little birds and horses for children?",
+        "fr": "Saviez-vous qu'une ancienne fête de Geraci Siculo comprenait la fabrication de petits oiseaux et chevaux en préparation lactée pour les enfants ?"
+      },
+      "reader_copy": {
+        "en": "At an older feast in Geraci Siculo, Sicily, a dairy preparation was shaped into little birds and horses to give to children.",
+        "fr": "Lors d'une ancienne fête à Geraci Siculo, en Sicile, une préparation à base de lait était façonnée en petits oiseaux et chevaux pour les enfants."
+      },
+      "source_ids": [
+        "PIT1900-NEW-090"
+      ],
+      "source_links": [
+        {
+          "source_id": "PIT1900-NEW-090",
+          "url": "https://archive.org/details/afm3499.0021.001.umich.edu",
+          "title": "Giuseppe Pitrè, Feste patronali in Sicilia (1900)",
+          "locator": {
+            "printed_pages": [
+              127
+            ],
+            "scan_pdf_page_1based": 189,
+            "italian_anchor": "cavallucci"
+          }
+        }
+      ],
+      "scope": {
+        "mode": "HISTORICAL_SOURCE_BOUNDED",
+        "historical_only": true,
+        "not_universal_liturgical_law": true,
+        "current_observance_not_inferred": true,
+        "geographical_context": [
+          "Geraci Siculo, Palermo, Sicily"
+        ],
+        "original_scope_metadata_preserved": true,
+        "original_scope_object": {
+          "geography": [
+            "Geraci Siculo, Palermo, Sicily"
+          ],
+          "section": "BLESSED_SACRAMENT_GERACI",
+          "reported_historical_only": true,
+          "not_current_calendar_event": true,
+          "not_universal_law": true
+        },
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-production-growth-190-310-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-UM02-047",
+        "original_category": "PITRE_1900",
+        "original_source_owner": "data/research/did-you-know/dyk-ultramaster-batch02b-pitre.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-H04-W-B-131",
+      "editorial_issue": "CEMETERY_CANDLES",
+      "original_copy": {
+        "en": "In customs described by Weiser, sheltered candles were lit beside family graves on All Saints' Eve and left burning through the night.",
+        "fr": "Dans des coutumes rapportées par Weiser, des bougies abritées sous de petites lanternes étaient allumées près des tombes familiales la veille de la Toussaint et laissées toute la nuit."
+      },
+      "reader_copy": {
+        "en": "In some older All Saints' Eve cemetery customs, families lit candles sheltered by small lanterns beside their relatives' graves and left them burning through the night.",
+        "fr": "Dans certaines anciennes coutumes de la veille de la Toussaint, les familles allumaient des bougies protégées par de petites lanternes près des tombes de leurs proches et les laissaient brûler toute la nuit."
+      },
+      "source_ids": [
+        "WEI58-26-011"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-26-011",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              311
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "research/dyk-source-first-batch01-20261030",
+        "path": "data/research/did-you-know/dyk-r22-21-added-review-cards.v1.json",
+        "original_record_id": "DYK-H04-W-B-131",
+        "original_category": "customs",
+        "original_source_owner": null
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-008",
+      "editorial_issue": "MID_LENT_CONTEXT",
+      "original_copy": {
+        "en": "Did you know that Weiser described mid-Lent in France and Canada as a time for a festive meal and entertainment at home?",
+        "fr": "Saviez-vous que Weiser décrivait la mi-Carême en France et au Canada comme l'occasion d'un repas joyeux et de divertissements à la maison ?"
+      },
+      "reader_copy": {
+        "en": "In some older French and Canadian mid-Lent customs, families marked the middle of the penitential season with a festive meal and entertainment at home.",
+        "fr": "Dans certaines anciennes coutumes de la mi-Carême en France et au Canada, les familles marquaient le milieu du temps pénitentiel par un repas de fête et des divertissements à la maison."
+      },
+      "source_ids": [
+        "WEI58-14-026"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-14-026",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              185
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "mode": "HISTORICAL_SOURCE_BOUNDED",
+        "historical_only": true,
+        "not_universal_liturgical_law": true,
+        "current_observance_not_inferred": true,
+        "geographical_context": [
+          "France and French Canada"
+        ],
+        "original_scope_metadata_preserved": true,
+        "original_scope_object": {
+          "preliminary_scope": "COMMUNAL_PRACTICE_LOCALITY_CHECK",
+          "universal_catholic_obligation": false,
+          "calendar_entry_authorized": false,
+          "current_observance_not_inferred": true
+        },
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-production-growth-190-310-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-UM01-008",
+        "original_category": "WEISER_1958",
+        "original_source_owner": "data/research/did-you-know/dyk-ultramaster-batch01.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-009",
+      "editorial_issue": "HOLY_WEEK_PREPARATION",
+      "original_copy": {
+        "en": "Did you know that Weiser described an old Easter custom of thoroughly cleaning homes during the three days after Palm Sunday?",
+        "fr": "Saviez-vous que Weiser décrivait une ancienne coutume pascale consistant à nettoyer à fond les maisons pendant les trois jours suivant le dimanche des Rameaux ?"
+      },
+      "reader_copy": {
+        "en": "In one older Holy Week household custom, the three days following Palm Sunday were devoted to a thorough spring cleaning before Easter.",
+        "fr": "Dans un ancien usage domestique de la Semaine sainte, les trois jours suivant le dimanche des Rameaux étaient consacrés à un grand nettoyage de la maison avant Pâques."
+      },
+      "source_ids": [
+        "WEI58-15-002"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-15-002",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              188
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "mode": "HISTORICAL_SOURCE_BOUNDED",
+        "historical_only": true,
+        "not_universal_liturgical_law": true,
+        "current_observance_not_inferred": true,
+        "geographical_context": [
+          "Poland and other Catholic European countries"
+        ],
+        "original_scope_metadata_preserved": true,
+        "original_scope_object": {
+          "preliminary_scope": "CATHOLIC_PRACTICE_OR_VARIANT_IDENTITY_REVIEW",
+          "universal_catholic_obligation": false,
+          "calendar_entry_authorized": false,
+          "current_observance_not_inferred": true
+        },
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-production-growth-190-310-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-UM01-009",
+        "original_category": "WEISER_1958",
+        "original_source_owner": "data/research/did-you-know/dyk-ultramaster-batch01.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-015",
+      "editorial_issue": "DATE_AND_BALCONY",
+      "original_copy": {
+        "en": "Did you know that Weiser described Spanish Immaculate Conception Eve balconies decorated with flowers and candles?",
+        "fr": "Saviez-vous que Weiser a décrit des balcons espagnols décorés de fleurs et de cierges à la veille de l'Immaculée Conception ?"
+      },
+      "reader_copy": {
+        "en": "In an older Spanish custom for the eve of the Immaculate Conception, 7 December, balconies were decorated with flowers and candles.",
+        "fr": "Dans une ancienne coutume espagnole pour la veille de l'Immaculée Conception, le 7 décembre, les balcons étaient ornés de fleurs et de cierges."
+      },
+      "source_ids": [
+        "WEI58-24-021"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-24-021",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              294
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "mode": "HISTORICAL_SOURCE_BOUNDED",
+        "historical_only": true,
+        "not_universal_liturgical_law": true,
+        "current_observance_not_inferred": true,
+        "geographical_context": [
+          "Northern Spanish provinces"
+        ],
+        "original_scope_metadata_preserved": true,
+        "original_scope_object": {
+          "preliminary_scope": "DISTINCT_REGIONAL_SEASONAL_CANDIDATE",
+          "universal_catholic_obligation": false,
+          "calendar_entry_authorized": false,
+          "current_observance_not_inferred": true
+        },
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-production-growth-190-310-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-UM01-015",
+        "original_category": "WEISER_1958",
+        "original_source_owner": "data/research/did-you-know/dyk-ultramaster-batch01.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-016",
+      "editorial_issue": "EXPLAIN_REVEILLON",
+      "original_copy": {
+        "en": "Did you know that Weiser described a French Christmas family meal called the réveillon, traditionally held just after Midnight Mass?",
+        "fr": "Saviez-vous que Weiser décrivait un repas familial français de Noël appelé réveillon, traditionnellement pris juste après la messe de minuit ?"
+      },
+      "reader_copy": {
+        "en": "In French Christmas tradition, the réveillon is a family feast often held after the Midnight Mass of Christmas.",
+        "fr": "Dans la tradition française de Noël, le réveillon est un repas familial de fête souvent pris après la messe de minuit."
+      },
+      "source_ids": [
+        "WEI58-06-015"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-06-015",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              76
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "mode": "HISTORICAL_SOURCE_BOUNDED",
+        "historical_only": true,
+        "not_universal_liturgical_law": true,
+        "current_observance_not_inferred": true,
+        "geographical_context": [
+          "France"
+        ],
+        "original_scope_metadata_preserved": true,
+        "original_scope_object": {
+          "preliminary_scope": "RITUAL_OR_LOCAL_EVENT_BOUNDARY",
+          "universal_catholic_obligation": false,
+          "calendar_entry_authorized": false,
+          "current_observance_not_inferred": true
+        },
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-production-growth-190-310-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-UM01-016",
+        "original_category": "WEISER_1958",
+        "original_source_owner": "data/research/did-you-know/dyk-ultramaster-batch01.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM01-019",
+      "editorial_issue": "CHILDREN_PROCESSION",
+      "original_copy": {
+        "en": "Did you know that historical Corpus Christi processions in parts of Europe featured children dressed as angels scattering flower petals?",
+        "fr": "Saviez-vous que certaines processions historiques de la Fête-Dieu en Europe comportaient des enfants déguisés en anges qui répandaient des pétales de fleurs ?"
+      },
+      "reader_copy": {
+        "en": "In some older European Corpus Christi processions, children dressed as angels walked along the route scattering flower petals before the Blessed Sacrament.",
+        "fr": "Dans certaines anciennes processions européennes de la Fête-Dieu, des enfants vêtus en anges avançaient sur le parcours en répandant des pétales de fleurs devant le Saint-Sacrement."
+      },
+      "source_ids": [
+        "WEI58-21-015"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-21-015",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              265
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "mode": "HISTORICAL_SOURCE_BOUNDED",
+        "historical_only": true,
+        "not_universal_liturgical_law": true,
+        "current_observance_not_inferred": true,
+        "geographical_context": [
+          "Italy Germany and wider Europe history"
+        ],
+        "original_scope_metadata_preserved": true,
+        "original_scope_object": {
+          "preliminary_scope": "LOCAL_PROCESSIONAL_COMPONENT",
+          "universal_catholic_obligation": false,
+          "calendar_entry_authorized": false,
+          "current_observance_not_inferred": true
+        },
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-production-growth-190-310-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-UM01-019",
+        "original_category": "WEISER_1958",
+        "original_source_owner": "data/research/did-you-know/dyk-ultramaster-batch01.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM02-009",
+      "editorial_issue": "TRANSLATION_AND_CONTEXT",
+      "original_copy": {
+        "en": "Did you know that the traditional Latin Easter greeting Surrexit Dominus vere means 'The Lord has truly risen'?",
+        "fr": "Saviez-vous que la salutation pascale traditionnelle Surrexit Dominus vere signifie « Le Seigneur est vraiment ressuscité » ?"
+      },
+      "reader_copy": {
+        "en": "The traditional Latin Easter greeting Surrexit Dominus vere means « The Lord has truly risen », proclaiming the Resurrection celebrated at Easter.",
+        "fr": "La salutation pascale latine Surrexit Dominus vere signifie « Le Seigneur est vraiment ressuscité », proclamation de la Résurrection fêtée à Pâques."
+      },
+      "source_ids": [
+        "WEI58-16-005"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-16-005",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              212
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "mode": "HISTORICAL_SOURCE_BOUNDED",
+        "historical_only": true,
+        "not_universal_liturgical_law": true,
+        "current_observance_not_inferred": true,
+        "geographical_context": [
+          "Early Latin Christian practice"
+        ],
+        "original_scope_metadata_preserved": true,
+        "original_scope_object": {
+          "geography": [
+            "Early Latin Christian practice"
+          ],
+          "preliminary_scope": "HISTORICAL_GREETING_CANDIDATE",
+          "note": "Historical liturgical/devotional phrase",
+          "historical_only": true,
+          "not_universal_law": true
+        },
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-production-growth-190-310-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-UM02-009",
+        "original_category": "WEISER_1958",
+        "original_source_owner": "data/research/did-you-know/dyk-ultramaster-batch02a-weiser.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM02-010",
+      "editorial_issue": "EASTER_GAME",
+      "original_copy": {
+        "en": "Did you know that rolling hard-boiled eggs was among the games played in some European Easter celebrations.",
+        "fr": "Saviez-vous que faire rouler des œufs durs figurait parmi les jeux de certaines célébrations pascales européennes."
+      },
+      "reader_copy": {
+        "en": "Rolling hard-boiled eggs was among the traditional games associated with Easter festivities in parts of Europe.",
+        "fr": "Faire rouler des œufs durs comptait parmi les jeux traditionnels liés aux fêtes de Pâques dans certaines régions d'Europe."
+      },
+      "source_ids": [
+        "WEI58-17-016"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-17-016",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              235
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "mode": "HISTORICAL_SOURCE_BOUNDED",
+        "historical_only": true,
+        "not_universal_liturgical_law": true,
+        "current_observance_not_inferred": true,
+        "geographical_context": [
+          "European families"
+        ],
+        "original_scope_metadata_preserved": true,
+        "original_scope_object": {
+          "geography": [
+            "European families"
+          ],
+          "preliminary_scope": "RELATED_VARIANT_NO_AUTOMERGE",
+          "note": "Regional social custom",
+          "historical_only": true,
+          "not_universal_law": true
+        },
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-production-growth-190-310-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-UM02-010",
+        "original_category": "WEISER_1958",
+        "original_source_owner": "data/research/did-you-know/dyk-ultramaster-batch02a-weiser.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM02-011",
+      "editorial_issue": "EASTER_FLOWERS",
+      "original_copy": {
+        "en": "Did you know that Easter lilies became seasonal decorations in some American churches and homes.",
+        "fr": "Saviez-vous que les lis de Pâques sont devenus des décorations saisonnières dans certaines églises et maisons américaines."
+      },
+      "reader_copy": {
+        "en": "In some American churches and homes, white Easter lilies became seasonal decorations associated with the feast of the Resurrection.",
+        "fr": "Dans certaines églises et maisons américaines, les lis blancs de Pâques sont devenus des décorations saisonnières associées à la fête de la Résurrection."
+      },
+      "source_ids": [
+        "WEI58-17-019"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-17-019",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              236
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "mode": "HISTORICAL_SOURCE_BOUNDED",
+        "historical_only": true,
+        "not_universal_liturgical_law": true,
+        "current_observance_not_inferred": true,
+        "geographical_context": [
+          "US; horticultural origin outside Europe"
+        ],
+        "original_scope_metadata_preserved": true,
+        "original_scope_object": {
+          "geography": [
+            "US; horticultural origin outside Europe"
+          ],
+          "preliminary_scope": "SEASONAL_SYMBOL_CONTEXT",
+          "note": "Not all periods or places",
+          "historical_only": true,
+          "not_universal_law": true
+        },
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-production-growth-190-310-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-UM02-011",
+        "original_category": "WEISER_1958",
+        "original_source_owner": "data/research/did-you-know/dyk-ultramaster-batch02a-weiser.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM02-018",
+      "editorial_issue": "DAY_AND_DEVOTION",
+      "original_copy": {
+        "en": "Did you know that Monday was associated with personal prayers for the Holy Souls in some Catholic devotional schedules.",
+        "fr": "Saviez-vous que le lundi était associé à des prières pour les âmes du purgatoire dans certains usages de dévotion catholiques."
+      },
+      "reader_copy": {
+        "en": "In some older Catholic devotional schedules, Mondays were set aside for personal prayer for the souls of the faithful departed.",
+        "fr": "Dans certains anciens usages de dévotion catholique, le lundi était particulièrement consacré à la prière personnelle pour les âmes des fidèles défunts."
+      },
+      "source_ids": [
+        "WEI58-02-004"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-02-004",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              27
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "mode": "HISTORICAL_SOURCE_BOUNDED",
+        "historical_only": true,
+        "not_universal_liturgical_law": true,
+        "current_observance_not_inferred": true,
+        "geographical_context": [
+          "Latin Catholic"
+        ],
+        "original_scope_metadata_preserved": true,
+        "original_scope_object": {
+          "geography": [
+            "Latin Catholic"
+          ],
+          "preliminary_scope": "HOUSEHOLD_OR_DEVOTIONAL_ACTION_CHECK",
+          "note": "Optional weekly association",
+          "historical_only": true,
+          "not_universal_law": true,
+          "editorial_evidence_note": "Later source-owner page-sweep confirms the narrow action on its 1958 printed page; not an independent modern practice witness or publishing authorization."
+        },
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-production-growth-190-310-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-UM02-018",
+        "original_category": "WEISER_1958",
+        "original_source_owner": "data/research/did-you-know/dyk-ultramaster-batch02a-weiser.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM02-021",
+      "editorial_issue": "WEEKLY_DEVOTION",
+      "original_copy": {
+        "en": "Did you know that Thursday has been associated with a special devotion to the Blessed Sacrament.",
+        "fr": "Saviez-vous que le jeudi est associé à une dévotion particulière envers le Saint-Sacrement."
+      },
+      "reader_copy": {
+        "en": "In traditional Catholic weekly devotions, Thursday has often been associated with honouring the Blessed Sacrament, recalling the institution of the Eucharist on Holy Thursday.",
+        "fr": "Dans les dévotions hebdomadaires catholiques traditionnelles, le jeudi est souvent associé à l'honneur rendu au Saint-Sacrement, en souvenir de l'institution de l'Eucharistie le Jeudi saint."
+      },
+      "source_ids": [
+        "WEI58-02-007"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-02-007",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              29
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "mode": "HISTORICAL_SOURCE_BOUNDED",
+        "historical_only": true,
+        "not_universal_liturgical_law": true,
+        "current_observance_not_inferred": true,
+        "geographical_context": [
+          "Roman Catholic"
+        ],
+        "original_scope_metadata_preserved": true,
+        "original_scope_object": {
+          "geography": [
+            "Roman Catholic"
+          ],
+          "preliminary_scope": "RITE_OR_LITURGY_BOUNDARY_CHECK",
+          "note": "Do not infer ministerial rite",
+          "historical_only": true,
+          "not_universal_law": true,
+          "editorial_evidence_note": "Later source-owner page-sweep confirms the narrow action on its 1958 printed page; not an independent modern practice witness or publishing authorization."
+        },
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-production-growth-190-310-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-UM02-021",
+        "original_category": "WEISER_1958",
+        "original_source_owner": "data/research/did-you-know/dyk-ultramaster-batch02a-weiser.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM02-022",
+      "editorial_issue": "FIRST_FRIDAY",
+      "original_copy": {
+        "en": "Did you know that First Fridays have long been linked to devotion to the Sacred Heart of Jesus.",
+        "fr": "Saviez-vous que les premiers vendredis du mois sont depuis longtemps liés à la dévotion au Sacré-Cœur de Jésus."
+      },
+      "reader_copy": {
+        "en": "In the Catholic devotion to the Sacred Heart of Jesus, the first Friday of each month is a particular day for prayer in honour of his love.",
+        "fr": "Dans la dévotion catholique au Sacré-Cœur de Jésus, le premier vendredi de chaque mois est un jour particulier de prière en l'honneur de son amour."
+      },
+      "source_ids": [
+        "WEI58-02-008"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-02-008",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              29
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "mode": "HISTORICAL_SOURCE_BOUNDED",
+        "historical_only": true,
+        "not_universal_liturgical_law": true,
+        "current_observance_not_inferred": true,
+        "geographical_context": [
+          "Roman Catholic"
+        ],
+        "original_scope_metadata_preserved": true,
+        "original_scope_object": {
+          "geography": [
+            "Roman Catholic"
+          ],
+          "preliminary_scope": "CATHOLIC_PRACTICE_OR_VARIANT_IDENTITY_REVIEW",
+          "note": "Indulgences and promises excluded",
+          "historical_only": true,
+          "not_universal_law": true,
+          "editorial_evidence_note": "Later source-owner page-sweep confirms the narrow action on its 1958 printed page; not an independent modern practice witness or publishing authorization."
+        },
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-production-growth-190-310-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-UM02-022",
+        "original_category": "WEISER_1958",
+        "original_source_owner": "data/research/did-you-know/dyk-ultramaster-batch02a-weiser.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM02-023",
+      "editorial_issue": "MARIAN_SATURDAY",
+      "original_copy": {
+        "en": "Did you know that Saturday has traditionally been associated with devotion to the Blessed Virgin Mary.",
+        "fr": "Saviez-vous que le samedi est traditionnellement associé à la dévotion envers la Bienheureuse Vierge Marie."
+      },
+      "reader_copy": {
+        "en": "Saturday has traditionally been a day of special devotion to the Blessed Virgin Mary in Catholic weekly prayer customs.",
+        "fr": "Dans les usages catholiques de prière hebdomadaire, le samedi est traditionnellement un jour de dévotion particulière envers la Bienheureuse Vierge Marie."
+      },
+      "source_ids": [
+        "WEI58-02-009"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-02-009",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              29
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "mode": "HISTORICAL_SOURCE_BOUNDED",
+        "historical_only": true,
+        "not_universal_liturgical_law": true,
+        "current_observance_not_inferred": true,
+        "geographical_context": [
+          "Roman Catholic"
+        ],
+        "original_scope_metadata_preserved": true,
+        "original_scope_object": {
+          "geography": [
+            "Roman Catholic"
+          ],
+          "preliminary_scope": "HOUSEHOLD_OR_DEVOTIONAL_ACTION_CHECK",
+          "note": "Not a personal obligation",
+          "historical_only": true,
+          "not_universal_law": true,
+          "editorial_evidence_note": "Later source-owner page-sweep confirms the narrow action on its 1958 printed page; not an independent modern practice witness or publishing authorization."
+        },
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-production-growth-190-310-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-UM02-023",
+        "original_category": "WEISER_1958",
+        "original_source_owner": "data/research/did-you-know/dyk-ultramaster-batch02a-weiser.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM02-024",
+      "editorial_issue": "EMBER_HARVEST",
+      "original_copy": {
+        "en": "Did you know that Weiser connected the early Ember Days with prayers seeking God's blessing and thanking Him for the harvest?",
+        "fr": "Saviez-vous que Weiser associait les anciens Quatre-Temps à des prières demandant la bénédiction de Dieu et le remerciant pour les récoltes ?"
+      },
+      "reader_copy": {
+        "en": "The traditional Ember Days included prayers asking God's blessing on the seasons and giving thanks for the harvest.",
+        "fr": "Les Quatre-Temps traditionnels comportaient des prières demandant à Dieu de bénir les saisons et le remerciant pour les récoltes."
+      },
+      "source_ids": [
+        "WEI58-03-003"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-03-003",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              32
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "mode": "HISTORICAL_SOURCE_BOUNDED",
+        "historical_only": true,
+        "not_universal_liturgical_law": true,
+        "current_observance_not_inferred": true,
+        "geographical_context": [
+          "Roman liturgical tradition"
+        ],
+        "original_scope_metadata_preserved": true,
+        "original_scope_object": {
+          "geography": [
+            "Roman liturgical tradition"
+          ],
+          "preliminary_scope": "CATHOLIC_PRACTICE_OR_VARIANT_IDENTITY_REVIEW",
+          "note": "Historical not present fasting law",
+          "historical_only": true,
+          "not_universal_law": true
+        },
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-production-growth-190-310-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-UM02-024",
+        "original_category": "WEISER_1958",
+        "original_source_owner": "data/research/did-you-know/dyk-ultramaster-batch02a-weiser.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM02-025",
+      "editorial_issue": "EMBER_ALMSGIVING",
+      "original_copy": {
+        "en": "Did you know that charitable almsgiving appears in Weiser's account of older Ember Day observances.",
+        "fr": "Saviez-vous que l'aumône figure dans la description par Weiser d'anciennes pratiques des Quatre-Temps."
+      },
+      "reader_copy": {
+        "en": "In some older Ember Day customs, fasting and prayer were accompanied by giving alms to people in need.",
+        "fr": "Dans certains anciens usages des Quatre-Temps, le jeûne et la prière s'accompagnaient d'aumônes aux personnes démunies."
+      },
+      "source_ids": [
+        "WEI58-03-004"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-03-004",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              36
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "mode": "HISTORICAL_SOURCE_BOUNDED",
+        "historical_only": true,
+        "not_universal_liturgical_law": true,
+        "current_observance_not_inferred": true,
+        "geographical_context": [
+          "Catholic Europe"
+        ],
+        "original_scope_metadata_preserved": true,
+        "original_scope_object": {
+          "geography": [
+            "Catholic Europe"
+          ],
+          "preliminary_scope": "HOUSEHOLD_OR_DEVOTIONAL_ACTION_CHECK",
+          "note": "Historical; no universal obligation",
+          "historical_only": true,
+          "not_universal_law": true,
+          "editorial_evidence_note": "Later source-owner page-sweep confirms the narrow action on its 1958 printed page; not an independent modern practice witness or publishing authorization."
+        },
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-production-growth-190-310-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-UM02-025",
+        "original_category": "WEISER_1958",
+        "original_source_owner": "data/research/did-you-know/dyk-ultramaster-batch02a-weiser.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM03-001",
+      "editorial_issue": "EASTER_CLOTHING",
+      "original_copy": {
+        "en": "Did you know that at Easter, some European families traditionally put on new clothes for the first time.",
+        "fr": "Saviez-vous qu'à Pâques, certaines familles européennes portaient traditionnellement des vêtements neufs pour la première fois."
+      },
+      "reader_copy": {
+        "en": "At Easter, some European families traditionally wore new clothes for the first time as part of the festive celebration.",
+        "fr": "À Pâques, certaines familles européennes revêtaient traditionnellement des vêtements neufs pour la première fois à l'occasion de la fête."
+      },
+      "source_ids": [
+        "WEI58-16-021"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-16-021",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              220
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "mode": "HISTORICAL_SOURCE_BOUNDED",
+        "historical_only": true,
+        "not_universal_liturgical_law": true,
+        "current_observance_not_inferred": true,
+        "geographical_context": "SOURCE_CLAIM_LIMITED",
+        "original_scope_metadata_preserved": true,
+        "original_scope_object": {
+          "region": "SOURCE_CLAIM_LIMITED",
+          "year": "HISTORICAL_AS_REPORTED_IN_1958",
+          "no_1962_rubric_inference": true,
+          "no_universal_claim": true,
+          "not_calendar_rule": true
+        },
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-production-growth-190-310-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-UM03-001",
+        "original_category": "WEISER_1958",
+        "original_source_owner": "data/research/did-you-know/dyk-ultramaster-batch03-wider-corpus.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM03-006",
+      "editorial_issue": "FLOWER_SYMBOL",
+      "original_copy": {
+        "en": "Did you know that the pansy was among the flowers associated with the symbolism of the Holy Trinity in European tradition.",
+        "fr": "Saviez-vous que la pensée figurait parmi les fleurs associées à la symbolique de la Sainte Trinité dans certaines traditions européennes."
+      },
+      "reader_copy": {
+        "en": "In some European religious flower symbolism, the pansy was associated with the Holy Trinity.",
+        "fr": "Dans certaines traditions européennes de symbolique religieuse des fleurs, la pensée était associée à la Sainte Trinité."
+      },
+      "source_ids": [
+        "WEI58-20-006"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-20-006",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              257
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "mode": "HISTORICAL_SOURCE_BOUNDED",
+        "historical_only": true,
+        "not_universal_liturgical_law": true,
+        "current_observance_not_inferred": true,
+        "geographical_context": "SOURCE_CLAIM_LIMITED",
+        "original_scope_metadata_preserved": true,
+        "original_scope_object": {
+          "region": "SOURCE_CLAIM_LIMITED",
+          "year": "HISTORICAL_AS_REPORTED_IN_1958",
+          "no_1962_rubric_inference": true,
+          "no_universal_claim": true,
+          "not_calendar_rule": true
+        },
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-production-growth-190-310-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-UM03-006",
+        "original_category": "WEISER_1958",
+        "original_source_owner": "data/research/did-you-know/dyk-ultramaster-batch03-wider-corpus.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM03-010",
+      "editorial_issue": "ALL_SOULS_CHARITY",
+      "original_copy": {
+        "en": "Did you know that Weiser describes food being set aside for charity during historical commemorations of the Holy Souls.",
+        "fr": "Saviez-vous que Weiser décrit des aliments réservés à l'aumône pendant d'anciennes commémorations des âmes du purgatoire."
+      },
+      "reader_copy": {
+        "en": "During some older commemorations of the faithful departed, families set aside food to give in charity.",
+        "fr": "Lors de certaines anciennes commémorations des fidèles défunts, des familles réservaient des aliments pour les distribuer en aumône."
+      },
+      "source_ids": [
+        "WEI58-26-021"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-26-021",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              312
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "mode": "HISTORICAL_SOURCE_BOUNDED",
+        "historical_only": true,
+        "not_universal_liturgical_law": true,
+        "current_observance_not_inferred": true,
+        "geographical_context": "SOURCE_CLAIM_LIMITED",
+        "original_scope_metadata_preserved": true,
+        "original_scope_object": {
+          "region": "SOURCE_CLAIM_LIMITED",
+          "year": "HISTORICAL_AS_REPORTED_IN_1958",
+          "no_1962_rubric_inference": true,
+          "no_universal_claim": true,
+          "not_calendar_rule": true
+        },
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-production-growth-190-310-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-UM03-010",
+        "original_category": "WEISER_1958",
+        "original_source_owner": "data/research/did-you-know/dyk-ultramaster-batch03-wider-corpus.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-UM03-011",
+      "editorial_issue": "DEAD_DEVOTIONS_AND_FOOD",
+      "original_copy": {
+        "en": "Did you know that beans, peas and lentils appear among the foods offered as alms in historical All Souls customs.",
+        "fr": "Saviez-vous que des haricots, des pois et des lentilles figuraient parmi les aliments donnés en aumône dans d'anciennes coutumes des défunts."
+      },
+      "reader_copy": {
+        "en": "In older All Souls' Day customs, beans, peas and lentils were among the foods distributed as alms to people in need.",
+        "fr": "Dans d'anciennes coutumes de la Commémoration des défunts, haricots, pois et lentilles figuraient parmi les aliments distribués en aumône aux personnes démunies."
+      },
+      "source_ids": [
+        "WEI58-26-024"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-26-024",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              313
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ],
+      "scope": {
+        "mode": "HISTORICAL_SOURCE_BOUNDED",
+        "historical_only": true,
+        "not_universal_liturgical_law": true,
+        "current_observance_not_inferred": true,
+        "geographical_context": "SOURCE_CLAIM_LIMITED",
+        "original_scope_metadata_preserved": true,
+        "original_scope_object": {
+          "region": "SOURCE_CLAIM_LIMITED",
+          "year": "HISTORICAL_AS_REPORTED_IN_1958",
+          "no_1962_rubric_inference": true,
+          "no_universal_claim": true,
+          "not_calendar_rule": true
+        },
+        "historical_observation_only": true,
+        "not_a_universal_1962_rite": true,
+        "current_local_practice_not_inferred": true
+      },
+      "provenance": {
+        "repository": "Fulcanelli13/ad-orientem",
+        "branch": "production/dyk-500-growth-364-20261031",
+        "path": "data/research/did-you-know/dyk-production-growth-190-310-bilingual-drafts.v1.json",
+        "original_record_id": "DYK-UM03-011",
+        "original_category": "WEISER_1958",
+        "original_source_owner": "data/research/did-you-know/dyk-ultramaster-batch03-wider-corpus.v1.json"
+      },
+      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
+      "publication_authorized": false
+    }
+  ]
+}
