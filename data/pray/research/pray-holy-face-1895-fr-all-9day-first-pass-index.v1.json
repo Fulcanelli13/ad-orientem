@@ -129,8 +129,8 @@
     },
     {
       "day": 8,
-      "subject": "Printed first reflection p.136 is unnumbered; subsequent p.137 and p.138 reflections both III, i.e. printed sequence [none, III, III]. Vœu à pratiquer on p.139 also printed; source transcription corrected after photographic recheck.",
-      "status": "SOURCE_PHOTOGRAPH_RECHECK_CORRECTED__FULL_INDEPENDENT_PROOF_PENDING"
+      "subject": "Printed first reflection p.136 is 'I. Le pardon accordé'; the second and third both read 'III', printed sequence I / III / III. The earlier claim of an unnumbered first reflection and PR #2756 deletion of I were incorrect and reversed on renewed photo inspection.",
+      "status": "SOURCE_PHOTO_RERECHECK_RESTORED_I__KEEP_DOUBLE_III__INDEPENDENT_DIPLOMATIC_PROOF_PENDING"
     },
     {
       "day": 9,
@@ -146,7 +146,7 @@
   "nextRequiredGates": [
     "Compare the original printed 1887 Bennett English book to existing digital English day texts, classify edition/translator variants without changing either witness on inference.",
     "All nine days now have page-image section-level checks; independently verify the complete character-by-character French printed text and typography before claiming diplomatic certification, especially the overwritten folio at Day II p.116.",
-    "Preserve Day VIII corrected source [unnumbered,III,III], never reinstate invented first Roman I.",
+    "Preserve photographed Day VIII exact sequence [I,III,III] after reversing flawed prior removal of Roman I.",
     "Resolve ambiguous punctuation, typography, printed wording and day-specific variants including Day VIII double III and Day IX collect",
     "Obtain/inspect 1887 original English printed translation and classify each variant against it, distinguishing edition changes from translator's choices",
     "Select exact certified historical French reader text and provenance label; separately approve Day IX full reprinted prayers",
@@ -157,7 +157,7 @@
   "qualityControl": {
     "photoVisualRecheck": "ALL_31_PRINTED_PAGES_112_TO_142_VIEWED__NOT_FULL_LINE_BY_LINE_INDEPENDENT_COLLATION",
     "independentSecondProofDays": 0,
-    "criticalCorrection": "Earlier first-pass Day VIII p.136 Roman I was inserted and has now been removed following direct image check.",
+    "criticalCorrection": "2026-11-09 recheck: Original 1895 printed p.136 DOES have Roman I before Le pardon accordé. Prior PR #2756 erroneously removed it, claiming it was unnumbered. Genuine printed first numeral restored.",
     "englishPrinted1887Scan": "FOUND_LINKED_NOT_READ_OR_COLLATED",
     "english1887SourceUrl": "https://holyfacechapel.org/wp-content/uploads/2025/09/ManualoftheArchconfraternityoftheHolyFace.pdf",
     "englishSourceAccessNote": "1887 original English Bennett edition photographic PDF is linked by monastery; approximately 174 MB; PDF download was too large for browsing. The English textual witness remains unverified against printed images, not certified.",
@@ -170,7 +170,7 @@
     "externalIndependentEditorialApprovalDays": [],
     "photographicTypographicFacsimileExactDays": [],
     "imageAssistedSecondPassEvidencePath": "data/pray/research/pray-holy-face-1895-fr-days08-09-image-assisted-second-pass.v1.json",
-    "secondPassInterpretation": "Day VIII and IX entire normalized paragraph/section text and printed references were compared against photographed original pages 136–142 in a new AI-assisted pass. This does not establish independent human editorial approval or literal printing-typography certification; public texts stay held.",
+    "secondPassInterpretation": "Day VIII and IX entire normalized paragraph/section text and printed references were compared against photographed original pages 136–142 in a new AI-assisted pass. This does not establish independent human editorial approval or literal printing-typography certification; public texts stay held. An earlier false 'unnumbered I' claim was reversed after rechecking the first character on p.136.",
     "imageAssistedSectionLevelPhotoRecheckDays": [
       1,
       2,
@@ -183,11 +183,16 @@
       9
     ],
     "imageAssistedSectionLevelPhotoRecheckCount": 9,
-    "photoSecondPassReviewTier": "AI_PHOTOGRAPHIC_SECTION_ANCHORS_AND_SALIENT_WORDING_ONLY__NOT_INDEPENDENT_EXHAUSTIVE_LINE_BY_LINE_COLLATION",
+    "photoSecondPassReviewTier": "AI_PHOTOGRAPHIC_SECTION_ANCHORS_AND_SALIENT_WORDING_ONLY__NOT_INDEPENDENT_EXHAUSTIVE_LINE_BY_LINE_COLLATION; earlier false Day VIII first ordinal claim explicitly corrected on 2026-11-09",
     "dayOneToSevenPhotoRecheckEvidencePath": "data/pray/research/pray-holy-face-1895-fr-days01-07-image-assisted-photo-section-recheck.v1.json",
     "dayOneToSevenSourceImagesViewed": 25,
     "dayOneToSevenSourceStructureEntriesChecked": 65,
     "dayTwoOpeningLegacyPageReference": "HANDWRITTEN_OVERWRITE_EXACT_NUMERAL_UNRESOLVED",
-    "overallPhotoReviewInterpretation": "All nine French days now have section-level photo/wording checks (65 entries for Days I–VII and 19 entries for Days VIII–IX). Stronger normalized-text comparison for Days VIII–IX was separately recorded as 2/9. Neither level establishes full diplomatic orthography nor independent human editorial proof. French public 0/9."
+    "overallPhotoReviewInterpretation": "All nine French days now have section-level photo/wording checks (65 entries for Days I–VII and 19 entries for Days VIII–IX). Stronger normalized-text comparison for Days VIII–IX was separately recorded as 2/9. Neither level establishes full diplomatic orthography nor independent human editorial proof. French public 0/9.",
+    "dayEightPrintedSequence": [
+      "I",
+      "III",
+      "III"
+    ]
   }
 }
