@@ -68,9 +68,9 @@ assert.equal(rendererSemantics.actualExsurgeMoraCount,4,"Original print has four
 assert.equal(rendererSemantics.actualExsurgeEpisemaCount,3,"Original print has three horizontal episemata");
 assert.equal(rendererSemantics.actualExsurgeVirgaCount,1,"Original print has one Virga-shaped terminal note");
 assert.equal(rendererSemantics.actualExsurgeInclinedNoteCount,3,"Original print has three terminal diamonds");
-assert.deepEqual(semanticNoteRecords.slice(-6).map(x=>x.isVirga),
+assert.deepEqual(Array.from(semanticNoteRecords.slice(-6),x=>x.isVirga),
  [false,false,true,false,false,false]);
-assert.deepEqual(semanticNoteRecords.slice(-6).map(x=>x.isInclined),
+assert.deepEqual(Array.from(semanticNoteRecords.slice(-6),x=>x.isInclined),
  [false,false,false,true,true,true]);
 assert.equal(semanticNoteRecords.at(-1).moraCount,1,"Terminal dot must attach to final diamond");
 const layoutReports=[];
