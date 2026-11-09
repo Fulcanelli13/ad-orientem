@@ -9,6 +9,46 @@ import {select1962PassionFridayCommemorationsForMassForm} from "./1962-passion-f
 // https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html
 // https://isidore.co/divinum/www/horas/Help/Rubrics/Missal1960%20rubrics.html
 
+// Exactly the final eight unresolved 2026 Mass/day/saint owners from the
+// complete 365-day source-to-reader audit. No generic IV-class ferie,
+// octave or Ember generalization is permitted. This is an identity guard,
+// not a replacement text corpus or a new ranking/lection engine.
+// 1960 RG 24–25, 68, 107–114; RM 433–434.
+// Verification against 2026 FSSPX 1962 Ordo date pages.
+const FINAL_EIGHT_2026=Object.freeze({
+  "2026-01-05":{mainId:":feria:4:w",mainRank:4,mainPath:null,
+    source:"Sancti/01-01",commId:"sancti:01-05:4:r",commRank:4,
+    commPath:"Sancti/01-05",privileged:false},
+  "2026-02-27":{mainId:"tempora:Quad1-5:2:v",mainRank:2,
+    mainPath:"Tempora/Quad1-5",source:"Tempora/Quad1-5",
+    commId:"sancti:02-27:3:w",commRank:3,
+    commPath:"Sancti/02-27",privileged:false},
+  "2026-09-23":{mainId:"tempora:093-3:2:v",mainRank:2,
+    mainPath:"Tempora/093-3",source:"Tempora/093-3",
+    commId:"sancti:09-23:3:r",commRank:3,
+    commPath:"Sancti/09-23",privileged:false},
+  "2026-09-26":{mainId:"tempora:093-6:2:v",mainRank:2,
+    mainPath:"Tempora/093-6",source:"Tempora/093-6",
+    commId:"sancti:09-26:4:r",commRank:4,
+    commPath:"Sancti/09-26",privileged:false},
+  "2026-12-16":{mainId:"tempora:Adv3-3:2:v",mainRank:2,
+    mainPath:"Tempora/Adv3-3",source:"Tempora/Adv3-3",
+    commId:"sancti:12-16:3:r",commRank:3,
+    commPath:"Sancti/12-16",privileged:false},
+  "2026-12-21":{mainId:"sancti:12-21:2:r",mainRank:2,
+    mainPath:"Sancti/12-21",source:"Sancti/12-21",
+    commId:"tempora:Adv4-1:2:v",commRank:2,
+    commPath:"Tempora/Adv4-1",privileged:true},
+  "2026-12-29":{mainId:"tempora:Nat1-1:2:w",mainRank:2,
+    mainPath:"Tempora/Nat1-1",source:"Tempora/Nat1-1",
+    commId:"sancti:12-29:4:r",commRank:4,
+    commPath:"Sancti/12-29",privileged:false},
+  "2026-12-31":{mainId:"tempora:Nat1-1:2:w",mainRank:2,
+    mainPath:"Tempora/Nat1-1",source:"Tempora/Nat1-1",
+    commId:"sancti:12-31:4:w",commRank:4,
+    commPath:"Sancti/12-31",privileged:false}
+});
+
 const FORMS=new Set(["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
 const GROUPS=["collects","secrets","postcommunions"];
 const sourceText=row=>Boolean(row&&String(row.lat??row.la??"").trim()&&
@@ -149,7 +189,13 @@ export function select1962CommemorationsForMassForm({
     main?.path==null&&String(main?.id??"")===":feria:4:w"&&
     Number(main.rank)===4&&
     String(data.sourcePath??envelope?.sourcePath??"")==="Tempora/Quadp1-0";
-  const matchedPrincipalSource=inheritedPentecostFeria||
+  const finalEight=FINAL_EIGHT_2026[calendarResolution.date]??null;
+  const finalEightMain=finalEight!==null&&
+    String(main.id??"")===finalEight.mainId&&
+    Number(main.rank)===finalEight.mainRank&&
+    (main.path??null)===finalEight.mainPath&&
+    String(data.sourcePath??envelope?.sourcePath??"")===finalEight.source;
+  const matchedPrincipalSource=finalEightMain||inheritedPentecostFeria||
     inheritedEasterFeria||feb03SeptuagesimaFeria||
     canonical(data.sourcePath??envelope?.sourcePath)===canonical(main.path);
   const identified=comms.length===1&&sources.length===1&&
@@ -158,6 +204,18 @@ export function select1962CommemorationsForMassForm({
     !only.inseparable&&!namedSource.inseparable;
   if(!identified)return untouched(proper,"RUBRICAL_CLASSIFICATION_PENDING");
   const mainId=String(main.id??""),commId=String(only.id??"");
+  // Unlike ordinary sanctoral commemorations, the 21 December Advent
+  // II-class feria is privileged by RG 108(e) in ALL Mass forms. Its
+  // prayer source inherits the Adv4-0 Sunday template; 'identified'
+  // above validates this narrow weekday-to-prayer-source alias.
+  const finalEightMatched=finalEightMain&&!sunday&&
+    String(only.id??"")===finalEight.commId&&
+    Number(only.rank)===finalEight.commRank&&
+    String(only.path??"")===finalEight.commPath&&
+    String(namedSource.path??"")===finalEight.commPath;
+  const finalEightPrivileged=finalEightMatched&&finalEight.privileged===true;
+  const finalEightOrdinary=finalEightMatched&&
+    finalEight.privileged===false&&!only.privileged;
   const ordinarySunday=sunday&&Number(main.rank)===2&&Number(only.rank)===2&&
     /^tempora:[a-z0-9-]+-0:2:/i.test(mainId)&&
     /^sancti:/i.test(commId)&&!only.privileged;
@@ -334,6 +392,8 @@ export function select1962CommemorationsForMassForm({
     ordinaryEasterFeria?"EASTER_SEASON_IV_CLASS_FERIA_ORDINARY_COMMEMORATION":
     ordinarySeptuagesimaFeria?"SEPTUAGESIMA_IV_CLASS_FERIA_ORDINARY_COMMEMORATION":
     may13AscensionVigilOrdinary?"ASCENSION_VIGIL_II_CLASS_ORDINARY_BELLARMINE_COMMEMORATION":
+    finalEightPrivileged?"PRIVILEGED_ADVENT_II_CLASS_FERIA_UNDER_ST_THOMAS":
+    finalEightOrdinary?"SOURCE_SCOPED_2026_ORDINARY_COMMEMORATION":
     ordinaryLentenFeria?"LENT_PASSION_III_CLASS_FERIA_ORDINARY_COMMEMORATION":
     (saturdayBvmOrdinary||septuagesimaSaturdayBvmOrdinary)?
       "SATURDAY_BVM_IV_CLASS_ORDINARY_SANCTORAL_COMMEMORATION":null;
@@ -341,7 +401,7 @@ export function select1962CommemorationsForMassForm({
   if(!GROUPS.every(key=>array(data[key]).length===2&&data[key].every(sourceText)))
     return untouched(proper,"ORATION_SOURCE_INCOMPLETE");
   const include=nativityOctaveOwner||privilegedSunday||privilegedAdvent||
-    privilegedLentenFeria||normalizedForm==="LOW";
+    privilegedLentenFeria||finalEightPrivileged||normalizedForm==="LOW";
   const applied=include?comms:[],omitted=include?[]:comms;
   const decision=Object.freeze({
     status:"CERTIFIED",source:"1962_PROPER_RESOLVER",form:normalizedForm,
@@ -363,6 +423,10 @@ export function select1962CommemorationsForMassForm({
         ["1960_GENERAL_RUBRICS_26_107_111_A_D_112_113_114","1960_MISSAL_RUBRICS_433_434"]:
       ordinarySeptuagesimaFeria?
         ["1960_GENERAL_RUBRICS_107_108_111_D_112_113_114","1960_MISSAL_RUBRICS_433_434"]:
+      finalEightPrivileged?
+        ["1960_GENERAL_RUBRICS_24_A_108_E_111_A_113","1960_MISSAL_RUBRICS_433_434"]:
+      finalEightOrdinary?
+        ["1960_GENERAL_RUBRICS_68_107_111_C_D_112_113","1960_MISSAL_RUBRICS_433_434"]:
       may13AscensionVigilOrdinary?
         ["1960_GENERAL_RUBRICS_107_111_C_D_112_113","1960_MISSAL_RUBRICS_433_434"]:
         ["1960_GENERAL_RUBRICS_108_111_113","1960_MISSAL_RUBRICS_433_434"]),
