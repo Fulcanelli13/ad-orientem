@@ -1,0 +1,28 @@
+name: Prayer Holy Face 1895 French day-two source hold
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "data/pray/research/pray-holy-face-1895-fr-day02-transcribed-first-pass.v1.json"
+      - "tests/pray-holy-face-french-1895-day2-research-gate.mjs"
+      - ".github/workflows/pray-holy-face-1895-day2-source-gate.yml"
+      - "src/pray/holy-face-janvier-1887-b25.js"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pray-janvier-day02-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  day-two-source-truth:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate Day II original French and source cross-references
+        run: node tests/pray-holy-face-french-1895-day2-research-gate.mjs
+      - name: Preserve Day I French source and all live language holds
+        run: node tests/pray-holy-face-french-1895-day1-research-gate.mjs
