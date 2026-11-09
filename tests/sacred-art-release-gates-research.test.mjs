@@ -231,3 +231,41 @@ for(const r of recovered29.rows){
 }
 assert.equal(prior.release_gate_evidence.asset_recovery_29.new_assignments_authorised,0);
 console.log('PASS: batch13 confirms 3 provenance-backed local assets and 2 remote previews; all 29 selected image gates fail closed, Bouts legacy release flagged.');
+
+const userDrafts14 = read('data/artwork/research/m2m-recovered-user-library-derivatives-batch14-20261109.v1.json');
+assert.equal(userDrafts14.recovered_drafts.length,2);
+assert.equal(userDrafts14.still_unlocated.length,2);
+assert.equal(userDrafts14.updated_counts_across_29.repo_local_with_provenance,3);
+assert.equal(userDrafts14.updated_counts_across_29.user_library_original_accepted_ai_visual_draft,2);
+assert.equal(userDrafts14.updated_counts_across_29.remote_only_previews,2);
+assert.equal(userDrafts14.updated_counts_across_29.remaining_unlocated_approved_ai_generated_files,2);
+assert.equal(userDrafts14.updated_counts_across_29.composite_easter_vigil,1);
+assert.equal(userDrafts14.updated_counts_across_29.other_unlocated_current_selected_assets,19);
+assert.equal(userDrafts14.updated_counts_across_29.total,29);
+assert.equal(userDrafts14.import_manifest.length,0);
+assert.equal(userDrafts14.new_publications_authorised,0);
+const tissot=userDrafts14.recovered_drafts.find(x=>x.date==='2026-04-08');
+const wierix=userDrafts14.recovered_drafts.find(x=>x.date==='2026-05-29');
+assert.equal(tissot.filename,'AO_Easter_Wednesday_John21_Tissot_AI_Visual_Approved_Draft_2026-10-20.png');
+assert.deepEqual([tissot.width,tissot.height,tissot.size_bytes],[1586,992,2484404]);
+assert.equal(tissot.sha256,'69eba31523b5fb15c781475e186f02bba193cab15e2d596e17b724cde128e3b2');
+assert.equal(wierix.filename,'AO_Pentecost_Ember_Friday_Luke5_Wierix_AI_Visual_Approved_Draft_2026-10-20.png');
+assert.deepEqual([wierix.width,wierix.height,wierix.size_bytes],[1402,1122,2289365]);
+assert.equal(wierix.sha256,'b116bcac8883b6d4559d1dc54fad7336f4365940d8996cc2eb22c075a20cad5a');
+for(const r of userDrafts14.recovered_drafts){
+ assert.equal(r.status,'USER_ACCEPTED_AI_DERIVATIVE_VISUAL_DRAFT');
+ assert.equal(r.original_master_faithful_recolour,false);
+ assert.equal(r.original_file_in_repo,false);
+ assert.equal(r.final_publication_ready,false);
+ assert.equal(r.new_runtime_assignment_authorised,false);
+}
+assert.deepEqual(userDrafts14.still_unlocated.map(x=>x.date).sort(),['2026-03-08','2026-03-22']);
+assert.ok(!JSON.stringify(userDrafts14).includes('file_00000000'),'Private Library handles must not be committed to a public research branch');
+assert.equal(prior.release_gate_evidence.asset_recovery_29.user_library_ai_visual_draft_files_recovered,2);
+assert.equal(prior.release_gate_evidence.asset_recovery_29.approved_ai_derived_originals_remaining_unlocated_across_searched_sources,2);
+const legacyAudit=recovered29.production_regression_alert.static_source_reachability;
+assert.equal(legacyAudit.static_code_path_exists,true);
+assert.equal(legacyAudit.deployed_pages_browser_test_performed,false);
+assert.equal(legacyAudit.released_photo_id,'released-photo:bouts');
+assert.equal(legacyAudit.tracking_issue,'https://github.com/Fulcanelli13/ad-orientem/issues/2761');
+console.log('PASS: two approved AI visual drafts recovered from user Library with manifest hashes; no repo uploads, final release, or rejected Bouts reintroduction.');
