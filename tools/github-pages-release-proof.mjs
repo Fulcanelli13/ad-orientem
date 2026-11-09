@@ -62,6 +62,14 @@ export const DISCOVERY_CRITICAL_PATHS=Object.freeze([
  "data/did-you-know/dyk-h225-world-liturgies-25-publication.v1.json"
 ]);
 
+// Source-owned optional fourteen-photo release: all adapted images, attribution
+// and reader modules must have matching exact bytes in public GitHub Pages.
+export const SAN_POLO_CYCLE_CRITICAL_PATHS=Object.freeze([
+ ...Array.from({length:14},(_,i)=>"assets/stations/san-polo/station-"+String(i+1).padStart(2,"0")+".webp"),
+ "assets/stations/san-polo/LICENSE-ATTRIBUTION.md",
+ "src/pray/stations-san-polo-optional-cycle.v1.js",
+ "src/pray/stations-verified-artwork-release.v1.js",
+]);
 const FIXED_CRITICAL_PATHS=[
  "index.html",
  "sw.js",
@@ -72,6 +80,7 @@ const FIXED_CRITICAL_PATHS=[
  "src/pray/novena-runtime.js",
  "src/pray/prayer-design-pilot.js",
  "src/pray/presentation-runtime.js",
+ ...SAN_POLO_CYCLE_CRITICAL_PATHS,
  ...MASS_SCHOLA_CRITICAL_PATHS,
  ...NOV6_FIRST_FRIDAY_LEONINE_CRITICAL_PATHS,
  ...DISCOVERY_CRITICAL_PATHS,
