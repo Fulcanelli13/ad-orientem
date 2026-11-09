@@ -219,6 +219,11 @@ export function adaptV346ResolvedMass(legacy, options={}) {
       adapter:"V346_RESOLVED_MASS",
       properSource:legacy.properSource??null,
       calendarRank:legacy.calendarRank??null,
+      // Verified ceremony circumstances override a contradictory short-form
+      // option. Unknown context remains null, not presumed nonconventual.
+      conventualMass:options.isConventual??legacy.conventualMass??null,
+      ordinationMass:options.ordinations??options.ordinationMass??
+        legacy.ordinations??legacy.ordinationMass??null,
       // Source-exact selected Calendar Mass + Proper only; requested votive,
       // Requiem and separate special rites never inherit the day's tone.
       musicToneContext:deriveActualMassMusicToneContext({
