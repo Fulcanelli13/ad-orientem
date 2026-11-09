@@ -13,7 +13,7 @@ const original={
   printed:load("../data/research/mass-canon-29-printed-page-witness-crosswalk-20261014.json"),
 };
 const SCHEMA="ao-canon-19-english-ritus-booklet-page-evidence-v1";
-const URL="https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/";
+const BOOKLET_URL="https://archive.ccwatershed.org/pdfs/5276-ritus-servandus-translated-english/download/";
 const pages=Object.freeze({
  "002":13,"005":13,"007":14,"010":14,"012":14,"014":14,"015":14,"020":15,
  "030":15,"031":15,"036":16,"037":16,"041":16,"042":16,"045":16,
@@ -52,8 +52,8 @@ function check(evidence){
   const w=record.printedEnglishTranslationWitness;
   assert.equal(w.pdfPageNumber,page);
   assert.equal(w.zeroBasedPageIndex,page-1);
-  assert.equal(w.deepLink,URL+"#page="+page);
-  assert.equal(w.url,URL);
+  assert.equal(w.deepLink,BOOKLET_URL+"#page="+page);
+  assert.equal(w.url,BOOKLET_URL);
   assert.equal(w.editionLabel,"ENGLISH_TRANSLATION_OF_1962_RITUS_SERVANDUS");
   assert.equal(w.passageLocation,"PRINTED_PAGE_VISUALLY_LOCATED_EN_TRANSLATION_ONLY");
   assert.equal(w.primary1962LatinPrintedFacsimileVerified,false,
