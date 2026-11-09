@@ -2984,17 +2984,22 @@ export function createReaderDomAdapter({
       ?"Hide source-neume references":"Show source-neume references";
   }
 
-  function renderOrdoNotationReferences(){
+  function renderOrdoNotationReferences(ordinaryOverride=null){
     if(!current?.paragraphs)return 0;
     const programme=typeof scholaLocalProgramme==="function"
       ?scholaLocalProgramme():scholaLocalProgramme;
+    const settings={...selectedMassInlineSettings({
+      localProgramme:programme,resolvedMass:prepared?.session?.resolvedMass
+    })};
+    // Update the exact source-owned score immediately on a local selection
+    // change, even if the host persists the profile on its next render.
+    if(ordinaryOverride?.movement)
+      settings[ordinaryOverride.movement]=ordinaryOverride.settingId??"";
     return properNotationPreview.render({mode,
       form:prepared?.session?.resolvedMass?.form,
       resolvedMass:prepared?.session?.resolvedMass,
       massPlan:prepared?.session?.plan??null,
-      selectedSettings:{...selectedMassInlineSettings({
-        localProgramme:programme,resolvedMass:prepared?.session?.resolvedMass
-      }),GOSPEL_TONE:gospelReferenceTone},
+      selectedSettings:{...settings,GOSPEL_TONE:gospelReferenceTone},
       paragraphs:current.paragraphs});
   }
 
@@ -4135,12 +4140,24 @@ export function createReaderDomAdapter({
           if(previousContent)previousContent.hidden=true;
           previousToggle?.setAttribute("aria-expanded","false");
         }
+        const movement=programmeTarget.dataset.scholaKyrialeChoice;
+        const settingId=programmeTarget.value;
         onScholaLocalProgrammeChange?.({kind:"ordinarySelection",
-          eventId:programmeTarget.dataset.scholaKyrialeChoice,value:programmeTarget.value});return;
+          eventId:movement,value:settingId});
+        // The selected source has a full inline Ordinary score only when
+        // its existing archival GABC is present; never make one up.
+        if(current?.paragraphs && properNotationPreview.enabled)
+          renderOrdoNotationReferences({movement,settingId});
+        return;
       }
       if(programmeTarget?.matches?.("[data-schola-ordinary-setting]")){
+        const movement=programmeTarget.dataset.scholaOrdinarySetting;
         onScholaLocalProgrammeChange?.({kind:"ordinarySetting",
-          eventId:programmeTarget.dataset.scholaOrdinarySetting,value:programmeTarget.value});return;
+          eventId:movement,value:programmeTarget.value});
+        // A custom typed melody invalidates the previous source edition.
+        if(current?.paragraphs && properNotationPreview.enabled)
+          renderOrdoNotationReferences({movement,settingId:""});
+        return;
       }
       if(programmeTarget?.matches?.("[data-schola-local-parish]")){
         onScholaLocalProgrammeChange?.({kind:"parishLabel",value:programmeTarget.value});return;
@@ -5498,9 +5515,9 @@ export function createReaderDomAdapter({
         }),
         resolvedMass:prepared?.session?.resolvedMass,
         paragraphs:current.paragraphs});
-      // Existing source-anchored 1961 reference neumes, directly inside the
-      // current Ordo card when explicitly selected in Mass preferences.
-      // Neither the 65-card structure nor approved chant publication changes.
+      // Source-anchored Proper, response and explicitly locally selected
+      // Ordinary research neumes appear by default in the 65-card reader.
+      // Neither canonical cues nor musical-approval status changes.
       renderOrdoNotationReferences();
       ensureShortCardCueTravel();
       // The fixed-height LIVE stage can settle a frame after renderMoment
