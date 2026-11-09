@@ -6,7 +6,7 @@
 // exhaustive printed absolute-pitch/neume/episema/underlay parity is certified.
 // Local selection does not prove what a choir sang. No audio or scores approved.
 export const ADDITIONAL_1961_KYRIALE_RESEARCH_BATCH3=Object.freeze([
-Object.freeze({scoreId:"GREGOBASE-1143",sourceId:1143,movement:"KYRIE",setting:"MASS_01",folio:"4*",liber:"16",printedPages:Object.freeze(["4*"]),sourceUrl:"https://gregobase.selapa.net/chant.php?id=1143",gabc:String.raw`name:Kyrie I;
+Object.freeze({scoreId:"GREGOBASE-1143",sourceId:1143,movement:"KYRIE",setting:"MASS_01",folio:"4*",liber:"16",printedPages:Object.freeze(["4*","5*"]),sourceUrl:"https://gregobase.selapa.net/chant.php?id=1143",gabc:String.raw`name:Kyrie I;
 office-part:Kyriale;
 mode:8;
 book:Graduale Romanum, 1961, p. 4* & The Liber Usualis, 1961, p. 16 & Chants of the Church, 1956, p. 4;
@@ -17,7 +17,7 @@ commentary:X. s.;
 Chri(h_[oh:h]i_[oh:h]h_[oh:h])ste(gfh.//fhgedf.) (,) e(fg!hvGF'E)lé(c')i(d)son.(e.) <i>iij.</i>(::)
 Ký(e.g!hw!iv)ri(h)e(iji___ig.) (,) e(ivHG'FE)lé(fgf')i(f)son.(e.) <i>ij.</i>(::)
 <nlba>Ký(g)ri(fe)e</nlba>(e.g!hw!iv//hi_/ji__ig.) <clear>*(,) e(ivHG'FE)lé(fgf')i(f)son.(e.) (::)`}),
-Object.freeze({scoreId:"GREGOBASE-2980",sourceId:2980,movement:"GLORIA",setting:"MASS_01",folio:"5*",liber:"16",printedPages:Object.freeze(["5*"]),sourceUrl:"https://gregobase.selapa.net/chant.php?id=2980",gabc:String.raw`name:Gloria I;
+Object.freeze({scoreId:"GREGOBASE-2980",sourceId:2980,movement:"GLORIA",setting:"MASS_01",folio:"5*",liber:"16",printedPages:Object.freeze(["5*","6*"]),sourceUrl:"https://gregobase.selapa.net/chant.php?id=2980",gabc:String.raw`name:Gloria I;
 office-part:Kyriale;
 mode:4;
 book:Graduale Romanum, 1961, p. 5* & The Liber Usualis, 1961, p. 16 & Graduale Romanum, 1974, p. 712 & Chants of the Church, 1956, p. 4 & Gregorian Missal, 1990, p. 77 & Liber cantualis, 1983, p. 35;
@@ -25,7 +25,7 @@ transcriber:Andrew Hinkley;
 commentary:X. s.;
 %%
 (c3) GLó(g)ri(fe)a(e') in(e) ex(fg)cél(gf~)sis(f!gwhg) De(fe)o.(e.) (::) Et(e) in(ghi~) ter(ivHG)ra(fg) pax(g) ho(gf)mí(h')ni(f)bus(e.) (,) bo(h)nae(fe) vo(f)lun(fg)tá(ff)tis.(e.) (::) Lau(ef)dá(g')mus(f) te.(ef..) (::) Be(h)ne(gh)dí(i)ci(ivHG)mus(fg) te.(g.) (::) Ad(e)o(f)rá(fg)mus(f) te.(e.) (::) Glo(g)ri(e')fi(g)cá(ih)mus(ih) te.(giivHF'f) (::) Grá(e)ti(fg)as(g') á(g)gi(f)mus(fg) ti(ff)bi(e.) (,) pro(e)pter(fh~) ma(h)gnam(gh) gló(i_[oh:h]h)ri(ij)am(ih~) tu(g.)am.(g.) (::) Dó(fj'!kv)mi(j)ne(i') De(j)us,(i_[oh:h]h) (,) Rex(i) cae(ih)lé(g.)stis,(g.) (,) De(g!hwi)us(ivHG) Pa(ff)ter(e') o(i)mní(hg)pot(fg)ens.(g.) (::) Dó(e)mi(fg)ne(g') Fi(h)li(fe) u(f)ni(fg)gé(f')ni(f)te(e.) (,) Je(ih)su(ih) Chri(g.)ste.(g.) (::) Dó(jvIH')mi(i)ne(ih) De(g.)us,(g.) (,) A(g!hwi)gnus(ivHG) De(ff)i,(e.) (,) Fí(ivHG)li(fe)us(fg) Pa(g.)tris.(g.) (::) Qui(e) tol(fg)lis(g) pec(gf)cá(h)ta(fe) mun(ff)di,(e.) (,) mi(e)se(fg)ré(g)re(fe) no(ff)bis.(e.) (::) Qui(e) tol(fh)lis(h) pec(gh)cá(i)ta(ih) mun(g.)di,(g.) (,) sús(e)ci(fh)pe(h.) de(g)pre(h')ca(i)ti(ih)ó(i)nem(iji) no(g.)stram.(g.) (::) Qui(fji) se(jk)des(j') ad(j) déx(jvIH')te(i)ram(ih~) Pa(g.)tris,(g.) (,) mi(g)se(hi)ré(i)re(hg) no(ff)bis.(e.) (::) Quó(e)ni(fg)am(g) tu(gf) so(h')lus(f) san(ef~)ctus.(f.) (::) Tu(gh) so(i)lus(ij) Dó(ivHG)mi(fg)nus.(g.) (::) Tu(e) so(fg)lus(g) Al(gf~)tís(h')si(f)mus,(e.) (,) Je(ih)su(ih) Chri(g.)ste.(g.) (::) Cum(fj) San(j)cto(ih) Spí(i)ri(hg)tu,(g.) (,) in(e) gló(fh)ri(h')a(h) De(g!hwi)i(ivHG) Pa(ff)tris.(e.) (::) A(iih!iw!jvIHivHG)men.(fg..) (::)`}),
-Object.freeze({scoreId:"GREGOBASE-300",sourceId:300,movement:"SANCTUS_BENEDICTUS",setting:"MASS_01",folio:"6*",liber:"18",printedPages:Object.freeze(["6*"]),sourceUrl:"https://gregobase.selapa.net/chant.php?id=300",gabc:String.raw`name:Sanctus I;
+Object.freeze({scoreId:"GREGOBASE-300",sourceId:300,movement:"SANCTUS_BENEDICTUS",setting:"MASS_01",folio:"6*",liber:"18",printedPages:Object.freeze(["6*","7*"]),sourceUrl:"https://gregobase.selapa.net/chant.php?id=300",gabc:String.raw`name:Sanctus I;
 office-part:Kyriale;
 mode:4;
 book:Graduale Romanum, 1961, p. 6* & The Liber Usualis, 1961, p. 18 & Graduale Romanum, 1974, p. 714 & Chants of the Church, 1956, p. 6 & Gregorian Missal, 1990, p. 79 & Liber cantualis, 1983, p. 36;
