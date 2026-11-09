@@ -1558,19 +1558,6 @@ button.ao-schola-control{cursor:pointer}
   padding-bottom:calc(56px + var(--ao-short-cue-tail,0px))
 }
 
-/* The Gospel card has an independently audited short conclusion between the
-   proclamation and its terminal ceremonial cue. On the actual 390px reader
-   C0087 reaches the 39%-height focus line at about 640px scroll, while
-   the old card stopped at 626px and jumped straight to C0088. Reserve a
-   source-owned, non-text runway even when Gregorian staff or font layout
-   settles after the first double-RAF measurement. Do not change the prayer
-   height, source order, source cue focus algorithm or 65-card boundaries. */
-#ao-r17-native-reader-preview[data-r17-curated-review="true"]
-  .ao-reader-shell[data-mode="LIVE"] .ao-prayer-card:has(
-    .ao-reader-paragraph[data-cue-id="AO.SM.C0087"]){
-  padding-bottom:calc(184px + var(--ao-short-cue-tail,0px))
-}
-
 /* Dynamic Schola dock is independent of the reader. Reserve an
    actually shorter scrolling viewport while its separate panel is open;
    padding alone does not constrain the scroller's outer rectangle. */
@@ -4661,8 +4648,21 @@ export function createReaderDomAdapter({
       const openingTravel=Math.max(0,(center-firstCenter)/1.8)+64;
       // Long composite source cards can place the penultimate cue beyond
       // 1800px; the former cap made C0199 (Per quem) unreachable.
+      // The 390px production Gospel card includes the distinct C0087
+      // "Laus tibi, Christe" response immediately before terminal C0088.
+      // Its 39% reading-line handoff needs more than the original 626px
+      // scroll capacity after the source-neume SVGs finish laying out.
+      // Increasing padding alone does NOT create travel: the CSS prayer
+      // body min-height compensates for the extra parent padding.
+      // Increase the body's genuine minimum reading travel instead.
+      // Exact source ownership only; no extra paragraph, fabricated cue,
+      // altered prayer text or global scroll change.
+      const gospelResponseReserve=cues.some(node=>
+        node.dataset.cueId==="AO.SM.C0087") &&
+        cues.at(-1)?.dataset.cueId==="AO.SM.C0088" ?128:0;
       const guaranteed=Math.min(3600,Math.max(baseline,
-        Math.ceil(requiredScroll+28),Math.ceil(openingTravel)));
+        Math.ceil(requiredScroll+28),Math.ceil(openingTravel))
+        +gospelResponseReserve);
       body.style.setProperty("--ao-min-reading-travel",guaranteed+"px");
       const availableScroll=Math.max(0,card.scrollHeight-viewport);
       closingExtra=Math.max(0,Math.ceil(requiredScroll-availableScroll));
