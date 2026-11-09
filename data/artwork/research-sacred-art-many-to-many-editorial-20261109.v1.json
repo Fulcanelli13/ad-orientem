@@ -223,5 +223,27 @@
       "2026-02-14,08-01,09-12": "Nicolas Mignard Virgin Child Marseille WGA attribution; current exact museum accession unverified"
     },
     "new_proposals_review_methodology": "All 114 Claude NEW_PROPOSAL edges now have individual editorial source-and-context assessments. This is NOT full certification of artist identity, exact underlying physical object, source photograph, license, mobile crop, or runtime assignment; unresolved holds remain explicit."
+  },
+  "release_gate_evidence": {
+    "status": "RESEARCH_ONLY_ALL_NEW_ASSIGNMENTS_BLOCKED",
+    "edge_manifest": "data/artwork/research/m2m-new-assignment-gate-edges-20261109.v1.json",
+    "destination_manifest": "data/artwork/research/m2m-destination-release-gates-640-20261109.v1.json",
+    "regression": "tests/sacred-art-release-gates-research.test.mjs",
+    "source_relationships": 1589,
+    "source_targets": 640,
+    "owner_accepted_prayer_options_preserved": 507,
+    "relevance_reviewed_new_claude_proposals": 114,
+    "authorised_new_assignments": 0,
+    "missing_id_flagged_preserved_primary_destinations": 46,
+    "missing_artwork_id_across_all_edges": 197,
+    "existing_user_rejection_bouts": {
+      "original_id": "cma-122338",
+      "referenced_edges": 13,
+      "affected_destinations": 5,
+      "novena_alternative_discovered": true,
+      "explicit_owner_reversal_not_established": true
+    },
+    "no_autofill_calendar_destinations": 170,
+    "note": "Manifest exports *no* runtime assignments; the referenced edge and destination queues are editorial and fail closed. Existing live art is not invalidated, replaced or published."
   }
 }
