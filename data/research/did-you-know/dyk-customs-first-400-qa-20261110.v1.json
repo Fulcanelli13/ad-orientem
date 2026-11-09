@@ -7,64 +7,35 @@
     "total": 400,
     "by_family": {
       "CANONICAL_CUSTOMS": 36,
-      "PITRE_1900": 171,
-      "WEISER_1958": 193
+      "PITRE_1900": 172,
+      "WEISER_1958": 192
     },
-    "published_customs_identity_reuse": 36,
-    "unpublished_DYK_research_statements": 364,
-    "already_published_DYK_manifest_records_checked": 201,
-    "exact_english_sentences_already_published": 0,
+    "canonical_customs_source_text_reused": 36,
+    "customs_research_observations": 364,
+    "existing_live_DYK_fact_manifest_rows_checked": 201,
+    "exact_english_sentences_already_in_H225": 0,
     "unique_record_ids": 400,
-    "unique_english_copies": 400,
-    "unique_french_copies": 400,
+    "unique_english_texts": 400,
+    "unique_french_texts": 400,
     "unique_source_ids": 430,
-    "source_ids_shared_between_distinct_canonical_customs": [
-      {
-        "id": "MUCEM-BENITIER",
-        "records": [
-          "DYK-CUSTOMS-CANON-DOM-002",
-          "DYK-CUSTOMS-CANON-DOM-003"
-        ]
-      },
-      {
-        "id": "DPP-2001",
-        "records": [
-          "DYK-CUSTOMS-CANON-DEV-006",
-          "DYK-CUSTOMS-CANON-DEAD-001",
-          "DYK-CUSTOMS-CANON-DEAD-003",
-          "DYK-CUSTOMS-CANON-DOM-013",
-          "DYK-CUSTOMS-CANON-BLSS-004"
-        ]
-      },
-      {
-        "id": "ECF-DEAD",
-        "records": [
-          "DYK-CUSTOMS-CANON-DEAD-001",
-          "DYK-CUSTOMS-CANON-DEAD-003"
-        ]
-      }
-    ],
-    "records_with_https_source_link": 400,
-    "manually_reverified_primary_pages_in_this_batch": 0,
-    "research_records_with_inherited_prior_page_image_flag": 219,
-    "research_records_with_source_pointer_only_flag": 0,
-    "new_discovery_publication_approvals": 0,
-    "possible_high_lexical_overlap_with_existing_publication": 1,
-    "records_missing_required_fields": 0
+    "records_with_https_source": 400,
+    "records_marked_new_discovery_publication_approved": 0,
+    "records_with_inherited_prior_source_page_review": 219,
+    "primary_pages_newly_certified_in_this_pass": 0,
+    "possible_high_overlap_with_H225_at_token_jaccard_gte_072": 0,
+    "unique_exceptions_held": 8,
+    "invalid": 0
   },
-  "possible_near_duplicates_with_published_h225": [
-    {
-      "candidate": "DYK-H04-W-B-089",
-      "public": "DYK-R50-W-011",
-      "similarity": 0.778
-    }
-  ],
-  "editorial_acceptance_policy": [
-    "These 400 exact English sentences do not duplicate English copy in H225 public manifests; same underlying historical source can legitimately support multiple observations, subject to full claim-by-claim review.",
-    "No final claim certification or current local practice inferred from source pointers; Weiser 1958 and Pitrè 1900 are historical witness material.",
-    "The 36 existing canonical Customs entries have not thereby obtained new human editorial approval for Did You Know.",
-    "Review possible near-duplicates, historical scope and original source locator, then complete French and English signoff before any new Home release.",
-    "No UNESCO or unrelated world-liturgical subjects in this bank; Glossary definitions are not counted as customs facts.",
-    "The 8 remaining source research candidates form reserve, not extra published facts."
-  ]
+  "high_lexical_overlap_examples": [],
+  "quality_status": {
+    "source_url_syntax": "CHECKED_not_HTTP_link_retrieval",
+    "source_deep_links": "PENDING",
+    "original_page_source_claim_validation": "INHERITED_PARTIAL_NOT_NEWLY_CERTIFIED",
+    "english_copy": "EDITORIAL_SIGNOFF_PENDING",
+    "french_copy": "EDITORIAL_SIGNOFF_PENDING",
+    "semantic_de_duplication": "EXACT_AND_HEURISTIC_COMPLETE_FULL_MANUAL_PENDING",
+    "current_local_practice": "NOT_INFERRED",
+    "home_publication": "BLOCKED"
+  },
+  "release_policy": "Do not change existing Home rotation or imply 400 published; after original claims and native French signoff, separately approve a release subset and verify 320/390px + GitHub Pages exact-byte SHA-256. H250 UNESCO stays on editorial hold."
 }
