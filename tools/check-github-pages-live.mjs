@@ -90,8 +90,8 @@ for(const path of discoveryManifests){
  assert.ok(Array.isArray(data.records),"Missing published Discovery records: "+path);
  discoveryCount+=data.records.length;
 }
-assert.equal(discoveryCount,225,"Public H7 Discovery manifest population must total 225");
-ok("Discovery 225 approved EN/FR facts: all manifests and Home/source-dialog loaders exact-byte SHA-256 parity");
+assert.equal(discoveryCount,250,"Public H7 Discovery manifest population must total 250");
+ok("Discovery 250 approved EN/FR facts: all manifests and Home/source-dialog loaders exact-byte SHA-256 parity");
 
 // A correct HTML shell can still be paired with stale, CDN-cached reader
 // modules. Verify the precise source-owned Pray code released with this SHA.
