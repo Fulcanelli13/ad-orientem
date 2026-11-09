@@ -4,6 +4,7 @@
 // No published-score approval, Gregorian recording, source alias or new reader card.
 // The same renderer can support independently selected chants on other dates.
 import {createOfflineChantEngraver} from "./reader-chant-engraver.js";
+import {schola1961OriginalFacsimile} from "./reader-schola-original-facsimile.js";
 import {ALL_SAINTS_REFERENCE_SCORES} from "./reader-inline-all-saints-reference.js";
 import {EPIPHANY_REFERENCE_SCORES} from "./reader-inline-epiphany-reference.js";
 import {IMMACULATE_CONCEPTION_REFERENCE_SCORES} from "./reader-inline-immaculate-reference.js";
@@ -72,6 +73,30 @@ export const JULY07_REFERENCE_CSS=String.raw`
 .ao-proper-reference-zoom .ao-proper-reference-wide{box-sizing:border-box;min-width:840px;width:max(840px,100%);padding:14px;background:#fff;color:#211d18}
 .ao-proper-reference-zoom .ao-proper-reference-wide svg{display:block;max-width:100%;height:auto}
 .ao-proper-reference-zoom .ao-proper-reference-wide svg :is(path,polygon,polyline,line,text){fill:currentColor}
+.ao-proper-reference-zoom[data-reference-zoom-mode="fit"] .ao-proper-reference-wide{min-width:0;width:100%}
+.ao-proper-reference-zoom[data-reference-zoom-mode="large"] .ao-proper-reference-wide{min-width:840px;width:max(840px,100%)}
+.ao-proper-reference-zoom .ao-proper-reference-scroll{overscroll-behavior:contain}
+.ao-proper-reference-zoom .ao-proper-reference-provenance{
+ margin:0;padding:9px 15px;color:#c4bfb6;font:500 12px/1.45 var(--ao-font-ui,system-ui,sans-serif)
+}
+.ao-proper-reference-zoom-tools{
+ display:flex;flex-wrap:wrap;gap:9px;align-items:center;padding:6px 15px 12px;
+ color:#eee7db;font:500 12px/1.3 var(--ao-font-ui,system-ui,sans-serif)
+}
+.ao-proper-reference-zoom-tools button,.ao-proper-reference-zoom-tools a{
+ display:inline-flex;align-items:center;justify-content:center;min-height:44px;
+ padding:7px 11px;border:1px solid #ffffff55;border-radius:6px;
+ color:#eee7db;background:transparent;text-decoration:none;cursor:pointer
+}
+.ao-proper-reference-zoom-tools button:focus-visible,.ao-proper-reference-zoom-tools a:focus-visible{
+ outline:2px solid #d6caa6;outline-offset:2px
+}
+.ao-ordinary-printed-source{
+ grid-column:2;grid-row:3;justify-self:start;display:inline-flex;align-items:center;
+ min-height:40px;color:var(--ao-muted,#c8c3b9);text-decoration:underline;
+ text-underline-offset:3px;font:500 11px/1.4 var(--ao-font-ui,system-ui,sans-serif)
+}
+.ao-ordinary-printed-source:focus-visible{outline:2px solid var(--ao-mass-accent,#aabed3)}
 @media(max-width:480px){.ao-proper-reference-zoom{width:100vw;height:100dvh;max-height:none;border-radius:0}}
 
 /* Claude A/C presentation: embedded dark-ink staff, not a boxed research widget. */
@@ -205,14 +230,53 @@ export function createDatedProperNotationPreview({
   const dialog=doc.createElement("dialog");dialog.className="ao-proper-reference-zoom";
   modal=dialog;
   const head=doc.createElement("header"),title=doc.createElement("span");
-  title.textContent=(score.incipit??score.sourceName)+" · original 1961 reference";
+  title.textContent=(score.incipit??score.sourceName)+" · Gregorian notation";
+  dialog.dataset.referenceZoomMode="fit";
   const close=doc.createElement("button");close.type="button";close.textContent="×";
   close.setAttribute("aria-label","Close enlarged Gregorian notation");
   close.addEventListener("click",closeZoom);head.append(title,close);
   const scroll=doc.createElement("div");scroll.className="ao-proper-reference-scroll";
   const wide=doc.createElement("div");wide.className="ao-proper-reference-wide";
   wide.setAttribute("role","img");wide.setAttribute("aria-label",(score.incipit??score.sourceName)+" · enlarged Gregorian notation");
-  scroll.append(wide);dialog.append(head,scroll);doc.body.append(dialog);
+  const provenance=doc.createElement("p");
+  provenance.className="ao-proper-reference-provenance";
+  provenance.textContent="Research transcription · not musically certified or evidence of the chant sung at this Mass.";
+  const tools=doc.createElement("div");tools.className="ao-proper-reference-zoom-tools";
+  const size=doc.createElement("button");size.type="button";
+  size.dataset.referenceZoomSize="";
+  size.textContent="Large print · scroll";
+  size.setAttribute("aria-label","Enlarge the score; scroll horizontally to read");
+  size.setAttribute("aria-pressed","false");
+  size.addEventListener("click",()=>{
+    const large=dialog.dataset.referenceZoomMode!=="large";
+    dialog.dataset.referenceZoomMode=large?"large":"fit";
+    size.textContent=large?"Fit screen":"Large print · scroll";
+    size.setAttribute("aria-pressed",String(large));
+    size.setAttribute("aria-label",large?"Fit the Gregorian score to screen width":
+      "Enlarge the score; scroll horizontally to read");
+    const frame=doc.defaultView?.requestAnimationFrame;
+    if(frame)frame(()=>{void modalEngraver?.reflow?.()});
+    else void modalEngraver?.reflow?.();
+  });
+  tools.append(size);
+  const original=score.kind==="ORDINARY_RESEARCH"?
+    schola1961OriginalFacsimile(score.movement,score.settingId):null;
+  if(original?.originalEditionPdf?.startsWith("https://")){
+    const sourceLink=doc.createElement("a");sourceLink.dataset.referenceZoomOriginal="";
+    sourceLink.href=original.originalEditionPdf;
+    sourceLink.target="_blank";sourceLink.rel="noopener noreferrer";
+    sourceLink.textContent="Original 1961 printed page · "+original.printedPages.join(", ");
+    tools.append(sourceLink);
+  }
+  if(typeof score.sourceUrl==="string"&&score.sourceUrl.startsWith("https://")){
+    const transcription=doc.createElement("a");
+    transcription.dataset.referenceZoomTranscription="";
+    transcription.href=score.sourceUrl;
+    transcription.target="_blank";transcription.rel="noopener noreferrer";
+    transcription.textContent="Transcription source";
+    tools.append(transcription);
+  }
+  scroll.append(wide);dialog.append(head,provenance,tools,scroll);doc.body.append(dialog);
   dialog.addEventListener("cancel",e=>{e.preventDefault();closeZoom()});
   dialog.addEventListener("click",e=>{if(e.target===dialog)closeZoom()});
   dialog.showModal?.();close.focus();
@@ -281,11 +345,11 @@ export function createDatedProperNotationPreview({
        chooser.className="ao-ordinary-inline-choice";
        chooser.dataset.ordinaryReferenceChooser=movement;
        const hint=doc.createElement("span");
-       hint.textContent="Gregorian notation · choose your local "+movement.replaceAll("_"," ").toLowerCase()+" setting";
+       hint.textContent="Gregorian notation · select a "+movement.replaceAll("_"," ").toLowerCase()+" reference (not a claim of local singing)";
        const select=doc.createElement("select");
        select.setAttribute("aria-label","Select source-indexed "+movement.replaceAll("_"," ")+" Gregorian melody");
        const empty=doc.createElement("option");
-       empty.value="";empty.textContent="No setting selected · printed Latin only";
+       empty.value="";empty.textContent="Select a setting to show its notation";
        select.append(empty);
        for(const choice of choices){
          const option=doc.createElement("option");
@@ -386,6 +450,18 @@ export function createDatedProperNotationPreview({
         "Show Gregorian notation":"Show text without Gregorian notation");
     });
     host.append(mark,expand,title,viewToggle);
+    if(score.kind==="ORDINARY_RESEARCH"){
+      const original=schola1961OriginalFacsimile(score.movement,score.settingId);
+      if(original?.originalEditionPdf?.startsWith("https://")){
+        const source=doc.createElement("a");
+        source.className="ao-ordinary-printed-source";
+        source.dataset.ordinaryPrintedSource=score.settingId;
+        source.href=original.originalEditionPdf;
+        source.target="_blank";source.rel="noopener noreferrer";
+        source.textContent="View original 1961 printed notation · p. "+original.printedPages.join(", ");
+        host.append(source);
+      }
+    }
     // A/C: LIVE translations follow the sung staff, not precede it.
     // MISSAL keeps the two bilingual columns in grid row 1 with this
     // single full-width staff in grid row 2.
