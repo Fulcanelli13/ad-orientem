@@ -1,0 +1,43 @@
+name: Prayer — seven penitential psalms full offline source and phone
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/pray-seven-penitential-offline-source.yml'
+      - 'src/pray/penitential-psalms-local-witnesses.v1.js'
+      - 'src/pray/presentation-runtime.js'
+      - 'src/pray/penitential-psalms-source.js'
+      - 'tests/pray-seven-penitential-local-source-20261109.mjs'
+      - 'tests/pray-seven-penitential-local-phone-20261109.mjs'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pray-penitential-offline-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  source-exact:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - name: Verify all 21 bundled witness chapters against original Catholic text files
+        run: node tests/pray-seven-penitential-local-source-20261109.mjs
+      - name: Preserve existing seven Psalm, Litany and Tenebrae source routing
+        run: node tests/pray-penitential-litany-tenebrae-source-faces-v1.mjs
+  offline-phone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Verify 28 source-exact offline Psalm reader states on EN/FR phones
+        run: node tests/pray-seven-penitential-local-phone-20261109.mjs

@@ -96,14 +96,19 @@ try{
   globalThis.__TEST_originalScriptureLoad=svc.load;
   // Deliberately invalid response: no chapter text. The app must refuse to
   // label it as a real loaded Catholic Bible reading.
-  svc.load=async()=>({reference:"Psalms 6:1",englishChapter:[],frenchChapter:[],latinChapter:[]});
+  svc.load=async()=>{globalThis.__TEST_invalidPsalmLoads=(globalThis.__TEST_invalidPsalmLoads||0)+1;return {reference:"Psalms 6:1",englishChapter:[],frenchChapter:[],latinChapter:[]}};
  });
  assert.equal(await open("pray.penitential_psalms"),true);
- await page.waitForSelector(reader+" [data-ao-scripture-content='unavailable']",{timeout:15000});
- assert.match(await page.locator(settle).innerText(),/not be loaded|n’a pas pu être chargé/);
+ await page.waitForFunction(()=>globalThis.__TEST_invalidPsalmLoads>=1,null,{timeout:15000});
+ await page.waitForSelector(reader+" [data-ao-scripture-content='local-witness']",{timeout:15000});
+ assert.equal(await page.locator(reader+" [data-ao-penitential-local-witness='dr-challoner']").count(),1,
+  "An empty service result must leave the complete historically sourced offline Psalm readable");
+ assert.equal(await page.locator(reader+" [data-ao-penitential-source-status='UNCOLLATED_SOURCE_WITNESS']").count(),1);
  assert.equal(await page.locator(reader+" [data-p435930-scripture-retry='psalm']").count(),1);
- assert.equal(await page.locator(reader+" .aoP435930ScriptureVerse").count(),0);
- await page.screenshot({path:resolve(artifact,"psalm-source-unavailable-390.png"),animations:"disabled"});
+ assert.equal(await page.locator(reader+" .aoP435930ScriptureVerse").count(),11,
+  "Psalm 6 complete Douay–Rheims local witness must survive an invalid remote response");
+ assert.doesNotMatch(await page.locator(settle).innerText(),/VERIFIED_FORMAT_TEST_ONLY|FORMAT_FR_TEST/);
+ await page.screenshot({path:resolve(artifact,"psalm-source-local-fallback-390.png"),animations:"disabled"});
  await page.evaluate(()=>{
   const svc=globalThis.AO_RUNTIME_V8.scriptureService;
   svc.load=async()=>({
@@ -151,18 +156,21 @@ try{
  await page.waitForSelector(reader+" [data-ao-scripture-content='ready']",{timeout:10000});
  assert.equal(await page.locator(reader+" .aoP435930ScriptureVerse").count(),1);
  await page.screenshot({path:resolve(artifact,"gospel-settled-fixture-390.png"),animations:"disabled"});
- // A permanently stalled upstream call cannot hold "Loading" forever.
- // The first-party reader must change to an honest unavailable state and
- // allow a fresh request of the same original Psalm.
+ // A stalled upstream call must leave the complete locally bundled Psalm readable.
+ // Observe the 12-second service deadline before checking its preserved source.
  await page.evaluate(()=>{
   globalThis.AO_RUNTIME_V8.scriptureService.load=()=>new Promise(()=>{});
  });
  assert.equal(await open("pray.penitential_psalms"),true);
- await page.waitForSelector(reader+" [data-ao-scripture-content='unavailable']",{timeout:16000});
+ // The 12-second source deadline is best tested by content state, not by
+ // observing a browser console warning (which may be suppressed on rerender).
+ await page.waitForTimeout(13500);
+ await page.waitForSelector(reader+" [data-ao-scripture-content='local-witness']",{timeout:2000});
  assert.equal(await page.locator(reader+" [data-p435930-scripture-retry='psalm']").count(),1);
- assert.match(await page.locator(reader+" [data-ao-scripture-content='unavailable']").innerText(),
-  /could not be loaded|n’a pas pu être chargé/i);
- await page.screenshot({path:resolve(artifact,"psalm-timeout-320.png"),animations:"disabled"});
+ assert.equal(await page.locator(reader+" .aoP435930ScriptureVerse").count(),11,
+  "A timed-out upstream service must leave complete local Psalm 6 readable");
+ assert.equal(await page.locator(reader+" [data-ao-penitential-source-status='UNCOLLATED_SOURCE_WITNESS']").count(),1);
+ await page.screenshot({path:resolve(artifact,"psalm-timeout-local-preserved-320.png"),animations:"disabled"});
  assert.equal(await open("pray.litany_saints"),true);
  await page.waitForSelector(reader+" .aoDevoSequenceTimeline",{timeout:12000});
  assert.ok(await page.locator(reader+" .aoDevoStop").count()>=2);
