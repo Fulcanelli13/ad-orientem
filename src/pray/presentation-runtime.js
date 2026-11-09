@@ -3161,7 +3161,7 @@ async function warmPenitentialPsalmCorpus(){
   const ref=penitentialPsalmReference(p);
   try{
    if(typeof svc?.load!=='function')throw Error('Canonical Scripture service unavailable');
-   const data=await svc.load('psalm',{en:ref,fr:ref,lat:ref},{contextOnly:true});
+   const data=await svc.load('psalm',penitentialScriptureReferences(p),{contextOnly:true});
    const audit=auditPenitentialPsalmResponse(data);
    const deficiencies=Object.entries(audit).filter(([_,x])=>x.verses<4||!x.uniqueOrdered||!x.nonempty||!x.contiguous).map(([name])=>name);
    PEN_CACHE.audit.push({ref,audit});
@@ -3177,8 +3177,8 @@ function penitentialOfflineControls(){
  const counts=PEN_CACHE.audit.map(x=>`${esc(x.ref)}: EN ${x.audit.en.verses}, FR ${x.audit.fr.verses}, LA ${x.audit.la.verses}`).join(' · ');
  return `<details class="aoP435930PrayerOptions aoBatch03PsalmOffline" data-ao-penitential-offline>
  <summary>${esc(L('All seven Psalms · source and offline access','Sept psaumes · sources et accès hors ligne'))}</summary>
- <p>${esc(L('Only the canonical Catholic Scripture service supplies verses. To prepare these seven chapters for later offline access, load them once while connected. The verification checks verse order and available EN/FR/LA faces; no text is invented. Browser storage may be cleared by the device.',
- 'Seul le service biblique catholique canonique fournit les versets. Pour préparer ces sept chapitres à une lecture ultérieure hors connexion, chargez-les d’abord avec Internet. La vérification examine l’ordre et les versions EN/FR/LA disponibles ; aucun texte n’est inventé. Le navigateur peut effacer son cache.'))}</p>
+ <p>${esc(L('All seven complete Psalms are included locally in the Douay–Rheims English and Crampon 1923 French source transcriptions for first-use offline reading. They are not independently print-collated. Optionally check the canonical Scripture service for extra language witnesses, including Latin, when connected.',
+ 'Les sept psaumes intégraux sont inclus localement dans les transcriptions sources Douay–Rheims (anglais) et Crampon 1923 (français), accessibles hors connexion dès la première lecture. Ils ne sont pas collationnés indépendamment sur l’imprimé. Une vérification facultative par le service biblique peut rechercher des témoins supplémentaires, notamment latins, en ligne.'))}</p>
  <button type="button" data-p435930-pen-cache ${PEN_CACHE.busy?'disabled':''}>${esc(PEN_CACHE.busy?L('Checking seven chapters…','Vérification des sept chapitres…'):L('Load and check all seven chapters','Charger et vérifier les sept chapitres'))}</button>
  <p role="status" data-ao-pen-cache-status>${esc(PEN_CACHE.busy?L('Loading validated Scripture texts','Chargement des textes bibliques validés'):PEN_CACHE.checked?L('Chapters checked: ','Chapitres examinés : ')+PEN_CACHE.checked+'/7 · '+(PEN_CACHE.complete?L('All language faces present and ordered','Toutes les versions présentes et ordonnées'):L('Some language faces are missing or need review','Certaines versions manquent ou demandent une vérification')):'')}</p>
  ${PEN_CACHE.audit.length?`<details><summary>${esc(L('Chapter coverage details','Couverture par chapitre'))}</summary><p>${counts}</p></details>`:''}
@@ -3201,7 +3201,7 @@ function renderPenitential(){
  <details class="aoP435930PrayerOptions aoP435930GuidedContext"><summary>${esc(L('Guide to the traditional sequence','Guide de la séquence traditionnelle'))}</summary>
  ${callout(esc(L('Pray the seven Psalms in their traditional order. The app guides the sequence; it does not add a new penitential prayer around them.','Priez les sept Psaumes dans leur ordre traditionnel. L’application guide la séquence ; elle n’ajoute pas une nouvelle prière pénitentielle autour d’eux.')),'rubric')}${devotionalGuide('penitential')}</details>
  ${penitentialOfflineControls()}
- ${devotionalSource(L('Historical Seven Penitential Psalms sequence','Séquence historique des sept psaumes pénitentiels'),L('The historical books witness the order; the verses are displayed from the separately selected Catholic Scripture edition.','Les livres historiques attestent l’ordre ; les versets proviennent de l’édition biblique catholique choisie séparément.'),'penitential')}
+ ${devotionalSource(L('Historical Seven Penitential Psalms sequence','Séquence historique des sept psaumes pénitentiels'),L('Historical source-witness chapters are included locally (D–R English, Crampon French, CPDV English). Latin or other selected Scripture faces appear only if actually returned by the Catholic Scripture service; full print collation remains open.','Les chapitres de témoins historiques sont inclus localement (Douay–Rheims anglais, Crampon français, CPDV anglais). Le latin ou d’autres versions bibliques ne sont affichés que s’ils sont effectivement fournis par le service biblique ; la collation imprimée intégrale reste ouverte.'),'penitential')}
  </main>`;
 }
 // The downloaded pages contain material *after* the Litany. Extract only the
