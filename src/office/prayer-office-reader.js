@@ -223,6 +223,30 @@ export function openDivineOfficeReader(win=globalThis,{date=todayLocal()}={}){
   if(christmas.value){input.value=christmas.value;hour="COMPLINE";draw()}
  });
  bar.append(christmas);
+ // Private-source certificate expanded across civil 2026/2027 year boundary.
+ // Native Prayer retains a compact selector, not seven extra phone buttons.
+ const newYear=d.createElement("select");
+ newYear.setAttribute("aria-label","New Year Compline date");
+ const newYearPrompt=d.createElement("option");
+ newYearPrompt.value="";
+ newYearPrompt.textContent="Octave & Holy Name · 28 Dec–3 Jan";
+ newYear.append(newYearPrompt);
+ for(const [date,caption] of [
+  ["2026-12-28","28 Dec · Holy Innocents"],
+  ["2026-12-29","29 Dec · Christmas Octave V"],
+  ["2026-12-30","30 Dec · Christmas Octave VI"],
+  ["2026-12-31","31 Dec · First Compline of Circumcision"],
+  ["2027-01-01","1 Jan · Circumcision of Our Lord"],
+  ["2027-01-02","2 Jan · First Compline of Holy Name"],
+  ["2027-01-03","3 Jan · Most Holy Name of Jesus"]
+ ]){
+  const option=d.createElement("option");
+  option.value=date;option.textContent=caption;newYear.append(option);
+ }
+ newYear.addEventListener("change",()=>{
+  if(newYear.value){input.value=newYear.value;hour="COMPLINE";draw()}
+ });
+ bar.append(newYear);
  host.append(bar);
  const hours=d.createElement("div");hours.className="aoOfHours";host.append(hours);
  let hour="VESPERS";
