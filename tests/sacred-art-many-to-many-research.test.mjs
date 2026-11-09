@@ -53,3 +53,19 @@ assert.deepEqual(episodeErrors.map(r=>r.destination_id).sort(),['2026-02-15','20
 assert.equal(sceneBatch.historical_conflicts[0].artwork_id,'cma-122338');
 assert.equal(sceneBatch.historical_conflicts[0].affected_destinations.length,4);
 console.log('PASS: source-scoped batch1 adjudications; 5 pericope conflicts, 2 qualified matches, 3 holds, 4 preserved historical Bouts conflicts.');
+
+
+const sceneBatch2=read('data/artwork/research/m2m-scene-adjudication-batch2-20261109.v1.json');
+assert.equal(sceneBatch2.records.length,15);
+assert.equal(new Set(sceneBatch2.records.map(r=>r.destination_id)).size,15);
+assert.equal(sceneBatch2.records.filter(r=>r.adjudication_state==='CORRECT_LITURGICAL_EVENT_NOT_DIRECT_NARRATED_GOSPEL'||r.adjudication_state==='NOT_EXACT_APPOINTED_GOSPEL_SCENE'||r.adjudication_state==='FEAST_AND_EPISTLE_DIRECT_NOT_GOSPEL_SCENE').length,3);
+assert.deepEqual(sceneBatch2.records.filter(r=>['CORRECT_LITURGICAL_EVENT_NOT_DIRECT_NARRATED_GOSPEL','NOT_EXACT_APPOINTED_GOSPEL_SCENE','FEAST_AND_EPISTLE_DIRECT_NOT_GOSPEL_SCENE'].includes(r.adjudication_state)).map(r=>r.destination_id).sort(),['2026-01-13','2026-11-22','2026-12-26']);
+const originalMultipleDates=['2026-03-26','2026-09-25','2026-11-03','2026-11-06'];
+for(const date of originalMultipleDates)assert.ok(sceneBatch2.records.some(r=>r.destination_id===date),'Many-to-many physical re-use must be preserved');
+for(const rec of sceneBatch2.records){
+ assert.equal(rec.assignment_to_runtime_authorised,false);
+ assert.equal(rec.exact_photo_publication_authorised,false);
+ assert.equal(rec.actual_pixel_visual_review_completed,false);
+ assert.ok(rec.physical_object_identity&&rec.source_urls?.length>0&&rec.calendar_gospel_reference);
+}
+assert.equal(idx.review_evidence.remaining_new_Claude_proposals_needing_individual_source_adjudication,89);
