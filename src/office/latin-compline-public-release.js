@@ -9,7 +9,8 @@
 import {DIVINUM_OFFICIUM_PIN as PIN}
  from "../app/source-transport-compat.js";
 import {assemblePrivateOfficeReview,
- assembleChristmas2026PrivateOfficeResearchReview}
+ assembleChristmas2026PrivateOfficeResearchReview,
+ assembleDec28Jan03PrivateOfficeResearchReview}
  from "./private-office-review.js";
 import {COMPLINE_CONTEXT,COMPLINE_MINISTER,projectComplineRecitation}
  from "./compline-recitation-projection.js";
@@ -19,6 +20,9 @@ import {reviewChristmas2026LatinComplineCertificate,
  CHRISTMAS_2026_RELEASE_PROFILES,
  CHRISTMAS_2026_MARIAN_PINNED_BLOB_SHA}
  from "./compline-christmas-2026-release-certificate.js";
+import {reviewDec28Jan03LatinComplineCertificate,
+ DEC28_JAN03_LATIN_RELEASE_PROFILES}
+ from "./compline-dec28-jan03-2027-release-certificate.js";
 
 export const LATIN_COMPLINE_RELEASE_SCHEMA="ao.office.latin-compline-release.v1";
 export const LATIN_COMPLINE_RELEASE=Object.freeze({
@@ -85,6 +89,14 @@ export const CHRISTMAS_2026_COMPLINE_RELEASE=Object.freeze({
  language:"la",calendarScope:"UNIVERSAL",hour:"COMPLINE",
  sourceRevision:PIN,rightsApproved:true,publicReleaseApproved:true,
  printed1961MamePsalterFacsimileVerified:false
+});
+/** Further seven finite universal Latin dates, independent of Advent/Christmas. */
+export const DEC28_JAN03_LATIN_COMPLINE_RELEASE=Object.freeze({
+ approvedDates:Object.freeze(DEC28_JAN03_LATIN_RELEASE_PROFILES.map(p=>p.date)),
+ hour:"COMPLINE",calendarScope:"UNIVERSAL",language:"la",
+ sourceRevision:PIN,sourceMarianBlobSha:CHRISTMAS_2026_MARIAN_PINNED_BLOB_SHA,
+ rightsApproved:true,publicReleaseApproved:true,
+ printedMame1961PsalterFacsimileCollated:false
 });
 const empty=(reason)=>Object.freeze({
  schema:LATIN_COMPLINE_RELEASE_SCHEMA,
@@ -213,18 +225,33 @@ export function latinComplineReleaseEligibility({
  date,hour="COMPLINE",calendarScope="UNIVERSAL"
 }={}){
  const christmas=CHRISTMAS_2026_COMPLINE_RELEASE.approvedDates.includes(date);
+ const yearBoundary=DEC28_JAN03_LATIN_COMPLINE_RELEASE.approvedDates.includes(date);
  if(hour!=="COMPLINE"||
-    !(LATIN_COMPLINE_RELEASE.approvedDates.includes(date)||christmas)||
+    !(LATIN_COMPLINE_RELEASE.approvedDates.includes(date)||christmas||yearBoundary)||
     calendarScope!==LATIN_COMPLINE_RELEASE.calendarScope)
   return empty("HOUR_DATE_OR_CALENDAR_OUTSIDE_LATIN_RELEASE");
  const christmasCertificate=christmas?
   reviewChristmas2026LatinComplineCertificate(date):null;
- const appointment=christmas?null:reviewAdventIComplineAppointment(date);
+ const yearBoundaryCertificate=yearBoundary?
+  reviewDec28Jan03LatinComplineCertificate(date):null;
+ const appointment=christmas||yearBoundary?null:reviewAdventIComplineAppointment(date);
  // Every dated appointment has its own immutable rubrical certificate.
  // Sunday and St Andrew use Sunday psalms; the two Saturdays still use
  // Saturday psalms. Never equate a Sunday with the previous Saturday.
- const profile=christmas?christmasCertificate?.profile:APPROVED_DATE_PROFILES[date];
- if(christmas){
+ const profile=yearBoundary?yearBoundaryCertificate?.profile:
+  christmas?christmasCertificate?.profile:APPROVED_DATE_PROFILES[date];
+ if(yearBoundary){
+  if(yearBoundaryCertificate?.status!=="EXPLICIT_FINITE_YEAR_BOUNDARY_LATIN_CERTIFIED"||
+     !profile||
+     DEC28_JAN03_LATIN_COMPLINE_RELEASE.sourceRevision!==PIN||
+     DEC28_JAN03_LATIN_COMPLINE_RELEASE.sourceMarianBlobSha!==
+      CHRISTMAS_2026_MARIAN_PINNED_BLOB_SHA||
+     DEC28_JAN03_LATIN_COMPLINE_RELEASE.calendarScope!=="UNIVERSAL"||
+     DEC28_JAN03_LATIN_COMPLINE_RELEASE.language!=="la"||
+     !DEC28_JAN03_LATIN_COMPLINE_RELEASE.rightsApproved||
+     !DEC28_JAN03_LATIN_COMPLINE_RELEASE.publicReleaseApproved)
+   return empty("YEAR_BOUNDARY_DATE_TEXT_OR_RELEASE_CERTIFICATE_UNRESOLVED");
+ }else if(christmas){
   if(christmasCertificate?.status!=="EXPLICIT_FINITE_ROMAN_1960_LATIN_TEXT_CERTIFIED"||
      !profile||
      CHRISTMAS_2026_COMPLINE_RELEASE.sourceRevision!==PIN||
@@ -276,9 +303,9 @@ export function latinComplineReleaseEligibility({
   exact1961PsalterLeafVerified:false,
   psalmDay:profile.psalmDay,printedPsalmDisplayFrames:profile.printedPsalmDisplayFrames,
   officeDate:profile.officeDate??date,
-  marianSection:christmas?profile.marianSection:"Advent",
-  certificateFamily:christmas?
-   "CHRISTMAS_2026_FINITE_LATIN":"ADVENT_2026_FINITE_LATIN",
+  marianSection:christmas||yearBoundary?profile.marianSection:"Advent",
+  certificateFamily:yearBoundary?"YEAR_BOUNDARY_2027_FINITE_LATIN":
+   christmas?"CHRISTMAS_2026_FINITE_LATIN":"ADVENT_2026_FINITE_LATIN",
   language:"la",sourceTextReleased:true,rightsApproved:true,
   publishable:true,published:true
  });
@@ -299,7 +326,9 @@ export async function loadPublishedLatinCompline({
  if(!Object.values(COMPLINE_MINISTER).includes(minister))
   return empty("UNAPPROVED_PRESIDING_MINISTER");
  if(typeof fetchSource!=="function")return empty("SOURCE_TRANSPORT_REQUIRED");
- const original=permission.certificateFamily==="CHRISTMAS_2026_FINITE_LATIN"?
+ const original=permission.certificateFamily==="YEAR_BOUNDARY_2027_FINITE_LATIN"?
+  await assembleDec28Jan03PrivateOfficeResearchReview({date,fetchSource}):
+  permission.certificateFamily==="CHRISTMAS_2026_FINITE_LATIN"?
   await assembleChristmas2026PrivateOfficeResearchReview({date,fetchSource}):
   await assemblePrivateOfficeReview({
    hour:"COMPLINE",date,fetchSource,languageMode:"latin"
