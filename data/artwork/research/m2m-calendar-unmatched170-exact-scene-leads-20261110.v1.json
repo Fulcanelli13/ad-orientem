@@ -23,17 +23,17 @@
   ],
   "counts": {
     "baselineUnmatchedCalendarTargets": 170,
-    "targetsWithNewResearchLeads": 55,
-    "targetsStillWithoutNamedLeads": 115,
-    "proposedRelationshipEdges": 65,
+    "targetsWithNewResearchLeads": 69,
+    "targetsStillWithoutNamedLeads": 101,
+    "proposedRelationshipEdges": 79,
     "existing989Edges": 24,
-    "newInstitutionalObjectEdges": 35,
-    "secondaryOrCommonsOnlyEdges": 6,
+    "newInstitutionalObjectEdges": 46,
+    "secondaryOrCommonsOnlyEdges": 9,
     "byClass": {
       "II": {
         "unmatchedBaseline": 29,
-        "withResearchLeads": 21,
-        "stillWithoutLeads": 8
+        "withResearchLeads": 25,
+        "stillWithoutLeads": 4
       },
       "III": {
         "unmatchedBaseline": 101,
@@ -42,8 +42,8 @@
       },
       "IV": {
         "unmatchedBaseline": 40,
-        "withResearchLeads": 25,
-        "stillWithoutLeads": 15
+        "withResearchLeads": 35,
+        "stillWithoutLeads": 5
       }
     },
     "newAuthorizedAssignments": 0
@@ -1125,9 +1125,25 @@
       "observedPrincipalId": ":feria:4:w",
       "gospelReferenceFromMatchingIndex": "Luke 14:16–24",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Wellcome:45078i",
+          "title": "The Halt and the Blind Summoned to the Great Supper",
+          "artist": "Joost Cornelisz Droochsloot",
+          "sourceUrl": "https://wellcomecollection.org/works/jgxd7rrf",
+          "relation": "GOSPEL_PARABLE",
+          "scriptureOrIdentityAnchor": "Luke 14:16–24",
+          "medium": "oil on canvas",
+          "remark": "Inherited Gospel/Proper crosswalk must be reverified before rendering",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-06-09",
@@ -1136,9 +1152,25 @@
       "observedPrincipalId": ":feria:4:w",
       "gospelReferenceFromMatchingIndex": "Luke 14:16–24",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Wellcome:45078i",
+          "title": "The Halt and the Blind Summoned to the Great Supper",
+          "artist": "Joost Cornelisz Droochsloot",
+          "sourceUrl": "https://wellcomecollection.org/works/jgxd7rrf",
+          "relation": "GOSPEL_PARABLE",
+          "scriptureOrIdentityAnchor": "Luke 14:16–24",
+          "medium": "oil on canvas",
+          "remark": "Inherited Gospel/Proper crosswalk must be reverified before rendering",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-06-10",
@@ -1409,9 +1441,25 @@
       "observedPrincipalId": "tempora:Pent07-0:2:g",
       "gospelReferenceFromMatchingIndex": "Matthew 7:15–21",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Rijks:200392356",
+          "title": "False Prophets",
+          "artist": "Antonie Wierix II after Bernardino Passeri",
+          "sourceUrl": "https://www.rijksmuseum.nl/en/collection/object/Valse-profeten--54b4c73b2f0d53a44224d455540cc642",
+          "relation": "GOSPEL_PARABLE",
+          "scriptureOrIdentityAnchor": "Matthew 7:15 — wolves in sheep's clothing",
+          "medium": "engraving print",
+          "remark": "Institutional source explicitly indexes Matthew 7:15; painting preference unmet",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-07-13",
@@ -1420,9 +1468,25 @@
       "observedPrincipalId": ":feria:4:w",
       "gospelReferenceFromMatchingIndex": "Matthew 7:15–21",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Rijks:200392356",
+          "title": "False Prophets",
+          "artist": "Antonie Wierix II after Bernardino Passeri",
+          "sourceUrl": "https://www.rijksmuseum.nl/en/collection/object/Valse-profeten--54b4c73b2f0d53a44224d455540cc642",
+          "relation": "GOSPEL_PARABLE",
+          "scriptureOrIdentityAnchor": "Matthew 7:15 — wolves in sheep's clothing",
+          "medium": "engraving print",
+          "remark": "Institutional source explicitly indexes Matthew 7:15; painting preference unmet",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-07-15",
@@ -1442,9 +1506,25 @@
       "observedPrincipalId": ":feria:4:w",
       "gospelReferenceFromMatchingIndex": "Matthew 7:15–21",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Rijks:200392356",
+          "title": "False Prophets",
+          "artist": "Antonie Wierix II after Bernardino Passeri",
+          "sourceUrl": "https://www.rijksmuseum.nl/en/collection/object/Valse-profeten--54b4c73b2f0d53a44224d455540cc642",
+          "relation": "GOSPEL_PARABLE",
+          "scriptureOrIdentityAnchor": "Matthew 7:15 — wolves in sheep's clothing",
+          "medium": "engraving print",
+          "remark": "Institutional source explicitly indexes Matthew 7:15; painting preference unmet",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-07-17",
@@ -1453,9 +1533,25 @@
       "observedPrincipalId": ":feria:4:w",
       "gospelReferenceFromMatchingIndex": "Matthew 7:15–21",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Rijks:200392356",
+          "title": "False Prophets",
+          "artist": "Antonie Wierix II after Bernardino Passeri",
+          "sourceUrl": "https://www.rijksmuseum.nl/en/collection/object/Valse-profeten--54b4c73b2f0d53a44224d455540cc642",
+          "relation": "GOSPEL_PARABLE",
+          "scriptureOrIdentityAnchor": "Matthew 7:15 — wolves in sheep's clothing",
+          "medium": "engraving print",
+          "remark": "Institutional source explicitly indexes Matthew 7:15; painting preference unmet",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-07-18",
@@ -1923,9 +2019,25 @@
       "observedPrincipalId": ":feria:4:w",
       "gospelReferenceFromMatchingIndex": "Luke 17:11–19",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "SECONDARY_OR_COMMONS_RESEARCH_ONLY",
+          "key": "Vanderbilt:55729",
+          "title": "Jesus Heals the Ten Lepers",
+          "artist": "Anonymous seventeenth-century",
+          "sourceUrl": "https://act.library.vanderbilt.edu/artworks/55729",
+          "relation": "GOSPEL_SCENE",
+          "scriptureOrIdentityAnchor": "Luke 17:11–19",
+          "remark": "Vanderbilt indexes Commons derivative; source-only research, never curated automatically",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "sourcePolicy": "DO_NOT_CURATE_WITHOUT_PRIMARY_ORIGINAL_AND_PHOTO_EVIDENCE"
+        }
+      ]
     },
     {
       "date": "2026-08-27",
@@ -2242,9 +2354,25 @@
       "observedPrincipalId": ":feria:4:w",
       "gospelReferenceFromMatchingIndex": "Luke 14:1–11",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Rijks:200267736",
+          "title": "Healing of the Man with Dropsy and the Bent Woman on the Sabbath",
+          "artist": "After Claude Vignon",
+          "sourceUrl": "https://www.rijksmuseum.nl/en/collection/object/Genezing-van-de-man-met-waterzucht-en-de-kromme-vrouw-op-sabbat--4894df4c939e8411d140213746a1b9b7",
+          "relation": "GOSPEL_SCENE_SUBSET",
+          "scriptureOrIdentityAnchor": "Luke 14:2–4 within Luke 14:1–11",
+          "medium": "etching and drypoint",
+          "remark": "Combined print depicts two separate Sabbath healings; do not merge Gospel episodes",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-09-18",
@@ -2275,9 +2403,25 @@
       "observedPrincipalId": "tempora:Pent17-0:2:g",
       "gospelReferenceFromMatchingIndex": "Matthew 22:34–46",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "SECONDARY_OR_COMMONS_RESEARCH_ONLY",
+          "key": "KBR:SII136378",
+          "title": "The Great Commandment",
+          "artist": "Ambrosius Francken I; publisher Gerard de Jode",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_great_commandment_1585_print_by_Ambrosius_Francken_I,_S.II_136378,_Prints_Department,_Royal_Library_of_Belgium.jpg",
+          "relation": "GOSPEL_SCENE",
+          "scriptureOrIdentityAnchor": "Matthew 22:34–40",
+          "remark": "KBR original S.II 136378, 1585 print; Commons-only derived file, must seek direct KBR catalogue and certify scene/bytes",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "sourcePolicy": "DO_NOT_CURATE_WITHOUT_PRIMARY_ORIGINAL_AND_PHOTO_EVIDENCE"
+        }
+      ]
     },
     {
       "date": "2026-09-22",
@@ -2324,9 +2468,25 @@
       "observedPrincipalId": ":feria:4:w",
       "gospelReferenceFromMatchingIndex": "Matthew 22:34–46",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "SECONDARY_OR_COMMONS_RESEARCH_ONLY",
+          "key": "KBR:SII136378",
+          "title": "The Great Commandment",
+          "artist": "Ambrosius Francken I; publisher Gerard de Jode",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:The_great_commandment_1585_print_by_Ambrosius_Francken_I,_S.II_136378,_Prints_Department,_Royal_Library_of_Belgium.jpg",
+          "relation": "GOSPEL_SCENE",
+          "scriptureOrIdentityAnchor": "Matthew 22:34–40",
+          "remark": "KBR original S.II 136378, 1585 print; Commons-only derived file, must seek direct KBR catalogue and certify scene/bytes",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "sourcePolicy": "DO_NOT_CURATE_WITHOUT_PRIMARY_ORIGINAL_AND_PHOTO_EVIDENCE"
+        }
+      ]
     },
     {
       "date": "2026-09-26",
@@ -2335,9 +2495,25 @@
       "observedPrincipalId": "tempora:093-6:2:v",
       "gospelReferenceFromMatchingIndex": "Luke 13:6–17",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Rijks:200267736",
+          "title": "Healing of the Man with Dropsy and the Bent Woman on the Sabbath",
+          "artist": "After Claude Vignon",
+          "sourceUrl": "https://www.rijksmuseum.nl/en/collection/object/Genezing-van-de-man-met-waterzucht-en-de-kromme-vrouw-op-sabbat--4894df4c939e8411d140213746a1b9b7",
+          "relation": "GOSPEL_SCENE_SUBSET",
+          "scriptureOrIdentityAnchor": "Luke 13:10–17 — bent woman",
+          "medium": "etching/drypoint",
+          "remark": "Gospel's fig tree 13:6–9 is NOT this episode; print includes healing of bent woman",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-09-28",
@@ -2410,9 +2586,25 @@
       "observedPrincipalId": ":feria:4:w",
       "gospelReferenceFromMatchingIndex": "Matthew 22:1–14",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Getty:2003.18",
+          "title": "The Parable of the King Who Prepared a Wedding",
+          "artist": "Maerten van Heemskerck",
+          "sourceUrl": "https://www.getty.edu/art/collection/object/1095RG",
+          "relation": "GOSPEL_PARABLE",
+          "scriptureOrIdentityAnchor": "Matthew 22:2–14",
+          "medium": "drawing on paper",
+          "remark": "Reusable research relationship not date-specific approved",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-10-08",
@@ -2454,9 +2646,25 @@
       "observedPrincipalId": "tempora:Pent20-0:2:g",
       "gospelReferenceFromMatchingIndex": "John 4:46–53",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Brooklyn:Tissot-Officers-Son-UNRESOLVED",
+          "title": "The Healing of the Officer's Son",
+          "artist": "James Tissot",
+          "sourceUrl": "https://opencollection.brooklynmuseum.org/tags/parable",
+          "relation": "GOSPEL_SCENE",
+          "scriptureOrIdentityAnchor": "John 4:46–53",
+          "medium": "gouache/opaque watercolor, medium to verify",
+          "remark": "Brooklyn institutional index explicitly lists title; exact catalogue accession and exact photo still unresolved. Do not cite secondary Bible Explorer as museum original record",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-10-12",
@@ -2465,9 +2673,25 @@
       "observedPrincipalId": ":feria:4:w",
       "gospelReferenceFromMatchingIndex": "John 4:46–53",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Brooklyn:Tissot-Officers-Son-UNRESOLVED",
+          "title": "The Healing of the Officer's Son",
+          "artist": "James Tissot",
+          "sourceUrl": "https://opencollection.brooklynmuseum.org/tags/parable",
+          "relation": "GOSPEL_SCENE",
+          "scriptureOrIdentityAnchor": "John 4:46–53",
+          "medium": "gouache/opaque watercolor, medium to verify",
+          "remark": "Brooklyn institutional index explicitly lists title; exact catalogue accession and exact photo still unresolved. Do not cite secondary Bible Explorer as museum original record",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-10-13",
