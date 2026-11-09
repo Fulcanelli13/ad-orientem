@@ -294,12 +294,21 @@ try{
       {cue:"AO.SM.C0053",movement:"GLORIA",setting:"MASS_08",score:"GREGOBASE-961"},
       {cue:"AO.SM.C0089",movement:"CREDO",setting:"CREDO_03",score:"GREGOBASE-749"},
       {cue:"AO.SM.C0145",movement:"SANCTUS_BENEDICTUS",setting:"MASS_08",score:"GREGOBASE-1384"},
-      {cue:"AO.SM.C0222",movement:"AGNUS_DEI",setting:"MASS_08",score:"GREGOBASE-2760"}
+      {cue:"AO.SM.C0222",movement:"AGNUS_DEI",setting:"MASS_08",score:"GREGOBASE-2760"},
+      // Mass XI is four Ordinary movements; its Credo is separately chosen.
+      {cue:"AO.SM.C0044",movement:"KYRIE",setting:"MASS_11",score:"GREGOBASE-2982"},
+      {cue:"AO.SM.C0053",movement:"GLORIA",setting:"MASS_11",score:"GREGOBASE-303"},
+      {cue:"AO.SM.C0145",movement:"SANCTUS_BENEDICTUS",setting:"MASS_11",score:"GREGOBASE-1106"},
+      {cue:"AO.SM.C0222",movement:"AGNUS_DEI",setting:"MASS_11",score:"GREGOBASE-1243"},
+      {cue:"AO.SM.C0044",movement:"KYRIE",setting:"MASS_17",score:"GREGOBASE-272"},
+      {cue:"AO.SM.C0044",movement:"KYRIE",setting:"MASS_18",score:"GREGOBASE-2522"}
     ]:[
       {cue:"AO.SM.C0044",movement:"KYRIE",setting:"MASS_08",score:"GREGOBASE-1184"},
-      {cue:"AO.SM.C0222",movement:"AGNUS_DEI",setting:"MASS_08",score:"GREGOBASE-2760"}
+      {cue:"AO.SM.C0044",movement:"KYRIE",setting:"MASS_17",score:"GREGOBASE-272"},
+      {cue:"AO.SM.C0044",movement:"KYRIE",setting:"MASS_18",score:"GREGOBASE-2522"},
+      {cue:"AO.SM.C0222",movement:"AGNUS_DEI",setting:"MASS_11",score:"GREGOBASE-1243"}
     ];
-    for(const example of ordinaryCases){
+        for(const example of ordinaryCases){
      await page.evaluate(cue=>{
       const api=window.__AO_PHONE_PREVIEW;
       const card=api.model.cards.find(c=>JSON.stringify(c).includes(cue));
