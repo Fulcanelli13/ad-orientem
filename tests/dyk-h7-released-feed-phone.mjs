@@ -23,9 +23,9 @@ fact.pilot_destination_audit.publishable_deep_link=true;
 fact.pilot_destination_audit.exact_in_app_route_verified=true;
 fact.pilot_source_folio.link_browser_verified=true;
 // Choose an actual upcoming date on which the single test-only R34 approval
-// wins the 226-entry (225 public + 1 test-only R34) mixed rotation.
-// Inspect 500 days: any interval of at least 2*N-1 days contains a full
-// 226-day aligned cycle, so a valid test-only candidate must appear.
+// wins the 251-entry (250 public + 1 test-only R34) mixed rotation.
+// Inspect 600 days: any interval of at least 2*N-1 days contains a full
+// 251-day aligned cycle, so a valid test-only candidate must appear.
 const historical=JSON.parse(await readFile(resolve(root,
  "data/did-you-know/weiser-historical-20-publication.v1.json"),"utf8"));
 const r50=JSON.parse(await readFile(resolve(root,
@@ -44,17 +44,23 @@ const h200=JSON.parse(await readFile(resolve(root,
  "data/did-you-know/dyk-h200-three-sources-25-publication.v1.json"),"utf8"));
 const h225=JSON.parse(await readFile(resolve(root,
  "data/did-you-know/dyk-h225-world-liturgies-25-publication.v1.json"),"utf8"));
-const historicalIds=[...historical.records,...r50.records,...r50b.records,...h100.records,...h125.records,...h150.records,...h175.records,...h200.records,...h225.records].map(x=>x.id);
+const h250=JSON.parse(await readFile(resolve(root,
+ "data/did-you-know/dyk-h250-unesco-sacred-geography-25-publication.v1.json"),"utf8"));
+const historicalIds=[...historical.records,...r50.records,...r50b.records,...h100.records,...h125.records,...h150.records,...h175.records,...h200.records,...h225.records,...h250.records].map(x=>x.id);
 const dayMs=86400000;
 const base=Date.UTC(2026,10,1);
-const testDate=Array.from({length:500},(_,i)=>
+const testDate=Array.from({length:600},(_,i)=>
  new Date(base+i*dayMs).toISOString().slice(0,10))
  .find(date=>dykHomeRotationSlot(date,[...historicalIds,fact.id],DYK_GLOSSARY_FALLBACK_IDS)===fact.id);
 assert.ok(testDate,"Test-only R34 release must receive one legitimate daily slot");
-const h225Date=Array.from({length:500},(_,i)=>
+const h225Date=Array.from({length:600},(_,i)=>
  new Date(base+i*dayMs).toISOString().slice(0,10))
  .find(date=>dykHomeRotationSlot(date,historicalIds,DYK_GLOSSARY_FALLBACK_IDS)==="DYK-H225-R-001");
-assert.ok(h225Date,"The first H225 fact must have a public date in the 225-day cycle");
+assert.ok(h225Date,"The first H225 fact must have a public date in the 250-day cycle");
+const h250Date=Array.from({length:600},(_,i)=>
+ new Date(base+i*dayMs).toISOString().slice(0,10))
+ .find(date=>dykHomeRotationSlot(date,historicalIds,DYK_GLOSSARY_FALLBACK_IDS)==="DYK-H250-S-001");
+assert.ok(h250Date,"The first H250 fact must appear within the 250-day daily rotation");
 fact.publication_days=[testDate];
 const server=http.createServer(async(req,res)=>{
  try{
@@ -150,7 +156,40 @@ try{
   }finally{await page.close()}
  }
 
- console.log("PASS released H7 Discovery phone: 225 approved historical/Glossary public pool, actual H225 320/390 source journey; R34 remains unpublished until a test-only exact-date authorization opens its source");
+
+  // Actual H250 320px and 390px Home entry -> UNESCO original source -> escape return.
+  // No approved manifest is intercepted or modified in this test.
+  for(const width of [320,390]){
+   const page=await browser.newPage({viewport:{width,height:844},isMobile:true,hasTouch:true});
+   await page.addInitScript(({date})=>{
+    const NativeDate=Date,epoch=new NativeDate(date+"T12:00:00Z").getTime();
+    class FixedDate extends NativeDate{
+     constructor(...args){if(args.length)super(...args);else super(epoch)}
+     static now(){return epoch}
+    }
+    window.Date=FixedDate;
+   },{date:h250Date});
+   const errors=[];page.on("pageerror",error=>errors.push(String(error)));
+   try{
+    await page.goto(origin+"/index.html?aoR17Reader=native",{waitUntil:"domcontentloaded",timeout:60000});
+    const published=page.locator("[data-home-dyk-fact-id='DYK-H250-S-001']");
+    await published.waitFor({state:"visible",timeout:45000});
+    assert.ok((await published.locator("[data-home-dyk-fact]").innerText()).includes("Ravenna"));
+    await published.click();
+    const modal=page.locator("[data-dyk-published='DYK-H250-S-001']");
+    await modal.waitFor({state:"visible",timeout:30000});
+    assert.equal(await modal.getAttribute("role"),"dialog");
+    assert.equal(await modal.locator("a[href='https://whc.unesco.org/en/list/788']").count(),1);
+    assert.ok((await modal.innerText()).includes("Read UNESCO heritage source"));
+    assert.equal(await modal.locator("a").first().getAttribute("rel"),"noopener noreferrer");
+    await page.keyboard.press("Escape");
+    assert.equal(await page.locator("[data-dyk-published]").count(),0);
+    assert.equal(await published.evaluate(el=>document.activeElement===el),true);
+    assert.deepEqual(errors,[],"H250 320/390 original source phone errors");
+   }finally{await page.close()}
+  }
+
+ console.log("PASS released H7 Discovery phone: 250 approved historical/Glossary public pool, actual H225/H250 320/390 original source journeys; R34 remains unpublished until a test-only exact-date authorization opens its source");
 }finally{
  await browser?.close().catch(()=>{});
  await new Promise(ok=>server.close(ok));
