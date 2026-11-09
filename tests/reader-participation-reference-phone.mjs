@@ -60,7 +60,7 @@ try{
    const settings={GLORIA:"MASS_08",CREDO:"CREDO_03"};
    const solemn=context("SUNDAY"),ferial=context("FERIA");
    const mounted=controller.render({mode:"LIVE",form:"SOLEMN",resolvedMass:solemn,selectedSettings:settings,paragraphs});
-   for(let i=0;i<100&&controller.state().rendered<14;i++)await new Promise(r=>setTimeout(r,120));
+   for(let i=0;i<100&&controller.state().rendered<16;i++)await new Promise(r=>setTimeout(r,120));
    const rendered=controller.state().rendered,svg=body.querySelectorAll(".ao-proper-reference-staff svg").length;
    const originalTextIntact=paragraphs.every(p=>{
     const n=body.querySelector('[data-paragraph-id="'+p.id+'"]');
@@ -78,26 +78,28 @@ try{
    const alternateIds=[...body.querySelectorAll("[data-reference-score]")].map(n=>n.dataset.referenceScore);
    const lowCount=controller.render({mode:"LIVE",form:"LOW",resolvedMass:solemn,selectedSettings:settings,paragraphs});
    controller.render({mode:"LIVE",form:"SOLEMN",resolvedMass:solemn,selectedSettings:settings,paragraphs});
-   for(let i=0;i<100&&controller.state().rendered<14;i++)await new Promise(r=>setTimeout(r,120));
+   for(let i=0;i<100&&controller.state().rendered<16;i++)await new Promise(r=>setTimeout(r,120));
    return {mounted,rendered,svg,originalTextIntact,ids,widths,paterVisible,allUnapproved,ferialCount,ferialIds,
     lowCount,alternateCount,alternateIds,restored:controller.state().rendered};
   });
-  assert.equal(result.mounted,14);
-  assert.equal(result.rendered,14,"Actual Exsurge must render fourteen source phrases");
-  assert.equal(result.svg,14);
+  assert.equal(result.mounted,16);
+  assert.equal(result.rendered,16,"Fourteen participant source phrases plus two chosen Ordinary full-score references must engrave");
+  assert.equal(result.svg,16);
   assert.equal(result.originalTextIntact,true);
   assert.equal(result.paterVisible,true,"Identical Pater response melody from authenticated 1962 music guide");
   assert.equal(result.allUnapproved,true);
   assert.equal(result.ferialCount,10);
   assert.equal(result.lowCount,0);
-  assert.equal(result.restored,14);
+  assert.equal(result.restored,16);
   assert.ok(result.ids.some(x=>x.includes("GLORIA_VIII"))&&result.ids.some(x=>x.includes("CREDO_III")));
+  assert.ok(result.ids.includes("GREGOBASE-961")&&result.ids.includes("GREGOBASE-749"),
+   "The explicitly selected Gloria and Credo now have complete existing Kyriale staffs");
   assert.ok(result.ids.filter(x=>x.includes("PREFACE_SOLEMN")).length===4);
   assert.equal(result.ferialIds.filter(x=>x.includes("PREFACE_FERIAL")).length,4);
   assert.equal(result.ferialIds.filter(x=>x.includes("PATERNOSTER_COMMON")).length,1);
   assert.equal(result.ferialIds.filter(x=>x.includes("GOSPEL_4490")).length,2);
   assert.equal(result.ids.filter(x=>x.includes("GOSPEL_4490")).length,2);
-  assert.equal(result.alternateCount,14);
+  assert.equal(result.alternateCount,16);
   assert.equal(result.alternateIds.filter(x=>x.includes("GOSPEL_4491")).length,2);
   assert.equal(result.alternateIds.filter(x=>x.includes("GOSPEL_4490")).length,0);
   assert.equal(result.ids.filter(x=>x.includes("CANON_END")).length,1);
