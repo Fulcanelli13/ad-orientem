@@ -331,11 +331,32 @@
           "target": "2026-05-30",
           "type": "COMMONS_DATE_VS_BIRMINGHAM_DATE_CONFLICT"
         }
-      ]
+      ],
+      "latest_selected_ai_asset_file_recovery": {
+        "found_png_files": 4,
+        "verified_sha256": 4,
+        "prior_manifest_hash_matches": 3,
+        "one_new_hash_no_prior_manifest": true,
+        "explicit_or_draft_approval_evidence": 3,
+        "march22_file_specific_approval_pending": 1,
+        "still_unlocated_file_count": 0,
+        "source": "data/artwork/research/m2m-ai-derivative-four-file-hash-audit-batch15-20261109.v1.json"
+      },
+      "institutional_object_leads_for_other_nineteen": {
+        "museum_object_leads": 9,
+        "remaining_without_institutional_object_lead": 10,
+        "photo_files_newly_verified": 0,
+        "ambiguous_caravaggio_versions": true,
+        "figge_artist_dispute": true,
+        "source": "data/artwork/research/m2m-nine-institutional-object-leads-batch16-20261109.v1.json"
+      },
+      "superseded_historical_snapshot_note": "Batch13 and batch14 counts were correct for their earlier search scopes. Batch15 establishes that all four original AI-derived image files are recoverable from the user Library. The files have not been imported or approved for publication."
     },
     "user_library_derivative_batch14": "data/artwork/research/m2m-recovered-user-library-derivatives-batch14-20261109.v1.json",
     "ai_source_original_batch15": "data/artwork/research/m2m-ai-original-files-batch15-20261109.v1.json",
     "original19_institutional_batch16": "data/artwork/research/m2m-original19-institutional-batch16-20261109.v1.json",
-    "original19_institutional_batch17": "data/artwork/research/m2m-original19-institutional-batch17-20261109.v1.json"
+    "original19_institutional_batch17": "data/artwork/research/m2m-original19-institutional-batch17-20261109.v1.json",
+    "ai_four_hash_batch15": "data/artwork/research/m2m-ai-derivative-four-file-hash-audit-batch15-20261109.v1.json",
+    "institutional_object_batch16": "data/artwork/research/m2m-nine-institutional-object-leads-batch16-20261109.v1.json"
   }
 }
