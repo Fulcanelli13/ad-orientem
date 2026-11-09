@@ -138,8 +138,11 @@ export const JULY07_REFERENCE_CSS=String.raw`
  font:500 10px/1.4 var(--ao-font-ui,system-ui,sans-serif);
  color:var(--ao-muted,#aaa79f);overflow-wrap:anywhere
 }
+/* MISSAL language columns remain pinned to row 1. Each source-owned
+   chant must flow into a separate following row. The old fixed row 2
+   superimposed Gradual and Alleluia and blocked score enlargement. */
 .ao-reader-shell[data-mode="MISSAL"] .ao-reader-paragraph>.ao-proper-reference-notation{
- grid-column:1 / -1;grid-row:2
+ grid-column:1 / -1;grid-row:auto
 }
 .ao-reader-shell[data-mode="MISSAL"] .ao-proper-reference-staff{
  color:var(--ao-text-primary,#e9e4d9)
