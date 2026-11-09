@@ -201,3 +201,14 @@ Only the source research layers and the two gate manifests are changed here; no 
 Run `node tests/sacred-art-release-gates-research.test.mjs` together with `node tests/sacred-art-many-to-many-research.test.mjs`. The former asserts the 1,589-edge and 640-target totals, the 507 accepted options, 114 reviewed new proposals, all 13 Bouts references, 170 unmatched Calendar targets, 46 missing primary links and that **both manifests publish no assignments**. These tests are committed but require CI execution before reporting a green gate.
 
 Next research work should target (1) 46 primary identity links without inventing artworks; (2) the 23 metadata differences and five Prado source holds with source/copy attribution; (3) photograph provenance and mobile QA as distinct approvals; (4) original owner chronology for the Bouts dispute. Do not merge, import, rotate Prayer covers, or deploy from these research manifests.
+
+### Protected 46-ID internal identity triage
+
+A further evidence-only queue is stored in `data/artwork/research/m2m-protected-missing-id-46-20261109.v1.json`. These are the 46 **preserved primary artworks without a canonical ID in Claude's crosswalk**, not 46 permissions to choose replacements. Comparing exact source URLs, artist names and titles across all 1,589 original edge records yielded:
+
+- **11** destinations with at least one exact source-URL match to a prior ID-bearing record; these need verification of what that ID denotes and, separately, of the physical work.
+- **6** additional destinations with only normalized artist/title equality; these are weak leads, not identity proof.
+- **29** with no candidate in the currently reconstructed internal records. Some are selected AI visual drafts or multi-image Easter Vigil selections requiring local asset reconciliation rather than a museum accession.
+- **0** canonical artwork IDs have been certified or assigned. In particular, editorial identifiers such as `primary:2026-05-23` and `APPROVED_REVIEW::...` must not be mistaken for canonical artwork IDs.
+
+This queue guides the next exact-source inventory search without discarding approved paintings, inventing object identities, or implicitly clearing media rights. The regression test checks the 11/6/29 split and the zero-automatic-link rule.
