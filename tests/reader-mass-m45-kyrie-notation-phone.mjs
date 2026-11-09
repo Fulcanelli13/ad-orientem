@@ -135,6 +135,48 @@ try{
    await chooser.selectOption("");
    assert.equal(await page.locator('[data-reference-score="GREGOBASE-545"]').count(),0);
    assert.ok((await paragraph.locator(".ao-line-primary").textContent())?.length>3);
+
+   // M47: the Kyrie dropdown alone must NOT auto-assign other chants.
+   await chooser.selectOption("MASS_08");
+   const visitCue=async cue=>page.evaluate(cueId=>{
+     const api=window.__AO_PHONE_PREVIEW;
+     const target=api.model.cards.find(c=>JSON.stringify(c).includes(cueId));
+     if(!target)throw Error("Source-owned Mass cue missing: "+cueId);
+     api.showSequence(target.sequence);
+   },cue);
+   await visitCue("AO.SM.C0053");
+   await page.locator('[data-ordinary-reference-chooser="GLORIA"] select')
+     .waitFor({timeout:20000});
+   assert.equal(await page.locator('[data-ordinary-reference-chooser="GLORIA"] select').inputValue(),"",
+     "A standalone Kyrie choice must not assign Gloria by default");
+   await visitCue("AO.SM.C0044");
+   const suite=page.locator('[data-ordinary-mass-suite="MASS_08"]');
+   await suite.waitFor({state:"visible",timeout:20000});
+   await suite.click();
+   const movements=[
+     {cue:"AO.SM.C0044",movement:"KYRIE",score:"GREGOBASE-1184"},
+     {cue:"AO.SM.C0053",movement:"GLORIA",score:"GREGOBASE-961"},
+     {cue:"AO.SM.C0145",movement:"SANCTUS_BENEDICTUS",score:"GREGOBASE-1384"},
+     {cue:"AO.SM.C0222",movement:"AGNUS_DEI",score:"GREGOBASE-2760"}
+   ];
+   for(const check of movements){
+     await visitCue(check.cue);
+     const choice=page.locator('[data-ordinary-reference-chooser="'+check.movement+'"] select');
+     await choice.waitFor({timeout:20000});
+     assert.equal(await choice.inputValue(),"MASS_08",
+       check.movement+" must inherit only the explicitly applied Mass VIII suite");
+     await page.waitForFunction(score=>Boolean(document.querySelector(
+       '[data-reference-score="'+score+'"][data-reference-ready="true"] svg'
+     )),check.score,{timeout:35000});
+     assert.equal(await page.locator('[data-reference-score="'+check.score+'"]')
+       .getAttribute("data-approved"),"false");
+   }
+   await visitCue("AO.SM.C0089");
+   const credo=page.locator('[data-ordinary-reference-chooser="CREDO"] select');
+   await credo.waitFor({timeout:20000});
+   assert.equal(await credo.inputValue(),"","Mass VIII suite may never assign an independent Credo");
+   await page.screenshot({path:resolve(captures,`m47-ordinary-suite-${mode}-${width}.png`),
+      animations:"disabled"});
    assert.deepEqual(errors,[],"No reader runtime errors");
    console.log("PASS M45 genuine Order of Mass Kyrie XVI",JSON.stringify({
      width,mode,sourceCardCount:initial.sourceCards,readerCards:initial.cards,

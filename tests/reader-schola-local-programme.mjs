@@ -194,4 +194,40 @@ assert.equal(normalizeScholaLocalProgramme({profiles:[
 ]}).ordinarySelections.KYRIE,"MASS_08","Exact source selection must survive reload");
 assert.equal(readScholaLocalProgramme(storage).observedSinging,false);
 
+// M47: a Kyrie selection by itself never fills the remaining Ordinary.
+// A separate explicit action may source-link only the *encoded* movements.
+const suiteStore=new Map();
+const suiteStorage={getItem:k=>suiteStore.get(k),setItem:(k,v)=>suiteStore.set(k,v)};
+let suite=readScholaLocalProgramme(suiteStorage);
+suite=updateScholaLocalProgramme(suite,
+ {kind:"ordinarySelection",eventId:"KYRIE",value:"MASS_08"},suiteStorage);
+assert.equal(suite.ordinarySelections.GLORIA,"",
+ "Choosing Kyrie alone may not assign other settings");
+suite=updateScholaLocalProgramme(suite,
+ {kind:"ordinarySelection",eventId:"CREDO",value:"CREDO_03"},suiteStorage);
+suite=updateScholaLocalProgramme(suite,
+ {kind:"ordinaryMassSelection",value:"MASS_08"},suiteStorage);
+for(const m of ["KYRIE","GLORIA","SANCTUS_BENEDICTUS","AGNUS_DEI"]){
+ assert.equal(suite.ordinarySelections[m],"MASS_08",m+" must use exact Mass VIII source");
+ assert.equal(suite.ordinarySettings[m],"Mass VIII · De Angelis");
+}
+assert.equal(suite.ordinarySelections.CREDO,"CREDO_03",
+ "Independent Credo must survive the explicit Mass suite");
+assert.equal(readScholaLocalProgramme(suiteStorage).ordinarySelections.AGNUS_DEI,"MASS_08",
+ "An explicit batch selection must persist in the personal profile");
+const beforeBad=suiteStore.get("ao-schola-profile-library-v2");
+suite=updateScholaLocalProgramme(suite,
+ {kind:"ordinaryMassSelection",value:"MASS_09"},suiteStorage);
+assert.equal(suiteStore.get("ao-schola-profile-library-v2"),beforeBad,
+ "Unencoded Mass IX must not falsely claim a score or change the programme");
+suite=updateScholaLocalProgramme(suite,
+ {kind:"ordinaryMassSelection",value:"MASS_17"},suiteStorage);
+assert.equal(suite.ordinarySelections.GLORIA,"",
+ "Mass XVII must clear stale Gloria VIII; no Gregorian Gloria XVII exists");
+for(const m of ["KYRIE","SANCTUS_BENEDICTUS","AGNUS_DEI"])
+ assert.equal(suite.ordinarySelections[m],"MASS_17");
+assert.equal(suite.ordinarySelections.CREDO,"CREDO_03");
+assert.equal(suite.observedSinging,false,"Local research choices cannot assert actual singing");
+assert.equal(readScholaLocalProgramme(suiteStorage).observedSinging,false);
+
 console.log("PASS saved local programme, five optional event IDs, no ritual overrides, organ prohibition remains visible");

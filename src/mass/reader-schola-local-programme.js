@@ -1,4 +1,5 @@
 import {canonicalKyrialeSelection,resolveKyrialeChoice} from "./reader-kyriale-catalogue.js";
+import {offlineKyrialeResearchScore} from "./reader-kyriale-research-gabc.js";
 import {COMPOSER_SCHOLA_SETTING_IDS} from "./reader-composed-schola-text.js";
 // Personal parish programmes extend the existing Schola plan without
 // changing the 1962 Proper, Gregorian source texts, event or priest clocks.
@@ -115,6 +116,26 @@ function updatedProfile(current,change){
    // Explicit custom typing demotes catalogue provenance; never preserve a
    // verified ID after the user changes the printed setting's title.
    ordinarySelections:{...active.ordinarySelections,[id]:""}};
+ // This batch can occur only after the reader's separate, explicit
+ // "Use this Mass setting" action. Never infer settings from calendar,
+ // liturgical season, local parish identity, or the Kyrie dropdown itself.
+ if(kind==="ordinaryMassSelection"&&typeof change.value==="string"){
+  const massId=change.value;
+  if(!/^MASS_(?:0[1-9]|1[0-8])$/.test(massId)||
+     !offlineKyrialeResearchScore("KYRIE",massId))return null;
+  const ordinarySettings={...active.ordinarySettings};
+  const ordinarySelections={...active.ordinarySelections};
+  // Clear incompatible former mass examples, but preserve the independent
+  // Credo (and the rest of this profile). A setting lacking an archived
+  // GABC never gains a fabricated score or a source-certified identifier.
+  for(const movement of ["KYRIE","GLORIA","SANCTUS_BENEDICTUS","AGNUS_DEI"]){
+   const indexed=offlineKyrialeResearchScore(movement,massId)
+     ?resolveKyrialeChoice(movement,massId):null;
+   ordinarySettings[movement]=indexed?.title??"";
+   ordinarySelections[movement]=indexed?.id??"";
+  }
+  return {...active,ordinarySettings,ordinarySelections};
+ }
  if(kind==="ordinarySelection"&&ORDINARY_SET.has(id)&&typeof change.value==="string"){
   if(change.value==="CUSTOM")
    return {...active,ordinarySelections:{...active.ordinarySelections,[id]:""}};

@@ -195,6 +195,15 @@ export const JULY07_REFERENCE_CSS=String.raw`
 .ao-ordinary-inline-choice select option{background:#171e29;color:#eee}
 .ao-ordinary-inline-choice select:focus-visible{outline:2px solid var(--ao-mass-accent)}
 .ao-reader-shell[data-mode="MISSAL"] .ao-ordinary-inline-choice{grid-column:1/-1}
+.ao-ordinary-setting-suite{
+ display:block;box-sizing:border-box;width:100%;max-width:100%;min-height:44px;
+ margin:0 0 12px;padding:9px 11px;text-align:left;
+ border:1px solid rgba(206,190,220,.28);border-radius:6px;
+ color:var(--ao-text,#ece6d9);background:rgba(206,190,220,.07);
+ font:600 12px/1.4 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer
+}
+.ao-ordinary-setting-suite:focus-visible{outline:2px solid var(--ao-mass-accent)}
+.ao-reader-shell[data-mode="MISSAL"] .ao-ordinary-setting-suite{grid-column:1/-1}
 `;
 
 // The selected 1962 Proper and its exact source-owned paragraph authorize
@@ -205,7 +214,7 @@ export function referenceScoresForParagraph(input={}){
 
 export function createDatedProperNotationPreview({
  root,enabled=null,engraverFactory=createOfflineChantEngraver,
- onOrdinarySelection=null
+ onOrdinarySelection=null,onOrdinaryMassSelection=null
 }={}){
  if(!root?.querySelectorAll)throw new TypeError("Mass reader root required");
  const doc=root.ownerDocument;
@@ -376,6 +385,30 @@ export function createDatedProperNotationPreview({
        if(openingText)node.insertBefore(chooser,openingText);
        else node.prepend(chooser);
        ordinaryChoosers.push(chooser);
+       // A numbered Kyriale Mass can have matching archived movements.
+       // Do NOT infer their selection from the initial Kyrie dropdown.
+       // Offer a separate conscious action, only where complete GABCs exist.
+       if(movement==="KYRIE" && chosen.startsWith("MASS_") &&
+          typeof onOrdinaryMassSelection==="function"){
+         const others=["GLORIA","SANCTUS_BENEDICTUS","AGNUS_DEI"].filter(part=>
+           offlineOrdinarySettingChoices(part).some(item=>item.id===chosen));
+         if(others.length){
+           const apply=doc.createElement("button");
+           apply.type="button";apply.className="ao-ordinary-setting-suite";
+           apply.dataset.ordinaryMassSuite=chosen;
+           const massName=choices.find(item=>item.id===chosen)?.title??chosen;
+           apply.textContent="Use "+massName+" for "+others.length+
+             " other available Ordinary score"+(others.length===1?"":"s");
+           apply.title="Explicitly replace the other Ordinary source selections; "+
+             "Credo remains independent. Research notation, not evidence of local singing.";
+           apply.setAttribute("aria-label",apply.textContent+
+             ". Credo is separate. Replace other Ordinary research examples; no sung performance is inferred.");
+           apply.addEventListener("click",()=>onOrdinaryMassSelection({settingId:chosen}));
+           if(openingText)node.insertBefore(apply,openingText);
+           else node.append(apply);
+           ordinaryChoosers.push(apply);
+         }
+       }
      }
    }
    const scores=referenceScoresForParagraph({paragraph:p,resolvedMass,form});
