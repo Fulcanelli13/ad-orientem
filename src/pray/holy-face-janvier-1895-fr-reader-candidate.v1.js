@@ -553,8 +553,8 @@ export const HOLY_FACE_1895_FR_READER_DAYS=Object.freeze(SOURCE_PARTS.map(day=>{
 }));
 /** General French reader availability is a publication choice, not source-print certification. */
 export function holyFace1895FrenchPreviewEnabled(){
- if(typeof window==="undefined")return false;
  if(HOLY_FACE_1895_FR_PUBLIC_RELEASE_APPROVED)return true;
+ if(typeof window==="undefined")return false;
  return window.__AO_HOLY_FACE_1895_FR_PREVIEW__===true
    ||new URLSearchParams(window.location?.search||"").get("holy-face-fr-preview")==="1";
 }
