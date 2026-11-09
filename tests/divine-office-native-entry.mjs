@@ -14,6 +14,15 @@ test("all eight source-verified Advent Compline dates now release, other Hours r
     assert.equal(result.published,released);
   }
 });
+test("Immaculate Conception first Vespers has 8 December Office date on civil 7 December",()=>{
+ const r=officeRouteState({date:"2026-12-07",hour:"COMPLINE"});
+ assert.equal(r.status,"RELEASED");
+ assert.equal(r.officeDate,"2026-12-08");
+ assert.equal(r.published,true);
+ const saturday=officeRouteState({date:"2026-12-12",hour:"COMPLINE"});
+ assert.equal(saturday.officeDate,"2026-12-13");
+ assert.equal(saturday.published,true);
+});
 test("First Vespers retains separate civil and Office dates",()=>{
   const r=officeRouteState({date:"2026-11-28",hour:"VESPERS"});
   assert.equal(r.status,"SOURCE_RESEARCH_ONLY");
@@ -25,7 +34,7 @@ test("First Vespers retains separate civil and Office dates",()=>{
 test("Missing dates, variants and unresearched Hours cannot fill from Mass",()=>{
   for(const args of [
     {date:"2026-11-08",hour:"COMPLINE"},
-    {date:"2026-12-06",hour:"COMPLINE"},
+    {date:"2026-12-14",hour:"COMPLINE"},
     {date:"2026-11-28",hour:"MATINS"},
     {date:"2026-11-28",hour:"COMPLINE",calendarScope:"LOCAL"},
     {date:"2026-02-30",hour:"VESPERS"},
