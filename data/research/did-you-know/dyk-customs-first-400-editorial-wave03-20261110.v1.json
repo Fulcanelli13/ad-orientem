@@ -2,7 +2,7 @@
   "schema": "AO_DYK_CUSTOMS_400_COPY_EDIT_WAVE_03_V1",
   "date": "2026-11-10",
   "status": "EDITORIAL_DRAFT_ONLY_NOT_LIVE",
-  "record_count": 48,
+  "record_count": 47,
   "source_corpus": "data/research/did-you-know/dyk-customs-first-400-bilingual-review-20261110.v1.json",
   "policy": [
     "Original EN/FR source copy retained verbatim; these are proposed reader-facing revisions, not live publication.",
@@ -1705,67 +1705,6 @@
       "publication_authorized": false
     },
     {
-      "id": "DYK-UM02-009",
-      "editorial_issue": "TRANSLATION_AND_CONTEXT",
-      "original_copy": {
-        "en": "Did you know that the traditional Latin Easter greeting Surrexit Dominus vere means 'The Lord has truly risen'?",
-        "fr": "Saviez-vous que la salutation pascale traditionnelle Surrexit Dominus vere signifie « Le Seigneur est vraiment ressuscité » ?"
-      },
-      "reader_copy": {
-        "en": "The traditional Latin Easter greeting Surrexit Dominus vere means « The Lord has truly risen », proclaiming the Resurrection celebrated at Easter.",
-        "fr": "La salutation pascale latine Surrexit Dominus vere signifie « Le Seigneur est vraiment ressuscité », proclamation de la Résurrection fêtée à Pâques."
-      },
-      "source_ids": [
-        "WEI58-16-005"
-      ],
-      "source_links": [
-        {
-          "source_id": "WEI58-16-005",
-          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
-          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
-          "locator": {
-            "printed_pages": [
-              212
-            ],
-            "scan_pdf_page_1based": null,
-            "italian_anchor": null
-          }
-        }
-      ],
-      "scope": {
-        "mode": "HISTORICAL_SOURCE_BOUNDED",
-        "historical_only": true,
-        "not_universal_liturgical_law": true,
-        "current_observance_not_inferred": true,
-        "geographical_context": [
-          "Early Latin Christian practice"
-        ],
-        "original_scope_metadata_preserved": true,
-        "original_scope_object": {
-          "geography": [
-            "Early Latin Christian practice"
-          ],
-          "preliminary_scope": "HISTORICAL_GREETING_CANDIDATE",
-          "note": "Historical liturgical/devotional phrase",
-          "historical_only": true,
-          "not_universal_law": true
-        },
-        "historical_observation_only": true,
-        "not_a_universal_1962_rite": true,
-        "current_local_practice_not_inferred": true
-      },
-      "provenance": {
-        "repository": "Fulcanelli13/ad-orientem",
-        "branch": "production/dyk-500-growth-364-20261031",
-        "path": "data/research/did-you-know/dyk-production-growth-190-310-bilingual-drafts.v1.json",
-        "original_record_id": "DYK-UM02-009",
-        "original_category": "WEISER_1958",
-        "original_source_owner": "data/research/did-you-know/dyk-ultramaster-batch02a-weiser.v1.json"
-      },
-      "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
-      "publication_authorized": false
-    },
-    {
       "id": "DYK-UM02-010",
       "editorial_issue": "EASTER_GAME",
       "original_copy": {
@@ -2486,5 +2425,8 @@
       "review_state": "EDITORIAL_REWRITE_FOR_REVIEW_NOT_PRIMARY_SOURCE_CERTIFICATION",
       "publication_authorized": false
     }
+  ],
+  "retired_editorial_record_ids": [
+    "DYK-UM02-009"
   ]
 }
