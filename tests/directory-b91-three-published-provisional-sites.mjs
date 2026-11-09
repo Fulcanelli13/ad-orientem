@@ -82,7 +82,7 @@ assert.equal(live.filter(x=>x.site_contact_evidence).length,16,
  "Exactly sixteen source-linked community/contact claims must join canonical CL2 sites");
 assert.ok(live.filter(x=>x.site_contact_evidence).every(x=>!x.site_contact_evidence.mass_times&&!x.site_contact_evidence.una_cum));
 const weekly=live.filter(x=>x.weekly_source_programme);
-assert.equal(weekly.length,4,"Exactly four first-party source-weekly venues; no generated events");
+assert.equal(weekly.length,10,"Exactly ten first-party source-weekly venues; no generated events");
 assert.deepEqual(weekly.map(x=>x.physical_group_id).sort(),
  publishedWeekly.sites.map(x=>x.cl2_anchor).sort());
 assert.ok(weekly.every(x=>!x.weekly_source_programme.rrule&&!x.weekly_source_programme.una_cum));
