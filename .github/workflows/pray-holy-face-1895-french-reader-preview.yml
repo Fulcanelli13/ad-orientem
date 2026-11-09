@@ -1,0 +1,57 @@
+name: Prayer Holy Face original French 1895 native reader preview
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/pray/holy-face-janvier-1895-fr-reader-candidate.v1.js"
+      - "src/pray/novena-runtime.js"
+      - "tests/pray-holy-face-1895-french-native-reader-integration.mjs"
+      - "tests/pray-holy-face-1895-french-native-reader-preview-phone.mjs"
+      - "tests/pray-b25-holy-face-full-novena.mjs"
+      - ".github/workflows/pray-holy-face-1895-french-reader-preview.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pray-1895-french-native-preview-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  source-compile-and-hold:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify nine real 1895 French candidate texts, Day IX collect and English witness unchanged
+        run: node tests/pray-holy-face-1895-french-native-reader-integration.mjs
+      - name: Preserve canonical 1887 full English and English fallback on ordinary app visits
+        run: |
+          node tests/pray-b25-holy-face-full-novena.mjs
+          node tests/pray-holy-face-french-1895-all-nine-first-pass-gate.mjs
+          node tests/pray-holy-face-1895-fr-days01-07-photo-section-recheck-gate.mjs
+          node tests/pray-holy-face-1895-fr-days08-09-photo-secondpass-gate.mjs
+  native-phone-preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Test opt-in French original and 1887 English 320/390 native Simple + Guided reader
+        run: node tests/pray-holy-face-1895-french-native-reader-preview-phone.mjs
+      - name: Confirm ordinary French visits still use labelled English fallback (no general release)
+        run: node tests/pray-b25-holy-face-french-original-phone-20261109.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: holy-face-1895-french-native-reader-preview
+          path: |
+            artifacts/pray-b25-holyface-original-fr/holy-face-1895-french-preview-phone.json
+            artifacts/pray-b25-holyface-original-fr/holy-face-1895-fr-preview-*.png
+            artifacts/pray-b25-holyface-original-fr/holy-face-french-volume-access.json
+          if-no-files-found: ignore
