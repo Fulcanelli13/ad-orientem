@@ -1,0 +1,89 @@
+{
+  "schema": "ao.pray.immaculate-heart-consecration-exact-witness-variants.v1",
+  "updated": "2026-11-09",
+  "canonicalPrayerId": "marian_consecration_immaculate_heart",
+  "conclusion": "DISTINCT_ENGLISH_WITNESS_FAMILIES__NO_VERIFIED_EXACT_FRENCH_OR_LATIN_EQUIVALENT",
+  "policy": "Never transfer a language text or printed-edition authority from another consecration merely because it shares the Fatima opening.",
+  "canonical": {
+    "repository": "src/pray/canonical-data.js",
+    "userVisible": "EXISTING_ENGLISH_SECONDARY_FATIMA_FORM",
+    "source": "https://fatima.org/act-of-cosnecration-to-the-immaculate-heart-of-mary/",
+    "independentSameTextWitness": "https://www.catholic.org/prayers/prayer.php?p=2221",
+    "english": "PUBLISHED_UNCHANGED",
+    "french": "SOURCE_PENDING",
+    "latin": "SOURCE_PENDING",
+    "noKnownDateOfFirstPublication": true,
+    "editionSpecificHistoricalAttributionCertified": false,
+    "keyCues": {
+      "motherOfGod": "Most Holy Mother of God",
+      "christological": "Heart of Thy Son, Our Lord Jesus Christ",
+      "virginTitle": "Most Blessed Virgin",
+      "impurityClause": "preserve them from the impurity",
+      "communion": "receive Holy Communion regularly",
+      "fiveDecades": "five decades of the Rosary each day"
+    }
+  },
+  "olderHistoricalWitness": {
+    "institution": "University of Dayton, Marian Library",
+    "catalogue": "Our Lady of Fatima Queen of Peace holy card",
+    "repositoryId": "ML.031-044",
+    "source": "https://ecommons.udayton.edu/ul_holy_cards/264/",
+    "approximateDate": "c. 1960",
+    "city": "Baltimore, Maryland",
+    "publisher": "Reparation Society of the Immaculate Heart of Mary",
+    "physicalObject": "Devotional holy card, original English back-side text",
+    "rights": "Catalogued photo likely copyrighted; personal, educational and scholarly use noted. No permission to republish photograph.",
+    "disposition": "ALTERNATE_ENGLISH_FORM_NOT_CURRENT_CANONICAL_TEXT",
+    "differences": {
+      "christological": "Heart of Jesus reign and triumph in us and around us",
+      "virginTitle": "dearest Mother",
+      "impurityClause": "deluge of impurity",
+      "communion": "First Saturday of every month",
+      "reparation": "atone for the many crimes committed",
+      "structure": "Original card omits canonical phrasing introduced by Most Holy Mother of God and Most Gracious Virgin."
+    },
+    "photographedBackSideInspected": false,
+    "catalogueTranscriptionReviewed": true,
+    "historicalPrintedWitnessAttested": true
+  },
+  "otherSecondaryVariant": {
+    "source": "https://www.blsac.org/fatima-statue-prayers",
+    "disposition": "THIRD_WORDING_FAMILY_NOT_EXACT_CANONICAL",
+    "distinctFeatures": [
+      "First Saturday communion",
+      "deluge of impurity",
+      "reparation for many sins"
+    ],
+    "sourceStatus": "DIGITAL_SECONDARY"
+  },
+  "disposition": {
+    "currentCanonicalEnglish": "PRESERVE_UNCHANGED",
+    "additional1960sEnglishText": "RESEARCH_ONLY_NO_AUTOMATIC_ALTERNATIVE_READOUT",
+    "originalFrenchSameForm": "NOT_LOCATED",
+    "originalLatinSameForm": "NOT_LOCATED",
+    "printVariantChoice": "OWNER_EDITORIAL_DECISION_REQUIRED_BEFORE_REPLACEMENT",
+    "sourceLinkToEarlierVariant": "RESEARCH_ONLY_NOT_AS_IF_THIS_IS_SAME_TEXT",
+    "noGuessedTranslation": true,
+    "noChangingRosaryOrOtherMarianProgrammes": true,
+    "nextAdmissionRule": "Exact-phrase, complete six-paragraph content comparison and provenance for same English formula before FR/LA is bound.",
+    "noAutomaticRomanRiteOrICRSPAttribution": true
+  },
+  "sources": [
+    {
+      "url": "https://fatima.org/act-of-cosnecration-to-the-immaculate-heart-of-mary/",
+      "scope": "Canonical published English form"
+    },
+    {
+      "url": "https://www.catholic.org/prayers/prayer.php?p=2221",
+      "scope": "Independent same-form secondary copy"
+    },
+    {
+      "url": "https://ecommons.udayton.edu/ul_holy_cards/264/",
+      "scope": "Historically catalogued different English holy-card wording c.1960"
+    },
+    {
+      "url": "https://www.blsac.org/fatima-statue-prayers",
+      "scope": "Other secondary different version"
+    }
+  ]
+}

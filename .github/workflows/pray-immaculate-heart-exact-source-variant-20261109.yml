@@ -1,0 +1,32 @@
+name: Prayer Immaculate Heart exact-source variant and language hold
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/pray/canonical-data.js"
+      - "data/pray/immaculate-heart-exact-witness-variant-gate-20261109.v1.json"
+      - "tests/pray-immaculate-heart-exact-form-source-hold-20261109.mjs"
+      - ".github/workflows/pray-immaculate-heart-exact-source-variant-20261109.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pray-immaculate-heart-variant-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  source-truth:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Certify published English variant and fail-closed Latin/French
+        run: node tests/pray-immaculate-heart-exact-form-source-hold-20261109.mjs
+      - name: Install existing phone test dependencies
+        run: npm install --no-audit --no-fund
+      - name: Prepare browser for full canonical Prayer source-face regression
+        run: npx playwright install --with-deps chromium
+      - name: Protect existing all-canonical 48 prayer source faces
+        run: node tests/pray-canonical-48-source-certification-phone.mjs
