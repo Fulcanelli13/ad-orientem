@@ -1,8 +1,12 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {renderVerifiedStationArtwork,SAN_POLO_PUBLISHED_STATIONS} from "../src/pray/stations-verified-artwork-release.v1.js";
+import {SAN_POLO_OPTIONAL_CYCLE,SAN_POLO_OPTIONAL_CYCLE_META} from "../src/pray/stations-san-polo-optional-cycle.v1.js";
 
-assert.equal(Object.keys(SAN_POLO_PUBLISHED_STATIONS).length,0,"No images are authorised for publication");
+assert.equal(Object.keys(SAN_POLO_PUBLISHED_STATIONS).length,0,"Default image assignments remain unchanged");
+assert.equal(SAN_POLO_OPTIONAL_CYCLE_META.defaultEnabled,false);
+assert.equal(Object.keys(SAN_POLO_OPTIONAL_CYCLE).length,14);
+assert.equal(SAN_POLO_OPTIONAL_CYCLE_META.previousIndividualArtworkRetained,true);
 for(let i=0;i<14;i++){
  assert.equal(renderVerifiedStationArtwork(i,false),"");
  assert.equal(renderVerifiedStationArtwork(i,true),"");
@@ -47,7 +51,15 @@ assert.ok(!escaped.includes("<unsafe>"));
 const runtime=readFileSync("src/pray/presentation-runtime.js","utf8");
 assert.ok(runtime.includes('import {renderVerifiedStationArtwork} from "./stations-verified-artwork-release.v1.js";'));
 const readSection=runtime.slice(runtime.indexOf("function renderStations(){"),runtime.indexOf("// Shared visual structure only."));
-assert.ok(readSection.includes('aria-label="${esc(title)}">${renderVerifiedStationArtwork(i,isFr())}${guideNow(title,action'));
+assert.ok(readSection.includes('STATIONS.sanPolo?renderVerifiedStationArtwork(i,isFr(),SAN_POLO_OPTIONAL_CYCLE):""'),"Only explicit user selection may render 14-photo cycle");
+assert.ok(runtime.includes('data-p435930-station-san-polo'),"Reader must expose the optional switch");
+assert.ok(runtime.includes("STATIONS.sanPolo=x.checked"),"Selector must update existing Stations reader");
+for(let i=0;i<14;i++){
+ const html=renderVerifiedStationArtwork(i,false,SAN_POLO_OPTIONAL_CYCLE);
+ assert.ok(html.includes('src="./assets/stations/san-polo/'),"All optional photos must be Pages-subpath-relative");
+ assert.ok(html.includes("CC BY-SA 4.0"));
+ assert.ok(html.includes("Didier Descouens"));
+}
 assert.ok(readSection.includes("stationResponse(vr)"));
 assert.ok(readSection.includes("${stationScripture}${consider}${alph}${ordinary}${stabat}"));
 assert.ok(runtime.includes("installSequentialDevotionalReader({"));

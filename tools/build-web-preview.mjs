@@ -12,7 +12,9 @@ const disallowed=/^(?:\.|docs|tests|tools|research|legacy|review|reviews|node_mo
 // Only root boot scripts actually linked by the active HTML belong in the release.
 const entryHtml=await readFile(join(root,"index.html"),"utf8");
 const activeEntrypointAssets=new Set([...entryHtml.matchAll(/(?:src|href)=["']\.\/([^"'?#]+)["']/g)].map(x=>x[1]));
-// Deploy only cleared release assets. These source-owned review/audit records
+// Deploy only cleared release assets; the fourteen separately approved San Polo
+// WebPs now ship through the *optional* reader, while their research archive
+// remains excluded. These source-owned review/audit records
 // remain intact in GitHub; only their copies in dist/web-preview are omitted.
 // The fourteen San Polo photographs are intentionally present in the repository
 // for QA, but are NOT published: reader bindings remain empty and exact-photo
@@ -22,7 +24,6 @@ const excludedResearchPaths=[
  "assets/staged",
  "data/artwork/sacred-art-category-match-989-267.v1.json",
  "data/artwork/research-priority-16-source-audit-20261109.v1.json",
- "assets/stations/san-polo",
  "data/geography/research",
  "data/office/research",
  "data/prayer/stations/san-polo-tiepolo-oils-1747",

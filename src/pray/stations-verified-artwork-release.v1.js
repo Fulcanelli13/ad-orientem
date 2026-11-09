@@ -18,6 +18,7 @@ const EDITORIAL_APPROVALS=new Set([
  "USER_APPROVED_CROSS_PRAYER_REUSE",
  "USER_APPROVED_20261030_NEW_ARTWORK_REUSE",
  "USER_APPROVED_EXISTING_SAINTS_SELECTION",
+ "USER_SELECTED_COMPLETE_CYCLE_NONDEFAULT",
 ]);
 
 const TEXT=x=>String(x??"");
@@ -33,7 +34,7 @@ const httpsURL=x=>{
 };
 const appAsset=x=>{
  const s=TEXT(x).trim();
- return /^\/assets\/[A-Za-z0-9_./-]+\.(?:webp|jpg|jpeg|png)$/i.test(s)&&!s.includes("/../")?s:null;
+ return /^\/assets\/[A-Za-z0-9_./-]+\.(?:webp|jpg|jpeg|png)$/i.test(s)&&!s.includes("/../")?"."+s:null;
 };
 const rightsOK=record=>{
  if(record?.rightsClass==="PD_CC0" && record?.exactPhotoLicenseVerified===true)return true;

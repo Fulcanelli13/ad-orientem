@@ -1,0 +1,58 @@
+name: Prayer San Polo optional cycle - source, phone, Pages build
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/pray/stations-san-polo-optional-cycle.v1.js"
+      - "src/pray/stations-verified-artwork-release.v1.js"
+      - "src/pray/presentation-runtime.js"
+      - "assets/stations/san-polo/**"
+      - "tools/build-web-preview.mjs"
+      - "tools/github-pages-release-proof.mjs"
+      - "tools/check-github-pages-live.mjs"
+      - "tests/prayer-stations-curated-release-hold.mjs"
+      - "tests/prayer-stations-verified-artwork-release.mjs"
+      - "tests/pray-san-polo-optional-cycle-real-phone-20261109.mjs"
+      - ".github/workflows/pray-san-polo-optional-release-20261109.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pray-san-polo-opt-in-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  original-licensed-reader-and-phones:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-audit --no-fund
+      - name: Verify source archive, exact 14 image digests and scoped rights
+        run: node tests/prayer-san-polo-license-ready-assets.mjs
+      - name: Verify canonical 14-stage reading and opt-in-only adapter
+        run: |
+          node tests/stations-direct-reading-b14.mjs
+          node tests/prayer-stations-verified-artwork-release.mjs
+          node tests/pray-stabat-mater-september-20-20261108.mjs
+      - name: Build curated GitHub Pages output with only 14 licensed photos
+        run: node tools/build-web-preview.mjs
+      - name: Assert no unpublished research, exact photo digest and default-off
+        run: |
+          node tests/prayer-stations-curated-release-hold.mjs
+          node tests/github-pages-only-release-contract.mjs
+          node tests/github-pages-release-proof.test.mjs
+      - name: Install Chromium for real optional reader acceptance
+        run: npx playwright install --with-deps chromium
+      - name: Run actual opt-in cycle 14 x EN/FR x 320/390
+        run: node tests/pray-san-polo-optional-cycle-real-phone-20261109.mjs
+      - name: Preserve evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pray-san-polo-optional-56-phone-release
+          path: artifacts/pray-san-polo-optional-release/
+          if-no-files-found: warn
+          retention-days: 21

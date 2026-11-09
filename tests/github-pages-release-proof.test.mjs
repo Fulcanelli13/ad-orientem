@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {readFile} from "node:fs/promises";
 import {
- RELEASE_PROOF_FILENAME,RELEASE_PROOF_SCHEMA,MASS_SCHOLA_CRITICAL_PATHS,NOV6_FIRST_FRIDAY_LEONINE_CRITICAL_PATHS,DISCOVERY_CRITICAL_PATHS,criticalReleasePaths,
+ RELEASE_PROOF_FILENAME,RELEASE_PROOF_SCHEMA,MASS_SCHOLA_CRITICAL_PATHS,NOV6_FIRST_FRIDAY_LEONINE_CRITICAL_PATHS,DISCOVERY_CRITICAL_PATHS,SAN_POLO_CYCLE_CRITICAL_PATHS,criticalReleasePaths,
  createReleaseProof,releaseCommitSha,releaseRunId,releaseSha256,verifyReleaseProof
 } from "../tools/github-pages-release-proof.mjs";
 
@@ -11,13 +11,16 @@ const html='<!doctype html><html><head><link href="./ao-inline-a1.css" rel="styl
 const assets=()=>Object.fromEntries(criticalReleasePaths(html).map(p=>[p,releaseSha256(Buffer.from("critical:"+p))]));
 const proof=()=>createReleaseProof({sha:shaA,runId:"1234567",indexHtml:html,assetSha256:assets()});
 
-test("build provenance identifies source commit, run and 49 critical deployed files",()=>{
+test("build provenance includes fourteen San Polo photographs, attribution and all older critical deployed files",()=>{
  const p=proof();
  assert.equal(p.schema,RELEASE_PROOF_SCHEMA);
  assert.equal(p.source_sha,shaA);
  assert.equal(p.workflow_run_id,"1234567");
  assert.equal(MASS_SCHOLA_CRITICAL_PATHS.length,17);
- assert.equal(Object.keys(p.critical_sha256).length,49);
+ assert.equal(SAN_POLO_CYCLE_CRITICAL_PATHS.length,17);
+ assert.equal(Object.keys(p.critical_sha256).length,49+SAN_POLO_CYCLE_CRITICAL_PATHS.length);
+ for(const path of SAN_POLO_CYCLE_CRITICAL_PATHS)
+  assert.ok(Object.hasOwn(p.critical_sha256,path),"Missing optional San Polo exact release proof: "+path);
  for(const file of MASS_SCHOLA_CRITICAL_PATHS){
   assert.ok(file.startsWith("src/mass/"));
   assert.ok(Object.hasOwn(p.critical_sha256,file),"Missing live Mass/Schola reader proof: "+file);

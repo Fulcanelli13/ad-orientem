@@ -2,7 +2,7 @@
 // Compare LIVE critical asset bytes and build provenance against this exact run.
 import assert from "node:assert/strict";
 import {
- RELEASE_PROOF_FILENAME,MASS_SCHOLA_CRITICAL_PATHS,NOV6_FIRST_FRIDAY_LEONINE_CRITICAL_PATHS,DISCOVERY_CRITICAL_PATHS,releaseCommitSha,releaseSha256,verifyReleaseProof
+ RELEASE_PROOF_FILENAME,MASS_SCHOLA_CRITICAL_PATHS,NOV6_FIRST_FRIDAY_LEONINE_CRITICAL_PATHS,DISCOVERY_CRITICAL_PATHS,SAN_POLO_CYCLE_CRITICAL_PATHS,releaseCommitSha,releaseSha256,verifyReleaseProof
 } from "./github-pages-release-proof.mjs";
 
 const raw=process.env.GITHUB_PAGES_URL;
@@ -129,20 +129,20 @@ const hiddenResp=await fetch(hidden,{redirect:"follow",signal:AbortSignal.timeou
 if(hiddenResp.ok)throw Error("Research file was publicly exposed by Pages: "+hidden.href);
 ok("Research files not publicly exposed");
 
-// Unreleased San Polo source photography is intentionally held in Git only.
-// A hidden reader binding is not enough if the static builder leaks raw files.
+// The complete optional cycle is certified against this exact Pages release.
+for(const relative of SAN_POLO_CYCLE_CRITICAL_PATHS)await released(relative);
+ok("Optional San Polo fourteen photos and attribution exact-byte parity");
+
+// Release authorization applies ONLY to photos, not archival research.
 for(const relative of [
- "assets/stations/san-polo/station-01.webp",
- "assets/stations/san-polo/station-14.webp",
  "data/prayer/stations/san-polo-tiepolo-oils-1747/manifest.v1.json",
+ "data/prayer/stations/san-polo-tiepolo-oils-1747/cc-by-sa-complete-series-release-candidate.v1.json",
 ]){
- const withheld=new URL(relative,base);
- withheld.searchParams.set("ao_release_verify",expectedRunId||expectedSha.slice(0,12));
- const response=await fetch(withheld,{
-  redirect:"follow",signal:AbortSignal.timeout(15000),cache:"no-store",headers:{"cache-control":"no-cache"}
- });
- if(response.ok)throw Error("Unreleased San Polo photograph or research archive exposed by Pages: "+withheld.href);
+ const hiddenURL=new URL(relative,base);
+ hiddenURL.searchParams.set("ao_release_verify",expectedRunId||expectedSha.slice(0,12));
+ const response=await fetch(hiddenURL,{redirect:"follow",signal:AbortSignal.timeout(15000),cache:"no-store",headers:{"cache-control":"no-cache"}});
+ if(response.ok)throw Error("San Polo research archive exposed by Pages: "+hiddenURL.href);
 }
-ok("Unreleased San Polo Stations assets and research archive absent from live Pages");
+ok("Unpublished San Polo research excluded");
 
 console.log("GITHUB_PAGES_POSTDEPLOY_PASS "+JSON.stringify(result));
