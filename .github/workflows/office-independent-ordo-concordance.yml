@@ -3,8 +3,8 @@ name: Divine Office — independent 2026–27 Roman Ordo concordance (research)
 on:
   pull_request:
     paths:
-      - 'tools/office-bulk/independent_ordo_concordance.py'
-      - 'tools/office-bulk/test_independent_ordo_concordance.py'
+      - 'tools/office-ordo/independent_ordo_concordance.py'
+      - 'tools/office-ordo/test_independent_ordo_concordance.py'
       - '.github/workflows/office-independent-ordo-concordance.yml'
   workflow_dispatch:
 
@@ -32,7 +32,7 @@ jobs:
           persist-credentials: false
       - name: Exercise exact-date, independent witness and zero-publication tests
         run: |
-          python3 -m unittest discover -s tools/office-bulk \
+          python3 -m unittest discover -s tools/office-ordo \
             -p 'test_independent_ordo_concordance.py' -v
       - name: Download two-year immutable reviewed source reader from main
         uses: actions/download-artifact@v4
@@ -69,7 +69,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          python3 tools/office-bulk/independent_ordo_concordance.py \
+          python3 tools/office-ordo/independent_ordo_concordance.py \
             --reader office-private-source \
             --ordo-2026 ordo-witness/fsspx-universal-2026.json \
             --ordo-2027 ordo-witness/fsspx-universal-2027.json \
