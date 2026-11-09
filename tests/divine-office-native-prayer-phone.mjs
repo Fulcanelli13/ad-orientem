@@ -251,7 +251,7 @@ try{
    ["2026-12-14","2026-12-14","Advent III · Monday, 14 December 2026",[6,7]],
    ["2026-12-15","2026-12-15","Advent III · Tuesday, 15 December 2026",[11,12,15]],
    ["2026-12-16","2026-12-16","Advent Ember Wednesday, 16 December 2026",[33,60]],
-   ["2026-12-17","2026-12-17","Advent III · O Sapientia · Thursday, 17 December 2026",[69,70]],
+   ["2026-12-17","2026-12-17","Advent III · Thursday, 17 December 2026",[69,70]],
    ["2026-12-18","2026-12-18","Advent Ember Friday, 18 December 2026",[76,85]],
    ["2026-12-19","2026-12-20","Eve of Advent IV · Ember Saturday, 19 December 2026",[87,102]],
    ["2026-12-20","2026-12-20","Fourth Sunday of Advent, 20 December 2026",[4,90,133]]
