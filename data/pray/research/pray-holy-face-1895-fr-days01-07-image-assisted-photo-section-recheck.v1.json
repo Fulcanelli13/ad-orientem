@@ -961,8 +961,8 @@
       "day": 5,
       "printedPage": 127,
       "kind": "MATERIAL_ENGLISH_NON_EQUIVALENCE",
-      "reading": "jugement dérisoire, cour du grand prêtre vs digital English 'decisive judgment', 'house of Caiphas'",
-      "status": "KEEP_UNRESOLVED_UNTIL_1887_PRINT"
+      "reading": "Original 1895 French 'jugement dérisoire' agrees with multiple 1887-associated English transcriptions 'derisive judgment'. A prior app transcription read 'decisive judgment' and was corrected in the reader by one word. 'cour du grand prêtre' versus English 'house of Caiphas' remains an edition/translation difference.",
+      "status": "DERISIVE_APP_TYPO_CORRECTED__COURTYARD_VS_HOUSE_UNRESOLVED"
     },
     {
       "day": 6,
@@ -1007,5 +1007,13 @@
     "englishDayBodyChanges": 0,
     "independentHumanProofApprovedDays": 0,
     "noMirrorGooglePdf": true
+  },
+  "english1887ReprintComparison": {
+    "day": 5,
+    "status": "TWO_REPRINTS_AND_MONASTERY_ENGLISH_TRANSCRIPTION_COMPARED__1887_PRINT_PHOTOGRAPH_UNINSPECTED",
+    "correction": "decisive -> derisive",
+    "sourcePage": "https://holyfacechapel.org/manual-of-the-archconfraternity-of-the-holy-face-novena-to-the-holy-face/",
+    "reprint": "https://sjmoftheholyface.org/wp-content/uploads/2024/01/Original-Novena-To-the-Holy-Face.pdf",
+    "scope": "One corrected word in the app; no broad translation alignment or claim of 1887 original printed-page collation."
   }
 }
