@@ -1,0 +1,110 @@
+{
+  "schema": "ao-mass-canon-c0190-critical-cross-offset-v1",
+  "date": "2026-11-09",
+  "status": "MULTI_WITNESS_RITUS_TEXT_COLLATED_EDITORIAL_OFFSET_CANDIDATE_ONLY",
+  "owner": {
+    "cueId": "AO.SM.C0190",
+    "actionId": "AO.CANON.R62.044",
+    "ritus": "IX.1",
+    "sourceTrigger": "omni benedictione caelesti",
+    "actualActor": "PRIEST",
+    "action": "SELF_SIGN_CROSS"
+  },
+  "frozenDonor": {
+    "low": {
+      "sourcePath": "data/presentation/reader-text-low.v1.json",
+      "blobSha": "afabbd1679f88a45a19f6a24a7795692803d594a",
+      "latin": "omni benedictióne coelésti et grátia repleámur."
+    },
+    "sung": {
+      "sourcePath": "data/presentation/reader-text-sung.v1.json",
+      "blobSha": "29dd8a6da521cf1c16b2c3d13005bd1e3bb76f25",
+      "latin": "omni benedictióne coelésti et grátia repleámur."
+    },
+    "phrase": "omni benedictióne",
+    "followingToken": "coelésti",
+    "printedCrossPresent": false,
+    "uniformAcrossFourForms": true
+  },
+  "orthography": {
+    "donorForm": "coelésti",
+    "printedAndTranscriptionForm": "cælesti / caelesti",
+    "notIdenticalSourceGlyphs": true,
+    "automaticSpellingRewriteForbidden": true,
+    "foldedDonorWithoutAccent": "coelesti",
+    "foldedWitnessWithoutAccent": "caelesti"
+  },
+  "proposedOnly": {
+    "insertionBeforeOriginalWord": "coelésti",
+    "utf16Boundary": 18,
+    "exactTextBeforeBoundary": "omni benedictióne ",
+    "exactTextAfterBoundary": "coelésti et grátia repleámur.",
+    "signType": "SELF_SIGN_ONE_CROSS",
+    "sourceMarkRelativeToWords": "AFTER_BENEDICTIONE_BEFORE_CAELESTI",
+    "sourcePrintedMarkSymbolVariable": "† / ✠ / + across modern reproductions",
+    "isEditorialCandidateNotARenderedGlyph": true,
+    "mayMoveToLive": false,
+    "mayChangeFrozenLatin": false,
+    "mayInferRealGestureFromScroll": false
+  },
+  "witnesses": [
+    {
+      "id": "INTRATEXT_RITUS_IX1",
+      "kind": "LATIN_TRANSCRIPTION_OF_MISSALE_1962",
+      "url": "https://www.intratext.com/IXT/LAT0820/_PK.HTM",
+      "sourcePhrase": "omni benedictione + caelesti",
+      "corroborates": "MARK_BETWEEN_BENEDICTIONE_AND_CAELESTI",
+      "witnessIsOriginal1962VaticanPhotograph": false,
+      "independentlyAuthenticatedPrintedEdition": false
+    },
+    {
+      "id": "DOCUMENTA_2006_HTML_DERIVED_PDF",
+      "kind": "LATIN_HTML_REPRODUCTION_PDF_NOT_ORIGINAL_PHOTOGRAPH",
+      "url": "https://www.documentacatholicaomnia.eu/01p/1962-06-23%2C_SS_Ioannes_XXIII%2C_Missale_Romanum%2C_LT.pdf",
+      "sourcePhrase": "omni benedictióne ✠ cælésti",
+      "corroborates": "MARK_BETWEEN_BENEDICTIONE_AND_CAELESTI",
+      "witnessIsOriginal1962VaticanPhotograph": false,
+      "independentlyAuthenticatedPrintedEdition": false
+    },
+    {
+      "id": "REPRINT_2004_PRE1962_TYPOGRAPHICAL_TRADITION",
+      "kind": "2004_REPRINT_OF_EARLIER_EDITION_NOT_1962_VATICAN_TYPICA",
+      "url": "https://www.es.catholic.net/archivos/missale-romanum-1962.pdf",
+      "sourcePhrase": "omni benedictione † cælesti",
+      "corroborates": "EARLIER_PRINTED_CROSS_POSITION_NOT_EDITION_AUTHENTICATION",
+      "witnessIsOriginal1962VaticanPhotograph": false,
+      "independentlyAuthenticatedPrintedEdition": false
+    },
+    {
+      "id": "BENZIGER_PERIOD_EDITIO_IUXTA_TYPICAM",
+      "kind": "PERIOD_BENZIGER_PRINT_1961_APPROVAL_WITH_OCR_LAYER_NOT_VATICAN_TYPICA",
+      "url": "https://isidore.co/misc/Res%20pro%20Deo/ITOPL_OCR-layer-only/11a.%20Liturgy/Missale%20Romanum%201962_OCR.pdf",
+      "sourcePhrase": "omni benedictione cælesti, seipsum signat",
+      "corroborates": "GESTURE_ON_THIS_PHRASE_BUT_OCR_DOES_NOT_CERTIFY_GLYPH",
+      "witnessIsOriginal1962VaticanPhotograph": false,
+      "independentlyAuthenticatedPrintedEdition": false
+    }
+  ],
+  "criticalAssessment": {
+    "latinInstructionReading": "RITUS_IX1_SELF_SIGN_CONFIRMED_AT_PHRASE",
+    "independentTypicaPrintedGlyphCollation": "NOT_COMPLETED",
+    "exactSourceDonorGlyphMatch": "NOT_ESTABLISHED_ORTHOGRAPHY_DIFFERS",
+    "candidateWordBoundary": "EXACT_IN_FROZEN_DONOR_ONLY",
+    "editorialSourceDecision": "MAY_PREPARE_SIGNOFF_DOSSIER_NOT_PROMOTE_LIVE",
+    "independent1962FacsimileSignoff": "NOT_GRANTED",
+    "independentLatinAndBilingualCopySignoff": "NOT_GRANTED",
+    "independentCeremonialSignoff": "NOT_GRANTED",
+    "independentActorClockAcceptance": "NOT_GRANTED",
+    "finalGesturePublicationApproval": "NOT_GRANTED",
+    "C0190EditorialStatus": "SOURCE_GESTURE_OFFSET_UNVERIFIED"
+  },
+  "releaseInvariant": {
+    "preserveFrozenDonorText": true,
+    "preserveOriginalCanonicalCue": true,
+    "preserveExisting42UnpublishedQueue": true,
+    "noUserFacingCrossInserted": true,
+    "noNewPictogram": true,
+    "noAutomaticRepositioning": true,
+    "noImpliedPriestClockFromReaderFocus": true
+  }
+}
