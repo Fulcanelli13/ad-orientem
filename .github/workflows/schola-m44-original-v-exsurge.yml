@@ -1,0 +1,50 @@
+name: Schola M44 original print vs offline Exsurge (research only)
+on:
+  pull_request:
+    paths:
+      - "tests/reader-kyriale-m44-1961-exsurge-render-parity.mjs"
+      - "tools/schola/m44-*.mjs"
+      - "tools/schola/m44-*.py"
+      - ".github/workflows/schola-m44-original-v-exsurge.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  original-v-rendered-evidence:
+    name: M44 compare 1961 printed noteheads vs offline Exsurge SVG
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - name: Install pinned source renderer dependencies
+        run: npm ci --ignore-scripts
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install PDF and image evidence dependencies
+        run: python -m pip install --disable-pip-version-check "PyMuPDF==1.26.6" "Pillow==11.3.0"
+      - name: Compare actual Exsurge semantic notes and emit SVG at phone widths
+        run: node tests/reader-kyriale-m44-1961-exsurge-render-parity.mjs --evidence artifacts/schola-m44-exsurge
+      - name: Render original 1961 p54* directly at 420dpi
+        run: python tools/schola/m43-original-engraving-crops.py --output artifacts/schola-m44-original
+      - name: Install offline Chromium for renderer screenshots
+        run: npx playwright install --with-deps chromium
+      - name: Capture actual browser paint of Exsurge score at two phone widths
+        run: node tools/schola/m44-exsurge-browser-visuals.mjs artifacts/schola-m44-exsurge
+      - name: Build separated original-print vs Exsurge editorial comparison
+        run: python tools/schola/m44-original-v-exsurge-montage.py artifacts/schola-m44-exsurge artifacts/schola-m44-original
+      - name: Upload original and rendered comparison for editorial review, never production
+        uses: actions/upload-artifact@v4
+        with:
+          name: m44-1961-original-versus-exsurge-renderer
+          path: |
+            artifacts/schola-m44-exsurge/
+            artifacts/schola-m44-original/
+          if-no-files-found: error
+          retention-days: 7
