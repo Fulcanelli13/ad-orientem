@@ -1,0 +1,369 @@
+{
+  "schema": "ao-mass-music-m41-kyrie-xvi-1961-glyph-sign-to-note-attachment-ledger-v1",
+  "observedDate": "2026-11-09",
+  "scoreId": "GREGOBASE-545",
+  "movement": "KYRIE",
+  "setting": "MASS_16",
+  "scope": "SOURCE_SIGNS_BOUND_TO_EXACT_NOTEHEADS_AND_PRINTED_SYSTEMS_NOT_EDITORIALLY_CERTIFIED",
+  "sourceGabcFile": "src/mass/reader-kyriale-research-gabc.js",
+  "sourceGabcFingerprintUtf16Fnv1a32": "acef0d62",
+  "sourceNoteGroupFile": "src/mass/reader-kyriale-source-note-groups.js",
+  "sourceNoteSignParser": "src/mass/reader-kyriale-research-sign-attachments.js",
+  "authority": {
+    "primary": {
+      "title": "Graduale Romanum (Solesmes, 1961)",
+      "printedPage": "54*",
+      "pdf": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf",
+      "pdfPage1Based": 56,
+      "fullPageScan": "https://gregobase.selapa.net/sources/2/931.png"
+    },
+    "secondary": [
+      {
+        "title": "Liber Usualis (Solesmes, 1961)",
+        "printedPage": "59",
+        "fullPageScan": "https://gregobase.selapa.net/sources/3/170.png"
+      },
+      {
+        "title": "Chants of the Church (Solesmes, 1956)",
+        "printedPage": "40",
+        "fullPageScan": "https://gregobase.selapa.net/sources/5/55.png"
+      }
+    ],
+    "gabcOfficialDocumentation": [
+      "https://gregorio-project.github.io/gabc/details.html",
+      "https://gregorio-project.github.io/gabc/",
+      "https://gregorio-project.github.io/tutorial/tutorial-gabc-file-01.html"
+    ]
+  },
+  "method": [
+    "Inspect original 1961 p.54* engraving and both corroborating original Solesmes printed witnesses, with attention to small horizontal strokes, mora dots, the closing virga and descending inclined-square tail; at current page-scan resolution note glyph-level side/length/target remains partially ambiguous.",
+    "Bind every GABC underscore, period, virga flag, and uppercase inclined note to an exact source notehead index from M38 (not only to the syllable-neume group). Count overlapping attachments correctly: the final E is both an inclined note and bears the source mora.",
+    "The positional relation of each symbol to its GABC note is DETERMINISTIC from preserved original GABC and the Gregorio grammar. The ORIGINAL PRINTED symbol identity/position is NOT yet independently fully confirmed; print observations and source parsing are separate evidence fields.",
+    "The 27/27 groups and 40/40 source note positions already scanned in M40 do not constitute a count of independently read printed noteheads; grant no notation approval from structural or visual contour similarity.",
+    "No printing correction, GABC rewrite, new performance claim or physical-score publication; investigate at high resolution before proposing any correction."
+  ],
+  "originalSourceSignAttachments": [
+    {
+      "signKind": "HORIZONTAL_EPISEMA",
+      "gabcToken": "_",
+      "sourceGroupOrdinal": 5,
+      "sourceGlobalNoteOrdinal": 7,
+      "sourceGabcNoteLetter": "h",
+      "sourceStaffLocation": "line3",
+      "originalPrintedFolio": "54*",
+      "printedSystem": 1,
+      "primaryWitnessAnchor": "FOLIO_54_SYSTEM_1",
+      "engravingObservationAtDisplayResolution": "Little horizontal stroke near repeated lé square; original staff ruling impedes exact stroke length/side reading.",
+      "originalPrintWitnessStatus": "SMALL_MARK_VISUALLY_PLAUSIBLE_EXACT_POSITION_UNCERTIFIED",
+      "originalPrintSignPositionCertified": false,
+      "originalPrintSignShapeCertified": false,
+      "originalPrintedNoteIndexIndependentlyAssigned": false,
+      "independentEditorialApproval": false,
+      "proposedGabcCorrection": null
+    },
+    {
+      "signKind": "PUNCTUM_MORA",
+      "gabcToken": ".",
+      "sourceGroupOrdinal": 7,
+      "sourceGlobalNoteOrdinal": 9,
+      "sourceGabcNoteLetter": "i",
+      "sourceStaffLocation": "space3",
+      "originalPrintedFolio": "54*",
+      "printedSystem": 1,
+      "primaryWitnessAnchor": "FOLIO_54_SYSTEM_1",
+      "engravingObservationAtDisplayResolution": "Dots are visible near phrase-ending son; exact side and printed notehead attachment require magnified witness.",
+      "originalPrintWitnessStatus": "SMALL_MARK_VISUALLY_PLAUSIBLE_EXACT_POSITION_UNCERTIFIED",
+      "originalPrintSignPositionCertified": false,
+      "originalPrintSignShapeCertified": false,
+      "originalPrintedNoteIndexIndependentlyAssigned": false,
+      "independentEditorialApproval": false,
+      "proposedGabcCorrection": null
+    },
+    {
+      "signKind": "HORIZONTAL_EPISEMA",
+      "gabcToken": "_",
+      "sourceGroupOrdinal": 11,
+      "sourceGlobalNoteOrdinal": 14,
+      "sourceGabcNoteLetter": "h",
+      "sourceStaffLocation": "line3",
+      "originalPrintedFolio": "54*",
+      "printedSystem": 1,
+      "primaryWitnessAnchor": "FOLIO_54_SYSTEM_1",
+      "engravingObservationAtDisplayResolution": "Christe lé shows corresponding note height; source underscore printed stroke length and placement not yet resolved.",
+      "originalPrintWitnessStatus": "SMALL_MARK_VISUALLY_PLAUSIBLE_EXACT_POSITION_UNCERTIFIED",
+      "originalPrintSignPositionCertified": false,
+      "originalPrintSignShapeCertified": false,
+      "originalPrintedNoteIndexIndependentlyAssigned": false,
+      "independentEditorialApproval": false,
+      "proposedGabcCorrection": null
+    },
+    {
+      "signKind": "PUNCTUM_MORA",
+      "gabcToken": ".",
+      "sourceGroupOrdinal": 13,
+      "sourceGlobalNoteOrdinal": 16,
+      "sourceGabcNoteLetter": "i",
+      "sourceStaffLocation": "space3",
+      "originalPrintedFolio": "54*",
+      "printedSystem": 1,
+      "primaryWitnessAnchor": "FOLIO_54_SYSTEM_1",
+      "engravingObservationAtDisplayResolution": "Printed Christe end has a possible mora dot, but individual glyph attachment cannot be certified from page-scale scan.",
+      "originalPrintWitnessStatus": "SMALL_MARK_VISUALLY_PLAUSIBLE_EXACT_POSITION_UNCERTIFIED",
+      "originalPrintSignPositionCertified": false,
+      "originalPrintSignShapeCertified": false,
+      "originalPrintedNoteIndexIndependentlyAssigned": false,
+      "independentEditorialApproval": false,
+      "proposedGabcCorrection": null
+    },
+    {
+      "signKind": "HORIZONTAL_EPISEMA",
+      "gabcToken": "_",
+      "sourceGroupOrdinal": 18,
+      "sourceGlobalNoteOrdinal": 23,
+      "sourceGabcNoteLetter": "h",
+      "sourceStaffLocation": "line3",
+      "originalPrintedFolio": "54*",
+      "printedSystem": 2,
+      "primaryWitnessAnchor": "FOLIO_54_SYSTEM_2",
+      "engravingObservationAtDisplayResolution": "Repeated Kyrie lé remains unresolved for exact horizontal episema engraving.",
+      "originalPrintWitnessStatus": "SMALL_MARK_VISUALLY_PLAUSIBLE_EXACT_POSITION_UNCERTIFIED",
+      "originalPrintSignPositionCertified": false,
+      "originalPrintSignShapeCertified": false,
+      "originalPrintedNoteIndexIndependentlyAssigned": false,
+      "independentEditorialApproval": false,
+      "proposedGabcCorrection": null
+    },
+    {
+      "signKind": "PUNCTUM_MORA",
+      "gabcToken": ".",
+      "sourceGroupOrdinal": 20,
+      "sourceGlobalNoteOrdinal": 25,
+      "sourceGabcNoteLetter": "i",
+      "sourceStaffLocation": "space3",
+      "originalPrintedFolio": "54*",
+      "printedSystem": 2,
+      "primaryWitnessAnchor": "FOLIO_54_SYSTEM_2",
+      "engravingObservationAtDisplayResolution": "Third Kyrie end visually has terminal lengthening sign, but exact dot placement is unverified.",
+      "originalPrintWitnessStatus": "SMALL_MARK_VISUALLY_PLAUSIBLE_EXACT_POSITION_UNCERTIFIED",
+      "originalPrintSignPositionCertified": false,
+      "originalPrintSignShapeCertified": false,
+      "originalPrintedNoteIndexIndependentlyAssigned": false,
+      "independentEditorialApproval": false,
+      "proposedGabcCorrection": null
+    },
+    {
+      "signKind": "VIRGA",
+      "gabcToken": "v",
+      "sourceGroupOrdinal": 27,
+      "sourceGlobalNoteOrdinal": 37,
+      "sourceGabcNoteLetter": "h",
+      "sourceStaffLocation": "line3",
+      "originalPrintedFolio": "54*",
+      "printedSystem": 2,
+      "primaryWitnessAnchor": "FOLIO_54_SYSTEM_2",
+      "engravingObservationAtDisplayResolution": "Closing son source h has a virga marker before the three descending inclined notes; print suggests a stem, but exact glyph-shape match remains unresolved.",
+      "originalPrintWitnessStatus": "POSSIBLE_STEM_EXACT_VIRGA_UNCERTIFIED",
+      "originalPrintSignPositionCertified": false,
+      "originalPrintSignShapeCertified": false,
+      "originalPrintedNoteIndexIndependentlyAssigned": false,
+      "independentEditorialApproval": false,
+      "proposedGabcCorrection": null
+    },
+    {
+      "signKind": "PUNCTUM_INCLINATUM",
+      "gabcToken": "G",
+      "sourceGroupOrdinal": 27,
+      "sourceGlobalNoteOrdinal": 38,
+      "sourceGabcNoteLetter": "G",
+      "sourceStaffLocation": "space2",
+      "originalPrintedFolio": "54*",
+      "printedSystem": 2,
+      "primaryWitnessAnchor": "FOLIO_54_SYSTEM_2",
+      "engravingObservationAtDisplayResolution": "The printed cadence visibly descends in diamond-like figures; the exact first inclined note identity must be individually matched against the 1961 original.",
+      "originalPrintWitnessStatus": "DESCENDING_DIAMOND_LIKE_TAIL_VISIBLE_EXACT_GLYPH_HELD",
+      "originalPrintSignPositionCertified": false,
+      "originalPrintSignShapeCertified": false,
+      "originalPrintedNoteIndexIndependentlyAssigned": false,
+      "independentEditorialApproval": false,
+      "proposedGabcCorrection": null
+    },
+    {
+      "signKind": "PUNCTUM_INCLINATUM",
+      "gabcToken": "F",
+      "sourceGroupOrdinal": 27,
+      "sourceGlobalNoteOrdinal": 39,
+      "sourceGabcNoteLetter": "F",
+      "sourceStaffLocation": "line2",
+      "originalPrintedFolio": "54*",
+      "printedSystem": 2,
+      "primaryWitnessAnchor": "FOLIO_54_SYSTEM_2",
+      "engravingObservationAtDisplayResolution": "The second inclined diamond belongs to the source descending final tail; the exact original engraved position and join need enlarged comparison.",
+      "originalPrintWitnessStatus": "DESCENDING_DIAMOND_LIKE_TAIL_VISIBLE_EXACT_GLYPH_HELD",
+      "originalPrintSignPositionCertified": false,
+      "originalPrintSignShapeCertified": false,
+      "originalPrintedNoteIndexIndependentlyAssigned": false,
+      "independentEditorialApproval": false,
+      "proposedGabcCorrection": null
+    },
+    {
+      "signKind": "PUNCTUM_INCLINATUM",
+      "gabcToken": "E",
+      "sourceGroupOrdinal": 27,
+      "sourceGlobalNoteOrdinal": 40,
+      "sourceGabcNoteLetter": "E",
+      "sourceStaffLocation": "space1",
+      "originalPrintedFolio": "54*",
+      "printedSystem": 2,
+      "primaryWitnessAnchor": "FOLIO_54_SYSTEM_2",
+      "engravingObservationAtDisplayResolution": "The last inclined pitch is followed by the source mora; distinguish diamond from dot at enlarged magnification.",
+      "originalPrintWitnessStatus": "DESCENDING_DIAMOND_LIKE_TAIL_VISIBLE_EXACT_GLYPH_HELD",
+      "originalPrintSignPositionCertified": false,
+      "originalPrintSignShapeCertified": false,
+      "originalPrintedNoteIndexIndependentlyAssigned": false,
+      "independentEditorialApproval": false,
+      "proposedGabcCorrection": null
+    },
+    {
+      "signKind": "PUNCTUM_MORA",
+      "gabcToken": ".",
+      "sourceGroupOrdinal": 27,
+      "sourceGlobalNoteOrdinal": 40,
+      "sourceGabcNoteLetter": "E",
+      "sourceStaffLocation": "space1",
+      "originalPrintedFolio": "54*",
+      "printedSystem": 2,
+      "primaryWitnessAnchor": "FOLIO_54_SYSTEM_2",
+      "engravingObservationAtDisplayResolution": "The source terminal dot attaches to E, not preceding square or virga; printed final dot is plausible but not accepted for exact placement.",
+      "originalPrintWitnessStatus": "SMALL_MARK_VISUALLY_PLAUSIBLE_EXACT_POSITION_UNCERTIFIED",
+      "originalPrintSignPositionCertified": false,
+      "originalPrintSignShapeCertified": false,
+      "originalPrintedNoteIndexIndependentlyAssigned": false,
+      "independentEditorialApproval": false,
+      "proposedGabcCorrection": null
+    }
+  ],
+  "verifiedSourceSignOccurrences": {
+    "horizontalEpisemaCount": 3,
+    "horizontalEpisemaSourceGlobalNotes": [
+      7,
+      14,
+      23
+    ],
+    "moraDotCount": 4,
+    "moraDotSourceGlobalNotes": [
+      9,
+      16,
+      25,
+      40
+    ],
+    "virgaCount": 1,
+    "virgaSourceGlobalNotes": [
+      37
+    ],
+    "inclinedNoteCount": 3,
+    "inclinedSourceGlobalNotes": [
+      38,
+      39,
+      40
+    ],
+    "totalSignOccurrences": 11,
+    "distinctSourceNoteheadsWithFlags": 10,
+    "finalCadenceDistinctSignCollision": "E has both punctum inclinatum and punctum mora",
+    "comparisonGroupsWithTwoNotePedalVersusEpisema": {
+      "twoNoteFinalAccent": {
+        "group": 25,
+        "source": "hj",
+        "globalNoteOrdinals": [
+          32,
+          33
+        ],
+        "hasHorizontalEpisema": false
+      },
+      "oneNoteAccentedFirstPhrase": {
+        "group": 5,
+        "source": "h_",
+        "globalNoteOrdinal": 7,
+        "hasHorizontalEpisema": true
+      }
+    }
+  },
+  "engravingBlockers": [
+    {
+      "gate": "PUNCTUM_MORA_ORIGINAL_PRINT",
+      "groups": [
+        7,
+        13,
+        20,
+        27
+      ],
+      "status": "HOLD",
+      "needed": "Four independently identified and pinned original printed dots, per physical staff, compared with source indices 9,16,25,40"
+    },
+    {
+      "gate": "HORIZONTAL_EPISEMA_ORIGINAL_PRINT",
+      "groups": [
+        5,
+        11,
+        18
+      ],
+      "status": "HOLD",
+      "needed": "High-resolution printed short strokes individually compared with h_ at source indices 7,14,23, ruling lines excluded"
+    },
+    {
+      "gate": "FINAL_VIRGA_AND_INCLINATA_ORIGINAL_PRINT",
+      "groups": [
+        27
+      ],
+      "status": "HOLD",
+      "needed": "Enlarged 1961 glyph images to distinguish h virga at 37 from G/F/E inclined glyphs at 38/39/40; annotate joins and mora on E"
+    },
+    {
+      "gate": "PRINTED_NOTEHEAD_COUNT_INDEPENDENT",
+      "groups": [
+        1,
+        27
+      ],
+      "status": "HOLD",
+      "needed": "Independently count and label the ORIGINAL PRINT 40 notes without copying the GABC inventory"
+    },
+    {
+      "gate": "PRINTED_CUSTOS_AND_SYLLABIC_UNDERLAY",
+      "groups": [
+        14,
+        15,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "status": "HOLD",
+      "needed": "Prove system break custos and each final Kyrie syllabic alignment independently at original printed resolution"
+    },
+    {
+      "gate": "EDITOR_SIGN_OFF_AND_LICENSE",
+      "groups": [
+        1,
+        27
+      ],
+      "status": "HOLD",
+      "needed": "Qualified chant-editor signoff and separate rights/provenance decision before any score approval"
+    }
+  ],
+  "editorialState": {
+    "originalSourceSignAttachmentMechanicallyValidated": true,
+    "sourceNotePositionsAccountedFor": 40,
+    "printedNoteheadsIndependentlyCounted": false,
+    "exactPrintedSymbolParityCertified": false,
+    "independentlyMusicallyApprovedScores": 0,
+    "publishedResearchGabcScores": 20,
+    "originalGabcChanged": false,
+    "readerRuntimeChanged": false,
+    "canonical65CardsChanged": false,
+    "automaticChantSettingSelected": false,
+    "requiemInferred": false,
+    "sourceCodePromotionBlocked": true
+  }
+}
