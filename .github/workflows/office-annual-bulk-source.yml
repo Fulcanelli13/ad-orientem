@@ -5,6 +5,11 @@ on:
     paths:
       - 'tools/office-bulk/**'
       - '.github/workflows/office-annual-bulk-source.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'tools/office-bulk/**'
+      - '.github/workflows/office-annual-bulk-source.yml'
   workflow_dispatch:
 
 # These jobs extract source evidence only. Nothing is committed to the
@@ -108,6 +113,27 @@ jobs:
                 f"dates={c['days']} chapters={c['extracted_hour_instances']} "
                 f"exceptions={manifest['issue_count']} certified=false published=false")
           PY
+      - name: Audit source-marked liturgical sections and evening precedence
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 tools/office-bulk/audit_annual.py             --parsed "office-annual-artifacts/$YEAR/parsed"
+          python3 - "$YEAR" <<'PY'
+          import json, pathlib, sys
+          year = int(sys.argv[1])
+          audit = json.loads(pathlib.Path(
+              f"office-annual-artifacts/{year}/parsed/structure-audit.json"
+          ).read_text(encoding="utf8"))
+          assert audit["source_records"] == 2920
+          assert audit["days_with_eight_hours"] == 365
+          assert audit["quality_gate"]["source_structure_audited"] is True
+          assert audit["quality_gate"]["public_reader_authorized"] is False
+          if audit["vespers_compline_title_divergences"]:
+              raise ValueError("Unreviewed Vespers/Compline precedence discrepancies")
+          print(f"AO_OFFICE_1960_EVENING_REVIEW year={year} "
+                f"first_vespers_candidates={audit['evening_office_transition_count']} "
+                f"unmatched_compline=0 published=false")
+          PY
       - name: Upload immutable source, structured text and exception ledger (NOT Pages)
         if: always()
         uses: actions/upload-artifact@v4
@@ -117,3 +143,96 @@ jobs:
           retention-days: 30
           if-no-files-found: warn
           compression-level: 6
+
+
+  archive-source-research:
+    name: Durable source archive via GitHub Release (never Pages)
+    needs: generate
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    # Read-only source generation is safe for PRs; release writing is
+    # deliberately isolated to the reviewed main-branch push.
+    permissions:
+      contents: write
+      actions: read
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      DIVINUM_OFFICIUM_SHA: 126a07f91ede04664108abb6fb20ace3f4de14b9
+      ARCHIVE_TAG: office-source-latin-1960-2026-2027-do126a07f-ao-v1
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: office-1960-la-2026-research
+          path: office-annual-artifacts/2026
+      - uses: actions/download-artifact@v4
+        with:
+          name: office-1960-la-2027-research
+          path: office-annual-artifacts/2027
+      - name: Verify both annual coverage manifests before archival
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib, json, pathlib
+          for year in (2026, 2027):
+              root = pathlib.Path(f"office-annual-artifacts/{year}")
+              manifest = json.loads((root/"parsed/manifest.json").read_text())
+              audit = json.loads((root/"parsed/structure-audit.json").read_text())
+              assert manifest["coverage"]["complete"]
+              assert manifest["coverage"]["extracted_hour_instances"] == 2920
+              assert manifest["issue_count"] == 0
+              assert manifest["source"]["revision"] == "126a07f91ede04664108abb6fb20ace3f4de14b9"
+              assert audit["source_records"] == 2920
+              assert audit["days_with_eight_hours"] == 365
+              assert not audit["vespers_compline_title_divergences"]
+              assert not audit["quality_gate"]["public_reader_authorized"]
+              source = root/f"source-breviarium{year}.epub"
+              assert hashlib.sha256(source.read_bytes()).hexdigest() == manifest["source"]["yearly_epub_sha256"]
+              print(f"AO_OFFICE_DURABLE_SOURCE_ARCHIVE_VERIFIED year={year} hours=2920 exceptions=0")
+          PY
+      - name: Create immutable, non-production source release
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p office-source-release
+          for year in 2026 2027; do
+            cp "office-annual-artifacts/$year/source-breviarium${year}.epub" \
+               "office-source-release/source-breviarium${year}.epub"
+            (
+              cd "office-annual-artifacts/$year"
+              zip -qr "$GITHUB_WORKSPACE/office-source-release/office-${year}-latin-1960-structured.zip" \
+                parsed generator.log
+            )
+          done
+          cat > office-source-release/README-RESEARCH.txt <<'EOF'
+          AD ORIENTEM — LATIN 1960 ROMAN DIVINE OFFICE — SOURCE RESEARCH ARCHIVE
+          2026 and 2027; 8 Hours × 365 civil dates/year = 5,840 XHTML Hours
+          Upstream source: DivinumOfficium/divinum-officium
+          Exact revision: 126a07f91ede04664108abb6fb20ace3f4de14b9
+          Each original EPUB and the source-aligned structured source records
+          are retained together; SHA256s and exception reports are in manifests.
+          NOT liturgically certified, NOT public-reader authorized.
+          Preserve Divinum Officium MIT licensing and original source credits.
+          No other Hour becomes public from this release artifact.
+          EOF
+          # Never silently replace an earlier source archive. Bump the archive
+          # tag in a reviewed change if semantics/source revisions change.
+          if gh release view "$ARCHIVE_TAG" >/dev/null 2>&1; then
+            echo "::error::Immutable source archive $ARCHIVE_TAG already exists; refusing overwrite"
+            exit 1
+          fi
+          gh release create "$ARCHIVE_TAG" \
+            office-source-release/source-breviarium2026.epub \
+            office-source-release/source-breviarium2027.epub \
+            office-source-release/office-2026-latin-1960-structured.zip \
+            office-source-release/office-2027-latin-1960-structured.zip \
+            office-source-release/README-RESEARCH.txt \
+            --target "$GITHUB_SHA" \
+            --title "Research source archive — 1960 Latin Office 2026–2027" \
+            --prerelease \
+            --notes "Research archive ONLY: 5,840 verified extracted Latin canonical Hour chapters (all 8 Hours, 2026–2027), 0 structural extraction exceptions. Pinned upstream Divinum Officium revision $DIVINUM_OFFICIUM_SHA. Immutable raw EPUBs and source-aligned structured data including chapter SHA-256, line breaks, explicit section labels, completeness manifests, source transition reviews and exception ledgers. This release does NOT publish any additional prayers in the Ad Orientem app or certify the liturgical text against the 1961 printed Psalter. GitHub Pages application release is separate."
