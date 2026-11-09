@@ -9,9 +9,11 @@ import "./released-module-photo-styles.js";
 import { ICKSP_DIVINE_INFANT_KING_NOVENA_V1, monthlyInfantKingStatus } from "./icksp-divine-infant-king-novena.v1.js";
 import { ICKSP_IMMACULATE_CONCEPTION_NOVENA_V1, annualInstituteImmaculateStatus } from "./icksp-immaculate-conception-novena.v1.js";
 import { NOVENA_HOLY_FACE_1887_B25 } from "./holy-face-janvier-1887-b25.js";
+import {holyFace1895FrenchPreviewEnabled,holyFace1895FrenchReaderCandidate} from "./holy-face-janvier-1895-fr-reader-candidate.v1.js";
 // Existing sixteen remain frozen; the ICKSP source is an optional extension of the same reader.
 const ADDITIONAL_NOVENAS=Object.freeze({[ICKSP_DIVINE_INFANT_KING_NOVENA_V1.id]:ICKSP_DIVINE_INFANT_KING_NOVENA_V1,[ICKSP_IMMACULATE_CONCEPTION_NOVENA_V1.id]:ICKSP_IMMACULATE_CONCEPTION_NOVENA_V1,[NOVENA_HOLY_FACE_1887_B25.id]:NOVENA_HOLY_FACE_1887_B25});
 const ALL_NOVENAS=Object.freeze({...CORPUS,...ADDITIONAL_NOVENAS});
+const HOLY_FACE_FRENCH_PREVIEW=holyFace1895FrenchReaderCandidate(NOVENA_HOLY_FACE_1887_B25);
 import { novenaSourceAccess } from "./novena-source-access.v1.js";
 import {novenaPrintQualification} from "./prayer-source-qualifications-b17.js";
 import { novenaScriptureContextHtml } from "./novena-scripture-context.js";
@@ -60,6 +62,10 @@ const isFr=()=>{
  try{return JSON.parse(localStorage.getItem('ao2:settings:v1')||'{}').language==='fr'}catch{return false}
 };
 const L=(en,fr)=>isFr()?fr:en;
+function activeNovena(id){
+ return id===NOVENA_HOLY_FACE_1887_B25.id&&isFr()&&holyFace1895FrenchPreviewEnabled()
+  ?HOLY_FACE_FRENCH_PREVIEW:ALL_NOVENAS[id];
+}
 const txt=o=>o?(isFr()?o.fr:o.en)||o.en||o.fr||'':'';
 const startKindLabel=n=>n?.startKind===NOVENA_START_KIND.TRADITIONAL
  ?L('Traditional start','Début traditionnel')
@@ -95,7 +101,7 @@ function sourceDetails(n){
  const facsimile=section?.printFacsimile;
  const facsimileLink=facsimile?.status==="PRINT_SCAN_LOCATED_COLLATION_PENDING"&&/^https:\/\/commons\.wikimedia\.org\//.test(facsimile.url||"")
   ?`<p data-n1-novena-original-scan><a href="${esc(facsimile.url)}" target="_blank" rel="noopener noreferrer">${esc(L("Original printed-volume scan · printed pp. ","Fac-similé de l’édition imprimée · p. ")+facsimile.printedPages)} ↗</a><br><small>${esc(L("Scan located; individual prayer lines have not been independently certified.","Fac-similé identifié ; les lignes de chaque prière restent à collationner."))}</small></p>`:"";
- const printStatus=novenaPrintQualification(n.id,{french:isFr()});
+ const printStatus=n.frenchReaderPreview?null:novenaPrintQualification(n.id,{french:isFr()});
  const printNotice=printStatus?`<p class="aoN1Fine" data-n1-novena-print-audit="${esc(printStatus.status)}">${esc(printStatus.text)}</p>`:'';
  const links=(n.historySources||[]).filter(x=>/^https:\/\//i.test(x.url||'')).map(x=>`<li><a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">${esc(isFr()&&x.labelFr?x.labelFr:x.label)} ↗</a></li>`).join('');
  return `<details class="aoN1Details aoN1SourceDetails"><summary>${esc(L('Sources & edition','Sources et édition'))}</summary><p><b>${esc(s.work||n.id)}</b><br>${esc(s.authors||'')}<br>${esc(s.edition||'')}<br>${esc(s.approval||'')}</p>${direct}${note}${facsimileLink}${printNotice}${s.adaptation?`<p>${esc(s.adaptation)}</p>`:''}${links?`<ul>${links}</ul>`:''}<p class="aoN1Fine">${esc(L('An identified source or translation is not in itself proof of complete word-for-word collation.', 'Un texte source identifié ou une traduction ne constitue pas, à lui seul, une vérification intégrale mot à mot.'))}</p></details>`;
@@ -122,7 +128,7 @@ function clearedNovenaMosaicImage(n){
  return '<span class="aoN1MosaicPhoto" data-ao-novena-mosaic-slot="'+esc(slotId)+'">'+
   '<img src="/'+esc(resolved.photo.image)+'" alt="" loading="lazy" decoding="async"></span>';
 }
-function renderOverview(){const items=Object.values(CORPUS),statuses=items.map(n=>[n,calStatus(n)]),next=statuses.filter(x=>x[1].kind==='active'||x[1].kind==='upcoming').sort((a,b)=>a[1].w.start-b[1].w.start)[0];return `${head(L('Novenas','Neuvaines'),'')}<main class="aoP435930Body"><section class="aoN1Hero">${icon()}<small>${items.length} ${esc(L('novenas','neuvaines'))}</small></section>${next?`<div class="aoN1Calendar"><b>${esc(next[1].kind==='active'?L('In season now','En cours dans le calendrier'):L('Coming up','À venir'))}</b><br>${esc(txt(next[0].title))} · ${esc(next[1].label)}</div>`:''}<section><span class="aoN1Kicker">${esc(L('TRADITIONAL NOVENAS','NEUVAINES TRADITIONNELLES'))}</span><div class="aoN1Grid">${statuses.map(([n,c])=>`<button type="button" class="aoN1Card ${c.kind==='active'?'active':''}" data-n1-select="${esc(n.id)}">${clearedNovenaMosaicImage(n)}<small>${esc(txt(n.family))}</small><b>${esc(txt(n.title))}</b><span>${esc(c.label)}</span><em>${esc(n.form==='REPEAT_FORM'?L('One prayer repeated each day','Une prière répétée chaque jour'):L('A prayer for each day','Une prière pour chaque jour'))}</em></button>`).join('')}</div></section><section data-n1-holy-face-1887-supplement><span class="aoN1Kicker">${esc(L('HISTORICAL NOVENA · ORIGINAL ENGLISH','NEUVAINE HISTORIQUE · ANGLAIS ORIGINAL'))}</span><div class="aoN1Grid"><button type="button" class="aoN1Card" data-n1-supplement="holy_face_1887"><small>${esc(L('Holy Face · Reparation','Sainte Face · Réparation'))}</small><b>${esc(L('Novena to the Holy Face','Neuvaine à la Sainte Face'))}</b><span>${esc(calStatus(NOVENA_HOLY_FACE_1887_B25).label)}</span><em>${esc(L('Nine complete 1887 English meditations · print-page collation pending','Neuf méditations intégrales en anglais (1887) · collation imprimée en attente'))}</em></button></div></section><section data-n1-institute-supplement><span class="aoN1Kicker">${esc(L('INSTITUTE DEVOTIONS','DÉVOTIONS DE L’INSTITUT'))}</span><div class="aoN1Grid"><button type="button" class="aoN1Card" data-n1-supplement="divine_infant_king"><small>${esc(txt(ICKSP_DIVINE_INFANT_KING_NOVENA_V1.family))}</small><b>${esc(txt(ICKSP_DIVINE_INFANT_KING_NOVENA_V1.title))}</b><span>${esc(calStatus(ICKSP_DIVINE_INFANT_KING_NOVENA_V1).label)}</span><em>${esc(L('One historical prayer · nine days · monthly 17–25','Une prière historique · neuf jours · 17–25 de chaque mois'))}</em></button><button type="button" class="aoN1Card" data-n1-supplement="icksp_immaculate_conception"><small>${esc(txt(ICKSP_IMMACULATE_CONCEPTION_NOVENA_V1.family))}</small><b>${esc(txt(ICKSP_IMMACULATE_CONCEPTION_NOVENA_V1.title))}</b><span>${esc(calStatus(ICKSP_IMMACULATE_CONCEPTION_NOVENA_V1).label)}</span><em>${esc(L('Pius X prayer · 30 Nov–8 Dec · repeats each day','Prière de Pie X · 30 nov.–8 déc. · répétée chaque jour'))}</em></button><button type="button" class="aoN1Card" data-n1-therese-weekly><small>${esc(L('Every Tuesday · recurring devotion','Chaque mardi · dévotion hebdomadaire'))}</small><b>${esc(L('St Thérèse · perpetual Institute novena','Sainte Thérèse · neuvaine perpétuelle de l’Institut'))}</b><span>${esc(L('Original ICKSP form · source linked','Forme propre de l’ICRSP · source accessible'))}</span><em>${esc(L('Weekly Tuesday prayer · not nine successive days','Prière du mardi · non neuf jours consécutifs'))}</em></button></div></section></main>`}
+function renderOverview(){const items=Object.values(CORPUS),statuses=items.map(n=>[n,calStatus(n)]),next=statuses.filter(x=>x[1].kind==='active'||x[1].kind==='upcoming').sort((a,b)=>a[1].w.start-b[1].w.start)[0];return `${head(L('Novenas','Neuvaines'),'')}<main class="aoP435930Body"><section class="aoN1Hero">${icon()}<small>${items.length} ${esc(L('novenas','neuvaines'))}</small></section>${next?`<div class="aoN1Calendar"><b>${esc(next[1].kind==='active'?L('In season now','En cours dans le calendrier'):L('Coming up','À venir'))}</b><br>${esc(txt(next[0].title))} · ${esc(next[1].label)}</div>`:''}<section><span class="aoN1Kicker">${esc(L('TRADITIONAL NOVENAS','NEUVAINES TRADITIONNELLES'))}</span><div class="aoN1Grid">${statuses.map(([n,c])=>`<button type="button" class="aoN1Card ${c.kind==='active'?'active':''}" data-n1-select="${esc(n.id)}">${clearedNovenaMosaicImage(n)}<small>${esc(txt(n.family))}</small><b>${esc(txt(n.title))}</b><span>${esc(c.label)}</span><em>${esc(n.form==='REPEAT_FORM'?L('One prayer repeated each day','Une prière répétée chaque jour'):L('A prayer for each day','Une prière pour chaque jour'))}</em></button>`).join('')}</div></section><section data-n1-holy-face-1887-supplement><span class="aoN1Kicker">${esc(L('HISTORICAL NOVENA · ORIGINAL ENGLISH',holyFace1895FrenchPreviewEnabled()?'NEUVAINE HISTORIQUE · FRANÇAIS 1895 (APERÇU)':'NEUVAINE HISTORIQUE · ANGLAIS ORIGINAL'))}</span><div class="aoN1Grid"><button type="button" class="aoN1Card" data-n1-supplement="holy_face_1887"><small>${esc(L('Holy Face · Reparation','Sainte Face · Réparation'))}</small><b>${esc(L('Novena to the Holy Face','Neuvaine à la Sainte Face'))}</b><span>${esc(calStatus(NOVENA_HOLY_FACE_1887_B25).label)}</span><em>${esc(L('Nine complete 1887 English meditations · print-page collation pending',holyFace1895FrenchPreviewEnabled()?'Neuf méditations françaises de 1895 · texte en cours de relecture':'Neuf méditations intégrales en anglais (1887) · collation imprimée en attente'))}</em></button></div></section><section data-n1-institute-supplement><span class="aoN1Kicker">${esc(L('INSTITUTE DEVOTIONS','DÉVOTIONS DE L’INSTITUT'))}</span><div class="aoN1Grid"><button type="button" class="aoN1Card" data-n1-supplement="divine_infant_king"><small>${esc(txt(ICKSP_DIVINE_INFANT_KING_NOVENA_V1.family))}</small><b>${esc(txt(ICKSP_DIVINE_INFANT_KING_NOVENA_V1.title))}</b><span>${esc(calStatus(ICKSP_DIVINE_INFANT_KING_NOVENA_V1).label)}</span><em>${esc(L('One historical prayer · nine days · monthly 17–25','Une prière historique · neuf jours · 17–25 de chaque mois'))}</em></button><button type="button" class="aoN1Card" data-n1-supplement="icksp_immaculate_conception"><small>${esc(txt(ICKSP_IMMACULATE_CONCEPTION_NOVENA_V1.family))}</small><b>${esc(txt(ICKSP_IMMACULATE_CONCEPTION_NOVENA_V1.title))}</b><span>${esc(calStatus(ICKSP_IMMACULATE_CONCEPTION_NOVENA_V1).label)}</span><em>${esc(L('Pius X prayer · 30 Nov–8 Dec · repeats each day','Prière de Pie X · 30 nov.–8 déc. · répétée chaque jour'))}</em></button><button type="button" class="aoN1Card" data-n1-therese-weekly><small>${esc(L('Every Tuesday · recurring devotion','Chaque mardi · dévotion hebdomadaire'))}</small><b>${esc(L('St Thérèse · perpetual Institute novena','Sainte Thérèse · neuvaine perpétuelle de l’Institut'))}</b><span>${esc(L('Original ICKSP form · source linked','Forme propre de l’ICRSP · source accessible'))}</span><em>${esc(L('Weekly Tuesday prayer · not nine successive days','Prière du mardi · non neuf jours consécutifs'))}</em></button></div></section></main>`}
 function novenaDayFolio(n,active,{compact=false}={}){
  const days=n.days.map((d,i)=>{
   const day=i+1,selected=day===active;
@@ -163,13 +169,14 @@ function sourceWitness(text,label){
  if(!text)return '';
  const face=novenaSourceWitnessFaceV1(text,isFr()?'fr':'en',N.showEnglish);
  if(!face.language)return '<div class="aoN1FailClosed" data-n1-source-unavailable>'+esc(L('This historical source text is unavailable.','Ce texte historique n’est pas disponible.'))+'</div>';
- const n=N.id?ALL_NOVENAS[N.id]:null;
+ const n=N.id?activeNovena(N.id):null;
  let witnessLabel=label;
  if(face.language==='la')witnessLabel=L('ORIGINAL LATIN SOURCE','TÉMOIN SOURCE LATIN');
  else if(isFr()&&face.language==='en')witnessLabel='TÉMOIN SOURCE ANGLAIS';
  else if(!isFr()&&face.language==='fr')witnessLabel='FRENCH SOURCE WITNESS';
  else if(isFr()){
-   if(String(n?.frenchTextStatus||'').includes('SOURCE_LOCKED'))witnessLabel='TEXTE FRANÇAIS TRADITIONNEL';
+   if(n?.frenchReaderPreview)witnessLabel='TEXTE ORIGINAL FRANÇAIS · 1895 · APERÇU';
+    else if(String(n?.frenchTextStatus||'').includes('SOURCE_LOCKED'))witnessLabel='TEXTE FRANÇAIS TRADITIONNEL';
    else if(String(n?.frenchTextStatus||'').includes('TRADITIONAL_FRENCH_WITNESS'))witnessLabel='TEXTE FRANÇAIS TRADITIONNEL';
    else witnessLabel='TRADUCTION FRANÇAISE · ALIGNÉE SUR LA SOURCE';
  }
@@ -190,10 +197,12 @@ function sourceWitness(text,label){
    'Édition originale française de Janvier (1894), 88 pages : '+
    '<a href="'+esc(n.frenchOriginalEdition.url)+'" target="_blank" rel="noopener noreferrer">Consulter le volume français ↗</a>. '+
    'Le texte des neuf jours n’a pas encore été transcrit ni collationné avec la traduction anglaise de 1887.</p>':'';
- const toggle=face.canToggleEnglish?'<button type="button" class="aoP435930Secondary" data-n1-show-en>'+
+ const previewNotice=n?.frenchReaderPreview
+  ?'<p class="aoN1SourceLanguageNotice" data-n1-holy-face-1895-preview-notice lang="fr">Édition française de Janvier, Tours 1895, p. 112–142 · transcription en cours de relecture. Texte non encore approuvé pour la publication générale. Le témoin anglais appartient à une édition distincte de 1887.</p>':'';
+ const toggle=face.canToggleEnglish?'<button type="button" class="aoP435930Secondary" data-n1-show-en>'+ 
   esc(N.showEnglish?'Revenir au français':'Voir le témoin anglais')+'</button>':'';
  return '<article class="aoN1SourceText" data-n1-source-language="'+face.language+'" lang="'+face.language+'"><small>'+esc(witnessLabel)+'</small>'+
-  notice+frenchPrint+novenaParagraphs(face.text)+toggle+'</article>';
+  notice+frenchPrint+previewNotice+novenaParagraphs(face.text)+toggle+'</article>';
 }
 function canonicalPrayer(id,count=1){
  const p=prayerData()[id];
@@ -342,7 +351,7 @@ function restoreWitnessAnchor(m,anchor){
  const next=block.querySelector('[data-n1-show-en]');
  if(next)next.focus({preventScroll:true});
 }
-function render({witnessFocus=null}={}){const m=mount();if(!m)return;const n=N.id?ALL_NOVENAS[N.id]:null;let h=N.screen==='overview'?renderOverview():N.screen==='weekly'?renderInstituteThereseWeekly():N.screen==='detail'&&n?renderDetail(n):N.screen==='day'&&n?renderDay(n):renderOverview();m.dataset.aoPrayView='novenas';m.dataset.aoN1='true';m.classList.toggle('aoP435930FocusRunway',N.screen==='day'&&N.mode==='guided');m.innerHTML=h;if(!witnessFocus)m.scrollTop=0;queueMicrotask(()=>{
+function render({witnessFocus=null}={}){const m=mount();if(!m)return;const n=N.id?activeNovena(N.id):null;let h=N.screen==='overview'?renderOverview():N.screen==='weekly'?renderInstituteThereseWeekly():N.screen==='detail'&&n?renderDetail(n):N.screen==='day'&&n?renderDay(n):renderOverview();m.dataset.aoPrayView='novenas';m.dataset.aoN1='true';m.classList.toggle('aoP435930FocusRunway',N.screen==='day'&&N.mode==='guided');m.innerHTML=h;if(!witnessFocus)m.scrollTop=0;queueMicrotask(()=>{
   if(N.screen==='day'&&n&&m.querySelector('.aoN1Reader')){
    const guided=N.mode==='guided';
    const chapters=guided?novenaChapters(n):
