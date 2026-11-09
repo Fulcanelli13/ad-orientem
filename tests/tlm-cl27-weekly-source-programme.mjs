@@ -52,7 +52,12 @@ for(const item of result.slice(0,4)){
   for(const entry of item.weekly_source_programme.entries){
    assert.ok(html.includes(entry.time));
    assert.ok(html.includes(lang==="fr"?entry.label_fr:entry.label_en));
-   if(entry.exception_en)assert.ok(html.includes(lang==="fr"?entry.exception_fr:entry.exception_en));
+   if(entry.exception_en){
+    const escaped=(lang==="fr"?entry.exception_fr:entry.exception_en).replace(/[&<>"']/g,ch=>({
+     "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+    })[ch]);
+    assert.ok(html.includes(escaped),"Rendered source exception must be HTML-escaped");
+   }
   }
  }
 }
