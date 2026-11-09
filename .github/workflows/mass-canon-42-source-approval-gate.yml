@@ -1,0 +1,46 @@
+name: Mass Canon 42 original-source editorial approval gate
+on:
+  pull_request:
+    paths:
+      - "tools/mass-canon-42-approval-queue.mjs"
+      - "tests/reader-canon-42-approval-queue.mjs"
+      - "src/mass/reader-canon-42-editorial-review-packet.js"
+      - "data/research/mass-canon-42-rubric-promotion-review-20261013.json"
+      - "data/research/mass-canon-first-pass-19-ritus-source-review-20261013.json"
+      - "data/research/mass-canon-complex-23-ritus-source-review-20261013.json"
+      - "data/research/mass-canon-29-printed-page-witness-crosswalk-20261014.json"
+      - ".github/workflows/mass-canon-42-source-approval-gate.yml"
+  push:
+    branches: [main]
+    paths:
+      - "tools/mass-canon-42-approval-queue.mjs"
+      - "tests/reader-canon-42-approval-queue.mjs"
+      - "data/research/mass-canon-42-rubric-promotion-review-20261013.json"
+      - "data/research/mass-canon-first-pass-19-ritus-source-review-20261013.json"
+      - "data/research/mass-canon-complex-23-ritus-source-review-20261013.json"
+      - "data/research/mass-canon-29-printed-page-witness-crosswalk-20261014.json"
+      - ".github/workflows/mass-canon-42-source-approval-gate.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  canon-42-editorial:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check source-only review code syntax
+        run: |
+          node --check tools/mass-canon-42-approval-queue.mjs
+          node --check tests/reader-canon-42-approval-queue.mjs
+      - name: Require all 42 exact 1962 source cues, 19/23 split, 29 source holds and no LIVE publication
+        run: node tests/reader-canon-42-approval-queue.mjs
+      - name: Preserve existing 42 source anchors in 4 forms and zero LIVE French drafts
+        run: |
+          node tests/reader-canon-detailed-rubric-backfill.mjs
+          node tests/reader-canon-inline-editorial-placement.mjs
+      - name: Preserve 29 independent printed-source certification holds
+        run: node tests/reader-canon-29-printed-page-witness.mjs
