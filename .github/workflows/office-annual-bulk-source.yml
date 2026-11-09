@@ -156,6 +156,8 @@ jobs:
           assert semantic["quality_gate"]["source_line_traceability"]
           assert semantic["quality_gate"]["source_projection_complete"]
           assert not semantic["quality_gate"]["public_reader_authorized"]
+          assert semantic["expected_special_format_source_count"] == 8
+          assert semantic["unexpected_source_issues_count"] == 0
           print(f"AO_OFFICE_ALL_HOURS_SEMANTIC_COMPLETE year={year} "
                 f"hours={semantic['hours_projected']} "
                 f"psalms={semantic['source_line_token_counts']['psalm_heading']} "
