@@ -28,7 +28,7 @@ try{
      useCount:s?.querySelectorAll("use").length,lineCount:s?.querySelectorAll("line").length};
   });
   assert.equal(info.svgExists,true);
-  assert.ok(info.width>100&&info.height>100);
+  assert.ok(info.width>100&&info.height>=50,"Real single-line 720px score is shorter than a phone-wrapped score");
   const path=resolve(output,`kyrie-xvi-exsurge-${width}px.png`);
   await page.locator("#score svg").screenshot({path,animations:"disabled",timeout:30000});
   await page.close();
