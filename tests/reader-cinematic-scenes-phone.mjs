@@ -161,6 +161,99 @@ async function touchGospelFocus(page,width,lang){
     width+"px "+lang+" Gospel touch/reflow focus drift: "+JSON.stringify({start,trace,frames}));
 }
 
+// Independent issue #2714 boundary acceptance: move the actual mobile touch
+// viewport FROM the preceding Gospel announcement C0083 INTO C0084. A test
+// starting already inside C0084 cannot detect an unstable forward handoff.
+async function touchGospelBoundary(page,width,lang){
+  const next="AO.SM.C0084",previous="AO.SM.C0083",scene="GOSPEL_CROSSES";
+  const target=await atCue(page,next);
+  assert.equal(target.found,true,"No C0084 boundary destination: "+JSON.stringify(target));
+  const setup=await page.evaluate(async end=>{
+    const scroller=document.querySelector("#ao-r17-native-reader-preview .ao-prayer-card");
+    const api=window.__AO_PHONE_PREVIEW;
+    const frame=()=>new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(done)));
+    let start=null;
+    for(let delta=24;delta<=220;delta+=8){
+      scroller.scrollTop=Math.max(0,end-delta);
+      scroller.dispatchEvent(new Event("scroll",{bubbles:true}));
+      await frame();
+      if(api.getActiveCue()==="AO.SM.C0083"){start=scroller.scrollTop;break;}
+    }
+    if(start===null)return {found:false,reason:"Cannot find earlier C0083 boundary",end,
+      cue:api.getActiveCue(),maxScroll:scroller.scrollHeight-scroller.clientHeight};
+    const rect=scroller.getBoundingClientRect();
+    window.__aoGospelBoundarySamples=[];
+    window.__aoGospelBoundaryMonitoring=true;
+    const sample=()=>{
+      if(!window.__aoGospelBoundaryMonitoring)return;
+      const shell=document.querySelector("[data-ao-reader-shell]");
+      window.__aoGospelBoundarySamples.push({
+        time:performance.now(),scrollTop:scroller.scrollTop,
+        maxScroll:scroller.scrollHeight-scroller.clientHeight,
+        cue:api.getActiveCue(),scene:shell?.dataset.cinematicScene
+      });
+      requestAnimationFrame(sample);
+    };
+    requestAnimationFrame(sample);
+    return {found:true,start,end,x:rect.left+rect.width/2,
+      y:rect.top+rect.height*.66,initialCue:api.getActiveCue(),
+      maxScroll:scroller.scrollHeight-scroller.clientHeight};
+  },target.settledScrollTop);
+  assert.equal(setup.found,true,width+"px "+lang+" "+JSON.stringify(setup));
+  assert.equal(setup.initialCue,previous);
+  const distance=setup.end-setup.start;
+  assert.ok(distance>=16&&distance<=220,
+    "Unsupported Gospel transition gesture distance: "+JSON.stringify(setup));
+  const session=await page.context().newCDPSession(page);
+  try{
+    await session.send("Input.dispatchTouchEvent",{
+      type:"touchStart",touchPoints:[{x:setup.x,y:setup.y}]
+    });
+    for(let step=1;step<=14;step++){
+      await session.send("Input.dispatchTouchEvent",{
+        type:"touchMove",touchPoints:[{x:setup.x,y:setup.y-distance*step/14}]
+      });
+      await page.waitForTimeout(65);
+    }
+    await session.send("Input.dispatchTouchEvent",{
+      type:"touchEnd",touchPoints:[]
+    });
+  }finally{await session.detach();}
+  // Real delayed content reflow, analogous to an inline neume/rubric settling:
+  // a temporary empty spacer changes DOM geometry but not original Latin,
+  // cue IDs, paragraph order or canonical words.
+  await page.waitForTimeout(240);
+  const injected=await page.evaluate(()=>{
+    const scroller=document.querySelector("#ao-r17-native-reader-preview .ao-prayer-card");
+    const row=scroller.querySelector('.ao-reader-paragraph[data-cue-id="AO.SM.C0082"]');
+    if(!row)return false;
+    const spacer=document.createElement("span");
+    spacer.dataset.testGospelLayout="true";
+    spacer.style.cssText="display:block;height:12px;pointer-events:none";
+    row.append(spacer);
+    return true;
+  });
+  assert.equal(injected,true,"Missing source row for layout reflow acceptance");
+  await page.waitForTimeout(165);
+  await page.evaluate(()=>document.querySelector('[data-test-gospel-layout="true"]')?.remove());
+  await page.waitForTimeout(420);
+  const observed=await page.evaluate(()=>{
+    window.__aoGospelBoundaryMonitoring=false;
+    return window.__aoGospelBoundarySamples??[];
+  });
+  const tail=observed.slice(-14);
+  assert.ok(observed.some(frame=>frame.cue===previous)&&
+    observed.some(frame=>frame.cue===next),
+    width+"px "+lang+" native touch did not cross both Gospel cues: "+
+      JSON.stringify({setup,observed:observed.slice(-40)}));
+  assert.ok(observed.some(frame=>frame.scrollTop>=setup.start+8),
+    "No actual native Gospel boundary scrolling: "+JSON.stringify({setup,observed:observed.slice(-40)}));
+  assert.equal(tail.length,14,"Insufficient final layout-settled frames");
+  assert.ok(tail.every(frame=>frame.cue===next&&frame.scene===scene),
+    width+"px "+lang+" C0084 regressed after source-preserving content reflow: "+
+      JSON.stringify({setup,tail,observed:observed.slice(-40)}));
+}
+
 async function snapshot(page,width,lang,cueId,expected,{reducedMotion=false}={}){
   const moved=await atCue(page,cueId);
   assert.equal(moved.found,true,cueId+": "+JSON.stringify(moved));
@@ -305,7 +398,7 @@ try{
     // Run on both small-phone localizations; preserve all other scene checks.
     if((width===390&&lang==="en"&&motion==="no-preference"&&query.includes("48")) ||
        (width===320&&lang==="fr"))
-      await touchGospelFocus(page,width,lang);
+      { await touchGospelFocus(page,width,lang); await touchGospelBoundary(page,width,lang); }
     // Changing cards always clears the scene. No stale elevation halo.
     await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSequence(1));
     await page.waitForFunction(()=>
