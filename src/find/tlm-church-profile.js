@@ -205,7 +205,8 @@ export function renderTlmChurchProfile(item,language="en",{asOf}={}){
  html+='</section><section class="aoTlmProfilePanel"><h3>'+E(L(language,"Mass programme","Programme des messes"))+'</h3>';
  const schedules=v.ministries.flatMap(m=>m.schedules.map(s=>({m,s})));
  const datedProgramme=item?.dated_mass_programme??null;
- if(!schedules.length)html+='<p class="aoTlmProfileCaution">'+E(datedProgramme?
+ const weeklyProgramme=item?.weekly_source_programme??null;
+ if(!schedules.length&&!weeklyProgramme)html+='<p class="aoTlmProfileCaution">'+E(datedProgramme?
   L(language,"No verified weekly timetable. Only explicitly printed dates are listed below.","Aucun horaire hebdomadaire vérifié. Seules les dates explicitement imprimées figurent ci-dessous."):
   L(language,"No currently publishable Mass times in this record. Consult the original directory or community source.","Aucun horaire de messe publiable dans cette fiche. Consultez la source originale de l’annuaire ou de la communauté."))+'</p>';
  for(const {m,s} of schedules){
@@ -223,6 +224,30 @@ export function renderTlmChurchProfile(item,language="en",{asOf}={}){
    (edition.length?'<span class="aoTlmProfileScheduleEdition">'+E(edition.join(" · "))+' · '+E(L(language,"specific celebration","célébration précise"))+'</span>':'')+
    '<strong>'+E(raw||L(language,"Refer to official timetable","Voir les horaires officiels"))+'</strong></div><span>'+
    E([checked?L(language,"Checked","Vérifié")+" "+checked:null,state?human(state):null].filter(Boolean).join(" · "))+'</span></article>';
+ }
+ // Source-published recurring PATTERN only: do not project calendar events.
+ // Exceptions are attached to each time, never silently dropped.
+ if(weeklyProgramme){
+  html+='<div class="aoTlmProfileWeeklySource" data-cl27-weekly-source="'+E(weeklyProgramme.cl2_anchor)+'">'+
+   '<h4>'+E(L(language,"Weekly Mass pattern published by the community",
+     "Horaires habituels publiés par la communauté"))+'</h4>'+
+   '<p>'+E(L(language,"Source checked ","Source consultée le "))+E(weeklyProgramme.checked_on)+'</p>';
+  for(const e of weeklyProgramme.entries){
+   const type=e.mass_type==="SUNG"?L(language,"Sung Mass","Messe chantée"):
+    e.mass_type==="LOW"?L(language,"Low Mass","Messe lue"):
+    L(language,"Mass · type unspecified","Messe · type non précisé");
+   const exception=T(language==="fr"?e.exception_fr:e.exception_en);
+   html+='<article class="aoTlmProfileSchedule" data-cl27-weekly-line="'+E(e.scope+":"+e.time)+'">'+
+    '<div><small>'+E(language==="fr"?e.label_fr:e.label_en)+'</small>'+
+    '<strong>'+E(e.time)+' · '+E(type)+'</strong>'+
+    (exception?'<span>'+E(exception)+'</span>':'')+'</div></article>';
+  }
+  html+='<p class="aoTlmProfileCaution">'+E(L(language,
+    "These are first-party published patterns, not confirmed upcoming Masses. Weekday labels without named days are NOT a daily schedule. Feasts, holidays and local notices can override them. Check the linked source before visiting.",
+    "Ces horaires sont publiés par la communauté, sans confirmer les prochaines messes. Une mention « en semaine » sans jours précisés ne signifie pas une messe chaque jour. Les fêtes, vacances et annonces locales priment ; vérifiez la source avant toute visite."))+'</p>'+
+   '<div class="aoTlmProfileActions">'+link(weeklyProgramme.source_page_url,L(language,
+    "Official site · verify changes","Source officielle · vérifier les changements"))+
+   '</div></div>';
  }
  // Dated first-party bulletin: display ONLY explicit dates that have not
  // passed in the CHAPEL's local civil calendar. No RRULE or implied Sundays.

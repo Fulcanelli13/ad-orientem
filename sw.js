@@ -1,3 +1,6 @@
+/* 2026-11-09 CL27 ten source-published church weekly patterns with exceptions.
+ * No inferred future Mass, recurring calendar event or ecclesial classification.
+ */
 /* 2026-11-09 CL27 first-party contact expansion: 26 exact CL2 site profiles.
  * Refresh installed GitHub Pages clients without adding schedules or classifications.
  */

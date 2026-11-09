@@ -1,0 +1,35 @@
+name: CL27 source-published weekly Mass pattern gate
+on:
+  pull_request:
+    paths:
+      - 'data/directory/cl27-weekly-mass-source-20261109.v1.json'
+      - 'src/find/tlm-source-weekly-mass-programme.js'
+      - 'src/find/tlm-church-profile.js'
+      - 'src/find/preliminary-directory-r49.js'
+      - 'tests/tlm-cl27-weekly-source-programme.mjs'
+      - 'tests/directory-b91-three-published-provisional-sites.mjs'
+      - '.github/workflows/directory-cl27-weekly-source-programme.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  first-party-weekly-pattern:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Source identity, EN/FR exceptions, and no fabricated recurrence
+        run: node tests/tlm-cl27-weekly-source-programme.mjs
+      - name: Whole-directory exact site and optional-overlay integration
+        run: node tests/directory-b91-three-published-provisional-sites.mjs
+      - name: Check curated GitHub Pages packaging
+        run: |
+          node tools/build-web-preview.mjs
+          test -f dist/web-preview/data/directory/cl27-weekly-mass-source-20261109.v1.json
+          test -f dist/web-preview/src/find/tlm-source-weekly-mass-programme.js
+          test -f dist/web-preview/data/directory/research/canonical-g0-site-admissions-b84-b90-20261026.v1.json
+          test ! -d dist/web-preview/data/directory/research/cl27-current-firstparty-20261104
+          test ! -f dist/web-preview/data/directory/research/cl27-current-firstparty-20261104/source-review-wave7-source-dispositions.v1.json

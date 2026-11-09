@@ -11,12 +11,14 @@ import {exploreMapFeatures} from "../src/find/map-runtime.js";
 import {CL2_PHYSICAL_SITE_INDEX_URL} from "../src/find/cl2-physical-directory.js";
 import {CL27_PUBLIC_CELEBRATION_URL} from "../src/find/tlm-celebration-evidence.js";
 import {CL27_SITE_CONTACT_URL} from "../src/find/tlm-site-contact-evidence.js";
+import {CL27_WEEKLY_SOURCE_PROGRAMME_URL} from "../src/find/tlm-source-weekly-mass-programme.js";
 import {CL27_DATED_MASS_PROGRAMME_URL,CL27_TARARE_DATED_MASS_PROGRAMME_URL} from "../src/find/tlm-dated-mass-programme.js";
 const base=JSON.parse(readFileSync(fileURLToPath(PRELIMINARY_R49_URL),"utf8"));
 const release=JSON.parse(readFileSync("data/directory/published-provisional-mass-sites-20261026.v1.json","utf8"));
 const worldwide=JSON.parse(readFileSync("data/directory/generated/cl2-physical-site-index.v1.json","utf8"));
 const publishedWitnesses=JSON.parse(readFileSync(fileURLToPath(CL27_PUBLIC_CELEBRATION_URL),"utf8"));
 const publishedContacts=JSON.parse(readFileSync(fileURLToPath(CL27_SITE_CONTACT_URL),"utf8"));
+const publishedWeekly=JSON.parse(readFileSync(fileURLToPath(CL27_WEEKLY_SOURCE_PROGRAMME_URL),"utf8"));
 const datedProgramme=JSON.parse(readFileSync(fileURLToPath(CL27_DATED_MASS_PROGRAMME_URL),"utf8"));
 const tarareProgramme=JSON.parse(readFileSync(fileURLToPath(CL27_TARARE_DATED_MASS_PROGRAMME_URL),"utf8"));
 const old=projectPreliminaryR49(base);
@@ -64,6 +66,7 @@ const api=async url=>{
  return {ok:true,status:200,json:async()=>String(url)===CL2_PHYSICAL_SITE_INDEX_URL?worldwide:
    String(url)===CL27_PUBLIC_CELEBRATION_URL?publishedWitnesses:
    String(url)===CL27_SITE_CONTACT_URL?publishedContacts:
+   String(url)===CL27_WEEKLY_SOURCE_PROGRAMME_URL?publishedWeekly:
    String(url)===CL27_DATED_MASS_PROGRAMME_URL?datedProgramme:
    String(url)===CL27_TARARE_DATED_MASS_PROGRAMME_URL?tarareProgramme:
    String(url).includes("published-provisional")?release:base};
@@ -75,9 +78,14 @@ assert.equal(live.filter(x=>x.map_state==="ADDRESS_ONLY").length,14);
 assert.ok(added.every(x=>live.some(v=>v.item_id===x.item_id)));
 assert.equal(live.filter(x=>x.celebration_evidence).length,2,
  "The source-owned CL27 witness overlay must not alter the B91 physical-site census");
-assert.equal(live.filter(x=>x.site_contact_evidence).length,26,
- "Exactly sixteen source-linked community/contact claims must join canonical CL2 sites");
+assert.equal(live.filter(x=>x.site_contact_evidence).length,publishedContacts.records.length,
+ "Contact overlay count must match its validated source manifest after concurrent CL27 releases");
 assert.ok(live.filter(x=>x.site_contact_evidence).every(x=>!x.site_contact_evidence.mass_times&&!x.site_contact_evidence.una_cum));
+const weekly=live.filter(x=>x.weekly_source_programme);
+assert.equal(weekly.length,10,"Exactly ten first-party source-weekly venues; no generated events");
+assert.deepEqual(weekly.map(x=>x.physical_group_id).sort(),
+ publishedWeekly.sites.map(x=>x.cl2_anchor).sort());
+assert.ok(weekly.every(x=>!x.weekly_source_programme.rrule&&!x.weekly_source_programme.una_cum));
 const dated=live.filter(x=>x.dated_mass_programme);
 assert.equal(dated.length,2,"Two separate exact CL2 chapels have source-listed dated programmes");
 const paita=dated.find(x=>x.physical_group_id==="RG-51BC2B17C91F");
@@ -97,5 +105,6 @@ assert.deepEqual(calls,[PRELIMINARY_R49_URL,
   CL27_PUBLIC_CELEBRATION_URL,
   CL27_SITE_CONTACT_URL,
   CL27_DATED_MASS_PROGRAMME_URL,
-  CL27_TARARE_DATED_MASS_PROGRAMME_URL]);
+  CL27_TARARE_DATED_MASS_PROGRAMME_URL,
+  CL27_WEEKLY_SOURCE_PROGRAMME_URL]);
 console.log("PASS B91 controlled Mass-map release: 3 source-backed provisional additions retained inside 2583-record worldwide directory, 2569 mapped, 14 list-only, two source programmes with 11 printed dates (not live-certified), zero recurring schedules");
