@@ -14,6 +14,17 @@ import {planWeeklyComplinePsalter,COMPLINE_MARIAN_SOURCE_SECTIONS}
  from "./weekday-compline-psalter-plan.js";
 import {reviewAdventIComplineAppointment}
  from "./compline-advent-2026-appointments.js";
+import {researchChristmas2026PrivateComplineAppointment}
+ from "./compline-christmas-2026-research-gate.js";
+const PRIVATE_APPOINTMENT_STATUSES=new Set([
+ "EXPLICIT_ROMAN_1960_APPOINTMENT_RESEARCH",
+ "EXPLICIT_CHRISTMAS_2026_PRIVATE_SOURCE_RESEARCH"
+]);
+function privateComplineSourceAppointment(date){
+ const advent=reviewAdventIComplineAppointment(date);
+ return advent.status==="EXPLICIT_ROMAN_1960_APPOINTMENT_RESEARCH"?
+  advent:researchChristmas2026PrivateComplineAppointment(date);
+}
 
 export const SATURDAY_COMPLINE_PILOT_SCHEMA="ao.office.2026-advent-i-saturday-compline-pilot.v1";
 export const FERIAL_COMPLINE_PILOT_SCHEMA="ao.office.2026-advent-i-ferial-compline-pilot.v1";
@@ -65,8 +76,8 @@ function held(reason,weekday="Sabbato"){
 export function createComplinePinnedReader({fetchSource,weekday=null,date=null,languages}={}){
  const active=checkedLanguages(languages);
  if(!active)throw Error("COMPLINE_LANGUAGE_SCOPE_NOT_APPROVED");
- const reviewed=date===null?null:reviewAdventIComplineAppointment(date);
- if(date!==null&&reviewed.status!=="EXPLICIT_ROMAN_1960_APPOINTMENT_RESEARCH")
+ const reviewed=date===null?null:privateComplineSourceAppointment(date);
+ if(date!==null&&!PRIVATE_APPOINTMENT_STATUSES.has(reviewed.status))
   throw Error("COMPLINE_UNREVIEWED_DATE_READER_WITHHELD");
  const psalmDay=reviewed?.appointment?.psalmDay??weekday??"Sabbato";
  if(typeof fetchSource!=="function"||
@@ -184,8 +195,8 @@ export async function assembleWeekdayComplinePilot({
  if(!active)return held("COMPLINE_LANGUAGE_SCOPE_NOT_APPROVED",weekday);
  const appointedDate=date??(weekday==="Sabbato"?"2026-11-28":
   weekday==="Feria III"?"2026-12-01":null);
- const review=reviewAdventIComplineAppointment(appointedDate);
- if(review.status!=="EXPLICIT_ROMAN_1960_APPOINTMENT_RESEARCH")
+ const review=privateComplineSourceAppointment(appointedDate);
+ if(!PRIVATE_APPOINTMENT_STATUSES.has(review.status))
   return held("OFFICE_DATE_APPOINTMENT_NOT_REVIEWED",weekday);
  const appointment=review.appointment,psalmDay=appointment.psalmDay;
  const psalmIds=PSALMS_TO_READ[psalmDay];
