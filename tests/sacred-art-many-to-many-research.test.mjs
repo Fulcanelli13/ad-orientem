@@ -69,3 +69,28 @@ for(const rec of sceneBatch2.records){
  assert.ok(rec.physical_object_identity&&rec.source_urls?.length>0&&rec.calendar_gospel_reference);
 }
 assert.equal(idx.review_evidence.remaining_new_Claude_proposals_needing_individual_source_adjudication,89);
+
+
+const sceneBatch3=read('data/artwork/research/m2m-scene-adjudication-batch3-20261109.v1.json');
+assert.equal(sceneBatch3.records.length,20);
+assert.equal(new Set(sceneBatch3.records.map(r=>r.destination_id)).size,20);
+const priorSceneDates=new Set([...sceneBatch.records,...sceneBatch2.records].map(r=>r.destination_id));
+for(const item of sceneBatch3.records){
+ assert.ok(!priorSceneDates.has(item.destination_id),'Overlapping batch3 record: '+item.destination_id);
+ assert.equal(item.owner_selection_changed,false);
+ assert.equal(item.prior_approved_alternatives_preserved,true);
+ assert.equal(item.automatically_renderable,false);
+ assert.equal(item.photo_license_pixel_crop_verified,false);
+ assert.equal(item.visual_pixels_independently_inspected,false);
+ assert.ok(item.physical_work_identity&&item.evidence_urls.length>0&&item.appointed_1962_gospel);
+}
+assert.equal(sceneBatch3.summary.distinct_proposed_artwork_ids,17);
+assert.equal(sceneBatch3.records.filter(r=>r.artwork_id==='RECENT575::424').length,2);
+assert.equal(sceneBatch3.records.filter(r=>r.artwork_id==='RECENT575::039').length,3);
+const mnr=sceneBatch3.records.find(r=>r.destination_id==='2026-03-14');
+assert.ok(mnr.photo_publication_gate.includes('MNR_RESTITUTION'));
+const uncertain=sceneBatch3.records.find(r=>r.destination_id==='2026-01-19');
+assert.ok(uncertain.adjudication_status.includes('UNRESOLVED'));
+assert.equal(idx.review_evidence.cumulative_new_Claude_proposals_source_adjudicated,45);
+assert.equal(idx.review_evidence.remaining_new_Claude_proposals_needing_individual_source_adjudication,69);
+console.log('PASS: batch3 20 source checks; 45/114 total; 7 unaudited direct-scene; all release gates closed.');
