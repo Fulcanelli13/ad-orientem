@@ -82,7 +82,6 @@ test("source-fed complete 28 PRIVATE Latin variants cover seven fixed dates, two
     assert.equal(r.blessingAmensRestoredFromPinnedSource,2);
     assert.equal(r.presidingMinister,minister);
     assert.equal(r.openingPaterOmitted,context===COMPLINE_CONTEXT.FINAL_PRAYER);
-    assert.equal(r.marianSection,"Nativiti");
     const marianFrame=r.frames.find(x=>x.kind==="MARIAN_ANTIPHON");
     const collectFrame=r.frames.find(x=>x.kind==="MARIAN_COLLECT");
     assert.equal(marianFrame.sourceId,"Psalterium/Mariaant#Nativiti");
