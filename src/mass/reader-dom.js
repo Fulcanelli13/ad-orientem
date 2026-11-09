@@ -2634,10 +2634,23 @@ function syncRailIconSurfaces(root){
   syncRailVisibility(root);
 }
 function syncIconlessSourceRubric(root,current,mode,iconResolver,form,language){
-  for(const old of root.querySelectorAll?.("[data-ao-iconless-rubric]")??[])
-    old.remove();
-  if(mode!=="LIVE")return;
   const cueId=current?.nativeCueId??null;
+  // A source-owned rubric belongs to its PARAGRAPH, not the momentary focus.
+  // C0084's three-small-crosses caption previously appeared when C0084 became
+  // active and vanished on C0083. Its 67px height change shifted the focus
+  // geometry at a fixed scrollTop and caused endless C0083/C0084 reversion.
+  // Retain that already-projected source caption within the same Gospel card
+  // until the card DOM is replaced; never leave it in the icon rail or imply
+  // that the priest's gesture was observed. Other stale cues still clear.
+  for(const old of root.querySelectorAll?.("[data-ao-iconless-rubric]")??[]){
+    const owner=old.closest?.(".ao-reader-paragraph");
+    const persistentGospel=mode==="LIVE" &&
+      old.dataset.sourceCueId==="AO.SM.C0084" &&
+      owner?.dataset.cueId==="AO.SM.C0084";
+    if(persistentGospel)continue;
+    if(mode!=="LIVE" || old.dataset.sourceCueId!==cueId)old.remove();
+  }
+  if(mode!=="LIVE")return;
   if(!/^AO\.SM\.C\d{4}$/.test(String(cueId??"")))return;
   const action=current?.priestAction;
   const sourceCueId=action?.cueId??null;
@@ -2680,13 +2693,27 @@ function syncIconlessSourceRubric(root,current,mode,iconResolver,form,language){
       style?.display!=="none" && style?.visibility!=="hidden" &&
       Number(style?.opacity??1)>0;
   });
+  const existing=owner.querySelector?.(
+    '.ao-iconless-source-rubric[data-source-cue-id="'+cueId+'"]'
+  );
   if(decision!==CUE_SURFACE.INLINE_RUBRIC &&
-     !(elevationRailFallback&&!visibleExactRubric))return;
+     !(elevationRailFallback&&!visibleExactRubric)){
+    // If the exact approved pictogram is available, no duplicate rubric.
+    existing?.remove?.();
+    return;
+  }
   // The cue may use the native reader's plain-string action shape;
   // textValue also covers the sourced {text} shape without inventing copy.
   const label=sourceActionRubricLabel(
     action?.label??action?.action??action?.value??textValue(action),language);
   if(!label)return;
+  // A cue-only refresh must never tear down/recreate the same 67px inline
+  // source paragraph: keep the exact approved text in place across frames.
+  if(existing){
+    if(existing.textContent!==label)existing.textContent=label;
+    if(existing.dataset.sourceMeaning!==meaning)existing.dataset.sourceMeaning=meaning;
+    return;
+  }
   const doc=owner.ownerDocument??globalThis.document;
   const note=doc.createElement("span");
   note.className="ao-iconless-source-rubric";
