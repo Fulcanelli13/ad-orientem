@@ -37,7 +37,14 @@ export function mountPublishedLatinCompline(root,{
    "2026-12-10":"Advent II · Thursday, 10 December 2026",
    "2026-12-11":"St Damasus I, 11 December 2026",
    "2026-12-12":"Eve of Gaudete · Saturday, 12 December 2026",
-   "2026-12-13":"Gaudete Sunday, 13 December 2026"
+   "2026-12-13":"Gaudete Sunday, 13 December 2026",
+   "2026-12-14":"Advent III · Monday, 14 December 2026",
+   "2026-12-15":"Advent III · Tuesday, 15 December 2026",
+   "2026-12-16":"Advent Ember Wednesday, 16 December 2026",
+   "2026-12-17":"Advent III · O Sapientia · Thursday, 17 December 2026",
+   "2026-12-18":"Advent Ember Friday, 18 December 2026",
+   "2026-12-19":"Eve of Advent IV · Ember Saturday, 19 December 2026",
+   "2026-12-20":"Fourth Sunday of Advent, 20 December 2026"
   }[date]??"Date not certified"));
  const contextLabel=create(d,"label",null,"Recitation: ");
  const contextSelect=create(d,"select");
