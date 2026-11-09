@@ -89,8 +89,8 @@ try{
      assert.equal(await element.getAttribute("data-approved"),"false");
      assert.match(await element.locator(".ao-proper-reference-label").textContent(),
        /1961 review pending/i);
-     const ref=element.locator("a[href*='gregobase.selapa.net']");
-     assert.ok(await ref.count()>=1,"Original transcription source link missing "+score);
+     // Proper source links are intentionally exposed in the enlarged
+     // notation dialog, not inline in the prayer paragraph.
      actual.push(score);
     }
     if(role==="OFFERTORY")
@@ -111,6 +111,12 @@ try{
      await zoom.waitFor({state:"visible",timeout:20000});
      assert.equal(await zoom.getAttribute("data-reference-zoom-mode"),"fit");
      assert.ok(await zoom.locator(".ao-proper-reference-wide svg").count()>=1);
+     assert.equal(await zoom.locator('[data-reference-zoom-transcription]').getAttribute("href"),
+       "https://gregobase.selapa.net/chant.php?id="+
+         fixture.scores.GRADUAL[0].slice("GREGOBASE-".length),
+       "The rendered Gradual must provide its exact archived transcription source");
+     assert.match(await zoom.locator(".ao-proper-reference-provenance").textContent(),
+       /not musically certified/i);
      await zoom.locator('button[aria-label="Close enlarged Gregorian notation"]').click();
     }
    }
