@@ -107,12 +107,16 @@ try{
     ];
     return samples.map(([textSelector,surfaceSelector])=>{
       const text=root.querySelector(textSelector),surface=root.querySelector(surfaceSelector);
+      // Practices are calendar-dependent; an absent practice card is valid on
+      // a day with no sourced custom, but a rendered card must have its heading.
+      if(textSelector===".aoCalPracticeCard h4"&&!surface)return {textSelector,optionalAbsent:true};
       if(!text||!surface)return {textSelector,missing:true};
       const ink=lum(getComputedStyle(text).color),paper=lum(getComputedStyle(surface).backgroundColor);
       return {textSelector,ratio:(Math.max(ink,paper)+.05)/(Math.min(ink,paper)+.05)};
     });
   });
   for(const sample of lightContrast){
+    if(sample.optionalAbsent)continue;
     assert.equal(sample.missing,undefined,"Missing light Day component: "+JSON.stringify(sample));
     assert.ok(sample.ratio>=4.5,
       "Light Calendar text loses readable contrast: "+JSON.stringify(lightContrast));
