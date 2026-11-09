@@ -214,7 +214,8 @@ export function researchWitnessForReviewedAdventCompline(appointment){
   officeKind:profileByClass[appointment.officeClass],
   reviewStage:"DATE_SPECIFIC_OFFICE_RESEARCH_REVIEWED",
   occurrenceDisposition:"INDEPENDENT_OFFICE_PRECEDENCE_REVIEWED",
-  commemorationDisposition:"NO_COMPETITION",
+  commemorationDisposition:appointment.commemoration?
+   "ADJUDICATED_WITH_COMM_REQUIRED":"NO_COMPETITION",
   publicReleaseCertified:false,sourceTextCertified:false,
   translationCertified:false,exception:"NONE",properCompline:"NONE",
   assertedPsalmDay:appointment.psalmDay,
