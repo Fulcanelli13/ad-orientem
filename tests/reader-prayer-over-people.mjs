@@ -98,4 +98,76 @@ assert.equal(seg.planOwned,true);
 assert.equal(seg.readerPayload,"PLAN_APPLIED_TO_ORDINARY_READER");
 assert.equal(projection.releaseSupport,true);
 
+
+// Source-checked 27 February 1962 French [Super populum] from the original
+// DivinumOfficium Francais/Tempora/Quad1-5.txt (blob 05d139a1...).
+// That file contains "$Per Dominum", NOT a spelled-out French conclusion;
+// missing FR conclusion must remain Latin rather than borrow English.
+const quad1Friday=structuredClone(resolved);
+quad1Friday.date="2026-02-27";
+quad1Friday.proper.sourcePath="Tempora/Quad1-5";
+quad1Friday.proper.orations.prayerOverPeople={
+  id:"TEMPORA-QUAD1-5-SUPER-POPULUM",
+  bodyLat:"Exáudi nos, miséricors Deus: et méntibus nostris grátiæ tuæ lumen osténde.",
+  bodyEn:"Hear us, merciful God, and shed the light of Thy grace upon our minds.",
+  bodyFr:"Écoutez-nous, ô Dieu de miséricorde, et manifestez à nos âmes la lumière de votre grâce.",
+  conclusionType:"PER_DOMINUM",
+  conclusionLat:"Per Dóminum nostrum Iesum Christum.",
+  conclusionEn:"Through our Lord Jesus Christ.",
+  sourceRef:"DivinumOfficium:Francais/Tempora/Quad1-5:[Super populum]",
+};
+const frenchInsertion=resolvePrayerOverPeopleInsertion(quad1Friday,{language:"fr"});
+assert.equal(frenchInsertion.paragraphs[0].primary,
+  "Prions. Humiliez vos têtes devant Dieu.");
+assert.equal(frenchInsertion.paragraphs[0].alternate,
+  "Orémus. Humiliáte cápita vestra Deo.");
+assert.equal(frenchInsertion.paragraphs[1].primary,
+  "Écoutez-nous, ô Dieu de miséricorde, et manifestez à nos âmes la lumière de votre grâce.");
+assert.equal(frenchInsertion.paragraphs[1].alternate,
+  quad1Friday.proper.orations.prayerOverPeople.bodyLat);
+assert.equal(frenchInsertion.paragraphs[2].primary,
+  quad1Friday.proper.orations.prayerOverPeople.conclusionLat,
+  "Unprinted French conclusion must not be invented or replaced with English");
+assert.equal(frenchInsertion.paragraphs[2].alternate,null);
+assert.ok(!frenchInsertion.paragraphs.some(p=>
+  String(p.primary).includes("Hear us") ||
+  String(p.primary).includes("Through our Lord") ||
+  String(p.primary).includes("Bow your heads")));
+
+const suppliedFrenchConclusion=structuredClone(quad1Friday);
+suppliedFrenchConclusion.proper.orations.prayerOverPeople.conclusionFr=
+  "CONCLUSION_FRANÇAISE_DE_SOURCE_TEST";
+assert.equal(resolvePrayerOverPeopleInsertion(suppliedFrenchConclusion,{language:"fr"})
+  .paragraphs[2].primary,"CONCLUSION_FRANÇAISE_DE_SOURCE_TEST");
+const absentFrench=structuredClone(quad1Friday);
+delete absentFrench.proper.orations.prayerOverPeople.bodyFr;
+const latinOnly=resolvePrayerOverPeopleInsertion(absentFrench,{language:"fr"});
+assert.equal(latinOnly.paragraphs[1].primary,
+  absentFrench.proper.orations.prayerOverPeople.bodyLat,
+  "Missing French must fall back to Latin source, NEVER English");
+assert.equal(latinOnly.paragraphs[1].alternate,null);
+
+for(const form of ["LOW","SOLEMN"]){
+ for(const mode of ["LIVE","MISSAL"]){
+  const selected={...quad1Friday,form,presentationMode:mode};
+  const french=createMassReaderModel({resolvedMass:selected,sectionMap,
+    lowCorpus:low,sungCorpus:sung,canonSourceMap,vernacularLanguage:"fr"});
+  const english=createMassReaderModel({resolvedMass:selected,sectionMap,
+    lowCorpus:low,sungCorpus:sung,canonSourceMap,vernacularLanguage:"en"});
+  const pick=m=>m.cards.find(c=>c.sourceSectionId==="AO.CARD.027" ||
+    c.sectionId==="AO.CARD.027");
+  const frPost=pick(french),enPost=pick(english);
+  assert.ok(frPost&&enPost,form+" "+mode+" Postcommunion source missing");
+  assert.equal(frPost.paragraphs.at(-3).primary,
+    quad1Friday.proper.orations.prayerOverPeople.bodyFr);
+  assert.equal(enPost.paragraphs.at(-3).primary,
+    quad1Friday.proper.orations.prayerOverPeople.bodyEn);
+  assert.deepEqual(frPost.paragraphs.slice(-4).map(p=>p.id),
+    enPost.paragraphs.slice(-4).map(p=>p.id));
+  assert.equal(frPost.prayerOverPeople.postcommunionExit.mode,"PRAYER_OVER_PEOPLE");
+  assert.equal(french.totalCards,english.totalCards,
+    "Changing reader locale altered source card count");
+ }
+}
+
 console.log("Prayer over the People: PASS — source-owned oration is composed into Postcommunion with deferred C0256 exit and unchanged card topology.");
