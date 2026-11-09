@@ -3250,7 +3250,7 @@ function litanySourceDisclosure(){
 }
 function batch03LitanyUseOptions(){
  const uses=Object.values(BATCH03_LITANY_EDITION_POLICY);
- return `<nav class="aoP435930GuideNav aoBatch03LitanyUses" aria-label="${esc(L('Litany edition and use','Version et usage des litanies'))}">
+ return `<nav class="aoBatch03LitanyUses" style="display:grid!important;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin:12px 0" aria-label="${esc(L('Litany edition and use','Version et usage des litanies'))}">
  ${uses.map(u=>`<button type="button" data-p435930-lit-use="${esc(u.id)}" aria-pressed="${LIT.use===u.id}" style="min-height:60px!important;height:auto!important" class="${LIT.use===u.id?'active':''}">${esc(isFr()?u.labelFr:u.labelEn)}</button>`).join('')}</nav>`;
 }
 function renderBatch03PublicLitanyReference(){
