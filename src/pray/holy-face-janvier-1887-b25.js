@@ -65,10 +65,25 @@ export const NOVENA_HOLY_FACE_1887_B25=Object.freeze({
     },
     {
       "label": "1887 manual bibliographic witness",
+      "labelFr": "Notice bibliographique du manuel anglais de 1887",
       "url": "https://holyfacechapel.org/manual-of-the-archconfraternity-of-the-holy-face-title-page/"
+    },
+    {
+      "label": "Original French Janvier novena volume (1894; not transcribed)",
+      "labelFr": "Volume original français de Janvier (1894 ; non transcrit)",
+      "url": "https://play.google.com/store/books/details/Pierre_D%C3%A9sir%C3%A9_Janvier_Neuvaine_en_l_honneur_de_la?id=kuGdoq3cut4C",
+      "role": "ORIGINAL_FRENCH_BOOK_1894_UNCOLLATED"
     }
   ],
-  "frenchTextStatus": "HISTORICAL_ENGLISH_ONLY_NO_FRENCH_WITNESS",
+  "frenchOriginalEdition": {
+    "work": "Neuvaine en l'honneur de la Sainte-Face",
+    "year": 1894,
+    "pages": 88,
+    "url": "https://play.google.com/store/books/details/Pierre_D%C3%A9sir%C3%A9_Janvier_Neuvaine_en_l_honneur_de_la?id=kuGdoq3cut4C",
+    "status": "BOOK_LOCATED_BIBLIOGRAPHIC_ONLY_NO_NINE_FRENCH_DAY_BODIES",
+    "textAlignedWith1887English": false
+  },
+  "frenchTextStatus": "HISTORICAL_ENGLISH_ONLY_FRENCH_1894_VOLUME_LOCATED_TEXT_UNCOLLATED",
   "commonNote": {
     "en": "The source's aspirations and collect appear at the end of each complete day's text; no further repetitions are prescribed here.",
     "fr": "Les aspirations et l’oraison figurent à la fin du texte intégral de chaque jour ; aucune répétition supplémentaire n’est ajoutée."
@@ -214,6 +229,7 @@ export const NOVENA_HOLY_FACE_1887_B25=Object.freeze({
 export const HOLY_FACE_SOURCE_GATES_B25=Object.freeze({
  originalManualYear:1887,printedPages:"108–142",sourceHtmlSha256:"d999ceff56b953ff3416cefa36d8fd252ebdf12eb5c630b9aed4004a5e0bb642",
  fullDigitalEnglishDays:9,originalPrintPhotoCollated:false,
+ frenchHistoricalVolumeLocated:true,frenchHistoricalVolumeYear:1894,frenchHistoricalVolumeTextTranscribed:false,
  verifiedFrenchPrayerBody:false,verifiedLatinPrayerBody:false,modernAppendixIncluded:false,
  frozenCanonicalNovenaCount:16,sourceRelease:"DIGITAL_ENGLISH_WITNESS_EXPLICIT_1887_PRINT_COLLATION_HOLD"
 });
