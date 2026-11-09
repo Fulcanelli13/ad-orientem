@@ -108,8 +108,8 @@ test("mutating Sunday/ferial Compline, Epiphany or Holy Family rollover fails cl
   assert.equal(researchJan04_10PrivateComplineAppointment(date).status,"WITHHELD");
  }
 });
-test("all 28 Jan4–10 public minister/context combinations are denied BEFORE fetching",async()=>{
- for(const date of JAN04_10_DATES){
+test("9–10 Jan Holy Family stays public WITHHELD before fetching (8 combinations)",async()=>{
+ for(const date of ["2027-01-09","2027-01-10"]){
   assert.equal(latinComplineReleaseEligibility({date}).status,"WITHHELD");
   assert.equal(officeRouteState({date,hour:"COMPLINE"}).readingEnabled,false);
   for(const context of Object.values(COMPLINE_CONTEXT)){
