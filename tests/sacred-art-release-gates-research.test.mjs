@@ -178,3 +178,56 @@ assert.equal(protectedReviewed.size,46,'All 46 missing-identity destinations sho
 assert.equal(prior.release_gate_evidence.identity_and_metadata_reconciliation_progress.all_protected_missing_ids_type_triaged,46);
 assert.equal(prior.release_gate_evidence.identity_and_metadata_reconciliation_progress.fully_assigned_verified_app_canonical_ids,0);
 console.log('PASS: all 46 owner-preserved missing-ID cases source/asset-type triaged, no invented IDs, photo clearances or replacements.');
+
+const recovered29 = read('data/artwork/research/m2m-protected-asset-provenance-batch13-20261109.v1.json');
+assert.equal(recovered29.rows.length,29);
+assert.equal(new Set(recovered29.rows.map(r=>r.target_type+':'+r.target_id)).size,29);
+assert.equal(recovered29.counts.local_existing_provenance_asset,3);
+assert.equal(recovered29.counts.local_station_assets,2);
+assert.equal(recovered29.counts.local_historic_portrait,1);
+assert.equal(recovered29.counts.remote_preview_only,2);
+assert.equal(recovered29.counts.selected_ai_generated_final_file_missing,4);
+assert.equal(recovered29.counts.two_work_vigil_selection,1);
+assert.equal(recovered29.counts.selected_original_asset_not_yet_located,19);
+assert.equal(recovered29.counts.new_publications_authorised,0);
+assert.equal(recovered29.counts.new_app_ids_authorised,0);
+const st13=recovered29.rows.find(r=>r.target_id==='STG-pray.stations-13');
+const st14=recovered29.rows.find(r=>r.target_id==='STG-pray.stations-14');
+assert.equal(st13.local_asset_path,'assets/stations/san-polo/station-13.webp');
+assert.equal(st14.local_asset_path,'assets/stations/san-polo/station-14.webp');
+assert.equal(st13.local_repo_blob_sha,'2f7b01404d4b75d71c4c0d085e46c3607ac93038');
+assert.equal(st14.local_repo_blob_sha,'c1288aefec1e44f3df6873f3b1de4e8b51a39b8b');
+assert.ok(st13.licence_basis.includes('CC BY-SA 4.0'));
+assert.ok(st14.licence_basis.includes('CC BY-SA 4.0'));
+assert.ok(st13.release_status.includes('MOBILE_QA_AND_SIGNOFF_PENDING'));
+assert.ok(st14.release_status.includes('MOBILE_QA_AND_SIGNOFF_PENDING'));
+const historic=recovered29.rows.find(r=>r.target_id==='COV-novena.st_therese');
+assert.equal(historic.local_asset_path,'assets/prayer/user-approved/st-therese-lisieux-historical-portrait.webp');
+assert.equal(historic.documented_sha256,'705cfd23686a8721faaf62ecaa50ccae1be7c227ceccffdde9f1ca09d73e909d');
+assert.equal(historic.photo_editorial_approval,'FINAL_PHOTOGRAPH_APPROVED');
+for(const date of ['2026-02-22','2026-05-01']){
+ const r=recovered29.rows.find(x=>x.target_id===date);
+ assert.equal(r.evidence_grade,'EXISTING_REMOTE_PREVIEW_REFERENCE_NOT_OFFLINE_MASTER');
+ assert.equal(r.remote_preview.source_file,'src/home/approved-2026-other-date-previews.js');
+ assert.equal(r.local_asset_path,null);
+}
+for(const date of ['2026-03-08','2026-03-22','2026-04-08','2026-05-29']){
+ const r=recovered29.rows.find(x=>x.target_id===date);
+ assert.equal(r.evidence_grade,'DERIVED_ARTWORK_SELECTED_BUT_FINAL_GENERATED_FILE_NOT_LOCATED');
+ assert.equal(r.local_asset_path,null);
+}
+const vigil=recovered29.rows.find(r=>r.target_id==='2026-04-04');
+assert.equal(vigil.required_components.length,2);
+assert.deepEqual(vigil.required_components.map(x=>x.source_artist),['James Tissot','John Martin']);
+assert.equal(recovered29.production_regression_alert.globally_rejected_original,'cma-122338');
+assert.equal(recovered29.production_regression_alert.legacy_release_key,'bouts');
+assert.equal(recovered29.production_regression_alert.legacy_release_pr,2340);
+assert.equal(recovered29.production_regression_alert.blocked_by_research_manifest,true);
+for(const r of recovered29.rows){
+ assert.equal(r.app_canonical_id,null);
+ assert.equal(r.object_replacement_authorised,false);
+ assert.equal(r.photo_publication_authorised,false);
+ assert.equal(r.existing_selection_preserved,true);
+}
+assert.equal(prior.release_gate_evidence.asset_recovery_29.new_assignments_authorised,0);
+console.log('PASS: batch13 confirms 3 provenance-backed local assets and 2 remote previews; all 29 selected image gates fail closed, Bouts legacy release flagged.');
