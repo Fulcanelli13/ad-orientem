@@ -20,7 +20,7 @@ export const ADVENT_III_COMPLINE_APPOINTMENTS=Object.freeze([
   commemoration:"St Eusebius, Bishop and Martyr",
   rubricalReason:"ADVENT_EMBER_WEDNESDAY_II_CLASS_FERIA_BR171_E"}),
  Object.freeze({date:"2026-12-17",weekday:"Feria V",psalmDay:"Feria V",
-  marianSection:"Advent",label:"Thursday Compline · O Sapientia",
+  marianSection:"Advent",label:"Thursday Compline · Advent III",
   officeClass:"FERIA",rank:"II",officeDate:"2026-12-17",
   rubricalReason:"ADVENT_DEC17_PRIVILEGED_II_CLASS_FERIA_BR171_E"}),
  Object.freeze({date:"2026-12-18",weekday:"Feria VI",psalmDay:"Feria VI",
@@ -55,7 +55,8 @@ export function reviewAdventIII2026OrdoWitness(appointment){
      appointment.officeClass==="SUNDAY_FIRST_VESPERS"?"166(b)":
       appointment.officeClass==="I_SUNDAY"?"166(h)":"171(e)"
     )||
-    appointment.marianSection!=="Advent")
+    appointment.marianSection!=="Advent"||
+    (source.commemoration??null)!==(appointment.commemoration??null))
   return Object.freeze({status:"WITHHELD",reason:"DATED_OFFICE_ORDO_WITNESS_MISMATCH"});
  return Object.freeze({status:"INDEPENDENT_DATED_ROMAN_1960_ORDO_REVIEW",
   witness:source,source:ADVENT_III_2026_ORDO_SOURCE,
