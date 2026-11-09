@@ -5,7 +5,8 @@ import {SCHOLA_1961_ORIGINAL_FACSIMILE_COUNT,schola1961OriginalFacsimile}
 import {sourceMusicMaterialGate} from "../src/mass/reader-music-material-gate.js";
 const ledger=JSON.parse(readFileSync(new URL("../data/research/mass-music-m21-seven-print-image-parity-worklist.v1.json",import.meta.url),"utf8"));
 const dom=readFileSync(new URL("../src/mass/reader-dom.js",import.meta.url),"utf8");
-assert.equal(SCHOLA_1961_ORIGINAL_FACSIMILE_COUNT,7);
+assert.equal(SCHOLA_1961_ORIGINAL_FACSIMILE_COUNT,12,
+ "Original seven facsimiles plus five new exact 1961 source spans");
 assert.equal(ledger.scores.length,7);
 for(const row of ledger.scores){
  const printed=schola1961OriginalFacsimile(row.movement,row.catalogueSelection);
@@ -22,11 +23,31 @@ for(const row of ledger.scores){
  assert.equal(row.publicScore,false);
 }
 assert.equal(new Set(ledger.scores.flatMap(s=>s.printedPageImageUrls)).size,10);
+// The historical M21 seven-score ledger remains immutable; added sources
+// belong to the new batch and must not be mislabeled as M21-reviewed.
+const additions=[
+ ["KYRIE","MASS_17",["55*"],["932.png"]],
+ ["KYRIE","MASS_18",["57*"],["934.png"]],
+ ["GLORIA","MASS_11",["39*","40*"],["916.png","917.png"]],
+ ["SANCTUS_BENEDICTUS","MASS_11",["40*","41*"],["917.png","918.png"]],
+ ["AGNUS_DEI","MASS_11",["41*"],["918.png"]]
+];
+for(const [movement,selection,folio,images] of additions){
+ const record=schola1961OriginalFacsimile(movement,selection);
+ assert.ok(record,"Added printed witness missing: "+movement+" / "+selection);
+ assert.deepEqual(record.printedPages,folio);
+ assert.deepEqual(record.originalPageImages.map(x=>x.split("/").at(-1)),images);
+ assert.equal(record.status,"ORIGINAL_PRINT_FACSIMILE_REFERENCE");
+ assert.equal(record.gabcMusicallyCertified,false);
+ assert.equal(record.inferredFromCalendar,false);
+ assert.equal(record.observedParishPerformance,false);
+}
+
 // No guessed scores from the current date, ordinary family alone, custom
 // titles, unsupported choices, Requiem variants, or unselected local profiles.
 for(const [id,setting] of [["KYRIE",""],["KYRIE","CUSTOM"],
- ["KYRIE","MASS_01"],["GLORIA","MASS_11"],["GLORIA","MASS_16"],
- ["AGNUS_DEI","MASS_11"],["CREDO","MASS_08"],
+ ["KYRIE","MASS_01"],["GLORIA","MASS_17"],["GLORIA","MASS_16"],
+ ["AGNUS_DEI","MASS_15"],["CREDO","MASS_08"],
  ["CREDO","CUSTOM"],["SANCTUS_BENEDICTUS","MASS_16"],
  ["INTROIT","MASS_08"],["KYRIE","Mass VIII · De Angelis"],
  ["","MASS_08"],[null,"MASS_08"]])
@@ -63,4 +84,4 @@ assert.equal(material.publication,"NOT_PROMOTED");
 assert.equal(material.usableAsScore,false);
 assert.equal(ledger.closedGates.fullyPrintedNoteMatchedCount,0);
 assert.equal(ledger.closedGates.approvedForReaderCount,0);
-console.log("PASS M29 seven authentic 1961 printed facsimiles visible only by explicit local settings; no GABC/audio/public musical certification promoted");
+console.log("PASS M29 original seven plus five source-linked 1961 facsimiles; seven-entry M21 ledger stays historical, no GABC/audio/public musical certification promoted");
