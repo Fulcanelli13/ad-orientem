@@ -1,0 +1,513 @@
+{
+  "schema": "ao-mass-music-m42-kyrie-xvi-three-printed-witness-morphology-review-v1",
+  "reviewedAt": "2026-11-09",
+  "scoreId": "GREGOBASE-545",
+  "setting": "MASS_16",
+  "gabcFingerprintUtf16Fnv1a32": "acef0d62",
+  "authority": {
+    "originalPrintWitnesses": {
+      "graduale": {
+        "edition": "Graduale Romanum",
+        "year": 1961,
+        "folio": "54*",
+        "page": "https://gregobase.selapa.net/sources/2/931.png",
+        "pdf": "https://media.churchmusicassociation.org/pdf/kyriale-solesmes.pdf#page=56",
+        "region": "second Kyrie staff, rightmost final son immediately before terminal double bar"
+      },
+      "liber": {
+        "edition": "Liber Usualis",
+        "year": 1961,
+        "folio": "59",
+        "page": "https://gregobase.selapa.net/sources/3/170.png",
+        "region": "first Kyrie XVI block near lower half of page, right end of second staff"
+      },
+      "chants": {
+        "edition": "Chants of the Church",
+        "year": 1956,
+        "folio": "40",
+        "page": "https://gregobase.selapa.net/sources/5/55.png",
+        "region": "Kyrie XVI block below centre of page, closing staff before Sanctus"
+      }
+    },
+    "gregorioSyntax": "https://gregorio-project.github.io/gabc/details.html",
+    "gregobaseScore": "https://gregobase.selapa.net/chant.php?id=545",
+    "gregobaseOriginalPrintSourceProofread": {
+      "proofreader": "gdweber",
+      "date": "2022-10-11",
+      "scope": "EXTERNAL_GREGOBASE_PROOFREAD_STATUS_NOT_INDEPENDENT_AO_EDITIONAL_APPROVAL"
+    }
+  },
+  "historicSourceAudit": {
+    "recordingKind": "GregoBase author history of source and renderer; not a change to original historical Solesmes folio",
+    "novel2023Page": "https://gregobase.selapa.net/history.php?changeset=1700953386%7C545%7C8322",
+    "historic2022Page": "https://gregobase.selapa.net/history.php?changeset=1667616151%7C545%7C8322",
+    "editor2022": "Jacques Perriere",
+    "editor2023": "Jacques Perriere",
+    "source2023GabcFourLines": "(c4) KY(g)ri(hi)e(ii) *() e(g)lé(h_)i(i)son.(i.) <i>iij.</i>(::)\nChri(k)ste(ij) e(h)lé(h_)i(i)son.(i.) <i>iij.</i>(::)\nKý(g)ri(hi)e(ii) e(g)lé(h_)i(i)son.(i.) <i>ij.</i>(::)\nKý(g)ri(hi)e(ii) *() e(g)lé(hj)i(h)son.(ighvGFE.) (::)",
+    "verifiedProvenanceChanges": [
+      {
+        "date": "2022-11-05",
+        "observedEdit": "Remove unnecessary accent on Christe and unnecessary slash neume spacing in last son.",
+        "sourceScorePitchChangesClaimed": false,
+        "sourceOriginalGabcPreserved": true
+      },
+      {
+        "date": "2023-11-25",
+        "observedEdit": "Historical GregoBase entry added separate TeX rendering controls for linepunctummorashift -0.02 cm and gresetclivisalignment never; four-line GABC melody remains unchanged.",
+        "texControlNames": [
+          "linepunctummorashift",
+          "gresetclivisalignment"
+        ],
+        "sourceScorePitchChangesClaimed": false,
+        "requiresRenderingParityReviewBeforeCopyingControls": true
+      }
+    ],
+    "consumerRendererWarning": "Do not silently treat Gregorio TeX engraving controls as transferable to Exsurge/native SVG/CSS, and do not mistake linepunctummorashift or clivisalignment for GABC pitch changes."
+  },
+  "witnessBasedPrintedFeatures": [
+    {
+      "featureId": "ENDING_SEPARATE_MELODY",
+      "sourceAnchors": [
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "expectedGabc": "Ký(g)ri(hi)e(ii) *() e(g)lé(hj)i(h)son.(ighvGFE.)",
+      "printedObservation": "A separately fully written final Kyrie after the third Kyrie's ij. marker is visible in all three prints. It has a different lé ascent and terminal melisma from earlier repeated phrases.",
+      "morphology": "CLEAR_PRINTED_STRUCTURE",
+      "exactSignParity": false,
+      "confidence": "HIGH_FOR_STRUCTURE_NOT_EDITORIAL_CERTIFICATION"
+    },
+    {
+      "featureId": "PUNCTA_INCLINATA_DESCENDING_TAIL",
+      "sourceAnchors": [
+        27
+      ],
+      "sourceGlobalNoteheads": [
+        38,
+        39,
+        40
+      ],
+      "expectedGabc": "GFE",
+      "printedObservation": "All three independently printed Solesmes witnesses show small diamond-like descending end figures, visibly unlike the preceding taller square/stem glyphs. At full-page scan resolution, their three-by-three individual shape, joining and exact pitch assignment is not separately signed off.",
+      "morphology": "DESCENDING_DIAMOND_LIKE_TAIL_VISUALLY_CORROBORATED",
+      "exactSignParity": false,
+      "confidence": "MODERATE_FOR_GLYPH_FAMILY_LOW_FOR_NOTE_BY_NOTE_MATCH"
+    },
+    {
+      "featureId": "FINAL_CADENCE_STEM_OR_VIRGA",
+      "sourceAnchors": [
+        27
+      ],
+      "sourceGlobalNoteheads": [
+        37
+      ],
+      "expectedGabc": "hv",
+      "printedObservation": "Immediately before the diamond-like tail there is a taller printed note figure with a visible upward stem-like mark in the rendered facsimile; the source uses h followed by v. Whether the original vertical stroke precisely matches the modern Gregorio virga glyph remains unverified.",
+      "morphology": "PRECEDING_TALL_NOTE_OR_STEM_VISUALLY_SUGGESTED",
+      "exactSignParity": false,
+      "confidence": "LOW_FOR_EXACT_SHAPE"
+    },
+    {
+      "featureId": "FINAL_TERMINAL_DOT",
+      "sourceAnchors": [
+        27
+      ],
+      "sourceGlobalNoteheads": [
+        40
+      ],
+      "expectedGabc": "E.",
+      "printedObservation": "A small terminal point appears after the descending final figures in all three historical witnesses. The existence of a final dot-like punctuation is more defensible than its independently proven exact alignment to the third diamond E.",
+      "morphology": "TERMINAL_DOT_LIKE_MARK_VISUALLY_CORROBORATED",
+      "exactSignParity": false,
+      "confidence": "MODERATE_FOR_DOT_PRESENCE_LOW_FOR_ATTACHMENT"
+    },
+    {
+      "featureId": "LE_TWO_NOTES_NOT_EPISEMA",
+      "sourceAnchors": [
+        25
+      ],
+      "sourceGlobalNoteheads": [
+        32,
+        33
+      ],
+      "expectedGabc": "hj",
+      "printedObservation": "At the final Kyrie's accented lé, the printed contour ascends between two notehead heights, whereas earlier lé syllables show one source h with episema. The printed difference in melodic contour is clear; exact connecting ligature remains to be collated.",
+      "morphology": "FINAL_LE_ASCENDING_TWO_HEIGHTS_CORROBORATED",
+      "exactSignParity": false,
+      "confidence": "MODERATE_FOR_CONTOUR"
+    },
+    {
+      "featureId": "THIRD_KYRIE_SYSTEM_BREAK",
+      "sourceAnchors": [
+        14,
+        15
+      ],
+      "expectedGabc": "Ký(g)ri(hi)",
+      "printedObservation": "The third Kyrie is physically split at the first-to-second musical staff break in the 1961 Graduale; the second staff begins its continuation. This is a layout break, not a new source neume or repeated syllable. Tiny custos mark remains unverified.",
+      "morphology": "STAFF_BREAK_AND_SYLLABLE_CARRYOVER_VISIBLE",
+      "exactSignParity": false,
+      "confidence": "HIGH_FOR_LINE_BREAK_LOW_FOR_CUSTOS"
+    }
+  ],
+  "sourceSignCrossWitnessEvidence": [
+    {
+      "signKind": "HORIZONTAL_EPISEMA",
+      "sourceNoteOrdinal": 7,
+      "sourceGroupOrdinal": 5,
+      "originalPrintObservation": "ORIGINAL_SMALL_STROKE_NOT_SEPARABLY_RESOLVED",
+      "witnessAgreement": [
+        {
+          "witness": "graduale",
+          "printGlyphFamilyObservation": "GROUP_VISIBLE_MICRO_SIGN_UNCERTIFIED",
+          "independentExactPitchAndAttachmentCertainty": false
+        },
+        {
+          "witness": "liber",
+          "printGlyphFamilyObservation": "GROUP_VISIBLE_MICRO_SIGN_UNCERTIFIED",
+          "independentExactPitchAndAttachmentCertainty": false
+        },
+        {
+          "witness": "chants",
+          "printGlyphFamilyObservation": "GROUP_VISIBLE_MICRO_SIGN_UNCERTIFIED",
+          "independentExactPitchAndAttachmentCertainty": false
+        }
+      ],
+      "printedSignFamilyPresence": "AMBIGUOUS_AT_CURRENT_RESOLUTION",
+      "printedTargetNoteEditoriallyConfirmed": false,
+      "printedSignLengthAndSideVerified": false,
+      "printedGlyphShapeIndependentlyCertified": false,
+      "confidenceIsNotApproval": true
+    },
+    {
+      "signKind": "PUNCTUM_MORA",
+      "sourceNoteOrdinal": 9,
+      "sourceGroupOrdinal": 7,
+      "originalPrintObservation": "PRINTED_PHRASE_END_DOT_LIKE_MARK_FINE_TARGET_UNRESOLVED",
+      "witnessAgreement": [
+        {
+          "witness": "graduale",
+          "printGlyphFamilyObservation": "GROUP_VISIBLE_MICRO_SIGN_UNCERTIFIED",
+          "independentExactPitchAndAttachmentCertainty": false
+        },
+        {
+          "witness": "liber",
+          "printGlyphFamilyObservation": "GROUP_VISIBLE_MICRO_SIGN_UNCERTIFIED",
+          "independentExactPitchAndAttachmentCertainty": false
+        },
+        {
+          "witness": "chants",
+          "printGlyphFamilyObservation": "GROUP_VISIBLE_MICRO_SIGN_UNCERTIFIED",
+          "independentExactPitchAndAttachmentCertainty": false
+        }
+      ],
+      "printedSignFamilyPresence": "AMBIGUOUS_AT_CURRENT_RESOLUTION",
+      "printedTargetNoteEditoriallyConfirmed": false,
+      "printedSignLengthAndSideVerified": false,
+      "printedGlyphShapeIndependentlyCertified": false,
+      "confidenceIsNotApproval": true
+    },
+    {
+      "signKind": "HORIZONTAL_EPISEMA",
+      "sourceNoteOrdinal": 14,
+      "sourceGroupOrdinal": 11,
+      "originalPrintObservation": "ORIGINAL_SMALL_STROKE_NOT_SEPARABLY_RESOLVED",
+      "witnessAgreement": [
+        {
+          "witness": "graduale",
+          "printGlyphFamilyObservation": "GROUP_VISIBLE_MICRO_SIGN_UNCERTIFIED",
+          "independentExactPitchAndAttachmentCertainty": false
+        },
+        {
+          "witness": "liber",
+          "printGlyphFamilyObservation": "GROUP_VISIBLE_MICRO_SIGN_UNCERTIFIED",
+          "independentExactPitchAndAttachmentCertainty": false
+        },
+        {
+          "witness": "chants",
+          "printGlyphFamilyObservation": "GROUP_VISIBLE_MICRO_SIGN_UNCERTIFIED",
+          "independentExactPitchAndAttachmentCertainty": false
+        }
+      ],
+      "printedSignFamilyPresence": "AMBIGUOUS_AT_CURRENT_RESOLUTION",
+      "printedTargetNoteEditoriallyConfirmed": false,
+      "printedSignLengthAndSideVerified": false,
+      "printedGlyphShapeIndependentlyCertified": false,
+      "confidenceIsNotApproval": true
+    },
+    {
+      "signKind": "PUNCTUM_MORA",
+      "sourceNoteOrdinal": 16,
+      "sourceGroupOrdinal": 13,
+      "originalPrintObservation": "PRINTED_PHRASE_END_DOT_LIKE_MARK_FINE_TARGET_UNRESOLVED",
+      "witnessAgreement": [
+        {
+          "witness": "graduale",
+          "printGlyphFamilyObservation": "GROUP_VISIBLE_MICRO_SIGN_UNCERTIFIED",
+          "independentExactPitchAndAttachmentCertainty": false
+        },
+        {
+          "witness": "liber",
+          "printGlyphFamilyObservation": "GROUP_VISIBLE_MICRO_SIGN_UNCERTIFIED",
+          "independentExactPitchAndAttachmentCertainty": false
+        },
+        {
+          "witness": "chants",
+          "printGlyphFamilyObservation": "GROUP_VISIBLE_MICRO_SIGN_UNCERTIFIED",
+          "independentExactPitchAndAttachmentCertainty": false
+        }
+      ],
+      "printedSignFamilyPresence": "AMBIGUOUS_AT_CURRENT_RESOLUTION",
+      "printedTargetNoteEditoriallyConfirmed": false,
+      "printedSignLengthAndSideVerified": false,
+      "printedGlyphShapeIndependentlyCertified": false,
+      "confidenceIsNotApproval": true
+    },
+    {
+      "signKind": "HORIZONTAL_EPISEMA",
+      "sourceNoteOrdinal": 23,
+      "sourceGroupOrdinal": 18,
+      "originalPrintObservation": "ORIGINAL_SMALL_STROKE_NOT_SEPARABLY_RESOLVED",
+      "witnessAgreement": [
+        {
+          "witness": "graduale",
+          "printGlyphFamilyObservation": "GROUP_VISIBLE_MICRO_SIGN_UNCERTIFIED",
+          "independentExactPitchAndAttachmentCertainty": false
+        },
+        {
+          "witness": "liber",
+          "printGlyphFamilyObservation": "GROUP_VISIBLE_MICRO_SIGN_UNCERTIFIED",
+          "independentExactPitchAndAttachmentCertainty": false
+        },
+        {
+          "witness": "chants",
+          "printGlyphFamilyObservation": "GROUP_VISIBLE_MICRO_SIGN_UNCERTIFIED",
+          "independentExactPitchAndAttachmentCertainty": false
+        }
+      ],
+      "printedSignFamilyPresence": "AMBIGUOUS_AT_CURRENT_RESOLUTION",
+      "printedTargetNoteEditoriallyConfirmed": false,
+      "printedSignLengthAndSideVerified": false,
+      "printedGlyphShapeIndependentlyCertified": false,
+      "confidenceIsNotApproval": true
+    },
+    {
+      "signKind": "PUNCTUM_MORA",
+      "sourceNoteOrdinal": 25,
+      "sourceGroupOrdinal": 20,
+      "originalPrintObservation": "PRINTED_PHRASE_END_DOT_LIKE_MARK_FINE_TARGET_UNRESOLVED",
+      "witnessAgreement": [
+        {
+          "witness": "graduale",
+          "printGlyphFamilyObservation": "GROUP_VISIBLE_MICRO_SIGN_UNCERTIFIED",
+          "independentExactPitchAndAttachmentCertainty": false
+        },
+        {
+          "witness": "liber",
+          "printGlyphFamilyObservation": "GROUP_VISIBLE_MICRO_SIGN_UNCERTIFIED",
+          "independentExactPitchAndAttachmentCertainty": false
+        },
+        {
+          "witness": "chants",
+          "printGlyphFamilyObservation": "GROUP_VISIBLE_MICRO_SIGN_UNCERTIFIED",
+          "independentExactPitchAndAttachmentCertainty": false
+        }
+      ],
+      "printedSignFamilyPresence": "AMBIGUOUS_AT_CURRENT_RESOLUTION",
+      "printedTargetNoteEditoriallyConfirmed": false,
+      "printedSignLengthAndSideVerified": false,
+      "printedGlyphShapeIndependentlyCertified": false,
+      "confidenceIsNotApproval": true
+    },
+    {
+      "signKind": "VIRGA",
+      "sourceNoteOrdinal": 37,
+      "sourceGroupOrdinal": 27,
+      "originalPrintObservation": "FINAL_PRECEDING_TALL_OR_STEM_LIKE_GLYPH_SUGGESTED",
+      "witnessAgreement": [
+        {
+          "witness": "graduale",
+          "printGlyphFamilyObservation": "ENDING_CONTOUR_VISIBLE_FINE_SIGN_AMBIGUOUS",
+          "independentExactPitchAndAttachmentCertainty": false
+        },
+        {
+          "witness": "liber",
+          "printGlyphFamilyObservation": "ENDING_CONTOUR_VISIBLE_FINE_SIGN_AMBIGUOUS",
+          "independentExactPitchAndAttachmentCertainty": false
+        },
+        {
+          "witness": "chants",
+          "printGlyphFamilyObservation": "ENDING_CONTOUR_VISIBLE_FINE_SIGN_AMBIGUOUS",
+          "independentExactPitchAndAttachmentCertainty": false
+        }
+      ],
+      "printedSignFamilyPresence": "POSSIBLE_VIRGA_STEM",
+      "printedTargetNoteEditoriallyConfirmed": false,
+      "printedSignLengthAndSideVerified": false,
+      "printedGlyphShapeIndependentlyCertified": false,
+      "confidenceIsNotApproval": true
+    },
+    {
+      "signKind": "PUNCTUM_INCLINATUM",
+      "sourceNoteOrdinal": 38,
+      "sourceGroupOrdinal": 27,
+      "originalPrintObservation": "FIRST_SMALL_DESCENDING_DIAMOND_LIKE_PART_OF_TAIL",
+      "witnessAgreement": [
+        {
+          "witness": "graduale",
+          "printGlyphFamilyObservation": "ENDING_CONTOUR_VISIBLE_FINE_SIGN_AMBIGUOUS",
+          "independentExactPitchAndAttachmentCertainty": false
+        },
+        {
+          "witness": "liber",
+          "printGlyphFamilyObservation": "ENDING_CONTOUR_VISIBLE_FINE_SIGN_AMBIGUOUS",
+          "independentExactPitchAndAttachmentCertainty": false
+        },
+        {
+          "witness": "chants",
+          "printGlyphFamilyObservation": "ENDING_CONTOUR_VISIBLE_FINE_SIGN_AMBIGUOUS",
+          "independentExactPitchAndAttachmentCertainty": false
+        }
+      ],
+      "printedSignFamilyPresence": "VISIBLE_DESCENDING_DIAMOND_LIKE_FAMILY",
+      "printedTargetNoteEditoriallyConfirmed": false,
+      "printedSignLengthAndSideVerified": false,
+      "printedGlyphShapeIndependentlyCertified": false,
+      "confidenceIsNotApproval": true
+    },
+    {
+      "signKind": "PUNCTUM_INCLINATUM",
+      "sourceNoteOrdinal": 39,
+      "sourceGroupOrdinal": 27,
+      "originalPrintObservation": "MIDDLE_SMALL_DESCENDING_DIAMOND_LIKE_PART_OF_TAIL",
+      "witnessAgreement": [
+        {
+          "witness": "graduale",
+          "printGlyphFamilyObservation": "ENDING_CONTOUR_VISIBLE_FINE_SIGN_AMBIGUOUS",
+          "independentExactPitchAndAttachmentCertainty": false
+        },
+        {
+          "witness": "liber",
+          "printGlyphFamilyObservation": "ENDING_CONTOUR_VISIBLE_FINE_SIGN_AMBIGUOUS",
+          "independentExactPitchAndAttachmentCertainty": false
+        },
+        {
+          "witness": "chants",
+          "printGlyphFamilyObservation": "ENDING_CONTOUR_VISIBLE_FINE_SIGN_AMBIGUOUS",
+          "independentExactPitchAndAttachmentCertainty": false
+        }
+      ],
+      "printedSignFamilyPresence": "VISIBLE_DESCENDING_DIAMOND_LIKE_FAMILY",
+      "printedTargetNoteEditoriallyConfirmed": false,
+      "printedSignLengthAndSideVerified": false,
+      "printedGlyphShapeIndependentlyCertified": false,
+      "confidenceIsNotApproval": true
+    },
+    {
+      "signKind": "PUNCTUM_INCLINATUM",
+      "sourceNoteOrdinal": 40,
+      "sourceGroupOrdinal": 27,
+      "originalPrintObservation": "LAST_SMALL_DESCENDING_DIAMOND_LIKE_PART_OF_TAIL",
+      "witnessAgreement": [
+        {
+          "witness": "graduale",
+          "printGlyphFamilyObservation": "ENDING_CONTOUR_VISIBLE_FINE_SIGN_AMBIGUOUS",
+          "independentExactPitchAndAttachmentCertainty": false
+        },
+        {
+          "witness": "liber",
+          "printGlyphFamilyObservation": "ENDING_CONTOUR_VISIBLE_FINE_SIGN_AMBIGUOUS",
+          "independentExactPitchAndAttachmentCertainty": false
+        },
+        {
+          "witness": "chants",
+          "printGlyphFamilyObservation": "ENDING_CONTOUR_VISIBLE_FINE_SIGN_AMBIGUOUS",
+          "independentExactPitchAndAttachmentCertainty": false
+        }
+      ],
+      "printedSignFamilyPresence": "VISIBLE_DESCENDING_DIAMOND_LIKE_FAMILY",
+      "printedTargetNoteEditoriallyConfirmed": false,
+      "printedSignLengthAndSideVerified": false,
+      "printedGlyphShapeIndependentlyCertified": false,
+      "confidenceIsNotApproval": true
+    },
+    {
+      "signKind": "PUNCTUM_MORA",
+      "sourceNoteOrdinal": 40,
+      "sourceGroupOrdinal": 27,
+      "originalPrintObservation": "FINAL_TERMINAL_DOT_LIKE_MARK_PRESENT_ATTACHMENT_TO_E_NOT_SEPARATELY_PROVEN",
+      "witnessAgreement": [
+        {
+          "witness": "graduale",
+          "printGlyphFamilyObservation": "ENDING_CONTOUR_VISIBLE_FINE_SIGN_AMBIGUOUS",
+          "independentExactPitchAndAttachmentCertainty": false
+        },
+        {
+          "witness": "liber",
+          "printGlyphFamilyObservation": "ENDING_CONTOUR_VISIBLE_FINE_SIGN_AMBIGUOUS",
+          "independentExactPitchAndAttachmentCertainty": false
+        },
+        {
+          "witness": "chants",
+          "printGlyphFamilyObservation": "ENDING_CONTOUR_VISIBLE_FINE_SIGN_AMBIGUOUS",
+          "independentExactPitchAndAttachmentCertainty": false
+        }
+      ],
+      "printedSignFamilyPresence": "VISIBLE_TERMINAL_DOT_LIKE_FAMILY",
+      "printedTargetNoteEditoriallyConfirmed": false,
+      "printedSignLengthAndSideVerified": false,
+      "printedGlyphShapeIndependentlyCertified": false,
+      "confidenceIsNotApproval": true
+    }
+  ],
+  "independentPrintGlyphStatus": {
+    "sourceTotalNoteheads": 40,
+    "sourceTotalNoteGroups": 27,
+    "sourceSignOccurrences": 11,
+    "visuallyObservedPrintedMorphologyFeatures": 6,
+    "independentyCountedOriginalPrintedNoteheads": null,
+    "finalInclinedGlyphGroupVisuallyPresent": true,
+    "finalMoraDotLikeMarkVisuallyPresent": true,
+    "exactIndividualPrintedNotePitchCountCertified": false,
+    "sourceLastNoteEPrintedDotAttachmentCertified": false,
+    "sourceVirgaPrintedStemExactParityCertified": false,
+    "originalEpisemataMatchedToSourceNotes": 0,
+    "originalMoraMatchedToSourceNotes": 0,
+    "editorCertifiedScores": 0,
+    "proposedSourceCorrections": []
+  },
+  "printCollationLimitations": [
+    "Three original page scans at browser-rendered resolution show gross neume morphology but not reliably each micro-symbol, connection, stroke length, mora placement, or pitch index.",
+    "GregoBase downloadable modern PDF is generated from existing GABC and is NOT an independent original printed witness. Never use it to certify the GABC against itself.",
+    "The printed final diamond-like figures and terminal point corroborate glyph *families*, not exact source notes 38–40 and last E punctum mora attachment.",
+    "A genuinely independent original-print count must be performed without deriving count from GABC source, at higher image resolution or paper; prior 40/40 denotes source noteheads with scan-level staff-height visual observations, not independently verified print notes.",
+    "The 2023 TeX rendering adjustments must not be injected into a different score renderer without render-vs-original comparison. No UI/chants/score approvals are granted."
+  ],
+  "nextAction": {
+    "gate": "INDEPENDENT_HIGH_RESOLUTION_FACSIMILE_COLLATION",
+    "mustCapture": [
+      "individual cropped original first and second Kyrie systems",
+      "independently numbered original print noteheads",
+      "all 3 horizontal episemata with target heads",
+      "all 4 mora dots with target heads",
+      "closing stem/virga, 3 individual inclinata and final dot",
+      "original printed custos at line wrap",
+      "neume underlay/joins",
+      "qualified chant editor written parity signoff"
+    ],
+    "publicScoreApprovalBlocked": true
+  },
+  "changes": {
+    "researchOnly": true,
+    "sourceGabcUnchanged": true,
+    "productionReaderUnchanged": true,
+    "canonical65Unchanged": true,
+    "automaticScholaSettingUnchanged": true,
+    "gregoBaseHistoricalNotesNotImportedIntoRenderer": true,
+    "musicalCertificationGranted": false
+  }
+}
