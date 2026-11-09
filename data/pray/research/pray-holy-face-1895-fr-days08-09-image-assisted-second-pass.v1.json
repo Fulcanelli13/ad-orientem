@@ -31,7 +31,7 @@
     "additionalDay1CollectSpotChecks": 1,
     "previouslyCorrectedDay8PrintedOrdinal": null,
     "day8PrintedSequence": [
-      null,
+      "I",
       "III",
       "III"
     ],
@@ -44,7 +44,8 @@
     "independentPublisherCertifiedDays": [],
     "readerFrenchPublishedDays": [],
     "status": "SECOND_PASS_PHOTOGRAPHIC_TEXT_AND_SECTION_CHECK_COMPLETE_FOR_DAYS_8_9__INDEPENDENT_EDITORIAL_CERTIFICATION_PENDING",
-    "reviewerKind": "AI-assisted page-image comparative review, distinct from the earlier first-pass transcript authoring steps"
+    "reviewerKind": "AI-assisted page-image comparative review, distinct from the earlier first-pass transcript authoring steps",
+    "day8FirstOrdinalCorrection": "Visible I. before Le pardon accordé on 1895 printed p.136, PDF zero-based p.142"
   },
   "sourceNormalizationPolicy": "Historical printed word choices and section boundaries preserved. Print layout line-wrap hyphenation, whitespace, French typographic quote punctuation, capitalization and apostrophe representation have been normalized and are not facsimile typographic transcripts.",
   "checklist": [
@@ -61,7 +62,7 @@
       "done": true
     },
     {
-      "task": "Verify Day VIII source first reflection p.136 is unnumbered; other points have III/III",
+      "task": "Verify source first reflection p.136 prints Roman I (earlier claim of unnumbered heading was wrong); later points on pp.137–138 both print III",
       "done": true
     },
     {
@@ -112,9 +113,9 @@
         136,
         137
       ],
-      "quotedSource": "Le pardon accordé. — Élevant ses regards",
-      "storedAnchor": "Le pardon accordé. — Élevant ses regards",
-      "comparison": "UNNUMBERED_SOURCE_TITLE_CONFIRMED"
+      "quotedSource": "I. Le pardon accordé. — Élevant ses regards",
+      "storedAnchor": "I. Le pardon accordé. — Élevant ses regards",
+      "comparison": "PRINTED_ROMAN_I_RESTORED_AFTER_DIRECT_2026_11_09_REVIEW"
     },
     {
       "day": 8,
@@ -287,8 +288,8 @@
     {
       "day": 8,
       "page": 136,
-      "kind": "PREVIOUSLY_CORRECTED_MATERIAL_TRANSCRIPTION_ERROR",
-      "details": "First-pass falsely supplied Roman I before Le pardon accordé. Fixed in prior PR #2756. Second pass confirms no printed ordinal."
+      "kind": "PREVIOUS_AI_AUDIT_FALSE_NEGATIVE_REVERSED",
+      "details": "The earlier source correction PR #2756 removed a genuine printed Roman I. Direct reinspection on 2026-11-09 of PDF zero-based p.142 confirms 'I. Le pardon accordé'. Source, reader and tests now restore it."
     },
     {
       "day": 8,
@@ -319,6 +320,7 @@
     "day9EnglishSourcePreserved": true
   },
   "nextTasks": [
+    "Do not repeat the incorrect 'unnumbered first reflection' assertion; original p.136 displays Roman I and following points p.137/138 print III/III.",
     "Repeat image-assisted detailed second-pass comparison on Days I–VII from printed pp.112–136, logging specific mismatches and keeping the Day I common prayer distinct",
     "Resolve English 1887 original print retrieval and compare documented French/English variants on matching printed sections",
     "Have an independent qualified human review normalized final French source, including semantic and typographic differences",
