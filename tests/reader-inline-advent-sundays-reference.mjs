@@ -3,7 +3,8 @@
 import assert from "node:assert/strict";
 import {createHash} from "node:crypto";
 import {readFileSync} from "node:fs";
-import {ADVENT_SUNDAY_REFERENCE_SCORES,ADVENT_SUNDAY_SOURCE_HOLDS}
+import {ADVENT_SUNDAY_REFERENCE_SCORES,ADVENT_SUNDAY_SOURCE_HOLDS,
+ ADVENT_SUNDAY_1962_MASS_WITNESSES}
  from "../src/mass/reader-inline-advent-sundays-reference.js";
 import {PROPER_REFERENCE_BINDINGS} from "../src/mass/reader-inline-proper-registry.js";
 import {referenceScoresForParagraph} from "../src/mass/reader-inline-proper-reference.js";
@@ -17,6 +18,14 @@ const expected=[
  ["Tempora/Adv2-0","ALLELUIA","GREGOBASE-292","al","5"],
  ["Tempora/Adv2-0","COMMUNION","GREGOBASE-966","co","6"]
 ];
+assert.deepEqual(ADVENT_SUNDAY_1962_MASS_WITNESSES.map(x=>
+ [x.sourcePath,x.exactSourceBlobSha]),[
+ ["Tempora/Adv1-0","75b533254548cf9f93636ea3d44dca059c6896d1"],
+ ["Tempora/Adv2-0","97130ff3f8e9e8471bc0b51f74558e49b93facf4"]
+]);
+assert.ok(ADVENT_SUNDAY_1962_MASS_WITNESSES.every(x=>
+ x.url.includes("/divinum-officium/blob/master/web/www/missa/Latin/Tempora/")&&
+ /^[a-f0-9]{40}$/.test(x.exactSourceBlobSha)));
 assert.equal(ADVENT_SUNDAY_REFERENCE_SCORES.length,8);
 assert.equal(new Set(ADVENT_SUNDAY_REFERENCE_SCORES.map(s=>s.id)).size,8);
 for(let i=0;i<expected.length;i++){
