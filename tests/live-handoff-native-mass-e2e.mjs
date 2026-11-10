@@ -117,9 +117,16 @@ async function enterNativeMass(page,option){
   await sheet.waitFor({state:"visible",timeout:20000});
   await sheet.locator('[data-h4-option="form"]').selectOption(option.form);
   const aspersion=sheet.locator('[data-h4-option="aspersion"]');
-  if(await aspersion.isEnabled()){
-    // An explicit no, not a bypass of the source-owned eligibility check.
+  if(option.form!=="LOW" && await aspersion.isEnabled()){
+    // On an eligible sung Sunday, the source-owned H7 choice can start
+    // unresolved while the displayed select defaults to "no". Touching the
+    // same value is not a real user change. Explicitly choose yes, then no,
+    // exactly as the existing real production Mass acceptance does.
+    await aspersion.selectOption("yes");
     await aspersion.selectOption("no");
+    assert.equal(await page.evaluate(()=>window.AO_R17_BROWSER_ENTRY?.status?.()
+      ?.fullMassPreflight?.aspersionDecisionRequired),false,
+      "Explicit Sunday Asperges refusal did not clear source-owned H7 entry");
   }
   await sheet.locator('[data-h4-option="readerMode"]').selectOption("LIVE");
   await sheet.locator('[data-h4-option="readerLanguage"]').selectOption(option.lang);
