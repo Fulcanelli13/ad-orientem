@@ -1,0 +1,32 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+const read = p => JSON.parse(readFileSync(new URL('../'+p,import.meta.url),'utf8'));
+const m=read('data/artwork/research/m2m-met-source-image-local-crop-review4-20261110.v1.json');
+const q=read('data/artwork/research/m2m-open-photo-acquisition-queue6-20261110.v1.json');
+assert.equal(m.status,'SHA256_REVERIFIED_RGB_VISUAL_CHECK_PRELIMINARY_NO_RELEASE');
+assert.equal(m.records.length,4);
+assert.equal(m.counts.originalsReverified,4);
+assert.equal(m.counts.centerCropRejected,2);
+assert.equal(m.counts.centerCropConditional,2);
+assert.equal(m.counts.formalMobileSignoff,0);
+assert.equal(m.counts.ownerApproval,0);
+assert.equal(m.counts.productionRelease,0);
+assert.deepEqual(m.records.map(x=>x.workKey).sort(),['Met:724811','Met:435901','Met:469892','Met:1991.153'].sort());
+assert.deepEqual(m.records.filter(x=>x.centerCropResult==='CENTRE_CROP_REJECT').map(x=>x.workKey).sort(),['Met:724811','Met:469892'].sort());
+for(const mrow of m.records){
+ const original=q.records.find(x=>x.key===mrow.workKey);
+ assert.ok(original,'missing original queue entry '+mrow.workKey);
+ assert.equal(mrow.sha256,original.sha256,'source JPEG hash changed '+mrow.workKey);
+ assert.equal(mrow.bytes,original.byteLength,'source JPEG byte count changed '+mrow.workKey);
+ assert.equal(mrow.width,original.pixelWidth);
+ assert.equal(mrow.height,original.pixelHeight);
+ assert.equal(mrow.format,'JPEG');
+ assert.equal(mrow.mode,'RGB');
+ assert.equal(mrow.selectedSourceArtifactFileVerified,true);
+ assert.equal(mrow.cropStatus,'PRELIMINARY_NOT_APPROVED');
+ assert.equal(mrow.actualAppLayoutChecked,false);
+ assert.equal(mrow.ownerDateApproval,false);
+ assert.equal(mrow.productionRelease,false);
+ assert.equal(original.productionEligible,false);
+}
+console.log('PASS: four source JPEG digests match acquired research queue and all mobile-editorial/publication gates remain closed');
