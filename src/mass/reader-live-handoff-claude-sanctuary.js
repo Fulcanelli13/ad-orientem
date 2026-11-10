@@ -1,3 +1,4 @@
+import {R17_FINAL_APPROVED_MASS_ASSETS} from "./reader-final-approved-assets.js";
 // Direct source port of the final 2026-11-10 Claude Plan architecture and
 // congregation from reference/live_prototype.html (final override).
 // The exact coordinates, SVG paths, colour handling and transform are kept.
@@ -27,9 +28,13 @@ function originalClaudeArchFragment({frontal,veil,candles}){
 function claudeSeats(fig,posture,selected=false){
  const COLS=[230,184,138],SEATS=[];
  COLS.forEach((x,ci)=>[168,234,366,432].forEach((y,ri)=>{if(!(ci===2&&ri<2))SEATS.push([x,y])}));
- const people=SEATS.map(([x,y],i)=>fig("lay",
-   posture==="KNEEL"?"kneel":posture==="SIT"?"seated":"stand",
-   i===5?"#d4b16a":"#8e959e",{x,y:y+22,s:.5,dir:1})).join("");
+ const people=SEATS.map(([x,y],i)=>{
+   if(posture==="STAND" || !["KNEEL","SIT"].includes(posture))
+     return fig("lay","stand",i===5?"#d4b16a":"#8e959e",{x,y:y+22,s:.5,dir:1});
+   const icon=R17_FINAL_APPROVED_MASS_ASSETS[posture==="KNEEL"?"final_kneel":"final_sit"];
+   const flt=i===5?"invert(.72) sepia(.9) saturate(1.5) hue-rotate(4deg)":"invert(.6)";
+   return `<image href="${icon}" x="${x-19}" y="${y+22-40}" width="38" height="40" preserveAspectRatio="xMidYMax meet" style="filter:${flt}"/>`;
+ }).join("");
  return COLS.map((x,ci)=>(ci===2?"":`<rect x="${x-24}" y="138" width="6" height="128" rx="2" fill="#4a3829" stroke="#c9a57a" stroke-opacity=".35"/>`)+
  `<rect x="${x-24}" y="334" width="6" height="128" rx="2" fill="#4a3829" stroke="#c9a57a" stroke-opacity=".35"/>`).join("")+
  `<g class="schola"><rect x="104" y="136" width="56" height="132" rx="6" fill="#1b2738" stroke="#7fa2cc" stroke-opacity=".55"/>
