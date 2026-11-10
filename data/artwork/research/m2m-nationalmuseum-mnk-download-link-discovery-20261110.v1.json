@@ -1,0 +1,102 @@
+{
+  "schema": "AO_SACRED_ART_MUSEUM_DOWNLOAD_LINK_DISCOVERY_V1",
+  "asOf": "2026-11-10",
+  "status": "OFFICIAL_PORTAL_SEARCH_PENDING_NO_IMAGE_BYTES_OR_APPROVAL",
+  "purpose": "Find exact first-party image-download records for four already certified oil paintings, without invented media IDs, Commons auto-import or paid requests",
+  "records": [
+    {
+      "key": "Nationalmuseum:NM420",
+      "accession": "NM 420",
+      "title": "The Parable of the Labourers in the Vineyard",
+      "artist": "Attributed to David III Ryckaert",
+      "objectPage": "https://collection.nationalmuseum.se/en/collection/item/17423/",
+      "firstPartyPortal": "https://media.nationalmuseum.se/search/all",
+      "queries": [
+        "NM 420",
+        "David Ryckaert"
+      ],
+      "rightsBackground": "MUSEUM_OBJECT_PUBLIC_DOMAIN_PORTAL_ITEM_SPECIFIC_PHOTO_LICENSE_PENDING",
+      "legacyJpegStatus": "HTTP_403",
+      "mediaPortalAssetId": null,
+      "firstPartyOriginalImageUrl": null,
+      "sourceBytesRetrieved": false
+    },
+    {
+      "key": "Nationalmuseum:NM1134",
+      "accession": "NM 1134",
+      "title": "The Parable of the Labourers in the Vineyard",
+      "artist": "Marten de Vos",
+      "objectPage": "https://collection.nationalmuseum.se/en/collection/item/18137/",
+      "firstPartyPortal": "https://media.nationalmuseum.se/search/all",
+      "queries": [
+        "NM 1134",
+        "Marten de Vos"
+      ],
+      "rightsBackground": "MUSEUM_OBJECT_PUBLIC_DOMAIN_PORTAL_ITEM_SPECIFIC_PHOTO_LICENSE_PENDING",
+      "legacyJpegStatus": "HTTP_403",
+      "mediaPortalAssetId": null,
+      "firstPartyOriginalImageUrl": null,
+      "sourceBytesRetrieved": false
+    },
+    {
+      "key": "MNK:II-a-448",
+      "accession": "MNK II-a-448",
+      "title": "The Miracle of Saint John Cantius",
+      "artist": "Tadeusz Kuntze-Konicz",
+      "objectPage": "https://zbiory.mnk.pl/pl/katalog/377412",
+      "firstPartyPortal": "https://zbiory.mnk.pl",
+      "queries": [],
+      "rightsBackground": "OBJECT_PUBLIC_DOMAIN_MNK_DIGITAL_REUSE_POLICY_APPLIES_TO_DOWNLOADED_AVAILABLE_PHOTOS",
+      "legacyJpegStatus": "NO_OG_IMAGE_AVAILABLE_OBJECT_PAGE",
+      "mediaPortalAssetId": null,
+      "firstPartyOriginalImageUrl": null,
+      "sourceBytesRetrieved": false
+    },
+    {
+      "key": "MNK:II-a-9",
+      "accession": "MNK II-a-9",
+      "title": "Saint Stanislaus of Szczepanów Cursing King Bolesław the Bold",
+      "artist": "Juliusz Knoor",
+      "objectPage": "https://zbiory.mnk.pl/pl/katalog/271512",
+      "firstPartyPortal": "https://zbiory.mnk.pl",
+      "queries": [],
+      "rightsBackground": "OBJECT_PUBLIC_DOMAIN_MNK_DIGITAL_REUSE_POLICY_APPLIES_TO_DOWNLOADED_AVAILABLE_PHOTOS",
+      "legacyJpegStatus": "NO_OG_IMAGE_AVAILABLE_OBJECT_PAGE",
+      "mediaPortalAssetId": null,
+      "firstPartyOriginalImageUrl": null,
+      "sourceBytesRetrieved": false
+    }
+  ],
+  "rightsAndProcedure": {
+    "nationalmuseumPortalLaunch": "2025-06-30",
+    "nationalmuseumLaunchEvidence": "https://www.nationalmuseum.se/om-nationalmuseum/nyheter/nationalmuseum-tillg%C3%A4ngligg%C3%B6r-bildskatt-genom-ny-mediaportal",
+    "nationalmuseumPolicy": "https://www.nationalmuseum.se/en/explore-art-and-design/images/rights-and-reproductions",
+    "nationalmuseumRule": "Portal marks each individual media asset with a licence and photographer credit; museum object-level public domain by itself does not prove exact photo rights",
+    "mnkPhotoAccessPolicy": "https://mnk.pl/en/practical-information/access-to-the-collection/",
+    "mnkDownloadInstructions": "https://mnk.pl/wp-content/uploads/2026/04/Instrukcja-pobierania-zdjec-z-portalu.pdf",
+    "mnkRule": "Existing public-domain-object digital photographs on portal available for self-download and reuse. Physical reproduction/filming and new special-order photography have different fee arrangements. Confirm exact file and its download button.",
+    "museumObjectDistinctions": "NM420 and NM1134 are distinct oil artworks on Matthew 20 vineyard workers; do not conflate with Matthew 21 Wicked Tenants; MNK II-a-448 is John's restored broken milk jar, not another St John subject; MNK II-a-9 has conflicting historic episode titles, requiring visual verification."
+  },
+  "runtimeConstraints": {
+    "noNewArtworkIdentityChanges": true,
+    "noCommonsAutomaticAdmission": true,
+    "noPaidPermissionContact": true,
+    "noProductionWrites": true,
+    "noOwnerDateApprovals": true,
+    "noImageBytesAssumed": true,
+    "safeEndpoints": [
+      "media.nationalmuseum.se",
+      "zbiory.mnk.pl"
+    ],
+    "queryLimitPerArtwork": 2,
+    "assetPageReviewLimitPerArtwork": 12
+  },
+  "counts": {
+    "firstPartyPortalRecordCandidates": 4,
+    "downloadableImageFilesVerified": 0,
+    "newPhotoFilesAcquired": 0,
+    "previouslyVerifiedColourJpegs": 9,
+    "ownerPlacementApprovals": 0,
+    "publicReleases": 0
+  }
+}
