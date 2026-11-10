@@ -31,12 +31,13 @@ try{
  await page.waitForFunction(()=>Boolean(
    globalThis.AO_CALENDAR_WEEK_CACHE_V4345?.revealDate&&
    globalThis.AO_CELEBRATION_API?.getResolvedMass),null,{timeout:90000});
- for(const witness of [
+ const witnesses=[
   {date:"2026-10-28",id:"sancti:10-28:2:r",path:"Sancti/10-28",colour:"Red"},
   {date:"2026-11-01",id:"sancti:11-01:1:w",path:"Sancti/11-01",colour:"White"},
   {date:"2026-11-02",id:"sancti:11-02m1:1:b",path:"Sancti/11-02m1",colour:"Black"},
   {date:"2026-11-10",id:null,path:"Sancti/11-10",colour:"White"}
- ]){
+ ];
+ for(const witness of (process.env.AO_NOV10_PROPER_ONLY==="1"?witnesses.filter(x=>x.date==="2026-11-10"):witnesses)){
   const moved=await page.evaluate(async date=>
     globalThis.AO_CALENDAR_WEEK_CACHE_V4345.revealDate(date,{forceLoader:false,prefetch:false}),witness.date);
   assert.equal(moved,true,witness.date+" selected Calendar failed");
@@ -141,6 +142,9 @@ try{
        "Reader must begin the Preface prose without a source heading or false versicle");
   }
  }
+ if(process.env.AO_NOV10_PROPER_ONLY==="1"){
+  console.log("PASS 2026-11-10 original 1962 St Andrew Avellino Proper and EN/FR reader source gates");
+ }else{
  // The existing production Calendar engine already resolves and labels all
  // three 1962 All Souls formularies. Test each *original* donor, not a
  // reconstruction of Masses II–III from the first Mass's text.
@@ -255,6 +259,7 @@ try{
    console.log("ALL_SOULS_CURRENT_HOME_SELECTION="+JSON.stringify({index,source,active}));
  }
  console.log("PASS three real imminent Roman-1962 Mass host/reader journeys");
+ }
 }finally{
  await browser?.close();
  await new Promise(done=>server.close(done));
