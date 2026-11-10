@@ -199,6 +199,28 @@ export function renderLiveHandoffSanctuarySvg(scene){
   if(!labelFree(svg))throw Error("LIVE_PLAN_LABEL_OR_MARKER_FORBIDDEN");
   return svg;
 }
+/** Movable reference-only overlay: inserted ONLY after a person presses the
+ * route-preview control. The ordinary static priest is temporarily hidden.
+ * No movement is inferred from native card/cue progression.
+ */
+export function renderLiveHandoffPreviewRouteOverlay({scene,route,step}={}){
+  if(!route?.ok||route.scope!=="REFERENCE_ONLY"||
+     !step?.current?.point||!scene)return "";
+  const position=step.current.point;
+  const next=step.next?.point??null;
+  const colour=safeColor(COLOURS[scene.colour]??COLOURS.NEUTRAL);
+  const rotation=Number(step.current.rotation)||0;
+  const target=next?'<circle class="ao-lb-route-next" data-lb-route-next cx="'
+    +number(next.x)+'" cy="'+number(next.y)+'" r="17"/>':'';
+  return '<g class="ao-lb-route-overlay" data-lb-route-overlay '
+    +'data-source="REFERENCE_ONLY_NOT_OBSERVED">'
+    +target
+    +'<g data-lb-route-actor transform="translate('+number(position.x)
+    +' '+number(position.y)+')">'
+    +'<g data-lb-route-heading transform="rotate('+rotation+')">'
+    +figure("priest",{x:0,y:0},colour,"stand",1,.53)
+    +'</g></g></g>';
+}
 export const LIVE_SANCTUARY_CSS=[
 ".ao-lb-sanctuary-plan{max-width:640px;opacity:1;overflow:visible}",
 ".ao-lb-sanctuary-plan .ao-lb-nave{fill:rgba(8,14,17,.85)}",
@@ -220,5 +242,9 @@ export const LIVE_SANCTUARY_CSS=[
 ".ao-lb-sanctuary-plan .ao-lb-choir-stand{fill:#7f7364}",
 ".ao-lb-sanctuary-plan .ao-lb-organ{fill:rgba(98,109,114,.54)}",
 ".ao-lb-sanctuary-plan .ao-lb-organ-pipe{stroke:#ddd7c8;stroke-width:2}",
-".ao-lb-sanctuary-plan .ao-lb-pew{stroke:rgba(199,207,193,.25);stroke-width:12;stroke-linecap:round}"
+".ao-lb-sanctuary-plan .ao-lb-pew{stroke:rgba(199,207,193,.25);stroke-width:12;stroke-linecap:round}",
+".ao-lb-route-overlay .ao-lb-route-next{fill:rgba(214,180,111,.09);stroke:rgba(233,207,150,.65);stroke-width:2}",
+".ao-live-band[data-route-preview=\'true\'] .ao-lb-sanctuary-plan>.ao-lb-actor[data-actor=\'priest\']{opacity:0}",
+".ao-lb-route-overlay [data-lb-route-actor]{will-change:transform}",
+"@media(prefers-reduced-motion:reduce){.ao-lb-route-overlay [data-lb-route-actor]{transition:none!important}}"
 ].join("\n");
