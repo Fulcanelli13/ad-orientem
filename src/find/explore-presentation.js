@@ -706,8 +706,8 @@ function tlmCl27Filters(vm){
   let html='<details class="aoTlmCl27Facet"><summary>'+
     esc(L(vm.language,"Detailed classifications · 12 axes","Classifications détaillées · 12 axes"))+
     '</summary><p>'+esc(L(vm.language,
-    "Filters use explicit evidence scopes. Unknown means not publicly established, not No. Source-group names are not verified celebrant identities. Two parish sources identify specific 1962 celebrations only.",
-    "Les filtres respectent la portée des sources. Inconnu signifie non établi publiquement, et non Non. Un groupe répertorié ne prouve pas l’identité du célébrant. Deux sources paroissiales attestent uniquement certaines célébrations de 1962."))+'</p>';
+    "Rite and Missal filters include source-joined institutional norms for identified ministries and explicitly documented individual Masses. Unknown means not established; neither a ministry nor a source-group name classifies every Mass at a church.",
+    "Les filtres « Rite » et « Missel » comprennent les normes des instituts rattachées aux ministères identifiés ainsi que les messes explicitement documentées. Inconnu ne signifie pas Non ; un groupe ne classe pas toutes les messes d’une église."))+'</p>';
   for(const axis of PUBLIC_CL27_AXES){
     const scopeFr={COMMUNITY:"COMMUNAUTÉ",MINISTRY:"MINISTÈRE",CELEBRATION:"CÉLÉBRATION",ORGANIZER:"ORGANISATEUR",VENUE:"LIEU"};
     const scope=vm.language==="fr"?axis.scope.split(" / ").map(x=>scopeFr[x]??x).join(" / "):axis.scope;
