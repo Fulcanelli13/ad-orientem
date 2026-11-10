@@ -6,7 +6,7 @@ import {
  HOLY_CLOAK_ITALIAN_SOURCE_V1 as source,
  HOLY_CLOAK_ITALIAN_SECTIONS_V1 as sections,
  HOLY_CLOAK_ITALIAN_STEPS_V1 as steps,
- holyCloakItalianStep
+ holyCloakItalianStep,HOLY_CLOAK_LITANY_HISTORIC_VARIANT_V1 as scoped
 } from "../src/pray/holy-cloak-italian-original.v1.js";
 assert.equal(Object.keys(C.prayers).length,48,"Do not invent another canonical Prayer ID");
 assert.equal(source.id,"st_joseph_holy_cloak_italian");
@@ -49,7 +49,15 @@ assert.deepEqual(xviii.split("\n").map(line=>line.slice(0,2)),Array.from({length
 assert.equal(source.sectionXVIIIOriginalPresentation,"SALPAN_ITALIAN_PDF_HAS_PRINTED_ALTERNATING_VERSICLE_RESPONSE_SIGLA");
 assert.equal(source.sectionXVIIISiglaOriginal1882Status,"NOT_COLLATED");
 assert.equal(steps[20].sourceId,historic.id);
-assert.equal(steps[20].body,historic.la);
+assert.equal(scoped.sourceId,historic.id);
+assert.equal(steps[20].body,scoped.la);
+assert.equal(steps[20].sourceVariantId,"ORA_PRO_NOBIS_SANCTE_IOSEPH_SOURCE_CLOSING");
+assert.notEqual(scoped.la,historic.la,"Source-specific response must not change standalone historic litany");
+assert.match(scoped.la,/℣\. Ora pro nobis, Sancte Ioseph\./);
+assert.match(scoped.la,/℟\. Ut digni efficiamur promissionibus Christi\./);
+assert.doesNotMatch(scoped.la,/Constituit eum dominum domus suæ/);
+assert.equal(scoped.originalPrint1882Collated,false);
+assert.equal(scoped.independentEnglishFrenchHistoricPrintTranslation,false);
 assert.equal(steps[20].includesCollect,true);
 assert.equal(historic.la.split("\n").filter(x=>x.endsWith(", ora pro nobis.")).length,26,
  "Historical litany excludes the seven 2021 additions");
