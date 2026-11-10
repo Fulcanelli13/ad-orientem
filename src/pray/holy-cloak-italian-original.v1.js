@@ -20,6 +20,7 @@ export const HOLY_CLOAK_ITALIAN_SOURCE_V1=Object.freeze({
  originalPrintTextCollated:false,
  sourceImagePassagesReviewed:Object.freeze(["XVIII.A","XVIII.B","LITANY_1909","CLOSING"]),
  historicalTextTranslatedToEn:false,historicalTextTranslatedToFr:false,
+ modernEditorialTranslations:Object.freeze(["en","fr"]),modernEditorialLanguagesReview:"DRAFT_NOT_HISTORICAL_WITNESSES",
  sameFullTextForEachDay:true,days:30,historicalIndulgencesCurrent:false,
  sourceRights:"HISTORIC_PRAYER_TEXT_PRE_1900_WITH_DIGITAL_EDITORIAL_RECENSION; PRINT_IDENTIFICATION_AND_JURISDICTION_REVIEW_PENDING"
 });
@@ -164,6 +165,7 @@ export const HOLY_CLOAK_ITALIAN_STEPS_V1=Object.freeze([
  })),
  Object.freeze({id:"litany",kind:"litany",title:"Litanie di San Giuseppe · forma storica",language:"la",
   body:OLD_LITANY,sourceId:JOSEPH_LITANY_1909_V1.id,includesCollect:true,
+  vernacular:Object.freeze({en:JOSEPH_LITANY_1909_V1.en,fr:JOSEPH_LITANY_1909_V1.fr}),
   note:"The litany already includes its concluding versicle and collect; do not duplicate the standalone Oremus."}),
  Object.freeze({id:"closing",kind:"closing",title:"Chiusura del Sacro Manto",language:"it",body:LAST}),
  Object.freeze({id:"optional",kind:"optional",title:"A te, o Beato Giuseppe",language:"la",
