@@ -19,10 +19,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-          cache: npm
       - name: Install browser QA dependencies
         run: |
-          npm ci --ignore-scripts
+          npm install --no-save --no-package-lock --ignore-scripts
           npx playwright install --with-deps chromium
       - name: Run source and browser scripts syntax
         run: |
