@@ -9,9 +9,9 @@ Research-only editorial and image-acquisition queue. It is **not** the published
 - Source ledger: `m2m-calendar-prepublication-triage-198-20261110.v1.json`, five 68-key oil audit batches and the original-photo verification ledgers
 - **198** dated research relationships, **151** original distinct research keys; **167/170** originally unmatched dates have an integrated research lead
 - **68/68** priority direct-subject oil keys triaged; **9 additional original research keys** have an oil-medium relationship outside that exact-priority group — do not misreport 68 as all oil works
-- **155** queue keys: 151 originals + 1 Ribera unapproved alternative + 3 supplementary March leads (outside the historical 198-edge denominator)
+- **156** queue keys: 151 originals + 2 distinct unapproved alternatives (Ribera and Wenceslas burial) + 3 supplementary March leads (outside historical 198-edge denominator)
 - **170** original gap-date holds, including March 2, 10 and 11. The three supplemental leads are separately recorded but do **not** silently change the official 362/365 research coverage figure
-- **Nine** exact JPEG files retrieved and hashed from original museum/institutional download servers: 8 for original research candidates and 1 Ribera alternative. GitHub Actions copies are short-lived, not durable publication assets
+- **Ten** exact JPEG files retrieved and hashed from original museum/institutional download servers: 8 from original research artwork keys and 2 unapproved distinct alternatives (Ribera and Met Wenceslas). GitHub Actions copies are short-lived, not durable publication assets
 - **Zero** new date approvals, **zero** formal in-app container crop approvals, **zero** new published photos
 
 ## How to read the data
@@ -20,7 +20,7 @@ Research-only editorial and image-acquisition queue. It is **not** the published
 
 `lane` is an **operational triage lane**, not a score or a new artistic selection. `sourceAuditRightStatus` describes original recorded evidence, and `sourceAuditNote` preserves attribution/source caveats. `verifiedPhotoId` is populated only when the exact original file was acquired and its hash established. `releaseReady`, `ownerApprovalForAnyNewDate` and date approval flags must stay false until an explicit future release decision.
 
-## Nine verified originals — distinct editorial tasks
+## Ten verified originals — distinct editorial tasks
 
 | Image key | Date relationship | Licence evidence | Current composition decision |
 |---|---|---|---|
@@ -33,8 +33,9 @@ Research-only editorial and image-acquisition queue. It is **not** the published
 | `Pinakothek:909` — Ribera, Peter of Alcántara | 19 October, **external alternative only** | Bavarian State Painting Collections CC BY-SA 4.0 | Dark Baroque portrait; portrait provisionally usable, wide unsuitable. Never replace the earlier Walters miracle automatically. |
 | `Rijks:SK-A-868` — van Rijck (attributed), Rich Man and Lazarus kitchen | 5 March | Rijksmuseum public domain, exact official IIIF bytes verified | **Acquired but NOT a mobile Gospel hero:** Lazarus and the rich man are tiny figures in the upper-right background; gallery-only candidate unless owner explicitly approves a coherent presentation. |
 | `MSKGent:S-43` — Luigi Primo, St Raymond of Peñafort venerating the Christ Child | 23 January | MSK Ghent IIIF Public Domain Mark; online collection reuse allowed, commercial/publication terms separately qualified | **Original acquired but hero HOLD:** very tall 2,000×3,887 image, conspicuous diagonal mark, portrait cover loses sections of narrative. Use contain or hold; require final rights and editorial approval. |
+| `Met:437005` — Master of Eggenburg, Burial of Saint Wenceslas | 28 September, **external unapproved alternative** | Met official Open Access CC0, full original JPEG independently SHA-verified | 2,453 × 3,832 portrait, burial scene legible. **Different scene, Gothic rather than Baroque**; do not replace Škréta cycle. Source photo QA only, no owner selection or app crop approval. |
 
-All nine still need in-app 320/390px visual QA, correct source-specific licence/attribution handling, and explicit owner date approval. A technical or aesthetic preference in this document is not an authorization to publish.
+All ten still need in-app 320/390px visual QA, correct source-specific licence/attribution handling, and explicit owner date approval. A technical or aesthetic preference in this document is not an authorization to publish.
 
 ## Exception decisions
 
@@ -89,7 +90,7 @@ Research evidence: `m2m-museum-portal-static-client-blockers-20261110.v1.json`. 
 
 The last eight source-photo leads have been examined against institution-specific image reuse policies and actual object-page files. The result is **four newly restricted official photo sources** (Thoma/Athanasius; UMMA/Champaigne; Lombardia/Gregory Barbarigo; Olomouc/Wenceslas), **two object records lacking a downloadable exact painting photo** (IAPH/Claret and POP/de La Salle), and **two source-specific unresolved cases** (Holburne/Andrew Avellino attribution and photograph; Lviv/Hedwig photograph rights). The first-party direct acquisition lane has therefore been closed at **0**, rather than being retried indefinitely.
 
-**Current research source census, 10 November 2026:** nine acquired photo files, **49** restricted institution-selected photographs (candidate artworks are not rejected), **4** client-rendered portal holds, **2** object-only/no-file records, **2** unresolved rights/identity records, and zero original first-party photographs presently approved for new date placement. The remaining 155 review artwork keys and 198 edges are preserved.
+**Current research source census, 10 November 2026:** ten acquired photo files, **49** restricted institution-selected photographs (candidate artworks are not rejected), **4** client-rendered portal holds, **2** object-only/no-file records, **2** unresolved rights/identity records, and zero original first-party photographs presently approved for new date placement. The 156 review artwork keys include the new Met Wenceslas burial as a separate unapproved alternative; the original 151 keys and 198 historical research edges are preserved.
 
 The source decision ledger is `m2m-eight-priority-oil-source-closure-20261110.v1.json`. Read its policy URLs before reclassifying a painting, and never conflate object public-domain status with its digital photo.
 
@@ -104,13 +105,24 @@ An explicit institutional catalogue match is now recorded at the Met: **Master o
 Manifest: `m2m-met-437005-wenceslas-alternative-20261110.v1.json`.
 Acquisition workflow: `.github/workflows/sacred-art-met-wenceslas-alternative.yml`; reusable official Met object-ID fetch script: `scripts/sacred-art-acquire-met-verified-object.py`. Only exact first-party original JPEG bytes and new SHA may establish an acquired tenth image; no Commons promotion or Calendar assignment is permitted.
 
+## Batch 4 outcome — screened metadata and one new verified Met original
+
+Official API search run **42855524422** made **85 bounded API requests** across the Met, Cleveland Museum of Art and Art Institute of Chicago and returned **35 raw photo-linked painting records** for eight original saints/Gospel subjects. Iconographic screening excluded **33** wrong subjects and retained just **2** distinct thematic alternatives:
+
+1. **Met 437005 — The Burial of Saint Wenceslas**, Master of Eggenburg, oil and gold on spruce. Same saint but different funeral narrative from Škréta's Eucharistic-preparation cycle. **Actual first-party original acquired** under separate run **42855525191**; JPEG 2,453 × 3,832, SHA-256 `468b1255c8114607a665e38f81da679409166da76aa0f42cf82bc3c41c1c4608`, CC0 marked by Met. Portrait may preserve the full burial; wide cover does not. Never auto-promote or treat as owner-approved.
+2. **Art Institute of Chicago 111444 — Retable of Saints Athanasius, Blaise, and Agatha**, Master of Riglos, tempera on panel. Contains the saint, but it is a multi-scene late-Gothic retable, **not** a straightforward Athanasius Baroque portrait or oil painting. No new source photo acquired, no placement proposed.
+
+All 33 other API hits are irrelevant subjects, not 33 newly curated artworks. The AIC name search was particularly imprecise; e.g. Andrew Avellino became Apostle Andrew or an unrelated Andrew, while Jean Baptiste de La Salle returned painters with Jean-Baptiste as given names. Keep the editorial screening instead of recursively acquiring image files for these hits.
+
+Evidence: `m2m-cc0-batch4-exact-iconographic-screening-20261110.v1.json`, `m2m-met-437005-verified-native-photo-20261110.v1.json`. Both new research alternatives are separate from the existing Calendar 198 edges, existing approved works, and 103 globally rejected historical artwork IDs. Full owner-rejection recheck remains pending for Wenceslas before any future gallery placement.
+
 ## Next operational sequence
 
-1. Inspect the nine acquired originals together using actual application container geometry at 320px and 390px, preserve full artwork when cover crops remove saints or central narrative, and confirm accurate artist/copy attributions. Do not require the owner to review every unpromising source.
+1. Inspect the ten acquired originals together using actual application container geometry at 320px and 390px, preserve full artwork when cover crops remove saints or central narrative, and confirm accurate artist/copy attributions. Do not require the owner to review every unpromising source.
 2. Resolve Wellcome's current photo-ID licence and associated attribution. For Ribera, preserve CC BY-SA 4.0 and note crop/modification obligations.
 3. **Zero** original priority-oil artworks remain in the directly actionable first-party photograph queue; all eight were reconciled into explicit access/rights/identity holds. Switch to cross-institution open-access **alternative artwork discovery**, while preserving the original accession keys and owner's previous selections.
 4. Handle the **45** institutionally restricted source-image records, **one** grayscale-only, **one** artwork copyright hold and **one** unresolved identity key explicitly; do not disguise them as completed images.
 5. Check the **83** original research keys outside the priority oil group, including the **9 additional oil-medium candidates**, without misclassifying prints and watercolours as oil.
 6. Only after editorial signoff, build a **separate** release-candidate manifest that includes image bytes, stable checksum, source, licence, attribution, final crop and approved date. Never feed this research JSON into runtime directly.
 
-The 195 previously named Calendar dates are outside this historic 170-gap audit. This queue **does not** claim to have revalidated all those earlier hero assets or all Prayer artwork. Keep that population separate from the 155 newly reviewed research keys.
+The 195 previously named Calendar dates are outside this historic 170-gap audit. This queue **does not** claim to have revalidated all those earlier hero assets or all Prayer artwork. Keep that population separate from the 156 currently staged research and alternative artwork keys.
