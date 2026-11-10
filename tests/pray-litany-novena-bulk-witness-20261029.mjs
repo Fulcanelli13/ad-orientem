@@ -46,7 +46,10 @@ assert.match(warning.fr,/ne certifient une concession en vigueur ni ses conditio
 const lit=scan.publicLitany;
 assert.equal(lit.sourceUrl,BATCH03_LITANY_SOURCE_STATUS.source);
 assert.equal(lit.lesserRogationsUrl,BATCH03_LITANY_EDITION_POLICY.major.additionalSourceUrl);
-assert.equal(lit.publicationStatus,BATCH03_LITANY_EDITION_POLICY.major.reader);
+assert.equal(lit.publicationStatus,"SOURCE_LINK_ONLY_PENDING_COMPLETE_TEXT_COLLATION",
+ "Preserve the October 2026 source-sweep record as historical evidence rather than retroactively editing its status");
+assert.equal(BATCH03_LITANY_EDITION_POLICY.major.reader,"LOCAL_R25_LATIN_SOURCE__PRINT_COLLATION_AND_FRENCH_EDITION_PENDING",
+ "Current Prayer reader now reuses existing Latin R25 data without certifying original printed 1962 edition");
 assert.equal(BATCH03_LITANY_EDITION_POLICY.major.liturgical1962Certified,false);
 assert.match(lit.nonDoublingRule,/quae tamen non duplicantur/);
 assert.equal(scan.summary.publicLitanySegments,8);
@@ -61,5 +64,5 @@ for(let i=0;i<lit.segments.length;i++){
 }
 assert.equal(lit.original1962PrintFacsimile,"PENDING");
 assert.equal(lit.frenchEditionLegalReview,"PENDING");
-assert.equal(BATCH03_LITANY_SOURCE_STATUS.offlineComplete1962,"BLOCKED_UNTIL_ENTIRE_EDITION_VERIFIED");
+assert.equal(BATCH03_LITANY_SOURCE_STATUS.offlineComplete1962,"LATIN_R25_SOURCE_OFFLINE__PRINT_EDITION_CERTIFICATION_PENDING");
 console.log("PASS Bulk Prayer witness sweep: 8 public Litany segments and all 16 novena witnesses anchored; 1962 print, French and current indulgences remain unverified; St Anthony historical-indulgence disclosure bound to live reader.");
