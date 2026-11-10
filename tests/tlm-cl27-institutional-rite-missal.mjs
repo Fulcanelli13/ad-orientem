@@ -14,8 +14,8 @@ const source=read("data/directory/cl27-institutional-ministry-liturgy-20261110.v
 assert.equal(new URL(CL27_INSTITUTIONAL_LITURGY_URL).pathname.split("/").at(-1),
  "cl27-institutional-ministry-liturgy-20261110.v1.json");
 const groups=validateInstitutionalMinistryNormManifest(source);
-assert.equal(groups.size,1331);
-assert.equal(source.records.length,1414);
+assert.equal(groups.size,1335);
+assert.equal(source.records.length,1418);
 assert.equal(source.holds.length,3);
 assert.equal(master.records.length,2580);
 const before=master.records.map(([physical_group_id,source_ids,title,country_code,source_location_description,affiliation_as_listed,urls])=>
@@ -36,10 +36,10 @@ assert.equal(after.length,2581);
 assert.equal(after.at(-1),extras[0]);
 assert.ok(before.every(x=>!x.institutional_liturgy),"Never mutate original CL2 site records");
 const assigned=after.filter(item=>item.institutional_liturgy);
-assert.equal(assigned.length,1331);
+assert.equal(assigned.length,1335);
 assert.ok(assigned.every(x=>x.institutional_liturgy.scope==="SOURCE_MINISTRY"));
 const sids=assigned.flatMap(x=>x.institutional_liturgy.ministries.flatMap(m=>m.source_ids));
-assert.equal(sids.length,1414);
+assert.equal(sids.length,1418);
 assert.equal(new Set(sids).size,sids.length);
 const by=new Map(assigned.map(x=>[x.physical_group_id,x]));
 for(const [anchor,sourceId,inst] of source.records){
@@ -53,10 +53,10 @@ for(const hold of source.holds){
    "Held alias should never be used as certification");
 }
 const counts=publicCL27FacetCounts(after);
-assert.equal(counts.liturgical_use.ROMAN,1331);
-assert.equal(counts.missal_edition["1962"],1331);
-assert.equal(counts.missal_edition.UNKNOWN,1250);
-assert.equal(after.filter(x=>matchesPublicCL27Facets(x,{liturgical_use:"ROMAN",missal_edition:"1962"})).length,1331);
+assert.equal(counts.liturgical_use.ROMAN,1335);
+assert.equal(counts.missal_edition["1962"],1335);
+assert.equal(counts.missal_edition.UNKNOWN,1246);
+assert.equal(after.filter(x=>matchesPublicCL27Facets(x,{liturgical_use:"ROMAN",missal_edition:"1962"})).length,1335);
 for(const key of ["una_cum","canonical_status","ecclesial_position","rubrical_basis",
  "organizer_role","venue_owner_type","celebrant_relationship","mass_type"]){
  assert.equal(counts[key].UNKNOWN,2581,key+" must not be inferred from institutional norm");
@@ -129,8 +129,8 @@ for(const [anchor,sourceId,inst] of b36b37){
  assert.equal(meta.institute_id,inst);
  assert.ok(meta.source_urls.length>0);
 }
-const residualHolds=read("data/directory/research/cl27-10-residual-ministry-role-holds-20261110.v1.json");
-assert.equal(residualHolds.records.length,10);
+const residualHolds=read("data/directory/research/cl27-6-residual-ministry-role-holds-20261110.v1.json");
+assert.equal(residualHolds.records.length,6);
 for(const {physical_anchor:anchor} of residualHolds.records){
  const i=after.find(x=>x.physical_group_id===anchor);
  assert.ok(i,"Existing historical hold identity missing "+anchor);
@@ -174,6 +174,38 @@ for(const [anchor,sourceId,inst] of recoveredExpected){
 assert.equal(recovered.source_identity_records["RG-1319CD21788A"].evidence_kind,"FSSP_SOME_MASSES_ONLY");
 assert.equal(recovered.source_identity_records["RG-3EFF2C4A33C0"].evidence_kind,"FSSP_NAMED_CLERGY_PRIMARY_ONLY");
 assert.equal(source.holds.filter(h=>h.live_anchor==="RG-3EFF2C4A33C0").length,2);
+// Direct provider-specific ministry evidence at four existing CL2 site IDs.
+const finalFour=[
+ ["RG-C6757639FE84","AO-B33-L-CZ-165F6F3B5969","FSSP"],
+ ["RG-11265E7B95BA","SSPXMAP:OPE-001168","SSPX"],
+ ["RG-9B2CD25FCD2A","SSPXMAP:OPE-001570","SSPX"],
+ ["RG-4D729B16E2AD","AO-B37-L-IT-4625DDF56A4B","SSPX"]
+];
+assert.equal(source.resolved_four_last_exception_ministries.count,4);
+assert.equal(source.resolved_four_last_exception_ministries.original_35_exception_cohort_resolved,29);
+assert.equal(source.resolved_four_last_exception_ministries.residual_role_holds,6);
+assert.equal(new Set(finalFour.map(x=>x[0])).size,4);
+for(const [anchor,sourceId,institute] of finalFour){
+ const item=by.get(anchor);
+ assert.ok(item&&item.source_ids.includes(sourceId),"Missing CL2 site/source link "+anchor);
+ const ministry=institutionalRiteMissal(item)?.find(m=>m.institute_id===institute);
+ assert.ok(ministry&&ministry.source_ids.includes(sourceId));
+ assert.equal(ministry.subject_scope,"SOURCE_MINISTRY_NOT_WHOLE_VENUE");
+ const evidence=source.resolved_four_last_exception_ministries.source_identity_records[anchor];
+ assert.equal(evidence.cl2_source_id,sourceId);
+ assert.equal(evidence.institute_id,institute);
+ assert.ok(evidence.primary_provider_evidence_url.startsWith("https://"));
+ assert.equal(evidence.current_priest_identity_certified,false);
+ assert.equal(evidence.current_mass_time_certified,false);
+ assert.equal(item.sections.length,0,"A historical ministry relationship may not invent schedules");
+ assert.equal(publicCL27Value(item,"una_cum"),"UNKNOWN");
+ for(const lang of ["en","fr"]){
+  const compact=renderDirectoryVenueCard(item,lang);
+  assert.ok(compact.includes(lang==="fr"?"Missel de 1962":"1962 Missal"));
+  assert.ok(!compact.includes(evidence.primary_provider_evidence_url),"Evidence remains internal");
+ }
+}
+assert.equal(source.resolved_four_last_exception_ministries.source_identity_records["RG-4D729B16E2AD"].evidence_kind,"SSPX_ITALY_CHAPEL_MASS_SERVICE");
 // Direct first-party IBP source attests the actual Florianópolis ministry.
 const flor=by.get("RG-B65-F58D1C8B0693");
 const florNorm=institutionalRiteMissal(flor)?.find(m=>m.institute_id==="IBP");
@@ -221,4 +253,4 @@ const wrong=[...before];const first=wrong.findIndex(x=>x.physical_group_id===sam
 wrong[first]={...wrong[first],source_ids:["fake-ID"]};
 assert.throws(()=>attachInstitutionalMinistryLiturgy(wrong,source));
 assert.throws(()=>attachInstitutionalMinistryLiturgy([...before,before[first]],source));
-console.log("PASS CL27 institute classification: 1414 frozen source ministries / 1331 distinct physical churches, Roman/1962 English/French cards, filtered scoped inheritance, three identity holds, 0 Una Cum/canonical/ownership inferences");
+console.log("PASS CL27 institute classification: 1418 frozen source ministries / 1335 distinct physical churches, Roman/1962 English/French cards, filtered scoped inheritance, three identity holds, 0 Una Cum/canonical/ownership inferences");
