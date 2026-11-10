@@ -1,0 +1,29 @@
+name: Schola approved-score dock gate
+on:
+  pull_request:
+    paths:
+      - "src/mass/reader-schola-dock-approved.js"
+      - "src/mass/reader-dom.js"
+      - "src/mass/reader-inline-chant-approved.js"
+      - "src/mass/reader-inline-chant-selector.js"
+      - "tests/schola-dock-approved-score.mjs"
+      - ".github/workflows/schola-approved-dock.yml"
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  approved-score-only:
+    name: P1 source-bound score eligibility and syntax
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Syntax-check original reader DOM and dock renderer
+        run: |
+          node --check src/mass/reader-dom.js
+          node --check src/mass/reader-schola-dock-approved.js
+      - name: Review-gated Schola score identity and fallback
+        run: node tests/schola-dock-approved-score.mjs
