@@ -97,6 +97,13 @@ The source decision ledger is `m2m-eight-priority-oil-source-closure-20261110.v1
 
 Open a new research-only lane with **three institutional APIs providing documented commercial-use-friendly open-access/CC0 images**: Cleveland Museum of Art, the Metropolitan Museum of Art (use the current `/v1.1/search` endpoint, not its retired predecessor), and the Art Institute of Chicago. Target the same eight saint/Gospel subjects first, using 24 bounded search queries and filters for paintings, public-domain original works and a declared image source. Records returned by these APIs are not automatically exact-iconographic matches or owner selections; they must first pass visual scene identity, non-rejection, and in-app crop checks. See `m2m-open-museum-alternatives-batch4-20261110.v1.json`.
 
+## First independently open Wenceslas alternative — research only
+
+An explicit institutional catalogue match is now recorded at the Met: **Master of Eggenburg, *The Burial of Saint Wenceslas*, 44.147.2, object 437005**, c.1490–1500, oil and gold on spruce. The museum declares the object **Public Domain** and provides its official collection API. This is distinct from Škréta's Saint Wenceslas preparing Eucharistic hosts, with a **different scene** and **non-Baroque** visual style, and has **no previous owner approval**.
+
+Manifest: `m2m-met-437005-wenceslas-alternative-20261110.v1.json`.
+Acquisition workflow: `.github/workflows/sacred-art-met-wenceslas-alternative.yml`; reusable official Met object-ID fetch script: `scripts/sacred-art-acquire-met-verified-object.py`. Only exact first-party original JPEG bytes and new SHA may establish an acquired tenth image; no Commons promotion or Calendar assignment is permitted.
+
 ## Next operational sequence
 
 1. Inspect the nine acquired originals together using actual application container geometry at 320px and 390px, preserve full artwork when cover crops remove saints or central narrative, and confirm accurate artist/copy attributions. Do not require the owner to review every unpromising source.
