@@ -1,0 +1,56 @@
+{
+  "schema": "AO_SPX_B56_ITALIAN_ORIGINAL_COLLATION_V1",
+  "date": "2026-11-11",
+  "status": "RESEARCH_ONLY_READY_FOR_HUMAN_CERTIFICATION_NOT_CERTIFIED",
+  "continuity": {
+    "verifiedPrevious": "B55",
+    "historicalBaseline": "68 contexts,65 improved,130 answer units,64 complete awaiting human certification; not recounted",
+    "newCanonicalIds": 0
+  },
+  "records": [
+    {
+      "existingFamily": "SPX-EXP-026",
+      "topic": "Il fermo proposito English §18 Italian-source collation",
+      "finding": "Italian original explicitly says the norm was decreed by Pius IX and subsequently followed by Leo XIII. French agrees; English Vatican edition incorrectly attributes original decree to Leo XIII. Resolve historical attribution using Italian as primary witness; retain English edition discrepancy as a translation/source note.",
+      "italianVerbatimShort": "già decretata dal Nostro Antecessore di s. m. Pio IX e seguita poi dall’altro Nostro Antecessore",
+      "italianLocator": "Il fermo proposito, Italian Vatican edition, paragraph beginning 'Quei diritti civili sono parecchi', lines containing Pio IX and Leone XIII",
+      "englishLocator": "English Vatican edition §18",
+      "frenchLocator": "French Vatican edition paragraph beginning 'De très graves raisons Nous dissuadent'",
+      "classification": "SOURCE_TEXT_COLLATION_NOT_NEW_ANSWER",
+      "gate": "READY_FOR_HUMAN_TEXTUAL_REVIEW_NOT_CERTIFIED"
+    },
+    {
+      "existingFamily": "SPX-EXP-026",
+      "topic": "Governance and freedom Italian confirmation",
+      "finding": "Italian original distinguishes directly pastoral works under bishops in every detail from other Catholic works under ecclesiastical counsel and high direction yet enjoying reasonable freedom and their own responsibility in temporal/economic/political matters. Confirms B55 balance; no second improvement counted.",
+      "italianLocator": "Italian original paragraphs beginning 'Ci resta a toccare' and 'Se bene si considerano', especially 'Certo è che tali opere'",
+      "classification": "SOURCE_CONFIRMATION_NO_DUPLICATE_CREDIT",
+      "gate": "READY_FOR_HUMAN_REVIEW_NOT_CERTIFIED"
+    }
+  ],
+  "editorialNote": {
+    "en": "The Italian text attributes the original Italian legislative-participation restriction to Pius IX and says Leo XIII subsequently maintained it. The English Vatican translation's attribution to Leo XIII alone should not be repeated as the primary historical account.",
+    "fr": "Le texte italien attribue à Pie IX la règle initiale restreignant la participation des catholiques italiens au pouvoir législatif et précise que Léon XIII l'a ensuite maintenue. La version anglaise du Vatican présente une attribution divergente.",
+    "classification": "EDITORIAL_PARAPHRASE_NOT_VERBATIM_PAPAL_SPEECH"
+  },
+  "sources": [
+    "https://www.vatican.va/content/pius-x/it/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+    "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+    "https://www.vatican.va/content/pius-x/fr/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html"
+  ],
+  "holds": {
+    "chanoineOriginalEnglish": "BLOCKED_NO_RECONSTRUCTION",
+    "B39": "UNCHANGED",
+    "CSE142": "UNCHANGED",
+    "CSE143": "UNCHANGED"
+  },
+  "nextQueue": [
+    "Deduplicated B43-B56 certification manifest with source pointers and duplicate contexts separated",
+    "Human review SPX-EXP-026 Italian attribution correction and balanced ecclesial authority/freedom",
+    "Find genuinely unresolved distinct families beyond B56; skip inaccessible Chanoine English witness"
+  ],
+  "merge": false,
+  "publish": false,
+  "deploy": false,
+  "paidExtras": false
+}
