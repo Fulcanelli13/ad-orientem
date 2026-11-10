@@ -1,0 +1,598 @@
+{
+  "schema": "AO_CL27_SOURCE_WEEKLY_MASS_SUPPLEMENT_V1",
+  "publication": "FIRST_PARTY_REPORTED_PATTERN_NOT_LIVE_MASS_OCCURRENCE",
+  "reviewed_on": "2026-11-10",
+  "policy": [
+    "Fourteen new exact-site source-published patterns, separate from ten sites published 2026-11-09",
+    "Do not extrapolate future individual Masses, recurrence events, weekday dates, feast exceptions or a real-time promise",
+    "Ambiguous and/or weekday hours are not published as definite multiple Masses",
+    "Keep feast, first-Friday, first-Saturday, school-year and holiday exceptions beside affected time",
+    "Do not infer ownership, priest, rite, Missal edition, Una Cum, canonical status, GPS or entrance from this pattern",
+    "Every entry requires first-party original site URL, reviewed date and frozen CL2 physical identity"
+  ],
+  "sites": [
+    {
+      "cl2_anchor": "RG-1A2D13837643",
+      "source_id": "SSPXMAP:OPE-001641",
+      "canonical_name": "Prieuré Sainte Thérèse – Église Saint-François-de-Sales",
+      "country": "FR",
+      "physical_description": "310-312 boulevard Jean Jaurès, 76000 Rouen, France",
+      "existing_source_url": "https://map.fsspx.org/en/places/prieure-sainte-therese-de-l-enfant-jesus",
+      "source_page_url": "https://laportelatine.org/lieux/rouen",
+      "source_publisher": "FSSPX District de France · La Porte Latine",
+      "checked_on": "2026-11-10",
+      "subject_scope": "ONE_NAMED_CL2_SITE_NOT_DISTRICT",
+      "entries": [
+        {
+          "scope": "SUNDAYS_AND_FEASTS",
+          "time": "08:30",
+          "mass_type": "LOW",
+          "label_en": "Sundays and feast days (source listing)",
+          "label_fr": "Dimanches et fêtes (selon la source)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "SUNDAYS_AND_FEASTS",
+          "time": "10:30",
+          "mass_type": "SUNG",
+          "label_en": "Sundays and feast days (source listing)",
+          "label_fr": "Dimanches et fêtes (selon la source)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "MONDAY",
+          "time": "11:15",
+          "mass_type": "UNKNOWN",
+          "label_en": "Monday",
+          "label_fr": "Lundi",
+          "exception_en": "Variable Monday Mass; confirm with current notices.",
+          "exception_fr": "Messe du lundi variable ; vérifier les annonces."
+        },
+        {
+          "scope": "MONDAY",
+          "time": "18:30",
+          "mass_type": "UNKNOWN",
+          "label_en": "Monday",
+          "label_fr": "Lundi",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "TUESDAY",
+          "time": "07:15",
+          "mass_type": "UNKNOWN",
+          "label_en": "Tuesday",
+          "label_fr": "Mardi",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "TUESDAY",
+          "time": "18:30",
+          "mass_type": "UNKNOWN",
+          "label_en": "Tuesday",
+          "label_fr": "Mardi",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "WEDNESDAY",
+          "time": "07:15",
+          "mass_type": "UNKNOWN",
+          "label_en": "Wednesday",
+          "label_fr": "Mercredi",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "WEDNESDAY",
+          "time": "18:30",
+          "mass_type": "UNKNOWN",
+          "label_en": "Wednesday",
+          "label_fr": "Mercredi",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "THURSDAY",
+          "time": "07:15",
+          "mass_type": "UNKNOWN",
+          "label_en": "Thursday",
+          "label_fr": "Jeudi",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "THURSDAY",
+          "time": "11:15",
+          "mass_type": "UNKNOWN",
+          "label_en": "Thursday",
+          "label_fr": "Jeudi",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "FRIDAY",
+          "time": "07:15",
+          "mass_type": "UNKNOWN",
+          "label_en": "Friday",
+          "label_fr": "Vendredi",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "FRIDAY",
+          "time": "18:30",
+          "mass_type": "UNKNOWN",
+          "label_en": "Friday",
+          "label_fr": "Vendredi",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "SATURDAY",
+          "time": "07:15",
+          "mass_type": "UNKNOWN",
+          "label_en": "Saturday",
+          "label_fr": "Samedi",
+          "exception_en": "Except first Saturdays; consult the current programme.",
+          "exception_fr": "Sauf les premiers samedis ; consulter le programme."
+        },
+        {
+          "scope": "SATURDAY",
+          "time": "11:15",
+          "mass_type": "UNKNOWN",
+          "label_en": "Saturday",
+          "label_fr": "Samedi",
+          "exception_en": "",
+          "exception_fr": ""
+        }
+      ]
+    },
+    {
+      "cl2_anchor": "RG-14211B3603D5",
+      "source_id": "SSPXMAP:OPE-001537",
+      "canonical_name": "Prieuré de la Sainte Famille",
+      "country": "FR",
+      "physical_description": "4, rue Pierre Thévenot, 21000 Dijon, France",
+      "existing_source_url": "https://map.fsspx.org/en/places/prieure-de-la-sainte-famille",
+      "source_page_url": "https://laportelatine.org/lieux/dijon",
+      "source_publisher": "FSSPX District de France · La Porte Latine",
+      "checked_on": "2026-11-10",
+      "subject_scope": "ONE_NAMED_CL2_SITE_NOT_DISTRICT",
+      "entries": [
+        {
+          "scope": "SUNDAYS_AND_FEASTS",
+          "time": "10:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "Sundays and feast days (source listing)",
+          "label_fr": "Dimanches et fêtes (selon la source)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "THURSDAY_SATURDAY",
+          "time": "11:30",
+          "mass_type": "UNKNOWN",
+          "label_en": "Thursday and Saturday",
+          "label_fr": "Jeudi et samedi",
+          "exception_en": "Other weekday hours are stated as 07:30 and/or 18:30, not a definite daily pair; consult announcements.",
+          "exception_fr": "Les autres horaires en semaine sont indiqués à 7h30 et/ou 18h30, sans garantir les deux ; consulter les annonces."
+        }
+      ]
+    },
+    {
+      "cl2_anchor": "RG-291B45C8980A",
+      "source_id": "SSPXMAP:OPE-001572",
+      "canonical_name": "Église Saint-Grégoire des Minimes",
+      "country": "FR",
+      "physical_description": "3 bis rue de la Préfecture, 37000 Tours, France",
+      "existing_source_url": "https://map.fsspx.org/en/places/eglise-st-gregoire-des-minimes",
+      "source_page_url": "https://laportelatine.org/lieux/prieure-saint-martin/saint-gregoire-tours",
+      "source_publisher": "FSSPX District de France · La Porte Latine",
+      "checked_on": "2026-11-10",
+      "subject_scope": "ONE_NAMED_CL2_SITE_NOT_DISTRICT",
+      "entries": [
+        {
+          "scope": "SUNDAYS_AND_FEASTS",
+          "time": "08:30",
+          "mass_type": "LOW",
+          "label_en": "Sundays and feast days (source listing)",
+          "label_fr": "Dimanches et fêtes (selon la source)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "SUNDAYS_AND_FEASTS",
+          "time": "10:30",
+          "mass_type": "SUNG",
+          "label_en": "Sundays and feast days (source listing)",
+          "label_fr": "Dimanches et fêtes (selon la source)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "WEEKDAY_UNSPECIFIED",
+          "time": "18:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "Weekday Mass — weekdays not individually specified",
+          "label_fr": "Messe en semaine — jours non détaillés",
+          "exception_en": "The source separates school-term and holiday confession times; Mass is listed at 18:00 in both. Exact weekdays are not stated.",
+          "exception_fr": "La source distingue les horaires de confession en période scolaire et en vacances ; la messe est annoncée à 18h00 dans les deux cas. Les jours précis ne sont pas indiqués."
+        }
+      ]
+    },
+    {
+      "cl2_anchor": "RG-2C6CF5CC7023",
+      "source_id": "SSPXMAP:OPE-002103",
+      "canonical_name": "Chapelle de l'Immaculée Conception",
+      "country": "FR",
+      "physical_description": "14 bis-16, rue de Lodi, 13006 Marseille, France",
+      "existing_source_url": "https://map.fsspx.org/en/places/chapelle-notre-dame-de-l-immaculee-conception",
+      "source_page_url": "https://laportelatine.org/lieux/marseille/marseille-immaculee",
+      "source_publisher": "FSSPX District de France · La Porte Latine",
+      "checked_on": "2026-11-10",
+      "subject_scope": "ONE_NAMED_CL2_SITE_NOT_DISTRICT",
+      "entries": [
+        {
+          "scope": "SUNDAYS_AND_FEASTS",
+          "time": "08:30",
+          "mass_type": "LOW",
+          "label_en": "Sundays and feast days (source listing)",
+          "label_fr": "Dimanches et fêtes (selon la source)",
+          "exception_en": "",
+          "exception_fr": ""
+        }
+      ]
+    },
+    {
+      "cl2_anchor": "RG-5F242504B732",
+      "source_id": "SSPXMAP:OPE-001516",
+      "canonical_name": "Prieuré Saint Joseph – Chapelle de la Visitation",
+      "country": "FR",
+      "physical_description": "17 place Sainte-Claire, 06300 Nice, France",
+      "existing_source_url": "https://map.fsspx.org/en/places/prieure-saint-joseph",
+      "source_page_url": "https://laportelatine.org/lieux/nice",
+      "source_publisher": "FSSPX District de France · La Porte Latine",
+      "checked_on": "2026-11-10",
+      "subject_scope": "ONE_NAMED_CL2_SITE_NOT_DISTRICT",
+      "entries": [
+        {
+          "scope": "SUNDAYS_AND_FEASTS",
+          "time": "10:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "Sundays and feast days (source listing)",
+          "label_fr": "Dimanches et fêtes (selon la source)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "WEEKDAY_UNSPECIFIED",
+          "time": "18:30",
+          "mass_type": "UNKNOWN",
+          "label_en": "Weekday Mass — weekdays not individually specified",
+          "label_fr": "Messe en semaine — jours non détaillés",
+          "exception_en": "",
+          "exception_fr": ""
+        }
+      ]
+    },
+    {
+      "cl2_anchor": "RG-1E9599A96067",
+      "source_id": "SSPXMAP:OPE-002151",
+      "canonical_name": "Chapelle Sainte-Anne",
+      "country": "FR",
+      "physical_description": "20, rue Aristide Briand, près de la Préfecture, 56000 Vannes, France",
+      "existing_source_url": "https://map.fsspx.org/en/places/chapelle-sainte-anne",
+      "source_page_url": "https://laportelatine.org/lieux/saint-nolff/vannes",
+      "source_publisher": "FSSPX District de France · La Porte Latine",
+      "checked_on": "2026-11-10",
+      "subject_scope": "ONE_NAMED_CL2_SITE_NOT_DISTRICT",
+      "entries": [
+        {
+          "scope": "SUNDAYS_AND_FEASTS",
+          "time": "08:15",
+          "mass_type": "UNKNOWN",
+          "label_en": "Sundays and feast days (source listing)",
+          "label_fr": "Dimanches et fêtes (selon la source)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "SUNDAYS_AND_FEASTS",
+          "time": "10:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "Sundays and feast days (source listing)",
+          "label_fr": "Dimanches et fêtes (selon la source)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "WEEKDAY_UNSPECIFIED",
+          "time": "18:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "Weekday Mass — weekdays not individually specified",
+          "label_fr": "Messe en semaine — jours non détaillés",
+          "exception_en": "The Thursday Mass during the school year is listed at 11:15 instead; not a second 18:00 Mass.",
+          "exception_fr": "Le jeudi pendant l'année scolaire, la messe est indiquée à 11h15 à la place ; il ne s'agit pas d'une seconde messe à 18h00."
+        },
+        {
+          "scope": "THURSDAY_SCHOOL_YEAR",
+          "time": "11:15",
+          "mass_type": "UNKNOWN",
+          "label_en": "Thursday during the school year",
+          "label_fr": "Jeudi pendant l'année scolaire",
+          "exception_en": "Replaces the general weekday time on school-term Thursdays.",
+          "exception_fr": "Remplace l'horaire habituel en semaine les jeudis de période scolaire."
+        }
+      ]
+    },
+    {
+      "cl2_anchor": "RG-2A002EB6E1C7",
+      "source_id": "SSPXMAP:OPE-002155",
+      "canonical_name": "Chapelle Notre-Dame du Sacré-Cœur",
+      "country": "FR",
+      "physical_description": "15, avenue Rhin et Danube (route de Mamers), 61000 Alençon, France",
+      "existing_source_url": "https://map.fsspx.org/en/places/chapelle-notre-dame-du-sacre-coeur",
+      "source_page_url": "https://laportelatine.org/lieux/gavrus/alencon",
+      "source_publisher": "FSSPX District de France · La Porte Latine",
+      "checked_on": "2026-11-10",
+      "subject_scope": "ONE_NAMED_CL2_SITE_NOT_DISTRICT",
+      "entries": [
+        {
+          "scope": "SUNDAYS_AND_FEASTS",
+          "time": "11:30",
+          "mass_type": "UNKNOWN",
+          "label_en": "Sundays and feast days (source listing)",
+          "label_fr": "Dimanches et fêtes (selon la source)",
+          "exception_en": "",
+          "exception_fr": ""
+        }
+      ]
+    },
+    {
+      "cl2_anchor": "RG-4F4324815190",
+      "source_id": "SSPXMAP:OPE-001541",
+      "canonical_name": "Prieuré Sainte-Anne",
+      "country": "FR",
+      "physical_description": "82, avenue de Beauvais, 22100 Lanvallay, France",
+      "existing_source_url": "https://map.fsspx.org/en/places/prieure-sainte-anne",
+      "source_page_url": "https://laportelatine.org/lieux/lanvallay",
+      "source_publisher": "FSSPX District de France · La Porte Latine",
+      "checked_on": "2026-11-10",
+      "subject_scope": "ONE_NAMED_CL2_SITE_NOT_DISTRICT",
+      "entries": [
+        {
+          "scope": "SUNDAYS_AND_FEASTS",
+          "time": "08:00",
+          "mass_type": "LOW",
+          "label_en": "Sundays and feast days (source listing)",
+          "label_fr": "Dimanches et fêtes (selon la source)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "SUNDAYS_AND_FEASTS",
+          "time": "09:15",
+          "mass_type": "LOW",
+          "label_en": "Sundays and feast days (source listing)",
+          "label_fr": "Dimanches et fêtes (selon la source)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "SUNDAYS_AND_FEASTS",
+          "time": "10:30",
+          "mass_type": "SUNG",
+          "label_en": "Sundays and feast days (source listing)",
+          "label_fr": "Dimanches et fêtes (selon la source)",
+          "exception_en": "",
+          "exception_fr": ""
+        }
+      ]
+    },
+    {
+      "cl2_anchor": "RG-34F1D4F47941",
+      "source_id": "SSPXMAP:OPE-002109",
+      "canonical_name": "Église Sainte Colombe",
+      "country": "FR",
+      "physical_description": "3, rue Urbain Loyer, 17100 Saintes, France",
+      "existing_source_url": "https://map.fsspx.org/en/places/chapelle-sainte-colombe",
+      "source_page_url": "https://laportelatine.org/lieux/bruges/saintes",
+      "source_publisher": "FSSPX District de France · La Porte Latine",
+      "checked_on": "2026-11-10",
+      "subject_scope": "ONE_NAMED_CL2_SITE_NOT_DISTRICT",
+      "entries": [
+        {
+          "scope": "SUNDAYS_AND_FEASTS",
+          "time": "11:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "Sundays and feast days (source listing)",
+          "label_fr": "Dimanches et fêtes (selon la source)",
+          "exception_en": "",
+          "exception_fr": ""
+        }
+      ]
+    },
+    {
+      "cl2_anchor": "RG-5EAC1BF12A8D",
+      "source_id": "SSPXMAP:OPE-002187",
+      "canonical_name": "Chapelle des Pénitents Noirs",
+      "country": "FR",
+      "physical_description": "57, rue de la Banasterie, 84000 Avignon, France",
+      "existing_source_url": "https://map.fsspx.org/en/places/chapelle-des-penitents-noirs",
+      "source_page_url": "https://laportelatine.org/lieux/sorgues/avignon",
+      "source_publisher": "FSSPX District de France · La Porte Latine",
+      "checked_on": "2026-11-10",
+      "subject_scope": "ONE_NAMED_CL2_SITE_NOT_DISTRICT",
+      "entries": [
+        {
+          "scope": "SUNDAYS_AND_FEASTS",
+          "time": "09:30",
+          "mass_type": "SUNG",
+          "label_en": "Sundays and feast days (source listing)",
+          "label_fr": "Dimanches et fêtes (selon la source)",
+          "exception_en": "On 15 August, this is the only listed Mass; feast-day timetables can vary. Confirm at source.",
+          "exception_fr": "Le 15 août, c'est la seule messe indiquée ; les horaires des fêtes peuvent varier. Vérifier la source."
+        },
+        {
+          "scope": "SUNDAYS_AND_FEASTS",
+          "time": "11:30",
+          "mass_type": "LOW",
+          "label_en": "Sundays and feast days (source listing)",
+          "label_fr": "Dimanches et fêtes (selon la source)",
+          "exception_en": "Not listed on 15 August; confirm other feast-day exceptions.",
+          "exception_fr": "Non indiquée le 15 août ; vérifier les autres exceptions des fêtes."
+        },
+        {
+          "scope": "FIRST_FRIDAY",
+          "time": "18:30",
+          "mass_type": "UNKNOWN",
+          "label_en": "First Friday of the month",
+          "label_fr": "Premier vendredi du mois",
+          "exception_en": "",
+          "exception_fr": ""
+        }
+      ]
+    },
+    {
+      "cl2_anchor": "RG-1BE458F80327",
+      "source_id": "SSPXMAP:OPE-002170",
+      "canonical_name": "Chapelle Saint-Anthelme",
+      "country": "FR",
+      "physical_description": "312 route des Clarines, 73190 Saint-Baldoph, France",
+      "existing_source_url": "https://map.fsspx.org/en/places/chapelle-st-anthelme",
+      "source_page_url": "https://laportelatine.org/lieux/meylan/saint-baldoph",
+      "source_publisher": "FSSPX District de France · La Porte Latine",
+      "checked_on": "2026-11-10",
+      "subject_scope": "ONE_NAMED_CL2_SITE_NOT_DISTRICT",
+      "entries": [
+        {
+          "scope": "SUNDAYS_AND_FEASTS",
+          "time": "11:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "Sundays and feast days (source listing)",
+          "label_fr": "Dimanches et fêtes (selon la source)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "FRIDAY",
+          "time": "18:30",
+          "mass_type": "UNKNOWN",
+          "label_en": "Friday",
+          "label_fr": "Vendredi",
+          "exception_en": "",
+          "exception_fr": ""
+        }
+      ]
+    },
+    {
+      "cl2_anchor": "RG-39EDF6C1F5EA",
+      "source_id": "SSPXMAP:OPE-002141",
+      "canonical_name": "Chapelle du Cœur-Immaculé-de-Marie",
+      "country": "FR",
+      "physical_description": "3, place du Maréchal Foch, 42000 Saint-Étienne, France",
+      "existing_source_url": "https://map.fsspx.org/en/places/chapelle-du-coeur-immacule-de-marie",
+      "source_page_url": "https://laportelatine.org/lieux/unieux/saint-etienne",
+      "source_publisher": "FSSPX District de France · La Porte Latine",
+      "checked_on": "2026-11-10",
+      "subject_scope": "ONE_NAMED_CL2_SITE_NOT_DISTRICT",
+      "entries": [
+        {
+          "scope": "SUNDAYS_AND_FEASTS",
+          "time": "09:00",
+          "mass_type": "SUNG",
+          "label_en": "Sundays and feast days (source listing)",
+          "label_fr": "Dimanches et fêtes (selon la source)",
+          "exception_en": "Holiday timetables require confirmation; the separate Unieux notice is not a change to this chapel.",
+          "exception_fr": "Pendant les vacances, vérifier les horaires ; l'avis distinct concernant Unieux ne modifie pas cette chapelle."
+        },
+        {
+          "scope": "WEDNESDAY_FRIDAY",
+          "time": "18:30",
+          "mass_type": "LOW",
+          "label_en": "Wednesday and Friday",
+          "label_fr": "Mercredi et vendredi",
+          "exception_en": "Confirm during holidays.",
+          "exception_fr": "À vérifier pendant les vacances."
+        },
+        {
+          "scope": "FIRST_SATURDAY",
+          "time": "18:30",
+          "mass_type": "UNKNOWN",
+          "label_en": "First Saturday of the month",
+          "label_fr": "Premier samedi du mois",
+          "exception_en": "First Saturday only; confirm during holidays.",
+          "exception_fr": "Premier samedi seulement ; vérifier pendant les vacances."
+        }
+      ]
+    },
+    {
+      "cl2_anchor": "RG-215CD48E3795",
+      "source_id": "SSPXMAP:OPE-002160",
+      "canonical_name": "Chapelle Notre-Dame des Naufragés",
+      "country": "FR",
+      "physical_description": "737 Chemin Duboscoa, ZA Duboscoa n°1, 64990 Villefranque, France",
+      "existing_source_url": "https://map.fsspx.org/en/places/chapelle-notre-dame-des-naufrages",
+      "source_page_url": "https://laportelatine.org/lieux/etcharry/villefranque",
+      "source_publisher": "FSSPX District de France · La Porte Latine",
+      "checked_on": "2026-11-10",
+      "subject_scope": "ONE_NAMED_CL2_SITE_NOT_DISTRICT",
+      "entries": [
+        {
+          "scope": "SUNDAYS_AND_FEASTS",
+          "time": "10:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "Sundays and feast days (source listing)",
+          "label_fr": "Dimanches et fêtes (selon la source)",
+          "exception_en": "",
+          "exception_fr": ""
+        }
+      ]
+    },
+    {
+      "cl2_anchor": "RG-6AF996070252",
+      "source_id": "SSPXMAP:OPE-002108",
+      "canonical_name": "Chapelle Notre-Dame de l'Espérance",
+      "country": "FR",
+      "physical_description": "12, rue des Augustins, 17000 La Rochelle, France",
+      "existing_source_url": "https://map.fsspx.org/en/places/chapelle-notre-dame-de-l-esperance-la-rochelle",
+      "source_page_url": "https://laportelatine.org/lieux/les-fournils/la-rochelle",
+      "source_publisher": "FSSPX District de France · La Porte Latine",
+      "checked_on": "2026-11-10",
+      "subject_scope": "ONE_NAMED_CL2_SITE_NOT_DISTRICT",
+      "entries": [
+        {
+          "scope": "SUNDAYS_AND_FEASTS",
+          "time": "08:30",
+          "mass_type": "LOW",
+          "label_en": "Sundays and feast days (source listing)",
+          "label_fr": "Dimanches et fêtes (selon la source)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "SUNDAYS_AND_FEASTS",
+          "time": "10:00",
+          "mass_type": "SUNG",
+          "label_en": "Sundays and feast days (source listing)",
+          "label_fr": "Dimanches et fêtes (selon la source)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "TUESDAY",
+          "time": "18:45",
+          "mass_type": "UNKNOWN",
+          "label_en": "Tuesday",
+          "label_fr": "Mardi",
+          "exception_en": "Official page says 'confirm locally' for this Tuesday Mass. Not guaranteed.",
+          "exception_fr": "La fiche officielle indique « se renseigner » pour cette messe du mardi. Horaire non garanti."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "schema": "AO_CL27_POLAND_OPERATOR_MASS_PATTERNS_V1",
+  "publication": "FIRST_PARTY_REPORTED_PATTERN_NOT_LIVE_MASS_OCCURRENCE",
+  "reviewed_on": "2026-11-10",
+  "policy": [
+    "Only two original Polish CL2 chapel records — Bajerze and Bukowiec — have consistent first-party individual-page and district-register identity and source timetable patterns in this release.",
+    "Other Phase27M certificates have independently observed source conflicts and remain excluded pending identity/time adjudication.",
+    "Source-published patterns only, not guaranteed dated Mass events or synthetic RRULEs.",
+    "Conditional first Friday, first Saturday and Thursday preceding first Friday must not be recast as ordinary weekly Friday/Thursday Masses.",
+    "No inferred missal edition, Una Cum, canonical status, individual priest, legal ownership, confirmed entrance, current open hours or future occurrence.",
+    "Older or printed first-party sources can be overridden by local announcements; verify before travel."
+  ],
+  "sites": [
+    {
+      "cl2_anchor": "RG-A080BDE87FC4",
+      "source_ids": [
+        "AO-B33-L-PL-4D17D140DFBE",
+        "AO-B40-SSPX-PL-BAJERZE"
+      ],
+      "canonical_name": "Kaplica Chrystusa Króla",
+      "country": "PL",
+      "physical_description": "Bajerze 36 (pałac), Kijewo Królewskie, Bajerze, Poland",
+      "existing_source_url": "https://www.piusx.org.pl/kaplice/bajerze",
+      "source_page_url": "https://www.piusx.org.pl/kaplice/bajerze",
+      "source_publisher": "FSSPX Poland · piusx.org.pl",
+      "phase27m_certificate_id": "AO-27M-PL-001",
+      "checked_on": "2026-11-10",
+      "subject_scope": "ONE_NAMED_CL2_SITE_NOT_DISTRICT",
+      "entries": [
+        {
+          "scope": "SUNDAYS",
+          "time": "07:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "Sunday (published pattern)",
+          "label_fr": "Dimanche (horaire publié)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "SUNDAYS",
+          "time": "09:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "Sunday (published pattern)",
+          "label_fr": "Dimanche (horaire publié)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "WEEKDAY_MON_FRI",
+          "time": "07:15",
+          "mass_type": "UNKNOWN",
+          "label_en": "Monday–Friday (published pattern)",
+          "label_fr": "Du lundi au vendredi (horaire publié)",
+          "exception_en": "The source separately lists a first-Friday 19:00 Mass; check local notices before assuming both occur.",
+          "exception_fr": "La source mentionne aussi une messe le premier vendredi à 19h00 ; vérifier les annonces pour savoir si les deux sont célébrées."
+        },
+        {
+          "scope": "SATURDAY",
+          "time": "07:15",
+          "mass_type": "UNKNOWN",
+          "label_en": "Saturday (published pattern)",
+          "label_fr": "Samedi (horaire publié)",
+          "exception_en": "A separate 09:00 first-Saturday Mass is listed; verify the actual programme.",
+          "exception_fr": "Une messe distincte à 09h00 est indiquée le premier samedi ; vérifier le programme."
+        },
+        {
+          "scope": "FIRST_FRIDAY",
+          "time": "19:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "First Friday of the month",
+          "label_fr": "Premier vendredi du mois",
+          "exception_en": "First Friday only, not every Friday.",
+          "exception_fr": "Premier vendredi uniquement, pas tous les vendredis."
+        },
+        {
+          "scope": "FIRST_SATURDAY",
+          "time": "09:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "First Saturday of the month",
+          "label_fr": "Premier samedi du mois",
+          "exception_en": "First Saturday only; do not infer that the ordinary Saturday service also takes place.",
+          "exception_fr": "Premier samedi uniquement ; ne pas supposer que l'horaire ordinaire est également maintenu."
+        }
+      ]
+    },
+    {
+      "cl2_anchor": "RG-F38DEA178149",
+      "source_ids": [
+        "AO-B40-SSPX-PL-BUKOWIEC",
+        "SSPXMAP:OPE-002718"
+      ],
+      "canonical_name": "Kaplica pw. św. Franciszka z Asyżu",
+      "country": "PL",
+      "physical_description": "St. Francis of Assisi chapel, ul. Katowicka",
+      "existing_source_url": "https://www.piusx.org.pl/kaplice/zestawienie",
+      "source_page_url": "https://www.piusx.org.pl/kaplice/bukowiec",
+      "source_publisher": "FSSPX Poland · piusx.org.pl",
+      "phase27m_certificate_id": "AO-27M-PL-005",
+      "checked_on": "2026-11-10",
+      "subject_scope": "ONE_NAMED_CL2_SITE_NOT_DISTRICT",
+      "entries": [
+        {
+          "scope": "SUNDAYS",
+          "time": "09:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "Sunday (published pattern)",
+          "label_fr": "Dimanche (horaire publié)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "SATURDAY",
+          "time": "18:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "Saturday (published pattern)",
+          "label_fr": "Samedi (horaire publié)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "FIRST_FRIDAY",
+          "time": "18:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "First Friday of the month",
+          "label_fr": "Premier vendredi du mois",
+          "exception_en": "First Friday only.",
+          "exception_fr": "Premier vendredi uniquement."
+        },
+        {
+          "scope": "FIRST_SATURDAY",
+          "time": "09:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "First Saturday of the month",
+          "label_fr": "Premier samedi du mois",
+          "exception_en": "First Saturday only; a regular Saturday 18:00 Mass is also listed.",
+          "exception_fr": "Premier samedi uniquement ; une messe ordinaire du samedi à 18h00 est aussi indiquée."
+        },
+        {
+          "scope": "THURSDAY_BEFORE_FIRST_FRIDAY",
+          "time": "18:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "Thursday preceding the first Friday",
+          "label_fr": "Jeudi précédant le premier vendredi",
+          "exception_en": "Only the Thursday preceding the first Friday, not every Thursday.",
+          "exception_fr": "Uniquement le jeudi précédant le premier vendredi, pas tous les jeudis."
+        }
+      ]
+    }
+  ]
+}

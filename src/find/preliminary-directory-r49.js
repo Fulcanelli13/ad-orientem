@@ -2,6 +2,8 @@ import { CL2_PHYSICAL_SITE_INDEX_URL,projectCL2PhysicalDirectory } from "./cl2-p
 import {matchesPublicCL27Facets} from "./cl27-public-facets.js";
 import {CL27_SITE_CONTACT_URL,attachPublishedSiteContactEvidence} from "./tlm-site-contact-evidence.js";
 import {CL27_WEEKLY_SOURCE_PROGRAMME_URL,attachPublishedWeeklySourceProgrammes} from "./tlm-source-weekly-mass-programme.js";
+import {CL27_WEEKLY_SUPPLEMENT_URL,attachPublishedWeeklySupplement} from "./tlm-weekly-source-supplement.js";
+import {CL27_POLAND_SOURCE_URL,attachPublishedPolandSourcePatterns} from "./tlm-weekly-source-poland.js";
 import {CL27_DATED_MASS_PROGRAMME_URL,attachPublishedDatedMassProgramme,CL27_TARARE_DATED_MASS_PROGRAMME_URL,attachPublishedTarareDatedMassProgramme} from "./tlm-dated-mass-programme.js";
 import {
   CL27_PUBLIC_CELEBRATION_URL,attachPublishedCelebrationEvidence,tlmCelebrationEvidenceClass,
@@ -281,6 +283,34 @@ export async function loadPreliminaryR49({fetchImpl=fetch}={}){
     const evidence=await weekly.json();
     if(evidence?.schema==="AO_CL27_SOURCE_WEEKLY_MASS_PROGRAMME_V1")
       cache=attachPublishedWeeklySourceProgrammes(cache,evidence);
+  }
+  // Second source-owned weekly manifest: fourteen ADDITIONAL exact CL2 sites.
+  // Optional for older offline snapshots; source-tagged malformed releases
+  // fail closed rather than silently constructing Mass occurrences.
+  let supplemental=null;
+  try{
+    supplemental=await fetchImpl(CL27_WEEKLY_SUPPLEMENT_URL,{headers:{accept:"application/json"}});
+  }catch{
+    // No supplement available in an older installed snapshot.
+  }
+  if(supplemental?.ok){
+    const evidence=await supplemental.json();
+    if(evidence?.schema==="AO_CL27_SOURCE_WEEKLY_MASS_SUPPLEMENT_V1")
+      cache=attachPublishedWeeklySupplement(cache,evidence);
+  }
+  // Third source-owned weekly pattern set: two corroborated Polish CL2 chapel profiles.
+  // Optional for older cached/offline builds; source-tagged invalid data fails
+  // closed without inventing dated Masses or changing canonical location pins.
+  let polish=null;
+  try{
+    polish=await fetchImpl(CL27_POLAND_SOURCE_URL,{headers:{accept:"application/json"}});
+  }catch{
+    // No Polish supplement in older cached installations.
+  }
+  if(polish?.ok){
+    const evidence=await polish.json();
+    if(evidence?.schema==="AO_CL27_POLAND_OPERATOR_MASS_PATTERNS_V1")
+      cache=attachPublishedPolandSourcePatterns(cache,evidence);
   }
   return cache;
 }
