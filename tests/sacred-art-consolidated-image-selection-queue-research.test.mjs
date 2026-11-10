@@ -108,7 +108,10 @@ assert.deepEqual(dates.filter(x=>x.supplementalUnintegratedArtworkKeys.length).m
 assert.ok(dates.every(x=>x.editorialDateApproval===false&&x.publishedImageAssignmentCreated===false));
 assert.equal(queue.counts.verifiedColourJpegSources,9);
 assert.equal(queue.counts.verifiedSourcePhotosInOriginal151Pool,8);
-assert.equal(queue.reviewLaneCounts.C_LOCATE_REUSABLE_COLOUR_SOURCE,12);
+assert.equal(queue.reviewLaneCounts.C_LOCATE_REUSABLE_COLOUR_SOURCE,8);
+assert.equal(queue.reviewLaneCounts.C_CLIENT_RENDERED_MUSEUM_PORTAL_REQUIRES_NEW_METHOD,4);
+assert.equal(queue.counts.clientRenderedFirstPartyPortalImageHolds,4);
+assert.equal(queue.counts.unverifiedPhotoSearchLaneRemaining,8);
 assert.equal(queue.counts.firstPartyMediaRecordInvestigations,4);
 assert.equal(queue.counts.museumPortalsNeedingClientRenderedAccess,4);
 const portalBlockers=read(root+'m2m-museum-portal-static-client-blockers-20261110.v1.json');
@@ -122,6 +125,7 @@ assert.deepEqual(portalBlockers.records.map(x=>x.key),[
 for(const row of portalBlockers.records){
  const w=workByKey.get(row.key);
  assert.equal(w.firstPartyDownloadLinkInvestigation.status,'CLIENT_SIDE_RENDERED_MUSEUM_PORTAL_STATIC_HTTP_PATH_EXHAUSTED');
+ assert.equal(w.lane,'C_CLIENT_RENDERED_MUSEUM_PORTAL_REQUIRES_NEW_METHOD');
  assert.equal(w.firstPartyDownloadLinkInvestigation.originalSourceBytesVerified,false);
  assert.equal(w.firstPartyDownloadLinkInvestigation.retryStaticHtml,false);
  assert.equal(w.verifiedPhotoId,null);
