@@ -6,12 +6,12 @@ Research-only editorial and image-acquisition queue. It is **not** the published
 
 - Machine-readable registry: `m2m-consolidated-image-selection-queue-20261110.v1.json`
 - Structural gate: `tests/sacred-art-consolidated-image-selection-queue-research.test.mjs`
-- Source ledger: `m2m-calendar-prepublication-triage-198-20261110.v1.json`, five 68-key oil audit batches and the seven original-photo verification records
+- Source ledger: `m2m-calendar-prepublication-triage-198-20261110.v1.json`, five 68-key oil audit batches and the original-photo verification ledgers
 - **198** dated research relationships, **151** original distinct research keys; **167/170** originally unmatched dates have an integrated research lead
 - **68/68** priority direct-subject oil keys triaged; **9 additional original research keys** have an oil-medium relationship outside that exact-priority group — do not misreport 68 as all oil works
 - **155** queue keys: 151 originals + 1 Ribera unapproved alternative + 3 supplementary March leads (outside the historical 198-edge denominator)
 - **170** original gap-date holds, including March 2, 10 and 11. The three supplemental leads are separately recorded but do **not** silently change the official 362/365 research coverage figure
-- **Seven** exact JPEG files retrieved and hashed from original museum/institutional download servers: 6 for original priority candidates and 1 Ribera alternative. GitHub Actions copies are short-lived, not durable publication assets
+- **Eight** exact JPEG files retrieved and hashed from original museum/institutional download servers: 7 for original research candidates and 1 Ribera alternative. GitHub Actions copies are short-lived, not durable publication assets
 - **Zero** new date approvals, **zero** formal in-app container crop approvals, **zero** new published photos
 
 ## How to read the data
@@ -20,7 +20,7 @@ Research-only editorial and image-acquisition queue. It is **not** the published
 
 `lane` is an **operational triage lane**, not a score or a new artistic selection. `sourceAuditRightStatus` describes original recorded evidence, and `sourceAuditNote` preserves attribution/source caveats. `verifiedPhotoId` is populated only when the exact original file was acquired and its hash established. `releaseReady`, `ownerApprovalForAnyNewDate` and date approval flags must stay false until an explicit future release decision.
 
-## Seven verified originals — distinct editorial tasks
+## Eight verified originals — distinct editorial tasks
 
 | Image key | Date relationship | Licence evidence | Current composition decision |
 |---|---|---|---|
@@ -31,8 +31,9 @@ Research-only editorial and image-acquisition queue. It is **not** the published
 | `Walters:37.453` — Pope Pius V | 5 May | Walters CC0 | Portrait preserves face, book and blessing; wide cut unsuitable. Workshop-replica attribution. |
 | `Wellcome:45078i` — Droochsloot, Great Supper | 7 June | Wellcome V0017627 historical CC BY 4.0; **current exact-file rights signoff pending** | Wide nearly complete; portrait centre-cover loses about 58% of source image area. |
 | `Pinakothek:909` — Ribera, Peter of Alcántara | 19 October, **external alternative only** | Bavarian State Painting Collections CC BY-SA 4.0 | Dark Baroque portrait; portrait provisionally usable, wide unsuitable. Never replace the earlier Walters miracle automatically. |
+| `Rijks:SK-A-868` — van Rijck (attributed), Rich Man and Lazarus kitchen | 5 March | Rijksmuseum public domain, exact official IIIF bytes verified | **Acquired but NOT a mobile Gospel hero:** Lazarus and the rich man are tiny figures in the upper-right background; gallery-only candidate unless owner explicitly approves a coherent presentation. |
 
-All seven still need in-app 320/390px visual QA, correct source-specific licence/attribution handling, and explicit owner date approval. A technical or aesthetic preference in this document is not an authorization to publish.
+All eight still need in-app 320/390px visual QA, correct source-specific licence/attribution handling, and explicit owner date approval. A technical or aesthetic preference in this document is not an authorization to publish.
 
 ## Exception decisions
 
@@ -43,11 +44,17 @@ All seven still need in-app 320/390px visual QA, correct source-specific licence
 5. **March supplemental leads:** two illustrations cover a subset of the appointed Gospel; one Tissot image is contextual to John 8 only. They require scene verification and remain outside the integrated 198 relationships.
 6. **Owner protection:** all 103 globally rejected original artwork identities, 507 owner-accepted Prayer alternatives, 27 protected Prayer NONE positions, and all previous selected/gallery works remain untouched.
 
+## Latest acquisition batch: original-source verification
+
+- Rijksmuseum SK-A-868 was downloaded from its **official linked-data / IIIF image** as a 6,132 × 4,483 RGB JPEG. SHA-256: `507a9317f4aaa9a8ba217aa1d75a889a2f82cc2233a93484d1ab955e7d93ca73`. Its historical owner date status is unchanged, and the Gospel scene is visibly small on mobile. Full-image gallery option only, not automatic 5 March hero.
+- Nationalmuseum NM420 and NM1134 are marked public domain, but their exact object-linked JPEG endpoints returned **HTTP 403** in the controlled source acquisition run. These are **0 acquired photographs**, not two successes.
+- Source proof: `m2m-open-colour-batch2-source-verification-20261110.v1.json`; official acquisition manifest: `m2m-open-colour-photo-batch2-nationalmuseum-rijks-20261110.v1.json`.
+
 ## Next operational sequence
 
-1. Inspect the seven acquired originals together using actual application container geometry at 320px and 390px, preserve full artwork when cover crops remove saints or central narrative, and confirm accurate artist/copy attributions. Do not require the owner to review every unpromising source.
+1. Inspect the eight acquired originals together using actual application container geometry at 320px and 390px, preserve full artwork when cover crops remove saints or central narrative, and confirm accurate artist/copy attributions. Do not require the owner to review every unpromising source.
 2. Resolve Wellcome's current photo-ID licence and associated attribution. For Ribera, preserve CC BY-SA 4.0 and note crop/modification obligations.
-3. Among the **50** distinct priority oil works in `C_LOCATE_REUSABLE_COLOUR_SOURCE`, prefer accessible institutional full-colour files with explicit reuse permissions; avoid restricted official photos and investigate equivalent reliable sources rather than paying or contacting museums.
+3. Among the **49** distinct priority oil works in `C_LOCATE_REUSABLE_COLOUR_SOURCE`, prefer accessible institutional full-colour files with explicit reuse permissions; avoid restricted official photos and investigate equivalent reliable sources rather than paying or contacting museums.
 4. Handle the **9** restricted image files, **one** grayscale-only, **one** artwork copyright hold and **one** unresolved identity key explicitly; do not disguise them as completed images.
 5. Check the **83** original research keys outside the priority oil group, including the **9 additional oil-medium candidates**, without misclassifying prints and watercolours as oil.
 6. Only after editorial signoff, build a **separate** release-candidate manifest that includes image bytes, stable checksum, source, licence, attribution, final crop and approved date. Never feed this research JSON into runtime directly.
