@@ -4,6 +4,7 @@ on:
     paths:
       - "scripts/schola/prepare-kyrie-viii-review-manifest.mjs"
       - "tests/schola-kyrie-viii-review-manifest.mjs"
+      - "tests/schola-kyrie-viii-exsurge-phone.mjs"
       - "src/mass/reader-kyrie-viii-review-queue.js"
       - "src/mass/reader-schola-dock-approved.js"
       - "data/presentation/reader-text-sung.v1.json"
@@ -31,6 +32,12 @@ jobs:
         run: |
           node scripts/schola/prepare-kyrie-viii-review-manifest.mjs > "$RUNNER_TEMP/kyrie-viii-musical-review-hold.json"
           node --input-type=module -e "import fs from 'node:fs';const x=JSON.parse(fs.readFileSync(process.env.RUNNER_TEMP+'/kyrie-viii-musical-review-hold.json','utf8'));if(x.approvedScores!==0||x.publishedScores!==0||x.candidates.length!==9||x.candidates.some(s=>s.publication!=='BLOCKED'||s.musicalNotationVerified!==false))process.exit(1)"
+      - name: Install browser for source-only offline Exsurge test
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Verify all nine original-source excerpts engrave at phone widths
+        run: node tests/schola-kyrie-viii-exsurge-phone.mjs
       - name: Preserve unapproved research review file (not a site asset)
         uses: actions/upload-artifact@v4
         with:
