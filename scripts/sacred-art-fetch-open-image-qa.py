@@ -112,9 +112,16 @@ def main():
     out.mkdir(parents=True, exist_ok=True)
     with open(args.queue, encoding="utf-8") as fp:
         queue = json.load(fp)
-    chosen = [r for r in queue["records"] if r.get("acquisitionStatus") == "READY_NETWORK_ATTEMPT"]
-    if len(chosen) != 4 or any(not r["key"].startswith("Met:") for r in chosen):
-        raise ValueError("expected precisely four fail-closed Met candidates")
+    allowed_states = {
+        "READY_NETWORK_ATTEMPT",
+        "ORIGINAL_MUSEUM_JPEG_DOWNLOADED_AND_CHECKSUM_VERIFIED_EPHEMERAL",
+    }
+    allowed_keys = {"Met:724811", "Met:435901", "Met:469892", "Met:1991.153"}
+    chosen = [r for r in queue["records"] if r.get("key") in allowed_keys]
+    if len(chosen) != 4 or {r["key"] for r in chosen} != allowed_keys:
+        raise ValueError("expected precisely four explicitly allowlisted Met candidates")
+    if any(r.get("acquisitionStatus") not in allowed_states for r in chosen):
+        raise ValueError("unexpected acquisition status: must be fresh or previously verified")
     report = {
         "schema": "AO_SOURCE_PHOTO_FETCH_QA_V1",
         "asOfUtc": datetime.now(timezone.utc).isoformat(),
@@ -134,7 +141,23 @@ def main():
                     "status": "RETRIEVAL_FAILED"}
             try:
                 data, resolved = fetch_jpeg(row["firstPartyPhotoUrl"])
-                item.update(analyse(data, row["key"], out))
+                analysed = analyse(data, row["key"], out)
+                if row.get("acquisitionStatus") == "ORIGINAL_MUSEUM_JPEG_DOWNLOADED_AND_CHECKSUM_VERIFIED_EPHEMERAL":
+                    expected = {
+                        "sha256": row.get("sha256"),
+                        "byteLength": row.get("byteLength"),
+                        "pixelWidth": row.get("pixelWidth"),
+                        "pixelHeight": row.get("pixelHeight"),
+                    }
+                    for field, earlier in expected.items():
+                        if earlier is None or analysed.get(field) != earlier:
+                            raise ValueError(
+                                f"museum source no longer matches previously verified {field} for {row['key']}"
+                            )
+                    item["priorSourceDigestReverified"] = True
+                else:
+                    item["priorSourceDigestReverified"] = False
+                item.update(analysed)
                 item["verifiedFinalUrl"] = resolved
                 item["status"] = "RETRIEVED_NEEDS_HUMAN_EDITORIAL_QA"
             except Exception as exc:
@@ -148,7 +171,7 @@ def main():
     if report["failedCount"]:
         print("FAILED to retrieve " + str(report["failedCount"]) + " museum originals; see research artifact report", file=sys.stderr)
         return 1
-    print("Downloaded four originals for research only; artwork approval / 390px crop QA remain pending")
+    print("Four Met originals fetched and verified against prior hashes where available; no publication authority")
     return 0
 
 
