@@ -2,6 +2,7 @@
 // Mass sequence, actual Schola progression, rubrics or ceremonial animations.
 import {resolveLiveHandoffSourceCrosswalk} from "./reader-live-handoff-source-crosswalk.js";
 import {LIVE_HANDOFF_SOURCE_POINTS,projectLiveHandoffPlanPosition} from "./reader-live-handoff-geometry.js";
+import {projectLiveHandoffSanctuary,renderLiveHandoffSanctuarySvg,LIVE_SANCTUARY_CSS} from "./reader-live-handoff-sanctuary.js";
 
 export const LIVE_BAND_PREVIEW_PARAM="aoLiveBandPreview";
 export const LIVE_BAND_STORAGE_KEY="ao-live-band-height-v1";
@@ -93,7 +94,7 @@ const CSS=[
 "@media(prefers-reduced-motion:reduce){.ao-lb-pages{transition:none}}"
 ].join("\n");
 
-export function mountLiveHandoffBand({preview,doc=globalThis.document,
+export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.document,
   win=globalThis,storage=win?.localStorage,enabled=null}={}){
   const requested=enabled===null
     ?new URLSearchParams(win?.location?.search??"").get(LIVE_BAND_PREVIEW_PARAM)==="1"
@@ -106,12 +107,12 @@ export function mountLiveHandoffBand({preview,doc=globalThis.document,
   if(shell.querySelector("[data-ao-live-band]"))
     return freeze({mounted:false,reason:"ALREADY_MOUNTED",dispose(){}});
   const style=doc.createElement("style");
-  style.dataset.aoLiveBandStyle="stage-b";style.textContent=CSS;
+  style.dataset.aoLiveBandStyle="stage-c";style.textContent=CSS+"\n"+LIVE_SANCTUARY_CSS;
   const band=doc.createElement("section");band.className="ao-live-band";
   band.dataset.aoLiveBand="stage-b";band.hidden=true;
   band.setAttribute("aria-label","LIVE visual band preview");
   band.innerHTML='<div class="ao-lb-window" data-lb-swipe><div class="ao-lb-pages">'
-    +'<div class="ao-lb-page" data-active="true" aria-label="Sanctuary">'+approvedStageBPlanSvg()+'</div>'
+    +'<div class="ao-lb-page" data-active="true" aria-label="Sanctuary"><div class="ao-lb-sanctuary-content" data-lb-sanctuary>'+approvedStageBPlanSvg()+'</div></div>'
     +'<div class="ao-lb-page" data-active="false" aria-label="Native card sequence">'
     +'<div class="ao-lb-sequence" data-lb-sequence role="img" aria-label="Card ordinal, not a time estimate"></div></div>'
     +'<div class="ao-lb-page" data-active="false" aria-label="Whole-Mass wheel">'
@@ -126,11 +127,12 @@ export function mountLiveHandoffBand({preview,doc=globalThis.document,
   shell.insertBefore(style,stage);shell.insertBefore(band,stage);
   let preference=null;
   try{preference=normalizeLiveBandPreference(storage?.getItem(LIVE_BAND_STORAGE_KEY));}catch{}
-  let page=0,disposed=false,lastModel=null,lastCrosswalk=null,lastId=null,drag=null,swipe=null,lastTap=0;
+  let page=0,disposed=false,lastModel=null,lastCrosswalk=null,lastId=null,drag=null,swipe=null,lastTap=0,lastSceneSignature=null;
   const pages=[...band.querySelectorAll(".ao-lb-page")];
   const dots=[...band.querySelectorAll("[data-lb-page]")];
   const frame=band.querySelector(".ao-lb-pages");
   const ticks=band.querySelector("[data-lb-sequence]");
+  const sanctuaryContent=band.querySelector("[data-lb-sanctuary]");
   const progress=band.querySelector("[data-lb-progress]");
   const hand=band.querySelector("[data-lb-hand]");
   const circumference=2*Math.PI*72;
@@ -163,6 +165,19 @@ export function mountLiveHandoffBand({preview,doc=globalThis.document,
     shell.dataset.aoLiveBandGate=result.reason??"EXACT_NATIVE_65_CROSSWALK";
     if(!result.ok)return freeze({mounted:true,visible:false,reason:result.reason});
     const ref=result.reference,sequence=Number(ref.nativeSequence);
+    // Exact cue-scoped state is read-only. A new prayer card is NOT a
+    // priest-location observation; unsupported/unobserved stages show only
+    // the static architecture, not an invented celebrant or minister.
+    const scene=projectLiveHandoffSanctuary({
+      gate:result,nativeState:preview.getNativeEventState?.(),prepared,
+    });
+    const sceneSignature=JSON.stringify([scene.status,scene.priest,scene.faithful,
+      scene.server,scene.candles,scene.colour,scene.requiem]);
+    if(sceneSignature!==lastSceneSignature){
+      sanctuaryContent.innerHTML=renderLiveHandoffSanctuarySvg(scene);
+      lastSceneSignature=sceneSignature;
+    }
+    band.dataset.sanctuarySourceStatus=scene.status;
     if(lastId!==ref.nativeCardId){
       if(ticks.childElementCount!==model.cards.length){
         ticks.replaceChildren(...model.cards.map(()=>{const el=doc.createElement("span");
