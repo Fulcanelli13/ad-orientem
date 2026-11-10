@@ -196,7 +196,7 @@ export function renderDirectoryVenueCard(item,language="en"){
   // Holy See arms are not an identity for an individual diocesan church.
   const emblem=photo&&String(item?.community_id??"").toUpperCase()!=="DIOCESAN"
     ?massInstitutionEmblem(item?.community_id):null;
-  const sources=A(item?.source_links).filter(s=>https(s?.url)).length;
+
   const status=String(item?.status??"");
   const affiliation=item?.eyebrow==="Source affiliation not established"
     ?L(language,"Source affiliation not established","Affiliation non établie selon la source"):item?.eyebrow;
@@ -221,7 +221,7 @@ export function renderDirectoryVenueCard(item,language="en"){
     +(riteBooks?'<span class="aoTlmVenueSourceEdition" data-tlm-rite-missal>'+E(riteBooks)+'</span>':'')
     +'<span class="aoTlmVenueSchedule"'+(illustrative?' data-tlm-approximate-source="'+tlmApproximateMapSource(item)+'"':"")+'>'+inlineIcon('schedule')+'<span>'+E(illustrative||schedule)+'</span></span>'
     +(status?'<span class="aoTlmVenueStatus">'+E(tlmVenueStatusLabel(status,language))+'</span>':'')
-    +'<span class="aoTlmVenueFoot"><small>'+E(sources?L(language,"Source-backed listing","Fiche sourcée"):L(language,"Source review pending","Sources en cours d’examen"))+'</small><span>'+E(L(language,"View church","Voir l’église"))+' <span aria-hidden="true">→</span></span></span>'
+    +'<span class="aoTlmVenueFoot"><span>'+E(L(language,"View church","Voir l’église"))+' <span aria-hidden="true">→</span></span></span>'
     +'</span></button>';
 }
 // Full venue galleries consume only already-approved, exact-place photos.
