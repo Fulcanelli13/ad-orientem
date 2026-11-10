@@ -23,7 +23,7 @@ test("Claude's original parametric side-view figures replace generic ellipses",(
  assert.match(priest,/M-14,-31 Q3,-26 17,-31/);
  assert.match(priest,/circle cx="3" cy="-88" r="8.6"/);
  assert.match(priest,/stroke="#d4b16a"/);
- assert.match(priest,/translate\(3 7\) scale\(\.74 \.74\)/);
+ assert.match(priest,/translate\(3 7\) scale\(0\.74 0\.74\)/);
  for(const pose of ["stand","bow","kneel","genuflect","elevate","host","seated","orans"]){
   const svg=claudeHandoffFig("priest",pose,"#3f8a55");
   assert.match(svg,/<g transform=/,pose);
