@@ -1,0 +1,105 @@
+{
+  "schema": "AO_SACRED_ART_EXACT_MUSEUM_SOURCE_BATCH3_V1",
+  "asOf": "2026-11-10",
+  "status": "RESEARCH_ONLY_FIRST_PARTY_IMAGES_UNFETCHED",
+  "purpose": "Acquire exact institutional image files only where public-domain original/source rights allow a research copy; do not assume commercial rights from object metadata",
+  "candidates": [
+    {
+      "workKey": "MSKGent:S-43",
+      "reviewDate": "2026-01-23",
+      "title": "Saint Raymund of Pennafort Venerating the Child",
+      "artist": "Luigi Primo",
+      "sourceObject": "https://www.mskgent.be/en/collection/s-43",
+      "sourceManifest": "https://imagehub.mskgent.be/iiif/3/6344/manifest.json",
+      "sourceMethod": "MSK_GHENT_IIIF_MANIFEST_CANVAS_SERVICE",
+      "rightsEvidence": "https://www.mskgent.be/en/collection/image-rights",
+      "objectRightsMark": "PUBLIC_DOMAIN",
+      "photoReuseDisposition": "ONLINE_OFFERED_RESOLUTION_REUSE_PERMITTED_HIRES_COMMERCIAL_NEEDS_OBJECT_SPECIFIC_ART_IN_FLANDERS_CHECK",
+      "acceptableWidthForResearch": 1170,
+      "maxTargetWidth": 2000,
+      "publicationRightsUnconditional": false,
+      "ownerApproved": false,
+      "releaseReady": false
+    },
+    {
+      "workKey": "MNK:II-a-448",
+      "reviewDate": "2026-10-20",
+      "title": "The Miracle of Saint John Cantius",
+      "artist": "Tadeusz Kuntze-Konicz",
+      "sourceObject": "https://zbiory.mnk.pl/en/search-result/catalog/377412?phrase=jan%2520kanty",
+      "sourceMethod": "MNK_OBJECT_HTML_EXACT_PHOTO_METADATA_ONLY",
+      "rightsEvidence": "https://mnk.pl/en/practical-information/access-to-the-collection/",
+      "objectRightsMark": "PUBLIC_DOMAIN_ON_CATALOGUE",
+      "photoReuseDisposition": "MUSEUM_OFFERS_SELF_DOWNLOAD_OF_EXISTING_DIGITAL_IMAGES_WITH_SCOPE_CONDITIONS_IMAGE_SPECIFIC_FILE_PENDING",
+      "publicationRightsUnconditional": false,
+      "ownerApproved": false,
+      "releaseReady": false
+    },
+    {
+      "workKey": "MNK:II-a-9",
+      "reviewDate": "2026-05-07",
+      "title": "Saint Stanislaus and King Bolesław",
+      "artist": "Juliusz Knoor",
+      "sourceObject": "https://zbiory.mnk.pl/pl/katalog/271512",
+      "sourceMethod": "MNK_OBJECT_HTML_EXACT_PHOTO_METADATA_ONLY",
+      "rightsEvidence": "https://mnk.pl/en/practical-information/access-to-the-collection/",
+      "objectRightsMark": "PUBLIC_DOMAIN_ON_CATALOGUE",
+      "photoReuseDisposition": "MUSEUM_SELF_DOWNLOAD_DESCRIBED_BUT_EXACT_IMAGE_FILE_AND_SCENE_ACTION_UNVERIFIED",
+      "sceneHold": "Alternative institutional titles conflate a curse, murder and martyrdom episode; require visual adjudication",
+      "publicationRightsUnconditional": false,
+      "ownerApproved": false,
+      "releaseReady": false
+    }
+  ],
+  "policyHolds": [
+    {
+      "workKeys": [
+        "Louvre:INV20459",
+        "Louvre:INV20573",
+        "Louvre:INV259",
+        "Louvre:MI888",
+        "Louvre:RF1966.1",
+        "Louvre:RF1983.56"
+      ],
+      "source": "https://collections.louvre.fr/en/page/cgu",
+      "disposition": "MUSEUM_PHOTO_COMMERCIAL_USE_REQUIRES_RIGHTS_REVIEW_OR_PAID_PERMISSION_NO_DIRECT_ACQUISITION",
+      "note": "May research different independently open photo, but not Louvre official photo commercial use."
+    },
+    {
+      "workKeys": [
+        "Cincinnati:1917.58"
+      ],
+      "source": "https://www.cincinnatiartmuseum.org/about/contact-us/photography-licensing-social-media-policies/",
+      "disposition": "BRIDGEMAN_IMAGE_LICENSING_REQUIRES_REQUEST_HOLD"
+    },
+    {
+      "workKeys": [
+        "Timken:1957:002"
+      ],
+      "source": "https://www.timkenmuseum.org/static/media/uploads/Resources%20/rights_reproduction_policy_timken_museum_of_art.pdf",
+      "disposition": "MUSEUM_WRITTEN_PERMISSION_AND_USAGE_FEE_REQUIRED_HOLD"
+    },
+    {
+      "workKeys": [
+        "KHM:GG52"
+      ],
+      "source": "https://www.khm.at/en/artworks/the-raising-of-the-youth-of-nain-388-1",
+      "disposition": "KHM_MUSEUM_IMAGE_REPRODUCTION_RIGHTS_NOT_OPEN_HOLD"
+    }
+  ],
+  "policies": [
+    "User policy no fees, no correspondence, no Prado photograph, no Vercel",
+    "First-party object and photo byte identity must be distinguishable from artwork and object rights",
+    "Do not automatically promote Wikimedia Commons imagery",
+    "No production gallery assets, no owner date approval, no image assignment changes",
+    "If first-party source is inaccessible or ambiguous, record failure without inventing source URLs",
+    "Authenticated / account-required portals not bypassed"
+  ],
+  "counts": {
+    "batchKeys": 3,
+    "independentPolicyHeldInstitutionalWorks": 9,
+    "sourcePhotosAcquired": 0,
+    "newUserApprovals": 0,
+    "newPublicReleases": 0
+  }
+}
