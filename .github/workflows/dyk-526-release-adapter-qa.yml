@@ -1,0 +1,32 @@
+name: DYK 526 research-only adapter contract
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/dyk-526-release-adapter-qa.yml"
+      - "src/home/dyk-526-release-adapter.js"
+      - "tests/dyk-526-release-adapter-contract.mjs"
+      - "src/home/dyk-published-feed.js"
+      - "src/home/did-you-know-glossary.js"
+      - "data/research/did-you-know/release-candidates/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  unpublished-contract:
+    name: No staged facts can enter Home by default
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check adapter and test syntax
+        run: |
+          node --check src/home/dyk-526-release-adapter.js
+          node --check tests/dyk-526-release-adapter-contract.mjs
+      - name: Exercise fail-closed release gates
+        run: node tests/dyk-526-release-adapter-contract.mjs
