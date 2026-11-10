@@ -202,6 +202,16 @@ try{
       const last=await capture(page,c,"native-card-26");
       assert.equal(last.referenceId,"C26");
       assert.equal(last.scholaIndex,before.scholaIndex);
+      // Rotate the actual H7 native reader after it has opened. This tests
+      // portrait/landscape resizing without reconstructing a fake Mass.
+      if(c.width===390){
+        await page.setViewportSize({width:844,height:390});
+        const rotated={...c,width:844,height:390};
+        await page.locator(".ao-lb-dot").first().click();
+        await capture(page,rotated,"native-landscape-sanctuary");
+        await page.locator(".ao-lb-dot").nth(1).click();
+        await capture(page,rotated,"native-landscape-six-lane");
+      }
       assert.equal(c.errors.length,0,"Native browser JS exceptions: "+c.errors.join("; "));
       assert.equal(c.failedResponses.filter(x=>x.url.includes("/src/")).length,0,
         "Native reader missing source modules");
