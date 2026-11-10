@@ -42,7 +42,8 @@ async function metrics(page){
     return {width:innerWidth,height:innerHeight,
       documentW:document.documentElement.scrollWidth,documentH:document.documentElement.scrollHeight,
       shell,band:b,stage,left,right,activePage:[...document.querySelectorAll(".ao-lb-page")].indexOf(active),
-      content:c,visibleBand:!q("[data-ao-live-band]")?.hidden,
+      content:c,contentScrollOverflow:content?Math.max(0,content.scrollHeight-content.clientHeight):null,
+      visibleBand:!q("[data-ao-live-band]")?.hidden,
       sourceStatus:q("[data-ao-live-band]")?.dataset?.stageDSourceStatus,
       reference:q("[data-ao-live-band]")?.dataset?.referenceId,
       railCount:document.querySelectorAll(".ao-reader-stage .ao-rail").length,
@@ -75,6 +76,8 @@ function bounds(c,m,scenario){
       scenario+" "+key+" outside y viewport "+JSON.stringify(rect));
   }
   assert.ok(m.stage.h>=95,scenario+" no room for native Mass text");
+  assert.ok(m.contentScrollOverflow<=2,
+    scenario+" visual content clipped by "+m.contentScrollOverflow+"px");
 }
 let browser;
 try{
