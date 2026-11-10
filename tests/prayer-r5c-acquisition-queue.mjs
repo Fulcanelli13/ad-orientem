@@ -9,6 +9,12 @@ assert.equal(queue.counts.pendingSlots,138);
 assert.equal(queue.counts.pinnedSourceURLGroups,60);
 assert.equal(queue.counts.identitySourceRecoveryGroups,13);
 assert.equal(queue.groups.length,73);
+// The November 3 acquisition manifest is a historical 138-slot snapshot.
+// Four of its original entries now reuse photographs ALREADY released elsewhere.
+const reusedReleased=new Set([
+ "HERO-22","STG-programme.first_saturday-01",
+ "COV-pray.adoration","COV-pray.forty_hours"
+]);
 const ids=[],keys=new Set();
 let pinned=0,recovery=0,pinnedSlots=0,recoverySlots=0;
 for(const g of queue.groups){
@@ -27,7 +33,10 @@ for(const g of queue.groups){
  for(const id of g.slots){
   const row=PRAYER_ART_EDITORIAL_SLOTS_V1[id];
   assert.ok(row,"Unknown editorial slot "+id);
-  assert.equal(resolvePrayerEditorialArtwork(id).state,"APPROVED_EXACT_PHOTO_PENDING",id+" unexpectedly cleared or held");
+  const resolution=resolvePrayerEditorialArtwork(id);
+  assert.equal(resolution.state,reusedReleased.has(id)?"PUBLISHED_EXACT_PHOTO":"APPROVED_EXACT_PHOTO_PENDING",
+    id+" must retain its exact artwork and previously established release gate");
+  if(reusedReleased.has(id))assert.ok(resolution.photo&&resolution.artId,id);
   assert.equal(row.selected.artist,g.artist,id);
   assert.equal(row.selected.title,g.title,id);
   assert.equal(row.selected.sourcePage||null,g.sourcePage,id);
@@ -42,5 +51,7 @@ assert.equal(ids.length,138);
 assert.equal(new Set(ids).size,138,"No slot may be acquired twice");
 const allPending=Object.keys(PRAYER_ART_EDITORIAL_SLOTS_V1).filter(id=>
  resolvePrayerEditorialArtwork(id).state==="APPROVED_EXACT_PHOTO_PENDING");
-assert.deepEqual(ids.sort(),allPending.sort(),"All exact-photo pending slots must be accounted for");
-console.log("PASS: 138 eligible but photo-pending Prayer slots, grouped by exact work/source into 60 pinned URL and 13 identity-recovery batches. No rights, hold or Rosary publication inferred.");
+assert.equal(allPending.length,134,"Four release reuses should reduce the active queue by exactly four");
+assert.deepEqual(ids.filter(id=>!reusedReleased.has(id)).sort(),allPending.sort(),
+ "All remaining exact-photo pending slots must be accounted for");
+console.log("PASS: historical 138-slot Prayer source queue, four previously released exact-work reuses, 134 still photo-pending; no hold or Rosary override");
