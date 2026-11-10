@@ -23,27 +23,27 @@
   ],
   "counts": {
     "baselineUnmatchedCalendarTargets": 170,
-    "targetsWithNewResearchLeads": 149,
-    "targetsStillWithoutNamedLeads": 21,
-    "proposedRelationshipEdges": 178,
+    "targetsWithNewResearchLeads": 159,
+    "targetsStillWithoutNamedLeads": 11,
+    "proposedRelationshipEdges": 188,
     "existing989Edges": 25,
-    "newInstitutionalObjectEdges": 143,
-    "secondaryOrCommonsOnlyEdges": 10,
+    "newInstitutionalObjectEdges": 152,
+    "secondaryOrCommonsOnlyEdges": 11,
     "byClass": {
       "II": {
         "unmatchedBaseline": 29,
-        "withResearchLeads": 25,
-        "stillWithoutLeads": 4
+        "withResearchLeads": 29,
+        "stillWithoutLeads": 0
       },
       "III": {
         "unmatchedBaseline": 101,
-        "withResearchLeads": 89,
-        "stillWithoutLeads": 12
+        "withResearchLeads": 90,
+        "stillWithoutLeads": 11
       },
       "IV": {
         "unmatchedBaseline": 40,
-        "withResearchLeads": 35,
-        "stillWithoutLeads": 5
+        "withResearchLeads": 40,
+        "stillWithoutLeads": 0
       }
     },
     "newAuthorizedAssignments": 0
@@ -1117,9 +1117,26 @@
       "observedPrincipalId": "tempora:Pasc3-0r:2:w",
       "gospelReferenceFromMatchingIndex": "John 16:16–22",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Brooklyn:00.159.225",
+          "title": "The Last Sermon of Our Lord (Dernier Sermon de Notre-Seigneur)",
+          "artist": "James Tissot",
+          "sourceUrl": "https://opencollection.brooklynmuseum.org/objects/4552",
+          "relation": "WHOLE_FAREWELL_DISCOURSE_NOT_VERSE_SPECIFIC",
+          "scriptureOrIdentityAnchor": "John 16:16–22 — farewell: a little while, sorrow to joy",
+          "medium": "opaque watercolor over graphite on gray wove paper, 1886–1894",
+          "remark": "Brooklyn Museum original 00.159.225. Christ teaching apostles in Upper Room during Farewell Discourse (John 13–16). The composition covers the episode CONTEXT but does NOT illustrate any exact John 16 saying or Paraclete event. One physical object reused by multiple liturgical dates, not one painting for each. Museum object site blocks automated viewing; accession independently corroborated by publication/Commons provenance. Exact photo rights/pixel QA and date approval not certified.",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EPISODE_SCOPED_NOT_VERSE_EXACT"
+        }
+      ]
     },
     {
       "date": "2026-04-27",
@@ -1256,9 +1273,26 @@
       "observedPrincipalId": "tempora:Pasc4-0:2:w",
       "gospelReferenceFromMatchingIndex": "John 16:5–14",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Brooklyn:00.159.225",
+          "title": "The Last Sermon of Our Lord (Dernier Sermon de Notre-Seigneur)",
+          "artist": "James Tissot",
+          "sourceUrl": "https://opencollection.brooklynmuseum.org/objects/4552",
+          "relation": "WHOLE_FAREWELL_DISCOURSE_NOT_VERSE_SPECIFIC",
+          "scriptureOrIdentityAnchor": "John 16:5–14 — farewell: Paraclete promise",
+          "medium": "opaque watercolor over graphite on gray wove paper, 1886–1894",
+          "remark": "Brooklyn Museum original 00.159.225. Christ teaching apostles in Upper Room during Farewell Discourse (John 13–16). The composition covers the episode CONTEXT but does NOT illustrate any exact John 16 saying or Paraclete event. One physical object reused by multiple liturgical dates, not one painting for each. Museum object site blocks automated viewing; accession independently corroborated by publication/Commons provenance. Exact photo rights/pixel QA and date approval not certified.",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EPISODE_SCOPED_NOT_VERSE_EXACT"
+        }
+      ]
     },
     {
       "date": "2026-05-04",
@@ -1338,9 +1372,26 @@
       "observedPrincipalId": ":feria:4:w",
       "gospelReferenceFromMatchingIndex": "John 16:5–14",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Brooklyn:00.159.225",
+          "title": "The Last Sermon of Our Lord (Dernier Sermon de Notre-Seigneur)",
+          "artist": "James Tissot",
+          "sourceUrl": "https://opencollection.brooklynmuseum.org/objects/4552",
+          "relation": "WHOLE_FAREWELL_DISCOURSE_NOT_VERSE_SPECIFIC",
+          "scriptureOrIdentityAnchor": "John 16:5–14 — inherited IV-class Proper, farewell context",
+          "medium": "opaque watercolor over graphite on gray wove paper, 1886–1894",
+          "remark": "Brooklyn Museum original 00.159.225. Christ teaching apostles in Upper Room during Farewell Discourse (John 13–16). The composition covers the episode CONTEXT but does NOT illustrate any exact John 16 saying or Paraclete event. One physical object reused by multiple liturgical dates, not one painting for each. Museum object site blocks automated viewing; accession independently corroborated by publication/Commons provenance. Exact photo rights/pixel QA and date approval not certified.",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EPISODE_SCOPED_NOT_VERSE_EXACT"
+        }
+      ]
     },
     {
       "date": "2026-05-07",
@@ -1377,9 +1428,26 @@
       "observedPrincipalId": ":feria:4:w",
       "gospelReferenceFromMatchingIndex": "John 16:5–14",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Brooklyn:00.159.225",
+          "title": "The Last Sermon of Our Lord (Dernier Sermon de Notre-Seigneur)",
+          "artist": "James Tissot",
+          "sourceUrl": "https://opencollection.brooklynmuseum.org/objects/4552",
+          "relation": "WHOLE_FAREWELL_DISCOURSE_NOT_VERSE_SPECIFIC",
+          "scriptureOrIdentityAnchor": "John 16:5–14 — inherited IV-class Proper, farewell context",
+          "medium": "opaque watercolor over graphite on gray wove paper, 1886–1894",
+          "remark": "Brooklyn Museum original 00.159.225. Christ teaching apostles in Upper Room during Farewell Discourse (John 13–16). The composition covers the episode CONTEXT but does NOT illustrate any exact John 16 saying or Paraclete event. One physical object reused by multiple liturgical dates, not one painting for each. Museum object site blocks automated viewing; accession independently corroborated by publication/Commons provenance. Exact photo rights/pixel QA and date approval not certified.",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EPISODE_SCOPED_NOT_VERSE_EXACT"
+        }
+      ]
     },
     {
       "date": "2026-05-09",
@@ -1415,9 +1483,26 @@
       "observedPrincipalId": "tempora:Pasc5-0:2:w",
       "gospelReferenceFromMatchingIndex": "John 16:23–30",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Brooklyn:00.159.225",
+          "title": "The Last Sermon of Our Lord (Dernier Sermon de Notre-Seigneur)",
+          "artist": "James Tissot",
+          "sourceUrl": "https://opencollection.brooklynmuseum.org/objects/4552",
+          "relation": "WHOLE_FAREWELL_DISCOURSE_NOT_VERSE_SPECIFIC",
+          "scriptureOrIdentityAnchor": "John 16:23–30 — farewell: pray to Father in Jesus' name",
+          "medium": "opaque watercolor over graphite on gray wove paper, 1886–1894",
+          "remark": "Brooklyn Museum original 00.159.225. Christ teaching apostles in Upper Room during Farewell Discourse (John 13–16). The composition covers the episode CONTEXT but does NOT illustrate any exact John 16 saying or Paraclete event. One physical object reused by multiple liturgical dates, not one painting for each. Museum object site blocks automated viewing; accession independently corroborated by publication/Commons provenance. Exact photo rights/pixel QA and date approval not certified.",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EPISODE_SCOPED_NOT_VERSE_EXACT"
+        }
+      ]
     },
     {
       "date": "2026-05-12",
@@ -1523,9 +1608,26 @@
       "observedPrincipalId": "tempora:Pasc6-0:2:w",
       "gospelReferenceFromMatchingIndex": "John 15:26–27; 16:1–4",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Brooklyn:00.159.225",
+          "title": "The Last Sermon of Our Lord (Dernier Sermon de Notre-Seigneur)",
+          "artist": "James Tissot",
+          "sourceUrl": "https://opencollection.brooklynmuseum.org/objects/4552",
+          "relation": "WHOLE_FAREWELL_DISCOURSE_NOT_VERSE_SPECIFIC",
+          "scriptureOrIdentityAnchor": "John 15:26–27; 16:1–4 — farewell: testimony and persecution",
+          "medium": "opaque watercolor over graphite on gray wove paper, 1886–1894",
+          "remark": "Brooklyn Museum original 00.159.225. Christ teaching apostles in Upper Room during Farewell Discourse (John 13–16). The composition covers the episode CONTEXT but does NOT illustrate any exact John 16 saying or Paraclete event. One physical object reused by multiple liturgical dates, not one painting for each. Museum object site blocks automated viewing; accession independently corroborated by publication/Commons provenance. Exact photo rights/pixel QA and date approval not certified.",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EPISODE_SCOPED_NOT_VERSE_EXACT"
+        }
+      ]
     },
     {
       "date": "2026-05-18",
@@ -1632,9 +1734,26 @@
       "observedPrincipalId": ":feria:4:w",
       "gospelReferenceFromMatchingIndex": "John 15:26–27; 16:1–4",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Brooklyn:00.159.225",
+          "title": "The Last Sermon of Our Lord (Dernier Sermon de Notre-Seigneur)",
+          "artist": "James Tissot",
+          "sourceUrl": "https://opencollection.brooklynmuseum.org/objects/4552",
+          "relation": "WHOLE_FAREWELL_DISCOURSE_NOT_VERSE_SPECIFIC",
+          "scriptureOrIdentityAnchor": "John 15:26–27; 16:1–4 — inherited IV-class Proper, farewell context",
+          "medium": "opaque watercolor over graphite on gray wove paper, 1886–1894",
+          "remark": "Brooklyn Museum original 00.159.225. Christ teaching apostles in Upper Room during Farewell Discourse (John 13–16). The composition covers the episode CONTEXT but does NOT illustrate any exact John 16 saying or Paraclete event. One physical object reused by multiple liturgical dates, not one painting for each. Museum object site blocks automated viewing; accession independently corroborated by publication/Commons provenance. Exact photo rights/pixel QA and date approval not certified.",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EPISODE_SCOPED_NOT_VERSE_EXACT"
+        }
+      ]
     },
     {
       "date": "2026-05-22",
@@ -1643,9 +1762,26 @@
       "observedPrincipalId": ":feria:4:w",
       "gospelReferenceFromMatchingIndex": "John 15:26–27; 16:1–4",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Brooklyn:00.159.225",
+          "title": "The Last Sermon of Our Lord (Dernier Sermon de Notre-Seigneur)",
+          "artist": "James Tissot",
+          "sourceUrl": "https://opencollection.brooklynmuseum.org/objects/4552",
+          "relation": "WHOLE_FAREWELL_DISCOURSE_NOT_VERSE_SPECIFIC",
+          "scriptureOrIdentityAnchor": "John 15:26–27; 16:1–4 — inherited IV-class Proper, farewell context",
+          "medium": "opaque watercolor over graphite on gray wove paper, 1886–1894",
+          "remark": "Brooklyn Museum original 00.159.225. Christ teaching apostles in Upper Room during Farewell Discourse (John 13–16). The composition covers the episode CONTEXT but does NOT illustrate any exact John 16 saying or Paraclete event. One physical object reused by multiple liturgical dates, not one painting for each. Museum object site blocks automated viewing; accession independently corroborated by publication/Commons provenance. Exact photo rights/pixel QA and date approval not certified.",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "EPISODE_SCOPED_NOT_VERSE_EXACT"
+        }
+      ]
     },
     {
       "date": "2026-06-01",
@@ -4499,9 +4635,31 @@
       "observedPrincipalId": "sancti:11-14:3:r",
       "gospelReferenceFromMatchingIndex": "John 10:11–16",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "SECONDARY_OR_COMMONS_RESEARCH_ONLY",
+          "key": "MNW:catalog-510968-Simmler",
+          "title": "Martyrdom of Saint Josaphat Kuntsevych",
+          "artist": "Józef Simmler",
+          "sourceUrl": "https://cyfrowe.mnw.art.pl/en/catalog/510968",
+          "relation": "SAINT_PERSON_EXACT_OFFICIAL_OBJECT_NOT_FETCHED",
+          "scriptureOrIdentityAnchor": "Josaphat Kuntsevych, Archbishop of Polotsk, 1623 martyr; NOT Barlaam-and-Josaphat legendary prince",
+          "medium": "oil on canvas, 1861",
+          "remark": "National Museum Warsaw object/catalogue 510968 linked by Wikidata Q24284083; Polish art historian Culture.pl confirms Simmler's 1861 Martyrdom of Josaphat Kuntsevych. Museum catalogue URL is inaccessible to research browser, so exact accession, current owner/photo and restoration remain uncertified. Commons imported file is NOT promoted to curated collection. Do not confuse this with San Giosefat nel deserto (Barlaam and Josaphat).",
+          "corroboratingSources": [
+            "https://culture.pl/pl/tworca/jozef-simmler",
+            "https://www.wikidata.org/wiki/Q24284083"
+          ],
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "sourcePolicy": "DO_NOT_CURATE_WITHOUT_PRIMARY_ORIGINAL_AND_PHOTO_EVIDENCE",
+          "researchTier": "IDENTIFIED_WORK_SECONDARY_CONCORDANCE_INSTITUTION_BLOCKED"
+        }
+      ]
     },
     {
       "date": "2026-11-15",
@@ -4693,9 +4851,26 @@
       "observedPrincipalId": ":feria:4:w",
       "gospelReferenceFromMatchingIndex": "Matthew 24:15–35",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Brooklyn:00.159.213",
+          "title": "The Prophecy of the Destruction of the Temple",
+          "artist": "James Tissot",
+          "sourceUrl": "https://opencollection.brooklynmuseum.org/objects/4551",
+          "relation": "SAME_OLIVET_DISCOURSE_EPISODE_NOT_EXACT_SUBPASSAGE",
+          "scriptureOrIdentityAnchor": "Matthew 24:15–35 — events predicted during Olivet discourse",
+          "medium": "opaque watercolor over graphite on gray wove paper, 1886–1894",
+          "remark": "Brooklyn Museum 00.159.213 depicts Jesus forecasting Jerusalem Temple destruction with four apostles. The scene is Matthews Olivet discourse as a whole, but the artwork does NOT specifically illustrate the abomination of desolation in vv.15–35. Contextual same-event match, not scene of fulfilled prophecy. Class IV inherited Gospel needs independent runtime crosswalk.",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "researchTier": "SAME_DISCOURSE_EPISODE_NOT_VERSE_EXACT"
+        }
+      ]
     },
     {
       "date": "2026-12-01",
