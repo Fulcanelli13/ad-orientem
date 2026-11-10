@@ -38,3 +38,5 @@ jobs:
           node-version: '22'
       - name: Check master can be regenerated exactly from canonical owners
         run: node tests/sacred-atlas-editorial-master-530-contract.mjs
+      - name: Wave-2 original bilingual histories (research only)
+        run: node tests/sacred-atlas-wave2-guides57-76.mjs
