@@ -17,7 +17,8 @@
     "dedup_adjudication": "data/research/did-you-know/dyk-customs-first-400-dedup-adjudication-20261110.v1.json",
     "original_bank": "data/research/did-you-know/dyk-customs-first-400-bilingual-review-20261110.v1.json",
     "previous_selection": "data/research/did-you-know/dyk-customs-370-provisional-new-selection-20261110.v1.json",
-    "semantic_holds": "data/research/did-you-know/dyk-customs-first-400-semantic-holds-20261110.v1.json"
+    "semantic_holds": "data/research/did-you-know/dyk-customs-first-400-semantic-holds-20261110.v1.json",
+    "source_link_spotcheck": "data/research/did-you-know/dyk-customs-source-link-spotcheck-20261110.v1.json"
   },
   "counts": {
     "rewritten_manuscript": 400,
@@ -521,6 +522,18 @@
       ],
       "source_links": [
         {
+          "source_id": "ROMAN_RITUAL_STJOHN_WINE_CATHOLICCULTURE",
+          "url": "https://www.catholicculture.org/culture/liturgicalyear/prayers/view.cfm?id=1380",
+          "title": "Roman Ritual: Blessing of Wine on the Feast of Saint John"
+        }
+      ],
+      "editorial_issue": "CONTEXT_FOLKLORE_BOUNDARY",
+      "original_record_id": "DYK-CUSTOMS-CANON-BLSS-003",
+      "source_wave": 1,
+      "review_status": "AWAITING_CLAIM_TO_ORIGINAL_SOURCE_AND_NATIVE_EN_FR_SIGNOFF",
+      "publication_authorized": false,
+      "superseded_source_links": [
+        {
           "source_id": "RIT-STJOHN-WINE-1962-TRANSCRIPTION",
           "url": "https://materdeiparish.com/2016/12/blessing-wine-feast-st-john-tuesday-december-27th/",
           "title": "Traditional Blessing of Wine on St John the Evangelist's Feast"
@@ -531,11 +544,10 @@
           "title": "St John the Evangelist — Patron Saint (traditional wine blessing)"
         }
       ],
-      "editorial_issue": "CONTEXT_FOLKLORE_BOUNDARY",
-      "original_record_id": "DYK-CUSTOMS-CANON-BLSS-003",
-      "source_wave": 1,
-      "review_status": "AWAITING_CLAIM_TO_ORIGINAL_SOURCE_AND_NATIVE_EN_FR_SIGNOFF",
-      "publication_authorized": false
+      "source_verification": {
+        "state": "REPLACEMENT_URL_DIRECT_CLAIM_SUPPORT_CHECKED_2026_11_10",
+        "audit": "data/research/did-you-know/dyk-customs-source-link-spotcheck-20261110.v1.json"
+      }
     },
     {
       "id": "DYK-CUSTOMS-CANON-BLSS-004",
