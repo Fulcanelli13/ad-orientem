@@ -58,6 +58,7 @@ import {internalPrayerView,supportedDirectPrayerRoute} from "./internal-route-ow
 import {renderLittleCrownB30} from "./little-crown-presentation-b30.js";
 import {PRAYER_SUBJECTS_V1,prayerSubjectsForLibrary,prayerSubjectCounts} from "./prayer-subject-index.v1.js";
 import {guidedPrayerLinksForSubject} from "./prayer-subject-guided-links.v1.js";
+import {HOLY_CLOAK_SOURCE_ACCESS_V1,holyCloakSourceMatches} from "./holy-cloak-source-access.v1.js";
 import {PRAYER_SUPPLEMENTAL_LIVE_WORK_LINKS_V1,prayerSupplementalLiveWork,prayerSupplementalLiveWorksForSubject} from "./prayer-supplemental-live-works.v1.js";
 import {prayerSevenSourceWork,prayerSevenSourceWorksForSubject} from "./prayer-seven-source-work-links.v1.js";
 import {redBookletCommunionLibraryLink,redBookletCommunionLibraryLinksForSubject} from "./red-booklet-communion-library-links.v1.js";
@@ -2776,6 +2777,19 @@ function renderLibrary(){
    '<small>'+esc(L('MASS SEQUENCE · SOURCE READER','SÉQUENCE DE MESSE · SOURCE'))+'</small>'+
    '<b>'+esc(isFr()?work.titleFr:work.title)+'</b><span>LA · EN · FR</span></button>').join('')+
    '</div></section>');
+ // Source-only Holy Cloak access: complete English Catholic parish reading.
+ // Keep 1882 Italian, 5-section and 6-section witnesses distinct; no imported text.
+ const holyCloak=holyCloakSourceMatches({search:q,subject:LIB.subject,category:LIB.cat})?HOLY_CLOAK_SOURCE_ACCESS_V1:null;
+ const holyCloakSection=!holyCloak?'':(
+  '<section class="aoP435930LibraryRelated" data-ao-holy-cloak-source-only>'+
+  '<h3>'+esc(L('Holy Cloak of St Joseph · 30 days','Sacré Manteau de saint Joseph · trente jours'))+'</h3>'+
+  '<p>'+esc(L('Complete Catholic parish prayer in English, opened at the source. The same complete devotion is prayed on thirty days. This is not yet an offline in-app reader, and no French translation or exact 1882 edition is certified.',
+   'Texte complet en anglais sur le site d’une paroisse catholique. La même dévotion complète se récite pendant trente jours. Ce n’est pas encore un parcours hors ligne dans l’application ; ni la traduction française ni l’édition exacte de 1882 ne sont certifiées.'))+'</p>'+
+  '<a class="aoP435930ModuleCard" data-ao-holy-cloak-source-link href="'+esc(holyCloak.primary.url)+'" target="_blank" rel="noopener noreferrer">'+
+   '<small>'+esc(L('EXTERNAL COMPLETE PRAYER · ENGLISH','PRIÈRE COMPLÈTE EXTERNE · ANGLAIS'))+'</small>'+
+   '<b>'+esc(L('Read the Holy Cloak','Lire le Sacré Manteau'))+'</b>'+
+   '<span>'+esc(L('Source: Catholic parish · five-section English form','Source : paroisse catholique · version anglaise en cinq sections'))+'</span></a>'+
+  '</section>');
  const guidedLinks=LIB.cat==='all'?guidedPrayerLinksForSubject(LIB.subject,q):[];
  const guidedSection=LIB.cat!=='all'||!guidedLinks.length?
   '':('<section class="aoP435930LibraryRelated" data-ao-prayer-subject-guided="'+esc(LIB.subject)+'">'+
@@ -2794,7 +2808,7 @@ function renderLibrary(){
   PRAYER_SUBJECTS_V1.map(subject=>'<button type="button" data-p435930-lib-subject="'+subject.id+'" aria-pressed="'+String(LIB.subject===subject.id)+'">'+
     esc(isFr()?subject.fr:subject.en)+' <small>'+(subjectCounts.counts[subject.id]+prayerSupplementalLiveWorksForSubject(subject.id).length +prayerSevenSourceWorksForSubject(subject.id).length+redBookletCommunionLibraryLinksForSubject(subject.id).length+redBookletSuscipeLibraryLinksForSubject(subject.id).length+redBookletPrivateHistoricalWorksForSubject(subject.id).length+MASS_SEQUENCE_PRAYER_WORKS.filter(x=>x.subject===subject.id).length+(subject.id==='V'?1:0))+'</small></button>').join('')+
   '</div><p class="aoP435930SourceNote">'+esc(L('Only accessible canonical and source-owned reader texts are included. Unverified research works are not shown as readable prayers.','Seuls les textes canoniques et les prières déjà accessibles dans leurs parcours d’origine sont inclus. Les œuvres de recherche non vérifiées ne sont pas présentées comme disponibles.'))+'</p></details>';
- return `${head(L('Prayer Library','Livre de prières'),L('Prayers and guided devotions','Prières et dévotions guidées'))}<main class="aoP435930Body">${libraryOverviewGuide()}<label class="aoP435930Search"><span>${assetIcon('ao-ui-search')}</span><input type="search" data-p435930-lib-search value="${esc(LIB.q)}" placeholder="${esc(L('Search prayers','Rechercher une prière'))}"></label><div class="aoP435930Chips">${cats.map(([id,n])=>`<button type="button" class="${id===LIB.cat?'active':''}" data-p435930-lib-cat="${esc(id)}">${esc(n)}</button>`).join('')}</div>${subjectBrowse}<div class="aoP435930LibraryList" data-ao-prayer-subject-results="${esc(LIB.subject)}">${LIB.cat==="essentials"&&!q?claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2,prayers:DATA.prayers,locale:lang(),esc,title:L("Essential Prayers","Prières essentielles"),artFor:releasedPrayerCardArtUrl}):(rows.length||!(historicalWorks.length+sourceDeepWorks.length+privateCommunionWorks.length+privateHistoricalWorks.length+(stabatSeptember?1:0)+massSequences.length)?renderLibraryEntryRows(rows,q):'')}</div>${communionSection}${privateHistoricalSection}${historicalSection}${stabatLibrarySection}${massSequenceSection}${guidedSection}</main>`;
+ return `${head(L('Prayer Library','Livre de prières'),L('Prayers and guided devotions','Prières et dévotions guidées'))}<main class="aoP435930Body">${libraryOverviewGuide()}<label class="aoP435930Search"><span>${assetIcon('ao-ui-search')}</span><input type="search" data-p435930-lib-search value="${esc(LIB.q)}" placeholder="${esc(L('Search prayers','Rechercher une prière'))}"></label><div class="aoP435930Chips">${cats.map(([id,n])=>`<button type="button" class="${id===LIB.cat?'active':''}" data-p435930-lib-cat="${esc(id)}">${esc(n)}</button>`).join('')}</div>${subjectBrowse}<div class="aoP435930LibraryList" data-ao-prayer-subject-results="${esc(LIB.subject)}">${LIB.cat==="essentials"&&!q?claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2,prayers:DATA.prayers,locale:lang(),esc,title:L("Essential Prayers","Prières essentielles"),artFor:releasedPrayerCardArtUrl}):(rows.length||!(historicalWorks.length+sourceDeepWorks.length+privateCommunionWorks.length+privateHistoricalWorks.length+(stabatSeptember?1:0)+massSequences.length+(holyCloak?1:0))?renderLibraryEntryRows(rows,q):'')}</div>${communionSection}${privateHistoricalSection}${historicalSection}${stabatLibrarySection}${massSequenceSection}${holyCloakSection}${guidedSection}</main>`;
 }
 function monthIndex(key){const d=dateObj(key);return d?d.getFullYear()*12+d.getMonth():null}
 function consecutive(records,needed){const done=records.filter(x=>x.complete).sort((a,b)=>a.date.localeCompare(b.date));if(!done.length)return 0;let c=1;for(let i=done.length-1;i>0;i--){const a=monthIndex(done[i].date),b=monthIndex(done[i-1].date);if(a-b===1)c++;else break}return Math.min(c,needed)}
