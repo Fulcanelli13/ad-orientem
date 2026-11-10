@@ -205,8 +205,8 @@ export function renderDirectoryVenueCard(item,language="en"){
   const schedule=L(language,provisional?"Mass times not independently verified":A(item?.sections).length?"Mass details available · check official source":"Mass times not verified",
     provisional?"Horaires non vérifiés indépendamment":A(item?.sections).length?"Horaires disponibles · vérifier à la source":"Horaires non vérifiés");
   const riteBooks=item?.celebration_evidence
-    ?L(language,"Roman rite · 1962 Missal · selected Masses",
-       "Rite romain · Missel de 1962 · messes désignées")
+    ?L(language,"Roman rite · 1962 Missal · specific Masses only",
+       "Rite romain · Missel de 1962 · messes désignées uniquement")
     :ministry?L(language,"Roman rite · 1962 Missal · "+ministry.institute_id+" tradition",
        "Rite romain · Missel de 1962 · tradition "+ministry.institute_id):null;
   const illustrative=tlmApproximateMapLabel(item,language);
