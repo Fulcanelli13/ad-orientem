@@ -14,11 +14,11 @@ const EXPECTED=Object.freeze({
 });
 const T=v=>String(v??"").trim();
 const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
-const APPROVED_COUNT=1389;
-const APPROVED_SITES=1306;
+const APPROVED_COUNT=1404;
+const APPROVED_SITES=1321;
 const SITE_COUNT=2580;
 const HELD_COUNT=3;
-const FROZEN_ROWS_HASH="fnv1a32:8f919f52";
+const FROZEN_ROWS_HASH="fnv1a32:990ee708";
 const recordFingerprint=rows=>{
  let h=2166136261;
  for(const ch of JSON.stringify(rows)){h^=ch.charCodeAt(0);h=Math.imul(h,16777619)}
@@ -108,7 +108,7 @@ export function attachInstitutionalMinistryLiturgy(items,manifest){
     scope:"SOURCE_MINISTRY",ministries:Object.freeze(ministries)
   })}));
  }
- if(attached.size!==APPROVED_SITES)throw Error("Missing 1306 exact CL2 physical site relationships");
+ if(attached.size!==APPROVED_SITES)throw Error("Missing 1321 exact CL2 physical site relationships");
  return Object.freeze(result);
 }
 // A record describes an institute's usual liturgical books, NOT the current
