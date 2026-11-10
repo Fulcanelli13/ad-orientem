@@ -32,14 +32,17 @@ try{
  };
  await open("pray.litany_saints");
  assert.equal(await page.locator("[data-p435930-lit-use]").count(),4);
- await page.locator("[data-p435930-lit-use='major']").tap();
+ const editionChooser=page.locator(".aoPrivateLitanyEditionChooser");
+ if(await editionChooser.count() && !(await editionChooser.evaluate(el=>el.open)))
+  await editionChooser.locator(":scope > summary").tap();
+ await page.locator("#aoPray435930.open [data-p435930-lit-use='major']:visible").first().tap();
  assert.equal(await page.locator("[data-ao-litany-use='major']").count(),1);
  assert.equal(await page.locator("[data-ao-icrsp-major-sequence] li").count(),5);
  assert.equal(await page.locator("[data-ao-litany-use='major'] a[href*='a0087_nouveau']").count(),1);
  assert.match(await page.locator("[data-ao-litany-use='major']").innerText(),/not yet locally|attend une collation/i);
- await page.locator("[data-p435930-lit-use='vigil']").tap();
+ await page.locator("#aoPray435930.open [data-p435930-lit-use='vigil']:visible").first().tap();
  assert.equal(await page.locator("[data-ao-litany-use='vigil']").count(),1);
- await page.locator("[data-p435930-lit-use='private']").tap();
+ await page.locator("#aoPray435930.open [data-p435930-lit-use='private']:visible").first().tap();
  assert.equal(await page.locator("[data-p435930-lit-use='private'][aria-pressed='true']").count(),1);
 
  await open("pray.penitential_psalms");

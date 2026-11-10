@@ -43,8 +43,10 @@ try{
    paragraphs:body?.querySelectorAll(".aoDevoParagraph").length||0,
    lit:body?.querySelectorAll(".aoDevoParagraph[data-ao-devo-active='true']").length||0,
    overflow:body?getComputedStyle(body).overflowY:null,
-   nav:reader?.querySelector(".aoP435930GuideNav")?
-    getComputedStyle(reader.querySelector(".aoP435930GuideNav")).display:null};
+   // The private Litany keeps its historical edition chooser and final exit.
+   // Neither is a duplicate Previous/Next navigation control.
+   nav:reader?.querySelector(".aoP435930GuideNav:not(.aoBatch03LitanyUses):not(.aoP435930FinalExit)")?
+    getComputedStyle(reader.querySelector(".aoP435930GuideNav:not(.aoBatch03LitanyUses):not(.aoP435930FinalExit)")).display:null};
  });
  const swipe=async(dx,dy)=>page.locator(rootSel+" .aoDevoCardScroll").evaluate((node,{dx,dy})=>{
   const t=(x,y)=>new Touch({identifier:16,target:node,clientX:x,clientY:y});
@@ -63,7 +65,8 @@ try{
  await swipe(-170,3);assert.equal((await snapshot()).index,1,"Psalm swipe must advance one chapter");
  await page.locator(timeline+" [data-ao-devo-chapter='6']").tap();
  s=await snapshot();assert.equal(s.index,6);assert.equal(s.final,"true");
- assert.ok(s.nav&&s.nav!=="none","Original final Litany handoff is missing");
+ assert.equal(await page.locator(rootSel+" [data-p435930-pen-litany]").count(),1,
+  "Original final Litany handoff is missing");
  assert.equal(await page.locator(rootSel+" [data-p435930-pen-litany]").count(),1);
  await page.locator(rootSel+" [data-p435930-pen-litany]").tap();
  await page.waitForFunction(()=>document.querySelector("#aoPray435930.open .aoP435930Mount")?.dataset.aoPrayView==="litany");
@@ -143,7 +146,8 @@ try{
   "Benediction public-rite handoff missing");
  await page.locator(timeline+" [data-ao-devo-chapter='5']").tap();
  assert.equal((await snapshot()).final,"true");
- assert.ok((await snapshot()).nav&&((await snapshot()).nav!=="none"),"Forty Hours final manual return missing");
+ assert.equal(await page.locator(rootSel+" [data-p435930-forty-done]").count(),1,
+  "Forty Hours final manual return missing");
  await page.setViewportSize({width:320,height:720});
  assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth)<=1,
   "Small phone prayer reader overflows");
