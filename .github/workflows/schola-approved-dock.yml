@@ -7,6 +7,7 @@ on:
       - "src/mass/reader-inline-chant-approved.js"
       - "src/mass/reader-inline-chant-selector.js"
       - "tests/schola-dock-approved-score.mjs"
+      - "tests/schola-dock-approved-phone.mjs"
       - ".github/workflows/schola-approved-dock.yml"
   workflow_dispatch: {}
 permissions:
@@ -27,3 +28,9 @@ jobs:
           node --check src/mass/reader-schola-dock-approved.js
       - name: Review-gated Schola score identity and fallback
         run: node tests/schola-dock-approved-score.mjs
+      - name: Install local browser for 320px and 390px layout
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Mobile LIVE approved-staff layout and Missal non-interference
+        run: node tests/schola-dock-approved-phone.mjs
