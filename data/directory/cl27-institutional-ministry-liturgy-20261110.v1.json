@@ -10,14 +10,15 @@
   },
   "counts": {
     "physical_sites": 2580,
-    "source_ministry_joins": 1383,
-    "distinct_physical_sites": 1300,
+    "source_ministry_joins": 1389,
+    "distinct_physical_sites": 1306,
     "held_group_disagreements": 3,
     "by_institute": {
       "FSSP": 378,
       "ICKSP": 158,
       "SSPX": 816,
-      "IBP": 31
+      "IBP": 31,
+      "AASJMV": 6
     }
   },
   "rules": [
@@ -120,6 +121,33 @@
       "scope": "MINISTRY",
       "status": "INFERRED_INSTITUTIONAL",
       "evidence_rule_id": "CL2-INST-SSPX-ROMAN-1962"
+    },
+    {
+      "institute_id": "AASJMV",
+      "institute_name": "Personal Apostolic Administration Saint John Mary Vianney",
+      "assertions": [
+        {
+          "field": "liturgical_use",
+          "value": "ROMAN",
+          "subject_scope": "MINISTRY",
+          "evidence_url": "https://oratoriosaojosebh.org/legislacao/",
+          "basis": "Apostolic Administration's proper Roman liturgical use expressly established in the 2002 Congregation for the Clergy statement reproduced by its Oratory",
+          "evidence_kind": "OFFICIAL_APOSTOLIC_ADMINISTRATION"
+        },
+        {
+          "field": "missal_edition",
+          "value": "1962",
+          "subject_scope": "MINISTRY",
+          "evidence_url": "https://oratoriosaojosebh.org/legislacao/",
+          "basis": "2002 statement names the Missale Romanum 1962 typical edition for authorized celebrations of the Apostolic Administration",
+          "evidence_kind": "OFFICIAL_APOSTOLIC_ADMINISTRATION"
+        }
+      ],
+      "scope": "MINISTRY",
+      "status": "INFERRED_INSTITUTIONAL",
+      "evidence_rule_id": "CL2-INST-AASJMV-ROMAN-1962",
+      "ministry_identity_source": "https://oratoriosaojosebh.org/comunidades-atendidas/",
+      "relationship_note": "Six source-ID-exact Oratorio Sao Jose ministries, including one multi-rite Maronite host; not a venue-wide rule or general Campos geographic inference."
     }
   ],
   "records": [
@@ -1929,6 +1957,11 @@
       "SSPX"
     ],
     [
+      "RG-456C824082EF",
+      "AASJMV-EXT-005",
+      "AASJMV"
+    ],
+    [
       "RG-457A922941D0",
       "AO-B42-FSSP-CA-030",
       "FSSP"
@@ -3244,6 +3277,11 @@
       "FSSP"
     ],
     [
+      "RG-730D6582F2F6",
+      "AASJMV-EXT-006",
+      "AASJMV"
+    ],
+    [
       "RG-732321C12107",
       "SSPXMAP:OPE-001118",
       "SSPX"
@@ -4214,6 +4252,11 @@
       "FSSP"
     ],
     [
+      "RG-9723082006BB",
+      "AASJMV-EXT-003",
+      "AASJMV"
+    ],
+    [
       "RG-972B7EBF83E2",
       "ao-fssp-chapelle-de-l-alba-rue-albert-thomas-f-24100-bergerac-france",
       "FSSP"
@@ -4537,6 +4580,11 @@
       "RG-A20C17CF8954",
       "ao-fssp-eglise-paroissiale-saint-pierre-et-saint-paul-st-martin-de-brethencourt-f-78660-saint-martin-de-brethencourt-france",
       "FSSP"
+    ],
+    [
+      "RG-A28165FAF54C",
+      "AASJMV-EXT-002",
+      "AASJMV"
     ],
     [
       "RG-A306B10B763B",
@@ -5254,6 +5302,11 @@
       "SSPX"
     ],
     [
+      "RG-B88-B1EB74BB63BD",
+      "AASJMV-EXT-001",
+      "AASJMV"
+    ],
+    [
       "RG-B8BED6F585F6",
       "ao-research-icksp-federated-v13-icksp-stg-117",
       "ICKSP"
@@ -5317,6 +5370,11 @@
       "RG-BC1F32FA0E0A",
       "SSPXMAP:OPE-002379",
       "SSPX"
+    ],
+    [
+      "RG-BC468A8AF86A",
+      "AASJMV-EXT-004",
+      "AASJMV"
     ],
     [
       "RG-BCC5A5982FB9",
@@ -7075,5 +7133,18 @@
     "Do not promote three conflicting research-to-app physical-group mappings without separate alias resolution",
     "Show Rite and Missal prominently; source evidence and rule ID remain internal, not shown on church card"
   ],
-  "records_fingerprint": "fnv1a32:a6c0d3d3"
+  "records_fingerprint": "fnv1a32:8f919f52",
+  "aasjmv_scope_correction": {
+    "source": "https://oratoriosaojosebh.org/comunidades-atendidas/",
+    "included_exact_ministry_sources": [
+      "AASJMV-EXT-001",
+      "AASJMV-EXT-002",
+      "AASJMV-EXT-003",
+      "AASJMV-EXT-004",
+      "AASJMV-EXT-005",
+      "AASJMV-EXT-006"
+    ],
+    "excluded_claude_geographic_conflations": 5,
+    "notice": "The São José dos Campos diocese and the Barra do Pirai–Volta Redonda diocesan chaplaincy do not inherit AASJMV books; the Maronite-host church is not a site-wide 1962 venue."
+  }
 }
