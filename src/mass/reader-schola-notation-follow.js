@@ -92,7 +92,7 @@ export function mapScholaSvgLyrics(svg,syllables){
     const split=nodes.findIndex((node,i)=>{
       if(i<from||i+1>=nodes.length)return false;
       const first=String(node.textContent??"").trim();
-      if(!/^\\p{Lu}$/u.test(first))return false;
+      if(!/^\p{Lu}$/u.test(first))return false;
       const left=normal(first),right=normal(nodes[i+1].textContent);
       return left.length===1&&right.length>0&&
         left+right===part.identity;
