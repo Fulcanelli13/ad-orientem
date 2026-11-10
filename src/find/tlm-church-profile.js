@@ -127,10 +127,10 @@ export function renderTlmChurchProfile(item,language="en",{asOf}={}){
  const directMissal=one?.missal&&one.missal!==unknown(language)?one.missal:null;
  const directRite=one?.rite&&one.rite!==unknown(language)?one.rite:null;
  const edition=exact&&T(scoped?.missal_edition)==="1962"
-   ?L(language,"1962 · selected Masses","1962 · messes désignées")
+   ?L(language,"1962 · named Masses only","1962 · messes désignées uniquement")
    :directMissal||(ministry?"1962":unknown(language));
  const rite=exact&&T(scoped?.liturgical_use)==="ROMAN"
-   ?L(language,"Roman · selected Masses","Romain · messes désignées")
+   ?L(language,"Roman · named Masses only","Romain · messes désignées uniquement")
    :directRite||(ministry?L(language,"Roman","Romain"):unknown(language));
  html+='<section class="aoTlmProfileEssentials" aria-label="'+E(L(language,
    "Liturgical identity at a glance","Identité liturgique en bref"))+'">'+
