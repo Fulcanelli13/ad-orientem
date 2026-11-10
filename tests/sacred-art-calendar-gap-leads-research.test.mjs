@@ -19,15 +19,15 @@ assert.equal(openPrayerStatuses.filter(x=>x==='SUPPLEMENTARY_NOT_ASSIGNED').leng
 assert.equal(openPrayerStatuses.filter(x=>x==='HOLD_RESPECTED').length,14);
 
 const linked=audit.records.filter(x=>x.candidateCount>0);
-assert.equal(linked.length,159);
-assert.equal(audit.records.filter(x=>!x.candidateCount).length,11);
+assert.equal(linked.length,167);
+assert.equal(audit.records.filter(x=>!x.candidateCount).length,3);
 assert.deepEqual(Object.entries(audit.counts.byClass).map(([rank,x])=>[rank,x.unmatchedBaseline,x.withResearchLeads,x.stillWithoutLeads]),[
- ['II',29,29,0],['III',101,90,11],['IV',40,40,0]
+ ['II',29,29,0],['III',101,98,3],['IV',40,40,0]
 ]);
 const edges=audit.records.flatMap(x=>x.artworkRelationships);
-assert.equal(edges.length,188);
+assert.equal(edges.length,198);
 assert.equal(edges.filter(x=>x.kind==='EXISTING_989_GROUP_RESEARCH_LINK').length,25);
-assert.equal(edges.filter(x=>x.kind==='NEW_INSTITUTIONAL_OBJECT_LEAD').length,152);
+assert.equal(edges.filter(x=>x.kind==='NEW_INSTITUTIONAL_OBJECT_LEAD').length,162);
 assert.equal(edges.filter(x=>x.kind==='SECONDARY_OR_COMMONS_RESEARCH_ONLY').length,11);
 assert.equal(audit.counts.newAuthorizedAssignments,0);
 const groups=new Map(original.map(x=>[x.workGroupId,x]));
@@ -135,7 +135,26 @@ assert.equal(josaphat.kind,'SECONDARY_OR_COMMONS_RESEARCH_ONLY');
 assert.ok(josaphat.scriptureOrIdentityAnchor.includes('Kuntsevych'));
 assert.equal(josaphat.sourcePolicy,'DO_NOT_CURATE_WITHOUT_PRIMARY_ORIGINAL_AND_PHOTO_EVIDENCE');
 assert.ok(!josaphat.title.includes('Barlaam'),'martyr Josaphat Kuntsevych is not legendary Barlaam and Josaphat');
+
+assert.equal(audit.records.find(x=>x.date==='2026-03-09').artworkRelationships[0].relation,'SAME_NAZARETH_SYNAGOGUE_EVENT_BUT_EARLIER_VERSES');
+assert.ok(audit.records.find(x=>x.date==='2026-03-09').artworkRelationships[0].remark.includes('NOT exact rejection'),'Nazareth reading vs rejection must differ');
+assert.equal(audit.records.find(x=>x.date==='2026-03-17').artworkRelationships[0].key,'Rijks:RP-P-OB-44.918');
+assert.equal(audit.records.find(x=>x.date==='2026-03-23').artworkRelationships[0].relation,'GOSPEL_SCENE_PARTIAL_EXACT');
+assert.ok(audit.records.find(x=>x.date==='2026-03-24').artworkRelationships[0].remark.includes('Composite woodcut'));
+assert.equal(audit.records.find(x=>x.date==='2026-07-10').artworkRelationships[0].relation,'MULTI_SAINT_FEAST_PARTIAL');
+assert.ok(audit.records.find(x=>x.date==='2026-07-10').artworkRelationships[0].remark.includes('NOT depicted'),'Rufina/Seconda not Seven Brothers');
+assert.equal(audit.records.find(x=>x.date==='2026-10-23').artworkRelationships[0].key,'IAPH:67609','Anthony Mary Claret not Anthony the Hermit');
+const scripturalText=audit.records.find(x=>x.date==='2026-03-21').artworkRelationships[0];
+assert.equal(scripturalText.key,'NGA:1937.1.2.b');
+assert.equal(scripturalText.relation,'EXACT_GOSPEL_VERSE_AS_ICONOGRAPHIC_INSCRIPTION_NOT_LITERALEPISODE');
+assert.ok(scripturalText.scriptureOrIdentityAnchor.includes('EGO SUM LUX MUNDI'));
+const justin=audit.records.find(x=>x.date==='2026-04-14').artworkRelationships[0];
+assert.equal(justin.key,'NGA:1969.15.672');
+assert.ok(justin.scriptureOrIdentityAnchor.includes('S. IVSTINVS PHILOSOP. MART.'));
+assert.ok(justin.remark.includes('FOUR-panel'),'four-panel Callot, no unlicensed cropping');
+assert.deepEqual(audit.records.filter(x=>!x.candidateCount).map(x=>x.date).sort(),['2026-03-02','2026-03-10','2026-03-11']);
+
 assert.equal(audit.records.filter(x=>x.liturgicalClass==='II'&&!x.candidateCount).length,0);
 assert.equal(audit.records.filter(x=>x.liturgicalClass==='IV'&&!x.candidateCount).length,0);
 
-console.log('PASS: 170 unchanged Calendar holds, 27 protected Prayer holds, 159 dated research leads / 188 edges, no rejected originals or publication authority.');
+console.log('PASS: 170 unchanged Calendar holds, 27 protected Prayer holds, 167 dated research leads / 198 edges, no rejected originals or publication authority.');
