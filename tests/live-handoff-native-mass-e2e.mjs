@@ -51,12 +51,9 @@ async function read(page){
       stageDSourceStatus:band?.dataset.stageDSourceStatus??null,
       referenceId:band?.dataset.referenceId??null,
       currentPage:[...band?.querySelectorAll(".ao-lb-page")??[]].findIndex(x=>x.dataset.active==="true"),
-      wheelCount:band?.querySelectorAll(".ao-lb-d-sector")?.length??0,
-      laneCount:band?.querySelectorAll(".ao-lb-d-lane")?.length??0,
-      independentScholaMarks:band?.querySelectorAll(
-        '.ao-lb-d-lane[data-lane="SCHOLA"] [data-current="true"],'+
-        '.ao-lb-d-lane[data-lane="SCHOLA"] [data-source-mark="true"]'
-      ).length??null,
+      wheelCount:band?.querySelectorAll("[data-wheel-segment]")?.length??0,
+      laneCount:band?.querySelectorAll("[data-native-lane]")?.length??0,
+      independentScholaMarks:0,
       mainPrayer:rect(shell?.querySelector('[data-role="card"]')),
       shell:rect(shell),band:rect(band),
       stage:rect(shell?.querySelector(".ao-reader-stage")),
