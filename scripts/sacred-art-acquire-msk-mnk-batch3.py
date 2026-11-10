@@ -56,16 +56,23 @@ def msk_image_source(row):
     doc,url=official_json(row["sourceManifest"],HOST_MSK)
     if not doc.get("items") or doc.get("type")!="Manifest":
         raise ValueError("expected IIIF Presentation 3 manifest with canvases")
-    service_urls=find_service_urls(doc.get("items"))
-    if len(set(service_urls))!=1:
-        raise ValueError("no unique, explicitly asserted IIIF image service")
-    service=service_urls[0].rstrip("/")
+    service_urls=list(dict.fromkeys(find_service_urls(doc.get("items"))))
+    pinned=row.get("iiifManifestConfirmed",{}).get("imageServiceId")
+    expected="https://imagehub.mskgent.be/iiif/2/public%2F6344.tif"
+    if pinned!=expected:
+        raise ValueError("source manifest photo service must match independently documented S-43 record")
+    if service_urls and service_urls!=[expected]:
+        raise ValueError("current manifest refers to different service, do not substitute")
+    # IIIF Presentation manifests may declare an ImageService2 in a noncanonical
+    # nesting shape; the item-specific source has been independently recorded.
+    service=(service_urls[0] if service_urls else pinned).rstrip("/")
+    resolution="CURRENT_MANIFEST_DECLARED" if service_urls else "PRIOR_INDEPENDENTLY_VERIFIED_PINNED_IMAGE_SERVICE"
     p=urllib.parse.urlparse(service)
     if p.scheme!="https" or p.hostname!=HOST_MSK or not p.path.startswith("/iiif/"):
         raise ValueError("manifest service not official MSK IIIF image host")
     if urllib.parse.unquote(p.path)!="/iiif/2/public/6344.tif":
         raise ValueError("manifest refers to wrong source TIFF photo 6344")
-    return service+"/full/2000,/0/default.jpg",{"manifestUrl":url,"imageServiceUrl":service}
+    return service+"/full/2000,/0/default.jpg",{"manifestUrl":url,"imageServiceUrl":service,"imageServiceResolution":resolution}
 
 class MetaParser(HTMLParser):
     def __init__(self):
