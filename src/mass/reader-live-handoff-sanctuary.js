@@ -232,7 +232,7 @@ export function renderLiveHandoffPreviewRouteOverlay({scene,route,step}={}){
     +'</g></g></g>';
 }
 export const LIVE_SANCTUARY_CSS=[
-".ao-lb-sanctuary-plan{max-width:640px;opacity:1;overflow:visible}",
+".ao-lb-sanctuary-plan{display:block;width:100%;height:100%;max-width:640px;max-height:100%;min-height:0;min-width:0;opacity:1;overflow:hidden;object-fit:contain}",
 ".ao-lb-sanctuary-plan .ao-lb-nave{fill:rgba(8,14,17,.85)}",
 ".ao-lb-sanctuary-plan .ao-lb-sanctuary{fill:rgba(202,199,176,.10);stroke:rgba(221,212,180,.25);stroke-width:1.4}",
 ".ao-lb-sanctuary-plan .ao-lb-step{fill:rgba(230,225,203,.20)}",
