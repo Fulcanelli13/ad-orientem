@@ -67,7 +67,7 @@ Review ledger: `m2m-open-source-batch3-msk-mnk-20261110.v1.json`. Acquisition so
 
 On 10 November, the Italian Ministry's official [Catalogo generale terms](https://www.catalogo.beniculturali.it/termini-uso) were checked. The catalogue's Creative Commons CC BY 4.0 licence **does not automatically grant reuse of its photographs**: photographs require a reproduction request to the relevant authority and can incur fees. The same restriction is reiterated in the [ICCD photo reproduction guidance](https://www.iccd.beniculturali.it/it/consultazione-riproduzione-immagini). Since Ad Orientem will neither seek paid rights nor contact institutions, **27 exact ICCD original oil work keys have been moved from active official-image acquisition into the distinct open-photo-equivalent search lane**. This is a **photo-source restriction only**, not rejection of the underlying original paintings, which can qualify with a separately documented, genuinely open exact reproduction.
 
-**Current operating census:** 8 directly actionable first-party/open-source searches; 4 separate browser-rendered portal source holds; 45 restricted institutional photographs seeking independently open equivalents; nine acquired verified research JPEGs. The 155 candidate artwork keys and 198 original relationship edges are unchanged.
+**Earlier interim census (before final eight-source triage):** 8 directly actionable first-party/open-source searches, 4 browser-only portal records and 45 restricted institutional photographs, with nine verified museum originals. **This has been superseded by the final current census below.** The 155 candidate artwork keys and 198 original relationship edges are unchanged.
 
 ## Recovery routes and the first MSK/Kraków job
 
@@ -85,11 +85,23 @@ The two Kraków subjects have also been disentangled from misleading historical 
 
 Research evidence: `m2m-museum-portal-static-client-blockers-20261110.v1.json`. The separate research manifest and source scanner remain in the same directory.
 
+## Latest source-closure milestone — direct acquisition exhausted
+
+The last eight source-photo leads have been examined against institution-specific image reuse policies and actual object-page files. The result is **four newly restricted official photo sources** (Thoma/Athanasius; UMMA/Champaigne; Lombardia/Gregory Barbarigo; Olomouc/Wenceslas), **two object records lacking a downloadable exact painting photo** (IAPH/Claret and POP/de La Salle), and **two source-specific unresolved cases** (Holburne/Andrew Avellino attribution and photograph; Lviv/Hedwig photograph rights). The first-party direct acquisition lane has therefore been closed at **0**, rather than being retried indefinitely.
+
+**Current research source census, 10 November 2026:** nine acquired photo files, **49** restricted institution-selected photographs (candidate artworks are not rejected), **4** client-rendered portal holds, **2** object-only/no-file records, **2** unresolved rights/identity records, and zero original first-party photographs presently approved for new date placement. The remaining 155 review artwork keys and 198 edges are preserved.
+
+The source decision ledger is `m2m-eight-priority-oil-source-closure-20261110.v1.json`. Read its policy URLs before reclassifying a painting, and never conflate object public-domain status with its digital photo.
+
+### Replacement research strategy
+
+Open a new research-only lane with **three institutional APIs providing documented commercial-use-friendly open-access/CC0 images**: Cleveland Museum of Art, the Metropolitan Museum of Art (use the current `/v1.1/search` endpoint, not its retired predecessor), and the Art Institute of Chicago. Target the same eight saint/Gospel subjects first, using 24 bounded search queries and filters for paintings, public-domain original works and a declared image source. Records returned by these APIs are not automatically exact-iconographic matches or owner selections; they must first pass visual scene identity, non-rejection, and in-app crop checks. See `m2m-open-museum-alternatives-batch4-20261110.v1.json`.
+
 ## Next operational sequence
 
 1. Inspect the nine acquired originals together using actual application container geometry at 320px and 390px, preserve full artwork when cover crops remove saints or central narrative, and confirm accurate artist/copy attributions. Do not require the owner to review every unpromising source.
 2. Resolve Wellcome's current photo-ID licence and associated attribution. For Ribera, preserve CC BY-SA 4.0 and note crop/modification obligations.
-3. Among the **8** distinct priority oil works in `C_LOCATE_REUSABLE_COLOUR_SOURCE`, prefer accessible institutional full-colour files with explicit reuse permissions; avoid restricted official photos and investigate equivalent reliable sources rather than paying or contacting museums.
+3. **Zero** original priority-oil artworks remain in the directly actionable first-party photograph queue; all eight were reconciled into explicit access/rights/identity holds. Switch to cross-institution open-access **alternative artwork discovery**, while preserving the original accession keys and owner's previous selections.
 4. Handle the **45** institutionally restricted source-image records, **one** grayscale-only, **one** artwork copyright hold and **one** unresolved identity key explicitly; do not disguise them as completed images.
 5. Check the **83** original research keys outside the priority oil group, including the **9 additional oil-medium candidates**, without misclassifying prints and watercolours as oil.
 6. Only after editorial signoff, build a **separate** release-candidate manifest that includes image bytes, stable checksum, source, licence, attribution, final crop and approved date. Never feed this research JSON into runtime directly.
