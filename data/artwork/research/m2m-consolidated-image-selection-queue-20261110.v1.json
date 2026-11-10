@@ -20,7 +20,8 @@
     "data/artwork/research/m2m-open-colour-batch2-source-verification-20261110.v1.json",
     "data/artwork/research/m2m-open-source-batch3-msk-mnk-20261110.v1.json",
     "data/artwork/research/m2m-open-colour-batch2-source-verification-20261110.v1.json",
-    "data/artwork/research/m2m-msk-s43-verified-image-original-20261110.v1.json"
+    "data/artwork/research/m2m-msk-s43-verified-image-original-20261110.v1.json",
+    "data/artwork/research/m2m-nationalmuseum-mnk-download-link-discovery-20261110.v1.json"
   ],
   "counts": {
     "originalDateRelationships": 198,
@@ -44,7 +45,8 @@
     "newInstitutionPhotoPolicyHolds": 36,
     "unverifiedPhotoSearchLaneRemaining": 12,
     "iccdOfficialPhotoRightsHoldsAdded": 27,
-    "nationalmuseumFirstPartyMediaPortalRecordsToResolve": 2
+    "nationalmuseumFirstPartyMediaPortalRecordsToResolve": 2,
+    "firstPartyMediaRecordInvestigations": 4
   },
   "reviewLaneCounts": {
     "A_VERIFIED_SOURCE_PHOTO_EDITORIAL_AND_MOBILE_QA": 9,
@@ -76,7 +78,8 @@
     "Official museum image policies reviewed 10 Nov 2026: Louvre, Cincinnati, Timken and KHM institutional photographs have no confirmed commercial-use permission without prior licence; their 9 exact work keys are held, while a separate genuinely open photograph may still be researched.",
     "27 priority-oil ICCD official catalogue photographs do not inherit CC BY 4.0 open-data rights. ICCD requires institution-specific image reproduction authorization, potentially a charge. No free commercial app image claimed without a distinct open-photo source; work identities remain usable research leads.",
     "Nationalmuseum's own high-resolution media.nationalmuseum.se is the first-party alternative for NM420 and NM1134, but its exact media records and byte-specific licences remain unverified. An inventory search is not source-photo QA.",
-    "MSK Ghent S-43 downloaded and independently SHA-verified. Public Domain Mark in IIIF is not automatic monetised app approval; rights and visible diagonal image-line quality hold both remain."
+    "MSK Ghent S-43 downloaded and independently SHA-verified. Public Domain Mark in IIIF is not automatic monetised app approval; rights and visible diagonal image-line quality hold both remain.",
+    "Nationalmuseum and Krakow: first-party portal search and HTML/image-link inspection are investigations, never a licence clearance or actual original-photo acquisition; require exact accession, artwork/scene, open licence, downloaded bytes and SHA before publication review."
   ],
   "photographs": [
     {
@@ -4244,7 +4247,18 @@
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "firstPartyDownloadLinkInvestigation": {
+        "source": "data/artwork/research/m2m-nationalmuseum-mnk-download-link-discovery-20261110.v1.json",
+        "workflow": ".github/workflows/sacred-art-museum-download-link-discovery.yml",
+        "accession": "MNK II-a-448",
+        "portal": "https://zbiory.mnk.pl",
+        "hold": "OBJECT_PAGE_DOWNLOAD_LINK_REQUIRED",
+        "identifiedExactMediaId": null,
+        "imageFileSha256": null,
+        "useForApp": false,
+        "ownerApproved": false
+      }
     },
     {
       "artworkKey": "MNK:II-a-9",
@@ -4282,7 +4296,18 @@
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "firstPartyDownloadLinkInvestigation": {
+        "source": "data/artwork/research/m2m-nationalmuseum-mnk-download-link-discovery-20261110.v1.json",
+        "workflow": ".github/workflows/sacred-art-museum-download-link-discovery.yml",
+        "accession": "MNK II-a-9",
+        "portal": "https://zbiory.mnk.pl",
+        "hold": "OBJECT_PAGE_DOWNLOAD_LINK_REQUIRED",
+        "identifiedExactMediaId": null,
+        "imageFileSha256": null,
+        "useForApp": false,
+        "ownerApproved": false
+      }
     },
     {
       "artworkKey": "MNW:catalog-510968-Simmler",
@@ -4603,6 +4628,17 @@
         "status": "MUSEUM_PORTAL_IDENTIFIED_EXACT_MEDIA_RECORD_PENDING",
         "portalCanDownloadHighResAndDisplaysLicence": true,
         "precisePhotoLicenceAndBytesVerified": false
+      },
+      "firstPartyDownloadLinkInvestigation": {
+        "source": "data/artwork/research/m2m-nationalmuseum-mnk-download-link-discovery-20261110.v1.json",
+        "workflow": ".github/workflows/sacred-art-museum-download-link-discovery.yml",
+        "accession": "NM 1134",
+        "portal": "https://media.nationalmuseum.se/search/all",
+        "hold": "DIRECT_INSTITUTIONAL_ASSET_PAGE_REQUIRED",
+        "identifiedExactMediaId": null,
+        "imageFileSha256": null,
+        "useForApp": false,
+        "ownerApproved": false
       }
     },
     {
@@ -4656,6 +4692,17 @@
         "status": "MUSEUM_PORTAL_IDENTIFIED_EXACT_MEDIA_RECORD_PENDING",
         "portalCanDownloadHighResAndDisplaysLicence": true,
         "precisePhotoLicenceAndBytesVerified": false
+      },
+      "firstPartyDownloadLinkInvestigation": {
+        "source": "data/artwork/research/m2m-nationalmuseum-mnk-download-link-discovery-20261110.v1.json",
+        "workflow": ".github/workflows/sacred-art-museum-download-link-discovery.yml",
+        "accession": "NM 420",
+        "portal": "https://media.nationalmuseum.se/search/all",
+        "hold": "DIRECT_INSTITUTIONAL_ASSET_PAGE_REQUIRED",
+        "identifiedExactMediaId": null,
+        "imageFileSha256": null,
+        "useForApp": false,
+        "ownerApproved": false
       }
     },
     {
