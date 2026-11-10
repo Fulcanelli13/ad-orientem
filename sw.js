@@ -282,7 +282,15 @@ self.addEventListener("fetch",event=>{
  if((u.search&&!navigation)||u.pathname.includes("__ao_scripture_cache__"))return;
  event.respondWith((async()=>{
   const id=event.resultingClientId||event.clientId;
-  const version=await pinnedVersion(event);
+  // Every explicit page navigation/reload is a new snapshot boundary.
+  // The old client can legitimately have an earlier in-memory pin, but
+  // reusing that pin here made the "Update" button reload stale HTML even
+  // after USE_SNAPSHOT had atomically promoted the newer verified version.
+  // In-flight requests from a still-open page retain their original pin;
+  // only navigation changes the selected version for that page.
+  const selected=navigation?(await readState()).active:null;
+  const version=navigation&&await validVersion(selected)
+    ?selected:await pinnedVersion(event);
   const cache=version?await caches.open(cacheName(version)):null;
   const url=navigation?ROOT:request.url;
   const cached=await cache?.match(keyFor(url));
