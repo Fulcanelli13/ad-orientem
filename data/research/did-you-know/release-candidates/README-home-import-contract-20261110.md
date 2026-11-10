@@ -37,3 +37,18 @@
 5. Test language switching, missing-source fallback, mobile rendering, deterministic rotation, no duplicates and withheld-approval rejection. Release only through GitHub Actions/Pages after explicit owner signoff.
 
 **Never attach this research preview to `src/home/dyk-published-feed.js` or `src/home/did-you-know-glossary.js` before approval.**
+
+## Adapter implemented but not wired into the public Home (10 November 2026)
+
+The following are implemented on this **draft research branch only**:
+
+- `src/home/dyk-526-release-adapter.js`: pure, import-free-from-Home adapter functions `dyk526ApprovedCandidates`, `dyk526Pick` and `dyk526Model`. The model preserves the reviewed **English/French title and fact**, and uses the existing deterministic `dykHomeRotationSlot` from the current published feed. It does not fetch the preview file.
+- `tests/dyk-526-release-adapter-contract.mjs`: checks every one of the 526 original preview records is blocked, even if `enabled:true` is provided, and exercises the *hypothetical* approved schema using a synthetic one-card fixture (not a real approval).
+- `.github/workflows/dyk-526-release-adapter-qa.yml`: a PR-only/read-only GitHub Actions contract job, running Node 22 syntax and adapter tests, without deployment or writes.
+- [CI run #42873921929](https://github.com/Fulcanelli13/ad-orientem/actions/runs/42873921929): **completed successfully** for this implementation.
+
+**Safety contract:** The adapter defaults to disabled. Even an explicit `enabled:true` cannot publish `AO_DYK_EDITORIAL_DISPLAY_PREVIEW_526_V1` because the only accepted release schema is a different future artifact, `AO_DYK_526_APPROVED_RELEASE_V1`, with `release_stage=APPROVED_PARTIAL_LIVE`, `published=true`, `global_release_authorized=true`, and `owner_release_decision=APPROVED`. Every emitted record must additionally have owner/EN/FR/novelty/source/release/publication gates explicitly `true`, a recorded owner decision, no pending copy adjustment, a separately checked HTTPS `published_source`, and no duplicate ID/title/fact text. All present 526 research records have their release flags **false**.
+
+The contract rejects the preview under global or per-card flag tampering, rejects invalid/missing bilingual copy or source links, invalid dates, duplicate IDs, duplicate titles, withheld per-card release flags and missing final signoff.
+
+**Still intentionally absent:** There is no import of this adapter from `src/home/did-you-know-glossary.js`, no public Home data load from `data/research`, no published JSON projection under `data/did-you-know`, no authorization of any Fact ID, and no GitHub Pages deployment. A future owner-approved batch must be prepared separately before Home wiring and mobile/e2e tests.
