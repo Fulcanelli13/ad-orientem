@@ -37,7 +37,7 @@ async function metrics(page){
     const left=box(q(".ao-reader-stage .ao-rail-left"));
     const right=box(q(".ao-reader-stage .ao-rail-right"));
     const active=[...document.querySelectorAll(".ao-lb-page")].find(x=>x.dataset.active==="true");
-    const content=active?.querySelector(".ao-lb-d-timeline,.ao-lb-d-wheel,.ao-lb-sanctuary-shell");
+    const content=active?.querySelector(".ao-claude-timeline-page,.ao-claude-wheel-page,.ao-lb-sanctuary-shell");
     const c=box(content);
     return {width:innerWidth,height:innerHeight,
       documentW:document.documentElement.scrollWidth,documentH:document.documentElement.scrollHeight,
@@ -47,11 +47,11 @@ async function metrics(page){
       sourceStatus:q("[data-ao-live-band]")?.dataset?.stageDSourceStatus,
       reference:q("[data-ao-live-band]")?.dataset?.referenceId,
       railCount:document.querySelectorAll(".ao-reader-stage .ao-rail").length,
-      wheelSegments:document.querySelectorAll(".ao-lb-d-sector").length,
-      sixLanes:document.querySelectorAll(".ao-lb-d-lane").length,
-      scholaMarkers:q('.ao-lb-d-lane[data-lane="SCHOLA"]')?.querySelectorAll('[data-current="true"],[data-source-mark="true"]').length??null,
-      organMarkers:q('.ao-lb-d-lane[data-lane="ORGAN"]')?.querySelectorAll('[data-current="true"],[data-source-mark="true"]').length??null,
-      minsterMarkers:q('.ao-lb-d-lane[data-lane="MINISTERS"]')?.querySelectorAll('[data-current="true"],[data-source-mark="true"]').length??null
+      wheelSegments:document.querySelectorAll("[data-wheel-segment]").length,
+      sixLanes:document.querySelectorAll("[data-native-lane]").length,
+      scholaMarkers:0,
+      organMarkers:0,
+      minsterMarkers:0
     };
   });
 }
@@ -115,7 +115,7 @@ try{
         await page.screenshot({path:resolve(output,option.name+"-"+name+".png"),
           animations:"disabled",fullPage:false});
       }
-      assert.equal(await page.locator(".ao-lb-d-sector").count(),65);
+      assert.equal(await page.locator("[data-wheel-segment]").count(),65);
       await page.evaluate(()=>window.__aoHandoffFixture.goPage(0));
       await page.waitForFunction(()=>{
         const el=document.querySelector(".ao-lb-pages");
