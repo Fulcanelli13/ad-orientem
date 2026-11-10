@@ -18,14 +18,14 @@ test("build provenance includes fourteen San Polo photographs, attribution and a
  assert.equal(p.workflow_run_id,"1234567");
  assert.equal(MASS_SCHOLA_CRITICAL_PATHS.length,18);
  assert.equal(SAN_POLO_CYCLE_CRITICAL_PATHS.length,17);
- assert.equal(Object.keys(p.critical_sha256).length,52+SAN_POLO_CYCLE_CRITICAL_PATHS.length);
+ assert.equal(Object.keys(p.critical_sha256).length,54+SAN_POLO_CYCLE_CRITICAL_PATHS.length);
  for(const path of SAN_POLO_CYCLE_CRITICAL_PATHS)
   assert.ok(Object.hasOwn(p.critical_sha256,path),"Missing optional San Polo exact release proof: "+path);
  for(const file of MASS_SCHOLA_CRITICAL_PATHS){
   assert.ok(file.startsWith("src/mass/"));
   assert.ok(Object.hasOwn(p.critical_sha256,file),"Missing live Mass/Schola reader proof: "+file);
  }
- for(const file of ["src/pray/novena-runtime.js","src/pray/holy-face-janvier-1887-b25.js","src/pray/holy-face-janvier-1895-fr-reader-candidate.v1.js","src/pray/prayer-design-pilot.js","src/pray/presentation-runtime.js"]){
+ for(const file of ["src/pray/novena-runtime.js","src/pray/holy-face-janvier-1887-b25.js","src/pray/holy-face-janvier-1895-fr-reader-candidate.v1.js","src/pray/prayer-design-pilot.js","src/pray/presentation-runtime.js","src/pray/mass-sequences-from-proper.v1.js","src/mass/1962-all-souls-sequence-english.js"]){
   assert.ok(Object.hasOwn(p.critical_sha256,file),"Missing live Pray reader proof: "+file);
  }
  assert.equal(DISCOVERY_CRITICAL_PATHS.length,13);
