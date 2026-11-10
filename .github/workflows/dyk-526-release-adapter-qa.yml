@@ -1,13 +1,16 @@
-name: DYK 526 research-only adapter contract
+name: DYK 526 Home integration (research only)
 
 on:
   pull_request:
     paths:
       - ".github/workflows/dyk-526-release-adapter-qa.yml"
       - "src/home/dyk-526-release-adapter.js"
-      - "tests/dyk-526-release-adapter-contract.mjs"
+      - "src/home/dyk-526-home-bridge.js"
+      - "src/home/browser-entry.js"
       - "src/home/dyk-published-feed.js"
       - "src/home/did-you-know-glossary.js"
+      - "tests/dyk-526-*.mjs"
+      - "tests/home-dyk-glossary.mjs"
       - "data/research/did-you-know/release-candidates/**"
   workflow_dispatch:
 
@@ -16,7 +19,7 @@ permissions:
 
 jobs:
   unpublished-contract:
-    name: No staged facts can enter Home by default
+    name: Staged facts cannot enter Home without owner release
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -24,9 +27,33 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-      - name: Check adapter and test syntax
+      - name: Syntax-check Home adapter and tests
         run: |
           node --check src/home/dyk-526-release-adapter.js
+          node --check src/home/dyk-526-home-bridge.js
+          node --check src/home/did-you-know-glossary.js
+          node --check src/home/browser-entry.js
           node --check tests/dyk-526-release-adapter-contract.mjs
-      - name: Exercise fail-closed release gates
-        run: node tests/dyk-526-release-adapter-contract.mjs
+          node --check tests/dyk-526-home-bridge-contract.mjs
+          node --check tests/dyk-526-home-phone.mjs
+      - name: Exercise release gates, simulated bilingual selection and existing Home
+        run: |
+          node tests/dyk-526-release-adapter-contract.mjs
+          node tests/dyk-526-home-bridge-contract.mjs
+          node tests/home-dyk-glossary.mjs
+
+  phone-browser:
+    name: 320px and 390px real Home (no preview publication)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install locked browser test dependencies
+        run: npm install --no-audit --no-fund
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Exercise live Home gate and synthetic modal at phone sizes
+        run: node tests/dyk-526-home-phone.mjs
