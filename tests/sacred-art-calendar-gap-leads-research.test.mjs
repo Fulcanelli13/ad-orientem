@@ -19,16 +19,16 @@ assert.equal(openPrayerStatuses.filter(x=>x==='SUPPLEMENTARY_NOT_ASSIGNED').leng
 assert.equal(openPrayerStatuses.filter(x=>x==='HOLD_RESPECTED').length,14);
 
 const linked=audit.records.filter(x=>x.candidateCount>0);
-assert.equal(linked.length,149);
-assert.equal(audit.records.filter(x=>!x.candidateCount).length,21);
+assert.equal(linked.length,159);
+assert.equal(audit.records.filter(x=>!x.candidateCount).length,11);
 assert.deepEqual(Object.entries(audit.counts.byClass).map(([rank,x])=>[rank,x.unmatchedBaseline,x.withResearchLeads,x.stillWithoutLeads]),[
- ['II',29,25,4],['III',101,89,12],['IV',40,35,5]
+ ['II',29,29,0],['III',101,90,11],['IV',40,40,0]
 ]);
 const edges=audit.records.flatMap(x=>x.artworkRelationships);
-assert.equal(edges.length,178);
+assert.equal(edges.length,188);
 assert.equal(edges.filter(x=>x.kind==='EXISTING_989_GROUP_RESEARCH_LINK').length,25);
-assert.equal(edges.filter(x=>x.kind==='NEW_INSTITUTIONAL_OBJECT_LEAD').length,143);
-assert.equal(edges.filter(x=>x.kind==='SECONDARY_OR_COMMONS_RESEARCH_ONLY').length,10);
+assert.equal(edges.filter(x=>x.kind==='NEW_INSTITUTIONAL_OBJECT_LEAD').length,152);
+assert.equal(edges.filter(x=>x.kind==='SECONDARY_OR_COMMONS_RESEARCH_ONLY').length,11);
 assert.equal(audit.counts.newAuthorizedAssignments,0);
 const groups=new Map(original.map(x=>[x.workGroupId,x]));
 const rejectedIDs=new Set(rejected.map(x=>String(x.id||'').toLowerCase()));
@@ -115,4 +115,27 @@ assert.ok(audit.records.find(x=>x.date==='2026-06-01').artworkRelationships.some
 
 assert.ok(audit.records.find(x=>x.date==='2026-11-08').artworkRelationships.some(x=>x.key==='Thyssen:1979.62'));
 assert.ok(audit.records.find(x=>x.date==='2026-10-18').artworkRelationships.some(x=>x.key==='REVIEW::commons:150920'));
-console.log('PASS: 170 unchanged Calendar holds, 27 protected Prayer holds, 149 dated research leads / 178 edges, no rejected originals or publication authority.');
+
+const farewellDates=['2026-04-26','2026-05-03','2026-05-06','2026-05-08','2026-05-10','2026-05-17','2026-05-21','2026-05-22'];
+for(const date of farewellDates){
+ const day=audit.records.find(x=>x.date===date);
+ assert.equal(day.artworkRelationships.length,1,'only the single Brooklyn Tissot research lead is proposed: '+date);
+ const candidate=day.artworkRelationships[0];
+ assert.equal(candidate.key,'Brooklyn:00.159.225');
+ assert.equal(candidate.relation,'WHOLE_FAREWELL_DISCOURSE_NOT_VERSE_SPECIFIC','do not inflate context to exact pericope');
+ assert.ok(candidate.medium.includes('watercolor'),'Tissot is not an oil painting');
+ assert.equal(candidate.newPlacementAuthority,'NOT_GRANTED');
+}
+const olivet=audit.records.find(x=>x.date==='2026-11-27').artworkRelationships[0];
+assert.equal(olivet.key,'Brooklyn:00.159.213');
+assert.equal(olivet.relation,'SAME_OLIVET_DISCOURSE_EPISODE_NOT_EXACT_SUBPASSAGE');
+const josaphat=audit.records.find(x=>x.date==='2026-11-14').artworkRelationships[0];
+assert.equal(josaphat.key,'MNW:catalog-510968-Simmler');
+assert.equal(josaphat.kind,'SECONDARY_OR_COMMONS_RESEARCH_ONLY');
+assert.ok(josaphat.scriptureOrIdentityAnchor.includes('Kuntsevych'));
+assert.equal(josaphat.sourcePolicy,'DO_NOT_CURATE_WITHOUT_PRIMARY_ORIGINAL_AND_PHOTO_EVIDENCE');
+assert.ok(!josaphat.title.includes('Barlaam'),'martyr Josaphat Kuntsevych is not legendary Barlaam and Josaphat');
+assert.equal(audit.records.filter(x=>x.liturgicalClass==='II'&&!x.candidateCount).length,0);
+assert.equal(audit.records.filter(x=>x.liturgicalClass==='IV'&&!x.candidateCount).length,0);
+
+console.log('PASS: 170 unchanged Calendar holds, 27 protected Prayer holds, 159 dated research leads / 188 edges, no rejected originals or publication authority.');
