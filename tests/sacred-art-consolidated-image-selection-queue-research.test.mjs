@@ -100,13 +100,18 @@ assert.deepEqual(dates.filter(x=>x.supplementalUnintegratedArtworkKeys.length).m
 assert.ok(dates.every(x=>x.editorialDateApproval===false&&x.publishedImageAssignmentCreated===false));
 assert.equal(queue.counts.verifiedColourJpegSources,8);
 assert.equal(queue.counts.verifiedSourcePhotosInOriginal151Pool,7);
-assert.equal(queue.reviewLaneCounts.C_LOCATE_REUSABLE_COLOUR_SOURCE,40);
-assert.equal(queue.reviewLaneCounts.C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT,18);
-assert.equal(queue.counts.newInstitutionPhotoPolicyHolds,9);
+assert.equal(queue.reviewLaneCounts.C_LOCATE_REUSABLE_COLOUR_SOURCE,13);
+assert.equal(queue.reviewLaneCounts.C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT,45);
+assert.equal(queue.counts.newInstitutionPhotoPolicyHolds,36);
+assert.equal(queue.counts.iccdOfficialPhotoRightsHoldsAdded,27);
 const policyFile=read(root+'m2m-open-source-batch3-msk-mnk-20261110.v1.json');
 const policyKeys=policyFile.policyHolds.flatMap(x=>x.workKeys);
 assert.equal(policyKeys.length,9);
 assert.equal(new Set(policyKeys).size,9);
+const iccdHeld=works.filter(x=>x.artworkKey.startsWith('ICCD:') && x.risk==='ICCD_OFFICIAL_PHOTO_RIGHTS_REQUIRE_AUTHORISATION');
+assert.equal(iccdHeld.length,27);
+assert.ok(iccdHeld.every(x=>x.institutionPhotoPolicyHold.policyUrl==='https://www.catalogo.beniculturali.it/termini-uso'));
+assert.ok(iccdHeld.every(x=>x.institutionPhotoPolicyHold.alternativeImageSearchAllowed===true && x.institutionPhotoPolicyHold.paidRequestOrOwnerContactAllowed===false));
 for(const key of policyKeys){
  const work=workByKey.get(key);
  assert.ok(work, 'policy hold missing '+key);
