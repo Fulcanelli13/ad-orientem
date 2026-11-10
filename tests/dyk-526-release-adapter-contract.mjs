@@ -130,10 +130,10 @@ assert.equal(p1?.id,p2?.id,"Daily rotation must remain deterministic");
 const home=readFileSync("src/home/did-you-know-glossary.js","utf8");
 const released=readFileSync("src/home/dyk-published-feed.js","utf8");
 const bridge=readFileSync("src/home/dyk-526-home-bridge.js","utf8");
-assert.match(home,/dyk-526-home-bridge\\.js/);
+assert.ok(home.includes('from "./dyk-526-home-bridge.js"'));
 assert.ok(!home.includes('from "./dyk-526-release-adapter.js"'));
-assert.match(bridge,/DYK526_HOME_ENABLED=false/);
-assert.match(bridge,/data\\/did-you-know\\/dyk-526-approved-release/);
+assert.ok(bridge.includes("DYK526_HOME_ENABLED=false"));
+assert.ok(bridge.includes("data/did-you-know/dyk-526-approved-release"));
 for(const text of [home,released,bridge]){
  assert.ok(!text.includes("ao-dyk-display-preview-526-RESEARCH_ONLY"),
   "Unapproved preview must never become a live Home import");
