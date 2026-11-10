@@ -25,7 +25,7 @@ const qStart = packet.indexOf(qualifiedStart);
 const qEnd = packet.indexOf("| Decision lane | Count | Meaning |", qStart);
 assert.ok(qStart > -1 && qEnd > qStart, "Qualified Lane B must precede canonical decision-lane inventory");
 const qualified = packet.slice(qStart, qEnd);
-const qualifiedRows = [...qualified.matchAll(/^\\| \\x60(SG-INV-\\d{4})\\x60 \\|.*$/gm)];
+const qualifiedRows = [...qualified.matchAll(/^\| \x60(SG-INV-\d{4})\x60 \|.*$/gm)];
 const qualifiedIDs = qualifiedRows.map(m => m[1]);
 const canonicalB = a.records.filter(x => x.lane === "B_OWNER_REVIEW_WITH_SCOPE_NOTE");
 assert.equal(canonicalB.length, 68);
@@ -56,7 +56,7 @@ for (let i = 0; i < groupCounts.length; i++) {
   assert.ok(start > -1, "Missing review lane " + heading);
   const end = i + 1 < groupCounts.length ? qualified.indexOf(groupCounts[i + 1][0], start + heading.length) : qualified.length;
   assert.ok(end > start);
-  assert.equal([...qualified.slice(start, end).matchAll(/^\\| \\x60SG-INV-\\d{4}\\x60 \\|/gm)].length,
+  assert.equal([...qualified.slice(start, end).matchAll(/^\| \x60SG-INV-\d{4}\x60 \|/gm)].length,
     expected, "Incorrect group size " + heading);
 }
 assert.deepEqual(canonicalB.reduce((s, row) => {
