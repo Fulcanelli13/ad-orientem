@@ -1,0 +1,34 @@
+name: CL27 Polish six-chapel first-party weekly evidence
+on:
+  pull_request:
+    paths:
+      - 'data/directory/cl27-weekly-mass-poland-six-20261110.v1.json'
+      - 'src/find/tlm-polish-weekly-patterns.js'
+      - 'src/find/preliminary-directory-r49.js'
+      - 'tests/tlm-cl27-polish-weekly-patterns.mjs'
+      - '.github/workflows/directory-cl27-polish-six-weekly.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  sourced-pattern:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate six source pages, exact CL2 joins, exception guards, EN/FR profile
+        run: node tests/tlm-cl27-polish-weekly-patterns.mjs
+      - name: Ensure prior French source batches and directory remain unchanged
+        run: |
+          node tests/tlm-cl27-weekly-source-programme.mjs
+          node tests/tlm-cl27-weekly-source-supplement.mjs
+          node tests/directory-b91-three-published-provisional-sites.mjs
+      - name: Verify curated Pages source assets
+        run: |
+          node tools/build-web-preview.mjs
+          test -f dist/web-preview/data/directory/cl27-weekly-mass-poland-six-20261110.v1.json
+          test -f dist/web-preview/src/find/tlm-polish-weekly-patterns.js
+          test ! -d dist/web-preview/data/directory/research/cl27-current-firstparty-20261104
