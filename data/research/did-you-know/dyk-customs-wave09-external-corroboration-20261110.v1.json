@@ -1,0 +1,69 @@
+{
+  "schema": "AO_DYK_CUSTOMS_WAVE09_SIX_INDEPENDENT_SOURCE_CHECKS_V1",
+  "date": "2026-11-10",
+  "status": "SIX_SUPPLEMENTAL_SOURCE_CHECKS_NOT_FULL_SIGNOFF",
+  "counts": {
+    "wave09_provisional_candidates": 15,
+    "source_checked_on_original_printed_page": 15,
+    "supplementary_claim_checks": 6,
+    "fully_historical_detail_corroborated": 5,
+    "practice_corroborated_but_some_historical_detail_single_source": 1,
+    "other_new_candidates_awaiting_independent_review": 9
+  },
+  "source_checks": [
+    {
+      "record_id": "DYK-C400-BF-003",
+      "authority": "Gouvernement du Québec — Répertoire du patrimoine culturel",
+      "url": "https://www.patrimoine-culturel.gouv.qc.ca/detail.do?id=234696&methode=consulter&type=bien",
+      "finding": "Catholic charity Société Saint-Vincent-de-Paul organized door-to-door Guignolée around 1860s; singers encouraged donations for the poor.",
+      "status": "INDEPENDENT_INSTITUTIONAL_CORROBORATION"
+    },
+    {
+      "record_id": "DYK-C400-BF-006",
+      "authority": "Visit Klagenfurt — Austrian seasonal customs",
+      "url": "https://www.visitklagenfurt.at/en/blog-en/culture-festivals-en-2/advent-traditions/",
+      "finding": "Regional Austrian description supports cutting cherry or other fruit branches on 4 December and putting them in water to flower by Christmas.",
+      "status": "INDEPENDENT_REGIONAL_CORROBORATION"
+    },
+    {
+      "record_id": "DYK-C400-BF-008",
+      "authority": "United States Conference of Catholic Bishops",
+      "url": "https://www.usccb.org/prayer-and-worship/liturgical-year-and-calendar/christmas/announcement-of-easter-and-the-moveable-feasts",
+      "finding": "Confirms ancient Epiphany proclamation of Easter and movable feasts, once necessary when calendars were not widespread.",
+      "status": "INDEPENDENT_ECCLESIAL_CORROBORATION"
+    },
+    {
+      "record_id": "DYK-C400-BF-011",
+      "authority": "Catholic Encyclopedia — Quinquagesima",
+      "url": "https://www.newadvent.org/cathen/12614a.htm",
+      "finding": "Independent historical source attributes pre-Lenten Forty Hours observance to Benedict XIV's 1748 measure, for prayer during Carnival.",
+      "status": "INDEPENDENT_HISTORICAL_CORROBORATION"
+    },
+    {
+      "record_id": "DYK-C400-BF-014",
+      "authority": "Archdiocese of Malta — Behold",
+      "url": "https://behold.mt/en/the-run-with-the-risen-christ/",
+      "finding": "Confirms statue-bearing sprint in Easter processions; origins are debated, including a proposed British-era time-limit explanation. Does not independently confirm Weiser's precise sunrise-hilltop version.",
+      "status": "PRACTICE_CORROBORATED_HISTORICAL_DETAIL_ONLY_SINGLE_SOURCE",
+      "requires_copy_correction": true
+    },
+    {
+      "record_id": "DYK-C400-BF-016",
+      "authority": "Parish of Saint John Paul II, Archdiocese of Gdańsk",
+      "url": "https://parafiajp2.pl/aktualnosci/wypominki-listopadowe,34",
+      "finding": "Polish parish documents November lists of names of departed relatives read in prayer, a continuing Wypominki custom.",
+      "status": "INDEPENDENT_ECCLESIAL_CORROBORATION"
+    }
+  ],
+  "reader_copy_correction": {
+    "id": "DYK-C400-BF-014",
+    "original_en": "On Easter morning in a historical Maltese custom, men carried an image of the risen Christ while running uphill, making the ascent itself a sign of the Resurrection.",
+    "reason": "Original historical reading offers symbolic interpretation, but Malta's Archdiocese says the running practice may have another practical historical origin; avoid presenting symbolism as established cause."
+  },
+  "remaining_gates": {
+    "native_en_fr_final_approval": false,
+    "full_H225_semantic_uniqueness": false,
+    "remaining_older_362_primary_claim_certification": false,
+    "release_authorized": false
+  }
+}
