@@ -1,7 +1,7 @@
 {
   "schema": "AO_DYK_CUSTOMS_400_NEW_RELEASE_SELECTION_RESEARCH_V4",
   "date": "2026-11-10",
-  "status": "400_PROVISIONAL_AFTER_CLUSTER_CONSOLIDATION_RELEASE_GATES_OPEN",
+  "status": "400_PROVISIONAL_AFTER_WAVE13_SOURCE_FOLIO_QA_RELEASE_GATES_OPEN",
   "derivation": {
     "editorial_wave_files": [
       "data/research/did-you-know/dyk-customs-first-400-editorial-wave01-20261110.v1.json",
@@ -26,7 +26,8 @@
     "wave10_crossbank": "data/research/did-you-know/dyk-customs-wave10-H225-overlap-and-scope-qa-20261110.v1.json",
     "wave10_external_corroboration": "data/research/did-you-know/dyk-customs-wave10-external-corroboration-20261110.v1.json",
     "wave11_dedup_substitution": "data/research/did-you-know/dyk-customs-wave11-whole-bank-semantic-review-20261110.v1.json",
-    "wave12_cluster_merges": "data/research/did-you-know/dyk-customs-wave12-cluster-consolidation-20261110.v1.json"
+    "wave12_cluster_merges": "data/research/did-you-know/dyk-customs-wave12-cluster-consolidation-20261110.v1.json",
+    "wave13_claim_check": "data/research/did-you-know/dyk-customs-wave13-original-folio-25-claim-review-20261110.v1.json"
   },
   "counts": {
     "original_edited_bank": 400,
@@ -56,7 +57,13 @@
     "wave12_added": 4,
     "unique_en": 400,
     "unique_fr": 400,
-    "total_source_links": 427
+    "total_source_links": 427,
+    "wave13_existing_original_cards_reviewed": 25,
+    "wave13_merged_child_cards": 2,
+    "wave13_replacements": 2,
+    "wave13_copy_corrections": 3,
+    "wave13_locator_repairs": 3,
+    "wave13_post": 400
   },
   "release_rules": {
     "original_claim_unchanged": true,
@@ -2649,7 +2656,16 @@
       "original_record_id": "DYK-H04-W-B-137",
       "source_wave": 2,
       "review_status": "AWAITING_CLAIM_TO_ORIGINAL_SOURCE_AND_NATIVE_EN_FR_SIGNOFF",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "primary_folio_wave13": {
+        "date": "2026-11-10",
+        "source": "Weiser 1958 original PDF screenshot",
+        "passage_scoped_check": "VISUALLY_REVIEWED_MATCHES_WITH_LISTED_EDITS",
+        "printed_page_evidence": [
+          312
+        ],
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-H04-W-B-138",
@@ -2678,7 +2694,16 @@
       "original_record_id": "DYK-H04-W-B-138",
       "source_wave": 2,
       "review_status": "AWAITING_CLAIM_TO_ORIGINAL_SOURCE_AND_NATIVE_EN_FR_SIGNOFF",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "primary_folio_wave13": {
+        "date": "2026-11-10",
+        "source": "Weiser 1958 original PDF screenshot",
+        "passage_scoped_check": "VISUALLY_REVIEWED_MATCHES_WITH_LISTED_EDITS",
+        "printed_page_evidence": [
+          312
+        ],
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-H04-W-B-156",
@@ -2792,7 +2817,16 @@
       "original_record_id": "DYK-UM01-013",
       "source_wave": 3,
       "review_status": "AWAITING_CLAIM_TO_ORIGINAL_SOURCE_AND_NATIVE_EN_FR_SIGNOFF",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "primary_folio_wave13": {
+        "date": "2026-11-10",
+        "source": "Weiser 1958 original PDF screenshot",
+        "passage_scoped_check": "VISUALLY_REVIEWED_MATCHES_WITH_LISTED_EDITS",
+        "printed_page_evidence": [
+          57
+        ],
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-UM01-018",
@@ -2821,7 +2855,16 @@
       "original_record_id": "DYK-UM01-018",
       "source_wave": 3,
       "review_status": "AWAITING_CLAIM_TO_ORIGINAL_SOURCE_AND_NATIVE_EN_FR_SIGNOFF",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "primary_folio_wave13": {
+        "date": "2026-11-10",
+        "source": "Weiser 1958 original PDF screenshot",
+        "passage_scoped_check": "VISUALLY_REVIEWED_MATCHES_WITH_LISTED_EDITS",
+        "printed_page_evidence": [
+          313
+        ],
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-UM02-012",
@@ -2994,15 +3037,28 @@
     {
       "id": "DYK-UM03-009",
       "reader_copy": {
-        "en": "In an older Central European custom, eight evenings after All Souls' Day were dedicated to family Rosaries, prayers and charity for the departed. These « Soul Nights » were a popular devotion, not a formal liturgical octave.",
-        "fr": "Dans un ancien usage d'Europe centrale, huit soirées après la Commémoration des défunts étaient consacrées au rosaire familial, à la prière et à la charité pour les morts. Ces « soirées des âmes » relevaient de la piété populaire, non d'une octave liturgique."
+        "en": "In parts of central Europe, families kept eight popular « Soul Nights » after All Souls' Day, praying the Rosary for the dead by candlelight and giving part of each day's meal to the poor. This was not an official liturgical octave.",
+        "fr": "Dans certaines régions d'Europe centrale, des familles observaient huit « soirées des âmes » après la Commémoration des fidèles défunts : elles récitaient le rosaire à la lumière d'une bougie et donnaient aux pauvres une part du repas quotidien. Ce n'était pas une octave liturgique officielle."
       },
       "source_ids": [
-        "WEI58-26-020"
+        "WEI58-26-020",
+        "WEI58-26-021"
       ],
       "source_links": [
         {
           "source_id": "WEI58-26-020",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              312
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        },
+        {
+          "source_id": "WEI58-26-021",
           "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
           "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
           "locator": {
@@ -3018,7 +3074,29 @@
       "original_record_id": "DYK-UM03-009",
       "source_wave": 3,
       "review_status": "AWAITING_CLAIM_TO_ORIGINAL_SOURCE_AND_NATIVE_EN_FR_SIGNOFF",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "copy_before_wave13": {
+        "en": "In an older Central European custom, eight evenings after All Souls' Day were dedicated to family Rosaries, prayers and charity for the departed. These « Soul Nights » were a popular devotion, not a formal liturgical octave.",
+        "fr": "Dans un ancien usage d'Europe centrale, huit soirées après la Commémoration des défunts étaient consacrées au rosaire familial, à la prière et à la charité pour les morts. Ces « soirées des âmes » relevaient de la piété populaire, non d'une octave liturgique."
+      },
+      "related_research_record_ids": [
+        "DYK-UM03-010"
+      ],
+      "semantic_review_wave13": {
+        "resolution": "CONSOLIDATED",
+        "reason": "Generic almsgiving claim on the same source page is part of the source's eight post-All Souls Soul Nights and lacks independent novelty.",
+        "original_source_copies_preserved_in": "data/research/did-you-know/dyk-customs-wave13-original-folio-25-claim-review-20261110.v1.json",
+        "native_signoff_pending": true
+      },
+      "primary_folio_wave13": {
+        "date": "2026-11-10",
+        "source": "Weiser 1958 original PDF screenshot",
+        "passage_scoped_check": "VISUALLY_REVIEWED_MATCHES_WITH_LISTED_EDITS",
+        "printed_page_evidence": [
+          312
+        ],
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-UM03-014",
@@ -3391,7 +3469,16 @@
       "original_record_id": "DYK-H04-W-B-131",
       "source_wave": 3,
       "review_status": "AWAITING_CLAIM_TO_ORIGINAL_SOURCE_AND_NATIVE_EN_FR_SIGNOFF",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "primary_folio_wave13": {
+        "date": "2026-11-10",
+        "source": "Weiser 1958 original PDF screenshot",
+        "passage_scoped_check": "VISUALLY_REVIEWED_MATCHES_WITH_LISTED_EDITS",
+        "printed_page_evidence": [
+          311
+        ],
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-UM01-008",
@@ -3483,8 +3570,8 @@
     {
       "id": "DYK-UM01-019",
       "reader_copy": {
-        "en": "In some older European Corpus Christi processions, children dressed as angels walked along the route scattering flower petals before the Blessed Sacrament.",
-        "fr": "Dans certaines anciennes processions européennes de la Fête-Dieu, des enfants vêtus en anges avançaient sur le parcours en répandant des pétales de fleurs devant le Saint-Sacrement."
+        "en": "At a Corpus Christi procession in Mainz in 1613, hundreds of children dressed as the nine choirs of angels marched before the Blessed Sacrament, while others scattered flowers along the route.",
+        "fr": "Lors d'une procession de la Fête-Dieu à Mayence en 1613, des centaines d'enfants vêtus comme les neuf chœurs des anges marchaient devant le Saint-Sacrement, tandis que d'autres répandaient des fleurs sur le parcours."
       },
       "source_ids": [
         "WEI58-21-015"
@@ -3507,7 +3594,17 @@
       "original_record_id": "DYK-UM01-019",
       "source_wave": 3,
       "review_status": "AWAITING_CLAIM_TO_ORIGINAL_SOURCE_AND_NATIVE_EN_FR_SIGNOFF",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "folio_wave13_copy_reason": "ADD_SOURCE_SPECIFIC_LOCATION_AND_1613_DATE",
+      "primary_folio_wave13": {
+        "date": "2026-11-10",
+        "source": "Weiser 1958 original PDF screenshot",
+        "passage_scoped_check": "VISUALLY_REVIEWED_MATCHES_WITH_LISTED_EDITS",
+        "printed_page_evidence": [
+          265
+        ],
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-UM02-010",
@@ -3742,35 +3839,6 @@
       "publication_authorized": false
     },
     {
-      "id": "DYK-UM03-010",
-      "reader_copy": {
-        "en": "During some older commemorations of the faithful departed, families set aside food to give in charity.",
-        "fr": "Lors de certaines anciennes commémorations des fidèles défunts, des familles réservaient des aliments pour les distribuer en aumône."
-      },
-      "source_ids": [
-        "WEI58-26-021"
-      ],
-      "source_links": [
-        {
-          "source_id": "WEI58-26-021",
-          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
-          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
-          "locator": {
-            "printed_pages": [
-              312
-            ],
-            "scan_pdf_page_1based": null,
-            "italian_anchor": null
-          }
-        }
-      ],
-      "editorial_issue": "ALL_SOULS_CHARITY",
-      "original_record_id": "DYK-UM03-010",
-      "source_wave": 3,
-      "review_status": "AWAITING_CLAIM_TO_ORIGINAL_SOURCE_AND_NATIVE_EN_FR_SIGNOFF",
-      "publication_authorized": false
-    },
-    {
       "id": "DYK-UM03-011",
       "reader_copy": {
         "en": "In older All Souls' Day customs, beans, peas and lentils were among the foods distributed as alms to people in need.",
@@ -3797,7 +3865,16 @@
       "original_record_id": "DYK-UM03-011",
       "source_wave": 3,
       "review_status": "AWAITING_CLAIM_TO_ORIGINAL_SOURCE_AND_NATIVE_EN_FR_SIGNOFF",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "primary_folio_wave13": {
+        "date": "2026-11-10",
+        "source": "Weiser 1958 original PDF screenshot",
+        "passage_scoped_check": "VISUALLY_REVIEWED_MATCHES_WITH_LISTED_EDITS",
+        "printed_page_evidence": [
+          313
+        ],
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-UM03-036",
@@ -7775,7 +7852,16 @@
       "original_record_id": "DYK-H04-W-B-082",
       "source_wave": 7,
       "review_status": "AWAITING_CLAIM_TO_ORIGINAL_SOURCE_AND_NATIVE_EN_FR_SIGNOFF",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "primary_folio_wave13": {
+        "date": "2026-11-10",
+        "source": "Weiser 1958 original PDF screenshot",
+        "passage_scoped_check": "VISUALLY_REVIEWED_MATCHES_WITH_LISTED_EDITS",
+        "printed_page_evidence": [
+          265
+        ],
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-H04-W-B-083",
@@ -7804,7 +7890,16 @@
       "original_record_id": "DYK-H04-W-B-083",
       "source_wave": 7,
       "review_status": "AWAITING_CLAIM_TO_ORIGINAL_SOURCE_AND_NATIVE_EN_FR_SIGNOFF",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "primary_folio_wave13": {
+        "date": "2026-11-10",
+        "source": "Weiser 1958 original PDF screenshot",
+        "passage_scoped_check": "VISUALLY_REVIEWED_MATCHES_WITH_LISTED_EDITS",
+        "printed_page_evidence": [
+          265
+        ],
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-H04-W-B-086",
@@ -7833,7 +7928,16 @@
       "original_record_id": "DYK-H04-W-B-086",
       "source_wave": 7,
       "review_status": "AWAITING_CLAIM_TO_ORIGINAL_SOURCE_AND_NATIVE_EN_FR_SIGNOFF",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "primary_folio_wave13": {
+        "date": "2026-11-10",
+        "source": "Weiser 1958 original PDF screenshot",
+        "passage_scoped_check": "VISUALLY_REVIEWED_MATCHES_WITH_LISTED_EDITS",
+        "printed_page_evidence": [
+          265
+        ],
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-H04-W-B-088",
@@ -7950,8 +8054,8 @@
     {
       "id": "DYK-H04-W-B-133",
       "reader_copy": {
-        "en": "In some Central European All Souls' customs, families lit a candle saved from Candlemas and prayed together when church bells rang at dusk.",
-        "fr": "Dans certains usages d'Europe centrale pour les Défunts, les familles allumaient un cierge conservé depuis la Chandeleur et priaient ensemble quand les cloches sonnaient au crépuscule."
+        "en": "On All Saints' evening in parts of central Europe, families once extinguished other lights, lit a candle saved from Candlemas and prayed for the souls of the departed as church bells rang at dusk.",
+        "fr": "Le soir de la Toussaint, dans certaines régions d'Europe centrale, des familles éteignaient les autres lumières, allumaient un cierge conservé depuis la Chandeleur et priaient pour les défunts au son des cloches à la tombée du jour."
       },
       "source_ids": [
         "WEI58-26-013"
@@ -7974,7 +8078,17 @@
       "original_record_id": "DYK-H04-W-B-133",
       "source_wave": 7,
       "review_status": "AWAITING_CLAIM_TO_ORIGINAL_SOURCE_AND_NATIVE_EN_FR_SIGNOFF",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "folio_wave13_copy_reason": "ALL_SAINTS_EVE_NOT_ALL_SOULS_DAY",
+      "primary_folio_wave13": {
+        "date": "2026-11-10",
+        "source": "Weiser 1958 original PDF screenshot",
+        "passage_scoped_check": "VISUALLY_REVIEWED_MATCHES_WITH_LISTED_EDITS",
+        "printed_page_evidence": [
+          311
+        ],
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-H04-W-B-134",
@@ -8003,7 +8117,16 @@
       "original_record_id": "DYK-H04-W-B-134",
       "source_wave": 7,
       "review_status": "AWAITING_CLAIM_TO_ORIGINAL_SOURCE_AND_NATIVE_EN_FR_SIGNOFF",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "primary_folio_wave13": {
+        "date": "2026-11-10",
+        "source": "Weiser 1958 original PDF screenshot",
+        "passage_scoped_check": "VISUALLY_REVIEWED_MATCHES_WITH_LISTED_EDITS",
+        "printed_page_evidence": [
+          311
+        ],
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-H04-W-B-147",
@@ -8171,7 +8294,16 @@
       "original_record_id": "DYK-UM01-003",
       "source_wave": 7,
       "review_status": "AWAITING_CLAIM_TO_ORIGINAL_SOURCE_AND_NATIVE_EN_FR_SIGNOFF",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "primary_folio_wave13": {
+        "date": "2026-11-10",
+        "source": "Weiser 1958 original PDF screenshot",
+        "passage_scoped_check": "VISUALLY_REVIEWED_MATCHES_WITH_LISTED_EDITS",
+        "printed_page_evidence": [
+          57
+        ],
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-UM01-004",
@@ -8200,7 +8332,16 @@
       "original_record_id": "DYK-UM01-004",
       "source_wave": 7,
       "review_status": "AWAITING_CLAIM_TO_ORIGINAL_SOURCE_AND_NATIVE_EN_FR_SIGNOFF",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "primary_folio_wave13": {
+        "date": "2026-11-10",
+        "source": "Weiser 1958 original PDF screenshot",
+        "passage_scoped_check": "VISUALLY_REVIEWED_MATCHES_WITH_LISTED_EDITS",
+        "printed_page_evidence": [
+          57
+        ],
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-UM01-005",
@@ -8485,15 +8626,28 @@
     {
       "id": "DYK-UM03-012",
       "reader_copy": {
-        "en": "In some Austrian Alpine communities, children in need received small loaves called « soul bread » in return for prayers or hymns offered for the dead.",
-        "fr": "Dans certaines communautés des Alpes autrichiennes, des enfants pauvres recevaient de petits pains appelés « pains des âmes » en échange de prières ou de cantiques offerts pour les défunts."
+        "en": "In an older Austrian Alpine All Souls' custom, children in need went door to door, singing hymns or offering prayers for the departed in return for small loaves called « soul bread ».",
+        "fr": "Dans une ancienne coutume de la Commémoration des défunts dans les Alpes autrichiennes, des enfants nécessiteux passaient de maison en maison, chantaient des hymnes ou priaient pour les morts en échange de petits pains appelés « pain des âmes »."
       },
       "source_ids": [
-        "WEI58-26-026"
+        "WEI58-26-026",
+        "WEI58-26-022"
       ],
       "source_links": [
         {
           "source_id": "WEI58-26-026",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              313
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        },
+        {
+          "source_id": "WEI58-26-022",
           "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
           "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
           "locator": {
@@ -8509,7 +8663,29 @@
       "original_record_id": "DYK-UM03-012",
       "source_wave": 7,
       "review_status": "AWAITING_CLAIM_TO_ORIGINAL_SOURCE_AND_NATIVE_EN_FR_SIGNOFF",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "copy_before_wave13": {
+        "en": "In some Austrian Alpine communities, children in need received small loaves called « soul bread » in return for prayers or hymns offered for the dead.",
+        "fr": "Dans certaines communautés des Alpes autrichiennes, des enfants pauvres recevaient de petits pains appelés « pains des âmes » en échange de prières ou de cantiques offerts pour les défunts."
+      },
+      "related_research_record_ids": [
+        "DYK-H04-W-B-141"
+      ],
+      "semantic_review_wave13": {
+        "resolution": "CONSOLIDATED",
+        "reason": "Generic European soul-bread distribution recapitulates more contextual Alpine door-to-door prayer-for-bread account; merge general source.",
+        "original_source_copies_preserved_in": "data/research/did-you-know/dyk-customs-wave13-original-folio-25-claim-review-20261110.v1.json",
+        "native_signoff_pending": true
+      },
+      "primary_folio_wave13": {
+        "date": "2026-11-10",
+        "source": "Weiser 1958 original PDF screenshot",
+        "passage_scoped_check": "VISUALLY_REVIEWED_MATCHES_WITH_LISTED_EDITS",
+        "printed_page_evidence": [
+          313
+        ],
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-UM03-018",
@@ -8818,7 +8994,16 @@
       },
       "source_wave": 11,
       "review_status": "ORIGINAL_FOLIO_AND_INDEPENDENT_INSTITUTIONAL_SOURCE_REVIEWED_PENDING_FINAL_EDITORIAL_APPROVAL",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "primary_folio_wave13": {
+        "date": "2026-11-10",
+        "source": "Weiser 1958 original PDF screenshot",
+        "passage_scoped_check": "VISUALLY_REVIEWED_MATCHES_WITH_LISTED_EDITS",
+        "printed_page_evidence": [
+          313
+        ],
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-G365-W-B-178",
@@ -8968,8 +9153,8 @@
     {
       "id": "DYK-H04-W-A-026",
       "reader_copy": {
-        "en": "In parts of Latin America, a Christmas novena to the Christ Child brought together prayers, carols and the decoration of churches in the days before Christmas.",
-        "fr": "Dans certaines régions d'Amérique latine, une neuvaine de Noël à l'Enfant Jésus réunissait prières, cantiques et décoration des églises pendant les jours précédant Noël."
+        "en": "In parts of Central and South America, a nine-day novena to the Christ Child before Christmas combined prayers and carols in a decorated church whose crib remained empty until Christmas night.",
+        "fr": "Dans certaines régions d'Amérique centrale et d'Amérique du Sud, une neuvaine à l'Enfant Jésus avant Noël réunissait prières et chants dans une église décorée, où la crèche restait vide jusqu'à la nuit de Noël."
       },
       "source_ids": [
         "WEI58-05-007"
@@ -8981,10 +9166,17 @@
           "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
           "locator": {
             "printed_pages": [
-              57
+              56
             ],
-            "scan_pdf_page_1based": null,
-            "italian_anchor": null
+            "scan_pdf_page_1based": [
+              74
+            ],
+            "italian_anchor": null,
+            "original_page_visually_checked": true,
+            "corrected_in_wave13": true,
+            "old_discrepant_pages": [
+              57
+            ]
           }
         }
       ],
@@ -8992,7 +9184,15 @@
       "original_record_id": "DYK-H04-W-A-026",
       "source_wave": 8,
       "review_status": "AWAITING_CLAIM_TO_ORIGINAL_SOURCE_AND_NATIVE_EN_FR_SIGNOFF",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "folio_wave13_copy_reason": "ACTUAL_SOURCE_P56_AND_NOVENA_CRIB_EMPTY_UNTIL_HOLY_NIGHT",
+      "primary_folio_wave13": {
+        "date": "2026-11-10",
+        "source": "Weiser 1958 original PDF screenshot",
+        "passage_scoped_check": "VISUALLY_REVIEWED_MATCHES_WITH_LISTED_EDITS",
+        "printed_page_evidence": [],
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-H04-W-A-049",
@@ -9775,7 +9975,16 @@
       "original_record_id": "DYK-H04-W-B-084",
       "source_wave": 8,
       "review_status": "AWAITING_CLAIM_TO_ORIGINAL_SOURCE_AND_NATIVE_EN_FR_SIGNOFF",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "primary_folio_wave13": {
+        "date": "2026-11-10",
+        "source": "Weiser 1958 original PDF screenshot",
+        "passage_scoped_check": "VISUALLY_REVIEWED_MATCHES_WITH_LISTED_EDITS",
+        "printed_page_evidence": [
+          265
+        ],
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-H04-W-B-090",
@@ -10112,10 +10321,19 @@
           "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
           "locator": {
             "printed_pages": [
+              310,
               311
             ],
-            "scan_pdf_page_1based": null,
-            "italian_anchor": null
+            "scan_pdf_page_1based": [
+              328,
+              329
+            ],
+            "italian_anchor": null,
+            "original_page_visually_checked": true,
+            "corrected_in_wave13": true,
+            "old_discrepant_pages": [
+              311
+            ]
           }
         }
       ],
@@ -10123,7 +10341,16 @@
       "original_record_id": "DYK-H04-W-B-130",
       "source_wave": 8,
       "review_status": "AWAITING_CLAIM_TO_ORIGINAL_SOURCE_AND_NATIVE_EN_FR_SIGNOFF",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "primary_folio_wave13": {
+        "date": "2026-11-10",
+        "source": "Weiser 1958 original PDF screenshot",
+        "passage_scoped_check": "VISUALLY_REVIEWED_MATCHES_WITH_LISTED_EDITS",
+        "printed_page_evidence": [
+          311
+        ],
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-H04-W-B-132",
@@ -10152,7 +10379,16 @@
       "original_record_id": "DYK-H04-W-B-132",
       "source_wave": 8,
       "review_status": "AWAITING_CLAIM_TO_ORIGINAL_SOURCE_AND_NATIVE_EN_FR_SIGNOFF",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "primary_folio_wave13": {
+        "date": "2026-11-10",
+        "source": "Weiser 1958 original PDF screenshot",
+        "passage_scoped_check": "VISUALLY_REVIEWED_MATCHES_WITH_LISTED_EDITS",
+        "printed_page_evidence": [
+          311
+        ],
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-H04-W-B-135",
@@ -10170,10 +10406,17 @@
           "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
           "locator": {
             "printed_pages": [
-              312
+              311
             ],
-            "scan_pdf_page_1based": null,
-            "italian_anchor": null
+            "scan_pdf_page_1based": [
+              329
+            ],
+            "italian_anchor": null,
+            "original_page_visually_checked": true,
+            "corrected_in_wave13": true,
+            "old_discrepant_pages": [
+              312
+            ]
           }
         }
       ],
@@ -10181,36 +10424,16 @@
       "original_record_id": "DYK-H04-W-B-135",
       "source_wave": 8,
       "review_status": "AWAITING_CLAIM_TO_ORIGINAL_SOURCE_AND_NATIVE_EN_FR_SIGNOFF",
-      "publication_authorized": false
-    },
-    {
-      "id": "DYK-H04-W-B-141",
-      "reader_copy": {
-        "en": "On All Souls' Day, some communities distributed special « soul breads » to children and people in need, linking remembrance of the dead with charity.",
-        "fr": "Le jour de la Commémoration des défunts, certaines communautés distribuaient des « pains des âmes » aux enfants et aux personnes démunies, associant le souvenir des morts à la charité."
-      },
-      "source_ids": [
-        "WEI58-26-022"
-      ],
-      "source_links": [
-        {
-          "source_id": "WEI58-26-022",
-          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
-          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
-          "locator": {
-            "printed_pages": [
-              313
-            ],
-            "scan_pdf_page_1based": null,
-            "italian_anchor": null
-          }
-        }
-      ],
-      "editorial_issue": "SEASONAL_OR_HOUSEHOLD_CONTEXT_AND_CATHOLIC_SCOPE",
-      "original_record_id": "DYK-H04-W-B-141",
-      "source_wave": 8,
-      "review_status": "AWAITING_CLAIM_TO_ORIGINAL_SOURCE_AND_NATIVE_EN_FR_SIGNOFF",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "primary_folio_wave13": {
+        "date": "2026-11-10",
+        "source": "Weiser 1958 original PDF screenshot",
+        "passage_scoped_check": "VISUALLY_REVIEWED_MATCHES_WITH_LISTED_EDITS",
+        "printed_page_evidence": [
+          311
+        ],
+        "publication_authorized": false
+      }
     },
     {
       "id": "DYK-H04-W-B-153",
@@ -11083,6 +11306,15 @@
         "status": "INDEPENDENT_ECCLESIAL_CORROBORATION",
         "reviewed_date": "2026-11-10",
         "audit": "data/research/did-you-know/dyk-customs-wave09-external-corroboration-20261110.v1.json"
+      },
+      "primary_folio_wave13": {
+        "date": "2026-11-10",
+        "source": "Weiser 1958 original PDF screenshot",
+        "passage_scoped_check": "VISUALLY_REVIEWED_MATCHES_WITH_LISTED_EDITS",
+        "printed_page_evidence": [
+          312
+        ],
+        "publication_authorized": false
       }
     },
     {
@@ -12380,6 +12612,101 @@
       },
       "source_wave": 12,
       "review_status": "PRIMARY_PAGE_CHECKED_SECONDARY_EVIDENCE_STATUS_LISTED_NATIVE_SIGNOFF_PENDING",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-C400-BK-001",
+      "title": "Rorate Masses before winter sunrise",
+      "reader_copy": {
+        "en": "In parts of central Europe, Advent Rorate Masses were celebrated before sunrise. The faithful carried lanterns through the winter darkness to attend the votive Mass in honour of Our Lady.",
+        "fr": "Dans certaines régions d'Europe centrale, les messes Rorate de l'Avent étaient célébrées avant l'aube. Les fidèles traversaient l'obscurité hivernale avec leurs lanternes pour assister à cette messe votive en l'honneur de Notre-Dame."
+      },
+      "source_ids": [
+        "WEI58-P58-RORATE-MASS",
+        "ERZDIOEZESE-WIEN-RORATE-2025"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-P58-RORATE-MASS",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              58
+            ],
+            "pdf_page_1based": 76,
+            "original_page_visually_checked": true
+          }
+        },
+        {
+          "source_id": "ERZDIOEZESE-WIEN-RORATE-2025",
+          "url": "https://www.erzdioezese-wien.at/roratemesse",
+          "title": "Archdiocese of Vienna — Roratemesse: Besinnlich in den Tag",
+          "witness_role": "OFFICIAL_CATHOLIC_EXPLANATION_AND_CURRENT_PRACTICE"
+        }
+      ],
+      "scope": {
+        "historical_region": "central Europe",
+        "current_support": "Archdiocese Vienna",
+        "not_a_universal_1962_requirement": true
+      },
+      "review": {
+        "original_page_visually_checked": true,
+        "independent_ecclesial_source_checked": true,
+        "final_en": false,
+        "final_fr": false,
+        "publication_authorized": false
+      },
+      "source_wave": 13,
+      "review_status": "FOLIO_AND_SECONDARY_WITNESS_CHECKED_FINAL_EN_FR_REVIEW_PENDING",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-C400-BK-002",
+      "title": "Medieval altar washing on Holy Thursday",
+      "reader_copy": {
+        "en": "In some medieval churches, priests washed the stripped altars on Holy Thursday with water and wine, using bundles of twigs or palms. This historical ceremony recalled Christ being stripped before his Passion.",
+        "fr": "Dans certaines églises médiévales, le Jeudi saint, les prêtres lavaient les autels dépouillés avec de l'eau et du vin, au moyen de rameaux ou de feuilles de palmier. Ce rite historique rappelait le dépouillement du Christ avant sa Passion."
+      },
+      "source_ids": [
+        "WEI58-15-017",
+        "CATHENC-LITURGICAL-USE-OF-WATER-1913"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-15-017",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              195
+            ],
+            "pdf_page_1based": 213,
+            "original_page_visually_checked": true,
+            "index_triage": "HISTORY_ONLY",
+            "published_only_as_historical_context": true
+          }
+        },
+        {
+          "source_id": "CATHENC-LITURGICAL-USE-OF-WATER-1913",
+          "url": "https://www.newadvent.org/cathen/15564a.htm",
+          "title": "Catholic Encyclopedia — Liturgical Use of Water",
+          "witness_role": "HISTORICAL_CATHOLIC_LITURGICAL_CORROBORATION"
+        }
+      ],
+      "scope": {
+        "historical_medieval_custom": true,
+        "not_a_current_or_universal_1962_rubric": true
+      },
+      "review": {
+        "original_page_visually_checked": true,
+        "independent_historical_ecclesial_source_checked": true,
+        "final_en": false,
+        "final_fr": false,
+        "publication_authorized": false
+      },
+      "source_wave": 13,
+      "review_status": "FOLIO_AND_SECONDARY_WITNESS_CHECKED_FINAL_EN_FR_REVIEW_PENDING",
       "publication_authorized": false
     }
   ],
