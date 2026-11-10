@@ -1,0 +1,25 @@
+{
+  "schema": "AO_WALTERS_37_453_RESEARCH_ACQUISITION_V1",
+  "asOf": "2026-11-10",
+  "status": "FIRST_PARTY_CC0_COLOUR_JPEG_URL_ACQUISITION_PENDING",
+  "candidate": {
+    "workKey": "Walters:37.453",
+    "liturgicalDate": "2026-05-05",
+    "title": "Portrait of Pope Pius V",
+    "creator": "Bartolomeo Passarotti and workshop (probable replica)",
+    "museumObjectUrl": "https://art.thewalters.org/object/37.453/",
+    "photoUrl": "https://art.thewalters.org/images/art/PS1_37.453_FntAftTrt_DD_T09.jpg",
+    "licencePage": "https://thewalters.org/about/policies/rights-reproductions/",
+    "licencePageStatus": "Object page CC0; digital photography covered by museum's CC0 policy for public domain works",
+    "ownerPlacementApproved": false,
+    "releaseReady": false
+  },
+  "safeguards": [
+    "Allowlist exact first-party image URL; fail on redirect, oversize, bad JPEG",
+    "Source downloaded only to temporary Actions artifact, never production assets",
+    "Photo licence does not grant date-specific editorial approval",
+    "Retain workshop replica qualifier and 5 May date placement hold",
+    "No paid rights, correspondence, Commons auto-promotion or deployment"
+  ],
+  "releaseReady": false
+}
