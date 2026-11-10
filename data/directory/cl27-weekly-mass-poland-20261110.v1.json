@@ -1,0 +1,339 @@
+{
+  "schema": "AO_CL27_POLAND_OPERATOR_MASS_PATTERNS_V1",
+  "publication": "FIRST_PARTY_REPORTED_PATTERN_NOT_LIVE_MASS_OCCURRENCE",
+  "reviewed_on": "2026-11-10",
+  "policy": [
+    "Six named existing CL2 physical sites corroborated with the operator's site pages and October 29 Phase27M certificates",
+    "Only first-party Sunday, weekday, first-Friday, first-Saturday and pre-first-Friday Thursday PATTERNS; never generate calendar occurrences or infer holiday Masses",
+    "Specific first-Friday and first-Saturday hours are never weekly Friday/Saturday guarantees; ordinary + first-weekday patterns may coexist or replace: source confirmation required",
+    "No legal ownership, exact 1962 edition, Una Cum, canonical status, priest identity, confirmed GPS entrance or real-time Mass availability is inferred",
+    "Polish district announcements can override ordinary clocks; source checked 2026-11-10"
+  ],
+  "sites": [
+    {
+      "cl2_anchor": "RG-A080BDE87FC4",
+      "source_ids": [
+        "AO-B33-L-PL-4D17D140DFBE",
+        "AO-B40-SSPX-PL-BAJERZE"
+      ],
+      "canonical_name": "Kaplica Chrystusa Króla",
+      "country": "PL",
+      "physical_description": "Bajerze 36 (pałac), Kijewo Królewskie, Bajerze, Poland",
+      "existing_source_url": "https://www.piusx.org.pl/kaplice/bajerze",
+      "source_page_url": "https://www.piusx.org.pl/kaplice/bajerze",
+      "source_publisher": "FSSPX Poland · piusx.org.pl",
+      "phase27m_certificate_id": "AO-27M-PL-001",
+      "checked_on": "2026-11-10",
+      "subject_scope": "ONE_NAMED_CL2_SITE_NOT_DISTRICT",
+      "entries": [
+        {
+          "scope": "SUNDAYS",
+          "time": "07:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "Sunday (published pattern)",
+          "label_fr": "Dimanche (horaire publié)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "SUNDAYS",
+          "time": "09:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "Sunday (published pattern)",
+          "label_fr": "Dimanche (horaire publié)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "WEEKDAY_MON_FRI",
+          "time": "07:15",
+          "mass_type": "UNKNOWN",
+          "label_en": "Monday–Friday (published pattern)",
+          "label_fr": "Du lundi au vendredi (horaire publié)",
+          "exception_en": "The source separately lists a first-Friday 19:00 Mass; check local notices before assuming both occur.",
+          "exception_fr": "La source mentionne aussi une messe le premier vendredi à 19h00 ; vérifier les annonces pour savoir si les deux sont célébrées."
+        },
+        {
+          "scope": "SATURDAY",
+          "time": "07:15",
+          "mass_type": "UNKNOWN",
+          "label_en": "Saturday (published pattern)",
+          "label_fr": "Samedi (horaire publié)",
+          "exception_en": "A separate 09:00 first-Saturday Mass is listed; verify the actual programme.",
+          "exception_fr": "Une messe distincte à 09h00 est indiquée le premier samedi ; vérifier le programme."
+        },
+        {
+          "scope": "FIRST_FRIDAY",
+          "time": "19:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "First Friday of the month",
+          "label_fr": "Premier vendredi du mois",
+          "exception_en": "First Friday only, not every Friday.",
+          "exception_fr": "Premier vendredi uniquement, pas tous les vendredis."
+        },
+        {
+          "scope": "FIRST_SATURDAY",
+          "time": "09:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "First Saturday of the month",
+          "label_fr": "Premier samedi du mois",
+          "exception_en": "First Saturday only; do not infer that the ordinary Saturday service also takes place.",
+          "exception_fr": "Premier samedi uniquement ; ne pas supposer que l'horaire ordinaire est également maintenu."
+        }
+      ]
+    },
+    {
+      "cl2_anchor": "RG-3BD77BE4BBF9",
+      "source_ids": [
+        "AO-B40-SSPX-PL-BIA_YSTOK",
+        "SSPXMAP:OPE-002710"
+      ],
+      "canonical_name": "Kaplica Matki Bożej z Góry Karmel",
+      "country": "PL",
+      "physical_description": "Matki Bożej z Góry Karmel chapel, ul. Komunalna 5",
+      "existing_source_url": "https://www.piusx.org.pl/kaplice/zestawienie",
+      "source_page_url": "https://www.piusx.org.pl/kaplice/bialystok",
+      "source_publisher": "FSSPX Poland · piusx.org.pl",
+      "phase27m_certificate_id": "AO-27M-PL-002",
+      "checked_on": "2026-11-10",
+      "subject_scope": "ONE_NAMED_CL2_SITE_NOT_DISTRICT",
+      "entries": [
+        {
+          "scope": "SUNDAYS",
+          "time": "09:00",
+          "mass_type": "SUNG",
+          "label_en": "Sunday (published pattern)",
+          "label_fr": "Dimanche (horaire publié)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "SATURDAY",
+          "time": "18:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "Saturday (published pattern)",
+          "label_fr": "Samedi (horaire publié)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "FIRST_FRIDAY",
+          "time": "18:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "First Friday of the month",
+          "label_fr": "Premier vendredi du mois",
+          "exception_en": "First Friday only, not every Friday.",
+          "exception_fr": "Premier vendredi uniquement, pas tous les vendredis."
+        }
+      ]
+    },
+    {
+      "cl2_anchor": "RG-3D9BC0A99E10",
+      "source_ids": [
+        "AO-B40-SSPX-PL-BIELSKO_BIA_A",
+        "SSPXMAP:OPE-002720",
+        "ao-research-sspx-oct26-poland-sspx-oct26-pl-bielsko-bia-a-kaplica-sw-melchiora-grodzieckiego"
+      ],
+      "canonical_name": "Kaplica pw. św. Melchiora Grodzieckiego",
+      "country": "PL",
+      "physical_description": "Melchior Grodziecki chapel, ul. Zapłocie Duże 130A",
+      "existing_source_url": "https://www.piusx.org.pl/kaplice/zestawienie",
+      "source_page_url": "https://www.piusx.org.pl/kaplice/bielsko-biala",
+      "source_publisher": "FSSPX Poland · piusx.org.pl",
+      "phase27m_certificate_id": "AO-27M-PL-003",
+      "checked_on": "2026-11-10",
+      "subject_scope": "ONE_NAMED_CL2_SITE_NOT_DISTRICT",
+      "entries": [
+        {
+          "scope": "SUNDAYS",
+          "time": "09:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "Sunday (published pattern)",
+          "label_fr": "Dimanche (horaire publié)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "SATURDAY",
+          "time": "18:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "Saturday (published pattern)",
+          "label_fr": "Samedi (horaire publié)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "FIRST_FRIDAY",
+          "time": "18:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "First Friday of the month",
+          "label_fr": "Premier vendredi du mois",
+          "exception_en": "First Friday only.",
+          "exception_fr": "Premier vendredi uniquement."
+        },
+        {
+          "scope": "FIRST_SATURDAY",
+          "time": "09:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "First Saturday of the month",
+          "label_fr": "Premier samedi du mois",
+          "exception_en": "First Saturday only; a regular 18:00 Saturday pattern is also listed, without individual-date confirmation.",
+          "exception_fr": "Premier samedi uniquement ; un horaire ordinaire du samedi à 18h00 est également indiqué, sans confirmation de chaque date."
+        }
+      ]
+    },
+    {
+      "cl2_anchor": "RG-858EA6AA6D6A",
+      "source_ids": [
+        "AO-B40-SSPX-PL-BOLES_AWIEC",
+        "SSPXMAP:OPE-002727"
+      ],
+      "canonical_name": "Kaplica pw. NMPanny Nieustającej Pomocy",
+      "country": "PL",
+      "physical_description": "Our Lady of Perpetual Help chapel, ul. Garncarska 17",
+      "existing_source_url": "https://www.piusx.org.pl/kaplice/zestawienie",
+      "source_page_url": "https://www.piusx.org.pl/kaplice/boleslawiec",
+      "source_publisher": "FSSPX Poland · piusx.org.pl",
+      "phase27m_certificate_id": "AO-27M-PL-004",
+      "checked_on": "2026-11-10",
+      "subject_scope": "ONE_NAMED_CL2_SITE_NOT_DISTRICT",
+      "entries": [
+        {
+          "scope": "SUNDAYS",
+          "time": "12:30",
+          "mass_type": "UNKNOWN",
+          "label_en": "Sunday (published pattern)",
+          "label_fr": "Dimanche (horaire publié)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "FIRST_FRIDAY",
+          "time": "18:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "First Friday of the month",
+          "label_fr": "Premier vendredi du mois",
+          "exception_en": "First Friday only.",
+          "exception_fr": "Premier vendredi uniquement."
+        },
+        {
+          "scope": "FIRST_SATURDAY",
+          "time": "09:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "First Saturday of the month",
+          "label_fr": "Premier samedi du mois",
+          "exception_en": "First Saturday only.",
+          "exception_fr": "Premier samedi uniquement."
+        }
+      ]
+    },
+    {
+      "cl2_anchor": "RG-F38DEA178149",
+      "source_ids": [
+        "AO-B40-SSPX-PL-BUKOWIEC",
+        "SSPXMAP:OPE-002718"
+      ],
+      "canonical_name": "Kaplica pw. św. Franciszka z Asyżu",
+      "country": "PL",
+      "physical_description": "St. Francis of Assisi chapel, ul. Katowicka",
+      "existing_source_url": "https://www.piusx.org.pl/kaplice/zestawienie",
+      "source_page_url": "https://www.piusx.org.pl/kaplice/bukowiec",
+      "source_publisher": "FSSPX Poland · piusx.org.pl",
+      "phase27m_certificate_id": "AO-27M-PL-005",
+      "checked_on": "2026-11-10",
+      "subject_scope": "ONE_NAMED_CL2_SITE_NOT_DISTRICT",
+      "entries": [
+        {
+          "scope": "SUNDAYS",
+          "time": "09:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "Sunday (published pattern)",
+          "label_fr": "Dimanche (horaire publié)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "SATURDAY",
+          "time": "18:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "Saturday (published pattern)",
+          "label_fr": "Samedi (horaire publié)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "FIRST_FRIDAY",
+          "time": "18:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "First Friday of the month",
+          "label_fr": "Premier vendredi du mois",
+          "exception_en": "First Friday only.",
+          "exception_fr": "Premier vendredi uniquement."
+        },
+        {
+          "scope": "FIRST_SATURDAY",
+          "time": "09:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "First Saturday of the month",
+          "label_fr": "Premier samedi du mois",
+          "exception_en": "First Saturday only; a regular Saturday 18:00 Mass is also listed.",
+          "exception_fr": "Premier samedi uniquement ; une messe ordinaire du samedi à 18h00 est aussi indiquée."
+        },
+        {
+          "scope": "THURSDAY_BEFORE_FIRST_FRIDAY",
+          "time": "18:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "Thursday preceding the first Friday",
+          "label_fr": "Jeudi précédant le premier vendredi",
+          "exception_en": "Only the Thursday preceding the first Friday, not every Thursday.",
+          "exception_fr": "Uniquement le jeudi précédant le premier vendredi, pas tous les jeudis."
+        }
+      ]
+    },
+    {
+      "cl2_anchor": "RG-513593EF876C",
+      "source_ids": [
+        "AO-B40-SSPX-PL-BYDGOSZCZ",
+        "SSPXMAP:OPE-002730"
+      ],
+      "canonical_name": "Kaplica pw. Matki Bożej Bolesnej",
+      "country": "PL",
+      "physical_description": "Our Lady of Sorrows chapel, ul. Fordońska 399",
+      "existing_source_url": "https://www.piusx.org.pl/kaplice/zestawienie",
+      "source_page_url": "https://www.piusx.org.pl/kaplice/bydgoszcz",
+      "source_publisher": "FSSPX Poland · piusx.org.pl",
+      "phase27m_certificate_id": "AO-27M-PL-006",
+      "checked_on": "2026-11-10",
+      "subject_scope": "ONE_NAMED_CL2_SITE_NOT_DISTRICT",
+      "entries": [
+        {
+          "scope": "SUNDAYS",
+          "time": "08:30",
+          "mass_type": "SUNG",
+          "label_en": "Sunday (published pattern)",
+          "label_fr": "Dimanche (horaire publié)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "FIRST_FRIDAY",
+          "time": "18:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "First Friday of the month",
+          "label_fr": "Premier vendredi du mois",
+          "exception_en": "First Friday only.",
+          "exception_fr": "Premier vendredi uniquement."
+        },
+        {
+          "scope": "FIRST_SATURDAY",
+          "time": "09:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "First Saturday of the month",
+          "label_fr": "Premier samedi du mois",
+          "exception_en": "First Saturday only.",
+          "exception_fr": "Premier samedi uniquement."
+        }
+      ]
+    }
+  ]
+}
