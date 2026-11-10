@@ -46,6 +46,14 @@ for(const work of MASS_SEQUENCE_PRAYER_WORKS){
   }}
  }}),/LATIN_SEQUENCE_OPENING_MISMATCH/);
 }
+const corpus=massSequencePrayerWork("mass_sequence_lauda_sion");
+const corpusDonor=make(corpus);
+corpusDonor.proper.data.sequence.lat="Thomæ de Aquino. (infra octavam ad libitum Celebrantis omitti potest, juxta Rubricas.)\n"+
+ corpusDonor.proper.data.sequence.lat;
+const corpusReader=projectMassSequencePrayer(corpus.id,corpusDonor);
+assert.ok(corpusReader.latin.startsWith("lauda sion salvatorem"),
+ "The Latin sequence must not open with the donor's attribution");
+assert.match(corpusReader.sourceEditorialNote,/Thomæ de Aquino/);
 const dies=projectMassSequencePrayer("mass_sequence_dies_irae",
  make(massSequencePrayerWork("mass_sequence_dies_irae")));
 assert.ok(!dies.english.startsWith("May be omitted at Daily Mass"),
