@@ -1,6 +1,6 @@
 // Owner LIVE handoff Stage B: opt-in shell only. This module never owns the
 // Mass sequence, actual Schola progression, rubrics or ceremonial animations.
-import {resolveLiveHandoffSourceCrosswalk} from "./reader-live-handoff-source-crosswalk.js";
+import {resolveLiveHandoffSourceCrosswalk,liveHandoffCrosswalkAccepted,liveHandoffReferenceForNativeCard} from "./reader-live-handoff-source-crosswalk.js";
 import {LIVE_HANDOFF_SOURCE_POINTS,projectLiveHandoffPlanPosition} from "./reader-live-handoff-geometry.js";
 import {projectLiveHandoffSanctuary,renderLiveHandoffSanctuarySvg,renderLiveHandoffPreviewRouteOverlay,liveHandoffSideViewOrientation,LIVE_SANCTUARY_CSS} from "./reader-live-handoff-sanctuary.js";
 import {projectLiveHandoffIncensationPreview,clampLiveHandoffRouteStep} from "./reader-live-handoff-routes.js";
@@ -40,10 +40,9 @@ export function liveBandSourceGate({model,currentCard,mode}={}){
   if(!currentCard?.sectionId)
     return freeze({ok:false,reason:"NATIVE_CURRENT_CARD_REQUIRED",crosswalk:null,reference:null});
   const crosswalk=resolveLiveHandoffSourceCrosswalk({model,form:model?.corpusFamily});
-  if(crosswalk.status!=="EXACT_NATIVE_65_CROSSWALK")
+  if(!liveHandoffCrosswalkAccepted(crosswalk.status))
     return freeze({ok:false,reason:crosswalk.status,crosswalk,reference:null});
-  const reference=crosswalk.mappings.find(item=>
-    item.nativeCardId===currentCard.sectionId && item.status==="MATCHED_SOURCE_CARD")??null;
+  const reference=liveHandoffReferenceForNativeCard(crosswalk,currentCard.sectionId);
   return freeze({ok:Boolean(reference),
     reason:reference?null:"NATIVE_CARD_OUTSIDE_SOURCE_CROSSWALK",crosswalk,reference});
 }
@@ -267,8 +266,7 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
     const mode=preview.getPresentationMode?.()??model?.presentationMode;
     let result;
     if(model===lastModel&&lastCrosswalk&&String(mode).toUpperCase()==="LIVE"&&card?.sectionId){
-      const ref=lastCrosswalk.status==="EXACT_NATIVE_65_CROSSWALK"
-        ?lastCrosswalk.mappings.find(x=>x.nativeCardId===card.sectionId):null;
+      const ref=liveHandoffReferenceForNativeCard(lastCrosswalk,card.sectionId);
       result=freeze({ok:Boolean(ref),reason:ref?null:"NATIVE_CARD_OUTSIDE_SOURCE_CROSSWALK",
         crosswalk:lastCrosswalk,reference:ref});
     }else{
@@ -277,7 +275,7 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
     }
     band.hidden=!result.ok;
     shell.classList.toggle("ao-live-band-enabled",result.ok);
-    shell.dataset.aoLiveBandGate=result.reason??"EXACT_NATIVE_65_CROSSWALK";
+    shell.dataset.aoLiveBandGate=result.reason??result.crosswalk?.status??"EXACT_NATIVE_65_CROSSWALK";
     if(!result.ok){availableRoute=null;stopRoutePreview();lastTimelineSignature=null;
       timelineHost.replaceChildren();wheelHost.replaceChildren();
       return freeze({mounted:true,visible:false,reason:result.reason});}
@@ -317,7 +315,7 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
       wheelHost.innerHTML=claudeWheelRender(wheel,timeline,nativeState);
       lastTimelineSignature=timelineSignature;
     }
-    band.dataset.stageDSourceStatus=timeline.ok?"SOURCE_ONLY_65":"SOURCE_HOLD";
+    band.dataset.stageDSourceStatus=timeline.ok?"SOURCE_ONLY_"+timeline.total:"SOURCE_HOLD";
     lastId=ref.nativeCardId;
     const height=liveBandHeightForReference(ref.referenceId,preference);
     shell.style.setProperty("--ao-live-band-height",height+"px");
