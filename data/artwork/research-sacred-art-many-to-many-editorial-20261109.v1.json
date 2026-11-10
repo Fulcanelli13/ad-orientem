@@ -382,11 +382,11 @@
     "originalResearchEdges": 198,
     "originalResearchArtworkKeys": 151,
     "outsideEdgePoolAdditionalArtworks": 4,
-    "totalReviewKeys": 155,
+    "totalReviewKeys": 156,
     "originalGapDatesPreserved": 170,
     "distinctPriorityOilArtworksAudited": 68,
     "originalNonPriorityKeysWithOilMediumEdge": 9,
-    "exactMuseumPhotographsHashed": 9,
+    "exactMuseumPhotographsHashed": 10,
     "historicalOwnerArtworkDecisionsOverridden": 0,
     "newDateApprovals": 0,
     "productionImagesImported": 0,
@@ -478,12 +478,29 @@
       "accession": "44.147.2",
       "objectId": 437005,
       "manifest": "data/artwork/research/m2m-met-437005-wenceslas-alternative-20261110.v1.json",
-      "sourceWorkflow": ".github/workflows/sacred-art-met-wenceslas-alternative.yml",
+      "photoVerification": "data/artwork/research/m2m-met-437005-verified-native-photo-20261110.v1.json",
+      "sourceWorkflowRunId": 42855525191,
+      "verifiedPhotoSha256": "468b1255c8114607a665e38f81da679409166da76aa0f42cf82bc3c41c1c4608",
       "originalWorkRetained": "Olomouc:Skreta-WenceslasCycle",
       "duplicateOfOriginalPainting": false,
       "paintedScene": "BURIAL_DIFFERENT_FROM_EUCHARISTIC_PREPARATION",
-      "newUserApproval": false,
-      "newImageSourceHashVerified": false
+      "ownerSelection": false,
+      "notYetCheckedAgainstHistoricallyRejectedIDs": true
+    },
+    "twoDistinctOutsideEdgePoolAlternatives": [
+      "Pinakothek:909",
+      "Met:437005"
+    ],
+    "cc0MuseumSearchBatch4": {
+      "providerSearchRunId": 42855524422,
+      "manifest": "data/artwork/research/m2m-open-museum-alternatives-batch4-20261110.v1.json",
+      "screening": "data/artwork/research/m2m-cc0-batch4-exact-iconographic-screening-20261110.v1.json",
+      "apiRequests": 85,
+      "rawPaintingHits": 35,
+      "wrongSubject": 33,
+      "provisionalSaintRelatedCandidates": 2,
+      "acquiredExternalMetPhotoCount": 1,
+      "ownerApprovedDatePlacements": 0
     }
   }
 }
