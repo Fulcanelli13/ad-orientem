@@ -1,0 +1,39 @@
+name: Prayer — three source-owned Mass sequences
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/pray/mass-sequences-from-proper.v1.js'
+      - 'src/pray/presentation-runtime.js'
+      - 'src/mass/1962-all-souls-sequence-english.js'
+      - 'tests/pray-three-mass-sequences-source-20261110.mjs'
+      - 'tests/pray-three-mass-sequences-phone-20261110.mjs'
+      - '.github/workflows/pray-three-mass-sequences.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pray-three-sequences-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  source-owner:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tests/pray-three-mass-sequences-source-20261110.mjs
+  actual-mass-phone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Original Mass Proper sequences in Prayer Library at 320/390px EN/FR
+        run: node tests/pray-three-mass-sequences-phone-20261110.mjs

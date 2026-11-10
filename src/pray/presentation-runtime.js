@@ -114,6 +114,7 @@ import { LITANY_SOURCE_WITNESSES, LITANY_WITNESS_REVIEW_V1, reviewLitanyTranscri
 import {loadPrivateLitanyLocal} from "./litany-private-local-loader.v1.js";
 import {loadRogationsLatinPrayer} from "./rogations-latin-prayer.v1.js";
 import {loadEasterVigilTwoLitanies} from "./easter-vigil-two-litanies.v1.js";
+import {MASS_SEQUENCE_PRAYER_WORKS,massSequencePrayerWork,massSequencePrayerLibraryMatches,loadMassSequencePrayer} from "./mass-sequences-from-proper.v1.js";
 import {BATCH03_LITANY_EDITION_POLICY,BATCH03_ICRSP_MAJOR_PROCESSION_STEPS,BATCH03_LITANY_SOURCE_STATUS,batch03LitanyUse} from "./litany-1962-use-policy.js";
 import {PENITENTIAL_PSALMS_VULGATE,penitentialPsalmReference,auditPenitentialPsalmResponse,PENITENTIAL_PSALMS_TEXT_STATUS} from "./penitential-psalms-source.js";
 import {localPenitentialPsalmWitness} from "./penitential-psalms-local-witnesses.v1.js";
@@ -2413,6 +2414,56 @@ function renderAdoration(){
 }
 function familyOf(p){return libraryVariantFamily(p.id)||p.id}
 let LIB={q:'',cat:'all',subject:'all',subjectOpen:false,open:null,language:null};
+// Mass Sequentia texts are borrowed live from the authenticated selected Proper;
+// they are NOT added to the locked 48-text canonical Prayer object.
+const MASS_SEQUENCE_READING={id:null,record:null,loading:false,error:null,token:0};
+async function ensureMassSequencePrayer(id){
+ if(!massSequencePrayerWork(id))return;
+ const state=MASS_SEQUENCE_READING;
+ if(state.id!==id){state.id=id;state.record=null;state.error=null;state.loading=false;state.token++;}
+ if(state.record||state.loading||state.error)return;
+ state.loading=true;const token=++state.token;
+ try{
+  const record=await loadMassSequencePrayer(id);
+  if(token!==state.token||state.id!==id)return;
+  state.record=record;state.error=null;
+ }catch(error){
+  if(token!==state.token||state.id!==id)return;
+  state.error=String(error?.message||error);
+ }finally{
+  if(token===state.token){state.loading=false;if(view==='library'&&LIB.open===id)render();}
+ }
+}
+function renderMassSequencePrayer(){
+ const work=massSequencePrayerWork(LIB.open);if(!work)return '';
+ const state=MASS_SEQUENCE_READING;
+ if(state.id!==work.id||(!state.record&&!state.loading&&!state.error))
+  setTimeout(()=>ensureMassSequencePrayer(work.id),0);
+ const record=state.id===work.id?state.record:null;
+ const source=record?'<p class="aoP435930SourceNote" data-ao-mass-sequence-source="'+esc(record.sourcePath)+'">'+
+   esc(L('Appointed Mass source: ','Source de la messe du jour : '))+esc(record.sourcePath)+
+   ' · Sequentia · '+esc(record.sourceDate)+'</p>'+
+   (record.sourceEditorialNote?'<p class="aoP435930SourceNote" data-ao-mass-sequence-editorial-note>'+esc(record.sourceEditorialNote)+'</p>':''):'';
+ const body=record?'<section class="aoDevoCard" data-ao-devo-card="'+esc(work.id)+'">'+
+  '<div class="aoDevoCardScroll" role="region" aria-label="'+esc(work.title)+'">'+
+  '<article class="aoP435930Prayer" data-ao-mass-sequence-complete="true">'+
+  '<h2>'+esc(work.title)+'</h2>'+
+  '<div class="aoP435930Text" lang="la" data-ao-mass-sequence-language="la">'+nl(record.latin)+'</div>'+
+  '<div class="aoP435930Text" lang="'+(isFr()?'fr':'en')+'" data-ao-mass-sequence-language="'+lang()+'">'+
+    nl(isFr()?record.french:record.english)+'</div></article></div></section>':
+  state.id===work.id&&state.error?
+   callout(esc(L('The appointed Mass sequence could not be fully verified. No substitute text has been inserted.',
+    'La séquence de la messe indiquée n’a pas pu être entièrement vérifiée. Aucun texte de substitution n’a été inséré.')),'warn')+
+   '<button type="button" class="aoP435930Secondary" data-p435930-mass-sequence-retry="'+esc(work.id)+'">'+
+    esc(L('Retry original Mass source','Réessayer la source de la messe'))+'</button>':
+   '<p class="aoP435930Loading" data-ao-mass-sequence-loading>'+esc(L('Loading the appointed Mass sequence…','Chargement de la séquence de la messe…'))+'</p>';
+ return head(isFr()?work.titleFr:work.title,L('Liturgical sequence · Prayer Library','Séquence liturgique · Livre de prières'))+
+  '<main class="aoP435930Body aoP435930LibraryReader" data-ao-pray-mass-sequence="'+esc(work.id)+'">'+
+  '<p class="aoP435930SourceNote">'+esc(L(
+   'A devotional reading of the exact appointed 1962 Mass Proper, not a second liturgical ceremony or a new score. The original printed edition has not been independently collated and no musical approval is implied.',
+   'Lecture dévotionnelle du propre de la messe de 1962, non une seconde cérémonie liturgique ni une nouvelle partition. L’édition imprimée originale reste à collationner et aucune approbation musicale n’est présumée.'))+'</p>'+
+  body+source+'</main>';
+}
 function normalizedSource(p){const pr=p.provenance||{},ed=prayEditionWitness(p.id);const review=prayCanonicalSourceReviewV1(p.id);return {id:p.id,collationStatus:review.status,independentPrintCertified:review.independentPrintCertified,originalCorpusDirectSourceUrlPresent:review.originalCorpusDirectSourceUrlPresent,editionOrLocaleDiscrepancyRecorded:review.editionOrLocaleDiscrepancyRecorded,family:familyOf(p),work:pr.work||p.title||p.id,witness:ed?.label.en||pr.witness||p.source||'Normalized existing corpus',url:praySourceURL(p),quality:ed?.witnessType||pr.quality||p.sourceStatus||'LEGACY_SOURCE_DOCUMENTED_NOT_PRIMARY_COLLATED',adaptation:pr.adaptation||'UNSPECIFIED',languages:pr.languages||Object.fromEntries(['en','fr','la'].filter(k=>p[k]).map(k=>[k,'AVAILABLE']))}}
 const SOURCE_REGISTRY=Object.freeze(Object.fromEntries(Object.values(DATA.prayers||{}).map(p=>[p.id,Object.freeze(normalizedSource(p))])));
 function libraryOverviewGuide(){
@@ -2618,6 +2669,7 @@ function renderLibraryEntryRows(rows,search){
  }).join('')||`<p>${esc(L('No prayers match this search.','Aucune prière ne correspond à cette recherche.'))}</p>`;
 }
 function renderLibrary(){
+ if(LIB.open&&massSequencePrayerWork(LIB.open))return renderMassSequencePrayer();
  if(LIB.open){
   const p=P(LIB.open);if(!p){LIB.open=null;return renderLibrary()}
   if(PRAYER_READER_PILOT_ENABLED&&LORETO_SOURCE_IDS.includes(LIB.open)){
@@ -2713,6 +2765,17 @@ function renderLibrary(){
     '<i aria-hidden="true">'+assetIcon('ao-ui-next')+'</i></button>'
    ).join('')+'</div></section>'
  );
+ const massSequences=massSequencePrayerLibraryMatches({search:q,subject:LIB.subject,category:LIB.cat});
+ const massSequenceSection=!massSequences.length?'':(
+  '<section class="aoP435930LibraryRelated" data-ao-mass-sequence-library>'+
+  '<h3>'+esc(L('Sequences from the Mass','Séquences de la messe'))+'</h3>'+
+  '<p>'+esc(L('Complete Latin and vernacular from the original appointed Mass source; opened as a devotional reading, not a chant score.',
+   'Textes latins et vernaculaires du propre de la messe ; lecture dévotionnelle, sans partition.'))+'</p>'+
+  '<div class="aoP435930ModuleGrid">'+massSequences.map(work=>
+   '<button type="button" class="aoP435930ModuleCard" data-p435930-mass-sequence-open="'+esc(work.id)+'">'+
+   '<small>'+esc(L('MASS SEQUENCE · SOURCE READER','SÉQUENCE DE MESSE · SOURCE'))+'</small>'+
+   '<b>'+esc(isFr()?work.titleFr:work.title)+'</b><span>LA · EN · FR</span></button>').join('')+
+   '</div></section>');
  const guidedLinks=LIB.cat==='all'?guidedPrayerLinksForSubject(LIB.subject,q):[];
  const guidedSection=LIB.cat!=='all'||!guidedLinks.length?
   '':('<section class="aoP435930LibraryRelated" data-ao-prayer-subject-guided="'+esc(LIB.subject)+'">'+
@@ -2729,9 +2792,9 @@ function renderLibrary(){
   '<div class="aoP435930Chips" role="group" aria-label="'+esc(L('Theological prayer families','Familles théologiques de prières'))+'">'+
   '<button type="button" data-p435930-lib-subject="all" aria-pressed="'+String(LIB.subject==='all')+'">'+esc(L('All subjects','Tous les sujets'))+'</button>'+
   PRAYER_SUBJECTS_V1.map(subject=>'<button type="button" data-p435930-lib-subject="'+subject.id+'" aria-pressed="'+String(LIB.subject===subject.id)+'">'+
-    esc(isFr()?subject.fr:subject.en)+' <small>'+(subjectCounts.counts[subject.id]+prayerSupplementalLiveWorksForSubject(subject.id).length +prayerSevenSourceWorksForSubject(subject.id).length+redBookletCommunionLibraryLinksForSubject(subject.id).length+redBookletSuscipeLibraryLinksForSubject(subject.id).length+redBookletPrivateHistoricalWorksForSubject(subject.id).length+(subject.id==='V'?1:0))+'</small></button>').join('')+
+    esc(isFr()?subject.fr:subject.en)+' <small>'+(subjectCounts.counts[subject.id]+prayerSupplementalLiveWorksForSubject(subject.id).length +prayerSevenSourceWorksForSubject(subject.id).length+redBookletCommunionLibraryLinksForSubject(subject.id).length+redBookletSuscipeLibraryLinksForSubject(subject.id).length+redBookletPrivateHistoricalWorksForSubject(subject.id).length+MASS_SEQUENCE_PRAYER_WORKS.filter(x=>x.subject===subject.id).length+(subject.id==='V'?1:0))+'</small></button>').join('')+
   '</div><p class="aoP435930SourceNote">'+esc(L('Only accessible canonical and source-owned reader texts are included. Unverified research works are not shown as readable prayers.','Seuls les textes canoniques et les prières déjà accessibles dans leurs parcours d’origine sont inclus. Les œuvres de recherche non vérifiées ne sont pas présentées comme disponibles.'))+'</p></details>';
- return `${head(L('Prayer Library','Livre de prières'),L('Prayers and guided devotions','Prières et dévotions guidées'))}<main class="aoP435930Body">${libraryOverviewGuide()}<label class="aoP435930Search"><span>${assetIcon('ao-ui-search')}</span><input type="search" data-p435930-lib-search value="${esc(LIB.q)}" placeholder="${esc(L('Search prayers','Rechercher une prière'))}"></label><div class="aoP435930Chips">${cats.map(([id,n])=>`<button type="button" class="${id===LIB.cat?'active':''}" data-p435930-lib-cat="${esc(id)}">${esc(n)}</button>`).join('')}</div>${subjectBrowse}<div class="aoP435930LibraryList" data-ao-prayer-subject-results="${esc(LIB.subject)}">${LIB.cat==="essentials"&&!q?claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2,prayers:DATA.prayers,locale:lang(),esc,title:L("Essential Prayers","Prières essentielles"),artFor:releasedPrayerCardArtUrl}):(rows.length||!(historicalWorks.length+sourceDeepWorks.length+privateCommunionWorks.length+privateHistoricalWorks.length+(stabatSeptember?1:0))?renderLibraryEntryRows(rows,q):'')}</div>${communionSection}${privateHistoricalSection}${historicalSection}${stabatLibrarySection}${guidedSection}</main>`;
+ return `${head(L('Prayer Library','Livre de prières'),L('Prayers and guided devotions','Prières et dévotions guidées'))}<main class="aoP435930Body">${libraryOverviewGuide()}<label class="aoP435930Search"><span>${assetIcon('ao-ui-search')}</span><input type="search" data-p435930-lib-search value="${esc(LIB.q)}" placeholder="${esc(L('Search prayers','Rechercher une prière'))}"></label><div class="aoP435930Chips">${cats.map(([id,n])=>`<button type="button" class="${id===LIB.cat?'active':''}" data-p435930-lib-cat="${esc(id)}">${esc(n)}</button>`).join('')}</div>${subjectBrowse}<div class="aoP435930LibraryList" data-ao-prayer-subject-results="${esc(LIB.subject)}">${LIB.cat==="essentials"&&!q?claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2,prayers:DATA.prayers,locale:lang(),esc,title:L("Essential Prayers","Prières essentielles"),artFor:releasedPrayerCardArtUrl}):(rows.length||!(historicalWorks.length+sourceDeepWorks.length+privateCommunionWorks.length+privateHistoricalWorks.length+(stabatSeptember?1:0)+massSequences.length)?renderLibraryEntryRows(rows,q):'')}</div>${communionSection}${privateHistoricalSection}${historicalSection}${stabatLibrarySection}${massSequenceSection}${guidedSection}</main>`;
 }
 function monthIndex(key){const d=dateObj(key);return d?d.getFullYear()*12+d.getMonth():null}
 function consecutive(records,needed){const done=records.filter(x=>x.complete).sort((a,b)=>a.date.localeCompare(b.date));if(!done.length)return 0;let c=1;for(let i=done.length-1;i>0;i--){const a=monthIndex(done[i].date),b=monthIndex(done[i-1].date);if(a-b===1)c++;else break}return Math.min(c,needed)}
@@ -5034,6 +5097,18 @@ function onClick(e){
   const id=b.dataset.p435930LibSubject;
   if(id!=='all'&&!PRAYER_SUBJECTS_V1.some(x=>x.id===id))return;
   LIB.subject=id;LIB.subjectOpen=true;LIB.cat='all';return render();
+ }
+ if(b.dataset.p435930MassSequenceOpen){
+  const id=b.dataset.p435930MassSequenceOpen;
+  if(!massSequencePrayerWork(id))return;
+  LIB.open=id;LIB.language=null;return render();
+ }
+ if(b.dataset.p435930MassSequenceRetry){
+  const id=b.dataset.p435930MassSequenceRetry;
+  if(!massSequencePrayerWork(id)||LIB.open!==id)return;
+  MASS_SEQUENCE_READING.id=null;MASS_SEQUENCE_READING.record=null;
+  MASS_SEQUENCE_READING.error=null;MASS_SEQUENCE_READING.loading=false;
+  MASS_SEQUENCE_READING.token++;return render();
  }
  if(b.dataset.p435930LibOpen){LIB.open=b.dataset.p435930LibOpen;LIB.language=null;PILOT_LORETO_GROUP=false;return render()}
  if(b.dataset.p435930ScriptureRetry){
