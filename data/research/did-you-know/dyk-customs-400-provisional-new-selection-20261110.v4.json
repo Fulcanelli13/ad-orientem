@@ -27,7 +27,8 @@
     "wave10_external_corroboration": "data/research/did-you-know/dyk-customs-wave10-external-corroboration-20261110.v1.json",
     "wave11_dedup_substitution": "data/research/did-you-know/dyk-customs-wave11-whole-bank-semantic-review-20261110.v1.json",
     "wave12_cluster_merges": "data/research/did-you-know/dyk-customs-wave12-cluster-consolidation-20261110.v1.json",
-    "wave13_claim_check": "data/research/did-you-know/dyk-customs-wave13-original-folio-25-claim-review-20261110.v1.json"
+    "wave13_claim_check": "data/research/did-you-know/dyk-customs-wave13-original-folio-25-claim-review-20261110.v1.json",
+    "wave13_source_link_integrity": "data/research/did-you-know/dyk-customs-wave13-source-id-link-integrity-20261110.v1.json"
   },
   "counts": {
     "original_edited_bank": 400,
@@ -601,8 +602,7 @@
         "fr": "Le 27 décembre, fête de saint Jean l'Évangéliste, certains catholiques apportent traditionnellement du vin à l'église pour le faire bénir. Cet usage est lié à un récit traditionnel de vin empoisonné, qui n'est pas un fait historique établi."
       },
       "source_ids": [
-        "RIT-STJOHN-WINE-1962-TRANSCRIPTION",
-        "UK-PARISH-STJOHN-WINE"
+        "ROMAN_RITUAL_STJOHN_WINE_CATHOLICCULTURE"
       ],
       "source_links": [
         {
@@ -631,6 +631,19 @@
       "source_verification": {
         "state": "REPLACEMENT_URL_DIRECT_CLAIM_SUPPORT_CHECKED_2026_11_10",
         "audit": "data/research/did-you-know/dyk-customs-source-link-spotcheck-20261110.v1.json"
+      },
+      "superseded_source_ids": [
+        "RIT-STJOHN-WINE-1962-TRANSCRIPTION",
+        "UK-PARISH-STJOHN-WINE"
+      ],
+      "source_link_integrity_review": {
+        "date": "2026-11-10",
+        "issue": "Original source IDs referred to a 404 parish URL and a superseded supporting link while the current live-source record uses an independent Roman Ritual transcription.",
+        "disposition": "Normalize active source_ids to the current supported source_links while retaining old IDs/URLs in superseded fields.",
+        "reviewed_source_url": "https://www.catholicculture.org/culture/liturgicalyear/prayers/view.cfm?id=1380",
+        "claim_support": "Feast of St John, wine brought to priest, traditional poisoned-wine account",
+        "source_edition": "Philip T Weller translation (1964), Roman Ritual; do not describe as direct 1962 printing",
+        "native_bilingual_signoff": false
       }
     },
     {
