@@ -2,6 +2,40 @@
 
 **Updated 7 November 2026. Research-only owner-review proposal; zero approved or live candidates.** All corrections preserve the original candidate ID and research title. `proposed_display_name` in the JSON is a suggested corrected label; it cannot replace a canonical label without owner approval.
 
+## Priority admission review — first 20 (10 November 2026)
+
+**Proposal only — none approved, imported, or published.** These 20 existing Lane-A records were selected from the canonical 169-entry decision board for a single **owner admission decision batch**, not a new registry. Original screening evidence and country/site identity have already been collected. This pass does not recheck upstream websites, certify an entrance or approve photography.
+
+**Preflight against V10 decision board:** 20/20 candidate IDs found, 20/20 Lane A, 20/20 owner decision `PENDING`, 0 B21-draft overlaps, 0 recorded nearest-Place overlap flags, 0 `NAMED_SITE_GEOMETRY_PENDING` findings; 10 `site` and 10 `complex_anchor` provisional map scopes across 13 countries. This is an inventory/record-state check, not proof of precise GPS.
+
+| Candidate | Existing screened destination | Country | Illustrative point scope | Existing source | Decision |
+|---|---|---|---|---|---|
+| `SG-INV-0139` | Cathedral of Córdoba (Mezquita-Catedral) | ES | `site` | [Source](https://mezquita-catedraldecordoba.es/organiza-la-visita/entradas-y-horarios/) | **PENDING** |
+| `SG-INV-0130` | Basilica of the Vera Cruz, Caravaca de la Cruz | ES | `complex_anchor` | [Source](https://www.lacruzdecaravaca.com/contacto/) | **PENDING** |
+| `SG-INV-0113` | Sanctuary of Our Lady of Torreciudad | ES | `site` | [Source](https://torreciudad.org/en/book-your-visit/) | **PENDING** |
+| `SG-INV-0178` | Andechs Abbey | DE | `complex_anchor` | [Source](https://www.andechs.de/wallfahrer-pilger.html) | **PENDING** |
+| `SG-INV-0198` | Basilica of Sonntagberg | AT | `site` | [Source](https://www.sonntagberg.at/pfarre-basilika-sonntagberg-mostviertel/) | **PENDING** |
+| `SG-INV-0294` | Strahov Monastery | CZ | `complex_anchor` | [Source](https://www.strahovskyklaster.cz/en/for-visitors/what-you-can-visit) | **PENDING** |
+| `SG-INV-0286` | Sanctuary of Mary Help of Christians, Zlaté Hory | CZ | `complex_anchor` | [Source](https://www.mariahilf.eu/) | **PENDING** |
+| `SG-INV-0226` | Cathedral of Our Lady, Antwerp | BE | `site` | [Source](https://www.dekathedraal.be/en/visit) | **PENDING** |
+| `SG-INV-0228` | Abbey of Maredsous | BE | `complex_anchor` | [Source](https://www.maredsous.com/) | **PENDING** |
+| `SG-INV-0342` | National Shrine of Our Lady of Budslau | BY | `site` | [Source](https://www.budslau.by/) | **PENDING** |
+| `SG-INV-0485` | Sanctuary of Bom Jesus da Lapa, Bahia | BR | `complex_anchor` | [Source](https://santuariodobomjesusdalapa.com/santuario-bom-jesus-da-lapa/) | **PENDING** |
+| `SG-INV-0500` | Sanctuary of Santa Teresa de Los Andes, Auco | CL | `site` | [Source](https://www.diocesisdesanfelipe.cl/bienvenidos/2022/07/15/santuario-santa-teresa-de-los-andes/) | **PENDING** |
+| `SG-INV-0486` | Sanctuary of Saint Paulina, Nova Trento | BR | `complex_anchor` | [Source](https://santuariosantapaulina.org.br/conheca-o-santuario/) | **PENDING** |
+| `SG-INV-0502` | Sanctuary of Saint Alberto Hurtado, Santiago | CL | `complex_anchor` | [Source](https://padrealbertohurtado.cl/santuario/) | **PENDING** |
+| `SG-INV-0488` | Sanctuary of Blessed José de Anchieta, Anchieta | BR | `site` | [Source](https://www.santuariodeanchieta.com/) | **PENDING** |
+| `SG-INV-0464` | National Shrine of Saint Lazarus, El Rincón | CU | `site` | [Source](https://arquidiocesisdelahabana.org/parroquias/) | **PENDING** |
+| `SG-INV-0549` | Church of the Wedding at Cana, Kafr Kanna | IL | `site` | [Source](https://www.custodia.org/en/news/cana-of-galilee-the-joy-of-jesus-first-miracle/) | **PENDING** |
+| `SG-INV-0578` | Shrine of Saint Rafqa, Jrabta | LB | `complex_anchor` | [Source](https://www.rafqa.com/Convent-Saint-Rafqa) | **PENDING** |
+| `SG-INV-0693` | Monastery of Tibhirine and Martyrs' Graves | DZ | `complex_anchor` | [Source](https://www.moines-tibhirine.org/fr/histoire/tibhirine-aujourdhui/nouvelle-esperance) | **PENDING** |
+| `SG-INV-0613` | National Shrine of Our Lady of China, Meishan | TW | `site` | [Source](https://www.chiayicath.org.tw/churchdetail_tw.php?id=5590) | **PENDING** |
+
+**Batch approval contract:** (1) approval is affirmative and scoped to the candidate ID and the already screened named physical Place; (2) keep coordinates illustrative, no navigation/entrance claim; (3) derive native EN/FR Place cards from current templates, with only already-approved Place media or explicit fallback; (4) no liturgical rite, Missal, Una Cum, opening-hour, miracle or relic-authenticity inference; (5) preserve and disclose `site` versus `complex_anchor` identity and verify nonduplication against current canonical Place IDs at import; (6) move into main only through the existing explicit owner decision + source/identity/CI/Pages gates; (7) all 149 other records in the 169 board remain unchanged. No Vercel.
+
+**Next tranche:** the 40 other Lane-A candidates without a `NAMED_SITE_GEOMETRY_PENDING` finding remain eligible for streamlined review, but are not approved by this batch. The 38 Lane-A geometry-follow-up cases, 68 qualified Lane-B cases, one Isiro physical hold and two already drafted B21 sites stay in their existing lanes.
+
+---
 | Decision lane | Count | Meaning |
 |---|---:|---|
 | A — Standard owner review, illustrative pin | 98 | Site source screened; no exact entrance claim |
