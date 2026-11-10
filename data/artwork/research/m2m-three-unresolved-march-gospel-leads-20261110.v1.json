@@ -1,0 +1,120 @@
+{
+  "schema": "AO_SACRED_ART_THREE_MARCH_GOSPEL_GAPS_PROVISIONAL_V1",
+  "date": "2026-11-10",
+  "status": "SEPARATE_RESEARCH_ADDENDUM_NO_BASELINE_COUNT_MUTATION",
+  "existingCensus": {
+    "researchCovered": 362,
+    "totalCalendarDays": 365,
+    "baselineUnmatchedDates": [
+      "2026-03-02",
+      "2026-03-10",
+      "2026-03-11"
+    ]
+  },
+  "provisionalFindings": {
+    "newResearchLeadDates": 3,
+    "directSubsetCandidates": 2,
+    "contextOnlyCandidates": 1,
+    "newOwnerApprovals": 0,
+    "photoReleased": 0
+  },
+  "rules": [
+    "This addendum does not itself alter the 170-gap ledger or 362/365 release census; reconcile with canonical work keys and exact Gospel appointed texts before changes",
+    "Three candidates are from museum sources/partners but are NOT handpicked; a Commons listing does not authorize promotion",
+    "Never substitute a same-chapter or analogous episode for the exact Gospel",
+    "Do not misclassify a seventeenth-century print or Tissot gouache as an oil painting",
+    "Keep 27 protected Prayer NONE slots, previous owner selections and all original global rejections untouched"
+  ],
+  "excludedFalsePositive": [
+    {
+      "key": "Rijksmuseum:RP-P-OB-45.996",
+      "title": "Farizeeën wijzen Christus op de discipelen die eten met ongewassen handen",
+      "reason": "Museum classifies subject as Luke 11:37–41 (+ variant), so similar handwashing iconography alone does not prove Matthew 15:1–20. Do not promote this as exact Matthew.",
+      "source": "https://www.rijksmuseum.nl/en/collection/object/Farizeeen-wijzen-Christus-op-de-discipelen-die-eten-met-ongewassen-handen--b13af29eec97b8308e4fb604db2133ac"
+    },
+    {
+      "key": "Brooklyn:00.159.208",
+      "title": "The Pharisees Question Jesus",
+      "reason": "Ambiguous among several disputes; no direct museum pericope verification in this audit and Tissot's sequence may locate the scene in another Jerusalem controversy. Do not rely on generic title or Wikipedia illustration for Matthew 15:1–20.",
+      "source": "https://commons.wikimedia.org/wiki/File:Brooklyn_Museum_-_The_Pharisees_Question_Jesus_(Les_pharisiens_questionnent_J%C3%A9sus)_-_James_Tissot.jpg"
+    }
+  ],
+  "records": [
+    {
+      "date": "2026-03-02",
+      "gospel": "John 8:21–29",
+      "candidate": {
+        "researchKey": "Brooklyn:00.159.171",
+        "title": "Jesus Speaks Near the Treasury (Jésus parle près du trésor)",
+        "artist": "James Tissot",
+        "medium": "opaque watercolor over graphite (not oil)",
+        "museum": "Brooklyn Museum",
+        "accession": "00.159.171",
+        "source": "https://commons.wikimedia.org/wiki/File:Brooklyn_Museum_-_Jesus_Speaks_Near_the_Treasury_(J%C3%A9sus_parle_pr%C3%A8s_du_tr%C3%A9sor)_-_James_Tissot.jpg",
+        "museumRecordStatus": "Museum partner Commons accession and 2006 source file corroborated; current direct original museum object URL not accessible",
+        "qualifier": "John 8:20 identifies the Treasury as the place Jesus spoke; John 8:21 begins 'Again therefore Jesus said' in that setting. However the picture's title alone cannot certify that specific 8:21–29 discourse rather than adjacent 8:12–20.",
+        "fidelity": "CONTEXTUAL_CONTIGUOUS_SAME_SETTING_NOT_EXACT_VERIFIED",
+        "reuseStatus": "MUSEUM_PARTNER_COMMONS_NON_HANDPICKED_RESEARCH_ONLY",
+        "knownCommonsPreviewPixels": "768x548",
+        "exactSourcePhotoRights": "MUSEUM_PARTNER_COMMONS_PDM_NOT_PHOTO_SELECTED",
+        "sourcePhotoSha256": null
+      },
+      "researchLeadLevel": "POSSIBLE_CONTEXT_ONLY",
+      "countAsNamedDirectScene": false,
+      "needs": "Curatorial citation binding the particular image to John 8:21–29, or another painting explicitly depicting that discourse",
+      "ownerPlacementApproved": false,
+      "releaseReady": false
+    },
+    {
+      "date": "2026-03-10",
+      "gospel": "Matthew 18:15–22",
+      "candidate": {
+        "researchKey": "Brooklyn:00.159.43",
+        "title": "Two or Three Gathered in my Name (Deux ou trois personnes assemblées en mon nom)",
+        "artist": "James Tissot",
+        "medium": "opaque watercolor over graphite (not oil)",
+        "museum": "Brooklyn Museum",
+        "accession": "00.159.43",
+        "source": "https://opencollection.brooklynmuseum.org/objects/13395",
+        "alternativeSource": "https://commons.wikimedia.org/wiki/File:Brooklyn_Museum_-_Two_or_Three_Gathered_in_my_Name_(Deux_ou_trois_personnes_assembl%C3%A9es_en_mon_nom)_-_James_Tissot.jpg",
+        "museumRecordStatus": "Museum catalogue indexed and confirms tags Matthew 18:18–20, official image file 00.159.43_PS2.jpg",
+        "qualifier": "Direct depiction of verse 20 within the appointed March 10 Gospel range, but not a depiction of Peter's question and the forgiveness reply in 18:21–22. Treat as a subset, not entire pericope.",
+        "fidelity": "DIRECT_GOSPEL_SUBSET_MATTHEW_18_20",
+        "reuseStatus": "MUSEUM_PARTNER_COMMONS_NON_HANDPICKED_RESEARCH_ONLY",
+        "knownCommonsPreviewPixels": "653x768",
+        "exactSourcePhotoRights": "MUSEUM_PARTNER_COMMONS_PDM_NOT_PHOTO_SELECTED",
+        "sourcePhotoSha256": null
+      },
+      "researchLeadLevel": "DIRECT_SUBSET_UNAPPROVED",
+      "countAsNamedDirectScene": true,
+      "needs": "Source-image eligibility, high-resolution, mobile crop and editorial selection",
+      "ownerPlacementApproved": false,
+      "releaseReady": false
+    },
+    {
+      "date": "2026-03-11",
+      "gospel": "Matthew 15:1–20",
+      "candidate": {
+        "researchKey": "Rijksmuseum:RP-P-2015-17-8-4",
+        "title": "Christus in gesprek met de farizeeën en schriftgeleerden",
+        "artist": "Christoffel van Sichem II, after Antonie Wierix II and a design by Bernardino Passeri",
+        "medium": "woodcut printed in an album; not oil",
+        "museum": "Rijksmuseum",
+        "accession": "RP-P-2015-17-8-4",
+        "source": "https://www.rijksmuseum.nl/en/collection/object/Christus-in-gesprek-met-de-farizeeen-en-schriftgeleerden--ebe5459f5c1b4966bd6320a9a6245096",
+        "persistentSource": "https://id.rijksmuseum.nl/200179159",
+        "museumRecordStatus": "Direct museum catalogue states Pharisees and scribes from Jerusalem object to disciples eating with unwashed hands, with dispute and washing shown separately; 1629 copy after Wierix for Nadal's 1593 Evangelicae Historiae Imagines",
+        "qualifier": "Exact subject of Matthew 15:1–2 within 1–20; copy/derivation must be accurately credited. Museum gives print size 103 x 74 mm; inspect text letters and detail at phone scale.",
+        "fidelity": "DIRECT_GOSPEL_SUBSET_MATTHEW_15_1_2",
+        "reuseStatus": "MUSEUM_SOURCE_NOT_IMPORTED",
+        "exactSourcePhotoRights": "COPYRIGHT_OF_SELECTED_IMAGE_FILE_NOT_RECONCILED",
+        "sourcePhotoSha256": null
+      },
+      "researchLeadLevel": "DIRECT_SUBSET_UNAPPROVED",
+      "countAsNamedDirectScene": true,
+      "needs": "Museum image-download rights and high resolution, original Wierix impression comparison, mobile readability; prefer more aesthetically suitable original oil work when found",
+      "ownerPlacementApproved": false,
+      "releaseReady": false
+    }
+  ]
+}
