@@ -10,6 +10,8 @@ on:
       - 'tests/sacred-art-2026-coverage-first.test.mjs'
       - 'data/artwork/sacred-art-2026-class-ii-batch01-curatorial-proposals-20261110.v1.json'
       - 'tests/sacred-art-2026-class-ii-batch01-curatorial-proposals.mjs'
+      - 'data/artwork/sacred-art-2026-class-ii-batch02-remaining-50-curatorial-triage-20261110.v1.json'
+      - 'tests/sacred-art-2026-class-ii-complete-75-editorial-coverage.mjs'
       - 'src/pray/art-slot-map.v1.js'
       - 'tests/prayer-art-released-exact-reuse-20261110.mjs'
       - '.github/workflows/sacred-art-2026-coverage-first.yml'
@@ -29,4 +31,5 @@ jobs:
         run: |
           node tests/sacred-art-2026-coverage-first.test.mjs
           node tests/sacred-art-2026-class-ii-batch01-curatorial-proposals.mjs
+          node tests/sacred-art-2026-class-ii-complete-75-editorial-coverage.mjs
           node tests/prayer-art-released-exact-reuse-20261110.mjs
