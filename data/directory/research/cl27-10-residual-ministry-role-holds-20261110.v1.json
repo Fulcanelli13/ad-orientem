@@ -14,7 +14,7 @@
       "BENEDICTINE_OSB_CHAPEL_NOT_SSPX_MINISTRY": 1
     }
   },
-  "release_state": "RESEARCH_ONLY_NOT_RUNTIME_IMPORT",
+  "release_state": "ARCHIVED_HISTORICAL_RESEARCH_SNAPSHOT_NOT_RUNTIME_IMPORT",
   "prohibited_inference": [
     "no venue-wide 1962",
     "no automatic Una Cum",
@@ -154,8 +154,12 @@
         "https://map.fsspx.org/en/places/maison-mere-des-soeurs-de-la-fraternite"
       ],
       "hold_reason": "ASSOCIATED_SISTERS_NOT_IDENTIFIED_PRIEST",
-      "next_gate": "Determine who celebrates at religious house, rather than treating related sisters as priests.",
-      "status": "RESEARCH_ONLY_MINISTRY_ROLE_UNATTESTED_NO_PUBLIC_ROMAN_1962_CERTIFICATION"
+      "next_gate": "Require current first-party SSPX district or Abbey evidence naming the SSPX chapel ministry; historical chaplain alone is insufficient.",
+      "status": "RESEARCH_ONLY_MINISTRY_ROLE_UNATTESTED_NO_PUBLIC_ROMAN_1962_CERTIFICATION",
+      "historical_chaplain_source_url": "https://laportelatine.org/wp-content/uploads/2024/11/70-Hermine.pdf",
+      "historical_chaplain_note": "SSPX records historically document Abbe Tissier de Mallerais's 1983–1984 chaplaincy. This is not current evidence of an SSPX priest serving the Abbey in November 2026."
     }
-  ]
+  ],
+  "superseded_by": "data/directory/research/cl27-6-residual-ministry-role-holds-20261110.v1.json",
+  "superseded_reason": "Four independently evidenced source-ministry relationships moved into validated manifest, leaving six distinct holds."
 }
