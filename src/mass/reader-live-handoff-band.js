@@ -5,6 +5,7 @@ import {LIVE_HANDOFF_SOURCE_POINTS,projectLiveHandoffPlanPosition} from "./reade
 import {projectLiveHandoffSanctuary,renderLiveHandoffSanctuarySvg,renderLiveHandoffPreviewRouteOverlay,liveHandoffSideViewOrientation,LIVE_SANCTUARY_CSS} from "./reader-live-handoff-sanctuary.js";
 import {projectLiveHandoffIncensationPreview,clampLiveHandoffRouteStep} from "./reader-live-handoff-routes.js";
 import {projectLiveHandoffSourceTurnPreview} from "./reader-live-handoff-turns.js";
+import {renderClaudeNativeSanctuary,renderClaudeNativeRouteOverlay} from "./reader-live-handoff-claude-sanctuary.js";
 import {projectLiveHandoffTimeline,projectLiveHandoffWheel} from "./reader-live-handoff-timeline.js";
 import {renderLiveHandoffTimelineHtml,renderLiveHandoffWheelHtml,LIVE_HANDOFF_STAGE_D_CSS} from "./reader-live-handoff-stage-d-render.js";
 
@@ -194,7 +195,7 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
     if(!svg)return false;
     let overlay=svg.querySelector("[data-lb-route-overlay]");
     if(!overlay){
-      svg.insertAdjacentHTML("beforeend",renderLiveHandoffPreviewRouteOverlay({
+      svg.insertAdjacentHTML("beforeend",renderClaudeNativeRouteOverlay({
         scene:lastScene,route:activeRoute,step
       }));
       overlay=svg.querySelector("[data-lb-route-overlay]");
@@ -288,7 +289,7 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
       scene.server,scene.candles,scene.colour,scene.requiem]);
     if(sceneSignature!==lastSceneSignature){
       if(activeRoute)stopRoutePreview();
-      sanctuaryContent.innerHTML=renderLiveHandoffSanctuarySvg(scene);
+      sanctuaryContent.innerHTML=renderClaudeNativeSanctuary(scene);
       lastSceneSignature=sceneSignature;
     }
     band.dataset.sanctuarySourceStatus=scene.status;
