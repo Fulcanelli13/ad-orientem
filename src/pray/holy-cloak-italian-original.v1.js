@@ -149,7 +149,48 @@ const CORE=CANON.prayers;
 const GLORY=CORE.foundations_glory_be?.la;
 const ETERNAL_REST=CORE.foundations_eternal_rest?.la;
 const SIGN=CORE.foundations_sign_of_cross?.la;
+/** The Salpan Holy Cloak PDF has an older St Joseph litany with the
+ * "Ora pro nobis" versicle. It is NOT the standalone 1909 reader's
+ * "Constituit eum" concluding response pair; compose a source-specific
+ * variant while borrowing all 26 existing pre-2021 invocations and collect.
+ * The EN/FR response pair below is an editorial translation of the print,
+ * not an imported historical English/French witness.
+ */
 const OLD_LITANY=JOSEPH_LITANY_1909_V1.la;
+const JOSEPH_LITANY_HOLY_CLOAK_PAIR=Object.freeze({
+ la:Object.freeze({
+  from:"℣. Constituit eum dominum domus suæ.\n℟. Et principem omnis possessionis suæ.",
+  to:"℣. Ora pro nobis, Sancte Ioseph.\n℟. Ut digni efficiamur promissionibus Christi."
+ }),
+ en:Object.freeze({
+  from:"℣. He made him master of his house.\n℟. And ruler of all his possessions.",
+  to:"℣. Pray for us, Saint Joseph.\n℟. That we may be made worthy of the promises of Christ."
+ }),
+ fr:Object.freeze({
+  from:"℣. Il l'a établi le chef de sa maison.\n℟. Et l'intendant de tous ses biens.",
+  to:"℣. Priez pour nous, saint Joseph.\n℟. Afin que nous soyons rendus dignes des promesses du Christ."
+ })
+});
+function holyCloakLitanyFace(locale){
+ const face=JOSEPH_LITANY_1909_V1[locale];
+ const pair=JOSEPH_LITANY_HOLY_CLOAK_PAIR[locale];
+ if(!face||!pair||face.split(pair.from).length!==2)
+  throw Error("Holy Cloak exact historical litany response pair mismatch: "+locale);
+ const result=face.replace(pair.from,pair.to);
+ if(!result.includes(pair.to)||result.includes(pair.from))
+  throw Error("Holy Cloak source response substitution failed: "+locale);
+ return result;
+}
+export const HOLY_CLOAK_LITANY_HISTORIC_VARIANT_V1=Object.freeze({
+ sourceId:JOSEPH_LITANY_1909_V1.id,
+ sourceWitness:"https://www.salpan.org/LITURGIA/PREGHIERE/Sacro%20Manto.pdf",
+ variant:"ORA_PRO_NOBIS_SANCTE_IOSEPH_SOURCE_CLOSING",
+ originalPrint1882Collated:false,
+ independentEnglishFrenchHistoricPrintTranslation:false,
+ la:holyCloakLitanyFace("la"),
+ en:holyCloakLitanyFace("en"),
+ fr:holyCloakLitanyFace("fr")
+});
 const OLD_INVOCATIONS=OLD_LITANY.split("\n").filter(s=>s.endsWith(", ora pro nobis.")).length;
 if(RAW.length!==19||RAW.some((x,i)=>x.id!=="I II III IV V VI VII VIII IX X XI XII XIII XIV XV XVI XVII XVIII XIX".split(" ")[i])||
  !GLORY||!ETERNAL_REST||!SIGN||!OLD_LITANY||OLD_INVOCATIONS!==26)
@@ -167,8 +208,9 @@ export const HOLY_CLOAK_ITALIAN_STEPS_V1=Object.freeze([
   ])
  })),
  Object.freeze({id:"litany",kind:"litany",title:"Litanie di San Giuseppe · forma storica",language:"la",
-  body:OLD_LITANY,sourceId:JOSEPH_LITANY_1909_V1.id,includesCollect:true,
-  vernacular:Object.freeze({en:JOSEPH_LITANY_1909_V1.en,fr:JOSEPH_LITANY_1909_V1.fr}),
+  body:HOLY_CLOAK_LITANY_HISTORIC_VARIANT_V1.la,sourceId:JOSEPH_LITANY_1909_V1.id,includesCollect:true,
+  sourceVariantId:HOLY_CLOAK_LITANY_HISTORIC_VARIANT_V1.variant,
+  vernacular:Object.freeze({en:HOLY_CLOAK_LITANY_HISTORIC_VARIANT_V1.en,fr:HOLY_CLOAK_LITANY_HISTORIC_VARIANT_V1.fr}),
   note:"The litany already includes its concluding versicle and collect; do not duplicate the standalone Oremus."}),
  Object.freeze({id:"closing",kind:"closing",title:"Chiusura del Sacro Manto",language:"it",body:LAST}),
  Object.freeze({id:"optional",kind:"optional",title:"A te, o Beato Giuseppe",language:"la",
