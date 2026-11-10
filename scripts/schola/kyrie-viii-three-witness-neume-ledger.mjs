@@ -29,7 +29,7 @@ export const KYRIE_VIII_WITNESSES=WITNESSES;
 export const KYRIE_VIII_NEUME_AUDIT_SCHEMA="ao-schola-kyrie-viii-3-print-neume-ledger-v1";
 const sourcePath=new URL("../../data/presentation/reader-text-sung.v1.json",import.meta.url);
 const sha=s=>createHash("sha256").update(s,"utf8").digest("hex");
-const TOKEN=/\([^()]*\)|<clear>\*\*|<clear>\*|<i>iij\.<\/i>|<i>ij\.<\/i>/g;
+const TOKEN=/\([^()]*\)|<clear>\*\*|<clear>\*|\*~\{~\}|<i>iij\.<\/i>|<i>ij\.<\/i>/g;
 const expectedCues=[
  ["AO.SM.C0044","AO.SM.C0045","AO.SM.C0046"],
  ["AO.SM.C0047","AO.SM.C0048","AO.SM.C0049"],
@@ -61,12 +61,11 @@ export function buildKyrieVIIIThreeWitnessNeumeLedger({corpus,source}={}){
      id:"K8-L"+String(i+1).padStart(2,"0")+"-U"+String(j+1).padStart(2,"0"),
      ordinal:j+1,sourceLine:i,rawGabc:raw,
      kind:raw==="(c3)"?"CLEF":
+       raw==="*~{~}"?"SINGLE_STAR_INITIAL_INTONATION":
        raw==="<clear>*"?"SINGLE_STAR_PERFORMER_HANDOFF":
        raw==="<clear>**"?"DOUBLE_STAR_FULL_CHOIR_ENTRY":
        raw.startsWith("<i>")?"PRINTED_REPEAT_DIRECTIVE":
        raw==="(::)"?"FINAL_BAR":
-       raw===",)"||raw==="(,) "||raw==="(,) "?"PAUSE":
-       raw==="(,) "?"PAUSE":
        raw==="(,)"?"PAUSE":"NEUME_GROUP",
      reviewStatus:"NOT_NOTE_BY_NOTE_CERTIFIED",
      witnessChecks:Object.freeze(WITNESSES.map(w=>Object.freeze({
@@ -76,7 +75,9 @@ export function buildKyrieVIIIThreeWitnessNeumeLedger({corpus,source}={}){
    const stars=units.filter(u=>u.kind.includes("HANDOFF")||u.kind==="DOUBLE_STAR_FULL_CHOIR_ENTRY");
    const directives=units.filter(u=>u.kind==="PRINTED_REPEAT_DIRECTIVE");
    const expectedRepeat=i<2?"iij.":i===2?"ij.":null;
-   if((expectedRepeat&&!directives.some(u=>u.rawGabc.includes(expectedRepeat))) ||
+   if((i===0&&units.filter(u=>u.kind==="SINGLE_STAR_INITIAL_INTONATION").length!==1) ||
+      (i!==0&&units.some(u=>u.kind==="SINGLE_STAR_INITIAL_INTONATION")) ||
+      (expectedRepeat&&!directives.some(u=>u.rawGabc.includes(expectedRepeat))) ||
       (!expectedRepeat&&directives.length!==0) ||
       (i<3&&stars.length!==0) ||
       (i===3&&(stars.length!==2||stars[0].rawGabc!=="<clear>*"||
@@ -96,10 +97,10 @@ export function buildKyrieVIIIThreeWitnessNeumeLedger({corpus,source}={}){
  });
  if(phrases.some(x=>!x))return err("ORIGINAL_REPEAT_HANDOFF_OR_TOKEN_STRUCTURE_DRIFT");
  const reviewUnits=phrases.reduce((a,x)=>a+x.musicalSourceUnits,0);
- if(reviewUnits!==44)return err("PINNED_SOURCE_UNIT_COUNT_DRIFT");
+ if(reviewUnits!==45)return err("PINNED_SOURCE_UNIT_COUNT_DRIFT");
  return Object.freeze({
    schema:KYRIE_VIII_NEUME_AUDIT_SCHEMA,
-   status:"44_SOURCE_MARKS_3_WITNESSES_PENDING_INDEPENDENT_MUSICAL_REVIEW",
+   status:"45_SOURCE_MARKS_3_WITNESSES_PENDING_INDEPENDENT_MUSICAL_REVIEW",
    sourceId:"GREGOBASE-1184",sourceGabcSha256:sha(original.gabc),
    witnessCount:WITNESSES.length,witnesses:WITNESSES,
    printPages:4,printedMelodyLines:4,
