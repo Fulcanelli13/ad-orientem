@@ -82,4 +82,7 @@ test("opt-in reader uses source-derived Plan, zoomable timeline, meaningful whee
  assert.match(band,/claudeWheelRender\(wheel,timeline,nativeState\)/);
  assert.match(band,/timelineHost\.addEventListener\("click"/);
  assert.match(band,/PREVIEW_NOT_REQUESTED/);
+ assert.match(band,/const nativeMusic=shell\.querySelector\("\[data-schola-events-open\]"\)/);
+ assert.match(band,/nativeMusic\?\.click\(\)/);
+ assert.match(band,/musicAccess\.remove\(\)/);
 });
