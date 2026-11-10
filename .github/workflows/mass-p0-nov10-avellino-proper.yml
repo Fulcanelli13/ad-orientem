@@ -1,0 +1,25 @@
+name: Mass P0 Nov 10 St Andrew Avellino original 1962 Proper gate
+on:
+  pull_request:
+    paths:
+      - "tests/calendar-imminent-mass-gate-2026.mjs"
+      - "src/app/source-transport-compat.js"
+      - "src/mass/host-adapter.js"
+      - ".github/workflows/mass-p0-nov10-avellino-proper.yml"
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  nov10-saint-proper:
+    name: Resolve original St Andrew Avellino Mass and Common C5 EN FR
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Actual calendar to Mass source and R17 2026-11-10
+        run: node tests/calendar-imminent-mass-gate-2026.mjs
