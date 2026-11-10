@@ -25,7 +25,12 @@ const compute=function compute(data){
  const a=x=>Array.isArray(x)?x:[],str=x=>String(x??"").trim();
  const uniq=x=>[...new Set(x.filter(Boolean))],sorted=x=>[...x].sort((a,b)=>str(a).localeCompare(str(b),"en"));
  const srcById=new Map(a(data.shrine_sources.sources).map(x=>[x.id,x]));
- const geo=a(data.geography.places);
+ // Preserve immutable 2026-11-04 530-Place editorial baseline even as map-first
+ // releases append new canonical Places, without rewriting the old master.
+ const frozenMaster=JSON.parse(readFileSync(resolve(root,"data/geography/research/sacred-atlas-editorial-master-530-20261104.v1.json"),"utf8"));
+ const frozenIds=new Set(a(frozenMaster.places).map(x=>x.place_id));
+ const geo=a(data.geography.places).filter(x=>frozenIds.has(x.place_id));
+ if(frozenIds.size!==530||geo.length!==530)throw Error("Frozen 530 editorial IDs deleted or duplicated in canonical geography");
  const shrineByPlace=new Map(a(data.shrines.shrines).map(x=>[x.place_id,x]));
  const shrineById=new Map(a(data.shrines.shrines).map(x=>[x.shrine_id,x]));
  const pilgrimageByPlace=new Map();

@@ -24,7 +24,7 @@ for(const image of gallery.items){
 }
 assert.equal(audit.schema,"AO_SACRED_ATLAS_PHOTO_PRODUCTION_CROSSWALK_20261103_V1");
 assert.equal(audit.scope,"READ_ONLY_RECONCILIATION_NO_IMAGE_OR_RESEARCH_PROMOTION");
-assert.equal(geo.places.length,530,"Original exact geographic scope must not be silently changed by photo research");
+assert.ok(geo.places.length>=530,"Previously mapped Places must not be deleted or confused with photo-only research");
 assert.equal(audit.original_268_subject_crosswalk.length,268);
 assert.equal(audit.round1_user_kept_preview_crosswalk.length,20);
 assert.equal(new Set(audit.original_268_subject_crosswalk.map(x=>x.subject_id)).size,268);
