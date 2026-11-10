@@ -33,7 +33,63 @@
 
 **Batch approval contract:** (1) approval is affirmative and scoped to the candidate ID and the already screened named physical Place; (2) keep coordinates illustrative, no navigation/entrance claim; (3) derive native EN/FR Place cards from current templates, with only already-approved Place media or explicit fallback; (4) no liturgical rite, Missal, Una Cum, opening-hour, miracle or relic-authenticity inference; (5) preserve and disclose `site` versus `complex_anchor` identity and verify nonduplication against current canonical Place IDs at import; (6) move into main only through the existing explicit owner decision + source/identity/CI/Pages gates; (7) all 149 other records in the 169 board remain unchanged. No Vercel.
 
-**Next tranche:** the 40 other Lane-A candidates without a `NAMED_SITE_GEOMETRY_PENDING` finding remain eligible for streamlined review, but are not approved by this batch. The 38 Lane-A geometry-follow-up cases, 68 qualified Lane-B cases, one Isiro physical hold and two already drafted B21 sites stay in their existing lanes.
+**Remaining standard-review records:** the next 40 Lane-A records are organized below, preserving the existing V10 owner-decision field. No publication or approval is implied. The 38 separate geometry-follow-up records, 68 Lane-B qualified cases, one Isiro hold and two already drafted B21 sites remain untouched.
+
+### Priority wave 2 — 20 further sites without nearest-Place flags
+
+| Candidate | Sacred Place | Country | Map scope | Nearby-site check | Decision |
+|---|---|---|---|---|---|
+| `SG-INV-0496` | Sanctuary of Saint José Gabriel Brochero, Villa Cura Brochero | AR | `site` | None flagged | **PENDING** |
+| `SG-INV-0738` | National Shrine of Our Lady of the Sacred Heart, Randwick | AU | `site` | None flagged | **PENDING** |
+| `SG-INV-0481` | Basilica of Our Lady of Conceição da Praia, Salvador | BR | `site` | None flagged | **PENDING** |
+| `SG-INV-0344` | Marian shrine of Trokeli | BY | `site` | None flagged | **PENDING** |
+| `SG-INV-0420` | Ermitage Saint-Antoine, Lac-Bouchette | CA | `complex_anchor` | None flagged | **PENDING** |
+| `SG-INV-0501` | Shrine of Our Lady of Lo Vásquez | CL | `site` | None flagged | **PENDING** |
+| `SG-INV-0466` | National Shrine of Jesús Nazareno del Rescate, Arroyo Arenas | CU | `site` | None flagged | **PENDING** |
+| `SG-INV-0287` | Shrine of Our Lady of Sorrows, Sloup | CZ | `complex_anchor` | None flagged | **PENDING** |
+| `SG-INV-0293` | Teplá Abbey | CZ | `complex_anchor` | None flagged | **PENDING** |
+| `SG-INV-0180` | Basilica of Saint Lawrence, Kempten | DE | `site` | None flagged | **PENDING** |
+| `SG-INV-0691` | Basilica of Notre-Dame de Santa Cruz, Oran | DZ | `site` | None flagged | **PENDING** |
+| `SG-INV-0514` | Sanctuary of Our Lady of Guayco, Bolívar | EC | `site` | None flagged | **PENDING** |
+| `SG-INV-0516` | Sanctuary of Saint Narcisa de Jesús, Nobol | EC | `site` | None flagged | **PENDING** |
+| `SG-INV-0519` | Sanctuary of Schoenstatt, Guayaquil | EC | `site` | None flagged | **PENDING** |
+| `SG-INV-0134` | Cathedral of the Holy Cross, Cádiz | ES | `site` | None flagged | **PENDING** |
+| `SG-INV-0142` | Monastery of Poblet | ES | `complex_anchor` | None flagged | **PENDING** |
+| `SG-INV-0124` | Monastery of Santo Domingo de Silos | ES | `complex_anchor` | None flagged | **PENDING** |
+| `SG-INV-0119` | Sanctuary of Our Lady of El Henar | ES | `site` | None flagged | **PENDING** |
+| `SG-INV-0125` | Sanctuary of Saint Ignatius of Loyola, Azpeitia | ES | `site` | None flagged | **PENDING** |
+| `SG-INV-0133` | Sanctuary of the Great Promise, Valladolid | ES | `site` | None flagged | **PENDING** |
+
+**Preflight:** 20/20 present in the authoritative board, 20/20 Lane A and PENDING, no `NAMED_SITE_GEOMETRY_PENDING` finding, no flagged nearest Place, no B21-draft overlap. Exact entrances and imagery are not certified.
+
+### Priority wave 3 — 20 further sites, including six distinct-neighbour checks
+
+| Candidate | Sacred Place | Country | Map scope | Nearby-site check | Decision |
+|---|---|---|---|---|---|
+| `SG-INV-0737` | National Shrine of Our Lady of Mount Carmel, Middle Park | AU | `site` | Different from St Patrick's Cathedral, Melbourne | **PENDING** |
+| `SG-INV-0168` | Shrine of Our Lady in the Kupfergasse, Cologne | DE | `complex_anchor` | Different from Hohe Domkirche St. Petrus, Köln | **PENDING** |
+| `SG-INV-0126` | Shrine at the Cave of Saint Ignatius, Manresa | ES | `complex_anchor` | None flagged | **PENDING** |
+| `SG-INV-0128` | Shrine of Saint Dominic, Caleruega | ES | `complex_anchor` | None flagged | **PENDING** |
+| `SG-INV-0048` | Abbey of Saint-Michel de Frigolet | FR | `complex_anchor` | None flagged | **PENDING** |
+| `SG-INV-0008` | Sanctuary of Our Lady of Bétharram | FR | `complex_anchor` | None flagged | **PENDING** |
+| `SG-INV-0250` | Carfin Grotto | GB | `complex_anchor` | None flagged | **PENDING** |
+| `SG-INV-0252` | Shrine of Our Lady of Mount Carmel, Aylesford Priory | GB | `complex_anchor` | None flagged | **PENDING** |
+| `SG-INV-0445` | National Shrine of the Sacred Heart, Guatemala City | GT | `site` | Different from Basílica de Nuestra Señora del Rosario — Santo Domingo, Guatemala | **PENDING** |
+| `SG-INV-0316` | Shrine of Blessed Alojzije Stepinac, Zagreb | HR | `complex_anchor` | None flagged | **PENDING** |
+| `SG-INV-0246` | Abbey of Kylemore | IE | `complex_anchor` | None flagged | **PENDING** |
+| `SG-INV-0102` | Basilica of Saint John the Evangelist, Ravenna | IT | `site` | None flagged | **PENDING** |
+| `SG-INV-0074` | Sanctuary of Our Lady of the Mystical Rose, Montichiari | IT | `site` | None flagged | **PENDING** |
+| `SG-INV-0567` | Shepherds' Field Church, Beit Sahour | PS | `complex_anchor` | Different from Chapel of the Milk Grotto, Bethlehem | **PENDING** |
+| `SG-INV-0607` | National Shrine of the Holy Cross, Marawila | LK | `complex_anchor` | None flagged | **PENDING** |
+| `SG-INV-0645` | National Shrine of Our Lady of Loreto, Manila | PH | `site` | Different from Minor Basilica and National Shrine of Jesus Nazareno — Quiapo | **PENDING** |
+| `SG-INV-0647` | National Shrine of Our Lady of Salambao, Obando | PH | `complex_anchor` | None flagged | **PENDING** |
+| `SG-INV-0662` | National Shrine of Saint Lorenzo Ruiz, Binondo | PH | `site` | Different from Manila Cathedral Basilica — Immaculate Conception | **PENDING** |
+| `SG-INV-0204` | Sanctuary of Our Lady of Ludźmierz | PL | `complex_anchor` | None flagged | **PENDING** |
+| `SG-INV-0207` | Sanctuary of Our Lady of Wąwolnica | PL | `complex_anchor` | None flagged | **PENDING** |
+
+**Six nonautomatic-deduplication checks:** `SG-INV-0737` (National Shrine of Our Lady of Mount Carmel, Middle Park) is distinct from the nearby already-registered St Patrick's Cathedral, Melbourne; `SG-INV-0168` (Shrine of Our Lady in the Kupfergasse, Cologne) is distinct from the nearby already-registered Hohe Domkirche St. Petrus, Köln; `SG-INV-0445` (National Shrine of the Sacred Heart, Guatemala City) is distinct from the nearby already-registered Basílica de Nuestra Señora del Rosario — Santo Domingo, Guatemala; `SG-INV-0567` (Shepherds' Field Church, Beit Sahour) is distinct from the nearby already-registered Chapel of the Milk Grotto, Bethlehem; `SG-INV-0645` (National Shrine of Our Lady of Loreto, Manila) is distinct from the nearby already-registered Minor Basilica and National Shrine of Jesus Nazareno — Quiapo; `SG-INV-0662` (National Shrine of Saint Lorenzo Ruiz, Binondo) is distinct from the nearby already-registered Manila Cathedral Basilica — Immaculate Conception. These proximity flags are not proof of duplication; preserve both physical-site identities until the existing merge/admission checks pass.
+
+**Overall first-stage inventory:** 60/169 candidates organized into three existing-board decision waves; all 60 remain `PENDING` and `publication_authorized:false`. No new canonical IDs, source scrapes, album/image approvals, or pin precision claims are created here.
 
 ---
 | Decision lane | Count | Meaning |
