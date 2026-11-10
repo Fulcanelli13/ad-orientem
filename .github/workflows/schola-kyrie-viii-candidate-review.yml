@@ -1,0 +1,39 @@
+name: Schola Kyrie VIII non-publishing score candidates
+on:
+  pull_request:
+    paths:
+      - "scripts/schola/prepare-kyrie-viii-review-manifest.mjs"
+      - "tests/schola-kyrie-viii-review-manifest.mjs"
+      - "src/mass/reader-kyrie-viii-review-queue.js"
+      - "src/mass/reader-schola-dock-approved.js"
+      - "data/presentation/reader-text-sung.v1.json"
+      - ".github/workflows/schola-kyrie-viii-candidate-review.yml"
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  research-only:
+    name: Nine reproducible research scores — publication blocked
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate non-publishing generator syntax
+        run: |
+          node --check scripts/schola/prepare-kyrie-viii-review-manifest.mjs
+          node --check tests/schola-kyrie-viii-review-manifest.mjs
+      - name: Validate all original source cues, hashes, and blocked promotion
+        run: node tests/schola-kyrie-viii-review-manifest.mjs
+      - name: Produce review-only nine-cue manifest
+        run: |
+          node scripts/schola/prepare-kyrie-viii-review-manifest.mjs > "$RUNNER_TEMP/kyrie-viii-musical-review-hold.json"
+          node --input-type=module -e "import fs from 'node:fs';const x=JSON.parse(fs.readFileSync(process.env.RUNNER_TEMP+'/kyrie-viii-musical-review-hold.json','utf8'));if(x.approvedScores!==0||x.publishedScores!==0||x.candidates.length!==9||x.candidates.some(s=>s.publication!=='BLOCKED'||s.musicalNotationVerified!==false))process.exit(1)"
+      - name: Preserve unapproved research review file (not a site asset)
+        uses: actions/upload-artifact@v4
+        with:
+          name: kyrie-viii-nine-cue-musical-review-hold
+          path: ${{ runner.temp }}/kyrie-viii-musical-review-hold.json
+          retention-days: 7
