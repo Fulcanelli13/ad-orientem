@@ -1,0 +1,44 @@
+name: Sacred Art public-domain colour photo research batch 2
+
+# Research-only source provenance and photo download. No publication or app changes.
+on:
+  pull_request:
+    paths:
+      - 'data/artwork/research/m2m-open-colour-photo-batch2-nationalmuseum-rijks-20261110.v1.json'
+      - 'scripts/sacred-art-acquire-open-colour-batch2.py'
+      - 'tests/sacred-art-open-colour-batch2-guard.test.mjs'
+      - '.github/workflows/sacred-art-open-colour-batch2-research.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  batch2-exact-museum-sources:
+    name: verify Nationalmuseum and Rijksmuseum image source files
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Checkout research branch
+        uses: actions/checkout@v4
+      - name: Python image analysis environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install bounded Pillow decoder
+        run: python -m pip install Pillow==12.0.0
+      - name: Reject mistaken sources and unauthorized publication
+        run: node tests/sacred-art-open-colour-batch2-guard.test.mjs
+      - name: Attempt official museum JPEGs and save explicit failures
+        run: |
+          python scripts/sacred-art-acquire-open-colour-batch2.py \
+            --manifest data/artwork/research/m2m-open-colour-photo-batch2-nationalmuseum-rijks-20261110.v1.json \
+            --output research-colour-batch2
+      - name: Save research photo originals and report for 7 days
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ad-orientem-open-colour-batch2-research-only
+          path: research-colour-batch2/
+          retention-days: 7
+          if-no-files-found: warn
