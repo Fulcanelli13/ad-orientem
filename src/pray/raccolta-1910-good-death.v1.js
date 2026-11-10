@@ -50,7 +50,7 @@ export const RACCOLTA_1910_GOOD_DEATH_WORKS_V1 = Object.freeze([
     "sourceWork": "The Raccolta (1910), attributed translation by Ambrose St John",
     "sourceURL": "https://motherofmercychapter.com/Prayers/The%20Raccolta%20-%201910%20Collection%20of%20Indulgenced%20Prayers%20and%20Good%20Works.pdf",
     "witnessStatus": "1910_TEXT_IN_MODERN_TYPESET_REPRODUCTION_CHECKED_AGAINST_RENDERED_PAGES_NOT_ORIGINAL_PRINT_FACSIMILE",
-    "languagePolicy": "LATIN_AND_ENGLISH_HISTORICAL_TEXT_FRENCH_NEW_EDITORIAL_TRANSLATION",
+    "languagePolicy": "HISTORICAL_LATIN_EDITORIAL_ENGLISH_AND_FRENCH",
     "historicalIndulgencesCurrentlyValid": false
   }
 ].map(w=>Object.freeze(w)));
