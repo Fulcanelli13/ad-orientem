@@ -6,6 +6,7 @@ import {join,resolve} from "node:path";
 import {reviewKyrieVIIICantorTurns} from "../../src/mass/reader-kyrie-viii-cantor-turns-review.js";
 import {buildKyrieVIIIReviewManifest} from "./prepare-kyrie-viii-review-manifest.mjs";
 import {buildKyrieVIIIThreeWitnessNeumeLedger} from "./kyrie-viii-three-witness-neume-ledger.mjs";
+import {buildKyrieVIIIOpeningPitchInventory} from "./kyrie-viii-opening-pitch-inventory.mjs";
 const dir=process.argv[2]?resolve(process.argv[2]):"";
 if(!dir)throw new Error("Pass proof-image directory");
 const report=JSON.parse(readFileSync(join(dir,"proof.json"),"utf8"));
@@ -16,6 +17,10 @@ const ledger=buildKyrieVIIIThreeWitnessNeumeLedger({corpus:sungCorpus});
 assert.equal(ledger.reviewUnits,45);
 assert.equal(ledger.printedComparisonTasks,135);
 assert.equal(ledger.comparisonTasksCertified,0);
+const opening=buildKyrieVIIIOpeningPitchInventory({corpus:sungCorpus});
+assert.equal(opening.pitchNoteheads,25);
+assert.equal(opening.encodedAccidentalGlyphs,2);
+assert.equal(opening.printVerifiedNoteheads,0);
 assert.equal(report.status,"RESEARCH_NOT_APPROVED");
 assert.equal(report.publicScores,0);
 assert.equal(report.sourceId,"GREGOBASE-1184");
@@ -43,6 +48,22 @@ const witnessHtml=ledger.witnesses.map(w=>
  '<li><strong>'+esc(w.edition)+'</strong> — '+esc(w.pages.join("–"))+
  ': '+w.images.map((url,i)=>'<a href="'+esc(url)+'" rel="noopener noreferrer" target="_blank">'+
   'scan '+(i+1)+'</a>').join(" · ")+'</li>').join("");
+const openingInventoryHtml='<section aria-label="Opening Kyrie notehead inventory">'+
+ '<h2>Opening Kyrie: 25 source notes and 2 flat signs</h2>'+
+ '<p>These are <strong>GABC-encoded noteheads</strong>, not pitch positions verified from an original print. '+
+ 'The two <code>gx</code> signs represent flats at staff position g and MUST NOT be counted as sung g notes. '+
+ 'The third and fifth groups contain the two alteration glyphs. All historical note-by-note comparisons remain pending.</p>'+
+ '<div class="tableWrap"><table><thead><tr><th>Source mark</th><th>Text / role</th>'+
+ '<th>Original GABC</th><th>Encoded pitches</th><th>Alterations</th><th>Print proof</th></tr>'+
+ '</thead><tbody>'+opening.groups.map(g=>'<tr><td>'+esc(g.unitId)+'</td><td>'+
+ esc(g.lyricFragment)+'</td><td><code>'+esc(g.sourceGabc)+'</code></td><td>'+
+ esc(g.notes.map(n=>n.gabcPitch).join(' '))+' ('+g.noteheads+')</td><td>'+
+ esc(g.accidentals.map(a=>a.symbol+' '+a.type).join(', ')||'none')+
+ '</td><td>NOT CERTIFIED</td></tr>').join('')+
+ '</tbody></table></div><p>Original printed source: <a href="'+
+ esc(opening.groups[0].originalPrintUrl)+'">Graduale Romanum 1961 p. 28*</a> · '+
+ '<a href="'+esc(opening.groups[0].secondWitnessUrl)+'">Liber Usualis 1961 p. 37</a>. '+
+ 'No notehead, flat, neume or rhythmic sign is yet classified as independently print-verified.</p></section>';
 const cards=manifest.candidates.map((score,i)=>{
  const views=report.captures.filter(c=>c.cueId===score.sourceCueId)
   .sort((a,b)=>a.width-b.width);
@@ -110,6 +131,7 @@ const html='<!doctype html><html lang="en"><head><meta charset="utf-8">'+
  '<a href="#cue-'+i+'">'+(i+1)+'</a>').join("")+'</nav>'+
  '<section aria-label="Musical source mark review"><h2>45 GABC source marks · 135 printed-witness checks pending</h2>'+ 
  '<p>The first Kyrie intonation asterisk is distinct from the two performer handoff marks in the final Kyrie. No pitch, neume, mora or episema is certified by the existence of these source tokens.</p>'+auditHtml+'</section>'+ 
+ openingInventoryHtml+
  '<section>'+cards+'</section><footer><strong>Verified:</strong> 18/18 offline Exsurge renderings; '+
  '18/18 exact lyric mappings (320px and 390px). <strong>Not yet certified:</strong> '+
  'neume-by-neume pitches, episemata, rhythmic signs, and editorial publication permission. '+
