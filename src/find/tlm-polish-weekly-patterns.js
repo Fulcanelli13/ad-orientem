@@ -94,7 +94,7 @@ const FORBIDDEN=["rrule","recurrence","next_mass","event_date","occurrences","ca
  "una_cum","canonical_status","pope_named_in_canon","missal","missal_edition",
  "rubrical_basis","rite","celebrant","venue_owner","ownership","gps","latitude","longitude"];
 const forbidden=x=>FORBIDDEN.some(k=>Object.hasOwn(x,k));
-const HHMM=v=>/^([01]\\d|2[0-3]):[0-5]\\d$/.test(T(v));
+const HHMM=v=>/^([01][0-9]|2[0-3]):[0-5][0-9]$/.test(T(v));
 const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
 export function attachPolishFirstPartyWeeklyPatterns(items,manifest){
  if(manifest?.schema!=="AO_CL27_POLISH_SOURCE_WEEKLY_V1"||
@@ -121,7 +121,6 @@ export function attachPolishFirstPartyWeeklyPatterns(items,manifest){
     throw Error("Invalid Polish source line "+p.cl2_anchor);
    actual.push(e.scope+"|"+e.time+"|"+e.mass_type);
    if(p.cl2_anchor==="RG-A080BDE87FC4"&&e.scope==="SATURDAY"&&
-      (!e.exception_en.includes("09:00")&&!e.exception_en.includes("09:00"))&&
       !e.exception_en.includes("09:00"))
     throw Error("Bajerze first Saturday caution missing");
   }
