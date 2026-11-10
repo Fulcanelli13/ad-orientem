@@ -125,10 +125,19 @@ const p1=dyk526Pick(duplicateTitles,"2026-11-10",{enabled:true});
 const p2=dyk526Pick(duplicateTitles,"2026-11-10",{enabled:true});
 assert.equal(p1?.id,p2?.id,"Daily rotation must remain deterministic");
 
-// The live reader must not import this staging adapter or research file.
-for(const live of ["src/home/did-you-know-glossary.js","src/home/dyk-published-feed.js"]){
- const text=readFileSync(live,"utf8");
- assert.ok(!text.includes("dyk-526-release-adapter.js"),"Unexpected live import in "+live);
- assert.ok(!text.includes("ao-dyk-display-preview-526-RESEARCH_ONLY"),"Unexpected preview import in "+live);
+// Home may import the safe bridge, but never the *research preview* or
+// a direct 526 release adapter bypassing the fixed disabled feature gate.
+const home=readFileSync("src/home/did-you-know-glossary.js","utf8");
+const released=readFileSync("src/home/dyk-published-feed.js","utf8");
+const bridge=readFileSync("src/home/dyk-526-home-bridge.js","utf8");
+assert.match(home,/dyk-526-home-bridge\\.js/);
+assert.ok(!home.includes('from "./dyk-526-release-adapter.js"'));
+assert.match(bridge,/DYK526_HOME_ENABLED=false/);
+assert.match(bridge,/data\\/did-you-know\\/dyk-526-approved-release/);
+for(const text of [home,released,bridge]){
+ assert.ok(!text.includes("ao-dyk-display-preview-526-RESEARCH_ONLY"),
+  "Unapproved preview must never become a live Home import");
 }
+assert.ok(!released.includes("dyk-526-release-adapter.js"),
+ "Existing released banks remain independent of the future 526 adapter");
 console.log("PASS DYK 526 adapter: staged candidates=526, live=0, bilingual and source guards fail closed; synthetic positive-path contract verified.");
