@@ -1,7 +1,7 @@
 {
   "schema": "AO_SACRED_ART_EXACT_MUSEUM_SOURCE_BATCH3_V1",
   "asOf": "2026-11-10",
-  "status": "INITIAL_BATCH3_RUN_ZERO_IMAGES_REVISED_MSK_SERVICE_RETRY_PENDING",
+  "status": "SECOND_RUN_ONE_MSK_IMAGE_VERIFIED_TWO_KRAKOW_OBJECT_IMAGE_LINKS_UNRESOLVED",
   "purpose": "Acquire exact institutional image files only where public-domain original/source rights allow a research copy; do not assume commercial rights from object metadata",
   "candidates": [
     {
@@ -34,7 +34,7 @@
         "sourceEvidence": "https://imagehub.mskgent.be/iiif/3/6344/manifest.json"
       },
       "sourceRights": "PUBLIC_DOMAIN_MARK_MANIFEST_AND_ONLINE_COLLECTION_REUSE",
-      "originalPhotoDownloaded": false,
+      "originalPhotoDownloaded": true,
       "firstAttempt": {
         "runId": 42821076217,
         "artifactId": 13767802775,
@@ -42,7 +42,14 @@
         "code": "IIIF_SERVICE_PARSER_DID_NOT_FIND_UNIQUE_ID",
         "reason": "Initial batch3 runner on older script did not resolve ImageService2. The exact S-43 service had already been pinned; latest script uses that exact service with a manifest identity check.",
         "state": "RETRY_ON_CORRECTED_SCRIPT_QUEUED"
-      }
+      },
+      "verifiedOriginal": "data/artwork/research/m2m-msk-s43-verified-image-original-20261110.v1.json",
+      "sourcePhotoSha256": "b4ee3e06d0ec7de6b9ade82502e80098e564d50157a0d284a2a0b563da9c134b",
+      "verifiedOriginalPixels": [
+        2000,
+        3887
+      ],
+      "lastRunStatus": "IMAGE_BYTES_ACQUIRED_AND_INDEPENDENTLY_CHECKSUM_VERIFIED_RELEASE_HELD"
     },
     {
       "workKey": "MNK:II-a-448",
@@ -64,7 +71,9 @@
         "code": "NO_EXACT_OBJECT_OG_IMAGE",
         "reason": "Museum object page returned HTML without a distinct object-linked og:image or twitter:image; no direct JPEG URL established.",
         "state": "HOLD_IMAGE_IDENTIFIER_DISCOVERY"
-      }
+      },
+      "lastRunStatus": "UNRESOLVED_OBJECT_IMAGE_METADATA_NO_BYTES_ACQUIRED",
+      "originalPhotoDownloaded": false
     },
     {
       "workKey": "MNK:II-a-9",
@@ -87,7 +96,9 @@
         "code": "NO_EXACT_OBJECT_OG_IMAGE",
         "reason": "Museum object page returned HTML without a distinct object-linked og:image or twitter:image; no direct JPEG URL established.",
         "state": "HOLD_IMAGE_IDENTIFIER_DISCOVERY"
-      }
+      },
+      "lastRunStatus": "UNRESOLVED_OBJECT_IMAGE_METADATA_NO_BYTES_ACQUIRED",
+      "originalPhotoDownloaded": false
     }
   ],
   "policyHolds": [
@@ -137,10 +148,21 @@
   "counts": {
     "batchKeys": 3,
     "independentPolicyHeldInstitutionalWorks": 9,
-    "sourcePhotosAcquired": 0,
+    "sourcePhotosAcquired": 1,
     "newUserApprovals": 0,
     "newPublicReleases": 0,
     "lastExaminedAttempted": 3,
-    "lastExaminedVerified": 0
+    "lastExaminedVerified": 1,
+    "totalIndependentlyVerifiedPhotoCorpus": 9
+  },
+  "latestRun": {
+    "runId": 42821674233,
+    "artifactId": 13769685012,
+    "originallyDownloaded": 1,
+    "unretrievedKrakow": 2,
+    "technicalPhotoPass": 1,
+    "ownerPhotoApproval": 0,
+    "appRightsFinalApproval": 0,
+    "publicReleases": 0
   }
 }
