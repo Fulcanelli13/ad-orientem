@@ -1,5 +1,7 @@
 # Did You Know? — Bilingual Drafting Master (EN / FR)
 
+> **CURRENT CLAUDE REVIEW POLICY:** EDITORIAL COPY REVIEW ONLY; no external source checking. See the section "Claude review task — EDITORIAL ONLY" below. Historical source-verification notes in this file record research workflow, not a task for Claude.
+
 **Editorial direction, 10 November 2026:** DRAFT FIRST, REVIEW SECOND. Do not treat the old Customs-400 target as a maximum, and do not force every research candidate through full source certification before collecting more material. A large, sourced candidate bank is the goal. Claude performs a later independent editorial/source check. No candidate is automatically authorized for the Home feed.
 
 ## Files
@@ -34,22 +36,44 @@
 9. The 865 Glossary excerpts are **not authored as finished fact cards**; first-sentence rows often closely resemble definitions. Do not mistake the row count for editorially usable observations.
 10. Do not merge research PR or publish to GitHub Pages solely because an Excel status was filled. **No Vercel deployments.**
 
-## Claude review task
+## Claude review task — EDITORIAL ONLY (owner revision, 10 November 2026)
 
-Review the candidate CSV *against* both the canonical source files and the published-reference CSV. Fill only the Claude-review columns:
+**Binding revision:** Claude is not asked to verify source material. Do not open the URLs, audit books or page locators, check historical primary references, or report source-certification outcomes. Such factual sourcing is a **separate research responsibility** and is not part of the editorial pass. The earlier source-audit instructions in historical notes of this README are superseded for Claude.
 
-- `Claude decision`: `ACCEPT_DRAFT`, `REWRITE`, `MERGE_WITH`, `DUPLICATE_PUBLISHED`, `HOLD_SOURCE`, `NOT_INTERESTING`, `REJECT_FALSE`.
-- `Claude notes`: concise evidence-based explanation, including any scope/date/geography/meaning problem; specify exactly what the source does or does not show.
-- `Claude corrected EN`, `Claude corrected FR`: provide both complete rewrites when a correction is proposed.
-- `Source check result`: `PRIMARY_CONFIRMED`, `SECONDARY_ONLY`, `SOURCE_BROKEN`, `LOCATOR_MISMATCH`, `NOT_CHECKED`, or a similarly explicit finding.
-- `Final editorial signoff`: leave **blank**; owner approval is separate from Claude's proposals.
-- Use `Duplicate / related ID` to reference a retained card or a related collection instead of deleting a row.
+**Review artifact:** [Ad Orientem bilingual editorial-review workbook — 1,745 drafts](https://docs.google.com/spreadsheets/d/1i4RxqYuE8clRbB3_qFATxzOenEuCSsYhvpCXzsDm6CY/edit). It contains:
 
-Return **the complete Excel/CSV with every original row, ID, source reference, lane and provenance intact**. Do not output only a list of complaints or a summary. Provide a concise QA dashboard with counts by decision, source failure, duplications, and gaps, but **do not auto-publish**.
+- **Claude Instructions**: full editorial brief and ideal example.
+- **Editorial Review**: every candidate's Fact ID, original EN/FR, topic and scope, with separate green columns for Claude's verdict, issue tags, explanation, proposed EN, proposed FR, merge-target ID and interest/clarity scores.
+- **Original Registry**: all 23 original CSV columns preserved unchanged for provenance; no edits.
+- **Published Comparator**: 225 existing Home facts for **meaning/duplicate comparison only**, not source checking.
+- **Review Progress**: counts by verdict, track and incomplete review fields.
 
-### Example of the intended reasoning
+### What Claude should judge
 
-A statement about a historical Passion play must explicitly refer to **theatrical mystery or Paradise plays** (`jeux dramatiques / mystères religieux`) rather than suggest ordinary children's games. This can be resolved in editorial review while the raw research record remains in the bank.
+1. **Standalone sense:** the reader should understand who did what, where and when if necessary, without a glossary page or a previous card. Historical or regional scope must be stated in the reader-facing sentence, not only metadata.
+2. **Ideal format:** a concrete, interesting Did You Know discovery, normally one or two compact sentences (roughly 25–60 English words); avoid uninformative definitions, repetition and trivia without a meaningful point.
+3. **Bilingual equivalence:** natural English and idiomatic French express the same people, practices, dates, limitations and degree of certainty; correct grammar and Catholic terminology.
+4. **Measured claim framing:** distinguish reported legend, popular belief, stage-play, folk performance, local custom, historical Roman use, and universal doctrine or rubrics. Flag implausible or uncertain claims as **QUESTION_OWNER**; do **not** try to check them against sources or invent new facts.
+5. **Redundancy:** compare the workbook and published-reference texts for obvious repeated meanings. Consolidate microdetails about the same event by choosing **MERGE** and recording the retained Fact ID. Do not delete any row.
+
+### Allowed editorial verdicts
+
+- `KEEP`: suitable as written for copy quality.
+- `REWRITE`: requires clearer wording, scope, interest or EN/FR alignment. Supply **both** fully revised EN and FR.
+- `MERGE`: meaning overlaps another card; enter a merge-target Fact ID and an explanation; propose combined copy where helpful.
+- `REJECT`: not an interesting or understandable Did You Know discovery and cannot be repaired simply by copyediting; explain briefly.
+- `QUESTION_OWNER`: cannot resolve an ambiguity or apparent plausibility issue without facts outside the provided text; ask a precise question, with no invented details.
+- `SKIP_HELD`: historical candidate already held/superseded; keep in the archive but skip the editorial rewrite.
+
+**Data handling:** Fill only the green reviewer columns in **Editorial Review**. Do not overwrite source facts or source IDs; do not fill the source-check column in the archive or any **Owner approval** field. A `KEEP` verdict is **not** release approval or factual certification. Return the **complete workbook**, not an issues-only list, and include the review-progress summary. PR #2776 remains draft. No merge or deployment.
+
+### Editorial example
+
+EN: *In medieval England, some parishes erected a temporary wooden Easter sepulchre each Holy Week, then dismantled it after Easter.*
+
+FR: *Dans l'Angleterre médiévale, certaines paroisses montaient chaque Semaine sainte un Saint-Sépulcre en bois provisoire, puis le démontaient après Pâques.*
+
+This sample is geographically and historically scoped, self-contained and concrete. Do not use source-author names in the reader-facing fact.
 
 ## Proposed subsequent additions
 
