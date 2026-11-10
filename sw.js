@@ -88,12 +88,18 @@ async function validVersion(v){
  return Boolean(await c.match(ROOT))&&Boolean(await c.match(READY));
 }
 async function pinnedVersion(event){
- // A navigation creates a NEW document/client. The old document's clientId
- // must not pin its replacement to the old snapshot after explicit Update.
- // FetchEvent.resultingClientId is the identity of that destination.
- const newDocumentId=event?.request?.mode==="navigate"?
-   event?.resultingClientId:null;
- const id=newDocumentId||event?.clientId||event?.resultingClientId;
+ // A navigation starts a fresh document. Never borrow the previous page's
+ // clientId pin: doing so reloads the OLD HTML after the user taps Update.
+ // Some browsers initially supply no resultingClientId, so even that case
+ // must read the explicitly activated snapshot rather than the old pin.
+ if(event?.request?.mode==="navigate"){
+  const s=await readState();
+  const v=await validVersion(s.active)?s.active:null;
+  const destination=event.resultingClientId;
+  if(destination&&v)liveClients.set(destination,v);
+  return v;
+ }
+ const id=event?.clientId||event?.resultingClientId;
  if(id&&liveClients.has(id))return liveClients.get(id);
  const s=await readState();
  const v=await validVersion(s.active)?s.active:null;
