@@ -19,7 +19,8 @@
     "semantic_holds": "data/research/did-you-know/dyk-customs-first-400-semantic-holds-20261110.v1.json",
     "source_link_spotcheck": "data/research/did-you-know/dyk-customs-source-link-spotcheck-20261110.v1.json",
     "folio_wave": "data/research/did-you-know/dyk-customs-source-folio-wave09-17-proposals-20261110.v1.json",
-    "folio_adjudication": "data/research/did-you-know/dyk-customs-wave09-crossbank-qa-20261110.v1.json"
+    "folio_adjudication": "data/research/did-you-know/dyk-customs-wave09-crossbank-qa-20261110.v1.json",
+    "external_corroboration": "data/research/did-you-know/dyk-customs-wave09-external-corroboration-20261110.v1.json"
   },
   "counts": {
     "original_edited_bank": 400,
@@ -28,7 +29,8 @@
     "folio_rejected_already_published": 2,
     "new_provisional_distinct": 15,
     "provisional_staged_distinct": 377,
-    "remaining_to_target_of_400_new": 23
+    "remaining_to_target_of_400_new": 23,
+    "supplementary_claim_source_checks": 6
   },
   "release_rules": {
     "original_claim_unchanged": true,
@@ -10481,7 +10483,14 @@
       },
       "source_wave": 9,
       "review_status": "ORIGINAL_FOLIO_CHECKED_AWAITING_INDEPENDENT_CORROBORATION_FRENCH_SIGNOFF_AND_FINAL_SEMANTIC_REVIEW",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "secondary_corroboration": {
+        "authority": "Gouvernement du Québec — Répertoire du patrimoine culturel",
+        "url": "https://www.patrimoine-culturel.gouv.qc.ca/detail.do?id=234696&methode=consulter&type=bien",
+        "status": "INDEPENDENT_INSTITUTIONAL_CORROBORATION",
+        "reviewed_date": "2026-11-10",
+        "audit": "data/research/did-you-know/dyk-customs-wave09-external-corroboration-20261110.v1.json"
+      }
     },
     {
       "id": "DYK-C400-BF-004",
@@ -10607,7 +10616,14 @@
       },
       "source_wave": 9,
       "review_status": "ORIGINAL_FOLIO_CHECKED_AWAITING_INDEPENDENT_CORROBORATION_FRENCH_SIGNOFF_AND_FINAL_SEMANTIC_REVIEW",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "secondary_corroboration": {
+        "authority": "Visit Klagenfurt — Austrian seasonal customs",
+        "url": "https://www.visitklagenfurt.at/en/blog-en/culture-festivals-en-2/advent-traditions/",
+        "status": "INDEPENDENT_REGIONAL_CORROBORATION",
+        "reviewed_date": "2026-11-10",
+        "audit": "data/research/did-you-know/dyk-customs-wave09-external-corroboration-20261110.v1.json"
+      }
     },
     {
       "id": "DYK-C400-BF-007",
@@ -10691,7 +10707,14 @@
       },
       "source_wave": 9,
       "review_status": "ORIGINAL_FOLIO_CHECKED_AWAITING_INDEPENDENT_CORROBORATION_FRENCH_SIGNOFF_AND_FINAL_SEMANTIC_REVIEW",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "secondary_corroboration": {
+        "authority": "United States Conference of Catholic Bishops",
+        "url": "https://www.usccb.org/prayer-and-worship/liturgical-year-and-calendar/christmas/announcement-of-easter-and-the-moveable-feasts",
+        "status": "INDEPENDENT_ECCLESIAL_CORROBORATION",
+        "reviewed_date": "2026-11-10",
+        "audit": "data/research/did-you-know/dyk-customs-wave09-external-corroboration-20261110.v1.json"
+      }
     },
     {
       "id": "DYK-C400-BF-009",
@@ -10817,7 +10840,14 @@
       },
       "source_wave": 9,
       "review_status": "ORIGINAL_FOLIO_CHECKED_AWAITING_INDEPENDENT_CORROBORATION_FRENCH_SIGNOFF_AND_FINAL_SEMANTIC_REVIEW",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "secondary_corroboration": {
+        "authority": "Catholic Encyclopedia — Quinquagesima",
+        "url": "https://www.newadvent.org/cathen/12614a.htm",
+        "status": "INDEPENDENT_HISTORICAL_CORROBORATION",
+        "reviewed_date": "2026-11-10",
+        "audit": "data/research/did-you-know/dyk-customs-wave09-external-corroboration-20261110.v1.json"
+      }
     },
     {
       "id": "DYK-C400-BF-012",
@@ -10909,8 +10939,8 @@
       "id": "DYK-C400-BF-014",
       "title": "Malta's running Easter procession",
       "reader_copy": {
-        "en": "On Easter morning in a historical Maltese custom, men carried an image of the risen Christ while running uphill, making the ascent itself a sign of the Resurrection.",
-        "fr": "Dans une ancienne coutume maltaise du matin de Pâques, des hommes portaient en courant vers le sommet d'une colline une image du Christ ressuscité, faisant de cette montée un symbole de la Résurrection."
+        "en": "In Maltese Easter processions, bearers sometimes break into a run while carrying the statue of the risen Christ. The custom's historical origin remains uncertain.",
+        "fr": "Lors des processions de Pâques à Malte, les porteurs se mettent parfois à courir avec la statue du Christ ressuscité. L'origine historique de cette coutume demeure incertaine."
       },
       "source_ids": [
         "WEI58-16-020"
@@ -10945,7 +10975,23 @@
       },
       "source_wave": 9,
       "review_status": "ORIGINAL_FOLIO_CHECKED_AWAITING_INDEPENDENT_CORROBORATION_FRENCH_SIGNOFF_AND_FINAL_SEMANTIC_REVIEW",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "previous_reader_copy": {
+        "en": "On Easter morning in a historical Maltese custom, men carried an image of the risen Christ while running uphill, making the ascent itself a sign of the Resurrection.",
+        "fr": "Dans une ancienne coutume maltaise du matin de Pâques, des hommes portaient en courant vers le sommet d'une colline une image du Christ ressuscité, faisant de cette montée un symbole de la Résurrection."
+      },
+      "copy_revision": {
+        "date": "2026-11-10",
+        "reason": "Avoid attributing a disputed historical cause to the traditional running procession",
+        "audit": "data/research/did-you-know/dyk-customs-wave09-external-corroboration-20261110.v1.json"
+      },
+      "secondary_corroboration": {
+        "authority": "Archdiocese of Malta — Behold",
+        "url": "https://behold.mt/en/the-run-with-the-risen-christ/",
+        "status": "PRACTICE_CORROBORATED_HISTORICAL_DETAIL_ONLY_SINGLE_SOURCE",
+        "reviewed_date": "2026-11-10",
+        "audit": "data/research/did-you-know/dyk-customs-wave09-external-corroboration-20261110.v1.json"
+      }
     },
     {
       "id": "DYK-C400-BF-016",
@@ -10987,7 +11033,14 @@
       },
       "source_wave": 9,
       "review_status": "ORIGINAL_FOLIO_CHECKED_AWAITING_INDEPENDENT_CORROBORATION_FRENCH_SIGNOFF_AND_FINAL_SEMANTIC_REVIEW",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "secondary_corroboration": {
+        "authority": "Parish of Saint John Paul II, Archdiocese of Gdańsk",
+        "url": "https://parafiajp2.pl/aktualnosci/wypominki-listopadowe,34",
+        "status": "INDEPENDENT_ECCLESIAL_CORROBORATION",
+        "reviewed_date": "2026-11-10",
+        "audit": "data/research/did-you-know/dyk-customs-wave09-external-corroboration-20261110.v1.json"
+      }
     },
     {
       "id": "DYK-C400-BF-017",
