@@ -17,6 +17,12 @@ const APPROVED_COUNT=1383;
 const APPROVED_SITES=1300;
 const SITE_COUNT=2580;
 const HELD_COUNT=3;
+const FROZEN_ROWS_HASH="fnv1a32:a6c0d3d3";
+const recordFingerprint=rows=>{
+ let h=2166136261;
+ for(const ch of JSON.stringify(rows)){h^=ch.charCodeAt(0);h=Math.imul(h,16777619)}
+ return "fnv1a32:"+(h>>>0).toString(16).padStart(8,"0");
+};
 const forbid=new Set(["una_cum","canonical_status","ecclesial_position","pope_named_in_canon",
  "ownership","celebrant","current_mass","mass_schedule","rrule","rubrical_basis"]);
 const containsForbidden=obj=>obj&&typeof obj==="object"&&
@@ -32,6 +38,8 @@ export function validateInstitutionalMinistryNormManifest(manifest){
    manifest?.upstream?.research_branch!=="data/cl2-unified-source-location-classification-20261026"||
    !Array.isArray(manifest.rules)||manifest.rules.length!==4||
    !Array.isArray(manifest.records)||manifest.records.length!==APPROVED_COUNT||
+   manifest.records_fingerprint!==FROZEN_ROWS_HASH||
+   recordFingerprint(manifest.records)!==FROZEN_ROWS_HASH||
    !Array.isArray(manifest.holds)||manifest.holds.length!==HELD_COUNT)
   throw Error("Invalid CL27 source-ministry norm census");
  const byRule=new Map();
