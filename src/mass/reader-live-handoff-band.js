@@ -4,6 +4,7 @@ import {resolveLiveHandoffSourceCrosswalk} from "./reader-live-handoff-source-cr
 import {LIVE_HANDOFF_SOURCE_POINTS,projectLiveHandoffPlanPosition} from "./reader-live-handoff-geometry.js";
 import {projectLiveHandoffSanctuary,renderLiveHandoffSanctuarySvg,renderLiveHandoffPreviewRouteOverlay,LIVE_SANCTUARY_CSS} from "./reader-live-handoff-sanctuary.js";
 import {projectLiveHandoffIncensationPreview,clampLiveHandoffRouteStep} from "./reader-live-handoff-routes.js";
+import {projectLiveHandoffSourceTurnPreview} from "./reader-live-handoff-turns.js";
 
 export const LIVE_BAND_PREVIEW_PARAM="aoLiveBandPreview";
 export const LIVE_BAND_STORAGE_KEY="ao-live-band-height-v1";
@@ -172,6 +173,12 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
     const hasAvailable=availableRoute?.ok===true;
     routeControls.hidden=!hasAvailable&&!activeRoute;
     routeStart.hidden=!hasAvailable||Boolean(activeRoute);
+    if(hasAvailable){
+      routeStart.textContent=availableRoute.kind==="TURN"?"Illustrate turn":"Illustrate path";
+      routeStart.setAttribute("aria-label",availableRoute.kind==="TURN"
+        ?"Illustrate the certified source turn; not actual celebrant tracking"
+        :"Illustrate the sourced altar incensation path; not real-time tracking");
+    }
     routeNav.hidden=!activeRoute;
   }
   function stopRoutePreview(){
@@ -223,7 +230,7 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
       }else target?.setAttribute("visibility","hidden");
     }
     routeStep=step.index;
-    routeCount.textContent="Illustration "+(step.index+1)+"/"+step.count;
+    routeCount.textContent=(activeRoute.kind==="TURN"?"Turn ":"Illustration ")+(step.index+1)+"/"+step.count;
     routePrev.disabled=step.index===0;
     routeNext.disabled=step.atEnd;
     return true;
@@ -268,8 +275,10 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
     // the static architecture, not an invented celebrant or minister.
     const nativeState=preview.getNativeEventState?.();
     const scene=projectLiveHandoffSanctuary({gate:result,nativeState,prepared});
-    const potentialRoute=projectLiveHandoffIncensationPreview({gate:result,nativeState,prepared});
-    if(activeRoute && (!potentialRoute.ok || activeRoute.sourceCueId!==potentialRoute.sourceCueId))
+    const incenseRoute=projectLiveHandoffIncensationPreview({gate:result,nativeState,prepared});
+    const turnRoute=projectLiveHandoffSourceTurnPreview({gate:result,nativeState,prepared});
+    const potentialRoute=incenseRoute.ok?incenseRoute:turnRoute;
+    if(activeRoute && (!potentialRoute.ok || activeRoute.sourceCueId!==potentialRoute.sourceCueId || activeRoute.id!==potentialRoute.id))
       stopRoutePreview();
     availableRoute=potentialRoute;
     lastScene=scene;
@@ -346,6 +355,7 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
     getState:()=>freeze({visible:!band.hidden,page,preference,
       routePreviewActive:Boolean(activeRoute),routeStep,
       availableReferenceRoute:availableRoute?.ok?availableRoute.id:null,
+      routePreviewKind:activeRoute?.kind??availableRoute?.kind??null,
       nativeCardId:band.dataset.nativeCardId??null,reason:shell.dataset.aoLiveBandGate}),
     dispose(){if(disposed)return;disposed=true;stopRoutePreview();observer?.disconnect();
       shell.classList.remove("ao-live-band-enabled");delete shell.dataset.aoLiveBandGate;
