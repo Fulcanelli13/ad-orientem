@@ -400,11 +400,24 @@
       "blockedHttp403": 2,
       "technicalImagePassButMobileHeroHold": 1
     },
-    "unverifiedPhotoSearchLane": 40,
-    "currentRestrictedMuseumPhotoSearchLane": 18,
+    "unverifiedPhotoSearchLane": 13,
+    "currentRestrictedMuseumPhotoSearchLane": 45,
     "newInstitutionPolicyHolds10November2026": 9,
     "currentMSKAndKrakowBatch3Manifest": "data/artwork/research/m2m-open-source-batch3-msk-mnk-20261110.v1.json",
     "currentMSKAndKrakowBatch3Workflow": ".github/workflows/sacred-art-msk-mnk-batch3-research.yml",
-    "specialPolicyQualification": "MSK full-front IIIF specifies Public Domain Mark and credits Cedric Verhelst; photo bytes still pending. No commercial publication without source-specific terms and owner approval."
+    "specialPolicyQualification": "MSK full-front IIIF specifies Public Domain Mark and credits Cedric Verhelst; photo bytes still pending. No commercial publication without source-specific terms and owner approval.",
+    "newICCDPhotoPolicyHolds10November2026": 27,
+    "totalNewInstitutionPhotoPolicyHolds10November2026": 36,
+    "iccdOfficialTerms": "https://www.catalogo.beniculturali.it/termini-uso",
+    "iccdRightsFinding": "CC BY 4.0 catalogue metadata does NOT cover photos; photo reproduction needs institution-specific authorization and can involve charges. Distinct open-photographed exact artwork sources are still researchable.",
+    "batch3InitialRun": {
+      "runId": 42821076217,
+      "attempted": 3,
+      "acquired": 0,
+      "status": "OLDER_SCRIPT_MSGBENT_IIIF_PARSER_FAILED_MNK_NO_PAGE_IMAGE",
+      "correctedRetryPending": true
+    },
+    "nationalmuseumMediaPortalSource": "https://media.nationalmuseum.se/search/all",
+    "nationalmuseumMediaPortalUnmatchedObjectCount": 2
   }
 }
