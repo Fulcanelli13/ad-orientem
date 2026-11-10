@@ -1005,7 +1005,7 @@ function prayRelatedFamilyItems(id){
   ['own','pray.occasional_intercessions',L('Occasional intercessions','Intercessions occasionnelles'),
    L('Prayers for sickness, family, peace and particular needs.','Prières pour la maladie, la famille, la paix et les besoins particuliers.')],
   ['own','pray.st_joseph_seven_sorrows',L('St Joseph · Seven Sorrows and Joys','Saint Joseph · Sept douleurs et sept joies'),
-   L('Seven traditional pairs of sorrow and joy, with their complete prayers.','Sept douleurs et joies traditionnelles, avec leurs prières complètes.')],
+   L('Seven traditional pairs and complete prayers, also used for the Seven Sundays of St Joseph.','Sept douleurs et joies, avec les prières complètes, également utilisées pour les Sept Dimanches de saint Joseph.')],
   ['own','pray.montfort_consecration',L('Montfort · 33-day consecration preparation','Montfort · préparation de 33 jours à la consécration'),
    L('A day-by-day preparation for consecration to Jesus through Mary.','Préparation quotidienne à la consécration à Jésus par Marie.')]
  ];
@@ -2629,6 +2629,7 @@ function renderJosephSeven(){
   '<main class="aoP435930Body aoJosephSeven" data-ao-st-joseph-seven-reader data-ao-st-joseph-source="raccolta-1910-300">'+
   '<p class="aoJosephSevenIntro">'+esc(L('Pray each sorrow and joy, then an Our Father, Hail Mary and Glory Be. Finish with the antiphon and collect.','Priez chaque douleur et joie, suivies d’un Notre Père, d’un Je vous salue Marie et d’un Gloire au Père, puis l’antienne et l’oraison finale.'))+'</p>'+
   josephCover+
+  '<p class="aoJosephSevenIntro" data-ao-joseph-seven-sundays>'+esc(L('Seven Sundays of St Joseph: this historical devotion uses these same seven prayers and the closing collect on each of seven consecutive Sundays. No additional prayer text is required.','Sept dimanches de saint Joseph : cette dévotion historique reprend ces sept prières et l’oraison finale chacun des sept dimanches consécutifs. Il ne s’agit pas de sept nouvelles prières.'))+'</p>'+
   '<div class="aoJosephSevenProgress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+progress+'" aria-label="'+esc(L('Prayer progress','Progression de la prière'))+'"><span style="width:'+progress+'%"></span></div>'+
   '<div class="aoJosephSevenRail" role="group" aria-label="'+esc(L('Choose one of seven sorrows and the conclusion','Choisir une des sept douleurs ou la conclusion'))+'">'+rail+'</div>'+
   '<article class="aoJosephSevenCard">'+josephStageArt+'<p class="aoJosephSevenNotice">'+esc(notice)+'</p>'+body+'</article>'+

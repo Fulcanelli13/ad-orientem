@@ -1,0 +1,41 @@
+name: LIVE handoff native 65-card reference crosswalk
+
+on:
+  pull_request:
+    paths:
+      - 'src/mass/reader-live-handoff-source-crosswalk.js'
+      - 'src/mass/reader-live-curated-cards.js'
+      - 'src/mass/reader-live-direct-curated.js'
+      - 'data/presentation/reader-section-map.v0.13.1.json'
+      - 'data/presentation/reader-canon-source-map.v1.json'
+      - 'tests/reader-live-handoff-source-crosswalk.mjs'
+      - '.github/workflows/live-handoff-65-source-crosswalk.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  native65:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check source-neutral crosswalk module and test syntax
+        run: |
+          node --check src/mass/reader-live-handoff-source-crosswalk.js
+          node --check tests/reader-live-handoff-source-crosswalk.mjs
+      - name: Crosswalk the owner's 65 references with four source-owned Mass forms
+        env:
+          AO_LIVE_HANDOFF_CROSSWALK_DIR: ${{ runner.temp }}/live-handoff-65-crosswalk
+        run: node tests/reader-live-handoff-source-crosswalk.mjs
+      - name: Deliver source IDs, Canon provenance and exact cue evidence, never public assets
+        uses: actions/upload-artifact@v4
+        with:
+          name: live-handoff-65-native-source-crosswalk
+          path: ${{ runner.temp }}/live-handoff-65-crosswalk/
+          if-no-files-found: error
+          retention-days: 14
