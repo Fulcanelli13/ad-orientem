@@ -1,0 +1,25 @@
+name: Sacred Art 2026 Calendar and Prayer coverage-first gate
+
+# Data-reconciliation only. No image downloads, app publication, deploy or approvals.
+on:
+  pull_request:
+    paths:
+      - 'data/artwork/sacred-art-2026-coverage-first-master-20261110.v1.json'
+      - 'data/artwork/sacred-art-2026-class-ii-existing-match-review-slate-20261110.v1.json'
+      - 'data/artwork/README-sacred-art-2026-coverage-first-20261110.md'
+      - 'tests/sacred-art-2026-coverage-first.test.mjs'
+      - '.github/workflows/sacred-art-2026-coverage-first.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  calendar-prayer-coverage:
+    name: verify all 365 Calendar dates and 267 Prayer artwork slots
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run coverage/crosswalk regression tests without external dependencies
+        run: node tests/sacred-art-2026-coverage-first.test.mjs
