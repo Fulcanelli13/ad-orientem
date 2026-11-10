@@ -155,6 +155,105 @@ Nearby distances below come from the existing provisional board and are for cand
 **Standard lane overall:** existing priority waves 1–3 cover 60 Lane-A candidates; this section covers the other 38, yielding **98/98 organized for review**. The 68 Lane-B scope-qualified cases, one Isiro building hold and two existing B21 signoffs remain separate; nothing here approves or publishes any of the 169 candidates.
 
 ---
+## Qualified Lane B — 68 existing candidates (10 November 2026)
+
+**Decision-ready reconciliation of the existing V10 board, not a second Places master and not a release.** Every row retains its canonical candidate ID, frozen country/name, exact previously screened source, proposed point precision and `PENDING` owner decision. The four routes below are mutually exclusive *review priorities*; risk flags (corrected name, near neighbour, locality and non-Latin context) can overlap and remain independently visible.
+
+**Counts:** 35 precinct/locality/shape review; 9 nearby-distinct-place review; 5 Eastern/historical ecclesial review; 19 source/identity/formal-title follow-up = **68/68**. Independently, 24 proposed locality points, 27 complex anchors, 17 site points; 12 flagged nearest canonical Places; 15 corrected display-name proposals. Exact entrance certified: **0**. Owner-approved: **0**.
+
+**Review contract:** (1) specific candidate/physical-Place approval required; (2) no replacement of the underlying board or loss of cited source limitations; (3) corrected display names are only proposals until approved; (4) never collapse a separate chapel, relic site, church, basilica or monastery solely because another is geographically near; (5) map points may be labelled as illustrative discovery positions but must never route users to unverified entrance coordinates; (6) don't infer rite, Missal, Una Cum, miraculous authenticity, public access or present Mass timetables; (7) only admitted, rights-cleared photos may be displayed; (8) geographic country-area and locale checks precede any import, and GitHub Actions + GitHub Pages are the only release route.
+
+### 35 — Named sanctuary, complex or locality scope
+
+| Candidate | Place to review | Country | Pin scope | Specific decision needed | Existing evidence |
+|---|---|---|---|---|---|
+| `SG-INV-0348` | Shrine of Our Lady of Good Counsel, Shkodër | AL | `locality` | Name/precinct qualification: NAMED_SHRINE_LOCALITY_ONLY; retain locality discovery precision | [Source](https://albaniaembassy.orderofmalta.int/en/news/shkoder-sanctuary-our-lady-of-good-counsel-elevated-to-minor-basilica-status-on-feast-day/) |
+| `SG-INV-0195` | Saint Florian Abbey | AT | `complex_anchor` | Name/precinct qualification: ABBEY_COMPLEX_NOT_CHURCH_ENTRANCE; retain complex_anchor discovery precision | [Source](https://www.kloesterreich.at/kloster-stifte/stift-st-florian/) |
+| `SG-INV-0187` | Sanctuary of Absam | AT | `site` | Review corrected name: Basilica of Saint Michael, Marian Pilgrimage Church of Absam; site is illustrative | [Source](https://pfarre-absam.at/at/wallfahrt/kirche.php) |
+| `SG-INV-0318` | Marian shrine of Olovo | BA | `locality` | Name/precinct qualification: LOCAL_CIVIC_SHRINE_SOURCE; retain locality discovery precision | [Source](https://olovo.gov.ba/?page_id=294) |
+| `SG-INV-0227` | Basilica of the Holy Blood, Bruges | BE | `locality` | Name/precinct qualification: TWO_CHAPELS_IN_ONE_BASILICA; retain locality discovery precision | [Source](https://holyblood.com/welkom) |
+| `SG-INV-0729` | Basilica of Saint Anthony of Padua, Mugera | BI | `locality` | Name/precinct qualification: BASILICA_AND_MARIAN_SHRINE_SCOPE; retain locality discovery precision | [Source](https://www.vaticannews.va/fr/vatican/news/2025-08/le-cardinal-parolin-au-burundi-au-service-du-bien-commun.html) |
+| `SG-INV-0541` | Sanctuary of Our Lady of Copacabana | BO | `complex_anchor` | Name/precinct qualification: PRECINCT_GEOMETRY_REVIEW; retain complex_anchor discovery precision | [Source](https://lavozdelsantuariodecopacabana.com/datos-historicos/) |
+| `SG-INV-0543` | Shrine of Our Lady of Socavón, Oruro | BO | `locality` | Name/precinct qualification: EPISCOPAL_BASILICA_ATTESTATION; retain locality discovery precision | [Source](https://ceb.bo/2025/08/su-santidad-leon-xiv-ha-elevado-el-santuario-del-socavon-a-basilica-menor/) |
+| `SG-INV-0484` | Sanctuary of Bom Jesus de Matosinhos, Congonhas | BR | `complex_anchor` | Name/precinct qualification: UNESCO_MULTI_BUILDING_PROPERTY; retain complex_anchor discovery precision | [Source](https://whc.unesco.org/en/list/334/) |
+| `SG-INV-0419` | National Shrine of Saint Kateri Tekakwitha, Kahnawake | CA | `locality` | Name/precinct qualification: SHRINE_INSIDE_MISSION_CHURCH; retain locality discovery precision | [Source](https://nationalsaintkaterishrine.ca/) |
+| `SG-INV-0274` | Sanctuary of Our Lady of Bourguillon | CH | `site` | Name/precinct qualification: CHAPEL_ADDRESS_SITE_NOT_ENTRANCE; retain site discovery precision | [Source](https://fribourg.ch/fr/fribourg/architecture-et-monuments/sanctuaire-notre-dame-de-bourguillon/) |
+| `SG-INV-0275` | Sanctuary of Our Lady of Valère, Sion | CH | `locality` | Name/precinct qualification: DIFFERENT_PILGRIMAGE_SITES; retain locality discovery precision | [Source](https://diocese-sion.ch/prier/faire-un-pelerinage/valere-et-longeborgne) |
+| `SG-INV-0507` | Shrine of Our Lady of the Rosary, La Popa, Cartagena | CO | `complex_anchor` | Review corrected name: Church and Convent of Santa Cruz de La Popa (Our Lady of Candelaria); complex_anchor is illustrative | [Source](https://www.cartagena.gov.co/noticias/cartagena-indias-destino-turistico-religioso-espiritual-esta-semana-santa-primera-vez-ruta-patrimonial-denominada-ruta-esperanza-llega-tres-lugares-gran-valor-historico) |
+| `SG-INV-0292` | Monastery of the Mother of God, Králíky | CZ | `complex_anchor` | Name/precinct qualification: Diocesan GPS and page identify the pilgrimage church of the Assumption at Králíky; the candidate names the larger Mother of God monastery/complex. Do not equate individual church and whole precinct.; retain complex_anchor discovery precision | [Source](https://www.bihk.cz/dieceze/kostel/nanebevzeti-panny-marie-36) |
+| `SG-INV-0179` | Ottobeuren Abbey | DE | `complex_anchor` | Name/precinct qualification: ABBEY_BASILICA_COMPLEX_SCOPE; retain complex_anchor discovery precision | [Source](https://www.ottobeuren.de/de/tourismus-aktivitaet/kunst-kultur/kirchen-kloester.php) |
+| `SG-INV-0513` | Sanctuary of Our Lady of the Cave of Peace, La Paz | EC | `locality` | Name/precinct qualification: CAVE_SANCTUARY_NOT_PARISH_CHURCH; retain locality discovery precision | [Source](https://www.gplapaz.gob.ec/turismo/) |
+| `SG-INV-0129` | Basilica of Our Lady of the Miracles, Ágreda | ES | `locality` | Review corrected name: Minor Basilica of Our Lady of the Miracles, Ágreda; locality is illustrative | [Source](https://parroquiaagreda.es/portfolio-item/basilica-de-nuestra-senora-de-los-milagros) |
+| `SG-INV-0123` | Convent of Saint Teresa, Ávila | ES | `site` | Name/precinct qualification: CHURCH_AND_CONVENT_COMPLEX; retain site discovery precision | [Source](https://www.avilaturismo.com/en/church-and-convent-os-st-teresa) |
+| `SG-INV-0044` | Abbey of Fontgombault | FR | `locality` | Name/precinct qualification: MONASTERY_LITURGY_SCOPE_QUALIFIED; retain locality discovery precision | [Source](https://abbaye-fontgombault.fr/website/pages/FR/abbaye.html) |
+| `SG-INV-0321` | Shrine of Our Lady of Mátraverebély-Szentkút | HU | `complex_anchor` | Name/precinct qualification: DISTINCT_PRECINCT_SCOPE_REVIEW; retain complex_anchor discovery precision | [Source](https://szentkut.hu/en/contact-information) |
+| `SG-INV-0563` | Stella Maris Carmelite Monastery, Mount Carmel | IL | `locality` | Name/precinct qualification: NAMED_SITE_GEOMETRY_PENDING; retain locality discovery precision | [Source](https://www.carmelholylanddco.org/contacts/) |
+| `SG-INV-0096` | Basilica of Saint Benedict, Norcia | IT | `site` | Name/precinct qualification: Existing identity URL en.nursia.org names the separate Abbazia di San Benedetto in Monte. Do not reuse as basilica identity evidence. The Italian Ministry of Culture's Basilica di S. Benedetto page directly names the Norcia basilica at Piazza San Benedetto.; retain site discovery precision | [Source](https://oroeterra.cultura.gov.it/spazi/basilica-di-s-benedetto/) |
+| `SG-INV-0712` | National Shrine of Our Lady of Africa, Subukia | KE | `locality` | Name/precinct qualification: MULTIPLE_SHRINE_COMPONENTS; retain locality discovery precision | [Source](https://archdioceseofnairobi.org/?p=8000) |
+| `SG-INV-0689` | National Shrine of the Queen of Peace, Ozernoye | KZ | `locality` | Name/precinct qualification: OFFICIAL_SITE_COORDINATE_REVIEW; retain locality discovery precision | [Source](https://kazakhstan.travel/en/attractions/607) |
+| `SG-INV-0604` | National Shrine of Saint Anne, Kattimahana | LK | `locality` | Name/precinct qualification: GOVERNMENT_DIRECTORY_NAMED_ROW; retain locality discovery precision | [Source](https://christian.gov.lk/churches/kurunegala-district.html) |
+| `SG-INV-0339` | Hill of Crosses, Šiauliai | LT | `complex_anchor` | Name/precinct qualification: OUTDOOR_LANDSCAPE_SCOPE_REVIEW; retain complex_anchor discovery precision | [Source](https://www.visitsiauliai.lt/en/sightseeing-places/the-hill-of-crosses/) |
+| `SG-INV-0350` | Sanctuary of Our Lady of the Rocks, Perast | ME | `locality` | Name/precinct qualification: ISLAND_CHURCH_AND_PRECINCT; retain locality discovery precision | [Source](https://www.enciklopedija.hr/clanak/gospa-od-skrpjela) |
+| `SG-INV-0434` | Cristo Rey Sanctuary, Cerro del Cubilete | MX | `complex_anchor` | Name/precinct qualification: MONUMENT_CHURCH_PRECINCT_SCOPE_REVIEW; retain complex_anchor discovery precision | [Source](https://guanajuato.mx/municipios/recomendaciones/cristo-rey-en-el-cerro-del-cubilete-un-monumento-a-la-fe-y-la-historia/) |
+| `SG-INV-0430` | Sanctuary of Our Lady of Juquila, Oaxaca | MX | `locality` | Name/precinct qualification: LOCALITY_ONLY_GEOMETRY_PENDING; retain locality discovery precision | [Source](https://www.oaxaca.gob.mx/pueblos-magicos/) |
+| `SG-INV-0667` | Miagao Church, Iloilo | PH | `complex_anchor` | Name/precinct qualification: HERITAGE_COMPONENT_ATTESTED; retain complex_anchor discovery precision | [Source](https://whc.unesco.org/en/list/677/maps/) |
+| `SG-INV-0657` | National Shrine of Saint Anne, Hagonoy | PH | `locality` | Name/precinct qualification: NAMED_SITE_ATTESTED; retain locality discovery precision | [Source](https://dioceseofmalolos.ph/shrines-and-pilgrimage-sites/) |
+| `SG-INV-0665` | Paoay Church, Ilocos Norte | PH | `complex_anchor` | Name/precinct qualification: HERITAGE_COMPONENT_ATTESTED; retain complex_anchor discovery precision | [Source](https://whc.unesco.org/en/list/677/maps/) |
+| `SG-INV-0666` | Santa Maria Church, Ilocos Sur | PH | `complex_anchor` | Name/precinct qualification: HERITAGE_COMPONENT_ATTESTED; retain complex_anchor discovery precision | [Source](https://whc.unesco.org/en/list/677/maps/) |
+| `SG-INV-0528` | Shrine of Our Lady of Itapé | PY | `locality` | Name/precinct qualification: REPLACED_CITY_ONLY_LEAD; retain locality discovery precision | [Source](https://visitparaguay.travel/places/santuario-virgen-de-paso-itape) |
+| `SG-INV-0345` | Sanctuary of Our Lady of Berdychiv | UA | `complex_anchor` | Name/precinct qualification: CARMELITE_COMPLEX_SCOPE_REVIEW; retain complex_anchor discovery precision | [Source](https://sanctuary.karmel.org.ua/sample-page/kontakty/) |
+
+### 9 — Distinct Place near another existing Place
+
+| Candidate | Place to review | Country | Pin scope | Specific decision needed | Existing evidence |
+|---|---|---|---|---|---|
+| `SG-INV-0021` | Sanctuary of the Holy Face, Tours | FR | `complex_anchor` | Preserve distinct from Basilique Saint-Martin de Tours; proximity does not imply duplicate | [Source](https://paroisse-cathedrale-tours.fr/en/saint-face) |
+| `SG-INV-0558` | Church of Saint Anne, Jerusalem | IL | `complex_anchor` | Preserve distinct from Dominus Flevit Church, Mount of Olives; proximity does not imply duplicate | [Source](https://ste-anne-jerusalem.org/en/) |
+| `SG-INV-0564` | Church of Saint Joseph, Nazareth | IL | `complex_anchor` | Preserve distinct from Basilica of the Annunciation, Nazareth; proximity does not imply duplicate | [Source](https://www.custodia.org/en/sanctuaries/nazareth-saint-joseph/) |
+| `SG-INV-0554` | Church of the Dormition, Mount Zion | IL | `complex_anchor` | Preserve distinct from Church of Saint Peter in Gallicantu, Jerusalem; proximity does not imply duplicate | [Source](https://www.cicts.org/our-services/) |
+| `SG-INV-0606` | National Shrine of Saint Sebastian, Kandana | LK | `locality` | Preserve distinct from National Basilica of Our Lady of Lanka, Tewatta; proximity does not imply duplicate | [Source](https://www.christian.gov.lk/churches/gampaha-district.html) |
+| `SG-INV-0653` | National Shrine of the Sacred Heart, Makati | PH | `locality` | Preserve distinct from National Shrine of Our Lady of Guadalupe, Makati; proximity does not imply duplicate | [Source](https://philippineshrines.org/national-capital-region-and-southern-luzon/) |
+| `SG-INV-0664` | San Agustin Church, Intramuros Manila | PH | `complex_anchor` | Preserve distinct from Manila Cathedral Basilica — Immaculate Conception; proximity does not imply duplicate | [Source](https://philhistoricsites.nhcp.gov.ph/registry_database/church-of-san-agustin-2/) |
+| `SG-INV-0153` | Sanctuary of Christ the King, Almada | PT | `complex_anchor` | Preserve distinct from Igreja de Santo António de Lisboa; proximity does not imply duplicate | [Source](https://www.visitportugal.com/pt-pt/content/santuario-de-cristo-rei) |
+| `SG-INV-0396` | National Shrine of Saint Peregrine, Chicago | US | `site` | Preserve distinct from St. John Cantius Church, Chicago; proximity does not imply duplicate | [Source](https://www.archchicago.org/about-us/parish-directory) |
+
+### 5 — Eastern Catholic or historical ecclesial scope
+
+| Candidate | Place to review | Country | Pin scope | Specific decision needed | Existing evidence |
+|---|---|---|---|---|---|
+| `SG-INV-0343` | Marian Sanctuary of Baruny | BY | `locality` | Preserve exact historical or Eastern ecclesial description; never label Latin/TLM by default | [Source](https://catholicnews.by/u-barunah-z-udzelam-biskupa-grodzenskaga-adznachyli-gadavinu-skladannja-karon-na-cudadzejny-abraz-maci-bozhaj/) |
+| `SG-INV-0687` | Shrine of Mar Behnam (Syriac Christian heritage) | IQ | `complex_anchor` | Preserve exact historical or Eastern ecclesial description; never label Latin/TLM by default | [Source](https://www.aliph-foundation.org/en/projects/mar-behnam) |
+| `SG-INV-0098` | Abbey of Grottaferrata | IT | `site` | Preserve exact historical or Eastern ecclesial description; never label Latin/TLM by default | [Source](https://abbaziasannilo.org/contact) |
+| `SG-INV-0581` | Monastery of Saint Anthony, Qozhaya | LB | `complex_anchor` | Preserve exact historical or Eastern ecclesial description; never label Latin/TLM by default | [Source](https://www.saintanthonykozhaya.com/contact) |
+| `SG-INV-0412` | National Shrine of Our Lady of Lebanon, North Jackson | US | `complex_anchor` | Preserve exact historical or Eastern ecclesial description; never label Latin/TLM by default | [Source](https://ourladyoflebanonshrine.com/contact) |
+
+### 19 — Source, precise identity or formal-title follow-up
+
+| Candidate | Place to review | Country | Pin scope | Specific decision needed | Existing evidence |
+|---|---|---|---|---|---|
+| `SG-INV-0720` | Santuário Nossa Senhora da Conceição da Muxima | AO | `locality` | Retain Muxima site identity with inaccessible source caveat; no entrance claim | [Source](https://www.diocesedeviana.ao/um-marco-de-fe-reabertura-do-santuario-da-muxima/) |
+| `SG-INV-0479` | Sanctuary of Our Lady of Piedade, Caeté | BR | `site` | Retrieve alternative site-specific custodian evidence; original page not retrieved | [Source](https://santuarionossasenhoradapiedade.arquidiocesebh.org.br/santuario/localizacao-e-como-chegar/) |
+| `SG-INV-0421` | National Shrine of the Little Flower, Wakaw | CA | `site` | Use diocesan 'Shrine of St Theresa' designation unless national title supported | [Source](https://news.rcdos.ca/2026/09/24/st-therese-institute-wakaw-pilgrimage/) |
+| `SG-INV-0505` | National Shrine of Our Lady of Mount Carmel, Bogotá | CO | `site` | Revisit inaccessible identity source without inventing replacement evidence | [Source](https://visitbogota.co/es/que-hacer-en-bogota/cultura/santuario-nacional-nuestra-senora-del-carmen) |
+| `SG-INV-0465` | National Shrine of Saint Barbara, Havana | CU | `site` | Correct candidate scope to the documented Saint Barbara parish; national title remains unproven | [Source](https://arquidiocesisdelahabana.org/parroquias/) |
+| `SG-INV-0517` | National Shrine of Divine Mercy, Guayaquil | EC | `site` | Require a shrine-specific source, not archdiocesan clergy directory | [Source](https://communio.arquidiocesisdeguayaquil.org.ec/info/directorio/) |
+| `SG-INV-0704` | Saint Catherine Latin Catholic Cathedral, Alexandria | EG | `site` | Confirm cathedral point independently; identity name alone does not certify coordinate | [Source](https://mapcarta.com/W655944901) |
+| `SG-INV-0144` | Basilica of San Juan de Dios, Granada | ES | `site` | Resolve unavailable original source before certifying site identity | [Source](https://turismo.granada.org/en/basilica-san-juan-dios) |
+| `SG-INV-0140` | Monastery of El Escorial | ES | `complex_anchor` | Use separately corroborated monastery identity; official dynamic page not textual proof | [Source](https://www.patrimonionacional.es/visita/real-monasterio-de-san-lorenzo-de-el-escorial) |
+| `SG-INV-0047` | Cathedral of Saint-Bénigne, Dijon | FR | `site` | Use repaired diocesan identity; inaccessible original citation not a negative finding | [Source](https://www.diocese-dijon.com/paroisses/agglomeration-dijonnaise/dijon-centre-et-ouest/dijon-saint-benigne/) |
+| `SG-INV-0731` | Basilica of the Immaculate Conception, Mongomo | GQ | `locality` | Basilica attested; require explicit Mongomo building/geography scope | [Source](https://mapcarta.com/W496238151) |
+| `SG-INV-0312` | Sanctuary of Our Lady of Remete, Zagreb | HR | `site` | Confirm Marian shrine designation beyond parish directory entry | [Source](https://www.zg-nadbiskupija.hr/zupe/85?ZupeId=140) |
+| `SG-INV-0105` | Abbey of Fossanova | IT | `complex_anchor` | Recover institutional abbey identity source; preserve existing hold | [Source](https://cultura.gov.it/luogo/abbazia-di-fossanova) |
+| `SG-INV-0103` | Charterhouse of Pavia | IT | `complex_anchor` | Confirm the Charterhouse identity independent of other Pavia basilica | [Source](https://museilombardia.cultura.gov.it/musei/museo-della-certosa-di-pavia/) |
+| `SG-INV-0104` | Sacra di San Michele, Piedmont | IT | `complex_anchor` | Verify secure alternative identity source; historical HTTP page inaccessible | [Source](https://turismotorino.org/it/visita/cosa-fare-e-vedere/spiritualita/i-luoghi-dello-spirito/sacra-di-san-michele) |
+| `SG-INV-0065` | Sanctuary of Oropa | IT | `complex_anchor` | Recover identity source; no presumption that unavailable page is invalid | [Source](https://www.santuariodioropa.it/contatti/) |
+| `SG-INV-0616` | Our Lady of Tsuwano, Otome Pass | JP | `site` | Use corrected Otome Toge chapel, not the separate Tsuwano church | [Source](https://www.kankou-shimane.com/en/destinations/9398) |
+| `SG-INV-0569` | Church of Saint Lazarus, al-Eizariya | PS | `site` | Pinpoint Franciscan church at Bethany, not generic holy-place district | [Source](https://www.custodia.org/en/news/in-bethany-the-feast-of-saints-martha-mary-and-lazarus-the-friends-of-jesus-a-symbol-of-the-three-dimensions-of-christian-life/) |
+| `SG-INV-0473` | Shrine of Our Lady of La Divina Pastora, Siparia | TT | `locality` | Separate La Divina Pastora devotion from formal shrine designation | [Source](https://boroughofsiparia.gov.tt/our-history/) |
+
+**V10 overview:** 98 Lane-A + 68 Lane-B = **166 owner-reviewable candidates**. Additionally one planned Isiro building remains on hold; La Pocatière and Ngome are two already-existing B21 draft records needing signoff, not new candidates to duplicate. **No approvals, imports or publication are authorized by this review.**
+
+---
 | Decision lane | Count | Meaning |
 |---|---:|---|
 | A — Standard owner review, illustrative pin | 98 | Site source screened; no exact entrance claim |
