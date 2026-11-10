@@ -67,6 +67,7 @@ try{
    assert.ok(result.svgRight<=width+1,"Score overflow "+width+"px "+JSON.stringify(result));
    assert.equal(result.follow.started,true,"Syllable parsing failed "+score.sourceCueId);
    assert.ok(result.follow.syllables>0,"Source must carry lyric units");
+   assert.equal(result.follow.mapped,true,"Source syllables did not map one-to-one onto Exsurge SVG for "+score.sourceCueId+" at "+width+"px: "+JSON.stringify(result));
    report.push({width,...result});
   }
   assert.deepEqual(foreign,[],"Offline review must never request external images, fonts or scripts");
