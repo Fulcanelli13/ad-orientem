@@ -400,8 +400,8 @@
       "blockedHttp403": 2,
       "technicalImagePassButMobileHeroHold": 1
     },
-    "unverifiedPhotoSearchLane": 8,
-    "currentRestrictedMuseumPhotoSearchLane": 45,
+    "unverifiedPhotoSearchLane": 0,
+    "currentRestrictedMuseumPhotoSearchLane": 49,
     "newInstitutionPolicyHolds10November2026": 9,
     "currentMSKAndKrakowBatch3Manifest": "data/artwork/research/m2m-open-source-batch3-msk-mnk-20261110.v1.json",
     "currentMSKAndKrakowBatch3Workflow": ".github/workflows/sacred-art-msk-mnk-batch3-research.yml",
@@ -449,6 +449,17 @@
       "originalSourcePhotoBytesAcquired": 0
     },
     "mnkJohnCantiusSubject": "Broken-milk-jug miracle directly depicted; source-specific photo still pending",
-    "mnkStanislausSubject": "Excommunication of King Bolesław depicted, NOT saint's martyrdom; keep distinct"
+    "mnkStanislausSubject": "Excommunication of King Bolesław depicted, NOT saint's martyrdom; keep distinct",
+    "directObjectRecordsWithoutImageFile": 2,
+    "originalPhotoRightsOrAttributionUnresolved": 2,
+    "eightPriorityOilSourceClosure": "data/artwork/research/m2m-eight-priority-oil-source-closure-20261110.v1.json",
+    "eightPriorityOilSourceClosureCounts": {
+      "reviewed": 8,
+      "officialPhotoRestrictive": 4,
+      "objectRecordNoPhoto": 2,
+      "sourceRightsOrAttributionNotResolved": 2,
+      "newHashVerified": 0
+    },
+    "nextAcquisitionPriority": "IDENTIFY_INDEPENDENTLY_OPEN_INSTITUTIONAL_EQUIVALENTS_AND_NEW_NONREJECTED_ICONOGRAPHIC_ALTERNATIVES"
   }
 }
