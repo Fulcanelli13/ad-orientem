@@ -23,11 +23,11 @@
   ],
   "counts": {
     "baselineUnmatchedCalendarTargets": 170,
-    "targetsWithNewResearchLeads": 136,
-    "targetsStillWithoutNamedLeads": 34,
-    "proposedRelationshipEdges": 161,
+    "targetsWithNewResearchLeads": 149,
+    "targetsStillWithoutNamedLeads": 21,
+    "proposedRelationshipEdges": 178,
     "existing989Edges": 25,
-    "newInstitutionalObjectEdges": 126,
+    "newInstitutionalObjectEdges": 143,
     "secondaryOrCommonsOnlyEdges": 10,
     "byClass": {
       "II": {
@@ -37,8 +37,8 @@
       },
       "III": {
         "unmatchedBaseline": 101,
-        "withResearchLeads": 76,
-        "stillWithoutLeads": 25
+        "withResearchLeads": 89,
+        "stillWithoutLeads": 12
       },
       "IV": {
         "unmatchedBaseline": 40,
@@ -679,9 +679,32 @@
       "observedPrincipalId": "tempora:Quadp3-5:3:v",
       "gospelReferenceFromMatchingIndex": null,
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Getty:84.PC.71",
+          "title": "The Sermon on the Mount",
+          "artist": "Jan Brueghel the Elder",
+          "sourceUrl": "https://www.getty.edu/art/collection/object/103RG2",
+          "relation": "SERMON_CONTEXT_NOT_VERSE_SPECIFIC",
+          "scriptureOrIdentityAnchor": "Matthew 5:43–48; 6:1–6",
+          "medium": "oil on copper, 1598",
+          "remark": "FSSPX Ordo 1962 verifies Gospel; Getty painting depicts sermon setting, NOT precise 'love your enemies' or secret almsgiving; earlier vernacular witness truncates at Matt 6:1–4; preserve source variance",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "pericopeSourceUrl": "https://ordo.fsspx.org/en/day/2026-02-20?texts=readings",
+          "pericopeCrosswalkStatus": "VERIFIED_1962_ORDO_SOURCE_VARIANT"
+        }
+      ],
+      "verified1962Gospel": {
+        "reference": "Matthew 5:43–48; 6:1–6",
+        "source": "https://ordo.fsspx.org/en/day/2026-02-20?texts=readings",
+        "note": "1962 FSSPX Ordo has Matt 6:1–6; latinmasspropers.com and Mater Ecclesiae bulletin end at 6:1–4. Preserve source discrepancy; do not edit canonical Gospel data in this research PR."
+      }
     },
     {
       "date": "2026-02-26",
@@ -746,9 +769,49 @@
       "observedPrincipalId": "tempora:Quad2-4:3:v",
       "gospelReferenceFromMatchingIndex": null,
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 2,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Rijks:SK-A-868",
+          "title": "Kitchen Scene with the Parable of the Rich Man and Poor Lazarus",
+          "artist": "Attributed to Pieter Cornelisz. van Rijck",
+          "sourceUrl": "https://www.rijksmuseum.nl/en/collection/object/Kitchen-Scene-with-the-Parable-of-the-Rich-Man-and-Poor-Lazarus--52a0c9546d60ccda0e4d0cf6e88b9117",
+          "relation": "APPOINTED_GOSPEL_PARABLE_EXACT",
+          "scriptureOrIdentityAnchor": "Luke 16:19–31",
+          "medium": "oil on canvas, 1610–1620",
+          "remark": "Rijksmuseum SK-A-868 depicts Lazarus at door and Dives at banquet; attribution qualified. FSSPX confirms appointed 1962 Gospel. No exact-photo/crop QA",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "pericopeSourceUrl": "https://ordo.fsspx.org/fr/day/2026-03-05?lang=en&mode=liturgical&source=curiensis&texts=readings",
+          "pericopeCrosswalkStatus": "VERIFIED_1962_ORDO"
+        },
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Walters:W.535.185R",
+          "title": "The Parable of the Rich Man and Lazarus",
+          "artist": "Lukas of Cyprus (scribe), illuminator unidentified",
+          "sourceUrl": "https://art.thewalters.org/object/W.535.185R/",
+          "relation": "APPOINTED_GOSPEL_PARABLE_EXACT",
+          "scriptureOrIdentityAnchor": "Luke 16:19–31",
+          "medium": "ink and paint on paper, Gospel lectionary miniature 1594–1596",
+          "remark": "Walters CC0 miniature alternative, not oil; distinct physical object from Rijks painting; do not pretend manuscript and painting are interchangeable formats",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED",
+          "pericopeSourceUrl": "https://ordo.fsspx.org/fr/day/2026-03-05?lang=en&mode=liturgical&source=curiensis&texts=readings",
+          "pericopeCrosswalkStatus": "VERIFIED_1962_ORDO"
+        }
+      ],
+      "verified1962Gospel": {
+        "reference": "Luke 16:19–31",
+        "source": "https://ordo.fsspx.org/fr/day/2026-03-05?lang=en&mode=liturgical&source=curiensis&texts=readings",
+        "note": "Liturgical source crosswalk only; original ledger gospelReferenceFromMatchingIndex intentionally remains null."
+      }
     },
     {
       "date": "2026-03-06",
@@ -1363,9 +1426,25 @@
       "observedPrincipalId": "sancti:05-12:3:r",
       "gospelReferenceFromMatchingIndex": null,
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "ICCD:1201030011",
+          "title": "Saints Nereus, Achilleus and Flavia Domitilla",
+          "artist": "Cristoforo Roncalli (Pomarancio)",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1201030011",
+          "relation": "MULTI_SAINT_FEAST_PARTIAL",
+          "scriptureOrIdentityAnchor": "Saints Nereus, Achilleus, Domitilla",
+          "medium": "oil on canvas, 1598–1599",
+          "remark": "The original depicts three of four 12 May titular saints; Pancras is not identified. Italian national heritage catalog source; no implied four-of-four coverage",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-05-15",
@@ -1402,9 +1481,40 @@
       "observedPrincipalId": "sancti:05-16:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 25:14–23",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 2,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "ICCD:0800022020",
+          "title": "Madonna and Child with Saint Ubaldus",
+          "artist": "Francesco Stringa",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0800022020",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "Ubaldus of Gubbio",
+          "medium": "oil on canvas, circa 1680",
+          "remark": "Baroque painter Stringa; Ubaldus kneels before Madonna and Child, with two demoniacs in lower foreground; distinct from Saint Ubaldo alternate subject",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        },
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "ICCD:1000025129",
+          "title": "Saint Ubaldus and Frederick Barbarossa",
+          "artist": "Ciro Ferri",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1000025129",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "Ubaldus of Gubbio",
+          "medium": "oil on canvas, 1683",
+          "remark": "Ferri altarpiece, attribution recorded and date circa 1683; paintings are separate objects; source note contains internal dating inconsistency",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-05-17",
@@ -1956,9 +2066,40 @@
       "observedPrincipalId": "sancti:06-19:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 25:1–13",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 2,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "ICCD:0500726312",
+          "title": "Saint Juliana Falconieri",
+          "artist": "Attributed to Giacinto Brandi",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0500726312",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "Saint Juliana Falconieri, Servite foundress",
+          "medium": "oil on canvas, late 17th century",
+          "remark": "Italian inventory explicitly names saint; Brandi attribution is tentative and date varies in records; exact original but photo and display approval unverified",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        },
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "ICCD:0800035481",
+          "title": "Saint Juliana Falconieri",
+          "artist": "Roman school, unidentified",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0800035481",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "Saint Juliana Falconieri",
+          "medium": "oil on canvas, first half 18th century",
+          "remark": "The Host rests over saint's heart: exact distinctive iconography; original in Ravenna, one painting separate from Venetian work",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-06-22",
@@ -1967,9 +2108,25 @@
       "observedPrincipalId": "sancti:06-22:3:w",
       "gospelReferenceFromMatchingIndex": "Luke 12:32–34",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "ICCD:1800008267",
+          "title": "Saint Paulinus of Nola",
+          "artist": "Calabrian school, unidentified",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1800008267",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "Paulinus Bishop of Nola, patron of gardeners",
+          "medium": "oil on canvas, date unresolved",
+          "remark": "Original in Reggio Calabria depicts bishop with gardeners; national catalogue describes popular naïve execution; visually lower priority than Baroque alternatives",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-06-25",
@@ -1978,9 +2135,40 @@
       "observedPrincipalId": "sancti:06-25:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 19:27–29",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 2,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "ICCD:1500657386",
+          "title": "Saint William of Vercelli and the Wolf",
+          "artist": "Domenico Antonio Vaccaro",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1500657386",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "William of Vercelli, founder of Montevergine",
+          "medium": "oil on canvas, 1735",
+          "remark": "Original Abbazia Montevergine inv.00000052, exact story of wolf made to replace his ass; strong Baroque historical action",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        },
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "ICCD:1500657385",
+          "title": "The Miracle of Gualtiero through St William of Vercelli",
+          "artist": "Domenico Antonio Vaccaro",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1500657385",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "William of Vercelli, founder of Montevergine",
+          "medium": "oil on canvas, 1735",
+          "remark": "Separate oil original Abbazia Montevergine inv.00000051, Gualtiero's arm healed by intercession, not generic Saint William",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-06-28",
@@ -2533,9 +2721,25 @@
       "observedPrincipalId": "sancti:07-28:3:r",
       "gospelReferenceFromMatchingIndex": "Luke 21:9–19",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "ICCD:0700064021A-11",
+          "title": "Landing of Saints Nazarius and Celsus",
+          "artist": "Attributed to Giovanni Raffaele Badaracco",
+          "sourceUrl": "https://www.catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0700064021A-11",
+          "relation": "MULTI_SAINT_FEAST_PARTIAL",
+          "scriptureOrIdentityAnchor": "Saints Nazarius and Celsus",
+          "medium": "fresco on plaster, circa 1680–1724",
+          "remark": "Genova fresco expressly shows Nazarius and Celsus, but not Pope Victor I or Innocent I; do not imply complete four-saint depiction; attribution held",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-07-30",
@@ -3358,9 +3562,25 @@
       "observedPrincipalId": "sancti:09-16:3:r",
       "gospelReferenceFromMatchingIndex": "Luke 21:9–19",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "ICCD:0300180045",
+          "title": "Saint Anthony Abbot with Saints Cornelius and Cyprian",
+          "artist": "Paolo Veronese",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0300180045",
+          "relation": "MULTI_SAINT_FEAST_COMPLETE",
+          "scriptureOrIdentityAnchor": "Saints Cornelius and Cyprian",
+          "medium": "oil on canvas, circa 1565–1571",
+          "remark": "Brera oil original shows both titular saints; third figure is Anthony Abbot, not feast saint; museum metadata identifies all",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-09-17",
@@ -3750,9 +3970,25 @@
       "observedPrincipalId": "sancti:10-09:3:w",
       "gospelReferenceFromMatchingIndex": "Luke 10:1–9",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "ICCD:0900053335",
+          "title": "Saint John Leonardi",
+          "artist": "Italian school, unidentified",
+          "sourceUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0900053335",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "Saint John Leonardi of Lucca",
+          "medium": "oil on canvas, circa 1690–1710",
+          "remark": "Italian national catalogue confirms rare historic bust portrait in Lucca, exact saint; rights and pixel QA remain held",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-10-10",
@@ -4468,9 +4704,25 @@
       "observedPrincipalId": "tempora:Adv1-2:3:v",
       "gospelReferenceFromMatchingIndex": "Luke 21:25–33",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Tate:N05613",
+          "title": "The Great Day of His Wrath",
+          "artist": "John Martin",
+          "sourceUrl": "https://www.tate.org.uk/art/artworks/martin-the-great-day-of-his-wrath-n05613",
+          "relation": "APOCALYPTIC_CONTEXT_NOT_EXACT_LUKE",
+          "scriptureOrIdentityAnchor": "Luke 21:25–33",
+          "medium": "oil on canvas, 1851–1853",
+          "remark": "Previously user selected this work for Advent I; this proposed reused artwork is contextual: painting originates Revelation 6:12–17, NOT Luke 21 literal scene. Date-specific reuse not yet approved; Tate canonical object N05613; photo rights/crop held",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-12-02",
@@ -4507,9 +4759,25 @@
       "observedPrincipalId": "sancti:12-04:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 5:13–19",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Met:419574",
+          "title": "Saint Peter Chrysologus, Bishop",
+          "artist": "Jacques Callot",
+          "sourceUrl": "https://www.metmuseum.org/art/collection/search/419574",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "Peter Chrysologus of Ravenna",
+          "medium": "etching on paper, 1636",
+          "remark": "The Met accession 17.50.17-371(432), icon explicitly names saint; original series plate says 2 December, but 1962 feast date is 4 December; engraving fallback, not Baroque oil",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-12-05",
@@ -4518,9 +4786,25 @@
       "observedPrincipalId": "tempora:Adv1-6:3:v",
       "gospelReferenceFromMatchingIndex": "Luke 21:25–33",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Tate:N05613",
+          "title": "The Great Day of His Wrath",
+          "artist": "John Martin",
+          "sourceUrl": "https://www.tate.org.uk/art/artworks/martin-the-great-day-of-his-wrath-n05613",
+          "relation": "APOCALYPTIC_CONTEXT_NOT_EXACT_LUKE",
+          "scriptureOrIdentityAnchor": "Luke 21:25–33",
+          "medium": "oil on canvas, 1851–1853",
+          "remark": "Same canonical Tate painting approved earlier for Advent I; Saturday Gospel apocalyptic context, NOT literal Luke 21 event. Many-to-many research only; seasonal reuse must not be treated as auto-approved",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-12-28",
