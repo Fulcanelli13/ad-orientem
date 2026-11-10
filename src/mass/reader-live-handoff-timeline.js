@@ -1,3 +1,4 @@
+import {liveHandoffCrosswalkAccepted} from "./reader-live-handoff-source-crosswalk.js";
 // Stage D source-first visual readout. The 65 native reader cards are the
 // only ordinal axis. The other five lanes are not "time" forecasts.
 // In particular, Schola playback/selection is independent and may not be
@@ -16,7 +17,7 @@ const plain=value=>String(value??"").trim().replace(/\s+/g," ").slice(0,110);
 const safeNumber=value=>Number.isFinite(Number(value))?Number(value):null;
 const matchNative=(gate,nativeState)=>Boolean(
   gate?.ok===true &&
-  gate?.crosswalk?.status==="EXACT_NATIVE_65_CROSSWALK" &&
+  liveHandoffCrosswalkAccepted(gate?.crosswalk?.status) &&
   gate?.reference?.status==="MATCHED_SOURCE_CARD" &&
   gate?.reference?.nativeCardId &&
   gate.reference.expectedNativeId===gate.reference.nativeCardId &&
@@ -30,13 +31,15 @@ function lane(id,status,text,source=null,location=null){
     cardClockOnly:location!=null,observedPerformance:false});
 }
 export function projectLiveHandoffTimeline({gate,nativeState,scholaState=null,model}={}){
-  if(gate?.ok!==true || !Array.isArray(model?.cards) || model.cards.length!==65 ||
-     gate.crosswalk?.status!=="EXACT_NATIVE_65_CROSSWALK" ||
+  if(gate?.ok!==true || !Array.isArray(model?.cards) ||
+     ![65,66].includes(model.cards.length) ||
+     !liveHandoffCrosswalkAccepted(gate.crosswalk?.status) ||
      gate.reference?.status!=="MATCHED_SOURCE_CARD")
     return freeze({ok:false,reason:"EXACT_NATIVE_65_REQUIRED",current:null,lanes:freeze([]),
       cards:freeze([]),total:0,observedTiming:false});
-  const ordered=gate.crosswalk.mappings;
-  if(ordered.length!==65 || ordered.some((ref,i)=>
+  const ordered=gate.crosswalk.expandedMappings;
+  if(!Array.isArray(ordered)||ordered.length!==model.cards.length ||
+     ordered.some((ref,i)=>
       ref.status!=="MATCHED_SOURCE_CARD" ||
       ref.nativeSequence!==i+1 ||
       model.cards[i]?.sectionId!==ref.nativeCardId))
@@ -44,7 +47,7 @@ export function projectLiveHandoffTimeline({gate,nativeState,scholaState=null,mo
       cards:freeze([]),total:0,observedTiming:false});
   const reference=gate.reference;
   const n=safeNumber(reference.nativeSequence);
-  if(!Number.isInteger(n)||n<1||n>65)
+  if(!Number.isInteger(n)||n<1||n>ordered.length)
     return freeze({ok:false,reason:"NATIVE_SEQUENCE_INVALID",current:null,lanes:freeze([]),
       cards:freeze([]),total:0,observedTiming:false});
   const nativeMatch=matchNative(gate,nativeState);
@@ -83,7 +86,7 @@ export function projectLiveHandoffTimeline({gate,nativeState,scholaState=null,mo
     sourceOwner:plain(ref.evidence?.sourceMacroId||ref.evidence?.canonSegmentId),
     // No durations, chant observations or inferred actor actions.
   })));
-  return freeze({ok:true,reason:null,total:65,position:n,
+  return freeze({ok:true,reason:null,total:ordered.length,position:n,
     current:cards[at],cards,lanes:freeze([priest,ministers,schola,organ,bell,faithful]),
     observedTiming:false,
     progressOwner:"NATIVE_CARD_ORDINAL_ONLY",
@@ -94,7 +97,7 @@ export function projectLiveHandoffWheel(timeline){
   if(timeline?.ok!==true)return freeze({ok:false,reason:"TIMELINE_SOURCE_REQUIRED",
     segments:freeze([])});
   const total=timeline.cards.length;
-  if(total!==65||timeline.position<1||timeline.position>65)
+  if(![65,66].includes(total)||timeline.position<1||timeline.position>total)
     return freeze({ok:false,reason:"NATIVE_65_REQUIRED",segments:freeze([])});
   return freeze({
     ok:true,total,current:timeline.current,
