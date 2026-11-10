@@ -2,7 +2,8 @@
 // Mass sequence, actual Schola progression, rubrics or ceremonial animations.
 import {resolveLiveHandoffSourceCrosswalk} from "./reader-live-handoff-source-crosswalk.js";
 import {LIVE_HANDOFF_SOURCE_POINTS,projectLiveHandoffPlanPosition} from "./reader-live-handoff-geometry.js";
-import {projectLiveHandoffSanctuary,renderLiveHandoffSanctuarySvg,LIVE_SANCTUARY_CSS} from "./reader-live-handoff-sanctuary.js";
+import {projectLiveHandoffSanctuary,renderLiveHandoffSanctuarySvg,renderLiveHandoffPreviewRouteOverlay,LIVE_SANCTUARY_CSS} from "./reader-live-handoff-sanctuary.js";
+import {projectLiveHandoffIncensationPreview,clampLiveHandoffRouteStep} from "./reader-live-handoff-routes.js";
 
 export const LIVE_BAND_PREVIEW_PARAM="aoLiveBandPreview";
 export const LIVE_BAND_STORAGE_KEY="ao-live-band-height-v1";
@@ -91,7 +92,17 @@ const CSS=[
 ".ao-reader-shell.ao-live-band-enabled>.ao-live-band{grid-column:1;grid-row:3;height:100%;border-right:1px solid rgba(225,205,148,.24);border-bottom:0}",
 ".ao-reader-shell.ao-live-band-enabled>.ao-reader-stage{grid-column:2;grid-row:3}",
 "}",
-"@media(prefers-reduced-motion:reduce){.ao-lb-pages{transition:none}}"
+"@media(prefers-reduced-motion:reduce){.ao-lb-pages{transition:none}}",
+".ao-lb-sanctuary-shell{position:relative;width:100%;height:100%;display:grid;place-items:center}",
+".ao-lb-sanctuary-content{width:100%;height:100%;min-height:0;display:grid;place-items:center}",
+".ao-lb-route-controls{position:absolute;inset:auto 8px 5px 8px;display:flex;justify-content:center;align-items:center;pointer-events:none}",
+".ao-lb-route-controls[hidden],.ao-lb-route-nav[hidden],.ao-lb-route-start[hidden]{display:none!important}",
+".ao-lb-route-start,.ao-lb-route-nav button{pointer-events:auto;background:rgba(13,23,27,.95);color:#e8dfc7;border:1px solid rgba(212,188,131,.48);border-radius:15px;min-height:27px;font-size:11px;padding:3px 9px}",
+".ao-lb-route-nav{display:flex;gap:6px;align-items:center;justify-content:center;padding:2px 7px;border-radius:16px;background:rgba(9,20,23,.96);pointer-events:auto}",
+".ao-lb-route-nav button:disabled{opacity:.32}",
+".ao-lb-route-count{font:10px system-ui,sans-serif;letter-spacing:.02em;color:#ddd4b8;white-space:nowrap}",
+".ao-lb-route-start:focus-visible,.ao-lb-route-nav button:focus-visible{outline:2px solid #f0d9a1;outline-offset:1px}",
+"@media(max-width:380px){.ao-lb-route-count{font-size:9px}.ao-lb-route-nav{gap:3px}.ao-lb-route-nav button{padding:3px 5px}}"
 ].join("\n");
 
 export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.document,
@@ -112,7 +123,15 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
   band.dataset.aoLiveBand="stage-b";band.hidden=true;
   band.setAttribute("aria-label","LIVE visual band preview");
   band.innerHTML='<div class="ao-lb-window" data-lb-swipe><div class="ao-lb-pages">'
-    +'<div class="ao-lb-page" data-active="true" aria-label="Sanctuary"><div class="ao-lb-sanctuary-content" data-lb-sanctuary>'+approvedStageBPlanSvg()+'</div></div>'
+    +'<div class="ao-lb-page" data-active="true" aria-label="Sanctuary"><div class="ao-lb-sanctuary-shell"><div class="ao-lb-sanctuary-content" data-lb-sanctuary>'+approvedStageBPlanSvg()+'</div>'
+    +'<div class="ao-lb-route-controls" data-lb-route-controls hidden>'
+    +'<button type="button" class="ao-lb-route-start" data-lb-route-start hidden aria-label="Illustrate the sourced altar incensation path; not real-time tracking">Illustrate path</button>'
+    +'<div class="ao-lb-route-nav" data-lb-route-nav hidden role="group" aria-label="Reference path stepper">'
+    +'<button type="button" data-lb-route-prev aria-label="Previous reference position">←</button>'
+    +'<output class="ao-lb-route-count" data-lb-route-count aria-live="polite"></output>'
+    +'<button type="button" data-lb-route-next aria-label="Next reference position">→</button>'
+    +'<button type="button" data-lb-route-exit aria-label="Exit route illustration">×</button>'
+    +'</div></div></div></div>'
     +'<div class="ao-lb-page" data-active="false" aria-label="Native card sequence">'
     +'<div class="ao-lb-sequence" data-lb-sequence role="img" aria-label="Card ordinal, not a time estimate"></div></div>'
     +'<div class="ao-lb-page" data-active="false" aria-label="Whole-Mass wheel">'
@@ -128,11 +147,18 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
   let preference=null;
   try{preference=normalizeLiveBandPreference(storage?.getItem(LIVE_BAND_STORAGE_KEY));}catch{}
   let page=0,disposed=false,lastModel=null,lastCrosswalk=null,lastId=null,drag=null,swipe=null,lastTap=0,lastSceneSignature=null;
+  let activeRoute=null,availableRoute=null,routeStep=0,lastScene=null;
   const pages=[...band.querySelectorAll(".ao-lb-page")];
   const dots=[...band.querySelectorAll("[data-lb-page]")];
   const frame=band.querySelector(".ao-lb-pages");
   const ticks=band.querySelector("[data-lb-sequence]");
   const sanctuaryContent=band.querySelector("[data-lb-sanctuary]");
+  const routeControls=band.querySelector("[data-lb-route-controls]");
+  const routeStart=band.querySelector("[data-lb-route-start]");
+  const routeNav=band.querySelector("[data-lb-route-nav]");
+  const routeCount=band.querySelector("[data-lb-route-count]");
+  const routePrev=band.querySelector("[data-lb-route-prev]");
+  const routeNext=band.querySelector("[data-lb-route-next]");
   const progress=band.querySelector("[data-lb-progress]");
   const hand=band.querySelector("[data-lb-hand]");
   const circumference=2*Math.PI*72;
@@ -142,6 +168,78 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
     pages.forEach((item,i)=>item.dataset.active=String(i===page));
     dots.forEach((item,i)=>item.setAttribute("aria-pressed",String(i===page)));
   }
+  function routeButtons(){
+    const hasAvailable=availableRoute?.ok===true;
+    routeControls.hidden=!hasAvailable&&!activeRoute;
+    routeStart.hidden=!hasAvailable||Boolean(activeRoute);
+    routeNav.hidden=!activeRoute;
+  }
+  function stopRoutePreview(){
+    activeRoute=null;routeStep=0;
+    band.dataset.routePreview="false";
+    sanctuaryContent.querySelector("[data-lb-route-overlay]")?.remove();
+    routeButtons();
+  }
+  function applyRouteStep(index){
+    if(!activeRoute)return false;
+    const step=clampLiveHandoffRouteStep(activeRoute,index);
+    if(!step)return false;
+    const svg=sanctuaryContent.querySelector("svg");
+    if(!svg)return false;
+    let overlay=svg.querySelector("[data-lb-route-overlay]");
+    if(!overlay){
+      svg.insertAdjacentHTML("beforeend",renderLiveHandoffPreviewRouteOverlay({
+        scene:lastScene,route:activeRoute,step
+      }));
+      overlay=svg.querySelector("[data-lb-route-overlay]");
+    } else {
+      const actor=overlay.querySelector("[data-lb-route-actor]");
+      const old=clampLiveHandoffRouteStep(activeRoute,routeStep)?.current?.point;
+      const pos=step.current.point;
+      actor?.getAnimations?.().forEach(a=>a.cancel());
+      actor?.setAttribute("transform","translate("+pos.x+" "+pos.y+")");
+      const reduced=win?.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches===true;
+      if(actor?.animate && old && !reduced &&
+        (old.x!==pos.x || old.y!==pos.y)){
+        actor.animate([
+          {transform:"translate("+old.x+"px,"+old.y+"px)"},
+          {transform:"translate("+pos.x+"px,"+pos.y+"px)"}
+        ],{duration:520,easing:"ease-in-out"});
+      }
+      overlay.querySelector("[data-lb-route-heading]")?.setAttribute(
+        "transform","rotate("+step.current.rotation+")");
+      let target=overlay.querySelector("[data-lb-route-next]");
+      if(step.next){
+        if(!target){
+          target=doc.createElementNS("http://www.w3.org/2000/svg","circle");
+          target.classList.add("ao-lb-route-next");
+          target.dataset.lbRouteNext="";
+          target.setAttribute("r","17");
+          overlay.insertBefore(target,overlay.firstChild);
+        }
+        target.setAttribute("visibility","visible");
+        target.setAttribute("cx",String(step.next.point.x));
+        target.setAttribute("cy",String(step.next.point.y));
+      }else target?.setAttribute("visibility","hidden");
+    }
+    routeStep=step.index;
+    routeCount.textContent="Illustration "+(step.index+1)+"/"+step.count;
+    routePrev.disabled=step.index===0;
+    routeNext.disabled=step.atEnd;
+    return true;
+  }
+  function startRoutePreview(){
+    if(availableRoute?.ok!==true||!lastScene)return false;
+    activeRoute=availableRoute;
+    routeStep=0;
+    band.dataset.routePreview="true";
+    routeButtons();
+    return applyRouteStep(0);
+  }
+  routeStart.addEventListener("click",startRoutePreview);
+  routePrev.addEventListener("click",()=>applyRouteStep(routeStep-1));
+  routeNext.addEventListener("click",()=>applyRouteStep(routeStep+1));
+  band.querySelector("[data-lb-route-exit]").addEventListener("click",stopRoutePreview);
   function persist(){
     try{if(preference===null)storage?.removeItem(LIVE_BAND_STORAGE_KEY);
       else storage?.setItem(LIVE_BAND_STORAGE_KEY,String(preference));}catch{}
@@ -163,17 +261,23 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
     band.hidden=!result.ok;
     shell.classList.toggle("ao-live-band-enabled",result.ok);
     shell.dataset.aoLiveBandGate=result.reason??"EXACT_NATIVE_65_CROSSWALK";
-    if(!result.ok)return freeze({mounted:true,visible:false,reason:result.reason});
+    if(!result.ok){availableRoute=null;stopRoutePreview();return freeze({mounted:true,visible:false,reason:result.reason});}
     const ref=result.reference,sequence=Number(ref.nativeSequence);
     // Exact cue-scoped state is read-only. A new prayer card is NOT a
     // priest-location observation; unsupported/unobserved stages show only
     // the static architecture, not an invented celebrant or minister.
-    const scene=projectLiveHandoffSanctuary({
-      gate:result,nativeState:preview.getNativeEventState?.(),prepared,
-    });
+    const nativeState=preview.getNativeEventState?.();
+    const scene=projectLiveHandoffSanctuary({gate:result,nativeState,prepared});
+    const potentialRoute=projectLiveHandoffIncensationPreview({gate:result,nativeState,prepared});
+    if(activeRoute && (!potentialRoute.ok || activeRoute.sourceCueId!==potentialRoute.sourceCueId))
+      stopRoutePreview();
+    availableRoute=potentialRoute;
+    lastScene=scene;
+    routeButtons();
     const sceneSignature=JSON.stringify([scene.status,scene.priest,scene.faithful,
       scene.server,scene.candles,scene.colour,scene.requiem]);
     if(sceneSignature!==lastSceneSignature){
+      if(activeRoute)stopRoutePreview();
       sanctuaryContent.innerHTML=renderLiveHandoffSanctuarySvg(scene);
       lastSceneSignature=sceneSignature;
     }
@@ -240,8 +344,10 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
   setPage(0);refresh();
   return freeze({mounted:true,refresh,setPage,setManualHeight,adaptive,
     getState:()=>freeze({visible:!band.hidden,page,preference,
+      routePreviewActive:Boolean(activeRoute),routeStep,
+      availableReferenceRoute:availableRoute?.ok?availableRoute.id:null,
       nativeCardId:band.dataset.nativeCardId??null,reason:shell.dataset.aoLiveBandGate}),
-    dispose(){if(disposed)return;disposed=true;observer?.disconnect();
+    dispose(){if(disposed)return;disposed=true;stopRoutePreview();observer?.disconnect();
       shell.classList.remove("ao-live-band-enabled");delete shell.dataset.aoLiveBandGate;
       shell.style.removeProperty("--ao-live-band-height");band.remove();style.remove();}
   });
