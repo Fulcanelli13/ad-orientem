@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
+import {createHash} from "node:crypto";
 import {
  prepareKyrieVIIIReview,prepareKyrieVIIIUnapprovedGabcExcerpts,KYRIE_VIII_REVIEW_SOURCE,
  KYRIE_VIII_REVIEW_SCHEMA
@@ -7,6 +8,10 @@ import {
 import {offlineKyrialeResearchScore} from "../src/mass/reader-kyriale-research-gabc.js";
 const corpus=JSON.parse(readFileSync(new URL(
  "../data/presentation/reader-text-sung.v1.json",import.meta.url),"utf8"));
+const exactResearchSource=offlineKyrialeResearchScore("KYRIE","MASS_08");
+assert.equal(createHash("sha256").update(exactResearchSource.gabc,"utf8").digest("hex"),
+ KYRIE_VIII_REVIEW_SOURCE.sourceGabcSha256,
+ "GregoBase Kyrie VIII neumes changed: source hash must be re-reviewed");
 const result=prepareKyrieVIIIReview({corpus});
 assert.equal(result.schema,KYRIE_VIII_REVIEW_SCHEMA);
 assert.equal(result.status,"READY_FOR_NOTE_BY_NOTE_PRINT_REVIEW_NOT_PUBLISHABLE");
