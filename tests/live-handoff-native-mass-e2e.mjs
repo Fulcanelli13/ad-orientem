@@ -151,8 +151,11 @@ async function enterNativeMass(page,option){
     return curtain.hidden||curtain.getAttribute("aria-hidden")==="true"||
       css.display==="none"||css.visibility==="hidden";
   },null,{timeout:30000});
-  await page.waitForFunction(()=>document.querySelector(".ao-live-band")
-    ?.dataset.stageDSourceStatus==="SOURCE_ONLY_65",null,{timeout:20000});
+  await page.waitForFunction(()=>{
+    const band=document.querySelector(".ao-live-band");
+    const api=window.AO_R17_NATIVE_READER_PREVIEW;
+    return band?.dataset.stageDSourceStatus==="SOURCE_ONLY_"+api?.model?.cards?.length;
+  },null,{timeout:20000});
 }
 let browser;
 try{
