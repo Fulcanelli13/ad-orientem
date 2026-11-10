@@ -23,7 +23,7 @@ export const HOLY_CLOAK_ITALIAN_SOURCE_V1=Object.freeze({
  sameFullTextForEachDay:true,days:30,historicalIndulgencesCurrent:false,
  sourceRights:"HISTORIC_PRAYER_TEXT_PRE_1900_WITH_DIGITAL_EDITORIAL_RECENSION; PRINT_IDENTIFICATION_AND_JURISDICTION_REVIEW_PENDING"
 });
-const I="In nòmine Pàtris…\n℣. Gesù, Giuseppe e Maria,\n℟. vi dono il cuore e l’anima mia.\n℣. Gesù, Giuseppe e Maria,\n℟. assistetemi ora e nell’ultima agonia.\n℣. Gesù, Giuseppe e Maria,\n℟. spiri in pace tra voi l’anima mia.\nRingraziamo la SS. Trinità per aver esaltato San Giuseppe ad una dignità del tutto eccezionale:";
+const I="℣. Gesù, Giuseppe e Maria,\n℟. vi dono il cuore e l’anima mia.\n℣. Gesù, Giuseppe e Maria,\n℟. assistetemi ora e nell’ultima agonia.\n℣. Gesù, Giuseppe e Maria,\n℟. spiri in pace tra voi l’anima mia.\nRingraziamo la SS. Trinità per aver esaltato San Giuseppe ad una dignità del tutto eccezionale:";
 const RAW=Object.freeze([
  {
   "id": "I",
@@ -152,10 +152,9 @@ if(RAW.length!==19||RAW.some((x,i)=>x.id!=="I II III IV V VI VII VIII IX X XI XI
  throw Error("Holy Cloak original Italian source/composition prerequisites incomplete");
 export const HOLY_CLOAK_ITALIAN_SECTIONS_V1=RAW;
 export const HOLY_CLOAK_ITALIAN_STEPS_V1=Object.freeze([
- Object.freeze({id:"opening",kind:"opening",title:"Inizio",language:"it",body:I,repeat:Object.freeze([
-  Object.freeze({id:"foundations_glory_be",language:"la",times:3,text:GLORY}),
-  Object.freeze({id:"foundations_sign_of_cross",language:"la",times:1,text:SIGN})
- ])}),
+ Object.freeze({id:"opening",kind:"opening",title:"Inizio",language:"it",body:I,
+  openingSignOfCross:Object.freeze({id:"foundations_sign_of_cross",language:"la",times:1,text:SIGN}),
+  repeat:Object.freeze([Object.freeze({id:"foundations_glory_be",language:"la",times:3,text:GLORY})])}),
  ...RAW.map(x=>Object.freeze({
   ...x,kind:"section",title:x.id,language:"it",
   repeat:Object.freeze([
