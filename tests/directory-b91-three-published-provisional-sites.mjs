@@ -10,6 +10,7 @@ import {
 import {exploreMapFeatures} from "../src/find/map-runtime.js";
 import {CL2_PHYSICAL_SITE_INDEX_URL} from "../src/find/cl2-physical-directory.js";
 import {CL27_PUBLIC_CELEBRATION_URL} from "../src/find/tlm-celebration-evidence.js";
+import {CL27_INSTITUTIONAL_LITURGY_URL} from "../src/find/tlm-institutional-rite-missal.js";
 import {CL27_SITE_CONTACT_URL} from "../src/find/tlm-site-contact-evidence.js";
 import {CL27_WEEKLY_SOURCE_PROGRAMME_URL} from "../src/find/tlm-source-weekly-mass-programme.js";
 import {CL27_WEEKLY_SUPPLEMENT_URL} from "../src/find/tlm-weekly-source-supplement.js";
@@ -118,5 +119,6 @@ assert.deepEqual(calls,[PRELIMINARY_R49_URL,
   CL27_WEEKLY_SOURCE_PROGRAMME_URL,
   CL27_WEEKLY_SUPPLEMENT_URL,
   CL27_POLAND_SOURCE_URL,
-  CL27_POLAND_WAVE2_SOURCE_URL]);
+  CL27_POLAND_WAVE2_SOURCE_URL,
+  CL27_INSTITUTIONAL_LITURGY_URL]);
 console.log("PASS B91 worldwide directory 2583 unchanged; 2569 mapped, 14 list-only; 31 source-weekly sites (99 times), 2 dated programmes (11 printed dates); zero generated recurring events");

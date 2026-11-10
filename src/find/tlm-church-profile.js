@@ -3,6 +3,7 @@
  * Read-only presentation: no duplicate Place, schedule or ecclesial assertion registry.
  */
 import {massInstitutionEmblem} from "./institution-emblems.js";
+import {institutionalRiteMissal} from "./tlm-institutional-rite-missal.js";
 import {eligibleRenderedDirectoryImage,renderDirectoryGallery,renderDirectoryIdentityFallback} from "./directory-card.js";
 import {tlmApproximateMapNotice} from "./tlm-approximate-map-disclosure.js";
 import {upcomingPrintedMasses} from "./tlm-dated-mass-programme.js";
@@ -119,17 +120,26 @@ export function renderTlmChurchProfile(item,language="en",{asOf}={}){
  // Other ministries and status remain unknown unless individually recorded.
  const scoped=item?.celebration_evidence;
  const exact= T(scoped?.subject_scope)==="NAMED_CELEBRATION_PATTERN_NOT_WHOLE_VENUE";
+ // A specific celebration overrides a direct ministry entry, which overrides
+ // source-ministry institutional inheritance. Never infer usage for the building.
+ const inherited=institutionalRiteMissal(item);
+ const ministry=inherited?.length===1?inherited[0]:null;
+ const directMissal=one?.missal&&one.missal!==unknown(language)?one.missal:null;
+ const directRite=one?.rite&&one.rite!==unknown(language)?one.rite:null;
  const edition=exact&&T(scoped?.missal_edition)==="1962"
-   ?L(language,"1962 · named Masses only","1962 · messes désignées seulement")
-   :one?one.missal:unknown(language);
+   ?L(language,"1962 · named Masses only","1962 · messes désignées uniquement")
+   :directMissal||(ministry?"1962":unknown(language));
  const rite=exact&&T(scoped?.liturgical_use)==="ROMAN"
-   ?L(language,"Roman · named Masses only","Romain · messes désignées seulement")
-   :one?one.rite:unknown(language);
+   ?L(language,"Roman · named Masses only","Romain · messes désignées uniquement")
+   :directRite||(ministry?L(language,"Roman","Romain"):unknown(language));
  html+='<section class="aoTlmProfileEssentials" aria-label="'+E(L(language,
    "Liturgical identity at a glance","Identité liturgique en bref"))+'">'+
    detail(L(language,"Missal / books","Missel / livres"),edition,null)+
    detail(L(language,"Rite","Rite"),rite,null)+
-   detail("Una cum",one?one.unaCum:unknown(language),null)+'</section>';
+   detail("Una cum",one?one.unaCum:unknown(language),null)+
+   (ministry&&!exact?'<p class="aoTlmProfileNormScope">'+E(L(language,
+    ministry.institute_id+" ministry · usual liturgical books; not all Masses at this church",
+    "Ministère "+ministry.institute_id+" · livres habituels ; pas toutes les messes de cette église"))+'</p>':'')+'</section>';
  // Give every source-backed CL2 site a useful first action, even if it has
  // no independently publishable recurring Mass timetable or contact object.
  const primaryLink=(siteContact&&https(siteContact.review_source_url)?siteContact.review_source_url:null)||
@@ -150,8 +160,8 @@ export function renderTlmChurchProfile(item,language="en",{asOf}={}){
     detail(L(language,"Published contact telephone","Téléphone publié"),siteContact.public_phone,null)+
     '</div><p>'+E(language==="fr"?siteContact.note_fr:siteContact.note_en)+'</p>'+
     '<p class="aoTlmProfileCaution">'+E(L(language,
-      "This source identifies the site and its published contact. It does not verify current Mass times, visitor access, legal ownership, missal, Una Cum, or canonical status.",
-      "Cette source identifie le lieu et ses coordonnées publiées. Elle ne confirme ni les horaires actuels, ni l’accès, la propriété, le missel, le caractère « una cum » ou le statut canonique."))+'</p>'+
+      "This source identifies the site and its published contact. It does not verify current Mass times, visitor access, legal ownership, the books used at a particular Mass, Una Cum, or canonical status.",
+      "Cette source identifie le lieu et ses coordonnées publiées. Elle ne confirme ni les horaires actuels, ni l’accès, la propriété, les livres d’une messe particulière, le caractère « una cum » ou le statut canonique."))+'</p>'+
     '<div class="aoTlmProfileActions">'+link(siteContact.review_source_url,L(language,
       "View source church page and check Mass programme","Consulter la fiche du lieu et vérifier les horaires"))+'</div></section>';
  }
@@ -184,7 +194,7 @@ export function renderTlmChurchProfile(item,language="en",{asOf}={}){
   "L’affiliation provient de la source et ne prouve ni messe particulière, ni rite, missel ou statut ecclésial."))+'</p>';
  html+='<section class="aoTlmProfilePanel" aria-label="'+E(L(language,"Liturgical and ecclesial identity","Identité liturgique et ecclésiale"))+'">';
  html+='<h3>'+E(L(language,"Liturgy & ecclesial identity","Liturgie et identité ecclésiale"))+'</h3>';
- if(!v.ministries.length)html+='<p>'+E(L(language,"No independently verified ministry-level liturgical classification is attached to this directory record.","Aucune classification liturgique de ministère vérifiée indépendamment n’est associée à cette fiche."))+'</p>';
+ if(!v.ministries.length&&!ministry)html+='<p>'+E(L(language,"No independently verified ministry-level liturgical classification is attached to this directory record.","Aucune classification liturgique de ministère vérifiée indépendamment n’est associée à cette fiche."))+'</p>';
  for(const [idx,m] of v.ministries.entries()){
    const emblem=massInstitutionEmblem(m.raw?.community_id);
    html+='<article class="aoTlmProfileMinistry"><div class="aoTlmProfileMinistryHead">'+

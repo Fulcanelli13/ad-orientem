@@ -1,5 +1,6 @@
 // Exact-identity, approved-media-only Traditional Mass venue cards.
 import { massInstitutionEmblem } from "./institution-emblems.js";
+import { institutionalRiteMissal } from "./tlm-institutional-rite-missal.js";
 import {tlmApproximateMapLabel,tlmApproximateMapSource} from "./tlm-approximate-map-disclosure.js";
 const E=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const A=v=>Array.isArray(v)?v:[];
@@ -187,13 +188,15 @@ export function renderDirectoryIdentityFallback(item,language="en",variant="card
 }
 
 export function renderDirectoryVenueCard(item,language="en"){
+  const inherited=institutionalRiteMissal(item);
+  const ministry=inherited?.length===1?inherited[0]:null;
   const img=item?.cover_media;
   const photo=Boolean(img&&eligibleRenderedDirectoryImage(img,item));
   // A large fallback emblem does not need a duplicate small badge.
   // Holy See arms are not an identity for an individual diocesan church.
   const emblem=photo&&String(item?.community_id??"").toUpperCase()!=="DIOCESAN"
     ?massInstitutionEmblem(item?.community_id):null;
-  const sources=A(item?.source_links).filter(s=>https(s?.url)).length;
+
   const status=String(item?.status??"");
   const affiliation=item?.eyebrow==="Source affiliation not established"
     ?L(language,"Source affiliation not established","Affiliation non établie selon la source"):item?.eyebrow;
@@ -201,6 +204,11 @@ export function renderDirectoryVenueCard(item,language="en"){
     ["SOURCE-REPORTED","UNCLASSIFIED","SCHEDULE UNVERIFIED","OFFICIAL · TIMES UNCONFIRMED"].includes(status);
   const schedule=L(language,provisional?"Mass times not independently verified":A(item?.sections).length?"Mass details available · check official source":"Mass times not verified",
     provisional?"Horaires non vérifiés indépendamment":A(item?.sections).length?"Horaires disponibles · vérifier à la source":"Horaires non vérifiés");
+  const riteBooks=item?.celebration_evidence
+    ?L(language,"Roman rite · 1962 Missal · specific Masses only",
+       "Rite romain · Missel de 1962 · messes désignées uniquement")
+    :ministry?L(language,"Roman rite · 1962 Missal · "+ministry.institute_id+" tradition",
+       "Rite romain · Missel de 1962 · tradition "+ministry.institute_id):null;
   const illustrative=tlmApproximateMapLabel(item,language);
   return '<button type="button" class="aoFindCard aoExploreCard aoTlmVenueCard" data-explore-item="'+E(item.item_id)+'" data-explore-lens="tlm">'
     +'<span class="aoTlmVenueVisual" data-visual-kind="'+(photo?"photo":"fallback")+'">'
@@ -210,11 +218,10 @@ export function renderDirectoryVenueCard(item,language="en"){
     +'<span>'+E(affiliation||groupLabel(item.community_id,language)||L(language,"Church / chapel","Église / chapelle"))+'</span></span>'
     +'<strong class="aoTlmVenueTitle">'+E(item.title||L(language,"Unnamed venue","Lieu sans nom"))+'</strong>'
     +'<span class="aoTlmVenueLocality">'+inlineIcon('place')+'<span>'+E(item.subtitle||"")+'</span></span>'
+    +(riteBooks?'<span class="aoTlmVenueSourceEdition" data-tlm-rite-missal>'+E(riteBooks)+'</span>':'')
     +'<span class="aoTlmVenueSchedule"'+(illustrative?' data-tlm-approximate-source="'+tlmApproximateMapSource(item)+'"':"")+'>'+inlineIcon('schedule')+'<span>'+E(illustrative||schedule)+'</span></span>'
-    +(item.celebration_evidence?'<span class="aoTlmVenueSourceEdition" data-tlm-celebration-evidence="'+E(item.celebration_evidence.source_id)+'">'+
-        E(L(language,"1962 Missal · specific Masses only","Missel de 1962 · certaines messes seulement"))+'</span>':'')
     +(status?'<span class="aoTlmVenueStatus">'+E(tlmVenueStatusLabel(status,language))+'</span>':'')
-    +'<span class="aoTlmVenueFoot"><small>'+E(sources?L(language,"Source-backed listing","Fiche sourcée"):L(language,"Source review pending","Sources en cours d’examen"))+'</small><span>'+E(L(language,"View church","Voir l’église"))+' <span aria-hidden="true">→</span></span></span>'
+    +'<span class="aoTlmVenueFoot"><span>'+E(L(language,"View church","Voir l’église"))+' <span aria-hidden="true">→</span></span></span>'
     +'</span></button>';
 }
 // Full venue galleries consume only already-approved, exact-place photos.
