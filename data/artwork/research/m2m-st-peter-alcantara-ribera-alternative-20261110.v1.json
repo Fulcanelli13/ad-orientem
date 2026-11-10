@@ -1,0 +1,58 @@
+{
+  "schema": "AO_SACRED_ART_ST_PETER_ALCANTARA_INSTITUTIONAL_ALTERNATIVE_V1",
+  "asOf": "2026-11-10",
+  "status": "RESEARCH_ALTERNATIVE_NOT_OWNER_SELECTED_OR_PUBLISHED",
+  "originalPlacement": {
+    "date": "2026-10-19",
+    "artworkKey": "Walters:37.1146",
+    "title": "A Miracle of Saint Peter of Alcántara",
+    "reasonForAlternative": "Current first-party and museum-donated files are monochrome; suitable original-colour photo not identified",
+    "originalRemainsSelectedOrHeld": true
+  },
+  "candidate": {
+    "key": "Pinakothek:909",
+    "title": "Hl. Petrus von Alcantara in Meditation",
+    "englishTitle": "Saint Peter of Alcántara in Meditation",
+    "artist": "Jusepe de Ribera",
+    "medium": "Painting on canvas (oil as previously catalogued in institutional research)",
+    "dateRange": "1625–1649",
+    "institution": "Bayerische Staatsgemäldesammlungen — Staatsgalerie im Neuen Schloss Schleißheim",
+    "inventory": "909",
+    "dimensionsCm": [
+      74.4,
+      58.2
+    ],
+    "permanentObjectUrl": "https://www.sammlung.pinakothek.de/de/artwork/6kLa2RrG8V",
+    "officialImageDownloadCandidate": "https://cdn.thenetexperts.info/image/authenticated/s--TXk9OH5X--/q_80/artworks/JUSEPE-DE-RIBERA-1591_HL-PETRUS-VON-ALCANTARA-IN-MEDITATION-909_542157_CC-BY-SA_BSTGS.jpg",
+    "sourceImageStatus": "OFFICIAL_COLLECTION_COLOUR_IMAGE_VISUALLY_EXAMINED_DOWNLOAD_BYTES_NOT_VERIFIED",
+    "firstPartyLicence": "CC_BY_SA_4_0",
+    "licencePolicyUrl": "https://www.sammlung.pinakothek.de/en/usage",
+    "licenceRights": "Commercial reproduction and adaptations permitted with attribution, link and share-alike obligations as applicable",
+    "mandatoryAttribution": "Jusepe de Ribera, Hl. Petrus von Alcantara in Meditation, 1625–1649, Bayerische Staatsgemäldesammlungen – Staatsgalerie im Neuen Schloss Schleißheim, licensed CC BY-SA 4.0; source catalogue URL",
+    "creditAndModificationNotes": "Use © Bayerische Staatsgemäldesammlungen linked to source per museum guidelines; clearly indicate any crop/changes; derivative sharing obligations require review",
+    "aesthetic": "DARK_BAROQUE_CHIAROSCURO_EXACT_SAINT_PORTRAIT",
+    "scene": "Saint Peter of Alcántara in private meditation; this is not the same miracle episode as Walters 37.1146",
+    "fidelity": "EXACT_PERSON_DIFFERENT_NARRATIVE",
+    "photoSha256": null,
+    "sourcePixels": null,
+    "originalBytesAcquired": false,
+    "formalMobileCropQAPass": false,
+    "ownerApprovedPlacement": false,
+    "productionEligible": false
+  },
+  "sourceIntegrity": {
+    "openCatalogueVerified": true,
+    "sourceSpecificPhotoRightsEvidence": true,
+    "sourcePhotoPixelAndChecksumUnverified": true,
+    "signedImageUrlMayBeVolatile": true,
+    "nonOwnerSelectedCommonsNotPromoted": true,
+    "pradoPhotoBanUnchanged": true
+  },
+  "rules": [
+    "Preserve Walters 37.1146 owner record and all other paintings/alternatives; never auto-replace",
+    "No selected image import or owner placement approval",
+    "Do not infer unrestricted CC0: Pinakothek specifies CC BY-SA 4.0",
+    "Avoid an emailed request or paid licensing; use the publicly downloadable first-party source only",
+    "No unmarked image derivatives, app deployment or Pages publication"
+  ]
+}
