@@ -460,6 +460,19 @@
       "sourceRightsOrAttributionNotResolved": 2,
       "newHashVerified": 0
     },
-    "nextAcquisitionPriority": "IDENTIFY_INDEPENDENTLY_OPEN_INSTITUTIONAL_EQUIVALENTS_AND_NEW_NONREJECTED_ICONOGRAPHIC_ALTERNATIVES"
+    "nextAcquisitionPriority": "IDENTIFY_INDEPENDENTLY_OPEN_INSTITUTIONAL_EQUIVALENTS_AND_NEW_NONREJECTED_ICONOGRAPHIC_ALTERNATIVES",
+    "directSourcePhotoSearchEndState": "EXHAUSTED_OR_RIGHTS_HELD_DO_NOT_REPEAT",
+    "newOpenMuseumAlternativeResearch": {
+      "manifest": "data/artwork/research/m2m-open-museum-alternatives-batch4-20261110.v1.json",
+      "workflow": ".github/workflows/sacred-art-cc0-museum-alternatives-batch4.yml",
+      "expectedTargetSubjects": 8,
+      "providers": [
+        "CMA",
+        "AIC",
+        "MET"
+      ],
+      "queries": 24,
+      "ownerApprovalAuthority": "NONE_METADATA_ONLY"
+    }
   }
 }
