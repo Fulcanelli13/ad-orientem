@@ -1,0 +1,318 @@
+{
+  "schema": "AO_SACRED_ART_EXACT_OIL_SOURCE_RIGHTS_FINAL15_V1",
+  "asOf": "2026-11-10",
+  "status": "RESEARCH_ONLY_ALL_OIL_KEYS_TRIAGED_NOT_ALL_SOURCE_CONFIRMED",
+  "baseline": {
+    "directOilRelationships": 79,
+    "distinctOilWorkKeys": 68,
+    "previousAudited": 53,
+    "thisBatch": 15,
+    "totalTriaged": 68,
+    "remainingUnaudited": 0
+  },
+  "counts": {
+    "workKeysTriaged": 15,
+    "officialItemPagesOrSearchEvidence": 14,
+    "originalKeyNotCorroborated": 1,
+    "explicitModernArtistCopyrightReview": 1,
+    "photographsAlreadyReleaseCertified": 0,
+    "fullResolutionSourceBytesDownloaded": 0,
+    "newOwnerApprovals": 0
+  },
+  "caveats": [
+    "68 of 68 unique work keys receive a source/rights disposition but this is not 68 independently licensed images",
+    "One original key 0900053335 remains unverified and its oil-medium classification is not certified; 1200232012 is alternative, NOT replacement",
+    "One 1931 painting by artist dying 1957 needs copyright assessment of underlying artwork",
+    "Public-domain art status, object metadata CC BY, photo platform terms and photograph copyright are separate",
+    "No automatic promotion of non-owner-handpicked Commons photographs",
+    "Keep prior owner artwork selections, 103 global rejection hold records and 27 protected Prayer NONE positions",
+    "Do not import new image, change app, merge PR or publish assets"
+  ],
+  "records": [
+    {
+      "workKey": "ICCD:1300033061",
+      "calendarDates": [
+        "2026-05-19"
+      ],
+      "title": "San Pietro Celestino",
+      "artist": "School of Giulio Cesare Bedeschini",
+      "catalogueUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1300033061",
+      "sourceAccess": "DIRECT_OFFICIAL_CATALOGUE",
+      "imageRightsStatus": "ICCD_METADATA_ONLY_SELECTED_PHOTO_NOT_VERIFIED",
+      "sourceNotes": "Early 17th-century oil canvas in L'Aquila, 130×100cm; Celestine V in pontifical attire carrying book and city model. Catalogue classifies school, suggests possible hand of master; painting in poor condition and needs source-color QA.",
+      "selectedImageUrl": null,
+      "downloadedExactOriginalPhoto": false,
+      "exactPhotoSha256": null,
+      "sourcePhotoPixels": null,
+      "mobile390CropCertified": false,
+      "ownerPlacementApproved": false,
+      "releaseReady": false
+    },
+    {
+      "workKey": "ICCD:0500404703",
+      "calendarDates": [
+        "2026-06-01"
+      ],
+      "title": "Vision of Saint Angela Merici",
+      "artist": "Agostino Pegrassi",
+      "catalogueUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0500404703",
+      "sourceAccess": "DIRECT_OFFICIAL_CATALOGUE",
+      "imageRightsStatus": "ARTWORK_COPYRIGHT_REVIEW_REQUIRED_ARTIST_DIED_1957_AND_PHOTO_UNCLEARED",
+      "sourceNotes": "1931 oil canvas in Verona, Pegrassi (1900–1957). Unlike centuries-old work, original painting may remain copyright-protected; do not infer reuse permission. Contemporary design draws on Caravaggio but must not label it a Baroque-era picture.",
+      "selectedImageUrl": null,
+      "downloadedExactOriginalPhoto": false,
+      "exactPhotoSha256": null,
+      "sourcePhotoPixels": null,
+      "mobile390CropCertified": false,
+      "ownerPlacementApproved": false,
+      "releaseReady": false
+    },
+    {
+      "workKey": "NationalTrust:998409",
+      "calendarDates": [
+        "2026-06-10"
+      ],
+      "title": "Queen St Margaret of Scotland",
+      "artist": "Nicolas de Largillière",
+      "catalogueUrl": "https://www.nationaltrustcollections.org.uk/object/998409",
+      "sourceAccess": "DIRECT_COLLECTION_CATALOGUE_AND_PHOTO_CREDIT",
+      "imageRightsStatus": "NATIONAL_TRUST_COPYRIGHT_CREDITED_PHOTO_NO_OPEN_PERMISSION",
+      "sourceNotes": "Sizergh Castle NT998409; c.1692 oil on canvas, signed, 135×103cm. National Trust / Robert Thrift photo credits and image-order service; keep exact artistic identity while holding selected photograph.",
+      "selectedImageUrl": null,
+      "downloadedExactOriginalPhoto": false,
+      "exactPhotoSha256": null,
+      "sourcePhotoPixels": null,
+      "mobile390CropCertified": false,
+      "ownerPlacementApproved": false,
+      "releaseReady": false
+    },
+    {
+      "workKey": "Lombardia:C0150-00107",
+      "calendarDates": [
+        "2026-06-17"
+      ],
+      "title": "Ritratto di San Gregorio Barbarigo",
+      "artist": "Vincenzo Angelo Orelli",
+      "catalogueUrl": "https://www.lombardiabeniculturali.it/opere-arte/schede/C0150-00107/",
+      "sourceAccess": "DIRECT_INSTITUTIONAL_REGION_CATALOGUE",
+      "imageRightsStatus": "SPECIFIC_PHOTO_NOT_OPEN_HIGH_RES_BY_HOLDER_ONLY",
+      "sourceNotes": "Bergamo Palazzo Frizzoni, oil on canvas c.1780–before1796. Scholarly attribution revised from Giuseppe Antonio Orelli to Vincenzo Angelo Orelli. Catalogue directs high-res photo requests to custodians; no free image permission inferred.",
+      "selectedImageUrl": null,
+      "downloadedExactOriginalPhoto": false,
+      "exactPhotoSha256": null,
+      "sourcePhotoPixels": null,
+      "mobile390CropCertified": false,
+      "ownerPlacementApproved": false,
+      "releaseReady": false
+    },
+    {
+      "workKey": "ICCD:0500219384",
+      "calendarDates": [
+        "2026-09-05"
+      ],
+      "title": "San Lorenzo Giustiniani distribuisce l'elemosina ai poveri",
+      "artist": "Gregorio Lazzarini",
+      "catalogueUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0500219384",
+      "sourceAccess": "DIRECT_OFFICIAL_CATALOGUE",
+      "imageRightsStatus": "ICCD_METADATA_ONLY_SELECTED_PHOTO_NOT_VERIFIED",
+      "sourceNotes": "Venice 1691 oil on canvas, huge 600×1020cm horizontal composition with poor and clergy; potentially hard to crop at 390px without losing saint, test full-image rendering.",
+      "selectedImageUrl": null,
+      "downloadedExactOriginalPhoto": false,
+      "exactPhotoSha256": null,
+      "sourcePhotoPixels": null,
+      "mobile390CropCertified": false,
+      "ownerPlacementApproved": false,
+      "releaseReady": false
+    },
+    {
+      "workKey": "ICCD:L0060-00118_R03",
+      "calendarDates": [
+        "2026-09-05"
+      ],
+      "title": "Ritratto di San Lorenzo Giustiniani",
+      "artist": "Giuseppe Franchi",
+      "catalogueUrl": "https://catalogo.beniculturali.it/detail/Lombardia/HistoricOrArtisticProperty/L0060-00118_R03",
+      "sourceAccess": "DIRECT_OFFICIAL_LOMBARDY_CATALOGUE",
+      "imageRightsStatus": "ICCD_METADATA_ONLY_SELECTED_PHOTO_NOT_VERIFIED",
+      "sourceNotes": "Oil on canvas c.1608–1610 at Pinacoteca Ambrosiana, Milan; a different work from Lazzarini charity scene. Exact Ambrosiana selected photo/licence pending.",
+      "selectedImageUrl": null,
+      "downloadedExactOriginalPhoto": false,
+      "exactPhotoSha256": null,
+      "sourcePhotoPixels": null,
+      "mobile390CropCertified": false,
+      "ownerPlacementApproved": false,
+      "releaseReady": false
+    },
+    {
+      "workKey": "Louvre:INV20459",
+      "calendarDates": [
+        "2026-09-22"
+      ],
+      "title": "Saint Thomas de Villeneuve faisant l'aumône",
+      "artist": "After Carlo Maratti, unknown painter",
+      "catalogueUrl": "https://collections.louvre.fr/ark:/53355/cl010062033",
+      "sourceAccess": "DIRECT_LOUVRE_COLLECTION_CATALOGUE",
+      "imageRightsStatus": "LOUVRE_IMAGE_DOWNLOAD_TERMS_NOT_CHECKED_OR_SELECTED",
+      "sourceNotes": "17th-century oil on canvas, 160×86.5cm, Louvre INV20459, currently not on view. Museum explicitly lists 'Maratti, Carlo, D'après'; do not credit autograph Maratti or assume official image commercial reuse.",
+      "selectedImageUrl": null,
+      "downloadedExactOriginalPhoto": false,
+      "exactPhotoSha256": null,
+      "sourcePhotoPixels": null,
+      "mobile390CropCertified": false,
+      "ownerPlacementApproved": false,
+      "releaseReady": false
+    },
+    {
+      "workKey": "Olomouc:Skreta-WenceslasCycle",
+      "calendarDates": [
+        "2026-09-28"
+      ],
+      "title": "St Wenceslas Hoeing a Vineyard, Pressing Wine and Baking Hosts",
+      "artist": "Karel Škréta and workshop",
+      "catalogueUrl": "https://muo.cz/en/vystavy/st-wenceslas-christian-prince-and-martyr/",
+      "sourceAccess": "DIRECT_MUSEUM_EXHIBITION_RESEARCH",
+      "imageRightsStatus": "PRIVATE_OWNER_PHOTO_RIGHTS_NOT_VERIFIED",
+      "sourceNotes": "1641–43 cycle: 32 original works, 8 extant; the specific 10th large-format oil canvas survives in PRIVATE ownership, displayed in 2024 exhibition. No acquisition/photo licence established; don't conflate with separate museum-held anti-idol scene.",
+      "selectedImageUrl": null,
+      "downloadedExactOriginalPhoto": false,
+      "exactPhotoSha256": null,
+      "sourcePhotoPixels": null,
+      "mobile390CropCertified": false,
+      "ownerPlacementApproved": false,
+      "releaseReady": false
+    },
+    {
+      "workKey": "ICCD:0900053335",
+      "calendarDates": [
+        "2026-10-09"
+      ],
+      "title": "San Giovanni Leonardi",
+      "artist": "Italian school, unidentified",
+      "catalogueUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0900053335",
+      "sourceAccess": "ORIGINAL_ID_NOT_CORROBORATED_OFFICIAL_ENDPOINT_TIMEOUT_AND_INDEX_NO_RESULT",
+      "imageRightsStatus": "OBJECT_IDENTITY_AND_MEDIUM_HOLD",
+      "sourceNotes": "Original proposed accession 0900053335 could not be retrieved or independently indexed during this pass. Alternative exact saint painting: Marcello Sozzi, San Giovanni Leonardi in gloria, ICCD 1200232012; DISTINCT work not a silent replacement. Previous exact-oil classification remains provisional until key 0900053335 can be confirmed.",
+      "selectedImageUrl": null,
+      "downloadedExactOriginalPhoto": false,
+      "exactPhotoSha256": null,
+      "sourcePhotoPixels": null,
+      "mobile390CropCertified": false,
+      "ownerPlacementApproved": false,
+      "releaseReady": false
+    },
+    {
+      "workKey": "MNK:II-a-448",
+      "calendarDates": [
+        "2026-10-20"
+      ],
+      "title": "Cud św. Jana Kantego / The Miracle of Saint John Cantius",
+      "artist": "Tadeusz Kuntze-Konicz",
+      "catalogueUrl": "https://zbiory.mnk.pl/en/search-result/catalog/377412?phrase=jan%2520kanty",
+      "sourceAccess": "DIRECT_NATIONAL_MUSEUM_OBJECT_AND_PUBLIC_DOMAIN_CLASS",
+      "imageRightsStatus": "MUSEUM_OBJECT_PUBLIC_DOMAIN_EXACT_PHOTO_LICENSE_UNVERIFIED",
+      "sourceNotes": "c.1767, oil on canvas 135×98.5cm, museum MNK II-a-448; saint miraculously repairs a broken milk jug for a poor girl. Source says copyright class Public Domain; exact downloadable image file, rights and SHA still unverified.",
+      "selectedImageUrl": null,
+      "downloadedExactOriginalPhoto": false,
+      "exactPhotoSha256": null,
+      "sourcePhotoPixels": null,
+      "mobile390CropCertified": false,
+      "ownerPlacementApproved": false,
+      "releaseReady": false
+    },
+    {
+      "workKey": "IAPH:67609",
+      "calendarDates": [
+        "2026-10-23"
+      ],
+      "title": "San Antonio María Claret",
+      "artist": "Artist unidentified",
+      "catalogueUrl": "https://repositorio.iaph.es/handle/11532/43186",
+      "sourceAccess": "DIRECT_ANDALUSIAN_INSTITUTION_RECORD_NO_IMAGE_FILE",
+      "imageRightsStatus": "MUSEUM_REPOSITORY_USAGE_TERMS_BUT_NO_ASSOCIATED_PHOTO_FILE",
+      "sourceNotes": "Andalusian IAPH item 67609, oil portrait of seated bishop. Repository mentions public usage with credit 'Fondo Gráfico del IAPH' but 'No hay ficheros asociados a este ítem'; cannot promote selected image without bytes and exact rights check. Do not conflate with separate 334291 portrait under noncommercial licence.",
+      "selectedImageUrl": null,
+      "downloadedExactOriginalPhoto": false,
+      "exactPhotoSha256": null,
+      "sourcePhotoPixels": null,
+      "mobile390CropCertified": false,
+      "ownerPlacementApproved": false,
+      "releaseReady": false
+    },
+    {
+      "workKey": "ICCD:0800232370",
+      "calendarDates": [
+        "2026-11-17"
+      ],
+      "title": "Madonna with St John the Evangelist and St Gregory Thaumaturgus",
+      "artist": "Guercino (Giovanni Francesco Barbieri)",
+      "catalogueUrl": "https://www.catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0800232370",
+      "sourceAccess": "DIRECT_OFFICIAL_CATALOGUE",
+      "imageRightsStatus": "ICCD_METADATA_ONLY_SELECTED_PHOTO_NOT_VERIFIED",
+      "sourceNotes": "1629–30 oil altarpiece in Modena; artist payment entered 25 June 1630, installed for St Gregory's Nov 17 feast. Exact Gregory Thaumaturgus with Virgin and St John, but only photograph rights unresolved.",
+      "selectedImageUrl": null,
+      "downloadedExactOriginalPhoto": false,
+      "exactPhotoSha256": null,
+      "sourcePhotoPixels": null,
+      "mobile390CropCertified": false,
+      "ownerPlacementApproved": false,
+      "releaseReady": false
+    },
+    {
+      "workKey": "ICCD:0100130693",
+      "calendarDates": [
+        "2026-11-20"
+      ],
+      "title": "San Felice di Valois",
+      "artist": "Workshop of Paolo Amedeo Botta, possibly relative/successor",
+      "catalogueUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0100130693",
+      "sourceAccess": "DIRECT_OFFICIAL_CATALOGUE",
+      "imageRightsStatus": "ICCD_METADATA_ONLY_SELECTED_PHOTO_NOT_VERIFIED",
+      "sourceNotes": "1796 oil canvas in Demonte, 100×76cm, with angel and cherubs. Catalogue links a Botta workshop but 1796 is decades after the documented Paolo Amedeo Botta activity (1718–45); possibly son/brother. Do not assert a personally executed 1796 original by him.",
+      "selectedImageUrl": null,
+      "downloadedExactOriginalPhoto": false,
+      "exactPhotoSha256": null,
+      "sourcePhotoPixels": null,
+      "mobile390CropCertified": false,
+      "ownerPlacementApproved": false,
+      "releaseReady": false
+    },
+    {
+      "workKey": "ICCD:1200199733-5",
+      "calendarDates": [
+        "2026-11-26"
+      ],
+      "title": "San Benedetto dà la regola a san Silvestro abate",
+      "artist": "Roman school",
+      "catalogueUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1200199733-5",
+      "sourceAccess": "DIRECT_OFFICIAL_CATALOGUE",
+      "imageRightsStatus": "ICCD_METADATA_ONLY_SELECTED_PHOTO_NOT_VERIFIED",
+      "sourceNotes": "c.1700–1724 oil canvas 195×130cm at Santo Stefano del Cacco, Rome; St Benedict presents his Rule to Sylvester. Separate from 1870 frescoes in same church; owner state.",
+      "selectedImageUrl": null,
+      "downloadedExactOriginalPhoto": false,
+      "exactPhotoSha256": null,
+      "sourcePhotoPixels": null,
+      "mobile390CropCertified": false,
+      "ownerPlacementApproved": false,
+      "releaseReady": false
+    },
+    {
+      "workKey": "ICCD:1100255012",
+      "calendarDates": [
+        "2026-11-26"
+      ],
+      "title": "San Silvestro Abate",
+      "artist": "Central Italian school, unidentified GLD-monogram artist",
+      "catalogueUrl": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1100255012",
+      "sourceAccess": "DIRECT_OFFICIAL_CATALOGUE",
+      "imageRightsStatus": "ICCD_METADATA_ONLY_SELECTED_PHOTO_NOT_VERIFIED",
+      "sourceNotes": "1714–24 oil canvas 300×150cm in Osimo; abbot in liturgical vestments, niche, crosier/mitre; unsigned attribution not certain despite GLD monogram. Distinct composition from St Benedict handing him rule.",
+      "selectedImageUrl": null,
+      "downloadedExactOriginalPhoto": false,
+      "exactPhotoSha256": null,
+      "sourcePhotoPixels": null,
+      "mobile390CropCertified": false,
+      "ownerPlacementApproved": false,
+      "releaseReady": false
+    }
+  ]
+}
