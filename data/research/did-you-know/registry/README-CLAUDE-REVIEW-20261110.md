@@ -54,3 +54,13 @@ A statement about a historical Passion play must explicitly refer to **theatrica
 ## Proposed subsequent additions
 
 Continue source-based drafting from verified Catholic custom books, local parish/customs calendars, museum records and the glossary expansion. Append new rows with stable IDs and a source pointer; never overwrite the baseline. Run cheap duplicate screening in batches, and let Claude perform the expensive factual and stylistic review after a large candidate pool exists.
+
+## Wave 14 — source-grounded discovery expansion (10 November 2026)
+
+- Previous unified draft master: **1328** candidate rows.
+- Added this wave: **71** bilingual, source-linked rows (**38 Customs**; **33 Glossary/liturgical objects**), all in draft and kept separate from the published bank.
+- Current unified draft master: **1399** candidate rows. The 225-row published comparison bank is unchanged.
+- 0 proposed rows held during conservative lexical duplicate screening; see review flags and related IDs for weak overlaps in retained candidates. Lexical screening is not independent semantic certification.
+- New sources: 21 web reference articles/pages, principally historical Catholic Encyclopedia entries plus Vatican News; direct URL and section/locator are recorded on every appended row. Original documents may need independent audit for narrow liturgical claims and historical scope.
+- New stable IDs: `DYK-CW14-...` and `DYK-GX14-...`; new tracks: `CUSTOMS_NEW_SOURCE_WAVE` and `GLOSSARY_NEW_SOURCE_WAVE`. These should be treated as Customs and Glossary respectively for analysis, not as new publication categories.
+- Entries include historically scoped Roman/medieval liturgical practice as well as regional customs; **do not infer these are current 1962 rubrics or universal practice.** Every entry remains **DRAFT_NOT_REVIEWED** pending Claude editorial/source QA and owner signoff. Nothing has been released, merged or deployed.
