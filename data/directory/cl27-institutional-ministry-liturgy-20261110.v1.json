@@ -10,13 +10,13 @@
   },
   "counts": {
     "physical_sites": 2580,
-    "source_ministry_joins": 1414,
-    "distinct_physical_sites": 1331,
+    "source_ministry_joins": 1418,
+    "distinct_physical_sites": 1335,
     "held_group_disagreements": 3,
     "by_institute": {
-      "FSSP": 392,
+      "FSSP": 393,
       "ICKSP": 162,
-      "SSPX": 822,
+      "SSPX": 825,
       "IBP": 32,
       "AASJMV": 6
     }
@@ -559,6 +559,11 @@
     [
       "RG-10863F71F4B6",
       "SSPXMAP:OPE-001158",
+      "SSPX"
+    ],
+    [
+      "RG-11265E7B95BA",
+      "SSPXMAP:OPE-001168",
       "SSPX"
     ],
     [
@@ -2195,6 +2200,11 @@
       "RG-4D6510868A71",
       "ao-fssp-notre-dame-de-l-assomption-nd-de-la-licourt-place-de-la-licourt-52-b-4040-herstal-belgique",
       "FSSP"
+    ],
+    [
+      "RG-4D729B16E2AD",
+      "AO-B37-L-IT-4625DDF56A4B",
+      "SSPX"
     ],
     [
       "RG-4D7D14A444E3",
@@ -4442,6 +4452,11 @@
       "FSSP"
     ],
     [
+      "RG-9B2CD25FCD2A",
+      "SSPXMAP:OPE-001570",
+      "SSPX"
+    ],
+    [
       "RG-9B5F40D1BDED",
       "SSPXMAP:OPE-002672",
       "SSPX"
@@ -5685,6 +5700,11 @@
       "RG-C663479AE624",
       "AO-B45-SSPX-DE-94B2BB5D899E",
       "SSPX"
+    ],
+    [
+      "RG-C6757639FE84",
+      "AO-B33-L-CZ-165F6F3B5969",
+      "FSSP"
     ],
     [
       "RG-C67CB4AB57D9",
@@ -7258,7 +7278,7 @@
     "Do not promote three conflicting research-to-app physical-group mappings without separate alias resolution",
     "Show Rite and Missal prominently; source evidence and rule ID remain internal, not shown on church card"
   ],
-  "records_fingerprint": "fnv1a32:f863dfb1",
+  "records_fingerprint": "fnv1a32:6ae18f4c",
   "aasjmv_scope_correction": {
     "source": "https://oratoriosaojosebh.org/comunidades-atendidas/",
     "included_exact_ministry_sources": [
@@ -7520,5 +7540,54 @@
       }
     },
     "special_holds": "Saint-Irénée two original research/live source aliases are not promoted; Stránecká Zhoř is a mixed-priest venue; St Antonius Egg and Basel are separate physical churches."
+  },
+  "resolved_four_last_exception_ministries": {
+    "scope": "FOUR_DIRECT_FIRST_PARTY_INSTITUTE_SERVICE_RECORDS_NOT_VENUE_INHERITANCE",
+    "count": 4,
+    "original_35_exception_cohort_resolved": 29,
+    "residual_role_holds": 6,
+    "source_identity_records": {
+      "RG-C6757639FE84": {
+        "cl2_source_id": "AO-B33-L-CZ-165F6F3B5969",
+        "institute_id": "FSSP",
+        "primary_provider_evidence_url": "https://fssp.cz/lusatia/",
+        "evidence_kind": "FSSP_CZECH_APOSTOLATE_LUSATIA",
+        "ministry_scope_note": "FSSP first-party Lausitz apostolate names St Francis Varnsdorf-Studanka; not the building's exclusive ministry.",
+        "subject_scope": "INSTITUTE_CELEBRANT_MINISTRY_NOT_RELIGIOUS_HOUSE_OWNERSHIP",
+        "current_priest_identity_certified": false,
+        "current_mass_time_certified": false
+      },
+      "RG-11265E7B95BA": {
+        "cl2_source_id": "SSPXMAP:OPE-001168",
+        "institute_id": "SSPX",
+        "primary_provider_evidence_url": "https://florida.sspx.org/en/priests-assignments-district-united-states-33903",
+        "evidence_kind": "SSPX_US_PRIEST_ASSIGNMENT_NOVITIATE",
+        "ministry_scope_note": "Official SSPX US priest assignments name Fr Emily as SSPX Sisters chaplain at Browerville Sacred Heart Novitiate; title and personnel historical, do not infer current name.",
+        "subject_scope": "INSTITUTE_CELEBRANT_MINISTRY_NOT_RELIGIOUS_HOUSE_OWNERSHIP",
+        "current_priest_identity_certified": false,
+        "current_mass_time_certified": false
+      },
+      "RG-9B2CD25FCD2A": {
+        "cl2_source_id": "SSPXMAP:OPE-001570",
+        "institute_id": "SSPX",
+        "primary_provider_evidence_url": "https://laportelatine.org/lieux/ruffec",
+        "evidence_kind": "SSPX_FRENCH_DISTRICT_CHAPLAIN",
+        "ministry_scope_note": "Official SSPX Ruffec entry identifies the novitiate chaplain Abbe Emeric Baudot and another priest Abbe Philbert Rigault; no exclusive sisters' house ownership inference.",
+        "subject_scope": "INSTITUTE_CELEBRANT_MINISTRY_NOT_RELIGIOUS_HOUSE_OWNERSHIP",
+        "current_priest_identity_certified": false,
+        "current_mass_time_certified": false
+      },
+      "RG-4D729B16E2AD": {
+        "cl2_source_id": "AO-B37-L-IT-4625DDF56A4B",
+        "institute_id": "SSPX",
+        "primary_provider_evidence_url": "https://fsspx.it/it/cappelle-e-oratori",
+        "evidence_kind": "SSPX_ITALY_CHAPEL_MASS_SERVICE",
+        "ministry_scope_note": "Italian SSPX district lists Suore Consolatrici house at Via Flaminia Vecchia 20 within Mass locations served by fraternity priests; sisters are distinct institution.",
+        "subject_scope": "INSTITUTE_CELEBRANT_MINISTRY_NOT_RELIGIOUS_HOUSE_OWNERSHIP",
+        "current_priest_identity_certified": false,
+        "current_mass_time_certified": false
+      }
+    },
+    "notice": "Historic schedule and named chaplains are source context only, not a verified current timetable, operator, or exclusive rite of host building."
   }
 }
