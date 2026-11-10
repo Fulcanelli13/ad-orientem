@@ -81,8 +81,24 @@ export function mapScholaSvgLyrics(svg,syllables){
  const nodes=[...svg.querySelectorAll("text")];
  const targets=[];let from=0;
  for(const part of syllables){
-  const found=nodes.findIndex((node,i)=>i>=from &&
+  let found=nodes.findIndex((node,i)=>i>=from &&
     normal(node.textContent)===part.identity);
+  // Exsurge prints an ornamental initial separately: the printed "KY"
+  // lyric becomes two adjacent SVG text nodes, "K" and "Y-". This is
+  // not an extra GABC syllable. Accept ONLY the first source syllable,
+  // only when the two adjacent visible nodes spell it exactly; never
+  // relax the remaining lyrics or infer note positions from a substring.
+  if(found<0&&targets.length===0&&part.identity.length>1){
+    const split=nodes.findIndex((node,i)=>{
+      if(i<from||i+1>=nodes.length)return false;
+      const first=String(node.textContent??"").trim();
+      if(!/^\\p{Lu}$/u.test(first))return false;
+      const left=normal(first),right=normal(nodes[i+1].textContent);
+      return left.length===1&&right.length>0&&
+        left+right===part.identity;
+    });
+    if(split>=0)found=split+1;
+  }
   if(found<0)return [];
   targets.push(nodes[found]);from=found+1;
  }
