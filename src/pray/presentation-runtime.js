@@ -113,6 +113,7 @@ import { DEVOTIONAL_UX_CONTRACT_VERSION, devotionalUxContract } from "./devotion
 import { LITANY_SOURCE_WITNESSES, LITANY_WITNESS_REVIEW_V1, reviewLitanyTranscription, extractLitanyProper, paginateLitanyProper } from "./litany-source.js";
 import {loadPrivateLitanyLocal} from "./litany-private-local-loader.v1.js";
 import {loadRogationsLatinPrayer} from "./rogations-latin-prayer.v1.js";
+import {loadEasterVigilTwoLitanies} from "./easter-vigil-two-litanies.v1.js";
 import {BATCH03_LITANY_EDITION_POLICY,BATCH03_ICRSP_MAJOR_PROCESSION_STEPS,BATCH03_LITANY_SOURCE_STATUS,batch03LitanyUse} from "./litany-1962-use-policy.js";
 import {PENITENTIAL_PSALMS_VULGATE,penitentialPsalmReference,auditPenitentialPsalmResponse,PENITENTIAL_PSALMS_TEXT_STATUS} from "./penitential-psalms-source.js";
 import {localPenitentialPsalmWitness} from "./penitential-psalms-local-witnesses.v1.js";
@@ -384,6 +385,7 @@ let PEN={step:0,token:0};
 let PEN_CACHE={busy:false,complete:false,checked:0,failed:[],audit:[],message:''};
 let LIT={step:0,sections:null,loading:false,error:'',token:0,language:null,use:'private',sourceMode:null};
 let ROG_PRAY={step:0,sections:null,loading:false,error:'',token:0};
+let VIG_PRAY={step:0,sections:null,loading:false,error:'',token:0};
 let SEVEN={step:0,sections:null,opening:'',appendix:'',loading:false,error:'',srcToken:0,scriptToken:0,scriptureOnly:false};
 let FORTY={mode:'choose',step:0,solemnStep:0};
 let STATIONS={step:0,optionsOpen:false,publicPosture:false,simpleResponses:false,sanPolo:false};
@@ -2949,6 +2951,7 @@ function horizontalStep(direction){
  if(view==='adoration'&&ADOR.mode==='four'){ADOR.fourStep=Math.max(0,Math.min(fourSteps().length-1,ADOR.fourStep+d));render();return true}
  if(view==='penitential'){PEN.step=Math.max(0,Math.min(6,PEN.step+d));render();return true}
  if(view==='litany'&&LIT.use==='major'&&ROG_PRAY.sections?.length){ROG_PRAY.step=Math.max(0,Math.min(ROG_PRAY.sections.length-1,ROG_PRAY.step+d));render();return true}
+ if(view==='litany'&&LIT.use==='vigil'&&VIG_PRAY.sections?.length){VIG_PRAY.step=Math.max(0,Math.min(VIG_PRAY.sections.length-1,VIG_PRAY.step+d));render();return true}
  if(view==='litany'&&LIT.use==='private'&&LIT.sections?.length){LIT.step=Math.max(0,Math.min(LIT.sections.length-1,LIT.step+d));render();return true}
  if(view==='sevenWords'){SEVEN.step=Math.max(0,Math.min(6,SEVEN.step+d));render();return true}if(view==='tenebrae'&&TEN.model){TEN.step=Math.max(0,Math.min(TEN.model.steps.length-1,TEN.step+d));render();return true}
  if(view==='fortyHours'){FORTY.step=Math.max(0,Math.min(FORTY_STAGES.length-1,FORTY.step+d));render();return true}
@@ -3325,7 +3328,63 @@ function renderMajorRogationsLatin(){
  <p>${esc(L('Complete local reading of 186 entries across fourteen stages, drawn from the same R25 Latin source used by the Mass reader, with no altered Latin text. The print original and vernacular editions remain uncertified.','Lecture locale des 186 éléments répartis sur quatorze étapes, provenant du même texte latin R25 que le lecteur de la messe, sans modification du latin. L’original imprimé et les éditions vernaculaires restent sans certification.'))}</p>
  ${sequence}${links}</details></main>`;
 }
+
+async function ensureEasterVigilTwoLitanies(){
+ if(VIG_PRAY.sections||VIG_PRAY.loading)return;
+ VIG_PRAY.loading=true;VIG_PRAY.error='';
+ const token=++VIG_PRAY.token;
+ try{
+  const source=await loadEasterVigilTwoLitanies();
+  if(token!==VIG_PRAY.token)return;
+  VIG_PRAY.sections=source.stages;VIG_PRAY.loading=false;VIG_PRAY.step=0;
+  if(view==='litany'&&LIT.use==='vigil')render();
+ }catch(error){
+  if(token!==VIG_PRAY.token)return;
+  VIG_PRAY.sections=null;VIG_PRAY.loading=false;VIG_PRAY.error=String(error?.message||error);
+  if(view==='litany'&&LIT.use==='vigil')render();
+ }
+}
+function renderEasterVigilTwoLitanies(){
+ if(!VIG_PRAY.sections&&!VIG_PRAY.loading&&!VIG_PRAY.error)
+  setTimeout(ensureEasterVigilTwoLitanies,0);
+ const heading=head(L('Easter Vigil · two Litanies','Vigile pascale · deux litanies'),
+  L('Separate R33 before and after the font','Parties R33 avant et après le baptistère'));
+ const chooser=batch03LitanyUseOptions();
+ const notice=`<p class="aoP435930SourceNote" data-ao-vigil-source-hold="RECOVERED_DONOR_NOT_PRINT_COLLATED">${esc(L(
+  'Two distinct Easter Vigil Litany sections from the Mass R33 Latin/EN/FR donor. The font, conditional Baptism, renewal and aspersion rites occur between them and remain exclusively in the Mass reader. The original printed 1962 edition and vernacular witnesses remain independently uncollated.',
+  'Deux parties distinctes des litanies de la Vigile pascale, issues du texte R33 latin/EN/FR de la messe. Les rites intermédiaires du baptistère, des baptêmes éventuels, du renouvellement des promesses et de l’aspersion relèvent exclusivement du lecteur de la messe. L’édition imprimée de 1962 et les traductions restent sans collation indépendante.'))}</p>`;
+ if(VIG_PRAY.error)return `${heading}<main class="aoP435930Body" data-ao-litany-use="vigil">${chooser}${notice}
+ ${callout(esc(L('The original Easter Vigil source could not be loaded. No substitute is presented.','La source de la Vigile pascale ne peut être chargée. Aucun remplacement n’est proposé.')),'warn')}
+ <button type="button" data-p435930-vigil-lit-retry>${esc(L('Retry','Réessayer'))}</button></main>`;
+ if(!VIG_PRAY.sections)return `${heading}<main class="aoP435930Body" data-ao-litany-use="vigil">${chooser}${notice}
+ <p class="aoP435930Loading">${esc(L('Loading both original Litany sections…','Chargement des deux parties des litanies…'))}</p></main>`;
+ VIG_PRAY.step=Math.max(0,Math.min(VIG_PRAY.sections.length-1,VIG_PRAY.step));
+ const st=VIG_PRAY.sections[VIG_PRAY.step],final=VIG_PRAY.step===VIG_PRAY.sections.length-1;
+ const title=isFr()?st.title.fr:st.title.en;
+ const boundary=st.part==='I'
+  ?L('First Litany: before the separate baptismal rites.','Première partie : avant les rites baptismaux distincts.')
+  :L('Second Litany: after the font, any baptisms, renewal and aspersion. Do not skip those intervening rites; follow the Mass reader.','Seconde partie : après le baptistère, les baptêmes éventuels, le renouvellement des promesses et l’aspersion. Ne sautez pas ces rites ; suivez le lecteur de la messe.');
+ const lines=st.rows.map((r,i)=>{
+  const sign=r.kind==='VERSICLE'?'℣':'℟';
+  return `<p class="aoP435930LitanyLine ${r.kind==='RESPONSE'?'aoChoirResponse':''}" data-ao-vigil-litany-row="${i}" data-ao-vigil-part="${st.part}" data-ao-vigil-role="${r.kind}">
+   <span lang="la" class="aoVigilLatin">${sign} ${esc(r.latin)}</span>
+   <span lang="${isFr()?'fr':'en'}" class="aoVigilTranslation" style="display:block;opacity:.8;font-size:.91em;padding:2px 0 8px 1em">${sign} ${esc(isFr()?r.french:r.english)}</span></p>`;
+ }).join('');
+ const body=`<p class="aoP435930SourceNote" data-ao-vigil-rite-boundary="${st.part}">${esc(boundary)}</p>
+ ${guideNow(title,L('Latin text first; source-donor English or French immediately below.','Texte latin d’abord ; traduction anglaise ou française du témoin immédiatement au-dessous.'))}
+ <article class="aoP435930LitanyPrayer"><div class="aoP435930LitanyVerses" data-ao-vigil-litany-lines="${st.rows.length}">${lines}</div></article>`;
+ const card=sourcedDevotionalCard({kind:'litany',id:st.id,title,index:VIG_PRAY.step,total:VIG_PRAY.sections.length,body});
+ return `${heading}<main class="aoP435930Body aoP435930DevotionalGuidedReader" data-ao-litany-use="vigil"
+ data-ao-devotional-owner="litany" data-ao-easter-vigil-litanies="R33_TWO_PARTS_NOT_PRINT_CERTIFIED" data-ao-devotional-final="${final}">
+ <details class="aoPrivateLitanyEditionChooser"><summary>${esc(L('Edition & liturgical use','Édition et usage liturgique'))}</summary>${chooser}</details>
+ ${notice}${card}
+ ${final?`<div class="aoP435930FinalExit"><button type="button" data-p435930-vigil-lit-done class="aoP435930Primary">${esc(L('Finish the Vigil Litanies','Terminer les litanies de la Vigile'))}</button></div>`:''}
+ <details class="aoP435930Source"><summary>${esc(L('R33 source and limits','Source R33 et limites'))}</summary>
+ <p>${esc(L('First Litany: 92 original call-and-response lines; second Litany: 60. All Latin, English and French lines come from the existing R33 Mass-reader donor. This does not certify an original printed 1962 text or the conditional Roman Ritual Baptism.',
+ 'Première partie : 92 lignes ; seconde partie : 60. Tous les textes latins, anglais et français proviennent du témoin R33 déjà utilisé dans la messe. Ni l’imprimé de 1962 ni le baptême conditionnel du Rituel romain ne sont ici certifiés.'))}</p></details></main>`;
+}
 function renderBatch03PublicLitanyReference(){
+ if(LIT.use==='vigil')return renderEasterVigilTwoLitanies();
  if(LIT.use==='major')return renderMajorRogationsLatin();
  const selected=batch03LitanyUse(LIT.use),major=LIT.use==='major';
  const title=L('Litany of the Saints','Litanies des saints');
@@ -4020,13 +4079,13 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
  // cards and emits explicit, user-initiated navigation.
  if(['penitential','litany','sevenWords','fortyHours'].includes(view))queueMicrotask(()=>{
   const owner=view;
-  if(owner==='litany'&&!(LIT.use==='major'?ROG_PRAY.sections?.length:LIT.use==='private'?LIT.sections?.length:0))return; // no unverified/historical-public reader
+  if(owner==='litany'&&!(LIT.use==='major'?ROG_PRAY.sections?.length:LIT.use==='vigil'?VIG_PRAY.sections?.length:LIT.use==='private'?LIT.sections?.length:0))return; // only actual source-bearing Litany readers
   const stages=owner==='penitential'?PEN_PSALMS.map((p,i)=>({
     id:'penitential-'+i,title:'Psalm '+p.trad+(p.modern!==p.trad?' ('+p.modern+')':'')
-   })):owner==='litany'?(LIT.use==='major'?ROG_PRAY.sections.map((x,i)=>({id:'rogations-'+x.id,title:isFr()?x.title.fr:x.title.en})):LIT.sections.map((x,i)=>({id:'litany-'+i,title:x.title})))
+   })):owner==='litany'?(LIT.use==='major'?ROG_PRAY.sections.map((x,i)=>({id:'rogations-'+x.id,title:isFr()?x.title.fr:x.title.en})):LIT.use==='vigil'?VIG_PRAY.sections.map((x,i)=>({id:'easter-vigil-'+x.id,title:isFr()?x.title.fr:x.title.en})):LIT.sections.map((x,i)=>({id:'litany-'+i,title:x.title})))
    :owner==='sevenWords'?WORD_REFS.map((_,i)=>({id:'word-'+(i+1),title:(isFr()?WORD_LABELS.fr:WORD_LABELS.en)[i]}))
    :FORTY_STAGES.map((x,i)=>({id:'forty-'+i,title:L(x[0],x[1])}));
-  const step=owner==='penitential'?PEN.step:owner==='litany'?(LIT.use==='major'?ROG_PRAY.step:LIT.step)
+  const step=owner==='penitential'?PEN.step:owner==='litany'?(LIT.use==='major'?ROG_PRAY.step:LIT.use==='vigil'?VIG_PRAY.step:LIT.step)
    :owner==='sevenWords'?SEVEN.step:FORTY.step;
   const reader=installSequentialDevotionalReader({
    mount:m,kind:owner,chapters:stages,activeIndex:step,
@@ -4038,7 +4097,7 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
    onNavigate:i=>{
     if(view!==owner)return;
     if(owner==='penitential')PEN.step=i;
-    else if(owner==='litany'){if(LIT.use==='major')ROG_PRAY.step=i;else LIT.step=i;}
+    else if(owner==='litany'){if(LIT.use==='major')ROG_PRAY.step=i;else if(LIT.use==='vigil')VIG_PRAY.step=i;else LIT.step=i;}
     else if(owner==='sevenWords')SEVEN.step=i;
     else FORTY.step=i;
     render();
@@ -4993,7 +5052,9 @@ function onClick(e){
  if(b.matches('[data-p435930-pen-cache]')){void warmPenitentialPsalmCorpus();return}
  if(b.matches('[data-p435930-pen-litany]')){pushView();view='litany';LIT.use='private';LIT.step=0;return render()}
  if(b.dataset.p435930LitStep!=null){LIT.step=Math.max(0,Math.min((LIT.sections?.length||1)-1,+b.dataset.p435930LitStep));return render()}
- if(b.hasAttribute('data-p435930-lit-use')){const choice=b.dataset.p435930LitUse;if(!BATCH03_LITANY_EDITION_POLICY[choice])return;LIT.use=choice;LIT.step=0;ROG_PRAY.step=0;return render()}
+ if(b.hasAttribute('data-p435930-lit-use')){const choice=b.dataset.p435930LitUse;if(!BATCH03_LITANY_EDITION_POLICY[choice])return;LIT.use=choice;LIT.step=0;ROG_PRAY.step=0;VIG_PRAY.step=0;return render()}
+ if(b.matches('[data-p435930-vigil-lit-retry]')){VIG_PRAY.error='';VIG_PRAY.sections=null;VIG_PRAY.step=0;return render()}
+ if(b.matches('[data-p435930-vigil-lit-done]')){popView('home');return render()}
  if(b.matches('[data-p435930-rog-retry]')){ROG_PRAY.error='';ROG_PRAY.sections=null;ROG_PRAY.step=0;return render()}
  if(b.matches('[data-p435930-rog-done]')){popView('home');return render()}
  if(b.matches('[data-p435930-lit-forty]')){pushView('litany');routeOwn('pray.forty_hours');return render()}

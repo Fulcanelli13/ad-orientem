@@ -126,7 +126,10 @@ try{
       const zoom=page.locator("dialog.ao-proper-reference-zoom");
       await zoom.waitFor({state:"visible",timeout:20000});
       assert.equal(await zoom.getAttribute("data-reference-zoom-mode"),"fit");
-      assert.ok(await zoom.locator(".ao-proper-reference-wide svg").count()>=1);
+      // The modal opens before asynchronous score engraving completes.
+      // Verify the actual SVG is rendered, without weakening the score gate.
+      await zoom.locator(".ao-proper-reference-wide svg").first()
+       .waitFor({state:"visible",timeout:20000});
       assert.equal(await zoom.locator('[data-reference-zoom-transcription]').getAttribute("href"),
        "https://gregobase.selapa.net/chant.php?id="+
         scoreId.slice("GREGOBASE-".length),
