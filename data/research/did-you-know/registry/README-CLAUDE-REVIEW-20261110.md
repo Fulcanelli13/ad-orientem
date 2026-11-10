@@ -78,3 +78,13 @@ Five more sourced Customs candidate rows (`DYK-CW14-039` through `DYK-CW14-043`)
 - IDs follow `DYK-CW15-###` and `DYK-GX15-###`. Lane names reuse `CUSTOMS_NEW_SOURCE_WAVE` and `GLOSSARY_NEW_SOURCE_WAVE`. No new publication signoffs, merges, or deployments.
 
 Wave 15 metadata follow-up: All 90 appended rows now have human-drafted French topic headings as well as bilingual fact copy. Two topic headings were corrected without changing the underlying historical claims. Structural uniqueness and source flags remain subject to final QA.
+
+## Wave 16 — Africa, Indian Ocean and Asia expansion (10 November 2026)
+
+- Baseline **1,494** candidate rows; added **91** English/French source-linked drafts (**64 Customs; 27 Glossary/history**), for **1585 total rows**. The 225 published reference facts remain separate.
+- Proposed 91; excluded 0 exact or high lexical-overlap candidates; 0 retained rows need semantic overlap review. Lexical distinction is not independent factual certification.
+- Custom geography: Mauritius, Seychelles, Angola, Uganda, Rwanda, India (Goa, Kerala, Mumbai), Sri Lanka, Indonesia (Larantuka), Philippines, Macao. Sources are local diocesan material, tourism/civic pages, Vatican News and Catholics & Cultures. Glossary sources are early Catholic Encyclopedia articles on fonts, baptisteries, Paschal candles, Exsultet manuscripts and older candle rubrics.
+- Specific-event reporting (2014, 2024, 2026) remains **explicitly year-bounded**; never convert to timeless or current liturgical requirements. In particular, Uganda's **2026** national Namugongo pilgrimage was cancelled/decentralized; the usual gathering is described as historical/customary, not as having taken place in 2026.
+- Holy Thursday Pesaha appam is **domestic commemoration, not sacramental Eucharist**. Kibeho is framed as **reported and Church-recognized private revelation**, not an article of faith. Folkloric actions and processions are **not universal Roman rubrics**.
+- Complete 23-column contract retained; English/French topic headings and full bilingual drafts, source IDs/URLs, scope and source locators present. Drafts are not line-by-line certified and remain **DRAFT_NOT_REVIEWED** with final signoff blank.
+- IDs: `DYK-CW16-###` and `DYK-GX16-###`. No merge, publication or deployment.
