@@ -11,7 +11,7 @@ Research-only editorial and image-acquisition queue. It is **not** the published
 - **68/68** priority direct-subject oil keys triaged; **9 additional original research keys** have an oil-medium relationship outside that exact-priority group — do not misreport 68 as all oil works
 - **155** queue keys: 151 originals + 1 Ribera unapproved alternative + 3 supplementary March leads (outside the historical 198-edge denominator)
 - **170** original gap-date holds, including March 2, 10 and 11. The three supplemental leads are separately recorded but do **not** silently change the official 362/365 research coverage figure
-- **Eight** exact JPEG files retrieved and hashed from original museum/institutional download servers: 7 for original research candidates and 1 Ribera alternative. GitHub Actions copies are short-lived, not durable publication assets
+- **Nine** exact JPEG files retrieved and hashed from original museum/institutional download servers: 8 for original research candidates and 1 Ribera alternative. GitHub Actions copies are short-lived, not durable publication assets
 - **Zero** new date approvals, **zero** formal in-app container crop approvals, **zero** new published photos
 
 ## How to read the data
@@ -20,7 +20,7 @@ Research-only editorial and image-acquisition queue. It is **not** the published
 
 `lane` is an **operational triage lane**, not a score or a new artistic selection. `sourceAuditRightStatus` describes original recorded evidence, and `sourceAuditNote` preserves attribution/source caveats. `verifiedPhotoId` is populated only when the exact original file was acquired and its hash established. `releaseReady`, `ownerApprovalForAnyNewDate` and date approval flags must stay false until an explicit future release decision.
 
-## Eight verified originals — distinct editorial tasks
+## Nine verified originals — distinct editorial tasks
 
 | Image key | Date relationship | Licence evidence | Current composition decision |
 |---|---|---|---|
@@ -32,8 +32,9 @@ Research-only editorial and image-acquisition queue. It is **not** the published
 | `Wellcome:45078i` — Droochsloot, Great Supper | 7 June | Wellcome V0017627 historical CC BY 4.0; **current exact-file rights signoff pending** | Wide nearly complete; portrait centre-cover loses about 58% of source image area. |
 | `Pinakothek:909` — Ribera, Peter of Alcántara | 19 October, **external alternative only** | Bavarian State Painting Collections CC BY-SA 4.0 | Dark Baroque portrait; portrait provisionally usable, wide unsuitable. Never replace the earlier Walters miracle automatically. |
 | `Rijks:SK-A-868` — van Rijck (attributed), Rich Man and Lazarus kitchen | 5 March | Rijksmuseum public domain, exact official IIIF bytes verified | **Acquired but NOT a mobile Gospel hero:** Lazarus and the rich man are tiny figures in the upper-right background; gallery-only candidate unless owner explicitly approves a coherent presentation. |
+| `MSKGent:S-43` — Luigi Primo, St Raymond of Peñafort venerating the Christ Child | 23 January | MSK Ghent IIIF Public Domain Mark; online collection reuse allowed, commercial/publication terms separately qualified | **Original acquired but hero HOLD:** very tall 2,000×3,887 image, conspicuous diagonal mark, portrait cover loses sections of narrative. Use contain or hold; require final rights and editorial approval. |
 
-All eight still need in-app 320/390px visual QA, correct source-specific licence/attribution handling, and explicit owner date approval. A technical or aesthetic preference in this document is not an authorization to publish.
+All nine still need in-app 320/390px visual QA, correct source-specific licence/attribution handling, and explicit owner date approval. A technical or aesthetic preference in this document is not an authorization to publish.
 
 ## Exception decisions
 
@@ -66,19 +67,19 @@ Review ledger: `m2m-open-source-batch3-msk-mnk-20261110.v1.json`. Acquisition so
 
 On 10 November, the Italian Ministry's official [Catalogo generale terms](https://www.catalogo.beniculturali.it/termini-uso) were checked. The catalogue's Creative Commons CC BY 4.0 licence **does not automatically grant reuse of its photographs**: photographs require a reproduction request to the relevant authority and can incur fees. The same restriction is reiterated in the [ICCD photo reproduction guidance](https://www.iccd.beniculturali.it/it/consultazione-riproduzione-immagini). Since Ad Orientem will neither seek paid rights nor contact institutions, **27 exact ICCD original oil work keys have been moved from active official-image acquisition into the distinct open-photo-equivalent search lane**. This is a **photo-source restriction only**, not rejection of the underlying original paintings, which can qualify with a separately documented, genuinely open exact reproduction.
 
-**Current operating census:** 13 active first-party/open-source searches; 45 restricted institutional photographs seeking independently open equivalents; eight acquired verified research JPEGs. The 155 candidate artwork keys and 198 original relationship edges are unchanged.
+**Current operating census:** 12 active first-party/open-source searches; 45 restricted institutional photographs seeking independently open equivalents; nine acquired verified research JPEGs. The 155 candidate artwork keys and 198 original relationship edges are unchanged.
 
 ## Recovery routes and the first MSK/Kraków job
 
 - Nationalmuseum launched its own [public high-resolution media portal](https://media.nationalmuseum.se/search/all) in June 2025. NM420 and NM1134 should be searched by **inventory number** there and matched to an exact media record with its own licence. This avoids retrying the blocked collection-site .large.jpg URLs. The first-party media IDs and bytes have **not** been identified or approved. Non-handpicked Commons files remain excluded.
 - The initial MSK Ghent/Kraków batch3 run **42821076217** attempted three artworks but acquired **zero**. The older MSK IIIF parser did not find a unique service; the exact service ID and photographer from the museum manifest have now been recorded, and the code corrects the lookup using the specifically pinned service. Both Kraków pages exposed no object-linked og:image, so those remain source-image discovery holds.
-- The corrected MSK run must yield actual photo bytes, dimensions, SHA-256, colour/crop diagnostics and unambiguous institutional attribution before we add a ninth verified image. A job success code or a pre-existing manifest URL is not itself evidence of download.
+- **The corrected MSK run succeeded**: official S-43 IIIF JPEG 2,000 × 3,887, independent SHA-256 `b4ee3e06d0ec7de6b9ade82502e80098e564d50157a0d284a2a0b563da9c134b`. The cropped mobile hero is unsuitable without explicit review: very tall narrative image and a prominent diagonal line of unknown origin. The museum marks the source image Public Domain, but separate MSK published terms refer commercial uses and publications to Art in Flanders; no paid licensing or outreach is authorised. Both Kraków originals remain without object-specific image links.
 
 ## Next operational sequence
 
-1. Inspect the eight acquired originals together using actual application container geometry at 320px and 390px, preserve full artwork when cover crops remove saints or central narrative, and confirm accurate artist/copy attributions. Do not require the owner to review every unpromising source.
+1. Inspect the nine acquired originals together using actual application container geometry at 320px and 390px, preserve full artwork when cover crops remove saints or central narrative, and confirm accurate artist/copy attributions. Do not require the owner to review every unpromising source.
 2. Resolve Wellcome's current photo-ID licence and associated attribution. For Ribera, preserve CC BY-SA 4.0 and note crop/modification obligations.
-3. Among the **13** distinct priority oil works in `C_LOCATE_REUSABLE_COLOUR_SOURCE`, prefer accessible institutional full-colour files with explicit reuse permissions; avoid restricted official photos and investigate equivalent reliable sources rather than paying or contacting museums.
+3. Among the **12** distinct priority oil works in `C_LOCATE_REUSABLE_COLOUR_SOURCE`, prefer accessible institutional full-colour files with explicit reuse permissions; avoid restricted official photos and investigate equivalent reliable sources rather than paying or contacting museums.
 4. Handle the **45** institutionally restricted source-image records, **one** grayscale-only, **one** artwork copyright hold and **one** unresolved identity key explicitly; do not disguise them as completed images.
 5. Check the **83** original research keys outside the priority oil group, including the **9 additional oil-medium candidates**, without misclassifying prints and watercolours as oil.
 6. Only after editorial signoff, build a **separate** release-candidate manifest that includes image bytes, stable checksum, source, licence, attribution, final crop and approved date. Never feed this research JSON into runtime directly.
