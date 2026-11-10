@@ -1,0 +1,29 @@
+name: 1961 Kyrie VIII final cantor turns source review
+
+on:
+  pull_request:
+    paths:
+      - 'src/mass/reader-kyrie-viii-cantor-turns-review.js'
+      - 'src/mass/reader-kyrie-viii-review-queue.js'
+      - 'data/presentation/reader-text-sung.v1.json'
+      - 'tests/schola-kyrie-viii-final-cantor-turns.mjs'
+      - '.github/workflows/schola-kyrie-viii-final-cantor-turns.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  final-kyrie:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Static syntax and source-bound cantors/choir assignments
+        run: |
+          node --check src/mass/reader-kyrie-viii-cantor-turns-review.js
+          node --check tests/schola-kyrie-viii-final-cantor-turns.mjs
+          node tests/schola-kyrie-viii-final-cantor-turns.mjs
