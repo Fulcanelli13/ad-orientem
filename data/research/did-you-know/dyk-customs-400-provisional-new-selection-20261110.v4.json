@@ -24,7 +24,8 @@
     "wave10": "data/research/did-you-know/dyk-customs-source-folio-wave10-28-proposals-20261110.v1.json",
     "wave10_replacements": "data/research/did-you-know/dyk-customs-source-folio-wave10-catholic-scope-replacements-20261110.v1.json",
     "wave10_crossbank": "data/research/did-you-know/dyk-customs-wave10-H225-overlap-and-scope-qa-20261110.v1.json",
-    "wave10_external_corroboration": "data/research/did-you-know/dyk-customs-wave10-external-corroboration-20261110.v1.json"
+    "wave10_external_corroboration": "data/research/did-you-know/dyk-customs-wave10-external-corroboration-20261110.v1.json",
+    "wave11_dedup_substitution": "data/research/did-you-know/dyk-customs-wave11-whole-bank-semantic-review-20261110.v1.json"
   },
   "counts": {
     "original_edited_bank": 400,
@@ -43,7 +44,10 @@
     "provisionally_retained_as_distinct": 400,
     "missing_to_reach_400_new": 0,
     "full_editorial_certifications_complete": false,
-    "wave10_secondary_source_reviews": 6
+    "wave10_secondary_source_reviews": 6,
+    "wave11_same_custom_duplicated_candlemas_removed": 1,
+    "wave11_independent_source_replacement": 1,
+    "wave11_original_print_page_313_checked": 1
   },
   "release_rules": {
     "original_claim_unchanged": true,
@@ -8762,32 +8766,53 @@
       "publication_authorized": false
     },
     {
-      "id": "DYK-G365-W-B-113",
+      "id": "DYK-C400-BH-001",
       "reader_copy": {
-        "en": "In some older Central and Eastern European Candlemas traditions, families decorated their candles before bringing them to church for the blessing on 2 February.",
-        "fr": "Dans certaines anciennes coutumes de Chandeleur en Europe centrale et orientale, des familles ornaient leurs cierges avant de les apporter à l'église pour la bénédiction du 2 février."
+        "en": "In parts of Austria, godparents traditionally gave their godchildren a braided sweet loaf called Allerheiligenstriezel on All Saints' Day. Such loaves were also offered to people in need, who were asked to pray for the departed.",
+        "fr": "Dans certaines régions d’Autriche, les parrains et marraines offraient traditionnellement à leurs filleuls, pour la Toussaint, un pain brioché tressé appelé Allerheiligenstriezel. On offrait aussi ces pains aux personnes dans le besoin, en leur demandant de prier pour les défunts."
       },
       "source_ids": [
-        "WEI58-25-007"
+        "WEI58-26-023",
+        "AT-BMLUK-ALLERHEILIGENSTRIEZEL"
       ],
       "source_links": [
         {
-          "source_id": "WEI58-25-007",
+          "source_id": "WEI58-26-023",
           "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
-          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "title": "Handbook of Christian Feasts and Customs (1958)",
           "locator": {
             "printed_pages": [
-              299
+              313
             ],
-            "scan_pdf_page_1based": null,
-            "italian_anchor": null
+            "pdf_page_1based": 331,
+            "original_page_visually_checked": true
           }
+        },
+        {
+          "source_id": "AT-BMLUK-ALLERHEILIGENSTRIEZEL",
+          "url": "https://www.bmluk.gv.at/themen/lebensmittel/trad-lebensmittel/backerzeugnisse/striezel.html",
+          "title": "Austrian Federal Ministry — Striezel, Allerheiligenstriezel"
         }
       ],
-      "editorial_issue": "SEASONAL_OR_HOUSEHOLD_CONTEXT_AND_CATHOLIC_SCOPE",
-      "original_record_id": "DYK-G365-W-B-113",
-      "source_wave": 8,
-      "review_status": "AWAITING_CLAIM_TO_ORIGINAL_SOURCE_AND_NATIVE_EN_FR_SIGNOFF",
+      "scope": {
+        "historical_austrian_catholic_calendar_custom": true,
+        "no_universal_rite_claim": true
+      },
+      "review": {
+        "original_page_visually_checked": true,
+        "secondary_independent_institutional_source_checked": true,
+        "english_final": false,
+        "french_final": false,
+        "full_semantic_signoff": false,
+        "publication_authorized": false
+      },
+      "secondary_corroboration": {
+        "authority": "Austrian Federal Ministry for Agriculture and Food",
+        "url": "https://www.bmluk.gv.at/themen/lebensmittel/trad-lebensmittel/backerzeugnisse/striezel.html",
+        "status": "INDEPENDENT_INSTITUTIONAL_CUSTOM_HISTORY_AND_GODPARENT_GIFTS"
+      },
+      "source_wave": 11,
+      "review_status": "ORIGINAL_FOLIO_AND_INDEPENDENT_INSTITUTIONAL_SOURCE_REVIEWED_PENDING_FINAL_EDITORIAL_APPROVAL",
       "publication_authorized": false
     },
     {
@@ -12120,8 +12145,8 @@
       "id": "DYK-C400-BG-030",
       "title": "Hungarian bread blessed on Saints Peter and Paul's Day",
       "reader_copy": {
-        "en": "On 29 June, the feast of Saints Peter and Paul, older Hungarian communities brought bread to church for a special blessing; other harvest gifts such as grain and straw crowns were also blessed.",
-        "fr": "Le 29 juin, fête des saints Pierre et Paul, d'anciennes communautés hongroises apportaient du pain à l'église pour une bénédiction particulière ; d'autres offrandes des moissons, comme les céréales et les couronnes de paille, étaient également bénites."
+        "en": "On 29 June, the feast of Saints Peter and Paul, an older Hungarian custom brought loaves of bread to church for a special priestly blessing.",
+        "fr": "Le 29 juin, fête des saints Pierre et Paul, une ancienne coutume hongroise consistait à apporter des pains à l’église pour recevoir une bénédiction particulière du prêtre."
       },
       "source_ids": [
         "WEI58-28-006"
@@ -12156,7 +12181,12 @@
       },
       "review_status": "PRIMARY_PRINTED_PAGE_REVIEWED_SOURCE_WITNESS_ONLY_FINAL_QA_PENDING",
       "publication_authorized": false,
-      "source_wave": 10
+      "source_wave": 10,
+      "reader_copy_pre_overlap_refinement": {
+        "en": "On 29 June, the feast of Saints Peter and Paul, older Hungarian communities brought bread to church for a special blessing; other harvest gifts such as grain and straw crowns were also blessed.",
+        "fr": "Le 29 juin, fête des saints Pierre et Paul, d'anciennes communautés hongroises apportaient du pain à l'église pour une bénédiction particulière ; d'autres offrandes des moissons, comme les céréales et les couronnes de paille, étaient également bénites."
+      },
+      "copy_revision_reason": "Remove broader grain-and-straw-crown details already covered by another Saint Peter and Paul card; retain source-distinct blessing of bread."
     }
   ],
   "publication_authorized": false
