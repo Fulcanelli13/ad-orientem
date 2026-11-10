@@ -20,7 +20,9 @@ const EXPECTED=Object.freeze({
       "FIRST_SATURDAY|09:00|UNKNOWN",
       "MONDAY_TO_FRIDAY|07:15|UNKNOWN",
       "SATURDAY|07:15|UNKNOWN"
-    ]
+    ],
+    "name": "Kaplica Chrystusa Króla",
+    "description": "Bajerze 36 (pałac), Kijewo Królewskie, Bajerze, Poland"
   },
   "RG-858EA6AA6D6A": {
     "url": "https://www.piusx.org.pl/kaplice/boleslawiec",
@@ -33,7 +35,9 @@ const EXPECTED=Object.freeze({
       "SUNDAY|12:30|UNKNOWN",
       "FIRST_FRIDAY|18:00|UNKNOWN",
       "FIRST_SATURDAY|09:00|UNKNOWN"
-    ]
+    ],
+    "name": "Kaplica pw. NMPanny Nieustającej Pomocy",
+    "description": "Our Lady of Perpetual Help chapel, ul. Garncarska 17"
   },
   "RG-513593EF876C": {
     "url": "https://www.piusx.org.pl/kaplice/bydgoszcz",
@@ -46,7 +50,9 @@ const EXPECTED=Object.freeze({
       "SUNDAY|08:30|SUNG",
       "FIRST_FRIDAY|18:00|UNKNOWN",
       "FIRST_SATURDAY|09:00|UNKNOWN"
-    ]
+    ],
+    "name": "Kaplica pw. Matki Bożej Bolesnej",
+    "description": "Our Lady of Sorrows chapel, ul. Fordońska 399"
   },
   "RG-5C04CA9B3BD4": {
     "url": "https://www.piusx.org.pl/kaplice/krosno",
@@ -58,7 +64,9 @@ const EXPECTED=Object.freeze({
     "lines": [
       "SUNDAY|13:30|UNKNOWN",
       "FIRST_SATURDAY|08:00|UNKNOWN"
-    ]
+    ],
+    "name": "Kaplica pw. św. Jana z Dukli",
+    "description": "St. John of Dukla chapel, ul. Okrzei 4A"
   },
   "RG-A0DBF5D61B7D": {
     "url": "https://www.piusx.org.pl/kaplice/szczecin",
@@ -73,7 +81,9 @@ const EXPECTED=Object.freeze({
       "SUNDAY|10:00|SUNG",
       "FIRST_FRIDAY|18:00|UNKNOWN",
       "SATURDAY|18:00|LOW"
-    ]
+    ],
+    "name": "Kaplica p.w. sw. Wojciecha",
+    "description": "St. Adalbert chapel, ul. Monte Cassino 30"
   },
   "RG-D70080C4D765": {
     "url": "https://www.piusx.org.pl/kaplice/torun",
@@ -85,7 +95,9 @@ const EXPECTED=Object.freeze({
     "lines": [
       "SUNDAY|12:30|UNKNOWN",
       "FIRST_SATURDAY|12:30|UNKNOWN"
-    ]
+    ],
+    "name": "Kaplica pw. św. Jana Marii Vianneya",
+    "description": "St. John Mary Vianney chapel, ul. Fałata 35/37"
   }
 });
 const SCOPES=new Set(["SUNDAY","FIRST_FRIDAY","FIRST_SATURDAY","MONDAY_TO_FRIDAY","SATURDAY"]);
@@ -110,7 +122,7 @@ export function attachPolishFirstPartyWeeklyPatterns(items,manifest){
      p.existing_source_url!=="https://www.piusx.org.pl/kaplice/zestawienie"||
      p.source_publisher!=="Bractwo Kapłańskie Świętego Piusa X w Polsce"||
      p.checked_on!=="2026-11-10"||p.subject_scope!=="ONE_NAMED_CL2_SITE_NOT_DISTRICT"||
-     !T(p.canonical_name)||!T(p.physical_description)||forbidden(p)||
+     p.canonical_name!==exp.name||p.physical_description!==exp.description||forbidden(p)||
      !Array.isArray(p.entries)||p.entries.length!==exp.lines.length)
    throw Error("Unsupported Polish CL27 source site "+T(p?.cl2_anchor));
   const actual=[];
@@ -133,8 +145,8 @@ export function attachPolishFirstPartyWeeklyPatterns(items,manifest){
   const p=by.get(item?.physical_group_id);
   if(!p)return item;
   if(matched.has(p.cl2_anchor)||item.kind!=="TLM_VENUE"||
-    item.physical_site_source!=="CL2_MASTER"||item.source_id!==p.source_id||
-    item.country_code!==p.country||item.title!==p.canonical_name||
+    item.physical_site_source!=="CL2_MASTER"||!p.source_ids.includes(item.source_id)||
+    item.country_code!==p.country||
     item.source_location_description!==p.physical_description||
     !same(item.source_ids,p.source_ids)||
     !Array.isArray(item.source_links)||
