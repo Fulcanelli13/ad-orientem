@@ -1,0 +1,666 @@
+{
+  "schema": "AO_SACRED_ATLAS_WAVE2_GUIDES57_66_DRAFT_V1",
+  "as_of": "2026-11-10",
+  "status": "RESEARCH_DRAFT_BILINGUAL_NOT_PUBLISHED",
+  "based_on": "data/shrines/shrines-pilgrimages-seed.v1.json",
+  "counts": {
+    "guides": 10,
+    "sections": 30,
+    "language": "EN_FR",
+    "owner_approved": 0,
+    "published": 0
+  },
+  "policy": [
+    "No rewriting of the 56 already drafted Wave-1 guides or the 33 published extended guides",
+    "Texts are newly authored but grounded in existing source-registry contributions; editor must check precise factual support for each paragraph",
+    "Do not infer apparition authenticity, liturgical rite or immutable schedules, or claim entrance-grade GPS",
+    "No research-only source automatically publishes; preserve existing Place and shrine identities"
+  ],
+  "guides": [
+    {
+      "place_id": "place:DE:kevelaer-gnadenkapelle",
+      "place_name": "Gnadenkapelle Kevelaer",
+      "country_code": "DE",
+      "shrine_id": "shrine:DE:kevelaer-consolatrix-afflictorum",
+      "draft_order": 57,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Chapel of Grace and devotion to the Consoler of the Afflicted.",
+      "subtitle_fr": "La chapelle des Grâces et la dévotion à la Consolatrice des affligés.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The image at the heart of the shrine",
+          "title_fr": "L’image au cœur du sanctuaire",
+          "paragraphs": [
+            {
+              "en": "Kevelaer’s pilgrimage centres on the Gnadenkapelle, the Chapel of Grace, and the Marian image honoured as the Consoler of the Afflicted. It is the image and the prayer offered before it that give the destination its devotional identity; the wider pilgrimage churches are part of the same sacred setting.",
+              "fr": "Le pèlerinage de Kevelaer se concentre sur la Gnadenkapelle, la chapelle des Grâces, et sur l’image mariale vénérée sous le titre de Consolatrice des affligés. L’image et la prière qui l’entoure donnent au lieu son identité spirituelle ; les autres églises du pèlerinage appartiennent à ce même ensemble sacré.",
+              "source_url": "https://www.wallfahrt-kevelaer.de/wallfahrt/kirchen-und-kapellen/gnadenkapelle",
+              "source_id": "SHR-KEVELAER-GNADENKAPELLE"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The pilgrimage precinct",
+          "title_fr": "L’ensemble de pèlerinage",
+          "paragraphs": [
+            {
+              "en": "Visitors should distinguish the small chapel containing the revered image from the broader Kevelaer pilgrimage precinct. A visit may include several connected churches and chapels, but they should not be confused with separate Marian apparition sites or mapped as unrelated destinations. The chapel itself remains the principal focal point.",
+              "fr": "Il convient de distinguer la petite chapelle qui abrite l’image vénérée de l’ensemble des églises et chapelles de pèlerinage de Kevelaer. Ces édifices forment un parcours dévotionnel cohérent : ils ne constituent pas des lieux d’apparitions différents ni des destinations indépendantes. La chapelle reste le point central de la visite.",
+              "source_url": "https://www.wallfahrt-kevelaer.de/wallfahrt/kirchen-und-kapellen/gnadenkapelle",
+              "source_id": "SHR-KEVELAER-GNADENKAPELLE"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage and liturgy",
+          "title_fr": "Pèlerinage et liturgie",
+          "paragraphs": [
+            {
+              "en": "The parish publishes seasonal liturgical arrangements for the pilgrimage churches, including a Sunday Mass according to the 1962 Roman Missal in the Kerzenkapelle. This is a site-specific current programme, not proof that every shrine church has the same rite. Visitors must consult the latest parish timetable before travelling.",
+              "fr": "La paroisse publie des dispositions liturgiques saisonnières pour les églises de pèlerinage, dont une messe dominicale selon le Missel romain de 1962 à la Kerzenkapelle. Ce programme propre à un lieu ne signifie pas que toutes les églises du sanctuaire suivent le même rite. Il convient de vérifier les horaires paroissiaux actuels avant la visite.",
+              "source_url": "https://www.wallfahrt-kevelaer.de/gottesdienste/sommer-und-winterordnung",
+              "source_id": "SHR-KEVELAER-1962-SCHEDULE"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:DE:kevelaer-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.wallfahrt-kevelaer.de/wallfahrt/kirchen-und-kapellen/gnadenkapelle",
+        "https://www.wallfahrt-kevelaer.de/gottesdienste/sommer-und-winterordnung"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:AT:maria-taferl-basilica",
+      "place_name": "Wallfahrtsbasilika Maria Taferl",
+      "country_code": "AT",
+      "shrine_id": "shrine:AT:maria-taferl-sorrowful-mother",
+      "draft_order": 58,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Austrian Marian pilgrimage on the Taferlberg, with origins in seventeenth-century devotion.",
+      "subtitle_fr": "Un pèlerinage marial autrichien sur le Taferlberg, enraciné dans la dévotion du XVIIe siècle.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The seventeenth-century beginnings",
+          "title_fr": "Les origines au XVIIe siècle",
+          "paragraphs": [
+            {
+              "en": "The shrine’s own history associates the origins of Maria Taferl with events remembered in 1633 and 1642. Those accounts belong to the devotional tradition through which a local place came to attract pilgrims. The dates should be presented as part of the sanctuary’s recorded history, without turning reported extraordinary events into independently established facts.",
+              "fr": "L’histoire du sanctuaire rattache les origines de Maria Taferl à des événements dont la mémoire est conservée pour 1633 et 1642. Ces récits appartiennent à la tradition dévotionnelle qui a progressivement attiré les pèlerins vers ce lieu. Il faut présenter ces dates dans l’histoire rapportée du sanctuaire, sans transformer les faits extraordinaires allégués en certitudes indépendamment établies.",
+              "source_url": "https://basilika.at/info/geschichte/index.html",
+              "source_id": "SHR-MARIA-TAFERL-HISTORY"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "From devotion to basilica",
+          "title_fr": "De la dévotion à la basilique",
+          "paragraphs": [
+            {
+              "en": "The pilgrimage later acquired a substantial church and an enduring place in Austrian Marian life. Its basilica is not simply a monument: it is the church of a pilgrimage tradition that grew around a particular Marian devotion. The physical building, the surrounding sacred landscape and the older foundation accounts deserve distinct treatment.",
+              "fr": "Le pèlerinage se dota par la suite d’une importante église et prit une place durable dans la vie mariale autrichienne. La basilique n’est pas seulement un monument : elle est l’église d’une tradition née autour d’une dévotion mariale particulière. L’édifice, le paysage sacré environnant et les récits des origines doivent être distingués.",
+              "source_url": "https://basilika.at/info/geschichte/index.html",
+              "source_id": "SHR-MARIA-TAFERL-HISTORY"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A living pilgrimage church",
+          "title_fr": "Une église de pèlerinage vivante",
+          "paragraphs": [
+            {
+              "en": "The basilica maintains its own pilgrimage identity and contact arrangements. For a contemporary visit, prayer in the basilica belongs to the actual sanctuary, whereas current opening conditions, group arrangements and Mass times must come from the operator’s live information. A historical feast or episode does not by itself establish a present liturgical schedule.",
+              "fr": "La basilique conserve son identité de lieu de pèlerinage et ses propres modalités de contact. Pour une visite actuelle, la prière se déroule dans le sanctuaire bien réel, tandis que les conditions d’accès, l’accueil des groupes et les horaires des messes doivent être vérifiés auprès de ses responsables. Une fête ou un épisode historique ne suffit pas à établir un horaire en vigueur.",
+              "source_url": "https://basilika.at/kontakt/index.php",
+              "source_id": "SHR-MARIA-TAFERL-CONTACT"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:AT:maria-taferl-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://basilika.at/info/geschichte/index.html",
+        "https://basilika.at/kontakt/index.php"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:CH:einsiedeln-monastery",
+      "place_name": "Kloster Einsiedeln / Gnadenkapelle",
+      "country_code": "CH",
+      "shrine_id": "shrine:CH:einsiedeln-our-lady",
+      "draft_order": 59,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A Benedictine monastery and the Chapel of Grace at the heart of Swiss Marian pilgrimage.",
+      "subtitle_fr": "Un monastère bénédictin et sa chapelle des Grâces au cœur du pèlerinage marial suisse.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Monastic life and Marian pilgrimage",
+          "title_fr": "Vie monastique et pèlerinage marial",
+          "paragraphs": [
+            {
+              "en": "Einsiedeln brings together two related but distinct dimensions: the prayer of a Benedictine community and the Marian pilgrimage centred on the Gnadenkapelle. Pilgrims encounter a living monastery, not only a historical church. The Chapel of Grace is the particular focus of Marian devotion within the larger abbey complex.",
+              "fr": "Einsiedeln réunit deux réalités liées mais distinctes : la prière d’une communauté bénédictine et le pèlerinage marial centré sur la Gnadenkapelle. Les pèlerins découvrent un monastère vivant, et non une simple église historique. La chapelle des Grâces est le foyer particulier de la dévotion mariale dans le vaste ensemble abbatial.",
+              "source_url": "https://www.kloster-einsiedeln.ch/fileadmin/seiteninhalt/dateien/einsiedeln_handreichung.pdf",
+              "source_id": "SHR-EINSIEDELN-PILGRIMAGE"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The Engelweihe feast",
+          "title_fr": "La fête de l’Engelweihe",
+          "paragraphs": [
+            {
+              "en": "The monastery’s pilgrimage calendar highlights the Engelweihe, associated with the dedication tradition of the Chapel of Grace and observed on 14 September. The designation belongs to Einsiedeln’s own liturgical and devotional history. Its traditional narrative should remain distinguishable from modern historical verification and from the changing ceremonial programme of any given year.",
+              "fr": "Le calendrier des pèlerinages du monastère met en valeur l’Engelweihe, liée à la tradition de dédicace de la chapelle des Grâces et célébrée le 14 septembre. Cette fête appartient à l’histoire liturgique et dévotionnelle propre à Einsiedeln. Son récit traditionnel doit rester distinct de la vérification historique moderne et des programmes de célébrations susceptibles de varier selon les années.",
+              "source_url": "https://www.kloster-einsiedeln.ch/fileadmin/seiteninhalt/dateien/wallfahrtskalender_2025_definitiv.pdf",
+              "source_id": "SHR-EINSIEDELN-ENGELWEIHE"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Planning a pilgrimage",
+          "title_fr": "Organiser un pèlerinage",
+          "paragraphs": [
+            {
+              "en": "The abbey provides guidance for pilgrim groups and services associated with the Chapel of Grace. A pilgrim may wish to combine prayer there with time in the monastery church, but the two spaces should retain their proper identities in the guide. Masses, confessions, processions and access arrangements require current confirmation from Einsiedeln.",
+              "fr": "L’abbaye propose des renseignements pour les groupes de pèlerins et pour les offices associés à la chapelle des Grâces. On peut y joindre un temps de prière dans l’église abbatiale, mais ces deux espaces doivent conserver leur identité propre dans le guide. Messes, confessions, processions et accès doivent être confirmés auprès du monastère.",
+              "source_url": "https://www.kloster-einsiedeln.ch/fileadmin/seiteninhalt/dateien/einsiedeln_handreichung.pdf",
+              "source_id": "SHR-EINSIEDELN-PILGRIMAGE"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:CH:einsiedeln-destination",
+        "pilgrimage:CH:einsiedeln-engelweihe"
+      ],
+      "saint_name_associations": [
+        "Saint Meinrad"
+      ],
+      "bibliography_urls": [
+        "https://www.kloster-einsiedeln.ch/fileadmin/seiteninhalt/dateien/einsiedeln_handreichung.pdf",
+        "https://www.kloster-einsiedeln.ch/fileadmin/seiteninhalt/dateien/wallfahrtskalender_2025_definitiv.pdf"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:CH:kloster-mariastein",
+      "place_name": "Kloster Mariastein / Gnadenkapelle",
+      "country_code": "CH",
+      "shrine_id": "shrine:CH:mariastein-our-lady",
+      "draft_order": 60,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Benedictine pilgrimage focused on the Gnadenkapelle at Mariastein.",
+      "subtitle_fr": "Pèlerinage bénédictin centré sur la chapelle des Grâces de Mariastein.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The Benedictine sanctuary",
+          "title_fr": "Le sanctuaire bénédictin",
+          "paragraphs": [
+            {
+              "en": "Mariastein is both a Benedictine monastery and a Marian pilgrimage destination. The community’s life and the devotion of visitors meet around the Gnadenkapelle, the Chapel of Grace. This is a particular chapel associated with the monastery, not a generic name for every building in the surrounding precinct.",
+              "fr": "Mariastein est à la fois un monastère bénédictin et une destination de pèlerinage marial. La vie communautaire et la dévotion des visiteurs se rencontrent autour de la Gnadenkapelle, la chapelle des Grâces. Il s’agit d’une chapelle particulière liée au monastère, et non d’une désignation générique de tous les bâtiments du site.",
+              "source_url": "https://www.kloster-mariastein.ch/en/information-on/contact-us/",
+              "source_id": "SHR-MARIASTEIN-CONTACT"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A recurring Marian pilgrimage",
+          "title_fr": "Un pèlerinage marial régulier",
+          "paragraphs": [
+            {
+              "en": "The monastery records a monthly pilgrimage associated with the first Wednesday, in which Mass, confession and the Rosary form part of the devotional programme. That rhythm illustrates the sanctuary’s continuing practice, beyond the historical importance of its buildings. It is nonetheless a published programme that should be checked for the date of a visit.",
+              "fr": "Le monastère présente un pèlerinage mensuel associé au premier mercredi, avec la messe, la confession et le Rosaire parmi les pratiques proposées. Ce rythme montre que la vie du sanctuaire dépasse l’intérêt historique de ses bâtiments. Il s’agit néanmoins d’un programme publié qu’il faut vérifier pour la date exacte d’une visite.",
+              "source_url": "https://www.kloster-mariastein.ch/wallfahrt/gottesdienste/",
+              "source_id": "SHR-MARIASTEIN-MONTHLY"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "The place and the pilgrim",
+          "title_fr": "Le lieu et le pèlerin",
+          "paragraphs": [
+            {
+              "en": "The monastery’s contact information anchors the pilgrimage at its actual site rather than at a merely approximate town marker. A visitor guide should describe the chapel and the monastic precinct as a connected destination while directing travellers to the abbey’s own arrival instructions. No unverified doorway position or private monastic access is implied.",
+              "fr": "Les coordonnées de contact du monastère permettent de rattacher le pèlerinage au lieu réel plutôt qu’à un simple point approximatif de la commune. Le guide doit présenter la chapelle et l’ensemble monastique comme une destination cohérente, tout en renvoyant aux indications d’arrivée de l’abbaye. Aucun accès privé ni entrée précise non vérifiée ne doit être présumé.",
+              "source_url": "https://www.kloster-mariastein.ch/en/information-on/contact-us/",
+              "source_id": "SHR-MARIASTEIN-CONTACT"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:CH:mariastein-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.kloster-mariastein.ch/en/information-on/contact-us/",
+        "https://www.kloster-mariastein.ch/wallfahrt/gottesdienste/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:guadalupe-shrine-la-crosse",
+      "place_name": "Shrine of Our Lady of Guadalupe",
+      "country_code": "US",
+      "shrine_id": "shrine:US:guadalupe-la-crosse",
+      "draft_order": 61,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A Marian pilgrimage on the bluffs of La Crosse, with chapels and liturgical life.",
+      "subtitle_fr": "Un pèlerinage marial à La Crosse, avec ses chapelles et sa vie liturgique.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A pilgrimage rather than a single doorway",
+          "title_fr": "Un pèlerinage plutôt qu’une simple entrée",
+          "paragraphs": [
+            {
+              "en": "The Shrine of Our Lady of Guadalupe in La Crosse presents the journey through its grounds as part of the pilgrimage experience. Devotional spaces lead pilgrims toward the principal church and invite pauses for prayer. These spaces belong to one sanctuary: a chapel within the grounds should not automatically become a separate unrelated Place.",
+              "fr": "Le sanctuaire Notre-Dame de Guadalupe de La Crosse présente le parcours de ses terrains comme une partie de l’expérience du pèlerinage. Divers espaces de dévotion conduisent vers l’église principale et invitent à des haltes de prière. Ils appartiennent au même sanctuaire : une chapelle intérieure au domaine ne doit pas devenir automatiquement un lieu distinct sans lien.",
+              "source_url": "https://guadalupeshrine.org/pilgrimage-experience/",
+              "source_id": "SHR-GUADALUPE-PILGRIMAGE"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The votive candle chapel",
+          "title_fr": "La chapelle des cierges votifs",
+          "paragraphs": [
+            {
+              "en": "The shrine identifies a Votive Candle Chapel among the places pilgrims may visit. Lighting a candle is a concrete devotional act within the wider movement toward the Marian shrine. The building should be described as an internal stop of the pilgrimage, without claiming that its location or access can be reconstructed from a general map pin.",
+              "fr": "Le sanctuaire indique une chapelle des cierges votifs parmi les étapes ouvertes aux pèlerins. Y déposer un cierge est un acte de dévotion concret au cours de la marche vers le sanctuaire marial. Cette chapelle doit être décrite comme une étape intérieure du parcours, sans prétendre déduire son emplacement précis ou son accès d’une épingle cartographique générale.",
+              "source_url": "https://guadalupeshrine.org/pilgrimage-experience/",
+              "source_id": "SHR-GUADALUPE-PILGRIMAGE"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Distinct liturgical celebrations",
+          "title_fr": "Des célébrations liturgiques distinctes",
+          "paragraphs": [
+            {
+              "en": "The sanctuary publishes its own Mass and devotion schedule, including information on the Traditional Latin Mass. The rite and time of any particular celebration must be read from that programme, not inferred from the shrine’s Marian dedication. A historical guide may explain the pilgrimage; a practical visit card must still consult the current official schedule.",
+              "fr": "Le sanctuaire publie son calendrier de messes et de dévotions, avec des renseignements concernant la messe traditionnelle latine. Le rite et l’heure d’une célébration donnée doivent être lus dans ce programme, et non déduits de la dédicace mariale du lieu. Le guide historique peut expliquer le pèlerinage ; la fiche pratique doit toutefois vérifier les horaires officiels en vigueur.",
+              "source_url": "https://guadalupeshrine.org/mass-schedules/",
+              "source_id": "SHR-GUADALUPE-SCHEDULE"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:US:guadalupe-la-crosse-destination"
+      ],
+      "saint_name_associations": [
+        "Saint Juan Diego"
+      ],
+      "bibliography_urls": [
+        "https://guadalupeshrine.org/pilgrimage-experience/",
+        "https://guadalupeshrine.org/mass-schedules/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:holy-hill",
+      "place_name": "Basilica and National Shrine of Mary Help of Christians at Holy Hill",
+      "country_code": "US",
+      "shrine_id": "shrine:US:holy-hill-mary-help",
+      "draft_order": 62,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A Wisconsin Marian sanctuary entrusted to the Discalced Carmelites.",
+      "subtitle_fr": "Un sanctuaire marial du Wisconsin confié aux Carmes déchaux.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A Carmelite Marian sanctuary",
+          "title_fr": "Un sanctuaire marial carmélitain",
+          "paragraphs": [
+            {
+              "en": "Holy Hill is the Basilica and National Shrine of Mary Help of Christians in Wisconsin. It is served by the Discalced Carmelites and continues to welcome prayerful visitors and organised pilgrimages. The Carmelite community is part of the sanctuary’s actual religious identity, distinct from outside groups that may make pilgrimages there.",
+              "fr": "Holy Hill est la basilique et sanctuaire national de Marie Auxiliatrice, dans le Wisconsin. Desservi par les Carmes déchaux, le lieu accueille toujours les fidèles et les pèlerinages organisés. La communauté carmélitaine fait partie de l’identité religieuse propre au sanctuaire, distincte des groupes extérieurs qui peuvent s’y rendre en pèlerinage.",
+              "source_url": "https://www.holyhill.com/welcome",
+              "source_id": "SHR-HOLY-HILL-OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A landscape of pilgrimage",
+          "title_fr": "Un paysage de pèlerinage",
+          "paragraphs": [
+            {
+              "en": "The shrine’s name and setting have long made it a destination for travellers seeking Marian prayer rather than merely an architectural monument. Its basilica is the chief worship site within that destination. The historical pilgrimage identity should be described without implying that every approach road or informal walking path is a certified pilgrimage track.",
+              "fr": "Par son nom et son emplacement, le sanctuaire demeure une destination de prière mariale, et non un simple monument d’architecture. Sa basilique en constitue le principal lieu de culte. Il faut décrire l’identité historique du pèlerinage sans laisser croire que toute route d’accès ou tout sentier informel correspond à un itinéraire de pèlerinage cartographié et certifié.",
+              "source_url": "https://www.holyhill.com/welcome",
+              "source_id": "SHR-HOLY-HILL-OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Visiting groups and their programmes",
+          "title_fr": "Les groupes de pèlerins et leurs programmes",
+          "paragraphs": [
+            {
+              "en": "Separately from the sanctuary’s Carmelite ministry, other Catholic organisers publish pilgrimages to Holy Hill, including a traditional three-day programme recorded for 2026. That event belongs to the organiser’s particular calendar, not to an immutable timetable of the basilica. The destination’s guide must keep official sanctuary information separate from third-party pilgrimage announcements.",
+              "fr": "Indépendamment du ministère des Carmes, d’autres organisateurs catholiques proposent des pèlerinages vers Holy Hill, dont un programme traditionnel de trois jours annoncé pour 2026. Cet événement relève du calendrier de son organisateur et non d’un horaire permanent de la basilique. Le guide doit distinguer les informations du sanctuaire de celles des pèlerinages organisés par des tiers.",
+              "source_url": "https://mukwonago.wi.sspx.org/en/events/holy-hill-pilgrimage-2026-57859",
+              "source_id": "PIL-HOLY-HILL-SSPX"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:US:holy-hill-destination",
+        "pilgrimage:US:holy-hill-traditional"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.holyhill.com/welcome",
+        "https://mukwonago.wi.sspx.org/en/events/holy-hill-pilgrimage-2026-57859"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:CA:notre-dame-du-cap",
+      "place_name": "Sanctuaire Notre-Dame-du-Cap",
+      "country_code": "CA",
+      "shrine_id": "shrine:CA:notre-dame-du-cap",
+      "draft_order": 63,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "An enduring Québec Marian sanctuary with an Assumption pilgrimage tradition.",
+      "subtitle_fr": "Un sanctuaire marial historique du Québec marqué par le pèlerinage de l’Assomption.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The sanctuary at Cap-de-la-Madeleine",
+          "title_fr": "Le sanctuaire de Cap-de-la-Madeleine",
+          "paragraphs": [
+            {
+              "en": "Notre-Dame-du-Cap belongs to the religious landscape of Cap-de-la-Madeleine, now part of Trois-Rivières. Its identity is that of an established Marian pilgrimage sanctuary, not simply an image or an event that happens in the wider city. The pilgrim destination is the actual sanctuary and its associated places of prayer.",
+              "fr": "Notre-Dame-du-Cap appartient au paysage religieux de Cap-de-la-Madeleine, aujourd’hui intégré à Trois-Rivières. C’est un sanctuaire marial de pèlerinage établi, et non une simple image ou un événement situé de manière vague dans l’agglomération. La destination est le sanctuaire lui-même avec ses espaces de prière.",
+              "source_url": "https://www.sanctuaire-ndc.ca/nous-joindre/",
+              "source_id": "SHR-NDC-CONTACT"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The Assumption novena",
+          "title_fr": "La neuvaine de l’Assomption",
+          "paragraphs": [
+            {
+              "en": "A major feature of the sanctuary’s life is the Assumption novena, centred on the feast of 15 August. Its annual return links a particular Marian dedication with repeated acts of prayer and pilgrimage. That recurring observance should not be confused with the exact list of ceremonies offered in a particular year.",
+              "fr": "Une caractéristique majeure de la vie du sanctuaire est la neuvaine de l’Assomption, centrée sur la fête du 15 août. Son retour annuel associe la dévotion mariale à des pratiques répétées de prière et de pèlerinage. Cette observance récurrente ne doit pas être confondue avec le détail des célébrations proposées pour une année particulière.",
+              "source_url": "https://www.sanctuaire-ndc.ca/activitesetevenements/parcours-les-decouvertes/",
+              "source_id": "PIL-NDC-ASSUMPTION"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Praying at the existing sanctuary",
+          "title_fr": "Prier dans le sanctuaire actuel",
+          "paragraphs": [
+            {
+              "en": "Pilgrims should be directed to the sanctuary’s own visitor and group information rather than to an inferred entrance or a historical procession route. The site can be presented as a living place of prayer even when individual programmes change. No particular contemporary Mass time or special liturgical rite follows solely from the sanctuary’s long history.",
+              "fr": "Les pèlerins doivent être orientés vers les renseignements du sanctuaire concernant les visites et les groupes, plutôt que vers une entrée supposée ou un parcours historique reconstitué. Le lieu peut être présenté comme un espace vivant de prière même lorsque les programmes changent. Aucun horaire de messe ni rite particulier actuel ne découle à lui seul de cette longue histoire.",
+              "source_url": "https://www.sanctuaire-ndc.ca/nous-joindre/",
+              "source_id": "SHR-NDC-CONTACT"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:CA:notre-dame-du-cap-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.sanctuaire-ndc.ca/nous-joindre/",
+        "https://www.sanctuaire-ndc.ca/activitesetevenements/parcours-les-decouvertes/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:CA:martyrs-shrine-midland",
+      "place_name": "Martyrs' Shrine",
+      "country_code": "CA",
+      "shrine_id": "shrine:CA:martyrs-midland",
+      "draft_order": 64,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Jesuit pilgrimage shrine of the Canadian Martyrs at Midland.",
+      "subtitle_fr": "Le sanctuaire jésuite des martyrs canadiens à Midland.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Remembering the Canadian Martyrs",
+          "title_fr": "Faire mémoire des martyrs canadiens",
+          "paragraphs": [
+            {
+              "en": "The Martyrs’ Shrine at Midland honours the Catholic martyrs remembered in the history of the missions of New France. The shrine draws pilgrims into that history through prayer and commemoration. The present sanctuary is a place of remembrance and ministry; it must not be presented as the proven site of every individual martyrdom.",
+              "fr": "Le sanctuaire des martyrs de Midland honore les martyrs catholiques liés à l’histoire des missions de la Nouvelle-France. Il invite les pèlerins à entrer dans cette mémoire par la prière et la commémoration. Le sanctuaire actuel est un lieu de souvenir et de ministère ; il ne doit pas être présenté comme l’emplacement démontré de chacun des martyres.",
+              "source_url": "https://martyrs-shrine.com/our-ministry/",
+              "source_id": "SHR-MARTYRS-MINISTRY"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Jesuit pastoral care",
+          "title_fr": "Le ministère pastoral des Jésuites",
+          "paragraphs": [
+            {
+              "en": "The shrine’s own description places Jesuit ministry at the centre of its continuing purpose. Its religious significance is therefore not exhausted by a heritage visit: the destination remains directed toward prayer, remembrance and the life of the Church. A historical account should keep the seventeenth-century missions distinct from the administration of the present sanctuary.",
+              "fr": "La présentation officielle du sanctuaire accorde une place centrale au ministère des Jésuites. Son importance religieuse ne se réduit donc pas à une visite patrimoniale : le lieu reste destiné à la prière, à la mémoire et à la vie de l’Église. Le récit historique doit distinguer les missions du XVIIe siècle de l’administration du sanctuaire actuel.",
+              "source_url": "https://martyrs-shrine.com/our-ministry/",
+              "source_id": "SHR-MARTYRS-MINISTRY"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A destination for pilgrim groups",
+          "title_fr": "Une destination pour les groupes de pèlerins",
+          "paragraphs": [
+            {
+              "en": "The Midland shrine maintains its own address and group-facing information. Pilgrims may come as individuals or with an organised group, but any specific ceremonies or access arrangements should be confirmed directly. The nearby historical geography of the Canadian missions should not be silently collapsed into a single map marker for the present shrine.",
+              "fr": "Le sanctuaire de Midland dispose de ses propres coordonnées et renseignements pour les groupes. Les pèlerins peuvent venir seuls ou avec un groupe organisé, mais les célébrations et les conditions d’accès doivent être confirmées directement. La géographie historique des missions canadiennes voisines ne doit pas être réduite sans distinction à l’unique point du sanctuaire actuel.",
+              "source_url": "https://martyrs-shrine.com/contact-us/",
+              "source_id": "SHR-MARTYRS-CONTACT"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:CA:martyrs-midland-destination",
+        "pilgrimage:CA:canadian-martyrs-traditional"
+      ],
+      "saint_name_associations": [
+        "Saint Jean de Brébeuf",
+        "Saint Isaac Jogues"
+      ],
+      "bibliography_urls": [
+        "https://martyrs-shrine.com/our-ministry/",
+        "https://martyrs-shrine.com/contact-us/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:GB:holywell-st-winefride",
+      "place_name": "St Winefride's Shrine & Well",
+      "country_code": "GB",
+      "shrine_id": "shrine:GB:holywell-st-winefride",
+      "draft_order": 65,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Saint Winefride’s Welsh holy well and continuing Catholic pilgrimage.",
+      "subtitle_fr": "La fontaine sacrée galloise de sainte Winefride et son pèlerinage catholique.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A shrine centred on a holy well",
+          "title_fr": "Un sanctuaire centré sur une fontaine sacrée",
+          "paragraphs": [
+            {
+              "en": "Holywell is distinctive because its central pilgrimage feature is Saint Winefride’s Well, rather than an ordinary parish church alone. The site is maintained as a Catholic shrine within the Diocese of Wrexham. Accounts of Winefride and the well belong to a longstanding sacred tradition and should be distinguished from verifiable modern descriptions of the building and water.",
+              "fr": "Holywell se distingue par une fontaine sacrée dédiée à sainte Winefride, qui constitue le centre du pèlerinage, et non par une simple église paroissiale. Le lieu est entretenu comme sanctuaire catholique dans le diocèse de Wrexham. Les récits concernant Winefride et la fontaine relèvent d’une longue tradition, à distinguer des descriptions modernes vérifiables du bâtiment et de l’eau.",
+              "source_url": "https://www.stwinefridesshrine.org/blank-2",
+              "source_id": "SHR-HOLYWELL-CONTACT"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Pilgrimage and veneration",
+          "title_fr": "Pèlerinage et vénération",
+          "paragraphs": [
+            {
+              "en": "Pilgrims continue to gather for prayer and the veneration associated with Saint Winefride. The shrine’s own group-booking and pilgrimage information establishes its present religious use. The fact that a feast or pilgrimage is longstanding does not by itself certify its exact date, ceremonial form or practical access for a future year.",
+              "fr": "Les pèlerins continuent de s’y réunir pour prier et honorer sainte Winefride. Les renseignements officiels sur les pèlerinages et les réservations de groupes attestent la vie religieuse actuelle du lieu. L’ancienneté d’une fête ou d’un pèlerinage ne suffit toutefois pas à garantir sa date précise, sa forme cérémonielle ou son accessibilité pour une année à venir.",
+              "source_url": "https://www.stwinefridesshrine.org/pilgrimages",
+              "source_id": "PIL-HOLYWELL-FEAST"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A separate traditional pilgrimage",
+          "title_fr": "Un pèlerinage traditionnel distinct",
+          "paragraphs": [
+            {
+              "en": "The Latin Mass Society also publicises an annual traditional pilgrimage to Holywell, involving forms of prayer associated with its own organising programme. This should be linked as a pilgrimage event associated with the Catholic shrine, not treated as the shrine’s permanent official Mass timetable or as evidence that all regular ceremonies follow the same rite.",
+              "fr": "La Latin Mass Society annonce également un pèlerinage traditionnel annuel à Holywell, avec les formes de prière prévues par son propre programme. Il faut relier cet événement au sanctuaire catholique comme pèlerinage organisé, sans le confondre avec un horaire permanent des messes du lieu ni en déduire que toutes ses célébrations suivent le même rite.",
+              "source_url": "https://lms.org.uk/pilgrimages",
+              "source_id": "PIL-HOLYWELL-LMS"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:GB:holywell-destination",
+        "pilgrimage:GB:holywell-lms"
+      ],
+      "saint_name_associations": [
+        "Saint Winefride",
+        "Saint Beuno"
+      ],
+      "bibliography_urls": [
+        "https://www.stwinefridesshrine.org/blank-2",
+        "https://www.stwinefridesshrine.org/pilgrimages",
+        "https://lms.org.uk/pilgrimages"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:AU:penrose-park",
+      "place_name": "Shrine of Our Lady of Mercy — Penrose Park",
+      "country_code": "AU",
+      "shrine_id": "shrine:AU:penrose-our-lady-mercy",
+      "draft_order": 66,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "An Australian Pauline Fathers’ Marian shrine centred on a Jasna Góra icon replica.",
+      "subtitle_fr": "Un sanctuaire marial australien des Pères pauliniens centré sur une copie de l’icône de Jasna Góra.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A Marian pilgrimage in New South Wales",
+          "title_fr": "Un pèlerinage marial en Nouvelle-Galles du Sud",
+          "paragraphs": [
+            {
+              "en": "Penrose Park is a diocesan Marian shrine in the Southern Highlands of New South Wales. The Pauline Fathers established its particular spiritual character, and devotion there centres on a replica of the revered image of Our Lady of Częstochowa. The Australian shrine must remain distinct from the original Polish sanctuary at Jasna Góra.",
+              "fr": "Penrose Park est un sanctuaire marial diocésain des Southern Highlands, en Nouvelle-Galles du Sud. Les Pères pauliniens y ont donné son caractère spirituel particulier, avec une dévotion centrée sur une copie de l’image vénérée de Notre-Dame de Częstochowa. Le sanctuaire australien doit être distingué du lieu d’origine polonais de Jasna Góra.",
+              "source_url": "https://penrosepark.com.au/shrine/",
+              "source_id": "SHR-PENROSE-IDENTITY"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The devotion of the Pauline community",
+          "title_fr": "La dévotion de la communauté paulinienne",
+          "paragraphs": [
+            {
+              "en": "The shrine illustrates how a religious community may carry a Marian devotion into a new country without claiming that the two buildings are the same site. Pilgrims honour Our Lady through the image kept at Penrose Park, within a Catholic sanctuary served by the Pauline tradition. The object’s model and the local pilgrimage history should both be explained.",
+              "fr": "Le sanctuaire montre comment une communauté religieuse peut transmettre une dévotion mariale dans un autre pays sans assimiler deux bâtiments distincts. Les pèlerins y honorent la Vierge à travers l’image conservée à Penrose Park, dans un sanctuaire catholique de tradition paulinienne. Il faut expliquer à la fois le modèle de l’image et l’histoire du pèlerinage local.",
+              "source_url": "https://penrosepark.com.au/shrine/",
+              "source_id": "SHR-PENROSE-IDENTITY"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Finding the actual shrine",
+          "title_fr": "Se rendre au sanctuaire réel",
+          "paragraphs": [
+            {
+              "en": "The sanctuary publishes its own address and geographic directions. These should be preferred over routes extrapolated from a generic Southern Highlands map marker, especially for a rural pilgrimage complex. Visiting groups should consult the current shrine arrangements; devotional identity and location evidence are not guarantees of a particular open door or Mass schedule.",
+              "fr": "Le sanctuaire publie sa propre adresse et ses indications géographiques. Il faut les préférer aux itinéraires déduits d’une simple épingle des Southern Highlands, surtout pour un vaste lieu de pèlerinage rural. Les groupes doivent consulter les dispositions actuelles du sanctuaire ; l’identité dévotionnelle et les coordonnées géographiques ne garantissent pas une entrée précise ni un horaire de messe.",
+              "source_url": "https://penrosepark.com.au/findus/",
+              "source_id": "SHR-PENROSE-FINDUS"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:AU:penrose-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://penrosepark.com.au/shrine/",
+        "https://penrosepark.com.au/findus/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    }
+  ]
+}
