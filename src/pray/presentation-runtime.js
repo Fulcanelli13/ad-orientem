@@ -58,6 +58,7 @@ import {internalPrayerView,supportedDirectPrayerRoute} from "./internal-route-ow
 import {renderLittleCrownB30} from "./little-crown-presentation-b30.js";
 import {PRAYER_SUBJECTS_V1,prayerSubjectsForLibrary,prayerSubjectCounts} from "./prayer-subject-index.v1.js";
 import {guidedPrayerLinksForSubject} from "./prayer-subject-guided-links.v1.js";
+import {ICKSP_INFANT_JESUS_TWO_PRAYERS_V1,ickspInfantWork,ickspInfantWorksForSubject} from "./icksp-infant-jesus-two-prayers.v1.js";
 import {PRAYER_SUPPLEMENTAL_LIVE_WORK_LINKS_V1,prayerSupplementalLiveWork,prayerSupplementalLiveWorksForSubject} from "./prayer-supplemental-live-works.v1.js";
 import {prayerSevenSourceWork,prayerSevenSourceWorksForSubject} from "./prayer-seven-source-work-links.v1.js";
 import {redBookletCommunionLibraryLink,redBookletCommunionLibraryLinksForSubject} from "./red-booklet-communion-library-links.v1.js";
@@ -2669,7 +2670,30 @@ function renderLibraryEntryRows(rows,search){
   return `<details class="aoP435930LibraryVariants" data-ao-prayer-family="${esc(entry.family)}"${search?' open':''}><summary><small>${esc(L('Prayer family','Famille de prières'))}</small><b>${esc(isFr()?label.fr:label.en)}</b><span>${entry.prayers.length} ${esc(L(entry.prayers.length===1?'form':'forms',entry.prayers.length===1?'forme':'formes'))}</span></summary><div class="aoP435930LibraryVariantItems">${entry.prayers.map(renderRow).join('')}</div></details>`;
  }).join('')||`<p>${esc(L('No prayers match this search.','Aucune prière ne correspond à cette recherche.'))}</p>`;
 }
+function renderIckspInfantPrayer(){
+ const work=ickspInfantWork(LIB.open);
+ if(!work)return callout(esc(L('Source prayer unavailable.','Prière de la source indisponible.')),'warn');
+ const french=isFr();
+ const sourceNote=L('This text follows the ICKSP France digital French witness, not a certified historical first edition. English is a modern Ad Orientem editorial translation. The devotional attribution is reported as published, without claiming independent authentication.',
+  'Ce texte suit le témoin français numérique publié par l’ICRSP, et non une première édition historique certifiée. L’anglais est une traduction éditoriale moderne d’Ad Orientem. L’attribution dévotionnelle est rapportée telle que publiée, sans prétendre à une authentification indépendante.');
+ const note=french?work.noteFr:work.noteEn;
+ const body=french?work.fr:work.en;
+ const intent=work.ellipsisRepresentsPersonalPetition?
+  '<p class="aoP435930SourceNote" data-ao-icksp-infant-intention>'+esc(L('At the ellipsis, mention your personal intention. The printed ellipsis is retained rather than replacing it with invented text.',
+  'Aux points de suspension, présentez votre intention personnelle. Les points de suspension du texte publié sont conservés.'))+'</p>':'';
+ return head(french?work.titleFr:work.titleEn,L('Historical Infant Jesus prayer · ICKSP France','Prière à l’Enfant-Jésus · ICRSP France'))+
+  '<main class="aoP435930Body aoP435930LibraryReader" data-ao-icksp-infant-reader="'+esc(work.id)+'">'+
+  '<article class="aoDevoCard"><div class="aoDevoCardScroll"><h2>'+esc(french?work.titleFr:work.titleEn)+'</h2>'+
+  '<p lang="'+lang()+'" data-ao-icksp-infant-body>'+nl(body)+'</p>'+intent+'</div></article>'+
+  '<details class="aoP435930SourceNote"><summary>'+esc(L('Source and editorial status','Source et statut éditorial'))+'</summary>'+
+  '<p>'+esc(sourceNote)+'</p><p>'+esc(note)+'</p>'+
+  '<a href="'+esc(work.sourceUrl)+'" target="_blank" rel="noopener noreferrer">'+
+  esc(L('ICKSP original French page','Page française de l’ICRSP'))+'</a></details>'+
+  '<nav class="aoJosephSevenNav"><button type="button" data-p435930-icksp-infant-back>'+
+  esc(L('Return to Prayer Library','Retour au livre de prières'))+'</button></nav></main>';
+}
 function renderLibrary(){
+ if(LIB.open&&ickspInfantWork(LIB.open))return renderIckspInfantPrayer();
  if(LIB.open&&massSequencePrayerWork(LIB.open))return renderMassSequencePrayer();
  if(LIB.open){
   const p=P(LIB.open);if(!p){LIB.open=null;return renderLibrary()}
@@ -2777,6 +2801,17 @@ function renderLibrary(){
    '<small>'+esc(L('MASS SEQUENCE · SOURCE READER','SÉQUENCE DE MESSE · SOURCE'))+'</small>'+
    '<b>'+esc(isFr()?work.titleFr:work.title)+'</b><span>LA · EN · FR</span></button>').join('')+
    '</div></section>');
+ const infantWorks=ickspInfantWorksForSubject(LIB.subject,q,LIB.cat);
+ const infantSection=!infantWorks.length?'':(
+  '<section class="aoP435930LibraryRelated" data-ao-icksp-infant-library>'+
+  '<h3>'+esc(L('Infant Jesus · Historical devotions','Enfant-Jésus · Dévotions traditionnelles'))+'</h3>'+
+  '<p>'+esc(L('French text from ICKSP; newly translated English.', 'Texte français de l’ICRSP ; anglais traduit pour Ad Orientem.'))+'</p>'+
+  '<div class="aoP435930ModuleGrid">'+infantWorks.map(w=>
+   '<button type="button" class="aoP435930ModuleCard" data-p435930-lib-open="'+esc(w.id)+'" data-ao-icksp-infant-open="'+esc(w.acquisitionId)+'">'+
+   '<small>ICRSP · PRAYER TEXT</small>'+
+   '<b>'+esc(isFr()?w.titleFr:w.titleEn)+'</b>'+
+   '<span>'+esc(L('French witness · editorial English','Témoin français · anglais éditorial'))+'</span></button>'
+   ).join('')+'</div></section>');
  const guidedLinks=LIB.cat==='all'?guidedPrayerLinksForSubject(LIB.subject,q):[];
  const guidedSection=LIB.cat!=='all'||!guidedLinks.length?
   '':('<section class="aoP435930LibraryRelated" data-ao-prayer-subject-guided="'+esc(LIB.subject)+'">'+
@@ -2793,9 +2828,9 @@ function renderLibrary(){
   '<div class="aoP435930Chips" role="group" aria-label="'+esc(L('Theological prayer families','Familles théologiques de prières'))+'">'+
   '<button type="button" data-p435930-lib-subject="all" aria-pressed="'+String(LIB.subject==='all')+'">'+esc(L('All subjects','Tous les sujets'))+'</button>'+
   PRAYER_SUBJECTS_V1.map(subject=>'<button type="button" data-p435930-lib-subject="'+subject.id+'" aria-pressed="'+String(LIB.subject===subject.id)+'">'+
-    esc(isFr()?subject.fr:subject.en)+' <small>'+(subjectCounts.counts[subject.id]+prayerSupplementalLiveWorksForSubject(subject.id).length +prayerSevenSourceWorksForSubject(subject.id).length+redBookletCommunionLibraryLinksForSubject(subject.id).length+redBookletSuscipeLibraryLinksForSubject(subject.id).length+redBookletPrivateHistoricalWorksForSubject(subject.id).length+MASS_SEQUENCE_PRAYER_WORKS.filter(x=>x.subject===subject.id).length+(subject.id==='V'?1:0))+'</small></button>').join('')+
+    esc(isFr()?subject.fr:subject.en)+' <small>'+(subjectCounts.counts[subject.id]+prayerSupplementalLiveWorksForSubject(subject.id).length +prayerSevenSourceWorksForSubject(subject.id).length+redBookletCommunionLibraryLinksForSubject(subject.id).length+redBookletSuscipeLibraryLinksForSubject(subject.id).length+redBookletPrivateHistoricalWorksForSubject(subject.id).length+MASS_SEQUENCE_PRAYER_WORKS.filter(x=>x.subject===subject.id).length+(subject.id==='V'?1:0)+ICKSP_INFANT_JESUS_TWO_PRAYERS_V1.filter(w=>w.subject===subject.id).length)+'</small></button>').join('')+
   '</div><p class="aoP435930SourceNote">'+esc(L('Only accessible canonical and source-owned reader texts are included. Unverified research works are not shown as readable prayers.','Seuls les textes canoniques et les prières déjà accessibles dans leurs parcours d’origine sont inclus. Les œuvres de recherche non vérifiées ne sont pas présentées comme disponibles.'))+'</p></details>';
- return `${head(L('Prayer Library','Livre de prières'),L('Prayers and guided devotions','Prières et dévotions guidées'))}<main class="aoP435930Body">${libraryOverviewGuide()}<label class="aoP435930Search"><span>${assetIcon('ao-ui-search')}</span><input type="search" data-p435930-lib-search value="${esc(LIB.q)}" placeholder="${esc(L('Search prayers','Rechercher une prière'))}"></label><div class="aoP435930Chips">${cats.map(([id,n])=>`<button type="button" class="${id===LIB.cat?'active':''}" data-p435930-lib-cat="${esc(id)}">${esc(n)}</button>`).join('')}</div>${subjectBrowse}<div class="aoP435930LibraryList" data-ao-prayer-subject-results="${esc(LIB.subject)}">${LIB.cat==="essentials"&&!q?claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2,prayers:DATA.prayers,locale:lang(),esc,title:L("Essential Prayers","Prières essentielles"),artFor:releasedPrayerCardArtUrl}):(rows.length||!(historicalWorks.length+sourceDeepWorks.length+privateCommunionWorks.length+privateHistoricalWorks.length+(stabatSeptember?1:0)+massSequences.length)?renderLibraryEntryRows(rows,q):'')}</div>${communionSection}${privateHistoricalSection}${historicalSection}${stabatLibrarySection}${massSequenceSection}${guidedSection}</main>`;
+ return `${head(L('Prayer Library','Livre de prières'),L('Prayers and guided devotions','Prières et dévotions guidées'))}<main class="aoP435930Body">${libraryOverviewGuide()}<label class="aoP435930Search"><span>${assetIcon('ao-ui-search')}</span><input type="search" data-p435930-lib-search value="${esc(LIB.q)}" placeholder="${esc(L('Search prayers','Rechercher une prière'))}"></label><div class="aoP435930Chips">${cats.map(([id,n])=>`<button type="button" class="${id===LIB.cat?'active':''}" data-p435930-lib-cat="${esc(id)}">${esc(n)}</button>`).join('')}</div>${subjectBrowse}<div class="aoP435930LibraryList" data-ao-prayer-subject-results="${esc(LIB.subject)}">${LIB.cat==="essentials"&&!q?claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2,prayers:DATA.prayers,locale:lang(),esc,title:L("Essential Prayers","Prières essentielles"),artFor:releasedPrayerCardArtUrl}):(rows.length||!(historicalWorks.length+sourceDeepWorks.length+privateCommunionWorks.length+privateHistoricalWorks.length+(stabatSeptember?1:0)+massSequences.length+infantWorks.length)?renderLibraryEntryRows(rows,q):'')}</div>${communionSection}${privateHistoricalSection}${historicalSection}${stabatLibrarySection}${massSequenceSection}${infantSection}${guidedSection}</main>`;
 }
 function monthIndex(key){const d=dateObj(key);return d?d.getFullYear()*12+d.getMonth():null}
 function consecutive(records,needed){const done=records.filter(x=>x.complete).sort((a,b)=>a.date.localeCompare(b.date));if(!done.length)return 0;let c=1;for(let i=done.length-1;i>0;i--){const a=monthIndex(done[i].date),b=monthIndex(done[i-1].date);if(a-b===1)c++;else break}return Math.min(c,needed)}
@@ -5110,6 +5145,9 @@ function onClick(e){
   MASS_SEQUENCE_READING.id=null;MASS_SEQUENCE_READING.record=null;
   MASS_SEQUENCE_READING.error=null;MASS_SEQUENCE_READING.loading=false;
   MASS_SEQUENCE_READING.token++;return render();
+ }
+ if(b.matches('[data-p435930-icksp-infant-back]')&&ickspInfantWork(LIB.open)){
+  LIB.open=null;return render();
  }
  if(b.dataset.p435930LibOpen){LIB.open=b.dataset.p435930LibOpen;LIB.language=null;PILOT_LORETO_GROUP=false;return render()}
  if(b.dataset.p435930ScriptureRetry){
