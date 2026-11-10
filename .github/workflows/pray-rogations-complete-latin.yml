@@ -1,0 +1,43 @@
+name: Prayer — complete Latin Rogations Litany reusing R25
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/pray/rogations-latin-prayer.v1.js'
+      - 'src/pray/presentation-runtime.js'
+      - 'src/pray/litany-1962-use-policy.js'
+      - 'data/presentation/reader-rogations.v1.json'
+      - 'sw.js'
+      - 'tests/pray-rogations-latin-reuse-20261110.mjs'
+      - 'tests/pray-rogations-full-latin-phone-20261110.mjs'
+      - '.github/workflows/pray-rogations-complete-latin.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pray-rogations-latin-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  latin-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tests/pray-rogations-latin-reuse-20261110.mjs
+      - run: node tests/pray-penitential-litany-tenebrae-source-faces-v1.mjs
+      - run: node tests/reader-r25-rogations.mjs
+  latin-mobile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 24
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: 186 unchanged Latin R25 source lines across 14 EN/FR guided phone stages
+        run: node tests/pray-rogations-full-latin-phone-20261110.mjs
