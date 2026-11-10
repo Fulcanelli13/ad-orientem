@@ -2,7 +2,7 @@
 // Mass sequence, actual Schola progression, rubrics or ceremonial animations.
 import {resolveLiveHandoffSourceCrosswalk} from "./reader-live-handoff-source-crosswalk.js";
 import {LIVE_HANDOFF_SOURCE_POINTS,projectLiveHandoffPlanPosition} from "./reader-live-handoff-geometry.js";
-import {projectLiveHandoffSanctuary,renderLiveHandoffSanctuarySvg,renderLiveHandoffPreviewRouteOverlay,LIVE_SANCTUARY_CSS} from "./reader-live-handoff-sanctuary.js";
+import {projectLiveHandoffSanctuary,renderLiveHandoffSanctuarySvg,renderLiveHandoffPreviewRouteOverlay,liveHandoffSideViewOrientation,LIVE_SANCTUARY_CSS} from "./reader-live-handoff-sanctuary.js";
 import {projectLiveHandoffIncensationPreview,clampLiveHandoffRouteStep} from "./reader-live-handoff-routes.js";
 import {projectLiveHandoffSourceTurnPreview} from "./reader-live-handoff-turns.js";
 
@@ -214,9 +214,9 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
         ],{duration:520,easing:"ease-in-out"});
       }
       overlay.querySelector("[data-lb-route-heading]")?.setAttribute(
-        "transform","rotate("+step.current.rotation+")");
+        "transform",liveHandoffSideViewOrientation(step.current.rotation));
       let target=overlay.querySelector("[data-lb-route-next]");
-      if(step.next){
+      if(step.next && (step.next.point.x!==pos.x || step.next.point.y!==pos.y)){
         if(!target){
           target=doc.createElementNS("http://www.w3.org/2000/svg","circle");
           target.classList.add("ao-lb-route-next");
