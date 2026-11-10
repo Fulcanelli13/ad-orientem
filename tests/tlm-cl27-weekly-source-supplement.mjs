@@ -51,7 +51,10 @@ for(const item of enriched.slice(0,14)){
   assert.ok(html.includes(language==="fr"?"vérifier les changements":"verify changes"));
   for(const e of s.entries){
    assert.ok(html.includes(e.time));
-   assert.ok(html.includes(language==="fr"?e.label_fr:e.label_en));
+   const expectedLabel=(language==="fr"?e.label_fr:e.label_en).replace(/[&<>"']/g,ch=>({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+   })[ch]);
+   assert.ok(html.includes(expectedLabel),"Bilingual source label must be HTML-escaped");
    if(e.exception_en){
     const escaped=(language==="fr"?e.exception_fr:e.exception_en).replace(/[&<>"']/g,ch=>({
      "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
