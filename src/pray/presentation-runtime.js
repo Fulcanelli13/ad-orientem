@@ -58,6 +58,7 @@ import {internalPrayerView,supportedDirectPrayerRoute} from "./internal-route-ow
 import {renderLittleCrownB30} from "./little-crown-presentation-b30.js";
 import {PRAYER_SUBJECTS_V1,prayerSubjectsForLibrary,prayerSubjectCounts} from "./prayer-subject-index.v1.js";
 import {guidedPrayerLinksForSubject} from "./prayer-subject-guided-links.v1.js";
+import {RACCOLTA_1857_READER_WORKS_V1,raccolta1857Work,raccolta1857Matches} from "./raccolta-1857-two-source-readers.v1.js";
 import {PRAYER_SUPPLEMENTAL_LIVE_WORK_LINKS_V1,prayerSupplementalLiveWork,prayerSupplementalLiveWorksForSubject} from "./prayer-supplemental-live-works.v1.js";
 import {prayerSevenSourceWork,prayerSevenSourceWorksForSubject} from "./prayer-seven-source-work-links.v1.js";
 import {redBookletCommunionLibraryLink,redBookletCommunionLibraryLinksForSubject} from "./red-booklet-communion-library-links.v1.js";
@@ -2414,6 +2415,7 @@ function renderAdoration(){
 }
 function familyOf(p){return libraryVariantFamily(p.id)||p.id}
 let LIB={q:'',cat:'all',subject:'all',subjectOpen:false,open:null,language:null};
+let RACCOLTA_1857_STAGE=0;
 // Mass Sequentia texts are borrowed live from the authenticated selected Proper;
 // they are NOT added to the locked 48-text canonical Prayer object.
 const MASS_SEQUENCE_READING={id:null,record:null,loading:false,error:null,token:0};
@@ -2669,7 +2671,51 @@ function renderLibraryEntryRows(rows,search){
   return `<details class="aoP435930LibraryVariants" data-ao-prayer-family="${esc(entry.family)}"${search?' open':''}><summary><small>${esc(L('Prayer family','Famille de prières'))}</small><b>${esc(isFr()?label.fr:label.en)}</b><span>${entry.prayers.length} ${esc(L(entry.prayers.length===1?'form':'forms',entry.prayers.length===1?'forme':'formes'))}</span></summary><div class="aoP435930LibraryVariantItems">${entry.prayers.map(renderRow).join('')}</div></details>`;
  }).join('')||`<p>${esc(L('No prayers match this search.','Aucune prière ne correspond à cette recherche.'))}</p>`;
 }
+function renderRaccolta1857Reader(){
+ const work=raccolta1857Work(LIB.open);
+ if(!work)return '';
+ const step=work.steps[RACCOLTA_1857_STAGE];
+ if(!step)return callout(esc(L('Historical source card unavailable.','Carte de la source historique indisponible.')),'rubric');
+ const french=isFr();
+ const title=french?work.titleFr:work.title;
+ const body=french?(step.bodyFr||''):(step.bodyEn||'');
+ const lines=french?(step.linesFr||[]):(step.linesEn||[]);
+ const repeats=(step.repetitions||[]).map(item=>{
+  const canonical=DATA.prayers?.[item.canonicalId];
+  if(!canonical||!canonical[lang()])return '<p class="aoP435930SourceNote">'+
+   esc(L('Required canonical prayer unavailable.','Prière canonique nécessaire indisponible.'))+'</p>';
+  const name=french?(canonical.titleFr||canonical.title):canonical.title;
+  return '<section class="aoP435930SourceNote" data-ao-raccolta-shared="'+esc(item.canonicalId)+'" data-ao-raccolta-times="'+item.count+'">'+
+   '<h3>'+item.count+' × '+esc(name)+'</h3><p lang="'+lang()+'">'+nl(canonical[lang()])+'</p></section>';
+ }).join('');
+ const sourceNote=RACCOLTA_1857_STAGE===0?'<p class="aoP435930SourceNote" data-ao-raccolta-editorial>'+
+  esc(L('Source: 1857 English Raccolta transcription. Not yet collated against a printed-page photograph. French is a modern editorial translation. Historical indulgence grants are not represented as current.',
+   'Source : transcription anglaise du Raccolta de 1857, non encore collationnée avec une photographie de l’imprimé. Le français est une traduction éditoriale moderne. Les indulgences historiques ne sont pas présentées comme actuelles.'))+'</p>':'';
+ const k=RACCOLTA_1857_STAGE+1,end=work.steps.length;
+ const lineContent=lines.length?'<ol class="aoRaccolta1857Lines" data-ao-raccolta-aspirations>'+
+  lines.map(line=>'<li>'+esc(line)+'</li>').join('')+'</ol>':'';
+ const latin=step.bodyLa?'<details class="aoP435930SourceNote"><summary>Latin · original collect</summary><p lang="la">'+nl(step.bodyLa)+'</p></details>':'';
+ const unfinished=step.historicalConclusionTruncatedByPrint?'<p class="aoP435930SourceNote">'+
+  esc(L('The printed witness abbreviates the conclusion as “etc.”; no ending has been invented.',
+   'Le témoin imprimé abrège la conclusion par « etc. » ; aucune fin n’a été inventée.'))+'</p>':'';
+ return head(title,L('Historical Raccolta · source-owned prayer','Raccolta historique · prière de source'))+
+ '<main class="aoP435930Body aoP435930LibraryReader" data-ao-raccolta-1857-reader="'+esc(work.id)+'">'+
+ sourceNote+
+ '<div class="aoJosephSevenProgress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+Math.round(k*100/end)+'" aria-label="'+esc(L('Reading progress','Progression de lecture'))+'"><span style="width:'+Math.round(k*100/end)+'%"></span></div>'+
+ '<article class="aoDevoCard" data-ao-raccolta-step="'+esc(step.id)+'"><div class="aoDevoCardScroll">'+
+ '<small>'+k+' / '+end+'</small><h2>'+esc(french?step.titleFr:step.title)+'</h2>'+
+ (body?'<p lang="'+lang()+'">'+nl(body)+'</p>':'')+lineContent+repeats+latin+unfinished+'</div></article>'+
+ '<nav class="aoJosephSevenNav">'+
+ '<button type="button" data-p435930-raccolta-prev '+(RACCOLTA_1857_STAGE===0?'disabled':'')+'>'+esc(L('Previous','Précédent'))+'</button>'+
+ (RACCOLTA_1857_STAGE===end-1?
+  '<button type="button" data-p435930-raccolta-finish>'+esc(L('Back to Prayer Library','Retour au livre de prières'))+'</button>':
+  '<button type="button" data-p435930-raccolta-next>'+esc(L('Next','Suivant'))+'</button>')+'</nav>'+
+ '<details class="aoP435930SourceNote"><summary>'+esc(L('Historical text and provenance','Texte historique et provenance'))+'</summary>'+
+ '<p>'+esc(work.source)+'</p><a href="'+esc(work.sourceUrl)+'" target="_blank" rel="noopener noreferrer">'+
+ esc(L('Read the historical source','Consulter la source historique'))+'</a></details></main>';
+}
 function renderLibrary(){
+ if(LIB.open&&raccolta1857Work(LIB.open))return renderRaccolta1857Reader();
  if(LIB.open&&massSequencePrayerWork(LIB.open))return renderMassSequencePrayer();
  if(LIB.open){
   const p=P(LIB.open);if(!p){LIB.open=null;return renderLibrary()}
@@ -2777,6 +2823,17 @@ function renderLibrary(){
    '<small>'+esc(L('MASS SEQUENCE · SOURCE READER','SÉQUENCE DE MESSE · SOURCE'))+'</small>'+
    '<b>'+esc(isFr()?work.titleFr:work.title)+'</b><span>LA · EN · FR</span></button>').join('')+
    '</div></section>');
+ const raccoltaWorks=raccolta1857Matches({category:LIB.cat,subject:LIB.subject,search:q});
+ const raccoltaSection=!raccoltaWorks.length?'':(
+  '<section class="aoP435930LibraryRelated" data-ao-raccolta-1857-library>'+
+  '<h3>'+esc(L('Historical Raccolta prayers','Prières historiques du Raccolta'))+'</h3>'+
+  '<p>'+esc(L('Complete historical English source texts with labelled French editorial translations; no duplicate canonical prayers.',
+   'Textes historiques anglais complets, avec traductions éditoriales françaises identifiées ; aucune prière canonique dupliquée.'))+'</p>'+
+  '<div class="aoP435930ModuleGrid">'+raccoltaWorks.map(work=>
+   '<button type="button" class="aoP435930ModuleCard" data-p435930-lib-open="'+esc(work.id)+'" data-ao-raccolta-1857-open="'+esc(work.acquisitionId)+'">'+
+   '<small>RACCOLTA 1857 · SOURCE</small><b>'+esc(frenchLabel(work))+'</b><span>EN · FR '+esc(L('editorial','éditorial'))+'</span></button>'
+  ).join('')+'</div></section>');
+ function frenchLabel(work){return isFr()?work.titleFr:work.title;}
  const guidedLinks=LIB.cat==='all'?guidedPrayerLinksForSubject(LIB.subject,q):[];
  const guidedSection=LIB.cat!=='all'||!guidedLinks.length?
   '':('<section class="aoP435930LibraryRelated" data-ao-prayer-subject-guided="'+esc(LIB.subject)+'">'+
@@ -2793,9 +2850,9 @@ function renderLibrary(){
   '<div class="aoP435930Chips" role="group" aria-label="'+esc(L('Theological prayer families','Familles théologiques de prières'))+'">'+
   '<button type="button" data-p435930-lib-subject="all" aria-pressed="'+String(LIB.subject==='all')+'">'+esc(L('All subjects','Tous les sujets'))+'</button>'+
   PRAYER_SUBJECTS_V1.map(subject=>'<button type="button" data-p435930-lib-subject="'+subject.id+'" aria-pressed="'+String(LIB.subject===subject.id)+'">'+
-    esc(isFr()?subject.fr:subject.en)+' <small>'+(subjectCounts.counts[subject.id]+prayerSupplementalLiveWorksForSubject(subject.id).length +prayerSevenSourceWorksForSubject(subject.id).length+redBookletCommunionLibraryLinksForSubject(subject.id).length+redBookletSuscipeLibraryLinksForSubject(subject.id).length+redBookletPrivateHistoricalWorksForSubject(subject.id).length+MASS_SEQUENCE_PRAYER_WORKS.filter(x=>x.subject===subject.id).length+(subject.id==='V'?1:0))+'</small></button>').join('')+
+    esc(isFr()?subject.fr:subject.en)+' <small>'+(subjectCounts.counts[subject.id]+prayerSupplementalLiveWorksForSubject(subject.id).length +prayerSevenSourceWorksForSubject(subject.id).length+redBookletCommunionLibraryLinksForSubject(subject.id).length+redBookletSuscipeLibraryLinksForSubject(subject.id).length+redBookletPrivateHistoricalWorksForSubject(subject.id).length+MASS_SEQUENCE_PRAYER_WORKS.filter(x=>x.subject===subject.id).length+(subject.id==='V'?1:0)+RACCOLTA_1857_READER_WORKS_V1.filter(w=>w.subject===subject.id).length)+'</small></button>').join('')+
   '</div><p class="aoP435930SourceNote">'+esc(L('Only accessible canonical and source-owned reader texts are included. Unverified research works are not shown as readable prayers.','Seuls les textes canoniques et les prières déjà accessibles dans leurs parcours d’origine sont inclus. Les œuvres de recherche non vérifiées ne sont pas présentées comme disponibles.'))+'</p></details>';
- return `${head(L('Prayer Library','Livre de prières'),L('Prayers and guided devotions','Prières et dévotions guidées'))}<main class="aoP435930Body">${libraryOverviewGuide()}<label class="aoP435930Search"><span>${assetIcon('ao-ui-search')}</span><input type="search" data-p435930-lib-search value="${esc(LIB.q)}" placeholder="${esc(L('Search prayers','Rechercher une prière'))}"></label><div class="aoP435930Chips">${cats.map(([id,n])=>`<button type="button" class="${id===LIB.cat?'active':''}" data-p435930-lib-cat="${esc(id)}">${esc(n)}</button>`).join('')}</div>${subjectBrowse}<div class="aoP435930LibraryList" data-ao-prayer-subject-results="${esc(LIB.subject)}">${LIB.cat==="essentials"&&!q?claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2,prayers:DATA.prayers,locale:lang(),esc,title:L("Essential Prayers","Prières essentielles"),artFor:releasedPrayerCardArtUrl}):(rows.length||!(historicalWorks.length+sourceDeepWorks.length+privateCommunionWorks.length+privateHistoricalWorks.length+(stabatSeptember?1:0)+massSequences.length)?renderLibraryEntryRows(rows,q):'')}</div>${communionSection}${privateHistoricalSection}${historicalSection}${stabatLibrarySection}${massSequenceSection}${guidedSection}</main>`;
+ return `${head(L('Prayer Library','Livre de prières'),L('Prayers and guided devotions','Prières et dévotions guidées'))}<main class="aoP435930Body">${libraryOverviewGuide()}<label class="aoP435930Search"><span>${assetIcon('ao-ui-search')}</span><input type="search" data-p435930-lib-search value="${esc(LIB.q)}" placeholder="${esc(L('Search prayers','Rechercher une prière'))}"></label><div class="aoP435930Chips">${cats.map(([id,n])=>`<button type="button" class="${id===LIB.cat?'active':''}" data-p435930-lib-cat="${esc(id)}">${esc(n)}</button>`).join('')}</div>${subjectBrowse}<div class="aoP435930LibraryList" data-ao-prayer-subject-results="${esc(LIB.subject)}">${LIB.cat==="essentials"&&!q?claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2,prayers:DATA.prayers,locale:lang(),esc,title:L("Essential Prayers","Prières essentielles"),artFor:releasedPrayerCardArtUrl}):(rows.length||!(historicalWorks.length+sourceDeepWorks.length+privateCommunionWorks.length+privateHistoricalWorks.length+(stabatSeptember?1:0)+massSequences.length+raccoltaWorks.length)?renderLibraryEntryRows(rows,q):'')}</div>${communionSection}${privateHistoricalSection}${historicalSection}${stabatLibrarySection}${massSequenceSection}${raccoltaSection}${guidedSection}</main>`;
 }
 function monthIndex(key){const d=dateObj(key);return d?d.getFullYear()*12+d.getMonth():null}
 function consecutive(records,needed){const done=records.filter(x=>x.complete).sort((a,b)=>a.date.localeCompare(b.date));if(!done.length)return 0;let c=1;for(let i=done.length-1;i>0;i--){const a=monthIndex(done[i].date),b=monthIndex(done[i-1].date);if(a-b===1)c++;else break}return Math.min(c,needed)}
@@ -5111,7 +5168,19 @@ function onClick(e){
   MASS_SEQUENCE_READING.error=null;MASS_SEQUENCE_READING.loading=false;
   MASS_SEQUENCE_READING.token++;return render();
  }
- if(b.dataset.p435930LibOpen){LIB.open=b.dataset.p435930LibOpen;LIB.language=null;PILOT_LORETO_GROUP=false;return render()}
+ if(b.matches('[data-p435930-raccolta-prev]')&&raccolta1857Work(LIB.open)){
+  RACCOLTA_1857_STAGE=Math.max(0,RACCOLTA_1857_STAGE-1);return render();
+ }
+ if(b.matches('[data-p435930-raccolta-next]')&&raccolta1857Work(LIB.open)){
+  RACCOLTA_1857_STAGE=Math.min(raccolta1857Work(LIB.open).steps.length-1,RACCOLTA_1857_STAGE+1);return render();
+ }
+ if(b.matches('[data-p435930-raccolta-finish]')&&raccolta1857Work(LIB.open)){
+  LIB.open=null;RACCOLTA_1857_STAGE=0;return render();
+ }
+ if(b.dataset.p435930LibOpen){
+  if(raccolta1857Work(b.dataset.p435930LibOpen))RACCOLTA_1857_STAGE=0;
+  LIB.open=b.dataset.p435930LibOpen;LIB.language=null;PILOT_LORETO_GROUP=false;return render()
+ }
  if(b.dataset.p435930ScriptureRetry){
   // Retry only the exact currently displayed source identity, never switch
   // translation or fetch an alternative unsourced prayer text silently.
