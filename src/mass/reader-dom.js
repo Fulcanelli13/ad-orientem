@@ -3655,7 +3655,9 @@ export function createReaderDomAdapter({
       // Do not repeat the generic three-chant heading over a 320px phone.
       const exactPreGospel=/^(?:Gradual|Alleluia|Tract|Sequence)$/.test(
         String(current?.cardTitle??""))?String(current.cardTitle):null;
-      title.textContent=eventReference?(activeTextException?"TEXT · RESPONSE":"MUSIC · REFERENCE"):composed
+      title.textContent=eventReference?(activeTextException
+        ?(activeTextException.role==="RESPONSE"?"TEXT · RESPONSE":"TEXT · VERSICLE")
+        :"MUSIC · REFERENCE"):composed
         ? "FAURÉ · "+(schola.manualMovementId?schola.manualMovementId.replaceAll("_"," "):scholaTitle(schola.trackId)):schola
         ? (schola.trackId==="ALLELUIA_TRACT_SEQUENCE"&&exactPreGospel
           ? exactPreGospel.toUpperCase():scholaTitle(schola.trackId))
