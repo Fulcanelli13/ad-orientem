@@ -2,7 +2,7 @@
   "schema": "AO_SACRED_ART_CONSOLIDATED_IMAGE_SELECTION_QUEUE_V1",
   "asOf": "2026-11-10",
   "status": "OWNER_REVIEW_AND_SOURCE_ACQUISITION_STAGING_NO_PUBLICATION_AUTHORITY",
-  "scope": "151 original 198-edge artwork research keys, 1 separate Ribera alternative, 3 non-integrated March leads; 7 museum-acquired JPEGs; 170 original gap-date records",
+  "scope": "151 original 198-edge artwork research keys; 2 distinct unapproved external alternative paintings (Ribera and Wenceslas burial), 3 separate March leads; 10 verified first-party/institutional colour JPEG research files; 170 original gap-date records. This is NOT the app runtime Gallery.",
   "sourcePaths": [
     "data/artwork/research/m2m-calendar-prepublication-triage-198-20261110.v1.json",
     "data/artwork/research/m2m-exact-oil-source-rights-audit18-20261110.v1.json",
@@ -23,7 +23,11 @@
     "data/artwork/research/m2m-msk-s43-verified-image-original-20261110.v1.json",
     "data/artwork/research/m2m-nationalmuseum-mnk-download-link-discovery-20261110.v1.json",
     "data/artwork/research/m2m-museum-portal-static-client-blockers-20261110.v1.json",
-    "data/artwork/research/m2m-eight-priority-oil-source-closure-20261110.v1.json"
+    "data/artwork/research/m2m-eight-priority-oil-source-closure-20261110.v1.json",
+    "data/artwork/research/m2m-open-museum-alternatives-batch4-20261110.v1.json",
+    "data/artwork/research/m2m-cc0-batch4-exact-iconographic-screening-20261110.v1.json",
+    "data/artwork/research/m2m-met-437005-wenceslas-alternative-20261110.v1.json",
+    "data/artwork/research/m2m-met-437005-verified-native-photo-20261110.v1.json"
   ],
   "counts": {
     "originalDateRelationships": 198,
@@ -37,10 +41,10 @@
     "otherOriginalKeysWithOilMediumRelationship": 9,
     "externalRiberaAlternateKeys": 1,
     "provisionalUnintegratedMarchKeys": 3,
-    "totalSelectionQueueWorkKeys": 155,
-    "verifiedColourJpegSources": 9,
+    "totalSelectionQueueWorkKeys": 156,
+    "verifiedColourJpegSources": 10,
     "verifiedSourcePhotosInOriginal151Pool": 8,
-    "verifiedColourJpegExternalAlternate": 1,
+    "verifiedColourJpegExternalAlternate": 2,
     "newOwnerApprovedPlacements": 0,
     "formalAppContainerCropCertifications": 0,
     "newPublicArtworkReleases": 0,
@@ -53,10 +57,15 @@
     "clientRenderedFirstPartyPortalImageHolds": 4,
     "additionalRestrictedInstitutionPhotosFromEight": 4,
     "directRecordsWithoutOriginalPhoto": 2,
-    "sourceImageRightsOrAttributionUnresolved": 2
+    "sourceImageRightsOrAttributionUnresolved": 2,
+    "externalWenceslasAlternateKeys": 1,
+    "cc0Batch4RawSearchArtworks": 35,
+    "cc0Batch4IconographicIrrelevant": 33,
+    "cc0Batch4DistinctResearchAlternatives": 2,
+    "cc0Batch4SourceHashVerified": 1
   },
   "reviewLaneCounts": {
-    "A_VERIFIED_SOURCE_PHOTO_EDITORIAL_AND_MOBILE_QA": 9,
+    "A_VERIFIED_SOURCE_PHOTO_EDITORIAL_AND_MOBILE_QA": 10,
     "B_COPYRIGHT_REVIEW": 1,
     "B_RECONCILE_WORK_IDENTITY": 1,
     "C_CLIENT_RENDERED_MUSEUM_PORTAL_REQUIRES_NEW_METHOD": 4,
@@ -90,7 +99,9 @@
     "MSK Ghent S-43 downloaded and independently SHA-verified. Public Domain Mark in IIIF is not automatic monetised app approval; rights and visible diagonal image-line quality hold both remain.",
     "Nationalmuseum and Krakow: first-party portal search and HTML/image-link inspection are investigations, never a licence clearance or actual original-photo acquisition; require exact accession, artwork/scene, open licence, downloaded bytes and SHA before publication review.",
     "Both Nationalmuseum and MNK public art portals are JavaScript-rendered and expose no exact photo links to static HTTP. Do not mistake a successfully completed source probe for source-photo acquisition or an absent HTML image for an absent museum photograph.",
-    "The final eight first-party image candidates were source-triaged: four official-photo restricted, two object-only no file, two photograph rights/identity unresolved. Zero directly publishable new colour originals were acquired. Do not call these eight publicly licensed image sources."
+    "The final eight first-party image candidates were source-triaged: four official-photo restricted, two object-only no file, two photograph rights/identity unresolved. Zero directly publishable new colour originals were acquired. Do not call these eight publicly licensed image sources.",
+    "Met 437005 Wenceslas burial is separate from Škréta's Eucharistic-host scene. It is exact saint but different narrative and non-Baroque; source photo is CC0 but not historically user-approved. Owner rejection check and mobile editorial certification still required.",
+    "Batch4 fuzzy 35 museum artwork hits yielded only 2 saint-specific thematic works (Wenceslas burial, Athanasius retable); 33 are unrelated. AIC Athanasius retable is not a verified JPEG in this register and not an oil painting."
   ],
   "photographs": [
     {
@@ -160,6 +171,39 @@
       "publicationEligible": false,
       "sourceManifest": "data/artwork/research/m2m-met-original-image-verification4-20261110.v1.json",
       "diagnosticSource": "data/artwork/research/m2m-met-originals-aspect-qa-four-20261110.v1.json"
+    },
+    {
+      "photographId": "PHOTO:Met:437005",
+      "artworkKey": "Met:437005",
+      "originalPhotoSourceUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP164825.jpg",
+      "catalogueUrl": "https://www.metmuseum.org/art/collection/search/437005",
+      "licence": "CC0_MET_OPEN_ACCESS",
+      "exactBytesSha256": "468b1255c8114607a665e38f81da679409166da76aa0f42cf82bc3c41c1c4608",
+      "pixelWidth": 2453,
+      "pixelHeight": 3832,
+      "sourceBytes": 2813215,
+      "sourceDateSpecificLicenceFinal": true,
+      "sourceFileAcquired": true,
+      "checksumsVerified": true,
+      "colourFront": true,
+      "medium": "JPEG_RGB",
+      "iccProfilePresent": false,
+      "wide390x240": {
+        "retainedImageAreaPct": 39.4,
+        "diagnostic": "FAIL_BURIAL_NARRATIVE_AND_ARCHITECTURE_CROPPED"
+      },
+      "portrait390x520": {
+        "retainedImageAreaPct": 85.4,
+        "diagnostic": "PROVISIONAL_MAIN_BURIAL_SUBJECT_LEGIBLE_NEEDS_ACTUAL_APP_TEST"
+      },
+      "compositionRecommendation": "Portrait full image shows the saint's body and burial assistants. Do not cover-crop to wide hero. The image is Gothic, not dark Baroque, and not same Wenceslas Eucharistic episode; leave unapproved.",
+      "artifactRun": 42855525191,
+      "ephemeralArtifactId": 13782961254,
+      "imageInPublicAssets": false,
+      "ownerDateApproval": false,
+      "formalAppCropCertification": false,
+      "publicationEligible": false,
+      "sourceManifest": "data/artwork/research/m2m-met-437005-verified-native-photo-20261110.v1.json"
     },
     {
       "photographId": "PHOTO:Met:469892",
@@ -4107,6 +4151,48 @@
       "lane": "A_VERIFIED_SOURCE_PHOTO_EDITORIAL_AND_MOBILE_QA",
       "nextAction": "Review composition/artist attribution and obtain owner date approval before any import",
       "risk": "ACQUIRED_UNAPPROVED",
+      "ownerApprovalForAnyNewDate": false,
+      "preexistingOwnerSelectionNotSuperseded": true,
+      "globalArtworkRejectionChecksRequired": true,
+      "releaseReady": false
+    },
+    {
+      "artworkKey": "Met:437005",
+      "title": "The Burial of Saint Wenceslas",
+      "artist": "Master of Eggenburg",
+      "sourcePool": "OUTSIDE_198_EDGE_POOL_UNAPPROVED_ALTERNATIVE",
+      "catalogueUrls": [
+        "https://www.metmuseum.org/art/collection/search/437005"
+      ],
+      "sourceKinds": [
+        "FIRST_PARTY_MET_MUSEUM_OBJECT_ID_CC0"
+      ],
+      "mediumClasses": [
+        "OIL_PAINTING"
+      ],
+      "fidelities": [
+        "EXACT_SAINT_DIFFERENT_NARRATIVE"
+      ],
+      "candidateDates": [
+        "2026-09-28"
+      ],
+      "edgeIds": [],
+      "sourceAuditFlags": [
+        "SEPARATE_FROM_SKRETA_WENCESLAS_CYCLE",
+        "DIFFERENT_SCENE_BURIAL_NOT_COMMUNION_HOSTS",
+        "LATE_GOTHIC_NOT_BAROQUE",
+        "GLOBAL_REJECTION_IDENTITY_CROSSCHECK_PENDING",
+        "NEVER_AUTO_REPLACE_OWNER_DATE_ARTWORK"
+      ],
+      "directOilPriorityPool": false,
+      "exactOilObjectAuditCompleted": false,
+      "sourceAuditRightStatus": "CC0_MET_OPEN_ACCESS_ORIGINAL_PHOTO",
+      "sourceAuditNote": "Met object 437005, accession 44.147.2, oil and gold on spruce, c.1490–1500. Distinct burial scene, not Škréta's Eucharistic-preparation cycle. Exact original official JPEG downloaded, SHA verified. Earlier user global rejection crosscheck and date owner approval still pending.",
+      "sourceAuditFile": "data/artwork/research/m2m-met-437005-verified-native-photo-20261110.v1.json",
+      "verifiedPhotoId": "PHOTO:Met:437005",
+      "lane": "A_VERIFIED_SOURCE_PHOTO_EDITORIAL_AND_MOBILE_QA",
+      "nextAction": "Retain as research-only Wenceslas burial alternative; style late Gothic and not user's preferred dark Baroque. Require owner rejection check and editorial approval; portrait contain/crop review before any gallery/Calendar release.",
+      "risk": "PROVENANCE_VERIFIED_EXACT_SAINT_DIFFERENT_SCENE_NOT_OWNER_APPROVED_OR_REJECTION_CLEARED",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
@@ -9797,7 +9883,11 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+        "A_VERIFIED_SOURCE_PHOTO_EDITORIAL_AND_MOBILE_QA"
+      ],
+      "unapprovedExternalAlternativeArtworkKeys": [
+        "Met:437005"
       ]
     },
     {
