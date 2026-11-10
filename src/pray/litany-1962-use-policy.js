@@ -10,12 +10,13 @@
 export const BATCH03_LITANY_EDITION_POLICY=Object.freeze({
   private:Object.freeze({id:"private",labelEn:"Private Litany · historical prayer-book edition",
     labelFr:"Litanies privées · édition historique",
-    reader:"local-historical-online-on-first-use",
+    reader:"LOCAL_PINNED_HISTORICAL_WITNESS_WITH_ORIGINAL_WIKISOURCE_FALLBACK",
     textSource:"src/pray/litany-source.js",
     liturgical1962Certified:false}),
   major:Object.freeze({id:"major",labelEn:"Major Litanies / Rogations · public liturgical rite",
     labelFr:"Litanies majeures / Rogations · rite liturgique public",
-    reader:"SOURCE_LINK_ONLY_PENDING_COMPLETE_TEXT_COLLATION",
+    reader:"LOCAL_R25_LATIN_SOURCE__PRINT_COLLATION_AND_FRENCH_EDITION_PENDING",
+    textSource:"data/presentation/reader-rogations.v1.json",
     liturgical1962Certified:false,
     sourceUrl:"https://icrspfrance.fr/textes-liturgiques.php?article=a0087_nouveau",
     additionalSourceUrl:"https://icrspfrance.fr/textes-liturgiques.php?article=a0106_nouveau",
@@ -45,7 +46,7 @@ export const BATCH03_LITANY_SOURCE_STATUS=Object.freeze({
   rubrics1960:"SOURCE_CONFLICT_DOUBLE_INVOCATIONS_HELD_AND_FLAGGED",
   comparisonEnglish1883:"DISTINCT_PRIVATE_1883_WITNESS_NOT_1962",
   comparisonFrench1862:"DISTINCT_PRIVATE_1862_WITNESS_NOT_1962",
-  offlineComplete1962:"BLOCKED_UNTIL_ENTIRE_EDITION_VERIFIED",
+  offlineComplete1962:"LATIN_R25_SOURCE_OFFLINE__PRINT_EDITION_CERTIFICATION_PENDING",
   source:"https://icrspfrance.fr/textes-liturgiques.php?article=a0087_nouveau"
 });
 export function batch03LitanyUse(value){

@@ -15,7 +15,7 @@ for(const path of ["src/pray/presentation-runtime.js","src/pray/traditional-pray
 assert.deepEqual(Object.keys(BATCH03_LITANY_EDITION_POLICY),["private","major","vigil","forty"]);
 assert.equal(batch03LitanyUse("unknown").id,"private");
 assert.equal(BATCH03_LITANY_EDITION_POLICY.major.liturgical1962Certified,false);
-assert.equal(BATCH03_LITANY_SOURCE_STATUS.offlineComplete1962,"BLOCKED_UNTIL_ENTIRE_EDITION_VERIFIED");
+assert.equal(BATCH03_LITANY_SOURCE_STATUS.offlineComplete1962,"LATIN_R25_SOURCE_OFFLINE__PRINT_EDITION_CERTIFICATION_PENDING");
 assert.ok(BATCH03_LITANY_EDITION_POLICY.major.sourceUrl.includes("a0087_nouveau"));
 assert.equal(BATCH03_ICRSP_MAJOR_PROCESSION_STEPS.length,5);
 assert.equal(LITANY_SOURCE_WITNESSES.en.status,"HISTORICAL_TRANSCRIPTION_UNCOLLATED");

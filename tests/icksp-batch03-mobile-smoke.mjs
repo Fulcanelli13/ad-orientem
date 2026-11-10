@@ -36,10 +36,18 @@ try{
  if(await editionChooser.count() && !(await editionChooser.evaluate(el=>el.open)))
   await editionChooser.locator(":scope > summary").tap();
  await page.locator("#aoPray435930.open [data-p435930-lit-use='major']:visible").first().tap();
+ await page.locator("[data-ao-litany-use='major'][data-ao-rogations-source='R25_LATIN_UNCOLLATED']").waitFor({state:"attached",timeout:15000});
  assert.equal(await page.locator("[data-ao-litany-use='major']").count(),1);
  assert.equal(await page.locator("[data-ao-icrsp-major-sequence] li").count(),5);
  assert.equal(await page.locator("[data-ao-litany-use='major'] a[href*='a0087_nouveau']").count(),1);
- assert.match(await page.locator("[data-ao-litany-use='major']").innerText(),/not yet locally|attend une collation/i);
+ assert.equal(await page.locator("[data-ao-litany-use='major'] [data-ao-rogations-source-hold='UNCOLLATED_ORIGINAL_PRINT']").count(),1,
+  "Shared Latin R25 text must visibly retain its uncollated original-edition warning");
+ await page.waitForFunction(()=>document.querySelectorAll('#aoPray435930.open [data-ao-litany-use="major"] [data-ao-rogations-latin-row]').length===4,null,{timeout:15000});
+ assert.equal(await page.locator("[data-ao-litany-use='major'] [data-ao-rogations-latin-row]").count(),4,
+  "Public Rogations must begin with original Latin Exsurge, not a link-only placeholder");
+ const activePicker=page.locator("#aoPray435930.open [data-ao-litany-use='major'] .aoPrivateLitanyEditionChooser");
+ if(await activePicker.count() && !await activePicker.evaluate(x=>x.open))
+  await activePicker.locator(":scope > summary").tap();
  await page.locator("#aoPray435930.open [data-p435930-lit-use='vigil']:visible").first().tap();
  assert.equal(await page.locator("[data-ao-litany-use='vigil']").count(),1);
  await page.locator("#aoPray435930.open [data-p435930-lit-use='private']:visible").first().tap();

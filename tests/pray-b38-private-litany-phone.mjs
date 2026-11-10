@@ -115,11 +115,21 @@ try{
      "Major Litanies source reference must not be hidden by the stage navigation CSS");
     // Public Major Litanies must be a distinct reference-only screen.
     await editionPicker.locator('[data-p435930-lit-use="major"]').click();
-    assert.equal(await page.locator(owner).count(),0,"Historical private reader must not masquerade as the public rite");
+    // Both readers share the "litany" navigation owner; verify the historical
+    // invocation markup has gone, while the independently sourced R25 reader appears.
     const publicRoot="#aoPray435930.open [data-ao-litany-use='major']";
     await page.locator(publicRoot).waitFor();
-    assert.match(await page.locator(publicRoot).innerText(),language==="fr"?/collation|certifiée/i:/collation|not yet/i);
-    assert.equal(await page.locator(publicRoot+" .aoP435930LitanyLine").count(),0,"Uncollated public edition must not invent prayers");
+    assert.equal(await page.locator(publicRoot+" [data-ao-private-litany-invocations]").count(),0,
+     "The public R25 reader must not reuse private historical invocations");
+    // Initial major-Litany loading shell intentionally has no verified-source
+    // marker. Wait for the complete source-backed Exsurge stage before checking.
+    await page.waitForFunction(()=>document.querySelectorAll('#aoPray435930.open [data-ao-litany-use="major"] [data-ao-rogations-latin-row]').length===4,null,{timeout:15000});
+    assert.equal(await page.locator(publicRoot).getAttribute("data-ao-rogations-source"),"R25_LATIN_UNCOLLATED",
+     "The public reader must identify its distinct original R25 Latin source");
+    assert.equal(await page.locator(publicRoot+" [data-ao-rogations-source-hold='UNCOLLATED_ORIGINAL_PRINT']").count(),1,
+     "Original R25 Latin source must be distinguished from independently uncollated printed 1962 edition");
+    assert.equal(await page.locator(publicRoot+" .aoP435930LitanyLine").count(),4,
+     "Original public Latin Exsurge must be visible while unknown translations remain absent");
     assert.deepEqual(errs,[],"Unexpected browser errors: "+JSON.stringify(errs));
     console.log("PASS "+language+" "+width+"px private Litany: readable original-section UI, unmodified source gates, no overflow");
    }finally{await page.close()}

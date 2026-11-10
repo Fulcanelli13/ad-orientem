@@ -112,6 +112,7 @@ import { isFirstWeekday as calendarIsFirstWeekday } from "../calendar/intelligen
 import { DEVOTIONAL_UX_CONTRACT_VERSION, devotionalUxContract } from "./devotional-ux-contract.js";
 import { LITANY_SOURCE_WITNESSES, LITANY_WITNESS_REVIEW_V1, reviewLitanyTranscription, extractLitanyProper, paginateLitanyProper } from "./litany-source.js";
 import {loadPrivateLitanyLocal} from "./litany-private-local-loader.v1.js";
+import {loadRogationsLatinPrayer} from "./rogations-latin-prayer.v1.js";
 import {BATCH03_LITANY_EDITION_POLICY,BATCH03_ICRSP_MAJOR_PROCESSION_STEPS,BATCH03_LITANY_SOURCE_STATUS,batch03LitanyUse} from "./litany-1962-use-policy.js";
 import {PENITENTIAL_PSALMS_VULGATE,penitentialPsalmReference,auditPenitentialPsalmResponse,PENITENTIAL_PSALMS_TEXT_STATUS} from "./penitential-psalms-source.js";
 import {localPenitentialPsalmWitness} from "./penitential-psalms-local-witnesses.v1.js";
@@ -382,6 +383,7 @@ let FS={step:0,intention:false,communion:false,rosary:false,meditation:false,con
 let PEN={step:0,token:0};
 let PEN_CACHE={busy:false,complete:false,checked:0,failed:[],audit:[],message:''};
 let LIT={step:0,sections:null,loading:false,error:'',token:0,language:null,use:'private',sourceMode:null};
+let ROG_PRAY={step:0,sections:null,loading:false,error:'',token:0};
 let SEVEN={step:0,sections:null,opening:'',appendix:'',loading:false,error:'',srcToken:0,scriptToken:0,scriptureOnly:false};
 let FORTY={mode:'choose',step:0,solemnStep:0};
 let STATIONS={step:0,optionsOpen:false,publicPosture:false,simpleResponses:false,sanPolo:false};
@@ -2946,7 +2948,8 @@ function horizontalStep(direction){
  if(view==='adoration'&&ADOR.mode==='holy'){ADOR.holyStep=Math.max(0,Math.min(holySteps().length-1,ADOR.holyStep+d));render();return true}
  if(view==='adoration'&&ADOR.mode==='four'){ADOR.fourStep=Math.max(0,Math.min(fourSteps().length-1,ADOR.fourStep+d));render();return true}
  if(view==='penitential'){PEN.step=Math.max(0,Math.min(6,PEN.step+d));render();return true}
- if(view==='litany'&&LIT.sections?.length){LIT.step=Math.max(0,Math.min(LIT.sections.length-1,LIT.step+d));render();return true}
+ if(view==='litany'&&LIT.use==='major'&&ROG_PRAY.sections?.length){ROG_PRAY.step=Math.max(0,Math.min(ROG_PRAY.sections.length-1,ROG_PRAY.step+d));render();return true}
+ if(view==='litany'&&LIT.use==='private'&&LIT.sections?.length){LIT.step=Math.max(0,Math.min(LIT.sections.length-1,LIT.step+d));render();return true}
  if(view==='sevenWords'){SEVEN.step=Math.max(0,Math.min(6,SEVEN.step+d));render();return true}if(view==='tenebrae'&&TEN.model){TEN.step=Math.max(0,Math.min(TEN.model.steps.length-1,TEN.step+d));render();return true}
  if(view==='fortyHours'){FORTY.step=Math.max(0,Math.min(FORTY_STAGES.length-1,FORTY.step+d));render();return true}
  if(view==='firstFriday'){FF.step=Math.max(0,Math.min(FF_STAGES.length-1,FF.step+d));render();return true}
@@ -3268,7 +3271,62 @@ function batch03LitanyUseOptions(){
  return `<nav class="aoBatch03LitanyUses" style="display:grid!important;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin:12px 0" aria-label="${esc(L('Litany edition and use','Version et usage des litanies'))}">
  ${uses.map(u=>`<button type="button" data-p435930-lit-use="${esc(u.id)}" aria-pressed="${LIT.use===u.id}" style="min-height:60px!important;height:auto!important" class="${LIT.use===u.id?'active':''}">${esc(isFr()?u.labelFr:u.labelEn)}</button>`).join('')}</nav>`;
 }
+// Shared R25 Latin source is displayed verbatim, with Prayer-only UI labels.
+// This is neither the private 1883/1862 edition nor a certified printed 1962
+// edition, and no English/French translation is inferred from Latin.
+async function ensureMajorRogationsLatin(){
+ if(ROG_PRAY.sections||ROG_PRAY.loading)return;
+ ROG_PRAY.loading=true;ROG_PRAY.error='';
+ const token=++ROG_PRAY.token;
+ try{
+  const source=await loadRogationsLatinPrayer();
+  if(token!==ROG_PRAY.token)return;
+  ROG_PRAY.sections=source.stages;ROG_PRAY.loading=false;ROG_PRAY.step=0;
+  if(view==='litany'&&LIT.use==='major')render();
+ }catch(error){
+  if(token!==ROG_PRAY.token)return;
+  ROG_PRAY.sections=null;ROG_PRAY.loading=false;
+  ROG_PRAY.error=String(error?.message||error);
+  if(view==='litany'&&LIT.use==='major')render();
+ }
+}
+function renderMajorRogationsLatin(){
+ if(!ROG_PRAY.sections&&!ROG_PRAY.loading&&!ROG_PRAY.error)
+  setTimeout(ensureMajorRogationsLatin,0);
+ const heading=head(L('Major Litanies · Rogations','Litanies majeures · Rogations'),
+  L('R25 Latin processional source','Source processionnelle latine R25'));
+ const chooser=batch03LitanyUseOptions();
+ const notice=`<p class="aoP435930SourceNote" data-ao-rogations-source-hold="UNCOLLATED_ORIGINAL_PRINT">
+ ${esc(L('Source text: the existing R25 Mass/Rogations Latin corpus. The original printed 1962 edition has not been independently collated. No French or English liturgical translation is supplied; the Latin is shown unchanged. The invocations are not doubled.',
+ 'Texte source : corpus latin R25 déjà présent dans le lecteur de la messe et des Rogations. L’édition imprimée originale de 1962 n’a pas encore fait l’objet d’une collation indépendante. Aucune traduction liturgique française ou anglaise n’est fournie ; le latin est reproduit sans modification. Les invocations ne sont pas redoublées.'))}</p>`;
+ const links=`<a class="aoP435930SourceLink" href="${esc(BATCH03_LITANY_SOURCE_STATUS.source)}" target="_blank" rel="noopener noreferrer">${esc(L('ICRSP Latin–French historical comparison','Comparaison historique latin–français de l’ICRSP'))} ↗</a>`;
+ const sequence=`<ol class="aoP435930HistoricalSequence" data-ao-icrsp-major-sequence>${BATCH03_ICRSP_MAJOR_PROCESSION_STEPS.map(x=>`<li><b>${esc(x.id)}</b> · ${esc(isFr()?x.fr:x.en)} <small>${esc(x.role)}</small></li>`).join('')}</ol>`;
+ if(ROG_PRAY.error)return `${heading}<main class="aoP435930Body" data-ao-litany-use="major">
+ ${chooser}${notice}${callout(esc(L('The complete Latin source could not be verified or loaded. No substitute is displayed.','Le texte latin complet n’a pas pu être chargé ou vérifié. Aucun texte de remplacement n’est affiché.')),'warn')}
+ <button type="button" class="aoP435930Secondary" data-p435930-rog-retry>${esc(L('Try again','Réessayer'))}</button>${links}</main>`;
+ if(!ROG_PRAY.sections)return `${heading}<main class="aoP435930Body" data-ao-litany-use="major">
+ ${chooser}${notice}<p class="aoP435930Loading">${esc(L('Loading the Latin source…','Chargement du texte latin…'))}</p></main>`;
+ ROG_PRAY.step=Math.max(0,Math.min(ROG_PRAY.sections.length-1,ROG_PRAY.step));
+ const st=ROG_PRAY.sections[ROG_PRAY.step],final=ROG_PRAY.step===ROG_PRAY.sections.length-1;
+ const title=isFr()?st.title.fr:st.title.en;
+ const role=st.scope==='PROCESSION_BEGINS_SANCTA_MARIA'
+  ?L('At Sancta Maria, the prescribed procession begins if it is actually held. Follow the celebrant and local rubrics.','À Sancta Maria commence la procession prescrite, lorsqu’elle est effectivement organisée. Suivez le célébrant et les rubriques locales.')
+  :st.scope==='KNEELING'
+  ?L('The opening invocations belong to the kneeling part of the rite.','Les invocations initiales appartiennent à la partie à genoux du rite.')
+  :L('Read or answer only according to the actual celebration; do not create a procession independently.','Lisez ou répondez selon la célébration effective ; n’organisez pas vous-même une procession.');
+ const lines=st.rows.map((r,i)=>`<p class="aoP435930LitanyLine ${r.kind==='RESPONSE'?'aoChoirResponse':''}" data-ao-rogations-latin-row="${i}" data-ao-rogations-source-kind="${esc(r.kind)}">${r.kind==='VERSICLE'?'℣ ':r.kind==='RESPONSE'?'℟ ':''}${esc(r.latin)}</p>`).join('');
+ const body=`${guideNow(title,role)}<article class="aoP435930LitanyPrayer"><div class="aoP435930LitanyVerses" data-ao-rogations-latin-lines="${st.rows.length}">${lines}</div></article>`;
+ const card=sourcedDevotionalCard({kind:'litany',id:'rogations-'+st.id,title,index:ROG_PRAY.step,total:ROG_PRAY.sections.length,body});
+ return `${heading}<main class="aoP435930Body aoP435930DevotionalGuidedReader" data-ao-litany-use="major" data-ao-devotional-owner="litany" data-ao-rogations-source="R25_LATIN_UNCOLLATED" data-ao-devotional-final="${final}">
+ <details class="aoPrivateLitanyEditionChooser"><summary>${esc(L('Edition & liturgical use','Édition et usage liturgique'))}</summary>${chooser}</details>
+ ${notice}${card}
+ ${final?`<div class="aoP435930FinalExit"><button type="button" class="aoP435930Primary" data-p435930-rog-done>${esc(L('Finish the Rogations prayers','Terminer les prières des Rogations'))}</button></div>`:''}
+ <details class="aoP435930Source"><summary>${esc(L('Latin source, rubrics and edition status','Source latine, rubriques et état de l’édition'))}</summary>
+ <p>${esc(L('Complete local reading of 186 entries across fourteen stages, drawn from the same R25 Latin source used by the Mass reader, with no altered Latin text. The print original and vernacular editions remain uncertified.','Lecture locale des 186 éléments répartis sur quatorze étapes, provenant du même texte latin R25 que le lecteur de la messe, sans modification du latin. L’original imprimé et les éditions vernaculaires restent sans certification.'))}</p>
+ ${sequence}${links}</details></main>`;
+}
 function renderBatch03PublicLitanyReference(){
+ if(LIT.use==='major')return renderMajorRogationsLatin();
  const selected=batch03LitanyUse(LIT.use),major=LIT.use==='major';
  const title=L('Litany of the Saints','Litanies des saints');
  const intro=major?
@@ -3962,13 +4020,13 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
  // cards and emits explicit, user-initiated navigation.
  if(['penitential','litany','sevenWords','fortyHours'].includes(view))queueMicrotask(()=>{
   const owner=view;
-  if(owner==='litany'&&!LIT.sections?.length)return; // fail closed during historical witness loading
+  if(owner==='litany'&&!(LIT.use==='major'?ROG_PRAY.sections?.length:LIT.use==='private'?LIT.sections?.length:0))return; // no unverified/historical-public reader
   const stages=owner==='penitential'?PEN_PSALMS.map((p,i)=>({
     id:'penitential-'+i,title:'Psalm '+p.trad+(p.modern!==p.trad?' ('+p.modern+')':'')
-   })):owner==='litany'?LIT.sections.map((x,i)=>({id:'litany-'+i,title:x.title}))
+   })):owner==='litany'?(LIT.use==='major'?ROG_PRAY.sections.map((x,i)=>({id:'rogations-'+x.id,title:isFr()?x.title.fr:x.title.en})):LIT.sections.map((x,i)=>({id:'litany-'+i,title:x.title})))
    :owner==='sevenWords'?WORD_REFS.map((_,i)=>({id:'word-'+(i+1),title:(isFr()?WORD_LABELS.fr:WORD_LABELS.en)[i]}))
    :FORTY_STAGES.map((x,i)=>({id:'forty-'+i,title:L(x[0],x[1])}));
-  const step=owner==='penitential'?PEN.step:owner==='litany'?LIT.step
+  const step=owner==='penitential'?PEN.step:owner==='litany'?(LIT.use==='major'?ROG_PRAY.step:LIT.step)
    :owner==='sevenWords'?SEVEN.step:FORTY.step;
   const reader=installSequentialDevotionalReader({
    mount:m,kind:owner,chapters:stages,activeIndex:step,
@@ -3980,7 +4038,7 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
    onNavigate:i=>{
     if(view!==owner)return;
     if(owner==='penitential')PEN.step=i;
-    else if(owner==='litany')LIT.step=i;
+    else if(owner==='litany'){if(LIT.use==='major')ROG_PRAY.step=i;else LIT.step=i;}
     else if(owner==='sevenWords')SEVEN.step=i;
     else FORTY.step=i;
     render();
@@ -4933,9 +4991,11 @@ function onClick(e){
  }
  if(b.dataset.p435930PenStep!=null){PEN.step=Math.max(0,Math.min(6,+b.dataset.p435930PenStep));return render()}
  if(b.matches('[data-p435930-pen-cache]')){void warmPenitentialPsalmCorpus();return}
- if(b.matches('[data-p435930-pen-litany]')){pushView();view='litany';LIT.step=0;return render()}
+ if(b.matches('[data-p435930-pen-litany]')){pushView();view='litany';LIT.use='private';LIT.step=0;return render()}
  if(b.dataset.p435930LitStep!=null){LIT.step=Math.max(0,Math.min((LIT.sections?.length||1)-1,+b.dataset.p435930LitStep));return render()}
- if(b.hasAttribute('data-p435930-lit-use')){const choice=b.dataset.p435930LitUse;if(!BATCH03_LITANY_EDITION_POLICY[choice])return;LIT.use=choice;LIT.step=0;return render()}
+ if(b.hasAttribute('data-p435930-lit-use')){const choice=b.dataset.p435930LitUse;if(!BATCH03_LITANY_EDITION_POLICY[choice])return;LIT.use=choice;LIT.step=0;ROG_PRAY.step=0;return render()}
+ if(b.matches('[data-p435930-rog-retry]')){ROG_PRAY.error='';ROG_PRAY.sections=null;ROG_PRAY.step=0;return render()}
+ if(b.matches('[data-p435930-rog-done]')){popView('home');return render()}
  if(b.matches('[data-p435930-lit-forty]')){pushView('litany');routeOwn('pray.forty_hours');return render()}
  if(b.matches('[data-p435930-lit-retry]')){LIT.error='';LIT.sections=null;LIT.step=0;return render()}
  if(b.matches('[data-p435930-lit-done]')){if(navStack.at(-1)==='penitential'){navStack.pop();popView('home')}else popView('home');return render()}
