@@ -1,63 +1,47 @@
 {
-  "schema": "AO_DYK_CUSTOMS_400_EDITORIAL_QA_20261110_V1",
+  "schema": "AO_DYK_CUSTOMS_400_EDITORIAL_QA_20261110_V2",
   "as_of": "2026-11-10",
-  "state": "SOURCE_BOUNDED_EDITORIAL_REVIEW_NOT_RELEASE",
+  "state": "400_BILINGUAL_READER_COPY_FIRST_PASS_COMPLETE_SOURCE_AND_SEMANTIC_SIGNOFF_PENDING",
   "corpus": "data/research/did-you-know/dyk-customs-first-400-bilingual-review-20261110.v1.json",
-  "overlays": [
+  "reader_review_preview": "data/research/did-you-know/dyk-customs-first-400-reader-preview-en-fr-20261110.md",
+  "editorial_overlays": [
     "data/research/did-you-know/dyk-customs-first-400-editorial-wave01-20261110.v1.json",
     "data/research/did-you-know/dyk-customs-first-400-editorial-wave02-20261110.v1.json",
     "data/research/did-you-know/dyk-customs-first-400-editorial-wave03-20261110.v1.json",
-    "data/research/did-you-know/dyk-customs-first-400-editorial-wave04-20261110.v1.json"
+    "data/research/did-you-know/dyk-customs-first-400-editorial-wave04-20261110.v1.json",
+    "data/research/did-you-know/dyk-customs-first-400-editorial-wave05-20261110.v1.json",
+    "data/research/did-you-know/dyk-customs-first-400-editorial-wave06-20261110.v1.json",
+    "data/research/did-you-know/dyk-customs-first-400-editorial-wave07-20261110.v1.json",
+    "data/research/did-you-know/dyk-customs-first-400-editorial-wave08-20261110.v1.json"
   ],
+  "public_crossbank": "data/research/did-you-know/dyk-customs-first-400-full-public-overlap-holds-20261110.v1.json",
   "counts": {
-    "total": 400,
-    "families": {
-      "CANONICAL_CUSTOMS": 35,
-      "PITRE_1900": 175,
-      "WEISER_1958": 190
-    },
-    "paired_EN_FR_editorial_rewrites": 145,
-    "unchanged_pending_copy_review": 255,
-    "original_text_preserved_in_every_overlay": true,
-    "all_research_records_have_https_sources": true,
-    "reader_author_attributions_remaining": 0,
-    "reader_redundant_intros_remaining": 0,
-    "invalid_revised_ids": 0,
-    "duplicate_effective_en": 0,
-    "duplicate_effective_fr": 0,
-    "duplicate_effective_ids": 0,
-    "published_H225_rows_covered_by_exact_comparison": 201,
-    "exact_effective_en_matches_with_H225": 0,
-    "high_lexical_overlap_with_H225_072": 0,
-    "historical_records_lacking_printed_page_locator": 68,
-    "newly_visually_rechecked_original_folio_in_this_pass": 1,
-    "institutional_fact_sheet_verifications_in_this_pass": 1,
-    "possible_generic_or_geographically_underspecified_unedited_queue": 35,
-    "distinct_source_urls_in_bank": 56,
-    "publications_authorized": 0
+    "records": 400,
+    "bilingual_reader_copy_rewrites": 400,
+    "pending_first_pass_copy": 0,
+    "canonical_customs": 35,
+    "seasonal_and_regional": 190,
+    "historical_sicily": 175,
+    "unique_ids": 400,
+    "unique_effective_English": 400,
+    "unique_effective_French": 400,
+    "duplicate_editorial_ids": 0,
+    "original_copy_mismatches": 0,
+    "reader_author_names": 0,
+    "reader_unnecessary_did_you_know_prefixes": 0,
+    "records_with_https_source_link": 400,
+    "distinct_source_urls": 56,
+    "printed_page_locators_missing": 0,
+    "printed_page_locators_newly_recovered_from_existing_ledgers": 68,
+    "source_claims_newly_certified_from_pointer_backfill": 0,
+    "existing_H225_visible_total": 225,
+    "already_live_underlying_research_records": 26,
+    "additional_canonical_same_source_overlap_holds": 2,
+    "distinct_not_already_live_maximum_before_manual_source_audit": 374,
+    "new_publication_authorizations": 0
   },
-  "source_audit_claims": [
-    {
-      "id": "DYK-H04-W-A-051",
-      "source": "1958 original facsimile, printed p99, zero-based scan 116",
-      "result": "Paradise play is medieval religious theatrical mystery; fir tree with apples on stage; origin of modern tree framed as historical association rather than exclusive proven causation"
-    },
-    {
-      "id": "DYK-CUSTOMS-CANON-DEV-009",
-      "source": "Sanctuaire Notre-Dame de Laghet official ex-votos page",
-      "result": "Institutional list includes crutches, wedding bouquets and car steering wheels; does not certify alleged miracles"
-    }
-  ],
-  "editorial_policy": [
-    "User-facing display text contains no source author names or redundant Did You Know preface.",
-    "All 143+ revised pairs are proposals, not claim certification; remaining original text is not deemed finally accepted.",
-    "No auto-publication of H7 from this corpus; explicit source-level and bilingual signoff required.",
-    "The three removed off-scope/generic records are archived in the main corpus method field; replacements are historical Catholic processions.",
-    "Printed-page pointers absent in 68 records must be located or records held.",
-    "Human semantic, cultural attribution, French nuance and source image QA still pending."
-  ],
-  "review_queue": {
-    "unverified_printed_page_ids": [
+  "review_holds": {
+    "source_image_direct_claim_verification_required": [
       "DYK-H04-W-A-013",
       "DYK-H04-W-A-023",
       "DYK-H04-W-A-039",
@@ -127,149 +111,74 @@
       "DYK-H04-P-152",
       "DYK-H04-W-B-160"
     ],
-    "representative_generic_reader_candidates": [
+    "already_public_research_ids": [
+      "DYK-H04-W-A-048",
+      "DYK-H04-W-A-051",
+      "DYK-H04-W-B-010",
+      "DYK-H04-W-B-105",
+      "DYK-H04-W-B-165",
+      "DYK-UM01-007",
+      "DYK-UM01-014",
+      "DYK-UM02-008",
+      "DYK-UM02-015",
+      "DYK-UM02-034",
+      "DYK-UM02-035",
+      "DYK-UM02-046",
+      "DYK-UM03-033",
+      "DYK-UM03-037",
+      "DYK-G365-CAL-020",
+      "DYK-G365-W-B-062",
+      "DYK-H04-W-A-074",
+      "DYK-H04-W-A-078",
+      "DYK-H04-W-A-109",
+      "DYK-H04-W-B-014",
+      "DYK-H04-W-B-028",
+      "DYK-H04-W-B-035",
+      "DYK-H04-W-B-044",
+      "DYK-UM01-009",
+      "DYK-UM02-022",
+      "DYK-UM02-024"
+    ],
+    "canonical_source_identity_shared": [
+      "DYK-CUSTOMS-CANON-BLSS-001",
+      "DYK-CUSTOMS-CANON-SJOS-001"
+    ],
+    "manual_semantic_pairs": [
       {
-        "id": "DYK-CUSTOMS-CANON-DOM-013",
-        "en": "The faithful traditionally take blessed Palm Sunday branches home, including to adorn domestic crucifixes as a sign of trust in Christ crucified. This follows, rather than replaces, participation in the Palm Sunday liturgy."
+        "a": "DYK-G640-P-027",
+        "b": "DYK-UM01-023",
+        "reason": "Same Saint Joseph meal, additional poor visitors versus three symbolic guests; evaluate if independently useful"
       },
       {
-        "id": "DYK-CUSTOMS-CANON-NDAY-001",
-        "en": "Families may commemorate a person's baptismal patron on that saint's feast with prayer, the saint's life and a modest family meal, optionally attending Mass; this is a voluntary domestic celebration, not an additional liturgical feast."
-      },
-      {
-        "id": "DYK-CUSTOMS-CANON-PATR-001",
-        "en": "A French local church or village may observe its own patronal feast with Mass, procession and communal festivities; the particular date and form belong to the local place and are not universally scheduled."
-      },
-      {
-        "id": "DYK-CUSTOMS-CANON-SANT-001",
-        "en": "The Franciscan charitable practice of St Anthony's Bread supports people in need; its French revival is associated with Louise Bouffier of Toulon in 1890. Families may honour the saint with voluntary almsgiving."
-      },
-      {
-        "id": "DYK-CUSTOMS-CANON-SCHR-001",
-        "en": "Some French parishes celebrate St Christopher and arrange a ministerial blessing of drivers, travellers and vehicles near 25 July; one 2026 parish example took place on 19 July."
-      },
-      {
-        "id": "DYK-CUSTOMS-CANON-ADVT-001",
-        "en": "The family Advent wreath, commonly made with four candles, accompanies prayer and Scripture during Advent; additional candles are traditionally lit on successive Sundays as the Nativity approaches."
-      },
-      {
-        "id": "DYK-CUSTOMS-CANON-ADVT-003",
-        "en": "In Las Posadas, neighbours and families recall Mary and Joseph's search for lodging through songs and symbolic visits between houses, traditionally beginning on 16 December in Mexico and other Latin American Catholic communities."
-      },
-      {
-        "id": "DYK-CUSTOMS-CANON-XMAS-001",
-        "en": "Polish Catholic families may share thin unconsecrated opłatek wafers before Christmas Eve supper, exchanging wishes for peace and reconciliation. An optional blessing of the wafers by a priest is separate from the family sharing."
-      },
-      {
-        "id": "DYK-CUSTOMS-CANON-ROGA-001",
-        "en": "A family may mark the Rogation days with a private prayerful walk, asking God to bless the work of farmers and the fruits of the earth, distinct from any priest-led Rogation procession or ministerial blessing."
-      },
-      {
-        "id": "DYK-CUSTOMS-CANON-EPIP-002",
-        "en": "French Catholic households share a galette or King Cake with a fève; some traditional forms reserve an extra portion for someone poor or a guest."
-      },
-      {
-        "id": "DYK-CUSTOMS-CANON-MARI-002",
-        "en": "A Catholic home may keep a small Mary garden or planters with flowers and herbs that recall Our Lady and invite prayer; individual plant legends require historical verification."
-      },
-      {
-        "id": "DYK-G600-P-027",
-        "en": "At Melilli, some women walked the route of Saint Sebastian's procession every evening during May, sometimes barefoot."
-      },
-      {
-        "id": "DYK-H04-W-A-076",
-        "en": "In central Europe, wine blessed on Saint John the Evangelist's feast, 27 December, was shared at meals, weddings and departures; some families kept it for the sick and dying."
-      },
-      {
-        "id": "DYK-H04-W-A-080",
-        "en": "In rural central Europe, some families greeted the New Year by praying the Rosary or other prayers around midnight."
-      },
-      {
-        "id": "DYK-H04-W-B-007",
-        "en": "In some Latin European and South American countries, the Holy Thursday repository was called a monumento and could be elaborately decorated and visited by the faithful."
-      },
-      {
-        "id": "DYK-H04-W-B-010",
-        "en": "In central European Green Thursday customs, the meal could begin with green-herb soup followed by spinach and eggs."
-      },
-      {
-        "id": "DYK-H04-W-B-033",
-        "en": "In French Canada, an Easter Monday ‘Emmaus walk’ could take the form of children visiting their grandparents, recalling the Gospel journey to Emmaus."
-      },
-      {
-        "id": "DYK-H04-W-B-037",
-        "en": "Across parts of eastern Europe, a small Easter lamb made of butter, pastry or sugar could decorate the family table as a symbol of Christ."
-      },
-      {
-        "id": "DYK-H04-W-B-048",
-        "en": "In some German and central European Ascension customs, a semi-liturgical procession after High Mass led the faithful through fields and pastures, where the priest blessed the land."
-      },
-      {
-        "id": "DYK-H04-W-B-075",
-        "en": "At some Corpus Christi processions, families knelt outside their own homes along the route to adore the Blessed Sacrament as it passed."
-      },
-      {
-        "id": "DYK-H04-W-B-076",
-        "en": "For Corpus Christi processions, houses along the route could be decorated with birch trees and green branches, with candles and sacred pictures in their windows."
-      },
-      {
-        "id": "DYK-H04-W-B-083",
-        "en": "In Seville Cathedral, a dance performed by choirboys before the altar became a distinctive Corpus Christi custom, also observed on certain other feasts."
-      },
-      {
-        "id": "DYK-H04-W-B-096",
-        "en": "For a traditional Catholic name day, a person could attend Mass with the family and then be excused from everyday domestic or farm chores for the rest of the day."
-      },
-      {
-        "id": "DYK-H04-W-B-133",
-        "en": "In central European All Souls customs, families could set a candle saved from Candlemas on the table and pray together when the church bells rang at dusk."
-      },
-      {
-        "id": "DYK-H04-W-B-147",
-        "en": "In Hungary, some families invited orphaned children to meals on All Saints' and All Souls' Days, and offered them clothes and toys."
-      },
-      {
-        "id": "DYK-UM01-004",
-        "en": "In the German Advent play Herbergsuchen, Mary and Joseph knocked at doors seeking shelter; the often-sung scene ended at a stable."
-      },
-      {
-        "id": "DYK-UM01-005",
-        "en": "In some European Christmas Eve customs, a little bell signalled that children could enter the room where the Christ Child was believed to have left gifts."
-      },
-      {
-        "id": "DYK-H04-P-023",
-        "en": "Some pilgrims reached Monreale's Holy Crucifix barefoot and knelt at the church entrance after their journey."
-      },
-      {
-        "id": "DYK-H04-P-119",
-        "en": "The Madonna del Monte feast at Racalmuto historically fell on the second Sunday of May."
-      },
-      {
-        "id": "DYK-G365-W-A-024",
-        "en": "In some places, children wrote letters to the Christ Child on Saint Nicholas Eve."
-      },
-      {
-        "id": "DYK-G365-W-B-025",
-        "en": "In some Central European communities, families took home fire blessed at the Easter Vigil in lanterns."
-      },
-      {
-        "id": "DYK-G365-W-B-062",
-        "en": "Some European Pentecost customs included climbing a hill at dawn to pray."
-      },
-      {
-        "id": "DYK-G365-W-B-091",
-        "en": "In historical Hungarian and Polish celebrations near the Assumption, processions could include the produce of the harvest."
-      },
-      {
-        "id": "DYK-G365-W-B-113",
-        "en": "In some Eastern and Central European communities, people decorated candles before bringing them for the Candlemas blessing."
-      },
-      {
-        "id": "DYK-H04-W-A-003",
-        "en": "Some families once reserved new clothes or shoes for their first wearing at Sunday Mass."
+        "a": "DYK-UM02-033",
+        "b": "DYK-UM03-036",
+        "reason": "Palermo procession bells for statues leaving versus returning at midnight; distinct action but related event"
       }
     ]
   },
-  "external_publication_overlap": [],
-  "exceptions": []
+  "notes": {
+    "overview": "All 400 records have rewritten, source-linked, English/French reader-copy proposals. This is completion of first-pass editorial wording only; it does NOT mean 400 new public facts or final source-certified claims.",
+    "crossbank": "26 of 400 are the same underlying research observations already published in Home; two further canonical entries share original source IDs and must be reviewed claim-by-claim. Never count these 28 as additional published discoveries.",
+    "source_locator": "All 68 missing printed-page pointers were recovered from existing records (40 Weiser 408, 9 bulk150, 5 Pitrè 121, 14 Pitrè W05). These are inherited page locators, not source image certificates; 68 original folio claim checks remain pending.",
+    "manual_quality": "2 within-bank higher lexical-overlap pairs must be manually distinguished, including the same Saint Joseph charity table and a Palermo procession's departure/return bells."
+  },
+  "release_gates": {
+    "primary_page_review_for_all_claims": false,
+    "historical_scope_final_review": false,
+    "full_human_semantic_uniqueness_signoff": false,
+    "english_final_copy_approval": false,
+    "french_final_copy_approval": false,
+    "source_links_browser_qa": false,
+    "mobile_app_reader_qa": false,
+    "home_publication_authorized": false,
+    "github_pages_deployed": false
+  },
+  "policy": [
+    "Author names remain in provenance and source references, not displayed reader facts.",
+    "All historical observation pages are research locators; no automatic certificate from a printed-page pointer.",
+    "All 400 have one proposed EN/FR copy pair; not 400 new or published facts.",
+    "Duplicate source identities are held, not resolved by paraphrase.",
+    "No unrelated heritage, general glossary definitions, or Mass rubrics promoted as customs.",
+    "No Vercel deployment."
+  ]
 }
