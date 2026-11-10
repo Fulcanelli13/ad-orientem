@@ -1,0 +1,69 @@
+{
+  "schema": "AO_SACRED_ART_MET_437005_ACTUAL_JPEG_VERIFICATION_V1",
+  "asOf": "2026-11-10",
+  "status": "FIRST_PARTY_COLOUR_ORIGINAL_HASH_VERIFIED_RESEARCH_ALTERNATIVE_ONLY",
+  "sourceJob": {
+    "runId": 42855525191,
+    "artifactId": 13782961254,
+    "artifactName": "sacred-art-met-437005-research-only",
+    "artifactRetentionDays": 7
+  },
+  "artwork": {
+    "key": "Met:437005",
+    "title": "The Burial of Saint Wenceslas",
+    "artist": "Master of Eggenburg",
+    "date": "ca. 1490–1500",
+    "medium": "Oil and gold on spruce",
+    "museumAccession": "44.147.2",
+    "museumId": 437005,
+    "objectUrl": "https://www.metmuseum.org/art/collection/search/437005",
+    "metadataApi": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437005",
+    "sourceStatus": "MET_OBJECT_IS_PUBLIC_DOMAIN_TRUE_CATALOGUED_PAINTING",
+    "photoLicence": "MET_OFFICIAL_OPEN_ACCESS_CC0",
+    "relatedBlockedWork": "Olomouc:Skreta-WenceslasCycle",
+    "samePaintingAsRelated": false,
+    "originalArtworkDifferentScene": true,
+    "stylisticPreference": "LOWER_PRIORITY_LATE_GOTHIC_NOT_DARK_BAROQUE"
+  },
+  "photo": {
+    "officialJpegUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP164825.jpg",
+    "sha256": "468b1255c8114607a665e38f81da679409166da76aa0f42cf82bc3c41c1c4608",
+    "downloadedPixels": [
+      2453,
+      3832
+    ],
+    "bytes": 2813215,
+    "mode": "RGB",
+    "format": "JPEG",
+    "meanThumbnailSaturation": 106.67,
+    "colourPresent": true,
+    "bytesIndependentHashVerified": true,
+    "technicalSourceWidthPass": true,
+    "fullOriginalImageAcquired": true,
+    "iccEmbedded": false,
+    "wide390x240RetainedImagePct": 39.4,
+    "portrait390x520RetainedImagePct": 85.4,
+    "visualInspection": "The saint lies on an open coffin/bier with four male attendants; halo identifies the deceased as a saint. Gothic vaulted church, altar and tomb behind. Visually legible in portrait full image; horizontal 390×240 cover loses substantial architectural and narrative detail.",
+    "imageUsability": "PORTRAIT_PROVISIONAL_CONTAIN_OR_CAREFULLY_RECOMPOSE; WIDE_COVER_NOT_RECOMMENDED",
+    "formalApp320Or390CropCertified": false
+  },
+  "editorial": {
+    "ownerHistoricalApproval": false,
+    "sourceRejectedIdentityCrosscheckCompleted": false,
+    "exactSaint": true,
+    "exactHistoricalEventForDate": false,
+    "ownerReplacementOfSkreta": false,
+    "joinExisting198EdgePool": false,
+    "proposeDistinctWenceslasSameDateResearchCandidate": true,
+    "newGalleryPublication": false,
+    "liveCalendarAssignment": false
+  },
+  "constraints": [
+    "Do not equate burial with Saint Wenceslas making Communion hosts",
+    "Retain original Škréta record and all existing owner-approved art",
+    "Do not import this candidate into app even if source is CC0 without owner/date approval and rejection crosscheck",
+    "Do not use different Met object 44.147.1, X-ray or IR image as its colour photo",
+    "Research archive artifacts are ephemeral; image is not yet in a durable production image bank",
+    "No fees, museum outreach, Vercel deployment or Commons auto-promotion"
+  ]
+}
