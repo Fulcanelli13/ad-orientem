@@ -1,0 +1,927 @@
+{
+  "schema": "ao.pray.icksp-red-booklet-scope-crosswalk.v1",
+  "asOf": "2026-11-10",
+  "scope": "EXISTING_MASTER_AND_SOURCE_OWNER_COVERAGE_CHECK_NOT_NEW_PRAYER_ACQUISITION",
+  "provenance": {
+    "ickspHistoricalMaster": "data/pray/prayer-corpus-editorial-acquisition-master.v1.json",
+    "ickspHistoricalStatus": "data/pray/prayer-corpus-current-release-overlay-b31.v1.json",
+    "statusSnapshotDate": "2026-10-29",
+    "draftReconciliation": "data/pray/prayer-coverage-freeze-reconciliation-20261110.v1.json",
+    "redBookletWitness": "Coalition in Support of Ecclesia Dei, Booklet Missal, May 2013",
+    "redBookletSourceFiles": [
+      "src/pray/red-booklet-communion-library-links.v1.js",
+      "src/pray/red-booklet-suscipe-library-link.v1.js",
+      "src/pray/red-booklet-private-historical-works.v1.js",
+      "src/pray/red-booklet-2013-variant-witnesses.v1.js"
+    ]
+  },
+  "ickspCatalogScopes": [
+    {
+      "catalog": "US Institute devotions index",
+      "url": "https://institute-christ-king.org/resources/devotions-prayers",
+      "indexHeadingCount": 9,
+      "headings": [
+        "Consecration to the Immaculate Conception",
+        "Dedication to Christ the King",
+        "Prayer of Reparation",
+        "Prayers for Priests",
+        "Prayer to the Infant Jesus",
+        "Novena to the Divine Infant King",
+        "Prayer to the Virgin: Remedy Against Evil Spirits",
+        "Novena to the Immaculate Conception",
+        "Perpetual Novena in Honor of St. Therese of the Child Jesus"
+      ],
+      "comprehensiveSiteOrEveryPrayer": false
+    },
+    {
+      "catalog": "ICRSP France Infant Jesus page",
+      "url": "https://icrspfrance.fr/?page=child-jesus-prayers",
+      "indexHeadingCount": null,
+      "comprehensiveSiteOrEveryPrayer": false,
+      "notes": "Contains parallel novena/litany recensions plus optional devotions; do not count each day or source transcription as a separate original work"
+    }
+  ],
+  "summary": {
+    "ickspHistoricalCandidates": 33,
+    "ickspHistoricalStatusCounts": {
+      "LIVE_SOURCE_SCOPED": 1,
+      "HOLD_SOURCE_OR_RIGHTS": 9,
+      "INTENT_ONLY_NOT_TEXT": 4,
+      "OWNED_NOT_EXACTLY_CERTIFIED": 6,
+      "EDITORIALLY_DEFERRED": 11,
+      "RELEASED_POST_B22": 1,
+      "EXCLUDED": 1
+    },
+    "ickspP0P1": 11,
+    "ickspP0P1LiveOrOwned": 7,
+    "ickspAllRelevantWebPrayersDenominator": null,
+    "ickspTrackedDraftUnits": 9,
+    "redBookletExistingRecords": 19,
+    "redBookletPointerTypes": {
+      "COMMUNION_READER_POINTER": 11,
+      "SUSCIPE_READER_POINTER": 1,
+      "PRIVATE_HISTORIC_READER_POINTER": 4,
+      "BOOKLET_SHORT_ENGLISH_VARIANT_WITNESS": 3
+    },
+    "redBookletLanguageTextPresence": {
+      "en": 19,
+      "fr": 5,
+      "la": 6
+    },
+    "redBookletExactShortEnglishVariantComparisons": 3,
+    "redBookletFullRequiredPrayerDenominator": null,
+    "redBookletFullySourceEditionAndReaderCertified": null
+  },
+  "metricPolicy": {
+    "historicalICKSPNumerator": "Historical snapshot only, never latest live certification or complete Institute website coverage",
+    "redBookletNumerator": "Existing source-backed pointers, with 3 short source comparisons; not 19 independent or complete 2013 full prayers",
+    "missingFrench": "Lack of a French witness must not trigger invented Latin/French historical claims. Choose editorial translations only for owner-required readers.",
+    "coverageUnknowns": [
+      "Full scope of Institute devotional webpages and exact texts",
+      "All prayer items in scanned 2013 booklet",
+      "Deduplicated count across canonical and source-owned supplements",
+      "Phone and current-head reader coverage of each owner"
+    ],
+    "acquisitionFreeze": "NO_NEW_TEXT_IMPORTS_OR_RELEASE_APPROVALS_FROM_THIS_CROSSWALK"
+  },
+  "ickspHistoricalItems": [
+    {
+      "masterId": "AO-AQ-001",
+      "title": "O Jesus, Eternal Priest (prayer for priests)",
+      "priority": "P0",
+      "originalDecision": "ADD",
+      "sourceUrl": "https://institute-christ-king.org/resources/devotions-prayers/614-devotions-prayer-priests",
+      "sourceGroup": "ICPR",
+      "targetModule": "Prayer for priests",
+      "historicalStatusAsOf20261029": "LIVE_SOURCE_SCOPED",
+      "historicalOwner": "src/pray/priestly-intercessions-b19.js",
+      "historicalExactPrintNotCertified": true,
+      "stagedDrafts": [],
+      "requiresOwnerDecision": true,
+      "automaticallyApproved": false
+    },
+    {
+      "masterId": "AO-AQ-002",
+      "title": "Sacred Heart of Jesus, Eternal High Priest",
+      "priority": "P1",
+      "originalDecision": "ALTERNATIVE",
+      "sourceUrl": "https://institute-christ-king.org/resources/devotions-prayers/614-devotions-prayer-priests",
+      "sourceGroup": "ICPR",
+      "targetModule": "Prayer for priests",
+      "historicalStatusAsOf20261029": "HOLD_SOURCE_OR_RIGHTS",
+      "historicalOwner": null,
+      "historicalExactPrintNotCertified": true,
+      "stagedDrafts": [],
+      "requiresOwnerDecision": true,
+      "automaticallyApproved": false
+    },
+    {
+      "masterId": "AO-AQ-003",
+      "title": "O Jesus our Great High Priest",
+      "priority": "P1",
+      "originalDecision": "ALTERNATIVE",
+      "sourceUrl": "https://icksp.org.uk/newbrighton/the-most-holy-rosary-of-the-blessed-virgin-mary/",
+      "sourceGroup": "ICUK",
+      "targetModule": "Prayer for priests",
+      "historicalStatusAsOf20261029": "INTENT_ONLY_NOT_TEXT",
+      "historicalOwner": null,
+      "historicalExactPrintNotCertified": true,
+      "stagedDrafts": [],
+      "requiresOwnerDecision": true,
+      "automaticallyApproved": false
+    },
+    {
+      "masterId": "AO-AQ-004",
+      "title": "God Who Didst Love Thy Only Begotten Son (priests)",
+      "priority": "P2",
+      "originalDecision": "ALTERNATIVE",
+      "sourceUrl": "https://icksp.org.uk/newbrighton/the-most-holy-rosary-of-the-blessed-virgin-mary/",
+      "sourceGroup": "ICUK",
+      "targetModule": "Prayer for priests",
+      "historicalStatusAsOf20261029": "INTENT_ONLY_NOT_TEXT",
+      "historicalOwner": null,
+      "historicalExactPrintNotCertified": true,
+      "stagedDrafts": [],
+      "requiresOwnerDecision": true,
+      "automaticallyApproved": false
+    },
+    {
+      "masterId": "AO-AQ-005",
+      "title": "Our Lady of the Priesthood (Fr Thévenin)",
+      "priority": "P2",
+      "originalDecision": "DEFER",
+      "sourceUrl": "https://icksp.org.uk/newbrighton/the-most-holy-rosary-of-the-blessed-virgin-mary/",
+      "sourceGroup": "ICUK",
+      "targetModule": "Prayer for priests",
+      "historicalStatusAsOf20261029": "HOLD_SOURCE_OR_RIGHTS",
+      "historicalOwner": null,
+      "historicalExactPrintNotCertified": true,
+      "stagedDrafts": [],
+      "requiresOwnerDecision": true,
+      "automaticallyApproved": false
+    },
+    {
+      "masterId": "AO-AQ-006",
+      "title": "Benedict XVI Prayer for Sanctification of Priests",
+      "priority": "P2",
+      "originalDecision": "DEFER",
+      "sourceUrl": "https://icksp.org.uk/newbrighton/the-most-holy-rosary-of-the-blessed-virgin-mary/",
+      "sourceGroup": "ICUK",
+      "targetModule": "Prayer for priests",
+      "historicalStatusAsOf20261029": "HOLD_SOURCE_OR_RIGHTS",
+      "historicalOwner": null,
+      "historicalExactPrintNotCertified": true,
+      "stagedDrafts": [],
+      "requiresOwnerDecision": true,
+      "automaticallyApproved": false
+    },
+    {
+      "masterId": "AO-AQ-007",
+      "title": "Consecration to the Immaculate Conception (Institute)",
+      "priority": "P1",
+      "originalDecision": "ALTERNATIVE",
+      "sourceUrl": "https://institute-christ-king.org/resources/devotions-prayers",
+      "sourceGroup": "IC",
+      "targetModule": "Marian consecration",
+      "historicalStatusAsOf20261029": "HOLD_SOURCE_OR_RIGHTS",
+      "historicalOwner": null,
+      "historicalExactPrintNotCertified": true,
+      "stagedDrafts": [],
+      "requiresOwnerDecision": true,
+      "automaticallyApproved": false
+    },
+    {
+      "masterId": "AO-AQ-008",
+      "title": "Dedication to Christ the King",
+      "priority": "P0",
+      "originalDecision": "RETAIN",
+      "sourceUrl": "https://institute-christ-king.org/resources/devotions-prayers",
+      "sourceGroup": "IC",
+      "targetModule": "Christ the King",
+      "historicalStatusAsOf20261029": "OWNED_NOT_EXACTLY_CERTIFIED",
+      "historicalOwner": "Christ the King / Sacred Heart prayer",
+      "historicalExactPrintNotCertified": true,
+      "stagedDrafts": [],
+      "requiresOwnerDecision": false,
+      "automaticallyApproved": false
+    },
+    {
+      "masterId": "AO-AQ-009",
+      "title": "Golden Arrow · Holy Face / Holy Name",
+      "priority": "P0",
+      "originalDecision": "RETAIN",
+      "sourceUrl": "https://institute-christ-king.org/resources/devotions-prayers",
+      "sourceGroup": "IC",
+      "targetModule": "Sacred Heart / Holy Face",
+      "historicalStatusAsOf20261029": "OWNED_NOT_EXACTLY_CERTIFIED",
+      "historicalOwner": "Golden Arrow / Holy Face reparatory supplement",
+      "historicalExactPrintNotCertified": true,
+      "stagedDrafts": [],
+      "requiresOwnerDecision": false,
+      "automaticallyApproved": false
+    },
+    {
+      "masterId": "AO-AQ-010",
+      "title": "Prayer to Infant Jesus (votive Mass)",
+      "priority": "P3",
+      "originalDecision": "DEFER",
+      "sourceUrl": "https://institute-christ-king.org/resources/devotions-prayers",
+      "sourceGroup": "IC",
+      "targetModule": "Infant Jesus",
+      "historicalStatusAsOf20261029": "EDITORIALLY_DEFERRED",
+      "historicalOwner": null,
+      "historicalExactPrintNotCertified": true,
+      "stagedDrafts": [],
+      "requiresOwnerDecision": true,
+      "automaticallyApproved": false
+    },
+    {
+      "masterId": "AO-AQ-011",
+      "title": "Divine Infant King novena / Father Cyril prayer",
+      "priority": "P0",
+      "originalDecision": "RETAIN",
+      "sourceUrl": "https://institute-christ-king.org/resources/devotions-prayers",
+      "sourceGroup": "IC",
+      "targetModule": "Novenas",
+      "historicalStatusAsOf20261029": "OWNED_NOT_EXACTLY_CERTIFIED",
+      "historicalOwner": "Novena: divine_infant_king",
+      "historicalExactPrintNotCertified": true,
+      "stagedDrafts": [],
+      "requiresOwnerDecision": false,
+      "automaticallyApproved": false
+    },
+    {
+      "masterId": "AO-AQ-012",
+      "title": "August Queen of Heaven",
+      "priority": "P1",
+      "originalDecision": "ALTERNATIVE",
+      "sourceUrl": "https://institute-christ-king.org/resources/devotions-prayers",
+      "sourceGroup": "IC",
+      "targetModule": "Marian prayer",
+      "historicalStatusAsOf20261029": "HOLD_SOURCE_OR_RIGHTS",
+      "historicalOwner": null,
+      "historicalExactPrintNotCertified": true,
+      "stagedDrafts": [
+        {
+          "prNumber": 2817,
+          "provisionalRecommendation": "KEEP_FOR_OWNER_REVIEW"
+        }
+      ],
+      "requiresOwnerDecision": true,
+      "automaticallyApproved": false
+    },
+    {
+      "masterId": "AO-AQ-013",
+      "title": "Novena to Immaculate Conception (Institute)",
+      "priority": "P1",
+      "originalDecision": "RETAIN",
+      "sourceUrl": "https://institute-christ-king.org/resources/devotions-prayers",
+      "sourceGroup": "IC",
+      "targetModule": "Novenas",
+      "historicalStatusAsOf20261029": "OWNED_NOT_EXACTLY_CERTIFIED",
+      "historicalOwner": "Novena: icksp_immaculate_conception",
+      "historicalExactPrintNotCertified": true,
+      "stagedDrafts": [],
+      "requiresOwnerDecision": false,
+      "automaticallyApproved": false
+    },
+    {
+      "masterId": "AO-AQ-014",
+      "title": "Perpetual Novena to St Thérèse (Tuesdays)",
+      "priority": "P1",
+      "originalDecision": "RETAIN",
+      "sourceUrl": "https://institute-christ-king.org/resources/devotions-prayers",
+      "sourceGroup": "IC",
+      "targetModule": "Novenas",
+      "historicalStatusAsOf20261029": "OWNED_NOT_EXACTLY_CERTIFIED",
+      "historicalOwner": "Novena: St Thérèse perpetual weekly",
+      "historicalExactPrintNotCertified": true,
+      "stagedDrafts": [],
+      "requiresOwnerDecision": false,
+      "automaticallyApproved": false
+    },
+    {
+      "masterId": "AO-AQ-015",
+      "title": "Prayer to St Thérèse for Missionaries",
+      "priority": "P3",
+      "originalDecision": "DEFER",
+      "sourceUrl": "https://institute-christ-king.org/resources/devotions-prayers",
+      "sourceGroup": "IC",
+      "targetModule": "Intercessions",
+      "historicalStatusAsOf20261029": "EDITORIALLY_DEFERRED",
+      "historicalOwner": null,
+      "historicalExactPrintNotCertified": true,
+      "stagedDrafts": [],
+      "requiresOwnerDecision": true,
+      "automaticallyApproved": false
+    },
+    {
+      "masterId": "AO-AQ-016",
+      "title": "Prayer attributed to Benedict XV to St Thérèse",
+      "priority": "P3",
+      "originalDecision": "DEFER",
+      "sourceUrl": "https://institute-christ-king.org/resources/devotions-prayers",
+      "sourceGroup": "IC",
+      "targetModule": "Saints",
+      "historicalStatusAsOf20261029": "EDITORIALLY_DEFERRED",
+      "historicalOwner": null,
+      "historicalExactPrintNotCertified": true,
+      "stagedDrafts": [],
+      "requiresOwnerDecision": true,
+      "automaticallyApproved": false
+    },
+    {
+      "masterId": "AO-AQ-017",
+      "title": "Infant Jesus of Prague Novena (first recension)",
+      "priority": "P2",
+      "originalDecision": "ALTERNATIVE",
+      "sourceUrl": "https://icrspfrance.fr/?page=child-jesus-prayers",
+      "sourceGroup": "ICFR",
+      "targetModule": "Infant Jesus / Novenas",
+      "historicalStatusAsOf20261029": "HOLD_SOURCE_OR_RIGHTS",
+      "historicalOwner": null,
+      "historicalExactPrintNotCertified": true,
+      "stagedDrafts": [
+        {
+          "prNumber": 2823,
+          "provisionalRecommendation": "REVISE_OR_DECIDE"
+        }
+      ],
+      "requiresOwnerDecision": true,
+      "automaticallyApproved": false
+    },
+    {
+      "masterId": "AO-AQ-018",
+      "title": "Infant Jesus of Prague Novena (second recension)",
+      "priority": "P3",
+      "originalDecision": "DEFER",
+      "sourceUrl": "https://icrspfrance.fr/?page=child-jesus-prayers",
+      "sourceGroup": "ICFR",
+      "targetModule": "Infant Jesus / Novenas",
+      "historicalStatusAsOf20261029": "HOLD_SOURCE_OR_RIGHTS",
+      "historicalOwner": null,
+      "historicalExactPrintNotCertified": true,
+      "stagedDrafts": [
+        {
+          "prNumber": 2823,
+          "provisionalRecommendation": "REVISE_OR_DECIDE"
+        }
+      ],
+      "requiresOwnerDecision": true,
+      "automaticallyApproved": false
+    },
+    {
+      "masterId": "AO-AQ-019",
+      "title": "Infant Jesus Litany (short)",
+      "priority": "P2",
+      "originalDecision": "ADD_LATER",
+      "sourceUrl": "https://icrspfrance.fr/?page=child-jesus-prayers",
+      "sourceGroup": "ICFR",
+      "targetModule": "Infant Jesus",
+      "historicalStatusAsOf20261029": "EDITORIALLY_DEFERRED",
+      "historicalOwner": null,
+      "historicalExactPrintNotCertified": true,
+      "stagedDrafts": [
+        {
+          "prNumber": 2822,
+          "provisionalRecommendation": "REVISE_OR_DECIDE"
+        }
+      ],
+      "requiresOwnerDecision": true,
+      "automaticallyApproved": false
+    },
+    {
+      "masterId": "AO-AQ-020",
+      "title": "Infant Jesus Litany (long)",
+      "priority": "P2",
+      "originalDecision": "ALTERNATIVE",
+      "sourceUrl": "https://icrspfrance.fr/?page=child-jesus-prayers",
+      "sourceGroup": "ICFR",
+      "targetModule": "Infant Jesus",
+      "historicalStatusAsOf20261029": "EDITORIALLY_DEFERRED",
+      "historicalOwner": null,
+      "historicalExactPrintNotCertified": true,
+      "stagedDrafts": [
+        {
+          "prNumber": 2822,
+          "provisionalRecommendation": "REVISE_OR_DECIDE"
+        }
+      ],
+      "requiresOwnerDecision": true,
+      "automaticallyApproved": false
+    },
+    {
+      "masterId": "AO-AQ-021",
+      "title": "Memorare to the Infant Jesus of Prague",
+      "priority": "P2",
+      "originalDecision": "ALTERNATIVE",
+      "sourceUrl": "https://icrspfrance.fr/?page=child-jesus-prayers",
+      "sourceGroup": "ICFR",
+      "targetModule": "Infant Jesus",
+      "historicalStatusAsOf20261029": "EDITORIALLY_DEFERRED",
+      "historicalOwner": null,
+      "historicalExactPrintNotCertified": true,
+      "stagedDrafts": [
+        {
+          "prNumber": 2821,
+          "provisionalRecommendation": "REVISE_OR_DECIDE"
+        }
+      ],
+      "requiresOwnerDecision": true,
+      "automaticallyApproved": false
+    },
+    {
+      "masterId": "AO-AQ-022",
+      "title": "Benedict XVI prayer to Infant Jesus (2009)",
+      "priority": "P3",
+      "originalDecision": "DEFER",
+      "sourceUrl": "https://icrspfrance.fr/?page=child-jesus-prayers",
+      "sourceGroup": "ICFR",
+      "targetModule": "Infant Jesus",
+      "historicalStatusAsOf20261029": "HOLD_SOURCE_OR_RIGHTS",
+      "historicalOwner": null,
+      "historicalExactPrintNotCertified": true,
+      "stagedDrafts": [],
+      "requiresOwnerDecision": true,
+      "automaticallyApproved": false
+    },
+    {
+      "masterId": "AO-AQ-023",
+      "title": "St Jean Eudes prayer to Infant Jesus",
+      "priority": "P3",
+      "originalDecision": "DEFER",
+      "sourceUrl": "https://icrspfrance.fr/?page=child-jesus-prayers",
+      "sourceGroup": "ICFR",
+      "targetModule": "Infant Jesus",
+      "historicalStatusAsOf20261029": "EDITORIALLY_DEFERRED",
+      "historicalOwner": null,
+      "historicalExactPrintNotCertified": true,
+      "stagedDrafts": [
+        {
+          "prNumber": 2821,
+          "provisionalRecommendation": "REVISE_OR_DECIDE"
+        }
+      ],
+      "requiresOwnerDecision": true,
+      "automaticallyApproved": false
+    },
+    {
+      "masterId": "AO-AQ-024",
+      "title": "Prayer of trusting abandonment",
+      "priority": "P2",
+      "originalDecision": "ALTERNATIVE",
+      "sourceUrl": "https://icrspfrance.fr/?page=child-jesus-prayers",
+      "sourceGroup": "ICFR",
+      "targetModule": "Morning / Evening",
+      "historicalStatusAsOf20261029": "HOLD_SOURCE_OR_RIGHTS",
+      "historicalOwner": null,
+      "historicalExactPrintNotCertified": true,
+      "stagedDrafts": [],
+      "requiresOwnerDecision": true,
+      "automaticallyApproved": false
+    },
+    {
+      "masterId": "AO-AQ-025",
+      "title": "Infant Jesus prayer for sick / recovery",
+      "priority": "P3",
+      "originalDecision": "DEFER",
+      "sourceUrl": "https://icrspfrance.fr/?page=child-jesus-prayers",
+      "sourceGroup": "ICFR",
+      "targetModule": "Prayers in sickness",
+      "historicalStatusAsOf20261029": "INTENT_ONLY_NOT_TEXT",
+      "historicalOwner": "B20 sick-person occasion",
+      "historicalExactPrintNotCertified": true,
+      "stagedDrafts": [],
+      "requiresOwnerDecision": true,
+      "automaticallyApproved": false
+    },
+    {
+      "masterId": "AO-AQ-026",
+      "title": "Infant Jesus prayer for student",
+      "priority": "P3",
+      "originalDecision": "DEFER",
+      "sourceUrl": "https://icrspfrance.fr/?page=child-jesus-prayers",
+      "sourceGroup": "ICFR",
+      "targetModule": "Before study",
+      "historicalStatusAsOf20261029": "INTENT_ONLY_NOT_TEXT",
+      "historicalOwner": "Scripture / Study opening",
+      "historicalExactPrintNotCertified": true,
+      "stagedDrafts": [],
+      "requiresOwnerDecision": true,
+      "automaticallyApproved": false
+    },
+    {
+      "masterId": "AO-AQ-027",
+      "title": "Consecration of children to Infant Jesus",
+      "priority": "P3",
+      "originalDecision": "DEFER",
+      "sourceUrl": "https://icrspfrance.fr/?page=child-jesus-court-of-honour",
+      "sourceGroup": "ICFRCON",
+      "targetModule": "Family / Infant Jesus",
+      "historicalStatusAsOf20261029": "EDITORIALLY_DEFERRED",
+      "historicalOwner": null,
+      "historicalExactPrintNotCertified": true,
+      "stagedDrafts": [],
+      "requiresOwnerDecision": true,
+      "automaticallyApproved": false
+    },
+    {
+      "masterId": "AO-AQ-028",
+      "title": "Personal Infant Jesus consecration (adult)",
+      "priority": "P3",
+      "originalDecision": "DEFER",
+      "sourceUrl": "https://icrspfrance.fr/?page=child-jesus-court-of-honour",
+      "sourceGroup": "ICFRCON",
+      "targetModule": "Infant Jesus",
+      "historicalStatusAsOf20261029": "EDITORIALLY_DEFERRED",
+      "historicalOwner": null,
+      "historicalExactPrintNotCertified": true,
+      "stagedDrafts": [],
+      "requiresOwnerDecision": true,
+      "automaticallyApproved": false
+    },
+    {
+      "masterId": "AO-AQ-029",
+      "title": "Little Crown of the Infant Jesus",
+      "priority": "P2",
+      "originalDecision": "ADD_LATER",
+      "sourceUrl": "https://icrspfrance.fr/?page=child-jesus-devotions",
+      "sourceGroup": "ICFRDEV",
+      "targetModule": "Chaplets",
+      "historicalStatusAsOf20261029": "RELEASED_POST_B22",
+      "historicalOwner": "src/pray/little-crown-b30.js",
+      "historicalExactPrintNotCertified": true,
+      "stagedDrafts": [],
+      "requiresOwnerDecision": true,
+      "automaticallyApproved": false
+    },
+    {
+      "masterId": "AO-AQ-030",
+      "title": "Twelve Mondays to Infant Jesus",
+      "priority": "P3",
+      "originalDecision": "EXCLUDE",
+      "sourceUrl": "https://icrspfrance.fr/?page=child-jesus-devotions",
+      "sourceGroup": "ICFRDEV",
+      "targetModule": "Calendar",
+      "historicalStatusAsOf20261029": "EXCLUDED",
+      "historicalOwner": null,
+      "historicalExactPrintNotCertified": true,
+      "stagedDrafts": [],
+      "requiresOwnerDecision": true,
+      "automaticallyApproved": false
+    },
+    {
+      "masterId": "AO-AQ-031",
+      "title": "St Alphonsus Stations of the Cross",
+      "priority": "P1",
+      "originalDecision": "RETAIN",
+      "sourceUrl": "https://icksp.org.uk/newbrighton/the-most-holy-rosary-of-the-blessed-virgin-mary/",
+      "sourceGroup": "ICUK",
+      "targetModule": "Stations / Passion",
+      "historicalStatusAsOf20261029": "OWNED_NOT_EXACTLY_CERTIFIED",
+      "historicalOwner": "Stations of the Cross reader",
+      "historicalExactPrintNotCertified": true,
+      "stagedDrafts": [],
+      "requiresOwnerDecision": false,
+      "automaticallyApproved": false
+    },
+    {
+      "masterId": "AO-AQ-032",
+      "title": "Litany to St Philomena",
+      "priority": "P3",
+      "originalDecision": "DEFER",
+      "sourceUrl": "https://icksp.org.uk/newbrighton/wp-content/uploads/sites/2/2023/12/Devotions-Saint-Philomena-A5.pdf",
+      "sourceGroup": "ICUKPH",
+      "targetModule": "Saints",
+      "historicalStatusAsOf20261029": "EDITORIALLY_DEFERRED",
+      "historicalOwner": null,
+      "historicalExactPrintNotCertified": true,
+      "stagedDrafts": [
+        {
+          "prNumber": 2824,
+          "provisionalRecommendation": "DEFER_UNLESS_REQUESTED"
+        }
+      ],
+      "requiresOwnerDecision": true,
+      "automaticallyApproved": false
+    },
+    {
+      "masterId": "AO-AQ-033",
+      "title": "Novena prayer to St Philomena",
+      "priority": "P3",
+      "originalDecision": "DEFER",
+      "sourceUrl": "https://icksp.org.uk/newbrighton/wp-content/uploads/sites/2/2023/12/Devotions-Saint-Philomena-A5.pdf",
+      "sourceGroup": "ICUKPH",
+      "targetModule": "Novenas",
+      "historicalStatusAsOf20261029": "EDITORIALLY_DEFERRED",
+      "historicalOwner": null,
+      "historicalExactPrintNotCertified": true,
+      "stagedDrafts": [
+        {
+          "prNumber": 2824,
+          "provisionalRecommendation": "DEFER_UNLESS_REQUESTED"
+        }
+      ],
+      "requiresOwnerDecision": true,
+      "automaticallyApproved": false
+    }
+  ],
+  "redBookletKnownItems": [
+    {
+      "kind": "COMMUNION_READER_POINTER",
+      "pointerId": "pre_thomas",
+      "sourceId": "beforeThomas",
+      "title": "Prayer of St Thomas Aquinas Before Communion",
+      "printedPage": 5,
+      "route": "pray.communion_treasury",
+      "languages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceOwner": "src/pray/traditional-pray-data.js",
+      "exact2013EnglishCollated": false,
+      "sourceBodyPresent": true,
+      "readerPhoneCertifiedThisPass": false
+    },
+    {
+      "kind": "COMMUNION_READER_POINTER",
+      "pointerId": "pre_ambrose",
+      "sourceId": "beforeAmbrose",
+      "title": "Prayer of St Ambrose Before Communion",
+      "printedPage": 6,
+      "route": "pray.communion_treasury",
+      "languages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceOwner": "src/pray/traditional-pray-data.js",
+      "exact2013EnglishCollated": false,
+      "sourceBodyPresent": true,
+      "readerPhoneCertifiedThisPass": false
+    },
+    {
+      "kind": "COMMUNION_READER_POINTER",
+      "pointerId": "communion_thanks",
+      "sourceId": "thanksgivingMyGoodJesus",
+      "title": "Thanksgiving After Communion · My Good Jesus",
+      "printedPage": 62,
+      "route": "pray.communion_treasury",
+      "languages": [
+        "en"
+      ],
+      "sourceOwner": "src/pray/traditional-pray-data.js",
+      "exact2013EnglishCollated": false,
+      "sourceBodyPresent": true,
+      "readerPhoneCertifiedThisPass": false
+    },
+    {
+      "kind": "COMMUNION_READER_POINTER",
+      "pointerId": "communion_heart",
+      "sourceId": "eucharisticHeartAspiration",
+      "title": "May the Heart of Jesus in the Most Blessed Sacrament",
+      "printedPage": 62,
+      "route": "pray.communion_treasury",
+      "languages": [
+        "en"
+      ],
+      "sourceOwner": "src/pray/traditional-pray-data.js",
+      "exact2013EnglishCollated": false,
+      "sourceBodyPresent": true,
+      "readerPhoneCertifiedThisPass": false
+    },
+    {
+      "kind": "COMMUNION_READER_POINTER",
+      "pointerId": "holy_spirit_augustine",
+      "sourceId": "holySpiritAugustineTraditional",
+      "title": "Prayer to the Holy Spirit · Traditional Attribution",
+      "printedPage": 65,
+      "route": "pray.communion_treasury",
+      "languages": [
+        "en"
+      ],
+      "sourceOwner": "src/pray/traditional-pray-data.js",
+      "exact2013EnglishCollated": false,
+      "sourceBodyPresent": true,
+      "readerPhoneCertifiedThisPass": false
+    },
+    {
+      "kind": "COMMUNION_READER_POINTER",
+      "pointerId": "our_lady_65",
+      "sourceId": "ourLadyAfterCommunionTraditional",
+      "title": "A Prayer to Our Lady After Communion",
+      "printedPage": 65,
+      "route": "pray.communion_treasury",
+      "languages": [
+        "en"
+      ],
+      "sourceOwner": "src/pray/traditional-pray-data.js",
+      "exact2013EnglishCollated": false,
+      "sourceBodyPresent": true,
+      "readerPhoneCertifiedThisPass": false
+    },
+    {
+      "kind": "COMMUNION_READER_POINTER",
+      "pointerId": "communion_dying",
+      "sourceId": "mercifulJesusDying1911",
+      "title": "Prayer for Those in Their Agony · O Most Merciful Jesus",
+      "printedPage": 64,
+      "route": "pray.communion_treasury",
+      "languages": [
+        "en"
+      ],
+      "sourceOwner": "src/pray/traditional-pray-data.js",
+      "exact2013EnglishCollated": false,
+      "sourceBodyPresent": true,
+      "readerPhoneCertifiedThisPass": false
+    },
+    {
+      "kind": "COMMUNION_READER_POINTER",
+      "pointerId": "communion_heart_intercession",
+      "sourceId": "sacredHeartIntercession1910",
+      "title": "Prayer to the Sacred Heart for the Church",
+      "printedPage": 64,
+      "route": "pray.communion_treasury",
+      "languages": [
+        "en"
+      ],
+      "sourceOwner": "src/pray/traditional-pray-data.js",
+      "exact2013EnglishCollated": false,
+      "sourceBodyPresent": true,
+      "readerPhoneCertifiedThisPass": false
+    },
+    {
+      "kind": "COMMUNION_READER_POINTER",
+      "pointerId": "communion_thomas",
+      "sourceId": "afterThomas",
+      "title": "Prayer of St Thomas Aquinas After Communion",
+      "printedPage": 64,
+      "route": "pray.communion_treasury",
+      "languages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceOwner": "src/pray/traditional-pray-data.js",
+      "exact2013EnglishCollated": false,
+      "sourceBodyPresent": true,
+      "readerPhoneCertifiedThisPass": false
+    },
+    {
+      "kind": "COMMUNION_READER_POINTER",
+      "pointerId": "communion_bonaventure",
+      "sourceId": "afterBonaventure",
+      "title": "Prayer of St Bonaventure After Communion",
+      "printedPage": 63,
+      "route": "pray.communion_treasury",
+      "languages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceOwner": "src/pray/traditional-pray-data.js",
+      "exact2013EnglishCollated": false,
+      "sourceBodyPresent": true,
+      "readerPhoneCertifiedThisPass": false
+    },
+    {
+      "kind": "COMMUNION_READER_POINTER",
+      "pointerId": "crucifix",
+      "sourceId": "enEgo",
+      "title": "Prayer Before a Crucifix · En ego",
+      "printedPage": 65,
+      "route": "pray.communion_treasury",
+      "languages": [
+        "en",
+        "fr",
+        "la"
+      ],
+      "sourceOwner": "src/pray/traditional-pray-data.js",
+      "exact2013EnglishCollated": false,
+      "sourceBodyPresent": true,
+      "readerPhoneCertifiedThisPass": false
+    },
+    {
+      "kind": "SUSCIPE_READER_POINTER",
+      "pointerId": "ignatius_suscipe",
+      "sourceId": "ignatius_suscipe_lasance_1908_en / ignatius_suscipe_lasance_1908_la",
+      "title": "Suscipe — St Ignatius of Loyola",
+      "printedPage": 62,
+      "route": "pray.morning_evening",
+      "languages": [
+        "en",
+        "la"
+      ],
+      "sourceOwner": "src/pray/prayer-acquisition-historical-witnesses.v1.js",
+      "exact2013EnglishCollated": false,
+      "sourceBodyPresent": true,
+      "readerPhoneCertifiedThisPass": false
+    },
+    {
+      "kind": "PRIVATE_HISTORIC_READER_POINTER",
+      "pointerId": "before_mass",
+      "sourceId": "massFourEndsDeclaration1904",
+      "title": "Declaration of Intention Before Mass",
+      "route": "mass.prepare",
+      "printedPage": 3,
+      "languages": [
+        "en"
+      ],
+      "sourceOwner": "src/pray/red-booklet-private-historical-works.v1.js",
+      "sourceBodyPresent": true,
+      "exact2013EnglishCollated": false,
+      "readerPhoneCertifiedThisPass": false
+    },
+    {
+      "kind": "PRIVATE_HISTORIC_READER_POINTER",
+      "pointerId": "conf_exam_prayer",
+      "sourceId": "confAfterExaminationTraditional",
+      "title": "Prayer After Examination of Conscience",
+      "route": "pray.confession",
+      "printedPage": 61,
+      "languages": [
+        "en"
+      ],
+      "sourceOwner": "src/pray/red-booklet-private-historical-works.v1.js",
+      "sourceBodyPresent": true,
+      "exact2013EnglishCollated": false,
+      "readerPhoneCertifiedThisPass": false
+    },
+    {
+      "kind": "PRIVATE_HISTORIC_READER_POINTER",
+      "pointerId": "conf_thanksgiving",
+      "sourceId": "confThanksgivingLasance1910",
+      "title": "Thanksgiving After Confession",
+      "route": "pray.confession",
+      "printedPage": 61,
+      "languages": [
+        "en"
+      ],
+      "sourceOwner": "src/pray/red-booklet-private-historical-works.v1.js",
+      "sourceBodyPresent": true,
+      "exact2013EnglishCollated": false,
+      "readerPhoneCertifiedThisPass": false
+    },
+    {
+      "kind": "PRIVATE_HISTORIC_READER_POINTER",
+      "pointerId": "conf_joseph",
+      "sourceId": "confJosephPurity1896",
+      "title": "Prayer to St Joseph for Purity",
+      "route": "pray.confession",
+      "printedPage": 61,
+      "languages": [
+        "en"
+      ],
+      "sourceOwner": "src/pray/red-booklet-private-historical-works.v1.js",
+      "sourceBodyPresent": true,
+      "exact2013EnglishCollated": false,
+      "readerPhoneCertifiedThisPass": false
+    },
+    {
+      "kind": "BOOKLET_SHORT_ENGLISH_VARIANT_WITNESS",
+      "pointerId": "guardianAngelConfession",
+      "title": "Guardian Angel · before Confession",
+      "printedPage": 59,
+      "route": "pray.confession",
+      "mode": "supplemental_private_invocation",
+      "languages": [
+        "en"
+      ],
+      "sourceOwner": "src/pray/red-booklet-2013-variant-witnesses.v1.js",
+      "exact2013EnglishCollated": true,
+      "sourceBodyPresent": true,
+      "readerPhoneCertifiedThisPass": false
+    },
+    {
+      "kind": "BOOKLET_SHORT_ENGLISH_VARIANT_WITNESS",
+      "pointerId": "heartAspirations",
+      "title": "Short aspirations to the Sacred Heart",
+      "printedPage": 64,
+      "route": "pray.communion_treasury",
+      "mode": "optional_after_communion",
+      "languages": [
+        "en"
+      ],
+      "sourceOwner": "src/pray/red-booklet-2013-variant-witnesses.v1.js",
+      "exact2013EnglishCollated": true,
+      "sourceBodyPresent": true,
+      "readerPhoneCertifiedThisPass": false
+    },
+    {
+      "kind": "BOOKLET_SHORT_ENGLISH_VARIANT_WITNESS",
+      "pointerId": "fatimaDecade",
+      "title": "Fatima decade prayer · 2013 booklet form",
+      "printedPage": 67,
+      "route": "pray.rosary",
+      "mode": "source_comparison_only",
+      "languages": [
+        "en"
+      ],
+      "sourceOwner": "src/pray/red-booklet-2013-variant-witnesses.v1.js",
+      "exact2013EnglishCollated": true,
+      "sourceBodyPresent": true,
+      "readerPhoneCertifiedThisPass": false
+    }
+  ]
+}
