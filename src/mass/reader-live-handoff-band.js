@@ -56,7 +56,7 @@ export function approvedStageBPlanSvg(){
     +'</svg>';
 }
 const CSS=[
-".ao-reader-shell.ao-live-band-enabled{grid-template-rows:56px 64px var(--ao-live-band-height,230px) minmax(0,1fr)}",
+".ao-reader-shell.ao-live-band-enabled{grid-template-rows:56px 64px minmax(96px,min(var(--ao-live-band-height,230px),calc(100dvh - 380px))) minmax(0,1fr);transition:grid-template-rows .24s ease}",
 ".ao-live-band[hidden]{display:none!important}",
 ".ao-live-band{position:relative;min-height:0;overflow:hidden;background:linear-gradient(145deg,#111b1c,#192322 55%,#121a1a);border-bottom:1px solid rgba(225,205,148,.24)}",
 ".ao-lb-window{height:calc(100% - 31px);overflow:hidden;touch-action:pan-y}",
@@ -126,7 +126,7 @@ export function mountLiveHandoffBand({preview,doc=globalThis.document,
   shell.insertBefore(style,stage);shell.insertBefore(band,stage);
   let preference=null;
   try{preference=normalizeLiveBandPreference(storage?.getItem(LIVE_BAND_STORAGE_KEY));}catch{}
-  let page=0,disposed=false,lastModel=null,lastCrosswalk=null,lastId=null,drag=null,swipe=null;
+  let page=0,disposed=false,lastModel=null,lastCrosswalk=null,lastId=null,drag=null,swipe=null,lastTap=0;
   const pages=[...band.querySelectorAll(".ao-lb-page")];
   const dots=[...band.querySelectorAll("[data-lb-page]")];
   const frame=band.querySelector(".ao-lb-pages");
@@ -208,7 +208,9 @@ export function mountLiveHandoffBand({preview,doc=globalThis.document,
   handle.addEventListener("pointerup",event=>{
     if(!drag)return;
     const value=bound(drag.height+drag.y-event.clientY,96,460);drag=null;
-    setManualHeight(value);
+    const now=Date.now();
+    if(now-lastTap<340){lastTap=0;adaptive();return;}
+    lastTap=now;setManualHeight(value);
   });
   handle.addEventListener("pointercancel",()=>{drag=null;refresh();});
   handle.addEventListener("dblclick",adaptive);
