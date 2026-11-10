@@ -94,8 +94,8 @@ try{
    await page.locator("[data-find-tlm-country-reset]").click();
    await page.waitForFunction(()=>["FR","US"].every(cc=>
     document.querySelector('[data-find-tlm-country="'+cc+'"]')?.getAttribute("aria-pressed")==="false"),null,{timeout:25000});
-   // CL27 public axes: 1962 is a celebration-level programme witness, not
-   // venue-wide status. Exercise advanced filters at 320/390/1440 widths.
+   // CL27 1962 includes 1,300 exact source-ministry norms and two named
+   // celebration witnesses; neither is venue-wide status. Test at all widths.
    const cl27=page.locator(".aoTlmCl27Facet");
    assert.equal(await cl27.count(),1,"One CL27 map disclosure");
    await cl27.locator("summary").first().click();
@@ -103,8 +103,9 @@ try{
    assert.equal(await page.locator('[data-find-cl27-axis="una_cum"][data-find-cl27-value="YES"]').count(),0,
     "Una Cum has no unapproved positive filter");
    const missal1962=page.locator('[data-find-cl27-axis="missal_edition"][data-find-cl27-value="1962"]');
-   assert.equal(await missal1962.count(),1,"Two approved programme witnesses are filterable");
-   assert.ok((await missal1962.innerText()).includes("(2)"),"Witness count remains two");
+   assert.equal(await missal1962.count(),1,"One 1962 Missal filter includes scoped evidence");
+   assert.ok((await missal1962.innerText()).includes("(1302)"),
+    "1962 must count 1300 ministry norms plus two specific Mass witnesses");
    await missal1962.click();
    await page.waitForFunction(()=>document.querySelector(
     '[data-find-cl27-axis="missal_edition"][data-find-cl27-value="1962"]'
