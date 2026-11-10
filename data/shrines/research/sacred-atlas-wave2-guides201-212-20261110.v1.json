@@ -1,0 +1,738 @@
+{
+  "schema": "AO_SACRED_ATLAS_WAVE2_GUIDES201_212_DRAFT_V1",
+  "as_of": "2026-11-10",
+  "status": "RESEARCH_DRAFT_BILINGUAL_NOT_PUBLISHED",
+  "based_on": "data/shrines/shrines-pilgrimages-seed.v1.json",
+  "counts": {
+    "guides": 12,
+    "sections": 36,
+    "published": 0
+  },
+  "policy": [
+    "Historic details limited by the linked existing record, with no new source-page fetch. Source verification and French proofreading pending.",
+    "One physical sanctuary per canonical Place ID; no shared media or imported apparition or rite claim.",
+    "No publication, admission, GPS changes or unapproved images."
+  ],
+  "guides": [
+    {
+      "place_id": "place:LT:divine-mercy-sanctuary-vilnius",
+      "place_name": "Divine Mercy Sanctuary, Vilnius",
+      "country_code": "LT",
+      "shrine_id": "shrine:LT:divine-mercy-sanctuary-vilnius",
+      "draft_order": 201,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Vilnius’s original 1934 Divine Mercy painting and the Catholic sanctuary that houses it.",
+      "subtitle_fr": "La peinture originale de la Divine Miséricorde de 1934 à Vilnius et le sanctuaire catholique qui la conserve.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The 1934 image",
+          "title_fr": "L’image de 1934",
+          "paragraphs": [
+            {
+              "en": "The Divine Mercy Sanctuary in Vilnius houses the painting made by Eugeniusz Kazimirowski in 1934 following Saint Faustina Kowalska’s instructions. This original work has a distinct place in the devotion’s history. It should not be confused with the different Divine Mercy image venerated at Kraków-Łagiewniki or later reproductions.",
+              "fr": "Le sanctuaire de la Divine Miséricorde de Vilnius conserve le tableau exécuté en 1934 par Eugeniusz Kazimirowski selon les indications de sainte Faustine Kowalska. Cette œuvre originale possède une place particulière dans l’histoire de la dévotion. Il ne faut pas la confondre avec une autre image vénérée à Cracovie-Łagiewniki ni avec les copies ultérieures.",
+              "source_id": "SG-SITE-SG-GEO-P3-004",
+              "source_url": "https://parapijos.lt/en/church/vilniaus/Vilniaus-Dievo-Gailestingumo-%C5%A1ventov%C4%97"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The Vilnius setting",
+          "title_fr": "Le cadre de Vilnius",
+          "paragraphs": [
+            {
+              "en": "The sanctuary is an actual Catholic church in Vilnius, linked to the early history of the Divine Mercy image and its veneration. The painting and the church’s physical setting are related but separate historical facts. The guide should keep Vilnius distinct from Saint Faustina’s tomb in Poland, which belongs to another shrine.",
+              "fr": "Le sanctuaire est une église catholique réelle de Vilnius, liée aux débuts de l’histoire de l’image de la Miséricorde divine et de sa vénération. Le tableau et le cadre physique de l’église sont des faits historiques liés mais différents. Le guide doit distinguer Vilnius du tombeau de sainte Faustine en Pologne, qui appartient à un autre sanctuaire.",
+              "source_id": "SG-SITE-SG-GEO-P3-004",
+              "source_url": "https://parapijos.lt/en/church/vilniaus/Vilniaus-Dievo-Gailestingumo-%C5%A1ventov%C4%97"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Prayer before the image",
+          "title_fr": "Prière devant l’image",
+          "paragraphs": [
+            {
+              "en": "Pilgrims come to pray before the original painting within the living sanctuary. Its presence gives Vilnius a distinctive place in a pilgrimage exploring the history of the Divine Mercy devotion. Current Masses and access must be confirmed with the church rather than assumed from the date when the picture was painted.",
+              "fr": "Les pèlerins viennent prier devant le tableau original dans ce sanctuaire toujours vivant. Sa présence donne à Vilnius une place singulière dans un pèlerinage sur l’histoire de la dévotion à la Miséricorde divine. Les messes et l’accès actuels doivent être confirmés auprès de l’église, non déduits de la date d’exécution du tableau.",
+              "source_id": "SG-SITE-SG-GEO-P3-004",
+              "source_url": "https://parapijos.lt/en/church/vilniaus/Vilniaus-Dievo-Gailestingumo-%C5%A1ventov%C4%97"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://parapijos.lt/en/church/vilniaus/Vilniaus-Dievo-Gailestingumo-%C5%A1ventov%C4%97"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:IN:basilica-of-our-lady-of-lourdes-poondi",
+      "place_name": "Basilica of Our Lady of Lourdes, Poondi",
+      "country_code": "IN",
+      "shrine_id": "shrine:IN:basilica-of-our-lady-of-lourdes-poondi",
+      "draft_order": 202,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A Tamil Nadu Catholic Marian basilica dedicated to Our Lady of Lourdes.",
+      "subtitle_fr": "Une basilique mariale catholique du Tamil Nadu dédiée à Notre-Dame de Lourdes.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Our Lady of Lourdes at Poondi",
+          "title_fr": "Notre-Dame de Lourdes à Poondi",
+          "paragraphs": [
+            {
+              "en": "The Basilica of Our Lady of Lourdes at Poondi is a Catholic Marian destination in Tamil Nadu, India. Its dedication reflects devotion to the Virgin under the title associated with Lourdes in France. The basilica is a distinct Indian church with its own community, not the site of the events reported at Massabielle in 1858.",
+              "fr": "La basilique Notre-Dame de Lourdes à Poondi est une destination mariale catholique du Tamil Nadu, en Inde. Sa dédicace reflète la dévotion à la Vierge sous le titre associé à Lourdes en France. La basilique est une église indienne distincte possédant sa propre communauté, non le lieu des événements rapportés à Massabielle en 1858.",
+              "source_id": "SG-SITE-SG-GEO-P3-007",
+              "source_url": "https://mapcarta.com/W424972317"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A local Marian pilgrimage church",
+          "title_fr": "Une église locale de pèlerinage marial",
+          "paragraphs": [
+            {
+              "en": "Poondi’s church gives a concrete destination to the Lourdes devotion within the Catholic life of southern India. Its architectural and pastoral identity belongs to the local sanctuary rather than to the original French basilicas. A profile should name the Poondi building accurately and avoid transferring photographs, alleged miracles or site features from Lourdes.",
+              "fr": "L’église de Poondi offre une destination concrète à la dévotion de Lourdes dans la vie catholique du sud de l’Inde. Son identité architecturale et pastorale appartient au sanctuaire local plutôt qu’aux basiliques françaises d’origine. La fiche doit nommer exactement l’édifice de Poondi et éviter de transférer depuis Lourdes des photographies, miracles allégués ou caractéristiques du site.",
+              "source_id": "SG-SITE-SG-GEO-P3-007",
+              "source_url": "https://mapcarta.com/W424972317"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A place for prayer in Tamil Nadu",
+          "title_fr": "Un lieu de prière au Tamil Nadu",
+          "paragraphs": [
+            {
+              "en": "Pilgrims may visit the basilica for Marian prayer and Catholic worship in the regional context of Tamil Nadu. Its dedication and location are established in the canonical Place record, but detailed annual processions or the use of a particular Missal cannot be inferred from that information. Present practical arrangements require a current local source.",
+              "fr": "Les pèlerins peuvent visiter la basilique pour la prière mariale et le culte catholique dans le contexte régional du Tamil Nadu. Sa dédicace et sa situation sont consignées dans la fiche canonique, mais on ne peut en déduire le détail de processions annuelles ni l’usage d’un missel particulier. Les dispositions pratiques actuelles exigent une source locale à jour.",
+              "source_id": "SG-SITE-SG-GEO-P3-007",
+              "source_url": "https://mapcarta.com/W424972317"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://mapcarta.com/W424972317"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:LK:shrine-of-our-lady-of-madhu",
+      "place_name": "Shrine of Our Lady of Madhu",
+      "country_code": "LK",
+      "shrine_id": "shrine:LK:shrine-of-our-lady-of-madhu",
+      "draft_order": 203,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Sri Lanka’s northern Marian shrine of Our Lady of Madhu and its revered image.",
+      "subtitle_fr": "Le sanctuaire marial du nord du Sri Lanka consacré à Notre-Dame de Madhu et à son image vénérée.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The image of Our Lady of Madhu",
+          "title_fr": "L’image de Notre-Dame de Madhu",
+          "paragraphs": [
+            {
+              "en": "The Shrine of Our Lady of Madhu is one of Sri Lanka’s important Catholic Marian destinations. Devotion centres on an image of the Virgin honoured under the title of Madhu. The specific image and sanctuary provide a religious identity that should not be confused with Sri Lanka’s other Marian basilicas or pilgrimage churches.",
+              "fr": "Le sanctuaire Notre-Dame de Madhu est l’une des importantes destinations mariales catholiques du Sri Lanka. La dévotion y est centrée sur une image de la Vierge honorée sous le titre de Madhu. Cette image et ce sanctuaire particuliers donnent une identité religieuse à ne pas confondre avec les autres basiliques mariales ou églises de pèlerinage du pays.",
+              "source_id": "SG-SITE-SG-GEO-P3-008",
+              "source_url": "https://mapcarta.com/W483435994"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A northern Sri Lankan destination",
+          "title_fr": "Une destination du nord du Sri Lanka",
+          "paragraphs": [
+            {
+              "en": "The sanctuary lies in northern Sri Lanka and draws pilgrims seeking Marian intercession for their families and intentions. Its place in Catholic religious life is linked to the actual shrine, not a generic image of the Madonna. A history should preserve the local name and setting without inventing unsupported dates for the arrival of the image.",
+              "fr": "Le sanctuaire se trouve dans le nord du Sri Lanka et attire les pèlerins qui confient leurs familles et leurs intentions à l’intercession mariale. Sa place dans la vie religieuse catholique est liée au sanctuaire réel, non à une image générique de la Vierge. Le récit doit préserver le nom et le cadre locaux sans inventer de dates non attestées pour l’arrivée de l’image.",
+              "source_id": "SG-SITE-SG-GEO-P3-008",
+              "source_url": "https://mapcarta.com/W483435994"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "The pilgrim and the sanctuary",
+          "title_fr": "Le pèlerin et le sanctuaire",
+          "paragraphs": [
+            {
+              "en": "Madhu functions as a place of communal Catholic prayer as well as personal devotion. The image is the central focus, while the surrounding sanctuary provides the physical setting for pilgrimage. An approximate map reference is sufficient for discovery; actual worship programmes and arrival conditions must be obtained from local custodians.",
+              "fr": "Madhu est un lieu de prière catholique communautaire autant que de dévotion personnelle. L’image en est le foyer central, tandis que l’ensemble du sanctuaire fournit le cadre physique du pèlerinage. Une référence cartographique approximative suffit à la découverte ; les programmes liturgiques et conditions d’arrivée doivent être obtenus auprès des responsables locaux.",
+              "source_id": "SG-SITE-SG-GEO-P3-008",
+              "source_url": "https://mapcarta.com/W483435994"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://mapcarta.com/W483435994"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:PH:national-shrine-of-our-lady-of-lourdes-quezon-city",
+      "place_name": "National Shrine of Our Lady of Lourdes, Quezon City",
+      "country_code": "PH",
+      "shrine_id": "shrine:PH:national-shrine-of-our-lady-of-lourdes-quezon-city",
+      "draft_order": 204,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The national Marian shrine of Lourdes in Quezon City, distinct from the French sanctuary.",
+      "subtitle_fr": "Le sanctuaire marial national de Lourdes à Quezon City, distinct du sanctuaire français.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Lourdes devotion in Quezon City",
+          "title_fr": "La dévotion à Lourdes à Quezon City",
+          "paragraphs": [
+            {
+              "en": "The National Shrine of Our Lady of Lourdes in Quezon City is an identifiable Catholic pilgrimage church in the Philippines. It is dedicated to the Virgin under the Lourdes title, which links its prayer life to the memory of the French sanctuary. The reported events in France are not presented as having occurred at this Filipino location.",
+              "fr": "Le sanctuaire national Notre-Dame de Lourdes à Quezon City est une église catholique de pèlerinage identifiable aux Philippines. Il est dédié à la Vierge sous le titre de Lourdes, reliant sa vie de prière à la mémoire du sanctuaire français. Les événements rapportés en France ne sont pas présentés comme s’étant déroulés dans ce lieu philippin.",
+              "source_id": "SG-SITE-SG-GEO-P3-009",
+              "source_url": "https://nsoll.ph/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A shrine of a particular city",
+          "title_fr": "Un sanctuaire d’une ville précise",
+          "paragraphs": [
+            {
+              "en": "The national shrine’s custodians publish information for their Quezon City church, making it a local Catholic institution with its own responsibilities. Its national title must remain attached to this named building and not be applied to every Lourdes grotto or Marian church in the Philippines. The church’s current life is distinct from the history of the original Lourdes apparitions.",
+              "fr": "Les responsables du sanctuaire national publient des renseignements pour leur église de Quezon City, institution catholique locale ayant ses propres responsabilités. Son titre national doit rester lié à cet édifice nommé et ne pas s’étendre à toute grotte de Lourdes ou église mariale des Philippines. La vie actuelle de cette église se distingue de l’histoire des apparitions originelles de Lourdes.",
+              "source_id": "SG-SITE-SG-GEO-P3-009",
+              "source_url": "https://nsoll.ph/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Prayer and present-day celebrations",
+          "title_fr": "Prière et célébrations actuelles",
+          "paragraphs": [
+            {
+              "en": "Pilgrims visit for Marian devotion and the worship of an active Catholic shrine. The dedication encourages prayer but does not itself determine a Mass timetable, approved image or particular local pilgrimage procession. Those practical details should come from the national shrine’s official communications rather than another church with the same title.",
+              "fr": "Les pèlerins viennent pour la dévotion mariale et le culte d’un sanctuaire catholique en activité. La dédicace encourage la prière sans déterminer à elle seule un horaire de messe, une image approuvée ou une procession locale particulière. Ces détails pratiques doivent provenir des communications officielles du sanctuaire national, et non d’une autre église portant le même titre.",
+              "source_id": "SG-SITE-SG-GEO-P3-009",
+              "source_url": "https://nsoll.ph/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://nsoll.ph/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:PH:national-shrine-of-our-lady-of-fatima-valenzuela",
+      "place_name": "National Shrine of Our Lady of Fatima, Valenzuela",
+      "country_code": "PH",
+      "shrine_id": "shrine:PH:national-shrine-of-our-lady-of-fatima-valenzuela",
+      "draft_order": 205,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A Valenzuela national shrine dedicated to the Marian devotion of Fátima.",
+      "subtitle_fr": "Un sanctuaire national de Valenzuela dédié à la dévotion mariale de Fátima.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Our Lady of Fátima in Valenzuela",
+          "title_fr": "Notre-Dame de Fátima à Valenzuela",
+          "paragraphs": [
+            {
+              "en": "The National Shrine of Our Lady of Fátima at Valenzuela honours the Virgin under the title associated with the reported Portuguese apparitions. The Filipino church is a named Catholic destination with a distinct local religious community. Its dedication does not make Valenzuela an alternative geographical location for the 1917 events at Fátima.",
+              "fr": "Le sanctuaire national Notre-Dame de Fátima à Valenzuela honore la Vierge sous le titre lié aux apparitions rapportées au Portugal. L’église philippine est une destination catholique nommée, dotée d’une communauté religieuse locale distincte. Sa dédicace ne fait pas de Valenzuela un autre lieu géographique des événements de Fátima de 1917.",
+              "source_id": "SG-SITE-SG-GEO-P3-010",
+              "source_url": "https://mapcarta.com/W50982921"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A national shrine and a local church",
+          "title_fr": "Un sanctuaire national et une église locale",
+          "paragraphs": [
+            {
+              "en": "The shrine’s national designation expresses a particular devotional role while its physical building belongs to the Catholic life of Valenzuela. A guide should identify the actual church and its Marian title without assuming that every Filipino Fátima image is housed there. The sanctuary’s religious function should be kept distinct from the original Portuguese story.",
+              "fr": "La désignation nationale du sanctuaire exprime un rôle dévotionnel particulier, tandis que son édifice appartient à la vie catholique de Valenzuela. Le guide doit identifier l’église réelle et son titre marial sans supposer que toutes les images philippine de Fátima y soient conservées. Sa fonction religieuse doit rester distincte du récit portugais originel.",
+              "source_id": "SG-SITE-SG-GEO-P3-010",
+              "source_url": "https://mapcarta.com/W50982921"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A living place of Marian prayer",
+          "title_fr": "Un lieu vivant de prière mariale",
+          "paragraphs": [
+            {
+              "en": "Pilgrims come to the Valenzuela shrine to pray under the patronage of Our Lady of Fátima. Its history has to be told through its own community and site, not by reproducing a French or Portuguese sanctuary card. Detailed celebrations, current access and any particular rite require separate contemporary local evidence.",
+              "fr": "Les pèlerins viennent au sanctuaire de Valenzuela prier sous le patronage de Notre-Dame de Fátima. Son histoire doit être racontée à travers sa communauté et son lieu propres, non par la reproduction d’une fiche de sanctuaire français ou portugais. Les célébrations détaillées, les accès actuels et tout rite particulier exigent des preuves locales contemporaines.",
+              "source_id": "SG-SITE-SG-GEO-P3-010",
+              "source_url": "https://mapcarta.com/W50982921"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://mapcarta.com/W50982921"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:PH:national-shrine-of-our-lady-of-guadalupe-makati",
+      "place_name": "National Shrine of Our Lady of Guadalupe, Makati",
+      "country_code": "PH",
+      "shrine_id": "shrine:PH:national-shrine-of-our-lady-of-guadalupe-makati",
+      "draft_order": 206,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Makati’s Marian shrine of Guadalupe, distinct from Tepeyac and Extremadura.",
+      "subtitle_fr": "Le sanctuaire marial de Guadalupe à Makati, distinct de Tepeyac et de l’Estrémadure.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Guadalupe in Makati",
+          "title_fr": "Guadalupe à Makati",
+          "paragraphs": [
+            {
+              "en": "The National Shrine of Our Lady of Guadalupe in Makati is a Catholic destination in the Philippines. Its dedication shares a Marian name with historic shrines in Mexico and Spain while retaining a separate Filipino religious setting. A correct profile must identify Makati itself, rather than silently transferring the architecture or history of Tepeyac.",
+              "fr": "Le sanctuaire national Notre-Dame de Guadalupe à Makati est une destination catholique des Philippines. Sa dédicace partage un nom marial avec des sanctuaires historiques du Mexique et d’Espagne tout en conservant un cadre religieux philippin distinct. Une fiche exacte doit identifier Makati lui-même, sans transférer silencieusement l’architecture ou l’histoire de Tepeyac.",
+              "source_id": "SG-SITE-SG-GEO-P3-011",
+              "source_url": "https://mapcarta.com/W153741157"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The meaning of a shared Marian title",
+          "title_fr": "Le sens d’un titre marial partagé",
+          "paragraphs": [
+            {
+              "en": "The title Guadalupe connects Catholic communities through a common devotion to Mary, but it does not make their churches one and the same physical site. The Makati shrine has its own custodians and worshipping community. Historical claims about the Mexican apparition tradition need to be attributed to that source tradition, not assigned to Makati.",
+              "fr": "Le titre Guadalupe relie des communautés catholiques par une dévotion commune à Marie, mais ne transforme pas leurs églises en un seul lieu physique. Le sanctuaire de Makati possède ses responsables et sa communauté de fidèles. Les affirmations historiques concernant la tradition apparitionnelle mexicaine doivent être attribuées à cette tradition, non à Makati.",
+              "source_id": "SG-SITE-SG-GEO-P3-011",
+              "source_url": "https://mapcarta.com/W153741157"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A local destination for prayer",
+          "title_fr": "Une destination locale de prière",
+          "paragraphs": [
+            {
+              "en": "Pilgrims may visit the named Makati shrine for Marian prayer and Catholic worship. Its national title does not automatically supply a specific annual route, icon history or Mass schedule. Current information should come from the Philippine church itself, while the Sacred Atlas maintains distinct IDs for Mexican, Spanish and Filipino Guadalupe destinations.",
+              "fr": "Les pèlerins peuvent visiter le sanctuaire nommé de Makati pour la prière mariale et le culte catholique. Son titre national ne fournit pas automatiquement un itinéraire annuel, une histoire d’image ou des horaires de messe. Les renseignements actuels doivent venir de l’église philippine elle-même, tandis que l’Atlas conserve des identifiants distincts pour les Guadalupe mexicain, espagnol et philippin.",
+              "source_id": "SG-SITE-SG-GEO-P3-011",
+              "source_url": "https://mapcarta.com/W153741157"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://mapcarta.com/W153741157"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:PH:padre-pio-shrine-santo-tomas-batangas",
+      "place_name": "Padre Pio Shrine, Santo Tomas, Batangas",
+      "country_code": "PH",
+      "shrine_id": "shrine:PH:padre-pio-shrine-santo-tomas-batangas",
+      "draft_order": 207,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Philippine shrine honouring Saint Pio of Pietrelcina at Santo Tomas, Batangas.",
+      "subtitle_fr": "Le sanctuaire philippin honorant saint Pio de Pietrelcina à Santo Tomas, Batangas.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Saint Pio honoured in Batangas",
+          "title_fr": "Saint Pio honoré à Batangas",
+          "paragraphs": [
+            {
+              "en": "The shrine at Santo Tomas in Batangas honours Saint Pio of Pietrelcina, the Capuchin priest remembered for his ministry of confession, prayer and spiritual care. This is a particular Filipino pilgrimage destination founded in devotion to the Italian saint. It is not the shrine of San Giovanni Rotondo where Pio lived and died.",
+              "fr": "Le sanctuaire de Santo Tomas à Batangas honore saint Pio de Pietrelcina, prêtre capucin connu pour son ministère de la confession, de la prière et de l’accompagnement spirituel. C’est une destination philippine particulière née de la dévotion au saint italien. Il ne s’agit pas du sanctuaire de San Giovanni Rotondo où Pio vécut et mourut.",
+              "source_id": "SG-SITE-SG-GEO-P3-012",
+              "source_url": "https://mapcarta.com/National_Shrine_of_Saint_Padre_Pio_R4065077"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A saint’s memory in a different country",
+          "title_fr": "La mémoire d’un saint dans un autre pays",
+          "paragraphs": [
+            {
+              "en": "The growth of devotion to Padre Pio in the Philippines gives the Batangas sanctuary a spiritual identity tied to a distant figure of the Church. Its name and purpose can be explained without claiming that the site contains the saint’s principal tomb or was the setting of his reported extraordinary experiences. Those belong to other places and historical accounts.",
+              "fr": "Le développement de la dévotion à Padre Pio aux Philippines donne au sanctuaire de Batangas une identité spirituelle liée à une figure de l’Église vivant dans un autre pays. Le nom et la mission peuvent être expliqués sans prétendre que le lieu abrite le tombeau principal du saint ou fut le cadre de ses expériences extraordinaires rapportées. Celles-ci appartiennent à d’autres lieux et récits.",
+              "source_id": "SG-SITE-SG-GEO-P3-012",
+              "source_url": "https://mapcarta.com/National_Shrine_of_Saint_Padre_Pio_R4065077"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage and the ministry of reconciliation",
+          "title_fr": "Pèlerinage et ministère de la réconciliation",
+          "paragraphs": [
+            {
+              "en": "Pilgrims gather at this shrine for prayer associated with Padre Pio’s pastoral example. The physical destination is the Santo Tomas complex, while the saint’s biography and other shrines form contextual links. Visitors need local current information about liturgy and group access rather than a timetable borrowed from San Giovanni Rotondo.",
+              "fr": "Les pèlerins se rassemblent dans ce sanctuaire pour prier en lien avec l’exemple pastoral de Padre Pio. La destination physique est l’ensemble de Santo Tomas, tandis que la biographie du saint et les autres sanctuaires constituent des liens de contexte. Il faut obtenir localement les horaires liturgiques et les modalités de groupe, et non les emprunter à San Giovanni Rotondo.",
+              "source_id": "SG-SITE-SG-GEO-P3-012",
+              "source_url": "https://mapcarta.com/National_Shrine_of_Saint_Padre_Pio_R4065077"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://mapcarta.com/National_Shrine_of_Saint_Padre_Pio_R4065077"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:PH:national-shrine-of-saint-joseph-mandaue",
+      "place_name": "National Shrine of Saint Joseph, Mandaue",
+      "country_code": "PH",
+      "shrine_id": "shrine:PH:national-shrine-of-saint-joseph-mandaue",
+      "draft_order": 208,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Catholic national shrine dedicated to Saint Joseph in Mandaue, Cebu.",
+      "subtitle_fr": "Le sanctuaire national catholique dédié à saint Joseph à Mandaue, Cebu.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Saint Joseph at Mandaue",
+          "title_fr": "Saint Joseph à Mandaue",
+          "paragraphs": [
+            {
+              "en": "The National Shrine of Saint Joseph at Mandaue is dedicated to the spouse of the Blessed Virgin Mary and foster father of Jesus. Its designation creates a named focus for Catholic devotion in Cebu. A guide should preserve the identity of this local church rather than merge it with national Saint Joseph shrines in Croatia or other countries.",
+              "fr": "Le sanctuaire national Saint-Joseph de Mandaue est dédié à l’époux de la Bienheureuse Vierge Marie et au père nourricier de Jésus. Sa désignation crée un foyer nommé de dévotion catholique à Cebu. Le guide doit préserver l’identité de cette église locale et ne pas la confondre avec des sanctuaires nationaux de saint Joseph en Croatie ou dans d’autres pays.",
+              "source_id": "SG-SITE-SG-GEO-P3-013",
+              "source_url": "https://www.wikidata.org/wiki/Q39055340"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The guardian of the Holy Family",
+          "title_fr": "Le gardien de la Sainte Famille",
+          "paragraphs": [
+            {
+              "en": "Devotion to Saint Joseph emphasises his role in the life of Jesus and Mary, a focus reflected in the shrine’s dedication. The Mandaue church translates that universal Catholic devotion into a particular setting of worship and intercession. Its actual religious status and building should be distinguished from any unverified relic or apparition attribution.",
+              "fr": "La dévotion à saint Joseph souligne son rôle dans la vie de Jésus et de Marie, thème reflété par la dédicace du sanctuaire. L’église de Mandaue donne à cette dévotion catholique universelle un cadre particulier de culte et d’intercession. Son statut et son édifice réels doivent être distingués de toute attribution non vérifiée de relique ou d’apparition.",
+              "source_id": "SG-SITE-SG-GEO-P3-013",
+              "source_url": "https://www.wikidata.org/wiki/Q39055340"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A local sanctuary with a national title",
+          "title_fr": "Un sanctuaire local au titre national",
+          "paragraphs": [
+            {
+              "en": "The church serves as a place for prayer and pilgrimage under Saint Joseph’s patronage. A national title does not prove that every Filipino Saint Joseph celebration takes place in Mandaue or that a specific route exists. The shrine’s contemporary parish and visitor information should determine practical arrangements.",
+              "fr": "L’église est un lieu de prière et de pèlerinage sous le patronage de saint Joseph. Un titre national ne prouve ni que toutes les célébrations philippines de saint Joseph aient lieu à Mandaue ni qu’un parcours particulier existe. Les renseignements actuels de la paroisse et du sanctuaire doivent déterminer les dispositions pratiques.",
+              "source_id": "SG-SITE-SG-GEO-P3-013",
+              "source_url": "https://www.wikidata.org/wiki/Q39055340"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.wikidata.org/wiki/Q39055340"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:CI:basilica-of-our-lady-of-peace-yamoussoukro",
+      "place_name": "Basilica of Our Lady of Peace, Yamoussoukro",
+      "country_code": "CI",
+      "shrine_id": "shrine:CI:basilica-of-our-lady-of-peace-yamoussoukro",
+      "draft_order": 209,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The monumental domed Basilica of Our Lady of Peace at Yamoussoukro, Côte d’Ivoire.",
+      "subtitle_fr": "La monumentale basilique à coupole Notre-Dame de la Paix de Yamoussoukro, en Côte d’Ivoire.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A Marian basilica in Yamoussoukro",
+          "title_fr": "Une basilique mariale à Yamoussoukro",
+          "paragraphs": [
+            {
+              "en": "The Basilica of Our Lady of Peace at Yamoussoukro is a monumental Catholic church in Côte d’Ivoire dedicated to the Virgin Mary. Its immense domed architecture gives the city a recognisable religious landmark. The physical basilica should be described in its own Ivorian context rather than mistaken for Saint Peter’s Basilica in Rome because of visual similarities.",
+              "fr": "La basilique Notre-Dame de la Paix de Yamoussoukro est une église catholique monumentale de Côte d’Ivoire dédiée à la Vierge Marie. Son immense architecture à coupole donne à la ville un repère religieux reconnaissable. La basilique doit être présentée dans son contexte ivoirien propre, sans la confondre avec Saint-Pierre de Rome à cause de similitudes visuelles.",
+              "source_id": "SG-SITE-SG-GEO-P3-016",
+              "source_url": "https://www.wikidata.org/wiki/Q815584"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Architecture in the service of worship",
+          "title_fr": "L’architecture au service du culte",
+          "paragraphs": [
+            {
+              "en": "The basilica’s scale makes it an important example of modern Catholic monumental architecture in Africa. Yet it is also a place of prayer and worship, not merely an architectural attraction. A guide should identify the building’s Marian dedication alongside its physical features without inventing a local apparition origin or an undocumented relic.",
+              "fr": "L’ampleur de la basilique en fait un exemple important d’architecture monumentale catholique moderne en Afrique. Elle est cependant aussi un lieu de prière et de culte, non une simple attraction architecturale. Le guide doit présenter sa dédicace mariale avec ses caractéristiques physiques sans inventer une apparition locale ou une relique non documentée.",
+              "source_id": "SG-SITE-SG-GEO-P3-016",
+              "source_url": "https://www.wikidata.org/wiki/Q815584"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A distinct West African Catholic site",
+          "title_fr": "Un lieu catholique ouest-africain distinct",
+          "paragraphs": [
+            {
+              "en": "Pilgrims and visitors encounter a functioning Catholic basilica in Yamoussoukro, separate from other Marian national sanctuaries across Africa. It is a fixed destination rather than a pilgrimage route. Current services, visiting arrangements and photographs should be obtained from reliable local information specific to this building.",
+              "fr": "Les pèlerins et visiteurs découvrent une basilique catholique en activité à Yamoussoukro, distincte des autres sanctuaires mariaux nationaux d’Afrique. C’est une destination fixe et non un itinéraire de pèlerinage. Les offices, visites et photographies actuels doivent provenir de renseignements locaux fiables propres à cet édifice.",
+              "source_id": "SG-SITE-SG-GEO-P3-016",
+              "source_url": "https://www.wikidata.org/wiki/Q815584"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.wikidata.org/wiki/Q815584"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:basilica-of-the-national-shrine-of-our-lady-of-fatima-lewiston",
+      "place_name": "Basilica of the National Shrine of Our Lady of Fatima, Lewiston",
+      "country_code": "US",
+      "shrine_id": "shrine:US:basilica-of-the-national-shrine-of-our-lady-of-fatima-lewiston",
+      "draft_order": 210,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The American national Fátima pilgrimage basilica at Lewiston, New York.",
+      "subtitle_fr": "La basilique américaine nationale de pèlerinage à Fátima située à Lewiston, dans l’État de New York.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Fátima devotion at Lewiston",
+          "title_fr": "La dévotion à Fátima à Lewiston",
+          "paragraphs": [
+            {
+              "en": "The Basilica of the National Shrine of Our Lady of Fátima at Lewiston is an American Catholic pilgrimage destination dedicated to the Virgin under the Fátima title. Its religious life is related to devotion originating in Portugal, but the church has its own site and history. No apparition at Lewiston is implied by the dedication.",
+              "fr": "La basilique du Sanctuaire national Notre-Dame de Fátima de Lewiston est une destination catholique américaine dédiée à la Vierge sous le titre de Fátima. Sa vie religieuse est liée à la dévotion née au Portugal, mais l’église possède son lieu et son histoire propres. Sa dédicace n’implique aucune apparition à Lewiston.",
+              "source_id": "SG-SITE-SG-GEO-P3-018",
+              "source_url": "https://www.wikidata.org/wiki/Q4867411"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A basilica with a national dedication",
+          "title_fr": "Une basilique à dédicace nationale",
+          "paragraphs": [
+            {
+              "en": "The Lewiston shrine is specifically identified as a basilica and national sanctuary, roles that make it more than a generic Marian chapel. This designation concerns the American institution and must not be copied onto other churches of Our Lady of Fátima in the country. The building’s particular history remains separate from the reported events of 1917 in Portugal.",
+              "fr": "Le sanctuaire de Lewiston est précisément identifié comme basilique et sanctuaire national, fonctions qui dépassent celles d’une chapelle mariale générique. Cette désignation concerne l’institution américaine et ne doit pas être étendue aux autres églises Notre-Dame de Fátima du pays. L’histoire particulière du bâtiment reste distincte des événements rapportés en 1917 au Portugal.",
+              "source_id": "SG-SITE-SG-GEO-P3-018",
+              "source_url": "https://www.wikidata.org/wiki/Q4867411"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "The pilgrim’s visit",
+          "title_fr": "La visite du pèlerin",
+          "paragraphs": [
+            {
+              "en": "Pilgrims come to Lewiston for Marian prayer and worship within an established American sanctuary. A guide should name this actual New York destination rather than reproduce the visitor instructions of Fátima in Portugal. Current dates, access and liturgical practices must be sourced from the local basilica.",
+              "fr": "Les pèlerins viennent à Lewiston pour la prière mariale et le culte dans un sanctuaire américain établi. Le guide doit nommer cette destination réelle de l’État de New York plutôt que reproduire les indications de visite de Fátima au Portugal. Dates, accès et pratiques liturgiques actuels doivent provenir de la basilique locale.",
+              "source_id": "SG-SITE-SG-GEO-P3-018",
+              "source_url": "https://www.wikidata.org/wiki/Q4867411"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.wikidata.org/wiki/Q4867411"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:LB:shrine-of-our-lady-of-lebanon-harissa",
+      "place_name": "Shrine of Our Lady of Lebanon, Harissa",
+      "country_code": "LB",
+      "shrine_id": "shrine:LB:shrine-of-our-lady-of-lebanon-harissa",
+      "draft_order": 211,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The hilltop Marian statue and sanctuary of Our Lady of Lebanon at Harissa.",
+      "subtitle_fr": "La statue mariale et le sanctuaire de Notre-Dame du Liban sur la hauteur de Harissa.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Our Lady of Lebanon above Jounieh",
+          "title_fr": "Notre-Dame du Liban au-dessus de Jounieh",
+          "paragraphs": [
+            {
+              "en": "The shrine of Our Lady of Lebanon at Harissa occupies a hilltop position overlooking the coast near Jounieh. Its prominent statue of the Virgin is central to the place’s visible and devotional identity. This specific Lebanese sanctuary belongs to the religious landscape of the country rather than to a generic European Marian shrine.",
+              "fr": "Le sanctuaire Notre-Dame du Liban à Harissa occupe une hauteur dominant la côte près de Jounieh. Sa grande statue de la Vierge est au centre de l’identité visuelle et dévotionnelle du lieu. Ce sanctuaire libanais particulier appartient au paysage religieux du pays plutôt qu’à celui d’un sanctuaire marial européen générique.",
+              "source_id": "SG-SITE-SG-GEO-P3-021",
+              "source_url": "https://fr.wikipedia.org/wiki/Sanctuaire_Notre-Dame-du-Liban_de_Harissa"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The statue and the sanctuary",
+          "title_fr": "La statue et le sanctuaire",
+          "paragraphs": [
+            {
+              "en": "Pilgrims gather around the Marian statue to pray, while the broader site serves as a destination for Catholic devotion. The statue, its platform and the sanctuary precinct are connected physical elements, not unrelated sacred locations. A guide should preserve their relationship without assuming an exact entrance based on a hilltop coordinate.",
+              "fr": "Les pèlerins se rassemblent autour de la statue mariale pour prier, tandis que l’ensemble constitue une destination de dévotion catholique. La statue, son socle et le domaine du sanctuaire sont des éléments physiques liés, non des lieux sacrés sans rapport. Le guide doit préserver leur relation sans supposer une entrée précise d’après une coordonnée de hauteur.",
+              "source_id": "SG-SITE-SG-GEO-P3-021",
+              "source_url": "https://fr.wikipedia.org/wiki/Sanctuaire_Notre-Dame-du-Liban_de_Harissa"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage in Lebanon",
+          "title_fr": "Pèlerinage au Liban",
+          "paragraphs": [
+            {
+              "en": "Our Lady of Lebanon is a recognisable focus of Marian prayer for Lebanese Catholic communities. The site’s setting is part of the experience of pilgrimage, but its religious meaning is not reducible to a panoramic viewpoint. Current access and liturgical information must be confirmed locally and not inferred from the name or monument alone.",
+              "fr": "Notre-Dame du Liban est un foyer reconnaissable de prière mariale pour les communautés catholiques libanaises. Le cadre du lieu fait partie de l’expérience pèlerine, mais sa signification religieuse ne se réduit pas au panorama. Les accès et renseignements liturgiques actuels doivent être confirmés localement, non déduits du seul nom ou du monument.",
+              "source_id": "SG-SITE-SG-GEO-P3-021",
+              "source_url": "https://fr.wikipedia.org/wiki/Sanctuaire_Notre-Dame-du-Liban_de_Harissa"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://fr.wikipedia.org/wiki/Sanctuaire_Notre-Dame-du-Liban_de_Harissa"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:LK:national-basilica-of-our-lady-of-lanka-tewatta",
+      "place_name": "National Basilica of Our Lady of Lanka, Tewatta",
+      "country_code": "LK",
+      "shrine_id": "shrine:LK:national-basilica-of-our-lady-of-lanka-tewatta",
+      "draft_order": 212,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Sri Lanka’s National Basilica of Our Lady of Lanka at Tewatta.",
+      "subtitle_fr": "La basilique nationale Notre-Dame de Lanka à Tewatta, au Sri Lanka.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Our Lady of Lanka at Tewatta",
+          "title_fr": "Notre-Dame de Lanka à Tewatta",
+          "paragraphs": [
+            {
+              "en": "The National Basilica of Our Lady of Lanka at Tewatta is a Catholic Marian destination in Sri Lanka. Its dedication connects the honour given to Mary with the religious life of Sri Lankan Catholics. The basilica’s national designation concerns this particular church and should not be applied indiscriminately to other Marian sanctuaries on the island.",
+              "fr": "La basilique nationale Notre-Dame de Lanka à Tewatta est une destination mariale catholique du Sri Lanka. Sa dédicace relie l’honneur rendu à Marie à la vie religieuse des catholiques sri-lankais. La désignation nationale concerne cette église particulière et ne doit pas être attribuée indistinctement aux autres sanctuaires mariaux de l’île.",
+              "source_id": "SG-SITE-SG-GEO-P3-022",
+              "source_url": "https://mapcarta.com/N2362887712"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A basilica and national dedication",
+          "title_fr": "Une basilique et une dédicace nationale",
+          "paragraphs": [
+            {
+              "en": "The church provides a visible place for Catholic worship under a Marian title expressly associated with Sri Lanka. It is distinct from the Shrine of Our Lady of Madhu, which has its own image, location and devotional history. The two places can be related in a pilgrimage guide without being confused or assigned a shared photograph.",
+              "fr": "L’église offre un lieu visible de culte catholique sous un titre marial expressément associé au Sri Lanka. Elle se distingue du sanctuaire Notre-Dame de Madhu, qui possède sa propre image, sa situation et son histoire dévotionnelle. Les deux lieux peuvent être reliés dans un guide de pèlerinage sans être confondus ni recevoir la même photographie.",
+              "source_id": "SG-SITE-SG-GEO-P3-022",
+              "source_url": "https://mapcarta.com/N2362887712"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Prayer at the actual basilica",
+          "title_fr": "Prier dans la basilique réelle",
+          "paragraphs": [
+            {
+              "en": "Pilgrims may come to Tewatta for Marian prayer and worship at its national basilica. This is a real physical destination rather than a general map marker for Catholic Sri Lanka. The canonical information supports the building’s identity, but any detailed historical chronology or current worship schedule needs the responsible church’s own records.",
+              "fr": "Les pèlerins peuvent se rendre à Tewatta pour la prière mariale et le culte dans sa basilique nationale. Il s’agit d’une destination physique réelle et non d’une épingle générale pour le catholicisme sri-lankais. Les données canoniques étayent l’identité du bâtiment, mais une chronologie historique détaillée ou les horaires actuels exigent les archives de ses responsables.",
+              "source_id": "SG-SITE-SG-GEO-P3-022",
+              "source_url": "https://mapcarta.com/N2362887712"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://mapcarta.com/N2362887712"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_SOURCE_TO_CLAIM_AND_FR_EDITORIAL_REVIEW",
+      "publication_authorized": false
+    }
+  ]
+}
