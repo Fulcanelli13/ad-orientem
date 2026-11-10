@@ -26,6 +26,7 @@ import {kyrialeChoicesForMovement} from "./reader-kyriale-catalogue.js";
 import {schola1961OriginalFacsimile} from "./reader-schola-original-facsimile.js";
 import {resolveScholaSelectedScoreAccess} from "./reader-schola-score-access.js";
 import {createOfflineChantEngraver} from "./reader-chant-engraver.js";
+import {selectApprovedScholaDockScore} from "./reader-schola-dock-approved.js";
 
 export const SCHOLA_SPEEDS=Object.freeze([0.25,0.35,0.45,0.60,0.80,1.00]);
 export const DEFAULT_SCHOLA_SPEED=0.45;
@@ -114,6 +115,16 @@ const SHELL_STYLE = `
 .ao-schola-proper-order .ao-schola-proper-translation{white-space:pre-wrap;margin:4px 7px 11px}
 .ao-schola-proper-order button[data-schola-event-select]{margin:8px 6px;width:calc(100% - 12px);border:1px solid rgba(225,207,145,.24)}
 
+.ao-schola-approved-score[hidden]{display:none!important}
+.ao-schola-approved-score{width:100%;max-height:65px;overflow:hidden;margin:2px 0 0}
+.ao-schola-approved-score[data-score-status="loading"]{visibility:hidden}
+.ao-schola-approved-staff{display:block;width:100%;min-width:0;color:var(--ao-text,#eee4d8)}
+.ao-schola-approved-staff svg{display:block;height:auto;max-width:100%;color:inherit}
+.ao-schola-approved-staff svg :is(path,polygon,polyline,line,text){fill:currentColor}
+.ao-schola-dock[data-approved-score="true"]:not([data-collapsed="true"]){height:130px!important;min-height:130px!important;max-height:130px!important}
+.ao-schola-dock[data-approved-score="true"] .ao-schola-meta{display:none!important}
+.ao-schola-dock[data-approved-score="true"] .ao-schola-main{height:22px!important;min-height:22px!important;margin-top:0!important}
+@media(max-width:380px){.ao-schola-dock[data-approved-score="true"]:not([data-collapsed="true"]){height:126px!important;min-height:126px!important}.ao-schola-approved-score{max-height:62px}}
 .ao-schola-score-status{display:block;margin:8px 7px;color:#b2b9a9;font:500 11px/1.5 var(--ao-font-ui,system-ui,sans-serif)}
 .ao-schola-score-open{display:block;width:calc(100% - 12px);margin:8px 6px 3px;min-height:44px;padding:9px 10px;text-align:left;cursor:pointer;border:1px solid rgba(225,207,145,.28);border-radius:7px;background:rgba(225,207,145,.06);color:var(--ao-mass-accent-text,#e7daba);font:600 12px/1.4 var(--ao-font-ui,system-ui,sans-serif)}
 .ao-schola-score-open:focus-visible,.ao-schola-ordinary-print summary:focus-visible{outline:2px solid var(--ao-mass-accent);outline-offset:2px}
@@ -2520,6 +2531,7 @@ export function buildReaderShellMarkup(prepared = {}) {
     <div class="ao-schola-title"><span class="ao-icon-mask" data-icon-slot="schola" hidden></span><span class="ao-schola-kicker">SCHOLA</span><span class="ao-schola-status" data-role="schola-status" hidden></span><span class="ao-schola-page" data-role="schola-page"></span><span class="ao-schola-upcoming" data-role="schola-upcoming" hidden></span><span class="ao-schola-special-current" data-role="schola-special-current" hidden></span><span class="ao-schola-special-next" data-role="schola-special-next" hidden></span></div>
     <button class="ao-schola-toggle" type="button" data-schola-toggle aria-label="Hide Schola">HIDE</button>
     <details class="ao-schola-programme" data-schola-local-panel><summary aria-label="Edit your local Schola music plan">MUSIC PLAN</summary><div class="ao-schola-programme-fields"><p>Local programme only · not an observation or an approved score</p><a href="./sacred-music.html?work=faure-requiem-op48" data-sacred-music-library aria-label="Open independent sacred music work guide">SACRED MUSIC WORKS · Fauré, Mozart, Duruflé, Palestrina</a><label>Sung text setting (Requiem only) <select data-schola-music-setting aria-label="Choose text setting for LIVE Schola"><option value="">Gregorian · appointed text (default)</option><option value="faure-requiem-op48">Fauré · Requiem Op. 48 · actual sung words</option></select></label><label data-schola-manual-field hidden>Additional Fauré sung text (manual) <select data-schola-manual-movement aria-label="Select additional Fauré Requiem sung movement"><option value="">Follow the Mass Schola</option><option value="PIE_JESU">Pie Jesu · sequence excerpt (manual reference)</option><option value="LIBERA_ME">Libera me · Absolution if celebrated</option><option value="IN_PARADISUM">In paradisum · funeral procession if celebrated</option></select></label><small>These additional pieces are manual listening references, never automatically inserted into the 1962 Mass, Sequence, Absolution or procession.</small><small>Personal text setting only. Latin and translation follow the chosen work; no listening detection, no substitution for omitted Mass texts. Pie Jesu / Libera me / In paradisum remain separately accessible in the work guide.</small><label>Saved profile <select data-schola-profile-select aria-label="Select a saved parish music profile"></select></label><label>Profile name <input type="text" maxlength="80" data-schola-profile-name aria-label="Rename active parish music profile"></label><div class="ao-schola-profile-actions"><input type="text" maxlength="80" data-schola-profile-new placeholder="New programme name" aria-label="New programme name"><button type="button" data-schola-profile-create>ADD</button></div><button type="button" data-schola-profile-delete>Delete selected profile</button><small>Changes are saved to this browser only. A profile does not certify the Schola's actual repertoire.</small><label>Parish / chapel <input type="text" maxlength="80" data-schola-local-parish placeholder="Optional local name"></label><label>Sanctus and Benedictus <select data-schola-local-sanctus><option value="UNSPECIFIED">Not specified</option><option value="GREGORIAN">Gregorian · together</option><option value="POLYPHONIC">Polyphonic · Benedictus after Chalice</option></select></label><label>Dismissal melody <select data-schola-dismissal-choice aria-label="Selected Gregorian dismissal melody"><option value="">Text only / not selected</option><option value="ITE_VIII">Ite VIII · De Angelis (1961 source)</option></select></label><small>Use Ite VIII only if it is the actual selected dismissal melody. Requiem, Benedicamus and seasonal Alleluia variants retain their source text; this is not inferred from the Kyrie setting.</small><small>Ordinary melodies indexed in the historical Kyriale. Your selection is not proof of parish practice or audible singing. Choose Custom for local polyphony.</small><a href="https://media.churchmusicassociation.org/pdf/kyriale.pdf" target="_blank" rel="noopener noreferrer">Consult the Kyriale Romanum source edition</a><label>Kyrie setting<select data-schola-kyriale-choice="KYRIE" aria-label="Source-indexed Kyrie choice"></select><input type="text" maxlength="80" data-schola-ordinary-setting="KYRIE" placeholder="Custom Kyrie (unverified)"></label><section class="ao-schola-original-score" data-schola-original-score="KYRIE" hidden><button type="button" data-schola-original-toggle aria-expanded="false">Original 1961 printed notation</button><div data-schola-original-content hidden><p data-schola-original-note>Historical print · not an approved digital score or observed parish performance.</p><div data-schola-original-pages></div><a data-schola-original-pdf target="_blank" rel="noopener noreferrer">Open complete 1961 source edition</a></div></section><label>Gloria setting<select data-schola-kyriale-choice="GLORIA" aria-label="Source-indexed Gloria choice"></select><input type="text" maxlength="80" data-schola-ordinary-setting="GLORIA" placeholder="Custom Gloria (unverified)"></label><section class="ao-schola-original-score" data-schola-original-score="GLORIA" hidden><button type="button" data-schola-original-toggle aria-expanded="false">Original 1961 printed notation</button><div data-schola-original-content hidden><p data-schola-original-note>Historical print · not an approved digital score or observed parish performance.</p><div data-schola-original-pages></div><a data-schola-original-pdf target="_blank" rel="noopener noreferrer">Open complete 1961 source edition</a></div></section><label>Credo setting<select data-schola-kyriale-choice="CREDO" aria-label="Source-indexed Credo choice"></select><input type="text" maxlength="80" data-schola-ordinary-setting="CREDO" placeholder="Custom Credo (unverified)"></label><section class="ao-schola-original-score" data-schola-original-score="CREDO" hidden><button type="button" data-schola-original-toggle aria-expanded="false">Original 1961 printed notation</button><div data-schola-original-content hidden><p data-schola-original-note>Historical print · not an approved digital score or observed parish performance.</p><div data-schola-original-pages></div><a data-schola-original-pdf target="_blank" rel="noopener noreferrer">Open complete 1961 source edition</a></div></section><label>Sanctus setting<select data-schola-kyriale-choice="SANCTUS_BENEDICTUS" aria-label="Source-indexed Sanctus choice"></select><input type="text" maxlength="80" data-schola-ordinary-setting="SANCTUS_BENEDICTUS" placeholder="Custom Sanctus (unverified)"></label><section class="ao-schola-original-score" data-schola-original-score="SANCTUS_BENEDICTUS" hidden><button type="button" data-schola-original-toggle aria-expanded="false">Original 1961 printed notation</button><div data-schola-original-content hidden><p data-schola-original-note>Historical print · not an approved digital score or observed parish performance.</p><div data-schola-original-pages></div><a data-schola-original-pdf target="_blank" rel="noopener noreferrer">Open complete 1961 source edition</a></div></section><label>Agnus Dei setting<select data-schola-kyriale-choice="AGNUS_DEI" aria-label="Source-indexed Agnus Dei choice"></select><input type="text" maxlength="80" data-schola-ordinary-setting="AGNUS_DEI" placeholder="Custom Agnus (unverified)"></label><section class="ao-schola-original-score" data-schola-original-score="AGNUS_DEI" hidden><button type="button" data-schola-original-toggle aria-expanded="false">Original 1961 printed notation</button><div data-schola-original-content hidden><p data-schola-original-note>Historical print · not an approved digital score or observed parish performance.</p><div data-schola-original-pages></div><a data-schola-original-pdf target="_blank" rel="noopener noreferrer">Open complete 1961 source edition</a></div></section><label class="ao-schola-programme-option"><input type="checkbox" data-schola-local-choice="ENTRANCE_ORGAN_OPTION"><span>Entrance organ</span></label><small class="ao-schola-organ-rule" data-schola-organ-rule="ENTRANCE_ORGAN_OPTION" aria-live="polite">Permission not verified</small><label class="ao-schola-programme-option"><input type="checkbox" data-schola-local-choice="OFFERTORY_LOCAL_MOTET"><span>Offertory motet</span></label><input type="text" maxlength="80" data-schola-local-title="OFFERTORY_LOCAL_MOTET" placeholder="Optional title (unverified)" aria-label="Offertory motet title"><label class="ao-schola-programme-option"><input type="checkbox" data-schola-local-choice="OFFERTORY_ORGAN_OPTION"><span>Offertory organ</span></label><small class="ao-schola-organ-rule" data-schola-organ-rule="OFFERTORY_ORGAN_OPTION" aria-live="polite">Permission not verified</small><label class="ao-schola-programme-option"><input type="checkbox" data-schola-local-choice="COMMUNION_LOCAL_MOTET"><span>Communion motet</span></label><input type="text" maxlength="80" data-schola-local-title="COMMUNION_LOCAL_MOTET" placeholder="Optional title (unverified)" aria-label="Communion motet title"><label class="ao-schola-programme-option"><input type="checkbox" data-schola-local-choice="RECESSIONAL_ORGAN_OPTION"><span>Recessional organ</span></label><small class="ao-schola-organ-rule" data-schola-organ-rule="RECESSIONAL_ORGAN_OPTION" aria-live="polite">Permission not verified</small><small>Solo organ use requires the verified 1958 permission rules; planning music never overrides them.</small></div></details>
+    <div class="ao-schola-approved-score" data-role="schola-approved-score" data-score-status="none" hidden><div class="ao-schola-approved-staff" data-role="schola-approved-staff" role="img" aria-label="Approved Gregorian notation · expected, not observed"></div></div>
     <div class="ao-schola-main" data-schola-translate title="Tap to translate" role="button" tabindex="-1" aria-label="Translate Schola text in place" aria-pressed="false" aria-disabled="true"><span data-role="schola" aria-live="polite">—</span><span class="ao-schola-inline-translation" data-role="schola-inline-translation" hidden></span></div>
     <div class="ao-schola-meta">
       <span class="ao-schola-progress"><span data-role="schola-progress"></span></span>
@@ -2913,6 +2925,7 @@ export function createReaderDomAdapter({
   let gospelReferenceTone="GOSPEL_STANDARD";
   const scholaSourceScores=new Map();
   let scholaScoreDialog=null,scholaScoreEngraver=null,scholaScoreReturnFocus=null,scholaScoreRequest=0;
+  let scholaDockEngraver=null,scholaDockScoreIdentity=null,scholaDockScoreRequest=0;
   let bound=false;
   let rootClickListener=null;
   let rootChangeListener=null;
@@ -3321,6 +3334,53 @@ export function createReaderDomAdapter({
     return scholaSpeed;
   }
 
+  function clearScholaDockNotation(){
+    ++scholaDockScoreRequest;
+    scholaDockEngraver?.destroy?.();scholaDockEngraver=null;
+    scholaDockScoreIdentity=null;
+    const dock=root.querySelector(".ao-schola-dock");
+    if(dock)dock.dataset.approvedScore="false";
+    const panel=root.querySelector('[data-role="schola-approved-score"]');
+    if(panel){panel.hidden=true;panel.dataset.scoreStatus="none";}
+    root.querySelector('[data-role="schola-approved-staff"]')?.replaceChildren?.();
+  }
+
+  function syncScholaDockNotation(schola,selectedPlan){
+    const dock=root.querySelector(".ao-schola-dock");
+    const panel=root.querySelector('[data-role="schola-approved-score"]');
+    const staff=root.querySelector('[data-role="schola-approved-staff"]');
+    const score=schola&&mode==="LIVE" ? selectApprovedScholaDockScore({
+      schola,form:prepared?.session?.resolvedMass?.form,
+      resolvedMass:prepared?.session?.resolvedMass,localProgramme:selectedPlan
+    }):null;
+    if(!dock||!panel||!staff||!score){
+      if(scholaDockScoreIdentity)clearScholaDockNotation();
+      return;
+    }
+    const identity=score.scoreId+"|"+score.gabcSha256;
+    if(identity===scholaDockScoreIdentity)return;
+    clearScholaDockNotation();
+    scholaDockScoreIdentity=identity;
+    const token=++scholaDockScoreRequest;
+    panel.hidden=false;panel.dataset.scoreStatus="loading";
+    staff.setAttribute("aria-label","Approved Gregorian notation for "+schola.trackId+
+      ". Expected, not observed. No audio recognition.");
+    try{
+      const doc=root.ownerDocument??globalThis.document;
+      scholaDockEngraver=createOfflineChantEngraver({viewport:staff,document:doc});
+      scholaDockEngraver.observe?.();
+      void scholaDockEngraver.engrave(score.gabc).then(ok=>{
+        if(token!==scholaDockScoreRequest)return;
+        if(!ok){clearScholaDockNotation();return;}
+        panel.dataset.scoreStatus="approved";
+        dock.dataset.approvedScore="true";
+        sourceRailTracker?.refresh?.();
+      }).catch(()=>{
+        if(token===scholaDockScoreRequest)clearScholaDockNotation();
+      });
+    }catch{if(token===scholaDockScoreRequest)clearScholaDockNotation();}
+  }
+
   function syncScholaContent(){
     const dock=root.querySelector(".ao-schola-dock");
     if(!dock)return;
@@ -3485,6 +3545,7 @@ export function createReaderDomAdapter({
     }
     const schola=current?.scholaVisible ? current.schola : null;
     const composed=Boolean(schola?.composedWorkId);
+    syncScholaDockNotation(schola,selectedPlan);
     dock.dataset.composed=String(composed);
     const eventReference=!schola?current?.scholaEventSelection:null;
     dock.dataset.eventReference=String(Boolean(eventReference));
@@ -5609,6 +5670,7 @@ export function createReaderDomAdapter({
   }
 
   function destroy(){
+    clearScholaDockNotation();
     closeScholaScoreDialog();
     scholaSourceScores.clear();
     inlineChant.destroy();
