@@ -76,3 +76,5 @@ Five more sourced Customs candidate rows (`DYK-CW14-039` through `DYK-CW14-043`)
 - Glossary source pool: original early-twentieth-century Catholic Encyclopedia articles on sacred vestments, tabernacles, Eucharistic vessels and church metalwork. Historical descriptions should not be interpreted as binding 1962 rubrics or proofs of historical origin where a claim is interpretative.
 - Source review precision: source-link and topic mapping established; full sentence-by-sentence source certification and native EN/FR approval **remain pending**. Avoid splitting several observations of the same procession into multiple published cards without editorial consolidation.
 - IDs follow `DYK-CW15-###` and `DYK-GX15-###`. Lane names reuse `CUSTOMS_NEW_SOURCE_WAVE` and `GLOSSARY_NEW_SOURCE_WAVE`. No new publication signoffs, merges, or deployments.
+
+Wave 15 metadata follow-up: All 90 appended rows now have human-drafted French topic headings as well as bilingual fact copy. Two topic headings were corrected without changing the underlying historical claims. Structural uniqueness and source flags remain subject to final QA.
