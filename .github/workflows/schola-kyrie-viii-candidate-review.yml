@@ -8,6 +8,8 @@ on:
       - "scripts/schola/build-kyrie-viii-review-gallery.mjs"
       - "scripts/schola/kyrie-viii-three-witness-neume-ledger.mjs"
       - "tests/schola-kyrie-viii-three-witness-neume-ledger.mjs"
+      - "scripts/schola/kyrie-viii-opening-pitch-inventory.mjs"
+      - "tests/schola-kyrie-viii-opening-pitch-inventory.mjs"
       - "src/mass/reader-kyrie-viii-review-queue.js"
       - "src/mass/reader-schola-notation-follow.js"
       - "tests/schola-notation-follow.mjs"
@@ -40,6 +42,11 @@ jobs:
           node --check scripts/schola/kyrie-viii-three-witness-neume-ledger.mjs
           node tests/schola-kyrie-viii-three-witness-neume-ledger.mjs
           node scripts/schola/kyrie-viii-three-witness-neume-ledger.mjs > "$RUNNER_TEMP/kyrie-viii-three-witness-neume-review-pending.json"
+      - name: Audit the first Kyrie melody noteheads, signs, and accidental glyphs
+        run: |
+          node --check scripts/schola/kyrie-viii-opening-pitch-inventory.mjs
+          node tests/schola-kyrie-viii-opening-pitch-inventory.mjs
+          node scripts/schola/kyrie-viii-opening-pitch-inventory.mjs > "$RUNNER_TEMP/kyrie-viii-opening-25-source-pitches.json"
       - name: Produce review-only nine-cue manifest
         run: |
           node scripts/schola/prepare-kyrie-viii-review-manifest.mjs > "$RUNNER_TEMP/kyrie-viii-musical-review-hold.json"
@@ -61,6 +68,13 @@ jobs:
         with:
           name: kyrie-viii-nine-cue-visual-editorial-hold
           path: ${{ runner.temp }}/kyrie-viii-visual-review/
+          retention-days: 14
+          if-no-files-found: error
+      - name: Export first Kyrie 25 pitches and 2 flat glyphs for independent print review
+        uses: actions/upload-artifact@v4
+        with:
+          name: kyrie-viii-opening-pitch-review-not-certified
+          path: ${{ runner.temp }}/kyrie-viii-opening-25-source-pitches.json
           retention-days: 14
           if-no-files-found: error
       - name: Upload three-primary-witness detailed music-sign ledger (not public)

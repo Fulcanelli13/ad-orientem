@@ -66,6 +66,25 @@ The visual check of the 1961 *Graduale Romanum* (28*–29*) and 1961 *Liber Usua
 
 A published [1974 *Graduale* Kyrie VIII GABC transcription](https://en.gregorianum.org/wiki/Missa_VIII_%28Missa_de_Angelis%29) uses `bis` in the initial two invocations and different note grouping, hyphenation and editorial spacing. Those differences can be legitimate consequences of a later printed source and/or a different liturgical presentation; they **must not be silently substituted** into the pinned *Graduale Romanum* 1961 source used for the 1962 Mass reader. This edition comparison is a conflict screen, not an independent verification of 1961 pitch values.
 
+## Opening Kyrie pitch inventory — source GABC decomposed
+
+The opening Kyrie (1961 `Graduale Romanum` p. 28*, `AO.SM.C0044–C0046`) has been decomposed from the exact SHA-locked GregoBase transcription. There are **eight pitched GABC neume groups representing 25 encoded noteheads**, with the seven sung Latin syllables spanning those groups (the melisma after the intonation star continues the preceding `e`). This is a code transcription inventory, **not a comparison claim about the printed music**.
+
+| GABC group | Source ID | Encoded sung pitches (case retained) | Non-sung sign |
+|---|---|---|---|
+| `(d)` | `K8-L01-U02` | `d` | — |
+| `(gxfgh)` | `K8-L01-U03` | `f g h` | `gx` = flat sign |
+| `(h.ivHGh.)` | `K8-L01-U04` | `h i H G h` | — |
+| `(/[-2]kvIH'Ghih.)` | `K8-L01-U06` | `k I H G h i h` | typographical space directive |
+| `(gxhvFE'Dgf)` | `K8-L01-U08` | `h F E D g f` | `gx` = flat sign |
+| `(e')` | `K8-L01-U09` | `e` | — |
+| `(e)` | `K8-L01-U10` | `e` | — |
+| `(d.)` | `K8-L01-U11` | `d` | — |
+
+**Why this matters:** In GABC, a letter followed by `x` is a *flat at that staff position*, not an extra sung note. Naively counting all `[a-m]` glyph letters would overcount two `g`s and falsely report 27 pitches. Correct inventory: **25 noteheads + 2 non-sung accidental glyphs**. Capital note letters are italic/diamond (puncta inclinata), not a separate octave; period denotes punctum mora, apostrophe vertical episema, and suffix `v` a virga stem. See the [Gregorio notation reference](https://gregorio-project.github.io/gabc/details.html) and [GABC pitch shape reference](https://gregorio-project.github.io/gabc/).
+
+The code records each source group, encoded pitch letters, the accidental glyphs and rhythmic-symbol flags, original scan links, and separate counters **zero** for pitch positions, noteheads, accidental glyphs and rhythmic signs independently certified from print. The parser is a way to make that next visual comparison reproducible. It does not prove the source transcription is faithful to every original staff glyph. Source-specific file: `scripts/schola/kyrie-viii-opening-pitch-inventory.mjs`; strict gate: `tests/schola-kyrie-viii-opening-pitch-inventory.mjs`. The latest offline nine-cue gallery includes the eight-group pitch inventory alongside the actual phone score images.
+
 ## What has **not** been certified
 
 The small online scans and present review do **not** establish an independent note-by-note proofread of every neume (including quilismata and ligatures), rhythmic sign (puncta morae, episemata), pitch/accidental, asterisk and print spacing. Therefore all four phrases retain:
