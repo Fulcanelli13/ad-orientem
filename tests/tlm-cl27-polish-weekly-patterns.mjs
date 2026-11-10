@@ -30,6 +30,16 @@ const fixtures=manifest.sites.map(p=>{
   map_state:"ADDRESS_ONLY",map_publishable:false,geo:null
  });
 });
+// Some published R49 venues retain the second frozen source ID and a source-owned
+// display variant. The *physical CL2* group and full immutable alias set are the join.
+const aliasCase=[...fixtures];
+const aliasIdx=aliasCase.findIndex(x=>x.physical_group_id==="RG-513593EF876C");
+assert.ok(aliasIdx>=0);
+aliasCase[aliasIdx]={...aliasCase[aliasIdx],
+ source_id:manifest.sites.find(x=>x.cl2_anchor==="RG-513593EF876C").source_ids[1],
+ title:"Source-owned Bydgoszcz chapel label"};
+assert.equal(attachPolishFirstPartyWeeklyPatterns(aliasCase,manifest)
+ .filter(x=>x.weekly_source_programme).length,6);
 const other=Object.freeze({source_id:"OTHER",physical_group_id:"RG-OTHER"});
 const joined=attachPolishFirstPartyWeeklyPatterns([...fixtures,other],manifest);
 assert.equal(joined.length,7);
@@ -73,4 +83,6 @@ broken=structuredClone(manifest);broken.sites[0].una_cum="YES";mustReject(broken
 broken=structuredClone(manifest);broken.sites[0].source_ids.push("DUPLICATE");mustReject(broken);
 const wrong=[...fixtures];wrong[0]={...wrong[0],source_location_description:"Wrong parish"};
 assert.throws(()=>attachPolishFirstPartyWeeklyPatterns(wrong,manifest));
+const wrongSource=[...fixtures];wrongSource[0]={...wrongSource[0],source_id:"UNLISTED_PROVIDER"};
+assert.throws(()=>attachPolishFirstPartyWeeklyPatterns(wrongSource,manifest));
 console.log("PASS Polish CL27: 6/6 exact CL2 churches, 20 published source patterns, EN/FR, no synthesized future events");
