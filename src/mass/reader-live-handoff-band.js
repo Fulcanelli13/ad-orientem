@@ -158,7 +158,10 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
   musicAccess.setAttribute("aria-label","Open native independent Schola music events");
   musicAccess.hidden=true;
   slimHeader?.appendChild(musicAccess);
-  musicAccess.addEventListener("click",()=>nativeMusic?.click());
+  musicAccess.addEventListener("click",event=>{
+    event.stopPropagation();
+    nativeMusic?.click();
+  });
 
   let preference=null;
   try{preference=normalizeLiveBandPreference(storage?.getItem(LIVE_BAND_STORAGE_KEY));}catch{}
