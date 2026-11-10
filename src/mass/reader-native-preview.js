@@ -63,6 +63,7 @@ import { resolveReaderPostureChannel } from "./reader-posture-profile.js";
 import { structureSupport } from "./reader-structure.js";
 import { loadGuideRegistry, guideForPresentationCard } from "./reader-guide.js";
 import { createNativeScholaController } from "./reader-schola.js";
+import {scholaTextExceptionForCue,scholaEventVisibleInMusicMenu,scholaMusicMenuLabel} from "./reader-schola-text-cue-policy.js";
 import { createComposedScholaTextController } from "./reader-composed-schola-text.js";
 import { readMassCustomaryPreferences, updateMassCustomaryPreferences } from "./reader-customary-preferences.js";
 import { projectGloriaCredoFaithfulCue, resolveIncarnatusSungAction } from "./gloria-credo-faithful.js";
@@ -1964,6 +1965,14 @@ export async function mountNativeReaderPreview({
       schola:visibleSchola,
       scholaCatchupPinned:scholaPinnedByCatchup,
       scholaEventSelection:selectedScholaEvent,
+      // Source-owned short sung exchanges only; never fabricate a choir
+      // performance or remove dialogue from the canonical reader.
+      scholaTextException:scholaTextExceptionForCue({
+        cueId:activeCueId,form,
+        sungCorpus:ready.data?.sungCorpus,
+        resolvedMass:prepared.session.resolvedMass,
+        massPlan:prepared.session.plan
+      }),
       priestAction,
       priestEntrance,
       independentlyObservedCanonStage:observedCanon,
@@ -3201,7 +3210,7 @@ export async function mountNativeReaderPreview({
       }),scholaLocalProgramme);
       const event=itinerary.supported
         ? itinerary.events.find(item=>item.id===String(eventId)) : null;
-      if(!event || event.manualOnly || event.id==="BENEDICTUS_CONTINUOUS" ||
+      if(!event || !scholaEventVisibleInMusicMenu(event) || event.manualOnly || event.id==="BENEDICTUS_CONTINUOUS" ||
         event.musicWindow?.status==="SOURCE_ANCHORS_UNVERIFIED")return false;
       if(event.kind==="ORGAN_OPTION" && (event.localPlan?.selected!==true ||
         ["SOLO_FORBIDDEN","REQUIRES_EXACT_RITE_STAGE"].includes(event.organPermission?.status)))
@@ -3218,7 +3227,7 @@ export async function mountNativeReaderPreview({
       }else{
         ready.scholaState.selectTrack(null);
         selectedScholaEvent=Object.freeze({
-          id:event.id,kind:event.kind,label:event.localPlan?.title||event.label,
+          id:event.id,kind:event.kind,label:scholaMusicMenuLabel(event),
           status:event.status,sourceRef:event.sourceRef,
           observed:false,organPermission:event.organPermission?.status??null,
         });

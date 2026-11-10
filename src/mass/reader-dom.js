@@ -20,6 +20,7 @@ import { approvedPriestHeadBowRubricArt } from "./reader-approved-priest-head-bo
 import { actionMeaning } from "./reader-canonical-icons.js";
 import { CUE_SURFACE, resolveCueSurface, sourceActionRubricLabel } from "./reader-cue-visual-policy.js";
 import { nextScholaMusicEvent } from "./reader-schola-event-timeline.js";
+import {scholaEventVisibleInMusicMenu,scholaMusicMenuLabel} from "./reader-schola-text-cue-policy.js";
 import { installSourceCueRailTracker } from "./reader-rail-anchors.js";
 import {SCHOLA_OPTIONAL_EVENT_IDS} from "./reader-schola-local-programme.js";
 import {kyrialeChoicesForMovement} from "./reader-kyriale-catalogue.js";
@@ -3607,7 +3608,12 @@ export function createReaderDomAdapter({
     const composed=Boolean(schola?.composedWorkId);
     syncScholaDockNotation(schola,selectedPlan);
     dock.dataset.composed=String(composed);
-    const eventReference=!schola?current?.scholaEventSelection:null;
+    // A selected 1962 source cue may briefly show one of the limited
+    // text-only responses in the existing Schola area. No new chant,
+    // lyric ticker, inferred singing or extra Mass card is introduced.
+    const activeTextException=mode==="LIVE"&&!schola&&!current?.scholaEventSelection
+      ?current?.scholaTextException:null;
+    const eventReference=!schola?(current?.scholaEventSelection??activeTextException):null;
     dock.dataset.eventReference=String(Boolean(eventReference));
     const eventOpen=root.querySelector("[data-schola-events-open]");
     if(eventOpen){
@@ -3649,13 +3655,15 @@ export function createReaderDomAdapter({
       // Do not repeat the generic three-chant heading over a 320px phone.
       const exactPreGospel=/^(?:Gradual|Alleluia|Tract|Sequence)$/.test(
         String(current?.cardTitle??""))?String(current.cardTitle):null;
-      title.textContent=eventReference?"MUSIC · REFERENCE":composed
+      title.textContent=eventReference?(activeTextException
+        ?(activeTextException.role==="RESPONSE"?"TEXT · RESPONSE":"TEXT · VERSICLE")
+        :"MUSIC · REFERENCE"):composed
         ? "FAURÉ · "+(schola.manualMovementId?schola.manualMovementId.replaceAll("_"," "):scholaTitle(schola.trackId)):schola
         ? (schola.trackId==="ALLELUIA_TRACT_SEQUENCE"&&exactPreGospel
           ? exactPreGospel.toUpperCase():scholaTitle(schola.trackId))
         : "SCHOLA";
     }
-    const scholaDisplay=eventReference?.label??(schola
+    const scholaDisplay=(eventReference?.latin??eventReference?.label)??(schola
       ? (!composed && scholaTranslationVisible && schola.english
           ? schola.english
           : (schola.latin??textValue(schola)))
@@ -3665,7 +3673,7 @@ export function createReaderDomAdapter({
     setText(root,"schola",scholaDisplay);
     const status=root.querySelector('[data-role="schola-status"]');
     if(status){
-      status.textContent=eventReference?"NOT OBSERVED":composed?(schola?.manualMusicReference?"MANUAL · NOT HEARD":"SELECTED · NOT HEARD"):schola?(dock.dataset.notationFollow==="estimated"?"EST. FOLLOW · NOT HEARD":"EXPECTED"):"";
+      status.textContent=eventReference?(activeTextException?"TEXT · NOT HEARD":"NOT OBSERVED"):composed?(schola?.manualMusicReference?"MANUAL · NOT HEARD":"SELECTED · NOT HEARD"):schola?(dock.dataset.notationFollow==="estimated"?"EST. FOLLOW · NOT HEARD":"EXPECTED"):"";
       status.hidden=!schola&&!eventReference;
       status.setAttribute?.("aria-label",eventReference
         ?"Manual music reference: neither heard nor timed":"Schola text expected; actual singing not detected");
@@ -3967,6 +3975,7 @@ export function createReaderDomAdapter({
       menu.append(section);
     }
     for(const item of itinerary.events){
+      if(!scholaEventVisibleInMusicMenu(item))continue;
       const button=doc.createElement("button");
       button.type="button";
       button.dataset.scholaEventSelect=item.id;
@@ -3979,7 +3988,7 @@ export function createReaderDomAdapter({
           ["SOLO_FORBIDDEN","REQUIRES_EXACT_RITE_STAGE"].includes(item.organPermission?.status)));
       button.disabled=unavailable;
       const caption=doc.createElement("span");
-      caption.textContent=item.localPlan?.title||item.label;
+      caption.textContent=scholaMusicMenuLabel(item);
       button.append(caption);
       const detail=doc.createElement("small");
       const type=item.kind.replaceAll("_"," ").toLowerCase();
@@ -4005,7 +4014,7 @@ export function createReaderDomAdapter({
         (item.localOrdinary.catalogueId?"Kyriale source-indexed: ":"Custom local setting: ")+
         item.localOrdinary.title+" (not heard or observed)";
       button.append(detail);
-      if(item.sungDialogue?.exchanges?.length){
+      if(item.sungDialogue?.exchanges?.length && item.kind!=="PRIEST_VOICE"){
         // A complete priest/ministers + response source pair has been
         // mapped, but no Gregorian tone has yet been approved for it.
         // Show this in the existing MUSIC itinerary, not on the prayer.
