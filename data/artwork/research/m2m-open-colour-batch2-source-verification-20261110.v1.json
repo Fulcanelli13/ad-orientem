@@ -52,7 +52,7 @@
       "rightsEvidence": "PUBLIC_DOMAIN_ON_OBJECT_IMAGE",
       "fullResPhotoAcquired": false,
       "sha256": null,
-      "next": "Seek a different, explicitly identified colour photograph from a museum or other reliable source. Commons museum partnership TIFF is black-and-white and not owner-handpicked; do not auto-promote.",
+      "next": "Check Nationalmuseum official media.nationalmuseum.se by inventory number; inspect exact painting, file and reuse label, then hash a high-res colour download. The old collection JPEG remains HTTP 403. Commons link alone is not owner permission.",
       "additionalInstitutionalEvidence": {
         "historicalMuseumDonation": "https://commons.wikimedia.org/wiki/File:The_Parable_of_the_Labourers_in_the_Vineyard_(David_III_Ryckaert)_-_Nationalmuseum_-_17423.tif",
         "museumProvidedArchivalImage": "Provided to Wikimedia Commons by Nationalmuseum as part of an official partnership; original TIFF lists pixel composition Black and white, one component.",
@@ -64,6 +64,18 @@
         "implication": "This legacy museum-donated TIFF is not a true-colour alternative. Do not falsely recolour or auto-promote Commons file. Current object page may link a distinct colour photograph but its selected JPEG returned 403.",
         "museumRightsSource": "https://www.nationalmuseum.se/en/explore-art-and-design/images/rights-and-reproductions",
         "photoFoundForCurrentBatch": false
+      },
+      "alternativeFirstPartySourceDiscovery": {
+        "museumMediaPortal": "https://media.nationalmuseum.se/search/all",
+        "collectionRightsPolicy": "https://www.nationalmuseum.se/en/explore-art-and-design/images/rights-and-reproductions",
+        "sourceEvidence": "https://www.nationalmuseum.se/en/explore-art-and-design/images",
+        "launchNews": "https://www.nationalmuseum.se/om-nationalmuseum/nyheter/nationalmuseum-tillg%C3%A4ngligg%C3%B6r-bildskatt-genom-ny-mediaportal",
+        "photoLookupKey": "NM 420",
+        "status": "SOURCE_PORTAL_AVAILABLE_EXACT_OBJECT_MEDIA_FILE_NOT_YET_MATCHED",
+        "museumPhotoMustHaveInventoryIdAndExplicitLicence": true,
+        "mediaPortalImageFileUrl": null,
+        "individualMediaLicenceVerified": false,
+        "autoCommonsPromotionForbidden": true
       }
     },
     {
@@ -73,7 +85,19 @@
       "rightsEvidence": "PUBLIC_DOMAIN_ON_OBJECT_IMAGE",
       "fullResPhotoAcquired": false,
       "sha256": null,
-      "next": "Resolve alternative original museum source; avoid guessing an IIIF identifier."
+      "next": "Check Nationalmuseum official media.nationalmuseum.se by inventory number; inspect exact painting, file and reuse label, then hash a high-res colour download. The old collection JPEG remains HTTP 403. Commons link alone is not owner permission.",
+      "alternativeFirstPartySourceDiscovery": {
+        "museumMediaPortal": "https://media.nationalmuseum.se/search/all",
+        "collectionRightsPolicy": "https://www.nationalmuseum.se/en/explore-art-and-design/images/rights-and-reproductions",
+        "sourceEvidence": "https://www.nationalmuseum.se/en/explore-art-and-design/images",
+        "launchNews": "https://www.nationalmuseum.se/om-nationalmuseum/nyheter/nationalmuseum-tillg%C3%A4ngligg%C3%B6r-bildskatt-genom-ny-mediaportal",
+        "photoLookupKey": "NM 1134",
+        "status": "SOURCE_PORTAL_AVAILABLE_EXACT_OBJECT_MEDIA_FILE_NOT_YET_MATCHED",
+        "museumPhotoMustHaveInventoryIdAndExplicitLicence": true,
+        "mediaPortalImageFileUrl": null,
+        "individualMediaLicenceVerified": false,
+        "autoCommonsPromotionForbidden": true
+      }
     }
   ],
   "census": {
@@ -85,7 +109,8 @@
     "originalPoolVerifiedSources": 7,
     "externalRiberaVerifiedAlternatives": 1,
     "newDateApproved": 0,
-    "newAppImageReleased": 0
+    "newAppImageReleased": 0,
+    "firstPartyAlternateMediaPortalsIdentified": 1
   },
   "safeguards": [
     "Nothing published. Do not treat source file quality as a liturgical-scene approval.",
