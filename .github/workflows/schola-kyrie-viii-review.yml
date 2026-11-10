@@ -1,0 +1,28 @@
+name: Schola Kyrie VIII source review hold
+on:
+  pull_request:
+    paths:
+      - "src/mass/reader-kyrie-viii-review-queue.js"
+      - "src/mass/reader-kyriale-research-gabc.js"
+      - "data/presentation/reader-text-sung.v1.json"
+      - "tests/schola-kyrie-viii-review-queue.mjs"
+      - ".github/workflows/schola-kyrie-viii-review.yml"
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  source-cue-review:
+    name: Nine Kyrie cues and four printed lines — non-publishing
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Source-review syntax
+        run: |
+          node --check src/mass/reader-kyrie-viii-review-queue.js
+          node --check tests/schola-kyrie-viii-review-queue.mjs
+      - name: Fail closed on any musical-source/cue drift
+        run: node tests/schola-kyrie-viii-review-queue.mjs
