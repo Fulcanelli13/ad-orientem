@@ -44,18 +44,20 @@
     "formalAppContainerCropCertifications": 0,
     "newPublicArtworkReleases": 0,
     "newInstitutionPhotoPolicyHolds": 36,
-    "unverifiedPhotoSearchLaneRemaining": 12,
+    "unverifiedPhotoSearchLaneRemaining": 8,
     "iccdOfficialPhotoRightsHoldsAdded": 27,
     "nationalmuseumFirstPartyMediaPortalRecordsToResolve": 2,
     "firstPartyMediaRecordInvestigations": 4,
-    "museumPortalsNeedingClientRenderedAccess": 4
+    "museumPortalsNeedingClientRenderedAccess": 4,
+    "clientRenderedFirstPartyPortalImageHolds": 4
   },
   "reviewLaneCounts": {
     "A_VERIFIED_SOURCE_PHOTO_EDITORIAL_AND_MOBILE_QA": 9,
     "B_COPYRIGHT_REVIEW": 1,
     "B_RECONCILE_WORK_IDENTITY": 1,
+    "C_CLIENT_RENDERED_MUSEUM_PORTAL_REQUIRES_NEW_METHOD": 4,
     "C_FIND_TRUE_COLOUR_REPRODUCTION": 1,
-    "C_LOCATE_REUSABLE_COLOUR_SOURCE": 12,
+    "C_LOCATE_REUSABLE_COLOUR_SOURCE": 8,
     "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT": 45,
     "D_CHECK_ICONOGRAPHIC_FIDELITY": 13,
     "D_CONTEXT_ONLY_FIND_EXACT_GOSPEL_SCENE": 1,
@@ -4244,9 +4246,9 @@
       "sourceAuditNote": "c.1767, oil on canvas 135×98.5cm, museum MNK II-a-448; saint miraculously repairs a broken milk jug for a poor girl. Source says copyright class Public Domain; exact downloadable image file, rights and SHA still unverified.",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-final15-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
+      "lane": "C_CLIENT_RENDERED_MUSEUM_PORTAL_REQUIRES_NEW_METHOD",
       "nextAction": "Prioritize direct browser-rendered official MNK download of exact milk-jug miracle (MNK II-a-448), then image hash/rights/crop QA. Static HTML returns no image/anchor; no more og:image retries.",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "risk": "STATIC_HTML_NOT_IMAGE_SOURCE_BROWSER_OR_MUSEUM_API_REQUIRED",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
@@ -4310,9 +4312,9 @@
       "sourceAuditNote": "c. 1840. Official catalogue lists alternative titles spanning excommunication, murder, blessing his killers and death; do not assume exact action from title without photo inspection. Public-domain copyright classification listed but no named source photograph license/bytes established.",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-followup10b-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
+      "lane": "C_CLIENT_RENDERED_MUSEUM_PORTAL_REQUIRES_NEW_METHOD",
       "nextAction": "Browser-rendered official MNK download only if excommunication scene is needed; do NOT label or reuse as a picture of the martyrdom. Static HTML offers no photo.",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "risk": "STATIC_HTML_NOT_IMAGE_SOURCE_BROWSER_OR_MUSEUM_API_REQUIRED",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
@@ -4655,9 +4657,9 @@
       "sourceAuditNote": "Swedish Nationalmuseum NM1134, distinct oil on wooden panel, NOT same painting as NM420",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-followup10-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
+      "lane": "C_CLIENT_RENDERED_MUSEUM_PORTAL_REQUIRES_NEW_METHOD",
       "nextAction": "Search the interactive Nationalmuseum media portal for the exact NM inventory record; distinguish image licence from object PD and validate full-res original file. Static HTML endpoint is exhausted.",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "risk": "STATIC_HTML_NOT_IMAGE_SOURCE_BROWSER_OR_MUSEUM_API_REQUIRED",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
@@ -4725,9 +4727,9 @@
       "sourceAuditNote": "Swedish Nationalmuseum NM420, oil canvas, workers paid equal wages Matthew 20:1–16. Museum prose also mistakenly references different tenants parable John?/Matthew21; do not import that error",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-followup10-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
+      "lane": "C_CLIENT_RENDERED_MUSEUM_PORTAL_REQUIRES_NEW_METHOD",
       "nextAction": "Search the interactive Nationalmuseum media portal for the exact NM inventory record; distinguish image licence from object PD and validate full-res original file. Static HTML endpoint is exhausted.",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "risk": "STATIC_HTML_NOT_IMAGE_SOURCE_BROWSER_OR_MUSEUM_API_REQUIRED",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
@@ -7288,7 +7290,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_CLIENT_RENDERED_MUSEUM_PORTAL_REQUIRES_NEW_METHOD"
       ]
     },
     {
@@ -7307,7 +7309,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_CLIENT_RENDERED_MUSEUM_PORTAL_REQUIRES_NEW_METHOD"
       ]
     },
     {
@@ -8029,7 +8031,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_CLIENT_RENDERED_MUSEUM_PORTAL_REQUIRES_NEW_METHOD"
       ]
     },
     {
@@ -9929,7 +9931,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_CLIENT_RENDERED_MUSEUM_PORTAL_REQUIRES_NEW_METHOD"
       ]
     },
     {
