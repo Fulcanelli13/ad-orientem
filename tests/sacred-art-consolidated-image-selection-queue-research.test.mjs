@@ -110,6 +110,23 @@ assert.equal(queue.counts.verifiedColourJpegSources,9);
 assert.equal(queue.counts.verifiedSourcePhotosInOriginal151Pool,8);
 assert.equal(queue.reviewLaneCounts.C_LOCATE_REUSABLE_COLOUR_SOURCE,12);
 assert.equal(queue.counts.firstPartyMediaRecordInvestigations,4);
+assert.equal(queue.counts.museumPortalsNeedingClientRenderedAccess,4);
+const portalBlockers=read(root+'m2m-museum-portal-static-client-blockers-20261110.v1.json');
+assert.equal(portalBlockers.counts.investigated,4);
+assert.equal(portalBlockers.counts.newImageByteAcquisitions,0);
+assert.equal(portalBlockers.counts.totalVerifiedPhotoTotal,9);
+assert.equal(portalBlockers.counts.publicReleases,0);
+assert.deepEqual(portalBlockers.records.map(x=>x.key),[
+ 'Nationalmuseum:NM420','Nationalmuseum:NM1134','MNK:II-a-448','MNK:II-a-9'
+]);
+for(const row of portalBlockers.records){
+ const w=workByKey.get(row.key);
+ assert.equal(w.firstPartyDownloadLinkInvestigation.status,'CLIENT_SIDE_RENDERED_MUSEUM_PORTAL_STATIC_HTTP_PATH_EXHAUSTED');
+ assert.equal(w.firstPartyDownloadLinkInvestigation.originalSourceBytesVerified,false);
+ assert.equal(w.firstPartyDownloadLinkInvestigation.retryStaticHtml,false);
+ assert.equal(w.verifiedPhotoId,null);
+ assert.equal(w.ownerApprovalForAnyNewDate,false);
+}
 const cantius=workByKey.get('MNK:II-a-448');
 const stanislaus=workByKey.get('MNK:II-a-9');
 assert.equal(cantius.verifiedSubjectIconography.saintIdentity,'JOHN_CANTIUS');
