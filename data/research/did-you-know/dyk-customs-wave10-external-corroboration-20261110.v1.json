@@ -1,0 +1,58 @@
+{
+  "schema": "AO_DYK_CUSTOMS_WAVE10_SIX_EXTERNAL_SOURCE_REVIEWS_V1",
+  "date": "2026-11-10",
+  "status": "NARROW_CLAIM_SPECIFIC_CROSSCHECK_NOT_WHOLE_CORPUS_CERTIFICATION",
+  "counts": {
+    "staged": 400,
+    "claim_source_spotchecks": 6,
+    "reader_copy_refinements": 4,
+    "source_folio_1958_pages_checked": 23,
+    "all_claims_independently_certified": false
+  },
+  "checks": [
+    {
+      "id": "DYK-C400-BG-007",
+      "issuer": "Polish Ministry of Agriculture and Rural Development",
+      "url": "https://www.gov.pl/web/rolnictwo/zur-na-kielbasie",
+      "finding": "Describes mock funeral of herring and żur on Holy Saturday, including fish hung on a branch and soup pot smashed.",
+      "reader_copy_adjusted": true
+    },
+    {
+      "id": "DYK-C400-BG-013",
+      "issuer": "Diocese of Tivoli and Palestrina",
+      "url": "https://diocesitivoliepalestrina.it/la-tradizionale-inchinata-a-tivoli/",
+      "finding": "Inchinata takes place at Tivoli on 14 August, images of Christ and Mary meet and bow three times; 15 August repeat.",
+      "reader_copy_adjusted": true
+    },
+    {
+      "id": "DYK-C400-BG-014",
+      "issuer": "Sassari municipal tourism office",
+      "url": "https://www.turismosassari.it/calendario-eventi/eventi-della-tradizione/discesa-dei-candelieri?print=1&tmpl=component",
+      "finding": "Every 14 August Sassari guilds shoulder large wooden candle forms through streets to Santa Maria di Betlem, renewing an Assumption vow after plague. The modern number is 13, so avoid passing Weiser's 1958 seven candles as current.",
+      "reader_copy_adjusted": true
+    },
+    {
+      "id": "DYK-C400-BG-019",
+      "issuer": "Biblioteca Nacional de España",
+      "url": "https://www.bne.es/es/blog/blog-bne/el-dia-de-la-madre-empezo-celebrarse-en-espana-para-fomentar-en-los-ninos-el-respeto-las-mujeres",
+      "finding": "After Spanish Civil War, Mother's Day observance on Immaculate Conception 8 December; moved definitively to first Sunday in May in 1965.",
+      "reader_copy_adjusted": true
+    },
+    {
+      "id": "DYK-C400-BG-009",
+      "issuer": "UNESCO Intangible Cultural Heritage",
+      "url": "https://ich.unesco.org/en/RL/pysanka-ukrainian-tradition-and-art-of-decorating-eggs-02134",
+      "finding": "Confirms Ukrainian wax-resist egg decoration tradition, Easter association, exchanged gifts, blessed pysanky kept at home. The UNESCO description identifies broader Ukrainian culture across religions, not exclusively Catholic identity.",
+      "reader_copy_adjusted": false
+    },
+    {
+      "id": "DYK-C400-BG-024",
+      "issuer": "Lonely Planet — Spanish Kings' Day customs",
+      "url": "https://www.lonelyplanet.com/articles/epiphany-spain",
+      "finding": "Confirms children place empty shoes on 5 January for Magi gifts, received on 6 January.",
+      "reader_copy_adjusted": false
+    }
+  ],
+  "caution": "Sassari municipal current custom uses wood candle structures and modern 13 processional units; the historic Weiser account of seven must not be presented as present-day count. UNESCO's pysanky entry is not a source for specifically Roman Catholic exclusivity.",
+  "release_authorized": false
+}
