@@ -292,13 +292,11 @@ self.addEventListener("fetch",event=>{
  const navigation=request.mode==="navigate";
  if((u.search&&!navigation)||u.pathname.includes("__ao_scripture_cache__"))return;
  event.respondWith((async()=>{
-  const id=event.resultingClientId||event.clientId;
   const version=await pinnedVersion(event);
   const cache=version?await caches.open(cacheName(version)):null;
   const url=navigation?ROOT:request.url;
   const cached=await cache?.match(keyFor(url));
   if(cached){
-   if(navigation&&id)liveClients.set(id,version);
    return cached;
   }
   try{
