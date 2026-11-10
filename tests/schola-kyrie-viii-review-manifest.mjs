@@ -6,6 +6,8 @@ import {selectApprovedScholaDockScore,SCHOLA_DOCK_APPROVAL_SCHEMA}
 
 const pkg=buildKyrieVIIIReviewManifest();
 assert.equal(pkg.status,"SOURCE_CUES_READY_MUSICAL_PROOF_AND_PUBLICATION_HELD");
+assert.equal(pkg.verifiedResearchGabcSha256,pkg.source.sourceGabcSha256,
+ "Manifest must reject changed GABC even when 4-line layout is still intact");
 assert.equal(pkg.approvedScores,0);
 assert.equal(pkg.publishedScores,0);
 assert.equal(pkg.approval,"NOT_GRANTED");
