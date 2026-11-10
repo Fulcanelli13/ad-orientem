@@ -88,6 +88,17 @@ async function validVersion(v){
  return Boolean(await c.match(ROOT))&&Boolean(await c.match(READY));
 }
 async function pinnedVersion(event){
+ // A navigation starts a fresh document. Never borrow the previous page's
+ // clientId pin: doing so reloads the OLD HTML after the user taps Update.
+ // Some browsers initially supply no resultingClientId, so even that case
+ // must read the explicitly activated snapshot rather than the old pin.
+ if(event?.request?.mode==="navigate"){
+  const s=await readState();
+  const v=await validVersion(s.active)?s.active:null;
+  const destination=event.resultingClientId;
+  if(destination&&v)liveClients.set(destination,v);
+  return v;
+ }
  const id=event?.clientId||event?.resultingClientId;
  if(id&&liveClients.has(id))return liveClients.get(id);
  const s=await readState();
@@ -281,13 +292,11 @@ self.addEventListener("fetch",event=>{
  const navigation=request.mode==="navigate";
  if((u.search&&!navigation)||u.pathname.includes("__ao_scripture_cache__"))return;
  event.respondWith((async()=>{
-  const id=event.resultingClientId||event.clientId;
   const version=await pinnedVersion(event);
   const cache=version?await caches.open(cacheName(version)):null;
   const url=navigation?ROOT:request.url;
   const cached=await cache?.match(keyFor(url));
   if(cached){
-   if(navigation&&id)liveClients.set(id,version);
    return cached;
   }
   try{

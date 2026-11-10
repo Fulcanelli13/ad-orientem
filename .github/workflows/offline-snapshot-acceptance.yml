@@ -6,6 +6,7 @@ on:
       - "src/app/offline-boot.js"
       - "src/app/browser-entry.js"
       - "tests/offline-snapshot-e2e.mjs"
+      - "tests/offline-explicit-update-navigation.mjs"
       - "tests/pwa-installability-contract.mjs"
       - "Ad-Orientem-v43.19.webmanifest"
       - ".github/workflows/offline-snapshot-acceptance.yml"
@@ -18,6 +19,7 @@ on:
       - "src/app/offline-boot.js"
       - "src/app/browser-entry.js"
       - "tests/offline-snapshot-e2e.mjs"
+      - "tests/offline-explicit-update-navigation.mjs"
       - "tests/pwa-installability-contract.mjs"
       - "Ad-Orientem-v43.19.webmanifest"
 permissions:
@@ -39,4 +41,5 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
       - run: node tests/pwa-installability-contract.mjs
+      - run: node tests/offline-explicit-update-navigation.mjs
       - run: node tests/offline-snapshot-e2e.mjs
