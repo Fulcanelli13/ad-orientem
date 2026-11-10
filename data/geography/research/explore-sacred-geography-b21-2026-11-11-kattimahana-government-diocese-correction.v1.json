@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0",
+  "batch": "B21",
+  "date": "2026-11-11",
+  "scope": "RESEARCH_ONLY_NOT_CERTIFIED",
+  "baseline": {
+    "main_registry_path": "data/geography/seed-registry.v1.json",
+    "main_registry_sha": "95a051468ea7da952965f8c25d7265d10b81f6c6",
+    "main_places_last_confirmed": 530,
+    "r70_last_confirmed": 750,
+    "philippines_checkpoint_historical": 347,
+    "prior_batch": "B20"
+  },
+  "records": [
+    {
+      "record_id": "SG-B21-KATTIMAHANA-GOVERNMENT-JURISDICTION-CORRECTION",
+      "kind": "EXISTING_DOSSIER_CORRECTION",
+      "status": "STRONG_GOVERNMENT_EVIDENCE_KURUNEGALA_FORMAL_DECREE_HELD",
+      "name": "St Anne's National Shrine, Kattimahana, Sri Lanka",
+      "summary_en": "Sri Lanka's official Department of Christian Religious Affairs church register explicitly lists St Anne's Shrine, Kattimahana, registration CA/kuru/18/12/CI, in the Kurunegala diocese column, with Udubaddawa as divisional secretariat and Kattimahana/Dummalasuriya as parish. The official Government Gazette of 16 August 2024 expressly calls the event 'Kurunegala (North-Western) Catholic Diocese's 129th Annual Feast of Kattimahana St. Anna National Shrine', scheduled 15–28 August with main celebrations 24–25 August 2024. This directly contradicts B16's interpretation that the government's Kurunegala label was merely administrative. The earlier GCatholic Chilaw assignment must be treated as a conflicting secondary record, not the preferred jurisdiction. The Gazette documents the public use of 'National Shrine', but is not itself the ecclesiastical decree conferring that title.",
+      "summary_fr": "Le registre officiel du Département sri-lankais des affaires religieuses chrétiennes classe expressément le sanctuaire Sainte-Anne de Kattimahana (CA/kuru/18/12/CI) dans le diocèse de Kurunegala, avec Udubaddawa comme circonscription administrative et Kattimahana/Dummalasuriya comme paroisse. La Gazette officielle du 16 août 2024 désigne la fête comme celle du sanctuaire national Sainte-Anne de Kattimahana du diocèse catholique de Kurunegala ; elle annonce la période du 15 au 28 août et les célébrations principales des 24 et 25 août 2024. Cette preuve contredit l'interprétation de B16 selon laquelle « Kurunegala » ne serait qu'une rubrique géographique. L'attribution à Chilaw dans l'annuaire secondaire reste une divergence à signaler. La Gazette atteste l'usage du titre « sanctuaire national », mais ne constitue pas le décret ecclésiastique d'érection.",
+      "sources": [
+        {
+          "url": "https://christian.gov.lk/churches/kurunegala-district.html",
+          "locator": "row 38, registration CA/kuru/18/12/CI",
+          "supports": "government church register; explicit Diocese column and parish"
+        },
+        {
+          "url": "https://documents.gov.lk/view/gz/2024/8/2024-08-16%28I-I%29E.pdf",
+          "locator": "Gazette No. 2398, Part I Section I, printed page 1963, notice 08-102",
+          "supports": "government's explicit Catholic Diocese of Kurunegala wording; national shrine appellation; 2024 feast dates"
+        },
+        {
+          "url": "https://gcatholic.org/churches/asia/6505",
+          "supports": "previous conflicting secondary jurisdiction assignment; do not silently discard"
+        }
+      ],
+      "correction_to": "B16 Kattimahana administrative-vs-diocese interpretation",
+      "holds": [
+        "Confirm competent ecclesiastical authority directly through published diocesan documents; do not contact anyone",
+        "Find original canonical national shrine decree",
+        "Do not infer 2026 feast dates from 2024 notice",
+        "Do not change canonical Place ID or map pin"
+      ]
+    }
+  ],
+  "next_targets": [
+    "Kattimahana diocesan primary record and original shrine decree",
+    "Trà Kiệu authoritative two-building entrances",
+    "Nishizaka relic custody direct custodian publication",
+    "Cupey permanent building completion",
+    "Aitara canonical title decree",
+    "Kolser diocesan confirmation",
+    "Dili/Tianjin identity holds"
+  ],
+  "counts": {
+    "existing_dossiers_corrected": 1,
+    "new_canonical_places": 0,
+    "coordinates_added": 0,
+    "routes_added": 0
+  },
+  "restrictions": [
+    "No merge",
+    "No publication",
+    "No deployment",
+    "No contacts",
+    "No paid services"
+  ]
+}
