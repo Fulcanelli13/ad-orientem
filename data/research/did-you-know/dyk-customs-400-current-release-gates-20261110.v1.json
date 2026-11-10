@@ -28,7 +28,9 @@
     "wave13_existing_source_claims_visually_reviewed": 25,
     "wave13_existing_source_claims_collapsed": 2,
     "publication_ready_new_cards": 0,
-    "remaining_without_explicit_checked_flag": 338
+    "remaining_without_explicit_checked_flag": 338,
+    "active_source_id_link_mismatches": 0,
+    "active_source_id_link_matches": 400
   },
   "method_note": "Explicit original-page flag count is staging metadata only, not a census of all historical research. The 25 source claim checks this wave include two subsequently merged records; the after-merge selection has 62 explicit original-folio flags. Distinct source URLs and HTTPS source link counts do not prove that hyperlinks resolve or claims are supported.",
   "pending_gates": {
@@ -56,7 +58,6 @@
   },
   "publication_authorized": false,
   "instructions": "Research-only PR #2776 remains draft. Do not change Home runtime, merge release, or deploy via GitHub Pages until all required signoffs. Never deploy via Vercel.",
-  "last_reconciled_stage_commit_sha": "data/research/did-you-know/dyk-customs-wave13-original-folio-25-claim-review-20261110.v1.json",
   "source_verification_next_batches": [
     {
       "focus": "Weiser 1958 source-page triage: pp.74, 96, 117–118, 234–235",
@@ -70,5 +71,8 @@
       "focus": "Canonical/institutional source cards (non-Weiser, non-Pitrè)",
       "priority": "Check actual institutional links and exact claim support; replace failed links without inventing sources"
     }
-  ]
+  ],
+  "last_reconciled_stage_file_path": "data/research/did-you-know/dyk-customs-400-provisional-new-selection-20261110.v4.json",
+  "last_link_integrity_audit": "data/research/did-you-know/dyk-customs-wave13-source-id-link-integrity-20261110.v1.json",
+  "audit_note": "All 400 active source IDs match source link IDs, but actual URL reachability/claim support across 55 distinct URLs is not fully certified."
 }
