@@ -58,6 +58,7 @@ import {internalPrayerView,supportedDirectPrayerRoute} from "./internal-route-ow
 import {renderLittleCrownB30} from "./little-crown-presentation-b30.js";
 import {PRAYER_SUBJECTS_V1,prayerSubjectsForLibrary,prayerSubjectCounts} from "./prayer-subject-index.v1.js";
 import {guidedPrayerLinksForSubject} from "./prayer-subject-guided-links.v1.js";
+import {INFANT_JESUS_LITANIES_V1,infantJesusLitanyWork,infantJesusLitanyMatches,infantJesusLitanyStages} from "./infant-jesus-prague-litanies.v1.js";
 import {PRAYER_SUPPLEMENTAL_LIVE_WORK_LINKS_V1,prayerSupplementalLiveWork,prayerSupplementalLiveWorksForSubject} from "./prayer-supplemental-live-works.v1.js";
 import {prayerSevenSourceWork,prayerSevenSourceWorksForSubject} from "./prayer-seven-source-work-links.v1.js";
 import {redBookletCommunionLibraryLink,redBookletCommunionLibraryLinksForSubject} from "./red-booklet-communion-library-links.v1.js";
@@ -2414,6 +2415,7 @@ function renderAdoration(){
 }
 function familyOf(p){return libraryVariantFamily(p.id)||p.id}
 let LIB={q:'',cat:'all',subject:'all',subjectOpen:false,open:null,language:null};
+let INFANT_PRAGUE_LITANY_STAGE=0;
 // Mass Sequentia texts are borrowed live from the authenticated selected Proper;
 // they are NOT added to the locked 48-text canonical Prayer object.
 const MASS_SEQUENCE_READING={id:null,record:null,loading:false,error:null,token:0};
@@ -2669,7 +2671,58 @@ function renderLibraryEntryRows(rows,search){
   return `<details class="aoP435930LibraryVariants" data-ao-prayer-family="${esc(entry.family)}"${search?' open':''}><summary><small>${esc(L('Prayer family','Famille de prières'))}</small><b>${esc(isFr()?label.fr:label.en)}</b><span>${entry.prayers.length} ${esc(L(entry.prayers.length===1?'form':'forms',entry.prayers.length===1?'forme':'formes'))}</span></summary><div class="aoP435930LibraryVariantItems">${entry.prayers.map(renderRow).join('')}</div></details>`;
  }).join('')||`<p>${esc(L('No prayers match this search.','Aucune prière ne correspond à cette recherche.'))}</p>`;
 }
+function renderInfantPragueLitany(){
+ const work=infantJesusLitanyWork(LIB.open);
+ const stages=infantJesusLitanyStages(LIB.open);
+ if(!work||!stages.length)return callout(esc(L('Litany source unavailable.','Source des litanies indisponible.')),'warn');
+ const idx=Math.max(0,Math.min(stages.length-1,INFANT_PRAGUE_LITANY_STAGE));
+ const step=stages[idx];
+ const fr=isFr();
+ const sectionNames={
+  'long-opening':L('Opening invocations','Invocations d’ouverture'),
+  trinity:L('The Holy Trinity','La Sainte Trinité'),
+  infant:L('Invocations to the Infant Jesus','Invocations à l’Enfant-Jésus'),
+  'short-requests':L('Three concluding petitions','Trois supplications finales'),
+  'short-versicle':L('Versicle and response','Verset et répons'),
+  'short-collect':L('Collect of the short litany','Oraison de la forme courte'),
+  'short-closing':L('Final invocations','Invocations finales'),
+  deliverances:L('Deliverance petitions','Demandes de délivrance'),
+  'long-requests':L('Intercessions','Intercessions'),
+  agnus:L('Lamb of God','Agneau de Dieu'),
+  'long-versicle':L('Incarnation versicle','Verset de l’Incarnation'),
+  'long-collect':L('Collect of the long litany','Oraison de la forme longue')
+ };
+ const list=step.items.map(item=>{
+   const body=fr?item.fr:item.en,reply=fr?item.responseFr:item.responseEn;
+   return '<li class="aoP435930SourceNote" data-ao-infant-litany-invocation>'+
+      '<span>'+esc(body)+'</span>'+ (reply?'<p class="aoP435930SourceNote" data-ao-infant-litany-response>'+esc(reply)+'</p>':'')+
+   '</li>';
+ }).join('');
+ const title=fr?work.titleFr:work.titleEn;
+ const note=idx===0?
+ '<p class="aoP435930SourceNote" data-ao-infant-litany-editorial>'+esc(L(
+ 'The ICKSP France page identifies two distinct litany forms. The wording here is an Ad Orientem editorial rendering of that devotional structure, not a certified verbatim transcription or authenticated early printed edition. English is newly translated; this is for private devotion.',
+ 'La page de l’ICRSP distingue deux formes de litanies. La rédaction ici est une version éditoriale de cette structure de dévotion, non une transcription littérale certifiée ni une édition ancienne authentifiée. L’anglais est une traduction nouvelle ; usage de dévotion privée.'
+ ))+'</p>':'';
+ const count=idx+1,done=stages.length;
+ return head(title,L('Infant Jesus of Prague · devotional litany','Saint Enfant-Jésus de Prague · litanies'))+
+  '<main class="aoP435930Body aoP435930LibraryReader" data-ao-infant-litany-reader="'+esc(work.id)+'" data-ao-infant-litany-variant="'+esc(work.variant)+'">'+
+  note+
+  '<div class="aoJosephSevenProgress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+Math.round(count*100/done)+'" aria-label="'+esc(L('Reading progress','Progression de lecture'))+'"><span style="width:'+Math.round(count*100/done)+'%"></span></div>'+
+  '<article class="aoDevoCard" data-ao-infant-litany-stage="'+esc(step.id)+'"><div class="aoDevoCardScroll">'+
+  '<small>'+count+' / '+done+'</small><h2>'+esc(sectionNames[step.id]||step.id)+'</h2>'+
+  '<ol class="aoRaccolta1857Lines" data-ao-infant-litany-petitions>'+list+'</ol></div></article>'+
+  '<nav class="aoJosephSevenNav">'+
+  '<button type="button" data-p435930-infant-litany-prev '+(idx===0?'disabled':'')+'>'+esc(L('Previous','Précédent'))+'</button>'+
+  (idx===done-1?'<button type="button" data-p435930-infant-litany-finish>'+esc(L('Back to Prayer Library','Retour au livre de prières'))+'</button>':
+   '<button type="button" data-p435930-infant-litany-next>'+esc(L('Next','Suivant'))+'</button>')+'</nav>'+
+  '<details class="aoP435930SourceNote"><summary>'+esc(L('Source and textual status','Source et statut du texte'))+'</summary>'+
+  '<p>'+esc(INFANT_JESUS_LITANIES_V1.originalityNotice)+'</p>'+
+  '<a href="'+esc(INFANT_JESUS_LITANIES_V1.sourceUrl)+'" target="_blank" rel="noopener noreferrer">'+
+  esc(L('ICRSP source page','Page source ICRSP'))+'</a></details></main>';
+}
 function renderLibrary(){
+ if(LIB.open&&infantJesusLitanyWork(LIB.open))return renderInfantPragueLitany();
  if(LIB.open&&massSequencePrayerWork(LIB.open))return renderMassSequencePrayer();
  if(LIB.open){
   const p=P(LIB.open);if(!p){LIB.open=null;return renderLibrary()}
@@ -2777,6 +2830,17 @@ function renderLibrary(){
    '<small>'+esc(L('MASS SEQUENCE · SOURCE READER','SÉQUENCE DE MESSE · SOURCE'))+'</small>'+
    '<b>'+esc(isFr()?work.titleFr:work.title)+'</b><span>LA · EN · FR</span></button>').join('')+
    '</div></section>');
+ const infantLitanyWorks=infantJesusLitanyMatches(LIB.subject,q,LIB.cat);
+ const infantLitaniesSection=!infantLitanyWorks.length?'':(
+  '<section class="aoP435930LibraryRelated" data-ao-infant-litanies-library>'+
+  '<h3>'+esc(L('Infant Jesus of Prague · Litanies','Saint Enfant-Jésus de Prague · Litanies'))+'</h3>'+
+  '<p>'+esc(L('Two complete devotional forms, with their own conclusions. French and English editorial renderings.',
+   'Deux formes complètes de dévotion, chacune avec sa conclusion. Textes éditoriaux en français et en anglais.'))+'</p>'+
+  '<div class="aoP435930ModuleGrid">'+infantLitanyWorks.map(w=>
+   '<button type="button" class="aoP435930ModuleCard" data-p435930-lib-open="'+esc(w.id)+'" data-ao-infant-litany-open="'+esc(w.acquisitionId)+'">'+
+   '<small>'+esc(w.variant==='SHORT_FULL'?L('SHORT FORM','FORME COURTE'):L('LONG FORM','FORME LONGUE'))+'</small>'+
+   '<b>'+esc(isFr()?w.titleFr:w.titleEn)+'</b><span>'+esc(L('Complete · editorial text','Complète · texte éditorial'))+'</span></button>'
+  ).join('')+'</div></section>');
  const guidedLinks=LIB.cat==='all'?guidedPrayerLinksForSubject(LIB.subject,q):[];
  const guidedSection=LIB.cat!=='all'||!guidedLinks.length?
   '':('<section class="aoP435930LibraryRelated" data-ao-prayer-subject-guided="'+esc(LIB.subject)+'">'+
@@ -2793,9 +2857,9 @@ function renderLibrary(){
   '<div class="aoP435930Chips" role="group" aria-label="'+esc(L('Theological prayer families','Familles théologiques de prières'))+'">'+
   '<button type="button" data-p435930-lib-subject="all" aria-pressed="'+String(LIB.subject==='all')+'">'+esc(L('All subjects','Tous les sujets'))+'</button>'+
   PRAYER_SUBJECTS_V1.map(subject=>'<button type="button" data-p435930-lib-subject="'+subject.id+'" aria-pressed="'+String(LIB.subject===subject.id)+'">'+
-    esc(isFr()?subject.fr:subject.en)+' <small>'+(subjectCounts.counts[subject.id]+prayerSupplementalLiveWorksForSubject(subject.id).length +prayerSevenSourceWorksForSubject(subject.id).length+redBookletCommunionLibraryLinksForSubject(subject.id).length+redBookletSuscipeLibraryLinksForSubject(subject.id).length+redBookletPrivateHistoricalWorksForSubject(subject.id).length+MASS_SEQUENCE_PRAYER_WORKS.filter(x=>x.subject===subject.id).length+(subject.id==='V'?1:0))+'</small></button>').join('')+
+    esc(isFr()?subject.fr:subject.en)+' <small>'+(subjectCounts.counts[subject.id]+prayerSupplementalLiveWorksForSubject(subject.id).length +prayerSevenSourceWorksForSubject(subject.id).length+redBookletCommunionLibraryLinksForSubject(subject.id).length+redBookletSuscipeLibraryLinksForSubject(subject.id).length+redBookletPrivateHistoricalWorksForSubject(subject.id).length+MASS_SEQUENCE_PRAYER_WORKS.filter(x=>x.subject===subject.id).length+(subject.id==='V'?1:0)+INFANT_JESUS_LITANIES_V1.works.filter(w=>w.subject===subject.id).length)+'</small></button>').join('')+
   '</div><p class="aoP435930SourceNote">'+esc(L('Only accessible canonical and source-owned reader texts are included. Unverified research works are not shown as readable prayers.','Seuls les textes canoniques et les prières déjà accessibles dans leurs parcours d’origine sont inclus. Les œuvres de recherche non vérifiées ne sont pas présentées comme disponibles.'))+'</p></details>';
- return `${head(L('Prayer Library','Livre de prières'),L('Prayers and guided devotions','Prières et dévotions guidées'))}<main class="aoP435930Body">${libraryOverviewGuide()}<label class="aoP435930Search"><span>${assetIcon('ao-ui-search')}</span><input type="search" data-p435930-lib-search value="${esc(LIB.q)}" placeholder="${esc(L('Search prayers','Rechercher une prière'))}"></label><div class="aoP435930Chips">${cats.map(([id,n])=>`<button type="button" class="${id===LIB.cat?'active':''}" data-p435930-lib-cat="${esc(id)}">${esc(n)}</button>`).join('')}</div>${subjectBrowse}<div class="aoP435930LibraryList" data-ao-prayer-subject-results="${esc(LIB.subject)}">${LIB.cat==="essentials"&&!q?claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2,prayers:DATA.prayers,locale:lang(),esc,title:L("Essential Prayers","Prières essentielles"),artFor:releasedPrayerCardArtUrl}):(rows.length||!(historicalWorks.length+sourceDeepWorks.length+privateCommunionWorks.length+privateHistoricalWorks.length+(stabatSeptember?1:0)+massSequences.length)?renderLibraryEntryRows(rows,q):'')}</div>${communionSection}${privateHistoricalSection}${historicalSection}${stabatLibrarySection}${massSequenceSection}${guidedSection}</main>`;
+ return `${head(L('Prayer Library','Livre de prières'),L('Prayers and guided devotions','Prières et dévotions guidées'))}<main class="aoP435930Body">${libraryOverviewGuide()}<label class="aoP435930Search"><span>${assetIcon('ao-ui-search')}</span><input type="search" data-p435930-lib-search value="${esc(LIB.q)}" placeholder="${esc(L('Search prayers','Rechercher une prière'))}"></label><div class="aoP435930Chips">${cats.map(([id,n])=>`<button type="button" class="${id===LIB.cat?'active':''}" data-p435930-lib-cat="${esc(id)}">${esc(n)}</button>`).join('')}</div>${subjectBrowse}<div class="aoP435930LibraryList" data-ao-prayer-subject-results="${esc(LIB.subject)}">${LIB.cat==="essentials"&&!q?claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2,prayers:DATA.prayers,locale:lang(),esc,title:L("Essential Prayers","Prières essentielles"),artFor:releasedPrayerCardArtUrl}):(rows.length||!(historicalWorks.length+sourceDeepWorks.length+privateCommunionWorks.length+privateHistoricalWorks.length+(stabatSeptember?1:0)+massSequences.length+infantLitanyWorks.length)?renderLibraryEntryRows(rows,q):'')}</div>${communionSection}${privateHistoricalSection}${historicalSection}${stabatLibrarySection}${massSequenceSection}${infantLitaniesSection}${guidedSection}</main>`;
 }
 function monthIndex(key){const d=dateObj(key);return d?d.getFullYear()*12+d.getMonth():null}
 function consecutive(records,needed){const done=records.filter(x=>x.complete).sort((a,b)=>a.date.localeCompare(b.date));if(!done.length)return 0;let c=1;for(let i=done.length-1;i>0;i--){const a=monthIndex(done[i].date),b=monthIndex(done[i-1].date);if(a-b===1)c++;else break}return Math.min(c,needed)}
@@ -5111,7 +5175,19 @@ function onClick(e){
   MASS_SEQUENCE_READING.error=null;MASS_SEQUENCE_READING.loading=false;
   MASS_SEQUENCE_READING.token++;return render();
  }
- if(b.dataset.p435930LibOpen){LIB.open=b.dataset.p435930LibOpen;LIB.language=null;PILOT_LORETO_GROUP=false;return render()}
+ if(b.matches('[data-p435930-infant-litany-prev]')&&infantJesusLitanyWork(LIB.open)){
+  INFANT_PRAGUE_LITANY_STAGE=Math.max(0,INFANT_PRAGUE_LITANY_STAGE-1);return render();
+ }
+ if(b.matches('[data-p435930-infant-litany-next]')&&infantJesusLitanyWork(LIB.open)){
+  INFANT_PRAGUE_LITANY_STAGE=Math.min(infantJesusLitanyStages(LIB.open).length-1,INFANT_PRAGUE_LITANY_STAGE+1);return render();
+ }
+ if(b.matches('[data-p435930-infant-litany-finish]')&&infantJesusLitanyWork(LIB.open)){
+  LIB.open=null;INFANT_PRAGUE_LITANY_STAGE=0;return render();
+ }
+ if(b.dataset.p435930LibOpen){
+  if(infantJesusLitanyWork(b.dataset.p435930LibOpen))INFANT_PRAGUE_LITANY_STAGE=0;
+  LIB.open=b.dataset.p435930LibOpen;LIB.language=null;PILOT_LORETO_GROUP=false;return render();
+ }
  if(b.dataset.p435930ScriptureRetry){
   // Retry only the exact currently displayed source identity, never switch
   // translation or fetch an alternative unsourced prayer text silently.
