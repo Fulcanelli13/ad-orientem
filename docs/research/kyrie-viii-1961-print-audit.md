@@ -19,6 +19,14 @@ The electronic source matches the *structural form* of the surviving 1961 print:
 
 The source's [editorial history](https://gregobase.selapa.net/chant.php?id=1184) reports corrections involving an altered **punctum/virga** in the Christe, a final-Kyrie **virga**, repositioned **puncta morae**, changes to melismatic spacing, and alterations. Those details require deliberate comparison with the exact printed glyphs, not simply matching the rendered contours of a current GABC file.
 
+## Final Kyrie VIII: the choir changes **inside the ninth invocation**
+
+The primary 1961 *Graduale Romanum*, `De ritibus servandis in cantu Missae`, §II, establishes nine Kyrie/Christe invocations and says the concluding Kyrie can be divided by the simple and double asterisk. In the **three-part** version printed for Kyrie VIII, the parts are sung in order by the cantors or first choir group, the second choir group (repeating the preceding melody), and **both groups together**. This is a performer/phrase division, **not three additional Kyrie invocations**. [1961 rubric text, printed p. XXIV](https://fliphtml5.com/tlnkj/pybi/Graduale_Romanum_1961/23/) and [1961 Kyrie VIII page 29*](https://gregobase.selapa.net/sources/2/906.png).
+
+The ninth source cue stays **`AO.SM.C0052`**, with three subordinate original-GABC subphrases rather than any new Mass card or cue. The other eight Kyrie and Christe invocations are sung alternately with cantors or choirs, but which local group starts is **not asserted**. Review-only implementation: `src/mass/reader-kyrie-viii-cantor-turns-review.js`; regression: `tests/schola-kyrie-viii-final-cantor-turns.mjs`.
+
+The two star markers and exact GABC fragments are preserved as evidence for future notation/performance highlighting; no local performance or exact singing time is observed. These new performance-role annotations do **not** constitute musical proof or editorial permission to publish the score.
+
 ## What has **not** been certified
 
 The small online scans and present review do **not** establish an independent note-by-note proofread of every neume (including quilismata and ligatures), rhythmic sign (puncta morae, episemata), pitch/accidental, asterisk and print spacing. Therefore all four phrases retain:
