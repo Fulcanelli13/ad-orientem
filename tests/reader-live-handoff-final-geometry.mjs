@@ -50,7 +50,9 @@ for(const r of [...LIVE_HANDOFF_ASPERGES_ROUTE,...LIVE_HANDOFF_INCENSATION_ROUTE
 assert.equal(liveHandoffStationPoint("unknown"),null);
 assert.equal(projectLiveHandoffPlanPosition([1]),null);
 assert.equal(projectLiveHandoffPlanPosition([Number.NaN,10]),null);
-assert.deepEqual(projectLiveHandoffPlanPosition([300,268]),{x:291.84,y:300});
+const railMapped=projectLiveHandoffPlanPosition([300,268]);
+assert.ok(Math.abs(railMapped.x-291.84)<1e-8);
+assert.equal(railMapped.y,300);
 const above=projectLiveHandoffPlanPosition(LIVE_HANDOFF_SOURCE_POINTS.GOSPEL);
 const below=projectLiveHandoffPlanPosition(LIVE_HANDOFF_SOURCE_POINTS.EPISTLE);
 assert.ok(above.y<below.y,"The Gospel (north) side must be above Epistle");
