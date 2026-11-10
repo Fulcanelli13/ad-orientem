@@ -32,7 +32,7 @@ export function renderLiveHandoffTimelineHtml(timeline){
       +'<div class="ao-lb-d-lane-track" aria-hidden="true">'
       +'<div class="ao-lb-d-cells">'
       +timeline.cards.map((card,i)=>
-        '<span class="ao-lb-d-cell" data-current="'+(i===timeline.position-1)+'"'
+        '<span class="ao-lb-d-cell" data-current="'+(lane.location===i)+'"'
         +((lane.location===i)?' data-source-mark="true"':"")
         +'></span>').join("")
       +'</div></div></div>'
