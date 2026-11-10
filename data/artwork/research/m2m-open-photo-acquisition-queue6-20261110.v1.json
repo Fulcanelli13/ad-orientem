@@ -10,11 +10,17 @@
     "A Met Open Access image or Walters CC0 may be acquired with no fees/permission, but new DATE placements still require explicit editorial approval",
     "Do not use black-and-white museum archival photo as if full-color oil reproduction",
     "If an image download fails do not claim asset or pixel QA succeeded",
-    "No runtime code, gallery replacement, original owner selection or release in this queue"
+    "No runtime code, gallery replacement, original owner selection or release in this queue",
+    "Wellcome jvt9hwrm is the CANVAS REVERSE, not an acceptable painting front; mark blocked regardless of CC BY label.",
+    "Met native image-server URLs are candidate sources until an actual HTTP fetch verifies original JPEG bytes and file dimensions."
   ],
   "counts": {
     "firstPartyOpenImageWorkKeys": 6,
     "firstPartyUrlsFound": 5,
+    "firstPartyMetColourUrlsStaged": 4,
+    "readyForGithubRunnerNetworkAttempt": 4,
+    "heldForWrongVersoOrUnverifiedWholeFront": 1,
+    "heldForMonochromeOnly": 1,
     "downloadedExactFiles": 0,
     "sourceBytesHashed": 0,
     "selectedPhotosColorAndPixelQACertified": 0,
@@ -28,9 +34,9 @@
       "title": "A Miracle of Saint Joseph of Cupertino",
       "institution": "The Metropolitan Museum of Art",
       "catalogue": "https://www.metmuseum.org/art/collection/search/724811",
-      "firstPartyPhotoUrl": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/724811/1676309/main-image",
+      "firstPartyPhotoUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP-12357-001.jpg",
       "photoLicence": "CC0 via Met's artwork-specific Public Domain badge",
-      "downloadAttempt": "WEB_IMAGE_FETCH_ERROR; LOCAL_BYTES_NOT_RECEIVED",
+      "downloadAttempt": "PREVIOUS_CONTAINER_DOWNLOADS_FAILED; GITHUB_ACTIONS_RETRY_NOT_YET_EXECUTED",
       "imageQualityIssue": "Painter's oil sketch rather than finished altarpiece; portrait orientation promising, inspect exact full-res pixels",
       "priority": 1,
       "expectedOutputType": "JPEG_OR_ORIGINAL_MUSEUM_FORMAT",
@@ -41,7 +47,13 @@
       "mobile390PhotoCropPass": null,
       "finalPhotoRightVerifiedForExactBytes": false,
       "ownerDatePlacementAuthority": false,
-      "productionEligible": false
+      "productionEligible": false,
+      "historicalImageApiUrl": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/724811/1676309/main-image",
+      "photoUrlEvidence": "Met donor filename DP-12357-001.jpg indexed as the original colour image; object 724811 and accession 2016.394 validated",
+      "remoteUrlStatus": "MUSEUM_FILENAME_FROM_MET_CONTRIBUTED_FILE_NOT_HTTP_VERIFIED",
+      "acquisitionStatus": "READY_NETWORK_ATTEMPT",
+      "photoRole": "WHOLE_PAINTING_COLOUR_FRONT",
+      "publicationStatus": "NOT_APPROVED"
     },
     {
       "key": "Met:435901",
@@ -49,9 +61,9 @@
       "title": "Madonna and Child with Saints Francis and Clare",
       "institution": "The Metropolitan Museum of Art",
       "catalogue": "https://www.metmuseum.org/art/collection/search/435901",
-      "firstPartyPhotoUrl": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/435901/1979741/main-image",
+      "firstPartyPhotoUrl": "https://images.metmuseum.org/CRDImages/ep/original/DP-18296-025.jpg",
       "photoLicence": "CC0 via Met's artwork-specific Public Domain badge",
-      "downloadAttempt": "WEB_PREVIEW_DISPLAYED; LOCAL_CONTAINER_DOWNLOAD_FAILED",
+      "downloadAttempt": "PREVIOUS_CONTAINER_DOWNLOADS_FAILED; GITHUB_ACTIONS_RETRY_NOT_YET_EXECUTED",
       "imageQualityIssue": "St Clare is right-side figure; preserve her hands/veil and don't crop her off",
       "priority": 2,
       "expectedOutputType": "JPEG_OR_ORIGINAL_MUSEUM_FORMAT",
@@ -62,7 +74,13 @@
       "mobile390PhotoCropPass": null,
       "finalPhotoRightVerifiedForExactBytes": false,
       "ownerDatePlacementAuthority": false,
-      "productionEligible": false
+      "productionEligible": false,
+      "historicalImageApiUrl": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/435901/1979741/main-image",
+      "photoUrlEvidence": "Met collection image index exposes this official full-res server path for object 435901",
+      "remoteUrlStatus": "FIRST_PARTY_IMAGE_URL_IN_IMAGE_INDEX_NOT_HTTP_VERIFIED",
+      "acquisitionStatus": "READY_NETWORK_ATTEMPT",
+      "photoRole": "WHOLE_PAINTING_COLOUR_FRONT",
+      "publicationStatus": "NOT_APPROVED"
     },
     {
       "key": "Met:469892",
@@ -70,9 +88,9 @@
       "title": "Bishop of Assisi Giving a Palm to Saint Clare",
       "institution": "The Metropolitan Museum of Art",
       "catalogue": "https://www.metmuseum.org/art/collection/search/469892",
-      "firstPartyPhotoUrl": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/469892/951498/main-image",
+      "firstPartyPhotoUrl": "https://images.metmuseum.org/CRDImages/cl/original/h1_1984.343.jpg",
       "photoLicence": "CC0 via Met's artwork-specific Public Domain badge",
-      "downloadAttempt": "WEB_PREVIEW_DISPLAYED; LOCAL_BYTES_NOT_RECEIVED",
+      "downloadAttempt": "PREVIOUS_CONTAINER_DOWNLOADS_FAILED; GITHUB_ACTIONS_RETRY_NOT_YET_EXECUTED",
       "imageQualityIssue": "Portrait orientation, Saint Clare on right; retain full narrative; current website medium differs from older Cloisters catalogue",
       "priority": 3,
       "expectedOutputType": "JPEG_OR_ORIGINAL_MUSEUM_FORMAT",
@@ -83,7 +101,13 @@
       "mobile390PhotoCropPass": null,
       "finalPhotoRightVerifiedForExactBytes": false,
       "ownerDatePlacementAuthority": false,
-      "productionEligible": false
+      "productionEligible": false,
+      "historicalImageApiUrl": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/469892/951498/main-image",
+      "photoUrlEvidence": "Met image index exposes official full-res path for object 469892 / accession 1984.343",
+      "remoteUrlStatus": "FIRST_PARTY_IMAGE_URL_IN_IMAGE_INDEX_NOT_HTTP_VERIFIED",
+      "acquisitionStatus": "READY_NETWORK_ATTEMPT",
+      "photoRole": "WHOLE_PAINTING_COLOUR_FRONT",
+      "publicationStatus": "NOT_APPROVED"
     },
     {
       "key": "Met:1991.153",
@@ -91,9 +115,9 @@
       "title": "The Parable of the Mote and the Beam",
       "institution": "The Metropolitan Museum of Art",
       "catalogue": "https://www.metmuseum.org/art/collection/search/436301",
-      "firstPartyPhotoUrl": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/436301/796508/main-image",
+      "firstPartyPhotoUrl": "https://images.metmuseum.org/CRDImages/ep/original/DT6682.jpg",
       "photoLicence": "CC0 via Met's artwork-specific Public Domain badge",
-      "downloadAttempt": "WEB_PREVIEW_DISPLAYED; LOCAL_BYTES_NOT_RECEIVED",
+      "downloadAttempt": "PREVIOUS_CONTAINER_DOWNLOADS_FAILED; GITHUB_ACTIONS_RETRY_NOT_YET_EXECUTED",
       "imageQualityIssue": "Portrait composition; wood beam, two speakers and gesture all legible on preview; source JPEG full-res and color/profile uninspected",
       "priority": 4,
       "expectedOutputType": "JPEG_OR_ORIGINAL_MUSEUM_FORMAT",
@@ -104,7 +128,13 @@
       "mobile390PhotoCropPass": null,
       "finalPhotoRightVerifiedForExactBytes": false,
       "ownerDatePlacementAuthority": false,
-      "productionEligible": false
+      "productionEligible": false,
+      "historicalImageApiUrl": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/436301/796508/main-image",
+      "photoUrlEvidence": "Met image index shows first-party Fetti colour original JPEG path for object 436301 / accession 1991.153",
+      "remoteUrlStatus": "FIRST_PARTY_IMAGE_URL_IN_IMAGE_INDEX_NOT_HTTP_VERIFIED",
+      "acquisitionStatus": "READY_NETWORK_ATTEMPT",
+      "photoRole": "WHOLE_PAINTING_COLOUR_FRONT",
+      "publicationStatus": "NOT_APPROVED"
     },
     {
       "key": "Wellcome:45078i",
@@ -113,10 +143,10 @@
       "institution": "Wellcome Collection",
       "catalogue": "https://wellcomecollection.org/works/jgxd7rrf",
       "firstPartyPhotoUrl": null,
-      "selectedImageRecord": "https://wellcomecollection.org/works/jgxd7rrf/images?id=jvt9hwrm",
-      "photoLicence": "CC BY 4.0 on selected image record jvt9hwrm, attribution necessary",
-      "downloadAttempt": "DIRECT_IMAGE_DOWNLOAD_NOT_RETRIEVED",
-      "imageQualityIssue": "Large landscape with multiple persons; need readable principal Gospel actors and mobile crop; do not substitute image id nfkanqnq without recording its separate PD Mark policy",
+      "selectedImageRecord": null,
+      "photoLicence": "PREVIOUS CC BY 4.0 LINK REFERS TO BACK OF CANVAS; exact front-image licence not yet confirmed in selected Wellcome record",
+      "downloadAttempt": "WRONG BACK-OF-CANVAS SELECTION CORRECTED; NO FRONT BYTES DOWNLOADED",
+      "imageQualityIssue": "Full painting V0017627 needs the exact Wellcome front photo record and licence; V0017628 and V0017629 are details, L0014632 is reverse. Do not use Commons file as an automatic curated replacement.",
       "priority": 5,
       "expectedOutputType": "JPEG_OR_ORIGINAL_MUSEUM_FORMAT",
       "originalFileAcquired": false,
@@ -126,7 +156,41 @@
       "mobile390PhotoCropPass": null,
       "finalPhotoRightVerifiedForExactBytes": false,
       "ownerDatePlacementAuthority": false,
-      "productionEligible": false
+      "productionEligible": false,
+      "historicalWrongImageRecord": "https://wellcomecollection.org/works/jgxd7rrf/images?id=jvt9hwrm",
+      "acquisitionStatus": "HOLD_FRONT_ORIGINAL_IMAGE_LICENCE_AND_URL_PAIR_UNVERIFIED",
+      "remoteUrlStatus": "L0014632_IS_BACK_OF_CANVAS_NOT_GOSPEL_SCENE",
+      "researchImageEvidence": [
+        {
+          "wellcomeImageId": "jvt9hwrm",
+          "iiifIdentifier": "L0014632",
+          "role": "BACK_OF_CANVAS",
+          "licence": "CC BY 4.0",
+          "usableForHero": false
+        },
+        {
+          "wellcomeImageId": "p8mjh359",
+          "iiifIdentifier": "V0017628",
+          "role": "FRONT_DETAIL_CROP",
+          "licence": "Public Domain Mark",
+          "usableForHero": false
+        },
+        {
+          "wellcomeImageId": "nfkanqnq",
+          "iiifIdentifier": "V0017629",
+          "role": "FRONT_DETAIL_CROP",
+          "licence": "Public Domain Mark",
+          "usableForHero": false
+        },
+        {
+          "wellcomeImageId": null,
+          "iiifIdentifier": "V0017627",
+          "role": "WHOLE_FRONT_PAINTING",
+          "licence": "IMAGE_SPECIFIC_WELLCOME_RECORD_NOT_VERIFIED",
+          "usableForHero": false,
+          "sourceEvidence": "Metadated Wellcome-origin archival full view 3550x1995 indexed at Wikimedia Commons; direct Wellcome native file not retrieved"
+        }
+      ]
     },
     {
       "key": "Walters:37.1146",
@@ -137,7 +201,7 @@
       "firstPartyPhotoUrl": "https://art.thewalters.org/object/37.1146/?download=PL7_37.1146_Fnt_BW.jpg",
       "photoLicence": "CC0 explicitly on each museum image download",
       "downloadAttempt": "WEB_IMAGE_PREVIEW_DISPLAYED_NO_LOCAL_BYTES",
-      "imageQualityIssue": "Inspected available first-party previews are black-and-white archival photos, not suitable for intended color gallery; priority find color institutional equivalent. Credit requires Pietro Bianchi/Ghezzi role distinction",
+      "imageQualityIssue": "Direct examination of all three museum download previews confirms monochrome images. Keep these as provenance reference only and find a first-party or institutionally open colour scan before treating as coloured oil artwork.",
       "priority": 6,
       "expectedOutputType": "JPEG_OR_ORIGINAL_MUSEUM_FORMAT",
       "originalFileAcquired": false,
@@ -147,7 +211,10 @@
       "mobile390PhotoCropPass": null,
       "finalPhotoRightVerifiedForExactBytes": false,
       "ownerDatePlacementAuthority": false,
-      "productionEligible": false
+      "productionEligible": false,
+      "acquisitionStatus": "HOLD_NO_VERIFIED_COLOUR_MUSEUM_REPRODUCTION",
+      "remoteUrlStatus": "THREE_FIRST_PARTY_CC0_DOWNLOADS_ARE_GRAYSCALE",
+      "photoRole": "ARCHIVAL_BLACK_AND_WHITE_NOT_COLOUR"
     }
   ]
 }
