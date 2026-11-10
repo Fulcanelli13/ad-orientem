@@ -61,7 +61,7 @@ export function validateInstitutionalMinistryNormManifest(manifest){
   group.push(Object.freeze({source_id:source,institute_id:institute}));
   byAnchor.set(anchor,group);
  }
- if(byAnchor.size!==APPROVED_SITES||!same(counts,manifest.counts.by_institute))
+ if(byAnchor.size!==APPROVED_SITES||Object.keys(counts).some(k=>counts[k]!==manifest.counts.by_institute?.[k]))
   throw Error("Changed institute/site/source classification totals");
  const heldSources=new Set();
  for(const hold of manifest.holds){
