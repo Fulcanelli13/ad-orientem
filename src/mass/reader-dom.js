@@ -4692,6 +4692,9 @@ export function createReaderDomAdapter({
 
   function mount(nextPrepared){
     if(!nextPrepared?.session?.resolvedMass) throw new TypeError("Prepared Mass session required");
+    // A new Mass session replaces the entire DOM: stop any previous approved
+    // score clock first, so no old Schola syllable keeps moving offscreen.
+    clearScholaDockNotation();
     // The root survives innerHTML replacement; old delegated handlers do too unless removed.
     unbind();
     prepared=nextPrepared;
