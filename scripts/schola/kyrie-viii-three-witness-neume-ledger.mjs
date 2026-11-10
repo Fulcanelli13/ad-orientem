@@ -36,6 +36,27 @@ const expectedCues=[
  ["AO.SM.C0050","AO.SM.C0051"],
  ["AO.SM.C0052"]
 ];
+// Strict visual sign checks made directly against two *printed* 1961 scans.
+// These are RUBRIC/section markers only. Never interpret them as verified notes.
+const PRINTED_MARKER_EVIDENCE=Object.freeze({
+ "K8-L01-U05":Object.freeze({mark:"*",expected:"*~{~}",folio:"28*",
+   observation:"Small intonation asterisk after the opening Kyrie"}),
+ "K8-L01-U12":Object.freeze({mark:"iij.",expected:"<i>iij.</i>",folio:"28*",
+   observation:"First Kyrie repeat directive visible after eleison"}),
+ "K8-L02-U08":Object.freeze({mark:"iij.",expected:"<i>iij.</i>",folio:"28*",
+   observation:"Christe repeat directive visible after eleison"}),
+ "K8-L03-U09":Object.freeze({mark:"ij.",expected:"<i>ij.</i>",folio:"29*",
+   observation:"Returning Kyrie repeat directive appears after page break"}),
+ "K8-L04-U04":Object.freeze({mark:"*",expected:"<clear>*",folio:"29*",
+   observation:"Single final Kyrie half-choir division"}),
+ "K8-L04-U07":Object.freeze({mark:"**",expected:"<clear>**",folio:"29*",
+   observation:"Double final Kyrie full-choir division"})
+});
+export const KYRIE_VIII_PRINTED_MARKER_EVIDENCE=PRINTED_MARKER_EVIDENCE;
+const VISUALLY_READ_PRINTS=new Set(["GRADUALE_ROMANUM_1961","LIBER_USUALIS_1961"]);
+const SIGN_KIND=new Set(["SINGLE_STAR_INITIAL_INTONATION",
+ "PRINTED_REPEAT_DIRECTIVE","SINGLE_STAR_PERFORMER_HANDOFF",
+ "DOUBLE_STAR_FULL_CHOIR_ENTRY"]);
 const err=reason=>Object.freeze({
  schema:KYRIE_VIII_NEUME_AUDIT_SCHEMA,status:"HOLD_SOURCE_OR_CORPUS_DRIFT",
  reason,phrases:Object.freeze([]),reviewUnits:0,approvedScores:0,publishedScores:0
@@ -57,21 +78,40 @@ export function buildKyrieVIIIThreeWitnessNeumeLedger({corpus,source}={}){
    const assignment=check.rows.filter(r=>r.sourceLine===i);
    if(JSON.stringify(assignment.map(r=>r.cueId))!==JSON.stringify(expectedCues[i]))
     return null;
-   const units=raws.map((raw,j)=>Object.freeze({
-     id:"K8-L"+String(i+1).padStart(2,"0")+"-U"+String(j+1).padStart(2,"0"),
-     ordinal:j+1,sourceLine:i,rawGabc:raw,
-     kind:raw==="(c3)"?"CLEF":
+   const units=raws.map((raw,j)=>{
+     const id="K8-L"+String(i+1).padStart(2,"0")+"-U"+String(j+1).padStart(2,"0");
+     const evidence=PRINTED_MARKER_EVIDENCE[id];
+     if(evidence&&evidence.expected!==raw)return null;
+     const kind=raw==="(c3)"?"CLEF":
        raw==="*~{~}"?"SINGLE_STAR_INITIAL_INTONATION":
        raw==="<clear>*"?"SINGLE_STAR_PERFORMER_HANDOFF":
        raw==="<clear>**"?"DOUBLE_STAR_FULL_CHOIR_ENTRY":
        raw.startsWith("<i>")?"PRINTED_REPEAT_DIRECTIVE":
        raw==="(::)"?"FINAL_BAR":
-       raw==="(,)"?"PAUSE":"NEUME_GROUP",
-     reviewStatus:"NOT_NOTE_BY_NOTE_CERTIFIED",
-     witnessChecks:Object.freeze(WITNESSES.map(w=>Object.freeze({
-       witnessId:w.id,verified:false,issue:"NOT_EXAMINED_NOTE_BY_NOTE"
-     })))
-   }));
+       raw==="(,)"?"PAUSE":"NEUME_GROUP";
+     const visuallyReviewed=Boolean(evidence&&SIGN_KIND.has(kind));
+     return Object.freeze({
+       id,ordinal:j+1,sourceLine:i,rawGabc:raw,kind,
+       reviewStatus:"NOT_NOTE_BY_NOTE_CERTIFIED",
+       witnessChecks:Object.freeze(WITNESSES.map(w=>{
+         const printRead=visuallyReviewed&&VISUALLY_READ_PRINTS.has(w.id);
+         const visualImageUrl=printRead?(w.id==="GRADUALE_ROMANUM_1961"?
+           w.images[evidence.folio==="29*"?1:0]:w.images[0]):null;
+         return Object.freeze({
+           witnessId:w.id,verified:false,
+           visuallyReadPrintedRubric:printRead,
+           printedMark:printRead?evidence.mark:null,
+           printedFolio:printRead?(w.id==="GRADUALE_ROMANUM_1961"?
+             evidence.folio:"37"):null,
+           printImageUrl:visualImageUrl,
+           observation:printRead?evidence.observation:null,
+           issue:printRead?"PRINTED_STRUCTURAL_MARK_MATCH_NOT_MUSICAL_APPROVAL":
+             "NOT_EXAMINED_NOTE_BY_NOTE"
+         });
+       }))
+     });
+   });
+   if(units.some(x=>!x))return null;
    const stars=units.filter(u=>u.kind.includes("HANDOFF")||u.kind==="DOUBLE_STAR_FULL_CHOIR_ENTRY");
    const directives=units.filter(u=>u.kind==="PRINTED_REPEAT_DIRECTIVE");
    const expectedRepeat=i<2?"iij.":i===2?"ij.":null;
@@ -106,6 +146,11 @@ export function buildKyrieVIIIThreeWitnessNeumeLedger({corpus,source}={}){
    printPages:4,printedMelodyLines:4,
    invocationPattern:Object.freeze([3,3,2,1]),sourceCueCount:9,
    reviewUnits,printedComparisonTasks:reviewUnits*WITNESSES.length,
+   printedStructuralMarkerTypes:Object.freeze(Object.keys(PRINTED_MARKER_EVIDENCE)),
+   printedStructuralMarksVisuallyRead:6,
+   printedWitnessMarkerComparisonsVisuallyRead:12,
+   printedComparisonTasksStillUnread:reviewUnits*WITNESSES.length-12,
+   noteByNoteComparisonsCertified:0,
    comparisonTasksCertified:0,
    sourceNotationCertified:false,editorialPublicationApproved:false,
    approvedScores:0,publishedScores:0,
