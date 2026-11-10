@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Ad Orientem LIVE handoff — isolated visual component QA</title>
+<style>
+html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:#080c11}
+#ao-r17-native-reader-preview{position:fixed;inset:0;overflow:hidden;width:100%;height:100%;font-family:system-ui}
+</style>
+</head>
+<body>
+<div id="ao-r17-native-reader-preview"></div>
+<script type="module">
+  // QA ONLY: actual reader DOM/CSS, actual source crosswalk and actual
+  // opt-in visual adapters. The fictional card/cue position controller
+  // below is strictly an isolation fixture, NOT a production Mass state.
+  import {buildReaderShellMarkup} from "../../src/mass/reader-dom.js";
+  import {mountLiveHandoffBand} from "../../src/mass/reader-live-handoff-band.js";
+  import {LIVE_HANDOFF_REFERENCE_ANCHORS} from "../../src/mass/reader-live-handoff-source-crosswalk.js";
+
+  const cardCue=i=> "AO.SM.C"+String(i+1).padStart(4,"0");
+  const cards=LIVE_HANDOFF_REFERENCE_ANCHORS.map((a,i)=>({
+    sectionId:a.expectedNativeId,sequence:i+1,title:a.referenceTitle,
+    sourceSectionId:a.sourceKey.startsWith("AO.CANON.")?"AO.CARD.014":a.sourceKey,
+    provenance:a.sourceKey.startsWith("AO.CANON.")?{canonSegmentId:a.sourceKey}:{},
+    paragraphs:[{id:"QA_P"+i,sourceCueIds:[cardCue(i),
+      ...(i===9?["AO.SM.C0070"]:i===23?["AO.SM.C0122"]:[])]}],
+    blocks:[{blockId:"AO.SM.B"+String(i+1).padStart(3,"0")}],
+  }));
+  const model={structureOwner:"SOURCE_FIRST_LIVE_CURATED_65_REVIEW",
+    corpusFamily:"SUNG",presentationMode:"LIVE",totalCards:65,cards};
+  const prepared={readerPreferences:{mode:"LIVE",language:"en"},
+    session:{resolvedMass:{form:"MISSA_CANTATA_INCENSE",
+      proper:{data:{liturgicalColour:"RED"}},
+      actualCelebration:{title:"Source layout acceptance"},
+      overlays:[],conditions:[]},plan:{overlayGraphs:[]}}};
+  let cardIndex=0;
+  let nativeCue=cardCue(0);
+  let state={
+    nativeCueId:nativeCue,cueProjectionSupported:true,
+    priestPosition:{station:"FOOT_CENTER",facing:"LITURGICAL_EAST",
+      label:"AT FOOT",owner:"SOURCE_REFERENCE",
+      positionReferenceCueId:nativeCue,locationConfidence:"RUBRICAL_REFERENCE_NOT_GPS"},
+    posture:{value:"KNEEL"},ownership:{posture:"CURRENT_PROFILE"},
+    bell:null
+  };
+  let schola={trackId:"KYRIE",index:2,total:8,complete:false};
+  const root=document.querySelector("#ao-r17-native-reader-preview");
+  root.innerHTML=buildReaderShellMarkup(prepared);
+  const shell=root.querySelector("[data-ao-reader-shell]");
+  function text(){
+    shell.querySelector("[data-role=card-title]").textContent=cards[cardIndex].title;
+    const body=shell.querySelector("[data-role=paragraphs]");
+    body.replaceChildren();
+    const p=document.createElement("p");
+    p.style.cssText="font-size:14px;max-width:24rem;margin:20px auto;color:#a7b6b1";
+    p.textContent="Visual component QA fixture. Canonical Mass text and independent music remain owned by the native reader.";
+    body.append(p);
+    const label=shell.querySelector("[data-role=posture]");
+    if(label)label.textContent=state.posture?.value??"—";
+  }
+  text();
+  const preview={
+    root,model,getCurrentCard:()=>cards[cardIndex],
+    getPresentationMode:()=>model.presentationMode,
+    getNativeEventState:()=>state,
+    getScholaState:()=>schola,
+  };
+  let mounted=mountLiveHandoffBand({preview,prepared,doc:document,win:window,enabled:true});
+  function showCard(index){
+    cardIndex=Math.max(0,Math.min(64,Number(index)||0));
+    nativeCue=cardCue(cardIndex);
+    if(cardIndex===9)nativeCue="AO.SM.C0070";
+    if(cardIndex===23)nativeCue="AO.SM.C0122";
+    state={...state,nativeCueId:nativeCue,priestPosition:{
+      station:cardIndex===23?"ROUTE_CONTROLLED":"ALTAR_CENTER",
+      facing:cardIndex===9?"PEOPLE":"LITURGICAL_EAST",
+      label:cardIndex===23?"SOURCE ROUTE":"AT CENTRE",
+      owner:"SOURCE_REFERENCE",positionReferenceCueId:nativeCue,
+      locationConfidence:cardIndex===23?"IN_TRANSIT":"RUBRICAL_REFERENCE_NOT_GPS"}};
+    text();mounted.refresh();
+    return {cardId:cards[cardIndex].sectionId,nativeCue,scholaIndex:schola.index};
+  }
+  function setSchola(index){
+    schola={...schola,index};return schola;
+  }
+  window.__aoHandoffFixture={
+    ready:true,getState:()=>mounted.getState(),
+    showCard,setSchola,model,
+    goPage:index=>mounted.setPage(index),
+    resize:height=>mounted.setManualHeight(height),
+    adaptive:()=>mounted.adaptive(),
+    refresh:()=>mounted.refresh(),
+    selected:()=>({cardId:cards[cardIndex].sectionId,nativeCue,scholaIndex:schola.index})
+  };
+</script>
+</body>
+</html>

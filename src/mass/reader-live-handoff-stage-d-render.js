@@ -87,5 +87,6 @@ export const LIVE_HANDOFF_STAGE_D_CSS=[
 ".ao-lb-d-wheel-caption span{color:#aeb8ad;font:10px system-ui,sans-serif}",
 ".ao-lb-d-pending{font:12px system-ui,sans-serif;color:#b9c1b6;padding:12px}",
 "@media(max-width:380px){.ao-lb-d-lane{grid-template-columns:minmax(92px,38%) minmax(0,62%)}.ao-lb-d-lanehead small{font-size:8px}.ao-lb-d-wheel-caption strong{font-size:11px}.ao-lb-d-disclaimer{font-size:8px}}",
+"@media(max-height:680px) and (orientation:portrait){.ao-lb-d-timeline{padding:2px 8px}.ao-lb-d-lane{min-height:19px}.ao-lb-d-disclaimer{font-size:8px;margin:1px 0 0}.ao-lb-d-trackhead{margin-bottom:1px}}",
 "@media(max-height:650px) and (orientation:landscape){.ao-lb-d-timeline{padding:2px 9px}.ao-lb-d-lane{min-height:19px}.ao-lb-d-wheel{gap:3px}.ao-lb-d-disclaimer{margin:2px 0 0}}"
 ].join("\n");

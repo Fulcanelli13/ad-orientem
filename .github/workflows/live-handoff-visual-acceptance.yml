@@ -1,0 +1,77 @@
+name: LIVE handoff Stage F isolated visual acceptance
+on:
+  pull_request:
+    paths:
+      - 'src/mass/reader-live-handoff-*.js'
+      - 'src/mass/reader-dom.js'
+      - 'tests/fixtures/live-handoff-visual.html'
+      - 'tests/live-handoff-visual-acceptance.mjs'
+      - '.github/workflows/live-handoff-visual-acceptance.yml'
+      - 'tests/live-handoff-native-mass-e2e.mjs'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  isolated-visual-matrix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser QA dependencies
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts
+          npx playwright install --with-deps chromium
+      - name: Run source and browser scripts syntax
+        run: |
+          node --check tests/live-handoff-visual-acceptance.mjs
+          node --test tests/reader-live-handoff-stage-d.mjs
+          node --test tests/reader-live-handoff-turns.mjs
+      - name: Serve the actual repository static files
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/ao-handoff-static.log 2>&1 &
+          echo $! >/tmp/ao-handoff-static.pid
+          sleep 2
+          curl -fsS http://127.0.0.1:4173/tests/fixtures/live-handoff-visual.html >/dev/null
+      - name: Capture small phone, standard phone, tablet and landscape
+        run: node tests/live-handoff-visual-acceptance.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: live-handoff-B-C-D-isolated-visual-acceptance
+          path: artifacts/live-handoff-visual/
+          if-no-files-found: warn
+          retention-days: 14
+
+
+  native-mass-h7-integration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Chromium for real H7 and native Mass
+        run: |
+          npm install --no-save --no-package-lock --ignore-scripts
+          npx playwright install --with-deps chromium
+      - name: Verify browser test syntax and local native routes
+        run: node --check tests/live-handoff-native-mass-e2e.mjs
+      - name: Serve the actual unbuilt GitHub repository
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/ao-handoff-h7-static.log 2>&1 &
+          echo $! >/tmp/ao-handoff-h7-static.pid
+          sleep 2
+          curl -fsS http://127.0.0.1:4173/index.html >/dev/null
+      - name: Enter real Mass using H7 and verify source-aware visual integration
+        run: node tests/live-handoff-native-mass-e2e.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: live-handoff-real-H7-native-Mass
+          path: artifacts/live-handoff-native-acceptance/
+          if-no-files-found: warn
+          retention-days: 14
