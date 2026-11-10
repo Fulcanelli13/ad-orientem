@@ -1,0 +1,508 @@
+{
+  "schema": "AO_DYK_CUSTOMS_WHOLE_400_SEMANTIC_SCREEN_AND_REPLACEMENT_V1",
+  "date": "2026-11-10",
+  "status": "FULL_TEXT_SIMILARITY_SCREEN_DONE_BUT_HUMAN_TOPIC_SIGNOFF_PENDING",
+  "inputs": {
+    "staged_selection": "data/research/did-you-know/dyk-customs-400-provisional-new-selection-20261110.v4.json",
+    "prior_manuscript": "data/research/did-you-know/dyk-customs-first-400-bilingual-review-20261110.v1.json",
+    "public_history": "H225 published pool"
+  },
+  "counts": {
+    "staged_records": 400,
+    "unique_ids": 400,
+    "unique_en": 400,
+    "unique_fr": 400,
+    "similarity_pairs_ge_030": 25,
+    "confirmed_same_custom_candlemas_replaced": 1,
+    "cross_source_generic_source_pairs_adjudicated": 3,
+    "source_independently_verified_new_replacement": 1,
+    "publication_authorizations": 0
+  },
+  "completed_decisions": [
+    {
+      "cluster": "Candlemas decorated candles",
+      "ids": [
+        "DYK-UM02-013",
+        "DYK-G365-W-B-113"
+      ],
+      "disposition": "ONE_DUPLICATE_REMOVED_FROM_NEW_STAGING",
+      "retained": "DYK-UM02-013",
+      "removed": "DYK-G365-W-B-113",
+      "replacement": "DYK-C400-BH-001",
+      "reason": "Same decorated candles brought for priestly blessing; new All Saints Austrian braided bread has independent institutional support."
+    },
+    {
+      "cluster": "Saint Peter and Paul grain versus bread",
+      "ids": [
+        "DYK-H04-W-B-167",
+        "DYK-C400-BG-030"
+      ],
+      "disposition": "DISTINCT_ACTIONS_AFTER_COPY_REFINEMENT",
+      "reason": "First is blessings of grain/harvest; second is a source-specific Hungarian blessing of bread. Removed overlapping grain/crown language from bread card."
+    }
+  ],
+  "outstanding_clusters": [
+    {
+      "cluster": "Catania Saint Agatha candelore",
+      "ids": [
+        "DYK-G600-P-016",
+        "DYK-G640-P-028",
+        "DYK-G640-P-029",
+        "DYK-G600-P-018"
+      ],
+      "disposition": "MANUAL_EDITORIAL_CLUSTER_REVIEW",
+      "reason": "Same procession object and guilds, but different actions: carrying, house visits, placement by cathedral, dance; assess whether four cards are independently interesting."
+    },
+    {
+      "cluster": "Santa Croce Camerina Saint Joseph votive meal",
+      "ids": [
+        "DYK-UM01-023",
+        "DYK-G600-P-010",
+        "DYK-G600-P-011",
+        "DYK-G600-P-012"
+      ],
+      "disposition": "MANUAL_EDITORIAL_CLUSTER_REVIEW",
+      "reason": "Ceremonial poor guests, barefoot vow, maccu dish and pastries from same feast. Actions differ, but repeated meal details may deserve consolidation."
+    },
+    {
+      "cluster": "Ribera Saint Joseph stragula",
+      "ids": [
+        "DYK-G600-P-002",
+        "DYK-G640-P-026",
+        "DYK-G600-P-003",
+        "DYK-G600-P-006"
+      ],
+      "disposition": "MANUAL_EDITORIAL_CLUSTER_REVIEW",
+      "reason": "Same festival structure with separate materials, procession, statue following and post-event distribution details."
+    },
+    {
+      "cluster": "Emmaus walks in different regions",
+      "ids": [
+        "DYK-CUSTOMS-CANON-EAST-001",
+        "DYK-H04-W-B-033"
+      ],
+      "disposition": "REGIONAL_VARIANTS_PENDING_EDITORIAL_REVIEW",
+      "reason": "Similar spiritual theme; German/Austrian family walk versus French-Canadian visits to grandparents."
+    },
+    {
+      "cluster": "Palermo saints and market customs",
+      "ids": [
+        "DYK-G560-P-017",
+        "DYK-G640-P-007"
+      ],
+      "disposition": "DISTINCT_PROCESSIONAL_ACTIONS",
+      "reason": "Relics at cathedral versus procession running towards Capuchinelle district; related occasion but geographically and procedurally different."
+    }
+  ],
+  "generic_source_shared_pairs": [
+    {
+      "ids": [
+        "DYK-CUSTOMS-CANON-BLSS-004",
+        "DYK-CUSTOMS-CANON-DEAD-003"
+      ],
+      "shared_source_id": "DPP-2001",
+      "adjudication": "DISTINCT_SUBJECTS",
+      "why": "Blessing of Easter food versus prayers at cemeteries for All Souls."
+    },
+    {
+      "ids": [
+        "DYK-CUSTOMS-CANON-BLSS-004",
+        "DYK-CUSTOMS-CANON-DOM-013"
+      ],
+      "shared_source_id": "DPP-2001",
+      "adjudication": "DISTINCT_SUBJECTS",
+      "why": "Blessing of Easter food versus keeping blessed Palm branches at home."
+    },
+    {
+      "ids": [
+        "DYK-CUSTOMS-CANON-DEAD-003",
+        "DYK-CUSTOMS-CANON-DOM-013"
+      ],
+      "shared_source_id": "DPP-2001",
+      "adjudication": "DISTINCT_SUBJECTS",
+      "why": "Prayers for the dead versus blessed Palm branches."
+    }
+  ],
+  "high_similarity_pairs": [
+    {
+      "a": "DYK-G600-P-016",
+      "b": "DYK-G640-P-028",
+      "score": 0.5,
+      "shared_tokens": [
+        "agatha",
+        "catania",
+        "sicily",
+        "trade",
+        "guilds",
+        "great",
+        "processional",
+        "candle",
+        "structures",
+        "candelore"
+      ]
+    },
+    {
+      "a": "DYK-UM01-023",
+      "b": "DYK-G600-P-010",
+      "score": 0.474,
+      "shared_tokens": [
+        "santa",
+        "croce",
+        "camerina",
+        "sicily",
+        "joseph",
+        "votive",
+        "meal",
+        "ceremonial",
+        "guests"
+      ]
+    },
+    {
+      "a": "DYK-G600-P-012",
+      "b": "DYK-UM01-023",
+      "score": 0.45,
+      "shared_tokens": [
+        "santa",
+        "croce",
+        "camerina",
+        "sicily",
+        "joseph",
+        "votive",
+        "meal",
+        "ceremonial",
+        "guests"
+      ]
+    },
+    {
+      "a": "DYK-G600-P-016",
+      "b": "DYK-G640-P-029",
+      "score": 0.45,
+      "shared_tokens": [
+        "agatha",
+        "catania",
+        "sicily",
+        "great",
+        "processional",
+        "candle",
+        "structures",
+        "called",
+        "candelore"
+      ]
+    },
+    {
+      "a": "DYK-G600-P-012",
+      "b": "DYK-G600-P-011",
+      "score": 0.429,
+      "shared_tokens": [
+        "santa",
+        "croce",
+        "camerina",
+        "sicily",
+        "joseph",
+        "votive",
+        "meal",
+        "included",
+        "guests"
+      ]
+    },
+    {
+      "a": "DYK-G600-P-011",
+      "b": "DYK-UM01-023",
+      "score": 0.421,
+      "shared_tokens": [
+        "santa",
+        "croce",
+        "camerina",
+        "sicily",
+        "joseph",
+        "votive",
+        "meal",
+        "guests"
+      ]
+    },
+    {
+      "a": "DYK-G600-P-012",
+      "b": "DYK-G600-P-010",
+      "score": 0.409,
+      "shared_tokens": [
+        "santa",
+        "croce",
+        "camerina",
+        "sicily",
+        "joseph",
+        "votive",
+        "meal",
+        "ceremonial",
+        "guests"
+      ]
+    },
+    {
+      "a": "DYK-CUSTOMS-CANON-EAST-001",
+      "b": "DYK-H04-W-B-033",
+      "score": 0.381,
+      "shared_tokens": [
+        "easter",
+        "monday",
+        "walk",
+        "recalling",
+        "disciples",
+        "risen",
+        "christ",
+        "emmaus"
+      ]
+    },
+    {
+      "a": "DYK-G600-P-011",
+      "b": "DYK-G600-P-010",
+      "score": 0.381,
+      "shared_tokens": [
+        "santa",
+        "croce",
+        "camerina",
+        "sicily",
+        "joseph",
+        "votive",
+        "meal",
+        "guests"
+      ]
+    },
+    {
+      "a": "DYK-G640-P-029",
+      "b": "DYK-G640-P-028",
+      "score": 0.381,
+      "shared_tokens": [
+        "agatha",
+        "catania",
+        "sicily",
+        "great",
+        "processional",
+        "candle",
+        "structures",
+        "candelore"
+      ]
+    },
+    {
+      "a": "DYK-G640-P-037",
+      "b": "DYK-G640-P-038",
+      "score": 0.375,
+      "shared_tokens": [
+        "palazzolo",
+        "acreide",
+        "sicily",
+        "procession",
+        "paul",
+        "image"
+      ]
+    },
+    {
+      "a": "DYK-G600-P-002",
+      "b": "DYK-G640-P-026",
+      "score": 0.364,
+      "shared_tokens": [
+        "ribera",
+        "sicily",
+        "joseph",
+        "wheeled",
+        "stragula",
+        "covered",
+        "laurel",
+        "branches"
+      ]
+    },
+    {
+      "a": "DYK-H04-W-B-133",
+      "b": "DYK-H04-W-B-132",
+      "score": 0.357,
+      "shared_tokens": [
+        "central",
+        "customs",
+        "bells",
+        "rang",
+        "dusk"
+      ]
+    },
+    {
+      "a": "DYK-G600-P-004",
+      "b": "DYK-G600-P-005",
+      "score": 0.35,
+      "shared_tokens": [
+        "joseph",
+        "meal",
+        "ribera",
+        "sicily",
+        "dish",
+        "ceremonial",
+        "guests"
+      ]
+    },
+    {
+      "a": "DYK-G640-P-011",
+      "b": "DYK-G640-P-013",
+      "score": 0.35,
+      "shared_tokens": [
+        "piazza",
+        "armerina",
+        "historic",
+        "assumption",
+        "marian",
+        "banner",
+        "procession"
+      ]
+    },
+    {
+      "a": "DYK-H04-P-025",
+      "b": "DYK-H04-P-054",
+      "score": 0.333,
+      "shared_tokens": [
+        "procession",
+        "sicily",
+        "privilege",
+        "carrying",
+        "processional",
+        "poles"
+      ]
+    },
+    {
+      "a": "DYK-G600-P-028",
+      "b": "DYK-G600-P-032",
+      "score": 0.32,
+      "shared_tokens": [
+        "paul",
+        "palazzolo",
+        "acreide",
+        "sicily",
+        "called",
+        "snakes",
+        "shaped",
+        "breads"
+      ]
+    },
+    {
+      "a": "DYK-G600-P-005",
+      "b": "DYK-UM01-023",
+      "score": 0.316,
+      "shared_tokens": [
+        "joseph",
+        "meal",
+        "sicily",
+        "three",
+        "ceremonial",
+        "guests"
+      ]
+    },
+    {
+      "a": "DYK-G560-P-017",
+      "b": "DYK-G640-P-007",
+      "score": 0.316,
+      "shared_tokens": [
+        "historic",
+        "palermo",
+        "procession",
+        "cosmas",
+        "damian",
+        "toward"
+      ]
+    },
+    {
+      "a": "DYK-G600-P-003",
+      "b": "DYK-G600-P-006",
+      "score": 0.313,
+      "shared_tokens": [
+        "joseph",
+        "ribera",
+        "laurel",
+        "bread",
+        "stragula"
+      ]
+    },
+    {
+      "a": "DYK-G600-P-022",
+      "b": "DYK-G640-P-032",
+      "score": 0.313,
+      "shared_tokens": [
+        "catania",
+        "agatha",
+        "procession",
+        "reliquary",
+        "passed"
+      ]
+    },
+    {
+      "a": "DYK-UM02-041",
+      "b": "DYK-G640-P-014",
+      "score": 0.308,
+      "shared_tokens": [
+        "gratteri",
+        "sicily",
+        "carried",
+        "james"
+      ]
+    },
+    {
+      "a": "DYK-G600-P-016",
+      "b": "DYK-G600-P-018",
+      "score": 0.304,
+      "shared_tokens": [
+        "agatha",
+        "catania",
+        "trade",
+        "guilds",
+        "gilded",
+        "structures",
+        "candelore"
+      ]
+    },
+    {
+      "a": "DYK-G600-P-018",
+      "b": "DYK-G640-P-028",
+      "score": 0.304,
+      "shared_tokens": [
+        "catania",
+        "agatha",
+        "candelore",
+        "structures",
+        "members",
+        "trade",
+        "guilds"
+      ]
+    },
+    {
+      "a": "DYK-UM01-019",
+      "b": "DYK-H04-P-037",
+      "score": 0.3,
+      "shared_tokens": [
+        "dressed",
+        "angels",
+        "walked",
+        "along",
+        "route",
+        "scattering"
+      ]
+    }
+  ],
+  "replacement": {
+    "excluded_from_provisional_stage": "DYK-G365-W-B-113",
+    "retained_existing_fact": "DYK-UM02-013",
+    "new_id": "DYK-C400-BH-001",
+    "historical_source": {
+      "id": "WEI58-26-023",
+      "printed_page": 313,
+      "pdf_page_1based": 331,
+      "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+      "primary_page_visual_checked": true
+    },
+    "independent_sources": [
+      {
+        "issuer": "Austrian Federal Ministry",
+        "url": "https://www.bmluk.gv.at/themen/lebensmittel/trad-lebensmittel/backerzeugnisse/striezel.html"
+      },
+      {
+        "issuer": "Museums at Schloss Stainz",
+        "url": "https://www.museum-joanneum.at/en/museums-schloss-stainz/our-programme/calendar?cHash=52e32879afc0e22d5ec22e412f42e1ba&tx_msevent_eventlist%5Baction%5D=show&tx_msevent_eventlist%5Bcontroller%5D=Event&tx_msevent_eventlist%5Bdate%5D=59917&tx_msevent_eventlist%5Bevent%5D=15197"
+      }
+    ],
+    "original_reader_manuscript_preserved": true
+  },
+  "limitations": "Token overlap detects wording similarity; it does not establish that each of 400 cards is semantically distinct. Same-event clusters remain for human review, and complete claim/source/native EN/FR signoff is incomplete.",
+  "release_authorized": false
+}
