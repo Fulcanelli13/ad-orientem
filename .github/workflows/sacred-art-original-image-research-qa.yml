@@ -27,6 +27,8 @@ jobs:
           python-version: '3.12'
       - name: Install bounded image decoder
         run: python -m pip install Pillow==12.0.0
+      - name: Enforce museum-front selection and no-publication research contract
+        run: node tests/sacred-art-exact-oil-photo-rights-research.test.mjs
       - name: Fetch four source candidates and record SHA, pixels and colour diagnostics
         run: |
           python scripts/sacred-art-fetch-open-image-qa.py \
