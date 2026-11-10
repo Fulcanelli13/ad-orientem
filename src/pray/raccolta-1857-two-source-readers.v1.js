@@ -1,4 +1,4 @@
-/** Two newly imported complete source works from the public-domain Raccolta 1857.
+/** Three newly imported complete source works from the public-domain Raccolta 1857.
  * The historical English text is editorially normalized from the Wikisource
  * transcription, NOT independently matched to the 1857 page facsimile.
  * The French is a NEW editorial translation, not claimed as a historical
@@ -290,6 +290,45 @@ export const RACCOLTA_1857_READER_WORKS_V1=Object.freeze([
             "count": 1
           }
         ]
+      }
+    ]
+  },
+  {
+    "id": "raccolta_1857_12_pietate_tua",
+    "acquisitionId": "AO-AQ-039",
+    "subject": "I",
+    "title": "Pietate tua — Prayer for Protection and Peace",
+    "titleFr": "Pietate tua — Prière de protection et de paix",
+    "sourceUrl": "https://en.wikisource.org/wiki/The_Raccolta_%281857%29/Prayer%E2%80%94%22Pietate_tua%22",
+    "source": "The Raccolta, 1857, no. 12 (Latin original with historical English translation)",
+    "originalLanguageWitness": "la",
+    "originalPrintImageCollated": false,
+    "frenchEditionHistorical": false,
+    "frenchLanguageStatus": "MODERN_EDITORIAL_TRANSLATION_FROM_1857_LATIN_AND_ENGLISH",
+    "indulgencesCurrent": false,
+    "historicalPrintNames": true,
+    "search": [
+      "pietate tua",
+      "loosen o lord",
+      "nos famulos tuos",
+      "raccolta 12",
+      "protection and peace",
+      "prière de protection et de paix",
+      "prières pour la paix",
+      "pape pius ix"
+    ],
+    "steps": [
+      {
+        "id": "full_text",
+        "title": "Pietate tua · complete prayer",
+        "titleFr": "Pietate tua · prière intégrale",
+        "bodyLa": "Pietate tua, quæsumus Domine, nostrorum solve vincula peccatorum, et intercedente Beata, semperque Virgine Dei Genitrice Maria, cum Beatis Apostolis tuis Petro, et Paulo, et omnibus Sanctis nos famulos tuos, et loca nostra in omni sanctitate custodi: omnes consanguinitate, affinitate, ac familiaritate nobis conjunctos a vitiis purga, virtutibus illustra; pacem et salutem nobis tribue; hostes visibiles, et invisibiles remove; carnalia desideria repelle; aerem salubrem indulge; amicis et inimicis nostris charitatem largire; Urbem tuam custodi; Pontificem nostrum N. conserva; omnes Prælatos, Principes, cunctumque Populum Christianum ab omni adversitate defende. Benedictio tua sit super nos semper; et omnibus Fidelibus defunctis requiem æternam concede. Per Christum Dominum nostrum. Amen.",
+        "bodyEn": "Loosen, O Lord, we pray Thee, in Thy pity, the bonds of our sins, and by the intercession of the blessed Mary, ever Virgin Mother of God, the blessed Apostles Peter and Paul, and all saints, keep us Thy servants and our abodes in all holiness; cleanse us, our relations, kinsfolk, and acquaintances, from all stain of sin; adorn us with all virtue; grant to us peace and health; drive far off all our enemies visible and invisible; bridle our appetites; grant us healthful seasons; show forth Thy love towards our friends and our enemies; guard Thy holy city; preserve our Sovereign Pontiff Pius IX., and defend all our prelates, princes, and all Thy Christian people, from all adversity. Let Thy blessing be ever upon us, and grant to all the faithful departed eternal rest. Through Christ our Lord. Amen.",
+        "bodyFr": "Dans votre miséricorde, nous vous en prions, Seigneur, déliez les liens de nos péchés ; et par l’intercession de la bienheureuse Marie, toujours Vierge et Mère de Dieu, de vos bienheureux apôtres Pierre et Paul et de tous les saints, gardez dans la sainteté vos serviteurs et leurs demeures. Purifiez de leurs vices nos parents, nos proches et nos connaissances, et éclairez-les de vos vertus ; accordez-nous la paix et la santé ; éloignez nos ennemis visibles et invisibles ; réprimez les désirs de la chair ; donnez-nous un air salubre ; répandez votre charité sur nos amis comme sur nos ennemis ; gardez votre sainte cité ; conservez notre souverain pontife Pie IX [nom cité dans la traduction historique de 1857] ; défendez de toute adversité nos prélats, nos princes et tout le peuple chrétien. Que votre bénédiction demeure toujours sur nous, et accordez le repos éternel à tous les fidèles défunts. Par le Christ notre Seigneur. Ainsi soit-il.",
+        "historicalPrintedPope": "Pius IX",
+        "latinPapalPlaceholder": "N.",
+        "noCurrentPontiffReplacement": true,
+        "repetitions": []
       }
     ]
   }
