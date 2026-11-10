@@ -58,6 +58,7 @@ export function selectApprovedScholaDockScore({
   if(row?.schema!==SCHOLA_DOCK_APPROVAL_SCHEMA ||
      row.score_status!=="approved"||row.trackId!==track ||
      !clean(row.scoreId)||!clean(row.settingId)||
+     row.licence!=="CC0-1.0"||!/^https:\/\//.test(clean(row.sourceUrl))||
      !/^[a-f0-9]{64}$/.test(clean(row.gabcSha256)))continue;
   if(isProper){
    if(row.sourcePath!==sourcePath||
@@ -73,7 +74,7 @@ export function selectApprovedScholaDockScore({
       candidate?.sourceParagraphId===segmentId &&
       candidate?.sourceBlockId===PROPER[track].block
     : candidate?.selectionKey===track && candidate?.sourceCueId===cueId));
-  if(!score)continue;
+  if(!score||score.sourceUrl!==row.sourceUrl)continue;
   const selected=selectApprovedInlineScore({
    paragraph,form,selectedSettings:settings,resolvedMass,
    approvedScores:[score]
