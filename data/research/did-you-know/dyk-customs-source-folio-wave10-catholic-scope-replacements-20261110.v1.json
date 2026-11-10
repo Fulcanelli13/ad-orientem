@@ -1,0 +1,93 @@
+{
+  "schema": "AO_DYK_CUSTOMS_WAVE10_CATHOLIC_SCOPE_REPLACEMENTS_V1",
+  "date": "2026-11-10",
+  "state": "HISTORICAL_SOURCE_PAGE_CHECKED_RELEASE_HELD",
+  "purpose": "Replace two candidates from the 28-card wave outside the Roman Catholic customary priority; avoid promoting explicitly EXCLUDE-triaged folklore",
+  "replaced_ids": [
+    "DYK-C400-BG-015",
+    "DYK-C400-BG-026"
+  ],
+  "source_index": "data/customs/research/weiser-public-reference-index.v1.json",
+  "records": [
+    {
+      "id": "DYK-C400-BG-029",
+      "title": "Our Lady of the Grain robe on summer pilgrimages",
+      "reader_copy": {
+        "en": "In an older German-speaking Assumption tradition, pilgrims visited Marian shrines where images of Our Lady wore a robe covered with ears of grain. The season from 15 August to 15 September was called Our Lady's Thirty Days.",
+        "fr": "Dans une ancienne tradition de l'Assomption en pays germanophone, les pèlerins visitaient des sanctuaires où des images de la Vierge portaient un manteau couvert d'épis de céréales. La période du 15 août au 15 septembre était appelée les « trente jours de Notre-Dame »."
+      },
+      "source_ids": [
+        "WEI58-24-016"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-24-016",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "original_printed_page_checked": [
+              291
+            ],
+            "registry_printed_page_pointer": 292,
+            "scan_pdf_pages_1based": [
+              309
+            ],
+            "page_locator_discrepancy": "Registry points to 292, underlying passage appears on printed 291"
+          }
+        }
+      ],
+      "scope": {
+        "historical": true,
+        "german_speaking_regions": true,
+        "not_universal_or_current": true
+      },
+      "review": {
+        "primary_folio_checked": true,
+        "independent_witness": false,
+        "source_specific_semantic_novelty": false,
+        "english_final": false,
+        "french_final": false,
+        "publication_authorized": false
+      }
+    },
+    {
+      "id": "DYK-C400-BG-030",
+      "title": "Hungarian bread blessed on Saints Peter and Paul's Day",
+      "reader_copy": {
+        "en": "On 29 June, the feast of Saints Peter and Paul, older Hungarian communities brought bread to church for a special blessing; other harvest gifts such as grain and straw crowns were also blessed.",
+        "fr": "Le 29 juin, fête des saints Pierre et Paul, d'anciennes communautés hongroises apportaient du pain à l'église pour une bénédiction particulière ; d'autres offrandes des moissons, comme les céréales et les couronnes de paille, étaient également bénites."
+      },
+      "source_ids": [
+        "WEI58-28-006"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-28-006",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "original_printed_page_checked": [
+              334
+            ],
+            "scan_pdf_pages_1based": [
+              352
+            ]
+          }
+        }
+      ],
+      "scope": {
+        "historical": true,
+        "hungary": true,
+        "not_universal_or_current": true
+      },
+      "review": {
+        "primary_folio_checked": true,
+        "independent_witness": false,
+        "source_specific_semantic_novelty": false,
+        "english_final": false,
+        "french_final": false,
+        "publication_authorized": false
+      }
+    }
+  ]
+}
