@@ -51,4 +51,27 @@ const mapped=mapScholaSvgLyrics(svg,syllables);
 assert.equal(mapped.length,5);
 assert.deepEqual(mapped.map(x=>x.dataset.scholaSyllableIndex),["0","1","2","3","4"]);
 assert.deepEqual(mapScholaSvgLyrics({querySelectorAll:()=>textNodes.slice(0,4)},syllables),[]);
+// The decorated initial K and following Y- belong to ONE GABC syllable.
+const kyrieSyllables=[
+ {index:0,label:"KY",identity:"ky"},
+ {index:1,label:"ri",identity:"ri"},
+ {index:2,label:"e",identity:"e"},
+ {index:3,label:"e",identity:"e"},
+ {index:4,label:"lé",identity:"le"},
+ {index:5,label:"i",identity:"i"},
+ {index:6,label:"son.",identity:"son"}
+];
+const glyphs=["K","Y-","ri-","e","* ","e-","lé-","i-","son."]
+ .map(textContent=>({textContent,dataset:{}}));
+const mappedSplit=mapScholaSvgLyrics({querySelectorAll:()=>glyphs},kyrieSyllables);
+assert.equal(mappedSplit.length,7);
+assert.equal(mappedSplit[0],glyphs[1],"The Y lyric owns source syllable KY");
+assert.deepEqual(mappedSplit.map(n=>n.dataset.scholaSyllableIndex),
+ ["0","1","2","3","4","5","6"]);
+const badInitial=["K","Z-","ri-","e","* ","e-","lé-","i-","son."]
+ .map(textContent=>({textContent,dataset:{}}));
+assert.deepEqual(mapScholaSvgLyrics({querySelectorAll:()=>badInitial},kyrieSyllables),[]);
+const changedMiddle=["K","Y-","ri-","x","* ","e-","lé-","i-","son."]
+ .map(textContent=>({textContent,dataset:{}}));
+assert.deepEqual(mapScholaSvgLyrics({querySelectorAll:()=>changedMiddle},kyrieSyllables),[]);
 console.log("SCHOLA_NOTATION_FOLLOW_SOURCE_CLOCK_PASS parser, manual seek, bounded timer, strict lyric matching");
