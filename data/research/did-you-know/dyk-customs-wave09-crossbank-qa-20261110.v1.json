@@ -1,0 +1,58 @@
+{
+  "schema": "AO_DYK_CUSTOMS_400_FOLIO_WAVE09_CROSSBANK_QA_V1",
+  "date": "2026-11-10",
+  "status": "DUPLICATE_CROSSWALK_CHECKED_MANUAL_SIGNOFF_PENDING",
+  "scope": "17 original-page-inspected Weiser claims versus 362 provisional Customs cards plus 201 published historical Home cards",
+  "counts": {
+    "source_page_checked_drafts": 17,
+    "prior_publication_duplicates_found": 2,
+    "retained_as_provisional_standalone": 15,
+    "total_provisional": 377,
+    "gap_to_400": 23
+  },
+  "already_public_duplicates": [
+    {
+      "new_id": "DYK-C400-BF-001",
+      "already_public_id": "DYK-G520-W-002",
+      "source_id": "WEI58-04-004",
+      "reason": "Exact original source lineage and identical Rogation procession/convergence narrative; already live."
+    },
+    {
+      "new_id": "DYK-C400-BF-015",
+      "already_public_id": "DYK-R50-W-011",
+      "source_id": "WEI58-22-005",
+      "reason": "Same southern French cross-shaped final sheaf decorated with flowers and ribbons; already live."
+    }
+  ],
+  "retained_provisional_ids": [
+    "DYK-C400-BF-002",
+    "DYK-C400-BF-003",
+    "DYK-C400-BF-004",
+    "DYK-C400-BF-005",
+    "DYK-C400-BF-006",
+    "DYK-C400-BF-007",
+    "DYK-C400-BF-008",
+    "DYK-C400-BF-009",
+    "DYK-C400-BF-010",
+    "DYK-C400-BF-011",
+    "DYK-C400-BF-012",
+    "DYK-C400-BF-013",
+    "DYK-C400-BF-014",
+    "DYK-C400-BF-016",
+    "DYK-C400-BF-017"
+  ],
+  "verification_basis": {
+    "original_printed_pages_visually_inspected": true,
+    "source_edition_confirmed": true,
+    "independent_source_corroboration_complete": false,
+    "full_H225_semantic_editorial_signoff": false,
+    "translated_French_final_approval": false
+  },
+  "notes": [
+    "The older first-pass uniqueness audit missed several publications written under different IDs; full nine publication manifests were compared by source_id and reader text.",
+    "The two same-source overlapping records BF-001 and BF-015 remain in the source-check wave for audit history but are not included in the 377-card selection.",
+    "The 15 additions have source-page screenshots checked against printed edition, but no independent archival witness has yet been supplied for the historical observations.",
+    "All proposed source data belong in the research layer only. No Home feed release, merge or GitHub Pages publication is authorized."
+  ],
+  "publication_authorized": false
+}
