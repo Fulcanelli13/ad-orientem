@@ -50,12 +50,24 @@ All eight still need in-app 320/390px visual QA, correct source-specific licence
 - Nationalmuseum NM420 and NM1134 are marked public domain, but their exact object-linked JPEG endpoints returned **HTTP 403** in the controlled source acquisition run. These are **0 acquired photographs**, not two successes.
 - Source proof: `m2m-open-colour-batch2-source-verification-20261110.v1.json`; official acquisition manifest: `m2m-open-colour-photo-batch2-nationalmuseum-rijks-20261110.v1.json`.
 
+## Museum photo-rights filter — 10 November
+
+The existing direct-source photo search queue was reduced from **49 to 40** keys after a policy review of **9** museum photograph records. They moved into the separate restricted-source lane (**18 total**, including the prior 9). **No artwork was deleted or globally rejected.** The underlying paintings may still qualify if an independently reliable, commercially reusable colour reproduction is identified and passes exact-photo rights and quality QA.
+
+- Six Louvre artwork keys: commercial gallery/app use is outside the Louvre collections site's no-fee purposes and requires a separate reproduction licence. This is **not** an open photography source for Ad Orientem.
+- One Cincinnati Art Museum original (Zurbarán's Peter Nolasco): the museum sends high-resolution commercial publication image use to Bridgeman licensing.
+- One Timken Museum Bruegel (*Parable of the Sower*): reproduction permission is required; its 2026 schedule explicitly lists commercial fees, so no direct museum-photo acquisition.
+- One Kunsthistorisches Museum Veronese (*The Raising of the Youth of Nain*): no identified blanket commercial-use authorisation for its photographs; hold official images.
+- MSK Ghent S-43 and two Kraków National Museum sources are now in a **separate three-item technical acquisition probe**. Images are not licensed for app use merely because a research download succeeds. The MSK collection allows reuse of collection-site resolutions, but high-resolution/commercial usage calls for separate review or Art in Flanders item-specific open image evidence.
+
+Review ledger: `m2m-open-source-batch3-msk-mnk-20261110.v1.json`. Acquisition source code: `scripts/sacred-art-acquire-msk-mnk-batch3.py`. No fees or contact requests have been made.
+
 ## Next operational sequence
 
 1. Inspect the eight acquired originals together using actual application container geometry at 320px and 390px, preserve full artwork when cover crops remove saints or central narrative, and confirm accurate artist/copy attributions. Do not require the owner to review every unpromising source.
 2. Resolve Wellcome's current photo-ID licence and associated attribution. For Ribera, preserve CC BY-SA 4.0 and note crop/modification obligations.
-3. Among the **49** distinct priority oil works in `C_LOCATE_REUSABLE_COLOUR_SOURCE`, prefer accessible institutional full-colour files with explicit reuse permissions; avoid restricted official photos and investigate equivalent reliable sources rather than paying or contacting museums.
-4. Handle the **9** restricted image files, **one** grayscale-only, **one** artwork copyright hold and **one** unresolved identity key explicitly; do not disguise them as completed images.
+3. Among the **40** distinct priority oil works in `C_LOCATE_REUSABLE_COLOUR_SOURCE`, prefer accessible institutional full-colour files with explicit reuse permissions; avoid restricted official photos and investigate equivalent reliable sources rather than paying or contacting museums.
+4. Handle the **18** institutionally restricted source-image records, **one** grayscale-only, **one** artwork copyright hold and **one** unresolved identity key explicitly; do not disguise them as completed images.
 5. Check the **83** original research keys outside the priority oil group, including the **9 additional oil-medium candidates**, without misclassifying prints and watercolours as oil.
 6. Only after editorial signoff, build a **separate** release-candidate manifest that includes image bytes, stable checksum, source, licence, attribution, final crop and approved date. Never feed this research JSON into runtime directly.
 
