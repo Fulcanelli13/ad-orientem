@@ -1,0 +1,47 @@
+{
+  "schema": "AO_SACRED_ART_MET_WENCESLAS_ALTERNATIVE_V1",
+  "asOf": "2026-11-10",
+  "status": "INSTITUTIONAL_OBJECT_CONFIRMED_IMAGE_API_URL_AND_BYTES_UNVERIFIED",
+  "candidate": {
+    "key": "Met:437005",
+    "originalBlockedWorkKey": "Olomouc:Skreta-WenceslasCycle",
+    "liturgicalDate": "2026-09-28",
+    "title": "The Burial of Saint Wenceslas",
+    "creator": "Master of Eggenburg",
+    "date": "ca. 1490–1500",
+    "medium": "Oil and gold on spruce",
+    "museumAccession": "44.147.2",
+    "museumObjectId": 437005,
+    "objectPage": "https://www.metmuseum.org/art/collection/search/437005",
+    "officialMetadataApi": "https://collectionapi.metmuseum.org/public/collection/v1/objects/437005",
+    "sourceImageUrl": null,
+    "sourceImageBytesAcquired": false,
+    "sourceImageSha256": null,
+    "museumObjectMarkedPublicDomain": true,
+    "photoLicencePolicy": "MET_OPEN_ACCESS_CC0_ONLY_WHEN_IS_PUBLIC_DOMAIN_TRUE_AND_PRIMARY_IMAGE_URL_ON_MUSEUM_IMAGES_HOST",
+    "iconography": "Burial of the martyr saint, not preparing hosts or pressing sacramental wine",
+    "fidelity": "SAINT_PERSON_EXACT_DIFFERENT_NARRATIVE",
+    "visualStyle": "LATE_GOTHIC_EARLY_RENAISSANCE_NON_BAROQUE_LOWER_AESTHETIC_PRIORITY",
+    "chronologyRelation": "Different work, artist, scene and owner from Škréta cycle; no claimed same-work replacement",
+    "isExistingOwnerSelected": false,
+    "globalRejectionMasterCrosscheckComplete": false,
+    "notAlreadyIn151WorkResearchPool": true,
+    "productionEligible": false,
+    "ownerCalendarApproval": false
+  },
+  "constraints": [
+    "Use first-party Met object API and original CRDImages JPEG only; do not source from Commons, even if filename discovered there",
+    "No user-global artwork rejection override or first-party gallery insertion",
+    "Only image from exact Met 437005; do not use adjacent 44.147.1 altarpiece or infrared/X-ray variants",
+    "Decode image and verify original SHA/pixels before increasing source count",
+    "If exact photo is absent/monochrome, report failure and retain research hold",
+    "No payments, external contacts, Vercel or production app changes"
+  ],
+  "count": {
+    "newExternalAlternativeCandidates": 1,
+    "originalFocalWorksReplaced": 0,
+    "originalPhotoFilesAcquired": 0,
+    "ownerApprovedCalendarPlacements": 0,
+    "publications": 0
+  }
+}
