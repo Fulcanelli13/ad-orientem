@@ -18,6 +18,11 @@ assert.equal(result.rows.length,9);
 assert.deepEqual(result.rows.map(x=>x.cueId),Array.from({length:9},(_,i)=>
  "AO.SM.C"+String(44+i).padStart(4,"0")));
 assert.deepEqual(result.rows.map(x=>x.sourceLine),[0,0,0,1,1,1,2,2,3]);
+assert.deepEqual(result.rows.map(x=>x.facsimileFolios),[
+ ["28*"],["28*"],["28*"],["28*"],["28*"],["28*"],
+ ["28*","29*"],["28*","29*"],["29*"]
+]);
+assert.equal(result.sourceWitness,"Graduale Romanum, Solesmes 1961, pp. 28*–29*");
 assert.deepEqual(result.rows.map(x=>x.sourceLatin),[
  "Kýrie, eléison.","Kýrie, eléison.","Kýrie, eléison.",
  "Christe, eléison.","Christe, eléison.","Christe, eléison.",
