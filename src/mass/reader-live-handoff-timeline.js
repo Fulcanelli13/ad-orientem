@@ -38,6 +38,17 @@ export function projectLiveHandoffTimeline({gate,nativeState,scholaState=null,mo
     return freeze({ok:false,reason:"EXACT_NATIVE_65_REQUIRED",current:null,lanes:freeze([]),
       cards:freeze([]),total:0,observedTiming:false});
   const ordered=gate.crosswalk.expandedMappings;
+  const referenceRows=gate.crosswalk.mappings;
+  if(!Array.isArray(referenceRows)||referenceRows.length!==65 ||
+     referenceRows.some((ref,i)=>
+       ref.referenceId!=="C"+String(i+1).padStart(2,"0") ||
+       ref.status!=="MATCHED_SOURCE_CARD" ||
+       !ordered?.some(exp=>exp.nativeCardId===ref.nativeCardId &&
+         exp.referenceId===ref.referenceId &&
+         exp.nativeSequence===ref.nativeSequence &&
+         exp.nativeTitle===ref.nativeTitle)))
+    return freeze({ok:false,reason:"SOURCE_SEQUENCE_DRIFT",current:null,lanes:freeze([]),
+      cards:freeze([]),total:0,observedTiming:false});
   if(!Array.isArray(ordered)||ordered.length!==model.cards.length ||
      ordered.some((ref,i)=>
       ref.status!=="MATCHED_SOURCE_CARD" ||
