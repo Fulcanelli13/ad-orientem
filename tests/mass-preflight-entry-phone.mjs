@@ -56,6 +56,10 @@ try{
   }
   assert.equal(hierarchy.direct.filter(x=>x.cls==="aoFullMassPreflight").length,1,
     "Exactly one Guided Folio must own the preparation form");
+  // The source-owned action group is mounted independently of the Guided Folio.
+  // Wait for the original Start Mass control rather than sampling its DOM
+  // presence immediately after the form becomes visible on narrow phones.
+  await page.locator("[data-ao-start-live]").first().waitFor({state:"attached",timeout:10000});
   const data=await page.evaluate(()=>{
    const root=document.querySelector("[data-ao-full-mass-preflight]");
    const backing=document.querySelector("#ao-mass-flow-v1 .aoMassFlowBackdrop");
