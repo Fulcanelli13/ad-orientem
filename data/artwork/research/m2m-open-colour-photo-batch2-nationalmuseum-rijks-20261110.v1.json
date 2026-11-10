@@ -1,0 +1,102 @@
+{
+  "schema": "AO_SACRED_ART_OPEN_COLOUR_SOURCE_BATCH2_V1",
+  "asOf": "2026-11-10",
+  "status": "SOURCE_ACQUISITION_CANDIDATES_NOT_YET_HASH_VERIFIED",
+  "sourcePolicy": "Use first-party URLs only; Nationalmuseum marked Public Domain for exact photo cards, Rijksmuseum object public domain with official data API; do not import Wikimedia or promote photos without bytes and separate owner approval",
+  "candidates": [
+    {
+      "workKey": "Nationalmuseum:NM420",
+      "reviewDates": [
+        "2026-02-01",
+        "2026-02-03"
+      ],
+      "title": "The Parable of the Labourers in the Vineyard",
+      "artist": "Attributed to David III Ryckaert",
+      "catalogue": "https://collection.nationalmuseum.se/en/collection/item/17423/",
+      "museumImageUrl": "https://collection.nationalmuseum.se/multimedia/5/multimedia-958995.large.jpg",
+      "secondMuseumImageCandidateUrl": "https://collection.nationalmuseum.se/multimedia/9/multimedia-178629.large.jpg",
+      "sourceDiscovery": "Exact first Nationalmuseum image link extracted from object page; alternative image link recorded but NOT assumed identical",
+      "sourceRights": "PUBLIC_DOMAIN_NATIONALMUSEUM_PHOTO_LABEL",
+      "licencePolicy": "https://www.nationalmuseum.se/en/explore-art-and-design/images/rights-and-reproductions",
+      "pericopeNote": "Painting depicts equal wage payment from Matthew 20:1–16; Nationalmuseum prose also incorrectly refers to tenants Matthew 21:33–46. Do not inherit that citation mistake.",
+      "rightsVerifiedOnObject": true,
+      "originalPhotoDownloaded": false,
+      "sha256": null,
+      "formalMobileQA": false,
+      "ownerApproved": false,
+      "releaseReady": false
+    },
+    {
+      "workKey": "Nationalmuseum:NM1134",
+      "reviewDates": [
+        "2026-02-01",
+        "2026-02-03"
+      ],
+      "title": "The Parable of the Labourers in the Vineyard",
+      "artist": "Marten de Vos; formerly circle of Frans Floris",
+      "catalogue": "https://collection.nationalmuseum.se/en/collection/item/18137/",
+      "museumImageUrl": "https://collection.nationalmuseum.se/multimedia/3/multimedia-7493.large.jpg",
+      "sourceDiscovery": "Exact image link from Nationalmuseum public-domain object page",
+      "sourceRights": "PUBLIC_DOMAIN_NATIONALMUSEUM_PHOTO_LABEL",
+      "licencePolicy": "https://www.nationalmuseum.se/en/explore-art-and-design/images/rights-and-reproductions",
+      "pericopeNote": "Exact title and oil on wood. Very wide source panel, 90 × 205 cm. Verify source image is whole front and does not crop figures.",
+      "rightsVerifiedOnObject": true,
+      "originalPhotoDownloaded": false,
+      "sha256": null,
+      "formalMobileQA": false,
+      "ownerApproved": false,
+      "releaseReady": false
+    },
+    {
+      "workKey": "Rijks:SK-A-868",
+      "reviewDates": [
+        "2026-03-05"
+      ],
+      "title": "Kitchen Scene with the Parable of the Rich Man and Poor Lazarus",
+      "artist": "Attributed to Pieter Cornelisz. van Rijck",
+      "catalogue": "https://www.rijksmuseum.nl/en/collection/object/Kitchen-Scene-with-the-Parable-of-the-Rich-Man-and-Poor-Lazarus--52a0c9546d60ccda0e4d0cf6e88b9117",
+      "museumObjectId": "20026170",
+      "museumLinkedArtUrl": "https://data.rijksmuseum.nl/20026170?_profile=la-framed",
+      "imageResolutionMethod": "RIJKSMUSEUM_LINKED_ART_PRIMARY_VISUAL_ITEM_TO_DIGITAL_OBJECT_IIIF",
+      "sourceRights": "RIJKSMUSEUM_OBJECT_PUBLIC_DOMAIN_IIIF_EXACT_FILE_REVIEW_REQUIRED",
+      "licencePolicy": "https://data.rijksmuseum.nl/policy/",
+      "sourceDiscovery": "Rijksmuseum documents resolving visual item -> digital object -> IIIF access_point. Object accession SK-A-868 and PURL id 20026170 confirmed.",
+      "pericopeNote": "Luke 16:19–31; Lazarus and the rich man are confined to small right background, so full hero may lose scriptural readability.",
+      "rightsVerifiedOnObject": true,
+      "originalPhotoDownloaded": false,
+      "sha256": null,
+      "formalMobileQA": false,
+      "ownerApproved": false,
+      "releaseReady": false
+    }
+  ],
+  "specialHolds": [
+    {
+      "workKey": "UMMA:1960/2.93",
+      "reason": "Museum directs commercial/publication users to an image-rights request form; no selected image licence independently verified. No outreach per owner policy.",
+      "catalogue": "https://umma.umich.edu/objects/christ-healing-the-deaf-mute-1960-2-93/"
+    },
+    {
+      "workKey": "Walters:37.1146",
+      "reason": "All known first-party or museum-donated photos monochrome; do not fake an oil colour reproduction",
+      "catalogue": "https://art.thewalters.org/object/37.1146/"
+    }
+  ],
+  "counts": {
+    "distinctOilPriorityKeysInBatch": 3,
+    "unverifiedSourceFilesAttempted": 3,
+    "sourcePhotosDownloadedAtManifestCreation": 0,
+    "legallyRestrictiveHolds": 1,
+    "colourUnavailableHolds": 1,
+    "ownerApprovals": 0,
+    "newReleases": 0
+  },
+  "policies": [
+    "Source photo must decode as a full-colour original/official image; no Wikimedia auto-promotion",
+    "Do not modify 155-key existing selection ledger until source hash and photograph record are verified",
+    "Retain conditional artist attribution and Matthew 20 versus 21 correction",
+    "If museum source blocks automated retrieval, record explicit hold rather than infer success",
+    "Every study is a separate temporary Actions artifact; no GitHub Pages publication",
+    "No external image payment/contact or Vercel deployment"
+  ]
+}
