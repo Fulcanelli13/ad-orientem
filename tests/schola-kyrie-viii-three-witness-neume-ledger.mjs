@@ -1,0 +1,55 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {buildKyrieVIIIThreeWitnessNeumeLedger,KYRIE_VIII_NEUME_AUDIT_SCHEMA}
+ from "../scripts/schola/kyrie-viii-three-witness-neume-ledger.mjs";
+import {offlineKyrialeResearchScore} from "../src/mass/reader-kyriale-research-gabc.js";
+const corpus=JSON.parse(readFileSync(
+ new URL("../data/presentation/reader-text-sung.v1.json",import.meta.url),"utf8"));
+const l=buildKyrieVIIIThreeWitnessNeumeLedger({corpus});
+assert.equal(l.schema,KYRIE_VIII_NEUME_AUDIT_SCHEMA);
+assert.equal(l.status,"45_SOURCE_MARKS_3_WITNESSES_PENDING_INDEPENDENT_MUSICAL_REVIEW");
+assert.equal(l.witnessCount,3);
+assert.deepEqual(l.witnesses.map(w=>w.id),[
+ "GRADUALE_ROMANUM_1961","LIBER_USUALIS_1961","CHANTS_OF_THE_CHURCH_1956"
+]);
+assert.deepEqual(l.witnesses.map(w=>w.pages),[["28*","29*"],["37"],["19"]]);
+assert.deepEqual(l.witnesses.flatMap(w=>w.images),[
+ "https://gregobase.selapa.net/sources/2/905.png",
+ "https://gregobase.selapa.net/sources/2/906.png",
+ "https://gregobase.selapa.net/sources/3/148.png",
+ "https://gregobase.selapa.net/sources/5/34.png"
+]);
+assert.equal(l.printedMelodyLines,4);
+assert.equal(l.sourceCueCount,9);
+assert.deepEqual(l.invocationPattern,[3,3,2,1]);
+assert.equal(l.phrases.length,4);
+assert.equal(l.reviewUnits,45);
+assert.equal(l.printedComparisonTasks,135);
+assert.equal(l.comparisonTasksCertified,0);
+assert.equal(l.approvedScores,0);
+assert.equal(l.publishedScores,0);
+assert.deepEqual(l.phrases.map(x=>x.originalCueIds.length),[3,3,2,1]);
+assert.deepEqual(l.phrases.map(x=>x.musicalSourceUnits),[13,9,10,13]);
+assert.equal(l.phrases[0].units.filter(x=>x.kind==="SINGLE_STAR_INITIAL_INTONATION").length,1);
+assert.equal(l.phrases[3].units.filter(x=>x.kind==="SINGLE_STAR_PERFORMER_HANDOFF").length,1);
+assert.equal(l.phrases[3].units.filter(x=>x.kind==="DOUBLE_STAR_FULL_CHOIR_ENTRY").length,1);
+assert.equal(l.phrases[3].units.filter(x=>x.kind==="PRINTED_REPEAT_DIRECTIVE").length,0);
+assert.equal(l.phrases[0].units.at(-2).kind,"PRINTED_REPEAT_DIRECTIVE");
+assert.equal(l.phrases[1].units.at(-2).kind,"PRINTED_REPEAT_DIRECTIVE");
+assert.equal(l.phrases[2].units.at(-2).kind,"PRINTED_REPEAT_DIRECTIVE");
+assert.ok(l.phrases.flatMap(p=>p.units).every(u=>
+ u.reviewStatus==="NOT_NOTE_BY_NOTE_CERTIFIED"&&
+ u.witnessChecks.length===3&&
+ u.witnessChecks.every(w=>w.verified===false&&
+  w.issue==="NOT_EXAMINED_NOTE_BY_NOTE")));
+assert.ok(l.phrases.every(p=>!p.pitchByPitchVerified&&!p.neumeByNeumeVerified&&
+ !p.rhythmicSignsVerified&&!p.alterationsVerified&&!p.independentEditorialApproval));
+const original=offlineKyrialeResearchScore("KYRIE","MASS_08");
+const corrupt={...original,gabc:original.gabc.replace("gxfgh","gxhgh")};
+assert.equal(buildKyrieVIIIThreeWitnessNeumeLedger({corpus,source:corrupt}).status,
+ "HOLD_SOURCE_OR_CORPUS_DRIFT");
+const broken=structuredClone(corpus);
+broken.blocks.find(x=>x.Macro_ID==="AO.SM.M02").units[8].cue_id="AO.SM.C9999";
+assert.equal(buildKyrieVIIIThreeWitnessNeumeLedger({corpus:broken}).status,
+ "HOLD_SOURCE_OR_CORPUS_DRIFT");
+console.log("SCHOLA_KYRIE_VIII_THREE_WITNESS_NEUME_LEDGER_PASS 45 source units, 3 witnesses, 135 checks outstanding; 0 approved");
