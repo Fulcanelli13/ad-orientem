@@ -88,7 +88,7 @@ assert.equal(live.filter(x=>x.site_contact_evidence).length,publishedContacts.re
  "Contact overlay count must match its validated source manifest after concurrent CL27 releases");
 assert.ok(live.filter(x=>x.site_contact_evidence).every(x=>!x.site_contact_evidence.mass_times&&!x.site_contact_evidence.una_cum));
 const weekly=live.filter(x=>x.weekly_source_programme);
-assert.equal(weekly.length,30,"Ten initial, fourteen supplemental and six Polish source-weekly venues; no generated events");
+assert.equal(weekly.length,26,"Ten initial, fourteen supplemental and two source-corroborated Polish venues; no generated events");
 assert.deepEqual(weekly.map(x=>x.physical_group_id).sort(),
  [...publishedWeekly.sites,...publishedWeeklySupplement.sites,...publishedPoland.sites].map(x=>x.cl2_anchor).sort());
 assert.ok(weekly.every(x=>!x.weekly_source_programme.rrule&&!x.weekly_source_programme.una_cum));
@@ -115,4 +115,4 @@ assert.deepEqual(calls,[PRELIMINARY_R49_URL,
   CL27_WEEKLY_SOURCE_PROGRAMME_URL,
   CL27_WEEKLY_SUPPLEMENT_URL,
   CL27_POLAND_SOURCE_URL]);
-console.log("PASS B91 worldwide directory 2583 unchanged; 2569 mapped, 14 list-only; 30 source-weekly sites (92 times), 2 dated programmes (11 printed dates); zero generated recurring events");
+console.log("PASS B91 worldwide directory 2583 unchanged; 2569 mapped, 14 list-only; 26 source-weekly sites (79 times), 2 dated programmes (11 printed dates); zero generated recurring events");
