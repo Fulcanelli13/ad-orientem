@@ -149,7 +149,7 @@ test("manual route is never triggered from swipe, model, Schola or elapsed time"
   assert.match(band,/activeRoute\.sourceCueId!==potentialRoute\.sourceCueId/);
   assert.match(band,/if\(!result\.ok\)\{availableRoute=null;stopRoutePreview\(\)/);
   assert.match(band,/prefers-reduced-motion: reduce/);
-  assert.match(band,/svg\.insertAdjacentHTML\("beforeend",renderLiveHandoffPreviewRouteOverlay/);
+  assert.match(band,/svg\.insertAdjacentHTML\("beforeend",renderClaudeNativeRouteOverlay/);
   assert.match(route,/sourceCueIds\?\.includes\(cue\)/);
   assert.match(route,/sourceRiteId!=="ASPERGES"/);
   assert.match(native,/getNativeEventState:\(\)=>globalThis\.AO_R17_NATIVE_READER_STATE\?\?null/);
