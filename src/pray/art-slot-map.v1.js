@@ -17,11 +17,29 @@ const sources = new Map();
 for(const [artId,photo] of Object.entries(RELEASED_MODULE_PAINTINGS)){
   if(photo.source && !sources.has(photo.source))sources.set(photo.source,Object.freeze({artId,photo}));
 }
-// Exactly documented non-URL match: 1962 Holy Eucharist door selection
-// uses the Met original ID but its 1 Nov master has no sourcePage.
+// Exact-work, slot-scoped reuse of ALREADY RELEASED photographs. These four
+// additional slots were previously approved for the same work, but their
+// master URL was absent or encoded differently. Never infer reuse by subject,
+// style, saint, gallery title alone, or across other slots.
 const PINNED_IDENTITIES=Object.freeze({
   "DOOR-D5":Object.freeze({
     artId:"adoration",artist:"Jean Auguste Dominique Ingres",
+    title:"The Virgin Adoring the Host"
+  }),
+  "HERO-22":Object.freeze({
+    artId:"king",artist:"Ambrosius Benson",
+    title:"Salvator Mundi"
+  }),
+  "STG-programme.first_saturday-01":Object.freeze({
+    artId:"heart-mary",artist:"Juan Patricio Morlete Ruiz",
+    title:"The Heart of Mary"
+  }),
+  "COV-pray.adoration":Object.freeze({
+    artId:"adoration",artist:"Jean-Auguste-Dominique Ingres",
+    title:"The Virgin Adoring the Host"
+  }),
+  "COV-pray.forty_hours":Object.freeze({
+    artId:"adoration",artist:"Jean-Auguste-Dominique Ingres",
     title:"The Virgin Adoring the Host"
   })
 });
