@@ -35,6 +35,8 @@
     "variantWarning": "Do not import a distinct circa-1960 Marian Library Fatima consecration as a supposed translation of this English one.",
     "newPrayerAdded": false
   },
-  "postPatchSourceUrlCountExpected": 48,
-  "publicationAuthorization": false
+  "publicationAuthorization": false,
+  "postPatchEffectiveSourceReferenceCountExpected": 48,
+  "postPatchDirectSourceUrlCountExpected": 24,
+  "countingQualification": "Effective references include p.sourceUrl OR p.provenance.url. Not all 48 canonical records have direct p.sourceUrl populated."
 }
