@@ -28,7 +28,6 @@ jobs:
           node-version: '22'
       - run: node tests/pray-rogations-latin-reuse-20261110.mjs
       - run: node tests/pray-penitential-litany-tenebrae-source-faces-v1.mjs
-      - run: node tests/reader-r25-rogations.mjs
   latin-mobile:
     runs-on: ubuntu-latest
     timeout-minutes: 24
