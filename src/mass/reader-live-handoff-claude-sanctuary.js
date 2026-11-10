@@ -82,3 +82,18 @@ export function renderClaudeNativeSanctuary(scene){
  return claudeSourcePlanSVG(scene,claudeHandoffFig);
 }
 export {originalClaudeArchFragment};
+
+export function renderClaudeNativeRouteOverlay({scene,route,step}={}){
+ if(!route?.ok ||route.scope!=="REFERENCE_ONLY" || !step?.current?.point||!scene)return "";
+ const cols={WHITE:"#f3ecd9",GREEN:"#3f8a55",RED:"#9b4a55",VIOLET:"#6b4ea3",BLACK:"#151515",ROSE:"#a86885",NEUTRAL:"#3f8a55"};
+ const colour=cols[scene.colour]??cols.GREEN;
+ const p=step.current.point,n=step.next?.point;
+ const target=n&&(n.x!==p.x||n.y!==p.y)
+  ?'<circle class="ao-lb-route-next" data-lb-route-next cx="'+n.x+'" cy="'+n.y+'" r="17"/>':"";
+ return '<g class="ao-lb-route-overlay" data-lb-route-overlay data-source="REFERENCE_ONLY_NOT_OBSERVED">'
+  +target
+  +'<g data-lb-route-actor transform="translate('+p.x+' '+p.y+')">'
+  +'<g data-lb-route-heading transform="scale(1 1)">'
+  +claudeHandoffFig("priest","stand",colour,{x:0,y:12,s:.74,dir:1})
+  +'</g></g></g>';
+}
