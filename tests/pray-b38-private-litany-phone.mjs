@@ -115,9 +115,14 @@ try{
      "Major Litanies source reference must not be hidden by the stage navigation CSS");
     // Public Major Litanies must be a distinct reference-only screen.
     await editionPicker.locator('[data-p435930-lit-use="major"]').click();
-    assert.equal(await page.locator(owner).count(),0,"Historical private reader must not masquerade as the public rite");
+    // Both readers share the "litany" navigation owner; verify the historical
+    // invocation markup has gone, while the independently sourced R25 reader appears.
     const publicRoot="#aoPray435930.open [data-ao-litany-use='major']";
     await page.locator(publicRoot).waitFor();
+    assert.equal(await page.locator(publicRoot+" [data-ao-private-litany-invocations]").count(),0,
+     "The public R25 reader must not reuse private historical invocations");
+    assert.equal(await page.locator(publicRoot).getAttribute("data-ao-rogations-source"),"R25_LATIN_UNCOLLATED",
+     "The public reader must identify its distinct original R25 Latin source");
     assert.equal(await page.locator(publicRoot+" [data-ao-rogations-source-hold='UNCOLLATED_ORIGINAL_PRINT']").count(),1,
      "Original R25 Latin source must be distinguished from independently uncollated printed 1962 edition");
     await page.waitForFunction(()=>document.querySelectorAll('#aoPray435930.open [data-ao-litany-use="major"] [data-ao-rogations-latin-row]').length===4,null,{timeout:15000});
