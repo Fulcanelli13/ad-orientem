@@ -2442,7 +2442,8 @@ function renderMassSequencePrayer(){
  const record=state.id===work.id?state.record:null;
  const source=record?'<p class="aoP435930SourceNote" data-ao-mass-sequence-source="'+esc(record.sourcePath)+'">'+
    esc(L('Appointed Mass source: ','Source de la messe du jour : '))+esc(record.sourcePath)+
-   ' · Sequentia · '+esc(record.sourceDate)+'</p>':'';
+   ' · Sequentia · '+esc(record.sourceDate)+'</p>'+
+   (record.sourceEditorialNote?'<p class="aoP435930SourceNote" data-ao-mass-sequence-editorial-note>'+esc(record.sourceEditorialNote)+'</p>':''):'';
  const body=record?'<section class="aoDevoCard" data-ao-devo-card="'+esc(work.id)+'">'+
   '<div class="aoDevoCardScroll" role="region" aria-label="'+esc(work.title)+'">'+
   '<article class="aoP435930Prayer" data-ao-mass-sequence-complete="true">'+
