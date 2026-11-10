@@ -58,6 +58,7 @@ import {internalPrayerView,supportedDirectPrayerRoute} from "./internal-route-ow
 import {renderLittleCrownB30} from "./little-crown-presentation-b30.js";
 import {PRAYER_SUBJECTS_V1,prayerSubjectsForLibrary,prayerSubjectCounts} from "./prayer-subject-index.v1.js";
 import {guidedPrayerLinksForSubject} from "./prayer-subject-guided-links.v1.js";
+import {PRAGUE_TWO_NOVENA_RECENSIONS_V1,pragueNovenaRecension,pragueNovenaMatches} from "./prague-two-nine-day-recensions.v1.js";
 import {PRAYER_SUPPLEMENTAL_LIVE_WORK_LINKS_V1,prayerSupplementalLiveWork,prayerSupplementalLiveWorksForSubject} from "./prayer-supplemental-live-works.v1.js";
 import {prayerSevenSourceWork,prayerSevenSourceWorksForSubject} from "./prayer-seven-source-work-links.v1.js";
 import {redBookletCommunionLibraryLink,redBookletCommunionLibraryLinksForSubject} from "./red-booklet-communion-library-links.v1.js";
@@ -2414,6 +2415,7 @@ function renderAdoration(){
 }
 function familyOf(p){return libraryVariantFamily(p.id)||p.id}
 let LIB={q:'',cat:'all',subject:'all',subjectOpen:false,open:null,language:null};
+let PRAGUE_NOVENA_DAY=0;
 // Mass Sequentia texts are borrowed live from the authenticated selected Proper;
 // they are NOT added to the locked 48-text canonical Prayer object.
 const MASS_SEQUENCE_READING={id:null,record:null,loading:false,error:null,token:0};
@@ -2669,7 +2671,60 @@ function renderLibraryEntryRows(rows,search){
   return `<details class="aoP435930LibraryVariants" data-ao-prayer-family="${esc(entry.family)}"${search?' open':''}><summary><small>${esc(L('Prayer family','Famille de prières'))}</small><b>${esc(isFr()?label.fr:label.en)}</b><span>${entry.prayers.length} ${esc(L(entry.prayers.length===1?'form':'forms',entry.prayers.length===1?'forme':'formes'))}</span></summary><div class="aoP435930LibraryVariantItems">${entry.prayers.map(renderRow).join('')}</div></details>`;
  }).join('')||`<p>${esc(L('No prayers match this search.','Aucune prière ne correspond à cette recherche.'))}</p>`;
 }
+function renderPragueSourceNovena(){
+ const work=pragueNovenaRecension(LIB.open);
+ if(!work)return callout(esc(L('Source novena unavailable.','Neuvaine de source indisponible.')),'warn');
+ const french=isFr();
+ const all=PRAGUE_TWO_NOVENA_RECENSIONS_V1;
+ const idx=Math.max(0,Math.min(8,PRAGUE_NOVENA_DAY));
+ const d=work.days[idx];
+ const body=french?d.fr:d.en;
+ const hymn=d.hymnId===all.hymn.id?all.hymn:null;
+ const common=all.canonicalCommonPrayerIds.map(id=>{
+  const p=DATA.prayers?.[id];
+  const pBody=p?.[lang()]||p?.en||'';
+  return '<section data-ao-prague-common="'+esc(id)+'" class="aoP435930SourceNote"><h3>'+
+   esc(french?(p?.titleFr||p?.title||id):(p?.title||id))+'</h3>'+
+   '<p lang="'+lang()+'">'+nl(pBody)+'</p></section>';
+ }).join('');
+ const hymnMarkup=hymn?'<section class="aoP435930SourceNote" data-ao-prague-hymn>'+
+  '<h3>'+esc(french?hymn.titleFr:hymn.titleEn)+'</h3>'+
+  '<p lang="'+lang()+'">'+nl(french?hymn.fr:hymn.en)+'</p>'+
+  '<p lang="'+lang()+'">'+nl(french?hymn.versicleFr:hymn.versicleEn)+'</p>'+
+  '<p lang="'+lang()+'">'+nl(french?hymn.collectFr:hymn.collectEn)+'</p></section>':'';
+ const refrain=all.petitions[work.variant];
+ const endPrayer=idx===8?'<details data-ao-prague-after-novena class="aoP435930SourceNote">'+
+  '<summary>'+esc(L('After the nine days · optional closing prayer','Après les neuf jours · prière finale facultative'))+'</summary>'+
+  '<p lang="'+lang()+'">'+nl(french?all.conclusion.fr:all.conclusion.en)+'</p></details>':'';
+ const status=L('This is a modern editorial prayer text following the complete nine-day devotional structure published by ICKSP France, not a verbatim historical transcription. Both programmes are separate recensions of the same devotion. The French and English wording is editorial. The source’s shared prayers are reused from the canonical library; the second recension has a Holy Name hymn on days 1–8 only.',
+ 'Le texte de prière est une rédaction éditoriale moderne suivant la structure complète de neuf jours publiée par l’ICRSP, et non une transcription historique littérale. Les deux parcours sont deux recensions de la même dévotion. Les textes français et anglais sont éditoriaux. Les prières communes proviennent de la bibliothèque canonique ; la seconde recension comporte l’hymne du Saint Nom aux jours 1 à 8 seulement.');
+ const day=idx+1,title=french?work.titleFr:work.titleEn;
+ return head(title,L('Nine days · Infant Jesus of Prague','Neuf jours · Saint Enfant-Jésus de Prague'))+
+  '<main class="aoP435930Body aoP435930LibraryReader" data-ao-prague-novena-reader="'+esc(work.id)+'" data-ao-prague-recension="'+esc(work.variant)+'">'+
+  '<p class="aoP435930SourceNote" data-ao-prague-editorial-note>'+esc(status)+'</p>'+
+  '<div class="aoJosephSevenProgress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+Math.round(day*100/9)+'" aria-label="'+esc(L('Day progress','Progression des jours'))+'"><span style="width:'+Math.round(day*100/9)+'%"></span></div>'+
+  '<article class="aoDevoCard" data-ao-prague-day="'+day+'"><div class="aoDevoCardScroll">'+
+  '<small>'+esc(L('Day','Jour'))+' '+day+' / 9</small>'+
+  '<h2>'+esc(french?d.themeFr:d.theme)+'</h2>'+
+  '<p lang="'+lang()+'" data-ao-prague-day-prayer>'+nl(body)+'</p>'+
+  '<h3>'+esc(L('Common prayers · in this order','Prières communes · dans cet ordre'))+'</h3>'+
+  common+hymnMarkup+
+  '<section class="aoP435930SourceNote" data-ao-prague-intention>'+
+  '<h3>'+esc(L('Petition through the Divine Childhood','Demande par la divine Enfance'))+'</h3>'+
+  '<p lang="'+lang()+'">'+nl(french?refrain.fr:refrain.en)+'</p></section>'+
+  endPrayer+'</div></article>'+
+  '<nav class="aoJosephSevenNav" aria-label="'+esc(L('Novena day navigation','Navigation entre les jours de la neuvaine'))+'">'+
+  '<button type="button" data-p435930-prague-prev '+(idx===0?'disabled':'')+'>'+esc(L('Previous day','Jour précédent'))+'</button>'+
+  (idx===8?'<button type="button" data-p435930-prague-finish>'+esc(L('Return to Prayer Library','Retour au livre de prières'))+'</button>':
+  '<button type="button" data-p435930-prague-next>'+esc(L('Next day','Jour suivant'))+'</button>')+'</nav>'+
+  '<details class="aoP435930SourceNote"><summary>'+esc(L('Source and recension details','Source et détails de la recension'))+'</summary>'+
+  '<p>'+esc(all.frenchTextStatus+' · '+all.englishTextStatus)+'</p>'+
+  '<a href="'+esc(all.sourceUrl)+'" target="_blank" rel="noopener noreferrer">'+
+   esc(L('ICRSP full source programmes','Programmes sources complets de l’ICRSP'))+'</a></details>'+
+  '</main>';
+}
 function renderLibrary(){
+ if(LIB.open&&pragueNovenaRecension(LIB.open))return renderPragueSourceNovena();
  if(LIB.open&&massSequencePrayerWork(LIB.open))return renderMassSequencePrayer();
  if(LIB.open){
   const p=P(LIB.open);if(!p){LIB.open=null;return renderLibrary()}
@@ -2777,6 +2832,18 @@ function renderLibrary(){
    '<small>'+esc(L('MASS SEQUENCE · SOURCE READER','SÉQUENCE DE MESSE · SOURCE'))+'</small>'+
    '<b>'+esc(isFr()?work.titleFr:work.title)+'</b><span>LA · EN · FR</span></button>').join('')+
    '</div></section>');
+ const pragueNovenaWorks=pragueNovenaMatches({subject:LIB.subject,category:LIB.cat,search:q});
+ const pragueNovenaSection=!pragueNovenaWorks.length?'':(
+ '<section class="aoP435930LibraryRelated" data-ao-prague-novena-library>'+
+ '<h3>'+esc(L('Infant Jesus of Prague · nine-day devotions','Enfant-Jésus de Prague · neuvaines'))+'</h3>'+
+ '<p>'+esc(L('Two nine-day recensions of one devotion. Source structures kept distinct, prayer wording editorial.',
+  'Deux recensions de neuf jours d’une même dévotion. Structures distinctes, rédaction éditoriale.'))+'</p>'+
+ '<div class="aoP435930ModuleGrid">'+pragueNovenaWorks.map(w=>
+  '<button type="button" class="aoP435930ModuleCard" data-p435930-lib-open="'+esc(w.id)+'" data-ao-prague-novena-open="'+esc(w.sourceAcquisitionId)+'">'+
+  '<small>'+esc(w.variant==='first'?L('FIRST RECENSION','PREMIÈRE RECENSION'):L('SECOND RECENSION','SECONDE RECENSION'))+'</small>'+
+  '<b>'+esc(isFr()?w.titleFr:w.titleEn)+'</b>'+
+  '<span>'+esc(L('9 days · editorial EN/FR','9 jours · rédaction EN/FR'))+'</span></button>').join('')+
+ '</div></section>');
  const guidedLinks=LIB.cat==='all'?guidedPrayerLinksForSubject(LIB.subject,q):[];
  const guidedSection=LIB.cat!=='all'||!guidedLinks.length?
   '':('<section class="aoP435930LibraryRelated" data-ao-prayer-subject-guided="'+esc(LIB.subject)+'">'+
@@ -2793,9 +2860,9 @@ function renderLibrary(){
   '<div class="aoP435930Chips" role="group" aria-label="'+esc(L('Theological prayer families','Familles théologiques de prières'))+'">'+
   '<button type="button" data-p435930-lib-subject="all" aria-pressed="'+String(LIB.subject==='all')+'">'+esc(L('All subjects','Tous les sujets'))+'</button>'+
   PRAYER_SUBJECTS_V1.map(subject=>'<button type="button" data-p435930-lib-subject="'+subject.id+'" aria-pressed="'+String(LIB.subject===subject.id)+'">'+
-    esc(isFr()?subject.fr:subject.en)+' <small>'+(subjectCounts.counts[subject.id]+prayerSupplementalLiveWorksForSubject(subject.id).length +prayerSevenSourceWorksForSubject(subject.id).length+redBookletCommunionLibraryLinksForSubject(subject.id).length+redBookletSuscipeLibraryLinksForSubject(subject.id).length+redBookletPrivateHistoricalWorksForSubject(subject.id).length+MASS_SEQUENCE_PRAYER_WORKS.filter(x=>x.subject===subject.id).length+(subject.id==='V'?1:0))+'</small></button>').join('')+
+    esc(isFr()?subject.fr:subject.en)+' <small>'+(subjectCounts.counts[subject.id]+prayerSupplementalLiveWorksForSubject(subject.id).length +prayerSevenSourceWorksForSubject(subject.id).length+redBookletCommunionLibraryLinksForSubject(subject.id).length+redBookletSuscipeLibraryLinksForSubject(subject.id).length+redBookletPrivateHistoricalWorksForSubject(subject.id).length+MASS_SEQUENCE_PRAYER_WORKS.filter(x=>x.subject===subject.id).length+(subject.id==='V'?1:0)+PRAGUE_TWO_NOVENA_RECENSIONS_V1.programmes.filter(w=>w.subject===subject.id).length)+'</small></button>').join('')+
   '</div><p class="aoP435930SourceNote">'+esc(L('Only accessible canonical and source-owned reader texts are included. Unverified research works are not shown as readable prayers.','Seuls les textes canoniques et les prières déjà accessibles dans leurs parcours d’origine sont inclus. Les œuvres de recherche non vérifiées ne sont pas présentées comme disponibles.'))+'</p></details>';
- return `${head(L('Prayer Library','Livre de prières'),L('Prayers and guided devotions','Prières et dévotions guidées'))}<main class="aoP435930Body">${libraryOverviewGuide()}<label class="aoP435930Search"><span>${assetIcon('ao-ui-search')}</span><input type="search" data-p435930-lib-search value="${esc(LIB.q)}" placeholder="${esc(L('Search prayers','Rechercher une prière'))}"></label><div class="aoP435930Chips">${cats.map(([id,n])=>`<button type="button" class="${id===LIB.cat?'active':''}" data-p435930-lib-cat="${esc(id)}">${esc(n)}</button>`).join('')}</div>${subjectBrowse}<div class="aoP435930LibraryList" data-ao-prayer-subject-results="${esc(LIB.subject)}">${LIB.cat==="essentials"&&!q?claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2,prayers:DATA.prayers,locale:lang(),esc,title:L("Essential Prayers","Prières essentielles"),artFor:releasedPrayerCardArtUrl}):(rows.length||!(historicalWorks.length+sourceDeepWorks.length+privateCommunionWorks.length+privateHistoricalWorks.length+(stabatSeptember?1:0)+massSequences.length)?renderLibraryEntryRows(rows,q):'')}</div>${communionSection}${privateHistoricalSection}${historicalSection}${stabatLibrarySection}${massSequenceSection}${guidedSection}</main>`;
+ return `${head(L('Prayer Library','Livre de prières'),L('Prayers and guided devotions','Prières et dévotions guidées'))}<main class="aoP435930Body">${libraryOverviewGuide()}<label class="aoP435930Search"><span>${assetIcon('ao-ui-search')}</span><input type="search" data-p435930-lib-search value="${esc(LIB.q)}" placeholder="${esc(L('Search prayers','Rechercher une prière'))}"></label><div class="aoP435930Chips">${cats.map(([id,n])=>`<button type="button" class="${id===LIB.cat?'active':''}" data-p435930-lib-cat="${esc(id)}">${esc(n)}</button>`).join('')}</div>${subjectBrowse}<div class="aoP435930LibraryList" data-ao-prayer-subject-results="${esc(LIB.subject)}">${LIB.cat==="essentials"&&!q?claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2,prayers:DATA.prayers,locale:lang(),esc,title:L("Essential Prayers","Prières essentielles"),artFor:releasedPrayerCardArtUrl}):(rows.length||!(historicalWorks.length+sourceDeepWorks.length+privateCommunionWorks.length+privateHistoricalWorks.length+(stabatSeptember?1:0)+massSequences.length+pragueNovenaWorks.length)?renderLibraryEntryRows(rows,q):'')}</div>${communionSection}${privateHistoricalSection}${historicalSection}${stabatLibrarySection}${massSequenceSection}${pragueNovenaSection}${guidedSection}</main>`;
 }
 function monthIndex(key){const d=dateObj(key);return d?d.getFullYear()*12+d.getMonth():null}
 function consecutive(records,needed){const done=records.filter(x=>x.complete).sort((a,b)=>a.date.localeCompare(b.date));if(!done.length)return 0;let c=1;for(let i=done.length-1;i>0;i--){const a=monthIndex(done[i].date),b=monthIndex(done[i-1].date);if(a-b===1)c++;else break}return Math.min(c,needed)}
@@ -5111,7 +5178,19 @@ function onClick(e){
   MASS_SEQUENCE_READING.error=null;MASS_SEQUENCE_READING.loading=false;
   MASS_SEQUENCE_READING.token++;return render();
  }
- if(b.dataset.p435930LibOpen){LIB.open=b.dataset.p435930LibOpen;LIB.language=null;PILOT_LORETO_GROUP=false;return render()}
+ if(b.matches('[data-p435930-prague-prev]')&&pragueNovenaRecension(LIB.open)){
+  PRAGUE_NOVENA_DAY=Math.max(0,PRAGUE_NOVENA_DAY-1);return render();
+ }
+ if(b.matches('[data-p435930-prague-next]')&&pragueNovenaRecension(LIB.open)){
+  PRAGUE_NOVENA_DAY=Math.min(8,PRAGUE_NOVENA_DAY+1);return render();
+ }
+ if(b.matches('[data-p435930-prague-finish]')&&pragueNovenaRecension(LIB.open)){
+  LIB.open=null;PRAGUE_NOVENA_DAY=0;return render();
+ }
+ if(b.dataset.p435930LibOpen){
+  if(pragueNovenaRecension(b.dataset.p435930LibOpen))PRAGUE_NOVENA_DAY=0;
+  LIB.open=b.dataset.p435930LibOpen;LIB.language=null;PILOT_LORETO_GROUP=false;return render()
+ }
  if(b.dataset.p435930ScriptureRetry){
   // Retry only the exact currently displayed source identity, never switch
   // translation or fetch an alternative unsourced prayer text silently.
