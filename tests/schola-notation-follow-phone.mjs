@@ -44,7 +44,7 @@ try{
   assert.equal(await strip.locator("button").count(),5);
   await strip.locator("button").nth(3).click();
   assert.equal(await page.evaluate(()=>window.__followTest.getState().index),3);
-  await page.waitForFunction(()=>window.__followTest.getState().index===4,{timeout:2600});
+  await page.waitForFunction(()=>window.__followTest.getState().index===4,null,{timeout:2600});
   assert.equal(await page.evaluate(()=>window.__followTest.getState().running),false,
    "Estimated lyric end must not claim the choir stopped");
   await page.evaluate(()=>window.__followTest.seek(1));
