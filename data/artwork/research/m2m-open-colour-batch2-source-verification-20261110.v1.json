@@ -52,7 +52,19 @@
       "rightsEvidence": "PUBLIC_DOMAIN_ON_OBJECT_IMAGE",
       "fullResPhotoAcquired": false,
       "sha256": null,
-      "next": "Resolve alternative original museum source; museum's Commons-origin access may document a work but is not automatically curated."
+      "next": "Seek a different, explicitly identified colour photograph from a museum or other reliable source. Commons museum partnership TIFF is black-and-white and not owner-handpicked; do not auto-promote.",
+      "additionalInstitutionalEvidence": {
+        "historicalMuseumDonation": "https://commons.wikimedia.org/wiki/File:The_Parable_of_the_Labourers_in_the_Vineyard_(David_III_Ryckaert)_-_Nationalmuseum_-_17423.tif",
+        "museumProvidedArchivalImage": "Provided to Wikimedia Commons by Nationalmuseum as part of an official partnership; original TIFF lists pixel composition Black and white, one component.",
+        "archivalImageSizePx": [
+          3271,
+          1974
+        ],
+        "archivalOriginalColour": "BLACK_AND_WHITE_ARCHIVAL_REPRODUCTION",
+        "implication": "This legacy museum-donated TIFF is not a true-colour alternative. Do not falsely recolour or auto-promote Commons file. Current object page may link a distinct colour photograph but its selected JPEG returned 403.",
+        "museumRightsSource": "https://www.nationalmuseum.se/en/explore-art-and-design/images/rights-and-reproductions",
+        "photoFoundForCurrentBatch": false
+      }
     },
     {
       "workKey": "Nationalmuseum:NM1134",
