@@ -373,5 +373,23 @@
     "ai_four_hash_batch15": "data/artwork/research/m2m-ai-derivative-four-file-hash-audit-batch15-20261109.v1.json",
     "institutional_object_batch16": "data/artwork/research/m2m-nine-institutional-object-leads-batch16-20261109.v1.json",
     "exact_commons_source_batch18": "data/artwork/research/m2m-exact-commons-source-metadata-batch18-20261109.v1.json"
+  },
+  "derivedResearchImageSelectionQueue": {
+    "path": "data/artwork/research/m2m-consolidated-image-selection-queue-20261110.v1.json",
+    "guide": "data/artwork/research/README-image-selection-queue-20261110.md",
+    "test": "tests/sacred-art-consolidated-image-selection-queue-research.test.mjs",
+    "asOf": "2026-11-10",
+    "originalResearchEdges": 198,
+    "originalResearchArtworkKeys": 151,
+    "outsideEdgePoolAdditionalArtworks": 4,
+    "totalReviewKeys": 155,
+    "originalGapDatesPreserved": 170,
+    "distinctPriorityOilArtworksAudited": 68,
+    "originalNonPriorityKeysWithOilMediumEdge": 9,
+    "exactMuseumPhotographsHashed": 7,
+    "historicalOwnerArtworkDecisionsOverridden": 0,
+    "newDateApprovals": 0,
+    "productionImagesImported": 0,
+    "scope": "Derived research/selection surface only, outside historical 1589-edge owner-decision counts; excludes prior 195 date assets and Prayer-gallery completeness from its own census"
   }
 }
