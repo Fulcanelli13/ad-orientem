@@ -194,7 +194,7 @@ export function renderTlmChurchProfile(item,language="en",{asOf}={}){
   "L’affiliation provient de la source et ne prouve ni messe particulière, ni rite, missel ou statut ecclésial."))+'</p>';
  html+='<section class="aoTlmProfilePanel" aria-label="'+E(L(language,"Liturgical and ecclesial identity","Identité liturgique et ecclésiale"))+'">';
  html+='<h3>'+E(L(language,"Liturgy & ecclesial identity","Liturgie et identité ecclésiale"))+'</h3>';
- if(!v.ministries.length)html+='<p>'+E(L(language,"No independently verified ministry-level liturgical classification is attached to this directory record.","Aucune classification liturgique de ministère vérifiée indépendamment n’est associée à cette fiche."))+'</p>';
+ if(!v.ministries.length&&!ministry)html+='<p>'+E(L(language,"No independently verified ministry-level liturgical classification is attached to this directory record.","Aucune classification liturgique de ministère vérifiée indépendamment n’est associée à cette fiche."))+'</p>';
  for(const [idx,m] of v.ministries.entries()){
    const emblem=massInstitutionEmblem(m.raw?.community_id);
    html+='<article class="aoTlmProfileMinistry"><div class="aoTlmProfileMinistryHead">'+
