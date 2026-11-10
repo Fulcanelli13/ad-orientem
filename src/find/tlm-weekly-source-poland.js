@@ -1,4 +1,4 @@
-/** Operator-published Polish chapel patterns: six exact CL2 identities.
+/** Operator-published Polish chapel patterns: two exact CL2 identities.
  * Never create RRULEs, future dated Masses, Missal/Una Cum or site ownership.
  */
 export const CL27_POLAND_SOURCE_URL=new URL(
@@ -20,47 +20,6 @@ const EXPECTED=Object.freeze({
       "FIRST_SATURDAY|09:00|UNKNOWN"
     ]
   },
-  "RG-3BD77BE4BBF9": {
-    "url": "https://www.piusx.org.pl/kaplice/bialystok",
-    "source_ids": [
-      "AO-B40-SSPX-PL-BIA_YSTOK",
-      "SSPXMAP:OPE-002710"
-    ],
-    "certificate": "AO-27M-PL-002",
-    "lines": [
-      "SUNDAYS|09:00|SUNG",
-      "SATURDAY|18:00|UNKNOWN",
-      "FIRST_FRIDAY|18:00|UNKNOWN"
-    ]
-  },
-  "RG-3D9BC0A99E10": {
-    "url": "https://www.piusx.org.pl/kaplice/bielsko-biala",
-    "source_ids": [
-      "AO-B40-SSPX-PL-BIELSKO_BIA_A",
-      "SSPXMAP:OPE-002720",
-      "ao-research-sspx-oct26-poland-sspx-oct26-pl-bielsko-bia-a-kaplica-sw-melchiora-grodzieckiego"
-    ],
-    "certificate": "AO-27M-PL-003",
-    "lines": [
-      "SUNDAYS|09:00|UNKNOWN",
-      "SATURDAY|18:00|UNKNOWN",
-      "FIRST_FRIDAY|18:00|UNKNOWN",
-      "FIRST_SATURDAY|09:00|UNKNOWN"
-    ]
-  },
-  "RG-858EA6AA6D6A": {
-    "url": "https://www.piusx.org.pl/kaplice/boleslawiec",
-    "source_ids": [
-      "AO-B40-SSPX-PL-BOLES_AWIEC",
-      "SSPXMAP:OPE-002727"
-    ],
-    "certificate": "AO-27M-PL-004",
-    "lines": [
-      "SUNDAYS|12:30|UNKNOWN",
-      "FIRST_FRIDAY|18:00|UNKNOWN",
-      "FIRST_SATURDAY|09:00|UNKNOWN"
-    ]
-  },
   "RG-F38DEA178149": {
     "url": "https://www.piusx.org.pl/kaplice/bukowiec",
     "source_ids": [
@@ -74,19 +33,6 @@ const EXPECTED=Object.freeze({
       "FIRST_FRIDAY|18:00|UNKNOWN",
       "FIRST_SATURDAY|09:00|UNKNOWN",
       "THURSDAY_BEFORE_FIRST_FRIDAY|18:00|UNKNOWN"
-    ]
-  },
-  "RG-513593EF876C": {
-    "url": "https://www.piusx.org.pl/kaplice/bydgoszcz",
-    "source_ids": [
-      "AO-B40-SSPX-PL-BYDGOSZCZ",
-      "SSPXMAP:OPE-002730"
-    ],
-    "certificate": "AO-27M-PL-006",
-    "lines": [
-      "SUNDAYS|08:30|SUNG",
-      "FIRST_FRIDAY|18:00|UNKNOWN",
-      "FIRST_SATURDAY|09:00|UNKNOWN"
     ]
   }
 });
@@ -103,7 +49,7 @@ export function attachPublishedPolandSourcePatterns(items,manifest){
  if(manifest?.schema!=="AO_CL27_POLAND_OPERATOR_MASS_PATTERNS_V1"||
     manifest.publication!=="FIRST_PARTY_REPORTED_PATTERN_NOT_LIVE_MASS_OCCURRENCE"||
     manifest.reviewed_on!=="2026-11-10"||
-    !Array.isArray(manifest.sites)||manifest.sites.length!==6||forbidden(manifest))
+    !Array.isArray(manifest.sites)||manifest.sites.length!==2||forbidden(manifest))
    throw Error("Invalid CL27 Poland operator manifest");
  const by=new Map();
  for(const p of manifest.sites){
@@ -153,6 +99,6 @@ export function attachPublishedPolandSourcePatterns(items,manifest){
     ...p,entries:Object.freeze(p.entries.map(e=>Object.freeze({...e})))
   })});
  });
- if(found.size!==6)throw Error("Poland source patterns failed all six CL2 joins");
+ if(found.size!==2)throw Error("Poland source patterns failed both CL2 joins");
  return Object.freeze(out);
 }
