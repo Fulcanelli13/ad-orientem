@@ -1,0 +1,35 @@
+name: LIVE handoff Stage C source-gated sanctuary
+on:
+  pull_request:
+    paths:
+      - 'src/mass/reader-live-handoff-sanctuary.js'
+      - 'src/mass/reader-live-handoff-band.js'
+      - 'src/mass/reader-live-handoff-geometry.js'
+      - 'src/mass/reader-priest-station65.js'
+      - 'src/mass/browser-entry.js'
+      - 'tests/reader-live-handoff-sanctuary.mjs'
+      - '.github/workflows/live-handoff-stage-c-sanctuary.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  sanctuary:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check added modules and reader entry syntax
+        run: |
+          node --check src/mass/reader-live-handoff-sanctuary.js
+          node --check src/mass/reader-live-handoff-band.js
+          node --check src/mass/browser-entry.js
+          node --check tests/reader-live-handoff-sanctuary.mjs
+      - name: Verify actual source-gated priest positions, colors and approved icons
+        run: |
+          node --test tests/reader-live-handoff-sanctuary.mjs
+          node --test tests/reader-live-handoff-band-shell.mjs
+          node tests/reader-live-handoff-final-geometry.mjs
+          node tests/mass-priest-position-continuity.mjs

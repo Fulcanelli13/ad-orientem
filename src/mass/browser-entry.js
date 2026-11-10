@@ -737,7 +737,7 @@ async function openProductionReader(prepared, { resumeRecord = null } = {}) {
   // 65 native source cuts exactly crosswalk. Never mutates reader/Schola state.
   globalThis.AO_R17_LIVE_BAND_PREVIEW?.dispose?.();
   globalThis.AO_R17_LIVE_BAND_PREVIEW=mountLiveHandoffBand({
-    preview:previewState.preview,doc:document,
+    preview:previewState.preview,prepared,doc:document,
   });
   globalThis.AO_R17_SPECIAL_STAGE?.dispose?.();
   globalThis.AO_R17_SPECIAL_STAGE=mountSpecialMassStage({
