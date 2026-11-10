@@ -58,6 +58,7 @@ import {internalPrayerView,supportedDirectPrayerRoute} from "./internal-route-ow
 import {renderLittleCrownB30} from "./little-crown-presentation-b30.js";
 import {PRAYER_SUBJECTS_V1,prayerSubjectsForLibrary,prayerSubjectCounts} from "./prayer-subject-index.v1.js";
 import {guidedPrayerLinksForSubject} from "./prayer-subject-guided-links.v1.js";
+import {RACCOLTA_1910_GOOD_DEATH_WORKS_V1,RACCOLTA_1910_AGONY_429,raccolta1910GoodDeathWork,raccolta1910GoodDeathMatches} from "./raccolta-1910-good-death.v1.js";
 import {PRAYER_SUPPLEMENTAL_LIVE_WORK_LINKS_V1,prayerSupplementalLiveWork,prayerSupplementalLiveWorksForSubject} from "./prayer-supplemental-live-works.v1.js";
 import {prayerSevenSourceWork,prayerSevenSourceWorksForSubject} from "./prayer-seven-source-work-links.v1.js";
 import {redBookletCommunionLibraryLink,redBookletCommunionLibraryLinksForSubject} from "./red-booklet-communion-library-links.v1.js";
@@ -2414,6 +2415,7 @@ function renderAdoration(){
 }
 function familyOf(p){return libraryVariantFamily(p.id)||p.id}
 let LIB={q:'',cat:'all',subject:'all',subjectOpen:false,open:null,language:null};
+let RACCOLTA_AGONY_STEP=0;
 // Mass Sequentia texts are borrowed live from the authenticated selected Proper;
 // they are NOT added to the locked 48-text canonical Prayer object.
 const MASS_SEQUENCE_READING={id:null,record:null,loading:false,error:null,token:0};
@@ -2669,7 +2671,31 @@ function renderLibraryEntryRows(rows,search){
   return `<details class="aoP435930LibraryVariants" data-ao-prayer-family="${esc(entry.family)}"${search?' open':''}><summary><small>${esc(L('Prayer family','Famille de prières'))}</small><b>${esc(isFr()?label.fr:label.en)}</b><span>${entry.prayers.length} ${esc(L(entry.prayers.length===1?'form':'forms',entry.prayers.length===1?'forme':'formes'))}</span></summary><div class="aoP435930LibraryVariantItems">${entry.prayers.map(renderRow).join('')}</div></details>`;
  }).join('')||`<p>${esc(L('No prayers match this search.','Aucune prière ne correspond à cette recherche.'))}</p>`;
 }
+function renderRaccoltaGoodDeath(){
+ const w=raccolta1910GoodDeathWork(LIB.open);if(!w)return '';
+ const guided=Array.isArray(w.steps),i=Math.max(0,Math.min(5,RACCOLTA_AGONY_STEP));
+ const p=guided?DATA.prayers[w.steps[i]]:null;
+ const title=isFr()?w.titleFr:w.titleEn;
+ const prayer=guided?(p?(p[lang()]||p.en||''):''):(isFr()?w.fr:w.en);
+ const langLabel=guided?(isFr()?(p?.titleFr||p?.title||''):(p?.title||'')):title;
+ const controls='<nav class="aoJosephSevenNav">'+
+   (guided&&i>0?'<button type="button" data-p435930-raccolta-prev>'+esc(L('Previous prayer','Prière précédente'))+'</button>':'')+
+   '<button type="button" data-p435930-raccolta-back>'+esc(L('Return to Prayer Library','Retour au livre de prières'))+'</button>'+
+   (guided&&i<5?'<button type="button" data-p435930-raccolta-next>'+esc(L('Next prayer','Prière suivante'))+'</button>':'')+'</nav>';
+ return head(title,L('Raccolta · 1910','Raccolta · 1910'))+
+  '<main class="aoP435930Body aoP435930LibraryReader" data-ao-raccolta-good-death-reader="'+esc(w.id)+'">'+
+  '<p class="aoP435930SourceNote">'+esc(guided?L(w.instructionEn,w.instructionFr):
+   L('Historical source prayer; French is a modern editorial translation.','Prière historique ; le français est une traduction éditoriale moderne.'))+'</p>'+
+  (guided?'<p data-ao-raccolta-agony-progress>'+esc(L('Prayer','Prière'))+' '+(i+1)+' / 6</p>':'')+
+  '<article class="aoDevoCard" data-ao-raccolta-agony-step="'+(guided?i+1:0)+'"><div class="aoDevoCardScroll">'+
+  '<h2>'+esc(langLabel)+'</h2><p lang="'+lang()+'" data-ao-raccolta-prayer-body>'+nl(prayer)+'</p></div></article>'+
+  (!guided&&w.la?'<details class="aoP435930SourceNote" data-ao-raccolta-latin><summary>'+esc(L('Original Latin','Latin original'))+'</summary><p lang="la">'+nl(w.la)+'</p></details>':'')+
+  controls+'<details class="aoP435930SourceNote" data-ao-raccolta-source><summary>'+esc(L('Edition and source','Édition et source'))+'</summary>'+
+  '<p>Raccolta (1910), no. '+w.number+'. '+esc(L('Checked against a modern typeset reproduction, not independently collated with the 1910 printed page. Historical indulgences are not asserted as currently valid.','Vérifié sur une reproduction recomposée, non collationné sur l’original imprimé de 1910. Les indulgences historiques ne sont pas présumées toujours valables.'))+'</p>'+
+  '<a target="_blank" rel="noopener noreferrer" href="'+esc(w.sourceURL)+'">'+esc(L('Source PDF','PDF source'))+'</a></details></main>';
+}
 function renderLibrary(){
+ if(LIB.open&&raccolta1910GoodDeathWork(LIB.open))return renderRaccoltaGoodDeath();
  if(LIB.open&&massSequencePrayerWork(LIB.open))return renderMassSequencePrayer();
  if(LIB.open){
   const p=P(LIB.open);if(!p){LIB.open=null;return renderLibrary()}
@@ -2777,6 +2803,15 @@ function renderLibrary(){
    '<small>'+esc(L('MASS SEQUENCE · SOURCE READER','SÉQUENCE DE MESSE · SOURCE'))+'</small>'+
    '<b>'+esc(isFr()?work.titleFr:work.title)+'</b><span>LA · EN · FR</span></button>').join('')+
    '</div></section>');
+ const raccoltaGoodDeathWorks=raccolta1910GoodDeathMatches({category:LIB.cat,subject:LIB.subject,search:q});
+ const raccoltaGoodDeathSection=!raccoltaGoodDeathWorks.length?'':(
+  '<section class="aoP435930LibraryRelated" data-ao-raccolta-good-death-library>'+
+  '<h3>'+esc(L('A holy death · Raccolta 1910','Une sainte mort · Raccolta 1910'))+'</h3>'+
+  '<p>'+esc(L('Two distinct source prayers and a six-step exercise reusing canonical prayers.','Deux prières distinctes et un exercice en six étapes réutilisant les prières canoniques.'))+'</p>'+
+  '<div class="aoP435930ModuleGrid">'+raccoltaGoodDeathWorks.map(w=>
+   '<button type="button" class="aoP435930ModuleCard" data-p435930-lib-open="'+esc(w.id)+'">'+
+   '<small>RACCOLTA · '+w.number+'</small><b>'+esc(isFr()?w.titleFr:w.titleEn)+'</b>'+
+   '<span>'+esc(w.kind?L('Six existing prayers','Six prières existantes'):'LA · EN · FR')+'</span></button>').join('')+'</div></section>');
  const guidedLinks=LIB.cat==='all'?guidedPrayerLinksForSubject(LIB.subject,q):[];
  const guidedSection=LIB.cat!=='all'||!guidedLinks.length?
   '':('<section class="aoP435930LibraryRelated" data-ao-prayer-subject-guided="'+esc(LIB.subject)+'">'+
@@ -2793,9 +2828,9 @@ function renderLibrary(){
   '<div class="aoP435930Chips" role="group" aria-label="'+esc(L('Theological prayer families','Familles théologiques de prières'))+'">'+
   '<button type="button" data-p435930-lib-subject="all" aria-pressed="'+String(LIB.subject==='all')+'">'+esc(L('All subjects','Tous les sujets'))+'</button>'+
   PRAYER_SUBJECTS_V1.map(subject=>'<button type="button" data-p435930-lib-subject="'+subject.id+'" aria-pressed="'+String(LIB.subject===subject.id)+'">'+
-    esc(isFr()?subject.fr:subject.en)+' <small>'+(subjectCounts.counts[subject.id]+prayerSupplementalLiveWorksForSubject(subject.id).length +prayerSevenSourceWorksForSubject(subject.id).length+redBookletCommunionLibraryLinksForSubject(subject.id).length+redBookletSuscipeLibraryLinksForSubject(subject.id).length+redBookletPrivateHistoricalWorksForSubject(subject.id).length+MASS_SEQUENCE_PRAYER_WORKS.filter(x=>x.subject===subject.id).length+(subject.id==='V'?1:0))+'</small></button>').join('')+
+    esc(isFr()?subject.fr:subject.en)+' <small>'+(subjectCounts.counts[subject.id]+prayerSupplementalLiveWorksForSubject(subject.id).length +prayerSevenSourceWorksForSubject(subject.id).length+redBookletCommunionLibraryLinksForSubject(subject.id).length+redBookletSuscipeLibraryLinksForSubject(subject.id).length+redBookletPrivateHistoricalWorksForSubject(subject.id).length+MASS_SEQUENCE_PRAYER_WORKS.filter(x=>x.subject===subject.id).length+(subject.id==='V'?1:0)+RACCOLTA_1910_GOOD_DEATH_WORKS_V1.filter(w=>w.subject===subject.id).length+(subject.id==='IX'?1:0))+'</small></button>').join('')+
   '</div><p class="aoP435930SourceNote">'+esc(L('Only accessible canonical and source-owned reader texts are included. Unverified research works are not shown as readable prayers.','Seuls les textes canoniques et les prières déjà accessibles dans leurs parcours d’origine sont inclus. Les œuvres de recherche non vérifiées ne sont pas présentées comme disponibles.'))+'</p></details>';
- return `${head(L('Prayer Library','Livre de prières'),L('Prayers and guided devotions','Prières et dévotions guidées'))}<main class="aoP435930Body">${libraryOverviewGuide()}<label class="aoP435930Search"><span>${assetIcon('ao-ui-search')}</span><input type="search" data-p435930-lib-search value="${esc(LIB.q)}" placeholder="${esc(L('Search prayers','Rechercher une prière'))}"></label><div class="aoP435930Chips">${cats.map(([id,n])=>`<button type="button" class="${id===LIB.cat?'active':''}" data-p435930-lib-cat="${esc(id)}">${esc(n)}</button>`).join('')}</div>${subjectBrowse}<div class="aoP435930LibraryList" data-ao-prayer-subject-results="${esc(LIB.subject)}">${LIB.cat==="essentials"&&!q?claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2,prayers:DATA.prayers,locale:lang(),esc,title:L("Essential Prayers","Prières essentielles"),artFor:releasedPrayerCardArtUrl}):(rows.length||!(historicalWorks.length+sourceDeepWorks.length+privateCommunionWorks.length+privateHistoricalWorks.length+(stabatSeptember?1:0)+massSequences.length)?renderLibraryEntryRows(rows,q):'')}</div>${communionSection}${privateHistoricalSection}${historicalSection}${stabatLibrarySection}${massSequenceSection}${guidedSection}</main>`;
+ return `${head(L('Prayer Library','Livre de prières'),L('Prayers and guided devotions','Prières et dévotions guidées'))}<main class="aoP435930Body">${libraryOverviewGuide()}<label class="aoP435930Search"><span>${assetIcon('ao-ui-search')}</span><input type="search" data-p435930-lib-search value="${esc(LIB.q)}" placeholder="${esc(L('Search prayers','Rechercher une prière'))}"></label><div class="aoP435930Chips">${cats.map(([id,n])=>`<button type="button" class="${id===LIB.cat?'active':''}" data-p435930-lib-cat="${esc(id)}">${esc(n)}</button>`).join('')}</div>${subjectBrowse}<div class="aoP435930LibraryList" data-ao-prayer-subject-results="${esc(LIB.subject)}">${LIB.cat==="essentials"&&!q?claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2,prayers:DATA.prayers,locale:lang(),esc,title:L("Essential Prayers","Prières essentielles"),artFor:releasedPrayerCardArtUrl}):(rows.length||!(historicalWorks.length+sourceDeepWorks.length+privateCommunionWorks.length+privateHistoricalWorks.length+(stabatSeptember?1:0)+massSequences.length+raccoltaGoodDeathWorks.length)?renderLibraryEntryRows(rows,q):'')}</div>${communionSection}${privateHistoricalSection}${historicalSection}${stabatLibrarySection}${massSequenceSection}${raccoltaGoodDeathSection}${guidedSection}</main>`;
 }
 function monthIndex(key){const d=dateObj(key);return d?d.getFullYear()*12+d.getMonth():null}
 function consecutive(records,needed){const done=records.filter(x=>x.complete).sort((a,b)=>a.date.localeCompare(b.date));if(!done.length)return 0;let c=1;for(let i=done.length-1;i>0;i--){const a=monthIndex(done[i].date),b=monthIndex(done[i-1].date);if(a-b===1)c++;else break}return Math.min(c,needed)}
@@ -5111,7 +5146,10 @@ function onClick(e){
   MASS_SEQUENCE_READING.error=null;MASS_SEQUENCE_READING.loading=false;
   MASS_SEQUENCE_READING.token++;return render();
  }
- if(b.dataset.p435930LibOpen){LIB.open=b.dataset.p435930LibOpen;LIB.language=null;PILOT_LORETO_GROUP=false;return render()}
+ if(b.matches('[data-p435930-raccolta-prev]')&&LIB.open===RACCOLTA_1910_AGONY_429.id){RACCOLTA_AGONY_STEP=Math.max(0,RACCOLTA_AGONY_STEP-1);return render();}
+ if(b.matches('[data-p435930-raccolta-next]')&&LIB.open===RACCOLTA_1910_AGONY_429.id){RACCOLTA_AGONY_STEP=Math.min(5,RACCOLTA_AGONY_STEP+1);return render();}
+ if(b.matches('[data-p435930-raccolta-back]')&&raccolta1910GoodDeathWork(LIB.open)){LIB.open=null;RACCOLTA_AGONY_STEP=0;return render();}
+ if(b.dataset.p435930LibOpen){if(raccolta1910GoodDeathWork(b.dataset.p435930LibOpen))RACCOLTA_AGONY_STEP=0;LIB.open=b.dataset.p435930LibOpen;LIB.language=null;PILOT_LORETO_GROUP=false;return render()}
  if(b.dataset.p435930ScriptureRetry){
   // Retry only the exact currently displayed source identity, never switch
   // translation or fetch an alternative unsourced prayer text silently.
