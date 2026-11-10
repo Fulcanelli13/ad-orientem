@@ -15,7 +15,8 @@ assert.deepEqual(sourceAudit.counts,{
  uniqueOilWorkKeysAudited:18,relatedBaselineExactOilEdgePool:79,distinctExactOilWorkKeysInPool:68,
  explicitOpenImageSourcePolicyCandidates:6,officialPhotographsNoncommercialRestricted:2,
  photoRightsNotYetEstablished:10,exactImageBytesDownloaded:0,photoHashVerified:0,
- mobileImageCropsCertified:0,dateSpecificOwnerApprovals:0,releaseReadyPhotos:0
+ mobileImageCropsCertified:0,dateSpecificOwnerApprovals:0,releaseReadyPhotos:0,
+ confirmedOpenColourFrontSourceCandidates:4,openButWrongSideOrMonochromeRecords:2
 });
 const allOils = new Set(triage.edges.filter(x=>x.priority==='P2_EXACT_OIL_MUSEUM_SOURCE_AND_IMAGE_QA').map(x=>x.artworkKey));
 for(const item of sourceAudit.records){
@@ -32,7 +33,7 @@ for(const item of sourceAudit.records){
 }
 const cc0=sourceAudit.records.filter(x=>x.photographedImageRightsStatus.includes('CC0'));
 assert.deepEqual(cc0.map(x=>x.workKey).sort(),['Met:1991.153','Met:435901','Met:469892','Met:724811','Walters:37.1146'].sort());
-assert.equal(sourceAudit.records.filter(x=>x.photographedImageRightsStatus==='SELECTED_IMAGE_PAGE_CC_BY_4_LICENSE').length,1);
+assert.equal(sourceAudit.records.filter(x=>x.photographedImageRightsStatus==='CC_BY_4_REVERSE_PHOTO_ONLY_FRONT_RIGHTS_UNCONFIRMED').length,1);
 assert.deepEqual(sourceAudit.records.filter(x=>x.photographedImageRightsStatus.includes('NONCOMMERCIAL')).map(x=>x.workKey).sort(),['NationalGalleriesScotland:NG2238','Thyssen:31'].sort());
 const restricted=sourceAudit.records.filter(x=>x.photographedImageRightsStatus.includes('NONCOMMERCIAL'));
 assert.ok(restricted.every(x=>x.priority==='P0_RESTRICTED_IMAGE_SOURCE_DO_NOT_USE'));
@@ -46,13 +47,15 @@ assert.ok(sourceAudit.records.find(x=>x.workKey==='Louvre:RF1966.1').objectAndSc
 assert.equal(photoQueue.status,'SOURCED_OPEN_IMAGE_OPTIONS_NOT_ACQUIRED_NOT_APPROVED');
 assert.equal(photoQueue.records.length,6);
 assert.deepEqual(photoQueue.counts,{
- firstPartyOpenImageWorkKeys:6,firstPartyUrlsFound:5,downloadedExactFiles:0,sourceBytesHashed:0,
+ firstPartyOpenImageWorkKeys:6,firstPartyUrlsFound:5,firstPartyMetColourUrlsStaged:4,
+ readyForGithubRunnerNetworkAttempt:4,heldForWrongVersoOrUnverifiedWholeFront:1,
+ heldForMonochromeOnly:1,downloadedExactFiles:0,sourceBytesHashed:0,
  selectedPhotosColorAndPixelQACertified:0,dateSpecificOwnerApproval:0,publicReleaseCandidatesReady:0
 });
 for(const q of photoQueue.records){
  const src=sourceAudit.records.find(x=>x.workKey===q.key);
  assert.ok(src,'staged open-photo key has no audited object: '+q.key);
- assert.ok(src.photographedImageRightsStatus.includes('CC0')||src.photographedImageRightsStatus==='SELECTED_IMAGE_PAGE_CC_BY_4_LICENSE');
+ assert.ok(src.photographedImageRightsStatus.includes('CC0')||src.photographedImageRightsStatus==='CC_BY_4_REVERSE_PHOTO_ONLY_FRONT_RIGHTS_UNCONFIRMED');
  assert.equal(q.originalFileAcquired,false);
  assert.equal(q.sha256,null);
  assert.equal(q.pixelWidth,null);
@@ -62,6 +65,12 @@ for(const q of photoQueue.records){
  assert.equal(q.productionEligible,false);
 }
 assert.equal(photoQueue.records.filter(x=>x.firstPartyPhotoUrl).length,5);
-assert.equal(photoQueue.records.find(x=>x.key==='Walters:37.1146').imageQualityIssue.includes('black-and-white'),true);
-assert.ok(photoQueue.records.find(x=>x.key==='Wellcome:45078i').photoLicence.includes('attribution necessary'));
-console.log('PASS: 18 museum oil work audit (6 open-policy, 2 restricted, 10 unresolved); six image acquisitions staged with no bytes, approvals, or release.');
+assert.equal(photoQueue.records.find(x=>x.key==='Walters:37.1146').imageQualityIssue.includes('monochrome'),true);
+assert.ok(photoQueue.records.find(x=>x.key==='Wellcome:45078i').photoLicence.includes('BACK OF CANVAS'));
+assert.equal(photoQueue.records.find(x=>x.key==='Wellcome:45078i').firstPartyPhotoUrl,null);
+assert.equal(photoQueue.records.find(x=>x.key==='Wellcome:45078i').historicalWrongImageRecord,'https://wellcomecollection.org/works/jgxd7rrf/images?id=jvt9hwrm');
+assert.ok(photoQueue.records.find(x=>x.key==='Wellcome:45078i').researchImageEvidence.some(x=>x.iiifIdentifier==='L0014632'&&x.role==='BACK_OF_CANVAS'));
+assert.deepEqual(photoQueue.records.filter(x=>x.acquisitionStatus==='READY_NETWORK_ATTEMPT').map(x=>x.key).sort(),['Met:1991.153','Met:435901','Met:469892','Met:724811']);
+assert.ok(photoQueue.records.filter(x=>x.acquisitionStatus==='READY_NETWORK_ATTEMPT').every(x=>new URL(x.firstPartyPhotoUrl).hostname==='images.metmuseum.org'));
+assert.equal(sourceAudit.records.find(x=>x.workKey==='Wellcome:45078i').priority,'P0_RESOLVE_WHOLE_FRONT_IMAGE_SOURCE_AND_LICENSE');
+console.log('PASS: 18 oil works, 4 Met colour fronts ready to attempt, Wellcome reverse and Walters greyscale held; zero downloads/approvals/releases.');
