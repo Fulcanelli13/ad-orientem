@@ -1,3 +1,7 @@
+/* 2026-11-10 CL27 five additional source-corroborated Polish chapel patterns.
+ * Preserve prior 26 site programmes, all source holds, and transactional
+ * GitHub Pages offline snapshots. No generated Mass dates or map changes.
+ */
 /* 2026-11-10 CL27 Polish source-adjudicated batch: Bajerze + Bukowiec only.
  * Four other Polish operator sites remain held for site/time conflicts.
  * Keep source-published patterns distinct from promised future Mass occurrences.
