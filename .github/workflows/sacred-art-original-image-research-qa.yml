@@ -6,6 +6,7 @@ on:
   pull_request:
     paths:
       - 'scripts/sacred-art-fetch-open-image-qa.py'
+      - 'tests/sacred-art-exact-oil-photo-rights-research.test.mjs'
       - 'data/artwork/research/m2m-open-photo-acquisition-queue6-20261110.v1.json'
       - '.github/workflows/sacred-art-original-image-research-qa.yml'
   workflow_dispatch:
