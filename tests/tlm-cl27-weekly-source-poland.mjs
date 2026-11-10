@@ -74,7 +74,7 @@ for(const [path,value] of [
  ]){
  const c=structuredClone(data);let obj=c;for(const k of path.slice(0,-1))obj=obj[k];obj[path.at(-1)]=value;reject(c);
 }
-const wrong=[...fixtures];wrong[0]={...wrong[0],title:"Wrong church"};
+const wrong=[...fixtures];wrong[0]={...wrong[0],source_location_description:"Wrong physical building"};
 assert.throws(()=>attachPublishedPolandSourcePatterns(wrong,data));
 const duplicate=[...fixtures];duplicate.push(fixtures[0]);
 assert.throws(()=>attachPublishedPolandSourcePatterns(duplicate,data));
