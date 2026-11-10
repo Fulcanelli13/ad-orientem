@@ -5,6 +5,7 @@ on:
       - "scripts/schola/prepare-kyrie-viii-review-manifest.mjs"
       - "tests/schola-kyrie-viii-review-manifest.mjs"
       - "tests/schola-kyrie-viii-exsurge-phone.mjs"
+      - "scripts/schola/build-kyrie-viii-review-gallery.mjs"
       - "src/mass/reader-kyrie-viii-review-queue.js"
       - "src/mass/reader-schola-notation-follow.js"
       - "tests/schola-notation-follow.mjs"
@@ -41,7 +42,20 @@ jobs:
           npm install --no-audit --no-fund
           npx playwright install --with-deps chromium
       - name: Verify all nine original-source excerpts engrave at phone widths
+        env:
+          AO_KYRIE_VIII_REVIEW_DIR: ${{ runner.temp }}/kyrie-viii-visual-review
         run: node tests/schola-kyrie-viii-exsurge-phone.mjs
+      - name: Assemble standalone review-only visual gallery
+        run: |
+          node --check scripts/schola/build-kyrie-viii-review-gallery.mjs
+          node scripts/schola/build-kyrie-viii-review-gallery.mjs "$RUNNER_TEMP/kyrie-viii-visual-review"
+      - name: Upload Kyrie VIII phone notation gallery (NOT a Pages asset)
+        uses: actions/upload-artifact@v4
+        with:
+          name: kyrie-viii-nine-cue-visual-editorial-hold
+          path: ${{ runner.temp }}/kyrie-viii-visual-review/
+          retention-days: 14
+          if-no-files-found: error
       - name: Preserve unapproved research review file (not a site asset)
         uses: actions/upload-artifact@v4
         with:

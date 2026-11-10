@@ -2,7 +2,8 @@
 // NOT PUBLIC, not musically certified, and not published to the LIVE reader.
 import assert from "node:assert/strict";
 import {createServer} from "node:http";
-import {readFileSync} from "node:fs";
+import {readFileSync,mkdirSync,writeFileSync} from "node:fs";
+import {join} from "node:path";
 import {chromium} from "@playwright/test";
 import {buildKyrieVIIIReviewManifest}
  from "../scripts/schola/prepare-kyrie-viii-review-manifest.mjs";
@@ -33,6 +34,9 @@ const all=buildKyrieVIIIReviewManifest();
 assert.equal(all.candidates.length,9);
 assert.equal(all.publishedScores,0);
 const report=[];
+const reviewDir=process.env.AO_KYRIE_VIII_REVIEW_DIR??"";
+const screenshots=[];
+if(reviewDir)mkdirSync(reviewDir,{recursive:true});
 try{
  for(const width of [320,390]){
   const page=await browser.newPage({viewport:{width,height:740},deviceScaleFactor:1});
@@ -71,9 +75,31 @@ try{
    assert.ok(result.follow.syllables>0,"Source must carry lyric units");
    assert.equal(result.follow.mapped,true,"Source syllables did not map one-to-one onto Exsurge SVG for "+score.sourceCueId+" at "+width+"px: "+JSON.stringify(result));
    report.push({width,...result});
+   if(reviewDir){
+     const filename=score.sourceCueId.replace("AO.SM.","")+"-"+width+".png";
+     const png=await page.locator("#staff").screenshot({animations:"disabled"});
+     assert.ok(png.length>1000,"Empty visual proof "+filename);
+     writeFileSync(join(reviewDir,filename),png);
+     screenshots.push({
+       cueId:score.sourceCueId,latin:score.sourceLatin,
+       sourceLine:score.sourceLine,folios:score.facsimileFolios,
+       gabcSha256:score.gabcSha256,width,filename,
+       syllables:result.follow.syllables,mapped:result.follow.mapped
+     });
+   }
   }
   assert.deepEqual(foreign,[],"Offline review must never request external images, fonts or scripts");
   await page.close();
+ }
+ if(reviewDir){
+   assert.equal(screenshots.length,18,"Exactly 18 phone screenshots required");
+   writeFileSync(join(reviewDir,"proof.json"),JSON.stringify({
+     status:"RESEARCH_NOT_APPROVED",publicScores:0,
+     sourceId:all.source.scoreId,
+     sourceGabcSha256:all.verifiedResearchGabcSha256,
+     captures:screenshots
+   },null,2));
+   console.log("SCHOLA_KYRIE_VIII_VISUAL_PROOF_PASS 18 images, no public scoring");
  }
  console.log("SCHOLA_KYRIE_VIII_EXSURGE_OFFLINE_PHONE_PASS "+JSON.stringify({
    previews:report.length,cues:9,widths:[320,390],
