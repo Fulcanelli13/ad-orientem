@@ -39,16 +39,17 @@
     "newOwnerApprovedPlacements": 0,
     "formalAppContainerCropCertifications": 0,
     "newPublicArtworkReleases": 0,
-    "newInstitutionPhotoPolicyHolds": 9,
-    "unverifiedPhotoSearchLaneRemaining": 40
+    "newInstitutionPhotoPolicyHolds": 36,
+    "unverifiedPhotoSearchLaneRemaining": 13,
+    "iccdOfficialPhotoRightsHoldsAdded": 27
   },
   "reviewLaneCounts": {
     "A_VERIFIED_SOURCE_PHOTO_EDITORIAL_AND_MOBILE_QA": 8,
     "B_COPYRIGHT_REVIEW": 1,
     "B_RECONCILE_WORK_IDENTITY": 1,
     "C_FIND_TRUE_COLOUR_REPRODUCTION": 1,
-    "C_LOCATE_REUSABLE_COLOUR_SOURCE": 40,
-    "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT": 18,
+    "C_LOCATE_REUSABLE_COLOUR_SOURCE": 13,
+    "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT": 45,
     "D_CHECK_ICONOGRAPHIC_FIDELITY": 13,
     "D_CONTEXT_ONLY_FIND_EXACT_GOSPEL_SCENE": 1,
     "D_NONPRIORITY_ARTWORK_SOURCE_REVIEW": 50,
@@ -69,7 +70,8 @@
     "Priority ranking is operational work order, not artistic endorsement or approval; contextual and partial Gospel episodes remain held.",
     "A successfully acquired painting photograph may still fail Gospel-subject readability on mobile; keep Rijks SK-A-868 out of hero publication despite source licence and high pixel count.",
     "Nationalmuseum NM420/NM1134 return HTTP 403 on their exact official JPG endpoints: never count as acquired, and no non-owner-handpicked Commons source enters curated pool.",
-    "Official museum image policies reviewed 10 Nov 2026: Louvre, Cincinnati, Timken and KHM institutional photographs have no confirmed commercial-use permission without prior licence; their 9 exact work keys are held, while a separate genuinely open photograph may still be researched."
+    "Official museum image policies reviewed 10 Nov 2026: Louvre, Cincinnati, Timken and KHM institutional photographs have no confirmed commercial-use permission without prior licence; their 9 exact work keys are held, while a separate genuinely open photograph may still be researched.",
+    "27 priority-oil ICCD official catalogue photographs do not inherit CC BY 4.0 open-data rights. ICCD requires institution-specific image reproduction authorization, potentially a charge. No free commercial app image claimed without a distinct open-photo source; work identities remain usable research leads."
   ],
   "photographs": [
     {
@@ -1259,13 +1261,22 @@
       "sourceAuditNote": "Racconigi Castle inv. 835. Pius V kneels in prayer while naval battle is seen through window; object location was reverified in 2016, despite 2002 storage uncertainty. No image rights cleared.",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-followup10b-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Seek exact painting's high-quality colour image from a distinct open-license source/museum. Do not scrape, download for app use, or purchase ICCD official photo. Preserve work identity, provenance and existing editorial holds.",
+      "risk": "ICCD_OFFICIAL_PHOTO_RIGHTS_REQUIRE_AUTHORISATION",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://www.catalogo.beniculturali.it/termini-uso",
+        "reviewDate": "2026-11-10",
+        "disposition": "CATALOGUE_DATA_CC_BY_4_ONLY_PHOTO_REPRODUCTION_REQUIRES_COMPETENT_ENTITY_AUTHORISATION_POSSIBLE_FEES",
+        "appliesTo": "OFFICIAL_ICCD_CATALOGUE_IMAGE_ONLY_NOT_WORK_NOT_ALL_INDEPENDENT_PHOTOGRAPHY",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false,
+        "policyTextSummary": "Catalogue terms separate openly licensed data/content from image reproductions; selected photograph rights must be separately established. No assumption of free commercial reuse from the catalogue metadata banner."
+      }
     },
     {
       "artworkKey": "ICCD:0100130693",
@@ -1299,13 +1310,22 @@
       "sourceAuditNote": "1796 oil canvas in Demonte, 100×76cm, with angel and cherubs. Catalogue links a Botta workshop but 1796 is decades after the documented Paolo Amedeo Botta activity (1718–45); possibly son/brother. Do not assert a personally executed 1796 original by him.",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-final15-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Seek exact painting's high-quality colour image from a distinct open-license source/museum. Do not scrape, download for app use, or purchase ICCD official photo. Preserve work identity, provenance and existing editorial holds.",
+      "risk": "ICCD_OFFICIAL_PHOTO_RIGHTS_REQUIRE_AUTHORISATION",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://www.catalogo.beniculturali.it/termini-uso",
+        "reviewDate": "2026-11-10",
+        "disposition": "CATALOGUE_DATA_CC_BY_4_ONLY_PHOTO_REPRODUCTION_REQUIRES_COMPETENT_ENTITY_AUTHORISATION_POSSIBLE_FEES",
+        "appliesTo": "OFFICIAL_ICCD_CATALOGUE_IMAGE_ONLY_NOT_WORK_NOT_ALL_INDEPENDENT_PHOTOGRAPHY",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false,
+        "policyTextSummary": "Catalogue terms separate openly licensed data/content from image reproductions; selected photograph rights must be separately established. No assumption of free commercial reuse from the catalogue metadata banner."
+      }
     },
     {
       "artworkKey": "ICCD:0300158485",
@@ -1377,13 +1397,22 @@
       "sourceAuditNote": "Italian national heritage 0300180045 Pinacoteca di Brera, oil canvas circa 1565–1571, both feast saints visible, complete Cornelius/Cyprian pair",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-audit18-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Seek exact painting's high-quality colour image from a distinct open-license source/museum. Do not scrape, download for app use, or purchase ICCD official photo. Preserve work identity, provenance and existing editorial holds.",
+      "risk": "ICCD_OFFICIAL_PHOTO_RIGHTS_REQUIRE_AUTHORISATION",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://www.catalogo.beniculturali.it/termini-uso",
+        "reviewDate": "2026-11-10",
+        "disposition": "CATALOGUE_DATA_CC_BY_4_ONLY_PHOTO_REPRODUCTION_REQUIRES_COMPETENT_ENTITY_AUTHORISATION_POSSIBLE_FEES",
+        "appliesTo": "OFFICIAL_ICCD_CATALOGUE_IMAGE_ONLY_NOT_WORK_NOT_ALL_INDEPENDENT_PHOTOGRAPHY",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false,
+        "policyTextSummary": "Catalogue terms separate openly licensed data/content from image reproductions; selected photograph rights must be separately established. No assumption of free commercial reuse from the catalogue metadata banner."
+      }
     },
     {
       "artworkKey": "ICCD:0500219384",
@@ -1415,13 +1444,22 @@
       "sourceAuditNote": "Venice 1691 oil on canvas, huge 600×1020cm horizontal composition with poor and clergy; potentially hard to crop at 390px without losing saint, test full-image rendering.",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-final15-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Seek exact painting's high-quality colour image from a distinct open-license source/museum. Do not scrape, download for app use, or purchase ICCD official photo. Preserve work identity, provenance and existing editorial holds.",
+      "risk": "ICCD_OFFICIAL_PHOTO_RIGHTS_REQUIRE_AUTHORISATION",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://www.catalogo.beniculturali.it/termini-uso",
+        "reviewDate": "2026-11-10",
+        "disposition": "CATALOGUE_DATA_CC_BY_4_ONLY_PHOTO_REPRODUCTION_REQUIRES_COMPETENT_ENTITY_AUTHORISATION_POSSIBLE_FEES",
+        "appliesTo": "OFFICIAL_ICCD_CATALOGUE_IMAGE_ONLY_NOT_WORK_NOT_ALL_INDEPENDENT_PHOTOGRAPHY",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false,
+        "policyTextSummary": "Catalogue terms separate openly licensed data/content from image reproductions; selected photograph rights must be separately established. No assumption of free commercial reuse from the catalogue metadata banner."
+      }
     },
     {
       "artworkKey": "ICCD:0500404703",
@@ -1532,13 +1570,22 @@
       "sourceAuditNote": "Vicenza, Santa Maria di Monte Berico; original oil painting, saint regards crucifix; catalogue date 1651–1692 and attribution expressly qualified. Metadata licence only.",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-followup15-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Seek exact painting's high-quality colour image from a distinct open-license source/museum. Do not scrape, download for app use, or purchase ICCD official photo. Preserve work identity, provenance and existing editorial holds.",
+      "risk": "ICCD_OFFICIAL_PHOTO_RIGHTS_REQUIRE_AUTHORISATION",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://www.catalogo.beniculturali.it/termini-uso",
+        "reviewDate": "2026-11-10",
+        "disposition": "CATALOGUE_DATA_CC_BY_4_ONLY_PHOTO_REPRODUCTION_REQUIRES_COMPETENT_ENTITY_AUTHORISATION_POSSIBLE_FEES",
+        "appliesTo": "OFFICIAL_ICCD_CATALOGUE_IMAGE_ONLY_NOT_WORK_NOT_ALL_INDEPENDENT_PHOTOGRAPHY",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false,
+        "policyTextSummary": "Catalogue terms separate openly licensed data/content from image reproductions; selected photograph rights must be separately established. No assumption of free commercial reuse from the catalogue metadata banner."
+      }
     },
     {
       "artworkKey": "ICCD:0700031704",
@@ -1570,13 +1617,22 @@
       "sourceAuditNote": "Late 18th-century oil canvas in Genoa; Saint Lawrence with skull, pen and book, painter attribution explicitly in catalogue.",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-followup15-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Seek exact painting's high-quality colour image from a distinct open-license source/museum. Do not scrape, download for app use, or purchase ICCD official photo. Preserve work identity, provenance and existing editorial holds.",
+      "risk": "ICCD_OFFICIAL_PHOTO_RIGHTS_REQUIRE_AUTHORISATION",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://www.catalogo.beniculturali.it/termini-uso",
+        "reviewDate": "2026-11-10",
+        "disposition": "CATALOGUE_DATA_CC_BY_4_ONLY_PHOTO_REPRODUCTION_REQUIRES_COMPETENT_ENTITY_AUTHORISATION_POSSIBLE_FEES",
+        "appliesTo": "OFFICIAL_ICCD_CATALOGUE_IMAGE_ONLY_NOT_WORK_NOT_ALL_INDEPENDENT_PHOTOGRAPHY",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false,
+        "policyTextSummary": "Catalogue terms separate openly licensed data/content from image reproductions; selected photograph rights must be separately established. No assumption of free commercial reuse from the catalogue metadata banner."
+      }
     },
     {
       "artworkKey": "ICCD:0700057137A-8",
@@ -1689,13 +1745,22 @@
       "sourceAuditNote": "c. 1680, in Rimini, 313x220cm. Saint Ubaldus kneels toward Virgin and Child; two possessed people at lower left; heavy historic overpainting largely reversed by 1972 restoration. Full-frame composition/crop will need inspection.",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-followup10b-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Seek exact painting's high-quality colour image from a distinct open-license source/museum. Do not scrape, download for app use, or purchase ICCD official photo. Preserve work identity, provenance and existing editorial holds.",
+      "risk": "ICCD_OFFICIAL_PHOTO_RIGHTS_REQUIRE_AUTHORISATION",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://www.catalogo.beniculturali.it/termini-uso",
+        "reviewDate": "2026-11-10",
+        "disposition": "CATALOGUE_DATA_CC_BY_4_ONLY_PHOTO_REPRODUCTION_REQUIRES_COMPETENT_ENTITY_AUTHORISATION_POSSIBLE_FEES",
+        "appliesTo": "OFFICIAL_ICCD_CATALOGUE_IMAGE_ONLY_NOT_WORK_NOT_ALL_INDEPENDENT_PHOTOGRAPHY",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false,
+        "policyTextSummary": "Catalogue terms separate openly licensed data/content from image reproductions; selected photograph rights must be separately established. No assumption of free commercial reuse from the catalogue metadata banner."
+      }
     },
     {
       "artworkKey": "ICCD:0800030522",
@@ -1729,13 +1794,22 @@
       "sourceAuditNote": "Oil on canvas, Bologna, after 1746–c.1760; saint among clouds raised by angels. Museum text says attribution suggested by stylistic comparison, not established signed Pittoni original.",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-followup15-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Seek exact painting's high-quality colour image from a distinct open-license source/museum. Do not scrape, download for app use, or purchase ICCD official photo. Preserve work identity, provenance and existing editorial holds.",
+      "risk": "ICCD_OFFICIAL_PHOTO_RIGHTS_REQUIRE_AUTHORISATION",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://www.catalogo.beniculturali.it/termini-uso",
+        "reviewDate": "2026-11-10",
+        "disposition": "CATALOGUE_DATA_CC_BY_4_ONLY_PHOTO_REPRODUCTION_REQUIRES_COMPETENT_ENTITY_AUTHORISATION_POSSIBLE_FEES",
+        "appliesTo": "OFFICIAL_ICCD_CATALOGUE_IMAGE_ONLY_NOT_WORK_NOT_ALL_INDEPENDENT_PHOTOGRAPHY",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false,
+        "policyTextSummary": "Catalogue terms separate openly licensed data/content from image reproductions; selected photograph rights must be separately established. No assumption of free commercial reuse from the catalogue metadata banner."
+      }
     },
     {
       "artworkKey": "ICCD:0800034953",
@@ -1767,13 +1841,22 @@
       "sourceAuditNote": "After 1678–c.1690 oil altarpiece in Ravenna; bishop blessing a model of city held by two putti, with minister at right and angel above. Catalogue attribution to Pasquali not identical to later 'Mission of Saint Apollinaris'.",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-followup15-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Seek exact painting's high-quality colour image from a distinct open-license source/museum. Do not scrape, download for app use, or purchase ICCD official photo. Preserve work identity, provenance and existing editorial holds.",
+      "risk": "ICCD_OFFICIAL_PHOTO_RIGHTS_REQUIRE_AUTHORISATION",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://www.catalogo.beniculturali.it/termini-uso",
+        "reviewDate": "2026-11-10",
+        "disposition": "CATALOGUE_DATA_CC_BY_4_ONLY_PHOTO_REPRODUCTION_REQUIRES_COMPETENT_ENTITY_AUTHORISATION_POSSIBLE_FEES",
+        "appliesTo": "OFFICIAL_ICCD_CATALOGUE_IMAGE_ONLY_NOT_WORK_NOT_ALL_INDEPENDENT_PHOTOGRAPHY",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false,
+        "policyTextSummary": "Catalogue terms separate openly licensed data/content from image reproductions; selected photograph rights must be separately established. No assumption of free commercial reuse from the catalogue metadata banner."
+      }
     },
     {
       "artworkKey": "ICCD:0800035481",
@@ -1807,13 +1890,22 @@
       "sourceAuditNote": "18th-century oil canvas in Ravenna; saint bears Christ-monogram host on chest; iconography differs from Brandi-attributed work. Church-owned work, original photo permission unresolved.",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-followup15-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Seek exact painting's high-quality colour image from a distinct open-license source/museum. Do not scrape, download for app use, or purchase ICCD official photo. Preserve work identity, provenance and existing editorial holds.",
+      "risk": "ICCD_OFFICIAL_PHOTO_RIGHTS_REQUIRE_AUTHORISATION",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://www.catalogo.beniculturali.it/termini-uso",
+        "reviewDate": "2026-11-10",
+        "disposition": "CATALOGUE_DATA_CC_BY_4_ONLY_PHOTO_REPRODUCTION_REQUIRES_COMPETENT_ENTITY_AUTHORISATION_POSSIBLE_FEES",
+        "appliesTo": "OFFICIAL_ICCD_CATALOGUE_IMAGE_ONLY_NOT_WORK_NOT_ALL_INDEPENDENT_PHOTOGRAPHY",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false,
+        "policyTextSummary": "Catalogue terms separate openly licensed data/content from image reproductions; selected photograph rights must be separately established. No assumption of free commercial reuse from the catalogue metadata banner."
+      }
     },
     {
       "artworkKey": "ICCD:0800193038",
@@ -1845,13 +1937,22 @@
       "sourceAuditNote": "Maranello, oil canvas; full-length armour-clad Venantius with red cloak and flag. Catalogue credits Rizzi Carlo while critical note proposes attribution to Carlo Ricci; preserve name/attribution uncertainty, do not silently standardize maker.",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-followup10b-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Seek exact painting's high-quality colour image from a distinct open-license source/museum. Do not scrape, download for app use, or purchase ICCD official photo. Preserve work identity, provenance and existing editorial holds.",
+      "risk": "ICCD_OFFICIAL_PHOTO_RIGHTS_REQUIRE_AUTHORISATION",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://www.catalogo.beniculturali.it/termini-uso",
+        "reviewDate": "2026-11-10",
+        "disposition": "CATALOGUE_DATA_CC_BY_4_ONLY_PHOTO_REPRODUCTION_REQUIRES_COMPETENT_ENTITY_AUTHORISATION_POSSIBLE_FEES",
+        "appliesTo": "OFFICIAL_ICCD_CATALOGUE_IMAGE_ONLY_NOT_WORK_NOT_ALL_INDEPENDENT_PHOTOGRAPHY",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false,
+        "policyTextSummary": "Catalogue terms separate openly licensed data/content from image reproductions; selected photograph rights must be separately established. No assumption of free commercial reuse from the catalogue metadata banner."
+      }
     },
     {
       "artworkKey": "ICCD:0800232370",
@@ -1883,13 +1984,22 @@
       "sourceAuditNote": "1629–30 oil altarpiece in Modena; artist payment entered 25 June 1630, installed for St Gregory's Nov 17 feast. Exact Gregory Thaumaturgus with Virgin and St John, but only photograph rights unresolved.",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-final15-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Seek exact painting's high-quality colour image from a distinct open-license source/museum. Do not scrape, download for app use, or purchase ICCD official photo. Preserve work identity, provenance and existing editorial holds.",
+      "risk": "ICCD_OFFICIAL_PHOTO_RIGHTS_REQUIRE_AUTHORISATION",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://www.catalogo.beniculturali.it/termini-uso",
+        "reviewDate": "2026-11-10",
+        "disposition": "CATALOGUE_DATA_CC_BY_4_ONLY_PHOTO_REPRODUCTION_REQUIRES_COMPETENT_ENTITY_AUTHORISATION_POSSIBLE_FEES",
+        "appliesTo": "OFFICIAL_ICCD_CATALOGUE_IMAGE_ONLY_NOT_WORK_NOT_ALL_INDEPENDENT_PHOTOGRAPHY",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false,
+        "policyTextSummary": "Catalogue terms separate openly licensed data/content from image reproductions; selected photograph rights must be separately established. No assumption of free commercial reuse from the catalogue metadata banner."
+      }
     },
     {
       "artworkKey": "ICCD:0800404274",
@@ -1921,13 +2031,22 @@
       "sourceAuditNote": "Parma, Galleria Nazionale / Palazzo della Pilotta, inv. 1191; about 1687–1688; St Hilary of Poitiers is one of numerous saints, not the sole subject. Crop may suppress him.",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-followup10b-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Seek exact painting's high-quality colour image from a distinct open-license source/museum. Do not scrape, download for app use, or purchase ICCD official photo. Preserve work identity, provenance and existing editorial holds.",
+      "risk": "ICCD_OFFICIAL_PHOTO_RIGHTS_REQUIRE_AUTHORISATION",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://www.catalogo.beniculturali.it/termini-uso",
+        "reviewDate": "2026-11-10",
+        "disposition": "CATALOGUE_DATA_CC_BY_4_ONLY_PHOTO_REPRODUCTION_REQUIRES_COMPETENT_ENTITY_AUTHORISATION_POSSIBLE_FEES",
+        "appliesTo": "OFFICIAL_ICCD_CATALOGUE_IMAGE_ONLY_NOT_WORK_NOT_ALL_INDEPENDENT_PHOTOGRAPHY",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false,
+        "policyTextSummary": "Catalogue terms separate openly licensed data/content from image reproductions; selected photograph rights must be separately established. No assumption of free commercial reuse from the catalogue metadata banner."
+      }
     },
     {
       "artworkKey": "ICCD:0900053335",
@@ -2001,13 +2120,22 @@
       "sourceAuditNote": "Original 1683 oil canvas, Madonna del Prato, 324×205cm; catalogue notes a 1700 date claim conflicts with Ciro Ferri death in 1683",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-followup10-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Seek exact painting's high-quality colour image from a distinct open-license source/museum. Do not scrape, download for app use, or purchase ICCD official photo. Preserve work identity, provenance and existing editorial holds.",
+      "risk": "ICCD_OFFICIAL_PHOTO_RIGHTS_REQUIRE_AUTHORISATION",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://www.catalogo.beniculturali.it/termini-uso",
+        "reviewDate": "2026-11-10",
+        "disposition": "CATALOGUE_DATA_CC_BY_4_ONLY_PHOTO_REPRODUCTION_REQUIRES_COMPETENT_ENTITY_AUTHORISATION_POSSIBLE_FEES",
+        "appliesTo": "OFFICIAL_ICCD_CATALOGUE_IMAGE_ONLY_NOT_WORK_NOT_ALL_INDEPENDENT_PHOTOGRAPHY",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false,
+        "policyTextSummary": "Catalogue terms separate openly licensed data/content from image reproductions; selected photograph rights must be separately established. No assumption of free commercial reuse from the catalogue metadata banner."
+      }
     },
     {
       "artworkKey": "ICCD:1100042006",
@@ -2039,13 +2167,22 @@
       "sourceAuditNote": "1691 oil canvas, Corinaldo, 215×135 cm, saint and Child Jesus with angels, book, lily and skull. Object verified; individual photo licence absent.",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-followup15-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Seek exact painting's high-quality colour image from a distinct open-license source/museum. Do not scrape, download for app use, or purchase ICCD official photo. Preserve work identity, provenance and existing editorial holds.",
+      "risk": "ICCD_OFFICIAL_PHOTO_RIGHTS_REQUIRE_AUTHORISATION",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://www.catalogo.beniculturali.it/termini-uso",
+        "reviewDate": "2026-11-10",
+        "disposition": "CATALOGUE_DATA_CC_BY_4_ONLY_PHOTO_REPRODUCTION_REQUIRES_COMPETENT_ENTITY_AUTHORISATION_POSSIBLE_FEES",
+        "appliesTo": "OFFICIAL_ICCD_CATALOGUE_IMAGE_ONLY_NOT_WORK_NOT_ALL_INDEPENDENT_PHOTOGRAPHY",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false,
+        "policyTextSummary": "Catalogue terms separate openly licensed data/content from image reproductions; selected photograph rights must be separately established. No assumption of free commercial reuse from the catalogue metadata banner."
+      }
     },
     {
       "artworkKey": "ICCD:1100255012",
@@ -2077,13 +2214,22 @@
       "sourceAuditNote": "1714–24 oil canvas 300×150cm in Osimo; abbot in liturgical vestments, niche, crosier/mitre; unsigned attribution not certain despite GLD monogram. Distinct composition from St Benedict handing him rule.",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-final15-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Seek exact painting's high-quality colour image from a distinct open-license source/museum. Do not scrape, download for app use, or purchase ICCD official photo. Preserve work identity, provenance and existing editorial holds.",
+      "risk": "ICCD_OFFICIAL_PHOTO_RIGHTS_REQUIRE_AUTHORISATION",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://www.catalogo.beniculturali.it/termini-uso",
+        "reviewDate": "2026-11-10",
+        "disposition": "CATALOGUE_DATA_CC_BY_4_ONLY_PHOTO_REPRODUCTION_REQUIRES_COMPETENT_ENTITY_AUTHORISATION_POSSIBLE_FEES",
+        "appliesTo": "OFFICIAL_ICCD_CATALOGUE_IMAGE_ONLY_NOT_WORK_NOT_ALL_INDEPENDENT_PHOTOGRAPHY",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false,
+        "policyTextSummary": "Catalogue terms separate openly licensed data/content from image reproductions; selected photograph rights must be separately established. No assumption of free commercial reuse from the catalogue metadata banner."
+      }
     },
     {
       "artworkKey": "ICCD:1200008410",
@@ -2117,13 +2263,22 @@
       "sourceAuditNote": "c.1690–1710 oil on canvas in Rieti; saint with book. ICCD object metadata licence does not clear a specific historical photo.",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-followup15-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Seek exact painting's high-quality colour image from a distinct open-license source/museum. Do not scrape, download for app use, or purchase ICCD official photo. Preserve work identity, provenance and existing editorial holds.",
+      "risk": "ICCD_OFFICIAL_PHOTO_RIGHTS_REQUIRE_AUTHORISATION",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://www.catalogo.beniculturali.it/termini-uso",
+        "reviewDate": "2026-11-10",
+        "disposition": "CATALOGUE_DATA_CC_BY_4_ONLY_PHOTO_REPRODUCTION_REQUIRES_COMPETENT_ENTITY_AUTHORISATION_POSSIBLE_FEES",
+        "appliesTo": "OFFICIAL_ICCD_CATALOGUE_IMAGE_ONLY_NOT_WORK_NOT_ALL_INDEPENDENT_PHOTOGRAPHY",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false,
+        "policyTextSummary": "Catalogue terms separate openly licensed data/content from image reproductions; selected photograph rights must be separately established. No assumption of free commercial reuse from the catalogue metadata banner."
+      }
     },
     {
       "artworkKey": "ICCD:1200199733-5",
@@ -2155,13 +2310,22 @@
       "sourceAuditNote": "c.1700–1724 oil canvas 195×130cm at Santo Stefano del Cacco, Rome; St Benedict presents his Rule to Sylvester. Separate from 1870 frescoes in same church; owner state.",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-final15-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Seek exact painting's high-quality colour image from a distinct open-license source/museum. Do not scrape, download for app use, or purchase ICCD official photo. Preserve work identity, provenance and existing editorial holds.",
+      "risk": "ICCD_OFFICIAL_PHOTO_RIGHTS_REQUIRE_AUTHORISATION",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://www.catalogo.beniculturali.it/termini-uso",
+        "reviewDate": "2026-11-10",
+        "disposition": "CATALOGUE_DATA_CC_BY_4_ONLY_PHOTO_REPRODUCTION_REQUIRES_COMPETENT_ENTITY_AUTHORISATION_POSSIBLE_FEES",
+        "appliesTo": "OFFICIAL_ICCD_CATALOGUE_IMAGE_ONLY_NOT_WORK_NOT_ALL_INDEPENDENT_PHOTOGRAPHY",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false,
+        "policyTextSummary": "Catalogue terms separate openly licensed data/content from image reproductions; selected photograph rights must be separately established. No assumption of free commercial reuse from the catalogue metadata banner."
+      }
     },
     {
       "artworkKey": "ICCD:1200239809-0",
@@ -2231,13 +2395,22 @@
       "sourceAuditNote": "Galleria Spada inv.42, 1690–98 oil canvas; exact saint and Theatine historical event",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-followup10-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Seek exact painting's high-quality colour image from a distinct open-license source/museum. Do not scrape, download for app use, or purchase ICCD official photo. Preserve work identity, provenance and existing editorial holds.",
+      "risk": "ICCD_OFFICIAL_PHOTO_RIGHTS_REQUIRE_AUTHORISATION",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://www.catalogo.beniculturali.it/termini-uso",
+        "reviewDate": "2026-11-10",
+        "disposition": "CATALOGUE_DATA_CC_BY_4_ONLY_PHOTO_REPRODUCTION_REQUIRES_COMPETENT_ENTITY_AUTHORISATION_POSSIBLE_FEES",
+        "appliesTo": "OFFICIAL_ICCD_CATALOGUE_IMAGE_ONLY_NOT_WORK_NOT_ALL_INDEPENDENT_PHOTOGRAPHY",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false,
+        "policyTextSummary": "Catalogue terms separate openly licensed data/content from image reproductions; selected photograph rights must be separately established. No assumption of free commercial reuse from the catalogue metadata banner."
+      }
     },
     {
       "artworkKey": "ICCD:1201030011",
@@ -2311,13 +2484,22 @@
       "sourceAuditNote": "19th-century oil painting at San Gallicano, Rome. Saint with Passionist rule, cross-heart emblem and angels; object page licenses only metadata CC BY 4.0, not a chosen photo.",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-followup10b-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Seek exact painting's high-quality colour image from a distinct open-license source/museum. Do not scrape, download for app use, or purchase ICCD official photo. Preserve work identity, provenance and existing editorial holds.",
+      "risk": "ICCD_OFFICIAL_PHOTO_RIGHTS_REQUIRE_AUTHORISATION",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://www.catalogo.beniculturali.it/termini-uso",
+        "reviewDate": "2026-11-10",
+        "disposition": "CATALOGUE_DATA_CC_BY_4_ONLY_PHOTO_REPRODUCTION_REQUIRES_COMPETENT_ENTITY_AUTHORISATION_POSSIBLE_FEES",
+        "appliesTo": "OFFICIAL_ICCD_CATALOGUE_IMAGE_ONLY_NOT_WORK_NOT_ALL_INDEPENDENT_PHOTOGRAPHY",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false,
+        "policyTextSummary": "Catalogue terms separate openly licensed data/content from image reproductions; selected photograph rights must be separately established. No assumption of free commercial reuse from the catalogue metadata banner."
+      }
     },
     {
       "artworkKey": "ICCD:1300033061",
@@ -2349,13 +2531,22 @@
       "sourceAuditNote": "Early 17th-century oil canvas in L'Aquila, 130×100cm; Celestine V in pontifical attire carrying book and city model. Catalogue classifies school, suggests possible hand of master; painting in poor condition and needs source-color QA.",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-final15-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Seek exact painting's high-quality colour image from a distinct open-license source/museum. Do not scrape, download for app use, or purchase ICCD official photo. Preserve work identity, provenance and existing editorial holds.",
+      "risk": "ICCD_OFFICIAL_PHOTO_RIGHTS_REQUIRE_AUTHORISATION",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://www.catalogo.beniculturali.it/termini-uso",
+        "reviewDate": "2026-11-10",
+        "disposition": "CATALOGUE_DATA_CC_BY_4_ONLY_PHOTO_REPRODUCTION_REQUIRES_COMPETENT_ENTITY_AUTHORISATION_POSSIBLE_FEES",
+        "appliesTo": "OFFICIAL_ICCD_CATALOGUE_IMAGE_ONLY_NOT_WORK_NOT_ALL_INDEPENDENT_PHOTOGRAPHY",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false,
+        "policyTextSummary": "Catalogue terms separate openly licensed data/content from image reproductions; selected photograph rights must be separately established. No assumption of free commercial reuse from the catalogue metadata banner."
+      }
     },
     {
       "artworkKey": "ICCD:1500657385",
@@ -2387,13 +2578,22 @@
       "sourceAuditNote": "Montevergine no.51, distinct 1735 oil canvas of healing Gualtiero's arm; national catalogue mentions older Andrea Vaccaro attribution",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-followup10-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Seek exact painting's high-quality colour image from a distinct open-license source/museum. Do not scrape, download for app use, or purchase ICCD official photo. Preserve work identity, provenance and existing editorial holds.",
+      "risk": "ICCD_OFFICIAL_PHOTO_RIGHTS_REQUIRE_AUTHORISATION",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://www.catalogo.beniculturali.it/termini-uso",
+        "reviewDate": "2026-11-10",
+        "disposition": "CATALOGUE_DATA_CC_BY_4_ONLY_PHOTO_REPRODUCTION_REQUIRES_COMPETENT_ENTITY_AUTHORISATION_POSSIBLE_FEES",
+        "appliesTo": "OFFICIAL_ICCD_CATALOGUE_IMAGE_ONLY_NOT_WORK_NOT_ALL_INDEPENDENT_PHOTOGRAPHY",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false,
+        "policyTextSummary": "Catalogue terms separate openly licensed data/content from image reproductions; selected photograph rights must be separately established. No assumption of free commercial reuse from the catalogue metadata banner."
+      }
     },
     {
       "artworkKey": "ICCD:1500657386",
@@ -2425,13 +2625,22 @@
       "sourceAuditNote": "Montevergine no.52, 1735 oil canvas; wolf carries building materials to make amends for killing the saint's donkey. Alternative attribution Andrea Vaccaro recorded, but not chosen as autograph without further work",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-followup10-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Seek exact painting's high-quality colour image from a distinct open-license source/museum. Do not scrape, download for app use, or purchase ICCD official photo. Preserve work identity, provenance and existing editorial holds.",
+      "risk": "ICCD_OFFICIAL_PHOTO_RIGHTS_REQUIRE_AUTHORISATION",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://www.catalogo.beniculturali.it/termini-uso",
+        "reviewDate": "2026-11-10",
+        "disposition": "CATALOGUE_DATA_CC_BY_4_ONLY_PHOTO_REPRODUCTION_REQUIRES_COMPETENT_ENTITY_AUTHORISATION_POSSIBLE_FEES",
+        "appliesTo": "OFFICIAL_ICCD_CATALOGUE_IMAGE_ONLY_NOT_WORK_NOT_ALL_INDEPENDENT_PHOTOGRAPHY",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false,
+        "policyTextSummary": "Catalogue terms separate openly licensed data/content from image reproductions; selected photograph rights must be separately established. No assumption of free commercial reuse from the catalogue metadata banner."
+      }
     },
     {
       "artworkKey": "ICCD:1800008267",
@@ -2465,13 +2674,22 @@
       "sourceAuditNote": "Reggio Calabria, oil canvas; Saint Paulinus vested as bishop blessing against agricultural background; painting described as popular/fnaïve, not monumental Baroque. Photo licence absent.",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-followup15-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Seek exact painting's high-quality colour image from a distinct open-license source/museum. Do not scrape, download for app use, or purchase ICCD official photo. Preserve work identity, provenance and existing editorial holds.",
+      "risk": "ICCD_OFFICIAL_PHOTO_RIGHTS_REQUIRE_AUTHORISATION",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://www.catalogo.beniculturali.it/termini-uso",
+        "reviewDate": "2026-11-10",
+        "disposition": "CATALOGUE_DATA_CC_BY_4_ONLY_PHOTO_REPRODUCTION_REQUIRES_COMPETENT_ENTITY_AUTHORISATION_POSSIBLE_FEES",
+        "appliesTo": "OFFICIAL_ICCD_CATALOGUE_IMAGE_ONLY_NOT_WORK_NOT_ALL_INDEPENDENT_PHOTOGRAPHY",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false,
+        "policyTextSummary": "Catalogue terms separate openly licensed data/content from image reproductions; selected photograph rights must be separately established. No assumption of free commercial reuse from the catalogue metadata banner."
+      }
     },
     {
       "artworkKey": "ICCD:2000043587",
@@ -2505,13 +2723,22 @@
       "sourceAuditNote": "17th-century oil painting of saint beholding the Christ Child over his desk; pre-canonisation 'Beatus Laurentius' inscription. Exact distinct work from Genoa Banchero image.",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-followup15-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Seek exact painting's high-quality colour image from a distinct open-license source/museum. Do not scrape, download for app use, or purchase ICCD official photo. Preserve work identity, provenance and existing editorial holds.",
+      "risk": "ICCD_OFFICIAL_PHOTO_RIGHTS_REQUIRE_AUTHORISATION",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://www.catalogo.beniculturali.it/termini-uso",
+        "reviewDate": "2026-11-10",
+        "disposition": "CATALOGUE_DATA_CC_BY_4_ONLY_PHOTO_REPRODUCTION_REQUIRES_COMPETENT_ENTITY_AUTHORISATION_POSSIBLE_FEES",
+        "appliesTo": "OFFICIAL_ICCD_CATALOGUE_IMAGE_ONLY_NOT_WORK_NOT_ALL_INDEPENDENT_PHOTOGRAPHY",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false,
+        "policyTextSummary": "Catalogue terms separate openly licensed data/content from image reproductions; selected photograph rights must be separately established. No assumption of free commercial reuse from the catalogue metadata banner."
+      }
     },
     {
       "artworkKey": "ICCD:2000050761",
@@ -2545,13 +2772,22 @@
       "sourceAuditNote": "Cagliari, 17th-century oil canvas; full inscription describes Christ appearing with angels in religious habit and giving viaticum to Raymond Nonnatus. Attribution qualified and distinct from Raymond of Peñafort.",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-followup15-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Seek exact painting's high-quality colour image from a distinct open-license source/museum. Do not scrape, download for app use, or purchase ICCD official photo. Preserve work identity, provenance and existing editorial holds.",
+      "risk": "ICCD_OFFICIAL_PHOTO_RIGHTS_REQUIRE_AUTHORISATION",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://www.catalogo.beniculturali.it/termini-uso",
+        "reviewDate": "2026-11-10",
+        "disposition": "CATALOGUE_DATA_CC_BY_4_ONLY_PHOTO_REPRODUCTION_REQUIRES_COMPETENT_ENTITY_AUTHORISATION_POSSIBLE_FEES",
+        "appliesTo": "OFFICIAL_ICCD_CATALOGUE_IMAGE_ONLY_NOT_WORK_NOT_ALL_INDEPENDENT_PHOTOGRAPHY",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false,
+        "policyTextSummary": "Catalogue terms separate openly licensed data/content from image reproductions; selected photograph rights must be separately established. No assumption of free commercial reuse from the catalogue metadata banner."
+      }
     },
     {
       "artworkKey": "ICCD:L0060-00118_R03",
@@ -2583,13 +2819,22 @@
       "sourceAuditNote": "Oil on canvas c.1608–1610 at Pinacoteca Ambrosiana, Milan; a different work from Lazzarini charity scene. Exact Ambrosiana selected photo/licence pending.",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-final15-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Seek exact painting's high-quality colour image from a distinct open-license source/museum. Do not scrape, download for app use, or purchase ICCD official photo. Preserve work identity, provenance and existing editorial holds.",
+      "risk": "ICCD_OFFICIAL_PHOTO_RIGHTS_REQUIRE_AUTHORISATION",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://www.catalogo.beniculturali.it/termini-uso",
+        "reviewDate": "2026-11-10",
+        "disposition": "CATALOGUE_DATA_CC_BY_4_ONLY_PHOTO_REPRODUCTION_REQUIRES_COMPETENT_ENTITY_AUTHORISATION_POSSIBLE_FEES",
+        "appliesTo": "OFFICIAL_ICCD_CATALOGUE_IMAGE_ONLY_NOT_WORK_NOT_ALL_INDEPENDENT_PHOTOGRAPHY",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false,
+        "policyTextSummary": "Catalogue terms separate openly licensed data/content from image reproductions; selected photograph rights must be separately established. No assumption of free commercial reuse from the catalogue metadata banner."
+      }
     },
     {
       "artworkKey": "KBR:SII136378",
@@ -6688,7 +6933,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
       ]
     },
     {
@@ -7484,7 +7729,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
       ]
     },
     {
@@ -7585,7 +7830,7 @@
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
         "A_VERIFIED_SOURCE_PHOTO_EDITORIAL_AND_MOBILE_QA",
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
       ]
     },
     {
@@ -7739,7 +7984,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
       ]
     },
     {
@@ -7777,7 +8022,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
       ]
     },
     {
@@ -7796,7 +8041,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
       ]
     },
     {
@@ -8147,7 +8392,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
       ]
     },
     {
@@ -8166,7 +8411,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
       ]
     },
     {
@@ -8187,7 +8432,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
       ]
     },
     {
@@ -8398,7 +8643,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
       ]
     },
     {
@@ -8457,7 +8702,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
       ]
     },
     {
@@ -8476,7 +8721,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
       ]
     },
     {
@@ -8636,7 +8881,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
       ]
     },
     {
@@ -8828,7 +9073,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
       ]
     },
     {
@@ -8868,7 +9113,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
       ]
     },
     {
@@ -8965,7 +9210,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
       ]
     },
     {
@@ -9098,7 +9343,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
       ]
     },
     {
@@ -9789,7 +10034,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
       ]
     },
     {
@@ -9808,7 +10053,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
       ]
     },
     {
@@ -9848,7 +10093,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
       ]
     },
     {
