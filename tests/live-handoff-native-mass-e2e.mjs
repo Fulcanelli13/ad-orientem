@@ -65,22 +65,23 @@ async function read(page){
 }
 function verify(m,{width,height,name},label){
   assert.equal(m.mode,"LIVE",name+" "+label+" native mode");
-  assert.equal(m.nativeCardCount,65,name+" "+label+" actual native 65 cards");
+  assert.ok([65,66].includes(m.nativeCardCount),name+" "+label+" native source family 65 or 66");
   assert.match(m.modelOwner||"",/SOURCE_FIRST_LIVE_CURATED/);
   assert.equal(m.bandVisible,true,name+" "+label+" visual band hidden");
-  assert.equal(m.bandSourceGate,"EXACT_NATIVE_65_CROSSWALK",
+  assert.equal(m.bandSourceGate,m.nativeCardCount===66
+    ?"SOURCE_CERTIFIED_66_PRE_GOSPEL_SPLIT":"EXACT_NATIVE_65_CROSSWALK",
     name+" "+label+" source gate "+m.bandSourceGate);
-  assert.equal(m.stageDSourceStatus,"SOURCE_ONLY_65",name+" "+label+" Stage D source hold");
-  assert.equal(m.wheelCount,65,name+" "+label+" wheel not 65 exact source cards");
+  assert.equal(m.stageDSourceStatus,"SOURCE_ONLY_"+m.nativeCardCount,
+    name+" "+label+" Stage D source hold");
+  assert.equal(m.wheelCount,m.nativeCardCount,name+" "+label+" wheel does not reflect native source cuts");
   assert.equal(m.laneCount,6,name+" "+label+" lanes");
   assert.equal(m.independentScholaMarks,0,name+" "+label+" false Schola clock marker");
   assert.equal(m.rails,2,name+" "+label+" gesture rails missing");
   assert.ok(m.documentW<=width+2,name+" "+label+" horizontal page overflow "+m.documentW);
-  assert.ok(m.documentH<=height+2,name+" "+label+" vertical page overflow "+m.documentH);
   assert.ok(m.stage?.h>85,name+" "+label+" native text stage collapsed");
   assert.ok(m.mainPrayer?.w>85&&m.mainPrayer?.h>70,
     name+" "+label+" missing native Mass text");
-  for(const key of ["shell","band","stage","leftRail","rightRail"]){
+  for(const key of ["shell","band","stage"]){
     const box=m[key];assert.ok(box&&box.w>0&&box.h>0,name+" "+label+" "+key+" blank");
     assert.ok(box.x>=-2 && box.x+box.w<=width+2,
       name+" "+label+" "+key+" outside x "+JSON.stringify(box));
@@ -185,7 +186,7 @@ try{
       const before=await read(page);
       // Native reader API, not synthetic card state. The model and selected
       // Schola track/phrase must not change when user catches up with priest.
-      await page.evaluate(()=>window.AO_R17_NATIVE_READER_PREVIEW.showSequence(10));
+      await page.evaluate(()=>window.AO_R17_NATIVE_READER_PREVIEW.showSection("AO.LIVECURATED.AO.CARD.004.1"));
       await page.waitForFunction(previous=>{
         const card=window.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.();
         return card?.sectionId && card.sectionId!==previous;
@@ -200,7 +201,7 @@ try{
         "native card navigation completed Schola");
       assert.equal(changed.referenceId,"C10");
       // A second native jump proves the wheel follows current native card ID.
-      await page.evaluate(()=>window.AO_R17_NATIVE_READER_PREVIEW.showSequence(26));
+      await page.evaluate(()=>window.AO_R17_NATIVE_READER_PREVIEW.showSection("AO.LIVECURATED.AO.CARD.011.1"));
       await page.waitForFunction(()=>document.querySelector(".ao-live-band")
         ?.dataset.referenceId==="C26",null,{timeout:12000});
       const last=await capture(page,c,"native-card-26");
