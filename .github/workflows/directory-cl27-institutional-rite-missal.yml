@@ -1,0 +1,39 @@
+name: CL27 institutional rite and missal inheritance
+on:
+  pull_request:
+    paths:
+      - 'data/directory/cl27-institutional-ministry-liturgy-20261110.v1.json'
+      - 'src/find/tlm-institutional-rite-missal.js'
+      - 'src/find/tlm-church-profile.js'
+      - 'src/find/directory-card.js'
+      - 'src/find/cl27-public-facets.js'
+      - 'src/find/preliminary-directory-r49.js'
+      - 'src/find/explore-presentation.js'
+      - 'tests/tlm-cl27-institutional-rite-missal.mjs'
+      - '.github/workflows/directory-cl27-institutional-rite-missal.yml'
+      - 'sw.js'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate-source-inherited-books:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Exact 1383 CL2 source-ministry joins / 1300 sites / bilingual cards and filters
+        run: node tests/tlm-cl27-institutional-rite-missal.mjs
+      - name: Existing exact witness and site/facet regression
+        run: |
+          node tests/directory-cl27-main-facets.mjs
+          node tests/tlm-cl27-weekly-source-poland-wave2.mjs
+          node tests/directory-b91-three-published-provisional-sites.mjs
+      - name: Build curated GitHub Pages app with inherited-books manifest
+        run: |
+          node tools/build-web-preview.mjs
+          test -f dist/web-preview/data/directory/cl27-institutional-ministry-liturgy-20261110.v1.json
+          test -f dist/web-preview/src/find/tlm-institutional-rite-missal.js
+          test ! -d dist/web-preview/data/directory/research/cl2-unified-20261026
