@@ -109,6 +109,22 @@ assert.ok(dates.every(x=>x.editorialDateApproval===false&&x.publishedImageAssign
 assert.equal(queue.counts.verifiedColourJpegSources,9);
 assert.equal(queue.counts.verifiedSourcePhotosInOriginal151Pool,8);
 assert.equal(queue.reviewLaneCounts.C_LOCATE_REUSABLE_COLOUR_SOURCE,12);
+assert.equal(queue.counts.firstPartyMediaRecordInvestigations,4);
+for(const [key,accession] of [
+ ['Nationalmuseum:NM420','NM 420'],
+ ['Nationalmuseum:NM1134','NM 1134'],
+ ['MNK:II-a-448','MNK II-a-448'],
+ ['MNK:II-a-9','MNK II-a-9']
+]){
+ const r=workByKey.get(key);
+ assert.ok(r);
+ assert.equal(r.firstPartyDownloadLinkInvestigation.accession,accession);
+ assert.equal(r.firstPartyDownloadLinkInvestigation.identifiedExactMediaId,null);
+ assert.equal(r.firstPartyDownloadLinkInvestigation.imageFileSha256,null);
+ assert.equal(r.firstPartyDownloadLinkInvestigation.ownerApproved,false);
+ assert.equal(r.verifiedPhotoId,null);
+ assert.equal(r.releaseReady,false);
+}
 assert.equal(queue.reviewLaneCounts.C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT,45);
 assert.equal(queue.counts.newInstitutionPhotoPolicyHolds,36);
 assert.equal(queue.counts.iccdOfficialPhotoRightsHoldsAdded,27);
