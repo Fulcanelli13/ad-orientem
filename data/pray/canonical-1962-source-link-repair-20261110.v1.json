@@ -1,0 +1,40 @@
+{
+  "schema": "ao.pray.canonical-1962-source-link-repair.v1",
+  "asOf": "2026-11-10",
+  "scope": "SOURCE_URLS_ONLY_NO_PRAYER_BODY_CHANGE_NO_PRINT_CERTIFICATION_NO_NEW_VARIANT",
+  "historicalBaseline": "data/pray/prayer-source-certification-inventory.v3.json",
+  "baselineMissingUrlCount": 2,
+  "patches": [
+    {
+      "id": "mass_confiteor",
+      "sourceWork": "Missale Romanum 1962 · Confiteor at the Prayers at the Foot of the Altar",
+      "sourceUrl": "https://la.wikisource.org/wiki/Confiteor_(1962)",
+      "witnessLanguage": "la",
+      "witnessType": "DIGITAL_1962_LATIN_TEXT_NOT_ORIGINAL_PRINT_PHOTOGRAPH",
+      "matchingForm": "Et tibi, pater — server or faithful Confiteor in response to celebrant",
+      "englishAndFrenchBodies": "UNCHANGED_PRE_EXISTING_RENDERINGS_NOT_VERBATIM_PRINT_CERTIFIED",
+      "independentPrintedEditionCollation": false
+    },
+    {
+      "id": "adoration_lord_i_am_not_worthy",
+      "sourceWork": "Missale Romanum 1962 · Domine, non sum dignus Communion formula",
+      "sourceUrl": "https://la.wikisource.org/wiki/Ordinarium_miss%C3%A6_(1962)",
+      "witnessLanguage": "la",
+      "witnessType": "DIGITAL_1962_LATIN_TEXT_NOT_ORIGINAL_PRINT_PHOTOGRAPH",
+      "matchingForm": "Ut intres sub tectum meum; sed tantum dic verbo — repeated at Communion",
+      "englishAndFrenchBodies": "UNCHANGED_PRE_EXISTING_RENDERINGS_NOT_VERBATIM_PRINT_CERTIFIED",
+      "independentPrintedEditionCollation": false
+    }
+  ],
+  "separatePreservedHold": {
+    "id": "marian_consecration_immaculate_heart",
+    "englishSourceUrl": "https://fatima.org/act-of-cosnecration-to-the-immaculate-heart-of-mary/",
+    "sourceIdentity": "ENGLISH_FATIMA_CENTER_SECONDARY_WITNESS",
+    "frenchFullText": "NOT_PRESENT_WITHHELD_UNTIL_SAME_RECENSION_WITNESS_VERIFIED",
+    "latinFullText": "NOT_PRESENT_WITHHELD_UNTIL_SAME_RECENSION_WITNESS_VERIFIED",
+    "variantWarning": "Do not import a distinct circa-1960 Marian Library Fatima consecration as a supposed translation of this English one.",
+    "newPrayerAdded": false
+  },
+  "postPatchSourceUrlCountExpected": 48,
+  "publicationAuthorization": false
+}
