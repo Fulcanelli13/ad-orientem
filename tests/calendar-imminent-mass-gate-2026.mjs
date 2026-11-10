@@ -222,6 +222,19 @@ try{
    }
  }
  console.log("ALL_SOULS_THREE_REAL_MASS_OPTIONS="+JSON.stringify(variants));
+ // The last new witness above is 10 November. The subsequent All Souls
+ // Home selector belongs to 2 November, so explicitly return the actual
+ // Calendar and host to that date before inspecting the modular UI.
+ const returnedToAllSouls=await page.evaluate(async()=>
+   globalThis.AO_CALENDAR_WEEK_CACHE_V4345.revealDate("2026-11-02",
+     {forceLoader:false,prefetch:false}));
+ assert.equal(returnedToAllSouls,true,"Return to All Souls before Home selector failed");
+ await page.waitForFunction(()=>{
+   const state=globalThis.AO_RUNTIME_V8?.store?.getState?.();
+   return state?.selectedDate==="2026-11-02"&&
+     state?.resolution?.date==="2026-11-02"&&!state?.resolving&&
+     globalThis.AO_CELEBRATION_API?.getResolvedMass?.()?.date==="2026-11-02";
+ },null,{timeout:45000});
  // Inspect whether the original Home formulary buttons are currently
  // visible beneath the modular Home; do not infer UI accessibility merely
  // from existing source/runtime support.
