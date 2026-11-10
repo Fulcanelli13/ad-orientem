@@ -1,0 +1,86 @@
+{
+  "schema": "AO_SACRED_ART_WELLCOME_WALTERS_IMAGE_SOURCE_RECONCILIATION_V1",
+  "asOf": "2026-11-10",
+  "status": "RESEARCH_ONLY_SOURCE_PROVENANCE_RECONCILED_NO_APP_RELEASE",
+  "scope": "Correct full-image identity and historical photographic licence for Wellcome V0017627, independently verify museum-contributed Walters 37.1146 image is also monochrome",
+  "records": [
+    {
+      "workKey": "Wellcome:45078i",
+      "calendarDate": "2026-06-07",
+      "title": "The Halt and the Blind Being Summoned to the Great Supper",
+      "artist": "Joost Cornelisz. Droochsloot",
+      "medium": "OIL_ON_CANVAS",
+      "sourceObjectPage": "https://wellcomecollection.org/works/jgxd7rrf",
+      "fullFrontImageId": "V0017627",
+      "fullFrontPhotoEvidence": "https://commons.wikimedia.org/wiki/File:The_halt_and_the_blind_being_summoned_to_the_great_supper._O_Wellcome_V0017627.jpg",
+      "legacyWellcomeSourcePhotoUrl": "https://wellcomeimages.org/indexplus/obf_images/14/ab/5e0345a8bab3b99d9bcf96f70005.jpg",
+      "legacyWellcomeGalleryUrl": "https://wellcomecollection.org/works/d9cevjmf",
+      "legacyPhotoLicence": "CC_BY_4_0",
+      "licenceEvidenceLevel": "WELLCOME_ORIGINAL_2014_FILE_METADATA_AND_ARCHIVED_2018_WELLCOME_LINK_NOT_CONTEMPORARY_IMAGE_ID_PAGE",
+      "sourceCredit": "The halt and the blind being summoned to the great supper. Oil painting by Joost Cornelisz. Droochsloot. Wellcome Collection. Source: Wellcome Collection. Licensed CC BY 4.0, image V0017627.",
+      "historicalCommonsPixelWidth": 3550,
+      "historicalCommonsPixelHeight": 1995,
+      "historicalCommonsFileSha1": "f5b16cc5f168cb0c0776e3a96e99bd380324f565",
+      "historicalCommonsBytes": 2358262,
+      "originalPhotoSha256": null,
+      "firstPartyImageBytesDownloaded": false,
+      "officialImageSpecificCurrentLicenceVerified": false,
+      "scene": "Luke 14:15–24 Great Supper; exact Gospel subject",
+      "photoRole": "COMPLETE_COLOUR_FRONT",
+      "subjectSuitability": "DIRECT_GOSPEL_SCENE_METADATA_ONLY_VISUAL_CONFIRMATION_REQUIRED",
+      "mobilePortraitIssue": "Historical landscape 3550:1995 image will lose much of its width in portrait cover. Preserve full artwork rather than centre crop.",
+      "blockedWrongPhoto": "L0014632 is reverse; never use as Gospel painting front",
+      "studioLegacyStatus": "Source URL was documented by Wellcome original photo metadata; contemporary access unverified",
+      "sourceStatus": "INSTITUTIONAL_PROVENANCE_AND_HISTORICAL_PHOTO_LICENCE_ESTABLISHED_FETCH_ORIGINAL_PENDING",
+      "ownerPlacementApproved": false,
+      "productionEligible": false
+    },
+    {
+      "workKey": "Walters:37.1146",
+      "calendarDate": "2026-10-19",
+      "title": "A Miracle of St. Peter of Alcántara",
+      "originalArtistMetadata": "Pietro Bianchi: Artist; Pier Leone Ghezzi: Painter",
+      "sourceObjectPage": "https://art.thewalters.org/object/37.1146/",
+      "firstPartyImageDownloads": [
+        "https://art.thewalters.org/object/37.1146/?download=PL7_37.1146_Fnt_BW.jpg",
+        "https://art.thewalters.org/object/37.1146/?download=PL7_37.1146_H43-tms.jpg",
+        "https://art.thewalters.org/object/37.1146/?download=PL7_37.1146_H69-tms.jpg"
+      ],
+      "museumContributedCommonsPhoto": "https://commons.wikimedia.org/wiki/File:Pier_Leone_Ghezzi_-_A_Miracle_of_St_Peter_of_Alc%C3%A1ntara_-_Walters_371146.jpg",
+      "commonsPhotoAcquiredByWalters2012": true,
+      "commonsSourceDimensions": [
+        1456,
+        1800
+      ],
+      "commonsLicenceEvidence": "Walters partner donated photograph with VRT rights confirmation, PD/CC0-equivalent image; Commons file historically from museum",
+      "commonsPhotoColour": "GRAYSCALE_CONFIRMED_BY_VISUAL_VIEWING",
+      "firstPartyPhotographsColour": "ALL_THREE_GREYSCALE_CONFIRMED",
+      "conclusion": "No colour reproduction identified. Museum-donated Commons photo is same archival monochrome treatment, not a valid solution for a colour-oil-hero standard.",
+      "ownerHandpickedCommonsFile": false,
+      "autoCuratedPromotionAllowed": false,
+      "alternativeColourPhotoIdentified": false,
+      "sourceStatus": "HOLD_SEEK_TRUE_COLOUR_MUSEUM_OR_OTHER_RELIABLE_REPRODUCTION",
+      "originalPhotoSha256": null,
+      "productionEligible": false,
+      "ownerPlacementApproved": false
+    }
+  ],
+  "census": {
+    "objectsReviewed": 2,
+    "fullFrontPhotoIdentified": 1,
+    "originalPhotoBytesFetched": 0,
+    "newOfficialColourPhotoAcquisitions": 0,
+    "waltersColourSourceRecovered": 0,
+    "ownerApprovedSelections": 0,
+    "newImageReleases": 0
+  },
+  "rules": [
+    "Never conflate Wellcome L0014632 canvas reverse with V0017627 whole front",
+    "Commons original may document Wellcome's own 2014 photo provenance, but non-handpicked Commons may not enter the curated-image pool",
+    "Earlier owner rejects, published placements and protected Prayer NONE slots are unchanged",
+    "Historical CC BY 4.0 applies to identified Wellcome V0017627 photograph only, and requires attribution and modification notices if actually selected",
+    "Walters grayscale must not be artificially recoloured or called an original colour photograph",
+    "Any newly retrieved image requires original byte SHA-256, pixel decoding and 390px crop before owner date-specific approval",
+    "No direct outreach, paid licence, production asset changes or GitHub Pages publication"
+  ]
+}
