@@ -60,6 +60,7 @@ import {PRAYER_SUBJECTS_V1,prayerSubjectsForLibrary,prayerSubjectCounts} from ".
 import {guidedPrayerLinksForSubject} from "./prayer-subject-guided-links.v1.js";
 import {HOLY_CLOAK_SOURCE_ACCESS_V1,holyCloakSourceMatches} from "./holy-cloak-source-access.v1.js";
 import {HOLY_CLOAK_ITALIAN_SOURCE_V1,HOLY_CLOAK_ITALIAN_STEPS_V1,holyCloakItalianStep} from "./holy-cloak-italian-original.v1.js";
+import {HOLY_CLOAK_EDITORIAL_EN_FR_V1} from "./holy-cloak-editorial-en-fr.v1.js";
 import {PRAYER_SUPPLEMENTAL_LIVE_WORK_LINKS_V1,prayerSupplementalLiveWork,prayerSupplementalLiveWorksForSubject} from "./prayer-supplemental-live-works.v1.js";
 import {prayerSevenSourceWork,prayerSevenSourceWorksForSubject} from "./prayer-seven-source-work-links.v1.js";
 import {redBookletCommunionLibraryLink,redBookletCommunionLibraryLinksForSubject} from "./red-booklet-communion-library-links.v1.js";
@@ -2417,6 +2418,7 @@ function renderAdoration(){
 function familyOf(p){return libraryVariantFamily(p.id)||p.id}
 let LIB={q:'',cat:'all',subject:'all',subjectOpen:false,open:null,language:null};
 let HOLY_CLOAK_STEP=0;
+let HOLY_CLOAK_LANGUAGE=null;
 // Mass Sequentia texts are borrowed live from the authenticated selected Proper;
 // they are NOT added to the locked 48-text canonical Prayer object.
 const MASS_SEQUENCE_READING={id:null,record:null,loading:false,error:null,token:0};
@@ -2673,40 +2675,60 @@ function renderLibraryEntryRows(rows,search){
 }
 function renderHolyCloakItalian(){
  const step=holyCloakItalianStep(HOLY_CLOAK_STEP);
- if(!step)return callout(esc(L('Italian source unavailable.','Source italienne indisponible.')),'warn');
+ if(!step)return callout(esc(L('Holy Cloak text unavailable.','Texte du Sacro Manto indisponible.')),'warn');
  const end=HOLY_CLOAK_ITALIAN_STEPS_V1.length;
- const text=step.it||step.body||'';
+ const face=HOLY_CLOAK_LANGUAGE||lang();
+ const italian=face==='it';
+ const translations=HOLY_CLOAK_EDITORIAL_EN_FR_V1;
+ const editorial=step.id==='opening'?translations.opening:
+  step.id==='closing'?translations.closing:
+  translations.sections.find(x=>x.id===step.id)||null;
+ const canonical=DATA.prayers||{};
+ const getCommon=(id)=>canonical[id]?.[face==='it'?'la':face]||'';
+ const body=step.id==='litany'?
+   (italian?step.body:step.vernacular?.[face]):
+   step.id==='optional'?(italian?step.body:getCommon(step.sourceId)):
+   italian?(step.it||step.body):(editorial?.[face]||'');
+ const sourceLanguage=step.id==='litany'||step.id==='optional'?(italian?'la':face):face;
+ if(!body)return callout(esc(L('Prayer source face unavailable.','Version linguistique indisponible.')),'warn');
  const k=HOLY_CLOAK_STEP+1;
- const repeats=(step.repeat||[]).map(r=>
-  '<section class="aoP435930SourceNote" data-ao-holy-cloak-common="'+esc(r.id)+'">'+
-  '<h3>'+esc((r.times>1?r.times+' × ':'')+(r.id==='foundations_glory_be'?'Gloria Patri':'Requiem aeternam'))+'</h3>'+
-  '<p lang="'+esc(r.language)+'">'+nl(r.text)+'</p></section>').join('');
+ const repeats=(step.repeat||[]).map(r=>{
+  const faceBody=getCommon(r.id);
+  if(!faceBody)return '';
+  return '<section class="aoP435930SourceNote" data-ao-holy-cloak-common="'+esc(r.id)+'">'+
+   '<h3>'+esc((r.times>1?r.times+' × ':'')+(r.id==='foundations_glory_be'?'Gloria Patri':'Requiem aeternam'))+'</h3>'+
+   '<p lang="'+(italian?'la':face)+'">'+nl(faceBody)+'</p></section>';
+ }).join('');
  const openingSign=step.openingSignOfCross?
-  '<section class="aoP435930SourceNote" data-ao-holy-cloak-opening-cross><p lang="la">'+nl(step.openingSignOfCross.text)+'</p></section>':'';
- const sourceNotes=HOLY_CLOAK_STEP===0?'<p class="aoP435930SourceNote" data-ao-holy-cloak-italian-limits>'+
-  esc(L('Complete historical Italian digital witness, not an independently collated 1882 printed text. The prayer body has no certified English or French translation. Common prayers are displayed in existing Latin; the Litany uses the pre-2021 sequence, not the expanded 2021 form.',
-   'Témoignage numérique historique complet en italien, sans collation indépendante de l’imprimé de 1882. Le corps du texte ne possède pas de traduction française ou anglaise certifiée. Les prières communes restent en latin et les Litanies suivent la forme antérieure à 2021.'))+'</p>':'';
+  '<section class="aoP435930SourceNote" data-ao-holy-cloak-opening-cross><p lang="'+(italian?'la':face)+'">'+nl(getCommon(step.openingSignOfCross.id))+'</p></section>':'';
+ const status=L('English/French texts are modern Ad Orientem editorial translations of a later Italian digital witness, not historically printed or independently certified translations. The original Italian is selectable. The 1882 printing remains uncollated.',
+ 'Les versions anglaise et française sont des traductions éditoriales modernes d’Ad Orientem à partir d’un témoin numérique italien tardif, non des traductions historiques imprimées ou certifiées. Le texte italien est accessible. L’imprimé de 1882 reste à collationner.');
+ const sourceNotes=HOLY_CLOAK_STEP===0?'<p class="aoP435930SourceNote" data-ao-holy-cloak-italian-limits>'+esc(status)+'</p>':'';
+ const languageChoice='<div class="aoP435930Chips" role="group" data-ao-holy-cloak-language aria-label="'+esc(L('Prayer text language','Langue de la prière'))+'">'+
+  [['en','English'],['fr','Français'],['it','Italiano']].map(([code,label])=>
+   '<button type="button" data-p435930-hc-lang="'+code+'" aria-pressed="'+String(face===code)+'">'+label+'</button>').join('')+'</div>';
  const note=step.note?'<p class="aoP435930SourceNote">'+esc(step.note)+'</p>':'';
  const required=step.id!=='optional';
- return head(L('Holy Cloak of St Joseph','Sacro Manto di San Giuseppe'),L('Italian source · thirty-day devotion','Source italienne · dévotion de trente jours'))+
+ return head(L('Holy Cloak of St Joseph','Sacro Manto di San Giuseppe'),L('Thirty-day devotion · Italian source with editorial translations','Dévotion de trente jours · source italienne et traductions éditoriales'))+
  '<main class="aoP435930Body aoP435930LibraryReader" data-ao-holy-cloak-italian-reader data-ao-holy-cloak-day-count="30">'+
  '<div class="aoP435930SourceNote"><strong>'+esc(L('One complete daily prayer · 30 consecutive days','Une récitation complète par jour · 30 jours consécutifs'))+'</strong></div>'+
- sourceNotes+
+ sourceNotes+languageChoice+
  '<div class="aoJosephSevenProgress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+Math.round(k*100/end)+'" aria-label="'+esc(L('Reading progress','Progression de lecture'))+'"><span style="width:'+Math.round(k*100/end)+'%"></span></div>'+
  '<article class="aoDevoCard" data-ao-holy-cloak-step="'+esc(step.id)+'">'+
  '<div class="aoDevoCardScroll"><small>'+k+' / '+end+(required?'':' · '+esc(L('Optional','Facultatif')))+'</small>'+
  '<h2>'+esc(step.title)+'</h2>'+openingSign+
- '<p lang="'+esc(step.language)+'">'+nl(text)+'</p>'+repeats+note+'</div></article>'+
+ '<p lang="'+esc(sourceLanguage)+'">'+nl(body)+'</p>'+repeats+note+'</div></article>'+
  '<nav class="aoJosephSevenNav" aria-label="'+esc(L('Holy Cloak prayer navigation','Navigation dans le Sacro Manto'))+'">'+
  '<button type="button" data-p435930-hc-prev '+(HOLY_CLOAK_STEP===0?'disabled':'')+'>'+esc(L('Previous','Précédent'))+'</button>'+
  (HOLY_CLOAK_STEP===end-1?
   '<button type="button" data-p435930-hc-finish>'+esc(L('Return to Prayer Library','Retour au livre de prières'))+'</button>':
   '<button type="button" data-p435930-hc-next>'+esc(L('Next','Suivant'))+'</button>')+
  '</nav><details class="aoP435930SourceNote"><summary>'+esc(L('Sources and edition limitations','Sources et limites des éditions'))+'</summary>'+
- '<p>'+esc(L('This is the complete Italian digital transcription, cross-compared with later Italian PDFs. The historical 1882 approval and 1898 booklet advertisement do not certify identical printed words. Latin common prayers and the historic Joseph litany are reused from existing Ad Orientem sources; 2021 additions are excluded.',
- 'Il s’agit de la transcription numérique italienne complète, comparée à des PDF italiens ultérieurs. L’approbation de 1882 et une annonce de 1898 ne certifient pas l’identité des mots imprimés. Les prières communes latines et les Litanies historiques sont réutilisées, sans les ajouts de 2021.'))+'</p>'+
+ '<p>'+esc(L('The complete Italian digital transcription is cross-compared with later Italian PDFs. The historical 1882 approval does not certify identical original printed words. English and French are new editorial translations requiring review, not published nineteenth-century editions. Common prayers and the pre-2021 litany reuse existing Ad Orientem source owners; seven 2021 invocations are excluded.',
+ 'La transcription italienne complète est comparée à des PDF italiens ultérieurs. L’approbation de 1882 ne certifie pas l’identité des mots imprimés. L’anglais et le français sont des traductions éditoriales nouvelles à revoir, et non des éditions du XIXe siècle. Les prières communes et les litanies antérieures à 2021 réutilisent les sources existantes, sans les sept ajouts de 2021.'))+'</p>'+
  '<a href="'+esc(HOLY_CLOAK_ITALIAN_SOURCE_V1.textSource)+'" target="_blank" rel="noopener noreferrer">'+esc(L('Italian digital witness','Témoin numérique italien'))+'</a></details></main>';
 }
+
 function renderLibrary(){
  if(LIB.open===HOLY_CLOAK_ITALIAN_SOURCE_V1.id)return renderHolyCloakItalian();
  if(LIB.open&&massSequencePrayerWork(LIB.open))return renderMassSequencePrayer();
@@ -2822,12 +2844,12 @@ function renderLibrary(){
  const holyCloakSection=!holyCloak?'':(
   '<section class="aoP435930LibraryRelated" data-ao-holy-cloak-source-only>'+
   '<h3>'+esc(L('Holy Cloak of St Joseph · 30 days','Sacré Manteau de saint Joseph · trente jours'))+'</h3>'+
-  '<p>'+esc(L('The complete 19-section historical Italian witness is now available offline in Ad Orientem. An English Catholic parish version can be read separately at its source. Both use the full daily form for thirty days; no English/French native translation or exact 1882 printed text has been certified.',
-   'Le témoignage italien historique complet en 19 sections est désormais disponible hors ligne dans Ad Orientem. Une version anglaise de paroisse reste accessible à sa source. On récite la dévotion intégrale chaque jour pendant trente jours ; aucune traduction EN/FR ni édition imprimée exacte de 1882 n’est certifiée.'))+'</p>'+
+  '<p>'+esc(L('The complete 19-section Italian source and modern editorial English/French translations are available offline. The separate English parish edition remains linked. No original 1882 print wording or historical translations are certified.',
+   'Le témoin italien complet en 19 sections et les traductions éditoriales modernes en anglais et français sont disponibles hors ligne. L’édition anglaise de paroisse reste liée séparément. L’imprimé original de 1882 et les traductions historiques ne sont pas certifiés.'))+'</p>'+
   '<button type="button" class="aoP435930ModuleCard" data-p435930-lib-open="'+esc(HOLY_CLOAK_ITALIAN_SOURCE_V1.id)+'" data-ao-holy-cloak-italian-open>'+
    '<small>'+esc(L('OFFLINE HISTORICAL ITALIAN · 19 SECTIONS','ITALIEN HISTORIQUE HORS LIGNE · 19 SECTIONS'))+'</small>'+
    '<b>'+esc(L('Read the full Holy Cloak in Italian','Lire le Sacro Manto intégral en italien'))+'</b>'+
-   '<span>'+esc(L('No certified EN/FR body translation; original print collation held','Pas de traduction EN/FR certifiée ; collation de l’original en attente'))+'</span></button>'+
+   '<span>'+esc(L('EN/FR editorial drafts available; historic original print still held','Traductions éditoriales EN/FR disponibles ; imprimé historique à collationner'))+'</span></button>'+
   '<a class="aoP435930ModuleCard" data-ao-holy-cloak-source-link href="'+esc(holyCloak.primary.url)+'" target="_blank" rel="noopener noreferrer">'+
    '<small>'+esc(L('EXTERNAL COMPLETE PRAYER · ENGLISH','PRIÈRE COMPLÈTE EXTERNE · ANGLAIS'))+'</small>'+
    '<b>'+esc(L('Read the Holy Cloak','Lire le Sacré Manteau'))+'</b>'+
@@ -5167,6 +5189,11 @@ function onClick(e){
   MASS_SEQUENCE_READING.error=null;MASS_SEQUENCE_READING.loading=false;
   MASS_SEQUENCE_READING.token++;return render();
  }
+ if(b.dataset.p435930HcLang&&LIB.open===HOLY_CLOAK_ITALIAN_SOURCE_V1.id){
+  const code=b.dataset.p435930HcLang;
+  if(!['it','en','fr'].includes(code))return;
+  HOLY_CLOAK_LANGUAGE=code;return render();
+ }
  if(b.matches('[data-p435930-hc-prev]')&&LIB.open===HOLY_CLOAK_ITALIAN_SOURCE_V1.id){
   HOLY_CLOAK_STEP=Math.max(0,HOLY_CLOAK_STEP-1);return render();
  }
@@ -5174,10 +5201,10 @@ function onClick(e){
   HOLY_CLOAK_STEP=Math.min(HOLY_CLOAK_ITALIAN_STEPS_V1.length-1,HOLY_CLOAK_STEP+1);return render();
  }
  if(b.matches('[data-p435930-hc-finish]')&&LIB.open===HOLY_CLOAK_ITALIAN_SOURCE_V1.id){
-  LIB.open=null;HOLY_CLOAK_STEP=0;return render();
+  LIB.open=null;HOLY_CLOAK_STEP=0;HOLY_CLOAK_LANGUAGE=null;return render();
  }
  if(b.dataset.p435930LibOpen){
-  if(b.dataset.p435930LibOpen===HOLY_CLOAK_ITALIAN_SOURCE_V1.id)HOLY_CLOAK_STEP=0;
+  if(b.dataset.p435930LibOpen===HOLY_CLOAK_ITALIAN_SOURCE_V1.id){HOLY_CLOAK_STEP=0;HOLY_CLOAK_LANGUAGE=null;}
   LIB.open=b.dataset.p435930LibOpen;LIB.language=null;PILOT_LORETO_GROUP=false;return render()
  }
  if(b.dataset.p435930ScriptureRetry){
