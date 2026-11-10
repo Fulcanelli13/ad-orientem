@@ -18,7 +18,8 @@
     "data/artwork/research/m2m-three-unresolved-march-gospel-leads-20261110.v1.json",
     "data/artwork/research/m2m-open-colour-batch2-nationalmuseum-rijks-20261110.v1.json",
     "data/artwork/research/m2m-open-colour-batch2-source-verification-20261110.v1.json",
-    "data/artwork/research/m2m-open-source-batch3-msk-mnk-20261110.v1.json"
+    "data/artwork/research/m2m-open-source-batch3-msk-mnk-20261110.v1.json",
+    "data/artwork/research/m2m-open-colour-batch2-source-verification-20261110.v1.json"
   ],
   "counts": {
     "originalDateRelationships": 198,
@@ -41,7 +42,8 @@
     "newPublicArtworkReleases": 0,
     "newInstitutionPhotoPolicyHolds": 36,
     "unverifiedPhotoSearchLaneRemaining": 13,
-    "iccdOfficialPhotoRightsHoldsAdded": 27
+    "iccdOfficialPhotoRightsHoldsAdded": 27,
+    "nationalmuseumFirstPartyMediaPortalRecordsToResolve": 2
   },
   "reviewLaneCounts": {
     "A_VERIFIED_SOURCE_PHOTO_EDITORIAL_AND_MOBILE_QA": 8,
@@ -71,7 +73,8 @@
     "A successfully acquired painting photograph may still fail Gospel-subject readability on mobile; keep Rijks SK-A-868 out of hero publication despite source licence and high pixel count.",
     "Nationalmuseum NM420/NM1134 return HTTP 403 on their exact official JPG endpoints: never count as acquired, and no non-owner-handpicked Commons source enters curated pool.",
     "Official museum image policies reviewed 10 Nov 2026: Louvre, Cincinnati, Timken and KHM institutional photographs have no confirmed commercial-use permission without prior licence; their 9 exact work keys are held, while a separate genuinely open photograph may still be researched.",
-    "27 priority-oil ICCD official catalogue photographs do not inherit CC BY 4.0 open-data rights. ICCD requires institution-specific image reproduction authorization, potentially a charge. No free commercial app image claimed without a distinct open-photo source; work identities remain usable research leads."
+    "27 priority-oil ICCD official catalogue photographs do not inherit CC BY 4.0 open-data rights. ICCD requires institution-specific image reproduction authorization, potentially a charge. No free commercial app image claimed without a distinct open-photo source; work identities remain usable research leads.",
+    "Nationalmuseum's own high-resolution media.nationalmuseum.se is the first-party alternative for NM420 and NM1134, but its exact media records and byte-specific licences remain unverified. An inventory search is not source-photo QA."
   ],
   "photographs": [
     {
@@ -4549,12 +4552,22 @@
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-followup10-20261110.v1.json",
       "verifiedPhotoId": null,
       "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
+      "nextAction": "Search Nationalmuseum's own media portal for NM 1134; verify exact painting and Public Domain or CC BY-SA image file before acquisition. Collection site JPEG 403; no Commons auto-admission.",
       "risk": "SOURCE_PHOTO_UNVERIFIED",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "alternativeSourceCandidate": {
+        "category": "FIRST_PARTY_MUSEUM_MEDIA_PORTAL",
+        "url": "https://media.nationalmuseum.se/search/all",
+        "exactPhotoUrl": null,
+        "accessionSearchTerm": "NM 1134",
+        "sourcePolicy": "https://www.nationalmuseum.se/en/explore-art-and-design/images/rights-and-reproductions",
+        "status": "MUSEUM_PORTAL_IDENTIFIED_EXACT_MEDIA_RECORD_PENDING",
+        "portalCanDownloadHighResAndDisplaysLicence": true,
+        "precisePhotoLicenceAndBytesVerified": false
+      }
     },
     {
       "artworkKey": "Nationalmuseum:NM420",
@@ -4592,12 +4605,22 @@
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-followup10-20261110.v1.json",
       "verifiedPhotoId": null,
       "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
+      "nextAction": "Search Nationalmuseum's own media portal for NM 420; verify exact painting and Public Domain or CC BY-SA image file before acquisition. Collection site JPEG 403; no Commons auto-admission.",
       "risk": "SOURCE_PHOTO_UNVERIFIED",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "alternativeSourceCandidate": {
+        "category": "FIRST_PARTY_MUSEUM_MEDIA_PORTAL",
+        "url": "https://media.nationalmuseum.se/search/all",
+        "exactPhotoUrl": null,
+        "accessionSearchTerm": "NM 420",
+        "sourcePolicy": "https://www.nationalmuseum.se/en/explore-art-and-design/images/rights-and-reproductions",
+        "status": "MUSEUM_PORTAL_IDENTIFIED_EXACT_MEDIA_RECORD_PENDING",
+        "portalCanDownloadHighResAndDisplaysLicence": true,
+        "precisePhotoLicenceAndBytesVerified": false
+      }
     },
     {
       "artworkKey": "NationalTrust:998409",
