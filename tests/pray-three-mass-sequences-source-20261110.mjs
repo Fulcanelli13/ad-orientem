@@ -44,7 +44,9 @@ for(const work of MASS_SEQUENCE_PRAYER_WORKS){
   ...input.proper,data:{...input.proper.data,sequence:{
    ...input.proper.data.sequence,lat:"Other sequence "+"x".repeat(1500)
   }}
- }}),/LATIN_SEQUENCE_OPENING_MISMATCH/);
+ }}),work.id==="mass_sequence_lauda_sion"
+  ? /LAUDA_SION_SOURCE_START_UNVERIFIED/
+  : /LATIN_SEQUENCE_OPENING_MISMATCH/);
 }
 const corpus=massSequencePrayerWork("mass_sequence_lauda_sion");
 const corpusDonor=make(corpus);
