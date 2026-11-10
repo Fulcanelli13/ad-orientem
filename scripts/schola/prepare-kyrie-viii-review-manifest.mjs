@@ -10,6 +10,7 @@ import {
   KYRIE_VIII_REVIEW_SOURCE,prepareKyrieVIIIReview,
   prepareKyrieVIIIUnapprovedGabcExcerpts
 } from "../../src/mass/reader-kyrie-viii-review-queue.js";
+import {offlineKyrialeResearchScore} from "../../src/mass/reader-kyriale-research-gabc.js";
 
 const sourcePath=new URL("../../data/presentation/reader-text-sung.v1.json",import.meta.url);
 const sha256=s=>createHash("sha256").update(s,"utf8").digest("hex");
@@ -48,6 +49,12 @@ const NOTES=Object.freeze([
 // It requires an independently reviewed musical transcription and a new,
 // explicit editorial decision in the separate trusted approval registries.
 export function buildKyrieVIIIReviewManifest({corpus}={}){
+  const researchScore=offlineKyrialeResearchScore("KYRIE","MASS_08");
+  if(!researchScore?.gabc||
+     sha256(researchScore.gabc)!==KYRIE_VIII_REVIEW_SOURCE.sourceGabcSha256){
+    return Object.freeze({schema:"ao-schola-kyrie-viii-review-package-v1",
+      status:"SOURCE_GABC_SHA_DRIFT_HOLD",candidates:Object.freeze([])});
+  }
   const source=corpus??JSON.parse(readFileSync(sourcePath,"utf8"));
   const reviewed=prepareKyrieVIIIReview({corpus:source});
   const excerpted=prepareKyrieVIIIUnapprovedGabcExcerpts({corpus:source});
@@ -88,6 +95,7 @@ export function buildKyrieVIIIReviewManifest({corpus}={}){
     status:"SOURCE_CUES_READY_MUSICAL_PROOF_AND_PUBLICATION_HELD",
     generatedFrom:"SOURCE_VERIFIED_1962_CORPUS_AND_PINNED_1961_GABC",
     source:KYRIE_VIII_REVIEW_SOURCE,
+    verifiedResearchGabcSha256:sha256(researchScore.gabc),
     printedSourceLines:4,sourceCues:9,repeatPattern:Object.freeze([3,3,2,1]),
     sourceLineReview:NOTES,
     requiredBeforePublication:Object.freeze([
