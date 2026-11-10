@@ -1,3 +1,7 @@
+/* 2026-11-10 CL27 institute-scoped Roman rite / 1962 Missal source inheritance.
+ * Exact-source 1300-site classification overlay, internal evidence metadata.
+ * No projected Mass occurrence, Una Cum, church ownership or Vercel service.
+ */
 /* 2026-11-10 CL27 five additional source-corroborated Polish chapel patterns.
  * Preserve prior 26 site programmes, all source holds, and transactional
  * GitHub Pages offline snapshots. No generated Mass dates or map changes.
