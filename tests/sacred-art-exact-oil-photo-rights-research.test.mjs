@@ -42,7 +42,7 @@ assert.ok(sourceAudit.records.find(x=>x.workKey==='ICCD:0300180045').photographe
 assert.ok(sourceAudit.records.find(x=>x.workKey==='Rijks:SK-A-868').imageAccessAndQA.includes('pixel/crop'));
 assert.ok(sourceAudit.records.find(x=>x.workKey==='Holburne:A17').objectAndSceneNote.includes('Piazzetta'));
 assert.ok(sourceAudit.records.find(x=>x.workKey==='Walters:37.1146').imageAccessAndQA.includes('monochrome'));
-assert.ok(sourceAudit.records.find(x=>x.workKey==='Met:469892').objectAndSceneNote.includes('medium differs'));
+assert.ok(sourceAudit.records.find(x=>x.workKey==='Met:469892').imageAccessAndQA.includes('medium differs'));
 assert.ok(sourceAudit.records.find(x=>x.workKey==='Louvre:RF1966.1').objectAndSceneNote.includes('provenance gap'));
 assert.equal(photoQueue.status,'SOURCED_OPEN_IMAGE_OPTIONS_NOT_ACQUIRED_NOT_APPROVED');
 assert.equal(photoQueue.records.length,6);
