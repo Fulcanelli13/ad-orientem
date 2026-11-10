@@ -88,6 +88,12 @@ function claudeTimelineRender(timeline,{span=8,width=390,height=230}={}){
 }
 export {claudeWheelRender,claudeTimelineRender};
 export const CLAUDE_PORT_CSS=[
+".ao-reader-shell.ao-live-band-enabled{grid-template-rows:40px minmax(96px,min(var(--ao-live-band-height,230px),calc(100dvh - 265px))) minmax(0,1fr)}",
+".ao-reader-shell.ao-live-band-enabled>.ao-state-ribbon{display:none}",
+".ao-reader-shell.ao-live-band-enabled>.ao-reader-top-ribbon{height:40px;min-height:40px;grid-template-columns:40px minmax(0,1fr) 40px;padding:0 4px}",
+".ao-reader-shell.ao-live-band-enabled .ao-reader-top-action{width:38px;height:38px}",
+".ao-reader-shell.ao-live-band-enabled .ao-section-jump{height:38px;font-size:13px}",
+"@media(orientation:landscape) and (max-height:650px){.ao-reader-shell.ao-live-band-enabled{grid-template-columns:minmax(0,42%) minmax(0,58%);grid-template-rows:40px minmax(0,1fr)}.ao-reader-shell.ao-live-band-enabled>.ao-live-band{grid-column:1;grid-row:1/3}.ao-reader-shell.ao-live-band-enabled>.ao-reader-top-ribbon{grid-column:2;grid-row:1}.ao-reader-shell.ao-live-band-enabled>.ao-reader-stage{grid-column:2;grid-row:2}}",
 ".ao-claude-timeline-page{width:100%;height:100%;position:relative;min-height:0;background:#0b1016}",
 ".ao-live-band[data-route-preview=\'true\'] .ao-claude-figures [data-actor=\'priest\']{opacity:0}",
 ".ao-claude-timeline-canvas{position:absolute;inset:8px 6px 22px 6px}",
