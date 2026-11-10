@@ -22,4 +22,6 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
       - name: Actual calendar to Mass source and R17 2026-11-10
+        env:
+          AO_NOV10_PROPER_ONLY: "1"
         run: node tests/calendar-imminent-mass-gate-2026.mjs
