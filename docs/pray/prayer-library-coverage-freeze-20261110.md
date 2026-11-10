@@ -96,3 +96,44 @@ Recommendations require the owner's scope decision before implementation. Neithe
 - No complete ICKSP or red-booklet coverage percentage until their owner-defined denominators are reconciled.
 - No approval of previously deferred P2/P3 or off-master items.
 - No new prayer acquisition or deployment caused by this read-only audit.
+
+
+## ICKSP and Red Booklet scope — second reconciliation pass
+
+Companion machine-readable source-owner crosswalk:
+[`data/pray/icksp-red-booklet-scope-crosswalk-20261110.v1.json`](../../data/pray/icksp-red-booklet-scope-crosswalk-20261110.v1.json).
+
+### ICKSP / ICRSP — tracked historical corpus, not entire website
+
+The historical 97-row acquisition master contains **33 ICKSP-labeled candidates**, with the following **29 October** statuses:
+- **1** live source-scoped; **1** released post-B22.
+- **6** existing source owners, whose exact historical edition and reader-language fidelity are not certified by the historical owner reference.
+- **9** source/rights holds, **4** intent-only references, **11** editorial deferrals, **1** excluded.
+- **11** P0/P1 rows: **7** have live/released/existing source owners; **4** outstanding are **alternatives**, not automatically mandatory gaps: `AO-AQ-002`, `AO-AQ-003`, `AO-AQ-007`, `AO-AQ-012`. The last has an optional staged reader in draft #2817.
+- **9** recent draft units are linked to ICKSP master rows, including the two Infant Jesus of Prague novena recensions, two litany forms, and the St Philomena historical witnesses. Draft presence is not publication.
+
+The US Institute's [Devotions and Prayers index](https://institute-christ-king.org/resources/devotions-prayers) currently presents **nine topical headings**. The separate [ICRSP France Infant Jesus collection](https://icrspfrance.fr/?page=child-jesus-prayers) contains multiple prayers, litanies and nine-day recensions. The 33-row master joins different source families and **is not proof of complete coverage of either website**. Before a 100% claim, enumerate exact required **work identities** across these sources, not merely topical headings or page counts.
+
+### Red Booklet — the recorded 19 pointers, not the booklet denominator
+
+| Already indexed source-owned lane | Entries | English body | French body | Latin body | Exact May 2013 booklet wording |
+|---|---:|---:|---:|---:|---|
+| Communion reader pointers | 11 | 11 | 5 | 5 | None of these 11 certified |
+| St Ignatius Suscipe | 1 | 1 | 0 | 1 | Not certified |
+| Private prayers before Mass / around Confession | 4 | 4 | 0 | 0 | Not certified |
+| Three short English textual comparisons | 3 | 3 | 0 | 0 | All 3 checked as short variants; one is Fatima comparator only |
+| **Total pointer/witness records** | **19** | **19** | **5** | **6** | **3 limited comparisons** |
+
+The 11 Communion owners consist of five trilingual texts and **six English-only texts**. The separate Suscipe has English/Latin, no French prayer body; its French title is **not** a translation. The four private historical prayer witnesses have English only. The three short comparisons have English-only copied witness forms and must not be counted as complete Prayer Library readers. All these sources and routes were already registered before this pass.
+
+**Coverage percentage is not (and must not be reported as) 19 divided by a guessed booklet total.** Also, French/Latin absences are text-presence flags for known records, **not automatically 14 French translation failures**: some are original-English source comparisons, and Latin may not be applicable. A text is accepted only if required for its intended reader and assigned an honest historical/editorial-language label.
+
+### Implementation decisions implied by the new evidence
+
+1. Do not acquire an additional ICKSP variant solely because its webpage is reachable. Of 11 P0/P1 tracked candidates, all four currently without a live/existing source owner were originally optional alternatives, not hard-required source-body gaps.
+2. For existing red-booklet Communion readers, first correct the **six English-only** source-owner reading faces if bilingual reading of those specific titles is needed. That is an **existing-reader translation task**, not six new prayers.
+3. The two canonical source URLs and one withheld Immaculate Heart FR/LA witness remain the most focused core defects. The Immaculate Heart record explains that a different Fatima consecration recension exists; **do not simply paste or invent a French/Latin version**.
+4. Establish a complete 2013 booklet prayers list from the original scan before stating full booklet coverage. Prefer existing aligned Communion, Confession, Mass or Rosary routes to duplicate Prayer Library cards.
+5. Keep all staged PRs draft until their optional-versus-required decision is explicit and the shared runtime conflict has been resolved.
+
+**Pass scope:** Read-only inventory and source-owner metadata. No new prayer text, translated body, production route, or deployment.
