@@ -10,7 +10,7 @@ export const KYRIE_VIII_REVIEW_SOURCE=Object.freeze({
  movement:"KYRIE",settingId:"MASS_08",
  title:"Kyrie VIII · De Angelis",
  sourceUrl:"https://gregobase.selapa.net/chant.php?id=1184",
- sourceWitness:"Graduale Romanum, Solesmes 1961, p. 28*",
+ sourceWitness:"Graduale Romanum, Solesmes 1961, pp. 28*–29*",
  printedPageImages:Object.freeze([
   "https://gregobase.selapa.net/sources/2/905.png",
   "https://gregobase.selapa.net/sources/2/906.png"
@@ -21,10 +21,10 @@ export const KYRIE_VIII_REVIEW_SOURCE=Object.freeze({
  userApproved:false,musicalNotationVerified:false,publication:"BLOCKED"
 });
 const FORMULA=Object.freeze([
- Object.freeze({sourceLine:0,cues:Object.freeze(["AO.SM.C0044","AO.SM.C0045","AO.SM.C0046"]),latin:"Kýrie, eléison.",role:"KYRIE_INITIAL"}),
- Object.freeze({sourceLine:1,cues:Object.freeze(["AO.SM.C0047","AO.SM.C0048","AO.SM.C0049"]),latin:"Christe, eléison.",role:"CHRISTE"}),
- Object.freeze({sourceLine:2,cues:Object.freeze(["AO.SM.C0050","AO.SM.C0051"]),latin:"Kýrie, eléison.",role:"KYRIE_RETURN"}),
- Object.freeze({sourceLine:3,cues:Object.freeze(["AO.SM.C0052"]),latin:"Kýrie, eléison.",role:"KYRIE_FINAL_VARIANT"})
+ Object.freeze({sourceLine:0,facsimileFolios:Object.freeze(["28*"]),cues:Object.freeze(["AO.SM.C0044","AO.SM.C0045","AO.SM.C0046"]),latin:"Kýrie, eléison.",role:"KYRIE_INITIAL"}),
+ Object.freeze({sourceLine:1,facsimileFolios:Object.freeze(["28*"]),cues:Object.freeze(["AO.SM.C0047","AO.SM.C0048","AO.SM.C0049"]),latin:"Christe, eléison.",role:"CHRISTE"}),
+ Object.freeze({sourceLine:2,facsimileFolios:Object.freeze(["28*","29*"]),cues:Object.freeze(["AO.SM.C0050","AO.SM.C0051"]),latin:"Kýrie, eléison.",role:"KYRIE_RETURN"}),
+ Object.freeze({sourceLine:3,facsimileFolios:Object.freeze(["29*"]),cues:Object.freeze(["AO.SM.C0052"]),latin:"Kýrie, eléison.",role:"KYRIE_FINAL_VARIANT"})
 ]);
 const norm=s=>String(s??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
  .replace(/[æœ]/gi,c=>c.toLowerCase()==="æ"?"ae":"oe")
@@ -60,7 +60,7 @@ export function prepareKyrieVIIIReview({corpus,source=offlineKyrialeResearchScor
  if(blocks.length!==1||units.length!==9||blocks[0].Block_ID!=="AO.SM.B015")
   return fail("SOURCE_65_CARD_KYRIE_BLOCK_OR_NINE_CUES_DRIFT");
  const sourceRows=FORMULA.flatMap(g=>g.cues.map((cueId,repeatIndex)=>Object.freeze({
-  cueId,sourceLine:g.sourceLine,repeatIndex,sourceBlockId:"AO.SM.B015",
+  cueId,sourceLine:g.sourceLine,facsimileFolios:g.facsimileFolios,repeatIndex,sourceBlockId:"AO.SM.B015",
   settingId:"MASS_08",sourceScoreId:"GREGOBASE-1184",
   sourceLatin:g.latin,role:g.role,
   sourceLineGabc:lines[g.sourceLine],
@@ -111,7 +111,7 @@ export function prepareKyrieVIIIUnapprovedGabcExcerpts({corpus,source}={}){
    "%%",body
   ].join("\n");
   return Object.freeze({
-   cueId:row.cueId,sourceLine:row.sourceLine,
+   cueId:row.cueId,sourceLine:row.sourceLine,facsimileFolios:row.facsimileFolios,
    repeatIndex:row.repeatIndex,gabc,
    sourceScoreId:row.sourceScoreId,
    expectedLatin:row.sourceLatin,
