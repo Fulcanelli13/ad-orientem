@@ -19,7 +19,8 @@
     "data/artwork/research/m2m-open-colour-batch2-nationalmuseum-rijks-20261110.v1.json",
     "data/artwork/research/m2m-open-colour-batch2-source-verification-20261110.v1.json",
     "data/artwork/research/m2m-open-source-batch3-msk-mnk-20261110.v1.json",
-    "data/artwork/research/m2m-open-colour-batch2-source-verification-20261110.v1.json"
+    "data/artwork/research/m2m-open-colour-batch2-source-verification-20261110.v1.json",
+    "data/artwork/research/m2m-msk-s43-verified-image-original-20261110.v1.json"
   ],
   "counts": {
     "originalDateRelationships": 198,
@@ -34,23 +35,23 @@
     "externalRiberaAlternateKeys": 1,
     "provisionalUnintegratedMarchKeys": 3,
     "totalSelectionQueueWorkKeys": 155,
-    "verifiedColourJpegSources": 8,
-    "verifiedSourcePhotosInOriginal151Pool": 7,
+    "verifiedColourJpegSources": 9,
+    "verifiedSourcePhotosInOriginal151Pool": 8,
     "verifiedColourJpegExternalAlternate": 1,
     "newOwnerApprovedPlacements": 0,
     "formalAppContainerCropCertifications": 0,
     "newPublicArtworkReleases": 0,
     "newInstitutionPhotoPolicyHolds": 36,
-    "unverifiedPhotoSearchLaneRemaining": 13,
+    "unverifiedPhotoSearchLaneRemaining": 12,
     "iccdOfficialPhotoRightsHoldsAdded": 27,
     "nationalmuseumFirstPartyMediaPortalRecordsToResolve": 2
   },
   "reviewLaneCounts": {
-    "A_VERIFIED_SOURCE_PHOTO_EDITORIAL_AND_MOBILE_QA": 8,
+    "A_VERIFIED_SOURCE_PHOTO_EDITORIAL_AND_MOBILE_QA": 9,
     "B_COPYRIGHT_REVIEW": 1,
     "B_RECONCILE_WORK_IDENTITY": 1,
     "C_FIND_TRUE_COLOUR_REPRODUCTION": 1,
-    "C_LOCATE_REUSABLE_COLOUR_SOURCE": 13,
+    "C_LOCATE_REUSABLE_COLOUR_SOURCE": 12,
     "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT": 45,
     "D_CHECK_ICONOGRAPHIC_FIDELITY": 13,
     "D_CONTEXT_ONLY_FIND_EXACT_GOSPEL_SCENE": 1,
@@ -74,7 +75,8 @@
     "Nationalmuseum NM420/NM1134 return HTTP 403 on their exact official JPG endpoints: never count as acquired, and no non-owner-handpicked Commons source enters curated pool.",
     "Official museum image policies reviewed 10 Nov 2026: Louvre, Cincinnati, Timken and KHM institutional photographs have no confirmed commercial-use permission without prior licence; their 9 exact work keys are held, while a separate genuinely open photograph may still be researched.",
     "27 priority-oil ICCD official catalogue photographs do not inherit CC BY 4.0 open-data rights. ICCD requires institution-specific image reproduction authorization, potentially a charge. No free commercial app image claimed without a distinct open-photo source; work identities remain usable research leads.",
-    "Nationalmuseum's own high-resolution media.nationalmuseum.se is the first-party alternative for NM420 and NM1134, but its exact media records and byte-specific licences remain unverified. An inventory search is not source-photo QA."
+    "Nationalmuseum's own high-resolution media.nationalmuseum.se is the first-party alternative for NM420 and NM1134, but its exact media records and byte-specific licences remain unverified. An inventory search is not source-photo QA.",
+    "MSK Ghent S-43 downloaded and independently SHA-verified. Public Domain Mark in IIIF is not automatic monetised app approval; rights and visible diagonal image-line quality hold both remain."
   ],
   "photographs": [
     {
@@ -212,6 +214,39 @@
       "publicationEligible": false,
       "sourceManifest": "data/artwork/research/m2m-met-original-image-verification4-20261110.v1.json",
       "diagnosticSource": "data/artwork/research/m2m-met-originals-aspect-qa-four-20261110.v1.json"
+    },
+    {
+      "photographId": "PHOTO:MSKGent:S-43",
+      "artworkKey": "MSKGent:S-43",
+      "originalPhotoSourceUrl": "https://imagehub.mskgent.be/iiif/2/public%2F6344.tif/full/2000,/0/default.jpg",
+      "catalogueUrl": "https://www.mskgent.be/en/collection/s-43",
+      "licence": "MSK_COLLECTION_PUBLIC_DOMAIN_MARK_ONLINE_IMAGE_COMMERCIAL_FINAL_REVIEW_PENDING",
+      "exactBytesSha256": "b4ee3e06d0ec7de6b9ade82502e80098e564d50157a0d284a2a0b563da9c134b",
+      "pixelWidth": 2000,
+      "pixelHeight": 3887,
+      "sourceBytes": 617073,
+      "sourceDateSpecificLicenceFinal": false,
+      "sourceFileAcquired": true,
+      "checksumsVerified": true,
+      "colourFront": true,
+      "medium": "JPEG_RGB",
+      "iccProfilePresent": false,
+      "wide390x240": {
+        "retainedImageAreaPct": 31.7,
+        "diagnostic": "FAIL_TALL_ALTARPIECE_CROP_REMOVES_MAIN_NARRATIVE"
+      },
+      "portrait390x520": {
+        "retainedImageAreaPct": 68.6,
+        "diagnostic": "HOLD_BOTH_VERTICAL_EDGES_OF_STORY_CAN_GET_LOST"
+      },
+      "compositionRecommendation": "Keep original image completely in view with contain rather than cover. Inspect visible diagonal line before any publication; unknown whether damage or imaging artifact. Owner and app-specific licence approval still pending.",
+      "artifactRun": 42821674233,
+      "ephemeralArtifactId": 13769685012,
+      "imageInPublicAssets": false,
+      "ownerDateApproval": false,
+      "formalAppCropCertification": false,
+      "publicationEligible": false,
+      "sourceManifest": "data/artwork/research/m2m-msk-s43-verified-image-original-20261110.v1.json"
     },
     {
       "photographId": "PHOTO:Pinakothek:909",
@@ -4318,14 +4353,15 @@
       "sourceAuditRightStatus": "PUBLIC_DOMAIN_OBJECT_PAGE_MUSEUM_IMAGE_RIGHTS_SCOPE_UNRESOLVED_FOR_COMMERCIAL_HIGH_RES",
       "sourceAuditNote": "S-43 oil on canvas. Museum marks page Public Domain and offers IIIF manifest https://imagehub.mskgent.be/iiif/3/6344/manifest.json; image-rights page permits collection-image resolutions offered online but sends high-res/commercial use to Art in Flanders. Distinguish St Raymund of Pennafort from St Raymond Nonnatus; museum subject keywords misleadingly call him founder of Mercedarians.",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-followup10b-20261110.v1.json",
-      "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "verifiedPhotoId": "PHOTO:MSKGent:S-43",
+      "lane": "A_VERIFIED_SOURCE_PHOTO_EDITORIAL_AND_MOBILE_QA",
+      "nextAction": "Do not publish or use cover-crop; visually adjudicate conspicuous diagonal line and confirm rights for monetised app at the exact source resolution. Owner approval for Saint Raymond of Peñafort's date remains absent.",
+      "risk": "SOURCE_VERIFIED_BUT_DIAGONAL_IMAGE_MARK_AND_MONETISED_APP_RIGHTS_HOLD",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "photoSourceImageQualityIssue": "Official image has conspicuous diagonal line; it may be a painting condition or source-image problem, and should not be silently digitally repaired."
     },
     {
       "artworkKey": "MSKSticna:4013",
@@ -7015,7 +7051,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "A_VERIFIED_SOURCE_PHOTO_EDITORIAL_AND_MOBILE_QA"
       ]
     },
     {
