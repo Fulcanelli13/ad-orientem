@@ -49,7 +49,16 @@ try{
  if(await activePicker.count() && !await activePicker.evaluate(x=>x.open))
   await activePicker.locator(":scope > summary").tap();
  await page.locator("#aoPray435930.open [data-p435930-lit-use='vigil']:visible").first().tap();
+ // The loading shell briefly exposes an inline edition chooser; after R33
+ // validates, the source-backed guided reader owns a collapsed disclosure.
+ // Wait for that final reader before switching back to the private edition.
+ await page.locator("#aoPray435930.open [data-ao-litany-use='vigil'][data-ao-easter-vigil-litanies='R33_TWO_PARTS_NOT_PRINT_CERTIFIED']")
+  .waitFor({state:"attached",timeout:15000});
  assert.equal(await page.locator("[data-ao-litany-use='vigil']").count(),1);
+ const vigilPicker=page.locator("#aoPray435930.open [data-ao-litany-use='vigil'] .aoPrivateLitanyEditionChooser");
+ assert.equal(await vigilPicker.count(),1,"Loaded Vigil edition selector must remain available");
+ if(!await vigilPicker.evaluate(x=>x.open))
+  await vigilPicker.locator(":scope > summary").tap();
  await page.locator("#aoPray435930.open [data-p435930-lit-use='private']:visible").first().tap();
  assert.equal(await page.locator("[data-p435930-lit-use='private'][aria-pressed='true']").count(),1);
 
