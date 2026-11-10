@@ -1,0 +1,654 @@
+{
+  "schema": "AO_SACRED_ATLAS_WAVE2_GUIDES97_106_DRAFT_V1",
+  "as_of": "2026-11-10",
+  "status": "RESEARCH_DRAFT_BILINGUAL_NOT_PUBLISHED",
+  "based_on": "data/shrines/shrines-pilgrimages-seed.v1.json",
+  "counts": {
+    "guides": 10,
+    "sections": 30,
+    "language": "EN_FR",
+    "published": 0
+  },
+  "policy": [
+    "Existing approved and earlier draft material are never rewritten; only existing Shrine and Place IDs.",
+    "Historical and ceremonial claims depend on canonical source summaries; source URLs need checking against the precise new wording by the second editor.",
+    "All media, relics, extraordinary events and current programmes are subject to independent existing publication gates."
+  ],
+  "guides": [
+    {
+      "place_id": "place:CZ:svata-hora-pribram",
+      "place_name": "Svatá Hora",
+      "country_code": "CZ",
+      "shrine_id": "shrine:CZ:svata-hora",
+      "draft_order": 97,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Marian hill sanctuary overlooking Příbram and its recurring pilgrimage celebrations.",
+      "subtitle_fr": "Le sanctuaire marial sur les hauteurs de Příbram et ses fêtes de pèlerinage.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The sacred hill above Příbram",
+          "title_fr": "La colline sacrée au-dessus de Příbram",
+          "paragraphs": [
+            {
+              "en": "Svatá Hora, the Holy Mountain above Příbram, is a recognised Czech Marian pilgrimage destination. Its basilica is centred on a revered image of the Virgin, so the physical church and the devotion focused on that image form a single historical sanctuary. The image’s reputation within local religious tradition should be identified as devotional testimony, not treated as independent proof of a miraculous event.",
+              "fr": "Svatá Hora, la « Sainte Montagne » qui domine Příbram, est un haut lieu tchèque de pèlerinage marial. Sa basilique est centrée sur une image vénérée de la Vierge : l’église et la dévotion portée à cette image constituent donc un même sanctuaire historique. La réputation de l’image appartient à la tradition religieuse locale et ne doit pas être présentée comme une preuve indépendante de miracle.",
+              "source_id": "SHR-SVATA-HORA-OFFICIAL",
+              "source_url": "https://svata-hora.cz/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A basilica and a pilgrimage precinct",
+          "title_fr": "Une basilique et son ensemble de pèlerinage",
+          "paragraphs": [
+            {
+              "en": "The named destination is the basilica and its surrounding pilgrimage complex, rather than the entire town of Příbram. This distinction matters to readers wishing to understand how prayer unfolds around a particular Marian focus. The chapel, church and surrounding approaches should be treated as connected parts of the sacred place, without assigning a verified entrance to a merely illustrative map coordinate.",
+              "fr": "La destination nommée est la basilique et son ensemble de pèlerinage, non la ville entière de Příbram. Cette distinction permet de comprendre comment la prière s’organise autour d’un foyer marial particulier. La chapelle, l’église et leurs abords doivent être présentés comme des parties liées du lieu sacré, sans attribuer une entrée vérifiée à une simple coordonnée cartographique indicative.",
+              "source_id": "SHR-SVATA-HORA-OFFICIAL",
+              "source_url": "https://svata-hora.cz/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A living pilgrimage feast",
+          "title_fr": "Une fête de pèlerinage vivante",
+          "paragraphs": [
+            {
+              "en": "A shrine programme for 2025 describes an Assumption-season celebration involving the Rosary, a candlelight procession and a procession with the venerated statue. These observances show that Svatá Hora remains a functioning pilgrimage place rather than only a heritage monument. The 2025 poster documents that year’s celebration; it is not evidence that each ceremony will recur unchanged at an identical hour.",
+              "fr": "Un programme du sanctuaire pour 2025 décrit une célébration à la période de l’Assomption, avec Rosaire, procession aux flambeaux et procession avec la statue vénérée. Ces pratiques montrent que Svatá Hora reste un lieu de pèlerinage vivant et non seulement un monument patrimonial. L’affiche de 2025 renseigne sur cette édition, sans garantir que chaque cérémonie se répétera à la même heure les années suivantes.",
+              "source_id": "PIL-SVATA-HORA-FEAST",
+              "source_url": "https://svata-hora.cz/wp-content/uploads/Plakat-poutni-slavnost-2025.pdf"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:CZ:svata-hora-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://svata-hora.cz/",
+        "https://svata-hora.cz/wp-content/uploads/Plakat-poutni-slavnost-2025.pdf"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_AND_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_CLAIM_BY_CLAIM_EDITORIAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:CZ:stara-boleslav-st-wenceslas",
+      "place_name": "Bazilika svatého Václava — Stará Boleslav",
+      "country_code": "CZ",
+      "shrine_id": "shrine:CZ:stara-boleslav-wenceslas",
+      "draft_order": 98,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Saint Wenceslas’s martyrdom memory and the Czech national pilgrimage at Stará Boleslav.",
+      "subtitle_fr": "La mémoire du martyre de saint Venceslas et le pèlerinage national tchèque à Stará Boleslav.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The place associated with Wenceslas",
+          "title_fr": "Le lieu associé à Venceslas",
+          "paragraphs": [
+            {
+              "en": "Stará Boleslav holds a special place in Czech Catholic memory because it is associated with the martyrdom of Saint Wenceslas. The Basilica of Saint Wenceslas makes that memory visible in a particular sacred building, rather than merely commemorating the saint in the abstract. Historical accounts of his death and the present basilica should be distinguished from other churches dedicated to him throughout the Czech lands.",
+              "fr": "Stará Boleslav occupe une place particulière dans la mémoire catholique tchèque parce qu’elle est associée au martyre de saint Venceslas. La basilique Saint-Venceslas donne à ce souvenir un lieu sacré précis, au lieu de simplement commémorer le saint de manière abstraite. Il faut distinguer les récits de sa mort et la basilique actuelle des autres églises qui lui sont dédiées dans les pays tchèques.",
+              "source_id": "SHR-STARA-BOLESLAV-OFFICIAL",
+              "source_url": "https://www.staraboleslav.com/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A town of related devotions",
+          "title_fr": "Une ville de dévotions liées",
+          "paragraphs": [
+            {
+              "en": "The sanctuary’s material also refers to the Palladium tradition, a Marian devotion associated with Stará Boleslav. It enriches the town’s religious identity but should not cause the basilica of the martyr and every Marian object or chapel in the locality to be conflated. A good visitor guide can explain how these devotions relate while preserving the identity of each actual site.",
+              "fr": "Les documents du sanctuaire évoquent aussi la tradition du Palladium, dévotion mariale liée à Stará Boleslav. Celle-ci enrichit l’identité religieuse de la ville, sans justifier de confondre la basilique du martyr avec chaque objet marial ou chapelle de la localité. Un bon guide peut expliquer les liens entre ces dévotions tout en préservant l’identité de chaque lieu réel.",
+              "source_id": "SHR-STARA-BOLESLAV-OFFICIAL",
+              "source_url": "https://www.staraboleslav.com/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "The national pilgrimage on his feast",
+          "title_fr": "Le pèlerinage national à sa fête",
+          "paragraphs": [
+            {
+              "en": "The annual National Saint Wenceslas Pilgrimage gathers worshippers at Stará Boleslav for the saint’s feast on 28 September. It expresses a relationship between Catholic devotion and Czech historical memory through pilgrimage to a named destination. Each year’s order of ceremonies and practical arrangements must come from the organisers; a recurring feast is not an immutable procession route or timetable.",
+              "fr": "Le pèlerinage national de saint Venceslas rassemble les fidèles à Stará Boleslav pour sa fête, le 28 septembre. Il exprime le lien entre la dévotion catholique et la mémoire historique tchèque par un déplacement vers un lieu nommé. Le déroulement des cérémonies et les dispositions pratiques dépendent des organisateurs de chaque année : une fête récurrente ne constitue ni un itinéraire de procession ni un horaire immuables.",
+              "source_id": "PIL-ST-WENCESLAS-NATIONAL",
+              "source_url": "https://www.staraboleslav.com/narodni-svatovaclavska-pout/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:CZ:stara-boleslav-wenceslas"
+      ],
+      "saint_name_associations": [
+        "Saint Wenceslas"
+      ],
+      "bibliography_urls": [
+        "https://www.staraboleslav.com/",
+        "https://www.staraboleslav.com/narodni-svatovaclavska-pout/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_AND_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_CLAIM_BY_CLAIM_EDITORIAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:lourdes-litchfield",
+      "place_name": "The Shrine of Lourdes in Litchfield",
+      "country_code": "US",
+      "shrine_id": "shrine:US:lourdes-litchfield",
+      "draft_order": 99,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A Montfortian Lourdes grotto in Connecticut with outdoor devotional grounds.",
+      "subtitle_fr": "Une grotte de Lourdes des Montfortains au Connecticut, au cœur d’un espace de prière extérieur.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A Lourdes grotto in New England",
+          "title_fr": "Une grotte de Lourdes en Nouvelle-Angleterre",
+          "paragraphs": [
+            {
+              "en": "The Shrine of Lourdes in Litchfield is a Catholic pilgrimage site in Connecticut served by the Montfort Missionaries. Its stone grotto evokes the Marian devotion associated with Lourdes in France, but the American site has its own religious community, grounds and history of pilgrimage. A visitor should encounter Litchfield as an actual sanctuary, not as a misplaced pin for the French Grotto of Massabielle.",
+              "fr": "Le sanctuaire de Lourdes à Litchfield est un lieu catholique de pèlerinage du Connecticut, desservi par les Missionnaires montfortains. Sa grotte de pierre évoque la dévotion mariale de Lourdes en France, mais ce lieu américain possède sa propre communauté religieuse, ses terrains et son histoire de pèlerinage. Le visiteur doit découvrir Litchfield comme un sanctuaire réel, non comme un point déplacé de la grotte française de Massabielle.",
+              "source_id": "SHR-LOURDES-LITCHFIELD",
+              "source_url": "https://www.shrinect.org/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Outdoor Stations of the Cross",
+          "title_fr": "Un chemin de croix en plein air",
+          "paragraphs": [
+            {
+              "en": "The sanctuary’s grotto is accompanied by outdoor devotional spaces, including Stations of the Cross. These features invite a form of pilgrimage that moves between prayer before the Marian image and reflection on Christ’s Passion. They are parts of the same Litchfield site, and a guide should describe them as such without supplying an invented circuit distance or implying that each station is a separately administered chapel.",
+              "fr": "La grotte du sanctuaire est accompagnée d’espaces de dévotion extérieurs, notamment un chemin de croix. Ils invitent à un pèlerinage qui associe la prière devant l’image mariale et la méditation de la Passion du Christ. Ces éléments appartiennent au même lieu de Litchfield ; le guide doit les présenter ainsi, sans inventer de distance de parcours ni supposer que chaque station est une chapelle administrée séparément.",
+              "source_id": "SHR-LOURDES-LITCHFIELD",
+              "source_url": "https://www.shrinect.org/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "The shrine’s seasonal worship and visits",
+          "title_fr": "Les offices saisonniers et les visites du sanctuaire",
+          "paragraphs": [
+            {
+              "en": "The custodian’s visitor material records organised pilgrimage activity and seasonal Mass arrangements, including worship during summer. This makes the shrine a living religious destination beyond its architectural reference to Lourdes. Prospective pilgrim groups should consult the sanctuary’s own visit information for access and celebrations, rather than treating an earlier seasonal programme as a year-round guarantee.",
+              "fr": "Les renseignements des responsables font état de pèlerinages organisés et d’horaires saisonniers de messes, notamment pendant l’été. Le sanctuaire demeure ainsi une destination religieuse vivante, au-delà de sa référence architecturale à Lourdes. Les groupes de pèlerins doivent consulter ses informations de visite pour les accès et les célébrations, sans considérer un ancien programme saisonnier comme une garantie valable toute l’année.",
+              "source_id": "PIL-LOURDES-LITCHFIELD",
+              "source_url": "https://www.shrinect.org/visit"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:US:lourdes-litchfield-destination"
+      ],
+      "saint_name_associations": [
+        "Saint Bernadette Soubirous",
+        "Saint Louis de Montfort"
+      ],
+      "bibliography_urls": [
+        "https://www.shrinect.org/",
+        "https://www.shrinect.org/visit"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_AND_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_CLAIM_BY_CLAIM_EDITORIAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:US:st-anne-fiskdale",
+      "place_name": "St. Anne Shrine",
+      "country_code": "US",
+      "shrine_id": "shrine:US:st-anne-fiskdale",
+      "draft_order": 100,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A New England Saint Anne shrine sustained by its July novena since the nineteenth century.",
+      "subtitle_fr": "Un sanctuaire de sainte Anne en Nouvelle-Angleterre, vivant de sa neuvaine de juillet depuis le XIXe siècle.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Saint Anne’s shrine at Fiskdale",
+          "title_fr": "Le sanctuaire Sainte-Anne de Fiskdale",
+          "paragraphs": [
+            {
+              "en": "Saint Anne Shrine at Fiskdale, in the Sturbridge area of Massachusetts, is an established Catholic destination dedicated to the mother of the Virgin Mary. Its parish-shrine setting includes devotional chapels as well as a continuing community of prayer. This local identity matters: the dedication to Saint Anne links it spiritually to other shrines, but the New England pilgrimage has its own history and programme.",
+              "fr": "Le sanctuaire Sainte-Anne de Fiskdale, dans la région de Sturbridge au Massachusetts, est une destination catholique établie dédiée à la mère de la Vierge Marie. Son ensemble paroissial et sanctuaire comprend des chapelles de dévotion ainsi qu’une communauté de prière active. Cette identité locale importe : la dédicace à sainte Anne le relie spirituellement à d’autres sanctuaires, mais le pèlerinage de Nouvelle-Angleterre possède son histoire et son programme propres.",
+              "source_id": "SHR-ST-ANNE-FISKDALE",
+              "source_url": "https://www.stannestpatrickparish.com/st-annes-shrine"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The long-running July novena",
+          "title_fr": "La longue neuvaine de juillet",
+          "paragraphs": [
+            {
+              "en": "The shrine records its annual Saint Anne novena as continuing since 1887, a notable example of a devotional practice sustained across generations. The programme runs from 18 to 26 July and culminates on the saint’s feast. Its continuity is a historical characteristic of the sanctuary, but the ceremonies and celebrants of any particular year should be read from that year’s announcement.",
+              "fr": "Le sanctuaire présente sa neuvaine annuelle de sainte Anne comme une pratique poursuivie depuis 1887, exemple remarquable d’une dévotion transmise entre générations. Elle se déroule du 18 au 26 juillet et culmine à la fête de la sainte. Cette continuité caractérise l’histoire du lieu, mais les cérémonies et les célébrants d’une année donnée doivent être lus dans le programme correspondant.",
+              "source_id": "PIL-ST-ANNE-NOVENA",
+              "source_url": "https://www.stannestpatrickparish.com/novena-to-st-anne"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Prayer across the shrine grounds",
+          "title_fr": "La prière dans l’ensemble du sanctuaire",
+          "paragraphs": [
+            {
+              "en": "The parish’s information identifies spaces for devotional visits and the daily Rosary, while the annual novena includes public worship and a Rosary procession. Those activities show how individual prayer and a communal feast coexist within one destination. The shrine’s chapels may be meaningful internal stops, yet they should not automatically generate duplicate Sacred Atlas Places without separate physical-site evidence.",
+              "fr": "Les informations paroissiales mentionnent des espaces de visite dévotionnelle et le Rosaire quotidien, tandis que la neuvaine annuelle comprend le culte public et une procession du Rosaire. Ces pratiques montrent la coexistence de la prière personnelle et d’une fête communautaire dans un même lieu. Les chapelles peuvent constituer des étapes intérieures importantes sans devoir automatiquement produire des lieux distincts en double dans l’Atlas.",
+              "source_id": "SHR-ST-ANNE-FISKDALE",
+              "source_url": "https://www.stannestpatrickparish.com/st-annes-shrine"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:US:st-anne-fiskdale-destination",
+        "pilgrimage:US:st-anne-fiskdale-novena"
+      ],
+      "saint_name_associations": [
+        "Saint Anne",
+        "Saint Joachim"
+      ],
+      "bibliography_urls": [
+        "https://www.stannestpatrickparish.com/st-annes-shrine",
+        "https://www.stannestpatrickparish.com/novena-to-st-anne"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_AND_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_CLAIM_BY_CLAIM_EDITORIAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:PL:gietrzwald-basilica",
+      "place_name": "Sanctuary of Our Lady of Gietrzwałd",
+      "country_code": "PL",
+      "shrine_id": "shrine:PL:gietrzwald",
+      "draft_order": 101,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The 1877 Marian events at Gietrzwałd and the September pilgrimage tradition.",
+      "subtitle_fr": "Les événements mariaux de Gietrzwałd en 1877 et la tradition du pèlerinage de septembre.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Gietrzwałd and the events of 1877",
+          "title_fr": "Gietrzwałd et les événements de 1877",
+          "paragraphs": [
+            {
+              "en": "The sanctuary at Gietrzwałd in Warmia is associated with Marian apparitions reported in 1877. The local archdiocese preserves the memory of those events, which became central to the religious identity of this particular Polish pilgrimage place. A historical account should distinguish the reported experiences, the Church’s reception of the devotion and the visible sanctuary buildings, rather than collapsing them into a single undifferentiated miracle claim.",
+              "fr": "Le sanctuaire de Gietrzwałd, en Warmie, est lié à des apparitions mariales rapportées en 1877. L’archidiocèse local conserve la mémoire de ces événements, devenus centraux dans l’identité religieuse de ce lieu de pèlerinage polonais. Un récit historique doit distinguer les expériences rapportées, l’accueil ecclésial de la dévotion et les bâtiments visibles du sanctuaire, sans les réduire à une affirmation miraculeuse indifférenciée.",
+              "source_id": "SHR-GIETRZWALD-ARCHDIOCESE",
+              "source_url": "https://archwarmia.pl/aktualnosci/149-rozpoczecia-objawien-nmp-w-gietrzwaldzie/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A Marian pilgrimage in Warmia",
+          "title_fr": "Un pèlerinage marial en Warmie",
+          "paragraphs": [
+            {
+              "en": "The shrine is a specific centre of Catholic prayer in the region of Warmia, and the year 1877 helps explain the pilgrims’ attachment to it. Its importance is not interchangeable with that of other Polish Marian sanctuaries such as Częstochowa or Licheń. The guide should retain the name Gietrzwałd and connect its devotion to the actual local church and grounds rather than merely to the reported apparition dates.",
+              "fr": "Le sanctuaire est un centre particulier de prière catholique en Warmie, et l’année 1877 contribue à expliquer l’attachement des pèlerins au lieu. Son importance ne se confond pas avec celle d’autres sanctuaires mariaux polonais comme Częstochowa ou Licheń. Le guide doit conserver le nom Gietrzwałd et rattacher sa dévotion à l’église et aux terrains réels, et non seulement aux dates des apparitions rapportées.",
+              "source_id": "SHR-GIETRZWALD-ARCHDIOCESE",
+              "source_url": "https://archwarmia.pl/aktualnosci/149-rozpoczecia-objawien-nmp-w-gietrzwaldzie/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "The Nativity of Mary pilgrimage",
+          "title_fr": "Le pèlerinage de la Nativité de Marie",
+          "paragraphs": [
+            {
+              "en": "The archdiocesan material links the shrine’s annual pilgrimage celebrations with the Nativity of the Virgin Mary, observed on 8 September. That feast gives a recurring liturgical setting to a sanctuary known for the events of 1877. The annual pattern should be explained without assuming that every Mass, procession or visitor arrangement takes exactly the same form each September.",
+              "fr": "Les documents archidiocésains relient les célébrations annuelles du sanctuaire à la Nativité de la Vierge Marie, célébrée le 8 septembre. Cette fête donne un cadre liturgique récurrent à un sanctuaire connu pour les événements de 1877. Il convient d’expliquer cette tradition annuelle sans supposer que chaque messe, procession ou modalité de visite conserve exactement la même forme chaque mois de septembre.",
+              "source_id": "SHR-GIETRZWALD-ARCHDIOCESE",
+              "source_url": "https://archwarmia.pl/aktualnosci/149-rozpoczecia-objawien-nmp-w-gietrzwaldzie/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:PL:gietrzwald-visit"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://archwarmia.pl/aktualnosci/149-rozpoczecia-objawien-nmp-w-gietrzwaldzie/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_AND_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_CLAIM_BY_CLAIM_EDITORIAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:LT:siluva-apparition-chapel",
+      "place_name": "Our Lady of Šiluva — Apparition Chapel",
+      "country_code": "LT",
+      "shrine_id": "shrine:LT:siluva",
+      "draft_order": 102,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "Šiluva’s Apparition Chapel and the annual Lithuanian Šilinės pilgrimage.",
+      "subtitle_fr": "La chapelle des apparitions de Šiluva et le pèlerinage annuel lituanien des Šilinės.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The Apparition Chapel at Šiluva",
+          "title_fr": "La chapelle des apparitions de Šiluva",
+          "paragraphs": [
+            {
+              "en": "Šiluva is an established Lithuanian Catholic Marian pilgrimage centre. The canonical Place selected here is its Apparition Chapel, a specific devotional building within a broader sanctuary landscape. That distinction helps pilgrims understand the relation between a physical chapel, the reported Marian tradition and other places of worship at Šiluva; they should not be silently represented as the same doorway.",
+              "fr": "Šiluva est un centre établi de pèlerinage marial catholique en Lituanie. Le lieu canonique retenu ici est sa chapelle des apparitions, édifice dévotionnel précis situé au sein d’un ensemble sacré plus vaste. Cette distinction aide les pèlerins à comprendre les liens entre la chapelle, la tradition mariale rapportée et les autres lieux de culte de Šiluva, qui ne doivent pas être représentés comme une seule entrée.",
+              "source_id": "SHR-SILUVA-OFFICIAL",
+              "source_url": "https://siluva.lt/apie-sventove/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Tradition and the present sanctuary",
+          "title_fr": "La tradition et le sanctuaire actuel",
+          "paragraphs": [
+            {
+              "en": "The sanctuary presents Šiluva through its Marian history and the continuing life of prayer associated with the place. An interpretive guide should distinguish the tradition about an apparition from independently observable features of the modern chapel. This does not diminish the devotion; it keeps clear the difference between an inherited religious narrative and the visitor’s encounter with a particular building today.",
+              "fr": "Le sanctuaire présente Šiluva à travers son histoire mariale et la vie de prière qui s’y poursuit. Un guide doit distinguer la tradition liée à une apparition des caractéristiques observables de la chapelle actuelle. Cette précision ne diminue pas la dévotion ; elle clarifie la différence entre un récit religieux transmis et la rencontre du visiteur avec un édifice particulier aujourd’hui.",
+              "source_id": "SHR-SILUVA-OFFICIAL",
+              "source_url": "https://siluva.lt/apie-sventove/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "The Šilinės gatherings",
+          "title_fr": "Les rassemblements des Šilinės",
+          "paragraphs": [
+            {
+              "en": "The annual Šilinės pilgrimage draws worshippers to Šiluva for a season of Marian celebrations. The official sanctuary programme differentiates individual days and intentions, which can change from year to year. The Atlas can record the recurring pilgrimage and its cultural importance while referring visitors to the live local programme for the order of ceremonies and access arrangements.",
+              "fr": "Le pèlerinage annuel des Šilinės rassemble des fidèles à Šiluva pendant une période de célébrations mariales. Le programme officiel du sanctuaire distingue les journées et leurs intentions, susceptibles de changer d’une année à l’autre. L’Atlas peut présenter le pèlerinage récurrent et son importance culturelle tout en renvoyant les visiteurs au programme local en vigueur pour les cérémonies et les modalités d’accès.",
+              "source_id": "SHR-SILUVA-OFFICIAL",
+              "source_url": "https://siluva.lt/apie-sventove/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:LT:siluva-visit"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://siluva.lt/apie-sventove/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_AND_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_CLAIM_BY_CLAIM_EDITORIAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:NI:cuapa-national-shrine",
+      "place_name": "National Shrine of Our Lady of Cuapa",
+      "country_code": "NI",
+      "shrine_id": "shrine:NI:cuapa",
+      "draft_order": 103,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A Nicaraguan Marian pilgrimage connected with reported experiences in 1980.",
+      "subtitle_fr": "Un pèlerinage marial nicaraguayen lié à des expériences rapportées en 1980.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The local Marian story at Cuapa",
+          "title_fr": "Le récit marial local de Cuapa",
+          "paragraphs": [
+            {
+              "en": "The National Shrine of Our Lady of Cuapa in Nicaragua is associated with Marian experiences reported in 1980. The existing source recounts the tradition and helps explain why this particular locality became a destination of prayer. A careful guide attributes the reports to their narrators and distinguishes the site’s present devotional identity from any independent judgment about supernatural authenticity.",
+              "fr": "Le sanctuaire national Notre-Dame de Cuapa, au Nicaragua, est associé à des expériences mariales rapportées en 1980. La source conservée raconte cette tradition et aide à comprendre pourquoi cette localité est devenue une destination de prière. Un guide rigoureux attribue les récits à leurs témoins et distingue l’identité dévotionnelle actuelle du lieu de tout jugement indépendant sur leur authenticité surnaturelle.",
+              "source_id": "SHR-CUAPA-MARIAN-FATHERS",
+              "source_url": "https://thedivinemercy.org/articles/who-was-our-lady-cuapa"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Why pilgrims return to the place",
+          "title_fr": "Pourquoi les pèlerins reviennent au lieu",
+          "paragraphs": [
+            {
+              "en": "Cuapa’s importance lies in the relationship between the reported events and an identifiable place where Catholics now pray. The site should not be presented as one of several interchangeable Marian sanctuaries in the region, nor as a claim that every reported detail has received the same level of ecclesiastical endorsement. The history belongs to Cuapa itself and requires its proper local name.",
+              "fr": "L’importance de Cuapa réside dans le lien entre les événements rapportés et un lieu identifiable où les catholiques prient aujourd’hui. Le site ne doit pas devenir un sanctuaire marial interchangeable avec d’autres de la région, ni laisser entendre que chaque détail du récit bénéficie du même niveau d’approbation ecclésiastique. Cette histoire appartient à Cuapa et doit conserver son nom local propre.",
+              "source_id": "SHR-CUAPA-MARIAN-FATHERS",
+              "source_url": "https://thedivinemercy.org/articles/who-was-our-lady-cuapa"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A pilgrimage without an invented annual timetable",
+          "title_fr": "Un pèlerinage sans calendrier annuel inventé",
+          "paragraphs": [
+            {
+              "en": "The source establishes Cuapa’s devotional significance but does not justify assigning a universal annual programme with exact Mass or procession times. Pilgrims may visit to pray in connection with the Marian tradition, but practical opening and worship information requires current local confirmation. The Atlas should avoid imposing a feast date merely because another apparition shrine uses one.",
+              "fr": "La source établit l’importance dévotionnelle de Cuapa, sans justifier l’attribution d’un programme annuel universel avec horaires précis de messes ou de processions. Les pèlerins peuvent s’y rendre pour prier en lien avec la tradition mariale, mais les conditions d’accès et de culte doivent être confirmées localement. L’Atlas ne doit pas imposer une date de fête empruntée à un autre sanctuaire d’apparitions.",
+              "source_id": "SHR-CUAPA-MARIAN-FATHERS",
+              "source_url": "https://thedivinemercy.org/articles/who-was-our-lady-cuapa"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:NI:cuapa-visit"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://thedivinemercy.org/articles/who-was-our-lady-cuapa"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_AND_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_CLAIM_BY_CLAIM_EDITORIAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:VE:finca-betania",
+      "place_name": "Our Lady of Betania Diocesan Shrine",
+      "country_code": "VE",
+      "shrine_id": "shrine:VE:betania",
+      "draft_order": 104,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Betania Marian sanctuary and accounts of experiences reported between 1976 and 1984.",
+      "subtitle_fr": "Le sanctuaire marial de Betania et les récits d’expériences rapportées entre 1976 et 1984.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Finca Betania in Venezuela",
+          "title_fr": "Finca Betania au Venezuela",
+          "paragraphs": [
+            {
+              "en": "Finca Betania became known as a Venezuelan Marian pilgrimage destination through experiences reported between 1976 and 1984. The site is associated with a particular named property and local devotional history, not with every Marian chapel or prayer group that later adopted the name Betania. The reported events should be identified as testimony within the shrine’s history rather than independently verified physical occurrences.",
+              "fr": "Finca Betania est devenue une destination mariale de pèlerinage au Venezuela à travers des expériences rapportées entre 1976 et 1984. Le lieu est lié à une propriété nommée et à une histoire dévotionnelle locale, non à toutes les chapelles ou groupes de prière qui ont ensuite adopté le nom de Betania. Les événements rapportés doivent être présentés comme des témoignages inscrits dans l’histoire du sanctuaire, non comme des faits physiques indépendamment vérifiés.",
+              "source_id": "SHR-BETANIA-ASSOCIATION",
+              "source_url": "https://www.mariaesperanza.org/apparitions-in-finca-betania/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The diocesan dimension",
+          "title_fr": "La dimension diocésaine",
+          "paragraphs": [
+            {
+              "en": "The canonical description records diocesan recognition connected with the Betania tradition. This must be expressed precisely: recognition or permission concerning a devotion is an ecclesiastical assessment with a defined scope, not a blanket guarantee of all statements made by devotees. Any fuller chronology of decrees should be checked directly against the relevant bishop’s texts before publication.",
+              "fr": "La description canonique mentionne une reconnaissance diocésaine liée à la tradition de Betania. Il faut l’exprimer avec précision : une reconnaissance ou une permission concernant une dévotion constitue une appréciation ecclésiastique de portée définie, et non une garantie générale de toutes les affirmations faites par les fidèles. Toute chronologie plus détaillée des décrets doit être confrontée aux textes épiscopaux correspondants avant publication.",
+              "source_id": "SHR-BETANIA-ASSOCIATION",
+              "source_url": "https://www.mariaesperanza.org/apparitions-in-finca-betania/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "The shrine as a destination today",
+          "title_fr": "Le sanctuaire comme destination aujourd’hui",
+          "paragraphs": [
+            {
+              "en": "For the Sacred Atlas, Finca Betania is first a specific pilgrimage site with an identifiable Marian dedication. Its visitor card should preserve that location and offer a concise explanation of the associated testimony and local ecclesiastical history. The source does not establish a permanent programme of processions or Masses, so current access and liturgy must not be fabricated from the years of the reported events.",
+              "fr": "Pour l’Atlas sacré, Finca Betania est d’abord un lieu de pèlerinage précis, avec une dévotion mariale identifiable. Sa fiche doit préserver cet emplacement et expliquer brièvement les témoignages associés et l’histoire ecclésiastique locale. La source ne fournit pas de programme permanent de processions ou de messes ; les accès et la liturgie actuelle ne doivent pas être inventés à partir des années des événements rapportés.",
+              "source_id": "SHR-BETANIA-ASSOCIATION",
+              "source_url": "https://www.mariaesperanza.org/apparitions-in-finca-betania/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:VE:betania-visit"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.mariaesperanza.org/apparitions-in-finca-betania/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_AND_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_CLAIM_BY_CLAIM_EDITORIAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:AR:san-nicolas-virgen-rosario",
+      "place_name": "Sanctuary of Mary of the Rosary of San Nicolás",
+      "country_code": "AR",
+      "shrine_id": "shrine:AR:san-nicolas",
+      "draft_order": 105,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Marian sanctuary at San Nicolás and its annual pilgrimage around 25 September.",
+      "subtitle_fr": "Le sanctuaire marial de San Nicolás et son pèlerinage annuel autour du 25 septembre.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Our Lady of the Rosary at San Nicolás",
+          "title_fr": "Notre-Dame du Rosaire à San Nicolás",
+          "paragraphs": [
+            {
+              "en": "San Nicolás in Argentina is home to a Marian sanctuary dedicated to Mary of the Rosary. The shrine’s identity is connected with a local history of devotion rather than with the many other churches dedicated to Our Lady of the Rosary across Latin America. A Place profile should preserve the actual destination and its proper name, without borrowing photographs or architectural claims from unrelated Rosary basilicas.",
+              "fr": "San Nicolás, en Argentine, abrite un sanctuaire marial dédié à Notre-Dame du Rosaire. Son identité est liée à une histoire locale de dévotion, et non aux nombreuses autres églises consacrées à Notre-Dame du Rosaire dans l’Amérique latine. Une fiche de lieu doit préserver la destination réelle et son nom propre, sans emprunter photographies ou éléments architecturaux à des basiliques du Rosaire sans lien.",
+              "source_id": "SHR-SAN-NICOLAS-EPC",
+              "source_url": "https://episcopado.org/ver/1310"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The September feast",
+          "title_fr": "La fête de septembre",
+          "paragraphs": [
+            {
+              "en": "The Argentine bishops’ press material documents the sanctuary’s 25 September feast and the pilgrimages that accompany it. This is concrete evidence that the devotion has become a recurring public religious gathering, rather than merely a story told about the site. The date can appear as a traditional observance, but the order of Masses and processions needs the current year’s organiser announcement.",
+              "fr": "Les documents de presse des évêques argentins attestent la fête du sanctuaire le 25 septembre et les pèlerinages qui l’accompagnent. Ils montrent concrètement que la dévotion est devenue un rassemblement religieux public récurrent, et non seulement un récit lié au lieu. La date peut figurer comme observance traditionnelle, mais l’ordre des messes et des processions doit provenir des annonces des organisateurs pour l’année en cours.",
+              "source_id": "SHR-SAN-NICOLAS-EPC",
+              "source_url": "https://episcopado.org/ver/1310"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Distinguishing devotion, history and programme",
+          "title_fr": "Distinguer dévotion, histoire et programme",
+          "paragraphs": [
+            {
+              "en": "The sanctuary’s Marian dedication, any reported origins of the devotion, and the contemporary pilgrimage each answer different questions. The episcopal source firmly supports the named feast and gathering; it should not be stretched into a detailed apparition chronology or a claim about all private messages associated with San Nicolás. This distinction helps readers approach the living pilgrimage without confusing testimony and formal ecclesial findings.",
+              "fr": "La dédicace mariale du sanctuaire, les origines rapportées de la dévotion et le pèlerinage contemporain répondent à des questions différentes. La source épiscopale étaye la fête et le rassemblement nommés ; elle ne doit pas être étendue à une chronologie détaillée des apparitions ni à une affirmation sur tous les messages privés associés à San Nicolás. Cette distinction aide à découvrir un pèlerinage vivant sans confondre témoignage et constat ecclésiastique formel.",
+              "source_id": "SHR-SAN-NICOLAS-EPC",
+              "source_url": "https://episcopado.org/ver/1310"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:AR:san-nicolas-visit"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://episcopado.org/ver/1310"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_AND_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_CLAIM_BY_CLAIM_EDITORIAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:BE:sanctuaire-sainte-julienne-cornillon",
+      "place_name": "Sanctuaire Sainte-Julienne de Cornillon",
+      "country_code": "BE",
+      "shrine_id": "shrine:20261009:BE:sanctuaire-sainte-julienne-cornillon",
+      "draft_order": 106,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Liège sanctuary of Saint Juliana and the Eucharistic devotion behind Corpus Christi.",
+      "subtitle_fr": "Le sanctuaire liégeois de sainte Julienne et la dévotion eucharistique à l’origine de la Fête-Dieu.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Saint Juliana at Mont Cornillon",
+          "title_fr": "Sainte Julienne au mont Cornillon",
+          "paragraphs": [
+            {
+              "en": "The sanctuary of Saint Juliana at Mont Cornillon in Liège recalls the religious life of a woman whose Eucharistic devotion influenced the development of the feast of Corpus Christi. The place is a concrete site of local religious memory, not simply an illustration of the universal feast. Its chapel and associated religious community preserve a link with the historical setting of Juliana’s prayer.",
+              "fr": "Le sanctuaire Sainte-Julienne du mont Cornillon, à Liège, rappelle la vie religieuse d’une femme dont la dévotion eucharistique a contribué au développement de la Fête-Dieu. Le lieu est un site concret de mémoire religieuse locale, et non une simple illustration de la fête universelle. Sa chapelle et la communauté qui lui est associée conservent un lien avec le cadre historique de la prière de Julienne.",
+              "source_id": "SHR-PIL-BULK-BE-sanctuaire-sainte-julienne-cornillon",
+              "source_url": "https://www.saintejulienne.org/"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "From personal devotion to a Church feast",
+          "title_fr": "De la dévotion personnelle à une fête de l’Église",
+          "paragraphs": [
+            {
+              "en": "Juliana’s importance lies in the way Eucharistic adoration and a local movement of devotion contributed to wider liturgical history. The later establishment of Corpus Christi involved the action of Church authorities and should not be described as if Juliana alone could institute a universal feast. The sanctuary provides a suitable setting for explaining this relationship between contemplation, local worship and ecclesiastical recognition.",
+              "fr": "L’importance de Julienne tient à la manière dont l’adoration eucharistique et un mouvement local de dévotion ont contribué à l’histoire liturgique plus vaste. L’établissement ultérieur de la Fête-Dieu impliqua l’action des autorités ecclésiastiques et ne doit pas être présenté comme si Julienne avait pu, à elle seule, instituer une fête universelle. Le sanctuaire permet d’expliquer les liens entre contemplation, culte local et reconnaissance par l’Église.",
+              "source_id": "SHR-PIL-BULK-BE-sanctuaire-sainte-julienne-cornillon",
+              "source_url": "https://www.saintejulienne.org/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "The chapel and ongoing adoration",
+          "title_fr": "La chapelle et l’adoration aujourd’hui",
+          "paragraphs": [
+            {
+              "en": "The sanctuary’s current identity includes a historical chapel, the presence of a Poor Clare community and the continuing tradition of Eucharistic adoration. A pilgrim visiting Cornillon encounters a living place of prayer connected with its founding memory. The guide should keep the chapel distinct from other churches in Liège and refer to current custodians for access to the religious community’s spaces.",
+              "fr": "L’identité actuelle du sanctuaire comprend une chapelle historique, la présence d’une communauté de Clarisses et la continuité de l’adoration eucharistique. Le pèlerin qui visite Cornillon découvre un lieu de prière vivant, lié à sa mémoire fondatrice. Le guide doit distinguer la chapelle des autres églises de Liège et renvoyer aux responsables actuels pour connaître les conditions d’accès aux espaces de la communauté.",
+              "source_id": "SHR-PIL-BULK-BE-sanctuaire-sainte-julienne-cornillon",
+              "source_url": "https://www.saintejulienne.org/"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:20261009:BE:sanctuaire-sainte-julienne-cornillon:destination"
+      ],
+      "saint_name_associations": [
+        "Saint Julienne of Cornillon"
+      ],
+      "bibliography_urls": [
+        "https://www.saintejulienne.org/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_AND_NOT_REFETCHED",
+      "next_gate": "SUBSTANTIVE_CLAIM_BY_CLAIM_EDITORIAL_REVIEW_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    }
+  ]
+}
