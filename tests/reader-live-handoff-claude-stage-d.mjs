@@ -31,7 +31,8 @@ test("wheel uses Claude's original 600x600 three-ring arc math and white hand",(
    priestPosition:{station:"ALTAR_CENTER"}});
  assert.equal((out.match(/data-wheel-segment="/g)||[]).length,65);
  assert.match(out,/viewBox="-300 -300 600 600"/);
- assert.match(out,/222,262/); // original section ring radii encoded into arc path
+ assert.match(out,/A262,262/); // exact original outer-section radius
+ assert.match(out,/A222,222/);
  assert.match(out,/x2="0" y2="-262"/);
  assert.match(out,/stroke="#fff" stroke-width="6"/);
  assert.match(out,/class="ao-claude-wheel-left"/);
