@@ -112,6 +112,7 @@ import { isFirstWeekday as calendarIsFirstWeekday } from "../calendar/intelligen
 import { DEVOTIONAL_UX_CONTRACT_VERSION, devotionalUxContract } from "./devotional-ux-contract.js";
 import { LITANY_SOURCE_WITNESSES, LITANY_WITNESS_REVIEW_V1, reviewLitanyTranscription, extractLitanyProper, paginateLitanyProper } from "./litany-source.js";
 import {loadPrivateLitanyLocal} from "./litany-private-local-loader.v1.js";
+import {loadRogationsLatinPrayer} from "./rogations-latin-prayer.v1.js";
 import {BATCH03_LITANY_EDITION_POLICY,BATCH03_ICRSP_MAJOR_PROCESSION_STEPS,BATCH03_LITANY_SOURCE_STATUS,batch03LitanyUse} from "./litany-1962-use-policy.js";
 import {PENITENTIAL_PSALMS_VULGATE,penitentialPsalmReference,auditPenitentialPsalmResponse,PENITENTIAL_PSALMS_TEXT_STATUS} from "./penitential-psalms-source.js";
 import {localPenitentialPsalmWitness} from "./penitential-psalms-local-witnesses.v1.js";
@@ -382,6 +383,7 @@ let FS={step:0,intention:false,communion:false,rosary:false,meditation:false,con
 let PEN={step:0,token:0};
 let PEN_CACHE={busy:false,complete:false,checked:0,failed:[],audit:[],message:''};
 let LIT={step:0,sections:null,loading:false,error:'',token:0,language:null,use:'private',sourceMode:null};
+let ROG_PRAY={step:0,sections:null,loading:false,error:'',token:0};
 let SEVEN={step:0,sections:null,opening:'',appendix:'',loading:false,error:'',srcToken:0,scriptToken:0,scriptureOnly:false};
 let FORTY={mode:'choose',step:0,solemnStep:0};
 let STATIONS={step:0,optionsOpen:false,publicPosture:false,simpleResponses:false,sanPolo:false};
@@ -2946,7 +2948,8 @@ function horizontalStep(direction){
  if(view==='adoration'&&ADOR.mode==='holy'){ADOR.holyStep=Math.max(0,Math.min(holySteps().length-1,ADOR.holyStep+d));render();return true}
  if(view==='adoration'&&ADOR.mode==='four'){ADOR.fourStep=Math.max(0,Math.min(fourSteps().length-1,ADOR.fourStep+d));render();return true}
  if(view==='penitential'){PEN.step=Math.max(0,Math.min(6,PEN.step+d));render();return true}
- if(view==='litany'&&LIT.sections?.length){LIT.step=Math.max(0,Math.min(LIT.sections.length-1,LIT.step+d));render();return true}
+ if(view==='litany'&&LIT.use==='major'&&ROG_PRAY.sections?.length){ROG_PRAY.step=Math.max(0,Math.min(ROG_PRAY.sections.length-1,ROG_PRAY.step+d));render();return true}
+ if(view==='litany'&&LIT.use==='private'&&LIT.sections?.length){LIT.step=Math.max(0,Math.min(LIT.sections.length-1,LIT.step+d));render();return true}
  if(view==='sevenWords'){SEVEN.step=Math.max(0,Math.min(6,SEVEN.step+d));render();return true}if(view==='tenebrae'&&TEN.model){TEN.step=Math.max(0,Math.min(TEN.model.steps.length-1,TEN.step+d));render();return true}
  if(view==='fortyHours'){FORTY.step=Math.max(0,Math.min(FORTY_STAGES.length-1,FORTY.step+d));render();return true}
  if(view==='firstFriday'){FF.step=Math.max(0,Math.min(FF_STAGES.length-1,FF.step+d));render();return true}
@@ -3962,13 +3965,13 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
  // cards and emits explicit, user-initiated navigation.
  if(['penitential','litany','sevenWords','fortyHours'].includes(view))queueMicrotask(()=>{
   const owner=view;
-  if(owner==='litany'&&!LIT.sections?.length)return; // fail closed during historical witness loading
+  if(owner==='litany'&&!(LIT.use==='major'?ROG_PRAY.sections?.length:LIT.use==='private'?LIT.sections?.length:0))return; // no unverified/historical-public reader
   const stages=owner==='penitential'?PEN_PSALMS.map((p,i)=>({
     id:'penitential-'+i,title:'Psalm '+p.trad+(p.modern!==p.trad?' ('+p.modern+')':'')
-   })):owner==='litany'?LIT.sections.map((x,i)=>({id:'litany-'+i,title:x.title}))
+   })):owner==='litany'?(LIT.use==='major'?ROG_PRAY.sections.map((x,i)=>({id:'rogations-'+x.id,title:isFr()?x.title.fr:x.title.en})):LIT.sections.map((x,i)=>({id:'litany-'+i,title:x.title})))
    :owner==='sevenWords'?WORD_REFS.map((_,i)=>({id:'word-'+(i+1),title:(isFr()?WORD_LABELS.fr:WORD_LABELS.en)[i]}))
    :FORTY_STAGES.map((x,i)=>({id:'forty-'+i,title:L(x[0],x[1])}));
-  const step=owner==='penitential'?PEN.step:owner==='litany'?LIT.step
+  const step=owner==='penitential'?PEN.step:owner==='litany'?(LIT.use==='major'?ROG_PRAY.step:LIT.step)
    :owner==='sevenWords'?SEVEN.step:FORTY.step;
   const reader=installSequentialDevotionalReader({
    mount:m,kind:owner,chapters:stages,activeIndex:step,
@@ -3980,7 +3983,7 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
    onNavigate:i=>{
     if(view!==owner)return;
     if(owner==='penitential')PEN.step=i;
-    else if(owner==='litany')LIT.step=i;
+    else if(owner==='litany'){if(LIT.use==='major')ROG_PRAY.step=i;else LIT.step=i;}
     else if(owner==='sevenWords')SEVEN.step=i;
     else FORTY.step=i;
     render();
@@ -4935,7 +4938,9 @@ function onClick(e){
  if(b.matches('[data-p435930-pen-cache]')){void warmPenitentialPsalmCorpus();return}
  if(b.matches('[data-p435930-pen-litany]')){pushView();view='litany';LIT.step=0;return render()}
  if(b.dataset.p435930LitStep!=null){LIT.step=Math.max(0,Math.min((LIT.sections?.length||1)-1,+b.dataset.p435930LitStep));return render()}
- if(b.hasAttribute('data-p435930-lit-use')){const choice=b.dataset.p435930LitUse;if(!BATCH03_LITANY_EDITION_POLICY[choice])return;LIT.use=choice;LIT.step=0;return render()}
+ if(b.hasAttribute('data-p435930-lit-use')){const choice=b.dataset.p435930LitUse;if(!BATCH03_LITANY_EDITION_POLICY[choice])return;LIT.use=choice;LIT.step=0;ROG_PRAY.step=0;return render()}
+ if(b.matches('[data-p435930-rog-retry]')){ROG_PRAY.error='';ROG_PRAY.sections=null;ROG_PRAY.step=0;return render()}
+ if(b.matches('[data-p435930-rog-done]')){popView('home');return render()}
  if(b.matches('[data-p435930-lit-forty]')){pushView('litany');routeOwn('pray.forty_hours');return render()}
  if(b.matches('[data-p435930-lit-retry]')){LIT.error='';LIT.sections=null;LIT.step=0;return render()}
  if(b.matches('[data-p435930-lit-done]')){if(navStack.at(-1)==='penitential'){navStack.pop();popView('home')}else popView('home');return render()}
