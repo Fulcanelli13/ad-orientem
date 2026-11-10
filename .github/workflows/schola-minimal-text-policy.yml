@@ -1,0 +1,37 @@
+name: Minimal Schola text-only exceptions (1962)
+
+on:
+  pull_request:
+    paths:
+      - 'src/mass/reader-schola-text-cue-policy.js'
+      - 'src/mass/reader-native-preview.js'
+      - 'src/mass/reader-dom.js'
+      - 'data/presentation/reader-text-sung.v1.json'
+      - 'tests/reader-schola-text-cue-policy.mjs'
+      - '.github/workflows/schola-minimal-text-policy.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  text-policy:
+    name: Exact-source Schola text exceptions, routine dialogue suppressed
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify runtime syntax
+        run: |
+          node --check src/mass/reader-schola-text-cue-policy.js
+          node --check src/mass/reader-native-preview.js
+          node --check src/mass/reader-dom.js
+      - name: Test exact 1962 Latin and minimal text-only Schola display policy
+        run: node tests/reader-schola-text-cue-policy.mjs
+      - name: Preserve full source dialogue projection without adding prayer cards
+        run: |
+          node tests/reader-mass-sung-dialogue-pairs.mjs
+          node tests/reader-schola-source-itinerary.mjs
