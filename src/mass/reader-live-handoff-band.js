@@ -6,6 +6,7 @@ import {projectLiveHandoffSanctuary,renderLiveHandoffSanctuarySvg,renderLiveHand
 import {projectLiveHandoffIncensationPreview,clampLiveHandoffRouteStep} from "./reader-live-handoff-routes.js";
 import {projectLiveHandoffSourceTurnPreview} from "./reader-live-handoff-turns.js";
 import {renderClaudeNativeSanctuary,renderClaudeNativeRouteOverlay} from "./reader-live-handoff-claude-sanctuary.js";
+import {claudeWheelRender,claudeTimelineRender,CLAUDE_PORT_CSS} from "./reader-live-handoff-claude-stage-d.js";
 import {projectLiveHandoffTimeline,projectLiveHandoffWheel} from "./reader-live-handoff-timeline.js";
 import {renderLiveHandoffTimelineHtml,renderLiveHandoffWheelHtml,LIVE_HANDOFF_STAGE_D_CSS} from "./reader-live-handoff-stage-d-render.js";
 
@@ -123,7 +124,7 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
   if(shell.querySelector("[data-ao-live-band]"))
     return freeze({mounted:false,reason:"ALREADY_MOUNTED",dispose(){}});
   const style=doc.createElement("style");
-  style.dataset.aoLiveBandStyle="stage-d";style.textContent=CSS+"\n"+LIVE_SANCTUARY_CSS+"\n"+LIVE_HANDOFF_STAGE_D_CSS;
+  style.dataset.aoLiveBandStyle="stage-d";style.textContent=CSS+"\n"+LIVE_SANCTUARY_CSS+"\n"+LIVE_HANDOFF_STAGE_D_CSS+"\n"+CLAUDE_PORT_CSS;
   const band=doc.createElement("section");band.className="ao-live-band";
   band.dataset.aoLiveBand="stage-b";band.hidden=true;
   band.setAttribute("aria-label","LIVE visual band preview");
@@ -162,7 +163,7 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
   const routeCount=band.querySelector("[data-lb-route-count]");
   const routePrev=band.querySelector("[data-lb-route-prev]");
   const routeNext=band.querySelector("[data-lb-route-next]");
-  let lastTimelineSignature=null;
+  let lastTimelineSignature=null,claudeZoomSpan=8;
   function setPage(index){
     page=bound(Number(index)||0,0,2);
     frame.style.transform="translateX(-"+(page*100)+"%)";
@@ -243,6 +244,15 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
     routeButtons();
     return applyRouteStep(0);
   }
+  timelineHost.addEventListener("click",event=>{
+    const control=event.target?.closest?.("[data-claude-zoom]");
+    if(!control||!timelineHost.contains(control))return;
+    const spans=[3,5,8,13,21,40];
+    const index=spans.indexOf(claudeZoomSpan);
+    const direction=Number(control.dataset.claudeZoom)||0;
+    claudeZoomSpan=spans[Math.max(0,Math.min(spans.length-1,index+direction))];
+    lastTimelineSignature=null;refresh();
+  });
   routeStart.addEventListener("click",startRoutePreview);
   routePrev.addEventListener("click",()=>applyRouteStep(routeStep-1));
   routeNext.addEventListener("click",()=>applyRouteStep(routeStep+1));
@@ -298,11 +308,13 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
     const timeline=projectLiveHandoffTimeline({gate:result,nativeState,
       scholaState:preview.getScholaState?.(),model});
     const wheel=projectLiveHandoffWheel(timeline);
-    const timelineSignature=JSON.stringify([timeline.reason,timeline.position,
+    const timelineSignature=JSON.stringify([claudeZoomSpan,timeline.reason,timeline.position,
       timeline.lanes?.map(l=>[l.id,l.status,l.text,l.location]),wheel.current?.title]);
     if(timelineSignature!==lastTimelineSignature){
-      timelineHost.innerHTML=renderLiveHandoffTimelineHtml(timeline);
-      wheelHost.innerHTML=renderLiveHandoffWheelHtml(wheel);
+      const timelineSize=timelineHost.getBoundingClientRect();
+      timelineHost.innerHTML=claudeTimelineRender(timeline,{span:claudeZoomSpan,
+        width:timelineSize.width||390,height:timelineSize.height||230});
+      wheelHost.innerHTML=claudeWheelRender(wheel,timeline);
       lastTimelineSignature=timelineSignature;
     }
     band.dataset.stageDSourceStatus=timeline.ok?"SOURCE_ONLY_65":"SOURCE_HOLD";
