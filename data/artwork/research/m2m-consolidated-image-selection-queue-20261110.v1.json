@@ -22,7 +22,8 @@
     "data/artwork/research/m2m-open-colour-batch2-source-verification-20261110.v1.json",
     "data/artwork/research/m2m-msk-s43-verified-image-original-20261110.v1.json",
     "data/artwork/research/m2m-nationalmuseum-mnk-download-link-discovery-20261110.v1.json",
-    "data/artwork/research/m2m-museum-portal-static-client-blockers-20261110.v1.json"
+    "data/artwork/research/m2m-museum-portal-static-client-blockers-20261110.v1.json",
+    "data/artwork/research/m2m-eight-priority-oil-source-closure-20261110.v1.json"
   ],
   "counts": {
     "originalDateRelationships": 198,
@@ -43,13 +44,16 @@
     "newOwnerApprovedPlacements": 0,
     "formalAppContainerCropCertifications": 0,
     "newPublicArtworkReleases": 0,
-    "newInstitutionPhotoPolicyHolds": 36,
-    "unverifiedPhotoSearchLaneRemaining": 8,
+    "newInstitutionPhotoPolicyHolds": 40,
+    "unverifiedPhotoSearchLaneRemaining": 0,
     "iccdOfficialPhotoRightsHoldsAdded": 27,
     "nationalmuseumFirstPartyMediaPortalRecordsToResolve": 2,
     "firstPartyMediaRecordInvestigations": 4,
     "museumPortalsNeedingClientRenderedAccess": 4,
-    "clientRenderedFirstPartyPortalImageHolds": 4
+    "clientRenderedFirstPartyPortalImageHolds": 4,
+    "additionalRestrictedInstitutionPhotosFromEight": 4,
+    "directRecordsWithoutOriginalPhoto": 2,
+    "sourceImageRightsOrAttributionUnresolved": 2
   },
   "reviewLaneCounts": {
     "A_VERIFIED_SOURCE_PHOTO_EDITORIAL_AND_MOBILE_QA": 9,
@@ -57,8 +61,9 @@
     "B_RECONCILE_WORK_IDENTITY": 1,
     "C_CLIENT_RENDERED_MUSEUM_PORTAL_REQUIRES_NEW_METHOD": 4,
     "C_FIND_TRUE_COLOUR_REPRODUCTION": 1,
-    "C_LOCATE_REUSABLE_COLOUR_SOURCE": 8,
-    "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT": 45,
+    "C_OBJECT_RECORD_WITHOUT_PHOTO_BYTES": 2,
+    "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT": 49,
+    "C_UNVERIFIED_IMAGE_RIGHTS_OR_ATTRIBUTION": 2,
     "D_CHECK_ICONOGRAPHIC_FIDELITY": 13,
     "D_CONTEXT_ONLY_FIND_EXACT_GOSPEL_SCENE": 1,
     "D_NONPRIORITY_ARTWORK_SOURCE_REVIEW": 50,
@@ -84,7 +89,8 @@
     "Nationalmuseum's own high-resolution media.nationalmuseum.se is the first-party alternative for NM420 and NM1134, but its exact media records and byte-specific licences remain unverified. An inventory search is not source-photo QA.",
     "MSK Ghent S-43 downloaded and independently SHA-verified. Public Domain Mark in IIIF is not automatic monetised app approval; rights and visible diagonal image-line quality hold both remain.",
     "Nationalmuseum and Krakow: first-party portal search and HTML/image-link inspection are investigations, never a licence clearance or actual original-photo acquisition; require exact accession, artwork/scene, open licence, downloaded bytes and SHA before publication review.",
-    "Both Nationalmuseum and MNK public art portals are JavaScript-rendered and expose no exact photo links to static HTTP. Do not mistake a successfully completed source probe for source-photo acquisition or an absent HTML image for an absent museum photograph."
+    "Both Nationalmuseum and MNK public art portals are JavaScript-rendered and expose no exact photo links to static HTTP. Do not mistake a successfully completed source probe for source-photo acquisition or an absent HTML image for an absent museum photograph.",
+    "The final eight first-party image candidates were source-triaged: four official-photo restricted, two object-only no file, two photograph rights/identity unresolved. Zero directly publishable new colour originals were acquired. Do not call these eight publicly licensed image sources."
   ],
   "photographs": [
     {
@@ -1189,13 +1195,23 @@
       "sourceAuditNote": "Holburne A17 oil 65.6 × 48.5 cm, preparatory study for 1749 Crema altarpiece. Search listing says Piazzetta but detailed object caption names Cignaroli: maintain attribution conflict",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-audit18-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_UNVERIFIED_IMAGE_RIGHTS_OR_ATTRIBUTION",
+      "nextAction": "Resolve conflicting A17 attribution from an independent institutional catalogue/collection update and find one specific colour photo with documented reuse rights; keep both names as catalogue evidence.",
+      "risk": "HOLBURNE_A17_CONFLICTING_ARTIST_FIELDS_PHOTO_LICENSE_UNSPECIFIED",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "directSourceTriage10November": {
+        "source": "data/artwork/research/m2m-eight-priority-oil-source-closure-20261110.v1.json",
+        "issue": "HOLBURNE_A17_CONFLICTING_ARTIST_FIELDS_PHOTO_LICENSE_UNSPECIFIED",
+        "evidence": "Museum record heading says Giovanni Battista Piazzetta, but object title and descriptive text attribute the oil study of the Death of St Andrew Avellino to Giambettino Cignaroli. Neither wording is a photograph licence. The study is not automatically interchangeable with its Crema altarpiece.",
+        "objectSource": "https://holburne.collectionsindex.com/object-a17",
+        "policySource": "https://holburne.collectionsindex.com/object-a17",
+        "exactOfficialPhotoAppUseEligible": false,
+        "newSourceFileDownloaded": false,
+        "ownerImageApproval": false
+      }
     },
     {
       "artworkKey": "HungarianNationalGallery:55.967.1",
@@ -1269,13 +1285,23 @@
       "sourceAuditNote": "Andalusian IAPH item 67609, oil portrait of seated bishop. Repository mentions public usage with credit 'Fondo Gráfico del IAPH' but 'No hay ficheros asociados a este ítem'; cannot promote selected image without bytes and exact rights check. Do not conflate with separate 334291 portrait under noncommercial licence.",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-final15-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_OBJECT_RECORD_WITHOUT_PHOTO_BYTES",
+      "nextAction": "Research exact accession 67609 in the IAPH Guía Digital or other distinct official archival photo registry. Do not pretend this handle has bytes or borrow a different Claret image.",
+      "risk": "IAPH_OBJECT_REPOSITORY_RECORD_HAS_NO_FILE",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "directSourceTriage10November": {
+        "source": "data/artwork/research/m2m-eight-priority-oil-source-closure-20261110.v1.json",
+        "issue": "IAPH_OBJECT_REPOSITORY_RECORD_HAS_NO_FILE",
+        "evidence": "Official IAPH San Antonio María Claret record 67609 explicitly says 'No hay ficheros asociados a este ítem'. Its public-use attribution language is not a downloadable colour photograph; different IAPH images may have a BY-NC-SA 3.0 photo licence and cannot be silently substituted.",
+        "objectSource": "https://repositorio.iaph.es/handle/11532/43186",
+        "policySource": "https://repositorio.iaph.es/handle/11532/43186",
+        "exactOfficialPhotoAppUseEligible": false,
+        "newSourceFileDownloaded": false,
+        "ownerImageApproval": false
+      }
     },
     {
       "artworkKey": "ICCD:0100088399",
@@ -3053,13 +3079,31 @@
       "sourceAuditNote": "Bergamo Palazzo Frizzoni, oil on canvas c.1780–before1796. Scholarly attribution revised from Giuseppe Antonio Orelli to Vincenzo Angelo Orelli. Catalogue directs high-res photo requests to custodians; no free image permission inferred.",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-final15-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Find already open original Orelli photograph from a distinct rights-bearing institution. Do not contact Bergamo municipality or buy photo.",
+      "risk": "LOMBARDIA_HIGH_RES_PHOTO_OWNER_CONTACT_REQUIRED",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "directSourceTriage10November": {
+        "source": "data/artwork/research/m2m-eight-priority-oil-source-closure-20261110.v1.json",
+        "issue": "LOMBARDIA_HIGH_RES_PHOTO_OWNER_CONTACT_REQUIRED",
+        "evidence": "The exact SIRBeC page says high-resolution photographic documentation requests are to be made directly to the public/private holding institution; no open full-resolution selected photo identified.",
+        "objectSource": "https://www.lombardiabeniculturali.it/opere-arte/schede/C0150-00107/",
+        "policySource": "https://www.lombardiabeniculturali.it/opere-arte/schede/C0150-00107/",
+        "exactOfficialPhotoAppUseEligible": false,
+        "newSourceFileDownloaded": false,
+        "ownerImageApproval": false
+      },
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://www.lombardiabeniculturali.it/opere-arte/schede/C0150-00107/",
+        "reviewDate": "2026-11-10",
+        "disposition": "LOMBARDIA_HIGH_RES_PHOTO_OWNER_CONTACT_REQUIRED",
+        "appliesTo": "EXACT_OFFICIAL_INSTITUTIONAL_PHOTOGRAPH_ONLY_NOT_UNDERLYING_PAINTING",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false
+      }
     },
     {
       "artworkKey": "Louvre:A59",
@@ -3808,13 +3852,23 @@
       "sourceAuditNote": "Lviv original Ж-1791, 1848–1850 oil on canvas 116 × 87 cm, exact saint Hedwig Silesia",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-audit18-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_UNVERIFIED_IMAGE_RIGHTS_OR_ATTRIBUTION",
+      "nextAction": "Identify the actual image photographer and explicit licence of an exact reproduction. Do not infer free reuse from Lesser's 1884 death or the page displaying photos.",
+      "risk": "LVIV_SPECIFIC_PHOTO_REUSE_RIGHTS_NOT_STATED",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "directSourceTriage10November": {
+        "source": "data/artwork/research/m2m-eight-priority-oil-source-closure-20261110.v1.json",
+        "issue": "LVIV_SPECIFIC_PHOTO_REUSE_RIGHTS_NOT_STATED",
+        "evidence": "Gallery confirms Aleksander Lesser 1848–1850, exact Hedwig mediation scene, object Ж-1791; page includes images but a general 2026 all-rights-reserved site notice, with no specific photo CC0/PD licence identified.",
+        "objectSource": "https://collection-lvivgallery.org.ua/en/works/3812-sviata-iadviha-myryt-konrada-mazovetskoho-zi-svoijm-cholovikom-henrykom-borodatym",
+        "policySource": "https://collection-lvivgallery.org.ua/en/works/3812-sviata-iadviha-myryt-konrada-mazovetskoho-zi-svoijm-cholovikom-henrykom-borodatym",
+        "exactOfficialPhotoAppUseEligible": false,
+        "newSourceFileDownloaded": false,
+        "ownerImageApproval": false
+      }
     },
     {
       "artworkKey": "Menil:1985-057.37DJ",
@@ -5078,13 +5132,31 @@
       "sourceAuditNote": "1641–43 cycle: 32 original works, 8 extant; the specific 10th large-format oil canvas survives in PRIVATE ownership, displayed in 2024 exhibition. No acquisition/photo licence established; don't conflate with separate museum-held anti-idol scene.",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-final15-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Keep individual narrative panels as work research only; identify an independently open photo from another institutional source, not this exhibition photo.",
+      "risk": "OLOMOUC_PHOTOGRAPHY_PERSONAL_ONLY_NO_COMMERCIAL_RELEASE",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "directSourceTriage10November": {
+        "source": "data/artwork/research/m2m-eight-priority-oil-source-closure-20261110.v1.json",
+        "issue": "OLOMOUC_PHOTOGRAPHY_PERSONAL_ONLY_NO_COMMERCIAL_RELEASE",
+        "evidence": "MUO visitor rules restrict permitted exhibition photography to personal use and disallow making copies. The identified Škréta/Wenceslas cycle has private-ownership provenance and no image-specific open licence.",
+        "objectSource": "https://muo.cz/en/vystavy/st-wenceslas-christian-prince-and-martyr/",
+        "policySource": "https://muo.cz/en/visit/admission-to-the-exhibitions/",
+        "exactOfficialPhotoAppUseEligible": false,
+        "newSourceFileDownloaded": false,
+        "ownerImageApproval": false
+      },
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://muo.cz/en/visit/admission-to-the-exhibitions/",
+        "reviewDate": "2026-11-10",
+        "disposition": "OLOMOUC_PHOTOGRAPHY_PERSONAL_ONLY_NO_COMMERCIAL_RELEASE",
+        "appliesTo": "EXACT_OFFICIAL_INSTITUTIONAL_PHOTOGRAPH_ONLY_NOT_UNDERLYING_PAINTING",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false
+      }
     },
     {
       "artworkKey": "Orne:998.25.30",
@@ -5235,13 +5307,23 @@
       "sourceAuditNote": "First-quarter 19th-century bust portrait in Reims birthplace; catalogue says possibly a replica after a lost early-18th-century painting, also possibly copy after another. Protected object privately owned. Archival photograph numbers not permission to reproduce.",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-followup10b-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_OBJECT_RECORD_WITHOUT_PHOTO_BYTES",
+      "nextAction": "Look up the two named photographic archive identifiers under POP/Mémoire; accept only a specifically licensed exact photo, and do not treat the app notice's download button as painting image.",
+      "risk": "POP_PROTECTED_OBJECT_HAS_ONLY_HISTORIC_PHOTO_REFERENCES",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "directSourceTriage10November": {
+        "source": "data/artwork/research/m2m-eight-priority-oil-source-closure-20261110.v1.json",
+        "issue": "POP_PROTECTED_OBJECT_HAS_ONLY_HISTORIC_PHOTO_REFERENCES",
+        "evidence": "The exact 19th-century Touzet canvas catalogue cites MH86ZZ10/5 and MH66V1463 archival photographs but no image-specific open reuse licence or original painting JPEG. POP distinguishes downloadable open public data from copyrighted multimedia requiring authorization.",
+        "objectSource": "https://pop.culture.gouv.fr/notice/palissy/PM51000939",
+        "policySource": "https://pop.culture.gouv.fr/donnees-ouvertes",
+        "exactOfficialPhotoAppUseEligible": false,
+        "newSourceFileDownloaded": false,
+        "ownerImageApproval": false
+      }
     },
     {
       "artworkKey": "Princeton:1997-55",
@@ -6447,13 +6529,31 @@
       "sourceAuditNote": "18th-century oil on canvas 35 × 16 inches; exact Athanasius, not Cyril or a generic Greek patriarch",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-audit18-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Seek separately documented open image of the same exact painting, otherwise alternative exact-saint painting as independent research candidate; no requests.",
+      "risk": "FOUNDATION_EXPLICIT_NO_COMMERCIAL_IMAGE_USE",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "directSourceTriage10November": {
+        "source": "data/artwork/research/m2m-eight-priority-oil-source-closure-20261110.v1.json",
+        "issue": "FOUNDATION_EXPLICIT_NO_COMMERCIAL_IMAGE_USE",
+        "evidence": "Official foundation only considers scholarly/educational image requests, expressly prohibits commercial image use; website terms allow ordinary copying for non-commercial purposes only.",
+        "objectSource": "https://thomafoundation.org/saint-athanasius-of-alexandria/",
+        "policySource": "https://thomafoundation.org/collections/image-research-requests/",
+        "exactOfficialPhotoAppUseEligible": false,
+        "newSourceFileDownloaded": false,
+        "ownerImageApproval": false
+      },
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://thomafoundation.org/collections/image-research-requests/",
+        "reviewDate": "2026-11-10",
+        "disposition": "FOUNDATION_EXPLICIT_NO_COMMERCIAL_IMAGE_USE",
+        "appliesTo": "EXACT_OFFICIAL_INSTITUTIONAL_PHOTOGRAPH_ONLY_NOT_UNDERLYING_PAINTING",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false
+      }
     },
     {
       "artworkKey": "Thyssen:1979.62",
@@ -6617,13 +6717,31 @@
       "sourceAuditNote": "UMMA accession 1960/2.93: exact Mark 7 scene, oil canvas; artist is user's preferred Champaigne",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-followup10-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Find separately openly licensed reproduction of exact Champaigne painting without museum request, otherwise hold; no paid permission.",
+      "risk": "UMMA_OFFICIAL_PUBLICATION_IMAGE_REQUEST_REQUIRED",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "directSourceTriage10November": {
+        "source": "data/artwork/research/m2m-eight-priority-oil-source-closure-20261110.v1.json",
+        "issue": "UMMA_OFFICIAL_PUBLICATION_IMAGE_REQUEST_REQUIRED",
+        "evidence": "Museum asks applicants to request commercial or scholarly reproduction image specifying intended use, online duration and rights; no exact-file commercial licence independently verified.",
+        "objectSource": "https://umma.umich.edu/objects/christ-healing-the-deaf-mute-1960-2-93/",
+        "policySource": "https://umma.umich.edu/about/services/request-image/",
+        "exactOfficialPhotoAppUseEligible": false,
+        "newSourceFileDownloaded": false,
+        "ownerImageApproval": false
+      },
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://umma.umich.edu/about/services/request-image/",
+        "reviewDate": "2026-11-10",
+        "disposition": "UMMA_OFFICIAL_PUBLICATION_IMAGE_REQUEST_REQUIRED",
+        "appliesTo": "EXACT_OFFICIAL_INSTITUTIONAL_PHOTOGRAPH_ONLY_NOT_UNDERLYING_PAINTING",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false
+      }
     },
     {
       "artworkKey": "Vanderbilt:55729",
@@ -7932,7 +8050,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE",
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
         "D_NONPRIORITY_ARTWORK_SOURCE_REVIEW"
       ]
     },
@@ -8126,7 +8244,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_OBJECT_RECORD_WITHOUT_PHOTO_BYTES"
       ]
     },
     {
@@ -8515,7 +8633,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
       ]
     },
     {
@@ -9082,7 +9200,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
       ]
     },
     {
@@ -9101,7 +9219,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
       ]
     },
     {
@@ -9141,7 +9259,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
       ]
     },
     {
@@ -9679,7 +9797,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
       ]
     },
     {
@@ -9871,7 +9989,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_UNVERIFIED_IMAGE_RIGHTS_OR_ATTRIBUTION"
       ]
     },
     {
@@ -9988,7 +10106,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_OBJECT_RECORD_WITHOUT_PHOTO_BYTES"
       ]
     },
     {
@@ -10121,7 +10239,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_UNVERIFIED_IMAGE_RIGHTS_OR_ATTRIBUTION"
       ]
     },
     {
