@@ -1,0 +1,41 @@
+name: Prayer Holy Cloak — 23 stages, EN FR IT phone acceptance
+
+on:
+  pull_request:
+    paths:
+      - 'src/pray/holy-cloak-**'
+      - 'src/pray/presentation-runtime.js'
+      - 'tests/pray-holy-cloak-**'
+      - '.github/workflows/pray-holy-cloak-23-stage-phone.yml'
+      - 'package.json'
+  push:
+    branches: [main]
+    paths:
+      - 'src/pray/holy-cloak-**'
+      - 'tests/pray-holy-cloak-**'
+      - '.github/workflows/pray-holy-cloak-23-stage-phone.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  twenty-three-stage-phone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install exact pinned Playwright dependency
+        run: npm install --no-audit --no-fund
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Source, translation and edition safeguards
+        run: node tests/pray-holy-cloak-source-access-20261110.mjs && node tests/pray-holy-cloak-italian-native-20261110.mjs && node tests/pray-holy-cloak-editorial-en-fr-20261110.mjs
+      - name: Actual 320 and 390 phone reader — 23 stages in EN and FR
+        run: node tests/pray-holy-cloak-23-stage-phone-20261110.mjs

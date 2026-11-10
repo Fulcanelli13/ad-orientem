@@ -58,6 +58,9 @@ import {internalPrayerView,supportedDirectPrayerRoute} from "./internal-route-ow
 import {renderLittleCrownB30} from "./little-crown-presentation-b30.js";
 import {PRAYER_SUBJECTS_V1,prayerSubjectsForLibrary,prayerSubjectCounts} from "./prayer-subject-index.v1.js";
 import {guidedPrayerLinksForSubject} from "./prayer-subject-guided-links.v1.js";
+import {HOLY_CLOAK_SOURCE_ACCESS_V1,holyCloakSourceMatches} from "./holy-cloak-source-access.v1.js";
+import {HOLY_CLOAK_ITALIAN_SOURCE_V1,HOLY_CLOAK_ITALIAN_STEPS_V1,holyCloakItalianStep} from "./holy-cloak-italian-original.v1.js";
+import {HOLY_CLOAK_EDITORIAL_EN_FR_V1} from "./holy-cloak-editorial-en-fr.v1.js";
 import {PRAYER_SUPPLEMENTAL_LIVE_WORK_LINKS_V1,prayerSupplementalLiveWork,prayerSupplementalLiveWorksForSubject} from "./prayer-supplemental-live-works.v1.js";
 import {prayerSevenSourceWork,prayerSevenSourceWorksForSubject} from "./prayer-seven-source-work-links.v1.js";
 import {redBookletCommunionLibraryLink,redBookletCommunionLibraryLinksForSubject} from "./red-booklet-communion-library-links.v1.js";
@@ -2414,6 +2417,8 @@ function renderAdoration(){
 }
 function familyOf(p){return libraryVariantFamily(p.id)||p.id}
 let LIB={q:'',cat:'all',subject:'all',subjectOpen:false,open:null,language:null};
+let HOLY_CLOAK_STEP=0;
+let HOLY_CLOAK_LANGUAGE=null;
 // Mass Sequentia texts are borrowed live from the authenticated selected Proper;
 // they are NOT added to the locked 48-text canonical Prayer object.
 const MASS_SEQUENCE_READING={id:null,record:null,loading:false,error:null,token:0};
@@ -2669,7 +2674,64 @@ function renderLibraryEntryRows(rows,search){
   return `<details class="aoP435930LibraryVariants" data-ao-prayer-family="${esc(entry.family)}"${search?' open':''}><summary><small>${esc(L('Prayer family','Famille de prières'))}</small><b>${esc(isFr()?label.fr:label.en)}</b><span>${entry.prayers.length} ${esc(L(entry.prayers.length===1?'form':'forms',entry.prayers.length===1?'forme':'formes'))}</span></summary><div class="aoP435930LibraryVariantItems">${entry.prayers.map(renderRow).join('')}</div></details>`;
  }).join('')||`<p>${esc(L('No prayers match this search.','Aucune prière ne correspond à cette recherche.'))}</p>`;
 }
+function renderHolyCloakItalian(){
+ const step=holyCloakItalianStep(HOLY_CLOAK_STEP);
+ if(!step)return callout(esc(L('Holy Cloak text unavailable.','Texte du Sacro Manto indisponible.')),'warn');
+ const end=HOLY_CLOAK_ITALIAN_STEPS_V1.length;
+ const face=HOLY_CLOAK_LANGUAGE||lang();
+ const italian=face==='it';
+ const translations=HOLY_CLOAK_EDITORIAL_EN_FR_V1;
+ const editorial=step.id==='opening'?translations.opening:
+  step.id==='closing'?translations.closing:
+  translations.sections.find(x=>x.id===step.id)||null;
+ const canonical=DATA.prayers||{};
+ const getCommon=(id)=>canonical[id]?.[face==='it'?'la':face]||'';
+ const body=step.id==='litany'?
+   (italian?step.body:step.vernacular?.[face]):
+   step.id==='optional'?(italian?step.body:getCommon(step.sourceId)):
+   italian?(step.it||step.body):(editorial?.[face]||'');
+ const sourceLanguage=step.id==='litany'||step.id==='optional'?(italian?'la':face):face;
+ if(!body)return callout(esc(L('Prayer source face unavailable.','Version linguistique indisponible.')),'warn');
+ const k=HOLY_CLOAK_STEP+1;
+ const repeats=(step.repeat||[]).map(r=>{
+  const faceBody=getCommon(r.id);
+  if(!faceBody)return '';
+  return '<section class="aoP435930SourceNote" data-ao-holy-cloak-common="'+esc(r.id)+'">'+
+   '<h3>'+esc((r.times>1?r.times+' × ':'')+(r.id==='foundations_glory_be'?'Gloria Patri':'Requiem aeternam'))+'</h3>'+
+   '<p lang="'+(italian?'la':face)+'">'+nl(faceBody)+'</p></section>';
+ }).join('');
+ const openingSign=step.openingSignOfCross?
+  '<section class="aoP435930SourceNote" data-ao-holy-cloak-opening-cross><p lang="'+(italian?'la':face)+'">'+nl(getCommon(step.openingSignOfCross.id))+'</p></section>':'';
+ const status=L('English/French texts are modern Ad Orientem editorial translations of a later Italian digital witness, not historically printed or independently certified translations. The original Italian is selectable. The 1882 printing remains uncollated.',
+ 'Les versions anglaise et française sont des traductions éditoriales modernes d’Ad Orientem à partir d’un témoin numérique italien tardif, non des traductions historiques imprimées ou certifiées. Le texte italien est accessible. L’imprimé de 1882 reste à collationner.');
+ const sourceNotes=HOLY_CLOAK_STEP===0?'<p class="aoP435930SourceNote" data-ao-holy-cloak-italian-limits>'+esc(status)+'</p>':'';
+ const languageChoice='<div class="aoP435930Chips" role="group" data-ao-holy-cloak-language aria-label="'+esc(L('Prayer text language','Langue de la prière'))+'">'+
+  [['en','English'],['fr','Français'],['it','Italiano']].map(([code,label])=>
+   '<button type="button" data-p435930-hc-lang="'+code+'" aria-pressed="'+String(face===code)+'">'+label+'</button>').join('')+'</div>';
+ const note=step.note?'<p class="aoP435930SourceNote">'+esc(step.note)+'</p>':'';
+ const required=step.id!=='optional';
+ return head(L('Holy Cloak of St Joseph','Sacro Manto di San Giuseppe'),L('Thirty-day devotion · Italian source with editorial translations','Dévotion de trente jours · source italienne et traductions éditoriales'))+
+ '<main class="aoP435930Body aoP435930LibraryReader" data-ao-holy-cloak-italian-reader data-ao-holy-cloak-day-count="30">'+
+ '<div class="aoP435930SourceNote"><strong>'+esc(L('One complete daily prayer · 30 consecutive days','Une récitation complète par jour · 30 jours consécutifs'))+'</strong></div>'+
+ sourceNotes+languageChoice+
+ '<div class="aoJosephSevenProgress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+Math.round(k*100/end)+'" aria-label="'+esc(L('Reading progress','Progression de lecture'))+'"><span style="width:'+Math.round(k*100/end)+'%"></span></div>'+
+ '<article class="aoDevoCard" data-ao-holy-cloak-step="'+esc(step.id)+'">'+
+ '<div class="aoDevoCardScroll"><small>'+k+' / '+end+(required?'':' · '+esc(L('Optional','Facultatif')))+'</small>'+
+ '<h2>'+esc(step.title)+'</h2>'+openingSign+
+ '<p lang="'+esc(sourceLanguage)+'">'+nl(body)+'</p>'+repeats+note+'</div></article>'+
+ '<nav class="aoJosephSevenNav" aria-label="'+esc(L('Holy Cloak prayer navigation','Navigation dans le Sacro Manto'))+'">'+
+ '<button type="button" data-p435930-hc-prev '+(HOLY_CLOAK_STEP===0?'disabled':'')+'>'+esc(L('Previous','Précédent'))+'</button>'+
+ (HOLY_CLOAK_STEP===end-1?
+  '<button type="button" data-p435930-hc-finish>'+esc(L('Return to Prayer Library','Retour au livre de prières'))+'</button>':
+  '<button type="button" data-p435930-hc-next>'+esc(L('Next','Suivant'))+'</button>')+
+ '</nav><details class="aoP435930SourceNote"><summary>'+esc(L('Sources and edition limitations','Sources et limites des éditions'))+'</summary>'+
+ '<p>'+esc(L('The complete Italian digital transcription is cross-compared with later Italian PDFs. The historical 1882 approval does not certify identical original printed words. English and French are new editorial translations requiring review, not published nineteenth-century editions. Common prayers and the pre-2021 litany reuse existing Ad Orientem source owners; seven 2021 invocations are excluded.',
+ 'La transcription italienne complète est comparée à des PDF italiens ultérieurs. L’approbation de 1882 ne certifie pas l’identité des mots imprimés. L’anglais et le français sont des traductions éditoriales nouvelles à revoir, et non des éditions du XIXe siècle. Les prières communes et les litanies antérieures à 2021 réutilisent les sources existantes, sans les sept ajouts de 2021.'))+'</p>'+
+ '<a href="'+esc(HOLY_CLOAK_ITALIAN_SOURCE_V1.textSource)+'" target="_blank" rel="noopener noreferrer">'+esc(L('Italian digital witness','Témoin numérique italien'))+'</a></details></main>';
+}
+
 function renderLibrary(){
+ if(LIB.open===HOLY_CLOAK_ITALIAN_SOURCE_V1.id)return renderHolyCloakItalian();
  if(LIB.open&&massSequencePrayerWork(LIB.open))return renderMassSequencePrayer();
  if(LIB.open){
   const p=P(LIB.open);if(!p){LIB.open=null;return renderLibrary()}
@@ -2777,6 +2839,23 @@ function renderLibrary(){
    '<small>'+esc(L('MASS SEQUENCE · SOURCE READER','SÉQUENCE DE MESSE · SOURCE'))+'</small>'+
    '<b>'+esc(isFr()?work.titleFr:work.title)+'</b><span>LA · EN · FR</span></button>').join('')+
    '</div></section>');
+ // Source-only Holy Cloak access: complete English Catholic parish reading.
+ // Keep 1882 Italian, 5-section and 6-section witnesses distinct; no imported text.
+ const holyCloak=holyCloakSourceMatches({search:q,subject:LIB.subject,category:LIB.cat})?HOLY_CLOAK_SOURCE_ACCESS_V1:null;
+ const holyCloakSection=!holyCloak?'':(
+  '<section class="aoP435930LibraryRelated" data-ao-holy-cloak-source-only>'+
+  '<h3>'+esc(L('Holy Cloak of St Joseph · 30 days','Sacré Manteau de saint Joseph · trente jours'))+'</h3>'+
+  '<p>'+esc(L('The complete 19-section Italian source and modern editorial English/French translations are available offline. The separate English parish edition remains linked. No original 1882 print wording or historical translations are certified.',
+   'Le témoin italien complet en 19 sections et les traductions éditoriales modernes en anglais et français sont disponibles hors ligne. L’édition anglaise de paroisse reste liée séparément. L’imprimé original de 1882 et les traductions historiques ne sont pas certifiés.'))+'</p>'+
+  '<button type="button" class="aoP435930ModuleCard" data-p435930-lib-open="'+esc(HOLY_CLOAK_ITALIAN_SOURCE_V1.id)+'" data-ao-holy-cloak-italian-open>'+
+   '<small>'+esc(L('OFFLINE HISTORICAL ITALIAN · 19 SECTIONS','ITALIEN HISTORIQUE HORS LIGNE · 19 SECTIONS'))+'</small>'+
+   '<b>'+esc(L('Read the full Holy Cloak in Italian','Lire le Sacro Manto intégral en italien'))+'</b>'+
+   '<span>'+esc(L('EN/FR editorial drafts available; historic original print still held','Traductions éditoriales EN/FR disponibles ; imprimé historique à collationner'))+'</span></button>'+
+  '<a class="aoP435930ModuleCard" data-ao-holy-cloak-source-link href="'+esc(holyCloak.primary.url)+'" target="_blank" rel="noopener noreferrer">'+
+   '<small>'+esc(L('EXTERNAL COMPLETE PRAYER · ENGLISH','PRIÈRE COMPLÈTE EXTERNE · ANGLAIS'))+'</small>'+
+   '<b>'+esc(L('Read the Holy Cloak','Lire le Sacré Manteau'))+'</b>'+
+   '<span>'+esc(L('Source: Catholic parish · five-section English form','Source : paroisse catholique · version anglaise en cinq sections'))+'</span></a>'+
+  '</section>');
  const guidedLinks=LIB.cat==='all'?guidedPrayerLinksForSubject(LIB.subject,q):[];
  const guidedSection=LIB.cat!=='all'||!guidedLinks.length?
   '':('<section class="aoP435930LibraryRelated" data-ao-prayer-subject-guided="'+esc(LIB.subject)+'">'+
@@ -2793,9 +2872,9 @@ function renderLibrary(){
   '<div class="aoP435930Chips" role="group" aria-label="'+esc(L('Theological prayer families','Familles théologiques de prières'))+'">'+
   '<button type="button" data-p435930-lib-subject="all" aria-pressed="'+String(LIB.subject==='all')+'">'+esc(L('All subjects','Tous les sujets'))+'</button>'+
   PRAYER_SUBJECTS_V1.map(subject=>'<button type="button" data-p435930-lib-subject="'+subject.id+'" aria-pressed="'+String(LIB.subject===subject.id)+'">'+
-    esc(isFr()?subject.fr:subject.en)+' <small>'+(subjectCounts.counts[subject.id]+prayerSupplementalLiveWorksForSubject(subject.id).length +prayerSevenSourceWorksForSubject(subject.id).length+redBookletCommunionLibraryLinksForSubject(subject.id).length+redBookletSuscipeLibraryLinksForSubject(subject.id).length+redBookletPrivateHistoricalWorksForSubject(subject.id).length+MASS_SEQUENCE_PRAYER_WORKS.filter(x=>x.subject===subject.id).length+(subject.id==='V'?1:0))+'</small></button>').join('')+
+    esc(isFr()?subject.fr:subject.en)+' <small>'+(subjectCounts.counts[subject.id]+prayerSupplementalLiveWorksForSubject(subject.id).length +prayerSevenSourceWorksForSubject(subject.id).length+redBookletCommunionLibraryLinksForSubject(subject.id).length+redBookletSuscipeLibraryLinksForSubject(subject.id).length+redBookletPrivateHistoricalWorksForSubject(subject.id).length+MASS_SEQUENCE_PRAYER_WORKS.filter(x=>x.subject===subject.id).length+(subject.id==='V'?1:0)+(subject.id==='VI'?1:0))+'</small></button>').join('')+
   '</div><p class="aoP435930SourceNote">'+esc(L('Only accessible canonical and source-owned reader texts are included. Unverified research works are not shown as readable prayers.','Seuls les textes canoniques et les prières déjà accessibles dans leurs parcours d’origine sont inclus. Les œuvres de recherche non vérifiées ne sont pas présentées comme disponibles.'))+'</p></details>';
- return `${head(L('Prayer Library','Livre de prières'),L('Prayers and guided devotions','Prières et dévotions guidées'))}<main class="aoP435930Body">${libraryOverviewGuide()}<label class="aoP435930Search"><span>${assetIcon('ao-ui-search')}</span><input type="search" data-p435930-lib-search value="${esc(LIB.q)}" placeholder="${esc(L('Search prayers','Rechercher une prière'))}"></label><div class="aoP435930Chips">${cats.map(([id,n])=>`<button type="button" class="${id===LIB.cat?'active':''}" data-p435930-lib-cat="${esc(id)}">${esc(n)}</button>`).join('')}</div>${subjectBrowse}<div class="aoP435930LibraryList" data-ao-prayer-subject-results="${esc(LIB.subject)}">${LIB.cat==="essentials"&&!q?claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2,prayers:DATA.prayers,locale:lang(),esc,title:L("Essential Prayers","Prières essentielles"),artFor:releasedPrayerCardArtUrl}):(rows.length||!(historicalWorks.length+sourceDeepWorks.length+privateCommunionWorks.length+privateHistoricalWorks.length+(stabatSeptember?1:0)+massSequences.length)?renderLibraryEntryRows(rows,q):'')}</div>${communionSection}${privateHistoricalSection}${historicalSection}${stabatLibrarySection}${massSequenceSection}${guidedSection}</main>`;
+ return `${head(L('Prayer Library','Livre de prières'),L('Prayers and guided devotions','Prières et dévotions guidées'))}<main class="aoP435930Body">${libraryOverviewGuide()}<label class="aoP435930Search"><span>${assetIcon('ao-ui-search')}</span><input type="search" data-p435930-lib-search value="${esc(LIB.q)}" placeholder="${esc(L('Search prayers','Rechercher une prière'))}"></label><div class="aoP435930Chips">${cats.map(([id,n])=>`<button type="button" class="${id===LIB.cat?'active':''}" data-p435930-lib-cat="${esc(id)}">${esc(n)}</button>`).join('')}</div>${subjectBrowse}<div class="aoP435930LibraryList" data-ao-prayer-subject-results="${esc(LIB.subject)}">${LIB.cat==="essentials"&&!q?claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2,prayers:DATA.prayers,locale:lang(),esc,title:L("Essential Prayers","Prières essentielles"),artFor:releasedPrayerCardArtUrl}):(rows.length||!(historicalWorks.length+sourceDeepWorks.length+privateCommunionWorks.length+privateHistoricalWorks.length+(stabatSeptember?1:0)+massSequences.length+(holyCloak?1:0))?renderLibraryEntryRows(rows,q):'')}</div>${communionSection}${privateHistoricalSection}${historicalSection}${stabatLibrarySection}${massSequenceSection}${holyCloakSection}${guidedSection}</main>`;
 }
 function monthIndex(key){const d=dateObj(key);return d?d.getFullYear()*12+d.getMonth():null}
 function consecutive(records,needed){const done=records.filter(x=>x.complete).sort((a,b)=>a.date.localeCompare(b.date));if(!done.length)return 0;let c=1;for(let i=done.length-1;i>0;i--){const a=monthIndex(done[i].date),b=monthIndex(done[i-1].date);if(a-b===1)c++;else break}return Math.min(c,needed)}
@@ -5111,7 +5190,24 @@ function onClick(e){
   MASS_SEQUENCE_READING.error=null;MASS_SEQUENCE_READING.loading=false;
   MASS_SEQUENCE_READING.token++;return render();
  }
- if(b.dataset.p435930LibOpen){LIB.open=b.dataset.p435930LibOpen;LIB.language=null;PILOT_LORETO_GROUP=false;return render()}
+ if(b.dataset.p435930HcLang&&LIB.open===HOLY_CLOAK_ITALIAN_SOURCE_V1.id){
+  const code=b.dataset.p435930HcLang;
+  if(!['it','en','fr'].includes(code))return;
+  HOLY_CLOAK_LANGUAGE=code;return render();
+ }
+ if(b.matches('[data-p435930-hc-prev]')&&LIB.open===HOLY_CLOAK_ITALIAN_SOURCE_V1.id){
+  HOLY_CLOAK_STEP=Math.max(0,HOLY_CLOAK_STEP-1);return render();
+ }
+ if(b.matches('[data-p435930-hc-next]')&&LIB.open===HOLY_CLOAK_ITALIAN_SOURCE_V1.id){
+  HOLY_CLOAK_STEP=Math.min(HOLY_CLOAK_ITALIAN_STEPS_V1.length-1,HOLY_CLOAK_STEP+1);return render();
+ }
+ if(b.matches('[data-p435930-hc-finish]')&&LIB.open===HOLY_CLOAK_ITALIAN_SOURCE_V1.id){
+  LIB.open=null;HOLY_CLOAK_STEP=0;HOLY_CLOAK_LANGUAGE=null;return render();
+ }
+ if(b.dataset.p435930LibOpen){
+  if(b.dataset.p435930LibOpen===HOLY_CLOAK_ITALIAN_SOURCE_V1.id){HOLY_CLOAK_STEP=0;HOLY_CLOAK_LANGUAGE=null;}
+  LIB.open=b.dataset.p435930LibOpen;LIB.language=null;PILOT_LORETO_GROUP=false;return render()
+ }
  if(b.dataset.p435930ScriptureRetry){
   // Retry only the exact currently displayed source identity, never switch
   // translation or fetch an alternative unsourced prayer text silently.
