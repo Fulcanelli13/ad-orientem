@@ -117,6 +117,10 @@ try{
       }
       assert.equal(await page.locator(".ao-lb-d-sector").count(),65);
       await page.evaluate(()=>window.__aoHandoffFixture.goPage(0));
+      await page.waitForFunction(()=>{
+        const el=document.querySelector(".ao-lb-pages");
+        return el && Math.abs(new DOMMatrix(getComputedStyle(el).transform).m41)<1;
+      },null,{timeout:2000});
       const before=await page.evaluate(()=>window.__aoHandoffFixture.selected());
       // Source turn: native C10 source cue C0070, not the card number itself.
       const turn=await page.evaluate(()=>window.__aoHandoffFixture.showCard(9));
@@ -143,6 +147,7 @@ try{
         animations:"disabled",fullPage:false});
       // No card route may remain when the exact source identity changes.
       await page.evaluate(()=>window.__aoHandoffFixture.showCard(39));
+      await page.waitForTimeout(300); // settle the adaptive grid height before geometry assertions
       assert.equal(await page.locator("[data-lb-route-overlay]").count(),0);
       assert.equal(await page.locator("[data-lb-route-start]").isVisible(),false);
       const other=await metrics(page);
