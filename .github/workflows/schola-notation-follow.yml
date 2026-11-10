@@ -1,0 +1,35 @@
+name: Schola notation source-syllable follow
+on:
+  pull_request:
+    paths:
+      - "src/mass/reader-schola-notation-follow.js"
+      - "src/mass/reader-schola-dock-approved.js"
+      - "src/mass/reader-dom.js"
+      - "tests/schola-notation-follow.mjs"
+      - "tests/schola-notation-follow-phone.mjs"
+      - ".github/workflows/schola-notation-follow.yml"
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  schola-follow:
+    name: P2 estimated source syllables and phone resynchronisation
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check source syntax
+        run: |
+          node --check src/mass/reader-dom.js
+          node --check src/mass/reader-schola-notation-follow.js
+      - name: Confirm source parsing and performance isolation
+        run: node tests/schola-notation-follow.mjs
+      - name: Install Playwright Chromium
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Real LIVE 320/390px touch and glyph follower
+        run: node tests/schola-notation-follow-phone.mjs
