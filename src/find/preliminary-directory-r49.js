@@ -4,6 +4,7 @@ import {CL27_SITE_CONTACT_URL,attachPublishedSiteContactEvidence} from "./tlm-si
 import {CL27_WEEKLY_SOURCE_PROGRAMME_URL,attachPublishedWeeklySourceProgrammes} from "./tlm-source-weekly-mass-programme.js";
 import {CL27_WEEKLY_SUPPLEMENT_URL,attachPublishedWeeklySupplement} from "./tlm-weekly-source-supplement.js";
 import {CL27_POLAND_SOURCE_URL,attachPublishedPolandSourcePatterns} from "./tlm-weekly-source-poland.js";
+import {CL27_POLAND_WAVE2_SOURCE_URL,attachPublishedPolandWave2SourcePatterns} from "./tlm-weekly-source-poland-wave2.js";
 import {CL27_DATED_MASS_PROGRAMME_URL,attachPublishedDatedMassProgramme,CL27_TARARE_DATED_MASS_PROGRAMME_URL,attachPublishedTarareDatedMassProgramme} from "./tlm-dated-mass-programme.js";
 import {
   CL27_PUBLIC_CELEBRATION_URL,attachPublishedCelebrationEvidence,tlmCelebrationEvidenceClass,
@@ -311,6 +312,20 @@ export async function loadPreliminaryR49({fetchImpl=fetch}={}){
     const evidence=await polish.json();
     if(evidence?.schema==="AO_CL27_POLAND_OPERATOR_MASS_PATTERNS_V1")
       cache=attachPublishedPolandSourcePatterns(cache,evidence);
+  }
+  // Fourth exact-CL2 first-party programme: five source-reconciled Polish sites.
+  // One published time is not a calendar occurrence. A correctly tagged but
+  // invalid manifest rejects the release; older offline snapshots omit it.
+  let polishWave2=null;
+  try{
+    polishWave2=await fetchImpl(CL27_POLAND_WAVE2_SOURCE_URL,{headers:{accept:"application/json"}});
+  }catch{
+    // This optional release is absent in older installed snapshots.
+  }
+  if(polishWave2?.ok){
+    const evidence=await polishWave2.json();
+    if(evidence?.schema==="AO_CL27_POLAND_WAVE2_OPERATOR_MASS_PATTERNS_V1")
+      cache=attachPublishedPolandWave2SourcePatterns(cache,evidence);
   }
   return cache;
 }
