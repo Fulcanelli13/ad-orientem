@@ -1,0 +1,161 @@
+{
+  "schema": "AO_CL27_10_RESIDUAL_MINISTRY_ROLE_HOLDS_V1",
+  "created_on": "2026-11-10",
+  "supersedes": "data/directory/research/cl27-19-residual-ministry-role-holds-20261110.v1.json",
+  "scope": "EXACT_FROZEN_CL2_SOURCE_MINISTRY_HOLDS_RESEARCH_ONLY",
+  "source": "FROZEN_CL2_SITE_AND_VENUE_SOURCE_RECORDS",
+  "counts": {
+    "original_35_exceptions": 35,
+    "certified_first_party_ministry_links": 25,
+    "residual_identity_holds": 10,
+    "by_reason": {
+      "ASSOCIATED_SISTERS_NOT_IDENTIFIED_PRIEST": 4,
+      "HOSTED_CZECH_DIOCESAN_FSSP_ORGANIZER": 5,
+      "BENEDICTINE_OSB_CHAPEL_NOT_SSPX_MINISTRY": 1
+    }
+  },
+  "release_state": "RESEARCH_ONLY_NOT_RUNTIME_IMPORT",
+  "prohibited_inference": [
+    "no venue-wide 1962",
+    "no automatic Una Cum",
+    "no inferred papal commemoration",
+    "no inferred owner or celebrant",
+    "no fabricated Mass timetable"
+  ],
+  "records": [
+    {
+      "physical_anchor": "RG-11265E7B95BA",
+      "original_source_id": "SSPXMAP:OPE-001168",
+      "location": "Sacred Heart Novitiate",
+      "country_code": "US",
+      "listed_affiliation": "Sœurs de la Fraternité Saint-Pie X",
+      "original_source_urls": [
+        "https://map.fsspx.org/en/places/sacred-heart-novitiate"
+      ],
+      "hold_reason": "ASSOCIATED_SISTERS_NOT_IDENTIFIED_PRIEST",
+      "next_gate": "Determine who celebrates at religious house, rather than treating related sisters as priests.",
+      "status": "RESEARCH_ONLY_MINISTRY_ROLE_UNATTESTED_NO_PUBLIC_ROMAN_1962_CERTIFICATION"
+    },
+    {
+      "physical_anchor": "RG-2BDD7FFB71D5",
+      "original_source_id": "AO-B33-L-CZ-488449F3B92C",
+      "location": "Kostel svatého Jana Křtitele",
+      "country_code": "CZ",
+      "listed_affiliation": "Diocesan/FSSP organizer",
+      "original_source_urls": [
+        "https://www.unavoce.cz/mse"
+      ],
+      "hold_reason": "HOSTED_CZECH_DIOCESAN_FSSP_ORGANIZER",
+      "next_gate": "Require named FSSP priest or express ministry assignment; organizer does not prove celebrant.",
+      "status": "RESEARCH_ONLY_MINISTRY_ROLE_UNATTESTED_NO_PUBLIC_ROMAN_1962_CERTIFICATION"
+    },
+    {
+      "physical_anchor": "RG-4D729B16E2AD",
+      "original_source_id": "AO-B37-L-IT-4625DDF56A4B",
+      "location": "Suore Consolatrici del Sacro Cuore di Gesù",
+      "country_code": "IT",
+      "listed_affiliation": "SSPX ITALY",
+      "original_source_urls": [
+        "https://fsspx.it/it/cappelle-e-oratori"
+      ],
+      "hold_reason": "ASSOCIATED_SISTERS_NOT_IDENTIFIED_PRIEST",
+      "next_gate": "Determine who celebrates at religious house, rather than treating related sisters as priests.",
+      "status": "RESEARCH_ONLY_MINISTRY_ROLE_UNATTESTED_NO_PUBLIC_ROMAN_1962_CERTIFICATION"
+    },
+    {
+      "physical_anchor": "RG-5AB7415F2FB5",
+      "original_source_id": "AO-B33-L-CZ-453907C1A1F9",
+      "location": "Kostel svatého Jošta",
+      "country_code": "CZ",
+      "listed_affiliation": "Diocesan/FSSP organizer",
+      "original_source_urls": [
+        "https://www.unavoce.cz/mse"
+      ],
+      "hold_reason": "HOSTED_CZECH_DIOCESAN_FSSP_ORGANIZER",
+      "next_gate": "Require named FSSP priest or express ministry assignment; organizer does not prove celebrant.",
+      "status": "RESEARCH_ONLY_MINISTRY_ROLE_UNATTESTED_NO_PUBLIC_ROMAN_1962_CERTIFICATION"
+    },
+    {
+      "physical_anchor": "RG-6E8BF574FB60",
+      "original_source_id": "AO-B33-L-CZ-942D63F25A75",
+      "location": "Kostel sv. Petra a Pavla",
+      "country_code": "CZ",
+      "listed_affiliation": "Diocesan/FSSP organizer",
+      "original_source_urls": [
+        "https://www.unavoce.cz/mse"
+      ],
+      "hold_reason": "HOSTED_CZECH_DIOCESAN_FSSP_ORGANIZER",
+      "next_gate": "Require named FSSP priest or express ministry assignment; organizer does not prove celebrant.",
+      "status": "RESEARCH_ONLY_MINISTRY_ROLE_UNATTESTED_NO_PUBLIC_ROMAN_1962_CERTIFICATION"
+    },
+    {
+      "physical_anchor": "RG-9B2CD25FCD2A",
+      "original_source_id": "SSPXMAP:OPE-001570",
+      "location": "Noviciat Notre-Dame de Compassion",
+      "country_code": "FR",
+      "listed_affiliation": "Sœurs de la Fraternité Saint Pie X",
+      "original_source_urls": [
+        "https://map.fsspx.org/en/places/noviciat-notre-dame-de-compassion"
+      ],
+      "hold_reason": "ASSOCIATED_SISTERS_NOT_IDENTIFIED_PRIEST",
+      "next_gate": "Determine who celebrates at religious house, rather than treating related sisters as priests.",
+      "status": "RESEARCH_ONLY_MINISTRY_ROLE_UNATTESTED_NO_PUBLIC_ROMAN_1962_CERTIFICATION"
+    },
+    {
+      "physical_anchor": "RG-B77-F01A0F43F58F",
+      "original_source_id": "SSPX-B77:SSPX-OCT26-BR-BR-NITEROI-CAPELA-NOSSA-SENHORA-DA-CONCEICAO",
+      "location": "Capela Nossa Senhora da Conceição",
+      "country_code": "BR",
+      "listed_affiliation": "SSPX-associated community",
+      "original_source_urls": [
+        "https://map.fsspx.org/de/districts/brazil",
+        "https://fsspx.com.br/pt/capelas"
+      ],
+      "hold_reason": "BENEDICTINE_OSB_CHAPEL_NOT_SSPX_MINISTRY",
+      "next_gate": "Recognize Benedictine clergy without claiming SSPX operation; an exact Missal requires distinct direct evidence.",
+      "status": "RESEARCH_ONLY_MINISTRY_ROLE_UNATTESTED_NO_PUBLIC_ROMAN_1962_CERTIFICATION",
+      "identified_clergy_family": "BENEDICTINE_OSB_DOM_LOURENCO_FLEICHMAN",
+      "source_of_independent_identity": "https://fsspx.com.br/pt/priorados-e-capelas-51589",
+      "further_historical_primary_record": "https://fsspx.com.br/pt/dom-lourenco-fleichman-osb-declaracao-sobre-os-acordos-campos-com-o-vaticano-44976"
+    },
+    {
+      "physical_anchor": "RG-B781E9B03B5D",
+      "original_source_id": "AO-B33-L-CZ-870587128ED0",
+      "location": "Kostel sv. Víta",
+      "country_code": "CZ",
+      "listed_affiliation": "Diocesan/FSSP organizer",
+      "original_source_urls": [
+        "https://www.unavoce.cz/mse"
+      ],
+      "hold_reason": "HOSTED_CZECH_DIOCESAN_FSSP_ORGANIZER",
+      "next_gate": "Require named FSSP priest or express ministry assignment; organizer does not prove celebrant.",
+      "status": "RESEARCH_ONLY_MINISTRY_ROLE_UNATTESTED_NO_PUBLIC_ROMAN_1962_CERTIFICATION"
+    },
+    {
+      "physical_anchor": "RG-C6757639FE84",
+      "original_source_id": "AO-B33-L-CZ-165F6F3B5969",
+      "location": "Kostel sv. Františka z Assisi (Studánka)",
+      "country_code": "CZ",
+      "listed_affiliation": "Diocesan/FSSP organizer",
+      "original_source_urls": [
+        "https://www.unavoce.cz/mse"
+      ],
+      "hold_reason": "HOSTED_CZECH_DIOCESAN_FSSP_ORGANIZER",
+      "next_gate": "Require named FSSP priest or express ministry assignment; organizer does not prove celebrant.",
+      "status": "RESEARCH_ONLY_MINISTRY_ROLE_UNATTESTED_NO_PUBLIC_ROMAN_1962_CERTIFICATION"
+    },
+    {
+      "physical_anchor": "RG-D2068D45E6DF",
+      "original_source_id": "SSPXMAP:OPE-001566",
+      "location": "Abbaye Saint-Michel",
+      "country_code": "FR",
+      "listed_affiliation": "Sœurs de la Fraternité Saint Pie X",
+      "original_source_urls": [
+        "https://map.fsspx.org/en/places/maison-mere-des-soeurs-de-la-fraternite"
+      ],
+      "hold_reason": "ASSOCIATED_SISTERS_NOT_IDENTIFIED_PRIEST",
+      "next_gate": "Determine who celebrates at religious house, rather than treating related sisters as priests.",
+      "status": "RESEARCH_ONLY_MINISTRY_ROLE_UNATTESTED_NO_PUBLIC_ROMAN_1962_CERTIFICATION"
+    }
+  ]
+}
