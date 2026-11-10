@@ -1,0 +1,134 @@
+{
+  "schema": "AO_MET_EXACT_SOURCE_IMAGE_VERIFIED_FOUR_V1",
+  "asOf": "2026-11-10",
+  "status": "ACTUAL_MUSEUM_JPEG_BYTES_VERIFIED_RESEARCH_ONLY_NOT_DATE_APPROVAL",
+  "sourceRun": {
+    "repository": "Fulcanelli13/ad-orientem",
+    "workflowRunId": 42767850376,
+    "artifactId": 13740158139,
+    "artifactName": "ad-orientem-sacred-art-source-qa",
+    "artifactRetentionDays": 7,
+    "sourceCommit": "15dfd44174a5c3d83a9b24522473a44b9ea72b41"
+  },
+  "verification": "All four originals returned HTTP source JPEG from allowlisted images.metmuseum.org, 4/4 success on Actions; independently recomputed all 4 SHA256 hashes from the downloaded artifact. PIL verified image decoding and RGB pixels. A separate non-publish 390×520 crop-preview pass compared centre and Cima x=0.73 focal option; quality assessments are preliminary not user approvals.",
+  "policy": {
+    "sourceLicence": "Met first-party CC0 open-access image pages and collection API policy",
+    "imageFileSha256Verified": true,
+    "decodedColorJPEGs": 4,
+    "dateSpecificEditorialApprovals": 0,
+    "photosPublished": 0,
+    "assetsMergedToAppRepository": 0,
+    "assetsStoredAsEphemeralActionsArtifact": true,
+    "productionEligible": false,
+    "ownerReviewStillNeededForPlacement": true
+  },
+  "totals": {
+    "expected": 4,
+    "actualDownloaded": 4,
+    "actualVerifiedSha256": 4,
+    "actualDecodedRGB": 4,
+    "actualPreliminaryMobileCrops": 4,
+    "finalCropCertifications": 0,
+    "userPlacementApprovals": 0,
+    "photosPublished": 0
+  },
+  "records": [
+    {
+      "workKey": "Met:724811",
+      "accession": "2016.394",
+      "imageName": "Met_724811.jpg",
+      "museumOriginalURL": "https://images.metmuseum.org/CRDImages/ep/original/DP-12357-001.jpg",
+      "sha256": "9eac04d11fbab1ce0e2b6cf8303591ff1e44d27c3fabd8dcfa2ab6e592db6751",
+      "pixelWidth": 2878,
+      "pixelHeight": 4000,
+      "byteLength": 4121817,
+      "thumbnailMeanSaturation": 145.84,
+      "cropPreview390x520": "CENTRED_KEEP_PRIMARY_SAINT_LEVITATING_AND_WITNESSES",
+      "aestheticReview": "DARK_BAROQUE_GOOD_MOBILE_COMPOSITION",
+      "dates": [
+        "2026-09-18"
+      ],
+      "sourceImageFileRetrieved": true,
+      "imageIdentityMatchesMuseumObject": true,
+      "checksumVerifiedFromArtifact": true,
+      "sourceMedium": "MUSEUM_ORIGINAL_COLOUR_JPEG",
+      "licence": "CC0_MET_OPEN_ACCESS",
+      "formalMobile390Approval": false,
+      "ownerDatePlacementAuthority": false,
+      "productionAssignment": false
+    },
+    {
+      "workKey": "Met:435901",
+      "accession": "41.190.11",
+      "imageName": "Met_435901.jpg",
+      "museumOriginalURL": "https://images.metmuseum.org/CRDImages/ep/original/DP-18296-025.jpg",
+      "sha256": "3d65cb4f6c5f39b4ea2604571529a9ce7b781be4d1940102f0f2a5088f934a03",
+      "pixelWidth": 4000,
+      "pixelHeight": 3008,
+      "byteLength": 5180546,
+      "thumbnailMeanSaturation": 122.79,
+      "cropPreview390x520": "CENTER_TRUNCATES_OUTER_ST_CLARE; FOCAL_X_0.73_Y_0.50_PREFERABLE",
+      "aestheticReview": "RENAISSANCE_HORIZONTAL_COMPOSITION_NOT_PREFERRED_DARK_BAROQUE; CLAIRE_RIGHT_EDGE",
+      "dates": [
+        "2026-08-12"
+      ],
+      "sourceImageFileRetrieved": true,
+      "imageIdentityMatchesMuseumObject": true,
+      "checksumVerifiedFromArtifact": true,
+      "sourceMedium": "MUSEUM_ORIGINAL_COLOUR_JPEG",
+      "licence": "CC0_MET_OPEN_ACCESS",
+      "formalMobile390Approval": false,
+      "ownerDatePlacementAuthority": false,
+      "productionAssignment": false
+    },
+    {
+      "workKey": "Met:469892",
+      "accession": "1984.343",
+      "imageName": "Met_469892.jpg",
+      "museumOriginalURL": "https://images.metmuseum.org/CRDImages/cl/original/h1_1984.343.jpg",
+      "sha256": "522ed5d29396ceaa851862b5a685d8ec0f3a83af75b80a8001e5c17a64e13662",
+      "pixelWidth": 1812,
+      "pixelHeight": 2779,
+      "byteLength": 2244526,
+      "thumbnailMeanSaturation": 125.24,
+      "cropPreview390x520": "CENTER_PRESERVES_BISHOP_ST_CLARE_AND_FRANCIS; SOME_LOWER_HEM_TRIM",
+      "aestheticReview": "MEDIEVAL_GOLD_GROUND_ALT_LIFE_SCENE; NOT_DARK_BAROQUE",
+      "dates": [
+        "2026-08-12"
+      ],
+      "sourceImageFileRetrieved": true,
+      "imageIdentityMatchesMuseumObject": true,
+      "checksumVerifiedFromArtifact": true,
+      "sourceMedium": "MUSEUM_ORIGINAL_COLOUR_JPEG",
+      "licence": "CC0_MET_OPEN_ACCESS",
+      "formalMobile390Approval": false,
+      "ownerDatePlacementAuthority": false,
+      "productionAssignment": false
+    },
+    {
+      "workKey": "Met:1991.153",
+      "accession": "1991.153",
+      "imageName": "Met_1991.153.jpg",
+      "museumOriginalURL": "https://images.metmuseum.org/CRDImages/ep/original/DT6682.jpg",
+      "sha256": "848017868a51fbda0e7d7b9cc07c70d809bc849a13ecc4e0f5553e99708de724",
+      "pixelWidth": 2781,
+      "pixelHeight": 3720,
+      "byteLength": 2744594,
+      "thumbnailMeanSaturation": 125.17,
+      "cropPreview390x520": "CENTER_PRESERVES_WOODEN_BEAM_BOTH_FIGURES_GESTURES",
+      "aestheticReview": "DARK_BAROQUE_STRONG_MOBILE_GOSPEL_SCENE",
+      "dates": [
+        "2026-06-02",
+        "2026-06-03"
+      ],
+      "sourceImageFileRetrieved": true,
+      "imageIdentityMatchesMuseumObject": true,
+      "checksumVerifiedFromArtifact": true,
+      "sourceMedium": "MUSEUM_ORIGINAL_COLOUR_JPEG",
+      "licence": "CC0_MET_OPEN_ACCESS",
+      "formalMobile390Approval": false,
+      "ownerDatePlacementAuthority": false,
+      "productionAssignment": false
+    }
+  ]
+}
