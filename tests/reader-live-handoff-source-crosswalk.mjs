@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
-import {readFileSync} from "node:fs";
+import {readFileSync,mkdirSync,writeFileSync} from "node:fs";
+import {resolve} from "node:path";
 import {createMassReaderModel} from "../src/mass/reader-model.js";
 import {projectDirectOrdinaryCuratedLiveCards}
  from "../src/mass/reader-live-direct-curated.js";
@@ -146,4 +147,35 @@ assert.equal(resolveLiveHandoffSourceCrosswalk({model:{
 assert.equal(resolveLiveHandoffSourceCrosswalk({model:{cards:model.cards,
  structureOwner:"HISTORICAL_48"}}).reason,"CANONICAL_DIRECT_65_FAMILY_MODEL_REQUIRED");
 assert.equal(resolveLiveHandoffSourceCrosswalk({}).reason,"ACTUAL_NATIVE_SOURCE_CARDS_REQUIRED");
+const evidenceDir=process.env.AO_LIVE_HANDOFF_CROSSWALK_DIR;
+if(evidenceDir){
+ const dir=resolve(evidenceDir);
+ mkdirSync(dir,{recursive:true});
+ const baseline=resolveLiveHandoffSourceCrosswalk({model,form:"SOLEMN"});
+ assert.equal(baseline.status,"EXACT_NATIVE_65_CROSSWALK");
+ const csvCell=s=>'"'+String(s??"").replace(/"/g,'""')+'"';
+ const fields=["referenceId","referenceTitle","nativeCardId","nativeSequence",
+   "sourceKey","cutOrdinal","titleStatus","sourceMacroId",
+   "canonSegmentId","sourceCueIds","sourceBlockIds"];
+ const rows=baseline.mappings.map(m=>[
+   m.referenceId,m.referenceTitle,m.nativeCardId,m.nativeSequence,
+   m.sourceKey,m.cutOrdinal,m.titleStatus,m.evidence.sourceMacroId,
+   m.evidence.canonSegmentId,m.evidence.sourceCueIds.join(";"),
+   m.evidence.sourceBlockIds.join(";")
+ ]);
+ const csv=[fields.map(csvCell).join(","),...rows.map(row=>row.map(csvCell).join(","))].join("\n")+"\n";
+ writeFileSync(resolve(dir,"reference-to-native-65.csv"),csv);
+ writeFileSync(resolve(dir,"crosswalk-native-sourced-evidence.json"),
+   JSON.stringify({schema:baseline.schema,comparison:"OWNER_HANDOFF_TO_REAL_NATIVE_65",
+    publication:"RESEARCH_REVIEW_ONLY",actualFourForms:forms,
+    baseline,status:baseline.status,complete:baseline.exactReferenceMatches===65},null,2));
+ writeFileSync(resolve(dir,"README.txt"),
+  "Source-based owner handoff crosswalk, not a second liturgical timeline. "+
+  "Full CSV has 65 unique C01–C65 mappings to actual native curated IDs, "+
+  "source cue/block evidence and 14 Canon segment identities. "+
+  "P1, P2 and Q1 remain separate native rites. "+
+  "Extra Sequence/Requiem source variants are held for native resolution; "+
+  "no choir clock or production UI changed.\n");
+ console.log("LIVE_HANDOFF_CROSSWALK_ARTIFACT_PASS 65 CSV rows + actual source cues and blocks");
+}
 console.log("LIVE_HANDOFF_65_SOURCE_CROSSWALK_PASS 4 actual Mass forms, 65/65 exact native identities, 14 Canon segments, state-only source omissions, variants held, no parallel timeline");
