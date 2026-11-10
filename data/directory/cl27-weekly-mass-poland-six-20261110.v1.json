@@ -1,0 +1,304 @@
+{
+  "schema": "AO_CL27_POLISH_SOURCE_WEEKLY_V1",
+  "publication": "FIRST_PARTY_REPORTED_PATTERN_NOT_LIVE_MASS_OCCURRENCE",
+  "reviewed_on": "2026-11-10",
+  "policy": [
+    "Six exact existing CL2 physical sites, source checked on individual official SSPX Poland chapel pages, not newly discovered churches",
+    "Publish only current source-stated Mass-time patterns, not real-time confirmations or individual dated Mass occurrences",
+    "Do not import the source's confession, Rosary, adoration or catechism clocks as Masses",
+    "First-Friday and first-Saturday times remain conditional; never generate a generic weekly recurrence from them",
+    "Do not infer Missal edition, canonical status, Una Cum, celebrant, legal ownership, map coordinates or visitor entrance",
+    "Olsztyn and its 11 November 2026 address change remain out of this programme pending canonical site transition review"
+  ],
+  "sites": [
+    {
+      "cl2_anchor": "RG-A080BDE87FC4",
+      "source_id": "AO-B33-L-PL-4D17D140DFBE",
+      "source_ids": [
+        "AO-B33-L-PL-4D17D140DFBE",
+        "AO-B40-SSPX-PL-BAJERZE"
+      ],
+      "canonical_name": "Kaplica Chrystusa Króla",
+      "country": "PL",
+      "physical_description": "Bajerze 36 (pałac), Kijewo Królewskie, Bajerze, Poland",
+      "existing_source_url": "https://www.piusx.org.pl/kaplice/zestawienie",
+      "source_page_url": "https://www.piusx.org.pl/kaplice/bajerze",
+      "source_publisher": "Bractwo Kapłańskie Świętego Piusa X w Polsce",
+      "checked_on": "2026-11-10",
+      "subject_scope": "ONE_NAMED_CL2_SITE_NOT_DISTRICT",
+      "entries": [
+        {
+          "scope": "SUNDAY",
+          "time": "07:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "Sunday (official source)",
+          "label_fr": "Dimanche (source officielle)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "SUNDAY",
+          "time": "09:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "Sunday (official source)",
+          "label_fr": "Dimanche (source officielle)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "FIRST_FRIDAY",
+          "time": "19:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "First Friday of the month",
+          "label_fr": "Premier vendredi du mois",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "FIRST_SATURDAY",
+          "time": "09:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "First Saturday of the month",
+          "label_fr": "Premier samedi du mois",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "MONDAY_TO_FRIDAY",
+          "time": "07:15",
+          "mass_type": "UNKNOWN",
+          "label_en": "Monday to Friday (source-listed)",
+          "label_fr": "Du lundi au vendredi (selon la source)",
+          "exception_en": "Retreats and special local announcements can modify this pattern.",
+          "exception_fr": "Les retraites et les annonces locales particulières peuvent modifier cet horaire."
+        },
+        {
+          "scope": "SATURDAY",
+          "time": "07:15",
+          "mass_type": "UNKNOWN",
+          "label_en": "Saturday (official source)",
+          "label_fr": "Samedi (source officielle)",
+          "exception_en": "The source also lists a distinct 09:00 first-Saturday Mass; confirm whether 07:15 is celebrated on those Saturdays.",
+          "exception_fr": "La source indique aussi une messe à 9h00 le premier samedi ; vérifier si celle de 7h15 est également célébrée ce jour-là."
+        }
+      ]
+    },
+    {
+      "cl2_anchor": "RG-858EA6AA6D6A",
+      "source_id": "AO-B40-SSPX-PL-BOLES_AWIEC",
+      "source_ids": [
+        "AO-B40-SSPX-PL-BOLES_AWIEC",
+        "SSPXMAP:OPE-002727"
+      ],
+      "canonical_name": "Kaplica pw. NMPanny Nieustającej Pomocy",
+      "country": "PL",
+      "physical_description": "Our Lady of Perpetual Help chapel, ul. Garncarska 17",
+      "existing_source_url": "https://www.piusx.org.pl/kaplice/zestawienie",
+      "source_page_url": "https://www.piusx.org.pl/kaplice/boleslawiec",
+      "source_publisher": "Bractwo Kapłańskie Świętego Piusa X w Polsce",
+      "checked_on": "2026-11-10",
+      "subject_scope": "ONE_NAMED_CL2_SITE_NOT_DISTRICT",
+      "entries": [
+        {
+          "scope": "SUNDAY",
+          "time": "12:30",
+          "mass_type": "UNKNOWN",
+          "label_en": "Sunday (official source)",
+          "label_fr": "Dimanche (source officielle)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "FIRST_FRIDAY",
+          "time": "18:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "First Friday of the month",
+          "label_fr": "Premier vendredi du mois",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "FIRST_SATURDAY",
+          "time": "09:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "First Saturday of the month",
+          "label_fr": "Premier samedi du mois",
+          "exception_en": "",
+          "exception_fr": ""
+        }
+      ]
+    },
+    {
+      "cl2_anchor": "RG-513593EF876C",
+      "source_id": "AO-B40-SSPX-PL-BYDGOSZCZ",
+      "source_ids": [
+        "AO-B40-SSPX-PL-BYDGOSZCZ",
+        "SSPXMAP:OPE-002730"
+      ],
+      "canonical_name": "Kaplica pw. Matki Bożej Bolesnej",
+      "country": "PL",
+      "physical_description": "Our Lady of Sorrows chapel, ul. Fordońska 399",
+      "existing_source_url": "https://www.piusx.org.pl/kaplice/zestawienie",
+      "source_page_url": "https://www.piusx.org.pl/kaplice/bydgoszcz",
+      "source_publisher": "Bractwo Kapłańskie Świętego Piusa X w Polsce",
+      "checked_on": "2026-11-10",
+      "subject_scope": "ONE_NAMED_CL2_SITE_NOT_DISTRICT",
+      "entries": [
+        {
+          "scope": "SUNDAY",
+          "time": "08:30",
+          "mass_type": "SUNG",
+          "label_en": "Sunday (official source)",
+          "label_fr": "Dimanche (source officielle)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "FIRST_FRIDAY",
+          "time": "18:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "First Friday of the month",
+          "label_fr": "Premier vendredi du mois",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "FIRST_SATURDAY",
+          "time": "09:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "First Saturday of the month",
+          "label_fr": "Premier samedi du mois",
+          "exception_en": "",
+          "exception_fr": ""
+        }
+      ]
+    },
+    {
+      "cl2_anchor": "RG-5C04CA9B3BD4",
+      "source_id": "AO-B40-SSPX-PL-KROSNO",
+      "source_ids": [
+        "AO-B40-SSPX-PL-KROSNO",
+        "SSPXMAP:OPE-002715"
+      ],
+      "canonical_name": "Kaplica pw. św. Jana z Dukli",
+      "country": "PL",
+      "physical_description": "St. John of Dukla chapel, ul. Okrzei 4A",
+      "existing_source_url": "https://www.piusx.org.pl/kaplice/zestawienie",
+      "source_page_url": "https://www.piusx.org.pl/kaplice/krosno",
+      "source_publisher": "Bractwo Kapłańskie Świętego Piusa X w Polsce",
+      "checked_on": "2026-11-10",
+      "subject_scope": "ONE_NAMED_CL2_SITE_NOT_DISTRICT",
+      "entries": [
+        {
+          "scope": "SUNDAY",
+          "time": "13:30",
+          "mass_type": "UNKNOWN",
+          "label_en": "Sunday (official source)",
+          "label_fr": "Dimanche (source officielle)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "FIRST_SATURDAY",
+          "time": "08:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "First Saturday of the month",
+          "label_fr": "Premier samedi du mois",
+          "exception_en": "",
+          "exception_fr": ""
+        }
+      ]
+    },
+    {
+      "cl2_anchor": "RG-A0DBF5D61B7D",
+      "source_id": "AO-B40-SSPX-PL-SZCZECIN",
+      "source_ids": [
+        "AO-B40-SSPX-PL-SZCZECIN",
+        "SSPXMAP:OPE-002305",
+        "ao-research-sspx-oct26-poland-sspx-oct26-pl-szczecin-kaplica-sw-wojciecha"
+      ],
+      "canonical_name": "Kaplica p.w. sw. Wojciecha",
+      "country": "PL",
+      "physical_description": "St. Adalbert chapel, ul. Monte Cassino 30",
+      "existing_source_url": "https://www.piusx.org.pl/kaplice/zestawienie",
+      "source_page_url": "https://www.piusx.org.pl/kaplice/szczecin",
+      "source_publisher": "Bractwo Kapłańskie Świętego Piusa X w Polsce",
+      "checked_on": "2026-11-10",
+      "subject_scope": "ONE_NAMED_CL2_SITE_NOT_DISTRICT",
+      "entries": [
+        {
+          "scope": "SUNDAY",
+          "time": "08:00",
+          "mass_type": "LOW",
+          "label_en": "Sunday (official source)",
+          "label_fr": "Dimanche (source officielle)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "SUNDAY",
+          "time": "10:00",
+          "mass_type": "SUNG",
+          "label_en": "Sunday (official source)",
+          "label_fr": "Dimanche (source officielle)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "FIRST_FRIDAY",
+          "time": "18:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "First Friday of the month",
+          "label_fr": "Premier vendredi du mois",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "SATURDAY",
+          "time": "18:00",
+          "mass_type": "LOW",
+          "label_en": "Saturday (official source)",
+          "label_fr": "Samedi (source officielle)",
+          "exception_en": "The source also describes first-Saturday devotions, not an additional 18:00 Mass.",
+          "exception_fr": "La source annonce aussi les dévotions du premier samedi, sans indiquer une seconde messe à 18h00."
+        }
+      ]
+    },
+    {
+      "cl2_anchor": "RG-D70080C4D765",
+      "source_id": "AO-B40-SSPX-PL-TORUN",
+      "source_ids": [
+        "AO-B40-SSPX-PL-TORUN",
+        "SSPXMAP:OPE-002731"
+      ],
+      "canonical_name": "Kaplica pw. św. Jana Marii Vianneya",
+      "country": "PL",
+      "physical_description": "St. John Mary Vianney chapel, ul. Fałata 35/37",
+      "existing_source_url": "https://www.piusx.org.pl/kaplice/zestawienie",
+      "source_page_url": "https://www.piusx.org.pl/kaplice/torun",
+      "source_publisher": "Bractwo Kapłańskie Świętego Piusa X w Polsce",
+      "checked_on": "2026-11-10",
+      "subject_scope": "ONE_NAMED_CL2_SITE_NOT_DISTRICT",
+      "entries": [
+        {
+          "scope": "SUNDAY",
+          "time": "12:30",
+          "mass_type": "UNKNOWN",
+          "label_en": "Sunday (official source)",
+          "label_fr": "Dimanche (source officielle)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "FIRST_SATURDAY",
+          "time": "12:30",
+          "mass_type": "UNKNOWN",
+          "label_en": "First Saturday of the month",
+          "label_fr": "Premier samedi du mois",
+          "exception_en": "",
+          "exception_fr": ""
+        }
+      ]
+    }
+  ]
+}
