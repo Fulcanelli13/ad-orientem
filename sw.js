@@ -1,3 +1,7 @@
+/* 2026-11-10 CL27 Polish source-adjudicated batch: Bajerze + Bukowiec only.
+ * Four other Polish operator sites remain held for site/time conflicts.
+ * Keep source-published patterns distinct from promised future Mass occurrences.
+ */
 /* 2026-11-10 CL27 fourteen-site source-weekly supplement with exceptions.
  * Preserve ten earlier site programmes, all 26 contacts, and exact-Pages offline snapshots.
  * Source-published pattern only: no generated future Mass, missal or status inference.
