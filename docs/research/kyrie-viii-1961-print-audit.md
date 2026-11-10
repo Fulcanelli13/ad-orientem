@@ -27,6 +27,26 @@ The ninth source cue stays **`AO.SM.C0052`**, with three subordinate original-GA
 
 The two star markers and exact GABC fragments are preserved as evidence for future notation/performance highlighting; no local performance or exact singing time is observed. These new performance-role annotations do **not** constitute musical proof or editorial permission to publish the score.
 
+## Three separate historical printed witnesses — 10 November 2026
+
+Original printed folios have now been located and inspected at the edition/layout level:
+
+| Historical witness | Original printed page | Scan link | Current audit |
+|---|---|---|---|
+| *Graduale Romanum* (Solesmes 1961) | 28* and 29* | [28*](https://gregobase.selapa.net/sources/2/905.png) · [29*](https://gregobase.selapa.net/sources/2/906.png) | Primary score; source identity, four melodic phrases, repeats and final performer stars corroborated |
+| *Liber Usualis* (Solesmes 1961) | 37 | [p. 37](https://gregobase.selapa.net/sources/3/148.png) | Separate original printed witness with the four phrases and final star handoffs |
+| *Chants of the Church* (Solesmes 1956) | 19 | [p. 19](https://gregobase.selapa.net/sources/5/34.png) | Separate printed witness with the Latin score and an English gloss below it |
+
+These are **three published printed layouts**, not proof that three unrelated editors independently transcribed every neume. The currently pinned GregoBase GABC has a single editorial lineage. Comparing its rendering to another image of that same GABC is not independent musical validation.
+
+### Source-mark audit ledger
+
+`scripts/schola/kyrie-viii-three-witness-neume-ledger.mjs` enumerates the original pinned GABC by source line: **13 + 9 + 10 + 13 = 45 printed-source marks**, including parenthesised neume/clef/bar groups, the first Kyrie intonation star, all three printed repeat directives and two final Kyrie performance asterisks. These create **135 specific print-comparison tasks** across the three historical witnesses. All tasks remain `NOT_EXAMINED_NOTE_BY_NOTE` and **zero** are certified.
+
+This count represents **GABC token groups / structural source marks**, not 45 individual musical notes. A neume group can contain several pitched signs. The source score's historical editorial changes deserve particular attention: the Christe punctum-to-virga correction, a final Kyrie virga correction, relocated puncta morae, and alterations/half spaces. See [GregoBase source revision history](https://gregobase.selapa.net/chant.php?id=1184). Neither the source-mark count nor prior Exsurge mobile rendering is evidence that those notes have been checked against all three printed scores.
+
+The existing offline [Kyrie VIII editorial gallery](../../scripts/schola/build-kyrie-viii-review-gallery.mjs) now links all three witnesses and displays the 45 raw units in four separate melody sections. The printed images are **linked rather than redistributed**. Musical publication is still blocked pending explicit note/pitch/rhythm certification and an independent owner editorial decision.
+
 ## What has **not** been certified
 
 The small online scans and present review do **not** establish an independent note-by-note proofread of every neume (including quilismata and ligatures), rhythmic sign (puncta morae, episemata), pitch/accidental, asterisk and print spacing. Therefore all four phrases retain:
