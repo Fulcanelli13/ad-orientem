@@ -9,15 +9,16 @@ const EXPECTED=Object.freeze({
  FSSP:"https://www.fssp.org/en/decree-of-pope-francis-confirming-the-use-of-the-1962-liturgical-books/",
  ICKSP:"https://institute-christ-king.org/institute/traditional-latin-mass",
  IBP:"https://www.institutdubonpasteur.org/my-blog/articles-et-etudes/le-charisme-liturgique-de-linstitut-du-bon-pasteur-dans-le-droit-de-leglise/",
- SSPX:"https://sspx.org/en/why-sspx-uses-1962-missal-30158"
+ SSPX:"https://sspx.org/en/why-sspx-uses-1962-missal-30158",
+ AASJMV:"https://oratoriosaojosebh.org/legislacao/"
 });
 const T=v=>String(v??"").trim();
 const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
-const APPROVED_COUNT=1383;
-const APPROVED_SITES=1300;
+const APPROVED_COUNT=1389;
+const APPROVED_SITES=1306;
 const SITE_COUNT=2580;
 const HELD_COUNT=3;
-const FROZEN_ROWS_HASH="fnv1a32:a6c0d3d3";
+const FROZEN_ROWS_HASH="fnv1a32:8f919f52";
 const recordFingerprint=rows=>{
  let h=2166136261;
  for(const ch of JSON.stringify(rows)){h^=ch.charCodeAt(0);h=Math.imul(h,16777619)}
@@ -36,7 +37,7 @@ export function validateInstitutionalMinistryNormManifest(manifest){
    manifest?.counts?.distinct_physical_sites!==APPROVED_SITES||
    manifest?.counts?.held_group_disagreements!==HELD_COUNT||
    manifest?.upstream?.research_branch!=="data/cl2-unified-source-location-classification-20261026"||
-   !Array.isArray(manifest.rules)||manifest.rules.length!==4||
+   !Array.isArray(manifest.rules)||manifest.rules.length!==5||
    !Array.isArray(manifest.records)||manifest.records.length!==APPROVED_COUNT||
    manifest.records_fingerprint!==FROZEN_ROWS_HASH||
    recordFingerprint(manifest.records)!==FROZEN_ROWS_HASH||
@@ -56,8 +57,8 @@ export function validateInstitutionalMinistryNormManifest(manifest){
    containsForbidden(rule))throw Error("Invalid or modified institute-level liturgical rule "+id);
   byRule.set(id,rule);
  }
- if(byRule.size!==4)throw Error("Missing institute norms");
- const seen=new Set(),byAnchor=new Map(),counts={FSSP:0,ICKSP:0,IBP:0,SSPX:0};
+ if(byRule.size!==5)throw Error("Missing institute norms");
+ const seen=new Set(),byAnchor=new Map(),counts={FSSP:0,ICKSP:0,IBP:0,SSPX:0,AASJMV:0};
  for(const line of manifest.records){
   if(!Array.isArray(line)||line.length!==3)throw Error("Malformed CL27 source-ministry record");
   const [anchor,source,institute]=line;
@@ -107,7 +108,7 @@ export function attachInstitutionalMinistryLiturgy(items,manifest){
     scope:"SOURCE_MINISTRY",ministries:Object.freeze(ministries)
   })}));
  }
- if(attached.size!==APPROVED_SITES)throw Error("Missing 1300 exact CL2 physical site relationships");
+ if(attached.size!==APPROVED_SITES)throw Error("Missing 1306 exact CL2 physical site relationships");
  return Object.freeze(result);
 }
 // A record describes an institute's usual liturgical books, NOT the current
