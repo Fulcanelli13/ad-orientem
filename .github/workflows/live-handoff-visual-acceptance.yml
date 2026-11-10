@@ -1,0 +1,46 @@
+name: LIVE handoff Stage F isolated visual acceptance
+on:
+  pull_request:
+    paths:
+      - 'src/mass/reader-live-handoff-*.js'
+      - 'src/mass/reader-dom.js'
+      - 'tests/fixtures/live-handoff-visual.html'
+      - 'tests/live-handoff-visual-acceptance.mjs'
+      - '.github/workflows/live-handoff-visual-acceptance.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  isolated-visual-matrix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install browser QA dependencies
+        run: |
+          npm ci --ignore-scripts
+          npx playwright install --with-deps chromium
+      - name: Run source and browser scripts syntax
+        run: |
+          node --check tests/live-handoff-visual-acceptance.mjs
+          node --test tests/reader-live-handoff-stage-d.mjs
+          node --test tests/reader-live-handoff-turns.mjs
+      - name: Serve the actual repository static files
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 >/tmp/ao-handoff-static.log 2>&1 &
+          echo $! >/tmp/ao-handoff-static.pid
+          sleep 2
+          curl -fsS http://127.0.0.1:4173/tests/fixtures/live-handoff-visual.html >/dev/null
+      - name: Capture small phone, standard phone, tablet and landscape
+        run: node tests/live-handoff-visual-acceptance.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: live-handoff-B-C-D-isolated-visual-acceptance
+          path: artifacts/live-handoff-visual/
+          if-no-files-found: warn
+          retention-days: 14
