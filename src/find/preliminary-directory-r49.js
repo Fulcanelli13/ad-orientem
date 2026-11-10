@@ -3,6 +3,7 @@ import {matchesPublicCL27Facets} from "./cl27-public-facets.js";
 import {CL27_SITE_CONTACT_URL,attachPublishedSiteContactEvidence} from "./tlm-site-contact-evidence.js";
 import {CL27_WEEKLY_SOURCE_PROGRAMME_URL,attachPublishedWeeklySourceProgrammes} from "./tlm-source-weekly-mass-programme.js";
 import {CL27_WEEKLY_SUPPLEMENT_URL,attachPublishedWeeklySupplement} from "./tlm-weekly-source-supplement.js";
+import {CL27_POLISH_SOURCE_WEEKLY_URL,attachPolishFirstPartyWeeklyPatterns} from "./tlm-polish-weekly-patterns.js";
 import {CL27_DATED_MASS_PROGRAMME_URL,attachPublishedDatedMassProgramme,CL27_TARARE_DATED_MASS_PROGRAMME_URL,attachPublishedTarareDatedMassProgramme} from "./tlm-dated-mass-programme.js";
 import {
   CL27_PUBLIC_CELEBRATION_URL,attachPublishedCelebrationEvidence,tlmCelebrationEvidenceClass,
@@ -296,6 +297,20 @@ export async function loadPreliminaryR49({fetchImpl=fetch}={}){
     const evidence=await supplemental.json();
     if(evidence?.schema==="AO_CL27_SOURCE_WEEKLY_MASS_SUPPLEMENT_V1")
       cache=attachPublishedWeeklySupplement(cache,evidence);
+  }
+  // Independent source scope: six already-registered Polish chapels.
+  // Older installed snapshots may omit this optional data; a tagged,
+  // malformed/identity-mismatched manifest always fails closed.
+  let polish=null;
+  try{
+    polish=await fetchImpl(CL27_POLISH_SOURCE_WEEKLY_URL,{headers:{accept:"application/json"}});
+  }catch{
+    // Optional content absent in a previous GitHub Pages install.
+  }
+  if(polish?.ok){
+    const evidence=await polish.json();
+    if(evidence?.schema==="AO_CL27_POLISH_SOURCE_WEEKLY_V1")
+      cache=attachPolishFirstPartyWeeklyPatterns(cache,evidence);
   }
   return cache;
 }
