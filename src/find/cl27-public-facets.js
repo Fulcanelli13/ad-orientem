@@ -1,3 +1,4 @@
+import {institutionalRiteMissal} from "./tlm-institutional-rite-missal.js";
 // Public CL27 browsing over the existing physical-site Directory. Research
 // taxonomy options are not source assertions. Never classify a whole venue
 // from an institute badge, or from one programme's selected Masses.
@@ -26,13 +27,17 @@ function exactBooks(item){
    Array.isArray(item?.source_links)&&item.source_links.some(s=>s?.url===c?.source_url)&&
    c?.liturgical_use==="ROMAN"&&c?.missal_edition==="1962";
 }
-// Positive claims currently released: 2 explicit first-party celebrations.
-// Raw ministry/community policy and loose directory hints are NOT approved.
+// Exact celebration witnesses take priority. The source-ID-joined CL2 institute
+// norms may now provide Roman/1962 at ministry scope (never whole-site proof).
+// Source-label-only records and unsupported ecclesial claims remain UNKNOWN.
 export function publicCL27Value(item,key){
  if(key==="institute_or_community")return "SOURCE_LABEL_ONLY";
  if(!BY_KEY.has(key))return null;
  if(key==="liturgical_use"&&exactBooks(item))return "ROMAN";
  if(key==="missal_edition"&&exactBooks(item))return "1962";
+ const ministry=institutionalRiteMissal(item);
+ if(ministry?.length&&key==="liturgical_use")return "ROMAN";
+ if(ministry?.length&&key==="missal_edition")return "1962";
  return "UNKNOWN";
 }
 export function validPublicCL27Selection(key,value){
