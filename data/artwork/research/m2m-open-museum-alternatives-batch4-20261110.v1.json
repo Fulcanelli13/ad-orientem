@@ -1,0 +1,175 @@
+{
+  "schema": "AO_SACRED_ART_CC0_MUSEUM_ALTERNATIVE_DISCOVERY_BATCH4_V1",
+  "asOf": "2026-11-10",
+  "status": "INSTITUTIONAL_OPEN_ACCESS_METADATA_SEARCH_NOT_YET_EXECUTED",
+  "researchConstraint": "Find new nonrejected alternative artworks; original artwork identities and earlier owner selections remain unchanged. No release, no auto-admission of Commons, no image byte acquisition.",
+  "providers": [
+    {
+      "id": "CMA",
+      "name": "Cleveland Museum of Art",
+      "url": "https://openaccess-api.clevelandart.org/api/artworks/",
+      "rightsDocument": "https://www.clevelandart.org/open-access-api",
+      "licenseFilter": "cc0=true",
+      "limitPerQuery": 20
+    },
+    {
+      "id": "AIC",
+      "name": "Art Institute of Chicago",
+      "url": "https://api.artic.edu/api/v1/artworks/search",
+      "rightsDocument": "https://api.artic.edu/docs/",
+      "licenseFilter": "is_public_domain=true",
+      "limitPerQuery": 20
+    },
+    {
+      "id": "MET",
+      "name": "The Metropolitan Museum of Art",
+      "url": "https://collectionapi.metmuseum.org/public/collection/v1.1/search",
+      "rightsDocument": "https://metmuseum.github.io/",
+      "licenseFilter": "isPublicDomain=true",
+      "limitPerQuery": 20,
+      "objectMetadataUrl": "https://collectionapi.metmuseum.org/public/collection/v1/objects/{objectID}"
+    }
+  ],
+  "targets": [
+    {
+      "originalKey": "Holburne:A17",
+      "proposedLiturgicalDate": "2026-11-10",
+      "theme": "Death of Saint Andrew Avellino",
+      "queries": [
+        "Andrew Avellino"
+      ],
+      "desiredFidelity": "EVENT_EXACT_COLLAPSE_AT_ALTAR",
+      "searchScope": "OIL_PAINTING_OR_RELEVANT_PAINTED_PANEL_ONLY_EXCLUDE_PRINTS_AFTER_QA",
+      "allowNonExactSceneOnlyForEditorialComparison": true,
+      "requiredOwnerRejectionCrosscheckBeforeCuratedPool": true,
+      "ownerApproved": false,
+      "productionAssignment": false
+    },
+    {
+      "originalKey": "IAPH:67609",
+      "proposedLiturgicalDate": "2026-10-23",
+      "theme": "Saint Anthony Mary Claret",
+      "queries": [
+        "Anthony Mary Claret"
+      ],
+      "desiredFidelity": "SAINT_PERSON_EXACT",
+      "searchScope": "OIL_PAINTING_OR_RELEVANT_PAINTED_PANEL_ONLY_EXCLUDE_PRINTS_AFTER_QA",
+      "allowNonExactSceneOnlyForEditorialComparison": true,
+      "requiredOwnerRejectionCrosscheckBeforeCuratedPool": true,
+      "ownerApproved": false,
+      "productionAssignment": false
+    },
+    {
+      "originalKey": "Lombardia:C0150-00107",
+      "proposedLiturgicalDate": "2026-06-17",
+      "theme": "Saint Gregory Barbarigo",
+      "queries": [
+        "Gregory Barbarigo"
+      ],
+      "desiredFidelity": "SAINT_PERSON_EXACT",
+      "searchScope": "OIL_PAINTING_OR_RELEVANT_PAINTED_PANEL_ONLY_EXCLUDE_PRINTS_AFTER_QA",
+      "allowNonExactSceneOnlyForEditorialComparison": true,
+      "requiredOwnerRejectionCrosscheckBeforeCuratedPool": true,
+      "ownerApproved": false,
+      "productionAssignment": false
+    },
+    {
+      "originalKey": "LvivNationalGallery:Ж-1791",
+      "proposedLiturgicalDate": "2026-10-16",
+      "theme": "Saint Hedwig of Silesia mediation",
+      "queries": [
+        "Hedwig of Silesia"
+      ],
+      "desiredFidelity": "SAINT_PERSON_OR_EVENT_EXACT",
+      "searchScope": "OIL_PAINTING_OR_RELEVANT_PAINTED_PANEL_ONLY_EXCLUDE_PRINTS_AFTER_QA",
+      "allowNonExactSceneOnlyForEditorialComparison": true,
+      "requiredOwnerRejectionCrosscheckBeforeCuratedPool": true,
+      "ownerApproved": false,
+      "productionAssignment": false
+    },
+    {
+      "originalKey": "Olomouc:Skreta-WenceslasCycle",
+      "proposedLiturgicalDate": "2026-09-28",
+      "theme": "Saint Wenceslaus sacramental devotion",
+      "queries": [
+        "Saint Wenceslaus"
+      ],
+      "desiredFidelity": "SAINT_PERSON_EXACT",
+      "searchScope": "OIL_PAINTING_OR_RELEVANT_PAINTED_PANEL_ONLY_EXCLUDE_PRINTS_AFTER_QA",
+      "allowNonExactSceneOnlyForEditorialComparison": true,
+      "requiredOwnerRejectionCrosscheckBeforeCuratedPool": true,
+      "ownerApproved": false,
+      "productionAssignment": false
+    },
+    {
+      "originalKey": "POP:PM51000939",
+      "proposedLiturgicalDate": "2026-05-15",
+      "theme": "Saint John Baptist de la Salle",
+      "queries": [
+        "Jean Baptiste de La Salle"
+      ],
+      "desiredFidelity": "SAINT_PERSON_EXACT",
+      "searchScope": "OIL_PAINTING_OR_RELEVANT_PAINTED_PANEL_ONLY_EXCLUDE_PRINTS_AFTER_QA",
+      "allowNonExactSceneOnlyForEditorialComparison": true,
+      "requiredOwnerRejectionCrosscheckBeforeCuratedPool": true,
+      "ownerApproved": false,
+      "productionAssignment": false
+    },
+    {
+      "originalKey": "Thoma:AthanasiusOfAlexandria",
+      "proposedLiturgicalDate": "2026-05-02",
+      "theme": "Saint Athanasius of Alexandria",
+      "queries": [
+        "Athanasius"
+      ],
+      "desiredFidelity": "SAINT_PERSON_EXACT_NOT_SAINT_ANTHONY",
+      "searchScope": "OIL_PAINTING_OR_RELEVANT_PAINTED_PANEL_ONLY_EXCLUDE_PRINTS_AFTER_QA",
+      "allowNonExactSceneOnlyForEditorialComparison": true,
+      "requiredOwnerRejectionCrosscheckBeforeCuratedPool": true,
+      "ownerApproved": false,
+      "productionAssignment": false
+    },
+    {
+      "originalKey": "UMMA:1960/2.93",
+      "proposedLiturgicalDate": "2026-08-09",
+      "theme": "Christ healing the deaf and mute man",
+      "queries": [
+        "deaf mute healing"
+      ],
+      "desiredFidelity": "MARK_7_31_37_EXACT_SCENE",
+      "searchScope": "OIL_PAINTING_OR_RELEVANT_PAINTED_PANEL_ONLY_EXCLUDE_PRINTS_AFTER_QA",
+      "allowNonExactSceneOnlyForEditorialComparison": true,
+      "requiredOwnerRejectionCrosscheckBeforeCuratedPool": true,
+      "ownerApproved": false,
+      "productionAssignment": false
+    }
+  ],
+  "filters": {
+    "trustedInstitutionalImageHosts": [
+      "openaccess-cdn.clevelandart.org",
+      "www.artic.edu",
+      "images.metmuseum.org"
+    ],
+    "maxQueriesPerProvider": 8,
+    "maxResultMetadataPerProviderQuery": 20,
+    "maxMetObjectDetailsPerQuery": 10,
+    "maxTotalLiveRequests": 130,
+    "noParallelImageDownloads": true,
+    "apiResultsAreNotOwnerApproved": true,
+    "mustCheckOriginalArtworkAlreadyInResearchPool": true,
+    "mustCheckExistingOwnerGlobalRejectionBeforeCuratedPool": true,
+    "crossMuseumIdentitiesMustNotBeAssumedIdentical": true,
+    "noNewImageBytes": true,
+    "noNewRuntimeAssignments": true
+  },
+  "counts": {
+    "originalEightPreviouslyTriaged": 8,
+    "providerCount": 3,
+    "totalSearchQueries": 24,
+    "verifiedAlternatePaintings": 0,
+    "alternatesOwnerApproved": 0,
+    "newImageByteAcquisitions": 0,
+    "previousMuseumJpegsVerified": 9,
+    "newPublishedImages": 0
+  }
+}
