@@ -61,7 +61,7 @@ export function validateInstitutionalMinistryNormManifest(manifest){
  for(const line of manifest.records){
   if(!Array.isArray(line)||line.length!==3)throw Error("Malformed CL27 source-ministry record");
   const [anchor,source,institute]=line;
-  if(!/^RG-[A-F0-9]{12}$/.test(T(anchor))||!T(source)||!byRule.has(institute)||
+  if(!/^RG-(?:B\d{2}-)?[A-F0-9]{12}$/.test(T(anchor))||!T(source)||!byRule.has(institute)||
    seen.has(anchor+"|"+source))throw Error("Invalid or duplicated CL2 source ID");
   seen.add(anchor+"|"+source);
   counts[institute]++;
