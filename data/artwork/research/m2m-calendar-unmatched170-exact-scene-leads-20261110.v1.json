@@ -23,11 +23,11 @@
   ],
   "counts": {
     "baselineUnmatchedCalendarTargets": 170,
-    "targetsWithNewResearchLeads": 159,
-    "targetsStillWithoutNamedLeads": 11,
-    "proposedRelationshipEdges": 188,
+    "targetsWithNewResearchLeads": 165,
+    "targetsStillWithoutNamedLeads": 5,
+    "proposedRelationshipEdges": 196,
     "existing989Edges": 25,
-    "newInstitutionalObjectEdges": 152,
+    "newInstitutionalObjectEdges": 160,
     "secondaryOrCommonsOnlyEdges": 11,
     "byClass": {
       "II": {
@@ -37,8 +37,8 @@
       },
       "III": {
         "unmatchedBaseline": 101,
-        "withResearchLeads": 90,
-        "stillWithoutLeads": 11
+        "withResearchLeads": 96,
+        "stillWithoutLeads": 5
       },
       "IV": {
         "unmatchedBaseline": 40,
@@ -864,9 +864,25 @@
       "observedPrincipalId": "tempora:Quad3-1:3:v",
       "gospelReferenceFromMatchingIndex": "Luke 4:23–30",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "NGI:253",
+          "title": "Christ in the Synagogue at Nazareth",
+          "artist": "Gerbrand van den Eeckhout",
+          "sourceUrl": "https://onlinecollection.nationalgallery.ie/objects/6527/christ-in-the-synagogue-at-nazareth",
+          "medium": "oil on canvas, 1658",
+          "relation": "SAME_NAZARETH_SYNAGOGUE_EVENT_BUT_EARLIER_VERSES",
+          "scriptureOrIdentityAnchor": "Luke 4:23–30",
+          "remark": "NGI original 253 directly describes Luke 4:16–21, Christ reading Isaiah and teaching before rejection. Appointed March 9 Gospel is the FOLLOW-ON Nazareth rejection and attempt to throw him from hill (Luke 4:23–30). Correct event setting but NOT exact rejection scene; never classify as literal pericope.",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-03-10",
@@ -897,9 +913,40 @@
       "observedPrincipalId": "tempora:Quad4-2:3:v",
       "gospelReferenceFromMatchingIndex": "John 7:14–31",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 2,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "Rijks:RP-P-OB-44.918",
+          "title": "Preek van Christus voor de tempel (Christ Preaching Before the Temple)",
+          "artist": "Jan Luyken",
+          "sourceUrl": "https://www.rijksmuseum.nl/nl/collectie/object/Preek-van-Christus-voor-de-tempel--e4c74abc0a8042e43f4c1e215556fb49",
+          "medium": "etching proof, 1700",
+          "relation": "GOSPEL_SCENE_EXACT_SUBSET",
+          "scriptureOrIdentityAnchor": "John 7:14–15 within John 7:14–31",
+          "remark": "Rijksmuseum original RP-P-OB-44.918 specifically depicts Christ preaching during the Feast of Tabernacles; correct adult Christ, not 12-year-old child in Temple. Museum original and free-status metadata not a selected-photo approval.",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        },
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "NGA:1964.8.1012",
+          "title": "Christ at the Feast of Tabernacles",
+          "artist": "Léonard Gaultier",
+          "sourceUrl": "https://www.nga.gov/artworks/48161-christ-feast-tabernacles",
+          "medium": "engraving, probably c.1576–1580",
+          "relation": "FEAST_EVENT_CONTEXT_NOT_EXACT_SUBSET",
+          "scriptureOrIdentityAnchor": "John 7:14–31",
+          "remark": "National Gallery of Art 1964.8.1012, same adult Feast of Tabernacles event, not necessarily the exact spoken sayings. Different physical work from Rijks Luyken; public-domain media separately from app approval.",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-03-21",
@@ -919,9 +966,40 @@
       "observedPrincipalId": "tempora:Quad5-1:3:v",
       "gospelReferenceFromMatchingIndex": "John 7:32–39",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 2,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "BibliaSacra:73C732x73C72472x1",
+          "title": "Christ preaching in the Temple while Pharisees and chief priests conspire",
+          "artist": "Attributed to Lieven de Witte, designer",
+          "sourceUrl": "https://www.bibliasacra.nl/illustration/73C732x73C72472x1/",
+          "medium": "woodcut illustration, printed 1538",
+          "relation": "GOSPEL_SCENE_PARTIAL_EXACT",
+          "scriptureOrIdentityAnchor": "John 7:32; 7:45–53, within broader appointed John 7:32–39",
+          "remark": "Bibliasacra Iconclass expressly cites John 7:32 (officers sent to apprehend Jesus), which is opening of March 23 Gospel. Not a complete visual representation of living-water declaration 7:37–39; original scan specific state needs further QA.",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        },
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "NGA:1964.8.1012",
+          "title": "Christ at the Feast of Tabernacles",
+          "artist": "Léonard Gaultier",
+          "sourceUrl": "https://www.nga.gov/artworks/48161-christ-feast-tabernacles",
+          "medium": "engraving, c.1576–1580",
+          "relation": "SAME_FEAST_EVENT_NOT_EXACT_SAYINGS",
+          "scriptureOrIdentityAnchor": "John 7:32–39",
+          "remark": "Repeat same adult Feast of Tabernacles setting, not specific living-water speech; different series/print object from BibliaSacra woodcut.",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-03-24",
@@ -930,9 +1008,25 @@
       "observedPrincipalId": "tempora:Quad5-2:3:v",
       "gospelReferenceFromMatchingIndex": "John 7:1–13",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "BibliaSacra:73C7232x73C72321x73C72322x1",
+          "title": "Brothers of Christ advise Him to go to Judea; Christ travels secretly to Tabernacles and teaches",
+          "artist": "Christoffel van Sichem II",
+          "sourceUrl": "https://bibliasacra.nl/illustration/73C7232x73C72321x73C72322x1/",
+          "medium": "woodcut book illustration, edition 1657",
+          "relation": "GOSPEL_COMPOSITE_PARTIALLY_EXACT",
+          "scriptureOrIdentityAnchor": "John 7:1–13 (brothers exhort him, then secret travel vv.2–10)",
+          "remark": "Composite woodcut includes events of appointed March 24 Gospel, plus later teaching in Temple John 7:14 onwards. Preserve exact compound iconography, no cropping into invented narrative; source CC BY metadata not pixel/owner clearance.",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-04-13",
@@ -2439,9 +2533,25 @@
       "observedPrincipalId": "sancti:07-10:3:r",
       "gospelReferenceFromMatchingIndex": "Matthew 12:46–50",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "ICCD:0300158485",
+          "title": "The Martyrdom of Saints Rufina and Secunda (Painting of Three Hands)",
+          "artist": "Giovanni Battista Crespi (Cerano), Giulio Cesare Procaccini, Pier Francesco Mazzucchelli (Morazzone)",
+          "sourceUrl": "https://www.catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0300158485",
+          "medium": "oil on canvas, c.1620–1624",
+          "relation": "MULTI_SAINT_FEAST_PARTIAL",
+          "scriptureOrIdentityAnchor": "Saints Rufina and Secunda; DOES NOT show the Seven Holy Brothers",
+          "remark": "Pinacoteca di Brera Baroque masterpiece. Exact July 10 female martyrs both present. Feast also commemorates seven male brothers, who are NOT depicted. Three artist shares identified; no per-person crop approval.",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-07-12",
@@ -4429,9 +4539,25 @@
       "observedPrincipalId": "sancti:10-23r:3:w",
       "gospelReferenceFromMatchingIndex": "Matthew 24:42–47",
       "baselineStatus": "NONE_NO_APPROVED_CANDIDATE",
-      "candidateState": "NO_VERIFIED_NAMED_CANDIDATE",
-      "candidateCount": 0,
-      "artworkRelationships": []
+      "candidateState": "NEW_EDITORIAL_LEADS_UNAPPROVED",
+      "candidateCount": 1,
+      "artworkRelationships": [
+        {
+          "kind": "NEW_INSTITUTIONAL_OBJECT_LEAD",
+          "key": "IAPH:67609",
+          "title": "San Antonio María Claret",
+          "artist": "Artist unidentified, official Andalusian inventory",
+          "sourceUrl": "https://repositorio.iaph.es/handle/11532/43186",
+          "medium": "oil on canvas, academicist portrait (date unverified)",
+          "relation": "SAINT_PERSON_EXACT",
+          "scriptureOrIdentityAnchor": "Saint Anthony Mary Claret, bishop, founder of Claretians",
+          "remark": "Instituto Andaluz del Patrimonio Histórico official church movable-art register no. 67609, accession/photo record 10/0045760; Saint expressly identified, seated in episcopal dress and Immaculate Heart symbolism. Original photograph has separate IAPH usage/credit restrictions. The modern 2013 Castrillo portrait and contemporary parish mural are NOT the same work nor copyright-free.",
+          "userReviewStates": [],
+          "identityStatus": "EXACT_ORIGINAL_AND_PHOTO_NOT_CERTIFIED",
+          "imageRightsStatus": "NOT_CLEARED",
+          "newPlacementAuthority": "NOT_GRANTED"
+        }
+      ]
     },
     {
       "date": "2026-10-26",
