@@ -62,12 +62,24 @@ The existing direct-source photo search queue was reduced from **49 to 40** keys
 
 Review ledger: `m2m-open-source-batch3-msk-mnk-20261110.v1.json`. Acquisition source code: `scripts/sacred-art-acquire-msk-mnk-batch3.py`. No fees or contact requests have been made.
 
+## ICCD official-image policy — decisive 27-key reclassification
+
+On 10 November, the Italian Ministry's official [Catalogo generale terms](https://www.catalogo.beniculturali.it/termini-uso) were checked. The catalogue's Creative Commons CC BY 4.0 licence **does not automatically grant reuse of its photographs**: photographs require a reproduction request to the relevant authority and can incur fees. The same restriction is reiterated in the [ICCD photo reproduction guidance](https://www.iccd.beniculturali.it/it/consultazione-riproduzione-immagini). Since Ad Orientem will neither seek paid rights nor contact institutions, **27 exact ICCD original oil work keys have been moved from active official-image acquisition into the distinct open-photo-equivalent search lane**. This is a **photo-source restriction only**, not rejection of the underlying original paintings, which can qualify with a separately documented, genuinely open exact reproduction.
+
+**Current operating census:** 13 active first-party/open-source searches; 45 restricted institutional photographs seeking independently open equivalents; eight acquired verified research JPEGs. The 155 candidate artwork keys and 198 original relationship edges are unchanged.
+
+## Recovery routes and the first MSK/Kraków job
+
+- Nationalmuseum launched its own [public high-resolution media portal](https://media.nationalmuseum.se/search/all) in June 2025. NM420 and NM1134 should be searched by **inventory number** there and matched to an exact media record with its own licence. This avoids retrying the blocked collection-site .large.jpg URLs. The first-party media IDs and bytes have **not** been identified or approved. Non-handpicked Commons files remain excluded.
+- The initial MSK Ghent/Kraków batch3 run **42821076217** attempted three artworks but acquired **zero**. The older MSK IIIF parser did not find a unique service; the exact service ID and photographer from the museum manifest have now been recorded, and the code corrects the lookup using the specifically pinned service. Both Kraków pages exposed no object-linked og:image, so those remain source-image discovery holds.
+- The corrected MSK run must yield actual photo bytes, dimensions, SHA-256, colour/crop diagnostics and unambiguous institutional attribution before we add a ninth verified image. A job success code or a pre-existing manifest URL is not itself evidence of download.
+
 ## Next operational sequence
 
 1. Inspect the eight acquired originals together using actual application container geometry at 320px and 390px, preserve full artwork when cover crops remove saints or central narrative, and confirm accurate artist/copy attributions. Do not require the owner to review every unpromising source.
 2. Resolve Wellcome's current photo-ID licence and associated attribution. For Ribera, preserve CC BY-SA 4.0 and note crop/modification obligations.
-3. Among the **40** distinct priority oil works in `C_LOCATE_REUSABLE_COLOUR_SOURCE`, prefer accessible institutional full-colour files with explicit reuse permissions; avoid restricted official photos and investigate equivalent reliable sources rather than paying or contacting museums.
-4. Handle the **18** institutionally restricted source-image records, **one** grayscale-only, **one** artwork copyright hold and **one** unresolved identity key explicitly; do not disguise them as completed images.
+3. Among the **13** distinct priority oil works in `C_LOCATE_REUSABLE_COLOUR_SOURCE`, prefer accessible institutional full-colour files with explicit reuse permissions; avoid restricted official photos and investigate equivalent reliable sources rather than paying or contacting museums.
+4. Handle the **45** institutionally restricted source-image records, **one** grayscale-only, **one** artwork copyright hold and **one** unresolved identity key explicitly; do not disguise them as completed images.
 5. Check the **83** original research keys outside the priority oil group, including the **9 additional oil-medium candidates**, without misclassifying prints and watercolours as oil.
 6. Only after editorial signoff, build a **separate** release-candidate manifest that includes image bytes, stable checksum, source, licence, attribution, final crop and approved date. Never feed this research JSON into runtime directly.
 
