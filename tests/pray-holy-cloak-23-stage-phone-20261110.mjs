@@ -73,7 +73,7 @@ try{
       const switched=reader.locator('[data-ao-holy-cloak-step="XVIII"] .aoDevoCardScroll > p[lang]');
       assert.equal(await switched.getAttribute("lang"),other);
       assert.equal(normalize(await switched.innerText()),normalize(faceOf(step,other)));
-      assert.ok(!/^[℣℟]\./m.test(await switched.innerText()),"Invented versicle markers");
+      assert.equal((await switched.innerText()).split("\n").filter(line=>/^[℣℟]\./.test(line)).length,38,"Original source-printed versicle and response labels must render");
      }
      await reader.locator('[data-p435930-hc-lang="'+locale+'"]').click();
     }
