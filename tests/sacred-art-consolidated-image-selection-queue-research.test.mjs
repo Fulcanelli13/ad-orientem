@@ -110,6 +110,16 @@ assert.equal(queue.counts.verifiedColourJpegSources,9);
 assert.equal(queue.counts.verifiedSourcePhotosInOriginal151Pool,8);
 assert.equal(queue.reviewLaneCounts.C_LOCATE_REUSABLE_COLOUR_SOURCE,12);
 assert.equal(queue.counts.firstPartyMediaRecordInvestigations,4);
+const cantius=workByKey.get('MNK:II-a-448');
+const stanislaus=workByKey.get('MNK:II-a-9');
+assert.equal(cantius.verifiedSubjectIconography.saintIdentity,'JOHN_CANTIUS');
+assert.equal(cantius.verifiedSubjectIconography.narrativeRole,'EXACT_SAINT_LEGEND_SCENE');
+assert.equal(cantius.verifiedSubjectIconography.ownerImageApproval,false);
+assert.equal(stanislaus.verifiedSubjectIconography.exactEventDepicted,'EXCOMMUNICATION_OF_KING');
+assert.ok(stanislaus.verifiedSubjectIconography.eventsNotDepicted.includes('MARTYRDOM'));
+assert.equal(stanislaus.verifiedSubjectIconography.suitableAsMartyrdomScene,false);
+assert.equal(stanislaus.verifiedSubjectIconography.ownerImageApproval,false);
+
 for(const [key,accession] of [
  ['Nationalmuseum:NM420','NM 420'],
  ['Nationalmuseum:NM1134','NM 1134'],
