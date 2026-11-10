@@ -19,15 +19,15 @@ assert.equal(openPrayerStatuses.filter(x=>x==='SUPPLEMENTARY_NOT_ASSIGNED').leng
 assert.equal(openPrayerStatuses.filter(x=>x==='HOLD_RESPECTED').length,14);
 
 const linked=audit.records.filter(x=>x.candidateCount>0);
-assert.equal(linked.length,136);
-assert.equal(audit.records.filter(x=>!x.candidateCount).length,34);
+assert.equal(linked.length,149);
+assert.equal(audit.records.filter(x=>!x.candidateCount).length,21);
 assert.deepEqual(Object.entries(audit.counts.byClass).map(([rank,x])=>[rank,x.unmatchedBaseline,x.withResearchLeads,x.stillWithoutLeads]),[
- ['II',29,25,4],['III',101,76,25],['IV',40,35,5]
+ ['II',29,25,4],['III',101,89,12],['IV',40,35,5]
 ]);
 const edges=audit.records.flatMap(x=>x.artworkRelationships);
-assert.equal(edges.length,161);
+assert.equal(edges.length,178);
 assert.equal(edges.filter(x=>x.kind==='EXISTING_989_GROUP_RESEARCH_LINK').length,25);
-assert.equal(edges.filter(x=>x.kind==='NEW_INSTITUTIONAL_OBJECT_LEAD').length,126);
+assert.equal(edges.filter(x=>x.kind==='NEW_INSTITUTIONAL_OBJECT_LEAD').length,143);
 assert.equal(edges.filter(x=>x.kind==='SECONDARY_OR_COMMONS_RESEARCH_ONLY').length,10);
 assert.equal(audit.counts.newAuthorizedAssignments,0);
 const groups=new Map(original.map(x=>[x.workGroupId,x]));
@@ -87,6 +87,24 @@ assert.equal(audit.records.find(x=>x.date==='2026-10-19').artworkRelationships.l
 assert.ok(audit.records.find(x=>x.date==='2026-10-19').artworkRelationships.every(x=>x.remark.includes('Peter of Alcántara')||x.title.includes('Peter of Alcántara')),'St Peter of Alcantara not apostle');
 assert.ok(audit.records.find(x=>x.date==='2026-04-27').artworkRelationships.every(x=>x.medium.includes('engraving')),'Canisius print remains labelled non-oil');
 assert.ok(audit.records.find(x=>x.date==='2026-08-08').artworkRelationships.every(x=>x.medium.includes('charcoal')),'Curé Ars remains a drawing research lead');
+assert.equal(audit.records.find(x=>x.date==='2026-02-20').verified1962Gospel.reference,'Matthew 5:43–48; 6:1–6','Friday after Ash Wednesday crosswalk');
+assert.ok(audit.records.find(x=>x.date==='2026-02-20').verified1962Gospel.note.includes('6:1–4'),'source discrepancy preserved');
+assert.equal(audit.records.find(x=>x.date==='2026-03-05').verified1962Gospel.reference,'Luke 16:19–31');
+assert.equal(audit.records.find(x=>x.date==='2026-03-05').gospelReferenceFromMatchingIndex,null,'do not silently change canonical Gospel');
+assert.ok(audit.records.find(x=>x.date==='2026-03-05').artworkRelationships.some(x=>x.key==='Rijks:SK-A-868'&&x.medium.includes('oil on canvas')),'Rijks exact parable oil');
+assert.ok(audit.records.find(x=>x.date==='2026-03-05').artworkRelationships.some(x=>x.key==='Walters:W.535.185R'&&x.medium.includes('paper')),'Walters parable manuscript');
+assert.equal(audit.records.find(x=>x.date==='2026-05-12').artworkRelationships[0].relation,'MULTI_SAINT_FEAST_PARTIAL','12 May lacks Pancras');
+assert.equal(audit.records.find(x=>x.date==='2026-07-28').artworkRelationships[0].relation,'MULTI_SAINT_FEAST_PARTIAL','28 July lacks two popes');
+assert.equal(audit.records.find(x=>x.date==='2026-09-16').artworkRelationships[0].relation,'MULTI_SAINT_FEAST_COMPLETE','Veronese shows Cornelius and Cyprian');
+assert.equal(audit.records.find(x=>x.date==='2026-06-25').artworkRelationships.length,2,'William of Montevergine two distinct Vaccaro oils');
+assert.ok(audit.records.find(x=>x.date==='2026-12-04').artworkRelationships.some(x=>x.key==='Met:419574'&&x.medium.includes('etching')),'Callot Chrysologus not oil painting');
+for(const date of ['2026-12-01','2026-12-05']){
+ const target=audit.records.find(x=>x.date===date);
+ assert.equal(target.artworkRelationships[0].key,'Tate:N05613','John Martin single original across dates');
+ assert.equal(target.artworkRelationships[0].relation,'APOCALYPTIC_CONTEXT_NOT_EXACT_LUKE','Revelation scene cannot be labeled literal Luke');
+}
+assert.ok(audit.records.find(x=>x.date==='2026-02-20').artworkRelationships.every(x=>x.relation==='SERMON_CONTEXT_NOT_VERSE_SPECIFIC'),'Brueghel is sermon context only');
+
 
 assert.ok(audit.records.find(x=>x.date==='2026-01-24').artworkRelationships.some(x=>x.medium.includes('parchment')));
 assert.ok(audit.records.find(x=>x.date==='2026-03-06').artworkRelationships.every(x=>x.medium.includes('manuscript')||x.medium.includes('woodcut')),'Wicked husbandmen art is non-oil fallback');
@@ -97,4 +115,4 @@ assert.ok(audit.records.find(x=>x.date==='2026-06-01').artworkRelationships.some
 
 assert.ok(audit.records.find(x=>x.date==='2026-11-08').artworkRelationships.some(x=>x.key==='Thyssen:1979.62'));
 assert.ok(audit.records.find(x=>x.date==='2026-10-18').artworkRelationships.some(x=>x.key==='REVIEW::commons:150920'));
-console.log('PASS: 170 unchanged Calendar holds, 27 protected Prayer holds, 136 dated research leads / 161 edges, no rejected originals or publication authority.');
+console.log('PASS: 170 unchanged Calendar holds, 27 protected Prayer holds, 149 dated research leads / 178 edges, no rejected originals or publication authority.');
