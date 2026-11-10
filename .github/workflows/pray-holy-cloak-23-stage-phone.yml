@@ -18,6 +18,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   twenty-three-stage-phone:
     runs-on: ubuntu-latest
@@ -28,7 +32,7 @@ jobs:
         with:
           node-version: '22'
       - name: Install exact pinned Playwright dependency
-        run: npm ci
+        run: npm install --no-audit --no-fund
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
       - name: Source, translation and edition safeguards
