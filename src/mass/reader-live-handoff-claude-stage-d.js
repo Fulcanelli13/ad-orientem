@@ -25,7 +25,7 @@ function claudeWheelRender(wheel,timeline,nativeState=null){
   const current=c.current;
   const post=current&&posture?.location===i?{
    KNEEL:"#9b4a55",STAND:"#3f7f63",SIT:"#a88a45"}[posture.text]:"#282e31";
-  g+=`<path d="${ring}" fill="${SEC[claudeSectionForCard(c.referenceId)]}" stroke="#0b1016" stroke-width="1.5" opacity="${current?1:.82}"/>`;
+  g+=`<path data-wheel-segment="${i+1}" d="${ring}" fill="${SEC[claudeSectionForCard(c.referenceId)]}" stroke="#0b1016" stroke-width="1.5" opacity="${current?1:.82}"/>`;
   g+=`<path d="${claudeWheelArc(178,214,A(i),A(i+1))}" fill="${post||"#282e31"}" stroke="#0b1016" stroke-width="1"/>`;
  });
  g+=`<circle r="158" fill="none" stroke="#2c3645" stroke-width="22" opacity=".75"/>`;
@@ -77,7 +77,7 @@ function claudeTimelineRender(timeline,{span=8,width=390,height=230}={}){
  }
  g+=`<rect x="${W/2-.75}" y="10" width="1.5" height="${H-10}" fill="#fff" opacity=".9"/>`;
  const fs=Math.min(10,Math.max(6.5,(H-14)/rows.length*.5));
- rows.forEach(([k,n])=>{g+=`<text x="3" y="${Y[k][0]+Y[k][1]/2+fs*.38}" style="font:600 ${fs}px Georgia,serif;letter-spacing:.6px;fill:rgba(238,233,223,.62);paint-order:stroke;stroke:#0b1016;stroke-width:3px">${n}</text>`;});
+ rows.forEach(([k,n])=>{g+=`<text data-native-lane="${k}" x="3" y="${Y[k][0]+Y[k][1]/2+fs*.38}" style="font:600 ${fs}px Georgia,serif;letter-spacing:.6px;fill:rgba(238,233,223,.62);paint-order:stroke;stroke:#0b1016;stroke-width:3px">${n}</text>`;});
  g+='</svg>';
  return `<div class="ao-claude-timeline-page" data-timeline-design="CLAUDE_ORIGINAL_SIX_LANES">
  <div class="ao-claude-timeline-canvas">${g}</div>
