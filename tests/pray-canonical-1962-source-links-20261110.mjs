@@ -32,9 +32,11 @@ assert.match(prayers.adoration_lord_i_am_not_worthy.la,/^Domine, non sum dignus 
 assert.match(prayers.adoration_lord_i_am_not_worthy.en,/Lord, I am not worthy/);
 assert.match(prayers.adoration_lord_i_am_not_worthy.fr,/Seigneur, je ne suis pas digne/);
 
-const missing=Object.entries(prayers).filter(([,p])=>!p.sourceUrl).map(([id])=>id);
-assert.deepEqual(missing,[],"All 48 canonical prayers should now have source URL references, not full print certificates");
-assert.equal(repair.postPatchSourceUrlCountExpected,48);
+const missing=Object.entries(prayers).filter(([,p])=>!(p.sourceUrl||p.provenance?.url)).map(([id])=>id);
+assert.deepEqual(missing,[],"All 48 canonical prayers should now have effective URL references, not full print certificates");
+assert.equal(repair.postPatchEffectiveSourceReferenceCountExpected,48);
+assert.equal(Object.values(prayers).filter(p=>!!p.sourceUrl).length,repair.postPatchDirectSourceUrlCountExpected,
+ "Direct sourceUrl is a different coverage metric from sourceUrl/provenance.url");
 assert.deepEqual(historical.counts.prayerMissingUrl,["mass_confiteor","adoration_lord_i_am_not_worthy"],
  "Retain dated historical baseline rather than falsifying past inventory");
 for(const x of repair.patches){
