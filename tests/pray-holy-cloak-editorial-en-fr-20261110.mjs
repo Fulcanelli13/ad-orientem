@@ -28,10 +28,10 @@ assert.equal(xviii.en.split("\n").length,it.find(x=>x.id==="XVIII").it.split("\n
 assert.equal(xviii.fr.split("\n").length,it.find(x=>x.id==="XVIII").it.split("\n").length);
 assert.match(xviii.en,/final perseverance/);
 assert.match(xviii.fr,/persévérance finale/);
-assert.equal(tr.sectionXVIIINotationPolicy,"UNMARKED_ALTERNATING_PETITIONS_NOT_VERSICLE_RESPONSE_SIGNS");
+assert.equal(tr.sectionXVIIINotationPolicy,"SALPAN_ITALIAN_PDF_PRINTED_ALTERNATING_VERSICLE_RESPONSE_SIGLA_MODERN_TRANSLATION_CUES_MATCH");
 for(const x of [xviii.en,xviii.fr,it.find(p=>p.id==="XVIII").it]){
- assert.doesNotMatch(x,/^[℣℟]\./m,"Section XVIII witness has no printed versicle-response sigla");
- assert.equal(x.split("\n").length,38,"All petition/answer lines must remain intact");
+ assert.equal((x.match(/^[℣℟]\./gm)||[]).length,38,"Section XVIII must retain printed versicle-response cues");
+ assert.deepEqual(x.split("\n").map(line=>line.slice(0,2)),Array.from({length:38},(_,i)=>i%2?"℟.":"℣."),"Printed alternating cues preserved");
 }
 assert.deepEqual(source.modernEditorialTranslations,["en","fr"]);
 assert.equal(source.modernEditorialLanguagesReview,"DRAFT_NOT_HISTORICAL_WITNESSES");
