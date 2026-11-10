@@ -93,7 +93,7 @@ assert.ok(proper.includes("Holy Mary"));
 assert.ok(!proper.includes("Psalm 69"));
 assert.ok(paginateLitanyProper(proper,"en").length>=1);
 assert.equal(BATCH03_LITANY_EDITION_POLICY.private.liturgical1962Certified,false);
-assert.equal(BATCH03_LITANY_EDITION_POLICY.major.reader,"SOURCE_LINK_ONLY_PENDING_COMPLETE_TEXT_COLLATION");
+assert.equal(BATCH03_LITANY_EDITION_POLICY.major.reader,"LOCAL_R25_LATIN_SOURCE__PRINT_COLLATION_AND_FRENCH_EDITION_PENDING");
 assert.equal(BATCH03_LITANY_EDITION_POLICY.vigil.reader,"EXISTING_SPECIAL_MASS_OWNER");
 assert.equal(BATCH03_LITANY_EDITION_POLICY.forty.reader,"EXISTING_FORTY_HOURS_OWNER");
 const lit=runtime.slice(runtime.indexOf("function renderBatch03PublicLitanyReference(){"),runtime.indexOf("async function ensureSevenWords(){"));
