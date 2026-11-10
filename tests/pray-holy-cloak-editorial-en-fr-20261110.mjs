@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {HOLY_CLOAK_EDITORIAL_EN_FR_V1 as tr} from "../src/pray/holy-cloak-editorial-en-fr.v1.js";
-import {HOLY_CLOAK_ITALIAN_SOURCE_V1 as source,HOLY_CLOAK_ITALIAN_SECTIONS_V1 as it,HOLY_CLOAK_ITALIAN_STEPS_V1 as steps} from "../src/pray/holy-cloak-italian-original.v1.js";
+import {HOLY_CLOAK_ITALIAN_SOURCE_V1 as source,HOLY_CLOAK_ITALIAN_SECTIONS_V1 as it,HOLY_CLOAK_ITALIAN_STEPS_V1 as steps,HOLY_CLOAK_LITANY_HISTORIC_VARIANT_V1 as scoped} from "../src/pray/holy-cloak-italian-original.v1.js";
 import {JOSEPH_LITANY_1909_V1 as oldLitany} from "../src/pray/st-joseph-litany-1909.v1.js";
 assert.equal(tr.sourceId,source.id);
 assert.equal(tr.sourceLanguage,"it");
@@ -35,9 +35,17 @@ for(const x of [xviii.en,xviii.fr,it.find(p=>p.id==="XVIII").it]){
 }
 assert.deepEqual(source.modernEditorialTranslations,["en","fr"]);
 assert.equal(source.modernEditorialLanguagesReview,"DRAFT_NOT_HISTORICAL_WITNESSES");
-assert.equal(steps.find(x=>x.id==="litany").vernacular.en,oldLitany.en);
-assert.equal(steps.find(x=>x.id==="litany").vernacular.fr,oldLitany.fr);
-assert.equal(steps.find(x=>x.id==="litany").body,oldLitany.la);
+assert.equal(steps.find(x=>x.id==="litany").vernacular.en,scoped.en);
+assert.match(scoped.en,/Pray for us, Saint Joseph/);
+assert.match(scoped.en,/worthy of the promises of Christ/);
+assert.notEqual(scoped.en,oldLitany.en);
+assert.equal(steps.find(x=>x.id==="litany").vernacular.fr,scoped.fr);
+assert.match(scoped.fr,/Priez pour nous, saint Joseph/);
+assert.match(scoped.fr,/dignes des promesses du Christ/);
+assert.notEqual(scoped.fr,oldLitany.fr);
+assert.equal(steps.find(x=>x.id==="litany").body,scoped.la);
+assert.equal(scoped.sourceId,oldLitany.id);
+assert.equal(scoped.originalPrint1882Collated,false);
 const ui=readFileSync(new URL("../src/pray/presentation-runtime.js",import.meta.url),"utf8");
 for(const needle of [
  'import {HOLY_CLOAK_EDITORIAL_EN_FR_V1}',
