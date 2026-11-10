@@ -1,0 +1,26 @@
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+
+const read = p => JSON.parse(readFileSync(new URL('../'+p, import.meta.url),'utf8'));
+const ledger = read('data/artwork/research/m2m-wellcome-walters-remaining-source-reconciliation-20261110.v1.json');
+assert.equal(ledger.status,'RESEARCH_ONLY_SOURCE_PROVENANCE_RECONCILED_NO_APP_RELEASE');
+assert.deepEqual(ledger.records.map(x=>x.workKey),['Wellcome:45078i','Walters:37.1146']);
+const [w,a]=ledger.records;
+assert.equal(w.fullFrontImageId,'V0017627');
+assert.equal(w.legacyPhotoLicence,'CC_BY_4_0');
+assert.deepEqual([w.historicalCommonsPixelWidth,w.historicalCommonsPixelHeight],[3550,1995]);
+assert.match(w.historicalCommonsFileSha1,/^[0-9a-f]{40}$/);
+assert.equal(w.firstPartyImageBytesDownloaded,false);
+assert.equal(w.officialImageSpecificCurrentLicenceVerified,false);
+assert.equal(w.productionEligible,false);
+assert.equal(w.ownerPlacementApproved,false);
+assert.equal(w.originalPhotoSha256,null);
+assert.equal(w.blockedWrongPhoto.startsWith('L0014632'),true);
+assert.equal(a.commonsPhotoColour,'GRAYSCALE_CONFIRMED_BY_VISUAL_VIEWING');
+assert.equal(a.firstPartyPhotographsColour,'ALL_THREE_GREYSCALE_CONFIRMED');
+assert.equal(a.autoCuratedPromotionAllowed,false);
+assert.equal(a.alternativeColourPhotoIdentified,false);
+assert.equal(a.productionEligible,false);
+assert.equal(a.ownerPlacementApproved,false);
+assert.equal(ledger.census.newImageReleases,0);
+console.log('PASS: Wellcome V0017627 historic photo licence and Walters grayscale holdings tracked; both release holds remain closed');
