@@ -67,7 +67,7 @@ Review ledger: `m2m-open-source-batch3-msk-mnk-20261110.v1.json`. Acquisition so
 
 On 10 November, the Italian Ministry's official [Catalogo generale terms](https://www.catalogo.beniculturali.it/termini-uso) were checked. The catalogue's Creative Commons CC BY 4.0 licence **does not automatically grant reuse of its photographs**: photographs require a reproduction request to the relevant authority and can incur fees. The same restriction is reiterated in the [ICCD photo reproduction guidance](https://www.iccd.beniculturali.it/it/consultazione-riproduzione-immagini). Since Ad Orientem will neither seek paid rights nor contact institutions, **27 exact ICCD original oil work keys have been moved from active official-image acquisition into the distinct open-photo-equivalent search lane**. This is a **photo-source restriction only**, not rejection of the underlying original paintings, which can qualify with a separately documented, genuinely open exact reproduction.
 
-**Current operating census:** 12 active first-party/open-source searches; 45 restricted institutional photographs seeking independently open equivalents; nine acquired verified research JPEGs. The 155 candidate artwork keys and 198 original relationship edges are unchanged.
+**Current operating census:** 8 directly actionable first-party/open-source searches; 4 separate browser-rendered portal source holds; 45 restricted institutional photographs seeking independently open equivalents; nine acquired verified research JPEGs. The 155 candidate artwork keys and 198 original relationship edges are unchanged.
 
 ## Recovery routes and the first MSK/Kraków job
 
@@ -75,11 +75,21 @@ On 10 November, the Italian Ministry's official [Catalogo generale terms](https:
 - The initial MSK Ghent/Kraków batch3 run **42821076217** attempted three artworks but acquired **zero**. The older MSK IIIF parser did not find a unique service; the exact service ID and photographer from the museum manifest have now been recorded, and the code corrects the lookup using the specifically pinned service. Both Kraków pages exposed no object-linked og:image, so those remain source-image discovery holds.
 - **The corrected MSK run succeeded**: official S-43 IIIF JPEG 2,000 × 3,887, independent SHA-256 `b4ee3e06d0ec7de6b9ade82502e80098e564d50157a0d284a2a0b563da9c134b`. The cropped mobile hero is unsuitable without explicit review: very tall narrative image and a prominent diagonal line of unknown origin. The museum marks the source image Public Domain, but separate MSK published terms refer commercial uses and publications to Art in Flanders; no paid licensing or outreach is authorised. Both Kraków originals remain without object-specific image links.
 
+## Exact museum portal discovery — completed technical investigation
+
+GitHub Actions run **42837900450** checked Nationalmuseum NM420 and NM1134 via the Nationalmuseum media search, and Kraków MNK II-a-448 and MNK II-a-9 via their original object pages. All four websites returned **JavaScript application shells**, not server-rendered asset URLs: Nationalmuseum returned 1,129-byte shells for each query, while the Kraków pages returned 2,621-byte shells without their accession or any image/download anchors. The probe passed as an investigation, but **0 new photographs were retrieved**.
+
+These four are now in a distinct **client-rendered museum portal** lane. Do not send more static GET or og:image probes to the same URLs. Obtain an exact named photo through the browser-rendered public download action or a documented institutional API before running image-size/colour, SHA and licence checks. The pre-existing nine verified museum photographs and all owner selections remain unchanged.
+
+The two Kraków subjects have also been disentangled from misleading historical labels: Tadeusz Kuntze's **MNK II-a-448** illustrates Saint John Cantius repairing a poor woman's broken milk jug and restoring the milk. Juliusz Knoor's **MNK II-a-9** shows Saint Stanislaus **excommunicating King Bolesław**, not the martyrdom or murder of Stanislaus. Do not apply the image to a martyrdom-scene target solely because the museum lists older alternate titles. Neither is newly approved.
+
+Research evidence: `m2m-museum-portal-static-client-blockers-20261110.v1.json`. The separate research manifest and source scanner remain in the same directory.
+
 ## Next operational sequence
 
 1. Inspect the nine acquired originals together using actual application container geometry at 320px and 390px, preserve full artwork when cover crops remove saints or central narrative, and confirm accurate artist/copy attributions. Do not require the owner to review every unpromising source.
 2. Resolve Wellcome's current photo-ID licence and associated attribution. For Ribera, preserve CC BY-SA 4.0 and note crop/modification obligations.
-3. Among the **12** distinct priority oil works in `C_LOCATE_REUSABLE_COLOUR_SOURCE`, prefer accessible institutional full-colour files with explicit reuse permissions; avoid restricted official photos and investigate equivalent reliable sources rather than paying or contacting museums.
+3. Among the **8** distinct priority oil works in `C_LOCATE_REUSABLE_COLOUR_SOURCE`, prefer accessible institutional full-colour files with explicit reuse permissions; avoid restricted official photos and investigate equivalent reliable sources rather than paying or contacting museums.
 4. Handle the **45** institutionally restricted source-image records, **one** grayscale-only, **one** artwork copyright hold and **one** unresolved identity key explicitly; do not disguise them as completed images.
 5. Check the **83** original research keys outside the priority oil group, including the **9 additional oil-medium candidates**, without misclassifying prints and watercolours as oil.
 6. Only after editorial signoff, build a **separate** release-candidate manifest that includes image bytes, stable checksum, source, licence, attribution, final crop and approved date. Never feed this research JSON into runtime directly.
