@@ -111,7 +111,7 @@ test("source drift, inserted cards and bad map ordering all fail closed",()=>{
   assert.equal(projectLiveHandoffWheel(bad).ok,false);
 });
 test("wheel is 65 source-native segments, not a duration clock or synthesized meaning",()=>{
-  const m=model65(),i=34,t=projectLiveHandoffTimeline({
+  const m=model65(),i=35,t=projectLiveHandoffTimeline({
     gate:gate(m,i),model:m,nativeState:native(i)});
   const wheel=projectLiveHandoffWheel(t);
   assert.equal(wheel.ok,true);
@@ -144,10 +144,11 @@ test("lane readout shows all six named lanes and never gives choir card pointer"
   assert.doesNotMatch(scholaRow,/data-source-mark="true"/);
 });
 test("native title and source lane strings are escaped, not injected as HTML",()=>{
-  const m=model65(),i=10,g=gate(m,i);
-  g.crosswalk.mappings[i]={...g.crosswalk.mappings[i],
-    nativeTitle:'<script>alert("wrong")</script>'};
-  g.reference=g.crosswalk.mappings[i];
+  const m=model65(),i=10,original=gate(m,i);
+  const mapped=original.crosswalk.mappings.map((ref,n)=>n===i
+    ?{...ref,nativeTitle:'<script>alert("wrong")</script>'}:ref);
+  const g={...original,crosswalk:{...original.crosswalk,mappings:mapped},
+    reference:mapped[i]};
   const t=projectLiveHandoffTimeline({gate:g,model:m,nativeState:native(i)});
   const html=renderLiveHandoffWheelHtml(projectLiveHandoffWheel(t));
   assert.doesNotMatch(html,/<script>/);
