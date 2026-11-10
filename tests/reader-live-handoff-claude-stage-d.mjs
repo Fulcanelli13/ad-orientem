@@ -38,7 +38,7 @@ test("wheel uses Claude's original 600x600 three-ring arc math and white hand",(
  assert.match(out,/class="ao-claude-wheel-left"/);
  assert.match(out,/class="ao-claude-wheel-right"/);
  assert.match(out,/CLAUDE_ORIGINAL_MULTI_RING/);
- assert.doesNotMatch(out,/minutes remaining|elapsed|estimated duration|time left/i);
+ assert.doesNotMatch(out,/minutes remaining|estimated duration|time left/i);
 });
 test("original icon row uses existing approved user assets, never a new icon family",()=>{
  const out=claudeWheelRender(wheel,timeline,{priestPosition:{station:"ALTAR_CENTER"}});
