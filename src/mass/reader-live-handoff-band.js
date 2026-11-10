@@ -314,7 +314,7 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
       const timelineSize=timelineHost.getBoundingClientRect();
       timelineHost.innerHTML=claudeTimelineRender(timeline,{span:claudeZoomSpan,
         width:timelineSize.width||390,height:timelineSize.height||230});
-      wheelHost.innerHTML=claudeWheelRender(wheel,timeline);
+      wheelHost.innerHTML=claudeWheelRender(wheel,timeline,nativeState);
       lastTimelineSignature=timelineSignature;
     }
     band.dataset.stageDSourceStatus=timeline.ok?"SOURCE_ONLY_65":"SOURCE_HOLD";
