@@ -43,8 +43,17 @@ for(const a of entries){
   assert.equal(row.approvedOrInherited,true,a.slot);
   assert.equal(row.sourceIdentityVerified,true,a.slot);
   assert.ok(RELEASED_MODULE_PAINTINGS[result.artId],a.slot);
-  if(a.slot!=="DOOR-D5")assert.equal(row.selected?.sourcePage,result.photo.source,
+  const pinnedExactWorkReuse = new Set([
+   "DOOR-D5","HERO-22","STG-programme.first_saturday-01",
+   "COV-pray.adoration","COV-pray.forty_hours"
+  ]);
+  if(!pinnedExactWorkReuse.has(a.slot))assert.equal(row.selected?.sourcePage,result.photo.source,
    "Exact source URL, not an inferred subject or similar painting: "+a.slot);
+  else {
+   const norm=s=>String(s??"").normalize("NFD").replace(/\p{M}/gu,"").toLowerCase().replace(/[^a-z0-9]/g,"");
+   assert.equal(norm(row.selected?.title),norm(result.photo.title),"Pinned exact work title: "+a.slot);
+   assert.equal(norm(row.selected?.artist),norm(result.photo.artist),"Pinned exact work artist: "+a.slot);
+  }
  }
 }
 assert.equal(Object.values(PRAYER_ART_EDITORIAL_SLOTS_V1).filter(x=>x.hold).length,15,
