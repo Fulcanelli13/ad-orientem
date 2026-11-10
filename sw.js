@@ -59,6 +59,8 @@ const OFFLINE_CRITICAL_PRIVATE_LITANY=[
  new URL("data/pray/private-litany-of-saints-1883-en.v1.json",BASE).href,
  new URL("data/pray/private-litany-of-saints-1862-fr.v1.json",BASE).href
 ];
+// The existing shared R25 Rogations Latin text is required for offline public Litany reading.
+const OFFLINE_CRITICAL_ROGATIONS_LATIN=new URL("data/presentation/reader-rogations.v1.json",BASE).href;
 
 const scoped=url=>{
  try{const u=new URL(url,BASE);return u.origin===BASE.origin&&u.pathname.startsWith(BASE.pathname)&&!u.search&&!u.hash?u.href:null}
@@ -158,7 +160,7 @@ async function stageSnapshot(){
   // A resource is charged against the hard item limit only once, even if
   // both the HTML and an ESM/CSS import refer to it. Keep queue identity
   // distinct from actual certified resources (which are still hashed).
-  const queue=[...new Set([ROOT,...urlsInHtml(html),OFFLINE_CRITICAL_ANGELUS_ART,...OFFLINE_CRITICAL_PRIVATE_LITANY])];
+  const queue=[...new Set([ROOT,...urlsInHtml(html),OFFLINE_CRITICAL_ANGELUS_ART,...OFFLINE_CRITICAL_PRIVATE_LITANY,OFFLINE_CRITICAL_ROGATIONS_LATIN])];
   const processed=new Set(),digests=[];
   let bytes=0;
   try{
