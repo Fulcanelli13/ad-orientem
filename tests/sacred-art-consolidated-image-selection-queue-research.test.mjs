@@ -100,7 +100,21 @@ assert.deepEqual(dates.filter(x=>x.supplementalUnintegratedArtworkKeys.length).m
 assert.ok(dates.every(x=>x.editorialDateApproval===false&&x.publishedImageAssignmentCreated===false));
 assert.equal(queue.counts.verifiedColourJpegSources,8);
 assert.equal(queue.counts.verifiedSourcePhotosInOriginal151Pool,7);
-assert.equal(queue.reviewLaneCounts.C_LOCATE_REUSABLE_COLOUR_SOURCE,49);
+assert.equal(queue.reviewLaneCounts.C_LOCATE_REUSABLE_COLOUR_SOURCE,40);
+assert.equal(queue.reviewLaneCounts.C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT,18);
+assert.equal(queue.counts.newInstitutionPhotoPolicyHolds,9);
+const policyFile=read(root+'m2m-open-source-batch3-msk-mnk-20261110.v1.json');
+const policyKeys=policyFile.policyHolds.flatMap(x=>x.workKeys);
+assert.equal(policyKeys.length,9);
+assert.equal(new Set(policyKeys).size,9);
+for(const key of policyKeys){
+ const work=workByKey.get(key);
+ assert.ok(work, 'policy hold missing '+key);
+ assert.equal(work.lane,'C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT');
+ assert.equal(work.institutionPhotoPolicyHold.alternativeImageSearchAllowed,true);
+ assert.equal(work.institutionPhotoPolicyHold.paidRequestOrOwnerContactAllowed,false);
+ assert.equal(work.ownerApprovalForAnyNewDate,false);
+}
 assert.equal(queue.counts.newOwnerApprovedPlacements,0);
 assert.equal(queue.counts.newPublicArtworkReleases,0);
 assert.equal(Object.values(queue.reviewLaneCounts).reduce((a,b)=>a+b,0),155);
