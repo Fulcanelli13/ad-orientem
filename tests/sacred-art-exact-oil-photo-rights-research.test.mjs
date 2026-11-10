@@ -1,0 +1,67 @@
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+
+const read = file => JSON.parse(readFileSync(new URL('../' + file, import.meta.url), 'utf8'));
+const triage = read('data/artwork/research/m2m-calendar-prepublication-triage-198-20261110.v1.json');
+const sourceAudit = read('data/artwork/research/m2m-exact-oil-source-rights-audit18-20261110.v1.json');
+const photoQueue = read('data/artwork/research/m2m-open-photo-acquisition-queue6-20261110.v1.json');
+
+assert.equal(sourceAudit.status,'RESEARCH_ONLY_SOURCE_RIGHTS_METADATA_NO_IMAGE_BYTES');
+assert.equal(sourceAudit.records.length,18);
+assert.equal(new Set(sourceAudit.records.map(x=>x.workKey)).size,18);
+assert.equal(triage.edges.filter(x=>x.priority==='P2_EXACT_OIL_MUSEUM_SOURCE_AND_IMAGE_QA').length,79);
+assert.equal(new Set(triage.edges.filter(x=>x.priority==='P2_EXACT_OIL_MUSEUM_SOURCE_AND_IMAGE_QA').map(x=>x.artworkKey)).size,68);
+assert.deepEqual(sourceAudit.counts,{
+ uniqueOilWorkKeysAudited:18,relatedBaselineExactOilEdgePool:79,distinctExactOilWorkKeysInPool:68,
+ explicitOpenImageSourcePolicyCandidates:6,officialPhotographsNoncommercialRestricted:2,
+ photoRightsNotYetEstablished:10,exactImageBytesDownloaded:0,photoHashVerified:0,
+ mobileImageCropsCertified:0,dateSpecificOwnerApprovals:0,releaseReadyPhotos:0
+});
+const allOils = new Set(triage.edges.filter(x=>x.priority==='P2_EXACT_OIL_MUSEUM_SOURCE_AND_IMAGE_QA').map(x=>x.artworkKey));
+for(const item of sourceAudit.records){
+ assert.ok(allOils.has(item.workKey),'oil source audit must only include priority oil keys: '+item.workKey);
+ assert.ok(item.catalogueUrl.startsWith('https://'));
+ assert.equal(item.downloadedPhotoBytes,false);
+ assert.equal(item.selectedImageFileSha256,null);
+ assert.equal(item.photoWidthPx,null);
+ assert.equal(item.photoHeightPx,null);
+ assert.equal(item.mobilePhoneCrop390Verified,false);
+ assert.equal(item.artworkPhotoVisualQAComplete,false);
+ assert.equal(item.dateSpecificOwnerApproval,false);
+ assert.equal(item.eligibleForProduction,false);
+}
+const cc0=sourceAudit.records.filter(x=>x.photographedImageRightsStatus.includes('CC0'));
+assert.deepEqual(cc0.map(x=>x.workKey).sort(),['Met:1991.153','Met:435901','Met:469892','Met:724811','Walters:37.1146'].sort());
+assert.equal(sourceAudit.records.filter(x=>x.photographedImageRightsStatus==='SELECTED_IMAGE_PAGE_CC_BY_4_LICENSE').length,1);
+assert.deepEqual(sourceAudit.records.filter(x=>x.photographedImageRightsStatus.includes('NONCOMMERCIAL')).map(x=>x.workKey).sort(),['NationalGalleriesScotland:NG2238','Thyssen:31'].sort());
+const restricted=sourceAudit.records.filter(x=>x.photographedImageRightsStatus.includes('NONCOMMERCIAL'));
+assert.ok(restricted.every(x=>x.priority==='P0_RESTRICTED_IMAGE_SOURCE_DO_NOT_USE'));
+assert.ok(sourceAudit.records.find(x=>x.workKey==='Thyssen:31').imageAccessAndQA.includes('forbid altered images'));
+assert.ok(sourceAudit.records.find(x=>x.workKey==='ICCD:0300180045').photographedImageRightsStatus.startsWith('METADATA_'));
+assert.ok(sourceAudit.records.find(x=>x.workKey==='Rijks:SK-A-868').imageAccessAndQA.includes('pixel/crop'));
+assert.ok(sourceAudit.records.find(x=>x.workKey==='Holburne:A17').objectAndSceneNote.includes('Piazzetta'));
+assert.ok(sourceAudit.records.find(x=>x.workKey==='Walters:37.1146').imageAccessAndQA.includes('monochrome'));
+assert.ok(sourceAudit.records.find(x=>x.workKey==='Met:469892').objectAndSceneNote.includes('medium differs'));
+assert.ok(sourceAudit.records.find(x=>x.workKey==='Louvre:RF1966.1').objectAndSceneNote.includes('provenance gap'));
+assert.equal(photoQueue.status,'SOURCED_OPEN_IMAGE_OPTIONS_NOT_ACQUIRED_NOT_APPROVED');
+assert.equal(photoQueue.records.length,6);
+assert.deepEqual(photoQueue.counts,{
+ firstPartyOpenImageWorkKeys:6,firstPartyUrlsFound:5,downloadedExactFiles:0,sourceBytesHashed:0,
+ selectedPhotosColorAndPixelQACertified:0,dateSpecificOwnerApproval:0,publicReleaseCandidatesReady:0
+});
+for(const q of photoQueue.records){
+ const src=sourceAudit.records.find(x=>x.workKey===q.key);
+ assert.ok(src,'staged open-photo key has no audited object: '+q.key);
+ assert.ok(src.photographedImageRightsStatus.includes('CC0')||src.photographedImageRightsStatus==='SELECTED_IMAGE_PAGE_CC_BY_4_LICENSE');
+ assert.equal(q.originalFileAcquired,false);
+ assert.equal(q.sha256,null);
+ assert.equal(q.pixelWidth,null);
+ assert.equal(q.pixelHeight,null);
+ assert.equal(q.finalPhotoRightVerifiedForExactBytes,false);
+ assert.equal(q.ownerDatePlacementAuthority,false);
+ assert.equal(q.productionEligible,false);
+}
+assert.equal(photoQueue.records.filter(x=>x.firstPartyPhotoUrl).length,5);
+assert.equal(photoQueue.records.find(x=>x.key==='Walters:37.1146').imageQualityIssue.includes('black-and-white'),true);
+assert.ok(photoQueue.records.find(x=>x.key==='Wellcome:45078i').photoLicence.includes('attribution necessary'));
+console.log('PASS: 18 museum oil work audit (6 open-policy, 2 restricted, 10 unresolved); six image acquisitions staged with no bytes, approvals, or release.');
