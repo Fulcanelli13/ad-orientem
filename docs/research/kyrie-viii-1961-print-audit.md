@@ -47,6 +47,25 @@ This count represents **GABC token groups / structural source marks**, not 45 in
 
 The existing offline [Kyrie VIII editorial gallery](../../scripts/schola/build-kyrie-viii-review-gallery.mjs) now links all three witnesses and displays the 45 raw units in four separate melody sections. The printed images are **linked rather than redistributed**. Musical publication is still blocked pending explicit note/pitch/rhythm certification and an independent owner editorial decision.
 
+## Direct printed-symbol comparison completed — 10 November 2026
+
+The visual check of the 1961 *Graduale Romanum* (28*–29*) and 1961 *Liber Usualis* (37) has established the presence and position of **six structural signs in each witness**. This is a source **rubric/printing-symbol check**, not a pitched-music proofread.
+
+| Source-mark ID | Printed sign | Graduale 1961 | Liber Usualis 1961 | Meaning |
+|---|---|---|---|---|
+| `K8-L01-U05` | `*` | [28*](https://gregobase.selapa.net/sources/2/905.png) | [37](https://gregobase.selapa.net/sources/3/148.png) | Opening Kyrie intonation boundary |
+| `K8-L01-U12` | `iij.` | [28*](https://gregobase.selapa.net/sources/2/905.png) | [37](https://gregobase.selapa.net/sources/3/148.png) | Opening Kyrie repeated three times |
+| `K8-L02-U08` | `iij.` | [28*](https://gregobase.selapa.net/sources/2/905.png) | [37](https://gregobase.selapa.net/sources/3/148.png) | Christe repeated three times |
+| `K8-L03-U09` | `ij.` | [29*](https://gregobase.selapa.net/sources/2/906.png) | [37](https://gregobase.selapa.net/sources/3/148.png) | Returning Kyrie repeated twice |
+| `K8-L04-U04` | `*` | [29*](https://gregobase.selapa.net/sources/2/906.png) | [37](https://gregobase.selapa.net/sources/3/148.png) | Single-star split in final Kyrie |
+| `K8-L04-U07` | `**` | [29*](https://gregobase.selapa.net/sources/2/906.png) | [37](https://gregobase.selapa.net/sources/3/148.png) | Full choir enters at double star |
+
+**Current quantified position:** 45 GABC source-unit groups × 3 printed witnesses = **135 possible item–witness comparisons**; **12 structural-marker visual observations** recorded; **123 item–witness comparisons not yet visually reviewed**; **zero certified note-by-note pitch/neume/rhythm comparisons** and **zero musical/publication approvals**. All original printed signs need editorial confirmation before musical approval. The 1956 *Chants of the Church* p. 19 remains unexamined at this token-by-token level.
+
+### Keep the 1961 and 1974 chant transcriptions separate
+
+A published [1974 *Graduale* Kyrie VIII GABC transcription](https://en.gregorianum.org/wiki/Missa_VIII_%28Missa_de_Angelis%29) uses `bis` in the initial two invocations and different note grouping, hyphenation and editorial spacing. Those differences can be legitimate consequences of a later printed source and/or a different liturgical presentation; they **must not be silently substituted** into the pinned *Graduale Romanum* 1961 source used for the 1962 Mass reader. This edition comparison is a conflict screen, not an independent verification of 1961 pitch values.
+
 ## What has **not** been certified
 
 The small online scans and present review do **not** establish an independent note-by-note proofread of every neume (including quilismata and ligatures), rhythmic sign (puncta morae, episemata), pitch/accidental, asterisk and print spacing. Therefore all four phrases retain:
