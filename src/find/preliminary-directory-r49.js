@@ -298,7 +298,7 @@ export async function loadPreliminaryR49({fetchImpl=fetch}={}){
     if(evidence?.schema==="AO_CL27_SOURCE_WEEKLY_MASS_SUPPLEMENT_V1")
       cache=attachPublishedWeeklySupplement(cache,evidence);
   }
-  // Third source-owned weekly pattern set: six existing Polish CL2 chapel profiles.
+  // Third source-owned weekly pattern set: two corroborated Polish CL2 chapel profiles.
   // Optional for older cached/offline builds; source-tagged invalid data fails
   // closed without inventing dated Masses or changing canonical location pins.
   let polish=null;
