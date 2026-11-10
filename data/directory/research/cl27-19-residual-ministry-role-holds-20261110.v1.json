@@ -16,7 +16,7 @@
     }
   },
   "note": "The three original research-to-live group-ID disagreement holds in the main 1962 manifest are separate from this research queue. This list includes LMD primary Saint-Irénée site but not the two FSSP alias source IDs, which retain their earlier holds.",
-  "release_state": "RESEARCH_ONLY_NOT_RUNTIME_IMPORT",
+  "release_state": "ARCHIVED_HISTORICAL_RESEARCH_SNAPSHOT_NOT_RUNTIME_IMPORT",
   "all_exception_rows_frozen": true,
   "prohibited_inference": [
     "no venue-wide 1962",
@@ -220,9 +220,12 @@
         "https://map.fsspx.org/de/districts/brazil",
         "https://fsspx.com.br/pt/capelas"
       ],
-      "hold_reason": "SSPX_FRIENDLY_NOT_OPERATED",
-      "next_gate": "Do not inherit SSPX books from friendly/non-operated affiliation.",
-      "status": "RESEARCH_ONLY_MINISTRY_ROLE_UNATTESTED_NO_PUBLIC_ROMAN_1962_CERTIFICATION"
+      "hold_reason": "BENEDICTINE_OSB_CHAPEL_NOT_SSPX_MINISTRY",
+      "next_gate": "Recognize Benedictine clergy without claiming SSPX operation; an exact Missal requires distinct direct evidence.",
+      "status": "RESEARCH_ONLY_MINISTRY_ROLE_UNATTESTED_NO_PUBLIC_ROMAN_1962_CERTIFICATION",
+      "identified_clergy_family": "BENEDICTINE_OSB_DOM_LOURENCO_FLEICHMAN",
+      "source_of_independent_identity": "https://fsspx.com.br/pt/priorados-e-capelas-51589",
+      "further_historical_primary_record": "https://fsspx.com.br/pt/dom-lourenco-fleichman-osb-declaracao-sobre-os-acordos-campos-com-o-vaticano-44976"
     },
     {
       "physical_anchor": "RG-B781E9B03B5D",
@@ -276,5 +279,7 @@
       "next_gate": "Determine who celebrates at religious house, rather than treating related sisters as priests.",
       "status": "RESEARCH_ONLY_MINISTRY_ROLE_UNATTESTED_NO_PUBLIC_ROMAN_1962_CERTIFICATION"
     }
-  ]
+  ],
+  "superseded_by": "data/directory/research/cl27-10-residual-ministry-role-holds-20261110.v1.json",
+  "superseded_reason": "Nine first-party source ministry recoveries, current residual queue contains ten cases."
 }
