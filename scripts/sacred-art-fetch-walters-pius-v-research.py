@@ -22,7 +22,7 @@ def acquire(url):
         if not any(v in content_type for v in ("jpeg","jpg","octet-stream")):
             raise ValueError("non-JPEG content type: "+content_type)
         data = res.read(MAX_BYTES + 1)
-        if not 1024 <= len(data) <= MAX_BYTES or not data.startswith(b"\\xff\\xd8\\xff"):
+        if not 1024 <= len(data) <= MAX_BYTES or not data.startswith(b"\xff\xd8\xff"):
             raise ValueError("bad, empty or oversized JPEG")
     return data, res.geturl()
 
@@ -90,7 +90,7 @@ def main():
     except Exception as exc:
         report["error"]=type(exc).__name__+": "+str(exc)
     finally:
-        (dest/"report.json").write_text(json.dumps(report,indent=2,ensure_ascii=False)+"\\n",encoding="utf-8")
+        (dest/"report.json").write_text(json.dumps(report,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
     print(json.dumps(report,indent=2,ensure_ascii=False))
     return 1 if report["status"]=="RETRIEVAL_FAILED" else 0
 
