@@ -149,7 +149,10 @@ test("native title and source lane strings are escaped, not injected as HTML",()
   const m=model65(),i=10,original=gate(m,i);
   const mapped=original.crosswalk.mappings.map((ref,n)=>n===i
     ?{...ref,nativeTitle:'<script>alert("wrong")</script>'}:ref);
-  const g={...original,crosswalk:{...original.crosswalk,mappings:mapped},
+  const expanded=original.crosswalk.expandedMappings.map((ref,n)=>n===i
+    ?{...ref,nativeTitle:'<script>alert("wrong")</script>'}:ref);
+  const g={...original,crosswalk:{...original.crosswalk,
+    mappings:mapped,expandedMappings:expanded},
     reference:mapped[i]};
   const t=projectLiveHandoffTimeline({gate:g,model:m,nativeState:native(i)});
   const html=renderLiveHandoffWheelHtml(projectLiveHandoffWheel(t));
