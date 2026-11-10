@@ -1,0 +1,98 @@
+{
+  "schema": "AO_SACRED_ART_MSK_S43_VERIFIED_JPEG_V1",
+  "asOf": "2026-11-10",
+  "status": "FIRST_PARTY_MSK_GHENT_JPEG_RETRIEVED_SHA256_VERIFIED_RESEARCH_ONLY",
+  "artwork": {
+    "key": "MSKGent:S-43",
+    "title": "Saint Raymond of Peñafort Venerating the Christ Child",
+    "artist": "Luigi Primo (Louis Cousin)",
+    "museum": "Museum voor Schone Kunsten Gent",
+    "objectUrl": "https://www.mskgent.be/en/collection/s-43",
+    "artworkMedium": "OIL_PAINTING",
+    "dateCandidate": "2026-01-23",
+    "saintIdentity": "Raymond of Peñafort, not Raymond Nonnatus"
+  },
+  "image": {
+    "officialIIIFManifest": "https://imagehub.mskgent.be/iiif/3/6344/manifest.json",
+    "sourcePhotoService": "https://imagehub.mskgent.be/iiif/2/public%2F6344.tif",
+    "downloadedOriginalUrl": "https://imagehub.mskgent.be/iiif/2/public%2F6344.tif/full/2000,/0/default.jpg",
+    "sourceFullCanvasSize": [
+      5347,
+      10391
+    ],
+    "downloadedPixels": [
+      2000,
+      3887
+    ],
+    "sha256": "b4ee3e06d0ec7de6b9ade82502e80098e564d50157a0d284a2a0b563da9c134b",
+    "bytes": 617073,
+    "format": "JPEG",
+    "mode": "RGB",
+    "meanThumbnailSaturation": 67,
+    "iccEmbedded": false,
+    "independentArtifactByteHashVerified": true,
+    "sourcePhotoAcquired": true,
+    "fullColourSource": true,
+    "photographer": "Cedric Verhelst"
+  },
+  "rights": {
+    "manifestRightsLabel": "PUBLIC_DOMAIN_MARK_1_0",
+    "museumOnlineCollectionReusePolicy": "https://www.mskgent.be/en/collection/image-rights",
+    "museumAllowsReuseAtCollectionDisplayedResolutions": true,
+    "specialHighResCommercialPublicationUseRequiresReview": true,
+    "exactAppCommercialUseConfirmed": false,
+    "photoCreditSuggested": "Museum voor Schone Kunsten Gent, photograph Cedric Verhelst",
+    "noContactNoFeesPolicy": true
+  },
+  "crop": {
+    "diagnosticWidth390Height240RetainedImageAreaPct": 31.7,
+    "diagnosticWidth390Height520RetainedImageAreaPct": 68.6,
+    "fullImageContainRecommended": true,
+    "wideCoverDisposition": "FAIL_REMOVES_LOWER_KNEELING_SAINT_OR_UPPER_CHILD",
+    "portraitCoverDisposition": "HOLD_CROPS_UPPER_OR_LOWER_NARRATIVE_SECTIONS",
+    "imageDamageObservation": "A visible dark diagonal linear mark traverses the official reproduction; verify whether it is a documented painting/support condition or imaging artifact, not an approved retouch.",
+    "colourImagePass": true,
+    "technicalDimensionsPass": true,
+    "fullAppRendererQAPass": false,
+    "ownerMobileCropApproval": false
+  },
+  "acquisition": {
+    "workflowRunId": 42821674233,
+    "artifactId": 13769685012,
+    "artifactName": "ad-orientem-msk-mnk-batch3-source-qa",
+    "artifactRetentionDays": 7,
+    "originalImageStoredInPublicRepo": false,
+    "originalImageCopiedIntoApp": false,
+    "independentLocalHashVerified": true
+  },
+  "siblingAttempts": [
+    {
+      "key": "MNK:II-a-448",
+      "status": "NO_SOURCE_BYTES",
+      "reason": "Object HTML metadata yielded no exact photograph URL."
+    },
+    {
+      "key": "MNK:II-a-9",
+      "status": "NO_SOURCE_BYTES",
+      "reason": "Object HTML metadata yielded no exact photograph URL."
+    }
+  ],
+  "gates": {
+    "byteAndDecodeSourceVerified": true,
+    "firstPartyProvenanceVerified": true,
+    "nonEditorialArtSelection": false,
+    "ownerPlacementApproved": false,
+    "formalMobileCropApproved": false,
+    "rightsForMonetisedAppFinal": false,
+    "sourceQualityDamageReviewComplete": false,
+    "publicReleaseReady": false
+  },
+  "safeguards": [
+    "Keep painting in research gallery pool, no auto-date assignment",
+    "Do not merge distinct Raymond saints",
+    "The image is a legitimate colour photograph but can still fail aesthetic quality due to diagonal mark",
+    "Avoid cropped hero that removes central saint or Christ Child",
+    "Neither unretrieved Krakow painting may count as acquired",
+    "Keep PR research-only, with no Pages output, no Vercel and no paid licence or owner outreach"
+  ]
+}
