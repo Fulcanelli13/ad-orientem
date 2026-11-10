@@ -137,6 +137,8 @@ test("lane readout shows all six named lanes and never gives choir card pointer"
   const html=renderLiveHandoffTimelineHtml(t);
   assert.equal((html.match(/class="ao-lb-d-lane" /g)||[]).length,6);
   assert.equal((html.match(/data-source-mark="true"/g)||[]).length,2);
+  assert.equal((html.match(/data-current="true"/g)||[]).length,2,
+    "No shared card highlight may imply Schola/organ/ministers are synchronized");
   assert.match(html,/Schola, organ and ministers are not synchronized/);
   assert.match(html,/cards, not minutes/);
   assert.match(html,/data-lane="SCHOLA"/);
