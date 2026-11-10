@@ -5,6 +5,8 @@ import {LIVE_HANDOFF_SOURCE_POINTS,projectLiveHandoffPlanPosition} from "./reade
 import {projectLiveHandoffSanctuary,renderLiveHandoffSanctuarySvg,renderLiveHandoffPreviewRouteOverlay,liveHandoffSideViewOrientation,LIVE_SANCTUARY_CSS} from "./reader-live-handoff-sanctuary.js";
 import {projectLiveHandoffIncensationPreview,clampLiveHandoffRouteStep} from "./reader-live-handoff-routes.js";
 import {projectLiveHandoffSourceTurnPreview} from "./reader-live-handoff-turns.js";
+import {projectLiveHandoffTimeline,projectLiveHandoffWheel} from "./reader-live-handoff-timeline.js";
+import {renderLiveHandoffTimelineHtml,renderLiveHandoffWheelHtml,LIVE_HANDOFF_STAGE_D_CSS} from "./reader-live-handoff-stage-d-render.js";
 
 export const LIVE_BAND_PREVIEW_PARAM="aoLiveBandPreview";
 export const LIVE_BAND_STORAGE_KEY="ao-live-band-height-v1";
@@ -96,6 +98,7 @@ const CSS=[
 "@media(prefers-reduced-motion:reduce){.ao-lb-pages{transition:none}}",
 ".ao-lb-sanctuary-shell{position:relative;width:100%;height:100%;display:grid;place-items:center}",
 ".ao-lb-sanctuary-content{width:100%;height:100%;min-height:0;display:grid;place-items:center}",
+".ao-lb-d-host{display:grid;place-items:center;width:100%;height:100%;min-height:0;overflow:hidden}",
 ".ao-lb-route-controls{position:absolute;inset:auto 8px 5px 8px;display:flex;justify-content:center;align-items:center;pointer-events:none}",
 ".ao-lb-route-controls[hidden],.ao-lb-route-nav[hidden],.ao-lb-route-start[hidden]{display:none!important}",
 ".ao-lb-route-start,.ao-lb-route-nav button{pointer-events:auto;background:rgba(13,23,27,.95);color:#e8dfc7;border:1px solid rgba(212,188,131,.48);border-radius:15px;min-height:27px;font-size:11px;padding:3px 9px}",
@@ -119,7 +122,7 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
   if(shell.querySelector("[data-ao-live-band]"))
     return freeze({mounted:false,reason:"ALREADY_MOUNTED",dispose(){}});
   const style=doc.createElement("style");
-  style.dataset.aoLiveBandStyle="stage-c";style.textContent=CSS+"\n"+LIVE_SANCTUARY_CSS;
+  style.dataset.aoLiveBandStyle="stage-d";style.textContent=CSS+"\n"+LIVE_SANCTUARY_CSS+"\n"+LIVE_HANDOFF_STAGE_D_CSS;
   const band=doc.createElement("section");band.className="ao-live-band";
   band.dataset.aoLiveBand="stage-b";band.hidden=true;
   band.setAttribute("aria-label","LIVE visual band preview");
@@ -133,13 +136,10 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
     +'<button type="button" data-lb-route-next aria-label="Next reference position">→</button>'
     +'<button type="button" data-lb-route-exit aria-label="Exit route illustration">×</button>'
     +'</div></div></div></div>'
-    +'<div class="ao-lb-page" data-active="false" aria-label="Native card sequence">'
-    +'<div class="ao-lb-sequence" data-lb-sequence role="img" aria-label="Card ordinal, not a time estimate"></div></div>'
+    +'<div class="ao-lb-page" data-active="false" aria-label="Six source-status timeline lanes">'
+    +'<div class="ao-lb-d-host" data-lb-stage-d-timeline></div></div>'
     +'<div class="ao-lb-page" data-active="false" aria-label="Whole-Mass wheel">'
-    +'<svg class="ao-lb-wheel" viewBox="0 0 200 200" role="img" aria-label="Card ordinal, not a time estimate">'
-    +'<circle class="track" cx="100" cy="100" r="72"/>'
-    +'<circle class="progress" data-lb-progress cx="100" cy="100" r="72"/>'
-    +'<line class="hand" data-lb-hand x1="100" y1="100" x2="100" y2="35"/></svg></div>'
+    +'<div class="ao-lb-d-host" data-lb-stage-d-wheel></div></div>'
     +'</div></div><div class="ao-lb-controls"><div class="ao-lb-dots" role="group" aria-label="Band page">'
     +NAMES.map((name,i)=>'<button type="button" class="ao-lb-dot" data-lb-page="'+i+'" aria-label="'+name
       +'" aria-pressed="'+(i===0)+'"></button>').join("")
@@ -152,7 +152,8 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
   const pages=[...band.querySelectorAll(".ao-lb-page")];
   const dots=[...band.querySelectorAll("[data-lb-page]")];
   const frame=band.querySelector(".ao-lb-pages");
-  const ticks=band.querySelector("[data-lb-sequence]");
+  const timelineHost=band.querySelector("[data-lb-stage-d-timeline]");
+  const wheelHost=band.querySelector("[data-lb-stage-d-wheel]");
   const sanctuaryContent=band.querySelector("[data-lb-sanctuary]");
   const routeControls=band.querySelector("[data-lb-route-controls]");
   const routeStart=band.querySelector("[data-lb-route-start]");
@@ -160,9 +161,7 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
   const routeCount=band.querySelector("[data-lb-route-count]");
   const routePrev=band.querySelector("[data-lb-route-prev]");
   const routeNext=band.querySelector("[data-lb-route-next]");
-  const progress=band.querySelector("[data-lb-progress]");
-  const hand=band.querySelector("[data-lb-hand]");
-  const circumference=2*Math.PI*72;
+  let lastTimelineSignature=null;
   function setPage(index){
     page=bound(Number(index)||0,0,2);
     frame.style.transform="translateX(-"+(page*100)+"%)";
@@ -268,7 +267,9 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
     band.hidden=!result.ok;
     shell.classList.toggle("ao-live-band-enabled",result.ok);
     shell.dataset.aoLiveBandGate=result.reason??"EXACT_NATIVE_65_CROSSWALK";
-    if(!result.ok){availableRoute=null;stopRoutePreview();return freeze({mounted:true,visible:false,reason:result.reason});}
+    if(!result.ok){availableRoute=null;stopRoutePreview();lastTimelineSignature=null;
+      timelineHost.replaceChildren();wheelHost.replaceChildren();
+      return freeze({mounted:true,visible:false,reason:result.reason});}
     const ref=result.reference,sequence=Number(ref.nativeSequence);
     // Exact cue-scoped state is read-only. A new prayer card is NOT a
     // priest-location observation; unsupported/unobserved stages show only
@@ -291,16 +292,20 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
       lastSceneSignature=sceneSignature;
     }
     band.dataset.sanctuarySourceStatus=scene.status;
-    if(lastId!==ref.nativeCardId){
-      if(ticks.childElementCount!==model.cards.length){
-        ticks.replaceChildren(...model.cards.map(()=>{const el=doc.createElement("span");
-          el.className="ao-lb-tick";el.setAttribute("aria-hidden","true");return el;}));
-      }
-      [...ticks.children].forEach((el,i)=>el.dataset.current=String(i+1===sequence));
-      progress.style.strokeDasharray=String(circumference*sequence/model.cards.length)+" "+circumference;
-      hand.style.transform="rotate("+(360*sequence/model.cards.length)+"deg)";
-      lastId=ref.nativeCardId;
+    // The six lanes are event-owner readouts. Only current native card
+    // position is on the ordinal axis; independent Schola is never pinned to it.
+    const timeline=projectLiveHandoffTimeline({gate:result,nativeState,
+      scholaState:preview.getScholaState?.(),model});
+    const wheel=projectLiveHandoffWheel(timeline);
+    const timelineSignature=JSON.stringify([timeline.reason,timeline.position,
+      timeline.lanes?.map(l=>[l.id,l.status,l.text,l.location]),wheel.current?.title]);
+    if(timelineSignature!==lastTimelineSignature){
+      timelineHost.innerHTML=renderLiveHandoffTimelineHtml(timeline);
+      wheelHost.innerHTML=renderLiveHandoffWheelHtml(wheel);
+      lastTimelineSignature=timelineSignature;
     }
+    band.dataset.stageDSourceStatus=timeline.ok?"SOURCE_ONLY_65":"SOURCE_HOLD";
+    lastId=ref.nativeCardId;
     const height=liveBandHeightForReference(ref.referenceId,preference);
     shell.style.setProperty("--ao-live-band-height",height+"px");
     band.dataset.collapsed=String(height===96);band.dataset.height=String(height);
@@ -353,6 +358,7 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
   setPage(0);refresh();
   return freeze({mounted:true,refresh,setPage,setManualHeight,adaptive,
     getState:()=>freeze({visible:!band.hidden,page,preference,
+      stageDSourceStatus:band.dataset.stageDSourceStatus??null,
       routePreviewActive:Boolean(activeRoute),routeStep,
       availableReferenceRoute:availableRoute?.ok?availableRoute.id:null,
       routePreviewKind:activeRoute?.kind??availableRoute?.kind??null,

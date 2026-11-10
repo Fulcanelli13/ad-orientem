@@ -1,0 +1,37 @@
+name: LIVE handoff Stage D six-lane timeline and wheel
+on:
+  pull_request:
+    paths:
+      - 'src/mass/reader-live-handoff-timeline.js'
+      - 'src/mass/reader-live-handoff-stage-d-render.js'
+      - 'src/mass/reader-live-handoff-band.js'
+      - 'src/mass/reader-live-handoff-source-crosswalk.js'
+      - 'tests/reader-live-handoff-stage-d.mjs'
+      - '.github/workflows/live-handoff-stage-d.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-backed-six-lane-wheel:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax checks
+        run: |
+          node --check src/mass/reader-live-handoff-timeline.js
+          node --check src/mass/reader-live-handoff-stage-d-render.js
+          node --check src/mass/reader-live-handoff-band.js
+          node --check tests/reader-live-handoff-stage-d.mjs
+      - name: Exact source and six-lane semantics
+        run: |
+          node --test tests/reader-live-handoff-stage-d.mjs
+          node --test tests/reader-live-handoff-turns.mjs
+          node --test tests/reader-live-handoff-routes.mjs
+          node --test tests/reader-live-handoff-sanctuary.mjs
+          node --test tests/reader-live-handoff-band-shell.mjs
+          node tests/reader-live-handoff-final-geometry.mjs
+          node tests/mass-priest-position-continuity.mjs
