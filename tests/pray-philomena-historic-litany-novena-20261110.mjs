@@ -33,7 +33,7 @@ assert.equal(litany.originalPrintShorthand,"Lamb of God, &c.");
 assert.match(litany.agnusExpansionStatus,/EDITORIAL/);
 assert.equal(litany.attribution,"NO_SPECIFIC_AUTHOR_IN_1848_SOURCE");
 for(const item of [...litany.invocationGroups.opening,...litany.invocationGroups.trinity,
- litany.invocationGroups.holyMary,...litany.invocationGroups.philomena,...litany.invocationGroups.agnus]){
+ [litany.invocationGroups.holyMary],...litany.invocationGroups.philomena,...litany.invocationGroups.agnus]){
  assert.ok(item.en&&item.fr,"Complete invocation line in both language faces");
  assert.equal(Boolean(item.responseEn),Boolean(item.responseFr),"No unpaired response");
 }
