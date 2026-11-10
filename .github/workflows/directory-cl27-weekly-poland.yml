@@ -1,4 +1,4 @@
-name: CL27 Polish first-party six-chapel source gate
+name: CL27 Polish first-party two-chapel source gate
 on:
   pull_request:
     paths:
@@ -19,7 +19,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Verify six source-backed Polish CL2 profiles, patterns and EN/FR
+      - name: Verify two source-backed Polish CL2 profiles, patterns and EN/FR
         run: node tests/tlm-cl27-weekly-source-poland.mjs
       - name: Verify previous 24 weekly sites and worldwide directory
         run: |
