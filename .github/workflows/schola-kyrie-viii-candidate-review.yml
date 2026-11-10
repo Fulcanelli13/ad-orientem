@@ -6,6 +6,8 @@ on:
       - "tests/schola-kyrie-viii-review-manifest.mjs"
       - "tests/schola-kyrie-viii-exsurge-phone.mjs"
       - "src/mass/reader-kyrie-viii-review-queue.js"
+      - "src/mass/reader-schola-notation-follow.js"
+      - "tests/schola-notation-follow.mjs"
       - "src/mass/reader-schola-dock-approved.js"
       - "data/presentation/reader-text-sung.v1.json"
       - ".github/workflows/schola-kyrie-viii-candidate-review.yml"
@@ -28,6 +30,8 @@ jobs:
           node --check tests/schola-kyrie-viii-review-manifest.mjs
       - name: Validate all original source cues, hashes, and blocked promotion
         run: node tests/schola-kyrie-viii-review-manifest.mjs
+      - name: Regression for decorated Exsurge initials and strict mapping
+        run: node tests/schola-notation-follow.mjs
       - name: Produce review-only nine-cue manifest
         run: |
           node scripts/schola/prepare-kyrie-viii-review-manifest.mjs > "$RUNNER_TEMP/kyrie-viii-musical-review-hold.json"
