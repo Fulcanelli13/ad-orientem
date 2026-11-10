@@ -58,6 +58,7 @@ import {internalPrayerView,supportedDirectPrayerRoute} from "./internal-route-ow
 import {renderLittleCrownB30} from "./little-crown-presentation-b30.js";
 import {PRAYER_SUBJECTS_V1,prayerSubjectsForLibrary,prayerSubjectCounts} from "./prayer-subject-index.v1.js";
 import {guidedPrayerLinksForSubject} from "./prayer-subject-guided-links.v1.js";
+import {LASANCE_1908_MEDITATION_STUDY_WORKS_V1,lasance1908Work,lasance1908Matches} from "./lasance-1908-meditation-study.v1.js";
 import {PRAYER_SUPPLEMENTAL_LIVE_WORK_LINKS_V1,prayerSupplementalLiveWork,prayerSupplementalLiveWorksForSubject} from "./prayer-supplemental-live-works.v1.js";
 import {prayerSevenSourceWork,prayerSevenSourceWorksForSubject} from "./prayer-seven-source-work-links.v1.js";
 import {redBookletCommunionLibraryLink,redBookletCommunionLibraryLinksForSubject} from "./red-booklet-communion-library-links.v1.js";
@@ -2669,7 +2670,30 @@ function renderLibraryEntryRows(rows,search){
   return `<details class="aoP435930LibraryVariants" data-ao-prayer-family="${esc(entry.family)}"${search?' open':''}><summary><small>${esc(L('Prayer family','Famille de prières'))}</small><b>${esc(isFr()?label.fr:label.en)}</b><span>${entry.prayers.length} ${esc(L(entry.prayers.length===1?'form':'forms',entry.prayers.length===1?'forme':'formes'))}</span></summary><div class="aoP435930LibraryVariantItems">${entry.prayers.map(renderRow).join('')}</div></details>`;
  }).join('')||`<p>${esc(L('No prayers match this search.','Aucune prière ne correspond à cette recherche.'))}</p>`;
 }
+function renderLasance1908Prayer(){
+ const work=lasance1908Work(LIB.open);
+ if(!work)return callout(esc(L('Historical text unavailable.','Texte historique indisponible.')),'warn');
+ const french=isFr(),body=french?work.fr:work.en;
+ const textStatus=esc(L('English is taken from the public-domain 1908 Lasance digital transcription, not independently collated to the printed page. French is a modern editorial translation, not a historical French edition. Old indulgence notices are not presented as current.',
+ 'L’anglais provient de la transcription numérique du livre de Lasance (1908), sans collation indépendante sur la page imprimée. Le français est une traduction éditoriale moderne, non une édition française historique. Les anciennes mentions d’indulgences ne sont pas présentées comme actuelles.'));
+ const latin=work.la?'<details class="aoP435930SourceNote"><summary>'+esc(L('Original Latin source text','Texte latin de la source'))+'</summary><p lang="la">'+nl(work.la)+'</p></details>':'';
+ const changedSpelling=work.sourceEditorialNormalizations?.length?
+  '<p class="aoP435930SourceNote">'+esc(L('The digital transcription reads “Ommia”; the displayed “Omnia” is an explicitly noted typographic normalization.',
+    'La transcription numérique porte « Ommia » ; le « Omnia » affiché est une correction typographique signalée.'))+'</p>':'';
+ const provenance='<details class="aoP435930SourceNote"><summary>'+esc(L('Edition and source','Édition et source'))+'</summary>'+
+  '<p>'+esc(work.sourceTitle)+'</p><p>'+textStatus+'</p>'+
+  '<p>'+esc(french?work.noteFr:work.noteEn)+'</p>'+
+  '<a href="'+esc(work.sourceUrl)+'" target="_blank" rel="noopener noreferrer">'+esc(L('Consult the historical source','Consulter la source historique'))+'</a></details>';
+ return head(french?work.titleFr:work.titleEn,L('Prayer Library · Lasance 1908','Livre de prières · Lasance 1908'))+
+ '<main class="aoP435930Body aoP435930LibraryReader" data-ao-lasance-1908-reader="'+esc(work.id)+'">'+
+ '<p class="aoP435930SourceNote" data-ao-lasance-editorial-note>'+textStatus+'</p>'+
+ '<article class="aoDevoCard"><div class="aoDevoCardScroll"><h2>'+esc(french?work.titleFr:work.titleEn)+'</h2>'+
+ '<p lang="'+lang()+'">'+nl(body)+'</p>'+latin+changedSpelling+'</div></article>'+
+ provenance+'<nav class="aoJosephSevenNav">'+
+ '<button type="button" data-p435930-lasance-back>'+esc(L('Back to Prayer Library','Retour au livre de prières'))+'</button></nav></main>';
+}
 function renderLibrary(){
+ if(LIB.open&&lasance1908Work(LIB.open))return renderLasance1908Prayer();
  if(LIB.open&&massSequencePrayerWork(LIB.open))return renderMassSequencePrayer();
  if(LIB.open){
   const p=P(LIB.open);if(!p){LIB.open=null;return renderLibrary()}
@@ -2777,6 +2801,17 @@ function renderLibrary(){
    '<small>'+esc(L('MASS SEQUENCE · SOURCE READER','SÉQUENCE DE MESSE · SOURCE'))+'</small>'+
    '<b>'+esc(isFr()?work.titleFr:work.title)+'</b><span>LA · EN · FR</span></button>').join('')+
    '</div></section>');
+ const lasanceWorks=lasance1908Matches({subject:LIB.subject,category:LIB.cat,search:q});
+ const lasanceSection=!lasanceWorks.length?'':(
+  '<section class="aoP435930LibraryRelated" data-ao-lasance-1908-library>'+
+  '<h3>'+esc(L('Meditation and study prayers · Lasance 1908','Prières pour la méditation et l’étude · Lasance 1908'))+'</h3>'+
+  '<p>'+esc(L('Complete historical English source text; French is a modern editorial translation.',
+   'Texte historique anglais intégral ; le français est une traduction éditoriale moderne.'))+'</p>'+
+  '<div class="aoP435930ModuleGrid">'+lasanceWorks.map(work=>
+   '<button type="button" class="aoP435930ModuleCard" data-p435930-lib-open="'+esc(work.id)+'" data-ao-lasance-1908-open="'+esc(work.acquisitionId)+'">'+
+   '<small>LASANCE · 1908</small><b>'+esc(isFr()?work.titleFr:work.titleEn)+'</b>'+
+   '<span>'+esc(L('Historical EN · editorial FR','Anglais historique · français éditorial'))+(work.la?' · LA':'')+'</span></button>').join('')+
+  '</div></section>');
  const guidedLinks=LIB.cat==='all'?guidedPrayerLinksForSubject(LIB.subject,q):[];
  const guidedSection=LIB.cat!=='all'||!guidedLinks.length?
   '':('<section class="aoP435930LibraryRelated" data-ao-prayer-subject-guided="'+esc(LIB.subject)+'">'+
@@ -2793,9 +2828,9 @@ function renderLibrary(){
   '<div class="aoP435930Chips" role="group" aria-label="'+esc(L('Theological prayer families','Familles théologiques de prières'))+'">'+
   '<button type="button" data-p435930-lib-subject="all" aria-pressed="'+String(LIB.subject==='all')+'">'+esc(L('All subjects','Tous les sujets'))+'</button>'+
   PRAYER_SUBJECTS_V1.map(subject=>'<button type="button" data-p435930-lib-subject="'+subject.id+'" aria-pressed="'+String(LIB.subject===subject.id)+'">'+
-    esc(isFr()?subject.fr:subject.en)+' <small>'+(subjectCounts.counts[subject.id]+prayerSupplementalLiveWorksForSubject(subject.id).length +prayerSevenSourceWorksForSubject(subject.id).length+redBookletCommunionLibraryLinksForSubject(subject.id).length+redBookletSuscipeLibraryLinksForSubject(subject.id).length+redBookletPrivateHistoricalWorksForSubject(subject.id).length+MASS_SEQUENCE_PRAYER_WORKS.filter(x=>x.subject===subject.id).length+(subject.id==='V'?1:0))+'</small></button>').join('')+
+    esc(isFr()?subject.fr:subject.en)+' <small>'+(subjectCounts.counts[subject.id]+prayerSupplementalLiveWorksForSubject(subject.id).length +prayerSevenSourceWorksForSubject(subject.id).length+redBookletCommunionLibraryLinksForSubject(subject.id).length+redBookletSuscipeLibraryLinksForSubject(subject.id).length+redBookletPrivateHistoricalWorksForSubject(subject.id).length+MASS_SEQUENCE_PRAYER_WORKS.filter(x=>x.subject===subject.id).length+(subject.id==='V'?1:0)+LASANCE_1908_MEDITATION_STUDY_WORKS_V1.filter(x=>x.subject===subject.id).length)+'</small></button>').join('')+
   '</div><p class="aoP435930SourceNote">'+esc(L('Only accessible canonical and source-owned reader texts are included. Unverified research works are not shown as readable prayers.','Seuls les textes canoniques et les prières déjà accessibles dans leurs parcours d’origine sont inclus. Les œuvres de recherche non vérifiées ne sont pas présentées comme disponibles.'))+'</p></details>';
- return `${head(L('Prayer Library','Livre de prières'),L('Prayers and guided devotions','Prières et dévotions guidées'))}<main class="aoP435930Body">${libraryOverviewGuide()}<label class="aoP435930Search"><span>${assetIcon('ao-ui-search')}</span><input type="search" data-p435930-lib-search value="${esc(LIB.q)}" placeholder="${esc(L('Search prayers','Rechercher une prière'))}"></label><div class="aoP435930Chips">${cats.map(([id,n])=>`<button type="button" class="${id===LIB.cat?'active':''}" data-p435930-lib-cat="${esc(id)}">${esc(n)}</button>`).join('')}</div>${subjectBrowse}<div class="aoP435930LibraryList" data-ao-prayer-subject-results="${esc(LIB.subject)}">${LIB.cat==="essentials"&&!q?claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2,prayers:DATA.prayers,locale:lang(),esc,title:L("Essential Prayers","Prières essentielles"),artFor:releasedPrayerCardArtUrl}):(rows.length||!(historicalWorks.length+sourceDeepWorks.length+privateCommunionWorks.length+privateHistoricalWorks.length+(stabatSeptember?1:0)+massSequences.length)?renderLibraryEntryRows(rows,q):'')}</div>${communionSection}${privateHistoricalSection}${historicalSection}${stabatLibrarySection}${massSequenceSection}${guidedSection}</main>`;
+ return `${head(L('Prayer Library','Livre de prières'),L('Prayers and guided devotions','Prières et dévotions guidées'))}<main class="aoP435930Body">${libraryOverviewGuide()}<label class="aoP435930Search"><span>${assetIcon('ao-ui-search')}</span><input type="search" data-p435930-lib-search value="${esc(LIB.q)}" placeholder="${esc(L('Search prayers','Rechercher une prière'))}"></label><div class="aoP435930Chips">${cats.map(([id,n])=>`<button type="button" class="${id===LIB.cat?'active':''}" data-p435930-lib-cat="${esc(id)}">${esc(n)}</button>`).join('')}</div>${subjectBrowse}<div class="aoP435930LibraryList" data-ao-prayer-subject-results="${esc(LIB.subject)}">${LIB.cat==="essentials"&&!q?claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2,prayers:DATA.prayers,locale:lang(),esc,title:L("Essential Prayers","Prières essentielles"),artFor:releasedPrayerCardArtUrl}):(rows.length||!(historicalWorks.length+sourceDeepWorks.length+privateCommunionWorks.length+privateHistoricalWorks.length+(stabatSeptember?1:0)+massSequences.length+lasanceWorks.length)?renderLibraryEntryRows(rows,q):'')}</div>${communionSection}${privateHistoricalSection}${historicalSection}${stabatLibrarySection}${massSequenceSection}${lasanceSection}${guidedSection}</main>`;
 }
 function monthIndex(key){const d=dateObj(key);return d?d.getFullYear()*12+d.getMonth():null}
 function consecutive(records,needed){const done=records.filter(x=>x.complete).sort((a,b)=>a.date.localeCompare(b.date));if(!done.length)return 0;let c=1;for(let i=done.length-1;i>0;i--){const a=monthIndex(done[i].date),b=monthIndex(done[i-1].date);if(a-b===1)c++;else break}return Math.min(c,needed)}
@@ -5110,6 +5145,9 @@ function onClick(e){
   MASS_SEQUENCE_READING.id=null;MASS_SEQUENCE_READING.record=null;
   MASS_SEQUENCE_READING.error=null;MASS_SEQUENCE_READING.loading=false;
   MASS_SEQUENCE_READING.token++;return render();
+ }
+ if(b.matches('[data-p435930-lasance-back]')&&lasance1908Work(LIB.open)){
+  LIB.open=null;return render();
  }
  if(b.dataset.p435930LibOpen){LIB.open=b.dataset.p435930LibOpen;LIB.language=null;PILOT_LORETO_GROUP=false;return render()}
  if(b.dataset.p435930ScriptureRetry){
