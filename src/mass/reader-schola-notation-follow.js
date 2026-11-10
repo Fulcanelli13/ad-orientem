@@ -52,7 +52,7 @@ export function createScholaFollowClock({
   release();if(destroyed)return false;
   count=Math.floor(Number(total)||0);index=0;
   if(count<1||count>600){count=0;running=false;return false;}
-  running=true;
+  running=count>1;
   onStep(Object.freeze({index,count,origin:"estimated"}));arm();
   return true;
  }
