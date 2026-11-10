@@ -1,0 +1,37 @@
+name: LIVE handoff Stage C source-certified turns
+on:
+  pull_request:
+    paths:
+      - 'src/mass/reader-live-handoff-turns.js'
+      - 'src/mass/reader-live-handoff-band.js'
+      - 'src/mass/reader-live-handoff-sanctuary.js'
+      - 'src/mass/reader-live-handoff-routes.js'
+      - 'src/mass/reader-live-handoff-geometry.js'
+      - 'tests/reader-live-handoff-turns.mjs'
+      - '.github/workflows/live-handoff-stage-c-turns.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-certified-turns:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check module syntax
+        run: |
+          node --check src/mass/reader-live-handoff-turns.js
+          node --check src/mass/reader-live-handoff-band.js
+          node --check src/mass/reader-live-handoff-sanctuary.js
+          node --check tests/reader-live-handoff-turns.mjs
+      - name: Test exact 1962 source transitions and parent stages
+        run: |
+          node --test tests/reader-live-handoff-turns.mjs
+          node --test tests/reader-live-handoff-routes.mjs
+          node --test tests/reader-live-handoff-sanctuary.mjs
+          node --test tests/reader-live-handoff-band-shell.mjs
+          node tests/reader-live-handoff-final-geometry.mjs
+          node tests/mass-priest-position-continuity.mjs
