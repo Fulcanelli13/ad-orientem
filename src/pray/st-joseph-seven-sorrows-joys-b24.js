@@ -135,6 +135,29 @@ export const JOSEPH_SEVEN_CLOSURE_B24=Object.freeze({
  rubric:"Let us pray.",
  collect:"O God, who in thine ineffable providence didst vouchsafe to choose blessed Joseph to be the spouse of thy most holy Mother; grant, we beseech Thee, that we may have him for our intercessor in heaven, whom on earth we venerate as our holy Protector. Who livest and reignest, world without end. Amen."
 });
+/** Historical seven-consecutive-Sundays use of the SAME seven prayers.
+ * Raccolta 1857 §115 and 1910 §300: no new text, translation, reader or indulgence claim.
+ * Each Sunday uses all seven paired supplications, not one newly fabricated Sunday text.
+ */
+export const JOSEPH_SEVEN_SUNDAYS_USAGE_B24=Object.freeze({
+ id:"st_joseph_seven_sundays",
+ titleEn:"Seven Sundays of St Joseph",
+ titleFr:"Sept dimanches de saint Joseph",
+ existingReaderRoute:"pray.st_joseph_seven_sorrows",
+ existingPrayerSourceId:JOSEPH_SEVEN_SORROWS_SOURCE_B24.id,
+ sessions:7,
+ cadence:"SEVEN_CONSECUTIVE_SUNDAYS",
+ eachSession:"ALL_SEVEN_SORROWS_AND_JOYS_PLUS_CLOSING_COLLECT",
+ originalSorrowAndJoyPrayerCount:JOSEPH_SEVEN_PRAYERS_B24.length,
+ sourceUrls:Object.freeze([
+  "https://liturgialatina.org/raccolta/joseph.htm",
+  JOSEPH_SEVEN_SORROWS_SOURCE_B24.sourceLinks[0]
+ ]),
+ historicalIndulgencesCurrent:false,
+ newHistoricalPrayerBodies:0,
+ frenchHistoricalPrayerBodyCertified:false,
+ fullPrintCollationCertified:false
+});
 export const JOSEPH_SEVEN_STEP_COUNT_B24=8;
 export function josephSevenStepAt(index,canonicalPrayers=null){
  if(!Number.isInteger(index)||index<0||index>=JOSEPH_SEVEN_STEP_COUNT_B24)return null;
