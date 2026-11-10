@@ -141,9 +141,9 @@ export function attachPublishedPolandSourcePatterns(items,manifest){
   if(!p)return item;
   if(found.has(p.cl2_anchor)||item.kind!=="TLM_VENUE"||
     item.physical_site_source!=="CL2_MASTER"||
-    item.country_code!=="PL"||item.title!==p.canonical_name||
+    item.country_code!=="PL"||!T(item.title)||
     item.source_location_description!==p.physical_description||
-    !same(item.source_ids,p.source_ids)||item.source_id!==p.source_ids[0]||
+    !same(item.source_ids,p.source_ids)||!p.source_ids.includes(item.source_id)||
     !Array.isArray(item.source_links)||
     !item.source_links.some(s=>s?.url===p.existing_source_url)||
     item.weekly_source_programme)
