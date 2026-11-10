@@ -1,0 +1,31 @@
+name: Schola Blueprint P0 — installed update and 10 November source Proper
+on:
+  pull_request:
+    paths:
+      - "sw.js"
+      - "src/app/offline-boot.js"
+      - "src/mass/browser-entry.js"
+      - "tests/offline-snapshot-e2e.mjs"
+      - "tests/p0-nov10-2026-proper-runtime-phone.mjs"
+      - ".github/workflows/schola-p0-update-nov10.yml"
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  real-p0-browser:
+    name: Verified new snapshot on Update, source-backed 10 Nov Mass
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install browser test dependencies
+        run: npm install --no-audit --no-fund --ignore-scripts
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Real 390px selected 10 November 1962 Proper source
+        run: node tests/p0-nov10-2026-proper-runtime-phone.mjs
+      - name: Actual installed SW update and offline reload
+        run: node tests/offline-snapshot-e2e.mjs
