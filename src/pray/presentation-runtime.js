@@ -58,6 +58,7 @@ import {internalPrayerView,supportedDirectPrayerRoute} from "./internal-route-ow
 import {renderLittleCrownB30} from "./little-crown-presentation-b30.js";
 import {PRAYER_SUBJECTS_V1,prayerSubjectsForLibrary,prayerSubjectCounts} from "./prayer-subject-index.v1.js";
 import {guidedPrayerLinksForSubject} from "./prayer-subject-guided-links.v1.js";
+import {PHILOMENA_HISTORICAL_TWO_WORKS_V1,philomenaHistoricalWork,philomenaHistoricalMatches} from "./philomena-historic-litany-novena.v1.js";
 import {PRAYER_SUPPLEMENTAL_LIVE_WORK_LINKS_V1,prayerSupplementalLiveWork,prayerSupplementalLiveWorksForSubject} from "./prayer-supplemental-live-works.v1.js";
 import {prayerSevenSourceWork,prayerSevenSourceWorksForSubject} from "./prayer-seven-source-work-links.v1.js";
 import {redBookletCommunionLibraryLink,redBookletCommunionLibraryLinksForSubject} from "./red-booklet-communion-library-links.v1.js";
@@ -2414,6 +2415,7 @@ function renderAdoration(){
 }
 function familyOf(p){return libraryVariantFamily(p.id)||p.id}
 let LIB={q:'',cat:'all',subject:'all',subjectOpen:false,open:null,language:null};
+let PHILOMENA_HISTORIC_STAGE=0;
 // Mass Sequentia texts are borrowed live from the authenticated selected Proper;
 // they are NOT added to the locked 48-text canonical Prayer object.
 const MASS_SEQUENCE_READING={id:null,record:null,loading:false,error:null,token:0};
@@ -2669,7 +2671,78 @@ function renderLibraryEntryRows(rows,search){
   return `<details class="aoP435930LibraryVariants" data-ao-prayer-family="${esc(entry.family)}"${search?' open':''}><summary><small>${esc(L('Prayer family','Famille de prières'))}</small><b>${esc(isFr()?label.fr:label.en)}</b><span>${entry.prayers.length} ${esc(L(entry.prayers.length===1?'form':'forms',entry.prayers.length===1?'forme':'formes'))}</span></summary><div class="aoP435930LibraryVariantItems">${entry.prayers.map(renderRow).join('')}</div></details>`;
  }).join('')||`<p>${esc(L('No prayers match this search.','Aucune prière ne correspond à cette recherche.'))}</p>`;
 }
+function renderPhilomenaHistorical(){
+ const work=philomenaHistoricalWork(LIB.open);
+ if(!work)return callout(esc(L('Historical prayer not available.','Prière historique indisponible.')),'warn');
+ const fr=isFr();
+ const title=fr?work.titleFr:work.titleEn;
+ const isLitany=work.id==='philomena_litany_st_vincent_1848';
+ const stageCount=isLitany?4:9;
+ const index=Math.min(stageCount-1,Math.max(0,PHILOMENA_HISTORIC_STAGE));
+ const status=L('English text from a named nineteenth-century public-domain book, digitized by an independent source. Printed page image has not been separately collated here. French is a new editorial translation. The ICKSP New Brighton version is a different prayer recension, not the exact text reproduced here. Traditional devotional accounts are not presented as independently verified biography.',
+  'Texte anglais d’un ouvrage ancien identifié et libre de droits, numérisé par une source indépendante. La page imprimée n’a pas fait l’objet ici d’une collation photographique distincte. Le français est une traduction éditoriale moderne. La version de l’ICRSP de New Brighton est une recension différente, et non le texte exact donné ici. Les traditions de dévotion ne sont pas présentées comme une biographie vérifiée.');
+ function line(item){
+  const text=fr?item.fr:item.en;
+  const response=fr?item.responseFr:item.responseEn;
+  return '<li data-ao-philomena-invocation><span>'+esc(text)+'</span>'+
+   (response?'<p class="aoP435930SourceNote" data-ao-philomena-response>'+esc(response)+'</p>':'')+'</li>';
+ }
+ const l=work.invocationGroups;
+ let interior='',stageLabel='';
+ if(isLitany){
+  if(index===0){
+   stageLabel=L('Opening and invocation of the Trinity','Ouverture et invocation de la Trinité');
+   interior='<ol class="aoRaccolta1857Lines">'+l.opening.map(line).join('')+
+    l.trinity.map(line).join('')+line(l.holyMary)+'</ol>';
+  } else if(index===1){
+   stageLabel=L('Seventeen invocations to St Philomena','Dix-sept invocations à sainte Philomène');
+   interior='<ol class="aoRaccolta1857Lines" data-ao-philomena-seventeen>'+
+    l.philomena.map(line).join('')+'</ol>';
+  } else if(index===2){
+   stageLabel=L('Lamb of God','Agneau de Dieu');
+   interior='<p class="aoP435930SourceNote" data-ao-philomena-source-abbreviation>'+
+    esc(L('The 1848 printing abbreviates this section as “Lamb of God, &c.” The familiar threefold text displayed below is an explicit editorial expansion, not a verbatim claim.',
+     'L’édition de 1848 abrège ce passage : « Lamb of God, &c. ». Les trois invocations ci-dessous sont un développement éditorial, non une citation littérale de l’imprimé.'))+'</p>'+
+    '<ol class="aoRaccolta1857Lines">'+l.agnus.map(line).join('')+'</ol>';
+  } else {
+   stageLabel=L('Versicle and concluding prayer','Verset et oraison finale');
+   interior='<p lang="'+lang()+'">'+nl(fr?work.sourceVerseFr:work.sourceVerseEn)+'</p>'+
+    '<p lang="'+lang()+'">'+nl(fr?work.sourceResponseFr:work.sourceResponseEn)+'</p>'+
+    '<p lang="'+lang()+'">'+nl(fr?work.collectFr:work.collectEn)+'</p>';
+  }
+ } else {
+  stageLabel=L('Day','Jour')+' '+(index+1)+' / 9';
+  interior='<p class="aoP435930SourceNote">'+
+   esc(L('The 1863 book prescribes this same complete prayer each day; there are not nine separate daily prayers.',
+    'Le livre de 1863 prescrit cette même prière intégrale chaque jour ; il ne s’agit pas de neuf textes différents.'))+'</p>'+
+   '<div data-ao-philomena-novena-full>'+ (fr?work.dailyPrayerFr:work.dailyPrayerEn).map(p=>
+    '<p lang="'+lang()+'">'+nl(p)+'</p>').join('')+'</div>'+
+   '<details class="aoP435930SourceNote" data-ao-philomena-novena-optional><summary>'+
+    esc(L('Additional collect from the 1863 novena exercises · optional','Oraison supplémentaire des exercices de 1863 · facultative'))+'</summary>'+
+    '<p lang="'+lang()+'">'+nl(fr?work.optionalClosingCollectFr:work.optionalClosingCollectEn)+'</p>'+
+    '<p lang="'+lang()+'">'+nl(fr?work.optionalInvocationFr:work.optionalInvocationEn)+'</p>'+
+    '</details>';
+ }
+ const percentage=Math.round((index+1)*100/stageCount);
+ return head(title,L('Historical devotional prayers','Prières historiques de dévotion'))+
+  '<main class="aoP435930Body aoP435930LibraryReader" data-ao-philomena-reader="'+esc(work.id)+'" data-ao-philomena-mode="'+(isLitany?'litany':'novena')+'">'+
+  (index===0?'<p class="aoP435930SourceNote" data-ao-philomena-editorial>'+esc(status)+'</p>':'')+
+  '<div class="aoJosephSevenProgress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+percentage+
+  '" aria-label="'+esc(L('Reading progress','Progression de la lecture'))+'"><span style="width:'+percentage+'%"></span></div>'+
+  '<article class="aoDevoCard" data-ao-philomena-stage="'+(index+1)+'"><div class="aoDevoCardScroll">'+
+  '<small>'+(index+1)+' / '+stageCount+'</small><h2>'+esc(stageLabel)+'</h2>'+interior+'</div></article>'+
+  '<nav class="aoJosephSevenNav">'+
+  '<button type="button" data-p435930-philomena-prev '+(index===0?'disabled':'')+'>'+esc(L('Previous','Précédent'))+'</button>'+
+  (index===stageCount-1?'<button type="button" data-p435930-philomena-finish>'+esc(L('Back to Prayer Library','Retour au livre de prières'))+'</button>':
+   '<button type="button" data-p435930-philomena-next>'+esc(L('Next','Suivant'))+'</button>')+'</nav>'+
+  '<details class="aoP435930SourceNote" data-ao-philomena-provenance><summary>'+esc(L('Historical edition and variants','Édition historique et variantes'))+'</summary>'+
+  '<p>'+esc(work.sourceBook)+'</p><p>'+esc(status)+'</p>'+
+  '<a href="'+esc(work.sourceUrl)+'" target="_blank" rel="noopener noreferrer">'+esc(L('Historical English witness','Témoin historique anglais'))+'</a> · '+
+  '<a href="'+esc(work.ickspComparison)+'" target="_blank" rel="noopener noreferrer">'+esc(L('ICKSP New Brighton variant','Variante ICRSP New Brighton'))+'</a>'+
+  '</details></main>';
+}
 function renderLibrary(){
+ if(LIB.open&&philomenaHistoricalWork(LIB.open))return renderPhilomenaHistorical();
  if(LIB.open&&massSequencePrayerWork(LIB.open))return renderMassSequencePrayer();
  if(LIB.open){
   const p=P(LIB.open);if(!p){LIB.open=null;return renderLibrary()}
@@ -2777,6 +2850,17 @@ function renderLibrary(){
    '<small>'+esc(L('MASS SEQUENCE · SOURCE READER','SÉQUENCE DE MESSE · SOURCE'))+'</small>'+
    '<b>'+esc(isFr()?work.titleFr:work.title)+'</b><span>LA · EN · FR</span></button>').join('')+
    '</div></section>');
+ const philomenaWorks=philomenaHistoricalMatches({subject:LIB.subject,category:LIB.cat,search:q});
+ const philomenaSection=!philomenaWorks.length?'':(
+  '<section class="aoP435930LibraryRelated" data-ao-philomena-library>'+
+  '<h3>'+esc(L('Saint Philomena · historical devotions','Sainte Philomène · dévotions historiques'))+'</h3>'+
+  '<p>'+esc(L('Two historical English source editions, with new editorial French translations.',
+   'Deux éditions anciennes en anglais, avec traductions éditoriales françaises.'))+'</p>'+
+  '<div class="aoP435930ModuleGrid">'+philomenaWorks.map(w=>
+   '<button type="button" class="aoP435930ModuleCard" data-p435930-lib-open="'+esc(w.id)+'" data-ao-philomena-open="'+esc(w.acquisitionId)+'">'+
+   '<small>'+esc(w.id.includes('litany')?L('LITANY · 1848','LITANIES · 1848'):L('NINE-DAY PRAYER · 1863','NEUVAINE · 1863'))+'</small>'+
+   '<b>'+esc(isFr()?w.titleFr:w.titleEn)+'</b><span>'+esc(L('Historical EN · editorial FR','Anglais historique · français éditorial'))+'</span></button>'
+   ).join('')+'</div></section>');
  const guidedLinks=LIB.cat==='all'?guidedPrayerLinksForSubject(LIB.subject,q):[];
  const guidedSection=LIB.cat!=='all'||!guidedLinks.length?
   '':('<section class="aoP435930LibraryRelated" data-ao-prayer-subject-guided="'+esc(LIB.subject)+'">'+
@@ -2793,9 +2877,9 @@ function renderLibrary(){
   '<div class="aoP435930Chips" role="group" aria-label="'+esc(L('Theological prayer families','Familles théologiques de prières'))+'">'+
   '<button type="button" data-p435930-lib-subject="all" aria-pressed="'+String(LIB.subject==='all')+'">'+esc(L('All subjects','Tous les sujets'))+'</button>'+
   PRAYER_SUBJECTS_V1.map(subject=>'<button type="button" data-p435930-lib-subject="'+subject.id+'" aria-pressed="'+String(LIB.subject===subject.id)+'">'+
-    esc(isFr()?subject.fr:subject.en)+' <small>'+(subjectCounts.counts[subject.id]+prayerSupplementalLiveWorksForSubject(subject.id).length +prayerSevenSourceWorksForSubject(subject.id).length+redBookletCommunionLibraryLinksForSubject(subject.id).length+redBookletSuscipeLibraryLinksForSubject(subject.id).length+redBookletPrivateHistoricalWorksForSubject(subject.id).length+MASS_SEQUENCE_PRAYER_WORKS.filter(x=>x.subject===subject.id).length+(subject.id==='V'?1:0))+'</small></button>').join('')+
+    esc(isFr()?subject.fr:subject.en)+' <small>'+(subjectCounts.counts[subject.id]+prayerSupplementalLiveWorksForSubject(subject.id).length +prayerSevenSourceWorksForSubject(subject.id).length+redBookletCommunionLibraryLinksForSubject(subject.id).length+redBookletSuscipeLibraryLinksForSubject(subject.id).length+redBookletPrivateHistoricalWorksForSubject(subject.id).length+MASS_SEQUENCE_PRAYER_WORKS.filter(x=>x.subject===subject.id).length+(subject.id==='V'?1:0)+PHILOMENA_HISTORICAL_TWO_WORKS_V1.filter(w=>w.subject===subject.id).length)+'</small></button>').join('')+
   '</div><p class="aoP435930SourceNote">'+esc(L('Only accessible canonical and source-owned reader texts are included. Unverified research works are not shown as readable prayers.','Seuls les textes canoniques et les prières déjà accessibles dans leurs parcours d’origine sont inclus. Les œuvres de recherche non vérifiées ne sont pas présentées comme disponibles.'))+'</p></details>';
- return `${head(L('Prayer Library','Livre de prières'),L('Prayers and guided devotions','Prières et dévotions guidées'))}<main class="aoP435930Body">${libraryOverviewGuide()}<label class="aoP435930Search"><span>${assetIcon('ao-ui-search')}</span><input type="search" data-p435930-lib-search value="${esc(LIB.q)}" placeholder="${esc(L('Search prayers','Rechercher une prière'))}"></label><div class="aoP435930Chips">${cats.map(([id,n])=>`<button type="button" class="${id===LIB.cat?'active':''}" data-p435930-lib-cat="${esc(id)}">${esc(n)}</button>`).join('')}</div>${subjectBrowse}<div class="aoP435930LibraryList" data-ao-prayer-subject-results="${esc(LIB.subject)}">${LIB.cat==="essentials"&&!q?claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2,prayers:DATA.prayers,locale:lang(),esc,title:L("Essential Prayers","Prières essentielles"),artFor:releasedPrayerCardArtUrl}):(rows.length||!(historicalWorks.length+sourceDeepWorks.length+privateCommunionWorks.length+privateHistoricalWorks.length+(stabatSeptember?1:0)+massSequences.length)?renderLibraryEntryRows(rows,q):'')}</div>${communionSection}${privateHistoricalSection}${historicalSection}${stabatLibrarySection}${massSequenceSection}${guidedSection}</main>`;
+ return `${head(L('Prayer Library','Livre de prières'),L('Prayers and guided devotions','Prières et dévotions guidées'))}<main class="aoP435930Body">${libraryOverviewGuide()}<label class="aoP435930Search"><span>${assetIcon('ao-ui-search')}</span><input type="search" data-p435930-lib-search value="${esc(LIB.q)}" placeholder="${esc(L('Search prayers','Rechercher une prière'))}"></label><div class="aoP435930Chips">${cats.map(([id,n])=>`<button type="button" class="${id===LIB.cat?'active':''}" data-p435930-lib-cat="${esc(id)}">${esc(n)}</button>`).join('')}</div>${subjectBrowse}<div class="aoP435930LibraryList" data-ao-prayer-subject-results="${esc(LIB.subject)}">${LIB.cat==="essentials"&&!q?claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2,prayers:DATA.prayers,locale:lang(),esc,title:L("Essential Prayers","Prières essentielles"),artFor:releasedPrayerCardArtUrl}):(rows.length||!(historicalWorks.length+sourceDeepWorks.length+privateCommunionWorks.length+privateHistoricalWorks.length+(stabatSeptember?1:0)+massSequences.length+philomenaWorks.length)?renderLibraryEntryRows(rows,q):'')}</div>${communionSection}${privateHistoricalSection}${historicalSection}${stabatLibrarySection}${massSequenceSection}${philomenaSection}${guidedSection}</main>`;
 }
 function monthIndex(key){const d=dateObj(key);return d?d.getFullYear()*12+d.getMonth():null}
 function consecutive(records,needed){const done=records.filter(x=>x.complete).sort((a,b)=>a.date.localeCompare(b.date));if(!done.length)return 0;let c=1;for(let i=done.length-1;i>0;i--){const a=monthIndex(done[i].date),b=monthIndex(done[i-1].date);if(a-b===1)c++;else break}return Math.min(c,needed)}
@@ -5111,7 +5195,20 @@ function onClick(e){
   MASS_SEQUENCE_READING.error=null;MASS_SEQUENCE_READING.loading=false;
   MASS_SEQUENCE_READING.token++;return render();
  }
- if(b.dataset.p435930LibOpen){LIB.open=b.dataset.p435930LibOpen;LIB.language=null;PILOT_LORETO_GROUP=false;return render()}
+ if(b.matches('[data-p435930-philomena-prev]')&&philomenaHistoricalWork(LIB.open)){
+  PHILOMENA_HISTORIC_STAGE=Math.max(0,PHILOMENA_HISTORIC_STAGE-1);return render();
+ }
+ if(b.matches('[data-p435930-philomena-next]')&&philomenaHistoricalWork(LIB.open)){
+  const work=philomenaHistoricalWork(LIB.open);
+  PHILOMENA_HISTORIC_STAGE=Math.min(work.id.includes('litany')?3:8,PHILOMENA_HISTORIC_STAGE+1);return render();
+ }
+ if(b.matches('[data-p435930-philomena-finish]')&&philomenaHistoricalWork(LIB.open)){
+  LIB.open=null;PHILOMENA_HISTORIC_STAGE=0;return render();
+ }
+ if(b.dataset.p435930LibOpen){
+  if(philomenaHistoricalWork(b.dataset.p435930LibOpen))PHILOMENA_HISTORIC_STAGE=0;
+  LIB.open=b.dataset.p435930LibOpen;LIB.language=null;PILOT_LORETO_GROUP=false;return render();
+ }
  if(b.dataset.p435930ScriptureRetry){
   // Retry only the exact currently displayed source identity, never switch
   // translation or fetch an alternative unsourced prayer text silently.
