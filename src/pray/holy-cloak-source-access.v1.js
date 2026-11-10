@@ -38,11 +38,15 @@ export const HOLY_CLOAK_SOURCE_ACCESS_V1=Object.freeze({
  nativePrayerLanguage:"it",
  nativePrayerSourceId:"st_joseph_holy_cloak_italian",
  nativePrayerSectionCount:19,
+ nativePrayerAvailableLanguages:Object.freeze(["it","en","fr"]),
+ modernEditorialTranslationLanguages:Object.freeze(["en","fr"]),
  nativePrayerReadingSteps:23,
- frenchPrayerTextIncluded:false,
+ frenchPrayerTextIncluded:true,
+ historicFrenchPrayerTextCertified:false,
+ editorialTranslationReviewed:false,
  originalItalianPrintCertified:false,
  historicalIndulgencesCurrent:false,
- sourceAccessStatus:"COMPLETE_ITALIAN_DIGITAL_SOURCE_NATIVE_OFFLINE_READER_WITH_ENGLISH_EXTERNAL_SOURCE_NOT_PRINT_CERTIFIED"
+ sourceAccessStatus:"NATIVE_OFFLINE_IT_SOURCE_WITH_MODERN_EN_FR_EDITORIAL_TRANSLATIONS_PENDING_REVIEW_NOT_HISTORICAL_PRINT_CERTIFIED"
 });
 export function holyCloakSourceMatches({search="",subject="all",category="all"}={}){
  if(category!=="all"||(subject!=="all"&&subject!=="VI"))return false;
