@@ -9,7 +9,9 @@
     "CC0, CC BY 4 and Public Domain Mark are distinct and cannot be conflated",
     "Image rights may attach at specific image ID level (Wellcome); object-level public-domain status alone does not prove exact image bytes are open",
     "No cropping before selected image bytes and image-specific licence permit the action",
-    "No external contact, permission request, payments, Prado imports, runtime assignment, or gallery approval"
+    "No external contact, permission request, payments, Prado imports, runtime assignment, or gallery approval",
+    "A CC BY or CC0 licence on a scan of the back of a canvas cannot be inferred to apply to a separate photograph of its painted front.",
+    "Wellcome official image IDs refer to reverse, detail and full views; keep those roles distinct and do not auto-promote the Commons full view."
   ],
   "counts": {
     "uniqueOilWorkKeysAudited": 18,
@@ -22,12 +24,14 @@
     "photoHashVerified": 0,
     "mobileImageCropsCertified": 0,
     "dateSpecificOwnerApprovals": 0,
-    "releaseReadyPhotos": 0
+    "releaseReadyPhotos": 0,
+    "confirmedOpenColourFrontSourceCandidates": 4,
+    "openButWrongSideOrMonochromeRecords": 2
   },
   "rightsStatusCounts": {
     "PHOTO_RIGHTS_NOT_ESTABLISHED": 8,
     "FIRST_PARTY_CC0_PUBLIC_DOMAIN_IMAGE_MARKED": 4,
-    "SELECTED_IMAGE_PAGE_CC_BY_4_LICENSE": 1,
+    "CC_BY_4_REVERSE_PHOTO_ONLY_FRONT_RIGHTS_UNCONFIRMED": 1,
     "FIRST_PARTY_CC0_IMAGE_MARKED": 1,
     "OFFICIAL_PHOTO_PERSONAL_NONCOMMERCIAL_ONLY": 1,
     "METADATA_CC_BY_4_PHOTO_RIGHTS_NOT_ESTABLISHED": 1,
@@ -106,9 +110,9 @@
       "catalogueUrl": "https://wellcomecollection.org/works/jgxd7rrf/images?id=jvt9hwrm",
       "sourceInspection": "DIRECT_MUSEUM_OR_NATIONAL_CATALOGUE_PAGE_RETRIEVED",
       "workIdentityStatus": "CATALOGUE_ORIGINAL_CONFIRMED",
-      "photographedImageRightsStatus": "SELECTED_IMAGE_PAGE_CC_BY_4_LICENSE",
+      "photographedImageRightsStatus": "CC_BY_4_REVERSE_PHOTO_ONLY_FRONT_RIGHTS_UNCONFIRMED",
       "objectAndSceneNote": "Wellcome 45078i, 1620–1629, oil canvas, Luke 14 parable; original 110.5 × 193.5 cm. Image pages differ: jvt9hwrm shows CC BY 4.0; nfkanqnq shows Public Domain Mark",
-      "imageAccessAndQA": "Specific image-download page states CC BY 4.0, requiring attribution; should choose *one original high-res asset* and preserve its licence and exact credit, not conflate image IDs. No bytes/hash/quality checked",
+      "imageAccessAndQA": "Corrected visual-source identity: Wellcome selected page jvt9hwrm is BACK of canvas image L0014632 (CC BY 4.0), not the painting face. p8mjh359 -> V0017628 is a FRONT DETAIL (PDM); nfkanqnq -> V0017629 is a FRONT DETAIL (PDM). Whole front V0017627 is referenced in a museum-derived archival record, but its exact official image page/licence pair and native source bytes remain unverified. Block for gallery hero.",
       "selectedImageFileSha256": null,
       "downloadedPhotoBytes": false,
       "photoWidthPx": null,
@@ -117,7 +121,7 @@
       "artworkPhotoVisualQAComplete": false,
       "dateSpecificOwnerApproval": false,
       "eligibleForProduction": false,
-      "priority": "P0_ACQUIRE_OPEN_IMAGE"
+      "priority": "P0_RESOLVE_WHOLE_FRONT_IMAGE_SOURCE_AND_LICENSE"
     },
     {
       "workKey": "Walters:37.1146",
@@ -129,7 +133,7 @@
       "workIdentityStatus": "CATALOGUE_ORIGINAL_CONFIRMED",
       "photographedImageRightsStatus": "FIRST_PARTY_CC0_IMAGE_MARKED",
       "objectAndSceneNote": "Walters 37.1146, 1725–1730 oil-on-canvas. Catalogue lists Pietro Bianchi in artist role AND Pier Leone Ghezzi as painter; older research label credited Ghezzi alone. Do not resolve contradictory roles by guessing",
-      "imageAccessAndQA": "Three explicit CC0 downloads. Two inspected 1000px images were monochrome/archival captures, not suitable colour hero replacements; seek museum colour file or another exact open original",
+      "imageAccessAndQA": "All three directly examined first-party CC0 download previews are black-and-white archival photographs of the oil painting. Preserve as monochrome reference only; find valid colour source before selecting a mobile hero.",
       "selectedImageFileSha256": null,
       "downloadedPhotoBytes": false,
       "photoWidthPx": null,
