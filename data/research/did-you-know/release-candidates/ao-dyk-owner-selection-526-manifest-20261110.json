@@ -1,0 +1,78 @@
+{
+  "format": "ad-orientem.did-you-know.editorial-candidate-manifest.v1",
+  "state": "UNAPPROVED_RESEARCH_STAGING_ONLY",
+  "source": {
+    "repository": "Fulcanelli13/ad-orientem",
+    "branch": "research/dyk-customs-first-400-bilingual-20261110",
+    "master_csv": "data/research/did-you-know/registry/ao-dyk-bilingual-draft-master-20261110.csv",
+    "master_blob_sha": "2fc7f31c6594ad9e69530a6241906a3ce2018f0e",
+    "original_draft_count": 1745,
+    "published_comparator_count": 225,
+    "selection_artifact": "Ad_Orientem_Owner_Selection_526_UNAPPROVED.csv",
+    "closure_workbook": "Ad_Orientem_Editorial_Closure_Complete_Titles_and_526_Shortlist.xlsx",
+    "selection_csv": "data/research/did-you-know/release-candidates/ao-dyk-owner-selection-526-UNAPPROVED-20261110.csv"
+  },
+  "counts": {
+    "selection": 526,
+    "priority": 332,
+    "reserve": 194,
+    "keep": 360,
+    "rewrite": 166,
+    "copy_rewrite_pending": 5,
+    "owner_approved": 0,
+    "release_eligible": 0
+  },
+  "issues": {
+    "duplicate_bilingual_title_groups": [
+      {
+        "title": "lavabo",
+        "ids": [
+          "DYK-GX14-013",
+          "DYK-GL-G216-01"
+        ]
+      }
+    ],
+    "copy_rewrite_ids": [
+      "DYK-CW15-038",
+      "DYK-CW15-035",
+      "DYK-GL-G255-01",
+      "DYK-GL-G429-01",
+      "DYK-GX18-006"
+    ]
+  },
+  "required_release_gates": [
+    "Explicit owner approval for each chosen card",
+    "Resolve proposed copy rewrites and the Lavabo title collision",
+    "Preserve the 12 previously parked published overlaps; no duplicate public cards",
+    "Owner decision on factual and historical uncertainties",
+    "Independent human/CI validation of bilingual text and deployment scope",
+    "Explicit merge and GitHub Pages release decision"
+  ],
+  "prohibited_actions": [
+    "Do not import any candidate into live DYK feed",
+    "Do not use KEEP or REWRITE as owner approval",
+    "Do not overwrite the 225 published comparator facts",
+    "Do not merge or deploy automatically",
+    "Do not deploy on Vercel"
+  ],
+  "metadata": {
+    "prepared_on": "2026-11-10",
+    "status": "staged awaiting owner release selection",
+    "row_identification": "Fact ID immutable",
+    "encoding": "UTF-8 CSV",
+    "columns": [
+      "Fact ID",
+      "Interest tier",
+      "Title EN · proposed",
+      "Title FR · proposed",
+      "English card text",
+      "French card text",
+      "Interest /5",
+      "Claude verdict",
+      "Copy basis",
+      "Editorial caveat",
+      "Owner decision",
+      "Release status"
+    ]
+  }
+}
