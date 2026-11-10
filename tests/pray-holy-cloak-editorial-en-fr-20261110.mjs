@@ -30,8 +30,8 @@ assert.match(xviii.en,/final perseverance/);
 assert.match(xviii.fr,/persévérance finale/);
 assert.equal(tr.sectionXVIIINotationPolicy,"UNMARKED_ALTERNATING_PETITIONS_NOT_VERSICLE_RESPONSE_SIGNS");
 for(const x of [xviii.en,xviii.fr,it.find(p=>p.id==="XVIII").it]){
- assert.doesNotMatch(x,/^[℣℟]\\./m,"Section XVIII witness has no printed versicle-response sigla");
- assert.equal(x.split("\\n").length,38,"All petition/answer lines must remain intact");
+ assert.doesNotMatch(x,/^[℣℟]\./m,"Section XVIII witness has no printed versicle-response sigla");
+ assert.equal(x.split("\n").length,38,"All petition/answer lines must remain intact");
 }
 assert.deepEqual(source.modernEditorialTranslations,["en","fr"]);
 assert.equal(source.modernEditorialLanguagesReview,"DRAFT_NOT_HISTORICAL_WITNESSES");
