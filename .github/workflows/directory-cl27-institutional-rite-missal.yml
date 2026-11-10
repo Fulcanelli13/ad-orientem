@@ -4,6 +4,7 @@ on:
     paths:
       - 'data/directory/cl27-institutional-ministry-liturgy-20261110.v1.json'
       - 'data/directory/research/cl27-imbc-rci-source-split-20261110.v1.json'
+      - 'data/directory/research/cl27-19-residual-ministry-role-holds-20261110.v1.json'
       - 'src/find/tlm-institutional-rite-missal.js'
       - 'src/find/tlm-church-profile.js'
       - 'src/find/directory-card.js'
@@ -12,6 +13,7 @@ on:
       - 'src/find/explore-presentation.js'
       - 'tests/tlm-cl27-institutional-rite-missal.mjs'
       - 'tests/tlm-cl27-imbc-rci-source-split.mjs'
+      - 'tests/tlm-cl27-residual-ministry-holds.mjs'
       - '.github/workflows/directory-cl27-institutional-rite-missal.yml'
       - 'sw.js'
   workflow_dispatch:
@@ -30,6 +32,8 @@ jobs:
         run: node tests/tlm-cl27-institutional-rite-missal.mjs
       - name: Preserve 31 IMBC/RCI source-scoped research labels without fabricated editions
         run: node tests/tlm-cl27-imbc-rci-source-split.mjs
+      - name: Keep 19 remaining role and alias exceptions fail-closed
+        run: node tests/tlm-cl27-residual-ministry-holds.mjs
       - name: Existing exact witness and site/facet regression
         run: |
           node tests/directory-cl27-main-facets.mjs
@@ -41,3 +45,5 @@ jobs:
           test -f dist/web-preview/data/directory/cl27-institutional-ministry-liturgy-20261110.v1.json
           test -f dist/web-preview/src/find/tlm-institutional-rite-missal.js
           test ! -d dist/web-preview/data/directory/research/cl2-unified-20261026
+          test ! -f dist/web-preview/data/directory/research/cl27-imbc-rci-source-split-20261110.v1.json
+          test ! -f dist/web-preview/data/directory/research/cl27-19-residual-ministry-role-holds-20261110.v1.json
