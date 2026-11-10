@@ -36,6 +36,11 @@ clock.destroy();
 assert.equal(timers.size,0,"Unbinding must release estimated-follow timer");
 assert.equal(clock.start(4),false);
 assert.equal(clock.seek(0),false);
+const one=createScholaFollowClock({schedule,cancel});
+assert.equal(one.start(1),true);
+assert.equal(one.getState().running,false);
+assert.equal(one.getState().pending,false);
+one.destroy();
 assert.equal(createScholaFollowClock({schedule,cancel}).start(0),false);
 assert.equal(createScholaFollowClock({schedule,cancel}).start(601),false);
 
