@@ -146,6 +146,20 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
       +'" aria-pressed="'+(i===0)+'"></button>').join("")
     +'</div><button type="button" class="ao-lb-handle" data-lb-handle aria-label="Resize band; double tap for adaptive height"></button></div>';
   shell.insertBefore(style,stage);shell.insertBefore(band,stage);
+  // Restore the existing native MUSIC selector inside Claude's single slim
+  // header. This proxy invokes the same source-owned control; it does not
+  // create a separate playlist or alter Schola playback/position.
+  const nativeMusic=shell.querySelector("[data-schola-events-open]");
+  const slimHeader=shell.querySelector(".ao-reader-top-ribbon");
+  const musicAccess=doc.createElement("button");
+  musicAccess.type="button";
+  musicAccess.className="ao-claude-music-access";
+  musicAccess.textContent="MUSIC";
+  musicAccess.setAttribute("aria-label","Open native independent Schola music events");
+  musicAccess.hidden=true;
+  slimHeader?.appendChild(musicAccess);
+  musicAccess.addEventListener("click",()=>nativeMusic?.click());
+
   let preference=null;
   try{preference=normalizeLiveBandPreference(storage?.getItem(LIVE_BAND_STORAGE_KEY));}catch{}
   let page=0,disposed=false,lastModel=null,lastCrosswalk=null,lastId=null,drag=null,swipe=null,lastTap=0,lastSceneSignature=null;
@@ -275,6 +289,10 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
     }
     band.hidden=!result.ok;
     shell.classList.toggle("ao-live-band-enabled",result.ok);
+    musicAccess.hidden=!result.ok || !nativeMusic || nativeMusic.hidden ||
+      String(prepared?.session?.resolvedMass?.form??"").toUpperCase()==="LOW";
+    if(slimHeader)
+      slimHeader.dataset.claudeMusicAccess=String(!musicAccess.hidden);
     shell.dataset.aoLiveBandGate=result.reason??result.crosswalk?.status??"EXACT_NATIVE_65_CROSSWALK";
     if(!result.ok){availableRoute=null;stopRoutePreview();lastTimelineSignature=null;
       timelineHost.replaceChildren();wheelHost.replaceChildren();
@@ -376,6 +394,8 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
       nativeCardId:band.dataset.nativeCardId??null,reason:shell.dataset.aoLiveBandGate}),
     dispose(){if(disposed)return;disposed=true;stopRoutePreview();observer?.disconnect();
       shell.classList.remove("ao-live-band-enabled");delete shell.dataset.aoLiveBandGate;
-      shell.style.removeProperty("--ao-live-band-height");band.remove();style.remove();}
+      shell.style.removeProperty("--ao-live-band-height");musicAccess.remove();
+      if(slimHeader)delete slimHeader.dataset.claudeMusicAccess;
+      band.remove();style.remove();}
   });
 }
