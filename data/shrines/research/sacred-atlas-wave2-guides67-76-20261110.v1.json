@@ -1,0 +1,656 @@
+{
+  "schema": "AO_SACRED_ATLAS_WAVE2_GUIDES67_76_DRAFT_V1",
+  "as_of": "2026-11-10",
+  "status": "RESEARCH_DRAFT_BILINGUAL_NOT_PUBLISHED",
+  "based_on": "data/shrines/shrines-pilgrimages-seed.v1.json",
+  "counts": {
+    "guides": 10,
+    "sections": 30,
+    "language": "EN_FR",
+    "owner_approved": 0,
+    "published": 0
+  },
+  "policy": [
+    "No rewriting of the 56 already drafted Wave-1 guides or the 33 published extended guides",
+    "Texts are newly authored but grounded in existing source-registry contributions; editor must check precise factual support for each paragraph",
+    "Do not infer apparition authenticity, liturgical rite or immutable schedules, or claim entrance-grade GPS",
+    "No research-only source automatically publishes; preserve existing Place and shrine identities"
+  ],
+  "guides": [
+    {
+      "place_id": "place:AU:marian-valley",
+      "place_name": "Marian Valley — Shrine of Our Lady Help of Christians",
+      "country_code": "AU",
+      "shrine_id": "shrine:AU:marian-valley-help-christians",
+      "draft_order": 67,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A Pauline Fathers’ Marian shrine within the Archdiocese of Brisbane.",
+      "subtitle_fr": "Un sanctuaire marial des Pères pauliniens dans l’archidiocèse de Brisbane.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A Marian place in Queensland",
+          "title_fr": "Un lieu marial du Queensland",
+          "paragraphs": [
+            {
+              "en": "Marian Valley is a Catholic pilgrimage sanctuary within the Archdiocese of Brisbane and entrusted to the Pauline Fathers. Its dedication to Mary Help of Christians gives the place a defined devotional identity. It should be described as a sanctuary with a number of connected sacred spaces, not as a collection of independent shrines with unrelated map pins.",
+              "fr": "Marian Valley est un sanctuaire catholique de pèlerinage de l’archidiocèse de Brisbane, confié aux Pères pauliniens. Sa dédicace à Marie Auxiliatrice lui donne une identité dévotionnelle propre. Il faut le présenter comme un sanctuaire réunissant plusieurs espaces sacrés, et non comme une collection de sanctuaires indépendants et sans lien cartographique.",
+              "source_url": "https://marianvalley.org.au/contact-us/",
+              "source_id": "SHR-MARIAN-VALLEY-CONTACT"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Chapels and stations of prayer",
+          "title_fr": "Chapelles et étapes de prière",
+          "paragraphs": [
+            {
+              "en": "The pilgrimage grounds include chapels and a Way of the Cross, allowing pilgrims to spend time in more than one kind of prayer. Those internal stations are features of a single Marian destination. An illustrated guide should identify them as elements of the precinct and avoid presenting an unverified route line as an officially surveyed path.",
+              "fr": "Les terrains de pèlerinage comprennent des chapelles et un chemin de croix, permettant aux fidèles de vivre plusieurs formes de prière. Ces étapes intérieures appartiennent à une unique destination mariale. Le guide illustré doit les présenter comme des éléments du sanctuaire et éviter de faire passer un tracé non vérifié pour un parcours officiellement relevé.",
+              "source_url": "https://marianvalley.org.au/events/",
+              "source_id": "PIL-MARIAN-VALLEY-PROGRAMME"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "An active programme of devotion",
+          "title_fr": "Un programme actif de dévotion",
+          "paragraphs": [
+            {
+              "en": "The shrine advertises First Saturday observances, monthly Fatima-themed devotions and Eucharistic processions. They show how the place continues to function as a pilgrimage centre rather than as a historical monument alone. Events, dates and celebrants may change, so the current programme must be checked rather than reproduced as a permanent calendar.",
+              "fr": "Le sanctuaire annonce des célébrations de premiers samedis, des dévotions mensuelles liées à Fatima et des processions eucharistiques. Elles montrent que le lieu reste un centre de pèlerinage vivant et non seulement un monument historique. Les événements, dates et célébrants peuvent varier : il faut donc vérifier le programme en cours plutôt que de le reproduire comme un calendrier immuable.",
+              "source_url": "https://marianvalley.org.au/events/",
+              "source_id": "PIL-MARIAN-VALLEY-PROGRAMME"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:AU:marian-valley-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://marianvalley.org.au/contact-us/",
+        "https://marianvalley.org.au/events/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:NZ:st-peter-chanel-russell",
+      "place_name": "National Catholic Shrine of St Peter Chanel",
+      "country_code": "NZ",
+      "shrine_id": "shrine:NZ:st-peter-chanel-russell",
+      "draft_order": 68,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A Russell shrine preserving a relic of Saint Peter Chanel on the Ngā Tapuwae journey.",
+      "subtitle_fr": "Un sanctuaire à Russell conservant une relique de saint Pierre Chanel sur l’itinéraire Ngā Tapuwae.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "Remembering the first martyr of Oceania",
+          "title_fr": "Faire mémoire du premier martyr de l’Océanie",
+          "paragraphs": [
+            {
+              "en": "The National Catholic Shrine of Saint Peter Chanel at Russell honours the missionary saint remembered as the first Catholic martyr of Oceania. The shrine’s identity is tied to a relic preserved there. Russell is a place of veneration and remembrance; it must not be mistaken for the location of Chanel’s martyrdom in the Pacific.",
+              "fr": "Le sanctuaire catholique national de saint Pierre Chanel, à Russell, honore le missionnaire reconnu comme premier martyr catholique de l’Océanie. Son identité est liée à une relique qui y est conservée. Russell est un lieu de vénération et de mémoire ; il ne faut pas le confondre avec le lieu du martyre de Chanel dans le Pacifique.",
+              "source_url": "https://www.aucklandcatholic.org.nz/wp-content/uploads/2025/01/NGA-TAPUWAE-Route-Overview-1.pdf",
+              "source_id": "SHR-ST-PETER-CHANEL-NZ"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A step in New Zealand Catholic history",
+          "title_fr": "Une étape de l’histoire catholique néo-zélandaise",
+          "paragraphs": [
+            {
+              "en": "The Catholic Diocese of Auckland includes the shrine in Ngā Tapuwae, a pilgrimage through significant places associated with the beginnings of Catholic life in Aotearoa New Zealand. The itinerary links distinct historical sites through a shared story rather than turning them into one compound location. The Russell shrine keeps its own name and physical identity.",
+              "fr": "Le diocèse catholique d’Auckland intègre le sanctuaire à Ngā Tapuwae, pèlerinage parmi des lieux importants des débuts de la vie catholique en Aotearoa–Nouvelle-Zélande. L’itinéraire relie plusieurs sites historiques par un récit commun sans les réduire à un seul lieu composé. Le sanctuaire de Russell conserve son nom et son identité physique propres.",
+              "source_url": "https://www.aucklandcatholic.org.nz/lifeinfaith/nga_tapuwae/",
+              "source_id": "PIL-NGA-TAPUWAE"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Relic, prayer and actual destination",
+          "title_fr": "Relique, prière et destination réelle",
+          "paragraphs": [
+            {
+              "en": "A visitor comes to the shrine to pray in the presence of a relic associated with Saint Peter Chanel, while also encountering the wider Catholic heritage of the Bay of Islands. The diocesan pilgrimage resources establish the site and its context, but do not turn every historical stop into a verified GPS route or guarantee an unchanged local timetable.",
+              "fr": "Le visiteur vient prier dans un sanctuaire qui conserve une relique associée à saint Pierre Chanel, tout en découvrant le patrimoine catholique plus large de la Bay of Islands. Les ressources diocésaines permettent d’identifier le lieu et son contexte, sans transformer chaque étape historique en itinéraire GPS vérifié ni garantir des horaires locaux immuables.",
+              "source_url": "https://www.aucklandcatholic.org.nz/wp-content/uploads/2025/01/NGA-TAPUWAE-Route-Overview-1.pdf",
+              "source_id": "SHR-ST-PETER-CHANEL-NZ"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:NZ:st-peter-chanel-destination"
+      ],
+      "saint_name_associations": [
+        "Saint Peter Chanel"
+      ],
+      "bibliography_urls": [
+        "https://www.aucklandcatholic.org.nz/wp-content/uploads/2025/01/NGA-TAPUWAE-Route-Overview-1.pdf",
+        "https://www.aucklandcatholic.org.nz/lifeinfaith/nga_tapuwae/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:NZ:pukekaraka-otaki",
+      "place_name": "Hāto Mere / St Mary's Pukekaraka",
+      "country_code": "NZ",
+      "shrine_id": "shrine:NZ:pukekaraka-mary",
+      "draft_order": 69,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The historic Catholic mission of Pukekaraka at Ōtaki.",
+      "subtitle_fr": "L’ancienne mission catholique de Pukekaraka à Ōtaki.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A sacred Catholic mission landscape",
+          "title_fr": "Un paysage sacré de mission catholique",
+          "paragraphs": [
+            {
+              "en": "Pukekaraka, associated with Hāto Mere / Saint Mary’s at Ōtaki, is recognised by the Archdiocese of Wellington as a significant Catholic sacred place. Its value is not confined to a single monument: the site bears witness to a local history of worship and community. That identity should be preserved in both English and French without renaming the place away from its Māori usage.",
+              "fr": "Pukekaraka, lié à Hāto Mere / Sainte-Marie à Ōtaki, est reconnu par l’archidiocèse de Wellington comme un lieu sacré catholique important. Son intérêt ne se limite pas à un monument isolé : le site témoigne d’une histoire locale de culte et de communauté. Cette identité doit être conservée en français comme en anglais, sans effacer le nom employé en māori.",
+              "source_url": "https://www.wn.catholic.org.nz/adw_community/pilgrimage-of-hope/",
+              "source_id": "SHR-PUKEKARAKA-WELLINGTON"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Mission memory and living worship",
+          "title_fr": "Mémoire missionnaire et culte vivant",
+          "paragraphs": [
+            {
+              "en": "The designation of Pukekaraka as an historic mission invites a description of Catholic life at Ōtaki rather than an invented chronology of specific buildings. A responsible account distinguishes the documented continuing place of worship from any stories that would require further original historical evidence. The existing diocesan source establishes the pilgrimage identity, not every possible claim about its past.",
+              "fr": "La désignation de Pukekaraka comme ancienne mission invite à raconter la vie catholique à Ōtaki plutôt qu’à inventer une chronologie détaillée de ses bâtiments. Un récit rigoureux distingue le lieu de culte toujours attesté des épisodes qui demanderaient des sources historiques supplémentaires. La source diocésaine existante établit l’identité de pèlerinage, non toutes les affirmations possibles sur le passé.",
+              "source_url": "https://www.wn.catholic.org.nz/adw_community/pilgrimage-of-hope/",
+              "source_id": "SHR-PUKEKARAKA-WELLINGTON"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "An actual stage of pilgrimage",
+          "title_fr": "Une véritable étape de pèlerinage",
+          "paragraphs": [
+            {
+              "en": "The Wellington archdiocesan pilgrimage material names Pukekaraka among places visitors may encounter. Its street address identifies a real destination, but a guide should not invent access through private mission grounds or a surveyed devotional circuit. Current arrangements and any liturgical celebration should be obtained from the local church or archdiocese.",
+              "fr": "Les documents de pèlerinage de l’archidiocèse de Wellington nomment Pukekaraka parmi les lieux que peuvent découvrir les visiteurs. Son adresse désigne une destination réelle, mais le guide ne doit inventer ni accès à des parties privées de la mission ni circuit dévotionnel officiellement mesuré. Les modalités actuelles et les célébrations doivent être vérifiées localement ou auprès de l’archidiocèse.",
+              "source_url": "https://www.wn.catholic.org.nz/adw_community/pilgrimage-of-hope/",
+              "source_id": "SHR-PUKEKARAKA-WELLINGTON"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:NZ:pukekaraka-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.wn.catholic.org.nz/adw_community/pilgrimage-of-hope/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:NG:ugwogo-nike-national-marian-shrine",
+      "place_name": "National Shrine of Our Mother of Perpetual Help, Ugwogo Nike",
+      "country_code": "NG",
+      "shrine_id": "shrine:NG:ugwogo-perpetual-help",
+      "draft_order": 70,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A Redemptorist Marian pilgrimage centre in the Enugu region.",
+      "subtitle_fr": "Un centre de pèlerinage marial rédemptoriste dans la région d’Enugu.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A shrine of Our Mother of Perpetual Help",
+          "title_fr": "Un sanctuaire de Notre-Dame du Perpétuel Secours",
+          "paragraphs": [
+            {
+              "en": "The National Shrine of Our Mother of Perpetual Help at Ugwogo Nike is a Marian destination in the Enugu region of Nigeria. Its dedication links the site to the devotion fostered by the Redemptorists. The Nigerian sanctuary has its own pastoral identity and should not be confused with the original Roman icon or other shrines of the same Marian title.",
+              "fr": "Le sanctuaire national de Notre-Dame du Perpétuel Secours à Ugwogo Nike est une destination mariale de la région d’Enugu, au Nigeria. Sa dédicace le rattache à la dévotion encouragée par les Rédemptoristes. Ce sanctuaire nigérian possède sa propre identité pastorale et ne doit pas être confondu avec l’icône originale de Rome ou d’autres sanctuaires portant le même titre marial.",
+              "source_url": "https://nationalmarianshrine.org.ng/",
+              "source_id": "SHR-UGWOGO-NATIONAL-MARIAN"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Prayer and retreat",
+          "title_fr": "Prière et retraite",
+          "paragraphs": [
+            {
+              "en": "The shrine presents itself as a centre for Eucharistic worship, prayer, retreat and Marian devotion. Its significance therefore lies as much in the communal religious life cultivated there as in any architectural feature. The guide should avoid fabricating an apparition origin or a miraculous event to explain a devotion that is already comprehensible from the shrine’s Redemptorist purpose.",
+              "fr": "Le sanctuaire se présente comme un centre de culte eucharistique, de prière, de retraite et de dévotion mariale. Son importance réside donc autant dans la vie religieuse qui s’y déploie que dans ses éventuelles caractéristiques architecturales. Le guide ne doit pas inventer d’origine apparitionnelle ou de miracle pour expliquer une dévotion déjà intelligible par la mission rédemptoriste du lieu.",
+              "source_url": "https://nationalmarianshrine.org.ng/",
+              "source_id": "SHR-UGWOGO-NATIONAL-MARIAN"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage in the present",
+          "title_fr": "Le pèlerinage aujourd’hui",
+          "paragraphs": [
+            {
+              "en": "The sanctuary’s own information records recurring Marian celebrations and its function as a national pilgrimage centre. Such programmes should be described as practices of the local shrine, not as evidence of a particular historic Roman Missal or a fixed daily timetable. Pilgrims need its latest official visitor instructions before making practical plans.",
+              "fr": "Les renseignements du sanctuaire attestent des célébrations mariales récurrentes et de sa fonction de centre national de pèlerinage. Ces programmes doivent être décrits comme des pratiques du lieu, non comme la preuve de l’usage d’une édition historique du Missel romain ou d’horaires quotidiens fixes. Les pèlerins doivent consulter ses indications officielles les plus récentes avant leur déplacement.",
+              "source_url": "https://nationalmarianshrine.org.ng/",
+              "source_id": "SHR-UGWOGO-NATIONAL-MARIAN"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:NG:ugwogo-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://nationalmarianshrine.org.ng/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:NG:nne-enyemaka-umuaka",
+      "place_name": "Nne Enyemaka Shrine, Umuaka",
+      "country_code": "NG",
+      "shrine_id": "shrine:NG:nne-enyemaka-umuaka",
+      "draft_order": 71,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A Marian shrine and FSSP-served parish in the Diocese of Orlu.",
+      "subtitle_fr": "Un sanctuaire marial et une paroisse desservie par la FSSP dans le diocèse d’Orlu.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A local Marian shrine",
+          "title_fr": "Un sanctuaire marial local",
+          "paragraphs": [
+            {
+              "en": "Nne Enyemaka at Umuaka is both a Marian shrine and a Catholic personal parish in the Diocese of Orlu. Its pastoral life is associated with the Priestly Fraternity of Saint Peter. That specific community link is part of the documented identity of this site; it should neither be generalised to other Nigerian shrines nor obscured by the broad label of ‘Marian place’.",
+              "fr": "Nne Enyemaka à Umuaka est à la fois un sanctuaire marial et une paroisse personnelle catholique du diocèse d’Orlu. Sa vie pastorale est liée à la Fraternité sacerdotale Saint-Pierre. Ce rattachement propre au lieu fait partie de son identité attestée ; il ne faut ni l’étendre aux autres sanctuaires nigérians ni l’effacer derrière la seule désignation de « lieu marial ».",
+              "source_url": "https://fsspnigeria.org/",
+              "source_id": "SHR-NNE-ENYEMAKA-FSSP"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The traditional Roman liturgy",
+          "title_fr": "La liturgie romaine traditionnelle",
+          "paragraphs": [
+            {
+              "en": "The FSSP’s own Nigerian material identifies the Traditional Latin Mass as part of the parish-shrine’s established life. Here, unlike a shrine where the rite is unknown, a source-linked liturgical description is warranted. Even so, a confirmed rite does not establish the exact date or time of every Mass, which must be checked in the current parish programme.",
+              "fr": "Les documents de la FSSP au Nigeria indiquent que la messe traditionnelle latine fait partie de la vie établie de cette paroisse-sanctuaire. Ici, contrairement à un lieu dont le rite demeure inconnu, une description liturgique liée à sa source est fondée. Néanmoins, l’identification du rite ne détermine pas les jours et heures exacts des messes, qui doivent être vérifiés dans le programme actuel.",
+              "source_url": "https://fsspnigeria.org/",
+              "source_id": "SHR-NNE-ENYEMAKA-FSSP"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Rosary processions as pilgrimage",
+          "title_fr": "Les processions du Rosaire comme pèlerinage",
+          "paragraphs": [
+            {
+              "en": "Local material also describes long-distance Rosary processions, including a recurring May-to-October pattern. This gives the shrine a devotional life beyond its church building and connects prayer with physical pilgrimage. A recorded procession distance is not a surveyed public GPS track, and an older programme must not be advertised as automatically continuing on any chosen date.",
+              "fr": "Les documents locaux décrivent aussi des processions du Rosaire sur de longues distances, avec un rythme récurrent entre mai et octobre. Elles donnent au sanctuaire une vie dévotionnelle qui dépasse son église et relie prière et pèlerinage à pied. Une distance annoncée ne constitue pas un tracé GPS public vérifié, et un ancien programme ne doit pas être présenté comme automatiquement reconduit à n’importe quelle date.",
+              "source_url": "https://www.fsspnigeria.org/pages/donate/associate-membership.php",
+              "source_id": "PIL-NNE-ENYEMAKA-ROSARY"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:NG:nne-enyemaka-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://fsspnigeria.org/",
+        "https://www.fsspnigeria.org/pages/donate/associate-membership.php"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:UG:munyonyo-martyrs",
+      "place_name": "Munyonyo Martyrs Shrine",
+      "country_code": "UG",
+      "shrine_id": "shrine:UG:munyonyo-martyrs",
+      "draft_order": 72,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A Kampala-area shrine within the sacred geography of the Uganda Martyrs.",
+      "subtitle_fr": "Un sanctuaire de la région de Kampala lié aux lieux de mémoire des martyrs de l’Ouganda.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The Uganda Martyrs at Munyonyo",
+          "title_fr": "Les martyrs de l’Ouganda à Munyonyo",
+          "paragraphs": [
+            {
+              "en": "Munyonyo is one of the Catholic places associated with the history and veneration of the Uganda Martyrs. The shrine belongs to a wider sacred geography of remembrance around Kampala. It should not be presented as if every martyr suffered death at Munyonyo, or as if the different commemorative locations were the same physical church.",
+              "fr": "Munyonyo compte parmi les lieux catholiques liés à l’histoire et à la vénération des martyrs de l’Ouganda. Le sanctuaire appartient à une géographie sacrée plus vaste autour de Kampala. Il ne faut pas laisser croire que tous les martyrs y sont morts ou que les différents lieux de commémoration correspondent à une seule et même église.",
+              "source_url": "https://munyonyo-shrine.ug/",
+              "source_id": "SHR-MUNYONYO-OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "A shrine of prayer and remembrance",
+          "title_fr": "Un sanctuaire de prière et de mémoire",
+          "paragraphs": [
+            {
+              "en": "The shrine is a present-day Catholic pilgrimage destination and a place where the memory of martyrdom is expressed through worship. That continuing role is distinct from the detailed historical reconstruction of the events of the nineteenth century. Any specific claim about a martyr’s movements or death place should be linked to a more precise historical source.",
+              "fr": "Le sanctuaire est aujourd’hui une destination catholique de pèlerinage où la mémoire du martyre s’exprime dans le culte. Cette fonction actuelle se distingue de la reconstitution précise des événements du XIXe siècle. Toute affirmation particulière concernant le parcours ou le lieu de mort d’un martyr doit être rattachée à une source historique plus précise.",
+              "source_url": "https://munyonyo-shrine.ug/",
+              "source_id": "SHR-MUNYONYO-OFFICIAL"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Visiting the distinct Munyonyo site",
+          "title_fr": "Visiter le site particulier de Munyonyo",
+          "paragraphs": [
+            {
+              "en": "The shrine’s official site identifies Munyonyo as its own destination, with local contact and address details. A pilgrimage card should preserve that identity when also linking to other Uganda Martyrs locations. Current access, Masses and commemorations are matters for the local custodian, not conclusions that can be drawn from a general Uganda Martyrs calendar.",
+              "fr": "Le site officiel du sanctuaire désigne Munyonyo comme une destination propre, avec ses coordonnées locales. La fiche de pèlerinage doit préserver cette identité même lorsqu’elle renvoie à d’autres lieux des martyrs de l’Ouganda. Les accès, messes et commémorations actuels relèvent des responsables sur place et ne peuvent être déduits du seul calendrier général des martyrs.",
+              "source_url": "https://munyonyo-shrine.ug/",
+              "source_id": "SHR-MUNYONYO-OFFICIAL"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:UG:munyonyo-destination"
+      ],
+      "saint_name_associations": [
+        "Saint Andrew Kaggwa",
+        "Saint Kizito",
+        "Uganda Martyrs"
+      ],
+      "bibliography_urls": [
+        "https://munyonyo-shrine.ug/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:MX:basilica-zapopan",
+      "place_name": "Basílica de Nuestra Señora de Zapopan",
+      "country_code": "MX",
+      "shrine_id": "shrine:MX:zapopan-our-lady",
+      "draft_order": 73,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The basilica and the annual return pilgrimage of Our Lady of Zapopan.",
+      "subtitle_fr": "La basilique et le pèlerinage annuel du retour de Notre-Dame de Zapopan.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "A Marian basilica in Zapopan",
+          "title_fr": "Une basilique mariale à Zapopan",
+          "paragraphs": [
+            {
+              "en": "The Basilica of Our Lady of Zapopan is a major Marian church in the Guadalajara metropolitan area. The devotion is associated with a revered image whose presence connects the basilica with other communities during the year. The basilica is a fixed physical destination, even when the image is carried in processions elsewhere.",
+              "fr": "La basilique Notre-Dame de Zapopan est une grande église mariale de l’agglomération de Guadalajara. La dévotion est liée à une image vénérée dont les déplacements unissent la basilique à d’autres communautés au cours de l’année. La basilique demeure une destination physique fixe, même lorsque l’image est portée en procession en d’autres lieux.",
+              "source_url": "https://arquidiocesisgdl.org/visitas_virgen.php",
+              "source_id": "SHR-ZAPOPAN-IDENTITY"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The travelling image",
+          "title_fr": "L’image en déplacement",
+          "paragraphs": [
+            {
+              "en": "The archdiocesan material describes the visitations of the image of Our Lady of Zapopan, a distinctive part of the region’s Marian life. These visits should not be confused with the geography of the shrine itself: one image can be the focus of many local devotions while retaining a particular home sanctuary. Its devotional itinerary is not evidence of new permanent shrine buildings.",
+              "fr": "Les documents de l’archidiocèse décrivent les visites de l’image de Notre-Dame de Zapopan, qui marquent la vie mariale de la région. Ces déplacements ne doivent pas être confondus avec la géographie du sanctuaire : une seule image peut susciter de nombreuses dévotions locales tout en gardant sa basilique d’origine. Son itinéraire dévotionnel ne prouve pas l’existence de nouveaux sanctuaires permanents.",
+              "source_url": "https://arquidiocesisgdl.org/visitas_virgen.php",
+              "source_id": "SHR-ZAPOPAN-IDENTITY"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "The Romería of October",
+          "title_fr": "La Romería d’octobre",
+          "paragraphs": [
+            {
+              "en": "The annual Romería traditionally returns the image from Guadalajara to Zapopan on 12 October, drawing pilgrims into a public expression of Marian devotion. The procession has a recurring historical date, but crowd controls, route arrangements and ceremonies may differ from year to year. The Atlas should represent the destination and observance without inventing a fixed GPS track.",
+              "fr": "La Romería annuelle ramène traditionnellement l’image de Guadalajara à Zapopan le 12 octobre, dans une expression publique de la dévotion mariale. La procession possède une date historique récurrente, mais les modalités du parcours, de l’accueil des foules et des cérémonies peuvent varier selon les années. L’Atlas doit présenter la destination et l’observance sans inventer de tracé GPS fixe.",
+              "source_url": "https://arquidiocesisgdl.org/boletin/2010-12-5.php",
+              "source_id": "PIL-ZAPOPAN-ROMERIA"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:MX:zapopan-destination",
+        "pilgrimage:MX:zapopan-romeria"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://arquidiocesisgdl.org/visitas_virgen.php",
+        "https://arquidiocesisgdl.org/boletin/2010-12-5.php"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:BR:nazare-belem",
+      "place_name": "Basílica Santuário de Nossa Senhora de Nazaré do Desterro",
+      "country_code": "BR",
+      "shrine_id": "shrine:BR:nazare-belem",
+      "draft_order": 74,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Basilica of Nazaré and the Círio pilgrimage cycle in Belém.",
+      "subtitle_fr": "La basilique de Nazaré et le cycle de pèlerinages du Círio à Belém.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The Marian basilica of Belém",
+          "title_fr": "La basilique mariale de Belém",
+          "paragraphs": [
+            {
+              "en": "The Basilica Sanctuary of Our Lady of Nazaré in Belém is an established Marian destination in northern Brazil. Its name identifies a concrete Catholic church and sanctuary, not simply the annual celebration that bears the same dedication. Understanding the basilica as the pilgrimage’s sacred focal point helps distinguish the permanent Place from the events associated with it.",
+              "fr": "La basilique-sanctuaire Notre-Dame de Nazaré, à Belém, est une destination mariale établie du nord du Brésil. Son nom désigne une église et un sanctuaire catholiques précis, et non seulement la célébration annuelle qui porte la même dédicace. Présenter la basilique comme le foyer sacré du pèlerinage permet de distinguer le lieu permanent des événements qui lui sont liés.",
+              "source_url": "https://www.basilicadenazare.com.br/",
+              "source_id": "SHR-NAZARE-BELEM-CONTACT"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "The Círio de Nazaré",
+          "title_fr": "Le Círio de Nazaré",
+          "paragraphs": [
+            {
+              "en": "The Círio de Nazaré brings together a cycle of processions and devotional observances associated with Our Lady of Nazaré. It is therefore more than a single isolated ceremony. The principal annual procession is associated with the second Sunday of October, while the details of the full programme belong to each year’s official pilgrimage announcements.",
+              "fr": "Le Círio de Nazaré réunit un cycle de processions et d’observances dévotionnelles autour de Notre-Dame de Nazaré. Il ne se réduit donc pas à une seule cérémonie isolée. La procession principale est traditionnellement liée au deuxième dimanche d’octobre, tandis que le détail de l’ensemble du programme relève des annonces officielles propres à chaque année.",
+              "source_url": "https://www.ciriodenazare.com.br/",
+              "source_id": "PIL-CIRIO-NAZARE-2026"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A pilgrimage across the city",
+          "title_fr": "Un pèlerinage à travers la ville",
+          "paragraphs": [
+            {
+              "en": "Because the Círio connects various points in Belém, a visitor may encounter the devotion both at the basilica and in the city’s procession spaces. These are related aspects of one pilgrimage tradition, not a reason to duplicate the same basilica’s canonical Place ID. Road closures, pilgrim routes and assembly points require current municipal or pilgrimage guidance.",
+              "fr": "Puisque le Círio relie plusieurs lieux de Belém, le visiteur peut rencontrer cette dévotion à la basilique comme dans les espaces de procession de la ville. Ce sont des aspects liés d’une même tradition, et non une raison de dupliquer l’identifiant canonique de la basilique. Fermetures de routes, itinéraires et points de rassemblement exigent des indications municipales ou pèlerines actualisées.",
+              "source_url": "https://www.ciriodenazare.com.br/",
+              "source_id": "PIL-CIRIO-NAZARE-2026"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:BR:nazare-destination",
+        "pilgrimage:BR:cirio-nazare"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://www.basilicadenazare.com.br/",
+        "https://www.ciriodenazare.com.br/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:CO:chiquinquira-basilica",
+      "place_name": "Basílica de Nuestra Señora del Rosario de Chiquinquirá",
+      "country_code": "CO",
+      "shrine_id": "shrine:CO:chiquinquira",
+      "draft_order": 75,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "A Dominican Marian basilica and national pilgrimage destination in Boyacá.",
+      "subtitle_fr": "Une basilique mariale dominicaine et un haut lieu national de pèlerinage dans le Boyacá.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The basilica and its Marian devotion",
+          "title_fr": "La basilique et sa dévotion mariale",
+          "paragraphs": [
+            {
+              "en": "The Basilica of Our Lady of the Rosary of Chiquinquirá is a major Marian pilgrimage church in Boyacá, Colombia. The diocesan account identifies it as a concrete basilica associated with an enduring devotion to the Virgin of Chiquinquirá. Its own religious history and worship should be distinguished from similarly named churches elsewhere in the country.",
+              "fr": "La basilique Notre-Dame du Rosaire de Chiquinquirá est une grande église de pèlerinage marial du Boyacá, en Colombie. Le récit diocésain l’identifie comme une basilique précise liée à une dévotion durable envers la Vierge de Chiquinquirá. Son histoire religieuse et son culte propres doivent être distingués des églises de même nom situées ailleurs dans le pays.",
+              "source_url": "https://www.diocesisdechiquinquira.org/bas%C3%ADlica-nuestra-se%C3%B1ora-del-rosario-chiquinquir%C3%A1-boyac%C3%A1",
+              "source_id": "SHR-CHIQUINQUIRA-DIOCESE"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "Dominican custody and pilgrimage",
+          "title_fr": "La présence dominicaine et le pèlerinage",
+          "paragraphs": [
+            {
+              "en": "The sanctuary is associated with Dominican religious service, making its identity both Marian and connected to a particular religious tradition. Pilgrims come to an actual basilica, not to a merely abstract national dedication. A guide can honour the devotional tradition while avoiding unsupported claims about the physical authenticity of individual objects or miraculous mechanisms.",
+              "fr": "Le sanctuaire est associé au service religieux des Dominicains : son identité est à la fois mariale et liée à une tradition particulière de vie religieuse. Les pèlerins viennent dans une basilique réelle, et non vers une dédicace nationale abstraite. Le guide peut rendre compte de la tradition dévotionnelle sans avancer de preuves inexistantes sur l’authenticité matérielle d’objets particuliers ou sur des mécanismes miraculeux.",
+              "source_url": "https://www.diocesisdechiquinquira.org/bas%C3%ADlica-nuestra-se%C3%B1ora-del-rosario-chiquinquir%C3%A1-boyac%C3%A1",
+              "source_id": "SHR-CHIQUINQUIRA-DIOCESE"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "The annual July observance",
+          "title_fr": "L’observance annuelle de juillet",
+          "paragraphs": [
+            {
+              "en": "The diocesan material records 9 July among the major dates in the sanctuary’s calendar, linked to the honour paid to Our Lady of Chiquinquirá. It is a recurring observance, not a promise that a particular Mass or procession will take place at a fixed hour every year. Current pilgrim arrangements remain the responsibility of the basilica.",
+              "fr": "Les documents diocésains mentionnent le 9 juillet parmi les grandes dates du calendrier du sanctuaire, liées à l’honneur rendu à Notre-Dame de Chiquinquirá. Il s’agit d’une observance récurrente, et non de la garantie d’une messe ou d’une procession à heure fixe chaque année. Les dispositions actuelles pour les pèlerins relèvent des responsables de la basilique.",
+              "source_url": "https://www.diocesisdechiquinquira.org/bas%C3%ADlica-nuestra-se%C3%B1ora-del-rosario-chiquinquir%C3%A1-boyac%C3%A1",
+              "source_id": "PIL-CHIQUINQUIRA-JULY9"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:CO:chiquinquira-destination"
+      ],
+      "saint_name_associations": [
+        "Saint Dominic"
+      ],
+      "bibliography_urls": [
+        "https://www.diocesisdechiquinquira.org/bas%C3%ADlica-nuestra-se%C3%B1ora-del-rosario-chiquinquir%C3%A1-boyac%C3%A1"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    },
+    {
+      "place_id": "place:BE:beauraing",
+      "place_name": "Sanctuaire Notre-Dame de Beauraing",
+      "country_code": "BE",
+      "shrine_id": "shrine:BE:beauraing-golden-heart",
+      "draft_order": 76,
+      "state": "BILINGUAL_EXTENDED_DRAFT_SECOND_EDITOR_REQUIRED_NOT_PUBLISHED",
+      "subtitle_en": "The Belgian Marian sanctuary associated with the recognised events of 1932–1933.",
+      "subtitle_fr": "Le sanctuaire marial belge lié aux événements reconnus de 1932–1933.",
+      "image_policy": "APPROVED_CANONICAL_PLACE_MEDIA_ONLY",
+      "sections": [
+        {
+          "id": "history",
+          "title_en": "The events remembered at Beauraing",
+          "title_fr": "Les événements commémorés à Beauraing",
+          "paragraphs": [
+            {
+              "en": "The sanctuary at Beauraing is associated with reported Marian apparitions of 1932 and 1933. The Church’s recognition of the devotion gives these events a specific ecclesiastical context, but the account should still distinguish what witnesses reported from the building’s observable history. The pilgrimage is rooted in this local narrative, not in an apparition claimed at some other Marian shrine.",
+              "fr": "Le sanctuaire de Beauraing est associé à des apparitions mariales rapportées en 1932 et 1933. La reconnaissance ecclésiastique de la dévotion situe ces événements dans un contexte précis, mais le récit doit toujours distinguer les témoignages de l’histoire observable des bâtiments. Le pèlerinage s’enracine dans cette histoire locale, et non dans une apparition attribuée à un autre sanctuaire marial.",
+              "source_url": "https://sanctuairedebeauraing.be/",
+              "source_id": "SHR-BEAURAING-CONTACT"
+            }
+          ]
+        },
+        {
+          "id": "identity",
+          "title_en": "An established pilgrimage sanctuary",
+          "title_fr": "Un sanctuaire de pèlerinage établi",
+          "paragraphs": [
+            {
+              "en": "Beauraing developed into a destination for Marian prayer and pilgrimage after the events remembered there. The official sanctuary presents the site as a place of worship for visitors from beyond the immediate region. Its recognised ecclesial status should be described accurately, without extending it automatically to every alleged message, miracle or private devotion associated with the site.",
+              "fr": "Beauraing s’est développé comme destination de prière et de pèlerinage marial à la suite des événements dont il garde mémoire. Le sanctuaire officiel accueille des visiteurs au-delà de sa région immédiate. Son statut ecclésial reconnu doit être présenté avec précision, sans l’étendre automatiquement à tout message allégué, miracle ou pratique privée associés au lieu.",
+              "source_url": "https://sanctuairedebeauraing.be/",
+              "source_id": "SHR-BEAURAING-CONTACT"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Pilgrimage at the actual site",
+          "title_fr": "Pèlerinage sur le lieu même",
+          "paragraphs": [
+            {
+              "en": "The sanctuary provides an identifiable destination and information for those wishing to pray at Beauraing. Historical apparition dates can enrich the visitor’s understanding but cannot substitute for up-to-date group, access or ceremony arrangements. The Atlas should keep the named sanctuary, its history and the religious recognition of the events as related but distinguishable records.",
+              "fr": "Le sanctuaire offre une destination identifiable et des renseignements pour les personnes qui souhaitent prier à Beauraing. Les dates historiques des apparitions éclairent le pèlerin, mais ne remplacent pas les informations actuelles sur les groupes, les accès ou les cérémonies. L’Atlas doit conserver le lieu nommé, son histoire et la reconnaissance religieuse des événements comme des informations liées mais distinctes.",
+              "source_url": "https://sanctuairedebeauraing.be/",
+              "source_id": "SHR-BEAURAING-CONTACT"
+            }
+          ]
+        }
+      ],
+      "existing_pilgrimage_ids": [
+        "pilgrimage:BE:beauraing-destination"
+      ],
+      "saint_name_associations": [],
+      "bibliography_urls": [
+        "https://sanctuairedebeauraing.be/"
+      ],
+      "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_EVIDENCE_REUSED_NO_NEW_EXTERNAL_PAGE_FETCH",
+      "next_gate": "SUBSTANTIVE_EDITORIAL_FACT_AND_BILINGUAL_QA_BEFORE_PUBLICATION",
+      "publication_authorized": false
+    }
+  ]
+}
