@@ -21,7 +21,8 @@
     "data/artwork/research/m2m-open-source-batch3-msk-mnk-20261110.v1.json",
     "data/artwork/research/m2m-open-colour-batch2-source-verification-20261110.v1.json",
     "data/artwork/research/m2m-msk-s43-verified-image-original-20261110.v1.json",
-    "data/artwork/research/m2m-nationalmuseum-mnk-download-link-discovery-20261110.v1.json"
+    "data/artwork/research/m2m-nationalmuseum-mnk-download-link-discovery-20261110.v1.json",
+    "data/artwork/research/m2m-museum-portal-static-client-blockers-20261110.v1.json"
   ],
   "counts": {
     "originalDateRelationships": 198,
@@ -46,7 +47,8 @@
     "unverifiedPhotoSearchLaneRemaining": 12,
     "iccdOfficialPhotoRightsHoldsAdded": 27,
     "nationalmuseumFirstPartyMediaPortalRecordsToResolve": 2,
-    "firstPartyMediaRecordInvestigations": 4
+    "firstPartyMediaRecordInvestigations": 4,
+    "museumPortalsNeedingClientRenderedAccess": 4
   },
   "reviewLaneCounts": {
     "A_VERIFIED_SOURCE_PHOTO_EDITORIAL_AND_MOBILE_QA": 9,
@@ -79,7 +81,8 @@
     "27 priority-oil ICCD official catalogue photographs do not inherit CC BY 4.0 open-data rights. ICCD requires institution-specific image reproduction authorization, potentially a charge. No free commercial app image claimed without a distinct open-photo source; work identities remain usable research leads.",
     "Nationalmuseum's own high-resolution media.nationalmuseum.se is the first-party alternative for NM420 and NM1134, but its exact media records and byte-specific licences remain unverified. An inventory search is not source-photo QA.",
     "MSK Ghent S-43 downloaded and independently SHA-verified. Public Domain Mark in IIIF is not automatic monetised app approval; rights and visible diagonal image-line quality hold both remain.",
-    "Nationalmuseum and Krakow: first-party portal search and HTML/image-link inspection are investigations, never a licence clearance or actual original-photo acquisition; require exact accession, artwork/scene, open licence, downloaded bytes and SHA before publication review."
+    "Nationalmuseum and Krakow: first-party portal search and HTML/image-link inspection are investigations, never a licence clearance or actual original-photo acquisition; require exact accession, artwork/scene, open licence, downloaded bytes and SHA before publication review.",
+    "Both Nationalmuseum and MNK public art portals are JavaScript-rendered and expose no exact photo links to static HTTP. Do not mistake a successfully completed source probe for source-photo acquisition or an absent HTML image for an absent museum photograph."
   ],
   "photographs": [
     {
@@ -4242,7 +4245,7 @@
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-final15-20261110.v1.json",
       "verifiedPhotoId": null,
       "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Priority within first-party Kraków image search: obtain exact MNK II-a-448 JPG via official download action. This Baroque milk-jug miracle is visually faithful and high potential; do not substitute other identically titled paintings.",
+      "nextAction": "Prioritize direct browser-rendered official MNK download of exact milk-jug miracle (MNK II-a-448), then image hash/rights/crop QA. Static HTML returns no image/anchor; no more og:image retries.",
       "risk": "SOURCE_PHOTO_UNVERIFIED",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
@@ -4257,7 +4260,13 @@
         "identifiedExactMediaId": null,
         "imageFileSha256": null,
         "useForApp": false,
-        "ownerApproved": false
+        "ownerApproved": false,
+        "status": "CLIENT_SIDE_RENDERED_MUSEUM_PORTAL_STATIC_HTTP_PATH_EXHAUSTED",
+        "outcomeSource": "data/artwork/research/m2m-museum-portal-static-client-blockers-20261110.v1.json",
+        "runId": 42837900450,
+        "originalSourceBytesVerified": false,
+        "retryStaticHtml": false,
+        "nextTechnique": "BROWSER_RENDERED_MUSEUM_DOWNLOAD_OR_DOCUMENTED_PUBLIC_API"
       },
       "verifiedSubjectIconography": {
         "scene": "Saint John Cantius miraculously repairs a poor girl's broken jug and restores spilled milk",
@@ -4302,7 +4311,7 @@
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-followup10b-20261110.v1.json",
       "verifiedPhotoId": null,
       "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Obtain exact MNK II-a-9 JPG only if church history/excommunication scene is needed. Do not label it the saint's martyrdom or murder despite museum alternative titles; lower image-acquisition priority than the Cantius miracle.",
+      "nextAction": "Browser-rendered official MNK download only if excommunication scene is needed; do NOT label or reuse as a picture of the martyrdom. Static HTML offers no photo.",
       "risk": "SOURCE_PHOTO_UNVERIFIED",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
@@ -4317,7 +4326,13 @@
         "identifiedExactMediaId": null,
         "imageFileSha256": null,
         "useForApp": false,
-        "ownerApproved": false
+        "ownerApproved": false,
+        "status": "CLIENT_SIDE_RENDERED_MUSEUM_PORTAL_STATIC_HTTP_PATH_EXHAUSTED",
+        "outcomeSource": "data/artwork/research/m2m-museum-portal-static-client-blockers-20261110.v1.json",
+        "runId": 42837900450,
+        "originalSourceBytesVerified": false,
+        "retryStaticHtml": false,
+        "nextTechnique": "BROWSER_RENDERED_MUSEUM_DOWNLOAD_OR_DOCUMENTED_PUBLIC_API"
       },
       "verifiedSubjectIconography": {
         "scene": "Bishop Saint Stanislaus pronounces excommunication on King Bolesław the Bold before a church altar",
@@ -4641,7 +4656,7 @@
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-followup10-20261110.v1.json",
       "verifiedPhotoId": null,
       "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Search Nationalmuseum's own media portal for NM 1134; verify exact painting and Public Domain or CC BY-SA image file before acquisition. Collection site JPEG 403; no Commons auto-admission.",
+      "nextAction": "Search the interactive Nationalmuseum media portal for the exact NM inventory record; distinguish image licence from object PD and validate full-res original file. Static HTML endpoint is exhausted.",
       "risk": "SOURCE_PHOTO_UNVERIFIED",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
@@ -4666,7 +4681,13 @@
         "identifiedExactMediaId": null,
         "imageFileSha256": null,
         "useForApp": false,
-        "ownerApproved": false
+        "ownerApproved": false,
+        "status": "CLIENT_SIDE_RENDERED_MUSEUM_PORTAL_STATIC_HTTP_PATH_EXHAUSTED",
+        "outcomeSource": "data/artwork/research/m2m-museum-portal-static-client-blockers-20261110.v1.json",
+        "runId": 42837900450,
+        "originalSourceBytesVerified": false,
+        "retryStaticHtml": false,
+        "nextTechnique": "BROWSER_RENDERED_MUSEUM_DOWNLOAD_OR_DOCUMENTED_PUBLIC_API"
       }
     },
     {
@@ -4705,7 +4726,7 @@
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-followup10-20261110.v1.json",
       "verifiedPhotoId": null,
       "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Search Nationalmuseum's own media portal for NM 420; verify exact painting and Public Domain or CC BY-SA image file before acquisition. Collection site JPEG 403; no Commons auto-admission.",
+      "nextAction": "Search the interactive Nationalmuseum media portal for the exact NM inventory record; distinguish image licence from object PD and validate full-res original file. Static HTML endpoint is exhausted.",
       "risk": "SOURCE_PHOTO_UNVERIFIED",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
@@ -4730,7 +4751,13 @@
         "identifiedExactMediaId": null,
         "imageFileSha256": null,
         "useForApp": false,
-        "ownerApproved": false
+        "ownerApproved": false,
+        "status": "CLIENT_SIDE_RENDERED_MUSEUM_PORTAL_STATIC_HTTP_PATH_EXHAUSTED",
+        "outcomeSource": "data/artwork/research/m2m-museum-portal-static-client-blockers-20261110.v1.json",
+        "runId": 42837900450,
+        "originalSourceBytesVerified": false,
+        "retryStaticHtml": false,
+        "nextTechnique": "BROWSER_RENDERED_MUSEUM_DOWNLOAD_OR_DOCUMENTED_PUBLIC_API"
       }
     },
     {
