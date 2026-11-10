@@ -23,7 +23,8 @@
     "external_corroboration": "data/research/did-you-know/dyk-customs-wave09-external-corroboration-20261110.v1.json",
     "wave10": "data/research/did-you-know/dyk-customs-source-folio-wave10-28-proposals-20261110.v1.json",
     "wave10_replacements": "data/research/did-you-know/dyk-customs-source-folio-wave10-catholic-scope-replacements-20261110.v1.json",
-    "wave10_crossbank": "data/research/did-you-know/dyk-customs-wave10-H225-overlap-and-scope-qa-20261110.v1.json"
+    "wave10_crossbank": "data/research/did-you-know/dyk-customs-wave10-H225-overlap-and-scope-qa-20261110.v1.json",
+    "wave10_external_corroboration": "data/research/did-you-know/dyk-customs-wave10-external-corroboration-20261110.v1.json"
   },
   "counts": {
     "original_edited_bank": 400,
@@ -41,7 +42,8 @@
     "wave10_new_provisional": 23,
     "provisionally_retained_as_distinct": 400,
     "missing_to_reach_400_new": 0,
-    "full_editorial_certifications_complete": false
+    "full_editorial_certifications_complete": false,
+    "wave10_secondary_source_reviews": 6
   },
   "release_rules": {
     "original_claim_unchanged": true,
@@ -11275,8 +11277,8 @@
       "id": "DYK-C400-BG-007",
       "title": "The mock funeral of Lent's herring in Poland",
       "reader_copy": {
-        "en": "On Holy Saturday in an older Polish village custom, boys staged a mock funeral for herring and sour rye soup, burying symbols of the foods they had eaten throughout Lent.",
-        "fr": "Le Samedi saint, dans une ancienne coutume villageoise polonaise, des garçons organisaient de fausses funérailles pour le hareng et la soupe aigre de seigle, enterrant les symboles des aliments consommés pendant le Carême."
+        "en": "On Holy Saturday in an old Polish village custom, young people held a mock funeral for herring and sour rye soup, foods eaten throughout Lent. A fish or its effigy was hung from a branch, and a pot of soup was broken.",
+        "fr": "Le Samedi saint, dans une ancienne coutume villageoise polonaise, des jeunes organisaient de fausses funérailles pour le hareng et le żur, soupe aigre de seigle consommés pendant le Carême. Un poisson ou son effigie était suspendu à une branche et un pot de soupe était brisé."
       },
       "source_ids": [
         "WEI58-15-038"
@@ -11312,7 +11314,19 @@
       },
       "review_status": "PRIMARY_PRINTED_PAGE_REVIEWED_SOURCE_WITNESS_ONLY_FINAL_QA_PENDING",
       "publication_authorized": false,
-      "source_wave": 10
+      "source_wave": 10,
+      "reader_copy_pre_second_source_edit": {
+        "en": "On Holy Saturday in an older Polish village custom, boys staged a mock funeral for herring and sour rye soup, burying symbols of the foods they had eaten throughout Lent.",
+        "fr": "Le Samedi saint, dans une ancienne coutume villageoise polonaise, des garçons organisaient de fausses funérailles pour le hareng et la soupe aigre de seigle, enterrant les symboles des aliments consommés pendant le Carême."
+      },
+      "copy_revision_reason": "Describes mock funeral of herring and żur on Holy Saturday, including fish hung on a branch and soup pot smashed.",
+      "supplementary_evidence": {
+        "issuer": "Polish Ministry of Agriculture and Rural Development",
+        "url": "https://www.gov.pl/web/rolnictwo/zur-na-kielbasie",
+        "claim_scope": "Describes mock funeral of herring and żur on Holy Saturday, including fish hung on a branch and soup pot smashed.",
+        "status": "SECOND_SOURCE_REVIEWED_2026_11_10",
+        "final_publication_approval": false
+      }
     },
     {
       "id": "DYK-C400-BG-009",
@@ -11357,7 +11371,14 @@
       },
       "review_status": "PRIMARY_PRINTED_PAGE_REVIEWED_SOURCE_WITNESS_ONLY_FINAL_QA_PENDING",
       "publication_authorized": false,
-      "source_wave": 10
+      "source_wave": 10,
+      "supplementary_evidence": {
+        "issuer": "UNESCO Intangible Cultural Heritage",
+        "url": "https://ich.unesco.org/en/RL/pysanka-ukrainian-tradition-and-art-of-decorating-eggs-02134",
+        "claim_scope": "Confirms Ukrainian wax-resist egg decoration tradition, Easter association, exchanged gifts, blessed pysanky kept at home. The UNESCO description identifies broader Ukrainian culture across religions, not exclusively Catholic identity.",
+        "status": "SECOND_SOURCE_REVIEWED_2026_11_10",
+        "final_publication_approval": false
+      }
     },
     {
       "id": "DYK-C400-BG-010",
@@ -11494,8 +11515,8 @@
       "id": "DYK-C400-BG-013",
       "title": "Italian Assumption encounter of Mary and Christ",
       "reader_copy": {
-        "en": "In the Italian Assumption procession called L'Inchinata, statues of Mary and Christ met beneath a flowered arch and bowed toward each other three times before returning to church.",
-        "fr": "Dans la procession italienne de l'Assomption appelée L'Inchinata, les statues de Marie et du Christ se rencontraient sous une arche fleurie et s'inclinaient trois fois l'une vers l'autre avant de regagner l'église."
+        "en": "On the eve of the Assumption, 14 August, a procession in Tivoli, Italy, brings images of Christ and Our Lady together. In the ancient L'Inchinata custom, the two images bow three times before the assembled faithful.",
+        "fr": "Le 14 août, veille de l'Assomption, une procession à Tivoli, en Italie, réunit les images du Christ et de Notre-Dame. Dans l'ancienne coutume de l'Inchinata, les deux images s'inclinent trois fois devant les fidèles."
       },
       "source_ids": [
         "WEI58-24-006"
@@ -11531,14 +11552,26 @@
       },
       "review_status": "PRIMARY_PRINTED_PAGE_REVIEWED_SOURCE_WITNESS_ONLY_FINAL_QA_PENDING",
       "publication_authorized": false,
-      "source_wave": 10
+      "source_wave": 10,
+      "reader_copy_pre_second_source_edit": {
+        "en": "In the Italian Assumption procession called L'Inchinata, statues of Mary and Christ met beneath a flowered arch and bowed toward each other three times before returning to church.",
+        "fr": "Dans la procession italienne de l'Assomption appelée L'Inchinata, les statues de Marie et du Christ se rencontraient sous une arche fleurie et s'inclinaient trois fois l'une vers l'autre avant de regagner l'église."
+      },
+      "copy_revision_reason": "Inchinata takes place at Tivoli on 14 August, images of Christ and Mary meet and bow three times; 15 August repeat.",
+      "supplementary_evidence": {
+        "issuer": "Diocese of Tivoli and Palestrina",
+        "url": "https://diocesitivoliepalestrina.it/la-tradizionale-inchinata-a-tivoli/",
+        "claim_scope": "Inchinata takes place at Tivoli on 14 August, images of Christ and Mary meet and bow three times; 15 August repeat.",
+        "status": "SECOND_SOURCE_REVIEWED_2026_11_10",
+        "final_publication_approval": false
+      }
     },
     {
       "id": "DYK-C400-BG-014",
       "title": "Seven enormous wax candles for the Assumption in Sardinia",
       "reader_copy": {
-        "en": "For the Assumption in Sardinia, the historical Candelieri procession carried seven enormous candlesticks bearing heavy wax torches to a Marian shrine, recalling a civic vow after an epidemic.",
-        "fr": "En Sardaigne, la procession historique des Candelieri à l'Assomption portait sept immenses chandeliers chargés de grands cierges de cire jusqu'à un sanctuaire marial, en souvenir d'un vœu fait après une épidémie."
+        "en": "Every 14 August at Sassari in Sardinia, trade guilds shoulder enormous wooden candle-shaped structures through the streets to Santa Maria di Betlem. The Candelieri procession renews an old vow of thanksgiving to Our Lady after plague epidemics.",
+        "fr": "Chaque 14 août, à Sassari en Sardaigne, des corporations de métiers portent dans les rues d'immenses structures en bois en forme de cierges jusqu'à Santa Maria di Betlem. La procession des Candelieri renouvelle un ancien vœu d'action de grâce à la Vierge après des épidémies de peste."
       },
       "source_ids": [
         "WEI58-24-007"
@@ -11576,7 +11609,19 @@
       },
       "review_status": "PRIMARY_PRINTED_PAGE_REVIEWED_SOURCE_WITNESS_ONLY_FINAL_QA_PENDING",
       "publication_authorized": false,
-      "source_wave": 10
+      "source_wave": 10,
+      "reader_copy_pre_second_source_edit": {
+        "en": "For the Assumption in Sardinia, the historical Candelieri procession carried seven enormous candlesticks bearing heavy wax torches to a Marian shrine, recalling a civic vow after an epidemic.",
+        "fr": "En Sardaigne, la procession historique des Candelieri à l'Assomption portait sept immenses chandeliers chargés de grands cierges de cire jusqu'à un sanctuaire marial, en souvenir d'un vœu fait après une épidémie."
+      },
+      "copy_revision_reason": "Every 14 August Sassari guilds shoulder large wooden candle forms through streets to Santa Maria di Betlem, renewing an Assumption vow after plague. The modern number is 13, so avoid passing Weiser's 1958 seven candles as current.",
+      "supplementary_evidence": {
+        "issuer": "Sassari municipal tourism office",
+        "url": "https://www.turismosassari.it/calendario-eventi/eventi-della-tradizione/discesa-dei-candelieri?print=1&tmpl=component",
+        "claim_scope": "Every 14 August Sassari guilds shoulder large wooden candle forms through streets to Santa Maria di Betlem, renewing an Assumption vow after plague. The modern number is 13, so avoid passing Weiser's 1958 seven candles as current.",
+        "status": "SECOND_SOURCE_REVIEWED_2026_11_10",
+        "final_publication_approval": false
+      }
     },
     {
       "id": "DYK-C400-BG-016",
@@ -11668,8 +11713,8 @@
       "id": "DYK-C400-BG-019",
       "title": "Spain's former Mother's Day on 8 December",
       "reader_copy": {
-        "en": "In an older Spanish custom, 8 December—the feast of the Immaculate Conception—also served as Mother's Day, with family celebrations honouring mothers. Spain later adopted a different date.",
-        "fr": "Dans une ancienne coutume espagnole, le 8 décembre, fête de l'Immaculée Conception, était aussi la fête des Mères, célébrée en famille. L'Espagne a ensuite choisi une autre date."
+        "en": "For decades after the Spanish Civil War, Mother's Day in Spain was celebrated on 8 December, the feast of the Immaculate Conception. In 1965 it moved to the first Sunday of May.",
+        "fr": "Pendant plusieurs décennies après la guerre civile espagnole, la fête des Mères en Espagne se célébrait le 8 décembre, fête de l'Immaculée Conception. En 1965, elle fut déplacée au premier dimanche de mai."
       },
       "source_ids": [
         "WEI58-24-025"
@@ -11705,7 +11750,19 @@
       },
       "review_status": "PRIMARY_PRINTED_PAGE_REVIEWED_SOURCE_WITNESS_ONLY_FINAL_QA_PENDING",
       "publication_authorized": false,
-      "source_wave": 10
+      "source_wave": 10,
+      "reader_copy_pre_second_source_edit": {
+        "en": "In an older Spanish custom, 8 December—the feast of the Immaculate Conception—also served as Mother's Day, with family celebrations honouring mothers. Spain later adopted a different date.",
+        "fr": "Dans une ancienne coutume espagnole, le 8 décembre, fête de l'Immaculée Conception, était aussi la fête des Mères, célébrée en famille. L'Espagne a ensuite choisi une autre date."
+      },
+      "copy_revision_reason": "After Spanish Civil War, Mother's Day observance on Immaculate Conception 8 December; moved definitively to first Sunday in May in 1965.",
+      "supplementary_evidence": {
+        "issuer": "Biblioteca Nacional de España",
+        "url": "https://www.bne.es/es/blog/blog-bne/el-dia-de-la-madre-empezo-celebrarse-en-espana-para-fomentar-en-los-ninos-el-respeto-las-mujeres",
+        "claim_scope": "After Spanish Civil War, Mother's Day observance on Immaculate Conception 8 December; moved definitively to first Sunday in May in 1965.",
+        "status": "SECOND_SOURCE_REVIEWED_2026_11_10",
+        "final_publication_approval": false
+      }
     },
     {
       "id": "DYK-C400-BG-020",
@@ -11877,7 +11934,14 @@
       },
       "review_status": "PRIMARY_PRINTED_PAGE_REVIEWED_SOURCE_WITNESS_ONLY_FINAL_QA_PENDING",
       "publication_authorized": false,
-      "source_wave": 10
+      "source_wave": 10,
+      "supplementary_evidence": {
+        "issuer": "Lonely Planet — Spanish Kings' Day customs",
+        "url": "https://www.lonelyplanet.com/articles/epiphany-spain",
+        "claim_scope": "Confirms children place empty shoes on 5 January for Magi gifts, received on 6 January.",
+        "status": "SECOND_SOURCE_REVIEWED_2026_11_10",
+        "final_publication_approval": false
+      }
     },
     {
       "id": "DYK-C400-BG-025",
