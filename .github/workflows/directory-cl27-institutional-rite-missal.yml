@@ -24,7 +24,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Exact 1383 CL2 source-ministry joins / 1300 sites / bilingual cards and filters
+      - name: Exact 1389 CL2 source-ministry joins / 1306 sites / bilingual cards and filters
         run: node tests/tlm-cl27-institutional-rite-missal.mjs
       - name: Existing exact witness and site/facet regression
         run: |
