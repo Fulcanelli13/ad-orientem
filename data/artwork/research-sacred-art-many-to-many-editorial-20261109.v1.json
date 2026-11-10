@@ -386,10 +386,19 @@
     "originalGapDatesPreserved": 170,
     "distinctPriorityOilArtworksAudited": 68,
     "originalNonPriorityKeysWithOilMediumEdge": 9,
-    "exactMuseumPhotographsHashed": 7,
+    "exactMuseumPhotographsHashed": 8,
     "historicalOwnerArtworkDecisionsOverridden": 0,
     "newDateApprovals": 0,
     "productionImagesImported": 0,
-    "scope": "Derived research/selection surface only, outside historical 1589-edge owner-decision counts; excludes prior 195 date assets and Prayer-gallery completeness from its own census"
+    "scope": "Derived research/selection surface only, outside historical 1589-edge owner-decision counts; excludes prior 195 date assets and Prayer-gallery completeness from its own census",
+    "verifiedOriginal198EdgePoolPhotographs": 7,
+    "openColourBatch2Manifest": "data/artwork/research/m2m-open-colour-photo-batch2-nationalmuseum-rijks-20261110.v1.json",
+    "openColourBatch2Verification": "data/artwork/research/m2m-open-colour-batch2-source-verification-20261110.v1.json",
+    "openColourBatch2Results": {
+      "attempted": 3,
+      "verified": 1,
+      "blockedHttp403": 2,
+      "technicalImagePassButMobileHeroHold": 1
+    }
   }
 }
