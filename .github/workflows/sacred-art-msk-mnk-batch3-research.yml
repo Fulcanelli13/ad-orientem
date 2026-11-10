@@ -1,0 +1,44 @@
+name: Sacred Art MSK and Krakow original photo research batch 3
+
+# Research only: no production image writes, no paid rights requests.
+on:
+  pull_request:
+    paths:
+      - 'data/artwork/research/m2m-open-source-batch3-msk-mnk-20261110.v1.json'
+      - 'scripts/sacred-art-acquire-msk-mnk-batch3.py'
+      - 'tests/sacred-art-msk-mnk-batch3-sources-research.test.mjs'
+      - '.github/workflows/sacred-art-msk-mnk-batch3-research.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-source-batch3:
+    name: inspect MSK Gent and MNK sources without publication
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - name: Check out PR head
+        uses: actions/checkout@v4
+      - name: Install Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Bounded image decoding library
+        run: python -m pip install Pillow==12.0.0
+      - name: Verify museum URLs, legal holds, and no owner overrides
+        run: node tests/sacred-art-msk-mnk-batch3-sources-research.test.mjs
+      - name: Attempt exact institutional photo sources
+        run: |
+          python scripts/sacred-art-acquire-msk-mnk-batch3.py \
+            --manifest data/artwork/research/m2m-open-source-batch3-msk-mnk-20261110.v1.json \
+            --output research-msk-mnk-batch3
+      - name: Store temporary first-party image and explicit failure report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ad-orientem-msk-mnk-batch3-source-qa
+          path: research-msk-mnk-batch3/
+          retention-days: 7
+          if-no-files-found: warn
