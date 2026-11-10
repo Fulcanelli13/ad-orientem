@@ -6,6 +6,8 @@ on:
       - "tests/schola-kyrie-viii-review-manifest.mjs"
       - "tests/schola-kyrie-viii-exsurge-phone.mjs"
       - "scripts/schola/build-kyrie-viii-review-gallery.mjs"
+      - "scripts/schola/kyrie-viii-three-witness-neume-ledger.mjs"
+      - "tests/schola-kyrie-viii-three-witness-neume-ledger.mjs"
       - "src/mass/reader-kyrie-viii-review-queue.js"
       - "src/mass/reader-schola-notation-follow.js"
       - "tests/schola-notation-follow.mjs"
@@ -33,6 +35,11 @@ jobs:
         run: node tests/schola-kyrie-viii-review-manifest.mjs
       - name: Regression for decorated Exsurge initials and strict mapping
         run: node tests/schola-notation-follow.mjs
+      - name: Check 45 GABC notation marks against three primary print witness references
+        run: |
+          node --check scripts/schola/kyrie-viii-three-witness-neume-ledger.mjs
+          node tests/schola-kyrie-viii-three-witness-neume-ledger.mjs
+          node scripts/schola/kyrie-viii-three-witness-neume-ledger.mjs > "$RUNNER_TEMP/kyrie-viii-three-witness-neume-review-pending.json"
       - name: Produce review-only nine-cue manifest
         run: |
           node scripts/schola/prepare-kyrie-viii-review-manifest.mjs > "$RUNNER_TEMP/kyrie-viii-musical-review-hold.json"
@@ -54,6 +61,13 @@ jobs:
         with:
           name: kyrie-viii-nine-cue-visual-editorial-hold
           path: ${{ runner.temp }}/kyrie-viii-visual-review/
+          retention-days: 14
+          if-no-files-found: error
+      - name: Upload three-primary-witness detailed music-sign ledger (not public)
+        uses: actions/upload-artifact@v4
+        with:
+          name: kyrie-viii-three-witness-45-unverified-source-marks
+          path: ${{ runner.temp }}/kyrie-viii-three-witness-neume-review-pending.json
           retention-days: 14
           if-no-files-found: error
       - name: Preserve unapproved research review file (not a site asset)
