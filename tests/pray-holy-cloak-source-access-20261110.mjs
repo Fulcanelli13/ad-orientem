@@ -38,7 +38,7 @@ assert.match(ui,/data-p435930-hc-prev/);
 assert.match(ui,/data-p435930-hc-next/);
 assert.match(ui,/data-p435930-hc-finish/);
 assert.match(ui,/rel="noopener noreferrer"/);
-assert.match(ui,/editorial English\/French translations/);
+assert.match(ui,/modern editorial English\/French translations/);
 assert.match(ui,/data-p435930-hc-lang/);
 assert.match(ui,/traductions éditoriales modernes/);
 assert.match(ui,/\$\{massSequenceSection\}\$\{holyCloakSection\}\$\{guidedSection\}/);
