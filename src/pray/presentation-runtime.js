@@ -2694,7 +2694,7 @@ function renderRaccolta1857Reader(){
  const k=RACCOLTA_1857_STAGE+1,end=work.steps.length;
  const lineContent=lines.length?'<ol class="aoRaccolta1857Lines" data-ao-raccolta-aspirations>'+
   lines.map(line=>'<li>'+esc(line)+'</li>').join('')+'</ol>':'';
- const latin=step.bodyLa?'<details class="aoP435930SourceNote"><summary>Latin · original collect</summary><p lang="la">'+nl(step.bodyLa)+'</p></details>':'';
+ const latin=step.bodyLa?'<details class="aoP435930SourceNote"><summary>Latin · historical source</summary><p lang="la">'+nl(step.bodyLa)+'</p></details>':'';
  const unfinished=step.historicalConclusionTruncatedByPrint?'<p class="aoP435930SourceNote">'+
   esc(L('The printed witness abbreviates the conclusion as “etc.”; no ending has been invented.',
    'Le témoin imprimé abrège la conclusion par « etc. » ; aucune fin n’a été inventée.'))+'</p>':'';
