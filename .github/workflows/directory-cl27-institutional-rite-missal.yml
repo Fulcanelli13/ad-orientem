@@ -3,6 +3,7 @@ on:
   pull_request:
     paths:
       - 'data/directory/cl27-institutional-ministry-liturgy-20261110.v1.json'
+      - 'data/directory/research/cl27-imbc-rci-source-split-20261110.v1.json'
       - 'src/find/tlm-institutional-rite-missal.js'
       - 'src/find/tlm-church-profile.js'
       - 'src/find/directory-card.js'
@@ -10,6 +11,7 @@ on:
       - 'src/find/preliminary-directory-r49.js'
       - 'src/find/explore-presentation.js'
       - 'tests/tlm-cl27-institutional-rite-missal.mjs'
+      - 'tests/tlm-cl27-imbc-rci-source-split.mjs'
       - '.github/workflows/directory-cl27-institutional-rite-missal.yml'
       - 'sw.js'
   workflow_dispatch:
@@ -26,6 +28,8 @@ jobs:
           node-version: '22'
       - name: Exact 1389 CL2 source-ministry joins / 1306 sites / bilingual cards and filters
         run: node tests/tlm-cl27-institutional-rite-missal.mjs
+      - name: Preserve 31 IMBC/RCI source-scoped research labels without fabricated editions
+        run: node tests/tlm-cl27-imbc-rci-source-split.mjs
       - name: Existing exact witness and site/facet regression
         run: |
           node tests/directory-cl27-main-facets.mjs
