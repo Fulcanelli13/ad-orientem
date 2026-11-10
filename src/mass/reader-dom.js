@@ -3421,6 +3421,8 @@ export function createReaderDomAdapter({
             });
             if(scholaDockFollower.start(score.gabc)){
               dock.dataset.notationFollow="estimated";
+              const status=root.querySelector('[data-role="schola-status"]');
+              if(status)status.textContent="EST. FOLLOW · NOT HEARD";
               panel.setAttribute("aria-label",
                 "Approved notation. Estimated source-syllable follow; tap or swipe to resynchronise. Singing is not detected.");
             }else{
@@ -3663,7 +3665,7 @@ export function createReaderDomAdapter({
     setText(root,"schola",scholaDisplay);
     const status=root.querySelector('[data-role="schola-status"]');
     if(status){
-      status.textContent=eventReference?"NOT OBSERVED":composed?(schola?.manualMusicReference?"MANUAL · NOT HEARD":"SELECTED · NOT HEARD"):schola?"EXPECTED":"";
+      status.textContent=eventReference?"NOT OBSERVED":composed?(schola?.manualMusicReference?"MANUAL · NOT HEARD":"SELECTED · NOT HEARD"):schola?(dock.dataset.notationFollow==="estimated"?"EST. FOLLOW · NOT HEARD":"EXPECTED"):"";
       status.hidden=!schola&&!eventReference;
       status.setAttribute?.("aria-label",eventReference
         ?"Manual music reference: neither heard nor timed":"Schola text expected; actual singing not detected");
