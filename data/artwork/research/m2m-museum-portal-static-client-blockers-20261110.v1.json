@@ -1,0 +1,101 @@
+{
+  "schema": "AO_SACRED_ART_PUBLIC_MUSEUM_PORTAL_STATIC_HTML_PROBE_REPORT_V1",
+  "asOf": "2026-11-10",
+  "state": "FOUR_OBJECT_IMAGE_DOWNLOAD_LINKS_NOT_EXPOSED_TO_STATIC_HTTP_CLIENT",
+  "researchRunner": {
+    "runId": 42837900450,
+    "artifactId": 13773124665,
+    "workflow": ".github/workflows/sacred-art-museum-download-link-discovery.yml",
+    "testPassed": true,
+    "workflowResult": "success",
+    "imageByteAcquisitions": 0
+  },
+  "targetMethod": "Small, bounded first-party HTTP request to museum public catalogue and asset search HTML, with no JS execution; zero image bytes, no login and no source substitution",
+  "records": [
+    {
+      "key": "Nationalmuseum:NM420",
+      "portal": "https://media.nationalmuseum.se/search/all",
+      "queries": [
+        "NM 420",
+        "David Ryckaert"
+      ],
+      "status": "ONLY_CLIENT_APP_SHELL_EXPOSED",
+      "htmlBytesPerQuery": 1129,
+      "matchingMediaIdsFound": 0,
+      "actualAssetPageFetched": 0,
+      "selectedPhotoLicenceVerified": false,
+      "originalDownloaded": false,
+      "nextMethod": "INTERACTIVE_BROWSER_OR_DOCUMENTED_PUBLIC_API_SEARCH_AFTER_EXACT_ACCESSION_CHECK"
+    },
+    {
+      "key": "Nationalmuseum:NM1134",
+      "portal": "https://media.nationalmuseum.se/search/all",
+      "queries": [
+        "NM 1134",
+        "Marten de Vos"
+      ],
+      "status": "ONLY_CLIENT_APP_SHELL_EXPOSED",
+      "htmlBytesPerQuery": 1129,
+      "matchingMediaIdsFound": 0,
+      "actualAssetPageFetched": 0,
+      "selectedPhotoLicenceVerified": false,
+      "originalDownloaded": false,
+      "nextMethod": "INTERACTIVE_BROWSER_OR_DOCUMENTED_PUBLIC_API_SEARCH_AFTER_EXACT_ACCESSION_CHECK"
+    },
+    {
+      "key": "MNK:II-a-448",
+      "objectUrl": "https://zbiory.mnk.pl/pl/katalog/377412",
+      "status": "ONLY_CLIENT_APP_SHELL_EXPOSED",
+      "htmlBytes": 2621,
+      "accessionTextPresentInStaticHtml": false,
+      "firstPartyImageLinksFound": 0,
+      "downloadAnchorsFound": 0,
+      "scriptEntryPoint": "main.59bda4bc40ac67b980d5.js",
+      "originalDownloaded": false,
+      "nextMethod": "INTERACTIVE_PORTAL_DOWNLOAD_CONTROL_OR_DOCUMENTED_PUBLIC_API; NO_COMMONS_AUTO_IMPORT"
+    },
+    {
+      "key": "MNK:II-a-9",
+      "objectUrl": "https://zbiory.mnk.pl/pl/katalog/271512",
+      "status": "ONLY_CLIENT_APP_SHELL_EXPOSED",
+      "htmlBytes": 2621,
+      "accessionTextPresentInStaticHtml": false,
+      "firstPartyImageLinksFound": 0,
+      "downloadAnchorsFound": 0,
+      "scriptEntryPoint": "main.59bda4bc40ac67b980d5.js",
+      "originalDownloaded": false,
+      "nextMethod": "INTERACTIVE_PORTAL_DOWNLOAD_CONTROL_OR_DOCUMENTED_PUBLIC_API; NO_COMMONS_AUTO_IMPORT"
+    }
+  ],
+  "policyClarification": {
+    "mnkDownloadGuide": "https://mnk.pl/wp-content/uploads/2026/04/Instrukcja-pobierania-zdjec-z-portalu.pdf",
+    "mnkMuseumUsePolicy": "https://mnk.pl/en/practical-information/access-to-the-collection/",
+    "nationalmuseumPortal": "https://media.nationalmuseum.se/search/all",
+    "sourceIntegrityNote": "These failures do not establish that the museums lack photographs or rights; they establish only that server-returned HTML contains no object-specific image URL. Visible download controls may appear after client JavaScript has run.",
+    "retryRule": "Do not retry static GET/og:image endpoints for these exact URLs. Switch acquisition technique or investigate different permitted museum source.",
+    "rightsAndSourceFinal": false
+  },
+  "candidateSubjectAdjudication": [
+    {
+      "key": "MNK:II-a-448",
+      "subject": "John Cantius repairs milk jug and restores spilled milk",
+      "fidelity": "EXACT_SAINT_LEGEND",
+      "priority": "HIGH_IF_EXACT_SOURCE_PHOTO_OBTAINED"
+    },
+    {
+      "key": "MNK:II-a-9",
+      "subject": "Stanislaus excommunicates King Bolesław the Bold",
+      "fidelity": "EXACT_SAINT_HISTORICAL_SCENE_NOT_MARTYRDOM",
+      "priority": "SECONDARY_SCENE_OPTION"
+    }
+  ],
+  "counts": {
+    "investigated": 4,
+    "sourcePhotoUrlsConfirmed": 0,
+    "newImageByteAcquisitions": 0,
+    "previousVerifiedPhotoTotal": 9,
+    "totalVerifiedPhotoTotal": 9,
+    "ownerDateApprovals": 0,
+    "publicReleases": 0
+  }
+}
