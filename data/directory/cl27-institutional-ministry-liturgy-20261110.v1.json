@@ -10,14 +10,14 @@
   },
   "counts": {
     "physical_sites": 2580,
-    "source_ministry_joins": 1404,
-    "distinct_physical_sites": 1321,
+    "source_ministry_joins": 1405,
+    "distinct_physical_sites": 1322,
     "held_group_disagreements": 3,
     "by_institute": {
       "FSSP": 384,
       "ICKSP": 162,
       "SSPX": 821,
-      "IBP": 31,
+      "IBP": 32,
       "AASJMV": 6
     }
   },
@@ -5172,6 +5172,11 @@
       "FSSP"
     ],
     [
+      "RG-B65-F58D1C8B0693",
+      "AO-RSCH-B65-F58D1C8B0693",
+      "IBP"
+    ],
+    [
       "RG-B68-B461DA8A23EC",
       "AO-RSCH-B68-B461DA8A23EC",
       "FSSP"
@@ -7208,7 +7213,7 @@
     "Do not promote three conflicting research-to-app physical-group mappings without separate alias resolution",
     "Show Rite and Missal prominently; source evidence and rule ID remain internal, not shown on church card"
   ],
-  "records_fingerprint": "fnv1a32:990ee708",
+  "records_fingerprint": "fnv1a32:4c789819",
   "aasjmv_scope_correction": {
     "source": "https://oratoriosaojosebh.org/comunidades-atendidas/",
     "included_exact_ministry_sources": [
@@ -7370,5 +7375,15 @@
       "DO_NOT_INFER_INSTITUTE_OF_OTHER_OCCUPANTS",
       "NO_PUBLIC_EVIDENCE_ON_CARDS"
     ]
+  },
+  "ibp_florianopolis_ministry_recovery": {
+    "physical_anchor": "RG-B65-F58D1C8B0693",
+    "cl2_source_id": "AO-RSCH-B65-F58D1C8B0693",
+    "institute_id": "IBP",
+    "scope": "MINISTRY_NOT_WHOLE_VENUE",
+    "basis": "Official IBP Latin America apostolate page explicitly names Capela do Asilo Irmão Joaquim and apostolate priest Padre Mathias Moskva.",
+    "source_url": "https://ibpamericalatina.org/casa/florianopolis/",
+    "inference": "USUAL_ROMAN_1962_INSTITUTE_BOOKS_ONLY",
+    "release_guard": "NO_CURRENT_MASS_OR_VENUE_WIDE_CERTIFICATION"
   }
 }
