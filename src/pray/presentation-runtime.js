@@ -2822,8 +2822,8 @@ function renderLibrary(){
  const holyCloakSection=!holyCloak?'':(
   '<section class="aoP435930LibraryRelated" data-ao-holy-cloak-source-only>'+
   '<h3>'+esc(L('Holy Cloak of St Joseph · 30 days','Sacré Manteau de saint Joseph · trente jours'))+'</h3>'+
-  '<p>'+esc(L('Complete Catholic parish prayer in English, opened at the source. The same complete devotion is prayed on thirty days. This is not yet an offline in-app reader, and no French translation or exact 1882 edition is certified.',
-   'Texte complet en anglais sur le site d’une paroisse catholique. La même dévotion complète se récite pendant trente jours. Ce n’est pas encore un parcours hors ligne dans l’application ; ni la traduction française ni l’édition exacte de 1882 ne sont certifiées.'))+'</p>'+
+  '<p>'+esc(L('The complete 19-section historical Italian witness is now available offline in Ad Orientem. An English Catholic parish version can be read separately at its source. Both use the full daily form for thirty days; no English/French native translation or exact 1882 printed text has been certified.',
+   'Le témoignage italien historique complet en 19 sections est désormais disponible hors ligne dans Ad Orientem. Une version anglaise de paroisse reste accessible à sa source. On récite la dévotion intégrale chaque jour pendant trente jours ; aucune traduction EN/FR ni édition imprimée exacte de 1882 n’est certifiée.'))+'</p>'+
   '<button type="button" class="aoP435930ModuleCard" data-p435930-lib-open="'+esc(HOLY_CLOAK_ITALIAN_SOURCE_V1.id)+'" data-ao-holy-cloak-italian-open>'+
    '<small>'+esc(L('OFFLINE HISTORICAL ITALIAN · 19 SECTIONS','ITALIEN HISTORIQUE HORS LIGNE · 19 SECTIONS'))+'</small>'+
    '<b>'+esc(L('Read the full Holy Cloak in Italian','Lire le Sacro Manto intégral en italien'))+'</b>'+
