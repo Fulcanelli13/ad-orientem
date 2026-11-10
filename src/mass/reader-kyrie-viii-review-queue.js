@@ -7,6 +7,7 @@ import {offlineKyrialeResearchScore} from "./reader-kyriale-research-gabc.js";
 export const KYRIE_VIII_REVIEW_SCHEMA="ao-schola-kyrie-viii-nine-cue-source-review-v1";
 export const KYRIE_VIII_REVIEW_SOURCE=Object.freeze({
  scoreId:"GREGOBASE-1184",
+ sourceGabcSha256:"99403b7c2ebe07b3732078ed9eee57d130bee9b7aaebbaa61bb3078d6cf6d73b",
  movement:"KYRIE",settingId:"MASS_08",
  title:"Kyrie VIII · De Angelis",
  sourceUrl:"https://gregobase.selapa.net/chant.php?id=1184",
