@@ -4991,7 +4991,7 @@ function onClick(e){
  }
  if(b.dataset.p435930PenStep!=null){PEN.step=Math.max(0,Math.min(6,+b.dataset.p435930PenStep));return render()}
  if(b.matches('[data-p435930-pen-cache]')){void warmPenitentialPsalmCorpus();return}
- if(b.matches('[data-p435930-pen-litany]')){pushView();view='litany';LIT.step=0;return render()}
+ if(b.matches('[data-p435930-pen-litany]')){pushView();view='litany';LIT.use='private';LIT.step=0;return render()}
  if(b.dataset.p435930LitStep!=null){LIT.step=Math.max(0,Math.min((LIT.sections?.length||1)-1,+b.dataset.p435930LitStep));return render()}
  if(b.hasAttribute('data-p435930-lit-use')){const choice=b.dataset.p435930LitUse;if(!BATCH03_LITANY_EDITION_POLICY[choice])return;LIT.use=choice;LIT.step=0;ROG_PRAY.step=0;return render()}
  if(b.matches('[data-p435930-rog-retry]')){ROG_PRAY.error='';ROG_PRAY.sections=null;ROG_PRAY.step=0;return render()}
