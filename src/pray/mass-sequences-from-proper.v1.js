@@ -7,7 +7,7 @@ export const MASS_SEQUENCE_PRAYER_WORKS=Object.freeze([
  Object.freeze({id:"mass_sequence_victimae_paschali",title:"Victimae paschali laudes",titleFr:"Victimae paschali laudes",
   date:"2026-04-05",sourcePath:"Tempora/Pasc0-0",opening:"victimae paschali laudes",minLatin:140,subject:"II"}),
  Object.freeze({id:"mass_sequence_lauda_sion",title:"Lauda Sion",titleFr:"Lauda Sion",
-  date:"2026-06-04",sourcePath:"Tempora/Pent1-4",opening:"lauda sion salvatorem",minLatin:500,subject:"III"}),
+  date:"2026-06-04",sourcePath:"Tempora/Pent01-4",opening:"lauda sion salvatorem",minLatin:500,subject:"III"}),
  Object.freeze({id:"mass_sequence_dies_irae",title:"Dies irae",titleFr:"Dies irae",
   date:"2026-11-02",sourcePath:"Sancti/11-02m1",opening:"dies irae dies illa",minLatin:500,subject:"IX"})
 ]);
@@ -34,7 +34,21 @@ export function projectMassSequencePrayer(id,resolved){
  if(proper?.sourcePath!==spec.sourcePath)reject("SELECTED_1962_PROPER_IDENTITY_MISMATCH");
  const raw=proper?.sequence;
  if(!raw||Array.isArray(raw)||typeof raw!=="object")reject("DISTINCT_SEQUENTIA_NOT_FOUND");
- const la=sourceText(raw.lat??raw.la),fr=sourceText(raw.fr);
+ let la=sourceText(raw.lat??raw.la);
+ const fr=sourceText(raw.fr);
+ let sourceEditorialNote=null;
+ if(spec.id==="mass_sequence_lauda_sion"){
+  // The existing 1962 Proper donor opens with its own Thomas Aquinas
+  // attribution and historical rubric, not a stanza of the Sequence.
+  // Preserve that exact source note as provenance, outside the prayer text.
+  const at=la.search(/\bLauda[,\s]+Sion\b/iu);
+  if(at<0||at>250)reject("LAUDA_SION_SOURCE_START_UNVERIFIED");
+  const note=la.slice(0,at).trim();
+  if(note&&!/^Thom[æa]e?\s+de\s+Aquino\./iu.test(note))
+   reject("UNREVIEWED_LATIN_EDITORIAL_NOTE");
+  sourceEditorialNote=note||null;
+  la=la.slice(at).trim();
+ }
  let en=sourceText(raw.en);
  if(spec.id==="mass_sequence_dies_irae"){
   // Reuse Mass's existing display-only correction for the English editorial note.
@@ -52,6 +66,7 @@ export function projectMassSequencePrayer(id,resolved){
   schema:MASS_SEQUENCE_PRAYER_SCHEMA,id:spec.id,title:spec.title,titleFr:spec.titleFr,
   sourcePath:spec.sourcePath,sourceDate:spec.date,sourceSection:"Sequentia",
   sourceOwner:"1962_ACTUAL_SELECTED_MASS_PROPER",latin:la,english:en,french:fr,
+  sourceEditorialNote,
   printed1962IndependentlyCollated:false,notationApproved:false,
   devotionalReadingOnly:true
  });
