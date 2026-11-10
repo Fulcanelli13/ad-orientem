@@ -118,8 +118,11 @@ try{
     assert.equal(await page.locator(owner).count(),0,"Historical private reader must not masquerade as the public rite");
     const publicRoot="#aoPray435930.open [data-ao-litany-use='major']";
     await page.locator(publicRoot).waitFor();
-    assert.match(await page.locator(publicRoot).innerText(),language==="fr"?/collation|certifiée/i:/collation|not yet/i);
-    assert.equal(await page.locator(publicRoot+" .aoP435930LitanyLine").count(),0,"Uncollated public edition must not invent prayers");
+    assert.equal(await page.locator(publicRoot+" [data-ao-rogations-source-hold='UNCOLLATED_ORIGINAL_PRINT']").count(),1,
+     "Original R25 Latin source must be distinguished from independently uncollated printed 1962 edition");
+    await page.waitForFunction(()=>document.querySelectorAll('#aoPray435930.open [data-ao-litany-use="major"] [data-ao-rogations-latin-row]').length===4,null,{timeout:15000});
+    assert.equal(await page.locator(publicRoot+" .aoP435930LitanyLine").count(),4,
+     "Original public Latin Exsurge must be visible while unknown translations remain absent");
     assert.deepEqual(errs,[],"Unexpected browser errors: "+JSON.stringify(errs));
     console.log("PASS "+language+" "+width+"px private Litany: readable original-section UI, unmodified source gates, no overflow");
    }finally{await page.close()}
