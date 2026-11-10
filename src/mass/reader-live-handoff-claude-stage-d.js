@@ -1,3 +1,5 @@
+import {CLAUDE_HANDOFF_DRAFT_MEANINGS} from "./reader-live-handoff-claude-meanings.js";
+import {R17_FINAL_APPROVED_MASS_ASSETS} from "./reader-final-approved-assets.js";
 // Direct visual geometry port from the final Claude handoff's arc(),
 // wheel() rings and tlWin() layout. The source owns VISUAL SHAPES ONLY:
 // the actual 65 native cards, source cue status and independent Schola
@@ -11,7 +13,7 @@ function claudeSectionForCard(ref){
  if(n<=59)return "com";
  return "end";
 }
-function claudeWheelRender(wheel,timeline){
+function claudeWheelRender(wheel,timeline,nativeState=null){
  if(wheel?.ok!==true || timeline?.ok!==true)return `<div class="ao-claude-source-hold">Native 65-card source required</div>`;
  const SEC={cat:"#8c6d4f",off:"#b88a2e",can:"#a83a35",com:"#3f6f93",end:"#6a5a99"};
  const A=n=>2*Math.PI*n/65;
@@ -29,11 +31,22 @@ function claudeWheelRender(wheel,timeline){
  g+=`<circle r="158" fill="none" stroke="#2c3645" stroke-width="22" opacity=".75"/>`;
  if(bell?.location!=null){const i=bell.location,a=A(i+.5);g+=`<circle cx="${282*Math.sin(a)}" cy="${-282*Math.cos(a)}" r="10" fill="#d4a640" stroke="#d4a640" stroke-width="3"/>`;}
  g+=`<g transform="rotate(${360*(timeline.position-.5)/65})"><line x1="0" y1="0" x2="0" y2="-262" stroke="#fff" stroke-width="6" stroke-linecap="round"/><circle r="14" fill="#fff"/></g></svg>`;
+ const draftMeaning=CLAUDE_HANDOFF_DRAFT_MEANINGS[wheel.current?.sequence]??"";
+ const escapedMeaning=String(draftMeaning).replace(/[&<>"\x27]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","\x27":"&#39;"}[c]));
+ const iconPaths=[];
+ const post=posture?.location===timeline.position-1?posture?.text:null;
+ const postureIcons={STAND:"final_review_posture_stand",SIT:"final_sit",KNEEL:"final_review_posture_kneel"};
+ if(post&&postureIcons[post])iconPaths.push(R17_FINAL_APPROVED_MASS_ASSETS[postureIcons[post]]);
+ const priestLane=timeline.lanes?.find(l=>l.id==="PRIEST");
+ const station=priestLane?.location===timeline.position-1?nativeState?.priestPosition?.station:null;
+ const stations={ALTAR_CENTER:"final_study_priest_centre",ALTAR_EPISTLE_MISSAL:"final_study_priest_epistle",ALTAR_EPISTLE_SIDE:"final_study_priest_epistle",ALTAR_GOSPEL_MISSAL:"final_study_priest_gospel",COMMUNION_RAIL:"final_priest_rail"};
+ if(station&&stations[station])iconPaths.push(R17_FINAL_APPROVED_MASS_ASSETS[stations[station]]);
+ const icons=iconPaths.filter(Boolean).slice(0,6).map(url=>'<span><img src="'+url+'" width="26" height="26" alt=""/></span>').join("");
  return `<div class="ao-claude-wheel-page" data-wheel-design="CLAUDE_ORIGINAL_MULTI_RING">
   <div class="ao-claude-wheel-left">${g}</div>
   <div class="ao-claude-wheel-right">
-   <div class="ao-claude-icons" aria-label="Cue icons require exact native owner"></div>
-   <p class="ao-claude-meaning-pending" aria-label="The original handoff's draft meanings remain in editorial review"></p>
+   <div class="ao-claude-icons" aria-label="Current native cue icons">${icons}</div>
+   <p class="ao-claude-meaning-pending" data-review="CLAUDE_MEANINGS_DRAFT_NOT_CERTIFIED">${escapedMeaning}</p>
   </div>
  </div>`;
 }
@@ -84,6 +97,7 @@ export const CLAUDE_PORT_CSS=[
 ".ao-claude-wheel-svg{width:100%;height:100%;min-width:0;max-height:100%;display:block}",
 ".ao-claude-wheel-right{overflow-y:auto;padding:8px 10px 24px 6px;font:13.5px/1.28 'EB Garamond',Georgia,serif;display:flex;flex-direction:column;justify-content:center;gap:2px}",
 ".ao-claude-icons{display:flex;flex-wrap:wrap;gap:5px;margin:2px 0 8px;min-height:35px}",
-".ao-claude-meaning-pending{font:14.5px/1.38 'EB Garamond',Georgia,serif;min-height:35px;color:rgba(238,233,223,.45);margin:0}",
+".ao-claude-icons span{width:35px;height:35px;border:1px solid rgba(255,255,255,.105);border-radius:10px;display:grid;place-items:center;background:#11161c}",
+".ao-claude-meaning-pending{font:14.5px/1.38 'EB Garamond',Georgia,serif;min-height:35px;color:#eee9df;margin:0}",
 "@media(max-width:380px){.ao-claude-wheel-right{padding-right:5px}.ao-claude-wheel-left{padding-left:2px}}"
 ].join("\n");
