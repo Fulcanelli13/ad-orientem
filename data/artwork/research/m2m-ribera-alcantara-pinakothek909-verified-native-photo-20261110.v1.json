@@ -1,0 +1,70 @@
+{
+  "schema": "AO_RIBERA_ALCANTARA_PINAKOTHEK_ORIGINAL_VERIFIED_V1",
+  "asOf": "2026-11-10",
+  "status": "FIRST_PARTY_COLOUR_SOURCE_BYTES_VERIFIED_RESEARCH_ALTERNATIVE_NOT_OWNER_APPROVED",
+  "artwork": {
+    "key": "Pinakothek:909",
+    "title": "Saint Peter of Alcántara in Meditation",
+    "nativeTitle": "Hl. Petrus von Alcantara in Meditation",
+    "artist": "Jusepe de Ribera",
+    "date": "1625–1649",
+    "institution": "Bayerische Staatsgemäldesammlungen, Schloss Schleißheim",
+    "museumCatalogueUrl": "https://www.sammlung.pinakothek.de/de/artwork/6kLa2RrG8V",
+    "candidateDate": "2026-10-19",
+    "fidelity": "EXACT_SAINT_DIFFERENT_SCENE_FROM_WALTERS_MIRACLE"
+  },
+  "photo": {
+    "sourceUrl": "https://cdn.thenetexperts.info/image/authenticated/s--TXk9OH5X--/q_80/artworks/JUSEPE-DE-RIBERA-1591_HL-PETRUS-VON-ALCANTARA-IN-MEDITATION-909_542157_CC-BY-SA_BSTGS.jpg",
+    "imageLicense": "CC BY-SA 4.0",
+    "usagePolicy": "https://www.sammlung.pinakothek.de/en/usage",
+    "sha256": "66b1edb25e6f8477ad57df144500cd9b5ecfca5f282927af5c80fe05a86a0a62",
+    "pixelWidth": 2338,
+    "pixelHeight": 3000,
+    "byteLength": 1432919,
+    "format": "JPEG",
+    "mode": "RGB",
+    "iccProfileEmbedded": false,
+    "meanThumbnailSaturation": 115.13,
+    "independentChecksumVerifiedFromActionsArchive": true,
+    "officialCollectionDownloadUrlVerified": true
+  },
+  "mobile": {
+    "wide390x240RetainsPercent": 48,
+    "portrait390x520RetainsPercent": 96.2,
+    "wide": "DO_NOT_CENTER_COVER_FIGURE_AND_SKULL_CROPPED",
+    "portrait": "PROVISIONAL_SUBJECT_COMPLETE",
+    "appContainerQAPassed": false,
+    "ownerCropApproval": false
+  },
+  "githubActions": {
+    "runId": 42811942312,
+    "artifactId": 13762437639,
+    "artifactName": "ad-orientem-ribera-alcantara-research-only",
+    "retentionDays": 7,
+    "sourceScript": "scripts/sacred-art-fetch-pinakothek909-research.py"
+  },
+  "provenance": {
+    "sourceCredit": "Jusepe de Ribera, Hl. Petrus von Alcantara in Meditation, 1625–1649, Bayerische Staatsgemäldesammlungen, CC BY-SA 4.0, source catalogue URL",
+    "licenseRequiresAttribution": true,
+    "licenseRequiresShareAlikeForAdaptations": true,
+    "croppedFileShouldIdentifyModification": true,
+    "sourceUrlSignedMayChange": true
+  },
+  "gates": {
+    "sourceVerified": true,
+    "colourImageByteHashVerified": true,
+    "licenceEvidenceSourceSpecific": true,
+    "originalWaltersSelectionStillUntouched": true,
+    "ownerApprovalForDate": false,
+    "formalMobileQAPassed": false,
+    "productionImport": false,
+    "releaseReady": false
+  },
+  "rules": [
+    "Owner has not selected this alternative",
+    "Do not import into app, change 19 October hero or make automated approval",
+    "This is a distinct portrait painting from Walters 37.1146's miracle",
+    "Preserve museum credit and CC BY-SA 4.0 licence requirements, especially for modifications",
+    "No commercial image fee, no museum outreach, no Prado photographic source, no deployment"
+  ]
+}
