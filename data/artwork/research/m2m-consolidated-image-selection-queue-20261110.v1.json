@@ -4242,7 +4242,7 @@
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-final15-20261110.v1.json",
       "verifiedPhotoId": null,
       "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
+      "nextAction": "Priority within first-party Kraków image search: obtain exact MNK II-a-448 JPG via official download action. This Baroque milk-jug miracle is visually faithful and high potential; do not substitute other identically titled paintings.",
       "risk": "SOURCE_PHOTO_UNVERIFIED",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
@@ -4258,6 +4258,17 @@
         "imageFileSha256": null,
         "useForApp": false,
         "ownerApproved": false
+      },
+      "verifiedSubjectIconography": {
+        "scene": "Saint John Cantius miraculously repairs a poor girl's broken jug and restores spilled milk",
+        "iconographyConfidence": "DIRECT_MUSEUM_CATALOGUE_PROSE_AND_VISUAL_REFERENCE",
+        "source": "https://zbiory.mnk.pl/pl/katalog/377412",
+        "attribution": "Tadeusz Kuntze-Konicz, circa 1767",
+        "saintIdentity": "JOHN_CANTIUS",
+        "narrativeRole": "EXACT_SAINT_LEGEND_SCENE",
+        "suitabilityNote": "Dark Baroque composition with saint and jug central; promising if the museum's exact colour photo can be acquired at mobile resolution.",
+        "ownerImageApproval": false,
+        "sourceImageRightsOrBytesVerified": false
       }
     },
     {
@@ -4291,7 +4302,7 @@
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-followup10b-20261110.v1.json",
       "verifiedPhotoId": null,
       "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
+      "nextAction": "Obtain exact MNK II-a-9 JPG only if church history/excommunication scene is needed. Do not label it the saint's martyrdom or murder despite museum alternative titles; lower image-acquisition priority than the Cantius miracle.",
       "risk": "SOURCE_PHOTO_UNVERIFIED",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
@@ -4307,6 +4318,23 @@
         "imageFileSha256": null,
         "useForApp": false,
         "ownerApproved": false
+      },
+      "verifiedSubjectIconography": {
+        "scene": "Bishop Saint Stanislaus pronounces excommunication on King Bolesław the Bold before a church altar",
+        "iconographyConfidence": "DIRECT_MUSEUM_CATALOGUE_TITLE_CORROBORATED_BY_REFERENCE_VISUAL",
+        "source": "https://zbiory.mnk.pl/pl/katalog/271512",
+        "attribution": "Juliusz Knoor, circa 1840",
+        "exactEventDepicted": "EXCOMMUNICATION_OF_KING",
+        "eventsNotDepicted": [
+          "MARTYRDOM",
+          "MURDER_OF_STANISLAUS",
+          "STANISLAUS_BLESSING_HIS_MURDERERS"
+        ],
+        "historicalAltTitlesAreNotImageDescriptions": true,
+        "suitableAsSaintThematicArtwork": true,
+        "suitableAsMartyrdomScene": false,
+        "ownerImageApproval": false,
+        "sourceImageRightsOrBytesVerified": false
       }
     },
     {
