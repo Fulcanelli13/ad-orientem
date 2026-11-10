@@ -67,3 +67,12 @@ Continue source-based drafting from verified Catholic custom books, local parish
 
 ### Wave 14 duplicate-screening follow-up
 Five more sourced Customs candidate rows (`DYK-CW14-039` through `DYK-CW14-043`) were appended from the already checked Candlemas and Processions sources. Current master **1,404 draft rows**; Wave 14 total **76 additions** (**43 Customs; 33 Glossary**). Three earlier Wave 14 rows were explicitly flagged as possible substantive overlaps rather than silently discarded: `DYK-CW14-018` (published Ember ordinations), `DYK-GX14-011` (published amice-cross gesture), and `DYK-GX14-020` (earlier Glossary ciborium/canopy distinction). These remain draft/history rows and should not be counted as three distinct new facts without review. No publication signoff is implied.
+
+## Wave 15 — geographically diversified bilingual discovery drafts (10 November 2026)
+
+- New candidates staged: **90** bilingual rows (**57 Customs**, **33 historical Glossary/liturgical-objects**), from **26** distinct page URLs. Master: **1494 draft rows**, formerly 1404. Published comparator remains **225**.
+- **0** proposed items held for normalized-exact or high lexical similarity; **5** retained draft rows flagged for a possible weaker lexical overlap and requiring semantic review. All source IDs, URLs, historical/geographic scopes and review prompts are in the master.
+- Customs source pool: UNESCO Intangible Cultural Heritage descriptions of geographically localized Catholic observances (Croatia, Belgium, Colombia, Switzerland, Guatemala, Poland, Panama, Venezuela, Luxembourg, Malta, Peru, Mexico, Belarus, Brazil, El Salvador, Italy and Bolivia). These describe community practices, NOT universal liturgical rubrics or definitive current opening times/annual schedules.
+- Glossary source pool: original early-twentieth-century Catholic Encyclopedia articles on sacred vestments, tabernacles, Eucharistic vessels and church metalwork. Historical descriptions should not be interpreted as binding 1962 rubrics or proofs of historical origin where a claim is interpretative.
+- Source review precision: source-link and topic mapping established; full sentence-by-sentence source certification and native EN/FR approval **remain pending**. Avoid splitting several observations of the same procession into multiple published cards without editorial consolidation.
+- IDs follow `DYK-CW15-###` and `DYK-GX15-###`. Lane names reuse `CUSTOMS_NEW_SOURCE_WAVE` and `GLOSSARY_NEW_SOURCE_WAVE`. No new publication signoffs, merges, or deployments.
