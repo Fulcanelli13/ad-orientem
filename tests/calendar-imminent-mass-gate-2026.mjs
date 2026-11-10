@@ -34,7 +34,8 @@ try{
  for(const witness of [
   {date:"2026-10-28",id:"sancti:10-28:2:r",path:"Sancti/10-28",colour:"Red"},
   {date:"2026-11-01",id:"sancti:11-01:1:w",path:"Sancti/11-01",colour:"White"},
-  {date:"2026-11-02",id:"sancti:11-02m1:1:b",path:"Sancti/11-02m1",colour:"Black"}
+  {date:"2026-11-02",id:"sancti:11-02m1:1:b",path:"Sancti/11-02m1",colour:"Black"},
+  {date:"2026-11-10",id:null,path:"Sancti/11-10",colour:"White"}
  ]){
   const moved=await page.evaluate(async date=>
     globalThis.AO_CALENDAR_WEEK_CACHE_V4345.revealDate(date,{forceLoader:false,prefetch:false}),witness.date);
@@ -99,11 +100,20 @@ try{
   });
   console.log("IMMINENT_1962_MASS_GATE="+JSON.stringify(result));
   assert.equal(result.date,witness.date);
-  assert.equal(result.id,witness.id,witness.date+" wrong actual Mass owner");
+  if(witness.id)assert.equal(result.id,witness.id,witness.date+" wrong actual Mass owner");
+  else assert.match(String(result.id),/11-10/,
+    "10 November must identify St Andrew Avellino, not a substitute feria");
   assert.equal(result.path,witness.path,witness.date+" wrong selected Proper source");
   assert.equal(result.colour,witness.colour,witness.date+" wrong Mass colour");
   assert.equal(result.legacyStatus,true,witness.date+" host cannot start Mass");
   assert.ok(["ready","READY"].includes(result.sourceStatus),witness.date+" selected Proper not ready");
+  if(witness.date==="2026-11-10"){
+    assert.match(String(result.id),/sancti:11-10/i);
+    assert.equal(result.legacyProperSource,"Sancti/11-10",
+      "10 November source must inherit Common C5 via original Sanctorale identity");
+    assert.ok(result.selectedCounts.every(count=>count>=1),
+      "St Andrew Avellino must have resolved Collect, Secret and Postcommunion");
+  }
   for(const lang of ["en","fr"])
     assert.equal(result.slots[lang].preface,"READY",
       witness.date+"/"+lang+" selected reader Preface not READY");
