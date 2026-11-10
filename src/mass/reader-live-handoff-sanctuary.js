@@ -199,6 +199,15 @@ export function renderLiveHandoffSanctuarySvg(scene){
   if(!labelFree(svg))throw Error("LIVE_PLAN_LABEL_OR_MARKER_FORBIDDEN");
   return svg;
 }
+// Approved figure family is a SIDE VIEW. Never rotate the entire upright
+// body 180° (which would turn the priest upside-down in portrait layout).
+// Use a horizontal flip to indicate facing in the 2D sanctuary sketch.
+export function liveHandoffSideViewOrientation(rotation){
+  const n=Number(rotation);
+  if(!Number.isFinite(n))return "scale(1 1)";
+  const degrees=((n%360)+360)%360;
+  return degrees>=90&&degrees<=270?"scale(-1 1)":"scale(1 1)";
+}
 /** Movable reference-only overlay: inserted ONLY after a person presses the
  * route-preview control. The ordinary static priest is temporarily hidden.
  * No movement is inferred from native card/cue progression.
@@ -210,14 +219,15 @@ export function renderLiveHandoffPreviewRouteOverlay({scene,route,step}={}){
   const next=step.next?.point??null;
   const colour=safeColor(COLOURS[scene.colour]??COLOURS.NEUTRAL);
   const rotation=Number(step.current.rotation)||0;
-  const target=next?'<circle class="ao-lb-route-next" data-lb-route-next cx="'
+  const hasDistinctNext=next&&(next.x!==position.x||next.y!==position.y);
+  const target=hasDistinctNext?'<circle class="ao-lb-route-next" data-lb-route-next cx="'
     +number(next.x)+'" cy="'+number(next.y)+'" r="17"/>':'';
   return '<g class="ao-lb-route-overlay" data-lb-route-overlay '
     +'data-source="REFERENCE_ONLY_NOT_OBSERVED">'
     +target
     +'<g data-lb-route-actor transform="translate('+number(position.x)
     +' '+number(position.y)+')">'
-    +'<g data-lb-route-heading transform="rotate('+rotation+')">'
+    +'<g data-lb-route-heading transform="'+liveHandoffSideViewOrientation(rotation)+'">'
     +figure("priest",{x:0,y:0},colour,"stand",1,.53)
     +'</g></g></g>';
 }
