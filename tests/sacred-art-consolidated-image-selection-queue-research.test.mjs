@@ -108,7 +108,27 @@ assert.deepEqual(dates.filter(x=>x.supplementalUnintegratedArtworkKeys.length).m
 assert.ok(dates.every(x=>x.editorialDateApproval===false&&x.publishedImageAssignmentCreated===false));
 assert.equal(queue.counts.verifiedColourJpegSources,9);
 assert.equal(queue.counts.verifiedSourcePhotosInOriginal151Pool,8);
-assert.equal(queue.reviewLaneCounts.C_LOCATE_REUSABLE_COLOUR_SOURCE,8);
+assert.equal(queue.reviewLaneCounts.C_LOCATE_REUSABLE_COLOUR_SOURCE??0,0);
+assert.equal(queue.reviewLaneCounts.C_OBJECT_RECORD_WITHOUT_PHOTO_BYTES,2);
+assert.equal(queue.reviewLaneCounts.C_UNVERIFIED_IMAGE_RIGHTS_OR_ATTRIBUTION,2);
+assert.equal(queue.counts.directRecordsWithoutOriginalPhoto,2);
+assert.equal(queue.counts.sourceImageRightsOrAttributionUnresolved,2);
+assert.equal(queue.counts.additionalRestrictedInstitutionPhotosFromEight,4);
+const finalSourceAudit=read(root+'m2m-eight-priority-oil-source-closure-20261110.v1.json');
+assert.equal(finalSourceAudit.counts.reviewed,8);
+assert.equal(finalSourceAudit.counts.restrictedInstitutionalPhotoSources,4);
+assert.equal(finalSourceAudit.counts.objectRecordsWithoutDownloadablePhoto,2);
+assert.equal(finalSourceAudit.counts.sourceRightsOrAttributionUnresolved,2);
+assert.equal(finalSourceAudit.counts.sourceImageBytesDownloaded,0);
+for(const item of finalSourceAudit.sources){
+ const work=workByKey.get(item.artworkKey);
+ assert.ok(work);
+ assert.equal(work.lane,item.classification);
+ assert.equal(work.directSourceTriage10November.exactOfficialPhotoAppUseEligible,false);
+ assert.equal(work.directSourceTriage10November.newSourceFileDownloaded,false);
+ assert.equal(work.verifiedPhotoId,null);
+ assert.equal(work.releaseReady,false);
+}
 assert.equal(queue.reviewLaneCounts.C_CLIENT_RENDERED_MUSEUM_PORTAL_REQUIRES_NEW_METHOD,4);
 assert.equal(queue.counts.clientRenderedFirstPartyPortalImageHolds,4);
 assert.equal(queue.counts.unverifiedPhotoSearchLaneRemaining,8);
@@ -156,8 +176,8 @@ for(const [key,accession] of [
  assert.equal(r.verifiedPhotoId,null);
  assert.equal(r.releaseReady,false);
 }
-assert.equal(queue.reviewLaneCounts.C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT,45);
-assert.equal(queue.counts.newInstitutionPhotoPolicyHolds,36);
+assert.equal(queue.reviewLaneCounts.C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT,49);
+assert.equal(queue.counts.newInstitutionPhotoPolicyHolds,40);
 assert.equal(queue.counts.iccdOfficialPhotoRightsHoldsAdded,27);
 const policyFile=read(root+'m2m-open-source-batch3-msk-mnk-20261110.v1.json');
 const policyKeys=policyFile.policyHolds.flatMap(x=>x.workKeys);
