@@ -1,0 +1,41 @@
+name: Sacred Art CC0 museum alternatives batch 4
+
+# Metadata-only discovery of non-rejected alternatives; no image downloads or publication.
+on:
+  pull_request:
+    paths:
+      - 'data/artwork/research/m2m-open-museum-alternatives-batch4-20261110.v1.json'
+      - 'data/artwork/research/m2m-eight-priority-oil-source-closure-20261110.v1.json'
+      - 'scripts/sacred-art-discover-cc0-alternatives-batch4.py'
+      - 'tests/sacred-art-cc0-alternative-discovery-batch4.test.mjs'
+      - '.github/workflows/sacred-art-cc0-museum-alternatives-batch4.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  eight-subject-open-access-research:
+    name: search Cleveland, Chicago and Met CC0 art APIs
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check source rejection and all release gates
+        run: node tests/sacred-art-cc0-alternative-discovery-batch4.test.mjs
+      - name: Search bounded official museum APIs (metadata only)
+        run: |
+          python scripts/sacred-art-discover-cc0-alternatives-batch4.py \
+            --manifest data/artwork/research/m2m-open-museum-alternatives-batch4-20261110.v1.json \
+            --output sacred-art-cc0-alternatives-batch4
+      - name: Retain exact museum object candidates and failures for 7 days
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-cc0-alternatives-eight-targets
+          path: sacred-art-cc0-alternatives-batch4/report.json
+          retention-days: 7
+          if-no-files-found: warn
