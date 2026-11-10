@@ -58,6 +58,7 @@ import {internalPrayerView,supportedDirectPrayerRoute} from "./internal-route-ow
 import {renderLittleCrownB30} from "./little-crown-presentation-b30.js";
 import {PRAYER_SUBJECTS_V1,prayerSubjectsForLibrary,prayerSubjectCounts} from "./prayer-subject-index.v1.js";
 import {guidedPrayerLinksForSubject} from "./prayer-subject-guided-links.v1.js";
+import {LASANCE_1904_ARCHANGELS_V1,lasance1904ArchangelWork,lasance1904ArchangelMatches} from "./lasance-1904-archangel-prayers.v1.js";
 import {PRAYER_SUPPLEMENTAL_LIVE_WORK_LINKS_V1,prayerSupplementalLiveWork,prayerSupplementalLiveWorksForSubject} from "./prayer-supplemental-live-works.v1.js";
 import {prayerSevenSourceWork,prayerSevenSourceWorksForSubject} from "./prayer-seven-source-work-links.v1.js";
 import {redBookletCommunionLibraryLink,redBookletCommunionLibraryLinksForSubject} from "./red-booklet-communion-library-links.v1.js";
@@ -2414,6 +2415,7 @@ function renderAdoration(){
 }
 function familyOf(p){return libraryVariantFamily(p.id)||p.id}
 let LIB={q:'',cat:'all',subject:'all',subjectOpen:false,open:null,language:null};
+let LASANCE_1904_RAPHAEL_DAY=0;
 // Mass Sequentia texts are borrowed live from the authenticated selected Proper;
 // they are NOT added to the locked 48-text canonical Prayer object.
 const MASS_SEQUENCE_READING={id:null,record:null,loading:false,error:null,token:0};
@@ -2669,7 +2671,46 @@ function renderLibraryEntryRows(rows,search){
   return `<details class="aoP435930LibraryVariants" data-ao-prayer-family="${esc(entry.family)}"${search?' open':''}><summary><small>${esc(L('Prayer family','Famille de prières'))}</small><b>${esc(isFr()?label.fr:label.en)}</b><span>${entry.prayers.length} ${esc(L(entry.prayers.length===1?'form':'forms',entry.prayers.length===1?'forme':'formes'))}</span></summary><div class="aoP435930LibraryVariantItems">${entry.prayers.map(renderRow).join('')}</div></details>`;
  }).join('')||`<p>${esc(L('No prayers match this search.','Aucune prière ne correspond à cette recherche.'))}</p>`;
 }
+function renderLasance1904Archangel(){
+ const work=lasance1904ArchangelWork(LIB.open);
+ if(!work)return callout(esc(L('Historical prayer unavailable.','Prière historique indisponible.')),'warn');
+ const french=isFr(),novena=!!work.recurringProgramme,day=LASANCE_1904_RAPHAEL_DAY+1;
+ const title=french?work.titleFr:work.titleEn;
+ const body=french?work.editorialFrench:work.fullEnglish;
+ const originalStatus=french?work.sourceNoteFr:work.sourceNoteEn;
+ const ceremony=novena?'<p class="aoP435930SourceNote" data-ao-raphael-novena-policy>'+
+  esc(L('Nine-day devotional arrangement: repeat this one complete historical prayer daily, with a personal intention. The Raccolta does not prescribe this exact sequence.',
+   'Parcours de neuf jours : répétez chaque jour cette seule prière historique, avec une intention personnelle. Le Raccolta ne prescrit pas exactement cette séquence.'))+'</p>':'';
+ const shared=novena?'<details class="aoP435930SourceNote" data-ao-raphael-optional-shared>'+
+  '<summary>'+esc(L('Optional common prayers · not prescribed in the 1904 source','Prières communes facultatives · non prescrites dans la source de 1904'))+'</summary>'+
+  work.recurringProgramme.standardCommonPrayersOptional.map(id=>{
+   const p=DATA.prayers?.[id];
+   return p?'<section data-ao-raphael-canonical="'+esc(id)+'"><h3>'+esc(french?(p.titleFr||p.title):p.title)+'</h3>'+
+    '<p lang="'+lang()+'">'+nl(p[lang()]||p.en||'')+'</p></section>':'';
+  }).join('')+'</details>':'';
+ const navigation=novena?'<div class="aoJosephSevenProgress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="'+Math.round(day*100/9)+'" aria-label="'+esc(L('Novena progress','Progression de la neuvaine'))+'"><span style="width:'+Math.round(day*100/9)+'%"></span></div>':'';
+ const controls=novena?'<nav class="aoJosephSevenNav">'+
+  '<button type="button" data-p435930-raphael-prev '+(day===1?'disabled':'')+'>'+esc(L('Previous day','Jour précédent'))+'</button>'+
+  (day===9?'<button type="button" data-p435930-archangel-back>'+esc(L('Return to Prayer Library','Retour au livre de prières'))+'</button>':
+  '<button type="button" data-p435930-raphael-next>'+esc(L('Next day','Jour suivant'))+'</button>')+'</nav>':
+  '<nav class="aoJosephSevenNav"><button type="button" data-p435930-archangel-back>'+esc(L('Return to Prayer Library','Retour au livre de prières'))+'</button></nav>';
+ return head(title,L('Historical prayer · Lasance 1904','Prière historique · Lasance 1904'))+
+ '<main class="aoP435930Body aoP435930LibraryReader" data-ao-lasance-1904-archangel-reader="'+esc(work.id)+'">'+
+ (LASANCE_1904_RAPHAEL_DAY===0||!novena?'<p class="aoP435930SourceNote" data-ao-archangel-source-status>'+esc(originalStatus)+'</p>':'')+
+ navigation+'<article class="aoDevoCard" data-ao-raphael-day="'+(novena?day:0)+'"><div class="aoDevoCardScroll">'+
+ (novena?'<small>'+esc(L('Day','Jour'))+' '+day+' / 9</small>':'')+
+ '<h2>'+esc(title)+'</h2><p lang="'+lang()+'" data-ao-archangel-historic-body>'+nl(body)+'</p>'+
+ (novena?'<p class="aoP435930SourceNote" data-ao-raphael-intention>'+esc(L('Present your intention here.','Présentez ici votre intention.'))+'</p>':'')+
+ shared+ceremony+'</div></article>'+
+ controls+'<details class="aoP435930SourceNote"><summary>'+esc(L('Edition and source','Édition et source'))+'</summary>'+
+ '<p>'+esc(work.sourceWork)+'</p><p>'+esc(originalStatus)+'</p>'+
+ '<a href="'+esc(work.sourceURL)+'" target="_blank" rel="noopener noreferrer">'+esc(L('1904 English witness','Témoin anglais de 1904'))+'</a>'+
+ (novena?' · <a href="'+esc(work.recurringProgramme.sourceNovenaURL)+'" target="_blank" rel="noopener noreferrer">'+
+ esc(L('1910 Raccolta novena permission','Raccolta 1910 : permission de neuvaine'))+'</a>':'')+
+ '</details></main>';
+}
 function renderLibrary(){
+ if(LIB.open&&lasance1904ArchangelWork(LIB.open))return renderLasance1904Archangel();
  if(LIB.open&&massSequencePrayerWork(LIB.open))return renderMassSequencePrayer();
  if(LIB.open){
   const p=P(LIB.open);if(!p){LIB.open=null;return renderLibrary()}
@@ -2777,6 +2818,18 @@ function renderLibrary(){
    '<small>'+esc(L('MASS SEQUENCE · SOURCE READER','SÉQUENCE DE MESSE · SOURCE'))+'</small>'+
    '<b>'+esc(isFr()?work.titleFr:work.title)+'</b><span>LA · EN · FR</span></button>').join('')+
    '</div></section>');
+ const archangel1904Works=lasance1904ArchangelMatches({subject:LIB.subject,category:LIB.cat,search:q});
+ const archangel1904Section=!archangel1904Works.length?'':(
+  '<section class="aoP435930LibraryRelated" data-ao-lasance-1904-archangel-library>'+
+  '<h3>'+esc(L('Archangels · Historical prayers','Archanges · Prières historiques'))+'</h3>'+
+  '<p>'+esc(L('Two complete 1904 English prayers with editorial French; St Raphael has an optional nine-day guide.',
+   'Deux prières anglaises de 1904 avec français éditorial ; saint Raphaël dispose d’un parcours facultatif de neuf jours.'))+'</p>'+
+  '<div class="aoP435930ModuleGrid">'+archangel1904Works.map(w=>
+   '<button type="button" class="aoP435930ModuleCard" data-p435930-lib-open="'+esc(w.id)+'" data-ao-archangel-open="'+esc(w.id)+'">'+
+    '<small>LASANCE · 1904</small><b>'+esc(isFr()?w.titleFr:w.titleEn)+'</b>'+
+    '<span>'+esc(w.recurringProgramme?L('9-day repetition · one complete prayer','Répétition sur 9 jours · une prière intégrale'):
+     L('One complete historical prayer','Une prière historique intégrale'))+'</span></button>'
+  ).join('')+'</div></section>');
  const guidedLinks=LIB.cat==='all'?guidedPrayerLinksForSubject(LIB.subject,q):[];
  const guidedSection=LIB.cat!=='all'||!guidedLinks.length?
   '':('<section class="aoP435930LibraryRelated" data-ao-prayer-subject-guided="'+esc(LIB.subject)+'">'+
@@ -2793,9 +2846,9 @@ function renderLibrary(){
   '<div class="aoP435930Chips" role="group" aria-label="'+esc(L('Theological prayer families','Familles théologiques de prières'))+'">'+
   '<button type="button" data-p435930-lib-subject="all" aria-pressed="'+String(LIB.subject==='all')+'">'+esc(L('All subjects','Tous les sujets'))+'</button>'+
   PRAYER_SUBJECTS_V1.map(subject=>'<button type="button" data-p435930-lib-subject="'+subject.id+'" aria-pressed="'+String(LIB.subject===subject.id)+'">'+
-    esc(isFr()?subject.fr:subject.en)+' <small>'+(subjectCounts.counts[subject.id]+prayerSupplementalLiveWorksForSubject(subject.id).length +prayerSevenSourceWorksForSubject(subject.id).length+redBookletCommunionLibraryLinksForSubject(subject.id).length+redBookletSuscipeLibraryLinksForSubject(subject.id).length+redBookletPrivateHistoricalWorksForSubject(subject.id).length+MASS_SEQUENCE_PRAYER_WORKS.filter(x=>x.subject===subject.id).length+(subject.id==='V'?1:0))+'</small></button>').join('')+
+    esc(isFr()?subject.fr:subject.en)+' <small>'+(subjectCounts.counts[subject.id]+prayerSupplementalLiveWorksForSubject(subject.id).length +prayerSevenSourceWorksForSubject(subject.id).length+redBookletCommunionLibraryLinksForSubject(subject.id).length+redBookletSuscipeLibraryLinksForSubject(subject.id).length+redBookletPrivateHistoricalWorksForSubject(subject.id).length+MASS_SEQUENCE_PRAYER_WORKS.filter(x=>x.subject===subject.id).length+(subject.id==='V'?1:0)+LASANCE_1904_ARCHANGELS_V1.filter(w=>w.subject===subject.id).length)+'</small></button>').join('')+
   '</div><p class="aoP435930SourceNote">'+esc(L('Only accessible canonical and source-owned reader texts are included. Unverified research works are not shown as readable prayers.','Seuls les textes canoniques et les prières déjà accessibles dans leurs parcours d’origine sont inclus. Les œuvres de recherche non vérifiées ne sont pas présentées comme disponibles.'))+'</p></details>';
- return `${head(L('Prayer Library','Livre de prières'),L('Prayers and guided devotions','Prières et dévotions guidées'))}<main class="aoP435930Body">${libraryOverviewGuide()}<label class="aoP435930Search"><span>${assetIcon('ao-ui-search')}</span><input type="search" data-p435930-lib-search value="${esc(LIB.q)}" placeholder="${esc(L('Search prayers','Rechercher une prière'))}"></label><div class="aoP435930Chips">${cats.map(([id,n])=>`<button type="button" class="${id===LIB.cat?'active':''}" data-p435930-lib-cat="${esc(id)}">${esc(n)}</button>`).join('')}</div>${subjectBrowse}<div class="aoP435930LibraryList" data-ao-prayer-subject-results="${esc(LIB.subject)}">${LIB.cat==="essentials"&&!q?claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2,prayers:DATA.prayers,locale:lang(),esc,title:L("Essential Prayers","Prières essentielles"),artFor:releasedPrayerCardArtUrl}):(rows.length||!(historicalWorks.length+sourceDeepWorks.length+privateCommunionWorks.length+privateHistoricalWorks.length+(stabatSeptember?1:0)+massSequences.length)?renderLibraryEntryRows(rows,q):'')}</div>${communionSection}${privateHistoricalSection}${historicalSection}${stabatLibrarySection}${massSequenceSection}${guidedSection}</main>`;
+ return `${head(L('Prayer Library','Livre de prières'),L('Prayers and guided devotions','Prières et dévotions guidées'))}<main class="aoP435930Body">${libraryOverviewGuide()}<label class="aoP435930Search"><span>${assetIcon('ao-ui-search')}</span><input type="search" data-p435930-lib-search value="${esc(LIB.q)}" placeholder="${esc(L('Search prayers','Rechercher une prière'))}"></label><div class="aoP435930Chips">${cats.map(([id,n])=>`<button type="button" class="${id===LIB.cat?'active':''}" data-p435930-lib-cat="${esc(id)}">${esc(n)}</button>`).join('')}</div>${subjectBrowse}<div class="aoP435930LibraryList" data-ao-prayer-subject-results="${esc(LIB.subject)}">${LIB.cat==="essentials"&&!q?claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2,prayers:DATA.prayers,locale:lang(),esc,title:L("Essential Prayers","Prières essentielles"),artFor:releasedPrayerCardArtUrl}):(rows.length||!(historicalWorks.length+sourceDeepWorks.length+privateCommunionWorks.length+privateHistoricalWorks.length+(stabatSeptember?1:0)+massSequences.length+archangel1904Works.length)?renderLibraryEntryRows(rows,q):'')}</div>${communionSection}${privateHistoricalSection}${historicalSection}${stabatLibrarySection}${massSequenceSection}${archangel1904Section}${guidedSection}</main>`;
 }
 function monthIndex(key){const d=dateObj(key);return d?d.getFullYear()*12+d.getMonth():null}
 function consecutive(records,needed){const done=records.filter(x=>x.complete).sort((a,b)=>a.date.localeCompare(b.date));if(!done.length)return 0;let c=1;for(let i=done.length-1;i>0;i--){const a=monthIndex(done[i].date),b=monthIndex(done[i-1].date);if(a-b===1)c++;else break}return Math.min(c,needed)}
@@ -5111,7 +5164,19 @@ function onClick(e){
   MASS_SEQUENCE_READING.error=null;MASS_SEQUENCE_READING.loading=false;
   MASS_SEQUENCE_READING.token++;return render();
  }
- if(b.dataset.p435930LibOpen){LIB.open=b.dataset.p435930LibOpen;LIB.language=null;PILOT_LORETO_GROUP=false;return render()}
+ if(b.matches('[data-p435930-raphael-prev]')&&lasance1904ArchangelWork(LIB.open)){
+  LASANCE_1904_RAPHAEL_DAY=Math.max(0,LASANCE_1904_RAPHAEL_DAY-1);return render();
+ }
+ if(b.matches('[data-p435930-raphael-next]')&&lasance1904ArchangelWork(LIB.open)){
+  LASANCE_1904_RAPHAEL_DAY=Math.min(8,LASANCE_1904_RAPHAEL_DAY+1);return render();
+ }
+ if(b.matches('[data-p435930-archangel-back]')&&lasance1904ArchangelWork(LIB.open)){
+  LIB.open=null;LASANCE_1904_RAPHAEL_DAY=0;return render();
+ }
+ if(b.dataset.p435930LibOpen){
+  if(lasance1904ArchangelWork(b.dataset.p435930LibOpen))LASANCE_1904_RAPHAEL_DAY=0;
+  LIB.open=b.dataset.p435930LibOpen;LIB.language=null;PILOT_LORETO_GROUP=false;return render();
+ }
  if(b.dataset.p435930ScriptureRetry){
   // Retry only the exact currently displayed source identity, never switch
   // translation or fetch an alternative unsourced prayer text silently.
