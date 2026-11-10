@@ -29,5 +29,7 @@ assert.equal(await choose({request:{mode:"navigate"},clientId:"new-document",
  "Navigation always follows the explicit active snapshot rather than stale pins");
 assert.match(sw,/m\.type==="USE_SNAPSHOT"/);
 assert.match(sw,/saveState\(\{\.\.\.state,active:version\}\)/);
-assert.doesNotMatch(sw,/if\(navigation&&id\)liveClients\.set\(id,version\)/,\n "Navigation without resultingClientId must not overwrite an existing Mass tab pin");\nassert.match(sw,/if\(destination&&v\)liveClients\.set\(destination,v\)/);
+assert.doesNotMatch(sw,/if\(navigation&&id\)liveClients\.set\(id,version\)/,
+ "Navigation without resultingClientId must not overwrite an existing Mass tab pin");
+assert.match(sw,/if\(destination&&v\)liveClients\.set\(destination,v\)/);
 console.log("P0_EXPLICIT_UPDATE_NAVIGATION_PASS old-document preserved; new navigation uses activated snapshot; missing resulting client falls back safely");
