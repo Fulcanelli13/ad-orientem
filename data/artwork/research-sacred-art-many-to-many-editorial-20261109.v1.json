@@ -400,7 +400,7 @@
       "blockedHttp403": 2,
       "technicalImagePassButMobileHeroHold": 1
     },
-    "unverifiedPhotoSearchLane": 12,
+    "unverifiedPhotoSearchLane": 8,
     "currentRestrictedMuseumPhotoSearchLane": 45,
     "newInstitutionPolicyHolds10November2026": 9,
     "currentMSKAndKrakowBatch3Manifest": "data/artwork/research/m2m-open-source-batch3-msk-mnk-20261110.v1.json",
@@ -437,6 +437,18 @@
       "verifiedSources": 1,
       "krakowSourceMisses": 2,
       "publicRelease": 0
-    }
+    },
+    "clientRenderedMuseumPortalHolds": 4,
+    "clientRenderedPortalReport": "data/artwork/research/m2m-museum-portal-static-client-blockers-20261110.v1.json",
+    "portalStaticDiscoveryRun": {
+      "id": 42837900450,
+      "completed": true,
+      "artifactId": 13773124665,
+      "recordsInvestigated": 4,
+      "downloadableUrlsIdentified": 0,
+      "originalSourcePhotoBytesAcquired": 0
+    },
+    "mnkJohnCantiusSubject": "Broken-milk-jug miracle directly depicted; source-specific photo still pending",
+    "mnkStanislausSubject": "Excommunication of King Bolesław depicted, NOT saint's martyrdom; keep distinct"
   }
 }
