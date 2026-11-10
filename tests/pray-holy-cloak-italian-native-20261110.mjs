@@ -67,6 +67,6 @@ for(const marker of [
  "data-p435930-hc-prev","data-p435930-hc-next","data-p435930-hc-finish",
  "data-ao-holy-cloak-italian-open","HOLY_CLOAK_ITALIAN_SOURCE_V1.id"
 ])assert.ok(ui.includes(marker),"Missing native Holy Cloak reader contract "+marker);
-assert.match(ui,/original 1882 printed text/);
+assert.match(ui,/exact 1882 printed text/);
 assert.match(ui,/No certified EN\/FR body translation/);
 console.log("Holy Cloak IT: 19 complete source sections, offline 23-step reader, proper historic pre-2021 litany, opening and 3-fold Gloria, XIII 3-fold Requiem, closing and optional prayer PASS");
