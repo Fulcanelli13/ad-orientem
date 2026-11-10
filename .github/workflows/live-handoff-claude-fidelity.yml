@@ -5,6 +5,9 @@ on:
       - 'src/mass/reader-live-handoff-claude-*.js'
       - 'src/mass/reader-live-handoff-band.js'
       - 'tests/reader-live-handoff-claude-*.mjs'
+      - 'tests/reader-live-handoff-native66-split.mjs'
+      - 'src/mass/reader-live-handoff-source-crosswalk.js'
+      - 'src/mass/reader-live-handoff-timeline.js'
       - 'tests/live-handoff-visual-acceptance.mjs'
       - 'tests/live-handoff-native-mass-e2e.mjs'
       - '.github/workflows/live-handoff-claude-fidelity.yml'
@@ -28,6 +31,7 @@ jobs:
           node --check src/mass/reader-live-handoff-band.js
           node --test tests/reader-live-handoff-claude-source.mjs
           node --test tests/reader-live-handoff-claude-stage-d.mjs
+          node --test tests/reader-live-handoff-native66-split.mjs
           node --test tests/reader-live-handoff-routes.mjs
           node --test tests/reader-live-handoff-turns.mjs
           node --test tests/reader-live-handoff-stage-d.mjs
