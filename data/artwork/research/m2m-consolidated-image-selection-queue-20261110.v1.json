@@ -17,7 +17,8 @@
     "data/artwork/research/m2m-ribera-alcantara-pinakothek909-verified-native-photo-20261110.v1.json",
     "data/artwork/research/m2m-three-unresolved-march-gospel-leads-20261110.v1.json",
     "data/artwork/research/m2m-open-colour-batch2-nationalmuseum-rijks-20261110.v1.json",
-    "data/artwork/research/m2m-open-colour-batch2-source-verification-20261110.v1.json"
+    "data/artwork/research/m2m-open-colour-batch2-source-verification-20261110.v1.json",
+    "data/artwork/research/m2m-open-source-batch3-msk-mnk-20261110.v1.json"
   ],
   "counts": {
     "originalDateRelationships": 198,
@@ -37,15 +38,17 @@
     "verifiedColourJpegExternalAlternate": 1,
     "newOwnerApprovedPlacements": 0,
     "formalAppContainerCropCertifications": 0,
-    "newPublicArtworkReleases": 0
+    "newPublicArtworkReleases": 0,
+    "newInstitutionPhotoPolicyHolds": 9,
+    "unverifiedPhotoSearchLaneRemaining": 40
   },
   "reviewLaneCounts": {
     "A_VERIFIED_SOURCE_PHOTO_EDITORIAL_AND_MOBILE_QA": 8,
     "B_COPYRIGHT_REVIEW": 1,
     "B_RECONCILE_WORK_IDENTITY": 1,
     "C_FIND_TRUE_COLOUR_REPRODUCTION": 1,
-    "C_LOCATE_REUSABLE_COLOUR_SOURCE": 49,
-    "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT": 9,
+    "C_LOCATE_REUSABLE_COLOUR_SOURCE": 40,
+    "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT": 18,
     "D_CHECK_ICONOGRAPHIC_FIDELITY": 13,
     "D_CONTEXT_ONLY_FIND_EXACT_GOSPEL_SCENE": 1,
     "D_NONPRIORITY_ARTWORK_SOURCE_REVIEW": 50,
@@ -65,7 +68,8 @@
     "The three supplementary March leads do not change the 362/365 official Calendar research census until reconciled and approved.",
     "Priority ranking is operational work order, not artistic endorsement or approval; contextual and partial Gospel episodes remain held.",
     "A successfully acquired painting photograph may still fail Gospel-subject readability on mobile; keep Rijks SK-A-868 out of hero publication despite source licence and high pixel count.",
-    "Nationalmuseum NM420/NM1134 return HTTP 403 on their exact official JPG endpoints: never count as acquired, and no non-owner-handpicked Commons source enters curated pool."
+    "Nationalmuseum NM420/NM1134 return HTTP 403 on their exact official JPG endpoints: never count as acquired, and no non-owner-handpicked Commons source enters curated pool.",
+    "Official museum image policies reviewed 10 Nov 2026: Louvre, Cincinnati, Timken and KHM institutional photographs have no confirmed commercial-use permission without prior licence; their 9 exact work keys are held, while a separate genuinely open photograph may still be researched."
   ],
   "photographs": [
     {
@@ -823,13 +827,21 @@
       "sourceAuditNote": "1630 authentic oil canvas, 1917.58; exact Peter Nolasco and legend of discovery",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-audit18-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Do not acquire or publish this museum's official photo without required rights; seek an independently documented and freely reusable colour reproduction of the exact artwork (no fees, contacts, or unapproved Commons promotion).",
+      "risk": "OFFICIAL_MUSEUM_PHOTO_POLICY_NOT_COMPATIBLE_WITH_PROPOSED_COMMERCIAL_USE",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://www.cincinnatiartmuseum.org/about/contact-us/photography-licensing-social-media-policies/",
+        "reviewDate": "2026-11-10",
+        "disposition": "BRIDGEMAN_IMAGE_LICENSING_REQUIRES_REQUEST_HOLD",
+        "appliesTo": "MUSEUM_SELECTED_PHOTO_ONLY_NOT_UNDERLYING_PUBLIC_DOMAIN_ARTWORK",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false
+      }
     },
     {
       "artworkKey": "Dresden:423",
@@ -2664,13 +2676,21 @@
       "sourceAuditNote": "KHM Gemäldegalerie 52, ca.1565/70, oil on canvas. Youth is partly cropped by *artist's own composition* in lower left; do NOT crop it away a second time",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-audit18-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Do not acquire or publish this museum's official photo without required rights; seek an independently documented and freely reusable colour reproduction of the exact artwork (no fees, contacts, or unapproved Commons promotion).",
+      "risk": "OFFICIAL_MUSEUM_PHOTO_POLICY_NOT_COMPATIBLE_WITH_PROPOSED_COMMERCIAL_USE",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://www.khm.at/en/artworks/the-raising-of-the-youth-of-nain-388-1",
+        "reviewDate": "2026-11-10",
+        "disposition": "KHM_MUSEUM_IMAGE_REPRODUCTION_RIGHTS_NOT_OPEN_HOLD",
+        "appliesTo": "MUSEUM_SELECTED_PHOTO_ONLY_NOT_UNDERLYING_PUBLIC_DOMAIN_ARTWORK",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false
+      }
     },
     {
       "artworkKey": "Kress:K1047",
@@ -2900,13 +2920,21 @@
       "sourceAuditNote": "17th-century oil on canvas, 160×86.5cm, Louvre INV20459, currently not on view. Museum explicitly lists 'Maratti, Carlo, D'après'; do not credit autograph Maratti or assume official image commercial reuse.",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-final15-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Do not acquire or publish this museum's official photo without required rights; seek an independently documented and freely reusable colour reproduction of the exact artwork (no fees, contacts, or unapproved Commons promotion).",
+      "risk": "OFFICIAL_MUSEUM_PHOTO_POLICY_NOT_COMPATIBLE_WITH_PROPOSED_COMMERCIAL_USE",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://collections.louvre.fr/en/page/cgu",
+        "reviewDate": "2026-11-10",
+        "disposition": "MUSEUM_PHOTO_COMMERCIAL_USE_REQUIRES_RIGHTS_REVIEW_OR_PAID_PERMISSION_NO_DIRECT_ACQUISITION",
+        "appliesTo": "MUSEUM_SELECTED_PHOTO_ONLY_NOT_UNDERLYING_PUBLIC_DOMAIN_ARTWORK",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false
+      }
     },
     {
       "artworkKey": "Louvre:INV20573",
@@ -2938,13 +2966,21 @@
       "sourceAuditNote": "1864 oil on canvas, 205×87 cm, part of Élysée chapel commission, later transferred to Louvre; very tall arched composition. The site offers image download subject to terms, not proven unrestricted source photo.",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-followup15-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Do not acquire or publish this museum's official photo without required rights; seek an independently documented and freely reusable colour reproduction of the exact artwork (no fees, contacts, or unapproved Commons promotion).",
+      "risk": "OFFICIAL_MUSEUM_PHOTO_POLICY_NOT_COMPATIBLE_WITH_PROPOSED_COMMERCIAL_USE",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://collections.louvre.fr/en/page/cgu",
+        "reviewDate": "2026-11-10",
+        "disposition": "MUSEUM_PHOTO_COMMERCIAL_USE_REQUIRES_RIGHTS_REVIEW_OR_PAID_PERMISSION_NO_DIRECT_ACQUISITION",
+        "appliesTo": "MUSEUM_SELECTED_PHOTO_ONLY_NOT_UNDERLYING_PUBLIC_DOMAIN_ARTWORK",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false
+      }
     },
     {
       "artworkKey": "Louvre:INV24837",
@@ -3056,13 +3092,21 @@
       "sourceAuditNote": "Louvre INV259 oil canvas 1730–37, St Anselm identified in group; Louvre reports Napoleonic seizure from Piacenza in 1803",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-followup10-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Do not acquire or publish this museum's official photo without required rights; seek an independently documented and freely reusable colour reproduction of the exact artwork (no fees, contacts, or unapproved Commons promotion).",
+      "risk": "OFFICIAL_MUSEUM_PHOTO_POLICY_NOT_COMPATIBLE_WITH_PROPOSED_COMMERCIAL_USE",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://collections.louvre.fr/en/page/cgu",
+        "reviewDate": "2026-11-10",
+        "disposition": "MUSEUM_PHOTO_COMMERCIAL_USE_REQUIRES_RIGHTS_REVIEW_OR_PAID_PERMISSION_NO_DIRECT_ACQUISITION",
+        "appliesTo": "MUSEUM_SELECTED_PHOTO_ONLY_NOT_UNDERLYING_PUBLIC_DOMAIN_ARTWORK",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false
+      }
     },
     {
       "artworkKey": "Louvre:INV8417",
@@ -3214,13 +3258,21 @@
       "sourceAuditNote": "Louvre MI888 (1660–65) exact Thomas of Villanova; history shows past misidentifications as St Ambrose or Carreño. Retain current Louvre identity with historical attribution caveat",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-audit18-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Do not acquire or publish this museum's official photo without required rights; seek an independently documented and freely reusable colour reproduction of the exact artwork (no fees, contacts, or unapproved Commons promotion).",
+      "risk": "OFFICIAL_MUSEUM_PHOTO_POLICY_NOT_COMPATIBLE_WITH_PROPOSED_COMMERCIAL_USE",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://collections.louvre.fr/en/page/cgu",
+        "reviewDate": "2026-11-10",
+        "disposition": "MUSEUM_PHOTO_COMMERCIAL_USE_REQUIRES_RIGHTS_REVIEW_OR_PAID_PERMISSION_NO_DIRECT_ACQUISITION",
+        "appliesTo": "MUSEUM_SELECTED_PHOTO_ONLY_NOT_UNDERLYING_PUBLIC_DOMAIN_ARTWORK",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false
+      }
     },
     {
       "artworkKey": "Louvre:RF1966.1",
@@ -3252,13 +3304,21 @@
       "sourceAuditNote": "Louvre RF 1966 1, 1537 oil on poplar, original predella 33 × 51cm; museum reports 1933–45 provenance gap. Not a large standalone wall altar panel",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-audit18-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Do not acquire or publish this museum's official photo without required rights; seek an independently documented and freely reusable colour reproduction of the exact artwork (no fees, contacts, or unapproved Commons promotion).",
+      "risk": "OFFICIAL_MUSEUM_PHOTO_POLICY_NOT_COMPATIBLE_WITH_PROPOSED_COMMERCIAL_USE",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://collections.louvre.fr/en/page/cgu",
+        "reviewDate": "2026-11-10",
+        "disposition": "MUSEUM_PHOTO_COMMERCIAL_USE_REQUIRES_RIGHTS_REVIEW_OR_PAID_PERMISSION_NO_DIRECT_ACQUISITION",
+        "appliesTo": "MUSEUM_SELECTED_PHOTO_ONLY_NOT_UNDERLYING_PUBLIC_DOMAIN_ARTWORK",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false
+      }
     },
     {
       "artworkKey": "Louvre:RF1983.56",
@@ -3290,13 +3350,21 @@
       "sourceAuditNote": "Louvre RF 1983 56, 1710–20 oval oil canvas; correct Bernardine of Siena, not earlier label Saint Bruno / Domenico Tiepolo",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-audit18-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Do not acquire or publish this museum's official photo without required rights; seek an independently documented and freely reusable colour reproduction of the exact artwork (no fees, contacts, or unapproved Commons promotion).",
+      "risk": "OFFICIAL_MUSEUM_PHOTO_POLICY_NOT_COMPATIBLE_WITH_PROPOSED_COMMERCIAL_USE",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://collections.louvre.fr/en/page/cgu",
+        "reviewDate": "2026-11-10",
+        "disposition": "MUSEUM_PHOTO_COMMERCIAL_USE_REQUIRES_RIGHTS_REVIEW_OR_PAID_PERMISSION_NO_DIRECT_ACQUISITION",
+        "appliesTo": "MUSEUM_SELECTED_PHOTO_ONLY_NOT_UNDERLYING_PUBLIC_DOMAIN_ARTWORK",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false
+      }
     },
     {
       "artworkKey": "Louvre:RF1985.63",
@@ -6089,13 +6157,21 @@
       "sourceAuditNote": "Timken original, accession 1957:002, 1557 oil panel; appointed Sexagesima Gospel sower",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-followup10-20261110.v1.json",
       "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "lane": "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT",
+      "nextAction": "Do not acquire or publish this museum's official photo without required rights; seek an independently documented and freely reusable colour reproduction of the exact artwork (no fees, contacts, or unapproved Commons promotion).",
+      "risk": "OFFICIAL_MUSEUM_PHOTO_POLICY_NOT_COMPATIBLE_WITH_PROPOSED_COMMERCIAL_USE",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
-      "releaseReady": false
+      "releaseReady": false,
+      "institutionPhotoPolicyHold": {
+        "policyUrl": "https://www.timkenmuseum.org/static/media/uploads/Resources%20/rights_reproduction_policy_timken_museum_of_art.pdf",
+        "reviewDate": "2026-11-10",
+        "disposition": "MUSEUM_WRITTEN_PERMISSION_AND_USAGE_FEE_REQUIRED_HOLD",
+        "appliesTo": "MUSEUM_SELECTED_PHOTO_ONLY_NOT_UNDERLYING_PUBLIC_DOMAIN_ARTWORK",
+        "alternativeImageSearchAllowed": true,
+        "paidRequestOrOwnerContactAllowed": false
+      }
     },
     {
       "artworkKey": "UMMA:1960/2.93",
@@ -6766,7 +6842,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
       ]
     },
     {
@@ -6905,7 +6981,6 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE",
         "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
       ]
     },
@@ -6965,7 +7040,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
       ]
     },
     {
@@ -7062,8 +7137,8 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "D_NONPRIORITY_ARTWORK_SOURCE_REVIEW",
-        "A_VERIFIED_SOURCE_PHOTO_EDITORIAL_AND_MOBILE_QA"
+        "A_VERIFIED_SOURCE_PHOTO_EDITORIAL_AND_MOBILE_QA",
+        "D_NONPRIORITY_ARTWORK_SOURCE_REVIEW"
       ]
     },
     {
@@ -7314,7 +7389,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
       ]
     },
     {
@@ -7488,7 +7563,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
       ]
     },
     {
@@ -7742,7 +7817,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
       ]
     },
     {
@@ -8152,7 +8227,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
       ]
     },
     {
@@ -8909,7 +8984,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
       ]
     },
     {
@@ -8928,7 +9003,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
       ]
     },
     {
@@ -8947,7 +9022,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
       ]
     },
     {
@@ -8985,7 +9060,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
       ]
     },
     {
@@ -9120,7 +9195,7 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE"
+        "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT"
       ]
     },
     {
