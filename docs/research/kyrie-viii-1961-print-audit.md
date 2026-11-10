@@ -42,11 +42,19 @@ This is a **source-anchored structural review**, not a musical-publication decis
 
 `node tests/schola-kyrie-viii-review-manifest.mjs` verifies that **none** of these nine records can be selected by the approved Schola dock even if the separate promotion-row status is changed alone. Passing this technical gate is not sufficient for approval; the two independent publication checks must be certified.
 
+## Completed technical review — source-locked offline phone rendering
+
+Dedicated [CI run 42779203593](https://github.com/Fulcanelli13/ad-orientem/actions/runs/42779203593) (10 November 2026) rendered all nine **unapproved** source-specific excerpts with the existing bundled Exsurge library: **9/9 at 320px and 9/9 at 390px**. All 18 SVGs remained inside the phone viewport, and all **18/18** GABC-to-SVG lyric mappings validated exactly.
+
+This uncovered a real decorated-initial segmentation detail: Exsurge displays the `K` and `Y-` of the first `KY` as adjacent text nodes. The strict follower now combines those nodes for **the first syllable only**, after checking the exact concatenated Latin identity. The rest of the original syllables must match individually, in order. Unit tests reject incorrect initials and changed middle syllables. No sounds or actual choir timing were inferred.
+
+These results establish the **technical engraving and alignment** of the candidate GABC excerpts—not independent musical note-by-note verification or editorial approval.
+
 ## Outstanding proof actions
 
 1. Perform independent high-resolution print comparison of all four musical phrases with particular attention to historical punctuation and alterations.
 2. Confirm that the derived per-cue `(c3)` headers and removal of printed `iij.` / `ij.` repeat annotations do not alter the intended staff music or lyric positioning.
-3. Verify actual Exsurge rendering of all nine derived GABC scores at 320px/390px, including one-to-one lyric/score mapping and the distinct final cue.
+3. Once editorially approved, run an actual 65-card LIVE reader session with the true selected Kyrie VIII score, confirming the nine individual cues, source Latin, mobile scroll/syllable timing, and no false local-choir performance inference. (The isolated offline Exsurge and glyph-alignment tests above are already green.)
 4. Only after these pass, record an explicit musical/editorial approval before changing `APPROVED_MASS_INLINE_GABC` and `SCHOLA_DOCK_SCORE_APPROVALS` and testing a public release.
 
 **Policy:** Do not substitute a modern Ordinary-form six-invocation Kyrie for this 1962 nine-invocation text; do not infer which Mass VIII setting a local choir actually sings; do not use priest card movement or estimated notation timing as evidence of observed music; do not publish the research GABC as an approved Schola score.
