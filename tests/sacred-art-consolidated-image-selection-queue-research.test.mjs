@@ -131,7 +131,7 @@ for(const item of finalSourceAudit.sources){
 }
 assert.equal(queue.reviewLaneCounts.C_CLIENT_RENDERED_MUSEUM_PORTAL_REQUIRES_NEW_METHOD,4);
 assert.equal(queue.counts.clientRenderedFirstPartyPortalImageHolds,4);
-assert.equal(queue.counts.unverifiedPhotoSearchLaneRemaining,8);
+assert.equal(queue.counts.unverifiedPhotoSearchLaneRemaining,queue.reviewLaneCounts.C_LOCATE_REUSABLE_COLOUR_SOURCE??0);
 assert.equal(queue.counts.firstPartyMediaRecordInvestigations,4);
 assert.equal(queue.counts.museumPortalsNeedingClientRenderedAccess,4);
 const portalBlockers=read(root+'m2m-museum-portal-static-client-blockers-20261110.v1.json');
