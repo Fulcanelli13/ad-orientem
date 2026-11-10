@@ -1,3 +1,4 @@
+/* 2026-11-10 CL27 six Polish first-party source patterns, exact frozen CL2 IDs; no event inference. */
 /* 2026-11-10 CL27 fourteen-site source-weekly supplement with exceptions.
  * Preserve ten earlier site programmes, all 26 contacts, and exact-Pages offline snapshots.
  * Source-published pattern only: no generated future Mass, missal or status inference.
