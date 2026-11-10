@@ -6,6 +6,7 @@
 import {LIVE_HANDOFF_REFERENCE_TURNS,LIVE_HANDOFF_SOURCE_POINTS,
   projectLiveHandoffPlanPosition} from "./reader-live-handoff-geometry.js";
 import {isExplicitRequiemMass} from "./reader-requiem-conditions.js";
+import {liveHandoffCrosswalkAccepted} from "./reader-live-handoff-source-crosswalk.js";
 const freeze=Object.freeze;
 const TURNS=freeze([
   // The source's 49 verified priest-position transitions, NOT handoff
@@ -59,7 +60,7 @@ function sourcePathFor(refNumber){
 export function projectLiveHandoffSourceTurnPreview({gate,nativeState,prepared}={}){
   if(gate?.ok!==true||!gate.reference)
     return hold("EXACT_NATIVE_CROSSWALK_REQUIRED");
-  if(gate.crosswalk?.status!=="EXACT_NATIVE_65_CROSSWALK"||
+  if(!liveHandoffCrosswalkAccepted(gate.crosswalk?.status)||
      gate.reference.status!=="MATCHED_SOURCE_CARD"||
      gate.reference.expectedNativeId!==gate.reference.nativeCardId)
     return hold("CERTIFIED_NATIVE_SOURCE_IDENTITY_REQUIRED");
