@@ -74,7 +74,7 @@ function claudeSourcePlanSVG(scene,fig){
     ${originalClaudeArchFragment({frontal:colour,veil,candles:scene?.candles||6})}
    </g>
    <g class="ao-claude-pews">${people}</g>
-   <g class="ao-claude-figures">${server}${priest}</g>
+   <g class="ao-claude-figures">${server}<g data-actor="priest">${priest}</g></g>
   </svg>`;
 }
 export function renderClaudeNativeSanctuary(scene){
