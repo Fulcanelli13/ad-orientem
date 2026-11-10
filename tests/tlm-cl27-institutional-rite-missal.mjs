@@ -99,5 +99,5 @@ for(const [path,value] of [
 const wrong=[...before];const first=wrong.findIndex(x=>x.physical_group_id===sample.physical_group_id);
 wrong[first]={...wrong[first],source_ids:["fake-ID"]};
 assert.throws(()=>attachInstitutionalMinistryLiturgy(wrong,source));
-assert.throws(()=>attachInstitutionalMinistryLiturgy([...before,before[0]],source));
+assert.throws(()=>attachInstitutionalMinistryLiturgy([...before,before[first]],source));
 console.log("PASS CL27 institute classification: 1383 frozen source ministries / 1300 distinct physical churches, Roman/1962 English/French cards, filtered scoped inheritance, three identity holds, 0 Una Cum/canonical/ownership inferences");
