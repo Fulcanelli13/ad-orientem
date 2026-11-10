@@ -1,0 +1,293 @@
+{
+  "schema": "AO_CL27_POLAND_WAVE2_OPERATOR_MASS_PATTERNS_V1",
+  "publication": "FIRST_PARTY_REPORTED_PATTERN_NOT_LIVE_MASS_OCCURRENCE",
+  "reviewed_on": "2026-11-10",
+  "policy": [
+    "Five exact pre-existing CL2 physical sites with Phase27M research certificates and contemporaneous first-party operator named-chapel page and district listing.",
+    "All claims are source-published patterns, NOT confirmed dated Mass occurrences. No RRULE expansion, Sunday-to-holiday assumption, or weekday-from-unspecified inference.",
+    "The Gniezno first Thursday and preceding first Friday Thursday are a single time-of-day row representing two potentially overlapping conditional descriptions.",
+    "The 2026-11-07 Łódź notice supersedes the former first-Saturday time with 10:00; older operator district print snippets can be stale.",
+    "Katowice 08:30 'suma' is NOT asserted to mean exactly Sung Mass in the app. Krosno late-night first-Friday Communion/adoration is NOT a Mass.",
+    "Other 2026 documented source conflicts (Białystok, Bielsko-Biała, Bolesławiec, Bydgoszcz, Kielce, Jarosław, Kalisz) are excluded pending exact source reconciliation.",
+    "No Una Cum, missal edition, canonical status, ownership, celebrant, precise GPS entrance or live availability inferred."
+  ],
+  "sites": [
+    {
+      "cl2_anchor": "RG-718C93E329B6",
+      "source_ids": [
+        "AO-B40-SSPX-PL-GNIEZNO",
+        "SSPXMAP:OPE-002723"
+      ],
+      "canonical_name": "Kaplica pw. Matki Bożej Dobrej Rady",
+      "country": "PL",
+      "physical_description": "Our Lady of Good Counsel chapel, ul. Krzywe Koło 2",
+      "existing_source_url": "https://www.piusx.org.pl/kaplice/zestawienie",
+      "source_page_url": "https://www.piusx.org.pl/kaplice/gniezno",
+      "source_directory_url": "https://www.piusx.org.pl/kaplice/zestawienie",
+      "source_publisher": "FSSPX Poland · piusx.org.pl",
+      "phase27m_certificate_id": "AO-27M-PL-009",
+      "checked_on": "2026-11-10",
+      "subject_scope": "ONE_NAMED_CL2_SITE_NOT_DISTRICT",
+      "entries": [
+        {
+          "scope": "SUNDAYS",
+          "time": "13:30",
+          "mass_type": "UNKNOWN",
+          "label_en": "Sundays (published pattern)",
+          "label_fr": "Dimanches (horaire publié)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "FIRST_FRIDAY",
+          "time": "07:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "First Friday of the month",
+          "label_fr": "Premier vendredi du mois",
+          "exception_en": "First Friday only; not every Friday.",
+          "exception_fr": "Premier vendredi uniquement ; pas tous les vendredis."
+        },
+        {
+          "scope": "FIRST_SATURDAY",
+          "time": "09:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "First Saturday of the month",
+          "label_fr": "Premier samedi du mois",
+          "exception_en": "First Saturday only; not every Saturday.",
+          "exception_fr": "Premier samedi uniquement ; pas tous les samedis."
+        },
+        {
+          "scope": "THURSDAY_SPECIAL",
+          "time": "18:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "First Thursdays or Thursday before first Friday",
+          "label_fr": "Premiers jeudis ou jeudi précédant le premier vendredi",
+          "exception_en": "The operator lists both first Thursdays and Thursdays immediately preceding first Fridays at 18:00. When both conditions describe the same date, this is one time, not two Masses. Verify locally.",
+          "exception_fr": "La source indique 18h00 à la fois les premiers jeudis et les jeudis précédant le premier vendredi. Si les deux conditions tombent le même jour, il s'agit d'un seul horaire, non de deux messes. Vérifier localement."
+        }
+      ]
+    },
+    {
+      "cl2_anchor": "RG-08B30B0916B1",
+      "source_ids": [
+        "AO-B33-L-PL-1D1F492238BE",
+        "AO-B40-SSPX-PL-KATOWICE"
+      ],
+      "canonical_name": "Kaplica św. Jacka",
+      "country": "PL",
+      "physical_description": "ul. Uniczowska 13, Katowice, Poland",
+      "existing_source_url": "https://www.piusx.org.pl/kaplice/katowice",
+      "source_page_url": "https://www.piusx.org.pl/kaplice/katowice",
+      "source_directory_url": "https://www.piusx.org.pl/kaplice/zestawienie",
+      "source_publisher": "FSSPX Poland · piusx.org.pl",
+      "phase27m_certificate_id": "AO-27M-PL-014",
+      "checked_on": "2026-11-10",
+      "subject_scope": "ONE_NAMED_CL2_SITE_NOT_DISTRICT",
+      "entries": [
+        {
+          "scope": "SUNDAYS",
+          "time": "08:30",
+          "mass_type": "UNKNOWN",
+          "label_en": "Sundays (published pattern)",
+          "label_fr": "Dimanches (horaire publié)",
+          "exception_en": "The source calls this a 'suma'; its precise musical form is not independently classified.",
+          "exception_fr": "La source indique « suma » ; la forme musicale précise n'est pas classée indépendamment."
+        },
+        {
+          "scope": "SUNDAYS",
+          "time": "18:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "Sundays (published pattern)",
+          "label_fr": "Dimanches (horaire publié)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "OTHER_SATURDAYS",
+          "time": "18:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "Other Saturdays, excluding first Saturdays",
+          "label_fr": "Autres samedis, hors premier samedi",
+          "exception_en": "The detailed chapel programme specifies remaining Saturdays, not first Saturdays.",
+          "exception_fr": "Le programme détaillé de la chapelle précise les autres samedis, hors premiers samedis."
+        },
+        {
+          "scope": "FIRST_FRIDAY",
+          "time": "19:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "First Friday of the month",
+          "label_fr": "Premier vendredi du mois",
+          "exception_en": "First Friday only.",
+          "exception_fr": "Premier vendredi uniquement."
+        },
+        {
+          "scope": "FIRST_SATURDAY",
+          "time": "09:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "First Saturday of the month",
+          "label_fr": "Premier samedi du mois",
+          "exception_en": "First Saturday replaces the usual other-Saturday pattern; check local notices.",
+          "exception_fr": "Le premier samedi a un horaire distinct des autres samedis ; vérifier les annonces locales."
+        }
+      ]
+    },
+    {
+      "cl2_anchor": "RG-5C04CA9B3BD4",
+      "source_ids": [
+        "AO-B40-SSPX-PL-KROSNO",
+        "SSPXMAP:OPE-002715"
+      ],
+      "canonical_name": "Kaplica pw. św. Jana z Dukli",
+      "country": "PL",
+      "physical_description": "St. John of Dukla chapel, ul. Okrzei 4A",
+      "existing_source_url": "https://www.piusx.org.pl/kaplice/zestawienie",
+      "source_page_url": "https://www.piusx.org.pl/kaplice/krosno",
+      "source_directory_url": "https://www.piusx.org.pl/kaplice/zestawienie",
+      "source_publisher": "FSSPX Poland · piusx.org.pl",
+      "phase27m_certificate_id": "AO-27M-PL-017",
+      "checked_on": "2026-11-10",
+      "subject_scope": "ONE_NAMED_CL2_SITE_NOT_DISTRICT",
+      "entries": [
+        {
+          "scope": "SUNDAYS",
+          "time": "13:30",
+          "mass_type": "UNKNOWN",
+          "label_en": "Sundays (published pattern)",
+          "label_fr": "Dimanches (horaire publié)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "FIRST_SATURDAY",
+          "time": "08:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "First Saturday of the month",
+          "label_fr": "Premier samedi du mois",
+          "exception_en": "First Saturday only. The first-Friday late-night notice concerns Communion/adoration, not a listed Mass; no Friday Mass has been created.",
+          "exception_fr": "Premier samedi uniquement. L'avis tardif du premier vendredi concerne la communion et l'adoration, et non une messe annoncée ; aucune messe du vendredi n'est ajoutée."
+        }
+      ]
+    },
+    {
+      "cl2_anchor": "RG-7F6111F5DA58",
+      "source_ids": [
+        "AO-B40-SSPX-PL-LUBLIN",
+        "SSPXMAP:OPE-002303"
+      ],
+      "canonical_name": "Kaplica pw. św. Stanisława Kostki",
+      "country": "PL",
+      "physical_description": "St. Stanislaus Kostka chapel, ul. Żeglarska 6",
+      "existing_source_url": "https://www.piusx.org.pl/kaplice/zestawienie",
+      "source_page_url": "https://www.piusx.org.pl/kaplice/lublin",
+      "source_directory_url": "https://www.piusx.org.pl/kaplice/zestawienie",
+      "source_publisher": "FSSPX Poland · piusx.org.pl",
+      "phase27m_certificate_id": "AO-27M-PL-019",
+      "checked_on": "2026-11-10",
+      "subject_scope": "ONE_NAMED_CL2_SITE_NOT_DISTRICT",
+      "entries": [
+        {
+          "scope": "SUNDAYS",
+          "time": "11:30",
+          "mass_type": "UNKNOWN",
+          "label_en": "Sundays (published pattern)",
+          "label_fr": "Dimanches (horaire publié)",
+          "exception_en": "",
+          "exception_fr": ""
+        },
+        {
+          "scope": "FIRST_FRIDAY",
+          "time": "18:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "First Friday of the month",
+          "label_fr": "Premier vendredi du mois",
+          "exception_en": "First Friday only.",
+          "exception_fr": "Premier vendredi uniquement."
+        },
+        {
+          "scope": "FIRST_SATURDAY",
+          "time": "11:15",
+          "mass_type": "SUNG",
+          "label_en": "First Saturday of the month",
+          "label_fr": "Premier samedi du mois",
+          "exception_en": "The operator specifically describes this first-Saturday Mass as sung; a separate ordinary Saturday pattern is listed without a guarantee both are celebrated.",
+          "exception_fr": "La source précise que la messe du premier samedi est chantée ; un horaire ordinaire du samedi est également indiqué, sans garantie que les deux soient célébrées."
+        },
+        {
+          "scope": "SATURDAY",
+          "time": "18:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "Saturdays (source-published)",
+          "label_fr": "Samedis (horaire publié)",
+          "exception_en": "A first-Saturday 11:15 Mass is also published; verify whether 18:00 is maintained on those dates.",
+          "exception_fr": "Une messe est aussi annoncée le premier samedi à 11h15 ; vérifier si l'horaire de 18h00 est maintenu ces jours-là."
+        }
+      ]
+    },
+    {
+      "cl2_anchor": "RG-00E777838530",
+      "source_ids": [
+        "AO-B40-SSPX-PL-ODZ",
+        "SSPXMAP:OPE-002306",
+        "ao-research-sspx-oct26-poland-sspx-oct26-pl-odz-kaplica-sw-piusa-v"
+      ],
+      "canonical_name": "Kaplica pw. św. Piusa V",
+      "country": "PL",
+      "physical_description": "St. Pius V chapel, ul. ks. Piotra Skargi 12",
+      "existing_source_url": "https://www.piusx.org.pl/kaplice/zestawienie",
+      "source_page_url": "https://www.piusx.org.pl/kaplice/lodz",
+      "source_directory_url": "https://www.piusx.org.pl/kaplice/zestawienie",
+      "source_notice_url": "https://www.piusx.org.pl/komunikaty/2026/244",
+      "source_publisher": "FSSPX Poland · piusx.org.pl",
+      "phase27m_certificate_id": "AO-27M-PL-020",
+      "checked_on": "2026-11-10",
+      "subject_scope": "ONE_NAMED_CL2_SITE_NOT_DISTRICT",
+      "entries": [
+        {
+          "scope": "SUNDAYS",
+          "time": "09:00",
+          "mass_type": "SUNG",
+          "label_en": "Sundays (published pattern)",
+          "label_fr": "Dimanches (horaire publié)",
+          "exception_en": "Sung Mass explicitly stated by the operator.",
+          "exception_fr": "Messe chantée explicitement indiquée par la source."
+        },
+        {
+          "scope": "SUNDAYS",
+          "time": "12:00",
+          "mass_type": "LOW",
+          "label_en": "Sundays (published pattern)",
+          "label_fr": "Dimanches (horaire publié)",
+          "exception_en": "Low Mass explicitly stated by the operator.",
+          "exception_fr": "Messe lue explicitement indiquée par la source."
+        },
+        {
+          "scope": "FIRST_FRIDAY",
+          "time": "19:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "First Friday of the month",
+          "label_fr": "Premier vendredi du mois",
+          "exception_en": "First Friday only.",
+          "exception_fr": "Premier vendredi uniquement."
+        },
+        {
+          "scope": "FIRST_SATURDAY",
+          "time": "10:00",
+          "mass_type": "UNKNOWN",
+          "label_en": "First Saturday of the month",
+          "label_fr": "Premier samedi du mois",
+          "exception_en": "Official permanent change effective 7 November 2026; the source no longer lists the former first-Saturday time.",
+          "exception_fr": "Changement permanent officiel en vigueur depuis le 7 novembre 2026 ; l'ancien horaire du premier samedi n'est plus indiqué."
+        },
+        {
+          "scope": "SATURDAY",
+          "time": "18:00",
+          "mass_type": "LOW",
+          "label_en": "Saturdays (source-published)",
+          "label_fr": "Samedis (horaire publié)",
+          "exception_en": "The first-Saturday 10:00 Mass is also published; check whether the ordinary 18:00 Saturday Mass is held on those dates.",
+          "exception_fr": "Une messe est aussi indiquée le premier samedi à 10h00 ; vérifier si la messe ordinaire du samedi à 18h00 est maintenue."
+        }
+      ]
+    }
+  ]
+}

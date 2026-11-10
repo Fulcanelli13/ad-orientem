@@ -14,6 +14,7 @@ import {CL27_SITE_CONTACT_URL} from "../src/find/tlm-site-contact-evidence.js";
 import {CL27_WEEKLY_SOURCE_PROGRAMME_URL} from "../src/find/tlm-source-weekly-mass-programme.js";
 import {CL27_WEEKLY_SUPPLEMENT_URL} from "../src/find/tlm-weekly-source-supplement.js";
 import {CL27_POLAND_SOURCE_URL} from "../src/find/tlm-weekly-source-poland.js";
+import {CL27_POLAND_WAVE2_SOURCE_URL} from "../src/find/tlm-weekly-source-poland-wave2.js";
 import {CL27_DATED_MASS_PROGRAMME_URL,CL27_TARARE_DATED_MASS_PROGRAMME_URL} from "../src/find/tlm-dated-mass-programme.js";
 const base=JSON.parse(readFileSync(fileURLToPath(PRELIMINARY_R49_URL),"utf8"));
 const release=JSON.parse(readFileSync("data/directory/published-provisional-mass-sites-20261026.v1.json","utf8"));
@@ -23,6 +24,7 @@ const publishedContacts=JSON.parse(readFileSync(fileURLToPath(CL27_SITE_CONTACT_
 const publishedWeekly=JSON.parse(readFileSync(fileURLToPath(CL27_WEEKLY_SOURCE_PROGRAMME_URL),"utf8"));
 const publishedWeeklySupplement=JSON.parse(readFileSync(fileURLToPath(CL27_WEEKLY_SUPPLEMENT_URL),"utf8"));
 const publishedPoland=JSON.parse(readFileSync(fileURLToPath(CL27_POLAND_SOURCE_URL),"utf8"));
+const publishedPolandWave2=JSON.parse(readFileSync(fileURLToPath(CL27_POLAND_WAVE2_SOURCE_URL),"utf8"));
 const datedProgramme=JSON.parse(readFileSync(fileURLToPath(CL27_DATED_MASS_PROGRAMME_URL),"utf8"));
 const tarareProgramme=JSON.parse(readFileSync(fileURLToPath(CL27_TARARE_DATED_MASS_PROGRAMME_URL),"utf8"));
 const old=projectPreliminaryR49(base);
@@ -73,6 +75,7 @@ const api=async url=>{
    String(url)===CL27_WEEKLY_SOURCE_PROGRAMME_URL?publishedWeekly:
    String(url)===CL27_WEEKLY_SUPPLEMENT_URL?publishedWeeklySupplement:
    String(url)===CL27_POLAND_SOURCE_URL?publishedPoland:
+   String(url)===CL27_POLAND_WAVE2_SOURCE_URL?publishedPolandWave2:
    String(url)===CL27_DATED_MASS_PROGRAMME_URL?datedProgramme:
    String(url)===CL27_TARARE_DATED_MASS_PROGRAMME_URL?tarareProgramme:
    String(url).includes("published-provisional")?release:base};
@@ -88,9 +91,9 @@ assert.equal(live.filter(x=>x.site_contact_evidence).length,publishedContacts.re
  "Contact overlay count must match its validated source manifest after concurrent CL27 releases");
 assert.ok(live.filter(x=>x.site_contact_evidence).every(x=>!x.site_contact_evidence.mass_times&&!x.site_contact_evidence.una_cum));
 const weekly=live.filter(x=>x.weekly_source_programme);
-assert.equal(weekly.length,26,"Ten initial, fourteen supplemental and two source-corroborated Polish venues; no generated events");
+assert.equal(weekly.length,31,"Ten initial, fourteen supplemental and seven Polish venues; no generated events");
 assert.deepEqual(weekly.map(x=>x.physical_group_id).sort(),
- [...publishedWeekly.sites,...publishedWeeklySupplement.sites,...publishedPoland.sites].map(x=>x.cl2_anchor).sort());
+ [...publishedWeekly.sites,...publishedWeeklySupplement.sites,...publishedPoland.sites,...publishedPolandWave2.sites].map(x=>x.cl2_anchor).sort());
 assert.ok(weekly.every(x=>!x.weekly_source_programme.rrule&&!x.weekly_source_programme.una_cum));
 const dated=live.filter(x=>x.dated_mass_programme);
 assert.equal(dated.length,2,"Two separate exact CL2 chapels have source-listed dated programmes");
@@ -114,5 +117,6 @@ assert.deepEqual(calls,[PRELIMINARY_R49_URL,
   CL27_TARARE_DATED_MASS_PROGRAMME_URL,
   CL27_WEEKLY_SOURCE_PROGRAMME_URL,
   CL27_WEEKLY_SUPPLEMENT_URL,
-  CL27_POLAND_SOURCE_URL]);
-console.log("PASS B91 worldwide directory 2583 unchanged; 2569 mapped, 14 list-only; 26 source-weekly sites (79 times), 2 dated programmes (11 printed dates); zero generated recurring events");
+  CL27_POLAND_SOURCE_URL,
+  CL27_POLAND_WAVE2_SOURCE_URL]);
+console.log("PASS B91 worldwide directory 2583 unchanged; 2569 mapped, 14 list-only; 31 source-weekly sites (99 times), 2 dated programmes (11 printed dates); zero generated recurring events");
