@@ -15,7 +15,9 @@
     "data/artwork/research/m2m-walters-37-453-photo-research-20261110.v1.json",
     "data/artwork/research/m2m-wellcome-v0017627-verified-native-photo-20261110.v1.json",
     "data/artwork/research/m2m-ribera-alcantara-pinakothek909-verified-native-photo-20261110.v1.json",
-    "data/artwork/research/m2m-three-unresolved-march-gospel-leads-20261110.v1.json"
+    "data/artwork/research/m2m-three-unresolved-march-gospel-leads-20261110.v1.json",
+    "data/artwork/research/m2m-open-colour-batch2-nationalmuseum-rijks-20261110.v1.json",
+    "data/artwork/research/m2m-open-colour-batch2-source-verification-20261110.v1.json"
   ],
   "counts": {
     "originalDateRelationships": 198,
@@ -30,19 +32,19 @@
     "externalRiberaAlternateKeys": 1,
     "provisionalUnintegratedMarchKeys": 3,
     "totalSelectionQueueWorkKeys": 155,
-    "verifiedColourJpegSources": 7,
-    "verifiedSourcePhotosInOriginal151Pool": 6,
+    "verifiedColourJpegSources": 8,
+    "verifiedSourcePhotosInOriginal151Pool": 7,
     "verifiedColourJpegExternalAlternate": 1,
     "newOwnerApprovedPlacements": 0,
     "formalAppContainerCropCertifications": 0,
     "newPublicArtworkReleases": 0
   },
   "reviewLaneCounts": {
-    "A_VERIFIED_SOURCE_PHOTO_EDITORIAL_AND_MOBILE_QA": 7,
+    "A_VERIFIED_SOURCE_PHOTO_EDITORIAL_AND_MOBILE_QA": 8,
     "B_COPYRIGHT_REVIEW": 1,
     "B_RECONCILE_WORK_IDENTITY": 1,
     "C_FIND_TRUE_COLOUR_REPRODUCTION": 1,
-    "C_LOCATE_REUSABLE_COLOUR_SOURCE": 50,
+    "C_LOCATE_REUSABLE_COLOUR_SOURCE": 49,
     "C_RESTRICTED_PHOTO_FIND_OPEN_EQUIVALENT": 9,
     "D_CHECK_ICONOGRAPHIC_FIDELITY": 13,
     "D_CONTEXT_ONLY_FIND_EXACT_GOSPEL_SCENE": 1,
@@ -61,7 +63,9 @@
     "Do not use Prado photographs, pay licences, contact collection owners or deploy via Vercel.",
     "Image artifacts from GitHub Actions expire; source SHA plus provenance does not mean a durable licensed production file exists.",
     "The three supplementary March leads do not change the 362/365 official Calendar research census until reconciled and approved.",
-    "Priority ranking is operational work order, not artistic endorsement or approval; contextual and partial Gospel episodes remain held."
+    "Priority ranking is operational work order, not artistic endorsement or approval; contextual and partial Gospel episodes remain held.",
+    "A successfully acquired painting photograph may still fail Gospel-subject readability on mobile; keep Rijks SK-A-868 out of hero publication despite source licence and high pixel count.",
+    "Nationalmuseum NM420/NM1134 return HTTP 403 on their exact official JPG endpoints: never count as acquired, and no non-owner-handpicked Commons source enters curated pool."
   ],
   "photographs": [
     {
@@ -232,6 +236,39 @@
       "formalAppCropCertification": false,
       "publicationEligible": false,
       "sourceManifest": "data/artwork/research/m2m-ribera-alcantara-pinakothek909-verified-native-photo-20261110.v1.json"
+    },
+    {
+      "photographId": "PHOTO:Rijks:SK-A-868",
+      "artworkKey": "Rijks:SK-A-868",
+      "originalPhotoSourceUrl": "https://iiif.micr.io/yYdKx/full/max/0/default.jpg",
+      "catalogueUrl": "https://www.rijksmuseum.nl/en/collection/object/Kitchen-Scene-with-the-Parable-of-the-Rich-Man-and-Poor-Lazarus--52a0c9546d60ccda0e4d0cf6e88b9117",
+      "licence": "RIJKSMUSEUM_PUBLIC_DOMAIN_IIIF",
+      "exactBytesSha256": "507a9317f4aaa9a8ba217aa1d75a889a2f82cc2233a93484d1ab955e7d93ca73",
+      "pixelWidth": 6132,
+      "pixelHeight": 4483,
+      "sourceBytes": 6063138,
+      "sourceDateSpecificLicenceFinal": true,
+      "sourceFileAcquired": true,
+      "checksumsVerified": true,
+      "colourFront": true,
+      "medium": "JPEG_RGB",
+      "iccProfilePresent": false,
+      "wide390x240": {
+        "retainedImageAreaPct": 84.2,
+        "diagnostic": "VISUAL_HOLD_GOSPEL_SCENE_TOO_SMALL"
+      },
+      "portrait390x520": {
+        "retainedImageAreaPct": 54.8,
+        "diagnostic": "VISUAL_HOLD_RIGHT_BACKGROUND_EPISODE_CROPPED_OR_TINY"
+      },
+      "compositionRecommendation": "Hold for Calendar Gospel hero: rich man and Lazarus are tiny in the background; for general gallery show full painting with scene explanatory caption. Do not auto-promote a fabricated/reframed Gospel crop.",
+      "artifactRun": 42817873585,
+      "ephemeralArtifactId": 13764359268,
+      "imageInPublicAssets": false,
+      "ownerDateApproval": false,
+      "formalAppCropCertification": false,
+      "publicationEligible": false,
+      "sourceManifest": "data/artwork/research/m2m-open-colour-batch2-source-verification-20261110.v1.json"
     },
     {
       "photographId": "PHOTO:Walters:37.453",
@@ -5728,10 +5765,10 @@
       "sourceAuditRightStatus": "MUSEUM_OBJECT_PUBLIC_DOMAIN_SELECTED_PHOTO_NOT_YET_CHECKED",
       "sourceAuditNote": "Rijks SK-A-868, oil on canvas 198 × 272cm, rich man and Lazarus occupy small RIGHT background while still-life kitchen fills foreground; main Gospel motif may be too small on a phone",
       "sourceAuditFile": "data/artwork/research/m2m-exact-oil-source-rights-audit18-20261110.v1.json",
-      "verifiedPhotoId": null,
-      "lane": "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-      "nextAction": "Resolve image-specific licence, full-resolution colour photo, SHA and phone composition QA",
-      "risk": "SOURCE_PHOTO_UNVERIFIED",
+      "verifiedPhotoId": "PHOTO:Rijks:SK-A-868",
+      "lane": "A_VERIFIED_SOURCE_PHOTO_EDITORIAL_AND_MOBILE_QA",
+      "nextAction": "Do not use as mobile Gospel hero before explicit owner editorial decision. The full Rijks painting and licence are suitable for separate gallery consideration; do not misrepresent a small corner scene as the main picture.",
+      "risk": "SOURCE_VERIFIED_BUT_MOBILE_GOSPEL_SUBJECT_TOO_SMALL",
       "ownerApprovalForAnyNewDate": false,
       "preexistingOwnerSelectionNotSuperseded": true,
       "globalArtworkRejectionChecksRequired": true,
@@ -7025,8 +7062,8 @@
       "editorialDateApproval": false,
       "publishedImageAssignmentCreated": false,
       "reviewLanes": [
-        "C_LOCATE_REUSABLE_COLOUR_SOURCE",
-        "D_NONPRIORITY_ARTWORK_SOURCE_REVIEW"
+        "D_NONPRIORITY_ARTWORK_SOURCE_REVIEW",
+        "A_VERIFIED_SOURCE_PHOTO_EDITORIAL_AND_MOBILE_QA"
       ]
     },
     {
