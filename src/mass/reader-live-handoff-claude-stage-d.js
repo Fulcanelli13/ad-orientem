@@ -89,6 +89,7 @@ function claudeTimelineRender(timeline,{span=8,width=390,height=230}={}){
 export {claudeWheelRender,claudeTimelineRender};
 export const CLAUDE_PORT_CSS=[
 ".ao-claude-timeline-page{width:100%;height:100%;position:relative;min-height:0;background:#0b1016}",
+".ao-live-band[data-route-preview=\'true\'] .ao-claude-figures [data-actor=\'priest\']{opacity:0}",
 ".ao-claude-timeline-canvas{position:absolute;inset:8px 6px 22px 6px}",
 ".ao-claude-timeline-zoom{position:absolute;right:10px;top:8px;display:flex;gap:4px;z-index:3}",
 ".ao-claude-timeline-zoom button{width:28px;height:26px;border-radius:8px;border:1px solid rgba(255,255,255,.105);background:rgba(13,18,24,.85);color:#eee9df;font:15px Georgia,serif;cursor:pointer}",
