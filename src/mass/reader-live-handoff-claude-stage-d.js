@@ -16,7 +16,7 @@ function claudeSectionForCard(ref){
 function claudeWheelRender(wheel,timeline,nativeState=null){
  if(wheel?.ok!==true || timeline?.ok!==true)return `<div class="ao-claude-source-hold">Native 65-card source required</div>`;
  const SEC={cat:"#8c6d4f",off:"#b88a2e",can:"#a83a35",com:"#3f6f93",end:"#6a5a99"};
- const A=n=>2*Math.PI*n/65;
+ const A=n=>2*Math.PI*n/wheel.segments.length;
  const posture=timeline.lanes?.find(x=>x.id==="FAITHFUL");
  const bell=timeline.lanes?.find(x=>x.id==="BELLS");
  let g=`<svg class="ao-claude-wheel-svg" viewBox="-300 -300 600 600" role="img" aria-label="Multi-ring Mass wheel, card ordinal, not elapsed time">`;
@@ -30,8 +30,8 @@ function claudeWheelRender(wheel,timeline,nativeState=null){
  });
  g+=`<circle r="158" fill="none" stroke="#2c3645" stroke-width="22" opacity=".75"/>`;
  if(bell?.location!=null){const i=bell.location,a=A(i+.5);g+=`<circle cx="${282*Math.sin(a)}" cy="${-282*Math.cos(a)}" r="10" fill="#d4a640" stroke="#d4a640" stroke-width="3"/>`;}
- g+=`<g transform="rotate(${360*(timeline.position-.5)/65})"><line x1="0" y1="0" x2="0" y2="-262" stroke="#fff" stroke-width="6" stroke-linecap="round"/><circle r="14" fill="#fff"/></g></svg>`;
- const draftMeaning=CLAUDE_HANDOFF_DRAFT_MEANINGS[wheel.current?.sequence]??"";
+ g+=`<g transform="rotate(${360*(timeline.position-.5)/wheel.segments.length})"><line x1="0" y1="0" x2="0" y2="-262" stroke="#fff" stroke-width="6" stroke-linecap="round"/><circle r="14" fill="#fff"/></g></svg>`;
+ const draftMeaning=CLAUDE_HANDOFF_DRAFT_MEANINGS[Number(String(wheel.current?.referenceId??"").slice(1))]??"";
  const escapedMeaning=String(draftMeaning).replace(/[&<>"\x27]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","\x27":"&#39;"}[c]));
  const iconPaths=[];
  const post=posture?.location===timeline.position-1?posture?.text:null;
