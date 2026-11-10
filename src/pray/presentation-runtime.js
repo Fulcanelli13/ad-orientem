@@ -2685,7 +2685,7 @@ function renderRaccoltaGoodDeath(){
  return head(title,L('Raccolta · 1910','Raccolta · 1910'))+
   '<main class="aoP435930Body aoP435930LibraryReader" data-ao-raccolta-good-death-reader="'+esc(w.id)+'">'+
   '<p class="aoP435930SourceNote">'+esc(guided?L(w.instructionEn,w.instructionFr):
-   L('Historical source prayer; French is a modern editorial translation.','Prière historique ; le français est une traduction éditoriale moderne.'))+'</p>'+
+   (w.number===435?L('Historical Latin; English and French are editorial translations.','Latin historique ; anglais et français sont des traductions éditoriales.'):L('Historical Latin and English; French is an editorial translation.','Latin et anglais historiques ; français en traduction éditoriale.')))+'</p>'+
   (guided?'<p data-ao-raccolta-agony-progress>'+esc(L('Prayer','Prière'))+' '+(i+1)+' / 6</p>':'')+
   '<article class="aoDevoCard" data-ao-raccolta-agony-step="'+(guided?i+1:0)+'"><div class="aoDevoCardScroll">'+
   '<h2>'+esc(langLabel)+'</h2><p lang="'+lang()+'" data-ao-raccolta-prayer-body>'+nl(prayer)+'</p></div></article>'+
