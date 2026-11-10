@@ -89,3 +89,41 @@ export function prepareKyrieVIIIReview({corpus,source=offlineKyrialeResearchScor
   rows:Object.freeze(sourceRows)
  });
 }
+
+// Non-publishing per-cue score EXCERPTS for eventual musical comparison.
+// Repeats inherit the same printed neume line; the last Kyrie receives its
+// DISTINCT fourth line. Do not import these into either public approval table.
+export function prepareKyrieVIIIUnapprovedGabcExcerpts({corpus,source}={}){
+ const review=prepareKyrieVIIIReview({corpus,source});
+ if(review.status!=="READY_FOR_NOTE_BY_NOTE_PRINT_REVIEW_NOT_PUBLISHABLE")
+  return Object.freeze({status:"HOLD_SOURCE_MISMATCH",excerpts:Object.freeze([])});
+ const excerpts=review.rows.map(row=>{
+  // The printed ii/iii numbers are repeat RUBRICS. Remove those annotations
+  // from a single-invocation excerpt while preserving the entire neume line.
+  const line=row.sourceLineGabc
+   .replace(/<i>iij\.<\/i>|<i>ij\.<\/i>/g,"")
+   .replace(/\s+\(::\)/g," (::)").trim();
+  const body=line.startsWith("(c3)")?line:"(c3) "+line;
+  const gabc=[
+   "name: Kyrie VIII De Angelis — "+row.cueId+";",
+   "mode: 5;",
+   "source: Graduale Romanum 1961 p. 28*;",
+   "%%",body
+  ].join("\n");
+  return Object.freeze({
+   cueId:row.cueId,sourceLine:row.sourceLine,
+   repeatIndex:row.repeatIndex,gabc,
+   sourceScoreId:row.sourceScoreId,
+   expectedLatin:row.sourceLatin,
+   status:"UNAPPROVED_GABC_EXCERPT_RESEARCH_ONLY",
+   musicalNotationVerified:false,userEditorialApproval:false,
+   publication:"BLOCKED"
+  });
+ });
+ return Object.freeze({
+  status:"RESEARCH_GABC_EXCERPTS_READY_FOR_PRINT_COMPARISON",
+  sourceScoreId:"GREGOBASE-1184",
+  excerpts:Object.freeze(excerpts),
+  approvedScores:0,publishedScores:0
+ });
+}
