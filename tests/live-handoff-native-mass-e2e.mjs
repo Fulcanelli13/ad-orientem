@@ -176,6 +176,19 @@ try{
     });
     try{
       await enterNativeMass(page,c);
+      const musicAccess=page.locator(".ao-claude-music-access");
+      if(c.form!=="LOW"){
+        await musicAccess.waitFor({state:"visible",timeout:10000});
+        await musicAccess.click();
+        const musicMenu=page.locator("#ao-r17-native-reader-preview [data-role=schola-events-menu]");
+        await musicMenu.waitFor({state:"visible",timeout:10000});
+        await musicMenu.locator('[data-schola-event-select="KYRIE"]').click();
+        await page.waitForFunction(()=>window.AO_R17_NATIVE_READER_PREVIEW
+          ?.getScholaState?.()?.trackId==="KYRIE",null,{timeout:10000});
+      }else{
+        assert.equal(await musicAccess.isVisible(),false,
+          "Low Mass incorrectly presents a Schola chooser");
+      }
       let baseline=await capture(page,c,"sanctuary");
       assert.ok(baseline.nativeCardId,"native prayer card missing");
       for(const [idx,name] of [[1,"timeline"],[2,"wheel"]]){
