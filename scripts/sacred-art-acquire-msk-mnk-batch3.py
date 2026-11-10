@@ -41,8 +41,9 @@ def official_json(url,host):
 def find_service_urls(obj):
     found=[]
     if isinstance(obj,dict):
-        if obj.get("type") in ("ImageService2","ImageService3") and isinstance(obj.get("id"),str):
-            found.append(obj["id"])
+        if (obj.get("type") or obj.get("@type")) in ("ImageService2","ImageService3"):
+            candidate=obj.get("id") or obj.get("@id")
+            if isinstance(candidate,str):found.append(candidate)
         for val in obj.values():
             found.extend(find_service_urls(val))
     elif isinstance(obj,list):
@@ -62,8 +63,8 @@ def msk_image_source(row):
     p=urllib.parse.urlparse(service)
     if p.scheme!="https" or p.hostname!=HOST_MSK or not p.path.startswith("/iiif/"):
         raise ValueError("manifest service not official MSK IIIF image host")
-    if not p.path.endswith("/6344") and "/6344/" not in p.path:
-        raise ValueError("manifest refers to wrong photo 6344")
+    if urllib.parse.unquote(p.path)!="/iiif/2/public/6344.tif":
+        raise ValueError("manifest refers to wrong source TIFF photo 6344")
     return service+"/full/2000,/0/default.jpg",{"manifestUrl":url,"imageServiceUrl":service}
 
 class MetaParser(HTMLParser):
