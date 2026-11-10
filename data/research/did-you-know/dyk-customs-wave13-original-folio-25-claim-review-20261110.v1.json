@@ -1,0 +1,560 @@
+{
+  "schema": "AO_DYK_CUSTOMS_WAVE13_VISUAL_PRIMARY_FOLIO_25_CARD_AUDIT_V1",
+  "date": "2026-11-10",
+  "state": "PRIMARY_FOLIO_CHECKED_SOURCE_SPECIFIC_REVIEW_NOT_WHOLE_CORPUS_APPROVAL",
+  "source_pdf": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+  "verified_original_pdf_printed_pages": [
+    56,
+    57,
+    58,
+    195,
+    265,
+    310,
+    311,
+    312,
+    313
+  ],
+  "screenshot_page_offsets": "Original PDF 0-based screenshot index = printed page + 17. The 25 original selected claims were found on p.57, 265, and 310-313, with immediate cross-page corrections to p.56.",
+  "counts": {
+    "claims_reviewed": 25,
+    "duplicate_subfacts_consolidated": 2,
+    "english_french_copy_refinements": 3,
+    "printed_page_locator_repairs": 3,
+    "new_distinct_replacements": 2,
+    "new_distinct_replacements_with_independent_historical_or_diocesan_sources": 2,
+    "final_staged": 400,
+    "unique_ids": 400,
+    "unique_en": 400,
+    "unique_fr": 400,
+    "full_manual_signoff": false
+  },
+  "held_and_merged": [
+    {
+      "drop": "DYK-UM03-010",
+      "keep": "DYK-UM03-009",
+      "why": "Generic almsgiving claim on the same source page is part of the source's eight post-All Souls Soul Nights and lacks independent novelty.",
+      "en": "In parts of central Europe, families kept eight popular « Soul Nights » after All Souls' Day, praying the Rosary for the dead by candlelight and giving part of each day's meal to the poor. This was not an official liturgical octave.",
+      "fr": "Dans certaines régions d'Europe centrale, des familles observaient huit « soirées des âmes » après la Commémoration des fidèles défunts : elles récitaient le rosaire à la lumière d'une bougie et donnaient aux pauvres une part du repas quotidien. Ce n'était pas une octave liturgique officielle.",
+      "original_removed_reader_copy": {
+        "en": "During some older commemorations of the faithful departed, families set aside food to give in charity.",
+        "fr": "Lors de certaines anciennes commémorations des fidèles défunts, des familles réservaient des aliments pour les distribuer en aumône."
+      },
+      "original_removed_source_ids": [
+        "WEI58-26-021"
+      ],
+      "original_removed_source_links": [
+        {
+          "source_id": "WEI58-26-021",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              312
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ]
+    },
+    {
+      "drop": "DYK-H04-W-B-141",
+      "keep": "DYK-UM03-012",
+      "why": "Generic European soul-bread distribution recapitulates more contextual Alpine door-to-door prayer-for-bread account; merge general source.",
+      "en": "In an older Austrian Alpine All Souls' custom, children in need went door to door, singing hymns or offering prayers for the departed in return for small loaves called « soul bread ».",
+      "fr": "Dans une ancienne coutume de la Commémoration des défunts dans les Alpes autrichiennes, des enfants nécessiteux passaient de maison en maison, chantaient des hymnes ou priaient pour les morts en échange de petits pains appelés « pain des âmes ».",
+      "original_removed_reader_copy": {
+        "en": "On All Souls' Day, some communities distributed special « soul breads » to children and people in need, linking remembrance of the dead with charity.",
+        "fr": "Le jour de la Commémoration des défunts, certaines communautés distribuaient des « pains des âmes » aux enfants et aux personnes démunies, associant le souvenir des morts à la charité."
+      },
+      "original_removed_source_ids": [
+        "WEI58-26-022"
+      ],
+      "original_removed_source_links": [
+        {
+          "source_id": "WEI58-26-022",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Francis X. Weiser, Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              313
+            ],
+            "scan_pdf_page_1based": null,
+            "italian_anchor": null
+          }
+        }
+      ]
+    }
+  ],
+  "corrections": [
+    {
+      "id": "DYK-H04-W-B-133",
+      "issue": "ALL_SAINTS_EVE_NOT_ALL_SOULS_DAY",
+      "en": "On All Saints' evening in parts of central Europe, families once extinguished other lights, lit a candle saved from Candlemas and prayed for the souls of the departed as church bells rang at dusk.",
+      "fr": "Le soir de la Toussaint, dans certaines régions d'Europe centrale, des familles éteignaient les autres lumières, allumaient un cierge conservé depuis la Chandeleur et priaient pour les défunts au son des cloches à la tombée du jour.",
+      "original_copy": {
+        "en": "In some Central European All Souls' customs, families lit a candle saved from Candlemas and prayed together when church bells rang at dusk.",
+        "fr": "Dans certains usages d'Europe centrale pour les Défunts, les familles allumaient un cierge conservé depuis la Chandeleur et priaient ensemble quand les cloches sonnaient au crépuscule."
+      }
+    },
+    {
+      "id": "DYK-UM01-019",
+      "issue": "ADD_SOURCE_SPECIFIC_LOCATION_AND_1613_DATE",
+      "en": "At a Corpus Christi procession in Mainz in 1613, hundreds of children dressed as the nine choirs of angels marched before the Blessed Sacrament, while others scattered flowers along the route.",
+      "fr": "Lors d'une procession de la Fête-Dieu à Mayence en 1613, des centaines d'enfants vêtus comme les neuf chœurs des anges marchaient devant le Saint-Sacrement, tandis que d'autres répandaient des fleurs sur le parcours.",
+      "original_copy": {
+        "en": "In some older European Corpus Christi processions, children dressed as angels walked along the route scattering flower petals before the Blessed Sacrament.",
+        "fr": "Dans certaines anciennes processions européennes de la Fête-Dieu, des enfants vêtus en anges avançaient sur le parcours en répandant des pétales de fleurs devant le Saint-Sacrement."
+      }
+    },
+    {
+      "id": "DYK-H04-W-A-026",
+      "issue": "ACTUAL_SOURCE_P56_AND_NOVENA_CRIB_EMPTY_UNTIL_HOLY_NIGHT",
+      "en": "In parts of Central and South America, a nine-day novena to the Christ Child before Christmas combined prayers and carols in a decorated church whose crib remained empty until Christmas night.",
+      "fr": "Dans certaines régions d'Amérique centrale et d'Amérique du Sud, une neuvaine à l'Enfant Jésus avant Noël réunissait prières et chants dans une église décorée, où la crèche restait vide jusqu'à la nuit de Noël.",
+      "original_copy": {
+        "en": "In parts of Latin America, a Christmas novena to the Christ Child brought together prayers, carols and the decoration of churches in the days before Christmas.",
+        "fr": "Dans certaines régions d'Amérique latine, une neuvaine de Noël à l'Enfant Jésus réunissait prières, cantiques et décoration des églises pendant les jours précédant Noël."
+      }
+    }
+  ],
+  "locator_repairs": [
+    {
+      "id": "DYK-H04-W-B-130",
+      "printed": [
+        310,
+        311
+      ],
+      "reason": "Claim begins on printed p.310 and runs into p.311",
+      "previous_locator": {
+        "printed_pages": [
+          311
+        ],
+        "scan_pdf_page_1based": null,
+        "italian_anchor": null
+      }
+    },
+    {
+      "id": "DYK-H04-W-B-135",
+      "printed": [
+        311
+      ],
+      "reason": "Brazilian cemetery-vigil account occurs at end of printed p.311, not p.312",
+      "previous_locator": {
+        "printed_pages": [
+          312
+        ],
+        "scan_pdf_page_1based": null,
+        "italian_anchor": null
+      }
+    },
+    {
+      "id": "DYK-H04-W-A-026",
+      "printed": [
+        56
+      ],
+      "reason": "Latin-American Christ-Child novena is printed on p.56, not p.57",
+      "previous_locator": {
+        "printed_pages": [
+          57
+        ],
+        "scan_pdf_page_1based": null,
+        "italian_anchor": null
+      }
+    }
+  ],
+  "reviewed_records": [
+    {
+      "id": "DYK-H04-W-B-137",
+      "source_ids": [
+        "WEI58-26-017"
+      ],
+      "original_en": "In some historical Philippine communities, the nine days before All Souls' Day included prayers, lighting candles at graves, cleaning tombs and repainting crosses.",
+      "decision": "SUPPORTED_WITH_SOURCE_SCOPING",
+      "base_printed_pages": [
+        312
+      ]
+    },
+    {
+      "id": "DYK-H04-W-B-138",
+      "source_ids": [
+        "WEI58-26-018"
+      ],
+      "original_en": "In a historical Philippine All Saints' Eve custom, young men went from house to house singing and asking for sweets or pastries while representing souls released from purgatory.",
+      "decision": "SUPPORTED_WITH_SOURCE_SCOPING",
+      "base_printed_pages": [
+        312
+      ]
+    },
+    {
+      "id": "DYK-UM01-013",
+      "source_ids": [
+        "WEI58-05-009"
+      ],
+      "original_en": "During a traditional Christmas novena, schoolboys in some communities carried a statue of Saint Joseph from house to house for nine nights, bringing it to church on Christmas Eve.",
+      "decision": "SUPPORTED_WITH_SOURCE_SCOPING",
+      "base_printed_pages": [
+        57
+      ]
+    },
+    {
+      "id": "DYK-UM01-018",
+      "source_ids": [
+        "WEI58-26-027"
+      ],
+      "original_en": "For All Souls' Day, some regions of Spain prepared particular pastries: huesos de santo around Madrid and northern Spain, and panellets in Catalonia.",
+      "decision": "SUPPORTED_WITH_SOURCE_SCOPING",
+      "base_printed_pages": [
+        313
+      ]
+    },
+    {
+      "id": "DYK-UM03-009",
+      "source_ids": [
+        "WEI58-26-020",
+        "WEI58-26-021"
+      ],
+      "original_en": "In parts of central Europe, families kept eight popular « Soul Nights » after All Souls' Day, praying the Rosary for the dead by candlelight and giving part of each day's meal to the poor. This was not an official liturgical octave.",
+      "decision": "SUPPORTED_WITH_SOURCE_SCOPING",
+      "base_printed_pages": [
+        312,
+        312
+      ]
+    },
+    {
+      "id": "DYK-H04-W-B-131",
+      "source_ids": [
+        "WEI58-26-011"
+      ],
+      "original_en": "In some older All Saints' Eve cemetery customs, families lit candles sheltered by small lanterns beside their relatives' graves and left them burning through the night.",
+      "decision": "SUPPORTED_WITH_SOURCE_SCOPING",
+      "base_printed_pages": [
+        311
+      ]
+    },
+    {
+      "id": "DYK-UM01-019",
+      "source_ids": [
+        "WEI58-21-015"
+      ],
+      "original_en": "At a Corpus Christi procession in Mainz in 1613, hundreds of children dressed as the nine choirs of angels marched before the Blessed Sacrament, while others scattered flowers along the route.",
+      "decision": "SUPPORTED_WITH_COPY_CORRECTION",
+      "base_printed_pages": [
+        265
+      ]
+    },
+    {
+      "id": "DYK-UM03-010",
+      "source_ids": [
+        "WEI58-26-021"
+      ],
+      "original_en": "During some older commemorations of the faithful departed, families set aside food to give in charity.",
+      "decision": "MERGE_CHILD_NOT_STANDALONE",
+      "base_printed_pages": [
+        312
+      ]
+    },
+    {
+      "id": "DYK-UM03-011",
+      "source_ids": [
+        "WEI58-26-024"
+      ],
+      "original_en": "In older All Souls' Day customs, beans, peas and lentils were among the foods distributed as alms to people in need.",
+      "decision": "SUPPORTED_WITH_SOURCE_SCOPING",
+      "base_printed_pages": [
+        313
+      ]
+    },
+    {
+      "id": "DYK-H04-W-B-082",
+      "source_ids": [
+        "WEI58-21-016"
+      ],
+      "original_en": "In older Spanish Corpus Christi processions, giant figures and masked characters called Gigantes y Cabezudos appeared among the festivities, sometimes depicting figures from the Old Testament.",
+      "decision": "SUPPORTED_WITH_SOURCE_SCOPING",
+      "base_printed_pages": [
+        265
+      ]
+    },
+    {
+      "id": "DYK-H04-W-B-083",
+      "source_ids": [
+        "WEI58-21-017"
+      ],
+      "original_en": "At Seville Cathedral in Spain, the dance of choirboys before the altar became a distinctive custom of Corpus Christi and certain other feasts.",
+      "decision": "SUPPORTED_WITH_SOURCE_SCOPING",
+      "base_printed_pages": [
+        265
+      ]
+    },
+    {
+      "id": "DYK-H04-W-B-086",
+      "source_ids": [
+        "WEI58-21-020"
+      ],
+      "original_en": "In some Polish Corpus Christi customs, flower wreaths blessed by a priest were later hung in homes or placed in gardens, fields and pastures.",
+      "decision": "SUPPORTED_WITH_SOURCE_SCOPING",
+      "base_printed_pages": [
+        265
+      ]
+    },
+    {
+      "id": "DYK-H04-W-B-133",
+      "source_ids": [
+        "WEI58-26-013"
+      ],
+      "original_en": "On All Saints' evening in parts of central Europe, families once extinguished other lights, lit a candle saved from Candlemas and prayed for the souls of the departed as church bells rang at dusk.",
+      "decision": "SUPPORTED_WITH_COPY_CORRECTION",
+      "base_printed_pages": [
+        311
+      ]
+    },
+    {
+      "id": "DYK-H04-W-B-134",
+      "source_ids": [
+        "WEI58-26-014"
+      ],
+      "original_en": "In rural Brittany on All Saints' night, groups once rang the church bells and then visited farms with handbells, calling on families to pray for the dead.",
+      "decision": "SUPPORTED_WITH_SOURCE_SCOPING",
+      "base_printed_pages": [
+        311
+      ]
+    },
+    {
+      "id": "DYK-UM01-003",
+      "source_ids": [
+        "WEI58-05-008"
+      ],
+      "original_en": "During the nine nights before Christmas in some Alpine communities, an image of Our Lady passed from home to home accompanied by prayers and lanterns.",
+      "decision": "SUPPORTED_WITH_SOURCE_SCOPING",
+      "base_printed_pages": [
+        57
+      ]
+    },
+    {
+      "id": "DYK-UM01-004",
+      "source_ids": [
+        "WEI58-05-010"
+      ],
+      "original_en": "In a German Advent play called Herbergsuchen, actors portraying Mary and Joseph knocked on doors asking for lodging, and the sung scene ended at a stable.",
+      "decision": "SUPPORTED_WITH_SOURCE_SCOPING",
+      "base_printed_pages": [
+        57
+      ]
+    },
+    {
+      "id": "DYK-UM03-012",
+      "source_ids": [
+        "WEI58-26-026",
+        "WEI58-26-022"
+      ],
+      "original_en": "In an older Austrian Alpine All Souls' custom, children in need went door to door, singing hymns or offering prayers for the departed in return for small loaves called « soul bread ».",
+      "decision": "SUPPORTED_WITH_SOURCE_SCOPING",
+      "base_printed_pages": [
+        313,
+        313
+      ]
+    },
+    {
+      "id": "DYK-C400-BH-001",
+      "source_ids": [
+        "WEI58-26-023",
+        "AT-BMLUK-ALLERHEILIGENSTRIEZEL"
+      ],
+      "original_en": "In parts of Austria, godparents traditionally gave their godchildren a braided sweet loaf called Allerheiligenstriezel on All Saints' Day. Such loaves were also offered to people in need, who were asked to pray for the departed.",
+      "decision": "SUPPORTED_WITH_SOURCE_SCOPING",
+      "base_printed_pages": [
+        313
+      ]
+    },
+    {
+      "id": "DYK-H04-W-A-026",
+      "source_ids": [
+        "WEI58-05-007"
+      ],
+      "original_en": "In parts of Central and South America, a nine-day novena to the Christ Child before Christmas combined prayers and carols in a decorated church whose crib remained empty until Christmas night.",
+      "decision": "SUPPORTED_WITH_COPY_CORRECTION",
+      "base_printed_pages": [
+        56
+      ]
+    },
+    {
+      "id": "DYK-H04-W-B-084",
+      "source_ids": [
+        "WEI58-21-018"
+      ],
+      "original_en": "For Corpus Christi processions, some communities decorated banners, houses and ceremonial poles with flower wreaths, adding festive colour to the route.",
+      "decision": "SUPPORTED_WITH_SOURCE_SCOPING",
+      "base_printed_pages": [
+        265
+      ]
+    },
+    {
+      "id": "DYK-H04-W-B-130",
+      "source_ids": [
+        "WEI58-26-010"
+      ],
+      "original_en": "Before All Souls' Day, 2 November, families in some Catholic communities cleaned and decorated the graves of departed relatives.",
+      "decision": "SUPPORTED_WITH_LOCATOR_CORRECTION",
+      "base_printed_pages": [
+        310,
+        311
+      ]
+    },
+    {
+      "id": "DYK-H04-W-B-132",
+      "source_ids": [
+        "WEI58-26-012"
+      ],
+      "original_en": "In older Central European All Saints' customs, church bells rang at dusk to call the community to pray for the dead.",
+      "decision": "SUPPORTED_WITH_SOURCE_SCOPING",
+      "base_printed_pages": [
+        311
+      ]
+    },
+    {
+      "id": "DYK-H04-W-B-135",
+      "source_ids": [
+        "WEI58-26-015"
+      ],
+      "original_en": "In some older Brazilian All Souls' customs, families visited cemeteries to pray and light candles for departed relatives.",
+      "decision": "SUPPORTED_WITH_LOCATOR_CORRECTION",
+      "base_printed_pages": [
+        311
+      ]
+    },
+    {
+      "id": "DYK-H04-W-B-141",
+      "source_ids": [
+        "WEI58-26-022"
+      ],
+      "original_en": "On All Souls' Day, some communities distributed special « soul breads » to children and people in need, linking remembrance of the dead with charity.",
+      "decision": "MERGE_CHILD_NOT_STANDALONE",
+      "base_printed_pages": [
+        313
+      ]
+    },
+    {
+      "id": "DYK-C400-BF-016",
+      "source_ids": [
+        "WEI58-26-019"
+      ],
+      "original_en": "In an older Polish custom for All Souls, families gave the parish lists of deceased relatives called wypominki; the names were read aloud during prayers in November.",
+      "decision": "SUPPORTED_WITH_SOURCE_SCOPING",
+      "base_printed_pages": [
+        312
+      ]
+    }
+  ],
+  "newly_added": [
+    {
+      "id": "DYK-C400-BK-001",
+      "title": "Rorate Masses before winter sunrise",
+      "reader_copy": {
+        "en": "In parts of central Europe, Advent Rorate Masses were celebrated before sunrise. The faithful carried lanterns through the winter darkness to attend the votive Mass in honour of Our Lady.",
+        "fr": "Dans certaines régions d'Europe centrale, les messes Rorate de l'Avent étaient célébrées avant l'aube. Les fidèles traversaient l'obscurité hivernale avec leurs lanternes pour assister à cette messe votive en l'honneur de Notre-Dame."
+      },
+      "source_ids": [
+        "WEI58-P58-RORATE-MASS",
+        "ERZDIOEZESE-WIEN-RORATE-2025"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-P58-RORATE-MASS",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              58
+            ],
+            "pdf_page_1based": 76,
+            "original_page_visually_checked": true
+          }
+        },
+        {
+          "source_id": "ERZDIOEZESE-WIEN-RORATE-2025",
+          "url": "https://www.erzdioezese-wien.at/roratemesse",
+          "title": "Archdiocese of Vienna — Roratemesse: Besinnlich in den Tag",
+          "witness_role": "OFFICIAL_CATHOLIC_EXPLANATION_AND_CURRENT_PRACTICE"
+        }
+      ],
+      "scope": {
+        "historical_region": "central Europe",
+        "current_support": "Archdiocese Vienna",
+        "not_a_universal_1962_requirement": true
+      },
+      "review": {
+        "original_page_visually_checked": true,
+        "independent_ecclesial_source_checked": true,
+        "final_en": false,
+        "final_fr": false,
+        "publication_authorized": false
+      },
+      "source_wave": 13,
+      "review_status": "FOLIO_AND_SECONDARY_WITNESS_CHECKED_FINAL_EN_FR_REVIEW_PENDING",
+      "publication_authorized": false
+    },
+    {
+      "id": "DYK-C400-BK-002",
+      "title": "Medieval altar washing on Holy Thursday",
+      "reader_copy": {
+        "en": "In some medieval churches, priests washed the stripped altars on Holy Thursday with water and wine, using bundles of twigs or palms. This historical ceremony recalled Christ being stripped before his Passion.",
+        "fr": "Dans certaines églises médiévales, le Jeudi saint, les prêtres lavaient les autels dépouillés avec de l'eau et du vin, au moyen de rameaux ou de feuilles de palmier. Ce rite historique rappelait le dépouillement du Christ avant sa Passion."
+      },
+      "source_ids": [
+        "WEI58-15-017",
+        "CATHENC-LITURGICAL-USE-OF-WATER-1913"
+      ],
+      "source_links": [
+        {
+          "source_id": "WEI58-15-017",
+          "url": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+          "title": "Handbook of Christian Feasts and Customs (1958)",
+          "locator": {
+            "printed_pages": [
+              195
+            ],
+            "pdf_page_1based": 213,
+            "original_page_visually_checked": true,
+            "index_triage": "HISTORY_ONLY",
+            "published_only_as_historical_context": true
+          }
+        },
+        {
+          "source_id": "CATHENC-LITURGICAL-USE-OF-WATER-1913",
+          "url": "https://www.newadvent.org/cathen/15564a.htm",
+          "title": "Catholic Encyclopedia — Liturgical Use of Water",
+          "witness_role": "HISTORICAL_CATHOLIC_LITURGICAL_CORROBORATION"
+        }
+      ],
+      "scope": {
+        "historical_medieval_custom": true,
+        "not_a_current_or_universal_1962_rubric": true
+      },
+      "review": {
+        "original_page_visually_checked": true,
+        "independent_historical_ecclesial_source_checked": true,
+        "final_en": false,
+        "final_fr": false,
+        "publication_authorized": false
+      },
+      "source_wave": 13,
+      "review_status": "FOLIO_AND_SECONDARY_WITNESS_CHECKED_FINAL_EN_FR_REVIEW_PENDING",
+      "publication_authorized": false
+    }
+  ],
+  "known_source_qualification": [
+    "All Saints' evening (1 Nov) and All Souls' Day (2 Nov) are distinct; an evening family Candlemas-candle custom was corrected to All Saints.",
+    "The Brazilian cemetery-visit example occurs in the 1958 facsimile on p.311, not p.312.",
+    "The Latin American Novena del Niño narrative occurs on p.56, before adjacent Posada description p.57–58.",
+    "The surviving All Souls and soul-bread cards retain exact original source IDs; no superseded detail was deleted from the audit.",
+    "The historical Holy Thursday altar-washing custom must never be presented as a required practice of the 1962 Roman Missal."
+  ],
+  "pending_gates": {
+    "all_other_source_claims_checked": false,
+    "source_url_status_qa_complete": false,
+    "final_native_bilingual_editorial_signoff": false,
+    "h225_release_qa": false,
+    "published": false
+  }
+}
