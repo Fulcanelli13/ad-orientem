@@ -222,6 +222,20 @@ try{
       c.pass=true;
     }catch(e){
       c.error=String(e.stack||e);
+      try{
+        c.diagnostic=await read(page);
+        c.nativeCards=await page.evaluate(()=>{
+          const api=window.AO_R17_NATIVE_READER_PREVIEW;
+          const cards=api?.model?.cards??[];
+          return cards.map((c,i)=>({
+            sequence:i+1,id:c.sectionId,source:c.sourceSectionId,
+            canon:c.provenance?.canonSegmentId??null,
+            title:c.title,stateOnly:c.stateOnly===true,
+            omittedByRite:c.omittedByRite??null,
+            cueIds:(c.paragraphs??[]).flatMap(p=>p.sourceCueIds??[])
+          }));
+        });
+      }catch(diagError){c.diagnosticError=String(diagError)}
       await page.screenshot({path:resolve(OUT,c.name+"-FAILED.png"),
         fullPage:true}).catch(()=>{});
     }finally{await context.close();}
