@@ -97,7 +97,7 @@ const FORBIDDEN=["rrule","recurrence","next_mass","event_date","occurrences","ca
  "una_cum","canonical_status","pope_named_in_canon","missal","missal_edition",
  "rubrical_basis","rite","celebrant","venue_owner","ownership","gps","latitude","longitude"];
 const forbidden=o=>o&&FORBIDDEN.some(k=>Object.hasOwn(o,k));
-const HHMM=s=>/^([01]\\d|2[0-3]):[0-5]\\d$/.test(T(s));
+const HHMM=s=>/^([01]\d|2[0-3]):[0-5]\d$/.test(T(s));
 const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
 export function attachPublishedPolandSourcePatterns(items,manifest){
  if(manifest?.schema!=="AO_CL27_POLAND_OPERATOR_MASS_PATTERNS_V1"||
