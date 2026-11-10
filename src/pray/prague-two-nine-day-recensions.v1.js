@@ -141,7 +141,8 @@ export const PRAGUE_TWO_NOVENA_RECENSIONS_V1=Object.freeze({
           "en": "O little King, Thy hand blesses those who invoke Thee in faith. Bless my soul, my body, my labours and all that is necessary for my Christian life. Hear the desires that accord with Thy will and make me ready to bless Thy holy Name each day.",
           "hymnId": null
         }
-      ]
+      ],
+      "subject": "II"
     },
     {
       "id": "icksp_prague_novena_second_recension",
@@ -225,7 +226,8 @@ export const PRAGUE_TWO_NOVENA_RECENSIONS_V1=Object.freeze({
           "en": "Little King Jesus, Thy mighty hand has bestowed so many gifts. Bless my soul and body, provide for my true needs and purify my desires. Let my prayer end in thanksgiving and may I praise Thy holy Name day after day.",
           "hymnId": null
         }
-      ]
+      ],
+      "subject": "II"
     }
   ]
 });
