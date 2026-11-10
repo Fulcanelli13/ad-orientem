@@ -19,17 +19,19 @@ const rib=read(root+'m2m-ribera-alcantara-pinakothek909-verified-native-photo-20
 const wal=read(root+'m2m-walters-37-453-photo-research-20261110.v1.json');
 const batch2=read(root+'m2m-open-colour-batch2-source-verification-20261110.v1.json');
 const msk=read(root+'m2m-msk-s43-verified-image-original-20261110.v1.json');
+const wenceslas=read(root+'m2m-met-437005-verified-native-photo-20261110.v1.json');
+const screening=read(root+'m2m-cc0-batch4-exact-iconographic-screening-20261110.v1.json');
 
 assert.equal(queue.schema,'AO_SACRED_ART_CONSOLIDATED_IMAGE_SELECTION_QUEUE_V1');
 assert.equal(queue.status,'OWNER_REVIEW_AND_SOURCE_ACQUISITION_STAGING_NO_PUBLICATION_AUTHORITY');
 const works=queue.works,photos=queue.photographs,dates=queue.dates;
 assert.equal(baseline.works.length,151);
 assert.equal(baseline.edges.length,198);
-assert.equal(works.length,155);
-assert.equal(photos.length,9);
+assert.equal(works.length,156);
+assert.equal(photos.length,10);
 assert.equal(dates.length,170);
-assert.equal(new Set(works.map(x=>x.artworkKey)).size,155);
-assert.equal(new Set(photos.map(x=>x.artworkKey)).size,9);
+assert.equal(new Set(works.map(x=>x.artworkKey)).size,156);
+assert.equal(new Set(photos.map(x=>x.artworkKey)).size,10);
 assert.equal(new Set(dates.map(x=>x.date)).size,170);
 const workByKey=new Map(works.map(x=>[x.artworkKey,x]));
 const photoByKey=new Map(photos.map(x=>[x.artworkKey,x]));
@@ -41,7 +43,7 @@ assert.equal(oldAudits.length,68);
 assert.equal(auditedKeys.size,68);
 assert.deepEqual([...oilKeys].sort(),[...auditedKeys].sort());
 assert.ok([...baselineKeys].every(k=>workByKey.has(k)));
-assert.deepEqual(works.filter(x=>x.sourcePool==='OUTSIDE_198_EDGE_POOL_UNAPPROVED_ALTERNATIVE').map(x=>x.artworkKey),['Pinakothek:909']);
+assert.deepEqual(works.filter(x=>x.sourcePool==='OUTSIDE_198_EDGE_POOL_UNAPPROVED_ALTERNATIVE').map(x=>x.artworkKey).sort(),['Met:437005','Pinakothek:909']);
 assert.deepEqual(
  works.filter(x=>x.sourcePool==='SUPPLEMENTAL_MARCH_RESEARCH_NOT_IN_198_EDGE_CENSUS').map(x=>x.artworkKey).sort(),
  supplement.records.map(x=>x.candidate.researchKey).sort()
@@ -51,7 +53,7 @@ assert.equal(works.filter(x=>x.directOilPriorityPool).length,68);
 assert.equal(works.filter(x=>x.exactOilObjectAuditCompleted).length,68);
 assert.equal(works.filter(x=>x.sourcePool==='198_EDGE_CALENDAR_RESEARCH'&&!x.directOilPriorityPool&&x.mediumClasses.includes('OIL_PAINTING')).length,9);
 assert.equal(photos.filter(x=>baselineKeys.has(x.artworkKey)).length,8);
-assert.equal(photos.filter(x=>!baselineKeys.has(x.artworkKey)).length,1);
+assert.equal(photos.filter(x=>!baselineKeys.has(x.artworkKey)).length,2);
 for(const edge of baseline.edges){
  const w=workByKey.get(edge.artworkKey);
  assert.ok(w,'original artwork key missing: '+edge.artworkKey);
@@ -65,13 +67,21 @@ for(const w of works){
  assert.equal(w.releaseReady,false,w.artworkKey);
  if(w.verifiedPhotoId) assert.equal(photoByKey.get(w.artworkKey)?.photographId,w.verifiedPhotoId);
 }
-assert.equal(photos.filter(x=>x.licence==='CC0_MET_OPEN_ACCESS').length,4);
+assert.equal(photos.filter(x=>x.licence==='CC0_MET_OPEN_ACCESS').length,5);
 assert.equal(photos.filter(x=>x.licence==='CC0_WALTERS').length,1);
 assert.equal(photos.filter(x=>x.licence.startsWith('CC_BY_4_HISTORICAL')).length,1);
 assert.equal(photos.filter(x=>x.licence==='CC_BY_SA_4_PINAKOTHEK').length,1);
 assert.equal(photos.filter(x=>x.licence==='RIJKSMUSEUM_PUBLIC_DOMAIN_IIIF').length,1);
 assert.equal(photos.filter(x=>x.licence.startsWith('MSK_COLLECTION_PUBLIC_DOMAIN_MARK')).length,1);
-assert.deepEqual(photos.filter(x=>x.artworkKey.startsWith('Met:')).map(x=>x.exactBytesSha256).sort(),met.records.map(x=>x.sha256).sort());
+assert.deepEqual(photos.filter(x=>x.sourceManifest==='data/artwork/research/m2m-met-original-image-verification4-20261110.v1.json').map(x=>x.exactBytesSha256).sort(),met.records.map(x=>x.sha256).sort());
+assert.equal(photoByKey.get('Met:437005').exactBytesSha256,wenceslas.photo.sha256);
+assert.deepEqual(wenceslas.photo.downloadedPixels,[2453,3832]);
+assert.equal(wenceslas.photo.bytesIndependentHashVerified,true);
+assert.equal(wenceslas.editorial.ownerReplacementOfSkreta,false);
+assert.equal(wenceslas.editorial.ownerHistoricalApproval,false);
+assert.equal(workByKey.get('Met:437005').risk,'PROVENANCE_VERIFIED_EXACT_SAINT_DIFFERENT_SCENE_NOT_OWNER_APPROVED_OR_REJECTION_CLEARED');
+assert.equal(workByKey.get('Met:437005').globalArtworkRejectionChecksRequired,true);
+assert.equal(photoByKey.get('Met:437005').publicationEligible,false);
 assert.equal(photoByKey.get('Walters:37.453').exactBytesSha256,wal.candidate.sourcePhotoVerification.sha256);
 assert.equal(photoByKey.get('Wellcome:45078i').exactBytesSha256,well.verifiedPhoto.sha256);
 assert.equal(photoByKey.get('Pinakothek:909').exactBytesSha256,rib.photo.sha256);
@@ -106,7 +116,16 @@ assert.equal(dates.reduce((n,x)=>n+x.originalResearchEdges.length,0),198);
 assert.deepEqual(dates.filter(x=>x.originalResearchEdges.length===0).map(x=>x.date),['2026-03-02','2026-03-10','2026-03-11']);
 assert.deepEqual(dates.filter(x=>x.supplementalUnintegratedArtworkKeys.length).map(x=>x.date),['2026-03-02','2026-03-10','2026-03-11']);
 assert.ok(dates.every(x=>x.editorialDateApproval===false&&x.publishedImageAssignmentCreated===false));
-assert.equal(queue.counts.verifiedColourJpegSources,9);
+assert.equal(queue.counts.verifiedColourJpegSources,10);
+assert.equal(queue.counts.totalSelectionQueueWorkKeys,156);
+assert.equal(queue.counts.externalRiberaAlternateKeys,1);
+assert.equal(queue.counts.externalWenceslasAlternateKeys,1);
+assert.equal(queue.counts.verifiedColourJpegExternalAlternate,2);
+assert.equal(queue.counts.cc0Batch4RawSearchArtworks,35);
+assert.equal(queue.counts.cc0Batch4IconographicIrrelevant,33);
+assert.equal(screening.total.screenedWrongSubject,33);
+assert.equal(screening.total.retainedForSeparateEditorialResearch,2);
+assert.ok(screening.perTarget.some(x=>x.originalKey==='Thoma:AthanasiusOfAlexandria'&&x.exactMatches[0]?.id===111444));
 assert.equal(queue.counts.verifiedSourcePhotosInOriginal151Pool,8);
 assert.equal(queue.reviewLaneCounts.C_LOCATE_REUSABLE_COLOUR_SOURCE??0,0);
 assert.equal(queue.reviewLaneCounts.C_OBJECT_RECORD_WITHOUT_PHOTO_BYTES,2);
@@ -197,11 +216,16 @@ for(const key of policyKeys){
 }
 assert.equal(queue.counts.newOwnerApprovedPlacements,0);
 assert.equal(queue.counts.newPublicArtworkReleases,0);
-assert.equal(Object.values(queue.reviewLaneCounts).reduce((a,b)=>a+b,0),155);
+assert.equal(Object.values(queue.reviewLaneCounts).reduce((a,b)=>a+b,0),156);
+assert.equal(queue.reviewLaneCounts.A_VERIFIED_SOURCE_PHOTO_EDITORIAL_AND_MOBILE_QA,10);
+const wenceslasDay=dates.find(x=>x.date==='2026-09-28');
+assert.deepEqual(wenceslasDay.unapprovedExternalAlternativeArtworkKeys,['Met:437005']);
+assert.equal(wenceslasDay.editorialDateApproval,false);
+assert.equal(wenceslasDay.publishedImageAssignmentCreated,false);
 const policies=queue.releaseRules.join(' ');
 assert.match(policies,/103 historically globally rejected/);
 assert.match(policies,/507 explicitly owner-accepted Prayer alternatives/);
 assert.match(policies,/27 Prayer NONE slots/);
 assert.match(policies,/Commons/);
 assert.match(policies,/Prado/);
-console.log('PASS: 155 artwork keys, original 198 edges, 170 date holds, 68 audited priority oils, 9 verified source hashes and zero releases.');
+console.log('PASS: 156 artwork keys (151 original + 2 alternatives + 3 supplemental), original 198 edges, 170 date holds, 68 audited priority oils, 10 verified source hashes and zero releases.');
