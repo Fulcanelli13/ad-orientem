@@ -92,6 +92,69 @@
 **Overall first-stage inventory:** 60/169 candidates organized into three existing-board decision waves; all 60 remain `PENDING` and `publication_authorized:false`. No new canonical IDs, source scrapes, album/image approvals, or pin precision claims are created here.
 
 ---
+## Geometry-pending named Sacred Places — single 38-site review (10 November 2026)
+
+**Editorial disposition, not a coordinate fix:** all 38 candidates have an existing named site, already screened identity-source URL and provisional coordinate in the authoritative [169-candidate admission board](./sacred-atlas-169-consolidated-admission-board-20261107.v1.json). The `NAMED_SITE_GEOMETRY_PENDING` flag concerns source-to-point/entrance precision. These are *not* 38 places with no map point. Retain the original flag until exact-site geometry is independently certified; do not treat the coordinate as a church entrance.
+
+**Illustrative discovery policy:** The owner previously authorized approximate Sacred Atlas pins for identifying places on the map, with external navigation by text search of the site name and address. For these V10 candidates, such admission still requires the specific owner decision, source-ID check and canonical-Place duplicate screen. A `site` point is not entrance-certified; a `complex_anchor` point is not a verified chapel or building doorway. Do not import them merely because a coordinate exists.
+
+**Reconciliation:** 38 Lane-A records in 20 countries; 34 provisional `complex_anchor`, four `site`; 33 have no currently flagged nearby Place and five have a distinct, separately named nearby Place; 38/38 with candidate ID, screened HTTPS source and numeric provisional coordinates; **0 independently certified entrances, 0 owner approvals, 0 publication approvals.**
+
+### Geometry review cohort A-G1 — 33 without a flagged neighbouring Place
+
+| Candidate | Named Sacred Place | Country | Point scope | Source previously screened | Review state |
+|---|---|---|---|---|---|
+| `SG-INV-0191` | Dom zu Gurk – St. Hemma pilgrimage site | AT | `complex_anchor` | [Existing source](https://gurk.at/dom-zu-gurk/) | Owner decision **PENDING** |
+| `SG-INV-0190` | Pfarr- und Wallfahrtskirche Maria Wörth | AT | `complex_anchor` | [Existing source](https://www.kath-kirche-kaernten.at/pfarren/kirche/C3061/pfarrkirche-maria-woerth) | Owner decision **PENDING** |
+| `SG-INV-0739` | Mary MacKillop Memorial Chapel, North Sydney | AU | `complex_anchor` | [Existing source](https://www.marymackillopplace.org.au/visit/memorial-chapel/) | Owner decision **PENDING** |
+| `SG-INV-0448` | Santuario Arquidiocesano del Santo Hermano Pedro – San Francisco el Grande | GT | `site` | [Existing source](https://directorio.arzobispadodeguatemala.org/directorio/santuario-arquidiocesano-del-santo-hermano-pedro-templo-de-san-francisco-el-grande-2M9L4J8V7Y6K) | Owner decision **PENDING** |
+| `SG-INV-0327` | Esztergom Basilica | HU | `complex_anchor` | [Existing source](https://bazilika-esztergom.hu/bazilika/kapcsolat.html) | Owner decision **PENDING** |
+| `SG-INV-0322` | Marian shrine of Máriagyűd | HU | `complex_anchor` | [Existing source](https://pecsiegyhazmegye.hu/hirarchivum/hortobagyi-cirill-foapattal-unnepeltuk-nagyboldogasszonyt-mariagyudon/) | Owner decision **PENDING** |
+| `SG-INV-0326` | Pannonhalma Archabbey | HU | `complex_anchor` | [Existing source](https://turizmus.pannonhalmifoapatsag.hu/kapcsolat/elerhetosegek/) | Owner decision **PENDING** |
+| `SG-INV-0324` | Sanctuary of Márianosztra | HU | `site` | [Existing source](https://marianosztrakegyhely.hu/kapcsolat/) | Owner decision **PENDING** |
+| `SG-INV-0678` | Marian Shrine of Gua Maria Kerep, Ambarawa | ID | `complex_anchor` | [Existing source](https://sisparnas.kemenpar.go.id/p/44096) | Owner decision **PENDING** |
+| `SG-INV-0677` | Shrine of Our Lady of Sendangsono | ID | `complex_anchor` | [Existing source](https://www.indonesia.travel/id/id/travel-ideas/pilgrimage/gua-maria-sendangsono) | Owner decision **PENDING** |
+| `SG-INV-0092` | Sanctuary of Saint Gerard Majella, Materdomini | IT | `complex_anchor` | [Existing source](https://sangerardo.it/contatti/) | Owner decision **PENDING** |
+| `SG-INV-0629` | Mirinae Shrine | KR | `complex_anchor` | [Existing source](https://www.anseong.go.kr/en/contents.do?mId=0401040000) | Owner decision **PENDING** |
+| `SG-INV-0337` | Shrine of Our Lady of Pivašiūnai | LT | `complex_anchor` | [Existing source](https://www.pivasiunai.lt/kontaktai/) | Owner decision **PENDING** |
+| `SG-INV-0365` | Cathedral of Notre-Dame, Luxembourg City | LU | `site` | [Existing source](https://www.visitluxembourg.com/place/cathedrale-notre-dame) | Owner decision **PENDING** |
+| `SG-INV-0440` | Shrine of the Mexican Martyrs, Guadalajara | MX | `complex_anchor` | [Existing source](https://www.santuariodelosmartiresmexicanos.com/contacto) | Owner decision **PENDING** |
+| `SG-INV-0636` | National Shrine of Our Lady of Aranzazu, San Mateo | PH | `complex_anchor` | [Existing source](https://aranzazushrine.ph/index.php/contact/) | Owner decision **PENDING** |
+| `SG-INV-0608` | National Marian Shrine of Mariamabad | PK | `complex_anchor` | [Existing source](https://www.marianshrinepk.com/visit/) | Owner decision **PENDING** |
+| `SG-INV-0217` | Benedictine Abbey of Tyniec | PL | `complex_anchor` | [Existing source](https://domgosci.benedyktyni.com/kontakt/) | Owner decision **PENDING** |
+| `SG-INV-0208` | Sanctuary of Our Lady of Bardo | PL | `complex_anchor` | [Existing source](https://www.redemptor.pl/parafieisanktuaria/bardo/) | Owner decision **PENDING** |
+| `SG-INV-0149` | Sanctuary of Our Lady of Piedade da Lapa | PT | `complex_anchor` | [Existing source](https://www.visitportugal.com/pt-pt/node/133125) | Owner decision **PENDING** |
+| `SG-INV-0150` | Sanctuary of Our Lady of Remedies, Lamego | PT | `complex_anchor` | [Existing source](https://www.visitportugal.com/pt-pt/node/134774) | Owner decision **PENDING** |
+| `SG-INV-0529` | Shrine of Our Lady of Itacuá | PY | `complex_anchor` | [Existing source](https://encarnacion.gov.py/santuario-itacua/) | Owner decision **PENDING** |
+| `SG-INV-0328` | Franciscan Sanctuary of Șumuleu Ciuc (Csíksomlyó) | RO | `complex_anchor` | [Existing source](https://ersekseg.ro/en/templom/1123) | Owner decision **PENDING** |
+| `SG-INV-0307` | Sanctuary of Our Lady of the Mountain, Zaplaz | SI | `complex_anchor` | [Existing source](https://www.zaplaz.si/) | Owner decision **PENDING** |
+| `SG-INV-0405` | Cathedral Basilica of Saint Louis, St Louis | US | `complex_anchor` | [Existing source](https://cathedralstl.org/plan-your-visit) | Owner decision **PENDING** |
+| `SG-INV-0406` | Cathedral of Our Lady of the Angels, Los Angeles | US | `complex_anchor` | [Existing source](https://www.olacathedral.org/directionsparking/) | Owner decision **PENDING** |
+| `SG-INV-0409` | Mission San Xavier del Bac, Tucson | US | `complex_anchor` | [Existing source](https://sanxaviermission.org/contact-us/) | Owner decision **PENDING** |
+| `SG-INV-0393` | Mother Cabrini Shrine, Golden | US | `complex_anchor` | [Existing source](https://mothercabrinishrine.org/directions) | Owner decision **PENDING** |
+| `SG-INV-0386` | National Shrine of Our Lady of Sorrows, Portland | US | `complex_anchor` | [Existing source](https://thegrotto.org/visit/directions/) | Owner decision **PENDING** |
+| `SG-INV-0398` | Saint Rose Philippine Duchesne Shrine, St Charles | US | `complex_anchor` | [Existing source](https://rscj.org/shrine/visit/) | Owner decision **PENDING** |
+| `SG-INV-0383` | Shrine of Our Lady of Peace, Santa Clara | US | `complex_anchor` | [Existing source](https://www.olop-shrine.org/contact-us/) | Owner decision **PENDING** |
+| `SG-INV-0395` | Shrine of Saint Anthony, Ellicott City | US | `complex_anchor` | [Existing source](https://shrineofstanthony.org/directions) | Owner decision **PENDING** |
+| `SG-INV-0531` | Sanctuary of the Virgin of the Thirty-Three, Florida | UY | `site` | [Existing source](https://www.iglesiacatolicaflorida.org/parroquias/) | Owner decision **PENDING** |
+
+### Geometry review cohort A-G2 — five named Places near different existing Places
+
+Nearby distances below come from the existing provisional board and are for candidate review only, not independently verified routing or doorway geometry. **Do not collapse these pairs** into one canonical Place.
+
+| Candidate | Named Sacred Place | Country | Point scope | Source previously screened | Existing nearby distinct Place |
+|---|---|---|---|---|---|
+| `SG-INV-0553` | Church of Saint John the Baptist, Ein Karem | IL | `complex_anchor` | [Existing source](https://www.custodia.org/en/sanctuaries/ain-karem-saint-john-the-baptist/) | Church of the Visitation, Ein Karem (602 m in provisional register; preserve both identities) |
+| `SG-INV-0561` | Mount of Beatitudes Church | IL | `complex_anchor` | [Existing source](https://beatitudes.church/plan-your-visit/) | Church of the Multiplication, Tabgha (1028 m in provisional register; preserve both identities) |
+| `SG-INV-0627` | Saenamteo Martyrs' Shrine | KR | `complex_anchor` | [Existing source](https://saenamteo.or.kr/) | Jeoldusan Korean Martyrs' Shrine — Seoul (4504 m in provisional register; preserve both identities) |
+| `SG-INV-0333` | Gate of Dawn chapel, Vilnius | LT | `complex_anchor` | [Existing source](https://ausrosvartai.lt/en/contacts/) | Divine Mercy Sanctuary, Vilnius (843 m in provisional register; preserve both identities) |
+| `SG-INV-0392` | National Shrine of Saint Frances Xavier Cabrini, Chicago | US | `complex_anchor` | [Existing source](https://cabrininationalshrine.org/visit/) | St. John Cantius Church, Chicago (3738 m in provisional register; preserve both identities) |
+
+**Release sequencing:** keep both cohorts in `owner_decision:PENDING` and `site_scope_finding:NAMED_SITE_GEOMETRY_PENDING`. On explicit owner approval of each candidate or specified batch, import through the existing canonical V10 gate with a qualified discovery-point scope and public EN/FR precision disclosure. The original research board remains the only owner of source/coordinate assertions. Require canonical Place-ID deduplication, gallery/media rights admission, and normal GitHub Pages checks; never infer opening hours, relic authenticity, Mass programme, rite or Missal from this packet.
+
+**Standard lane overall:** existing priority waves 1–3 cover 60 Lane-A candidates; this section covers the other 38, yielding **98/98 organized for review**. The 68 Lane-B scope-qualified cases, one Isiro building hold and two existing B21 signoffs remain separate; nothing here approves or publishes any of the 169 candidates.
+
+---
 | Decision lane | Count | Meaning |
 |---|---:|---|
 | A — Standard owner review, illustrative pin | 98 | Site source screened; no exact entrance claim |
