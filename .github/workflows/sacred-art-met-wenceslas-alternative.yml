@@ -1,0 +1,42 @@
+name: Sacred Art Met Wenceslas research alternative
+
+# Acquisition only; never writes public image assets.
+on:
+  pull_request:
+    paths:
+      - 'data/artwork/research/m2m-met-437005-wenceslas-alternative-20261110.v1.json'
+      - 'scripts/sacred-art-acquire-met-verified-object.py'
+      - 'tests/sacred-art-met-wenceslas-437005-alternative.test.mjs'
+      - '.github/workflows/sacred-art-met-wenceslas-alternative.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  wenceslas-cc0-source:
+    name: verify Met 44.147.2 first-party colour source
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install source image decoder
+        run: python -m pip install Pillow==12.0.0
+      - name: Guard original user assignments and exact accession
+        run: node tests/sacred-art-met-wenceslas-437005-alternative.test.mjs
+      - name: Resolve museum object, source JPEG and hash
+        run: |
+          python scripts/sacred-art-acquire-met-verified-object.py \
+            --manifest data/artwork/research/m2m-met-437005-wenceslas-alternative-20261110.v1.json \
+            --output sacred-art-met-wenceslas-research-only
+      - name: Keep bounded source original and QA report for 7 days
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-met-437005-research-only
+          path: sacred-art-met-wenceslas-research-only/
+          retention-days: 7
+          if-no-files-found: warn
