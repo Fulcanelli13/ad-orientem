@@ -42,7 +42,7 @@ try{
   for(const score of all.candidates){
    const result=await page.evaluate(async ({gabc,cueId})=>{
      const {createOfflineChantEngraver}=await import("/src/mass/reader-chant-engraver.js");
-     const {createScholaNotationFollower}=await import("/src/mass/reader-schola-notation-follow.js");
+     const {createScholaNotationFollower,scholaGabcSyllables}=await import("/src/mass/reader-schola-notation-follow.js");
      const staff=document.querySelector("#staff"),strip=document.querySelector("#strip");
      staff.replaceChildren();strip.replaceChildren();
      const engraving=createOfflineChantEngraver({viewport:staff,document});
@@ -60,7 +60,9 @@ try{
      return {cueId,success,svg:!!svg,
        staffWidth:box.width,svgWidth:svgBox?.width??0,
        svgRight:svgBox?.right??0,
-       svgTextNodes:svg?.querySelectorAll("text")?.length??0,follow};
+       svgTextNodes:svg?.querySelectorAll("text")?.length??0,
+       svgTexts:[...(svg?.querySelectorAll("text")??[])].map(x=>({text:x.textContent,inner:x.innerHTML.slice(0,90)})),
+       sourceSyllables:scholaGabcSyllables(gabc).map(x=>x.label),follow};
    },{gabc:score.gabc,cueId:score.sourceCueId});
    assert.equal(result.success,true,"Exsurge rejected GABC on "+width+"px "+score.sourceCueId);
    assert.equal(result.svg,true,"Missing notation SVG on "+width+"px "+score.sourceCueId);
