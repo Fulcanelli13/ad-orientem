@@ -10,6 +10,13 @@ const master=JSON.parse(read(p+"curatorial-master-267-20261101.v1.json"));
 const gallery=JSON.parse(read("data/artwork/research-semantic-candidates-989.v1.json"));
 const norm=s=>String(s??"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
 const k=(artist,title)=>norm(artist)+"|"+norm(title);
+// The 3 November editorial crosswalk intentionally stays a frozen snapshot;
+// these four work-identical source photos were released later from the
+// existing production asset registry, without changing painting selection.
+const releasedAfterAudit=new Set([
+ "HERO-22","STG-programme.first_saturday-01",
+ "COV-pray.adoration","COV-pray.forty_hours"
+]);
 const galleryByWork=new Map();
 for(const g of gallery.artworks){
  const key=k(g.artist,g.title);
@@ -37,8 +44,14 @@ for(const row of audit.assignments){
  assert.equal(row.painting?.artist||null,compiled.selected?.artist||null,row.slot);
  assert.equal(row.painting?.title||null,compiled.selected?.title||null,row.slot);
  assert.equal(row.painting?.sourcePage||null,compiled.selected?.sourcePage||null,row.slot);
- assert.equal(row.currentRuntime.state,resolvePrayerEditorialArtwork(row.slot).state,
-  "Snapshot runtime has changed; regenerate audit after image releases: "+row.slot);
+ const live=resolvePrayerEditorialArtwork(row.slot);
+ const expectedLiveState=releasedAfterAudit.has(row.slot)?"PUBLISHED_EXACT_PHOTO":row.currentRuntime.state;
+ assert.equal(live.state,expectedLiveState,
+  "Only explicit later releases may differ from frozen crosswalk: "+row.slot);
+ if(releasedAfterAudit.has(row.slot)){
+  assert.equal(row.currentRuntime.state,"APPROVED_EXACT_PHOTO_PENDING",row.slot);
+  assert.ok(live.photo&&live.artId,row.slot);
+ }
  assert.equal(row.publicationEnabledByAudit,false,"Never publish from this audit");
  const expected=row.painting?(galleryByWork.get(k(row.painting.artist,row.painting.title))||[]):[];
  assert.deepEqual(row.gallery989.groupIDs,expected,"Wrong gallery match: "+row.slot);
@@ -57,12 +70,18 @@ assert.equal(audit.counts.gallery989ExactTitleArtistPositions,matched);
 assert.equal(audit.counts.gallery989UniqueGroupPositions,unique);
 assert.equal(audit.counts.gallery989AmbiguousGroupPositions,ambiguous);
 assert.equal(audit.counts.gallery989UniqueMatchedGroupIDs,groupIDs.size);
-assert.deepEqual(audit.counts.states,prayerEditorialPublicationSummary().states);
+const currentStates=prayerEditorialPublicationSummary().states;
+const expectedStates={...audit.counts.states,
+ PUBLISHED_EXACT_PHOTO:audit.counts.states.PUBLISHED_EXACT_PHOTO+releasedAfterAudit.size,
+ APPROVED_EXACT_PHOTO_PENDING:audit.counts.states.APPROVED_EXACT_PHOTO_PENDING-releasedAfterAudit.size
+};
+assert.deepEqual(expectedStates,currentStates);
 assert.equal(audit.counts.pendingDistinctWorkSourceKeys,audit.pendingDistinctWorksByPotentialReuse.length);
 for(const work of audit.pendingDistinctWorksByPotentialReuse){
  assert.equal(work.publicationPermission,false);
  assert.ok(work.positionCount>0);
  assert.equal(work.slots.length,work.positionCount);
- for(const id of work.slots)assert.equal(resolvePrayerEditorialArtwork(id).state,"APPROVED_EXACT_PHOTO_PENDING");
+ for(const id of work.slots)assert.equal(resolvePrayerEditorialArtwork(id).state,
+  releasedAfterAudit.has(id)?"PUBLISHED_EXACT_PHOTO":"APPROVED_EXACT_PHOTO_PENDING",id);
 }
-console.log("PASS: 267 Prayer positions mapped; "+matched+" gallery-title matches; "+audit.counts.states.PUBLISHED_EXACT_PHOTO+" currently published matches; no research-only image publication");
+console.log("PASS: 267 Prayer positions, "+matched+" gallery title matches, "+currentStates.PUBLISHED_EXACT_PHOTO+" live exact photos; four later reuses distinguished from frozen crosswalk");
