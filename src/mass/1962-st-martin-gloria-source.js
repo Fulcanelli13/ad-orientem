@@ -19,7 +19,7 @@ export function reconcile1962StMartinGloria({legacy,proper,calendarResolution,ov
  const original=calendarResolution.proper?.data??calendarResolution.proper;
  // Exclude observed-source Masses, votives, Requiems, nuptial and
  // other distinct rites. A church's actual choice always owns its own rubric.
- if(!/^\\d{4}-11-11$/.test(String(legacy.date??""))||
+ if(!/^\d{4}-11-11$/.test(String(legacy.date??""))||
     String(legacy.calendarDay?.id??"")!==id||
     String(legacy.requestedCelebrationId??"mass_of_day")!=="mass_of_day"||
     String(legacy.celebrationId??"mass_of_day")!=="mass_of_day"||
