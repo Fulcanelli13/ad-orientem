@@ -1,6 +1,6 @@
 name: Sacred Art 2026 Calendar and Prayer coverage-first gate
 
-# Data-reconciliation only. No image downloads, app publication, deploy or approvals.
+# Offline coverage and exact existing-photo reuse tests. No downloads, deployments or new art approvals.
 on:
   pull_request:
     paths:
@@ -8,6 +8,12 @@ on:
       - 'data/artwork/sacred-art-2026-class-ii-existing-match-review-slate-20261110.v1.json'
       - 'data/artwork/README-sacred-art-2026-coverage-first-20261110.md'
       - 'tests/sacred-art-2026-coverage-first.test.mjs'
+      - 'data/artwork/sacred-art-2026-class-ii-batch01-curatorial-proposals-20261110.v1.json'
+      - 'tests/sacred-art-2026-class-ii-batch01-curatorial-proposals.mjs'
+      - 'data/artwork/sacred-art-2026-class-ii-batch02-remaining-50-curatorial-triage-20261110.v1.json'
+      - 'tests/sacred-art-2026-class-ii-complete-75-editorial-coverage.mjs'
+      - 'src/pray/art-slot-map.v1.js'
+      - 'tests/prayer-art-released-exact-reuse-20261110.mjs'
       - '.github/workflows/sacred-art-2026-coverage-first.yml'
   workflow_dispatch:
 
@@ -22,4 +28,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Run coverage/crosswalk regression tests without external dependencies
-        run: node tests/sacred-art-2026-coverage-first.test.mjs
+        run: |
+          node tests/sacred-art-2026-coverage-first.test.mjs
+          node tests/sacred-art-2026-class-ii-batch01-curatorial-proposals.mjs
+          node tests/sacred-art-2026-class-ii-complete-75-editorial-coverage.mjs
+          node tests/prayer-art-released-exact-reuse-20261110.mjs

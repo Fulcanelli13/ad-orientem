@@ -13,6 +13,9 @@ on:
       - "data/directory/research/tlm-emblem-release-crosswalk-r06.v1.json"
       - ".github/workflows/artwork-publication-truth.yml"
   workflow_dispatch:
+  workflow_run:
+    workflows: ["Ad Orientem — GitHub Pages release"]
+    types: [completed]
 permissions:
   contents: read
 jobs:
@@ -35,6 +38,13 @@ jobs:
           retention-days: 14
   public-class-i-hero-identity:
     name: Public Nov 1 and Nov 2 Calendar hero pixels and captions
+    # Public image identity is a post-Pages-deploy check, not a PR check
+    # against retired Vercel or Pages still serving a previous main commit.
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'workflow_run' &&
+       github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.head_branch == 'main')
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:

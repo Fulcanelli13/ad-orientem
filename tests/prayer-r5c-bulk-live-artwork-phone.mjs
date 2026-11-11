@@ -91,8 +91,19 @@ try{
    assert.ok(["STG-pray.angelus-01","STG-pray.angelus-02","STG-pray.angelus-03"].includes(hourSlot),
     "Angelus hour cover is not one of the three exact approved paintings: "+hourSlot);
    await check(hourSlot,".aoClaudeHorariumPlate",{visible:true});
-   for(const slot of ["STG-pray.angelus-05","STG-pray.angelus-06","STG-pray.angelus-07"])
-    await check(slot,".aoP435930AngelusSequence");
+   // The original for these two specific Angelus stages was later rejected
+   // by the owner (Cleveland 1942.635). Keep their editorial selections and
+   // prayer words, but reject any display of those exact photo bytes.
+   for(const slot of ["STG-pray.angelus-05","STG-pray.angelus-06"]){
+    const withheld=resolvePrayerEditorialArtwork(slot);
+    assert.equal(withheld.state,"APPROVED_EXACT_PHOTO_PENDING",slot);
+    assert.equal(withheld.photo,null,slot);
+    assert.equal(await page.locator(rootSel+' .aoP435930AngelusSequence [data-ao-editorial-slot="'+slot+'"] img').count(),0,
+     "Globally rejected Bouts original must never render at "+slot);
+   }
+   assert.equal(await page.locator(rootSel+' .aoP435930AngelusSequence img[src*="bouts-annunciation-original"]').count(),0,
+    "Angelus sequence must not reference rejected Cleveland photographic source");
+   await check("STG-pray.angelus-07",".aoP435930AngelusSequence");
 
    // Benediction public rite is not a devotional slide show. Its Exposition
    // photo belongs inside its original source text surface, before the words.
@@ -142,9 +153,9 @@ try{
   }finally{await context.close();}
  }
 }finally{await browser?.close();await new Promise(ok=>server.close(ok))}
-assert.equal(report.records.length,44,"Expected 11 exact-photo observations on each of four phone/locale combinations");
+assert.equal(report.records.length,36,"Expected nine eligible image observations on each of four phone/locale combinations");
 const verified=new Set(report.records.map(x=>x.slot));
-assert.equal(verified.size,11,"Expected eleven distinct real reader positions in R5C");
+assert.equal(verified.size,9,"Two historic Bouts photo stages must be held; nine other original paintings verified");
 report.inventory=Object.keys(PRAYER_ART_EDITORIAL_SLOTS_V1).map(id=>{
  const match=resolvePrayerEditorialArtwork(id);
  if(match.state!=="PUBLISHED_EXACT_PHOTO")return null;
@@ -154,8 +165,8 @@ report.inventory=Object.keys(PRAYER_ART_EDITORIAL_SLOTS_V1).map(id=>{
   status:verified.has(id)?"R5C_VERIFIED_320_390_EN_FR":"PHOTO_CLEARED_NOT_TESTED_IN_R5C"};
 }).filter(Boolean);
 assert.equal(report.inventory.length,51,"Cleared-photo inventory count mismatch");
-assert.equal(report.inventory.filter(x=>x.status==="R5C_VERIFIED_320_390_EN_FR").length,11);
-report.statusCounts={r5cVerified:11,otherClearedNotRetestedInR5C:40,
+assert.equal(report.inventory.filter(x=>x.status==="R5C_VERIFIED_320_390_EN_FR").length,9);
+report.statusCounts={r5cVerified:9,otherClearedNotRetestedInR5C:42,
  editorialPositionsNotPhotoCleared:267-51};
 await writeFile(resolve(out,"report.json"),JSON.stringify(report,null,2)+"\n");
 console.log("PASS: 51 exact-photo-cleared editorial positions retained; 11 real reader bindings × 320/390 × EN/FR = 44 complete phone/source/photo proofs");

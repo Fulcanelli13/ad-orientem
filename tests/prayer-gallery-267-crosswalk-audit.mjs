@@ -8,6 +8,11 @@ const p="data/prayer/artwork-editorial-20261101/";
 const rejectedBoutsSource="https://clevelandart.org/art/1942.635";
 const bannedSlots=new Set(["STG-pray.angelus-04","STG-pray.angelus-05",
  "STG-pray.angelus-06","STG-pray.rosary-02"]);
+// Four other historical slots are approved for the same *already released*
+// physical originals. The original source audit stays immutable.
+const reusedSlots=new Set(["HERO-22","STG-programme.first_saturday-01",
+ "COV-pray.adoration","COV-pray.forty_hours"]);
+assert.equal([...reusedSlots].filter(id=>bannedSlots.has(id)).length,0);
 
 const audit=JSON.parse(read(p+"gallery-archive-crosswalk-267-20261103.v1.json"));
 const master=JSON.parse(read(p+"curatorial-master-267-20261101.v1.json"));
@@ -50,9 +55,13 @@ for(const row of audit.assignments){
   assert.equal(current.state,"APPROVED_EXACT_PHOTO_PENDING",row.slot);
   assert.equal(current.artId,null,row.slot);
   assert.equal(current.photo,null,row.slot);
+ }else if(reusedSlots.has(row.slot)){
+  assert.equal(row.currentRuntime.state,"APPROVED_EXACT_PHOTO_PENDING",row.slot);
+  assert.equal(current.state,"PUBLISHED_EXACT_PHOTO",row.slot);
+  assert.ok(current.photo&&current.artId,"Exact approved reusable photo missing "+row.slot);
  }else{
   assert.equal(row.currentRuntime.state,current.state,
-   "Snapshot runtime changed outside rejected work: "+row.slot);
+   "Snapshot runtime changed outside rejected/reused originals: "+row.slot);
  }
  assert.equal(row.publicationEnabledByAudit,false,"Never publish from this audit");
  const expected=row.painting?(galleryByWork.get(k(row.painting.artist,row.painting.title))||[]):[];
@@ -74,14 +83,16 @@ assert.equal(audit.counts.gallery989AmbiguousGroupPositions,ambiguous);
 assert.equal(audit.counts.gallery989UniqueMatchedGroupIDs,groupIDs.size);
 assert.deepEqual(prayerEditorialPublicationSummary().states,{
  ...audit.counts.states,
- PUBLISHED_EXACT_PHOTO:audit.counts.states.PUBLISHED_EXACT_PHOTO-bannedSlots.size,
- APPROVED_EXACT_PHOTO_PENDING:audit.counts.states.APPROVED_EXACT_PHOTO_PENDING+bannedSlots.size
-},"Frozen historic 267-slot audit must differ only by four now-rejected photo releases");
+ PUBLISHED_EXACT_PHOTO:audit.counts.states.PUBLISHED_EXACT_PHOTO-bannedSlots.size+reusedSlots.size,
+ APPROVED_EXACT_PHOTO_PENDING:audit.counts.states.APPROVED_EXACT_PHOTO_PENDING+bannedSlots.size-reusedSlots.size
+},"Historical audit differs only by four rejected Bouts originals and four unrelated approved exact work reuses");
 assert.equal(audit.counts.pendingDistinctWorkSourceKeys,audit.pendingDistinctWorksByPotentialReuse.length);
 for(const work of audit.pendingDistinctWorksByPotentialReuse){
  assert.equal(work.publicationPermission,false);
  assert.ok(work.positionCount>0);
  assert.equal(work.slots.length,work.positionCount);
- for(const id of work.slots)assert.equal(resolvePrayerEditorialArtwork(id).state,"APPROVED_EXACT_PHOTO_PENDING");
+ for(const id of work.slots)assert.equal(resolvePrayerEditorialArtwork(id).state,
+  reusedSlots.has(id)?"PUBLISHED_EXACT_PHOTO":"APPROVED_EXACT_PHOTO_PENDING",id);
 }
-console.log("PASS: 267 Prayer positions mapped; "+matched+" gallery-title matches; "+audit.counts.states.PUBLISHED_EXACT_PHOTO+" currently published matches; no research-only image publication");
+console.log("PASS: 267 Prayer positions; four rejected Bouts releases withheld, four other exact-work photos reused, "+
+ prayerEditorialPublicationSummary().states.PUBLISHED_EXACT_PHOTO+" photo positions; no research-only publication");

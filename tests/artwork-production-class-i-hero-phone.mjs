@@ -6,9 +6,10 @@ import {resolve} from "node:path";
 import {chromium} from "@playwright/test";
 import {APPROVED_CLASS_I_2026} from "../src/calendar/approved-class-i-heroes-2026.js";
 
-const origin=new URL(process.env.AO_ART_PUBLIC_ORIGIN||"https://ad-orientem.vercel.app/");
+const origin=new URL(process.env.AO_ART_PUBLIC_ORIGIN||"https://fulcanelli13.github.io/ad-orientem/");
 assert.equal(origin.protocol,"https:");
-assert.equal(origin.hostname,"ad-orientem.vercel.app");
+assert.equal(origin.hostname,"fulcanelli13.github.io");
+assert.equal(origin.pathname,"/ad-orientem/","Only the canonical GitHub Pages public origin is supported");
 const out=resolve("artifacts/artwork-publication-truth");
 await mkdir(out,{recursive:true});
 const cases=[

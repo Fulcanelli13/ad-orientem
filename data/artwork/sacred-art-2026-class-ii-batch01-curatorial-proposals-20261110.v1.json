@@ -1,0 +1,567 @@
+{
+  "schema": "AO_SACRED_ART_CLASS_II_2026_BATCH01_CURATORIAL_PROPOSALS_V1",
+  "asOf": "2026-11-10",
+  "sourceSlate": "data/artwork/sacred-art-2026-class-ii-existing-match-review-slate-20261110.v1.json",
+  "purpose": "A substantive 25-date curatorial decision pass with one recommended work or an explicit better-reuse/search action. No new owner approvals inferred.",
+  "count": {
+    "dates": 25,
+    "triage": {
+      "HISTORICALLY_APPROVED_ART_REUSE": 9,
+      "EXISTING_SCENE_CANDIDATE": 11,
+      "PREFER_BAROQUE_ALTERNATIVE": 3,
+      "EXISTING_APPROVED_WORK_FROM_OTHER_SLOT": 1,
+      "EXISTING_APPROVED_WORK_FROM_OTHER_DATE": 1
+    },
+    "approvedDateBindings": 0,
+    "newPhotoAssets": 0,
+    "alreadyReleasedPhotoForPotentialReuseDates": 1
+  },
+  "safeguards": [
+    "Historical artwork-level APPROVED_LOCKED is not Calendar date approval.",
+    "No permanent artwork rejection: PREFER_BAROQUE_ALTERNATIVE is a date-placement/style judgment only.",
+    "Existing Prayer/calendar approvals may be suggested for another date but are never silently extended.",
+    "No auto-admission of Commons-only research images, no new source rights claim and no runtime date changes."
+  ],
+  "rows": [
+    {
+      "date": "2026-08-22",
+      "observance": "Immaculate Heart of Mary",
+      "principalId": "sancti:08-22:2:w",
+      "isSunday": false,
+      "editorialTriage": "HISTORICALLY_APPROVED_ART_REUSE",
+      "proposedArtwork": {
+        "artworkId": "B02-HEART-MARY-MORLETE",
+        "title": "The Heart of Mary",
+        "artist": "Juan Patricio Morlete Ruiz",
+        "preexistingEditorialState": "APPROVED_LOCKED",
+        "sourceKind": "EXISTING_CATALOGUE",
+        "existingPrayerApprovedSlots": [
+          {
+            "slot": "COV-novena.immaculate_heart",
+            "runtimeState": "PUBLISHED_EXACT_PHOTO",
+            "approvedOrInherited": true
+          },
+          {
+            "slot": "COV-programme.first_saturday",
+            "runtimeState": "PUBLISHED_EXACT_PHOTO",
+            "approvedOrInherited": true
+          },
+          {
+            "slot": "STG-programme.first_saturday-01",
+            "runtimeState": "APPROVED_EXACT_PHOTO_PENDING",
+            "approvedOrInherited": true
+          },
+          {
+            "slot": "COV-marian_consecration_immaculate_heart",
+            "runtimeState": "PUBLISHED_EXACT_PHOTO",
+            "approvedOrInherited": true
+          }
+        ]
+      },
+      "externalReuseReference": null,
+      "rationale": "Exact Immaculate Heart subject; the same original is already released for three approved Prayer covers. No new photo required.",
+      "nextAction": "PROPOSE_CALENDAR_DATE_REUSE",
+      "ownerApprovedForThisDate": false,
+      "productionImageCertifiedForThisDate": false,
+      "changeToCalendarRuntimeInThisBatch": false
+    },
+    {
+      "date": "2026-12-21",
+      "observance": "St. Thomas",
+      "principalId": "sancti:12-21:2:r",
+      "isSunday": false,
+      "editorialTriage": "HISTORICALLY_APPROVED_ART_REUSE",
+      "proposedArtwork": {
+        "artworkId": "W07-014",
+        "title": "The Incredulity of Saint Thomas",
+        "artist": "Caravaggio",
+        "preexistingEditorialState": "APPROVED_LOCKED",
+        "sourceKind": "EXISTING_CATALOGUE",
+        "existingPrayerApprovedSlots": [
+          {
+            "slot": "COV-foundations_act_of_faith",
+            "runtimeState": "APPROVED_EXACT_PHOTO_PENDING",
+            "approvedOrInherited": true
+          },
+          {
+            "slot": "COV-foundations_prayer_of_adoration",
+            "runtimeState": "APPROVED_EXACT_PHOTO_PENDING",
+            "approvedOrInherited": true
+          },
+          {
+            "slot": "STG-pray.five_wounds-05",
+            "runtimeState": "APPROVED_EXACT_PHOTO_PENDING",
+            "approvedOrInherited": true
+          },
+          {
+            "slot": "STG-pray.precious_blood-07",
+            "runtimeState": "APPROVED_EXACT_PHOTO_PENDING",
+            "approvedOrInherited": true
+          }
+        ]
+      },
+      "externalReuseReference": null,
+      "rationale": "Caravaggio's Thomas encounter is an exact saint narrative and fits the preferred dramatic Baroque treatment.",
+      "nextAction": "PROPOSE_CALENDAR_DATE_REUSE",
+      "ownerApprovedForThisDate": false,
+      "productionImageCertifiedForThisDate": false,
+      "changeToCalendarRuntimeInThisBatch": false
+    },
+    {
+      "date": "2026-04-25",
+      "observance": "St. Mark",
+      "principalId": "sancti:04-25:2:r",
+      "isSunday": false,
+      "editorialTriage": "HISTORICALLY_APPROVED_ART_REUSE",
+      "proposedArtwork": {
+        "artworkId": "B01-MARK-RENI-GENOA",
+        "title": "Saint Mark the Evangelist — Palazzo Rosso",
+        "artist": "Guido Reni",
+        "preexistingEditorialState": "APPROVED_LOCKED",
+        "sourceKind": "EXISTING_CATALOGUE",
+        "existingPrayerApprovedSlots": []
+      },
+      "externalReuseReference": null,
+      "rationale": "Guido Reni's dedicated Saint Mark portrait is a closer stylistic fit than the alternate Renaissance narrative; verify the exact Genoa painting identity before a date image release.",
+      "nextAction": "PROPOSE_CALENDAR_DATE_REUSE",
+      "ownerApprovedForThisDate": false,
+      "productionImageCertifiedForThisDate": false,
+      "changeToCalendarRuntimeInThisBatch": false
+    },
+    {
+      "date": "2026-07-02",
+      "observance": "Visitation of the Blessed Virgin Mary",
+      "principalId": "sancti:07-02:2:w",
+      "isSunday": false,
+      "editorialTriage": "HISTORICALLY_APPROVED_ART_REUSE",
+      "proposedArtwork": {
+        "artworkId": "ART-aphael-and-iulio-omano-he-isitation",
+        "title": "The Visitation",
+        "artist": "Raphael and Giulio Romano",
+        "preexistingEditorialState": "APPROVED_LOCKED",
+        "sourceKind": "EXISTING_CATALOGUE",
+        "existingPrayerApprovedSlots": []
+      },
+      "externalReuseReference": null,
+      "rationale": "The selected Visitation depicts the feast's encounter between Mary and Elizabeth; retain existing owner-vetted painting rather than seeking a duplicate.",
+      "nextAction": "PROPOSE_CALENDAR_DATE_REUSE",
+      "ownerApprovedForThisDate": false,
+      "productionImageCertifiedForThisDate": false,
+      "changeToCalendarRuntimeInThisBatch": false
+    },
+    {
+      "date": "2026-07-19",
+      "observance": "VIII Sunday after Pentecost",
+      "principalId": "tempora:Pent08-0:2:g",
+      "isSunday": true,
+      "editorialTriage": "EXISTING_SCENE_CANDIDATE",
+      "proposedArtwork": {
+        "artworkId": null,
+        "title": "The Parable of the Unjust Steward",
+        "artist": "Andrea Schiavone (Andrea Meldolla)",
+        "preexistingEditorialState": "STUDY_DATE_NOT_APPROVED",
+        "sourceKind": "STUDY_LEAD",
+        "existingPrayerApprovedSlots": []
+      },
+      "externalReuseReference": null,
+      "rationale": "The unjust steward is the appointed Gospel parable; existing Schiavone lead requires actual composition and source-identity inspection.",
+      "nextAction": "CONFIRM_SCENE_BEFORE_DATE_BINDING",
+      "ownerApprovedForThisDate": false,
+      "productionImageCertifiedForThisDate": false,
+      "changeToCalendarRuntimeInThisBatch": false
+    },
+    {
+      "date": "2026-07-25",
+      "observance": "St. James the Greater",
+      "principalId": "sancti:07-25:2:r",
+      "isSunday": false,
+      "editorialTriage": "HISTORICALLY_APPROVED_ART_REUSE",
+      "proposedArtwork": {
+        "artworkId": "W36-SNT-AP-03-3e9d9be5f41a",
+        "title": "Guido Reni - Saint James the Greater - Google Art Project",
+        "artist": "Guido Reni",
+        "preexistingEditorialState": "APPROVED_LOCKED",
+        "sourceKind": "EXISTING_CATALOGUE",
+        "existingPrayerApprovedSlots": []
+      },
+      "externalReuseReference": null,
+      "rationale": "Guido Reni's Saint James the Greater is an exact apostolic subject and is already marked approved at artwork level.",
+      "nextAction": "PROPOSE_CALENDAR_DATE_REUSE",
+      "ownerApprovedForThisDate": false,
+      "productionImageCertifiedForThisDate": false,
+      "changeToCalendarRuntimeInThisBatch": false
+    },
+    {
+      "date": "2026-08-24",
+      "observance": "St. Bartholomew",
+      "principalId": "sancti:08-24:2:r",
+      "isSunday": false,
+      "editorialTriage": "HISTORICALLY_APPROVED_ART_REUSE",
+      "proposedArtwork": {
+        "artworkId": "W02-001",
+        "title": "Saint Bartholomew (Apostolado series, 1630–35)",
+        "artist": "Jusepe de Ribera",
+        "preexistingEditorialState": "APPROVED_LOCKED",
+        "sourceKind": "EXISTING_CATALOGUE",
+        "existingPrayerApprovedSlots": []
+      },
+      "externalReuseReference": null,
+      "rationale": "Ribera's Saint Bartholomew is an exact-saint, dark-Baroque portrait, with historical artwork acceptance.",
+      "nextAction": "PROPOSE_CALENDAR_DATE_REUSE",
+      "ownerApprovedForThisDate": false,
+      "productionImageCertifiedForThisDate": false,
+      "changeToCalendarRuntimeInThisBatch": false
+    },
+    {
+      "date": "2026-09-21",
+      "observance": "St. Matthew",
+      "principalId": "sancti:09-21:2:r",
+      "isSunday": false,
+      "editorialTriage": "HISTORICALLY_APPROVED_ART_REUSE",
+      "proposedArtwork": {
+        "artworkId": "ART-aravaggio-nspiration-of-aint-atthew",
+        "title": "Inspiration of Saint Matthew",
+        "artist": "Caravaggio",
+        "preexistingEditorialState": "APPROVED_LOCKED",
+        "sourceKind": "EXISTING_CATALOGUE",
+        "existingPrayerApprovedSlots": []
+      },
+      "externalReuseReference": null,
+      "rationale": "Caravaggio's Inspiration of Saint Matthew directly depicts the evangelist and meets the preferred chiaroscuro aesthetic; use that existing approved artwork rather than an ambiguous file-name attribution.",
+      "nextAction": "PROPOSE_CALENDAR_DATE_REUSE",
+      "ownerApprovedForThisDate": false,
+      "productionImageCertifiedForThisDate": false,
+      "changeToCalendarRuntimeInThisBatch": false
+    },
+    {
+      "date": "2026-10-11",
+      "observance": "XX Sunday after Pentecost",
+      "principalId": "tempora:Pent20-0:2:g",
+      "isSunday": true,
+      "editorialTriage": "PREFER_BAROQUE_ALTERNATIVE",
+      "proposedArtwork": null,
+      "externalReuseReference": null,
+      "rationale": "The sole study lead is a Mughal painting of the nobleman's son; subject may correspond to John 4:46–53, but the visual style is far outside the selected Baroque family.",
+      "nextAction": "MATCH_WITH_EXISTING_GALLERY_FIRST",
+      "ownerApprovedForThisDate": false,
+      "productionImageCertifiedForThisDate": false,
+      "changeToCalendarRuntimeInThisBatch": false
+    },
+    {
+      "date": "2026-11-08",
+      "observance": "V Sunday after Epiphany",
+      "principalId": "tempora:Epi5-0:2:g",
+      "isSunday": true,
+      "editorialTriage": "EXISTING_SCENE_CANDIDATE",
+      "proposedArtwork": {
+        "artworkId": null,
+        "title": "The Parable of the Wheat and the Tares",
+        "artist": "Lucas Gassel",
+        "preexistingEditorialState": "STUDY_DATE_NOT_APPROVED",
+        "sourceKind": "STUDY_LEAD",
+        "existingPrayerApprovedSlots": []
+      },
+      "externalReuseReference": null,
+      "rationale": "Wheat and tares is the appointed parable; Lucas Gassel's landscape is an iconographic lead, but its early style merits comparison against darker candidates.",
+      "nextAction": "CONFIRM_SCENE_AND_STYLE",
+      "ownerApprovedForThisDate": false,
+      "productionImageCertifiedForThisDate": false,
+      "changeToCalendarRuntimeInThisBatch": false
+    },
+    {
+      "date": "2026-12-26",
+      "observance": "St. Stephen",
+      "principalId": "sancti:12-26:2:r",
+      "isSunday": false,
+      "editorialTriage": "HISTORICALLY_APPROVED_ART_REUSE",
+      "proposedArtwork": {
+        "artworkId": "ART-uan-de-uanes-artyrdom-of-aint-tephen",
+        "title": "Martyrdom of Saint Stephen",
+        "artist": "Juan de Juanes",
+        "preexistingEditorialState": "APPROVED_LOCKED",
+        "sourceKind": "EXISTING_CATALOGUE",
+        "existingPrayerApprovedSlots": []
+      },
+      "externalReuseReference": null,
+      "rationale": "Juan de Juanes directly depicts Saint Stephen's martyrdom and is already recorded as approved artwork.",
+      "nextAction": "PROPOSE_CALENDAR_DATE_REUSE",
+      "ownerApprovedForThisDate": false,
+      "productionImageCertifiedForThisDate": false,
+      "changeToCalendarRuntimeInThisBatch": false
+    },
+    {
+      "date": "2026-01-13",
+      "observance": "Commemoration of the Baptism of the Lord",
+      "principalId": "sancti:01-13:2:w",
+      "isSunday": false,
+      "editorialTriage": "EXISTING_SCENE_CANDIDATE",
+      "proposedArtwork": {
+        "artworkId": "met-435755",
+        "title": "The Baptism of Christ",
+        "artist": "Sébastien Bourdon",
+        "preexistingEditorialState": "PREVIOUSLY_RATED_ACCEPTABLE",
+        "sourceKind": "EXISTING_CATALOGUE",
+        "existingPrayerApprovedSlots": []
+      },
+      "externalReuseReference": null,
+      "rationale": "Sébastien Bourdon's Baptism of Christ is an exact episode with a seventeenth-century Baroque treatment; one of several previously acceptable candidates, not an approved date placement.",
+      "nextAction": "PROPOSE_WITH_EXISTING_ALTERNATES",
+      "ownerApprovedForThisDate": false,
+      "productionImageCertifiedForThisDate": false,
+      "changeToCalendarRuntimeInThisBatch": false
+    },
+    {
+      "date": "2026-01-25",
+      "observance": "III Sunday after Epiphany",
+      "principalId": "tempora:Epi3-0:2:g",
+      "isSunday": true,
+      "editorialTriage": "EXISTING_SCENE_CANDIDATE",
+      "proposedArtwork": {
+        "artworkId": null,
+        "title": "Christ and the Centurion",
+        "artist": "Paolo Veronese",
+        "preexistingEditorialState": "STUDY_DATE_NOT_APPROVED",
+        "sourceKind": "STUDY_LEAD",
+        "existingPrayerApprovedSlots": []
+      },
+      "externalReuseReference": null,
+      "rationale": "Christ and the Centurion illustrates the centurion section of the appointed Matthew 8 Gospel; the leper episode is not shown.",
+      "nextAction": "CONFIRM_SCENE_BEFORE_DATE_BINDING",
+      "ownerApprovedForThisDate": false,
+      "productionImageCertifiedForThisDate": false,
+      "changeToCalendarRuntimeInThisBatch": false
+    },
+    {
+      "date": "2026-02-01",
+      "observance": "Septuagesima Sunday",
+      "principalId": "tempora:Quadp1-0:2:v",
+      "isSunday": true,
+      "editorialTriage": "EXISTING_SCENE_CANDIDATE",
+      "proposedArtwork": {
+        "artworkId": null,
+        "title": "Parable of the Workers in the Vineyard",
+        "artist": "Salomon Koninck",
+        "preexistingEditorialState": "STUDY_DATE_NOT_APPROVED",
+        "sourceKind": "STUDY_LEAD",
+        "existingPrayerApprovedSlots": []
+      },
+      "externalReuseReference": null,
+      "rationale": "Salomon Koninck's Workers in the Vineyard depicts the appointed Septuagesima Gospel parable and provides a Dutch Baroque alternative to the Rembrandt study lead.",
+      "nextAction": "VERIFY_OBJECT_AND_COMPOSITION",
+      "ownerApprovedForThisDate": false,
+      "productionImageCertifiedForThisDate": false,
+      "changeToCalendarRuntimeInThisBatch": false
+    },
+    {
+      "date": "2026-02-02",
+      "observance": "Purification of the Blessed Virgin Mary",
+      "principalId": "sancti:02-02:2:w",
+      "isSunday": false,
+      "editorialTriage": "EXISTING_APPROVED_WORK_FROM_OTHER_SLOT",
+      "proposedArtwork": null,
+      "externalReuseReference": {
+        "prayerSlot": "HERO-04",
+        "title": "Presentation of Jesus at the Temple",
+        "artist": "Philippe de Champaigne"
+      },
+      "rationale": "The existing approved Prayer seasonal hero uses Philippe de Champaigne's Presentation of Jesus at the Temple; propose that exact work for this feast before acquiring another Gothic depiction.",
+      "nextAction": "PROPOSE_PRAYER_HERO_ART_REUSE",
+      "ownerApprovedForThisDate": false,
+      "productionImageCertifiedForThisDate": false,
+      "changeToCalendarRuntimeInThisBatch": false
+    },
+    {
+      "date": "2026-02-08",
+      "observance": "Sexagesima Sunday",
+      "principalId": "tempora:Quadp2-0:2:v",
+      "isSunday": true,
+      "editorialTriage": "EXISTING_SCENE_CANDIDATE",
+      "proposedArtwork": {
+        "artworkId": null,
+        "title": "Landscape with the Parable of the Sower",
+        "artist": "Pieter Bruegel the Elder",
+        "preexistingEditorialState": "STUDY_DATE_NOT_APPROVED",
+        "sourceKind": "STUDY_LEAD",
+        "existingPrayerApprovedSlots": []
+      },
+      "externalReuseReference": null,
+      "rationale": "Bruegel's Sower is the correct Sexagesima Gospel subject. Retain as a scene match while testing Baroque alternatives for the intended aesthetic.",
+      "nextAction": "CONFIRM_SCENE_AND_STYLE",
+      "ownerApprovedForThisDate": false,
+      "productionImageCertifiedForThisDate": false,
+      "changeToCalendarRuntimeInThisBatch": false
+    },
+    {
+      "date": "2026-02-15",
+      "observance": "Quinquagesima Sunday",
+      "principalId": "tempora:Quadp3-0:2:v",
+      "isSunday": true,
+      "editorialTriage": "EXISTING_SCENE_CANDIDATE",
+      "proposedArtwork": {
+        "artworkId": null,
+        "title": "Healing of the Blind Man of Jericho (Triptych)",
+        "artist": "Lucas van Leyden",
+        "preexistingEditorialState": "STUDY_DATE_NOT_APPROVED",
+        "sourceKind": "STUDY_LEAD",
+        "existingPrayerApprovedSlots": []
+      },
+      "externalReuseReference": null,
+      "rationale": "The Jericho blind-man healing is the concluding Quinquagesima Gospel episode; the triptych format and crop must preserve the actual depicted scene.",
+      "nextAction": "CONFIRM_TRIPTYCH_SCENE",
+      "ownerApprovedForThisDate": false,
+      "productionImageCertifiedForThisDate": false,
+      "changeToCalendarRuntimeInThisBatch": false
+    },
+    {
+      "date": "2026-05-11",
+      "observance": "Sts. Philip & James",
+      "principalId": "sancti:05-11r:2:r",
+      "isSunday": false,
+      "editorialTriage": "HISTORICALLY_APPROVED_ART_REUSE",
+      "proposedArtwork": {
+        "artworkId": "W01-001",
+        "title": "The Martyrdom of Saint Philip",
+        "artist": "Jusepe de Ribera",
+        "preexistingEditorialState": "APPROVED_LOCKED",
+        "sourceKind": "EXISTING_CATALOGUE",
+        "existingPrayerApprovedSlots": []
+      },
+      "externalReuseReference": null,
+      "rationale": "Ribera's martyrdom of Saint Philip is a strong Baroque feast image; it represents Philip only, so label must not imply the painting also depicts James.",
+      "nextAction": "PROPOSE_SINGLE_SAINT_REPRESENTATIVE",
+      "ownerApprovedForThisDate": false,
+      "productionImageCertifiedForThisDate": false,
+      "changeToCalendarRuntimeInThisBatch": false
+    },
+    {
+      "date": "2026-06-07",
+      "observance": "II Sunday after Pentecost",
+      "principalId": "tempora:Pent02-0r:2:g",
+      "isSunday": true,
+      "editorialTriage": "EXISTING_SCENE_CANDIDATE",
+      "proposedArtwork": {
+        "artworkId": null,
+        "title": "The Parable of the Great Supper",
+        "artist": "Cornelis Droochsloot",
+        "preexistingEditorialState": "STUDY_DATE_NOT_APPROVED",
+        "sourceKind": "STUDY_LEAD",
+        "existingPrayerApprovedSlots": []
+      },
+      "externalReuseReference": null,
+      "rationale": "The Great Supper is the appointed Luke 14 parable. The Droochsloot lead is iconographically relevant, subject to object verification.",
+      "nextAction": "CONFIRM_SCENE_BEFORE_DATE_BINDING",
+      "ownerApprovedForThisDate": false,
+      "productionImageCertifiedForThisDate": false,
+      "changeToCalendarRuntimeInThisBatch": false
+    },
+    {
+      "date": "2026-06-14",
+      "observance": "III Sunday after Pentecost",
+      "principalId": "tempora:Pent03-0r:2:g",
+      "isSunday": true,
+      "editorialTriage": "PREFER_BAROQUE_ALTERNATIVE",
+      "proposedArtwork": null,
+      "externalReuseReference": null,
+      "rationale": "The Lost Sheep study lead is a later workshop attribution and is not a strong match for the preferred dark-Baroque visual family.",
+      "nextAction": "MATCH_WITH_EXISTING_GALLERY_FIRST",
+      "ownerApprovedForThisDate": false,
+      "productionImageCertifiedForThisDate": false,
+      "changeToCalendarRuntimeInThisBatch": false
+    },
+    {
+      "date": "2026-07-05",
+      "observance": "VI Sunday after Pentecost",
+      "principalId": "tempora:Pent06-0:2:g",
+      "isSunday": true,
+      "editorialTriage": "EXISTING_SCENE_CANDIDATE",
+      "proposedArtwork": {
+        "artworkId": null,
+        "title": "The Miracle of the Loaves and Fishes",
+        "artist": "Giovanni Lanfranco",
+        "preexistingEditorialState": "STUDY_DATE_NOT_APPROVED",
+        "sourceKind": "STUDY_LEAD",
+        "existingPrayerApprovedSlots": []
+      },
+      "externalReuseReference": null,
+      "rationale": "Lanfranco's loaves-and-fishes scene illustrates the appointed Mark 8 multiplication of bread; the same artist/work family is already in Prayer research.",
+      "nextAction": "VERIFY_EXACT_WORK_AND_SCENE",
+      "ownerApprovedForThisDate": false,
+      "productionImageCertifiedForThisDate": false,
+      "changeToCalendarRuntimeInThisBatch": false
+    },
+    {
+      "date": "2026-07-26",
+      "observance": "IX Sunday after Pentecost",
+      "principalId": "tempora:Pent09-0:2:g",
+      "isSunday": true,
+      "editorialTriage": "EXISTING_SCENE_CANDIDATE",
+      "proposedArtwork": {
+        "artworkId": null,
+        "title": "Christ Cleansing the Temple",
+        "artist": "Luca Giordano",
+        "preexistingEditorialState": "STUDY_DATE_NOT_APPROVED",
+        "sourceKind": "STUDY_LEAD",
+        "existingPrayerApprovedSlots": []
+      },
+      "externalReuseReference": null,
+      "rationale": "Giordano's Cleansing of the Temple depicts the second action of the appointed Luke 19 Gospel, though not necessarily Christ weeping over Jerusalem.",
+      "nextAction": "CONFIRM_SCENE_BEFORE_DATE_BINDING",
+      "ownerApprovedForThisDate": false,
+      "productionImageCertifiedForThisDate": false,
+      "changeToCalendarRuntimeInThisBatch": false
+    },
+    {
+      "date": "2026-08-02",
+      "observance": "X Sunday after Pentecost",
+      "principalId": "tempora:Pent10-0:2:g",
+      "isSunday": true,
+      "editorialTriage": "PREFER_BAROQUE_ALTERNATIVE",
+      "proposedArtwork": null,
+      "externalReuseReference": null,
+      "rationale": "The church-interior allegory of the Pharisee and Publican is an indirect rendition of Luke 18; seek a direct narrative treatment before adopting it as a Sunday hero.",
+      "nextAction": "MATCH_WITH_EXISTING_GALLERY_FIRST",
+      "ownerApprovedForThisDate": false,
+      "productionImageCertifiedForThisDate": false,
+      "changeToCalendarRuntimeInThisBatch": false
+    },
+    {
+      "date": "2026-08-06",
+      "observance": "Transfiguration of Our Lord",
+      "principalId": "sancti:08-06:2:w",
+      "isSunday": false,
+      "editorialTriage": "EXISTING_APPROVED_WORK_FROM_OTHER_DATE",
+      "proposedArtwork": null,
+      "externalReuseReference": {
+        "calendarDate": "2026-03-01",
+        "title": "The Transfiguration",
+        "artist": "Raphael"
+      },
+      "rationale": "Raphael's Transfiguration is already selected for 1 March 2026 (II Sunday of Lent). Consider a second scoped use for this exact feast instead of adding a different late-Gothic image.",
+      "nextAction": "PROPOSE_PREVIOUS_DATE_ART_REUSE",
+      "ownerApprovedForThisDate": false,
+      "productionImageCertifiedForThisDate": false,
+      "changeToCalendarRuntimeInThisBatch": false
+    },
+    {
+      "date": "2026-08-09",
+      "observance": "XI Sunday after Pentecost",
+      "principalId": "tempora:Pent11-0:2:g",
+      "isSunday": true,
+      "editorialTriage": "EXISTING_SCENE_CANDIDATE",
+      "proposedArtwork": {
+        "artworkId": null,
+        "title": "Christ Healing the Deaf-Mute",
+        "artist": "Philippe de Champaigne",
+        "preexistingEditorialState": "STUDY_DATE_NOT_APPROVED",
+        "sourceKind": "STUDY_LEAD",
+        "existingPrayerApprovedSlots": []
+      },
+      "externalReuseReference": null,
+      "rationale": "Champaigne's Healing of the Deaf-Mute is a literal match for Mark 7:31–37 and strongly aligns with the chosen art direction; the study lead still needs a verified exact object.",
+      "nextAction": "VERIFY_EXACT_WORK_AND_SCENE",
+      "ownerApprovedForThisDate": false,
+      "productionImageCertifiedForThisDate": false,
+      "changeToCalendarRuntimeInThisBatch": false
+    }
+  ]
+}
