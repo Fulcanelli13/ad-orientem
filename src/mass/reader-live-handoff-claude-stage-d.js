@@ -93,6 +93,8 @@ export const CLAUDE_PORT_CSS=[
 ".ao-reader-shell.ao-live-band-enabled>.ao-reader-top-ribbon{height:40px;min-height:40px;grid-template-columns:40px minmax(0,1fr) 40px;padding:0 4px}",
 ".ao-reader-shell.ao-live-band-enabled .ao-reader-top-action{width:38px;height:38px}",
 ".ao-reader-shell.ao-live-band-enabled .ao-section-jump{height:38px;font-size:13px}",
+".ao-reader-shell.ao-live-band-enabled[data-mode='LIVE'] .ao-section-jump{white-space:nowrap;text-overflow:ellipsis;overflow:hidden;min-width:0}",
+".ao-reader-shell.ao-live-band-enabled[data-mode='LIVE'] .ao-section-jump [data-role='section-title']{display:block;min-width:0;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;overflow-wrap:normal;-webkit-line-clamp:unset}",
 ".ao-reader-shell.ao-live-band-enabled .ao-claude-music-access{position:absolute;right:45px;top:4px;width:43px;height:32px;display:grid;place-items:center;border:1px solid rgba(215,207,184,.16);border-radius:8px;background:rgba(17,23,26,.95);color:#e6dcc7;font:700 9px system-ui,sans-serif;letter-spacing:.05em;z-index:14;cursor:pointer}",
 ".ao-reader-shell.ao-live-band-enabled .ao-claude-music-access[hidden]{display:none!important}",
 ".ao-reader-shell.ao-live-band-enabled .ao-claude-music-access:focus-visible{outline:2px solid #e2c78d;outline-offset:1px}",
