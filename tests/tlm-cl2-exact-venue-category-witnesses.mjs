@@ -66,6 +66,6 @@ const wrongLink=structuredClone(witness);
 wrongLink.records[0].identity_evidence_url="https://www.latinmassdir.org/";
 assert.throws(()=>validateCL2ExactVenueCategoryWitnesses(index,wrongLink),/Unsafe site-category witness/);
 const noCategory=categories.map(x=>({...x}));
-noCategory[0].site_category=undefined;
+noCategory[noCategory.findIndex(x=>x.physical_group_id==="RG-0117370AD6BF")].site_category=undefined;
 assert.throws(()=>attachCL2ExactVenueCategoryWitnesses(noCategory,index,witness),/Venue witness/);
 console.log("PASS CL2 26 first-party venue categories: 2580 sites intact, 393 held, 1335 exact CL27 ministry joins unchanged");
