@@ -52,7 +52,7 @@ export function selectLiveHandoffResearchNotation({
 }
 
 export const LIVE_HANDOFF_RESEARCH_NOTATION_CSS=[
- ".ao-reader-shell.ao-live-band-enabled [data-ao-reference-score-trigger]{position:absolute;z-index:6;top:3px;right:47px;max-width:110px;height:25px;padding:2px 5px;border:1px solid rgba(225,205,145,.52);border-radius:6px;background:#182322;color:#e8dfc7;font:600 9px/1.1 system-ui,sans-serif;cursor:pointer;white-space:nowrap}",
+ ".ao-reader-shell.ao-live-band-enabled [data-ao-reference-score-trigger]{position:absolute;z-index:22;top:6px;left:clamp(104px,31vw,146px);right:auto;max-width:76px;height:25px;padding:2px 5px;border:1px solid rgba(225,205,145,.52);border-radius:6px;background:#182322;color:#e8dfc7;font:600 9px/1.1 system-ui,sans-serif;cursor:pointer;white-space:nowrap}",
  ".ao-reader-shell.ao-live-band-enabled [data-ao-reference-score-trigger][hidden]{display:none!important}",
  ".ao-reader-shell.ao-live-band-enabled .ao-live-reference-panel[hidden]{display:none!important}",
  ".ao-reader-shell.ao-live-band-enabled .ao-live-reference-panel{position:relative;max-height:105px;overflow:hidden;margin:3px 0 0}",
@@ -65,7 +65,7 @@ export const LIVE_HANDOFF_RESEARCH_NOTATION_CSS=[
  ".ao-reader-shell.ao-live-band-enabled .ao-schola-dock[data-ao-research-reference='true']:not([data-collapsed='true']){height:146px!important;min-height:146px!important;max-height:146px!important}",
  ".ao-reader-shell.ao-live-band-enabled .ao-schola-dock[data-ao-research-reference='true'] :is(.ao-schola-main,.ao-schola-meta,.ao-schola-upcoming){display:none!important}",
  ".ao-reader-shell.ao-live-band-enabled .ao-schola-dock[data-ao-research-reference='true'] .ao-schola-title{margin-top:0}",
- "@media(max-width:380px){.ao-reader-shell.ao-live-band-enabled [data-ao-reference-score-trigger]{right:37px;max-width:87px;font-size:8px}}"
+ "@media(max-width:380px){.ao-reader-shell.ao-live-band-enabled [data-ao-reference-score-trigger]{left:96px;right:auto;max-width:66px;font-size:8px}}"
 ].join("\n");
 
 export function installLiveHandoffResearchNotation({
