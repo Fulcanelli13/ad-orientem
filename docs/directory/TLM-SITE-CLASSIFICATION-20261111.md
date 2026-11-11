@@ -95,6 +95,41 @@ and 74 directory-only groups). The original site index and previously released
 source-exact CL27 ministry liturgy remain unchanged. The three published
 non-CL2 additional cards are also unchanged.
 
+## Third exact-site classification batch — LMS source reconciliation
+
+A further **28** LMS-discovered sites are individually matched to first-party
+diocesan, parish, or institutional sources. This pass has **26 diocesan/parish
+contexts, one multi-rite hosted parish, and one Institute-operated shrine**.
+
+- **Withermarsh Green**: Diocese of East Anglia identifies a local 1962 Rite
+  Community within Sudbury Parish. It is a diocesan setting, not an inferred
+  autonomous institute.
+- **New Brighton**: ICKSP explicitly operates the Shrine Church of SS Peter,
+  Paul and Philomena. Its institute identity can guide the emblem lane, while
+  legal building ownership is not asserted.
+- **St Birinus, Dorchester-on-Thames**: Archdiocese of Birmingham explicitly
+  describes its Sunday sung Latin Mass under the **1970 Missal**. The category
+  must not generate a 1962 Mass or label every Latin liturgy traditional.
+- **St Etheldreda, Ely Place**: the Westminster parish is served by the
+  Rosminians; its official site explicitly says its Sunday sung Latin Mass is
+  **Novus Ordo**.
+- **St Thomas More, Iford**: diocesan parish, Ordinariate mission and older
+  Latin Mass events coexist; the site is a **mixed/host venue**.
+- **Isle of Wight**: St Mary Ryde, St Michael Bembridge, St David East Cowes,
+  and St Thomas of Canterbury Cowes were placed in the August 2026 Holy Spirit
+  parish merger; the building IDs remain unchanged.
+- Other source-specific parish confirmations include Christ the King Bedford,
+  OLEM Cambridge, St Anne Line, St John Vianney Clayhall, St Pancras Ipswich,
+  St Joseph Basingstoke, Ss Joseph Patrick and Cuthbert Coxhoe, and more.
+
+All 28 records retain their original physical CL2 identity and provenance.
+No Mass occurrence, Missal, Una Cum, ownership or image is inferred or
+changed in this pass. Exact evidence URLs are attached individually.
+
+**Running totals: 91 first-party exact-site witnesses; 2,252 / 2,580
+classified (87.29%); 328 held (254 unresolved + 74 directory-only).**
+The CL27 source-ministry inherited liturgy remains unmodified.
+
 ## Major outstanding holds
 
 - 209 Latin Mass Society discovery rows labelled unverified operator.

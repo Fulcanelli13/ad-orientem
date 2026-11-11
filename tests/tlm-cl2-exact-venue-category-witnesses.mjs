@@ -13,9 +13,10 @@ const witness=read("data/directory/cl2-exact-venue-category-witnesses-20261111.v
 const institute=read("data/directory/cl27-institutional-ministry-liturgy-20261110.v1.json");
 validateCL2SiteCategoryMatrix(index,matrix);
 const exact=validateCL2ExactVenueCategoryWitnesses(index,witness);
-assert.equal(exact.size,63);
+assert.equal(exact.size,91);
 assert.deepEqual(witness.summary.by_category,{
- DIOCESAN_OR_PARISH_CONTEXT:38,RELIGIOUS_HOUSE:16,MIXED_OR_HOST_RELATIONSHIP:9,
+ DIOCESAN_OR_PARISH_CONTEXT:64,RELIGIOUS_HOUSE:16,MIXED_OR_HOST_RELATIONSHIP:10,
+ PRIESTLY_SOCIETY_OR_CLERGY:1,
 });
 const original=index.records.map(r=>({
  kind:"TLM_VENUE",physical_site_source:"CL2_MASTER",physical_group_id:r[0],
@@ -25,13 +26,14 @@ const institutional=attachInstitutionalMinistryLiturgy(original,institute);
 const categories=attachCL2SiteCategories(institutional,index,matrix);
 const improved=attachCL2ExactVenueCategoryWitnesses(categories,index,witness);
 assert.equal(improved.length,2580);
-assert.equal(improved.filter(r=>r.site_category?.classification_basis==="EXACT_FIRST_PARTY_VENUE_WITNESS").length,63);
-assert.equal(improved.filter(r=>r.site_category?.category==="UNRESOLVED").length,282);
+assert.equal(improved.filter(r=>r.site_category?.classification_basis==="EXACT_FIRST_PARTY_VENUE_WITNESS").length,91);
+assert.equal(improved.filter(r=>r.site_category?.category==="UNRESOLVED").length,254);
 assert.equal(improved.filter(r=>r.site_category?.category==="DIRECTORY_GROUP_ONLY").length,74);
-assert.equal(improved.filter(r=>["UNRESOLVED","DIRECTORY_GROUP_ONLY"].includes(r.site_category?.category)).length,356);
-assert.equal(improved.filter(r=>r.site_category?.category==="DIOCESAN_OR_PARISH_CONTEXT").length,671);
+assert.equal(improved.filter(r=>["UNRESOLVED","DIRECTORY_GROUP_ONLY"].includes(r.site_category?.category)).length,328);
+assert.equal(improved.filter(r=>r.site_category?.category==="DIOCESAN_OR_PARISH_CONTEXT").length,697);
 assert.equal(improved.filter(r=>r.site_category?.category==="RELIGIOUS_HOUSE").length,113);
-assert.equal(improved.filter(r=>r.site_category?.category==="MIXED_OR_HOST_RELATIONSHIP").length,23);
+assert.equal(improved.filter(r=>r.site_category?.category==="MIXED_OR_HOST_RELATIONSHIP").length,24);
+assert.equal(improved.filter(r=>r.site_category?.category==="PRIESTLY_SOCIETY_OR_CLERGY").length,1393);
 assert.equal(improved.filter(r=>r.institutional_liturgy).length,1335);
 for(let i=0;i<improved.length;i++){
  const before=categories[i],after=improved[i],proof=exact.get(after.physical_group_id);
@@ -56,6 +58,11 @@ assert.equal(byId("RG-50E89F98157D").site_category.category,"RELIGIOUS_HOUSE");
 assert.equal(byId("RG-F0533B246844").site_category.category,"MIXED_OR_HOST_RELATIONSHIP");
 assert.equal(byId("RG-F3940D915079").site_category.category,"DIOCESAN_OR_PARISH_CONTEXT");
 assert.equal(byId("RG-01F176BB1074").site_category.category,"DIOCESAN_OR_PARISH_CONTEXT");
+assert.equal(byId("RG-6504A98F8FAF").site_category.category,"PRIESTLY_SOCIETY_OR_CLERGY");
+assert.equal(byId("RG-6504A98F8FAF").site_category.related_ministry_hint,"ICKSP");
+assert.equal(byId("RG-293E1CE7BC2A").site_category.category,"DIOCESAN_OR_PARISH_CONTEXT");
+assert.equal(byId("RG-B120BF4FF522").site_category.related_ministry_hint,"ROSMINIANS");
+assert.equal(byId("RG-3923AED1F35D").site_category.category,"MIXED_OR_HOST_RELATIONSHIP");
 const tampered=structuredClone(witness);
 tampered.records[0].exact_name="Different church";
 assert.throws(()=>validateCL2ExactVenueCategoryWitnesses(index,tampered),/Unsafe site-category witness/);
@@ -68,4 +75,4 @@ assert.throws(()=>validateCL2ExactVenueCategoryWitnesses(index,wrongLink),/Unsaf
 const noCategory=categories.map(x=>({...x}));
 noCategory[noCategory.findIndex(x=>x.physical_group_id==="RG-0117370AD6BF")].site_category=undefined;
 assert.throws(()=>attachCL2ExactVenueCategoryWitnesses(noCategory,index,witness),/Venue witness/);
-console.log("PASS CL2 63 first-party venue categories: 2580 sites intact, 356 held, 1335 exact CL27 ministry joins unchanged");
+console.log("PASS CL2 91 first-party venue categories: 2580 sites intact, 328 held, 1335 exact CL27 ministry joins unchanged");
