@@ -3438,7 +3438,8 @@ export function createReaderDomAdapter({
             const reader=root.querySelector(".ao-prayer-card");
             if(reader){
               scholaMassTextSync=createScholaMassTextSynchronizer({
-                reader,gabc:score.gabc,enabled:()=>mode==="LIVE" &&
+                reader,gabc:score.gabc,trackId:score.scholaTrackId,
+                enabled:()=>mode==="LIVE" &&
                   root.querySelector(".ao-prayer-card")===reader &&
                   current?.scholaShared===true &&
                   current?.scholaVisible===true &&
@@ -3447,6 +3448,7 @@ export function createReaderDomAdapter({
             }
             scholaDockFollower=createScholaNotationFollower({
               staff,strip,document:doc,window:doc?.defaultView,
+              trackId:score.scholaTrackId,
               onPosition:({index,count})=>{
                 scholaMassTextSync?.follow(index);
                 const progress=root.querySelector('[data-role="schola-progress"]');
