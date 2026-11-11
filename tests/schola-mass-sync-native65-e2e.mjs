@@ -167,6 +167,47 @@ try{
     assert.ok(moved.scoreWidth>moved.viewportWidth+50,
      "Authentic neumes are not in a horizontal score viewport");
    }
+   if(width===390){
+    // Reverse direction: user scrolls the MAIN LATIN READER. Only Kyrie,
+    // Gloria and Credo may move the horizontal notation cursor.
+    const origin=await page.evaluate(()=>{
+      const reader=document.querySelector(".ao-prayer-card");
+      const rows=[...reader.querySelectorAll(
+        '.ao-reader-paragraph:not([data-kind="RUBRIC"]) .ao-line-primary')]
+        .filter(el=>el.textContent.trim()&&el.getBoundingClientRect().height>0);
+      if(rows.length<3)throw Error("Insufficient Ordinary source text to test reverse scroll");
+      const target=rows[Math.min(rows.length-1,3)];
+      const rect=target.getBoundingClientRect(),scroll=reader.getBoundingClientRect();
+      const desired=reader.scrollTop+(rect.top+rect.height/2-scroll.top)-
+        reader.clientHeight*.39;
+      reader.scrollTop=desired;
+      reader.dispatchEvent(new Event("scroll",{bubbles:true}));
+      return {desired,actual:reader.scrollTop,
+        earlierIndex:document.querySelector('[data-role="schola-approved-staff"]')
+          ?.dataset.scholaFollowIndex,
+        paragraphs:rows.length};
+    });
+    if(Math.abs(origin.actual)<2)
+      throw Error("Actual Ordinary reader must have scroll travel: "+JSON.stringify(origin));
+    await page.waitForFunction(previous=>{
+      const staff=document.querySelector('[data-role="schola-approved-staff"]');
+      return staff?.dataset.scholaFollowOrigin==="reader-scroll" &&
+        staff.dataset.scholaFollowIndex!==previous;
+    },origin.earlierIndex,{timeout:5000});
+    const changed=await page.evaluate(()=>({
+      index:document.querySelector('[data-role="schola-approved-staff"]')
+        ?.dataset.scholaFollowIndex,
+      strip:document.querySelector('[data-role="schola-follow-strip"]')
+        ?.dataset.scholaFollowIndex,
+      rubricCount:document.querySelectorAll(
+        '.ao-reader-paragraph[data-kind="RUBRIC"]').length,
+      card:window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId
+    }));
+    assert.equal(changed.index,changed.strip,
+      "Vertical reading and horizontal notation need one Ordinary cursor");
+    assert.equal(changed.card,target.ordered[target.choirStart],
+      "Reverse scroll must not create or skip a Mass prayer card");
+   }
    if(width===390 && track!=="KYRIE"){
     await page.screenshot({path:resolve(out,track.toLowerCase()+"-native65-390.png"),
      animations:"disabled"});
