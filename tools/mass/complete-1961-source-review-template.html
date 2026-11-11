@@ -113,8 +113,10 @@ function choose(id){
  const item=byId.get(id);if(!item)return;
  chosen=item;resetScore();$("title").textContent=item.title;
  badges([item.category,item.role,item.settingId||"1961 Proper",item.id]);
- $("scoreInfo").textContent="Graduale Romanum, Solesmes 1961 · printed p. "+
-  (item.folio||"unrecorded")+" · "+(item.sourceMatch2026.length||0)+
+ const printedFolio=item.category==="ORDINARY"?
+  item.folio:"Graduale Romanum, Solesmes 1961 · p. "+(item.folio||"unrecorded");
+ $("scoreInfo").textContent=printedFolio+" · "+
+  (item.sourceMatch2026.length||0)+
   " 2026 source corroboration(s). Musical approval: NO.";
  $("sourceLink").href=item.sourceUrl;$("sourceLink").hidden=false;
  $("printLink").hidden=!item.original1961EditionUrl;
