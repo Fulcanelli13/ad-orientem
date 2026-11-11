@@ -15,6 +15,7 @@ import {releasedTannerNicodemusForClassI2026} from "./released-class-i-tanner-ni
 import {releasedRaphaelVaticanHomeArtwork2026} from "./released-class-i-raphael-transfiguration-2026.js";
 import {releasedTwoFrozenClassIHomeArtwork2026} from "./released-class-i-two-frozen-photos-2026.js";
 import {releasedGoodFridaySanPoloHomeArtwork2026} from "./released-class-i-good-friday-san-polo-2026.js";
+import {releasedSaraceniParadiseClassI2026} from "./released-class-i-saraceni-paradise-2026.js";
 import {approved2026SeasonalHomeReuse} from "./approved-2026-seasonal-reuse.js";
 import {annualHomeArtworkDay2026} from "./annual-home-artwork-2026.js";
 
@@ -182,6 +183,10 @@ export function approved2026HomeArtwork(state,provider=null){
  if(locked){
   const expected=CLASS_I_PROPER[date];
   if(!expected||!classIPathAccepts(date,expected,properPath))return null;
+  // The frozen All Saints Saraceni work now uses the exact local Met CC0 original.
+  // Its archived Commons preview remains unchanged in the historical selection.
+  const saraceni=releasedSaraceniParadiseClassI2026(date,principalId,properPath);
+  if(saraceni)return saraceni;
   // For the approved Sacred Heart date, use its exact local released photo
   // instead of the remote Wikimedia thumbnail. All other held dates stay held.
   const local=LOCAL_CLASS_I_REUSE[date];
