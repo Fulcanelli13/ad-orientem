@@ -7,12 +7,12 @@ import {hydrateHomeDidYouKnow,HOME_DYK_GLOSSARY_IDS} from "../src/home/did-you-k
 const bank=JSON.parse(readFileSync("data/did-you-know/dyk-customs-glossary-520.v1.json","utf8"));
 const glossary=JSON.parse(readFileSync("data/glossary/concepts-151-300.v1.json","utf8"));
 const date="2026-11-11";
-assert.equal(bank.count,537);
+assert.ok(bank.count>=595,"The bilingual discovery bank must retain the new 58-card glossary wave");
 assert.equal(bank.counts.customs,378);
-assert.equal(bank.counts.glossary,159);
+assert.equal(bank.counts.glossary,bank.count-378);
 const candidates=dyk520Candidates(bank,date);
-assert.equal(candidates.length,537,"The real Home adapter must accept the original 520 plus 17 glossary discoveries");
-assert.equal(new Set(candidates.map(x=>x.id)).size,537);
+assert.equal(candidates.length,bank.count,"The real Home adapter must accept every curated discovery");
+assert.equal(new Set(candidates.map(x=>x.id)).size,bank.count);
 assert.ok(candidates.every(r=>r.source_family==="CURATED_CUSTOMS_GLOSSARY_2026"));
 const excluded=new Set(["DYK-CW15-035","DYK-CW15-038","DYK-G600-P-029","DYK-GL-G255-01","DYK-GL-G429-01","DYK-GX18-006"]);
 assert.deepEqual(new Set(bank.excluded_ids),excluded);
@@ -41,7 +41,7 @@ for(let offset=0;offset<1500;offset++){
  assert.ok(pick);
  picks.add(pick);
 }
-assert.equal(picks.size,561,"All 537 curated cards and 24 Glossary fallback facts must rotate");
+assert.equal(picks.size,bank.count+24,"All curated cards and 24 Glossary fallback facts must rotate");
 // The added glossary cards are excerpts of the existing source-backed
 // 450-concept registry, not an independent set of invented definitions.
 const registry=JSON.parse(readFileSync("data/glossary/source-registry.v1.json","utf8"));
@@ -66,6 +66,27 @@ for(const r of added){
   assert.match(dykPublishedMarkup(model),/data-dyk-glossary-entry=/);
  }
 }
+// Independently chosen new glossary discoveries must retain source ownership,
+ // stable concept references and meaningful bilingual copy.
+const secondWave=bank.records.filter(x=>x.origin==="GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_B");
+assert.equal(secondWave.length,58);
+assert.equal(new Set(secondWave.map(x=>x.glossary_concept_id)).size,58);
+for(const r of secondWave){
+ const concept=concepts.get(r.glossary_concept_id),source=sources.get(r.source.id);
+ assert.ok(concept&&source,r.id+" glossary concept/source must exist");
+ assert.ok(concept.definition_source_ids.includes(source.id),r.id+" must use the concept's canonical source");
+ assert.equal(r.source.url,source.canonical_url,r.id+" source URL must match registry");
+ for(const lang of ["en","fr"]){
+  assert.ok(r.title[lang].length>12&&r.fact[lang].length>45,r.id+" missing reader copy in "+lang);
+  const model=dyk520Model(bank,r.id,date,lang);
+  assert.equal(model.glossaryConceptId,r.glossary_concept_id);
+  assert.match(dykPublishedMarkup(model),/data-dyk-glossary-entry=/);
+ }
+}
+assert.equal(new Set(bank.records.filter(r=>r.glossary_concept_id).map(r=>r.glossary_concept_id)).size,
+ bank.records.filter(r=>r.glossary_concept_id).length,
+ "No duplicated direct glossary concept cards");
+
 const originalG311=bank.records.find(r=>r.id==="DYK-GL-G311-01");
 assert.ok(originalG311.fact.en.includes("final two stanzas"));
 assert.ok(!originalG311.fact.en.includes("Panem de caelo"));
@@ -119,4 +140,4 @@ await new Promise(resolve=>setImmediate(resolve));
 assert.equal(button.dataset.homeDykFactId,expectedId);
 assert.equal(nodes["[data-home-dyk-fact]"].textContent,
  bank.records.find(r=>r.id===expectedId).fact.fr);
-console.log("PASS DYK 537: 378 Customs + 159 Glossary, canonical glossary links, calendar cues, 537 bilingual models, full rotation and Home hydration");
+console.log("PASS DYK 595+: 378 Customs + 217+ Glossary, canonical glossary links, calendar cues, bilingual models, full rotation and Home hydration");
