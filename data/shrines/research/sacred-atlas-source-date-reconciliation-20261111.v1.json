@@ -6,7 +6,7 @@
   "caution": "This audits salient dates only. A corroborated year does NOT certify the whole paragraph, translations, ecclesial classification, or release readiness. The second editor and owner still must approve exact revisions.",
   "summary": {
     "original_date_flags": 48,
-    "remaining_matrix_date_flags": 47,
+    "remaining_matrix_date_flags": 46,
     "status_counts": {
       "SOURCE_DATE_CORROBORATED": 34,
       "CURRENT_SCHEDULE_CORROBORATED_NOT_ARCHIVED": 1,
@@ -14,7 +14,7 @@
       "CORRECTED_TO_SOURCE_ACCOUNT": 1,
       "SOURCE_DATE_CORROBORATED_VIA_INDEX": 4,
       "CONTEXTUAL_GLOBAL_YEAR_NOT_LOCAL_SOURCE": 3,
-      "PDF_VISUAL_SOURCE_NOT_REVIEWED": 1,
+      "SUPERSEDED_PDF_REPLACED_BY_CURRENT_PARISH_PROGRAMME": 1,
       "CONTEXTUAL_DATE_CORROBORATED": 1,
       "FALSE_POSITIVE_STREET_NUMBER": 1
     },
@@ -25,10 +25,12 @@
       89,
       96,
       190,
-      193
+      193,
+      97
     ],
     "source_association_changes": 6,
-    "false_positive_street_numbers": 1
+    "false_positive_street_numbers": 1,
+    "subsequent_source_association_changes": 4
   },
   "paragraph_date_evidence": [
     {
@@ -310,12 +312,18 @@
       "section_id": "pilgrimage",
       "old_source_url": "https://svata-hora.cz/wp-content/uploads/Plakat-poutni-slavnost-2025.pdf",
       "source_summary_gap": true,
-      "date_evidence_status": "PDF_VISUAL_SOURCE_NOT_REVIEWED",
-      "evidence_url": "https://svata-hora.cz/wp-content/uploads/Plakat-poutni-slavnost-2025.pdf",
-      "finding": "Original cited poster is a PDF; this pass did not visually inspect its content; leave claim held for source verification.",
+      "date_evidence_status": "SUPERSEDED_PDF_REPLACED_BY_CURRENT_PARISH_PROGRAMME",
+      "evidence_url": "https://farnost-svatahora.cz/poute/hlavni-poute",
+      "finding": "Formerly cited 2025 poster was not visually inspected, and the old domain now redirects to accommodation. Draft revised to verifiable parish primary-source 2026 programme: principal pilgrimage 15–16 August and statue coronation anniversary 13–14 June. Future dates not inferred.",
       "full_paragraph_verified": false,
       "second_editor_approved": false,
-      "owner_release_authorized": false
+      "owner_release_authorized": false,
+      "superseded_prior_evidence": {
+        "source_url": "https://svata-hora.cz/wp-content/uploads/Plakat-poutni-slavnost-2025.pdf",
+        "status": "PDF_VISUAL_SOURCE_NOT_REVIEWED",
+        "finding": "Original cited poster is a PDF; this pass did not visually inspect its content; leave claim held for source verification."
+      },
+      "current_draft_source_url": "https://farnost-svatahora.cz/poute/hlavni-poute"
     },
     {
       "draft_order": 113,
