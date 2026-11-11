@@ -156,7 +156,8 @@ assert.match(getText("place:PK:karachi-our-lady-fatima-parish"),/not for asserti
 assert.match(getText("place:IT:lanciano-eucharistic-miracle"),/traditional account of a Eucharistic miracle/);
 assert.match(getText("place:PT:santarem-santissimo-milagre"),/supernatural authenticity/);
 assert.match(getText("place:HU:mariapocs-greek-catholic-basilica"),/Byzantine tradition/);
-assert.match(getText("place:VN:our-lady-la-vang-national-shrine"),/with attribution/);
+assert.match(getText("place:VN:our-lady-la-vang-national-shrine"),/Devotional tradition also reports a Marian apparition/,
+  "Reported Marian events must remain explicitly attributed to devotion, not presented as verified fact");
 const missing = shrineSeed.shrines.filter(x=>!written.has(x.place_id));
 assert.deepEqual(missing,[],"Every current shrine-seed record should have a written guide");
 
