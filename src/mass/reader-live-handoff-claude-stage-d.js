@@ -92,6 +92,7 @@ export const CLAUDE_PORT_CSS=[
 ".ao-reader-shell.ao-live-band-enabled>.ao-state-ribbon{display:none}",
 // The hidden state ribbon normally owns faithful posture. Only the exact
 // current native posture may occupy this existing rail tile in preview.
+".ao-reader-shell.ao-live-band-enabled[data-mode='LIVE'][data-ao-live-preview-posture='true'] .ao-reader-stage .ao-rail-left[data-visible='false']{display:block!important}",
 ".ao-reader-shell.ao-live-band-enabled[data-ao-live-preview-posture='true'] .ao-rail-left .ao-rail-item[data-channel='posture'][data-active='true']{display:grid!important;top:8px!important}",
 ".ao-reader-shell.ao-live-band-enabled[data-ao-live-preview-posture='true'] .ao-rail-left .ao-rail-item[data-channel='posture']:has(.ao-icon-mask[hidden]) .ao-rail-copy{display:block!important;max-width:49px;font:600 10px/1.2 system-ui,sans-serif;text-align:center;overflow-wrap:anywhere}",
 ".ao-reader-shell.ao-live-band-enabled>.ao-reader-top-ribbon{height:40px;min-height:40px;grid-template-columns:40px minmax(0,1fr) 40px;padding:0 4px}",
