@@ -2691,7 +2691,7 @@ function renderLibrary(){
  if(LIB.cat==='essentials'&&!LIB.q.trim()){
   // The ninth homepage door opens the curated 19-prayer mosaic, not all library rows.
   return `${head(L('Essential Prayers','Prières essentielles'))}<main class="aoP435930Body aoEssentialMosaicLanding" data-ao-pray-essential-landing="true">
-   <section class="aoPrayEssentialIntro"><p>${esc(L('Choose a traditional prayer. Each opens its verified canonical text.','Choisissez une prière traditionnelle. Chaque carte ouvre son texte canonique vérifié.'))}</p></section>
+   <section class="aoPrayEssentialIntro"><p>${esc(L('Choose a traditional prayer. Each opens the existing Prayer Library text, with its source and translation notes.','Choisissez une prière traditionnelle. Chaque carte ouvre le texte existant du Livre de prières, avec les précisions sur la source et les traductions.'))}</p></section>
    ${claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2,prayers:DATA.prayers,locale:lang(),esc,title:L('Essential Prayers','Prières essentielles'),artFor:releasedPrayerCardArtUrl})}
    <button type="button" class="aoPrayEssentialLibraryLink" data-p435930-lib-all>${esc(L('Browse the full Prayer Library','Parcourir toutes les prières'))}</button>
   </main>`;
@@ -2954,7 +2954,11 @@ function renderPrayerOnly(id){const p=P(id);
  // Use the reconciled 267-slot master instead of reusing one generic Souls
  // photograph for prayers whose approved covers depict a DIFFERENT painting.
  const editorialCover=ESSENTIAL_HOLY_CARD_IDS_V1.includes(id)?"":prayerEditorialArtworkMarkup('COV-'+id,{className:'aoPrayerEditorialCardCover'});
- return `${head(p?(isFr()?(p.titleFr||p.title):p.title):L('Prayer','Prière'),prayerReturnView==='firstFriday'?L('First Friday · Sacred Heart','Premier vendredi · Sacré-Cœur'):L('Prayer Library','Livre de prières'))}<main class="aoP435930Body aoP435930LibraryReader${PRAYER_READER_PILOT_ENABLED?' aoReaderPilotSingle':''}" data-ao-library-card="single">${PRAYER_READER_PILOT_ENABLED?pilotFocusButton({L,esc}):''}${editorialCover}<section class="aoDevoCard" data-ao-devo-card="${esc(id)}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(p?(isFr()?(p.titleFr||p.title):p.title):L('Prayer','Prière'))}">${prayerBlock(id,{scriptureContext:true})}</div></section>${p?libraryContextMarkup(p):""}</main>`}
+ // Standalone readers must disclose a missing UI-language face just as the
+ // full Library reader does. The Holy Card early return inside prayerBlock()
+ // otherwise skips its generic fallback-language notice altogether.
+ const missingUi=p&&!p[lang()]?callout(`${esc(L('No vernacular translation is available in the current UI language.','Aucune traduction vernaculaire n’est disponible dans la langue actuelle de l’interface.'))} ${esc(L('The available source text is shown without fabricating a substitute.','Le texte source disponible est affiché sans fabriquer de traduction de substitution.'))}`,'rubric'):'';
+ return `${head(p?(isFr()?(p.titleFr||p.title):p.title):L('Prayer','Prière'),prayerReturnView==='firstFriday'?L('First Friday · Sacred Heart','Premier vendredi · Sacré-Cœur'):L('Prayer Library','Livre de prières'))}<main class="aoP435930Body aoP435930LibraryReader${PRAYER_READER_PILOT_ENABLED?' aoReaderPilotSingle':''}" data-ao-library-card="single">${PRAYER_READER_PILOT_ENABLED?pilotFocusButton({L,esc}):''}${missingUi}${editorialCover}<section class="aoDevoCard" data-ao-devo-card="${esc(id)}"><div class="aoDevoCardScroll" role="region" aria-label="${esc(p?(isFr()?(p.titleFr||p.title):p.title):L('Prayer','Prière'))}">${prayerBlock(id,{scriptureContext:true})}</div></section>${p?libraryContextMarkup(p):""}</main>`}
 let prayerReturnView=null,prayerId=null;
 function pushView(v=view){if(v)navStack.push(v);return navStack.length}
 function popView(fallback='home'){view=navStack.length?navStack.pop():fallback;return view}
