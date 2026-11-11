@@ -288,11 +288,13 @@ try{
           const score=modal?.querySelector("[data-ao-reference-full-staff]");
           const note=score?.querySelector("svg use.note")??score?.querySelector("svg use");
           const staffLine=score?.querySelector("svg .staffLine");
+          const lyric=score?.querySelector("svg text");
           return {open:modal?.open===true,hasSvg:Boolean(score?.querySelector("svg")),
             scoreId:modal?.dataset.aoReferenceFullScore,
-            noteFound:Boolean(note),staffLineFound:Boolean(staffLine),
+            noteFound:Boolean(note),staffLineFound:Boolean(staffLine),lyricFound:Boolean(lyric),
             noteInk:note?getComputedStyle(note).fill:null,
             staffInk:staffLine?getComputedStyle(staffLine).stroke:null,
+            lyricInk:lyric?getComputedStyle(lyric).fill:null,
             scholaIndex:window.AO_R17_NATIVE_READER_PREVIEW?.getScholaState?.()?.index,
             sourceUrl:modal?.querySelector("a")?.href};
         });
@@ -300,6 +302,7 @@ try{
         assert.equal(nativeFull.hasSvg,true);
         assert.equal(nativeFull.noteFound,true,"Exsurge square-note glyph missing");
         assert.equal(nativeFull.staffLineFound,true,"Original staff-line SVG missing");
+        assert.equal(nativeFull.lyricFound,true,"Latin syllable SVG missing");
         // Geometry alone allowed black notation on an almost-black panel.
         // Assert the REAL glyph's computed fill and staff-line stroke.
         const lightEnough=ink=>{
@@ -312,6 +315,7 @@ try{
           "Gregorian square notes visually disappear on the dark modal: "+nativeFull.noteInk);
         assert.ok(lightEnough(nativeFull.staffInk),
           "Gregorian staff lines visually disappear on the dark modal: "+nativeFull.staffInk);
+        assert.ok(lightEnough(nativeFull.lyricInk),"Latin syllables illegible on dark background");
         assert.equal(nativeFull.scoreId,"GREGOBASE-2982");
         assert.equal(nativeFull.scholaIndex,beforeReference);
         assert.match(nativeFull.sourceUrl||"",/gregobase/);
