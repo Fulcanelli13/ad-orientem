@@ -108,7 +108,7 @@ export function mapScholaSvgLyrics(svg,syllables){
 }
 
 export function createScholaNotationFollower({staff,strip,document=staff?.ownerDocument,
- window=document?.defaultView,stepMs=1600}={}){
+ window=document?.defaultView,stepMs=1600,onPosition=()=>{}}={}){
  if(!staff?.addEventListener||!strip?.replaceChildren||!document?.createElement)
   throw new TypeError("Schola staff, syllable strip and document required");
  let parts=[],buttons=[],targets=[],startPoint=null,destroyed=false,active=-1;
@@ -135,6 +135,11 @@ export function createScholaNotationFollower({staff,strip,document=staff?.ownerD
     staff.scrollTop+=position.top-parent.top-(staff.clientHeight-position.height)/2;
    }
    staff.dataset.scholaFollowIndex=String(index);
+   // The Schola position is authoritative for linked visual surfaces.
+   // The Mass text synchronizer receives this same syllable index, never
+   // a second timer or an inferred priest cue.
+   try{onPosition(Object.freeze({index,count:parts.length,origin,
+     lyricsMapped:targets.length===parts.length}))}catch{}
   }
  });
  function click(event){
