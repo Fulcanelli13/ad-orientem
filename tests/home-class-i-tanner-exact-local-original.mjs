@@ -41,7 +41,7 @@ assert.equal(homeArtworkAssetUrl(row.image,{location:{pathname:"/"}}),row.image)
 assert.equal(homeArtworkAssetUrl("https://upload.wikimedia.org/test.jpg",
  {location:{pathname:"/ad-orientem/"}}),"https://upload.wikimedia.org/test.jpg");
 const detailSource=readFileSync(new URL("../src/home/c3-gallery.js",import.meta.url),"utf8");
-assert.match(detailSource,/homeArtworkAssetUrl\\(authoritative.infoImage,win\\)/);
+assert.ok(detailSource.includes("homeArtworkAssetUrl(authoritative.infoImage,win)"),"Home info image must use Pages-safe asset URL");
 assert.equal(row.visuallyApprovedForCalendarCrop,false);
 assert.equal(row.ownerArtworkDecisionNewlyCreated,false);
 const state=(principal=row.principalId,path=row.properPath)=>({
