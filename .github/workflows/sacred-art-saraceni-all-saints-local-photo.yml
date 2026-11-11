@@ -1,0 +1,55 @@
+name: Sacred Art All Saints Saraceni exact Met CC0 original
+on:
+  pull_request:
+    paths:
+      - 'src/home/released-class-i-saraceni-paradise-2026.js'
+      - 'src/home/approved-dated-artwork-2026.js'
+      - 'assets/home/class-i-2026/saraceni-paradise-met-1971-93-original.jpg'
+      - 'data/artwork/releases/2026-11-01-saraceni-met-cc0-byte-proof.v1.json'
+      - 'tests/home-class-i-saraceni-*.mjs'
+      - 'tests/home-2026-annual-artwork-coverage.mjs'
+      - 'tools/build-web-preview.mjs'
+      - '.github/workflows/sacred-art-saraceni-all-saints-local-photo.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-met-original-rights-and-frozen-date:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify original source bytes, original painting, exact date and prior holds
+        run: |
+          node --check src/home/released-class-i-saraceni-paradise-2026.js
+          node --check src/home/approved-dated-artwork-2026.js
+          node tests/home-class-i-saraceni-paradise-local-source-2026.mjs
+          node tests/home-2026-annual-artwork-coverage.mjs
+          node tests/home-2026-frozen-selected-source-gate.mjs
+      - name: Prove curated GitHub Pages contains only the cleared source image
+        run: |
+          node tools/build-web-preview.mjs
+          node tests/home-class-i-saraceni-pages-payload.mjs
+  actual-320-390-phone-image-render:
+    needs: exact-met-original-rights-and-frozen-date
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          npm install --no-save --no-package-lock --no-audit --no-fund @playwright/test
+          npx playwright install --with-deps chromium
+      - run: node tests/home-class-i-saraceni-paradise-phone.mjs
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: class-i-saraceni-met-cc0-all-saints-320-390
+          path: artifacts/home-class-i-saraceni-paradise-phone/
+          if-no-files-found: warn
+          retention-days: 14
