@@ -21,6 +21,7 @@ on:
       - 'scripts/schola/build-1961-complete-source-review.mjs'
       - 'tools/mass/complete-1961-source-review-template.html'
       - 'tests/reader-complete-1961-original-source-review.mjs'
+      - 'tests/reader-complete-1961-source-html-browser.mjs'
       - 'data/mass/chant-corpus/gr1961-proper-*.json'
       - 'scripts/schola/build-2026-score-publication-worklist.mjs'
       - 'tests/reader-schola-2026-release-worklist.mjs'
@@ -131,6 +132,8 @@ jobs:
         run: node scripts/schola/build-2026-score-publication-worklist.mjs
       - name: Assemble all original 1961 Gregorian sources and actual 2026 matched research context
         run: node scripts/schola/build-1961-complete-source-review.mjs
+      - name: Browser-verify real original GABC for Gloria, Credo and Introit on 390px
+        run: node tests/reader-complete-1961-source-html-browser.mjs
       - name: Reconcile closeout exceptions from existing annual evidence, with no acquisition or publication
         run: |
           node scripts/schola/reconcile-2026-completion-exceptions.mjs
