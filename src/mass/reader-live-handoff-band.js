@@ -8,6 +8,7 @@ import {projectLiveHandoffSourceTurnPreview} from "./reader-live-handoff-turns.j
 import {renderClaudeNativeSanctuary,renderClaudeNativeRouteOverlay} from "./reader-live-handoff-claude-sanctuary.js";
 import {claudeWheelRender,claudeTimelineRender,CLAUDE_PORT_CSS} from "./reader-live-handoff-claude-stage-d.js";
 import {projectLiveHandoffTimeline,projectLiveHandoffWheel} from "./reader-live-handoff-timeline.js";
+import {installLiveHandoffChantStrip,LIVE_HANDOFF_CHANT_STRIP_CSS} from "./reader-live-handoff-chant-strip.js";
 import {renderLiveHandoffTimelineHtml,renderLiveHandoffWheelHtml,LIVE_HANDOFF_STAGE_D_CSS} from "./reader-live-handoff-stage-d-render.js";
 
 export const LIVE_BAND_PREVIEW_PARAM="aoLiveBandPreview";
@@ -123,7 +124,7 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
   if(shell.querySelector("[data-ao-live-band]"))
     return freeze({mounted:false,reason:"ALREADY_MOUNTED",dispose(){}});
   const style=doc.createElement("style");
-  style.dataset.aoLiveBandStyle="stage-d";style.textContent=CSS+"\n"+LIVE_SANCTUARY_CSS+"\n"+LIVE_HANDOFF_STAGE_D_CSS+"\n"+CLAUDE_PORT_CSS;
+  style.dataset.aoLiveBandStyle="stage-d";style.textContent=CSS+"\n"+LIVE_SANCTUARY_CSS+"\n"+LIVE_HANDOFF_STAGE_D_CSS+"\n"+CLAUDE_PORT_CSS+"\n"+LIVE_HANDOFF_CHANT_STRIP_CSS;
   const band=doc.createElement("section");band.className="ao-live-band";
   band.dataset.aoLiveBand="stage-b";band.hidden=true;
   band.setAttribute("aria-label","LIVE visual band preview");
@@ -154,6 +155,7 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
   const nativeDock=shell.querySelector(".ao-schola-dock");
   const originalDockParent=nativeDock?.parentNode??null;
   const originalDockNext=nativeDock?.nextSibling??null;
+  const chantStrip=installLiveHandoffChantStrip({root:shell,document:doc});
   function locateNativeDock(inStage){
     if(!nativeDock||!originalDockParent)return;
     if(inStage){
@@ -310,6 +312,7 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
     band.hidden=!result.ok;
     shell.classList.toggle("ao-live-band-enabled",result.ok);
     locateNativeDock(result.ok);
+    chantStrip.setEnabled(result.ok);
     musicAccess.hidden=!result.ok || !nativeMusic || nativeMusic.hidden ||
       String(prepared?.session?.resolvedMass?.form??"").toUpperCase()==="LOW";
     if(slimHeader)
@@ -414,7 +417,7 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
       routePreviewKind:activeRoute?.kind??availableRoute?.kind??null,
       nativeCardId:band.dataset.nativeCardId??null,reason:shell.dataset.aoLiveBandGate}),
     dispose(){if(disposed)return;disposed=true;stopRoutePreview();observer?.disconnect();
-      locateNativeDock(false);
+      chantStrip.dispose();locateNativeDock(false);
       shell.classList.remove("ao-live-band-enabled");delete shell.dataset.aoLiveBandGate;
       shell.style.removeProperty("--ao-live-band-height");musicAccess.remove();
       if(slimHeader)delete slimHeader.dataset.claudeMusicAccess;
