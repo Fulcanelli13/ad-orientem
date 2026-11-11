@@ -26,21 +26,23 @@ the current Mass or whole-building ownership.
 ## First-party exact-site witness upgrades (11 November)
 
 After the baseline census, a separate source-exact witness overlay resolves
-**37 formerly unresolved venues** without changing a CL2 anchor or treating an
+**63 formerly unresolved venues** without changing a CL2 anchor or treating an
 organiser as a property owner:
 
 | Venue category | Added | Current category total |
 | --- | ---: | ---: |
-| Diocesan / parish context | 24 | 657 |
-| Religious house | 9 | 106 |
-| Mixed / hosted venue | 4 | 18 |
+| Diocesan / parish context | 38 | 671 |
+| Religious house | 16 | 113 |
+| Mixed / hosted venue | 9 | 23 |
 
-The remaining operator/category hold count is **382**, consisting of 308
-unresolved and 74 directory-only associations. Overall **2,198 / 2,580**
+The remaining operator/category hold count is **356**, consisting of 282
+unresolved and 74 directory-only associations. Overall **2,224 / 2,580**
 venues now have a positive source-reported or separately verified category,
-including 37 individually validated first-party cases.
+including 63 individually validated first-party cases.
 
-The verified sources include 11 additional UK cathedral/monastery identities, notably Wrexham, Portsmouth, Leeds, Newcastle, Belmont Abbey, Tyburn, Farnborough, Douai, Prinknash, Buckfast and St Dominic’s Priory. These sources do not certify 1962 use at the sites.\n\nThe witnesses deliberately include mixed examples:
+The verified sources include 11 additional UK cathedral/monastery identities, notably Wrexham, Portsmouth, Leeds, Newcastle, Belmont Abbey, Tyburn, Farnborough, Douai, Prinknash, Buckfast and St Dominic’s Priory. These sources do not certify 1962 use at the sites.
+
+The witnesses deliberately include mixed examples:
 
 - St Aloysius Parish in Thorold: a parish in the diocese served by FSSP
   priests, without declaring the whole building FSSP-owned.
@@ -55,9 +57,43 @@ The verified sources include 11 additional UK cathedral/monastery identities, no
 
 Each upgraded row preserves its original source-affiliation text, exact CL2
 anchor and source ID, and cites the individual first-party identity page.
-`src/find/tlm-exact-venue-categories.js` applies the 37-item witness overlay
+`src/find/tlm-exact-venue-categories.js` applies the 63-item witness overlay
 only after the baseline category matrix. Neither the album/photograph nor
 institute emblem nor liturgical books are changed in this pass.
+
+## Second exact-site classification batch
+
+A further **26** exact-site records were added to the witness overlay:
+14 diocesan/parish contexts, 7 religious houses, and 5 mixed/host venues.
+
+The source types include local parishes, diocesan registries, a Dominican
+province, the FSSP's official Mass-location records, and official university
+chaplaincy and shrine pages. These are **venue-context classifications only**;
+we do not infer that an institute owns every host church, nor that an advertised
+Latin Mass uses a particular Missal edition.
+
+Notable distinctions:
+
+- **St Kevin's, Dublin** is a diocesan parish hosting the Latin Mass
+  Chaplaincy and the Oratory in Formation. It is not flattened into any one
+  organisation.
+- **Fisher House** is the University of Cambridge Catholic chaplaincy.
+  Neither its Sunday sung Latin Mass nor its student association makes it
+  a traditional clerical society.
+- **St Anthony's, Calgary** is a parish served by FSSP priests.
+- **Saint-Irénée, Montréal** is a canonical archdiocesan nonterritorial
+  mission entrusted to FSSP priests; the venue and ministry remain distinct.
+- **Prandtauerkirche** is a Catholic rectoral church with an officially
+  stated 1962-Missal programme. Its category is not proof of who currently
+  celebrates any individual Mass.
+- **Downside Abbey** remains held as a contemporary operator classification:
+  the Abbey itself states that its Benedictine community has relocated.
+  Historical monastery identity cannot establish current resident ministry.
+
+The unresolved tally after this round is **356** (282 source-label holds
+and 74 directory-only groups). The original site index and previously released
+source-exact CL27 ministry liturgy remain unchanged. The three published
+non-CL2 additional cards are also unchanged.
 
 ## Major outstanding holds
 

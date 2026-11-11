@@ -20,7 +20,7 @@ export function validateCL2ExactVenueCategoryWitnesses(index,manifest){
   manifest.reviewed_on!=="2026-11-11"||
   manifest.source_index!=="data/directory/generated/cl2-physical-site-index.v1.json"||
   !Array.isArray(index?.records)||index.records.length!==2580||
-  !Array.isArray(manifest.records)||manifest.records.length!==37)
+  !Array.isArray(manifest.records)||manifest.records.length!==63)
    throw Error("Invalid CL2 exact venue category witness manifest");
  const indexByAnchor=new Map(index.records.map(r=>[r[0],r]));
  const seen=new Set(),byAnchor=new Map(),stats={reviewed_exact_venues:0,from_initial_unresolved:0,by_category:{}};
@@ -30,7 +30,7 @@ export function validateCL2ExactVenueCategoryWitnesses(index,manifest){
    record.visual_lane!==categoryLane[category]||
    !same(record.source_id,site[1][0])||record.exact_name!==site[2]||
    record.country!==site[3]||record.source_affiliation_label!==site[5]||
-   !["Unclassified (LMD source)","UNVERIFIED_OPERATOR_LMS_DISCOVERY"].includes(site[5])||
+   !["Unclassified (LMD source)","UNVERIFIED_OPERATOR_LMS_DISCOVERY",""].includes(site[5])||
    !safeUrl(record.identity_evidence_url)||
    !["CURRENT_FIRST_PARTY_VENUE","DIOCESAN_NEWS_HISTORIC"].includes(record.evidence_basis)||
    record.role_scope!=="VENUE_CATEGORY_AND_REPORTED_RELATIONSHIP_ONLY"||
