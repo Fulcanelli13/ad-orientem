@@ -83,13 +83,13 @@ assert.equal(send(elevation,{sourceCueId:"AO.SM.C0174",certifiedSourceFocus:fals
 assert.equal(send(elevation,{sourceCueId:"AO.SM.C0174",certifiedSourceFocus:true})
  .choreography,"STATIC_STAGE","Wrong canonical source section cannot trigger Host elevation");
 assert.equal(send(elevation,{sourceCueId:"AO.SM.C0174",certifiedSourceFocus:true,
- sourceSectionId:"AO.CANON.06"}).choreography,"SOURCE_TRIGGERED");
+ sourceSectionId:"AO.CARD.015"}).choreography,"SOURCE_TRIGGERED");
 assert.deepEqual(presented.at(-1),["C36",true]);
 assert.equal(send(elevation,{sourceCueId:"AO.SM.C0174",certifiedSourceFocus:true,
- sourceSectionId:"AO.CANON.06"}).choreography,"STATIC_STAGE");
+ sourceSectionId:"AO.CARD.015"}).choreography,"STATIC_STAGE");
 const beforeExit=presented.length;
 assert.equal(send(elevation,{sourceCueId:"AO.SM.C0175",certifiedSourceFocus:true,
- sourceSectionId:"AO.CANON.06"}).choreography,"STATIC_STAGE");
+ sourceSectionId:"AO.CARD.015"}).choreography,"STATIC_STAGE");
 assert.equal(presented.length,beforeExit+1,
  "Leaving exact elevation cue must command a source-static visual hold");
 assert.deepEqual(presented.at(-1),["C36",false]);
@@ -98,7 +98,7 @@ assert.equal(glow.show,false,
 assert.equal(elevClass,false,
  "Source-exited elevation must remove the original elevation stage class");
 assert.equal(send(elevation,{sourceCueId:"AO.SM.C0174",certifiedSourceFocus:true,
- sourceSectionId:"AO.CANON.06"}).choreography,"SOURCE_TRIGGERED",
+ sourceSectionId:"AO.CARD.015"}).choreography,"SOURCE_TRIGGERED",
  "Reverse scroll into the same source rubric must replay the elevation");
 assert.deepEqual(presented.at(-1),["C36",true]);
 assert.equal(send("Introit",{form:"LOW"}).card,"C05");

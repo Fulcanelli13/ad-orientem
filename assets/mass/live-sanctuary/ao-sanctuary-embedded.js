@@ -45,7 +45,7 @@
   ].join("");
   document.head.append(css);
   const cues=Object.freeze({
-    "AO.SM.C0174":{card:"C36",section:"AO.CANON.06"},
+    "AO.SM.C0174":{card:"C36",section:"AO.CARD.015"},
     "AO.SM.C0181":{card:"C38",section:"AO.CANON.07"}
   });
   const forms=Object.freeze({

@@ -117,11 +117,19 @@ try{
       JSON.stringify(candidates.map(x=>({title:x.title,sectionId:x.sectionId,
         sourceSectionId:x.sourceSectionId}))));
     const c=candidates[0];
-    if((c.sourceSectionId??c.sectionId)!=="AO.CANON.06")
+    if((c.sourceSectionId??c.sectionId)!=="AO.CARD.015")
       throw Error("Host elevation source section drifted: "+
         JSON.stringify({title:c.title,sectionId:c.sectionId,
           sourceSectionId:c.sourceSectionId}));
     api.showSequence(c.sequence);
+    const chalice=api.model.cards.filter(x=>
+      (x.paragraphs??[]).some(p=>(p.sourceCueIds??[]).includes("AO.SM.C0181")));
+    if(chalice.length!==1)throw Error("Chalice source cue card count="+chalice.length);
+    console.info("SANCTUARY_CANON_CHALICE_IDENTITY="+JSON.stringify({
+      title:chalice[0].title,
+      sectionId:chalice[0].sectionId,
+      sourceSectionId:chalice[0].sourceSectionId
+    }));
   });
   await frame.waitForFunction(()=>window.AO_SANCTUARY_EMBED_TEST
     ?.getState()?.card==="C36",null,{timeout:12000});
@@ -129,7 +137,7 @@ try{
     const api=window.AO_SANCTUARY_EMBED_TEST;
     const event=(cue,certified=true)=>api.present({
       type:"AO_SANCTUARY_CUE_V1",version:1,form:"SOLEMN",
-      sourceSectionId:"AO.CANON.06",
+      sourceSectionId:"AO.CARD.015",
       cardTitle:"Words of Consecration and Elevation · Host",
       sourceCueId:cue,certifiedSourceFocus:certified,scholaOnly:false
     });
