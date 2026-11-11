@@ -21911,7 +21911,10 @@
     "one_multi_id_physical_site_conflict": 1,
     "no_shared_exact_owner_source_link": 1127,
     "evidence_record": "data/directory/research/lmd-firstparty-exact-urls-and-poland-2026-delta.v1.json",
-    "notes": "These 4 source-owner URL relationships have no exact source-ID nor LMD-URL match to CL2; the existing provenance classification remains unchanged. Three owners attest older rite, St Stephen's Latin Mass alone does not certify 1962 Missal and location.",
-    "all_publication_approvals": false
+    "notes": "All 1131 unmatched rows screened, but only 13 had any original owner URL in the archived source. Four of those had exact owner-URL overlap with existing CL2 sites; nine owner URLs did not match directly, and 1118 rows contained no original URL. Absence of a shared URL is NOT evidence that the venue is missing. The original LMD-source ID classifications remain unchanged.",
+    "all_publication_approvals": false,
+    "archived_rows_with_any_original_source_url": 13,
+    "archived_rows_with_original_source_url_but_no_shared_cl2_source": 9,
+    "archived_rows_with_no_original_source_url": 1118
   }
 }
