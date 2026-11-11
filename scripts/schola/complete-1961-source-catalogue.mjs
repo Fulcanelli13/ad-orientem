@@ -107,16 +107,16 @@ function sequenceRows(existingIds){
   const original=readFileSync(new URL(path,import.meta.url));
   const raw=original.toString("utf8");
   const blob=createHash("sha1")
-   .update("blob "+original.length+"\\0").update(original).digest("hex");
-  const mode=Number(/^mode:(\\d+);$/m.exec(raw)?.[1]);
-  const title=String(/^name:([^;\\n]+);$/m.exec(raw)?.[1]??"");
+   .update("blob "+original.length+"\0").update(original).digest("hex");
+  const mode=Number(/^mode:(\d+);$/m.exec(raw)?.[1]);
+  const title=String(/^name:([^;\n]+);$/m.exec(raw)?.[1]??"");
   if(existingIds.has(id)||blob!==lead.sourceBlobSha1||
      !title.startsWith(lead.title)||!raw.startsWith("name:")||
-     !raw.includes("\\noffice-part:Sequentia;\\n")||
+     !raw.includes("\noffice-part:Sequentia;\n")||
      !raw.includes("Graduale Romanum, 1961, p. "+lead.folio)||
-     !raw.includes("\\ntranscriber:Andrew Hinkley;\\n")||
+     !raw.includes("\ntranscriber:Andrew Hinkley;\n")||
      !Number.isInteger(mode)||mode<1||mode>8||
-     !/%%\\s*\\n\\s*\\([cf][1-4]\\)/.test(raw)||
+     !/%%\s*\n\s*\([cf][1-4]\)/.test(raw)||
      !raw.includes("(::)")||raw.length<400)
    fail("ORIGINAL_SEQUENCE_GABC_SOURCE_BLOB_OR_ROLE_DRIFT:"+id);
   existingIds.add(id);
