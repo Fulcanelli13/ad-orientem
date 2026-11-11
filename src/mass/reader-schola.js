@@ -160,6 +160,11 @@ export function createNativeScholaController(args={}){
         latin:segment.latin,english:segment.english,
         trackId:track.id,segmentId:segment.id,cueId:segment.cueId,
         index,total:track.segments.length,complete,
+        // Full chant score membership is owned by this actual native Schola
+        // track, never by a priest-card ordinal. Only exact source cues may
+        // later authorize a single approved score across multiple syllables.
+        trackSourceCueIds:Object.freeze(track.segments.map(s=>s.cueId).filter(Boolean)),
+        trackSourceLatin:track.segments.map(s=>s.latin??"").join(" "),
         benedictusHold:hold,sanctusPerformance,
         musicStatus:"EXPECTED_NOT_OBSERVED",
         owner:"R17_NATIVE_SCHOLA",
