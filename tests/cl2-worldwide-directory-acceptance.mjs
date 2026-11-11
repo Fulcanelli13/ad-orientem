@@ -25,6 +25,7 @@ import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R15} from "../src/find/cl2-illustrative-l
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R16} from "../src/find/cl2-illustrative-locality-pins-r16.js";
 import {CL2_ILLUSTRATIVE_LOCALITY_PINS_R17_R18} from "../src/find/cl2-illustrative-locality-pins-r17-r18.js";
 import {renderDirectoryVenueCard} from "../src/find/directory-card.js";
+import {renderTlmChurchProfile} from "../src/find/tlm-church-profile.js";
 import {buildExploreViewModel,renderExploreToString} from "../src/find/explore-presentation.js";
 const read=path=>JSON.parse(readFileSync(new URL("../"+path,import.meta.url),"utf8"));
 const index=validateCL2PhysicalIndex(read("data/directory/generated/cl2-physical-site-index.v1.json"));
@@ -43,6 +44,45 @@ assert.equal(world.length,2583,"2,580 distinct CL2 physical sites + 3 published 
 assert.equal(new Set(world.map(item=>item.item_id)).size,2583);
 assert.equal(new Set(world.filter(x=>x.physical_group_id).map(x=>x.physical_group_id)).size,2580);
 assert.equal(world.filter(x=>x.map_publishable).length,2569);
+// FINAL CARD CONTRACT: the entire worldwide CL2 catalogue has an EN/FR
+// card and an openable full profile, including every no-GPS record. The
+// residual 14 remain searchable list items, never fabricated map markers.
+const listOnly=world.filter(item=>!item.map_publishable);
+assert.equal(listOnly.length,14,"Only the documented coordinate exceptions may be list-only");
+for(const item of world){
+ assert.ok(item.item_id&&item.source_id&&item.title&&item.kind==="TLM_VENUE",
+   "Every admitted physical venue must retain identity, title and card type");
+ for(const lang of ["en","fr"]){
+   const card=renderDirectoryVenueCard(item,lang);
+   assert.ok(card.startsWith('<button type="button"')&&
+     card.includes('data-explore-item=')&&card.includes("aoTlmVenueTitle"),
+     lang+": source site has no searchable interactive card: "+item.item_id);
+   const profile=renderTlmChurchProfile(item,lang);
+   assert.ok(profile.includes('class="aoFindSheet aoTlmChurchProfile"')&&
+     profile.includes('role="dialog"')&&profile.includes('data-tlm-church-profile='),
+     lang+": source site has no full church profile: "+item.item_id);
+   if(!item.map_publishable){
+     assert.equal(item.map_state,"ADDRESS_ONLY","List-only site has contradictory map status");
+     assert.equal(item.geo,null,"List-only site must not expose invented GPS");
+     assert.ok(card.includes("data-tlm-list-only-card"),
+       lang+": no visible list-only notice on "+item.item_id);
+     assert.ok(profile.includes("data-tlm-list-only-notice")&&
+       profile.includes('data-tlm-list-only-search'),
+       lang+": list-only profile lacks honest caveat or address search: "+item.item_id);
+     assert.match(profile,/https:\/\/www\.google\.com\/maps\/search\/\?api=1&amp;query=/,
+       lang+": unverified name/address query not available: "+item.item_id);
+     assert.ok(!profile.includes('Directions on Google Maps'),
+       "List-only site must not masquerade as confirmed GPS directions");
+   }
+ }
+}
+assert.equal(filterPreliminaryR49(world,{siteEvidence:"ADDRESS_ONLY"}).length,14,
+ "All 14 list-only site cards must be accessible via the public location-evidence filter");
+console.log("TLM_ATLAS_14_LIST_ONLY "+JSON.stringify(listOnly.map(item=>({
+ cl2:item.physical_group_id,source_id:item.source_id,title:item.title,country:item.country_code,
+ source_count:item.source_links?.length??0,address:item.address?.formatted??null
+}))));
+console.log("PASS 2,583/2,583 interactive EN/FR church cards and full profiles; 14/14 clearly labelled list-only source-address searches, no invented pins");
 const diocesanQuality=read("data/directory/research/diocesan-coordinate-quality-audit-20261031.v1.json");
 assert.equal(diocesanQuality.schema,"AO_DIOCESAN_COORDINATE_QUALITY_AUDIT_V1");
 assert.equal(diocesanQuality.records.length,587);
