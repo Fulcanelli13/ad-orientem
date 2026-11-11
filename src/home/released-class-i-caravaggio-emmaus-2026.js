@@ -37,8 +37,7 @@ export function releasedCaravaggioEmmausClassI2026(date,principalId,properPath){
  if(day?.rank!=="I"||selected?.title!==row.title||
     selected?.artist!==row.artist||
     selected?.artworkId!==null||
-    selected?.editorialBasis!==row.editorialBasis||
-    selected?.publicationCertified!==false)return null;
+    selected?.editorialBasis!==row.editorialBasis)return null;
  return Object.freeze({
   date,principalId,properPath,
   artworkId:row.artworkId,title:row.title,titleFr:row.titleFr,
