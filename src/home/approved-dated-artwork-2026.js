@@ -11,6 +11,7 @@ import {RELEASED_MODULE_PAINTINGS} from "../art/released-module-paintings.v1.js"
 import {extraApproved2026HomeArtwork} from "./approved-2026-other-date-previews.js";
 import {frozenSelected2026HomeArtwork} from "./approved-2026-frozen-selected-previews.js";
 import {sourceVerifiedClassI2026Preview} from "./approved-class-i-exact-source-previews-2026.js";
+import {releasedTannerNicodemusForClassI2026} from "./released-class-i-tanner-nicodemus-2026.js";
 import {approved2026SeasonalHomeReuse} from "./approved-2026-seasonal-reuse.js";
 import {annualHomeArtworkDay2026} from "./annual-home-artwork-2026.js";
 
@@ -223,6 +224,11 @@ export function approved2026HomeArtwork(state,provider=null){
  if(frozen)return frozen;
  // Exact owner-approved date selection + museum object reference. This is
  // a REMOTE preview only, never a certified photo master or new art choice.
+ // The exact 1899 PAFA original now has a locally retained, hash-verified
+ // full photograph; keep the older colour preview only as independent
+ // historical source evidence, not the public primary image.
+ const tanner=releasedTannerNicodemusForClassI2026(date,principalId,properPath);
+ if(tanner)return tanner;
  const additional=sourceVerifiedClassI2026Preview(date,principalId,properPath);
  if(additional)return additional;
  // Date-specific locks win. Contextual reuse is restricted to 105 identified
@@ -241,6 +247,15 @@ export function approved2026HomeArtwork(state,provider=null){
   selectionKind:"EXACT_GOSPEL_PREVIOUSLY_RELEASED_MODULE_IMAGE"
  });
 }
+/** Absolute /assets/ URLs work at localhost root but not under the
+ * GitHub Pages project prefix /ad-orientem/. Keep external source URLs intact.
+ */
+export function homeArtworkAssetUrl(raw,win=globalThis){
+ const image=String(raw??"");
+ if(!image.startsWith("/assets/"))return image;
+ const path=String(win?.location?.pathname??"");
+ return /^\/ad-orientem(?:\/|$)/.test(path)?"/ad-orientem"+image:image;
+}
 export function renderApproved2026HomeArtwork(slot,state,win=globalThis){
  if(!slot||!win?.document?.createElement)return null;
  const chosen=approved2026HomeArtwork(state);
@@ -256,7 +271,8 @@ export function renderApproved2026HomeArtwork(slot,state,win=globalThis){
  }
  const img=win.document.createElement("img");
  img.className="aoC3DatedImage";
- img.src=chosen.image;img.alt=chosen.title+" — "+chosen.artist;
+ img.src=homeArtworkAssetUrl(chosen.image,win);
+ img.alt=(state?.language==="fr"&&chosen.titleFr?chosen.titleFr:chosen.title)+" — "+chosen.artist;
  img.loading="eager";img.decoding="async";img.referrerPolicy="no-referrer";
  img.dataset.aoHomeAuthoritativeDate=chosen.date;
  img.dataset.aoHomeAuthoritativeArtwork=chosen.artworkId;

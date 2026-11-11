@@ -59,8 +59,16 @@ for(const row of entries){
   proper:{status:"ready",sourcePath:row.properPath,data:{sourcePath:row.properPath}}
  }};
  const live=approved2026HomeArtwork(state);
- assert.equal(live?.image,selected.image,"Home must render only exact approved original "+row.date);
- assert.equal(live?.imageStatus,row.imagePublicationStatus);
+ // A local exact original can supersede the historical source preview
+ // without changing the owner's date selection or old preview metadata.
+ if(row.date==="2026-05-25"){
+  assert.equal(live?.image,"/assets/home/class-i-2026/tanner-nicodemus-1899-pafa-1900-1-original.jpg");
+  assert.equal(live?.imageStatus,"LOCAL_ORIGINAL_PD_ART_BYTE_VERIFIED_CROP_NOT_OWNER_APPROVED");
+  assert.equal(live?.ownerArtworkDecisionNewlyCreated,false);
+ }else{
+  assert.equal(live?.image,selected.image,"Other exact approved preview changed "+row.date);
+  assert.equal(live?.imageStatus,row.imagePublicationStatus);
+ }
  assert.equal(approved2026HomeArtwork({...state,resolving:true}),null);
  assert.equal(approved2026HomeArtwork({...state,resolution:{...state.resolution,
   proper:{status:"pending",sourcePath:row.properPath}}}),null);
