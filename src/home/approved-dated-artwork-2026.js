@@ -13,6 +13,7 @@ import {frozenSelected2026HomeArtwork} from "./approved-2026-frozen-selected-pre
 import {sourceVerifiedClassI2026Preview} from "./approved-class-i-exact-source-previews-2026.js";
 import {releasedTannerNicodemusForClassI2026} from "./released-class-i-tanner-nicodemus-2026.js";
 import {releasedRaphaelVaticanHomeArtwork2026} from "./released-class-i-raphael-transfiguration-2026.js";
+import {releasedTwoFrozenClassIHomeArtwork2026} from "./released-class-i-two-frozen-photos-2026.js";
 import {releasedGoodFridaySanPoloHomeArtwork2026} from "./released-class-i-good-friday-san-polo-2026.js";
 import {approved2026SeasonalHomeReuse} from "./approved-2026-seasonal-reuse.js";
 import {annualHomeArtworkDay2026} from "./annual-home-artwork-2026.js";
@@ -222,6 +223,10 @@ export function approved2026HomeArtwork(state,provider=null){
  }
  const bulk=extraApproved2026HomeArtwork(date,principalId,properPath);
  if(bulk)return bulk;
+ // Frozen Class I work selections for Laetare and Precious Blood take the
+ // exact retained source photos rather than old remote Commons previews.
+ const twoLocal=releasedTwoFrozenClassIHomeArtwork2026(date,principalId,properPath);
+ if(twoLocal)return twoLocal;
  const frozen=frozenSelected2026HomeArtwork(date,principalId,properPath);
  if(frozen)return frozen;
  // Exact owner-approved date selection + museum object reference. This is

@@ -11,6 +11,7 @@ import {APPROVED_2026_OTHER_DATE_PREVIEWS} from "../src/home/approved-2026-other
 import {ANNUAL_HOME_ARTWORK_DAYS_2026} from "../src/home/annual-home-artwork-2026.js";
 import {approved2026SeasonalHomeReuse} from "../src/home/approved-2026-seasonal-reuse.js";
 import {FROZEN_SELECTED_2026_EXACT_WORK_PREVIEWS} from "../src/home/approved-2026-frozen-selected-previews.js";
+import {TWO_FROZEN_CLASS_I_PHOTO_RELEASES_2026} from "../src/home/released-class-i-two-frozen-photos-2026.js";
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const out=resolve(root,"artifacts/home-approved-dated-2026-browser");
 const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",
@@ -76,10 +77,15 @@ const seasonalCases=Object.values(ANNUAL_HOME_ARTWORK_DAYS_2026)
    artId:r.artworkId,title:r.title,asset:r.image,remote:false};
  });
 assert.equal(seasonalCases.length,105);
-const frozenCases=Object.values(FROZEN_SELECTED_2026_EXACT_WORK_PREVIEWS).map((r,i)=>({
- date:r.date,width:i%2?320:390,principal:r.principalId,
- artId:r.artworkId,title:r.title,remote:true
-}));
+const frozenCases=Object.values(FROZEN_SELECTED_2026_EXACT_WORK_PREVIEWS).map((r,i)=>{
+ // The frozen source register deliberately remains a remote-preview ledger.
+ // These two previously owner-accepted photos now have exact local assets.
+ // Do not make the other two frozen source previews appear locally certified.
+ const local=TWO_FROZEN_CLASS_I_PHOTO_RELEASES_2026[r.date]??null;
+ return {date:r.date,width:i%2?320:390,principal:r.principalId,
+  artId:r.artworkId,title:r.title,remote:!local,
+  ...(local?{asset:local.image}:{})};
+});
 assert.equal(frozenCases.length,4);
 const fullCases=[...cases,...expandedCases,...seasonalCases,...frozenCases];
 assert.equal(fullCases.length,128);
