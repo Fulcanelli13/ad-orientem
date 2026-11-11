@@ -36,17 +36,28 @@ export function engraverWidth(viewport){
 // Each instance is bound to a single panel; callers may hold two independent
 // instances for inline and expanded score. Stale renders may never overwrite
 // the selected chant during quick option/viewport changes.
-export function createOfflineChantEngraver({viewport,document=viewport?.ownerDocument}={}){
+export function createOfflineChantEngraver({
+ viewport,document=viewport?.ownerDocument,horizontalStaffWidth=null
+}={}){
+ // The optional wider source-layout is ONLY for the Schola's horizontal
+ // notation viewport. Reader/print/full-score clients retain their
+ // existing responsive, multi-system engraving and resizing.
+ const fixedWidth=Number.isFinite(horizontalStaffWidth)
+   ?Math.max(800,Math.min(1800,Math.round(horizontalStaffWidth))):null;
+ const targetWidth=()=>fixedWidth??engraverWidth(viewport);
   if(!viewport?.replaceChildren || !document?.createElement)
     throw new TypeError("Offline chant viewport and document required");
   let requestId=0,activeGabc=null,score=null,context=null,library=null;
   let laidOut=false,lastWidth=0,destroyed=false,observer=null;
   let pending=Promise.resolve(false);
-  function replaceScoreNode(){
+  function replaceScoreNode(width){
     const svg=score.createSvgNode(context);
     if(!svg)throw new Error("Exsurge emitted no SVG");
     svg.setAttribute("aria-hidden","true"); // Parent has the human-readable aria label.
-    svg.style.maxWidth="100%";
+    svg.style.maxWidth=fixedWidth?"none":"100%";
+    // A truly wider SVG is required for source notes to travel horizontally.
+    // Scaling a 1200px layout down to the dock width defeats follow scrolling.
+    if(fixedWidth)svg.style.width=width+"px";
     svg.style.height="auto";
     svg.style.display="block";
     viewport.replaceChildren(svg);
@@ -55,7 +66,7 @@ export function createOfflineChantEngraver({viewport,document=viewport?.ownerDoc
     return new Promise((resolve,reject)=>{
       const apply=()=>{
         if(destroyed||request!==requestId)return resolve(false);
-        try{replaceScoreNode();lastWidth=width;resolve(true)}
+        try{replaceScoreNode(width);lastWidth=width;resolve(true)}
         catch(e){reject(e)}
       };
       try{score.layoutChantLines(context,width,apply)}
@@ -85,7 +96,7 @@ export function createOfflineChantEngraver({viewport,document=viewport?.ownerDoc
       await firstLayout();
       if(destroyed||request!==requestId)return false;
       context=ctx;score=parsed;laidOut=true;
-      return layout(engraverWidth(viewport),request);
+      return layout(targetWidth(),request);
     })();
     pending=job;
     return job;
@@ -96,7 +107,7 @@ export function createOfflineChantEngraver({viewport,document=viewport?.ownerDoc
     try{
       await pending;
       if(!laidOut||!score||request!==requestId||destroyed)return false;
-      const width=engraverWidth(viewport);
+      const width=targetWidth();
       if(width===lastWidth)return false;
       return await layout(width,request);
     }catch{return false}
