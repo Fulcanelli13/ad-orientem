@@ -15,7 +15,7 @@ const gateNames=[
  "semantic_novelty_approved","source_reference_checked",
  "release_authorized","published"
 ];
-const normalize=s=>String(s||"").normalize("NFKC").toLowerCase().replace(/\\s+/g," ").trim();
+const normalize=s=>String(s||"").normalize("NFKC").toLowerCase().replace(/\s+/g," ").trim();
 assert.equal(proof.release_stage,"RESEARCH_ONLY");
 assert.equal(proof.published,false);
 assert.equal(proof.global_release_authorized,false);
@@ -43,12 +43,12 @@ for(const row of proof.records){
  for(const key of gateNames)assert.equal(row.release_gate[key],false,row.id+" gate "+key);
  assert.equal(row.published_source,undefined,row.id+" already has production source");
  assert.equal(row.research_provenance.master_fact_id,row.id);
- const sourceList=String(row.research_provenance.source_ids_raw||"").split(/\\s*\\|\\s*/).filter(Boolean);
+ const sourceList=String(row.research_provenance.source_ids_raw||"").split(/\s*\|\s*/).filter(Boolean);
  assert.ok(sourceList.length,row.id+" lacks a provenance source ID");
  for(const source of sourceList)sourceIds.add(source);
- const linkList=String(row.research_provenance.source_urls_raw||"").split(/\\s*\\|\\s*/).filter(Boolean);
+ const linkList=String(row.research_provenance.source_urls_raw||"").split(/\s*\|\s*/).filter(Boolean);
  assert.ok(linkList.length,row.id+" lacks an origin URL");
- for(const link of linkList){assert.match(link,/^https:\\/\\/[^\\s<>"']+$/);urls.add(link);}
+ for(const link of linkList){assert.match(link,/^https:\/\/[^\s<>"']+$/);urls.add(link);}
  for(const lang of ["en","fr"]){
   const title=normalize(row.proposed_title[lang]),fact=normalize(row.proposed_copy[lang]);
   assert.ok(!titles[lang].has(title),row.id+" repeated "+lang+" title");
@@ -74,7 +74,7 @@ assert.deepEqual(dyk526ApprovedCandidates(proof,{enabled:true}),[],
 assert.equal(existsSync("data/did-you-know/dyk-526-approved-release.v1.json"),false,
  "A real owner-approved release must be in a separately reviewed PR");
 const h225=readFileSync("data/research/did-you-know/registry/ao-dyk-published-reference-h225-20261110.csv","utf8")
- .replace(/^\\uFEFF/,"").split(/\\r?\\n/).slice(1).filter(Boolean).map(x=>x.split(",")[0]);
+ .replace(/^\uFEFF/,"").split(/\r?\n/).slice(1).filter(Boolean).map(x=>x.split(",")[0]);
 assert.equal(h225.length,225);
 assert.ok(!h225.some(id=>idSet.has(id)),"Batch must not repeat published IDs");
 const home=readFileSync("src/home/dyk-526-home-bridge.js","utf8");
