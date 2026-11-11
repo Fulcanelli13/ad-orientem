@@ -1,0 +1,18 @@
+import assert from "node:assert/strict";
+import {readFileSync,existsSync} from "node:fs";
+import {createHash} from "node:crypto";
+const root=new URL("..",import.meta.url),read=p=>readFileSync(new URL(p,root));
+const proof=JSON.parse(read("data/artwork/releases/2026-04-07-rubens-rockox-kmska307-source.v1.json").toString("utf8"));
+const asset="assets/home/class-i-2026/rubens-rockox-kmska307-central-panel-original.jpg";
+const data=read(asset),publicData=read("dist/web-preview/"+asset);
+const sha=b=>createHash("sha256").update(b).digest("hex");
+assert.equal(proof.unmodifiedPublishedAsset,asset);
+assert.equal(proof.sourceBytes,869761);
+assert.equal(proof.sha1,"7c8d82150fc8d116c85713dab15c4f8584c83f13");
+assert.equal(proof.sha256,"e054d9373b13b939dc9d27c9c9fb6359e64332b0514872b9ee0f87e72a3a0249");
+assert.equal(sha(data),proof.sha256);
+assert.equal(sha(publicData),proof.sha256);
+assert.equal(publicData.length,proof.sourceBytes);
+assert.equal(existsSync(new URL("dist/web-preview/data/artwork/releases/2026-04-07-rubens-rockox-kmska307-source.v1.json",root)),false);
+assert.equal(existsSync(new URL("dist/web-preview/.github/workflows/tmp-rubens-rockox-307-source-acquire-20261111.yml",root)),false);
+console.log("PASS curated Pages has exact Rubens KMSKA307 869761-byte centre panel image, no source acquisition proof");

@@ -48,7 +48,10 @@ const cases=[
   asset:"/assets/prayer/released/heart-jesus-full-original.jpg"},
  {date:"2026-12-24",width:320,principal:"sancti:12-24:1:v",
   artId:"ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",title:"The Dream of Saint Joseph",
-  asset:"/assets/prayer/released/joseph-whole-original.jpg"}
+  asset:"/assets/prayer/released/joseph-whole-original.jpg"},
+ {date:"2026-04-07",width:390,principal:"tempora:Pasc0-2:1:w",
+  artId:"kmska-307",title:"Christ's First Apparition to the Disciples (Rockox Triptych central panel)",
+  asset:"/assets/home/class-i-2026/rubens-rockox-kmska307-central-panel-original.jpg",remote:false}
 ];
 const expandedCases=[
  ...Object.values(APPROVED_2026_OTHER_DATE_PREVIEWS).map((r,i)=>{
@@ -88,7 +91,7 @@ const frozenCases=Object.values(FROZEN_SELECTED_2026_EXACT_WORK_PREVIEWS).map((r
 });
 assert.equal(frozenCases.length,4);
 const fullCases=[...cases,...expandedCases,...seasonalCases,...frozenCases];
-assert.equal(fullCases.length,128);
+assert.equal(fullCases.length,129);
 let browser;const results=[];
 try{
  browser=await chromium.launch({headless:true});

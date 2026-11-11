@@ -144,6 +144,17 @@ for(const [date,proper,expected] of [
  published.set(date,art);
 }
 assert.equal(published.size,30,"28 previously mapped plus two exact frozen original photos");
+// The 26 October owner-approved Easter Tuesday Rubens Rockox centre panel
+// now has the original institutionally CC0 photo in its exact 1962 Home date.
+const rockoxDay=annualHomeArtworkDay2026("2026-04-07");
+const rockox=approved2026HomeArtwork(build(rockoxDay.date,rockoxDay.principalId,"Tempora/Pasc0-2"));
+assert.equal(rockox?.selectionKind,"FROZEN_CLASS_I_LATER_OWNER_RUBENS_KMSKA307_EXACT_LOCAL_CC0_PHOTO");
+assert.equal(rockox?.artworkId,"kmska-307");
+assert.equal(rockox?.image,"/assets/home/class-i-2026/rubens-rockox-kmska307-central-panel-original.jpg");
+assert.equal(rockox?.ownerArtworkDecisionNewlyCreated,false);
+assert.ok(existsSync(new URL(".."+rockox.image,import.meta.url)));
+published.set(rockoxDay.date,rockox);
+assert.equal(published.size,31,"30 prior mapped dates plus real KMSKA307 26 Oct owner selection");
 
 
 
@@ -174,9 +185,9 @@ assert.equal(seasonal.filter(x=>x.liturgicalContext==="MARIAN_SATURDAY").length,
 assert.equal(seasonal.filter(x=>x.liturgicalContext==="FERIAL_SEASON_OR_DEVOTIONAL_CONTEXT").length,59);
 assert.equal(seasonal.filter(x=>x.liturgicalContext==="CLASS_III_LENTEN_OR_ADVENT_FERIA").length,34);
 assert.equal(seasonal.filter(x=>published.has(x.date)).length,0);
-assert.equal(published.size+seasonal.length,135);
+assert.equal(published.size+seasonal.length,136);
 const dateSelectedPending=all.filter(d=>d.selection&&!published.has(d.date));
-assert.equal(dateSelectedPending.length,24);
+assert.equal(dateSelectedPending.length,23);
 for(const d of dateSelectedPending){
  assert.equal(approved2026SeasonalHomeReuse(d.date,d.principalId,"Tempora/probe"),null,
  "Historical date-approved work must never be replaced with seasonal stock");

@@ -19,6 +19,7 @@ import {releasedSaraceniParadiseClassI2026} from "./released-class-i-saraceni-pa
 import {approved2026SeasonalHomeReuse} from "./approved-2026-seasonal-reuse.js";
 import {annualHomeArtworkDay2026} from "./annual-home-artwork-2026.js";
 import {classIOwnerSupersession2026} from "./class-i-2026-owner-supersessions.js";
+import {releasedRockoxKmska307ClassI2026} from "./released-class-i-rubens-rockox-307-2026.js";
 
 const CLASS_I_PROPER=Object.freeze({
  "2026-03-29":"Tempora/Quad6-0r",
@@ -184,7 +185,13 @@ export function approved2026HomeArtwork(state,provider=null){
  // Caravaggio choice. Never render the wrong painting or the museum-sourced
  // Commons file while commercial photographic rights remain uncleared.
  const laterOwnerSelection=classIOwnerSupersession2026(date,principalId,properPath);
- if(laterOwnerSelection?.image===null)return null;
+ if(laterOwnerSelection){
+  // The later-approved KMSKA 307 centre panel may be released only after
+  // exact source integrity/CC0 tests. Stom remains a separate photo hold.
+  const rockox=releasedRockoxKmska307ClassI2026(date,principalId,properPath);
+  if(rockox)return rockox;
+  if(laterOwnerSelection.image===null)return null;
+ }
  const locked=approvedClassIHeroForDate(date,principalId);
  if(locked){
   const expected=CLASS_I_PROPER[date];
