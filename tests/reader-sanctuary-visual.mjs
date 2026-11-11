@@ -33,3 +33,7 @@ assert.match(visualSourceLandscape,/grid-template-columns:var\(--ao-sanctuary-wi
  "Compact sideways reading needs an actual side-by-side sanctuary and prayer stage");
 assert.match(visualSourceLandscape,/if\(drag\.landscape\)setWidth\(/,
  "Sideways drag must resize sanctuary width instead of covering prayers");
+
+assert.match(visualSourceLandscape,
+ /\.ao-reader-shell\.ao-sanctuary-preview\[data-schola-visible="true"\][\s\S]*?\.ao-prayer-card\{\s*height:100%!important/,
+ "The old native viewport-height hack must not crush a side-by-side prayer scroller");

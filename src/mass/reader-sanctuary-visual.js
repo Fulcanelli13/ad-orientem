@@ -56,6 +56,20 @@ const CSS=String.raw`
  .ao-sanctuary-preview .ao-reader-stage{
   grid-column:2;grid-row:3;min-width:0;min-height:0
  }
+ /* The native curated LIVE scroller normally has a viewport-based
+    dock avoidance height (100dvh - reserve - 168px). In this compact
+    side-by-side row the header is already outside our content height,
+    so applying the 168px deduction again leaves just 90px of prayer
+    even though the actual reader stage has 270px available.
+    Retain the canonical Schola reserve in the existing card viewport;
+    let the scroll child fill the remaining content box, not the whole
+    window. Other LIVE, MISSAL, portrait and special-rite layouts retain
+    their original dock geometry and rubrical scroll owners. */
+ #ao-r17-native-reader-preview[data-r17-curated-review="true"]
+   .ao-reader-shell.ao-sanctuary-preview[data-schola-visible="true"]
+   .ao-prayer-card{
+    height:100%!important
+ }
  .ao-sanctuary-preview .ao-sanctuary-resize{
   left:auto;right:0;top:0;bottom:0;width:16px;height:100%;
   cursor:ew-resize
