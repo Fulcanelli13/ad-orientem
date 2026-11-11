@@ -104,6 +104,23 @@ assert.ok(existsSync(new URL(".."+raphael.image,import.meta.url)));
 assert.equal(raphael.photoSourceIsMuseumMaster,false);
 published.set(raphaelDay.date,raphael);
 assert.equal(published.size,28,"27 mapped dates plus verified exact Raphael Vatican artwork photo");
+ // The 2026 frozen owner-selected Laetare and Precious Blood paintings now
+ // reuse verified exact Commons file identities, locally with original/WEBP.
+for(const [date,proper,expected] of [
+ ["2026-03-15","Tempora/Quad4-0","LOCAL_NGI72_LANFRANCO_ORIGINAL_WGA_PD_ART_SOURCE"],
+ ["2026-07-01","Sancti/07-01","LOCAL_KMSKA297_VAN_DYCK_COMMONS_CC0_FULL_FRAME_WEBP"]
+]){
+ const d=annualHomeArtworkDay2026(date);
+ const art=approved2026HomeArtwork(build(date,d.principalId,proper));
+ assert.ok(art?.image&&art.image.startsWith("/assets/home/class-i-2026/"));
+ assert.equal(art.selectionKind,"FROZEN_CLASS_I_TWO_EXACT_LOCAL_SOURCE_PHOTOS");
+ assert.equal(art.imageStatus,expected);
+ assert.equal(art.photographCropCertified,false);
+ assert.ok(existsSync(new URL(".."+art.image,import.meta.url)));
+ published.set(date,art);
+}
+assert.equal(published.size,30,"28 previously mapped plus two exact frozen original photos");
+
 
 
 const seasonal=[];
@@ -133,9 +150,9 @@ assert.equal(seasonal.filter(x=>x.liturgicalContext==="MARIAN_SATURDAY").length,
 assert.equal(seasonal.filter(x=>x.liturgicalContext==="FERIAL_SEASON_OR_DEVOTIONAL_CONTEXT").length,59);
 assert.equal(seasonal.filter(x=>x.liturgicalContext==="CLASS_III_LENTEN_OR_ADVENT_FERIA").length,34);
 assert.equal(seasonal.filter(x=>published.has(x.date)).length,0);
-assert.equal(published.size+seasonal.length,133);
+assert.equal(published.size+seasonal.length,135);
 const dateSelectedPending=all.filter(d=>d.selection&&!published.has(d.date));
-assert.equal(dateSelectedPending.length,26);
+assert.equal(dateSelectedPending.length,24);
 for(const d of dateSelectedPending){
  assert.equal(approved2026SeasonalHomeReuse(d.date,d.principalId,"Tempora/probe"),null,
  "Historical date-approved work must never be replaced with seasonal stock");
