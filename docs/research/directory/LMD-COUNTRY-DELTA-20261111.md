@@ -143,6 +143,44 @@ The [16-case first-party identity register](../../../data/directory/research/lmd
 
 **Accounting:** the 16 rows retain their original `MULTIPLE_NAME_AND_LOCALITY_CANDIDATES` screen classification but now also carry a non-destructive `v2_competing_identity_resolution_20261111` evidence overlay. This resolves **all 16 competing candidates for follow-on triage**, not the **276** other single-candidate leads still awaiting owner-source corroboration or the **821** no-strong-match archive leads. **No existing site was downgraded merely because LMD omits it.**
 
+## Twenty more single-site first-party checks and source readiness for remaining 256 (11 Nov 2026)
+
+The [twenty-case evidence register](../../../data/directory/research/lmd-v2-single-20-owner-verifications-20261111.v1.json) now independently corroborates **20 additional existing CL2 church identities** from the **281** single title-and-locality candidates in the second 1,118-record archive screen. Together with the **five** previously owner-confirmed singles, that means **25/281** have current institutional confirmation of physical site identity, while **256** remain only textual candidates. They are not new LMD positions or production edits.
+
+| 20 first-party-reviewed site identities | Records | Meaning |
+|---|---:|---|
+| Older-form Roman Rite independently supported (explicit 1962, Traditional Roman, or institute-reported Extraordinary Form) | **17** | Same existing CL2 physical church; distinct confirmation level retained per case |
+| Historic **Dominican** Rite independently identified | **1** | Holy Rosary, Portland: not the 1962 **Roman** Missal |
+| Physical church identified, but 1962 rite still unconfirmed | **2** | Holy Comforter, Charlottesville (parish says Latin Mass); Holy Rosary, Cedar MI (parish identifies church but not old rite) |
+| **Total** | **20** | **0 new IDs, 0 Mass times or coordinates imported** |
+
+Confirmed existing sites include St Anne (San Diego), St Benedict (Fort Worth), St Damien (Edmond), Holy Family (Dayton), Sacred Heart (Fort Wayne), North American Martyrs (Edmonds), Our Lady of Sorrows (Springdale), Holy Ghost (Bethlehem), St Cecilia (Clarkdale), St Leo Oratory (Columbus), St Gianna Oratory (Tucson), Holy Family (Latrobe), Our Lady of the Valley (Easthampton), Sacred Heart of Mary (Boulder), Holy Rosary (Portland), Church of the Nativity (Menlo Park), Holy Trinity (Poughkeepsie), St Adelaide (Peabody), Holy Comforter (Charlottesville) and Holy Rosary (Cedar). Each row in the JSON contains its authoritative owner/institute/diocese links, CL2 ID, scoped rite claim and hold.
+
+**Important geometry and rubrical distinctions:**
+- [FSSP Holy Family Dayton](https://fssp.com/apostolate/fssp-dayton/) identifies the **church at Fifth and Findlay Streets**, while [its parish staff page](https://www.daytonlatinmass.org/about/chaplain/) says **140 South Findlay Street is the office/residence mailing address**, presently used in CL2. Do not mark that correspondence address as the visitor entrance without Excel approval.
+- [ICKSP St Gianna Tucson](https://institute-christ-king.org/tucson-about) celebrates 1962 Roman liturgy **inside Holy Family Church** at 338 W University Boulevard. ICKSP notes that **Holy Family Parish and St Gianna Oratory are two ministries sharing the same church**, not two independent physical buildings.
+- [Dominican Holy Rosary Portland](https://holyrosarypdx.org/dominicanrite) explicitly says its Latin Mass is the **traditional Dominican Rite**. It would be a classification error to label this as a Roman 1962 Missal celebration.
+- [Sacred Heart of Mary Boulder](https://sacredheartofmary.org/) explicitly distinguishes its **1962 Roman** Traditional Latin Mass from another **Latin Novus Ordo** Mass. Latin language alone does not determine rite.
+- [Holy Family Latrobe](https://www.holyfamilylatrobe.org/mass-times) and its [resident traditional-Mass group](https://www.latinmasslatrobe.com/) corroborate the same building and older-form use; keep current schedule separate from the identity check.
+- [St Adelaide Peabody](https://www.saintadelaide.com/) lists the parish office/contact address at 712 Lowell St, but precise church entrance and separate associated St Ann parish should not be inferred from a shared collaborative office.
+- [Holy Comforter Charlottesville](https://holycomforterparish.org/events-archive/latin-mass-2026-10-25/) documents a dated Latin Mass in the named church, but it does **not** explicitly call it a 1962-Missal celebration. [Holy Rosary Cedar](https://www.holyrosarycedar.org/) confirms the church at 6982 S Schomberg Rd but does not independently establish an older-form liturgical event in the inspected owner page. Both remain rite holds.
+
+### Source readiness of the other 256 (not new matches)
+
+To avoid redoing directory/source discovery, the original crosswalk now also classifies **all 256** as to availability of already-retained CL2 URLs:
+
+| Existing CL2 source situation | Rows | Next operation |
+|---|---:|---|
+| At least one non-obvious directory external source URL to examine | **215** | Check whether each is actually a church, diocese, institute or reliable research organiser, then test exact building and rite |
+| Only known external directory-style URLs | **21** | Seek separate institutional corroboration; no current owner inferred |
+| Only an Ad Orientem internal link | **18** | New independent source needed |
+| No retained URL | **2** | Source identification required |
+| **Total** | **256** | **0 certified by this URL availability screen** |
+
+Presence of an external URL is **not evidence that it is authoritative or current**; the 215 include specialist organisers and possibly historic sources. These source-readiness statuses are stored on each existing crosswalk row under `v2_single_source_readiness_20261111`, without modifying prior source IDs or converting candidate relationships to certified CL2 links.
+
+The 1,531-archive census remains unchanged: **118 initial direct provenance links**, **282** first-pass textual leads, **1,118** follow-on no-original-URL screens split **281/16/821**. This work has closed the first-party verification of **25 of 281** single identity leads and **fully classified the source availability of all 256 others**; it is **not** complete contemporary venue-by-venue verification of the LMD website's current 1,570 reported positions.
+
 ## Independent owner-source resolution + Poland 2026 changes
 
 A [separate evidence-linked delta ledger](../../../data/directory/research/lmd-firstparty-exact-urls-and-poland-2026-delta.v1.json) has closed a **first-party URL comparison** of the remaining **1,131** archived LMD rows without a strong ID, name and locality match.
