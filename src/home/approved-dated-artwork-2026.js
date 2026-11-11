@@ -12,6 +12,7 @@ import {extraApproved2026HomeArtwork} from "./approved-2026-other-date-previews.
 import {frozenSelected2026HomeArtwork} from "./approved-2026-frozen-selected-previews.js";
 import {sourceVerifiedClassI2026Preview} from "./approved-class-i-exact-source-previews-2026.js";
 import {releasedTannerNicodemusForClassI2026} from "./released-class-i-tanner-nicodemus-2026.js";
+import {releasedRaphaelVaticanHomeArtwork2026} from "./released-class-i-raphael-transfiguration-2026.js";
 import {releasedGoodFridaySanPoloHomeArtwork2026} from "./released-class-i-good-friday-san-polo-2026.js";
 import {approved2026SeasonalHomeReuse} from "./approved-2026-seasonal-reuse.js";
 import {annualHomeArtworkDay2026} from "./annual-home-artwork-2026.js";
@@ -234,6 +235,10 @@ export function approved2026HomeArtwork(state,provider=null){
  // scoped-licensed San Polo photographs, no new asset or Stations cycle change.
  const goodFriday=releasedGoodFridaySanPoloHomeArtwork2026(date,principalId,properPath);
  if(goodFriday)return goodFriday;
+ // Replaces only the Second Sunday of Lent remote source preview with
+ // the exact original Vatican painting, not the Dulwich Art Project work.
+ const raphael=releasedRaphaelVaticanHomeArtwork2026(date,principalId,properPath);
+ if(raphael)return raphael;
  const additional=sourceVerifiedClassI2026Preview(date,principalId,properPath);
  if(additional)return additional;
  // Date-specific locks win. Contextual reuse is restricted to 105 identified

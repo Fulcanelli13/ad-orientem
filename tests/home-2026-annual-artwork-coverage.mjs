@@ -95,6 +95,16 @@ assert.equal(goodFriday?.imageStatus,"LOCAL_SAN_POLO_XII_CC_BY_SA_4_0_EXACT_SOUR
 assert.ok(existsSync(new URL(".."+goodFriday.image,import.meta.url)));
 published.set(goodFridayDay.date,goodFriday);
 assert.equal(published.size,27,"26 previously mapped dates plus exact Good Friday Station XII");
+ // Vatican Raphael's exact original scan supersedes only 1 March remote preview.
+const raphaelDay=annualHomeArtworkDay2026("2026-03-01");
+const raphael=approved2026HomeArtwork(build(raphaelDay.date,raphaelDay.principalId,"Tempora/Quad2-0"));
+assert.equal(raphael?.selectionKind,"FROZEN_CLASS_I_RAPHAEL_VATICAN_EXACT_LOCAL_PHOTO");
+assert.equal(raphael?.imageStatus,"LOCAL_VATICAN_RAPHAEL_SOURCE_VERIFIED_UNALTERED_ARTBOOK_SCAN");
+assert.ok(existsSync(new URL(".."+raphael.image,import.meta.url)));
+assert.equal(raphael.photoSourceIsMuseumMaster,false);
+published.set(raphaelDay.date,raphael);
+assert.equal(published.size,28,"27 mapped dates plus verified exact Raphael Vatican artwork photo");
+
 
 const seasonal=[];
 for(const day of all.filter(x=>x.contextualReuseEligible)){
@@ -123,9 +133,9 @@ assert.equal(seasonal.filter(x=>x.liturgicalContext==="MARIAN_SATURDAY").length,
 assert.equal(seasonal.filter(x=>x.liturgicalContext==="FERIAL_SEASON_OR_DEVOTIONAL_CONTEXT").length,59);
 assert.equal(seasonal.filter(x=>x.liturgicalContext==="CLASS_III_LENTEN_OR_ADVENT_FERIA").length,34);
 assert.equal(seasonal.filter(x=>published.has(x.date)).length,0);
-assert.equal(published.size+seasonal.length,132);
+assert.equal(published.size+seasonal.length,133);
 const dateSelectedPending=all.filter(d=>d.selection&&!published.has(d.date));
-assert.equal(dateSelectedPending.length,27);
+assert.equal(dateSelectedPending.length,26);
 for(const d of dateSelectedPending){
  assert.equal(approved2026SeasonalHomeReuse(d.date,d.principalId,"Tempora/probe"),null,
  "Historical date-approved work must never be replaced with seasonal stock");
