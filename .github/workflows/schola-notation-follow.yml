@@ -5,11 +5,14 @@ on:
       - "src/mass/reader-schola-notation-follow.js"
       - "src/mass/reader-chant-engraver.js"
       - "src/mass/reader-schola-mass-text-sync.js"
+      - "src/mass/reader-schola-card-follow.js"
+      - "src/mass/reader-native-preview.js"
       - "src/mass/reader-schola-dock-approved.js"
       - "src/mass/reader-dom.js"
       - "tests/schola-notation-follow.mjs"
       - "tests/reader-schola-mass-text-sync.mjs"
       - "tests/schola-mass-sync-phone.mjs"
+      - "tests/schola-mass-sync-native65-e2e.mjs"
       - "tests/schola-notation-follow-phone.mjs"
       - ".github/workflows/schola-notation-follow.yml"
   workflow_dispatch: {}
@@ -19,7 +22,7 @@ jobs:
   schola-follow:
     name: P2 estimated source syllables and phone resynchronisation
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 24
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -31,6 +34,8 @@ jobs:
           node --check src/mass/reader-schola-notation-follow.js
           node --check src/mass/reader-chant-engraver.js
           node --check src/mass/reader-schola-mass-text-sync.js
+          node --check src/mass/reader-schola-card-follow.js
+          node --check src/mass/reader-native-preview.js
       - name: Confirm source parsing and performance isolation
         run: |
           node tests/schola-notation-follow.mjs
@@ -43,3 +48,13 @@ jobs:
         run: |
           node tests/schola-notation-follow-phone.mjs
           node tests/schola-mass-sync-phone.mjs
+      - name: Actual 65-card LIVE cross-card Kyrie Gloria Credo integration
+        run: node tests/schola-mass-sync-native65-e2e.mjs
+      - name: Save review-only native LIVE Schola screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: schola-source-65-card-sync-review
+          path: artifacts/schola-shared-cursor/*.png
+          if-no-files-found: warn
+          retention-days: 7
