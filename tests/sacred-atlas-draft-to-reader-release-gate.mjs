@@ -15,7 +15,12 @@ const publishedFiles=["france","france-r67","global-marian-b2","global-saints-r1
 const published=publishedFiles.flatMap(n=>read("data/shrines/illustrated-place-guides-"+n+".v1.json").guides)
  .filter(g=>g.publication==="PUBLISHED");
 const seed=read("data/shrines/shrines-pilgrimages-seed.v1.json");
-const sources=read("data/shrines/source-registry.v1.json").sources;
+const canonicalSources=read("data/shrines/source-registry.v1.json").sources;
+const researchSupplement=read("data/shrines/research/sacred-atlas-institutional-source-supplement-20261111.v1.json");
+assert.equal(researchSupplement.state,"RESEARCH_ONLY_NOT_RELEASED");
+assert.ok(researchSupplement.sources.every(s=>s.scope==="RESEARCH_ONLY"&&s.place_id&&
+  !canonicalSources.some(c=>c.id===s.id)));
+const sources=[...canonicalSources,...researchSupplement.sources];
 const drafts=[...wave1,...wave2],byPlace=new Map(seed.shrines.map(s=>[s.place_id,s]));
 assert.equal(wave1.length,56);
 assert.equal(wave2.length,168);
@@ -37,6 +42,16 @@ const geographicOnly=diagnoses.filter(x=>x.issues.includes("GEOGRAPHIC_LOCATOR_N
 const identityOnly=diagnoses.filter(x=>x.issues.includes("SOURCE_METADATA_LIMITED_TO_SITE_IDENTITY"));
 
 
+const poondiOfficial=wave2.find(x=>x.draft_order===202);
+assert.ok(poondiOfficial&&poondiOfficial.research_source_ids.length===3);
+assert.ok(!inspectSacredGuideEvidence(poondiOfficial,byPlace.get(poondiOfficial.place_id),sources).issues
+  .includes("BROKEN_CANONICAL_SOURCE_LINK"),"Place-bound research references should validate");
+const borrowedSource=researchSupplement.sources.find(x=>x.place_id!==poondiOfficial.place_id);
+const malicious={...poondiOfficial,research_source_ids:[borrowedSource.id],
+  bibliography_urls:[borrowedSource.url],sections:poondiOfficial.sections.map(sec=>({...sec,
+    paragraphs:sec.paragraphs.map(p=>({...p,source_id:borrowedSource.id,source_url:borrowedSource.url}))}))};
+assert.ok(inspectSacredGuideEvidence(malicious,byPlace.get(malicious.place_id),sources).issues
+  .includes("BROKEN_CANONICAL_SOURCE_LINK"),"Another Place cannot lend its historical citation");
 const editorialProse=diagnoses.filter(x=>x.issues.includes("EDITORIAL_INSTRUCTIONS_IN_VISITOR_COPY"));
 assert.equal(editorialProse.length,0,"Wave-2 visitor copy still contains internal Atlas/guide/profile instructions");
 

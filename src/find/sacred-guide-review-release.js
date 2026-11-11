@@ -43,8 +43,13 @@ export function inspectSacredGuideEvidence(guide,shrine,sourceRecords=[]){
         issues.push("EDITORIAL_INSTRUCTIONS_IN_VISITOR_COPY");
       const wave1Bibliography=!filled(p.source_id)&&Number(guide.draft_order)<=56&&
         rows(guide.bibliography_urls).includes(p.source_url);
-      const registryLink=filled(p.source_id)&&rows(shrine?.source_ids).includes(p.source_id)&&
+      const canonicalLink=filled(p.source_id)&&rows(shrine?.source_ids).includes(p.source_id)&&
         bySource.get(p.source_id)?.url===p.source_url;
+      const researchSource=bySource.get(p.source_id);
+      const researchLink=filled(p.source_id)&&rows(guide?.research_source_ids).includes(p.source_id)&&
+        researchSource?.scope==="RESEARCH_ONLY"&&researchSource?.place_id===guide?.place_id&&
+        researchSource?.url===p.source_url&&rows(guide?.bibliography_urls).includes(p.source_url);
+      const registryLink=canonicalLink||researchLink;
       if(!https(p.source_url)||!(registryLink||wave1Bibliography))
         issues.push("BROKEN_CANONICAL_SOURCE_LINK");
       used.add(registryLink?p.source_id:p.source_url);
