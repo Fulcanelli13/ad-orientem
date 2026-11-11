@@ -130,6 +130,56 @@ changed in this pass. Exact evidence URLs are attached individually.
 classified (87.29%); 328 held (254 unresolved + 74 directory-only).**
 The CL27 source-ministry inherited liturgy remains unmodified.
 
+## Fourth exact-site classification batch — official directory evidence
+
+A further **31** source-exact sites have been added: **29 diocesan/parish
+contexts** and **2 mixed/host contexts**, based on official parish, diocese
+and institutional records. This includes **30 LMS-discovered sites** and
+**one historical LMD site**.
+
+- **St Benet, Beccles**: the Diocese of East Anglia formally took over
+  pastoral administration from Downside Benedictines effective 1 January
+  2024. An old Benedictine name may not determine today's emblem.
+- **Holy Souls, Scunthorpe**: became part of the unified Lincolnshire Martyrs
+  parish in December 2024; the physical church remains the same CL2 anchor.
+- **St Edmund, Edmonton**: the Westminster parish publicly uses the fuller
+  title Most Precious Blood and St Edmund.
+- **Our Lady of Lourdes, Leeds**: formerly Jesuit, diocesan since 1947;
+  do not treat it as a Jesuit house on historical naming alone.
+- **Chesham Bois, Our Lady of Perpetual Succour**: diocesan parish served
+  by diocesan clergy since 1917; the regular FSSP Mass is a separate
+  ministry association, not proof of FSSP property title.
+- **Lancaster University Catholic Chaplaincy**: hosted within the
+  university's ecumenical/multifaith chaplaincy; use a neutral visual lane.
+- **The Good Shepherd, Hadspen**: the Archdiocese of Hobart identifies it
+  as a Latin Mass centre; source does not establish who owns the venue.
+- **Our Lady and St Michael, Abergavenny**: a Cardiff-Menevia diocesan
+  parish currently served by Benedictines from Belmont Abbey. This is
+  distinct from an abbey house itself.
+- **Our Lady of Lourdes and St Peter Chanel, Hull**: Marist pastoral
+  administration ended in 2018 when the parish transferred to the
+  Diocese of Middlesbrough. Historical Marist identity cannot drive the
+  current emblem.
+- **Holy Family, Rochdale**: currently belongs to St Margaret Clitherow
+  parish, but its own 2026 programme states that services are suspended.
+  Categorise the church without inventing an active Mass schedule.
+- **St Pancras, Lewes** and **Holy Rood, Swindon**, and the parish
+  churches at **Stokesley, Marton, Marnhull, Weston-super-Mare, Hull
+  (St Charles)** and **Yarm** have their source-specific primary parish
+  confirmations, with no Missal or current Mass assertion added.
+
+Two historically misleading entries are specifically **not** promoted:
+St Philip's Priory, Chelmsford (sold to St Cedd's School in July 2026)
+and Downside Abbey (resident Benedictine community relocated). Both
+retain unresolved present-operator status rather than an inappropriate
+institution emblem. Their original venue identities remain intact.
+
+**Running totals: 122 source-exact first-party witnesses; 2,283 / 2,580
+positively classified (88.49%); 297 held (223 unresolved, 74
+directory-only).** CL27 source-exact ministry relationships and 2,583
+public church cards are unchanged. No images, Missal, current Mass event
+or canonical conclusions have been fabricated.
+
 ## Major outstanding holds
 
 - 209 Latin Mass Society discovery rows labelled unverified operator.

@@ -13,9 +13,9 @@ const witness=read("data/directory/cl2-exact-venue-category-witnesses-20261111.v
 const institute=read("data/directory/cl27-institutional-ministry-liturgy-20261110.v1.json");
 validateCL2SiteCategoryMatrix(index,matrix);
 const exact=validateCL2ExactVenueCategoryWitnesses(index,witness);
-assert.equal(exact.size,91);
+assert.equal(exact.size,122);
 assert.deepEqual(witness.summary.by_category,{
- DIOCESAN_OR_PARISH_CONTEXT:64,RELIGIOUS_HOUSE:16,MIXED_OR_HOST_RELATIONSHIP:10,
+ DIOCESAN_OR_PARISH_CONTEXT:93,RELIGIOUS_HOUSE:16,MIXED_OR_HOST_RELATIONSHIP:12,
  PRIESTLY_SOCIETY_OR_CLERGY:1,
 });
 const original=index.records.map(r=>({
@@ -26,13 +26,13 @@ const institutional=attachInstitutionalMinistryLiturgy(original,institute);
 const categories=attachCL2SiteCategories(institutional,index,matrix);
 const improved=attachCL2ExactVenueCategoryWitnesses(categories,index,witness);
 assert.equal(improved.length,2580);
-assert.equal(improved.filter(r=>r.site_category?.classification_basis==="EXACT_FIRST_PARTY_VENUE_WITNESS").length,91);
-assert.equal(improved.filter(r=>r.site_category?.category==="UNRESOLVED").length,254);
+assert.equal(improved.filter(r=>r.site_category?.classification_basis==="EXACT_FIRST_PARTY_VENUE_WITNESS").length,122);
+assert.equal(improved.filter(r=>r.site_category?.category==="UNRESOLVED").length,223);
 assert.equal(improved.filter(r=>r.site_category?.category==="DIRECTORY_GROUP_ONLY").length,74);
-assert.equal(improved.filter(r=>["UNRESOLVED","DIRECTORY_GROUP_ONLY"].includes(r.site_category?.category)).length,328);
-assert.equal(improved.filter(r=>r.site_category?.category==="DIOCESAN_OR_PARISH_CONTEXT").length,697);
+assert.equal(improved.filter(r=>["UNRESOLVED","DIRECTORY_GROUP_ONLY"].includes(r.site_category?.category)).length,297);
+assert.equal(improved.filter(r=>r.site_category?.category==="DIOCESAN_OR_PARISH_CONTEXT").length,726);
 assert.equal(improved.filter(r=>r.site_category?.category==="RELIGIOUS_HOUSE").length,113);
-assert.equal(improved.filter(r=>r.site_category?.category==="MIXED_OR_HOST_RELATIONSHIP").length,24);
+assert.equal(improved.filter(r=>r.site_category?.category==="MIXED_OR_HOST_RELATIONSHIP").length,26);
 assert.equal(improved.filter(r=>r.site_category?.category==="PRIESTLY_SOCIETY_OR_CLERGY").length,1393);
 assert.equal(improved.filter(r=>r.institutional_liturgy).length,1335);
 for(let i=0;i<improved.length;i++){
@@ -63,6 +63,18 @@ assert.equal(byId("RG-6504A98F8FAF").site_category.related_ministry_hint,"ICKSP"
 assert.equal(byId("RG-293E1CE7BC2A").site_category.category,"DIOCESAN_OR_PARISH_CONTEXT");
 assert.equal(byId("RG-B120BF4FF522").site_category.related_ministry_hint,"ROSMINIANS");
 assert.equal(byId("RG-3923AED1F35D").site_category.category,"MIXED_OR_HOST_RELATIONSHIP");
+assert.equal(byId("RG-850C2D798754").site_category.category,"DIOCESAN_OR_PARISH_CONTEXT",
+ "Beccles St Benet transferred from the Benedictines to diocesan administration in 2024");
+assert.equal(byId("RG-8DF43C14A584").site_category.category,"MIXED_OR_HOST_RELATIONSHIP",
+ "Hadspen is a diocese-listed Mass centre, not proof of society ownership");
+assert.equal(byId("RG-28AC6F34CF2D").site_category.category,"MIXED_OR_HOST_RELATIONSHIP",
+ "Lancaster University's Catholic chaplaincy is not a separate church operator");
+for(const historicalHold of ["RG-832AB0C2265E","RG-02AEBA830666"]){
+ assert.equal(byId(historicalHold).site_category.category,"UNRESOLVED",
+ "Past religious associations must not imply a current resident operator");
+ assert.equal(byId(historicalHold).site_category.visual_lane,"NEUTRAL");
+}
+
 const tampered=structuredClone(witness);
 tampered.records[0].exact_name="Different church";
 assert.throws(()=>validateCL2ExactVenueCategoryWitnesses(index,tampered),/Unsafe site-category witness/);
@@ -75,4 +87,4 @@ assert.throws(()=>validateCL2ExactVenueCategoryWitnesses(index,wrongLink),/Unsaf
 const noCategory=categories.map(x=>({...x}));
 noCategory[noCategory.findIndex(x=>x.physical_group_id==="RG-0117370AD6BF")].site_category=undefined;
 assert.throws(()=>attachCL2ExactVenueCategoryWitnesses(noCategory,index,witness),/Venue witness/);
-console.log("PASS CL2 91 first-party venue categories: 2580 sites intact, 328 held, 1335 exact CL27 ministry joins unchanged");
+console.log("PASS CL2 122 first-party venue categories: 2580 sites intact, 297 held, 1335 exact CL27 ministry joins unchanged");
