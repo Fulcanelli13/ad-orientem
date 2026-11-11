@@ -16,6 +16,7 @@ import {releasedRaphaelVaticanHomeArtwork2026} from "./released-class-i-raphael-
 import {releasedTwoFrozenClassIHomeArtwork2026} from "./released-class-i-two-frozen-photos-2026.js";
 import {releasedGoodFridaySanPoloHomeArtwork2026} from "./released-class-i-good-friday-san-polo-2026.js";
 import {releasedSaraceniParadiseClassI2026} from "./released-class-i-saraceni-paradise-2026.js";
+import {releasedCaravaggioEmmausClassI2026} from "./released-class-i-caravaggio-emmaus-2026.js";
 import {approved2026SeasonalHomeReuse} from "./approved-2026-seasonal-reuse.js";
 import {annualHomeArtworkDay2026} from "./annual-home-artwork-2026.js";
 
@@ -249,6 +250,10 @@ export function approved2026HomeArtwork(state,provider=null){
  // the exact original Vatican painting, not the Dulwich Art Project work.
  const raphael=releasedRaphaelVaticanHomeArtwork2026(date,principalId,properPath);
  if(raphael)return raphael;
+ // Frozen Easter Monday Caravaggio title: explicitly the London NG172 1601
+ // verified photograph, not the distinct 1606 Brera painting.
+ const emmaus=releasedCaravaggioEmmausClassI2026(date,principalId,properPath);
+ if(emmaus)return emmaus;
  const additional=sourceVerifiedClassI2026Preview(date,principalId,properPath);
  if(additional)return additional;
  // Date-specific locks win. Contextual reuse is restricted to 105 identified
