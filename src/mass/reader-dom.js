@@ -3446,7 +3446,18 @@ export function createReaderDomAdapter({
       return;
     }
     const identity=score.scoreId+"|"+score.gabcSha256;
-    if(identity===scholaDockScoreIdentity)return;
+    // The first Gloria/Credo card belongs to the celebrating priest.
+    // It may preview an EXPECTED score, but the Schola's estimated cursor
+    // must not start marching through notes before choir-owned text begins.
+    const awaitingChoir=Boolean(["GLORIA","CREDO"].includes(score.scholaTrackId) &&
+      current?.scholaShared!==true);
+    if(identity===scholaDockScoreIdentity){
+      if(scholaDockFollower){
+        if(scholaPaused||awaitingChoir)scholaDockFollower.pause?.();
+        else scholaDockFollower.resume?.();
+      }
+      return;
+    }
     clearScholaDockNotation();
     scholaDockScoreIdentity=identity;
     const token=++scholaDockScoreRequest;
@@ -3533,8 +3544,8 @@ export function createReaderDomAdapter({
               }
             }
             if(scholaDockFollower.start(score.gabc,{minimumIndex})){
-              if(scholaPaused)scholaDockFollower.pause?.();
-              dock.dataset.notationFollow="estimated";
+              if(scholaPaused||awaitingChoir)scholaDockFollower.pause?.();
+              dock.dataset.notationFollow=awaitingChoir?"awaiting-choir":"estimated";
               const status=root.querySelector('[data-role="schola-status"]');
               if(status)status.textContent="EST. · NOT HEARD";
               panel.setAttribute("aria-label",
