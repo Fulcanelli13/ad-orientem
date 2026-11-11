@@ -1,0 +1,31 @@
+name: Sacred Art later owner approval and Thyssen photo rights hold
+on:
+  pull_request:
+    paths:
+      - 'src/home/class-i-2026-owner-supersessions.js'
+      - 'src/home/annual-home-artwork-2026.js'
+      - 'src/home/approved-dated-artwork-2026.js'
+      - 'tests/home-class-i-stom-emmaus-later-owner-decision.mjs'
+      - 'tests/home-2026-annual-artwork-coverage.mjs'
+      - '.github/workflows/sacred-art-owner-supersession-stom-2026.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  later-decision-and-fail-closed-photo-rights:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Confirm October 26 Stom supersession and protected commercial photo hold
+        run: |
+          node --check src/home/class-i-2026-owner-supersessions.js
+          node --check src/home/annual-home-artwork-2026.js
+          node --check src/home/approved-dated-artwork-2026.js
+          node tests/home-class-i-stom-emmaus-later-owner-decision.mjs
+          node tests/home-2026-annual-artwork-coverage.mjs
+          node tests/home-2026-frozen-selected-source-gate.mjs
+          node tests/home-approved-dated-2026-actual-render.mjs
