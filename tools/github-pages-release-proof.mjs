@@ -50,6 +50,7 @@ export const NOV6_FIRST_FRIDAY_LEONINE_CRITICAL_PATHS=Object.freeze([
 export const DISCOVERY_CRITICAL_PATHS=Object.freeze([
  "src/home/did-you-know-glossary.js",
  "src/home/dyk-published-feed.js",
+ "src/home/dyk-520-release.js",
  "src/home/dyk-h200-release.js",
  "src/home/dyk-h225-release.js",
  "data/did-you-know/weiser-historical-20-publication.v1.json",
@@ -60,7 +61,8 @@ export const DISCOVERY_CRITICAL_PATHS=Object.freeze([
  "data/did-you-know/dyk-h150-originals-25-publication.v1.json",
  "data/did-you-know/dyk-h175-multisource-25-publication.v1.json",
  "data/did-you-know/dyk-h200-three-sources-25-publication.v1.json",
- "data/did-you-know/dyk-h225-world-liturgies-25-publication.v1.json"
+ "data/did-you-know/dyk-h225-world-liturgies-25-publication.v1.json",
+ "data/did-you-know/dyk-customs-glossary-520.v1.json"
 ]);
 
 // Source-owned optional fourteen-photo release: all adapted images, attribution
