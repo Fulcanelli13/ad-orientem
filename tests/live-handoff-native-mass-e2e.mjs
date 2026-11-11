@@ -481,7 +481,8 @@ try{
               sourceCueIds:sourceCueIds.slice(0,20),
               sourceLatin:sourceLatin.slice(0,300),
               nativeLatin:native.latin,
-              selectedSettings,directEligible:Boolean(direct),selectionChecks,
+              selectedSettings,directEligible:Boolean(direct),
+              failedChecks:Object.entries(selectionChecks).filter(([,pass])=>pass===false).map(([key])=>key),
               gabcFirstLine:research.gabc.split("\n").at(-4),
               hash:sha.slice(0,10)}
           };
