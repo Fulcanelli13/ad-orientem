@@ -13,6 +13,8 @@ on:
       - 'src/mass/reader-live-handoff-timeline.js'
       - 'src/mass/reader-schola.js'
       - 'src/mass/reader-schola-dock-approved.js'
+      - 'src/mass/reader-schola-score-integrity.js'
+      - 'tests/reader-schola-score-integrity.mjs'
       - 'tests/live-handoff-visual-acceptance.mjs'
       - 'tests/live-handoff-native-mass-e2e.mjs'
       - '.github/workflows/live-handoff-claude-fidelity.yml'
@@ -36,6 +38,9 @@ jobs:
           node --check src/mass/reader-live-handoff-band.js
           node --check src/mass/reader-live-handoff-schola-track-score.js
           node --test tests/reader-live-handoff-schola-track-scores.mjs
+          node --check src/mass/reader-schola-score-integrity.js
+          node --check src/mass/reader-dom.js
+          node --test tests/reader-schola-score-integrity.mjs
           node --check src/mass/reader-live-handoff-research-notation.js
           node --test tests/reader-live-handoff-research-notation.mjs
           node --check src/mass/reader-live-handoff-proper-notation.js
