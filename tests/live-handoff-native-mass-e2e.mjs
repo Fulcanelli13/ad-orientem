@@ -72,6 +72,9 @@ async function read(page){
         const hit=document.elementFromPoint(r.x+r.width/2,r.y+r.height/2);
         return hit===firstDot||firstDot.contains(hit);
       })(),
+      faithfulPosture:{sourceMatched:shell?.dataset.aoLivePreviewPosture??null,
+        visible:(()=>{const t=shell?.querySelector('.ao-rail-left [data-channel="posture"]');
+          return Boolean(t&&getComputedStyle(t).display!=="none"&&t.getBoundingClientRect().height>0);})()},
       leftRail:rect(shell?.querySelector(".ao-rail-left")),
       rightRail:rect(shell?.querySelector(".ao-rail-right")),
       rails:shell?.querySelectorAll(".ao-reader-stage .ao-rail").length??0
@@ -92,6 +95,8 @@ function verify(m,{width,height,name},label){
   assert.equal(m.laneCount,6,name+" "+label+" lanes");
   assert.equal(m.independentScholaMarks,0,name+" "+label+" false Schola clock marker");
   assert.equal(m.rails,2,name+" "+label+" gesture rails missing");
+  if(m.faithfulPosture.sourceMatched==="true")
+    assert.equal(m.faithfulPosture.visible,true,name+" "+label+" lost the sourced faithful posture rail tile");
   assert.equal(m.headerTitle.whiteSpace,"nowrap",name+" "+label+" LIVE preview title wraps");
   assert.equal(m.headerTitle.textOverflow,"ellipsis",name+" "+label+" LIVE preview title is not truncated");
   assert.ok(m.headerTitle.height>0&&m.headerTitle.height<24,
