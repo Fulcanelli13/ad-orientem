@@ -57,6 +57,13 @@ for(const r of APPROVED_CLASS_I_2026){
   continue;
  }
  assert.ok(art?.image,"Class I preview missing "+r.date);
+ if(r.date==="2026-11-01"){
+  // Already mapped as a remote preview: now exact local Met-origin CC0 bytes.
+  assert.equal(art.selectionKind,"FROZEN_CLASS_I_SARACENI_MET_CC0_EXACT_LOCAL_SOURCE_PHOTO");
+  assert.equal(art.imageStatus,"LOCAL_SARACENI_MET_1971_93_CC0_ORIGINAL_BYTE_VERIFIED");
+  assert.equal(art.image,"/assets/home/class-i-2026/saraceni-paradise-met-1971-93-original.jpg");
+  assert.ok(existsSync(new URL(".."+art.image,import.meta.url)));
+ }
  published.set(r.date,art);
 }
 for(const r of Object.values(APPROVED_2026_OTHER_DATE_PREVIEWS)){
