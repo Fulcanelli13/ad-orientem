@@ -64,14 +64,20 @@ export function createScholaMassTextSynchronizer({
 }={}){
  if(!reader?.querySelectorAll)throw new TypeError("Mass text scroller required");
  const syllables=scholaGabcSyllables(gabc);
- let cachedBody=null,cachedRows=[],cachedAnchors=null;
+ let cachedBody=null,cachedRows=[],cachedAnchors=null,cachedSignature=null;
  function read(){
   const body=reader.querySelector('[data-role="paragraphs"]');
   const rows=[...(body?.querySelectorAll?.(".ao-reader-paragraph")??[])];
+  // Paragraph nodes can survive an in-place Latin/translation toggle.
+  // A stale mapping must never scroll the reader against new visible text.
+  const signature=rows.map(node=>String(node.dataset?.paragraphId??"")+":"+
+    [...(node.querySelectorAll?.(".ao-line-primary,.ao-line-secondary")??[])]
+      .map(line=>line.textContent??"").join("|")).join("\n");
   if(body===cachedBody&&rows.length===cachedRows.length&&
-     rows.every((node,i)=>node===cachedRows[i])&&cachedAnchors)
+     rows.every((node,i)=>node===cachedRows[i])&&
+     signature===cachedSignature&&cachedAnchors)
    return cachedAnchors;
-  cachedBody=body;cachedRows=rows;
+  cachedBody=body;cachedRows=rows;cachedSignature=signature;
   const paragraphs=[];
   for(const node of rows){
    if(node.hidden||node.dataset?.kind==="RUBRIC")continue;
@@ -122,7 +128,7 @@ export function createScholaMassTextSynchronizer({
   return true;
  }
  function destroy(){
-  cachedBody=null;cachedRows=[];cachedAnchors=null;
+  cachedBody=null;cachedRows=[];cachedAnchors=null;cachedSignature=null;
   delete reader.dataset.scholaTextFollowIndex;
   delete reader.dataset.scholaTextFollowParagraph;
  }
