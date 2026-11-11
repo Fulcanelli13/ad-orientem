@@ -42,6 +42,11 @@ jobs:
           node tests/schola-notation-follow.mjs
           node tests/reader-schola-mass-text-sync.mjs
           node tests/reader-schola-card-follow.mjs
+      - name: Protect LIVE rubric, icon rail and cinematic scroll ownership
+        run: |
+          node tests/reader-cue-focus.mjs
+          node tests/mass-reader-rubric-presentation.mjs
+          node tests/reader-cinematic-scenes.mjs
       - name: Install Playwright Chromium
         run: |
           npm install --no-audit --no-fund
@@ -52,6 +57,8 @@ jobs:
           node tests/schola-mass-sync-phone.mjs
       - name: Actual 65-card LIVE cross-card Kyrie Gloria Credo integration
         run: node tests/schola-mass-sync-native65-e2e.mjs
+      - name: Maintain cinematic and rubric scroll enter-exit behaviour
+        run: node tests/reader-cinematic-scenes-phone.mjs
       - name: Save review-only native LIVE Schola screenshots
         if: always()
         uses: actions/upload-artifact@v4
