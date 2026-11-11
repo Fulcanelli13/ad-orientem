@@ -107,9 +107,20 @@ try{
   // These are isolated bridge probes, not invented priest observations.
   await page.evaluate(()=>{
     const api=window.__AO_PHONE_PREVIEW;
-    const c=api.model.cards.find(x=>x.sourceSectionId==="AO.CANON.06" &&
-      x.title==="Words of Consecration and Elevation · Host");
-    if(!c)throw Error("Canonical Host elevation card missing");
+    // Find by the real 1962 certified cue, not display-title punctuation:
+    // the 65-card reader's source identity is the only acceptable owner.
+    const cue="AO.SM.C0174";
+    const candidates=api.model.cards.filter(x=>
+      (x.paragraphs??[]).some(p=>(p.sourceCueIds??[]).includes(cue)));
+    if(candidates.length!==1)throw Error(
+      "Canonical Host elevation cue must identify exactly one reader card: "+
+      JSON.stringify(candidates.map(x=>({title:x.title,sectionId:x.sectionId,
+        sourceSectionId:x.sourceSectionId}))));
+    const c=candidates[0];
+    if((c.sourceSectionId??c.sectionId)!=="AO.CANON.06")
+      throw Error("Host elevation source section drifted: "+
+        JSON.stringify({title:c.title,sectionId:c.sectionId,
+          sourceSectionId:c.sourceSectionId}));
     api.showSequence(c.sequence);
   });
   await frame.waitForFunction(()=>window.AO_SANCTUARY_EMBED_TEST
