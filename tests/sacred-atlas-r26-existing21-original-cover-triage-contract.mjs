@@ -1,11 +1,19 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
+import {LIVE,RELEASES} from "./helpers/sacred-places-live-baseline.mjs";
 const read=path=>JSON.parse(readFileSync(path,"utf8"));
 const m=read("data/geography/research/sacred-atlas-round26-existing21-cover-triage-20261104.v1.json");
 const prior=read("data/geography/research/sacred-atlas-round25-23place-64-original-review-20261104.json");
 const geo=read("data/geography/seed-registry.v1.json");
 const covers=read("data/geography/approved-place-media.v1.json");
 const directFive=read("data/geography/research/sacred-atlas-direct-open-photo-five-release-report-20261105.v1.json");
+const directBatchTwo=read("data/geography/research/sacred-atlas-direct-source-batch-two-20261105.v1.json");
+const directBatchTwoProof=read("data/geography/research/sacred-atlas-direct-source-batch-two-report-20261105.v1.json");
+const frozen=read("data/geography/research/sacred-atlas-editorial-master-530-20261104.v1.json");
+const v10=RELEASES.find(r=>r.id==="V10-B20"),v10b21=RELEASES.find(r=>r.id==="V10-B21");
+assert.ok(v10&&v10b21&&v10.data.new_places===3&&v10b21.data.new_places===2);
+const frozenIds=new Set(frozen.places.map(x=>x.place_id));
+assert.equal(frozenIds.size,530);
 const gallery=read("data/geography/approved-place-gallery.v1.json");
 const prev151=read("data/geography/research/sacred-atlas-existing-first-151-photo-reconciliation-20261104.v1.json");
 assert.equal(m.schema,"AO_SACRED_ATLAS_21_PLACE_61_EXACT_ORIGINAL_COVER_TRIAGE_V1");
@@ -14,7 +22,11 @@ assert.equal(m.production_baseline.places,530);
 assert.equal(m.production_baseline.approved_covers,379);
 assert.equal(m.production_baseline.approved_gallery,42);
 assert.equal(m.production_baseline.without_approved_covers,151);
-assert.equal(geo.places.length,530);
+assert.equal(geo.places.length,LIVE.places);
+assert.ok(frozen.places.every(x=>geo.places.some(p=>p.place_id===x.place_id)),"Original 530-photo-review Place identities must survive");
+assert.deepEqual(geo.places.filter(x=>!frozenIds.has(x.place_id)).map(x=>x.place_id).sort(),
+ [...v10.data.published_new,...v10b21.data.published_new].map(x=>x.place_id).sort(),
+ "Only five V10-B20/B21 draft Places may extend the original 530-Place cohort");
 // R26 is a frozen November 4 research cohort. The approved-cover registry
 // is *live* and may grow independently; do not mistake legitimate later
 // approvals for an R26 editorial promotion. Validate five admitted photos
@@ -56,7 +68,20 @@ for(const row of m.rows){
  assert.ok(old&&cross&&place,"Unknown site in recovered source batch");
  assert.equal(row.canonical_name,place.name.official);
  assert.equal(row.place_name,old.name);
- assert.ok(!approvedIds.has(row.place_id));
+ const separatelyApprovedCover=currentCoverById.get(row.place_id);
+ if(separatelyApprovedCover){
+  // R26 original photos are still unapproved; these are DISTINCT rights-cleared
+  // modern source releases with independently checked identity and pixel proof.
+  assert.equal(separatelyApprovedCover.source_place_ref,"DIRECT_PEXELS_FLICKR_BATCH_TWO_20261105");
+  const source=directBatchTwo.items.find(x=>x.place_id===row.place_id);
+  const proof=directBatchTwoProof.approved.find(x=>x.place_id===row.place_id);
+  assert.ok(source&&proof,"A separately approved photo requires the independent source and rights record");
+  assert.equal(separatelyApprovedCover.source_url,source.source_page);
+  assert.equal(separatelyApprovedCover.asset_path,proof.asset_path);
+  assert.equal(separatelyApprovedCover.derivative_sha256,proof.derivative_sha256);
+  assert.equal(separatelyApprovedCover.source_sha1,proof.source_original_sha1);
+  assert.ok(separatelyApprovedCover.rights_verified&&separatelyApprovedCover.subject_verified&&separatelyApprovedCover.crop_reviewed);
+ } else assert.equal(approvedIds.has(row.place_id),false);
  assert.ok(row.cohort===old.cohort);
  assert.equal(row.publication_authorized,false);
  assert.equal(row.exact_site_subject_verified_for_publication,false);

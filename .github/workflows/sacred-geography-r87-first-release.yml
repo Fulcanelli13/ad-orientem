@@ -1,5 +1,21 @@
 name: Sacred Geography R87 first canonical release
 on:
+  push:
+    branches:
+      - 'research/v10-sacred-atlas-b20-admission-20261105'
+    paths:
+      - 'data/geography/**'
+      - 'data/shrines/**'
+      - 'data/explore/heritage-place-reconciliation.review.v1.json'
+      - 'tests/sacred-atlas-**'
+      - 'tests/sacred-places-**'
+      - 'tests/sacred-geography-**'
+      - 'tests/explore-geography-contracts.mjs'
+      - 'tests/explore-pilgrimage-journey.mjs'
+      - 'tests/relic-*.mjs'
+      - 'tests/shrines-pilgrimages-contracts.mjs'
+      - 'tools/geography/audit-sacred-atlas-editorial.mjs'
+      - '.github/workflows/sacred-geography-r87-first-release.yml'
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
     branches: [main]
@@ -25,6 +41,36 @@ jobs:
       - run: npm install --no-audit --no-fund
       - name: New physical sites, original source and coordinate contract
         run: node tests/sacred-geography-r87-first-release.mjs
+      - name: V10 B21 two Marian admissions and 96-candidate preflight
+        run: |
+          node tests/sacred-atlas-96-country-area-preflight.mjs
+          node tests/sacred-atlas-96-admission-review.mjs
+          node tests/sacred-atlas-169-consolidated-intake.mjs
+          node tests/sacred-atlas-243-complement-triage.mjs
+          node tests/sacred-atlas-150-source-scope-evidence.mjs
+          node tests/sacred-atlas-243-geographic-reconciliation.mjs
+          node tests/atlas-kosovo-operational-code.mjs
+          node tests/sacred-atlas-412-owner-admission-contract.mjs
+          node tests/sacred-atlas-73-source-exception-adjudication.mjs
+          node tests/sacred-atlas-169-country-area-preflight.mjs
+          node tests/sacred-atlas-67-source-evidence.mjs
+          node tests/sacred-atlas-29-priority-source-review.mjs
+          node tests/sacred-atlas-169-owner-review-packet.mjs
+          node tests/sacred-atlas-16-evidence-repairs.mjs
+          node tests/sacred-atlas-v10-b21-two-marian-places.mjs
+      - name: V10 editorial master deterministic source audit
+        run: node tests/sacred-atlas-editorial-master-530-contract.mjs
+      - name: Preserve nine new approved covers and editorial photo rights
+        run: |
+          node tests/sacred-atlas-r26-existing21-original-cover-triage-contract.mjs
+          node tests/shrine-marian-editorial-inventory-contract.mjs
+          node tests/explore-sacred-photo-crosswalk.mjs
+          node tests/relic-principal-sites-bulk.mjs
+      - name: V10 broader graph and reader profiles
+        run: |
+          node tests/sacred-geography-r70-worldwide-coverage.mjs
+          node tests/sacred-atlas-530-card-release-acceptance.mjs
+          node tests/explore-pilgrimage-journey.mjs
       - name: Geography and Shrine registry integrity
         run: |
           node tests/explore-geography-contracts.mjs

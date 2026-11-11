@@ -26,8 +26,13 @@ for(const release of RELEASES){
   assert.equal(release.data.published_new?.length??0,0,
    release.id+" link-only release may not mint a new Place");
   const bridges=release.data.published_links??[];
-  assert.equal(bridges.length,release.data.confirmed_directory_links_added,
-   release.id+" link-only release must enumerate exact new bridges");
+  assert.equal(bridges.length,release.data.confirmed_directory_links_added??0,
+   release.id+" no-Place release may only add explicitly recorded directory bridges");
+  const countryScopes=release.data.new_geo_areas??[];
+  assert.equal(release.data.proposed.geo_areas-release.data.baseline.geo_areas,countryScopes.length,
+   release.id+" area-only releases must enumerate every new country area");
+  for(const id of countryScopes)assert.ok(geo.geoAreas.some(row=>row.geo_area_id===id),
+   release.id+" added area must remain in the live registry: "+id);
   for(const bridge of bridges){
    const existingPlace=placeById.get(bridge.place_id);
    assert.ok(existingPlace,"Linked Place must already exist: "+bridge.place_id);

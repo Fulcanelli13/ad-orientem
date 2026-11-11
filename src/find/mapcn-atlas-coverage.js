@@ -1,6 +1,7 @@
 // P4 MapCN heatmap / choropleth data contract. Only already-published map
 // locations and canonical source relationships; never inferred country via GPS.
 import {projectHeritagePlaces} from "./heritage-map.js";
+import {atlasCoverageAreaCode,atlasCoverageCountryNames} from "./atlas-country-identifiers.js";
 const arr=v=>Array.isArray(v)?v:[];
 const txt=v=>String(v??"").trim();
 const goodGeo=g=>g&&g.lat!=null&&g.lng!=null
@@ -14,9 +15,7 @@ export function buildAtlasCoverage(dataset,projection,{scope="all"}={}){
   if(!ATLAS_SCOPES.includes(scope))throw new Error("Unknown Atlas scope");
   const areas=new Map(arr(dataset?.geography?.geoAreas).map(a=>[a.geo_area_id,a]).filter(([id])=>id));
   const sites=new Map(arr(dataset?.geography?.places).map(p=>[p.place_id,p]).filter(([id])=>id));
-  const countryNames=new Map(arr(dataset?.geography?.geoAreas)
-    .filter(a=>a.area_type==="country"&&/^[A-Z]{2}$/.test(txt(a.codes?.iso_alpha2).toUpperCase()))
-    .map(a=>[txt(a.codes.iso_alpha2).toUpperCase(),txt(a.name?.official)]));
+  const countryNames=atlasCoverageCountryNames(dataset?.geography?.geoAreas);
   const rows=[
     ...(scope!=="tlm"?projectHeritagePlaces(projection):[]),
     ...(scope!=="heritage"?arr(projection?.byLens?.tlm):[]),
@@ -32,10 +31,11 @@ export function buildAtlasCoverage(dataset,projection,{scope="all"}={}){
     seen.add(key);
     const canonical=sites.get(item.place_id);
     const area=arr(canonical?.geo_area_ids).map(id=>areas.get(id))
-      .find(a=>a?.area_type==="country");
+      .find(a=>atlasCoverageAreaCode(a));
     const reported=kind==="tlm"?txt(item.raw?.venue?.address?.country_code).toUpperCase():"";
+    const areaCode=atlasCoverageAreaCode(area);
     const countryCode=countryNames.has(reported)?reported:
-      countryNames.has(txt(area?.codes?.iso_alpha2).toUpperCase())?txt(area.codes.iso_alpha2).toUpperCase():"";
+      countryNames.has(areaCode)?areaCode:"";
     const point=Object.freeze({id:key,lat:Number(item.geo.lat),lng:Number(item.geo.lng),
       kind,countryCode,approximate:Boolean(item.geo.approximate||item.geo.indicative_only),
       title:txt(item.title)});

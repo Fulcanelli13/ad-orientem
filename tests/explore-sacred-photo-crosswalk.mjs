@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
+import {LIVE} from "./helpers/sacred-places-live-baseline.mjs";
 
 // Metadata-only: no Commons calls, image downloads, approval writes or
 // new publication status. The current production registries always win.
@@ -24,7 +25,10 @@ for(const image of gallery.items){
 }
 assert.equal(audit.schema,"AO_SACRED_ATLAS_PHOTO_PRODUCTION_CROSSWALK_20261103_V1");
 assert.equal(audit.scope,"READ_ONLY_RECONCILIATION_NO_IMAGE_OR_RESEARCH_PROMOTION");
-assert.equal(geo.places.length,530,"Original exact geographic scope must not be silently changed by photo research");
+const frozen=read("data/geography/research/sacred-atlas-editorial-master-530-20261104.v1.json");
+assert.equal(frozen.places.length,530,"The pre-V10 photographic research scope remains immutable");
+assert.ok(frozen.places.every(p=>placeIds.has(p.place_id)),"No original photograph-research Place may disappear");
+assert.equal(geo.places.length,LIVE.places,"Current approved Place admissions must follow immutable release chain");
 assert.equal(audit.original_268_subject_crosswalk.length,268);
 assert.equal(audit.round1_user_kept_preview_crosswalk.length,20);
 assert.equal(new Set(audit.original_268_subject_crosswalk.map(x=>x.subject_id)).size,268);

@@ -1,0 +1,92 @@
+{
+  "schema": "AO_SACRED_PLACES_V10_C6_COUNTRY_AREA_PREFLIGHT_V1",
+  "date": "2026-11-06",
+  "status": "DRAFT_PR_GEOGRAPHY_STRUCTURE_ONLY_NOT_PLACE_ADMISSION",
+  "nonproduction": true,
+  "baseline": {
+    "places": 533,
+    "sources": 855,
+    "crosswalk": 533,
+    "unlinked": 257,
+    "geo_areas": 146,
+    "directory_links": 24
+  },
+  "proposed": {
+    "places": 533,
+    "sources": 855,
+    "crosswalk": 533,
+    "unlinked": 257,
+    "geo_areas": 152,
+    "directory_links": 24
+  },
+  "new_places": 0,
+  "published_new": [],
+  "new_country_area_count": 6,
+  "new_geo_areas": [
+    "geo:country:AL",
+    "geo:country:BI",
+    "geo:country:BO",
+    "geo:country:BY",
+    "geo:country:ME",
+    "geo:country:ZA"
+  ],
+  "resolved_preimport_candidates": [
+    {
+      "candidate_id": "SG-INV-0348",
+      "country_code": "AL",
+      "geo_area_id": "geo:country:AL"
+    },
+    {
+      "candidate_id": "SG-INV-0729",
+      "country_code": "BI",
+      "geo_area_id": "geo:country:BI"
+    },
+    {
+      "candidate_id": "SG-INV-0541",
+      "country_code": "BO",
+      "geo_area_id": "geo:country:BO"
+    },
+    {
+      "candidate_id": "SG-INV-0543",
+      "country_code": "BO",
+      "geo_area_id": "geo:country:BO"
+    },
+    {
+      "candidate_id": "SG-INV-0343",
+      "country_code": "BY",
+      "geo_area_id": "geo:country:BY"
+    },
+    {
+      "candidate_id": "SG-INV-0344",
+      "country_code": "BY",
+      "geo_area_id": "geo:country:BY"
+    },
+    {
+      "candidate_id": "SG-INV-0342",
+      "country_code": "BY",
+      "geo_area_id": "geo:country:BY"
+    },
+    {
+      "candidate_id": "SG-INV-0350",
+      "country_code": "ME",
+      "geo_area_id": "geo:country:ME"
+    },
+    {
+      "candidate_id": "SG-INV-0722",
+      "country_code": "ZA",
+      "geo_area_id": "geo:country:ZA"
+    }
+  ],
+  "staging_file": "data/geography/research/sacred-atlas-96-priority-unapproved-preimport-20261106.v1.json",
+  "policy": {
+    "preserve_prior_release_manifests": true,
+    "preimport_still_unapproved": 96,
+    "owner_approved_places": 0,
+    "import_ready_places": 0,
+    "new_pins": 0,
+    "do_not_certify_exact_coordinates": true,
+    "do_not_infer_tlm_venues": true,
+    "github_only": true,
+    "no_vercel": true
+  }
+}

@@ -1,4 +1,8 @@
 import {LIVE,RELEASES,CURRENT_RELEASE_PLACE_IDS} from "./helpers/sacred-places-live-baseline.mjs";
+import "./sacred-atlas-96-country-area-preflight.mjs";
+import "./sacred-atlas-96-admission-review.mjs";
+import "./sacred-atlas-67-source-evidence.mjs";
+import "./sacred-atlas-v10-b21-two-marian-places.mjs";
 import fs from "node:fs";
 import assert from "node:assert/strict";
 import {

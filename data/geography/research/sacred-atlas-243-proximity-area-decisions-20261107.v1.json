@@ -1,0 +1,290 @@
+{
+  "schema": "AO_SACRED_ATLAS_243_PROXIMITY_AND_AREAS_V1",
+  "prepared_on": "2026-11-07",
+  "status": "RESEARCH_ONLY_NO_GEOAREA_ADMISSION",
+  "basis": "243 complement Stage25 snapshot / canonical production 530 source-nearest comparison; draft has 535 Place identities, no new adds.",
+  "policy": {
+    "near_means_not_duplicate": true,
+    "heritage_not_auto_catholic_venue": true,
+    "all_geographies_staged_only": true,
+    "owner_approval_missing": true
+  },
+  "counts": {
+    "source_proximity_under_500m": 10,
+    "source_proximity_under_100m": 2,
+    "distinct_structures_or_heritage": 9,
+    "same_building_hold": 1,
+    "missing_area_codes": 9,
+    "codes_needed_for_active_catholic_research": 5,
+    "heritage_only_deferred_codes": 4,
+    "production_imports": 0
+  },
+  "source_nearest_proximity_cases": [
+    {
+      "candidate_id": "SG-INV-0283",
+      "source_distance_m_to_production_place": 327.7,
+      "near_existing_place_id": "place:CZ:stara-boleslav-st-wenceslas",
+      "identity_review": "DISTINCT_BUILDING",
+      "review_note": "Stará Boleslav Assumption basilica and Saint Wenceslas basilica are separate nearby Catholic churches; no deduplication.",
+      "proximity_is_not_equivalent_to_duplication": true,
+      "automerge": false,
+      "owner_approved": false
+    },
+    {
+      "candidate_id": "SG-INV-0037",
+      "source_distance_m_to_production_place": 460.1,
+      "near_existing_place_id": "place:FR:notre-dame-paris",
+      "identity_review": "DISTINCT_HERITAGE_BUILDING",
+      "review_note": "Sainte-Chapelle is distinct from Notre Dame; state-run heritage does not establish an active Catholic Mass venue.",
+      "proximity_is_not_equivalent_to_duplication": true,
+      "automerge": false,
+      "owner_approved": false
+    },
+    {
+      "candidate_id": "SG-INV-0556",
+      "source_distance_m_to_production_place": 308.6,
+      "near_existing_place_id": "place:IL:dominus-flevit-church-mount-of-olives",
+      "identity_review": "DISTINCT_NON_CATHOLIC_HERITAGE",
+      "review_note": "Ascension chapel is distinct from Dominus Flevit; present heritage category, not Catholic venue.",
+      "proximity_is_not_equivalent_to_duplication": true,
+      "automerge": false,
+      "owner_approved": false
+    },
+    {
+      "candidate_id": "SG-INV-0555",
+      "source_distance_m_to_production_place": 257.4,
+      "near_existing_place_id": "place:IL:dominus-flevit-church-mount-of-olives",
+      "identity_review": "DISTINCT_CATHOLIC_CHURCH",
+      "review_note": "Pater Noster/Eleona Catholic shrine beside Carmel monastery distinct from Dominus Flevit.",
+      "proximity_is_not_equivalent_to_duplication": true,
+      "automerge": false,
+      "owner_approved": false
+    },
+    {
+      "candidate_id": "SG-INV-0599",
+      "source_distance_m_to_production_place": 355.2,
+      "near_existing_place_id": "place:IN:basilica-bom-jesus-old-goa",
+      "identity_review": "DISTINCT_CATHEDRAL",
+      "review_note": "Old Goa Se Cathedral (St Catherine) is distinct from Basilica of Bom Jesus.",
+      "proximity_is_not_equivalent_to_duplication": true,
+      "automerge": false,
+      "owner_approved": false
+    },
+    {
+      "candidate_id": "CL-IT-20261105-04",
+      "source_distance_m_to_production_place": 378.2,
+      "near_existing_place_id": "place:IT:san-bartolomeo-isola",
+      "identity_review": "DISTINCT_BASILICA",
+      "review_note": "Santa Cecilia in Trastevere is a separate mainland church from San Bartolomeo on Tiber island.",
+      "proximity_is_not_equivalent_to_duplication": true,
+      "automerge": false,
+      "owner_approved": false
+    },
+    {
+      "candidate_id": "SG-INV-0368",
+      "source_distance_m_to_production_place": 243.2,
+      "near_existing_place_id": "place:NO:st-olav-cathedral-trondheim",
+      "identity_review": "DISTINCT_NON_CATHOLIC_HERITAGE",
+      "review_note": "Nidaros Cathedral is Church of Norway, physically and ecclesially distinct from the active St Olav Catholic Cathedral.",
+      "proximity_is_not_equivalent_to_duplication": true,
+      "automerge": false,
+      "owner_approved": false
+    },
+    {
+      "candidate_id": "SG-INV-0524",
+      "source_distance_m_to_production_place": 432.7,
+      "near_existing_place_id": "place:PE:convento-santo-domingo-lima",
+      "identity_review": "DISTINCT_SANCTUARY",
+      "review_note": "Santa Rosa sanctuary on Avenida Tacna is distinct from Santo Domingo convent church in Lima.",
+      "proximity_is_not_equivalent_to_duplication": true,
+      "automerge": false,
+      "owner_approved": false
+    },
+    {
+      "candidate_id": "SG-INV-0654",
+      "source_distance_m_to_production_place": 68.4,
+      "near_existing_place_id": "place:PH:monasterio-de-tarlac-risen-christ-chapel",
+      "identity_review": "UNRESOLVED_SAME_BUILDING",
+      "review_note": "Proposed Holy Cross at Monasterio de Tarlac may be another name/feature of current Chapel of Risen Christ; needs building-level proof before new site.",
+      "proximity_is_not_equivalent_to_duplication": true,
+      "automerge": false,
+      "owner_approved": false
+    },
+    {
+      "candidate_id": "SG-INV-0570",
+      "source_distance_m_to_production_place": 29.3,
+      "near_existing_place_id": "place:PS:nativity-bethlehem",
+      "identity_review": "DISTINCT_ADJACENT_CHURCH",
+      "review_note": "St Catherine Latin Catholic church abuts the Nativity sanctuary but is a different worship building.",
+      "proximity_is_not_equivalent_to_duplication": true,
+      "automerge": false,
+      "owner_approved": false
+    }
+  ],
+  "missing_country_area_preflight": [
+    {
+      "code": "AM",
+      "display_name": "Armenia",
+      "proposed_id": "geo:country:AM",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "decision": "HERITAGE_ONLY_DEFER",
+      "code_note": "ISO 3166-1 alpha-2 country code",
+      "source_candidate_ids": [
+        "SG-INV-0684",
+        "SG-INV-0685"
+      ],
+      "eligible_active_review_candidate_ids": [],
+      "area_owner_approved": false,
+      "canonical_area_insert_authorized": false
+    },
+    {
+      "code": "BF",
+      "display_name": "Burkina Faso",
+      "proposed_id": "geo:country:BF",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "decision": "ACTIVE_CATHOLIC_AREA_NEEDED",
+      "code_note": "ISO 3166-1 alpha-2 country code",
+      "source_candidate_ids": [
+        "SG-INV-0727"
+      ],
+      "eligible_active_review_candidate_ids": [
+        "SG-INV-0727"
+      ],
+      "area_owner_approved": false,
+      "canonical_area_insert_authorized": false
+    },
+    {
+      "code": "CY",
+      "display_name": "Cyprus",
+      "proposed_id": "geo:country:CY",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "decision": "HERITAGE_ONLY_DEFER",
+      "code_note": "ISO 3166-1 alpha-2 country code",
+      "source_candidate_ids": [
+        "SG-INV-0357",
+        "SG-INV-0356"
+      ],
+      "eligible_active_review_candidate_ids": [],
+      "area_owner_approved": false,
+      "canonical_area_insert_authorized": false
+    },
+    {
+      "code": "ET",
+      "display_name": "Ethiopia",
+      "proposed_id": "geo:country:ET",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "decision": "HERITAGE_ONLY_DEFER",
+      "code_note": "ISO 3166-1 alpha-2 country code",
+      "source_candidate_ids": [
+        "SG-INV-0736"
+      ],
+      "eligible_active_review_candidate_ids": [],
+      "area_owner_approved": false,
+      "canonical_area_insert_authorized": false
+    },
+    {
+      "code": "HT",
+      "display_name": "Haiti",
+      "proposed_id": "geo:country:HT",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "decision": "ACTIVE_CATHOLIC_AREA_NEEDED",
+      "code_note": "ISO 3166-1 alpha-2 country code",
+      "source_candidate_ids": [
+        "SG-INV-0470"
+      ],
+      "eligible_active_review_candidate_ids": [
+        "SG-INV-0470"
+      ],
+      "area_owner_approved": false,
+      "canonical_area_insert_authorized": false
+    },
+    {
+      "code": "TL",
+      "display_name": "Timor-Leste",
+      "proposed_id": "geo:country:TL",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "decision": "ACTIVE_CATHOLIC_AREA_NEEDED",
+      "code_note": "ISO 3166-1 alpha-2 country code",
+      "source_candidate_ids": [
+        "SG-INV-0682",
+        "SG-INV-0683"
+      ],
+      "eligible_active_review_candidate_ids": [
+        "SG-INV-0682",
+        "SG-INV-0683"
+      ],
+      "area_owner_approved": false,
+      "canonical_area_insert_authorized": false
+    },
+    {
+      "code": "TN",
+      "display_name": "Tunisia",
+      "proposed_id": "geo:country:TN",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "decision": "HERITAGE_ONLY_DEFER",
+      "code_note": "ISO 3166-1 alpha-2 country code",
+      "source_candidate_ids": [
+        "SG-INV-0695",
+        "SG-INV-0696",
+        "SG-INV-0697"
+      ],
+      "eligible_active_review_candidate_ids": [],
+      "area_owner_approved": false,
+      "canonical_area_insert_authorized": false
+    },
+    {
+      "code": "TR",
+      "display_name": "Türkiye",
+      "proposed_id": "geo:country:TR",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "decision": "ACTIVE_CATHOLIC_AREA_NEEDED",
+      "code_note": "ISO 3166-1 alpha-2 country code",
+      "source_candidate_ids": [
+        "SG-INV-0362",
+        "SG-INV-0364",
+        "SG-INV-0361",
+        "SG-INV-0363"
+      ],
+      "eligible_active_review_candidate_ids": [
+        "SG-INV-0364",
+        "SG-INV-0361"
+      ],
+      "area_owner_approved": false,
+      "canonical_area_insert_authorized": false
+    },
+    {
+      "code": "XK",
+      "display_name": "Kosovo",
+      "proposed_id": "geo:country:XK",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "decision": "ACTIVE_CATHOLIC_AREA_NEEDED",
+      "code_note": "XK is an operational Kosovo code, not formally assigned ISO 3166-1 alpha-2. Requires schema decision before any country insertion.",
+      "source_candidate_ids": [
+        "SG-INV-0349"
+      ],
+      "eligible_active_review_candidate_ids": [
+        "SG-INV-0349"
+      ],
+      "area_owner_approved": false,
+      "canonical_area_insert_authorized": false
+    }
+  ]
+}
