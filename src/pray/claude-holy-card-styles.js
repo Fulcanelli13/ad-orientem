@@ -331,7 +331,12 @@ export const CLAUDE_HOLY_CARD_CSS=String.raw`
  * legible on 320×640 while preserving the full-source contain fit and a
  * independently scrollable prayer-text back. */
 @media(max-height:640px){
- #aoPray435930 .aoClaudeHolyCard .aoClaudeHolyLace{height:300px;min-height:300px}
+ /* Keep the approved 300px painting at 640px, but leave room for the
+    separate Turn card button inside the clipped reader on 320×568 phones. */
+ #aoPray435930 .aoClaudeHolyCard .aoClaudeHolyLace{
+  height:clamp(185px,calc(100dvh - 340px),300px);
+  min-height:185px;
+ }
 }
 
 /* Even a published art image can be unloaded during the first gallery
