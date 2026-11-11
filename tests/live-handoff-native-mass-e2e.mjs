@@ -24,7 +24,9 @@ async function read(page){
     const api=window.AO_R17_NATIVE_READER_PREVIEW;
     const root=document.querySelector("#ao-r17-native-reader-preview");
     const shell=root?.querySelector("[data-ao-reader-shell]");
-    const band=shell?.querySelector("[data-ao-live-band]");
+$1    const stage=shell?.querySelector(".ao-reader-stage");
+    const nativeDock=shell?.querySelector(".ao-schola-dock");
+    const firstDot=band?.querySelector(".ao-lb-dot");
     const schola=api?.getScholaState?.()??null;
     const card=api?.getCurrentCard?.()??null;
     const rect=el=>{
@@ -55,8 +57,15 @@ async function read(page){
       laneCount:band?.querySelectorAll("[data-native-lane]")?.length??0,
       independentScholaMarks:0,
       mainPrayer:rect(shell?.querySelector('[data-role="card"]')),
-      shell:rect(shell),band:rect(band),
-      stage:rect(shell?.querySelector(".ao-reader-stage")),
+$1      stage:rect(stage),
+      scholaDock:rect(nativeDock),
+      scholaDockInStage:Boolean(nativeDock&&stage?.contains(nativeDock)),
+      firstDotUnobstructed:(()=>{
+        const r=firstDot?.getBoundingClientRect();
+        if(!r)return false;
+        const hit=document.elementFromPoint(r.x+r.width/2,r.y+r.height/2);
+        return hit===firstDot||firstDot.contains(hit);
+      })(),
       leftRail:rect(shell?.querySelector(".ao-rail-left")),
       rightRail:rect(shell?.querySelector(".ao-rail-right")),
       rails:shell?.querySelectorAll(".ao-reader-stage .ao-rail").length??0
@@ -76,7 +85,11 @@ function verify(m,{width,height,name},label){
   assert.equal(m.wheelCount,m.nativeCardCount,name+" "+label+" wheel does not reflect native source cuts");
   assert.equal(m.laneCount,6,name+" "+label+" lanes");
   assert.equal(m.independentScholaMarks,0,name+" "+label+" false Schola clock marker");
-  assert.equal(m.rails,2,name+" "+label+" gesture rails missing");
+$1  assert.equal(m.scholaDockInStage,true,name+" "+label+" Schola dock escaped the prayer stage");
+  assert.equal(m.firstDotUnobstructed,true,name+" "+label+" sanctuary selector intercepted; dock="+JSON.stringify(m.scholaDock));
+  if(m.scholaDock?.h>0)
+    assert.ok(m.scholaDock.y>=m.stage.y-2,
+      name+" "+label+" active Schola dock overlaps the sanctuary band");
   assert.ok(m.documentW<=width+2,name+" "+label+" horizontal page overflow "+m.documentW);
   assert.ok(m.stage?.h>85,name+" "+label+" native text stage collapsed");
   assert.ok(m.mainPrayer?.w>85&&m.mainPrayer?.h>70,
