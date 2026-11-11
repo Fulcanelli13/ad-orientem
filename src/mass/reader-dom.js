@@ -2998,6 +2998,7 @@ export function createReaderDomAdapter({
   let scholaDockFollower=null;
   let scholaMassTextSync=null;
   let scholaDockAwaitingChoir=null;
+  let scholaProgrammaticScrollTop=null;
   let bound=false;
   let rootClickListener=null;
   let rootChangeListener=null;
@@ -3424,6 +3425,7 @@ export function createReaderDomAdapter({
     scholaDockFollower?.destroy?.();scholaDockFollower=null;
     scholaMassTextSync?.destroy?.();scholaMassTextSync=null;
     scholaDockAwaitingChoir=null;
+    scholaProgrammaticScrollTop=null;
     scholaDockEngraver?.destroy?.();scholaDockEngraver=null;
     scholaDockScoreIdentity=null;
     const dock=root.querySelector(".ao-schola-dock");
@@ -3509,13 +3511,18 @@ export function createReaderDomAdapter({
             scholaDockFollower=createScholaNotationFollower({
               staff,strip,document:doc,window:doc?.defaultView,
               trackId:score.scholaTrackId,
-              onPosition:({index,count})=>{
-                const followed=scholaMassTextSync?.follow(index)===true;
+              onPosition:({index,count,origin})=>{
+                // A vertical user scroll already owns its text position.
+                // Only Schola-initiated gestures/ticks may move the reader.
+                const fromReader=origin==="reader-scroll";
+                const followed=!fromReader&&
+                  scholaMassTextSync?.follow(index)===true;
+                if(followed)scholaProgrammaticScrollTop=reader.scrollTop;
                 // Curated Gloria/Credo span several canonical LIVE cards.
                 // Only an exact source-verified movement may select the
                 // adjacent reading card. This is DISPLAY navigation, not a
                 // Schola observation or a priest event clock update.
-                if(!followed&&sharedOrdinary&&mode==="LIVE"&&
+                if(!fromReader&&!followed&&sharedOrdinary&&mode==="LIVE"&&
                    current?.scholaShared===true &&
                    current?.scholaVisible===true &&
                    current?.schola?.trackId===score.scholaTrackId &&
@@ -3524,7 +3531,8 @@ export function createReaderDomAdapter({
                     trackId:score.scholaTrackId,index,gabc:score.gabc,
                     fromCardId:current?.id??null
                   })===true;
-                  if(moved)scholaMassTextSync?.follow(index);
+                  if(moved&&scholaMassTextSync?.follow(index))
+                    scholaProgrammaticScrollTop=reader.scrollTop;
                 }
                 const progress=root.querySelector('[data-role="schola-progress"]');
                 if(progress&&count>0)
@@ -4701,7 +4709,25 @@ export function createReaderDomAdapter({
     const scrollCard=activeScrollCard();
     if(scrollCard?.addEventListener){
       scrollCard.addEventListener("scroll",()=>{
+        // Preserve the existing cue tracker, rubric reveals, cinematic
+        // scroll boundaries and posture rail. This is an ADDITIONAL
+        // passive listener: it does not consume, reassign or stop events.
         setHandoff(1,atCardEdge(scrollCard,1));
+        if(!scholaDockFollower||!scholaMassTextSync||
+           mode!=="LIVE"||!isScholaMassLinked(current?.schola?.trackId)||
+           current?.scholaShared!==true||current?.scholaVisible!==true)
+          return;
+        if(scholaProgrammaticScrollTop!==null &&
+           Math.abs(scrollCard.scrollTop-scholaProgrammaticScrollTop)<2){
+          scholaProgrammaticScrollTop=null;
+          return;
+        }
+        scholaProgrammaticScrollTop=null;
+        const position=scholaMassTextSync.indexAtFocus(
+          scholaDockFollower.getState().index);
+        if(Number.isInteger(position) &&
+           position!==scholaDockFollower.getState().index)
+          scholaDockFollower.followReader(position);
       },{passive:true});
       scrollCard.addEventListener("wheel",event=>{
         if(!event.deltaY)return;
