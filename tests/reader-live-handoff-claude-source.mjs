@@ -109,7 +109,7 @@ test("expected sanctuary signs require the exact current source cue and actor",(
      bell:"R17_EXACT_SOURCE_CUE"}
  };
  const opts={gate,nativeState,priest:{station:"CENTER"},
-   server:{station:"FOOT"},form:"MISSA_CANTATA_INCENSE"};
+   faithful:{posture:"STAND"},server:{station:"FOOT"},form:"MISSA_CANTATA_INCENSE"};
  const marked=projectLiveHandoffStatusSigns(opts);
  assert.deepEqual([marked.priest,marked.response,marked.bell],
    ["SUNG",true,true]);
@@ -132,6 +132,11 @@ test("expected sanctuary signs require the exact current source cue and actor",(
  const missingActor=projectLiveHandoffStatusSigns({...opts,priest:null,server:null});
  assert.equal(missingActor.priest,null);
  assert.equal(missingActor.bell,false);
+ const missingFaithful=projectLiveHandoffStatusSigns({...opts,faithful:null});
+ assert.equal(missingFaithful.response,false,
+   "Unconfirmed faithful presence/posture cannot display a congregation response sign");
+ assert.doesNotMatch(renderClaudeNativeSanctuary(scene({signs:missingFaithful})),
+   /data-live-status="response"/);
 });
 test("private, spoken and held priest voice statuses do not invent audible events",()=>{
  const cue="AO.SM.C0110";
