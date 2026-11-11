@@ -436,7 +436,7 @@ try{
         assert.equal(await source.locator("a[href^='https://']").count()>=1,true,
           "Source detail must open its exact original HTTPS URL");
         if(curated){
-          const activeLanguage=await dykCard.closest(".homeScreen")
+          const activeLanguage=await h4.locator(".homeScreen.aoTodayH4")
             .getAttribute("data-home-language");
           const lang=activeLanguage==="fr"?"fr":"en";
           assert.equal(await source.locator("h2").innerText(),curated.title[lang],
