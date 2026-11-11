@@ -64,6 +64,12 @@ export function approvedStageBPlanSvg(){
 }
 const CSS=[
 ".ao-reader-shell.ao-live-band-enabled{grid-template-rows:56px 64px minmax(96px,min(var(--ao-live-band-height,230px),calc(100dvh - 380px))) minmax(0,1fr);transition:grid-template-rows .24s ease}",
+// The Claude preview removes the native posture ribbon. Restore only the
+// existing verified faithful posture ART (never synthesized text/gestures)
+// in the existing left rail when the current native source matches; the
+// shell's source-gated flag is cleared upon a mismatched cue or exit.
+".ao-reader-shell.ao-live-band-enabled[data-ao-live-preview-posture='true'] .ao-reader-stage .ao-rail-left{display:block!important}",
+".ao-reader-shell.ao-live-band-enabled[data-ao-live-preview-posture='true'] .ao-reader-stage .ao-rail-left .ao-rail-item[data-channel='posture'][data-active='true'][data-icon-visible='true']{display:grid!important;opacity:1}",
 ".ao-live-band[hidden]{display:none!important}",
 ".ao-live-band{position:relative;min-height:0;overflow:hidden;background:linear-gradient(145deg,#111b1c,#192322 55%,#121a1a);border-bottom:1px solid rgba(225,205,148,.24)}",
 ".ao-lb-window{height:calc(100% - 31px);overflow:hidden;touch-action:pan-y}",
