@@ -7,14 +7,16 @@
   "summary": {
     "total": 672,
     "originalFirstPass": 93,
-    "newInstitutionalCoreChecks": 41,
+    "newInstitutionalCoreChecks": 74,
     "overlapWithFirstPass": 1,
-    "currentUniqueCoreResearchChecks": 133,
-    "onlyCitationScope": 539,
+    "currentUniqueCoreResearchChecks": 167,
+    "onlyCitationScope": 505,
     "targeted": 221,
     "standard": 451,
     "editorialApprovals": 0,
-    "ownerAuthorizations": 0
+    "ownerAuthorizations": 0,
+    "newDirectoryCoreChecks": 1,
+    "newCoreResearchChecksSinceLastPass": 34
   },
   "source_quality_findings": [
     {
@@ -35,6 +37,24 @@
       "place_id": "place:CA:martyrs-shrine-midland",
       "type": "SUPERSEDED_FIRST_PASS_CITATION",
       "finding": "Replaced outdated 1965 reference with historical-site operator 1967 opening and preserved superseded first-pass source metadata."
+    },
+    {
+      "place_id": "place:ES:basilica-del-pilar-zaragoza",
+      "type": "DEVOTIONAL_TERMINOLOGY_CORRECTED",
+      "finding": "Zaragoza cathedral chapter calls the ancient tradition Mary's coming to James while she lived, not a post-Assumption apparition.",
+      "source": "https://catedraldezaragoza.es/basilica/la-imagen-de-la-virgen/"
+    },
+    {
+      "place_id": "place:FR:basilique-saint-denys-argenteuil",
+      "type": "RELIC_EXHIBITION_CITATION_REPAIRED",
+      "finding": "Official FAQ distinguishes regular reliquary prayer from temporary Holy Tunic ostension from 18 April to 11 May 2025.",
+      "source": "https://saintetunique.com/foire-aux-questions/"
+    },
+    {
+      "place_id": "place:IT:san-bartolomeo-isola",
+      "type": "PAPAL_SOURCE_TO_CLAIM_REWRITE",
+      "finding": "Replaced a generic relic-warning visitor paragraph with Benedict XVI's documented contemporary martyrs memorial and Sant'Egidio stewardship.",
+      "source": "https://www.vatican.va/content/benedict-xvi/en/homilies/2008/documents/hf_ben-xvi_hom_20080407_san-bartolomeo.html"
     }
   ],
   "source_corrections": [
@@ -67,6 +87,18 @@
       "old_url": "https://www.westminster-abbey.org/history/explore-our-history/celebrating-st-edward",
       "new_url": "https://www.churchofengland.org/stories-and-features/what-royal-peculiar",
       "reason": "Current Anglican royal peculiar status now backed by Church of England rather than medieval heritage article."
+    },
+    {
+      "key": "1|45|tomb",
+      "old_url": "https://www.santantonio.org/fr/content/chapelle-des-reliques-ou-du-tresor",
+      "new_url": "https://www.santantonio.org/fr/content/la-chapelle-du-tombeau",
+      "reason": "Original basilica relic-chapel URL did not directly document the tomb; custodial tomb-chapel URL does."
+    },
+    {
+      "key": "2|123|identity",
+      "old_url": "https://saintetunique.com/contact/",
+      "new_url": "https://saintetunique.com/foire-aux-questions/",
+      "reason": "Contact page establishes building but not distinction between ostension and usual reliquary veneration; FAQ does."
     }
   ],
   "paragraphs": [
@@ -183,13 +215,16 @@
         "PROGRAMME_ACCESS_OR_LITURGY",
         "GEOGRAPHY_ROUTE_PRECISION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "National shrine FAQ describes accessible chapel, museum, group pilgrimage and facilities; does not establish any healing.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.stjohnneumann.org/faq-1",
+      "evidence_scope": "CUSTODIAN_CORE_IDENTITY",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:IT:scala-santa-rome",
@@ -1089,13 +1124,16 @@
         "PROGRAMME_ACCESS_OR_LITURGY",
         "GEOGRAPHY_ROUTE_PRECISION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Vatican Basilica identifies ancient Petrine memorial, Constantine's earlier church and Renaissance replacement; current access still time-sensitive.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.basilicasanpietro.va/en/san-pietro/the-tomb-of-saint-peter",
+      "evidence_scope": "CUSTODIAN_HISTORICAL_SITE",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:FR:basilique-montfort-saint-laurent",
@@ -1754,13 +1792,16 @@
         "GEOGRAPHY_ROUTE_PRECISION",
         "HISTORICAL_YEAR_OR_DATED_EVENT"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Bessillon sanctuary publishes present Mass/Office and hospitality pages; schedule is not immutable and tradition remains attributed.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.saintjosephcotignac.com/",
+      "evidence_scope": "CUSTODIAN_DEVOTION_AND_PRACTICES",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:PL:divine-mercy-plock",
@@ -2012,13 +2053,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Diocese distinguishes earlier Benedictine monastery and Franciscan custody from 1961 with Lignum Crucis veneration.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://diocesisdesantander.com/santuarios-cantabria/santo-toribio-de-liebana",
+      "evidence_scope": "DIOCESAN_ECCLESIAL_HISTORY",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:ES:santo-toribio-liebana",
@@ -2150,13 +2194,16 @@
         "RELIC_OR_BURIAL_ATTRIBUTION",
         "HISTORICAL_YEAR_OR_DATED_EVENT"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "French Culture Ministry Palissy record describes arm reliquary and traditionally brought phalanx in 1098 by Aubert de Varangéville; attribution remains traditional.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://pop.culture.gouv.fr/notice/palissy/IM54007978",
+      "evidence_scope": "GOVERNMENT_RELIC_OBJECT",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:FR:basilique-saint-nicolas-de-port",
@@ -2267,13 +2314,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Basilica page records 13th-century elevation of Saturnin's tomb and the present Gothic crypt with treasury displays.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://basilique-saint-sernin.fr/cryptes-parcours10fr/",
+      "evidence_scope": "CUSTODIAN_ARCHITECTURE",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:FR:basilique-saint-sernin-toulouse",
@@ -2472,13 +2522,16 @@
         "PROGRAMME_ACCESS_OR_LITURGY",
         "GEOGRAPHY_ROUTE_PRECISION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Sens Museum documents cathedral treasury, liturgical textiles and objects; live opening/access still requires current museum notices.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://musee-sens.fr/le-musee/decouvrir-les-lieux/le-tresor-de-la-cathedrale/",
+      "evidence_scope": "CIVIC_CATHEDRAL_TREASURY",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:GB:westminster-abbey-st-edward",
@@ -2597,13 +2650,16 @@
         "PROGRAMME_ACCESS_OR_LITURGY",
         "GEOGRAPHY_ROUTE_PRECISION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Budapest Basilica records Holy Right reliquary and procession on 20 August, distinguishing historical custody from current timetable.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://bazilikabudapest.hu/en/2024/04/12/szentjobb/",
+      "evidence_scope": "CUSTODIAN_RELIC_AND_FEAST",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:IT:abbey-san-colombano-bobbio",
@@ -2731,27 +2787,30 @@
     },
     {
       "place_id": "place:IT:basilica-sant-antonio-padova",
-      "guide_revision": "fnv1a32-151a4538",
+      "guide_revision": "fnv1a32-60fd6e2d",
       "draft_order": 45,
       "wave": 1,
       "section_id": "tomb",
       "priority": "TARGETED_SOURCE_REVIEW",
-      "source_url": "https://www.santantonio.org/fr/content/chapelle-des-reliques-ou-du-tresor",
+      "source_url": "https://www.santantonio.org/fr/content/la-chapelle-du-tombeau",
       "source_id": null,
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Direct basilica tomb-chapel history identifies separate altar-tomb of Anthony; replaced previously broader relic-treasury citation.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.santantonio.org/fr/content/la-chapelle-du-tombeau",
+      "evidence_scope": "CUSTODIAN_DISTINCT_DEVOTIONAL_SPACE",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:IT:basilica-sant-antonio-padova",
-      "guide_revision": "fnv1a32-151a4538",
+      "guide_revision": "fnv1a32-60fd6e2d",
       "draft_order": 45,
       "wave": 1,
       "section_id": "objects",
@@ -2769,7 +2828,7 @@
     },
     {
       "place_id": "place:IT:basilica-sant-antonio-padova",
-      "guide_revision": "fnv1a32-151a4538",
+      "guide_revision": "fnv1a32-60fd6e2d",
       "draft_order": 45,
       "wave": 1,
       "section_id": "treasury",
@@ -2779,13 +2838,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Basilica describes relic chapel containing vessels, ex-votos, John Paul II relic and Anthony's tongue, jaw and vocal apparatus.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.santantonio.org/fr/content/chapelle-des-reliques-ou-du-tresor",
+      "evidence_scope": "CUSTODIAN_RELIC_TREASURY",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:IT:basilica-santa-rita-cascia",
@@ -2920,13 +2982,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Basilica records 386 discovery of Gervasius and Protasius by Ambrose, later burial alongside the martyrs and custodial arrangement.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.basilicasantambrogio.it/en/mappa-della-basilica",
+      "evidence_scope": "CUSTODIAN_RELIC_HISTORY",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:IT:sant-ambrogio-milano",
@@ -3251,13 +3316,16 @@
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Wawel Cathedral explains bishops' tombs around choir, Stanislaus's confession and multiple distinct monuments.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.katedra-wawelska.pl/historia-katedry/katedra-biskupow-krakowskich/",
+      "evidence_scope": "CATHEDRAL_ECCLESIAL_HISTORY",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:US:carmel-mission-basilica-serra",
@@ -3377,13 +3445,16 @@
         "RELIC_OR_BURIAL_ATTRIBUTION",
         "PROGRAMME_ACCESS_OR_LITURGY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Cathedral Saint Katharine Drexel shrine officially places her tomb inside Saints Peter and Paul and welcomes personal prayers; published services are separate.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://cathedralphila.org/drexel/",
+      "evidence_scope": "CUSTODIAN_DEVOTION_AND_ACCESS",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:CA:bishop-velychkovsky-martyrs-shrine-winnipeg",
@@ -7090,7 +7161,7 @@
     },
     {
       "place_id": "place:ES:basilica-del-pilar-zaragoza",
-      "guide_revision": "fnv1a32-a49fa955",
+      "guide_revision": "fnv1a32-b9e81ae3",
       "draft_order": 118,
       "wave": 2,
       "section_id": "history",
@@ -7108,7 +7179,7 @@
     },
     {
       "place_id": "place:ES:basilica-del-pilar-zaragoza",
-      "guide_revision": "fnv1a32-a49fa955",
+      "guide_revision": "fnv1a32-b9e81ae3",
       "draft_order": 118,
       "wave": 2,
       "section_id": "identity",
@@ -7128,7 +7199,7 @@
     },
     {
       "place_id": "place:ES:basilica-del-pilar-zaragoza",
-      "guide_revision": "fnv1a32-a49fa955",
+      "guide_revision": "fnv1a32-b9e81ae3",
       "draft_order": 118,
       "wave": 2,
       "section_id": "pilgrimage",
@@ -7140,13 +7211,16 @@
         "PROGRAMME_ACCESS_OR_LITURGY",
         "GEOGRAPHY_ROUTE_PRECISION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Cathedral Chapter explicitly describes Mary's traditional coming while still alive to James on Ebro, not a post-Assumption apparition; EN/FR corrected.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://catedraldezaragoza.es/basilica/la-imagen-de-la-virgen/",
+      "evidence_scope": "CATHEDRAL_MARIAN_TRADITION",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:PS:holy-sepulchre-jerusalem",
@@ -7200,13 +7274,16 @@
         "PROGRAMME_ACCESS_OR_LITURGY",
         "GEOGRAPHY_ROUTE_PRECISION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Franciscan Custody identifies Calvary and Tomb as Christian holy places under shared custody; current visits are context-dependent.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.custodia.org/fr/sanctuaries/basilique-du-saint-sepulcre/",
+      "evidence_scope": "CUSTODIAN_HOLY_LAND_SITE",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:PS:nativity-bethlehem",
@@ -7377,17 +7454,20 @@
         "PROGRAMME_ACCESS_OR_LITURGY",
         "GEOGRAPHY_ROUTE_PRECISION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Kraków John Paul II sanctuary's mission page identifies 2011 ecclesial establishment and a blood relic in Church of Relics; no permanent timetable inferred.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://sjanpawel2.pl/en/misja-cjp/",
+      "evidence_scope": "CUSTODIAN_RELIC_AND_MISSION",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:FR:basilique-saint-denys-argenteuil",
-      "guide_revision": "fnv1a32-5e5f3dc0",
+      "guide_revision": "fnv1a32-ef89d96f",
       "draft_order": 123,
       "wave": 2,
       "section_id": "history",
@@ -7405,29 +7485,32 @@
     },
     {
       "place_id": "place:FR:basilique-saint-denys-argenteuil",
-      "guide_revision": "fnv1a32-5e5f3dc0",
+      "guide_revision": "fnv1a32-ef89d96f",
       "draft_order": 123,
       "wave": 2,
       "section_id": "identity",
       "priority": "TARGETED_SOURCE_REVIEW",
-      "source_url": "https://saintetunique.com/contact/",
-      "source_id": "SHR-FR-ARGENTEUIL-TUNIQUE",
+      "source_url": "https://saintetunique.com/foire-aux-questions/",
+      "source_id": "AO-ED-ARGENTEUIL-OSTENSION-FAQ-20261111",
       "claim_flags": [
         "RELIC_OR_BURIAL_ATTRIBUTION",
         "PROGRAMME_ACCESS_OR_LITURGY",
         "GEOGRAPHY_ROUTE_PRECISION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Official FAQ expressly distinguishes usual reliquary veneration from exceptional 18 Apr–11 May 2025 exposition; EN/FR and source scope corrected.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://saintetunique.com/foire-aux-questions/",
+      "evidence_scope": "CUSTODIAN_RELIC_OSTENSION",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:FR:basilique-saint-denys-argenteuil",
-      "guide_revision": "fnv1a32-5e5f3dc0",
+      "guide_revision": "fnv1a32-ef89d96f",
       "draft_order": 123,
       "wave": 2,
       "section_id": "pilgrimage",
@@ -7538,13 +7621,16 @@
         "PROGRAMME_ACCESS_OR_LITURGY",
         "GEOGRAPHY_ROUTE_PRECISION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Basilica's own ciborium history locates sarcophagus traditionally holding Saint Mark beneath high altar, previously in crypt.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.basilicasanmarco.it/en/sculpture/the-columns-of-the-ciborium/",
+      "evidence_scope": "CUSTODIAN_RELIC_PLACEMENT",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:IT:basilica-san-marco-venezia",
@@ -7621,13 +7707,16 @@
         "PROGRAMME_ACCESS_OR_LITURGY",
         "GEOGRAPHY_ROUTE_PRECISION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Bologna official tourist page identifies Dominican basilica, Saint Dominic's tomb and separate chapels; live opening not guaranteed.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.bolognawelcome.com/en/places/religious-buildings/basilica-di-san-domenico-en",
+      "evidence_scope": "CIVIC_CATHOLIC_SITE_IDENTITY",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:IT:amalfi-sant-andrea",
@@ -7801,13 +7890,16 @@
         "PROGRAMME_ACCESS_OR_LITURGY",
         "GEOGRAPHY_ROUTE_PRECISION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Salerno Cathedral details crypt, 1081 deposition of Matthew's relics and later arrangement; exact modern visitor access not asserted.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.cattedraledisalerno.it/la-cripta.html",
+      "evidence_scope": "CATHEDRAL_RELIC_AND_CRYPT",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:DE:trier-sankt-matthias",
@@ -7872,7 +7964,7 @@
     },
     {
       "place_id": "place:IT:san-bartolomeo-isola",
-      "guide_revision": "fnv1a32-c37123d4",
+      "guide_revision": "fnv1a32-984043f6",
       "draft_order": 131,
       "wave": 2,
       "section_id": "history",
@@ -7892,7 +7984,7 @@
     },
     {
       "place_id": "place:IT:san-bartolomeo-isola",
-      "guide_revision": "fnv1a32-c37123d4",
+      "guide_revision": "fnv1a32-984043f6",
       "draft_order": 131,
       "wave": 2,
       "section_id": "identity",
@@ -7910,7 +8002,7 @@
     },
     {
       "place_id": "place:IT:san-bartolomeo-isola",
-      "guide_revision": "fnv1a32-c37123d4",
+      "guide_revision": "fnv1a32-984043f6",
       "draft_order": 131,
       "wave": 2,
       "section_id": "pilgrimage",
@@ -7922,13 +8014,16 @@
         "PROGRAMME_ACCESS_OR_LITURGY",
         "GEOGRAPHY_ROUTE_PRECISION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Benedict XVI 7 Apr 2008 homily notes memorial to twentieth-century martyrs entrusted by John Paul II to Sant'Egidio; revised EN/FR to source.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.vatican.va/content/benedict-xvi/en/homilies/2008/documents/hf_ben-xvi_hom_20080407_san-bartolomeo.html",
+      "evidence_scope": "VATICAN_ECCLESIAL_HISTORY",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:IT:santa-giustina-padova",
@@ -7982,13 +8077,16 @@
         "PROGRAMME_ACCESS_OR_LITURGY",
         "GEOGRAPHY_ROUTE_PRECISION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Benedictine monastery identifies sarcophagus and veneration of Luke in Santa Giustina, not scientific authentication of remains.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.abbaziasantagiustina.org/basilica/san-luca-evangelista/",
+      "evidence_scope": "CUSTODIAN_RELIC_TRADITION",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:IT:duomo-milano",
@@ -8158,13 +8256,16 @@
         "PROGRAMME_ACCESS_OR_LITURGY",
         "GEOGRAPHY_ROUTE_PRECISION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Dominican church locates Catherine of Siena's tomb under high altar and identifies separate Roman church.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.santamariasopraminerva.it/it/tomba-di-s-caterina-da-siena.html",
+      "evidence_scope": "CUSTODIAN_RELIC_LOCATION",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:IT:chiesa-gesu-rome",
@@ -8394,13 +8495,16 @@
         "PROGRAMME_ACCESS_OR_LITURGY",
         "GEOGRAPHY_ROUTE_PRECISION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Augustinian basilica confirms Monica's remains and regular Christian worship in Campo Marzio, with visit and liturgy information separately announced.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.santagostinoroma.it/",
+      "evidence_scope": "CUSTODIAN_RELIC_AND_PRACTICE",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:IT:maria-ausiliatrice-torino",
@@ -8615,13 +8719,16 @@
         "RELIC_OR_BURIAL_ATTRIBUTION",
         "PROGRAMME_ACCESS_OR_LITURGY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Heraklion Municipality traces former Latin cathedral, mosque conversion, 1925 Orthodox Church of Crete rededication and head-relic tradition.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.heraklion.gr/en/ourplace/st-titos/st-titos.html",
+      "evidence_scope": "CIVIC_ECCLESIAL_CHRONOLOGY",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:GR:saint-titus-heraklion",
@@ -8696,13 +8803,16 @@
         "RELIC_OR_BURIAL_ATTRIBUTION",
         "PROGRAMME_ACCESS_OR_LITURGY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "El Salvador's official Historic Centre identifies metropolitan Catholic cathedral and Romero's mausoleum as pilgrim memorial.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://centrohistorico.gob.sv/en/tourist-destinations/metropolitan-cathedral/",
+      "evidence_scope": "GOVERNMENT_MARTYR_BURIAL",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:IT:sacra-famiglia-bakhita-schio",
@@ -8873,13 +8983,16 @@
         "PROGRAMME_ACCESS_OR_LITURGY",
         "GEOGRAPHY_ROUTE_PRECISION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Official Poitiers tourism authority confirms St Hilaire church, Compostela link, relics and historical architecture; no fixed Mass times inferred.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.visitpoitiers.fr/patrimoine-culturel/eglise-saint-hilaire-le-grand/",
+      "evidence_scope": "CIVIC_CATHOLIC_SITE_IDENTITY",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:IT:duomo-torino-sindone",
@@ -8990,13 +9103,16 @@
         "RELIC_OR_BURIAL_ATTRIBUTION",
         "PROGRAMME_ACCESS_OR_LITURGY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Trier Cathedral traces Holy Robe pilgrimage and distinguishes separate church of Saint Matthias; special displays not assumed continuous.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.trierer-dom.de/bauwerk/der-heilige-rock/wallfahrten/index.html",
+      "evidence_scope": "CATHEDRAL_RELIC_DEVOTION",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:FR:cathedrale-saint-etienne-cahors",
@@ -9144,13 +9260,16 @@
         "REPORTED_SUPERNATURAL_OR_DEVOTIONAL",
         "RELIC_OR_BURIAL_ATTRIBUTION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Fécamp official heritage article recounts two rival legends for Precious Blood, including Eucharistic event and Holy Land origin; neither proves authenticity.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.fecamptourisme.com/experiences/nos-incontournables/abbatiale-sainte-trinite/",
+      "evidence_scope": "CIVIC_DEVOTIONAL_TRADITIONS",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:FR:abbatiale-sainte-trinite-fecamp",
@@ -9166,13 +9285,16 @@
         "PROGRAMME_ACCESS_OR_LITURGY",
         "GEOGRAPHY_ROUTE_PRECISION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Fécamp tourist authority confirms historic abbatial church, relic tradition, and continuing visitor identity; not a fixed rite or ostension programme.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.fecamptourisme.com/experiences/nos-incontournables/abbatiale-sainte-trinite/",
+      "evidence_scope": "CIVIC_CATHOLIC_SITE_IDENTITY",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:IT:santuario-volto-santo-manoppello",
@@ -9379,13 +9501,16 @@
         "RELIC_OR_BURIAL_ATTRIBUTION",
         "HISTORICAL_YEAR_OR_DATED_EVENT"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Ta' Pinu custodian history explicitly dates Karmela Grima's reported summons to 22 June 1883, preserved as local devotional testimony.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.tapinu.org/index.php/sanctuary/historical-glance",
+      "evidence_scope": "CUSTODIAN_APPARITION_TRADITION",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:MT:national-shrine-of-our-lady-of-ta-pinu",
@@ -9460,13 +9585,16 @@
         "PROGRAMME_ACCESS_OR_LITURGY",
         "GEOGRAPHY_ROUTE_PRECISION"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Łagiewniki sanctuary identifies sister Faustina's tomb and Divine Mercy image within monastery chapel, distinct from later basilica spaces.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.sanktuarium.faustyna.pl/kaplica-jezusa-milosiernego-i-grobu-sw-faustyny/",
+      "evidence_scope": "CUSTODIAN_RELIC_AND_SHRINE_COMPLEX",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:HR:national-shrine-of-saint-joseph-karlovac",
@@ -11902,13 +12030,16 @@
         "HISTORICAL_YEAR_OR_DATED_EVENT",
         "YEAR_NOT_EXPLICIT_IN_SOURCE_SUMMARY"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Independent Catholic directory gives cathedral and minor-basilica status and 2 June 2004 decree; diocesan decree itself not inspected.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://gcatholic.org/churches/africa/1462",
+      "evidence_scope": "CATHOLIC_DIRECTORY_STATUS_CROSSCHECK",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:GH:kumasi-st-peter-cathedral-basilica",
@@ -12533,13 +12664,16 @@
         "REPORTED_SUPERNATURAL_OR_DEVOTIONAL",
         "HISTORICAL_YEAR_OR_DATED_EVENT"
       ],
-      "source_claim_research_stage": "SOURCE_URL_SCOPE_ONLY",
-      "independently_checked_core_claims": false,
-      "research_evidence_note": null,
+      "source_claim_research_stage": "CORE_HISTORICAL_CLAIMS_SOURCE_RECHECK_20261111",
+      "independently_checked_core_claims": true,
+      "research_evidence_note": "Portugal Fátima shrine's official international directory gives Lewiston founding 1954, Barnabite custody, glass dome and large Virgin statue.",
       "full_paragraph_certified": false,
       "french_second_editor_approved": false,
       "owner_authorized": false,
-      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER"
+      "release_state": "HOLD_PENDING_EDITOR_AND_OWNER",
+      "evidence_checked_url": "https://www.fatima.pt/en/locations/our-lady-of-fatima-shrine-lewiston-ny",
+      "evidence_scope": "INSTITUTIONAL_CROSS_SHRINE_DIRECTORY",
+      "research_checked_on": "2026-11-11"
     },
     {
       "place_id": "place:US:basilica-of-the-national-shrine-of-our-lady-of-fatima-lewiston",

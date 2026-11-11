@@ -119,8 +119,8 @@
           "title_fr": "Une destination à Saragosse",
           "paragraphs": [
             {
-              "en": "The basilica is a specific Catholic destination in Zaragoza, rather than a symbol that can be placed anywhere in Spain. Its Marian history also belongs to the city’s religious landscape, alongside other churches and civic sites. Current ceremonies and access are matters for the cathedral authorities and should not be reconstructed from the older apparition tradition.",
-              "fr": "La basilique est une destination catholique précise de Saragosse, et non un symbole que l’on pourrait situer n’importe où en Espagne. Son histoire mariale appartient aussi au paysage religieux de la ville, aux côtés d’autres églises et lieux civiques. Les cérémonies et les accès actuels relèvent des autorités cathédrales et ne doivent pas être déduits de l’ancienne tradition apparitionnelle.",
+              "en": "At Zaragoza, the Basilica of Our Lady of the Pillar is a Marian pilgrimage church centred on a venerated image and column. The Cathedral Chapter recounts the ancient tradition that Mary came to encourage the Apostle James by the Ebro while she was still living; it describes a coming, rather than an apparition after her Assumption. This religious narrative remains a tradition, not independently established historical fact. Present liturgies and access follow the cathedral's announcements.",
+              "fr": "À Saragosse, la basilique Notre-Dame du Pilier est un lieu de pèlerinage marial centré sur une image vénérée et sa colonne. Le chapitre cathédral transmet l’ancienne tradition selon laquelle Marie serait venue encourager l’apôtre Jacques au bord de l’Èbre alors qu’elle vivait encore ; il s’agit d’une venue, et non d’une apparition après son Assomption. Ce récit demeure une tradition religieuse, non un fait historique établi indépendamment. Les célébrations et l’accès suivent les annonces de la cathédrale.",
               "source_id": "SHR-PIL-ES-basilica-del-pilar-zaragoza",
               "source_url": "https://catedraldezaragoza.es/basilica/la-imagen-de-la-virgen/"
             }
@@ -422,10 +422,10 @@
           "title_fr": "Vénération et ostension exceptionnelle",
           "paragraphs": [
             {
-              "en": "The relic has an ongoing place in the devotion associated with Argenteuil, but exceptional public expositions are separate events with particular arrangements. A visitor should not be promised that the garment is continuously visible or that a previous exposition schedule applies today. The sanctuary’s current notices are the proper source for information about access to the relic.",
-              "fr": "La relique occupe une place durable dans la dévotion d’Argenteuil, mais les ostensions publiques exceptionnelles constituent des événements distincts soumis à des dispositions particulières. Le visiteur ne doit pas croire que le vêtement est continuellement visible ni qu’un ancien calendrier d’ostension s’applique aujourd’hui. Les annonces du sanctuaire sont la source appropriée pour son accès.",
-              "source_id": "SHR-FR-ARGENTEUIL-TUNIQUE",
-              "source_url": "https://saintetunique.com/contact/"
+              "en": "The Holy Tunic is normally kept in a reliquary at the Basilica of Saint-Denys in Argenteuil. The sanctuary distinguishes prayer before its altar-reliquary from exceptional public displays of the garment: its published FAQ records an ostension from 18 April to 11 May 2025. Pilgrims may pray at the basilica outside such exhibitions, but should consult a new official announcement before expecting to see the fabric itself.",
+              "fr": "La Sainte Tunique est habituellement conservée dans un reliquaire de la basilique Saint-Denys d’Argenteuil. Le sanctuaire distingue la prière devant l’autel-reliquaire des ostensions exceptionnelles du vêtement : sa foire aux questions rappelle celle du 18 avril au 11 mai 2025. Les pèlerins peuvent prier à la basilique en dehors de ces présentations, mais doivent consulter une nouvelle annonce officielle avant de s’attendre à voir l’étoffe elle-même.",
+              "source_id": "AO-ED-ARGENTEUIL-OSTENSION-FAQ-20261111",
+              "source_url": "https://saintetunique.com/foire-aux-questions/"
             }
           ]
         },
@@ -450,11 +450,15 @@
         "Saint Denis of Paris"
       ],
       "bibliography_urls": [
-        "https://saintetunique.com/contact/"
+        "https://saintetunique.com/contact/",
+        "https://saintetunique.com/foire-aux-questions/"
       ],
       "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
       "next_gate": "HISTORICAL_EDITOR_REVIEW_SOURCE_TO_CLAIM_AND_FR_QUALITY",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-ARGENTEUIL-OSTENSION-FAQ-20261111"
+      ]
     },
     {
       "place_id": "place:DE:kolner-dom-three-kings",

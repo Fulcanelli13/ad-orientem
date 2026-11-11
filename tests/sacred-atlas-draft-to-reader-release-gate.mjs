@@ -21,6 +21,9 @@ const dateReconciliation=read("data/shrines/research/sacred-atlas-source-date-re
 const claimResearchLedger=read("data/shrines/research/sacred-atlas-source-claim-reconciliation-20261111.v1.json");
 assert.equal(claimResearchLedger.state,"RESEARCH_ONLY_NO_EDITOR_APPROVAL_NO_RELEASE");
 assert.equal(claimResearchLedger.paragraphs.length,672);
+assert.equal(claimResearchLedger.summary.currentUniqueCoreResearchChecks,167);
+assert.equal(claimResearchLedger.summary.onlyCitationScope,505);
+assert.equal(claimResearchLedger.summary.newCoreResearchChecksSinceLastPass,34);
 assert.equal(claimResearchLedger.summary.currentUniqueCoreResearchChecks+claimResearchLedger.summary.onlyCitationScope,672);
 assert.equal(claimResearchLedger.summary.editorialApprovals,0);
 assert.equal(claimResearchLedger.summary.ownerAuthorizations,0);
