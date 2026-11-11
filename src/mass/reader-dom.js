@@ -3275,6 +3275,12 @@ export function createReaderDomAdapter({
     const line=root.querySelector('[data-role="schola"]');
     const viewport=root.querySelector(".ao-schola-main");
     const progress=root.querySelector('[data-role="schola-progress"]');
+    if(dock?.dataset?.approvedScore==="true"){
+      // Source score and Schola lyric strip already use one syllable cursor.
+      // The old independent WAAPI text ticker cannot keep moving underneath.
+      cancelScholaTicker({clearIdentity:true});
+      return false;
+    }
     if(!schola||!dock||dock.dataset.active!=="true"||!line||!viewport){
       cancelScholaTicker({clearIdentity:true});
       if(progress)progress.style.width="0%";
@@ -3331,6 +3337,10 @@ export function createReaderDomAdapter({
   function setScholaPaused(paused,{user=false}={}){
     if(user)scholaUserPaused=Boolean(paused);
     scholaPaused=Boolean(paused);
+    if(scholaDockFollower){
+      if(scholaPaused)scholaDockFollower.pause?.();
+      else scholaDockFollower.resume?.();
+    }
     if(scholaAnimation){
       try{scholaPaused?scholaAnimation.pause?.():scholaAnimation.play?.()}catch{}
       if(!scholaPaused && !scholaProgressRaf){
@@ -3415,6 +3425,7 @@ export function createReaderDomAdapter({
         if(!ok){clearScholaDockNotation();return;}
         panel.dataset.scoreStatus="approved";
         dock.dataset.approvedScore="true";
+        cancelScholaTicker({clearIdentity:true});
         const strip=root.querySelector('[data-role="schola-follow-strip"]');
         if(strip){
           // No audio, no claim about current choir syllable. This clock
@@ -3436,9 +3447,15 @@ export function createReaderDomAdapter({
             }
             scholaDockFollower=createScholaNotationFollower({
               staff,strip,document:doc,window:doc?.defaultView,
-              onPosition:({index})=>scholaMassTextSync?.follow(index)
+              onPosition:({index,count})=>{
+                scholaMassTextSync?.follow(index);
+                const progress=root.querySelector('[data-role="schola-progress"]');
+                if(progress&&count>0)
+                  progress.style.width=(100*(index+1)/count).toFixed(2)+"%";
+              }
             });
             if(scholaDockFollower.start(score.gabc)){
+              if(scholaPaused)scholaDockFollower.pause?.();
               dock.dataset.notationFollow="estimated";
               const status=root.querySelector('[data-role="schola-status"]');
               if(status)status.textContent="EST. FOLLOW · NOT HEARD";
