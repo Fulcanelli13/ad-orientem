@@ -1,7 +1,7 @@
 // One source syllable coordinate for the vertical Mass text and horizontal
 // Schola strip. This is a visual follow surface, not an observed choir or
 // priest clock. A production caller MUST first pass the approved-score gate.
-import {scholaGabcSyllables} from "./reader-schola-notation-follow.js";
+import {scholaGabcSyllables,scholaKyrieSourceOccurrences} from "./reader-schola-notation-follow.js";
 
 export function normalizeScholaLatin(value){
  return String(value??"").normalize("NFD")
@@ -12,8 +12,9 @@ export function normalizeScholaLatin(value){
 
 /** Exact whole-paragraph, in-order Latin reconciliation. No fuzzy lyrics,
  * time interpolation, title matching, or inferred music setting. */
-export function scholaMassTextAnchors(gabc,paragraphs=[]){
- const syllables=scholaGabcSyllables(gabc);
+export function scholaMassTextAnchors(gabc,paragraphs=[],{trackId=null}={}){
+ const syllables=trackId==="KYRIE"
+   ?scholaKyrieSourceOccurrences(gabc):scholaGabcSyllables(gabc);
  if(!syllables.length||!Array.isArray(paragraphs))return Object.freeze({syllables:[],anchors:[]});
  const offsets=[];let joined="";
  for(const syllable of syllables){
@@ -28,7 +29,11 @@ export function scholaMassTextAnchors(gabc,paragraphs=[]){
   // A repeated full phrase (e.g. Iesu Christe, twice in Gloria VIII) is
   // unambiguous only after a prior exact phrase established its position.
   // On an isolated, unanchored reader card, do not guess which repeat it is.
-  if(!anchors.length&&joined.indexOf(text,at+1)>=0)continue;
+  const ninefold=trackId==="KYRIE" &&
+    syllables.some(s=>Number.isInteger(s.sourceIndex)) &&
+    paragraphs.filter(p=>["kyrieeleison","christeeleison"].includes(
+      normalizeScholaLatin(p?.latin))).length===9;
+  if(!anchors.length&&joined.indexOf(text,at+1)>=0&&!ninefold)continue;
   anchors.push(Object.freeze({id:String(item.id),start:at,end:at+text.length,
    latin:text,sourceSyllableOffset:offsets.findIndex(x=>x>=at)}));
   cursor=at+text.length;
@@ -61,10 +66,10 @@ function characterAt(element,index){
 }
 
 export function createScholaMassTextSynchronizer({
- reader,gabc,enabled=()=>true
+ reader,gabc,trackId=null,enabled=()=>true
 }={}){
  if(!reader?.querySelectorAll)throw new TypeError("Mass text scroller required");
- const syllables=scholaGabcSyllables(gabc);
+ const syllables=trackId==="KYRIE"?scholaKyrieSourceOccurrences(gabc):scholaGabcSyllables(gabc);
  let cachedBody=null,cachedRows=[],cachedAnchors=null,cachedSignature=null;
  function read(){
   const body=reader.querySelector('[data-role="paragraphs"]');
@@ -88,7 +93,7 @@ export function createScholaMassTextSynchronizer({
     paragraphs.push({id:node.dataset.paragraphId,latin:element.textContent,node,element});
    }
   }
-  const planned=scholaMassTextAnchors(gabc,paragraphs);
+  const planned=scholaMassTextAnchors(gabc,paragraphs,{trackId});
   // Preserve actual DOM targets, not guessed selectors or fabricated text.
   const matched=[];
   let cursor=0;
