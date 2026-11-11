@@ -42,7 +42,7 @@ jobs:
               im.verify()
           with Image.open(path) as im:
               assert im.size==(3273,3695),im.size
-          assert contents[:2]==b"\\xff\\xd8" and contents[-2:]==b"\\xff\\xd9"
+          assert contents[:2]==bytes.fromhex("ffd8") and contents[-2:]==bytes.fromhex("ffd9")
           proof.parent.mkdir(parents=True,exist_ok=True)
           metadata={
             "schema":"AO_CLASS_I_SARACENI_MET_CC0_EXACT_SOURCE_BYTES_V1",
@@ -59,7 +59,7 @@ jobs:
             "publishedAsset":str(path),"publishedUnmodifiedOriginal":True,
             "newArtworkSelection":False,"ownerCropApprovalCreated":False
           }
-          proof.write_text(json.dumps(metadata,indent=2,ensure_ascii=False)+"\\n",encoding="utf8")
+          proof.write_text(json.dumps(metadata,indent=2,ensure_ascii=False)+chr(10),encoding="utf8")
           print(json.dumps(metadata,sort_keys=True))
           PY
       - name: Commit verified source JPEG only on isolated feature branch
