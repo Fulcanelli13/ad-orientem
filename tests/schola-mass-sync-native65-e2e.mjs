@@ -116,8 +116,9 @@ try{
    // The runtime has loaded authentic source GABC through its *test-only*
    // selector; its independent Schola clock remains an expected cue.
    await page.waitForFunction(()=>document.querySelector(".ao-schola-dock")
-     ?.dataset.notationFollow==="estimated",null,{timeout:25000});
-   await page.locator("[data-schola-notation-pause]").click();
+     ?.dataset.notationFollow==="manual",null,{timeout:25000});
+   assert.equal(await page.locator("[data-schola-notation-pause]").isVisible(),false,
+     "Manual source cursor has no irrelevant estimated-timer Pause button");
    if(target.choirStart){
     assert.equal(await page.locator(
       '.ao-schola-follow-strip button[data-schola-syllable-index="0"]').isVisible(),

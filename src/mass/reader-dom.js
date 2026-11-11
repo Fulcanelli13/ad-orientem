@@ -140,6 +140,7 @@ const SHELL_STYLE = `
  background:rgba(225,207,145,.06);color:var(--ao-mass-accent-text);
  font:700 12px/1 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer
 }
+.ao-schola-dock[data-notation-manual="true"] .ao-schola-notation-pause{display:none!important}
 .ao-schola-notation-pause:focus-visible{
  outline:2px solid var(--ao-mass-accent-text);outline-offset:2px
 }
@@ -3430,7 +3431,7 @@ export function createReaderDomAdapter({
     scholaDockEngraver?.destroy?.();scholaDockEngraver=null;
     scholaDockScoreIdentity=null;
     const dock=root.querySelector(".ao-schola-dock");
-    if(dock){dock.dataset.approvedScore="false";dock.dataset.notationFollow="none";}
+    if(dock){dock.dataset.approvedScore="false";dock.dataset.notationFollow="none";delete dock.dataset.notationManual;}
     const panel=root.querySelector('[data-role="schola-approved-score"]');
     if(panel){panel.hidden=true;panel.dataset.scoreStatus="none";}
     root.querySelector('[data-role="schola-approved-staff"]')?.replaceChildren?.();
@@ -3461,7 +3462,7 @@ export function createReaderDomAdapter({
         scholaDockAwaitingChoir=awaitingChoir;
         if(scholaPaused||awaitingChoir)scholaDockFollower.pause?.();
         else scholaDockFollower.resume?.();
-        dock.dataset.notationFollow=awaitingChoir?"awaiting-choir":"estimated";
+        dock.dataset.notationFollow=awaitingChoir?"awaiting-choir":"manual";
       }
       // A scroll/cue repaint must never restart the Schola's own cadence.
       return;
@@ -3484,6 +3485,7 @@ export function createReaderDomAdapter({
         if(!ok){clearScholaDockNotation();return;}
         panel.dataset.scoreStatus="approved";
         dock.dataset.approvedScore="true";
+        dock.dataset.notationManual="true";
         cancelScholaTicker({clearIdentity:true});
         const strip=root.querySelector('[data-role="schola-follow-strip"]');
         if(strip){
@@ -3511,11 +3513,11 @@ export function createReaderDomAdapter({
             }
             scholaDockFollower=createScholaNotationFollower({
               staff,strip,document:doc,window:doc?.defaultView,
-              trackId:score.scholaTrackId,
+              trackId:score.scholaTrackId,autoplay:false,
               onPosition:({index,count,origin})=>{
                 // A vertical user scroll already owns its text position.
                 // Only Schola-initiated gestures/ticks may move the reader.
-                const fromReader=origin==="reader-scroll";
+                const fromReader=origin==="reader-scroll"||origin==="initial";
                 const followed=!fromReader&&
                   scholaMassTextSync?.follow(index)===true;
                 if(followed)scholaProgrammaticScrollTop=reader.scrollTop;
@@ -3564,11 +3566,11 @@ export function createReaderDomAdapter({
             }
             if(scholaDockFollower.start(score.gabc,{minimumIndex})){
               if(scholaPaused||awaitingChoir)scholaDockFollower.pause?.();
-              dock.dataset.notationFollow=awaitingChoir?"awaiting-choir":"estimated";
+              dock.dataset.notationFollow=awaitingChoir?"awaiting-choir":"manual";
               const status=root.querySelector('[data-role="schola-status"]');
-              if(status)status.textContent="EST. · NOT HEARD";
+              if(status)status.textContent="NOT HEARD";
               panel.setAttribute("aria-label",
-                "Approved notation. Estimated source-syllable follow; tap or swipe to resynchronise. Singing is not detected.");
+                "Approved notation. Source position follows manual Schola and linked Latin scrolling; singing is not detected.");
             }else{
               scholaDockFollower.destroy();scholaDockFollower=null;
               dock.dataset.notationFollow="unavailable";
@@ -3816,7 +3818,7 @@ export function createReaderDomAdapter({
     setText(root,"schola",scholaDisplay);
     const status=root.querySelector('[data-role="schola-status"]');
     if(status){
-      status.textContent=eventReference?(activeTextException?"TEXT · NOT HEARD":"NOT OBSERVED"):composed?(schola?.manualMusicReference?"MANUAL · NOT HEARD":"SELECTED · NOT HEARD"):schola?(dock.dataset.notationFollow==="estimated"?"EST. FOLLOW · NOT HEARD":"EXPECTED"):"";
+      status.textContent=eventReference?(activeTextException?"TEXT · NOT HEARD":"NOT OBSERVED"):composed?(schola?.manualMusicReference?"MANUAL · NOT HEARD":"SELECTED · NOT HEARD"):schola?(dock.dataset.notationFollow==="manual"?"SOURCE · NOT HEARD":"EXPECTED"):"";
       status.hidden=!schola&&!eventReference;
       status.setAttribute?.("aria-label",eventReference
         ?"Manual music reference: neither heard nor timed":"Schola text expected; actual singing not detected");

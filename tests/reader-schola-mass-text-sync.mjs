@@ -257,3 +257,24 @@ test("Schola clock exposes reader-scroll origin without a second timer",()=>{
  assert.equal(events.at(-1).origin,"reader-scroll");
  clock.destroy();
 });
+
+
+test("production-style manual source cursor never moves Mass or Propers on a fabricated timer",()=>{
+ let scheduled=0;const positions=[];
+ const clock=createScholaFollowClock({autoplay:false,
+  schedule:()=>{scheduled++;return scheduled},cancel:()=>{},
+  onStep:event=>positions.push(event)
+ });
+ assert.equal(clock.start(200,{index:9,minimumIndex:9}),true);
+ assert.equal(clock.getState().running,false);
+ assert.equal(clock.getState().pending,false);
+ assert.equal(scheduled,0);
+ assert.equal(positions[0].origin,"initial");
+ assert.equal(clock.seek(45,"manual"),true);
+ assert.equal(clock.seek(55,"reader-scroll"),true);
+ assert.deepEqual(positions.slice(1).map(x=>x.origin),["manual","reader-scroll"]);
+ assert.equal(scheduled,0,"Reader and Schola scrolling must never schedule a fake music performance");
+ clock.resume();assert.equal(clock.getState().running,false);
+ assert.equal(scheduled,0);
+ clock.destroy();
+});

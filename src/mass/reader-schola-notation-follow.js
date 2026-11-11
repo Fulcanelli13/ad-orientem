@@ -72,7 +72,7 @@ export function scholaKyrieSourceOccurrences(gabc){
 // Musical durations are unobserved. This deterministic visual cadence is
 // approximate and can be corrected by touch at any syllable.
 export function createScholaFollowClock({
- stepMs=1600,schedule=globalThis.setTimeout,cancel=globalThis.clearTimeout,
+ stepMs=1600,autoplay=true,schedule=globalThis.setTimeout,cancel=globalThis.clearTimeout,
  onStep=()=>{}
 }={}){
  if(typeof schedule!=="function"||typeof cancel!=="function")
@@ -96,8 +96,8 @@ export function createScholaFollowClock({
   if(count<1||count>600){count=0;running=false;return false;}
   minimum=Math.max(0,Math.min(count-1,Math.floor(Number(minimumIndex)||0)));
   index=Math.max(minimum,Math.min(count-1,Math.floor(Number(initialIndex)||0)));
-  running=index<count-1;
-  onStep(Object.freeze({index,count,origin:"estimated"}));arm();
+  running=autoplay&&index<count-1;
+  onStep(Object.freeze({index,count,origin:autoplay?"estimated":"initial"}));arm();
   return true;
  }
  function seek(next,origin="manual"){
@@ -105,7 +105,7 @@ export function createScholaFollowClock({
   const n=Number(next);
   if(!Number.isFinite(n))return false;
   index=Math.max(minimum,Math.min(count-1,Math.floor(n)));
-  running=!paused&&index<count-1;
+  running=autoplay&&!paused&&index<count-1;
   onStep(Object.freeze({index,count,origin}));arm();
   return true;
  }
@@ -113,7 +113,7 @@ export function createScholaFollowClock({
  function pause(){if(destroyed||count<1)return false;
   paused=true;running=false;release();return true;}
  function resume(){if(destroyed||count<1)return false;
-  paused=false;running=index<count-1;arm();return true;}
+  paused=false;running=autoplay&&index<count-1;arm();return true;}
  function destroy(){release();running=false;paused=false;count=0;minimum=0;destroyed=true;}
  return Object.freeze({
   start,seek,shift,pause,resume,destroy,
@@ -156,12 +156,12 @@ export function mapScholaSvgLyrics(svg,syllables){
 }
 
 export function createScholaNotationFollower({staff,strip,document=staff?.ownerDocument,
- window=document?.defaultView,stepMs=1600,onPosition=()=>{},trackId=null}={}){
+ window=document?.defaultView,stepMs=1600,autoplay=true,onPosition=()=>{},trackId=null}={}){
  if(!staff?.addEventListener||!strip?.replaceChildren||!document?.createElement)
   throw new TypeError("Schola staff, syllable strip and document required");
  let parts=[],sourceParts=[],buttons=[],targets=[],startPoint=null,destroyed=false,active=-1;
  const clock=createScholaFollowClock({
-  stepMs,
+  stepMs,autoplay,
   schedule:window?.setTimeout?.bind(window)??globalThis.setTimeout,
   cancel:window?.clearTimeout?.bind(window)??globalThis.clearTimeout,
   onStep:({index,origin})=>{
