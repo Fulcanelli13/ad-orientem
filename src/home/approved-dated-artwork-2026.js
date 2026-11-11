@@ -11,6 +11,7 @@ import {RELEASED_MODULE_PAINTINGS} from "../art/released-module-paintings.v1.js"
 import {extraApproved2026HomeArtwork} from "./approved-2026-other-date-previews.js";
 import {frozenSelected2026HomeArtwork} from "./approved-2026-frozen-selected-previews.js";
 import {sourceVerifiedClassI2026Preview} from "./approved-class-i-exact-source-previews-2026.js";
+import {releasedTannerNicodemusForClassI2026} from "./released-class-i-tanner-nicodemus-2026.js";
 import {approved2026SeasonalHomeReuse} from "./approved-2026-seasonal-reuse.js";
 import {annualHomeArtworkDay2026} from "./annual-home-artwork-2026.js";
 
@@ -161,6 +162,11 @@ export function approved2026HomeArtwork(state,provider=null){
  if(frozen)return frozen;
  // Exact owner-approved date selection + museum object reference. This is
  // a REMOTE preview only, never a certified photo master or new art choice.
+ // The exact 1899 PAFA original now has a locally retained, hash-verified
+ // full photograph; keep the older colour preview only as independent
+ // historical source evidence, not the public primary image.
+ const tanner=releasedTannerNicodemusForClassI2026(date,principalId,properPath);
+ if(tanner)return tanner;
  const additional=sourceVerifiedClassI2026Preview(date,principalId,properPath);
  if(additional)return additional;
  // Date-specific locks win. Contextual reuse is restricted to 105 identified
