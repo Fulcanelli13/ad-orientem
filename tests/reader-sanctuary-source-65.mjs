@@ -117,6 +117,47 @@ assert.deepEqual(presented.at(-1),["C38",true]);
 assert.equal(send(chalice,{sourceCueId:"AO.SM.C0181",certifiedSourceFocus:true,
  sourceSectionId:"AO.CARD.015"}).choreography,"STATIC_STAGE",
  "A Host macro cue must not masquerade as the Chalice elevation");
+// Source-first Offertory incensation: the original C24 animation starts
+// only at the priest's incense action, never at the Schola Offertory antiphon
+// or at the initial blessing of incense. All other forms fail closed.
+const off="Offertory · Incensation";
+const incense={form:"MISSA_CANTATA_INCENSE",sourceSectionId:"AO.CARD.010",
+ certifiedSourceFocus:true};
+assert.equal(send(off,{...incense,sourceCueId:"AO.SM.C0120"}).choreography,
+ "STATIC_STAGE","Incense blessing must not start altar incensation");
+assert.equal(send(off,{...incense,sourceCueId:"AO.SM.C0121"}).choreography,
+ "SOURCE_TRIGGERED");
+assert.deepEqual(presented.at(-1),["C24",true]);
+assert.equal(send(off,{...incense,sourceCueId:"AO.SM.C0121"}).choreography,
+ "STATIC_STAGE","Same focused priest cue must not restart animation");
+assert.equal(send(off,{...incense,sourceCueId:"AO.SM.C0122"}).choreography,
+ "STATIC_STAGE");
+assert.deepEqual(presented.at(-1),["C24",false],
+ "Leaving the source-owned incense cue must cancel pending animation");
+assert.equal(send(off,{...incense,sourceCueId:"AO.SM.C0121"}).choreography,
+ "SOURCE_TRIGGERED","Reverse scroll must re-arm incense");
+assert.equal(send(off,{...incense,form:"LOW",
+ sourceCueId:"AO.SM.C0121"}).choreography,"STATIC_STAGE",
+ "Low Mass may never trigger incensation");
+assert.equal(send(off,{...incense,form:"MISSA_CANTATA_SIMPLE",
+ sourceCueId:"AO.SM.C0121"}).choreography,"STATIC_STAGE",
+ "Simple sung Mass without incense may never trigger incensation");
+assert.equal(send(off,{...incense,form:"SOLEMN",
+ sourceCueId:"AO.SM.C0121"}).choreography,"SOURCE_TRIGGERED");
+assert.equal(send(off,{...incense,sourceSectionId:"AO.CARD.009",
+ sourceCueId:"AO.SM.C0121"}).choreography,"STATIC_STAGE",
+ "Wrong source section may not animate incense");
+assert.equal(send(off,{...incense,sourceCueId:"AO.SM.C0121",
+ scholaOnly:true}).code,"CHOIR_EVENT_NOT_MASS_CUE");
+assert.equal(send("Preparation for the Gospel",{form:"LOW",
+ sourceSectionId:"AO.CARD.007",sourceCueId:"AO.SM.C0081",
+ certifiedSourceFocus:true}).choreography,"STATIC_STAGE",
+ "Priest arrival at Gospel book is not evidence for an earlier server Missal transfer");
+assert.equal(send("Communion of the Faithful",{form:"SOLEMN",
+ sourceSectionId:"AO.CARD.025",sourceCueId:"AO.SM.C0246",
+ certifiedSourceFocus:true}).choreography,"STATIC_STAGE",
+ "Distribution at the rail must not invent an earlier priest walk");
+
 assert.equal(send("Introit",{form:"LOW"}).card,"C05");
 assert.ok(bridge.includes("stageSungSediliaAcolyte(card)"));
 assert.ok(bridge.includes("singerSedilia=new Set("));
