@@ -168,6 +168,29 @@ try{
     window.AO_SANCTUARY_EMBED_TEST.getState()),original,
     "Schola-only cue must not even select a different sanctuary scene");
   if(form==="MISSA_CANTATA_SIMPLE"&&width===390){
+    await page.evaluate(()=>{
+      const api=window.__AO_PHONE_PREVIEW;
+      const card=api.model.cards.find(x=>
+        x.title==="Gloria · Praise and Supplication");
+      if(!card)throw Error("Canonical Gloria sedilia card missing");
+      api.showSequence(card.sequence);
+    });
+    await frame.waitForFunction(()=>window.AO_SANCTUARY_EMBED_TEST
+      ?.getState()?.card==="C08",null,{timeout:12000});
+    const acolyte=await frame.evaluate(()=>{
+      const a=M3.actors().M;
+      return {visible:a?.vis,pose:a?.pose,x:a?.x,z:a?.z};
+    });
+    assert.equal(acolyte.visible,true);
+    assert.equal(acolyte.pose,"stand",
+      "Sung Mass acolyte must not kneel while the celebrant sits");
+    assert.ok(acolyte.x>2.9&&acolyte.z>1,
+      "Acolyte must be beside sedilia, not kneeling at the altar");
+    await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSequence(5));
+    await frame.waitForFunction(()=>window.AO_SANCTUARY_EMBED_TEST
+      ?.getState()?.card==="C05",null,{timeout:12000});
+  }
+  if(form==="MISSA_CANTATA_SIMPLE"&&width===390){
     for(const {enter,exit,scene,owner} of [
       {enter:"AO.SM.C0174",exit:"AO.SM.C0173",scene:"C36",owner:"AO.CARD.015"},
       {enter:"AO.SM.C0181",exit:"AO.SM.C0179",scene:"C38",owner:"AO.CARD.016"}

@@ -118,6 +118,10 @@ assert.equal(send(chalice,{sourceCueId:"AO.SM.C0181",certifiedSourceFocus:true,
  sourceSectionId:"AO.CARD.015"}).choreography,"STATIC_STAGE",
  "A Host macro cue must not masquerade as the Chalice elevation");
 assert.equal(send("Introit",{form:"LOW"}).card,"C05");
+assert.ok(bridge.includes("stageSungSediliaAcolyte(card)"));
+assert.ok(bridge.includes("singerSedilia=new Set("));
+assert.equal(html.includes("stageSungSediliaAcolyte"),false,
+  "Acolyte correction is an adapter, never a mutation of Claude's original visuals");
 assert.equal(st.form,"low");
 assert.ok(rebuilds>=2,"All forms reuse the original renderer's mount path");
 assert.equal(send("At the Foot of the Altar · Introibo",{form:"LOW"}).card,"C01");

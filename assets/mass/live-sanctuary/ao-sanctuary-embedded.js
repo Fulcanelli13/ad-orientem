@@ -55,6 +55,24 @@
     SOLEMN:{form:"sung",solemn:true,inc:true}
   });
   let last=null;
+  // Fortescue, Ceremonies of the Roman Rite Described, ch. XIII §1:
+  // at a sung Mass while the celebrant sits, his acolytes STAND at
+  // either side of the sedilia. Claude's one-server visual left the
+  // server kneeling at the altar. Resolve the demonstrably wrong posture
+  // using the existing figure and actor engine, WITHOUT editing the
+  // owner's original source HTML or fabricating a new seated pose.
+  // Exact two-acolyte/M.C. positions still require O'Connell review.
+  const singerSedilia=new Set(["C08","C09","C12","C17","C18","C19"]);
+  function stageSungSediliaAcolyte(card){
+    if(st.form!=="sung"||st.solemn||!singerSedilia.has(card?.id))return;
+    const acolyte=M3.actors?.()?.M;
+    if(!acolyte||acolyte.vis!==true)return;
+    acolyte.path=null;acolyte.turn=null;
+    acolyte.pose="stand";acolyte.prop=null;
+    // One acolyte on the sanctuary/altar side of the existing sedile.
+    // Final second-acolyte choreography remains on ceremonial hold.
+    acolyte.x=3.14;acolyte.z=1.75;acolyte.face=90;
+  }
   function quietInactiveElevation(card){
     if(card?.id!=="C36"&&card?.id!=="C38")return;
     // Claude's ORIGINAL static scene leaves its elevation glow lit.
@@ -109,6 +127,7 @@
       cues[cue]?.section===sourceSectionId&&
       (last?.key!==nextKey||last?.playedCue!==cue));
     if(play)M3.show(card,true);
+    stageSungSediliaAcolyte(card);
     last={key:nextKey,card:id,cue,sourceSectionId,
       playedCue:play?cue:exiting?null:last?.key===nextKey?last.playedCue:null};
     return ack(true,"PRESENTED",{card:id,sourceCueId:validCue?cue:null,
