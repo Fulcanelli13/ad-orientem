@@ -65,6 +65,12 @@ for(const row of entries){
   assert.equal(live?.image,"/assets/home/class-i-2026/tanner-nicodemus-1899-pafa-1900-1-original.jpg");
   assert.equal(live?.imageStatus,"LOCAL_ORIGINAL_PD_ART_BYTE_VERIFIED_CROP_NOT_OWNER_APPROVED");
   assert.equal(live?.ownerArtworkDecisionNewlyCreated,false);
+ }else if(row.date==="2026-03-01"){
+  assert.equal(live?.image,"/assets/home/class-i-2026/raphael-transfiguration-vatican-original.jpg");
+  assert.equal(live?.imageStatus,"LOCAL_VATICAN_RAPHAEL_SOURCE_VERIFIED_UNALTERED_ARTBOOK_SCAN");
+  assert.equal(live?.collectionIdentity,row.collectionIdentity);
+  assert.equal(live?.source,row.sourceObject);
+  assert.equal(live?.ownerArtworkDecisionNewlyCreated,false);
  }else{
   assert.equal(live?.image,selected.image,"Other exact approved preview changed "+row.date);
   assert.equal(live?.imageStatus,row.imagePublicationStatus);
@@ -80,4 +86,4 @@ for(const other of ["2026-10-25","2026-11-29","2026-09-29","2026-04-03"]){
   "Owner image rights and identity holds must not be bypassed");
  assert.equal(sourceVerifiedClassI2026Preview(other,"x","Tempora/wrong"),null);
 }
-console.log("PASS two exact owner-selected Class I remote previews with canonical 1962 principal/Proper, physical object provenance and zero certified original/photo approvals");
+console.log("PASS both archived exact Class I source previews remain pinned and live Home uses two individually verified local photo originals");
