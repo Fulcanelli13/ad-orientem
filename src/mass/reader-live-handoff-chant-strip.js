@@ -4,7 +4,7 @@
 // ritual state remain entirely with their existing controllers.
 export const LIVE_HANDOFF_CHANT_STRIP_CSS=[
  ".ao-reader-shell.ao-live-band-enabled .ao-schola-approved-score[data-score-status='approved']{position:relative;overflow:hidden}",
- ".ao-reader-shell.ao-live-band-enabled .ao-live-chant-scroll{position:relative;display:block;width:100%;height:63px;max-height:63px;min-width:0;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;touch-action:pan-x;scrollbar-width:none;cursor:grab}",
+ ".ao-reader-shell.ao-live-band-enabled .ao-live-chant-scroll{position:relative;display:block;width:100%;height:63px;max-height:63px;min-width:0;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;touch-action:pan-x;scrollbar-width:none;cursor:grab;padding-inline:30% 70%}",
  ".ao-reader-shell.ao-live-band-enabled .ao-live-chant-scroll::-webkit-scrollbar{display:none}",
  ".ao-reader-shell.ao-live-band-enabled .ao-live-chant-scroll[data-dragging='true']{cursor:grabbing}",
  // Wide layout keeps printed neumes on long horizontal systems rather than
@@ -34,6 +34,23 @@ export function installLiveHandoffChantStrip({root,document=root?.ownerDocument}
  playhead.setAttribute("aria-hidden","true");
  let enabled=false,disposed=false,drag=null;
  const visible=()=>enabled&&panel.dataset.scoreStatus==="approved"&&!panel.hidden;
+ // The existing notation follower alone owns source-syllable progression.
+ // It marks exactly matched Exsurge lyrics on the SVG and changes this
+ // index independently from the priest's card. Follow that read-only mark;
+ // do not interpolate from the card number or drive the Schola controller.
+ function alignEstimatedSyllable(){
+   if(!visible())return false;
+   const active=staff.querySelector('svg text[data-schola-follow-active="true"]');
+   if(!active)return false; // no exact source lyric mapping; do not guess
+   const glyph=active.getBoundingClientRect(),box=scroller.getBoundingClientRect();
+   if(!glyph.width||!box.width)return false;
+   const dx=glyph.left+glyph.width/2-(box.left+box.width*.3);
+   if(Math.abs(dx)>2)scroller.scrollLeft+=dx;
+   return true;
+ }
+ const Observer=document?.defaultView?.MutationObserver;
+ const followerObserver=typeof Observer==="function"
+   ?new Observer(alignEstimatedSyllable):null;
  function pointerDown(e){
    if(e.pointerType!=="mouse"||e.button!==0||!visible())return;
    drag={id:e.pointerId,x:e.clientX,start:scroller.scrollLeft,started:false};
@@ -69,7 +86,11 @@ export function installLiveHandoffChantStrip({root,document=root?.ownerDocument}
      panel.insertBefore(playhead,scroller.nextSibling);
      staff.dataset.liveChantHorizontal="true";
      panel.dataset.liveChantSource="APPROVED_NATIVE_ONLY";
+     followerObserver?.observe(staff,{attributes:true,
+       attributeFilter:["data-schola-follow-index"]});
+     alignEstimatedSyllable();
    }else{
+     followerObserver?.disconnect();
      panel.insertBefore(staff,afterStaff?.parentNode===panel?afterStaff:null);
      scroller.remove();playhead.remove();
      delete staff.dataset.liveChantHorizontal;
