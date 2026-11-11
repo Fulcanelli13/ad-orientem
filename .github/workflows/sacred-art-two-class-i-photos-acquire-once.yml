@@ -113,4 +113,9 @@ jobs:
           git diff --cached --check
           test "$(git diff --cached --name-only | wc -l)" -eq 4
           git commit -m 'Retain exact Lanfranco and Van Dyck Commons source bytes with one mobile WebP derivative'
+          # The user-facing implementation branch may receive normal source
+          # edits while this one-time source acquisition is processing.
+          # Rebase the *four new files only* on current remote branch first.
+          git fetch origin 'release/sacred-art-two-frozen-class-i-photo-reuses-20261111'
+          git rebase FETCH_HEAD
           git push origin 'HEAD:release/sacred-art-two-frozen-class-i-photo-reuses-20261111'
