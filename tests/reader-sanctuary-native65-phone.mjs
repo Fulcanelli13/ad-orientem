@@ -125,11 +125,11 @@ try{
     const chalice=api.model.cards.filter(x=>
       (x.paragraphs??[]).some(p=>(p.sourceCueIds??[]).includes("AO.SM.C0181")));
     if(chalice.length!==1)throw Error("Chalice source cue card count="+chalice.length);
-    console.info("SANCTUARY_CANON_CHALICE_IDENTITY="+JSON.stringify({
-      title:chalice[0].title,
-      sectionId:chalice[0].sectionId,
-      sourceSectionId:chalice[0].sourceSectionId
-    }));
+    if((chalice[0].sourceSectionId??chalice[0].sectionId)!=="AO.CARD.016")
+      throw Error("Chalice elevation canonical macro unexpected: "+
+        JSON.stringify({title:chalice[0].title,
+          sectionId:chalice[0].sectionId,
+          sourceSectionId:chalice[0].sourceSectionId}));
   });
   await frame.waitForFunction(()=>window.AO_SANCTUARY_EMBED_TEST
     ?.getState()?.card==="C36",null,{timeout:12000});
@@ -159,6 +159,36 @@ try{
   },"Returning to source-owned rubric must re-arm original 3D animation");
   const next=await frame.evaluate(()=>window.AO_SANCTUARY_EMBED_TEST.getState());
   assert.equal(next.card,"C36");
+  await page.evaluate(()=>{
+    const api=window.__AO_PHONE_PREVIEW;
+    const cards=api.model.cards.filter(c=>
+      (c.paragraphs??[]).some(p=>(p.sourceCueIds??[]).includes("AO.SM.C0181")));
+    if(cards.length!==1||cards[0].sourceSectionId!=="AO.CARD.016")
+      throw Error("Chalice elevation has no unique certified Canon source");
+    api.showSequence(cards[0].sequence);
+  });
+  await frame.waitForFunction(()=>window.AO_SANCTUARY_EMBED_TEST
+    ?.getState()?.card==="C38",null,{timeout:12000});
+  const chaliceRearm=await frame.evaluate(()=>{
+    const api=window.AO_SANCTUARY_EMBED_TEST;
+    const move=cue=>api.present({
+      type:"AO_SANCTUARY_CUE_V1",version:1,
+      form:"SOLEMN",
+      cardTitle:"Words of Consecration and Elevation · Chalice",
+      sourceSectionId:"AO.CARD.016",sourceCueId:cue,
+      certifiedSourceFocus:true,scholaOnly:false
+    });
+    const enter=move("AO.SM.C0181");
+    const exit=move("AO.SM.C0182");
+    const dormant=api.getVisualFx();
+    const replay=move("AO.SM.C0181");
+    return {enter:enter.choreography,exit:exit.choreography,
+      replay:replay.choreography,dormant};
+  });
+  assert.deepEqual(chaliceRearm,{
+    enter:"SOURCE_TRIGGERED",exit:"STATIC_STAGE",replay:"SOURCE_TRIGGERED",
+    dormant:{elevationStage:false,elevationGlowVisible:false}
+  },"Chalice elevation enter/exit/replay must remain source-owned");
   const switched=await page.evaluate(()=>{
     const api=window.__AO_PHONE_PREVIEW;
     api.setPresentationMode("MISSAL");

@@ -101,6 +101,22 @@ assert.equal(send(elevation,{sourceCueId:"AO.SM.C0174",certifiedSourceFocus:true
  sourceSectionId:"AO.CARD.015"}).choreography,"SOURCE_TRIGGERED",
  "Reverse scroll into the same source rubric must replay the elevation");
 assert.deepEqual(presented.at(-1),["C36",true]);
+// The original 30-macro source model owns these as distinct canonical
+// sections despite the LIVE UI showing AO.CANON.06 / AO.CANON.07.
+const chalice="Words of Consecration and Elevation · Chalice";
+assert.equal(send(chalice,{sourceCueId:"AO.SM.C0181",certifiedSourceFocus:true,
+ sourceSectionId:"AO.CARD.016"}).choreography,"SOURCE_TRIGGERED");
+assert.deepEqual(presented.at(-1),["C38",true]);
+assert.equal(send(chalice,{sourceCueId:"AO.SM.C0182",certifiedSourceFocus:true,
+ sourceSectionId:"AO.CARD.016"}).choreography,"STATIC_STAGE");
+assert.equal(glow.show,false,"Chalice glow persists after source cue exit");
+assert.equal(elevClass,false,"Chalice elevation stage remains active after cue exit");
+assert.equal(send(chalice,{sourceCueId:"AO.SM.C0181",certifiedSourceFocus:true,
+ sourceSectionId:"AO.CARD.016"}).choreography,"SOURCE_TRIGGERED");
+assert.deepEqual(presented.at(-1),["C38",true]);
+assert.equal(send(chalice,{sourceCueId:"AO.SM.C0181",certifiedSourceFocus:true,
+ sourceSectionId:"AO.CARD.015"}).choreography,"STATIC_STAGE",
+ "A Host macro cue must not masquerade as the Chalice elevation");
 assert.equal(send("Introit",{form:"LOW"}).card,"C05");
 assert.equal(st.form,"low");
 assert.ok(rebuilds>=2,"All forms reuse the original renderer's mount path");
