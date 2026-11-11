@@ -8,7 +8,7 @@ import {KYRIALE_RESEARCH_NOTATION_EXAMPLES} from "../../src/mass/reader-kyriale-
 import {offlineKyrialeResearchScore} from "../../src/mass/reader-kyriale-research-gabc.js";
 import {schola1961OriginalFacsimile} from "../../src/mass/reader-schola-original-facsimile.js";
 
-export const FULL_SCORE_STUDY_SCHEMA="ao-1961-original-gabc-1215-source-study-v1";
+export const FULL_SCORE_STUDY_SCHEMA="ao-1961-original-gabc-1220-source-study-v2";
 const SHA=/^[a-f0-9]{64}$/;
 const PARTS=Object.freeze({
  in:"INTROIT",gr:"GRADUAL",al:"ALLELUIA",tr:"TRACT",
