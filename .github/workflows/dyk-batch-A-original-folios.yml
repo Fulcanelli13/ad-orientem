@@ -1,0 +1,51 @@
+name: DYK Batch A original-source folios (research only)
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/dyk-batch-A-original-folios.yml"
+      - "scripts/research/dyk-batch-A-historical-folio-evidence.py"
+      - "data/research/did-you-know/release-candidates/ao-dyk-batch-A-62-corrected-bilingual-owner-proof-RESEARCH_ONLY-20261111.v1.json"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  historic-pdf-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install PDF metadata and raster tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq poppler-utils
+      - name: Download exact source scans for private evidence
+        run: |
+          mkdir -p /tmp/dyk-originals artifacts/dyk/folio-evidence
+          if ! curl -fL --retry 2 --connect-timeout 15 --max-time 210 -A "Mozilla/5.0" \
+            "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf" \
+            -o /tmp/dyk-originals/weiser.pdf; then
+            echo "WEISER_DIRECT_PDF_UNAVAILABLE"
+            rm -f /tmp/dyk-originals/weiser.pdf
+          fi
+          if ! curl -fL --retry 2 --connect-timeout 15 --max-time 210 -A "Mozilla/5.0" \
+            "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf" \
+            -o /tmp/dyk-originals/pitre.pdf; then
+            echo "PITRE_DIRECT_PDF_UNAVAILABLE"
+            rm -f /tmp/dyk-originals/pitre.pdf
+          fi
+      - name: Inspect PDF text layers and render bounded folios
+        run: |
+          python -m py_compile scripts/research/dyk-batch-A-historical-folio-evidence.py
+          python scripts/research/dyk-batch-A-historical-folio-evidence.py \
+            /tmp/dyk-originals/weiser.pdf /tmp/dyk-originals/pitre.pdf \
+            artifacts/dyk/folio-evidence
+      - name: Save source metadata and private images (not a publication asset)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dyk-batch-A-original-folio-evidence
+          path: artifacts/dyk/folio-evidence/
+          if-no-files-found: warn
+          retention-days: 7
