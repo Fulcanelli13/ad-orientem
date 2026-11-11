@@ -27,6 +27,49 @@ const server=http.createServer(async(req,res)=>{
   res.end(String(error?.message??error));}
 });
 await new Promise(ok=>server.listen(0,"127.0.0.1",ok));
+// This exercise goes THROUGH the real 1962 LIVE source focus tracker,
+// unlike direct bridge test probes. The native reader scroll alone sends
+// the exact source cue and controls which original M3 scene may animate.
+async function focusNativeSourceCue(page,cueId){
+ return page.evaluate(async cue=>{
+  const api=window.__AO_PHONE_PREVIEW;
+  const hits=api.model.cards.filter(c=>(c.paragraphs??[])
+    .some(p=>(p.sourceCueIds??[]).includes(cue)));
+  if(hits.length!==1)return {found:false,reason:"CANONICAL_CUE_CARD_NOT_UNIQUE",
+    cue,cards:hits.map(x=>x.sectionId)};
+  const card=hits[0];
+  if(api.getCurrentCard()?.sectionId!==card.sectionId)
+    api.showSequence(card.sequence);
+  const frame=()=>new Promise(done=>requestAnimationFrame(
+    ()=>requestAnimationFrame(done)));
+  await frame();
+  const scroller=document.querySelector(
+    "#ao-r17-native-reader-preview .ao-prayer-card");
+  const node=[...(scroller?.querySelectorAll?.(
+    ".ao-reader-paragraph[data-cue-id]")??[])].find(el=>
+    el.dataset.cueId===cue ||
+    el.dataset.sourceCueIds?.split(" ").includes(cue));
+  if(!node)return {found:false,reason:"SOURCE_CUE_NOT_IN_NATIVE_DOM",
+    cue,card:card.sectionId};
+  const rect=node.getBoundingClientRect(),outer=scroller.getBoundingClientRect();
+  const center=rect.top-outer.top+scroller.scrollTop+rect.height/2;
+  const limit=Math.max(0,scroller.scrollHeight-scroller.clientHeight);
+  const ideal=center-scroller.clientHeight*.39;
+  const offsets=[0,12,-12,24,-24,36,-36,72,-72,120,-120,160,-160];
+  const positions=[limit,...offsets.map(delta=>Math.max(0,
+    Math.min(limit,Math.round(ideal+delta)))),0];
+  for(const y of [...new Set(positions)]){
+    scroller.scrollTop=y;
+    scroller.dispatchEvent(new Event("scroll",{bubbles:true}));
+    await frame();
+    if(api.getActiveCue()===cue)
+      return {found:true,cue,card:card.sectionId,
+        sourceSectionId:card.sourceSectionId,scrollTop:scroller.scrollTop};
+  }
+  return {found:false,reason:"SOURCE_FOCUS_NOT_REACHED",
+    cue,card:card.sectionId,active:api.getActiveCue(),limit,ideal};
+ },cueId);
+}
 const browser=await chromium.launch({headless:true});
 try{
  for(const {form,width,height} of [
@@ -124,6 +167,41 @@ try{
   assert.deepEqual(await frame.evaluate(()=>
     window.AO_SANCTUARY_EMBED_TEST.getState()),original,
     "Schola-only cue must not even select a different sanctuary scene");
+  if(form==="MISSA_CANTATA_SIMPLE"&&width===390){
+    for(const {enter,exit,scene,owner} of [
+      {enter:"AO.SM.C0174",exit:"AO.SM.C0173",scene:"C36",owner:"AO.CARD.015"},
+      {enter:"AO.SM.C0181",exit:"AO.SM.C0179",scene:"C38",owner:"AO.CARD.016"}
+    ]){
+      const incoming=await focusNativeSourceCue(page,enter);
+      assert.equal(incoming.found,true,
+        "Real source focus failed for elevation: "+JSON.stringify(incoming));
+      assert.equal(incoming.sourceSectionId,owner,
+        "Native source parent changed for "+enter);
+      await frame.waitForFunction(({cue,card,section})=>{
+        const state=window.AO_SANCTUARY_EMBED_TEST?.getState?.();
+        return state?.card===card&&state?.playedCue===cue&&
+          state?.sourceSectionId===section;
+      },{cue:enter,card:scene,section:owner},{timeout:12000});
+      const leaving=await focusNativeSourceCue(page,exit);
+      assert.equal(leaving.found,true,
+        "Real source focus failed on exit: "+JSON.stringify(leaving));
+      await frame.waitForFunction(()=>{
+        const api=window.AO_SANCTUARY_EMBED_TEST;
+        const fx=api?.getVisualFx?.();
+        return api?.getState?.()?.playedCue===null&&
+          fx?.elevationStage===false&&fx?.elevationGlowVisible===false;
+      },null,{timeout:12000});
+      const returning=await focusNativeSourceCue(page,enter);
+      assert.equal(returning.found,true,
+        "Real reader cannot re-enter elevation cue: "+JSON.stringify(returning));
+      await frame.waitForFunction(cue=>
+        window.AO_SANCTUARY_EMBED_TEST?.getState?.()?.playedCue===cue,
+        enter,{timeout:12000});
+    }
+    await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSequence(5));
+    await frame.waitForFunction(()=>window.AO_SANCTUARY_EMBED_TEST
+      ?.getState()?.card==="C05",null,{timeout:12000});
+  }
   // The original animated scene must re-arm its exact action when a
   // source-focused rubric exits and the reader later scrolls back into it.
   // These are isolated bridge probes, not invented priest observations.
