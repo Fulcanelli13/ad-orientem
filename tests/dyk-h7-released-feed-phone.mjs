@@ -48,7 +48,9 @@ const h225=JSON.parse(await readFile(resolve(root,
 const historicalIds=[...historical.records,...r50.records,...r50b.records,...h100.records,...h125.records,...h150.records,...h175.records,...h200.records,...h225.records].map(x=>x.id);
 const curated=JSON.parse(await readFile(resolve(root,
  "data/did-you-know/dyk-customs-glossary-520.v1.json"),"utf8"));
-assert.equal(curated.count,537,"Test must include the expanded public DYK pool");
+assert.ok(curated.count>=595,"Test must include the expanded public DYK pool");
+assert.equal(curated.count,curated.records.length);
+assert.equal(curated.counts.customs+curated.counts.glossary,curated.count);
 const fullPublicIds=[...historicalIds,...curated.records.map(x=>x.id)];
 const dayMs=86400000;
 const base=Date.UTC(2026,10,1);
@@ -161,7 +163,7 @@ try{
   }finally{await page.close()}
  }
 
- console.log("PASS released H7 Discovery phone: original H225 and test-only R34 facts remain source-accessible in the expanded 537-fact Home rotation");
+ console.log("PASS released H7 Discovery phone: original H225 and test-only R34 facts remain source-accessible in the expanded bilingual Home rotation");
 }finally{
  await browser?.close().catch(()=>{});
  await new Promise(ok=>server.close(ok));
