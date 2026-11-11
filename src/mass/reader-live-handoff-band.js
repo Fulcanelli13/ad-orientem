@@ -337,7 +337,8 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
     const exactChange=changeTile?.dataset.active==="true" &&
       changeTile.dataset.sourceRailAnchor==="exact";
     shell.dataset.aoLivePreviewPosture=String(Boolean(scene.faithful &&
-      postureTile?.dataset.active==="true" && !exactChange));
+      postureTile?.dataset.active==="true" &&
+      postureTile.dataset.iconVisible==="true" && !exactChange));
     const incenseRoute=projectLiveHandoffIncensationPreview({gate:result,nativeState,prepared});
     const turnRoute=projectLiveHandoffSourceTurnPreview({gate:result,nativeState,prepared});
     const potentialRoute=incenseRoute.ok?incenseRoute:turnRoute;
