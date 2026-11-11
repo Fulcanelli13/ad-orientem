@@ -1,14 +1,14 @@
 {
   "schema": "AO_DYK_CUSTOMS_GLOSSARY_520_V1",
   "release_stage": "INTEGRATED_CONTENT",
-  "count": 595,
+  "count": 653,
   "counts": {
     "customs": 378,
-    "glossary": 217
+    "glossary": 275
   },
   "created": "2026-11-11",
   "origin": "Editorial bilingual DYK 526 preview (Claude KEEP/REWRITE) with corrected 62-card overrides",
-  "publishing_note": "One source-controlled bilingual Home DYK bank: 378 Customs and 217 Glossary discoveries. The original 520-card bank is preserved, with 17 first-wave and 58 additional educational Glossary cards, each tied to the corrected canonical concept and source registry. First Friday and First Saturday calendar cues remain active. The O Salutaris versicle translation is corrected.",
+  "publishing_note": "Existing bilingual Home DYK bank with 378 Customs and 275 source-backed Glossary discoveries. The original 520 records are preserved; glossary discovery waves A (17), B (58), and C (58) link directly to canonical concept IDs and original registry sources. First Friday/Saturday cues and corrected O Salutaris versicle remain intact.",
   "excluded_ids": [
     "DYK-CW15-035",
     "DYK-CW15-038",
@@ -10918,6 +10918,1166 @@
       },
       "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_B",
       "glossary_concept_id": "G398",
+      "discovery_topic": "LATIN"
+    },
+    {
+      "id": "DYK-GL-G001-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "Grace cannot be earned as a natural entitlement",
+        "fr": "La grâce n’est pas un droit naturel"
+      },
+      "fact": {
+        "en": "Grace is not something owed to human nature. Catholic theology distinguishes habitual or sanctifying grace from actual helps and from the special graces attached to the sacraments.",
+        "fr": "La grâce n’est pas due à la nature humaine. La théologie catholique distingue la grâce habituelle ou sanctifiante des grâces actuelles et des grâces particulières attachées aux sacrements."
+      },
+      "source": {
+        "id": "TRENT-VI-JUSTIFICATION",
+        "url": "https://www.papalencyclicals.net/councils/trent/sixth-session.htm",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G001",
+      "discovery_topic": "DOCTRINE"
+    },
+    {
+      "id": "DYK-GL-G004-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "Each sacrament has a grace proper to its purpose",
+        "fr": "Chaque sacrement confère une grâce propre à sa finalité"
+      },
+      "fact": {
+        "en": "The sacraments truly confer grace; each sacrament also has effects and helps proper to its purpose in Christian life.",
+        "fr": "Les sacrements confèrent réellement la grâce ; chacun possède aussi des effets et des secours propres à sa finalité dans la vie chrétienne."
+      },
+      "source": {
+        "id": "TRENT-VII-SACRAMENTS",
+        "url": "https://www.papalencyclicals.net/councils/trent/seventh-session.htm",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G004",
+      "discovery_topic": "DOCTRINE"
+    },
+    {
+      "id": "DYK-GL-G006-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "Hope is neither presumption nor despair",
+        "fr": "L’espérance n’est ni présomption ni désespoir"
+      },
+      "fact": {
+        "en": "Christian hope rests on God’s goodness, fidelity and power, while requiring perseverance and cooperation with grace. It differs from presumption and despair.",
+        "fr": "L’espérance chrétienne repose sur la bonté, la fidélité et la puissance de Dieu, tout en exigeant la persévérance et la coopération à la grâce. Elle se distingue de la présomption et du désespoir."
+      },
+      "source": {
+        "id": "TRENT-VI-JUSTIFICATION",
+        "url": "https://www.papalencyclicals.net/councils/trent/sixth-session.htm",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G006",
+      "discovery_topic": "DOCTRINE"
+    },
+    {
+      "id": "DYK-GL-G010-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "Merit does not make God our debtor",
+        "fr": "Le mérite ne fait pas de Dieu notre débiteur"
+      },
+      "fact": {
+        "en": "Christian merit never makes God our debtor apart from His gracious covenant. The justified person can truly merit an increase of grace and eternal reward because Christ’s grace is active in him.",
+        "fr": "Le mérite chrétien ne fait jamais de Dieu notre débiteur indépendamment de son alliance gratuite. Le juste peut réellement mériter un accroissement de grâce et la récompense éternelle parce que la grâce du Christ agit en lui."
+      },
+      "source": {
+        "id": "TRENT-VI-JUSTIFICATION",
+        "url": "https://www.papalencyclicals.net/councils/trent/sixth-session.htm",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G010",
+      "discovery_topic": "DOCTRINE"
+    },
+    {
+      "id": "DYK-GL-G012-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "Venial sin wounds charity without destroying grace",
+        "fr": "Le péché véniel blesse la charité sans détruire la grâce"
+      },
+      "fact": {
+        "en": "Venial sin wounds charity and disposes toward further sin but does not sever supernatural friendship with God. It should not therefore be treated as morally insignificant.",
+        "fr": "Le péché véniel blesse la charité et dispose à d’autres péchés, mais ne rompt pas l’amitié surnaturelle avec Dieu. Il ne doit donc pas être considéré comme moralement insignifiant."
+      },
+      "source": {
+        "id": "TRENT-VI-JUSTIFICATION",
+        "url": "https://www.papalencyclicals.net/councils/trent/sixth-session.htm",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G012",
+      "discovery_topic": "DOCTRINE"
+    },
+    {
+      "id": "DYK-GL-G014-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "Perfect and imperfect contrition are not identical",
+        "fr": "La contrition parfaite et l’attrition ne sont pas identiques"
+      },
+      "fact": {
+        "en": "Contrition is necessary for the sacrament of Penance. Perfect contrition arises from charity, while imperfect contrition can dispose the sinner to receive forgiveness sacramentally.",
+        "fr": "La contrition est nécessaire au sacrement de Pénitence. La contrition parfaite procède de la charité, tandis que la contrition imparfaite peut disposer le pécheur à recevoir sacramentellement le pardon."
+      },
+      "source": {
+        "id": "TRENT-XIV-PENANCE",
+        "url": "https://www.papalencyclicals.net/councils/trent/fourteenth-session.htm",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G014",
+      "discovery_topic": "DOCTRINE"
+    },
+    {
+      "id": "DYK-GL-G023-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "Sacramentals are not magical objects",
+        "fr": "Les sacramentaux ne sont pas des objets magiques"
+      },
+      "fact": {
+        "en": "Superstition can corrupt true worship or attach quasi-magical power to practices, signs or objects independently of God and the Church’s meaning. Legitimate sacramentals and devotions are not magic.",
+        "fr": "La superstition peut corrompre le vrai culte ou attribuer un pouvoir quasi magique à des pratiques, signes ou objets indépendamment de Dieu et du sens donné par l’Église. Les sacramentaux et dévotions légitimes ne sont pas de la magie."
+      },
+      "source": {
+        "id": "ST-PIUS-X-CATECHISM-FR",
+        "url": "https://www.vatican.va/content/pius-x/en.html",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G023",
+      "discovery_topic": "DOCTRINE"
+    },
+    {
+      "id": "DYK-GL-G170-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "The virtue of religion belongs to justice",
+        "fr": "La vertu de religion relève de la justice"
+      },
+      "fact": {
+        "en": "Classical theology treats religion as a part of justice because it concerns what is owed to God, while acknowledging that no creature can render an equal return for God’s gifts. Prayer, sacrifice and adoration are principal acts connected with this virtue.",
+        "fr": "La théologie classique traite la religion comme une partie de la justice parce qu’elle concerne ce qui est dû à Dieu, tout en reconnaissant qu’aucune créature ne peut rendre une contrepartie égale aux dons de Dieu. La prière, le sacrifice et l’adoration sont des actes principaux liés à cette vertu."
+      },
+      "source": {
+        "id": "ST-THOMAS-II-II-Q81",
+        "url": "https://www.newadvent.org/summa/3081.htm",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G170",
+      "discovery_topic": "DOCTRINE"
+    },
+    {
+      "id": "DYK-GL-G177-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "Mortification is not hatred of the body",
+        "fr": "La mortification n’est pas une haine du corps"
+      },
+      "fact": {
+        "en": "Christian mortification is not hatred of the body or self-harm. Legitimate asceticism is governed by virtue, duties of state, health, prudence and charity; extraordinary bodily penances are not a universal expectation.",
+        "fr": "La mortification chrétienne n’est ni haine du corps ni automutilation. L’ascèse légitime est réglée par la vertu, les devoirs d’état, la santé, la prudence et la charité ; les pénitences corporelles extraordinaires ne constituent pas une exigence universelle."
+      },
+      "source": {
+        "id": "ST-THOMAS-II-II-TEMPERANCE-FAMILY",
+        "url": "https://www.newadvent.org/summa/3141.htm",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G177",
+      "discovery_topic": "DOCTRINE"
+    },
+    {
+      "id": "DYK-GL-G180-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "Fasting and abstinence are distinct disciplines",
+        "fr": "Le jeûne et l’abstinence sont deux disciplines différentes"
+      },
+      "fact": {
+        "en": "Abstinence and fasting are separate obligations in canon law even when they occur on the same day. Applicable age, days and permitted substitutions depend on current universal and particular law.",
+        "fr": "L’abstinence et le jeûne sont deux obligations distinctes en droit canonique même lorsqu’ils coïncident le même jour. L’âge, les jours concernés et les substitutions permises dépendent du droit universel et particulier en vigueur."
+      },
+      "source": {
+        "id": "SRC-CIC83-1249-1253",
+        "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann1244-1253_en.html",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G180",
+      "discovery_topic": "DOCTRINE"
+    },
+    {
+      "id": "DYK-GL-G026-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "A sacrament is more than a reminder of faith",
+        "fr": "Un sacrement est plus qu’un rappel de la foi"
+      },
+      "fact": {
+        "en": "The Catholic Church recognizes seven sacraments. They are efficacious signs of grace, not merely reminders of faith; their fruit in the recipient also depends on the dispositions required by the sacrament.",
+        "fr": "L’Église catholique reconnaît sept sacrements. Ce sont des signes efficaces de la grâce et non de simples rappels de la foi ; leur fruit chez celui qui les reçoit dépend aussi des dispositions requises par le sacrement."
+      },
+      "source": {
+        "id": "TRENT-VII-SACRAMENTS",
+        "url": "https://www.papalencyclicals.net/councils/trent/seventh-session.htm",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G026",
+      "discovery_topic": "DOCTRINE"
+    },
+    {
+      "id": "DYK-GL-G029-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "Confirmation leaves an indelible sacramental character",
+        "fr": "La Confirmation imprime un caractère sacramentel indélébile"
+      },
+      "fact": {
+        "en": "Confirmation is truly a sacrament and imprints an indelible character. Its Roman ceremonies and disciplinary details can differ between the traditional and current liturgical books without changing the sacrament’s identity.",
+        "fr": "La Confirmation est véritablement un sacrement et imprime un caractère indélébile. Ses cérémonies romaines et certains détails disciplinaires peuvent différer entre les livres liturgiques traditionnels et actuels sans changer l’identité du sacrement."
+      },
+      "source": {
+        "id": "TRENT-VII-SACRAMENTS",
+        "url": "https://www.papalencyclicals.net/councils/trent/seventh-session.htm",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G029",
+      "discovery_topic": "DOCTRINE"
+    },
+    {
+      "id": "DYK-GL-G043-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "Holy water is a sacramental, not magic",
+        "fr": "L’eau bénite est un sacramental, non de la magie"
+      },
+      "fact": {
+        "en": "Holy water is a sacramental. Its use expresses prayer for purification, protection and blessing according to the Church’s rites; it must not be treated as an object possessing magical power independently of prayer and faith.",
+        "fr": "L’eau bénite est un sacramental. Son usage exprime la prière de purification, de protection et de bénédiction selon les rites de l’Église ; elle ne doit pas être traitée comme un objet possédant un pouvoir magique indépendamment de la prière et de la foi."
+      },
+      "source": {
+        "id": "SRC-ROMRIT",
+        "url": "https://www.alcuinus.org/?action=show_item&display=tools&id=74910",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G043",
+      "discovery_topic": "DOCTRINE"
+    },
+    {
+      "id": "DYK-GL-G045-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "Relics are venerated, never adored",
+        "fr": "Les reliques sont vénérées et non adorées"
+      },
+      "fact": {
+        "en": "Catholic veneration of relics is directed ultimately to God whose grace is glorified in His saints. Relics are not adored, and their authenticity, custody and alienation are subject to ecclesiastical regulation.",
+        "fr": "La vénération catholique des reliques se rapporte ultimement à Dieu dont la grâce est glorifiée dans ses saints. Les reliques ne sont pas adorées, et leur authenticité, leur conservation et leur aliénation sont soumises à la réglementation ecclésiastique."
+      },
+      "source": {
+        "id": "TRENT-XXV-SAINTS-PURGATORY",
+        "url": "https://www.papalencyclicals.net/councils/trent/twenty-fifth-session.htm",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G045",
+      "discovery_topic": "DOCTRINE"
+    },
+    {
+      "id": "DYK-GL-G046-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "The Mass is a sacrifice, not only a communal meal",
+        "fr": "La Messe est un sacrifice, non seulement un repas communautaire"
+      },
+      "fact": {
+        "en": "The Mass is a true propitiatory sacrifice and is not merely a communal meal or memorial exercise. The victim and principal priest are Christ; the ordained priest offers sacramentally in His ministry according to the Church’s rite.",
+        "fr": "La Messe est un véritable sacrifice propitiatoire et non un simple repas communautaire ou exercice de mémoire. La victime et le prêtre principal sont le Christ ; le prêtre ordonné offre sacramentellement en son ministère selon le rite de l’Église."
+      },
+      "source": {
+        "id": "MR62-ORDINARY",
+        "url": "https://archive.org/details/sp07mr62-editio-typica",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G046",
+      "discovery_topic": "LITURGY"
+    },
+    {
+      "id": "DYK-GL-G049-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "Solemn Mass is defined by its sacred ministers",
+        "fr": "La Messe solennelle se définit par ses ministres sacrés"
+      },
+      "fact": {
+        "en": "In the 1962 Roman rite, a Solemn Mass is celebrated with the priest, deacon and subdeacon fulfilling their distinct offices. It is not made solemn merely by the importance of the feast or by adding more music.",
+        "fr": "Dans le rite romain de 1962, la Messe solennelle réunit le prêtre célébrant, le diacre et le sous-diacre dans leurs fonctions distinctes. L’importance de la fête ou la quantité de musique ne suffisent pas, à elles seules, à en faire une Messe solennelle."
+      },
+      "source": {
+        "id": "MR62-ORDINARY",
+        "url": "https://archive.org/details/sp07mr62-editio-typica",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G049",
+      "discovery_topic": "LITURGY"
+    },
+    {
+      "id": "DYK-GL-G050-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "The Ordinary of Mass differs from the Proper",
+        "fr": "L’Ordinaire de la Messe se distingue du Propre"
+      },
+      "fact": {
+        "en": "The Kyrie, Gloria when appointed, Credo when appointed, Sanctus and Agnus Dei belong to the recurring Ordinary of Mass. The Proper contains texts that change with the day or feast.",
+        "fr": "Le Kyrie, le Gloria et le Credo lorsqu’ils sont prescrits, le Sanctus et l’Agnus Dei appartiennent aux parties récurrentes de l’Ordinaire de la Messe. Le Propre rassemble les textes qui changent selon le jour ou la fête."
+      },
+      "source": {
+        "id": "MR62-ORDINARY",
+        "url": "https://archive.org/details/sp07mr62-editio-typica",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G050",
+      "discovery_topic": "LITURGY"
+    },
+    {
+      "id": "DYK-GL-G068-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "A Eucharistic genuflection is an act of adoration",
+        "fr": "Une génuflexion eucharistique est un acte d’adoration"
+      },
+      "fact": {
+        "en": "A genuflection before the Blessed Sacrament is an act of Eucharistic adoration, not simply a generic respectful bow. The occasion and form of genuflections are set by the Roman rubrics.",
+        "fr": "Une génuflexion devant le Saint-Sacrement est un acte d’adoration eucharistique et non une simple inclination de respect. Les circonstances et la forme des génuflexions sont fixées par les rubriques romaines."
+      },
+      "source": {
+        "id": "MR62-ORDINARY",
+        "url": "https://archive.org/details/sp07mr62-editio-typica",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G068",
+      "discovery_topic": "LITURGY"
+    },
+    {
+      "id": "DYK-GL-G077-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "The Epistle side is on the right when facing the altar",
+        "fr": "Le côté de l’Épître est à droite face à l’autel"
+      },
+      "fact": {
+        "en": "In the traditional Roman arrangement this is the side to which the Missal is moved for the Epistle-side portions of the rite, conventionally the right side when facing the altar. The term is ceremonial rather than a universal architectural label.",
+        "fr": "Dans l’agencement romain traditionnel, c’est le côté où le Missel se trouve pour les parties du rite dites du côté de l’Épître, conventionnellement le côté droit lorsqu’on regarde l’autel. Le terme est cérémoniel et non une désignation architecturale universelle."
+      },
+      "source": {
+        "id": "MR62-ORDINARY",
+        "url": "https://archive.org/details/sp07mr62-editio-typica",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G077",
+      "discovery_topic": "LITURGY"
+    },
+    {
+      "id": "DYK-GL-G078-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "The Gospel side is on the left when facing the altar",
+        "fr": "Le côté de l’Évangile est à gauche face à l’autel"
+      },
+      "fact": {
+        "en": "In the traditional Roman arrangement the Missal is transferred here for the Gospel, conventionally the left side when facing the altar. The Gospel-side designation belongs to the ceremonial map of the traditional altar.",
+        "fr": "Dans l’agencement romain traditionnel, le Missel y est transféré pour l’Évangile, conventionnellement le côté gauche lorsqu’on regarde l’autel. La désignation côté de l’Évangile appartient à la géographie cérémonielle de l’autel traditionnel."
+      },
+      "source": {
+        "id": "MR62-ORDINARY",
+        "url": "https://archive.org/details/sp07mr62-editio-typica",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G078",
+      "discovery_topic": "LITURGY"
+    },
+    {
+      "id": "DYK-GL-G235-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "Asperges can name both a chant and a sprinkling rite",
+        "fr": "Asperges désigne un chant et un rite d’aspersion"
+      },
+      "fact": {
+        "en": "Outside Paschaltide, Asperges me is the antiphon associated with the traditional Sunday sprinkling of holy water before Mass. The name Asperges can designate either this chant or the sprinkling rite itself.",
+        "fr": "Hors du Temps pascal, Asperges me est l’antienne associée à l’aspersion dominicale traditionnelle d’eau bénite avant la Messe. Asperges peut désigner aussi bien le chant que le rite lui-même."
+      },
+      "source": {
+        "id": "MR62-ORDINARY",
+        "url": "https://archive.org/details/sp07mr62-editio-typica",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G235",
+      "discovery_topic": "LITURGY"
+    },
+    {
+      "id": "DYK-GL-G236-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "During Eastertide, Vidi aquam replaces Asperges me",
+        "fr": "Au Temps pascal, Vidi aquam remplace Asperges me"
+      },
+      "fact": {
+        "en": "In the traditional Roman Sunday sprinkling rite, the Easter-season antiphon Vidi aquam replaces Asperges me. The two chants are not interchangeable choices: the liturgical season determines the appointed text.",
+        "fr": "Dans le rite romain traditionnel d’aspersion dominicale, l’antienne pascale Vidi aquam remplace Asperges me. Les deux chants ne sont pas des choix interchangeables : c’est le temps liturgique qui détermine le texte prescrit."
+      },
+      "source": {
+        "id": "MR62-ORDINARY",
+        "url": "https://archive.org/details/sp07mr62-editio-typica",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G236",
+      "discovery_topic": "LITURGY"
+    },
+    {
+      "id": "DYK-GL-G240-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "The traditional Pax is transmitted ceremonially",
+        "fr": "La paix traditionnelle se transmet selon le cérémonial"
+      },
+      "fact": {
+        "en": "In Solemn Mass the pax can be transmitted hierarchically by the ministers according to the rubrics. It is distinct from a modern congregational greeting and from the general theological concept of peace.",
+        "fr": "Dans la Messe solennelle, la paix peut être transmise hiérarchiquement par les ministres selon les rubriques. Elle se distingue d’une salutation moderne de l’assemblée et du concept théologique général de paix."
+      },
+      "source": {
+        "id": "MR62-ORDINARY",
+        "url": "https://archive.org/details/sp07mr62-editio-typica",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G240",
+      "discovery_topic": "LITURGY"
+    },
+    {
+      "id": "DYK-GL-G241-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "Gregorian chant is not just any unaccompanied Latin singing",
+        "fr": "Le chant grégorien ne désigne pas tout chant latin a cappella"
+      },
+      "fact": {
+        "en": "St Pius X gave Gregorian chant a normative place in Roman sacred music. The term refers to a real musical repertory and style, not merely any unaccompanied Latin singing.",
+        "fr": "Saint Pie X a donné au chant grégorien une place normative dans la musique sacrée romaine. Le terme désigne un véritable répertoire et un style musical, et non tout chant latin sans accompagnement."
+      },
+      "source": {
+        "id": "PIUS-X-TRA-LE-SOLLECITUDINI-1903",
+        "url": "https://www.vatican.va/content/pius-x/it/motu_proprio/documents/hf_p-x_motu-proprio_19031122_sollecitudini.html",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G241",
+      "discovery_topic": "LITURGY"
+    },
+    {
+      "id": "DYK-GL-G249-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "Neumes are written signs, not the sounds themselves",
+        "fr": "Les neumes sont des signes écrits, non des sons"
+      },
+      "fact": {
+        "en": "Gregorian neumes are written signs that indicate notes or melodic movements in chant notation. They are not the sounds themselves, and their shapes vary among historical notational traditions.",
+        "fr": "Les neumes grégoriens sont des signes écrits qui indiquent des notes ou des mouvements mélodiques dans la notation du chant. Ce ne sont pas les sons eux-mêmes, et leurs formes varient selon les traditions de notation."
+      },
+      "source": {
+        "id": "SRC-HIST-NEUME",
+        "url": "https://www.newadvent.org/cathen/10765b.htm",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G249",
+      "discovery_topic": "LITURGY"
+    },
+    {
+      "id": "DYK-GL-G251-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "An incipit names a chant by its opening words",
+        "fr": "Un incipit désigne un chant par ses premiers mots"
+      },
+      "fact": {
+        "en": "An incipit is the opening words or notes of a prayer or chant, often used in a liturgical book to identify the whole piece. In singing, it can also mean the part intoned before others continue.",
+        "fr": "Un incipit est le début d’une prière ou d’un chant, souvent employé dans les livres liturgiques pour identifier l’ensemble de la pièce. Dans le chant, il peut aussi désigner la partie entonnée avant que les autres poursuivent."
+      },
+      "source": {
+        "id": "MR62-ORDINARY",
+        "url": "https://archive.org/details/sp07mr62-editio-typica",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G251",
+      "discovery_topic": "LITURGY"
+    },
+    {
+      "id": "DYK-GL-G079-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "An altar and a tabernacle are not the same thing",
+        "fr": "Un autel et un tabernacle ne sont pas la même chose"
+      },
+      "fact": {
+        "en": "An altar is the sacred place where the Eucharistic sacrifice is offered. The tabernacle, even when it stands on or behind an altar, is a separate place where the Blessed Sacrament is reserved.",
+        "fr": "L’autel est le lieu sacré où s’offre le sacrifice eucharistique. Le tabernacle, même lorsqu’il se trouve sur l’autel ou derrière lui, est un lieu distinct où le Saint-Sacrement est conservé."
+      },
+      "source": {
+        "id": "SRC-CIC83-1235-1239",
+        "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann1205-1243_en.html",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G079",
+      "discovery_topic": "ARCHITECTURE"
+    },
+    {
+      "id": "DYK-GL-G080-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "A tabernacle reserves the Eucharist; it is not an altar",
+        "fr": "Le tabernacle conserve l’Eucharistie ; ce n’est pas un autel"
+      },
+      "fact": {
+        "en": "The tabernacle is the secure repository for the Blessed Sacrament, and therefore a focus of Eucharistic adoration whenever the consecrated species are reserved there. It is not another name for the altar.",
+        "fr": "Le tabernacle est le réceptacle sûr destiné à conserver le Saint-Sacrement ; il est donc un lieu d’adoration eucharistique lorsque les espèces consacrées y sont réservées. Il n’est pas un autre nom de l’autel."
+      },
+      "source": {
+        "id": "SRC-CIC83-938-940",
+        "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann897-958_en.html",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G080",
+      "discovery_topic": "ARCHITECTURE"
+    },
+    {
+      "id": "DYK-GL-G182-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "The maniple is worn on the left forearm",
+        "fr": "Le manipule se porte sur l’avant-bras gauche"
+      },
+      "fact": {
+        "en": "In the older Roman Mass, the celebrant, deacon and subdeacon traditionally wear the maniple, a narrow vestment on the left forearm. It remains part of the 1962 ceremonial but is not generally required in the reformed Roman rite.",
+        "fr": "Dans l’ancienne Messe romaine, le célébrant, le diacre et le sous-diacre portent traditionnellement le manipule, ornement étroit sur l’avant-bras gauche. Il demeure dans le cérémonial de 1962, mais n’est généralement pas requis dans le rite romain réformé."
+      },
+      "source": {
+        "id": "SRC-HIST-VESTMENTS-CE",
+        "url": "https://www.newadvent.org/cathen/15388a.htm",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G182",
+      "discovery_topic": "ARCHITECTURE"
+    },
+    {
+      "id": "DYK-GL-G190-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "The chalice is reserved for Eucharistic use",
+        "fr": "Le calice est réservé à l’usage eucharistique"
+      },
+      "fact": {
+        "en": "The chalice is the sacred cup used for the wine consecrated into Christ's Precious Blood at Mass. Because it is a sacred Eucharistic vessel, its preparation and purification follow the rite's prescriptions.",
+        "fr": "Le calice est la coupe sacrée destinée au vin consacré en Précieux Sang du Christ à la Messe. En tant que vase eucharistique sacré, sa préparation et sa purification suivent les prescriptions du rite."
+      },
+      "source": {
+        "id": "MR62-ORDINARY",
+        "url": "https://archive.org/details/sp07mr62-editio-typica",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G190",
+      "discovery_topic": "ARCHITECTURE"
+    },
+    {
+      "id": "DYK-GL-G191-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "A paten is not the same vessel as a ciborium",
+        "fr": "La patène n’est pas le même vase que le ciboire"
+      },
+      "fact": {
+        "en": "The paten is the sacred plate on which the Eucharistic host is offered and consecrated. It differs from the ciborium, a vessel commonly used to reserve or distribute several Hosts.",
+        "fr": "La patène est le plateau sacré sur lequel l’hostie eucharistique est offerte et consacrée. Elle se distingue du ciboire, vase couramment utilisé pour conserver ou distribuer plusieurs Hosties."
+      },
+      "source": {
+        "id": "SRC-HIST-PATEN",
+        "url": "https://www.newadvent.org/cathen/11541b.htm",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G191",
+      "discovery_topic": "ARCHITECTURE"
+    },
+    {
+      "id": "DYK-GL-G194-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "The thurible burns the incense; the boat holds it",
+        "fr": "L’encensoir brûle l’encens ; la navette le contient"
+      },
+      "fact": {
+        "en": "The thurible is the metal vessel in which incense is burned over hot coals. The separate incense boat carries the unburned incense until the thurifer or another minister puts it on the coals.",
+        "fr": "L’encensoir est le vase métallique dans lequel l’encens brûle sur des charbons ardents. La navette, distincte, contient l’encens non brûlé jusqu’à ce que le thuriféraire ou un autre ministre le dépose sur les charbons."
+      },
+      "source": {
+        "id": "SRC-HIST-CENSER",
+        "url": "https://www.newadvent.org/cathen/03519c.htm",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G194",
+      "discovery_topic": "ARCHITECTURE"
+    },
+    {
+      "id": "DYK-GL-G195-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "The incense boat is often shaped like a tiny ship",
+        "fr": "La navette à encens a souvent la forme d’un petit navire"
+      },
+      "fact": {
+        "en": "The small incense boat, often shaped like a little ship, holds the incense grains before they are placed on the charcoal in the thurible. It is normally accompanied by a small spoon.",
+        "fr": "La petite navette à encens, souvent en forme de navire, contient les grains d’encens avant qu’ils soient déposés sur les charbons de l’encensoir. Elle s’accompagne normalement d’une petite cuillère."
+      },
+      "source": {
+        "id": "SRC-OCONNELL-MASS-GENERAL-1962",
+        "url": "https://books.google.com/books/about/The_Celebration_of_Mass.html?id=4cgNAQAAMAAJ",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G195",
+      "discovery_topic": "ARCHITECTURE"
+    },
+    {
+      "id": "DYK-GL-G203-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "A cope is not the same vestment as a chasuble",
+        "fr": "La chape n’est pas le même ornement que la chasuble"
+      },
+      "fact": {
+        "en": "The cope is not a Mass vestment in the strict sense and is used in a wide range of non-Eucharistic or processional rites. Its use depends on the ceremony and the minister.",
+        "fr": "La chape n’est pas, au sens strict, un ornement de Messe et s’emploie dans de nombreux rites non eucharistiques ou processionnels. Son usage dépend de la cérémonie et du ministre."
+      },
+      "source": {
+        "id": "SRC-ROMRIT",
+        "url": "https://www.alcuinus.org/?action=show_item&display=tools&id=74910",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G203",
+      "discovery_topic": "ARCHITECTURE"
+    },
+    {
+      "id": "DYK-GL-G204-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "The humeral veil covers the minister's hands",
+        "fr": "Le voile huméral couvre les mains du ministre"
+      },
+      "fact": {
+        "en": "The humeral veil is worn over the shoulders and covers the hands for certain sacred actions, notably when a minister handles or carries the Blessed Sacrament at Benediction and in processions.",
+        "fr": "Le voile huméral est porté sur les épaules et couvre les mains pendant certaines actions sacrées, notamment lorsqu’un ministre porte ou manipule le Saint-Sacrement au Salut et dans les processions."
+      },
+      "source": {
+        "id": "SRC-ROMRIT",
+        "url": "https://www.alcuinus.org/?action=show_item&display=tools&id=74910",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G204",
+      "discovery_topic": "ARCHITECTURE"
+    },
+    {
+      "id": "DYK-GL-G218-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "The sanctuary lamp signals the reserved Eucharist",
+        "fr": "La lampe du sanctuaire signale la réserve eucharistique"
+      },
+      "fact": {
+        "en": "A lamp kept burning near the tabernacle indicates that the Blessed Sacrament is reserved there. It is a visible sign of reverence, distinct from ordinary lighting of the sanctuary.",
+        "fr": "Une lampe maintenue allumée près du tabernacle indique que le Saint-Sacrement y est conservé. C’est un signe visible de révérence, distinct du simple éclairage du sanctuaire."
+      },
+      "source": {
+        "id": "SRC-CIC83-938-940",
+        "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib4-cann897-958_en.html",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G218",
+      "discovery_topic": "ARCHITECTURE"
+    },
+    {
+      "id": "DYK-GL-G414-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "A sacrarium is a dedicated sacred drain",
+        "fr": "Le sacrarium est un conduit d’évacuation sacré"
+      },
+      "fact": {
+        "en": "A sacrarium is a dedicated drain for disposing reverently of certain blessed water and sacred-liquid residues into the earth. It is not an ordinary disposal sink, although historical terminology overlaps with piscina.",
+        "fr": "Le sacrarium est un conduit spécial permettant de rendre respectueusement à la terre certaines eaux bénites et certains résidus de liquides sacrés. Ce n’est pas un évier ordinaire, même si le vocabulaire historique recoupe celui de piscina."
+      },
+      "source": {
+        "id": "SRC-HIST-PISCINA-SACRARIUM",
+        "url": "https://www.newadvent.org/cathen/12115a.htm",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G414",
+      "discovery_topic": "ARCHITECTURE"
+    },
+    {
+      "id": "DYK-GL-G266-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "A Requiem Mass has distinctive omissions",
+        "fr": "Une Messe de Requiem comporte des omissions propres"
+      },
+      "fact": {
+        "en": "Requiem Masses have distinctive texts and omissions, including changes to the Ordinary. Their classes and permitted occasions are governed separately by the 1962 rubrics.",
+        "fr": "Les Messes de Requiem possèdent des textes et omissions caractéristiques, y compris des modifications de l’Ordinaire. Leurs classes et occasions permises sont régies séparément par les rubriques de 1962."
+      },
+      "source": {
+        "id": "SRC-MR62-REQUIEM",
+        "url": "https://archive.org/details/sp07mr62-editio-typica",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G266",
+      "discovery_topic": "LITURGY"
+    },
+    {
+      "id": "DYK-GL-G271-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "A feast's transfer follows rubrics, not convenience",
+        "fr": "La translation d’une fête suit les rubriques, non la convenance"
+      },
+      "fact": {
+        "en": "Transfer is not a discretionary rescheduling. It occurs only when the rubrics or competent authority provide for it after a higher-ranking observance takes precedence.",
+        "fr": "La translation n’est pas un simple changement de date discrétionnaire. Elle n’a lieu que lorsque les rubriques ou l’autorité compétente le prévoient après la préséance d’une célébration supérieure."
+      },
+      "source": {
+        "id": "MR62-GENERAL-RUBRICS-1960",
+        "url": "https://www.divinumofficium.com/www/horas/Help/Rubrics/General%20Rubrics.html",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G271",
+      "discovery_topic": "LITURGY"
+    },
+    {
+      "id": "DYK-GL-G272-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "Some weekdays outrank saints' feasts",
+        "fr": "Certaines féries priment sur les fêtes des saints"
+      },
+      "fact": {
+        "en": "Certain ferias, especially in major penitential seasons, can outrank feasts or restrict commemorations. The exact privileges depend on the 1962 table and rubric.",
+        "fr": "Certaines féries, notamment dans les grands temps pénitentiels, peuvent l’emporter sur des fêtes ou limiter les commémoraisons. Les privilèges exacts dépendent de la table et des rubriques de 1962."
+      },
+      "source": {
+        "id": "MR62-GENERAL-RUBRICS-1960",
+        "url": "https://www.divinumofficium.com/www/horas/Help/Rubrics/General%20Rubrics.html",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G272",
+      "discovery_topic": "LITURGY"
+    },
+    {
+      "id": "DYK-GL-G278-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "The old ‘double’ rank is not a 1962 feast class",
+        "fr": "L’ancien rang « double » n’est pas une classe de 1962"
+      },
+      "fact": {
+        "en": "Double belonged to the older classification system and included further grades such as greater doubles and doubles of different classes. It is historical terminology and not a 1962 rank.",
+        "fr": "Double appartenait à l’ancien système de classement et comprenait d’autres degrés tels que doubles majeurs et doubles de différentes classes. C’est une terminologie historique et non un rang de 1962."
+      },
+      "source": {
+        "id": "SRC-HIST-PRE1960-RANKS",
+        "url": "https://www.newadvent.org/cathen/06021b.htm",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G278",
+      "discovery_topic": "LITURGY"
+    },
+    {
+      "id": "DYK-GL-G301-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "Adoration can take place without Eucharistic exposition",
+        "fr": "On peut adorer le Saint-Sacrement sans exposition"
+      },
+      "fact": {
+        "en": "Eucharistic adoration is directed to Christ Himself, not to bread as bread or to an object as such. Exposition can intensify the public form of this worship, but reservation in the tabernacle also grounds Eucharistic adoration.",
+        "fr": "L’adoration eucharistique s’adresse au Christ lui-même, non au pain en tant que pain ni à un objet comme tel. L’exposition peut intensifier la forme publique de ce culte, mais la réserve au tabernacle fonde également l’adoration eucharistique."
+      },
+      "source": {
+        "id": "TRENT-XIII-EUCHARIST",
+        "url": "https://www.papalencyclicals.net/councils/trent/thirteenth-session.htm",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G301",
+      "discovery_topic": "DEVOTION"
+    },
+    {
+      "id": "DYK-GL-G303-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "Reposition is not always accompanied by Benediction",
+        "fr": "La reposition ne s’accompagne pas toujours du Salut"
+      },
+      "fact": {
+        "en": "Reposition is the return of the exposed Blessed Sacrament to its place of reservation. It can conclude exposition without the blessing known as Benediction; the two rites are not identical.",
+        "fr": "La reposition consiste à remettre le Saint-Sacrement exposé dans son lieu de réserve. Elle peut terminer l’exposition sans la bénédiction appelée Salut ; ces deux rites ne sont pas identiques."
+      },
+      "source": {
+        "id": "SRC-ROMRIT",
+        "url": "https://www.alcuinus.org/?action=show_item&display=tools&id=74910",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G303",
+      "discovery_topic": "DEVOTION"
+    },
+    {
+      "id": "DYK-GL-G304-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "At Benediction, the blessing is given with the Eucharist",
+        "fr": "Au Salut, la bénédiction est donnée avec l’Eucharistie"
+      },
+      "fact": {
+        "en": "Traditional Benediction normally includes hymns, versicles, prayer, incense and the blessing with the monstrance or ciborium. The blessing is given with the Eucharist, not by the minister in his own name.",
+        "fr": "Le Salut traditionnel comprend normalement hymnes, versets, oraison, encensement et bénédiction avec l’ostensoir ou le ciboire. La bénédiction est donnée avec l’Eucharistie, non par le ministre en son propre nom."
+      },
+      "source": {
+        "id": "SRC-ROMRIT",
+        "url": "https://www.alcuinus.org/?action=show_item&display=tools&id=74910",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G304",
+      "discovery_topic": "DEVOTION"
+    },
+    {
+      "id": "DYK-GL-G419-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "A Way of the Cross station differs from a station church",
+        "fr": "Une station du Chemin de Croix diffère d’une église stationnale"
+      },
+      "fact": {
+        "en": "The Stations of the Cross recall episodes of Christ’s Passion through a series of stations, usually marked by crosses or images. In this devotional sense, ‘station’ differs from a church appointed for a liturgical gathering in the Roman stational tradition.",
+        "fr": "Le Chemin de Croix rappelle des épisodes de la Passion du Christ au moyen d’une série de stations, généralement marquées par des croix ou des images. Dans ce sens dévotionnel, « station » diffère d’une église désignée pour une assemblée liturgique dans la tradition stationnale romaine."
+      },
+      "source": {
+        "id": "SRC-P16-STATIONS",
+        "url": "https://www.newadvent.org/cathen/15569a.htm",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G419",
+      "discovery_topic": "DEVOTION"
+    },
+    {
+      "id": "DYK-GL-G341-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "Vicar General is an office, not a degree of Holy Orders",
+        "fr": "Vicaire général est une charge, non un degré de l’Ordre"
+      },
+      "fact": {
+        "en": "The vicar general acts within the authority granted by universal and particular law and by the diocesan bishop. The office is diocesan and juridical, not a sacramental degree.",
+        "fr": "Le vicaire général agit dans l’autorité accordée par le droit universel et particulier et par l’évêque diocésain. La charge est diocésaine et juridique, non un degré sacramentel."
+      },
+      "source": {
+        "id": "SRC-CIC83-460-572",
+        "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann460-572_en.html",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G341",
+      "discovery_topic": "LITURGY"
+    },
+    {
+      "id": "DYK-GL-G343-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "A parochial vicar assists the parish priest",
+        "fr": "Le vicaire paroissial assiste le curé"
+      },
+      "fact": {
+        "en": "A parochial vicar works under the pastor according to law and the bishop’s arrangements. In French this office is commonly called vicaire paroissial.",
+        "fr": "Le vicaire paroissial travaille sous l’autorité du curé selon le droit et les dispositions de l’évêque. En français cette charge est couramment appelée vicaire paroissial."
+      },
+      "source": {
+        "id": "SRC-CIC83-460-572",
+        "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann460-572_en.html",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G343",
+      "discovery_topic": "LITURGY"
+    },
+    {
+      "id": "DYK-GL-G344-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "Rector of a church is a distinct canonical office",
+        "fr": "Recteur d’église est une charge canonique distincte"
+      },
+      "fact": {
+        "en": "A rector of a church has defined rights and duties concerning worship and pastoral activity there. The office should not be confused with a seminary rector or a generic administrative director.",
+        "fr": "Le recteur d’une église possède des droits et devoirs définis concernant le culte et l’activité pastorale en ce lieu. Cette charge ne doit pas être confondue avec celle de recteur de séminaire ni avec un directeur administratif générique."
+      },
+      "source": {
+        "id": "SRC-CIC83-460-572",
+        "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann460-572_en.html",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G344",
+      "discovery_topic": "LITURGY"
+    },
+    {
+      "id": "DYK-GL-G346-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "A canon can mean a chapter cleric, not a Mass prayer",
+        "fr": "Un chanoine n’est ni le Canon de la Messe ni une loi"
+      },
+      "fact": {
+        "en": "The word 'canon' can name a cleric belonging to a cathedral or collegiate chapter. That is a different meaning from a canon of ecclesiastical law or the Roman Canon prayed at Mass.",
+        "fr": "Le mot « chanoine » désigne un clerc membre d’un chapitre cathédral ou collégial. Ce sens est distinct du canon comme norme de droit ecclésiastique et du Canon romain récité à la Messe."
+      },
+      "source": {
+        "id": "SRC-CIC83-460-572",
+        "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann460-572_en.html",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G346",
+      "discovery_topic": "LITURGY"
+    },
+    {
+      "id": "DYK-GL-G445-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "Religious profession is more than a private promise",
+        "fr": "La profession religieuse est plus qu’une promesse privée"
+      },
+      "fact": {
+        "en": "Religious profession is juridical and ecclesial, not merely a private devotional promise. Temporary and perpetual profession have different canonical effects according to the institute and law.",
+        "fr": "La profession religieuse est juridique et ecclésiale, non une simple promesse dévotionnelle privée. La profession temporaire et la profession perpétuelle ont des effets canoniques différents selon l’institut et le droit."
+      },
+      "source": {
+        "id": "SRC-CIC83-607-709",
+        "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann607-709_en.html",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G445",
+      "discovery_topic": "LITURGY"
+    },
+    {
+      "id": "DYK-GL-G109-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "Church discipline can change without changing doctrine",
+        "fr": "La discipline ecclésiastique peut changer sans changer la doctrine"
+      },
+      "fact": {
+        "en": "Discipline can change when competent authority changes law or practice; doctrine cannot simply be changed by calling it discipline. Many disputes require first identifying whether the matter is dogmatic, doctrinal, disciplinary, liturgical or prudential.",
+        "fr": "La discipline peut changer lorsque l’autorité compétente modifie la loi ou la pratique ; une doctrine ne peut être changée simplement en la qualifiant de discipline. Beaucoup de controverses exigent d’abord d’identifier si la matière est dogmatique, doctrinale, disciplinaire, liturgique ou prudentielle."
+      },
+      "source": {
+        "id": "SRC-CIC83-001-006",
+        "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib1-cann1-6_en.html",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G109",
+      "discovery_topic": "DOCTRINE"
+    },
+    {
+      "id": "DYK-GL-G114-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "Biblical inspiration does not erase human authorship",
+        "fr": "L’inspiration biblique ne supprime pas les auteurs humains"
+      },
+      "fact": {
+        "en": "Divine inspiration makes God the principal author of Scripture without eliminating the true human authorship, vocabulary, literary forms and historical circumstances of the sacred writers.",
+        "fr": "L’inspiration divine fait de Dieu l’auteur principal de l’Écriture sans supprimer la véritable causalité des auteurs humains, leur vocabulaire, leurs formes littéraires et leurs circonstances historiques."
+      },
+      "source": {
+        "id": "VATICAN-I-DEI-FILIUS",
+        "url": "https://www.vatican.va/content/pius-ix/la/documents/constitutio-dogmatica-dei-filius-24-aprilis-1870.html",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G114",
+      "discovery_topic": "DOCTRINE"
+    },
+    {
+      "id": "DYK-GL-G136-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "Not every Catholic association is a religious institute",
+        "fr": "Toute association catholique n’est pas un institut religieux"
+      },
+      "fact": {
+        "en": "Religious institutes include many different orders and congregations. The category must not be applied loosely to every priestly society, association or traditional community; societies of apostolic life are a distinct canonical form.",
+        "fr": "Les instituts religieux comprennent de nombreux ordres et congrégations. La catégorie ne doit pas être appliquée indistinctement à toute société sacerdotale, association ou communauté traditionnelle ; les sociétés de vie apostolique constituent une forme canonique distincte."
+      },
+      "source": {
+        "id": "SRC-CIC83-573-607",
+        "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib2-cann573-606_en.html",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G136",
+      "discovery_topic": "DOCTRINE"
+    },
+    {
+      "id": "DYK-GL-G146-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "Suspension does not erase a priest's ordination",
+        "fr": "La suspense n’efface pas l’ordination d’un prêtre"
+      },
+      "fact": {
+        "en": "Suspension affects clerical exercise of ministry and can vary in scope. It does not by itself invalidate ordination or remove the sacramental character of Holy Orders.",
+        "fr": "La suspense affecte l’exercice clérical du ministère et peut varier dans son étendue. Elle n’invalide pas en elle-même l’ordination et ne supprime pas le caractère sacramentel de l’Ordre."
+      },
+      "source": {
+        "id": "SRC-CIC83-1311-1363",
+        "url": "https://www.vatican.va/archive/cod-iuris-canonici/eng/documents/cic_lib6-cann1311-1363_en.html",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G146",
+      "discovery_topic": "DOCTRINE"
+    },
+    {
+      "id": "DYK-GL-G291-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "Clara voce tells the celebrant to speak audibly",
+        "fr": "Clara voce demande au célébrant de parler audiblement"
+      },
+      "fact": {
+        "en": "In the rubrics of the Roman rite, clara voce means that the celebrant is to say the specified words aloud. It is a ceremonial distinction from prayers said in a low or secret voice, not a microphone setting.",
+        "fr": "Dans les rubriques du rite romain, clara voce demande au célébrant de prononcer les paroles indiquées à voix audible. C’est une distinction cérémonielle par rapport aux prières dites à voix basse ou secrète, non un réglage de microphone."
+      },
+      "source": {
+        "id": "MR62-RITUS-SERVANDUS",
+        "url": "https://archive.org/details/sp07mr62-editio-typica",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G291",
+      "discovery_topic": "LATIN"
+    },
+    {
+      "id": "DYK-GL-G292-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "Submissa voce calls for a subdued voice",
+        "fr": "Submissa voce demande de réciter à voix basse"
+      },
+      "fact": {
+        "en": "Submissa voce instructs the celebrant to say the specified prayer in a subdued voice, lower than an ordinarily audible recitation. It is distinct from both clara voce and the prescribed secret voice.",
+        "fr": "Submissa voce demande au célébrant de dire la prière prescrite à voix basse, moins fortement qu’une récitation ordinairement audible. Elle se distingue de clara voce et de la voix secrète prescrite."
+      },
+      "source": {
+        "id": "MR62-RITUS-SERVANDUS",
+        "url": "https://archive.org/details/sp07mr62-editio-typica",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G292",
+      "discovery_topic": "LATIN"
+    },
+    {
+      "id": "DYK-GL-G300-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "Osculatur altare tells the celebrant to kiss the altar",
+        "fr": "Osculatur altare demande au célébrant de baiser l’autel"
+      },
+      "fact": {
+        "en": "Osculatur altare means « he kisses the altar ». This expression directs the celebrant to kiss the altar at prescribed moments, a gesture of reverence for the altar and its sacred significance.",
+        "fr": "Osculatur altare signifie « il baise l’autel ». Cette expression indique au célébrant de baiser l’autel aux moments prescrits, en signe de révérence pour l’autel et sa signification sacrée."
+      },
+      "source": {
+        "id": "MR62-RITUS-SERVANDUS",
+        "url": "https://archive.org/details/sp07mr62-editio-typica",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G300",
+      "discovery_topic": "LATIN"
+    },
+    {
+      "id": "DYK-GL-G381-01",
+      "category": "GLOSSARY",
+      "title": {
+        "en": "Oremus comes from the Latin verb orare",
+        "fr": "Oremus vient du verbe latin orare"
+      },
+      "fact": {
+        "en": "Oremus, the familiar Latin invitation 'Let us pray', comes from the verb orare, 'to pray' or 'to ask'. The same verb supplies a family of words used throughout Roman liturgical prayer.",
+        "fr": "Oremus, la formule latine familière « Prions », vient du verbe orare, « prier » ou « demander ». Ce verbe a donné toute une famille de mots employés dans la prière liturgique romaine."
+      },
+      "source": {
+        "id": "MR62-ORDINARY",
+        "url": "https://archive.org/details/sp07mr62-editio-typica",
+        "alternative_urls": []
+      },
+      "origin": "GLOSSARY_EDUCATIONAL_DISCOVERY_20261111_C",
+      "glossary_concept_id": "G381",
       "discovery_topic": "LATIN"
     }
   ]
