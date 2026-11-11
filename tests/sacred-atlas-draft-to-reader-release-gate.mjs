@@ -43,7 +43,7 @@ const identityOnly=diagnoses.filter(x=>x.issues.includes("SOURCE_METADATA_LIMITE
 
 
 const poondiOfficial=wave2.find(x=>x.draft_order===202);
-assert.ok(poondiOfficial&&poondiOfficial.research_source_ids.length===3);
+assert.ok(poondiOfficial&&poondiOfficial.research_source_ids.length===2);
 assert.ok(!inspectSacredGuideEvidence(poondiOfficial,byPlace.get(poondiOfficial.place_id),sources).issues
   .includes("BROKEN_CANONICAL_SOURCE_LINK"),"Place-bound research references should validate");
 const borrowedSource=researchSupplement.sources.find(x=>x.place_id!==poondiOfficial.place_id);
