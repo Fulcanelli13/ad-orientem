@@ -13,6 +13,22 @@
 - Current source-linked name/locality crosswalk for these **21** identities is in `matched_existing_site_ids` in the adjacent JSON manifest. This does **not** certify schedules or visitor entrances.
 - Historical independent-directory research already exists: [Brazil draft #1694](https://github.com/Fulcanelli13/ad-orientem/pull/1694) screened 91 positions (89 unique names/localities after pagination duplicates) and [Italy draft #1716](https://github.com/Fulcanelli13/ad-orientem/pull/1716) screened 117 venue listings. Their findings require reconciliation to **current CL2 IDs** before any reuse; do not repeat their scraping or count them as admitted new sites.
 
+## Complete archived 1,531-row ID reconciliation — no new scrape
+The repository already contained a [9 October LMD research archive](../../../data/directory/research/approved-mass-worldwide-crosswalk-20261009.v1.json) with **1,531** source records across **56** countries. I processed **all 1,531 IDs** against the **current** CL2 physical-site index without fetching or republishing any new external venue records. The row-by-row status ledger is [here](../../../data/directory/research/lmd-archived-1531-to-cl2-crosswalk-20261111.v1.json).
+
+| Current CL2 ID reconciliation of archived rows | Rows |
+|---|---:|
+| Exact historical LMD source ID or URL already in CL2 | **118** |
+| Only an old name-based suggestion to a present CL2 source ID — **unverified** | **128** |
+| No direct CL2 provenance link and no surviving old name suggestion — **not automatically missing** | **1,285** |
+| **All archived rows accounted for** | **1,531** |
+
+The 118 direct matches comprise **87** source-ID matches and **31** URL-only matches (of the 87 source-ID matches, three also have the matching URL). These are source-provenance matches only, **not** active-Mass or exact-building approvals.
+
+The 128 old name-only suggestions require identity checks; historical suggestions frequently matched different towns sharing common church names, so they must **not** be silently promoted. The 1,285 other rows may already have a CL2 identity sourced from a different directory, and their lack of an LMD provenance link is **not** proof of absence.
+
+The **1,531 archived positions** and **1,570 current LMD country-reported positions** come from different dates and selection processes. Their raw numerical difference of 39 is **not** a verified list of 39 new venues. These source-ID counts also **must not be added** to the separately validated Mauritius/Ireland 21 current identity matches without de-duplication.
+
 ## Geographic candidates — more meaningful than raw totals
 **Fourteen** LMD-listed countries/territories have **zero** physical sites in the current CL2 country field. Their LMD country pages collectively report **20 venue positions**.
 
