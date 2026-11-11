@@ -154,7 +154,9 @@ const SHELL_STYLE = `
 .ao-schola-dock[data-approved-score="true"] .ao-schola-approved-staff{
   position:relative;height:63px;max-height:63px;width:100%;
   overflow-x:auto;overflow-y:auto;scrollbar-width:none;overscroll-behavior:contain;
-  touch-action:pan-x;cursor:crosshair
+  /* Horizontal swipes are handled by the source-syllable follower.
+     Native pan-x would move the SVG without updating the Mass text. */
+  touch-action:pan-y;cursor:crosshair
 }
 .ao-schola-approved-staff::-webkit-scrollbar{display:none}
 .ao-schola-dock[data-approved-score="true"] .ao-schola-approved-staff svg{
