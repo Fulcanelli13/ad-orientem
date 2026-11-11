@@ -125,6 +125,19 @@ try{
       rootSelector+' .aoClaudeHolyFront .aoClaudeHolyPlate'+signSlot);
      assert.equal(await trueCard.count(),1,"Sign of the Cross must display the exact original in its active prayer reader");
     assert.ok((await trueCard.getAttribute("src")).endsWith("girardin-trinity-original.jpg"));
+    // The route remounts asynchronously. A successfully decoded image can
+    // briefly have a zero-size rectangle until the active card is laid out.
+    // Keep the real 320/390px visible-painting requirement, but wait for its
+    // final rendered geometry rather than sampling the first animation frame.
+    await trueCard.waitFor({state:"visible",timeout:15000});
+    await page.waitForFunction(()=>{
+      const selector='#aoPray435930.open .aoEssentialFlowArt[data-ao-editorial-slot="COV-foundations_sign_of_cross"] img,'+
+        '#aoPray435930.open .aoClaudeHolyFront .aoClaudeHolyPlate[data-ao-editorial-slot="COV-foundations_sign_of_cross"] img';
+      const img=document.querySelector(selector);
+      if(!img||!img.complete||img.naturalWidth<2800)return false;
+      const r=img.getBoundingClientRect();
+      return r.width>90&&r.height>120;
+    },null,{timeout:15000});
     const front=await trueCard.evaluate(async img=>{
      img.loading="eager";await img.decode();
      const r=img.getBoundingClientRect();
@@ -132,7 +145,7 @@ try{
        naturalWidth:img.naturalWidth,fit:getComputedStyle(img).objectFit,
        horizontalOverflow:document.documentElement.scrollWidth-innerWidth};
     });
-    assert.ok(front.naturalWidth>=2800&&front.width>90&&front.height>120,"Actual Holy Card photograph decode");
+    assert.ok(front.naturalWidth>=2800&&front.width>90&&front.height>120,"Actual Holy Card photograph decode and visible geometry "+JSON.stringify(front));
     assert.equal(front.fit,"contain","The entire painting must be shown without cropping");
     assert.ok(front.top<=(width===320?640:844),"The painting must be visible without scrolling past the card");
     assert.ok(front.horizontalOverflow<=1,"No actual Holy Card overflow");
