@@ -422,12 +422,25 @@ try{
         globalThis.AO_GLOSSARY_V1?.status?.()?.open===false,
         null,{timeout:10000});
     }else{
-      assert.match(historicalId,/^DYK-(?:G520-W-0|R50-W-0|R50B-W-0|H100-[PM]-0|H125-[PMX]-0|H150-[PMBC]-0|H175-[PBM]-0|H200-[CBM]-0|H225-R-0)/);
+      // Customs/Glossary facts now share the Home card with historic releases.
+      // Match the 520 IDs against the actual content registry, not a broad prefix.
+      const curated520=JSON.parse(await readFile(resolve(root,
+        "data/did-you-know/dyk-customs-glossary-520.v1.json"),"utf8"));
+      const curated=curated520.records.find(row=>row.id===historicalId);
+      if(!curated){
+        assert.match(historicalId,/^DYK-(?:G520-W-0|R50-W-0|R50B-W-0|H100-[PM]-0|H125-[PMX]-0|H150-[PMBC]-0|H175-[PBM]-0|H200-[CBM]-0|H225-R-0)/);
+      }
       const source=h4.locator("[data-dyk-published='"+historicalId+"']");
       await source.waitFor({state:"visible",timeout:30000});
-      if(/^(?:DYK-H125-X-00[1-4]|DYK-H150-B-00[1-7]|DYK-H175-B-0(?:0[1-9]|1[0-4])|DYK-H200-[CB]-0(?:0[1-9]|10)|DYK-H225-R-0(?:0[1-9]|1[0-9]|2[0-5]))$/.test(historicalId)){
+      if(curated||/^(?:DYK-H125-X-00[1-4]|DYK-H150-B-00[1-7]|DYK-H175-B-0(?:0[1-9]|1[0-4])|DYK-H200-[CB]-0(?:0[1-9]|10)|DYK-H225-R-0(?:0[1-9]|1[0-9]|2[0-5]))$/.test(historicalId)){
         assert.equal(await source.locator("a[href^='https://']").count()>=1,true,
-          "Historical webpage must open its exact original source URL");
+          "Source detail must open its exact original HTTPS URL");
+        if(curated){
+          assert.equal(await source.locator("h2").innerText(),curated.title.en,
+            "Curated discovery must show its own fact title");
+          assert.ok((await source.innerText()).includes(curated.fact.en),
+            "Curated discovery source detail must show the exact bilingual-bank fact");
+        }
       }else{
         assert.equal(await source.locator("a[href*='#page=']").count()>=1,true,
           "Historical PDF discovery must display its precise source page");
