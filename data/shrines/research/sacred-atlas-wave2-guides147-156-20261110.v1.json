@@ -529,8 +529,8 @@
             {
               "en": "Montserrat Abbey stands in a distinctive mountain setting in Catalonia, combining the daily life of a Benedictine community with pilgrimage to Our Lady of Montserrat. The sanctuary is not simply a viewpoint or a historic monastery museum. Its identity depends on the religious relationship between the monastic church, the venerated Marian image and the pilgrims who visit.",
               "fr": "L’abbaye de Montserrat se dresse dans un cadre montagneux singulier de Catalogne, réunissant la vie quotidienne d’une communauté bénédictine et le pèlerinage à Notre-Dame de Montserrat. Le sanctuaire n’est pas seulement un belvédère ni un musée monastique. Son identité tient au lien religieux entre l’église abbatiale, l’image mariale vénérée et les pèlerins qui viennent la prier.",
-              "source_id": "SG-SITE-SG-BATCH2-002",
-              "source_url": "https://abadiamontserrat.cat/en/sanctuary/start"
+              "source_id": "AO-ED-MONTSERRAT-BASILICA-20261111",
+              "source_url": "https://abadiamontserrat.cat/en/santuari/Basilica-and-other-places-of-worship"
             }
           ]
         },
@@ -540,10 +540,10 @@
           "title_fr": "L’image de Notre-Dame de Montserrat",
           "paragraphs": [
             {
-              "en": "Pilgrims honour the Marian image often called the Black Madonna or La Moreneta, which anchors the shrine’s devotional identity. The image’s artistic form and inherited religious significance can be described together without claiming that every legend concerning its origins is independently verified. The abbey and the image are part of the same sanctuary, not two unrelated Catalan destinations.",
-              "fr": "Les pèlerins honorent l’image mariale souvent appelée la Vierge noire ou la Moreneta, qui donne son foyer à la dévotion du sanctuaire. Sa forme artistique et sa signification religieuse transmise peuvent être présentées ensemble sans considérer comme vérifiée chaque légende sur ses origines. L’abbaye et l’image appartiennent à un même sanctuaire et non à deux destinations catalanes sans lien.",
-              "source_id": "SG-SITE-SG-BATCH2-002",
-              "source_url": "https://abadiamontserrat.cat/en/sanctuary/start"
+              "en": "Pilgrims venerate Our Lady of Montserrat, affectionately called La Moreneta because of the dark colour of her face and hands. The abbey identifies the statue as a Romanesque wooden carving of the late twelfth century, representing the Virgin and Child; the stories of the image's discovery belong to a separate devotional tradition.",
+              "fr": "Les pèlerins vénèrent Notre-Dame de Montserrat, appelée affectueusement la Moreneta en raison de la couleur sombre de son visage et de ses mains. L’abbaye date cette statue en bois de la fin du XIIe siècle : elle représente la Vierge à l’Enfant. Les récits de sa découverte relèvent d’une tradition dévotionnelle distincte.",
+              "source_id": "AO-ED-MONTSERRAT-IMAGE-20261111",
+              "source_url": "https://abadiamontserrat.cat/en/santuari/our-lady-of-montserrat"
             }
           ]
         },
@@ -555,8 +555,8 @@
             {
               "en": "The monastery’s living prayer and sacred music are part of the experience of pilgrimage, alongside prayer before the Marian image. Current liturgical and visiting times belong to the abbey’s own notices; the site’s long history is not evidence of a fixed traditional Roman rite.",
               "fr": "La prière monastique et la musique sacrée font partie de l’expérience du pèlerinage, aux côtés du recueillement devant l’image mariale. Les horaires de liturgie et de visite relèvent des annonces de l’abbaye ; l’ancienneté du site ne prouve pas l’usage permanent d’un rite romain traditionnel.",
-              "source_id": "SG-SITE-SG-BATCH2-002",
-              "source_url": "https://abadiamontserrat.cat/en/sanctuary/start"
+              "source_id": "AO-ED-MONTSERRAT-BASILICA-20261111",
+              "source_url": "https://abadiamontserrat.cat/en/santuari/Basilica-and-other-places-of-worship"
             }
           ]
         }
@@ -564,11 +564,17 @@
       "existing_pilgrimage_ids": [],
       "saint_name_associations": [],
       "bibliography_urls": [
-        "https://abadiamontserrat.cat/en/sanctuary/start"
+        "https://abadiamontserrat.cat/en/sanctuary/start",
+        "https://abadiamontserrat.cat/en/santuari/Basilica-and-other-places-of-worship",
+        "https://abadiamontserrat.cat/en/santuari/our-lady-of-montserrat"
       ],
       "source_evidence_scope": "CANONICAL_SOURCE_REGISTRY_REUSED_NOT_REFETCHED",
       "next_gate": "EDITORIAL_FACT_AND_BILINGUAL_REVIEW_BEFORE_PUBLICATION",
-      "publication_authorized": false
+      "publication_authorized": false,
+      "research_source_ids": [
+        "AO-ED-MONTSERRAT-BASILICA-20261111",
+        "AO-ED-MONTSERRAT-IMAGE-20261111"
+      ]
     },
     {
       "place_id": "place:MT:national-shrine-of-our-lady-of-ta-pinu",
