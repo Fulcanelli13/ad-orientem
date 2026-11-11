@@ -27,6 +27,47 @@ export function scholaGabcSyllables(gabc){
  return Object.freeze(items);
 }
 
+/** Source-specified Kyrie repetitions, not added pitches. A complete
+ * ninefold performance must be written as 3 Kyrie, 3 Christe, 3 Kyrie by
+ * the explicit "iij"/"ij" print cues. Unknown notation returns ORIGINAL
+ * syllables: no guessed repeat count or editorial melody substitution. */
+export function scholaKyrieSourceOccurrences(gabc){
+ const source=scholaGabcSyllables(gabc);
+ const body=String(gabc??"").split("%%")[1]??"";
+ if(!source.length||!body.includes("<i>"))return source;
+ const chunks=body.split("(::)").filter(chunk=>/\p{L}/u.test(chunk.replace(/<[^>]*>/g,"")));
+ const phrases=[];let sourceCursor=0,hasRepeats=false;
+ for(const chunk of chunks){
+  const local=scholaGabcSyllables("name: Kyrie source span;\\n%%\\n"+chunk+"(::)");
+  if(!local.length)continue;
+  const markers=[...chunk.matchAll(/<i>\\s*([^<]+)<\\/i>/giu)].map(m=>m[1].trim().toLowerCase());
+  let copies=1;
+  if(markers.length){
+   if(markers.length!==1)return source;
+   const directive=markers[0].replace(/[.\\s]/g,"");
+   if(!["ij","iij"].includes(directive))return source;
+   copies=directive==="iij"?3:2;
+   hasRepeats=true;
+  }
+  const title=local.map(s=>s.identity).join("");
+  if(!["kyrieeleison","christeeleison"].includes(title))return source;
+  phrases.push({local,copies,sourceCursor,title});
+  sourceCursor+=local.length;
+ }
+ if(!hasRepeats||sourceCursor!==source.length)return source;
+ const labels=phrases.flatMap(p=>Array(p.copies).fill(p.title));
+ if(labels.length!==9||
+    !labels.slice(0,3).every(x=>x==="kyrieeleison")||
+    !labels.slice(3,6).every(x=>x==="christeeleison")||
+    !labels.slice(6).every(x=>x==="kyrieeleison"))return source;
+ const performed=[];
+ for(const phrase of phrases)for(let pass=0;pass<phrase.copies;pass++)
+  for(const token of phrase.local)
+   performed.push(Object.freeze({...token,index:performed.length,
+    sourceIndex:phrase.sourceCursor+token.index,repeatPass:pass+1}));
+ return Object.freeze(performed);
+}
+
 // Musical durations are unobserved. This deterministic visual cadence is
 // approximate and can be corrected by touch at any syllable.
 export function createScholaFollowClock({
@@ -112,10 +153,10 @@ export function mapScholaSvgLyrics(svg,syllables){
 }
 
 export function createScholaNotationFollower({staff,strip,document=staff?.ownerDocument,
- window=document?.defaultView,stepMs=1600,onPosition=()=>{}}={}){
+ window=document?.defaultView,stepMs=1600,onPosition=()=>{},trackId=null}={}){
  if(!staff?.addEventListener||!strip?.replaceChildren||!document?.createElement)
   throw new TypeError("Schola staff, syllable strip and document required");
- let parts=[],buttons=[],targets=[],startPoint=null,destroyed=false,active=-1;
+ let parts=[],sourceParts=[],buttons=[],targets=[],startPoint=null,destroyed=false,active=-1;
  const clock=createScholaFollowClock({
   stepMs,
   schedule:window?.setTimeout?.bind(window)??globalThis.setTimeout,
@@ -129,11 +170,12 @@ export function createScholaNotationFollower({staff,strip,document=staff?.ownerD
     if(i===index)buttons[i].setAttribute("aria-current","true");
     else buttons[i].removeAttribute("aria-current");
    }
-   for(let i=0;i<targets.length;i++)targets[i].dataset.scholaFollowActive=String(i===index);
+   const sourceIndex=parts[index]?.sourceIndex??index;
+   for(let i=0;i<targets.length;i++)targets[i].dataset.scholaFollowActive=String(i===sourceIndex);
    const button=buttons[index];
    if(button)strip.scrollLeft=Math.max(0,button.offsetLeft-
      (strip.clientWidth-button.offsetWidth)/2);
-   const node=targets[index];
+   const node=targets[sourceIndex];
    if(node?.getBoundingClientRect){
     const position=node.getBoundingClientRect(),parent=staff.getBoundingClientRect();
     staff.scrollTop+=position.top-parent.top-(staff.clientHeight-position.height)/2;
@@ -143,7 +185,7 @@ export function createScholaNotationFollower({staff,strip,document=staff?.ownerD
    // The Mass text synchronizer receives this same syllable index, never
    // a second timer or an inferred priest cue.
    try{onPosition(Object.freeze({index,count:parts.length,origin,
-     lyricsMapped:targets.length===parts.length}))}catch{}
+     sourceIndex,lyricsMapped:targets.length===sourceParts.length}))}catch{}
   }
  });
  function click(event){
@@ -184,7 +226,9 @@ export function createScholaNotationFollower({staff,strip,document=staff?.ownerD
  staff.addEventListener("pointercancel",pointCancel);
  function start(gabc){
   if(destroyed)return false;
-  parts=scholaGabcSyllables(gabc);buttons=[];targets=[];strip.replaceChildren();
+  sourceParts=scholaGabcSyllables(gabc);
+  parts=trackId==="KYRIE"?scholaKyrieSourceOccurrences(gabc):sourceParts;
+  buttons=[];targets=[];strip.replaceChildren();
   if(!parts.length){strip.hidden=true;return false;}
   const frag=document.createDocumentFragment();
   for(const part of parts){
@@ -197,8 +241,8 @@ export function createScholaNotationFollower({staff,strip,document=staff?.ownerD
    buttons.push(node);frag.append(node);
   }
   strip.append(frag);strip.hidden=false;
-  targets=mapScholaSvgLyrics(staff.querySelector("svg"),parts);
-  staff.dataset.scholaLyricsMapped=String(targets.length===parts.length);
+  targets=mapScholaSvgLyrics(staff.querySelector("svg"),sourceParts);
+  staff.dataset.scholaLyricsMapped=String(targets.length===sourceParts.length);
   return clock.start(parts.length);
  }
  function destroy(){
@@ -213,6 +257,7 @@ export function createScholaNotationFollower({staff,strip,document=staff?.ownerD
   start,destroy,seek:index=>clock.seek(index),shift:by=>clock.shift(by),
   pause:()=>clock.pause(),resume:()=>clock.resume(),
   getState:()=>Object.freeze({...clock.getState(),syllables:parts.length,
-   mapped:targets.length===parts.length&&parts.length>0,active})
+   mapped:targets.length===sourceParts.length&&sourceParts.length>0,
+   sourceSyllables:sourceParts.length,active})
  });
 }
