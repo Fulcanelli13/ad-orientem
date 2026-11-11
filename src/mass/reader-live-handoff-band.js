@@ -333,7 +333,7 @@ export function mountLiveHandoffBand({preview,prepared=null,doc=globalThis.docum
     lastScene=scene;
     routeButtons();
     const sceneSignature=JSON.stringify([scene.status,scene.priest,scene.faithful,
-      scene.server,scene.candles,scene.colour,scene.requiem]);
+      scene.server,scene.signs,scene.candles,scene.colour,scene.requiem]);
     if(sceneSignature!==lastSceneSignature){
       if(activeRoute)stopRoutePreview();
       sanctuaryContent.innerHTML=renderClaudeNativeSanctuary(scene);
