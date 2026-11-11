@@ -63,3 +63,54 @@ across card, preview, profile, gallery and map.
 The release does not change scheduling, address/pins, source ministry
 joins, rite, Missal, ecclesial position, Una Cum, releases or hosting.
 Public deployment remains GitHub Actions and GitHub Pages only.
+
+
+## Consolidated release receipt: 42 additional source-exact sites and P107 photography
+
+The first-party category witness overlay now comprises **164 individual
+venues**. The 42 additional exact source matches include 31 LMS
+discoveries, eight historical LMD records, two other-source sites and
+one formerly unknown. They record **36 diocesan contexts** and **six
+mixed/host contexts**; no community property title or liturgical edition
+was inferred. The new overall category tally is:
+
+| Category | Sites |
+| --- | ---: |
+| Priestly societies / clergy source context | 1,393 |
+| Diocesan / parish context | 762 |
+| Religious houses | 113 |
+| Mixed / hosted | 32 |
+| Lay association or local group | 25 |
+| Unresolved source association | 181 |
+| Directory-only group association | 74 |
+| **All physical sites** | **2,580** |
+
+There are **2,325 positive source-context classifications (90.12%)**,
+with **255 still held (181 unresolved and 74 directory-only)**.
+
+The **P107** release uses the *existing, approved photographs* in the
+Sacred Places Gallery to add two exact, source-grounded Directory links:
+
+- **Westminster Cathedral**, source `AO-B35-L-GB-91CDCC69A421` ->
+  `place:GB:westminster-cathedral` (current diocesan venue witness).
+- **Wallfahrtskirche Maria Vesperbild**, source
+  `AO-RSCH-B69-3A43E996D0D9` ->
+  `place:DE:maria-vesperbild` (same official name and street address).
+
+This raises the currently exact-linked approved **diocesan photo
+heroes from seven to nine**. It does **not** mean nine newly acquired
+images: there are zero new photographic assets, all existing media
+credits and permissions are preserved, and the physical 2,580 site
+records have no changes. The canonical Sacred Places links increase
+from 24 to 26, with the P107 receipt appended to the live release
+chain. No coordinates, new Places or Mass schedule rows are added.
+
+**Walsingham caution:** the stored, approved shrine picture depicts
+the Slipper Chapel; it is deliberately not cross-linked as a photo
+of the Basilica. Similar generic church names in different
+localities cannot justify a photo crosswalk.
+
+The remaining image gap after P107 is **753 diocesan-context sites
+without an approved, exact-linked hero**. This is an asset-coverage
+gap, not a need to revisit the rights or identity of previously
+curated photos.
