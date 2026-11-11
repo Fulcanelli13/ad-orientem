@@ -71,10 +71,12 @@ const elevation="Words of Consecration and Elevation · Host";
 assert.equal(send(elevation,{sourceCueId:"AO.SM.C0174",certifiedSourceFocus:false})
  .choreography,"STATIC_STAGE");
 assert.equal(send(elevation,{sourceCueId:"AO.SM.C0174",certifiedSourceFocus:true})
- .choreography,"SOURCE_TRIGGERED");
+ .choreography,"STATIC_STAGE","Wrong canonical source section cannot trigger Host elevation");
+assert.equal(send(elevation,{sourceCueId:"AO.SM.C0174",certifiedSourceFocus:true,
+ sourceSectionId:"AO.CANON.06"}).choreography,"SOURCE_TRIGGERED");
 assert.deepEqual(presented.at(-1),["C36",true]);
-assert.equal(send(elevation,{sourceCueId:"AO.SM.C0174",certifiedSourceFocus:true})
- .choreography,"STATIC_STAGE");
+assert.equal(send(elevation,{sourceCueId:"AO.SM.C0174",certifiedSourceFocus:true,
+ sourceSectionId:"AO.CANON.06"}).choreography,"STATIC_STAGE");
 assert.equal(send("Introit",{form:"LOW"}).card,"C05");
 assert.equal(st.form,"low");
 assert.ok(rebuilds>=2,"All forms reuse the original renderer's mount path");
@@ -84,3 +86,15 @@ assert.equal(send("Credo · Opening",{form:"LOW"}).card,"C16");
 assert.equal(send("Introit",{form:"SOLEMN"}).card,"C05");
 assert.equal(st.solemn,true);
 console.log("PASS original full visual SHA, 65 cards, Low/Sung/Solemn, independent Schola, source-only choreography and preserved camera gesture surface");
+
+const manifest=JSON.parse(read("../assets/mass/live-sanctuary/original-gitblobs.v1.json"));
+assert.equal(manifest.originalIconCount,65);
+assert.equal(Object.keys(manifest.originalIconGitBlobs).length,65);
+for(const [name,hash] of Object.entries(manifest.originalIconGitBlobs)){
+ const file=readFileSync(new URL("../assets/mass/live-sanctuary/icons/"+
+   encodeURIComponent(name),import.meta.url));
+ const actual=createHash("sha1").update(Buffer.from("blob "+file.length+"\0"))
+   .update(file).digest("hex");
+ assert.equal(actual,hash,"Owner source icon changed: "+name);
+}
+console.log("PASS all 65 exact original icon Git blobs retained");

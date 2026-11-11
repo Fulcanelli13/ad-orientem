@@ -43,7 +43,7 @@ const CSS=String.raw`
  .ao-reader-shell.ao-sanctuary-preview{--ao-sanctuary-height:110px}
 }`;
 export function createReaderSanctuaryPreview({root,win=root?.ownerDocument?.defaultView,
- src="./assets/mass/live-sanctuary/index.html?aoSanctuary=1",enabled=false}={}){
+ src=new URL("../../assets/mass/live-sanctuary/index.html?aoSanctuary=1",import.meta.url).href,enabled=false}={}){
  if(!enabled||!root?.querySelector||!win?.location)return NOOP;
  const shell=root.querySelector(".ao-reader-shell");
  const stage=shell?.querySelector(".ao-reader-stage");
