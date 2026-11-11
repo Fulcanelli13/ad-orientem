@@ -52,7 +52,7 @@ import {plannedPrayerArtworkSlot} from "./planned-photo-slots.v1.js";
 import {releasedModulePhotoMarkup} from "../art/released-module-paintings.v1.js";
 import "./adoration-folio-styles.js";
 import {installAngelusCardDeck} from "./devotional-card-deck.js";
-import {decorateAngelusA1,syncAngelusA1} from "./angelus-a1-definitive.js";
+import {angelusA1Painting,decorateAngelusA1,syncAngelusA1} from "./angelus-a1-definitive.js";
 import {updateDevotionalProgress,devotionalProgressMarkup} from "./devotional-progress.js";
 import {angelusCommunalParts} from "./angelus-folio-recitation.js";
 import {internalPrayerView,supportedDirectPrayerRoute} from "./internal-route-owner.js";
@@ -974,14 +974,34 @@ function myCustomsDoor(){
   +moduleIcon('pray.library')+'<small class="aoP435930ModuleKind">'+esc(L('PERSONAL','PERSONNEL'))+'</small>'
   +'<b>'+esc(name)+'</b><span class="aoP435930ModuleDescription">'+esc(desc)+'</span></button>';
 }
+function renderAngelusA1HomeCard(){
+ const form=angelusChoice().form,art=angelusA1Painting({form,dateKey:selectedDateKey()});
+ const title=form==='regina'?'Regina Cæli':L('Angelus',"Angélus");
+ const time=CLAUDE_ANGELUS_HOUR===6?L('Morning','Matin'):CLAUDE_ANGELUS_HOUR===18?L('Evening','Soir'):L('Midday','Midi');
+ const posture=angelusExactPosture();
+ const artTag=art?'<img class="aoA1HomeArt" src="'+esc(art.src)+'" alt="" loading="eager" decoding="async">':'';
+ return '<section class="aoA1HomeSlot" aria-label="'+esc(L('Prayer of the hour','Prière de l’heure'))+'">'+
+  '<button type="button" class="aoA1HomeCard" data-p435930-own="pray.angelus_regina" aria-label="'+esc(L('Open ','Ouvrir ')+title)+'">'+
+  artTag+'<span class="aoA1HomeShade"></span><span class="aoA1HomeCopy">'+
+  '<span class="aoA1HomeKicker">'+esc(time+' · '+L('Prayer of the hour','Prière de l’heure'))+'</span>'+
+  '<strong>'+esc(title)+'</strong><span class="aoA1HomeFoot">'+
+  assetIcon(posture.assetId,'aoA1HomePosture')+'<span>'+esc(posture.label)+'</span>'+
+  '<span class="aoA1HomeOpen">'+esc(L('Begin prayer','Commencer la prière'))+'</span>'+
+  '</span></span></button></section>';
+}
 function renderPrayHome(){
  const families=prayFamilies();
- if(PRAYER_PILOT_ENABLED)return renderPilotDiscovery({head,L,esc,DATA,families,assetIcon,
-  novenaCorpus:window.AO_NOVENAS_V3?.corpus,novenaSupplemental:window.AO_NOVENAS_V3?.supplemental});
+ if(PRAYER_PILOT_ENABLED){
+  const discovery=renderPilotDiscovery({head,L,esc,DATA,families,assetIcon,
+   novenaCorpus:window.AO_NOVENAS_V3?.corpus,novenaSupplemental:window.AO_NOVENAS_V3?.supplemental});
+  const mosaic='<section data-ao-pray-pilot-mosaic';
+  return discovery.includes(mosaic)?discovery.replace(mosaic,renderAngelusA1HomeCard()+mosaic):discovery;
+ }
  const door=id=>prayFamilyDoor(id,families[id]);
  const intro=L('Choose the prayer suited to the moment, or open the full Prayer Library.','Choisissez la prière qui convient au moment, ou ouvrez le Livre de prières.');
  const group=(en,fr,body)=>`<section class="aoP435930RootGroup"><h3>${esc(L(en,fr))}</h3><div class="aoP435930RootGroupDoors aoP435930ModuleGrid">${body}</div></section>`;
  return `${head(L('Pray','Prier'),L('A place for daily prayer and devotion','Un lieu de prière et de dévotion'))}<main class="aoP435930Body aoP435930Home aoP435930RootOrganised">
+  ${renderAngelusA1HomeCard()}
   <section class="aoP435930HomeIntro"><small>${esc(L('PRAY','PRIER'))}</small><h2>${esc(L('Enter into prayer','Entrer en prière'))}</h2><p>${esc(intro)}</p></section>
   <section class="aoP435930RootFeatured" aria-label="${esc(L('Begin with daily prayer','Commencer par la prière quotidienne'))}">${door('daily')}</section>
   ${group('Before the Blessed Sacrament','Devant le Saint-Sacrement',door('eucharistic'))}
