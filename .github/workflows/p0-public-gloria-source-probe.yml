@@ -1,0 +1,24 @@
+name: P0 public Gloria source and menu diagnostic
+on:
+  pull_request:
+    paths:
+      - 'tests/p0-public-gloria-source-probe.mjs'
+      - '.github/workflows/p0-public-gloria-source-probe.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  public-source-diagnostic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser dependencies
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Observe authentic public Home to Mass VIII with Gloria/section menu diagnostics
+        run: node tests/p0-public-gloria-source-probe.mjs
