@@ -11,6 +11,7 @@ import { buildReaderModeModels, captureReaderModeAnchor, findReaderModeAnchorCar
 import { projectGranularMissalCards, missalPrayerHeadingsForCard } from "./reader-missal-granularity.js";
 import { loadReaderPresentationData } from "./reader-data.js";
 import { createReaderDomAdapter, syncReaderRitualHighlights } from "./reader-dom.js";
+import { createReaderSanctuaryPreview } from "./reader-sanctuary-visual.js";
 import { postLowMassLeonineEligible } from "./reader-post-low-mass.js";
 import { buildScholaMusicItinerary } from "./reader-schola-event-timeline.js";
 import {projectNativeRiteMusicItinerary} from "./reader-schola-special-rite-itinerary.js";
@@ -1412,6 +1413,7 @@ export async function mountNativeReaderPreview({
   let current=readerModel.cardBySequence(1);
   let postLowMassLeonineOpened=false;
   let reader=null;
+  let sanctuaryVisual=null;
   let canonManualUI=null;
   let inAsperges=Boolean(ready.aspergesController);
   let inPalm=Boolean(ready.palmController);
@@ -2977,6 +2979,8 @@ export async function mountNativeReaderPreview({
     root.dataset.r17OwnerBell=state.ownership?.bell??"UNRESOLVED";
     root.dataset.r17OwnerCinematic=state.ownership?.cinematic??"UNRESOLVED";
     globalThis.AO_R17_NATIVE_READER_STATE=state;
+    sanctuaryVisual?.project({card:visibleCard,state,
+      form:prepared?.session?.resolvedMass?.form,mode:readerModel?.presentationMode});
     const scroll=host.querySelector?.(".ao-prayer-card");
     if(scroll){
       scroll.scrollTop=0;
@@ -3344,6 +3348,8 @@ export async function mountNativeReaderPreview({
     root.dataset.r17OwnerBell=state.ownership?.bell??"UNRESOLVED";
     root.dataset.r17OwnerCinematic=state.ownership?.cinematic??"UNRESOLVED";
     globalThis.AO_R17_NATIVE_READER_STATE=state;
+    sanctuaryVisual?.project({card:current,state,
+      form:prepared?.session?.resolvedMass?.form,mode:readerModel?.presentationMode});
   }
 
   function queue(){
@@ -3355,6 +3361,7 @@ export async function mountNativeReaderPreview({
   }
 
   function destroy(){
+    sanctuaryVisual?.destroy?.();sanctuaryVisual=null;
     priestEntranceState.reset();
     chaliceObservationState.close();
     observedPriestEvent=null;
@@ -3383,6 +3390,11 @@ export async function mountNativeReaderPreview({
   // Mount only after the model is complete.
   doc.body.appendChild(root);
   reader.mount(prepared);
+  // Opt-in staging only: the original owner-supplied visual must be present
+  // locally under the GitHub Pages asset path before this can be enabled.
+  sanctuaryVisual=createReaderSanctuaryPreview({root:host,win,
+    enabled:new URLSearchParams(win?.location?.search??"").get("aoSanctuaryPreview")==="1" &&
+      String(readerModel?.presentationMode).toUpperCase()==="LIVE"});
   // The existing Mass preferences surface owns secondary tools: no floating
   // button over the section selector or the 48-step LIVE ribbon.
   const nativePreferences=host.querySelector('[data-role="mass-preferences"]');
