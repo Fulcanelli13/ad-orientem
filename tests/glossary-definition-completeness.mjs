@@ -31,6 +31,18 @@ for(const entry of entries){
   }
  }
 }
+// The published definitions use term names, not internal G-IDs, UI instructions,
+// editorial directives or implementation-layer terminology.
+const residualEditorial=/\\bG\\d{3}\\b|\\b(?:phrase layer|gesture registry|search may|the canonical objects|source-backed|editorial note|should be presented|should be taught|current descriptions should|translation must preserve)\\b|(?:couche des phrases|registre des gestes|objets canoniques|doivent être présentés|doit être enseigné|doivent être exposés)/iu;
+for(const entry of entries){
+ for(const field of ["short_definition","explanation"]){
+  for(const language of ["en","fr"]){
+   assert.doesNotMatch(entry[field][language],residualEditorial,
+    entry.id+" "+field+"/"+language+" contains glossary implementation language");
+  }
+ }
+}
+
 const apostasy=entries.find(e=>e.id==="G141"),heresy=entries.find(e=>e.id==="G142"),schism=entries.find(e=>e.id==="G143");
 assert.match(apostasy.explanation.en,/Christian faith as a whole/i);
 assert.match(heresy.explanation.en,/material heresy.*formal heresy/i);
