@@ -7,6 +7,7 @@ on:
       - "src/mass/reader-native-preview.js"
       - "tests/reader-sanctuary-source-65.mjs"
       - "tests/reader-sanctuary-native65-phone.mjs"
+      - "tests/reader-sanctuary-original-motion.mjs"
       - ".github/workflows/live-sanctuary-source.yml"
   workflow_dispatch: {}
 permissions:
@@ -27,6 +28,7 @@ jobs:
           node --check src/mass/reader-sanctuary-visual.js
           node --check assets/mass/live-sanctuary/ao-sanctuary-embedded.js
           node --check tests/reader-sanctuary-native65-phone.mjs
+          node --check tests/reader-sanctuary-original-motion.mjs
       - name: Protect original artwork, exact source cues, rubrics and cinematics
         run: |
           node tests/reader-sanctuary-source-65.mjs
@@ -41,11 +43,14 @@ jobs:
         run: node tests/reader-sanctuary-native65-phone.mjs
       - name: Confirm LIVE rubric and cinematic enter-exit behaviour
         run: node tests/reader-cinematic-scenes-phone.mjs
+      - name: Watch original full-motion routines without certifying choreography
+        run: node tests/reader-sanctuary-original-motion.mjs
       - name: Capture source visual screenshots
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: sanctuary-native-live-review
-          path: artifacts/sanctuary-live/*.png
+          path: |
+            artifacts/sanctuary-live/*.png
           if-no-files-found: warn
           retention-days: 7
