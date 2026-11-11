@@ -2936,6 +2936,7 @@ export function createReaderDomAdapter({
   onParameters = null,
   onCustomaryChange = null,
   onScholaAdvance = null,
+  onScholaLinkedSyllable = null,
   onScholaPrevious = null,
   onScholaRelease = null,
   onScholaRejoin = null,
@@ -3472,7 +3473,22 @@ export function createReaderDomAdapter({
               staff,strip,document:doc,window:doc?.defaultView,
               trackId:score.scholaTrackId,
               onPosition:({index,count})=>{
-                scholaMassTextSync?.follow(index);
+                const followed=scholaMassTextSync?.follow(index)===true;
+                // Curated Gloria/Credo span several canonical LIVE cards.
+                // Only an exact source-verified movement may select the
+                // adjacent reading card. This is DISPLAY navigation, not a
+                // Schola observation or a priest event clock update.
+                if(!followed&&mode==="LIVE"&&
+                   current?.scholaShared===true &&
+                   current?.scholaVisible===true &&
+                   current?.schola?.trackId===score.scholaTrackId &&
+                   root.querySelector(".ao-prayer-card")===reader){
+                  const moved=onScholaLinkedSyllable?.({
+                    trackId:score.scholaTrackId,index,gabc:score.gabc,
+                    fromCardId:current?.id??null
+                  })===true;
+                  if(moved)scholaMassTextSync?.follow(index);
+                }
                 const progress=root.querySelector('[data-role="schola-progress"]');
                 if(progress&&count>0)
                   progress.style.width=(100*(index+1)/count).toFixed(2)+"%";
