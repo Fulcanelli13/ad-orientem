@@ -24,9 +24,9 @@ const sources=[...canonicalSources,...researchSupplement.sources];
 const drafts=[...wave1,...wave2],byPlace=new Map(seed.shrines.map(s=>[s.place_id,s]));
 
 const scopedChecks=researchSupplement.paragraph_research_checks||[];
-assert.equal(scopedChecks.length,63,"Both research cohorts must retain all paragraph evidence rows");
-assert.equal(new Set(scopedChecks.map(r=>r.place_id)).size,21,
-  "Eleven plus ten source-reviewed sites, with no duplicate site expansion");
+assert.equal(scopedChecks.length,93,"All 93 first-pass source paragraph checks must remain intact");
+assert.equal(new Set(scopedChecks.map(r=>r.place_id)).size,31,
+  "All 31 first-pass source-reviewed guides must remain distinct");
 const draftById=new Map(drafts.map(g=>[g.place_id,g]));
 const researchById=new Map(researchSupplement.sources.map(s=>[s.id,s]));
 const canonicalById=new Map(canonicalSources.map(s=>[s.id,s]));
