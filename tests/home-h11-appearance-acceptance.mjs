@@ -436,10 +436,13 @@ try{
         assert.equal(await source.locator("a[href^='https://']").count()>=1,true,
           "Source detail must open its exact original HTTPS URL");
         if(curated){
-          assert.equal(await source.locator("h2").innerText(),curated.title.en,
-            "Curated discovery must show its own fact title");
-          assert.ok((await source.innerText()).includes(curated.fact.en),
-            "Curated discovery source detail must show the exact bilingual-bank fact");
+          const activeLanguage=await dykCard.closest(".homeScreen")
+            .getAttribute("data-home-language");
+          const lang=activeLanguage==="fr"?"fr":"en";
+          assert.equal(await source.locator("h2").innerText(),curated.title[lang],
+            "Curated discovery must show its title in the current Home language");
+          assert.ok((await source.innerText()).includes(curated.fact[lang]),
+            "Curated source detail must match the full fact in the current Home language");
         }
       }else{
         assert.equal(await source.locator("a[href*='#page=']").count()>=1,true,
