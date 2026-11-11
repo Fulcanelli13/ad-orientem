@@ -58,6 +58,7 @@ import {internalPrayerView,supportedDirectPrayerRoute} from "./internal-route-ow
 import {renderLittleCrownB30} from "./little-crown-presentation-b30.js";
 import {PRAYER_SUBJECTS_V1,prayerSubjectsForLibrary,prayerSubjectCounts} from "./prayer-subject-index.v1.js";
 import {guidedPrayerLinksForSubject} from "./prayer-subject-guided-links.v1.js";
+import {CESTAC_MARIAN_DEVOTIONS_V1,cestacMarianWork,cestacMarianMatches} from "./cestac-marian-devotions.v1.js";
 import {PRAYER_SUPPLEMENTAL_LIVE_WORK_LINKS_V1,prayerSupplementalLiveWork,prayerSupplementalLiveWorksForSubject} from "./prayer-supplemental-live-works.v1.js";
 import {prayerSevenSourceWork,prayerSevenSourceWorksForSubject} from "./prayer-seven-source-work-links.v1.js";
 import {redBookletCommunionLibraryLink,redBookletCommunionLibraryLinksForSubject} from "./red-booklet-communion-library-links.v1.js";
@@ -2669,7 +2670,36 @@ function renderLibraryEntryRows(rows,search){
   return `<details class="aoP435930LibraryVariants" data-ao-prayer-family="${esc(entry.family)}"${search?' open':''}><summary><small>${esc(L('Prayer family','Famille de prières'))}</small><b>${esc(isFr()?label.fr:label.en)}</b><span>${entry.prayers.length} ${esc(L(entry.prayers.length===1?'form':'forms',entry.prayers.length===1?'forme':'formes'))}</span></summary><div class="aoP435930LibraryVariantItems">${entry.prayers.map(renderRow).join('')}</div></details>`;
  }).join('')||`<p>${esc(L('No prayers match this search.','Aucune prière ne correspond à cette recherche.'))}</p>`;
 }
+function renderCestacMarianPrayer(){
+ const work=cestacMarianWork(LIB.open);
+ if(!work)return callout(esc(L('Historical source unavailable.','Source historique indisponible.')),'warn');
+ const french=isFr();
+ const content=french?work.originalFrench:work.editorialEnglish;
+ const primary='https://servantesdemarie.com/fr/pages/pere-cestac-priere-spiritualite-accompagnement-soutien-vierge-marie-auguste-reine';
+ const status=L('Original French from the Servants of Mary congregation’s online devotional witness. English is a new Ad Orientem editorial translation. Original nineteenth-century leaflet not independently collated; historic indulgences are not claimed as current.',
+ 'Français du témoignage de prière publié par la congrégation des Servantes de Marie. L’anglais est une traduction éditoriale nouvelle d’Ad Orientem. Le feuillet original du XIXe siècle n’est pas collationné ; aucune indulgence historique n’est présentée comme actuelle.');
+ const caveat=work.instituteVariationNotes?'<p class="aoP435930SourceNote" data-ao-cestac-variant>'+
+  esc(L('The Institute of Christ the King has a different English wording of August Queen. It is linked as a variant, not substituted here; the congregation’s French wording is the selected reading.',
+  'L’Institut du Christ Roi publie une autre version anglaise d’Auguste Reine. Elle est signalée comme variante et ne remplace pas le texte français retenu de la congrégation.'))+'</p>':'';
+ const refrain=work.optionalClosingRefrainFr?
+  '<details class="aoP435930SourceNote" data-ao-cestac-refrain><summary>'+esc(L('Congregation’s additional closing refrain','Reprise finale figurant sur le site de la congrégation'))+'</summary>'+
+  '<p lang="'+lang()+'">'+nl(french?work.optionalClosingRefrainFr:work.optionalClosingRefrainEn)+'</p></details>':'';
+ const sourceLinks=work.additionalWitnesses?.filter(x=>x.url).map(x=>'<a href="'+esc(x.url)+'" target="_blank" rel="noopener noreferrer">'+
+  esc(x.type==='ICKSP_ALTERNATE_ENGLISH_RECENSION'?L('ICKSP alternate text','Variante ICRSP'):L('Congregation English parallel','Version anglaise de la congrégation'))+'</a>').join(' · ')||'';
+ return head(french?work.frTitle:work.enTitle,L('Prayer Library · Marian devotions','Livre de prières · dévotions mariales'))+
+ '<main class="aoP435930Body aoP435930LibraryReader" data-ao-cestac-reader="'+esc(work.id)+'">'+
+ '<article class="aoDevoCard"><div class="aoDevoCardScroll"><h2>'+esc(french?work.frTitle:work.enTitle)+'</h2>'+
+ '<p lang="'+lang()+'" data-ao-cestac-prayer-body>'+nl(content)+'</p></div></article>'+
+ refrain+
+ '<details class="aoP435930SourceNote"><summary>'+esc(L('Edition and source','Édition et source'))+'</summary>'+
+ '<p>'+esc(status)+'</p>'+caveat+
+ '<a href="'+esc(primary)+'" target="_blank" rel="noopener noreferrer">'+esc(L('Servants of Mary source','Source des Servantes de Marie'))+'</a>'+
+ (sourceLinks?' · '+sourceLinks:'')+'</details>'+
+ '<nav class="aoJosephSevenNav"><button type="button" data-p435930-cestac-back>'+
+ esc(L('Back to Prayer Library','Retour au livre de prières'))+'</button></nav></main>';
+}
 function renderLibrary(){
+ if(LIB.open&&cestacMarianWork(LIB.open))return renderCestacMarianPrayer();
  if(LIB.open&&massSequencePrayerWork(LIB.open))return renderMassSequencePrayer();
  if(LIB.open){
   const p=P(LIB.open);if(!p){LIB.open=null;return renderLibrary()}
@@ -2777,6 +2807,17 @@ function renderLibrary(){
    '<small>'+esc(L('MASS SEQUENCE · SOURCE READER','SÉQUENCE DE MESSE · SOURCE'))+'</small>'+
    '<b>'+esc(isFr()?work.titleFr:work.title)+'</b><span>LA · EN · FR</span></button>').join('')+
    '</div></section>');
+ const cestacWorks=cestacMarianMatches({category:LIB.cat,subject:LIB.subject,search:q});
+ const cestacSection=!cestacWorks.length?'':(
+  '<section class="aoP435930LibraryRelated" data-ao-cestac-library>'+
+  '<h3>'+esc(L('August Queen of Heaven','Auguste Reine des cieux'))+'</h3>'+
+  '<p>'+esc(L('August Queen of Heaven, from the Servants of Mary congregation’s French prayer text.','Auguste Reine des cieux, d’après le texte français des Servantes de Marie.'))+'</p>'+
+  '<div class="aoP435930ModuleGrid">'+cestacWorks.map(work=>
+   '<button type="button" class="aoP435930ModuleCard" data-p435930-lib-open="'+esc(work.id)+'" data-ao-cestac-open="'+esc(work.id)+'">'+
+    '<small>'+esc(L('MARIAN DEVOTION','DÉVOTION MARIALE'))+'</small>'+
+    '<b>'+esc(isFr()?work.frTitle:work.enTitle)+'</b>'+
+    '<span>'+esc(L('French source · English translation','Source française · traduction anglaise'))+'</span></button>'
+  ).join('')+'</div></section>');
  const guidedLinks=LIB.cat==='all'?guidedPrayerLinksForSubject(LIB.subject,q):[];
  const guidedSection=LIB.cat!=='all'||!guidedLinks.length?
   '':('<section class="aoP435930LibraryRelated" data-ao-prayer-subject-guided="'+esc(LIB.subject)+'">'+
@@ -2793,9 +2834,9 @@ function renderLibrary(){
   '<div class="aoP435930Chips" role="group" aria-label="'+esc(L('Theological prayer families','Familles théologiques de prières'))+'">'+
   '<button type="button" data-p435930-lib-subject="all" aria-pressed="'+String(LIB.subject==='all')+'">'+esc(L('All subjects','Tous les sujets'))+'</button>'+
   PRAYER_SUBJECTS_V1.map(subject=>'<button type="button" data-p435930-lib-subject="'+subject.id+'" aria-pressed="'+String(LIB.subject===subject.id)+'">'+
-    esc(isFr()?subject.fr:subject.en)+' <small>'+(subjectCounts.counts[subject.id]+prayerSupplementalLiveWorksForSubject(subject.id).length +prayerSevenSourceWorksForSubject(subject.id).length+redBookletCommunionLibraryLinksForSubject(subject.id).length+redBookletSuscipeLibraryLinksForSubject(subject.id).length+redBookletPrivateHistoricalWorksForSubject(subject.id).length+MASS_SEQUENCE_PRAYER_WORKS.filter(x=>x.subject===subject.id).length+(subject.id==='V'?1:0))+'</small></button>').join('')+
+    esc(isFr()?subject.fr:subject.en)+' <small>'+(subjectCounts.counts[subject.id]+prayerSupplementalLiveWorksForSubject(subject.id).length +prayerSevenSourceWorksForSubject(subject.id).length+redBookletCommunionLibraryLinksForSubject(subject.id).length+redBookletSuscipeLibraryLinksForSubject(subject.id).length+redBookletPrivateHistoricalWorksForSubject(subject.id).length+MASS_SEQUENCE_PRAYER_WORKS.filter(x=>x.subject===subject.id).length+(subject.id==='V'?1:0)+CESTAC_MARIAN_DEVOTIONS_V1.filter(w=>w.subject===subject.id).length)+'</small></button>').join('')+
   '</div><p class="aoP435930SourceNote">'+esc(L('Only accessible canonical and source-owned reader texts are included. Unverified research works are not shown as readable prayers.','Seuls les textes canoniques et les prières déjà accessibles dans leurs parcours d’origine sont inclus. Les œuvres de recherche non vérifiées ne sont pas présentées comme disponibles.'))+'</p></details>';
- return `${head(L('Prayer Library','Livre de prières'),L('Prayers and guided devotions','Prières et dévotions guidées'))}<main class="aoP435930Body">${libraryOverviewGuide()}<label class="aoP435930Search"><span>${assetIcon('ao-ui-search')}</span><input type="search" data-p435930-lib-search value="${esc(LIB.q)}" placeholder="${esc(L('Search prayers','Rechercher une prière'))}"></label><div class="aoP435930Chips">${cats.map(([id,n])=>`<button type="button" class="${id===LIB.cat?'active':''}" data-p435930-lib-cat="${esc(id)}">${esc(n)}</button>`).join('')}</div>${subjectBrowse}<div class="aoP435930LibraryList" data-ao-prayer-subject-results="${esc(LIB.subject)}">${LIB.cat==="essentials"&&!q?claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2,prayers:DATA.prayers,locale:lang(),esc,title:L("Essential Prayers","Prières essentielles"),artFor:releasedPrayerCardArtUrl}):(rows.length||!(historicalWorks.length+sourceDeepWorks.length+privateCommunionWorks.length+privateHistoricalWorks.length+(stabatSeptember?1:0)+massSequences.length)?renderLibraryEntryRows(rows,q):'')}</div>${communionSection}${privateHistoricalSection}${historicalSection}${stabatLibrarySection}${massSequenceSection}${guidedSection}</main>`;
+ return `${head(L('Prayer Library','Livre de prières'),L('Prayers and guided devotions','Prières et dévotions guidées'))}<main class="aoP435930Body">${libraryOverviewGuide()}<label class="aoP435930Search"><span>${assetIcon('ao-ui-search')}</span><input type="search" data-p435930-lib-search value="${esc(LIB.q)}" placeholder="${esc(L('Search prayers','Rechercher une prière'))}"></label><div class="aoP435930Chips">${cats.map(([id,n])=>`<button type="button" class="${id===LIB.cat?'active':''}" data-p435930-lib-cat="${esc(id)}">${esc(n)}</button>`).join('')}</div>${subjectBrowse}<div class="aoP435930LibraryList" data-ao-prayer-subject-results="${esc(LIB.subject)}">${LIB.cat==="essentials"&&!q?claudeHolyCardCase({ids:ESSENTIAL_HOLY_CARD_COLLECTION_IDS_V2,prayers:DATA.prayers,locale:lang(),esc,title:L("Essential Prayers","Prières essentielles"),artFor:releasedPrayerCardArtUrl}):(rows.length||!(historicalWorks.length+sourceDeepWorks.length+privateCommunionWorks.length+privateHistoricalWorks.length+(stabatSeptember?1:0)+massSequences.length+cestacWorks.length)?renderLibraryEntryRows(rows,q):'')}</div>${communionSection}${privateHistoricalSection}${historicalSection}${stabatLibrarySection}${massSequenceSection}${cestacSection}${guidedSection}</main>`;
 }
 function monthIndex(key){const d=dateObj(key);return d?d.getFullYear()*12+d.getMonth():null}
 function consecutive(records,needed){const done=records.filter(x=>x.complete).sort((a,b)=>a.date.localeCompare(b.date));if(!done.length)return 0;let c=1;for(let i=done.length-1;i>0;i--){const a=monthIndex(done[i].date),b=monthIndex(done[i-1].date);if(a-b===1)c++;else break}return Math.min(c,needed)}
@@ -5114,6 +5155,9 @@ function onClick(e){
   MASS_SEQUENCE_READING.id=null;MASS_SEQUENCE_READING.record=null;
   MASS_SEQUENCE_READING.error=null;MASS_SEQUENCE_READING.loading=false;
   MASS_SEQUENCE_READING.token++;return render();
+ }
+ if(b.matches('[data-p435930-cestac-back]')&&cestacMarianWork(LIB.open)){
+  LIB.open=null;return render();
  }
  if(b.dataset.p435930LibOpen){LIB.open=b.dataset.p435930LibOpen;LIB.language=null;PILOT_LORETO_GROUP=false;return render()}
  if(b.dataset.p435930ScriptureRetry){
