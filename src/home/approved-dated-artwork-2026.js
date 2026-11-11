@@ -137,11 +137,13 @@ export function releasedExactClassIPhotoReuse2026(date,principalId,properPath){
     (rule.collectionIdentity&&selected.collectionIdentity!==rule.collectionIdentity))
     return null;
  const photo=RELEASED_MODULE_PAINTINGS[rule.moduleId];
+ const allowedLocalPath=value=>typeof value==="string"&&
+  value.startsWith("assets/prayer/released/")&&
+  [".jpg",".jpeg",".webp",".png"].some(ext=>value.endsWith(ext));
  if(!photo||photo.releasePr!==rule.releasePr||
     photo.source!==rule.originalSource||photo.title!==rule.title||
     photo.artist!==rule.artist||
-    !/^assets\\/(?:prayer|home)\\/.+\\.(?:jpg|jpeg|webp|png)$/.test(photo.image??"")||
-    !/^assets\\/(?:prayer|home)\\/.+\\.(?:jpg|jpeg|webp|png)$/.test(photo.original??"")||
+    !allowedLocalPath(photo.image)||!allowedLocalPath(photo.original)||
     !/public.domain|PD-Art|CC0/i.test(photo.photographRights??""))return null;
  return Object.freeze({
   date,principalId,properPath,artworkId:rule.artworkId,
