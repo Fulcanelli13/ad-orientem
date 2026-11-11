@@ -17,6 +17,10 @@ const published=publishedFiles.flatMap(n=>read("data/shrines/illustrated-place-g
 const seed=read("data/shrines/shrines-pilgrimages-seed.v1.json");
 const canonicalSources=read("data/shrines/source-registry.v1.json").sources;
 const researchSupplement=read("data/shrines/research/sacred-atlas-institutional-source-supplement-20261111.v1.json");
+const dateReconciliation=read("data/shrines/research/sacred-atlas-source-date-reconciliation-20261111.v1.json");
+assert.equal(dateReconciliation.paragraph_date_evidence.length,48);
+assert.equal(dateReconciliation.summary.original_date_flags,48);
+assert.ok(dateReconciliation.paragraph_date_evidence.every(r=>r.full_paragraph_verified===false&&r.second_editor_approved===false&&r.owner_release_authorized===false));
 assert.equal(researchSupplement.state,"RESEARCH_ONLY_NOT_RELEASED");
 assert.ok(researchSupplement.sources.every(s=>s.scope==="RESEARCH_ONLY"&&s.place_id&&
   !canonicalSources.some(c=>c.id===s.id)));
