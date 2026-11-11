@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
-import {dyk520Candidates,dyk520CalendarCandidates,dyk520Model,loadDyk520Release} from "../src/home/dyk-520-release.js";
+import {dyk520Candidates,dyk520EligibleCandidates,dyk520CalendarCandidates,dyk520Model,loadDyk520Release} from "../src/home/dyk-520-release.js";
 import {dykHomeRotationSlot,dykPublishedMarkup} from "../src/home/dyk-published-feed.js";
 import {hydrateHomeDidYouKnow,HOME_DYK_GLOSSARY_IDS} from "../src/home/did-you-know-glossary.js";
 
@@ -111,7 +111,41 @@ const correctedPanem=bank.records.find(r=>r.id==="DYK-GL-G314-01");
 assert.ok(correctedPanem.fact.en.includes("praestitisti eis"));
 assert.deepEqual(dyk520CalendarCandidates(bank,"2026-12-04").map(r=>r.id),["DYK-GL-G332-01"]);
 assert.deepEqual(dyk520CalendarCandidates(bank,"2026-12-05").map(r=>r.id),["DYK-GL-G333-01"]);
-assert.deepEqual(dyk520CalendarCandidates(bank,"2026-12-11"),[]);
+assert.ok(dyk520EligibleCandidates(bank,"2026-12-11").some(r=>r.id==="DYK-C400-BK-001"));
+// The original 520 entries have topic metadata; date context is attached
+// only when the reviewed source copy warrants a specific educational relevance.
+const validTopics=new Set(["CUSTOMS","PILGRIMAGE","CHURCH_HISTORY","LITURGY","DEVOTION","DOCTRINE","LATIN","ARCHITECTURE","CANON_LAW"]);
+assert.equal(bank.records.filter(r=>validTopics.has(r.discovery_topic)).length,bank.count);
+assert.equal(bank.records.filter(r=>r.calendar_context).length,209);
+const has=(date,id,fn=dyk520EligibleCandidates)=>fn(bank,date).some(r=>r.id===id);
+assert.equal(has("2026-12-04","DYK-C400-BF-006"),true,"St Barbara relevance on 4 December");
+assert.equal(has("2026-07-04","DYK-C400-BF-006"),false,"St Barbara must not be randomly shown in July");
+assert.equal(has("2026-11-11","DYK-C400-BJ-003"),true,"Martinmas harvest on 11 November");
+assert.equal(has("2026-01-06","DYK-C400-BF-008"),true,"Epiphany on January 6");
+assert.equal(has("2026-06-04","DYK-CW15-023"),true,"Panama's devils belong near Corpus Christi");
+assert.equal(has("2026-09-29","DYK-CW15-023"),false,"Saint Michael imagery does not make the Corpus Christi procession Michaelmas");
+assert.equal(has("2026-04-02","DYK-CW16-058"),true,"Pesaha custom on Holy Thursday 2026");
+assert.equal(has("2026-11-11","DYK-CW16-058"),false,"Holy Thursday custom should not be a random November fact");
+assert.equal(has("2026-02-17","DYK-H04-W-A-094"),true,"Shrove Tuesday is Easter-47");
+assert.equal(has("2026-12-11","DYK-C400-BK-001"),true,"Rorate in Advent");
+assert.equal(has("2026-07-11","DYK-C400-BK-001"),false,"Rorate should not appear in July");
+assert.equal(has("2026-07-11","DYK-GL-G142-01"),true,"Evergreen doctrine must remain accessible");
+assert.equal(has("2026-12-04","DYK-GL-G332-01",dyk520CalendarCandidates),true);
+assert.equal(has("2026-12-05","DYK-GL-G333-01",dyk520CalendarCandidates),true);
+assert.equal(has("2026-12-05","DYK-GL-G332-01"),false,"First-Friday discovery not on Saturday");
+const invalidTopic=structuredClone(bank);
+invalidTopic.records[0].discovery_topic="APP_INTERNAL";
+assert.deepEqual(dyk520Candidates(invalidTopic,date),[],"Topic classification is a strict public contract");
+const invalidCalendar=structuredClone(bank);
+invalidCalendar.records[0].calendar_context={fixed_dates:["13-41"]};
+assert.deepEqual(dyk520Candidates(invalidCalendar,date),[],"Invalid date metadata rejects the whole bank");
+// Both contextual and evergreen cards receive real opportunities across
+// seasonal transitions without changing the canonical catalog or source URLs.
+for(const day of ["2026-02-17","2026-04-02","2026-06-04","2026-11-11","2026-12-04","2026-12-05"]){
+ const eligible=dyk520EligibleCandidates(bank,day),contextual=dyk520CalendarCandidates(bank,day);
+ assert.ok(eligible.length>250&&eligible.length<=bank.count,day+" must retain an evergreen fallback");
+ assert.ok(contextual.every(x=>eligible.some(y=>y.id===x.id)),day+" contextual cards must be eligible");
+}
 const invalidCue=structuredClone(bank);
 invalidCue.records.find(r=>r.id==="DYK-GL-G332-01").calendar_cue="ANY_DAY";
 assert.deepEqual(dyk520Candidates(invalidCue,date),[]);
@@ -129,9 +163,10 @@ const selectedDay=Array.from({length:25},(_,i)=>
  .find(day=>dykHomeRotationSlot(day,ids,HOME_DYK_GLOSSARY_IDS).startsWith("DYK-"));
 assert.ok(selectedDay);
 const calendarRows=dyk520CalendarCandidates(bank,selectedDay);
+const eligibleRows=dyk520EligibleCandidates(bank,selectedDay);
 const expectedId=calendarRows.length?
  dykHomeRotationSlot(selectedDay,calendarRows.map(r=>r.id),[]):
- dykHomeRotationSlot(selectedDay,ids,HOME_DYK_GLOSSARY_IDS);
+ dykHomeRotationSlot(selectedDay,eligibleRows.map(r=>r.id),HOME_DYK_GLOSSARY_IDS);
 const screen={dataset:{homeLanguage:"en"}};
 const nodes=Object.fromEntries(["[data-home-dyk-title]","[data-home-dyk-fact]","[data-home-dyk-source]"]
  .map(key=>[key,{textContent:""}]));
@@ -157,4 +192,4 @@ await new Promise(resolve=>setImmediate(resolve));
 assert.equal(button.dataset.homeDykFactId,expectedId);
 assert.equal(nodes["[data-home-dyk-fact]"].textContent,
  bank.records.find(r=>r.id===expectedId).fact.fr);
-console.log("PASS DYK 653+: 378 Customs + 275+ Glossary, canonical glossary links, calendar cues, bilingual models, full rotation and Home hydration");
+console.log("PASS DYK 653: bilingual source-linked catalog, 653 topical classifications, date/season-aware Home rotation and EN/FR hydration");
