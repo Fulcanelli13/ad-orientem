@@ -1,0 +1,52 @@
+name: Sacred Art Class I Raphael Vatican exact original photo release
+on:
+  pull_request:
+    paths:
+      - 'src/home/released-class-i-raphael-transfiguration-2026.js'
+      - 'src/home/approved-dated-artwork-2026.js'
+      - 'assets/home/class-i-2026/raphael-transfiguration-vatican-original.jpg'
+      - 'data/artwork/releases/2026-03-01-raphael-transfiguration-vatican-source.v1.json'
+      - 'data/artwork/releases/2026-03-01-raphael-vatican-photo-byte-proof.v1.json'
+      - 'tests/home-class-i-raphael-vatican-photo.mjs'
+      - 'tests/home-class-i-raphael-vatican-phone.mjs'
+      - 'tests/home-2026-annual-artwork-coverage.mjs'
+      - 'tests/home-two-class-i-exact-source-previews-2026.mjs'
+      - '.github/workflows/sacred-art-class-i-raphael-vatican-release.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-vatican-work-photo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          node --check src/home/released-class-i-raphael-transfiguration-2026.js
+          node --check src/home/approved-dated-artwork-2026.js
+          node tests/home-class-i-raphael-vatican-photo.mjs
+          node tests/home-two-class-i-exact-source-previews-2026.mjs
+          node tests/home-2026-annual-artwork-coverage.mjs
+  real-vatican-home-phones:
+    needs: exact-vatican-work-photo
+    runs-on: ubuntu-latest
+    timeout-minutes: 14
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          npm install --no-save --no-package-lock --no-audit --no-fund @playwright/test
+          npx playwright install --with-deps chromium
+      - run: node tests/home-class-i-raphael-vatican-phone.mjs
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: raphael-vatican-home-phones
+          path: artifacts/home-raphael-vatican-phone/
+          if-no-files-found: warn
+          retention-days: 14
