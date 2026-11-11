@@ -156,9 +156,11 @@ for(const [count,value] of Object.entries({
  directory_place_links:G.directoryPlaceLinks.length,
 })){
  if(count==="canonical_customs"||count==="custom_attestations")continue; // earlier dated baseline accounted for above
+ // The source-frozen October snapshot has 23 Directory joins.
+ // Guadalupe was added in Wave A; P107 added Westminster and Maria Vesperbild.
  if(count==="directory_place_links"){
-  assert.equal(value,R.counts[count]+1,
-   "One independently verified Guadalupe venue link extends the frozen heritage snapshot");
+  assert.equal(value,R.counts[count]+3,
+   "Three exact verified venue→Place links extend the October research snapshot");
   continue;
  }
  assert.equal(R.counts[count]+(count==="relic_claims"?5:0),value,"Historical claim counts may only grow by the explicitly source-backed later Père Laval record");
