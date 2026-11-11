@@ -11,7 +11,10 @@ try{
  await page.waitForFunction(()=>document.body.dataset.aoSourceScoreReviewReady==="true");
  assert.equal(await page.locator("#render").isDisabled(),true);
  assert.equal(await page.locator("#sequences a").count(),5);
- for(const [family,id,min] of [["GLORIA","GREGOBASE-961",200],["CREDO","GREGOBASE-749",300],["INTROIT","GREGOBASE-1278",70]]){
+ for(const [family,id,min] of [["GLORIA","GREGOBASE-961",200],["CREDO","GREGOBASE-749",300],["INTROIT","GREGOBASE-1278",70],
+  ["SEQUENCE","GREGOBASE-1086",30],["SEQUENCE","GREGOBASE-68",30],
+  ["SEQUENCE","GREGOBASE-308",30],["SEQUENCE","GREGOBASE-1198",30],
+  ["SEQUENCE","GREGOBASE-681",30]]){
   await page.locator("#family").selectOption(family);
   await page.locator("#scoreList").selectOption(id);
   await page.locator("#render").click();
@@ -25,5 +28,5 @@ try{
  await page.locator("#matched").selectOption("matched");
  assert.equal(await page.locator("#scoreList option").count(),335);
  assert.deepEqual(errors,[]);
- console.log("ORIGINAL_1961_EXSURGE_BROWSER_PASS: Gloria VIII, Credo III, Introit, 335 selected-source scores, 0 JS errors");
+ console.log("ORIGINAL_1961_EXSURGE_BROWSER_PASS: Gloria VIII, Credo III, Introit, all five Sequences, 335 selected-source Proper scores, 0 JS errors");
 }finally{await browser.close()}
