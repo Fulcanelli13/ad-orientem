@@ -184,8 +184,7 @@ export function approved2026HomeArtwork(state,provider=null){
  // Caravaggio choice. Never render the wrong painting or the museum-sourced
  // Commons file while commercial photographic rights remain uncleared.
  const laterOwnerSelection=classIOwnerSupersession2026(date,principalId,properPath);
- if(laterOwnerSelection?.sourcePhotographStatus===
-    "HELD_MUSEUM_COMMERCIAL_PHOTO_PERMISSION_NOT_CLEARED")return null;
+ if(laterOwnerSelection?.image===null)return null;
  const locked=approvedClassIHeroForDate(date,principalId);
  if(locked){
   const expected=CLASS_I_PROPER[date];
