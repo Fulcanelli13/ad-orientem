@@ -1,5 +1,5 @@
 // Curated Customs + Glossary discoveries for the existing Home DYK surface.
-// The source is the compact bilingual 520-card projection. Historical source
+// The source is the extensible bilingual discovery projection. Historical source
 // provenance remains in the separate research registry, not in the app bundle.
 const SOURCE=new URL("../../data/did-you-know/dyk-customs-glossary-520.v1.json",import.meta.url);
 const SCHEMA="AO_DYK_CUSTOMS_GLOSSARY_520_V1";
