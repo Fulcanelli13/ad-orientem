@@ -100,7 +100,7 @@ ok("Discovery 225 approved EN/FR facts: all manifests and Home/source-dialog loa
 const dyk520=JSON.parse((await released(newDyk520Path)).toString("utf8"));
 assert.equal(dyk520.schema,"AO_DYK_CUSTOMS_GLOSSARY_520_V1");
 assert.equal(dyk520.release_stage,"INTEGRATED_CONTENT");
-assert.ok(dyk520.count>=595,"Published DYK bank must include the second 58-card glossary wave");
+assert.ok(dyk520.count>=653,"Published DYK bank must include the third 58-card glossary wave");
 assert.equal(dyk520.counts?.customs,378);
 assert.equal(dyk520.counts?.glossary,dyk520.count-dyk520.counts.customs);
 assert.equal(dyk520.records?.length,dyk520.count);
@@ -113,7 +113,7 @@ for(const r of dyk520.records){
  }
  assert.match(r.source?.url||"",/^https:\/\//,"DYK missing linked source: "+r.id);
 }
-ok("Discovery expanding Customs/Glossary bilingual facts, 378 Customs, 217+ Glossary, and Home loader exact-byte release parity");
+ok("Discovery expanding Customs/Glossary bilingual facts, 378 Customs, 275+ Glossary, and Home loader exact-byte release parity");
 
 // A correct HTML shell can still be paired with stale, CDN-cached reader
 // modules. Verify the precise source-owned Pray code released with this SHA.
