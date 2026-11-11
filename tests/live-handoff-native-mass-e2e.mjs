@@ -48,6 +48,15 @@ async function read(page){
       scholaIndex:schola?.index??null,
       scholaComplete:schola?.complete??null,
       scholaTotal:schola?.total??null,
+      scholaSourceTrack:{
+        hasActive:Boolean(schola?.schola),
+        sourceCueCount:schola?.schola?.trackSourceCueIds?.length??0,
+        sourceCueIncludesCurrent:schola?.schola?.cueId
+          ?schola?.schola?.trackSourceCueIds?.includes(schola.schola.cueId)??false
+          :null,
+        hasSourceLatin:Boolean(schola?.schola?.trackSourceLatin),
+        scoreAutomaticallyApproved:nativeDock?.dataset.approvedScore==="true"
+      },
       viewportW:innerWidth,viewportH:innerHeight,
       headerTitle:{text:headerTitle?.textContent??"",whiteSpace:headerTitleStyle?.whiteSpace??null,
         textOverflow:headerTitleStyle?.textOverflow??null,height:rect(headerTitle)?.h??null},
@@ -94,6 +103,17 @@ function verify(m,{width,height,name},label){
   assert.equal(m.wheelCount,m.nativeCardCount,name+" "+label+" wheel does not reflect native source cuts");
   assert.equal(m.laneCount,6,name+" "+label+" lanes");
   assert.equal(m.independentScholaMarks,0,name+" "+label+" false Schola clock marker");
+  if(["KYRIE","GLORIA","CREDO","SANCTUS_BENEDICTUS","AGNUS_DEI"]
+      .includes(m.scholaTrackId)){
+    assert.ok(m.scholaSourceTrack.sourceCueCount>0,
+      name+" "+label+" complete Schola track source cue list missing");
+    assert.equal(m.scholaSourceTrack.sourceCueIncludesCurrent,true,
+      name+" "+label+" current Schola cue missing from native track");
+    assert.equal(m.scholaSourceTrack.hasSourceLatin,true,
+      name+" "+label+" full source Latin missing");
+  }
+  assert.equal(m.scholaSourceTrack.scoreAutomaticallyApproved,false,
+    name+" "+label+" unapproved score surfaced automatically");
   assert.equal(m.rails,2,name+" "+label+" gesture rails missing");
   if(m.faithfulPosture.sourceMatched==="true")
     assert.equal(m.faithfulPosture.visible,true,name+" "+label+" lost the sourced faithful posture rail tile");
