@@ -1,0 +1,53 @@
+name: Sacred Art two frozen Class I source photos
+on:
+  pull_request:
+    paths:
+      - 'src/home/released-class-i-two-frozen-photos-2026.js'
+      - 'src/home/approved-dated-artwork-2026.js'
+      - 'assets/home/class-i-2026/lanfranco-ngi72-miracle-original.jpg'
+      - 'assets/home/class-i-2026/van-dyck-kmska297-lance-thrust-2400.webp'
+      - 'data/artwork/releases/source-masters/van-dyck-kmska297-lance-thrust-original.jpg'
+      - 'data/artwork/releases/2026-03-15-07-01-two-*'
+      - 'tests/home-two-frozen-class-i-local-photos-2026.mjs'
+      - 'tests/home-two-frozen-class-i-photo-phone.mjs'
+      - 'tests/home-2026-frozen-selected-source-gate.mjs'
+      - 'tests/home-2026-annual-artwork-coverage.mjs'
+      - '.github/workflows/sacred-art-two-class-i-local-photo-release.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  exact-source-rights-and-dates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          node --check src/home/released-class-i-two-frozen-photos-2026.js
+          node --check src/home/approved-dated-artwork-2026.js
+          node tests/home-two-frozen-class-i-local-photos-2026.mjs
+          node tests/home-2026-frozen-selected-source-gate.mjs
+          node tests/home-2026-annual-artwork-coverage.mjs
+  actual-home-320-390-photo-render:
+    needs: exact-source-rights-and-dates
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: |
+          npm install --no-save --no-package-lock --no-audit --no-fund @playwright/test
+          npx playwright install --with-deps chromium
+      - run: node tests/home-two-frozen-class-i-photo-phone.mjs
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: class-i-lanfranco-van-dyck-originals-320-390
+          path: artifacts/home-two-frozen-class-i-photo-phone/
+          if-no-files-found: warn
+          retention-days: 14
