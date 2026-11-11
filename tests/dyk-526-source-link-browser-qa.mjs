@@ -96,3 +96,11 @@ const output={
 mkdirSync("artifacts/dyk",{recursive:true});
 writeFileSync("artifacts/dyk/batch-A-62-browser-links.json",JSON.stringify(output,null,2)+"\n");
 console.log("DYK Batch A browser link QA: "+JSON.stringify(tally)+"; all release gates remain closed.");
+// A definitive 404/410 is a broken source-link regression. Challenges, PDF
+// header-only checks and temporary fetch errors are INCONCLUSIVE, not releases.
+const broken=rows.filter(row=>row.status==="NOT_FOUND");
+if(broken.length){
+ console.error("DYK source links with confirmed HTTP 404/410:\\n"+
+  broken.map(row=>row.url).join("\\n"));
+ process.exitCode=1;
+}
