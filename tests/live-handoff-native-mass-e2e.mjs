@@ -115,8 +115,14 @@ function verify(m,{width,height,name},label){
   assert.equal(m.scholaSourceTrack.scoreAutomaticallyApproved,false,
     name+" "+label+" unapproved score surfaced automatically");
   assert.equal(m.rails,2,name+" "+label+" gesture rails missing");
-  if(m.faithfulPosture.sourceMatched==="true")
+  if(name==="low-en-320"&&label==="sanctuary")
+    assert.equal(m.faithfulPosture.sourceMatched,"true",
+      "The real C01 Low Mass must expose its independently source-matched posture");
+  if(m.faithfulPosture.sourceMatched==="true"){
     assert.equal(m.faithfulPosture.visible,true,name+" "+label+" lost the sourced faithful posture rail tile");
+    assert.ok(m.leftRail?.w>0&&m.leftRail?.h>0,
+      name+" "+label+" native transient-rail suppression concealed faithful posture");
+  }
   assert.equal(m.headerTitle.whiteSpace,"nowrap",name+" "+label+" LIVE preview title wraps");
   assert.equal(m.headerTitle.textOverflow,"ellipsis",name+" "+label+" LIVE preview title is not truncated");
   assert.ok(m.headerTitle.height>0&&m.headerTitle.height<24,
