@@ -35,6 +35,7 @@ jobs:
           node --check src/home/browser-entry.js
           node --check tests/dyk-526-release-adapter-contract.mjs
           node --check tests/dyk-batch-A-62-proof-contract.mjs
+          node --check tests/dyk-batch-A-62-synthetic-release-contract.mjs
           node --check tests/dyk-526-home-bridge-contract.mjs
           node --check tests/dyk-526-home-phone.mjs
           node --check tests/dyk-526-source-link-browser-qa.mjs
@@ -42,6 +43,7 @@ jobs:
         run: |
           node tests/dyk-526-release-adapter-contract.mjs
           node tests/dyk-batch-A-62-proof-contract.mjs
+          node tests/dyk-batch-A-62-synthetic-release-contract.mjs
           node tests/dyk-526-home-bridge-contract.mjs
           node tests/home-dyk-glossary.mjs
 
