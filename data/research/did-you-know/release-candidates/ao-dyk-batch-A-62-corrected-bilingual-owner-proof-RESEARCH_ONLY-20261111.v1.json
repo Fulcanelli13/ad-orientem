@@ -5,7 +5,7 @@
   "global_release_authorized": false,
   "owner_release_decision": "UNAPPROVED",
   "date": "2026-11-11",
-  "description": "Corrected bilingual editorial proof of owner Batch A. 62 distinct concepts, not a release dataset. Never import it into live Home. No owner approval. Stage retains historic source records in 526 master and 64-card CSV. Three supporting source links added, with original provenance retained and link-quality flags not promoted to release certification.",
+  "description": "Corrected bilingual editorial proof of owner Batch A. 62 distinct concepts, not a release dataset. Never import it into live Home. No owner approval. Stage retains historic source records in 526 master and 64-card CSV. Three supporting source links added, with original provenance retained and link-quality flags not promoted to release certification. Palazzolo editorial correction: original Pitrè p.355 records live serpents and serpent-shaped loaves together, not a historical replacement; revised bilingual proof accordingly.",
   "provenance": {
     "source_526_preview_blob_sha": "33ed6c6d777defd2913214c69ab7ef70c4a45c24",
     "source_63_preflight_blob_sha": "f89ce51513d125bf32a45250aad99bd41409c01f",
@@ -38,7 +38,7 @@
     },
     {
       "id": "DYK-G600-P-028",
-      "reason": "Consolidated live snakes and votive serpent-shaped loaves from two fragments of one historical Saint Paul festival; no duplicated fact in final proof.",
+      "reason": "Consolidated two accounts of the same Palazzolo Acreide Saint Paul procession. The original Pitrè page 355 describes both the bread and live snakes contemporaneously; the previously proposed chronological 'replacement' inference was unsupported and is withdrawn.",
       "merged_from": [
         "DYK-G600-P-028",
         "DYK-G600-P-029"
@@ -48,11 +48,16 @@
         "fr": "Serpents et pains votifs à la fête de saint Paul"
       },
       "new_copy": {
-        "en": "In historical Saint Paul processions at Palazzolo Acreide in Sicily, serpent handlers called cirauli carried live snakes. Later, serpent-shaped ring loaves became part of the votive offerings, replacing the use of live reptiles.",
-        "fr": "Lors d'anciennes processions de la fête de saint Paul à Palazzolo Acreide, en Sicile, des charmeurs de serpents appelés cirauli portaient des serpents vivants. Par la suite, des pains votifs en couronne ornés de serpents façonnés en pâte ont remplacé l'usage de reptiles vivants."
+        "en": "At the historical feast of Saint Paul in Palazzolo Acreide, Sicily, serpent handlers called cerauli joined the procession carrying live snakes. Some wore serpent-shaped ring loaves on their heads, while others carried trays holding reptiles and gathered votive offerings.",
+        "fr": "Lors des anciennes processions de la fête de saint Paul à Palazzolo Acreide, en Sicile, des charmeurs de serpents appelés cerauli portaient des serpents vivants. Certains avaient sur la tête des pains en couronne en forme de serpent, tandis que d'autres portaient des plateaux avec des reptiles et recueillaient les offrandes votives."
       },
       "source": "https://www.tourguideinsicily.it/2018/07/03/festa-di-san-paolo-palazzolo-acreide-sr/",
-      "requires_owner_copy_acceptance": true
+      "requires_owner_copy_acceptance": true,
+      "primary_text_evidence": {
+        "reference": "Giuseppe Pitrè, Biblioteca delle tradizioni popolari siciliane, vol. XXI (1900), p. 355, 'La processione ed i serpenti'",
+        "source": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Biblioteca_delle_tradizioni_popolari_siciliane_%28IA_afm3499.0021.001.umich.edu%29.pdf",
+        "verification_scope": "Original scanned-volume text indexed; original page image could not be rendered via available web viewer; no page-image certification claimed."
+      }
     },
     {
       "id": "DYK-G600-P-029",
@@ -2066,12 +2071,12 @@
         "fr": "Serpents et pains votifs à la fête de saint Paul"
       },
       "proposed_copy": {
-        "en": "In historical Saint Paul processions at Palazzolo Acreide in Sicily, serpent handlers called cirauli carried live snakes. Later, serpent-shaped ring loaves became part of the votive offerings, replacing the use of live reptiles.",
-        "fr": "Lors d'anciennes processions de la fête de saint Paul à Palazzolo Acreide, en Sicile, des charmeurs de serpents appelés cirauli portaient des serpents vivants. Par la suite, des pains votifs en couronne ornés de serpents façonnés en pâte ont remplacé l'usage de reptiles vivants."
+        "en": "At the historical feast of Saint Paul in Palazzolo Acreide, Sicily, serpent handlers called cerauli joined the procession carrying live snakes. Some wore serpent-shaped ring loaves on their heads, while others carried trays holding reptiles and gathered votive offerings.",
+        "fr": "Lors des anciennes processions de la fête de saint Paul à Palazzolo Acreide, en Sicile, des charmeurs de serpents appelés cerauli portaient des serpents vivants. Certains avaient sur la tête des pains en couronne en forme de serpent, tandis que d'autres portaient des plateaux avec des reptiles et recueillaient les offrandes votives."
       },
       "editorial": {
         "claude_verdict": "KEEP",
-        "copy_basis": "Two same-event research cards consolidated into one revised candidate; owner EN/FR acceptance and original Pitre facsimile verification outstanding",
+        "copy_basis": "Pitrè, Feste patronali in Sicilia (1900), p.355, describes live snakes and serpent-shaped ring bread coexisting in the same historical procession; correction removes unsubstantiated later-replacement chronology. Owner final EN/FR signoff remains pending.",
         "caveat": null,
         "copy_adjustment_pending": true,
         "owner_decision": null
@@ -2765,6 +2770,14 @@
       "preferred_url": "https://candelierisassari.it/en/the-history-of-sassaris-candelieri/",
       "why": "City-backed event history supports current wooden candle-shaped festival structures and historically variable number, replacing false wax/seven title.",
       "original_link_preserved": true
+    }
+  ],
+  "source_text_errata": [
+    {
+      "id": "DYK-G600-P-028",
+      "finding": "Unsupported replacement chronology removed; contemporaneous ritual elements retained",
+      "verified_against": "Pitrè 1900 printed p. 355, indexed original text",
+      "original_folio_image_reviewed": false
     }
   ]
 }
