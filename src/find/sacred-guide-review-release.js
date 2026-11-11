@@ -41,7 +41,9 @@ export function inspectSacredGuideEvidence(guide,shrine,sourceRecords=[]){
       const frMemo=/\b(?:atlas|guide|fiche|profil|éditorial)\b/i;
       const enImplementation=/\b(?:the|this|our)\s+(?:app|application)\b|\bcanonical\s+(?:map|place|geographic)\b|route[- ]geometry|\b(?:approved\s+(?:photograph|image)|photograph(?:ic)?\s+(?:requires?|must|should|would need))\b/i;
       const frImplementation=/\bl[’\x27]application\b|\bgéographiques?\s+canoniques?\b|\bitinéraire\s+cartographié\s+doit\b/i;
-      if(enMeta.test(p.en||"")||frMeta.test(p.fr||"")||enMemo.test(p.en||"")||frMemo.test(p.fr||"")||enImplementation.test(p.en||"")||frImplementation.test(p.fr||""))
+      const enInternalMediaMap=/\b(?:GPS|map pins?|map coordinates?|map records?|canonical (?:Place|site|map|geographic|IDs?|record)|cover image|approved image|image rights|published record|database|the app|the Atlas|photographs?|GPX file)\b/i;
+      const frInternalMediaMap=/(?:\bGPS\b|\b(?:photo(?:s|graphies?)?|épingles?\s+cartographiqu(?:e|es)|lieux?\s+canoniques?|identifiants?\s+(?:de\s+)?sites?|tracé\s+GPS|coordonn[ée]es?\s+cartographiqu(?:e|es))\b|l[’']application)/i;
+      if(enMeta.test(p.en||"")||frMeta.test(p.fr||"")||enMemo.test(p.en||"")||frMemo.test(p.fr||"")||enImplementation.test(p.en||"")||frImplementation.test(p.fr||"")||enInternalMediaMap.test(p.en||"")||frInternalMediaMap.test(p.fr||""))
         issues.push("EDITORIAL_INSTRUCTIONS_IN_VISITOR_COPY");
       const wave1Bibliography=!filled(p.source_id)&&Number(guide.draft_order)<=56&&
         rows(guide.bibliography_urls).includes(p.source_url);

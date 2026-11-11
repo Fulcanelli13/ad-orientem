@@ -140,6 +140,10 @@ const fakeGeoGuide={...kevelaer,sections:kevelaer.sections.map(sec=>({
 const fakeGeoShrine={...byPlace.get(kevelaer.place_id),source_ids:[testLocator.id]};
 assert.ok(inspectSacredGuideEvidence(fakeGeoGuide,fakeGeoShrine,[testLocator])
  .issues.includes("GEOGRAPHIC_LOCATOR_NOT_HISTORICAL_EVIDENCE"));
+const fakeMapGuide={...kevelaer,sections:kevelaer.sections.map((sec,i)=>
+  i===0?{...sec,paragraphs:sec.paragraphs.map(p=>({...p,en:p.en+" Add a map pin and GPX file for this route."}))}:sec)};
+assert.ok(inspectSacredGuideEvidence(fakeMapGuide,byPlace.get(kevelaer.place_id),sources)
+  .issues.includes("EDITORIAL_INSTRUCTIONS_IN_VISITOR_COPY"));
 const fakeAppGuide={...kevelaer,sections:kevelaer.sections.map((sec,i)=>
   i===0?{...sec,paragraphs:sec.paragraphs.map(p=>({...p,en:p.en+" The app does not certify miracles."}))}:sec)};
 assert.ok(inspectSacredGuideEvidence(fakeAppGuide,byPlace.get(kevelaer.place_id),sources)
@@ -264,6 +268,9 @@ console.log("PASS: 224 unpublished drafts remain private; 56 Wave-1 + 168 Wave-2
   assert.equal(new Set(reviewRows.map(g=>g.place_id)).size,224);
   assert.equal(reviewRows.reduce((n,g)=>n+g.sections.length,0),672);
   assert.deepEqual(matrices.map(m=>m.summary.paragraphs),[168,504]);
+  assert.equal(matrices.reduce((n,m)=>n+m.summary.high_priority_paragraphs,0),
+    reviewRows.flatMap(g=>g.sections).filter(s=>s.editorial_review_priority==="TARGETED_SOURCE_REVIEW").length,
+    "Priority summary must equal actual paragraph-level review priorities");
   assert.equal(matrices.reduce((n,m)=>n+m.summary.checked_first_pass,0),93);
   assert.equal(matrices.reduce((n,m)=>n+m.summary.scoped_only,0),579);
   for(const m of matrices){
