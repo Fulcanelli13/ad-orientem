@@ -22,10 +22,9 @@ fact.priority_lexical_screen.manual_semantic_novelty_approved=true;
 fact.pilot_destination_audit.publishable_deep_link=true;
 fact.pilot_destination_audit.exact_in_app_route_verified=true;
 fact.pilot_source_folio.link_browser_verified=true;
-// Choose an actual upcoming date on which the single test-only R34 approval
-// wins the 226-entry (225 public + 1 test-only R34) mixed rotation.
-// Inspect 500 days: any interval of at least 2*N-1 days contains a full
-// 226-day aligned cycle, so a valid test-only candidate must appear.
+// Choose an actual date on which the test-only R34 approval wins the
+// combined previously published and newly curated Customs/Glossary rotation.
+// The new 520 IDs legitimately change which fact appears on each civil date.
 const historical=JSON.parse(await readFile(resolve(root,
  "data/did-you-know/weiser-historical-20-publication.v1.json"),"utf8"));
 const r50=JSON.parse(await readFile(resolve(root,
@@ -45,16 +44,20 @@ const h200=JSON.parse(await readFile(resolve(root,
 const h225=JSON.parse(await readFile(resolve(root,
  "data/did-you-know/dyk-h225-world-liturgies-25-publication.v1.json"),"utf8"));
 const historicalIds=[...historical.records,...r50.records,...r50b.records,...h100.records,...h125.records,...h150.records,...h175.records,...h200.records,...h225.records].map(x=>x.id);
+const curated=JSON.parse(await readFile(resolve(root,
+ "data/did-you-know/dyk-customs-glossary-520.v1.json"),"utf8"));
+assert.equal(curated.count,520,"Test must include the actual new public DYK pool");
+const fullPublicIds=[...historicalIds,...curated.records.map(x=>x.id)];
 const dayMs=86400000;
 const base=Date.UTC(2026,10,1);
-const testDate=Array.from({length:500},(_,i)=>
+const testDate=Array.from({length:2200},(_,i)=>
  new Date(base+i*dayMs).toISOString().slice(0,10))
- .find(date=>dykHomeRotationSlot(date,[...historicalIds,fact.id],DYK_GLOSSARY_FALLBACK_IDS)===fact.id);
+ .find(date=>dykHomeRotationSlot(date,[...fullPublicIds,fact.id],DYK_GLOSSARY_FALLBACK_IDS)===fact.id);
 assert.ok(testDate,"Test-only R34 release must receive one legitimate daily slot");
-const h225Date=Array.from({length:500},(_,i)=>
+const h225Date=Array.from({length:2200},(_,i)=>
  new Date(base+i*dayMs).toISOString().slice(0,10))
- .find(date=>dykHomeRotationSlot(date,historicalIds,DYK_GLOSSARY_FALLBACK_IDS)==="DYK-H225-R-001");
-assert.ok(h225Date,"The first H225 fact must have a public date in the 225-day cycle");
+ .find(date=>dykHomeRotationSlot(date,fullPublicIds,DYK_GLOSSARY_FALLBACK_IDS)==="DYK-H225-R-001");
+assert.ok(h225Date,"The first H225 fact must remain reachable in the combined public rotation");
 fact.publication_days=[testDate];
 const server=http.createServer(async(req,res)=>{
  try{
@@ -150,7 +153,7 @@ try{
   }finally{await page.close()}
  }
 
- console.log("PASS released H7 Discovery phone: 225 approved historical/Glossary public pool, actual H225 320/390 source journey; R34 remains unpublished until a test-only exact-date authorization opens its source");
+ console.log("PASS released H7 Discovery phone: original H225 and test-only R34 facts remain source-accessible in the expanded 520-fact Home rotation");
 }finally{
  await browser?.close().catch(()=>{});
  await new Promise(ok=>server.close(ok));
