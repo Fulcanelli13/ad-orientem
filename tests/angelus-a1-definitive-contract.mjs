@@ -11,6 +11,8 @@ assert.equal(ANGELUS_A1_TREATMENT,"caption");
 assert.deepEqual(angelusA1StagePlan("angelus"),[
  "Angelus Domini","Ecce ancilla","Et Verbum caro","Ora pro nobis","Oremus"]);
 assert.equal(angelusA1StagePlan("regina").length,4);
+assert.equal(angelusA1StagePlan("angelus",false).length,4);
+assert.equal(angelusA1StagePlan("regina",false).length,3);
 assert.equal(angelusA1Painting({form:"angelus",dateKey:"2026-11-11"}).id,"angelus");
 assert.equal(angelusA1Painting({form:"regina",dateKey:"2026-04-05"}).id,"regina");
 assert.equal(angelusA1Painting({form:"angelus",dateKey:"2026-12-28"}).id,"cavallino");
@@ -22,6 +24,8 @@ const deck=readFileSync(new URL("../src/pray/devotional-card-deck.js",import.met
 assert.ok(runtime.includes("decorateAngelusA1({"),"A1 production integration missing");
 assert.ok(runtime.includes("syncAngelusA1(m,index)"),"stage camera hook missing");
 assert.ok(deck.includes('entry.id==="collect"&&parts'),"historical conclusion must remain appended to Collect");
+assert.ok(deck.includes('layout==="a1"&&entry.id==="conclusion"'),"A1 conclusion must have its own stage");
+assert.ok(runtime.includes('layout:"a1"'),"A1 donor storyboard must be active");
 assert.ok(deck.includes("for(let i=0;i<3;i++)"),"three full Gloria Patri repetitions must remain");
 assert.ok(source.includes('LABELS={hail:"Ave Maria",collect:"Oratio"}'));
 assert.ok(source.includes('root.__aoA1Artwork=art')||source.includes('view.__aoA1Artwork=art'));
