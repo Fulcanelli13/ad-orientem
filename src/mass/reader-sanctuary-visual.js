@@ -40,7 +40,29 @@ const CSS=String.raw`
 .ao-sanctuary-preview .ao-reader-stage{grid-row:4;min-height:0}
 .ao-sanctuary-preview .ao-prayer-card{height:100%;min-height:0}
 @media(orientation:landscape) and (max-height:540px){
- .ao-reader-shell.ao-sanctuary-preview{--ao-sanctuary-height:110px}
+ /* A short landscape viewport cannot stack a 110px stage over both
+    ribbon rows and still leave a readable canonical Mass prayer pane.
+    Use a side-by-side stage, preserving the original animated artwork. */
+ .ao-reader-shell.ao-sanctuary-preview{
+  --ao-sanctuary-width:clamp(160px,34vw,340px);
+  grid-template-columns:var(--ao-sanctuary-width) minmax(0,1fr);
+  grid-template-rows:auto auto minmax(0,1fr)
+ }
+ .ao-sanctuary-preview > .ao-reader-top-ribbon,
+ .ao-sanctuary-preview > .ao-state-ribbon{grid-column:1/-1}
+ .ao-sanctuary-preview .ao-sanctuary-window{
+  grid-column:1;grid-row:3;min-width:0;height:100%
+ }
+ .ao-sanctuary-preview .ao-reader-stage{
+  grid-column:2;grid-row:3;min-width:0;min-height:0
+ }
+ .ao-sanctuary-preview .ao-sanctuary-resize{
+  left:auto;right:0;top:0;bottom:0;width:16px;height:100%;
+  cursor:ew-resize
+ }
+ .ao-sanctuary-preview .ao-sanctuary-resize:before{
+  width:3px;height:38px
+ }
 }`;
 export function createReaderSanctuaryPreview({root,win=root?.ownerDocument?.defaultView,
  src=new URL("../../assets/mass/live-sanctuary/index.html?aoSanctuary=1",import.meta.url).href,enabled=false}={}){
@@ -74,16 +96,32 @@ export function createReaderSanctuaryPreview({root,win=root?.ownerDocument?.defa
      e.data?.originalCards===65){ready=true;send(pending)}
  };
  win.addEventListener("message",receive);
+ const compactLandscape=()=>win.matchMedia?.(
+  "(orientation: landscape) and (max-height: 540px)")?.matches===true;
  const height=()=>Math.max(80,Math.min(win.innerHeight*.65,
    parseFloat(win.getComputedStyle(region).height)||230));
+ const width=()=>Math.max(120,region.getBoundingClientRect?.().width||210);
  const setHeight=h=>shell.style.setProperty("--ao-sanctuary-height",
   Math.max(80,Math.min(Math.round(win.innerHeight*.65),Math.round(h)))+"px");
- const down=e=>{drag={y:e.clientY,h:height()};grip.setPointerCapture?.(e.pointerId);
+ const setWidth=w=>shell.style.setProperty("--ao-sanctuary-width",
+  Math.max(150,Math.min(Math.round(win.innerWidth*.58),Math.round(w)))+"px");
+ const down=e=>{drag={x:e.clientX,y:e.clientY,w:width(),h:height(),
+   landscape:compactLandscape()};grip.setPointerCapture?.(e.pointerId);
   e.preventDefault?.()};
- const move=e=>{if(drag)setHeight(drag.h+e.clientY-drag.y)};
+ const move=e=>{if(drag){
+  if(drag.landscape)setWidth(drag.w+e.clientX-drag.x);
+  else setHeight(drag.h+e.clientY-drag.y)
+ }};
  const up=()=>{drag=null};
- const key=e=>{if(e.key==="ArrowUp"||e.key==="ArrowDown"){
-  e.preventDefault();setHeight(height()+(e.key==="ArrowDown"?24:-24))}};
+ const key=e=>{
+  if(compactLandscape()){
+   if(e.key==="ArrowLeft"||e.key==="ArrowRight"){
+    e.preventDefault();setWidth(width()+(e.key==="ArrowRight"?24:-24))
+   }
+  }else if(e.key==="ArrowUp"||e.key==="ArrowDown"){
+   e.preventDefault();setHeight(height()+(e.key==="ArrowDown"?24:-24))
+  }
+ };
  grip.addEventListener("pointerdown",down);
  grip.addEventListener("pointermove",move);
  grip.addEventListener("pointerup",up);
@@ -114,6 +152,7 @@ export function createReaderSanctuaryPreview({root,win=root?.ownerDocument?.defa
   grip.removeEventListener("keydown",key);
   region.remove();css.remove();shell.classList.remove("ao-sanctuary-preview");
   shell.style.removeProperty("--ao-sanctuary-height");
+  shell.style.removeProperty("--ao-sanctuary-width");
  };
  return Object.freeze({active:true,project,destroy,
   inspect:()=>Object.freeze({ready,destroyed,pending:pending?.cardTitle??null})});

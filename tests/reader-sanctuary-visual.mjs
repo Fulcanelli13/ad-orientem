@@ -27,3 +27,9 @@ assert.match(visualSource,/region\.hidden=true;shell\.classList\.remove\("ao-san
  "Missal or unsupported rite must remove the sanctuary layout, not merely stop animation");
 assert.match(visualSource,/region\.hidden=false;shell\.classList\.add\("ao-sanctuary-preview"\)/,
  "Switching back to LIVE must restore original resizable sanctuary presentation");
+
+const visualSourceLandscape=readFileSync(new URL("../src/mass/reader-sanctuary-visual.js",import.meta.url),"utf8");
+assert.match(visualSourceLandscape,/grid-template-columns:var\(--ao-sanctuary-width\) minmax\(0,1fr\)/,
+ "Compact sideways reading needs an actual side-by-side sanctuary and prayer stage");
+assert.match(visualSourceLandscape,/if\(drag\.landscape\)setWidth\(/,
+ "Sideways drag must resize sanctuary width instead of covering prayers");

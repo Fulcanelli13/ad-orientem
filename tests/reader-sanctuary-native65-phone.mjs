@@ -71,26 +71,36 @@ try{
     latinLength:reader?.textContent?.length??0,
     readHeight:reader?.clientHeight??0,
     visualHeight:document.querySelector(".ao-sanctuary-window")?.getBoundingClientRect().height??0,
+    visualWidth:document.querySelector(".ao-sanctuary-window")?.getBoundingClientRect().width??0,
+    readWidth:reader?.clientWidth??0,
     left:document.querySelectorAll(".ao-rail-left .ao-rail-item").length,
     right:document.querySelectorAll(".ao-rail-right .ao-rail-item").length
    };
   });
   assert.ok(before.latinLength>100&&before.readHeight>90,
-   "Sanctuary displaced the canonical Mass text");
+   "Sanctuary displaced the canonical Mass text: "+JSON.stringify({form,width,height,before}));
+  if(width>height&&height<=540)
+   assert.ok(before.readWidth>360&&before.visualWidth>=150,
+    "Landscape sanctuary must share width, not consume the reader's vertical space");
   assert.ok(before.left>=3&&before.right>=3,"Dynamic icon rails disappeared");
   const grip=page.locator(".ao-sanctuary-resize"),rect=await grip.boundingBox();
   assert.ok(rect&&rect.height>0,"Resizable original sanctuary absent");
   const x=rect.x+rect.width/2,y=rect.y+rect.height/2;
+  const sideways=width>height&&height<=540;
   await page.mouse.move(x,y);await page.mouse.down();
-  await page.mouse.move(x,y-35,{steps:5});await page.mouse.up();
+  await page.mouse.move(x+(sideways?-35:0),y+(sideways?0:-35),{steps:5});await page.mouse.up();
   const after=await page.evaluate(()=>({
    height:document.querySelector(".ao-sanctuary-window")?.getBoundingClientRect().height??0,
+   width:document.querySelector(".ao-sanctuary-window")?.getBoundingClientRect().width??0,
    prayer:document.querySelector(".ao-prayer-card")?.clientHeight??0,
    left:document.querySelectorAll(".ao-rail-left .ao-rail-item").length,
    right:document.querySelectorAll(".ao-rail-right .ao-rail-item").length
   }));
-  assert.ok(Math.abs(after.height-before.visualHeight)>8,
-   "Resizing must change picture height instead of covering the prayer pane");
+  assert.ok(sideways
+    ? Math.abs(after.width-before.visualWidth)>8
+    : Math.abs(after.height-before.visualHeight)>8,
+   "Resizing must change picture size instead of covering the prayer pane: "+
+      JSON.stringify({form,width,height,before,after}));
   assert.ok(after.prayer>90&&after.left===before.left&&after.right===before.right);
   const original=await frame.evaluate(()=>window.AO_SANCTUARY_EMBED_TEST.getState());
   const improper=await frame.evaluate(()=>window.AO_SANCTUARY_EMBED_TEST.present({
