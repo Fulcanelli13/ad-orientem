@@ -21,7 +21,13 @@
     "poland_2026_independent_owner_or_diocesan_institution_identifications": 8,
     "poland_2026_new_positions_with_independent_older_rite_confirmation": 3,
     "poland_2026_new_positions_with_older_rite_unconfirmed_or_exact_chapel_hold": 5,
-    "poland_2026_excel_import_approved": 0
+    "poland_2026_excel_import_approved": 0,
+    "archived_nonexact_original_url_cases_screened": 9,
+    "archived_nonexact_existing_cl2_single_sites": 6,
+    "archived_nonexact_same_complex_chapel_reassignment": 1,
+    "archived_nonexact_community_multiple_cl2_sites": 1,
+    "archived_nonexact_new_physical_site_excel_candidates": 1,
+    "archived_original_urls_all_13_screened": 13
   },
   "firstparty_exact_url_evidence": [
     {
@@ -196,6 +202,120 @@
     "The eight recent LMD Poland additions are not eight proven missing CL2 sites; at least one is already present under an abbreviated title.",
     "Do not suppress any Ad Orientem-only site based on LMD omission or canceled status.",
     "All cases remain research-only; use CL2 Excel approval for any proposed new group or merge.",
-    "For Brwinów, the St Florian parish's older-rite Mass is a different physical church from the separately indexed Poor Clare Capuchin nuns' chapel; preserve chapel-specific certification hold."
+    "For Brwinów, the St Florian parish's older-rite Mass is a different physical church from the separately indexed Poor Clare Capuchin nuns' chapel; preserve chapel-specific certification hold.",
+    "Historic community/group-level LMD records may refer to multiple distinct current Mass chapels; do not create one physical site per organization or collapse physically separate CL2 sites.",
+    "Boston Cathedral's Blessed Sacrament Chapel and Our Lady's Chapel are distinct internal worship rooms; the historical LMD label must not override the current official venue label.",
+    "Winona St Mary of the Angels is independently attested as a 1962-Missal venue with a physical chapel but still requires original Excel CL2 master identity approval before any app addition."
+  ],
+  "nonexact_firstparty_original_url_dispositions": [
+    {
+      "source_id": "LMD:agrupacion-catolica-universitaria-miami-united-states",
+      "category": "COMMUNITY_NOT_SINGLE_PHYSICAL_SITE",
+      "cl2_ids": [
+        "RG-2B24CC45DB61",
+        "RG-4ACD125CC3CD",
+        "RG-A03EB23BDD92"
+      ],
+      "independent_source_url": "https://latinmassmiami.org/mass-times",
+      "evidence": "Archived ACU/community source links to the current Holy Face of Jesus FSSP Miami chaplaincy listing Our Lady of Belén Chapel (Sunday), Our Lady of Mercy Chapel (weekday) and Our Lady of Lourdes (second Saturdays). CL2 already contains all three as separate physical sites. Do not equate Agrupación Católica Universitaria itself with a physical church or assert organizational succession.",
+      "rite": "Older Roman Rite supported for current chaplaincy; organization/venue lineage distinct.",
+      "action": "NO_NEW_COMMUNITY_SITE; PRESERVE_THREE_INDIVIDUAL_CL2_SITES",
+      "excel_approved": false
+    },
+    {
+      "source_id": "LMD:annunciation-church-houston-united-states",
+      "category": "EXISTING_CL2_PHYSICAL_SITE",
+      "cl2_ids": [
+        "RG-3AF61C17A39B"
+      ],
+      "independent_source_url": "https://annunciationcc.org/events/archangels",
+      "evidence": "Houston Annunciation Catholic Church, 1618 Texas Ave, is the same named institution as the CL2 Houston locality-only record. Parish explicitly advertises an Extraordinary Form High Mass dated September 29 2026; source URL differs from archive's http://www.annunciationcc.org/ and is already represented in CL2 as https://annunciationcc.org/mass.",
+      "rite": "Older rite supported by dated first-party event; not approval to copy a weekly schedule.",
+      "action": "EXISTING_IDENTITY_OWNER_EVIDENCE_ONLY",
+      "excel_approved": false
+    },
+    {
+      "source_id": "LMD:annunciation-church-yonkers-united-states",
+      "category": "EXISTING_CL2_PHYSICAL_SITE",
+      "cl2_ids": [
+        "RG-FC18299DDF0F"
+      ],
+      "independent_source_url": "https://annunciation-fatima.com/mass-devotions",
+      "evidence": "Annunciation Church in Crestwood/Yonkers belongs to Annunciation–Our Lady of Fatima parish; CL2 records the named combined parish at 470 Westchester Ave. First-party Mass page attributes its Latin Mass specifically to Annunciation's LOWER CHURCH, not to the separate Our Lady of Fatima church.",
+      "rite": "Latin Mass advertised; 1962 use not independently established by the cited schedule.",
+      "action": "EXISTING_IDENTITY_LOWER_CHURCH_SCOPE_HOLD",
+      "excel_approved": false
+    },
+    {
+      "source_id": "LMD:basilica-shrine-of-saint-mary-wilmington-united-states",
+      "category": "EXISTING_CL2_PHYSICAL_SITE",
+      "cl2_ids": [
+        "RG-ABD010C7A5D7"
+      ],
+      "independent_source_url": "https://www.traditionallatinmasswilmingtonnc.com/",
+      "evidence": "Wilmington NC Traditional Latin Mass organiser explicitly names Basilica Shrine of St Mary, 412 Ann St, matching existing CL2 Basilica of St Mary record with identical address. Its 2026 schedule includes November; no copied time or recurrence is published through this audit.",
+      "rite": "Traditional Latin Mass attested by local organiser, not silently converted into CL27 timetable.",
+      "action": "EXISTING_IDENTITY_OWNER_ORGANISER_EVIDENCE_ONLY",
+      "excel_approved": false
+    },
+    {
+      "source_id": "LMD:blessed-sacrament-church-honolulu-united-states",
+      "category": "EXISTING_CL2_PHYSICAL_SITE",
+      "cl2_ids": [
+        "RG-9F7550645D32"
+      ],
+      "independent_source_url": "https://blessedsacramentpauoa.blogspot.com/p/latin-mass.html",
+      "evidence": "Blessed Sacrament Church, Pauoa at 2124 Pauoa Rd, Honolulu, matches CL2 Blessed Sacrament Church, Pauoa. Parish itself explicitly says its Traditional Latin Mass follows the 1962 Missal. CL2 location is currently locality-only; do not overwrite coordinates without Excel review.",
+      "rite": "1962 Missal explicitly confirmed by parish.",
+      "action": "EXISTING_IDENTITY_OWNER_EVIDENCE_ONLY",
+      "excel_approved": false
+    },
+    {
+      "source_id": "LMD:carmel-of-jesus-mary-joseph-fairfield-united-states",
+      "category": "EXISTING_CL2_PHYSICAL_SITE",
+      "cl2_ids": [
+        "RG-C51DCE8B1899"
+      ],
+      "independent_source_url": "https://www.fairfieldcarmelites.org/the-nuns-of-fairfield",
+      "evidence": "Owner confirms Carmel of Jesus, Mary & Joseph at 327 Water St, Fairfield PA, same named physical monastery as CL2. Its official page says it primarily uses the Extraordinary Form. Historic LMD listing labels a 1937 Carmelite Rite; do NOT assert equivalence to the 1962 Roman Missal or infer a precise stable current chapel schedule.",
+      "rite": "Owner explicitly says Extraordinary Form; precise liturgical books/1937 Carmelite Rite discrepancy held.",
+      "action": "EXISTING_IDENTITY_RUBRICAL_BASIS_HOLD",
+      "excel_approved": false
+    },
+    {
+      "source_id": "LMD:carmel-of-jesus-mary-joseph-valparaiso-united-states",
+      "category": "EXISTING_CL2_PHYSICAL_SITE",
+      "cl2_ids": [
+        "RG-0ECBB0E72D34"
+      ],
+      "independent_source_url": "https://www.lincolndiocese.org/directory/women-religious/217-carmelite-sisters",
+      "evidence": "Archived source points to Lincoln diocesan Carmelite Sisters. Existing CL2 site separately identifies Carmel of Jesus, Mary and Joseph at 9300 W Agnew Road, Valparaiso NE. Same named monastery and locality are corroborated internally; a new 2026 first-party 1962-Missal timetable was not established in this review.",
+      "rite": "Current specific rite and schedule held.",
+      "action": "EXISTING_MONASTERY_IDENTITY_CURRENT_RITE_HOLD",
+      "excel_approved": false
+    },
+    {
+      "source_id": "LMD:cathedral-of-the-holy-cross-blessed-sacrament-chapel-boston-united-states",
+      "category": "SAME_BUILDING_HISTORIC_CHAPEL_NAME_CONFLICT",
+      "cl2_ids": [
+        "RG-AAEB19C81AB3"
+      ],
+      "independent_source_url": "https://bostoncathedral.com/mass-times/",
+      "evidence": "Archived LMD name says Blessed Sacrament Chapel, but current cathedral Mass page locates the Sunday Latin Mass in Our Lady's Chapel and separately places weekday Masses in Blessed Sacrament Chapel. Historical cathedral bulletins previously used Blessed Sacrament Chapel for older-rite worship; existing CL2 properly names the current Our Lady's Chapel. Same cathedral complex, not proof that the two chapels are the same room.",
+      "rite": "Current Latin Mass at Our Lady's Chapel; no timetable transfer from named archive chapel.",
+      "action": "HISTORIC_CHAPEL_REASSIGNMENT_NOT_NEW_BUILDING",
+      "excel_approved": false
+    },
+    {
+      "source_id": "LMD:chapel-of-saint-mary-of-the-angels-winona-united-states",
+      "category": "NEW_SITE_EXCEL_CANDIDATE",
+      "cl2_ids": [],
+      "independent_source_url": "https://www.basilicawinona.org/latin-mass",
+      "additional_source_url": "https://www.smumn.edu/about/our-mission/history-heritage/",
+      "evidence": "Basilica of St Stanislaus in Winona explicitly announces November 2026 Latin Masses according to 1962 Missal in Chapel of St Mary of the Angels, 1160 West Wabasha Street. St Mary's University confirms it retained ownership of this named chapel. Current 2,580-site CL2 physical index has no Winona physical-site record. Independently supported candidate only, subject to original CL2 Excel duplicate/source review and approval.",
+      "rite": "1962 Missal explicitly stated with dated November 2026 church-organiser schedule.",
+      "action": "PROPOSE_EXCEL_REVIEW_NEW_PHYSICAL_SITE_NO_CL2_ADMISSION",
+      "excel_approved": false
+    }
   ]
 }
