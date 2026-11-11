@@ -43,6 +43,18 @@ for(const entry of entries){
  }
 }
 
+// Reject metadata labels and content-authoring advice discovered by a separate
+// human editorial review; distinguish them from genuine doctrinal terminology.
+const exposedMetadata=/\b(?:PROFILE_1962|HISTORICAL object|reference layer|phrase object|liturgical profile)\b|(?:profil 1962\/historique|couche de référence chant\/latin|objet de phrase latine|tableau de postures intemporel)/iu;
+for(const entry of entries){
+ for(const field of ["short_definition","explanation"]){
+  for(const language of ["en","fr"]){
+   assert.doesNotMatch(entry[field][language],exposedMetadata,
+    entry.id+" "+field+"/"+language+" exposes implementation metadata");
+  }
+ }
+}
+
 const apostasy=entries.find(e=>e.id==="G141"),heresy=entries.find(e=>e.id==="G142"),schism=entries.find(e=>e.id==="G143");
 assert.match(apostasy.explanation.en,/Christian faith as a whole/i);
 assert.match(heresy.explanation.en,/material heresy.*formal heresy/i);
