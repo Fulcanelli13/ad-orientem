@@ -10,6 +10,7 @@ import {
 import {exploreMapFeatures} from "../src/find/map-runtime.js";
 import {CL2_PHYSICAL_SITE_INDEX_URL} from "../src/find/cl2-physical-directory.js";
 import {CL2_SITE_CATEGORY_MATRIX_URL} from "../src/find/tlm-site-category-associations.js";
+import {CL2_EXACT_VENUE_CATEGORY_WITNESSES_URL} from "../src/find/tlm-exact-venue-categories.js";
 import {CL27_PUBLIC_CELEBRATION_URL} from "../src/find/tlm-celebration-evidence.js";
 import {CL27_INSTITUTIONAL_LITURGY_URL} from "../src/find/tlm-institutional-rite-missal.js";
 import {CL27_SITE_CONTACT_URL} from "../src/find/tlm-site-contact-evidence.js";
@@ -22,6 +23,7 @@ const base=JSON.parse(readFileSync(fileURLToPath(PRELIMINARY_R49_URL),"utf8"));
 const release=JSON.parse(readFileSync("data/directory/published-provisional-mass-sites-20261026.v1.json","utf8"));
 const worldwide=JSON.parse(readFileSync("data/directory/generated/cl2-physical-site-index.v1.json","utf8"));
 const categoryMatrix=JSON.parse(readFileSync(fileURLToPath(CL2_SITE_CATEGORY_MATRIX_URL),"utf8"));
+const siteWitnesses=JSON.parse(readFileSync(fileURLToPath(CL2_EXACT_VENUE_CATEGORY_WITNESSES_URL),"utf8"));
 const publishedWitnesses=JSON.parse(readFileSync(fileURLToPath(CL27_PUBLIC_CELEBRATION_URL),"utf8"));
 const publishedContacts=JSON.parse(readFileSync(fileURLToPath(CL27_SITE_CONTACT_URL),"utf8"));
 const publishedWeekly=JSON.parse(readFileSync(fileURLToPath(CL27_WEEKLY_SOURCE_PROGRAMME_URL),"utf8"));
@@ -82,6 +84,7 @@ const api=async url=>{
    String(url)===CL27_DATED_MASS_PROGRAMME_URL?datedProgramme:
    String(url)===CL27_TARARE_DATED_MASS_PROGRAMME_URL?tarareProgramme:
    String(url)===CL2_SITE_CATEGORY_MATRIX_URL?categoryMatrix:
+   String(url)===CL2_EXACT_VENUE_CATEGORY_WITNESSES_URL?siteWitnesses:
    String(url).includes("published-provisional")?release:base};
 };
 const live=await loadPreliminaryR49({fetchImpl:api});
@@ -90,8 +93,9 @@ assert.equal(live.filter(x=>x.map_publishable).length,2569);
 assert.equal(live.filter(x=>x.map_state==="ADDRESS_ONLY").length,14);
 assert.equal(live.filter(x=>x.site_category).length,2580,
  "Every canonical physical site must have a source-context category");
-assert.equal(live.filter(x=>x.site_category?.category==="UNRESOLVED").length,345);
+assert.equal(live.filter(x=>x.site_category?.category==="UNRESOLVED").length,319);
 assert.equal(live.filter(x=>x.site_category?.category==="DIRECTORY_GROUP_ONLY").length,74);
+assert.equal(live.filter(x=>x.site_category?.classification_basis==="EXACT_FIRST_PARTY_VENUE_WITNESS").length,26);
 assert.ok(added.every(x=>live.some(v=>v.item_id===x.item_id)));
 assert.equal(live.filter(x=>x.celebration_evidence).length,2,
  "The source-owned CL27 witness overlay must not alter the B91 physical-site census");
@@ -128,5 +132,6 @@ assert.deepEqual(calls,[PRELIMINARY_R49_URL,
   CL27_POLAND_SOURCE_URL,
   CL27_POLAND_WAVE2_SOURCE_URL,
   CL27_INSTITUTIONAL_LITURGY_URL,
-  CL2_SITE_CATEGORY_MATRIX_URL]);
+  CL2_SITE_CATEGORY_MATRIX_URL,
+  CL2_EXACT_VENUE_CATEGORY_WITNESSES_URL]);
 console.log("PASS B91 worldwide directory 2583 unchanged; 2569 mapped, 14 list-only; 31 source-weekly sites (99 times), 2 dated programmes (11 printed dates); zero generated recurring events");
