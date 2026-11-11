@@ -6,7 +6,7 @@
 export const CL2_EXACT_VENUE_CATEGORY_WITNESSES_URL=new URL(
  "../../data/directory/cl2-exact-venue-category-witnesses-20261111.v1.json",import.meta.url).href;
 const T=v=>String(v??"").trim();
-const safeUrl=v=>/^https:\/\/[^\\s<>"']+$/i.test(T(v)) &&
+const safeUrl=v=>/^https:\/\/[^\s<>"']+$/i.test(T(v)) &&
  !/(?:latinmassdir\.org|lms\.org\.uk|weekdaymasses\.org\.uk)/i.test(T(v));
 const categoryLane=Object.freeze({
  DIOCESAN_OR_PARISH_CONTEXT:"DIOCESAN_PHOTO",
