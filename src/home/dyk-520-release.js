@@ -22,7 +22,7 @@ const calendarField=(value,allowed,max=6)=>{
  return seen.size===value.length&&value.every(v=>typeof v==="string"&&allowed(v));
 };
 const validMonthDay=value=>{
- if(typeof value!=="string"||!/^\\d{2}-\\d{2}$/.test(value))return false;
+ if(typeof value!=="string"||!/^\d{2}-\d{2}$/.test(value))return false;
  const d=new Date("2024-"+value+"T12:00:00Z");
  return !Number.isNaN(d.getTime())&&d.toISOString().slice(5,10)===value;
 };
