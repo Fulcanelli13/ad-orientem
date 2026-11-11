@@ -643,5 +643,18 @@
       "visual_qa": "GOOD_HERO",
       "publication_approved": false
     }
-  ]
+  ],
+  "verification": {
+    "compared_to_pr2877_head": "d987fe332b6546ae27f375e02a0584a4909b056e",
+    "cl2_physical_site_index": "data/directory/generated/cl2-physical-site-index.v1.json",
+    "verified_at": "2026-11-11",
+    "verified_existing_cl2_ids": 28,
+    "verified_exact_cl2_to_existing_source_venue_ids": 28,
+    "source_id_mismatches": 0,
+    "approved_directory_media_collision_main": 0,
+    "asset_file_checksum_verified_in_local_zip": 28,
+    "local_zip_sha256": "30ab703a2578b5649a4c36cee10123f4be7ba5b315196a90ff6d8f777aa793ec",
+    "public_image_approval_count": 0,
+    "pr2877_ci_observation": "Directory foundation fails in test:explore-surface; Required main gate also failed in full existing non-browser regression suite. Do not attribute every failure to Playwright apt network; inspect logs to isolate actual application/test regressions before merging."
+  }
 }
