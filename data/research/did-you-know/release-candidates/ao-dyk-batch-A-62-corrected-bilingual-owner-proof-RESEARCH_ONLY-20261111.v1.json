@@ -5,7 +5,7 @@
   "global_release_authorized": false,
   "owner_release_decision": "UNAPPROVED",
   "date": "2026-11-11",
-  "description": "Corrected bilingual editorial proof of owner Batch A. 62 distinct concepts, not a release dataset. Never import it into live Home. No owner approval. Stage retains historic source records in 526 master and 64-card CSV.",
+  "description": "Corrected bilingual editorial proof of owner Batch A. 62 distinct concepts, not a release dataset. Never import it into live Home. No owner approval. Stage retains historic source records in 526 master and 64-card CSV. Three supporting source links added, with original provenance retained and link-quality flags not promoted to release certification.",
   "provenance": {
     "source_526_preview_blob_sha": "33ed6c6d777defd2913214c69ab7ef70c4a45c24",
     "source_63_preflight_blob_sha": "f89ce51513d125bf32a45250aad99bd41409c01f",
@@ -63,9 +63,9 @@
   "unresolved_checks": [
     "Weiser original 384-page scanned PDF: web screenshot failed; original page-image spotchecks outstanding",
     "Pitre volume 21 original facsimile page-image certification outstanding",
-    "Full 45-URL deep-link browser QA and some UNESCO anti-bot handling outstanding",
     "Human bilingual final copy acceptance and semantic release approval",
-    "Explicit owner approval, approved release artifact, Home tests on real approved data, merge and GitHub Pages SHA check"
+    "Explicit owner approval, approved release artifact, Home tests on real approved data, merge and GitHub Pages SHA check",
+    "Known registered-source exceptions (Macao generic event shell, Indonesia page inaccessible, UNESCO bot challenge) documented; final end-user deep-link acceptance remains outstanding"
   ],
   "records": [
     {
@@ -393,13 +393,16 @@
       "research_provenance": {
         "master_fact_id": "DYK-C400-BG-014",
         "origin_id": "DYK-C400-BG-014",
-        "source_ids_raw": "WEI58-24-007",
-        "source_urls_raw": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+        "source_ids_raw": "WEI58-24-007 | SASSARI-OFFICIAL-CANDELIERI",
+        "source_urls_raw": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf | https://candelierisassari.it/en/the-history-of-sassaris-candelieri/",
         "source_locator_raw": "289,290 / ",
         "source_record_path": "data/research/did-you-know/dyk-customs-400-provisional-new-selection-20261110.v4.json",
         "historical_geographic_scope_raw": "{\"historic_or_regional\":true,\"not_a_universal_liturgical_instruction\":true,\"current_local_continuity_not_inferred\":true}",
         "source_check_result_raw": null,
-        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS",
+        "preferred_source_url": "https://candelierisassari.it/en/the-history-of-sassaris-candelieri/",
+        "source_url_qa_note": "City-backed event history supports current wooden candle-shaped festival structures and historically variable number, replacing false wax/seven title.",
+        "supplemental_public_source_confirmed": true
       },
       "release_gate": {
         "owner_approved": false,
@@ -1253,13 +1256,16 @@
       "research_provenance": {
         "master_fact_id": "DYK-CW16-040",
         "origin_id": "DYK-CW16-040",
-        "source_ids_raw": "INDONESIA-TOURISM-SEMANA-SANTA",
-        "source_urls_raw": "https://www.indonesia.travel/fr/en/news-update/semana-santa-easter-holy-week-devotions-in-larantuka-east-flores-news",
+        "source_ids_raw": "INDONESIA-TOURISM-SEMANA-SANTA | ANTARA-LARANTUKA-2017",
+        "source_urls_raw": "https://www.indonesia.travel/fr/en/news-update/semana-santa-easter-holy-week-devotions-in-larantuka-east-flores-news | https://en.antaranews.com/news/110373/catholic-pilgrims-gear-up-for-semana-santa",
         "source_locator_raw": "Tikam Turo candle route",
         "source_record_path": "Indonesia Tourism Semana Santa Larantuka",
         "historical_geographic_scope_raw": "Indonesia; East Flores; Holy Thursday",
         "source_check_result_raw": null,
-        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS",
+        "preferred_source_url": "https://en.antaranews.com/news/110373/catholic-pilgrims-gear-up-for-semana-santa",
+        "source_url_qa_note": "Registered Indonesia Tourism URL is search-indexed but direct retrieval failed; ANTARA article remains readable and explicitly corroborates seven-kilometre Tikam Turo candle route and Tuan Ma clothing.",
+        "supplemental_public_source_confirmed": true
       },
       "release_gate": {
         "owner_approved": false,
@@ -1382,13 +1388,16 @@
       "research_provenance": {
         "master_fact_id": "DYK-CW16-054",
         "origin_id": "DYK-CW16-054",
-        "source_ids_raw": "MACAO-TOURISM-FATIMA-2024",
-        "source_urls_raw": "https://www.macaotourism.gov.mo/en/events/whatson/10211/?type=1",
+        "source_ids_raw": "MACAO-TOURISM-FATIMA-2024 | MACAO-CULTURAL-HERITAGE-FATIMA",
+        "source_urls_raw": "https://www.macaotourism.gov.mo/en/events/whatson/10211/?type=1 | https://www.culturalheritage.mo/en/detail/101978",
         "source_locator_raw": "2024 Macao tourism procession",
         "source_record_path": "Macao Government Tourism Fatima procession",
         "historical_geographic_scope_raw": "Macao; May 13",
         "source_check_result_raw": null,
-        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS"
+        "source_check_status": "NOT_RECHECKED_IN_CLAUDE_EDITORIAL_PASS",
+        "preferred_source_url": "https://www.culturalheritage.mo/en/detail/101978",
+        "source_url_qa_note": "Registered tourism event URL resolves to a generic empty event shell; Macao government Cultural Affairs Bureau has persistent full description, dates, heritage status, processional route and participants.",
+        "supplemental_public_source_confirmed": true
       },
       "release_gate": {
         "owner_approved": false,
@@ -2733,6 +2742,29 @@
         "published": false
       },
       "eligibility": "RESEARCH_ONLY"
+    }
+  ],
+  "source_link_fixes": [
+    {
+      "id": "DYK-CW16-054",
+      "supplemental_id": "MACAO-CULTURAL-HERITAGE-FATIMA",
+      "preferred_url": "https://www.culturalheritage.mo/en/detail/101978",
+      "why": "Registered tourism event URL resolves to a generic empty event shell; Macao government Cultural Affairs Bureau has persistent full description, dates, heritage status, processional route and participants.",
+      "original_link_preserved": true
+    },
+    {
+      "id": "DYK-CW16-040",
+      "supplemental_id": "ANTARA-LARANTUKA-2017",
+      "preferred_url": "https://en.antaranews.com/news/110373/catholic-pilgrims-gear-up-for-semana-santa",
+      "why": "Registered Indonesia Tourism URL is search-indexed but direct retrieval failed; ANTARA article remains readable and explicitly corroborates seven-kilometre Tikam Turo candle route and Tuan Ma clothing.",
+      "original_link_preserved": true
+    },
+    {
+      "id": "DYK-C400-BG-014",
+      "supplemental_id": "SASSARI-OFFICIAL-CANDELIERI",
+      "preferred_url": "https://candelierisassari.it/en/the-history-of-sassaris-candelieri/",
+      "why": "City-backed event history supports current wooden candle-shaped festival structures and historically variable number, replacing false wax/seven title.",
+      "original_link_preserved": true
     }
   ]
 }
