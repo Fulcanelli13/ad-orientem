@@ -55,6 +55,33 @@ function sourcePose(nativeCueId,station){
  // A pose requires its independently source-verified gesture in a later stage.
  return "stand";
 }
+// These are small source-cue indicators from the handoff, never labels or
+// evidence that anyone was heard singing or ringing. No Schola or organ badge
+// is drawn without an independent verified performance/permission source.
+function claudeStatusMarks(signs,priestPos,serverPresent){
+ if(signs?.source!=="CURRENT_NATIVE_SOURCE_CUE_EXPECTED_NOT_OBSERVED")return "";
+ const badge=(kind,x,y,inner,aria)=>`<g class="ao-claude-live-status" data-live-status="${kind}"
+  role="img" aria-label="${aria}"><circle cx="${x}" cy="${y}" r="15.5"
+  fill="#101820" stroke="#d4b16a" stroke-opacity=".77" stroke-width="1.4"/>${inner}</g>`;
+ const glyph=(x,y,value)=>`<text x="${x}" y="${y+5.5}" text-anchor="middle"
+  fill="#ebdfc2" font-family="Georgia,serif" font-size="20">${value}</text>`;
+ let out="";
+ if(priestPos && signs.priest){
+  const mark=signs.priest==="SUNG"?"♪":signs.priest==="ALOUD"?"℣":"•••";
+  out+=badge("priest",priestPos.x,priestPos.y-74,
+   glyph(priestPos.x,priestPos.y-74,mark),"Expected priest voice cue, not observed audio");
+ }
+ if(signs.response)out+=badge("response",185,161,
+  glyph(185,161,"℟"),"Expected response cue, not observed audio");
+ if(signs.bell && serverPresent){
+  const x=349,y=291;
+  const icon=`<path d="M ${x-7} ${y+4} h14 l-3 -4 v-5 a4 4 0 0 0 -8 0 v5 z M ${x-2} ${y+7} h4"
+    fill="none" stroke="#ebdfc2" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>`;
+  out+=badge("bell",x,y,icon,"Expected source bell cue, not detected ringing");
+ }
+ return out;
+}
+
 function claudeSourcePlanSVG(scene,fig){
  const colours={WHITE:"#f3ecd9",GREEN:"#3f8a55",RED:"#9b4a55",VIOLET:"#6b4ea3",BLACK:"#151515",ROSE:"#a86885",GOLD:"#d4b16a",NEUTRAL:"#3f8a55"};
  const colour=Object.hasOwn(colours,scene?.colour)?colours[scene.colour]:colours.GREEN;
@@ -69,6 +96,7 @@ function claudeSourcePlanSVG(scene,fig){
  const isSimple=scene?.server&&scene.form!=="SOLEMN";
  const server=isSimple?fig("server","kneel","",{x:525-.87*202,y:300+.86*(360-300)+12,dir:1,s:.58}):"";
  const people=claudeSeats(fig,posture);
+ const signs=claudeStatusMarks(scene?.signs,pos,Boolean(isSimple));
  // Direct from Claude's final Plan: architecture and congregation live in
  // the ORIGINAL frame; the latter is drawn outside the rotation to stay
  // upright. The precise approved portrait transform is unchanged.
@@ -80,6 +108,7 @@ function claudeSourcePlanSVG(scene,fig){
    </g>
    <g class="ao-claude-pews">${people}</g>
    <g class="ao-claude-figures">${server}<g data-actor="priest">${priest}</g></g>
+   <g class="ao-claude-status-signs">${signs}</g>
   </svg>`;
 }
 export function renderClaudeNativeSanctuary(scene){
