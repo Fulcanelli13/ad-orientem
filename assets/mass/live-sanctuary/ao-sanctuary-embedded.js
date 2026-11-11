@@ -45,8 +45,8 @@
   ].join("");
   document.head.append(css);
   const cues=Object.freeze({
-    "AO.SM.C0174":"C36",
-    "AO.SM.C0181":"C38"
+    "AO.SM.C0174":{card:"C36",section:"AO.CANON.06"},
+    "AO.SM.C0181":{card:"C38",section:"AO.CANON.07"}
   });
   const forms=Object.freeze({
     LOW:{form:"low",solemn:false,inc:false},
@@ -82,7 +82,8 @@
       rebuild(); // Original engine; its shapes, animations and camera are preserved.
     }
     if(last?.key!==nextKey)M3.show(card,false); // Static scene; never start an action on navigation.
-    const play=Boolean(validCue&&cues[cue]===id&&
+    const play=Boolean(validCue&&cues[cue]?.card===id&&
+      cues[cue]?.section===sourceSectionId&&
       (last?.key!==nextKey||last?.playedCue!==cue));
     if(play)M3.show(card,true);
     last={key:nextKey,card:id,cue,sourceSectionId,
