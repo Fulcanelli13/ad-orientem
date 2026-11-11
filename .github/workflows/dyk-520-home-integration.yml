@@ -1,0 +1,35 @@
+name: Did You Know — 520 Customs and Glossary integration
+
+on:
+  pull_request:
+    paths:
+      - "data/did-you-know/dyk-customs-glossary-520.v1.json"
+      - "src/home/dyk-520-release.js"
+      - "src/home/did-you-know-glossary.js"
+      - "src/home/dyk-published-feed.js"
+      - "tests/dyk-520-home-integration.mjs"
+      - ".github/workflows/dyk-520-home-integration.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  full-corpus-home:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Syntax check
+        run: |
+          node --check src/home/dyk-520-release.js
+          node --check src/home/did-you-know-glossary.js
+          node --check src/home/dyk-published-feed.js
+          node --check tests/dyk-520-home-integration.mjs
+      - name: Exercise all 520 bilingual facts, source views, and Home rotation
+        run: |
+          node tests/dyk-520-home-integration.mjs
+          node tests/home-dyk-glossary.mjs

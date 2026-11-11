@@ -1,3 +1,4 @@
+import {loadDyk520Release,dyk520Candidates} from "./dyk-520-release.js";
 import {loadDykPrioritySelection,dykPublishedCandidates,loadDykHistoricalRelease,dykHistoricalCandidates,loadDykWeiser16Release,dykWeiser16Candidates,loadDykWeiserSecond16Release,dykWeiserSecond16Candidates,loadDykMixed24Release,dykMixed24Candidates,loadDyk125Release,dyk125Candidates,loadDyk150Release,dyk150Candidates,loadDyk175Release,dyk175Candidates,loadDyk200Release,dyk200Candidates,loadDyk225Release,dyk225Candidates,dykHomeRotationSlot,DYK_GLOSSARY_FALLBACK_IDS} from "./dyk-published-feed.js";
 // Transitional Home "Did you know?" projection from the already published
 // bilingual Glossary. No second fact bank, generated AI claims or unreviewed
@@ -165,8 +166,9 @@ export function hydrateHomeDidYouKnow(root,win=globalThis){
     loadDyk150Release(win).catch(()=>null),
     loadDyk175Release(win).catch(()=>null),
    loadDyk200Release(win).catch(()=>null),
-   loadDyk225Release(win).catch(()=>null)
- ]).then(([entries,data,historical,r50,r50b,mixed,h125,h150,h175,h200,h225])=>{
+   loadDyk225Release(win).catch(()=>null),
+   loadDyk520Release(win).catch(()=>null)
+ ]).then(([entries,data,historical,r50,r50b,mixed,h125,h150,h175,h200,h225,new520])=>{
     const screen=button.closest(".homeScreen");
     const selectedDate=win?.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate??
       root?.querySelector?.(".homeScreen [data-home-dyk-date]")?.dataset?.homeDykDate;
@@ -181,14 +183,16 @@ export function hydrateHomeDidYouKnow(root,win=globalThis){
       ...(h150?dyk150Candidates(h150,date):[]),
       ...(h175?dyk175Candidates(h175,date):[]),
       ...(h200?dyk200Candidates(h200,date):[]),
-      ...(h225?dyk225Candidates(h225,date):[])
+      ...(h225?dyk225Candidates(h225,date):[]),
+      ...(new520?dyk520Candidates(new520,date):[])
     ];
     const slot=dykHomeRotationSlot(date,candidates.map(row=>row.id),HOME_DYK_GLOSSARY_IDS);
     const published=candidates.find(row=>row.id===slot);
     if(published){
       const fact=published.pilot_home_copy||published.editorial_review_copy;
       const historical=!["ROMAN_MASS_1962","ROMAN_GENERAL_RUBRICS_1962"].includes(published.source_family);
-      button.querySelector("[data-home-dyk-title]").textContent=historical?
+      button.querySelector("[data-home-dyk-title]").textContent=
+        published.source_family==="CURATED_CUSTOMS_GLOSSARY_2026"?published.title[fr?"fr":"en"]:historical?
         (fr?"Coutumes et traditions":"Customs and traditions"):
         ["roman_1962_celebrant_rubrics","ROMAN_1962_CELEBRANT_DETAIL"].includes(published.topic)?
           (fr?"La messe romaine":"The Roman Mass"):
