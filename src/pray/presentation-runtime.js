@@ -52,6 +52,7 @@ import {plannedPrayerArtworkSlot} from "./planned-photo-slots.v1.js";
 import {releasedModulePhotoMarkup} from "../art/released-module-paintings.v1.js";
 import "./adoration-folio-styles.js";
 import {installAngelusCardDeck} from "./devotional-card-deck.js";
+import {decorateAngelusA1,syncAngelusA1} from "./angelus-a1-definitive.js";
 import {updateDevotionalProgress,devotionalProgressMarkup} from "./devotional-progress.js";
 import {angelusCommunalParts} from "./angelus-folio-recitation.js";
 import {internalPrayerView,supportedDirectPrayerRoute} from "./internal-route-owner.js";
@@ -4101,6 +4102,7 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
    onCardChange:(_card,index)=>{
     // Opening sacred artwork belongs only to prayer entry, never card changes.
     ANGELUS_CARD_INDEX=index;
+    syncAngelusA1(m,index);
     if(index>0){
      ANGELUS_COVER_DISMISSED=true;
      const cover=m.querySelector('[data-ao-horarium-intro]');
@@ -4112,6 +4114,8 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
     syncClaudeHorariumStrokes(m,ANGELUS_COVER_DISMISSED?Math.min(index,3):-1);
    },
    onCue:cue=>{
+    // A1 places the gesture inline with the exact Incarnation paragraph.
+    if(m.querySelector(".aoA1Definitive"))return;
     const active=cue==='profound-bow';
     const action=active?resolveAngelusIncarnationCinematic({
      form,weekday:selectedWeekday(),
@@ -4138,7 +4142,20 @@ function render(){const m=mount();if(!m)return;const sig=navigationSignature(),m
     }
    }
   });
-  // Folio starts with the prayer. An opening artwork must never block recitation.
+  // Definitive A1 adds one already-released painting behind the canonical
+  // five/four source-owned cards. Caption is the fixed owner preference.
+  if(cardDeck){
+   const action=resolveAngelusIncarnationCinematic({
+    form,weekday:selectedWeekday(),
+    saturdayAfterVespers:angelusSaturdayVespersDate===selectedDateKey(),
+    language:lang()
+   });
+   decorateAngelusA1({
+    mount:m,form,language:lang(),dateKey:selectedDateKey(),cardDeck,
+    postureMarkup:assetIcon(posture.assetId,'aoA1Icon'),
+    gestureMarkup:action?assetIcon(action.iconAssetId,'aoA1Icon'):''
+   });
+  }
   if(!cardDeck)bindAngelusExactRail();
  });else stopAngelusExactRail();
  if((view==='library'&&LIB.open)||(view==='prayerOnly'&&prayerId))queueMicrotask(()=>installLibraryParagraphFocus(m,view==='library'?LIB.open:prayerId));
