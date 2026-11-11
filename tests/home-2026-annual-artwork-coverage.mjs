@@ -79,7 +79,14 @@ for(const [date,r] of Object.entries(RELEASED_2026_GOSPEL_HERO_DATES)){
  assert.ok(art?.image);
  published.set(date,art);
 }
-assert.equal(published.size,25,"Original live date-mapping baseline moved");
+// Local full-source Tanner photo adds one formerly held Class I date.
+const nicodemusDay=annualHomeArtworkDay2026("2026-05-25");
+const nicodemus=approved2026HomeArtwork(build(nicodemusDay.date,nicodemusDay.principalId,"Tempora/Pasc7-1"));
+assert.equal(nicodemus?.imageStatus,"LOCAL_ORIGINAL_PD_ART_BYTE_VERIFIED_CROP_NOT_OWNER_APPROVED");
+assert.equal(nicodemus?.selectionKind,"FROZEN_OWNER_SELECTED_CLASS_I_EXACT_LOCAL_SOURCE_PHOTO");
+assert.ok(existsSync(new URL(".."+nicodemus.image,import.meta.url)));
+published.set(nicodemusDay.date,nicodemus);
+assert.equal(published.size,26,"25 prior mapped dates plus newly local Tanner selection");
 const seasonal=[];
 for(const day of all.filter(x=>x.contextualReuseEligible)){
  const path=day.principalId.startsWith("commune:C10")?"Commune/C10":"Tempora/feria";
@@ -107,9 +114,9 @@ assert.equal(seasonal.filter(x=>x.liturgicalContext==="MARIAN_SATURDAY").length,
 assert.equal(seasonal.filter(x=>x.liturgicalContext==="FERIAL_SEASON_OR_DEVOTIONAL_CONTEXT").length,59);
 assert.equal(seasonal.filter(x=>x.liturgicalContext==="CLASS_III_LENTEN_OR_ADVENT_FERIA").length,34);
 assert.equal(seasonal.filter(x=>published.has(x.date)).length,0);
-assert.equal(published.size+seasonal.length,130);
+assert.equal(published.size+seasonal.length,131);
 const dateSelectedPending=all.filter(d=>d.selection&&!published.has(d.date));
-assert.equal(dateSelectedPending.length,29);
+assert.equal(dateSelectedPending.length,28);
 for(const d of dateSelectedPending){
  assert.equal(approved2026SeasonalHomeReuse(d.date,d.principalId,"Tempora/probe"),null,
  "Historical date-approved work must never be replaced with seasonal stock");
