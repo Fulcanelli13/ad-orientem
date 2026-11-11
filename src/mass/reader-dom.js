@@ -139,8 +139,13 @@ const SHELL_STYLE = `
   max-height:91px;overflow:hidden;margin-top:0
 }
 .ao-schola-dock[data-approved-score="true"] .ao-schola-approved-staff{
-  position:relative;height:63px;max-height:63px;overflow:hidden;touch-action:pan-y;
-  cursor:crosshair
+  position:relative;height:63px;max-height:63px;width:100%;
+  overflow-x:auto;overflow-y:auto;scrollbar-width:none;overscroll-behavior:contain;
+  touch-action:pan-x;cursor:crosshair
+}
+.ao-schola-approved-staff::-webkit-scrollbar{display:none}
+.ao-schola-dock[data-approved-score="true"] .ao-schola-approved-staff svg{
+  max-width:none!important
 }
 .ao-schola-follow-strip[hidden]{display:none!important}
 .ao-schola-follow-strip{
@@ -3433,7 +3438,9 @@ export function createReaderDomAdapter({
       ". Expected, not observed. No audio recognition.");
     try{
       const doc=root.ownerDocument??globalThis.document;
-      scholaDockEngraver=createOfflineChantEngraver({viewport:staff,document:doc});
+      scholaDockEngraver=createOfflineChantEngraver({
+        viewport:staff,document:doc,horizontalStaffWidth:1200
+      });
       scholaDockEngraver.observe?.();
       void scholaDockEngraver.engrave(score.gabc).then(ok=>{
         if(token!==scholaDockScoreRequest)return;
