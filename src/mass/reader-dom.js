@@ -29,7 +29,7 @@ import {resolveScholaSelectedScoreAccess} from "./reader-schola-score-access.js"
 import {createOfflineChantEngraver} from "./reader-chant-engraver.js";
 import {selectApprovedScholaDockScore} from "./reader-schola-dock-approved.js";
 import {createScholaNotationFollower} from "./reader-schola-notation-follow.js";
-import {createScholaMassTextSynchronizer,scholaMassTextAnchors} from "./reader-schola-mass-text-sync.js";
+import {createScholaMassTextSynchronizer,scholaMassTextAnchors,isScholaMassLinked} from "./reader-schola-mass-text-sync.js";
 
 export const SCHOLA_SPEEDS=Object.freeze([0.25,0.35,0.45,0.60,0.80,1.00]);
 export const DEFAULT_SCHOLA_SPEED=0.45;
@@ -3495,8 +3495,7 @@ export function createReaderDomAdapter({
             // ONLY the Ordinary's shared text is coupled to the Schola.
             // Propers are independently advancing choir music: they must
             // NEVER scroll a Mass paragraph or change its current card.
-            const sharedOrdinary=["KYRIE","GLORIA","CREDO"].includes(
-              score.scholaTrackId);
+            const sharedOrdinary=isScholaMassLinked(score.scholaTrackId);
             if(reader&&sharedOrdinary){
               scholaMassTextSync=createScholaMassTextSynchronizer({
                 reader,gabc:score.gabc,trackId:score.scholaTrackId,
