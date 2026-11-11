@@ -303,7 +303,7 @@ try{
         // Geometry alone allowed black notation on an almost-black panel.
         // Assert the REAL glyph's computed fill and staff-line stroke.
         const lightEnough=ink=>{
-          const m=String(ink??"").match(/^rgba?\\((\\d+),\\s*(\\d+),\\s*(\\d+)/);
+          const m=String(ink??"").match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)/);
           if(!m)return false;
           const [r,g,b]=m.slice(1,4).map(Number);
           return (0.2126*r+0.7152*g+0.0722*b)>115;
